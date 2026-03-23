@@ -3,22 +3,24 @@
     <div class="footer__grid">
       <div class="footer__brand">
         <a href="{{ .Site.BaseURL }}" class="site-logo">
-          <div class="site-logo__icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="color:#fff"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-          </div>
-          <div class="site-logo__text">Bus<span>Maniak</span>.pl</div>
+          <span class="site-logo__bus">BUS</span><span class="site-logo__maniak">MANIAK</span><span class="site-logo__dot">.pl</span>
         </a>
         <p>Portal dla pasjonatów busów, vanów i kamperów. Porównania modeli, przeróbki kamperowe, kalkulatory i poradniki serwisowe.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook"><span class="material-symbols-outlined">public</span></a>
+          <a href="#" aria-label="RSS"><span class="material-symbols-outlined">rss_feed</span></a>
+          <a href="#" aria-label="Forum"><span class="material-symbols-outlined">forum</span></a>
+        </div>
       </div>
 
       <div class="footer__col">
         <h4>Modele</h4>
         <ul>
-          <li><a href="/modele/">Fiat Ducato</a></li>
-          <li><a href="/modele/">Mercedes Sprinter</a></li>
-          <li><a href="/modele/">Iveco Daily</a></li>
-          <li><a href="/modele/">Ford Transit</a></li>
-          <li><a href="/modele/">Renault Master</a></li>
+          <li><a href="/modele/fiat-ducato/">Fiat Ducato</a></li>
+          <li><a href="/modele/mercedes-sprinter/">Mercedes Sprinter</a></li>
+          <li><a href="/modele/iveco-daily/">Iveco Daily</a></li>
+          <li><a href="/modele/ford-transit/">Ford Transit</a></li>
+          <li><a href="/modele/renault-trafic/">Renault Trafic</a></li>
         </ul>
       </div>
 
@@ -37,12 +39,19 @@
       </div>
 
       <div class="footer__col">
-        <h4>Narzędzia</h4>
+        <h4>Newsletter</h4>
+        <p class="footer__newsletter-text">Najnowsze artykuły prosto na Twój e-mail.</p>
+        <form class="footer__newsletter" action="#" method="post">
+          <input type="email" placeholder="Twój e-mail" class="footer__newsletter-input" required>
+          <button type="submit" class="footer__newsletter-btn">
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </button>
+        </form>
+        <h4 class="mt-2">Narzędzia</h4>
         <ul>
           <li><a href="/narzedzia/kalkulator-dmc/">Kalkulator DMC</a></li>
-          <li><a href="/narzedzia/kalkulator-paliwa/">Kalkulator paliwa</a></li>
           <li><a href="/narzedzia/porownywarka-busow/">Porównywarka busów</a></li>
-          <li><a href="/narzedzia/kalkulator-zabudowy/">Koszt zabudowy</a></li>
+          <li><a href="/narzedzia/kalkulator-paliwa/">Kalkulator paliwa</a></li>
         </ul>
       </div>
     </div>

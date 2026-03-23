@@ -1,10 +1,11 @@
 {{ define "main" }}
 
-{{/* ═══ HERO – Stitch design: 80vh, left-aligned, massive type ═══ */}}
+{{/* ═══ HERO – Stitch screen 9e85712a ═══ */}}
 <section class="hero">
-  <img src="/images/hero-bg.jpg" alt="Bus dostawczy na górskiej drodze" class="hero__bg" width="1024" height="576">
+  <img src="/images/hero-bg.jpg" alt="Kamper van na górskiej drodze o zachodzie słońca" class="hero__bg" width="1024" height="576">
   <div class="hero__content">
-    <h1 class="hero__title">Wszystko o <em>busach</em></h1>
+    <div class="hero__badge">Odkrywaj bez granic</div>
+    <h1 class="hero__title">Twoja droga,<br>nasza <em>pasja</em></h1>
     <p class="hero__subtitle">Porównania modeli, przeróbki kamperowe, kalkulatory DMC i zabudowy. Twoje kompendium wiedzy o vanach.</p>
     <div class="hero__actions">
       <a href="/porownania/" class="btn btn--primary">Porównaj busy</a>
@@ -13,34 +14,42 @@
   </div>
 </section>
 
-{{/* ═══ FEATURE BAR – Material Symbols icons ═══ */}}
-<section class="features">
-  <div class="features__grid">
-    <a href="/modele/" class="feature-item">
-      <div class="feature-item__icon">
-        <span class="material-symbols-outlined">local_shipping</span>
-      </div>
-      <div class="feature-item__text"><strong>Modele busów</strong></div>
+{{/* ═══ BENTO GRID – 4 cards, last dark ═══ */}}
+<section class="bento">
+  <div class="bento__grid">
+    <a href="/modele/" class="bento__card">
+      <span class="material-symbols-outlined">local_shipping</span>
+      <h3>Modele busów</h3>
+      <p>Ducato, Sprinter, Transit, Daily – dane techniczne, wymiary, wersje silnikowe</p>
     </a>
-    <a href="/porownania/" class="feature-item">
-      <div class="feature-item__icon">
-        <span class="material-symbols-outlined">swap_horiz</span>
-      </div>
-      <div class="feature-item__text"><strong>Porównania</strong></div>
+    <a href="/porownania/" class="bento__card">
+      <span class="material-symbols-outlined">swap_horiz</span>
+      <h3>Porównania</h3>
+      <p>Zestawienia modeli obok siebie – ładowność, spalanie, ceny, wymiary</p>
     </a>
-    <a href="/narzedzia/" class="feature-item">
-      <div class="feature-item__icon">
-        <span class="material-symbols-outlined">monitoring</span>
-      </div>
-      <div class="feature-item__text"><strong>Kalkulatory</strong></div>
+    <a href="/narzedzia/" class="bento__card">
+      <span class="material-symbols-outlined">monitoring</span>
+      <h3>Kalkulatory</h3>
+      <p>DMC, koszty paliwa, szacowanie zabudowy – interaktywne narzędzia online</p>
     </a>
-    <a href="/przerobki/" class="feature-item">
-      <div class="feature-item__icon">
-        <span class="material-symbols-outlined">architecture</span>
-      </div>
-      <div class="feature-item__text"><strong>Przeróbki</strong></div>
+    <a href="/przerobki/" class="bento__card bento__card--dark">
+      <span class="material-symbols-outlined">architecture</span>
+      <h3>Przeróbki</h3>
+      <p>DIY kamper, izolacja, instalacje, homologacja – poradniki krok po kroku</p>
     </a>
   </div>
+</section>
+
+{{/* ═══ FEATURED – 21:9 vanlife banner ═══ */}}
+<section class="featured-banner">
+  <a href="/vanlife/" class="featured-banner__link">
+    <img src="/images/featured-vanlife.jpg" alt="Wnętrze kampera z drewnianą zabudową o zachodzie słońca" loading="lazy">
+    <div class="featured-banner__overlay">
+      <div class="featured-banner__tag">Vanlife</div>
+      <h2>Życie w busie – jak zacząć przygodę z vanlife</h2>
+      <span class="featured-banner__cta">Czytaj więcej &rarr;</span>
+    </div>
+  </a>
 </section>
 
 {{/* ═══ EDITORIAL GRID ═══ */}}
@@ -71,7 +80,7 @@
   </div>
 </section>
 {{ else }}
-{{/* Static editorial duo – Stitch 2/3 + 1/3 layout */}}
+{{/* Static editorial duo – fallback */}}
 <div class="editorial-duo">
   <a href="/kampery/" class="editorial-duo__main">
     <img src="/images/kampery-featured.jpg" alt="Wnętrze kampera przerobionego z busa" loading="lazy">

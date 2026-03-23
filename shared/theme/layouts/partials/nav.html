@@ -2,21 +2,18 @@
   <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
 
   <nav class="site-header__nav" aria-label="Nawigacja główna">
-    <a href="{{ .Site.BaseURL }}" class="site-logo">BusManiak.pl</a>
+    <a href="{{ .Site.BaseURL }}" class="site-logo">
+      <span class="site-logo__bus">BUS</span><span class="site-logo__maniak">MANIAK</span><span class="site-logo__dot">.pl</span>
+    </a>
 
     <label for="nav-toggle" class="nav-toggle-label" aria-label="Menu">
       <span></span>
     </label>
 
     <div class="site-nav__links">
-      <a href="/modele/" class="site-nav__link site-nav__link--active">Modele</a>
-      <a href="/kampery/" class="site-nav__link">Kampery</a>
-      <a href="/przerobki/" class="site-nav__link">Przeróbki</a>
-      <a href="/porownania/" class="site-nav__link">Porównania</a>
-      <a href="/serwis/" class="site-nav__link">Serwis</a>
-      <a href="/wynajem/" class="site-nav__link">Wynajem</a>
-      <a href="/przepisy/" class="site-nav__link">Przepisy</a>
-      <a href="/narzedzia/" class="site-nav__link">Narzędzia</a>
+      {{ range .Site.Menus.main }}
+      <a href="{{ .URL }}" class="site-nav__link{{ if $.IsMenuCurrent "main" . }} site-nav__link--active{{ end }}">{{ .Name }}</a>
+      {{ end }}
     </div>
   </nav>
 </header>
