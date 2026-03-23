@@ -83,6 +83,9 @@
 {{ $css := resources.Get "css/main.css" | minify }}
 <style>{{ $css.Content | safeCSS }}</style>
 
+{{/* Material Symbols for feature icons */}}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
+
 {{/* RSS */}}
 {{ range .AlternativeOutputFormats }}
 <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}" title="{{ $.Site.Title }}">

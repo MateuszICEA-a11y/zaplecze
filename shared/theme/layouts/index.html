@@ -13,40 +13,32 @@
   </div>
 </section>
 
-{{/* ═══ FEATURE BAR – minimal icons, wide tracking ═══ */}}
+{{/* ═══ FEATURE BAR – Material Symbols icons ═══ */}}
 <section class="features">
   <div class="features__grid">
     <a href="/modele/" class="feature-item">
       <div class="feature-item__icon">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        <span class="material-symbols-outlined">local_shipping</span>
       </div>
-      <div class="feature-item__text">
-        <strong>Modele busów</strong>
-      </div>
+      <div class="feature-item__text"><strong>Modele busów</strong></div>
     </a>
     <a href="/porownania/" class="feature-item">
       <div class="feature-item__icon">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M16 3l4 4-4 4M8 21l-4-4 4-4"/><path d="M20 7H4M4 17h16"/></svg>
+        <span class="material-symbols-outlined">swap_horiz</span>
       </div>
-      <div class="feature-item__text">
-        <strong>Porównania</strong>
-      </div>
+      <div class="feature-item__text"><strong>Porównania</strong></div>
     </a>
     <a href="/narzedzia/" class="feature-item">
       <div class="feature-item__icon">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h5M8 14h8M8 18h3"/></svg>
+        <span class="material-symbols-outlined">monitoring</span>
       </div>
-      <div class="feature-item__text">
-        <strong>Kalkulatory</strong>
-      </div>
+      <div class="feature-item__text"><strong>Kalkulatory</strong></div>
     </a>
     <a href="/przerobki/" class="feature-item">
       <div class="feature-item__icon">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        <span class="material-symbols-outlined">architecture</span>
       </div>
-      <div class="feature-item__text">
-        <strong>Przeróbki</strong>
-      </div>
+      <div class="feature-item__text"><strong>Przeróbki</strong></div>
     </a>
   </div>
 </section>
@@ -79,38 +71,22 @@
   </div>
 </section>
 {{ else }}
-{{/* Static editorial cards when no articles yet */}}
-<section class="editorial-section">
-  <div class="editorial-section__header">
-    <h2 class="section__title">Odkryj nasze tematy</h2>
+{{/* Static editorial duo – Stitch 2/3 + 1/3 layout */}}
+<div class="editorial-duo">
+  <a href="/kampery/" class="editorial-duo__main">
+    <img src="/images/kampery-featured.jpg" alt="Wnętrze kampera przerobionego z busa" loading="lazy">
+    <div class="editorial-duo__main-body">
+      <div class="editorial-tag">Inspiracje</div>
+      <h3>Kampery i camper vany</h3>
+      <span class="editorial-link">Czytaj więcej &rarr;</span>
+    </div>
+  </a>
+  <div class="editorial-duo__side">
+    <h3>Kalkulator DMC</h3>
+    <p>Sprawdź dopuszczalną masę całkowitą swojego busa. Oblicz, ile możesz załadować i czy potrzebujesz wyższej kategorii prawa jazdy.</p>
+    <a href="/narzedzia/kalkulator-dmc/" class="btn btn--primary">Oblicz wagę</a>
   </div>
-  <div class="editorial-grid">
-    <a href="/kampery/" class="editorial-card card-tall">
-      <img src="/images/kampery-featured.jpg" alt="Wnętrze kampera przerobionego z busa" loading="lazy">
-      <div class="editorial-card-body">
-        <div class="editorial-tag">Kampery</div>
-        <h3>Kampery i camper vany</h3>
-        <p>Przewodnik kupującego – modele, ceny, porady dla początkujących kamperowiczów.</p>
-      </div>
-    </a>
-    <a href="/porownania/" class="editorial-card">
-      <img src="/images/porownania-featured.jpg" alt="Porównanie busów dostawczych" loading="lazy">
-      <div class="editorial-card-body">
-        <div class="editorial-tag">Porównania</div>
-        <h3>Porównania busów</h3>
-        <p>Szczegółowe tabele – wymiary, ładowność, spalanie.</p>
-      </div>
-    </a>
-    <a href="/przerobki/" class="editorial-card">
-      <img src="/images/przerobki-featured.jpg" alt="Warsztat przeróbki busa" loading="lazy">
-      <div class="editorial-card-body">
-        <div class="editorial-tag">Przeróbki</div>
-        <h3>Bus na kampera</h3>
-        <p>Krok po kroku – od zakupu bazy po pierwszą podróż.</p>
-      </div>
-    </a>
-  </div>
-</section>
+</div>
 {{ end }}
 
 {{/* ═══ CLUSTER SECTIONS ═══ */}}

@@ -1,204 +1,22 @@
 <header class="site-header">
   <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
 
-  <div class="container site-header__top">
-    <a href="{{ .Site.BaseURL }}" class="site-logo">
-      <div class="site-logo__icon">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:#fff"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-      </div>
-      <div class="site-logo__text">Bus<span>Maniak</span>.pl</div>
-    </a>
+  <nav class="site-header__nav" aria-label="Nawigacja główna">
+    <a href="{{ .Site.BaseURL }}" class="site-logo">BusManiak.pl</a>
 
     <label for="nav-toggle" class="nav-toggle-label" aria-label="Menu">
       <span></span>
     </label>
-  </div>
 
-  <nav class="mega-nav" aria-label="Nawigacja główna">
-    <div class="container">
-      <ul class="mega-nav__list">
-
-        <li class="mega-nav__item">
-          <a href="/modele/" class="mega-nav__link">Modele</a>
-          <div class="mega-panel">
-            <div class="mega-panel__column">
-              <h4>Popularne modele</h4>
-              <ul>
-                <li><a href="/modele/fiat-ducato/">Fiat Ducato</a></li>
-                <li><a href="/modele/mercedes-sprinter/">Mercedes Sprinter</a></li>
-                <li><a href="/modele/iveco-daily/">Iveco Daily</a></li>
-                <li><a href="/modele/ford-transit/">Ford Transit</a></li>
-                <li><a href="/modele/renault-master/">Renault Master</a></li>
-                <li><a href="/modele/mercedes-vito/">Mercedes Vito</a></li>
-              </ul>
-            </div>
-            <div class="mega-panel__column">
-              <h4>Kategorie</h4>
-              <ul>
-                <li><a href="/modele/">Samochody dostawcze do 3.5t</a></li>
-                <li><a href="/modele/">Busy 9-osobowe</a></li>
-                <li><a href="/modele/">Fiat Ducato brygadówka</a></li>
-              </ul>
-            </div>
-          </div>
-        </li>
-
-        <li class="mega-nav__item">
-          <a href="/kampery/" class="mega-nav__link">Kampery</a>
-          <div class="mega-panel">
-            <div class="mega-panel__column">
-              <h4>Kupno kampera</h4>
-              <ul>
-                <li><a href="/kampery/">Przewodnik kupującego</a></li>
-                <li><a href="/kampery/">Kampery używane</a></li>
-                <li><a href="/kampery/">Camper van vs kamper</a></li>
-                <li><a href="/kampery/">Mini kamper</a></li>
-              </ul>
-            </div>
-            <div class="mega-panel__column">
-              <h4>Modele kamperów</h4>
-              <ul>
-                <li><a href="/kampery/">Mercedes Marco Polo</a></li>
-                <li><a href="/kampery/">Kamper Volkswagen</a></li>
-                <li><a href="/kampery/">Kamper 4-osobowy</a></li>
-                <li><a href="/kampery/">Kamper 5-osobowy</a></li>
-              </ul>
-            </div>
-          </div>
-        </li>
-
-        <li class="mega-nav__item">
-          <a href="/przerobki/" class="mega-nav__link">Przeróbki</a>
-          <div class="mega-panel">
-            <div class="mega-panel__column">
-              <h4>Budowa kampera</h4>
-              <ul>
-                <li><a href="/przerobki/">Krok po kroku</a></li>
-                <li><a href="/przerobki/">Przepisy i homologacja</a></li>
-                <li><a href="/przerobki/">Kampery samoróbki</a></li>
-                <li><a href="/przerobki/">Koszty przeróbki</a></li>
-              </ul>
-            </div>
-            <div class="mega-panel__column">
-              <h4>Popularne bazy</h4>
-              <ul>
-                <li><a href="/przerobki/">Ducato na kamper</a></li>
-                <li><a href="/przerobki/">Sprinter na kamper</a></li>
-                <li><a href="/przerobki/">Jaki bus na kamper</a></li>
-              </ul>
-            </div>
-          </div>
-        </li>
-
-        <li class="mega-nav__item">
-          <a href="/porownania/" class="mega-nav__link">Porównania</a>
-          <div class="mega-panel">
-            <div class="mega-panel__column">
-              <h4>Porównania modeli</h4>
-              <ul>
-                <li><a href="/porownania/">Ducato vs Sprinter vs Daily</a></li>
-                <li><a href="/porownania/">Ranking busów 9-osobowych</a></li>
-                <li><a href="/porownania/">Ranking kamperów</a></li>
-              </ul>
-            </div>
-            <div class="mega-panel__column">
-              <h4>Dane techniczne</h4>
-              <ul>
-                <li><a href="/porownania/">Ducato ładowność tabela</a></li>
-                <li><a href="/porownania/">Sprinter wymiary</a></li>
-                <li><a href="/porownania/">Porównywarka busów</a></li>
-              </ul>
-            </div>
-          </div>
-        </li>
-
-        <li class="mega-nav__item">
-          <a href="/serwis/" class="mega-nav__link">Serwis</a>
-          <div class="mega-panel">
-            <div class="mega-panel__column">
-              <h4>Diagnostyka</h4>
-              <ul>
-                <li><a href="/serwis/">Kontrolki w busie</a></li>
-                <li><a href="/serwis/">Check engine</a></li>
-                <li><a href="/serwis/">AdBlue</a></li>
-                <li><a href="/serwis/">Wypalanie DPF</a></li>
-              </ul>
-            </div>
-            <div class="mega-panel__column">
-              <h4>Eksploatacja</h4>
-              <ul>
-                <li><a href="/serwis/">Spalanie busów</a></li>
-                <li><a href="/serwis/">Ciśnienie w oponach</a></li>
-                <li><a href="/serwis/">Serwis Mercedesa</a></li>
-              </ul>
-            </div>
-          </div>
-        </li>
-
-        <li class="mega-nav__item">
-          <a href="/wynajem/" class="mega-nav__link">Wynajem</a>
-          <div class="mega-panel">
-            <div class="mega-panel__column">
-              <h4>Wynajem kamperów</h4>
-              <ul>
-                <li><a href="/wynajem/">Wypożyczalnie kamperów</a></li>
-                <li><a href="/wynajem/">Ceny wynajmu</a></li>
-                <li><a href="/wynajem/">Wynajem na wakacje</a></li>
-              </ul>
-            </div>
-            <div class="mega-panel__column">
-              <h4>Porady</h4>
-              <ul>
-                <li><a href="/wynajem/">Pierwszy wynajem kampera</a></li>
-                <li><a href="/wynajem/">Co sprawdzić przed wynajmem</a></li>
-              </ul>
-            </div>
-          </div>
-        </li>
-
-        <li class="mega-nav__item">
-          <a href="/przepisy/" class="mega-nav__link">Przepisy</a>
-          <div class="mega-panel">
-            <div class="mega-panel__column">
-              <h4>Prawo jazdy</h4>
-              <ul>
-                <li><a href="/przepisy/">Kategorie prawa jazdy</a></li>
-                <li><a href="/przepisy/">Prawo jazdy na busa</a></li>
-                <li><a href="/przepisy/">Kwalifikacja wstępna</a></li>
-              </ul>
-            </div>
-            <div class="mega-panel__column">
-              <h4>Regulacje</h4>
-              <ul>
-                <li><a href="/przepisy/">Winiety i opłaty drogowe</a></li>
-                <li><a href="/przepisy/">Regulacje DMC</a></li>
-                <li><a href="/przepisy/">Homologacja kampera</a></li>
-              </ul>
-            </div>
-          </div>
-        </li>
-
-        <li class="mega-nav__item">
-          <a href="/narzedzia/" class="mega-nav__link">Narzędzia</a>
-          <div class="mega-panel">
-            <div class="mega-panel__column">
-              <h4>Kalkulatory</h4>
-              <ul>
-                <li><a href="/narzedzia/kalkulator-dmc/">Kalkulator DMC</a></li>
-                <li><a href="/narzedzia/kalkulator-paliwa/">Kalkulator paliwa</a></li>
-                <li><a href="/narzedzia/kalkulator-zabudowy/">Koszt zabudowy</a></li>
-              </ul>
-            </div>
-            <div class="mega-panel__column">
-              <h4>Porównywarka</h4>
-              <ul>
-                <li><a href="/narzedzia/porownywarka-busow/">Porównaj busy</a></li>
-              </ul>
-            </div>
-          </div>
-        </li>
-
-      </ul>
+    <div class="site-nav__links">
+      <a href="/modele/" class="site-nav__link site-nav__link--active">Modele</a>
+      <a href="/kampery/" class="site-nav__link">Kampery</a>
+      <a href="/przerobki/" class="site-nav__link">Przeróbki</a>
+      <a href="/porownania/" class="site-nav__link">Porównania</a>
+      <a href="/serwis/" class="site-nav__link">Serwis</a>
+      <a href="/wynajem/" class="site-nav__link">Wynajem</a>
+      <a href="/przepisy/" class="site-nav__link">Przepisy</a>
+      <a href="/narzedzia/" class="site-nav__link">Narzędzia</a>
     </div>
   </nav>
 </header>
