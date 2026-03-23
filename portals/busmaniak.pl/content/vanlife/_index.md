@@ -1,4 +1,4 @@
 ---
-title: "Vanlife i podroze"
-description: "Vanlife po polsku – zycie w busie, trasy podroznicze kamperem, miejsca do parkowania, kempingi. Praktyczne porady dla podrozujacych vanem po Polsce i Europie."
+title: "Vanlife i podróże"
+description: "Vanlife po polsku – życie w busie, trasy podróżnicze kamperem, miejsca do parkowania, kempingi. Praktyczne porady dla podróżujących vanem po Polsce i Europie."
 ---

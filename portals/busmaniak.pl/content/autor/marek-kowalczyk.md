@@ -1,14 +1,14 @@
 ---
 title: "Marek Kowalczyk"
 type: "authors"
-role: "Ekspert ds. pojazdow uzytkowych"
-bio: "Pasjonat busow i vanow z ponad 12-letnim doswiadczeniem w branzy motoryzacyjnej. Pracowal jako doradca techniczny w serwisie pojazdow dostawczych, gdzie zajmowal sie diagnostyka i doborem flot. Specjalizuje sie w testach modeli, danych technicznych i porownaniach busow roznych marek. Na co dzien testuje busy od Ducato po Trafic i dzieli sie swoimi spostrzezeniami na BusManiak.pl."
+role: "Ekspert ds. pojazdów użytkowych"
+bio: "Pasjonat busów i vanów z ponad 12-letnim doświadczeniem w branży motoryzacyjnej. Pracował jako doradca techniczny w serwisie pojazdów dostawczych, gdzie zajmował się diagnostyką i doborem flot. Specjalizuje się w testach modeli, danych technicznych i porównaniach busów różnych marek. Na co dzień testuje busy od Ducato po Trafic i dzieli się swoimi spostrzeżeniami na BusManiak.pl."
 avatar: ""
 specialties:
-  - "modele busow i vanow"
+  - "modele busów i vanów"
   - "dane techniczne"
-  - "testy pojazdow dostawczych"
-  - "porownania modeli"
+  - "testy pojazdów dostawczych"
+  - "porównania modeli"
 sameAs:
   - "https://gravatar.com/marekkowalczyk-busy"
 ---

@@ -11,7 +11,7 @@ summaryLength = 30
 enableRobotsTXT = true
 
 [params]
-  description = "Portal o busach, vanach i kamperach – Ducato, Sprinter, Iveco Daily. Porownania, zabudowy, przerobki, kalkulatory."
+  description = "Portal o busach, vanach i kamperach – Ducato, Sprinter, Iveco Daily. Porównania, zabudowy, przeróbki, kalkulatory."
   ogImage = "/images/og-default.jpg"
 
 [taxonomies]
@@ -47,7 +47,7 @@ enableRobotsTXT = true
   weight = 2
 
 [[menus.main]]
-  name = "Przerobki"
+  name = "Przeróbki"
   url = "/przerobki/"
   weight = 3
 
@@ -57,7 +57,7 @@ enableRobotsTXT = true
   weight = 4
 
 [[menus.main]]
-  name = "Porownania"
+  name = "Porównania"
   url = "/porownania/"
   weight = 5
 
@@ -77,6 +77,6 @@ enableRobotsTXT = true
   weight = 8
 
 [[menus.main]]
-  name = "Narzedzia"
+  name = "Narzędzia"
   url = "/narzedzia/"
   weight = 9

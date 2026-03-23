@@ -1,13 +1,13 @@
 ---
-title: "Tomasz Zielinski"
+title: "Tomasz Zieliński"
 type: "authors"
-role: "Mechanik i recenzent busow"
-bio: "Mechanik z wyksztalcenia, pasjonat busow z zamilowania. Od ponad 15 lat serwisuje i modyfikuje pojazdy dostawcze – od zabudow warsztatowych po pelne przerobki kamperowe. Autor licznych artykulow porownawczych i poradnikow serwisowych. Na BusManiak.pl odpowiada za sekcje serwisowa, zabudowy i porownania. Wlasciciel przerobionego Sprintera, ktorym podrozuje po Europie."
+role: "Mechanik i recenzent busów"
+bio: "Mechanik z wykształcenia, pasjonat busów z zamiłowania. Od ponad 15 lat serwisuje i modyfikuje pojazdy dostawcze – od zabudów warsztatowych po pełne przeróbki kamperowe. Autor licznych artykułów porównawczych i poradników serwisowych. Na BusManiak.pl odpowiada za sekcję serwisową, zabudowy i porównania. Właściciel przerobionego Sprintera, którym podróżuje po Europie."
 avatar: ""
 specialties:
-  - "serwis i eksploatacja busow"
+  - "serwis i eksploatacja busów"
   - "zabudowy warsztatowe i kamperowe"
-  - "porownania i rankingi"
+  - "porównania i rankingi"
   - "przepisy i DMC"
 sameAs:
   - "https://gravatar.com/tomaszzielinski-busy"

@@ -1,14 +1,14 @@
 ---
-title: "Anna Wozniak"
+title: "Anna Woźniak"
 type: "authors"
 role: "Dziennikarka motoryzacyjna i kamperowiczka"
-bio: "Dziennikarka specjalizujaca sie w tematyce vanow, kamperow i vanlife. Przez 8 lat pisala dla branzowych magazynow o pojazdach uzytkowych i elektromobilnosci. Przejechala busem ponad 50 000 km po Polsce i Europie, testujac rozne modele i przerobki kamperowe. Na BusManiak.pl pisze o kamperach, przerobkach busow i podrozach vanlife. Wierzy, ze kazdy bus ma potencjal na kampera."
+bio: "Dziennikarka specjalizująca się w tematyce vanów, kamperów i vanlife. Przez 8 lat pisała dla branżowych magazynów o pojazdach użytkowych i elektromobilności. Przejechała busem ponad 50 000 km po Polsce i Europie, testując różne modele i przeróbki kamperowe. Na BusManiak.pl pisze o kamperach, przeróbkach busów i podróżach vanlife. Wierzy, że każdy bus ma potencjał na kampera."
 avatar: ""
 specialties:
   - "kampery i camper vany"
-  - "vanlife i podroze"
-  - "przerobki kamperowe"
-  - "elektromobilnosc w dostawczych"
+  - "vanlife i podróże"
+  - "przeróbki kamperowe"
+  - "elektromobilność w dostawczych"
 sameAs:
   - "https://gravatar.com/annawozniak-kampery"
 ---

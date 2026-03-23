@@ -1,4 +1,4 @@
 ---
-title: "Zabudowy busow"
-description: "Zabudowy busow warsztatowych, serwisowych, kamperowych i izotermicznych – regaly, podlogi, izolacja, oswietlenie. Porady dotyczace zabudowy przestrzeni ladunkowej vanow i busow."
+title: "Zabudowy busów"
+description: "Zabudowy busów warsztatowych, serwisowych, kamperowych i izotermicznych – regały, podłogi, izolacja, oświetlenie. Porady dotyczące zabudowy przestrzeni ładunkowej vanów i busów."
 ---

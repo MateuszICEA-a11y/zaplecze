@@ -1,4 +1,4 @@
 ---
 title: "Serwis i eksploatacja"
-description: "Serwis i eksploatacja busow i vanow – kontrolki na desce rozdzielczej, filtr DPF, AdBlue, oleje, wymiana rozrzadu, diagnostyka i koszty utrzymania Ducato, Sprintera, Daily i innych."
+description: "Serwis i eksploatacja busów i vanów – kontrolki na desce rozdzielczej, filtr DPF, AdBlue, oleje, wymiana rozrządu, diagnostyka i koszty utrzymania Ducato, Sprintera, Daily i innych."
 ---

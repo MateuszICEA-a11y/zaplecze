@@ -1,4 +1,4 @@
 ---
-title: "Wynajem busow i kamperow"
-description: "Wynajem kamperow i camper vanow w Polsce i Europie – porownanie wypozyczalni, ceny, porady dla wynajmujacych po raz pierwszy. Co sprawdzic przed wynajmem kampera."
+title: "Wynajem busów i kamperów"
+description: "Wynajem kamperów i camper vanów w Polsce i Europie – porównanie wypożyczalni, ceny, porady dla wynajmujących po raz pierwszy. Co sprawdzić przed wynajmem kampera."
 ---
