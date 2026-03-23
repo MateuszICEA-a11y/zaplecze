@@ -16,11 +16,15 @@
 {{/* Canonical URL */}}
 <link rel="canonical" href="{{ .Permalink }}">
 
-{{/* Robots */}}
+{{/* Robots – noindex on dev, index on production */}}
+{{ if .Site.Params.noindex }}
+<meta name="robots" content="noindex, nofollow">
+{{ else }}
 {{ with .Params.robots }}
 <meta name="robots" content="{{ . }}">
 {{ else }}
 <meta name="robots" content="index, follow">
+{{ end }}
 {{ end }}
 
 {{/* Open Graph */}}
