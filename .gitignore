@@ -33,3 +33,5 @@ build/
 
 # Node (if ever needed)
 node_modules/
+*.png
+.claude/

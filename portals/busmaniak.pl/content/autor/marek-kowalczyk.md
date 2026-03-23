@@ -1,14 +1,14 @@
 ---
 title: "Marek Kowalczyk"
 type: "authors"
-role: "Ekspert ds. transportu miejskiego"
-bio: "Pasjonat komunikacji miejskiej z ponad 12-letnim doswiadczeniem w branzy transportowej. Pracowal jako analityk w Zakladzie Transportu Miejskiego, gdzie zajmowal sie optymalizacja tras i analiza danych przewozowych. Specjalizuje sie w tematyce autobusow miejskich, systemow biletowych i nowoczesnych rozwiazan w transporcie publicznym. Na co dzien testuje rozne formy komunikacji publicznej w polskich miastach i dzieli sie swoimi spostrzezeniami na Busmaniak.pl."
+role: "Ekspert ds. pojazdow uzytkowych"
+bio: "Pasjonat busow i vanow z ponad 12-letnim doswiadczeniem w branzy motoryzacyjnej. Pracowal jako doradca techniczny w serwisie pojazdow dostawczych, gdzie zajmowal sie diagnostyka i doborem flot. Specjalizuje sie w testach modeli, danych technicznych i porownaniach busow roznych marek. Na co dzien testuje busy od Ducato po Trafic i dzieli sie swoimi spostrzezeniami na BusManiak.pl."
 avatar: ""
 specialties:
-  - "autobusy miejskie"
-  - "transport publiczny"
-  - "systemy biletowe"
-  - "planowanie tras"
+  - "modele busow i vanow"
+  - "dane techniczne"
+  - "testy pojazdow dostawczych"
+  - "porownania modeli"
 sameAs:
-  - "https://gravatar.com/marekkowalczyk-transport"
+  - "https://gravatar.com/marekkowalczyk-busy"
 ---

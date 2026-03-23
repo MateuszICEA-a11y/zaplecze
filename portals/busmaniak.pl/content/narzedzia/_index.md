@@ -1,4 +1,4 @@
 ---
-title: "Narzędzia i kalkulatory"
-description: "Narzędzia online dla właścicieli busów — kalkulator DMC, kalkulator kosztów paliwa, porównywarka vanów i busów dostawczych. Sprawdź, zanim kupisz lub przerobisz busa."
+title: "Narzedzia i kalkulatory"
+description: "Narzedzia online dla wlascicieli busow – kalkulator DMC, kalkulator kosztow paliwa, porownywarka vanow i busow dostawczych. Sprawdz, zanim kupisz lub przerobisz busa."
 ---

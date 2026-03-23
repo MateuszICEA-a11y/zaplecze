@@ -1,4 +1,4 @@
 ---
-title: "Busmaniak.pl"
-description: "Portal dla pasjonatow autobusow, transportu miejskiego i podrozy autobusowych w Polsce"
+title: "BusManiak.pl"
+description: "Portal o busach dostawczych, vanach i kamperach – Ducato, Sprinter, Daily, Transit. Przerobki, zabudowy, porownania, narzedzia."
 ---

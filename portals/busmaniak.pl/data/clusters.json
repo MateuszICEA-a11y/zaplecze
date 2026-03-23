@@ -205,7 +205,7 @@
       "name": "Narzedzia i kalkulatory",
       "type": "informational",
       "priority": 0.82,
-      "unique_value": "Interaktywne kalkulatory DMC, spalania, kosztow zabudowy — unikalna wartosc portalu",
+      "unique_value": "Interaktywne kalkulatory DMC, spalania, kosztow zabudowy – unikalna wartosc portalu",
       "pillar": {
         "keyword": "dopuszczalna masa calkowita",
         "volume": 720,
@@ -228,28 +228,28 @@
     {
       "type": "calculator",
       "name": "Kalkulator DMC",
-      "description": "Interaktywny kalkulator dopuszczalnej masy calkowitej — uzytkownik wpisuje model busa, wersje, planowan ladunek, system wylicza czy miesci sie w DMC 3.5t",
+      "description": "Interaktywny kalkulator dopuszczalnej masy calkowitej – uzytkownik wpisuje model busa, wersje, planowan ladunek, system wylicza czy miesci sie w DMC 3.5t",
       "keywords": ["dopuszczalna masa calkowita", "dmc co to", "ladownosc fiat ducato"],
       "implementation": "Hugo shortcode + vanilla JS, zero frameworkow"
     },
     {
       "type": "calculator",
       "name": "Kalkulator kosztow paliwa",
-      "description": "Oblicz koszty paliwa na trasy — wybierz busa, wpisz dystans, cene paliwa",
+      "description": "Oblicz koszty paliwa na trasy – wybierz busa, wpisz dystans, cene paliwa",
       "keywords": ["fiat ducato spalanie", "sprinter spalanie", "iveco daily spalanie"],
       "implementation": "Hugo shortcode + vanilla JS"
     },
     {
       "type": "comparison_tool",
       "name": "Porownywarka busow",
-      "description": "Porownaj 2-3 busy obok siebie — wymiary, ladownosc, spalanie, cena, silniki",
+      "description": "Porownaj 2-3 busy obok siebie – wymiary, ladownosc, spalanie, cena, silniki",
       "keywords": ["porownywarka aut", "porownanie aut dostawczych", "ducato vs sprinter"],
       "implementation": "Hugo data templates + JSON baza danych busow + vanilla JS"
     },
     {
       "type": "calculator",
       "name": "Kalkulator kosztow zabudowy",
-      "description": "Oszacuj koszt zabudowy busa — warsztatowej, kamperowej, izotermicznej",
+      "description": "Oszacuj koszt zabudowy busa – warsztatowej, kamperowej, izotermicznej",
       "keywords": ["zabudowa busa cena", "zabudowa busa na kamper"],
       "implementation": "Hugo shortcode + vanilla JS"
     }

@@ -1,14 +1,14 @@
 ---
 title: "Tomasz Zielinski"
 type: "authors"
-role: "Historyk motoryzacji i recenzent"
-bio: "Historyk techniki z wyksztalcenia, pasjonat autobusow z zamiłowania. Od ponad 15 lat dokumentuje historie polskiego przemyslu autobusowego — od legendarnych Jelczy i Autosanow po wspolczesne Solarisy. Autor licznych artykulow porownawczych i rankingów, w których analizuje oferty przewoznikow i modele autobusow. Na Busmaniak.pl odpowiada za sekcje historyczna i porownawcza. Kolekcjoner modeli autobusow w skali 1:43."
+role: "Mechanik i recenzent busow"
+bio: "Mechanik z wyksztalcenia, pasjonat busow z zamilowania. Od ponad 15 lat serwisuje i modyfikuje pojazdy dostawcze – od zabudow warsztatowych po pelne przerobki kamperowe. Autor licznych artykulow porownawczych i poradnikow serwisowych. Na BusManiak.pl odpowiada za sekcje serwisowa, zabudowy i porownania. Wlasciciel przerobionego Sprintera, ktorym podrozuje po Europie."
 avatar: ""
 specialties:
-  - "historia autobusow"
+  - "serwis i eksploatacja busow"
+  - "zabudowy warsztatowe i kamperowe"
   - "porownania i rankingi"
-  - "modele kolekcjonerskie"
-  - "praca w transporcie"
+  - "przepisy i DMC"
 sameAs:
-  - "https://gravatar.com/tomaszzielinski-autobusy"
+  - "https://gravatar.com/tomaszzielinski-busy"
 ---

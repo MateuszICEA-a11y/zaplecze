@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════
-   BUSMANIAK THEME — Industrial Automotive Editorial
+   BUSMANIAK THEME – Industrial Automotive Editorial
    Target: <8KB minified, 0 JS, pure CSS
    ═══════════════════════════════════════════ */
 
@@ -56,7 +56,7 @@ a:hover { color: var(--c-orange-deep); }
 .content-narrow { max-width: var(--w-content); margin: 0 auto; }
 
 /* ══════════════════════════════════════
-   NAVIGATION — Mega Menu
+   NAVIGATION – Mega Menu
    ══════════════════════════════════════ */
 .site-header {
   background: var(--c-dark);
