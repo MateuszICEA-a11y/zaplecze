@@ -1,23 +1,14 @@
 {{ define "main" }}
 
-{{/* ═══ HERO ═══ */}}
+{{/* ═══ HERO – fullscreen image ═══ */}}
 <section class="hero">
-  <div class="container">
-    <div class="hero__badge">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-      Aktualności 2026
-    </div>
-    <h1 class="hero__title">Wszystko o <span>busach</span>, vanach i kamperach</h1>
-    <p class="hero__subtitle">Ducato, Sprinter, Iveco Daily – porównania modeli, przeróbki kamperowe, kalkulatory DMC i zabudowy. Twoje kompendium wiedzy o busach.</p>
+  <img src="/images/hero-bg.jpg" alt="Bus dostawczy na górskiej drodze" class="hero__bg" width="1024" height="576">
+  <div class="hero__content">
+    <h1 class="hero__title">Wszystko o <em>busach</em></h1>
+    <p class="hero__subtitle">Porównania modeli, przeróbki kamperowe, kalkulatory DMC i zabudowy. Twoje kompendium wiedzy o vanach.</p>
     <div class="hero__actions">
-      <a href="/porownania/" class="btn btn--primary">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
-        Porównaj busy
-      </a>
-      <a href="/kampery/" class="btn btn--ghost">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8l4 4-4 4M8 12h8"/></svg>
-        Znajdź kampera
-      </a>
+      <a href="/porownania/" class="btn btn--primary">Porównaj busy</a>
+      <a href="/kampery/" class="btn btn--ghost">Znajdź kampera</a>
     </div>
   </div>
 </section>
