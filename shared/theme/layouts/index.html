@@ -1,48 +1,157 @@
 {{ define "main" }}
-<div class="container">
-  {{/* Hero section */}}
-  <section class="hero">
-    <h1 class="hero__title">{{ .Site.Title }}</h1>
-    {{ with .Site.Params.description }}
-    <p class="hero__description">{{ . }}</p>
-    {{ end }}
-  </section>
 
-  {{/* Latest articles — exclude author profiles */}}
-  {{ $articles := where .Site.RegularPages "Section" "ne" "autor" }}
-  {{ if $articles }}
-  <section class="home-section">
-    <h2 class="section-title">Najnowsze artykuly</h2>
-    <div class="article-list article-list--grid">
+{{/* ═══ HERO ═══ */}}
+<section class="hero">
+  <div class="container">
+    <div class="hero__badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Aktualnosc 2026
+    </div>
+    <h1 class="hero__title">Wszystko o <span>busach</span>, vanach i kamperach</h1>
+    <p class="hero__subtitle">Ducato, Sprinter, Iveco Daily — porownania modeli, przerobki kamperowe, kalkulatory DMC i zabudowy. Twoje kompendium wiedzy o busach.</p>
+    <div class="hero__actions">
+      <a href="/porownania/" class="btn btn--primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        Porownaj busy
+      </a>
+      <a href="/kampery/" class="btn btn--ghost">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8l4 4-4 4M8 12h8"/></svg>
+        Znajdz kampera
+      </a>
+    </div>
+  </div>
+</section>
+
+{{/* ═══ FEATURE BAR ═══ */}}
+<section class="features">
+  <div class="features__grid">
+    <a href="/modele-busow/" class="feature-item">
+      <div class="feature-item__icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </div>
+      <div class="feature-item__text">
+        <strong>Modele busow</strong>
+        <span>Ducato, Sprinter, Daily</span>
+      </div>
+    </a>
+    <a href="/porownania/" class="feature-item">
+      <div class="feature-item__icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+      </div>
+      <div class="feature-item__text">
+        <strong>Porownania</strong>
+        <span>Tabele, rankingi, testy</span>
+      </div>
+    </a>
+    <a href="/narzedzia/" class="feature-item">
+      <div class="feature-item__icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 13h4M9 17h2"/></svg>
+      </div>
+      <div class="feature-item__text">
+        <strong>Kalkulatory</strong>
+        <span>DMC, paliwo, zabudowa</span>
+      </div>
+    </a>
+    <a href="/przerobka-busa/" class="feature-item">
+      <div class="feature-item__icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      </div>
+      <div class="feature-item__text">
+        <strong>Przerobki</strong>
+        <span>Bus na kamper DIY</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+{{/* ═══ LATEST ARTICLES ═══ */}}
+{{ $articles := where .Site.RegularPages "Section" "ne" "autor" }}
+{{ if $articles }}
+<section class="section">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="section__title">Najnowsze artykuly</h2>
+    </div>
+    <div class="card-grid card-grid--3">
       {{ range first 6 $articles }}
-      {{ partial "article-card.html" . }}
+      <article class="card">
+        {{ with .Params.image }}
+        <div class="card__image">
+          <img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}" loading="lazy" width="400" height="225">
+        </div>
+        {{ else }}
+        <div class="card__image"></div>
+        {{ end }}
+        {{ with .Params.categories }}
+        <span class="card__badge">{{ index . 0 | humanize }}</span>
+        {{ end }}
+        <div class="card__body">
+          <h3 class="card__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+          {{ with .Description }}
+          <p class="card__excerpt">{{ . | truncate 140 }}</p>
+          {{ end }}
+          <div class="card__meta">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02.01.2006" }}</time>
+            <span>{{ math.Round (div (countwords .Content) 200.0) }} min czytania</span>
+          </div>
+        </div>
+      </article>
       {{ end }}
     </div>
-  </section>
-  {{ end }}
+  </div>
+</section>
+{{ end }}
 
-  {{/* Sections / clusters */}}
-  {{ range .Sections }}
-  {{ if and (ne .Section "autor") (ne .Section "narzedzia") }}
-  {{ $pages := first 3 .Pages }}
-  {{ if $pages }}
-  <section class="home-section">
-    <h2 class="section-title">
-      <a href="{{ .Permalink }}" style="color: inherit; text-decoration: none;">{{ .Title }}</a>
-    </h2>
-    <div class="article-list article-list--grid">
-      {{ range $pages }}
-      {{ partial "article-card.html" . }}
+{{/* ═══ CLUSTER SECTIONS ═══ */}}
+{{ range .Sections }}
+{{ if and (ne .Section "autor") (ne .Section "narzedzia") }}
+{{ $pages := .Pages }}
+{{ if $pages }}
+<section class="section{{ if eq (mod (index (seq (len ($.Sections))) 0) 2) 0 }} section--alt{{ end }}">
+  <div class="container">
+    <div class="section__header">
+      <h2 class="section__title">{{ .Title }}</h2>
+      {{ if gt (len $pages) 3 }}
+      <a href="{{ .Permalink }}" class="section__link">Wszystkie artykuly &rarr;</a>
       {{ end }}
     </div>
-    {{ if gt (len .Pages) 3 }}
-    <p style="text-align: center; margin-top: 1rem;">
-      <a href="{{ .Permalink }}">Zobacz wszystkie artykuly &rarr;</a>
-    </p>
-    {{ end }}
-  </section>
-  {{ end }}
-  {{ end }}
-  {{ end }}
-</div>
+    <div class="card-grid card-grid--3">
+      {{ range first 3 $pages }}
+      <article class="card">
+        {{ with .Params.image }}
+        <div class="card__image">
+          <img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}" loading="lazy" width="400" height="225">
+        </div>
+        {{ else }}
+        <div class="card__image"></div>
+        {{ end }}
+        <div class="card__body">
+          <h3 class="card__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+          {{ with .Description }}
+          <p class="card__excerpt">{{ . | truncate 120 }}</p>
+          {{ end }}
+        </div>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+{{ end }}
+
+{{/* ═══ CTA BANNER ═══ */}}
+<section class="cta-banner">
+  <div class="container">
+    <div class="cta-banner__text">
+      <h2>Porownaj busy obok siebie</h2>
+      <p>Wymiary, ladownosc, spalanie, ceny — wszystko w jednej tabeli. Ducato vs Sprinter vs Daily.</p>
+    </div>
+    <a href="/narzedzia/porownywarka-busow/" class="btn btn--primary">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+      Otworz porownywarte
+    </a>
+  </div>
+</section>
+
 {{ end }}

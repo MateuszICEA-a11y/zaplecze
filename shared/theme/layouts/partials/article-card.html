@@ -1,27 +1,32 @@
-<article class="article-card">
+<article class="card">
   {{ with .Params.image }}
-  <div class="article-card__image">
-    <a href="{{ $.Permalink }}">
-      <img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}" loading="lazy" width="640" height="360">
-    </a>
+  <div class="card__image">
+    <img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}" loading="lazy" width="400" height="225">
+    {{ with $.Params.categories }}
+    <span class="card__badge">{{ index . 0 | humanize }}</span>
+    {{ end }}
+  </div>
+  {{ else }}
+  <div class="card__image">
+    {{ with .Params.categories }}
+    <span class="card__badge">{{ index . 0 | humanize }}</span>
+    {{ end }}
   </div>
   {{ end }}
-  <div class="article-card__body">
-    {{ with .Params.categories }}
-    <div class="article-card__category">{{ index . 0 | humanize }}</div>
-    {{ end }}
-    <h3 class="article-card__title">
+  <div class="card__body">
+    <h3 class="card__title">
       <a href="{{ .Permalink }}">{{ .Title }}</a>
     </h3>
     {{ with .Description }}
-    <p class="article-card__excerpt">{{ . | truncate 160 }}</p>
+    <p class="card__excerpt">{{ . | truncate 140 }}</p>
     {{ end }}
-    <div class="article-card__meta">
+    <div class="card__meta">
       <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02.01.2006" }}</time>
       {{ with .Params.author }}
-      <span>{{ . | humanize }}</span>
+      {{ $author := $.Site.GetPage (printf "/autor/%s" .) }}
+      {{ if $author }}<span>{{ $author.Title }}</span>{{ end }}
       {{ end }}
-      <span>{{ math.Round (div (countwords .Content) 200.0) }} min czytania</span>
+      <span>{{ math.Round (div (countwords .Content) 200.0) }} min</span>
     </div>
   </div>
 </article>

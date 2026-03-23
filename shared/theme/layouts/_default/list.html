@@ -2,34 +2,30 @@
 {{ partial "breadcrumbs.html" . }}
 
 <div class="container">
-  <header style="padding: 2rem 0 1rem;">
+  <div class="list-header">
     <h1>{{ .Title }}</h1>
     {{ with .Description }}
-    <p style="color: var(--color-text-light); font-size: 1.1rem; margin-top: 0.5rem;">{{ . }}</p>
+    <p>{{ . }}</p>
     {{ end }}
     {{ with .Content }}
-    <div class="content-narrow" style="margin-top: 1rem;">
-      {{ . }}
-    </div>
+    <div class="content-narrow mt-2">{{ . }}</div>
     {{ end }}
-  </header>
+  </div>
 
   {{ $pages := .Pages }}
   {{ $paginator := .Paginate $pages 12 }}
 
-  <div class="article-list article-list--grid">
+  <div class="card-grid card-grid--3">
     {{ range $paginator.Pages }}
     {{ partial "article-card.html" . }}
     {{ end }}
   </div>
 
-  {{/* Pagination */}}
   {{ if gt $paginator.TotalPages 1 }}
   <nav class="pagination" aria-label="Paginacja">
     {{ if $paginator.HasPrev }}
-    <a href="{{ $paginator.Prev.URL }}">&#8592; Nowsze</a>
+    <a href="{{ $paginator.Prev.URL }}">&larr; Nowsze</a>
     {{ end }}
-
     {{ range $paginator.Pagers }}
     {{ if eq . $paginator }}
     <span class="active">{{ .PageNumber }}</span>
@@ -37,9 +33,8 @@
     <a href="{{ .URL }}">{{ .PageNumber }}</a>
     {{ end }}
     {{ end }}
-
     {{ if $paginator.HasNext }}
-    <a href="{{ $paginator.Next.URL }}">Starsze &#8594;</a>
+    <a href="{{ $paginator.Next.URL }}">Starsze &rarr;</a>
     {{ end }}
   </nav>
   {{ end }}

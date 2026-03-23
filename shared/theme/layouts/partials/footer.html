@@ -1,8 +1,55 @@
 <footer class="site-footer">
   <div class="container">
-    <div>&copy; {{ now.Year }} {{ .Site.Title }}. Wszelkie prawa zastrzezone.</div>
-    <div>
-      {{ with .Site.Params.description }}{{ . }}{{ end }}
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="{{ .Site.BaseURL }}" class="site-logo">
+          <div class="site-logo__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="color:#fff"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <div class="site-logo__text">Bus<span>maniak</span>.pl</div>
+        </a>
+        <p>{{ .Site.Params.description }}</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Modele</h4>
+        <ul>
+          <li><a href="/modele-busow/">Fiat Ducato</a></li>
+          <li><a href="/modele-busow/">Mercedes Sprinter</a></li>
+          <li><a href="/modele-busow/">Iveco Daily</a></li>
+          <li><a href="/modele-busow/">Ford Transit</a></li>
+          <li><a href="/modele-busow/">Renault Master</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Tematy</h4>
+        <ul>
+          <li><a href="/kampery/">Kampery</a></li>
+          <li><a href="/przerobka-busa/">Przerobki</a></li>
+          <li><a href="/zabudowa-busa/">Zabudowy</a></li>
+          <li><a href="/porownania/">Porownania</a></li>
+          <li><a href="/serwis-eksploatacja/">Serwis</a></li>
+          <li><a href="/vanlife-podroze/">Vanlife</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Narzedzia</h4>
+        <ul>
+          <li><a href="/narzedzia/kalkulator-dmc/">Kalkulator DMC</a></li>
+          <li><a href="/narzedzia/kalkulator-paliwa/">Kalkulator paliwa</a></li>
+          <li><a href="/narzedzia/porownywarka-busow/">Porownywarka busow</a></li>
+          <li><a href="/narzedzia/kalkulator-zabudowy/">Koszt zabudowy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div>&copy; {{ now.Year }} {{ .Site.Title }}. Wszelkie prawa zastrzezone.</div>
+      <div>
+        <a href="/sitemap.xml">Mapa strony</a>
+      </div>
     </div>
   </div>
 </footer>
