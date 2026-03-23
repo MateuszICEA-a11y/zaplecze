@@ -1,0 +1,72 @@
+baseURL = "https://busmaniak.pl/"
+languageCode = "pl"
+title = "Busmaniak.pl"
+theme = "theme"
+themesDir = "../../shared"
+
+summaryLength = 30
+
+[pagination]
+  pagerSize = 12
+enableRobotsTXT = true
+
+[params]
+  description = "Portal o busach, vanach i kamperach — Ducato, Sprinter, Iveco Daily. Porownania, zabudowy, przerobki, kalkulatory."
+  ogImage = "/images/og-default.jpg"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+    ordered = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[[menus.main]]
+  name = "Modele"
+  url = "/modele-busow/"
+  weight = 1
+
+[[menus.main]]
+  name = "Kampery"
+  url = "/kampery/"
+  weight = 2
+
+[[menus.main]]
+  name = "Przerobki"
+  url = "/przerobka-busa/"
+  weight = 3
+
+[[menus.main]]
+  name = "Zabudowy"
+  url = "/zabudowa-busa/"
+  weight = 4
+
+[[menus.main]]
+  name = "Porownania"
+  url = "/porownania/"
+  weight = 5
+
+[[menus.main]]
+  name = "Serwis"
+  url = "/serwis-eksploatacja/"
+  weight = 6
+
+[[menus.main]]
+  name = "Narzedzia"
+  url = "/narzedzia/"
+  weight = 7

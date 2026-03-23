@@ -1,0 +1,62 @@
+portal:
+  name: "busmaniak.pl"
+  domain: "busmaniak.pl"
+  niche: "busy dostawcze, vany, kampery — Fiat Ducato, Mercedes Sprinter, Iveco Daily, Ford Transit, przerobki kamperowe, vanlife"
+  type: "hybrid"
+  language: "pl"
+
+lifecycle:
+  stage: "SETUP"
+  created: "2026-03-23"
+
+content:
+  ai_model: "gemini-2.0-flash"
+  system_prompt_file: "config/system_prompt.txt"
+  articles_per_week: 14
+  freshness_threshold_days: 180
+  batch_size: 5
+  target_article_count: 100
+
+authors:
+  - slug: "marek-kowalczyk"
+    specialties: ["modele busow", "dane techniczne", "testy vanow"]
+  - slug: "anna-wozniak"
+    specialties: ["kampery", "vanlife", "przerobki kamperowe"]
+  - slug: "tomasz-zielinski"
+    specialties: ["porownania", "serwis i eksploatacja", "zabudowy busow"]
+
+branding:
+  primary_color: "#1a5276"
+  secondary_color: "#f39c12"
+  logo: "static/images/logo.svg"
+
+social:
+  facebook_page_id: null
+  post_delay_min: 30
+  post_delay_max: 120
+
+seo:
+  siteFocus_target: 0.80
+  siteRadius_max: 0.25
+  indexation_target: 0.80
+
+monitoring:
+  gsc_property: "sc-domain:busmaniak.pl"
+  senuto_project_id: null
+
+seed_keywords:
+  - "fiat ducato"
+  - "mercedes sprinter"
+  - "iveco daily"
+  - "ford transit"
+  - "kamper"
+  - "camper van"
+  - "przerobka busa na kampera"
+  - "zabudowa busa"
+  - "vanlife"
+  - "wynajem kampera"
+  - "bus dostawczy"
+  - "volkswagen crafter"
+  - "renault master"
+  - "koszty utrzymania busa"
+  - "porownanie busow"

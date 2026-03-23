@@ -1,0 +1,22 @@
+{{ with .Params.author }}
+{{ $author := $.Site.GetPage (printf "/autor/%s" .) }}
+{{ if $author }}
+<div class="author-box">
+  <div class="author-box__avatar">
+    {{ with $author.Params.avatar }}
+    <img src="{{ . }}" alt="{{ $author.Title }}" width="64" height="64">
+    {{ else }}
+    {{ substr $author.Title 0 1 }}
+    {{ end }}
+  </div>
+  <div>
+    <div class="author-box__name">
+      <a href="{{ $author.Permalink }}">{{ $author.Title }}</a>
+    </div>
+    {{ with $author.Params.bio }}
+    <div class="author-box__bio">{{ . | truncate 200 }}</div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
+{{ end }}

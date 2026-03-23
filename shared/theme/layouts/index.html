@@ -1,0 +1,48 @@
+{{ define "main" }}
+<div class="container">
+  {{/* Hero section */}}
+  <section class="hero">
+    <h1 class="hero__title">{{ .Site.Title }}</h1>
+    {{ with .Site.Params.description }}
+    <p class="hero__description">{{ . }}</p>
+    {{ end }}
+  </section>
+
+  {{/* Latest articles — exclude author profiles */}}
+  {{ $articles := where .Site.RegularPages "Section" "ne" "autor" }}
+  {{ if $articles }}
+  <section class="home-section">
+    <h2 class="section-title">Najnowsze artykuly</h2>
+    <div class="article-list article-list--grid">
+      {{ range first 6 $articles }}
+      {{ partial "article-card.html" . }}
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{/* Sections / clusters */}}
+  {{ range .Sections }}
+  {{ if and (ne .Section "autor") (ne .Section "narzedzia") }}
+  {{ $pages := first 3 .Pages }}
+  {{ if $pages }}
+  <section class="home-section">
+    <h2 class="section-title">
+      <a href="{{ .Permalink }}" style="color: inherit; text-decoration: none;">{{ .Title }}</a>
+    </h2>
+    <div class="article-list article-list--grid">
+      {{ range $pages }}
+      {{ partial "article-card.html" . }}
+      {{ end }}
+    </div>
+    {{ if gt (len .Pages) 3 }}
+    <p style="text-align: center; margin-top: 1rem;">
+      <a href="{{ .Permalink }}">Zobacz wszystkie artykuly &rarr;</a>
+    </p>
+    {{ end }}
+  </section>
+  {{ end }}
+  {{ end }}
+  {{ end }}
+</div>
+{{ end }}

@@ -1,0 +1,20 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": {{ .Title | jsonify }},
+  "url": {{ .Permalink | jsonify }}
+  {{- with .Params.role }},
+  "jobTitle": {{ . | jsonify }}
+  {{- end }}
+  {{- with .Params.bio }},
+  "description": {{ . | truncate 250 | jsonify }}
+  {{- end }}
+  {{- with .Params.avatar }},
+  "image": {{ . | absURL | jsonify }}
+  {{- end }}
+  {{- with .Params.sameAs }},
+  "sameAs": [{{ range $i, $v := . }}{{ if $i }},{{ end }}{{ $v | jsonify }}{{ end }}]
+  {{- end }}
+}
+</script>

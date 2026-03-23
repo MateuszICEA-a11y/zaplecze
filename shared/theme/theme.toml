@@ -1,0 +1,8 @@
+name = "BWP Theme"
+license = "Proprietary"
+licenselink = ""
+description = "SEO-optimized Hugo theme for BWP 2.0 portal network"
+min_version = "0.120.0"
+
+[author]
+  name = "ICEA BWP"

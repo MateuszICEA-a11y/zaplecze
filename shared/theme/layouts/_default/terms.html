@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="container" style="padding: 2rem 0;">
+  <h1>{{ .Title }}</h1>
+
+  <div style="margin-top: 1.5rem;">
+    {{ range .Pages }}
+    <a href="{{ .Permalink }}" class="tag" style="font-size: 0.95rem; padding: 0.4rem 0.8rem; margin-bottom: 0.5rem;">
+      {{ .Title }} ({{ len .Pages }})
+    </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

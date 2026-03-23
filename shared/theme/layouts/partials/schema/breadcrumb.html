@@ -1,0 +1,35 @@
+{{- if not .IsHome -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Strona glowna",
+      "item": {{ .Site.BaseURL | jsonify }}
+    }
+    {{- $pos := 1 }}
+    {{- range .Ancestors.Reverse }}
+    {{- if not .IsHome }}
+    {{- $pos = add $pos 1 }},
+    {
+      "@type": "ListItem",
+      "position": {{ $pos }},
+      "name": {{ .Title | jsonify }},
+      "item": {{ .Permalink | jsonify }}
+    }
+    {{- end }}
+    {{- end }}
+    {{- $pos = add $pos 1 }},
+    {
+      "@type": "ListItem",
+      "position": {{ $pos }},
+      "name": {{ .Title | jsonify }},
+      "item": {{ .Permalink | jsonify }}
+    }
+  ]
+}
+</script>
+{{- end -}}

@@ -1,0 +1,257 @@
+{
+  "portal": "busmaniak.pl",
+  "niche": "busy, vany, kampery (Ducato, Sprinter, Iveco Daily)",
+  "research_date": "2026-03-23",
+  "sources": ["senuto_mcp", "dataforseo_api"],
+  "total_target_articles": 100,
+  "clusters": [
+    {
+      "id": "modele-busow",
+      "name": "Modele busow i vanow",
+      "type": "informational",
+      "priority": 0.95,
+      "pillar": {
+        "keyword": "samochod dostawczy",
+        "volume": 8100,
+        "title_draft": "Samochody dostawcze - kompletny przewodnik po busach i vanach 2026"
+      },
+      "satellites": [
+        {"keyword": "fiat ducato", "volume": 33100, "type": "informational", "title_draft": "Fiat Ducato - wszystko co musisz wiedziec"},
+        {"keyword": "mercedes sprinter", "volume": 18100, "type": "informational", "title_draft": "Mercedes Sprinter - dane techniczne, wersje, opinie"},
+        {"keyword": "iveco daily", "volume": 22200, "type": "commercial", "title_draft": "Iveco Daily - przeglad modeli i wersji"},
+        {"keyword": "fiat ducato maxi", "volume": 2900, "type": "informational", "title_draft": "Fiat Ducato Maxi - wymiary, ladownosc, wersje"},
+        {"keyword": "mercedes dostawczy", "volume": 2400, "type": "commercial", "title_draft": "Mercedes dostawczy - Sprinter, Vito i Citan"},
+        {"keyword": "fiat dostawczy", "volume": 1900, "type": "commercial", "title_draft": "Fiat dostawczy - Ducato, Doblo i Fiorino"},
+        {"keyword": "renault master wymiary", "volume": 1000, "type": "informational", "title_draft": "Renault Master - wymiary, ladownosc, dane techniczne"},
+        {"keyword": "ford transit wymiary", "volume": 720, "type": "informational", "title_draft": "Ford Transit - wymiary, wersje i ladownosc"},
+        {"keyword": "opel vivaro wymiary", "volume": 720, "type": "informational", "title_draft": "Opel Vivaro - wymiary i dane techniczne"},
+        {"keyword": "fiat ducato 9 osobowy", "volume": 480, "type": "informational", "title_draft": "Fiat Ducato 9-osobowy - prawo jazdy, wersje, ceny"},
+        {"keyword": "fiat ducato brygadowka", "volume": 480, "type": "informational", "title_draft": "Fiat Ducato brygadowka - dla ekip budowlanych"},
+        {"keyword": "mercedes vito", "volume": 18100, "type": "informational", "title_draft": "Mercedes Vito - dane techniczne i przeglad wersji"},
+        {"keyword": "samochody dostawcze do 3 5 tony", "volume": 1900, "type": "commercial", "title_draft": "Samochody dostawcze do 3.5t - na co zwrocic uwage"}
+      ],
+      "estimated_articles": 14
+    },
+    {
+      "id": "kampery",
+      "name": "Kampery i camper vany",
+      "type": "commercial",
+      "priority": 0.90,
+      "pillar": {
+        "keyword": "kamper",
+        "volume": 33100,
+        "title_draft": "Kamper - kompletny przewodnik kupujacego 2026"
+      },
+      "satellites": [
+        {"keyword": "kampery uzywane", "volume": 2400, "type": "commercial", "title_draft": "Kampery uzywane - na co uwazac przy zakupie"},
+        {"keyword": "kamper cena", "volume": 2900, "type": "commercial", "title_draft": "Ile kosztuje kamper? Ceny nowych i uzywanych"},
+        {"keyword": "camper van", "volume": 5400, "type": "commercial", "title_draft": "Camper van - czym rozni sie od klasycznego kampera"},
+        {"keyword": "mini kamper", "volume": 1600, "type": "commercial", "title_draft": "Mini kamper - najlepsze modele dla 2 osob"},
+        {"keyword": "kamper 4 osobowy", "volume": 590, "type": "commercial", "title_draft": "Kamper 4-osobowy - ktory model wybrac"},
+        {"keyword": "kamper volkswagen", "volume": 480, "type": "informational", "title_draft": "Kamper Volkswagen - California, Grand California i inne"},
+        {"keyword": "mercedes marco polo", "volume": 2400, "type": "informational", "title_draft": "Mercedes Marco Polo - luksusowy camper van"},
+        {"keyword": "samochody kempingowe", "volume": 1600, "type": "commercial", "title_draft": "Samochody kempingowe - rodzaje, ceny, porady"},
+        {"keyword": "kampery na sprzedaz", "volume": 2900, "type": "commercial", "title_draft": "Kampery na sprzedaz - gdzie kupic kampera w Polsce"},
+        {"keyword": "tanie kampery", "volume": 390, "type": "commercial", "title_draft": "Tanie kampery - jak kupic kampera za male pieniadze"},
+        {"keyword": "kamper 5 osobowy", "volume": 590, "type": "commercial", "title_draft": "Kamper 5-osobowy - modele dla rodzin"}
+      ],
+      "estimated_articles": 12
+    },
+    {
+      "id": "przerobka-busa",
+      "name": "Przerobka busa na kampera",
+      "type": "informational",
+      "priority": 0.85,
+      "pillar": {
+        "keyword": "budowanie kampera",
+        "volume": 880,
+        "title_draft": "Budowa kampera od zera - kompletny poradnik krok po kroku"
+      },
+      "satellites": [
+        {"keyword": "bus przerobiony na kamper", "volume": 720, "type": "commercial", "title_draft": "Bus przerobiony na kamper - gotowe projekty i inspiracje"},
+        {"keyword": "kampery samorobki", "volume": 590, "type": "commercial", "title_draft": "Kampery samorobki - DIY camper van projekty"},
+        {"keyword": "przerobka busa na kampera przepisy", "volume": 590, "type": "informational", "title_draft": "Przerobka busa na kampera - przepisy i homologacja"},
+        {"keyword": "bus kamper", "volume": 1000, "type": "commercial", "title_draft": "Bus kamper - jaki bus wybrac pod przerobke"},
+        {"keyword": "fiat ducato kamper", "volume": 1600, "type": "informational", "title_draft": "Fiat Ducato kamper - dlaczego jest najpopularniejszy"},
+        {"keyword": "budowa kampera", "volume": 480, "type": "informational", "title_draft": "Budowa kampera - koszty, etapy, materialy"},
+        {"keyword": "zabudowa kampera", "volume": 1300, "type": "commercial", "title_draft": "Zabudowa kampera - projekty i rozklady wnetrza"},
+        {"keyword": "zabudowa kamperowa do busa", "volume": 140, "type": "commercial", "title_draft": "Zabudowa kamperowa do busa - gotowe moduly"},
+        {"keyword": "busy przerobione na kampera", "volume": 590, "type": "commercial", "title_draft": "Busy przerobione na kampera - galeria realizacji"},
+        {"keyword": "pilnie sprzedam kampera fiat ducato", "volume": 1300, "type": "commercial", "title_draft": "Fiat Ducato kamper uzywany - jak znalezc okazje"}
+      ],
+      "estimated_articles": 11
+    },
+    {
+      "id": "zabudowa-busa",
+      "name": "Zabudowa busa",
+      "type": "commercial",
+      "priority": 0.80,
+      "pillar": {
+        "keyword": "zabudowa busa",
+        "volume": 1900,
+        "title_draft": "Zabudowa busa - kompletny przewodnik po rodzajach i rozwiazaniach"
+      },
+      "satellites": [
+        {"keyword": "zabudowa busa na narzedzia", "volume": 480, "type": "commercial", "title_draft": "Zabudowa busa na narzedzia - systemy i regaly"},
+        {"keyword": "zabudowa warsztatowa busa", "volume": 260, "type": "commercial", "title_draft": "Zabudowa warsztatowa busa - mobilny warsztat"},
+        {"keyword": "zabudowa busa regaly", "volume": 170, "type": "commercial", "title_draft": "Regaly do busa - systemy zabudowy modulowej"},
+        {"keyword": "zabudowa serwisowa busa", "volume": 140, "type": "commercial", "title_draft": "Zabudowa serwisowa busa - dla ekip serwisowych"},
+        {"keyword": "zabudowa busa sklejka", "volume": 110, "type": "commercial", "title_draft": "Zabudowa busa sklejka - DIY krok po kroku"},
+        {"keyword": "zabudowa paki busa", "volume": 140, "type": "commercial", "title_draft": "Zabudowa paki busa - ochrona ladunku"},
+        {"keyword": "zabudowa izotermiczna busa", "volume": 70, "type": "commercial", "title_draft": "Zabudowa izotermiczna busa - transport chlodniczy"},
+        {"keyword": "zabudowa busa do spania", "volume": 70, "type": "commercial", "title_draft": "Zabudowa busa do spania - proste rozwiazania"},
+        {"keyword": "zabudowa busa na kamper", "volume": 260, "type": "commercial", "title_draft": "Zabudowa busa na kampera - od czego zaczac"},
+        {"keyword": "zabudowa busa cena", "volume": 30, "type": "commercial", "title_draft": "Ile kosztuje zabudowa busa - cennik 2026"}
+      ],
+      "estimated_articles": 11
+    },
+    {
+      "id": "wynajem-kamperow",
+      "name": "Wynajem kamperow",
+      "type": "transactional",
+      "priority": 0.75,
+      "pillar": {
+        "keyword": "wynajem kampera",
+        "volume": 9900,
+        "title_draft": "Wynajem kampera - poradnik i porownanie wypozyczalni 2026"
+      },
+      "satellites": [
+        {"keyword": "wynajecie kampera", "volume": 12100, "type": "commercial", "title_draft": "Wynajecie kampera - ile kosztuje i na co uwazac"},
+        {"keyword": "wypozyczalnia kamperow", "volume": 5400, "type": "commercial", "title_draft": "Wypozyczalnie kamperow w Polsce - przeglad firm"},
+        {"keyword": "wynajem kampera cena", "volume": 1900, "type": "commercial", "title_draft": "Wynajem kampera cena - ile kosztuje sezon 2026"},
+        {"keyword": "wynajem kamper warszawa", "volume": 1000, "type": "commercial", "title_draft": "Wynajem kampera Warszawa - najlepsze wypozyczalnie"},
+        {"keyword": "ile kosztuje wynajem kampera", "volume": 720, "type": "informational", "title_draft": "Ile kosztuje wynajem kampera - cennik i koszty ukryte"},
+        {"keyword": "maly kamper wynajem", "volume": 590, "type": "commercial", "title_draft": "Maly kamper wynajem - kompaktowe kampery do wynajecia"},
+        {"keyword": "camper van wynajem", "volume": 590, "type": "commercial", "title_draft": "Camper van wynajem - alternatywa dla duzego kampera"},
+        {"keyword": "ile kosztuje wypozyczenie kampera", "volume": 880, "type": "informational", "title_draft": "Ile kosztuje wypozyczenie kampera na weekend i tydzien"}
+      ],
+      "estimated_articles": 9
+    },
+    {
+      "id": "serwis-eksploatacja",
+      "name": "Serwis i eksploatacja busow",
+      "type": "informational",
+      "priority": 0.85,
+      "pillar": {
+        "keyword": "kontrolki w samochodzie",
+        "volume": 33100,
+        "title_draft": "Kontrolki w busie i vanie - co oznaczaja i jak reagowac"
+      },
+      "satellites": [
+        {"keyword": "check engine", "volume": 18100, "type": "navigational", "title_draft": "Check engine w busie - przyczyny i diagnostyka"},
+        {"keyword": "kontrolka silnika", "volume": 5400, "type": "informational", "title_draft": "Kontrolka silnika - co oznacza i czy mozna jechac"},
+        {"keyword": "adblue co to", "volume": 4400, "type": "informational", "title_draft": "AdBlue w busach - co to jest, ile kosztuje, jak uzupelniac"},
+        {"keyword": "wypalanie dpf", "volume": 2900, "type": "commercial", "title_draft": "Wypalanie DPF w busie - kiedy i jak regenerowac filtr"},
+        {"keyword": "cisnienie w oponach", "volume": 3600, "type": "informational", "title_draft": "Cisnienie w oponach busa - tabela wartosci"},
+        {"keyword": "kontrolka oleju", "volume": 4400, "type": "informational", "title_draft": "Kontrolka oleju w busie - co robic"},
+        {"keyword": "fiat ducato spalanie", "volume": 170, "type": "informational", "title_draft": "Fiat Ducato spalanie - srednie zuzycie paliwa"},
+        {"keyword": "sprinter spalanie", "volume": 70, "type": "informational", "title_draft": "Mercedes Sprinter spalanie - ile pali w miescie i trasie"},
+        {"keyword": "iveco daily spalanie", "volume": 110, "type": "informational", "title_draft": "Iveco Daily spalanie - zuzycie paliwa wg wersji"},
+        {"keyword": "immobilizer", "volume": 9900, "type": "informational", "title_draft": "Immobilizer w busie - awaria, programowanie, rozwiazania"},
+        {"keyword": "czujnik polozenia walu", "volume": 6600, "type": "informational", "title_draft": "Czujnik polozenia walu korbowego - objawy awarii w busie"},
+        {"keyword": "moment dokrecenia srub", "volume": 5400, "type": "informational", "title_draft": "Moment dokrecania kol w busie - tabela Nm"},
+        {"keyword": "serwis mercedes", "volume": 3600, "type": "commercial", "title_draft": "Serwis Mercedesa Sprintera - koszty przegladu i napraw"}
+      ],
+      "estimated_articles": 14
+    },
+    {
+      "id": "vanlife-podroze",
+      "name": "Vanlife i podroze",
+      "type": "informational",
+      "priority": 0.65,
+      "pillar": {
+        "keyword": "vanlife",
+        "volume": 1300,
+        "title_draft": "Vanlife w Polsce - jak zaczac zycie w busie"
+      },
+      "satellites": [
+        {"keyword": "kamper polska", "volume": 2900, "type": "informational", "title_draft": "Kamperem po Polsce - najlepsze trasy i miejsca"},
+        {"keyword": "bus kamper z lazienka", "volume": 70, "type": "informational", "title_draft": "Bus kamper z lazienka - czy to mozliwe"},
+        {"keyword": "bus kamper 4x4", "volume": 50, "type": "informational", "title_draft": "Bus kamper 4x4 - terenowe kampery do offroadu"},
+        {"keyword": "bus kamper wynajem", "volume": 70, "type": "commercial", "title_draft": "Bus kamper wynajem - sprawdz zanim kupisz"},
+        {"keyword": "kamper 8 osobowy", "volume": 390, "type": "commercial", "title_draft": "Kamper 8-osobowy - modele dla duzych rodzin"},
+        {"keyword": "van camper", "volume": 5400, "type": "commercial", "title_draft": "Van camper - maly kamper na co dzien"},
+        {"keyword": "kamper vany", "volume": 1600, "type": "commercial", "title_draft": "Kamper vany - ranking najlepszych modeli 2026"}
+      ],
+      "estimated_articles": 8
+    },
+    {
+      "id": "porownania",
+      "name": "Porownania busow i vanow",
+      "type": "commercial",
+      "priority": 0.88,
+      "unique_value": "Jedyne w polskim internecie szczegolowe porownania busow z tabelami danych technicznych",
+      "pillar": {
+        "keyword": "porownanie aut dostawczych",
+        "volume": 10,
+        "title_draft": "Porownanie busow i vanow 2026 - Ducato vs Sprinter vs Daily vs Transit"
+      },
+      "satellites": [
+        {"keyword": "iveco daily vs fiat ducato", "volume": 10, "type": "informational", "title_draft": "Iveco Daily vs Fiat Ducato - szczegolowe porownanie"},
+        {"keyword": "fiat ducato vs citroen jumper", "volume": 10, "type": "informational", "title_draft": "Fiat Ducato vs Citroen Jumper - blizniacze busy w szczegolach"},
+        {"keyword": "ranking busow 9 osobowych", "volume": 70, "type": "commercial", "title_draft": "Ranking busow 9-osobowych 2026 - top 10"},
+        {"keyword": "fiat ducato ladownosc", "volume": 170, "type": "informational", "title_draft": "Fiat Ducato ladownosc - tabela wg wersji nadwozia"},
+        {"keyword": "ducato maxi wymiary", "volume": 390, "type": "informational", "title_draft": "Fiat Ducato Maxi wymiary - dlugosci, wysokosci, pojemnosc"},
+        {"keyword": "mercedes sprinter dane techniczne", "volume": 170, "type": "commercial", "title_draft": "Mercedes Sprinter dane techniczne - silniki, wymiary, ladownosc"},
+        {"keyword": "mercedes sprinter wymiary", "volume": 170, "type": "informational", "title_draft": "Mercedes Sprinter wymiary - L1H1 do L4H3"},
+        {"keyword": "ranking kamperow", "volume": 30, "type": "commercial", "title_draft": "Ranking kamperow 2026 - najlepsze modele w kazdym budzecie"},
+        {"keyword": "najlepszy bus na kampera", "volume": 0, "type": "commercial", "title_draft": "Najlepszy bus na kampera - ktory model wybrac pod przerobke"},
+        {"keyword": "iveco daily 7 osobowy", "volume": 90, "type": "commercial", "title_draft": "Iveco Daily 7-osobowy - wersje osobowe Daily"}
+      ],
+      "estimated_articles": 11
+    },
+    {
+      "id": "narzedzia",
+      "name": "Narzedzia i kalkulatory",
+      "type": "informational",
+      "priority": 0.82,
+      "unique_value": "Interaktywne kalkulatory DMC, spalania, kosztow zabudowy — unikalna wartosc portalu",
+      "pillar": {
+        "keyword": "dopuszczalna masa calkowita",
+        "volume": 720,
+        "title_draft": "Dopuszczalna masa calkowita (DMC) - co to jest i jak obliczyc"
+      },
+      "satellites": [
+        {"keyword": "dmc co to", "volume": 720, "type": "informational", "title_draft": "DMC co to - dopuszczalna masa calkowita wyjasnienie"},
+        {"keyword": "dopuszczalna masa calkowita pojazdu", "volume": 590, "type": "informational", "title_draft": "DMC pojazdu - jak odczytac z dowodu rejestracyjnego"},
+        {"keyword": "dopuszczalna masa calkowita przyczepy", "volume": 320, "type": "informational", "title_draft": "DMC przyczepy - jak dobrac przyczepe do busa"},
+        {"keyword": "dopuszczalna masa calkowita zespolu pojazdow", "volume": 480, "type": "commercial", "title_draft": "DMC zespolu pojazdow - bus z przyczepa"},
+        {"keyword": "fiat ducato maxi ladownosc", "volume": 90, "type": "informational", "title_draft": "KALKULATOR: Ladownosc Fiat Ducato wg wersji"},
+        {"keyword": "porownywarka aut", "volume": 2900, "type": "commercial", "title_draft": "Porownywarka busow - porownaj modele obok siebie"},
+        {"keyword": "fiat ducato 2.3 spalanie", "volume": 50, "type": "informational", "title_draft": "KALKULATOR: Koszty paliwa busa na trasie"}
+      ],
+      "estimated_articles": 10
+    }
+  ],
+  "total_estimated_articles": 100,
+  "unique_value_elements": [
+    {
+      "type": "calculator",
+      "name": "Kalkulator DMC",
+      "description": "Interaktywny kalkulator dopuszczalnej masy calkowitej — uzytkownik wpisuje model busa, wersje, planowan ladunek, system wylicza czy miesci sie w DMC 3.5t",
+      "keywords": ["dopuszczalna masa calkowita", "dmc co to", "ladownosc fiat ducato"],
+      "implementation": "Hugo shortcode + vanilla JS, zero frameworkow"
+    },
+    {
+      "type": "calculator",
+      "name": "Kalkulator kosztow paliwa",
+      "description": "Oblicz koszty paliwa na trasy — wybierz busa, wpisz dystans, cene paliwa",
+      "keywords": ["fiat ducato spalanie", "sprinter spalanie", "iveco daily spalanie"],
+      "implementation": "Hugo shortcode + vanilla JS"
+    },
+    {
+      "type": "comparison_tool",
+      "name": "Porownywarka busow",
+      "description": "Porownaj 2-3 busy obok siebie — wymiary, ladownosc, spalanie, cena, silniki",
+      "keywords": ["porownywarka aut", "porownanie aut dostawczych", "ducato vs sprinter"],
+      "implementation": "Hugo data templates + JSON baza danych busow + vanilla JS"
+    },
+    {
+      "type": "calculator",
+      "name": "Kalkulator kosztow zabudowy",
+      "description": "Oszacuj koszt zabudowy busa — warsztatowej, kamperowej, izotermicznej",
+      "keywords": ["zabudowa busa cena", "zabudowa busa na kamper"],
+      "implementation": "Hugo shortcode + vanilla JS"
+    }
+  ]
+}

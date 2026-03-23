@@ -1,0 +1,8 @@
+<footer class="site-footer">
+  <div class="container">
+    <div>&copy; {{ now.Year }} {{ .Site.Title }}. Wszelkie prawa zastrzezone.</div>
+    <div>
+      {{ with .Site.Params.description }}{{ . }}{{ end }}
+    </div>
+  </div>
+</footer>

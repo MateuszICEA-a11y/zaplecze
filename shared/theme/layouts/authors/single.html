@@ -1,0 +1,49 @@
+{{ define "main" }}
+{{ partial "breadcrumbs.html" . }}
+
+<div class="container">
+  <div class="author-profile">
+    <header class="author-profile__header">
+      <div class="author-profile__avatar">
+        {{ with .Params.avatar }}
+        <img src="{{ . }}" alt="{{ $.Title }}" width="96" height="96">
+        {{ else }}
+        {{ substr .Title 0 1 }}
+        {{ end }}
+      </div>
+      <div>
+        <h1 class="author-profile__name">{{ .Title }}</h1>
+        {{ with .Params.role }}
+        <div class="author-profile__role">{{ . }}</div>
+        {{ end }}
+        {{ with .Params.bio }}
+        <div class="author-profile__bio">{{ . | markdownify }}</div>
+        {{ end }}
+
+        {{/* Social links */}}
+        {{ with .Params.sameAs }}
+        <div style="margin-top: 0.75rem;">
+          {{ range . }}
+          <a href="{{ . }}" rel="noopener" target="_blank" class="tag">{{ . | replaceRE "https?://(www\\.)?" "" | replaceRE "/.*" "" }}</a>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </header>
+
+    {{/* Articles by this author */}}
+    {{ $authorSlug := .File.ContentBaseName }}
+    {{ $articles := where .Site.RegularPages "Params.author" $authorSlug }}
+    {{ if $articles }}
+    <section>
+      <h2 class="section-title">Artykuly autora ({{ len $articles }})</h2>
+      <div class="article-list article-list--grid">
+        {{ range $articles }}
+        {{ partial "article-card.html" . }}
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

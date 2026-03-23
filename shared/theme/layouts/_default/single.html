@@ -1,0 +1,88 @@
+{{ define "main" }}
+{{ partial "breadcrumbs.html" . }}
+
+<article class="article">
+  <div class="container content-narrow">
+    <header class="article__header">
+      <h1 class="article__title">{{ .Title }}</h1>
+      <div class="article__meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02.01.2006" }}</time>
+        {{ with .Params.author }}
+        {{ $author := $.Site.GetPage (printf "/autor/%s" .) }}
+        {{ if $author }}
+        <span>Autor: <a href="{{ $author.Permalink }}">{{ $author.Title }}</a></span>
+        {{ end }}
+        {{ end }}
+        <span>{{ math.Round (div (countwords .Content) 200.0) }} min czytania</span>
+        {{ with .Params.lastmod }}
+        <span>Aktualizacja: {{ .Format "02.01.2006" }}</span>
+        {{ end }}
+      </div>
+    </header>
+
+    {{/* Hero image */}}
+    {{ with .Params.image }}
+    <div class="article__hero">
+      <img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}" width="740" height="416">
+    </div>
+    {{ end }}
+
+    {{/* Table of contents */}}
+    {{ if .Params.toc | default true }}
+    {{ if gt (len .TableOfContents) 100 }}
+    <div class="toc">
+      <div class="toc__title">Spis tresci</div>
+      {{ .TableOfContents }}
+    </div>
+    {{ end }}
+    {{ end }}
+
+    {{/* Article content */}}
+    <div class="article__content">
+      {{ .Content }}
+    </div>
+
+    {{/* FAQ section */}}
+    {{ with .Params.faq }}
+    <section class="faq">
+      <h2 class="faq__title">Najczesciej zadawane pytania</h2>
+      {{ range . }}
+      <div class="faq__item">
+        <div class="faq__question">{{ .question }}</div>
+        <div class="faq__answer">{{ .answer }}</div>
+      </div>
+      {{ end }}
+    </section>
+    {{ end }}
+
+    {{/* Tags */}}
+    {{ with .Params.tags }}
+    <div style="margin-top: 2rem;">
+      {{ range . }}
+      <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>
+      {{ end }}
+    </div>
+    {{ end }}
+
+    {{/* Author box */}}
+    {{ partial "author-box.html" . }}
+
+    {{/* Related articles in same cluster */}}
+    {{ with .Params.cluster }}
+    {{ $cluster := . }}
+    {{ $related := where $.Site.RegularPages "Params.cluster" $cluster }}
+    {{ $related = where $related "Permalink" "ne" $.Permalink }}
+    {{ if $related }}
+    <section style="margin-top: 3rem;">
+      <h2 class="section-title">Przeczytaj tez</h2>
+      <div class="article-list">
+        {{ range first 4 $related }}
+        {{ partial "article-card.html" . }}
+        {{ end }}
+      </div>
+    </section>
+    {{ end }}
+    {{ end }}
+  </div>
+</article>
+{{ end }}

@@ -1,0 +1,35 @@
+# Hugo build output
+**/public/
+**/resources/_gen/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# SQLite
+*.db
+*.db-journal
+
+# Environment / secrets
+.env
+.env.*
+*.key
+
+# Node (if ever needed)
+node_modules/
