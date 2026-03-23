@@ -73,17 +73,17 @@
     <a href="/modele/" class="section__link">Zobacz wszystkie &rarr;</a>
   </div>
   <div class="editorial-grid">
-    {{ range first 5 $articles }}
-    <a href="{{ .Permalink }}" class="editorial-card{{ if eq (index (seq 5) 0) 0 }} card-tall{{ end }} editorial-card--placeholder">
-      {{ with .Params.image }}
-      <img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}" loading="lazy">
+    {{ range $i, $p := first 5 $articles }}
+    <a href="{{ $p.Permalink }}" class="editorial-card{{ if eq $i 0 }} card-tall{{ end }}">
+      {{ with $p.Params.image }}
+      <img src="{{ . }}" alt="{{ $p.Params.image_alt | default $p.Title }}" loading="lazy">
       {{ end }}
       <div class="editorial-card-body">
-        {{ with .Params.categories }}
+        {{ with $p.Params.categories }}
         <div class="editorial-tag">{{ index . 0 | humanize }}</div>
         {{ end }}
-        <h3>{{ .Title }}</h3>
-        {{ with .Description }}
+        <h3>{{ $p.Title }}</h3>
+        {{ with $p.Description }}
         <p>{{ . | truncate 100 }}</p>
         {{ end }}
       </div>
@@ -91,38 +91,37 @@
     {{ end }}
   </div>
 </section>
-{{ else if $articles }}
-<section class="section">
-  <div class="container">
-    <div class="section__header">
-      <h2 class="section__title">Najnowsze artykuły</h2>
-    </div>
-    <div class="card-grid card-grid--3">
-      {{ range first 6 $articles }}
-      <article class="card">
-        {{ with .Params.image }}
-        <div class="card__image">
-          <img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}" loading="lazy" width="400" height="225">
-        </div>
-        {{ else }}
-        <div class="card__image"></div>
-        {{ end }}
-        {{ with .Params.categories }}
-        <span class="card__badge">{{ index . 0 | humanize }}</span>
-        {{ end }}
-        <div class="card__body">
-          <h3 class="card__title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-          {{ with .Description }}
-          <p class="card__excerpt">{{ . | truncate 140 }}</p>
-          {{ end }}
-          <div class="card__meta">
-            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02.01.2006" }}</time>
-            <span>{{ math.Round (div (countwords .Content) 200.0) }} min czytania</span>
-          </div>
-        </div>
-      </article>
-      {{ end }}
-    </div>
+{{ else }}
+{{/* Static editorial cards when no articles yet */}}
+<section class="editorial-section">
+  <div class="editorial-section__header">
+    <h2 class="section__title">Odkryj nasze tematy</h2>
+  </div>
+  <div class="editorial-grid">
+    <a href="/kampery/" class="editorial-card card-tall">
+      <img src="/images/kampery-featured.jpg" alt="Wnętrze kampera przerobionego z busa" loading="lazy">
+      <div class="editorial-card-body">
+        <div class="editorial-tag">Kampery</div>
+        <h3>Kampery i camper vany</h3>
+        <p>Przewodnik kupującego – modele, ceny, porady dla początkujących kamperowiczów.</p>
+      </div>
+    </a>
+    <a href="/porownania/" class="editorial-card">
+      <img src="/images/porownania-featured.jpg" alt="Porównanie busów dostawczych" loading="lazy">
+      <div class="editorial-card-body">
+        <div class="editorial-tag">Porównania</div>
+        <h3>Porównania busów</h3>
+        <p>Szczegółowe tabele – wymiary, ładowność, spalanie.</p>
+      </div>
+    </a>
+    <a href="/przerobki/" class="editorial-card">
+      <img src="/images/przerobki-featured.jpg" alt="Warsztat przeróbki busa" loading="lazy">
+      <div class="editorial-card-body">
+        <div class="editorial-tag">Przeróbki</div>
+        <h3>Bus na kampera</h3>
+        <p>Krok po kroku – od zakupu bazy po pierwszą podróż.</p>
+      </div>
+    </a>
   </div>
 </section>
 {{ end }}

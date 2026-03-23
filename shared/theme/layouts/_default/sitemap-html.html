@@ -1,0 +1,49 @@
+{{ define "main" }}
+{{ partial "breadcrumbs.html" . }}
+
+<div class="container">
+  <div class="list-header">
+    <h1>Mapa strony</h1>
+    <p>Pełna struktura serwisu BusManiak.pl</p>
+  </div>
+
+  <div class="content-narrow" style="padding-bottom: 3rem;">
+    {{ range .Site.Sections }}
+    {{ if ne .Section "autor" }}
+    <div style="margin-bottom: 2rem;">
+      <h2 style="font-size: 1.2rem; margin-bottom: .75rem;">
+        <a href="{{ .Permalink }}" style="color: var(--c-orange);">{{ .Title }}</a>
+      </h2>
+      {{ with .Description }}
+      <p style="font-size: .875rem; color: var(--c-text-light); margin-bottom: .5rem;">{{ . }}</p>
+      {{ end }}
+      {{ if .Pages }}
+      <ul style="list-style: none; padding-left: 1rem;">
+        {{ range .Pages }}
+        <li style="margin-bottom: .35rem;">
+          <a href="{{ .Permalink }}" style="font-size: .9rem;">{{ .Title }}</a>
+        </li>
+        {{ end }}
+      </ul>
+      {{ end }}
+    </div>
+    {{ end }}
+    {{ end }}
+
+    <div style="margin-bottom: 2rem;">
+      <h2 style="font-size: 1.2rem; margin-bottom: .75rem;">
+        <a href="/autor/" style="color: var(--c-orange);">Autorzy</a>
+      </h2>
+      <ul style="list-style: none; padding-left: 1rem;">
+        {{ range (where .Site.Pages "Section" "autor") }}
+        {{ if .IsPage }}
+        <li style="margin-bottom: .35rem;">
+          <a href="{{ .Permalink }}" style="font-size: .9rem;">{{ .Title }}</a>
+        </li>
+        {{ end }}
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+</div>
+{{ end }}
