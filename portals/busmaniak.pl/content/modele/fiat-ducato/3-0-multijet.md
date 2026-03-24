@@ -20,6 +20,7 @@ faq:
     answer: "Silnik ten posiada łańcuch rozrządu, który teoretycznie jest niewymienny (\"life-time\"). Jeśli jednak dojdzie do jego rozciągnięcia (zazwyczaj po 400–500 tys. km), koszt kompletnego zestawu z robocizną wynosi od 2500 do 4000 zł."
   - question: "Ile oleju wchodzi do silnika 3.0 MultiJet?"
     answer: "Do wymiany potrzeba około 7 do 9 litrów oleju (zależnie od rocznika i obecności filtra DPF), zazwyczaj o lepkości 5W30 zgodnego z normą Fiata 9.55535-S1."
+
 ---
 
 ## Fiat Ducato III (X250/X290) – charakterystyka modelu
@@ -72,10 +73,7 @@ Silnik 3.0 MultiJet uchodzi za jednostkę zdolną przejechać 700–800 tysięcy
 
 {{< expert name="Marek Kowalczyk" >}}Silnik 3.0 MultiJet to najlepszy wybór, jeśli planujesz budowę ciężkiego kampera lub transport międzynarodowy. Jego elastyczność sprawia, że jazda w górach z pełnym obciążeniem nie jest wyzwaniem. Kluczem do długowieczności jest wymiana oleju co 15–20 tys. km, a nie co 45 tys. km, jak sugerował producent.{{< /expert >}}
 
-## Podsumowanie – czy warto kupić Ducato 3.0?
-Fiat Ducato 3.0 MultiJet to propozycja dla osób szukających trwałości i dynamiki. Mimo zakończenia produkcji, ceny zadbanych egzemplarzy z tym silnikiem na rynku wtórnym często przewyższają ceny nowszych modeli z silnikami 2.0 lub 2.2. To najlepszy dowód na jakość tej konstrukcji.
-
-**Źródła:**
+Źródła:**
 *   *Oficjalna strona Fiat Professional: fiatprofessional.com*
 *   *Dane techniczne modeli Iveco/Sofim: wikipedia.org*
 *   *Katalog części i specyfikacji FCA (Fiat Chrysler Automobiles).*

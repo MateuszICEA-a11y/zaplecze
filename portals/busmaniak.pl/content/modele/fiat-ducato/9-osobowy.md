@@ -24,6 +24,7 @@ faq:
 
 
 
+
 ---
 
 ## Fiat Ducato 9-osobowy – czy wystarczy prawo jazdy kategorii B?
@@ -74,9 +75,3 @@ Fiat Ducato to auto solidne, ale nie wolno zapominać o kilku powtarzających si
 *   **Skrzynia biegów (M38)** – w wersjach 2.3 zdarzają się awarie łożysk w skrzyni manualnej, objawiające się szumem podczas jazdy.
 
 **Ile kosztuje wymiana rozrządu?** W silniku 2.3 MultiJet koszt kompletnego zestawu wraz z pompą wody i robocizną oscyluje w granicach 1200–1800 zł (ceny szacunkowe na rok 2024).
-
-## Podsumowanie – dla kogo jest 9-osobowy Ducato?
-
-To idealny wybór dla dużych rodzin, firm transportowych oraz osób planujących budowę camper vana (często łatwiej przerejestrować wersję osobową niż ciężarową). Dzięki ogromnej dostępności części zamiennych i prostej konstrukcji, Ducato pozostaje królem ekonomii w segmencie dużych busów.
-
-Więcej o historii modelu i wszystkich generacjach znajdziesz tutaj: [Fiat Ducato – przewodnik](/modele/fiat-ducato/).

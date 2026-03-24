@@ -19,6 +19,7 @@ faq:
     answer: "Tak, modele te (tzw. \"trojaczki z Sevel\") mają identyczną architekturę elektryczną. Skrzynki bezpieczników i przekaźniki są zamienne, o ile zgadzają się parametry natężenia prądu (A) i układ pinów."
   - question: "Silnik kręci, ale nie odpala – który przekaźnik sprawdzić?"
     answer: "W pierwszej kolejności sprawdź przekaźnik T14 (pompa paliwa) oraz T09 (główny przekaźnik silnika) w skrzynce pod maską. Warto również zweryfikować bezpiecznik F22 (system wtrysku)."
+
 ---
 
 ## Gdzie szukać przekaźników w Fiacie Ducato?
@@ -66,11 +67,3 @@ Fiat Ducato, mimo swojej solidności, ma kilka słabych punktów w układzie ele
 *   **Wycieraczki** – jeśli wycieraczki działają tylko na najwyższym biegu, przekaźnik czasowy (często zintegrowany z silniczkiem lub BSI) może wymagać sprawdzenia.
 
 Więcej o ogólnej budowie i eksploatacji tego modelu przeczytasz w naszym artykule: [Fiat Ducato – przewodnik](/modele/fiat-ducato/).
-
-## Podsumowanie i koszty
-
-Wymiana przekaźnika to jedna z najprostszych napraw, jaką możesz wykonać samodzielnie. Standardowy przekaźnik wielofunkcyjny (np. firmy Fast lub Bosch) kosztuje od 15 do 40 zł. Specjalistyczne moduły, jak przekaźnik świec żarowych, to wydatek rzędu 150–300 zł.
-
-Zawsze warto mieć w schowku dwa zapasowe przekaźniki uniwersalne (30A/40A), ponieważ pasują one do większości gniazd w Fiacie Ducato i mogą uratować Twój wyjazd w najmniej oczekiwanym momencie.
-
----

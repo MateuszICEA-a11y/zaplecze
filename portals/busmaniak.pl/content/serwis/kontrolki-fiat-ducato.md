@@ -24,6 +24,7 @@ faq:
 
 
 
+
 ---
 
 ## Kolory kontrolek – hierarchia ważności
@@ -76,10 +77,6 @@ Jako użytkownik [Fiata Ducato](/modele/fiat-ducato/) musisz znać symbole typow
 3.  **Klucz (Serwis)** – to nie jest awaria. Klucz informuje o zbliżającym się terminie wymiany oleju lub przeglądu okresowego (zazwyczaj co 40 000 km lub wg wskazań komputera).
 
 Warto również zapoznać się z ogólnym poradnikiem [kontrolki w busie](/serwis/kontrolki-w-busie/), gdzie opisujemy różnice między popularnymi modelami dostawczaków.
-
-## Podsumowanie i diagnostyka
-
-Współczesne generacje Ducato (szczególnie te produkowane po 2014 roku) mają rozbudowaną diagnostykę pokładową. Jeśli na desce pojawi się symbol, którego nie rozumiesz, pierwszym krokiem powinno być sprawdzenie poziomu płynów eksploatacyjnych. Pamiętaj, że wiele błędów "widmowych" w Ducato wynika ze słabej masy lub zawilgocenia wiązki elektrycznej przy lewym reflektorze.
 
 Źródła:
 - Instrukcja obsługi Fiat Ducato (eLum Fiat): [https://aftersales.fiat.com/elum/](https://aftersales.fiat.com/elum/)

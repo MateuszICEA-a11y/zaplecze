@@ -19,8 +19,6 @@ faq:
     answer: "Średnie spalanie zależy od typu zabudowy. Camper vany (furgony) palą średnio 9–11 l/100 km. Alkowy i duże integry, ze względu na duży opór powietrza, mogą spalać od 12 do nawet 15 l/100 km."
   - question: "Czy Fiat Ducato to dobry materiał na pierwszego kampera DIY?"
     answer: "Tak, to prawdopodobnie najlepsza baza. Dzięki regularnym kształtom paki montaż izolacji i mebli jest znacznie prostszy niż w autach o bardziej obłych kształtach."
-  - question: "Źródła:"
-    answer: "*   *Oficjalna strona Fiat Professional: fiatprofessional.com* *   *Dane techniczne i wymiary: Wikipedia.org (Fiat Ducato)* *   *Katalogi techniczne producentów zabudów (Dethleffs, Hymer, Adria).*"
 
 
 
@@ -73,6 +71,4 @@ Mimo wielu zalet, Fiat Ducato ma swoje słabe punkty. W starszych modelach (I i 
 
 Jeśli dopiero planujesz zakup, zajrzyj do naszego artykułu [Kamper – przewodnik kupującego](/kampery/przewodnik-kupujacego/), aby dowiedzieć się, jak sprawdzić stan techniczny przed transakcją.
 
-## Podsumowanie
-
-Fiat Ducato to nie bez powodu król europejskich dróg i kempingów. Jego konstrukcja wydaje się być stworzona z myślą o vanlife. Szerokie nadwozie, pancerne silniki 2.3 i 3.0 oraz ogromny rynek części sprawiają, że jest to najbardziej racjonalny wybór dla każdego, kto marzy o własnym domu na kołach. Więcej szczegółów o specyfikacji znajdziesz w naszym [przewodniku po modelach Ducato](/modele/fiat-ducato/).
+*Źródła: Fiat Professional (fiatprofessional.com), [Wikipedia – Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato), katalogi techniczne Dethleffs, Hymer, Adria.*

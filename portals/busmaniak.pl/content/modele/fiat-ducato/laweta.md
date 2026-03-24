@@ -75,11 +75,3 @@ Ceny używanych egzemplarzy z silnikiem 3.0 (X250) zaczynają się od około 45 
 *   Z ładunkiem: 11–13 l/100 km
 *   Z lawetą (zestaw): 14–16 l/100 km
 
-## Podsumowanie
-
-Fiat Ducato jako autolaweta to wybór rozsądny i ekonomiczny. Dzięki ogromnej dostępności części zamiennych oraz wyspecjalizowanym serwisom, utrzymanie takiego auta w ruchu jest tańsze niż w przypadku konkurencji spod znaku gwiazdy czy VW. Kluczem do sukcesu jest wybór odpowiedniego silnika (preferowane 3.0 lub mocne 2.3) oraz lekkiej, aluminiowej zabudowy.
-
-**Źródła:**
-*   *Dane techniczne producenta: fiatprofessional.com*
-*   *Katalogi zabudów: polskizwiązekmotorowy.pl*
-*   *Specyfikacje techniczne: Wikipedia.org (Fiat Ducato)*

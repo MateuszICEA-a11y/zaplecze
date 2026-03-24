@@ -20,6 +20,7 @@ faq:
     answer: "Główne bolączki to korozja nadwozia, usterki piątego biegu w manualnej skrzyni oraz awarie osprzętu silnika (alternator, rozrusznik) wynikające z dużych przebiegów."
   - question: "Ile oleju wchodzi do silnika 2.8 JTD?"
     answer: "Do wymiany z filtrem potrzeba zazwyczaj około 7 litrów oleju (zalecana lepkość to zazwyczaj 5W40 lub 10W40, zależnie od stanu silnika i klimatu)."
+
 ---
 
 ## Fiat Ducato II – ewolucja silnika 2.8
@@ -72,10 +73,6 @@ Silnik 2.8 JTD to konstrukcja niemal pancerna. Przy regularnym serwisie olejowym
 2.  **Korozja** – progi, podłużnice i nadkola to miejsca, które wymagają szczególnej uwagi przy zakupie używanego egzemplarza.
 3.  **Elektryka** – drobne awarie kostek, czujników czy mechanizmów wycieraczek.
 4.  **Układ chłodzenia** – starzejące się przewody gumowe mogą pękać, co w skrajnych przypadkach prowadzi do przegrzania jednostki.
-
-## Podsumowanie – czy warto kupić Ducato 2.8 JTD?
-
-Mimo upływu lat, Fiat Ducato z silnikiem 2.8 JTD pozostaje jednym z najlepszych wyborów dla osób szukających taniego w zakupie i eksploatacji busa. Jest to idealna baza pod camper vana – prostota konstrukcji pozwala na naprawy w niemal każdym zakątku świata, co jest kluczowe w vanlife.
 
 Źródła:
 - *Dane techniczne modeli Fiat Professional: fiatprofessional.com*
