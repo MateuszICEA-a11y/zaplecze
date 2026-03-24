@@ -1,0 +1,8 @@
+{{- $url := .Destination -}}
+{{- $isExternal := hasPrefix $url "http" -}}
+{{- $isWikipedia := findRE "wikipedia\\.org" $url -}}
+<a href="{{ $url }}"
+  {{- if $isExternal }} target="_blank"{{ if not $isWikipedia }} rel="nofollow noopener"{{ else }} rel="noopener"{{ end }}{{ end -}}
+  {{- with .Title }} title="{{ . }}"{{ end -}}
+>{{ .Text }}</a>
+{{- /* External links get nofollow except Wikipedia. Internal links unchanged. */ -}}

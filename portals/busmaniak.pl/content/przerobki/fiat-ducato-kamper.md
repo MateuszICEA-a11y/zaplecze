@@ -11,9 +11,17 @@ volume: 2600
 image: "/images/fiat-ducato-kamper-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato Kamper"
+lead: "Wybór bazy pod dom na kołach to najważniejsza decyzja każdego pasjonata vanlife. Statystyki są jednak nieubłagane – ponad 70% kamperów poruszających się po europejskich drogach bazuje na podwoziu Fiata Ducato. Ten model zdominował rynek nie przez przypadek. Od pierwszej generacji z lat 80. aż po naj"
+faq:
+  - question: "Z jakim silnikiem kupić Fiata Ducato na kampera?"
+    answer: "Najlepszym wyborem do nowoczesnej zabudowy jest silnik 2.3 MultiJet (130-150 KM) ze względu na trwałość i niskie spalanie. Dla bardzo ciężkich zabudów idealny będzie 3.0 JTD."
+  - question: "Ile pali Fiat Ducato Kamper?"
+    answer: "Średnie spalanie zależy od typu zabudowy. Camper vany (furgony) palą średnio 9–11 l/100 km. Alkowy i duże integry, ze względu na duży opór powietrza, mogą spalać od 12 do nawet 15 l/100 km."
+  - question: "Czy Fiat Ducato to dobry materiał na pierwszego kampera DIY?"
+    answer: "Tak, to prawdopodobnie najlepsza baza. Dzięki regularnym kształtom paki montaż izolacji i mebli jest znacznie prostszy niż w autach o bardziej obłych kształtach."
+  - question: "Źródła:"
+    answer: "*   *Oficjalna strona Fiat Professional: fiatprofessional.com* *   *Dane techniczne i wymiary: Wikipedia.org (Fiat Ducato)* *   *Katalogi techniczne producentów zabudów (Dethleffs, Hymer, Adria).*"
 ---
-
-Wybór bazy pod dom na kołach to najważniejsza decyzja każdego pasjonata vanlife. Statystyki są jednak nieubłagane – ponad 70% kamperów poruszających się po europejskich drogach bazuje na podwoziu Fiata Ducato. Ten model zdominował rynek nie przez przypadek. Od pierwszej generacji z lat 80. aż po najnowsze odsłony, Ducato oferuje unikalne połączenie szerokości wnętrza, prostoty konstrukcji i relatywnie niskich kosztów eksploatacji.
 
 Sprawdźmy, dlaczego **fiat ducato kamper** to wybór numer jeden zarówno dla profesjonalnych firm zabudowujących, jak i osób budujących swój pierwszy projekt w garażu.
 
@@ -67,19 +75,3 @@ Jeśli dopiero planujesz zakup, zajrzyj do naszego artykułu [Kamper – przewod
 ## Podsumowanie
 
 Fiat Ducato to nie bez powodu król europejskich dróg i kempingów. Jego konstrukcja wydaje się być stworzona z myślą o vanlife. Szerokie nadwozie, pancerne silniki 2.3 i 3.0 oraz ogromny rynek części sprawiają, że jest to najbardziej racjonalny wybór dla każdego, kto marzy o własnym domu na kołach. Więcej szczegółów o specyfikacji znajdziesz w naszym [przewodniku po modelach Ducato](/modele/fiat-ducato/).
-
-## FAQ – Najczęściej zadawane pytania
-
-**Z jakim silnikiem kupić Fiata Ducato na kampera?**
-Najlepszym wyborem do nowoczesnej zabudowy jest silnik 2.3 MultiJet (130-150 KM) ze względu na trwałość i niskie spalanie. Dla bardzo ciężkich zabudów idealny będzie 3.0 JTD.
-
-**Ile pali Fiat Ducato Kamper?**
-Średnie spalanie zależy od typu zabudowy. Camper vany (furgony) palą średnio 9–11 l/100 km. Alkowy i duże integry, ze względu na duży opór powietrza, mogą spalać od 12 do nawet 15 l/100 km.
-
-**Czy Fiat Ducato to dobry materiał na pierwszego kampera DIY?**
-Tak, to prawdopodobnie najlepsza baza. Dzięki regularnym kształtom paki montaż izolacji i mebli jest znacznie prostszy niż w autach o bardziej obłych kształtach.
-
-**Źródła:**
-*   *Oficjalna strona Fiat Professional: fiatprofessional.com*
-*   *Dane techniczne i wymiary: Wikipedia.org (Fiat Ducato)*
-*   *Katalogi techniczne producentów zabudów (Dethleffs, Hymer, Adria).*

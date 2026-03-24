@@ -11,9 +11,17 @@ volume: 260
 image: "/images/fiat-ducato-kontener-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato Kontener"
+lead: "Fiat Ducato w wersji z zabudową kontenerową to od lat jeden z najpopularniejszych widoków na polskich drogach. Choć furgony (blaszaki) dominują w kurierce, to właśnie fiat ducato kontener jest królem transportu mebli, przeprowadzek oraz przewozu towarów na paletach, które wymagają regularnych kształ"
+faq:
+  - question: "Który silnik w Fiacie Ducato pod kontener jest najlepszy?"
+    answer: "Zdecydowanie polecanym silnikiem jest 2.3 MultiJet. Do zabudowy kontenerowej, która stawia duży opór powietrza, najlepiej wybrać wariant 150 KM lub 180 KM. Zapewniają one odpowiedni zapas mocy przy pełnym załadunku."
+  - question: "Jakie są wymiary kontenera Fiata Ducato?"
+    answer: "Najpopularniejsze wymiary to 4,2 m długości, 2,1 m szerokości i 2,1 m wysokości. Pozwala to na przewóz 8 europalet. Istnieją jednak warianty przedłużone (L5) mieszczące do 10 palet."
+  - question: "Czy Fiat Ducato z kontenerem jest awaryjny?"
+    answer: "Fiat Ducato uchodzi za konstrukcję \"dojrzałą\". Główne podzespoły są trwałe, a ogromna dostępność części zamiennych i wyspecjalizowanych serwisów sprawia, że koszty eksploatacji są jednymi z najniższych w segmencie aut dostawczych."
+  - question: "Ile pali Fiat Ducato kontener?"
+    answer: "Ze względu na dużą powierzchnię czołową zabudowy, spalanie jest wyższe niż w furgonie. Średnio należy liczyć się z wynikiem 11–13 l/100 km w trasie, a przy jeździe autostradowej powyżej 110 km/h wartości te mogą wzrosnąć do 15 l/100 km.  *Źródła:* - *Oficjalna strona Fiat Professional: fiatprofessio"
 ---
-
-Fiat Ducato w wersji z zabudową kontenerową to od lat jeden z najpopularniejszych widoków na polskich drogach. Choć furgony (blaszaki) dominują w kurierce, to właśnie **fiat ducato kontener** jest królem transportu mebli, przeprowadzek oraz przewozu towarów na paletach, które wymagają regularnych kształtów przestrzeni ładunkowej.
 
 W tym artykule przyjrzymy się bliżej możliwościom, jakie daje podwozie Ducato pod zabudowę, sprawdzimy wymiary najpopularniejszych kontenerów oraz podpowiemy, na co zwrócić uwagę przy zakupie egzemplarza z rynku wtórnego i pierwotnego.
 
@@ -66,22 +74,3 @@ Użytkownicy Fiata Ducato III często wskazują na kilka powtarzających się kw
 *   **Łożyska skrzyni biegów:** Szczególnie w modelach z początku produkcji i przy dużych obciążeniach.
 *   **Osprzęt silnika:** Przy przebiegach powyżej 200-250 tys. km warto sprawdzić stan turbosprężarki i wtryskiwaczy.
 *   **Korozja ramy pomocniczej:** Choć szoferka jest dobrze zabezpieczona, stalowe elementy ramy zabudowy mogą rdzewieć, jeśli nie były konserwowane.
-
-## FAQ – Najczęściej zadawane pytania
-
-**Który silnik w Fiacie Ducato pod kontener jest najlepszy?**
-Zdecydowanie polecanym silnikiem jest 2.3 MultiJet. Do zabudowy kontenerowej, która stawia duży opór powietrza, najlepiej wybrać wariant 150 KM lub 180 KM. Zapewniają one odpowiedni zapas mocy przy pełnym załadunku.
-
-**Jakie są wymiary kontenera Fiata Ducato?**
-Najpopularniejsze wymiary to 4,2 m długości, 2,1 m szerokości i 2,1 m wysokości. Pozwala to na przewóz 8 europalet. Istnieją jednak warianty przedłużone (L5) mieszczące do 10 palet.
-
-**Czy Fiat Ducato z kontenerem jest awaryjny?**
-Fiat Ducato uchodzi za konstrukcję "dojrzałą". Główne podzespoły są trwałe, a ogromna dostępność części zamiennych i wyspecjalizowanych serwisów sprawia, że koszty eksploatacji są jednymi z najniższych w segmencie aut dostawczych.
-
-**Ile pali Fiat Ducato kontener?**
-Ze względu na dużą powierzchnię czołową zabudowy, spalanie jest wyższe niż w furgonie. Średnio należy liczyć się z wynikiem 11–13 l/100 km w trasie, a przy jeździe autostradowej powyżej 110 km/h wartości te mogą wzrosnąć do 15 l/100 km.
-
-*Źródła:*
-- *Oficjalna strona Fiat Professional: fiatprofessional.com/pl*
-- *Dane techniczne i opinie: autocentrum.pl*
-- *Katalogi firm zabudowujących (Lamar, Spier).*

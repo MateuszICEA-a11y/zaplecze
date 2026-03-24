@@ -11,9 +11,15 @@ volume: 320
 image: "/images/fiat-ducato-skrzyniowy-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato Skrzyniowy"
+lead: "Fiat Ducato to niekwestionowany król polskich dróg i lider rankingów sprzedaży w segmencie aut dostawczych. Choć najczęściej kojarzymy go z furgonami (blaszakami), to właśnie Fiat Ducato skrzyniowy stanowi fundament polskiego transportu lokalnego, budownictwa oraz branży komunalnej. Dzięki konstrukc"
+faq:
+  - question: "Z jakim silnikiem wybrać Fiata Ducato?"
+    answer: "Jeśli szukasz auta używanego do ciężkiej pracy, najlepszym wyborem będzie 3.0 MultiJet (do 2016 r.). W przypadku nowszych aut, silnik 2.3 MultiJet o mocy 140-160 KM oferuje najlepszy kompromis między spalaniem a dynamiką."
+  - question: "Jaka skrzynia automatyczna występuje w Ducato?"
+    answer: "W starszych wersjach montowano zautomatyzowaną skrzynię Comfort-Matic (jednosprzęgłowa). Od 2019 roku dostępna jest nowoczesna, 9-biegowa przekładnia hydrokinetyczna produkcji ZF, która jest znacznie bardziej płynna i trwała."
+  - question: "Czy Fiat Ducato jest awaryjny?"
+    answer: "Według danych serwisowych i opinii użytkowników, Ducato uchodzi za jedno z najtańszych w utrzymaniu aut dostawczych. Większość usterek to drobna elektryka lub elementy zawieszenia, które są tanie w naprawie. Silniki Diesla (szczególnie 2.3 i 3.0) przy regularnej wymianie oleju (co 15-20 tys. km zami"
 ---
-
-Fiat Ducato to niekwestionowany król polskich dróg i lider rankingów sprzedaży w segmencie aut dostawczych. Choć najczęściej kojarzymy go z furgonami (blaszakami), to właśnie **Fiat Ducato skrzyniowy** stanowi fundament polskiego transportu lokalnego, budownictwa oraz branży komunalnej. Dzięki konstrukcji opartej na ramie, model ten oferuje ogromne możliwości adaptacyjne.
 
 W tym artykule przyjrzymy się bliżej wersjom podwozia pod zabudowę, wymiarom skrzyń oraz jednostkom napędowym, które najlepiej sprawdzają się w ciężkiej pracy.
 
@@ -65,19 +71,3 @@ Fiat Ducato skrzyniowy to konstrukcja sprawdzona, ale nie pozbawiona wad. Użytk
 1.  **Słaba ergonomia deski rozdzielczej:** Ze względu na szerokość auta (ponad 2 m), niektóre przełączniki są daleko od kierowcy.
 2.  **Korozja ramy pomocniczej:** W starszych egzemplarzach warto kontrolować stan zabezpieczenia antykorozyjnego ramy pod skrzynią ładunkową.
 3.  **Elektronika:** Częste błędy czujników (np. ABS/ESP) spowodowane wilgocią w wiązkach elektrycznych pod podwoziem.
-
-## FAQ – najczęstsze pytania
-
-**Z jakim silnikiem wybrać Fiata Ducato?**
-Jeśli szukasz auta używanego do ciężkiej pracy, najlepszym wyborem będzie 3.0 MultiJet (do 2016 r.). W przypadku nowszych aut, silnik 2.3 MultiJet o mocy 140-160 KM oferuje najlepszy kompromis między spalaniem a dynamiką.
-
-**Jaka skrzynia automatyczna występuje w Ducato?**
-W starszych wersjach montowano zautomatyzowaną skrzynię Comfort-Matic (jednosprzęgłowa). Od 2019 roku dostępna jest nowoczesna, 9-biegowa przekładnia hydrokinetyczna produkcji ZF, która jest znacznie bardziej płynna i trwała.
-
-**Czy Fiat Ducato jest awaryjny?**
-Według danych serwisowych i opinii użytkowników, Ducato uchodzi za jedno z najtańszych w utrzymaniu aut dostawczych. Większość usterek to drobna elektryka lub elementy zawieszenia, które są tanie w naprawie. Silniki Diesla (szczególnie 2.3 i 3.0) przy regularnej wymianie oleju (co 15-20 tys. km zamiast zalecanych 40 tys.) są bardzo żywotne.
-
-Źródła:
-- *Oficjalna specyfikacja techniczna Fiat Professional*
-- *Dane techniczne modeli na Wikipedia.org (Fiat Ducato)*
-- *Katalogi zabudów polskich producentów (Carpol, Jegger)*

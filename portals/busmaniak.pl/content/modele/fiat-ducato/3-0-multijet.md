@@ -10,9 +10,17 @@ type: "engine"
 image: "/images/fiat-ducato-3-0-multijet-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato 3.0 MultiJet"
+lead: "Jeśli zapytasz doświadczonego kierowcę busa lub mechanika o \"króla autostrad\", odpowiedź będzie jedna: fiat ducato 3.0 multijet. Ten silnik stał się legendą transportu międzynarodowego i ulubioną bazą dla budowniczych kamperów. Dlaczego jednostka konstrukcji Iveco zyskała taką estymę? Przyjrzyjmy "
+faq:
+  - question: "Który silnik w Fiacie Ducato jest najlepszy?"
+    answer: "Większość ekspertów i użytkowników wskazuje właśnie na 3.0 MultiJet jako najlepszą jednostkę pod kątem trwałości i osiągów, szczególnie w ciężkich zabudowach i transporcie dalekobieżnym."
+  - question: "Jakie są najczęstsze problemy z Ducato 3.0?"
+    answer: "Do najczęstszych bolączek należą awarie przepustnicy, usterki osprzętu (np. alternatora narażonego na zalewanie wodą z podszybia) oraz zużycie łożysk w skrzyni biegów M40 przy dużych przebiegach."
+  - question: "Ile kosztuje wymiana rozrządu w Fiacie Ducato 3.0?"
+    answer: "Silnik ten posiada łańcuch rozrządu, który teoretycznie jest niewymienny (\"life-time\"). Jeśli jednak dojdzie do jego rozciągnięcia (zazwyczaj po 400–500 tys. km), koszt kompletnego zestawu z robocizną wynosi od 2500 do 4000 zł."
+  - question: "Ile oleju wchodzi do silnika 3.0 MultiJet?"
+    answer: "Do wymiany potrzeba około 7 do 9 litrów oleju (zależnie od rocznika i obecności filtra DPF), zazwyczaj o lepkości 5W30 zgodnego z normą Fiata 9.55535-S1."
 ---
-
-Jeśli zapytasz doświadczonego kierowcę busa lub mechanika o "króla autostrad", odpowiedź będzie jedna: **fiat ducato 3.0 multijet**. Ten silnik stał się legendą transportu międzynarodowego i ulubioną bazą dla budowniczych kamperów. Dlaczego jednostka konstrukcji Iveco zyskała taką estymę? Przyjrzyjmy się szczegółom technicznym, eksploatacyjnym i opiniom użytkowników.
 
 ## Fiat Ducato III (X250/X290) – charakterystyka modelu
 Trzecia generacja Fiata Ducato, produkowana od 2006 roku (z dużym liftingiem w 2014 roku), zdominowała europejski rynek aut dostawczych. Model ten występuje w dziesiątkach konfiguracji, ale to właśnie wersje z trzylitrowym dieslem są najbardziej poszukiwane na rynku wtórnym.
@@ -71,17 +79,3 @@ Fiat Ducato 3.0 MultiJet to propozycja dla osób szukających trwałości i dyna
 *   *Oficjalna strona Fiat Professional: fiatprofessional.com*
 *   *Dane techniczne modeli Iveco/Sofim: wikipedia.org*
 *   *Katalog części i specyfikacji FCA (Fiat Chrysler Automobiles).*
-
-## FAQ – najczęstsze pytania
-
-**Który silnik w Fiacie Ducato jest najlepszy?**
-Większość ekspertów i użytkowników wskazuje właśnie na 3.0 MultiJet jako najlepszą jednostkę pod kątem trwałości i osiągów, szczególnie w ciężkich zabudowach i transporcie dalekobieżnym.
-
-**Jakie są najczęstsze problemy z Ducato 3.0?**
-Do najczęstszych bolączek należą awarie przepustnicy, usterki osprzętu (np. alternatora narażonego na zalewanie wodą z podszybia) oraz zużycie łożysk w skrzyni biegów M40 przy dużych przebiegach.
-
-**Ile kosztuje wymiana rozrządu w Fiacie Ducato 3.0?**
-Silnik ten posiada łańcuch rozrządu, który teoretycznie jest niewymienny ("life-time"). Jeśli jednak dojdzie do jego rozciągnięcia (zazwyczaj po 400–500 tys. km), koszt kompletnego zestawu z robocizną wynosi od 2500 do 4000 zł.
-
-**Ile oleju wchodzi do silnika 3.0 MultiJet?**
-Do wymiany potrzeba około 7 do 9 litrów oleju (zależnie od rocznika i obecności filtra DPF), zazwyczaj o lepkości 5W30 zgodnego z normą Fiata 9.55535-S1.

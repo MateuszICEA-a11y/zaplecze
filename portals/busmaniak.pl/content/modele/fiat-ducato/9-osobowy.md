@@ -11,9 +11,17 @@ volume: 480
 image: "/images/fiat-ducato-9-osobowy-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato 9 Osobowy"
+lead: "Szukasz pojazdu, który pomieści całą rodzinę, grupę pracowników lub posłuży jako baza pod luksusowego busa do dalekich podróży? Fiat Ducato 9-osobowy to od lat jeden z najchętniej wybieranych modeli w Polsce. Jego popularność wynika z prostej konstrukcji, ogromnej przestrzeni i faktu, że mimo gabary"
+faq:
+  - question: "Jaki jest najlepszy silnik w Fiacie Ducato?"
+    answer: "Za najlepszy silnik uznaje się jednostkę 3.0 MultiJet (180 KM) ze względu na trwałość i moment obrotowy. Jednak w codziennej eksploatacji najpopularniejszym i najbardziej polecanym wyborem jest 2.3 MultiJet w wersji 130 lub 150 KM."
+  - question: "Ile pali Fiat Ducato 9-osobowy?"
+    answer: "W cyklu mieszanym Ducato z silnikiem 2.3 spala średnio od 8,5 do 10,5 litra oleju napędowego na 100 km. Przy autostradowej prędkości (130-140 km/h) spalanie może wzrosnąć do 12–13 litrów."
+  - question: "Czy Fiat Ducato jest awaryjny?"
+    answer: "Według zestawień awaryjności i opinii użytkowników, Ducato wypada bardzo dobrze na tle konkurencji (np. Renault Master czy Ford Transit). Największym problemem jest korozja elementów podwozia w starszych egzemplarzach oraz drobne usterki osprzętu silnika."
+  - question: "Jakie są wymiary przestrzeni ładunkowej w wersji 9-osobowej?"
+    answer: "W wersji L2H2, po wyjęciu ostatniego rzędu siedzeń, uzyskujemy przestrzeń o długości ok. 2 metrów. Przy zamontowanych wszystkich fotelach, w wersji L2 zostaje około 1 metra głębokości bagażnika.  *Źródła:* - *Oficjalna strona Fiat Professional: fiatprofessional.com* - *Dane techniczne i wymiary: wik"
 ---
-
-Szukasz pojazdu, który pomieści całą rodzinę, grupę pracowników lub posłuży jako baza pod luksusowego busa do dalekich podróży? **Fiat Ducato 9-osobowy** to od lat jeden z najchętniej wybieranych modeli w Polsce. Jego popularność wynika z prostej konstrukcji, ogromnej przestrzeni i faktu, że mimo gabarytów, wciąż możemy go prowadzić posiadając standardowe uprawnienia.
 
 W tym przewodniku przyjrzymy się bliżej wersji osobowej (Combi/Panorama), sprawdzimy dane techniczne, koszty eksploatacji oraz podpowiemy, na co zwrócić uwagę przy zakupie egzemplarza z rynku wtórnego.
 
@@ -71,22 +79,3 @@ Fiat Ducato to auto solidne, ale nie wolno zapominać o kilku powtarzających si
 To idealny wybór dla dużych rodzin, firm transportowych oraz osób planujących budowę camper vana (często łatwiej przerejestrować wersję osobową niż ciężarową). Dzięki ogromnej dostępności części zamiennych i prostej konstrukcji, Ducato pozostaje królem ekonomii w segmencie dużych busów.
 
 Więcej o historii modelu i wszystkich generacjach znajdziesz tutaj: [Fiat Ducato – przewodnik](/modele/fiat-ducato/).
-
-## FAQ
-
-**Jaki jest najlepszy silnik w Fiacie Ducato?**
-Za najlepszy silnik uznaje się jednostkę 3.0 MultiJet (180 KM) ze względu na trwałość i moment obrotowy. Jednak w codziennej eksploatacji najpopularniejszym i najbardziej polecanym wyborem jest 2.3 MultiJet w wersji 130 lub 150 KM.
-
-**Ile pali Fiat Ducato 9-osobowy?**
-W cyklu mieszanym Ducato z silnikiem 2.3 spala średnio od 8,5 do 10,5 litra oleju napędowego na 100 km. Przy autostradowej prędkości (130-140 km/h) spalanie może wzrosnąć do 12–13 litrów.
-
-**Czy Fiat Ducato jest awaryjny?**
-Według zestawień awaryjności i opinii użytkowników, Ducato wypada bardzo dobrze na tle konkurencji (np. Renault Master czy Ford Transit). Największym problemem jest korozja elementów podwozia w starszych egzemplarzach oraz drobne usterki osprzętu silnika.
-
-**Jakie są wymiary przestrzeni ładunkowej w wersji 9-osobowej?**
-W wersji L2H2, po wyjęciu ostatniego rzędu siedzeń, uzyskujemy przestrzeń o długości ok. 2 metrów. Przy zamontowanych wszystkich fotelach, w wersji L2 zostaje około 1 metra głębokości bagażnika.
-
-*Źródła:*
-- *Oficjalna strona Fiat Professional: fiatprofessional.com*
-- *Dane techniczne i wymiary: wikipedia.org (Fiat Ducato)*
-- *Katalogi produktowe Fiat Ducato Panorama 2023/2024*

@@ -11,9 +11,15 @@ volume: 280
 image: "/images/fiat-ducato-rozrzad-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato Rozrząd"
+lead: "Fiat Ducato to niekwestionowany król europejskich dróg, bazowy pojazd dla tysięcy firm transportowych i fundament większości projektów camper vanów. Sercem najpopularniejszych wersji (szczególnie III generacji po liftingu) jest jednostka 2.3 MultiJet produkcji IVECO. Choć silnik ten słynie z ogromne"
+faq:
+  - question: "1. Czy w silniku 2.3 MultiJet rozrząd jest bezkolizyjny?"
+    answer: "Nie, silnik 2.3 MultiJet jest jednostką kolizyjną. Zerwanie paska rozrządu w trakcie pracy silnika niemal zawsze kończy się uderzeniem tłoków w zawory, co generuje ogromne koszty naprawy."
+  - question: "2. Czy wymieniać rozrząd ze względu na wiek, jeśli auto mało jeździ (np. kamper)?"
+    answer: "Zdecydowanie tak. Guma, z której wykonany jest pasek, starzeje się i parcieje. W przypadku kamperów, które często stoją nieużywane przez kilka miesięcy, limit 5 lat jest nieprzekraczalny, nawet jeśli przebieg wynosi tylko 30 000 km."
+  - question: "3. Ile trwa wymiana rozrządu w Fiacie Ducato?"
+    answer: "W wyspecjalizowanym serwisie operacja ta zajmuje zazwyczaj od 4 do 6 godzin roboczych, zakładając, że nie wystąpią problemy z zapieczonymi śrubami lub wyciekami z uszczelniaczy wałów."
 ---
-
-Fiat Ducato to niekwestionowany król europejskich dróg, bazowy pojazd dla tysięcy firm transportowych i fundament większości projektów camper vanów. Sercem najpopularniejszych wersji (szczególnie III generacji po liftingu) jest jednostka 2.3 MultiJet produkcji IVECO. Choć silnik ten słynie z ogromnej wytrzymałości, ma jeden punkt krytyczny: **fiat ducato rozrząd**. Zaniedbanie tego elementu to najprostsza droga do kosztownego remontu jednostki napędowej.
 
 W tym artykule przyjrzymy się interwałom, kosztom i technicznym niuansom wymiany rozrządu w najpopularniejszym dostawczaku w Polsce.
 
@@ -66,14 +72,3 @@ Wymiana rozrządu w Fiacie Ducato to inwestycja, która chroni przed wydatkiem r
 - Oficjalna dokumentacja techniczna Fiat Professional.
 - Dane techniczne modelu: [Wikipedia – Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato).
 - Katalogi części zamiennych marek Gates/Dayco.
-
-## FAQ – Najczęściej zadawane pytania
-
-**1. Czy w silniku 2.3 MultiJet rozrząd jest bezkolizyjny?**
-Nie, silnik 2.3 MultiJet jest jednostką kolizyjną. Zerwanie paska rozrządu w trakcie pracy silnika niemal zawsze kończy się uderzeniem tłoków w zawory, co generuje ogromne koszty naprawy.
-
-**2. Czy wymieniać rozrząd ze względu na wiek, jeśli auto mało jeździ (np. kamper)?**
-Zdecydowanie tak. Guma, z której wykonany jest pasek, starzeje się i parcieje. W przypadku kamperów, które często stoją nieużywane przez kilka miesięcy, limit 5 lat jest nieprzekraczalny, nawet jeśli przebieg wynosi tylko 30 000 km.
-
-**3. Ile trwa wymiana rozrządu w Fiacie Ducato?**
-W wyspecjalizowanym serwisie operacja ta zajmuje zazwyczaj od 4 do 6 godzin roboczych, zakładając, że nie wystąpią problemy z zapieczonymi śrubami lub wyciekami z uszczelniaczy wałów.

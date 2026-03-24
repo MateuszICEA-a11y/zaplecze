@@ -11,9 +11,17 @@ volume: 210
 image: "/images/fiat-ducato-chlodnia-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato Chłodnia"
+lead: "Fiat Ducato od lat dominuje w rankingach sprzedaży aut dostawczych w Polsce. Jego popularność wynika nie tylko z trwałych silników, ale przede wszystkim z ogromnej podatności na modyfikacje. Jedną z najczęściej spotykanych wersji specjalistycznych jest Fiat Ducato chłodnia. To kluczowe narzędzie pra"
+faq:
+  - question: "1. Czy Fiat Ducato chłodnia może jeździć na kategorii B?"
+    answer: "Tak, większość wersji ma DMC do 3500 kg, co pozwala na prowadzenie ich z prawem jazdy kategorii B. Należy jednak pilnować realnej ładowności, która po montażu ciężkiej zabudowy i agregatu może spaść poniżej 1000 kg."
+  - question: "2. Który silnik Ducato najlepiej znosi pracę z agregatem?"
+    answer: "Najbardziej polecanym silnikiem jest 2.3 MultiJet (130, 150 lub 180 KM). To jednostka Iveco, która słynie z wysokiej trwałości i bardzo dobrego momentu obrotowego, co jest istotne przy zwiększonym oporze powietrza (agregat na dachu) i większej masie własnej."
+  - question: "3. Ile pali Fiat Ducato chłodnia?"
+    answer: "Spalanie jest o ok. 1–2 litry wyższe niż w standardowym furgonie ze względu na opory aerodynamiczne agregatu oraz pobór mocy przez sprężarkę. Średnio należy liczyć się z wynikiem 10–12 l/100 km w cyklu mieszanym."
+  - question: "4. Co jest lepsze: Ducato czy Iveco Daily jako chłodnia?"
+    answer: "Ducato jest lżejsze i ma napęd na przód, co daje niższą krawędź załadunku i większą ładowność w wersji 3.5t. Iveco Daily (na ramie) jest lepsze do bardzo ciężkich ładunków i ciągnięcia przyczep, ale samo w sobie jest cięższe, co ogranicza ładowność na kategorii B."
 ---
-
-Fiat Ducato od lat dominuje w rankingach sprzedaży aut dostawczych w Polsce. Jego popularność wynika nie tylko z trwałych silników, ale przede wszystkim z ogromnej podatności na modyfikacje. Jedną z najczęściej spotykanych wersji specjalistycznych jest **Fiat Ducato chłodnia**. To kluczowe narzędzie pracy w branży spożywczej, farmaceutycznej oraz gastronomicznej (catering), gdzie utrzymanie stabilnej temperatury jest wymogiem prawnym.
 
 W tym artykule przyjrzymy się, jak wygląda zabudowa chłodnicza na bazie Ducato, jakie silniki sprawdzają się najlepiej w transporcie chłodniczym i na co zwrócić uwagę przy zakupie.
 
@@ -73,17 +81,3 @@ Fiat Ducato chłodnia to rozsądny wybór między ceną zakupu a kosztami utrzym
 *   Oficjalna strona Fiat Professional: [fiatprofessional.com](https://www.fiatprofessional.com/pl/ducato/furgon)
 *   Dane techniczne i wymiary: [Wikipedia - Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato)
 *   Wymogi sanitarne: [Główny Inspektorat Sanitarny](https://www.gov.pl/web/gis)
-
-## FAQ – Najczęściej zadawane pytania
-
-**1. Czy Fiat Ducato chłodnia może jeździć na kategorii B?**
-Tak, większość wersji ma DMC do 3500 kg, co pozwala na prowadzenie ich z prawem jazdy kategorii B. Należy jednak pilnować realnej ładowności, która po montażu ciężkiej zabudowy i agregatu może spaść poniżej 1000 kg.
-
-**2. Który silnik Ducato najlepiej znosi pracę z agregatem?**
-Najbardziej polecanym silnikiem jest 2.3 MultiJet (130, 150 lub 180 KM). To jednostka Iveco, która słynie z wysokiej trwałości i bardzo dobrego momentu obrotowego, co jest istotne przy zwiększonym oporze powietrza (agregat na dachu) i większej masie własnej.
-
-**3. Ile pali Fiat Ducato chłodnia?**
-Spalanie jest o ok. 1–2 litry wyższe niż w standardowym furgonie ze względu na opory aerodynamiczne agregatu oraz pobór mocy przez sprężarkę. Średnio należy liczyć się z wynikiem 10–12 l/100 km w cyklu mieszanym.
-
-**4. Co jest lepsze: Ducato czy Iveco Daily jako chłodnia?**
-Ducato jest lżejsze i ma napęd na przód, co daje niższą krawędź załadunku i większą ładowność w wersji 3.5t. Iveco Daily (na ramie) jest lepsze do bardzo ciężkich ładunków i ciągnięcia przyczep, ale samo w sobie jest cięższe, co ogranicza ładowność na kategorii B.

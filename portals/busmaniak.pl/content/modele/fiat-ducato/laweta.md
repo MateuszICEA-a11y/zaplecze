@@ -11,9 +11,15 @@ volume: 490
 image: "/images/fiat-ducato-laweta-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato Laweta"
+lead: "Fiat Ducato to niekwestionowany król polskich dróg, jeśli chodzi o transport lekkich pojazdów. Popularność tego modelu w wersji autolaweta nie bierze się z przypadku – to wynik świetnego stosunku masy własnej podwozia do jego wytrzymałości oraz legendarnej trwałości silników wysokoprężnych."
+faq:
+  - question: "Ile realnie uciągnie Fiat Ducato na haku?"
+    answer: "Większość wersji Ducato ma wbite w dowód 2500 kg lub 3000 kg uciągu na haku (przy odpowiedniej konfiguracji ramy i hamulca najazdowego). Zawsze sprawdź parametr Q1 w dowodzie rejestracyjnym."
+  - question: "Czy silnik 2.2 MultiJet nadaje się na lawetę?"
+    answer: "Tak, szczególnie w najmocniejszej wersji 180 KM. Jest on jednak bardziej skomplikowany osprzętowo (AdBlue) niż starsze jednostki 3.0, co wymaga większej dbałości o jakość paliwa i regularny serwis."
+  - question: "Jaka długość najazdu jest najlepsza?"
+    answer: "Dla Fiata Ducato L4 optymalna długość platformy to 4,5 – 5,0 metrów. Pozwala to na transport większości aut osobowych oraz mniejszych busów (np. furgonów L1) bez nadmiernego przewieszenia tylnego."
 ---
-
-Fiat Ducato to niekwestionowany król polskich dróg, jeśli chodzi o transport lekkich pojazdów. Popularność tego modelu w wersji autolaweta nie bierze się z przypadku – to wynik świetnego stosunku masy własnej podwozia do jego wytrzymałości oraz legendarnej trwałości silników wysokoprężnych.
 
 W tym artykule przyjrzymy się, dlaczego **Fiat Ducato laweta** dominuje na rynku pomocy drogowej, jakie parametry techniczne oferują poszczególne generacje i na co zwrócić uwagę przy zakupie lub zabudowie.
 
@@ -78,14 +84,3 @@ Fiat Ducato jako autolaweta to wybór rozsądny i ekonomiczny. Dzięki ogromnej 
 *   *Dane techniczne producenta: fiatprofessional.com*
 *   *Katalogi zabudów: polskizwiązekmotorowy.pl*
 *   *Specyfikacje techniczne: Wikipedia.org (Fiat Ducato)*
-
-## FAQ – Najczęściej zadawane pytania
-
-**Ile realnie uciągnie Fiat Ducato na haku?**
-Większość wersji Ducato ma wbite w dowód 2500 kg lub 3000 kg uciągu na haku (przy odpowiedniej konfiguracji ramy i hamulca najazdowego). Zawsze sprawdź parametr Q1 w dowodzie rejestracyjnym.
-
-**Czy silnik 2.2 MultiJet nadaje się na lawetę?**
-Tak, szczególnie w najmocniejszej wersji 180 KM. Jest on jednak bardziej skomplikowany osprzętowo (AdBlue) niż starsze jednostki 3.0, co wymaga większej dbałości o jakość paliwa i regularny serwis.
-
-**Jaka długość najazdu jest najlepsza?**
-Dla Fiata Ducato L4 optymalna długość platformy to 4,5 – 5,0 metrów. Pozwala to na transport większości aut osobowych oraz mniejszych busów (np. furgonów L1) bez nadmiernego przewieszenia tylnego.

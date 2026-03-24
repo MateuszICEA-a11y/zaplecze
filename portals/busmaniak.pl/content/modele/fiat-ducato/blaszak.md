@@ -11,9 +11,15 @@ volume: 320
 image: "/images/fiat-ducato-blaszak-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato Blaszak"
+lead: "Fiat Ducato to bezsprzecznie król polskich dróg w segmencie samochodów dostawczych do 3,5 tony. Od lat dominuje w rankingach sprzedaży, a jego popularność wynika z prostej konstrukcji, ogromnej dostępności części i niezwykle ustawnej przestrzeni ładunkowej. Niezależnie od tego, czy szukasz wołu robo"
+faq:
+  - question: "Ile pali Fiat Ducato blaszak?"
+    answer: "Średnie spalanie zależy od silnika i obciążenia. Silnik 2.3 MultiJet w cyklu mieszanym pali zazwyczaj między 8,5 a 10,5 litra na 100 km. Przy autostradowej prędkości 130 km/h spalanie może wzrosnąć do 12 litrów."
+  - question: "Z jakim silnikiem kupić Fiata Ducato?"
+    answer: "Najbardziej polecanym silnikiem jest 2.3 MultiJet o mocy 130 lub 150 KM. Jeśli budżet pozwala na starszy rocznik (przed 2016), warto szukać pancernej jednostki 3.0 JTD o mocy 180 KM."
+  - question: "Jakie są wymiary paki w Ducato L2H2?"
+    answer: "Wersja L2H2 posiada przestrzeń ładunkową o długości 3120 mm i wysokości 1932 mm. Szerokość między nadkolami wynosi 1422 mm, co pozwala na poprzeczny załadunek europalet."
 ---
-
-Fiat Ducato to bezsprzecznie król polskich dróg w segmencie samochodów dostawczych do 3,5 tony. Od lat dominuje w rankingach sprzedaży, a jego popularność wynika z prostej konstrukcji, ogromnej dostępności części i niezwykle ustawnej przestrzeni ładunkowej. Niezależnie od tego, czy szukasz wołu roboczego do firmy kurierskiej, czy bazy pod wymarzonego kampera, **Fiat Ducato blaszak** oferuje konfigurację dopasowaną do Twoich potrzeb.
 
 W tym artykule przyjrzymy się bliżej trzeciej generacji (typ 250/290), która jest produkowana od 2006 roku i przeszła szereg modernizacji, stając się najpopularniejszym furgonem w Europie.
 
@@ -65,14 +71,3 @@ Fiat Ducato blaszak to wybór racjonalny. Jeśli szukasz auta do pracy, wersja L
 *   *Oficjalna strona Fiat Professional: fiatprofessional.com*
 *   *Dane techniczne modeli: autocentrum.pl*
 *   *Katalogi techniczne Stellantis.*
-
-## FAQ
-
-**Ile pali Fiat Ducato blaszak?**
-Średnie spalanie zależy od silnika i obciążenia. Silnik 2.3 MultiJet w cyklu mieszanym pali zazwyczaj między 8,5 a 10,5 litra na 100 km. Przy autostradowej prędkości 130 km/h spalanie może wzrosnąć do 12 litrów.
-
-**Z jakim silnikiem kupić Fiata Ducato?**
-Najbardziej polecanym silnikiem jest 2.3 MultiJet o mocy 130 lub 150 KM. Jeśli budżet pozwala na starszy rocznik (przed 2016), warto szukać pancernej jednostki 3.0 JTD o mocy 180 KM.
-
-**Jakie są wymiary paki w Ducato L2H2?**
-Wersja L2H2 posiada przestrzeń ładunkową o długości 3120 mm i wysokości 1932 mm. Szerokość między nadkolami wynosi 1422 mm, co pozwala na poprzeczny załadunek europalet.

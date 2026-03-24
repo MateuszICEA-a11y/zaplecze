@@ -7,9 +7,17 @@ author: "marek-kowalczyk"
 image: "/images/fiat-ducato-maxi-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato Maxi"
+lead: "Fiat Ducato to niekwestionowany król polskich dróg i najpopularniejsza baza pod zabudowy specjalistyczne. Jednak gdy standardowy furgon przestaje wystarczać, do gry wchodzi wersja Maxi. To właśnie ona stanowi fundament dla firm transportowych obsługujących trasy międzynarodowe oraz dla pasjonatów va"
+faq:
+  - question: "1. Czy Fiat Ducato Maxi wymaga prawa jazdy kategorii C?"
+    answer: "Większość egzemplarzy dostępnych na polskim rynku jest zarejestrowana z DMC do 3,5 tony, co oznacza, że wystarczy prawo jazdy kategorii B. Istnieją jednak wersje z fabrycznym DMC 4,25 t, które wymagają kategorii C."
+  - question: "2. Czy silnik 2.3 MultiJet w Fiat Ducato jest niezawodny?"
+    answer: "Tak, silnik 2.3 produkcji Iveco jest uważany za jeden z najlepszych silników diesla w historii aut dostawczych. Przy regularnej wymianie oleju (zalecamy co 15–20 tys. km zamiast serwisowych 40 tys.) bez problemu pokonuje przebiegi rzędu 500–700 tys. kilometrów."
+  - question: "3. Ile europalet mieści Fiat Ducato Maxi L4H2?"
+    answer: "Wersja furgon (blaszak) o długości paki 4,07 m mieści 5 standardowych europalet (1200 x 800 mm)."
+  - question: "4. Jakie są typowe usterki w Ducato Maxi?"
+    answer: "Użytkownicy najczęściej skarżą się na nietrwałe łożyska kół (szczególnie przy dużym obciążeniu), drobne problemy z elektroniką (np. czujniki cofania, podświetlenie zegarów) oraz szybko zużywające się klamki drzwi przesuwnych.  Źródła: - *Oficjalna strona Fiat Professional: fiatprofessional.com* - *D"
 ---
-
-Fiat Ducato to niekwestionowany król polskich dróg i najpopularniejsza baza pod zabudowy specjalistyczne. Jednak gdy standardowy furgon przestaje wystarczać, do gry wchodzi wersja Maxi. To właśnie ona stanowi fundament dla firm transportowych obsługujących trasy międzynarodowe oraz dla pasjonatów vanlife’u, którzy marzą o przestronnym kamperze z pełnowymiarową łazienką.
 
 W tym artykule przyjrzymy się bliżej największym wariantom Fiata Ducato Maxi, sprawdzimy ich wymiary, ładowność oraz podpowiemy, jaki silnik wybrać, by cieszyć się bezawaryjną jazdą.
 
@@ -56,22 +64,3 @@ Dzięki swoim gabarytom, Fiat Ducato Maxi jest pojazdem niezwykle uniwersalnym:
 *   **Transport międzynarodowy:** Wersje z zabudową typu "międzynarodówka" (plandeka 8–10 palet) bazują właśnie na podwoziu Maxi.
 *   **Camper van:** Wersja L4H3 o wysokości blisko 2,2 m wewnątrz pozwala na zbudowanie podwójnej podłogi i izolacji, zachowując przy tym możliwość swobodnego stania dla wysokich osób. Więcej o bazach dowiesz się w naszym [przewodniku po Fiat Ducato](/modele/fiat-ducato/).
 *   **Autolawety:** Wzmocniona rama Maxi to idealna podstawa pod zabudowę do transportu pojazdów.
-
-## FAQ – Najczęściej zadawane pytania
-
-**1. Czy Fiat Ducato Maxi wymaga prawa jazdy kategorii C?**
-Większość egzemplarzy dostępnych na polskim rynku jest zarejestrowana z DMC do 3,5 tony, co oznacza, że wystarczy prawo jazdy kategorii B. Istnieją jednak wersje z fabrycznym DMC 4,25 t, które wymagają kategorii C.
-
-**2. Czy silnik 2.3 MultiJet w Fiat Ducato jest niezawodny?**
-Tak, silnik 2.3 produkcji Iveco jest uważany za jeden z najlepszych silników diesla w historii aut dostawczych. Przy regularnej wymianie oleju (zalecamy co 15–20 tys. km zamiast serwisowych 40 tys.) bez problemu pokonuje przebiegi rzędu 500–700 tys. kilometrów.
-
-**3. Ile europalet mieści Fiat Ducato Maxi L4H2?**
-Wersja furgon (blaszak) o długości paki 4,07 m mieści 5 standardowych europalet (1200 x 800 mm).
-
-**4. Jakie są typowe usterki w Ducato Maxi?**
-Użytkownicy najczęściej skarżą się na nietrwałe łożyska kół (szczególnie przy dużym obciążeniu), drobne problemy z elektroniką (np. czujniki cofania, podświetlenie zegarów) oraz szybko zużywające się klamki drzwi przesuwnych.
-
-Źródła:
-- *Oficjalna strona Fiat Professional: fiatprofessional.com*
-- *Dane techniczne modeli: pl.wikipedia.org/wiki/Fiat_Ducato*
-- *Katalogi produktowe Stellantis 2021-2023.*

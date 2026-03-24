@@ -11,9 +11,17 @@ volume: 390
 image: "/images/kontrolki-fiat-ducato-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato Kontrolki"
+lead: "Fiat Ducato to niekwestionowany król europejskich dróg, baza pod tysiące kamperów i niezastąpiony wół roboczy w firmach transportowych. Niezależnie od tego, czy prowadzisz najnowszą generację z cyfrowymi zegarami, czy starszy model Ducato II (typ 230/244), deska rozdzielcza komunikuje się z Tobą za "
+faq:
+  - question: "1. Dlaczego kontrolka świec żarowych miga po uruchomieniu silnika?"
+    answer: "Oznacza to usterkę w układzie wstępnego podgrzewania. Najczęściej jest to spalona świeca żarowa. W silnikach MultiJet auto zazwyczaj odpala bez problemu, ale błąd będzie powracał do momentu wymiany uszkodzonego elementu."
+  - question: "2. Co oznacza kontrolka \"klucza\" w Fiacie Ducato?"
+    answer: "To przypomnienie o planowanym serwisie olejowym (Service Coupon). Nie oznacza awarii, a jedynie konieczność udania się na przegląd. Można ją skasować za pomocą odpowiedniej kombinacji pedałów (w niektórych wersjach) lub testera diagnostycznego."
+  - question: "3. Czy z zapaloną żółtą kontrolką silnika mogę jechać dalej?"
+    answer: "Jeśli auto nie straciło mocy i nie wydaje dziwnych dźwięków, możesz kontynuować jazdę do najbliższego serwisu. Unikaj jednak dużych obciążeń silnika, gdyż usterka może doprowadzić do zapchania filtra DPF lub uszkodzenia turbosprężarki."
+  - question: "4. Co oznacza czerwona kontrolka z symbolem kłódki/samochodu?"
+    answer: "To błąd systemu Fiat Code (immobilizer). Jeśli świeci się po przekręceniu kluczyka, silnik może nie zapalić, ponieważ system nie rozpoznał kodu w kluczyku. Często pomaga wyjęcie kluczyka i ponowna próba po kilku sekundach."
 ---
-
-Fiat Ducato to niekwestionowany król europejskich dróg, baza pod tysiące kamperów i niezastąpiony wół roboczy w firmach transportowych. Niezależnie od tego, czy prowadzisz najnowszą generację z cyfrowymi zegarami, czy starszy model Ducato II (typ 230/244), deska rozdzielcza komunikuje się z Tobą za pomocą ikon.
 
 Zrozumienie, co oznaczają **fiat ducato kontrolki**, to klucz do uniknięcia kosztownych awarii i zapewnienia bezpieczeństwa podczas długich tras. W tym artykule przeanalizujemy najważniejsze symbole, dzieląc je na kategorie kolorystyczne.
 
@@ -76,17 +84,3 @@ Współczesne generacje Ducato (szczególnie te produkowane po 2014 roku) mają 
 - Instrukcja obsługi Fiat Ducato (eLum Fiat): [https://aftersales.fiat.com/elum/](https://aftersales.fiat.com/elum/)
 - Dane techniczne modeli Fiat Professional: [https://www.fiatprofessional.com/pl/ducato](https://www.fiatprofessional.com/pl/ducato)
 - Forum użytkowników Fiat: [fiatklubpolska.pl](https://fiatklubpolska.pl)
-
-## FAQ – Najczęściej zadawane pytania
-
-**1. Dlaczego kontrolka świec żarowych miga po uruchomieniu silnika?**
-Oznacza to usterkę w układzie wstępnego podgrzewania. Najczęściej jest to spalona świeca żarowa. W silnikach MultiJet auto zazwyczaj odpala bez problemu, ale błąd będzie powracał do momentu wymiany uszkodzonego elementu.
-
-**2. Co oznacza kontrolka "klucza" w Fiacie Ducato?**
-To przypomnienie o planowanym serwisie olejowym (Service Coupon). Nie oznacza awarii, a jedynie konieczność udania się na przegląd. Można ją skasować za pomocą odpowiedniej kombinacji pedałów (w niektórych wersjach) lub testera diagnostycznego.
-
-**3. Czy z zapaloną żółtą kontrolką silnika mogę jechać dalej?**
-Jeśli auto nie straciło mocy i nie wydaje dziwnych dźwięków, możesz kontynuować jazdę do najbliższego serwisu. Unikaj jednak dużych obciążeń silnika, gdyż usterka może doprowadzić do zapchania filtra DPF lub uszkodzenia turbosprężarki.
-
-**4. Co oznacza czerwona kontrolka z symbolem kłódki/samochodu?**
-To błąd systemu Fiat Code (immobilizer). Jeśli świeci się po przekręceniu kluczyka, silnik może nie zapalić, ponieważ system nie rozpoznał kodu w kluczyku. Często pomaga wyjęcie kluczyka i ponowna próba po kilku sekundach.

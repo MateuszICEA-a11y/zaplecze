@@ -10,9 +10,17 @@ type: "engine"
 image: "/images/fiat-ducato-2-8-jtd-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato 2.8 JTD"
+lead: "Jeśli szukasz \"wołu roboczego\", który przetrwa setki tysięcy kilometrów na trasach międzynarodowych lub posłuży jako solidna baza pod wyprawowego camper vana, fiat ducato 2.8 jtd to nazwa, która musi pojawić się w Twoim zestawieniu. Ten silnik, produkowany przez firmę Sofim, zyskał miano legendy p"
+faq:
+  - question: "Który silnik w Fiacie Ducato jest najlepszy?"
+    answer: "Wielu ekspertów uważa 2.8 JTD za najlepszy silnik w historii modelu pod kątem trwałości mechanicznej. Jeśli szukasz czegoś nowszego, równie dobrą opinią cieszy się silnik 3.0 JTD (MultiJet)."
+  - question: "Co ile wymiana rozrządu Ducato 2.8 JTD?"
+    answer: "Producent przewidywał wymianę co 120 tys. km, jednak bezpieczniej jest robić to co 80–90 tys. km lub co 5 lat, aby uniknąć zerwania paska."
+  - question: "Jakie są najczęstsze problemy z Ducato 2.8 JTD?"
+    answer: "Główne bolączki to korozja nadwozia, usterki piątego biegu w manualnej skrzyni oraz awarie osprzętu silnika (alternator, rozrusznik) wynikające z dużych przebiegów."
+  - question: "Ile oleju wchodzi do silnika 2.8 JTD?"
+    answer: "Do wymiany z filtrem potrzeba zazwyczaj około 7 litrów oleju (zalecana lepkość to zazwyczaj 5W40 lub 10W40, zależnie od stanu silnika i klimatu)."
 ---
-
-Jeśli szukasz "wołu roboczego", który przetrwa setki tysięcy kilometrów na trasach międzynarodowych lub posłuży jako solidna baza pod wyprawowego camper vana, **fiat ducato 2.8 jtd** to nazwa, która musi pojawić się w Twoim zestawieniu. Ten silnik, produkowany przez firmę Sofim, zyskał miano legendy pancernego diesla. W tym artykule przyjrzymy się bliżej danym technicznym, awaryjności oraz kosztom eksploatacji tej jednostki w kultowej drugiej generacji Ducato (typ 230 oraz po liftingu 244).
 
 ## Fiat Ducato II – ewolucja silnika 2.8
 
@@ -73,17 +81,3 @@ Mimo upływu lat, Fiat Ducato z silnikiem 2.8 JTD pozostaje jednym z najlepszych
 - *Dane techniczne modeli Fiat Professional: fiatprofessional.com*
 - *Specyfikacja silników Sofim: wikipedia.org*
 - *Katalogi części i instrukcje serwisowe Fiat Ducato 2002–2006.*
-
-## FAQ
-
-**Który silnik w Fiacie Ducato jest najlepszy?**
-Wielu ekspertów uważa 2.8 JTD za najlepszy silnik w historii modelu pod kątem trwałości mechanicznej. Jeśli szukasz czegoś nowszego, równie dobrą opinią cieszy się silnik 3.0 JTD (MultiJet).
-
-**Co ile wymiana rozrządu Ducato 2.8 JTD?**
-Producent przewidywał wymianę co 120 tys. km, jednak bezpieczniej jest robić to co 80–90 tys. km lub co 5 lat, aby uniknąć zerwania paska.
-
-**Jakie są najczęstsze problemy z Ducato 2.8 JTD?**
-Główne bolączki to korozja nadwozia, usterki piątego biegu w manualnej skrzyni oraz awarie osprzętu silnika (alternator, rozrusznik) wynikające z dużych przebiegów.
-
-**Ile oleju wchodzi do silnika 2.8 JTD?**
-Do wymiany z filtrem potrzeba zazwyczaj około 7 litrów oleju (zalecana lepkość to zazwyczaj 5W40 lub 10W40, zależnie od stanu silnika i klimatu).

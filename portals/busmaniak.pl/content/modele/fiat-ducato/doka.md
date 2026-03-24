@@ -11,9 +11,17 @@ volume: 260
 image: "/images/fiat-ducato-doka-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato Doka"
+lead: "Fiat Ducato w wersji doka (podwójna kabina) to od lat jeden z najchętniej wybieranych pojazdów przez ekipy budowlane, instalatorów oraz firmy zajmujące się utrzymaniem zieleni. Połączenie możliwości przewozu 7 osób z otwartą przestrzenią ładunkową sprawia, że jest to narzędzie niezwykle uniwersalne."
+faq:
+  - question: "Który silnik w Fiacie Ducato jest najlepszy?"
+    answer: "Za najlepszy silnik w historii modelu uważa się jednostkę 2.3 MultiJet (szczególnie w wersji 150 KM). Jest to silnik o wysokiej kulturze pracy i dużej wytrzymałości mechanicznej. W nowych modelach silnik 2.2 (140 KM) również zbiera dobre opinie za niskie spalanie."
+  - question: "Jakie są wymiary paki w Ducato doka?"
+    answer: "Długość skrzyni zależy od rozstawu osi i wynosi zazwyczaj od 2,4 m do nawet 3 m w wersjach przedłużanych. Szerokość to standardowo 2 metry, co pozwala na bezproblemowy załadunek dwóch euro-palet obok siebie."
+  - question: "Czy silnik 2.3 MultiJet w Fiat Ducato jest niezawodny?"
+    answer: "Tak, to jedna z najbardziej udanych konstrukcji w segmencie aut dostawczych. Przy odpowiednim serwisie bez problemu pokonuje przebiegi rzędu 400–500 tysięcy kilometrów."
+  - question: "Ile osób realnie mieści Fiat Ducato doka?"
+    answer: "Fabryczna homologacja przewiduje 7 osób (3 z przodu, 4 z tyłu). W drugim rzędzie jest wystarczająco dużo miejsca na nogi, jednak komfort podróży na długich trasach jest typowo „roboczy” ze względu na pionowe ustawienie oparć tylnej kanapy.  *Więcej informacji o technicznych aspektach pojazdów dostaw"
 ---
-
-Fiat Ducato w wersji doka (podwójna kabina) to od lat jeden z najchętniej wybieranych pojazdów przez ekipy budowlane, instalatorów oraz firmy zajmujące się utrzymaniem zieleni. Połączenie możliwości przewozu 7 osób z otwartą przestrzenią ładunkową sprawia, że jest to narzędzie niezwykle uniwersalne. W tym artykule przyjrzymy się bliżej specyfikacji, wymiarom i możliwościom tej konfiguracji.
 
 ## Fiat Ducato doka – co to za konstrukcja?
 
@@ -64,19 +72,3 @@ Czy Fiat Ducato jest awaryjny? Według opinii użytkowników to solidna konstruk
 *   Szybko zużywające się łożyska kół przednich.
 *   Problemy z elektroniką (czujniki parkowania, systemy wspomagające w nowszych wersjach).
 *   Słabe wygłuszenie kabiny (wersja doka jest dość głośna przy prędkościach autostradowych).
-
-## FAQ – Najczęściej zadawane pytania
-
-**Który silnik w Fiacie Ducato jest najlepszy?**
-Za najlepszy silnik w historii modelu uważa się jednostkę 2.3 MultiJet (szczególnie w wersji 150 KM). Jest to silnik o wysokiej kulturze pracy i dużej wytrzymałości mechanicznej. W nowych modelach silnik 2.2 (140 KM) również zbiera dobre opinie za niskie spalanie.
-
-**Jakie są wymiary paki w Ducato doka?**
-Długość skrzyni zależy od rozstawu osi i wynosi zazwyczaj od 2,4 m do nawet 3 m w wersjach przedłużanych. Szerokość to standardowo 2 metry, co pozwala na bezproblemowy załadunek dwóch euro-palet obok siebie.
-
-**Czy silnik 2.3 MultiJet w Fiat Ducato jest niezawodny?**
-Tak, to jedna z najbardziej udanych konstrukcji w segmencie aut dostawczych. Przy odpowiednim serwisie bez problemu pokonuje przebiegi rzędu 400–500 tysięcy kilometrów.
-
-**Ile osób realnie mieści Fiat Ducato doka?**
-Fabryczna homologacja przewiduje 7 osób (3 z przodu, 4 z tyłu). W drugim rzędzie jest wystarczająco dużo miejsca na nogi, jednak komfort podróży na długich trasach jest typowo „roboczy” ze względu na pionowe ustawienie oparć tylnej kanapy.
-
-*Więcej informacji o technicznych aspektach pojazdów dostawczych znajdziesz w sekcji [Modele](/modele/) na BusManiak.pl.*
