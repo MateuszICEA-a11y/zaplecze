@@ -47,6 +47,14 @@
     <p class="article-lead">{{ . }}</p>
     {{ end }}
 
+    {{/* ═══ TOC ═══ */}}
+    {{ if gt (len $.TableOfContents) 100 }}
+    <div class="toc">
+      <div class="toc__title">Spis treści</div>
+      {{ $.TableOfContents }}
+    </div>
+    {{ end }}
+
     <div class="article__content">
       {{ $.Content }}
     </div>
@@ -61,6 +69,24 @@
       </div>
       <ul class="link-box__list">
         {{ range $children }}
+        <li><a href="{{ .Permalink }}">{{ .Params.h1 | default .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+
+    {{/* ═══ LINK BOX: Cross-cluster (pages with parent_model matching this section slug) ═══ */}}
+    {{ $slug := $.File.ContentBaseName }}
+    {{ if eq $slug "_index" }}{{ $slug = $.File.Dir | path.Dir | path.Base }}{{ end }}
+    {{ $crossCluster := where $.Site.RegularPages "Params.parent_model" $slug }}
+    {{ if $crossCluster }}
+    <div class="link-box link-box--dark">
+      <div class="link-box__header">
+        <span class="material-symbols-outlined">link</span>
+        Powiązane artykuły
+      </div>
+      <ul class="link-box__list">
+        {{ range $crossCluster }}
         <li><a href="{{ .Permalink }}">{{ .Params.h1 | default .Title }}</a></li>
         {{ end }}
       </ul>
