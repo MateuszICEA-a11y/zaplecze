@@ -94,67 +94,6 @@
       {{ .Content }}
     </div>
 
-    {{/* ═══ LINK BOX: Subpages (engines/variants) ═══ */}}
-    {{ if .IsNode }}
-    {{ $children := .Pages }}
-    {{ if $children }}
-    <div class="link-box">
-      <div class="link-box__header">
-        <span class="material-symbols-outlined">menu_book</span>
-        Podstrony {{ .Title }}
-      </div>
-      <ul class="link-box__list">
-        {{ range $children }}
-        <li><a href="{{ .Permalink }}">{{ .Params.h1 | default .Title }}</a></li>
-        {{ end }}
-      </ul>
-    </div>
-    {{ end }}
-    {{ end }}
-
-    {{/* ═══ LINK BOX: Sibling pages (same parent) ═══ */}}
-    {{ with .Params.parent }}
-    {{ $parentPage := $.Site.GetPage (printf "/modele/%s" .) }}
-    {{ if $parentPage }}
-    {{ $siblings := $parentPage.Pages }}
-    {{ if gt (len $siblings) 1 }}
-    <div class="link-box">
-      <div class="link-box__header">
-        <span class="material-symbols-outlined">hub</span>
-        Więcej o {{ $parentPage.Title }}
-      </div>
-      <ul class="link-box__list">
-        {{ range $siblings }}
-        {{ if ne $.Permalink .Permalink }}
-        <li><a href="{{ .Permalink }}">{{ .Params.h1 | default .Title }}</a></li>
-        {{ end }}
-        {{ end }}
-      </ul>
-    </div>
-    {{ end }}
-    {{ end }}
-    {{ end }}
-
-    {{/* ═══ LINK BOX: Cross-cluster (same parent_model) ═══ */}}
-    {{ with .Params.parent_model }}
-    {{ $pm := . }}
-    {{ $related := where $.Site.RegularPages "Params.parent_model" $pm }}
-    {{ $related = where $related "Permalink" "ne" $.Permalink }}
-    {{ if $related }}
-    <div class="link-box link-box--dark">
-      <div class="link-box__header">
-        <span class="material-symbols-outlined">link</span>
-        Powiązane artykuły
-      </div>
-      <ul class="link-box__list">
-        {{ range $related }}
-        <li><a href="{{ .Permalink }}">{{ .Params.h1 | default .Title }}</a></li>
-        {{ end }}
-      </ul>
-    </div>
-    {{ end }}
-    {{ end }}
-
     {{/* ═══ FAQ ═══ */}}
     {{ with .Params.faq }}
     <section class="faq">
@@ -197,10 +136,60 @@
   </div>
 </article>
 
-{{/* ═══ RELATED ARTICLES ═══ */}}
-{{ $section := .CurrentSection }}
-{{ $related := where $section.RegularPages "Permalink" "ne" .Permalink }}
-{{ if gt (len $related) 0 }}
+{{/* ═══ RELATED ARTICLES (merged: children + siblings + cross-cluster) ═══ */}}
+{{ $allRelated := slice }}
+
+{{/* 1. Children (if this is a section/node page) */}}
+{{ if .IsNode }}
+  {{ range .Pages }}
+    {{ $allRelated = $allRelated | append . }}
+  {{ end }}
+{{ end }}
+
+{{/* 2. Siblings (same parent) */}}
+{{ with .Params.parent }}
+  {{ $parentPage := $.Site.GetPage (printf "/modele/%s" .) }}
+  {{ if $parentPage }}
+    {{ range $parentPage.Pages }}
+      {{ if ne $.Permalink .Permalink }}
+        {{ $allRelated = $allRelated | append . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* 3. Cross-cluster (same parent_model) */}}
+{{ with .Params.parent_model }}
+  {{ $pm := . }}
+  {{ $cross := where $.Site.RegularPages "Params.parent_model" $pm }}
+  {{ range $cross }}
+    {{ if ne $.Permalink .Permalink }}
+      {{ $allRelated = $allRelated | append . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* 4. Same section fallback */}}
+{{ if eq (len $allRelated) 0 }}
+  {{ $section := .CurrentSection }}
+  {{ range $section.RegularPages }}
+    {{ if ne $.Permalink .Permalink }}
+      {{ $allRelated = $allRelated | append . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* Deduplicate by Permalink */}}
+{{ $seen := slice }}
+{{ $unique := slice }}
+{{ range $allRelated }}
+  {{ if not (in $seen .Permalink) }}
+    {{ $unique = $unique | append . }}
+    {{ $seen = $seen | append .Permalink }}
+  {{ end }}
+{{ end }}
+
+{{ if gt (len $unique) 0 }}
 <section class="related-section">
   <div class="container">
     <div class="related-section__header">
@@ -208,33 +197,44 @@
         <div class="related-section__title">Powiązane artykuły</div>
         <div class="related-section__bar"></div>
       </div>
-      <a href="{{ $section.Permalink }}" class="section__link">
-        Wszystkie {{ $section.Title | lower }} <span class="material-symbols-outlined" style="font-size:.9rem;vertical-align:middle;">arrow_forward</span>
+      {{ with .CurrentSection }}
+      <a href="{{ .Permalink }}" class="section__link">
+        Wszystkie {{ .Title | lower }} <span class="material-symbols-outlined" style="font-size:.9rem;vertical-align:middle;">arrow_forward</span>
       </a>
-    </div>
-    <div class="related-grid">
-      {{ range first 3 $related }}
-      <article class="related-card">
-        <a href="{{ .Permalink }}">
-          {{ with .Params.image }}
-          <div class="related-card__image">
-            <img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}" loading="lazy">
-            <div class="related-card__badge">{{ $.Parent.Title | default $.Section }}</div>
-          </div>
-          {{ else }}
-          <div class="related-card__image" style="background: linear-gradient(135deg, var(--c-dark), var(--c-navy));">
-            <div class="related-card__badge">{{ $.Parent.Title | default $.Section }}</div>
-          </div>
-          {{ end }}
-          <div class="related-card__body">
-            <div class="related-card__title">{{ .Params.h1 | default .Title }}</div>
-            {{ with .Description }}
-            <p class="related-card__excerpt">{{ . | truncate 100 }}</p>
-            {{ end }}
-          </div>
-        </a>
-      </article>
       {{ end }}
+    </div>
+    <div class="related-slider" data-slider>
+      <button class="related-slider__btn related-slider__btn--prev" data-slider-prev aria-label="Poprzednie">
+        <span class="material-symbols-outlined">chevron_left</span>
+      </button>
+      <div class="related-slider__track" data-slider-track>
+        {{ range $unique }}
+        {{ $page := . }}
+        <article class="related-card">
+          <a href="{{ $page.Permalink }}">
+            {{ if $page.Params.image }}
+            <div class="related-card__image">
+              <img src="{{ $page.Params.image }}" alt="{{ $page.Params.image_alt | default $page.Title }}" loading="lazy">
+              <div class="related-card__badge">{{ with $page.Parent }}{{ .Title }}{{ else }}{{ $page.Section }}{{ end }}</div>
+            </div>
+            {{ else }}
+            <div class="related-card__image" style="background: linear-gradient(135deg, var(--c-dark), var(--c-navy));">
+              <div class="related-card__badge">{{ with $page.Parent }}{{ .Title }}{{ else }}{{ $page.Section }}{{ end }}</div>
+            </div>
+            {{ end }}
+            <div class="related-card__body">
+              <div class="related-card__title">{{ $page.Params.h1 | default $page.Title }}</div>
+              {{ with $page.Description }}
+              <p class="related-card__excerpt">{{ . | truncate 100 }}</p>
+              {{ end }}
+            </div>
+          </a>
+        </article>
+        {{ end }}
+      </div>
+      <button class="related-slider__btn related-slider__btn--next" data-slider-next aria-label="Następne">
+        <span class="material-symbols-outlined">chevron_right</span>
+      </button>
     </div>
   </div>
 </section>

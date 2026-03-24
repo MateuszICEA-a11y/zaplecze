@@ -36,7 +36,6 @@ Proace towarowy ma blaszane ściany, ściankę odgradzającą kabinę i twarde z
 
 ## Dostępne konfiguracje miejsc
 
-{{< table >}}
 | Konfiguracja | Rzędy | Nadwozie |
 |---|---|---|
 | 5 miejsc | 2 rzędy (kierowca + 4) | Medium lub Long |
@@ -44,7 +43,6 @@ Proace towarowy ma blaszane ściany, ściankę odgradzającą kabinę i twarde z
 | 8 miejsc | 3 rzędy (2+3+3) | Medium lub Long |
 | 9 miejsc | 3 rzędy (2+3+4) | tylko Long |
 | Kombi (mixt) | 2+ładownia | Medium |
-{{< /table >}}
 
 Wersja 9-miejscowa wymaga nadwozia Long (5309 mm). W Medium da się upchnąć 8 foteli, ale trzeci rząd jest wtedy mocno ściśnięty – szczególnie przy dłuższych trasach odczujesz to w plecach.
 

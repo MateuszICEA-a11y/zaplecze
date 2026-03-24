@@ -52,7 +52,6 @@ Standardowa europaleta ma 1200x800 mm i nośność 1000 kg. Trzy palety to 3,6 m
 
 ## Toyota Proace Long vs Medium – różnice, które mają znaczenie
 
-{{< table >}}
 | Parametr | Long (L2) | Medium (L1) |
 |---|---|---|
 | Długość całkowita | 5309 mm | 4959 mm |
@@ -61,7 +60,6 @@ Standardowa europaleta ma 1200x800 mm i nośność 1000 kg. Trzy palety to 3,6 m
 | Palety europalety | 3 | 2 |
 | Ładowność maks. | do 1400 kg | do 1200 kg |
 | Dopuszczalna masa | 3000–3500 kg | 2800–3100 kg |
-{{< /table >}}
 
 Różnica w długości to 350 mm – tyle co standardowy karton kurierski. W praktyce decyduje o tym, czy zmieścisz trzecią paletę, czy nie.
 

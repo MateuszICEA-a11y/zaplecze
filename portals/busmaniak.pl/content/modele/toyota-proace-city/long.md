@@ -58,7 +58,6 @@ Dwie europalety z towarem po 500 kg każda to już 1000 kg ładunku – maksimum
 
 ## Toyota Proace City Long vs Short – porównanie
 
-{{< table >}}
 | Parametr | Long (L2) | Short (L1) |
 |---|---|---|
 | Długość całkowita | 4753 mm | 4403 mm |
@@ -67,7 +66,6 @@ Dwie europalety z towarem po 500 kg każda to już 1000 kg ładunku – maksimum
 | Palety europalety | 2 | 1 |
 | Ładowność maks. | do 1000 kg | do 800 kg |
 | DMC | 2500–2600 kg | 2300–2500 kg |
-{{< /table >}}
 
 Różnica w długości to 350 mm – identycznie jak między Proace Long i Medium w dużej klasie. Krótszy Short sprawdza się w wąskich ulicach starych miast (Kraków, Wrocław śródmieście) i na parkingach podziemnych ze standardową przepustowością 4,6–5 m.
 
