@@ -64,7 +64,7 @@
     <div class="link-box">
       <div class="link-box__header">
         <span class="material-symbols-outlined">menu_book</span>
-        Wszystko o {{ $.Params.h1 | default $.Title }}
+        Wszystko o {{ $.Params.main_keyword | default $.Title }}
       </div>
       <ul class="link-box__list">
         {{ range $children }}
