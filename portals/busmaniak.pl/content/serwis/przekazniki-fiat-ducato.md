@@ -12,7 +12,13 @@ image: "/images/przekazniki-fiat-ducato-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato Przekaźniki"
 lead: "Przekaźniki w Fiacie Ducato odpowiadają za kluczowe funkcje elektryczne – od pompy paliwa po wycieraczki i świece żarowe. Gdy bus odmawia posłuszeństwa, warto zacząć diagnostykę właśnie od nich. Oto kompletny schemat i lokalizacja przekaźników w Ducato III i IV."
-
+faq:
+  - question: "Gdzie znajduje się przekaźnik kierunkowskazów w Ducato X250?"
+    answer: "W modelach produkowanych od 2006 roku nie ma klasycznego, wymiennego przekaźnika kierunkowskazów. Funkcję tę pełni moduł elektroniczny w Body Computerze (pod deską rozdzielczą). Jeśli kierunkowskazy nie działają, sprawdź najpierw bezpieczniki i żarówki."
+  - question: "Czy przekaźniki z Peugeota Boxera i Citroena Jumpera pasują do Ducato?"
+    answer: "Tak, modele te (tzw. \"trojaczki z Sevel\") mają identyczną architekturę elektryczną. Skrzynki bezpieczników i przekaźniki są zamienne, o ile zgadzają się parametry natężenia prądu (A) i układ pinów."
+  - question: "Silnik kręci, ale nie odpala – który przekaźnik sprawdzić?"
+    answer: "W pierwszej kolejności sprawdź przekaźnik T14 (pompa paliwa) oraz T09 (główny przekaźnik silnika) w skrzynce pod maską. Warto również zweryfikować bezpiecznik F22 (system wtrysku)."
 ---
 
 ## Gdzie szukać przekaźników w Fiacie Ducato?
@@ -68,19 +74,3 @@ Wymiana przekaźnika to jedna z najprostszych napraw, jaką możesz wykonać sam
 Zawsze warto mieć w schowku dwa zapasowe przekaźniki uniwersalne (30A/40A), ponieważ pasują one do większości gniazd w Fiacie Ducato i mogą uratować Twój wyjazd w najmniej oczekiwanym momencie.
 
 ---
-
-### FAQ – Najczęściej zadawane pytania
-
-**1. Gdzie znajduje się przekaźnik kierunkowskazów w Ducato X250?**
-W modelach produkowanych od 2006 roku nie ma klasycznego, wymiennego przekaźnika kierunkowskazów. Funkcję tę pełni moduł elektroniczny w Body Computerze (pod deską rozdzielczą). Jeśli kierunkowskazy nie działają, sprawdź najpierw bezpieczniki i żarówki.
-
-**2. Czy przekaźniki z Peugeota Boxera i Citroena Jumpera pasują do Ducato?**
-Tak, modele te (tzw. "trojaczki z Sevel") mają identyczną architekturę elektryczną. Skrzynki bezpieczników i przekaźniki są zamienne, o ile zgadzają się parametry natężenia prądu (A) i układ pinów.
-
-**3. Silnik kręci, ale nie odpala – który przekaźnik sprawdzić?**
-W pierwszej kolejności sprawdź przekaźnik T14 (pompa paliwa) oraz T09 (główny przekaźnik silnika) w skrzynce pod maską. Warto również zweryfikować bezpiecznik F22 (system wtrysku).
-
-**Źródła danych:**
-*   Instrukcja obsługi Fiat Ducato (eLum) – [https://aftersales.fiat.com/elum/](https://aftersales.fiat.com/elum/)
-*   Dokumentacja techniczna Fiat Professional.
-*   Dane techniczne modeli na portalu [Wikipedia - Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato).

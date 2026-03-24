@@ -12,7 +12,15 @@ image: "/images/fiat-ducato-brygadowka-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato Brygadówka"
 lead: "Fiat Ducato brygadówka (często nazywany również wersją kabina załogowa lub MultiCab) to jeden z najpopularniejszych wyborów wśród polskich ekip budowlanych, instalatorskich i remontowych. Łączy on zalety tradycyjnego vana z możliwością przewozu od 6 do 7 osób, zachowując przy tym znaczną przestrzeń "
-
+faq:
+  - question: "Który silnik w Fiacie Ducato jest najlepszy?"
+    answer: "Za najlepszy silnik uznaje się jednostkę 2.3 Multijet (szczególnie w wersjach 130 i 150 KM) ze względu na trwałość i dostępność części zamiennych. W starszych modelach bezkonkurencyjny był silnik 3.0 JTD."
+  - question: "Ile kosztuje nowy Fiat Ducato brygadówka?"
+    answer: "Ceny katalogowe zaczynają się od ok. 130 000 zł netto, jednak finalna kwota zależy od długości nadwozia (L2-L4), mocy silnika oraz wybranego pakietu wyposażenia (np. Pakiet Techno, zawieszenie wzmocnione)."
+  - question: "Co ile wymiana rozrządu Fiat Ducato 2.3 JTD 130KM?"
+    answer: "Choć instrukcja przewiduje nawet 180 000 km, mechanicy specjalizujący się w busach zalecają wymianę co 100 000 – 120 000 km lub co 5 lat. W trudnych warunkach eksploatacji (krótkie trasy, duże obciążenie) interwał ten warto jeszcze bardziej skrócić."
+  - question: "Czy Ducato brygadówka wymaga specjalnych uprawnień?"
+    answer: "Nie, o ile dopuszczalna masa całkowita (DMC) nie przekracza 3500 kg, do prowadzenia auta wystarczy prawo jazdy kategorii B.  *Źródła:* - *Oficjalna strona Fiat Professional: fiatprofessional.com* - *Dane techniczne i specyfikacje: auto-data.net* - *Katalogi produktowe Stellantis Pro One.*"
 ---
 
 ## Konstrukcja i wersje nadwozia brygadowego
@@ -68,22 +76,3 @@ Fiat Ducato brygadówka, jak każde auto użytkowe, ma swoje słabe punkty. Do n
 Cena nowej brygadówki zależy od konfiguracji i aktualnych rabatów flotowych, ale szacunkowo zaczyna się od około 140 000 – 160 000 zł netto za solidnie wyposażoną wersję L3H2.
 
 ---
-
-### FAQ – Najczęściej zadawane pytania
-
-**Który silnik w Fiacie Ducato jest najlepszy?**
-Za najlepszy silnik uznaje się jednostkę 2.3 Multijet (szczególnie w wersjach 130 i 150 KM) ze względu na trwałość i dostępność części zamiennych. W starszych modelach bezkonkurencyjny był silnik 3.0 JTD.
-
-**Ile kosztuje nowy Fiat Ducato brygadówka?**
-Ceny katalogowe zaczynają się od ok. 130 000 zł netto, jednak finalna kwota zależy od długości nadwozia (L2-L4), mocy silnika oraz wybranego pakietu wyposażenia (np. Pakiet Techno, zawieszenie wzmocnione).
-
-**Co ile wymiana rozrządu Fiat Ducato 2.3 JTD 130KM?**
-Choć instrukcja przewiduje nawet 180 000 km, mechanicy specjalizujący się w busach zalecają wymianę co 100 000 – 120 000 km lub co 5 lat. W trudnych warunkach eksploatacji (krótkie trasy, duże obciążenie) interwał ten warto jeszcze bardziej skrócić.
-
-**Czy Ducato brygadówka wymaga specjalnych uprawnień?**
-Nie, o ile dopuszczalna masa całkowita (DMC) nie przekracza 3500 kg, do prowadzenia auta wystarczy prawo jazdy kategorii B.
-
-*Źródła:*
-- *Oficjalna strona Fiat Professional: fiatprofessional.com*
-- *Dane techniczne i specyfikacje: auto-data.net*
-- *Katalogi produktowe Stellantis Pro One.*
