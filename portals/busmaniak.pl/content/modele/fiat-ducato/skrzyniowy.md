@@ -8,6 +8,8 @@ h1: "Fiat Ducato skrzyniowy – przegląd wersji"
 parent: "fiat-ducato"
 type: "page"
 volume: 320
+image: "/images/fiat-ducato-skrzyniowy-hero.jpg"
+image_alt: ""
 main_keyword: "Fiat Ducato Skrzyniowy"
 ---
 

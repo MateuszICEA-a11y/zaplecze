@@ -8,6 +8,8 @@ h1: "Fiat Ducato plandeka – przegląd wersji"
 parent: "fiat-ducato"
 type: "page"
 volume: 320
+image: "/images/fiat-ducato-plandeka-hero.jpg"
+image_alt: ""
 main_keyword: "Fiat Ducato Plandeka"
 ---
 

@@ -8,6 +8,8 @@ h1: "Fiat Ducato brygadówka – kompletny przewodnik"
 parent: "fiat-ducato"
 type: "page"
 volume: 480
+image: "/images/fiat-ducato-brygadowka-hero.jpg"
+image_alt: ""
 main_keyword: "Fiat Ducato Brygadówka"
 ---
 

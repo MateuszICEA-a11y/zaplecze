@@ -8,6 +8,8 @@ h1: "Fiat Ducato kontener – przegląd zabudowy"
 parent: "fiat-ducato"
 type: "page"
 volume: 260
+image: "/images/fiat-ducato-kontener-hero.jpg"
+image_alt: ""
 main_keyword: "Fiat Ducato Kontener"
 ---
 

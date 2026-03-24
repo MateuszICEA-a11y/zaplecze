@@ -8,6 +8,8 @@ h1: "Fiat Ducato chłodnia – przegląd zabudowy"
 parent: "fiat-ducato"
 type: "page"
 volume: 210
+image: "/images/fiat-ducato-chlodnia-hero.jpg"
+image_alt: ""
 main_keyword: "Fiat Ducato Chłodnia"
 ---
 

@@ -8,6 +8,8 @@ h1: "Fiat Ducato laweta – przegląd zabudowy"
 parent: "fiat-ducato"
 type: "page"
 volume: 490
+image: "/images/fiat-ducato-laweta-hero.jpg"
+image_alt: ""
 main_keyword: "Fiat Ducato Laweta"
 ---
 

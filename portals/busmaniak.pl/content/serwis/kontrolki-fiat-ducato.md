@@ -8,6 +8,8 @@ h1: "Kontrolki Fiat Ducato – co oznaczają"
 parent_model: "fiat-ducato"
 type: "post"
 volume: 390
+image: "/images/kontrolki-fiat-ducato-hero.jpg"
+image_alt: ""
 main_keyword: "Fiat Ducato Kontrolki"
 ---
 

@@ -8,6 +8,8 @@ h1: "Fiat Ducato tuning – poradnik modyfikacji"
 parent_model: "fiat-ducato"
 type: "post"
 volume: 210
+image: "/images/fiat-ducato-tuning-hero.jpg"
+image_alt: ""
 main_keyword: "Fiat Ducato Tuning"
 ---
 

@@ -8,6 +8,8 @@ h1: "Fiat Ducato blaszak – przegląd wersji"
 parent: "fiat-ducato"
 type: "page"
 volume: 320
+image: "/images/fiat-ducato-blaszak-hero.jpg"
+image_alt: ""
 main_keyword: "Fiat Ducato Blaszak"
 ---
 

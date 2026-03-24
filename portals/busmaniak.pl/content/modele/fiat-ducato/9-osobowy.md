@@ -8,6 +8,8 @@ h1: "Fiat Ducato 9-osobowy – kompletny przewodnik"
 parent: "fiat-ducato"
 type: "page"
 volume: 480
+image: "/images/fiat-ducato-9-osobowy-hero.jpg"
+image_alt: ""
 main_keyword: "Fiat Ducato 9 Osobowy"
 ---
 

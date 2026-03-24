@@ -109,16 +109,17 @@
     </div>
     <div class="related-grid">
       {{ range $crossCluster }}
+      {{ $card := . }}
       <article class="related-card">
         <a href="{{ .Permalink }}">
           {{ with .Params.image }}
           <div class="related-card__image">
-            <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
-            <div class="related-card__badge">{{ .Section | humanize }}</div>
+            <img src="{{ . }}" alt="{{ $card.Title }}" loading="lazy">
+            <div class="related-card__badge">{{ $card.Section | humanize }}</div>
           </div>
           {{ else }}
           <div class="related-card__image" style="background: linear-gradient(135deg, var(--c-dark), var(--c-navy));">
-            <div class="related-card__badge">{{ .Section | humanize }}</div>
+            <div class="related-card__badge">{{ $card.Section | humanize }}</div>
           </div>
           {{ end }}
           <div class="related-card__body">

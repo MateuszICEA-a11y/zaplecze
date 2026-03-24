@@ -8,6 +8,8 @@ h1: "Fiat Ducato doka – przegląd wersji"
 parent: "fiat-ducato"
 type: "page"
 volume: 260
+image: "/images/fiat-ducato-doka-hero.jpg"
+image_alt: ""
 main_keyword: "Fiat Ducato Doka"
 ---
 

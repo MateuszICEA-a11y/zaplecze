@@ -8,6 +8,8 @@ h1: "Bezpieczniki Fiat Ducato – kompletny schemat"
 parent_model: "fiat-ducato"
 type: "post"
 volume: 1600
+image: "/images/bezpieczniki-fiat-ducato-hero.jpg"
+image_alt: ""
 main_keyword: "Fiat Ducato Bezpieczniki"
 ---
 

@@ -8,6 +8,8 @@ h1: "Fiat Ducato kamper – dlaczego jest najpopularniejszy"
 parent_model: "fiat-ducato"
 type: "post"
 volume: 2600
+image: "/images/fiat-ducato-kamper-hero.jpg"
+image_alt: ""
 main_keyword: "Fiat Ducato Kamper"
 ---
 

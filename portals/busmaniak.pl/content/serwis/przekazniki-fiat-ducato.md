@@ -8,6 +8,8 @@ h1: "Przekaźniki Fiat Ducato – kompletny schemat"
 parent_model: "fiat-ducato"
 type: "post"
 volume: 1000
+image: "/images/przekazniki-fiat-ducato-hero.jpg"
+image_alt: ""
 main_keyword: "Fiat Ducato Przekaźniki"
 ---
 

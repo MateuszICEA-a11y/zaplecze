@@ -8,6 +8,8 @@ h1: "Fiat Ducato spalanie – tabela per silnik"
 parent_model: "fiat-ducato"
 type: "post"
 volume: 170
+image: "/images/fiat-ducato-spalanie-hero.jpg"
+image_alt: ""
 main_keyword: "Fiat Ducato Spalanie"
 ---
 

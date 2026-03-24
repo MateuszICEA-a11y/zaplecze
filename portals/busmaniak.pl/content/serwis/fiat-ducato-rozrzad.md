@@ -8,6 +8,8 @@ h1: "Fiat Ducato rozrząd – kiedy wymieniać"
 parent_model: "fiat-ducato"
 type: "post"
 volume: 280
+image: "/images/fiat-ducato-rozrzad-hero.jpg"
+image_alt: ""
 main_keyword: "Fiat Ducato Rozrząd"
 ---
 
