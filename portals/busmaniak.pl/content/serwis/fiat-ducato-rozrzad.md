@@ -60,9 +60,9 @@ Najczęstszym błędem podczas wymiany rozrządu w Ducato 2.3 jest próba ustawi
 ## Rozrząd w innych silnikach Ducato
 
 Nie każdy Fiat Ducato ma pasek. Warto o tym pamiętać przy zakupie używanego egzemplarza:
-1.  **Silnik 2.2 MultiJet (starsze wersje od PSA):** Posiada łańcuch rozrządu, który bywał problematyczny i potrafił się rozciągnąć.
-2.  **Silnik 3.0 MultiJet (IVECO):** Legendarna jednostka na łańcuchu. Przy odpowiednim serwisie olejowym łańcuch wytrzymuje tu nawet 400–500 tys. km.
-3.  **Silnik 2.0 MultiJet:** Mniejsza jednostka, również na pasku, wymagająca regularnej wymiany co ok. 120 tys. km.
+1.  **Silnik 2.2 MultiJet (starsze wersje od PSA)** – posiada łańcuch rozrządu, który bywał problematyczny i potrafił się rozciągnąć.
+2.  **Silnik 3.0 MultiJet (IVECO)** – legendarna jednostka na łańcuchu. Przy odpowiednim serwisie olejowym łańcuch wytrzymuje tu nawet 400–500 tys. km.
+3.  **Silnik 2.0 MultiJet** – mniejsza jednostka, również na pasku, wymagająca regularnej wymiany co ok. 120 tys. km.
 
 ## Podsumowanie
 

@@ -81,18 +81,16 @@
     <p class="article-lead">{{ . }}</p>
     {{ end }}
 
-    {{/* TOC */}}
-    {{ if .Params.toc | default true }}
-    {{ if gt (len .TableOfContents) 100 }}
-    <div class="toc">
-      <div class="toc__title">Spis treści</div>
-      {{ .TableOfContents }}
-    </div>
-    {{ end }}
-    {{ end }}
-
-    {{/* Content */}}
+    {{/* Content with TOC before first H2 */}}
     <div class="article__content">
+      {{ if .Params.toc | default true }}
+      {{ if gt (len .TableOfContents) 100 }}
+      <div class="toc">
+        <div class="toc__title">Spis treści</div>
+        {{ .TableOfContents }}
+      </div>
+      {{ end }}
+      {{ end }}
       {{ .Content }}
     </div>
 

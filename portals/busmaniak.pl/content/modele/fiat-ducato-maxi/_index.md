@@ -50,9 +50,9 @@ Dzięki szerokości 1422 mm między nadkolami, **fiat ducato maxi** bez problemu
 
 Wybór jednostki napędowej zależy od rocznika, na który się decydujemy. W historii modelu Ducato III (Typ 250/290) dominowały trzy kluczowe silniki:
 
-1.  **2.3 MultiJet (Iveco):** Według opinii użytkowników i mechaników, to najbardziej niezawodny silnik w historii tego modelu. Wersje 130 KM, 150 KM i 180 KM świetnie radzą sobie z dużym nadwoziem Maxi.
-2.  **3.0 MultiJet:** Legenda wytrzymałości. Silnik o mocy 180 KM, idealny do najcięższych zadań, choć wycofany z oferty ze względu na normy emisji spalin.
-3.  **2.2 MultiJet (najnowsze modele):** Wprowadzony w nowszych rocznikach (MR`21). Silnik o pojemności 2184 cm³ oferuje moce od 120 do 180 KM. Jest lżejszy i spełnia rygorystyczne normy Euro 6d-Final.
+1.  **2.3 MultiJet (Iveco)** – według opinii użytkowników i mechaników, to najbardziej niezawodny silnik w historii tego modelu. Wersje 130 KM, 150 KM i 180 KM świetnie radzą sobie z dużym nadwoziem Maxi.
+2.  **3.0 MultiJet** – legenda wytrzymałości. Silnik o mocy 180 KM, idealny do najcięższych zadań, choć wycofany z oferty ze względu na normy emisji spalin.
+3.  **2.2 MultiJet (najnowsze modele)** – wprowadzony w nowszych rocznikach (MR`21). Silnik o pojemności 2184 cm³ oferuje moce od 120 do 180 KM. Jest lżejszy i spełnia rygorystyczne normy Euro 6d-Final.
 
 **Ile pali Fiat Ducato Maxi?** W wersji L4H3 z silnikiem 2.3 150 KM średnie spalanie w trasie oscyluje w granicach 10–12 l/100 km. Przy pełnym obciążeniu i jeździe autostradowej może wzrosnąć do 14 l.
 
@@ -61,6 +61,6 @@ Wybór jednostki napędowej zależy od rocznika, na który się decydujemy. W hi
 ## Zastosowania: Od kurierki po luksusowy vanlife
 
 Dzięki swoim gabarytom, Fiat Ducato Maxi jest pojazdem niezwykle uniwersalnym:
-*   **Transport międzynarodowy:** Wersje z zabudową typu "międzynarodówka" (plandeka 8–10 palet) bazują właśnie na podwoziu Maxi.
-*   **Camper van:** Wersja L4H3 o wysokości blisko 2,2 m wewnątrz pozwala na zbudowanie podwójnej podłogi i izolacji, zachowując przy tym możliwość swobodnego stania dla wysokich osób. Więcej o bazach dowiesz się w naszym [przewodniku po Fiat Ducato](/modele/fiat-ducato/).
-*   **Autolawety:** Wzmocniona rama Maxi to idealna podstawa pod zabudowę do transportu pojazdów.
+*   **Transport międzynarodowy** – wersje z zabudową typu "międzynarodówka" (plandeka 8–10 palet) bazują właśnie na podwoziu Maxi.
+*   **Camper van** – wersja L4H3 o wysokości blisko 2,2 m wewnątrz pozwala na zbudowanie podwójnej podłogi i izolacji, zachowując przy tym możliwość swobodnego stania dla wysokich osób. Więcej o bazach dowiesz się w naszym [przewodniku po Fiat Ducato](/modele/fiat-ducato/).
+*   **Autolawety** – wzmocniona rama Maxi to idealna podstawa pod zabudowę do transportu pojazdów.

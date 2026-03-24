@@ -55,18 +55,18 @@ Plandeki 10-paletowe często wyposażone są w tzw. windę oraz regulację wysok
 
 Wybór jednostki napędowej to kluczowa decyzja. Plandeka generuje duże opory powietrza, co przy pełnym obciążeniu stawia silnikowi wysokie wymagania.
 
-1.  **2.3 MultiJet (130, 150, 180 KM):** Według wielu mechaników i kierowców to „złoty środek”. Jednostka konstrukcji Iveco słynie z trwałości. Od 2019 roku zastąpiona nowszą wersją 2.2 MultiJet 3 (zgodną z normą Euro 6d-Final).
-2.  **3.0 MultiJet (180 KM):** Legendarny silnik, montowany do 2016 roku. Posiada rozrząd na łańcuchu i ogromny moment obrotowy. Idealny do najcięższych zabudów 10-paletowych.
-3.  **2.2 MultiJet (nowe modele):** Obecnie dostępne warianty 140 KM i 180 KM. Są lżejsze, co poprawia realną ładowność pojazdu, jednak wymagają stosowania AdBlue.
+1.  **2.3 MultiJet (130, 150, 180 KM)** – według wielu mechaników i kierowców to „złoty środek”. Jednostka konstrukcji Iveco słynie z trwałości. Od 2019 roku zastąpiona nowszą wersją 2.2 MultiJet 3 (zgodną z normą Euro 6d-Final).
+2.  **3.0 MultiJet (180 KM)** – legendarny silnik, montowany do 2016 roku. Posiada rozrząd na łańcuchu i ogromny moment obrotowy. Idealny do najcięższych zabudów 10-paletowych.
+3.  **2.2 MultiJet (nowe modele)** – obecnie dostępne warianty 140 KM i 180 KM. Są lżejsze, co poprawia realną ładowność pojazdu, jednak wymagają stosowania AdBlue.
 
 {{< expert name="Marek Kowalczyk" >}}Szukając używanego Ducato pod plandekę, celowałbym w roczniki 2017–2019 z silnikiem 2.3 o mocy 150 lub 180 KM. To ostatnie serie przed wprowadzeniem najbardziej restrykcyjnych norm, które łączą przyzwoitą dynamikę z akceptowalnym spalaniem na poziomie 11–13 litrów przy pełnej zabudowie.{{< /expert >}}
 
 ## Praktyczne zastosowania i doposażenie
 
 Fiat Ducato plandeka to nie tylko transport towarowy. Coraz częściej staje się bazą dla:
-*   **Camper vanów (przeróbki):** Choć rzadziej niż blaszaki, podwozia z plandeką bywają bazą dla ogromnych kamperów z zabudową typu "kontener" lub "skrzynia".
-*   **Transportu mebli i AGD:** Dzięki szerokości wewnętrznej powyżej 2,1 m, meble można przewozić w całości bez ryzyka uszkodzeń.
-*   **Logistyki międzynarodowej:** W połączeniu z kabiną sypialną (tzw. kurnikiem) i ogrzewaniem postojowym (Webasto), Ducato staje się mobilnym domem dla kierowcy na trasach po całej Europie.
+*   **Camper vanów (przeróbki)** – choć rzadziej niż blaszaki, podwozia z plandeką bywają bazą dla ogromnych kamperów z zabudową typu "kontener" lub "skrzynia".
+*   **Transportu mebli i AGD** – dzięki szerokości wewnętrznej powyżej 2,1 m, meble można przewozić w całości bez ryzyka uszkodzeń.
+*   **Logistyki międzynarodowej** – w połączeniu z kabiną sypialną (tzw. kurnikiem) i ogrzewaniem postojowym (Webasto), Ducato staje się mobilnym domem dla kierowcy na trasach po całej Europie.
 
 Warto pamiętać, że przy zabudowach 10-paletowych realna ładowność Fiata Ducato (przy DMC 3,5t) rzadko przekracza 1000–1100 kg. Przekroczenie tej wartości naraża użytkownika na wysokie mandaty, szczególnie podczas kontroli we Francji czy Niemczech.
 

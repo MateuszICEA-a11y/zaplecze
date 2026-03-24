@@ -68,10 +68,10 @@ Silnik 2.8 JTD to konstrukcja niemal pancerna. Przy regularnym serwisie olejowym
 {{< /expert >}}
 
 **Najczęstsze problemy:**
-1.  **Skrzynia biegów:** Piąty bieg bywa problematyczny (słynne "wypadanie piątki") ze względu na smarowanie.
-2.  **Korozja:** Progi, podłużnice i nadkola to miejsca, które wymagają szczególnej uwagi przy zakupie używanego egzemplarza.
-3.  **Elektryka:** Drobne awarie kostek, czujników czy mechanizmów wycieraczek.
-4.  **Układ chłodzenia:** Starzejące się przewody gumowe mogą pękać, co w skrajnych przypadkach prowadzi do przegrzania jednostki.
+1.  **Skrzynia biegów** – piąty bieg bywa problematyczny (słynne "wypadanie piątki") ze względu na smarowanie.
+2.  **Korozja** – progi, podłużnice i nadkola to miejsca, które wymagają szczególnej uwagi przy zakupie używanego egzemplarza.
+3.  **Elektryka** – drobne awarie kostek, czujników czy mechanizmów wycieraczek.
+4.  **Układ chłodzenia** – starzejące się przewody gumowe mogą pękać, co w skrajnych przypadkach prowadzi do przegrzania jednostki.
 
 ## Podsumowanie – czy warto kupić Ducato 2.8 JTD?
 

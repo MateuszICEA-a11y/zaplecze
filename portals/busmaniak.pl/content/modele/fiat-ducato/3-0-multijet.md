@@ -65,10 +65,10 @@ Szczegółowe zestawienie kosztów paliwa znajdziesz tutaj: [Spalanie Ducato](/s
 Silnik 3.0 MultiJet uchodzi za jednostkę zdolną przejechać 700–800 tysięcy kilometrów bez remontu kapitalnego. Nie jest jednak całkowicie wolny od wad.
 
 **Najczęstsze problemy:**
-1.  **Przepustnica:** Często ulega zabrudzeniu lub awarii elektroniki (wymiana to koszt ok. 600–900 zł).
-2.  **Skrzynia biegów (M40):** To najsłabsze ogniwo układu napędowego. Przy przebiegach powyżej 300 tys. km mogą pojawić się problemy z łożyskami, zwłaszcza jeśli kierowca nadużywa niskich obrotów na 6. biegu.
-3.  **Urwane śruby kolektora wydechowego:** Typowa przypadłość, objawiająca się cykaniem na zimnym silniku.
-4.  **Wtryskiwacze:** Są wrażliwe na jakość paliwa, choć ich trwałość i tak przewyższa konkurencję.
+1.  **Przepustnica** – często ulega zabrudzeniu lub awarii elektroniki (wymiana to koszt ok. 600–900 zł).
+2.  **Skrzynia biegów (M40)** – to najsłabsze ogniwo układu napędowego. Przy przebiegach powyżej 300 tys. km mogą pojawić się problemy z łożyskami, zwłaszcza jeśli kierowca nadużywa niskich obrotów na 6. biegu.
+3.  **Urwane śruby kolektora wydechowego** – typowa przypadłość, objawiająca się cykaniem na zimnym silniku.
+4.  **Wtryskiwacze** – są wrażliwe na jakość paliwa, choć ich trwałość i tak przewyższa konkurencję.
 
 {{< expert name="Marek Kowalczyk" >}}Silnik 3.0 MultiJet to najlepszy wybór, jeśli planujesz budowę ciężkiego kampera lub transport międzynarodowy. Jego elastyczność sprawia, że jazda w górach z pełnym obciążeniem nie jest wyzwaniem. Kluczem do długowieczności jest wymiana oleju co 15–20 tys. km, a nie co 45 tys. km, jak sugerował producent.{{< /expert >}}
 

@@ -24,10 +24,10 @@ faq:
 ## Od czego zależy spalanie w Fiacie Ducato?
 
 Zanim przejdziemy do konkretnych liczb, musimy pamiętać, że Fiat Ducato występuje w dziesiątkach konfiguracji. Na ostateczny wynik wpływa:
-*   **Wysokość i długość (H1–H3, L1–L4):** Większa powierzchnia czołowa to wyższy opór powietrza.
-*   **Zabudowa:** Klasyczny furgon (blaszak) spali mniej niż kontener czy kamper typu alkowa.
-*   **Obciążenie:** Różnica między pustym autem a pojazdem o DMC 3500 kg może wynosić nawet 2–3 litry na 100 km.
-*   **Przełożenie skrzyni biegów:** Modele z automatyczną skrzynią 9-biegową (dostępną od 2019 r.) często wykazują lepszą kulturę pracy i niższe spalanie w trasie niż stare przekładnie manualne.
+*   **Wysokość i długość (H1–H3, L1–L4)** – większa powierzchnia czołowa to wyższy opór powietrza.
+*   **Zabudowa** – klasyczny furgon (blaszak) spali mniej niż kontener czy kamper typu alkowa.
+*   **Obciążenie** – różnica między pustym autem a pojazdem o DMC 3500 kg może wynosić nawet 2–3 litry na 100 km.
+*   **Przełożenie skrzyni biegów** – modele z automatyczną skrzynią 9-biegową (dostępną od 2019 r.) często wykazują lepszą kulturę pracy i niższe spalanie w trasie niż stare przekładnie manualne.
 
 ## Fiat Ducato spalanie – zestawienie tabelaryczne
 
@@ -63,9 +63,9 @@ Więcej szczegółów technicznych znajdziesz tutaj: [Silnik 2.3 MultiJet](/mode
 ## Jak obniżyć spalanie w Fiacie Ducato? Praktyczne wskazówki
 
 Jeśli Twoje **fiat ducato spalanie** odbiega od normy, sprawdź poniższe punkty:
-1.  **Ciśnienie w oponach:** W busach dostawczych niedopompowane koła mogą zwiększyć spalanie o nawet 0,5 – 1 l/100 km.
-2.  **Aerodynamika:** Jeśli masz kampera lub busa z owiewką (kurnikiem), dbaj o jej czystość i poprawne ustawienie. Zdejmij nieużywane bagażniki dachowe.
-3.  **Styl jazdy (Eco-driving):** Ducato najlepiej czuje się w zakresie momentu obrotowego (zwykle 1500 – 2250 obr./min). Przyspieszaj dynamicznie do osiągnięcia prędkości przelotowej, a potem ją utrzymuj.
-4.  **Stan techniczny:** Zapchany filtr cząstek stałych (DPF) lub nieszczelność w układzie dolotowym (intercoolerze) to najczęstsze przyczyny nagłego wzrostu zużycia paliwa.
+1.  **Ciśnienie w oponach** – w busach dostawczych niedopompowane koła mogą zwiększyć spalanie o nawet 0,5 – 1 l/100 km.
+2.  **Aerodynamika** – jeśli masz kampera lub busa z owiewką (kurnikiem), dbaj o jej czystość i poprawne ustawienie. Zdejmij nieużywane bagażniki dachowe.
+3.  **Styl jazdy (Eco-driving)** – ducato najlepiej czuje się w zakresie momentu obrotowego (zwykle 1500 – 2250 obr./min). Przyspieszaj dynamicznie do osiągnięcia prędkości przelotowej, a potem ją utrzymuj.
+4.  **Stan techniczny** – zapchany filtr cząstek stałych (DPF) lub nieszczelność w układzie dolotowym (intercoolerze) to najczęstsze przyczyny nagłego wzrostu zużycia paliwa.
 
 Pełną historię tego modelu i opis wszystkich generacji znajdziesz w naszym artykule: [Fiat Ducato – przewodnik](/modele/fiat-ducato/).

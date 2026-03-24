@@ -32,9 +32,9 @@ Fiat Ducato III (produkowany od 2006 roku, z licznymi liftingami, m.in. w 2014 i
 Więcej o historii i ewolucji tego modelu przeczytasz w naszym artykule: [Fiat Ducato – przewodnik](/modele/fiat-ducato/).
 
 ### Najważniejsze parametry techniczne podwozia:
-*   **DMC:** Standardowo 3500 kg (kategoria B), dostępne wersje Maxi do 4250 kg.
+*   **DMC** – standardowo 3500 kg (kategoria B), dostępne wersje Maxi do 4250 kg.
 *   **Rozstawy osi:** 3000 mm, 3450 mm, 3800 mm, 4035 mm oraz wersje przedłużone.
-*   **Silniki:** Najbardziej ceniona jednostka 2.3 MultiJet (130, 150, 180 KM) oraz nowsze 2.2 MultiJet3 (zgodne z normą Euro 6d-Final).
+*   **Silniki** – najbardziej ceniona jednostka 2.3 MultiJet (130, 150, 180 KM) oraz nowsze 2.2 MultiJet3 (zgodne z normą Euro 6d-Final).
 
 {{< info title="Ważna informacja o silnikach" icon="engineering" >}}
 Silniki 2.3 MultiJet produkcji Iveco (F1A) są uznawane za jedne z najbardziej trwałych w klasie. Wersje produkowane do 2019 roku często nie wymagały stosowania płynu AdBlue, co jest dużym atutem na rynku wtórnym.
@@ -61,16 +61,16 @@ Standardowy kontener mieści zazwyczaj 8 europalet. Jeśli planujesz przewozić 
 ## Zastosowania zabudowy kontenerowej
 
 W przeciwieństwie do furgonów, kontener oferuje idealnie pionowe ściany. Co to oznacza w praktyce?
-1.  **Transport mebli:** Możliwość ustawienia szaf i regałów pod samą ścianę bez strat miejsca.
-2.  **Dystrybucja towarów na paletach:** Łatwy załadunek wózkiem widłowym z boku (jeśli kontener ma drzwi boczne) lub z tyłu przez rampę.
-3.  **Mobilne warsztaty:** Duża przestrzeń do montażu regałów narzędziowych i stołów roboczych.
-4.  **Baza pod kampera:** Coraz popularniejszy trend w vanlife – budowa domu na kołach na bazie kontenera (tzw. "box van conversion"), co daje znacznie więcej miejsca niż klasyczny blaszak.
+1.  **Transport mebli** – możliwość ustawienia szaf i regałów pod samą ścianę bez strat miejsca.
+2.  **Dystrybucja towarów na paletach** – łatwy załadunek wózkiem widłowym z boku (jeśli kontener ma drzwi boczne) lub z tyłu przez rampę.
+3.  **Mobilne warsztaty** – duża przestrzeń do montażu regałów narzędziowych i stołów roboczych.
+4.  **Baza pod kampera** – coraz popularniejszy trend w vanlife – budowa domu na kołach na bazie kontenera (tzw. "box van conversion"), co daje znacznie więcej miejsca niż klasyczny blaszak.
 
 ## Na co uważać przy zakupie?
 
 Użytkownicy Fiata Ducato III często wskazują na kilka powtarzających się kwestii. Według opinii z serwisów takich jak Autocentrum czy dostepnych danych technicznych, słabym punktem bywa ergonomia kabiny dla bardzo wysokich kierowców oraz jakość plastików wewnętrznych, które potrafią trzeszczeć po większym przebiegu.
 
 **Najczęstsze problemy:**
-*   **Łożyska skrzyni biegów:** Szczególnie w modelach z początku produkcji i przy dużych obciążeniach.
-*   **Osprzęt silnika:** Przy przebiegach powyżej 200-250 tys. km warto sprawdzić stan turbosprężarki i wtryskiwaczy.
-*   **Korozja ramy pomocniczej:** Choć szoferka jest dobrze zabezpieczona, stalowe elementy ramy zabudowy mogą rdzewieć, jeśli nie były konserwowane.
+*   **Łożyska skrzyni biegów** – szczególnie w modelach z początku produkcji i przy dużych obciążeniach.
+*   **Osprzęt silnika** – przy przebiegach powyżej 200-250 tys. km warto sprawdzić stan turbosprężarki i wtryskiwaczy.
+*   **Korozja ramy pomocniczej** – choć szoferka jest dobrze zabezpieczona, stalowe elementy ramy zabudowy mogą rdzewieć, jeśli nie były konserwowane.

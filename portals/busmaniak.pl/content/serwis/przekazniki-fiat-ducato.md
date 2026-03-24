@@ -20,9 +20,9 @@ W tym artykule skupimy się na modelach produkowanych po 2006 roku (X250 i X290)
 
 W Fiacie Ducato przekaźniki i bezpieczniki są zgrupowane w trzech głównych lokalizacjach. Dostęp do nich nie wymaga specjalistycznych narzędzi, co ułatwia diagnostykę w trasie.
 
-1.  **Komora silnika:** Skrzynka znajduje się po prawej stronie (patrząc od przodu auta), w pobliżu reflektora. To tutaj znajdziesz przekaźniki odpowiedzialne za najważniejsze funkcje układu napędowego (wentylatory, pompa paliwa, świece żarowe).
-2.  **Deska rozdzielcza:** Skrzynka po lewej stronie kierownicy (pod osłoną przykręcaną na śruby). Zawiera przekaźniki komfortu, np. blokadę drzwi czy sterowanie szybami.
-3.  **Słupek prawy (pasażera):** W niektórych wersjach (szczególnie kamperowych i specjalistycznych) znajduje się tam dodatkowy moduł zarządzający m.in. ładowaniem akumulatora bytowego lub światłami obrysowymi.
+1.  **Komora silnika** – skrzynka znajduje się po prawej stronie (patrząc od przodu auta), w pobliżu reflektora. To tutaj znajdziesz przekaźniki odpowiedzialne za najważniejsze funkcje układu napędowego (wentylatory, pompa paliwa, świece żarowe).
+2.  **Deska rozdzielcza** – skrzynka po lewej stronie kierownicy (pod osłoną przykręcaną na śruby). Zawiera przekaźniki komfortu, np. blokadę drzwi czy sterowanie szybami.
+3.  **Słupek prawy (pasażera)** – w niektórych wersjach (szczególnie kamperowych i specjalistycznych) znajduje się tam dodatkowy moduł zarządzający m.in. ładowaniem akumulatora bytowego lub światłami obrysowymi.
 
 {{< info title="Ważna wskazówka" icon="engineering" >}}
 Zanim wymienisz przekaźnik, sprawdź stan styków w gnieździe. W Ducato X250 częstym problemem jest wilgoć dostająca się do skrzynki w komorze silnika, co prowadzi do korozji pinów i błędnych diagnoz.
@@ -56,9 +56,9 @@ Właściciele kamperów na bazie Ducato często skarżą się na przekaźnik lod
 
 Fiat Ducato, mimo swojej solidności, ma kilka słabych punktów w układzie elektrycznym:
 
-*   **Wypalone gniazda:** Przekaźnik świateł mijania lub dmuchawy potrafi generować wysoką temperaturę, co prowadzi do nadtopienia plastiku w skrzynce bezpieczników.
-*   **Przekaźnik kierunkowskazów:** W nowszych modelach (po 2006 r.) funkcja ta jest zintegrowana z modułem Body Computer (BSI). Jeśli kierunkowskazy szaleją, problemem rzadko jest klasyczny przekaźnik, a częściej uszkodzona manetka lub wilgoć w module BSI.
-*   **Wycieraczki:** Jeśli wycieraczki działają tylko na najwyższym biegu, przekaźnik czasowy (często zintegrowany z silniczkiem lub BSI) może wymagać sprawdzenia.
+*   **Wypalone gniazda** – przekaźnik świateł mijania lub dmuchawy potrafi generować wysoką temperaturę, co prowadzi do nadtopienia plastiku w skrzynce bezpieczników.
+*   **Przekaźnik kierunkowskazów** – w nowszych modelach (po 2006 r.) funkcja ta jest zintegrowana z modułem Body Computer (BSI). Jeśli kierunkowskazy szaleją, problemem rzadko jest klasyczny przekaźnik, a częściej uszkodzona manetka lub wilgoć w module BSI.
+*   **Wycieraczki** – jeśli wycieraczki działają tylko na najwyższym biegu, przekaźnik czasowy (często zintegrowany z silniczkiem lub BSI) może wymagać sprawdzenia.
 
 Więcej o ogólnej budowie i eksploatacji tego modelu przeczytasz w naszym artykule: [Fiat Ducato – przewodnik](/modele/fiat-ducato/).
 

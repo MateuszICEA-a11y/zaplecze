@@ -70,9 +70,9 @@ To tzw. kontrolka ogólna. Często towarzyszy jej komunikat na wyświetlaczu. Mo
 
 Jako użytkownik [Fiata Ducato](/modele/fiat-ducato/) musisz znać symbole typowe dla silników wysokoprężnych:
 
-1.  **Filtr DPF (Chmura/Cząsteczki):** Jeśli kontrolka świeci światłem ciągłym, silnik wymaga regeneracji filtra podczas jazdy (utrzymuj stałe obroty powyżej 2000 obr./min przez ok. 15 minut). Nie gaś wtedy silnika!
-2.  **Woda w filtrze paliwa (Dystrybutor z kropelkami):** Bardzo ważna ikona. Oznacza konieczność spuszczenia wody z odstojnika filtra paliwa, co chroni wtryskiwacze Common Rail przed zatarciem.
-3.  **Klucz (Serwis):** To nie jest awaria. Klucz informuje o zbliżającym się terminie wymiany oleju lub przeglądu okresowego (zazwyczaj co 40 000 km lub wg wskazań komputera).
+1.  **Filtr DPF (Chmura/Cząsteczki)** – jeśli kontrolka świeci światłem ciągłym, silnik wymaga regeneracji filtra podczas jazdy (utrzymuj stałe obroty powyżej 2000 obr./min przez ok. 15 minut). Nie gaś wtedy silnika!
+2.  **Woda w filtrze paliwa (Dystrybutor z kropelkami)** – bardzo ważna ikona. Oznacza konieczność spuszczenia wody z odstojnika filtra paliwa, co chroni wtryskiwacze Common Rail przed zatarciem.
+3.  **Klucz (Serwis)** – to nie jest awaria. Klucz informuje o zbliżającym się terminie wymiany oleju lub przeglądu okresowego (zazwyczaj co 40 000 km lub wg wskazań komputera).
 
 Warto również zapoznać się z ogólnym poradnikiem [kontrolki w busie](/serwis/kontrolki-w-busie/), gdzie opisujemy różnice między popularnymi modelami dostawczaków.
 

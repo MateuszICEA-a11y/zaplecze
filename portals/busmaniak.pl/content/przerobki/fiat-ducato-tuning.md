@@ -42,17 +42,17 @@ Bezpieczny przyrost mocy zazwyczaj oscyluje w granicach 20–25%. Przykładowo, 
 
 Standardowe zawieszenie Fiata Ducato bywa twarde "na pusto" i zbyt miękkie przy pełnym obciążeniu. Właściciele kamperów często skarżą się na "pływanie" auta przy bocznych podmuchach wiatru.
 
-1.  **Poduszki pneumatyczne:** Montaż miechów powietrznych na tylnej osi pozwala na regulację wysokości tyłu pojazdu i poprawia stabilność. Koszt zestawu to zazwyczaj 1500–3000 zł.
-2.  **Wzmocnione sprężyny przednie:** Specjalistyczne sprężyny (np. marki Goldschmitt) podnoszą przód o 3–5 cm, co jest kluczowe w kamperach, gdzie przód często "nurkuje" pod ciężarem zabudowy.
-3.  **Dystanse kół:** Poprawiają stabilność w zakrętach i nadają busowi szerszą, bardziej agresywną postawę.
+1.  **Poduszki pneumatyczne** – montaż miechów powietrznych na tylnej osi pozwala na regulację wysokości tyłu pojazdu i poprawia stabilność. Koszt zestawu to zazwyczaj 1500–3000 zł.
+2.  **Wzmocnione sprężyny przednie** – specjalistyczne sprężyny (np. marki Goldschmitt) podnoszą przód o 3–5 cm, co jest kluczowe w kamperach, gdzie przód często "nurkuje" pod ciężarem zabudowy.
+3.  **Dystanse kół** – poprawiają stabilność w zakrętach i nadają busowi szerszą, bardziej agresywną postawę.
 
 ## Modyfikacje wnętrza i wyciszenie
 
 Fabryczne wyciszenie Ducato pozostawia wiele do życzenia, co potwierdzają liczne opinie w serwisach motoryzacyjnych. Tuning wnętrza warto zacząć od mat butylowych i pianek kauczukowych.
 
-*   **Wygłuszenie drzwi i maski:** Znacząco redukuje hałas silnika i szum wiatru.
-*   **Wymiana foteli:** Standardowe siedziska po 200–300 tys. km bywają wysiedziane. Popularną modyfikacją jest montaż foteli z aut osobowych (np. Saab, Volvo) na specjalnych obrotnicach.
-*   **Multimedia:** Wymiana fabrycznego radia 1DIN/2DIN na stację z Android Auto i Apple CarPlay to standard w nowoczesnym vanlifie.
+*   **Wygłuszenie drzwi i maski** – znacząco redukuje hałas silnika i szum wiatru.
+*   **Wymiana foteli** – standardowe siedziska po 200–300 tys. km bywają wysiedziane. Popularną modyfikacją jest montaż foteli z aut osobowych (np. Saab, Volvo) na specjalnych obrotnicach.
+*   **Multimedia** – wymiana fabrycznego radia 1DIN/2DIN na stację z Android Auto i Apple CarPlay to standard w nowoczesnym vanlifie.
 
 {{< info title="Ważna informacja" icon="engineering" >}}Przy modyfikacjach mechanicznych starszych jednostek, jak 2.5 TDI (116 KM), chiptuning elektroniczny nie jest możliwy w taki sam sposób jak w MultiJetach. Tutaj tuning polega na mechanicznej regulacji dawki paliwa na pompie wtryskowej oraz modyfikacji ciśnienia doładowania.{{< /info >}}
 
@@ -60,9 +60,9 @@ Fabryczne wyciszenie Ducato pozostawia wiele do życzenia, co potwierdzają licz
 
 Ducato nie musi wyglądać jak auto kurierskie. Na rynku dostępne są gotowe pakiety stylistyczne, które całkowicie zmieniają charakter pojazdu.
 
-*   **Felgi aluminiowe:** Przejście z 15-calowych stalówek na 16- lub 18-calowe alufelgi z oponami AT (All-Terrain) to absolutny hit wśród fanów camper vanów.
-*   **Orurowanie (Bullbary):** Chromowane lub czarne matowe rury przednie chronią zderzak i pozwalają na montaż dodatkowego oświetlenia LED (tzw. LED-barów).
-*   **Spoiler dachowy i dokładki zderzaka:** Poprawiają aerodynamikę, co przy dużych prędkościach może nieznacznie obniżyć spalanie.
+*   **Felgi aluminiowe** – przejście z 15-calowych stalówek na 16- lub 18-calowe alufelgi z oponami AT (All-Terrain) to absolutny hit wśród fanów camper vanów.
+*   **Orurowanie (Bullbary)** – chromowane lub czarne matowe rury przednie chronią zderzak i pozwalają na montaż dodatkowego oświetlenia LED (tzw. LED-barów).
+*   **Spoiler dachowy i dokładki zderzaka** – poprawiają aerodynamikę, co przy dużych prędkościach może nieznacznie obniżyć spalanie.
 
 Więcej o technicznych aspektach tego modelu przeczytasz w naszym [przewodniku po Fiacie Ducato](/modele/fiat-ducato/).
 

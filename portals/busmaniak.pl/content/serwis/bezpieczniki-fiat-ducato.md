@@ -29,9 +29,9 @@ W tym artykule znajdziesz kompletny przewodnik po bezpiecznikach dla najpopularn
 
 W Fiacie Ducato, szczególnie w nowszych generacjach (od 2006 roku), inżynierowie rozmieścili bezpieczniki w trzech głównych lokalizacjach. Dostęp do nich nie zawsze jest intuicyjny, zwłaszcza jeśli Twoje auto posiada zabudowę kamperową.
 
-1.  **Deska rozdzielcza (strona kierowcy):** Znajduje się tu główna skrzynka obsługująca wnętrze i podstawowe systemy komfortu. Aby się do niej dostać, należy odkręcić śruby mocujące osłonę po lewej stronie kolumny kierowniczej.
-2.  **Komora silnika:** Skrzynka umieszczona po prawej stronie (patrząc od przodu auta), obok akumulatora lub filtra powietrza. Zawiera bezpieczniki wysokoprądowe odpowiadające za silnik, wentylatory i systemy bezpieczeństwa (ABS/ESP).
-3.  **Słupek prawy (strona pasażera):** W generacji III (X250/X290) znajduje się tu dodatkowa skrzynka, często kluczowa dla zabudów kamperowych i gniazd dodatkowych.
+1.  **Deska rozdzielcza (strona kierowcy)** – znajduje się tu główna skrzynka obsługująca wnętrze i podstawowe systemy komfortu. Aby się do niej dostać, należy odkręcić śruby mocujące osłonę po lewej stronie kolumny kierowniczej.
+2.  **Komora silnika** – skrzynka umieszczona po prawej stronie (patrząc od przodu auta), obok akumulatora lub filtra powietrza. Zawiera bezpieczniki wysokoprądowe odpowiadające za silnik, wentylatory i systemy bezpieczeństwa (ABS/ESP).
+3.  **Słupek prawy (strona pasażera)** – w generacji III (X250/X290) znajduje się tu dodatkowa skrzynka, często kluczowa dla zabudów kamperowych i gniazd dodatkowych.
 
 {{< info title="Wskazówka techniczna" icon="engineering" >}}
 Zanim zaczniesz wymianę, zawsze wyłącz zapłon i odłącz odbiorniki prądu. Używaj dedykowanego chwytaka (zazwyczaj znajduje się w pokrywie skrzynki), aby nie uszkodzić gniazd bezpieczników.
@@ -56,9 +56,9 @@ Generacja III to najczęstsza baza pod camper vany. Układ bezpieczników jest t
 
 ### Bezpieczniki zapalniczki i gniazd 12V
 To najczęstsza usterka zgłaszana przez kierowców. W modelach produkowanych po 2015 roku (facelift) za zasilanie akcesoriów odpowiadają:
-*   **F14 (15A):** Gniazdo zasilania na desce rozdzielczej.
-*   **F15 (15A):** Zapalniczka.
-*   **F09 (15A):** Tylne gniazdo zasilania (jeśli występuje).
+*   **F14 (15A)** – gniazdo zasilania na desce rozdzielczej.
+*   **F15 (15A)** – zapalniczka.
+*   **F09 (15A)** – tylne gniazdo zasilania (jeśli występuje).
 
 {{< expert name="Marek Kowalczyk" >}}W Fiacie Ducato III generacji bardzo często dochodzi do przepalenia bezpiecznika F49. Odpowiada on nie tylko za radio, ale i za pamięć ustawień komputera pokładowego. Jeśli Twoje radio nagle przestało działać, a zegary resetują się po każdym zgaszeniu silnika, zacznij sprawdzenie właśnie od tego elementu w skrzynce pod kierownicą.{{< /expert >}}
 
@@ -71,7 +71,7 @@ Więcej o starszych jednostkach przeczytasz w naszym artykule: [Fiat Ducato – 
 ## Jak rozpoznać rodzaj i stan bezpiecznika?
 
 W Ducato stosowane są głównie bezpieczniki typu **Mini** oraz **Standard (Uni)**. W komorze silnika znajdziesz także bezpieczniki **Maxi** (duże kostki 30–60A).
-*   **Spalony bezpiecznik:** Drucik wewnątrz plastikowej obudowy jest przerwany lub widać czarny nalot.
-*   **Kolory:** Są ustandaryzowane – np. czerwony to zawsze 10A, niebieski 15A, żółty 20A. Nigdy nie zastępuj bezpiecznika mniejszego większym (np. 10A na 20A), ponieważ grozi to pożarem instalacji!
+*   **Spalony bezpiecznik** – drucik wewnątrz plastikowej obudowy jest przerwany lub widać czarny nalot.
+*   **Kolory** – są ustandaryzowane – np. czerwony to zawsze 10A, niebieski 15A, żółty 20A. Nigdy nie zastępuj bezpiecznika mniejszego większym (np. 10A na 20A), ponieważ grozi to pożarem instalacji!
 
 Jeśli po wymianie bezpiecznik natychmiast przepala się ponownie, oznacza to zwarcie w instalacji. W takim przypadku warto sprawdzić [kontrolki Ducato](/serwis/kontrolki-fiat-ducato/), które mogą naprowadzić na źródło problemu.

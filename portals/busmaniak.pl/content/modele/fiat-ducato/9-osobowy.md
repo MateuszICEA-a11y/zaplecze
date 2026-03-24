@@ -51,26 +51,26 @@ Wersje H2 mają ponad 2,5 metra wysokości. Oznacza to, że nie wjedziesz nimi n
 
 W Fiacie Ducato montowano szereg jednostek napędowych. Jeśli szukasz wersji 9-osobowej, Twoja uwaga powinna skupić się na silnikach Diesla z rodziny MultiJet.
 
-1.  **2.0 MultiJet (115 KM):** Jednostka oszczędna, ale nieco za słaba na pełne obciążenie 9 osobami i bagażem. Dobra do miasta.
-2.  **2.3 MultiJet (120, 130, 150, 180 KM):** Konstrukcja firmy Iveco, uważana za "pancerną". Najlepszy kompromis między spalaniem a dynamiką to wersja 130 KM lub 150 KM.
-3.  **3.0 MultiJet (160, 180 KM):** Legenda trwałości. Silnik z rozrządem na łańcuchu, idealny do ciągnięcia przyczep i bardzo długich tras. Niestety, wycofany z oferty w nowszych rocznikach na rzecz wzmocnionych jednostek 2.2/2.3.
+1.  **2.0 MultiJet (115 KM)** – jednostka oszczędna, ale nieco za słaba na pełne obciążenie 9 osobami i bagażem. Dobra do miasta.
+2.  **2.3 MultiJet (120, 130, 150, 180 KM)** – konstrukcja firmy Iveco, uważana za "pancerną". Najlepszy kompromis między spalaniem a dynamiką to wersja 130 KM lub 150 KM.
+3.  **3.0 MultiJet (160, 180 KM)** – legenda trwałości. Silnik z rozrządem na łańcuchu, idealny do ciągnięcia przyczep i bardzo długich tras. Niestety, wycofany z oferty w nowszych rocznikach na rzecz wzmocnionych jednostek 2.2/2.3.
 
 {{< expert name="Marek Kowalczyk" >}}Szukając używanego Ducato do przewozu osób, celuj w silnik 2.3 MultiJet o mocy 130 lub 150 KM. To jednostki, które przy regularnym serwisie olejowym (co 15–20 tys. km, a nie co 45 tys. jak sugeruje producent) bez problemu pokonują przebiegi rzędu 500 tysięcy kilometrów. Unikaj zaniedbanych egzemplarzy z początków produkcji z silnikiem 2.2 od Forda (Puma).{{< /expert >}}
 
 ## Komfort podróży i wyposażenie
 
 Wersje 9-osobowe występują w dwóch głównych specyfikacjach:
-*   **Combi:** Bardziej surowa, często z blaszanymi elementami wewnątrz, idealna dla ekip budowlanych. Zobacz także: [Ducato brygadówka](/modele/fiat-ducato/brygadowka/).
-*   **Panorama / Ludovico:** Wersje typowo osobowe, z pełną tapicerką, nawiewami dla każdego rzędu siedzeń i lepszym wyciszeniem.
+*   **Combi** – bardziej surowa, często z blaszanymi elementami wewnątrz, idealna dla ekip budowlanych. Zobacz także: [Ducato brygadówka](/modele/fiat-ducato/brygadowka/).
+*   **Panorama / Ludovico** – wersje typowo osobowe, z pełną tapicerką, nawiewami dla każdego rzędu siedzeń i lepszym wyciszeniem.
 
 Użytkownicy w serwisach opinii często wskazują na słabe wyciszenie fabryczne. Wielu właścicieli decyduje się na samodzielne wyklejenie matami butylowymi nadkoli i drzwi, co drastycznie podnosi komfort rozmowy przy prędkościach autostradowych.
 
 ## Typowe usterki i koszty serwisowe
 
 Fiat Ducato to auto solidne, ale nie wolno zapominać o kilku powtarzających się problemach:
-*   **Elektronika:** Częste błędy "check engine" spowodowane nieszczelnościami w układzie dolotowym lub problemami z wtyczkami.
-*   **Łożyska kół:** Przy dużym obciążeniu mogą wymagać wymiany co 80–100 tys. km.
-*   **Skrzynia biegów (M38):** W wersjach 2.3 zdarzają się awarie łożysk w skrzyni manualnej, objawiające się szumem podczas jazdy.
+*   **Elektronika** – częste błędy "check engine" spowodowane nieszczelnościami w układzie dolotowym lub problemami z wtyczkami.
+*   **Łożyska kół** – przy dużym obciążeniu mogą wymagać wymiany co 80–100 tys. km.
+*   **Skrzynia biegów (M38)** – w wersjach 2.3 zdarzają się awarie łożysk w skrzyni manualnej, objawiające się szumem podczas jazdy.
 
 **Ile kosztuje wymiana rozrządu?** W silniku 2.3 MultiJet koszt kompletnego zestawu wraz z pompą wody i robocizną oscyluje w granicach 1200–1800 zł (ceny szacunkowe na rok 2024).
 

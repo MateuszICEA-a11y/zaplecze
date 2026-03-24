@@ -21,9 +21,9 @@ W tym artykule przyjrzymy się bliżej czwartej generacji po liftingu (produkowa
 Fiat Ducato brygadówka bazuje na furgonie, w którym za pierwszym rzędem siedzeń zamontowano dodatkową kanapę oraz pełną lub częściową przegrodę oddzielającą przestrzeń pasażerską od ładunkowej. W odróżnieniu od wersji [Ducato 9-osobowy](/modele/fiat-ducato/9-osobowy/), brygadówka stawia na balans między liczbą pracowników a ilością sprzętu, który można zabrać „na pakę”.
 
 Najpopularniejsze warianty to:
-*   **L2H2 (Średnia):** Idealna do miasta, łatwiejsza w manewrowaniu.
-*   **L3H2 (Długa):** Najczęstszy wybór dla ekip budowlanych, oferujący optymalny stosunek długości paki do gabarytów auta.
-*   **L4H2 (Maxi):** Najdłuższy rozstaw osi, dedykowany do najcięższych zadań.
+*   **L2H2 (Średnia)** – idealna do miasta, łatwiejsza w manewrowaniu.
+*   **L3H2 (Długa)** – najczęstszy wybór dla ekip budowlanych, oferujący optymalny stosunek długości paki do gabarytów auta.
+*   **L4H2 (Maxi)** – najdłuższy rozstaw osi, dedykowany do najcięższych zadań.
 
 ### Wymiary zewnętrzne i przestrzeń ładunkowa (wersja L3H2 Facelifting)
 
@@ -44,27 +44,27 @@ W wersji brygadowej L3H2 długość podłogi w przestrzeni ładunkowej (mierząc
 
 Wybór jednostki napędowej w brygadówce ma kluczowe znaczenie, zwłaszcza gdy auto porusza się pod pełnym obciążeniem (pracownicy + narzędzia + materiały).
 
-1.  **2.3 Multijet (120, 130, 140, 160, 180 KM):** Według opinii użytkowników i serwisantów, silnik 2.3 produkcji Iveco to "złoty standard". Jest trwały, elastyczny i dobrze znosi duże przebiegi.
-2.  **2.2 Multijet (nowsze roczniki):** Wprowadzony w celu spełnienia surowszych norm emisji spalin. Silnik ten jest lżejszy i charakteryzuje się wysoką kulturą pracy.
-3.  **3.0 Multijet (180 KM):** Legendarny silnik montowany w starszych rocznikach (do 2016 r.), ceniony za niezniszczalność i ogromny moment obrotowy.
+1.  **2.3 Multijet (120, 130, 140, 160, 180 KM)** – według opinii użytkowników i serwisantów, silnik 2.3 produkcji Iveco to "złoty standard". Jest trwały, elastyczny i dobrze znosi duże przebiegi.
+2.  **2.2 Multijet (nowsze roczniki)** – wprowadzony w celu spełnienia surowszych norm emisji spalin. Silnik ten jest lżejszy i charakteryzuje się wysoką kulturą pracy.
+3.  **3.0 Multijet (180 KM)** – legendarny silnik montowany w starszych rocznikach (do 2016 r.), ceniony za niezniszczalność i ogromny moment obrotowy.
 
 {{< expert name="Marek Kowalczyk" >}}Dla ekip budowlanych szukających używanego Ducato brygadówki, optymalnym wyborem jest silnik 2.3 Multijet o mocy 130 lub 140 KM. Oferuje on najlepszy kompromis między spalaniem (średnio 9–11 l/100 km) a dynamiką przy pełnym załadunku. Warto pamiętać o regularnej wymianie paska rozrządu – producent często podaje interwały rzędu 180 tys. km, ale w warunkach ciężkiej pracy zalecamy skrócenie tego dystansu do 100–120 tys. km.{{< /expert >}}
 
 ## Komfort i ergonomia kabiny załogowej
 
 Fiat Ducato IV po liftingu przeszedł szereg zmian wewnątrz. Poprawiono wyciszenie oraz jakość materiałów wykończeniowych. W wersji brygadowej kluczowe są:
-*   **Wentylacja i ogrzewanie:** Dodatkowy nawiew na drugi rząd siedzeń jest niezbędny zimą, aby zapewnić komfort pracownikom.
-*   **Schowki:** Ducato słynie z dużej liczby półek i uchwytów na kubki, co ułatwia utrzymanie porządku w "mobilnym biurze".
-*   **Widoczność:** Duże lusterka dwudzielne znacząco ułatwiają manewrowanie długą wersją L3 lub L4.
+*   **Wentylacja i ogrzewanie** – dodatkowy nawiew na drugi rząd siedzeń jest niezbędny zimą, aby zapewnić komfort pracownikom.
+*   **Schowki** – ducato słynie z dużej liczby półek i uchwytów na kubki, co ułatwia utrzymanie porządku w "mobilnym biurze".
+*   **Widoczność** – duże lusterka dwudzielne znacząco ułatwiają manewrowanie długą wersją L3 lub L4.
 
 Więcej o ogólnej charakterystyce tego modelu przeczytasz w naszym głównym artykule: [Fiat Ducato – przewodnik](/modele/fiat-ducato/).
 
 ## Typowe problemy i koszty utrzymania
 
 Fiat Ducato brygadówka, jak każde auto użytkowe, ma swoje słabe punkty. Do najczęstszych bolączek należą:
-*   **Elektronika:** Drobne błędy czujników, problemy z systemem Blue&Me (w starszych modelach).
-*   **Zawieszenie przednie:** Przy częstej jeździe po drogach gorszej jakości, szybciej zużywają się sworznie i tuleje wahaczy.
-*   **Układ AdBlue:** W nowszych wersjach (Euro 6) zdarzają się awarie wtryskiwaczy mocznika.
+*   **Elektronika** – drobne błędy czujników, problemy z systemem Blue&Me (w starszych modelach).
+*   **Zawieszenie przednie** – przy częstej jeździe po drogach gorszej jakości, szybciej zużywają się sworznie i tuleje wahaczy.
+*   **Układ AdBlue** – w nowszych wersjach (Euro 6) zdarzają się awarie wtryskiwaczy mocznika.
 
 Cena nowej brygadówki zależy od konfiguracji i aktualnych rabatów flotowych, ale szacunkowo zaczyna się od około 140 000 – 160 000 zł netto za solidnie wyposażoną wersję L3H2.
 

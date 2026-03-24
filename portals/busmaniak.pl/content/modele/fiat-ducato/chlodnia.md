@@ -29,9 +29,9 @@ W tym artykule przyjrzymy się, jak wygląda zabudowa chłodnicza na bazie Ducat
 
 Zanim zdecydujesz się na konkretny egzemplarz, musisz określić, jakiego zakresu temperatur potrzebujesz. Na portalu [Fiat Ducato – przewodnik](/modele/fiat-ducato/) wspominaliśmy o uniwersalności tego modelu, co w przypadku transportu w kontrolowanej temperaturze dzieli się na trzy główne kategorie:
 
-1.  **Izoterma:** Zabudowa bez agregatu. Skupia się na izolacji termicznej wnętrza (zazwyczaj styrodur lub pianka poliuretanowa pokryta laminatem). Pozwala na krótki transport produktów, które nie wymagają aktywnego chłodzenia.
-2.  **Chłodnia (klasa A):** Wyposażona w agregat chłodniczy, utrzymuje temperaturę w zakresie od 0°C do +12°C. Idealna do nabiału, mięsa czy kwiatów.
-3.  **Mroźnia (klasa C):** Posiada grubszą izolację (często powyżej 80–100 mm) i wydajniejszy agregat pozwalający na utrzymanie temperatury do –20°C.
+1.  **Izoterma** – zabudowa bez agregatu. Skupia się na izolacji termicznej wnętrza (zazwyczaj styrodur lub pianka poliuretanowa pokryta laminatem). Pozwala na krótki transport produktów, które nie wymagają aktywnego chłodzenia.
+2.  **Chłodnia (klasa A)** – wyposażona w agregat chłodniczy, utrzymuje temperaturę w zakresie od 0°C do +12°C. Idealna do nabiału, mięsa czy kwiatów.
+3.  **Mroźnia (klasa C)** – posiada grubszą izolację (często powyżej 80–100 mm) i wydajniejszy agregat pozwalający na utrzymanie temperatury do –20°C.
 
 {{< info title="Ważne dla kupującego" icon="engineering" >}}
 Przy wyborze chłodni kluczowy jest atest PZH (do kontaktu z żywnością) oraz certyfikat ATP. Świadectwo ATP określa zdolność zabudowy do utrzymania określonej temperatury i jest niezbędne w transporcie międzynarodowym produktów szybkopsujących się.
@@ -63,15 +63,15 @@ W Polsce liderami w produkcji zabudów chłodniczych na Ducato są firmy takie j
 
 ### Ile kosztuje Fiat Ducato chłodnia?
 Ceny są mocno zróżnicowane i zależą od rocznika oraz typu agregatu:
-*   **Używane (5–8 lat):** Egzemplarze z przebiegiem 200–300 tys. km kosztują od 60 000 do 95 000 zł netto.
-*   **Nowe (rocznik 2024/2025):** Fiat Ducato L3H2 z fabryczną izotermą i agregatem to wydatek rzędu 160 000 – 195 000 zł netto, w zależności od mocy silnika i wyposażenia kabiny.
+*   **Używane (5–8 lat)** – egzemplarze z przebiegiem 200–300 tys. km kosztują od 60 000 do 95 000 zł netto.
+*   **Nowe (rocznik 2024/2025)** – fiat Ducato L3H2 z fabryczną izotermą i agregatem to wydatek rzędu 160 000 – 195 000 zł netto, w zależności od mocy silnika i wyposażenia kabiny.
 
 ## Eksploatacja i serwis – o czym pamiętać?
 
 Użytkownicy w opiniach często podkreślają, że Ducato to "król kosztów" – części są tanie i dostępne w każdym sklepie motoryzacyjnym. Jednak chłodnia wymaga dodatkowej uwagi:
-1.  **Serwis agregatu:** Raz w roku należy sprawdzić szczelność układu i poziom czynnika chłodniczego.
-2.  **Rozrząd:** W popularnym silniku 2.3 JTD 130 KM wymiana rozrządu zalecana jest co 120–140 tys. km, jednak w autach miejskich (częste start-stop) warto skrócić ten interwał do 100 tys. km.
-3.  **Uszczelki:** W chłodniach furgonach kluczowe jest dbanie o uszczelki drzwi tylnych i bocznych – każda nieszczelność to wyższe zużycie paliwa przez agregat.
+1.  **Serwis agregatu** – raz w roku należy sprawdzić szczelność układu i poziom czynnika chłodniczego.
+2.  **Rozrząd** – w popularnym silniku 2.3 JTD 130 KM wymiana rozrządu zalecana jest co 120–140 tys. km, jednak w autach miejskich (częste start-stop) warto skrócić ten interwał do 100 tys. km.
+3.  **Uszczelki** – w chłodniach furgonach kluczowe jest dbanie o uszczelki drzwi tylnych i bocznych – każda nieszczelność to wyższe zużycie paliwa przez agregat.
 
 ## Podsumowanie
 

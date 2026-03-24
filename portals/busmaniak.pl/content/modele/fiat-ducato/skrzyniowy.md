@@ -51,23 +51,23 @@ Fiat Ducato skrzyniowy występuje w dwóch głównych konfiguracjach kabiny:
 ## Silniki – który wybrać do "skrzyni"?
 Wybór silnika w Ducato skrzyniowym ma kluczowe znaczenie dla kosztów eksploatacji. Wersje ze skrzynią często pracują pod dużym obciążeniem i stawiają większy opór aerodynamiczny niż furgony.
 
-*   **2.3 MultiJet (120, 130, 140, 150, 160, 180 KM):** Złoty środek. Silnik konstrukcji Iveco, ceniony za trwałość i dostępność części. Wersja 130-140 KM to najczęstszy wybór do lokalnego transportu.
-*   **3.0 MultiJet (160, 180 KM):** Legenda. Montowany do 2016 roku. Silnik na łańcuchu rozrządu, niezwykle elastyczny i odporny na przebiegi rzędu 500-700 tys. km. Idealny, jeśli planujesz ciągnąć ciężkie przyczepy.
-*   **2.2 MultiJet (120, 140, 160, 180 KM):** Nowsze jednostki (z grupy Stellantis), które zastąpiły silnik 2.3. Są lżejsze i spełniają surowsze normy spalin, ale wymagają regularnego serwisu układu AdBlue.
+*   **2.3 MultiJet (120, 130, 140, 150, 160, 180 KM)** – złoty środek. Silnik konstrukcji Iveco, ceniony za trwałość i dostępność części. Wersja 130-140 KM to najczęstszy wybór do lokalnego transportu.
+*   **3.0 MultiJet (160, 180 KM)** – legenda. Montowany do 2016 roku. Silnik na łańcuchu rozrządu, niezwykle elastyczny i odporny na przebiegi rzędu 500-700 tys. km. Idealny, jeśli planujesz ciągnąć ciężkie przyczepy.
+*   **2.2 MultiJet (120, 140, 160, 180 KM)** – nowsze jednostki (z grupy Stellantis), które zastąpiły silnik 2.3. Są lżejsze i spełniają surowsze normy spalin, ale wymagają regularnego serwisu układu AdBlue.
 
 {{< info title="Wskazówka techniczna" icon="engineering" >}}Przy zakupie używanego Ducato z silnikiem 3.0 warto sprawdzić stan gałki zmiany biegów i mechanizmu wybieraka – przy dużych przebiegach (powyżej 400 tys. km) precyzja zmiany biegów może drastycznie spaść, co jest typową przypadłością tego modelu.{{< /info >}}
 
 ## Zastosowania Fiata Ducato z nadwoziem skrzyniowym
 Dzięki niskiej masie własnej podwozia (tzw. "chassis"), Fiat Ducato oferuje jedną z najlepszych ładowności w klasie 3,5 t.
-*   **Budownictwo:** Przewóz materiałów sypkich (po montażu wywrotu), rusztowań i narzędzi.
-*   **Ogrodnictwo:** Transport krzewów, drzewek i maszyn ogrodniczych.
-*   **Logistyka:** Baza pod [Ducato plandeka](/modele/fiat-ducato/plandeka/) (tzw. międzynarodówka), gdzie na ramie montuje się lekką konstrukcję z plandeką i kabinę sypialną.
-*   **Służby komunalne:** Wersje z podwójną kabiną do przewozu pracowników i sprzętu.
+*   **Budownictwo** – przewóz materiałów sypkich (po montażu wywrotu), rusztowań i narzędzi.
+*   **Ogrodnictwo** – transport krzewów, drzewek i maszyn ogrodniczych.
+*   **Logistyka** – baza pod [Ducato plandeka](/modele/fiat-ducato/plandeka/) (tzw. międzynarodówka), gdzie na ramie montuje się lekką konstrukcję z plandeką i kabinę sypialną.
+*   **Służby komunalne** – wersje z podwójną kabiną do przewozu pracowników i sprzętu.
 
 Więcej o ogólnej charakterystyce tego modelu przeczytasz w naszym artykule: [Fiat Ducato – przewodnik](/modele/fiat-ducato/).
 
 ## Typowe problemy i serwis
 Fiat Ducato skrzyniowy to konstrukcja sprawdzona, ale nie pozbawiona wad. Użytkownicy w serwisach takich jak Autocentrum czy opinie Google często wskazują na:
-1.  **Słaba ergonomia deski rozdzielczej:** Ze względu na szerokość auta (ponad 2 m), niektóre przełączniki są daleko od kierowcy.
-2.  **Korozja ramy pomocniczej:** W starszych egzemplarzach warto kontrolować stan zabezpieczenia antykorozyjnego ramy pod skrzynią ładunkową.
-3.  **Elektronika:** Częste błędy czujników (np. ABS/ESP) spowodowane wilgocią w wiązkach elektrycznych pod podwoziem.
+1.  **Słaba ergonomia deski rozdzielczej** – ze względu na szerokość auta (ponad 2 m), niektóre przełączniki są daleko od kierowcy.
+2.  **Korozja ramy pomocniczej** – w starszych egzemplarzach warto kontrolować stan zabezpieczenia antykorozyjnego ramy pod skrzynią ładunkową.
+3.  **Elektronika** – częste błędy czujników (np. ABS/ESP) spowodowane wilgocią w wiązkach elektrycznych pod podwoziem.
