@@ -13,6 +13,8 @@ image_alt: "Fiat Ducato IV furgon przy rampie załadunkowej"
 lead: "Fiat Ducato to najpopularniejszy bus dostawczy w Europie i najczęściej wybierana baza pod kampery. Od 1981 roku powstały cztery generacje tego modelu. Poznaj wszystkie wersje, silniki i warianty nadwoziowe."
 ---
 
+![Fiat Ducato IV furgon przy rampie załadunkowej](/images/fiat-ducato-hero.jpg)
+
 ## Historia i generacje Fiata Ducato {#historia-generacje}
 
 Fiat Ducato to niekwestionowany król europejskich dróg, który od ponad czterech dekad definiuje segment lekkich samochodów dostawczych (LCV). Historia tego modelu rozpoczęła się w 1981 roku jako owoc współpracy koncernu Fiat oraz grupy PSA (Peugeot, Citroën), co doprowadziło do powstania spółki Sevel (Società Europea Veicoli Leggeri) we włoskim Val di Sangro.

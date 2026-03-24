@@ -23,6 +23,8 @@ faq:
     answer: "Przy przebiegu 100 tys. km spalanie nie powinno znacząco wzrosnąć w stosunku do nowego auta. Jeśli rośnie, warto sprawdzić stan wtryskiwaczy, filtra DPF i turbosprężarki."
 ---
 
+![Silnik 2.3 MultiJet Fiat Ducato w warsztacie](/images/fiat-ducato-2-3-multijet-hero.jpg)
+
 ## Dane techniczne silnika 2.3 MultiJet
 
 Silnik 2.3 MultiJet (oznaczenie fabryczne rodziny F1AE) to czterocylindrowy diesel z układem wtrysku Common Rail. Stosowany jest w Fiacie Ducato od trzeciej generacji (Ducato III, od 2006 roku) i kontynuowany w czwartej (Ducato IV, od 2014 roku z liftingami).
