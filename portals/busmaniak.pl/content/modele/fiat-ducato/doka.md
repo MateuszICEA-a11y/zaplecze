@@ -11,7 +11,7 @@ volume: 260
 image: "/images/fiat-ducato-doka-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato Doka"
-lead: "Fiat Ducato w wersji doka (podwójna kabina) to od lat jeden z najchętniej wybieranych pojazdów przez ekipy budowlane, instalatorów oraz firmy zajmujące się utrzymaniem zieleni. Połączenie możliwości przewozu 7 osób z otwartą przestrzenią ładunkową sprawia, że jest to narzędzie niezwykle uniwersalne."
+lead: "Fiat Ducato w wersji doka to fabryczne połączenie 7-osobowej brygadówki z funkcjonalnym podwoziem pod zabudowę skrzyniową. Dzięki dwóm rzędom siedzeń i otwartej platformie ładunkowej, pojazd ten stanowi optymalne rozwiązanie dla ekip budowlanych i remontowych potrzebujących mobilnego warsztatu."
 faq:
   - question: "Który silnik w Fiacie Ducato jest najlepszy?"
     answer: "Za najlepszy silnik w historii modelu uważa się jednostkę 2.3 MultiJet (szczególnie w wersji 150 KM). Jest to silnik o wysokiej kulturze pracy i dużej wytrzymałości mechanicznej. W nowych modelach silnik 2.2 (140 KM) również zbiera dobre opinie za niskie spalanie."
@@ -21,6 +21,8 @@ faq:
     answer: "Tak, to jedna z najbardziej udanych konstrukcji w segmencie aut dostawczych. Przy odpowiednim serwisie bez problemu pokonuje przebiegi rzędu 400–500 tysięcy kilometrów."
   - question: "Ile osób realnie mieści Fiat Ducato doka?"
     answer: "Fabryczna homologacja przewiduje 7 osób (3 z przodu, 4 z tyłu). W drugim rzędzie jest wystarczająco dużo miejsca na nogi, jednak komfort podróży na długich trasach jest typowo „roboczy” ze względu na pionowe ustawienie oparć tylnej kanapy.  *Więcej informacji o technicznych aspektach pojazdów dostaw"
+
+
 ---
 
 ## Fiat Ducato doka – co to za konstrukcja?

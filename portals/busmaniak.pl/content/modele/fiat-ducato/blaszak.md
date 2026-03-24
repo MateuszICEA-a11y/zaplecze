@@ -11,7 +11,7 @@ volume: 320
 image: "/images/fiat-ducato-blaszak-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato Blaszak"
-lead: "Fiat Ducato to bezsprzecznie król polskich dróg w segmencie samochodów dostawczych do 3,5 tony. Od lat dominuje w rankingach sprzedaży, a jego popularność wynika z prostej konstrukcji, ogromnej dostępności części i niezwykle ustawnej przestrzeni ładunkowej. Niezależnie od tego, czy szukasz wołu robo"
+lead: "Fiat Ducato w wersji furgon to od lat najpopularniejszy wybór na polskim rynku, oferujący aż cztery długości nadwozia i trzy wysokości dachu. Choć model ten jest produkowany od 2006 roku, przeszedł dwa kluczowe liftingi, które wprowadziły nowoczesne silniki Euro 6d-Final oraz zaawansowane systemy wsparcia kierowcy. Analizujemy dostępne warianty, aby pomóc Ci wybrać optymalną konfigurację blaszaka do Twojego biznesu."
 faq:
   - question: "Ile pali Fiat Ducato blaszak?"
     answer: "Średnie spalanie zależy od silnika i obciążenia. Silnik 2.3 MultiJet w cyklu mieszanym pali zazwyczaj między 8,5 a 10,5 litra na 100 km. Przy autostradowej prędkości 130 km/h spalanie może wzrosnąć do 12 litrów."
@@ -19,6 +19,8 @@ faq:
     answer: "Najbardziej polecanym silnikiem jest 2.3 MultiJet o mocy 130 lub 150 KM. Jeśli budżet pozwala na starszy rocznik (przed 2016), warto szukać pancernej jednostki 3.0 JTD o mocy 180 KM."
   - question: "Jakie są wymiary paki w Ducato L2H2?"
     answer: "Wersja L2H2 posiada przestrzeń ładunkową o długości 3120 mm i wysokości 1932 mm. Szerokość między nadkolami wynosi 1422 mm, co pozwala na poprzeczny załadunek europalet."
+
+
 
 ---
 

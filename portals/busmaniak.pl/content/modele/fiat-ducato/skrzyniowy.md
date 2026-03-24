@@ -11,7 +11,7 @@ volume: 320
 image: "/images/fiat-ducato-skrzyniowy-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato Skrzyniowy"
-lead: "Fiat Ducato to niekwestionowany król polskich dróg i lider rankingów sprzedaży w segmencie aut dostawczych. Choć najczęściej kojarzymy go z furgonami (blaszakami), to właśnie Fiat Ducato skrzyniowy stanowi fundament polskiego transportu lokalnego, budownictwa oraz branży komunalnej. Dzięki konstrukc"
+lead: "Fiat Ducato w wersji skrzyniowej to jeden z najbardziej wszechstronnych dostawców na rynku, oferujący dopuszczalną masę całkowitą do 4,25 t oraz cztery warianty rozstawu osi. Choć obecna generacja bazuje na konstrukcji z 2006 roku, regularne modernizacje sprawiają, że model ten wciąż dominuje w rankingach sprzedaży dzięki ogromnym możliwościom konfiguracji zabudowy."
 faq:
   - question: "Z jakim silnikiem wybrać Fiata Ducato?"
     answer: "Jeśli szukasz auta używanego do ciężkiej pracy, najlepszym wyborem będzie 3.0 MultiJet (do 2016 r.). W przypadku nowszych aut, silnik 2.3 MultiJet o mocy 140-160 KM oferuje najlepszy kompromis między spalaniem a dynamiką."
@@ -19,6 +19,8 @@ faq:
     answer: "W starszych wersjach montowano zautomatyzowaną skrzynię Comfort-Matic (jednosprzęgłowa). Od 2019 roku dostępna jest nowoczesna, 9-biegowa przekładnia hydrokinetyczna produkcji ZF, która jest znacznie bardziej płynna i trwała."
   - question: "Czy Fiat Ducato jest awaryjny?"
     answer: "Według danych serwisowych i opinii użytkowników, Ducato uchodzi za jedno z najtańszych w utrzymaniu aut dostawczych. Większość usterek to drobna elektryka lub elementy zawieszenia, które są tanie w naprawie. Silniki Diesla (szczególnie 2.3 i 3.0) przy regularnej wymianie oleju (co 15-20 tys. km zami"
+
+
 
 ---
 

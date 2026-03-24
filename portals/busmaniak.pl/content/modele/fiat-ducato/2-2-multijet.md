@@ -10,7 +10,7 @@ type: "engine"
 image: "/images/fiat-ducato-2-2-multijet-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato 2.2 MultiJet"
-lead: "Fiat Ducato to niekwestionowany król europejskich dróg, baz transportowych i baz pod zabudowy kamperowe. Choć przez lata serca kierowców podbijała jednostka 2.3 MultiJet od Iveco, ewolucja norm emisji spalin wymusiła zmiany. Silnik fiat ducato 2.2 multijet występuje w dwóch zupełnie różnych odsłonac"
+lead: "Fiat Ducato z silnikiem 2.2 MultiJet to dwie zupełnie różne konstrukcje: starsza jednostka o mocy 100 KM opracowana z Fordem oraz nowoczesny motor MultiJet3 stosowany od 2021 roku. Wybór konkretnego rocznika determinuje nie tylko dynamikę jazdy, ale przede wszystkim trwałość osprzętu i koszty serwisowania tego popularnego dostawczaka."
 faq:
   - question: "Który silnik w Fiacie Ducato jest najlepszy?"
     answer: "Za najbardziej pancerny uważa się [2.3 MultiJet](/modele/fiat-ducato/2-3-multijet/), jednak nowa jednostka 2.2 MultiJet3 (od 2021 r.) wykazuje się bardzo dobrą kulturą pracy i wysoką sprawnością, stając się solidnym następcą w dobie norm Euro 6d."
@@ -20,6 +20,8 @@ faq:
     answer: "W zależności od obciążenia i wersji mocy, spalanie waha się od 7,5 l (pusty furgon na trasie) do 11 l/100 km (ciężki kamper lub jazda autostradowa)."
   - question: "Czy silnik 2.2 MultiJet nadaje się pod zabudowę kamperową?"
     answer: "Nowoczesna wersja 2.2 MultiJet3 (szczególnie 140 KM i mocniejsze) jest obecnie najczęściej wybieraną bazą pod camper vany ze względu na niską wagę silnika i możliwość parowania z doskonałą, 9-biegową skrzynią automatyczną ZF.  *Źródła:* - *Oficjalna specyfikacja Fiat Professional: fiatprofessional.c"
+
+
 ---
 
 ## Dwie twarze 2.2 MultiJet – Ford kontra Stellantis

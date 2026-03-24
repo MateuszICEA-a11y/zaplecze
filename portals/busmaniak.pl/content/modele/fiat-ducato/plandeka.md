@@ -11,7 +11,7 @@ volume: 320
 image: "/images/fiat-ducato-plandeka-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato Plandeka"
-lead: "Fiat Ducato z zabudową skrzyniową i opończą (potocznie zwaną plandeką) to od lat niekwestionowany król polskich dróg i europejskiego transportu międzynarodowego. Popularna „międzynarodówka” swoją pozycję zawdzięcza przede wszystkim niskim kosztom eksploatacji, ogromnej dostępności części zamiennych "
+lead: "Fiat Ducato od lat dominuje na rynku transportowym jako najpopularniejsza baza pod zabudowę typu plandeka, oferując najlepszy stosunek ceny do możliwości przewozowych. Kluczowe dla przewoźników warianty L3 i L4 pozwalają na montaż zabudów 8- lub 10-paletowych, co w połączeniu z trwałą konstrukcją trzeciej generacji czyni ten model liderem w transporcie międzynarodowym."
 faq:
   - question: "Ile spala Fiat Ducato plandeka na 100 km?"
     answer: "Średnie spalanie zależy od aerodynamicznej zabudowy i ładunku. Wersje 8-paletowe spalają średnio 10–12 l/100 km. Duże plandeki 10-paletowe przy prędkościach autostradowych mogą spalać od 12 do nawet 15 l/100 km."
@@ -19,6 +19,8 @@ faq:
     answer: "Standardowa „dziesiątka” ma długość wewnętrzną ok. 4,85 m i szerokość ok. 2,25 m. Pozwala to na ustawienie dwóch rzędów po 5 europalet (800x1200 mm)."
   - question: "Czy Fiat Ducato nadaje się pod zabudowę międzynarodową?"
     answer: "Tak, to najpopularniejszy model w tej kategorii. Dzięki szerokiej ramie i sprawdzonym silnikom 2.3/3.0, Fiat zdominował rynek transportu lekkiego do 3,5 tony."
+
+
 
 ---
 

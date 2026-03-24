@@ -11,7 +11,7 @@ volume: 480
 image: "/images/fiat-ducato-9-osobowy-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato 9 Osobowy"
-lead: "Szukasz pojazdu, który pomieści całą rodzinę, grupę pracowników lub posłuży jako baza pod luksusowego busa do dalekich podróży? Fiat Ducato 9-osobowy to od lat jeden z najchętniej wybieranych modeli w Polsce. Jego popularność wynika z prostej konstrukcji, ogromnej przestrzeni i faktu, że mimo gabary"
+lead: "Fiat Ducato w wersji 9-osobowej można prowadzić posiadając standardowe prawo jazdy kategorii B, ponieważ jego masa całkowita nie przekracza 3,5 tony. To sprawia, że jest on jednym z najpopularniejszych wyborów dla osób szukających przestronnego busa do przewozu osób bez konieczności posiadania dodatkowych uprawnień."
 faq:
   - question: "Jaki jest najlepszy silnik w Fiacie Ducato?"
     answer: "Za najlepszy silnik uznaje się jednostkę 3.0 MultiJet (180 KM) ze względu na trwałość i moment obrotowy. Jednak w codziennej eksploatacji najpopularniejszym i najbardziej polecanym wyborem jest 2.3 MultiJet w wersji 130 lub 150 KM."
@@ -21,6 +21,8 @@ faq:
     answer: "Według zestawień awaryjności i opinii użytkowników, Ducato wypada bardzo dobrze na tle konkurencji (np. Renault Master czy Ford Transit). Największym problemem jest korozja elementów podwozia w starszych egzemplarzach oraz drobne usterki osprzętu silnika."
   - question: "Jakie są wymiary przestrzeni ładunkowej w wersji 9-osobowej?"
     answer: "W wersji L2H2, po wyjęciu ostatniego rzędu siedzeń, uzyskujemy przestrzeń o długości ok. 2 metrów. Przy zamontowanych wszystkich fotelach, w wersji L2 zostaje około 1 metra głębokości bagażnika.  *Źródła:* - *Oficjalna strona Fiat Professional: fiatprofessional.com* - *Dane techniczne i wymiary: wik"
+
+
 
 ---
 

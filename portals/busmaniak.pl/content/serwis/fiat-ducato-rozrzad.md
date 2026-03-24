@@ -11,7 +11,7 @@ volume: 280
 image: "/images/fiat-ducato-rozrzad-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato Rozrząd"
-lead: "Fiat Ducato to niekwestionowany król europejskich dróg, bazowy pojazd dla tysięcy firm transportowych i fundament większości projektów camper vanów. Sercem najpopularniejszych wersji (szczególnie III generacji po liftingu) jest jednostka 2.3 MultiJet produkcji IVECO. Choć silnik ten słynie z ogromne"
+lead: "Rozrząd w Fiacie Ducato najlepiej wymieniać co 120 000 km lub co 5 lat, mimo że oficjalne instrukcje dopuszczają znacznie dłuższe interwały. W przypadku aut eksploatowanych w trudnych warunkach miejskich lub jako ciężkie kampery, mechanicy zalecają skrócenie tego czasu, aby uniknąć kosztownej awarii silnika MultiJet."
 faq:
   - question: "1. Czy w silniku 2.3 MultiJet rozrząd jest bezkolizyjny?"
     answer: "Nie, silnik 2.3 MultiJet jest jednostką kolizyjną. Zerwanie paska rozrządu w trakcie pracy silnika niemal zawsze kończy się uderzeniem tłoków w zawory, co generuje ogromne koszty naprawy."
@@ -19,6 +19,8 @@ faq:
     answer: "Zdecydowanie tak. Guma, z której wykonany jest pasek, starzeje się i parcieje. W przypadku kamperów, które często stoją nieużywane przez kilka miesięcy, limit 5 lat jest nieprzekraczalny, nawet jeśli przebieg wynosi tylko 30 000 km."
   - question: "3. Ile trwa wymiana rozrządu w Fiacie Ducato?"
     answer: "W wyspecjalizowanym serwisie operacja ta zajmuje zazwyczaj od 4 do 6 godzin roboczych, zakładając, że nie wystąpią problemy z zapieczonymi śrubami lub wyciekami z uszczelniaczy wałów."
+
+
 
 ---
 

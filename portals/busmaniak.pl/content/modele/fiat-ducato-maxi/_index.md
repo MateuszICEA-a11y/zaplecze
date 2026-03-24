@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 image: "/images/fiat-ducato-maxi-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato Maxi"
-lead: "Fiat Ducato to niekwestionowany król polskich dróg i najpopularniejsza baza pod zabudowy specjalistyczne. Jednak gdy standardowy furgon przestaje wystarczać, do gry wchodzi wersja Maxi. To właśnie ona stanowi fundament dla firm transportowych obsługujących trasy międzynarodowe oraz dla pasjonatów va"
+lead: "Główną różnicą między Fiatem Ducato a wersją Maxi jest wzmocniona konstrukcja podwozia, obejmująca wydajniejszy układ hamulcowy oraz 16-calowe koła zamiast standardowych „piętnastek”. Choć oba warianty często występują z homologacją do 3,5 tony, wersja Maxi została zaprojektowana do pracy pod znacznie większym obciążeniem, oferując wyższą wytrzymałość i lepsze właściwości jezdne przy pełnym załadunku."
 faq:
   - question: "1. Czy Fiat Ducato Maxi wymaga prawa jazdy kategorii C?"
     answer: "Większość egzemplarzy dostępnych na polskim rynku jest zarejestrowana z DMC do 3,5 tony, co oznacza, że wystarczy prawo jazdy kategorii B. Istnieją jednak wersje z fabrycznym DMC 4,25 t, które wymagają kategorii C."
@@ -17,6 +17,8 @@ faq:
     answer: "Wersja furgon (blaszak) o długości paki 4,07 m mieści 5 standardowych europalet (1200 x 800 mm)."
   - question: "4. Jakie są typowe usterki w Ducato Maxi?"
     answer: "Użytkownicy najczęściej skarżą się na nietrwałe łożyska kół (szczególnie przy dużym obciążeniu), drobne problemy z elektroniką (np. czujniki cofania, podświetlenie zegarów) oraz szybko zużywające się klamki drzwi przesuwnych.  Źródła: - *Oficjalna strona Fiat Professional: fiatprofessional.com* - *D"
+
+
 
 ---
 

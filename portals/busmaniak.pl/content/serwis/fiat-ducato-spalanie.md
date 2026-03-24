@@ -11,7 +11,7 @@ volume: 170
 image: "/images/fiat-ducato-spalanie-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato Spalanie"
-lead: "Fiat Ducato to niekwestionowany król polskich dróg – zarówno w transporcie międzynarodowym, jak i w świecie vanlife. Wybór odpowiedniej jednostki napędowej to kluczowa decyzja, która bezpośrednio przekłada się na koszty eksploatacji. W tym artykule szczegółowo analizujemy fiat ducato spalanie dla na"
+lead: "Średnie spalanie Fiata Ducato w najpopularniejszych wersjach silnikowych 2.3 MultiJet mieści się w granicach 8–11 l/100 km, choć ostateczny wynik zależy od gabarytów nadwozia i aktualnego obciążenia. Poniższe zestawienie pomoże Ci sprawdzić realne zapotrzebowanie na paliwo dla konkretnych jednostek napędowych, od starszych konstrukcji po najnowsze silniki spełniające normy Euro 6."
 faq:
   - question: "Z jakim silnikiem kupić Fiata Ducato?"
     answer: "Dla transportu ciężkiego i międzynarodowego najlepiej szukać silnika 3.0 MultiJet (do 2016 r.) lub 2.3 MultiJet (150-180 KM). Do lekkiej zabudowy miejskiej wystarczy oszczędny 2.0 lub nowszy 2.2 MultiJet."
@@ -19,6 +19,8 @@ faq:
     answer: "To najbardziej ekonomiczna jednostka w gamie, idealna do miasta. Średnie spalanie oscyluje wokół 7,5 – 8 litrów, jednak silnik ten może być za słaby do ciężkich zabudów kamperowych lub długich tras autostradowych."
   - question: "Czy silnik 2.3 diesel w Fiacie Ducato jest niezawodny?"
     answer: "Tak, jednostka 2.3 MultiJet jest uważana za jedną z najlepszych w historii samochodów dostawczych. Przy regularnej wymianie oleju (zalecamy co 15–20 tys. km zamiast zalecanych przez producenta 40 tys. km) bez trudu pokonuje dystanse rzędu 500 tys. km.  *Źródła:* - *Oficjalna strona Fiat Professional"
+
+
 ---
 
 ## Od czego zależy spalanie w Fiacie Ducato?

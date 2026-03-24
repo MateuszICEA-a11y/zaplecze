@@ -11,7 +11,7 @@ volume: 2600
 image: "/images/fiat-ducato-kamper-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato Kamper"
-lead: "Wybór bazy pod dom na kołach to najważniejsza decyzja każdego pasjonata vanlife. Statystyki są jednak nieubłagane – ponad 70% kamperów poruszających się po europejskich drogach bazuje na podwoziu Fiata Ducato. Ten model zdominował rynek nie przez przypadek. Od pierwszej generacji z lat 80. aż po naj"
+lead: "Fiat Ducato dominuje na rynku kamperów dzięki unikalnej konstrukcji podwozia i kwadratowej bryle nadwozia, które od dekad stanowią najlepszą bazę do zabudowy mieszkalnej. Jego popularność to efekt ewolucji od 1981 roku, łączącej legendarne silniki JTD z rozwiązaniami technicznymi projektowanymi bezpośrednio pod potrzeby caravaningu."
 faq:
   - question: "Z jakim silnikiem kupić Fiata Ducato na kampera?"
     answer: "Najlepszym wyborem do nowoczesnej zabudowy jest silnik 2.3 MultiJet (130-150 KM) ze względu na trwałość i niskie spalanie. Dla bardzo ciężkich zabudów idealny będzie 3.0 JTD."
@@ -21,6 +21,8 @@ faq:
     answer: "Tak, to prawdopodobnie najlepsza baza. Dzięki regularnym kształtom paki montaż izolacji i mebli jest znacznie prostszy niż w autach o bardziej obłych kształtach."
   - question: "Źródła:"
     answer: "*   *Oficjalna strona Fiat Professional: fiatprofessional.com* *   *Dane techniczne i wymiary: Wikipedia.org (Fiat Ducato)* *   *Katalogi techniczne producentów zabudów (Dethleffs, Hymer, Adria).*"
+
+
 
 ---
 
