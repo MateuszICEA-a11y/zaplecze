@@ -17,9 +17,8 @@ faq:
     answer: "Wersja furgon (blaszak) o długości paki 4,07 m mieści 5 standardowych europalet (1200 x 800 mm)."
   - question: "4. Jakie są typowe usterki w Ducato Maxi?"
     answer: "Użytkownicy najczęściej skarżą się na nietrwałe łożyska kół (szczególnie przy dużym obciążeniu), drobne problemy z elektroniką (np. czujniki cofania, podświetlenie zegarów) oraz szybko zużywające się klamki drzwi przesuwnych.  Źródła: - *Oficjalna strona Fiat Professional: fiatprofessional.com* - *D"
----
 
-W tym artykule przyjrzymy się bliżej największym wariantom Fiata Ducato Maxi, sprawdzimy ich wymiary, ładowność oraz podpowiemy, jaki silnik wybrać, by cieszyć się bezawaryjną jazdą.
+---
 
 ## Czym właściwie jest Fiat Ducato Maxi?
 

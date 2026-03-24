@@ -21,9 +21,8 @@ faq:
     answer: "Fiat Ducato uchodzi za konstrukcję \"dojrzałą\". Główne podzespoły są trwałe, a ogromna dostępność części zamiennych i wyspecjalizowanych serwisów sprawia, że koszty eksploatacji są jednymi z najniższych w segmencie aut dostawczych."
   - question: "Ile pali Fiat Ducato kontener?"
     answer: "Ze względu na dużą powierzchnię czołową zabudowy, spalanie jest wyższe niż w furgonie. Średnio należy liczyć się z wynikiem 11–13 l/100 km w trasie, a przy jeździe autostradowej powyżej 110 km/h wartości te mogą wzrosnąć do 15 l/100 km.  *Źródła:* - *Oficjalna strona Fiat Professional: fiatprofessio"
----
 
-W tym artykule przyjrzymy się bliżej możliwościom, jakie daje podwozie Ducato pod zabudowę, sprawdzimy wymiary najpopularniejszych kontenerów oraz podpowiemy, na co zwrócić uwagę przy zakupie egzemplarza z rynku wtórnego i pierwotnego.
+---
 
 ## Dlaczego podwozie Fiata Ducato?
 

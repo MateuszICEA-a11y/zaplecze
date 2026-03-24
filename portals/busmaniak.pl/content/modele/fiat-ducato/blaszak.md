@@ -19,9 +19,8 @@ faq:
     answer: "Najbardziej polecanym silnikiem jest 2.3 MultiJet o mocy 130 lub 150 KM. Jeśli budżet pozwala na starszy rocznik (przed 2016), warto szukać pancernej jednostki 3.0 JTD o mocy 180 KM."
   - question: "Jakie są wymiary paki w Ducato L2H2?"
     answer: "Wersja L2H2 posiada przestrzeń ładunkową o długości 3120 mm i wysokości 1932 mm. Szerokość między nadkolami wynosi 1422 mm, co pozwala na poprzeczny załadunek europalet."
----
 
-W tym artykule przyjrzymy się bliżej trzeciej generacji (typ 250/290), która jest produkowana od 2006 roku i przeszła szereg modernizacji, stając się najpopularniejszym furgonem w Europie.
+---
 
 ## Generacje i ewolucja modelu
 Choć na rynku wtórnym wciąż można spotkać pancerne Ducato II (1994–2006) z silnikami 1.9 D czy 2.8 JTD, skupimy się na modelu produkowanym obecnie, który przeszedł dwa kluczowe liftingi:

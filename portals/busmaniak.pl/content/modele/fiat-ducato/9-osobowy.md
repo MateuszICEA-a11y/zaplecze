@@ -21,9 +21,8 @@ faq:
     answer: "Według zestawień awaryjności i opinii użytkowników, Ducato wypada bardzo dobrze na tle konkurencji (np. Renault Master czy Ford Transit). Największym problemem jest korozja elementów podwozia w starszych egzemplarzach oraz drobne usterki osprzętu silnika."
   - question: "Jakie są wymiary przestrzeni ładunkowej w wersji 9-osobowej?"
     answer: "W wersji L2H2, po wyjęciu ostatniego rzędu siedzeń, uzyskujemy przestrzeń o długości ok. 2 metrów. Przy zamontowanych wszystkich fotelach, w wersji L2 zostaje około 1 metra głębokości bagażnika.  *Źródła:* - *Oficjalna strona Fiat Professional: fiatprofessional.com* - *Dane techniczne i wymiary: wik"
----
 
-W tym przewodniku przyjrzymy się bliżej wersji osobowej (Combi/Panorama), sprawdzimy dane techniczne, koszty eksploatacji oraz podpowiemy, na co zwrócić uwagę przy zakupie egzemplarza z rynku wtórnego.
+---
 
 ## Fiat Ducato 9-osobowy – czy wystarczy prawo jazdy kategorii B?
 

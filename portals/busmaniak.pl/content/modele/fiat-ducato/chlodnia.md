@@ -21,9 +21,8 @@ faq:
     answer: "Spalanie jest o ok. 1–2 litry wyższe niż w standardowym furgonie ze względu na opory aerodynamiczne agregatu oraz pobór mocy przez sprężarkę. Średnio należy liczyć się z wynikiem 10–12 l/100 km w cyklu mieszanym."
   - question: "4. Co jest lepsze: Ducato czy Iveco Daily jako chłodnia?"
     answer: "Ducato jest lżejsze i ma napęd na przód, co daje niższą krawędź załadunku i większą ładowność w wersji 3.5t. Iveco Daily (na ramie) jest lepsze do bardzo ciężkich ładunków i ciągnięcia przyczep, ale samo w sobie jest cięższe, co ogranicza ładowność na kategorii B."
----
 
-W tym artykule przyjrzymy się, jak wygląda zabudowa chłodnicza na bazie Ducato, jakie silniki sprawdzają się najlepiej w transporcie chłodniczym i na co zwrócić uwagę przy zakupie.
+---
 
 ## Rodzaje zabudowy: Izoterma, chłodnia czy mroźnia?
 

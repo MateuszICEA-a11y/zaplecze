@@ -19,9 +19,8 @@ faq:
     answer: "Zdecydowanie tak. Guma, z której wykonany jest pasek, starzeje się i parcieje. W przypadku kamperów, które często stoją nieużywane przez kilka miesięcy, limit 5 lat jest nieprzekraczalny, nawet jeśli przebieg wynosi tylko 30 000 km."
   - question: "3. Ile trwa wymiana rozrządu w Fiacie Ducato?"
     answer: "W wyspecjalizowanym serwisie operacja ta zajmuje zazwyczaj od 4 do 6 godzin roboczych, zakładając, że nie wystąpią problemy z zapieczonymi śrubami lub wyciekami z uszczelniaczy wałów."
----
 
-W tym artykule przyjrzymy się interwałom, kosztom i technicznym niuansom wymiany rozrządu w najpopularniejszym dostawczaku w Polsce.
+---
 
 ## Co ile wymiana rozrządu w Fiat Ducato 2.3 MultiJet?
 

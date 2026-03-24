@@ -19,9 +19,8 @@ faq:
     answer: "Tak, szczególnie w najmocniejszej wersji 180 KM. Jest on jednak bardziej skomplikowany osprzętowo (AdBlue) niż starsze jednostki 3.0, co wymaga większej dbałości o jakość paliwa i regularny serwis."
   - question: "Jaka długość najazdu jest najlepsza?"
     answer: "Dla Fiata Ducato L4 optymalna długość platformy to 4,5 – 5,0 metrów. Pozwala to na transport większości aut osobowych oraz mniejszych busów (np. furgonów L1) bez nadmiernego przewieszenia tylnego."
----
 
-W tym artykule przyjrzymy się, dlaczego **Fiat Ducato laweta** dominuje na rynku pomocy drogowej, jakie parametry techniczne oferują poszczególne generacje i na co zwrócić uwagę przy zakupie lub zabudowie.
+---
 
 ## Dlaczego Fiat Ducato to idealna baza pod autolawetę?
 

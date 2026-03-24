@@ -12,9 +12,8 @@ image: "/images/przekazniki-fiat-ducato-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato Przekaźniki"
 lead: "Przekaźniki w Fiacie Ducato odpowiadają za kluczowe funkcje elektryczne – od pompy paliwa po wycieraczki i świece żarowe. Gdy bus odmawia posłuszeństwa, warto zacząć diagnostykę właśnie od nich. Oto kompletny schemat i lokalizacja przekaźników w Ducato III i IV."
----
 
-W tym artykule skupimy się na modelach produkowanych po 2006 roku (X250 i X290), które dominują na naszych drogach, ale wspomnimy też o starszych generacjach.
+---
 
 ## Gdzie szukać przekaźników w Fiacie Ducato?
 

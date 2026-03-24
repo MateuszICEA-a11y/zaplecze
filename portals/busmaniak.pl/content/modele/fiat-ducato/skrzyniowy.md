@@ -19,9 +19,8 @@ faq:
     answer: "W starszych wersjach montowano zautomatyzowaną skrzynię Comfort-Matic (jednosprzęgłowa). Od 2019 roku dostępna jest nowoczesna, 9-biegowa przekładnia hydrokinetyczna produkcji ZF, która jest znacznie bardziej płynna i trwała."
   - question: "Czy Fiat Ducato jest awaryjny?"
     answer: "Według danych serwisowych i opinii użytkowników, Ducato uchodzi za jedno z najtańszych w utrzymaniu aut dostawczych. Większość usterek to drobna elektryka lub elementy zawieszenia, które są tanie w naprawie. Silniki Diesla (szczególnie 2.3 i 3.0) przy regularnej wymianie oleju (co 15-20 tys. km zami"
----
 
-W tym artykule przyjrzymy się bliżej wersjom podwozia pod zabudowę, wymiarom skrzyń oraz jednostkom napędowym, które najlepiej sprawdzają się w ciężkiej pracy.
+---
 
 ## Generacje i ewolucja modelu (X250 i X290)
 Mówiąc o współczesnym Ducato skrzyniowym, mamy na myśli przede wszystkim III generację, która zadebiutowała w 2006 roku (kod X250) i przeszła gruntowny lifting w 2014 roku (kod X290).

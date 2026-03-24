@@ -12,9 +12,8 @@ image: "/images/fiat-ducato-brygadowka-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato Brygadówka"
 lead: "Fiat Ducato brygadówka (często nazywany również wersją kabina załogowa lub MultiCab) to jeden z najpopularniejszych wyborów wśród polskich ekip budowlanych, instalatorskich i remontowych. Łączy on zalety tradycyjnego vana z możliwością przewozu od 6 do 7 osób, zachowując przy tym znaczną przestrzeń "
----
 
-W tym artykule przyjrzymy się bliżej czwartej generacji po liftingu (produkowanej od 2014 roku, z istotnymi modernizacjami w 2019 i 2021 roku), sprawdzimy wymiary, jednostki napędowe oraz koszty eksploatacji.
+---
 
 ## Konstrukcja i wersje nadwozia brygadowego
 

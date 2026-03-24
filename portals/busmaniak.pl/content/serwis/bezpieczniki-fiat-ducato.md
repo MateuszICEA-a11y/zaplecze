@@ -21,9 +21,8 @@ faq:
     answer: "Według użytkowników i mechaników, za najbardziej pancerne uchodzą jednostki 2.3 MultiJet (konstrukcji Iveco) oraz starsze 2.8 JTD. Nowsze 3.0 MultiJet są cenione za dynamikę, choć wymagają droższego serwisu."
   - question: "Źródła:"
     answer: "*   Instrukcja obsługi Fiat Ducato (eLum): [https://aftersales.fiat.com/elum/](https://aftersales.fiat.com/elum/) *   Dane techniczne modeli Fiat Professional: [https://www.fiatprofessional.com/pl/ducato](https://www.fiatprofessional.com/pl/ducato) *   Specyfikacja bezpieczników samochodowych (Wikip"
----
 
-W tym artykule znajdziesz kompletny przewodnik po bezpiecznikach dla najpopularniejszych generacji: II (244) oraz III (250/290).
+---
 
 ## Gdzie znajdują się bezpieczniki w Fiacie Ducato?
 

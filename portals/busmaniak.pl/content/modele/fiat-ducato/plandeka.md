@@ -19,9 +19,8 @@ faq:
     answer: "Standardowa „dziesiątka” ma długość wewnętrzną ok. 4,85 m i szerokość ok. 2,25 m. Pozwala to na ustawienie dwóch rzędów po 5 europalet (800x1200 mm)."
   - question: "Czy Fiat Ducato nadaje się pod zabudowę międzynarodową?"
     answer: "Tak, to najpopularniejszy model w tej kategorii. Dzięki szerokiej ramie i sprawdzonym silnikom 2.3/3.0, Fiat zdominował rynek transportu lekkiego do 3,5 tony."
----
 
-W tym artykule przyjrzymy się bliżej wersjom Fiata Ducato pod zabudowę plandekową, sprawdzimy wymiary oraz podpowiemy, który silnik najlepiej sprawdzi się w ciężkiej pracy.
+---
 
 ## Generacje i bazy pod zabudowę plandekową
 

@@ -21,9 +21,8 @@ faq:
     answer: "Jeśli auto nie straciło mocy i nie wydaje dziwnych dźwięków, możesz kontynuować jazdę do najbliższego serwisu. Unikaj jednak dużych obciążeń silnika, gdyż usterka może doprowadzić do zapchania filtra DPF lub uszkodzenia turbosprężarki."
   - question: "4. Co oznacza czerwona kontrolka z symbolem kłódki/samochodu?"
     answer: "To błąd systemu Fiat Code (immobilizer). Jeśli świeci się po przekręceniu kluczyka, silnik może nie zapalić, ponieważ system nie rozpoznał kodu w kluczyku. Często pomaga wyjęcie kluczyka i ponowna próba po kilku sekundach."
----
 
-Zrozumienie, co oznaczają **fiat ducato kontrolki**, to klucz do uniknięcia kosztownych awarii i zapewnienia bezpieczeństwa podczas długich tras. W tym artykule przeanalizujemy najważniejsze symbole, dzieląc je na kategorie kolorystyczne.
+---
 
 ## Kolory kontrolek – hierarchia ważności
 

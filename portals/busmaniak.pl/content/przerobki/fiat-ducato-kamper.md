@@ -21,9 +21,8 @@ faq:
     answer: "Tak, to prawdopodobnie najlepsza baza. Dzięki regularnym kształtom paki montaż izolacji i mebli jest znacznie prostszy niż w autach o bardziej obłych kształtach."
   - question: "Źródła:"
     answer: "*   *Oficjalna strona Fiat Professional: fiatprofessional.com* *   *Dane techniczne i wymiary: Wikipedia.org (Fiat Ducato)* *   *Katalogi techniczne producentów zabudów (Dethleffs, Hymer, Adria).*"
----
 
-Sprawdźmy, dlaczego **fiat ducato kamper** to wybór numer jeden zarówno dla profesjonalnych firm zabudowujących, jak i osób budujących swój pierwszy projekt w garażu.
+---
 
 ## Historia i ewolucja – od Ducato I do dzisiaj
 
