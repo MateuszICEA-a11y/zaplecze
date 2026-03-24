@@ -1,0 +1,141 @@
+{
+  "url": "/modele/fiat-ducato/2-3-multijet/",
+  "title": "Fiat Ducato 2.3 MultiJet – dane techniczne, spalanie, opinie | BusManiak.pl",
+  "h1": "Fiat Ducato 2.3 MultiJet – dane techniczne i opinie",
+  "main_keyword": "fiat ducato 2.3 multijet",
+  "volume": 880,
+  "type": "page",
+  "parent_model": "fiat-ducato",
+  "author": "marek-kowalczyk",
+  "target_length_words": 1200,
+  "competitor_data": {
+    "snippets": [
+      "Raporty zużycia paliwa Fiat Ducato III Furgon krótki\nZazwyczaj jezdze 100-120km/h. Spalanie na drodze expresowej wynosi od 8 do 9 litrów w zaleznosci od ladunku i wiatru jadac ze stala predkoscia 110.",
+      "Raport spalania Fiat Ducato - zużycie paliwa\n15,3. Fiat Ducato IV. Furgon 2.3 MultiJet 148KM 109kW. Spalanie l4h2 przy stalej prędkości 90 na pusto 10.5l zaladowane 13/14 jadac do 90. Ladunek ok 700kg ...",
+      "Raporty zużycia paliwa Fiat Ducato III Furgon długi\nDość rozsądnie pali średnio mi wychodzi około 10,5 l w jeżdzie autostradowej (110-120 km/h) jak chce się naprawdę szybko jeździć potrafi i 14 l... Dodane 13 lat ...",
+      "Raporty zużycia paliwa Fiat Ducato III Kabina długi\nDalekie od tego co mówi producent. wyjazdy przeliczam na 20l/100km z ładunkiem. Opor jaki daje kontener + masa robią swoje. 2,3 jest zdecydowanie... Dodane 15 ...",
+      "Fiat Ducato III FL 2.3 Multijet 16V 148KM (F1AE3481E)\nDane techniczne. Fiat Ducato III FL 2.3 Multijet 16V 148KM (F1AE3481E) ... Spalanie według użytkowników. Spalanie. Miasto b.d.. Średnie b.d.."
+    ],
+    "urls": [
+      "https://www.autocentrum.pl/spalanie/fiat/ducato/iii/furgon-krotki/silnik-diesla-2.3-multijet-120km-2007-2014/",
+      "https://www.autocentrum.pl/spalanie/fiat/ducato/",
+      "https://www.autocentrum.pl/spalanie/fiat/ducato/iii/furgon-dlugi/silnik-diesla-2.3-multijet-120km-2006-2014/",
+      "https://www.autocentrum.pl/spalanie/fiat/ducato/iii/kabina-dlugi/silnik-diesla-2.3-multijet-130km-2007-2014/",
+      "https://www.motodiesel.pl/samochody/auta-dostawcze/4133-fiat-ducato-iii-fl-23-multijet-148km.html"
+    ],
+    "key_facts_from_serp": [
+      "Spalanie na drodze ekspresowej 8-9 L/100km (pusty, 110 km/h)",
+      "Spalanie w mieście z ładunkiem do 14-15 L/100km",
+      "Wersja L4H2 przy 90 km/h na pusto: 10.5L, z ładunkiem 700kg: 13-14L",
+      "Średnie spalanie z kontenerem: ~20L/100km",
+      "Silnik 2.3 MultiJet dostępny w wersjach: 130KM, 148KM",
+      "Oznaczenie fabryczne silnika: F1AE3481E (148KM FL)"
+    ]
+  },
+  "faq": [
+    {
+      "question": "Ile pali Fiat Ducato 2.3 diesel?",
+      "source": "PAA"
+    },
+    {
+      "question": "Czy silnik 2.3 MultiJet w Fiacie Ducato jest dobry?",
+      "source": "PAA"
+    },
+    {
+      "question": "Z jakim silnikiem kupić Fiata Ducato?",
+      "source": "PAA"
+    },
+    {
+      "question": "Jakie jest średnie spalanie Fiata Ducato 2.2 Multijet po 100 000 km?",
+      "source": "PAA"
+    }
+  ],
+  "suggested_structure": [
+    {
+      "h2": "Dane techniczne silnika 2.3 MultiJet",
+      "type": "table",
+      "notes": "Moc, moment, pojemność, norma emisji, typ wtrysku"
+    },
+    {
+      "h2": "Wersje mocy – 130KM vs 148KM vs 160KM",
+      "type": "comparison",
+      "notes": "Porównanie wariantów mocy, moment obrotowy"
+    },
+    {
+      "h2": "Spalanie w praktyce",
+      "type": "data",
+      "notes": "Dane z SERP: 8-15L zależnie od obciążenia i trasy"
+    },
+    {
+      "h2": "Typowe usterki i problemy",
+      "type": "list",
+      "notes": "DPF, wtryskiwacze, turbo, EGR – najczęstsze awarie"
+    },
+    {
+      "h2": "Opinie użytkowników",
+      "type": "editorial",
+      "notes": "Syntetyzowane z recenzji na autocentrum/forach"
+    },
+    {
+      "h2": "Koszty eksploatacji i serwisu",
+      "type": "data",
+      "notes": "Olej, rozrząd, filtry – interwały i ceny"
+    }
+  ],
+  "entities_to_cover": [
+    "MultiJet",
+    "Common Rail",
+    "Euro 5",
+    "Euro 6",
+    "DPF",
+    "EGR",
+    "AdBlue",
+    "SCR",
+    "turbosprężarka",
+    "wtryskiwacze",
+    "rozrząd łańcuchowy",
+    "Nm",
+    "KM",
+    "cm3",
+    "L/100km",
+    "F1AE3481",
+    "Ducato III",
+    "Ducato IV"
+  ],
+  "internal_links": [
+    {
+      "url": "/modele/fiat-ducato/",
+      "anchor": "Fiat Ducato – kompletny przewodnik"
+    },
+    {
+      "url": "/modele/fiat-ducato/3-0-multijet/",
+      "anchor": "silnik 3.0 MultiJet"
+    },
+    {
+      "url": "/serwis/fiat-ducato-spalanie/",
+      "anchor": "tabela spalania per silnik"
+    },
+    {
+      "url": "/serwis/wypalanie-dpf/",
+      "anchor": "regeneracja filtra DPF"
+    },
+    {
+      "url": "/serwis/fiat-ducato-rozrzad/",
+      "anchor": "wymiana rozrządu"
+    },
+    {
+      "url": "/serwis/adblue/",
+      "anchor": "AdBlue w busach"
+    }
+  ],
+  "expert_insight": {
+    "expert_name": "Marek Kowalczyk",
+    "topic": "Wybór między 130KM a 148KM – kiedy warto dopłacić"
+  },
+  "rules": {
+    "no_hallucination": "Używaj TYLKO danych z competitor_data i entities. Nie wymyślaj liczb.",
+    "polish_only": "Pisz po polsku. En-dash (–) nie em-dash (—). BusManiak.pl (camelCase).",
+    "no_filler": "Każde zdanie musi nieść wartość informacyjną. Zero wody.",
+    "sources": "Odwołuj się do 'danych użytkowników', 'raportów spalania', 'specyfikacji producenta'."
+  }
+}
