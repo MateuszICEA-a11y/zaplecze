@@ -65,10 +65,10 @@ Dopuszczalna masa całkowita (DMC) Fiata Ducato standardowo wynosi 3500 kg, co p
 
 Jednostki napędowe Ducato ewoluowały wraz z normami emisji spalin. Wybór silnika zależy od planowanego zastosowania – od kurierki miejskiej po transport międzynarodowy.
 
-*   **[Silnik 2.2 MultiJet](/modele/fiat-ducato/2-2-multijet/)**: Obecnie podstawowa jednostka w ofercie (zastąpiła 2.3). Dostępna w wariantach mocy: 120, 140, 160 oraz 180 KM. Wykorzystuje technologię SCR i AdBlue.
-*   **[Silnik 2.3 MultiJet](/modele/fiat-ducato/2-3-multijet/)**: Produkowany przez IVECO silnik, uważany za "złoty środek". Najpopularniejszy w rocznikach 2011–2021. Wersje 130 KM i 150 KM są cenione za świetny stosunek spalania do dynamiki.
-*   **[Silnik 3.0 MultiJet](/modele/fiat-ducato/3-0-multijet/)**: Legenda. Najmocniejszy diesel (160–180 KM) z łańcuchem rozrządu. Idealny pod ciężkie zabudowy, lawety i dla osób szukających najwyższej trwałości.
-*   **[Silnik 2.8 JTD](/modele/fiat-ducato/2-8-jtd/)**: Spotykany w starszych modelach (II generacja). Prosta konstrukcja, która przy odpowiednim serwisie potrafi przejechać 500–700 tys. km bez remontu.
+*   **[Silnik 2.2 MultiJet](/modele/fiat-ducato/2-2-multijet/)** – obecnie podstawowa jednostka w ofercie (zastąpiła 2.3). Dostępna w wariantach mocy: 120, 140, 160 oraz 180 KM. Wykorzystuje technologię SCR i AdBlue.
+*   **[Silnik 2.3 MultiJet](/modele/fiat-ducato/2-3-multijet/)** – produkowany przez IVECO silnik, uważany za "złoty środek". Najpopularniejszy w rocznikach 2011–2021. Wersje 130 KM i 150 KM są cenione za świetny stosunek spalania do dynamiki.
+*   **[Silnik 3.0 MultiJet](/modele/fiat-ducato/3-0-multijet/)** – legenda. Najmocniejszy diesel (160–180 KM) z łańcuchem rozrządu. Idealny pod ciężkie zabudowy, lawety i dla osób szukających najwyższej trwałości.
+*   **[Silnik 2.8 JTD](/modele/fiat-ducato/2-8-jtd/)** – spotykany w starszych modelach (II generacja). Prosta konstrukcja, która przy odpowiednim serwisie potrafi przejechać 500–700 tys. km bez remontu.
 
 {{< expert name="Marek Kowalczyk" >}}
 Jeśli szukasz używanego Ducato do ciężkiej pracy, celuj w jednostkę 3.0 MultiJet sprzed 2016 roku. To silnik niemal niezniszczalny, który doskonale radzi sobie z pełnym obciążeniem. W przypadku nowszych egzemplarzy, silnik 2.3 o mocy 150 KM oferuje najlepszą kulturę pracy i rozsądne koszty serwisu, zwłaszcza jeśli regularnie sprawdzasz [rozrząd Ducato](/serwis/fiat-ducato-rozrzad/).
@@ -81,11 +81,11 @@ Jeśli szukasz używanego Ducato do ciężkiej pracy, celuj w jednostkę 3.0 Mul
 Fiat Ducato to model niezwykle uniwersalny. Dzięki konstrukcji ramowej (w wersjach podwozie) oraz samonośnej (furgon), możliwości konfiguracji są niemal nieograniczone.
 
 1.  **Furgon** – klasyczny blaszak do transportu towarów.
-2.  **[Ducato brygadówka](/modele/fiat-ducato/brygadowka/)**: Wersja z dodatkowym rzędem siedzeń, pozwalająca przewieźć do 7 osób wraz z towarem.
-3.  **[Ducato 9-osobowy](/modele/fiat-ducato/9-osobowy/)**: Przeszklone kombi lub luksusowy minibus Panorama.
-4.  **[Ducato skrzyniowy](/modele/fiat-ducato/skrzyniowy/)**: Otwarta paka, często z systemem wywrotu.
-5.  **[Ducato laweta](/modele/fiat-ducato/laweta/)**: Najpopularniejszy wybór w polskiej pomocy drogowej dzięki niskiej masie własnej podwozia.
-6.  **[Ducato chłodnia](/modele/fiat-ducato/chlodnia/)**: Izolowana przestrzeń ładunkowa z agregatem, kluczowa w transporcie żywności i leków.
+2.  **[Ducato brygadówka](/modele/fiat-ducato/brygadowka/)** – wersja z dodatkowym rzędem siedzeń, pozwalająca przewieźć do 7 osób wraz z towarem.
+3.  **[Ducato 9-osobowy](/modele/fiat-ducato/9-osobowy/)** – przeszklone kombi lub luksusowy minibus Panorama.
+4.  **[Ducato skrzyniowy](/modele/fiat-ducato/skrzyniowy/)** – otwarta paka, często z systemem wywrotu.
+5.  **[Ducato laweta](/modele/fiat-ducato/laweta/)** – najpopularniejszy wybór w polskiej pomocy drogowej dzięki niskiej masie własnej podwozia.
+6.  **[Ducato chłodnia](/modele/fiat-ducato/chlodnia/)** – izolowana przestrzeń ładunkowa z agregatem, kluczowa w transporcie żywności i leków.
 
 ## Fiat Ducato Maxi – co go wyróżnia {#ducato-maxi}
 

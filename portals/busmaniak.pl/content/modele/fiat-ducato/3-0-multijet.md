@@ -7,6 +7,8 @@ author: "marek-kowalczyk"
 h1: "Fiat Ducato 3.0 MultiJet – dane techniczne i opinie"
 parent: "fiat-ducato"
 type: "engine"
+image: "/images/fiat-ducato-3-0-multijet-hero.jpg"
+image_alt: ""
 main_keyword: "Fiat Ducato 3.0 MultiJet"
 ---
 

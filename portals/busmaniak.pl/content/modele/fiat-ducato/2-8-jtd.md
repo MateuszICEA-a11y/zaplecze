@@ -7,6 +7,8 @@ author: "marek-kowalczyk"
 h1: "Fiat Ducato 2.8 JTD – dane techniczne i opinie"
 parent: "fiat-ducato"
 type: "engine"
+image: "/images/fiat-ducato-2-8-jtd-hero.jpg"
+image_alt: ""
 main_keyword: "Fiat Ducato 2.8 JTD"
 ---
 

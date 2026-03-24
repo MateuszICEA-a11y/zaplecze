@@ -38,9 +38,9 @@ Ducato wygrywa z konkurencją przede wszystkim geometrią paki. Możliwość spa
 ### Silniki – który wybrać pod zabudowę?
 
 Wybór jednostki napędowej zależy od rocznika i planowanej masy kampera:
-*   **1.9 TD**: Spotykany w starszych modelach. Choć niektórzy użytkownicy chwalą go za prostotę, prędkość przelotowa rzędu 80–85 km/h oraz słaba dynamika pod górę sprawiają, że jest to wybór dla bardzo cierpliwych.
-*   **2.3 MultiJet**: Złoty środek. Silnik opracowany przez Iveco, uznawany za jedną z najtrwalszych jednostek w historii busów. Idealny do kamperów o DMC 3500 kg. [Dowiedz się więcej o silniku 2.3 MultiJet](/modele/fiat-ducato/2-3-multijet/).
-*   **3.0 JTD/MultiJet**: Potężna jednostka (160-180 KM) z rozrządem na łańcuchu. Najlepszy wybór dla ciężkich kamperów zintegrowanych i osób planujących dalekie trasy autostradowe.
+*   **1.9 TD** – spotykany w starszych modelach. Choć niektórzy użytkownicy chwalą go za prostotę, prędkość przelotowa rzędu 80–85 km/h oraz słaba dynamika pod górę sprawiają, że jest to wybór dla bardzo cierpliwych.
+*   **2.3 MultiJet** – złoty środek. Silnik opracowany przez Iveco, uznawany za jedną z najtrwalszych jednostek w historii busów. Idealny do kamperów o DMC 3500 kg. [Dowiedz się więcej o silniku 2.3 MultiJet](/modele/fiat-ducato/2-3-multijet/).
+*   **3.0 JTD/MultiJet** – potężna jednostka (160-180 KM) z rozrządem na łańcuchu. Najlepszy wybór dla ciężkich kamperów zintegrowanych i osób planujących dalekie trasy autostradowe.
 
 {{< info title="Uwaga na DMC" icon="engineering" >}}
 Budując kampera samodzielnie, musisz rygorystycznie pilnować dopuszczalnej masy całkowitej (DMC). Większość Ducato ma 3500 kg. Sama zabudowa, zbiorniki z wodą, akumulatory i pasażerowie mogą szybko przekroczyć ten limit. Zawsze waż auto przed i w trakcie prac.
@@ -49,9 +49,9 @@ Budując kampera samodzielnie, musisz rygorystycznie pilnować dopuszczalnej mas
 ## Koszty przeróbki i dostępność części
 
 Budowa kampera to proces czasochłonny i kosztowny. Wybierając Fiata Ducato, zyskujesz dostęp do największej bazy gotowych akcesoriów.
-1.  **Dostępność**: Ponieważ większość fabrycznych kamperów to Ducato, bez problemu kupisz gotowe obrotnice foteli, dedykowane zbiorniki na brudną wodę montowane pod podwoziem czy maty termiczne na szyby.
-2.  **Serwis**: Każdy mechanik w Europie zna ten samochód. Części zamienne są tanie i dostępne "od ręki", co ma kluczowe znaczenie podczas awarii na wyjeździe w Portugalii czy Grecji.
-3.  **Wsparcie społeczności**: Liczba poradników dotyczących [budowy kampera krok po kroku](/przerobki/budowa-kampera-krok-po-kroku/) na bazie Ducato jest ogromna.
+1.  **Dostępność** – ponieważ większość fabrycznych kamperów to Ducato, bez problemu kupisz gotowe obrotnice foteli, dedykowane zbiorniki na brudną wodę montowane pod podwoziem czy maty termiczne na szyby.
+2.  **Serwis** – każdy mechanik w Europie zna ten samochód. Części zamienne są tanie i dostępne "od ręki", co ma kluczowe znaczenie podczas awarii na wyjeździe w Portugalii czy Grecji.
+3.  **Wsparcie społeczności** – liczba poradników dotyczących [budowy kampera krok po kroku](/przerobki/budowa-kampera-krok-po-kroku/) na bazie Ducato jest ogromna.
 
 ## Typowe usterki i na co uważać?
 
