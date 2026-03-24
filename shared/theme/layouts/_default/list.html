@@ -1,17 +1,95 @@
 {{ define "main" }}
-{{ partial "breadcrumbs.html" . }}
 
-<div class="container">
-  <div class="list-header">
-    <h1>{{ .Title }}</h1>
-    {{ with .Description }}
-    <p>{{ . }}</p>
+{{/* ═══ BREADCRUMBS ═══ */}}
+<nav class="breadcrumbs">
+  <div class="container">
+    <a href="{{ .Site.BaseURL }}">Strona główna</a>
+    <span class="breadcrumbs__sep">/</span>
+    {{ with .Parent }}
+    {{ if ne .Kind "home" }}
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+    <span class="breadcrumbs__sep">/</span>
     {{ end }}
-    {{ with .Content }}
-    <div class="content-narrow mt-2">{{ . }}</div>
     {{ end }}
+    <span>{{ .Title | truncate 50 }}</span>
   </div>
+</nav>
 
+{{/* ═══ HERO (same as single.html) ═══ */}}
+{{ $isPage := true }}
+<header class="article-hero article-hero--page">
+  <div class="article-hero__inner">
+    {{ with .Params.image }}
+    <img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}" class="article-hero__img" loading="eager">
+    {{ else }}
+    <div class="article-hero__img" style="background: linear-gradient(135deg, var(--c-dark) 0%, var(--c-navy) 100%);"></div>
+    {{ end }}
+
+    <div class="article-hero__body">
+      <div class="article-hero__badge">{{ .Section | humanize | upper }}</div>
+      <h1 class="article-hero__title">{{ .Params.h1 | default .Title }}</h1>
+      <div class="article-hero__meta">
+        <div class="article-hero__meta-item">
+          <span class="material-symbols-outlined">update</span>
+          <span>Ostatnia aktualizacja: {{ with .Params.lastmod }}{{ .Format "01.2006" }}{{ else }}{{ .Date.Format "01.2006" }}{{ end }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+{{/* ═══ CONTENT (if _index.md has body) ═══ */}}
+{{ with .Content }}
+<article class="article">
+  <div class="container content-narrow">
+
+    {{ with $.Params.lead }}
+    <p class="article-lead">{{ . }}</p>
+    {{ end }}
+
+    <div class="article__content">
+      {{ $.Content }}
+    </div>
+
+    {{/* ═══ LINK BOX: Subpages ═══ */}}
+    {{ $children := $.Pages }}
+    {{ if $children }}
+    <div class="link-box">
+      <div class="link-box__header">
+        <span class="material-symbols-outlined">menu_book</span>
+        Podstrony {{ $.Title }}
+      </div>
+      <ul class="link-box__list">
+        {{ range $children }}
+        <li><a href="{{ .Permalink }}">{{ .Params.h1 | default .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+
+    {{/* ═══ FAQ ═══ */}}
+    {{ with $.Params.faq }}
+    <section class="faq">
+      <div class="faq__title" role="heading" aria-level="2">
+        Najczęściej zadawane pytania
+      </div>
+      {{ range $i, $q := . }}
+      <div class="faq__item">
+        <input type="checkbox" id="faq-{{ $i }}" class="faq__toggle" aria-hidden="true">
+        <label for="faq-{{ $i }}" class="faq__question">{{ $q.question }}</label>
+        <div class="faq__answer">{{ $q.answer | markdownify }}</div>
+      </div>
+      {{ end }}
+    </section>
+    {{ end }}
+
+  </div>
+</article>
+{{ end }}
+
+{{/* ═══ CHILD PAGES GRID (if no body content, show cards) ═══ */}}
+{{ if not .Content }}
+<div class="container" style="padding-top: 2rem;">
   {{ $pages := .Pages }}
   {{ $paginator := .Paginate $pages 12 }}
 
@@ -39,4 +117,6 @@
   </nav>
   {{ end }}
 </div>
+{{ end }}
+
 {{ end }}
