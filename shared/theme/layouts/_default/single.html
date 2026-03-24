@@ -37,7 +37,7 @@
     {{ end }}
 
     <div class="article-hero__body">
-      <div class="article-hero__badge">{{ .Parent.Title | default .Section }}</div>
+      <div class="article-hero__badge">{{ .Section | humanize | upper }}</div>
 
       <h1 class="article-hero__title">{{ .Params.h1 | default .Title }}</h1>
 
@@ -163,10 +163,11 @@
       <div class="faq__title" role="heading" aria-level="2">
         Najczęściej zadawane pytania
       </div>
-      {{ range . }}
+      {{ range $i, $q := . }}
       <div class="faq__item">
-        <div class="faq__question">{{ .question }}</div>
-        <div class="faq__answer">{{ .answer | markdownify }}</div>
+        <input type="checkbox" id="faq-{{ $i }}" class="faq__toggle" aria-hidden="true">
+        <label for="faq-{{ $i }}" class="faq__question">{{ $q.question }}</label>
+        <div class="faq__answer">{{ $q.answer | markdownify }}</div>
       </div>
       {{ end }}
     </section>

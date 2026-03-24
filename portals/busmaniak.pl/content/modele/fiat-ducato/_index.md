@@ -64,7 +64,7 @@ Jeśli szukasz używanego Ducato do ciężkiej pracy, celuj w jednostkę 3.0 Mul
 
 Fiat Ducato to model niezwykle uniwersalny. Dzięki konstrukcji ramowej (w wersjach podwozie) oraz samonośnej (furgon), możliwości konfiguracji są niemal nieograniczone.
 
-1.  **Furgon**: Klasyczny blaszak do transportu towarów.
+1.  **Furgon** – klasyczny blaszak do transportu towarów.
 2.  **[Ducato brygadówka](/modele/fiat-ducato/brygadowka/)**: Wersja z dodatkowym rzędem siedzeń, pozwalająca przewieźć do 7 osób wraz z towarem.
 3.  **[Ducato 9-osobowy](/modele/fiat-ducato/9-osobowy/)**: Przeszklone kombi lub luksusowy minibus Panorama.
 4.  **[Ducato skrzyniowy](/modele/fiat-ducato/skrzyniowy/)**: Otwarta paka, często z systemem wywrotu.
@@ -90,11 +90,11 @@ Szczegółowe zestawienie kosztów znajdziesz w artykule: [spalanie Ducato per s
 ## Typowe usterki i na co uważać przy zakupie {#usterki-zakup}
 
 Mimo ogólnej solidności, Ducato ma swoje słabe punkty. Przed zakupem warto zwrócić uwagę na:
-*   **Skrzynie biegów M40**: W mocniejszych wersjach 3.0 MultiJet zdarzały się awarie łożysk.
-*   **Elektronika**: Często pojawiające się błędy na desce rozdzielczej (warto znać [kontrolki Ducato](/serwis/kontrolki-fiat-ducato/)).
-*   **Korozja**: Choć nadwozie jest dobrze zabezpieczone, warto zajrzeć pod spód, szczególnie w okolicach tylnej belki i mocowań resorów.
-*   **Układ wtryskowy**: Wrażliwy na jakość paliwa, szczególnie w nowszych jednostkach Euro 6.
-*   **Osprzęt silnika**: Problemy z zaworem EGR i zapychającym się filtrem DPF przy częstej jeździe miejskiej.
+*   **Skrzynie biegów M40** – w mocniejszych wersjach 3.0 MultiJet zdarzały się awarie łożysk.
+*   **Elektronika** – często pojawiające się błędy na desce rozdzielczej (warto znać [kontrolki Ducato](/serwis/kontrolki-fiat-ducato/)).
+*   **Korozja** – choć nadwozie jest dobrze zabezpieczone, warto zajrzeć pod spód, szczególnie w okolicach tylnej belki i mocowań resorów.
+*   **Układ wtryskowy** – wrażliwy na jakość paliwa, szczególnie w nowszych jednostkach Euro 6.
+*   **Osprzęt silnika** – problemy z zaworem EGR i zapychającym się filtrem DPF przy częstej jeździe miejskiej.
 
 Przy serwisowaniu kluczowa jest znajomość schematów elektrycznych, w czym pomoże nasz poradnik: [bezpieczniki Ducato](/serwis/bezpieczniki-fiat-ducato/).
 

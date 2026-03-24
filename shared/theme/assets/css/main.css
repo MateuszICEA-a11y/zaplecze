@@ -25,7 +25,7 @@
   --f-display: 'Space Grotesk', 'Manrope', -apple-system, sans-serif;
 
   --w-max: 1200px;
-  --w-content: 760px;
+  --w-content: 900px;
   --sp: 1.5rem;
   --radius: 12px;
   --radius-sm: 8px;
@@ -1199,25 +1199,57 @@ blockquote {
 }
 
 .faq__item {
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
   border: 1px solid var(--c-border);
   border-radius: var(--radius-sm);
   overflow: hidden;
 }
 
+.faq__toggle { display: none; }
+
 .faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
   font-weight: 700;
   color: var(--c-dark);
   padding: 1rem 1.25rem;
   background: var(--c-bg-alt);
   font-size: .95rem;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
+.faq__question:hover { background: rgba(255,107,0,.06); }
+
+.faq__question::after {
+  content: "+";
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--c-orange);
+  flex-shrink: 0;
+  transition: transform .25s;
+}
+
+.faq__toggle:checked + .faq__question { color: var(--c-orange); }
+.faq__toggle:checked + .faq__question::after { content: "–"; }
+
 .faq__answer {
-  padding: 1rem 1.25rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease, padding .3s ease;
   color: var(--c-text-mid);
   font-size: .9rem;
   line-height: 1.6;
+  padding: 0 1.25rem;
+}
+
+.faq__toggle:checked ~ .faq__answer {
+  max-height: 500px;
+  padding: 1rem 1.25rem;
 }
 
 /* ── Author box ── */
