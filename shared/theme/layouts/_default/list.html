@@ -79,7 +79,7 @@
     {{ with $.Params.faq }}
     <section class="faq">
       <div class="faq__title" role="heading" aria-level="2">
-        Najczęściej zadawane pytania
+        {{ $.Params.main_keyword | default ($.Params.h1 | default $.Title) }} – najczęściej zadawane pytania (FAQ)
       </div>
       {{ range $i, $q := . }}
       <div class="faq__item">

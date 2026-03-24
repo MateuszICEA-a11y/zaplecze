@@ -8,6 +8,18 @@ author: "marek-kowalczyk"
 h1: "Fiat Ducato – kompletny przewodnik po modelu"
 type: "page"
 volume: 33100
+main_keyword: "Fiat Ducato"
+faq:
+  - question: "Jakie są generacje Fiata Ducato?"
+    answer: "Wyróżniamy cztery główne generacje: I (1981–1993), II (1994–2006), III (2006–2021, z licznymi liftingami) oraz IV (od 2021 roku, z nową elektroniką i silnikami)."
+  - question: "Jaka jest najdłuższa wersja Fiata Ducato?"
+    answer: "Najdłuższa wersja to L4 (często nazywana XL), której długość całkowita wynosi 6363 mm. Długość paki to aż 4070 mm."
+  - question: "Który silnik w Fiacie Ducato jest najlepszy?"
+    answer: "Za legendarną pod względem trwałości uchodzi jednostka 3.0 MultiJet (180 KM). W nowszych modelach najlepszym wyborem jest 2.3 MultiJet o mocy 130 lub 150 KM."
+  - question: "Jakie są najczęstsze problemy z Ducato?"
+    answer: "Użytkownicy najczęściej borykają się z usterkami osprzętu silnika (EGR, przepływomierze), problemami z mechanizmem wycieraczek oraz łożyskami kół przednich."
+  - question: "Jakie jest średnie spalanie Fiata Ducato?"
+    answer: "Zazwyczaj 8–10 l/100 km dla silników 2.3 MultiJet. Wersje Maxi przy pełnym obciążeniu mogą spalać 11–13 l/100 km."
 image: "/images/fiat-ducato-hero.jpg"
 image_alt: "Fiat Ducato IV furgon przy rampie załadunkowej"
 lead: "Fiat Ducato to najpopularniejszy bus dostawczy w Europie i najczęściej wybierana baza pod kampery. Od 1981 roku powstały cztery generacje tego modelu. Poznaj wszystkie wersje, silniki i warianty nadwoziowe."
@@ -112,25 +124,4 @@ Jeśli planujesz [Ducato jako kamper](/przerobki/fiat-ducato-kamper/), celuj w w
 
 Fiat Ducato dzieli konstrukcję z francuskimi braćmi: [Citroën Jumper](/modele/citroen-jumper/) oraz [Peugeot Boxer](/modele/peugeot-boxer/). Choć nadwozia i zawieszenia są niemal identyczne, kluczową różnicą przez lata były silniki. Podczas gdy Fiat stosował własne jednostki MultiJet (np. 2.3), Francuzi często montowali silniki z grupy PSA (np. 2.0 BlueHDi lub 2.2 HDi). Od czasu powstania koncernu Stellantis, różnice te uległy zatarciu, a modele te stały się niemal bliźniacze pod kątem mechanicznym.
 
-## Najczęściej zadawane pytania (FAQ)
-
-**Jakie są generacje Fiata Ducato?**
-Wyróżniamy cztery główne generacje: I (1981–1993), II (1994–2006), III (2006–2021, z licznymi liftingami) oraz IV (od 2021 roku, często traktowana jako głęboki lifting III, ale z nową elektroniką i silnikami).
-
-**Jaka jest najdłuższa wersja Fiata Ducato?**
-Najdłuższa wersja to L4 (często nazywana XL), której długość całkowita wynosi 6363 mm. W tej konfiguracji długość paki to aż 4070 mm.
-
-**Który silnik w Fiacie Ducato jest najlepszy?**
-Za legendarną pod względem trwałości uchodzi jednostka 3.0 MultiJet (180 KM). W nowszych modelach najlepszym wyborem jest 2.3 MultiJet o mocy 130 lub 150 KM, łączący trwałość z niskim spalaniem.
-
-**Jakie są najczęstsze problemy z Ducato?**
-Użytkownicy najczęściej borykają się z usterkami osprzętu silnika (EGR, przepływomierze), problemami z mechanizmem wycieraczek oraz szybko zużywającymi się łożyskami kół przednich.
-
-**Jakie jest średnie spalanie Fiata Ducato?**
-Średnie spalanie zależy od silnika i ładunku, ale zazwyczaj mieści się w przedziale 8–10 l/100 km dla silników 2.3 MultiJet. Wersje Maxi przy pełnym obciążeniu mogą spalać 11–13 l/100 km.
-
----
-*Źródła danych:*
-*   *Oficjalna strona Fiat Professional: fiatprofessional.com*
-*   *Dane techniczne pojazdów: wikipedia.org/wiki/Fiat_Ducato*
-*   *Katalogi techniczne Stellantis (2023/2024).*
+*Źródła: Fiat Professional (fiatprofessional.com), Wikipedia, katalogi techniczne Stellantis.*
