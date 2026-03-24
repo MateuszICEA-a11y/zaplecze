@@ -1667,14 +1667,30 @@ blockquote {
    ARTICLE LEAD – Italic intro paragraph
    ══════════════════════════════════════ */
 .article-lead {
-  font-size: 1.15rem;
-  font-weight: 500;
-  font-style: italic;
+  font-family: var(--f-display);
+  font-size: 1.25rem;
+  font-weight: 400;
   color: var(--c-text-mid);
-  line-height: 1.75;
-  border-left: 4px solid var(--c-orange);
-  padding-left: 1.5rem;
+  line-height: 1.7;
+  letter-spacing: -.01em;
   margin-bottom: 2.5rem;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, rgba(255,107,0,.04) 0%, rgba(255,107,0,.01) 100%);
+  border-radius: var(--radius);
+  position: relative;
+}
+
+.article-lead::before {
+  content: "\201C";
+  position: absolute;
+  top: -.2rem;
+  left: .75rem;
+  font-family: var(--f-display);
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--c-orange);
+  opacity: .15;
+  line-height: 1;
 }
 
 /* ══════════════════════════════════════
