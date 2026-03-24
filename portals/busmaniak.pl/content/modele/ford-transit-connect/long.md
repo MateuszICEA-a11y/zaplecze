@@ -1,5 +1,5 @@
 ---
-title: "Ford Transit Connect Long – wymiary, dane techniczne, ceny | BusManiak.pl"
+title: "Ford Transit Connect Long – wymiary, dane techniczne, ceny"
 date: 2026-03-24
 description: "Ford Transit Connect w wersji Long."
 draft: false

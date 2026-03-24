@@ -1,5 +1,5 @@
 ---
-title: "Fiat Ducato 2.3 MultiJet – dane techniczne, spalanie, opinie | BusManiak.pl"
+title: "Fiat Ducato 2.3 MultiJet – dane techniczne, spalanie, opinie"
 date: 2026-03-24
 lastmod: 2026-03-24
 description: "Silnik 2.3 MultiJet w Fiacie Ducato – dane techniczne, realne spalanie wg użytkowników, typowe usterki i opinie. Porównanie wersji 130, 140 i 160 KM."

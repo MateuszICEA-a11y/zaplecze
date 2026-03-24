@@ -1,5 +1,5 @@
 ---
-title: "Volkswagen Multivan Van – wymiary, dane techniczne, ceny | BusManiak.pl"
+title: "Volkswagen Multivan Van – wymiary, dane techniczne, ceny"
 date: 2026-03-24
 description: "Volkswagen Multivan w wersji Van."
 draft: false

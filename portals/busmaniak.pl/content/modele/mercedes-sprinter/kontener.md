@@ -1,5 +1,5 @@
 ---
-title: "Mercedes Sprinter Kontener – wymiary, dane techniczne, ceny | BusManiak.pl"
+title: "Mercedes Sprinter Kontener – wymiary, dane techniczne, ceny"
 date: 2026-03-24
 description: "Mercedes Sprinter w wersji Kontener – wymiary, dane techniczne, ładowność i ceny."
 draft: false

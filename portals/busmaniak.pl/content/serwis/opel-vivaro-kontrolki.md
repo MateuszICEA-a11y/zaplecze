@@ -1,5 +1,5 @@
 ---
-title: "Opel Vivaro kontrolki – przewodnik serwisowy | BusManiak.pl"
+title: "Opel Vivaro kontrolki – przewodnik serwisowy"
 date: 2026-03-24
 description: "Kontrolki w modelu Opel Vivaro – schematy, opisy, lokalizacja."
 draft: false

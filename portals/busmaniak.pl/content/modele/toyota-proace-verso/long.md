@@ -1,5 +1,5 @@
 ---
-title: "Toyota Proace Verso Long – wymiary, dane techniczne, ceny | BusManiak.pl"
+title: "Toyota Proace Verso Long – wymiary, dane techniczne, ceny"
 date: 2026-03-24
 description: "Toyota Proace Verso w wersji Long."
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "Maxus Deliver 9 Osobowy – wymiary, dane techniczne, ceny | BusManiak.pl"
+title: "Maxus Deliver 9 Osobowy – wymiary, dane techniczne, ceny"
 date: 2026-03-24
 description: "Maxus Deliver 9 w wersji Osobowy."
 draft: false

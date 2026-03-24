@@ -1,5 +1,5 @@
 ---
-title: "Ford Transit Kombi – wymiary, dane techniczne, ceny | BusManiak.pl"
+title: "Ford Transit Kombi – wymiary, dane techniczne, ceny"
 date: 2026-03-24
 description: "Ford Transit w wersji Kombi – wymiary, dane techniczne, ładowność i ceny."
 draft: false

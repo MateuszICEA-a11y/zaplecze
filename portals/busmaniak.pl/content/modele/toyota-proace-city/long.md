@@ -1,5 +1,5 @@
 ---
-title: "Toyota Proace City Long – wymiary, dane techniczne, ceny | BusManiak.pl"
+title: "Toyota Proace City Long – wymiary, dane techniczne, ceny"
 date: 2026-03-24
 description: "Toyota Proace City w wersji Long – wymiary, dane techniczne, ładowność i ceny."
 draft: false

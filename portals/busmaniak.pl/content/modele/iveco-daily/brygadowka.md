@@ -1,5 +1,5 @@
 ---
-title: "Iveco Daily Brygadowka – wymiary, dane techniczne, ceny | BusManiak.pl"
+title: "Iveco Daily Brygadowka – wymiary, dane techniczne, ceny"
 date: 2026-03-24
 description: "Iveco Daily w wersji Brygadowka – wymiary, dane techniczne, ładowność i ceny."
 draft: false

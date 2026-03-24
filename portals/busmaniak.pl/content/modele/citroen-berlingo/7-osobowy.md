@@ -1,5 +1,5 @@
 ---
-title: "Citroën Berlingo 7-osobowy – wersja rodzinna | BusManiak.pl"
+title: "Citroën Berlingo 7-osobowy – wersja rodzinna"
 date: 2026-03-24
 description: "Citroën Berlingo w wersji 7-osobowej – trzeci rząd siedzeń, wymiary, prawo jazdy kat. B."
 draft: false

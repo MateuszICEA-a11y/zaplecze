@@ -1,5 +1,5 @@
 ---
-title: "Iveco Daily Laweta – wymiary, dane techniczne, ceny | BusManiak.pl"
+title: "Iveco Daily Laweta – wymiary, dane techniczne, ceny"
 date: 2026-03-24
 description: "Iveco Daily w wersji Laweta – wymiary, dane techniczne, ładowność i ceny."
 draft: false

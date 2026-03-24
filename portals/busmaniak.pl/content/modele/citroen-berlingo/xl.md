@@ -1,5 +1,5 @@
 ---
-title: "Citroën Berlingo XL – wymiary, pojemność, ceny | BusManiak.pl"
+title: "Citroën Berlingo XL – wymiary, pojemność, ceny"
 date: 2026-03-24
 description: "Citroën Berlingo XL – najdłuższa wersja. Wymiary, pojemność bagażnika, ładowność i ceny."
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "Fiat Ducato tuning – modyfikacje, chiptuning, optyka | BusManiak.pl"
+title: "Fiat Ducato tuning – modyfikacje, chiptuning, optyka"
 date: 2026-03-24
 description: "Tuning Fiata Ducato – chiptuning silnika, modyfikacje zawieszenia, optyki i wnętrza. Co warto, a czego unikać."
 draft: false

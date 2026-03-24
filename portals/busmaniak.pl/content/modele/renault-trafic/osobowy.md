@@ -1,5 +1,5 @@
 ---
-title: "Renault Trafic Osobowy – wymiary, dane techniczne, ceny | BusManiak.pl"
+title: "Renault Trafic Osobowy – wymiary, dane techniczne, ceny"
 date: 2026-03-24
 description: "Renault Trafic w wersji Osobowy – wymiary, dane techniczne, ładowność i ceny."
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "Volkswagen Crafter Brygadowka – wymiary, dane techniczne, ceny | BusManiak.pl"
+title: "Volkswagen Crafter Brygadowka – wymiary, dane techniczne, ceny"
 date: 2026-03-24
 description: "Volkswagen Crafter w wersji Brygadowka – wymiary, dane techniczne, ładowność i ceny."
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "Fiat Ducato blaszak – furgon, wymiary paki, ładowność | BusManiak.pl"
+title: "Fiat Ducato blaszak – furgon, wymiary paki, ładowność"
 date: 2026-03-24
 description: "Fiat Ducato blaszak (furgon) – wymiary paki, ładowność i porównanie wariantów L/H."
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "Citroën Berlingo dostawczy – wymiary, ładowność, konfiguracje | BusManiak.pl"
+title: "Citroën Berlingo dostawczy – wymiary, ładowność, konfiguracje"
 date: 2026-03-24
 description: "Citroën Berlingo w wersji dostawczej – furgon, wymiary paki, ładowność, wersje 2- i 3-osobowe."
 draft: false

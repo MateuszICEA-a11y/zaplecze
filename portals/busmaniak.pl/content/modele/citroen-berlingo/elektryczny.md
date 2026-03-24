@@ -1,5 +1,5 @@
 ---
-title: "Citroën ë-Berlingo – elektryczny van, zasięg, cena | BusManiak.pl"
+title: "Citroën ë-Berlingo – elektryczny van, zasięg, cena"
 date: 2026-03-24
 description: "Citroën ë-Berlingo – elektryczna wersja Berlingo. Zasięg, ładowanie, dane techniczne i ceny."
 draft: false

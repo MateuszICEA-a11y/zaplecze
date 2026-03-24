@@ -1,5 +1,5 @@
 ---
-title: "Fiat Doblò Maxi – wymiary, dane techniczne, ceny | BusManiak.pl"
+title: "Fiat Doblò Maxi – wymiary, dane techniczne, ceny"
 date: 2026-03-24
 description: "Fiat Doblò w wersji Maxi – wymiary, dane techniczne, ładowność i ceny."
 draft: false

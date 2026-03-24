@@ -1,5 +1,5 @@
 ---
-title: "Opel Vivaro Brygadowka – wymiary, dane techniczne, ceny | BusManiak.pl"
+title: "Opel Vivaro Brygadowka – wymiary, dane techniczne, ceny"
 date: 2026-03-24
 description: "Opel Vivaro w wersji Brygadowka – wymiary, dane techniczne, ładowność i ceny."
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "Ford Ranger Xl – wymiary, dane techniczne, ceny | BusManiak.pl"
+title: "Ford Ranger Xl – wymiary, dane techniczne, ceny"
 date: 2026-03-24
 description: "Ford Ranger w wersji Xl – wymiary, dane techniczne, ładowność i ceny."
 draft: false

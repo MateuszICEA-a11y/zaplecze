@@ -1,5 +1,5 @@
 ---
-title: "Volkswagen Transporter TDI – dane techniczne, spalanie, opinie | BusManiak.pl"
+title: "Volkswagen Transporter TDI – dane techniczne, spalanie, opinie"
 date: 2026-03-24
 description: "Silnik TDI w modelu Volkswagen Transporter."
 draft: false

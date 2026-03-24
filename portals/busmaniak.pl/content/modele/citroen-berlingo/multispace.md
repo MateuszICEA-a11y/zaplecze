@@ -1,5 +1,5 @@
 ---
-title: "Citroën Berlingo Multispace – wersja osobowa, wyposażenie | BusManiak.pl"
+title: "Citroën Berlingo Multispace – wersja osobowa, wyposażenie"
 date: 2026-03-24
 description: "Citroën Berlingo Multispace – wersja osobowa z pełnym wyposażeniem. Generacje, warianty XTR, dane techniczne."
 draft: false

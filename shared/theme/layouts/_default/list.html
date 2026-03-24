@@ -65,28 +65,10 @@
     <div class="link-box">
       <div class="link-box__header">
         <span class="material-symbols-outlined">menu_book</span>
-        Podstrony {{ $.Title }}
+        Wszystko o {{ $.Params.h1 | default $.Title }}
       </div>
       <ul class="link-box__list">
         {{ range $children }}
-        <li><a href="{{ .Permalink }}">{{ .Params.h1 | default .Title }}</a></li>
-        {{ end }}
-      </ul>
-    </div>
-    {{ end }}
-
-    {{/* ═══ LINK BOX: Cross-cluster (pages with parent_model matching this section slug) ═══ */}}
-    {{ $slug := $.File.ContentBaseName }}
-    {{ if eq $slug "_index" }}{{ $slug = $.File.Dir | path.Dir | path.Base }}{{ end }}
-    {{ $crossCluster := where $.Site.RegularPages "Params.parent_model" $slug }}
-    {{ if $crossCluster }}
-    <div class="link-box link-box--dark">
-      <div class="link-box__header">
-        <span class="material-symbols-outlined">link</span>
-        Powiązane artykuły
-      </div>
-      <ul class="link-box__list">
-        {{ range $crossCluster }}
         <li><a href="{{ .Permalink }}">{{ .Params.h1 | default .Title }}</a></li>
         {{ end }}
       </ul>
@@ -111,6 +93,48 @@
 
   </div>
 </article>
+
+{{/* ═══ RELATED: Cross-cluster cards (pages with parent_model matching this slug) ═══ */}}
+{{ $slug := $.File.ContentBaseName }}
+{{ if eq $slug "_index" }}{{ $slug = $.File.Dir | path.Dir | path.Base }}{{ end }}
+{{ $crossCluster := where $.Site.RegularPages "Params.parent_model" $slug }}
+{{ if $crossCluster }}
+<section class="related-section">
+  <div class="container">
+    <div class="related-section__header">
+      <div>
+        <div class="related-section__title">Powiązane artykuły</div>
+        <div class="related-section__bar"></div>
+      </div>
+    </div>
+    <div class="related-grid">
+      {{ range $crossCluster }}
+      <article class="related-card">
+        <a href="{{ .Permalink }}">
+          {{ with .Params.image }}
+          <div class="related-card__image">
+            <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+            <div class="related-card__badge">{{ .Section | humanize }}</div>
+          </div>
+          {{ else }}
+          <div class="related-card__image" style="background: linear-gradient(135deg, var(--c-dark), var(--c-navy));">
+            <div class="related-card__badge">{{ .Section | humanize }}</div>
+          </div>
+          {{ end }}
+          <div class="related-card__body">
+            <div class="related-card__title">{{ .Params.h1 | default .Title }}</div>
+            {{ with .Description }}
+            <p class="related-card__excerpt">{{ . | truncate 100 }}</p>
+            {{ end }}
+          </div>
+        </a>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
 {{ end }}
 
 {{/* ═══ CHILD PAGES GRID (if no body content, show cards) ═══ */}}

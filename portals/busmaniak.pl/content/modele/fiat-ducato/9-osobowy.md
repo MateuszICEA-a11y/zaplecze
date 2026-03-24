@@ -1,5 +1,5 @@
 ---
-title: "Fiat Ducato 9-osobowy – wersja pasażerska, prawo jazdy, ceny | BusManiak.pl"
+title: "Fiat Ducato 9-osobowy – wersja pasażerska, prawo jazdy, ceny"
 date: 2026-03-24
 description: "Fiat Ducato w wersji 9-osobowej – wymagane prawo jazdy, wersje nadwoziowe, wyposażenie i ceny."
 draft: false

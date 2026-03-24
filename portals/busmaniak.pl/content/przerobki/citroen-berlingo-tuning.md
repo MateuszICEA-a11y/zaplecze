@@ -1,5 +1,5 @@
 ---
-title: "Citroën Berlingo tuning – modyfikacje i chiptuning | BusManiak.pl"
+title: "Citroën Berlingo tuning – modyfikacje i chiptuning"
 date: 2026-03-24
 description: "Tuning Citroëna Berlingo – chiptuning 1.6 HDI, modyfikacje zawieszenia, optyki i wnętrza."
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "Renault Master dCi – dane techniczne, spalanie, opinie | BusManiak.pl"
+title: "Renault Master dCi – dane techniczne, spalanie, opinie"
 date: 2026-03-24
 description: "Silnik dCi w modelu Renault Master."
 draft: false

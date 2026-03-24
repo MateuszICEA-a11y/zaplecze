@@ -1,5 +1,5 @@
 ---
-title: "Renault Master Blaszak – wymiary, dane techniczne, ceny | BusManiak.pl"
+title: "Renault Master Blaszak – wymiary, dane techniczne, ceny"
 date: 2026-03-24
 description: "Renault Master w wersji Blaszak."
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "Volkswagen Caddy TDI – dane techniczne, spalanie, opinie | BusManiak.pl"
+title: "Volkswagen Caddy TDI – dane techniczne, spalanie, opinie"
 date: 2026-03-24
 description: "Silnik TDI w modelu Volkswagen Caddy – dane techniczne, spalanie, typowe usterki i opinie."
 draft: false

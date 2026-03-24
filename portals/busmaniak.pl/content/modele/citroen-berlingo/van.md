@@ -1,5 +1,5 @@
 ---
-title: "Citroën Berlingo Van – wersja dostawcza, wymiary paki | BusManiak.pl"
+title: "Citroën Berlingo Van – wersja dostawcza, wymiary paki"
 date: 2026-03-24
 description: "Citroën Berlingo Van – wersja dostawcza. Wymiary paki, ładowność, wersje 3-osobowe."
 draft: false

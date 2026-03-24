@@ -1,5 +1,5 @@
 ---
-title: "Iveco Daily bezpieczniki – przewodnik serwisowy | BusManiak.pl"
+title: "Iveco Daily bezpieczniki – przewodnik serwisowy"
 date: 2026-03-24
 description: "Bezpieczniki w modelu Iveco Daily – schematy, opisy, lokalizacja."
 draft: false

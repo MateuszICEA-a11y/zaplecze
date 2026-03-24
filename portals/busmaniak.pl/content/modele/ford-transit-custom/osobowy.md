@@ -1,5 +1,5 @@
 ---
-title: "Ford Transit Custom Osobowy – wymiary, dane techniczne, ceny | BusManiak.pl"
+title: "Ford Transit Custom Osobowy – wymiary, dane techniczne, ceny"
 date: 2026-03-24
 description: "Ford Transit Custom w wersji Osobowy – wymiary, dane techniczne, ładowność i ceny."
 draft: false

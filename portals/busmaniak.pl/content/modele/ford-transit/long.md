@@ -1,5 +1,5 @@
 ---
-title: "Ford Transit Long – wymiary, dane techniczne, ceny | BusManiak.pl"
+title: "Ford Transit Long – wymiary, dane techniczne, ceny"
 date: 2026-03-24
 description: "Ford Transit w wersji Long – wymiary, dane techniczne, ładowność i ceny."
 draft: false

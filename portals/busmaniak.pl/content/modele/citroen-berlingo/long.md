@@ -1,5 +1,5 @@
 ---
-title: "Citroën Berlingo Long – wymiary, ładowność, wersje | BusManiak.pl"
+title: "Citroën Berlingo Long – wymiary, ładowność, wersje"
 date: 2026-03-24
 description: "Citroën Berlingo w wersji Long (XL) – wymiary, pojemność bagażnika, ładowność i porównanie z wersją standardową."
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "Fiat Ducato – generacje, wersje, dane techniczne | BusManiak.pl"
+title: "Fiat Ducato – generacje, wersje, dane techniczne"
 date: 2026-03-24
 lastmod: 2026-03-24
 description: "Kompletny przewodnik po Fiacie Ducato – historia 4 generacji, dane techniczne, wymiary L1H1–L4H3, silniki MultiJet, wersje nadwoziowe, spalanie i typowe usterki."

@@ -1,5 +1,5 @@
 ---
-title: "Iveco Daily Maxi – wymiary, dane techniczne, ceny | BusManiak.pl"
+title: "Iveco Daily Maxi – wymiary, dane techniczne, ceny"
 date: 2026-03-24
 description: "Iveco Daily w wersji Maxi – wymiary, dane techniczne, ładowność i ceny."
 draft: false

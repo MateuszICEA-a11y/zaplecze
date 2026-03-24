@@ -1,5 +1,5 @@
 ---
-title: "Peugeot Rifter Long – wymiary, dane techniczne, ceny | BusManiak.pl"
+title: "Peugeot Rifter Long – wymiary, dane techniczne, ceny"
 date: 2026-03-24
 description: "Peugeot Rifter w wersji Long."
 draft: false

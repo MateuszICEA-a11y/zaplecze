@@ -1,5 +1,5 @@
 ---
-title: "Fiat Ducato doka – podwójna kabina z platformą | BusManiak.pl"
+title: "Fiat Ducato doka – podwójna kabina z platformą"
 date: 2026-03-24
 description: "Fiat Ducato doka – podwójna kabina z otwartą platformą ładunkową, wymiary i zastosowania."
 draft: false

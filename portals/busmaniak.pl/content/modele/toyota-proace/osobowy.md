@@ -1,5 +1,5 @@
 ---
-title: "Toyota Proace Osobowy – wymiary, dane techniczne, ceny | BusManiak.pl"
+title: "Toyota Proace Osobowy – wymiary, dane techniczne, ceny"
 date: 2026-03-24
 description: "Toyota Proace w wersji Osobowy – wymiary, dane techniczne, ładowność i ceny."
 draft: false
