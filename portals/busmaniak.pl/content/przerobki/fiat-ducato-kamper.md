@@ -26,9 +26,9 @@ faq:
 
 ## Historia i ewolucja – od Ducato I do dzisiaj
 
-Pierwsza generacja Fiata Ducato (produkowana w latach 1981–1994) położyła fundamenty pod dzisiejszy rynek caravaningowy. Już wtedy doceniano kwadratową bryłę nadwozia, która ułatwiała montaż mebli. Wymiary zewnętrzne wersji podstawowej (długość 4759 mm, szerokość 1965 mm) pozwalały na sprawne manewrowanie, a rozstaw osi 2923 mm gwarantował stabilność.
+Pierwsza generacja (1981–1994) to właśnie ten model, który ukształtował rynek caravaningowy w Europie. Kwadratowa bryła nadwozia, wymiary zewnętrzne 4759 × 1965 mm i rozstaw osi 2923 mm – to był przepis na auto, które dało się sensownie zabudować. Długo zanim ktokolwiek wymyślił pojęcie "kamper DIY".
 
-Z czasem model ewoluował. Druga generacja (230/244) wprowadziła legendarne silniki JTD, a trzecia (250/290), produkowana od 2006 roku do dziś (z liftingami), stała się absolutnym standardem w branży.
+Druga generacja (230/244) przyniosła silniki JTD, które do dziś cieszą się dobrą opinią w środowisku. Trzecia – produkowana od 2006 roku z kolejnymi liftingami – jest tym, co kupuje się dziś na rynku wtórnym i co stanowi podstawę większości amatorskich projektów.
 
 | Generacja | Lata produkcji | Popularne silniki | DMC | Zastosowanie |
 |-----------|----------------|-------------------|-----|--------------|
@@ -36,39 +36,42 @@ Z czasem model ewoluował. Druga generacja (230/244) wprowadziła legendarne sil
 | Ducato II | 1994–2006      | 2.8 iTD/JTD, 2.3 JTD | do 3.5t | Alkowy, półintegry, budżetowe vany |
 | Ducato III| od 2006        | 2.3 MultiJet, 3.0 JTD | do 4.25t | Nowoczesne camper vany, pełne integry |
 
-## Dlaczego fiat ducato kamper to najlepszy wybór?
+## Dlaczego Ducato wygrywa z konkurencją?
 
-Głównym atutem Ducato jest jego **szerokość**. W przeciwieństwie do Mercedesa Sprintera czy Volkswagena Craftera, Fiat ma niemal pionowe ściany boczne. To pozwala na zamontowanie łóżka w poprzek auta, co drastycznie oszczędza miejsce wewnątrz. Przy całkowitej szerokości wnętrza kabiny wynoszącej 1670 mm w pierwszej generacji i jeszcze większej przestrzeni w nowszych modelach, zyskanie dodatkowych centymetrów na długości zabudowy jest kluczowe.
+Nie ma jednego powodu – jest ich kilka, ale geometria paki jest fundamentalna. Pionowe ściany boczne to coś, czego nie masz w Sprinterze ani Crafterze. Dzięki nim łóżko poprzeczne mieści osobę do 185 cm, a w wersjach z poszerzeniami (tzw. flares) jeszcze więcej. W L2 (5,4 m) zostaje wtedy miejsce na normalną łazienkę – coś, o czym w porównywalnym Fordzie Transicie możesz zapomnieć bez kosztownych modyfikacji.
 
-{{< expert name="Marek Kowalczyk" >}}
+{{% expert name="Kowalczyk" %}}
 Ducato wygrywa z konkurencją przede wszystkim geometrią paki. Możliwość spania w poprzek przy wzroście do 185 cm (po zastosowaniu poszerzeń tzw. flares nawet więcej) pozwala na wygospodarowanie miejsca na pełną łazienkę w aucie o długości L2 (5,4 m). To niemożliwe w wąskim Fordzie Transicie czy Sprinterze bez kosztownych modyfikacji.
-{{< /expert >}}
+{{% /expert %}}
 
 ### Silniki – który wybrać pod zabudowę?
 
-Wybór jednostki napędowej zależy od rocznika i planowanej masy kampera:
-*   **1.9 TD** – spotykany w starszych modelach. Choć niektórzy użytkownicy chwalą go za prostotę, prędkość przelotowa rzędu 80–85 km/h oraz słaba dynamika pod górę sprawiają, że jest to wybór dla bardzo cierpliwych.
-*   **2.3 MultiJet** – złoty środek. Silnik opracowany przez Iveco, uznawany za jedną z najtrwalszych jednostek w historii busów. Idealny do kamperów o DMC 3500 kg. [Dowiedz się więcej o silniku 2.3 MultiJet](/modele/fiat-ducato/2-3-multijet/).
-*   **3.0 JTD/MultiJet** – potężna jednostka (160-180 KM) z rozrządem na łańcuchu. Najlepszy wybór dla ciężkich kamperów zintegrowanych i osób planujących dalekie trasy autostradowe.
+Rocznik i planowana masa zabudowy to dwa parametry, od których powinieneś zacząć wybór silnika:
 
-{{< info title="Uwaga na DMC" icon="engineering" >}}
+- **1.9 TD** – spotykany w starszych egzemplarzach; prędkość przelotowa rzędu 80–85 km/h i słaba dynamika pod górę czynią go wyborem wyłącznie dla cierpliwych
+- **2.3 MultiJet** – złoty środek; jednostka opracowana przez Iveco, uznawana za jedną z trwalszych w historii tego segmentu, idealna do zabudów o DMC 3500 kg; [więcej o silniku 2.3 MultiJet](/modele/fiat-ducato/2-3-multijet/)
+- **3.0 JTD/MultiJet** – 160–180 KM i rozrząd łańcuchowy; uzasadniony wybór przy ciężkich zabudowach zintegrowanych i regularnych trasach autostradowych
+
+{{% info title="DMC" icon="engineering" %}}
 Budując kampera samodzielnie, musisz rygorystycznie pilnować dopuszczalnej masy całkowitej (DMC). Większość Ducato ma 3500 kg. Sama zabudowa, zbiorniki z wodą, akumulatory i pasażerowie mogą szybko przekroczyć ten limit. Zawsze waż auto przed i w trakcie prac.
-{{< /info >}}
+{{% /info %}}
 
 ## Koszty przeróbki i dostępność części
 
-Budowa kampera to proces czasochłonny i kosztowny. Wybierając Fiata Ducato, zyskujesz dostęp do największej bazy gotowych akcesoriów.
-1.  **Dostępność** – ponieważ większość fabrycznych kamperów to Ducato, bez problemu kupisz gotowe obrotnice foteli, dedykowane zbiorniki na brudną wodę montowane pod podwoziem czy maty termiczne na szyby.
-2.  **Serwis** – każdy mechanik w Europie zna ten samochód. Części zamienne są tanie i dostępne "od ręki", co ma kluczowe znaczenie podczas awarii na wyjeździe w Portugalii czy Grecji.
-3.  **Wsparcie społeczności** – liczba poradników dotyczących [budowy kampera krok po kroku](/przerobki/budowa-kampera-krok-po-kroku/) na bazie Ducato jest ogromna.
+Ducato to najczęstsza baza fabrycznych kamperów w Europie – i to bezpośrednio przekłada się na trzy praktyczne sprawy:
 
-## Typowe usterki i na co uważać?
+- **Dostępność akcesoriów** – gotowe obrotnice foteli, dedykowane zbiorniki pod podwozie, maty termiczne na szyby; wszystko produkowane z myślą o tym konkretnym modelu
+- **Serwis** – każdy mechanik w Europie zna ten samochód, części są tanie i dostępne bez czekania; istotne, gdy coś padnie w Grecji albo Portugalii
+- **Wsparcie społeczności** – liczba poradników o [budowie kampera krok po kroku](/przerobki/budowa-kampera-krok-po-kroku/) na bazie Ducato jest po prostu nie do pobicia
 
-Mimo wielu zalet, Fiat Ducato ma swoje słabe punkty. W starszych modelach (I i II generacja) największym wrogiem jest korozja podwozia i progów. W nowszych modelach (X250) użytkownicy skarżą się na:
-*   Słabe łożyska kół przednich (przy dużym obciążeniu kamperowym).
-*   Problemy z elektroniką sterującą szybami.
-*   Nieszczelności podszybia, przez które woda może zaciekać na silnik i wtryskiwacze (w modelach sprzed 2014 roku).
+## Typowe usterki i na co uważać
 
-Jeśli dopiero planujesz zakup, zajrzyj do naszego artykułu [Kamper – przewodnik kupującego](/kampery/przewodnik-kupujacego/), aby dowiedzieć się, jak sprawdzić stan techniczny przed transakcją.
+Każde auto ma słabe punkty. W Ducato I i II to korozja progów i podwozia – warto sprawdzić uważnie przed zakupem. W nowszych egzemplarzach (X250) powtarzają się trzy problemy:
+
+- słabe łożyska kół przednich przy dużym obciążeniu kamperowym
+- elektryka sterowania szybami
+- nieszczelności podszybia; woda trafia na silnik i wtryskiwacze – dotyczy głównie aut sprzed 2014 roku
+
+Przed zakupem przejrzyj nasz [przewodnik kupującego kampera](/kampery/przewodnik-kupujacego/) – znajdziesz tam listę punktów kontrolnych do sprawdzenia na miejscu.
 
 *Źródła: Fiat Professional (fiatprofessional.com), [Wikipedia – Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato), katalogi techniczne Dethleffs, Hymer, Adria.*

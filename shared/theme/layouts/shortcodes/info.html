@@ -1,9 +1,8 @@
-{{/* Info/warning box – usage: {{< info title="Ważna uwaga" icon="engineering" >}}Treść{{< /info >}} */}}
-{{/* Warning variant: {{< info title="Uwaga" icon="warning" type="warning" >}}Treść{{< /info >}} */}}
-<div class="info-box{{ with .Get "type" }} info-box--{{ . }}{{ end }}">
+{{/* Info/warning box – usage: {{% info title="Ważna uwaga" icon="engineering" %}}Treść{{% /info %}} */}}
+<div class="info-box{{ with .Params.type }} info-box--{{ . }}{{ end }}">
   <div class="info-box__header">
-    <span class="material-symbols-outlined">{{ .Get "icon" | default "info" }}</span>
-    {{ .Get "title" | default "Informacja" }}
+    <span class="material-symbols-outlined">{{ .Params.icon | default "info" }}</span>
+    {{ .Params.title | default "Informacja" }}
   </div>
   <div class="info-box__content">
     {{ .Inner | markdownify }}

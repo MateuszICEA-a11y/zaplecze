@@ -25,15 +25,16 @@ faq:
 
 ## Od czego zależy spalanie w Fiacie Ducato?
 
-Zanim przejdziemy do konkretnych liczb, musimy pamiętać, że Fiat Ducato występuje w dziesiątkach konfiguracji. Na ostateczny wynik wpływa:
-*   **Wysokość i długość (H1–H3, L1–L4)** – większa powierzchnia czołowa to wyższy opór powietrza.
-*   **Zabudowa** – klasyczny furgon (blaszak) spali mniej niż kontener czy kamper typu alkowa.
-*   **Obciążenie** – różnica między pustym autem a pojazdem o DMC 3500 kg może wynosić nawet 2–3 litry na 100 km.
-*   **Przełożenie skrzyni biegów** – modele z automatyczną skrzynią 9-biegową (dostępną od 2019 r.) często wykazują lepszą kulturę pracy i niższe spalanie w trasie niż stare przekładnie manualne.
+Ducato to nie jeden model – to platforma, na której zbudowano dziesiątki wariantów nadwoziowych. Dlatego zanim porówna się liczby, warto wiedzieć, co realnie wpływa na wynik:
+
+*   **Wysokość i długość (H1–H3, L1–L4)** – większa powierzchnia czołowa to wyższy opór powietrza i odczuwalna różnica w trasie.
+*   **Zabudowa** – klasyczny furgon spali mniej niż kontener czy kamper z alkowem.
+*   **Obciążenie** – między pustym autem a wersją przy DMC 3500 kg różnica wynosi nawet 2–3 litry na 100 km.
+*   **Skrzynia biegów** – modele z automatem 9-biegowym (od 2019 r.) często osiągają niższe spalanie trasowe niż starsze przekładnie manualne.
 
 ## Fiat Ducato spalanie – zestawienie tabelaryczne
 
-Poniższe dane opierają się na raportach użytkowników, danych technicznych producenta oraz testach drogowych przy średnim obciążeniu (ok. 50% ładowności).
+Dane poniżej opierają się na raportach użytkowników, kartach technicznych producenta i testach przy średnim obciążeniu (ok. 50% ładowności).
 
 | Silnik | Moc (KM) | Średnie spalanie (mieszany) | Spalanie w trasie (90 km/h) | Spalanie w mieście |
 | :--- | :--- | :--- | :--- | :--- |
@@ -44,30 +45,31 @@ Poniższe dane opierają się na raportach użytkowników, danych technicznych p
 | **3.0 MultiJet** | 180 | 10,0 – 12,0 l/100 km | 9,0 – 10,5 l/100 km | 12,5 – 14,0 l/100 km |
 | **2.8 JTD (starsze)** | 128 | 10,5 – 11,5 l/100 km | 9,5 – 10,0 l/100 km | 12,0 – 13,0 l/100 km |
 
-{{< info title="Ważna informacja o normach" icon="engineering" >}}
+{{% info title="Normy" icon="engineering" %}}
 Jednostka 3.0 MultiJet (Iveco) została wycofana z oferty Fiata w 2016 roku ze względu na rygorystyczne normy emisji spalin Euro 6. Zastąpiły ją wzmocnione warianty silnika 2.3 MultiJet, a od 2021 roku królują jednostki 2.2 litra produkcji koncernu Stellantis.
-{{< /info >}}
+{{% /info %}}
 
 ## Kultowy silnik 3.0 MultiJet – czy faktycznie pali dużo?
 
-Silnik 3.0 MultiJet (oznaczenie F1C) to legenda trwałości. Choć w tabelach wypada najgorzej pod kątem ekonomii, użytkownicy doceniają go za "siłę". Przy pełnym obciążeniu rzędu 3,5 tony, spalanie na poziomie 10,3 – 11 litrów jest wynikiem bardzo dobrym. W przeciwieństwie do mniejszych jednostek, 3.0 "nie męczy się" pod górę, co sprawia, że różnice między jazdą na pusto a z towarem są mniejsze niż w przypadku silników 2.0.
+Silnik 3.0 MultiJet (oznaczenie F1C) to legenda trwałości. W tabelach wypada najgorzej pod kątem ekonomii, ale użytkownicy flot cenią go za coś innego – spokój pracy pod obciążeniem. Przy pełnym ładunku rzędu 3,5 tony wynik na poziomie 10,3–11 litrów jest w tej klasie napędowej całkiem dobry. W przeciwieństwie do mniejszych jednostek, trójka nie "dusi się" na podjazdach, więc różnica między jazdą pustym a pełnym autem jest tu mniejsza niż przy silnikach 2.0.
 
 Dowiedz się więcej o tej jednostce: [Silnik 3.0 MultiJet](/modele/fiat-ducato/3-0-multijet/).
 
 ## Silnik 2.3 MultiJet – złoty środek dla busiarza i kamperowicza
 
-Najpopularniejszy wybór na rynku wtórnym. Silnik ten (konstrukcji Sofim) łączy przyzwoitą dynamikę z rozsądnym zapotrzebowaniem na paliwo. W wersji 130 KM w cyklu mieszanym bez trudu osiągniemy wynik poniżej 9 litrów, o ile nie przekraczamy 110 km/h na autostradzie.
+To najpopularniejszy wybór na rynku wtórnym i trudno się temu dziwić. Jednostka konstrukcji Sofim łączy przyzwoitą dynamikę z rozsądnym apetytem na paliwo. W wersji 130 KM w cyklu mieszanym spokojnie zejdziemy poniżej 9 litrów – pod warunkiem że nie forsujemy 110 km/h na autostradzie.
 
-{{< expert name="Marek Kowalczyk" >}}Pracując przy serwisowaniu flot opartych na Ducato, zauważam, że najniższe realne spalanie osiągają kierowcy korzystający z wersji 2.3 MultiJet o mocy 150 KM. Ten wariant ma najlepszy stosunek mocy do masy, co pozwala na sprawną jazdę bez konieczności ciągłego "kręcenia" silnika na wysokich obrotach.{{< /expert >}}
+{{% expert name="Kowalczyk" %}}Pracując przy serwisowaniu flot opartych na Ducato, zauważam, że najniższe realne spalanie osiągają kierowcy korzystający z wersji 2.3 MultiJet o mocy 150 KM. Ten wariant ma najlepszy stosunek mocy do masy, co pozwala na sprawną jazdę bez konieczności ciągłego "kręcenia" silnika na wysokich obrotach.{{% /expert %}}
 
 Więcej szczegółów technicznych znajdziesz tutaj: [Silnik 2.3 MultiJet](/modele/fiat-ducato/2-3-multijet/).
 
 ## Jak obniżyć spalanie w Fiacie Ducato? Praktyczne wskazówki
 
-Jeśli Twoje **fiat ducato spalanie** odbiega od normy, sprawdź poniższe punkty:
-1.  **Ciśnienie w oponach** – w busach dostawczych niedopompowane koła mogą zwiększyć spalanie o nawet 0,5 – 1 l/100 km.
-2.  **Aerodynamika** – jeśli masz kampera lub busa z owiewką (kurnikiem), dbaj o jej czystość i poprawne ustawienie. Zdejmij nieużywane bagażniki dachowe.
-3.  **Styl jazdy (Eco-driving)** – ducato najlepiej czuje się w zakresie momentu obrotowego (zwykle 1500 – 2250 obr./min). Przyspieszaj dynamicznie do osiągnięcia prędkości przelotowej, a potem ją utrzymuj.
-4.  **Stan techniczny** – zapchany filtr cząstek stałych (DPF) lub nieszczelność w układzie dolotowym (intercoolerze) to najczęstsze przyczyny nagłego wzrostu zużycia paliwa.
+Jeśli wyniki odbiegają od tabeli, zacznij od tych czterech punktów:
+
+*   **Ciśnienie w oponach** – niedopompowane koła w busie dostawczym potrafią dorzucić 0,5–1 l/100 km bez żadnego ostrzeżenia.
+*   **Aerodynamika** – owiewka kampera lub "kurnik" furgonu wymagają czyszczenia i prawidłowego ustawienia; nieużywany bagażnik dachowy to łatwy zysk.
+*   **Styl jazdy** – Ducato najlepiej pracuje w zakresie 1500–2250 obr./min. Dynamiczne przyspieszenie do prędkości przelotowej i jej utrzymanie daje lepsze wyniki niż "leniwa" jazda z nisko obciążonym silnikiem.
+*   **Stan techniczny** – zapchany DPF lub nieszczelność w układzie dolotowym (intercooler) to najczęstsze przyczyny nagłego wzrostu zużycia paliwa.
 
 Pełną historię tego modelu i opis wszystkich generacji znajdziesz w naszym artykule: [Fiat Ducato – przewodnik](/modele/fiat-ducato/).

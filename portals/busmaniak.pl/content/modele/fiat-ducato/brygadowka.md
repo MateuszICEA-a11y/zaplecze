@@ -27,12 +27,13 @@ faq:
 
 ## Konstrukcja i wersje nadwozia brygadowego
 
-Fiat Ducato brygadówka bazuje na furgonie, w którym za pierwszym rzędem siedzeń zamontowano dodatkową kanapę oraz pełną lub częściową przegrodę oddzielającą przestrzeń pasażerską od ładunkowej. W odróżnieniu od wersji [Ducato 9-osobowy](/modele/fiat-ducato/9-osobowy/), brygadówka stawia na balans między liczbą pracowników a ilością sprzętu, który można zabrać „na pakę”.
+Ducato w wersji brygadowej to przebudowany furgon – za pierwszym rzędem siedzeń montuje się dodatkową kanapę i przegrodę (pełną lub siatkową) oddzielającą część pasażerską od ładunkowej. W przeciwieństwie do [Ducato 9-osobowego](/modele/fiat-ducato/9-osobowy/), tutaj priorytetem jest równowaga: zabrać tylu ludzi, ilu potrzeba, a resztę przestrzeni przeznaczyć na sprzęt.
 
-Najpopularniejsze warianty to:
-*   **L2H2 (Średnia)** – idealna do miasta, łatwiejsza w manewrowaniu.
-*   **L3H2 (Długa)** – najczęstszy wybór dla ekip budowlanych, oferujący optymalny stosunek długości paki do gabarytów auta.
-*   **L4H2 (Maxi)** – najdłuższy rozstaw osi, dedykowany do najcięższych zadań.
+Trzy najpopularniejsze warianty nadwozia:
+
+- **L2H2** – średnia długość, dobra zwrotność w miejskim ruchu i na ciasnych placach budowy
+- **L3H2** – długa, najpowszechniejszy wybór ekip budowlanych; dobre proporcje między pojemnością paki a manewrowością
+- **L4H2** – maxi, najdłuższy rozstaw osi; opłaca się przy regularnym transporcie dużych i ciężkich ładunków
 
 ### Wymiary zewnętrzne i przestrzeń ładunkowa (wersja L3H2 Facelifting)
 
@@ -45,36 +46,38 @@ Najpopularniejsze warianty to:
 | DMC | 3300 – 3500 kg |
 | Liczba miejsc | 6 lub 7 |
 
-{{< info title="Ważne dla logistyki" icon="engineering" >}}
+{{% info title="Logistyka" icon="engineering" %}}
 W wersji brygadowej L3H2 długość podłogi w przestrzeni ładunkowej (mierząc po podłodze pod siedzeniami) wynosi zazwyczaj około 2500–2800 mm, zależnie od typu zastosowanej przegrody. Pozwala to na swobodny transport standardowych profili czy płyt gipsowo-kartonowych.
-{{< /info >}}
+{{% /info %}}
 
-## Silniki w Fiacie Ducato – co wybrać?
+## Silniki – co wybrać do ciężkiej pracy?
 
-Wybór jednostki napędowej w brygadówce ma kluczowe znaczenie, zwłaszcza gdy auto porusza się pod pełnym obciążeniem (pracownicy + narzędzia + materiały).
+Wybór napędu w brygadówce jest ważniejszy niż w typowym furgonetce, bo auto przez większość czasu jedzie pod pełnym obciążeniem: ludzie, narzędzia, materiały.
 
-1.  **2.3 Multijet (120, 130, 140, 160, 180 KM)** – według opinii użytkowników i serwisantów, silnik 2.3 produkcji Iveco to "złoty standard". Jest trwały, elastyczny i dobrze znosi duże przebiegi.
-2.  **2.2 Multijet (nowsze roczniki)** – wprowadzony w celu spełnienia surowszych norm emisji spalin. Silnik ten jest lżejszy i charakteryzuje się wysoką kulturą pracy.
-3.  **3.0 Multijet (180 KM)** – legendarny silnik montowany w starszych rocznikach (do 2016 r.), ceniony za niezniszczalność i ogromny moment obrotowy.
+- **2.3 Multijet (120–180 KM)** – silnik produkcji Iveco, sprawdzony w setkach tysięcy kilometrów przez polskich rzemieślników; trwały, elastyczny, z dobrą dostępnością części
+- **2.2 Multijet (nowsze roczniki)** – lżejsza i cichsza jednostka wprowadzona przy zaostrzeniu norm Euro 6d; mniej danych o długoterminowej trwałości w warunkach flotowych
+- **3.0 Multijet (180 KM)** – starsze roczniki do 2016 r.; duży moment obrotowy i solidna budowa sprawiają, że egzemplarze z odpowiednim przebiegiem wciąż chętnie kupują firmy remontowe
 
-{{< expert name="Marek Kowalczyk" >}}Dla ekip budowlanych szukających używanego Ducato brygadówki, optymalnym wyborem jest silnik 2.3 Multijet o mocy 130 lub 140 KM. Oferuje on najlepszy kompromis między spalaniem (średnio 9–11 l/100 km) a dynamiką przy pełnym załadunku. Warto pamiętać o regularnej wymianie paska rozrządu – producent często podaje interwały rzędu 180 tys. km, ale w warunkach ciężkiej pracy zalecamy skrócenie tego dystansu do 100–120 tys. km.{{< /expert >}}
+{{% expert name="Kowalczyk" %}}Przy zakupie używanej brygadówki najlepiej celować w 2.3 Multijet 130 lub 140 KM. Spalanie przy pełnym załadunku to realne 9–11 l/100 km, a dynamika jest wystarczająca nawet na trasie. Jeden szczegół, o którym często zapomina się przy przeglądach: producent dopuszcza wymianę rozrządu nawet co 180 tys. km, ale w warunkach intensywnej eksploatacji – krótkie trasy, ciągłe obciążenie – ten interwał warto skrócić do 100–120 tys. km.{{% /expert %}}
 
 ## Komfort i ergonomia kabiny załogowej
 
-Fiat Ducato IV po liftingu przeszedł szereg zmian wewnątrz. Poprawiono wyciszenie oraz jakość materiałów wykończeniowych. W wersji brygadowej kluczowe są:
-*   **Wentylacja i ogrzewanie** – dodatkowy nawiew na drugi rząd siedzeń jest niezbędny zimą, aby zapewnić komfort pracownikom.
-*   **Schowki** – ducato słynie z dużej liczby półek i uchwytów na kubki, co ułatwia utrzymanie porządku w "mobilnym biurze".
-*   **Widoczność** – duże lusterka dwudzielne znacząco ułatwiają manewrowanie długą wersją L3 lub L4.
+Ducato IV po liftingu zyskał lepsze wyciszenie i solidniejsze materiały wewnątrz. W wersji dla ekip budowlanych trzy rzeczy mają największe znaczenie praktyczne:
+
+- **Wentylacja i ogrzewanie** – dodatkowy nawiew na drugi rząd to standard, który zimą robi realną różnicę dla ludzi siedzących z tyłu
+- **Schowki** – Ducato ma ich wyjątkowo dużo jak na dostawczaka; półki, kieszenie, uchwyty na kubki pomagają utrzymać porządek przez długi dzień w trasie
+- **Widoczność** – duże lusterka dwudzielne są szczególnie przydatne przy cofaniu wersją L3 lub L4 na zatłoczonym placu
 
 Więcej o ogólnej charakterystyce tego modelu przeczytasz w naszym głównym artykule: [Fiat Ducato – przewodnik](/modele/fiat-ducato/).
 
 ## Typowe problemy i koszty utrzymania
 
-Fiat Ducato brygadówka, jak każde auto użytkowe, ma swoje słabe punkty. Do najczęstszych bolączek należą:
-*   **Elektronika** – drobne błędy czujników, problemy z systemem Blue&Me (w starszych modelach).
-*   **Zawieszenie przednie** – przy częstej jeździe po drogach gorszej jakości, szybciej zużywają się sworznie i tuleje wahaczy.
-*   **Układ AdBlue** – w nowszych wersjach (Euro 6) zdarzają się awarie wtryskiwaczy mocznika.
+Jak każdy intensywnie eksploatowany bus, Ducato ma swoje słabsze punkty. Przy zakupie używanego egzemplarza lub planowaniu serwisu warto sprawdzić:
 
-Cena nowej brygadówki zależy od konfiguracji i aktualnych rabatów flotowych, ale szacunkowo zaczyna się od około 140 000 – 160 000 zł netto za solidnie wyposażoną wersję L3H2.
+- **Elektronika** – drobne błędy czujników i awarie systemu Blue&Me w starszych modelach; zazwyczaj niegroźne, ale irytujące
+- **Zawieszenie przednie** – sworznie i tuleje wahaczy zużywają się szybciej przy regularnej jeździe po złej nawierzchni lub załadowanym pojeździe
+- **Układ AdBlue** – w wersjach Euro 6 zdarzają się awarie wtryskiwaczy mocznika; naprawa potrafi być kosztowna
+
+Cena nowej brygadówki zależy od konfiguracji i rabatów flotowych. Za dobrze wyposażoną wersję L3H2 z silnikiem 140 KM trzeba liczyć się z wydatkiem rzędu 140 000–160 000 zł netto.
 
 ---

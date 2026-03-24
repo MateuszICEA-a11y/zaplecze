@@ -11,7 +11,7 @@ volume: 490
 image: "/images/fiat-ducato-laweta-hero.jpg"
 image_alt: ""
 main_keyword: "Fiat Ducato Laweta"
-lead: "Fiat Ducato to niekwestionowany król polskich dróg, jeśli chodzi o transport lekkich pojazdów. Popularność tego modelu w wersji autolaweta nie bierze się z przypadku – to wynik świetnego stosunku masy własnej podwozia do jego wytrzymałości oraz legendarnej trwałości silników wysokoprężnych."
+lead: "Fiat Ducato w wersji autolaweta dominuje w polskich firmach transportowych i serwisach pomocy drogowej. Wynika to z konkretnych liczb: stosunek masy własnej podwozia do ładowności jest tu korzystniejszy niż w większości konkurencji, a silniki wysokoprężne potrafią bez remontów przejechać ponad 500 000 km."
 faq:
   - question: "Ile realnie uciągnie Fiat Ducato na haku?"
     answer: "Większość wersji Ducato ma wbite w dowód 2500 kg lub 3000 kg uciągu na haku (przy odpowiedniej konfiguracji ramy i hamulca najazdowego). Zawsze sprawdź parametr Q1 w dowodzie rejestracyjnym."
@@ -24,25 +24,25 @@ faq:
 
 ## Dlaczego Fiat Ducato to idealna baza pod autolawetę?
 
-Kluczem do sukcesu Ducato w tej branży jest konstrukcja przednionapędowa. Brak wału napędowego biegnącego na tył pozwala na obniżenie środka ciężkości i zastosowanie lżejszej ramy. W transporcie aut każdy kilogram ma znaczenie – im lżejsze podwozie, tym większa ładowność realna przy zachowaniu DMC do 3,5 tony.
+Kluczem jest konstrukcja przednionapędowa. Brak wału napędowego biegnącego na tył pozwala obniżyć środek ciężkości i zastosować lżejszą ramę. W transporcie aut każdy kilogram ma znaczenie – im lżejsze podwozie, tym wyższa ładowność realna przy zachowaniu DMC do 3,5 tony.
 
 Więcej o ogólnej charakterystyce tego modelu przeczytasz w naszym artykule: [Fiat Ducato – przewodnik](/modele/fiat-ducato/).
 
 ### Generacje najczęściej wybierane pod zabudowę:
-1.  **III generacja (X250) – lata 2006–2014** – to tutaj zadebiutował pancerny silnik 3.0 MultiJet.
+1.  **III generacja (X250) – lata 2006–2014** – tu zadebiutował silnik 3.0 MultiJet, który stał się standardem w branży.
 2.  **III generacja (X290 – lifting) – od 2014 do dziś** – nowocześniejsza stylistyka, lepsze wyposażenie kabiny i silniki spełniające normy Euro 6.
 
-{{< info title="Ważna uwaga techniczna" icon="engineering" >}}
+{{% info title="Uwaga" icon="engineering" %}}
 Przy wyborze bazy pod lawetę szukaj wersji z najdłuższym rozstawem osi (L4), który wynosi 4035 mm. Zapewnia to stabilność prowadzenia przy załadowanym najeździe i pozwala na montaż platformy o długości powyżej 4,5 metra.
-{{< /info >}}
+{{% /info %}}
 
 ## Silniki – który najlepiej poradzi sobie z obciążeniem?
 
-W przypadku autolawety wybór jednostki napędowej jest kluczowy. Auto niemal zawsze pracuje pod dużym obciążeniem, często ciągnąc dodatkowo przyczepę (lawetę dwuosiową).
+Autolaweta pracuje pod dużym obciążeniem niemal przez cały czas eksploatacji – do tego często z przyczepą. Wybór jednostki napędowej ma tu bezpośrednie przełożenie na koszty serwisu i żywotność auta.
 
-*   **3.0 MultiJet (180 KM)** – według opinii użytkowników i mechaników, to najlepszy silnik w historii modelu. Rozrząd na łańcuchu, ogromny moment obrotowy (400 Nm) i wysoka kultura pracy. Idealny do dalekich tras międzynarodowych.
-*   **2.3 MultiJet (130, 150, 180 KM)** – po wycofaniu jednostki 3.0, silnik 2.3 stał się standardem. W wersjach 150 i 180 KM radzi sobie bardzo dobrze, będąc przy tym lżejszym od poprzednika o ok. 40 kg, co bezpośrednio zwiększa ładowność.
-*   **2.2 MultiJet (najnowsze modele)** – silniki z grupy Stellantis, które kładą nacisk na ekologię i niskie spalanie, choć budzą więcej pytań o trwałość przy ekstremalnych przebiegach.
+*   **3.0 MultiJet (180 KM)** – rozrząd na łańcuchu, moment 400 Nm od niskich obrotów i wysoka kultura pracy. Sprawdza się na długich trasach międzynarodowych i nie wymaga wymiany rozrządu co 100 000 km jak jednostki z paskiem.
+*   **2.3 MultiJet (130, 150, 180 KM)** – po wycofaniu 3.0 stał się standardem rynkowym. W wersjach 150 i 180 KM radzi sobie dobrze z ładunkiem, a przy tym jest lżejszy od poprzednika o ok. 40 kg, co bezpośrednio podnosi ładowność.
+*   **2.2 MultiJet (najnowsze modele)** – silniki z grupy Stellantis z naciskiem na niskie emisje i oszczędność paliwa. Przy ekstremalnych przebiegach trwałość przy stałym obciążeniu nie jest jeszcze dobrze zweryfikowana w terenie.
 
 | Silnik | Moc (KM) | Moment obr. | Rozrząd | Zalety pod lawetę |
 | :--- | :--- | :--- | :--- | :--- |
@@ -52,26 +52,26 @@ W przypadku autolawety wybór jednostki napędowej jest kluczowy. Auto niemal za
 
 ## Zabudowa typu laweta – rodzaje i materiały
 
-Wybierając **Fiata Ducato lawetę**, mamy do wyboru dwa główne typy konstrukcji platformy:
+Pod zabudowę autolawety na bazie Ducato stosuje się dwa główne typy platform:
 
-1.  **Zabudowa stalowa** – najtańsza i najbardziej wytrzymała na uszkodzenia mechaniczne. Jej główną wadą jest duża masa (ok. 300–400 kg), co drastycznie ogranicza ładowność w aucie do 3,5 tony.
-2.  **Zabudowa aluminiowa** – standard w nowoczesnym transporcie. Jest lżejsza o ok. 150–200 kg od stalowej. Pozwala to uzyskać realną ładowność w granicach 1300–1500 kg (zależnie od wyposażenia kabiny).
+1.  **Zabudowa stalowa** – najtańsza i odporna na uszkodzenia mechaniczne. Główna wada to masa rzędu 300–400 kg, która mocno ogranicza ładowność w aucie o DMC 3,5 t.
+2.  **Zabudowa aluminiowa** – standard w nowoczesnym transporcie, lżejsza o ok. 150–200 kg od stalowej. Przy aluminium realna ładowność wynosi zwykle 1300–1500 kg, zależnie od wyposażenia kabiny.
 
-{{< expert name="Marek Kowalczyk" >}}Szukając używanego Ducato pod lawetę, zwracaj uwagę na tylne zawieszenie. Standardowe pióra często siadają pod ciężarem. Najlepszym rozwiązaniem są dodatkowe poduszki pneumatyczne z kompresorem w kabinie, które pozwalają wypoziomować auto i poprawić komfort jazdy z ładunkiem.{{< /expert >}}
+{{% expert name="Kowalczyk" %}}Szukając używanego Ducato pod lawetę, zwracaj uwagę na tylne zawieszenie. Standardowe pióra często siadają pod ciężarem. Najlepszym rozwiązaniem są dodatkowe poduszki pneumatyczne z kompresorem w kabinie, które pozwalają wypoziomować auto i poprawić komfort jazdy z ładunkiem.{{% /expert %}}
 
 ## Wymagania prawne i DMC
 
-Większość autolawet na bazie Ducato jest rejestrowana jako "pojazd specjalny – pomoc drogowa" lub "samochód ciężarowy do przewozu pojazdów".
+Większość autolawet na bazie Ducato rejestruje się jako "pojazd specjalny – pomoc drogowa" lub "samochód ciężarowy do przewozu pojazdów".
 
-*   **DMC 3500 kg** – pozwala na prowadzenie z prawem jazdy kategorii B. Należy jednak pilnować masy własnej. W pełni wyposażone Ducato (wciągarka, najazdy, pełny bak, kierowca) waży ok. 2000–2100 kg, co zostawia ok. 1400 kg na przewożony samochód.
-*   **Tachograf** – jeśli używasz Ducato do transportu zarobkowego (nie jako pomoc drogowa w promieniu 100 km od bazy) i masa zestawu z przyczepą przekracza 3,5 t, tachograf jest obowiązkowy.
+*   **DMC 3500 kg** – wystarczy prawo jazdy kategorii B, ale trzeba pilnować masy własnej. W pełni wyposażone Ducato (wciągarka, najazdy, pełny bak, kierowca) waży ok. 2000–2100 kg, co zostawia realnie ok. 1400 kg na transportowany samochód.
+*   **Tachograf** – obowiązkowy przy zarobkowym transporcie poza zasięgiem pomocy drogowej (100 km od bazy) oraz gdy masa zestawu z przyczepą przekracza 3,5 t.
 
 ## Koszty zakupu i eksploatacji
 
-Ceny używanych egzemplarzy z silnikiem 3.0 (X250) zaczynają się od około 45 000 zł za auta z dużymi przebiegami. Nowe modele z salonu pod zabudowę to wydatek rzędu 140 000 – 180 000 zł netto plus koszt platformy (od 15 000 zł za aluminium).
+Używane egzemplarze z silnikiem 3.0 (X250) przy dużych przebiegach kosztują od ok. 45 000 zł. Nowe podwozie z salonu pod zabudowę to wydatek 140 000–180 000 zł netto, do tego dochodzi platforma – od 15 000 zł za aluminium.
 
 **Spalanie:**
-*   Pusto: 9–10 l/100 km
-*   Z ładunkiem: 11–13 l/100 km
-*   Z lawetą (zestaw): 14–16 l/100 km
+*   **Pusto** – 9–10 l/100 km
+*   **Z ładunkiem** – 11–13 l/100 km
+*   **Z przyczepą (zestaw)** – 14–16 l/100 km
 

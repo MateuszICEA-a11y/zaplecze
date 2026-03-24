@@ -16,7 +16,7 @@ faq:
   - question: "Gdzie znajduje się przekaźnik kierunkowskazów w Ducato X250?"
     answer: "W modelach produkowanych od 2006 roku nie ma klasycznego, wymiennego przekaźnika kierunkowskazów. Funkcję tę pełni moduł elektroniczny w Body Computerze (pod deską rozdzielczą). Jeśli kierunkowskazy nie działają, sprawdź najpierw bezpieczniki i żarówki."
   - question: "Czy przekaźniki z Peugeota Boxera i Citroena Jumpera pasują do Ducato?"
-    answer: "Tak, modele te (tzw. \"trojaczki z Sevel\") mają identyczną architekturę elektryczną. Skrzynki bezpieczników i przekaźniki są zamienne, o ile zgadzają się parametry natężenia prądu (A) i układ pinów."
+    answer: "Tak, modele te (tzw. \'trojaczki z Sevel\') mają identyczną architekturę elektryczną. Skrzynki bezpieczników i przekaźniki są zamienne, o ile zgadzają się parametry natężenia prądu (A) i układ pinów."
   - question: "Silnik kręci, ale nie odpala – który przekaźnik sprawdzić?"
     answer: "W pierwszej kolejności sprawdź przekaźnik T14 (pompa paliwa) oraz T09 (główny przekaźnik silnika) w skrzynce pod maską. Warto również zweryfikować bezpiecznik F22 (system wtrysku)."
 
@@ -24,19 +24,19 @@ faq:
 
 ## Gdzie szukać przekaźników w Fiacie Ducato?
 
-W Fiacie Ducato przekaźniki i bezpieczniki są zgrupowane w trzech głównych lokalizacjach. Dostęp do nich nie wymaga specjalistycznych narzędzi, co ułatwia diagnostykę w trasie.
+Skrzynki z przekaźnikami i bezpiecznikami są w Ducato w trzech miejscach. Do każdego z nich dostaniesz się bez specjalnych narzędzi, co ma znaczenie przy diagnostyce w terenie.
 
-1.  **Komora silnika** – skrzynka znajduje się po prawej stronie (patrząc od przodu auta), w pobliżu reflektora. To tutaj znajdziesz przekaźniki odpowiedzialne za najważniejsze funkcje układu napędowego (wentylatory, pompa paliwa, świece żarowe).
-2.  **Deska rozdzielcza** – skrzynka po lewej stronie kierownicy (pod osłoną przykręcaną na śruby). Zawiera przekaźniki komfortu, np. blokadę drzwi czy sterowanie szybami.
-3.  **Słupek prawy (pasażera)** – w niektórych wersjach (szczególnie kamperowych i specjalistycznych) znajduje się tam dodatkowy moduł zarządzający m.in. ładowaniem akumulatora bytowego lub światłami obrysowymi.
+1.  **Komora silnika** – skrzynka po prawej stronie (patrząc od przodu), przy reflektorze. Tu siedzą przekaźniki układu napędowego: wentylatory, pompa paliwa, świece żarowe.
+2.  **Deska rozdzielcza** – skrzynka po lewej stronie kierownicy, pod osłoną na śruby. Obsługuje funkcje komfortu – blokadę drzwi, sterowanie szybami.
+3.  **Słupek prawy (pasażera)** – dodatkowy moduł obecny głównie w wersjach kamperowych i specjalistycznych; zarządza ładowaniem akumulatora bytowego i światłami obrysowymi.
 
-{{< info title="Ważna wskazówka" icon="engineering" >}}
+{{% info title="Wskazówka" icon="engineering" %}}
 Zanim wymienisz przekaźnik, sprawdź stan styków w gnieździe. W Ducato X250 częstym problemem jest wilgoć dostająca się do skrzynki w komorze silnika, co prowadzi do korozji pinów i błędnych diagnoz.
-{{< /info >}}
+{{% /info %}}
 
 ## Schemat przekaźników – komora silnika (Ducato 2006–2014)
 
-Poniższa tabela przedstawia kluczowe przekaźniki znajdujące się pod maską. Są one krytyczne dla mobilności Twojego vana.
+Poniżej najważniejsze przekaźniki spod maski z opisem, co oznacza ich awaria w praktyce.
 
 | Oznaczenie | Funkcja przekaźnika | Typowe objawy awarii |
 |------------|---------------------|----------------------|
@@ -50,20 +50,20 @@ Poniższa tabela przedstawia kluczowe przekaźniki znajdujące się pod maską. 
 
 ## Przekaźnik pompy paliwa i świec żarowych
 
-W silnikach MultiJet (2.3 oraz 3.0) przekaźnik pompy paliwa (T14) jest jednym z najczęściej obciążonych elementów. Jeśli po przekręceniu kluczyka nie słyszysz charakterystycznego "buczenia" z okolic baku, warto sprawdzić właśnie ten element.
+W silnikach MultiJet 2.3 i 3.0 przekaźnik pompy paliwa (T14) pracuje intensywnie przy każdym uruchomieniu. Brak charakterystycznego buczenia z okolic baku po przekręceniu kluczyka to sygnał, żeby zacząć od niego.
 
-Z kolei **przekaźnik świec żarowych** w Ducato to zazwyczaj oddzielny, większy moduł (tzw. sterownik) przykręcony do grodzi silnika. Jego awaria objawia się migającą kontrolką świec żarowych po odpaleniu oraz trudnościami z rozruchem przy temperaturach poniżej 5 stopni Celsjusza.
+**Przekaźnik świec żarowych** to osobna historia – w Ducato jest to zazwyczaj większy moduł (sterownik) przykręcony bezpośrednio do grodzi. Kiedy pada, kontrolka świec żarowych miga po odpaleniu, a zimą – poniżej 5 st. C – silnik bardzo niechętnie wchodzi.
 
-{{< expert name="Marek Kowalczyk" >}}
+{{% expert name="Kowalczyk" %}}
 Właściciele kamperów na bazie Ducato często skarżą się na przekaźnik lodówki lub ładowania dodatkowego akumulatora. Pamiętajcie, że w fabrycznych systemach Fiat stosuje tzw. sygnał D+ (alternator), który aktywuje przekaźnik rozdzielający dopiero po uruchomieniu silnika. Jeśli akumulator hotelowy się nie ładuje podczas jazdy, winny jest zazwyczaj przekaźnik umieszczony w słupku B po stronie pasażera.
-{{< /expert >}}
+{{% /expert %}}
 
 ## Typowe awarie i diagnostyka
 
-Fiat Ducato, mimo swojej solidności, ma kilka słabych punktów w układzie elektrycznym:
+Ducato jest generalnie solidny elektrycznie, ale ma kilka miejsc, gdzie regularnie dochodzi do problemów:
 
-*   **Wypalone gniazda** – przekaźnik świateł mijania lub dmuchawy potrafi generować wysoką temperaturę, co prowadzi do nadtopienia plastiku w skrzynce bezpieczników.
-*   **Przekaźnik kierunkowskazów** – w nowszych modelach (po 2006 r.) funkcja ta jest zintegrowana z modułem Body Computer (BSI). Jeśli kierunkowskazy szaleją, problemem rzadko jest klasyczny przekaźnik, a częściej uszkodzona manetka lub wilgoć w module BSI.
-*   **Wycieraczki** – jeśli wycieraczki działają tylko na najwyższym biegu, przekaźnik czasowy (często zintegrowany z silniczkiem lub BSI) może wymagać sprawdzenia.
+*   **Wypalone gniazda** – przekaźnik świateł mijania albo dmuchawy potrafi się nagrzewać do tego stopnia, że topi plastik skrzynki bezpieczników. Warto zajrzeć przed samą wymianą elementu.
+*   **Kierunkowskazy** – w modelach po 2006 roku nie ma klasycznego wymiennego przekaźnika; funkcję przejął moduł BSI. Gdy migacze zachowują się dziwnie, częściej winna jest zalana manetka lub wilgoć w samym module niż jakiś przekaźnik.
+*   **Wycieraczki** – praca wyłącznie na pełnej prędkości sugeruje problem z przekaźnikiem czasowym, który w nowszych generacjach jest zintegrowany z silniczkiem lub BSI.
 
-Więcej o ogólnej budowie i eksploatacji tego modelu przeczytasz w naszym artykule: [Fiat Ducato – przewodnik](/modele/fiat-ducato/).
+Więcej o budowie i eksploatacji tego modelu przeczytasz w naszym artykule: [Fiat Ducato – przewodnik](/modele/fiat-ducato/).

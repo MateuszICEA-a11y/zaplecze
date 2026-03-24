@@ -13,13 +13,13 @@ image_alt: ""
 main_keyword: "Fiat Ducato Kontrolki"
 lead: "Zrozumienie kontrolek w Fiacie Ducato opiera się na hierarchii kolorów: czerwony oznacza krytyczną awarię wymagającą postoju, żółty sygnalizuje usterkę lub zbliżający się serwis, a zielony i niebieski pełnią funkcję informacyjną. Poniższy przewodnik wyjaśnia znaczenie poszczególnych ikon, co pozwoli Ci szybko zareagować na komunikaty komputera pokładowego i uniknąć kosztownych napraw w trasie."
 faq:
-  - question: "1. Dlaczego kontrolka świec żarowych miga po uruchomieniu silnika?"
+  - question: "Dlaczego kontrolka świec żarowych miga po uruchomieniu silnika?"
     answer: "Oznacza to usterkę w układzie wstępnego podgrzewania. Najczęściej jest to spalona świeca żarowa. W silnikach MultiJet auto zazwyczaj odpala bez problemu, ale błąd będzie powracał do momentu wymiany uszkodzonego elementu."
-  - question: "2. Co oznacza kontrolka \"klucza\" w Fiacie Ducato?"
+  - question: "Co oznacza kontrolka \"klucza\" w Fiacie Ducato?"
     answer: "To przypomnienie o planowanym serwisie olejowym (Service Coupon). Nie oznacza awarii, a jedynie konieczność udania się na przegląd. Można ją skasować za pomocą odpowiedniej kombinacji pedałów (w niektórych wersjach) lub testera diagnostycznego."
-  - question: "3. Czy z zapaloną żółtą kontrolką silnika mogę jechać dalej?"
+  - question: "Czy z zapaloną żółtą kontrolką silnika mogę jechać dalej?"
     answer: "Jeśli auto nie straciło mocy i nie wydaje dziwnych dźwięków, możesz kontynuować jazdę do najbliższego serwisu. Unikaj jednak dużych obciążeń silnika, gdyż usterka może doprowadzić do zapchania filtra DPF lub uszkodzenia turbosprężarki."
-  - question: "4. Co oznacza czerwona kontrolka z symbolem kłódki/samochodu?"
+  - question: "Co oznacza czerwona kontrolka z symbolem kłódki/samochodu?"
     answer: "To błąd systemu Fiat Code (immobilizer). Jeśli świeci się po przekręceniu kluczyka, silnik może nie zapalić, ponieważ system nie rozpoznał kodu w kluczyku. Często pomaga wyjęcie kluczyka i ponowna próba po kilku sekundach."
 
 
@@ -29,19 +29,19 @@ faq:
 
 ## Kolory kontrolek – hierarchia ważności
 
-W Fiacie Ducato, podobnie jak w innych autach dostawczych, obowiązuje zasada "świateł drogowych":
+W Ducato obowiązuje zasada "świateł drogowych" – taka sama jak w większości aut dostawczych, ale warto ją znać na pamięć, zanim odpalisz silnik na autostradzie:
 
-*   **Czerwone** – alarm! Oznaczają poważną awarię lub zagrożenie bezpieczeństwa. Zazwyczaj wymagają natychmiastowego zatrzymania pojazdu.
-*   **Żółte/Pomarańczowe** – ostrzeżenie. Informują o usterce układu, potrzebie serwisu lub aktywacji jakiejś funkcji (np. podgrzewania świec). Możesz kontynuować jazdę, ale musisz sprawdzić przyczynę.
-*   **Zielone/Niebieskie** – informacje. Potwierdzają włączone światła, tempomat lub kierunkowskazy.
+*   **Czerwone** – natychmiast się zatrzymaj. To poważna awaria lub zagrożenie bezpieczeństwa.
+*   **Żółte/Pomarańczowe** – jest usterka lub zbliża się serwis. Możesz dojechać do warsztatu, ale nie bagatelizuj.
+*   **Zielone/Niebieskie** – tylko informacja: włączone światła, tempomat, kierunkowskaz.
 
-{{< info title="Ważna wskazówka" icon="engineering" >}}
+{{% info title="Wskazówka" icon="engineering" %}}
 Jeśli po przekręceniu kluczyka w stacyjce (pozycja MAR) niektóre kontrolki nie zapalają się na chwilę, może to oznaczać przepaloną żarówkę w panelu wskaźników lub celową ingerencję poprzedniego właściciela (maskowanie błędów).
-{{< /info >}}
+{{% /info %}}
 
 ## Czerwone kontrolki w Fiacie Ducato – nie lekceważ ich
 
-Zapalenie się czerwonej ikony podczas jazdy to sygnał do natychmiastowej reakcji. Oto najczęstsze z nich:
+Czerwona ikona podczas jazdy to sygnał do natychmiastowej reakcji – nie do "sprawdzę po dotarciu na miejsce":
 
 | Symbol | Nazwa | Co oznacza? | Co robić? |
 | :--- | :--- | :--- | :--- |
@@ -50,33 +50,31 @@ Zapalenie się czerwonej ikony podczas jazdy to sygnał do natychmiastowej reakc
 | **Akumulator** | Brak ładowania | Awaria alternatora lub zerwany pasek osprzętu. | Jedź do najbliższego warsztatu, póki prądu starczy. |
 | **Wykrzyknik w kółku** | Układ hamulcowy | Niski poziom płynu hamulcowego lub awaria EBD. | Sprawdź poziom płynu i skuteczność hamowania. |
 
-## Żółte kontrolki Fiat Ducato – najczęstsze problemy
-
-Właściciele Ducato najczęściej szukają informacji o kontrolkach żółtych, które często zapalają się w najmniej oczekiwanym momencie.
+## Żółte kontrolki – najczęstsze problemy
 
 ### Check Engine (Symbol silnika)
-To najbardziej ogólna kontrolka. W Ducato często wiąże się z problemami z zaworem EGR, przepływomierzem lub czujnikami ciśnienia doładowania. Jeśli auto wpadło w tryb awaryjny (brak mocy), konieczna będzie diagnostyka komputerowa. Więcej o tym przeczytasz w naszym artykule o [Check engine w busie](/serwis/check-engine/).
+Najbardziej niejednoznaczna ikona w całym Ducato. Może oznaczać wszystko – od luźnego korka paliwa po poważniejsze problemy z zaworem EGR, przepływomierzem lub czujnikami ciśnienia doładowania. Jeśli auto wpadło w tryb awaryjny i straciło moc, konieczna jest diagnostyka komputerowa. Szczegóły opisujemy w artykule o [Check engine w busie](/serwis/check-engine/).
 
 ### Kontrolka świec żarowych (Spirala)
-W silnikach MultiJet (2.0, 2.3, 3.0) migająca po odpaleniu spirala zazwyczaj oznacza uszkodzenie jednej lub kilku świec żarowych lub modułu sterującego. W Ducato II i III jest to częsta przypadłość przy niskich temperaturach.
+Migająca spirala po odpaleniu silnika, w jednostkach MultiJet (2.0, 2.3, 3.0), to najczęściej uszkodzona jedna lub kilka świec żarowych albo moduł sterujący. W Ducato II i III problem regularnie wraca przy niskich temperaturach – zima to sezon na tę usterkę.
 
 ### Pomarańczowy trójkąt ostrzegawczy
-To tzw. kontrolka ogólna. Często towarzyszy jej komunikat na wyświetlaczu. Może oznaczać:
-*   Awarię czujników parkowania.
-*   Przepaloną żarówkę oświetlenia zewnętrznego.
-*   Zadziałanie wyłącznika bezwładnościowego paliwa (po uderzeniu lub silnym wstrząsie).
+Kontrolka ogólna – prawie zawsze towarzyszy jej komunikat na wyświetlaczu. Przyczyną może być:
+*   awaria czujników parkowania
+*   przepalona żarówka oświetlenia zewnętrznego
+*   zadziałanie wyłącznika bezwładnościowego paliwa po uderzeniu lub silnym wstrząsie
 
-{{< expert name="Marek Kowalczyk" >}}W Fiacie Ducato III (X250 i X290) żółty trójkąt często zapala się z powodu… oświetlenia tablicy rejestracyjnej. System jest bardzo czuły na zmianę oporności, dlatego odradzam montowanie tanich zamienników LED bez rezystora CAN-BUS.{{< /expert >}}
+{{% expert name="Kowalczyk" %}}W Fiacie Ducato III (X250 i X290) żółty trójkąt często zapala się z powodu… oświetlenia tablicy rejestracyjnej. System jest bardzo czuły na zmianę oporności, dlatego odradzam montowanie tanich zamienników LED bez rezystora CAN-BUS.{{% /expert %}}
 
 ## Specyficzne ikony dla diesla i kamperów
 
-Jako użytkownik [Fiata Ducato](/modele/fiat-ducato/) musisz znać symbole typowe dla silników wysokoprężnych:
+Użytkownicy [Fiata Ducato](/modele/fiat-ducato/) powinni rozpoznawać symbole typowe dla silników wysokoprężnych – ignorowanie ich potrafi kosztować kilka tysięcy złotych:
 
-1.  **Filtr DPF (Chmura/Cząsteczki)** – jeśli kontrolka świeci światłem ciągłym, silnik wymaga regeneracji filtra podczas jazdy (utrzymuj stałe obroty powyżej 2000 obr./min przez ok. 15 minut). Nie gaś wtedy silnika!
-2.  **Woda w filtrze paliwa (Dystrybutor z kropelkami)** – bardzo ważna ikona. Oznacza konieczność spuszczenia wody z odstojnika filtra paliwa, co chroni wtryskiwacze Common Rail przed zatarciem.
-3.  **Klucz (Serwis)** – to nie jest awaria. Klucz informuje o zbliżającym się terminie wymiany oleju lub przeglądu okresowego (zazwyczaj co 40 000 km lub wg wskazań komputera).
+1.  **Filtr DPF (Chmura/Cząsteczki)** – ciągłe światło oznacza, że filtr wymaga regeneracji w trasie. Utrzymuj stałe obroty powyżej 2000 obr./min przez ok. 15 minut i nie gaś silnika w tym czasie.
+2.  **Woda w filtrze paliwa (Dystrybutor z kropelkami)** – trzeba spuścić wodę z odstojnika filtra paliwa. Zaniedbanie niszczy wtryskiwacze Common Rail.
+3.  **Klucz (Serwis)** – nie awaria, tylko przypomnienie o zbliżającym się terminie wymiany oleju lub przeglądu (zazwyczaj co 40 000 km albo według wskazań komputera).
 
-Warto również zapoznać się z ogólnym poradnikiem [kontrolki w busie](/serwis/kontrolki-w-busie/), gdzie opisujemy różnice między popularnymi modelami dostawczaków.
+Warto też zajrzeć do ogólnego poradnika [kontrolki w busie](/serwis/kontrolki-w-busie/), gdzie opisujemy różnice między popularnymi modelami dostawczaków.
 
 Źródła:
 - Instrukcja obsługi Fiat Ducato (eLum Fiat): [https://aftersales.fiat.com/elum/](https://aftersales.fiat.com/elum/)

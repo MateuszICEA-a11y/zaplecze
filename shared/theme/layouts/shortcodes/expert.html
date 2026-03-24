@@ -1,4 +1,4 @@
-{{/* Expert insight box – usage: {{< expert name="Tomasz Zieliński" >}}Treść opinii eksperta{{< /expert >}} */}}
+{{/* Expert insight box – usage: {{% expert name="Tomasz Zieliński" %}}Treść opinii{{% /expert %}} */}}
 <div class="expert-box">
   <div class="expert-box__header">
     <div class="expert-box__icon">
@@ -6,7 +6,7 @@
     </div>
     <div>
       <span class="expert-box__label">Opinia eksperta</span>
-      <span class="expert-box__name">{{ .Get "name" | default "Ekspert BusManiak" }}</span>
+      <span class="expert-box__name">{{ .Params.name | default "Ekspert BusManiak" }}</span>
     </div>
   </div>
   <div class="expert-box__content">

@@ -41,9 +41,9 @@ Trzecia generacja to moment, w którym Ducato stało się liderem sprzedaży. Wp
 ### Ducato IV (od 2014)
 Obecna generacja to ewolucja modelu z 2006 roku, skupiona na technologii, komforcie i ekologii. W 2021 roku model przeszedł gruntowną modernizację (tzw. Serie 8), wprowadzając całkowicie nowe silniki 2.2 MultiJet3, cyfrowe zegary i zaawansowane systemy bezpieczeństwa ADAS.
 
-{{< info title="Czy wiesz, że?" icon="engineering" >}}
+{{% info title="Ciekawostka" icon="engineering" %}}
 Ponad 75% kamperów poruszających się po europejskich drogach bazuje na podwoziu Fiata Ducato. Jest to najczęściej wybierana baza pod zabudowy kempingowe na świecie.
-{{< /info >}}
+{{% /info %}}
 
 ## Dane techniczne i wymiary {#dane-techniczne}
 
@@ -70,9 +70,9 @@ Jednostki napędowe Ducato ewoluowały wraz z normami emisji spalin. Wybór siln
 *   **[Silnik 3.0 MultiJet](/modele/fiat-ducato/3-0-multijet/)** – legenda. Najmocniejszy diesel (160–180 KM) z łańcuchem rozrządu. Idealny pod ciężkie zabudowy, lawety i dla osób szukających najwyższej trwałości.
 *   **[Silnik 2.8 JTD](/modele/fiat-ducato/2-8-jtd/)** – spotykany w starszych modelach (II generacja). Prosta konstrukcja, która przy odpowiednim serwisie potrafi przejechać 500–700 tys. km bez remontu.
 
-{{< expert name="Marek Kowalczyk" >}}
+{{% expert name="Kowalczyk" %}}
 Jeśli szukasz używanego Ducato do ciężkiej pracy, celuj w jednostkę 3.0 MultiJet sprzed 2016 roku. To silnik niemal niezniszczalny, który doskonale radzi sobie z pełnym obciążeniem. W przypadku nowszych egzemplarzy, silnik 2.3 o mocy 150 KM oferuje najlepszą kulturę pracy i rozsądne koszty serwisu, zwłaszcza jeśli regularnie sprawdzasz [rozrząd Ducato](/serwis/fiat-ducato-rozrzad/).
-{{< /expert >}}
+{{% /expert %}}
 
 ![Fiat Ducato IV furgon przy rampie załadunkowej](/images/fiat-ducato-hero.jpg)
 

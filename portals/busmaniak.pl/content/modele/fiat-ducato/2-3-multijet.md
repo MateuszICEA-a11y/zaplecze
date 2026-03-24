@@ -55,9 +55,9 @@ Na przestrzeni lat Fiat oferował silnik 2.3 MultiJet w kilku wariantach mocy. R
 
 Dla typowej pracy dostawczej (przewóz towarów do 1,2 tony) wersja 130 KM jest wystarczająca. Przy cięższych ładunkach lub [zabudowach kamperowych](/przerobki/fiat-ducato-kamper/) warto rozważyć wariant 140 lub 160 KM – różnica w momencie obrotowym (350 vs 400 Nm) odczuwalna jest szczególnie przy ruszaniu pod górę z pełnym obciążeniem.
 
-{{< expert name="Marek Kowalczyk" >}}
+{{% expert name="Kowalczyk" %}}
 Jeśli planujesz [przeróbkę na kampera](/przerobki/fiat-ducato-kamper/), wersja 140 KM to złoty środek. Dopłata względem 130 KM jest niewielka, a dodatkowe 30 Nm momentu obrotowego robi realną różnicę przy zabudowie ważącej 500–800 kg. Wersję 160 KM polecam głównie przy ciągnięciu przyczepy lub DMC powyżej 3,5 tony.
-{{< /expert >}}
+{{% /expert %}}
 
 ![Silnik 2.3 MultiJet Fiat Ducato w warsztacie](/images/fiat-ducato-2-3-multijet-hero.jpg)
 
@@ -89,9 +89,9 @@ Silnik 2.3 MultiJet jest konstrukcyjnie solidny, ale jak każda jednostka – ma
 
 **Układ EGR** – zawór recyrkulacji spalin pokrywa się nagarem, co prowadzi do utraty mocy. Czyszczenie lub wymiana EGR: 800–1 500 zł.
 
-{{< info title="Ważna uwaga techniczna" icon="engineering" >}}
+{{% info title="Uwaga" icon="engineering" %}}
 Wersje Euro 6 (od 2014) wyposażone są w układ SCR z [AdBlue](/serwis/adblue/). Zbiornik AdBlue ma pojemność ok. 20 litrów, co wystarcza na 8–12 tys. km. Brak uzupełnienia AdBlue powoduje ograniczenie mocy silnika przez komputer pokładowy.
-{{< /info >}}
+{{% /info %}}
 
 ## Opinie użytkowników
 

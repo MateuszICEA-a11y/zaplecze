@@ -25,15 +25,16 @@ faq:
 ---
 
 ## Generacje i ewolucja modelu
-Choć na rynku wtórnym wciąż można spotkać pancerne Ducato II (1994–2006) z silnikami 1.9 D czy 2.8 JTD, skupimy się na modelu produkowanym obecnie, który przeszedł dwa kluczowe liftingi:
-*   **2006–2014** – wprowadzenie trzeciej generacji (typ 250).
-*   **2014–2021** – duży facelifting (typ 290), zmiana pasa przedniego i unowocześnienie wnętrza.
-*   **Od 2021** – wprowadzenie silników spełniających normę Euro 6d-Final, nowej skrzyni automatycznej i cyfrowych zegarów.
+Na rynku wtórnym wciąż trafiają się Ducato II (1994–2006) z silnikami 1.9 D czy 2.8 JTD, ale skupiamy się na generacji produkowanej od 2006 roku. Przeszła ona dwa liftingi:
 
-{{< expert name="Marek Kowalczyk" >}}Ducato blaszak to absolutny numer jeden dla osób budujących kampery. Dlaczego? Ponieważ ma najbardziej prostopadłościenne kształty paki spośród wszystkich busów. Ściany są niemal pionowe, co drastycznie ułatwia montaż mebli i izolacji w porównaniu do zaokrąglonego Mercedesa Sprintera czy Forda Transita.{{< /expert >}}
+- **2006–2014** – trzecia generacja (typ 250).
+- **2014–2021** – facelifting (typ 290), zmiana pasa przedniego i odświeżenie wnętrza.
+- **Od 2021** – silniki spełniające normę Euro 6d-Final, nowa skrzynia automatyczna i cyfrowe zegary.
 
-## Fiat Ducato blaszak – wymiary i warianty L/H
-Kluczem do zrozumienia oferty Fiata jest oznaczenie "L" (długość) oraz "H" (wysokość). Fiat Ducato furgon występuje w czterech długościach rozstawu osi i trzech wysokościach dachu.
+{{% expert name="Kowalczyk" %}}Do budowy kampera wybieram Ducato z jednego konkretnego powodu: prostopadłościenna paka. Ściany są niemal pionowe, co zdecydowanie ułatwia montaż mebli i izolacji w porównaniu do zaokrąglonego Sprintera czy Transita.{{% /expert %}}
+
+## Wymiary i warianty L/H
+Kluczem do oferty jest oznaczenie "L" (długość) oraz "H" (wysokość). Ducato furgon dostępny jest w czterech długościach nadwozia i trzech wysokościach dachu.
 
 | Wersja | Długość całkowita | Wysokość całkowita | Długość paki (podłoga) | Pojemność ładunkowa |
 | :--- | :--- | :--- | :--- | :--- |
@@ -47,21 +48,22 @@ Kluczem do zrozumienia oferty Fiata jest oznaczenie "L" (długość) oraz "H" (w
 Dopuszczalna masa całkowita (DMC) dla większości modeli to standardowe 3500 kg, co pozwala na prowadzenie auta z prawem jazdy kategorii B. Ładowność w zależności od wersji waha się od ok. 1100 kg do nawet 1600 kg w wersjach wzmocnionych (Maxi).
 
 ## Silniki – który wybrać?
-Wybór jednostki napędowej w Fiat Ducato blaszak to kluczowa decyzja wpływająca na koszty eksploatacji.
+Wybór jednostki napędowej wpływa bezpośrednio na koszty eksploatacji i spokój głowy przy serwisowaniu.
 
-1.  **2.3 MultiJet (120, 130, 150, 180 KM)** – to "złoty środek". Konstrukcja firmy Iveco, uchodząca za niezwykle trwałą. Wersje produkowane do 2019 roku często nie wymagały stosowania płynu AdBlue, co jest ogromną zaletą na rynku wtórnym.
-2.  **3.0 MultiJet (180 KM)** – legenda. Silnik na łańcuchu rozrządu, niemal niezniszczalny, idealny do ciężkich ładunków i długich tras międzynarodowych. Wycofany z oferty w 2016 roku.
-3.  **2.2 MultiJet (120-180 KM)** – nowsze konstrukcje (od 2021 r.), lżejsze i bardziej ekologiczne, ale bardziej skomplikowane osprzętowo.
-4.  **2.0 MultiJet** – spotykany rzadziej, dedykowany do lekkiego transportu miejskiego.
+- **2.3 MultiJet (120, 130, 150, 180 KM)** – najrozsądniejszy wybór. Konstrukcja Iveco o sprawdzonej trwałości. Egzemplarze sprzed 2019 roku często nie wymagały AdBlue, co jest realną zaletą przy zakupie na rynku wtórnym.
+- **3.0 MultiJet (180 KM)** – silnik na łańcuchu rozrządu, właściwie niezniszczalny przy regularnym serwisowaniu. Idealny do ciężkich ładunków i długich tras. Wycofany z oferty w 2016 roku.
+- **2.2 MultiJet (120–180 KM)** – jednostki od 2021 roku, lżejsze i bardziej ekologiczne, ale z bardziej rozbudowanym osprzętem.
+- **2.0 MultiJet** – rzadszy, dedykowany do lekkiego transportu miejskiego.
 
-{{< info title="Uwaga na progi serwisowe" icon="engineering" >}}W silnikach 2.3 MultiJet zalecamy wymianę oleju co 15–20 tys. km, mimo że producent dopuszczał znacznie dłuższe interwały (nawet 48 tys. km). Skrócenie tego czasu znacząco przedłuża życie turbosprężarki i wtryskiwaczy.{{< /expert >}}
+{{% info title="Serwis" icon="engineering" %}}W silnikach 2.3 MultiJet zalecamy wymianę oleju co 15–20 tys. km, mimo że producent dopuszczał znacznie dłuższe interwały (nawet 48 tys. km). Skrócenie tego czasu znacząco przedłuża życie turbosprężarki i wtryskiwaczy.{{% /info %}}
 
 ## Typowe problemy i koszty utrzymania
-Czy Fiat Ducato jest awaryjny? Według danych z baz opinii użytkowników, model ten cieszy się wysoką notą za żywotność silników, ale ma swoje bolączki:
-*   **Słabe wyciszenie** – blaszaki bez dodatkowej izolacji są głośne powyżej 110 km/h.
-*   **Elektronika** – częste błędy "Check Engine" wynikające z zaśniedziałych kostek lub problemów z czujnikami.
-*   **Zawieszenie przednie** – przy dużych przebiegach szybko zużywają się łożyska amortyzatorów i sworznie wahaczy.
-*   **Korozja** – choć nadwozie jest ocynkowane, warto zajrzeć pod auto – tylna belka i elementy zawieszenia potrafią rdzewieć.
+Silniki Ducato mają opinię trwałych, ale model nie jest bez wad:
+
+- **Słabe wyciszenie** – furgon bez dodatkowej izolacji jest głośny powyżej 110 km/h.
+- **Elektronika** – błędy "Check Engine" wynikają często z zaśniedziałych kostek lub problemów z czujnikami.
+- **Zawieszenie przednie** – przy dużych przebiegach szybko zużywają się łożyska amortyzatorów i sworznie wahaczy.
+- **Korozja** – nadwozie jest ocynkowane, ale tylna belka i elementy zawieszenia potrafią rdzewieć.
 
 Więcej o historii i specyfice tego modelu przeczytasz w naszym artykule: [Fiat Ducato – przewodnik](/modele/fiat-ducato/).
 

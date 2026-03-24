@@ -27,9 +27,9 @@ faq:
 
 ## Chiptuning silnika – więcej mocy pod maską
 
-Najpopularniejszą modyfikacją w Ducato jest podniesienie mocy silnika poprzez zmianę oprogramowania w sterowniku (ECU). Dotyczy to głównie jednostek z rodziny MultiJet. Według opinii użytkowników i tunerów, najpopularniejszy silnik 2.3 MultiJet o mocy 130 KM lub 150 KM posiada spore rezerwy konstrukcyjne.
+Zmiana oprogramowania sterownika (ECU) to dziś zdecydowanie najchętniej wybierana modyfikacja Ducato. Warsztaty tuningowe najczęściej mają do czynienia z jednostkami 2.3 MultiJet w wariantach 130 i 150 KM – i nie ma w tym przypadku nic dziwnego, bo silniki te mają wyraźnie więcej do zaoferowania niż sugeruje fabryczna tabliczka.
 
-Bezpieczny przyrost mocy zazwyczaj oscyluje w granicach 20–25%. Przykładowo, wersja 150 KM po profesjonalnym strojeniu może osiągnąć około 175–180 KM i moment obrotowy rzędu 410–420 Nm.
+Bezpieczny przyrost mocy to zazwyczaj 20–25%. Wersja 150 KM po porządnym strojeniu bez problemu osiąga 175–180 KM przy momencie rzędu 410–420 Nm.
 
 | Silnik | Moc seryjna | Moc po tuningu (szacunkowo) | Moment obrotowy (po) |
 | :--- | :--- | :--- | :--- |
@@ -38,33 +38,33 @@ Bezpieczny przyrost mocy zazwyczaj oscyluje w granicach 20–25%. Przykładowo, 
 | 3.0 MultiJet Power | 177 KM | 210 KM | 490 Nm |
 | 2.0 MultiJet | 115 KM | 145 KM | 340 Nm |
 
-{{< expert name="Marek Kowalczyk" >}}Przy chiptuningu Ducato nie chodzi tylko o prędkość maksymalną. Kluczowe jest wygładzenie krzywej momentu obrotowego, co pozwala na rzadszą redukcję biegów pod górę, szczególnie w przeładowanych kamperach. Warto jednak pamiętać o kondycji sprzęgła i dwumasy – to one najszybciej poddają się przy zbyt agresywnym programie.{{< /expert >}}
+{{% expert name="Kowalczyk" %}}Przy chiptuningu Ducato nie chodzi tylko o prędkość maksymalną. Kluczowe jest wygładzenie krzywej momentu obrotowego, co pozwala na rzadszą redukcję biegów pod górę, szczególnie w przeładowanych kamperach. Warto jednak pamiętać o kondycji sprzęgła i dwumasy – to one najszybciej poddają się przy zbyt agresywnym programie.{{% /expert %}}
 
 ## Tuning zawieszenia – komfort i stabilność
 
-Standardowe zawieszenie Fiata Ducato bywa twarde "na pusto" i zbyt miękkie przy pełnym obciążeniu. Właściciele kamperów często skarżą się na "pływanie" auta przy bocznych podmuchach wiatru.
+Seryjna geometria jest kompromisem – na pusto potrafi być twarda, przy pełnym ładunku za miękka. Kampery mają to do siebie, że z dobudowaną zabudową stają się poważnie ciężkie z tyłu, a wtedy fabryczne ustawienia po prostu nie wystarczają. Pływanie w bocznym wietrze to najczęstszy zarzut właścicieli.
 
-1.  **Poduszki pneumatyczne** – montaż miechów powietrznych na tylnej osi pozwala na regulację wysokości tyłu pojazdu i poprawia stabilność. Koszt zestawu to zazwyczaj 1500–3000 zł.
-2.  **Wzmocnione sprężyny przednie** – specjalistyczne sprężyny (np. marki Goldschmitt) podnoszą przód o 3–5 cm, co jest kluczowe w kamperach, gdzie przód często "nurkuje" pod ciężarem zabudowy.
-3.  **Dystanse kół** – poprawiają stabilność w zakrętach i nadają busowi szerszą, bardziej agresywną postawę.
+- **Poduszki pneumatyczne** – miechy na tylnej osi umożliwiają bieżącą regulację wysokości i radykalnie poprawiają stabilność. Zestaw kosztuje 1500–3000 zł
+- **Wzmocnione sprężyny przednie** – sprężyny Goldschmitt lub podobne podnoszą przód o 3–5 cm, co przy ciężkiej zabudowie nad kabiną jest wręcz koniecznością
+- **Dystanse kół** – szersza baza lepiej trzyma zakręty i wizualnie porządkuje proporcje auta
 
 ## Modyfikacje wnętrza i wyciszenie
 
-Fabryczne wyciszenie Ducato pozostawia wiele do życzenia, co potwierdzają liczne opinie w serwisach motoryzacyjnych. Tuning wnętrza warto zacząć od mat butylowych i pianek kauczukowych.
+Fabryczna izolacja akustyczna Ducato jest szczera w swojej skromności – w kabinie słychać wyraźnie zarówno silnik, jak i wiatr. Punktem wyjścia do zmiany są maty butylowe i pianka kauczukowa naklejane w drzwiach, w maskę silnika i na podłogę.
 
-*   **Wygłuszenie drzwi i maski** – znacząco redukuje hałas silnika i szum wiatru.
-*   **Wymiana foteli** – standardowe siedziska po 200–300 tys. km bywają wysiedziane. Popularną modyfikacją jest montaż foteli z aut osobowych (np. Saab, Volvo) na specjalnych obrotnicach.
-*   **Multimedia** – wymiana fabrycznego radia 1DIN/2DIN na stację z Android Auto i Apple CarPlay to standard w nowoczesnym vanlifie.
+- **Wygłuszenie drzwi i maski** – wyraźna poprawa już po pierwszej warstwie mat, bez ingerencji w tapicerkę
+- **Wymiana foteli** – seryjne siedziska po 200–300 tys. km robią swoje. Fotele z Saaba lub Volvo na dedykowanych obrotnicach to sprawdzone rozwiązanie wśród vanliferów
+- **Multimedia** – stacja z Android Auto i Apple CarPlay w miejsce fabrycznego 1DIN/2DIN to dziś minimum przy remoncie kabiny
 
-{{< info title="Ważna informacja" icon="engineering" >}}Przy modyfikacjach mechanicznych starszych jednostek, jak 2.5 TDI (116 KM), chiptuning elektroniczny nie jest możliwy w taki sam sposób jak w MultiJetach. Tutaj tuning polega na mechanicznej regulacji dawki paliwa na pompie wtryskowej oraz modyfikacji ciśnienia doładowania.{{< /info >}}
+{{% info title="Uwaga" icon="engineering" %}}Przy modyfikacjach mechanicznych starszych jednostek, jak 2.5 TDI (116 KM), chiptuning elektroniczny nie jest możliwy w taki sam sposób jak w MultiJetach. Tutaj tuning polega na mechanicznej regulacji dawki paliwa na pompie wtryskowej oraz modyfikacji ciśnienia doładowania.{{% /info %}}
 
 ## Tuning wizualny – jak wyróżnić swojego busa?
 
-Ducato nie musi wyglądać jak auto kurierskie. Na rynku dostępne są gotowe pakiety stylistyczne, które całkowicie zmieniają charakter pojazdu.
+Ducato nie musi wyglądać jak auto kurierskie. Kilka trafnie dobranych elementów robi tu dużą różnicę.
 
-*   **Felgi aluminiowe** – przejście z 15-calowych stalówek na 16- lub 18-calowe alufelgi z oponami AT (All-Terrain) to absolutny hit wśród fanów camper vanów.
-*   **Orurowanie (Bullbary)** – chromowane lub czarne matowe rury przednie chronią zderzak i pozwalają na montaż dodatkowego oświetlenia LED (tzw. LED-barów).
-*   **Spoiler dachowy i dokładki zderzaka** – poprawiają aerodynamikę, co przy dużych prędkościach może nieznacznie obniżyć spalanie.
+- **Felgi aluminiowe** – zamiana 15-calowych stalówek na 16- lub 18-calowe alufelgi z oponami AT to najszybszy sposób na zmianę charakteru pojazdu
+- **Orurowanie (bullbary)** – stalowe rury z przodu w czarnym macie albo chromie chronią zderzak i dają podstawę pod dodatkowe LED-bary
+- **Spoiler dachowy i dokładki zderzaka** – przy długich trasach poprawiona aerodynamika realnie wpływa na spalanie
 
 Więcej o technicznych aspektach tego modelu przeczytasz w naszym [przewodniku po Fiacie Ducato](/modele/fiat-ducato/).
 

@@ -25,18 +25,19 @@ faq:
 ---
 
 ## Generacje i ewolucja modelu (X250 i X290)
-Mówiąc o współczesnym Ducato skrzyniowym, mamy na myśli przede wszystkim III generację, która zadebiutowała w 2006 roku (kod X250) i przeszła gruntowny lifting w 2014 roku (kod X290).
+Współczesne Ducato skrzyniowe to przede wszystkim III generacja, która zadebiutowała w 2006 roku (kod X250) i przeszła gruntowny lifting w 2014 roku (kod X290).
 
-*   **Produkcja:** od 2006 do teraz (wielokrotne modernizacje).
-*   **DMC (Dopuszczalna Masa Całkowita):** od 3,0 t do 4,25 t (najpopularniejsze wersje 3,5 t na prawo jazdy kat. B).
-*   **Rozstawy osi:** 3000 mm (L1), 3450 mm (L2), 3800 mm (L3) oraz 4035 mm (L4).
+*   **Produkcja** – od 2006 do teraz (wielokrotne modernizacje).
+*   **DMC (Dopuszczalna Masa Całkowita)** – od 3,0 t do 4,25 t (najpopularniejsze wersje 3,5 t na prawo jazdy kat. B).
+*   **Rozstawy osi** – 3000 mm (L1), 3450 mm (L2), 3800 mm (L3) oraz 4035 mm (L4).
 
-{{< expert name="Marek Kowalczyk" >}}Fiat Ducato z otwartą skrzynią to ulubieniec ekip budowlanych. Jego największą zaletą jest szerokość kabiny i samej platformy – bez problemu mieści obok siebie dwie europalety, co w tej klasie nie zawsze jest standardem u konkurencji.{{< /expert >}}
+{{% expert name="Kowalczyk" %}}Fiat Ducato z otwartą skrzynią to ulubieniec ekip budowlanych. Jego największą zaletą jest szerokość kabiny i samej platformy – bez problemu mieści obok siebie dwie europalety, co w tej klasie nie zawsze jest standardem u konkurencji.{{% /expert %}}
 
 ## Wymiary skrzyni ładunkowej i warianty kabin
-Fiat Ducato skrzyniowy występuje w dwóch głównych konfiguracjach kabiny:
-1.  **Kabina pojedyncza (Single Cab):** 3 miejsca siedzące, maksymalna długość zabudowy.
-2.  **Kabina podwójna (Crew Cab / Brygadówka):** 7 miejsc siedzących (układ 3+4), idealna dla ekip remontowych.
+Ducato skrzyniowy występuje w dwóch konfiguracjach kabiny:
+
+*   **Kabina pojedyncza (Single Cab)** – 3 miejsca siedzące, maksymalna długość zabudowy.
+*   **Kabina podwójna (Crew Cab / Brygadówka)** – 7 miejsc siedzących (układ 3+4), idealna dla ekip remontowych.
 
 ### Tabela: Przykładowe wymiary fabrycznych skrzyń ładunkowych (wersja L2 i L3)
 
@@ -50,17 +51,18 @@ Fiat Ducato skrzyniowy występuje w dwóch głównych konfiguracjach kabiny:
 *Wartości mogą się różnić w zależności od producenta zabudowy (np. polskie firmy Carpol czy Jegger).*
 
 ## Silniki – który wybrać do "skrzyni"?
-Wybór silnika w Ducato skrzyniowym ma kluczowe znaczenie dla kosztów eksploatacji. Wersje ze skrzynią często pracują pod dużym obciążeniem i stawiają większy opór aerodynamiczny niż furgony.
+Skrzyniowe Ducato często pracuje pod stałym obciążeniem i generuje większy opór aerodynamiczny niż furgon, dlatego wybór silnika bezpośrednio przekłada się na koszty paliwa i trwałość układu napędowego.
 
-*   **2.3 MultiJet (120, 130, 140, 150, 160, 180 KM)** – złoty środek. Silnik konstrukcji Iveco, ceniony za trwałość i dostępność części. Wersja 130-140 KM to najczęstszy wybór do lokalnego transportu.
-*   **3.0 MultiJet (160, 180 KM)** – legenda. Montowany do 2016 roku. Silnik na łańcuchu rozrządu, niezwykle elastyczny i odporny na przebiegi rzędu 500-700 tys. km. Idealny, jeśli planujesz ciągnąć ciężkie przyczepy.
-*   **2.2 MultiJet (120, 140, 160, 180 KM)** – nowsze jednostki (z grupy Stellantis), które zastąpiły silnik 2.3. Są lżejsze i spełniają surowsze normy spalin, ale wymagają regularnego serwisu układu AdBlue.
+*   **2.3 MultiJet (120–180 KM)** – najbardziej uniwersalna opcja. Jednostka skonstruowana przez Iveco, ceniona za trwałość i dostępność części. Wersja 130–140 KM to najczęstszy wybór do lokalnego transportu.
+*   **3.0 MultiJet (160, 180 KM)** – legenda segmentu. Montowany do 2016 roku, z rozrządem łańcuchowym, niezwykle elastyczny i odporny na przebiegi rzędu 500–700 tys. km. Najlepsza opcja, jeśli planowane jest ciągnięcie ciężkich przyczep.
+*   **2.2 MultiJet (120–180 KM)** – nowsze jednostki z grupy Stellantis, które zastąpiły silnik 2.3. Lżejsze i spełniające surowsze normy spalin, ale wymagające regularnego serwisu układu AdBlue.
 
-{{< info title="Wskazówka techniczna" icon="engineering" >}}Przy zakupie używanego Ducato z silnikiem 3.0 warto sprawdzić stan gałki zmiany biegów i mechanizmu wybieraka – przy dużych przebiegach (powyżej 400 tys. km) precyzja zmiany biegów może drastycznie spaść, co jest typową przypadłością tego modelu.{{< /info >}}
+{{% info title="Technika" icon="engineering" %}}Przy zakupie używanego Ducato z silnikiem 3.0 warto sprawdzić stan gałki zmiany biegów i mechanizmu wybieraka – przy dużych przebiegach (powyżej 400 tys. km) precyzja zmiany biegów może drastycznie spaść, co jest typową przypadłością tego modelu.{{% /info %}}
 
 ## Zastosowania Fiata Ducato z nadwoziem skrzyniowym
-Dzięki niskiej masie własnej podwozia (tzw. "chassis"), Fiat Ducato oferuje jedną z najlepszych ładowności w klasie 3,5 t.
-*   **Budownictwo** – przewóz materiałów sypkich (po montażu wywrotu), rusztowań i narzędzi.
+Niska masa własna podwozia (tzw. chassis) przekłada się na jedną z najlepszych ładowności w klasie 3,5 t. Stąd tak szeroki przekrój branż, które sięgają po tę wersję:
+
+*   **Budownictwo** – przewóz materiałów sypkich po montażu wywrotu, rusztowań i narzędzi.
 *   **Ogrodnictwo** – transport krzewów, drzewek i maszyn ogrodniczych.
 *   **Logistyka** – baza pod [Ducato plandeka](/modele/fiat-ducato/plandeka/) (tzw. międzynarodówka), gdzie na ramie montuje się lekką konstrukcję z plandeką i kabinę sypialną.
 *   **Służby komunalne** – wersje z podwójną kabiną do przewozu pracowników i sprzętu.
@@ -68,7 +70,8 @@ Dzięki niskiej masie własnej podwozia (tzw. "chassis"), Fiat Ducato oferuje je
 Więcej o ogólnej charakterystyce tego modelu przeczytasz w naszym artykule: [Fiat Ducato – przewodnik](/modele/fiat-ducato/).
 
 ## Typowe problemy i serwis
-Fiat Ducato skrzyniowy to konstrukcja sprawdzona, ale nie pozbawiona wad. Użytkownicy w serwisach takich jak Autocentrum czy opinie Google często wskazują na:
-1.  **Słaba ergonomia deski rozdzielczej** – ze względu na szerokość auta (ponad 2 m), niektóre przełączniki są daleko od kierowcy.
-2.  **Korozja ramy pomocniczej** – w starszych egzemplarzach warto kontrolować stan zabezpieczenia antykorozyjnego ramy pod skrzynią ładunkową.
-3.  **Elektronika** – częste błędy czujników (np. ABS/ESP) spowodowane wilgocią w wiązkach elektrycznych pod podwoziem.
+Ducato skrzyniowy to sprawdzona konstrukcja, ale kilka słabych punktów warto znać przed zakupem. Użytkownicy i mechanicy serwisowi regularnie wskazują na te same rzeczy:
+
+*   **Ergonomia deski rozdzielczej** – ze względu na szerokość auta (ponad 2 m) niektóre przełączniki są znacznie odsunięte od kierowcy.
+*   **Korozja ramy pomocniczej** – w starszych egzemplarzach warto skontrolować stan zabezpieczenia antykorozyjnego ramy pod skrzynią ładunkową.
+*   **Elektronika** – częste błędy czujników (np. ABS/ESP) spowodowane wilgocią w wiązkach elektrycznych pod podwoziem.

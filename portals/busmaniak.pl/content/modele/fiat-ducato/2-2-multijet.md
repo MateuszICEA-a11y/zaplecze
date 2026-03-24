@@ -26,18 +26,18 @@ faq:
 
 ## Dwie twarze 2.2 MultiJet – Ford kontra Stellantis
 
-Zanim przejdziemy do szczegółów, musimy wyjaśnić kluczowe rozróżnienie. W historii Ducato silnik 2.2 pojawiał się dwukrotnie:
+Pod oznaczeniem 2.2 MultiJet kryją się dwie zupełnie różne jednostki, które dzieli niemal dwadzieścia lat i kilka generacji technologii. Warto to rozróżnienie mieć w głowie już przy przeglądaniu ogłoszeń:
 
-1.  **Lata 2006–2011 (Euro 4)** – jednostka o mocy 100 KM (74 kW). To konstrukcja opracowana wspólnie z koncernem Ford (znana jako 2.2 TDCi Puma). Charakteryzuje się napędem rozrządu na łańcuchu i 5-biegową skrzynią.
-2.  **Od 2021 roku (Euro 6d-Final)** – najnowsza jednostka MultiJet3, bazująca na konstrukcji koncernu Stellantis (znana z aut osobowych jako 2.2 BlueHDi). To następca legendarnego 2.3 MultiJet.
+1.  **Lata 2006–2011 (Euro 4)** – silnik 100 KM (74 kW) opracowany wspólnie z Fordem, znany jako 2.2 TDCi Puma. Napęd rozrządu na łańcuchu, 5-biegowa skrzynia manualna.
+2.  **Od 2021 roku (Euro 6d-Final)** – jednostka MultiJet3 na bazie konstrukcji Stellantis, pokrewna 2.2 BlueHDi stosowanemu w autach PSA. Bezpośredni następca 2.3 MultiJet w gamie Ducato.
 
-{{< info title="Ważna różnica konstrukcyjna" icon="engineering" >}}
+{{% info title="Konstrukcja" icon="engineering" %}}
 Starszy silnik 2.2 (100 KM) posiadał łańcuch rozrządu, który bywał problematyczny. Nowoczesny 2.2 MultiJet3 (od 2021 r.) korzysta z paska rozrządu i jest znacznie bardziej zaawansowany technologicznie, oferując moce od 120 do 180 KM.
-{{< /info >}}
+{{% /info %}}
 
 ## Dane techniczne i osiągi
 
-Starsza jednostka 100 KM była montowana głównie w krótkich i średnich furgonach (L1H1, L2H2). Nowy silnik 2.2 MultiJet3 to już pełna gama – od miejskich "blaszek" po ciężkie zabudowy typu Maxi.
+Starsza jednostka 100 KM trafiała głównie do krótkich i średnich furgonów (L1H1, L2H2). MultiJet3 obsługuje już całą gamę – od miejskich wersji kompaktowych po zabudowy Maxi z DMC 4250 kg.
 
 | Parametr | 2.2 MultiJet (2006–2011) | 2.2 MultiJet3 (od 2021) |
 | :--- | :--- | :--- |
@@ -49,28 +49,30 @@ Starsza jednostka 100 KM była montowana głównie w krótkich i średnich furgo
 | **Skrzynia biegów** | Manualna 5-biegowa | Manual 6b / Automat 9b |
 | **DMC pojazdu** | do 3300 kg (zazwyczaj) | do 4250 kg (seria Maxi) |
 
-## Spalanie – ile realnie pali Fiat Ducato 2.2 MultiJet?
+## Spalanie – ile realnie pali Ducato 2.2 MultiJet?
 
-Według dostępnych danych i raportów użytkowników, starsza jednostka 100 KM w cyklu mieszanym spala około **7,3 – 8,5 l/100 km**. Na autostradzie, ze względu na brak 6. biegu, spalanie drastycznie rośnie powyżej 110 km/h.
+Starsza jednostka 100 KM w ruchu mieszanym wypija **7,3 – 8,5 l/100 km**. Jej słabym punktem jest brak szóstego biegu – przy prędkości autostradowej silnik kręci zbyt wysoko i spalanie szybko przekracza 10 litrów.
 
-Nowoczesne jednostki MultiJet3 są znacznie bardziej wydajne. Wersja 140 KM w furgonie L3H2 przy prędkościach przelotowych 100–110 km/h potrafi zejść do **7,5 – 8,0 l/100 km**. Przy pełnym obciążeniu lub w zabudowie kamperowej należy liczyć się z wynikami rzędu **10 – 11 l/100 km**.
+MultiJet3 w wersji 140 KM radzi sobie wyraźnie lepiej. Furgon L3H2 przy spokojnej jeździe 100–110 km/h mieści się w granicach **7,5 – 8,0 l/100 km**. Przy pełnym załadunku lub zabudowie kamperowej realne wartości to **10 – 11 l/100 km** – niezależnie od wariantu mocy.
 
 ## Typowe usterki i opinie użytkowników
 
-Starszy model 2.2 (Puma) nie cieszył się najlepszą sławą, głównie przez problemy z układem wtryskowym (Denso) oraz pękającymi tłokami w ekstremalnych przypadkach. Użytkownicy skarżą się również na:
-*   **Niedogrzewanie wnętrza** – w mroźne dni silnik wolno łapie temperaturę, co wpływa na komfort w kabinie.
-*   **Korozja osprzętu** – ze względu na wiek, problemem stają się zapieczone wtryskiwacze.
+Silnik Puma (2.2 TDCi) zbierał mieszane opinie. Głównym źródłem problemów był układ wtryskowy Denso, który po przejechaniu kilkuset tysięcy kilometrów wymagał kosztownej regeneracji lub wymiany. W skrajnych przypadkach dochodziło do pękania tłoków. Właściciele egzemplarzy z wyższym przebiegiem zgłaszają dwie powtarzające się bolączki:
 
-Z kolei nowy 2.2 MultiJet3 zbiera na razie pozytywne opinie za kulturę pracy i elastyczność. Kluczowym wyzwaniem jest tu jednak skomplikowany układ oczyszczania spalin. Warto poczytać więcej o tym, jak działa [AdBlue w busach](/serwis/adblue/), aby uniknąć kosztownych awarii czujników NOx.
+- **Niedogrzewanie wnętrza** – silnik wolno osiąga temperaturę roboczą, co w mroźne dni skutkuje długim oczekiwaniem na ciepłe powietrze w kabinie
+- **Zapieczone wtryskiwacze** – standardowy problem starszych diesli; w połączeniu z korodującymi kołnierzami wymiana staje się nieproporcjonalnie droga
 
-{{< expert name="Marek Kowalczyk" >}}
+Nowy MultiJet3 nie ma jeszcze tak obszernej historii serwisowej, ale użytkownicy chwalą go za kulturę pracy i szeroki zakres momentu obrotowego. Słabym punktem pozostaje układ oczyszczania spalin – zanim zdecydujesz się na młodego Ducato, przeczytaj o tym, jak działa [AdBlue w busach](/serwis/adblue/), bo awaryjny czujnik NOx potrafi unieruchomić pojazd w najmniej odpowiednim momencie.
+
+{{% expert name="Kowalczyk" %}}
 Nowy silnik 2.2 MultiJet3 to godny następca 2.3. Choć wielu kierowców obawiało się mniejszej pojemności, moment obrotowy w wersji 140 KM i 180 KM jest dostępny niżej, co świetnie sprawdza się w ciężkich kamperach. Kluczem do bezawaryjności jest tu wymiana oleju co 15-20 tys. km, a nie co 45 tys. km, jak sugeruje producent.
-{{< /expert >}}
+{{% /expert %}}
 
-## Czy warto kupić Ducato z silnikiem 2.2?
+## Który rocznik wybrać?
 
-Wybór zależy od budżetu i przeznaczenia:
-*   **Używane (2006–2011)** – dobra opcja do lekkiego transportu lokalnego ("wokół komina"). Tanie części i prosta konstrukcja to atuty, ale trzeba uważać na stan układu paliwowego.
-*   **Nowe lub młode używane (od 2021)** – to obecnie standard rynkowy. Jeśli planujesz [przeróbkę na kampera](/modele/fiat-ducato/), wersja 140 KM lub 160 KM z automatyczną skrzynią biegów będzie optymalnym wyborem pod kątem dynamiki i komfortu.
+Decyzja sprowadza się do budżetu i planowanego zastosowania:
 
-Więcej o historii modelu i innych jednostkach napędowych przeczytasz w naszym artykule: [Fiat Ducato – przewodnik](/modele/fiat-ducato/).
+- **Używane (2006–2011)** – sprawdza się w lekkim transporcie lokalnym. Prosta konstrukcja i dostępne części to realne atuty, ale przed zakupem bezwzględnie sprawdź stan układu paliwowego i historię serwisową wtryskiwaczy.
+- **Nowe lub młode używane (od 2021)** – aktualny standard rynkowy. Pod [zabudowę kamperową](/modele/fiat-ducato/) najlepiej sprawdzi się wersja 140 KM lub 160 KM sparowana z 9-biegowym automatem ZF – niskie obroty przy prędkości przelotowej realnie obniżają spalanie na długich trasach.
+
+Więcej o historii modelu i pozostałych jednostkach napędowych znajdziesz w artykule: [Fiat Ducato – przewodnik](/modele/fiat-ducato/).
