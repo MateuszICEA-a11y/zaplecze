@@ -9,6 +9,8 @@ h1: "Fiat Ducato 2.3 MultiJet – dane techniczne i opinie"
 parent: "fiat-ducato"
 type: "page"
 volume: 880
+image: "/images/fiat-ducato-2-3-multijet-hero.jpg"
+image_alt: "Silnik 2.3 MultiJet Fiat Ducato w warsztacie"
 lead: "Silnik 2.3 MultiJet to serce większości Fiatów Ducato sprzedawanych w Polsce od 2006 roku. Dostępny w kilku wariantach mocy, napędza zarówno busy dostawcze, jak i kampery. Jak wypada w codziennej eksploatacji?"
 faq:
   - question: "Ile pali Fiat Ducato 2.3 diesel?"
