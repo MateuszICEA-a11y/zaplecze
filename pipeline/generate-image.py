@@ -18,7 +18,7 @@ import time
 import urllib.request
 import urllib.error
 
-KIE_API_KEY = "57e720524cb22add43026bd6ba52ad1a"
+KIE_API_KEY = "b0635a47a098a28a481d44af5a75731e"
 KIE_BASE = "https://api.kie.ai/api/v1/jobs"
 POLL_INTERVAL = 5
 MAX_ATTEMPTS = 15
