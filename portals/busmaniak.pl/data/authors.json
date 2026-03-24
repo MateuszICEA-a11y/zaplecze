@@ -1,0 +1,35 @@
+{
+  "marek-kowalczyk": {
+    "name": "Marek Kowalczyk",
+    "role": "Redaktor techniczny",
+    "bio": "Specjalista ds. pojazdów dostawczych z 15-letnim doświadczeniem. Testuje busy i vany dla flot firmowych. Prywatnie jeździ Sprinterem.",
+    "avatar": "/images/authors/marek-kowalczyk.jpg",
+    "expertise": ["modele", "porownania", "narzedzia"],
+    "social": {
+      "web": "#",
+      "mail": "marek@busmaniak.pl"
+    }
+  },
+  "anna-wozniak": {
+    "name": "Anna Wóźniak",
+    "role": "Redaktorka ds. kamperów",
+    "bio": "Entuzjastka vanlife i kamperów. Od 5 lat podróżuje przerobionym Traficiem po Europie. Autorka poradników przeróbek DIY.",
+    "avatar": "/images/authors/anna-wozniak.jpg",
+    "expertise": ["kampery", "przerobki", "vanlife", "zabudowy"],
+    "social": {
+      "web": "#",
+      "mail": "anna@busmaniak.pl"
+    }
+  },
+  "tomek-zielinski": {
+    "name": "Tomasz Zieliński",
+    "role": "Specjalista ds. serwisu",
+    "bio": "Mechanik z wykształcenia, dziennikarz z pasji. Od ponad 10 lat opisuje zawiłości techniczne busów i vanów. Prywatnie podróżuje przerobionym Ducato.",
+    "avatar": "/images/authors/tomek-zielinski.jpg",
+    "expertise": ["serwis", "przepisy", "wynajem"],
+    "social": {
+      "web": "#",
+      "mail": "tomasz@busmaniak.pl"
+    }
+  }
+}

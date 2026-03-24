@@ -1,0 +1,15 @@
+{{/* Expert insight box – usage: {{< expert name="Tomasz Zieliński" >}}Treść opinii eksperta{{< /expert >}} */}}
+<div class="expert-box">
+  <div class="expert-box__header">
+    <div class="expert-box__icon">
+      <span class="material-symbols-outlined">psychology</span>
+    </div>
+    <div>
+      <span class="expert-box__label">Opinia eksperta</span>
+      <span class="expert-box__name">{{ .Get "name" | default "Ekspert BusManiak" }}</span>
+    </div>
+  </div>
+  <div class="expert-box__content">
+    {{ .Inner | markdownify }}
+  </div>
+</div>

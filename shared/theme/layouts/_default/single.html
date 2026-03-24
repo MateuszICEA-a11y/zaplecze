@@ -1,33 +1,87 @@
 {{ define "main" }}
-{{ partial "breadcrumbs.html" . }}
 
-<article class="article">
-  <div class="container content-narrow">
-    <header class="article__header">
-      <h1 class="article__title">{{ .Title }}</h1>
-      <div class="article__meta">
-        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02.01.2006" }}</time>
-        {{ with .Params.author }}
-        {{ $author := $.Site.GetPage (printf "/autor/%s" .) }}
-        {{ if $author }}
-        <span>Autor: <a href="{{ $author.Permalink }}">{{ $author.Title }}</a></span>
-        {{ end }}
-        {{ end }}
-        <span>{{ math.Round (div (countwords .Content) 200.0) }} min czytania</span>
-        {{ with .Params.lastmod }}
-        <span>Aktualizacja: {{ .Format "02.01.2006" }}</span>
-        {{ end }}
-      </div>
-    </header>
+{{/* ═══ BREADCRUMBS ═══ */}}
+<nav class="breadcrumbs">
+  <div class="container">
+    <a href="{{ .Site.BaseURL }}">Strona główna</a>
+    <span class="breadcrumbs__sep">/</span>
+    {{ with .Parent }}
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+    <span class="breadcrumbs__sep">/</span>
+    {{ end }}
+    <span>{{ .Title | truncate 50 }}</span>
+  </div>
+</nav>
 
-    {{/* Hero image */}}
+{{/* ═══ HERO ═══ */}}
+{{ $authorData := false }}
+{{ $authorKey := .Params.author | default "" }}
+{{ with $authorKey }}
+  {{ with $.Site.Data.authors }}
+    {{ with index . $authorKey }}
+      {{ $authorData = . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ $isPage := eq (.Params.type | default "post") "page" }}
+{{ $readTime := math.Round (div (countwords .Content) 200.0) }}
+{{ if lt $readTime 1 }}{{ $readTime = 1 }}{{ end }}
+
+<header class="article-hero{{ if $isPage }} article-hero--page{{ end }}">
+  <div class="article-hero__inner">
     {{ with .Params.image }}
-    <div class="article__hero">
-      <img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}" width="740" height="416">
-    </div>
+    <img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}" class="article-hero__img" loading="eager">
+    {{ else }}
+    <div class="article-hero__img" style="background: linear-gradient(135deg, var(--c-dark) 0%, var(--c-navy) 100%);"></div>
     {{ end }}
 
-    {{/* Table of contents */}}
+    <div class="article-hero__body">
+      <div class="article-hero__badge">{{ .Parent.Title | default .Section }}</div>
+
+      <h1 class="article-hero__title">{{ .Params.h1 | default .Title }}</h1>
+
+      <div class="article-hero__meta">
+        {{ if not $isPage }}
+          {{/* POST: author + date + reading time */}}
+          {{ with $authorData }}
+          <div class="article-hero__meta-item">
+            <div class="article-hero__avatar">
+              {{ with .avatar }}<img src="{{ . }}" alt="{{ $.Params.author }}">{{ end }}
+            </div>
+            <span>{{ .name }}</span>
+          </div>
+          {{ end }}
+          <div class="article-hero__meta-item">
+            <span class="material-symbols-outlined">calendar_today</span>
+            <span>{{ .Date.Format "02.01.2006" }}</span>
+          </div>
+          <div class="article-hero__meta-item">
+            <span class="material-symbols-outlined">schedule</span>
+            <span>{{ $readTime }} min czytania</span>
+          </div>
+        {{ else }}
+          {{/* PAGE: last updated only */}}
+          <div class="article-hero__meta-item">
+            <span class="material-symbols-outlined">update</span>
+            <span>Ostatnia aktualizacja: {{ with .Params.lastmod }}{{ .Format "01.2006" }}{{ else }}{{ .Date.Format "01.2006" }}{{ end }}</span>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</header>
+
+{{/* ═══ ARTICLE BODY ═══ */}}
+<article class="article">
+  <div class="container content-narrow">
+
+    {{/* Lead paragraph (if set in frontmatter) */}}
+    {{ with .Params.lead }}
+    <p class="article-lead">{{ . }}</p>
+    {{ end }}
+
+    {{/* TOC */}}
     {{ if .Params.toc | default true }}
     {{ if gt (len .TableOfContents) 100 }}
     <div class="toc">
@@ -37,52 +91,155 @@
     {{ end }}
     {{ end }}
 
-    {{/* Article content */}}
+    {{/* Content */}}
     <div class="article__content">
       {{ .Content }}
     </div>
 
-    {{/* FAQ section */}}
+    {{/* ═══ LINK BOX: Subpages (engines/variants) ═══ */}}
+    {{ if .IsNode }}
+    {{ $children := .Pages }}
+    {{ if $children }}
+    <div class="link-box">
+      <div class="link-box__header">
+        <span class="material-symbols-outlined">menu_book</span>
+        Podstrony {{ .Title }}
+      </div>
+      <ul class="link-box__list">
+        {{ range $children }}
+        <li><a href="{{ .Permalink }}">{{ .Params.h1 | default .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+    {{ end }}
+
+    {{/* ═══ LINK BOX: Sibling pages (same parent) ═══ */}}
+    {{ with .Params.parent }}
+    {{ $parentPage := $.Site.GetPage (printf "/modele/%s" .) }}
+    {{ if $parentPage }}
+    {{ $siblings := $parentPage.Pages }}
+    {{ if gt (len $siblings) 1 }}
+    <div class="link-box">
+      <div class="link-box__header">
+        <span class="material-symbols-outlined">hub</span>
+        Więcej o {{ $parentPage.Title }}
+      </div>
+      <ul class="link-box__list">
+        {{ range $siblings }}
+        {{ if ne $.Permalink .Permalink }}
+        <li><a href="{{ .Permalink }}">{{ .Params.h1 | default .Title }}</a></li>
+        {{ end }}
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+    {{ end }}
+    {{ end }}
+
+    {{/* ═══ LINK BOX: Cross-cluster (same parent_model) ═══ */}}
+    {{ with .Params.parent_model }}
+    {{ $pm := . }}
+    {{ $related := where $.Site.RegularPages "Params.parent_model" $pm }}
+    {{ $related = where $related "Permalink" "ne" $.Permalink }}
+    {{ if $related }}
+    <div class="link-box link-box--dark">
+      <div class="link-box__header">
+        <span class="material-symbols-outlined">link</span>
+        Powiązane artykuły
+      </div>
+      <ul class="link-box__list">
+        {{ range $related }}
+        <li><a href="{{ .Permalink }}">{{ .Params.h1 | default .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+    {{ end }}
+
+    {{/* ═══ FAQ ═══ */}}
     {{ with .Params.faq }}
     <section class="faq">
-      <h2 class="faq__title">Najczesciej zadawane pytania</h2>
+      <h2 class="faq__title">
+        <span class="material-symbols-outlined">help</span>
+        Najczęściej zadawane pytania
+      </h2>
       {{ range . }}
       <div class="faq__item">
         <div class="faq__question">{{ .question }}</div>
-        <div class="faq__answer">{{ .answer }}</div>
+        <div class="faq__answer">{{ .answer | markdownify }}</div>
       </div>
       {{ end }}
     </section>
     {{ end }}
 
-    {{/* Tags */}}
-    {{ with .Params.tags }}
-    <div style="margin-top: 2rem;">
-      {{ range . }}
-      <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>
-      {{ end }}
-    </div>
-    {{ end }}
-
-    {{/* Author box */}}
-    {{ partial "author-box.html" . }}
-
-    {{/* Related articles in same cluster */}}
-    {{ with .Params.cluster }}
-    {{ $cluster := . }}
-    {{ $related := where $.Site.RegularPages "Params.cluster" $cluster }}
-    {{ $related = where $related "Permalink" "ne" $.Permalink }}
-    {{ if $related }}
-    <section style="margin-top: 3rem;">
-      <h2 class="section-title">Przeczytaj tez</h2>
-      <div class="article-list">
-        {{ range first 4 $related }}
-        {{ partial "article-card.html" . }}
+    {{/* ═══ AUTHOR CARD ═══ */}}
+    {{ if not $isPage }}
+    {{ if $authorData }}
+    {{ $a := $authorData }}
+    <div class="author-card">
+      <div class="author-card__avatar">
+        {{ with $a.avatar }}<img src="{{ . }}" alt="{{ $a.name }}">{{ else }}{{ substr $a.name 0 1 }}{{ end }}
+      </div>
+      <div>
+        <div class="author-card__label">O autorze</div>
+        <div class="author-card__name">{{ $a.name }}</div>
+        <p class="author-card__bio">{{ $a.bio }}</p>
+        {{ with $a.social }}
+        <div class="author-card__social">
+          {{ with .web }}<a href="{{ . }}" aria-label="Strona"><span class="material-symbols-outlined">language</span></a>{{ end }}
+          {{ with .mail }}<a href="mailto:{{ . }}" aria-label="E-mail"><span class="material-symbols-outlined">mail</span></a>{{ end }}
+        </div>
         {{ end }}
       </div>
-    </section>
+    </div>
     {{ end }}
     {{ end }}
+
   </div>
 </article>
+
+{{/* ═══ RELATED ARTICLES ═══ */}}
+{{ $section := .CurrentSection }}
+{{ $related := where $section.RegularPages "Permalink" "ne" .Permalink }}
+{{ if gt (len $related) 0 }}
+<section class="related-section">
+  <div class="container">
+    <div class="related-section__header">
+      <div>
+        <h2 class="related-section__title">Powiązane artykuły</h2>
+        <div class="related-section__bar"></div>
+      </div>
+      <a href="{{ $section.Permalink }}" class="section__link">
+        Wszystkie {{ $section.Title | lower }} <span class="material-symbols-outlined" style="font-size:.9rem;vertical-align:middle;">arrow_forward</span>
+      </a>
+    </div>
+    <div class="related-grid">
+      {{ range first 3 $related }}
+      <article class="related-card">
+        <a href="{{ .Permalink }}">
+          {{ with .Params.image }}
+          <div class="related-card__image">
+            <img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}" loading="lazy">
+            <div class="related-card__badge">{{ $.Parent.Title | default $.Section }}</div>
+          </div>
+          {{ else }}
+          <div class="related-card__image" style="background: linear-gradient(135deg, var(--c-dark), var(--c-navy));">
+            <div class="related-card__badge">{{ $.Parent.Title | default $.Section }}</div>
+          </div>
+          {{ end }}
+          <div class="related-card__body">
+            <h3 class="related-card__title">{{ .Params.h1 | default .Title }}</h3>
+            {{ with .Description }}
+            <p class="related-card__excerpt">{{ . | truncate 100 }}</p>
+            {{ end }}
+          </div>
+        </a>
+      </article>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
 {{ end }}
