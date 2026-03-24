@@ -9,7 +9,7 @@ h1: "Fiat Ducato – kompletny przewodnik po modelu"
 type: "page"
 volume: 33100
 image: "/images/fiat-ducato-hero.jpg"
-image_alt: "Fiat Ducato III furgon na górskiej drodze o zachodzie słońca"
+image_alt: "Fiat Ducato IV furgon przy rampie załadunkowej"
 lead: "Fiat Ducato to najpopularniejszy bus dostawczy w Europie i najczęściej wybierana baza pod kampery. Od 1981 roku powstały cztery generacje tego modelu. Poznaj wszystkie wersje, silniki i warianty nadwoziowe."
 ---
 
