@@ -81,6 +81,8 @@ BiTurbo i wersja 170 KM przy intensywnym użytkowaniu miejskim mogą przekroczy�
 
 ---
 
+![Silnik dCi](/images/renault-trafic-dci-hero.jpg)
+
 ## Typowe usterki
 
 ### 1.6 dCi (R9M)
@@ -139,5 +141,3 @@ W autach po 2019 roku 2.0 dCi 145 to najpopularniejszy wybór – wystarczająca
 Więcej informacji o generacjach i wyposażeniu znajdziesz w artykule [Renault Trafic – przegląd modelu](/modele/renault-trafic/).
 
 ---
-
-![Silnik dCi](/images/renault-trafic-dci-hero.jpg)

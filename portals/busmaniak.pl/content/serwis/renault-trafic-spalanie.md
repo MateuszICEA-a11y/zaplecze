@@ -54,6 +54,8 @@ Starsze Trafici nadal pracują w tysiącach firm. Ich silniki są proste w obsł
 
 Silnik 2.5 dCi to najlepszy motor tej generacji pod względem trwałości, ale zużycie paliwa potrafi zaskoczyć – szczególnie w miejskiej eksploatacji z dużym obciążeniem.
 
+![Renault Trafic na stacji paliw](/images/renault-trafic-spalanie-hero.jpg)
+
 ## Co realnie wpływa na spalanie?
 
 Samo spalanie silnika to tylko punkt wyjścia. W praktyce liczy się kilka zmiennych, które potrafią przesunąć wynik o 1–2 l/100 km.
@@ -84,5 +86,3 @@ Jeśli Trafic zaczyna palić wyraźnie więcej niż zwykle przy takim samym styl
 Więcej o silnikach dCi dostępnych w Traficu – w artykule [Renault Trafic dCi – przegląd silników](/modele/renault-trafic/dci/).
 
 Pełna specyfikacja modelu i porównanie generacji dostępne na stronie głównej modelu: [Renault Trafic – wszystko o modelu](/modele/renault-trafic/).
-
-![Renault Trafic na stacji paliw](/images/renault-trafic-spalanie-hero.jpg)

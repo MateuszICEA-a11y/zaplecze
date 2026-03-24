@@ -28,9 +28,9 @@ Renault Trafic to solidny środek transportu dla firm, które potrzebują ładow
 
 Trafic pojawił się w 1980 roku i od początku miał azjatyckie korzenie – pierwsza generacja bazowała na platformie Nissan Vanette. To wyjaśnia, dlaczego ten model nigdy nie był typowo francuską konstrukcją: bardziej pragmatyczny niż efektowny.
 
-- **Trafic I (1980–2001):** Silniki benzynowe 1.4, 1.6 i 2.0, diesel 2.1. Auto proste konstrukcyjnie, co w tamtych czasach oznaczało długą żywotność przy niewysokich kosztach utrzymania.
-- **Trafic II (2001–2014):** Wspólna platforma z Oplem Vivaro i Nissanem Primastar. Wprowadzenie silników dCi to skok w kulturę pracy i spalanie, ale też nowe problemy z wtryskiwaczami, których wcześniej nie było.
-- **Trafic III (2014–dziś):** Produkowany w Sandouville we Francji. Nowy design, lepsze wyposażenie, silniki 1.6 dCi i 2.0 dCi. Pod względem przestrzeni ładunkowej i ergonomii kabiny to wyraźny krok do przodu względem poprzednika.
+- Trafic I (1980–2001) - silniki benzynowe 1.4, 1.6 i 2.0, diesel 2.1. Auto proste konstrukcyjnie, co w tamtych czasach oznaczało długą żywotność przy niewysokich kosztach utrzymania.
+- Trafic II (2001–2014) - wspólna platforma z Oplem Vivaro i Nissanem Primastar. Wprowadzenie silników dCi to skok w kulturę pracy i spalanie, ale też nowe problemy z wtryskiwaczami, których wcześniej nie było.
+- Trafic III (2014–dziś) - produkowany w Sandouville we Francji. Nowy design, lepsze wyposażenie, silniki 1.6 dCi i 2.0 dCi. Pod względem przestrzeni ładunkowej i ergonomii kabiny to wyraźny krok do przodu względem poprzednika.
 
 ## Dane techniczne i wymiary {#wymiary}
 
@@ -47,6 +47,8 @@ Holowanie: 1.6 dCi – 2000 kg; 2.0 dCi – 2500 kg.
 {{% info title="Wymiary ładowni a realne załadowanie" icon="engineering" %}}
 Wysokość ładowni w tabeli jest mierzona od podłogi do dachu. Realna wysokość załadunku bywa mniejsza – elementy nadwozia i zabudowa potrafią zabrać kilka centymetrów, które mają znaczenie przy przewozie wysokich paczek.
 {{% /info %}}
+
+![Renault Trafic III furgon L2H2](/images/renault-trafic-hero.jpg)
 
 ## Silniki {#silniki}
 
@@ -95,5 +97,3 @@ Co kilkadziesiąt tysięcy kilometrów warto zlecić sprawdzenie ciśnienia wtry
 {{% expert name="Kowalczyk" %}}
 Przy zakupie używanego Trafica historia serwisowa ważniejsza jest niż przebieg. Auto z 250 000 km na liczniku, ale z dokumentowanymi wymianami oleju co 15 000 km, to lepszy wybór niż egzemplarz z 150 000 km bez żadnych rachunków. Sprawdź też zużycie wnętrza – podłoga ładowni, stopnie wejściowe i stan fotela kierowcy powiedzą Ci więcej o historii eksploatacji niż licznik.
 {{% /expert %}}
-
-![Renault Trafic III furgon L2H2](/images/renault-trafic-hero.jpg)

@@ -46,6 +46,8 @@ Pełne dane techniczne na stronie [Renault Trafic](/modele/renault-trafic/).
 Wyższa zabudowa L2H2 daje 8,9 m³ przestrzeni, ale waży więcej. Efekt: ładowność spada z 1251 kg do 1086 kg. Przy towarach objętościowych (meble tapicerowane, sprzęt AGD) L2H2 wygrywa. Przy towarach ciężkich (materiały budowlane, maszyny) L2H1 pozwoli ci zabrać więcej kilogramów bez przekroczenia DMC.
 {{% /info %}}
 
+![Renault Trafic Long L2H1 furgon](/images/renault-trafic-long-hero.jpg)
+
 ## Wersje Long: furgon i osobowy {#wersje}
 
 Trafic L2 dostępny jest w dwóch wersjach nadwozia. [Furgon](/modele/renault-trafic/dostawczy/) przeznaczony do transportu towarów, wersja [osobowa (Passenger)](/modele/renault-trafic/osobowy/) – do przewozu do 9 osób. Jeśli rozważasz adaptację na busa turystycznego lub shuttle, wersja osobowa ma fabrycznie wzmocnioną podłogę i mocowania siedzeń zgodne z homologacją.
@@ -68,5 +70,3 @@ Do 2019 roku Trafic oferowany był z silnikiem [1.6 dCi](/modele/renault-trafic/
 {{% expert name="Kowalczyk" %}}
 Przy L2H2 z pełnym załadunkiem nie schodzę poniżej 2.0 dCi 145 KM. Wersja 120 KM sprawdza się w L2H1 przy trasach krajowych, ale na autostradzie z 1000 kg towaru robi się nerwowo – szczególnie przy wyprzedzaniu. Stary 1.6 dCi miał problemy z układem EGR po 200 tys. km, na 2.0 dCi jeszcze nie widzę systemowych usterek, ale silnik jest relatywnie świeży. Przed zakupem używanego 1.6 dCi sprawdź historię serwisową EGR i DPF.
 {{% /expert %}}
-
-![Renault Trafic Long L2H1 furgon](/images/renault-trafic-long-hero.jpg)

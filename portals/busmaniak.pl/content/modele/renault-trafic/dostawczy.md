@@ -58,6 +58,8 @@ DMC Trafic dostawczego wynosi 2720–3100 kg zależnie od wersji silnikowej i wy
 
 ---
 
+![Renault Trafic III furgon dostawczy](/images/renault-trafic-dostawczy-hero.jpg)
+
 ## Drzwi i dostęp do ładowni
 
 Trafic furgon ma drzwi boczne przesuwne – w standardzie z prawej strony, opcjonalnie też z lewej. Otwór boczny pozwala wjechać wózkiem paletowym (wysokość progu ok. 540 mm od podłoża). Tylne drzwi dwuskrzydłowe otwierają się pod kątem 270°, co przy załadunku przy rampie jest sporą zaletą – skrzydła można przypiąć do boku nadwozia i mieć pełny dostęp bez blokowania przestrzeni.
@@ -125,5 +127,3 @@ Trafic sprawdza się jako klasyczny furgon dzienny – dystrybutor artykułów s
 Zużycie paliwa w rzeczywistych warunkach: L2H2 z ładunkiem 800 kg, trasa mieszana – ok. 8,5–10 l/100 km przy 2.0 dCi, ok. 9–11 l/100 km przy 1.6 dCi (silnik bardziej obciążony).
 
 ---
-
-![Renault Trafic III furgon dostawczy](/images/renault-trafic-dostawczy-hero.jpg)
