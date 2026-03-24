@@ -1,4 +1,9 @@
-{{/* Expert insight box – usage: {{% expert name="Tomasz Zieliński" %}}Treść opinii{{% /expert %}} */}}
+{{/* Expert insight box – usage: {{% expert name="Kowalczyk" %}}Treść{{% /expert %}} */}}
+{{ $name := .Params.name | default "Ekspert" }}
+{{ $fullName := $name }}
+{{ if eq $name "Kowalczyk" }}{{ $fullName = "Marek Kowalczyk" }}{{ end }}
+{{ if eq $name "Zieliński" }}{{ $fullName = "Tomasz Zieliński" }}{{ end }}
+{{ if eq $name "Wóźniak" }}{{ $fullName = "Anna Wóźniak" }}{{ end }}
 <div class="expert-box">
   <div class="expert-box__header">
     <div class="expert-box__icon">
@@ -6,7 +11,7 @@
     </div>
     <div>
       <span class="expert-box__label">Opinia eksperta</span>
-      <span class="expert-box__name">{{ .Params.name | default "Ekspert BusManiak" }}</span>
+      <span class="expert-box__name">{{ $fullName }}</span>
     </div>
   </div>
   <div class="expert-box__content">
