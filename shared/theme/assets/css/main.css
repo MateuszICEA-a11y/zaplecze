@@ -1363,7 +1363,7 @@ blockquote {
   color: rgba(255,255,255,.45);
 }
 
-.footer__col h4 {
+.footer__col-title {
   font-family: var(--f-body);
   font-size: .65rem;
   font-weight: 700;

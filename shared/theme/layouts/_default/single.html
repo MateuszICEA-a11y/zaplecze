@@ -160,10 +160,9 @@
     {{/* ═══ FAQ ═══ */}}
     {{ with .Params.faq }}
     <section class="faq">
-      <h2 class="faq__title">
-        <span class="material-symbols-outlined">help</span>
+      <div class="faq__title" role="heading" aria-level="2">
         Najczęściej zadawane pytania
-      </h2>
+      </div>
       {{ range . }}
       <div class="faq__item">
         <div class="faq__question">{{ .question }}</div>
@@ -207,7 +206,7 @@
   <div class="container">
     <div class="related-section__header">
       <div>
-        <h2 class="related-section__title">Powiązane artykuły</h2>
+        <div class="related-section__title">Powiązane artykuły</div>
         <div class="related-section__bar"></div>
       </div>
       <a href="{{ $section.Permalink }}" class="section__link">
@@ -229,7 +228,7 @@
           </div>
           {{ end }}
           <div class="related-card__body">
-            <h3 class="related-card__title">{{ .Params.h1 | default .Title }}</h3>
+            <div class="related-card__title">{{ .Params.h1 | default .Title }}</div>
             {{ with .Description }}
             <p class="related-card__excerpt">{{ . | truncate 100 }}</p>
             {{ end }}
