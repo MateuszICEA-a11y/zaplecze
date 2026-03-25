@@ -21,9 +21,6 @@ faq:
   - question: "Czy Renault Trafic osobowy jest dostępny z automatyczną skrzynią biegów?"
     answer: "Tak, 6-biegowy automat był dostępny z silnikami 2.0 dCi 145 KM i 170 KM, wprowadzonymi od 2019 roku."
 ---
-
-Renault Trafic osobowy – model opisany szczegółowo na Wikipedii – przewozi do 9 pasażerów w wersji L2 i od lat jest podstawą flotowego transportu pasażerskiego w segmencie VAN. To nie jest auto do jazdy rekreacyjnej – to narzędzie robocze z określonymi atutami i ograniczeniami.
-
 ## Wersje osobowe Renault Trafic {#wersje}
 
 Trafic III osobowy występuje w dwóch konfiguracjach różniących się nie tylko wyposażeniem, ale całą filozofią użytkowania.

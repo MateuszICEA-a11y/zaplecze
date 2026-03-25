@@ -21,11 +21,6 @@ faq:
   - question: "Jaka skrzynia biegów pasuje do Renault Trafic dCi?"
     answer: "Do silników 1.6 dCi montowana jest wyłącznie manualna skrzynia PF6. Automat EDC pojawił się dopiero od 2019 roku razem z silnikiem 2.0 dCi, w wersjach 145 i 170 KM."
 ---
-
-Renault Trafic dCi – opisany szczegółowo na Wikipedii – w generacji III to dwa odrębne silniki z różnym charakterem i innymi wymaganiami serwisowymi. Warto wiedzieć: 1.6 dCi z łańcuchem rozrządu to prostszy układ, ale wrażliwszy na kondycję wtryskiwaczy. 2.0 dCi daje więcej momentu i można go sparować z automatem, lecz pasek rozrządu to obowiązkowy wydatek co 120–150 tys. km.
-
----
-
 ## Silniki dCi w generacji Trafic III
 
 [Renault Trafic](/modele/renault-trafic/) od modelu rocznikowego 2014 był oferowany wyłącznie z silnikami wysokoprężnymi. Benzynowych wersji w tym segmencie rynku Renault nie wprowadzało.

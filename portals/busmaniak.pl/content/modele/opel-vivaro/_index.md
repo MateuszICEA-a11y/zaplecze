@@ -19,9 +19,6 @@ faq:
   - question: "Ile kosztuje nowy Opel Vivaro?"
     answer: "Ceny nowego Vivaro C furgon zaczynają się od ok. 120 000 zł netto za wersję 1.5 D 100 KM."
 ---
-
-[Opel Vivaro](https://pl.wikipedia.org/wiki/Opel_Vivaro) to jeden z najpopularniejszych dostawczaków segmentu średniego w Polsce. Od 2001 roku sama generacja A opuściła fabrykę w łącznej liczbie ponad 600 tysięcy egzemplarzy. Model zdobył tytuł International Van of the Year 2002 już w pierwszym roku produkcji.
-
 ## Historia i generacje
 
 Vivaro zadebiutował w 2001 roku jako efekt sojuszu Renault i General Motors. Przez ponad dwie dekady przeszedł trzy zmiany platformy, za każdym razem radykalnie zmieniając techniczną tożsamość:

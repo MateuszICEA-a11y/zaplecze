@@ -21,9 +21,6 @@ faq:
   - question: "Czy Renault Trafic i Opel Vivaro to to samo auto?"
     answer: "Tak – od Trafica II (2001) oba modele dzielą tę samą platformę i nadwozie. Różnice to logo, drobne elementy stylistyczne i opcje wyposażenia. Mechanicznie to identyczne pojazdy, co ułatwia dostępność części."
 ---
-
-[Renault Trafic](https://pl.wikipedia.org/wiki/Renault_Trafic) to solidny środek transportu dla firm, które potrzebują ładowności powyżej tony bez przepłacania za markę. W segmencie średnich dostawczaków od lat utrzymuje się w czołówce sprzedaży – nie dlatego, że jest najlepszy pod każdym względem, ale dlatego, że rzadko zawodzi w codziennej robocie. Łączna produkcja przekroczyła 2,4 mln sztuk we wszystkich generacjach, co czyni go jednym z najlepiej sprzedających się dostawczaków w historii europejskiego rynku.
-
 ## Historia i generacje
 
 Trafic pojawił się w 1980 roku jako własna konstrukcja Renault – zaprojektowana z myślą o europejskim rynku komercyjnym. Model był od początku bardziej pragmatyczny niż efektowny, co okazało się jego największą zaletą w eksploatacji.

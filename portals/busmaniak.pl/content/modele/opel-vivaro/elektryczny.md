@@ -18,9 +18,6 @@ faq:
   - question: "Czy Vivaro-e nadaje się do dostawek w mieście?"
     answer: "Tak – wersja 50 kWh wystarczy przy bazie do 100 km od ładowarki, wersja 75 kWh obsługuje też trasy podmiejskie."
 ---
-
-[Opel Vivaro-e](/modele/opel-vivaro/) to elektryczna wersja Vivaro C – ta sama kabina, ta sama przestrzeń ładunkowa, zero emisji. Dostępny jako furgon i osobowy Life.
-
 ## Dane techniczne Vivaro-e
 
 - **Silnik elektryczny** – 136 KM (100 kW), 260 Nm

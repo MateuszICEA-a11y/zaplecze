@@ -18,9 +18,6 @@ faq:
   - question: "Czy Vivaro Long wymaga prawa jazdy C?"
     answer: "Nie – DMC do 3100 kg mieści się w kategorii B."
 ---
-
-[Opel Vivaro](/modele/opel-vivaro/) Long to wersja o przedłużonej przestrzeni ładunkowej – te 350 dodatkowych milimetrów robi realną różnicę przy transporcie długich ładunków.
-
 ## Wymiary zewnętrzne i ładownia
 
 Vivaro C Long:

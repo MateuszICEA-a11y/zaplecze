@@ -18,9 +18,6 @@ faq:
   - question: "Czy Vivaro dostawczy ma skrzynię automatyczną?"
     answer: "Tak – Vivaro C dostępny jest z 8-biegową przekładnią automatyczną Aisin przy silnikach 2.0 D 145 i 177 KM."
 ---
-
-[Opel Vivaro](/modele/opel-vivaro/) dostawczy – furgon – to najważniejsza wersja w gamie. Bezpośrednia konkurencja dla Forda Transit Custom i Volkswagena Transportera.
-
 ## Wersje furgonu
 
 Vivaro furgon występuje w dwóch długościach:

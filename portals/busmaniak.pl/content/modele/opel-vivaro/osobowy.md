@@ -18,9 +18,6 @@ faq:
   - question: "Czy Vivaro osobowy wymaga specjalnego ubezpieczenia?"
     answer: "Vivaro z 9 miejscami homologowany jako autobus (kategoria M2) może wymagać innych stawek OC. Sprawdź kategorię w dowodzie rejestracyjnym."
 ---
-
-Vivaro osobowy to segment, w którym jeden model gra dwie role – tani bus do przewozu grup i komfortowy minivan. [Opel Vivaro](/modele/opel-vivaro/) C wprowadził nazwę Life, żeby tę granicę wyraźniej zaznaczyć.
-
 ## Wersje osobowe – Combi i Life
 
 **Vivaro Combi** – wersja z minimalnym prestiżem: kilka rzędów siedzeń, podstawowe wykończenie. Praktyczny wybór dla firm przewozowych, szkół i służb komunalnych. Dostępna od generacji A.

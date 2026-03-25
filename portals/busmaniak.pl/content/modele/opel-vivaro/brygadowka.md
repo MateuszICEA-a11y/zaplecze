@@ -18,9 +18,6 @@ faq:
   - question: "Czy Vivaro brygadówka to fabryczna wersja?"
     answer: "Vivaro oferowany jest fabrycznie jako Combi (6 miejsc), ale typowa brygadówka z otwartą skrzynią to często zabudowa zewnętrzna na podwoziu."
 ---
-
-Vivaro brygadówka – czyli wersja dla ekipy – to układ, w którym auto wiezie zarówno ludzi, jak i sprzęt. Dwie różne konfiguracje, różne kompromisy.
-
 ## Co to jest brygadówka?
 
 W branży transportowej terminem „brygadówka" określa się samochód dostawczy z podwójną kabiną lub skonfigurowany tak, by zabrać 5–6 osób i zachować użyteczną przestrzeń ładunkową. [Opel Vivaro](/modele/opel-vivaro/) w tej roli pojawia się w kilku formach:
