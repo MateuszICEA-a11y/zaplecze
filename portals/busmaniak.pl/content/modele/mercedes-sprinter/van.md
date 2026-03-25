@@ -18,10 +18,8 @@ faq:
     answer: "Najdłuższa wersja L4 oferuje ok. 4,32 m długości przestrzeni ładunkowej przy pojemności do 17 m³. Szerokość między nadkolami to 1125 mm, szerokość max 1780 mm."
   - question: "Jaki silnik do Mercedes Sprinter Van wybrać?"
     answer: "Do codziennej logistyki miejskiej i regionalnej optymalny jest OM654 2.0 CDI 143 KM z przekładnią 9G-Tronic. Wersja 170 KM opłaca się przy stałym jeździe autostradowej lub dużych ładunkach powyżej 1500 kg."
+lead: "Mercedes Sprinter Van to najczęściej szukana wersja Sprinter w Polsce – i nieprzypadkowo. Furgon dostawczy w układach L1–L4 i H1–H3 pokrywa potrzeby od kurierów po logistykę paletową. Ładowność sięga 2100 kg, pojemność skrzyni – 17 m³."
 ---
-
-[Mercedes Sprinter Van](/modele/mercedes-sprinter/) to najczęściej szukana wersja Sprinter w Polsce – i nieprzypadkowo. Furgon dostawczy w układach L1–L4 i H1–H3 pokrywa potrzeby od kurierów po logistykę paletową. Ładowność sięga 2100 kg, pojemność skrzyni – 17 m³. Poniżej znajdziesz wszystkie liczby, które mają znaczenie przy zakupie.
-
 ## Wersje nadwoziowe – długość i wysokość
 
 Sprinter Van produkowany jest w czterech długościach (L1–L4) i trzech wysokościach dachu (H1–H3). Kombinacja decyduje o pojemności i dopuszczalnej ładowności.

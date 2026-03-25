@@ -18,10 +18,8 @@ faq:
     answer: "Wersje do 3,5 t to kat. B. Powyżej 3,5 t – kat. C1 (do 7,5 t DMC). Większość użytkowników zawodowych wybiera konfiguracje 5,0–7,2 t."
   - question: "Jak długo trwa realizacja zabudowy plandeki na Daily?"
     answer: "Zazwyczaj 6–10 tygodni od dostarczenia podwozia do firmy zabudowującej. Terminy mogą się wydłużyć przy niestandardowych wymiarach."
+lead: "Iveco Daily z zabudową plandekową to jeden z najchętniej wybieranych wariantów w branży meblarskiej, kurierskiej i budowlanej. Trójstronny dostęp do ładunku skraca czas rozładunku do minimum – nie musisz przenosić towaru z głębi skrzyni, bo burtę możesz otworzyć z każdej strony."
 ---
-
-[Iveco Daily](/modele/iveco-daily/) z zabudową plandekową to jeden z najchętniej wybieranych wariantów w branży meblarskiej, kurierskiej i budowlanej. Trójstronny dostęp do ładunku skraca czas rozładunku do minimum – nie musisz przenosić towaru z głębi skrzyni, bo burtę możesz otworzyć z każdej strony.
-
 ## Zabudowa plandekowa – co to znaczy w praktyce
 
 Plandeka na podwoziu Daily to stalowa lub aluminiowa rama z plandeką PVC rozpiętą na łukach. Tylna klapa otwierana na zawiasach lub klapa przesuwna, burty boczne opuszczane lub zdejmowane. Łączna pojemność ładunkowa przy skrzyni o wymiarach 4,3 × 2,1 × 2,1 m wynosi ponad 19 m³.

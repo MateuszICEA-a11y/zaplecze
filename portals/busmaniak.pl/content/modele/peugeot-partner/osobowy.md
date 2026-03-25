@@ -15,10 +15,8 @@ faq:
     answer: "Rifter (od 2018) stoi na nowej platformie EMP2 i jest znacznie nowocześniejszy. Lepsze bezpieczeństwo (5 gwiazdek Euro NCAP), nowe silniki PSA, cyfrowe wskaźniki i systemy ADAS. Tepee to starsza platforma M49 z silnikami THP/HDi pierwszej generacji."
   - question: "Czy do Peugeot Riftera można domówić 7 miejsc?"
     answer: "Tak – Rifter w wersji Long (L2) oferuje opcjonalny trzeci rząd siedzeń dla 2 osób. Wersja 7-miejscowa wymaga Riftera Long z pakietem siedzeń rzędu 3. W krótszej wersji bazowej dostępnych jest 5 miejsc."
+lead: "Peugeot Partner w wersji osobowej przeszedł w 2018 roku znaczącą zmianę – model Partner Tepee (generacja II, platforma M49) zastąpił Rifter na nowej platformie EMP2. Obie generacje cieszy się popularnością na rynku wtórnym, dlatego warto wiedzieć, czego szukać w każdej z nich."
 ---
-
-[Peugeot Partner](/modele/peugeot-partner/) w wersji osobowej przeszedł w 2018 roku znaczącą zmianę – model Partner Tepee (generacja II, platforma M49) zastąpił Rifter na nowej platformie EMP2. Obie generacje cieszy się popularnością na rynku wtórnym, dlatego warto wiedzieć, czego szukać w każdej z nich.
-
 ## Partner Tepee – generacja II (2008–2018)
 
 Partner Tepee to osobowy van o bardzo praktycznym układzie – wysoki dach, szklana panoramiczna płyta w dachu (modular), składane tylne siedzenia. Dostępny w wersjach 5 i 7 miejsc (tylko w wersji Long Tepee).

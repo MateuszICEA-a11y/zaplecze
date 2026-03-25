@@ -15,10 +15,8 @@ faq:
     answer: "e-Combo obsługuje ładowanie AC do 11 kW (opcja, standard 7,4 kW) oraz DC do 100 kW przez CCS. Ładowanie DC od 20% do 80% zajmuje ok. 30 minut. Pełne ładowanie AC (7,4 kW) zajmuje ok. 7 godzin."
   - question: "Czy e-Combo opłaca się jako firmowy dostawczak?"
     answer: "Przy bazowaniu pojazdu przy ładowarce nocnej i dziennym przebiegu do 150 km – tak. Koszt energii na 100 km (ok. 18 kWh) przy taryfie nocnej to ok. 10–12 zł wobec 27–35 zł paliwa w 1.5 D. Przy braku własnej ładowarki opłacalność spada."
+lead: "Opel e-Combo to elektryczna wersja Combo E na platformie PSA EMP2 – ten sam układ jezdny, te same wymiary, inna jednostka napędowa. Silnik elektryczny 136 KM zastępuje cały układ spalinowy, bateria 50 kWh montowana jest pod podłogą (bez ingerencji w przestrzeń ładunkową)."
 ---
-
-[Opel e-Combo](/modele/opel-combo/) to elektryczna wersja Combo E na platformie PSA EMP2 – ten sam układ jezdny, te same wymiary, inna jednostka napędowa. Silnik elektryczny 136 KM zastępuje cały układ spalinowy, bateria 50 kWh montowana jest pod podłogą (bez ingerencji w przestrzeń ładunkową).
-
 ## Napęd i osiągi
 
 Silnik elektryczny e-Combo:

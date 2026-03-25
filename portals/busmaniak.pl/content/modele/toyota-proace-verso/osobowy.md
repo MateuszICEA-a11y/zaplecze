@@ -18,10 +18,8 @@ faq:
     answer: "Verso to homologacja M1 – samochód osobowy. Wersja dostawcza nosi nazwę Toyota Proace (bez Verso). Obydwie bazują na tym samym nadwoziu, ale różnią się wyposażeniem kabiny."
   - question: "Czym różni się Proace Verso Shuttle od VIP?"
     answer: "Shuttle to linia podstawowa – standardowe fotele tkaninowe, podstawowe multimedia, klimatyzacja manualna. VIP oferuje skórzane fotele z podgrzewaniem, oddzielną strefową klimatyzację dla pasażerów, rolety boczne i elektrycznie sterowaną klapę tylną."
+lead: "Toyota Proace Verso w wersji VIP z 8 miejscami i pełnym pakietem wyposażenia to alternatywa dla Mercedes-Benz V-Klasy w cenie o ok. 80 000–100 000 zł niższej. Shuttle startuje od ok. 175 000 zł i trafia do firm, które potrzebują dużego, niezawodnego vana bez luksusu."
 ---
-
-Toyota Proace Verso w wersji VIP z 8 miejscami i pełnym pakietem wyposażenia to alternatywa dla Mercedes-Benz V-Klasy w cenie o ok. 80 000–100 000 zł niższej. Shuttle startuje od ok. 175 000 zł i trafia do firm, które potrzebują dużego, niezawodnego vana bez luksusu.
-
 ## Czym jest Toyota Proace Verso
 
 [Toyota Proace Verso](/modele/toyota-proace-verso/) to duży van osobowy klasy C (długość powyżej 4,9 m). Jest to wersja osobowa (M1) modelu Proace – identyczne nadwozie, ale z kompletnym wykończeniem kabiny pasażerskiej, pełnym przeszkleniem i fotelami dla wszystkich pasażerów.

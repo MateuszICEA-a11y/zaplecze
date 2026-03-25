@@ -18,10 +18,8 @@ faq:
     answer: "Standardowa konfiguracja Tourneo to 8 lub 9 miejsc łącznie z kierowcą. Układ siedzeń to zazwyczaj 2+2+3 lub 3+3+kierowca. Wszystkie rzędy są wyposażone w pasy bezpieczeństwa i zagłówki."
   - question: "Jakie wyposażenie oferuje wersja Titanium Ford Transit Tourneo?"
     answer: "Wersja Titanium to najwyższe wyposażenie seryjne – obejmuje skórzaną tapicerkę, podgrzewane fotele przednie i tylne, 8-calowy ekran SYNC 4, kamerę cofania 180°, adaptacyjny tempomat i 17-calowe alufelgi. Cena katalogowa przekracza 200 000 zł."
+lead: "Ford Transit osobowy – czyli Tourneo – to pojazd zaprojektowany z myślą o pasażerach, nie o ładunku. Bogato wyposażone wnętrze, niski poziom hałasu i komfortowe fotele odróżniają go od Kombi i Van. Jeśli szukasz busa dla rodziny, firmy lub na wynajem – to właśnie ta wersja."
 ---
-
-[Ford Transit](/modele/ford-transit/) osobowy – czyli Tourneo – to pojazd zaprojektowany z myślą o pasażerach, nie o ładunku. Bogato wyposażone wnętrze, niski poziom hałasu i komfortowe fotele odróżniają go od Kombi i Van. Jeśli szukasz busa dla rodziny, firmy lub na wynajem – to właśnie ta wersja.
-
 ## Tourneo Custom vs Transit Tourneo – dwa różne pojazdy
 
 Warto od razu rozdzielić dwa modele, które bywają mylone:

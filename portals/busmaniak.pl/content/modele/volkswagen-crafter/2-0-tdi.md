@@ -15,10 +15,8 @@ faq:
     answer: "Przy regularnym serwisie (wymiana oleju co 30 000 km lub 2 lata) silnik 2.0 TDI wytrzymuje 400 000–500 000 km bez remontu. Kluczowe jest unikanie krótkich tras przy zimnym silniku i regularne oczyszczanie EGR."
   - question: "Czy 2.0 TDI w Crafterze wymaga AdBlue?"
     answer: "Tak – Crafter II z silnikiem 2.0 TDI (Euro 6d) wymaga AdBlue do układu SCR. Pojemność zbiornika to ok. 25 l. Uzupełnianie co 10 000–15 000 km. Ignorowanie ostrzeżenia o niskim poziomie AdBlue spowoduje ograniczenie mocy przez ECU."
+lead: "Silnik 2.0 TDI w VW Crafterze II to czterocylindrowy diesel o pojemności 1968 cm³, dostępny w trzech wariantach mocy: 102, 140 i 177 KM. To ten sam agregat stosowany w wielu modelach grupy VW (Transporter, Crafter, MAN TGE), znany z dobrej trwałości przy właściwym serwisie."
 ---
-
-Silnik 2.0 TDI w [VW Crafterze](/modele/volkswagen-crafter/) II to czterocylindrowy diesel o pojemności 1968 cm³, dostępny w trzech wariantach mocy: 102, 140 i 177 KM. To ten sam agregat stosowany w wielu modelach grupy VW (Transporter, Crafter, MAN TGE), znany z dobrej trwałości przy właściwym serwisie. Stosowany w pojazdach o DMC od 3,5 do 5 t.
-
 ## Dane techniczne 2.0 TDI 140 KM
 
 Parametry silnika:

@@ -18,10 +18,8 @@ faq:
     answer: "W standardowej konfiguracji Proace Long mieści 3 europalety (1200x800 mm), podczas gdy wersja Medium pomieści tylko 2."
   - question: "Jaka jest ładowność Toyota Proace Long?"
     answer: "Ładowność Proace Long wynosi do 1400 kg, zależnie od wersji silnikowej i wyposażenia."
+lead: "Toyota Proace Long to wersja o długości 5309 mm z ładownią 6,1 m³ – wybór dla firm, które potrzebują zmieścić 3 europalety i nie chcą kompromisów w ładowności. Jeśli zastanawiasz się, czy Long jest dla ciebie, poniżej znajdziesz konkretne dane, nie foldery reklamowe."
 ---
-
-[Toyota Proace](/modele/toyota-proace/) Long to wersja o długości 5309 mm z ładownią 6,1 m³ – wybór dla firm, które potrzebują zmieścić 3 europalety i nie chcą kompromisów w ładowności. Jeśli zastanawiasz się, czy Long jest dla ciebie, poniżej znajdziesz konkretne dane, nie foldery reklamowe.
-
 ## Wymiary Toyota Proace Long
 
 Proace Long wychodzi z fabryki w Valenciennes we Francji (Stellantis) w dokładnie takich gabarytach:

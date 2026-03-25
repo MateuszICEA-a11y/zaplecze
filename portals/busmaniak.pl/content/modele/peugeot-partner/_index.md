@@ -15,10 +15,8 @@ faq:
     answer: "e-Partner z baterią 50 kWh ma zasięg WLTP do 275 km. W warunkach miejskich z pełnym załadunkiem realny zasięg to 190–220 km, zimą ok. 150–160 km."
   - question: "Czy Partner III mieści dwie europalety?"
     answer: "Tak – wersja Long (L2, 4753 mm) z przestrzenią ładunkową 4,4 m³ mieści 2 palety EUR 1200x800 mm ułożone wzdłuż, przy szerokości między nadkolami 1225 mm. Wersja Short (L1) mieści tylko jedną paletę."
+lead: "Peugeot Partner III (od 2018 roku) to kompaktowy van dostawczy segmentu N1, zbudowany na platformie PSA EMP2 razem z Citroënem Berlingo III i Oplem Combo E. W Polsce należy do trójki najczęściej wybieranych kompaktowych dostawczaków – obok Renault Kangoo i Volkswagena Caddy."
 ---
-
-[Peugeot Partner](https://pl.wikipedia.org/wiki/Peugeot_Partner) III (od 2018 roku) to kompaktowy van dostawczy segmentu N1, zbudowany na platformie PSA EMP2 razem z Citroënem Berlingo III i Oplem Combo E. W Polsce należy do trójki najczęściej wybieranych kompaktowych dostawczaków – obok Renault Kangoo i Volkswagena Caddy.
-
 ## Platforma i historia modelu
 
 Partner III zastąpił modele Partner II (B9, 2008–2018) i Partner Tepee jako wersję osobową. W 2018 roku wersja osobowa zyskała własną nazwę – Peugeot Rifter – i osobny projekt nadwozia. Partner III pozostał jako nazwa wyłącznie dla wariantów dostawczych (N1) i wersji z kratką (M1 do celów firmowych).

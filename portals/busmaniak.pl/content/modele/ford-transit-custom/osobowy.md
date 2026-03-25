@@ -15,10 +15,8 @@ faq:
     answer: "Tourneo Custom to wersja osobowa (M1 lub M2) Transit Custom – z szybami w bocznych ścianach, fotelami tapicerowanymi i wyposażeniem pasażerskim (klimatyzacja tylna, oświetlenie, ogrzewanie, audio). Transit Custom Van to dostawczy N1 z blachą zamiast szyb."
   - question: "Czy Ford Tourneo Custom jest dostępny jako hybrid?"
     answer: "Tak – Tourneo Custom gen II (od 2024) dostępny jest w wersji plug-in hybrid (PHEV) z silnikiem benzynowym 2.5 Duratec + elektrycznym, łącznie 233 KM. Zasięg elektryczny WLTP: do 59 km. Wersja PHEV ładuje się przez złącze Type 2 do 3,7 kW."
+lead: "Ford Tourneo Custom to osobowa wersja Transit Custom – van rodzinny lub biznesowy do przewozu do 9 osób. W Polsce sprzedawany jest głównie jako pojazd firmowy do przewozu pracowników, bus lotniskowy lub luksusowy minivan rodzinny."
 ---
-
-Ford Tourneo Custom to osobowa wersja [Transit Custom](/modele/ford-transit-custom/) – van rodzinny lub biznesowy do przewozu do 9 osób. W Polsce sprzedawany jest głównie jako pojazd firmowy do przewozu pracowników, bus lotniskowy lub luksusowy minivan rodzinny. Generacja II (od 2024) znacznie unowocześniła technologię i ofertę napędową.
-
 ## Tourneo Custom Gen I (2012–2023)
 
 Tourneo Custom gen I to rozwinięcie Transit Custom Van z tapicerowanym wnętrzem i trzema rzędami siedzeń. Wyposażenie w zależności od wersji:

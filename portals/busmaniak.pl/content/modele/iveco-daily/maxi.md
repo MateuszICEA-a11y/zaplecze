@@ -18,10 +18,8 @@ faq:
     answer: "6 europalety w jednej warstwie – wymiary przestrzeni ładunkowej pozwalają na układ 3×2. Przy dwuwarstwowym załadunku lekkich towarów pojemność jest jeszcze wyższa."
   - question: "Jaka jest długość Iveco Daily Maxi?"
     answer: "Całkowita długość nadwozia wynosi 7 170 mm. Długość przestrzeni ładunkowej to ok. 4 750 mm, szerokość 1 870 mm, wysokość 1 900 mm (wersja H2)."
+lead: "Iveco Daily Maxi to rekord, który od lat nie ma rywali: 19,6 m³ pojemności przy DMC 3,5 t oznacza, że możesz przewozić sześć europalety i wciąż nie potrzebujesz prawa jazdy na ciężarówkę."
 ---
-
-[Iveco Daily](/modele/iveco-daily/) Maxi to rekord, który od lat nie ma rywali: 19,6 m³ pojemności przy DMC 3,5 t oznacza, że możesz przewozić sześć europalety i wciąż nie potrzebujesz prawa jazdy na ciężarówkę. Żaden konkurent – ani Mercedes Sprinter, ani Volkswagen Crafter – nie oferuje takiej przestrzeni przy tej samej masie całkowitej.
-
 ## Wymiary, które robią różnicę
 
 Daily Maxi to podwozie Extra Long w wersji High Roof – kombinacja L4H2. Całkowita długość pojazdu wynosi 7 170 mm, co przekracza wymiary standardowego miejsca parkingowego.

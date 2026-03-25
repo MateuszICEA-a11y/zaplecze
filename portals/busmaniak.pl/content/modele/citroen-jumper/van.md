@@ -15,10 +15,8 @@ faq:
     answer: "Jumper L2H2 oferuje 13 m³ przestrzeni ładunkowej. Długość podłogi: 2977 mm, szerokość między nadkolami: 1422 mm, wysokość: 1932 mm. Ładowność: ok. 1400 kg."
   - question: "Czy ë-Jumper elektryczny ma taką samą przestrzeń co diesel?"
     answer: "Tak – ë-Jumper zachowuje identyczną przestrzeń ładunkową co wersja spalinowa Jumpera Van. Bateria montowana jest pod podłogą, bez ingerencji w przestrzeń ładowni. Ładowność jest nieco niższa – ok. 1060 kg (L2H2, bateria 75 kWh) wobec ok. 1400 kg w dieslu."
+lead: "Citroën Jumper Van to zamknięta przestrzeń ładunkowa do intensywnej eksploatacji dostawczej. Identyczny technicznie z Peugeot Boxer Van i Fiat Ducato Van – decyzja między markami to kwestia serwisu, ceny i preferencji dealerskich."
 ---
-
-**[Citroën Jumper](/modele/citroen-jumper/)** Van to zamknięta przestrzeń ładunkowa do intensywnej eksploatacji dostawczej. Identyczny technicznie z Peugeot Boxer Van i Fiat Ducato Van – decyzja między markami to kwestia serwisu, ceny i preferencji dealerskich.
-
 ## Konfiguracje i wymiary przestrzeni ładunkowej
 
 Jumper Van jest produkowany w pięciu konfiguracjach:

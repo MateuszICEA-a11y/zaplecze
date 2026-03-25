@@ -15,10 +15,8 @@ faq:
     answer: "Boxer L3H2 (15 m³) mieści 4 palety EUR 1200x800 mm ułożone wzdłuż lub 3 palety ułożone poprzecznie. Boxer L4H3 (17 m³) jest w stanie przyjąć 5 palet. Konfiguracja zależy od zabudowy i rodzaju podłogi."
   - question: "Jaka jest maksymalna ładowność Peugeot Boxera Van?"
     answer: "Maksymalna ładowność Boxera Van zależy od wersji. L1H1: ok. 1100 kg. L2H2: ok. 1400 kg. L3H2: ok. 1500 kg. L4H3 z DMC 4t (wersja 3.5t+ z derogacją): do 1735 kg. Przy DMC standardowym 3,5 t i masie własnej ok. 1760 kg ładowność L3H2 wynosi ok. 1450 kg."
+lead: "Peugeot Boxer Van to podstawowa wersja nadwoziowa Boxera III – zamknięta przestrzeń ładunkowa z dostępem przez tylne drzwi dwuskrzydłowe i opcjonalnie przesuwane drzwi boczne. To pojazd dla firm wymagających maksymalnej przestrzeni przy DMC do 3,5 t."
 ---
-
-[Peugeot Boxer](/modele/peugeot-boxer/) Van to podstawowa wersja nadwoziowa Boxera III – zamknięta przestrzeń ładunkowa z dostępem przez tylne drzwi dwuskrzydłowe i opcjonalnie przesuwane drzwi boczne. To pojazd dla firm wymagających maksymalnej przestrzeni przy DMC do 3,5 t.
-
 ## Konfiguracje i wymiary przestrzeni ładunkowej
 
 Boxer Van jest produkowany w pięciu wariantach objętości:

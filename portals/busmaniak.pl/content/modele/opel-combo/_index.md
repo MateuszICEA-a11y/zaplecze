@@ -15,10 +15,8 @@ faq:
     answer: "W wersji benzynowej dostępny jest 1.2 PureTech w wersjach 110 i 130 KM. Diesel to 1.5 BlueHDi 75, 100 i 130 KM. Wersja elektryczna e-Combo oferuje 136 KM i zasięg do 280 km (WLTP)."
   - question: "Co to jest Opel Combo Life?"
     answer: "Combo Life to wersja osobowa z przeszklonymi tylnymi bokami, rozkładaną kanapą i opcją siedmiu miejsc. Odpowiada Berlingo Multispace lub Peugeot Rifterowi i jest sprzedawana jako kompaktowy van rodzinny."
+lead: "Opel Combo E (od 2018) to pojazd z platformy PSA EMP2 – tej samej, którą dzieli z Citroënem Berlingo III i Peugeot Partnerem III. To oznacza jedną istotną rzecz praktyczną: serwis, części zamienne i mechanika są wspólne dla całej trójki."
 ---
-
-[Opel Combo](https://pl.wikipedia.org/wiki/Opel_Combo) E (od 2018) to pojazd z platformy PSA EMP2 – tej samej, którą dzieli z Citroënem Berlingo III i Peugeot Partnerem III. To oznacza jedną istotną rzecz praktyczną: serwis, części zamienne i mechanika są wspólne dla całej trójki.
-
 ## Skąd pochodzi nowe Combo
 
 Przed 2018 rokiem Combo było produktem GM na platformie Corsy. Po przejęciu Opla przez grupę PSA (dziś Stellantis) czwarta generacja modelu powstała na platformie EMP2 razem z bliźniaczymi modelami z Sochaux i Vigo. Z zewnątrz Combo różni się nadwoziem i detalami – pod blachą to ten sam samochód.

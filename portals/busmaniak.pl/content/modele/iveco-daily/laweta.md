@@ -18,10 +18,8 @@ faq:
     answer: "Standardowe zabudowy mają platformę 5,0–6,0 m. Dłuższe konfiguracje wymagają podwozia Long lub Extra Long i klasy C1."
   - question: "Czy Iveco Daily laweta może przewozić 2 auta jednocześnie?"
     answer: "Tak, przy DMC 7,2 t i dwupoziomowym systemie załadunku – tzw. piętrus. Wymaga to osobnej homologacji zabudowy i odpowiedniego agregatu hamulcowego."
+lead: "Iveco Daily to jedyny van segmentu N2, który jako laweta mieści się w granicach kategorii C1 przy DMC do 7,2 t – żaden konkurent nie oferuje takiego zakresu DMC w tej klasie pojazdów."
 ---
-
-[Iveco Daily](/modele/iveco-daily/) to jedyny van segmentu N2, który jako laweta mieści się w granicach kategorii C1 przy DMC do 7,2 t – żaden konkurent nie oferuje takiego zakresu DMC w tej klasie pojazdów. Jeśli szukasz lawety do przewozu osobówek lub maszyn budowlanych bez wchodzenia w klasę ciężarówek, Daily jest jedyną sensowną odpowiedzią.
-
 ## DMC i kategoria prawa jazdy
 
 Daily jako laweta dostępny jest w wariantach DMC 3,5 t, 5,0 t, 6,0 t i 7,2 t. Wersja 3,5 t to kategoria B – ale przy zabudowie lawety masa własna pochłania sporą część DMC, więc ładowność netto wynosi zwykle 800–1 000 kg. Mało.

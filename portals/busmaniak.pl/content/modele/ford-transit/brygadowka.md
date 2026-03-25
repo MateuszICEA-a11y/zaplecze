@@ -18,10 +18,8 @@ faq:
     answer: "Ładowność wersji Double Cab wynosi zazwyczaj 800–1200 kg przy DMC 3,5 t, zależnie od konfiguracji napędu i wersji silnikowej. Przestrzeń ładunkowa za przegrodą ma pojemność ok. 6–8 m³ w zależności od długości nadwozia."
   - question: "Czy Ford Transit brygadówka to samochód osobowy czy dostawczy?"
     answer: "Ford Transit Double Cab ma homologację N1 – pojazd ciężarowy o DMC do 3,5 t. Umożliwia to pełne odliczenie VAT i amortyzację jako środka trwałego. Nie jest klasyfikowany jako osobowy (M1), co ma znaczenie podatkowo dla firm."
+lead: "Ford Transit brygadówka – w katalogach Forda określany jako Double Cab – to pojazd zaprojektowany dla ekip serwisowych i budowlanych. Łączy miejsce dla 5–7 ludzi z oddzieloną przestrzenią na narzędzia i materiały. Jedno auto zamiast dwóch."
 ---
-
-[Ford Transit](/modele/ford-transit/) brygadówka – w katalogach Forda określany jako Double Cab – to pojazd zaprojektowany dla ekip serwisowych i budowlanych. Łączy miejsce dla 5–7 ludzi z oddzieloną przestrzenią na narzędzia i materiały. Jedno auto zamiast dwóch.
-
 ## Co to jest Double Cab i jak jest zbudowany?
 
 Wersja Double Cab to Transit z podwójną kabiną. Przednia część nadwozia mieści dwa rzędy siedzeń rozdzielone standardową przestrzenią między nimi. Tylna część – za stalową lub siatkową przegrodą – to przestrzeń ładunkowa dostępna przez tylne drzwi.

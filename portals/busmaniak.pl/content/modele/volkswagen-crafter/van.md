@@ -15,10 +15,8 @@ faq:
     answer: "Crafter L4H3 mieści 6–7 palet EUR 1200x800 mm. Szerokość podłogi 1782 mm pozwala na układanie palet zarówno wzdłuż, jak i poprzecznie (przy rotacji 90°)."
   - question: "Czy VW Crafter Van wymaga prawa jazdy C?"
     answer: "Crafter w wersji N1 do 3,5 t DMC wymaga tylko prawa jazdy kat. B. Wersje z DMC 4 t i 5 t (kategoria N2) wymagają odpowiednio C1 i C. Przy zakupie nowego pojazdu zawsze warto potwierdzić kategorię DMC w zamówieniu."
+lead: "Volkswagen Crafter II Van to zamknięta przestrzeń ładunkowa z dostępem przez tylne drzwi dwuskrzydłowe i opcjonalne drzwi boczne."
 ---
-
-[Volkswagen Crafter](/modele/volkswagen-crafter/) II Van to zamknięta przestrzeń ładunkowa z dostępem przez tylne drzwi dwuskrzydłowe i opcjonalne drzwi boczne. Wyróżnia się na tle Boxera i Jumpera: wyższą jakością wykończenia kabiny, bogatszym standardem ADAS i unikalną ofertą napędu RWD i AWD, która otwiera możliwości niedostępne w Ducato/Boxer.
-
 ## Konfiguracje przestrzeni ładunkowej
 
 Crafter Van II jest dostępny w czterech podstawowych wariantach:

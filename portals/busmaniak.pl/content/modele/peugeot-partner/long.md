@@ -15,10 +15,8 @@ faq:
     answer: "Ładowność Partnera L2 wynosi do 1000 kg w wersji z silnikiem 1.5 BlueHDi 100 KM i manualną skrzynią 6-biegową. Z automatem EAT6 – ok. 900 kg. Wersja z 1.2 PureTech 130 KM + EAT8 oferuje 840 kg."
   - question: "Czy Partner Long mieści 2 europalety?"
     answer: "Tak, pod warunkiem ułożenia ich wzdłuż pojazdu. Szerokość między nadkolami wynosi 1225 mm, więc palety 800 mm mieszczą się swobodnie. Dwie palety zajmują ok. 2400 mm długości – mniej niż dostępne 1817 mm, jednak przy właściwym ich przesunięciu można załadować 2 palety pod warunkiem, że wysokość towaru nie przekroczy 1246 mm."
+lead: "Peugeot Partner III Long (L2) to wydłużona wersja kompaktowego vana o rozstawie osi 2975 mm. Rozróżnienie między Short (L1) a Long (L2) jest proste: Long o 350 mm dłuższy umożliwia załadunek towarów i narzędzi, które nie mieszczą się w wersji bazowej."
 ---
-
-[Peugeot Partner](/modele/peugeot-partner/) III Long (L2) to wydłużona wersja kompaktowego vana o rozstawie osi 2975 mm. Rozróżnienie między Short (L1) a Long (L2) jest proste: Long o 350 mm dłuższy umożliwia załadunek towarów i narzędzi, które nie mieszczą się w wersji bazowej.
-
 ## Wymiary kluczowe
 
 Dane przestrzeni ładunkowej Partner Long (Van L2):

@@ -18,10 +18,8 @@ faq:
     answer: "W wersji L3H2 mieszczą się 4 europalety (1200×800 mm) ustawione wzdłużnie. W L4H3 – do 5 europalet. Szerokość między nadkolami wynosi 1420 mm, co pozwala na ustawienie palet w jednym rzędzie."
   - question: "Czy Ford Transit L4 wymaga specjalnych uprawnień do prowadzenia?"
     answer: "Wersja L4 z DMC do 3500 kg wystarczy prawo jazdy kat. B. Wersje z DMC 4250 kg lub 4700 kg wymagają prawa jazdy kat. C1 (pojazdy 3501–7500 kg). Warto sprawdzić kartę pojazdu przed zakupem."
+lead: "Ford Transit Long to potoczna nazwa dla wersji L3 i L4 – dwóch najdłuższych konfiguracji nadwozia w gamie Transita. Wybór między nimi sprowadza się do jednego pytania: ile naprawdę potrzebujesz przestrzeni ładunkowej?"
 ---
-
-[Ford Transit](/modele/ford-transit/) Long to potoczna nazwa dla wersji L3 i L4 – dwóch najdłuższych konfiguracji nadwozia w gamie Transita. Wybór między nimi sprowadza się do jednego pytania: ile naprawdę potrzebujesz przestrzeni ładunkowej?
-
 ## Wymiary L3 i L4 – tabela porównawcza
 
 | Parametr | L3 | L4 |

@@ -18,10 +18,8 @@ faq:
     answer: "Tak, jeśli DMC nie przekracza 3,5 t. Przy konfiguracji 5,0 t wymagana jest kat. C1. Większość brygadówek dla firm budowlanych to wersje 3,5 t na kat. B."
   - question: "Jaki silnik do brygadówki Daily?"
     answer: "Silnik 2.3 MultiJet 136 KM jest w pełni wystarczający dla wersji do 3,5 t DMC. Przy DMC 5,0 t z pełną ekipą i ciężkim sprzętem warto rozważyć 156 KM."
+lead: "Iveco Daily brygadówka to pojazd do pracy, nie do reprezentacji. Ekipa 5–7 osób plus pełen bagażnik narzędzi, materiałów i sprzętu – to codzienność dla firm budowlanych, energetycznych i instalacyjnych. Daily w tej konfiguracji bije konkurencję ładownością i dostępnością serwisu w Polsce."
 ---
-
-[Iveco Daily](/modele/iveco-daily/) brygadówka to pojazd do pracy, nie do reprezentacji. Ekipa 5–7 osób plus pełen bagażnik narzędzi, materiałów i sprzętu – to codzienność dla firm budowlanych, energetycznych i instalacyjnych. Daily w tej konfiguracji bije konkurencję ładownością i dostępnością serwisu w Polsce.
-
 ## Co to jest brygadówka i jak wygląda zabudowa
 
 Brygadówka to pojazd z kabiną wieloosobową z przednią częścią pasażerską i tylną przestrzenią ładunkową, oddzielonymi sztywną przegrodą. Przegroda jest kluczowa – chroni pasażerów przed przesuwającym się ładunkiem podczas hamowania i izoluje kabinę od hałasu i pyłu z paki.

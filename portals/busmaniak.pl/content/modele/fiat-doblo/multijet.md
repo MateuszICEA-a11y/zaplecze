@@ -17,10 +17,8 @@ faq:
     answer: "Regeneracja jednego wtryskiwacza to ok. 300–500 zł. Komplet czterech wtryskiwaczy z wymianą robocizną – ok. 1800–3000 zł w zależności od silnika i warsztatu."
   - question: "Czy Doblò MultiJet ma DPF?"
     answer: "Tak, od 2011 roku silniki 1.6 i 2.0 MultiJet są wyposażone w filtr DPF. Silnik 1.3 MultiJet w wielu wersjach do 2015 roku nie miał DPF – to jeden z powodów jego popularności."
+lead: "MultiJet to rodzina silników diesla Fiata stosowana w Fiat Doblò generacji II. Obejmuje trzy jednostki pojemnościowe: 1.3, 1.6 i 2.0 – różniące się mocą, momentem, kosztem serwisu i przeznaczeniem. Wybór silnika przy zakupie używanego Doblò to jedna z najważniejszych decyzji."
 ---
-
-MultiJet to rodzina silników diesla Fiata stosowana w [Fiat Doblò](/modele/fiat-doblo/) generacji II. Obejmuje trzy jednostki pojemnościowe: 1.3, 1.6 i 2.0 – różniące się mocą, momentem, kosztem serwisu i przeznaczeniem. Wybór silnika przy zakupie używanego Doblò to jedna z najważniejszych decyzji.
-
 ## Silnik 1.3 MultiJet – parametry i zastosowanie
 
 Jednostka 1.3 MultiJet w Doblò:

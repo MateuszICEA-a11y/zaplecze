@@ -18,10 +18,8 @@ faq:
     answer: "Proace City Long mieści 2 europalety (1200x800 mm) ładowane od tyłu. Wersja Short pomieści tylko 1 paletę."
   - question: "Jaka jest ładowność Toyota Proace City Long?"
     answer: "Ładowność Proace City Long wynosi do 1000 kg w zależności od wersji silnikowej i wyposażenia."
+lead: "Toyota Proace City Long to wersja 4753 mm z ładownią 3,9 m³ i ładownością do 1000 kg – mały dostawczak, który mieści 2 europalety i sprawdza się w miejskiej dystrybucji tam, gdzie Proace (duży) jest już za długi. Jeśli rozważasz wybór między Long i Short, poniżej masz twarde dane."
 ---
-
-[Toyota Proace City](/modele/toyota-proace-city/) Long to wersja 4753 mm z ładownią 3,9 m³ i ładownością do 1000 kg – mały dostawczak, który mieści 2 europalety i sprawdza się w miejskiej dystrybucji tam, gdzie Proace (duży) jest już za długi. Jeśli rozważasz wybór między Long i Short, poniżej masz twarde dane.
-
 ## Wymiary Toyota Proace City Long
 
 Proace City jest produkowany przez Stellantis w Vigo (Hiszpania) na platformie CMP – tej samej co Citroen Berlingo III, Peugeot Partner III i Opel Combo E.

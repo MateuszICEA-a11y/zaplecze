@@ -15,10 +15,8 @@ faq:
     answer: "Grand California to kamper oparty na Crafterze – oficjalna wersja kempingowa VW z układem sypialnianym, aneksem kuchennym i łazienką. Produkowany w Polsce od 2019 roku, dostępny w wersjach 540 (5,40 m) i 680 (6,80 m)."
   - question: "Jaka jest różnica między Crafterem Kombi a Crafterem Van?"
     answer: "Crafter Kombi ma boczne szyby, siedzenia pasażerskie, tapicerowane ściany i klimatyzację tylną. Crafter Van ma blaszaną zabudowę, metalową podłogę ładowni i jest rejestrowany jako N1. Kombi to kategoria M1 lub M2."
+lead: "Volkswagen Crafter II w wersji osobowej – Kombi – to pojazd do przewozu grup do 9 osób, budowany na tej samej bazie co Crafter Van."
 ---
-
-[Volkswagen Crafter](/modele/volkswagen-crafter/) II w wersji osobowej – Kombi – to pojazd do przewozu grup do 9 osób, budowany na tej samej bazie co Crafter Van. Wyróżnia go bogatsza kabina pasażerska, wyższy standard wyposażenia i możliwość konfiguracji jako pojazd specjalny (ambulans, kamper, pojazd dla osób z niepełnosprawnościami).
-
 ## Wersje osobowe Craftera
 
 Crafter II w układzie osobowym dostępny jest jako:

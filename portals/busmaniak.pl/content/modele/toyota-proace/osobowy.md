@@ -18,10 +18,8 @@ faq:
     answer: "Ceny nowego Toyota Proace Verso zaczynają się od ok. 175 000 zł brutto w podstawowej wersji Medium z silnikiem 2.0 D-4D 145 KM."
   - question: "Czym różni się Proace Verso od Proace towarowego?"
     answer: "Proace Verso ma pełne oszklenie, fotele pasażerskie na całej długości nadwozia i inne zawieszenie tył dostosowane do przewozu osób. Proace towarowy ma blaszane ściany boczne i ściankę odgradzającą kabinę."
+lead: "Toyota Proace osobowy to Proace Verso – van pasażerski do 9 miejsc na platformie Stellantis EMP2, sprzedawany obok Citroëna Space Tourer i Peugeoта Traveller. Jeśli szukasz dużego busa do przewozu rodziny, grupy lub jako shuttle firmowy, poniżej masz konkretne dane."
 ---
-
-[Toyota Proace](/modele/toyota-proace/) osobowy to Proace Verso – van pasażerski do 9 miejsc na platformie Stellantis EMP2, sprzedawany obok Citroëna Space Tourer i Peugeoта Traveller. Jeśli szukasz dużego busa do przewozu rodziny, grupy lub jako shuttle firmowy, poniżej masz konkretne dane.
-
 ## Proace Verso – co to jest i czym różni się od towarowego
 
 Proace i Proace Verso to dwa różne samochody na tej samej platformie. Verso to wersja osobowa:

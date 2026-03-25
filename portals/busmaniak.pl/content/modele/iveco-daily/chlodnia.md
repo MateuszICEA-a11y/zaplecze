@@ -18,10 +18,8 @@ faq:
     answer: "Sama zabudowa izoterma to 15–25 tys. zł netto. Agregat Thermo King lub Carrier to dodatkowe 10–25 tys. zł netto. Łącznie 25–50 tys. zł netto za kompletną chłodnię."
   - question: "Co ile kilometrów serwis agregatu chłodniczego w Daily?"
     answer: "Agregat niezależny wymaga przeglądu co 1 000–1 500 godzin pracy silnika agregatu. W praktyce przy intensywnym użytkowaniu co 6–12 miesięcy."
+lead: "Iveco Daily jako chłodnia ATP to jeden z najbardziej eksploatowanych wariantów tego pojazdu w Polsce. Dystrybucja nabiału, transport mrożonek, dostawy farmaceutyków – wszędzie tam, gdzie temperatura ładunku musi być kontrolowana przez całą dobę, Daily sprawdza się lepiej niż większość konkurentów ze względu na szeroki zakres DMC i dostępność zabudów."
 ---
-
-[Iveco Daily](/modele/iveco-daily/) jako chłodnia ATP to jeden z najbardziej eksploatowanych wariantów tego pojazdu w Polsce. Dystrybucja nabiału, transport mrożonek, dostawy farmaceutyków – wszędzie tam, gdzie temperatura ładunku musi być kontrolowana przez całą dobę, Daily sprawdza się lepiej niż większość konkurentów ze względu na szeroki zakres DMC i dostępność zabudów.
-
 ## Klasy ATP i wymagania temperaturowe
 
 Certyfikat ATP (Accord Transport Périssables) dzieli pojazdy chłodnicze na klasy według utrzymywanej temperatury:

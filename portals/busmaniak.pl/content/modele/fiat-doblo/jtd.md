@@ -17,10 +17,8 @@ faq:
     answer: "Nie – silnik 1.9 JTD pochodzi z generacji I (2000–2010) i nie ma filtra DPF. To jeden z powodów, dla których jest ceniony przez użytkowników z dużymi przebiegami."
   - question: "Jak trwały jest silnik 1.9 JTD w Doblò?"
     answer: "Przy regularnej obsłudze silnik 1.9 JTD jest bardzo trwały – przebiegi 400–500 tys. km bez kapitalnego remontu są udokumentowane. Warunek: regularna wymiana oleju i dbałość o wtryskiwacze."
+lead: "Silnik 1.9 JTD to jednostka z generacji I Fiat Doblò – starszy diesiel, ale bardzo lubiony przez mechaników i użytkowników. Brak DPF, prosta elektryka, wysoka trwałość i dobre parametry robocze sprawiają, że egzemplarze z tym silnikiem mają swoich zwolenników do dziś."
 ---
-
-Silnik 1.9 JTD to jednostka z generacji I [Fiat Doblò](/modele/fiat-doblo/) – starszy diesiel, ale bardzo lubiony przez mechaników i użytkowników. Brak DPF, prosta elektryka, wysoka trwałość i dobre parametry robocze sprawiają, że egzemplarze z tym silnikiem mają swoich zwolenników do dziś.
-
 ## Dane techniczne 1.9 JTD
 
 - Pojemność: 1910 cm³

@@ -18,10 +18,8 @@ faq:
     answer: "Toyota Proace Verso Long mierzy 5309 mm długości. Wersja Medium ma 4959 mm. Różnica 350 mm wynika z dłuższego zwisu tylnego i większej przestrzeni między drugim a trzecim rzędem."
   - question: "Ile kosztuje Toyota Proace Verso Long?"
     answer: "Ceny Proace Verso Long w wersji Shuttle startują od ok. 185 000–195 000 zł. Wersje Family i VIP kosztują odpowiednio więcej – VIP Long przekracza 260 000 zł."
+lead: "Toyota Proace Verso Long z 9 miejscami i bagażnikiem 850 litrów to jeden z najbardziej pojemnych vanów w segmencie C. Przy pełnym obsadzeniu nadal mieści tygodniowy bagaż całej grupy – coś, czego nie oferuje żaden konkurent tej klasy."
 ---
-
-Toyota Proace Verso Long z 9 miejscami i bagażnikiem 850 litrów to jeden z najbardziej pojemnych vanów w segmencie C. Przy pełnym obsadzeniu nadal mieści tygodniowy bagaż całej grupy – coś, czego nie oferuje żaden konkurent tej klasy.
-
 ## Wymiary i różnice względem Medium
 
 [Toyota Proace Verso](/modele/toyota-proace-verso/) dostępna jest w dwóch długościach:

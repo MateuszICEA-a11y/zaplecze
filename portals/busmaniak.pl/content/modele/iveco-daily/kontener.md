@@ -18,10 +18,8 @@ faq:
     answer: "Tak – izoterma z agregatem chłodniczym i certyfikatem ATP to pojazd chłodniczy klasy A lub C, zależnie od zakresu temperatur. Pojazd musi być poddawany testom ATP co 6 lat."
   - question: "Ile kosztuje zabudowa kontenerowa izoterma na Daily?"
     answer: "Sama zabudowa izoterma bez agregatu to 20–35 tys. zł netto. Dodanie agregatu Thermo King lub Carrier to dodatkowe 15–25 tys. zł netto."
+lead: "Iveco Daily w zabudowie kontenerowej i izotermicznej to standard w dystrybucji chłodniczej, farmaceutyce i gastronomii. Sztywna zabudowa chroni ładunek lepiej niż plandeka, a izolacja termiczna pozwala utrzymać temperaturę niezależnie od pogody – bez lub z agregatem, zależnie od potrzeb."
 ---
-
-[Iveco Daily](/modele/iveco-daily/) w zabudowie kontenerowej i izotermicznej to standard w dystrybucji chłodniczej, farmaceutyce i gastronomii. Sztywna zabudowa chroni ładunek lepiej niż plandeka, a izolacja termiczna pozwala utrzymać temperaturę niezależnie od pogody – bez lub z agregatem, zależnie od potrzeb.
-
 ## Kontener vs. izoterma – różnica, którą musisz znać
 
 Zabudowa kontenerowa to sztywna skrzynia ze ścianami z laminatu poliestrowego lub stalowych profili z wypełnieniem. Bez izolacji termicznej – chroni ładunek przed opadami i kradzieżą, ale nie przed temperaturą.

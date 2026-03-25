@@ -15,10 +15,8 @@ faq:
     answer: "ë-Jumper to elektryczna wersja Jumpera III z silnikiem 122 KM i baterią 37 kWh (zasięg 190 km WLTP) lub 75 kWh (zasięg 420 km WLTP). Dostępny od 2024 roku jako van L2H2 lub L3H2. Ładowanie DC do 150 kW."
   - question: "Jaka jest pojemność Citroëna Jumpera?"
     answer: "Jumper jest oferowany w konfiguracjach 8–17 m³. Najczęściej wybierana wersja L2H2 oferuje 13 m³, L3H2 – 15 m³. Wersja L4H3 osiąga 17 m³."
+lead: "Citroën Jumper III to duży van dostawczy segmentu N1/N2, techniczny bliźniak Fiata Ducato III i Peugeota Boxera III. Od 2006 roku budowany na platformie Sevel Sud, po faceliftingach w 2014 i 2020 roku zyskał silniki 2.2 BlueHDi spełniające normę Euro 6d."
 ---
-
-Citroën Jumper III to duży van dostawczy segmentu N1/N2, techniczny bliźniak Fiata Ducato III i Peugeota Boxera III. Od 2006 roku budowany na [platformie Sevel Sud](https://pl.wikipedia.org/wiki/Citro%C3%ABn_Jumper){rel="nofollow"}, po faceliftingach w 2014 i 2020 roku zyskał silniki 2.2 BlueHDi spełniające normę Euro 6d. W 2024 roku gama poszerzyła się o w pełni elektryczny ë-Jumper.
-
 ## Platforma Sevel Sud – wspólna podstawa trójki
 
 Jumper III dzieli z Ducatem i Boxerem:

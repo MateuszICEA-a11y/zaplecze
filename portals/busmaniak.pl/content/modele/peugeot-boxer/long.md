@@ -15,10 +15,8 @@ faq:
     answer: "Boxer L4H3 przy DMC 3,5 t ma ładowność ok. 1550 kg. W wersji z podniesioną DMC do 4 t (kategoria N2, wymagane prawo jazdy C1) ładowność wzrasta do ok. 1735 kg."
   - question: "Czy do Boxera L3 potrzeba prawa jazdy C?"
     answer: "Nie – Boxer L3 przy DMC do 3,5 t jest kategorią N1 i wymaga wyłącznie prawa jazdy kat. B (lub B+E z przyczepą). Dopiero Boxer z DMC powyżej 3,5 t (kategoria N2) wymaga prawa jazdy C lub C1."
+lead: "Peugeot Boxer w wersjach Long – L3 i L4 – to wybór dla firm, które regularnie transportują ładunki gabarytowe, wymagają dużej przestrzeni lub budują specjalistyczne zabudowy. Długość całkowita 6–6,4 m wymaga odpowiednich warunków garażowania i umiejętności manewrowania."
 ---
-
-[Peugeot Boxer](/modele/peugeot-boxer/) w wersjach Long – L3 i L4 – to wybór dla firm, które regularnie transportują ładunki gabarytowe, wymagają dużej przestrzeni lub budują specjalistyczne zabudowy. Długość całkowita 6–6,4 m wymaga odpowiednich warunków garażowania i umiejętności manewrowania.
-
 ## Wersje L3 i L4 – charakterystyka
 
 **Boxer L3H2:**

@@ -18,10 +18,8 @@ faq:
     answer: "Przy DMC 3,5 t ładowność paki wynosi ok. 700–900 kg (po odjęciu masy zabudowy i pasażerów). Przy DMC 5,5 t ładowność wzrasta do ok. 1500–2000 kg. Wersja 5,5 t wymaga prawa jazdy C1."
   - question: "Czym różni się brygadówka od kombi?"
     answer: "Brygadówka (crew cab + paka lub skrzynia) to zabudowa na podwoziu – kabina osobowa i oddzielna część ładunkowa bez wspólnej przestrzeni. Kombi to furgon z przegrodą wewnętrzną – oba człony są w jednej bryle nadwozia. Brygadówka pozwala na większą ładowność i modularną wymianę zabudowy paki."
+lead: "Mercedes Sprinter brygadówka to pojazd roboczy dla ekip terenowych – łączy kabinę osobową dla 5–7 osób z osobną paką lub skrzynią na narzędzia i sprzęt. To standardowe narzędzie w energetyce, telekomunikacji i drogownictwie, gdzie ekipa musi dojechać razem z całym osprzętem."
 ---
-
-[Mercedes Sprinter](/modele/mercedes-sprinter/) brygadówka to pojazd roboczy dla ekip terenowych – łączy kabinę osobową dla 5–7 osób z osobną paką lub skrzynią na narzędzia i sprzęt. To standardowe narzędzie w energetyce, telekomunikacji i drogownictwie, gdzie ekipa musi dojechać razem z całym osprzętem.
-
 ## Budowa i zabudowa
 
 Brygadówka powstaje na podwoziu Sprinter Chassis Cab (podwozie z kabiną) lub jako zabudowa na furgonie z wyciętą tylną częścią. Dwa najpopularniejsze warianty:

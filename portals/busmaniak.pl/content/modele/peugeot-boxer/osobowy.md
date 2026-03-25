@@ -15,10 +15,8 @@ faq:
     answer: "Boxer Combi do 9 miejsc (kategoria M1/M2 do 3,5 t DMC) – wystarczy prawo jazdy kat. B. Boxer 9-miejscowy (M2) z DMC powyżej 3,5 t lub przewóz więcej niż 8 pasażerów – wymaga D1 (pojazdy 8–16 miejsc)."
   - question: "Czym różni się Boxer Combi od Boxera Van?"
     answer: "Boxer Combi ma tylne boczne szyby, siedzenia pasażerskie, klimatyzację tylną i tapicerowane ściany. Boxer Van ma blaszaną zabudowę boczną i metalową podłogę ładowni. Wersja Combi jest rejestrowana jako M1 lub M2, Van – jako N1."
+lead: "Peugeot Boxer w wersji osobowej – Combi lub Minibus – to pojazd przewozowy dla grup do 9 osób. Stosowany przez firmy transportowe, szkoły, ośrodki pomocy społecznej i wynajem krótkoterminowy. Technicznie identyczny z Boxerem Van, różni się wyposażeniem wnętrza i homologacją."
 ---
-
-[Peugeot Boxer](/modele/peugeot-boxer/) w wersji osobowej – Combi lub Minibus – to pojazd przewozowy dla grup do 9 osób. Stosowany przez firmy transportowe, szkoły, ośrodki pomocy społecznej i wynajem krótkoterminowy. Technicznie identyczny z Boxerem Van, różni się wyposażeniem wnętrza i homologacją.
-
 ## Konfiguracje osobowe Boxera
 
 Boxer osobowy jest dostępny w kilku układach miejsc:

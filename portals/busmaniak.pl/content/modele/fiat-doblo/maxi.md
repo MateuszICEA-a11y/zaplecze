@@ -17,10 +17,8 @@ faq:
     answer: "W wersji Cargo gen III pojemność ładunkowa wynosi 4,4 m³, ładowność do ok. 1000 kg w zależności od silnika."
   - question: "Czy Doblò Maxi Panorama mieści 7 osób?"
     answer: "Tak, w wersji Panorama Maxi dostępny jest trzeci rząd siedzeń – łącznie 7 miejsc. Trzeci rząd składa się w podłogę."
+lead: "Fiat Doblò Maxi to po prostu Doblò z dłuższym rozstawem osi – i właśnie ta prosta różnica przekłada się na wyraźnie większą użyteczność. Jeśli potrzebujesz przewozić europalety albo zabrać całą rodzinę z bagażami, Maxi jest jedyną sensowną opcją w tej klasie."
 ---
-
-[Fiat Doblò](/modele/fiat-doblo/) Maxi to po prostu Doblò z dłuższym rozstawem osi – i właśnie ta prosta różnica przekłada się na wyraźnie większą użyteczność. Jeśli potrzebujesz przewozić europalety albo zabrać całą rodzinę z bagażami, Maxi jest jedyną sensowną opcją w tej klasie.
-
 ## Co dokładnie różni Maxi od standardowego Doblò
 
 Rozstaw osi w wersji Maxi jest większy o ok. 300 mm względem krótkiej wersji. Przekłada się to na:

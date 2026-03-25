@@ -15,10 +15,8 @@ faq:
     answer: "Transit Custom L1 (Short, 4972 mm) ma pojemność 6,0 m³. Wersja L2 (Long, 5340 mm) – 6,8 m³. To segment pośredni między kompaktowymi vanami (Combo, Partner – 3,3–4,4 m³) a dużymi (Crafter, Boxer – 9–18 m³)."
   - question: "Ile ładuje Transit Custom?"
     answer: "Transit Custom dźwiga do 1356 kg ładunku (L2, 2.0 EcoBlue 130 KM, manualna). Ładowność zależy od wersji silnikowej i skrzyni. Standardowo L1 niesie ok. 1150–1200 kg, L2 – 1300–1356 kg."
+lead: "Ford Transit Custom to bestseller segmentu średnich dostawczaków w Europie – i nie jest to przypadek. Od 2012 roku utrzymuje czołową pozycję sprzedażową w Polsce i na rynkach zachodnoeuropejskich."
 ---
-
-Ford Transit Custom to bestseller segmentu średnich dostawczaków w Europie – i nie jest to przypadek. Od 2012 roku utrzymuje czołową pozycję sprzedażową w Polsce i na rynkach zachodnoeuropejskich. Jest to [samochód klasy średniej](https://pl.wikipedia.org/wiki/Ford_Transit_Custom){rel="nofollow"} (jak Renault Trafic, Opel Vivaro czy Stellantis Dispatch), oferujący większą przestrzeń niż kompaktowe vany przy zachowaniu rozsądnych wymiarów zewnętrznych.
-
 ## Dwie generacje – co je odróżnia
 
 **Transit Custom Gen I (2012–2023)**

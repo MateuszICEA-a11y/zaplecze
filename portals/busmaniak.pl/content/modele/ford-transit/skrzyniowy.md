@@ -18,10 +18,8 @@ faq:
     answer: "Na podwoziu Transit chassis cab można zamontować: skrzynię drewnianą lub aluminiową, plandekarę (tilt), kontener izotermy lub chłodnię, wywrotkę hydrauliczną, platformę do przewozu maszyn, zabudowę warsztatową (kabinę serwisową)."
   - question: "Jaka jest maksymalna DMC Ford Transit skrzyniowy?"
     answer: "Ford Transit w wersji chassis cab jest dostępny z DMC do 5 t (w Polsce homologowany do 4,7 t jako C1). Wersje 3,5 t wymagają jedynie prawa jazdy kat. B, wyższe – kat. C1."
+lead: "Ford Transit skrzyniowy to pojazd bazowy – gotowe podwozie z kabiną kierowcy, bez zabudowy z tyłu. Kupujesz ramę, oś tylną i silnik, a zabudowę montujesz u specjalistycznej firmy. To najbardziej elastyczna wersja Transita."
 ---
-
-[Ford Transit](/modele/ford-transit/) skrzyniowy to pojazd bazowy – gotowe podwozie z kabiną kierowcy, bez zabudowy z tyłu. Kupujesz ramę, oś tylną i silnik, a zabudowę montujesz u specjalistycznej firmy. To najbardziej elastyczna wersja Transita.
-
 ## Czym różni się chassis cab od furgonu?
 
 Furgon (Van) ma fabrycznie zamkniętą, integralną przestrzeń ładunkową. Chassis cab wychodzi z fabryki bez tej przestrzeni – za kabiną jest tylko otwarta rama z hakami montażowymi dla zabudowcy. Pozwala to na:

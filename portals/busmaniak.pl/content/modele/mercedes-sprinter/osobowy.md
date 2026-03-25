@@ -18,10 +18,8 @@ faq:
     answer: "Wersje do 3500 kg DMC z maksymalnie 8 miejscami pasażerskimi (+ kierowca = 9 łącznie) wymagają prawa jazdy B. Przy DMC powyżej 3500 kg lub więcej niż 8 miejsc pasażerskich wymagane jest prawo jazdy D1 lub D."
   - question: "Jaka jest różnica między Sprinter Tourer Pro a Tourist?"
     answer: "Tourer Pro to wersja podstawowa z fotelami trójkowymi, klimatyzacją i MBUX. Tourist Standard/Comfort/VIP to wersje z wyższej półki – indywidualne fotele, większy rozstaw, lepsza izolacja akustyczna i opcjonalnie panoramiczne okna."
+lead: "Mercedes Sprinter osobowy w wersji Tourer to dedykowana platforma dla przewozów grupowych – od transferów lotniskowych po turystykę luksusową. Przy do 19 miejscach i pełnym MBUX konkuruje bezpośrednio z Volkswagenem Crafterem Kombi i Fordiem Transit Bus."
 ---
-
-[Mercedes Sprinter](/modele/mercedes-sprinter/) osobowy w wersji Tourer to dedykowana platforma dla przewozów grupowych – od transferów lotniskowych po turystykę luksusową. Przy do 19 miejscach i pełnym MBUX konkuruje bezpośrednio z Volkswagenem Crafterem Kombi i Fordiem Transit Bus. Poniżej zestawienie wersji, konfiguracji i cen.
-
 ## Wersje Sprinter Tourer – przegląd linii
 
 Mercedes oferuje Sprinter Tourer w czterech głównych wariantach:

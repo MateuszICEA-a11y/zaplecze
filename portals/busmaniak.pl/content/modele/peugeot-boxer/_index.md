@@ -15,10 +15,8 @@ faq:
     answer: "Boxer III po faceliftingu 2020 oferuje silnik 2.2 BlueHDi w wersjach 120, 140 i 165 KM. Wszystkie spełniają normę Euro 6d i posiadają DPF. Wersja 165 KM dostępna jest wyłącznie z automatem EAT8."
   - question: "Jaka jest pojemność ładunkowa Peugeot Boxera?"
     answer: "Boxer oferuje przestrzeń ładunkową od 8 do 17 m³ w zależności od konfiguracji. Standardowe wersje Van to 8, 10, 11 i 13 m³. Wersja L4H3 (najdłuższa, najwyższa) oferuje 17 m³."
+lead: "Peugeot Boxer III to duży van dostawczy klasy ciężkiej segmentu N1/N2, budowany na wspólnej platformie Sevel Sud razem z Fiatem Ducato i Citroënem Jumperem. W Polsce jest jednym z dominujących wyborów dla firm transportowych, usługowych i producentów zabudów specjalnych."
 ---
-
-[Peugeot Boxer](https://pl.wikipedia.org/wiki/Peugeot_Boxer) III to duży van dostawczy klasy ciężkiej segmentu N1/N2, budowany na wspólnej platformie Sevel Sud razem z Fiatem Ducato i Citroënem Jumperem. W Polsce jest jednym z dominujących wyborów dla firm transportowych, usługowych i producentów zabudów specjalnych.
-
 ## Platforma i produkcja
 
 Boxer III jest produkowany w zakładach Sevel Nord w Vigo (Hiszpania) i Atessa (Włochy) od 2006 roku. Facelifting z 2014 roku przyniósł odświeżone nadwozie i nowe silniki MultiJet II, a modernizacja z 2020 roku – silniki 2.2 BlueHDi i aktualizację systemów bezpieczeństwa ADAS.

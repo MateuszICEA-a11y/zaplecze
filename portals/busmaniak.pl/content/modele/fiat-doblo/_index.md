@@ -16,10 +16,8 @@ faq:
     answer: "Benzynowy 1.2 PureTech 110 KM oraz diesle 1.5 BlueHDi w wersjach 100 i 130 KM. Wszystkie spełniają normę Euro 6d."
   - question: "Czym różni się Doblò Cargo od Panoramy?"
     answer: "Cargo to wersja dostawcza z przegrodą i homologacją N1. Panorama przewozi 5–7 pasażerów i ma tylną kanapę zamiast przestrzeni ładunkowej."
+lead: "Fiat Doblò to kompaktowy van, który przez ponad dwie dekady utrzymuje pozycję jednego z najbardziej wszechstronnych pojazdów segmentu. Kupujesz użytkowego czy rodzinnego – i tak trafisz na Doblò jako poważną opcję. Poniżej znajdziesz twarde dane dla wszystkich trzech generacji."
 ---
-
-[Fiat Doblò](https://pl.wikipedia.org/wiki/Fiat_Dobl%C3%B2){rel="nofollow"} to kompaktowy van, który przez ponad dwie dekady utrzymuje pozycję jednego z najbardziej wszechstronnych pojazdów segmentu. Kupujesz użytkowego czy rodzinnego – i tak trafisz na Doblò jako poważną opcję. Poniżej znajdziesz twarde dane dla wszystkich trzech generacji.
-
 ## Generacje Fiata Doblò – skrót historii
 
 Doblò wjechał na rynek w 2000 roku jako odpowiedź Fiata na rosnące zapotrzebowanie na pojazdy łączące funkcje dostawcze i osobowe. Generacja I (2000–2010) zbudowana była na płycie Punty – prosty układ, solidna mechanika, klasyczne diesle JTD.

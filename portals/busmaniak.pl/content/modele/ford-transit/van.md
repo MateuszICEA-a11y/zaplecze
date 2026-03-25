@@ -18,10 +18,8 @@ faq:
     answer: "Maksymalna ładowność sięga 2300 kg w wersjach z tylnym napędem RWD i DMC 4,25 t lub 4,7 t. Wersje FWD osiągają zazwyczaj 1200–1550 kg."
   - question: "Czy Ford Transit Van jest dostępny z napędem 4x4?"
     answer: "Tak, Ford oferuje Transit Van z napędem AWD (4x4) opartym na tylnej osi z mechanizmem dołączanego napędu. Dostępny głównie w wersjach L2 i L3 z silnikiem 170 lub 185 KM."
+lead: "Ford Transit Van to najpopularniejsza wersja tego modelu na rynku – furgon z zamkniętą przestrzenią ładunkową, dostępny w 12 konfiguracjach długości i wysokości. Jeśli szukasz pojazdu do transportu towarów, tu znajdziesz wszystkie dane, które pozwolą wybrać właściwy wariant."
 ---
-
-[Ford Transit](/modele/ford-transit/) Van to najpopularniejsza wersja tego modelu na rynku – furgon z zamkniętą przestrzenią ładunkową, dostępny w 12 konfiguracjach długości i wysokości. Jeśli szukasz pojazdu do transportu towarów, tu znajdziesz wszystkie dane, które pozwolą wybrać właściwy wariant.
-
 ## Wersje nadwozia: od L1H1 do L4H3
 
 Transit Van jest dostępny w czterech długościach nadwozia (L1–L4) i trzech wysokościach dachu (H1–H3). Nie każda kombinacja jest dostępna w katalogu – producent oferuje ok. 12 aktywnych konfiguracji.

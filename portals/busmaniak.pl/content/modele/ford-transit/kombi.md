@@ -18,10 +18,8 @@ faq:
     answer: "Homologacja M1 dotyczy pojazdów do 9 miejsc – traktowanych jak samochód osobowy (OC, podatki, możliwość odliczenia VAT bez dodatkowych warunków dla firm). M2 to pojazdy od 10 do 16 miejsc, traktowane jako autobus – wymagają licencji przewozowej przy transporcie odpłatnym."
   - question: "Czy Ford Transit Kombi nadaje się do przewozów pracowniczych?"
     answer: "Tak – Transit Kombi jest jednym z najpopularniejszych pojazdów do przewozów pracowniczych. Wersje L3 i L4 z 9–15 miejscami są chętnie wybierane przez firmy transportowe i zakłady produkcyjne. Wersja z homologacją M2 wymaga licencji i tachografu przy odpłatnym transporcie."
+lead: "Ford Transit Kombi to wersja osobowo-mieszana Transita – pojazd przeznaczony do przewozu osób lub jednocześnie osób i ładunków. Dostępny w konfiguracjach od 6 do 15 miejsc, z homologacją M1 lub M2, jest standardem w polskich firmach przewozowych i na budowach."
 ---
-
-[Ford Transit](/modele/ford-transit/) Kombi to wersja osobowo-mieszana Transita – pojazd przeznaczony do przewozu osób lub jednocześnie osób i ładunków. Dostępny w konfiguracjach od 6 do 15 miejsc, z homologacją M1 lub M2, jest standardem w polskich firmach przewozowych i na budowach.
-
 ## Czym różni się Kombi od Van i Tourneo?
 
 Transit Van to furgon bez okien bocznych i bez tylnych siedzeń – czysta przestrzeń ładunkowa. Transit Kombi ma okna boczne i drugi lub kolejne rzędy siedzeń przy zachowaniu metalowego nadwozia. Tourneo (osobowy) jest w pełni wyposażony jak mikrobus pasażerski z wykończeniem wnętrza na poziomie auta osobowego.

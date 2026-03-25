@@ -18,10 +18,8 @@ faq:
     answer: "Tak. Zabudowa izotermiczna z agregatem chłodniczym (np. Thermo King, Carrier) montowana na podwoziu Sprinter spełnia wymogi certyfikatu ATP przy zachowaniu odpowiedniej izolacji (min. 45 mm pianki poliuretanowej). Certyfikat ATP wymagany przy transporcie żywności w łańcuchu chłodniczym."
   - question: "Kto wykonuje zabudowy kontenerowe na Sprinter?"
     answer: "Zabudowy kontenerowe na podwozie Sprinter wykonują m.in. Igloocar, Frostline, Euroglass, PLT Truck. Zabudowę należy certyfikować u producenta podwozia (Mercedes) lub w stacji homologacyjnej przed rejestracją."
+lead: "Mercedes Sprinter w wersji podwoziowej to baza dla zabudów kontenerowych od logistyki chłodniczej po food trucki i laboratoria mobilne. Przy DMC 3,5–5,5 t pokrywa potrzeby małej i średniej dystrybucji bez konieczności przesiadki na ciężarówkę."
 ---
-
-[Mercedes Sprinter](/modele/mercedes-sprinter/) w wersji podwoziowej to baza dla zabudów kontenerowych od logistyki chłodniczej po food trucki i laboratoria mobilne. Przy DMC 3,5–5,5 t pokrywa potrzeby małej i średniej dystrybucji bez konieczności przesiadki na ciężarówkę. Kluczowe jest dobieranie zabudowy przed zakupem podwozia – nie odwrotnie.
-
 ## Podwozie Sprinter – podstawa zabudowy
 
 Sprinter dostępny jest jako podwozie z kabiną (Chassis Cab) w dwóch rozstawach osi:

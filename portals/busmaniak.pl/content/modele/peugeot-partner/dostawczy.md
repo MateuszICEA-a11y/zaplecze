@@ -15,10 +15,8 @@ faq:
     answer: "Tak – Partner Van jest dostępny z przesuwanymi drzwiami zarówno po stronie prawej (standard), jak i opcjonalnie z obu stron. Drzwi obustronne szczególnie ułatwiają pracę w terenie z dostępem z chodnika lub podjazdu."
   - question: "Jak Partner dostawczy wypada w porównaniu z Fordiem Transit Connect?"
     answer: "Partner i Transit Connect są bezpośrednimi rywalami. Partner ma niższy próg załadunkowy (576 mm vs ok. 610 mm) i tańszy serwis. Transit Connect ma nieco bardziej rozbudowaną ofertę zabudów i szerszą sieć serwisową w Polsce poza dużymi miastami."
+lead: "Peugeot Partner III Van to kompaktowy dostawczak w kategorii N1, zaprojektowany do intensywnej eksploatacji w logistyce miejskiej i podmiejskiej."
 ---
-
-[Peugeot Partner](/modele/peugeot-partner/) III Van to kompaktowy dostawczak w kategorii N1, zaprojektowany do intensywnej eksploatacji w logistyce miejskiej i podmiejskiej. Oferuje ładowność do 1000 kg, niską podłogę załadunkową i sprawdzone silniki BlueHDi – przy relatywnie niskich kosztach serwisu dzięki wspólnej platformie z Berlingo III i Combo E.
-
 ## Konfiguracje dostępne w Partnerze dostawczym
 
 Partner Van dostępny jest w czterech podstawowych wariantach:

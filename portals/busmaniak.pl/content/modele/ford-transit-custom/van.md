@@ -15,10 +15,8 @@ faq:
     answer: "W warunkach mieszanych Transit Custom 2.0 EcoBlue 130 KM spala realnie 7,5–9,0 l/100 km przy umiarkowanym załadunku. Na trasie ze stałą prędkością 90 km/h bez ładunku – ok. 6,5–7,5 l."
   - question: "Czy Transit Custom L2 mieści 2 europalety?"
     answer: "Tak – Transit Custom L2 z podłogą 2925 mm długości mieści dwie palety EUR 1200x800 mm ułożone wzdłuż. Przy ładowaniu przez tylne drzwi szerokość otworu 1478 mm pozwala na swobodny załadunek palet wózkowym ręcznym."
+lead: "Ford Transit Custom Van to dostawczak segmentu średniego (N1) oferujący przestrzeń 6,0–6,8 m³ przy DMC do 3,5 t. Wypełnia lukę między kompaktowymi vanami (Combo, Partner – do 4,4 m³) a dużymi (Crafter, Boxer – 9–18 m³)."
 ---
-
-**[Ford Transit Custom](/modele/ford-transit-custom/)** Van to dostawczak segmentu średniego (N1) oferujący przestrzeń 6,0–6,8 m³ przy DMC do 3,5 t. Wypełnia lukę między kompaktowymi vanami (Combo, Partner – do 4,4 m³) a dużymi (Crafter, Boxer – 9–18 m³). To pojazd dla firm z regularnym załadunkiem powyżej 400 l i ładunkiem do 1356 kg.
-
 ## Konfiguracje i wymiary
 
 **Transit Custom L1 (Short)**

@@ -18,10 +18,8 @@ faq:
     answer: "Tak – Transit furgon może mieć drzwi przesuwne z lewej strony, z prawej, lub z obu stron jednocześnie. Wersja z obustronnym dostępem jest popularna przy zabudowach serwisowych i przy regularnym załadunku z chodnika."
   - question: "Jakie zabudowy można zamontować w Transit dostawczym?"
     answer: "Najpopularniejsze zabudowy to regały aluminiowe lub stalowe, podłoga sklejkowa z uchwytami do mocowania ładunku, przegroda kabina–ładownia, oświetlenie LED, szuflady podpodłogowe oraz systemy mocowania rowerów lub maszyn."
+lead: "Ford Transit dostawczy to furgon przeznaczony do codziennego transportu towarów. Zamknięta przestrzeń ładunkowa, drzwi boczne przesuwne i tylne klapa 270° tworzą praktyczny zestaw dostępu do ładowni. DMC od 3,5 do 4,7 t pozwala dopasować pojazd do rzeczywistych potrzeb przewozowych."
 ---
-
-[Ford Transit](/modele/ford-transit/) dostawczy to furgon przeznaczony do codziennego transportu towarów. Zamknięta przestrzeń ładunkowa, drzwi boczne przesuwne i tylne klapa 270° tworzą praktyczny zestaw dostępu do ładowni. DMC od 3,5 do 4,7 t pozwala dopasować pojazd do rzeczywistych potrzeb przewozowych.
-
 ## DMC i kategorie prawa jazdy
 
 Transit dostawczy jest oferowany w kilku wariantach DMC:

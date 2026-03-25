@@ -15,10 +15,8 @@ faq:
     answer: "Combo E Van Short ma 3,8 m³ przestrzeni, wersja Long (XL) – 4,4 m³. To wystarczająca przestrzeń dla 2 europalet (EUR 1200x800) w wersji XL, pod warunkiem właściwego ułożenia."
   - question: "Czy Combo Van mieści europaletę?"
     answer: "W wersji XL Combo Van mieści 2 palety EUR 1200x800 mm. Szerokość podłogi między nadkolami wynosi 1225 mm, co wymaga ułożenia palet wzdłuż pojazdu. Ładowanie jest możliwe przez tylne drzwi dwuskrzydłowe lub drzwi boczne przesuwne."
+lead: "Opel Combo E w wersji dostawczej Van to zarejestrowany jako N1 pojazd użytkowy z blaszaną zabudową boczną (brak tylnych szyb), metalową podłogą ładowni i ładownością do 1000 kg. Sprawdza się w logistyce ostatniej mili, rzemiośle i usługach mobilnych."
 ---
-
-[Opel Combo](/modele/opel-combo/) E w wersji dostawczej Van to zarejestrowany jako N1 pojazd użytkowy z blaszaną zabudową boczną (brak tylnych szyb), metalową podłogą ładowni i ładownością do 1000 kg. Sprawdza się w logistyce ostatniej mili, rzemiośle i usługach mobilnych.
-
 ## Dane techniczne wersji dostawczej
 
 Combo Van jest oferowane w dwóch długościach:

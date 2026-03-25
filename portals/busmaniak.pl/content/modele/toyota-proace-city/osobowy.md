@@ -18,10 +18,8 @@ faq:
     answer: "Verso to wersja homologowana jako osobowa (M1). Ma kompletne wykończenie kabiny pasażerskiej, pełne przeszklenie i fotel kierowcy z podłokietnikiem. Wersja dostawcza (N1) ma blaszaną zabudowę przestrzeni ładunkowej."
   - question: "Czy Toyota Proace City Verso to to samo co Citroën Berlingo osobowy?"
     answer: "Technicznie tak – obydwa auta stoją na platformie EMP2, dzielą nadwozie i mechanikę. Różnią się detalami wykończenia, stylistyką maski i ofertą wyposażenia."
+lead: "Toyota Proace City Verso w wersji Long z 7 miejscami kosztuje od około 115 000 zł i jest najtańszym nowym vanem siedmioosobowym dostępnym w Polsce. To bliźniak Citroëna Berlingo osobowego – ten sam pakiet silnikowy, ta sama przestronność, inna plakietka na masce."
 ---
-
-Toyota Proace City Verso w wersji Long z 7 miejscami kosztuje od około 115 000 zł i jest najtańszym nowym vanem siedmioosobowym dostępnym w Polsce. To bliźniak [Citroëna Berlingo](/modele/citroen-berlingo/) osobowego – ten sam pakiet silnikowy, ta sama przestronność, inna plakietka na masce.
-
 ## Proace City Verso – czym jest i dla kogo
 
 [Toyota Proace City](/modele/toyota-proace-city/) to mały van klasy B/C. Verso to oficjalne oznaczenie wersji osobowej – homologacja M1, kompletne wykończenie kabiny, boczne szyby w całej długości.

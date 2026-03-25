@@ -15,10 +15,8 @@ faq:
     answer: "Bliźniakiem Craftera II jest MAN TGE – produkowany na tej samej linii montażowej we Wrześni (Polska). MAN TGE różni się detalami wewnętrznymi i logotypem, ale mechanika, silniki i nadwozie są identyczne."
   - question: "Czy VW Crafter ma napęd AWD?"
     answer: "Tak – Crafter II dostępny jest w wersji 4Motion (AWD) z silnikiem 2.0 TDI 177 KM. To rzadkie rozwiązanie w klasie dużych dostawczaków, dostępne głównie w konkurencji z Mercedesem Sprinter 4x4."
+lead: "Volkswagen Crafter II (od 2017) to duży van dostawczy klasy N1/N2, produkowany w Poznaniu i Wrześni – jako pierwsza w historii tej nazwy w pełni samodzielna platforma VW. Do 2017 roku Crafter korzystał z platformy Daimler (identyczny z Mercedesem Sprinterem W906)."
 ---
-
-[Volkswagen Crafter](https://pl.wikipedia.org/wiki/Volkswagen_Crafter) II (od 2017) to duży van dostawczy klasy N1/N2, produkowany w Poznaniu i Wrześni – jako pierwsza w historii tej nazwy w pełni samodzielna platforma VW. Do 2017 roku Crafter korzystał z platformy Daimler (identyczny z Mercedesem Sprinterem W906). Nowy Crafter ma własną architekturę, trzy opcje napędu i jedno z bardziej rozbudowanych systemów ADAS w segmencie.
-
 ## Historia modelu i odcięcie od Sprintera
 
 Crafter I (2006–2017) był technicznym bliźniakiem Mercedesa Sprintera W906 – efekt joint venture między VW a Daimlerem. Przy rozwiązaniu tego partnerstwa VW podjął decyzję o własnej platformie.

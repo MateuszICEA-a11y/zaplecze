@@ -15,10 +15,8 @@ faq:
     answer: "Opel Combo E XL ma 4753 mm długości całkowitej. Długość przestrzeni ładunkowej wynosi 1817 mm, szerokość między nadkolami 1225 mm, wysokość załadunku 1246 mm."
   - question: "Czy Combo Long mieści się na standardowym parkingu?"
     answer: "Standardowe miejsce parkingowe ma 5000–5500 mm długości, więc Combo XL (4753 mm) mieści się bez problemów. Warto jednak sprawdzić wysokość bariery parkingowej – całkowita wysokość pojazdu to 1848 mm."
+lead: "Opel Combo E XL (Long) to wersja o rozstawie osi wydłużonym do 2975 mm. W stosunku do Combo Short różnica długości wynosi 350 mm – w praktyce oznacza to większą przestrzeń ładunkową i możliwość przewożenia palet EUR o wymiarach 1200 x 800 mm bez konieczności obracania."
 ---
-
-[Opel Combo](/modele/opel-combo/) E XL (Long) to wersja o rozstawie osi wydłużonym do 2975 mm. W stosunku do Combo Short różnica długości wynosi 350 mm – w praktyce oznacza to większą przestrzeń ładunkową i możliwość przewożenia palet EUR o wymiarach 1200 x 800 mm bez konieczności obracania.
-
 ## Wymiary i przestrzeń ładunkowa
 
 Combo E XL od 2018 roku ma następujące wymiary kluczowe:
