@@ -74,4 +74,4 @@ Ducato jest solidną konstrukcją – pod warunkiem że wymiana oleju nie przekr
 - **Elektronika wspomagająca** – czujniki parkowania i systemy z nowszych wersji bywają wrażliwe na wilgoć
 - **Wygłuszenie kabiny** – wersja z otwartą skrzynią jest wyraźnie głośniejsza od furgona przy prędkościach autostradowych
 
-*Źródła: [Wikipedia – Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato), Fiat Professional, auto-data.net*
+*Źródła: Wikipedia, Fiat Professional, auto-data.net*

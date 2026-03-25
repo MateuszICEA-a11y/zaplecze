@@ -87,4 +87,4 @@ Jak każdy intensywnie eksploatowany bus, Ducato ma swoje słabsze punkty:
 | Używana 2019, L4H2, 131 KM, ~128 tys. km | ~96 500 zł |
 | Używana 2.3 150 KM, 7 osób (starszy rocznik) | od ~57 000 zł |
 
-*Źródła: [Wikipedia – Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato), Fiat Professional, auto-data.net*
+*Źródła: Wikipedia, Fiat Professional, auto-data.net*

@@ -89,4 +89,4 @@ Ducato jest solidny, ale ma kilka powtarzających się słabych punktów:
 | 2017–2020 | 2.3 MultiJet 150–180 KM | 60 000–90 000 zł |
 | 2025–2026 (nowy) | 2.2 MultiJet3 140 KM | od ~244 000 zł brutto |
 
-*Źródła: [Wikipedia – Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato), Fiat Professional, AutoCentrum.pl*
+*Źródła: Wikipedia, Fiat Professional, AutoCentrum.pl*

@@ -96,4 +96,4 @@ Najczęstsze problemy z konkretnymi przebiegami i kosztami napraw:
 
 Ceny używanych Ducato 2.8 JTD na rynku polskim (2026): **12 000–25 000 zł** przy przebiegach 250–400 tys. km, zadbane kampery do 30 000 zł. Kto wybiera konkretny rocznik i wersję, znajdzie przegląd w [kompletnym przewodniku po Fiacie Ducato](/modele/fiat-ducato/).
 
-*Źródła: [Wikipedia – Sofim](https://pl.wikipedia.org/wiki/Sofim), AutoCentrum.pl, Fiat Professional, auto-data.net*
+*Źródła: Wikipedia, AutoCentrum.pl, Fiat Professional, auto-data.net*

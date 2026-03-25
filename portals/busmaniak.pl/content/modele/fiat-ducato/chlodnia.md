@@ -83,4 +83,4 @@ Ducato z zabudową chłodniczą wymaga kilku dodatkowych punktów w harmonogrami
 - **Spalanie** – z pracującym agregatem wzrasta o 2–3 l/100 km względem standardowego furgonu; realne wartości to 10–15 l/100 km w cyklu mieszanym
 - **Rozrząd** – w silniku [2.3 MultiJet](/modele/fiat-ducato/2-3-multijet/) zalecany interwał to 100–120 tys. km przy eksploatacji miejskiej z częstym start-stop
 
-*Źródła: [Wikipedia – Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato), Fiat Professional, Igloocar.pl, auto-data.net*
+*Źródła: Wikipedia, Fiat Professional, Igloocar.pl, auto-data.net*

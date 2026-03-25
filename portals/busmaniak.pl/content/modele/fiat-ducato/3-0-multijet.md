@@ -86,4 +86,4 @@ Ceny używanych Ducato 3.0 MultiJet na rynku polskim (2026): **30 000–80 000 z
 Silnik 3.0 MultiJet to najlepszy wybór pod budowę ciężkiego kampera lub transport międzynarodowy. Elastyczny moment sprawia, że jazda w górach z pełnym obciążeniem nie jest żadnym wyzwaniem. Klucz do długowieczności to wymiana oleju co 15–20 tys. km – nie co 45 tys. km, jak sugerował producent.
 {{% /expert %}}
 
-*Źródła: [Wikipedia – Sofim](https://pl.wikipedia.org/wiki/Sofim), AutoCentrum.pl, Fiat Professional, auto-data.net*
+*Źródła: Wikipedia, AutoCentrum.pl, Fiat Professional, auto-data.net*

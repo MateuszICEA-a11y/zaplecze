@@ -69,4 +69,4 @@ Silniki Ducato mają opinię trwałych, ale kilka słabych punktów warto znać 
 
 Porównanie wszystkich silników i historię modelu omawia szczegółowo [przewodnik po Fiacie Ducato](/modele/fiat-ducato/).
 
-*Źródła: [Wikipedia – Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato), Fiat Professional, auto-data.net*
+*Źródła: Wikipedia, Fiat Professional, auto-data.net*

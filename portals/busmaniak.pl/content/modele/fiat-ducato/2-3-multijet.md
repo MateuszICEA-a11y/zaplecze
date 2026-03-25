@@ -24,7 +24,7 @@ faq:
 
 ## Dane techniczne silnika 2.3 MultiJet
 
-Silnik 2.3 MultiJet (oznaczenie fabryczne rodziny F1AE, produkowany przez [Fiat Powertrain Technologies](https://pl.wikipedia.org/wiki/Fiat_Powertrain_Technologies)) to czterocylindrowy diesel z układem wtrysku Common Rail. Pojemność skokowa wynosi dokładnie 2287 cm³ (średnica cylindra 86 mm, skok tłoka 98 mm). Stosowany jest w Fiacie Ducato od trzeciej generacji (Ducato III, od 2006 roku) i kontynuowany w czwartej (Ducato IV, od 2014 roku z liftingami).
+Silnik 2.3 MultiJet (oznaczenie fabryczne rodziny F1AE, produkowany przez [Fiat Powertrain Technologies](https://en.wikipedia.org/wiki/Fiat_Powertrain_Technologies)) to czterocylindrowy diesel z układem wtrysku Common Rail. Pojemność skokowa wynosi dokładnie 2287 cm³ (średnica cylindra 86 mm, skok tłoka 98 mm). Stosowany jest w Fiacie Ducato od trzeciej generacji (Ducato III, od 2006 roku) i kontynuowany w czwartej (Ducato IV, od 2014 roku z liftingami).
 
 | Parametr | Wartość |
 |----------|---------|
@@ -129,4 +129,4 @@ Orientacyjne koszty serwisowe silnika 2.3 MultiJet (ceny z 2026 roku, warsztaty 
 
 Mocniejszą alternatywą jest [silnik 3.0 MultiJet](/modele/fiat-ducato/3-0-multijet/), który oferuje wyższy moment obrotowy kosztem większego spalania i droższego serwisu. Od 2021 roku gama Ducato przeszła na [nowy silnik 2.2 MultiJet3](/modele/fiat-ducato/2-2-multijet/), zastępując nim 2.3 we wszystkich wersjach.
 
-*Źródła: [Wikipedia – Fiat Powertrain Technologies](https://pl.wikipedia.org/wiki/Fiat_Powertrain_Technologies), AutoCentrum.pl, Fiat Professional, auto-data.net*
+*Źródła: Wikipedia, AutoCentrum.pl, Fiat Professional, auto-data.net*

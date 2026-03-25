@@ -75,4 +75,4 @@ Przy zabudowach 10-paletowych realna ładowność – przy DMC 3,5 t – rzadko 
 
 Inne warianty zabudowy na tym samym podwoziu: [Ducato skrzyniowy](/modele/fiat-ducato/skrzyniowy/) i [Ducato kontener](/modele/fiat-ducato/kontener/).
 
-*Źródła: [Wikipedia – Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato), Fiat Professional, Lamar, Gruau*
+*Źródła: Wikipedia, Fiat Professional, Lamar, Gruau*

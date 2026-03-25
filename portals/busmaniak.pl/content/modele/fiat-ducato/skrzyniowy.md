@@ -80,4 +80,4 @@ Skrzynia automatyczna 9-biegowa ZF (od 2019 roku) – dopłata ok. 10 000–15 0
 - **Nowe podwozie (2025–2026, 140–180 KM)** – 150 000–200 000 zł netto
 - **Używane (2019–2023, L3/L4)** – 80 000–150 000 zł
 
-*Źródła: [Wikipedia – Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato), Fiat Professional, Carpol, auto-data.net*
+*Źródła: Wikipedia, Fiat Professional, Carpol, auto-data.net*

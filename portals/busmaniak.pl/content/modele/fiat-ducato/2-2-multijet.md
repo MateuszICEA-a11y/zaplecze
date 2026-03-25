@@ -28,7 +28,7 @@ faq:
 
 Pod oznaczeniem 2.2 MultiJet kryją się dwie zupełnie różne jednostki, dzieli je niemal dwadzieścia lat i kilka generacji technologii. To rozróżnienie warto mieć w głowie już przy przeglądaniu ogłoszeń:
 
-1. **Lata 2006–2011 (Euro 4)** – silnik 100 KM (74 kW) opracowany wspólnie z Fordem, znany jako [2.2 TDCi Duratorq](https://pl.wikipedia.org/wiki/Ford_Duratorq). Oznaczenia fabryczne: 4HV (PSA) / P22DTE. Napęd rozrządu łańcuchem, 5-biegowa skrzynia manualna, wtrysk common rail Denso.
+1. **Lata 2006–2011 (Euro 4)** – silnik 100 KM (74 kW) opracowany wspólnie z Fordem, znany jako [2.2 TDCi Duratorq](https://en.wikipedia.org/wiki/Ford_Duratorq_engine). Oznaczenia fabryczne: 4HV (PSA) / P22DTE. Napęd rozrządu łańcuchem, 5-biegowa skrzynia manualna, wtrysk common rail Denso.
 2. **Od 2021 roku (Euro 6d-Final)** – jednostka MultiJet3 na bazie konstrukcji Stellantis, pokrewna 2.2 BlueHDi stosowanemu w autach PSA. Kody silnika: DJJ (140 KM), DHF (120 KM). Bezpośredni następca [2.3 MultiJet](/modele/fiat-ducato/2-3-multijet/) w gamie Ducato. Wtrysk piezo trzeciej generacji o ciśnieniu do 2700 bar.
 
 {{% info title="Konstrukcja" icon="engineering" %}}
@@ -96,4 +96,4 @@ Decyzja sprowadza się do budżetu i planowanego zastosowania. Orientacyjne ceny
 - **2017–2020 (2.3 MultiJet 150–180 KM)** – 55 000–60 000 zł netto przy 160–230 tys. km. Najlepszy stosunek ceny do jakości – Euro 6, solidna ładowność, niższe ryzyko korozji niż w starszych rocznikach
 - **Od 2021 (2.2 MultiJet3)** – nowe od 109 500 zł netto (140 KM) do 129 600 zł netto (180 KM). Pod [zabudowę kamperową](/modele/fiat-ducato/) najlepiej sprawdzi się wersja 140 KM lub 160 KM sparowana z 9-biegowym automatem ZF
 
-*Źródła: [Wikipedia – Ford Duratorq](https://pl.wikipedia.org/wiki/Ford_Duratorq), AutoCentrum.pl, Fiat Professional, auto-data.net*
+*Źródła: Wikipedia, AutoCentrum.pl, Fiat Professional, auto-data.net*

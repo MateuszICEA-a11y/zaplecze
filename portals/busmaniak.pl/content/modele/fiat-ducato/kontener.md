@@ -78,4 +78,4 @@ Najczęstsze problemy:
 - **Używane (5–8 lat)** – 60 000–100 000 zł netto
 - **Nowe (2025–2026, L4 + kontener)** – 200 000–250 000 zł netto
 
-*Źródła: [Wikipedia – Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato), Fiat Professional, Lamar, auto-data.net*
+*Źródła: Wikipedia, Fiat Professional, Lamar, auto-data.net*

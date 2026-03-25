@@ -70,4 +70,4 @@ Spalanie L4H3 z 2.3 150 KM: realne 10–12 l/100 km w trasie, do 14 l przy pełn
 - **Camper van** – L4H3 z blisko 2,2 m wysokości pozwala na podwójną podłogę i izolację; dorosły człowiek stoi bez pochylania głowy
 - **[Autolawety](/modele/fiat-ducato/laweta/)** – wzmocniona rama Maxi to gotowa podstawa pod zabudowę do transportu pojazdów
 
-*Źródła: [Wikipedia – Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato), Fiat Professional, auto-data.net*
+*Źródła: Wikipedia, Fiat Professional, auto-data.net*

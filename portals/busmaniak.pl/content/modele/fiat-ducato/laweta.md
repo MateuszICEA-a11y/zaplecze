@@ -81,4 +81,4 @@ Spalanie:
 - **Z ładunkiem** – 11–13 l/100 km
 - **Z przyczepą (zestaw)** – 14–16 l/100 km
 
-*Źródła: [Wikipedia – Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato), Fiat Professional, Grupa Bemo, auto-data.net*
+*Źródła: Wikipedia, Fiat Professional, Grupa Bemo, auto-data.net*
