@@ -22,7 +22,7 @@ faq:
     answer: "1.6 dCi 115 KM single turbo to sprawdzona i prosta jednostka z dobrą opinią serwisową. Wersja BiTurbo (120/140 KM) jest mocniejsza, ale bardziej awaryjna przy dużych przebiegach. Silnik 2.0 dCi (od 2019) to obecnie najlepszy wybór – większy moment obrotowy, lepsza kultura pracy i spokojniejsza historia serwisowa."
 ---
 
-Renault Trafic brygadówka to właściwy wybór dla ekipy, która musi jednocześnie przewieźć ludzi i ciężkie narzędzia – bez kompromisów po żadnej stronie. Dwa rzędy siedzeń z przodu, solidna przestrzeń ładunkowa z tyłu, i DMC do 3,1 tony, która przy homologacji N1 daje pełne odliczenie VAT.
+Renault Trafic brygadówka to właściwy wybór dla ekipy, która musi jednocześnie przewieźć ludzi i ciężkie narzędzia – bez kompromisów po żadnej stronie. Model z ponad czterdziestoletnią historią, opisany na [Wikipedii](https://pl.wikipedia.org/wiki/Renault_Trafic), oferuje dwa rzędy siedzeń z przodu, solidną przestrzeń ładunkową z tyłu i DMC do 3,1 tony, która przy homologacji N1 daje pełne odliczenie VAT.
 
 ## Czym jest brygadówka i dlaczego Trafic?
 
@@ -79,8 +79,6 @@ Trafic III (od 2014) ma wyraźnie lepszą ergonomię kabiny niż poprzednik. Dla
 - **Schowki i organizer** – Trafic III nie grzeszy liczbą schowków jak Ducato, ale uchwyt na dokumenty i kieszenie na drzwiach wystarczają na codzienną organizację
 - **Hałas i wibracje** – przegroda stalowa tłumi dźwięki z ładowni; przy nieobciążonej pace siatkowej hałas przy jeździe po złej nawierzchni jest wyraźnie wyższy
 
-Więcej o ogólnej charakterystyce modelu – w naszym głównym artykule: [Renault Trafic – dane techniczne i silniki](/modele/renault-trafic/).
-
 ## Kto kupuje Trafica Combi – zastosowania
 
 Brygadówka Trafic trafia głównie do firm, które wysyłają ekipy w teren z ciężkim lub wartościowym sprzętem:
@@ -91,3 +89,5 @@ Brygadówka Trafic trafia głównie do firm, które wysyłają ekipy w teren z c
 - Firmy remontowe przy lekkich kontraktach – gdzie Ducato byłby za duży i za drogi w utrzymaniu
 
 Na rynku wtórnym Trafic Combi jest mniej popularny niż furgon, co przy zakupie używanego egzemplarza daje pewną przewagę negocjacyjną. Wadą jest mniejszy wybór.
+
+*Źródła: Wikipedia, Renault, auto-data.net*

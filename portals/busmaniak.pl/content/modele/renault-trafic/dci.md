@@ -22,7 +22,7 @@ faq:
     answer: "Do silników 1.6 dCi montowana jest wyłącznie manualna skrzynia PF6. Automat EDC pojawił się dopiero od 2019 roku razem z silnikiem 2.0 dCi, w wersjach 145 i 170 KM."
 ---
 
-Renault Trafic dCi w generacji III to dwa odrębne silniki z różnym charakterem i innymi wymaganiami serwisowymi. Zanim przejdziesz do danych technicznych, warto wiedzieć: 1.6 dCi z łańcuchem rozrządu to prostszy układ, ale wrażliwszy na kondycję wtryskiwaczy. 2.0 dCi daje więcej momentu i można go sparować z automatem, lecz pasek rozrządu to obowiązkowy wydatek co 120–150 tys. km.
+Renault Trafic dCi – opisany szczegółowo [na Wikipedii](https://pl.wikipedia.org/wiki/Renault_Trafic) – w generacji III to dwa odrębne silniki z różnym charakterem i innymi wymaganiami serwisowymi. Warto wiedzieć: 1.6 dCi z łańcuchem rozrządu to prostszy układ, ale wrażliwszy na kondycję wtryskiwaczy. 2.0 dCi daje więcej momentu i można go sparować z automatem, lecz pasek rozrządu to obowiązkowy wydatek co 120–150 tys. km.
 
 ---
 
@@ -138,6 +138,6 @@ Jeśli kupujesz używanego Trafica z lat 2014–2019, silnik 1.6 dCi 115 to rozs
 
 W autach po 2019 roku 2.0 dCi 145 to najpopularniejszy wybór – wystarczająca moc, możliwość automatu, a przy regularnej wymianie paska rozrządu bez zaskoczeń.
 
-Więcej informacji o generacjach i wyposażeniu znajdziesz w artykule [Renault Trafic – przegląd modelu](/modele/renault-trafic/).
+*Źródła: Wikipedia, Renault, auto-data.net*
 
 ---

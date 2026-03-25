@@ -22,15 +22,15 @@ faq:
     answer: "Tak – od Trafica II (2001) oba modele dzielą tę samą platformę i nadwozie. Różnice to logo, drobne elementy stylistyczne i opcje wyposażenia. Mechanicznie to identyczne pojazdy, co ułatwia dostępność części."
 ---
 
-Renault Trafic to solidny środek transportu dla firm, które potrzebują ładowności powyżej tony bez przepłacania za markę. W segmencie średnich dostawczaków od lat utrzymuje się w czołówce sprzedaży – nie dlatego, że jest najlepszy pod każdym względem, ale dlatego, że rzadko zawodzi w codziennej robocie. Poniżej znajdziesz wszystko, co musisz wiedzieć przed zakupem: od historii przez dane techniczne po typowe awarie z kosztami napraw.
+[Renault Trafic](https://pl.wikipedia.org/wiki/Renault_Trafic) to solidny środek transportu dla firm, które potrzebują ładowności powyżej tony bez przepłacania za markę. W segmencie średnich dostawczaków od lat utrzymuje się w czołówce sprzedaży – nie dlatego, że jest najlepszy pod każdym względem, ale dlatego, że rzadko zawodzi w codziennej robocie. Łączna produkcja przekroczyła 2,4 mln sztuk we wszystkich generacjach, co czyni go jednym z najlepiej sprzedających się dostawczaków w historii europejskiego rynku.
 
 ## Historia i generacje
 
-Trafic pojawił się w 1980 roku i od początku miał azjatyckie korzenie – pierwsza generacja bazowała na platformie Nissan Vanette. To wyjaśnia, dlaczego ten model nigdy nie był typowo francuską konstrukcją: bardziej pragmatyczny niż efektowny.
+Trafic pojawił się w 1980 roku jako własna konstrukcja Renault – zaprojektowana z myślą o europejskim rynku komercyjnym. Model był od początku bardziej pragmatyczny niż efektowny, co okazało się jego największą zaletą w eksploatacji.
 
-- Trafic I (1980–2001) - silniki benzynowe 1.4, 1.6 i 2.0, diesel 2.1. Auto proste konstrukcyjnie, co w tamtych czasach oznaczało długą żywotność przy niewysokich kosztach utrzymania.
-- Trafic II (2001–2014) - wspólna platforma z Oplem Vivaro i Nissanem Primastar. Wprowadzenie silników dCi to skok w kulturę pracy i spalanie, ale też nowe problemy z wtryskiwaczami, których wcześniej nie było.
-- Trafic III (2014–dziś) - produkowany w Sandouville we Francji. Nowy design, lepsze wyposażenie, silniki 1.6 dCi i 2.0 dCi. Pod względem przestrzeni ładunkowej i ergonomii kabiny to wyraźny krok do przodu względem poprzednika.
+- **Trafic I (1980–2001)** – silniki benzynowe 1.4, 1.6 i 2.0, diesel 2.1. Auto proste konstrukcyjnie, co w tamtych czasach oznaczało długą żywotność przy niewysokich kosztach utrzymania.
+- **Trafic II (2001–2014)** – wspólna platforma z Oplem Vivaro i Nissanem Primastar. Wprowadzenie silników dCi to skok w kulturę pracy i spalanie, ale też nowe problemy z wtryskiwaczami, których wcześniej nie było. Generacja zdobyła tytuł Van of the Year 2002.
+- **Trafic III (2014–dziś)** – produkowany w fabryce Sandouville we Francji zdolnej do wytworzenia około 600 sztuk dziennie. Nowy design, lepsze wyposażenie, silniki 1.6 dCi i 2.0 dCi. 23 maja 2023 roku z taśmy zjechał milionowy egzemplarz trzeciej generacji. Pod względem przestrzeni ładunkowej i ergonomii kabiny to wyraźny krok do przodu względem poprzednika.
 
 ## Dane techniczne i wymiary {#wymiary}
 
@@ -76,7 +76,7 @@ Trafic jest dostępny w trzech podstawowych konfiguracjach:
 
 Trafic to auto robocze, więc lista usterek nie powinna zaskakiwać – większość problemów wynika z intensywnej eksploatacji lub zaniedbanego serwisu, nie z wad konstrukcyjnych.
 
-- **Wtryskiwacze (Common Rail)** – wycieki paliwa przy wtryskiwaczach to najczęstszy problem w autach po 150 000 km. Wymiana jednej sztuki: 800–1200 zł. Nie zwlekaj – wyciek paliwa przy wysokich ciśnieniach common rail to ryzyko pożaru.
+- **Wtryskiwacze Common Rail** – wycieki paliwa przy wtryskiwaczach to najczęstszy problem w autach po 150 000 km. Wymiana jednej sztuki: 800–1200 zł. Nie zwlekaj – wyciek paliwa przy wysokich ciśnieniach common rail to ryzyko pożaru.
 - **Turbosprężarka 1.6 dCi BiTurbo** – awarie zdarzają się przy dużych przebiegach, zwłaszcza gdy poprzedni właściciel zaniedbywał wymianę oleju. Regeneracja turbiny: 1500–2500 zł.
 - **Filtr DPF** – klasyczny problem przy jeździe miejskiej na krótkich trasach. DPF nie ma kiedy się wypalić, zapycha się i odbiera moc. Rozwiązanie: regularne trasy autostradowe albo profesjonalne wypalenie.
 - **Zawór EGR** – nagary to kwestia czasu w każdym dieslu tego segmentu. EGR w Traficu jest dostępny i tani w czyszczeniu – problem pojawia się, gdy właściciel ignoruje pierwsze objawy (szarpanie na biegu jałowym, dymienie).
@@ -93,6 +93,8 @@ Co kilkadziesiąt tysięcy kilometrów warto zlecić sprawdzenie ciśnienia wtry
 - **Ford Transit Custom** – cena zbliżona do Trafica, ale lepsze fotele i ergonomia wnętrza. Kierowcy spędzający w aucie cały dzień doceniają tę różnicę.
 - **Mercedes Vito** – wyższy segment, wyższy koszt zakupu i utrzymania. Sensowny wybór przy kontraktach, gdzie auto musi reprezentować markę.
 - **Opel Vivaro** – to dosłownie ten sam samochód. Inne logo, identyczne podzespoły. Jedyna praktyczna różnica to cena używanych egzemplarzy i dostępność u dealera.
+
+*Źródła: Wikipedia, Renault, auto-data.net*
 
 {{% expert name="Kowalczyk" %}}
 Przy zakupie używanego Trafica historia serwisowa ważniejsza jest niż przebieg. Auto z 250 000 km na liczniku, ale z dokumentowanymi wymianami oleju co 15 000 km, to lepszy wybór niż egzemplarz z 150 000 km bez żadnych rachunków. Sprawdź też zużycie wnętrza – podłoga ładowni, stopnie wejściowe i stan fotela kierowcy powiedzą Ci więcej o historii eksploatacji niż licznik.

@@ -22,9 +22,7 @@ faq:
     answer: "Ceny nowego Trafic furgon zaczynają się od ok. 105 000 zł netto za wersję L1H1 z podstawowym wyposażeniem (dane 2024). Wersje L2H2 z pakietem comfort kosztują zwykle 130 000–145 000 zł netto."
 ---
 
-Renault Trafic dostawczy w wersji L2H2 oferuje 8,9 m³ przestrzeni ładunkowej i udźwig do 1251 kg – to jedna z najlepszych proporcji objętości do masy ładunku w klasie średnich furgonów. Jeśli szukasz furgona, który zmieści 3 palety i wróci do bazy zanim skończy się zmiana, Trafic jest poważnym kandydatem.
-
-Pełne dane o wariantach nadwozia i specyfikacje silnikowe znajdziesz na stronie głównej modelu: [Renault Trafic – przegląd wersji](/modele/renault-trafic/).
+Renault Trafic dostawczy – model z ponad czterdziestoletnią historią produkcji, opisany na [Wikipedii](https://pl.wikipedia.org/wiki/Renault_Trafic) – w wersji L2H2 oferuje 8,9 m³ przestrzeni ładunkowej i udźwig do 1251 kg. To jedna z najlepszych proporcji objętości do masy ładunku w klasie średnich furgonów. Jeśli szukasz furgona, który zmieści 3 palety i wróci do bazy zanim skończy się zmiana, Trafic jest poważnym kandydatem.
 
 ---
 
@@ -89,7 +87,6 @@ Trafic III dostawczy był oferowany z dwoma jednostkami wysokoprężnymi:
 1.6 dCi 125 KM to rozsądny wybór do pracy w mieście i na krótkich trasach regionalnych. Problem pojawia się przy długotrwałym jeździe autostradą z pełnym ładunkiem – silnik pracuje blisko granicy możliwości, a temperatura oleju napędowego w układzie wtryskowym bywa podwyższona. Przy flocie powyżej 5 samochodów i profilu autostradowym zawsze polecam 2.0 dCi – różnica w zużyciu paliwa jest marginalna, a trwałość układu napędowego wyraźnie lepsza.
 {{% /expert %}}
 
-Szczegółowe dane o poszczególnych silnikach i ich awaryjności opisujemy w artykule [Renault Trafic dCi – silniki i ich wady](/modele/renault-trafic/dci/).
 
 ---
 
@@ -116,9 +113,10 @@ Nowy Renault Trafic dostawczy (dane 2024):
 
 Renault oferuje kilka poziomów wyposażenia: Base, Advance, Comfort i wyższe. W wersji Comfort dodawane są m.in. automatyczna klimatyzacja, kamera cofania i system wspomagania parkowania – szczególnie użyteczne w L2H2, gdzie kąt widzenia do tyłu jest ograniczony.
 
-Porównaj wersję long: [Renault Trafic Long – dane techniczne i różnice](/modele/renault-trafic/long/).
 
 ---
+
+*Źródła: Wikipedia, Renault, auto-data.net*
 
 ## Eksploatacja w praktyce
 

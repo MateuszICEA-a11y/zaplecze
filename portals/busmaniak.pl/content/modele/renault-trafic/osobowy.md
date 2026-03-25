@@ -22,7 +22,7 @@ faq:
     answer: "Tak, 6-biegowy automat był dostępny z silnikami 2.0 dCi 145 KM i 170 KM, wprowadzonymi od 2019 roku."
 ---
 
-Renault Trafic osobowy przewozi do 9 pasażerów w wersji L2 i od lat jest podstawą flotowego transportu pasażerskiego w segmencie VAN. To nie jest auto do jazdy rekreacyjnej – to narzędzie robocze z określonymi atutami i ograniczeniami.
+Renault Trafic osobowy – model opisany szczegółowo na [Wikipedii](https://pl.wikipedia.org/wiki/Renault_Trafic) – przewozi do 9 pasażerów w wersji L2 i od lat jest podstawą flotowego transportu pasażerskiego w segmencie VAN. To nie jest auto do jazdy rekreacyjnej – to narzędzie robocze z określonymi atutami i ograniczeniami.
 
 ## Wersje osobowe Renault Trafic {#wersje}
 
@@ -87,3 +87,5 @@ Przy wyborze długości nadwozia sprawdź w pierwszej kolejności, gdzie auto b�
 - Trafic Passenger L2: od ok. 140 000 zł
 - Trafic SpaceClass: od ok. 175 000 zł
 {{% /info %}}
+
+*Źródła: Wikipedia, Renault, auto-data.net*
