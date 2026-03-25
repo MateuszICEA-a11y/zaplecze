@@ -92,11 +92,4 @@ Centrum dowodzenia to ekran 10 cali, Digital Cockpit Pro i eSIM z nawigacją onl
 - **Łańcuch rozrządu** – warto skontrolować przy ok. 200 tys. km w silniku 2.0 TDI
 - **Elektronika** – multimedia w T6.1 potrafią się zawieszać
 
-Ceny na rynku polskim (2026):
-- **T5** – 35 000–120 000 zł
-- **T6** – 120 000–250 000 zł
-- **T6.1** – 200 000–350 000 zł
-- **T7 nowy** – od ok. 250 000 zł
-- **T7 używany** – 180 000–300 000 zł
-
 *Źródła: Wikipedia, Volkswagen, auto-data.net*
