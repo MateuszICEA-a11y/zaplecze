@@ -19,7 +19,7 @@ faq:
     answer: "Tak, od 2011 roku silniki 1.6 i 2.0 MultiJet są wyposażone w filtr DPF. Silnik 1.3 MultiJet w wielu wersjach do 2015 roku nie miał DPF – to jeden z powodów jego popularności."
 ---
 
-MultiJet to rodzina silników diesla Fiata stosowana w Doblò generacji II. Obejmuje trzy jednostki pojemnościowe: 1.3, 1.6 i 2.0 – różniące się mocą, momentem, kosztem serwisu i przeznaczeniem. Wybór silnika przy zakupie używanego Doblò to jedna z najważniejszych decyzji.
+MultiJet to rodzina silników diesla Fiata stosowana w [Fiat Doblò](https://pl.wikipedia.org/wiki/Fiat_Dobl%C3%B2){rel="nofollow"} generacji II. Obejmuje trzy jednostki pojemnościowe: 1.3, 1.6 i 2.0 – różniące się mocą, momentem, kosztem serwisu i przeznaczeniem. Wybór silnika przy zakupie używanego Doblò to jedna z najważniejszych decyzji.
 
 ## Silnik 1.3 MultiJet – parametry i zastosowanie
 
@@ -114,4 +114,4 @@ Do mieszanej eksploatacji i dłuższych tras: **1.6 MultiJet 120 KM** – dobry 
 
 Do intensywnej eksploatacji z pełnym załadunkiem Maxi: **2.0 MultiJet 135 KM** – jedyna słuszna opcja, jeśli auto ma ciężko pracować.
 
-Pełne dane techniczne modelu: [Fiat Doblò dane techniczne](/modele/fiat-doblo/). Silnik 1.3 MultiJet szczegółowo: [Fiat Doblò 1.3 MultiJet](/modele/fiat-doblo/1-3/). Silnik 1.6 MultiJet szczegółowo: [Fiat Doblò 1.6 MultiJet](/modele/fiat-doblo/1-6/).
+*Źródła: Wikipedia, Fiat Professional, auto-data.net*

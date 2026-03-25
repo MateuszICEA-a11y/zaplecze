@@ -19,7 +19,7 @@ faq:
     answer: "Tak – wysoka podłoga ułatwia wsiadanie, drzwi boczne przesuwne są bezpieczne na parkingach, a przestrzeń bagażowa jest spora. Wersja Maxi Panorama z 7 miejscami sprawdza się jako auto rodzinne do 6-7 osób."
 ---
 
-Fiat Doblò osobowy, sprzedawany pod nazwą Panorama, to ten sam van co Cargo – ale z kanapą zamiast przestrzeni ładunkowej i homologacją M1. Dla wielu rodzin to praktyczna alternatywa wobec klasycznych SUV-ów: więcej przestrzeni za mniejsze pieniądze.
+[Fiat Doblò](https://pl.wikipedia.org/wiki/Fiat_Dobl%C3%B2){rel="nofollow"} osobowy, sprzedawany pod nazwą Panorama, to ten sam van co Cargo – ale z kanapą zamiast przestrzeni ładunkowej i homologacją M1. Dla wielu rodzin to praktyczna alternatywa wobec klasycznych SUV-ów: więcej przestrzeni za mniejsze pieniądze.
 
 ## Doblò Panorama – co dostaje kupujący
 
@@ -94,4 +94,4 @@ Serwis identyczny z Cargo. Spalanie przy normalnej jeździe:
 - 1.5 BlueHDi 130 KM (gen III): ok. 6,5–7,5 l/100 km
 - 1.2 PureTech 110 KM (gen III): ok. 7–9 l/100 km (zależy mocno od stylu jazdy)
 
-Pełne dane techniczne całego modelu znajdziesz na stronie [Fiat Doblò – dane techniczne](/modele/fiat-doblo/). Wersja osobowa [Citroëna Berlingo](/modele/citroen-berlingo/) – bliźniaka gen III – oferuje analogiczne parametry przy zbliżonej cenie.
+*Źródła: Wikipedia, Fiat Professional, auto-data.net*

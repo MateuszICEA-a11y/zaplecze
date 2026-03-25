@@ -89,10 +89,8 @@ Przy wyborze Mastera brygadowego na rynku wtórnym sprawdzaj stan przegrody – 
 
 ## Koszty nabycia i utrzymania
 
-Nowa brygadówka Master L3H2 z silnikiem 150 KM kosztuje ok. 155 000–165 000 zł netto. Na rynku wtórnym (rocznik 2019–2022, przebieg 100 000–200 000 km) ceny wahają się między 80 000 a 120 000 zł.
+Nowa brygadówka [Renault Master](https://pl.wikipedia.org/wiki/Renault_Master) L3H2 z silnikiem 150 KM kosztuje ok. 155 000–165 000 zł netto. Na rynku wtórnym (rocznik 2019–2022, przebieg 100 000–200 000 km) ceny wahają się między 80 000 a 120 000 zł.
 
 Koszty eksploatacji nie odbiegają od furgonu – identyczne podzespoły mechaniczne. Jedyna różnica to wyższe koszty wymiany tapicerki i konserwacji kanapy tylnej przy intensywnym użytkowaniu.
 
-Więcej o modelu bazowym i wersjach nadwoziowych – w artykule [Renault Master – dane techniczne i wersje](/modele/renault-master/).
-
-*Źródła: Renault Pro+ katalog 2023, dane techniczne NV400, specyfikacje Opel Movano B.*
+*Źródła: Wikipedia, Renault, auto-data.net*

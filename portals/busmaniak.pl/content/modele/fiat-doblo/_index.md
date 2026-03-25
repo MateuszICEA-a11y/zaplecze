@@ -18,7 +18,7 @@ faq:
     answer: "Cargo to wersja dostawcza z przegrodą i homologacją N1. Panorama przewozi 5–7 pasażerów i ma tylną kanapę zamiast przestrzeni ładunkowej."
 ---
 
-Fiat Doblò to kompaktowy van, który przez ponad dwie dekady utrzymuje pozycję jednego z najbardziej wszechstronnych pojazdów segmentu. Kupujesz użytkowego czy rodzinnego – i tak trafisz na Doblò jako poważną opcję. Poniżej znajdziesz twarde dane dla wszystkich trzech generacji.
+[Fiat Doblò](https://pl.wikipedia.org/wiki/Fiat_Dobl%C3%B2){rel="nofollow"} to kompaktowy van, który przez ponad dwie dekady utrzymuje pozycję jednego z najbardziej wszechstronnych pojazdów segmentu. Kupujesz użytkowego czy rodzinnego – i tak trafisz na Doblò jako poważną opcję. Poniżej znajdziesz twarde dane dla wszystkich trzech generacji.
 
 ## Generacje Fiata Doblò – skrót historii
 
@@ -100,4 +100,4 @@ Używane Doblò II to rynek z dużą podażą. Problemy, których warto szukać:
 
 Doblò III na platformie PSA jest za świeży, żeby mówić o typowych usterkach. Obserwuj jednak stan oprogramowania – elektryka PSA bywa wymagająca przy samodzielnych naprawach.
 
-Pełne artykuły o silnikach i wersjach znajdziesz w podstronach tego działu: [MultiJet](/modele/fiat-doblo/multijet/), [1.3 MultiJet](/modele/fiat-doblo/1-3/), [1.6 MultiJet](/modele/fiat-doblo/1-6/), [Maxi](/modele/fiat-doblo/maxi/), [Panorama](/modele/fiat-doblo/osobowy/).
+*Źródła: Wikipedia, Fiat Professional, auto-data.net*

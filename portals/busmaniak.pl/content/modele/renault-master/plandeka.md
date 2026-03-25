@@ -76,7 +76,7 @@ Skrzynia manualna jest standardem. Automat EDC nie jest polecany w wersji skrzyn
 
 | Model | Ładowność L3 z plandeką | DMC max | Cena podwozia netto |
 |-------|------------------------|---------|---------------------|
-| Renault Master L3 | ok. 1100 kg | 4500 kg | od 135 000 zł |
+| [Renault Master](https://pl.wikipedia.org/wiki/Renault_Master) L3 | ok. 1100 kg | 4500 kg | od 135 000 zł |
 | Fiat Ducato L3 | ok. 1150 kg | 4250 kg | od 130 000 zł |
 | VW Crafter L3 | ok. 1200 kg | 5000 kg | od 165 000 zł |
 | Mercedes Sprinter L3 | ok. 1150 kg | 5000 kg | od 160 000 zł |
@@ -96,6 +96,4 @@ Mechanika jest identyczna jak w furgonie – silnik M9T, te same koszty serwisu.
 - konserwacja antykorozyjna ramy i skrzyni: 300–600 zł/rok przy intensywnej eksploatacji zimowej
 - regulacja zamknięć burt: 50–150 zł (proste serwisowanie mechaniczne)
 
-Więcej o podwoziach i wariantach Mastera – w artykule [Renault Master skrzyniowy](/modele/renault-master/skrzyniowy/) oraz w [głównym przewodniku po modelu](/modele/renault-master/).
-
-*Źródła: Renault Pro+ katalog podwoziowy 2023, dane homologacyjne zabudowców (Igloocar, Meiller, Wielton).*
+*Źródła: Wikipedia, Renault, auto-data.net*

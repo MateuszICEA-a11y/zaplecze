@@ -24,7 +24,7 @@ faq:
 
 ## Wszystkie wersje Mastera furgon – przegląd
 
-Renault Master furgon (wewnętrzne oznaczenia: FV dla wersji z napędem na przednią oś, RV dla tylnonapędowej – rzadkość w Polsce) produkowany jest w sześciu standardowych konfiguracjach:
+[Renault Master](https://pl.wikipedia.org/wiki/Renault_Master) furgon (wewnętrzne oznaczenia: FV dla wersji z napędem na przednią oś, RV dla tylnonapędowej – rzadkość w Polsce) produkowany jest w sześciu standardowych konfiguracjach:
 
 - **L1H1** – krótki, niski; dobry do centrum miasta; ograniczona przestrzeń (8 m³)
 - **L2H2** – średni, wysoki; bestseller; dobry kompromis między pojemnością a manewrowością
@@ -108,6 +108,4 @@ Najczęściej montowane akcesoria w polskich flotach:
 
 Koszt kompletnego wyposażenia roboczego ładowni: 1500–4000 zł w zależności od specyfikacji.
 
-Pełne dane modelu bazowego i wersje silnikowe znajdziesz w [przewodniku po Renault Master](/modele/renault-master/).
-
-*Źródła: Renault Pro+ katalog 2023, dane rejestracyjne COC, porównania auto-data.net.*
+*Źródła: Wikipedia, Renault, auto-data.net*

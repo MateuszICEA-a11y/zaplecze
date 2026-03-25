@@ -19,7 +19,7 @@ faq:
     answer: "Przy regularnej obsłudze silnik 1.9 JTD jest bardzo trwały – przebiegi 400–500 tys. km bez kapitalnego remontu są udokumentowane. Warunek: regularna wymiana oleju i dbałość o wtryskiwacze."
 ---
 
-Silnik 1.9 JTD to jednostka z generacji I Doblò – starszy diesiel, ale bardzo lubiony przez mechaników i użytkowników. Brak DPF, prosta elektryka, wysoka trwałość i dobre parametry robocze sprawiają, że egzemplarze z tym silnikiem mają swoich zwolenników do dziś.
+Silnik 1.9 JTD to jednostka z generacji I [Fiat Doblò](https://pl.wikipedia.org/wiki/Fiat_Dobl%C3%B2){rel="nofollow"} – starszy diesiel, ale bardzo lubiony przez mechaników i użytkowników. Brak DPF, prosta elektryka, wysoka trwałość i dobre parametry robocze sprawiają, że egzemplarze z tym silnikiem mają swoich zwolenników do dziś.
 
 ## Dane techniczne 1.9 JTD
 
@@ -96,4 +96,4 @@ JTD to silnik, który za mało kosztuje w eksploatacji, żeby go nie lubić. Wid
 | Trwałość silnika | bardzo wysoka | wysoka | wysoka |
 | Cena zakupu | niska | średnia | średnia-wysoka |
 
-Pełne dane techniczne modelu: [Fiat Doblò – dane techniczne](/modele/fiat-doblo/). Porównanie silników MultiJet z nowszych generacji: [Fiat Doblò MultiJet](/modele/fiat-doblo/multijet/).
+*Źródła: Wikipedia, Fiat Professional, auto-data.net*

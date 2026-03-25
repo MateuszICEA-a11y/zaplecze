@@ -27,7 +27,7 @@ lead: "Renault Master to jeden z najpopularniejszych dużych samochodów dostawc
 
 ## Historia i generacje Renault Master {#historia-generacje}
 
-Renault Master to model z długą historią, który ewoluował przez trzy wyraźne generacje. Pierwszy Master pojawił się w 1980 roku jako następca Renault Estafette – tylnonapędowego, już przestarzałego modelu. Master I (1980–1997) oferował napęd na tylną oś i prymitywne jak na dzisiejsze standardy silniki benzynowe i diesla.
+[Renault Master](https://pl.wikipedia.org/wiki/Renault_Master) to model z długą historią, który ewoluował przez trzy wyraźne generacje. Pierwszy Master pojawił się w 1980 roku jako następca Renault Estafette – tylnonapędowego, już przestarzałego modelu. Master I (1980–1997) oferował napęd na tylną oś i prymitywne jak na dzisiejsze standardy silniki benzynowe i diesla.
 
 Przełom nastąpił przy **Masterze II** (1997–2010), który jako pierwszy w tej klasie wprowadził napęd na przednią oś i rozrząd paskiem zamiast łańcuchem w silnikach diesla. Model ten był produkowany wspólnie z Oplem Movano i szybko zyskał popularność na rynku flotowym.
 
@@ -111,4 +111,4 @@ Master III jest modelem ogólnie solidnym, ale ma swoje charakterystyczne słabo
 - **Skrzynia EDC** – automat w pierwszych rocznikach po faceliftingu (2019–2021) zdarzało się przegrzewać przy intensywnym użytkowaniu; nowsze oprogramowanie (aktualizacja 2022+) poprawiło sytuację
 - **Korozja progów** – szczególnie w starszych egzemplarzach z regionów solonych; zawsze sprawdź od spodu
 
-*Źródła: Renault Pro+ (renault-pro.pl), katalogi techniczne Renault 2023, dane auto-data.net, specyfikacje techniczne NV400/Movano.*
+*Źródła: Wikipedia, Renault, auto-data.net*

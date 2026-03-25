@@ -24,7 +24,7 @@ faq:
 
 ## Które wersje Van są dostępne?
 
-Renault Master Van to oficjalne oznaczenie wersji furgon – zamkniętego nadwozia blaszanego, bez bocznych okien za kabina kierowcy. To absolutna podstawa oferty i najczęściej spotykany wariant Mastera w polskich flotach transportowych.
+[Renault Master](https://pl.wikipedia.org/wiki/Renault_Master) Van to oficjalne oznaczenie wersji furgon – zamkniętego nadwozia blaszanego, bez bocznych okien za kabina kierowcy. To absolutna podstawa oferty i najczęściej spotykany wariant Mastera w polskich flotach transportowych.
 
 Dostępne konfiguracje nadwozia:
 
@@ -103,6 +103,4 @@ Orientacyjne koszty typowych napraw w wersji Van:
 - wymiana DPF (zamiennik): 2000–4000 zł
 - napełnienie AdBlue (17 l): 80–130 zł
 
-Więcej o całym modelu i jego historii znajdziesz w [głównym artykule o Renault Master](/modele/renault-master/).
-
-*Źródła: Renault Pro+ katalog techniczny 2023, auto-data.net, dane rejestracyjne COC.*
+*Źródła: Wikipedia, Renault, auto-data.net*
