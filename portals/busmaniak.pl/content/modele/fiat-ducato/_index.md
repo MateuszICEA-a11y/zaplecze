@@ -74,8 +74,6 @@ Jednostki napędowe Ducato ewoluowały wraz z normami emisji spalin. Wybór siln
 Jeśli szukasz używanego Ducato do ciężkiej pracy, celuj w jednostkę 3.0 MultiJet sprzed 2016 roku. To silnik niemal niezniszczalny, który doskonale radzi sobie z pełnym obciążeniem. W przypadku nowszych egzemplarzy, silnik 2.3 o mocy 150 KM oferuje najlepszą kulturę pracy i rozsądne koszty serwisu, zwłaszcza jeśli regularnie sprawdzasz [rozrząd Ducato](/serwis/fiat-ducato-rozrzad/).
 {{% /expert %}}
 
-![Fiat Ducato IV furgon przy rampie załadunkowej](/images/fiat-ducato-hero.jpg)
-
 ## Wersje nadwoziowe i zastosowania {#wersje-nadwozia}
 
 Fiat Ducato to model niezwykle uniwersalny. Dzięki konstrukcji ramowej (w wersjach podwozie) oraz samonośnej (furgon), możliwości konfiguracji są niemal nieograniczone.

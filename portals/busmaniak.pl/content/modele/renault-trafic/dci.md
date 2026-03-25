@@ -81,8 +81,6 @@ BiTurbo i wersja 170 KM przy intensywnym użytkowaniu miejskim mogą przekroczy�
 
 ---
 
-![Silnik dCi](/images/renault-trafic-dci-hero.jpg)
-
 ## Typowe usterki
 
 ### 1.6 dCi (R9M)

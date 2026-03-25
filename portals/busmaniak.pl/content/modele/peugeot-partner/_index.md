@@ -67,8 +67,6 @@ Opcje szczególnie przydatne w zastosowaniach flot:
 - kratka oddzielająca kabinę od przestrzeni ładunkowej
 - instalacja mocowania towarów (szyny w podłodze)
 
-![Peugeot Partner III – van dostawczy z tyłu](/images/peugeot-partner-hero.jpg)
-
 {{% info title="Partner a nowe przepisy o strefach emisji" icon="engineering" %}}
 Od 2024 roku kilka polskich miast (Warszawa, Kraków) prowadzi pilotażowe strefy czystego transportu. e-Partner spełnia wymagania najwyższej kategorii emisji we wszystkich planowanych polskich SCT. Wersja 1.5 BlueHDi Euro 6d mieści się w granicach dozwolonego wjazdu we wszystkich aktualnych strefach europejskich klasy C.
 {{% /info %}}

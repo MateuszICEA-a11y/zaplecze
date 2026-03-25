@@ -50,8 +50,6 @@ Daily brygadówka dostępna jest w zakresie DMC 3,5 t do 5,0 t. Przy 3,5 t i 7 m
 - Leśnictwo i służby komunalne – ekipy terenowe
 {{% /info %}}
 
-![Iveco Daily brygadówka – kabina pasażerska z przegrodą i przestrzeń ładunkowa](/images/iveco-daily-brygadowka-hero.jpg)
-
 ## Silnik – 2.3 MultiJet wystarczy
 
 Do brygadówki w wariancie 3,5 t silnik 2.3 MultiJet 136 KM w zupełności wystarcza. Przy DMC 5,0 t z pełną ekipą i cięższym sprzętem warto rozważyć 156 KM, żeby mieć margines przy wyprzedzaniu i na autostradzie.

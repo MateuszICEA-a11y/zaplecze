@@ -63,8 +63,6 @@ Zabudowy montowane przez specjalistyczne firmy:
 - wywrotka hydrauliczna – do ziemi, żwiru, gruzu, odpadów budowlanych
 - platforma niskopodłogowa – transport maszyn i pojazdów
 
-![Ford Transit skrzyniowy z zabudową skrzynkową](/images/ford-transit-skrzyniowy-hero.jpg)
-
 ## Silniki i napęd
 
 Wszystkie wersje chassis cab mają tylny napęd RWD. To wymaganie wynikające z ciężaru zabudów i potrzeby zachowania trakcji tylnej osi przy załadowanym pojeździe.

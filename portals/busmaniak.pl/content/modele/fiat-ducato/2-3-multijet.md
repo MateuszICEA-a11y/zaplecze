@@ -59,8 +59,6 @@ Dla typowej pracy dostawczej (przewóz towarów do 1,2 tony) wersja 130 KM jest 
 Jeśli planujesz [przeróbkę na kampera](/przerobki/fiat-ducato-kamper/), wersja 140 KM to złoty środek. Dopłata względem 130 KM jest niewielka, a dodatkowe 30 Nm momentu obrotowego robi realną różnicę przy zabudowie ważącej 500–800 kg. Wersję 160 KM polecam głównie przy ciągnięciu przyczepy lub DMC powyżej 3,5 tony.
 {{% /expert %}}
 
-![Silnik 2.3 MultiJet Fiat Ducato w warsztacie](/images/fiat-ducato-2-3-multijet-hero.jpg)
-
 ## Spalanie w praktyce
 
 Dane katalogowe producenta (6,4–7,8 L/100 km) mają niewiele wspólnego z rzeczywistością. Na podstawie raportów użytkowników i danych z portali motoryzacyjnych, realne spalanie silnika 2.3 MultiJet przedstawia się następująco:

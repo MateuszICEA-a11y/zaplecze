@@ -61,8 +61,6 @@ Pełny przegląd silników i generacji na stronie [Volkswagena Caddy](/modele/vo
 
 {{% expert name="Kowalczyk" %}}Do jazdy rodzinnej polecam 2.0 TDI 102 KM z manualną skrzynią biegów. DSG jest wygodniejsza, ale w razie awarii mechatronika koszty naprawy sięgają 3–5 tys. zł. Manual jest odporniejszy na usterki i tańszy w serwisie.{{% /expert %}}
 
-![Volkswagen Caddy osobowy V generacji](/images/volkswagen-caddy-osobowy-hero.jpg)
-
 ## Caddy osobowy vs konkurencja {#konkurencja}
 
 - **[Citroën Berlingo](/modele/citroen-berlingo/)** – tańszy o 15–20%, większy bagażnik w wersji XL, ale gorsze prowadzenie i plastikowe wnętrze

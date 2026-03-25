@@ -63,8 +63,6 @@ Vivaro C Long oferowany jest z tymi samymi jednostkami co Standard:
 
 Szczegóły jednostek napędowych znajdziesz w artykułach [Opel Vivaro 1.5](/modele/opel-vivaro/1-5/) i [Opel Vivaro 2.0](/modele/opel-vivaro/2-0/).
 
-![Opel Vivaro Long – wymiary przestrzeni ładunkowej](/images/opel-vivaro-long-hero.jpg)
-
 ## Dostęp do przestrzeni ładunkowej
 
 Vivaro Long standardowo ma:

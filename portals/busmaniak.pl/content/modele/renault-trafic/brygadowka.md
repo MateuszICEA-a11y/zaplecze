@@ -52,8 +52,6 @@ Podłoga ładowni w wersji L1 ma długość ok. 1700–1900 mm za przegrodą (za
 Renault Trafic Combi z homologacją N1 (pojazd towarowy) pozwala na pełne odliczenie VAT od zakupu i eksploatacji oraz jest objęty niższą stawką podatku od środków transportu. Warunek: liczba miejsc siedzących nie może przekraczać liczby wymaganej przez producenta dla danej konfiguracji towarowej. Przed zakupem warto sprawdzić dowód rejestracyjny i kartę pojazdu – na rynku wtórnym trafiają się egzemplarze przekwalifikowane z powrotem na osobowe.
 {{% /info %}}
 
-![Renault Trafic brygadówka Combi](/images/renault-trafic-brygadowka-hero.jpg)
-
 ## Silniki – który sprawdza się w brygadówce?
 
 Trafic Combi przez większość czasu jedzie pod obciążeniem: pełna kabina, paka z narzędziami, czasem jeszcze przyczepa. Wybór napędu ma więc inne znaczenie niż w pustym furgonie.

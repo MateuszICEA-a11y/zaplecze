@@ -42,8 +42,6 @@ Daily plandeka dostępna jest od DMC 3,5 t do 7,2 t. Masa samej zabudowy plandek
 - DMC 7,2 t – kat. C1, ciężkie ładunki paletowe, maksymalna elastyczność
 {{% /info %}}
 
-![Iveco Daily plandeka – trójstronny dostęp do ładunku](/images/iveco-daily-plandeka-hero.jpg)
-
 ## Zastosowania branżowe
 
 Plandeka na Daily dominuje tam, gdzie liczy się szybki dostęp do towaru z boku lub z góry:

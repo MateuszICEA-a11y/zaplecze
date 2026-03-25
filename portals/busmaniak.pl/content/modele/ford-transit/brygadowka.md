@@ -55,8 +55,6 @@ Kabina Double Cab w Transicie oferuje:
 
 Łącznie 5 lub 6 miejsc. Dostęp do tylnego rzędu przez boczne drzwi przesuwne (lewe lub prawe, zależnie od wersji).
 
-![Ford Transit Double Cab – brygadówka z przegrodą](/images/ford-transit-brygadowka-hero.jpg)
-
 ## Homologacja N1 i korzyści podatkowe
 
 Homologacja N1 oznacza pojazd ciężarowy o DMC do 3,5 t. Dla firm wiąże się to z:

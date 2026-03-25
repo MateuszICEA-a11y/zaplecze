@@ -70,8 +70,6 @@ Do przewozu towarów o masie do 500 kg wystarczy wersja 75 lub 100 KM. Przy regu
 
 {{% expert name="Kowalczyk" %}}W wersji Van zdecydowanie polecam 1.5 BlueHDI 100 KM – to najczęściej wybierany wariant, który dobrze radzi sobie z typowym ładunkiem kurierskim. Wersja 75 KM jest zbyt słaba przy pełnym obciążeniu na autostradzie.{{% /expert %}}
 
-![Citroën Berlingo Van III generacji załadowany](/images/citroen-berlingo-van-hero.jpg)
-
 ## Wersja Van vs osobowa {#van-vs-osobowy}
 
 Kluczowe różnice między Berlingo Van a wersją osobową:

@@ -65,8 +65,6 @@ Vivaro Life (Vivaro C) dostępny jest z jednostkami:
 
 Wersja elektryczna Vivaro-e Life – bateria 50 lub 75 kWh, silnik 136 KM. Zasięg do 330 km (WLTP) w wersji 75 kWh.
 
-![Opel Vivaro osobowy – Combi i Life w zestawieniu](/images/opel-vivaro-osobowy-hero.jpg)
-
 ## Vivaro osobowy a Renault Trafic Passenger
 
 Vivaro Combi/Life to bliźniaki Renault Trafic Passenger i SpaceClass. Platformy, silniki i nadwozia są wspólne. Różnica: wyposażenie seryjne i sieć dealerska. Więcej o bliźniaku w artykule [Renault Trafic](/modele/renault-trafic/).

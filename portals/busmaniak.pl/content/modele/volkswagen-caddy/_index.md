@@ -88,8 +88,6 @@ Volkswagen nie oferuje jeszcze elektrycznego Caddy, choć platforma MQB technicz
 
 {{% expert name="Kowalczyk" %}}Caddy California to najciekawsza propozycja w ofercie – pełnoprawny mini-kamper za ułamek ceny Transportera California. Rozkładane łóżko 1,98 x 1,07 m mieści dwie dorosłe osoby. Minus: stojąc w środku trzeba się pochylać (wysokość wnętrza ok. 1,20 m).{{% /expert %}}
 
-![Volkswagen Caddy V na drodze](/images/volkswagen-caddy-hero.jpg)
-
 ## Caddy na tle konkurencji {#konkurencja}
 
 Caddy rywalizuje z:

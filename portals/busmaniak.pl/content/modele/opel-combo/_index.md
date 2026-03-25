@@ -45,8 +45,6 @@ Combo E dostępne jest w dwóch długościach:
 
 Ładowność wersji dostawczej wynosi do 1000 kg. Wysokość załadunku 576 mm pozwala załadować towar bez potrzeby podjazdu na rampę.
 
-![Opel Combo E – widok z zewnątrz](/images/opel-combo-hero.jpg)
-
 ## Wersja osobowa Combo Life
 
 Combo Life to odpowiednik Berlingo Multispace – z panoramicznym dachem, rozkładaną kanapą i schowkami pod podłogą. W wersji XL można domówić trzeci rząd siedzeń. Tapicerka, system połączeń Bluetooth i wyświetlacz 8 cali są standardem od wersji Edition.

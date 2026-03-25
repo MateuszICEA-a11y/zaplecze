@@ -47,8 +47,6 @@ Zabudowa chłodnicza na Daily to sandwich z laminatu poliestrowego lub stali nie
 - Cieńsza izolacja = niższy koszt zabudowy, ale wyższe zużycie energii przez agregat
 {{% /info %}}
 
-![Iveco Daily chłodnia z agregatem Thermo King – dystrybucja mrożonek](/images/iveco-daily-chlodnia-hero.jpg)
-
 ## Agregaty chłodnicze – Thermo King i Carrier
 
 Dwa dominujące producenty agregatów do pojazdów dostawczych to Thermo King (koncern Trane Technologies) i Carrier (UTC Climate). W Polsce oba mają gęstą sieć serwisową.

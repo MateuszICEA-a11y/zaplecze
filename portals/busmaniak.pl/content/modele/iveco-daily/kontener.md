@@ -42,8 +42,6 @@ Przy podwoziu Daily Long (L3H2) wewnętrzna przestrzeń zabudowy wynosi ok. 3 60
 - Pianka PUR 60 mm – najlepsza izolacja przy relatywnie małej grubości, wyższy koszt o 3–5 tys. zł
 {{% /info %}}
 
-![Iveco Daily kontener izoterma z agregatem chłodniczym](/images/iveco-daily-kontener-hero.jpg)
-
 ## Agregaty chłodnicze – Thermo King i Carrier
 
 Do Daily stosuje się agregaty niezależne zasilane własnym silnikiem Diesla lub zależne – napędzane silnikiem pojazdu przez compressor.

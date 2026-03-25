@@ -62,8 +62,6 @@ Przestrzeń: 3,8 m³ (Short) lub 4,4 m³ (Long XL)
 
 Dane te są nieco niższe niż w wersji spalinowej (950–1000 kg) ze względu na masę akumulatorów.
 
-![Opel e-Combo – ładowanie prądem stałym](/images/opel-combo-elektryczny-hero.jpg)
-
 {{% info title="Dofinansowania dla e-Combo" icon="engineering" %}}
 e-Combo może być dofinansowane z programu FPPW (Fundusz Pożyczkowy Pojazdów Wyzeroemisyjnych) lub w ramach leasingu z dotacją NFOŚiGW. W 2025 roku limit dofinansowania dla elektrycznych dostawczaków N1 wynosił do 30 000 zł. Warto sprawdzić aktualne warunki bezpośrednio u dealera Opla lub na stronie programu.
 {{% /info %}}

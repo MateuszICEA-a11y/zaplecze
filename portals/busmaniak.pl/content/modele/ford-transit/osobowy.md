@@ -53,8 +53,6 @@ Transit Tourneo jest dostępny w trzech poziomach wyposażenia:
 - Limited – klimatyzacja automatyczna, przednie czujniki parkowania, SYNC 4 z nawigacją, alufelgi 17"
 - Titanium – skórzana tapicerka, ogrzewanie wszystkich foteli, adaptacyjny tempomat, kamera 360°, system B&O Sound (opcja)
 
-![Ford Transit Tourneo – wnętrze pasażerskie](/images/ford-transit-osobowy-hero.jpg)
-
 ## Silniki i osiągi
 
 Tourneo napędza ten sam motor 2.0 EcoBlue co pozostałe wersje Transita:

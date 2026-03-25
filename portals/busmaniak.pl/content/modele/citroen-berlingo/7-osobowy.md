@@ -61,8 +61,6 @@ Wersja 75 KM przy 7 osobach i bagażach jest zdecydowanie za słaba – szczegó
 
 {{% expert name="Kowalczyk" %}}Jeśli planujesz regularnie jeździć w 7 osób, nie oszczędzaj na silniku. 1.5 BlueHDI 130 KM to minimum, które zapewni komfortową jazdę z pełnym obciążeniem. Przy okazjonalnym użytku trzeciego rzędu wystarczy wersja 100 KM.{{% /expert %}}
 
-![Wnętrze Citroëna Berlingo z trzecim rzędem siedzeń](/images/citroen-berlingo-7-osobowy-hero.jpg)
-
 ## Berlingo 7-osobowy vs konkurencja {#konkurencja}
 
 Kilka alternatyw w segmencie kombivanów 7-osobowych:

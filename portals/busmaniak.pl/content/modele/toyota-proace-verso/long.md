@@ -50,8 +50,6 @@ Fotele trzeciego rzędu w wersji Long są pełnowymiarowe – każde z czterech 
 
 ## Silniki dostępne w Proace Verso Long
 
-![Toyota Proace Verso Long – widok z zewnątrz, tylne drzwi otwarte](/images/toyota-proace-verso-long-hero.jpg)
-
 Wersja Long jest dostępna wyłącznie z silnikami diesla:
 
 - 2.0 D-4D 145 KM / 370 Nm – skrzynia manualna 6-biegowa

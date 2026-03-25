@@ -65,8 +65,6 @@ Silnik przeznaczony dla intensywnie eksploatowanych Cargo Maxi. Przy pełnym za�
 
 Wadą jest wyższe zużycie paliwa: 8–10 l/100 km przy załadowanym aucie. W pustym Doblò miasto to strata – 2.0 jest niedostatecznie wciśnięty do pracy.
 
-![Fiat Doblò – silnik MultiJet w komorze silnikowej](/images/fiat-doblo-multijet-hero.jpg)
-
 ## Typowe usterki silników MultiJet w Doblò
 
 ### 1.3 MultiJet:

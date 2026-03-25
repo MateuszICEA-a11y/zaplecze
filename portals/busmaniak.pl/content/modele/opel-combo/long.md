@@ -57,8 +57,6 @@ Combo E XL jest oferowane z tymi samymi silnikami co Short:
 
 Do użytku kurierskiego (wysoki przebieg dzienny, załadunek bliski maksymalnego) najlepiej sprawdza się 1.5 BlueHDi 130 KM z ETG7. Silnik benzynowy PureTech 130 jest akceptowalnym kompromisem, gdy trasy są mieszane miejsko-podmiejskie.
 
-![Opel Combo Long – przestrzeń ładunkowa](/images/opel-combo-long-hero.jpg)
-
 ## Zabudowy i akcesoria cargo
 
 Opel oferuje certyfikowane zabudowy cargo dla Combo XL poprzez sieć autoryzowanych zabudowców (m.in. Sortimo, Modul-System). Standardowa oferta obejmuje:

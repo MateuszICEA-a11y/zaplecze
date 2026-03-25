@@ -79,8 +79,6 @@ Gen II:
 - Limited: full LED, 18" felgi, kamera 360°, bezprzewodowy CarPlay
 - Trail: wersja terenowa z rozmieszczonymi oponami AT i ochroną podwozia
 
-![Ford Transit Custom L2 – van w wersji Limited](/images/ford-transit-custom-hero.jpg)
-
 {{% info title="Transit Custom a program Ford Pro" icon="engineering" %}}
 Ford Pro to platforma usług flotowych Forda – obejmuje oprogramowanie do zarządzania flotą, serwis mobilny Ford Mobile Service, ubezpieczenia flotowe i finansowanie. W Polsce dostępna przez Ford Pro Dealer Network. Dla firm z flotą powyżej 5 pojazdów Ford Pro oferuje dedykowane warunki cenowe i gwarantowane czasy napraw serwisowych.
 {{% /info %}}

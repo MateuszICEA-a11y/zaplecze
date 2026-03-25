@@ -80,8 +80,6 @@ Szerokość maksymalna: 1870 mm
 
 ë-Jumper to lider pod względem zasięgu w segmencie elektrycznych dużych vanów – 420 km WLTP z baterią 75 kWh to wynik nieosiągalny w konkurencji (e-Transit Custom – 380 km, eSprinter – 320 km).
 
-![Citroën Jumper – van L2H2 z zewnątrz](/images/citroen-jumper-hero.jpg)
-
 {{% info title="ë-Jumper w strefach emisji" icon="engineering" %}}
 ë-Jumper spełnia wymagania najwyższej kategorii (Zero Emission) we wszystkich europejskich strefach czystego transportu. W Polsce – gdzie strefy są wdrażane stopniowo – ë-Jumper będzie bezproblemowy przez najbliższe 15–20 lat regulacyjnie. Dla firm z kontraktami na obsługę centrów miast i stref pieszych to kluczowy argument przy zakupie.
 {{% /info %}}

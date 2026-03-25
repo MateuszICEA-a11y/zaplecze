@@ -57,8 +57,6 @@ Rifter Long (L2) dodatkowo oferuje:
 - większy bagażnik
 - tylną klimatyzację z osobnymi nawiewami
 
-![Peugeot Rifter – widok z tyłu z otwartymi drzwiami](/images/peugeot-partner-osobowy-hero.jpg)
-
 {{% info title="Rejestracja jako osobowy – konsekwencje podatkowe" icon="engineering" %}}
 Rifter i Partner Tepee są rejestrowane jako samochody osobowe (kategoria M1). Zakup na firmę daje możliwość odliczenia 50% VAT (chyba że pojazd jest wyłącznie firmowy z ewidencją). Ubezpieczenie OC/AC dla M1 jest zazwyczaj korzystniejsze niż dla N1, szczególnie dla starszych kierowców z długą historią bezszkodową.
 {{% /info %}}

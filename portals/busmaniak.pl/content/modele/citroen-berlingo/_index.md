@@ -63,8 +63,6 @@ Gama silnikowa Berlingo na przestrzeni lat była zróżnicowana. Poniżej najwa�
 - **1.2 PureTech (110–130 KM)** – turbobenzyna o niskim zużyciu paliwa i żywym charakterze
 - **[ë-Berlingo](/modele/citroen-berlingo/elektryczny/) (100 kW / 136 KM)** – wersja elektryczna z baterią 50 kWh i zasięgiem do 280 km według WLTP
 
-![Citroën Berlingo III na drodze](/images/citroen-berlingo-hero.jpg)
-
 ## Wersje nadwoziowe i zastosowania {#wersje-nadwozia}
 
 - **[Berlingo Multispace](/modele/citroen-berlingo/multispace/) (osobowy)** – dla rodzin ceniących przestrzeń i wygodę podczas codziennych przejazdów

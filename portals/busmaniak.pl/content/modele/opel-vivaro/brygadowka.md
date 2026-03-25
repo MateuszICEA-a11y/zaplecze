@@ -64,8 +64,6 @@ Do intensywnej eksploatacji z pełnym załadunkiem polecane warianty:
 
 Szczegóły w artykułach [Opel Vivaro 1.5](/modele/opel-vivaro/1-5/) i [Opel Vivaro 2.0](/modele/opel-vivaro/2-0/).
 
-![Opel Vivaro brygadówka – kabina dwurzędowa z przestrzenią ładunkową](/images/opel-vivaro-brygadowka-hero.jpg)
-
 ## Zastosowania brygadówki
 
 Vivaro w konfiguracji brygadówki sprawdza się dla:

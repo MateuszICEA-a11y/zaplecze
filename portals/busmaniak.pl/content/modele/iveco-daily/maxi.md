@@ -48,8 +48,6 @@ Szerokość 1 870 mm jest kluczowa – dwie palety 800 mm stoją obok siebie z m
 - Ford Transit L4H3: ok. 15,1 m³, 4 europalety
 {{% /info %}}
 
-![Iveco Daily Maxi – największa przestrzeń ładunkowa w klasie vanów na kat. B](/images/iveco-daily-maxi-hero.jpg)
-
 ## Który silnik do Maxi
 
 Długie nadwozie, pełny ładunek, wyjazd na autostradę – tutaj silnik 2.3 MultiJet 136 KM jest zdecydowanie za słaby. Minimum to 156 KM, a przy regularnych trasach drogowych lub pracy w terenie z ciężkim ładunkiem – zalecany jest 3.0 MultiJet 170 KM.

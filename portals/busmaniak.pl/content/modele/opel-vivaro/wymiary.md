@@ -87,8 +87,6 @@ Dane dla Vivaro C L1 z silnikiem 1.5 D 100 KM:
 
 Każde dodatkowe wyposażenie (klimatyzacja, przegroda, szyny mocujące) pomniejsza ładowność.
 
-![Opel Vivaro wymiary – rzut z boku i z góry](/images/opel-vivaro-wymiary-hero.jpg)
-
 ## Porównanie z konkurencją
 
 | Model | Długość L1 | Objętość L1 |

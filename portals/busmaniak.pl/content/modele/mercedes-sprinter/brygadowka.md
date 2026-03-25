@@ -54,8 +54,6 @@ Zalecany silnik do brygadówki: OM654 2.0 CDI 143 KM / 330 Nm. Uzasadnienie wybo
 DMC 3,5 t – prawo jazdy B, ładowność paki ok. 700–900 kg po odjęciu masy pasażerów (przyjmując 80 kg x 6 = 480 kg).
 DMC 5,5 t – prawo jazdy C1, ładowność paki wzrasta do ok. 1500–2000 kg, wymagana wzmocniona oś tylna.
 
-![Mercedes Sprinter brygadówka – widok z zewnątrz z paką skrzyniową](/images/mercedes-sprinter-brygadowka-hero.jpg)
-
 ## Zastosowania branżowe
 
 Główne branże stosujące Sprinter brygadówkę:

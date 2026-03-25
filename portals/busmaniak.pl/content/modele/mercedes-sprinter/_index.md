@@ -42,8 +42,6 @@ Trzecia generacja to największa rewolucja w historii modelu. Po raz pierwszy Sp
 Mercedes Sprinter III to pierwszy w historii Sprinter dostępny z napędem na przednią oś. Wersja FWD (W910) jest szczególnie popularna w zastosowaniach kurierskich i komunalnych, gdzie niższy próg załadunku i lepsze właściwości trakcyjne na śliskich nawierzchniach mają kluczowe znaczenie.
 {{% /info %}}
 
-![Mercedes Sprinter III furgon](/images/mercedes-sprinter-hero.jpg)
-
 ## Dane techniczne i wymiary {#dane-techniczne}
 
 Sprinter III jest dostępny w wariantach nadwoziowych L1 do L4 (długość) i H1 do H3 (wysokość). Najpopularniejsza konfiguracja w Polsce to L2H2 – klasyczny furgon o pojemności ok. 10,5 m³, który mieści się na standardowym miejscu parkingowym i nie wymaga windy załadunkowej.

@@ -77,8 +77,6 @@ Po faceliftingu 2019 roku Master furgon oferuje w standardzie (zależnie od wers
 
 Standardowe wyposażenie robocze ładowni to: boczne panele ze sklejki, podłoga ze sklejki, oświetlenie ładowni LED i uchwyt bezpiecznikowy na ścianie przedniej.
 
-![Renault Master furgon L3H2 – widok z tyłu przy rampie](/images/renault-master-furgon-hero.jpg)
-
 ## Porównanie z głównymi rywalami
 
 | Model | Poj. L3H2 (m³) | Szer. maks. (mm) | Dług. podłogi L3 (mm) | Ład. (kg) |

@@ -45,8 +45,6 @@ Zabudowy montowane na podwoziu Sprinter:
 - Skrzynia sucha (dry box) – standardowa skrzynia ładunkowa bez izolacji, do przewozu towarów niewymagających temperatury kontrolowanej
 - Kontener gastronomiczny (food truck) – zabudowa z wyposażeniem kuchennym, oknem wydawczym, okapem
 
-![Mercedes Sprinter z zabudową chłodniczą ATP](/images/mercedes-sprinter-kontener-hero.jpg)
-
 ## Wymiary zabudowy
 
 Typowe wymiary skrzyni kontenerowej na Sprinter (długi rozstaw osi):

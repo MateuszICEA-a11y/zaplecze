@@ -60,8 +60,6 @@ Skrzynia manualna 6-biegowa jest dostępna przy wszystkich wersjach Diesla. Auto
 Do tras głównie miejskich i regionalnych z ładunkiem do 800 kg wystarczy 1.5 D-4D 100 KM. Przy regularnym załadunku powyżej 1000 kg i trasach ekspresowych warto sięgnąć po 2.0 D-4D 145 KM – dwulitrówka oferuje wyraźnie lepszą elastyczność i niższe zużycie paliwa pod obciążeniem. Wersja 177 KM ma sens przede wszystkim przy holowaniu przyczep o masie powyżej 1500 kg.
 {{% /info %}}
 
-![Toyota Proace II furgon Long](/images/toyota-proace-hero.jpg)
-
 ## Dane techniczne i wymiary
 
 Toyota Proace II jest dostępna w dwóch długościach nadwozia: Medium i Long. Poniżej zestawienie kluczowych parametrów.

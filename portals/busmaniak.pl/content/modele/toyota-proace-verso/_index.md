@@ -47,8 +47,6 @@ Wszystkie odmiany diesla spełniają normę Euro 6d. Automatyczna skrzynia EAT8 
 
 ## Wymiary i konfiguracja siedzeń
 
-![Toyota Proace Verso II – wymiary i wnętrze](/images/toyota-proace-verso-hero.jpg)
-
 Proace Verso występuje w dwóch długościach nadwozia, co przekłada się bezpośrednio na liczbę dostępnych miejsc i przestrzeń bagażową.
 
 | Parametr | Medium | Long |

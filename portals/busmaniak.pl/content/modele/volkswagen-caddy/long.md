@@ -64,4 +64,3 @@ Caddy Long sprawdza się w trzech głównych scenariuszach:
 
 {{% expert name="Kowalczyk" %}}Caddy California w wersji Long to jedyny mini-kamper VW, który nie wymaga wydawania 200+ tys. zł na Transportera. Łóżko 1,98 x 1,07 m, mała kuchenka z blatem i stolik – wystarczy na weekendowy biwak. Do poważniejszego kamperowania lepszy będzie [Transporter](/modele/volkswagen-transporter/) lub [Multivan](/modele/volkswagen-multivan/).{{% /expert %}}
 
-![Volkswagen Caddy Long V generacji](/images/volkswagen-caddy-long-hero.jpg)

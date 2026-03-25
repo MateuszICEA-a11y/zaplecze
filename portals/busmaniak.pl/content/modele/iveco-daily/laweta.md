@@ -45,8 +45,6 @@ Standardowa platforma lawety na podwoziu Daily mierzy 5,0–5,5 m długości prz
 
 Zabudowy wykonują firmy takie jak Barin, Wielton Laweta czy Lohr – czas realizacji 6–10 tygodni od zamówienia podwozia.
 
-![Iveco Daily laweta – platforma i najazd hydrauliczny](/images/iveco-daily-laweta-hero.jpg)
-
 ## Który silnik wybrać
 
 Laweta to ciężka praca – silnik musi ciągnąć pełen ładunek przy rampie, na wzniesieniu, w upale. Przy DMC 5,0 t minimum to silnik 2.3 MultiJet w wersji 136 KM, ale już przy 7,2 t powinieneś patrzeć wyłącznie na 3.0 MultiJet.

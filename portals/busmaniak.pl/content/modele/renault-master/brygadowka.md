@@ -61,8 +61,6 @@ Brygadówka przez większość czasu jedzie z pełnym obciążeniem – 5–6 os
 
 Automat EDC jest wygodny w mieście, ale w brygadówce użytkowanej intensywnie na trasach przełożenie manualne daje kierowcy lepszą kontrolę momentu przy ruszaniu z obciążonego samochodu.
 
-![Renault Master brygadówka L3H2 z przegrodą i podwójną kabiną](/images/renault-master-brygadowka-hero.jpg)
-
 ## Zagospodarowanie przestrzeni ładunkowej
 
 Za przegrodą w wersji L3H2 pozostaje ok. 2300 mm długości podłogi. Standardowe wyposażenie, które warto rozważyć:

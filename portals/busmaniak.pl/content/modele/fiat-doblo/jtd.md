@@ -55,8 +55,6 @@ Trzy główne powody popularności:
 
 Dla użytkownika, który jeździ głównie po mieście z ładunkiem i nie chce wydawać na regenerację DPF – 1.9 JTD jest logicznym wyborem przy niskiej cenie zakupu.
 
-![Fiat Doblò JTD generacji I – widok zewnętrzny](/images/fiat-doblo-jtd-hero.jpg)
-
 ## Typowe usterki 1.9 JTD w Doblò
 
 - Pasek rozrządu – bezwzględna wymiana co 120 tys. km lub 5 lat. Zerwanie paska = uszkodzenie zaworów.

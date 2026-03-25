@@ -76,8 +76,6 @@ Ceny orientacyjne dla rynku polskiego:
 - VIP Medium od ok. 250 000 zł
 - Shuttle Long – dopłata ok. 10 000–15 000 zł względem Medium
 
-![Toyota Proace Verso VIP – wnętrze kabiny pasażerskiej](/images/toyota-proace-verso-osobowy-hero.jpg)
-
 Bezpośrednia konkurencja:
 
 - Volkswagen Multivan – porównywalny segment, ceny wyższe o 30–50 000 zł, większa sieć serwisowa

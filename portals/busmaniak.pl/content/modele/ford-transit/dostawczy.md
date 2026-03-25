@@ -53,8 +53,6 @@ Wymiary przestrzeni ładunkowej w popularnych konfiguracjach:
 
 Szerokość między nadkolami 1420 mm – europalet nie ustawimy obok siebie, tylko wzdłużnie w rzędzie.
 
-![Ford Transit dostawczy – drzwi tylne 270°](/images/ford-transit-dostawczy-hero.jpg)
-
 ## Zabudowy serwisowe i magazynowe
 
 Rynek zabudów dla Transit dostawczego jest szeroki. Najpopularniejsze rozwiązania:
