@@ -24,7 +24,7 @@ faq:
 
 ## Berlingo XL – wydłużona wersja III generacji {#czym-jest}
 
-Wraz z premierą trzeciej generacji Berlingo w 2018 roku, Citroën zmienił nazewnictwo wydłużonej wersji. Zamiast [Long](/modele/citroen-berlingo/long/) (stosowanego w II generacji) pojawił się XL – model opisany na [Wikipedii](https://pl.wikipedia.org/wiki/Citro%C3%ABn_Berlingo) w ramach całej historii Berlingo. Zmiana dotyczy nazwy – koncepcja pozostała ta sama.
+Wraz z premierą trzeciej generacji Berlingo w 2018 roku, Citroën zmienił nazewnictwo wydłużonej wersji. Zamiast [Long](/modele/citroen-berlingo/long/) (stosowanego w II generacji) pojawił się XL – model opisany na Wikipedii w ramach całej historii Berlingo. Zmiana dotyczy nazwy – koncepcja pozostała ta sama.
 
 Berlingo XL jest dłuższe o 350 mm i ma o 190 mm większy rozstaw osi niż wersja M. Dostępne jest w wariancie osobowym i jako [Van](/modele/citroen-berlingo/van/).
 

@@ -22,7 +22,7 @@ faq:
     answer: "Ceny nowego Trafic furgon zaczynają się od ok. 105 000 zł netto za wersję L1H1 z podstawowym wyposażeniem (dane 2024). Wersje L2H2 z pakietem comfort kosztują zwykle 130 000–145 000 zł netto."
 ---
 
-Renault Trafic dostawczy – model z ponad czterdziestoletnią historią produkcji, opisany na [Wikipedii](https://pl.wikipedia.org/wiki/Renault_Trafic) – w wersji L2H2 oferuje 8,9 m³ przestrzeni ładunkowej i udźwig do 1251 kg. To jedna z najlepszych proporcji objętości do masy ładunku w klasie średnich furgonów. Jeśli szukasz furgona, który zmieści 3 palety i wróci do bazy zanim skończy się zmiana, Trafic jest poważnym kandydatem.
+Renault Trafic dostawczy – model z ponad czterdziestoletnią historią produkcji, opisany na Wikipedii – w wersji L2H2 oferuje 8,9 m³ przestrzeni ładunkowej i udźwig do 1251 kg. To jedna z najlepszych proporcji objętości do masy ładunku w klasie średnich furgonów. Jeśli szukasz furgona, który zmieści 3 palety i wróci do bazy zanim skończy się zmiana, Trafic jest poważnym kandydatem.
 
 ---
 

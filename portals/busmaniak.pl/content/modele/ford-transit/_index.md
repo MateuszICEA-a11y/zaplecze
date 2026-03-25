@@ -42,8 +42,6 @@ Kupując Transita VII (2006–2014) warto zwrócić szczególną uwagę na hała
 
 ## Dane techniczne i wymiary
 
-![Ford Transit wymiary ładowni dla wersji L1-L4 i H1-H3](/images/ford-transit-wymiary.jpg)
-
 ### Konfiguracje nadwozia
 
 Transit VIII jest dostępny w 4 długościach (L1–L4) i do 3 wysokościach (H1–H3), zależnie od wersji. Nie każda kombinacja jest produkowana – najdłuższy L4 występuje tylko z H3.

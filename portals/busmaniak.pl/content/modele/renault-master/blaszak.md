@@ -26,7 +26,7 @@ faq:
 
 W języku branżowym i ogłoszeniach samochodowych „blaszak" to nieoficjalna, ale powszechnie rozumiana nazwa furgonu – samochodu dostawczego z zamkniętą przestrzenią ładunkową wykonaną z blachy stalowej. Nazwa pochodzi od materiału nadwozia i odróżnia ten typ zabudowy od pojazdów z plandeką, skrzynią otwartą lub przeszklonym Combi.
 
-W kontekście [Renault Master](https://pl.wikipedia.org/wiki/Renault_Master) terminu „blaszak" używa się prawie wyłącznie dla wersji:
+W kontekście [Renault Master](/modele/renault-master/) terminu „blaszak" używa się prawie wyłącznie dla wersji:
 
 - **L2H2** – średni, wysoki; najczęściej spotykany w kurierskich flotach miejskich
 - **L3H2** – długi, wysoki; najpopularniejszy w firmach budowlanych i remontowych

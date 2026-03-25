@@ -24,7 +24,7 @@ faq:
 
 ## Fiat Ducato doka – co to za konstrukcja?
 
-Termin „doka" wywodzi się z niemieckiego *Doppelkabine* i oznacza podwójną kabinę. W przypadku [Fiata Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato) mamy fabryczną zabudowę z dwoma rzędami siedzeń: 3 miejsca z przodu i 4 w drugim rzędzie, łącznie **7 miejsc siedzących**.
+Termin „doka" wywodzi się z niemieckiego *Doppelkabine* i oznacza podwójną kabinę. W przypadku [Fiata Ducato](/modele/fiat-ducato/) mamy fabryczną zabudowę z dwoma rzędami siedzeń: 3 miejsca z przodu i 4 w drugim rzędzie, łącznie **7 miejsc siedzących**.
 
 Pojazd bazuje na podwoziu do zabudowy, na którym montowana jest otwarta skrzynia ładunkowa (platforma). Doka łączy cechy vana osobowego i lekkiej ciężarówki.
 

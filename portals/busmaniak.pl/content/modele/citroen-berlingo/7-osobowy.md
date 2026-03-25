@@ -24,7 +24,7 @@ faq:
 
 ## Berlingo z trzecim rzędem siedzeń {#trzeci-rząd}
 
-[Citroën Berlingo](https://pl.wikipedia.org/wiki/Citro%C3%ABn_Berlingo) to model produkowany od 1996 roku, który przez lata ewoluował od funkcjonalnego kombi do rodzinnego kombivana. Trzeci rząd siedzeń pojawił się w drugiej generacji (2008–2018) i jest kontynuowany w trzeciej (od 2018). Konfiguracja to zawsze 2+3+2: dwa fotele z przodu, kanapa trzyosobowa w środku, dwa składane siedzenia z tyłu.
+[Citroën Berlingo](/modele/citroen-berlingo/) to model produkowany od 1996 roku, który przez lata ewoluował od funkcjonalnego kombi do rodzinnego kombivana. Trzeci rząd siedzeń pojawił się w drugiej generacji (2008–2018) i jest kontynuowany w trzeciej (od 2018). Konfiguracja to zawsze 2+3+2: dwa fotele z przodu, kanapa trzyosobowa w środku, dwa składane siedzenia z tyłu.
 
 Kluczowa zasada – trzeci rząd dostępny jest wyłącznie w wersji [Long](/modele/citroen-berlingo/long/) lub [XL](/modele/citroen-berlingo/xl/). Krótkie Berlingo M nie ma wystarczającej przestrzeni na dodatkowe fotele za drugą kanapą.
 

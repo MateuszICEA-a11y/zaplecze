@@ -98,7 +98,7 @@ W wersji 9-osobowej Master Combi L3H2 to najtańszy nowy bus z pełnymi pasami d
 
 ## Koszty i dostępność
 
-Nowy [Renault Master](https://pl.wikipedia.org/wiki/Renault_Master) Combi L3H2 9-miejscowy kosztuje ok. 155 000–175 000 zł netto, zależnie od wersji wyposażenia. Na rynku wtórnym za egzemplarze 3–5-letnie z przebiegiem 150 000–250 000 km płaci się 80 000–120 000 zł.
+Nowy [Renault Master](/modele/renault-master/) Combi L3H2 9-miejscowy kosztuje ok. 155 000–175 000 zł netto, zależnie od wersji wyposażenia. Na rynku wtórnym za egzemplarze 3–5-letnie z przebiegiem 150 000–250 000 km płaci się 80 000–120 000 zł.
 
 Wersje Bus z homologacją M2 są droższe o 15 000–30 000 zł ze względu na dodatkowe wymagania konstrukcyjne (wyjścia awaryjne, certyfikaty siedzeń).
 

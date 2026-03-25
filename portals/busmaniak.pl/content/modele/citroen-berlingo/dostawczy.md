@@ -24,7 +24,7 @@ faq:
 
 ## Berlingo dostawczy – przegląd wersji {#przegląd}
 
-[Citroën Berlingo](https://pl.wikipedia.org/wiki/Citro%C3%ABn_Berlingo) to model dostępny zarówno w wersji osobowej, jak i jako dostawczy furgon. Ta druga odmiana występuje z homologacją N1 (ciężarową), która daje firmom korzyści podatkowe: pełne odliczenie VAT od zakupu i eksploatacji. Różni się od wersji osobowej (M1) brakiem tylnych siedzeń, stalową przegrodą za kabiną i wzmocnionym zawieszeniem.
+[Citroën Berlingo](/modele/citroen-berlingo/) to model dostępny zarówno w wersji osobowej, jak i jako dostawczy furgon. Ta druga odmiana występuje z homologacją N1 (ciężarową), która daje firmom korzyści podatkowe: pełne odliczenie VAT od zakupu i eksploatacji. Różni się od wersji osobowej (M1) brakiem tylnych siedzeń, stalową przegrodą za kabiną i wzmocnionym zawieszeniem.
 
 Dostępne warianty:
 

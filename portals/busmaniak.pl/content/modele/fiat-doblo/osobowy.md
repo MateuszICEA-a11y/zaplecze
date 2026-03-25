@@ -19,7 +19,7 @@ faq:
     answer: "Tak – wysoka podłoga ułatwia wsiadanie, drzwi boczne przesuwne są bezpieczne na parkingach, a przestrzeń bagażowa jest spora. Wersja Maxi Panorama z 7 miejscami sprawdza się jako auto rodzinne do 6-7 osób."
 ---
 
-[Fiat Doblò](https://pl.wikipedia.org/wiki/Fiat_Dobl%C3%B2){rel="nofollow"} osobowy, sprzedawany pod nazwą Panorama, to ten sam van co Cargo – ale z kanapą zamiast przestrzeni ładunkowej i homologacją M1. Dla wielu rodzin to praktyczna alternatywa wobec klasycznych SUV-ów: więcej przestrzeni za mniejsze pieniądze.
+[Fiat Doblò](/modele/fiat-doblo/) osobowy, sprzedawany pod nazwą Panorama, to ten sam van co Cargo – ale z kanapą zamiast przestrzeni ładunkowej i homologacją M1. Dla wielu rodzin to praktyczna alternatywa wobec klasycznych SUV-ów: więcej przestrzeni za mniejsze pieniądze.
 
 ## Doblò Panorama – co dostaje kupujący
 

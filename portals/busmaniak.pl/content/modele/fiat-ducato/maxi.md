@@ -24,7 +24,7 @@ faq:
 
 Wielu kupujących myli Ducato z Ducato Maxi, traktując to jako kwestię samej długości nadwozia. To błąd. Wersja Maxi różni się przede wszystkim wzmocnionym zawieszeniem z podwójnymi resorami tylnej osi, większymi kołami (16 cali zamiast 15) i wydajniejszym układem hamulcowym.
 
-Konstrukcja Maxi od początku projektowana była pod większe obciążenia. W Polsce większość chodzi z homologacją do 3,5 tony – ale rama pozwala na fabryczne DMC 4,0 lub 4,25 t. [Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato) L4H3 dostępny jest wyłącznie w wersji Maxi, co czyni go jedynym wyborem przy zabudowach wymagających maksymalnej wysokości wnętrza.
+Konstrukcja Maxi od początku projektowana była pod większe obciążenia. W Polsce większość chodzi z homologacją do 3,5 tony – ale rama pozwala na fabryczne DMC 4,0 lub 4,25 t. [Fiat Ducato](/modele/fiat-ducato/) L4H3 dostępny jest wyłącznie w wersji Maxi, co czyni go jedynym wyborem przy zabudowach wymagających maksymalnej wysokości wnętrza.
 
 {{% expert name="Kowalczyk" %}}Wybierając bazę pod ciężki kamper lub auto do transportu międzynarodowego, wersja Maxi jest jedynym rozsądnym wyborem. Sztywniejsza rama i mocniejsze hamulce przekładają się nie tylko na bezpieczeństwo, ale i na wolniejsze zużycie podzespołów przy pełnym załadowaniu.{{% /expert %}}
 

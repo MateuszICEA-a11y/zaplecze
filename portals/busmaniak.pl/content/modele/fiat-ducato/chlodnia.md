@@ -24,7 +24,7 @@ faq:
 
 ## Rodzaje zabudowy – izoterma, chłodnia czy mroźnia?
 
-Zanim zdecydujesz się na konkretny egzemplarz, określ wymagany zakres temperatur. [Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato) to uniwersalna baza, ale w transporcie chłodniczym dzieli się na trzy kategorie:
+Zanim zdecydujesz się na konkretny egzemplarz, określ wymagany zakres temperatur. [Fiat Ducato](/modele/fiat-ducato/) to uniwersalna baza, ale w transporcie chłodniczym dzieli się na trzy kategorie:
 
 - **Izoterma** – zabudowa bez agregatu, oparta wyłącznie na izolacji termicznej (styrodur lub pianka poliuretanowa 60–80 mm pokryta laminatem); nadaje się do krótkich kursów z produktami niewymagającymi aktywnego chłodzenia
 - **Chłodnia (ATP klasa B)** – wyposażona w agregat chłodniczy, utrzymuje temperaturę od 0°C do +12°C; sprawdza się przy transporcie nabiału, mięsa czy kwiatów; izolacja 80–100 mm

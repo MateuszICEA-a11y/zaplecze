@@ -24,7 +24,7 @@ faq:
 
 ## Dlaczego podwozie Fiata Ducato?
 
-[Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato) III (produkowany od 2006 roku, z liftingami w 2014 i 2021) zdominował rynek podwozi pod zabudowę dzięki konstrukcji przednionapędowej. Pozwala ona uzyskać niższą ramę niż w pojazdach z napędem tylnym (Iveco Daily, Mercedes Sprinter) – co przekłada się na niższy próg załadunku i mniejszy opór powietrza.
+[Fiat Ducato](/modele/fiat-ducato/) III (produkowany od 2006 roku, z liftingami w 2014 i 2021) zdominował rynek podwozi pod zabudowę dzięki konstrukcji przednionapędowej. Pozwala ona uzyskać niższą ramę niż w pojazdach z napędem tylnym (Iveco Daily, Mercedes Sprinter) – co przekłada się na niższy próg załadunku i mniejszy opór powietrza.
 
 ### Parametry techniczne podwozia
 - **DMC** – standardowo 3500 kg (kategoria B), dostępne wersje Maxi do 4250 kg

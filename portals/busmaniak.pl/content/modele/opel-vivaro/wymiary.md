@@ -19,7 +19,7 @@ faq:
     answer: "Wysokość ładowni: 1387 mm. Vivaro nie oferuje wersji z wysokim dachem (H2)."
 ---
 
-Wymiary [Opla Vivaro](https://pl.wikipedia.org/wiki/Opel_Vivaro) – konkretne liczby do planowania zabudów, sprawdzenia miejsca parkingowego i porównania z konkurencją. Dane dla generacji C (od 2019).
+Wymiary [Opla Vivaro](/modele/opel-vivaro/) – konkretne liczby do planowania zabudów, sprawdzenia miejsca parkingowego i porównania z konkurencją. Dane dla generacji C (od 2019).
 
 ## Wymiary zewnętrzne
 

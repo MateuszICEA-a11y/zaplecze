@@ -20,7 +20,7 @@ faq:
     answer: "Tak, przy DMC 7,2 t i dwupoziomowym systemie załadunku – tzw. piętrus. Wymaga to osobnej homologacji zabudowy i odpowiedniego agregatu hamulcowego."
 ---
 
-[Iveco Daily](https://pl.wikipedia.org/wiki/Iveco_Daily) to jedyny van segmentu N2, który jako laweta mieści się w granicach kategorii C1 przy DMC do 7,2 t – żaden konkurent nie oferuje takiego zakresu DMC w tej klasie pojazdów. Jeśli szukasz lawety do przewozu osobówek lub maszyn budowlanych bez wchodzenia w klasę ciężarówek, Daily jest jedyną sensowną odpowiedzią.
+[Iveco Daily](/modele/iveco-daily/) to jedyny van segmentu N2, który jako laweta mieści się w granicach kategorii C1 przy DMC do 7,2 t – żaden konkurent nie oferuje takiego zakresu DMC w tej klasie pojazdów. Jeśli szukasz lawety do przewozu osobówek lub maszyn budowlanych bez wchodzenia w klasę ciężarówek, Daily jest jedyną sensowną odpowiedzią.
 
 ## DMC i kategoria prawa jazdy
 

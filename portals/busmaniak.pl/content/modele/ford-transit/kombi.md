@@ -20,7 +20,7 @@ faq:
     answer: "Tak – Transit Kombi jest jednym z najpopularniejszych pojazdów do przewozów pracowniczych. Wersje L3 i L4 z 9–15 miejscami są chętnie wybierane przez firmy transportowe i zakłady produkcyjne. Wersja z homologacją M2 wymaga licencji i tachografu przy odpłatnym transporcie."
 ---
 
-[Ford Transit](https://pl.wikipedia.org/wiki/Ford_Transit) Kombi to wersja osobowo-mieszana Transita – pojazd przeznaczony do przewozu osób lub jednocześnie osób i ładunków. Dostępny w konfiguracjach od 6 do 15 miejsc, z homologacją M1 lub M2, jest standardem w polskich firmach przewozowych i na budowach.
+[Ford Transit](/modele/ford-transit/) Kombi to wersja osobowo-mieszana Transita – pojazd przeznaczony do przewozu osób lub jednocześnie osób i ładunków. Dostępny w konfiguracjach od 6 do 15 miejsc, z homologacją M1 lub M2, jest standardem w polskich firmach przewozowych i na budowach.
 
 ## Czym różni się Kombi od Van i Tourneo?
 

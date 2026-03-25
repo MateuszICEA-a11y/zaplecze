@@ -24,7 +24,7 @@ faq:
 
 ## Wszystkie wersje Mastera furgon – przegląd
 
-[Renault Master](https://pl.wikipedia.org/wiki/Renault_Master) furgon (wewnętrzne oznaczenia: FV dla wersji z napędem na przednią oś, RV dla tylnonapędowej – rzadkość w Polsce) produkowany jest w sześciu standardowych konfiguracjach:
+[Renault Master](/modele/renault-master/) furgon (wewnętrzne oznaczenia: FV dla wersji z napędem na przednią oś, RV dla tylnonapędowej – rzadkość w Polsce) produkowany jest w sześciu standardowych konfiguracjach:
 
 - **L1H1** – krótki, niski; dobry do centrum miasta; ograniczona przestrzeń (8 m³)
 - **L2H2** – średni, wysoki; bestseller; dobry kompromis między pojemnością a manewrowością

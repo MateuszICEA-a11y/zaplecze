@@ -24,7 +24,7 @@ faq:
 
 ## Co to jest Berlingo Multispace? {#co-to-jest}
 
-Berlingo Multispace to osobowa wersja drugiej generacji modelu, produkowana w latach 2008–2018. Historia i wszystkie generacje modelu są udokumentowane na [Wikipedii](https://pl.wikipedia.org/wiki/Citro%C3%ABn_Berlingo). Od [wersji dostawczej (Van)](/modele/citroen-berlingo/van/) odróżnia ją lepiej wykończone wnętrze, przeszklone szyby boczne, wygodniejsze fotele i bogatsza lista wyposażenia seryjnego.
+Berlingo Multispace to osobowa wersja drugiej generacji modelu, produkowana w latach 2008–2018. Historia i wszystkie generacje modelu są udokumentowane na Wikipedii. Od [wersji dostawczej (Van)](/modele/citroen-berlingo/van/) odróżnia ją lepiej wykończone wnętrze, przeszklone szyby boczne, wygodniejsze fotele i bogatsza lista wyposażenia seryjnego.
 
 Nazwa Multispace pojawiła się już przy pierwszej generacji, ale dopiero w drugiej stała się oficjalnym oznaczeniem wariantu osobowego. W trzeciej generacji (od 2018) Citroën zrezygnował z tej nazwy – osobowe Berlingo to po prostu Berlingo.
 

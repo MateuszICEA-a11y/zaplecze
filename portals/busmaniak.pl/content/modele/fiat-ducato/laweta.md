@@ -22,7 +22,7 @@ faq:
 
 ## Dlaczego Fiat Ducato to idealna baza pod autolawetę?
 
-Kluczem jest konstrukcja przednionapędowa. Brak wału napędowego biegnącego na tył pozwala obniżyć środek ciężkości i zastosować lżejszą ramę. W transporcie aut każdy kilogram ma znaczenie – im lżejsze podwozie, tym wyższa ładowność realna przy zachowaniu DMC do 3,5 tony. Masa własna podwozia wynosi 1580–1760 kg, a po zabudowie lawetowej rośnie do 2000–2300 kg. [Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato) jest produkowany od 1981 roku i przeszedł kilka gruntownych modernizacji, które ukształtowały go jako standard branży autolawet.
+Kluczem jest konstrukcja przednionapędowa. Brak wału napędowego biegnącego na tył pozwala obniżyć środek ciężkości i zastosować lżejszą ramę. W transporcie aut każdy kilogram ma znaczenie – im lżejsze podwozie, tym wyższa ładowność realna przy zachowaniu DMC do 3,5 tony. Masa własna podwozia wynosi 1580–1760 kg, a po zabudowie lawetowej rośnie do 2000–2300 kg. [Fiat Ducato](/modele/fiat-ducato/) jest produkowany od 1981 roku i przeszedł kilka gruntownych modernizacji, które ukształtowały go jako standard branży autolawet.
 
 ### Generacje pod zabudowę lawetową
 1. **III generacja (X250) – 2006–2014** – tu zadebiutował silnik 3.0 MultiJet, który szybko stał się standardem branży

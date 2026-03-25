@@ -22,7 +22,7 @@ faq:
 
 ## Generacje i bazy pod zabudowę plandekową
 
-[Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato) jest produkowany od 1981 roku, ale w transporcie zawodowym liczy się właściwie tylko trzecia generacja – model 250 z 2006 roku, a od 2014 lifting jako model 290.
+[Fiat Ducato](/modele/fiat-ducato/) jest produkowany od 1981 roku, ale w transporcie zawodowym liczy się właściwie tylko trzecia generacja – model 250 z 2006 roku, a od 2014 lifting jako model 290.
 
 Pod plandekę wybiera się podwozia z kabiną (Chassis Cab) w dwóch wariantach:
 

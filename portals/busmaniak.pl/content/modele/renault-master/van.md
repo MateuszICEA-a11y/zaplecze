@@ -24,7 +24,7 @@ faq:
 
 ## Które wersje Van są dostępne?
 
-[Renault Master](https://pl.wikipedia.org/wiki/Renault_Master) Van to oficjalne oznaczenie wersji furgon – zamkniętego nadwozia blaszanego, bez bocznych okien za kabina kierowcy. To absolutna podstawa oferty i najczęściej spotykany wariant Mastera w polskich flotach transportowych.
+[Renault Master](/modele/renault-master/) Van to oficjalne oznaczenie wersji furgon – zamkniętego nadwozia blaszanego, bez bocznych okien za kabina kierowcy. To absolutna podstawa oferty i najczęściej spotykany wariant Mastera w polskich flotach transportowych.
 
 Dostępne konfiguracje nadwozia:
 

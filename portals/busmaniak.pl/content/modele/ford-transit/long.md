@@ -20,7 +20,7 @@ faq:
     answer: "Wersja L4 z DMC do 3500 kg wystarczy prawo jazdy kat. B. Wersje z DMC 4250 kg lub 4700 kg wymagają prawa jazdy kat. C1 (pojazdy 3501–7500 kg). Warto sprawdzić kartę pojazdu przed zakupem."
 ---
 
-[Ford Transit](https://pl.wikipedia.org/wiki/Ford_Transit) Long to potoczna nazwa dla wersji L3 i L4 – dwóch najdłuższych konfiguracji nadwozia w gamie Transita. Wybór między nimi sprowadza się do jednego pytania: ile naprawdę potrzebujesz przestrzeni ładunkowej?
+[Ford Transit](/modele/ford-transit/) Long to potoczna nazwa dla wersji L3 i L4 – dwóch najdłuższych konfiguracji nadwozia w gamie Transita. Wybór między nimi sprowadza się do jednego pytania: ile naprawdę potrzebujesz przestrzeni ładunkowej?
 
 ## Wymiary L3 i L4 – tabela porównawcza
 

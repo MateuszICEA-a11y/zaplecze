@@ -24,7 +24,7 @@ faq:
 
 ## Citroën ë-Berlingo – dane techniczne {#dane-techniczne}
 
-[Citroën Berlingo](https://pl.wikipedia.org/wiki/Citro%C3%ABn_Berlingo) doczekał się elektrycznej wersji w III generacji – ë-Berlingo korzysta z napędu grupy Stellantis, wspólnego z Peugeotem e-Partnerem i Oplem e-Combo. Kluczowe parametry:
+[Citroën Berlingo](/modele/citroen-berlingo/) doczekał się elektrycznej wersji w III generacji – ë-Berlingo korzysta z napędu grupy Stellantis, wspólnego z Peugeotem e-Partnerem i Oplem e-Combo. Kluczowe parametry:
 
 | Parametr                | Wartość               |
 |-------------------------|-----------------------|

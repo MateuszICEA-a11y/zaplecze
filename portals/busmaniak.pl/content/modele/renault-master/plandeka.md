@@ -76,7 +76,7 @@ Skrzynia manualna jest standardem. Automat EDC nie jest polecany w wersji skrzyn
 
 | Model | Ładowność L3 z plandeką | DMC max | Cena podwozia netto |
 |-------|------------------------|---------|---------------------|
-| [Renault Master](https://pl.wikipedia.org/wiki/Renault_Master) L3 | ok. 1100 kg | 4500 kg | od 135 000 zł |
+| [Renault Master](/modele/renault-master/) L3 | ok. 1100 kg | 4500 kg | od 135 000 zł |
 | Fiat Ducato L3 | ok. 1150 kg | 4250 kg | od 130 000 zł |
 | VW Crafter L3 | ok. 1200 kg | 5000 kg | od 165 000 zł |
 | Mercedes Sprinter L3 | ok. 1150 kg | 5000 kg | od 160 000 zł |

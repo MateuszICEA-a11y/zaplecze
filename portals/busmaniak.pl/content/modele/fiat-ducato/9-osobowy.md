@@ -24,7 +24,7 @@ faq:
 
 ## Fiat Ducato 9-osobowy – czy wystarczy prawo jazdy kategorii B?
 
-Odpowiedź jest jednoznaczna: **tak**. Polskie przepisy pozwalają kierować pojazdem o DMC do 3,5 tony, przeznaczonym do przewozu nie więcej niż 9 osób łącznie z kierowcą, na podstawie kategorii B. [Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato) w wersji 9-osobowej mieści się w tych granicach – masa własna wynosi 2025–2375 kg, a DMC standardowo 3000–3500 kg.
+Odpowiedź jest jednoznaczna: **tak**. Polskie przepisy pozwalają kierować pojazdem o DMC do 3,5 tony, przeznaczonym do przewozu nie więcej niż 9 osób łącznie z kierowcą, na podstawie kategorii B. [Fiat Ducato](/modele/fiat-ducato/) w wersji 9-osobowej mieści się w tych granicach – masa własna wynosi 2025–2375 kg, a DMC standardowo 3000–3500 kg.
 
 Jedyny wyjątek to wersje Maxi z DMC 4005 kg – te wymagają już kategorii C. Jeśli nie masz pewności, które uprawnienia obowiązują w Twoim przypadku, sprawdź szczegóły w artykule o [prawie jazdy na busa](/przepisy/prawo-jazdy-na-busa/).
 

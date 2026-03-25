@@ -19,7 +19,7 @@ faq:
     answer: "Tak – Vivaro C dostępny jest z 8-biegową przekładnią automatyczną Aisin przy silnikach 2.0 D 145 i 177 KM."
 ---
 
-[Opel Vivaro](https://pl.wikipedia.org/wiki/Opel_Vivaro) dostawczy – furgon – to najważniejsza wersja w gamie. Bezpośrednia konkurencja dla Forda Transit Custom i Volkswagena Transportera.
+[Opel Vivaro](/modele/opel-vivaro/) dostawczy – furgon – to najważniejsza wersja w gamie. Bezpośrednia konkurencja dla Forda Transit Custom i Volkswagena Transportera.
 
 ## Wersje furgonu
 

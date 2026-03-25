@@ -63,7 +63,7 @@ Jeśli jeździsz głównie po mieście z okazjonalnymi dużymi ładunkami – sp
 
 ## Silniki {#silniki}
 
-Do 2019 roku Trafic oferowany był z silnikiem 1.6 dCi w wersjach 95, 120 i 140 KM. Od 2019 roku zastąpił go 2.0 dCi w zakresie 120–170 KM. Pełną historię modelu opisuje [Wikipedia](https://pl.wikipedia.org/wiki/Renault_Trafic).
+Do 2019 roku Trafic oferowany był z silnikiem 1.6 dCi w wersjach 95, 120 i 140 KM. Od 2019 roku zastąpił go 2.0 dCi w zakresie 120–170 KM. Pełną historię modelu opisuje Wikipedia.
 
 {{% expert name="Kowalczyk" %}}
 Przy L2H2 z pełnym załadunkiem nie schodzę poniżej 2.0 dCi 145 KM. Wersja 120 KM sprawdza się w L2H1 przy trasach krajowych, ale na autostradzie z 1000 kg towaru robi się nerwowo – szczególnie przy wyprzedzaniu. Stary 1.6 dCi miał problemy z układem EGR po 200 tys. km, na 2.0 dCi jeszcze nie widzę systemowych usterek, ale silnik jest relatywnie świeży. Przed zakupem używanego 1.6 dCi sprawdź historię serwisową EGR i DPF.

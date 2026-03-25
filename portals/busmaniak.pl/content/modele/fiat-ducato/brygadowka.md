@@ -61,7 +61,7 @@ Wybór napędu w brygadówce jest ważniejszy niż w typowym furgonie, bo auto p
 
 ## Komfort i ergonomia kabiny załogowej
 
-[Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato) IV po liftingu zyskał lepsze wyciszenie i solidniejsze materiały. W wersji dla ekip budowlanych trzy rzeczy mają największe znaczenie:
+[Fiat Ducato](/modele/fiat-ducato/) IV po liftingu zyskał lepsze wyciszenie i solidniejsze materiały. W wersji dla ekip budowlanych trzy rzeczy mają największe znaczenie:
 
 - **Wentylacja i ogrzewanie** – dodatkowy nawiew na drugi rząd to standard, który zimą robi realną różnicę dla ludzi siedzących z tyłu
 - **Schowki** – Ducato ma ich wyjątkowo dużo jak na dostawczaka; półki, kieszenie, uchwyty na kubki pomagają utrzymać porządek

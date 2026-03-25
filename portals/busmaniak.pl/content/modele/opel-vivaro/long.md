@@ -19,7 +19,7 @@ faq:
     answer: "Nie – DMC do 3100 kg mieści się w kategorii B."
 ---
 
-[Opel Vivaro](https://pl.wikipedia.org/wiki/Opel_Vivaro) Long to wersja o przedłużonej przestrzeni ładunkowej – te 350 dodatkowych milimetrów robi realną różnicę przy transporcie długich ładunków.
+[Opel Vivaro](/modele/opel-vivaro/) Long to wersja o przedłużonej przestrzeni ładunkowej – te 350 dodatkowych milimetrów robi realną różnicę przy transporcie długich ładunków.
 
 ## Wymiary zewnętrzne i ładownia
 

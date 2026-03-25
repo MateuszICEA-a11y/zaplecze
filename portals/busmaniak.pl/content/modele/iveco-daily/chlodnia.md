@@ -20,7 +20,7 @@ faq:
     answer: "Agregat niezależny wymaga przeglądu co 1 000–1 500 godzin pracy silnika agregatu. W praktyce przy intensywnym użytkowaniu co 6–12 miesięcy."
 ---
 
-[Iveco Daily](https://pl.wikipedia.org/wiki/Iveco_Daily) jako chłodnia ATP to jeden z najbardziej eksploatowanych wariantów tego pojazdu w Polsce. Dystrybucja nabiału, transport mrożonek, dostawy farmaceutyków – wszędzie tam, gdzie temperatura ładunku musi być kontrolowana przez całą dobę, Daily sprawdza się lepiej niż większość konkurentów ze względu na szeroki zakres DMC i dostępność zabudów.
+[Iveco Daily](/modele/iveco-daily/) jako chłodnia ATP to jeden z najbardziej eksploatowanych wariantów tego pojazdu w Polsce. Dystrybucja nabiału, transport mrożonek, dostawy farmaceutyków – wszędzie tam, gdzie temperatura ładunku musi być kontrolowana przez całą dobę, Daily sprawdza się lepiej niż większość konkurentów ze względu na szeroki zakres DMC i dostępność zabudów.
 
 ## Klasy ATP i wymagania temperaturowe
 

@@ -22,7 +22,7 @@ faq:
     answer: "1.6 dCi 115 KM single turbo to sprawdzona i prosta jednostka z dobrą opinią serwisową. Wersja BiTurbo (120/140 KM) jest mocniejsza, ale bardziej awaryjna przy dużych przebiegach. Silnik 2.0 dCi (od 2019) to obecnie najlepszy wybór – większy moment obrotowy, lepsza kultura pracy i spokojniejsza historia serwisowa."
 ---
 
-Renault Trafic brygadówka to właściwy wybór dla ekipy, która musi jednocześnie przewieźć ludzi i ciężkie narzędzia – bez kompromisów po żadnej stronie. Model z ponad czterdziestoletnią historią, opisany na [Wikipedii](https://pl.wikipedia.org/wiki/Renault_Trafic), oferuje dwa rzędy siedzeń z przodu, solidną przestrzeń ładunkową z tyłu i DMC do 3,1 tony, która przy homologacji N1 daje pełne odliczenie VAT.
+Renault Trafic brygadówka to właściwy wybór dla ekipy, która musi jednocześnie przewieźć ludzi i ciężkie narzędzia – bez kompromisów po żadnej stronie. Model z ponad czterdziestoletnią historią, opisany na Wikipedii, oferuje dwa rzędy siedzeń z przodu, solidną przestrzeń ładunkową z tyłu i DMC do 3,1 tony, która przy homologacji N1 daje pełne odliczenie VAT.
 
 ## Czym jest brygadówka i dlaczego Trafic?
 

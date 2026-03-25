@@ -22,7 +22,7 @@ faq:
 
 ## Generacje i ewolucja modelu (X250 i X290)
 
-Współczesne [Fiaty Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato) skrzyniowe to przede wszystkim III generacja: debiut w 2006 roku (X250) i gruntowny lifting w 2014 (X290).
+Współczesne [Fiaty Ducato](/modele/fiat-ducato/) skrzyniowe to przede wszystkim III generacja: debiut w 2006 roku (X250) i gruntowny lifting w 2014 (X290).
 
 - **Produkcja** – od 2006 do teraz (wielokrotne modernizacje)
 - **DMC** – od 3,0 t do 4,25 t (najpopularniejsze wersje 3,5 t na prawo jazdy kat. B)

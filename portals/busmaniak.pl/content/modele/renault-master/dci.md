@@ -24,7 +24,7 @@ faq:
 
 ## Silnik M9T – skąd pochodzi i co go wyróżnia?
 
-Jednostka 2.3 dCi oznaczana kodem M9T to owoc sojuszu Renault-Nissan, produkowana w fabryce w Cléon (Francja). Silnik ten napędza nie tylko [Renault Mastera](https://pl.wikipedia.org/wiki/Renault_Master), ale też jego bliźniaki: Opla Movano, Nissana NV400 i Nissana Interstar. To czterocylindrowy rzędowy silnik o pojemności 2298 cm³ z bezpośrednim wtryskiem Common Rail, turbosprężarką o zmiennej geometrii (VGT) i systemem recyrkulacji spalin EGR.
+Jednostka 2.3 dCi oznaczana kodem M9T to owoc sojuszu Renault-Nissan, produkowana w fabryce w Cléon (Francja). Silnik ten napędza nie tylko [Renault Mastera](/modele/renault-master/), ale też jego bliźniaki: Opla Movano, Nissana NV400 i Nissana Interstar. To czterocylindrowy rzędowy silnik o pojemności 2298 cm³ z bezpośrednim wtryskiem Common Rail, turbosprężarką o zmiennej geometrii (VGT) i systemem recyrkulacji spalin EGR.
 
 Kluczowe cechy konstrukcyjne:
 

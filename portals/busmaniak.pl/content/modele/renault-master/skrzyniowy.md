@@ -24,7 +24,7 @@ faq:
 
 ## Rodzaje wersji podwoziowych Mastera
 
-[Renault Master](https://pl.wikipedia.org/wiki/Renault_Master) skrzyniowy w języku producenta oznaczany jest jako „Podwozie z kabiną" (Chassis Cab). Dostępne są dwa warianty:
+[Renault Master](/modele/renault-master/) skrzyniowy w języku producenta oznaczany jest jako „Podwozie z kabiną" (Chassis Cab). Dostępne są dwa warianty:
 
 - **Podwozie z pojedynczą kabiną** – klasyczny układ: kabina kierowcy i 2 lub 3 osoby, a za nią gotowe miejsce pod dowolną zabudowę; najczęściej zamawiany wariant
 - **Podwozie z podwójną kabiną** – kabina z dodatkowym rzędem siedzeń (do 6 osób) i skrócona przestrzeń pod zabudowę; stosowana przy brygadówkach-skrzyniowych i lekkiej wywrotce z ekipą

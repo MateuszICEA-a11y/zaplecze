@@ -20,7 +20,7 @@ faq:
     answer: "Całkowita długość nadwozia wynosi 7 170 mm. Długość przestrzeni ładunkowej to ok. 4 750 mm, szerokość 1 870 mm, wysokość 1 900 mm (wersja H2)."
 ---
 
-[Iveco Daily](https://pl.wikipedia.org/wiki/Iveco_Daily) Maxi to rekord, który od lat nie ma rywali: 19,6 m³ pojemności przy DMC 3,5 t oznacza, że możesz przewozić sześć europalety i wciąż nie potrzebujesz prawa jazdy na ciężarówkę. Żaden konkurent – ani Mercedes Sprinter, ani Volkswagen Crafter – nie oferuje takiej przestrzeni przy tej samej masie całkowitej.
+[Iveco Daily](/modele/iveco-daily/) Maxi to rekord, który od lat nie ma rywali: 19,6 m³ pojemności przy DMC 3,5 t oznacza, że możesz przewozić sześć europalety i wciąż nie potrzebujesz prawa jazdy na ciężarówkę. Żaden konkurent – ani Mercedes Sprinter, ani Volkswagen Crafter – nie oferuje takiej przestrzeni przy tej samej masie całkowitej.
 
 ## Wymiary, które robią różnicę
 

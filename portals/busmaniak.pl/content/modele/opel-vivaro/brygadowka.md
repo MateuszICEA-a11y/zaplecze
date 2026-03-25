@@ -23,7 +23,7 @@ Vivaro brygadówka – czyli wersja dla ekipy – to układ, w którym auto wiez
 
 ## Co to jest brygadówka?
 
-W branży transportowej terminem „brygadówka" określa się samochód dostawczy z podwójną kabiną lub skonfigurowany tak, by zabrać 5–6 osób i zachować użyteczną przestrzeń ładunkową. [Opel Vivaro](https://pl.wikipedia.org/wiki/Opel_Vivaro) w tej roli pojawia się w kilku formach:
+W branży transportowej terminem „brygadówka" określa się samochód dostawczy z podwójną kabiną lub skonfigurowany tak, by zabrać 5–6 osób i zachować użyteczną przestrzeń ładunkową. [Opel Vivaro](/modele/opel-vivaro/) w tej roli pojawia się w kilku formach:
 
 - **Vivaro Combi 6-miejscowy** – dwa rzędy siedzeń, za nimi przestrzeń ładunkowa
 - **Vivaro furgon z przegrodą** – za pierwszym rzędem, tylne siedzenia montowane opcjonalnie

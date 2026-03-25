@@ -19,7 +19,7 @@ faq:
     answer: "Vivaro z 9 miejscami homologowany jako autobus (kategoria M2) może wymagać innych stawek OC. Sprawdź kategorię w dowodzie rejestracyjnym."
 ---
 
-Vivaro osobowy to segment, w którym jeden model gra dwie role – tani bus do przewozu grup i komfortowy minivan. [Opel Vivaro](https://pl.wikipedia.org/wiki/Opel_Vivaro) C wprowadził nazwę Life, żeby tę granicę wyraźniej zaznaczyć.
+Vivaro osobowy to segment, w którym jeden model gra dwie role – tani bus do przewozu grup i komfortowy minivan. [Opel Vivaro](/modele/opel-vivaro/) C wprowadził nazwę Life, żeby tę granicę wyraźniej zaznaczyć.
 
 ## Wersje osobowe – Combi i Life
 

@@ -19,7 +19,7 @@ faq:
     answer: "Utrzymuj właściwe ciśnienie w oponach, wymieniaj filtr powietrza, unikaj nagłych przyspieszeń i jedź 90–100 km/h zamiast 130 km/h."
 ---
 
-Spalanie [Opla Vivaro](https://pl.wikipedia.org/wiki/Opel_Vivaro) interesuje każdego właściciela – szczególnie przy obecnych cenach diesla. Dane WLTP są punktem wyjścia, ale rzeczywistość bywa inna.
+Spalanie [Opla Vivaro](/modele/opel-vivaro/) interesuje każdego właściciela – szczególnie przy obecnych cenach diesla. Dane WLTP są punktem wyjścia, ale rzeczywistość bywa inna.
 
 ## Zużycie paliwa – silnik 1.5 D
 

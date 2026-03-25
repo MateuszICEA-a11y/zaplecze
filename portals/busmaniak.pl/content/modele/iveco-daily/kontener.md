@@ -20,7 +20,7 @@ faq:
     answer: "Sama zabudowa izoterma bez agregatu to 20–35 tys. zł netto. Dodanie agregatu Thermo King lub Carrier to dodatkowe 15–25 tys. zł netto."
 ---
 
-[Iveco Daily](https://pl.wikipedia.org/wiki/Iveco_Daily) w zabudowie kontenerowej i izotermicznej to standard w dystrybucji chłodniczej, farmaceutyce i gastronomii. Sztywna zabudowa chroni ładunek lepiej niż plandeka, a izolacja termiczna pozwala utrzymać temperaturę niezależnie od pogody – bez lub z agregatem, zależnie od potrzeb.
+[Iveco Daily](/modele/iveco-daily/) w zabudowie kontenerowej i izotermicznej to standard w dystrybucji chłodniczej, farmaceutyce i gastronomii. Sztywna zabudowa chroni ładunek lepiej niż plandeka, a izolacja termiczna pozwala utrzymać temperaturę niezależnie od pogody – bez lub z agregatem, zależnie od potrzeb.
 
 ## Kontener vs. izoterma – różnica, którą musisz znać
 

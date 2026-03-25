@@ -22,7 +22,7 @@ faq:
 
 ## Generacje i ewolucja modelu
 
-Na rynku wtórnym wciąż trafiają się egzemplarze [Fiata Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato) drugiej generacji (1994–2006) z silnikami 1.9 D czy 2.8 JTD, ale poniżej skupiamy się na generacji produkowanej od 2006 roku, która przeszła dwa liftingi:
+Na rynku wtórnym wciąż trafiają się egzemplarze [Fiata Ducato](/modele/fiat-ducato/) drugiej generacji (1994–2006) z silnikami 1.9 D czy 2.8 JTD, ale poniżej skupiamy się na generacji produkowanej od 2006 roku, która przeszła dwa liftingi:
 
 - **2006–2014** – trzecia generacja (typ 250)
 - **2014–2021** – facelifting (typ 290), zmiana pasa przedniego i odświeżenie wnętrza

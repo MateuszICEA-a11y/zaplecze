@@ -24,7 +24,7 @@ faq:
 
 ## Berlingo Van – wersja dostawcza {#wersja-dostawcza}
 
-Berlingo Van to furgon bez tylnych okien, z kabiną oddzieloną od przestrzeni ładunkowej stalową przegrodą. Długa historia modelu – od 1996 roku przez trzy generacje – jest udokumentowana na [Wikipedii](https://pl.wikipedia.org/wiki/Citro%C3%ABn_Berlingo). Kabina mieści 2 lub 3 osoby (zależnie od wersji), a podłoga ładunkowa jest pokryta stalową blachą odporną na uszkodzenia.
+Berlingo Van to furgon bez tylnych okien, z kabiną oddzieloną od przestrzeni ładunkowej stalową przegrodą. Długa historia modelu – od 1996 roku przez trzy generacje – jest udokumentowana na Wikipedii. Kabina mieści 2 lub 3 osoby (zależnie od wersji), a podłoga ładunkowa jest pokryta stalową blachą odporną na uszkodzenia.
 
 Model produkowany jest od 1996 roku i przeszedł przez trzy generacje:
 

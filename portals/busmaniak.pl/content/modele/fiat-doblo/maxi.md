@@ -19,7 +19,7 @@ faq:
     answer: "Tak, w wersji Panorama Maxi dostępny jest trzeci rząd siedzeń – łącznie 7 miejsc. Trzeci rząd składa się w podłogę."
 ---
 
-[Fiat Doblò](https://pl.wikipedia.org/wiki/Fiat_Dobl%C3%B2){rel="nofollow"} Maxi to po prostu Doblò z dłuższym rozstawem osi – i właśnie ta prosta różnica przekłada się na wyraźnie większą użyteczność. Jeśli potrzebujesz przewozić europalety albo zabrać całą rodzinę z bagażami, Maxi jest jedyną sensowną opcją w tej klasie.
+[Fiat Doblò](/modele/fiat-doblo/) Maxi to po prostu Doblò z dłuższym rozstawem osi – i właśnie ta prosta różnica przekłada się na wyraźnie większą użyteczność. Jeśli potrzebujesz przewozić europalety albo zabrać całą rodzinę z bagażami, Maxi jest jedyną sensowną opcją w tej klasie.
 
 ## Co dokładnie różni Maxi od standardowego Doblò
 

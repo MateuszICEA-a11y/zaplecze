@@ -20,7 +20,7 @@ faq:
     answer: "Najpopularniejsze zabudowy to regały aluminiowe lub stalowe, podłoga sklejkowa z uchwytami do mocowania ładunku, przegroda kabina–ładownia, oświetlenie LED, szuflady podpodłogowe oraz systemy mocowania rowerów lub maszyn."
 ---
 
-[Ford Transit](https://pl.wikipedia.org/wiki/Ford_Transit) dostawczy to furgon przeznaczony do codziennego transportu towarów. Zamknięta przestrzeń ładunkowa, drzwi boczne przesuwne i tylne klapa 270° tworzą praktyczny zestaw dostępu do ładowni. DMC od 3,5 do 4,7 t pozwala dopasować pojazd do rzeczywistych potrzeb przewozowych.
+[Ford Transit](/modele/ford-transit/) dostawczy to furgon przeznaczony do codziennego transportu towarów. Zamknięta przestrzeń ładunkowa, drzwi boczne przesuwne i tylne klapa 270° tworzą praktyczny zestaw dostępu do ładowni. DMC od 3,5 do 4,7 t pozwala dopasować pojazd do rzeczywistych potrzeb przewozowych.
 
 ## DMC i kategorie prawa jazdy
 

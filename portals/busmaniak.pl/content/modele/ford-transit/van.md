@@ -20,7 +20,7 @@ faq:
     answer: "Tak, Ford oferuje Transit Van z napędem AWD (4x4) opartym na tylnej osi z mechanizmem dołączanego napędu. Dostępny głównie w wersjach L2 i L3 z silnikiem 170 lub 185 KM."
 ---
 
-[Ford Transit](https://pl.wikipedia.org/wiki/Ford_Transit) Van to najpopularniejsza wersja tego modelu na rynku – furgon z zamkniętą przestrzenią ładunkową, dostępny w 12 konfiguracjach długości i wysokości. Jeśli szukasz pojazdu do transportu towarów, tu znajdziesz wszystkie dane, które pozwolą wybrać właściwy wariant.
+[Ford Transit](/modele/ford-transit/) Van to najpopularniejsza wersja tego modelu na rynku – furgon z zamkniętą przestrzenią ładunkową, dostępny w 12 konfiguracjach długości i wysokości. Jeśli szukasz pojazdu do transportu towarów, tu znajdziesz wszystkie dane, które pozwolą wybrać właściwy wariant.
 
 ## Wersje nadwozia: od L1H1 do L4H3
 

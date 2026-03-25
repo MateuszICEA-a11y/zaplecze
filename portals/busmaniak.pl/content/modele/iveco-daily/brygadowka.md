@@ -20,7 +20,7 @@ faq:
     answer: "Silnik 2.3 MultiJet 136 KM jest w pełni wystarczający dla wersji do 3,5 t DMC. Przy DMC 5,0 t z pełną ekipą i ciężkim sprzętem warto rozważyć 156 KM."
 ---
 
-[Iveco Daily](https://pl.wikipedia.org/wiki/Iveco_Daily) brygadówka to pojazd do pracy, nie do reprezentacji. Ekipa 5–7 osób plus pełen bagażnik narzędzi, materiałów i sprzętu – to codzienność dla firm budowlanych, energetycznych i instalacyjnych. Daily w tej konfiguracji bije konkurencję ładownością i dostępnością serwisu w Polsce.
+[Iveco Daily](/modele/iveco-daily/) brygadówka to pojazd do pracy, nie do reprezentacji. Ekipa 5–7 osób plus pełen bagażnik narzędzi, materiałów i sprzętu – to codzienność dla firm budowlanych, energetycznych i instalacyjnych. Daily w tej konfiguracji bije konkurencję ładownością i dostępnością serwisu w Polsce.
 
 ## Co to jest brygadówka i jak wygląda zabudowa
 

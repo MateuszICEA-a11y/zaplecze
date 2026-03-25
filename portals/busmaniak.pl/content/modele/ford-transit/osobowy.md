@@ -20,7 +20,7 @@ faq:
     answer: "Wersja Titanium to najwyższe wyposażenie seryjne – obejmuje skórzaną tapicerkę, podgrzewane fotele przednie i tylne, 8-calowy ekran SYNC 4, kamerę cofania 180°, adaptacyjny tempomat i 17-calowe alufelgi. Cena katalogowa przekracza 200 000 zł."
 ---
 
-[Ford Transit](https://pl.wikipedia.org/wiki/Ford_Transit) osobowy – czyli Tourneo – to pojazd zaprojektowany z myślą o pasażerach, nie o ładunku. Bogato wyposażone wnętrze, niski poziom hałasu i komfortowe fotele odróżniają go od Kombi i Van. Jeśli szukasz busa dla rodziny, firmy lub na wynajem – to właśnie ta wersja.
+[Ford Transit](/modele/ford-transit/) osobowy – czyli Tourneo – to pojazd zaprojektowany z myślą o pasażerach, nie o ładunku. Bogato wyposażone wnętrze, niski poziom hałasu i komfortowe fotele odróżniają go od Kombi i Van. Jeśli szukasz busa dla rodziny, firmy lub na wynajem – to właśnie ta wersja.
 
 ## Tourneo Custom vs Transit Tourneo – dwa różne pojazdy
 

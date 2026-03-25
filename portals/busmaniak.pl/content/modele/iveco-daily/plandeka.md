@@ -20,7 +20,7 @@ faq:
     answer: "Zazwyczaj 6–10 tygodni od dostarczenia podwozia do firmy zabudowującej. Terminy mogą się wydłużyć przy niestandardowych wymiarach."
 ---
 
-[Iveco Daily](https://pl.wikipedia.org/wiki/Iveco_Daily) z zabudową plandekową to jeden z najchętniej wybieranych wariantów w branży meblarskiej, kurierskiej i budowlanej. Trójstronny dostęp do ładunku skraca czas rozładunku do minimum – nie musisz przenosić towaru z głębi skrzyni, bo burtę możesz otworzyć z każdej strony.
+[Iveco Daily](/modele/iveco-daily/) z zabudową plandekową to jeden z najchętniej wybieranych wariantów w branży meblarskiej, kurierskiej i budowlanej. Trójstronny dostęp do ładunku skraca czas rozładunku do minimum – nie musisz przenosić towaru z głębi skrzyni, bo burtę możesz otworzyć z każdej strony.
 
 ## Zabudowa plandekowa – co to znaczy w praktyce
 
