@@ -20,7 +20,7 @@ faq:
     answer: "Sama zabudowa izoterma bez agregatu to 20–35 tys. zł netto. Dodanie agregatu Thermo King lub Carrier to dodatkowe 15–25 tys. zł netto."
 ---
 
-Iveco Daily w zabudowie kontenerowej i izotermicznej to standard w dystrybucji chłodniczej, farmaceutyce i gastronomii. Sztywna zabudowa chroni ładunek lepiej niż plandeka, a izolacja termiczna pozwala utrzymać temperaturę niezależnie od pogody – bez lub z agregatem, zależnie od potrzeb.
+[Iveco Daily](https://pl.wikipedia.org/wiki/Iveco_Daily) w zabudowie kontenerowej i izotermicznej to standard w dystrybucji chłodniczej, farmaceutyce i gastronomii. Sztywna zabudowa chroni ładunek lepiej niż plandeka, a izolacja termiczna pozwala utrzymać temperaturę niezależnie od pogody – bez lub z agregatem, zależnie od potrzeb.
 
 ## Kontener vs. izoterma – różnica, którą musisz znać
 
@@ -73,3 +73,5 @@ Przy zakupie używanego Daily z izotermą koniecznie sprawdź stan izolacji w na
 Sama zabudowa izoterma bez agregatu: 20–35 tys. zł netto. Agregat Thermo King lub Carrier: dodatkowe 15–25 tys. zł netto. Łącznie gotowa chłodnia na podwoziu Daily to inwestycja 35–60 tys. zł za zabudowę.
 
 Certyfikat ATP jest wymagany przy międzynarodowym transporcie towarów łatwo psujących się. Badania ATP należy odnawiać co 6 lat lub po każdej poważnej naprawie izolacji.
+
+*Źródła: Wikipedia, Iveco, auto-data.net*

@@ -20,7 +20,7 @@ faq:
     answer: "Tak, przy DMC 7,2 t i dwupoziomowym systemie załadunku – tzw. piętrus. Wymaga to osobnej homologacji zabudowy i odpowiedniego agregatu hamulcowego."
 ---
 
-Iveco Daily to jedyny van segmentu N2, który jako laweta mieści się w granicach kategorii C1 przy DMC do 7,2 t – żaden konkurent nie oferuje takiego zakresu DMC w tej klasie pojazdów. Jeśli szukasz lawety do przewozu osobówek lub maszyn budowlanych bez wchodzenia w klasę ciężarówek, Daily jest jedyną sensowną odpowiedzią.
+[Iveco Daily](https://pl.wikipedia.org/wiki/Iveco_Daily) to jedyny van segmentu N2, który jako laweta mieści się w granicach kategorii C1 przy DMC do 7,2 t – żaden konkurent nie oferuje takiego zakresu DMC w tej klasie pojazdów. Jeśli szukasz lawety do przewozu osobówek lub maszyn budowlanych bez wchodzenia w klasę ciężarówek, Daily jest jedyną sensowną odpowiedzią.
 
 ## DMC i kategoria prawa jazdy
 
@@ -71,3 +71,5 @@ Najczęstszy błąd przy zakupie lawety na Daily to wybór za małego DMC, żeby
 Cena samej zabudowy lawety (bez podwozia) wynosi 25–45 tys. zł netto w zależności od długości platformy i rodzaju najazdu. Podwozie Daily w wersji przygotowanej do zabudowy kosztuje od 120 tys. zł netto przy DMC 5,0 t.
 
 Eksploatacja: spalanie przy pełnym ładunku wynosi 13–17 l/100 km dla 3.0 MultiJet. Dla 2.3 jest nieco niższe, ale różnica nie jest dramatyczna – liczyć się będą koszty serwisu, gdzie 3.0 jest droższe.
+
+*Źródła: Wikipedia, Iveco, auto-data.net*

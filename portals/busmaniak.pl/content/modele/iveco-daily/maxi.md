@@ -20,7 +20,7 @@ faq:
     answer: "Całkowita długość nadwozia wynosi 7 170 mm. Długość przestrzeni ładunkowej to ok. 4 750 mm, szerokość 1 870 mm, wysokość 1 900 mm (wersja H2)."
 ---
 
-Iveco Daily Maxi to rekord, który od lat nie ma rywali: 19,6 m³ pojemności przy DMC 3,5 t oznacza, że możesz przewozić sześć europalety i wciąż nie potrzebujesz prawa jazdy na ciężarówkę. Żaden konkurent – ani Mercedes Sprinter, ani Volkswagen Crafter – nie oferuje takiej przestrzeni przy tej samej masie całkowitej.
+[Iveco Daily](https://pl.wikipedia.org/wiki/Iveco_Daily) Maxi to rekord, który od lat nie ma rywali: 19,6 m³ pojemności przy DMC 3,5 t oznacza, że możesz przewozić sześć europalety i wciąż nie potrzebujesz prawa jazdy na ciężarówkę. Żaden konkurent – ani Mercedes Sprinter, ani Volkswagen Crafter – nie oferuje takiej przestrzeni przy tej samej masie całkowitej.
 
 ## Wymiary, które robią różnicę
 
@@ -76,3 +76,5 @@ Promień zawracania jest duży – szacuj ok. 7,5–8,0 m na osi przedniej. W ce
 ## Koszt zakupu
 
 Nowy Daily Maxi L4H2 z silnikiem 2.3/156 KM kosztuje ok. 130–145 tys. zł netto. Wersja z 3.0/170 KM to ok. 145–160 tys. zł netto. Na rynku wtórnym egzemplarze po 100–200 tys. km w stanie dobrym wyceniane są na 55–80 tys. zł.
+
+*Źródła: Wikipedia, Iveco, auto-data.net*

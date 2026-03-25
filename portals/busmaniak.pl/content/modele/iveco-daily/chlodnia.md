@@ -20,7 +20,7 @@ faq:
     answer: "Agregat niezależny wymaga przeglądu co 1 000–1 500 godzin pracy silnika agregatu. W praktyce przy intensywnym użytkowaniu co 6–12 miesięcy."
 ---
 
-Iveco Daily jako chłodnia ATP to jeden z najbardziej eksploatowanych wariantów tego pojazdu w Polsce. Dystrybucja nabiału, transport mrożonek, dostawy farmaceutyków – wszędzie tam, gdzie temperatura ładunku musi być kontrolowana przez całą dobę, Daily sprawdza się lepiej niż większość konkurentów ze względu na szeroki zakres DMC i dostępność zabudów.
+[Iveco Daily](https://pl.wikipedia.org/wiki/Iveco_Daily) jako chłodnia ATP to jeden z najbardziej eksploatowanych wariantów tego pojazdu w Polsce. Dystrybucja nabiału, transport mrożonek, dostawy farmaceutyków – wszędzie tam, gdzie temperatura ładunku musi być kontrolowana przez całą dobę, Daily sprawdza się lepiej niż większość konkurentów ze względu na szeroki zakres DMC i dostępność zabudów.
 
 ## Klasy ATP i wymagania temperaturowe
 
@@ -84,3 +84,5 @@ Cena kompletnej zabudowy chłodniczej na Daily:
 - Instalacja elektryczna i montaż: 2–4 tys. zł netto
 
 Łącznie gotowa chłodnia na podwoziu Daily to 25–50 tys. zł za zabudowę. Certyfikat ATP wystawiany jest przez uprawnioną stację i ważny jest 6 lat – po tym czasie wymagany jest ponowny test szczelności i izolacji.
+
+*Źródła: Wikipedia, Iveco, auto-data.net*

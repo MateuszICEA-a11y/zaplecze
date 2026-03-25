@@ -24,7 +24,7 @@ faq:
 
 ## Generacje Iveco Daily {#generacje}
 
-Iveco Daily zadebiutowało w 1978 roku jako następca modelu Fiat 242, produkowanego przez nowo powstały koncern Iveco. Przez kolejne dekady model przeszedł sześć głównych generacji, z których najważniejsze z perspektywy dzisiejszego rynku wtórnego i nowych zakupów to dwie ostatnie.
+**[Iveco Daily](https://pl.wikipedia.org/wiki/Iveco_Daily)** zadebiutowało w 1978 roku jako następca modelu Fiat 242, produkowanego przez nowo powstały koncern Iveco. Przez kolejne dekady model przeszedł sześć głównych generacji, z których najważniejsze z perspektywy dzisiejszego rynku wtórnego i nowych zakupów to dwie ostatnie.
 
 ### Daily VI (2014–2022)
 
@@ -155,6 +155,4 @@ W segmencie DMC 3,5 t Daily przegrywa z Transitem pod względem ceny zakupu i si
 
 Dla flot mieszanych, które potrzebują jednego modelu w DMC 3,5–7,2 t, Daily jest jedynym rozsądnym wyborem na rynku – żaden z konkurentów nie oferuje takiego zakresu w jednej platformie.
 
-Jeśli szukasz informacji o alternatywnych platformach ramowych w tej klasie, zobacz też [dane techniczne Forda Transita Custom](/modele/ford-transit-custom/) oraz [Mercedes Sprinter 519](/modele/mercedes-sprinter/).
-
-*Źródła: Iveco Professional (iveco.com), katalogi techniczne Daily VI i VII, dane homologacyjne COC.*
+*Źródła: Wikipedia, Iveco, auto-data.net*

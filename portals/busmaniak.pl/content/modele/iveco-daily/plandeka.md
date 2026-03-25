@@ -20,7 +20,7 @@ faq:
     answer: "Zazwyczaj 6–10 tygodni od dostarczenia podwozia do firmy zabudowującej. Terminy mogą się wydłużyć przy niestandardowych wymiarach."
 ---
 
-Iveco Daily z zabudową plandekową to jeden z najchętniej wybieranych wariantów w branży meblarskiej, kurierskiej i budowlanej. Trójstronny dostęp do ładunku skraca czas rozładunku do minimum – nie musisz przenosić towaru z głębi skrzyni, bo burtę możesz otworzyć z każdej strony.
+[Iveco Daily](https://pl.wikipedia.org/wiki/Iveco_Daily) z zabudową plandekową to jeden z najchętniej wybieranych wariantów w branży meblarskiej, kurierskiej i budowlanej. Trójstronny dostęp do ładunku skraca czas rozładunku do minimum – nie musisz przenosić towaru z głębi skrzyni, bo burtę możesz otworzyć z każdej strony.
 
 ## Zabudowa plandekowa – co to znaczy w praktyce
 
@@ -68,3 +68,5 @@ Plandeka to zabudowa, która przy pozornej prostocie ma jeden słaby punkt – p
 Cena zabudowy plandekowej na podwozie Daily wynosi 18–30 tys. zł netto, w zależności od długości skrzyni, materiału ramy (stalowa vs. aluminiowa) i rodzaju zamknięcia. Aluminiowe zabudowy są droższe o ok. 4–6 tys. zł, ale lżejsze o 100–150 kg, co bezpośrednio przekłada się na wyższą ładowność netto.
 
 Podwozie Daily w konfiguracji do zabudowy plandekowej kosztuje od 90 tys. zł netto przy DMC 3,5 t do ok. 140 tys. zł przy 7,2 t.
+
+*Źródła: Wikipedia, Iveco, auto-data.net*
