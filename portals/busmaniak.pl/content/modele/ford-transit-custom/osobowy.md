@@ -17,7 +17,7 @@ faq:
     answer: "Tak – Tourneo Custom gen II (od 2024) dostępny jest w wersji plug-in hybrid (PHEV) z silnikiem benzynowym 2.5 Duratec + elektrycznym, łącznie 233 KM. Zasięg elektryczny WLTP: do 59 km. Wersja PHEV ładuje się przez złącze Type 2 do 3,7 kW."
 ---
 
-Ford Tourneo Custom to osobowa wersja Transit Custom – van rodzinny lub biznesowy do przewozu do 9 osób. W Polsce sprzedawany jest głównie jako pojazd firmowy do przewozu pracowników, bus lotniskowy lub luksusowy minivan rodzinny. Generacja II (od 2024) znacznie unowocześniła technologię i ofertę napędową.
+Ford Tourneo Custom to osobowa wersja [Transit Custom](/modele/ford-transit-custom/) – van rodzinny lub biznesowy do przewozu do 9 osób. W Polsce sprzedawany jest głównie jako pojazd firmowy do przewozu pracowników, bus lotniskowy lub luksusowy minivan rodzinny. Generacja II (od 2024) znacznie unowocześniła technologię i ofertę napędową.
 
 ## Tourneo Custom Gen I (2012–2023)
 
@@ -95,3 +95,5 @@ Tourneo Custom rejestrowany jako M1 (do 8 pasażerów + kierowca) daje prawo do 
 Koszty serwisu są identyczne jak Transit Custom Van – ta sama mechanika. Tourneo PHEV ma dodatkowy element: wymiana płynu chłodniczego układu elektrycznego co 150 000 km lub 5 lat. Koszt: ok. 800–1200 zł.
 
 Gwarancja standardowa Forda na gen II: 3 lata lub 100 000 km. Na baterię PHEV: 8 lat lub 160 000 km.
+
+*Źródła: Wikipedia, Ford, auto-data.net*

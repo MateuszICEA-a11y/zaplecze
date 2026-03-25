@@ -17,7 +17,7 @@ faq:
     answer: "Transit Custom dźwiga do 1356 kg ładunku (L2, 2.0 EcoBlue 130 KM, manualna). Ładowność zależy od wersji silnikowej i skrzyni. Standardowo L1 niesie ok. 1150–1200 kg, L2 – 1300–1356 kg."
 ---
 
-Ford Transit Custom to bestseller segmentu średnich dostawczaków w Europie – i nie jest to przypadek. Od 2012 roku utrzymuje czołową pozycję sprzedażową w Polsce i na rynkach zachodnoeuropejskich. Jest to samochód klasy średniej (jak Renault Trafic, Opel Vivaro czy Stellantis Dispatch), oferujący większą przestrzeń niż kompaktowe vany przy zachowaniu rozsądnych wymiarów zewnętrznych.
+Ford Transit Custom to bestseller segmentu średnich dostawczaków w Europie – i nie jest to przypadek. Od 2012 roku utrzymuje czołową pozycję sprzedażową w Polsce i na rynkach zachodnoeuropejskich. Jest to [samochód klasy średniej](https://pl.wikipedia.org/wiki/Ford_Transit_Custom){rel="nofollow"} (jak Renault Trafic, Opel Vivaro czy Stellantis Dispatch), oferujący większą przestrzeń niż kompaktowe vany przy zachowaniu rozsądnych wymiarów zewnętrznych.
 
 ## Dwie generacje – co je odróżnia
 
@@ -96,3 +96,5 @@ Transit Custom należy do ścisłej czołówki sprzedażowej w segmencie średni
 - duże rynkowe portfolio używanych egzemplarzy
 
 Ceny nowych Transit Custom gen II zaczynają się od ok. 175 000 zł (Leader, 2.0 EcoBlue 136 KM mild hybrid, L1).
+
+*Źródła: Wikipedia, Ford, auto-data.net*

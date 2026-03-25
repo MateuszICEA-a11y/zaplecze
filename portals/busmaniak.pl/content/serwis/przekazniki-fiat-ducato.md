@@ -69,4 +69,4 @@ Ducato jest generalnie solidny elektrycznie, ale ma kilka miejsc, gdzie regularn
 *   **Kierunkowskazy** – w modelach po 2006 roku nie ma klasycznego wymiennego przekaźnika; funkcję przejął moduł BSI. Gdy migacze zachowują się dziwnie, częściej winna jest zalana manetka lub wilgoć w samym module niż jakiś przekaźnik.
 *   **Wycieraczki** – praca wyłącznie na pełnej prędkości sugeruje problem z przekaźnikiem czasowym, który w nowszych generacjach jest zintegrowany z silniczkiem lub BSI.
 
-Więcej o budowie i eksploatacji tego modelu przeczytasz w naszym artykule: [Fiat Ducato – przewodnik](/modele/fiat-ducato/).
+*Źródła: instrukcja obsługi Fiat Ducato (eLum), schematy elektryczne Fiat Professional, auto-data.net*

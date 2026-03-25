@@ -75,4 +75,4 @@ Jeśli wyniki odbiegają od tabeli, zacznij od tych czterech punktów:
 *   **Styl jazdy** – Ducato najlepiej pracuje w zakresie 1500–2250 obr./min. Dynamiczne przyspieszenie do prędkości przelotowej i jej utrzymanie daje lepsze wyniki niż "leniwa" jazda z nisko obciążonym silnikiem.
 *   **Stan techniczny** – zapchany DPF lub nieszczelność w układzie dolotowym (intercooler) to najczęstsze przyczyny nagłego wzrostu zużycia paliwa.
 
-Pełną historię tego modelu i opis wszystkich generacji znajdziesz w naszym artykule: [Fiat Ducato – przewodnik](/modele/fiat-ducato/).
+*Źródła: karty techniczne Fiat Professional, dane użytkowników flot, auto-data.net*

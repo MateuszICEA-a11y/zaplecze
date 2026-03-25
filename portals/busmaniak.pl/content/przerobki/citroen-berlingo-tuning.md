@@ -76,4 +76,6 @@ Przerobienie [Berlingo Van](/modele/citroen-berlingo/van/) na wersję osobową w
 
 Koszt przeróbki: 3000–8000 zł (zależnie od zakresu i czy części są nowe czy używane). Proces trwa 1–3 tygodnie z formalnościami w wydziale komunikacji.
 
-{{% expert name="Zielinski" %}}Przeróbka Vana na osobowy ma sens, gdy różnica cen na rynku wtórnym jest duża (Van bywa o 5–10 tys. zł tańszy). Ale liczaj realnie – koszt przeróbki + formalności to 5000–8000 zł. Czasem taniej wyjść kupić gotowe Berlingo osobowe. Pełny przegląd modelu na stronie [Citroëna Berlingo](/modele/citroen-berlingo/).{{% /expert %}}
+{{% expert name="Zielinski" %}}Przeróbka Vana na osobowy ma sens, gdy różnica cen na rynku wtórnym jest duża (Van bywa o 5–10 tys. zł tańszy). Ale liczaj realnie – koszt przeróbki + formalności to 5000–8000 zł. Czasem taniej wyjść kupić gotowe Berlingo osobowe.{{% /expert %}}
+
+*Źródła: dokumentacja techniczna Citroën, dane warsztatów tuningowych, auto-data.net*

@@ -66,9 +66,6 @@ Kilka praktycznych wskazówek:
 - **Regularne przeglądy** – brudny filtr powietrza zwiększa spalanie o 5–10%; zanieczyszczone wtryskiwacze – o 10–15%
 - **Tempomat** – na trasie utrzymuje stałą prędkość i zmniejsza zużycie paliwa o 5–8%
 
-Więcej o silnikach i wersjach: [1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) | [Citroën Berlingo – przewodnik](/modele/citroen-berlingo/)
-
-
 ![Wskaźnik spalania w Citroënie Berlingo](/images/citroen-berlingo-spalanie-hero.jpg)
 
 ## Koszty paliwa – Berlingo vs konkurencja {#koszty}
@@ -87,3 +84,5 @@ Porównanie rocznych kosztów paliwa przy 20 000 km (ceny 2025: ON 6,70 zł/l, P
 *ë-Berlingo – przy ładowaniu domowym (taryfa 0,90 zł/kWh)
 
 {{% expert name="Zielinski" %}}Berlingo z 1.5 BlueHDI to jeden z najtańszych w eksploatacji kombivanów na rynku. Partner/Rifter z identycznym silnikiem kosztuje tyle samo, ale Caddy z 2.0 TDI pali zauważalnie więcej. Jeśli masz wallbox, ë-Berlingo obniża koszty paliwa o ponad 45%.{{% /expert %}}
+
+*Źródła: dane użytkowników, karty techniczne Citroën, auto-data.net*

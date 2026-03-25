@@ -65,9 +65,6 @@ Przepalone gniazdo 12V to numer jeden wśród zgłoszeń na forach. W modelach p
 
 Model 244 jest pod tym względem znacznie przyjaźniejszy. Skrzynka siedzi pod klapką w desce po stronie pasażera i w komorze silnika – bez szukania po słupkach. Warto pamiętać, że 2.3 JTD i 2.8 JTD mają oddzielne zabezpieczenia pompy paliwa w komorze – często pomijane przy diagnozie.
 
-Więcej o starszych jednostkach przeczytasz w naszym artykule: [Fiat Ducato – przewodnik po generacjach](/modele/fiat-ducato/).
-
-
 ![Bezpieczniki Fiat Ducato – schemat, opis, lokalizacja](/images/bezpieczniki-fiat-ducato-hero.jpg)
 
 ## Jak rozpoznać rodzaj i stan bezpiecznika?
@@ -77,3 +74,5 @@ W Ducato chodzą głównie dwa typy: **Mini** i **Standard (Uni)**. W komorze si
 - **Kolory** – są ustandaryzowane: czerwony to 10A, niebieski 15A, żółty 20A. Nigdy nie wstawiaj bezpiecznika o wyższej wartości niż oryginał – grozi to pożarem instalacji.
 
 Jeśli wymieniony bezpiecznik przepala się natychmiast, to pewny znak zwarcia. Sprawdź wtedy [kontrolki Ducato](/serwis/kontrolki-fiat-ducato/) – mogą naprowadzić na źródło problemu.
+
+*Źródła: instrukcja obsługi Fiat Ducato (eLum), dokumentacja techniczna Fiat Professional, auto-data.net*

@@ -17,7 +17,7 @@ faq:
     answer: "Jumper jest oferowany w konfiguracjach 8–17 m³. Najczęściej wybierana wersja L2H2 oferuje 13 m³, L3H2 – 15 m³. Wersja L4H3 osiąga 17 m³."
 ---
 
-Citroën Jumper III to duży van dostawczy segmentu N1/N2, techniczny bliźniak Fiata Ducato III i Peugeota Boxera III. Od 2006 roku budowany na platformie Sevel Sud, po faceliftingach w 2014 i 2020 roku zyskał silniki 2.2 BlueHDi spełniające normę Euro 6d. W 2024 roku gama poszerzyła się o w pełni elektryczny ë-Jumper.
+Citroën Jumper III to duży van dostawczy segmentu N1/N2, techniczny bliźniak Fiata Ducato III i Peugeota Boxera III. Od 2006 roku budowany na [platformie Sevel Sud](https://pl.wikipedia.org/wiki/Citro%C3%ABn_Jumper){rel="nofollow"}, po faceliftingach w 2014 i 2020 roku zyskał silniki 2.2 BlueHDi spełniające normę Euro 6d. W 2024 roku gama poszerzyła się o w pełni elektryczny ë-Jumper.
 
 ## Platforma Sevel Sud – wspólna podstawa trójki
 
@@ -99,3 +99,5 @@ Typowe koszty przy 50 000 km/rok:
 - paliwo (9 l/100 km, 7 zł/l): ok. 31 500 zł/rok
 - serwis i przeglądy: ok. 1800–2500 zł/rok
 - ogumienie (wymiana co 80 000 km): ok. 1200–1600 zł na oś
+
+*Źródła: Wikipedia, Citroën, auto-data.net*

@@ -17,7 +17,7 @@ faq:
     answer: "Tak – ë-Jumper zachowuje identyczną przestrzeń ładunkową co wersja spalinowa Jumpera Van. Bateria montowana jest pod podłogą, bez ingerencji w przestrzeń ładowni. Ładowność jest nieco niższa – ok. 1060 kg (L2H2, bateria 75 kWh) wobec ok. 1400 kg w dieslu."
 ---
 
-Citroën Jumper Van to zamknięta przestrzeń ładunkowa do intensywnej eksploatacji dostawczej. Identyczny technicznie z Peugeot Boxer Van i Fiat Ducato Van – decyzja między markami to kwestia serwisu, ceny i preferencji dealerskich.
+**[Citroën Jumper](/modele/citroen-jumper/)** Van to zamknięta przestrzeń ładunkowa do intensywnej eksploatacji dostawczej. Identyczny technicznie z Peugeot Boxer Van i Fiat Ducato Van – decyzja między markami to kwestia serwisu, ceny i preferencji dealerskich.
 
 ## Konfiguracje i wymiary przestrzeni ładunkowej
 
@@ -114,3 +114,5 @@ Koszty serwisowe (2.2 BlueHDi 140 KM):
 - wtryskiwacze (po 250 000 km): 400–700 zł/szt.
 
 Skrzynia EAT8: wymiana oleju co 60 000 km – ok. 700–900 zł. "Olej na życie" to zalecenie producenta przy normalnej eksploatacji, ale przy intensywnym użyciu zalecam skrócenie do 60 000 km.
+
+*Źródła: Wikipedia, Citroën, auto-data.net*

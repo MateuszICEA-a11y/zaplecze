@@ -69,9 +69,4 @@ Ducato nie musi wyglądać jak auto kurierskie. Kilka trafnie dobranych element�
 - **Orurowanie (bullbary)** – stalowe rury z przodu w czarnym macie albo chromie chronią zderzak i dają podstawę pod dodatkowe LED-bary
 - **Spoiler dachowy i dokładki zderzaka** – przy długich trasach poprawiona aerodynamika realnie wpływa na spalanie
 
-Więcej o technicznych aspektach tego modelu przeczytasz w naszym [przewodniku po Fiacie Ducato](/modele/fiat-ducato/).
-
-## Źródła informacji
-*   Oficjalna strona Fiat Professional: [fiatprofessional.com](https://www.fiatprofessional.com/pl)
-*   Dane techniczne silników MultiJet: Wikipedia [Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato)
-*   Katalog akcesoriów Mopar
+*Źródła: Fiat Professional (fiatprofessional.com), dokumentacja techniczna silników MultiJet, katalog akcesoriów Mopar*

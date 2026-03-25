@@ -17,7 +17,7 @@ faq:
     answer: "Tak – Transit Custom L2 z podłogą 2925 mm długości mieści dwie palety EUR 1200x800 mm ułożone wzdłuż. Przy ładowaniu przez tylne drzwi szerokość otworu 1478 mm pozwala na swobodny załadunek palet wózkowym ręcznym."
 ---
 
-Ford Transit Custom Van to dostawczak segmentu średniego (N1) oferujący przestrzeń 6,0–6,8 m³ przy DMC do 3,5 t. Wypełnia lukę między kompaktowymi vanami (Combo, Partner – do 4,4 m³) a dużymi (Crafter, Boxer – 9–18 m³). To pojazd dla firm z regularnym załadunkiem powyżej 400 l i ładunkiem do 1356 kg.
+**[Ford Transit Custom](/modele/ford-transit-custom/)** Van to dostawczak segmentu średniego (N1) oferujący przestrzeń 6,0–6,8 m³ przy DMC do 3,5 t. Wypełnia lukę między kompaktowymi vanami (Combo, Partner – do 4,4 m³) a dużymi (Crafter, Boxer – 9–18 m³). To pojazd dla firm z regularnym załadunkiem powyżej 400 l i ładunkiem do 1356 kg.
 
 ## Konfiguracje i wymiary
 
@@ -104,3 +104,5 @@ Serwis 2.0 EcoBlue (gen I, interwał 30 000 km):
 - DPF regeneracja lub wymiana (200 000+ km): 600–3500 zł
 
 Typowe zużycie opon przy eksploatacji miejskiej: przód 60 000–80 000 km, tył 80 000–120 000 km. Komplet opon segmentu (195/75 R16): ok. 1200–1600 zł.
+
+*Źródła: Wikipedia, Ford, auto-data.net*

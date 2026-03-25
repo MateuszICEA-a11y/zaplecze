@@ -22,8 +22,6 @@ faq:
     answer: "Wersja wysokodachowa H2 ma znacznie większy opór aerodynamiczny, co przekłada się na wyższe zużycie paliwa o 0,5–1 l/100 km, szczególnie przy jeździe trasowej powyżej 100 km/h."
 ---
 
-Renault Trafic pali realnie od 6,5 do ponad 11 litrów na 100 km – w zależności od generacji, silnika i warunków pracy. Dane producenta to jedno, a codzienna eksploatacja to drugie.
-
 ## Tabela spalania – Trafic III (od 2014)
 
 Trzecia generacja Trafic to najczęściej spotykany dziś model w flotach dostawczych. Dostępna była z silnikami 1.6 dCi oraz – od 2019 roku – z jednostkami 2.0 dCi. Poniższa tabela przedstawia realne wartości z codziennej eksploatacji, nie dane homologacyjne.
@@ -83,6 +81,4 @@ Jeśli Trafic zaczyna palić wyraźnie więcej niż zwykle przy takim samym styl
 - **Układ wtryskowy** – zużyte wtryskiwacze w 2.5 dCi potrafią podnieść zużycie o 1–1,5 l/100 km
 - **Ciśnienie w oponach** – zbyt niskie ciśnienie to łatwy do przeoczenia, ale realny czynnik (+0,3–0,5 l)
 
-Więcej o silnikach dCi dostępnych w Traficu – w artykule [Renault Trafic dCi – przegląd silników](/modele/renault-trafic/dci/).
-
-Pełna specyfikacja modelu i porównanie generacji dostępne na stronie głównej modelu: [Renault Trafic – wszystko o modelu](/modele/renault-trafic/).
+*Źródła: dane użytkowników flot i pomiary własne, karty techniczne Renault, auto-data.net*
