@@ -1,7 +1,7 @@
 ---
 title: "Ford Transit Connect – dane techniczne, wersje, silniki | BusManiak.pl"
 date: 2026-03-25
-description: "Ford Transit Connect – dane techniczne, wymiary L1 i L2, silniki 1.5 EcoBlue, wersje 5- i 7-osobowe, typowe usterki oraz ceny nowych i używanych."
+description: "Ford Transit Connect – dane techniczne, wymiary L1 i L2, silniki 1.5 EcoBlue i 1.0 EcoBoost, wersje 5- i 7-osobowe Tourneo, typowe usterki oraz ceny."
 draft: false
 author: "marek-kowalczyk"
 h1: "Ford Transit Connect – kompletny przewodnik po modelu"
@@ -12,69 +12,134 @@ main_keyword: "ford transit connect"
 volume: 6600
 lead: "Ford Transit Connect to kompaktowy dostawczak łączący cechy auta osobowego z użytkową wytrzymałością. Trzy generacje od 2002 roku, silniki 1.5 EcoBlue od 75 do 120 KM, wersje od furgona po 7-osobowe Tourneo. Oto wszystko o wymiarach, silnikach i typowych usterkach."
 faq:
-  - question: "Jakie są wymiary Ford Transit Connect L2?"
-    answer: "Wersja L2 ma długość całkowitą ok. 4830 mm. Paka mieści przedmioty do 2153 mm długości przy podłodze."
-  - question: "Jakie są opinie o Ford Transit Connect?"
-    answer: "Kierowcy chwalą ergonomię kabiny i precyzję prowadzenia. Negatywne głosy dotyczą głównie cen autoryzowanego serwisu i ograniczonej szerokości między nadkolami."
+  - question: "Jakie są wymiary Transit Connect L2?"
+    answer: "Wersja L2 ma długość 4825 mm. Paka mieści przedmioty do 2153 mm długości przy podłodze."
+  - question: "Jakie są opinie o Transit Connect?"
+    answer: "Kierowcy chwalą ergonomię kabiny i precyzję prowadzenia. Negatywne głosy dotyczą cen autoryzowanego serwisu i ograniczonej szerokości między nadkolami."
   - question: "Ile pali diesel 1.5 EcoBlue?"
-    answer: "Wersja 100 KM w normalnym użytkowaniu zużywa 5,2–6,0 l/100 km. Przy pełnym obciążeniu na autostradzie do ok. 7,5 l."
+    answer: "Wersja 100 KM zużywa 5,2–6,0 l/100 km. Przy pełnym obciążeniu na autostradzie do ok. 7,5 l."
 ---
 
-## Historia i generacje Ford Transit Connect {#historia-generacje}
+## Historia i generacje Transit Connect
 
-Ford Transit Connect to jeden z najpopularniejszych małych dostawczaków na europejskim rynku, wypełniający lukę między mikrovanami a średnimi pojazdami typu [Ford Transit Custom](/modele/ford-transit-custom/). W najnowszej odsłonie dzieli konstrukcję z Volkswagenem Caddy.
+Kompaktowy dostawczak wypełniający lukę między mikrovanami a średnim [Fordem Transit Custom](/modele/ford-transit-custom/). Trzy generacje, trzy różne platformy.
 
-### Connect Mk1 (2002–2013)
-Pierwsza odsłona zadebiutowała w 2002 roku jako następca Forda Escorta Van. Auto oparto na platformie C170, wykorzystującej elementy znane z Focusa, co zapewniło doskonałe właściwości jezdne. W 2009 roku model przeszedł modernizację wizualną, a najmocniejszy wariant wysokoprężny 1.8 TDCi generował 110 KM.
+### Ford Transit Connect Mk1 (2002–2013)
 
-### Connect Mk2 / V408 (2013–2022)
-Druga generacja (V408) przyniosła rewolucję w komforcie i designie kabiny. Auto stało się bardziej aerodynamiczne i zbliżyło się standardem wykończenia do aut osobowych. Ford Transit Connect zyskał uznanie za precyzyjny układ kierowniczy i systemy bezpieczeństwa Active City Stop.
+Debiut w 2002 roku jako następca Forda Escorta Van. Platforma C170 z elementami Focusa zapewniła doskonałe właściwości jezdne – rzadkość w dostawczakach tamtej epoki. Silniki: benzyna 1.8 Duratec (116 KM) i diesel 1.8 TDCi (75–110 KM). W 2009 roku model przeszedł modernizację wizualną z nowym pasem przednim.
 
-### Connect Mk3 (od 2023)
-Najnowszy Connect to owoc współpracy z koncernem VAG. Model dzieli podzespoły z piątą generacją Caddy, co pozwala na zastosowanie napędu Plug-in Hybrid i zaawansowanych multimediów. Auto zachowuje jednak charakterystyczną dla Forda stylistykę przedniego pasa.
+Wymiary Mk1: długość 4263–4532 mm, szerokość 2085 mm z lusterkami, wysokość 1811 mm. Objętość paki 2,4–2,9 m³. Ładowność 600–810 kg.
 
-{{% expert name="Kowalczyk" %}}Pierwsza generacja Connecta była próbą odcięcia się od konstrukcji bazujących na autach segmentu B, co zaowocowało niezwykle sztywnym i trwałym nadwoziem. To właśnie dlatego na rynku wtórnym trafisz na Mk1 z przebiegami ponad 400 tys. km.{{% /expert %}}
+### Ford Transit Connect Mk2 / V408 (2013–2022)
 
-## Dane techniczne Ford Transit Connect
+Druga generacja przyniosła skok jakościowy – aerodynamiczne nadwozie zbliżone standardem do aut osobowych. Precyzyjny układ kierowniczy i system Active City Stop (automatyczne hamowanie w mieście) wyróżniały go na tle konkurencji. Silniki przeszły na 1.5 TDCi/EcoBlue (75–120 KM) i benzynę 1.0 EcoBoost (100 KM).
 
-Klienci mają do wyboru dwa rozstawy osi, które determinują całkowitą długość pojazdu i średnicę zawracania.
+{{% info title="Active City Stop" icon="engineering" %}}
+Connect Mk2 był jednym z pierwszych kompaktowych dostawczaków z systemem automatycznego hamowania awaryjnego. Czujnik laserowy na szybie przedniej rozpoznaje przeszkody do prędkości 50 km/h.
+{{% /info %}}
 
-### Wymiary zewnętrzne – wersja L1 i L2
-Standardowa wersja L1 mierzy około 4425 mm długości – idealny wybór do ciasnej zabudowy miejskiej. Wersja L2 (Long) oferuje długość całkowitą na poziomie 4825 mm. Szerokość pojazdu z lusterkami wynosi około 2137 mm, co pozwala na swobodne manewrowanie na podziemnych parkingach.
+### Ford Transit Connect Mk3 (od 2023)
 
-### Przestrzeń ładunkowa i ładowność Ford Transit Connect
-Wersja L1 oferuje około 2,9 m³ objętości ładunkowej, wariant L2 zwiększa tę wartość do 3,6 m³. Ładownia w wersji przedłużonej mieści dwie europalety. Maksymalna ładowność oscyluje w granicach 600–980 kg, zależnie od wybranego silnika i konfiguracji zawieszenia.
+Najnowszy Connect to owoc współpracy z koncernem VAG – dzieli podzespoły z piątą generacją Caddy. Napęd Plug-in Hybrid, zaawansowane multimedia i cyfrowe zegary. Zachowuje jednak charakterystyczną fordowską stylistykę przedniego pasa i specyficzną kalibrację zawieszenia.
 
-## Silniki Ford Transit Connect
+## Wymiary Transit Connect
 
-Jednostki napędowe Forda słyną z dobrej kultury pracy i niskiego zużycia paliwa, szczególnie w trasach międzymiastowych.
+| Parametr | Mk2 L1 (Short) | Mk2 L2 (Long) | Mk3 L1 | Mk3 L2 |
+|----------|----------------|---------------|--------|--------|
+| Długość | 4425 mm | 4825 mm | 4498 mm | 4853 mm |
+| Szerokość (z lusterkami) | 2137 mm | 2137 mm | 2124 mm | 2124 mm |
+| Wysokość | 1838 mm | 1838 mm | 1830 mm | 1850 mm |
+| Rozstaw osi | 2662 mm | 3062 mm | 2755 mm | 2970 mm |
+| Objętość paki | 2,9 m³ | 3,6 m³ | 3,1 m³ | 3,8 m³ |
+| Ładowność | 600–730 kg | 650–980 kg | 600–800 kg | 650–850 kg |
 
-### Diesel 1.5 EcoBlue / 1.8 TDCi
-Silnik 1.8 TDCi w starszych modelach był pancerną konstrukcją, choć ustępował nowszym jednostkom pod względem emisji. W Mk2 króluje diesel 1.5 TDCi/EcoBlue o mocach 75, 100 i 120 KM, wyposażony w katalizator [SCR](https://en.wikipedia.org/wiki/Selective_catalytic_reduction). Ten silnik oferuje wysoki moment obrotowy już od niskich obrotów.
+- **Długość podłogi paki L2** – 2153 mm (z możliwością wydłużenia przez otwór w przegrodzie)
+- **Szerokość między nadkolami** – 1228 mm
+- **Próg załadowczy** – 596 mm
+- **Dwie europalety** – mieszczą się w wersji L2
 
-### Benzyna
-Dla użytkowników miejskich Ford przygotował nagradzany silnik 1.0 EcoBoost o mocy 100 KM. Choć to jednostka trzycylindrowa, dzięki turbodoładowaniu sprawnie radzi sobie z załadowanym autem. W najnowszej generacji pojawiają się także większe jednostki z grupy Volkswagena, współpracujące z automatycznymi skrzyniami biegów.
+## Silniki Transit Connect
 
-{{% info title="Silnik 1.0 EcoBoost" icon="engineering" %}}Trzycylindrowy EcoBoost dobrze współpracuje z instalacjami LPG. Przy spalaniu na gaz około 8 l/100 km, koszty paliwa spadają nawet o 40% w porównaniu do benzyny.{{% /info %}}
+| Silnik | Generacja | Moc | Moment | Spalanie (śr.) | Norma |
+|--------|-----------|-----|--------|----------------|-------|
+| 1.8 TDCi | Mk1 | 75–110 KM | 200–280 Nm | 6,5–7,5 l/100 km | Euro 4 |
+| 1.5 TDCi 75 | Mk2 | 75 KM | 185 Nm | 5,0–5,5 l/100 km | Euro 6 |
+| 1.5 EcoBlue 100 | Mk2 | 100 KM | 240 Nm | 5,2–6,0 l/100 km | Euro 6d |
+| 1.5 EcoBlue 120 | Mk2 | 120 KM | 270 Nm | 5,5–6,5 l/100 km | Euro 6d |
+| 1.0 EcoBoost | Mk2 | 100 KM | 170 Nm | 6,5–7,5 l/100 km | Euro 6 |
 
-## Wersje nadwoziowe Ford Transit Connect
+Diesel 1.5 EcoBlue z katalizatorem [SCR](https://en.wikipedia.org/wiki/Selective_catalytic_reduction) to serce Mk2 – wysoki moment już od niskich obrotów. Trzycylindrowy 1.0 EcoBoost to nagradzany motor, dobrze współpracujący z LPG (spalanie na gaz ~8 l/100 km).
 
-Ford oferuje dużą różnorodność konfiguracji, dopasowanych do potrzeb zawodowych i rodzinnych.
+{{% expert name="Kowalczyk" %}}
+Mk1 z silnikiem 1.8 TDCi to jedna z najbardziej trwałych konstrukcji Forda – na rynku wtórnym trafisz na egzemplarze z przebiegami ponad 400 tys. km przy żywym silniku. Kluczem jest regularna wymiana paska rozrządu co 160 tys. km i oleju co 15 tys. km.
+{{% /expert %}}
 
-- **Furgon (Van)** – klasyczny blaszak z dwu- lub trzyosobową kabiną, oddzieloną przegrodą od paki
-- **Kombi** – pięcioosobowy Transit Connect to złoty środek między mobilnym warsztatem a autem codziennym
-- **Tourneo Connect** – luksusowa odmiana osobowa, dostępna jako siedmioosobowy Grand z dodatkowym rzędem foteli
+## Wersje nadwoziowe Transit Connect
 
-## Typowe usterki Ford Transit Connect
+### Furgon (Van)
 
-Najczęstszą przypadłością Mk2 są wibracje kierownicy przy wyższych prędkościach, wynikające z wrażliwości układu jezdnego na wyważenie kół. W dieslach po większych przebiegach pojawia się falowanie obrotów i zapchanie filtra DPF, jeśli auto jeździło głównie po mieście. W starszych egzemplarzach Mk1 szwankuje immobilizer i zdarzają się stuki w okolicach sprzęgła.
+- **Kabina** – 2-osobowa (opcjonalnie 3-osobowa z ławką)
+- **Przegroda** – pełna stalowa lub z szybą
+- **Drzwi boczne** – przesuwane po jednej lub obu stronach
+- **Drzwi tylne** – asymetryczne skrzydełkowe lub klapa podnoszona
 
-## Ceny Ford Transit Connect
+### Kombi (5-osobowy)
 
-Za zadbane Mk1 z końca produkcji trzeba zapłacić od 15 000 do 22 000 zł. Modele Mk2 z okolic 2017–2018 roku to wydatek rzędu 45 000–60 000 zł netto. Najnowsze egzemplarze salonowe z bogatym wyposażeniem mogą przekraczać 130 000 zł, zwłaszcza w wersjach Active.
+Złoty środek między mobilnym warsztatem a autem codziennym. Drugi rząd siedzeń składany, przeszklone nadwozie. W wersji Mk2 Trend dostępne systemy: tempomat, czujniki parkowania, kamera cofania.
 
-## Ford Transit Connect a konkurencja
+### Tourneo Connect (osobowy, 5/7-osobowy)
 
-Bezpośrednimi rywalami są [Citroën Berlingo](/modele/citroen-berlingo/) i bliźniaczy [Peugeot Partner](/modele/peugeot-partner/). W porównaniu do konkurencji francuskiej, Connect oferuje zazwyczaj sztywniejsze nastawy podwozia, co doceniają kierowcy preferujący pewne prowadzenie. Na tle większego [Forda Transita](/modele/ford-transit/) Connect wygrywa zwrotnością i kosztami eksploatacji.
+Luksusowa odmiana osobowa z wyższym standardem wykończenia. Grand Tourneo Connect w wersji Long oferuje siedem miejsc z dodatkowym trzecim rzędem. Wersja Active z podwyższonym zawieszeniem i plastikowymi osłonami progów celuje w klientów szukających alternatywy dla SUV-a.
+
+## Typowe usterki Transit Connect
+
+### Mk1 (2002–2013)
+
+- **Immobilizer** – sporadyczne blokady rozruchu, wymiana transpondera w kluczu
+- **Sprzęgło** – stuki przy puszczaniu pedału, łożysko wyciskowe
+- **Korozja** – progi i nadkola w egzemplarzach sprzed 2008 roku
+
+### Mk2 (2013–2022)
+
+- **Wibracje kierownicy** – wrażliwość układu jezdnego na wyważenie kół; regulacja geometrii + wyważenie rozwiązuje problem
+- **Falowanie obrotów** – w dieslach po 150 tys. km, czyszczenie przepustnicy pomaga
+- **DPF** – zapychanie przy jeździe wyłącznie miejskiej; wymusza regenerację na autostradzie
+- **System multimedialny SYNC** – zawieszanie się, wolne działanie; aktualizacja oprogramowania
+
+{{% info title="Kod błędu P2111/P2135" icon="engineering" %}}
+W Mk2 z 2013–2015 częsty problem z utratą mocy i kodem P2111/P2135. Przyczyną jest zabrudzona przepustnica – czyszczenie specjalistycznym spray'em kosztuje 200 zł i rozwiązuje problem na stałe.
+{{% /info %}}
+
+## Ceny Transit Connect
+
+### Nowy Transit Connect Mk3
+
+| Wersja | Cena od |
+|--------|---------|
+| Van L1 (dostawczy) | ok. 110 000 zł netto |
+| Kombi L1 | ok. 120 000 zł netto |
+| Tourneo Connect L1 | ok. 125 000 zł brutto |
+| Grand Tourneo Connect L2 7-os. | ok. 145 000 zł brutto |
+
+### Używany Transit Connect
+
+| Generacja / Rocznik | Cena orientacyjna |
+|---------------------|-------------------|
+| Mk1 (2009–2013) | 15 000–22 000 zł |
+| Mk2 (2014–2016) | 30 000–45 000 zł |
+| Mk2 (2017–2020) | 45 000–65 000 zł |
+| Mk2 Active (2020–2022) | 65 000–90 000 zł |
+
+## Porównanie Transit Connect z konkurencją
+
+| Parametr | Ford Transit Connect L2 | Citroën Berlingo L2 | Peugeot Partner L2 | VW Caddy Maxi |
+|----------|------------------------|--------------------|--------------------|---------------|
+| Długość | 4825 mm | 4753 mm | 4753 mm | 4853 mm |
+| Objętość paki | 3,6 m³ | 3,9 m³ | 3,9 m³ | 3,7 m³ |
+| Ładowność | do 980 kg | do 1000 kg | do 1000 kg | do 750 kg |
+| Diesel bazowy | 1.5 EcoBlue 100 KM | 1.5 BlueHDi 100 KM | 1.5 BlueHDi 100 KM | 2.0 TDI 75 KM |
+| Cena nowego (netto) | od 110 000 zł | od 100 000 zł | od 100 000 zł | od 130 000 zł |
+
+Bezpośrednimi rywalami są [Citroën Berlingo](/modele/citroen-berlingo/) i [Peugeot Partner](/modele/peugeot-partner/) – większa paka przy niższej cenie. Connect wygrywa właściwościami jezdnymi i trwałością nadwozia. Na tle większego [Forda Transita](/modele/ford-transit/) wygrywa zwrotnością i kosztami eksploatacji.
 
 *Źródła: Wikipedia – Selective catalytic reduction, oficjalne dane Ford Polska, dokumentacja techniczna Ford Transit Connect.*

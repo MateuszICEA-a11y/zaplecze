@@ -12,78 +12,140 @@ main_keyword: "fiat fiorino"
 volume: 9900
 lead: "Fiat Fiorino to najmniejszy dostawczak w ofercie włoskiej marki, produkowany od 1977 roku w trzech generacjach. Trzecia odsłona (2007–2024) dzieli platformę z Citroënem Nemo i Peugeotem Bipper. Oto wszystko, co musisz wiedzieć o wymiarach, silnikach i typowych usterkach tego kompaktowego vana."
 faq:
-  - question: "Czy Fiat Fiorino nadaje się na trasy autostradowe?"
-    answer: "Fiorino ma 5-biegową skrzynię z krótkimi przełożeniami – powyżej 120 km/h w kabinie robi się głośno. To typowy pojazd miejski, który najlepiej sprawdza się przy niższych prędkościach."
+  - question: "Czy Fiorino nadaje się na trasy autostradowe?"
+    answer: "Fiorino ma 5-biegową skrzynię z krótkimi przełożeniami – powyżej 120 km/h w kabinie robi się głośno. To typowy pojazd miejski."
   - question: "Jak często wymieniać rozrząd w Fiorino 1.4 benzyna?"
-    answer: "W silniku benzynowym 1.4 zastosowano pasek rozrządu. Wymień go co 5 lat lub po przejechaniu 100–120 tys. km; przy intensywnym ruchu miejskim skróć interwał do 80 tys. km."
+    answer: "Pasek rozrządu wymień co 5 lat lub 100–120 tys. km; przy intensywnym ruchu miejskim skróć interwał do 80 tys. km."
   - question: "Czy w Fiorino zmieści się europaleta?"
     answer: "Tak – szerokość 1046 mm między nadkolami pozwala na wsunięcie jednej europalety pionowo."
 ---
 
-## Historia i generacje Fiat Fiorino {#historia-generacje}
+## Historia i generacje Fiorino
 
-Fiat Fiorino to jeden z najdłużej produkowanych modeli dostawczych w historii włoskiej marki. Od debiutu w 1977 roku przeszedł ewolucję od prostego auta bazującego na podzespołach osobówek do wyspecjalizowanego narzędzia pracy.
+Trzy generacje, trzy różne bazy techniczne i prawie 50 lat na rynku. Fiorino zaczynało jako przerobiony Fiat 127, a skończyło jako wyspecjalizowany furgon miejski produkowany wspólnie z PSA.
 
-### Fiorino I (1977–1988)
-Pierwsza odsłona modelu bazowała na podzespołach Fiata 127. Charakterystyczną cechą była wysoka nadbudówka części ładunkowej, wystawała ponad dach szoferki. Auto zdobyło popularność dzięki zwrotności i niskim kosztom eksploatacji w ciasnych miastach.
+### Fiat Fiorino I (1977–1988)
 
-### Fiorino II (1988–2001)
-Druga generacja powstała na konstrukcji Fiata Uno. Przez całe lata 90. była stałym elementem europejskiego krajobrazu miejskiego, oferując znacznie lepszy komfort jazdy niż poprzednik. W Ameryce Południowej produkcja tej wersji trwała znacznie dłużej niż na Starym Kontynencie.
+Pierwsza generacja bazowała na podzespołach Fiata 127. Charakterystyczną cechą była wysoka nadbudówka części ładunkowej, wystająca ponad dach szoferki. Silniki to benzynowe 0,9 l (45 KM) i 1,05 l (50 KM) oraz diesel 1,3 l (45 KM). Nadwozie dostępne jako furgon i pickup. Auto zdobyło popularność dzięki zwrotności i niskim kosztom eksploatacji – w ciasnych włoskich miastach nie miało konkurencji.
 
-### Fiorino III / Qubo (2007–2024)
-Trzecia generacja to efekt współpracy FIAT-u i PSA, produkowana w tureckiej fabryce w Bursie. Wykorzystuje modułową [platformę SCCS](https://en.wikipedia.org/wiki/Fiat_Fiorino), którą dzieli z Citroënem Nemo i Peugeotem Bipper. Dostępna jest w wersji furgon oraz jako pięcioosobowy mikrovan.
+### Fiat Fiorino II (1988–2001)
 
-## Dane techniczne Fiat Fiorino
+Druga generacja powstała na konstrukcji Fiata Uno. Przez całe lata 90. była stałym elementem europejskiego krajobrazu miejskiego, oferując lepszy komfort jazdy niż poprzednik. W Ameryce Południowej produkcja trwała znacznie dłużej. Silniki: 1,0 l benzyna (45 KM), 1,5 l benzyna (72 KM), 1,7 l diesel (57 KM).
 
-Kompaktowe wymiary to główny powód, dla którego przedsiębiorcy wybierają ten model. Fiorino bez problemu parkuje w miejscach niedostępnych dla większych dostawczaków, a jego prosta budowa przekłada się na niskie koszty serwisu.
-
-### Wymiary zewnętrzne i przestrzeń ładunkowa Fiat Fiorino
-Długość zewnętrzna wynosi od 3864 do 3959 mm przy rozstawie osi 2513 mm. Szerokość to 1716 mm, wysokość 1721 mm – auto bez trudu wjeżdża na większość parkingów podziemnych. Przestrzeń ładunkowa Fiorino mierzy 1523 mm długości i 1473 mm szerokości (1046 mm między nadkolami).
-
-Wysokość strefy ładunkowej wynosi 1205 mm, co przekłada się na objętość od 2,5 do 2,8 m³ przy złożonym fotelu pasażera. Próg załadowczy leży na wysokości zaledwie 527 mm. Ładowność sięga 660 kg przy dopuszczalnej masie całkowitej (DMC) od 1750 do 1900 kg.
-
-### Silnik 1.3 Multijet {#silnik-1-3-multijet}
-Jednostka wysokoprężna o pojemności 1248 cm³ to najczęstszy wybór na rynku wtórnym. Fiorino z dieslem 1.3 MultiJet dostępny jest w wariantach 75, 80 i 95 KM, z momentem obrotowym 200 Nm przy 1500 obr./min. Silnik spala średnio od 4,4 do 5,6 l oleju napędowego na 100 km.
-
-{{% info title="System wtrysku" icon="engineering" %}}
-Jednostka MultiJet wykorzystuje zaawansowany system Common Rail, który pozwala na kilka faz wtrysku paliwa w jednym cyklu pracy cylindra.
+{{% info title="Fiorino w Brazylii" icon="engineering" %}}
+Brazylijskie Fiorino II produkowano aż do 2013 roku – ponad 12 lat dłużej niż w Europie. Tamtejsza wersja z silnikiem 1.3 Fire sprzedawała się w liczbach przekraczających 50 tys. sztuk rocznie.
 {{% /info %}}
 
-### Silnik 1.4 benzyna {#silnik-1-4-benzyna}
-Dla firm operujących wyłącznie na krótkich dystansach przeznaczony jest motor 1.4 o mocy 77 KM. Fiorino z benzyną 1.4 ma prostą, ośmiozaworową konstrukcję i dobrze współpracuje z instalacjami LPG. Licz się jednak z wysokim spalaniem w mieście – często oscyluje ono wokół 10 l na 100 km.
+### Fiat Fiorino III / Qubo (2007–2024)
 
-## Wersje nadwoziowe Fiat Fiorino
+Trzecia generacja to efekt współpracy FIAT-u i PSA, produkowana w tureckiej fabryce w Bursie. Wykorzystuje modułową [platformę SCCS](https://en.wikipedia.org/wiki/Fiat_Fiorino), którą dzieli z Citroënem Nemo i Peugeotem Bipper. Dostępna jako furgon Cargo i pięcioosobowy mikrovan Qubo. Produkcja zakończona w 2024 roku – Stellantis nie wprowadził następcy.
 
-Włoski producent przygotował dwie główne odmiany, celując w różnych odbiorców.
+## Wymiary i dane techniczne Fiorino III
+
+Kompaktowe gabaryty to główny argument za Fiorino. Parkujesz tam, gdzie większe dostawczaki nie mają szans.
+
+| Parametr | Wartość |
+|----------|---------|
+| Długość całkowita | 3864–3959 mm |
+| Szerokość | 1716 mm |
+| Wysokość | 1721 mm |
+| Rozstaw osi | 2513 mm |
+| Prześwit | 156 mm |
+| Średnica zawracania | 10,4 m |
+
+### Przestrzeń ładunkowa Fiorino
+
+| Parametr paki | Wartość |
+|---------------|---------|
+| Długość podłogi | 1523 mm (2491 mm po złożeniu fotela) |
+| Szerokość maks. | 1473 mm |
+| Szerokość między nadkolami | 1046 mm |
+| Wysokość | 1205 mm |
+| Objętość | 2,5–2,8 m³ |
+| Próg załadowczy | 527 mm |
+| Drzwi tylne (szer. × wys.) | 570 × 1041 mm |
+
+- **Ładowność** – do 660 kg
+- **DMC** – 1750–1900 kg
+- **Masa własna** – 1065–1165 kg
+
+## Silniki Fiorino
+
+| Silnik | Moc | Moment | Spalanie (śr.) | Roczniki |
+|--------|-----|--------|----------------|----------|
+| 1.3 MultiJet 75 | 75 KM | 190 Nm | 4,4 l/100 km | 2007–2016 |
+| 1.3 MultiJet 80 | 80 KM | 200 Nm | 4,5 l/100 km | 2016–2024 |
+| 1.3 MultiJet 95 | 95 KM | 200 Nm | 5,0 l/100 km | 2012–2024 |
+| 1.4 benzyna | 77 KM | 115 Nm | ~10 l/100 km | 2007–2018 |
+| 1.4 CNG | 70 KM | 104 Nm | ~6 kg/100 km | 2010–2018 |
+
+Diesel 1.3 MultiJet (1248 cm³) to najczęstszy wybór na rynku wtórnym. Silnik współdzielony z Fiatem Punto, Pandą i Doblo – części tanie i powszechnie dostępne. Wszystkie warianty z 5-biegową skrzynią manualną i napędem na przód.
+
+Benzyna 1.4 (1368 cm³, 77 KM) to prosta, ośmiozaworowa konstrukcja. Dobrze współpracuje z LPG, ale spalanie w mieście sięga 10 l/100 km. Wybieraj ją tylko do krótkich tras, gdzie diesel miałby problemy z DPF.
+
+{{% expert name="Kowalczyk" %}}
+W silnikach 1.3 MultiJet kluczowa jest wymiana oleju co 10–12 tys. km, a nie co 30 tys. jak sugerował producent. Zapobiega to przedwczesnemu zużyciu napinacza łańcucha rozrządu i samej turbiny. Regeneracja turbo to koszt 2500–3500 zł.
+{{% /expert %}}
+
+## Wersje nadwoziowe Fiorino
 
 ### Fiorino Cargo
-Typowy furgon przeznaczony do transportu towarów. Może być wyposażony w jedne lub dwoje przesuwnych drzwi bocznych oraz asymetryczne drzwi tylne o wymiarach 570 × 1041 mm. Wewnątrz znajdziesz solidne punkty mocowania ładunku i opcjonalną przegrodę z kraty.
+
+Klasyczny furgon do transportu towarów. Jedne lub dwoje przesuwnych drzwi bocznych, asymetryczne drzwi tylne (570 × 1041 mm). Solidne punkty mocowania ładunku i opcjonalna przegroda z kraty.
+
+- **Kabina** – 2-osobowa (opcjonalnie 3-osobowa z ławką)
+- **Podłoga** – płaska, pokryta tworzywem łatwym do czyszczenia
+- **Oświetlenie paki** – LED w nowszych rocznikach
 
 ### Fiorino Qubo
-Fiat Fiorino Qubo to mikrovan z pięcioma miejscami siedzącymi, kierowany do rzemieślników potrzebujących jednego auta do pracy i do rodziny. Wyróżnia go lepsze wyciszenie wnętrza, pełne przeszklenie nadwozia i bogatsze wyposażenie komfortowe niż w wersji cargo.
 
-## Typowe usterki Fiat Fiorino
+Mikrovan z pięcioma miejscami, kierowany do rzemieślników potrzebujących jednego auta do pracy i rodziny. Lepsze wyciszenie, pełne przeszklenie, bogatsze wyposażenie komfortowe (klimatyzacja, radio z Bluetooth od 2015 r.).
 
-Intensywna eksploatacja miejska odciska piętno na podzespołach tego modelu. Kierowcy wskazują na kilka powtarzających się problemów, które warto zweryfikować przed zakupem używanego egzemplarza.
+## Typowe usterki Fiorino
 
 ### Skrzynia biegów i sprzęgło
-Użytkownicy często skarżą się na precyzję pracy dźwigni – szczególnie przy wrzucaniu jedynki i wstecznego. Mechanizm sterujący linkami może wymagać regulacji lub wymiany po większym przebiegu. W autach pracujących w kurierce sprzęgło rzadko wytrzymuje ponad 100 tys. km.
+
+- **Lewarek biegów** – imprecyzyjne wrzucanie jedynki i wstecznego, regulacja lub wymiana linek
+- **Sprzęgło** – w autach kurierskich wytrzymuje max. 100 tys. km; wymiana z kosztem 1200–1800 zł
+- **Synchronizatory** – zużywają się przy agresywnej jeździe miejskiej
 
 ### Silnik i rozrząd
-W dieslu 1.3 MultiJet kluczową kwestią jest kontrola stanu łańcucha rozrządu, który potrafi się rozciągnąć. Po przekroczeniu 120 tys. km skontroluj stan turbosprężarki i wtryskiwaczy. Częstym problemem w autach eksploatowanych wyłącznie na krótkich trasach jest zapychający się zawór EGR i filtr cząstek stałych (DPF).
 
-{{% expert name="Kowalczyk" %}}W silnikach 1.3 MultiJet kluczowa jest wymiana oleju co 10–12 tys. km, a nie co 30 tys. jak sugerował producent. Zapobiega to przedwczesnemu zużyciu napinacza łańcucha rozrządu i samej turbiny.{{% /expert %}}
+- **Łańcuch rozrządu (1.3 MJT)** – rozciąga się po 120–150 tys. km, wymiana ok. 2000 zł
+- **Turbosprężarka** – regeneracja po 120 tys. km (2500–3500 zł)
+- **EGR i DPF** – zapychają się w ruchu miejskim; czyszczenie DPF ok. 500–800 zł
+- **Pompa ABS** – awaryjna i droga w naprawie (1500–2500 zł)
 
-## Ceny Fiat Fiorino
+## Ceny Fiorino
 
-Rynek wtórny oferuje szeroki wybór egzemplarzy z różnych lat produkcji. Najstarsze sztuki z rocznika 2008 kosztują od około 5000 zł – zazwyczaj są to auta mocno wyeksploatowane.
+### Nowe Fiorino
 
-Egzemplarze z rocznika 2015, często już po liftingu, kosztują od 15 000 do 17 000 zł. Nowsze auta z 2019 roku to wydatek 20 000–37 000 zł, zależnie od stanu technicznego i przebiegu. Przy oględzinach sprawdź działanie pompy ABS, która bywa awaryjnym i kosztownym w naprawie elementem.
+Produkcja zakończona w 2024 r. Ostatnie egzemplarze salonowe sprzedawane za ok. 65 000–80 000 zł netto. Na rynku nie ma bezpośredniego następcy – Stellantis zlikwidował segment mikrodostawczych.
 
-## Fiat Fiorino a konkurencja
+### Używane Fiorino
 
-Fiorino zajmuje specyficzną niszę – jest wyraźnie mniejszy od typowych kombivanów. Jeśli potrzebujesz większej przestrzeni ładunkowej, [Citroën Berlingo](/modele/citroen-berlingo/) lub bliźniaczy [Peugeot Partner](/modele/peugeot-partner/) oferują pojemniejszy przedział towarowy, choć kosztem zwrotności w ciasnych uliczkach.
+| Rocznik | Przebieg | Cena orientacyjna |
+|---------|----------|-------------------|
+| 2008–2010 | 200–350 tys. km | 5 000–10 000 zł |
+| 2012–2015 | 120–250 tys. km | 15 000–22 000 zł |
+| 2016–2019 | 80–180 tys. km | 20 000–37 000 zł |
+| 2020–2024 | 30–100 tys. km | 35 000–55 000 zł |
 
-Alternatywą jest [Renault Kangoo](/modele/renault-kangoo/) z szeroką gamą silnikową. Fiorino wygrywa z nimi przede wszystkim ceną zakupu i prostotą serwisu.
+{{% info title="Na co patrzeć przy zakupie" icon="engineering" %}}
+Przy oględzinach sprawdź działanie pompy ABS (częsta i droga usterka), stan łańcucha rozrządu (posłuchaj przy zimnym rozruchu) i stan rolek drzwi przesuwnych.
+{{% /info %}}
 
-*Źródła: Wikipedia – Fiat Fiorino, Dokumentacja techniczna Stellantis, Katalog części Fiat Professional.*
+## Porównanie Fiorino z konkurencją
+
+| Parametr | Fiat Fiorino III | Citroën Nemo | Peugeot Bipper | Renault Kangoo II Compact |
+|----------|-----------------|--------------|----------------|--------------------------|
+| Długość | 3864 mm | 3864 mm | 3864 mm | 3938 mm |
+| Szerokość | 1716 mm | 1716 mm | 1716 mm | 1712 mm |
+| Objętość paki | 2,5 m³ | 2,5 m³ | 2,5 m³ | 3,0 m³ |
+| Ładowność | 660 kg | 610 kg | 610 kg | 650 kg |
+| Silnik bazowy | 1.3 MJT 75 KM | 1.4 HDi 68 KM | 1.4 HDi 68 KM | 1.5 dCi 75 KM |
+| Cena używanego (2015) | ~17 000 zł | ~14 000 zł | ~14 000 zł | ~22 000 zł |
+
+Fiorino zajmuje specyficzną niszę – jest wyraźnie mniejszy od typowych kombivanów. Jeśli potrzebujesz większej przestrzeni ładunkowej, [Citroën Berlingo](/modele/citroen-berlingo/) lub [Peugeot Partner](/modele/peugeot-partner/) oferują pojemniejszy przedział towarowy, choć kosztem zwrotności. [Renault Kangoo](/modele/renault-kangoo/) wygrywa gamą silnikową, ale Fiorino bije je ceną zakupu i prostotą serwisu.
+
+*Źródła: Wikipedia – Fiat Fiorino, dokumentacja techniczna Stellantis, katalog części Fiat Professional.*

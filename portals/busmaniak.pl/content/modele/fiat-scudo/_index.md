@@ -12,81 +12,133 @@ main_keyword: "fiat scudo"
 volume: 14800
 lead: "Fiat Scudo to średni dostawczak produkowany od 1996 roku we współpracy z PSA. Trzy generacje, silniki 1.6 i 2.0 MultiJet, wersje osobowe Panorama do 9 miejsc i wariant brygadówki. Sprawdź dane techniczne, typowe usterki i ceny na rynku wtórnym."
 faq:
-  - question: "Czy Fiat Scudo 2.0 MultiJet to dobry silnik?"
-    answer: "Tak, to jedna z najbardziej polecanych jednostek w tym segmencie. Oferuje kompromis między mocą a spalaniem, a przy regularnej wymianie oleju pokonuje przebiegi rzędu 400–500 tys. km."
-  - question: "Ile osób może podróżować Fiatem Scudo?"
-    answer: "Od 2 (Furgon) do 9 osób (Panorama). Najpopularniejsza konfiguracja osobowa to 8 siedzeń w układzie 2+3+3."
+  - question: "Czy Scudo 2.0 MultiJet to dobry silnik?"
+    answer: "Tak, to jedna z najbardziej polecanych jednostek w segmencie. Przy regularnej wymianie oleju pokonuje 400–500 tys. km."
+  - question: "Ile osób zmieści się w Scudo Panorama?"
+    answer: "Od 5 do 9 osób. Najpopularniejsza konfiguracja to 8 siedzeń w układzie 2+3+3."
   - question: "Jaką długość ma paka w wersji Long?"
-    answer: "W drugiej generacji długość podłogi cargo wynosi około 258 cm. W najnowszej odsłonie, dzięki systemowi Moduwork, przestrzeń tę można funkcjonalnie wydłużyć."
+    answer: "W drugiej generacji ok. 258 cm. W trzeciej, dzięki systemowi Moduwork, przestrzeń ładunkową można wydłużyć do 4 m."
 ---
 
-## Historia i generacje Fiat Scudo {#historia-generacje}
+## Historia i generacje Scudo
 
-Włoski dostawczak zadebiutował w 1996 roku jako owoc współpracy koncernów FIAT i PSA. Model ten wypełnił lukę między małym Fiorino a potężnym Ducato. Fiat Scudo produkowany był w trzech odsłonach, z czego najnowsza powróciła do oferty po sześcioletniej przerwie.
+Trzy generacje i zmiana platformy – Scudo zaczynało jako wspólny projekt FIAT-u i PSA, a dziś bazuje na tej samej architekturze co Peugeot Expert i Toyota ProAce.
 
-### Scudo I (1996–2006)
-Pierwsza generacja dzieliła konstrukcję z Citroënem Jumpy oraz Peugeotem Expertem. Auto charakteryzowało się prostą budową i silnikami Diesla o pojemnościach 1.9 oraz 2.0 litra. W 2004 roku model przeszedł znaczący facelifting, który przyniósł nowocześniejszy pas przedni z większymi reflektorami.
+### Fiat Scudo I (1996–2006)
 
-### Scudo II (2006–2016)
-Druga generacja zjechała z taśm fabryki Lieu-Saint-Amand we Francji. Samochód stał się znacznie większy, bardziej aerodynamiczny i oferował wyższy komfort podróżowania. Do rodziny bliźniaków dołączyła [Toyota ProAce](/modele/toyota-proace/), co rozszerzyło bazę części zamiennych dostępnych na rynku.
+Pierwsza generacja debiutowała w 1996 roku jako bliźniak Citroëna Jumpy i Peugeota Experta. Produkowana w fabryce Sevel Nord w Lieu-Saint-Amand (Francja). Wymiary: 4440 mm (L1) lub 4922 mm (L2), szerokość 1810 mm, wysokość 1940 mm. Silniki diesla 1.9 TD (92 KM) i 2.0 JTD (109 KM) plus benzyna 2.0 (128 KM). W 2004 roku model przeszedł facelifting z nowym pasem przednim.
 
-### Scudo III / E-Scudo (od 2022)
-Najnowszy Fiat Scudo bazuje na modularnej platformie [PSA EMP2](https://en.wikipedia.org/wiki/PSA_EMP2_platform), która umożliwia montaż napędów spalinowych i elektrycznych. Zrezygnowano z nazwy Talento, wracając do korzeni z nowym logotypem i zaawansowanymi systemami bezpieczeństwa. Auto jest teraz ściśle spokrewnione z [Peugeot Expert](/modele/peugeot-expert/) oraz innymi modelami grupy Stellantis.
+### Fiat Scudo II (2006–2016)
 
-## Dane techniczne Fiat Scudo
+Druga generacja przyniosła skok jakościowy – znacznie większe nadwozie (szerokość 1895 mm), lepszą aerodynamikę i wyższy komfort. W 2013 roku do rodziny bliźniaków dołączyła [Toyota ProAce](/modele/toyota-proace/), a w 2012 auto przeszło lifting. Dostępne wersje: Compact, Standard, Long. Silnik 2.0 MultiJet w wariantach 120 i 136 KM stał się sercem modelu.
 
-Wybór odpowiedniej długości nadwozia determinuje zwrotność samochodu w ciasnych centrach miast. Dane techniczne opierają się na dwóch rozstawach osi, co pozwala dopasować auto do konkretnych zadań transportowych.
+{{% info title="Van of the Year" icon="engineering" %}}
+Scudo II zdobyło tytuł International Van of the Year 2008, pokonując m.in. Volkswagena Transportera T5 i Mercedes-Benz Vito W639.
+{{% /info %}}
 
-### Wymiary zewnętrzne – wersja short i long
-Wymiary drugiej generacji zaczynają się od 4805 mm długości dla wersji krótkiej przy rozstawie osi 3000 mm. Wersja wydłużona mierzy 5135 mm, a rozstaw osi wzrasta do 3122 mm, co znacząco poprawia stabilność przy pełnym obciążeniu. Najnowsza generacja (od 2022 r.) oferuje jeszcze większą rozpiętość – od 4609 mm do 5309 mm długości całkowitej.
+### Fiat Scudo III / E-Scudo (od 2022)
 
-### Przestrzeń ładunkowa i ładowność Fiat Scudo
-Możliwości przewozowe tego modelu zależą od konfiguracji dachu i długości ramy. Paka w wariancie L2H2 pozwala na swobodny transport towarów o objętości do 7 m³. Ładowność wersji dostawczych oscyluje w granicach 1000–1200 kg, co czyni go jednym z najwydajniejszych aut w swojej klasie wagowej.
+Po sześcioletniej przerwie (2016–2022, kiedy sprzedawano Talento na bazie Trafica) Scudo wróciło na platformie [EMP2](https://en.wikipedia.org/wiki/PSA_EMP2_platform). Bliźniaki: [Peugeot Expert](/modele/peugeot-expert/), Citroën Jumpy, Opel Vivaro, Toyota ProAce. Dostępne w wersji spalinowej i elektrycznej E-Scudo (136 KM, zasięg do 330 km WLTP).
 
-{{% info title="System Moduwork" icon="engineering" %}}W najnowszej generacji możesz podnieść siedzisko pasażera, co pozwala na przewożenie przedmiotów o długości do 4 metrów dzięki otworowi w ścianie grodziowej.{{% /info %}}
+## Wymiary Scudo – generacja II i III
 
-## Silniki Fiat Scudo
+| Parametr | Scudo II Short | Scudo II Long | Scudo III Compact | Scudo III Standard | Scudo III Long |
+|----------|---------------|--------------|-------------------|-------------------|---------------|
+| Długość | 4805 mm | 5135 mm | 4609 mm | 4959 mm | 5309 mm |
+| Szerokość | 1895 mm | 1895 mm | 1920 mm | 1920 mm | 1920 mm |
+| Wysokość | ~1940 mm | ~1980 mm | 1905 mm | 1905 mm | 1935 mm |
+| Rozstaw osi | 3000 mm | 3122 mm | 2925 mm | 3275 mm | 3275 mm |
+| Objętość paki | 5,0 m³ | 6,0 m³ | 4,6 m³ | 5,8 m³ | 6,6 m³ |
 
-Większość egzemplarzy na rynku wtórnym posiada jednostki wysokoprężne, które najlepiej radzą sobie z dużym obciążeniem. Choć dominują diesle, w pierwszej generacji i najnowszej odsłonie pojawiały się alternatywne źródła napędu.
+- **Ładowność** – 1000–1400 kg w zależności od wersji i DMC
+- **Masa własna** – 1661–1900 kg
+- **DMC** – 2600–3100 kg (Scudo III)
+- **Próg załadowczy** – 555 mm (niski, ułatwia załadunek)
 
-### Silniki diesel – 1.6 i 2.0 Multijet
-Jednostka 2.0 MultiJet to serce tego modelu, oferująca 120 KM (88 kW) lub 136 KM (100 kW) przy 4000 obr./min. Silnik ten słynie z dobrej dynamiki i akceptowalnego spalania na poziomie 7–8 litrów w cyklu mieszanym. Mniejszy diesel 1.6 Multijet o mocy 90 KM jest tańszy w eksploatacji, ale przy pełnym załadowaniu wersji długiej może brakować mu mocy.
+{{% info title="System Moduwork" icon="engineering" %}}
+W Scudo III możesz podnieść siedzisko pasażera i otworzyć klapę w przegrodzie, co pozwala na przewóz przedmiotów o długości do 4 metrów – drabin, rur, listew.
+{{% /info %}}
 
-### Silnik benzynowy
-Na rynku wtórnym wersje benzynowe Scudo trafiają się rzadko – głównie w egzemplarzach z początków produkcji drugiej generacji (silnik 2.0 140 KM). Jednostki te często współpracują z instalacjami LPG, co obniża koszty paliwa. W najnowszej odsłonie rolę alternatywy przejął silnik elektryczny o mocy 136 KM z zasięgiem do 330 km w cyklu WLTP.
+## Silniki Scudo
 
-## Wersje nadwoziowe Fiat Scudo
+| Silnik | Generacja | Moc | Moment | Spalanie (śr.) | Norma |
+|--------|-----------|-----|--------|----------------|-------|
+| 1.6 MultiJet | II | 90 KM | 215 Nm | 6,5 l/100 km | Euro 5 |
+| 2.0 MultiJet 120 | II | 120 KM | 300 Nm | 7,0 l/100 km | Euro 5 |
+| 2.0 MultiJet 136 | II | 136 KM | 320 Nm | 7,5 l/100 km | Euro 5 |
+| 1.5 BlueHDi 100 | III | 100 KM | 250 Nm | 5,5 l/100 km | Euro 6d |
+| 1.5 BlueHDi 120 | III | 120 KM | 300 Nm | 5,5 l/100 km | Euro 6d |
+| 2.0 BlueHDi 145 | III | 145 KM | 370 Nm | 6,0 l/100 km | Euro 6d |
+| E-Scudo (elektr.) | III | 136 KM | 260 Nm | 25 kWh/100 km | – |
 
-Różnorodność wariantów sprawia, że auto sprawdza się jako solidny pojazd roboczy i luksusowy mikrobus. Każda wersja ma dedykowane zawieszenie dopasowane do przewidywanego nacisku na osie.
+Benzyna 2.0 140 KM (gen II) – rzadkość na rynku wtórnym. Dobrze współpracuje z LPG. W Scudo III rolę alternatywy przejął silnik elektryczny z baterią 50 lub 75 kWh.
+
+## Wersje nadwoziowe Scudo
 
 ### Furgon (Cargo)
-Klasyczny blaszak to najczęstszy widok na polskich drogach. Charakteryzuje się brakiem przeszklenia w części ładunkowej i solidną ścianą grodziową. To idealny wybór dla ekip budowlanych lub kurierów pracujących w gęstej zabudowie.
+
+Klasyczny blaszak z ścianą grodziową – najczęstszy widok na polskich drogach. Idealny dla kurierów i ekip budowlanych pracujących w gęstej zabudowie.
 
 ### Panorama i wersje osobowe
-Dla dużych rodzin i firm przewozowych przygotowano Scudo Panorama z pełnym przeszklonym nadwoziem, nawiewami dla każdego rzędu siedzeń i lepszym wygłuszeniem kabiny. Wersja osobowa może pomieścić 5, 8, a nawet 9 pasażerów, co czyni ją atrakcyjną alternatywą dla mniejszych vanów jak [Citroën Berlingo](/modele/citroen-berlingo/).
+
+Scudo Panorama to pełne przeszklenie, nawiewy dla każdego rzędu i lepsze wygłuszenie kabiny. Konfiguracja 5, 8 lub 9 miejsc. Najpopularniejsza: 8 siedzeń w układzie 2+3+3. Mniejsze vany jak [Citroën Berlingo](/modele/citroen-berlingo/) nie oferują 9-osobowej konfiguracji.
 
 ### Brygadówka
-Wersja mieszana łączy dwa rzędy siedzeń z oddzieloną przestrzenią towarową. Pozwala na przewóz 5 lub 6 osób przy zachowaniu dużej paki. To złoty środek dla firm serwisowych, które muszą dowieźć na miejsce zespół i ciężki sprzęt jednocześnie.
 
-## Typowe usterki Fiat Scudo
+Dwa rzędy siedzeń + oddzielona przestrzeń towarowa. Przewóz 5–6 osób z zachowaniem dużej paki – złoty środek dla firm serwisowych dowożących zespół i sprzęt jednocześnie.
 
-Mimo ogólnie dobrej opinii, Scudo wymaga regularnego serwisu, aby uniknąć kosztownych przestojów. Średnia ocena użytkowników oscyluje wokół 3,69/5, co wskazuje na solidne rzemiosło z kilkoma słabymi punktami.
+## Typowe usterki Scudo
 
-- **Zawieszenie** – łączniki stabilizatora i sworznie wymagają uwagi średnio co 30 tys. km.
-- **Skrzynia biegów** – w starszych modelach synchronizator 3. biegu potrafi poddać się po 50 tys. km intensywnej jazdy.
-- **Układ EGR** – zawór recyrkulacji spalin często zapycha się w ruchu miejskim, co wymaga czyszczenia lub wymiany.
-- **Hamulce** – klocki kończą się dość szybko, zazwyczaj między 25 a 35 tys. km przebiegu.
+Średnia ocena użytkowników: 3,69/5. Solidne rzemiosło z kilkoma słabymi punktami.
 
-{{% expert name="Kowalczyk" %}}Większość problemów mechanicznych Scudo wynika z przeładowywania auta ponad limit określony w dowodzie rejestracyjnym. Jeśli kupujesz używany egzemplarz, sprawdź tylną belkę i stan uszczelek w drzwiach przesuwnych.{{% /expert %}}
+### Usterki mechaniczne
 
-## Ceny Fiat Scudo
+- **Zawieszenie** – łączniki stabilizatora i sworznie co 30 tys. km (koszt wymiany ok. 300–500 zł za stronę)
+- **Skrzynia biegów** – synchronizator 3. biegu w starszych modelach po 50 tys. km intensywnej jazdy
+- **Hamulce** – klocki zużywają się szybko: 25–35 tys. km przebiegu
 
-Rynek wtórny oferuje ogromny przekrój cenowy, zależny od rocznika i stanu technicznego. Egzemplarze pierwszej generacji kupisz już za kilka tysięcy złotych, jednak często wymagają doinwestowania.
+### Usterki silnikowe
 
-Druga generacja po liftingu (2012–2016) to wydatek rzędu 25 000–45 000 zł, zależnie od przebiegu. Najnowsze modele z salonu startują od około 130 000 zł netto. Wersje osobowe Panorama trzymają cenę znacznie lepiej niż typowe dostawczaki.
+- **EGR** – zawór recyrkulacji spalin zapycha się w ruchu miejskim; czyszczenie 400–600 zł, wymiana 1200 zł
+- **DPF (Scudo III)** – mokry filtr z dodatkiem Eolys; regeneracja 1200–1800 zł
+- **Wtryskiwacze** – wrażliwe na jakość paliwa po 200 tys. km; regeneracja 600–1000 zł/szt.
 
-## Fiat Scudo a konkurencja
+{{% expert name="Kowalczyk" %}}
+Większość problemów mechanicznych Scudo wynika z przeładowywania auta ponad limit z dowodu rejestracyjnego. Przy zakupie używanego egzemplarza sprawdź tylną belkę i stan uszczelek w drzwiach przesuwnych – to dwa najdroższe elementy w naprawie.
+{{% /expert %}}
 
-Model ten rywalizuje w segmencie średnich vanów, gdzie walka o klienta jest wyjątkowo zacięta. Głównym rywalem spoza rodziny Stellantis jest [Renault Trafic](/modele/renault-trafic/). Trafic oferuje nieco bardziej kwadratową przestrzeń ładunkową, ale Scudo często wygrywa lepszymi właściwościami jezdnymi, upodabniającymi go do aut osobowych. Przed zakupem porównaj koszty serwisu – w przypadku Fiata są zazwyczaj konkurencyjne dzięki dużej dostępności zamienników.
+## Ceny Scudo
 
-*Źródła: Platforma PSA EMP2 – Wikipedia, Materiały prasowe Fiat Professional, Raporty niezawodności DEKRA.*
+### Nowe Scudo III
+
+| Wersja | Cena od |
+|--------|---------|
+| Furgon Compact | ok. 130 000 zł netto |
+| Furgon Long | ok. 145 000 zł netto |
+| Panorama 9-osobowa | ok. 180 000 zł brutto |
+| E-Scudo (elektryczny) | ok. 200 000 zł netto (przed dotacjami) |
+
+### Używane Scudo
+
+| Generacja / Rocznik | Cena orientacyjna |
+|---------------------|-------------------|
+| Scudo I (1996–2006) | 5 000–15 000 zł |
+| Scudo II (2006–2012) | 15 000–30 000 zł |
+| Scudo II po liftingu (2012–2016) | 25 000–45 000 zł |
+| Scudo III (od 2022) | 90 000–130 000 zł |
+
+Wersje osobowe Panorama trzymają cenę znacznie lepiej niż typowe furgony.
+
+## Porównanie Scudo z konkurencją
+
+| Parametr | Fiat Scudo III L2 | Renault Trafic III L2 | Ford Transit Custom L2 | VW Transporter T6.1 L2 |
+|----------|-------------------|----------------------|------------------------|------------------------|
+| Długość | 4959 mm | 5080 mm | 5340 mm | 5304 mm |
+| Objętość paki | 5,8 m³ | 5,2 m³ | 6,8 m³ | 6,7 m³ |
+| Ładowność | do 1400 kg | do 1200 kg | do 1400 kg | do 1300 kg |
+| Diesel bazowy | 1.5 BlueHDi 100 KM | 2.0 dCi 110 KM | 2.0 EcoBlue 105 KM | 2.0 TDI 110 KM |
+| Cena nowego (netto) | od 130 000 zł | od 135 000 zł | od 145 000 zł | od 180 000 zł |
+
+Głównym rywalem spoza Stellantis jest [Renault Trafic](/modele/renault-trafic/) – kwadratowa paka i niższa cena serwisu. [Ford Transit Custom](/modele/ford-transit-custom/) wygrywa właściwościami jezdnymi i większą paką. Scudo konkuruje ceną i dostępnością zamienników (wspólne z Peugeotem Expertem i Citroënem Jumpy).
+
+*Źródła: Wikipedia – PSA EMP2 platform, materiały prasowe Fiat Professional, raporty niezawodności DEKRA.*

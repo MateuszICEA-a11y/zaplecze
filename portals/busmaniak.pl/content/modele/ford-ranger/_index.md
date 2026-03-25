@@ -12,94 +12,151 @@ main_keyword: "ford ranger"
 volume: 33100
 lead: "Ford Ranger to najpopularniejszy pickup w Europie, produkowany na platformie T6 od 2011 roku w fabryce Silverton w RPA. Najnowsza generacja T6.2 oferuje silniki od 170 do 292 KM, napęd 4x4 i ładowność ponad tony. Oto kompletny przewodnik po wymiarach, silnikach, wersjach i cenach."
 faq:
-  - question: "Czy Ford Ranger ma stały napęd 4x4?"
-    answer: "W starszych wersjach napęd dołączany ręcznie (50:50). W T6.2 dostępny jest tryb 4A, który automatycznie rozdziela moment obrotowy między osie."
-  - question: "Ile pali Ford Ranger 2.0 EcoBlue?"
-    answer: "Wersja 170 KM spala 8,5–9,5 l/100 km w cyklu mieszanym. Bi-Turbo przy obciążeniu 10–12 l/100 km."
-  - question: "Czy Ranger mieści się w standardowym garażu?"
-    answer: "Długość przekracza 5,3 m, wysokość prawie 1,9 m – w starszych garażach podziemnych może być ciasno. Zmierz przestrzeń przed zakupem."
+  - question: "Czy Ranger ma stały napęd 4x4?"
+    answer: "W starszych wersjach napęd dołączany ręcznie (50:50). W T6.2 dostępny jest tryb 4A, który automatycznie rozdziela moment między osie."
+  - question: "Ile pali Ranger 2.0 EcoBlue?"
+    answer: "Wersja 170 KM: 8,5–9,5 l/100 km w cyklu mieszanym. Bi-Turbo przy obciążeniu: 10–12 l/100 km."
+  - question: "Czy Ranger zmieści się w garażu?"
+    answer: "Długość przekracza 5,3 m, wysokość prawie 1,9 m – w starszych garażach podziemnych może być ciasno."
+  - question: "Jaka jest różnica między Rangerem a Amarokiem?"
+    answer: "Od 2022 roku dzielą platformę T6, ale różnią się designem, kalibracją zawieszenia i wykończeniem wnętrza. Amarok jest droższy i bardziej premium."
 ---
 
-## Historia i generacje Ford Ranger {#historia-generacje}
+## Historia i generacje Rangera
 
-Ford Ranger to globalny przebój produkowany głównie w fabryce Silverton w RPA, który w Europie zdominował segment pickupów. Model ewoluował z surowego narzędzia pracy w komfortową terenówkę zdolną zastąpić rodzinnego SUV-a.
+Globalny przebój, który w Europie zdominował segment pickupów. Ranger ewoluował z surowego narzędzia pracy w komfortową terenówkę zdolną zastąpić rodzinnego SUV-a.
 
-### Ranger I–III (1982–2011)
-Pierwsze generacje były ściśle powiązane z Mazdą serii B i oferowane głównie na rynkach obu Ameryk oraz Azji. W Europie model pojawił się szerzej pod koniec lat 90., z prostym napędem na cztery koła i wytrzymałymi, choć mało kulturalnymi silnikami wysokoprężnymi.
+### Ford Ranger I–III (1982–2011)
 
-### Ranger T6 (2011–2022)
-Przełomem był rok 2011, gdy zadebiutowała nowa platforma zaprojektowana przez australijski oddział Forda. Ta generacja zrewolucjonizowała rynek – przyniosła wysokie oceny w testach Euro NCAP i nowoczesne systemy wspomagania kierowcy.
+Pierwsze generacje były ściśle powiązane z Mazdą serii B i oferowane głównie w obu Amerykach oraz Azji. W Europie model pojawił się szerzej pod koniec lat 90. z prostym napędem na cztery koła i wytrzymałymi silnikami diesla. Trzecia generacja (2006–2011) przyniosła 3,0 l TDCi o mocy 156 KM i wyraźnie poprawiony komfort kabiny.
 
-### Ranger T6.2 (od 2022)
-Najnowsza odsłona, znana jako T6.2, to głęboka modernizacja z wyraźnym pasem przednim w stylu amerykańskiego F-150. Inżynierowie przesunęli przednie koła o 50 mm do przodu, co poprawiło kąt natarcia i stabilność prowadzenia w terenie.
+### Ford Ranger T6 (2011–2022)
 
-## Dane techniczne Ford Ranger
+Przełom nastąpił w 2011 roku, gdy zadebiutowała [platforma T6](https://en.wikipedia.org/wiki/Ford_Ranger_(T6)) zaprojektowana przez australijski oddział Forda. Ta generacja zrewolucjonizowała rynek – przyniosła 5 gwiazdek Euro NCAP (pierwszy pickup z takim wynikiem) i nowoczesne systemy wspomagania kierowcy. Fabryka Silverton w RPA produkowała wersje europejskie.
 
-Parametry użytkowe stawiają Rangera w czołówce segmentu pickupów. Sprawdź je dokładnie, bo różnią się w zależności od wybranej wersji nadwozia – Single Cab, Rap Cab lub Double Cab.
+Silniki: 2.2 TDCi (125–160 KM) i legendarny 3.2 Duratorq 5-cylindrowy (200 KM). W 2019 roku gama przeszła na 2.0 EcoBlue (170–213 KM) i dołączył flagowy Raptor z dieslem BiTurbo 213 KM.
 
-### Wymiary zewnętrzne i skrzynia ładunkowa
-Rozstaw osi wynosi 3270 mm, prześwit 233 mm, a długość nadwozia przekracza 5,3 metra – co wymaga wprawy przy manewrowaniu w ciasnych miastach. Wymiary skrzyni ładunkowej to jeden z największych atutów modelu:
+{{% info title="Ranger jako baza wojskowa" icon="engineering" %}}
+Ranger T6 zyskał uznanie służb mundurowych na całym świecie – polska armia, australijska policja i brytyjskie siły specjalne używają zmodyfikowanych wersji z dodatkowym opancerzeniem i wzmocnioną elektryką.
+{{% /info %}}
 
-- **Długość paki** – 1615 mm (w wersji Double Cab)
+### Ford Ranger T6.2 (od 2022)
+
+Najnowsza odsłona to głęboka modernizacja z wyraźnym pasem przednim w stylu amerykańskiego F-150. Inżynierowie przesunęli przednie koła o 50 mm do przodu, co poprawiło kąt natarcia i stabilność. Platforma T6.2 jest współdzielona z [Volkswagenem Amarokiem](/modele/volkswagen-amarok/) II generacji. Topowy Raptor dostał benzynowe V6 3.0 EcoBoost (292 KM).
+
+## Wymiary i dane techniczne Rangera
+
+| Parametr | Single Cab | Super Cab | Double Cab |
+|----------|-----------|-----------|------------|
+| Długość całkowita | 5363 mm | 5363 mm | 5370 mm |
+| Szerokość (bez lusterek) | 1867 mm | 1867 mm | 1867 mm |
+| Wysokość | 1884 mm | 1884 mm | 1884 mm |
+| Rozstaw osi | 3270 mm | 3270 mm | 3270 mm |
+| Prześwit | 233 mm | 233 mm | 233 mm |
+| Długość paki | 2315 mm | 1853 mm | 1544 mm |
+
+### Skrzynia ładunkowa (Double Cab)
+
+- **Długość paki** – 1544 mm
 - **Szerokość paki** – 1544 mm
-- **Szerokość między nadkolami** – 1139 mm
+- **Szerokość między nadkolami** – 1139 mm (mieści europaletę)
 - **Wysokość burt** – 511 mm
+- **Próg załadowczy** – 835 mm
 
-### Ładowność, DMC i holowanie
-Masa własna oscyluje wokół 2500 kg, co bezpośrednio wpływa na realne możliwości przewozowe. Dopuszczalna masa całkowita (DMC) wynosi od 3270 do 3350 kg, zachowując wysoką ładowność:
+### Ładowność i holowanie
 
-- **Ładowność** – od 864 kg do 1070 kg (wersje robocze)
-- **Zdolność holowania** – do 3500 kg z hamulcem
-- **Raptor** – obniżona ładowność do 620 kg i DMC 3130 kg ze względu na wyczynowe zawieszenie
+| Parametr | Ranger XLT/Wildtrak | Ranger Raptor |
+|----------|---------------------|---------------|
+| Ładowność | 864–1070 kg | 620 kg |
+| DMC | 3270–3350 kg | 3130 kg |
+| Masa własna | ~2245–2510 kg | ~2510 kg |
+| Holowanie (z hamulcem) | do 3500 kg | do 2500 kg |
+| Holowanie (bez hamulca) | 750 kg | 750 kg |
 
-## Silniki Ford Ranger
+## Silniki Rangera
 
-Jednostki napędowe są optymalizowane pod kątem wysokiego momentu obrotowego. Wybór silnika determinuje nie tylko dynamikę, ale i koszty późniejszej eksploatacji.
+| Silnik | Moc | Moment | Spalanie (śr.) | Generacja | Norma |
+|--------|-----|--------|----------------|-----------|-------|
+| 2.2 TDCi | 125–160 KM | 375–420 Nm | 8–10 l/100 km | T6 (do 2019) | Euro 5 |
+| 3.2 Duratorq 5-cyl. | 200 KM | 470 Nm | 9–11 l/100 km | T6 (do 2022) | Euro 5/6 |
+| 2.0 EcoBlue | 170 KM | 405 Nm | 8,5–9,5 l/100 km | T6/T6.2 | Euro 6d |
+| 2.0 EcoBlue Bi-Turbo | 205 KM | 500 Nm | 9–11 l/100 km | T6.2 | Euro 6d |
+| 3.0 V6 EcoBoost (Raptor) | 292 KM | 491 Nm | 13,8–15,8 l/100 km | T6.2 | Euro 6d |
 
-### Diesel 2.0 EcoBlue
-To obecnie podstawowa jednostka, dostępna z jedną turbosprężarką (170 KM) lub jako Bi-Turbo (213 KM do 2022 r., później 205 KM). Silnik wyróżnia się wysoką kulturą pracy i niskim spalaniem w porównaniu do starszych konstrukcji.
+Diesel 3.2 Duratorq to legenda – pięciocylindrowy motor ceniony za charakterystyczny dźwięk i pancerną trwałość. Mniej ekonomiczny, ale idealny do ciężkiego holowania. EcoBlue 2.0 jest nowocześniejszy i tańszy w eksploatacji.
 
-{{% info title="Ważna uwaga" icon="engineering" %}}Wersje 2.0 EcoBlue wymagają regularnej kontroli stanu paska rozrządu pracującego w kąpieli olejowej, aby uniknąć kosztownych awarii silnika.{{% /info %}}
+{{% expert name="Kowalczyk" %}}
+W Rangerze z silnikiem 2.0 EcoBlue kluczowa jest wymiana oleju co 10–15 tys. km. Pasek rozrządu pracujący w kąpieli olejowej potrafi się łuszczyć i zapchać smok pompy olejowej – to najdroższa usterka tego silnika (wymiana silnika 15–25 tys. zł). Ford wymienia całe bloki na gwarancji.
+{{% /expert %}}
 
-### Diesel 3.2 Duratorq (do 2022)
-Pięciocylindrowy motor o mocy 200 KM był ceniony za charakterystyczny dźwięk i potężny moment obrotowy. Mniej ekonomiczny od następców, uchodzi jednak za konstrukcję pancerną – idealną do ciężkiej pracy i długodystansowego holowania przyczep.
+## Wersje wyposażenia Rangera
 
-### V6 3.0 EcoBoost (Raptor)
-W Rangerze Raptor pod maską pracuje benzynowe V6 generujące w Europie 292 KM i 491 Nm. Sprint do setki zajmuje 7,9 sekundy, choć spalanie kształtuje się na poziomie 13,8–15,8 l/100 km.
+### XL i XLT
 
-## Wersje Ford Ranger
+Wersje robocze z czarnymi zderzakami i stalowymi felgami. XLT dodaje klimatyzację automatyczną, tempomat i lepsze multimedia. Najczęstszy wybór dla firm budowlanych i rolników.
 
-Wybór wersji wyposażenia jest ogromny – od gołego narzędzia pracy po luksusowe edycje limitowane. Każda ma inny charakter i inne przeznaczenie.
+### Wildtrak
 
-### XL, XLT, Limited, Wildtrak
-Wersje XL i XLT to typowe narzędzia pracy: czarne zderzaki i stalowe felgi. Ranger Wildtrak, najpopularniejszy w Polsce, oferuje pomarańczowe akcenty stylistyczne, bogate wyposażenie wnętrza i relingi skrzyni ładunkowej.
+Najpopularniejszy wariant w Polsce. Pomarańczowe akcenty stylistyczne, bogate wyposażenie wnętrza (skóra, nawigacja, kamera 360°), relingi skrzyni ładunkowej i roleta elektryczna.
 
 ### Raptor
-Flagowy wariant przygotowany przez Ford Performance do szybkiej jazdy w terenie. Posiada wzmocnioną ramę, profesjonalne amortyzatory Fox Live Valve oraz poszerzone nadwozie, co czyni go najbardziej pożądanym pickupem w segmencie.
 
-### Ranger wojskowy
-Model zyskał uznanie służb mundurowych na całym świecie, w tym w Polsce. Wojskowa wersja Rangera charakteryzuje się dodatkowym opancerzeniem, wzmocnioną elektryką i specjalistycznym oświetleniem maskującym.
+Flagowy wariant od Ford Performance do szybkiej jazdy w terenie:
+- **Zawieszenie** – amortyzatory Fox Live Valve z wewnętrznym bajpasem
+- **Rama** – wzmocniona, poszerzone nadwozie (+150 mm)
+- **Opony** – 285/70 R17 BFGoodrich All-Terrain (33 cale)
+- **Tryby jazdy** – 6 trybów terenowych w tym Baja (do rajdów po piasku)
 
-## Typowe usterki Ford Ranger
+## Typowe usterki Rangera
 
-Mimo solidnej konstrukcji użytkownicy zgłaszają powtarzające się problemy. Przed zakupem sprawdź historię serwisową egzemplarza, szczególnie jeśli zbliża się do przebiegu 100 tys. km.
+### Silnik 2.0 EcoBlue
 
-{{% expert name="Kowalczyk" %}}W Rangerze z silnikiem 2.0 EcoBlue kluczowa jest wymiana oleju co 10–15 tys. km – łuszczący się pasek rozrządu potrafi zapchać smok pompy olejowej.{{% /expert %}}
+- **Pasek rozrządu** – producent przewiduje wymianę po 240 tys. km, ale pęka przed 100 tys. km w wielu przypadkach
+- **Pompa oleju** – ostrzeżenia o niskim ciśnieniu, nietypowe odgłosy
+- **[DPF](https://pl.wikipedia.org/wiki/Filtr_cz%C4%85stek_sta%C5%82ych) i EGR** – spadki mocy, dymienie w jeździe miejskiej
 
-- **Układ wydechowy** – częste problemy z [filtrem cząstek stałych DPF](https://pl.wikipedia.org/wiki/Filtr_cz%C4%85stek_sta%C5%82ych) i zaworem EGR przy eksploatacji miejskiej
-- **Skrzynia biegów** – 10-biegowy automat może szarpać, co zazwyczaj eliminuje aktualizacja oprogramowania sterującego
-- **Zawieszenie** – w starszych egzemplarzach pękają pióra tylnych resorów przy częstym przeładowywaniu
+### Skrzynia i zawieszenie
 
-## Ceny Ford Ranger
+- **Automat 10-biegowy** – szarpanie przy zmianie przełożeń, zazwyczaj rozwiązuje aktualizacja oprogramowania
+- **Napęd 4x4 (T6)** – nie załącza się z powodu uszkodzonych przewodów lub siłownika podciśnieniowego
+- **Resory tylne** – pękające pióra przy częstym przeładowywaniu
 
-Nowy Ranger pickup to wydatek zaczynający się od około 160 000 zł netto za wersję XL. Dobrze wyposażony Wildtrak kosztuje średnio 210–240 tys. zł netto, w zależności od wybranego silnika i dodatków.
+{{% info title="Rozrząd EcoBlue" icon="engineering" %}}
+Wersje 2.0 EcoBlue wymagają regularnej kontroli paska rozrządu pracującego w kąpieli olejowej. Ford wydał kilka TSB (Technical Service Bulletins) dotyczących tego problemu – sprawdź u dealera, czy Twój egzemplarz ma zaktualizowane oprogramowanie i wymieniony pasek.
+{{% /info %}}
 
-Rynek wtórny oferuje duży wybór egzemplarzy poleasingowych. Zadbany model z lat 2018–2020 można znaleźć w przedziale 110–140 tys. zł brutto. Zawsze zweryfikuj, czy auto pracowało w ciężkim terenie.
+## Ceny Rangera
 
-## Ford Ranger a konkurencja
+### Nowy Ranger
 
-Głównym rywalem jest [Volkswagen Amarok](/modele/volkswagen-amarok/), który w najnowszej odsłonie dzieli z Rangerem konstrukcję ramy i silniki. Do typowego transportu miejskiego lepszym wyborem może być [Ford Transit Custom](/modele/ford-transit-custom/), a w segmencie dużych aut dostawczych prym wiedzie [Ford Transit](/modele/ford-transit/).
+| Wersja | Cena od (netto) |
+|--------|----------------|
+| XL Single Cab | ok. 145 000 zł |
+| XLT Double Cab | ok. 175 000 zł |
+| Wildtrak Double Cab | ok. 210 000 zł |
+| Raptor | ok. 290 000 zł |
 
-Ranger wyróżnia się na tle konkurencji przede wszystkim napędem 4x4 – dostępnym w trybie dołączanym ręcznie i w pełni automatycznym 4A w generacji T6.2.
+### Używany Ranger
+
+| Rocznik / Generacja | Cena orientacyjna |
+|---------------------|-------------------|
+| T6 (2012–2015) 3.2 Duratorq | 70 000–100 000 zł |
+| T6 (2016–2019) 2.0 EcoBlue | 100 000–140 000 zł |
+| T6 (2020–2022) Wildtrak | 140 000–180 000 zł |
+| T6.2 (od 2022) | 180 000–250 000 zł |
+
+## Porównanie Rangera z konkurencją
+
+| Parametr | Ford Ranger T6.2 | VW Amarok II | Toyota Hilux | Isuzu D-Max |
+|----------|-----------------|-------------|-------------|-------------|
+| Długość (Double Cab) | 5370 mm | 5350 mm | 5325 mm | 5265 mm |
+| Rozstaw osi | 3270 mm | 3270 mm | 3085 mm | 3125 mm |
+| Ładowność | 1070 kg | 1040 kg | 1065 kg | 1025 kg |
+| Holowanie | 3500 kg | 3500 kg | 3500 kg | 3500 kg |
+| Diesel bazowy | 2.0 170 KM | 2.0 170 KM | 2.4 150 KM | 1.9 164 KM |
+| Topowy silnik | 3.0 V6 292 KM | 3.0 V6 241 KM | 2.8 204 KM | 3.0 190 KM |
+| Cena bazowa (netto) | ~145 000 zł | ~200 000 zł | ~155 000 zł | ~130 000 zł |
+
+Głównym rywalem jest bliźniaczy [Volkswagen Amarok](/modele/volkswagen-amarok/) – ta sama platforma T6, ale premium wykończenie i wyższa cena. Do typowego transportu miejskiego lepszym wyborem będzie [Ford Transit Custom](/modele/ford-transit-custom/), a w segmencie dużych dostawczaków – [Ford Transit](/modele/ford-transit/).
 
 *Źródła: Wikipedia – Filtr cząstek stałych DPF, oficjalne dane techniczne Ford Polska, dokumentacja serwisowa Ford EcoBlue.*
