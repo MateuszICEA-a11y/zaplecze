@@ -13,11 +13,11 @@ main_keyword: "Ford Transit Courier Kombi"
 lead: "Ford Transit Courier Kombi (od 2023) to osobowa wersja najmniejszego Forda dostawczego – 5 miejsc, homologacja M1, ISOFIX, bagażnik do 2,3 m³. Silniki od 100 do 136 KM (w tym elektryczny). Ceny od 99 000 zł."
 faq:
   - question: "Ile miejsc ma Ford Transit Courier Kombi?"
-    answer: "5 pełnowymiarowych miejsc w układzie 2+3. Tylna kanapa dzielona – można przewozić długie przedmioty z pasażerami."
+    answer: "5 pełnowymiarowych miejsc w układzie 2+3. Tylna kanapa dzielona asymetrycznie (60/40) – można złożyć jedną część i przewozić długie przedmioty przy jednoczesnym zachowaniu dwóch miejsc pasażerskich."
   - question: "Ile kosztuje Transit Courier Kombi?"
-    answer: "Nowy od 99 000 zł (Trend) do 145 000 zł (Titanium). Elektryczny od 160 000 zł. Używane 2023–2025: 75 000–125 000 zł."
+    answer: "Nowy w salonie: od 99 000 zł brutto (Trend 1.0 EcoBoost 100 KM) do 145 000 zł (Titanium 1.5 EcoBlue). e-Courier od 160 000 zł. Na rynku wtórnym roczniki 2023–2025 za 75 000–125 000 zł."
   - question: "Czy Courier Kombi nadaje się dla rodziny?"
-    answer: "Tak – ISOFIX, szerokie drzwi przesuwne, duża przestrzeń nad głowami. Dobra alternatywa dla kompaktów przy potrzebie większego bagażnika."
+    answer: "Tak – ISOFIX, szerokie drzwi przesuwne (dzieci wsiadają bezpiecznie na ciasnym parkingu), duża przestrzeń nad głowami i bagażnik na wózek, rowery czy sprzęt sportowy. Rozsądna alternatywa dla kompaktowych SUV-ów."
 ---
 
 ## Ford Transit Courier Kombi – osobowa wersja Couriera
@@ -79,17 +79,5 @@ Każda wersja ma system SYNC 4 z bezprzewodowym Apple CarPlay i Android Auto.
 | Bezpieczeństwo bierne | pełne M1 (ISOFIX, kurtyny) | podstawowe N1 |
 
 Kombi pozwala na elastyczne zarządzanie przestrzenią – w kilka sekund z auta rodzinnego robi się mała furgonetka dzięki dzielonej, składanej kanapie.
-
-### Ile miejsc ma Ford Transit Courier Kombi?
-
-5 pełnowymiarowych miejsc w układzie 2+3. Tylna kanapa dzielona asymetrycznie (60/40) – można złożyć jedną część i przewozić długie przedmioty przy jednoczesnym zachowaniu dwóch miejsc pasażerskich.
-
-### Ile kosztuje Transit Courier Kombi?
-
-Nowy w salonie: od 99 000 zł brutto (Trend 1.0 EcoBoost 100 KM) do 145 000 zł (Titanium 1.5 EcoBlue). e-Courier od 160 000 zł. Na rynku wtórnym roczniki 2023–2025 za 75 000–125 000 zł w zależności od silnika i wyposażenia.
-
-### Czy Courier Kombi nadaje się dla rodziny?
-
-Tak – ISOFIX, szerokie drzwi przesuwne (dzieci wsiadają bezpiecznie na ciasnym parkingu), duża przestrzeń nad głowami i bagażnik, który mieści wózek, rowery czy sprzęt sportowy. Rozsądna alternatywa dla kompaktowych SUV-ów przy niższej cenie i znacznie większym bagażniku.
 
 *Źródła: Wikipedia, Ford, auto-data.net*

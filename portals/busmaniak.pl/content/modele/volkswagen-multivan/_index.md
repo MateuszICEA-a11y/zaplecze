@@ -12,11 +12,11 @@ image_alt: "Volkswagen Multivan T7 – widok z boku z otwartymi drzwiami przesuw
 lead: "Volkswagen Multivan T7 to luksusowy minibus na platformie MQB – zupełnie nowa konstrukcja od 2021 roku z silnikami 2.0 TSI, 2.0 TDI i hybrydą plug-in 245 KM. Na rynku wtórnym dostępne też kultowe generacje T4–T6.1 w cenach od 35 000 zł."
 faq:
   - question: "Ile kosztuje Volkswagen Multivan?"
-    answer: "Nowy T7 od ok. 250 000 zł brutto. Używane: T5 35–120 tys. zł, T6 120–250 tys. zł, T6.1 200–350 tys. zł, T7 180–300 tys. zł."
+    answer: "Nowy T7 od ok. 250 000 zł brutto. Używane: T5 35–120 tys. zł, T6 120–250 tys. zł, T6.1 200–350 tys. zł, T7 180–300 tys. zł. T6.1 trzyma wysoką wartość residualną – często powyżej 200 000 zł. T5 w dobrym stanie można kupić za 60 000–120 000 zł."
   - question: "Czy Multivan T7 jest lepszy od T6.1?"
-    answer: "T7 oferuje wyższy komfort i nowocześniejsze multimedia (platforma MQB). T6.1 wygrywa ładownością i roboczym charakterem. T7 to samochód osobowy, T6.1 – luksusowa wersja dostawczaka."
+    answer: "T7 oferuje wyższy komfort resorowania i nowocześniejsze multimedia dzięki platformie MQB. T6.1 wygrywa większą ładownością i bardziej roboczym charakterem. T7 to w praktyce samochód osobowy dużej klasy, T6.1 – luksusowa wersja dostawczaka."
   - question: "Ile miejsc ma Volkswagen Multivan?"
-    answer: "Od 5 do 7 indywidualnych siedzeń. W T7 lekkie fotele na szynach – można je przesuwać, obracać lub wyjąć z kabiny."
+    answer: "Od 5 do 7 indywidualnych siedzeń. W T7 zrezygnowano z ciężkiej kanapy na rzecz lekkich, pojedynczych foteli – można je przesuwać, obracać lub całkowicie wyjąć z kabiny."
   - question: "Jakie silniki ma Multivan T7?"
     answer: "2.0 TSI 204 KM, 2.0 TDI 150 KM i 1.5 eHybrid 245 KM (plug-in). Wszystkie z DSG."
 ---
@@ -98,17 +98,5 @@ Ceny na rynku polskim (2026):
 - **T6.1** – 200 000–350 000 zł
 - **T7 nowy** – od ok. 250 000 zł
 - **T7 używany** – 180 000–300 000 zł
-
-### Ile kosztuje Volkswagen Multivan?
-
-Nowy T7 w salonie startuje od ok. 250 000 zł brutto za wersję bazową. Używane T6.1 trzymają wysoką wartość residualną – często powyżej 200 000 zł. T5 w dobrym stanie można kupić za 60 000–120 000 zł.
-
-### Czy Multivan T7 jest lepszy od T6.1?
-
-T7 oferuje wyższy komfort resorowania i nowocześniejsze multimedia dzięki platformie MQB. T6.1 wygrywa większą ładownością i bardziej roboczym charakterem. T7 to w praktyce samochód osobowy dużej klasy, T6.1 – luksusowa wersja dostawczaka.
-
-### Ile miejsc ma Volkswagen Multivan?
-
-Od 5 do 7 indywidualnych siedzeń. W T7 zrezygnowano z ciężkiej kanapy na rzecz lekkich, pojedynczych foteli – można je przesuwać, obracać lub całkowicie wyjąć z kabiny.
 
 *Źródła: Wikipedia, Volkswagen, auto-data.net*

@@ -13,11 +13,13 @@ main_keyword: "Ford Transit Courier Van"
 lead: "Ford Transit Courier Van II generacji (od 2023) to najmniejszy dostawczak Forda z ładownią 2,91 m³ i miejscem na 2 europalety. Silniki 1.0 EcoBoost, 1.5 EcoBlue i elektryczny e-Transit Courier 136 KM. Ładowność do 845 kg, ceny od ok. 96 000 zł."
 faq:
   - question: "Ile pali Ford Transit Courier Van?"
-    answer: "1.0 EcoBoost 125 KM: ok. 9 l/100 km w mieście. 1.5 EcoBlue diesel: 5,5–6,5 l/100 km. e-Transit Courier: ładowanie DC 10–80% w 35 min."
+    answer: "1.0 EcoBoost 125 KM: ok. 9 l/100 km w cyklu mieszanym z przewagą miasta (zbiornik 45 l). Diesel 1.5 EcoBlue: 5,5–6,5 l/100 km. e-Transit Courier: ładowanie DC 100 kW, 10–80% w 35 minut."
   - question: "Czy Transit Courier mieści europaletę?"
-    answer: "II generacja (od 2023) mieści 2 europalety – szerokość między nadkolami 1220 mm. I generacja miała z tym problem."
+    answer: "II generacja (od 2023) mieści 2 europalety – szerokość między nadkolami 1220 mm, maksymalna długość ładunku 2,6 m. I generacja miała z tym problem z powodu węższego rozstawu nadkoli."
   - question: "Ile kosztuje Ford Transit Courier Van?"
-    answer: "Nowy od ok. 96 000–110 000 zł netto. Używany rocznik 2023 od ok. 96 000 zł brutto."
+    answer: "Nowy z salonu: 96 000–110 000 zł netto (zależnie od silnika i pakietu). Używany 2023 z niskim przebiegiem: ok. 96 000 zł brutto. I generacja (2021–2022): znacznie taniej, ale mniejsza ładownia."
+  - question: "Jaka jest ładowność Transit Courier Van?"
+    answer: "845 kg (benzyna 1.0 EcoBoost), ok. 700 kg (e-Transit Courier). Ładownia 2,91 m³, długość ładunku do 2,6 m."
   - question: "Jaka jest ładowność Transit Courier Van?"
     answer: "845 kg (benzyna 1.0 EcoBoost), ok. 700 kg (e-Transit Courier). Ładownia 2,91 m³, długość ładunku do 2,6 m."
 ---
@@ -78,17 +80,5 @@ Kabina zaprojektowana z myślą o kierowcach spędzających za kółkiem po kilk
 Dla kogo ten model? Firmy instalacyjne, serwisy mobilne, kurierzy "ostatniej mili" – wszędzie tam, gdzie liczy się zwrotność i niskie koszty utrzymania.
 
 ![Ford Transit Courier Van II generacji](/images/ford-transit-courier-van-hero.jpg)
-
-### Ile pali Ford Transit Courier Van?
-
-1.0 EcoBoost 125 KM: ok. 9 l/100 km w cyklu mieszanym z przewagą miasta. Zbiornik 45 l. Diesel 1.5 EcoBlue: 5,5–6,5 l/100 km. e-Transit Courier: ładowanie DC 100 kW, 10–80% w 35 minut.
-
-### Czy Transit Courier mieści europaletę?
-
-I generacja miała problem – zbyt wąski rozstaw nadkoli. II generacja (od 2023) mieści 2 europalety. Szerokość między nadkolami 1220 mm, maksymalna długość ładunku 2,6 m.
-
-### Ile kosztuje Ford Transit Courier Van?
-
-Nowy z salonu: 96 000–110 000 zł netto (zależnie od silnika i pakietu). Używany 2023 z niskim przebiegiem: ok. 96 000 zł brutto. I generacja (2021–2022): znacznie taniej, ale mniejsza ładownia i brak 2 europalet.
 
 *Źródła: Wikipedia, Ford, auto-data.net*

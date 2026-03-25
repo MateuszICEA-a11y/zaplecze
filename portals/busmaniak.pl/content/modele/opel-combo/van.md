@@ -15,7 +15,7 @@ faq:
   - question: "Ile pali Opel Combo Van?"
     answer: "Silnik 1.5 Diesel zużywa 5–7 l/100 km w zależności od obciążenia. Benzyna 1.2 PureTech: 7,5–8,5 l w mieście. e-Combo: 18–22 kWh/100 km."
   - question: "Czy Combo Van mieści europaletę?"
-    answer: "Wersja Standard (L1) mieści jedną europaletę. XL (L2) – dwie europalety."
+    answer: "Wersja Standard (L1) mieści jedną europaletę. XL (L2) – dwie europalety. Szerokie drzwi przesuwne boczne ułatwiają załadunek w ciasnych miejscach."
   - question: "Ile kosztuje Opel Combo Van?"
     answer: "Nowy z dieslem od ok. 90 000 zł netto. Używane (2018–2020) od 45 000–55 000 zł brutto. e-Combo od ok. 130 000 zł netto."
   - question: "Jaka jest ładowność Opel Combo Van?"
@@ -68,17 +68,5 @@ Wersja elektryczna zachowuje identyczne parametry ładunkowe – baterie umieszc
 Wnętrze zaprojektowane jako mobilne biuro – ponad 15 schowków, opcjonalny stolik po złożeniu oparcia środkowego fotela. Auto dostępne w wersji 2- lub 3-miejscowej.
 
 ![Opel Combo Van – kompaktowy furgon dostawczy](/images/opel-combo-van-hero.jpg)
-
-### Ile pali Opel Combo Van?
-
-Silnik 1.5 Diesel zużywa 5–7 l/100 km w zależności od obciążenia. Benzyna 1.2 PureTech: 7,5–8,5 l w mieście. e-Combo: 18–22 kWh/100 km.
-
-### Czy Combo Van mieści europaletę?
-
-Wersja Standard (L1) mieści jedną europaletę. XL (L2) – dwie europalety. Szerokie drzwi przesuwne boczne ułatwiają załadunek w ciasnych miejscach.
-
-### Ile kosztuje Opel Combo Van?
-
-Nowy z dieslem od ok. 90 000 zł netto. Używane (2018–2020) od 45 000–55 000 zł brutto. e-Combo od ok. 130 000 zł netto.
 
 *Źródła: Wikipedia, Opel, auto-data.net*
