@@ -24,7 +24,7 @@ faq:
     answer: "Wymiana paska rozrządu z pompą wody to koszt 600-1200 zł. Rozrząd wymaga wymiany co 120 000 km lub co 10 lat."
 ---
 
-Berlingo z silnikiem 1.6 HDI to jeden z częściej trafiających do warsztatu przedstawicieli segmentu małych dostawczaków. Jednostka DV6 produkcji PSA zdobyła popularność dzięki niewysokim kosztom eksploatacji i dostępności części – choć ma też swoje słabości, o których lepiej wiedzieć przed zakupem.
+Berlingo z silnikiem 1.6 HDI to jeden z częściej trafiających do warsztatu przedstawicieli segmentu małych dostawczaków. Jednostka DV6 produkcji PSA zdobyła popularność dzięki niewysokim kosztom eksploatacji i dostępności części – choć ma też swoje słabości, o których lepiej wiedzieć przed zakupem. Więcej o historii i wersjach nadwoziowych modelu można przeczytać na [Wikipedii](https://pl.wikipedia.org/wiki/Citro%C3%ABn_Berlingo).
 
 ## Dane techniczne silnika 1.6 HDI {#dane-techniczne}
 
@@ -72,7 +72,7 @@ Realne zużycie paliwa rozczarowuje rzadziej niż w przypadku benzyniaków, ale 
 | 90 KM       | 4,8 – 5,5      | 6,0 – 7,0      | 5,5 – 6,5         |
 | 110 KM      | 5,5 – 6,5      | 7,0 – 8,0      | 6,5 – 7,5         |
 
-Szczegółowe dane z pomiarów właścicieli zebraliśmy w osobnym miejscu: [tabela spalania](/serwis/citroen-berlingo-spalanie/).
+Szczegółowe dane z pomiarów właścicieli znajdziesz w artykule o [spalaniu Berlingo](/serwis/citroen-berlingo-spalanie/).
 
 
 ![Silnik 1.6 HDI DV6 w Citroënie Berlingo](/images/citroen-berlingo-1-6-hdi-hero.jpg)
@@ -104,6 +104,6 @@ Poniżej orientacyjne stawki za podstawowe czynności serwisowe w niezależnych 
 | Wymiana rozrządu   | 600 – 1200 | Co 120 000 km |
 | Wymiana klocków     | 200 – 500  | Zależnie od zużycia |
 
-Więcej o modelu – historia, wersje nadwoziowe, wyposażenie – na stronie głównej [Citroëna Berlingo](/modele/citroen-berlingo/).
+Koszty serwisu mogą się różnić zależnie od rocznika i stanu technicznego egzemplarza – warto przed zakupem sprawdzić historię napraw.
 
 {{% info title="Wskazówka" icon="engineering" %}}Pamiętaj o regularnej wymianie oleju i filtrów, używaj wysokiej jakości paliwa oraz unikaj krótkich tras, które sprzyjają zapychaniu się filtra cząstek stałych. W ten sposób możesz znacznie wydłużyć żywotność silnika 1.6 HDI w swoim Citroënie Berlingo.{{% /info %}}

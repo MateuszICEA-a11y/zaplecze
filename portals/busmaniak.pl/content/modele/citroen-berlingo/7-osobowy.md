@@ -24,7 +24,7 @@ faq:
 
 ## Berlingo z trzecim rzędem siedzeń {#trzeci-rząd}
 
-Trzeci rząd siedzeń w Berlingo pojawił się w drugiej generacji (2008–2018) i jest kontynuowany w trzeciej (od 2018). Konfiguracja to zawsze 2+3+2: dwa fotele z przodu, kanapa trzyosobowa w środku, dwa składane siedzenia z tyłu.
+[Citroën Berlingo](https://pl.wikipedia.org/wiki/Citro%C3%ABn_Berlingo) to model produkowany od 1996 roku, który przez lata ewoluował od funkcjonalnego kombi do rodzinnego kombivana. Trzeci rząd siedzeń pojawił się w drugiej generacji (2008–2018) i jest kontynuowany w trzeciej (od 2018). Konfiguracja to zawsze 2+3+2: dwa fotele z przodu, kanapa trzyosobowa w środku, dwa składane siedzenia z tyłu.
 
 Kluczowa zasada – trzeci rząd dostępny jest wyłącznie w wersji [Long](/modele/citroen-berlingo/long/) lub [XL](/modele/citroen-berlingo/xl/). Krótkie Berlingo M nie ma wystarczającej przestrzeni na dodatkowe fotele za drugą kanapą.
 
@@ -61,7 +61,7 @@ Gama silnikowa jest identyczna jak w wersji 5-osobowej, ale trzeba pamiętać o 
 - **Rekomendacja minimalna** – [1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) 90 KM (II gen.) lub 1.5 BlueHDI 100 KM (III gen.)
 - **Rekomendacja optymalna** – 1.5 BlueHDI 130 KM lub 1.2 PureTech 130 KM
 
-Wersja 75 KM przy 7 osobach i bagażach jest zdecydowanie za słaba – szczególnie na autostradzie i pod górkę. Pełny przegląd silników na stronie [Citroëna Berlingo](/modele/citroen-berlingo/).
+Wersja 75 KM przy 7 osobach i bagażach jest zdecydowanie za słaba – szczególnie na autostradzie i pod górkę. Szczegółowe parametry każdego silnika znajdziesz w artykule o [1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) lub bezpośrednio w danych technicznych wybranej wersji.
 
 {{% expert name="Kowalczyk" %}}Jeśli planujesz regularnie jeździć w 7 osób, nie oszczędzaj na silniku. 1.5 BlueHDI 130 KM to minimum, które zapewni komfortową jazdę z pełnym obciążeniem. Przy okazjonalnym użytku trzeciego rzędu wystarczy wersja 100 KM.{{% /expert %}}
 

@@ -24,7 +24,7 @@ faq:
 
 ## Berlingo Van – wersja dostawcza {#wersja-dostawcza}
 
-Berlingo Van to furgon bez tylnych okien, z kabiną oddzieloną od przestrzeni ładunkowej stalową przegrodą. Kabina mieści 2 lub 3 osoby (zależnie od wersji), a podłoga ładunkowa jest pokryta stalową blachą odporną na uszkodzenia.
+Berlingo Van to furgon bez tylnych okien, z kabiną oddzieloną od przestrzeni ładunkowej stalową przegrodą. Długa historia modelu – od 1996 roku przez trzy generacje – jest udokumentowana na [Wikipedii](https://pl.wikipedia.org/wiki/Citro%C3%ABn_Berlingo). Kabina mieści 2 lub 3 osoby (zależnie od wersji), a podłoga ładunkowa jest pokryta stalową blachą odporną na uszkodzenia.
 
 Model produkowany jest od 1996 roku i przeszedł przez trzy generacje:
 
@@ -70,7 +70,7 @@ Gama silnikowa Berlingo Van:
 - **1.5 BlueHDI 75/100/130 KM** – nowszy diesel z III generacji, norma Euro 6d
 - **[ë-Berlingo Van](/modele/citroen-berlingo/elektryczny/)** – wersja elektryczna 136 KM, zasięg do 275 km WLTP
 
-Do przewozu towarów o masie do 500 kg wystarczy wersja 75 lub 100 KM. Przy regularnym ładunku 700–900 kg warto wybrać 130 KM. Pełny przegląd silników i generacji na stronie [Citroëna Berlingo](/modele/citroen-berlingo/).
+Do przewozu towarów o masie do 500 kg wystarczy wersja 75 lub 100 KM. Przy regularnym ładunku 700–900 kg warto wybrać 130 KM – szczególnie jeśli trasy obejmują autostrady i dłuższe odcinki.
 
 {{% expert name="Kowalczyk" %}}W wersji Van zdecydowanie polecam 1.5 BlueHDI 100 KM – to najczęściej wybierany wariant, który dobrze radzi sobie z typowym ładunkiem kurierskim. Wersja 75 KM jest zbyt słaba przy pełnym obciążeniu na autostradzie.{{% /expert %}}
 

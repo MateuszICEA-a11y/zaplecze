@@ -24,7 +24,7 @@ faq:
 
 ## Citroën ë-Berlingo – dane techniczne {#dane-techniczne}
 
-ë-Berlingo korzysta z elektrycznego napędu grupy Stellantis, wspólnego z Peugeotem e-Partnerem i Oplem e-Combo. Kluczowe parametry:
+[Citroën Berlingo](https://pl.wikipedia.org/wiki/Citro%C3%ABn_Berlingo) doczekał się elektrycznej wersji w III generacji – ë-Berlingo korzysta z napędu grupy Stellantis, wspólnego z Peugeotem e-Partnerem i Oplem e-Combo. Kluczowe parametry:
 
 | Parametr                | Wartość               |
 |-------------------------|-----------------------|
@@ -85,5 +85,5 @@ Na rynku wtórnym pojawiają się pierwsze egzemplarze z lat 2022–2023 w cenac
 
 Konkurencja: Peugeot e-Partner i Opel e-Combo to techniczni bliźniacy z identycznymi parametrami – wybór między nimi sprowadza się do preferencji marki i ceny u dealera.
 
-{{% expert name="Zielinski" %}}ë-Berlingo ma sens przede wszystkim dla firm z własnym parkingiem i wallboxem, które codziennie pokonują do 200 km. Przy wyższych przebiegach dziennych lub braku własnej ładowarki lepiej zostać przy dieslu 1.5 BlueHDI. Pełny przegląd modelu znajdziesz na stronie [Citroëna Berlingo](/modele/citroen-berlingo/).{{% /expert %}}
+{{% expert name="Zielinski" %}}ë-Berlingo ma sens przede wszystkim dla firm z własnym parkingiem i wallboxem, które codziennie pokonują do 200 km. Przy wyższych przebiegach dziennych lub braku własnej ładowarki lepiej zostać przy dieslu 1.5 BlueHDI.{{% /expert %}}
 

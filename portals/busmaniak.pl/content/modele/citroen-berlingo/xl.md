@@ -24,7 +24,7 @@ faq:
 
 ## Berlingo XL – wydłużona wersja III generacji {#czym-jest}
 
-Wraz z premierą trzeciej generacji Berlingo w 2018 roku, Citroën zmienił nazewnictwo wydłużonej wersji. Zamiast [Long](/modele/citroen-berlingo/long/) (stosowanego w II generacji) pojawił się XL. Zmiana dotyczy nazwy – koncepcja pozostała ta sama.
+Wraz z premierą trzeciej generacji Berlingo w 2018 roku, Citroën zmienił nazewnictwo wydłużonej wersji. Zamiast [Long](/modele/citroen-berlingo/long/) (stosowanego w II generacji) pojawił się XL – model opisany na [Wikipedii](https://pl.wikipedia.org/wiki/Citro%C3%ABn_Berlingo) w ramach całej historii Berlingo. Zmiana dotyczy nazwy – koncepcja pozostała ta sama.
 
 Berlingo XL jest dłuższe o 350 mm i ma o 190 mm większy rozstaw osi niż wersja M. Dostępne jest w wariancie osobowym i jako [Van](/modele/citroen-berlingo/van/).
 
@@ -39,7 +39,7 @@ Berlingo XL jest dłuższe o 350 mm i ma o 190 mm większy rozstaw osi niż wers
 
 Bagażnik o pojemności 1050 litrów mieści bez problemu trzy duże walizki, wózek dziecięcy i jeszcze zostaje miejsce na torby z zakupami. Po złożeniu tylnych siedzeń pojemność przekracza 3500 litrów.
 
-W wersji Van XL ładownia o objętości 3,9 m³ mieści dwie europalety ustawione jedna za drugą. Szczegóły o wersji Van – w osobnym [artykule](/modele/citroen-berlingo/van/).
+W wersji [Van](/modele/citroen-berlingo/van/) XL ładownia o objętości 3,9 m³ mieści dwie europalety ustawione jedna za drugą.
 
 {{% info title="M czy XL?" icon="engineering" %}}Jeśli regularnie wozisz wózek dziecięcy, rower lub sprzęt sportowy – XL to znacznie wygodniejszy wybór. Różnica w cenie (ok. 5000–8000 zł za nowy) szybko się zwraca w codziennym komforcie. Jedyny minus to większy promień skrętu (11,8 m vs 11,0 m).{{% /info %}}
 
@@ -52,7 +52,7 @@ Orientacyjne parametry Berlingo XL (III generacja):
 - **Ładowność** – 700–900 kg (osobowy), 750–1000 kg (Van)
 - **Promień skrętu** – 11,8 m
 
-Pełne specyfikacje per silnik i wersja dostępne na stronie głównej [Citroëna Berlingo](/modele/citroen-berlingo/).
+Wersje z automatyczną skrzynią biegów są cięższe o ok. 30 kg, co nieznacznie obniża ładowność.
 
 
 

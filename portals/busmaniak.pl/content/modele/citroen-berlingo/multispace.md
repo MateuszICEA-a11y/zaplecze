@@ -24,7 +24,7 @@ faq:
 
 ## Co to jest Berlingo Multispace? {#co-to-jest}
 
-Berlingo Multispace to osobowa wersja drugiej generacji modelu, produkowana w latach 2008–2018. Od [wersji dostawczej (Van)](/modele/citroen-berlingo/van/) odróżnia ją lepiej wykończone wnętrze, przeszklone szyby boczne, wygodniejsze fotele i bogatsza lista wyposażenia seryjnego.
+Berlingo Multispace to osobowa wersja drugiej generacji modelu, produkowana w latach 2008–2018. Historia i wszystkie generacje modelu są udokumentowane na [Wikipedii](https://pl.wikipedia.org/wiki/Citro%C3%ABn_Berlingo). Od [wersji dostawczej (Van)](/modele/citroen-berlingo/van/) odróżnia ją lepiej wykończone wnętrze, przeszklone szyby boczne, wygodniejsze fotele i bogatsza lista wyposażenia seryjnego.
 
 Nazwa Multispace pojawiła się już przy pierwszej generacji, ale dopiero w drugiej stała się oficjalnym oznaczeniem wariantu osobowego. W trzeciej generacji (od 2018) Citroën zrezygnował z tej nazwy – osobowe Berlingo to po prostu Berlingo.
 
@@ -60,7 +60,7 @@ Gama silnikowa obejmowała jednostki benzynowe i wysokoprężne:
 - **[1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) 75/90/110 KM** – najpopularniejszy wybór; diesel z niskim spalaniem i dobrą dostępnością części
 - **1.6 VTi 98/120 KM** – benzyna z wielopunktowym wtryskiem; lepsza dynamika w mieście, ale wyższe spalanie
 
-Szczegółowe informacje o silnikach i wszystkich generacjach znajdziesz w przewodniku po [Citroënie Berlingo](/modele/citroen-berlingo/).
+W Multispace stosowano wyłącznie manualne skrzynie biegów – automatyczna nie była dostępna w żadnej wersji tej generacji.
 
 {{% expert name="Kowalczyk" %}}Do jazdy w trasie i przy większym obciążeniu polecam 1.6 HDI 90 KM – to złoty środek między spalaniem a dynamiką. Benzynowy 1.6 VTi ma sens tylko w mieście i przy małych przebiegach rocznych (do 15 tys. km).{{% /expert %}}
 

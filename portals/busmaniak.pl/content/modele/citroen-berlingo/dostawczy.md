@@ -24,7 +24,7 @@ faq:
 
 ## Berlingo dostawczy – przegląd wersji {#przegląd}
 
-Berlingo dostawczy występuje z homologacją N1 (ciężarową), która daje firmom korzyści podatkowe: pełne odliczenie VAT od zakupu i eksploatacji. Różni się od wersji osobowej (M1) brakiem tylnych siedzeń, stalową przegrodą za kabiną i wzmocnionym zawieszeniem.
+[Citroën Berlingo](https://pl.wikipedia.org/wiki/Citro%C3%ABn_Berlingo) to model dostępny zarówno w wersji osobowej, jak i jako dostawczy furgon. Ta druga odmiana występuje z homologacją N1 (ciężarową), która daje firmom korzyści podatkowe: pełne odliczenie VAT od zakupu i eksploatacji. Różni się od wersji osobowej (M1) brakiem tylnych siedzeń, stalową przegrodą za kabiną i wzmocnionym zawieszeniem.
 
 Dostępne warianty:
 
@@ -32,7 +32,7 @@ Dostępne warianty:
 - **Furgon z oknem** – okno w przegrodzie poprawia widoczność do tyłu
 - **Furgon Long/XL** – wydłużona wersja z większą przestrzenią ładunkową
 
-Każdy wariant oferuje 2 lub 3 miejsca siedzące. Szczegóły o wersji Van – w osobnym [artykule](/modele/citroen-berlingo/van/).
+Każdy wariant oferuje 2 lub 3 miejsca siedzące. Wersja Van różni się od dostawczego przede wszystkim zastosowaniem – jej parametry i wyposażenie opisuje [osobny artykuł](/modele/citroen-berlingo/van/).
 
 ## Wymiary i ładowność {#wymiary}
 
@@ -59,7 +59,7 @@ W III generacji Berlingo dostawczego głównym silnikiem jest 1.5 BlueHDI:
 
 W II generacji popularny był [1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) w wersjach 75 i 90 KM. Dla firm zainteresowanych elektromobilnością dostępny jest [ë-Berlingo Van](/modele/citroen-berlingo/elektryczny/) z zasięgiem do 275 km WLTP.
 
-Pełny przegląd silników na stronie [Citroëna Berlingo](/modele/citroen-berlingo/).
+Szczegółowe dane techniczne i historię kolejnych generacji napędów znajdziesz w artykule o [silniku 1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) oraz w opisie [ë-Berlingo](/modele/citroen-berlingo/elektryczny/).
 
 
 ![Citroën Berlingo dostawczy przy magazynie](/images/citroen-berlingo-dostawczy-hero.jpg)
@@ -72,7 +72,7 @@ Homologacja N1 daje firmom realne oszczędności:
 - **Ubezpieczenie** – polisy OC/AC dla pojazdów N1 bywają tańsze o 10–20% w porównaniu z M1
 - **Amortyzacja** – korzystniejsza dla celów podatkowych
 
-Dane o zużyciu paliwa per silnik znajdziesz w artykule o [spalaniu Berlingo](/serwis/citroen-berlingo-spalanie/).
+Porównanie zużycia paliwa dla każdego wariantu silnikowego zawiera artykuł o [spalaniu Berlingo](/serwis/citroen-berlingo-spalanie/).
 
 {{% expert name="Zielinski" %}}Berlingo dostawczy z 1.5 BlueHDI 100 KM to jeden z najtańszych w eksploatacji furgonów na rynku. Niskie spalanie (4,7–5,7 l/100 km w cyklu mieszanym), tanie części i prosta konstrukcja przekładają się na niski TCO (Total Cost of Ownership).{{% /expert %}}
 

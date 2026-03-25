@@ -24,7 +24,7 @@ faq:
 
 ## Czym jest Berlingo Long? {#czym-jest}
 
-Berlingo Long to wydłużona wersja popularnego kombivana Citroëna, wyróżniająca się dłuższym rozstawem osi i większą przestrzenią wewnątrz. W drugiej generacji (2008–2018) używano nazwy Long, natomiast trzecia generacja (od 2018) nosi oznaczenie [XL](/modele/citroen-berlingo/xl/).
+Berlingo Long to wydłużona wersja popularnego kombivana Citroëna, wyróżniająca się dłuższym rozstawem osi i większą przestrzenią wewnątrz. Model ten – opisany szczegółowo na [Wikipedii](https://pl.wikipedia.org/wiki/Citro%C3%ABn_Berlingo) – w drugiej generacji (2008–2018) używał nazwy Long, natomiast trzecia generacja (od 2018) nosi oznaczenie [XL](/modele/citroen-berlingo/xl/).
 
 Berlingo Long sprawdza się przede wszystkim jako:
 
@@ -56,7 +56,7 @@ Orientacyjne dane techniczne Berlingo Long/XL:
 - **Ładowność** – 600–800 kg
 - **Promień skrętu** – ok. 11,8 m (XL) vs 11,0 m (M)
 
-Większy promień skrętu to jedyny kompromis związany z wydłużonym nadwoziem. Na parkingu w centrum miasta różnica jest odczuwalna. Pełne dane techniczne per silnik znajdziesz w artykule o [Citroënie Berlingo](/modele/citroen-berlingo/).
+Większy promień skrętu to jedyny kompromis związany z wydłużonym nadwoziem. Na parkingu w centrum miasta różnica jest odczuwalna – warto to wziąć pod uwagę, zanim zdecydujesz się na wydłużoną wersję.
 
 
 

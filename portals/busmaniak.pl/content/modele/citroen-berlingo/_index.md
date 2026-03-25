@@ -1,87 +1,87 @@
 ---
-title: "Citroën Berlingo – generacje, wersje, dane techniczne"
-date: 2026-03-24
-lastmod: 2026-03-24
+title: "Citroën Berlingo – generacje, wersje, dane techniczne | BusManiak.pl"
+date: 2026-03-25
 description: "Kompletny przewodnik po Citroënie Berlingo – historia 3 generacji, dane techniczne, wymiary M i XL, silniki HDI i PureTech, wersje nadwoziowe i typowe usterki."
 draft: false
 author: "marek-kowalczyk"
 h1: "Citroën Berlingo – kompletny przewodnik po modelu"
 type: "page"
-volume: 40500
 main_keyword: "Citroën Berlingo"
 image: "/images/citroen-berlingo-hero.jpg"
 image_alt: "Citroën Berlingo III na drodze"
-lead: "Citroën Berlingo to jeden z najpopularniejszych kombivanów w Europie, produkowany od 1996 roku w trzech generacjach. Sprawdza się jako auto rodzinne, dostawcze i serwisowe. Poznaj wszystkie wersje, silniki i warianty nadwoziowe."
+lead: "Citroën Berlingo to jeden z najpopularniejszych kombivanów w Europie, produkowany od 1996 roku. Z fabryki w Vigo zjechało ponad 15 milionów Berlingo i bliźniaczych Partnerów. Model sprawdza się jako auto rodzinne, dostawcze i serwisowe."
 faq:
   - question: "Jakie są generacje Citroëna Berlingo?"
-    answer: "Wyróżniamy trzy generacje: Berlingo I (1996-2008) z silnikami 1.4, 1.6 i 1.9D, Berlingo II (2008-2018) na platformie PSA PF2 z silnikami 1.6 HDI i VTi, oraz Berlingo III (od 2018) na platformie EMP2 z silnikami 1.2 PureTech, 1.5 BlueHDI i wersja elektryczna e-Berlingo."
+    answer: "Trzy generacje: I (1996–2008, 3,2 mln sztuk), II (2008–2018, platforma PF2) i III (od 2018, platforma EMP2 z wersją elektryczną ë-Berlingo)."
   - question: "Jaki silnik wybrać w używanym Berlingo?"
-    answer: "1.6 HDI w wersji 90 KM to sprawdzona konstrukcja z dobrym kompromisem mocy i spalania. W nowszych egzemplarzach (III gen.) 1.5 BlueHDI 130 KM oferuje lepszą kulturę pracy i niższe zużycie paliwa."
+    answer: "1.6 HDI 90 KM to sprawdzona konstrukcja. W III generacji 1.5 BlueHDI 130 KM oferuje lepszą kulturę pracy i niższe spalanie."
   - question: "Ile kosztuje serwis Berlingo?"
-    answer: "Przegląd olejowy to wydatek rzędu 300-500 zł, wymiana rozrządu 800-1200 zł. Części zamienne są tanie i powszechnie dostępne ze względu na popularność modelu."
+    answer: "Przegląd olejowy: 300–500 zł. Wymiana rozrządu: 800–1200 zł. Części zamienne tanie i powszechnie dostępne."
   - question: "Czy Berlingo jest dobre dla rodziny?"
-    answer: "Tak, szczególnie w wersji XL (4753 mm długości) z bagażnikiem 1050 litrów. Dostępna jest też wersja 7-osobowa z trzecim rzędem siedzeń."
+    answer: "Tak – wersja XL (4753 mm) ma bagażnik 1050 l. Dostępna jest też wersja 7-osobowa z trzecim rzędem siedzeń."
   - question: "Jakie są typowe usterki Berlingo?"
-    answer: "W I generacji problemy z elektryką i zawieszeniem. W II generacji awarie turbosprężarek 1.6 HDI i zatykające się filtry FAP. III generacja jest znacznie lepsza pod względem niezawodności."
+    answer: "I gen. – elektryka i zawieszenie. II gen. – awarie turbo 1.6 HDI i filtry FAP. III gen. znacznie lepsza pod względem niezawodności."
 ---
 
 ## Historia i generacje Citroëna Berlingo {#historia-generacje}
 
-Berlingo trafiło na rynek w 1996 roku jako odpowiedź Citroëna na rosnące zapotrzebowanie na auta łączące przestrzeń dostawczaka z codzienną użytecznością. Od tego czasu model przeszedł przez trzy generacje, zachowując ten sam charakter.
+[Citroën Berlingo](https://pl.wikipedia.org/wiki/Citro%C3%ABn_Berlingo) trafił na rynek w 1996 roku jako jeden z pierwszych kombivanów łączących przestrzeń dostawczaka z codzienną użytecznością. Produkowany głównie w fabryce Citroëna w Vigo (Hiszpania) – zdolność produkcyjna zakładu sięga 300 tys. pojazdów rocznie. Łącznie z Vigo zjechało ponad 15 milionów Berlingo i bliźniaczych Partnerów. Sama pierwsza generacja zamknęła się wynikiem 3,2 mln sztuk, a rekordowy rok 2007 przyniósł 348 tys. sprzedanych egzemplarzy, co odpowiadało 29% europejskiego rynku furgonetek.
 
 ### Berlingo I (1996–2008)
 
-Pierwsza generacja zadebiutowała z prostą, ale trwałą konstrukcją i przestronnym wnętrzem dostępnym w wersji osobowej i dostawczej. Wyjściowo oferowano silniki benzynowe 1.4 i 1.6 oraz wysokoprężny 1.9D. W późniejszych latach dołączyły jednostki HDI z bezpośrednim wtryskiem. Ciekawostką była wersja z napędem 4x4, która znacznie rozszerzyła możliwości eksploatacji na gorszych nawierzchniach.
+Pierwsza generacja zaoferowała prostą, trwałą konstrukcję z przestronnym wnętrzem w wersji osobowej i dostawczej. Wyjściowo dostępne były silniki benzynowe 1.4 i 1.6 oraz wysokoprężny 1.9D. W późniejszych latach dołączyły jednostki HDI z bezpośrednim wtryskiem. Produkowano też wersję z napędem 4x4, co rozszerzyło możliwości eksploatacji na gorszych nawierzchniach.
 
 ### Berlingo II (2008–2018)
 
-Druga generacja bazowała na platformie PSA PF2, dzielonej z [Peugeotem Partnerem](/modele/peugeot-partner/). Nadwozie zyskało bardziej nowoczesną linię, a wyposażenie wyraźnie wzrosło. Wersja osobowa [Multispace](/modele/citroen-berlingo/multispace/) mieściła komfortowo pięć osób i oferowała duży bagażnik. [Berlingo Van](/modele/citroen-berlingo/van/) z tego okresu wyróżniał się ładownością i elastyczną konfiguracją przestrzeni. Pod maską pracowały benzynowe 1.6 VTi i wysokoprężne [1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) w kilku wariantach mocowych.
+Druga generacja bazowała na platformie PSA PF2, dzielonej z [Peugeotem Partnerem](/modele/peugeot-partner/). Nadwozie zyskało nowocześniejszą linię, a wyposażenie wyraźnie wzrosło. Wersja osobowa [Multispace](/modele/citroen-berlingo/multispace/) mieściła komfortowo pięć osób z dużym bagażnikiem. [Berlingo Van](/modele/citroen-berlingo/van/) wyróżniał się ładownością i elastyczną konfiguracją przestrzeni. Silniki: benzynowe 1.6 VTi i wysokoprężne [1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) w kilku wariantach mocy.
 
 ### Berlingo III (od 2018)
 
-Trzecia generacja korzysta z platformy EMP2, co przełożyło się na lepszy komfort jazdy i wyższy poziom bezpieczeństwa biernego. Producent zaproponował dwie długości nadwozia – M i [XL](/modele/citroen-berlingo/xl/) – zwiększając dostępną przestrzeń dla pasażerów i bagażu. W gamie silnikowej znalazły się benzynowe 1.2 PureTech i wysokoprężne 1.5 BlueHDI. W 2021 roku dołączył [elektryczny ë-Berlingo](/modele/citroen-berlingo/elektryczny/) z silnikiem 100 kW i baterią 50 kWh.
+Trzecia generacja korzysta z platformy EMP2 – lepsza sztywność nadwozia przełożyła się na wyższy komfort jazdy i bezpieczeństwo bierne. Dostępne są dwie długości nadwozia: M i [XL](/modele/citroen-berlingo/xl/). Silniki benzynowe 1.2 PureTech i wysokoprężne 1.5 BlueHDI. W 2021 roku dołączył [elektryczny ë-Berlingo](/modele/citroen-berlingo/elektryczny/) z silnikiem 100 kW i baterią 50 kWh.
 
 ## Dane techniczne i wymiary {#dane-techniczne}
 
-Wymiary Citroëna Berlingo różnią się w zależności od generacji i wersji nadwozia. Poniżej zestawienie dla trzeciej generacji.
+| Wymiar | Berlingo M (osobowy) | Berlingo XL (osobowy) | Berlingo Van M | Berlingo Van XL |
+|--------|----------------------|-----------------------|----------------|-----------------|
+| Długość (mm) | 4403 | 4753 | 4403 | 4753 |
+| Szerokość (mm) | 1848 | 1848 | 1848 | 1848 |
+| Wysokość (mm) | 1844 | 1849 | 1812 | 1812 |
+| Rozstaw osi (mm) | 2785 | 2975 | 2785 | 2975 |
 
-| Wymiar           | Berlingo M (osobowy) | Berlingo XL (osobowy) | Berlingo Van M | Berlingo Van XL |
-|------------------|----------------------|-----------------------|----------------|-----------------|
-| Długość (mm)     | 4403                 | 4753                  | 4403           | 4753            |
-| Szerokość (mm)   | 1848                 | 1848                  | 1848           | 1848            |
-| Wysokość (mm)    | 1844                 | 1849                  | 1812           | 1812            |
-| Rozstaw osi (mm) | 2785                 | 2975                  | 2785           | 2975            |
-
-Dopuszczalna masa całkowita mieści się zazwyczaj w przedziale 2100–2400 kg, zależnie od silnika i wersji. Ładowność w [Berlingo dostawczym](/modele/citroen-berlingo/dostawczy/) wynosi od 650 do 1000 kg. Bagażnik wersji osobowej pomieści od 775 litrów (Berlingo M) do 1050 litrów ([Berlingo XL](/modele/citroen-berlingo/xl/)) przy standardowym układzie siedzeń.
+DMC: 2100–2400 kg. Ładowność [Berlingo dostawczego](/modele/citroen-berlingo/dostawczy/): 650–1000 kg. Bagażnik osobowego: 775 l (M) do 1050 l ([XL](/modele/citroen-berlingo/xl/)).
 
 ## Silniki – napędy Berlingo {#silniki}
 
-Gama silnikowa Berlingo na przestrzeni lat była zróżnicowana. Poniżej najważniejsze jednostki:
-
-- **[1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) (75–120 KM)** – sprawdzony diesel, dobry kompromis między osiągami a spalaniem; produkowany od 2004 do 2018 roku
-- **1.5 BlueHDI (75–130 KM)** – nowsza konstrukcja spełniająca normę Euro 6, wyższa kultura pracy i lepsza efektywność paliwowa
-- **1.2 PureTech (110–130 KM)** – turbobenzyna o niskim zużyciu paliwa i żywym charakterze
-- **[ë-Berlingo](/modele/citroen-berlingo/elektryczny/) (100 kW / 136 KM)** – wersja elektryczna z baterią 50 kWh i zasięgiem do 280 km według WLTP
+- **[1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) (75–120 KM)** – sprawdzony diesel z dobrym kompromisem mocy i spalania; 2004–2018
+- **1.5 BlueHDI (75–130 KM)** – nowsza konstrukcja Euro 6, wyższa kultura pracy
+- **1.2 PureTech (110–130 KM)** – turbobenzyna o niskim zużyciu i żywym charakterze
+- **[ë-Berlingo](/modele/citroen-berlingo/elektryczny/) (136 KM)** – wersja elektryczna, bateria 50 kWh, zasięg do 280 km WLTP
 
 ![Citroën Berlingo III na drodze](/images/citroen-berlingo-hero.jpg)
 
 ## Wersje nadwoziowe i zastosowania {#wersje-nadwozia}
 
-- **[Berlingo Multispace](/modele/citroen-berlingo/multispace/) (osobowy)** – dla rodzin ceniących przestrzeń i wygodę podczas codziennych przejazdów
-- **[Berlingo Van](/modele/citroen-berlingo/van/) (dostawczy)** – narzędzie pracy dla firm, z dużą przestrzenią ładunkową i różnymi konfiguracjami wnętrza
-- **[Berlingo Long / XL](/modele/citroen-berlingo/long/)** – wydłużona wersja z jeszcze większym bagażnikiem i przestrzenią pasażerską
+- **[Berlingo Multispace](/modele/citroen-berlingo/multispace/)** – wersja osobowa dla rodzin
+- **[Berlingo Van](/modele/citroen-berlingo/van/)** – narzędzie pracy z dużą przestrzenią ładunkową
+- **[Berlingo Long / XL](/modele/citroen-berlingo/long/)** – wydłużona wersja
 - **[Berlingo 7-osobowy](/modele/citroen-berlingo/7-osobowy/)** – trzeci rząd siedzeń dla dużych rodzin
 
 ## Berlingo na tle konkurencji {#konkurencja}
 
-Berlingo rywalizuje bezpośrednio z [Peugeotem Rifterem](/modele/peugeot-partner/), [Oplem Combo](/modele/opel-combo/), [VW Caddy](/modele/volkswagen-caddy/) i [Renault Kangoo](/modele/renault-kangoo/). Na tle tej czwórki Berlingo wyróżnia się bagażnikiem klasy XL oraz – w generacji III – szerokim wyborem długości nadwozia. Rifter to bliźniak z inną atrapą, Caddy oferuje lepsze wyciszenie kabiny, a Kangoo tradycyjnie mocną sieć serwisową Renault. Wybór między nimi sprowadza się do preferencji dotyczących sieci serwisowej i wyposażenia seryjnego.
+Berlingo rywalizuje z [Peugeotem Rifterem](/modele/peugeot-partner/), [Oplem Combo](/modele/opel-combo/), [VW Caddy](/modele/volkswagen-caddy/) i [Renault Kangoo](/modele/renault-kangoo/). Rifter to bliźniak z inną atrapą, Caddy oferuje lepsze wyciszenie, a Kangoo mocną sieć serwisową Renault. Berlingo wyróżnia się bagażnikiem klasy XL i szerokim wyborem długości nadwozia.
 
-{{% expert name="Kowalczyk" %}}Kupując używane Berlingo, zwróć uwagę na stan zawieszenia, szczególnie w egzemplarzach eksploatowanych w trudnych warunkach. Sprawdź historię serwisową i ewentualne naprawy blacharskie. Silnik [1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) wymaga regularnej wymiany oleju – pominięte przeglądy szybko kończą się awarią turbosprężarki.{{% /expert %}}
+{{% expert name="Kowalczyk" %}}
+Kupując używane Berlingo, zwróć uwagę na stan zawieszenia, szczególnie w egzemplarzach z trudnych warunków. Sprawdź historię serwisową – silnik [1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) wymaga regularnej wymiany oleju, pominięte przeglądy szybko kończą się awarią turbosprężarki.
+{{% /expert %}}
 
 ## Typowe usterki i koszty eksploatacji {#usterki}
 
-Problemy różnią się między generacjami. W pierwszej zdarzały się usterki układu elektrycznego i zawieszenia. Druga generacja bywa kłopotliwa przez awarie turbosprężarek w 1.6 HDI i zatykające się filtry cząstek stałych FAP. Trzecia generacja jest pod tym względem lepsza, ale wciąż wymaga pilnowania terminów przeglądów.
+Problemy różnią się między generacjami. W pierwszej – usterki elektryki i zawieszenia. W drugiej – awarie turbo w 1.6 HDI i zatykające się filtry FAP. Trzecia generacja jest pod tym względem lepsza, ale wymaga pilnowania terminów przeglądów.
 
-Koszt przeglądu olejowego to zwykle 300–500 zł, wymiana rozrządu – 800–1200 zł. Części zamienne są łatwo dostępne ze względu na skalę sprzedaży modelu. Dane o [spalaniu Berlingo](/serwis/citroen-berlingo-spalanie/) dla poszczególnych silników znajdziesz w dedykowanym artykule.
+Przegląd olejowy: 300–500 zł. Wymiana rozrządu: 800–1200 zł. Części zamienne łatwo dostępne ze względu na skalę sprzedaży. Realne [spalanie Berlingo](/serwis/citroen-berlingo-spalanie/) zależy od silnika i stylu jazdy – od 5 l/100 km na trasie (1.5 BlueHDI) do 9 l w mieście (1.2 PureTech).
 
-{{% info title="Ciekawostka" icon="engineering" %}}Berlingo było jednym z pierwszych kombivanów z napędem elektrycznym. Już w 1998 roku Citroën wprowadził Berlingo Electrique z akumulatorami niklowo-kadmowymi – na dwie dekady przed modą na elektromobilność.{{% /info %}}
+{{% info title="Ciekawostka" icon="engineering" %}}
+Berlingo było jednym z pierwszych kombivanów z napędem elektrycznym. Już w 1998 roku Citroën wprowadził Berlingo Electrique z akumulatorami niklowo-kadmowymi – na dwie dekady przed modą na elektromobilność.
+{{% /info %}}
+
+*Źródła: Wikipedia, Citroën, AutoCentrum.pl, auto-data.net*
