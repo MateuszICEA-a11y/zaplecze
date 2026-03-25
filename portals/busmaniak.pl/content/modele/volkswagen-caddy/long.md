@@ -22,7 +22,7 @@ faq:
 
 ## Caddy Long vs Caddy Maxi {#long-vs-maxi}
 
-Caddy Long to nazwa wprowadzona w V generacji (od 2020). W III generacji (2004–2015) i IV generacji (2015–2020) identyczna wersja nazywała się [Caddy Maxi](/modele/volkswagen-caddy/maxi/). Wymiary, parametry techniczne i zastosowania są zbliżone – zmieniono jedynie nazwę marketingową.
+[Volkswagen Caddy](/modele/volkswagen-caddy/) Long to nazwa wprowadzona w V generacji (od 2020). W III generacji (2004–2015) i IV generacji (2015–2020) identyczna wersja nazywała się [Caddy Maxi](/modele/volkswagen-caddy/maxi/). Wymiary, parametry techniczne i zastosowania są zbliżone – zmieniono jedynie nazwę marketingową.
 
 Szukając Caddy na rynku wtórnym, pamiętaj: do 2020 roku – Maxi, od 2020 – Long.
 
@@ -68,3 +68,4 @@ Caddy Long sprawdza się w trzech głównych scenariuszach:
 
 {{% expert name="Kowalczyk" %}}Caddy California w wersji Long to jedyny mini-kamper VW, który nie wymaga wydawania 200+ tys. zł na Transportera. Łóżko 1,98 x 1,07 m, mała kuchenka z blatem i stolik – wystarczy na weekendowy biwak. Do poważniejszego kamperowania lepszy będzie [Transporter](/modele/volkswagen-transporter/) lub [Multivan](/modele/volkswagen-multivan/).{{% /expert %}}
 
+*Źródła: Wikipedia, Volkswagen, auto-data.net*

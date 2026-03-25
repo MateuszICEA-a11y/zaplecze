@@ -78,3 +78,5 @@ Ceny wersji Long są o ok. 10 000–15 000 zł wyższe niż odpowiadające im wa
 {{% expert name="Kowalczyk" %}}
 Proace Verso Long 177 KM z automatem to solidny wybór dla firm transportowych i dużych rodzin. Jedyne zastrzeżenie: przy zakupie sprawdź wariant drzwi bocznych. Konfiguracja z jedną parą przesuwnych drzwi po prawej stronie utrudnia wsiadanie do trzeciego rzędu przez osoby starsze lub z bagażem. Lepsza jest wersja z podwójnymi drzwiami prawostronnym lub z drzwiami po obu stronach.
 {{% /expert %}}
+
+*Źródła: Wikipedia, Toyota, auto-data.net*

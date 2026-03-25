@@ -17,7 +17,7 @@ faq:
     answer: "Tak – Crafter II dostępny jest w wersji 4Motion (AWD) z silnikiem 2.0 TDI 177 KM. To rzadkie rozwiązanie w klasie dużych dostawczaków, dostępne głównie w konkurencji z Mercedesem Sprinter 4x4."
 ---
 
-Volkswagen Crafter II (od 2017) to duży van dostawczy klasy N1/N2, produkowany w Poznaniu i Wrześni – jako pierwsza w historii tej nazwy w pełni samodzielna platforma VW. Do 2017 roku Crafter korzystał z platformy Daimler (identyczny z Mercedesem Sprinterem W906). Nowy Crafter ma własną architekturę, trzy opcje napędu i jedno z bardziej rozbudowanych systemów ADAS w segmencie.
+[Volkswagen Crafter](https://pl.wikipedia.org/wiki/Volkswagen_Crafter) II (od 2017) to duży van dostawczy klasy N1/N2, produkowany w Poznaniu i Wrześni – jako pierwsza w historii tej nazwy w pełni samodzielna platforma VW. Do 2017 roku Crafter korzystał z platformy Daimler (identyczny z Mercedesem Sprinterem W906). Nowy Crafter ma własną architekturę, trzy opcje napędu i jedno z bardziej rozbudowanych systemów ADAS w segmencie.
 
 ## Historia modelu i odcięcie od Sprintera
 
@@ -86,3 +86,5 @@ Crafter jest jednym z najlepiej wyposażonych seryjna dostawczaków pod względe
 - system monitorowania zmęczenia kierowcy
 
 Wszystkie systemy dostępne od wersji wyposażenia Trendline. Wersja Highline dodaje cyfrowe wskaźniki 10" i ekran dotykowy 9".
+
+*Źródła: Wikipedia, Volkswagen, auto-data.net*

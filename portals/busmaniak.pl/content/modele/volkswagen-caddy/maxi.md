@@ -24,7 +24,7 @@ faq:
 
 ## Caddy Maxi – co to za wersja? {#czym-jest}
 
-Caddy Maxi to wydłużona odmiana Caddy, dostępna od III generacji (2004). Dłuższy rozstaw osi przekłada się na większą przestrzeń wewnątrz – zarówno dla pasażerów, jak i dla ładunku. W V generacji (od 2020) nazwa Maxi została zastąpiona przez [Long](/modele/volkswagen-caddy/long/), ale parametry są zbliżone.
+Caddy Maxi to wydłużona odmiana [Volkswagena Caddy](/modele/volkswagen-caddy/), dostępna od III generacji (2004). Dłuższy rozstaw osi przekłada się na większą przestrzeń wewnątrz – zarówno dla pasażerów, jak i dla ładunku. W V generacji (od 2020) nazwa Maxi została zastąpiona przez [Long](/modele/volkswagen-caddy/long/), ale parametry są zbliżone.
 
 Wersja Maxi/Long występuje zarówno jako osobowy (5 lub 7 miejsc), jak i jako Cargo (dostawczy).
 
@@ -80,3 +80,4 @@ Caddy Maxi to jedna z najlepszych propozycji w segmencie kombivanów rodzinnych:
 
 {{% expert name="Kowalczyk" %}}Caddy Maxi z 2.0 TDI 102 KM i DSG to moim zdaniem najlepsza konfiguracja rodzinna w segmencie. Wygodniejszy od [Berlingo XL](/modele/citroen-berlingo/xl/), lepiej wyciszony, z lepszym prowadzeniem. Jedyny minus – cena. Na rynku wtórnym Caddy Maxi kosztuje 15–20% więcej niż Berlingo XL tego samego rocznika.{{% /expert %}}
 
+*Źródła: Wikipedia, Volkswagen, auto-data.net*

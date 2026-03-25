@@ -9,3 +9,7 @@ parent: "volkswagen-crafter"
 type: "page"
 volume: 390
 ---
+
+[Volkswagen Crafter](/modele/volkswagen-crafter/) w wersji brygadówka to pojazd mieszany (kategoria N1) z kabinę dwurzędową i skróconą przestrzenią ładunkową – popularny wybór w firmach usługowych i budowlanych.
+
+*Źródła: Wikipedia, Volkswagen, auto-data.net*

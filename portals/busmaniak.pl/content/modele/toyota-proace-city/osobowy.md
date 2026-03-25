@@ -72,3 +72,5 @@ Kupując Verso do transportu 7 osób, zawsze polecam wersję Long z dieslem 130 
 {{% /expert %}}
 
 Bezpośrednia konkurencja to [Citroën Berlingo osobowy](/modele/citroen-berlingo/) – identyczny technicznie, często tańszy w zakupie i tańszy w serwisie niezależnym ze względu na większą sieć warsztatów.
+
+*Źródła: Wikipedia, Toyota, auto-data.net*

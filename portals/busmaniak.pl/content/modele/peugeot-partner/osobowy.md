@@ -17,7 +17,7 @@ faq:
     answer: "Tak – Rifter w wersji Long (L2) oferuje opcjonalny trzeci rząd siedzeń dla 2 osób. Wersja 7-miejscowa wymaga Riftera Long z pakietem siedzeń rzędu 3. W krótszej wersji bazowej dostępnych jest 5 miejsc."
 ---
 
-Peugeot Partner w wersji osobowej przeszedł w 2018 roku znaczącą zmianę – model Partner Tepee (generacja II, platforma M49) zastąpił Rifter na nowej platformie EMP2. Obie generacje cieszy się popularnością na rynku wtórnym, dlatego warto wiedzieć, czego szukać w każdej z nich.
+[Peugeot Partner](/modele/peugeot-partner/) w wersji osobowej przeszedł w 2018 roku znaczącą zmianę – model Partner Tepee (generacja II, platforma M49) zastąpił Rifter na nowej platformie EMP2. Obie generacje cieszy się popularnością na rynku wtórnym, dlatego warto wiedzieć, czego szukać w każdej z nich.
 
 ## Partner Tepee – generacja II (2008–2018)
 
@@ -74,3 +74,5 @@ Rifter i Partner Tepee są rejestrowane jako samochody osobowe (kategoria M1). Z
 | Koszty zakupu używanego | niższe | wyższe |
 
 Dla budżetu do 40 000 zł – Tepee 1.6 HDi z dobrą historią serwisową. Powyżej 55 000 zł – Rifter z 2019–2020 roku.
+
+*Źródła: Wikipedia, Peugeot, auto-data.net*

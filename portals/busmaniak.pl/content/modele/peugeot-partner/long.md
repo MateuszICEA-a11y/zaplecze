@@ -17,7 +17,7 @@ faq:
     answer: "Tak, pod warunkiem ułożenia ich wzdłuż pojazdu. Szerokość między nadkolami wynosi 1225 mm, więc palety 800 mm mieszczą się swobodnie. Dwie palety zajmują ok. 2400 mm długości – mniej niż dostępne 1817 mm, jednak przy właściwym ich przesunięciu można załadować 2 palety pod warunkiem, że wysokość towaru nie przekroczy 1246 mm."
 ---
 
-Peugeot Partner III Long (L2) to wydłużona wersja kompaktowego vana o rozstawie osi 2975 mm. Rozróżnienie między Short (L1) a Long (L2) jest proste: Long o 350 mm dłuższy umożliwia załadunek towarów i narzędzi, które nie mieszczą się w wersji bazowej.
+[Peugeot Partner](/modele/peugeot-partner/) III Long (L2) to wydłużona wersja kompaktowego vana o rozstawie osi 2975 mm. Rozróżnienie między Short (L1) a Long (L2) jest proste: Long o 350 mm dłuższy umożliwia załadunek towarów i narzędzi, które nie mieszczą się w wersji bazowej.
 
 ## Wymiary kluczowe
 
@@ -85,3 +85,5 @@ Peugeot oferuje Partner Long w leasingu operacyjnym przez Peugeot Leasing Polska
 | Infotainment | i-Connect 8" | Connectra 8" | Intellilink 8" |
 
 Mechanika i wymiary są identyczne – wybór między nimi to kwestia preferencji marki i aktualnych promocji dealerskich.
+
+*Źródła: Wikipedia, Peugeot, auto-data.net*

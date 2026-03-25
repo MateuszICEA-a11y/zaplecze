@@ -17,7 +17,7 @@ faq:
     answer: "Przy bazowaniu pojazdu przy ładowarce nocnej i dziennym przebiegu do 150 km – tak. Koszt energii na 100 km (ok. 18 kWh) przy taryfie nocnej to ok. 10–12 zł wobec 27–35 zł paliwa w 1.5 D. Przy braku własnej ładowarki opłacalność spada."
 ---
 
-Opel e-Combo to elektryczna wersja Combo E na platformie PSA EMP2 – ten sam układ jezdny, te same wymiary, inna jednostka napędowa. Silnik elektryczny 136 KM zastępuje cały układ spalinowy, bateria 50 kWh montowana jest pod podłogą (bez ingerencji w przestrzeń ładunkową).
+[Opel e-Combo](/modele/opel-combo/) to elektryczna wersja Combo E na platformie PSA EMP2 – ten sam układ jezdny, te same wymiary, inna jednostka napędowa. Silnik elektryczny 136 KM zastępuje cały układ spalinowy, bateria 50 kWh montowana jest pod podłogą (bez ingerencji w przestrzeń ładunkową).
 
 ## Napęd i osiągi
 
@@ -73,3 +73,5 @@ e-Combo może być dofinansowane z programu FPPW (Fundusz Pożyczkowy Pojazdów 
 Bateria e-Combo ma gwarancję producenta na 8 lat lub 160 000 km do zachowania minimum 70% pojemności. W praktyce – podobne pakiety PSA stosowane w e-208 i e-Berlingo w warunkach flot wykazują utratę ok. 8–12% pojemności po 100 000 km i 5 latach eksploatacji.
 
 Koszty serwisu e-Combo są niższe niż wersji spalinowej – brak oleju silnikowego, DPF, EGR i rozrządu. Przeglądy obejmują układ hamulcowy, płyn chłodniczy do invertera i sprawdzenie izolacji wysokonapięciowej. Rok serwisu kosztuje ok. 400–700 zł wobec 800–1200 zł dla 1.5 D.
+
+*Źródła: Wikipedia, Opel, auto-data.net*

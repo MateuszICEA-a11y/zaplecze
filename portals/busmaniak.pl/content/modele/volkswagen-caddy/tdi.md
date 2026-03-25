@@ -26,7 +26,7 @@ faq:
 
 ## Dane techniczne silników TDI {#dane-techniczne}
 
-Caddy oferowało trzy główne rodziny diesli TDI:
+[Volkswagen Caddy](/modele/volkswagen-caddy/) oferowało trzy główne rodziny diesli TDI:
 
 | Silnik    | Oznaczenie | Moc (KM) | Moment (Nm) | Rozrząd  | Norma  | Lata       |
 |-----------|-----------|----------|-------------|----------|--------|-----------|
@@ -105,3 +105,5 @@ Na tle konkurencji Caddy TDI oferuje lepsze prowadzenie i wyciszenie niż [Berli
 | Klocki hamulcowe (przód)   | 350 – 600   | Co 50–80 000 km |
 
 Więcej o modelu – historia, wersje nadwoziowe, wyposażenie – na stronie [Volkswagena Caddy](/modele/volkswagen-caddy/).
+
+*Źródła: Wikipedia, Volkswagen, auto-data.net*

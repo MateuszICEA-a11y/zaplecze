@@ -20,7 +20,7 @@ faq:
     answer: "Proace Verso ma pełne oszklenie, fotele pasażerskie na całej długości nadwozia i inne zawieszenie tył dostosowane do przewozu osób. Proace towarowy ma blaszane ściany boczne i ściankę odgradzającą kabinę."
 ---
 
-Toyota Proace osobowy to Proace Verso – van pasażerski do 9 miejsc na platformie Stellantis EMP2, sprzedawany obok Citroëna Space Tourer i Peugeoта Traveller. Jeśli szukasz dużego busa do przewozu rodziny, grupy lub jako shuttle firmowy, poniżej masz konkretne dane.
+[Toyota Proace](/modele/toyota-proace/) osobowy to Proace Verso – van pasażerski do 9 miejsc na platformie Stellantis EMP2, sprzedawany obok Citroëna Space Tourer i Peugeoта Traveller. Jeśli szukasz dużego busa do przewozu rodziny, grupy lub jako shuttle firmowy, poniżej masz konkretne dane.
 
 ## Proace Verso – co to jest i czym różni się od towarowego
 
@@ -97,3 +97,5 @@ Ceny nowego Proace Verso (2024–2025):
 Na rynku wtórnym roczne Proace Verso Long 177 KM auto można znaleźć w granicach 150 000–165 000 zł – to popularny zakup dla firm eventowych i szkół jazdy.
 
 Linki: [Toyota Proace – strona modelu](/modele/toyota-proace/) | [Toyota Proace Verso](/modele/toyota-proace-verso/)
+
+*Źródła: Wikipedia, Toyota, auto-data.net*

@@ -27,7 +27,7 @@ faq:
 
 ## Historia i generacje Volkswagena Caddy {#historia-generacje}
 
-Historia Caddy sięga 1979 roku, kiedy Volkswagen stworzył lekkiego pickupa na bazie Golfa pierwszej generacji. Od tamtej pory model przeszedł pięć generacji, ewoluując z prostego dostawczaka w nowoczesny kombivan.
+Historia [Volkswagena Caddy](https://pl.wikipedia.org/wiki/Volkswagen_Caddy) sięga 1979 roku, kiedy Volkswagen stworzył lekkiego pickupa na bazie Golfa pierwszej generacji. Od tamtej pory model przeszedł pięć generacji, ewoluując z prostego dostawczaka w nowoczesny kombivan.
 
 ### Caddy I (1979–1995)
 
@@ -113,3 +113,5 @@ Najczęstsze problemy per generacja:
 - **EGR i DPF** – typowe dla diesli problemy z nagarem; czyszczenie EGR 500–1000 zł, regeneracja DPF 1000–2000 zł
 
 Koszty serwisowe Caddy są wyższe niż u konkurencji z grupy PSA. Przegląd olejowy to 400–600 zł (vs 300–500 zł w Berlingo), wymiana rozrządu 800–1500 zł. Części oryginalne VW są droższe, ale zamienniki są szeroko dostępne.
+
+*Źródła: Wikipedia, Volkswagen, auto-data.net*

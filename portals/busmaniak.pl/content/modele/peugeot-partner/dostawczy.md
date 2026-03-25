@@ -17,7 +17,7 @@ faq:
     answer: "Partner i Transit Connect są bezpośrednimi rywalami. Partner ma niższy próg załadunkowy (576 mm vs ok. 610 mm) i tańszy serwis. Transit Connect ma nieco bardziej rozbudowaną ofertę zabudów i szerszą sieć serwisową w Polsce poza dużymi miastami."
 ---
 
-Peugeot Partner III Van to kompaktowy dostawczak w kategorii N1, zaprojektowany do intensywnej eksploatacji w logistyce miejskiej i podmiejskiej. Oferuje ładowność do 1000 kg, niską podłogę załadunkową i sprawdzone silniki BlueHDi – przy relatywnie niskich kosztach serwisu dzięki wspólnej platformie z Berlingo III i Combo E.
+[Peugeot Partner](/modele/peugeot-partner/) III Van to kompaktowy dostawczak w kategorii N1, zaprojektowany do intensywnej eksploatacji w logistyce miejskiej i podmiejskiej. Oferuje ładowność do 1000 kg, niską podłogę załadunkową i sprawdzone silniki BlueHDi – przy relatywnie niskich kosztach serwisu dzięki wspólnej platformie z Berlingo III i Combo E.
 
 ## Konfiguracje dostępne w Partnerze dostawczym
 
@@ -82,3 +82,5 @@ Typowe koszty eksploatacji przy 30 000 km/rok (diesel 1.5 D 100 KM):
 - paliwo (5,8 l/100 km, cena 6,5 zł/l): ok. 11 300 zł/rok
 - serwis i przeglądy: ok. 1500–2500 zł/rok
 - ogumienie (wymiana co 2–3 lata): ok. 1000–1500 zł/rok
+
+*Źródła: Wikipedia, Peugeot, auto-data.net*

@@ -24,7 +24,7 @@ faq:
 
 ## Caddy osobowy – przegląd wersji {#przegląd}
 
-W III i IV generacji wersja osobowa Caddy funkcjonowała pod nazwą Caddy Life. Piąta generacja (od 2020) uprościła nazewnictwo – osobowy Caddy dostępny jest w czterech liniach wyposażenia.
+W III i IV generacji wersja osobowa [Volkswagena Caddy](/modele/volkswagen-caddy/) funkcjonowała pod nazwą Caddy Life. Piąta generacja (od 2020) uprościła nazewnictwo – osobowy Caddy dostępny jest w czterech liniach wyposażenia.
 
 Od wersji Cargo (dostawczej) różni się przede wszystkim konfiguracją wnętrza: pełne przeszklenie, 5–7 siedzeń z tapicerką, lepsze materiały wykończeniowe i bogatsza lista wyposażenia seryjnego.
 
@@ -72,3 +72,5 @@ Pełny przegląd silników i generacji na stronie [Volkswagena Caddy](/modele/vo
 - **[Opel Combo Life](/modele/opel-combo/)** – bliźniak Berlingo, ale z siecią serwisową Opla
 
 Caddy wygrywa jakością materiałów, prowadzeniem (platforma MQB) i dostępnością opcji. Przegrywa ceną zakupu i kosztami serwisu.
+
+*Źródła: Wikipedia, Volkswagen, auto-data.net*

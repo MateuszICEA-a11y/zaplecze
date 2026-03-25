@@ -20,7 +20,7 @@ faq:
     answer: "Zabudowy kontenerowe na podwozie Sprinter wykonują m.in. Igloocar, Frostline, Euroglass, PLT Truck. Zabudowę należy certyfikować u producenta podwozia (Mercedes) lub w stacji homologacyjnej przed rejestracją."
 ---
 
-Mercedes Sprinter w wersji podwoziowej to baza dla zabudów kontenerowych od logistyki chłodniczej po food trucki i laboratoria mobilne. Przy DMC 3,5–5,5 t pokrywa potrzeby małej i średniej dystrybucji bez konieczności przesiadki na ciężarówkę. Kluczowe jest dobieranie zabudowy przed zakupem podwozia – nie odwrotnie.
+[Mercedes Sprinter](/modele/mercedes-sprinter/) w wersji podwoziowej to baza dla zabudów kontenerowych od logistyki chłodniczej po food trucki i laboratoria mobilne. Przy DMC 3,5–5,5 t pokrywa potrzeby małej i średniej dystrybucji bez konieczności przesiadki na ciężarówkę. Kluczowe jest dobieranie zabudowy przed zakupem podwozia – nie odwrotnie.
 
 ## Podwozie Sprinter – podstawa zabudowy
 
@@ -82,3 +82,5 @@ Przy wyborze podwozia pod chłodnię zawsze zamaw opcję wzmocnionej podłogi ł
 - Zabudowa food truck z wyposażeniem – od ok. 80 000–150 000 zł netto (zależnie od zakresu wyposażenia)
 
 Całkowity koszt pojazdu gotowego do pracy: od ok. 200 000 zł (izotermika) do ponad 350 000 zł (chłodnia ATP lub food truck premium). Finansowanie zabudowy można łączyć z leasingiem podwozia u wybranych leasingodawców jako jeden przedmiot leasingu.
+
+*Źródła: Wikipedia, Mercedes-Benz, auto-data.net*

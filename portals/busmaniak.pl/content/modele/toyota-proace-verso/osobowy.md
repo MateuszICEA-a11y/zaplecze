@@ -90,3 +90,5 @@ Bezpośrednia konkurencja:
 {{% expert name="Kowalczyk" %}}
 Proace Verso Family to najlepszy stosunek ceny do wyposażenia w tej rodzinie. VIP jest drogi, a różnica w stosunku do Familia jest duża. Zanim zdecydujesz się na VIP, sprawdź faktyczną dostępność – Toyota rzadko trzyma VIP w magazynie, czas oczekiwania wynosi często 3–6 miesięcy. Family jest dostępna szybciej i ma wszystko, czego potrzeba do regularnego przewozu pasażerów.
 {{% /expert %}}
+
+*Źródła: Wikipedia, Toyota, auto-data.net*

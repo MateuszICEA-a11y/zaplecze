@@ -17,7 +17,7 @@ faq:
     answer: "Tak – wersja Long (L2, 4753 mm) z przestrzenią ładunkową 4,4 m³ mieści 2 palety EUR 1200x800 mm ułożone wzdłuż, przy szerokości między nadkolami 1225 mm. Wersja Short (L1) mieści tylko jedną paletę."
 ---
 
-Peugeot Partner III (od 2018 roku) to kompaktowy van dostawczy segmentu N1, zbudowany na platformie PSA EMP2 razem z Citroënem Berlingo III i Oplem Combo E. W Polsce należy do trójki najczęściej wybieranych kompaktowych dostawczaków – obok Renault Kangoo i Volkswagena Caddy.
+[Peugeot Partner](https://pl.wikipedia.org/wiki/Peugeot_Partner) III (od 2018 roku) to kompaktowy van dostawczy segmentu N1, zbudowany na platformie PSA EMP2 razem z Citroënem Berlingo III i Oplem Combo E. W Polsce należy do trójki najczęściej wybieranych kompaktowych dostawczaków – obok Renault Kangoo i Volkswagena Caddy.
 
 ## Platforma i historia modelu
 
@@ -80,3 +80,5 @@ Od 2024 roku kilka polskich miast (Warszawa, Kraków) prowadzi pilotażowe stref
 Jako wspólna platforma z Berlingo III i Combo E, Partner III korzysta z szerokiej bazy części zamiennych dostępnej w Polsce. Ceny usług serwisowych są porównywalne z Berlingo III – wymiana oleju 1.5 D to ok. 250–350 zł, sprzęgło ok. 1000–1500 zł robocizna + części.
 
 Autoryzowane serwisy Peugeot w Polsce obsługują całą gamę PSA/Stellantis – w przypadku awarii w trasie każdy serwis Citroën lub Opel może obsłużyć Partnera.
+
+*Źródła: Wikipedia, Peugeot, auto-data.net*

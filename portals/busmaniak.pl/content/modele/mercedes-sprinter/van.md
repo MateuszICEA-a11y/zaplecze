@@ -20,7 +20,7 @@ faq:
     answer: "Do codziennej logistyki miejskiej i regionalnej optymalny jest OM654 2.0 CDI 143 KM z przekładnią 9G-Tronic. Wersja 170 KM opłaca się przy stałym jeździe autostradowej lub dużych ładunkach powyżej 1500 kg."
 ---
 
-Mercedes Sprinter Van to najczęściej szukana wersja Sprinter w Polsce – i nieprzypadkowo. Furgon dostawczy w układach L1–L4 i H1–H3 pokrywa potrzeby od kurierów po logistykę paletową. Ładowność sięga 2100 kg, pojemność skrzyni – 17 m³. Poniżej znajdziesz wszystkie liczby, które mają znaczenie przy zakupie.
+[Mercedes Sprinter Van](/modele/mercedes-sprinter/) to najczęściej szukana wersja Sprinter w Polsce – i nieprzypadkowo. Furgon dostawczy w układach L1–L4 i H1–H3 pokrywa potrzeby od kurierów po logistykę paletową. Ładowność sięga 2100 kg, pojemność skrzyni – 17 m³. Poniżej znajdziesz wszystkie liczby, które mają znaczenie przy zakupie.
 
 ## Wersje nadwoziowe – długość i wysokość
 
@@ -140,3 +140,5 @@ Opony: rozmiar 225/75 R16C (standardowy) lub 235/65 R16C. Zestaw czterech opon k
 ## Kiedy wybrać Sprinter Van zamiast konkurencji
 
 Sprinter Van wygrywa nad Fordiem Transitiem i VW Crafterem w trzech obszarach: szerokość sieci serwisowej w Polsce, dostępność części zamiennych oraz rozpiętość konfiguracji (12 kombinacji L/H plus trzy układy napędowe). Ford Transit ma niższy próg wejścia cenowego, VW Crafter – bardziej rozbudowany standard ADAS. Jeśli priorytetem jest ładowność i dostępność serwisu 24/7, Sprinter Van pozostaje pierwszym wyborem dla flot powyżej 10 pojazdów.
+
+*Źródła: Wikipedia, Mercedes-Benz, auto-data.net*

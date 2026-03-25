@@ -17,7 +17,7 @@ faq:
     answer: "Combo Life to wersja osobowa z przeszklonymi tylnymi bokami, rozkładaną kanapą i opcją siedmiu miejsc. Odpowiada Berlingo Multispace lub Peugeot Rifterowi i jest sprzedawana jako kompaktowy van rodzinny."
 ---
 
-Opel Combo E (od 2018) to pojazd z platformy PSA EMP2 – tej samej, którą dzieli z Citroënem Berlingo III i Peugeot Partnerem III. To oznacza jedną istotną rzecz praktyczną: serwis, części zamienne i mechanika są wspólne dla całej trójki.
+[Opel Combo](https://pl.wikipedia.org/wiki/Opel_Combo) E (od 2018) to pojazd z platformy PSA EMP2 – tej samej, którą dzieli z Citroënem Berlingo III i Peugeot Partnerem III. To oznacza jedną istotną rzecz praktyczną: serwis, części zamienne i mechanika są wspólne dla całej trójki.
 
 ## Skąd pochodzi nowe Combo
 
@@ -64,3 +64,5 @@ Przy zakupie Combo E z rynku wtórnego należy zwrócić uwagę na:
 - aktualizacje oprogramowania sterownika silnika – Opel wydał kilka poprawek dla PureTech 110
 
 Ceny używanych egzemplarzy z 2019–2021 zaczynają się od ok. 55 000 zł za wersję Van 1.5 D 100 KM z przebiegiem 100 000 km.
+
+*Źródła: Wikipedia, Opel, auto-data.net*

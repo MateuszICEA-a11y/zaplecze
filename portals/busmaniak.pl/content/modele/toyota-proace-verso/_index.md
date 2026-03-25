@@ -24,7 +24,7 @@ faq:
 
 ## Wersje wyposażenia
 
-Toyota Proace Verso jest dostępna w trzech wariantach wyposażenia, które różnią się przeznaczeniem i poziomem komfortu.
+[Toyota Proace Verso](https://pl.wikipedia.org/wiki/Toyota_Proace_Verso) jest dostępna w trzech wariantach wyposażenia, które różnią się przeznaczeniem i poziomem komfortu.
 
 Shuttle – wersja bazowa, skierowana głównie do firm transportowych i przewoźników. Zawiera standardowy system multimedialny Toyota Touch, klimatyzację dwustrefową, czujniki parkowania oraz podstawowe systemy bezpieczeństwa ADAS. Fotele pasażerskie są składane i można je łatwo demontować.
 
@@ -100,3 +100,5 @@ Toyota Proace Verso Long 9-miejscowy z automatem EAT8 i silnikiem 177 KM to poja
 {{% /expert %}}
 
 Szczegółowe dane o homologacji M1 i różnicach między wersjami znajdziesz na stronie [Toyota Proace Verso – wersja osobowa](/modele/toyota-proace-verso/osobowy/). Bazowa platforma i układ techniczny opisane są w artykule o [Toyocie Proace](/modele/toyota-proace/).
+
+*Źródła: Wikipedia, Toyota, auto-data.net*

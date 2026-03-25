@@ -17,7 +17,7 @@ faq:
     answer: "Boxer Combi ma tylne boczne szyby, siedzenia pasażerskie, klimatyzację tylną i tapicerowane ściany. Boxer Van ma blaszaną zabudowę boczną i metalową podłogę ładowni. Wersja Combi jest rejestrowana jako M1 lub M2, Van – jako N1."
 ---
 
-Peugeot Boxer w wersji osobowej – Combi lub Minibus – to pojazd przewozowy dla grup do 9 osób. Stosowany przez firmy transportowe, szkoły, ośrodki pomocy społecznej i wynajem krótkoterminowy. Technicznie identyczny z Boxerem Van, różni się wyposażeniem wnętrza i homologacją.
+[Peugeot Boxer](/modele/peugeot-boxer/) w wersji osobowej – Combi lub Minibus – to pojazd przewozowy dla grup do 9 osób. Stosowany przez firmy transportowe, szkoły, ośrodki pomocy społecznej i wynajem krótkoterminowy. Technicznie identyczny z Boxerem Van, różni się wyposażeniem wnętrza i homologacją.
 
 ## Konfiguracje osobowe Boxera
 
@@ -82,3 +82,5 @@ Producentami zabudów w Polsce: Kutno Bus, AMZ, Orion Pojazdy Specjalne.
 | Cena nowego | podobna | podobna | podobna |
 
 Decyzja zależy od dostępności preferowanego serwisu i aktualnych promocji handlowych.
+
+*Źródła: Wikipedia, Peugeot, auto-data.net*

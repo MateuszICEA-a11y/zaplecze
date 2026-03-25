@@ -24,7 +24,7 @@ faq:
 
 ## Historia i generacje
 
-Toyota Proace pojawił się na rynku w 2013 roku jako odpowiedź marki na rosnące zapotrzebowanie na własny model średniego vana. Przez lata przeszedł dwie wyraźne generacje, różniące się platformą i poziomem integracji z siecią PSA/Stellantis.
+[Toyota Proace](https://pl.wikipedia.org/wiki/Toyota_Proace) pojawił się na rynku w 2013 roku jako odpowiedź marki na rosnące zapotrzebowanie na własny model średniego vana. Przez lata przeszedł dwie wyraźne generacje, różniące się platformą i poziomem integracji z siecią PSA/Stellantis.
 
 - Proace I (2013–2016) - platforma Sevel Nord, bliźniak Fiata Scudo II i Peugeota Expert II; krótka produkcja, stosunkowo mała popularność w Polsce, słabsze wyposażenie i starszy napęd
 - Proace II (od 2017) - platforma PSA EMP2, technicznie identyczny z Peugeotem Expert III, Citroënem Jumpy III i Oplem Vivaro C; produkcja w zakładach Stellantis w Hordain we Francji; facelifting w 2024 roku odświeżył wzornictwo i ofertę silnikową
@@ -128,3 +128,5 @@ Więcej na temat silnika [2.0 D-4D znajdziesz tutaj](/modele/toyota-proace/2-0/)
 {{% expert name="Kowalczyk" %}}
 Proace II to solidny wybór dla firm, które chcą mieć vana klasy Expert lub Jumpy pod marką, do której mają serwis Toyota w pobliżu. Mechanicznie to identyczny samochód – zalety i wady bliźniaków PSA dotyczą go w pełni. Kluczowe pytanie przy zakupie to nie marka, ale dostęp do serwisu i aktualna cena używanego egzemplarza na rynku. Proace bywa droższy od Jumpego przy porównywalnym wyposażeniu, bo Toyota ma wyższe residual values. Przy zakupie floty powyżej 5 sztuk warto negocjować bezpośrednio z importerem.
 {{% /expert %}}
+
+*Źródła: Wikipedia, Toyota, auto-data.net*

@@ -20,7 +20,7 @@ faq:
     answer: "Tourer Pro to wersja podstawowa z fotelami trójkowymi, klimatyzacją i MBUX. Tourist Standard/Comfort/VIP to wersje z wyższej półki – indywidualne fotele, większy rozstaw, lepsza izolacja akustyczna i opcjonalnie panoramiczne okna."
 ---
 
-Mercedes Sprinter osobowy w wersji Tourer to dedykowana platforma dla przewozów grupowych – od transferów lotniskowych po turystykę luksusową. Przy do 19 miejscach i pełnym MBUX konkuruje bezpośrednio z Volkswagenem Crafterem Kombi i Fordiem Transit Bus. Poniżej zestawienie wersji, konfiguracji i cen.
+[Mercedes Sprinter](/modele/mercedes-sprinter/) osobowy w wersji Tourer to dedykowana platforma dla przewozów grupowych – od transferów lotniskowych po turystykę luksusową. Przy do 19 miejscach i pełnym MBUX konkuruje bezpośrednio z Volkswagenem Crafterem Kombi i Fordiem Transit Bus. Poniżej zestawienie wersji, konfiguracji i cen.
 
 ## Wersje Sprinter Tourer – przegląd linii
 
@@ -85,3 +85,5 @@ Orientacyjne ceny brutto (2026):
 - Sprinter Tourist VIP L3 170 KM automat – od ok. 310 000 zł netto
 
 Leasing operacyjny: dla Tourer Transfer 143 KM przy 20% wpłacie własnej i 60 miesiącach – rata od ok. 4100 zł netto/mies. Przy zamówieniu floty (5+ pojazdów) dealer standardowo oferuje rabat 5–8% i priorytetowy serwis.
+
+*Źródła: Wikipedia, Mercedes-Benz, auto-data.net*

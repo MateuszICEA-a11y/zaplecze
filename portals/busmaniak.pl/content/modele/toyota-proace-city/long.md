@@ -20,7 +20,7 @@ faq:
     answer: "Ładowność Proace City Long wynosi do 1000 kg w zależności od wersji silnikowej i wyposażenia."
 ---
 
-Toyota Proace City Long to wersja 4753 mm z ładownią 3,9 m³ i ładownością do 1000 kg – mały dostawczak, który mieści 2 europalety i sprawdza się w miejskiej dystrybucji tam, gdzie Proace (duży) jest już za długi. Jeśli rozważasz wybór między Long i Short, poniżej masz twarde dane.
+[Toyota Proace City](/modele/toyota-proace-city/) Long to wersja 4753 mm z ładownią 3,9 m³ i ładownością do 1000 kg – mały dostawczak, który mieści 2 europalety i sprawdza się w miejskiej dystrybucji tam, gdzie Proace (duży) jest już za długi. Jeśli rozważasz wybór między Long i Short, poniżej masz twarde dane.
 
 ## Wymiary Toyota Proace City Long
 
@@ -108,3 +108,5 @@ Wszystkie wersje z napędem na przednie koła. Brak 4WD w tej klasie – to segm
 Przy ładowności 1000 kg i DMC 2500 kg prawo jazdy kategorii B wystarczy w całości.
 
 Link: [Toyota Proace City – strona modelu](/modele/toyota-proace-city/)
+
+*Źródła: Wikipedia, Toyota, auto-data.net*

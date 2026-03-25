@@ -17,7 +17,7 @@ faq:
     answer: "Crafter Kombi ma boczne szyby, siedzenia pasażerskie, tapicerowane ściany i klimatyzację tylną. Crafter Van ma blaszaną zabudowę, metalową podłogę ładowni i jest rejestrowany jako N1. Kombi to kategoria M1 lub M2."
 ---
 
-Volkswagen Crafter II w wersji osobowej – Kombi – to pojazd do przewozu grup do 9 osób, budowany na tej samej bazie co Crafter Van. Wyróżnia go bogatsza kabina pasażerska, wyższy standard wyposażenia i możliwość konfiguracji jako pojazd specjalny (ambulans, kamper, pojazd dla osób z niepełnosprawnościami).
+[Volkswagen Crafter](/modele/volkswagen-crafter/) II w wersji osobowej – Kombi – to pojazd do przewozu grup do 9 osób, budowany na tej samej bazie co Crafter Van. Wyróżnia go bogatsza kabina pasażerska, wyższy standard wyposażenia i możliwość konfiguracji jako pojazd specjalny (ambulans, kamper, pojazd dla osób z niepełnosprawnościami).
 
 ## Wersje osobowe Craftera
 
@@ -83,3 +83,5 @@ Crafter jest popularną bazą dla producentów zabudów w Polsce:
 - pojazdy policyjne i wojskowe: specjalne konfiguracje kabiny i zabudowy
 
 Crafter dzięki opcji AWD 4Motion jest jedynym dużym dostawczakiem z napędem 4x4 w standardowej ofercie katalogowej – co otwiera możliwości dla służb terenowych i firm w trudnym terenie.
+
+*Źródła: Wikipedia, Volkswagen, auto-data.net*

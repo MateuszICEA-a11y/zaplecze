@@ -24,7 +24,7 @@ faq:
 
 ## Proace City – co to za auto?
 
-Toyota weszła na segment kompaktowych dostawczaków w 2020 roku, przejmując gotową architekturę Stellantis (dawniej PSA). Proace City produkowany jest w fabryce w Vigo w Hiszpanii – tej samej, która składa Partnera i Berlingo. To decyzja biznesowa, nie kompromis techniczny: platforma EMP2 to dojrzała konstrukcja, sprawdzona w milionach egzemplarzy.
+Toyota weszła na segment kompaktowych dostawczaków w 2020 roku, przejmując gotową architekturę Stellantis (dawniej PSA). [Toyota Proace City](https://pl.wikipedia.org/wiki/Toyota_Proace_City) produkowany jest w fabryce w Vigo w Hiszpanii – tej samej, która składa Partnera i Berlingo. To decyzja biznesowa, nie kompromis techniczny: platforma EMP2 to dojrzała konstrukcja, sprawdzona w milionach egzemplarzy.
 
 Czym Proace City wyróżnia się spośród bliźniaków:
 
@@ -119,3 +119,5 @@ Proace City konkuruje bezpośrednio z bliźniakami na platformie EMP2 oraz z Ren
 Różnice między bliźniakami na platformie EMP2 są minimalne pod względem technicznym. Proace City wyróżnia się gwarancją Toyoty i systemem bezpieczeństwa Toyota Safety Sense w standardzie. Renault Kangoo IV to odrębna platforma – nieco większa przestrzeń ładunkowa w wersji Short, ale krótsza historia niezawodności nowej generacji.
 
 Jeśli interesuje cię większy dostawczak Toyoty – sprawdź [Toyota Proace](/modele/toyota-proace/), który oferuje przestrzeń ładunkową od 5,1 do 6,1 m³.
+
+*Źródła: Wikipedia, Toyota, auto-data.net*

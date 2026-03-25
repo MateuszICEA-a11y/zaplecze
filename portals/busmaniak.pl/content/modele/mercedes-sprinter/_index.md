@@ -24,7 +24,7 @@ faq:
 
 ## Historia i generacje {#historia-generacje}
 
-Mercedes-Benz Sprinter zadebiutował w 1995 roku jako następca legendarnego TN (T1). Od pierwszego dnia wyznaczał standardy segmentu – tylnonapędowe podwozie, solidna konstrukcja ramowa w wersjach ciężkich i niezwykła jak na dostawczak kultura jazdy. Przez trzy dekady Sprinter stał się synonimem profesjonalnego transportu, a jego nazwa funkcjonuje w języku potocznym jako rzeczownik pospolity na określenie busa dostawczego.
+[Mercedes-Benz Sprinter](https://pl.wikipedia.org/wiki/Mercedes-Benz_Sprinter){rel="nofollow"} zadebiutował w 1995 roku jako następca legendarnego TN (T1). Od pierwszego dnia wyznaczał standardy segmentu – tylnonapędowe podwozie, solidna konstrukcja ramowa w wersjach ciężkich i niezwykła jak na dostawczak kultura jazdy. Przez trzy dekady Sprinter stał się synonimem profesjonalnego transportu, a jego nazwa funkcjonuje w języku potocznym jako rzeczownik pospolity na określenie busa dostawczego.
 
 ### Sprinter I (W901–905, 1995–2006)
 

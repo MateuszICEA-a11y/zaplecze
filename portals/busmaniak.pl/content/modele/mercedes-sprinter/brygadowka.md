@@ -20,7 +20,7 @@ faq:
     answer: "Brygadówka (crew cab + paka lub skrzynia) to zabudowa na podwoziu – kabina osobowa i oddzielna część ładunkowa bez wspólnej przestrzeni. Kombi to furgon z przegrodą wewnętrzną – oba człony są w jednej bryle nadwozia. Brygadówka pozwala na większą ładowność i modularną wymianę zabudowy paki."
 ---
 
-Mercedes Sprinter brygadówka to pojazd roboczy dla ekip terenowych – łączy kabinę osobową dla 5–7 osób z osobną paką lub skrzynią na narzędzia i sprzęt. To standardowe narzędzie w energetyce, telekomunikacji i drogownictwie, gdzie ekipa musi dojechać razem z całym osprzętem.
+[Mercedes Sprinter](/modele/mercedes-sprinter/) brygadówka to pojazd roboczy dla ekip terenowych – łączy kabinę osobową dla 5–7 osób z osobną paką lub skrzynią na narzędzia i sprzęt. To standardowe narzędzie w energetyce, telekomunikacji i drogownictwie, gdzie ekipa musi dojechać razem z całym osprzętem.
 
 ## Budowa i zabudowa
 
@@ -89,3 +89,5 @@ Przy zamawianiu brygadówki dla energetyki zawsze dorzuć do specyfikacji uchwyt
 - Kompletna brygadówka gotowa do pracy – od ok. 200 000–240 000 zł netto
 
 Przy zamówieniu dla floty (5+ pojazdów) możliwe jest negocjowanie jednej ceny za podwozie i zabudowę u partnerów Mercedes-Benz Body Builder Program, co upraszcza też kwestię gwarancji.
+
+*Źródła: Wikipedia, Mercedes-Benz, auto-data.net*

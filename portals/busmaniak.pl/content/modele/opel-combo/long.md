@@ -17,7 +17,7 @@ faq:
     answer: "Standardowe miejsce parkingowe ma 5000–5500 mm długości, więc Combo XL (4753 mm) mieści się bez problemów. Warto jednak sprawdzić wysokość bariery parkingowej – całkowita wysokość pojazdu to 1848 mm."
 ---
 
-Opel Combo E XL (Long) to wersja o rozstawie osi wydłużonym do 2975 mm. W stosunku do Combo Short różnica długości wynosi 350 mm – w praktyce oznacza to większą przestrzeń ładunkową i możliwość przewożenia palet EUR o wymiarach 1200 x 800 mm bez konieczności obracania.
+[Opel Combo](/modele/opel-combo/) E XL (Long) to wersja o rozstawie osi wydłużonym do 2975 mm. W stosunku do Combo Short różnica długości wynosi 350 mm – w praktyce oznacza to większą przestrzeń ładunkową i możliwość przewożenia palet EUR o wymiarach 1200 x 800 mm bez konieczności obracania.
 
 ## Wymiary i przestrzeń ładunkowa
 
@@ -73,3 +73,5 @@ Opel oferuje certyfikowane zabudowy cargo dla Combo XL poprzez sieć autoryzowan
 ## Ceny i dostępność
 
 Nowe Combo E XL (Van) kosztuje od ok. 105 000 zł brutto za wersję Enjoy z silnikiem 1.5 D 75 KM. Wersja Edition z 1.5 D 130 KM i ETG7 to ok. 135 000 zł. Na rynku wtórnym egzemplarze z 2020–2022 roku z przebiegiem 80 000–120 000 km kosztują 65 000–85 000 zł.
+
+*Źródła: Wikipedia, Opel, auto-data.net*

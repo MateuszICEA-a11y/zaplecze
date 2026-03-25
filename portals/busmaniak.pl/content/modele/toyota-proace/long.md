@@ -20,7 +20,7 @@ faq:
     answer: "Ładowność Proace Long wynosi do 1400 kg, zależnie od wersji silnikowej i wyposażenia."
 ---
 
-Toyota Proace Long to wersja o długości 5309 mm z ładownią 6,1 m³ – wybór dla firm, które potrzebują zmieścić 3 europalety i nie chcą kompromisów w ładowności. Jeśli zastanawiasz się, czy Long jest dla ciebie, poniżej znajdziesz konkretne dane, nie foldery reklamowe.
+[Toyota Proace](/modele/toyota-proace/) Long to wersja o długości 5309 mm z ładownią 6,1 m³ – wybór dla firm, które potrzebują zmieścić 3 europalety i nie chcą kompromisów w ładowności. Jeśli zastanawiasz się, czy Long jest dla ciebie, poniżej znajdziesz konkretne dane, nie foldery reklamowe.
 
 ## Wymiary Toyota Proace Long
 
@@ -106,3 +106,5 @@ Przy zamówieniu Proace Long warto doprecyzować:
 - jaki układ elektryczny – 12V czy 230V (inverter) – jest przygotowany pod zabudowę
 
 Linki wewnętrzne: [Toyota Proace – strona modelu](/modele/toyota-proace/)
+
+*Źródła: Wikipedia, Toyota, auto-data.net*

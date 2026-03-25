@@ -17,7 +17,7 @@ faq:
     answer: "Boxer oferuje przestrzeń ładunkową od 8 do 17 m³ w zależności od konfiguracji. Standardowe wersje Van to 8, 10, 11 i 13 m³. Wersja L4H3 (najdłuższa, najwyższa) oferuje 17 m³."
 ---
 
-Peugeot Boxer III to duży van dostawczy klasy ciężkiej segmentu N1/N2, budowany na wspólnej platformie Sevel Sud razem z Fiatem Ducato i Citroënem Jumperem. W Polsce jest jednym z dominujących wyborów dla firm transportowych, usługowych i producentów zabudów specjalnych.
+[Peugeot Boxer](https://pl.wikipedia.org/wiki/Peugeot_Boxer) III to duży van dostawczy klasy ciężkiej segmentu N1/N2, budowany na wspólnej platformie Sevel Sud razem z Fiatem Ducato i Citroënem Jumperem. W Polsce jest jednym z dominujących wyborów dla firm transportowych, usługowych i producentów zabudów specjalnych.
 
 ## Platforma i produkcja
 
@@ -91,3 +91,5 @@ Typowe usterki Boxera III:
 - aktuator skrzyni EAT8 (przy braku wymiany oleju skrzyni)
 
 Serwis Boxera dostępny jest w sieci Peugeot, Fiat i Citroën – wszystkie trzy marki obsługują tę platformę.
+
+*Źródła: Wikipedia, Peugeot, auto-data.net*

@@ -17,7 +17,7 @@ faq:
     answer: "Oba auta stoją na tej samej platformie PSA EMP2, więc napęd, zawieszenie i nadwozie są identyczne. Combo Life ma inny design przodu, system Intellilink zamiast Connectra oraz inne opcje wyposażenia. Ceny są porównywalne."
 ---
 
-Opel Combo Life to osobowa wersja Combo E – z pełnym przeszkleniem, siedzeniami dla 5 lub 7 pasażerów i wyposażeniem rodem z kompaktowego SUV-a. Platforma PSA EMP2 gwarantuje sprawdzoną mechanikę, a praktyczność na poziomie klasycznego dostawczaka.
+[Opel Combo](/modele/opel-combo/) Life to osobowa wersja Combo E – z pełnym przeszkleniem, siedzeniami dla 5 lub 7 pasażerów i wyposażeniem rodem z kompaktowego SUV-a. Platforma PSA EMP2 gwarantuje sprawdzoną mechanikę, a praktyczność na poziomie klasycznego dostawczaka.
 
 ## Co wyróżnia wersję osobową
 
@@ -75,3 +75,5 @@ Combo Life jest rejestrowane jako samochód osobowy (kategoria M1), co oznacza s
 | Skrzynia auto | ETG7 | EAT8 (opcja) |
 
 Berlingo III oferuje opcję 8-biegowego automatu EAT8, którego brakuje w Combo. To istotna różnica przy jeździe w mieście.
+
+*Źródła: Wikipedia, Opel, auto-data.net*
