@@ -72,6 +72,18 @@ All API calls use `curl` with credentials from `references/api-credentials.md`. 
 
 Use **two sources** in parallel for comprehensive research:
 
+#### Wikipedia (always first)
+For every article topic, fetch the Wikipedia page (Polish first, English fallback) to establish baseline facts: production years, platform, factory, engine codes, dimensions, generational changes. Wikipedia is the primary authoritative source for historical and technical data.
+
+```bash
+# Polish Wikipedia
+WebFetch https://pl.wikipedia.org/wiki/{Model_Name} → extract key specs, history, generations
+# English fallback if Polish page is thin
+WebFetch https://en.wikipedia.org/wiki/{Model_Name} → same extraction
+```
+
+Use Wikipedia data as the factual backbone of the article. Cite it in the source list at the end.
+
 #### Web Search (3-7 queries)
 Standard web searches for:
 - Search intent – what are people looking for?
