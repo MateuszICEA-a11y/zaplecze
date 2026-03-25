@@ -120,11 +120,28 @@ Format Hugo Markdown: `[tekst anchor](/ścieżka/)`
 - `Z kalkulatorem DMC sprawdzisz, [ile ładunku możesz zabrać](/narzedzia/kalkulator-dmc/) bez przekraczania limitu.`
 
 ### Reguły
-- 3-5 linków per artykuł
+- 3-5 linków wewnętrznych per artykuł
 - Rozłożone równomiernie – nie grupuj w jednej sekcji
 - Anchor text opisowy, pasujący do strony docelowej
 - Max 1 link wewnętrzny na akapit
 - Link musi płynąć z treści zdania
+
+---
+
+## Linkowanie zewnętrzne (autorytety)
+
+Każdy artykuł powinien zawierać 1-2 linki do autorytatywnych źródeł zewnętrznych, przede wszystkim Wikipedii. Buduje to wiarygodność (E-E-A-T) i sygnalizuje Google, że treść opiera się na sprawdzonych źródłach.
+
+### Zasady
+- **Wikipedia** – obowiązkowy 1 link per artykuł do strony modelu/tematu na pl.wikipedia.org (en.wikipedia.org jeśli brak polskiej)
+- Opcjonalnie: oficjalna strona producenta, gov.pl, normy techniczne
+- Linki kontekstowe – wplecione w zdanie, nie jako osobna lista
+- Rel `nofollow` nie jest potrzebny – Hugo render hook dodaje go automatycznie do linków zewnętrznych
+
+### Przykłady
+- ✅ `Dokker bazuje na [platformie B0](https://pl.wikipedia.org/wiki/Platforma_B0), wspólnej z Lodgym i Sandero.`
+- ✅ `Silnik 1.5 dCi to jednostka z rodziny [Renault K9K](https://en.wikipedia.org/wiki/Renault_K9K_engine), stosowana w ponad 20 modelach koncernu.`
+- ❌ `Więcej informacji na Wikipedii: [link]` – nie rób osobnego elementu
 
 ---
 
