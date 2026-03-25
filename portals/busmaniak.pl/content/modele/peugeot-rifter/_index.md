@@ -1,7 +1,84 @@
 ---
-title: "Peugeot Rifter – osobowy partner"
-date: 2026-03-23
-description: "Peugeot Rifter – osobowa wersja Partnera, dane techniczne i wyposażenie."
+title: "Peugeot Rifter – dane techniczne, wersje, silniki | BusManiak.pl"
+date: 2026-03-25
+description: "Peugeot Rifter – dane techniczne, wymiary Standard i Long, silniki 1.2 PureTech i 1.5 BlueHDi, wersja 7-osobowa, e-Rifter elektryczny, typowe usterki i ceny."
 draft: false
 author: "marek-kowalczyk"
+h1: "Peugeot Rifter – kompletny przewodnik po modelu"
+type: "page"
+image: "/images/peugeot-rifter-hero.jpg"
+image_alt: "Peugeot Rifter Long na drodze"
+main_keyword: "peugeot rifter"
+volume: 8100
+lead: "Peugeot Rifter to kombivan na platformie EMP2, produkowany od 2018 roku jako następca Partnera Tepee. Bliźniak Citroëna Berlingo i Opla Combo Life. Silniki 1.2 PureTech i 1.5 BlueHDi od 100 do 130 KM, wersja 7-osobowa Long i elektryczny e-Rifter z zasięgiem do 340 km."
+faq:
+  - question: "Ile miejsc ma Peugeot Rifter Long?"
+    answer: "Wersja Long dostępna jest w konfiguracji 5- lub 7-osobowej. Wariant 7-osobowy ma dwa dodatkowe, przesuwne i wyjmowane fotele w trzecim rzędzie, z 322 l bagażnika za nimi."
+  - question: "Czy Peugeot Rifter jest awaryjny?"
+    answer: "Najczęstsze problemy to awarie układu AdBlue w dieslach (od 30 tys. km) i łuszczenie paska rozrządu w silnikach 1.2 PureTech. Regularne serwisowanie minimalizuje ryzyko."
+  - question: "Ile kosztuje nowy Peugeot Rifter?"
+    answer: "Nowy od ok. 115 000 zł za wersję spalinową. Bogato wyposażony Long przekracza 150 000 zł."
+  - question: "Jaki zasięg ma e-Rifter?"
+    answer: "Z baterią 50 kWh do 280 km (przed faceliftem) lub do 340 km WLTP po modernizacji z 2024 roku."
 ---
+
+## Peugeot Rifter – historia i ewolucja modelu od 2018 roku
+
+Model zaprezentowano podczas targów w Genewie w 2018 roku jako następca rekreacyjnej wersji Partnera Tepee, porzucając jednocześnie tę nazwę dla wersji osobowych. Zbudowany na modułowej platformie [EMP2](https://en.wikipedia.org/wiki/PSA_EMP2_platform), łączy cechy rodzinnego MPV z surowym wyglądem SUV-a dzięki zwiększonemu prześwitowi i plastikowym osłonom nadwozia. Samochód powstał w ramach projektu K9 grupy PSA, co sprawiło, że jego technicznymi bliźniakami są [Citroën Berlingo](/modele/citroen-berlingo/), [Opel Combo](/modele/opel-combo/), Toyota ProAce City Verso oraz Fiat Doblo III. Produkcja odbywa się w zakładach w Vigo (Hiszpania) oraz Mangualde (Portugalia).
+
+W 2021 roku ofertę uzupełnił w pełni elektryczny e-Rifter, który przez pewien czas był jedyną dostępną wersją w salonach Unii Europejskiej ze względu na limity emisji spalin. Rok 2024 przyniósł głęboki facelifting, obejmujący nowy pas przedni z sygnaturą świetlną w kształcie trzech pazurów oraz zaktualizowane wnętrze z 10-calowym ekranem dotykowym.
+
+{{% expert name="Kowalczyk" %}}
+Rifter najlepiej z całej rodziny K9 trzyma wartość rezydualną na rynku wtórnym.
+{{% /expert %}}
+
+## Peugeot Rifter – wymiary i techniczne możliwości transportowe
+
+Pojazd występuje w dwóch wariantach długości nadwozia, co pozwala dopasować go do potrzeb dużej rodziny lub małego biznesu. Szerokość auta wynosi 1848 mm (bez lusterek), a wysokość oscyluje wokół 1820–1840 mm, co zapewnia ogromną przestrzeń nad głowami pasażerów.
+
+- **Standard** – długość 4403 mm, rozstaw osi 2785 mm
+- **Long** – długość 4753 mm, rozstaw osi 2975 mm
+
+Przestrzeń bagażowa to jeden z najmocniejszych atutów modelu. W wersji Standard przy pięciu osobach wynosi 775 litrów, natomiast wersja Long oferuje aż 1050 litrów do linii okien. Po złożeniu wszystkich siedzeń (w tym fotela pasażera z przodu) można przewozić przedmioty o długości do 2,7 m w wersji krótkiej i aż 3,05 m w wersji wydłużonej. Ładowność wynosi zazwyczaj od 500 do 700 kg, zależnie od specyfikacji napędowej.
+
+## Peugeot Rifter – silniki benzynowe, Diesla i elektryczne
+
+Jednostki napędowe są dobrze znane z innych modeli grupy Stellantis, jednak ich eksploatacja wymaga świadomości technicznej. Silnik benzynowy 1.2 PureTech (110–130 KM) to konstrukcja trzycylindrowa z turbodoładowaniem, parowana z 6-biegowym manualem lub hydrokinetycznym automatem EAT8.
+
+- **1.5 BlueHDi** – jednostka wysokoprężna generująca od 100 do 130 KM i 300 Nm momentu obrotowego. Spalanie w cyklu mieszanym mieści się w granicach 4,6–6,4 l/100 km.
+- **e-Rifter** – napęd elektryczny o mocy 136 KM z baterią 50 kWh netto. Zasięg przed liftingiem wynosił ok. 280 km, natomiast po modernizacji z 2024 roku wzrósł do 340 km (WLTP).
+
+{{% info title="Ważna uwaga techniczna" icon="engineering" %}}
+W silnikach 1.2 PureTech kluczowa jest kontrola paska rozrządu pracującego w oleju, który może się łuszczyć i zapychać układ smarowania.
+{{% /info %}}
+
+## Peugeot Rifter Long 7-osobowy i wersje wyposażenia
+
+Kombivan dostępny jest w kilku liniach – Active, Allure oraz usportowionej wizualnie GT. Najbardziej pożądany na rynku wtórnym wariant to wersja Long z siedmioma miejscami, posiadająca dwa dodatkowe, przesuwne i wyjmowane fotele w trzecim rzędzie. Co istotne, nawet w tej konfiguracji za ostatnimi siedzeniami pozostaje 322 litry przestrzeni na bagaż.
+
+Standardowe wyposażenie obejmuje system i-Cockpit z mniejszą kierownicą, klimatyzację manualną oraz komplet systemów bezpieczeństwa. Wyższe wersje oferują otwierane okno w klapie bagażnika, trzy niezależne fotele w drugim rzędzie z systemem Isofix na każdym z nich oraz szklany dach Zenith z podświetlanym schowkiem pod sufitem.
+
+## Typowe usterki i opinie o Peugeot Rifter
+
+Mimo wysokiej funkcjonalności, Rifter zbiera mieszane opinie ze względu na powtarzalne problemy techniczne. Największym mankamentem wersji wysokoprężnych są awarie układu AdBlue – pompy i zbiorniki – które potrafią unieruchomić auto już przy przebiegach rzędu 30 000 km.
+
+- **Pasek rozrządu (1.2 PureTech)** – łuszcząca się guma zatyka smok pompy olejowej, co prowadzi do zatarcia silnika
+- **Łańcuch wałków rozrządu (1.5 BlueHDi)** – wczesne egzemplarze borykały się z jego rozciąganiem (wymagana zmiana z ogniw 7 mm na 8 mm)
+- **Elektronika** – system multimedialny często pracuje powoli, a ekrany miewają problemy z reakcją na dotyk
+- **DPF** – filtr cząstek stałych wymaga regularnych tras; w jeździe miejskiej zapycha się stosunkowo szybko
+
+{{% info title="Akcje serwisowe" icon="engineering" %}}
+Modele z lat 2018–2020 były objęte akcjami naprawczymi dotyczącymi wadliwych drążków kierowniczych oraz mocowań pasów bezpieczeństwa.
+{{% /info %}}
+
+## Peugeot Rifter a konkurencja
+
+Na tle rywali kombivan wyróżnia się bogatszym wyposażeniem seryjnym i najlepiej ocenianą przestronnością kabiny w tej klasie. Głównym konkurentem pozostaje [Renault Kangoo](/modele/renault-kangoo/), który oferuje zbliżoną funkcjonalność przy nieco niższej cenie zakupu, lecz słabszej ofercie elektrycznej. Volkswagen Caddy przyciąga nabywców wyższą kulturą jazdy i solidniejszą elektroniką, natomiast bliźniaczy [Citroën Berlingo](/modele/citroen-berlingo/) trafia do klientów szukających prostszej stylistyki przy identycznej bazie technicznej.
+
+## Ceny Peugeot Rifter
+
+Nowy egzemplarz z salonu to wydatek rzędu 115 000 zł za wersję spalinową w podstawowej konfiguracji, natomiast bogato wyposażone wersje Long przekraczają 150 000 zł.
+
+Używane egzemplarze z lat 2019–2021 można nabyć w przedziale 60 000–90 000 zł. Najtańsze są auta z przebiegami flotowymi przekraczającymi 200 tys. km, natomiast zadbane, prywatne sztuki z polskiego salonu szybko znikają z ogłoszeń. Bliźniaczy [Peugeot Partner](/modele/peugeot-partner/) w adaptacjach osobowych dostępny jest zazwyczaj kilka–kilkanaście tysięcy złotych taniej.
+
+*Źródła: Wikipedia – PSA EMP2 platform, katalog techniczny Stellantis Peugeot Rifter 2018–2024, dane homologacyjne WLTP, archiwum akcji serwisowych UOKiK.*
