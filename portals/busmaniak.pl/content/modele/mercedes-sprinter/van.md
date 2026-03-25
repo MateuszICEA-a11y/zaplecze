@@ -68,6 +68,8 @@ Skrzynia biegów: 6-biegowa manualna lub 9G-Tronic (9-biegowy automat). Automat 
 
 Norma emisji: Euro 6d. System SCR z AdBlue (zbiornik ok. 20 l). Zużycie AdBlue ok. 1,5–2 l/100 km.
 
+![Mercedes Sprinter Van – przestrzeń ładunkowa L4H2](/images/mercedes-sprinter-van-hero.jpg)
+
 ## Napęd – FWD, RWD, AWD
 
 Sprinter Van W907 jako pierwszy w klasie oferuje napęd przedni (FWD). Zmiana z tylnonapędowego układu na FWD zmniejszyła podłogę ładunkową – brak tunelu wału napędowego oznacza płaską podłogę na całej szerokości.

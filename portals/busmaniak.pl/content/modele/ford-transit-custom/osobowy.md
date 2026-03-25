@@ -82,6 +82,8 @@ Wyposażenie Limited:
 
 Tourneo Custom jest dłuższy, pojemniejszy i tańszy przy porównywalnym wyposażeniu – ale Multivan jest bardziej "samochodowy" w prowadzeniu.
 
+![Ford Tourneo Custom – wnętrze z trzema rzędami siedzeń](/images/ford-transit-custom-osobowy-hero.jpg)
+
 {{% info title="Tourneo Custom w leasingu jako flota" icon="engineering" %}}
 Tourneo Custom rejestrowany jako M1 (do 8 pasażerów + kierowca) daje prawo do 50% odliczenia VAT przy zakupie i eksploatacji. Ford oferuje specjalne stawki leasingowe dla flot przez program Ford Pro Fleet. Minimalny wolumen dla cen flotowych: 3 pojazdy. Tourneo Custom PHEV może być dofinansowany z programów NFOŚiGW przy spełnieniu wymogów emisyjności.
 {{% /info %}}

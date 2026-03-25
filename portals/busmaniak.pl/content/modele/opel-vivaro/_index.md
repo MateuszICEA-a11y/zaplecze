@@ -64,6 +64,8 @@ Vivaro oferowany jest w kilku konfiguracjach:
 - [brygadówka](/modele/opel-vivaro/brygadowka/) – kabina dwurzędowa z przestrzenią ładunkową
 - platforma – dla zabudów specjalnych
 
+![Opel Vivaro – przegląd generacji i wersji](/images/opel-vivaro-hero.jpg)
+
 ## Wymiary i ładowność
 
 Długość zależy od wersji i generacji. Vivaro C w standardzie ma 4,96 m, Long – 5,31 m. Szerokość z lusterkami to około 2,27 m. Wysokość do 1,96 m (wersja standard). Szczegółowe dane w artykule [Opel Vivaro wymiary](/modele/opel-vivaro/wymiary/).

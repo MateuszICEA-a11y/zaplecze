@@ -87,6 +87,8 @@ Certyfikowane zabudowy przez sieć Ford:
 - zabudowy chłodnicze (Lamberet, Schmitz)
 - zabudowy warsztatowe z kompresorami
 
+![Ford Transit Custom L2 Van – przestrzeń ładunkowa](/images/ford-transit-custom-van-hero.jpg)
+
 {{% info title="Transit Custom a E-Transit Custom" icon="engineering" %}}
 E-Transit Custom (od 2024) to w pełni elektryczna wersja Custom – silnik 218 KM, bateria 64 kWh, zasięg WLTP do 380 km. Ładowanie DC do 125 kW (20–80% w ok. 41 minut). Ładowność: 1147 kg (L1) lub 1233 kg (L2). Dostępny w tych samych wersjach Van, Kombi i Double Cab. Ford oferuje gwarancję baterii na 8 lat lub 160 000 km.
 {{% /info %}}

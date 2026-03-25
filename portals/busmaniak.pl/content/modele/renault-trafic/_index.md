@@ -48,6 +48,8 @@ Holowanie: 1.6 dCi – 2000 kg; 2.0 dCi – 2500 kg.
 Wysokość ładowni w tabeli jest mierzona od podłogi do dachu. Realna wysokość załadunku bywa mniejsza – elementy nadwozia i zabudowa potrafią zabrać kilka centymetrów, które mają znaczenie przy przewozie wysokich paczek.
 {{% /info %}}
 
+![Renault Trafic III furgon L2H2](/images/renault-trafic-hero.jpg)
+
 ## Silniki {#silniki}
 
 Trafic III to wyłącznie diesle. Benzyny tu nie ma i raczej nie będzie – to auto robocze, a nie miejski kombivan.

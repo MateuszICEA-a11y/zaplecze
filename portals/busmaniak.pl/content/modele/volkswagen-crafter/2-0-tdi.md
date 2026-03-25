@@ -66,6 +66,8 @@ Znane problemy w kolejności częstości:
 - **Turbosprężarka VTG** – siłowniki łopatek zużywają się przy przebiegach 200 000+ km. Objaw: brak mocy przy pełnym gazie lub nadmierny dym
 - **DSG7** – automat przy braku wymiany oleju co 60 000 km degraduje się szybko. Naprawa: 6000–12 000 zł
 
+![VW Crafter 2.0 TDI – komora silnika](/images/volkswagen-crafter-2-0-tdi-hero.jpg)
+
 {{% info title="Serwis 2.0 TDI – co i kiedy" icon="engineering" %}}
 Volkswagen zaleca wymianę oleju silnikowego w Crafterze co 30 000 km lub 2 lata przy użyciu oleju VW 507.00. Interwał ten jest zbyt długi przy intensywnej eksploatacji miejskiej z licznymi wejściami zimnego silnika – zalecam skrócenie do 20 000 km przy takim profilu pracy. Filtr paliwa co 30 000 km. Olej skrzyni DSG co 60 000 km (nie "na całe życie" jak podaje katalog).
 {{% /info %}}

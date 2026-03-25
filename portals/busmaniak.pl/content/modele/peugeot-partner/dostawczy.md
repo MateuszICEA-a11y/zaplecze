@@ -65,6 +65,8 @@ Dostępne agregaty:
 
 Do regularnej pracy z ładunkiem bliskim maksimum – diesel 1.5 BlueHDi 100 KM z manualną 6-biegową. Tania w serwisie, niezawodna i ekonomiczna przy przebiegach 25 000+ km/rok.
 
+![Peugeot Partner Van – widok na przestrzeń ładunkową z otwartymi drzwiami tylnymi](/images/peugeot-partner-dostawczy-hero.jpg)
+
 {{% info title="Partner Van w leasingu operacyjnym" icon="engineering" %}}
 Partner Van jako N1 daje prawo do odliczenia 100% VAT od raty leasingowej i kosztów eksploatacji (paliwo, serwis), o ile prowadzona jest ewidencja przebiegu. Peugeot Leasing Polska oferuje partnerskie stawki leasingowe dla pojazdów flotowych od 3 sztuk. Minimalna rata netto w 2025 roku za Long Pro 1.5 D 100 KM przy 36 miesiącach: ok. 1550 zł netto.
 {{% /info %}}

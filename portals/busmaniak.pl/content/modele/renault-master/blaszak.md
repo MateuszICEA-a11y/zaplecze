@@ -78,6 +78,8 @@ Typowe wyposażenie blaszaka do pracy remontowej lub dostaw:
 
 Koszt podstawowego wyposażenia: 800–2500 zł, w zależności od materiałów i zabudowcy.
 
+![Renault Master blaszak L3H2 – zamknięta przestrzeń ładunkowa](/images/renault-master-blaszak-hero.jpg)
+
 ## Zakup używanego blaszaka – na co zwrócić uwagę
 
 Rynek wtórny Masterów blaszaków jest bardzo szeroki. Przy oglądaniu egzemplarza warto sprawdzić:

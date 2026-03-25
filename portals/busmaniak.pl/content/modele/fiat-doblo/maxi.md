@@ -70,6 +70,8 @@ Maxi nie ma dedykowanych silników – dostępna jest cała gama jednostek jak w
 
 Do pracy z pełnym ładunkiem w Maxi polecam minimum 1.6 MultiJet 120 KM w gen II lub 1.5 BlueHDi 130 KM w gen III. Wersja 1.3 MultiJet w długim aucie z ładunkiem na autostradzie – to jest właśnie przepis na rozczarowanie.
 
+![Fiat Doblò Maxi – przestrzeń ładunkowa](/images/fiat-doblo-maxi-hero.jpg)
+
 ## Doblò Maxi Cargo – przestrzeń i ładowność
 
 Przestrzeń ładunkowa w Maxi Cargo gen III:

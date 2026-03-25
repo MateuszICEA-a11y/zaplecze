@@ -58,6 +58,8 @@ Skrzynia biegów: 9G-Tronic (automat) seryjnie w liniach Tourist i Transfer. W w
 
 Zużycie paliwa przy pełnym załadunku pasażerskim: 10–13 l/100 km (trasa mieszana). Zbiornik 75 l zapewnia zasięg ok. 600–700 km.
 
+![Mercedes Sprinter Tourer – wnętrze wersji Tourist Comfort](/images/mercedes-sprinter-osobowy-hero.jpg)
+
 ## MBUX i systemy pokładowe
 
 Od 2018 roku Sprinter Tourer wyposażony jest w system MBUX (Mercedes-Benz User Experience):

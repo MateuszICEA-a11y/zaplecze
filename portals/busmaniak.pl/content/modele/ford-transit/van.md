@@ -76,6 +76,8 @@ Skrzynie biegów: 6-biegowa manualna standardowo, 6- lub 10-biegowy automat Sele
 
 Spalanie w cyklu mieszanym wynosi 8–10 l/100 km zależnie od wersji mocy i masy pojazdu.
 
+![Ford Transit Van L3H2 – widok z boku](/images/ford-transit-van-hero.jpg)
+
 ## Napęd: FWD, RWD, AWD
 
 Transit Van jest jednym z niewielu furgonów tej klasy oferowanych w trzech układach napędowych:

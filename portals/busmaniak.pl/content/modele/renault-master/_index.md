@@ -74,6 +74,8 @@ Skrzynia biegów to 6-biegowy manuał lub – od faceliftingu – 6-biegowy auto
 Silnik M9T to jedna z trwalszych jednostek w klasie dostawczaków. W praktyce przy regularnej wymianie oleju co 30 000 km i sprawnym układzie AdBlue (od Euro 6) spokojnie przechodzi 400 000 km bez remontu. Słabym punktem są wtryskiwacze – w egzemplarzach z wysokim przebiegiem warto zrobić diagnozę przed zakupem. Trwałość rozrządu szacuję na 150 000–200 000 km, ale przy intensywnej eksploatacji miejskiej lepiej sprawdzić stan przy 120 000 km.
 {{% /expert %}}
 
+![Renault Master III furgon L3H2 przy rampie załadunkowej](/images/renault-master-hero.jpg)
+
 ## Wersje nadwoziowe i zastosowania {#wersje-nadwozia}
 
 Master jest dostępny w kilku podstawowych konfiguracjach nadwoziowych, co czyni go jednym z bardziej elastycznych modeli w klasie:

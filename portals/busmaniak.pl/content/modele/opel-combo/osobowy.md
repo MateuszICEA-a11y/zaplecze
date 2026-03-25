@@ -51,6 +51,8 @@ Wersja osobowa Combo Life jest dostępna z tymi samymi silnikami co Van:
 
 Przy zastosowaniu rodzinnym (mieszczan, dwa dzieci, wyjazdy weekendowe) polecam 1.2 PureTech 130 KM. Dla rodzin jeżdżących dużo poza miastem – 1.5 BlueHDi 100 KM z manualem.
 
+![Opel Combo Life – wnętrze i tylna kanapa](/images/opel-combo-osobowy-hero.jpg)
+
 ## Bezpieczeństwo i wyniki crash testów
 
 Combo E (wspólna platforma PSA) uzyskało 5 gwiazdek Euro NCAP w 2018 roku. Standardowo montowane są:

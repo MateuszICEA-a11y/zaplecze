@@ -40,6 +40,8 @@ Daily VII to facelifting szóstej generacji, a nie nowa platforma. Iveco odświe
 Iveco Daily jest jedynym vanem w segmencie L4 oferującym ramę drabinkową jako podstawę konstrukcji w wersjach o DMC powyżej 3,5 t. Konkurenci – Ford Transit, Mercedes Sprinter, Volkswagen Crafter i Renault Master – stosują wyłącznie nadwozia samonośne lub semi-ramowe, co ogranicza ich maksymalną ładowność.
 {{% /info %}}
 
+![Iveco Daily VII furgon](/images/iveco-daily-hero.jpg)
+
 ## Dane techniczne i wymiary {#dane-techniczne}
 
 Iveco Daily oferuje największy zakres wariantów w klasie. Poniższa tabela obejmuje najpopularniejsze konfiguracje furgonu (generacja VI i VII – identyczne wymiary przestrzeni ładunkowej).

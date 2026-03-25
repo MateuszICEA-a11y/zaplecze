@@ -69,6 +69,8 @@ Dwie europalety z towarem po 500 kg każda to już 1000 kg ładunku – maksimum
 
 Różnica w długości to 350 mm – identycznie jak między Proace Long i Medium w dużej klasie. Krótszy Short sprawdza się w wąskich ulicach starych miast (Kraków, Wrocław śródmieście) i na parkingach podziemnych ze standardową przepustowością 4,6–5 m.
 
+{{< figure src="/images/toyota-proace-city-long-hero.jpg" alt="Toyota Proace City Long – widok z tyłu przy otwartych drzwiach" caption="Proace City Long z drzwiami tylnymi otwartymi na 180° – standardowa konfiguracja załadunku paletowego" >}}
+
 ## Kiedy wybrać Long, a kiedy Short?
 
 Long jest właściwym wyborem, gdy:

@@ -56,6 +56,8 @@ Boxer Combi oferuje te same silniki co Van:
 
 Do transportu pasażerskiego z dużą liczbą wejść-wyjść dziennie (np. linie szkolne, busy socjalne) polecam 140 KM z manualną skrzynią – tańszy serwis, mniejsze ryzyko usterek automatycznej skrzyni przy intensywnej eksploatacji miejskiej.
 
+![Peugeot Boxer Combi – wnętrze z miejscami pasażerskimi](/images/peugeot-boxer-osobowy-hero.jpg)
+
 {{% info title="Boxer Combi a taxi i wynajem" icon="engineering" %}}
 Boxer Combi 8+1 może być zarejestrowany jako taksówka osobowa lub pojazd do wynajmu (kategoria M2). Wymaga to dodatkowych badań technicznych homologacyjnych i spełnienia wymogów lokalnych przepisów o transporcie osób. W Polsce od 2024 roku pojazdy do 9 miejsc używane w transporcie zarobkowym osób podlegają rozszerzonemu przeglądowi technicznemu co rok (art. 81 Prawa o ruchu drogowym).
 {{% /info %}}

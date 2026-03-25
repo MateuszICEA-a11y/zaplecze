@@ -59,6 +59,8 @@ Silniki gen II w wersji osobowej:
 - 1.6 MultiJet 105/120 KM
 - 1.4 T-Jet 120 KM (benzyna)
 
+![Fiat Doblò Panorama – wnętrze i przestrzeń dla pasażerów](/images/fiat-doblo-osobowy-hero.jpg)
+
 ## Przestrzeń dla pasażerów
 
 Doblò Panorama jest wysoki (ok. 1800 mm) – to oznacza, że pasażerowie siadają wyprostowani, bez zginania głowy. Przestrzeń na nogi w drugim rzędzie jest wyraźnie lepsza niż w kompaktach.

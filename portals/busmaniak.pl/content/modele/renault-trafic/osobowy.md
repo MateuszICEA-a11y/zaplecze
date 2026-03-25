@@ -43,6 +43,8 @@ Dwa warianty długości przekładają się bezpośrednio na użyteczność:
 
 W praktyce: L2 to wybór dla transferów lotniskowych i grup turystycznych, gdzie komfort podróży liczy się bardziej niż manewrowalność. L1 lepiej sprawdza się w mieście i wąskich parkingach.
 
+![Renault Trafic Passenger L2 – wersja osobowa](/images/renault-trafic-osobowy-hero.jpg)
+
 ## Silniki {#silniki}
 
 Renault Trafic III osobowy był dostępny wyłącznie z silnikami Diesla:

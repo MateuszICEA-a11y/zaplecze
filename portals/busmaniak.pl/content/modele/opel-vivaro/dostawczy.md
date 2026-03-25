@@ -68,6 +68,8 @@ Vivaro C furgon dostępny jest z:
 
 Szczegóły jednostek: [Opel Vivaro 1.5](/modele/opel-vivaro/1-5/) i [Opel Vivaro 2.0](/modele/opel-vivaro/2-0/).
 
+![Opel Vivaro dostawczy – przestrzeń ładunkowa i dostęp](/images/opel-vivaro-dostawczy-hero.jpg)
+
 ## Dostęp do ładowni
 
 Vivaro oferuje trzy punkty dostępu:

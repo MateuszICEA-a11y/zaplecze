@@ -63,6 +63,8 @@ Standardowa europaleta ma 1200x800 mm i nośność 1000 kg. Trzy palety to 3,6 m
 
 Różnica w długości to 350 mm – tyle co standardowy karton kurierski. W praktyce decyduje o tym, czy zmieścisz trzecią paletę, czy nie.
 
+{{< figure src="/images/toyota-proace-long-hero.jpg" alt="Toyota Proace Long – widok z boku z otwartymi drzwiami tylnymi" caption="Proace Long z drzwiami tylnymi otwartymi na 255° – ułatwia załadunek wózkiem widłowym" >}}
+
 ## Kiedy wybrać Long, a kiedy Medium?
 
 Long ma sens, gdy:

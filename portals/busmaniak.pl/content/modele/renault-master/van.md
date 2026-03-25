@@ -64,6 +64,8 @@ Wszystkie wersje Van są napędzane silnikiem 2.3 dCi (M9T). Dobór mocy powinie
 
 Skrzynia manualna (6-biegowa) jest standardem. Automat EDC jest opcją od 135 KM wzwyż i warto go rozważyć szczególnie przy pracy w mieście z częstymi startami.
 
+![Renault Master Van L3H2 z otwartymi drzwiami bocznymi](/images/renault-master-van-hero.jpg)
+
 ## Ładowność a DMC – praktyczne obliczenie
 
 Ładowność to DMC minus masa własna pojazdu. Master Van L3H2 z silnikiem 135 KM waży ok. 2150 kg. Przy DMC 3500 kg daje to ładowność **1350 kg**. Każde wyposażenie dodatkowe obniża tę wartość:

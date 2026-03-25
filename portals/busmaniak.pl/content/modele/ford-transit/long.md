@@ -51,6 +51,8 @@ Wersja L3H2 to najbardziej universalny wariant – 11,5 m³ wystarczy do załado
 
 L4H3 z 15,1 m³ to już granica możliwości Transita – odpowiednik małej ciężarówki dostawczej. Na tym poziomie pojemności warto rozważyć, czy DMC 3,5 t wystarczy na planowany ładunek.
 
+![Ford Transit Long L4H3 – widok boczny](/images/ford-transit-long-hero.jpg)
+
 ## Silniki dla wersji Long
 
 Do L3 i L4 Ford zaleca silniki o większej mocy:

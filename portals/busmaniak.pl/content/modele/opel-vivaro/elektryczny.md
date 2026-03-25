@@ -70,6 +70,8 @@ Zużycie energii Vivaro-e: ok. 25–32 kWh/100 km w zależności od temperatury,
 
 Koszt na 100 km przy cenie prądu 0,80 zł/kWh: 20–26 zł. Dla porównania Vivaro 1.5 D przy spalaniu 8 l/100 km i cenie diesla 7 zł/l: 56 zł. Różnica realna, ale uwzględniaj wyższy koszt zakupu.
 
+![Opel Vivaro-e – ładowanie DC i przestrzeń ładunkowa](/images/opel-vivaro-elektryczny-hero.jpg)
+
 ## Vivaro-e Life – wersja osobowa
 
 Vivaro-e dostępny jest także jako Life (osobowy) z identycznym układem napędowym. Wersja elektryczna jest atrakcyjna dla przewoźników działających w strefach czystego transportu – brak opłat za wjazd do centrów miast.

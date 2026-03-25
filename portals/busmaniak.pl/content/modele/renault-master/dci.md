@@ -73,6 +73,8 @@ Rzeczywiste zużycie paliwa zależy znacząco od charakteru tras i obciążenia:
 
 Zużycie w mieście jest wysokie ze względu na częste starty i zimny silnik nieosiągający temperatury pracy. Trasa regionalna (50/50) to komfort codziennej eksploatacji.
 
+![Silnik Renault Master 2.3 dCi M9T – widok komory silnika](/images/renault-master-dci-hero.jpg)
+
 ## Interwały serwisowe i koszty
 
 Standardowe interwały serwisowe dla silnika M9T:

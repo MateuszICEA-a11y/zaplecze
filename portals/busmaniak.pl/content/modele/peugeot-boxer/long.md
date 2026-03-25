@@ -61,6 +61,8 @@ Zużycie paliwa Boxer L3H2 z 140 KM:
 - miasto z załadunkiem: ok. 9,5–11 l/100 km
 - trasa z załadunkiem: ok. 8,0–9,0 l/100 km
 
+![Peugeot Boxer L3H2 – van dostawczy widok z boku](/images/peugeot-boxer-long-hero.jpg)
+
 {{% info title="Boxer L4H3 a prawo jazdy" icon="engineering" %}}
 Boxer L4H3 w standardowej konfiguracji (DMC 3,5 t) objęty jest kategorią N1 – wystarczy prawo jazdy kat. B. Jednak wersja z podwyższoną DMC do 4 t (kategoria N2) wymaga prawa jazdy C1 (pojazdy 3,5–7,5 t). Przy zamówieniu nowego Boxera zawsze warto potwierdzić DMC w dokumentach rejestracyjnych – różne konfiguracje zabudowy mogą zmieniać kategorię pojazdu.
 {{% /info %}}

@@ -68,6 +68,8 @@ W wersji plandekowej zaleca się wyższe moce silnika ze względu na większą m
 
 Skrzynia manualna jest standardem. Automat EDC nie jest polecany w wersji skrzyniowej przy ciągłym jeżdżeniu z pełnym ładunkiem – manualna przekładnia daje lepszą kontrolę momentu obrotowego przy ruszaniu.
 
+![Renault Master plandeka L3 – skrzynia z pałąkami i plandeką](/images/renault-master-plandeka-hero.jpg)
+
 ## Porównanie z plandeką na innych modelach
 
 | Model | Ładowność L3 z plandeką | DMC max | Cena podwozia netto |

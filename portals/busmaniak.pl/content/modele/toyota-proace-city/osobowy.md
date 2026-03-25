@@ -51,6 +51,8 @@ Verso jest zarejestrowany jako osobowy (M1), co oznacza pełne koszty ubezpiecze
 
 ## Przestrzeń pasażerska i bagażnik
 
+![Toyota Proace City Verso Long – wnętrze z trzecim rzędem siedzeń](/images/toyota-proace-city-osobowy-hero.jpg)
+
 W wersji 5-miejscowej bagażnik mierzy ok. 775 litrów. Po złożeniu trzeciego rzędu w wersji Long pojemność rośnie do ok. 1050 litrów. Fotele drugiego i trzeciego rzędu można wyjmować – przydatne przy transporcie większych ładunków.
 
 Wysokość wnętrza pozwala na swobodne wejście bez zginania się. Duże przesuwne drzwi (opcjonalnie z lewej i prawej strony) znacznie ułatwiają wsiadanie dzieciom.

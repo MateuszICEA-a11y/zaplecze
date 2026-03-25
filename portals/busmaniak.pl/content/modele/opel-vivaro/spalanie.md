@@ -77,6 +77,8 @@ Najważniejsze czynniki:
 - stan filtra powietrza – zatkanego filtra może podbić spalanie o 0,5 l/100 km
 - temperatura zewnętrzna – zimą silnik dłużej się rozgrzewa, spalanie rośnie
 
+![Opel Vivaro spalanie – porównanie silników 1.5 D i 2.0 D](/images/opel-vivaro-spalanie-hero.jpg)
+
 ## Vivaro-e – zużycie energii
 
 Wersja elektryczna Vivaro-e zużywa ok. 25–32 kWh/100 km. Przy cenie prądu 0,80 zł/kWh to koszt 20–26 zł/100 km. Więcej w artykule [Opel Vivaro-e](/modele/opel-vivaro/elektryczny/).

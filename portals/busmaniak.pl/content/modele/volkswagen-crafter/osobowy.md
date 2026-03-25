@@ -66,6 +66,8 @@ Crafter Kombi oferuje tę samą gamę silnikową co Van:
 - 2.0 TDI 140 KM: optymalny do regularnych kursów regionalnych (50–200 km/dzień)
 - 2.0 TDI 177 KM: przy dużych przebiegach i wymaganiach osiągowych
 
+![VW Crafter Kombi – wnętrze z miejscami pasażerskimi](/images/volkswagen-crafter-osobowy-hero.jpg)
+
 {{% info title="Crafter Kombi a podatek VAT" icon="engineering" %}}
 Crafter Kombi rejestrowany jako M1 (do 8 pasażerów + kierowca) daje prawo do 50% odliczenia VAT przy zakupie i eksploatacji. Kombi rejestrowane jako M2 (9 miejsc i więcej lub DMC powyżej 3,5 t) traktowane jest odmiennie – może wymagać prawa jazdy D1. Zawsze warto skonsultować kategorię homologacyjną z dealerem przed zakupem.
 {{% /info %}}

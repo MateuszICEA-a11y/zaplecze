@@ -54,6 +54,8 @@ Długość standardowa: ok. 4390 mm, Maxi: ok. 4740 mm. Ładowność Cargo: do 1
 
 ### Generacja III (od 2022)
 
+![Fiat Doblò III generacji – widok z przodu](/images/fiat-doblo-hero.jpg)
+
 Platforma PSA EMP2. Silniki zgodne z Euro 6d:
 
 - 1.2 PureTech 110 KM (benzyna)

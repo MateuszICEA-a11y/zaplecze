@@ -60,6 +60,8 @@ Szczegółowe informacje o silnikach i wszystkich generacjach znajdziesz w przew
 
 {{% expert name="Kowalczyk" %}}Do jazdy w trasie i przy większym obciążeniu polecam 1.6 HDI 90 KM – to złoty środek między spalaniem a dynamiką. Benzynowy 1.6 VTi ma sens tylko w mieście i przy małych przebiegach rocznych (do 15 tys. km).{{% /expert %}}
 
+![Citroën Berlingo Multispace II generacji](/images/citroen-berlingo-multispace-hero.jpg)
+
 ## Wyposażenie i komfort {#wyposażenie}
 
 Multispace oferował solidną listę wyposażenia jak na segment kombivanów:

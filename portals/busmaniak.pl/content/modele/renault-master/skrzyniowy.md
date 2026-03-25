@@ -72,6 +72,8 @@ Specjalistyczne zastosowanie dla firm budowlanych i odpadów. Wymaga zabudowcy i
 
 Ładowność netto (bez zabudowy) to wartość orientacyjna – dokładna masa własna podwozia bez zabudowy wynosi ok. 1700–2000 kg i różni się zależnie od silnika i wyposażenia kabiny.
 
+![Renault Master skrzyniowy – otwarta skrzynia ładunkowa L3](/images/renault-master-skrzyniowy-hero.jpg)
+
 ## Dobór silnika dla wersji skrzyniowej
 
 W wersji skrzyniowej silnik powinien być dobrany z uwzględnieniem masy zabudowy i planowanego ładunku:

@@ -56,6 +56,8 @@ Kluczowe wymiary nadwozia:
 
 Kombi jest dostępny wyłącznie z dachem standardowym H1 lub podwyższonym H2. Wersji H3 nie ma w ofercie Kombi.
 
+![Ford Transit Kombi L3 – widok z zewnątrz](/images/ford-transit-kombi-hero.jpg)
+
 ## Silniki i napęd
 
 Transit Kombi oferuje ten sam silnik 2.0 EcoBlue co furgon Van:

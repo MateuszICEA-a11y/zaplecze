@@ -66,6 +66,8 @@ W wersji Combi i Bus dostępne są te same silniki co w furgonie. Zalecenia prak
 
 Automat EDC jest szczególnie wygodny w wersji osobowej – kierowcy busów transferowych i szkolnych doceniają brak konieczności zmiany biegów przy częstych startach w ruchu miejskim.
 
+![Renault Master Combi L3H2 – widok z boku z przeszkleniem bocznym](/images/renault-master-osobowy-hero.jpg)
+
 ## Komfort pasażerów i wyposażenie dodatkowe
 
 Master osobowy po faceliftingu (2019) oferuje:

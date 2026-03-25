@@ -67,6 +67,8 @@ Partner Long jest certyfikowany do zabudów przez partnerów Peugeota. Typowe ko
 - sklejka wodoodporna z nakładką PVC podłogi
 - lusterko wewnętrzne (wymóg przy braku tylnych szyb)
 
+![Peugeot Partner Long – przestrzeń ładunkowa i tylne drzwi](/images/peugeot-partner-long-hero.jpg)
+
 {{% info title="Partner Long w leasingu" icon="engineering" %}}
 Peugeot oferuje Partner Long w leasingu operacyjnym przez Peugeot Leasing Polska. Przy wkładzie 10% i 60 miesiącach rata netto za wersję Pro 1.5 BlueHDi 100 KM wynosi ok. 1450–1650 zł netto miesięcznie (stan na 2025 rok). Leasing uwzględnia wykup na poziomie 20–30% wartości katalogowej. Warto porównać z ofertą Stellantis Financial Services.
 {{% /info %}}

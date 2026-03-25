@@ -59,6 +59,8 @@ Dodatkowe opcje cargo:
 - przesuwne drzwi prawe lub obustronne
 - relingi dachowe
 
+![Opel Combo Van – przestrzeń ładunkowa z widokiem na tylne drzwi](/images/opel-combo-dostawczy-hero.jpg)
+
 {{% info title="VAT i amortyzacja" icon="engineering" %}}
 Combo Van zarejestrowane jako N1 uprawnia do odliczenia 100% VAT od zakupu i eksploatacji, pod warunkiem prowadzenia ewidencji przebiegu (kilometrówki). Stawka amortyzacji podatkowej dla samochodów dostawczych wynosi 20% rocznie metodą liniową lub do 14% w metodzie degresywnej.
 {{% /info %}}
