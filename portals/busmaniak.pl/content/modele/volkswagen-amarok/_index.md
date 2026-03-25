@@ -42,13 +42,22 @@ Konstrukcja oparta na ramach Forda T6 pozwala na przewożenie ładunków o masie
 Przy pełnym obciążeniu kontroluj ciśnienie w tylnych oponach – Amarok ma tendencję do "pływania" przy zbyt niskich wartościach na osi napędowej.
 {{% /info %}}
 
-## Silniki Volkswagen Amarok
+## Silniki Amaroka
+
+| Silnik | Generacja | Moc | Moment | Spalanie (śr.) | Skrzynia |
+|--------|-----------|-----|--------|----------------|----------|
+| 2.0 TDI | II | 150 KM | 405 Nm | 8,0 l/100 km | 6-bieg. man. |
+| 2.0 TDI BiTurbo | II | 170 KM | 450 Nm | 8,5 l/100 km | 10-bieg. aut. |
+| 2.0 TDI BiTurbo | II | 204 KM | 500 Nm | 9,0 l/100 km | 10-bieg. aut. |
+| 3.0 V6 TDI | I | 224 KM | 550 Nm | 9,5 l/100 km | 8-bieg. aut. |
+| 3.0 V6 TDI | I/II | 258 KM | 600 Nm | 10,0 l/100 km | 8-bieg. aut. |
+| 3.0 V6 TDI | II | 241 KM | 600 Nm | 9,5 l/100 km | 10-bieg. aut. |
 
 ### 2.0 TDI (150–204 KM)
-Podstawowe jednostki napędowe to rzędowe czwórki o wysokiej kulturze pracy, generujące od 405 do 500 Nm momentu obrotowego. Wersje BiTurbo zapewniają dynamikę niezbędną w transporcie, utrzymując spalanie na poziomie 8–9 l/100 km. Najbardziej ekonomiczny wybór dla firm celujących w niskie koszty eksploatacji.
+Rzędowe czwórki o wysokiej kulturze pracy. Wersje BiTurbo (170 i 204 KM) zapewniają dynamikę przy spalaniu 8–9 l/100 km. Ekonomiczny wybór dla firm celujących w niskie koszty eksploatacji.
 
 ### 3.0 V6 TDI (224–258 KM)
-Silnik V6 w pierwszej generacji katapultował auto do 100 km/h w czasie poniżej 8 sekund. Jednostka dysponuje momentem obrotowym sięgającym 600 Nm, co jest kluczowe podczas jazdy w ciężkim terenie. Słynie z ogromnych rezerw mocy i trwałości przy wysokich obciążeniach.
+V6 katapultuje auto do setki w poniżej 8 sekund przy momencie 600 Nm. Idealny do ciężkiego terenu i holowania. W generacji II moc wynosi 241 KM (normy emisji), ale dostępny jest tuning do ponad 300 KM.
 
 ## Wersje wyposażenia Volkswagen Amarok
 
@@ -65,16 +74,44 @@ Mimo solidnej opinii, użytkownicy wskazują na kilka powtarzających się probl
 Kluczowe jest regularne serwisowanie oleju w skrzyniach automatycznych co 60–80 tys. km. Pozwala to uniknąć kosztownych napraw sterownika ZF, który przy starym oleju potrafi odmówić współpracy już przy 150 tys. km.
 {{% /expert %}}
 
-## Ceny Volkswagen Amarok
+## Ceny Amaroka
 
-Nowy Amarok startuje od około 200 000 zł netto za wersję Life z bieżącego rocznika. Na rynku wtórnym model cieszy się bardzo dobrą opinią, co sprawia, że ceny wolno spadają. Egzemplarze z lat 2018–2020 z silnikiem V6 kosztują zazwyczaj od 120 do 170 tysięcy złotych, zależnie od przebiegu i stanu zachowania.
+### Nowy Amarok II
 
-## Volkswagen Amarok a konkurencja
+| Wersja | Cena od (netto) |
+|--------|----------------|
+| Life 2.0 TDI 170 KM | ok. 200 000 zł |
+| Style 2.0 TDI 204 KM | ok. 230 000 zł |
+| PanAmericana V6 241 KM | ok. 270 000 zł |
+| Aventura V6 241 KM | ok. 290 000 zł |
 
-Głównym rywalem jest bliźniak konstrukcyjny – [Ford Ranger](/modele/ford-ranger/) – który często oferowany jest w bardziej surowych specyfikacjach roboczych. Na rynku pickupów Amarok konkuruje również z Toyotą Hilux, znaną z legendarnej trwałości, choć ustępującą VW pod względem komfortu jazdy. W porównaniu do [Forda Transita](/modele/ford-transit/), Amarok oferuje znacznie lepsze właściwości terenowe kosztem mniejszej objętości przestrzeni ładunkowej.
+### Używany Amarok
 
-{{% info title="Ciekawostka" icon="engineering" %}}
-Volkswagen Amarok był jednym z nielicznych pickupów, który w Europie oferował stały napęd na cztery koła z międzyosiowym mechanizmem różnicowym typu Torsen.
+| Generacja / Rocznik | Cena orientacyjna |
+|---------------------|-------------------|
+| Amarok I 2.0 TDI (2012–2016) | 60 000–90 000 zł |
+| Amarok I V6 (2017–2020) | 120 000–170 000 zł |
+| Amarok I V6 (2020–2022) | 160 000–210 000 zł |
+| Amarok II (od 2023) | 200 000–270 000 zł |
+
+Na rynku wtórnym Amarok trzyma cenę – dobre opinie i premium pozycjonowanie spowalniają deprecjację.
+
+## Porównanie Amaroka z konkurencją
+
+| Parametr | VW Amarok II | Ford Ranger T6.2 | Toyota Hilux | Isuzu D-Max |
+|----------|-------------|-----------------|-------------|-------------|
+| Długość (Double Cab) | 5350 mm | 5370 mm | 5325 mm | 5265 mm |
+| Ładowność | 1040 kg | 1070 kg | 1065 kg | 1025 kg |
+| Holowanie | 3500 kg | 3500 kg | 3500 kg | 3500 kg |
+| Diesel bazowy | 2.0 TDI 170 KM | 2.0 EcoBlue 170 KM | 2.4 150 KM | 1.9 164 KM |
+| V6 opcja | ✅ 3.0 TDI 241 KM | ✅ 3.0 V6 292 KM (benzyna) | ❌ | ❌ |
+| 4x4 | 4MOTION (stały) | 4A / dołączany | dołączany | dołączany |
+| Cena bazowa (netto) | ~200 000 zł | ~145 000 zł | ~155 000 zł | ~130 000 zł |
+
+Głównym rywalem jest bliźniaczy [Ford Ranger](/modele/ford-ranger/) – ta sama platforma T6, ale niższa cena i bardziej surowe konfiguracje robocze. Toyota Hilux bije trwałością, ale ustępuje komfortem. [Ford Transit](/modele/ford-transit/) oferuje większą kubaturę ładunkową kosztem właściwości terenowych.
+
+{{% info title="Torsen w Amaroku" icon="engineering" %}}
+Volkswagen Amarok I był jednym z nielicznych pickupów w Europie ze stałym napędem 4MOTION i międzyosiowym mechanizmem różnicowym Torsen – rozwiązaniem rodem z Audi quattro.
 {{% /info %}}
 
 *Źródła: Wikipedia – 4MOTION, materiały techniczne Volkswagen Vehiculos Comerciales, specyfikacje platformy Ford T6, dane homologacyjne WLTP.*

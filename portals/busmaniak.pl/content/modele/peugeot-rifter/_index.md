@@ -32,21 +32,35 @@ W 2021 roku ofertę uzupełnił w pełni elektryczny e-Rifter, który przez pewi
 Rifter najlepiej z całej rodziny K9 trzyma wartość rezydualną na rynku wtórnym.
 {{% /expert %}}
 
-## Peugeot Rifter – wymiary i techniczne możliwości transportowe
+## Wymiary Riftera
 
-Pojazd występuje w dwóch wariantach długości nadwozia, co pozwala dopasować go do potrzeb dużej rodziny lub małego biznesu. Szerokość auta wynosi 1848 mm (bez lusterek), a wysokość oscyluje wokół 1820–1840 mm, co zapewnia ogromną przestrzeń nad głowami pasażerów.
+| Parametr | Standard | Long |
+|----------|----------|------|
+| Długość całkowita | 4403 mm | 4753 mm |
+| Szerokość (bez lusterek) | 1848 mm | 1848 mm |
+| Wysokość | 1820 mm | 1840 mm |
+| Rozstaw osi | 2785 mm | 2975 mm |
+| Bagażnik (5-osobowy) | 775 l | 1050 l |
+| Bagażnik (7-osobowy) | – | 322 l (za 3. rzędem) |
+| Maks. długość załadunku | 2,7 m | 3,05 m |
 
-- **Standard** – długość 4403 mm, rozstaw osi 2785 mm
-- **Long** – długość 4753 mm, rozstaw osi 2975 mm
+- **Ładowność** – 500–700 kg zależnie od napędu
+- **DMC** – 1960–2180 kg
+- **Masa przyczepy** – do 1500 kg (z hamulcem)
+- **Prześwit** – 167 mm (wersja Allure), 200 mm (wersja 4x4 Dangel)
 
-Przestrzeń bagażowa to jeden z najmocniejszych atutów modelu. W wersji Standard przy pięciu osobach wynosi 775 litrów, natomiast wersja Long oferuje aż 1050 litrów do linii okien. Po złożeniu wszystkich siedzeń (w tym fotela pasażera z przodu) można przewozić przedmioty o długości do 2,7 m w wersji krótkiej i aż 3,05 m w wersji wydłużonej. Ładowność wynosi zazwyczaj od 500 do 700 kg, zależnie od specyfikacji napędowej.
+## Silniki Riftera
 
-## Peugeot Rifter – silniki benzynowe, Diesla i elektryczne
+| Silnik | Moc | Moment | Spalanie (śr.) | Skrzynia | Norma |
+|--------|-----|--------|----------------|----------|-------|
+| 1.2 PureTech | 110 KM | 205 Nm | 6,5 l/100 km | 6-bieg. man. | Euro 6d |
+| 1.2 PureTech | 130 KM | 230 Nm | 6,8 l/100 km | 6-bieg. man. / EAT8 | Euro 6d |
+| 1.5 BlueHDi | 100 KM | 250 Nm | 4,8 l/100 km | 6-bieg. man. | Euro 6d |
+| 1.5 BlueHDi | 130 KM | 300 Nm | 5,0 l/100 km | 6-bieg. man. / EAT8 | Euro 6d |
+| e-Rifter (do 2024) | 136 KM | 260 Nm | 20 kWh/100 km | 1-bieg. | – |
+| e-Rifter (od 2024) | 136 KM | 260 Nm | 19 kWh/100 km | 1-bieg. | – |
 
-Jednostki napędowe są dobrze znane z innych modeli grupy Stellantis, jednak ich eksploatacja wymaga świadomości technicznej. Silnik benzynowy 1.2 PureTech (110–130 KM) to konstrukcja trzycylindrowa z turbodoładowaniem, parowana z 6-biegowym manualem lub hydrokinetycznym automatem EAT8.
-
-- **1.5 BlueHDi** – jednostka wysokoprężna generująca od 100 do 130 KM i 300 Nm momentu obrotowego. Spalanie w cyklu mieszanym mieści się w granicach 4,6–6,4 l/100 km.
-- **e-Rifter** – napęd elektryczny o mocy 136 KM z baterią 50 kWh netto. Zasięg przed liftingiem wynosił ok. 280 km, natomiast po modernizacji z 2024 roku wzrósł do 340 km (WLTP).
+Silnik benzynowy 1.2 PureTech to trzycylindrowa konstrukcja z turbodoładowaniem. Diesel 1.5 BlueHDi generuje do 300 Nm momentu obrotowego przy spalaniu poniżej 5 l/100 km. Elektryczny e-Rifter: bateria 50 kWh, zasięg 280 km (340 km po facelifcie 2024).
 
 {{% info title="Ważna uwaga techniczna" icon="engineering" %}}
 W silnikach 1.2 PureTech kluczowa jest kontrola paska rozrządu pracującego w oleju, który może się łuszczyć i zapychać układ smarowania.
@@ -75,10 +89,38 @@ Modele z lat 2018–2020 były objęte akcjami naprawczymi dotyczącymi wadliwyc
 
 Na tle rywali kombivan wyróżnia się bogatszym wyposażeniem seryjnym i najlepiej ocenianą przestronnością kabiny w tej klasie. Głównym konkurentem pozostaje [Renault Kangoo](/modele/renault-kangoo/), który oferuje zbliżoną funkcjonalność przy nieco niższej cenie zakupu, lecz słabszej ofercie elektrycznej. Volkswagen Caddy przyciąga nabywców wyższą kulturą jazdy i solidniejszą elektroniką, natomiast bliźniaczy [Citroën Berlingo](/modele/citroen-berlingo/) trafia do klientów szukających prostszej stylistyki przy identycznej bazie technicznej.
 
-## Ceny Peugeot Rifter
+## Ceny Riftera
 
-Nowy egzemplarz z salonu to wydatek rzędu 115 000 zł za wersję spalinową w podstawowej konfiguracji, natomiast bogato wyposażone wersje Long przekraczają 150 000 zł.
+### Nowy Rifter
 
-Używane egzemplarze z lat 2019–2021 można nabyć w przedziale 60 000–90 000 zł. Najtańsze są auta z przebiegami flotowymi przekraczającymi 200 tys. km, natomiast zadbane, prywatne sztuki z polskiego salonu szybko znikają z ogłoszeń. Bliźniaczy [Peugeot Partner](/modele/peugeot-partner/) w adaptacjach osobowych dostępny jest zazwyczaj kilka–kilkanaście tysięcy złotych taniej.
+| Wersja | Cena od |
+|--------|---------|
+| Active Standard (1.5 BlueHDi 100) | ok. 115 000 zł brutto |
+| Allure Long | ok. 135 000 zł brutto |
+| GT Long 7-osobowy | ok. 155 000 zł brutto |
+| e-Rifter Standard | ok. 175 000 zł brutto (przed dotacjami) |
+
+### Używany Rifter
+
+| Rocznik | Cena orientacyjna |
+|---------|-------------------|
+| 2018–2020 (flotowe, 150+ tys. km) | 45 000–65 000 zł |
+| 2019–2021 (prywatne, 50–100 tys. km) | 65 000–90 000 zł |
+| 2022–2024 | 90 000–125 000 zł |
+
+Bliźniaczy [Peugeot Partner](/modele/peugeot-partner/) w adaptacjach osobowych kosztuje zazwyczaj kilka–kilkanaście tysięcy złotych taniej.
+
+## Porównanie Riftera z konkurencją
+
+| Parametr | Peugeot Rifter Long | Citroën Berlingo Long | Opel Combo Life Long | Renault Kangoo Long | VW Caddy Maxi |
+|----------|--------------------|-----------------------|---------------------|---------------------|---------------|
+| Długość | 4753 mm | 4753 mm | 4753 mm | 4911 mm | 4853 mm |
+| Bagażnik (5-os.) | 1050 l | 1050 l | 1050 l | 850 l | 1060 l |
+| 7-osobowy | ✅ tak | ✅ tak | ✅ tak | ✅ Grand Kangoo | ✅ tak |
+| Diesel bazowy | 1.5 BlueHDi 100 KM | 1.5 BlueHDi 100 KM | 1.5 Turbo D 100 KM | 1.5 Blue dCi 95 KM | 2.0 TDI 75 KM |
+| Wersja elektryczna | ✅ e-Rifter | ✅ ë-Berlingo | ✅ e-Combo Life | ✅ Kangoo E-Tech | ❌ nie |
+| Cena od (brutto) | ~115 000 zł | ~110 000 zł | ~115 000 zł | ~113 000 zł | ~130 000 zł |
+
+Na tle rywali Rifter wyróżnia się bogatszym wyposażeniem seryjnym i najlepiej ocenianą przestronnością kabiny. [Renault Kangoo](/modele/renault-kangoo/) wygrywa systemem Open Sesame, VW Caddy kulturą jazdy, a bliźniaczy [Citroën Berlingo](/modele/citroen-berlingo/) prostszą stylistyką przy identycznej bazie technicznej.
 
 *Źródła: Wikipedia – PSA EMP2 platform, katalog techniczny Stellantis Peugeot Rifter 2018–2024, dane homologacyjne WLTP, archiwum akcji serwisowych UOKiK.*
