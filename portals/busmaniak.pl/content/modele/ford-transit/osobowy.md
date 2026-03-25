@@ -20,7 +20,7 @@ faq:
     answer: "Wersja Titanium to najwyższe wyposażenie seryjne – obejmuje skórzaną tapicerkę, podgrzewane fotele przednie i tylne, 8-calowy ekran SYNC 4, kamerę cofania 180°, adaptacyjny tempomat i 17-calowe alufelgi. Cena katalogowa przekracza 200 000 zł."
 ---
 
-Ford Transit osobowy – czyli Tourneo – to pojazd zaprojektowany z myślą o pasażerach, nie o ładunku. Bogato wyposażone wnętrze, niski poziom hałasu i komfortowe fotele odróżniają go od Kombi i Van. Jeśli szukasz busa dla rodziny, firmy lub na wynajem – to właśnie ta wersja.
+[Ford Transit](https://pl.wikipedia.org/wiki/Ford_Transit) osobowy – czyli Tourneo – to pojazd zaprojektowany z myślą o pasażerach, nie o ładunku. Bogato wyposażone wnętrze, niski poziom hałasu i komfortowe fotele odróżniają go od Kombi i Van. Jeśli szukasz busa dla rodziny, firmy lub na wynajem – to właśnie ta wersja.
 
 ## Tourneo Custom vs Transit Tourneo – dwa różne pojazdy
 
@@ -74,3 +74,5 @@ Dla firm kupujących Tourneo do przewozów VIP lub lotniczych warto rozważyć d
 Nowe Transit Tourneo kosztują od ok. 160 000 zł brutto w wersji Trend z silnikiem 130 KM. Wersja Limited zamyka się w przedziale 180 000–195 000 zł, Titanium przekracza 210 000 zł.
 
 Na rynku używanych pojazdy z lat 2019–2022 o przebiegu 60 000–120 000 km dostępne są za 95 000–145 000 zł.
+
+*Źródła: Wikipedia, Ford, auto-data.net*

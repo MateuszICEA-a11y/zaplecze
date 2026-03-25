@@ -20,7 +20,7 @@ faq:
     answer: "Ford Transit w wersji chassis cab jest dostępny z DMC do 5 t (w Polsce homologowany do 4,7 t jako C1). Wersje 3,5 t wymagają jedynie prawa jazdy kat. B, wyższe – kat. C1."
 ---
 
-Ford Transit skrzyniowy to pojazd bazowy – gotowe podwozie z kabiną kierowcy, bez zabudowy z tyłu. Kupujesz ramę, oś tylną i silnik, a zabudowę montujesz u specjalistycznej firmy. To najbardziej elastyczna wersja Transita.
+[Ford Transit](https://pl.wikipedia.org/wiki/Ford_Transit) skrzyniowy to pojazd bazowy – gotowe podwozie z kabiną kierowcy, bez zabudowy z tyłu. Kupujesz ramę, oś tylną i silnik, a zabudowę montujesz u specjalistycznej firmy. To najbardziej elastyczna wersja Transita.
 
 ## Czym różni się chassis cab od furgonu?
 
@@ -88,3 +88,5 @@ Orientacyjne koszty zabudów u polskich zabudowców:
 - plandeka burtowa – 12 000–22 000 zł
 - chłodnia – 35 000–70 000 zł
 - wywrotka hydrauliczna – 20 000–40 000 zł
+
+*Źródła: Wikipedia, Ford, auto-data.net*

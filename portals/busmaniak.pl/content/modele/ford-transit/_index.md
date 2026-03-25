@@ -12,7 +12,7 @@ volume: 49500
 main_keyword: "Ford Transit dane techniczne"
 image: "/images/ford-transit-hero.jpg"
 image_alt: "Ford Transit VIII furgon"
-lead: "Ford Transit VIII to najpopularniejszy dostawczak w Polsce – dostępny w 12 konfiguracjach nadwozia, z silnikami EcoBlue 2.0 od 105 do 185 KM i ładownością do 2300 kg. Tutaj znajdziesz kompletne dane techniczne, wymiary wszystkich wersji i listę typowych usterek."
+lead: "Ford Transit VIII to najpopularniejszy dostawczak w Polsce – dostępny w 12 konfiguracjach nadwozia, z silnikami EcoBlue 2.0 od 105 do 185 KM i ładownością do 2300 kg."
 faq:
   - question: "Ile m³ ma Ford Transit L2H2?"
     answer: "Ford Transit L2H2 ma pojemność ładowni 9,5 m³. Długość ładowni wynosi 3300 mm, szerokość 1784 mm, wysokość 1786 mm. Zmieszczą się 3 europalety."
@@ -22,15 +22,17 @@ faq:
     answer: "Wymiana łańcucha rozrządu w silniku 2.2 TDCi kosztuje orientacyjnie 2000–3500 zł z robocizną. To najczęstszy i najpoważniejszy problem mechaniczny Transita VII."
 ---
 
-Ford Transit VIII to najpopularniejszy dostawczak w Polsce – dostępny w 12 konfiguracjach nadwozia, z silnikami EcoBlue 2.0 od 105 do 185 KM i ładownością do 2300 kg. Tutaj znajdziesz kompletne dane techniczne, wymiary wszystkich wersji i listę typowych usterek.
+Ford Transit VIII to najpopularniejszy dostawczak w Polsce – dostępny w 12 konfiguracjach nadwozia, z silnikami EcoBlue 2.0 od 105 do 185 KM i ładownością do 2300 kg.
 
 ## Historia i generacje
 
-Transit nie zawsze był tym samym pojazdem. Ford sprzedaje pod tą nazwą busa od 1965 roku, ale dla rynku wtórnego i użytkowego liczą się dwie generacje:
+[Ford Transit](https://pl.wikipedia.org/wiki/Ford_Transit) jest produkowany nieprzerwanie od 1965 roku – do dziś sprzedano ponad 13 milionów egzemplarzy, co czyni go numerem 1 wśród dużych furgonetek na świecie. Przez ten czas model przechodził gruntowne modernizacje; dla rynku wtórnego i użytkowego liczą się dwie ostatnie generacje:
 
-- Transit VI (2000–2006) – ostatnia generacja z napędem tylnym jako standardem, dziś rzadkość na rynkach UE
-- Transit VII (2006–2014) – pierwsza generacja z napędem przednim (FWD) jako opcją bazową, silniki Duratorq 2.2 TDCi w wariantach 85, 100, 115, 125, 140 i 155 KM; to właśnie ta generacja dominuje dziś na polskim rynku wtórnym
-- Transit VIII (od 2014) – aktualna generacja, produkowana w Kocaeli w Turcji; facelifting 2019 przyniósł zmodernizowany przód i ulepszone układy wspomagania kierownicy, facelifting 2024 wprowadził 10-biegowy automat i odświeżone wnętrze
+- **Transit VI (2000–2006)** – ostatnia generacja z napędem tylnym jako standardem, dziś rzadkość na rynkach UE
+- **Transit VII (2006–2014)** – pierwsza generacja z napędem przednim (FWD) jako opcją bazową, silniki Duratorq 2.2 TDCi w wariantach 85, 100, 115, 125, 140 i 155 KM; ta generacja dominuje dziś na polskim rynku wtórnym
+- **Transit VIII (od 2014)** – aktualna generacja, produkowana w zakładach Forda w Kocaeli w Turcji; facelifting 2019 przyniósł zmodernizowany przód i ulepszone układy wspomagania kierownicy, facelifting 2024 wprowadził 10-biegowy automat i odświeżone wnętrze
+
+Warto pamiętać, że Transit był montowany również w Polsce – w Płońsku, w latach 1997–2000, co wpłynęło na wczesną popularność modelu na polskim rynku. W ciągu ostatniej dekady sprzedaż Transitów wzrosła o 52% – między rokiem 2014 a 2024 Ford umocnił swoją pozycję lidera segmentu mimo rosnącej konkurencji ze strony Sprintera i Craftera.
 
 Transit VII jest wciąż popularny ze względu na cenę – jego słabe punkty to łańcuch rozrządu i korozja, które omówię w dalszej części artykułu.
 
@@ -60,15 +62,15 @@ Transit VIII jest dostępny w 4 długościach (L1–L4) i do 3 wysokościach (H1
 
 ### Wymiary szczegółowe – L2H2 (najpopularniejszy)
 
-- Długość całkowita: 5531 mm
-- Szerokość z lusterkami: 2474 mm
-- Szerokość bez lusterek: 2059 mm
-- Wysokość: 2547 mm
-- Długość ładowni: 3300 mm
-- Szerokość ładowni: 1784 mm
-- Wysokość ładowni: 1786 mm
-- Pojemność ładowni: 9,5 m³
-- Europalety: 3
+- **Długość całkowita** – 5531 mm
+- **Szerokość z lusterkami** – 2474 mm
+- **Szerokość bez lusterek** – 2059 mm
+- **Wysokość** – 2547 mm
+- **Długość ładowni** – 3300 mm
+- **Szerokość ładowni** – 1784 mm
+- **Wysokość ładowni** – 1786 mm
+- **Pojemność ładowni** – 9,5 m³
+- **Europalety** – 3
 
 ## Silniki
 
@@ -76,15 +78,15 @@ Transit VIII jest dostępny w 4 długościach (L1–L4) i do 3 wysokościach (H1
 
 Obecny silnik Transita VIII to czterocylindrowy diesel 2.0 EcoBlue z turbodoładowaniem zmiennej geometrii. Produkowany w czterech wersjach mocy:
 
-- 105 KM / 360 Nm – wersja bazowa dla lżejszych zastosowań
-- 130 KM / 385 Nm – najpopularniejsza wersja dla L2 i L3
-- 170 KM / 390 Nm – do cięższych konfiguracji i AWD
-- 185 KM / 415 Nm – wersja biturbo, dla L3 i L4 z DMC 4700 kg
+- **105 KM / 360 Nm** – wersja bazowa dla lżejszych zastosowań
+- **130 KM / 385 Nm** – najpopularniejsza wersja dla L2 i L3
+- **170 KM / 390 Nm** – do cięższych konfiguracji i AWD
+- **185 KM / 415 Nm** – wersja biturbo, dla L3 i L4 z DMC 4700 kg
 
 Skrzynie biegów:
-- 6-biegowa manualna – standard we wszystkich wersjach mocy
-- 6-biegowy automat SelectShift – opcja dla 130 i 170 KM
-- 10-biegowy automat – dostępny od faceliftingu 2024, dla 185 KM
+- **6-biegowa manualna** – standard we wszystkich wersjach mocy
+- **6-biegowy automat SelectShift** – opcja dla 130 i 170 KM
+- **10-biegowy automat** – dostępny od faceliftingu 2024, dla 185 KM
 
 Napęd: standardowo przedni (FWD), opcjonalnie tylny (RWD) lub AWD dla wersji 170 KM.
 
@@ -92,9 +94,9 @@ Napęd: standardowo przedni (FWD), opcjonalnie tylny (RWD) lub AWD dla wersji 17
 
 Pierwsza seria Transita VIII jeździła jeszcze z poprzednią jednostką Duratorq 2.2 TDCi:
 
-- 100 KM / 310 Nm
-- 125 KM / 370 Nm
-- 155 KM / 385 Nm
+- **100 KM / 310 Nm**
+- **125 KM / 370 Nm**
+- **155 KM / 385 Nm**
 
 Silnik ten ma gorszą kulturę pracy niż EcoBlue i identyczny problem z wtryskiwaczami co Transit VII. Od 2016 roku wycofany na rzecz 2.0 EcoBlue.
 
@@ -107,12 +109,12 @@ W mojej ocenie Ford Transit VIII z silnikiem 2.0 EcoBlue 130 KM to aktualnie naj
 
 ## Wersje nadwoziowe
 
-Ford Transit VIII jest oferowany w czterech podstawowych wersjach zabudowy. Szczegółowe dane dla każdej z nich znajdziesz w osobnych artykułach.
+Ford Transit VIII jest oferowany w czterech podstawowych wersjach zabudowy:
 
-- [Furgon](/modele/ford-transit/van/) – zamknięta ładownia ze skrzydłowymi drzwiami tylnymi, dostępny w L1–L4 i H1–H3; najpopularniejsza wersja na rynku
-- [Kombi](/modele/ford-transit/kombi/) – okna w bocznych ścianach i siedzenia dla pasażerów (do 17 osób), popularne w transporcie osobowym i szkołach
-- [Skrzyniowy](/modele/ford-transit/long/) – platforma z odkrytą skrzynią ładunkową, dostępny na podwoziu L2 i L3; DMC do 4700 kg
-- Brygadówka (kabina załogi) – podwójna kabina z czterema drzwiami i krótką ładownią lub skrzynią, popularna w budownictwie
+- [**Furgon**](/modele/ford-transit/van/) – zamknięta ładownia ze skrzydłowymi drzwiami tylnymi, dostępny w L1–L4 i H1–H3; najpopularniejsza wersja na rynku
+- [**Kombi**](/modele/ford-transit/kombi/) – okna w bocznych ścianach i siedzenia dla pasażerów (do 17 osób), popularne w transporcie osobowym i szkołach
+- [**Skrzyniowy**](/modele/ford-transit/long/) – platforma z odkrytą skrzynią ładunkową, dostępny na podwoziu L2 i L3; DMC do 4700 kg
+- **Brygadówka (kabina załogi)** – podwójna kabina z czterema drzwiami i krótką ładownią lub skrzynią, popularna w budownictwie
 
 Każda wersja jest dostępna z napędem FWD lub RWD – wersje z napędem tylnym (oznaczenie RWD) mają wyższą ładowność przy tym samym DMC.
 
@@ -120,20 +122,20 @@ Każda wersja jest dostępna z napędem FWD lub RWD – wersje z napędem tylnym
 
 ### 2.0 EcoBlue
 
-- Wtryskiwacze – wycieki oleju lub paliwa przy uszczelnieniu; wymiana jednej sztuki to koszt 1000–1500 zł z częścią i robocizną; objaw to biały dym po zimnym starcie i spadek mocy
-- DPF (filtr cząstek stałych) – zatykanie przy krótkich trasach miejskich; regeneracja 400–800 zł, wymiana 2000–4000 zł
-- Turbosprężarka – zdarza się przy przebiegach powyżej 200 000 km i przy nieprawidłowej obsłudze oleju; wymiana 2500–4500 zł
+- **Wtryskiwacze** – wycieki oleju lub paliwa przy uszczelnieniu; wymiana jednej sztuki to koszt 1000–1500 zł z częścią i robocizną; objaw to biały dym po zimnym starcie i spadek mocy
+- **DPF (filtr cząstek stałych)** – zatykanie przy krótkich trasach miejskich; regeneracja 400–800 zł, wymiana 2000–4000 zł
+- **Turbosprężarka** – zdarza się przy przebiegach powyżej 200 000 km i przy nieprawidłowej obsłudze oleju; wymiana 2500–4500 zł
 
 ### 2.2 TDCi
 
-- Łańcuch rozrządu – rozciąganie łańcucha i zużycie napinaczy; objaw to metaliczny stukot zimnym silnikiem; naprawa 2000–3500 zł; ignorowanie prowadzi do skoku łańcucha i zniszczenia silnika
-- Wtryskiwacze – te same problemy co w 2.0 EcoBlue, ale częstsze; zalecana weryfikacja i czyszczenie co 100 000 km
-- Uszczelka pod głowicą – przy zaniedbanych wymianach oleju i przegrzaniach, dotyczy głównie starszych egzemplarzy
+- **Łańcuch rozrządu** – rozciąganie łańcucha i zużycie napinaczy; objaw to metaliczny stukot zimnym silnikiem; naprawa 2000–3500 zł; ignorowanie prowadzi do skoku łańcucha i zniszczenia silnika
+- **Wtryskiwacze** – te same problemy co w 2.0 EcoBlue, ale częstsze; zalecana weryfikacja i czyszczenie co 100 000 km
+- **Uszczelka pod głowicą** – przy zaniedbanych wymianach oleju i przegrzaniach, dotyczy głównie starszych egzemplarzy
 
 ### Skrzynia biegów i nadwozie
 
-- Synchronizatory 3. i 4. biegu (skrzynia manualna) – twarde wbijanie biegów; objaw narasta stopniowo; naprawa 1500–2500 zł
-- Korozja progów i nadkoli – dotyczy głównie Transita VII i pierwszych egzemplarzy VIII; progresywna, wymaga interwencji przed sezonem zimowym
+- **Synchronizatory 3. i 4. biegu (skrzynia manualna)** – twarde wbijanie biegów; objaw narasta stopniowo; naprawa 1500–2500 zł
+- **Korozja progów i nadkoli** – dotyczy głównie Transita VII i pierwszych egzemplarzy VIII; progresywna, wymaga interwencji przed sezonem zimowym
 
 ## Porównanie z konkurencją
 
@@ -158,4 +160,4 @@ Transit wygrywa przede wszystkim dostępnością serwisu i części – warsztat
 
 ---
 
-*Szczegółowe dane techniczne dla poszczególnych silników i konfiguracji znajdziesz w artykułach: [Ford Transit 2.2 TDCi](/modele/ford-transit/2-2/), [Ford Transit furgon](/modele/ford-transit/van/), [Ford Transit long](/modele/ford-transit/long/).*
+*Źródła: Wikipedia, Ford, auto-data.net*

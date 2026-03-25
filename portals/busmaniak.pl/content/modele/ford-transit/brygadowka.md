@@ -20,7 +20,7 @@ faq:
     answer: "Ford Transit Double Cab ma homologację N1 – pojazd ciężarowy o DMC do 3,5 t. Umożliwia to pełne odliczenie VAT i amortyzację jako środka trwałego. Nie jest klasyfikowany jako osobowy (M1), co ma znaczenie podatkowo dla firm."
 ---
 
-Ford Transit brygadówka – w katalogach Forda określany jako Double Cab – to pojazd zaprojektowany dla ekip serwisowych i budowlanych. Łączy miejsce dla 5–7 ludzi z oddzieloną przestrzenią na narzędzia i materiały. Jedno auto zamiast dwóch.
+[Ford Transit](https://pl.wikipedia.org/wiki/Ford_Transit) brygadówka – w katalogach Forda określany jako Double Cab – to pojazd zaprojektowany dla ekip serwisowych i budowlanych. Łączy miejsce dla 5–7 ludzi z oddzieloną przestrzenią na narzędzia i materiały. Jedno auto zamiast dwóch.
 
 ## Co to jest Double Cab i jak jest zbudowany?
 
@@ -80,3 +80,5 @@ Transit brygadówka jest najczęściej wybierany przez:
 - ekipy elektroinstalacyjne i hydrauliczne – rury i kable w ładowni
 - służby utrzymania ruchu w zakładach przemysłowych
 - firmy sprzątające i ogrodnicze – sprzęt z tyłu, ekipa z przodu
+
+*Źródła: Wikipedia, Ford, auto-data.net*

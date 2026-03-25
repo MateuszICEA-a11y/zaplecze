@@ -20,7 +20,7 @@ faq:
     answer: "Najpopularniejsze zabudowy to regały aluminiowe lub stalowe, podłoga sklejkowa z uchwytami do mocowania ładunku, przegroda kabina–ładownia, oświetlenie LED, szuflady podpodłogowe oraz systemy mocowania rowerów lub maszyn."
 ---
 
-Ford Transit dostawczy to furgon przeznaczony do codziennego transportu towarów. Zamknięta przestrzeń ładunkowa, drzwi boczne przesuwne i tylne klapa 270° tworzą praktyczny zestaw dostępu do ładowni. DMC od 3,5 do 4,7 t pozwala dopasować pojazd do rzeczywistych potrzeb przewozowych.
+[Ford Transit](https://pl.wikipedia.org/wiki/Ford_Transit) dostawczy to furgon przeznaczony do codziennego transportu towarów. Zamknięta przestrzeń ładunkowa, drzwi boczne przesuwne i tylne klapa 270° tworzą praktyczny zestaw dostępu do ładowni. DMC od 3,5 do 4,7 t pozwala dopasować pojazd do rzeczywistych potrzeb przewozowych.
 
 ## DMC i kategorie prawa jazdy
 
@@ -74,3 +74,5 @@ Przy zamawianiu Transita dostawczego z myślą o zabudowie warto wybrać opcję 
 Nowy Ford Transit dostawczy L2H2 z silnikiem 130 KM FWD i DMC 3,5 t kosztuje od ok. 140 000 zł brutto. Wersje L3H2 RWD z DMC 4,25 t i silnikiem 170 KM to wydatek 160 000–180 000 zł bez zabudowy. Zabudowy regałowe od renomowanych producentów to dodatkowe 15 000–35 000 zł.
 
 Na rynku używanym egzemplarze z lat 2018–2022 dostępne są za 75 000–120 000 zł.
+
+*Źródła: Wikipedia, Ford, auto-data.net*
