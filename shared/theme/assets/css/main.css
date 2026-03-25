@@ -33,7 +33,7 @@
 
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
 body {
   font-family: var(--f-body);
   font-weight: 400;
@@ -1134,6 +1134,20 @@ blockquote {
   border: 1px solid var(--c-border);
 }
 
+.article__content .table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 1.5rem 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--c-border);
+}
+
+.article__content .table-wrap table {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+}
+
 .article__content th {
   background: var(--c-dark);
   color: #fff;
@@ -1517,6 +1531,11 @@ blockquote {
 /* ══════════════════════════════════════
    COMPARISON TABLE
    ══════════════════════════════════════ */
+.table-wrap .comparison-table {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+}
 .comparison-table {
   width: 100%;
   border-collapse: collapse;
