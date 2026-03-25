@@ -67,6 +67,9 @@ Ceny są mocno zróżnicowane i zależą od rocznika oraz typu agregatu:
 - **Używane (5–8 lat)** – egzemplarze z przebiegiem 200–300 tys. km kosztują od 60 000 do 95 000 zł netto.
 - **Nowe (rocznik 2024/2025)** – Fiat Ducato L3H2 z fabryczną izotermą i agregatem to wydatek rzędu 160 000–195 000 zł netto, w zależności od mocy silnika i wyposażenia kabiny.
 
+
+![Fiat Ducato chłodnia – zabudowa izotermiczna i chłodnicza](/images/fiat-ducato-chlodnia-hero.jpg)
+
 ## Eksploatacja i serwis – o czym pamiętać?
 
 Ducato ma jedną realną zaletę przy eksploatacji: części są tanie i dostępne w każdym sklepie motoryzacyjnym. Zabudowa chłodnicza dokłada jednak kilka obowiązkowych punktów do harmonogramu serwisu:

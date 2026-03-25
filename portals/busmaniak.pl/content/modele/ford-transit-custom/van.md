@@ -75,6 +75,10 @@ Gen II (od 2024):
 
 Przy wyborze gen I na rynku wtórnym: 2.0 EcoBlue 130 KM to solidna propozycja dla flot z przebiegiem 30 000–50 000 km/rok.
 
+
+
+![Ford Transit Custom L2 Van – przestrzeń ładunkowa](/images/ford-transit-custom-van-hero.jpg)
+
 ## Wyposażenie cargo i zabudowy
 
 Standard Transit Custom Van:
@@ -86,8 +90,6 @@ Certyfikowane zabudowy przez sieć Ford:
 - systemy regalowe Sortimo i Bott
 - zabudowy chłodnicze (Lamberet, Schmitz)
 - zabudowy warsztatowe z kompresorami
-
-![Ford Transit Custom L2 Van – przestrzeń ładunkowa](/images/ford-transit-custom-van-hero.jpg)
 
 {{% info title="Transit Custom a E-Transit Custom" icon="engineering" %}}
 E-Transit Custom (od 2024) to w pełni elektryczna wersja Custom – silnik 218 KM, bateria 64 kWh, zasięg WLTP do 380 km. Ładowanie DC do 125 kW (20–80% w ok. 41 minut). Ładowność: 1147 kg (L1) lub 1233 kg (L2). Dostępny w tych samych wersjach Van, Kombi i Double Cab. Ford oferuje gwarancję baterii na 8 lat lub 160 000 km.

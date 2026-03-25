@@ -59,6 +59,9 @@ Spalanie wersji L4H3 z 2.3 150 KM to realnie 10–12 l/100 km w trasie. Przy pe�
 
 {{% info title="AdBlue" icon="engineering" %}}Starsze jednostki 2.3 MultiJet spełniające normę Euro 6 (sprzed 2019 roku) często nie wymagały stosowania płynu AdBlue, co jest dużym atutem na rynku wtórnym. Nowsze silniki 2.2 są już wyposażone w zaawansowane układy oczyszczania spalin.{{% /info %}}
 
+
+![Fiat Ducato Maxi – wymiary, ładowność, zastosowania](/images/fiat-ducato-maxi-hero.jpg)
+
 ## Zastosowania: od kurierki po vanlife
 
 Gabaryty Ducato Maxi otwierają wiele możliwości:

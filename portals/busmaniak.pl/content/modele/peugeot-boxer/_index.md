@@ -61,6 +61,10 @@ Boxer jest oferowany w pięciu kombinacjach długość × wysokość:
 
 Ładowność zależy od wariantu: od 1100 kg (L1H1) do 1735 kg (L4H3 przy DMC 4t).
 
+
+
+![Peugeot Boxer – van L2H2 w wersji dostawczej](/images/peugeot-boxer-hero.jpg)
+
 ## Zastosowania specjalne i zabudowy
 
 Boxer jest bazą dla setek typów zabudów:
@@ -71,8 +75,6 @@ Boxer jest bazą dla setek typów zabudów:
 - zabudowy warsztatowe z żurawiem lub windą
 
 Peugeot współpracuje z siecią certyfikowanych zabudowców w Polsce – m.in. Orion, Wielton, AMZ.
-
-![Peugeot Boxer – van L2H2 w wersji dostawczej](/images/peugeot-boxer-hero.jpg)
 
 {{% info title="Boxer a przepisy ADR i transport żywności" icon="engineering" %}}
 Boxer w wersji chłodniczej (zabudowa izotermiczna z agregatem chłodniczym) może być przystosowany do transportu żywności zgodnie z ATP (Umowa o Międzynarodowych Przewozach Szybko Psujących się Artykułów Spożywczych). Certyfikat ATP wymagany jest przy temperaturach poniżej +7°C. Boxer z DMC do 3,5 t nie wymaga prawa jazdy C.

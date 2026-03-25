@@ -55,6 +55,10 @@ Vivaro furgon oferowany jest z DMC 2800 lub 3100 kg.
 
 Masa własna wersji podstawowej (1.5 D 100 KM, L1) to ok. 1815 kg. Każde dodatkowe wyposażenie zjada ładowność.
 
+
+
+![Opel Vivaro dostawczy – przestrzeń ładunkowa i dostęp](/images/opel-vivaro-dostawczy-hero.jpg)
+
 ## Silniki w wersji furgon
 
 Vivaro C furgon dostępny jest z:
@@ -67,8 +71,6 @@ Vivaro C furgon dostępny jest z:
 - 2.0 D 177 KM – automatyczna 8-biegowa
 
 Szczegóły jednostek: [Opel Vivaro 1.5](/modele/opel-vivaro/1-5/) i [Opel Vivaro 2.0](/modele/opel-vivaro/2-0/).
-
-![Opel Vivaro dostawczy – przestrzeń ładunkowa i dostęp](/images/opel-vivaro-dostawczy-hero.jpg)
 
 ## Dostęp do ładowni
 

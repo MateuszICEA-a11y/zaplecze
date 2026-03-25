@@ -58,6 +58,10 @@ Typowa zabudowa plandekowa na Mastera (skrzynia stalowa + pałąki + plandeka br
 
 Standardowy otwór burtowy po złożeniu burty bocznej: szerokość ok. 1900–2000 mm, wysokość ok. 300–450 mm (zależnie od wersji burty). Plandeka po ściągnięciu zostawia pełen dostęp do ładunku z góry i z boku.
 
+
+
+![Renault Master plandeka L3 – skrzynia z pałąkami i plandeką](/images/renault-master-plandeka-hero.jpg)
+
 ## Silniki i skrzynie biegów
 
 W wersji plandekowej zaleca się wyższe moce silnika ze względu na większą masę całkowitą przy pełnym załadunku:
@@ -67,8 +71,6 @@ W wersji plandekowej zaleca się wyższe moce silnika ze względu na większą m
 - **165 lub 180 KM** – konieczny dla wersji Maxi z DMC 4500 kg
 
 Skrzynia manualna jest standardem. Automat EDC nie jest polecany w wersji skrzyniowej przy ciągłym jeżdżeniu z pełnym ładunkiem – manualna przekładnia daje lepszą kontrolę momentu obrotowego przy ruszaniu.
-
-![Renault Master plandeka L3 – skrzynia z pałąkami i plandeką](/images/renault-master-plandeka-hero.jpg)
 
 ## Porównanie z plandeką na innych modelach
 

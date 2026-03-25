@@ -49,6 +49,10 @@ W standardowej konfiguracji 5-osobowej bagażnik pomieści 1213 litrów (wersja 
 
 {{% info title="Life vs Style" icon="engineering" %}}Life to najrozsądniejszy wybór cenowo – automatyczna klimatyzacja i czujniki parkowania za relatywnie niewielką dopłatę. Style dodaje Digital Cockpit i LED, ale dopłata sięga 8–12 tys. zł. Warto rozważyć, czy te gadżety są warte swojej ceny.{{% /info %}}
 
+
+
+![Volkswagen Caddy osobowy V generacji](/images/volkswagen-caddy-osobowy-hero.jpg)
+
 ## Silniki {#silniki}
 
 - **[2.0 TDI](/modele/volkswagen-caddy/tdi/) 75/102/122 KM** – diesel; 102 KM to bestseller, dostępny z manualem lub DSG
@@ -60,8 +64,6 @@ DSG (skrzynia dwusprzęgłowa) zapewnia płynne zmiany biegów, ale jest droższ
 Pełny przegląd silników i generacji na stronie [Volkswagena Caddy](/modele/volkswagen-caddy/).
 
 {{% expert name="Kowalczyk" %}}Do jazdy rodzinnej polecam 2.0 TDI 102 KM z manualną skrzynią biegów. DSG jest wygodniejsza, ale w razie awarii mechatronika koszty naprawy sięgają 3–5 tys. zł. Manual jest odporniejszy na usterki i tańszy w serwisie.{{% /expert %}}
-
-![Volkswagen Caddy osobowy V generacji](/images/volkswagen-caddy-osobowy-hero.jpg)
 
 ## Caddy osobowy vs konkurencja {#konkurencja}
 

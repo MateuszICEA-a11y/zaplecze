@@ -64,6 +64,9 @@ Rozrząd na pasku ma to do siebie, że rzadko daje wyraźne objawy przed zerwani
 Najczęstszym błędem podczas wymiany rozrządu w Ducato 2.3 jest próba ustawiania go „na znaki" malowane flamastrem zamiast użycia profesjonalnych blokad. Ten silnik jest bardzo czuły na precyzję synchronizacji. Nawet przesunięcie o jeden ząb może nie spowodować kolizji zaworów z tłokami, ale drastycznie pogorszy kulturę pracy, zwiększy spalanie i skróci życie filtra DPF.
 {{% /expert %}}
 
+
+![Fiat Ducato rozrząd – co ile wymiana, koszty, objawy zużycia](/images/fiat-ducato-rozrzad-hero.jpg)
+
 ## Rozrząd w innych silnikach Ducato
 
 Nie każdy Fiat Ducato ma pasek. To ważne przy zakupie używanego egzemplarza:

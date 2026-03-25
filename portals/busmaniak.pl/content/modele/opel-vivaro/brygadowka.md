@@ -54,6 +54,10 @@ W wersji Combi 6-miejscowej ładowność jest niższa niż w furgonie:
 
 Masa własna Combi 6-osobowego jest wyższa niż furgonu o ok. 80–120 kg (dodatkowe siedzenia i ich mocowania).
 
+
+
+![Opel Vivaro brygadówka – kabina dwurzędowa z przestrzenią ładunkową](/images/opel-vivaro-brygadowka-hero.jpg)
+
 ## Silniki do brygadówki
 
 Do intensywnej eksploatacji z pełnym załadunkiem polecane warianty:
@@ -63,8 +67,6 @@ Do intensywnej eksploatacji z pełnym załadunkiem polecane warianty:
 - 2.0 D 177 KM z automatem – komfort przy codziennych przejazdach wieloosobową załogą
 
 Szczegóły w artykułach [Opel Vivaro 1.5](/modele/opel-vivaro/1-5/) i [Opel Vivaro 2.0](/modele/opel-vivaro/2-0/).
-
-![Opel Vivaro brygadówka – kabina dwurzędowa z przestrzenią ładunkową](/images/opel-vivaro-brygadowka-hero.jpg)
 
 ## Zastosowania brygadówki
 

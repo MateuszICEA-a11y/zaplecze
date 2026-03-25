@@ -58,6 +58,9 @@ Fabryczna izolacja akustyczna Ducato jest szczera w swojej skromności – w kab
 
 {{% info title="Uwaga" icon="engineering" %}}Przy modyfikacjach mechanicznych starszych jednostek, jak 2.5 TDI (116 KM), chiptuning elektroniczny nie jest możliwy w taki sam sposób jak w MultiJetach. Tutaj tuning polega na mechanicznej regulacji dawki paliwa na pompie wtryskowej oraz modyfikacji ciśnienia doładowania.{{% /info %}}
 
+
+![Fiat Ducato tuning – modyfikacje, chiptuning, optyka](/images/fiat-ducato-tuning-hero.jpg)
+
 ## Tuning wizualny – jak wyróżnić swojego busa?
 
 Ducato nie musi wyglądać jak auto kurierskie. Kilka trafnie dobranych elementów robi tu dużą różnicę.

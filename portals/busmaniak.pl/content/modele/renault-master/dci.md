@@ -61,6 +61,10 @@ Przy zakupie używanego Mastera lub przy planowaniu serwisu prewencyjnego warto 
 - **Koło dwumasowe** – zużycie po 250 000–350 000 km; objawy: wibracje na biegu jałowym, szum przy wciskaniu sprzęgła; wymiana z sprzęgłem: 1500–3000 zł
 - **Turbosprężarka** – awaryjność niska przy regularnej wymianie oleju; najczęstszy problem to zacięcie łopatek geometrii zmiennej przy dużych przebiegach; regeneracja: 800–1500 zł
 
+
+
+![Silnik Renault Master 2.3 dCi M9T – widok komory silnika](/images/renault-master-dci-hero.jpg)
+
 ## Spalanie w praktyce
 
 Rzeczywiste zużycie paliwa zależy znacząco od charakteru tras i obciążenia:
@@ -72,8 +76,6 @@ Rzeczywiste zużycie paliwa zależy znacząco od charakteru tras i obciążenia:
 | Autostrada, pełny ładunek | 12,0–14,0 l/100 km | 12,5–14,5 l/100 km | 11,5–13,5 l/100 km |
 
 Zużycie w mieście jest wysokie ze względu na częste starty i zimny silnik nieosiągający temperatury pracy. Trasa regionalna (50/50) to komfort codziennej eksploatacji.
-
-![Silnik Renault Master 2.3 dCi M9T – widok komory silnika](/images/renault-master-dci-hero.jpg)
 
 ## Interwały serwisowe i koszty
 

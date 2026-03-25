@@ -66,6 +66,10 @@ Standardowa ładownia Mastera w wersji blaszak obejmuje:
 
 Drzwi boczne przesuwne to ważna opcja przy pracy kurierskiej – umożliwiają dostęp do ładowni bez otwierania tylnych skrzydeł i manewrowania w ciasnej przestrzeni.
 
+
+
+![Renault Master blaszak L3H2 – zamknięta przestrzeń ładunkowa](/images/renault-master-blaszak-hero.jpg)
+
 ## Wyposażenie robocze – co warto zamówić lub dokupić
 
 Typowe wyposażenie blaszaka do pracy remontowej lub dostaw:
@@ -77,8 +81,6 @@ Typowe wyposażenie blaszaka do pracy remontowej lub dostaw:
 - hak holowniczy (dopuszczalna masa przyczepki do 3000 kg dla DMC 3500 kg)
 
 Koszt podstawowego wyposażenia: 800–2500 zł, w zależności od materiałów i zabudowcy.
-
-![Renault Master blaszak L3H2 – zamknięta przestrzeń ładunkowa](/images/renault-master-blaszak-hero.jpg)
 
 ## Zakup używanego blaszaka – na co zwrócić uwagę
 

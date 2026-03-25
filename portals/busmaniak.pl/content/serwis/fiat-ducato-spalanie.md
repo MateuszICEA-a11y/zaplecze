@@ -55,6 +55,9 @@ Silnik 3.0 MultiJet (oznaczenie F1C) to legenda trwałości. W tabelach wypada n
 
 Dowiedz się więcej o tej jednostce: [Silnik 3.0 MultiJet](/modele/fiat-ducato/3-0-multijet/).
 
+
+![Fiat Ducato spalanie – zużycie paliwa per silnik i wersja](/images/fiat-ducato-spalanie-hero.jpg)
+
 ## Silnik 2.3 MultiJet – złoty środek dla busiarza i kamperowicza
 
 To najpopularniejszy wybór na rynku wtórnym i trudno się temu dziwić. Jednostka konstrukcji Sofim łączy przyzwoitą dynamikę z rozsądnym apetytem na paliwo. W wersji 130 KM w cyklu mieszanym spokojnie zejdziemy poniżej 9 litrów – pod warunkiem że nie forsujemy 110 km/h na autostradzie.

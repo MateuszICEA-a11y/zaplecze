@@ -56,6 +56,9 @@ Komplet sprężyn + amortyzatorów sportowych to wydatek 2000–4000 zł (częś
 - **Folie ochronne PPF** – chronią lakier przed odpryskami; przód pojazdu od 1500 zł
 - **Folie przyciemniające** – redukcja nagrzewania wnętrza i lepsza estetyka; od 600 zł za tylne szyby
 
+
+![Zmodyfikowany Citroën Berlingo](/images/citroen-berlingo-tuning-hero.jpg)
+
 ## Wnętrze {#wnętrze}
 
 - **Radio z Android Auto/CarPlay** – wymiana fabrycznego radia na 2DIN z 7–10" ekranem; nawigacja, muzyka, telefon na dużym wyświetlaczu; koszt 800–2500 zł

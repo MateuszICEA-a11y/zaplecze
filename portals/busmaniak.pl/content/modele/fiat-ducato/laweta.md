@@ -59,6 +59,9 @@ Pod zabudowę autolawety na bazie Ducato stosuje się dwa główne typy platform
 
 {{% expert name="Kowalczyk" %}}Szukając używanego Ducato pod lawetę, zwracaj uwagę na tylne zawieszenie. Standardowe pióra często siadają pod ciężarem. Najlepszym rozwiązaniem są dodatkowe poduszki pneumatyczne z kompresorem w kabinie, które pozwalają wypoziomować auto i poprawić komfort jazdy z ładunkiem.{{% /expert %}}
 
+
+![Fiat Ducato laweta – autolaweta na bazie Ducato](/images/fiat-ducato-laweta-hero.jpg)
+
 ## Wymagania prawne i DMC
 
 Większość autolawet na bazie Ducato rejestruje się jako "pojazd specjalny – pomoc drogowa" lub "samochód ciężarowy do przewozu pojazdów".

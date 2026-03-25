@@ -54,6 +54,10 @@ Tourneo Custom jest dostępny w układach:
 
 W gen II modułowe siedzenia rzędu 2 i 3 można szybko demontować – w 2 minuty bez narzędzi, podobnie jak w VW Multivanie.
 
+
+
+![Ford Tourneo Custom – wnętrze z trzema rzędami siedzeń](/images/ford-transit-custom-osobowy-hero.jpg)
+
 ## Wyposażenie kabiny gen II
 
 Standard Leader:
@@ -81,8 +85,6 @@ Wyposażenie Limited:
 | Cena bazowa | od ok. 220 000 zł | od ok. 250 000 zł |
 
 Tourneo Custom jest dłuższy, pojemniejszy i tańszy przy porównywalnym wyposażeniu – ale Multivan jest bardziej "samochodowy" w prowadzeniu.
-
-![Ford Tourneo Custom – wnętrze z trzema rzędami siedzeń](/images/ford-transit-custom-osobowy-hero.jpg)
 
 {{% info title="Tourneo Custom w leasingu jako flota" icon="engineering" %}}
 Tourneo Custom rejestrowany jako M1 (do 8 pasażerów + kierowca) daje prawo do 50% odliczenia VAT przy zakupie i eksploatacji. Ford oferuje specjalne stawki leasingowe dla flot przez program Ford Pro Fleet. Minimalny wolumen dla cen flotowych: 3 pojazdy. Tourneo Custom PHEV może być dofinansowany z programów NFOŚiGW przy spełnieniu wymogów emisyjności.

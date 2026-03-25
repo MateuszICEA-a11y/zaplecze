@@ -58,6 +58,9 @@ W silnikach MultiJet 2.3 i 3.0 przekaźnik pompy paliwa (T14) pracuje intensywni
 Właściciele kamperów na bazie Ducato często skarżą się na przekaźnik lodówki lub ładowania dodatkowego akumulatora. Pamiętajcie, że w fabrycznych systemach Fiat stosuje tzw. sygnał D+ (alternator), który aktywuje przekaźnik rozdzielający dopiero po uruchomieniu silnika. Jeśli akumulator hotelowy się nie ładuje podczas jazdy, winny jest zazwyczaj przekaźnik umieszczony w słupku B po stronie pasażera.
 {{% /expert %}}
 
+
+![Przekaźniki Fiat Ducato – schemat, lokalizacja, opis](/images/przekazniki-fiat-ducato-hero.jpg)
+
 ## Typowe awarie i diagnostyka
 
 Ducato jest generalnie solidny elektrycznie, ale ma kilka miejsc, gdzie regularnie dochodzi do problemów:

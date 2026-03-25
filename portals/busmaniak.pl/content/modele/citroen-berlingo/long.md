@@ -58,6 +58,10 @@ Orientacyjne dane techniczne Berlingo Long/XL:
 
 Większy promień skrętu to jedyny kompromis związany z wydłużonym nadwoziem. Na parkingu w centrum miasta różnica jest odczuwalna. Pełne dane techniczne per silnik znajdziesz w artykule o [Citroënie Berlingo](/modele/citroen-berlingo/).
 
+
+
+![Citroën Berlingo Long z boku](/images/citroen-berlingo-long-hero.jpg)
+
 ## Silniki w wersji Long {#silniki}
 
 Berlingo Long/XL oferuje identyczne jednostki napędowe jak wersja M:
@@ -77,4 +81,3 @@ Przesuwane drzwi boczne (po obu stronach) to ogromna zaleta na ciasnych parkinga
 
 {{% expert name="Kowalczyk" %}}Berlingo Long z 1.5 BlueHDI 130 KM to jeden z najlepszych wyborów w segmencie kombivanów rodzinnych. Przy pełnym obciążeniu 7 osobami silnik 100 KM może być zbyt słaby na autostradzie, ale 130 KM daje komfortowy zapas mocy. Alternatywą jest [VW Caddy Maxi](/modele/volkswagen-caddy/), ale kosztuje zauważalnie więcej.{{% /expert %}}
 
-![Citroën Berlingo Long z boku](/images/citroen-berlingo-long-hero.jpg)

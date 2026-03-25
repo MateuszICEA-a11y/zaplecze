@@ -54,6 +54,10 @@ Orientacyjne parametry Berlingo XL (III generacja):
 
 Pełne specyfikacje per silnik i wersja dostępne na stronie głównej [Citroëna Berlingo](/modele/citroen-berlingo/).
 
+
+
+![Citroën Berlingo XL III generacji](/images/citroen-berlingo-xl-hero.jpg)
+
 ## Silniki {#silniki}
 
 Gama silnikowa jest identyczna jak w wersji M:
@@ -70,4 +74,3 @@ Berlingo XL to jedyny wariant, w którym dostępna jest opcja [7 miejsc](/modele
 
 {{% expert name="Kowalczyk" %}}Berlingo XL z 1.5 BlueHDI 130 KM to najrozsądniejsza konfiguracja dla rodziny. Silnik daje komfortowy zapas mocy przy pełnym obciążeniu, a diesel przy 20 tys. km rocznie jest tańszy w eksploatacji od benzyny. Alternatywą jest [VW Caddy Maxi](/modele/volkswagen-caddy/), ale za premię cenową 15–20%.{{% /expert %}}
 
-![Citroën Berlingo XL III generacji](/images/citroen-berlingo-xl-hero.jpg)

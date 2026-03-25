@@ -75,6 +75,10 @@ Drzwi boczne przesuwne:
 - szerokość otworu – 1004 mm
 - wysokość otworu – 1322 mm
 
+
+
+![Opel Vivaro wymiary – rzut z boku i z góry](/images/opel-vivaro-wymiary-hero.jpg)
+
 ## Masa i ładowność
 
 Dane dla Vivaro C L1 z silnikiem 1.5 D 100 KM:
@@ -86,8 +90,6 @@ Dane dla Vivaro C L1 z silnikiem 1.5 D 100 KM:
 - ładowność (DMC 3100 kg) – ok. 1285 kg
 
 Każde dodatkowe wyposażenie (klimatyzacja, przegroda, szyny mocujące) pomniejsza ładowność.
-
-![Opel Vivaro wymiary – rzut z boku i z góry](/images/opel-vivaro-wymiary-hero.jpg)
 
 ## Porównanie z konkurencją
 

@@ -59,6 +59,9 @@ Skrzyniowe Ducato często pracuje pod stałym obciążeniem i generuje większy 
 
 {{% info title="Technika" icon="engineering" %}}Przy zakupie używanego Ducato z silnikiem 3.0 warto sprawdzić stan gałki zmiany biegów i mechanizmu wybieraka – przy dużych przebiegach (powyżej 400 tys. km) precyzja zmiany biegów może drastycznie spaść, co jest typową przypadłością tego modelu.{{% /info %}}
 
+
+![Fiat Ducato skrzyniowy – podwozie, wymiary, ładowność](/images/fiat-ducato-skrzyniowy-hero.jpg)
+
 ## Zastosowania Fiata Ducato z nadwoziem skrzyniowym
 Niska masa własna podwozia (tzw. chassis) przekłada się na jedną z najlepszych ładowności w klasie 3,5 t. Stąd tak szeroki przekrój branż, które sięgają po tę wersję:
 

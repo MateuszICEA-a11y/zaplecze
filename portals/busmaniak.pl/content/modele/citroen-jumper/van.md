@@ -82,6 +82,10 @@ Egzemplarze sprzed 2020 (rynek wtórny):
 
 Przy zakupie używanego z roczników 2014–2019 najczęściej spotykany jest 2.2 MultiJet II 130 KM – sprawdzony silnik, ale wymagający regularnego serwisu DPF i EGR.
 
+
+
+![Citroën Jumper L2H2 Van – przestrzeń ładunkowa z otwartymi drzwiami](/images/citroen-jumper-van-hero.jpg)
+
 ## ë-Jumper – elektryczna wersja Vana
 
 ë-Jumper dostępny jest w wariantach L2H2 i L3H2:
@@ -94,8 +98,6 @@ Przy zakupie używanego z roczników 2014–2019 najczęściej spotykany jest 2.
 - AC (Type 2) do 22 kW: 0–100% przy 75 kWh w ok. 4,5 h
 
 Przestrzeń ładunkowa identyczna jak w dieslu – bateria podpodłogowa.
-
-![Citroën Jumper L2H2 Van – przestrzeń ładunkowa z otwartymi drzwiami](/images/citroen-jumper-van-hero.jpg)
 
 {{% info title="Jumper Van a zabudowy chłodnicze" icon="engineering" %}}
 Jumper Van jest popularną bazą do zabudów chłodniczych ATP w Polsce. Typowe zabudowy na L2H2: izotermia z agregatem Carrier lub Thermo King do transportu farmaceutyków, żywności i mięsa (klasy AT, FRC). Certyfikat ATP dla zabudowy na Jumperze ważny jest 6 lat, po czym wymagane jest odnowienie lub wymiana izolacji. Producenci zabudów chłodniczych w Polsce: Lamberet, Igloocar, Szczepański Truck.

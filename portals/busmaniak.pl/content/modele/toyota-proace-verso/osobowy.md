@@ -67,6 +67,10 @@ Proace Verso jest oferowany w trzech liniach wyposażenia, które istotnie róż
 Verso zarejestrowany jako M1 podlega pełnemu opodatkowaniu VAT przy zakupie prywatnym. Firmy mogą odliczyć 50% VAT. Dla flotowych nabywców przewożących powyżej 9 osób nie ma alternatywy w tej cenie – wersja Long VIP z 9 miejscami to nadal znacznie mniej niż Mercedes Sprinter Bus.
 {{% /info %}}
 
+
+
+![Toyota Proace Verso VIP – wnętrze kabiny pasażerskiej](/images/toyota-proace-verso-osobowy-hero.jpg)
+
 ## Ceny i konkurencja
 
 Ceny orientacyjne dla rynku polskiego:
@@ -75,8 +79,6 @@ Ceny orientacyjne dla rynku polskiego:
 - Family Medium od ok. 205 000 zł
 - VIP Medium od ok. 250 000 zł
 - Shuttle Long – dopłata ok. 10 000–15 000 zł względem Medium
-
-![Toyota Proace Verso VIP – wnętrze kabiny pasażerskiej](/images/toyota-proace-verso-osobowy-hero.jpg)
 
 Bezpośrednia konkurencja:
 

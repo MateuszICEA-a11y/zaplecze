@@ -59,6 +59,9 @@ Fiat Ducato doka występuje w kilku wariantach długości (rozstawu osi). Najcz�
 
 *Źródło danych: [Fiat Professional](https://www.fiatprofessional.com/pl/ducato/podwozie-z-kabina)*
 
+
+![Fiat Ducato doka – podwójna kabina z platformą](/images/fiat-ducato-doka-hero.jpg)
+
 ## Zastosowania: Nie tylko budowlanka
 
 Wersja doka, w odróżnieniu od pozostałych odmian opisanych w [przewodniku po Fiacie Ducato](/modele/fiat-ducato/), trafia do wyraźnie węższej grupy odbiorców:

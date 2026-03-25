@@ -55,6 +55,10 @@ Diesle:
 Partner III ma jedną realną przewagę nad Oplem Combo i Berlingo w segmencie: opcję automatu EAT8 do silnika 1.2 PureTech 130 KM. To prawdziwa 8-biegowa automatyczna skrzynia, nie robotyzowana – i różnicę w komforcie jazdy czuć wyraźnie. Dla firm z kierowcami pokonującymi dużo kilomtrów w mieście to argument nie do przecenienia.
 {{% /expert %}}
 
+
+
+![Peugeot Partner III – van dostawczy z tyłu](/images/peugeot-partner-hero.jpg)
+
 ## Wersje wyposażenia
 
 Partner III jest dostępny w konfiguracjach:
@@ -66,8 +70,6 @@ Opcje szczególnie przydatne w zastosowaniach flot:
 - przesuwne drzwi obustronne
 - kratka oddzielająca kabinę od przestrzeni ładunkowej
 - instalacja mocowania towarów (szyny w podłodze)
-
-![Peugeot Partner III – van dostawczy z tyłu](/images/peugeot-partner-hero.jpg)
 
 {{% info title="Partner a nowe przepisy o strefach emisji" icon="engineering" %}}
 Od 2024 roku kilka polskich miast (Warszawa, Kraków) prowadzi pilotażowe strefy czystego transportu. e-Partner spełnia wymagania najwyższej kategorii emisji we wszystkich planowanych polskich SCT. Wersja 1.5 BlueHDi Euro 6d mieści się w granicach dozwolonego wjazdu we wszystkich aktualnych strefach europejskich klasy C.

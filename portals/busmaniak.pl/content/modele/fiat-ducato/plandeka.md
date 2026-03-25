@@ -63,6 +63,9 @@ Plandeka to duży opór powietrza i poważne obciążenie przy każdym wyjeździ
 
 {{% expert name="Kowalczyk" %}}Szukając używanego Ducato pod plandekę, celowałbym w roczniki 2017–2019 z silnikiem 2.3 o mocy 150 lub 180 KM. To ostatnie serie przed wprowadzeniem najbardziej restrykcyjnych norm, które łączą przyzwoitą dynamikę z akceptowalnym spalaniem na poziomie 11–13 litrów przy pełnej zabudowie.{{% /expert %}}
 
+
+![Fiat Ducato plandeka – wymiary, ładowność, zastosowania](/images/fiat-ducato-plandeka-hero.jpg)
+
 ## Praktyczne zastosowania i doposażenie
 
 Transport paletowy to oczywiste zastosowanie, ale Ducato z plandeką trafia też w inne nisze:

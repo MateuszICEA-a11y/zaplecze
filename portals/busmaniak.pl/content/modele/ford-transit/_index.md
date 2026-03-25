@@ -102,6 +102,9 @@ Silnik ten ma gorszą kulturę pracy niż EcoBlue i identyczny problem z wtryski
 W mojej ocenie Ford Transit VIII z silnikiem 2.0 EcoBlue 130 KM to aktualnie najlepszy wybór w segmencie – silnik jest mniej awaryjny niż poprzednie 2.2 TDCi, a moc wystarczająca dla zdecydowanej większości zastosowań w wersji L2 i L3. Jeśli kupujesz używany egzemplarz sprzed 2019 roku, koniecznie sprawdź historię serwisową wtryskiwaczy – to największe ryzyko przy tym silniku.
 {{% /expert %}}
 
+
+![Ford Transit VIII furgon](/images/ford-transit-hero.jpg)
+
 ## Wersje nadwoziowe
 
 Ford Transit VIII jest oferowany w czterech podstawowych wersjach zabudowy. Szczegółowe dane dla każdej z nich znajdziesz w osobnych artykułach.

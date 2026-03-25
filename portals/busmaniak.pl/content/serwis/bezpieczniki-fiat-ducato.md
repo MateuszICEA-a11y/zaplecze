@@ -67,6 +67,9 @@ Model 244 jest pod tym względem znacznie przyjaźniejszy. Skrzynka siedzi pod k
 
 Więcej o starszych jednostkach przeczytasz w naszym artykule: [Fiat Ducato – przewodnik po generacjach](/modele/fiat-ducato/).
 
+
+![Bezpieczniki Fiat Ducato – schemat, opis, lokalizacja](/images/bezpieczniki-fiat-ducato-hero.jpg)
+
 ## Jak rozpoznać rodzaj i stan bezpiecznika?
 
 W Ducato chodzą głównie dwa typy: **Mini** i **Standard (Uni)**. W komorze silnika dochodzą jeszcze **Maxi** – duże kostki 30–60A.

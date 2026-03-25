@@ -64,6 +64,9 @@ Ducato to najczęstsza baza fabrycznych kamperów w Europie – i to bezpośredn
 - **Serwis** – każdy mechanik w Europie zna ten samochód, części są tanie i dostępne bez czekania; istotne, gdy coś padnie w Grecji albo Portugalii
 - **Wsparcie społeczności** – liczba poradników o [budowie kampera krok po kroku](/przerobki/budowa-kampera-krok-po-kroku/) na bazie Ducato jest po prostu nie do pobicia
 
+
+![Fiat Ducato kamper – dlaczego jest numerem jeden pod przeróbkę](/images/fiat-ducato-kamper-hero.jpg)
+
 ## Typowe usterki i na co uważać
 
 Każde auto ma słabe punkty. W Ducato I i II to korozja progów i podwozia – warto sprawdzić uważnie przed zakupem. W nowszych egzemplarzach (X250) powtarzają się trzy problemy:

@@ -64,6 +64,10 @@ Pełne spektrum silników 2.3 dCi (M9T) dostępnych w furgonie:
 
 Skrzynia manualna 6-biegowa jest standardem. Automat EDC (6-biegowa przekładnia dwusprzęgłowa) jest opcją dla wersji 135–165 KM – szczególnie wygodna w pracy kurierskiej w mieście z wieloma zatrzymaniami.
 
+
+
+![Renault Master furgon L3H2 – widok z tyłu przy rampie](/images/renault-master-furgon-hero.jpg)
+
 ## Wyposażenie standardowe i opcje
 
 Po faceliftingu 2019 roku Master furgon oferuje w standardzie (zależnie od wersji):
@@ -76,8 +80,6 @@ Po faceliftingu 2019 roku Master furgon oferuje w standardzie (zależnie od wers
 - cyfrowa deska rozdzielcza 7" (opcja w wyposażeniu Confort i wyżej)
 
 Standardowe wyposażenie robocze ładowni to: boczne panele ze sklejki, podłoga ze sklejki, oświetlenie ładowni LED i uchwyt bezpiecznikowy na ścianie przedniej.
-
-![Renault Master furgon L3H2 – widok z tyłu przy rampie](/images/renault-master-furgon-hero.jpg)
 
 ## Porównanie z głównymi rywalami
 

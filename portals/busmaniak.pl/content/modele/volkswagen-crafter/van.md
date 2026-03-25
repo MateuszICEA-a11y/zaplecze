@@ -76,6 +76,10 @@ Wybór napędu wpływa na ładowność i zastosowania:
 
 Do klasycznej logistyki miejskiej i regionalnej: FWD z 140 KM – optymalny wybór. Do zastosowań terenowych lub przy zabudowach tylnych: RWD lub AWD.
 
+
+
+![VW Crafter L3H3 – przestrzeń ładunkowa z widokiem do tyłu](/images/volkswagen-crafter-van-hero.jpg)
+
 ## Wyposażenie kabiny
 
 Crafter Van ma jedną z lepszych kabin w segmencie:
@@ -84,8 +88,6 @@ Crafter Van ma jedną z lepszych kabin w segmencie:
 - ekran dotykowy 8" (Trendline) lub 9" (Comfortline/Highline)
 - cyfrowe wskaźniki 10" (Highline)
 - pakiet ciepłych siedzeń z ogrzewaniem
-
-![VW Crafter L3H3 – przestrzeń ładunkowa z widokiem do tyłu](/images/volkswagen-crafter-van-hero.jpg)
 
 {{% info title="Crafter vs MAN TGE – który wybrać?" icon="engineering" %}}
 Crafter II i MAN TGE są produkowane w tej samej fabryce, na tej samej linii montażowej. MAN TGE ma nieco inną opcje wyposażenia i sieć serwisową (MAN Truck & Bus, nie VW). W Polsce sieć serwisowa VW jest gęstsza – dealer VW dostępny praktycznie w każdym mieście powiatowym. MAN TGE bywa tańszy przy zakupie nowego, ale ceny używanych są podobne.

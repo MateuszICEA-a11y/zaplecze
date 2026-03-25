@@ -55,6 +55,10 @@ Większy promień skrętu to jedyny zauważalny kompromis. Na ciasnych parkingac
 
 {{% info title="Cargo Maxi" icon="engineering" %}}W wersji Cargo Maxi ładownia pomieści jedną europaletę (1200 x 800 mm) z marginesem. Drzwi tylne otwierają się na 180°, a boczne przesuwane ułatwiają załadunek w wąskich miejscach.{{% /info %}}
 
+
+
+![Volkswagen Caddy Maxi z boku](/images/volkswagen-caddy-maxi-hero.jpg)
+
 ## Silniki {#silniki}
 
 Gama silnikowa identyczna jak w Caddy standardowym:
@@ -76,4 +80,3 @@ Caddy Maxi to jedna z najlepszych propozycji w segmencie kombivanów rodzinnych:
 
 {{% expert name="Kowalczyk" %}}Caddy Maxi z 2.0 TDI 102 KM i DSG to moim zdaniem najlepsza konfiguracja rodzinna w segmencie. Wygodniejszy od [Berlingo XL](/modele/citroen-berlingo/xl/), lepiej wyciszony, z lepszym prowadzeniem. Jedyny minus – cena. Na rynku wtórnym Caddy Maxi kosztuje 15–20% więcej niż Berlingo XL tego samego rocznika.{{% /expert %}}
 
-![Volkswagen Caddy Maxi z boku](/images/volkswagen-caddy-maxi-hero.jpg)

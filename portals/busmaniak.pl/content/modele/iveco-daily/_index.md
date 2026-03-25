@@ -40,8 +40,6 @@ Daily VII to facelifting szóstej generacji, a nie nowa platforma. Iveco odświe
 Iveco Daily jest jedynym vanem w segmencie L4 oferującym ramę drabinkową jako podstawę konstrukcji w wersjach o DMC powyżej 3,5 t. Konkurenci – Ford Transit, Mercedes Sprinter, Volkswagen Crafter i Renault Master – stosują wyłącznie nadwozia samonośne lub semi-ramowe, co ogranicza ich maksymalną ładowność.
 {{% /info %}}
 
-![Iveco Daily VII furgon](/images/iveco-daily-hero.jpg)
-
 ## Dane techniczne i wymiary {#dane-techniczne}
 
 Iveco Daily oferuje największy zakres wariantów w klasie. Poniższa tabela obejmuje najpopularniejsze konfiguracje furgonu (generacja VI i VII – identyczne wymiary przestrzeni ładunkowej).
@@ -99,6 +97,10 @@ Silnik elektryczny o mocy 140 KM / 400 Nm współpracuje z 1-biegową przekładn
 {{% expert name="Kowalczyk" %}}
 W warsztacie najczęściej trafiają do mnie Daily z silnikiem 2.3 po 200–250 tys. km z zapchanym EGR i zużytymi wtryskiwaczami. To nie jest wada konstrukcyjna – to wynik eksploatacji miejskiej bez regeneracji na trasie. Daily 3.0 MultiJet serwisuje się rzadziej, ale koszt jednej wizyty jest wyraźnie wyższy. Przy wyborze między tymi jednostkami decydujące jest pytanie: czy pojazd jedzie głównie po mieście, czy obsługuje trasy regionalne i krajowe?
 {{% /expert %}}
+
+
+
+![Iveco Daily VII furgon](/images/iveco-daily-hero.jpg)
 
 ## Wersje nadwoziowe {#wersje-nadwoziowe}
 

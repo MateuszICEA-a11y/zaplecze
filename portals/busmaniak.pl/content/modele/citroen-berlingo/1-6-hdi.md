@@ -74,6 +74,9 @@ Realne zużycie paliwa rozczarowuje rzadziej niż w przypadku benzyniaków, ale 
 
 Szczegółowe dane z pomiarów właścicieli zebraliśmy w osobnym miejscu: [tabela spalania](/serwis/citroen-berlingo-spalanie/).
 
+
+![Silnik 1.6 HDI DV6 w Citroënie Berlingo](/images/citroen-berlingo-1-6-hdi-hero.jpg)
+
 ## Typowe usterki i problemy {#usterki}
 
 DV6 ma kilka znanych słabości. Nie każdy egzemplarz je ujawni, ale przy zakupie używanego auta warto sprawdzić te punkty w pierwszej kolejności:

@@ -79,6 +79,10 @@ Gama silnikowa obejmuje diesle TDI i benzynowe TSI:
 
 Volkswagen nie oferuje jeszcze elektrycznego Caddy, choć platforma MQB technicznie to umożliwia.
 
+
+
+![Volkswagen Caddy V na drodze](/images/volkswagen-caddy-hero.jpg)
+
 ## Wersje nadwoziowe {#wersje-nadwozia}
 
 - **[Caddy osobowy](/modele/volkswagen-caddy/osobowy/) (Life/Style/Move)** – wersja rodzinna z 5 lub 7 miejscami, bogate wyposażenie
@@ -87,8 +91,6 @@ Volkswagen nie oferuje jeszcze elektrycznego Caddy, choć platforma MQB technicz
 - **Caddy California** – mini-kamper z rozkładanym łóżkiem, kuchenką i stolikiem; alternatywa dla droższego Transportera California
 
 {{% expert name="Kowalczyk" %}}Caddy California to najciekawsza propozycja w ofercie – pełnoprawny mini-kamper za ułamek ceny Transportera California. Rozkładane łóżko 1,98 x 1,07 m mieści dwie dorosłe osoby. Minus: stojąc w środku trzeba się pochylać (wysokość wnętrza ok. 1,20 m).{{% /expert %}}
-
-![Volkswagen Caddy V na drodze](/images/volkswagen-caddy-hero.jpg)
 
 ## Caddy na tle konkurencji {#konkurencja}
 

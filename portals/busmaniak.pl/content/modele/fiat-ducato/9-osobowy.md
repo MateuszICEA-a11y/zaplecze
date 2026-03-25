@@ -59,6 +59,9 @@ Ducato był wyposażany w różne jednostki napędowe na przestrzeni lat. W wers
 
 {{% expert name="Kowalczyk" %}}Szukając używanego Ducato do przewozu osób, celuj w silnik 2.3 MultiJet o mocy 130 lub 150 KM. To jednostki, które przy regularnym serwisie olejowym (co 15–20 tys. km, a nie co 45 tys. jak sugeruje producent) bez problemu pokonują przebiegi rzędu 500 tysięcy kilometrów. Unikaj zaniedbanych egzemplarzy z początków produkcji z silnikiem 2.2 od Forda (Puma).{{% /expert %}}
 
+
+![Fiat Ducato 9-osobowy – wersja pasażerska, prawo jazdy, ceny](/images/fiat-ducato-9-osobowy-hero.jpg)
+
 ## Komfort podróży i wyposażenie
 
 Ducato 9-osobowy jest dostępny w dwóch podstawowych specyfikacjach:

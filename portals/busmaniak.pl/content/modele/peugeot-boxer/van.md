@@ -79,6 +79,10 @@ Wszystkie warianty Van są dostępne z tymi samymi silnikami 2.2 BlueHDi:
 
 Do pracy z ładunkiem bliskim maksimum i powtarzalnymi trasami – 140 KM z manualną skrzynią. Automat EAT8 jest wygodny, ale serwis skrzyni (wymiana oleju co 60 000 km) to koszt ok. 600–800 zł.
 
+
+
+![Peugeot Boxer L2H2 – przestrzeń ładunkowa i tylne drzwi](/images/peugeot-boxer-van-hero.jpg)
+
 ## Podłoga i wyposażenie ładowni
 
 Standard Boxer Van obejmuje:
@@ -91,8 +95,6 @@ Opcjonalne wyposażenie cargo od Peugeota:
 - sklejka podłogi z listwami aluminiowymi
 - boczne panele ładowni z pleksi lub płyty PP
 - półka dachowa na kabinę (nad głowicami)
-
-![Peugeot Boxer L2H2 – przestrzeń ładunkowa i tylne drzwi](/images/peugeot-boxer-van-hero.jpg)
 
 {{% info title="Boxer a wymagania przewozu ADR" icon="engineering" %}}
 Boxer Van może być przystosowany do transportu materiałów niebezpiecznych ADR w klasach 1–9, pod warunkiem odpowiedniej zabudowy i oznakowań. Pojazd do 3,5 t DMC (prawo jazdy kat. B) może przewozić ADR w ilościach ograniczonych (LQ) bez wymagania certyfikatu kierowcy. Powyżej LQ wymagany jest kurs ADR i oznakowanie pojazdu.

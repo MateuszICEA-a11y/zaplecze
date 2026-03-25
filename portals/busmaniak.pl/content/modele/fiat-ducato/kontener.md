@@ -68,6 +68,9 @@ Furgon ma ściany skośne przy dachu – kontener ich nie ma. Pionowe ściany na
 3.  **Mobilne warsztaty** – duża przestrzeń do montażu regałów narzędziowych i stołów roboczych.
 4.  **Baza pod kampera** – budowa domu na kołach na bazie kontenera (tzw. box van conversion) daje znacznie więcej miejsca niż klasyczna zabudowa furgonowa.
 
+
+![Fiat Ducato kontener – zabudowa kontenerowa, wymiary](/images/fiat-ducato-kontener-hero.jpg)
+
 ## Na co uważać przy zakupie?
 
 Ducato III to konstrukcja dojrzała, ale z charakterystycznymi słabymi punktami. Ergonomia kabiny bywa ciasna dla bardzo wysokich kierowców, a plastiki wewnętrzne po dużym przebiegu potrafią skrzypieć. To niedogodności, które nie wpływają na trwałość mechaniczną – warto jednak wiedzieć o nich przed zakupem.

@@ -58,6 +58,10 @@ Drzwi tylne dwuskrzydłowe otwierają się na 180° (opcjonalnie na 90° z bloka
 
 Ładowność zależy od wybranego silnika i wyposażenia. Wersje z automatyczną skrzynią biegów są cięższe o ok. 30 kg. Więcej o wariantach dostawczych w artykule o [Berlingo dostawczym](/modele/citroen-berlingo/dostawczy/).
 
+
+
+![Citroën Berlingo Van III generacji załadowany](/images/citroen-berlingo-van-hero.jpg)
+
 ## Silniki w wersji Van {#silniki}
 
 Gama silnikowa Berlingo Van:
@@ -69,8 +73,6 @@ Gama silnikowa Berlingo Van:
 Do przewozu towarów o masie do 500 kg wystarczy wersja 75 lub 100 KM. Przy regularnym ładunku 700–900 kg warto wybrać 130 KM. Pełny przegląd silników i generacji na stronie [Citroëna Berlingo](/modele/citroen-berlingo/).
 
 {{% expert name="Kowalczyk" %}}W wersji Van zdecydowanie polecam 1.5 BlueHDI 100 KM – to najczęściej wybierany wariant, który dobrze radzi sobie z typowym ładunkiem kurierskim. Wersja 75 KM jest zbyt słaba przy pełnym obciążeniu na autostradzie.{{% /expert %}}
-
-![Citroën Berlingo Van III generacji załadowany](/images/citroen-berlingo-van-hero.jpg)
 
 ## Wersja Van vs osobowa {#van-vs-osobowy}
 

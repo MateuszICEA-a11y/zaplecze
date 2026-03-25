@@ -62,6 +62,9 @@ Wysoki moment obrotowy dostępny już od 1400 obr./min pozwala utrzymywać niski
 
 Szczegółowe zestawienie kosztów paliwa znajdziesz tutaj: [Spalanie Ducato](/serwis/fiat-ducato-spalanie/).
 
+
+![Fiat Ducato 3.0 MultiJet – dane techniczne, spalanie, opinie](/images/fiat-ducato-3-0-multijet-hero.jpg)
+
 ## Typowe usterki i opinie użytkowników
 Przy regularnej wymianie oleju silnik osiąga 700–800 tys. km bez remontu kapitalnego. Mimo to ma swoje słabe punkty:
 

@@ -68,6 +68,9 @@ Kilka praktycznych wskazówek:
 
 Więcej o silnikach i wersjach: [1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) | [Citroën Berlingo – przewodnik](/modele/citroen-berlingo/)
 
+
+![Wskaźnik spalania w Citroënie Berlingo](/images/citroen-berlingo-spalanie-hero.jpg)
+
 ## Koszty paliwa – Berlingo vs konkurencja {#koszty}
 
 Porównanie rocznych kosztów paliwa przy 20 000 km (ceny 2025: ON 6,70 zł/l, Pb95 6,50 zł/l):

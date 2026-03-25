@@ -56,6 +56,10 @@ Kluczowym parametrem przy wyborze jest liczba miejsc i DMC. Wersja 9-miejscowa L
 
 Odległość między rzędami siedzeń w wersji 9-miejscowej wynosi ok. 720–760 mm. To więcej niż w Ducato 9-osobowym i minibusach opartych na Transit Custom – pasażerowie mają realny komfort nawet na dłuższych trasach.
 
+
+
+![Renault Master Combi L3H2 – widok z boku z przeszkleniem bocznym](/images/renault-master-osobowy-hero.jpg)
+
 ## Silniki w wersji osobowej
 
 W wersji Combi i Bus dostępne są te same silniki co w furgonie. Zalecenia praktyczne:
@@ -65,8 +69,6 @@ W wersji Combi i Bus dostępne są te same silniki co w furgonie. Zalecenia prak
 - **180 KM** – dla wersji L4H2 Bus z dużą liczbą miejsc i dużą masą całkowitą
 
 Automat EDC jest szczególnie wygodny w wersji osobowej – kierowcy busów transferowych i szkolnych doceniają brak konieczności zmiany biegów przy częstych startach w ruchu miejskim.
-
-![Renault Master Combi L3H2 – widok z boku z przeszkleniem bocznym](/images/renault-master-osobowy-hero.jpg)
 
 ## Komfort pasażerów i wyposażenie dodatkowe
 

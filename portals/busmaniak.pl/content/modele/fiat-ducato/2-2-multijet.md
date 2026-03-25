@@ -55,6 +55,9 @@ Starsza jednostka 100 KM w ruchu mieszanym wypija **7,3 – 8,5 l/100 km**. Jej 
 
 MultiJet3 w wersji 140 KM radzi sobie wyraźnie lepiej. Furgon L3H2 przy spokojnej jeździe 100–110 km/h mieści się w granicach **7,5 – 8,0 l/100 km**. Przy pełnym załadunku lub zabudowie kamperowej realne wartości to **10 – 11 l/100 km** – niezależnie od wariantu mocy.
 
+
+![Fiat Ducato 2.2 MultiJet – dane techniczne, spalanie, opinie](/images/fiat-ducato-2-2-multijet-hero.jpg)
+
 ## Typowe usterki i opinie użytkowników
 
 Silnik Puma (2.2 TDCi) zbierał mieszane opinie. Głównym źródłem problemów był układ wtryskowy Denso, który po przejechaniu kilkuset tysięcy kilometrów wymagał kosztownej regeneracji lub wymiany. W skrajnych przypadkach dochodziło do pękania tłoków. Właściciele egzemplarzy z wyższym przebiegiem zgłaszają dwie powtarzające się bolączki:

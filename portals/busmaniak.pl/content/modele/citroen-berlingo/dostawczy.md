@@ -61,6 +61,9 @@ W II generacji popularny był [1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) w wer
 
 Pełny przegląd silników na stronie [Citroëna Berlingo](/modele/citroen-berlingo/).
 
+
+![Citroën Berlingo dostawczy przy magazynie](/images/citroen-berlingo-dostawczy-hero.jpg)
+
 ## Koszty eksploatacji firmowej {#koszty}
 
 Homologacja N1 daje firmom realne oszczędności:

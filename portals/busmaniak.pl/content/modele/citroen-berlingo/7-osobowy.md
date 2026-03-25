@@ -50,6 +50,10 @@ Trzeci rząd składa się płasko do podłogi, przywracając pełną pojemność
 
 {{% info title="Dla kogo 7-osobowe?" icon="engineering" %}}Berlingo 7-osobowy najlepiej sprawdza się jako auto dla rodziny z trojgiem dzieci (2 foteliki w 2. rzędzie, starsze dziecko w 3. rzędzie) lub do okazjonalnego transportu dodatkowych pasażerów. Na co dzień trzeci rząd jest złożony, zwiększając bagażnik.{{% /info %}}
 
+
+
+![Wnętrze Citroëna Berlingo z trzecim rzędem siedzeń](/images/citroen-berlingo-7-osobowy-hero.jpg)
+
 ## Silniki w wersji 7-osobowej {#silniki}
 
 Gama silnikowa jest identyczna jak w wersji 5-osobowej, ale trzeba pamiętać o większej masie pojazdu z 7 pasażerami.
@@ -60,8 +64,6 @@ Gama silnikowa jest identyczna jak w wersji 5-osobowej, ale trzeba pamiętać o 
 Wersja 75 KM przy 7 osobach i bagażach jest zdecydowanie za słaba – szczególnie na autostradzie i pod górkę. Pełny przegląd silników na stronie [Citroëna Berlingo](/modele/citroen-berlingo/).
 
 {{% expert name="Kowalczyk" %}}Jeśli planujesz regularnie jeździć w 7 osób, nie oszczędzaj na silniku. 1.5 BlueHDI 130 KM to minimum, które zapewni komfortową jazdę z pełnym obciążeniem. Przy okazjonalnym użytku trzeciego rzędu wystarczy wersja 100 KM.{{% /expert %}}
-
-![Wnętrze Citroëna Berlingo z trzecim rzędem siedzeń](/images/citroen-berlingo-7-osobowy-hero.jpg)
 
 ## Berlingo 7-osobowy vs konkurencja {#konkurencja}
 

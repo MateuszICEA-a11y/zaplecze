@@ -56,6 +56,10 @@ Wymiary (Vivaro C Life Standard):
 
 Po złożeniu 3. rzędu pojemność bagażnika wzrasta do ok. 900 litrów. Po złożeniu 2. i 3. rzędu – przestrzeń ładunkowa porównywalna z furgonetem.
 
+
+
+![Opel Vivaro osobowy – Combi i Life w zestawieniu](/images/opel-vivaro-osobowy-hero.jpg)
+
 ## Silniki
 
 Vivaro Life (Vivaro C) dostępny jest z jednostkami:
@@ -64,8 +68,6 @@ Vivaro Life (Vivaro C) dostępny jest z jednostkami:
 - 2.0 D 145 KM i 177 KM
 
 Wersja elektryczna Vivaro-e Life – bateria 50 lub 75 kWh, silnik 136 KM. Zasięg do 330 km (WLTP) w wersji 75 kWh.
-
-![Opel Vivaro osobowy – Combi i Life w zestawieniu](/images/opel-vivaro-osobowy-hero.jpg)
 
 ## Vivaro osobowy a Renault Trafic Passenger
 

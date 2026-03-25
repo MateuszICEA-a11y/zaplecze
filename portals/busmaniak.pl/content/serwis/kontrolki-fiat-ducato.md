@@ -66,6 +66,9 @@ Kontrolka ogólna – prawie zawsze towarzyszy jej komunikat na wyświetlaczu. P
 
 {{% expert name="Kowalczyk" %}}W Fiacie Ducato III (X250 i X290) żółty trójkąt często zapala się z powodu… oświetlenia tablicy rejestracyjnej. System jest bardzo czuły na zmianę oporności, dlatego odradzam montowanie tanich zamienników LED bez rezystora CAN-BUS.{{% /expert %}}
 
+
+![Kontrolki Fiat Ducato – opis symboli na desce rozdzielczej](/images/kontrolki-fiat-ducato-hero.jpg)
+
 ## Specyficzne ikony dla diesla i kamperów
 
 Użytkownicy [Fiata Ducato](/modele/fiat-ducato/) powinni rozpoznawać symbole typowe dla silników wysokoprężnych – ignorowanie ich potrafi kosztować kilka tysięcy złotych:

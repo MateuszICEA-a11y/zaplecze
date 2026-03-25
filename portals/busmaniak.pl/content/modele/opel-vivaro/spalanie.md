@@ -67,6 +67,10 @@ Dane realne dla Vivaro B:
 
 Szczegóły techniczne silnika w artykule [Opel Vivaro 1.6 CDTi](/modele/opel-vivaro/1-6/).
 
+
+
+![Opel Vivaro spalanie – porównanie silników 1.5 D i 2.0 D](/images/opel-vivaro-spalanie-hero.jpg)
+
 ## Co wpływa na spalanie Vivaro?
 
 Najważniejsze czynniki:
@@ -76,8 +80,6 @@ Najważniejsze czynniki:
 - ciśnienie w oponach – zbyt niskie podnosi spalanie o 0,3–0,5 l/100 km
 - stan filtra powietrza – zatkanego filtra może podbić spalanie o 0,5 l/100 km
 - temperatura zewnętrzna – zimą silnik dłużej się rozgrzewa, spalanie rośnie
-
-![Opel Vivaro spalanie – porównanie silników 1.5 D i 2.0 D](/images/opel-vivaro-spalanie-hero.jpg)
 
 ## Vivaro-e – zużycie energii
 

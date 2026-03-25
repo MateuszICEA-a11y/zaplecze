@@ -63,6 +63,10 @@ Na zasięg wpływają: ładunek (każde 100 kg to ok. 5% mniej zasięgu), klimat
 
 Wymiary nadwozia, bagażnika i przestrzeni ładunkowej są identyczne jak w wersji spalinowej. Bateria zamontowana pod podłogą nie zabiera przestrzeni pasażerom ani towarom.
 
+
+
+![Citroën ë-Berlingo na stacji ładowania](/images/citroen-e-berlingo-hero.jpg)
+
 ## Ładowanie i infrastruktura {#ładowanie}
 
 Trzy główne scenariusze ładowania:
@@ -83,4 +87,3 @@ Konkurencja: Peugeot e-Partner i Opel e-Combo to techniczni bliźniacy z identyc
 
 {{% expert name="Zielinski" %}}ë-Berlingo ma sens przede wszystkim dla firm z własnym parkingiem i wallboxem, które codziennie pokonują do 200 km. Przy wyższych przebiegach dziennych lub braku własnej ładowarki lepiej zostać przy dieslu 1.5 BlueHDI. Pełny przegląd modelu znajdziesz na stronie [Citroëna Berlingo](/modele/citroen-berlingo/).{{% /expert %}}
 
-![Citroën ë-Berlingo na stacji ładowania](/images/citroen-e-berlingo-hero.jpg)

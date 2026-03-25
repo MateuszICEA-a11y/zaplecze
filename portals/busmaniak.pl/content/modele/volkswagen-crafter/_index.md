@@ -57,6 +57,10 @@ Crafter II wyróżnia się na tle konkurencji elastycznością układu napędowe
 
 Większość Crafterów sprzedawanych w Polsce to wersje FWD – wystarczające dla 90% zastosowań transportowych.
 
+
+
+![Volkswagen Crafter II – van L3H3 w wersji dostawczej](/images/volkswagen-crafter-hero.jpg)
+
 ## Konfiguracje nadwozia i pojemności
 
 Crafter jest oferowany w wariantach:
@@ -66,8 +70,6 @@ Crafter jest oferowany w wariantach:
 - L4H3: 6849 mm, 18,4 m³ (największa pojemność w segmencie)
 
 Ładowność zależy od wariantu: od ok. 1100 kg (L3H2 FWD) do 1700 kg (L4H3 RWD, DMC 5 t).
-
-![Volkswagen Crafter II – van L3H3 w wersji dostawczej](/images/volkswagen-crafter-hero.jpg)
 
 {{% info title="Crafter produkowany w Polsce" icon="engineering" %}}
 Volkswagen Crafter II i MAN TGE są produkowane w zakładach VW Poznań we Wrześni – specjalnie zbudowanej fabryce uruchomionej w 2017 roku z inwestycją ok. 800 mln euro. To jeden z najbardziej zautomatyzowanych zakładów produkcji dostawczaków w Europie. Dla polskich firm flotowych oznacza to szybsze terminy dostaw i niższe koszty logistyczne.

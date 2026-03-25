@@ -42,8 +42,6 @@ Trzecia generacja to największa rewolucja w historii modelu. Po raz pierwszy Sp
 Mercedes Sprinter III to pierwszy w historii Sprinter dostępny z napędem na przednią oś. Wersja FWD (W910) jest szczególnie popularna w zastosowaniach kurierskich i komunalnych, gdzie niższy próg załadunku i lepsze właściwości trakcyjne na śliskich nawierzchniach mają kluczowe znaczenie.
 {{% /info %}}
 
-![Mercedes Sprinter III furgon](/images/mercedes-sprinter-hero.jpg)
-
 ## Dane techniczne i wymiary {#dane-techniczne}
 
 Sprinter III jest dostępny w wariantach nadwoziowych L1 do L4 (długość) i H1 do H3 (wysokość). Najpopularniejsza konfiguracja w Polsce to L2H2 – klasyczny furgon o pojemności ok. 10,5 m³, który mieści się na standardowym miejscu parkingowym i nie wymaga windy załadunkowej.
@@ -110,6 +108,10 @@ eSprinter sprawdza się w logistyce ostatniej mili w centrach miast objętych st
 {{% expert name="Kowalczyk" %}}
 Wybierając między OM654 a OM651 w używanym Sprinterze III, zwróć uwagę na datę produkcji. Egzemplarze z 2018–2019 mogą mieć OM651 – dobrze znany silnik, ale wymagający uwagi w kwestii łańcucha rozrządu przy przebiegach powyżej 200 000 km. Nowsze egzemplarze z OM654 mają nowocześniejszą konstrukcję, ale wciąż zbyt krótką historię eksploatacji przy bardzo dużych przebiegach, by wyciągać ostateczne wnioski o trwałości. W obu przypadkach kluczowa jest regularna wymiana oleju co 15 000 km – nie co 40 000 km, jak sugeruje komputer pokładowy.
 {{% /expert %}}
+
+
+
+![Mercedes Sprinter III furgon](/images/mercedes-sprinter-hero.jpg)
 
 ## Wersje nadwoziowe {#wersje-nadwoziowe}
 

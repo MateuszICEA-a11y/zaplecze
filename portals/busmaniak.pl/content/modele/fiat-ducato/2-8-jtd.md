@@ -60,6 +60,9 @@ Spalanie to kwestia kluczowa dla przewoźników. Na podstawie danych użytkownik
 
 Dla porównania, nowszy [2.3 MultiJet](/modele/fiat-ducato/2-3-multijet/) oferuje lepszą kulturę pracy i niższe spalanie, ale jest już silnikiem bardziej złożonym serwisowo i nie cieszy się tą samą reputacją trwałości co 2.8.
 
+
+![Fiat Ducato 2.8 JTD – dane techniczne, spalanie, opinie](/images/fiat-ducato-2-8-jtd-hero.jpg)
+
 ## Opinie użytkowników i typowe usterki
 
 Silnik 2.8 JTD ma wśród użytkowników bardzo dobrą opinię. Chwalone są przede wszystkim elastyczność w zakresie obrotów roboczych i stosunkowo prosta elektronika – bez filtrów DPF, bez wtrysku AdBlue, bez skomplikowanego układu EGR charakterystycznego dla norm Euro 5 i 6.

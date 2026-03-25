@@ -49,6 +49,10 @@ Wymiary Berlingo Multispace II generacji (wersja standardowa):
 
 Bagażnik o pojemności 675 litrów to jedna z większych wartości w segmencie. Po złożeniu tylnych siedzeń przestrzeń rośnie do ponad 3000 litrów. Porównanie z wersją dostawczą znajdziesz w artykule o [Berlingo Van](/modele/citroen-berlingo/van/).
 
+
+
+![Citroën Berlingo Multispace II generacji](/images/citroen-berlingo-multispace-hero.jpg)
+
 ## Silniki dostępne w Multispace {#silniki}
 
 Gama silnikowa obejmowała jednostki benzynowe i wysokoprężne:
@@ -59,8 +63,6 @@ Gama silnikowa obejmowała jednostki benzynowe i wysokoprężne:
 Szczegółowe informacje o silnikach i wszystkich generacjach znajdziesz w przewodniku po [Citroënie Berlingo](/modele/citroen-berlingo/).
 
 {{% expert name="Kowalczyk" %}}Do jazdy w trasie i przy większym obciążeniu polecam 1.6 HDI 90 KM – to złoty środek między spalaniem a dynamiką. Benzynowy 1.6 VTi ma sens tylko w mieście i przy małych przebiegach rocznych (do 15 tys. km).{{% /expert %}}
-
-![Citroën Berlingo Multispace II generacji](/images/citroen-berlingo-multispace-hero.jpg)
 
 ## Wyposażenie i komfort {#wyposażenie}
 

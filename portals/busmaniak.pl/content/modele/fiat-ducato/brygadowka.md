@@ -70,6 +70,9 @@ Ducato IV po liftingu zyskał lepsze wyciszenie i solidniejsze materiały wewną
 
 Więcej o ogólnej charakterystyce tego modelu przeczytasz w naszym głównym artykule: [Fiat Ducato – przewodnik](/modele/fiat-ducato/).
 
+
+![Fiat Ducato brygadówka – wersja dla ekip budowlanych](/images/fiat-ducato-brygadowka-hero.jpg)
+
 ## Typowe problemy i koszty utrzymania
 
 Jak każdy intensywnie eksploatowany bus, Ducato ma swoje słabsze punkty. Przy zakupie używanego egzemplarza lub planowaniu serwisu warto sprawdzić:

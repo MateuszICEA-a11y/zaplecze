@@ -68,6 +68,9 @@ Napęd wyłącznie na przednie koła – brak wersji 4x4. Przy 9 osobach i baga�
 W flocie shuttle'owej testowałem Proace Verso Long z automatem i silnikiem 177 KM przy średnim zapełnieniu 6-7 osób. Spalanie utrzymywało się na poziomie 9–10 l/100 km na trasie podmiejskiej – to więcej niż w folderze, ale realne. Automat ośmiobiegowy sprawdza się w miejskim korku, jednak przy dłuższych trasach manualka jest bardziej przewidywalna i pali o ok. 0,8–1 l mniej. Dla firmy robiącej 100 000 km rocznie to spora różnica w kosztach paliwa.
 {{% /expert %}}
 
+
+![Toyota Proace osobowy – Verso, miejsca, ceny](/images/toyota-proace-osobowy-hero.jpg)
+
 ## Wymiary i bagażnik
 
 - długość Proace Verso Medium: 4959 mm
