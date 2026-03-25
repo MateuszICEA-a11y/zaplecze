@@ -22,8 +22,6 @@ faq:
     answer: "Toyota Proace II ma większą ładownię (Long: 6,1 m³ vs Trafic L2: ~5,2 m³) i nowocześniejszą platformę PSA EMP2. Renault Trafic wyróżnia się własną, sprawdzoną jednostką 2.0 dCi i rozbudowaną siecią serwisową w Polsce. Proace wygrywa objętością ładowni i dostępnością wersji elektrycznej, Trafic – ceną zakupu i kosztami eksploatacji w flotach z dostępem do ASO Renault."
 ---
 
-Toyota Proace II to średni van na platformie PSA EMP2 – bliźniak Peugeota Expert III i Citroëna Jumpy III, produkowany w Hordain od 2017 roku. Jeśli szukasz danych technicznych, wymiarów ładowni lub zestawienia silników 1.5 i 2.0 D-4D, znajdziesz je tutaj w jednym miejscu.
-
 ## Historia i generacje
 
 Toyota Proace pojawił się na rynku w 2013 roku jako odpowiedź marki na rosnące zapotrzebowanie na własny model średniego vana. Przez lata przeszedł dwie wyraźne generacje, różniące się platformą i poziomem integracji z siecią PSA/Stellantis.

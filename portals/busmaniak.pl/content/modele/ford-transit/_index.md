@@ -22,8 +22,6 @@ faq:
     answer: "Wymiana łańcucha rozrządu w silniku 2.2 TDCi kosztuje orientacyjnie 2000–3500 zł z robocizną. To najczęstszy i najpoważniejszy problem mechaniczny Transita VII."
 ---
 
-Ford Transit VIII to najpopularniejszy dostawczak w Polsce – dostępny w 12 konfiguracjach nadwozia, z silnikami EcoBlue 2.0 od 105 do 185 KM i ładownością do 2300 kg.
-
 ## Historia i generacje
 
 [Ford Transit](https://pl.wikipedia.org/wiki/Ford_Transit) jest produkowany nieprzerwanie od 1965 roku – do dziś sprzedano ponad 13 milionów egzemplarzy, co czyni go numerem 1 wśród dużych furgonetek na świecie. Przez ten czas model przechodził gruntowne modernizacje; dla rynku wtórnego i użytkowego liczą się dwie ostatnie generacje:

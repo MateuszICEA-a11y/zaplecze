@@ -22,8 +22,6 @@ faq:
     answer: "Proace to furgon z homologacją N1 przeznaczony do transportu ładunków. Proace Verso ma homologację M1 – jest pojazdem osobowym z rzędami siedzeń pasażerskich, przeszklonymi bokami i wyposażeniem skierowanym do przewozu osób. Oba dzielą tę samą płytę podłogową i wymiary nadwozia."
 ---
 
-Toyota Proace Verso to osobowa wersja dostawczaka Proace z homologacją M1 – oferuje od 5 do 9 miejsc, karoserię Medium lub Long i wybór między silnikami diesla a elektrycznym napędem o zasięgu do 330 km. To bezpośredni rywal VW Multivana i Mercedesa V-klasy w segmencie przestronnych vanów osobowych.
-
 ## Wersje wyposażenia
 
 Toyota Proace Verso jest dostępna w trzech wariantach wyposażenia, które różnią się przeznaczeniem i poziomem komfortu.

@@ -21,9 +21,6 @@ faq:
   - question: "Który silnik Trafic Combi jest bardziej niezawodny – 1.6 czy 2.0 dCi?"
     answer: "1.6 dCi 115 KM single turbo to sprawdzona i prosta jednostka z dobrą opinią serwisową. Wersja BiTurbo (120/140 KM) jest mocniejsza, ale bardziej awaryjna przy dużych przebiegach. Silnik 2.0 dCi (od 2019) to obecnie najlepszy wybór – większy moment obrotowy, lepsza kultura pracy i spokojniejsza historia serwisowa."
 ---
-
-Renault Trafic brygadówka to właściwy wybór dla ekipy, która musi jednocześnie przewieźć ludzi i ciężkie narzędzia – bez kompromisów po żadnej stronie. Model z ponad czterdziestoletnią historią, opisany na Wikipedii, oferuje dwa rzędy siedzeń z przodu, solidną przestrzeń ładunkową z tyłu i DMC do 3,1 tony, która przy homologacji N1 daje pełne odliczenie VAT.
-
 ## Czym jest brygadówka i dlaczego Trafic?
 
 Brygadówka – znana też jako Combi lub podwójna kabina – to nie kolejna wersja furgonu. To osobna kategoria robocza: za pierwszym rzędem siedzeń montuje się dodatkową kanapę na 2–3 osoby, a za nią przegrodę (pełną stalową lub siatkową) oddzielającą kabinę od przestrzeni ładunkowej. Efekt: do pięciu osób w kabinie i paka gotowa na sprzęt.

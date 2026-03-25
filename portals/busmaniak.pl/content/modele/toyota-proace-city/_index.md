@@ -22,8 +22,6 @@ faq:
     answer: "Wersja Short mieści jedną europaletę (1200×800 mm) przy złożonych przednich siedzeniach pasażera. Wersja Long mieści dwie europalety – to kluczowa różnica przy wyborze długości nadwozia."
 ---
 
-Toyota Proace City to kompaktowy furgon zbudowany na platformie PSA EMP2 – bliźniak Peugeota Partner III i Citroëna Berlingo III. Wybierasz między wersjami Short i Long, trzema rodzajami napędu oraz gamą silników od 75 do 136 KM.
-
 ## Proace City – co to za auto?
 
 Toyota weszła na segment kompaktowych dostawczaków w 2020 roku, przejmując gotową architekturę Stellantis (dawniej PSA). Proace City produkowany jest w fabryce w Vigo w Hiszpanii – tej samej, która składa Partnera i Berlingo. To decyzja biznesowa, nie kompromis techniczny: platforma EMP2 to dojrzała konstrukcja, sprawdzona w milionach egzemplarzy.

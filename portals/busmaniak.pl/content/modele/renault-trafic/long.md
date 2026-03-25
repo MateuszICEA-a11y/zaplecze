@@ -21,9 +21,6 @@ faq:
   - question: "Jaki silnik wybrać do Trafic L2H2 przy regularnym załadunku?"
     answer: "Minimum to 2.0 dCi 145 KM. Wersja 120 KM radzi sobie przy lżejszych ładunkach, ale przy regularnym pełnym załadunku na drogach ekspresowych będzie przeciążona."
 ---
-
-Renault Trafic Long (L2) oferuje 400 mm więcej przestrzeni niż wersja standardowa i pozwala zabrać 3 europalety tam, gdzie L1 zmieści tylko 2. Zanim wybierzesz wersję wydłużoną, sprawdź, czy twoje codzienne trasy na to pozwalają – większy rozstaw osi oznacza większy promień skrętu.
-
 ## Trafic L1 vs L2 – czym się różnią? {#l1-vs-l2}
 
 Różnica 400 mm długości i 400 mm rozstawu osi to nie tylko liczby w katalogu. L2 z rozstawem 3498 mm zachowuje lepszą stabilność przy pełnym załadunku, szczególnie przy gwałtownym hamowaniu. Płacisz za to większym promieniem skrętu – na ciasnych podwórkach i w wąskich bramach to się odczuwa.

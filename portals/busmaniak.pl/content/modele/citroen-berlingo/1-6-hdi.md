@@ -23,9 +23,6 @@ faq:
   - question: "Ile kosztuje wymiana rozrządu w Berlingo 1.6 HDI?"
     answer: "Wymiana paska rozrządu z pompą wody to koszt 600-1200 zł. Rozrząd wymaga wymiany co 120 000 km lub co 10 lat."
 ---
-
-Berlingo z silnikiem 1.6 HDI to jeden z częściej trafiających do warsztatu przedstawicieli segmentu małych dostawczaków. Jednostka DV6 produkcji PSA zdobyła popularność dzięki niewysokim kosztom eksploatacji i dostępności części – choć ma też swoje słabości, o których lepiej wiedzieć przed zakupem. Więcej o historii i wersjach nadwoziowych modelu można przeczytać na Wikipedii.
-
 ## Dane techniczne silnika 1.6 HDI {#dane-techniczne}
 
 Silnik oznaczony jako DV6 to wysokoprężna jednostka z bezpośrednim wtryskiem common rail i turbodoładowaniem. Montowano go w Berlingo od drugiej generacji modelu, a produkcja trwała od 2004 do 2018 roku. Trafiał też do Peugeota, Forda, Mazdy, Volvo i Mini – co ułatwia dostępność zamienników.
