@@ -42,7 +42,7 @@ Szerokość 1928 mm (z lusterkami 2297 mm), wysokość 1910 mm – wjeżdża na 
 
 Najpopularniejszy wariant Long mieści 9 osób z bagażnikiem 1030 l. Po złożeniu siedzeń – 5200 l płaskiej powierzchni.
 
-## Silniki i napędy
+## Silniki i napędy Mercedes Vito Tourer
 
 Po liftingu 2019 sercem modelu jest dwulitrowy diesel [OM654](https://en.wikipedia.org/wiki/Mercedes-Benz_OM654_engine) w pięciu wariantach:
 
@@ -80,7 +80,7 @@ Jeśli potrzebujesz jeszcze więcej przestrzeni, [Mercedes Sprinter osobowy](/mo
 - **Układ AdBlue** – czujniki i pompy kapryśne przy niskich temperaturach
 - **Zawieszenie** – tuleje wahaczy przednich i łączniki stabilizatora zużywają się szybciej przy pełnym obciążeniu 9 osobami
 
-## Ceny nowych i używanych
+## Ceny nowych i używanych Vito osobowego
 
 | Wersja | Cena nowa | Cena używana (2019–2024) |
 |--------|-----------|--------------------------|

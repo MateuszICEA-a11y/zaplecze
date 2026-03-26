@@ -59,7 +59,7 @@ Podstawowa różnica między wersją 75 a 90 KM leży w turbosprężarce. Mocnie
 
 {{% expert name="Kowalczyk" %}}Silnik 1.6 HDI w wersji 90 KM to moim zdaniem optymalny wybór do Citroëna Berlingo. Oferuje dobry kompromis między dynamiką a oszczędnością paliwa. Warto jednak pamiętać o regularnym serwisie, szczególnie wymianie oleju i filtrów, aby uniknąć problemów z turbosprężarką i wtryskiwaczami.{{% /expert %}}
 
-## Spalanie w praktyce {#spalanie}
+## Spalanie Citroëna Berlingo 1.6 HDI w praktyce {#spalanie}
 
 Realne zużycie paliwa rozczarowuje rzadziej niż w przypadku benzyniaków, ale mocno zależy od stylu jazdy i ładunku. Poniżej wartości z praktyki użytkowników, nie z katalogu:
 
@@ -84,7 +84,7 @@ DV6 ma kilka znanych słabości. Nie każdy egzemplarz je ujawni, ale przy zakup
 - **Zawór EGR** – zablokowany powoduje dymienie i utratę mocy; czyszczenie lub wymiana 300–800 zł
 - **Rozrząd** – pasek wymaga wymiany zgodnie z harmonogramem; razem z pompą wody to 600–1200 zł
 
-## Opinie użytkowników {#opinie}
+## Opinie o Berlingo 1.6 HDI {#opinie}
 
 Oceny są dość spójne. Właściciele chwalą niskie spalanie, praktyczne wnętrze i wystarczającą moc do codziennych zadań. Zastrzeżenia pojawiają się przy awaryjności filtra DPF, kosztach naprawy wtryskiwaczy i kiepskim wyciszeniu kabiny.
 

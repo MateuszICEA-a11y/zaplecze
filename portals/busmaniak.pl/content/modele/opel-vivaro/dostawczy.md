@@ -18,7 +18,7 @@ faq:
   - question: "Czy Vivaro dostawczy ma skrzynię automatyczną?"
     answer: "Tak – Vivaro C dostępny jest z 8-biegową przekładnią automatyczną Aisin przy silnikach 2.0 D 145 i 177 KM."
 ---
-## Wersje furgonu
+## Opel Vivaro dostawczy – wersje furgonu
 
 Vivaro furgon występuje w dwóch długościach:
 
@@ -29,7 +29,7 @@ Vivaro furgon występuje w dwóch długościach:
 
 Brak opcji wysokiego dachu (H2) w Vivaro C odróżnia go od Transit Custom i ogranicza zastosowania wymagające stania w ładowni.
 
-## Przestrzeń ładunkowa – wymiary
+## Przestrzeń ładunkowa Vivaro – wymiary
 
 Vivaro C Standard (L1):
 
@@ -43,7 +43,7 @@ Vivaro C Standard (L1):
 Szerokość między nadkolami to newralgiczny punkt – 1268 mm w L1 nie daje europalety ustawionej poprzecznie. Dwie europalety mieszczą się wzdłuż. Jeśli logistyka opiera się na paletach, rozważ L2 lub pojazd z szerszym rozstawem nadkoli.
 {{% /expert %}}
 
-## Ładowność i DMC
+## Ładowność i DMC Opel Vivaro furgon
 
 - **DMC 2800 kg** – ładowność typowo 900–1050 kg
 - **DMC 3100 kg** – ładowność 1050–1400 kg
@@ -52,11 +52,11 @@ Masa własna wersji podstawowej (1.5 D 100 KM, L1): ok. 1815 kg. Każde dodatkow
 
 ![Opel Vivaro dostawczy – przestrzeń ładunkowa i dostęp](/images/opel-vivaro-dostawczy-hero.jpg)
 
-## Silniki w wersji furgon
+## Silniki Vivaro dostawczego
 
 Vivaro C furgon dostępny z silnikami od [1.5 D 75 KM](/modele/opel-vivaro/1-5/) do [2.0 D 177 KM z automatem](/modele/opel-vivaro/2-0/).
 
-## Dostęp do ładowni
+## Dostęp do ładowni Opel Vivaro
 
 - **Drzwi tylne dwuczęściowe** – otwieranie 180° (opcja 270°)
 - **Drzwi przesuwne prawe** – standard

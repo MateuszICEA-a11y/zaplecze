@@ -18,7 +18,7 @@ faq:
   - question: "Czy Vivaro osobowy wymaga specjalnego ubezpieczenia?"
     answer: "Vivaro z 9 miejscami homologowany jako autobus (kategoria M2) może wymagać innych stawek OC. Sprawdź kategorię w dowodzie rejestracyjnym."
 ---
-## Wersje osobowe – Combi i Life
+## Opel Vivaro osobowy – Combi i Life
 
 **Vivaro Combi** – wersja z minimalnym prestiżem: kilka rzędów siedzeń, podstawowe wykończenie. Praktyczny wybór dla firm przewozowych, szkół i służb komunalnych. Dostępna od generacji A.
 
@@ -46,7 +46,7 @@ Vivaro Life z 8 miejscami jest często wygodniejszy na długich trasach niż war
 | Life L1 Standard | 4960 mm | 2+3+3 | 8 |
 | Life L2 Long | 5310 mm | 2+3+4 | 8 lub 9 |
 
-## Dane techniczne wersji osobowej
+## Dane techniczne Vivaro osobowego
 
 Wymiary (Vivaro C Life Standard):
 - **Długość** – 4960 mm
@@ -56,7 +56,7 @@ Wymiary (Vivaro C Life Standard):
 
 ![Opel Vivaro osobowy – Combi i Life w zestawieniu](/images/opel-vivaro-osobowy-hero.jpg)
 
-## Silniki
+## Silniki w Vivaro Life
 
 Vivaro Life (Vivaro C):
 - [1.5 D](/modele/opel-vivaro/1-5/) 100 KM i 120 KM

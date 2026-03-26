@@ -17,7 +17,7 @@ faq:
     answer: "W wersji XL Combo Van mieści 2 palety EUR 1200x800 mm. Szerokość podłogi między nadkolami wynosi 1225 mm, co wymaga ułożenia palet wzdłuż pojazdu. Ładowanie jest możliwe przez tylne drzwi dwuskrzydłowe lub drzwi boczne przesuwne."
 lead: "Opel Combo E w wersji dostawczej Van to zarejestrowany jako N1 pojazd użytkowy z blaszaną zabudową boczną (brak tylnych szyb), metalową podłogą ładowni i ładownością do 1000 kg. Sprawdza się w logistyce ostatniej mili, rzemiośle i usługach mobilnych."
 ---
-## Dane techniczne wersji dostawczej
+## Dane techniczne Opel Combo dostawczy
 
 Combo Van jest oferowane w dwóch długościach:
 
@@ -35,7 +35,7 @@ Parametry przestrzeni ładunkowej (XL):
 
 Standardowo Combo Van ma tylne drzwi dwuskrzydłowe otwierane do 270°. Przesuwne drzwi boczne (prawe lub obustronne) dostępne są jako opcja.
 
-## Jaki silnik do jakich zastosowań
+## Silniki w Combo dostawczym – jaki wybrać
 
 W Combo Van dostępne są cztery układy napędowe:
 - 1.2 PureTech 110 KM + manualna 6-biegowa: do transportu lekkiego poniżej 15 000 km/rok, głównie miasto
@@ -47,7 +47,7 @@ W Combo Van dostępne są cztery układy napędowe:
 Dla firm zajmujących się dostawami lokalnymi (40–100 km/dzień, załadunek 3–5 razy) najlepiej sprawdza się 1.5 BlueHDi 100 KM z manualem. Prosty silnik, dobry moment obrotowy od 1750 rpm i niskie koszty serwisu. Unikam wersji 75 KM – przy pełnym załadunku i wjeździe na rampę radzi sobie słabo.
 {{% /expert %}}
 
-## Opcje zabudowy i wyposażenia cargo
+## Opcje zabudowy Opel Combo Van
 
 Combo Van jest dostępne w trzech wersjach wyposażenia bazowego:
 - Combo Cargo: podstawowe bez klimatyzacji, radio z AUX, ABS, ESP
@@ -66,7 +66,7 @@ Dodatkowe opcje cargo:
 Combo Van zarejestrowane jako N1 uprawnia do odliczenia 100% VAT od zakupu i eksploatacji, pod warunkiem prowadzenia ewidencji przebiegu (kilometrówki). Stawka amortyzacji podatkowej dla samochodów dostawczych wynosi 20% rocznie metodą liniową lub do 14% w metodzie degresywnej.
 {{% /info %}}
 
-## Serwis i koszty eksploatacji
+## Serwis i koszty eksploatacji Combo
 
 Combo Van dzieli serwis z Berlingo III i Partnerem III. Oznacza to szeroką dostępność części zamiennych w Polsce – praktycznie każdy hurtownik motoryzacyjny ma je w magazynie. Typowe koszty:
 - wymiana oleju 1.5 D (10 000 km): ok. 250–350 zł

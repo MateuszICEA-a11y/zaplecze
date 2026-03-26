@@ -50,7 +50,7 @@ Wersja z DMC 3,5 t pozwala na prowadzenie z prawem jazdy kat. B. DMC 5,0 t wymag
 FWD ma niższy próg załadowczy paki i lepszą ładowność (brak mostu tylnego), ale trakcja pod obciążeniem jest gorsza na śliskich nawierzchniach. RWD z kołami bliźniaczymi lepiej trzyma się przy 1+ tonie ładunku na pace. Do budowlanki na gruntówkach: 4MOTION z 177 KM.
 {{% /info %}}
 
-## Silniki w brygadówce
+## Silniki Volkswagen Crafter brygadówka
 
 Brygadówka oferuje te same warianty 2.0 TDI co furgon. Przy 6–7 osobach w kabinie + ładunku na pace auto waży 500–1000 kg więcej niż pusto – minimalna sensowna moc to 140 KM.
 
@@ -66,7 +66,7 @@ Wariant 102 KM w brygadówce to kompromis, którego nie polecam – z 7 osobami 
 Crafter brygadówka L3 z 2.0 TDI 140 KM, manualem i napędem RWD to mój standard dla firm budowlanych. Kabina mieści 6 ludzi w ciepłe, paka 2,4 m długości bierze drabiny, narzędzia i materiał na dzień pracy. Przy wyborze automatu pamiętaj o wymianie oleju 8AT co 60 tys. km – inaczej po 2 latach masz problem za kilka tysięcy.
 {{% /expert %}}
 
-## Zastosowania brygadówki
+## Zastosowania Craftera z podwójną kabiną
 
 - **Ekipy budowlane** – 6 pracowników + narzędzia i materiały na pace. Plandeka chroni ładunek
 - **Służby komunalne** – odśnieżanie, utrzymanie zieleni, drobne naprawy infrastruktury
@@ -82,7 +82,7 @@ Standardowa paka to otwarta skrzynia z burtami aluminiowymi. Opcje zabudowy:
 - **Wywrotka** – hydrauliczna, kąt nachylenia 45°, do żwiru, piasku, ziemi
 - **Zabudowa warsztatowa** – zamknięta skrzynia z regałami i stanowiskiem roboczym
 
-## Ceny Craftera brygadówka
+## Ceny VW Crafter brygadówka
 
 | Wersja / Rocznik | Cena orientacyjna |
 |-------------------|-------------------|
@@ -92,7 +92,7 @@ Standardowa paka to otwarta skrzynia z burtami aluminiowymi. Opcje zabudowy:
 | Nowy Crafter II L3 brygadówka (2.0 TDI 140) | od ok. 175 000 zł netto |
 | Nowy z zabudową wywrotki | od ok. 210 000 zł netto |
 
-## Porównanie brygadówek w segmencie
+## Crafter brygadówka na tle konkurencji
 
 | Parametr | VW Crafter II L3 | Mercedes Sprinter L2 | Ford Transit L3 | Iveco Daily L3 | Renault Master L3 |
 |----------|-----------------|---------------------|-----------------|----------------|-------------------|

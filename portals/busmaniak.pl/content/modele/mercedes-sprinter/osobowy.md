@@ -31,7 +31,7 @@ Mercedes oferuje Sprinter Tourer w czterech głównych wariantach:
 
 Każda linia bazuje na podwoziu Sprinter W907 z nadwoziem L2 lub L3, wysokość H2 lub H3. Napęd wyłącznie tylny (RWD) – FWD niedostępny w wersji osobowej ze względu na moment obrotowy przy pełnym załadunku pasażerskim.
 
-## Liczba miejsc i konfiguracje
+## Liczba miejsc w Sprinterze osobowym
 
 {{% info title="Homologacja a liczba miejsc" icon="engineering" %}}
 Sprinter Tourer homologowany jako autobus (M2) przy powyżej 8 miejsc pasażerskich wymaga dodatkowych badań technicznych i wpisu do dowodu rejestracyjnego. Przy 9 miejscach łącznie (8 pasażerów + kierowca) i DMC do 3500 kg pojazd figuruje jako mikrobus kategorii M1 – ważne przy rozliczaniu podatku VAT i leasingu.
@@ -80,7 +80,7 @@ Systemy ADAS seryjnie: Active Brake Assist, Attention Assist, Lane Keeping Assis
 Przy zamówieniu Touristen Tourist VIP pod wynajem zawsze dopłacaj do pakietu nagłośnienia pokładowego i uchwytu mikrofonu. Klient turystyczny oczekuje tego standardu, a brak tych elementów wraca jako problem przy każdym przetargu. Automat 9G-Tronic to nie opcja – to wymóg przy trasach powyżej 300 km dziennie z pełnym załadunkiem.
 {{% /expert %}}
 
-## Ceny i finansowanie
+## Ceny Mercedes Sprinter osobowy
 
 Orientacyjne ceny brutto (2026):
 

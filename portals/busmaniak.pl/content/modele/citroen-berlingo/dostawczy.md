@@ -49,7 +49,7 @@ Berlingo M mieści jedną europaletę (1200 x 800 mm). Wersja XL mieści dwie eu
 
 {{% info title="Europalety" icon="engineering" %}}Przy załadunku europalet do wersji M pomocne są boczne drzwi przesuwane – umożliwiają wstawienie palety bokiem. Drzwi tylne dwuskrzydłowe otwierają się na 180° (opcjonalnie na 90° z blokadą).{{% /info %}}
 
-## Silniki i napędy {#silniki}
+## Silniki w Citroënie Berlingo dostawczym {#silniki}
 
 W III generacji Berlingo dostawczego głównym silnikiem jest 1.5 BlueHDI:
 

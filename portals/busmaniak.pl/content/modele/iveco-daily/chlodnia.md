@@ -20,7 +20,7 @@ faq:
     answer: "Agregat niezależny wymaga przeglądu co 1 000–1 500 godzin pracy silnika agregatu. W praktyce przy intensywnym użytkowaniu co 6–12 miesięcy."
 lead: "Iveco Daily jako chłodnia ATP to jeden z najbardziej eksploatowanych wariantów tego pojazdu w Polsce. Dystrybucja nabiału, transport mrożonek, dostawy farmaceutyków – wszędzie tam, gdzie temperatura ładunku musi być kontrolowana przez całą dobę, Daily sprawdza się lepiej niż większość konkurentów ze względu na szeroki zakres DMC i dostępność zabudów."
 ---
-## Klasy ATP i wymagania temperaturowe
+## Iveco Daily chłodnia – klasy ATP
 
 Certyfikat ATP (Accord Transport Périssables) dzieli pojazdy chłodnicze na klasy według utrzymywanej temperatury:
 
@@ -30,7 +30,7 @@ Certyfikat ATP (Accord Transport Périssables) dzieli pojazdy chłodnicze na kla
 
 Codzienna dystrybucja nabiału i wędlin to klasa A. Transport mrożonek wymaga klasy C z mocniejszym agregatem i grubszą izolacją (min. 60 mm pianki PUR).
 
-## Zabudowa izoterma – materiały i izolacja
+## Zabudowa izoterma na Daily – materiały i izolacja
 
 Zabudowa chłodnicza na Daily to sandwich z laminatu poliestrowego lub stali nierdzewnej z wypełnieniem izolacyjnym. Standardy:
 
@@ -47,7 +47,7 @@ Zabudowa chłodnicza na Daily to sandwich z laminatu poliestrowego lub stali nie
 
 ![Iveco Daily chłodnia z agregatem Thermo King – dystrybucja mrożonek](/images/iveco-daily-chlodnia-hero.jpg)
 
-## Agregaty chłodnicze – Thermo King i Carrier
+## Agregaty chłodnicze do Iveco Daily
 
 Dwa dominujące producenty agregatów do pojazdów dostawczych to Thermo King (koncern Trane Technologies) i Carrier (UTC Climate). W Polsce oba mają gęstą sieć serwisową.
 
@@ -60,7 +60,7 @@ Najpopularniejsze modele do Daily:
 
 Agregat niezależny (własny silnik) jest konieczny przy postoju – uniezależnia chłodzenie od stanu silnika pojazdu. Przy dystrybucji miejskiej z wieloma przystankami jest to standard.
 
-## DMC i ładowność – realia
+## DMC i ładowność Daily chłodni
 
 Zabudowa izoterma z agregatem waży 800–1 300 kg. To poważne obciążenie masy własnej. Przy DMC 3,5 t ładowność netto wynosi tylko 600–900 kg – na granicy opłacalności. Realna praca to DMC 5,0 t wzwyż.
 
@@ -78,7 +78,7 @@ Zabudowa izoterma z agregatem waży 800–1 300 kg. To poważne obciążenie mas
 Przy wyborze agregatu nie oszczędzaj na serwisie autoryzowanym. Thermo King i Carrier mają rozbudowane sieci w Polsce i Europie – to ważne, gdy zepsuje ci się agregat w nocy 300 km od bazy. Tańsze zamienniki o chińskim rodowodzie miewają problem z dostępnością części na trasie.
 {{% /expert %}}
 
-## Koszty zabudowy i formalności
+## Koszty zabudowy Iveco Daily chłodnia
 
 Cena kompletnej zabudowy chłodniczej na Daily:
 

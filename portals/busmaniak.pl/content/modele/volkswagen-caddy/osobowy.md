@@ -22,13 +22,13 @@ faq:
     answer: "Caddy osobowy ma homologację M1, 5-7 miejsc, przeszklone szyby i lepsze wyposażenie. Cargo ma homologację N1, 2-3 miejsca, przegrodę i gołą przestrzeń ładunkową."
 ---
 
-## Caddy osobowy – przegląd wersji {#przegląd}
+## Volkswagen Caddy osobowy – przegląd wersji {#przegląd}
 
 W III i IV generacji wersja osobowa [Volkswagena Caddy](/modele/volkswagen-caddy/) funkcjonowała pod nazwą Caddy Life. Piąta generacja (od 2020) uprościła nazewnictwo – osobowy Caddy dostępny jest w czterech liniach wyposażenia.
 
 Od wersji Cargo (dostawczej) różni się przede wszystkim konfiguracją wnętrza: pełne przeszklenie, 5–7 siedzeń z tapicerką, lepsze materiały wykończeniowe i bogatsza lista wyposażenia seryjnego.
 
-## Wymiary i przestrzeń pasażerska {#wymiary}
+## Wymiary Caddy osobowego {#wymiary}
 
 | Parametr              | Caddy       | Caddy Maxi  |
 |-----------------------|------------|-------------|
@@ -40,7 +40,7 @@ Od wersji Cargo (dostawczej) różni się przede wszystkim konfiguracją wnętrz
 
 W standardowej konfiguracji 5-osobowej bagażnik pomieści 1213 litrów (wersja Maxi). Opcja 7 miejsc dostępna jest wyłącznie w wersji [Maxi](/modele/volkswagen-caddy/maxi/).
 
-## Wyposażenie per linia {#wyposażenie}
+## Wyposażenie Volkswagen Caddy – Life, Style, Move {#wyposażenie}
 
 - **Caddy (bazowy)** – ABS, ESP, Front Assist, radio z 6,5" ekranem, manualna klimatyzacja, elektrycznie sterowane szyby przednie
 - **Life** – automatyczna klimatyzacja Climatronic, Composition Colour z 8,25" ekranem, czujniki parkowania tył, tempomat, podgrzewane fotele
@@ -53,7 +53,7 @@ W standardowej konfiguracji 5-osobowej bagażnik pomieści 1213 litrów (wersja 
 
 ![Volkswagen Caddy osobowy V generacji](/images/volkswagen-caddy-osobowy-hero.jpg)
 
-## Silniki {#silniki}
+## Silniki Caddy osobowego {#silniki}
 
 - **[2.0 TDI](/modele/volkswagen-caddy/tdi/) 75/102/122 KM** – diesel; 102 KM to bestseller, dostępny z manualem lub DSG
 - **1.5 TSI 114 KM** – turbobenzyna; dobra dynamika, wyższe spalanie (7–8 l/100 km)

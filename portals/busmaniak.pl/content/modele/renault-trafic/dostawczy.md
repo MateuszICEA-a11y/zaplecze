@@ -21,7 +21,7 @@ faq:
   - question: "Od jakiej ceny dostępny jest Renault Trafic dostawczy nowy?"
     answer: "Ceny nowego Trafic furgon zaczynają się od ok. 105 000 zł netto za wersję L1H1 z podstawowym wyposażeniem (dane 2024). Wersje L2H2 z pakietem comfort kosztują zwykle 130 000–145 000 zł netto."
 ---
-## Wersje nadwoziowe i oznaczenia
+## Renault Trafic dostawczy – wersje nadwoziowe
 
 Trafic dostawczy (furgon) występuje w dwóch długościach i dwóch wysokościach dachu:
 
@@ -34,7 +34,7 @@ Skrót L2H2 to długi furgon z wysokim dachem – najpopularniejszy wariant w fl
 
 ---
 
-## Wymiary i ładowność – tabela
+## Wymiary i ładowność Trafica furgon
 
 | Wersja | Objętość | Udźwig | Palety | Dł. ładowni |
 |--------|----------|--------|--------|-------------|
@@ -53,7 +53,7 @@ DMC Trafic dostawczego wynosi 2720–3100 kg zależnie od wersji silnikowej i wy
 
 ![Renault Trafic III furgon dostawczy](/images/renault-trafic-dostawczy-hero.jpg)
 
-## Drzwi i dostęp do ładowni
+## Drzwi i dostęp do ładowni Renault Trafic
 
 Trafic furgon ma drzwi boczne przesuwne – w standardzie z prawej strony, opcjonalnie też z lewej. Otwór boczny pozwala wjechać wózkiem paletowym (wysokość progu ok. 540 mm od podłoża). Tylne drzwi dwuskrzydłowe otwierają się pod kątem 270°, co przy załadunku przy rampie jest sporą zaletą – skrzydła można przypiąć do boku nadwozia i mieć pełny dostęp bez blokowania przestrzeni.
 
@@ -61,7 +61,7 @@ Podłoga ładowni w wersji fabrycznej jest stalowa z rowkami. Większość użyt
 
 ---
 
-## Silniki i dane trakcyjne
+## Silniki Renault Trafic dostawczy
 
 Trafic III dostawczy był oferowany z dwoma jednostkami wysokoprężnymi:
 
@@ -85,7 +85,7 @@ Trafic III dostawczy był oferowany z dwoma jednostkami wysokoprężnymi:
 
 ---
 
-## Zabudowy i wyposażenie ładowni
+## Zabudowy ładowni Trafica dostawczego
 
 Trafic dostawczy ma ustandaryzowane punkty mocowania na podłodze i ścianach bocznych, co ułatwia montaż zabudów warsztatowych. Najpopularniejsze rozwiązania:
 
@@ -98,7 +98,7 @@ Warto pamiętać, że każdy kilogram stałej zabudowy obniża dopuszczalny ład
 
 ---
 
-## Ceny i wersje wyposażenia
+## Ceny Renault Trafic dostawczy
 
 Nowy Renault Trafic dostawczy (dane 2024):
 
@@ -113,7 +113,7 @@ Renault oferuje kilka poziomów wyposażenia: Base, Advance, Comfort i wyższe. 
 
 *Źródła: Wikipedia, Renault, auto-data.net*
 
-## Eksploatacja w praktyce
+## Eksploatacja Trafica furgon w praktyce
 
 Trafic sprawdza się jako klasyczny furgon dzienny – dystrybutor artykułów spożywczych, ekipa budowlana, firma serwisowa. Słabsze strony to koszt części przy awariach skrzyni EDC (automatycznej) oraz wrażliwość 1.6 dCi na złą jakość oleju napędowego. W starszych rocznikach (2014–2018) warto sprawdzić stan wtryskaczy i dwumasowego koła zamachowego.
 

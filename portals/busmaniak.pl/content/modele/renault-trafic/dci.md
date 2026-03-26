@@ -61,7 +61,7 @@ Koszt wymiany paska rozrządu w silniku 2.0 dCi (M9R) wynosi 800–1500 zł robo
 
 ---
 
-## Rzeczywiste spalanie
+## Spalanie Renault Trafic dCi w praktyce
 
 Poniższe wartości pochodzą z realnych warunków eksploatacji, nie z homologacji WLTP.
 
@@ -127,7 +127,7 @@ Renault wymaga oleju spełniającego normę RN0720 (dla R9M) lub RN0710/RN0720 (
 
 ---
 
-## Który silnik wybrać?
+## Który silnik dCi wybrać do Trafica?
 
 Jeśli kupujesz używanego Trafica z lat 2014–2019, silnik 1.6 dCi 115 to rozsądny kompromis – wystarczający moment do standardowego ładunku, łańcuch rozrządu eliminuje jeden koszt serwisowy. BiTurbo ma więcej charakteru, ale wyższą stawkę przy naprawie turbo.
 

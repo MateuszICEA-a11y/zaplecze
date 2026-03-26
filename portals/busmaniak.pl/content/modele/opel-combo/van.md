@@ -49,7 +49,7 @@ Combo Van dostępny jest w dwóch długościach: Standard (L1, 4400 mm) i [XL (L
 Otwierana klapa w ścianie grodziowej i składane oparcie fotela pasażera pozwalają na transport drabin czy rur o długości ponad 3 metrów nawet w najkrótszej wersji nadwozia.
 {{% /info %}}
 
-## Silniki i napędy
+## Silniki i napędy Opel Combo Van
 
 - **1.5 Diesel 75 KM** – wersja bazowa do lekkiego transportu miejskiego
 - **1.5 Diesel 100 KM** – najpopularniejszy wariant flotowy

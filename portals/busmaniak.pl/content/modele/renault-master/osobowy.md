@@ -31,7 +31,7 @@ W nomenklaturze Renault funkcjonują dwa określenia dla Mastera osobowego:
 
 W polskiej praktyce rynkowej określenie „Master osobowy" używane jest dla obu tych wersji, bo różnica jest przede wszystkim homologacyjna. Kombi przewozi towar i ludzi; Bus przewozi wyłącznie ludzi.
 
-## Dostępne warianty nadwozia
+## Warianty nadwozia Renault Master osobowy
 
 Podstawowe konfiguracje Mastera osobowego w Polsce:
 
@@ -60,7 +60,7 @@ Odległość między rzędami siedzeń w wersji 9-miejscowej wynosi ok. 720–76
 
 ![Renault Master Combi L3H2 – widok z boku z przeszkleniem bocznym](/images/renault-master-osobowy-hero.jpg)
 
-## Silniki w wersji osobowej
+## Silniki w Masterze osobowym
 
 W wersji Combi i Bus dostępne są te same silniki co w furgonie. Zalecenia praktyczne:
 
@@ -96,7 +96,7 @@ Najczęstsze aplikacje Mastera osobowego w Polsce:
 W wersji 9-osobowej Master Combi L3H2 to najtańszy nowy bus z pełnymi pasami dla wszystkich pasażerów i prawem jazdy B. Problemem przy zakupie używanego jest historia – wiele egzemplarzy z rynku wtórnego to dawne floty transferowe z przebiegami 400 000–600 000 km. Koniecznie sprawdź stan siedzeń, pasów bezpieczeństwa i podłogi, która przy intensywnej eksploatacji pasażerskiej szybko się zużywa. Silnik M9T przy takich przebiegach zwykle jest jeszcze sprawny, o ile właściciel wymieniał olej regularnie.
 {{% /expert %}}
 
-## Koszty i dostępność
+## Ceny Renault Master Combi – nowe i używane
 
 Nowy [Renault Master](/modele/renault-master/) Combi L3H2 9-miejscowy kosztuje ok. 155 000–175 000 zł netto, zależnie od wersji wyposażenia. Na rynku wtórnym za egzemplarze 3–5-letnie z przebiegiem 150 000–250 000 km płaci się 80 000–120 000 zł.
 

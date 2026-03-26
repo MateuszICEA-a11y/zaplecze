@@ -63,7 +63,7 @@ Typowe wymiary skrzyni kontenerowej na Sprinter (długi rozstaw osi):
 
 Przy DMC 5,5 t i zabudowie chłodniczej z agregatem (masa zabudowy ok. 1000–1200 kg): ładowność netto ok. 1600–1800 kg.
 
-## Zastosowania
+## Zastosowania Sprinter kontener
 
 Popularne branże i zastosowania:
 

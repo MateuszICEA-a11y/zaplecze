@@ -32,7 +32,7 @@ Szeroki wachlarz mocy (od 84 do 165 KM) pozwala dobrać auto do tonażu – od l
 Wśród użytkowników profesjonalnych Boxer HDI 2.2 o mocy 130 KM z roczników po 2014 roku uchodzi za złotą konfigurację. Oferuje najlepszy stosunek dynamiki do bezawaryjności – radzi sobie znacznie lepiej pod obciążeniem niż słabsze warianty 100 KM.
 {{% /expert %}}
 
-## Dane techniczne poszczególnych jednostek
+## Dane techniczne Peugeot Boxer HDI
 
 | Silnik | Kod | Moc | Moment | Lata | Rozrząd |
 |--------|-----|-----|--------|------|---------|
@@ -49,7 +49,7 @@ Najstarsze 2.0 HDI w mieście zużywają ok. 9,2 l/100 km. Silnik 2.8 HDI Iveco 
 
 Wersje 2.2 HDI z lat 2006–2014 potrafią zejść do ok. 8 l/100 km w trasie – to jedne z najbardziej ekonomicznych jednostek w klasie dużych dostawczaków.
 
-## Typowe usterki i koszty napraw
+## Usterki Boxera HDI i koszty napraw
 
 - **DPF (filtr cząstek stałych)** – tylko w BlueHDI (III gen.). Zapychanie po 150–200 tys. km przy krótkich trasach. Regeneracja: 2000–4000 zł
 - **Wtryskiwacze** – zużycie po ~200 tys. km, objaw: szarpanie, dymienie. Regeneracja: 500–800 zł/szt., komplet: 2000–3200 zł

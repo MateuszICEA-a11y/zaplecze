@@ -28,7 +28,7 @@ Wraz z premierą trzeciej generacji Berlingo w 2018 roku, Citroën zmienił naze
 
 Berlingo XL jest dłuższe o 350 mm i ma o 190 mm większy rozstaw osi niż wersja M. Dostępne jest w wariancie osobowym i jako [Van](/modele/citroen-berlingo/van/).
 
-## Wymiary i przestrzeń bagażowa {#wymiary}
+## Wymiary i przestrzeń bagażowa Citroëna Berlingo XL {#wymiary}
 
 | Parametr              | Berlingo M  | Berlingo XL |
 |-----------------------|------------|-------------|
@@ -58,7 +58,7 @@ Wersje z automatyczną skrzynią biegów są cięższe o ok. 30 kg, co nieznaczn
 
 ![Citroën Berlingo XL III generacji](/images/citroen-berlingo-xl-hero.jpg)
 
-## Silniki {#silniki}
+## Silniki w Berlingo XL {#silniki}
 
 Gama silnikowa jest identyczna jak w wersji M:
 

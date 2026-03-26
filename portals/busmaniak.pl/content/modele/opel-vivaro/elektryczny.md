@@ -64,7 +64,7 @@ Vivaro-e zachowuje identyczną przestrzeń jak odpowiednik spalinowy:
 
 ![Opel Vivaro-e – ładowanie DC i przestrzeń ładunkowa](/images/opel-vivaro-elektryczny-hero.jpg)
 
-## Koszty eksploatacji
+## Koszty eksploatacji Opel Vivaro-e
 
 Zużycie energii: ok. 25–32 kWh/100 km. Koszt na 100 km przy 0,80 zł/kWh: **20–26 zł**. Dla porównania Vivaro 1.5 D przy 8 l/100 km i 7 zł/l: **56 zł**.
 

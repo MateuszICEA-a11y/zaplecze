@@ -55,7 +55,7 @@ Partner Van Short (L1):
 
 Obydwie wersje mają te same wymiary szerokości i wysokości – zmienia się wyłącznie długość podłogi.
 
-## Silniki w wersji dostawczej
+## Silniki Peugeot Partner dostawczy
 
 Dostępne agregaty:
 - 1.2 PureTech 110 KM + manualna 6-biegowa: do użytku lekkiego, krótkie trasy

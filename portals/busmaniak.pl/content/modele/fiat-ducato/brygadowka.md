@@ -22,7 +22,7 @@ faq:
     answer: "Najlepszy wybór to 2.3 MultiJet 130 lub 140 KM – trwały, elastyczny i z dobrą dostępnością części. Spalanie przy pełnym załadunku to 9–11 l/100 km."
 ---
 
-## Konstrukcja i wersje nadwozia brygadowego
+## Fiat Ducato brygadówka – konstrukcja i wersje nadwozia
 
 Ducato w wersji brygadowej to przebudowany furgon – za pierwszym rzędem siedzeń montuje się dodatkową kanapę i przegrodę (pełną lub siatkową) oddzielającą część pasażerską od ładunkowej. W przeciwieństwie do [Ducato 9-osobowego](/modele/fiat-ducato/9-osobowy/), tutaj priorytetem jest równowaga: zabrać tylu ludzi, ilu potrzeba, a resztę przestrzeni przeznaczyć na sprzęt. Kabina mieści do 7 osób (3+4).
 
@@ -49,7 +49,7 @@ Trzy najpopularniejsze warianty nadwozia:
 W wersji brygadowej L3H2 długość podłogi za przegrodą wynosi 2500–2800 mm, zależnie od typu zastosowanej ściany działowej. Pozwala to na transport standardowych profili czy płyt gipsowo-kartonowych.
 {{% /info %}}
 
-## Silniki – co wybrać do ciężkiej pracy?
+## Silniki Ducato brygadówki – co wybrać do ciężkiej pracy?
 
 Wybór napędu w brygadówce jest ważniejszy niż w typowym furgonie, bo auto przez większość czasu jedzie pod pełnym obciążeniem: ludzie, narzędzia, materiały.
 
@@ -59,7 +59,7 @@ Wybór napędu w brygadówce jest ważniejszy niż w typowym furgonie, bo auto p
 
 {{% expert name="Kowalczyk" %}}Przy zakupie używanej brygadówki celuj w 2.3 MultiJet 130 lub 140 KM. Spalanie przy pełnym załadunku to realne 9–11 l/100 km, a dynamika jest wystarczająca nawet na trasie. Producent dopuszcza wymianę rozrządu co 180 tys. km, ale w warunkach intensywnej eksploatacji – krótkie trasy, ciągłe obciążenie – ten interwał skróć do 100–120 tys. km.{{% /expert %}}
 
-## Komfort i ergonomia kabiny załogowej
+## Komfort i ergonomia Fiat Ducato brygadówka
 
 [Fiat Ducato](/modele/fiat-ducato/) IV po liftingu zyskał lepsze wyciszenie i solidniejsze materiały. W wersji dla ekip budowlanych trzy rzeczy mają największe znaczenie:
 
@@ -71,7 +71,7 @@ Wyposażenie seryjne obejmuje: klimatyzację manualną, elektryczne wspomaganie,
 
 ![Fiat Ducato brygadówka – wersja dla ekip budowlanych](/images/fiat-ducato-brygadowka-hero.jpg)
 
-## Typowe problemy i koszty utrzymania
+## Typowe problemy brygadówki Ducato
 
 Jak każdy intensywnie eksploatowany bus, Ducato ma swoje słabsze punkty:
 
@@ -79,7 +79,7 @@ Jak każdy intensywnie eksploatowany bus, Ducato ma swoje słabsze punkty:
 - **Zawieszenie przednie** – sworznie i tuleje wahaczy zużywają się szybciej przy regularnej jeździe po złej nawierzchni
 - **Układ AdBlue** – w wersjach Euro 6 zdarzają się awarie wtryskiwaczy mocznika; naprawa potrafi być kosztowna
 
-## Ceny nowych i używanych
+## Ceny Fiat Ducato brygadówka
 
 | Typ | Cena orientacyjna |
 |-----|-------------------|

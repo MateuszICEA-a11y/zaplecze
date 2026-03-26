@@ -28,7 +28,7 @@ Odpowiedź jest jednoznaczna: **tak**. Polskie przepisy pozwalają kierować poj
 
 Jedyny wyjątek to wersje Maxi z DMC 4005 kg – te wymagają już kategorii C. Jeśli nie masz pewności, które uprawnienia obowiązują w Twoim przypadku, sprawdź szczegóły w artykule o [prawie jazdy na busa](/przepisy/prawo-jazdy-na-busa/).
 
-## Wersje nadwoziowe i wymiary
+## Wersje nadwoziowe i wymiary Ducato 9-osobowego
 
 Fiat Ducato III (w produkcji od 2006 roku, z kolejnymi liftingami) jest oferowany w kilku wariantach długości (L) i wysokości (H). Przy 9 osobach liczy się przede wszystkim to, ile bagażu zostaje po zapełnieniu wszystkich siedzeń.
 
@@ -81,7 +81,7 @@ Ducato jest solidny, ale ma kilka powtarzających się słabych punktów:
 
 Ładowność przy 9 osobach: 340–725 kg w zależności od DMC (3,0 t daje 340 kg rezerwy, 3,5 t – nawet 725 kg).
 
-## Ceny nowych i używanych
+## Ceny Fiata Ducato 9-osobowego
 
 | Rocznik | Silnik | Cena orientacyjna |
 |---------|--------|-------------------|

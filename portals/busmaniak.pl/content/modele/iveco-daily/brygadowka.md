@@ -33,7 +33,7 @@ Standardowa konfiguracja to:
 
 W wersji Short (L1) przestrzeń ładunkowa za przegrodą wynosi ok. 2,5–3,0 m³. W wersji Long (L2) – do 5,0 m³.
 
-## DMC i liczba miejsc
+## Iveco Daily brygadówka – DMC i liczba miejsc
 
 Daily brygadówka dostępna jest w zakresie DMC 3,5 t do 5,0 t. Przy 3,5 t i 7 miejscach siedzących ładowność netto jest ograniczona przez masę własną i pasażerów – przy 6 osobach po 80 kg każda zostaje ok. 300–400 kg na narzędzia.
 
@@ -67,7 +67,7 @@ Skrzynia manualna 6-biegowa to standard – automatyczna Hi-Matic jest opcją, a
 Przy zakupie brygadówki z rynku wtórnego sprawdź stan przegrody i mocowania ławki tylnej. To miejsca, które mocno eksploatują serwisanci – narzędzia wpychane na siłę, ciągnięcie za oparcia, wchodzenie butami na siedziska. Ławka do wymiany to koszt 1 500–3 000 zł.
 {{% /expert %}}
 
-## Koszty zakupu i serwisu
+## Koszty zakupu i serwisu Daily brygadówki
 
 Nowa Daily brygadówka 3,5 t / 5 miejsc kosztuje 110–130 tys. zł netto. Wersje fabryczne z kabiną wieloosobową są w ofercie Iveco – nie wymagają osobnej zabudowy. Koszt serwisu silnika 2.3 jest niski: rozrząd łańcuchowy nie wymaga wymiany, olej co 15 000–30 000 km.
 

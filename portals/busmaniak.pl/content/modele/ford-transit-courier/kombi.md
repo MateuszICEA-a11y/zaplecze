@@ -44,7 +44,7 @@ Szerokość nadwozia wzrosła o 12,4 cm względem I generacji, co bezpośrednio 
 
 System ISOFIX na skrajnych siedzeniach tylnej kanapy pozwala na bezpieczny montaż fotelików dziecięcych. Standardowe przesuwne drzwi boczne po obu stronach i dwuskrzydłowe drzwi tylne (opcjonalnie klapa). Deska rozdzielcza z licznymi schowkami i uchwytami na urządzenia mobilne.
 
-## Silniki i napędy
+## Silniki i napędy w Transit Courier Kombi
 
 - **1.0 EcoBoost 100 KM** – benzyna, manualna 6b
 - **1.0 EcoBoost 125 KM** – benzyna, manualna 6b lub automat 7b. Holowanie do 1000 kg

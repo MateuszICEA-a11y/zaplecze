@@ -31,7 +31,7 @@ Auto jest dostępne w dwóch długościach:
 
 Szczegółowe dane dotyczące [wersji Long znajdziesz tutaj](/modele/toyota-proace-verso/long/).
 
-## Linie wyposażenia Shuttle, Family, VIP
+## Wyposażenie Proace Verso – Shuttle, Family, VIP
 
 Proace Verso jest oferowany w trzech liniach wyposażenia, które istotnie różnią się charakterem:
 
@@ -69,7 +69,7 @@ Verso zarejestrowany jako M1 podlega pełnemu opodatkowaniu VAT przy zakupie pry
 
 ![Toyota Proace Verso VIP – wnętrze kabiny pasażerskiej](/images/toyota-proace-verso-osobowy-hero.jpg)
 
-## Ceny i konkurencja
+## Ceny Toyota Proace Verso i konkurencja
 
 Ceny orientacyjne dla rynku polskiego:
 

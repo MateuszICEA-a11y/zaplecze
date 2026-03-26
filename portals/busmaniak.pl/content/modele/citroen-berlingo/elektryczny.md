@@ -40,7 +40,7 @@ faq:
 
 Bateria LFP (litowo-żelazowo-fosforanowa) to nowsza technologia – tańsza, bezpieczniejsza i bardziej trwała od tradycyjnych ogniw NMC. Wadą jest nieco niższa gęstość energii, ale przy 50 kWh i masie Berlingo to kompromis do zaakceptowania.
 
-## Zasięg w praktyce {#zasięg}
+## Zasięg ë-Berlingo w praktyce {#zasięg}
 
 Deklarowane 280 km WLTP to wartość laboratoryjna. W codziennym użytkowaniu:
 
@@ -67,7 +67,7 @@ Wymiary nadwozia, bagażnika i przestrzeni ładunkowej są identyczne jak w wers
 
 ![Citroën ë-Berlingo na stacji ładowania](/images/citroen-e-berlingo-hero.jpg)
 
-## Ładowanie i infrastruktura {#ładowanie}
+## Ładowanie Citroëna ë-Berlingo {#ładowanie}
 
 Trzy główne scenariusze ładowania:
 

@@ -32,7 +32,7 @@ Proace i Proace Verso to dwa różne samochody na tej samej platformie. Verso to
 
 Proace towarowy ma blaszane ściany, ściankę odgradzającą kabinę i twarde zawieszenie pod ładunek. Odradzam konwersji towarowego na osobowy – koszty homologacji i bezpieczeństwo pasażerów nie są warte oszczędności.
 
-## Dostępne konfiguracje miejsc
+## Konfiguracje miejsc w Toyota Proace Verso
 
 | Konfiguracja | Rzędy | Nadwozie |
 |---|---|---|
@@ -69,7 +69,7 @@ W flocie shuttle'owej testowałem Proace Verso Long z automatem i silnikiem 177 
 
 ![Toyota Proace osobowy – Verso, miejsca, ceny](/images/toyota-proace-osobowy-hero.jpg)
 
-## Wymiary i bagażnik
+## Wymiary i bagażnik Proace Verso
 
 - długość Proace Verso Medium: 4959 mm
 - długość Proace Verso Long: 5309 mm
@@ -84,7 +84,7 @@ Bagażnik za trzecim rzędem:
 
 Fotele drugiego i trzeciego rzędu w większości wersji można wyjąć – to ważne przy przewozie rowerów lub sprzętu.
 
-## Ceny i wersje wyposażenia
+## Ceny Toyota Proace Verso
 
 Ceny nowego Proace Verso (2024–2025):
 

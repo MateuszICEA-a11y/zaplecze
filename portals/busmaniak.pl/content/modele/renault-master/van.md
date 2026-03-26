@@ -22,7 +22,7 @@ faq:
     answer: "Masa własna wersji L3H2 z silnikiem 2.3 dCi 135 KM wynosi ok. 2100–2200 kg. Przy DMC 3500 kg daje to ładowność 1300–1400 kg. Dokładna masa zależy od wyposażenia dodatkowego (np. hak, przegroda, nadkola)."
 ---
 
-## Które wersje Van są dostępne?
+## Wersje Renault Master Van – przegląd konfiguracji
 
 [Renault Master](/modele/renault-master/) Van to oficjalne oznaczenie wersji furgon – zamkniętego nadwozia blaszanego, bez bocznych okien za kabina kierowcy. To absolutna podstawa oferty i najczęściej spotykany wariant Mastera w polskich flotach transportowych.
 
@@ -66,7 +66,7 @@ Skrzynia manualna (6-biegowa) jest standardem. Automat EDC jest opcją od 135 KM
 
 ![Renault Master Van L3H2 z otwartymi drzwiami bocznymi](/images/renault-master-van-hero.jpg)
 
-## Ładowność a DMC – praktyczne obliczenie
+## Ładowność Mastera Van – jak obliczyć?
 
 Ładowność to DMC minus masa własna pojazdu. Master Van L3H2 z silnikiem 135 KM waży ok. 2150 kg. Przy DMC 3500 kg daje to ładowność **1350 kg**. Każde wyposażenie dodatkowe obniża tę wartość:
 
@@ -93,7 +93,7 @@ Po faceliftingu 2019 roku Master Van zyskał znacząco lepsze wnętrze:
 
 Ergonomia kabiny to jeden z mocniejszych argumentów za Masterem w porównaniu z Ducato czy Crafterem – szczególnie w długich trasach kierowcy doceniają bardziej samochodowy charakter fotela.
 
-## Koszty serwisowe i typowe naprawy
+## Koszty serwisu Renault Master Van
 
 Orientacyjne koszty typowych napraw w wersji Van:
 

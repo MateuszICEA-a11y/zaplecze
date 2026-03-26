@@ -24,7 +24,7 @@ faq:
     answer: "DSG jest wygodna, ale droższa w serwisie i podatna na awarie mechatronika (3000-6000 zł). Manualna skrzynia jest tańsza i trwalsza. DSG ma sens głównie w mieście."
 ---
 
-## Dane techniczne silników TDI {#dane-techniczne}
+## Dane techniczne Volkswagen Caddy TDI {#dane-techniczne}
 
 [Volkswagen Caddy](/modele/volkswagen-caddy/) oferowało trzy główne rodziny diesli TDI:
 
@@ -36,7 +36,7 @@ faq:
 
 1.9 TDI to legendarna jednostka z III generacji – prosta, trwała, z paskiem rozrządu wymienianym co 90–120 tys. km. 1.6 TDI (EA189) zastąpił go w 2010 roku, wprowadzając łańcuch rozrządu – co okazało się kontrowersyjnym rozwiązaniem. 2.0 TDI (EA288) w IV i V generacji wrócił do paska i jest uważany za najlepszą jednostkę w historii Caddy.
 
-## Wersje mocy 2.0 TDI {#wersje-mocy}
+## Wersje mocy Caddy 2.0 TDI {#wersje-mocy}
 
 | Wersja   | Moc     | Moment  | Skrzynia     | Generacja |
 |----------|---------|---------|-------------|-----------|
@@ -51,7 +51,7 @@ Wersja 102 KM to bestseller – dobry kompromis mocy i spalania, dostępna z man
 
 ![Silnik 2.0 TDI w Volkswagenie Caddy](/images/volkswagen-caddy-tdi-hero.jpg)
 
-## Spalanie w praktyce {#spalanie}
+## Spalanie Caddy TDI w praktyce {#spalanie}
 
 Realne zużycie paliwa z danych użytkowników:
 
@@ -66,7 +66,7 @@ Realne zużycie paliwa z danych użytkowników:
 
 Caddy TDI pali nieco więcej niż [Berlingo 1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) czy 1.5 BlueHDI – wynika to z większej masy własnej i lepszego wyciszenia (grubsze szyby, więcej tłumienia).
 
-## Typowe usterki {#usterki}
+## Typowe usterki Volkswagen Caddy TDI {#usterki}
 
 - **DSG (DQ200/DQ250)** – awarie mechatronika i sprzęgła, szczególnie sucha DQ200; naprawa 3000–6000 zł; wymiana oleju DSG co 60 000 km obniża ryzyko
 - **Łańcuch rozrządu 1.6 TDI (EA189)** – rozciąganie napinacza prowadzi do przeskoku łańcucha; wymiana 1500–3000 zł; dotyczy roczników 2010–2015
@@ -76,7 +76,7 @@ Caddy TDI pali nieco więcej niż [Berlingo 1.6 HDI](/modele/citroen-berlingo/1-
 
 {{% info title="1.6 TDI EA189" icon="engineering" %}}Jeśli kupujesz Caddy z 1.6 TDI, sprawdź numer silnika. Wersje z kodem CAYD i CAYC mają łańcuch rozrządu i znany problem z napinaczem. Przed zakupem warto zrobić diagnostykę komputerową i posłuchać silnika na zimno – grzechot przy starcie to sygnał ostrzegawczy.{{% /info %}}
 
-## Opinie {#opinie}
+## Opinie o Caddy TDI {#opinie}
 
 Zalety TDI w Caddy:
 
@@ -93,7 +93,7 @@ Wady:
 
 Na tle konkurencji Caddy TDI oferuje lepsze prowadzenie i wyciszenie niż [Berlingo HDI](/modele/citroen-berlingo/1-6-hdi/), ale za wyższą cenę zakupu i serwisu.
 
-## Koszty serwisu {#koszty}
+## Koszty serwisu Caddy TDI {#koszty}
 
 | Czynność                  | Koszt (zł)   | Częstotliwość    |
 |---------------------------|-------------|-----------------|

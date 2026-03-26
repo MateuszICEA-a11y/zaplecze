@@ -40,7 +40,7 @@ Na rynku wtórnym i w salonach dominuje III generacja (od 2006 roku, z liftingam
 
 {{% info title="Kupno" icon="engineering" %}}Przy zakupie używanego Ducato z silnikiem 2.3 MultiJet sprawdź stan wtryskiwaczy i podszybia – w starszych rocznikach woda spływająca na silnik powodowała korozję osprzętu.{{% /info %}}
 
-## Wymiary i ładowność wersji doka
+## Wymiary i ładowność Fiata Ducato doka
 
 Ducato doka występuje w wariantach L3 oraz L4. Dane dla wersji z silnikiem 140 KM:
 

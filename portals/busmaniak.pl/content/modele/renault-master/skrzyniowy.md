@@ -61,7 +61,7 @@ Lekka zabudowa lawetowa (aluminium lub stal galwanizowana, 250–400 kg) pozwala
 
 Specjalistyczne zastosowanie dla firm budowlanych i odpadów. Wymaga zabudowcy i homologacji po zabudowie. Masa zabudowy hakowej to zazwyczaj 400–600 kg.
 
-## Wymiary podwozia i parametry techniczne
+## Wymiary podwozia Renault Master skrzyniowy
 
 | Parametr | Rozstaw 3682 mm | Rozstaw 4332 mm | 4332 mm Maxi |
 |----------|----------------|----------------|-------------|
@@ -86,7 +86,7 @@ W wersji skrzyniowej silnik powinien być dobrany z uwzględnieniem masy zabudow
 W praktyce największy błąd przy zakupie Mastera skrzyniowego to niedoszacowanie masy zabudowy. Zabudowcy podają masę netto swojej skrzyni w specyfikacji, ale często bez osprzętu montażowego i uchwytów. Przed odbiorem podwozia zawsze ważę skrzynię oddzielnie i porównuję z dokumentacją homologacyjną. Drugie zagrożenie to korozja – podwozie skrzyniowe jest bardziej narażone niż furgon, bo brak obudowy tylnej wystawia ramę na bezpośredni kontakt z błotem i solą. Zabezpieczenie podwozia środkiem antykorozyjnym to inwestycja, która zwraca się po pierwszej zimie.
 {{% /expert %}}
 
-## Serwis i koszty eksploatacji wersji skrzyniowej
+## Serwis Mastera skrzyniowego – koszty eksploatacji
 
 Mechanika podwozia jest identyczna jak w furgonie – te same silniki, skrzynie biegów i zawieszenie. Różnice dotyczą:
 

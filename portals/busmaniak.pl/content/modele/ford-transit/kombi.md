@@ -26,7 +26,7 @@ Transit Van to furgon bez okien bocznych i bez tylnych siedzeń – czysta przes
 
 Kombi zajmuje pozycję pośrednią – często kupowany jest z myślą o jednoczesnym przewozie ludzi i narzędzi lub materiałów.
 
-## Wersje i liczba miejsc
+## Wersje i liczba miejsc w Ford Transit Kombi
 
 Transit Kombi jest dostępny w długościach L2, L3 i L4. Wersja L1 nie jest produkowana w tym wariancie nadwozia.
 
@@ -42,7 +42,7 @@ Układ siedzeń w rzędach to zazwyczaj 3+3 lub 2+3. Tylny rząd jest najczęśc
 Granica między M1 a M2 przebiega przy 9 miejscach łącznie z kierowcą. Pojazdy M1 do 9 miejsc można prowadzić na prawo jazdy kat. B. Pojazdy M2 powyżej 9 miejsc wymagają kat. D przy transporcie odpłatnym i licencji przewoźnika. W użytku własnym (np. dowóz pracowników) wystarczy kat. B lub D1.
 {{% /info %}}
 
-## Wymiary i przestrzeń pasażerska
+## Wymiary i przestrzeń pasażerska Transit Kombi
 
 Szerokość wnętrza wynosi ok. 1770 mm – komfortowa dla 3 osób w rzędzie. Wysokość wewnętrzna w wersji H2 (podwyższony dach) sięga ok. 1900 mm, co umożliwia swobodne poruszanie się w kabinie.
 
@@ -89,7 +89,7 @@ Transit Kombi bazuje na tej samej platformie co Van, jednak oferuje kilka opcji 
 - halogeny tylne i wzmocnione zawieszenie przy pełnym obciążeniu
 - wersja "Leader" – pakiet dla przewoźników z lusterkami kamerowymi i asystentem pasa ruchu
 
-## Ceny nowych i używanych
+## Ceny nowych i używanych Ford Transit Kombi
 
 Nowy Transit Kombi L2 z 9 miejscami i silnikiem 130 KM kosztuje od ok. 160 000 zł brutto. Wersje L3 i L4 z 12–15 miejscami wyceniane są na 175 000–220 000 zł zależnie od wyposażenia.
 

@@ -27,7 +27,7 @@ Brygadówka – znana też jako Combi lub podwójna kabina – to nie kolejna we
 
 Trafic wchodzi tu z naturalną przewagą nad większymi dostawczakami. Wymiary L1 i L2 mieszczą się w normach parkingowych tam, gdzie Ducato czy Daily już nie przejedzie. Dla hydraulika, elektryka czy montera klimatyzacji – który nie wyobraża sobie zostawiania sprzętu pod blokiem – to argument decydujący.
 
-## Konstrukcja i wersje nadwozia
+## Konstrukcja Renault Trafic Combi – wersje nadwozia
 
 Fabryczny Combi Trafic dostępny jest w wersji L1 i L2. Obie zachowują standardowy rozstaw osi segmentu, co przekłada się na dobrą zwrotność. Przegroda między kabiną a paką dostępna jest w dwóch wariantach:
 

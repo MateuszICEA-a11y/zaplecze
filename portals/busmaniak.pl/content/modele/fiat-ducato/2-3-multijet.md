@@ -60,7 +60,7 @@ Jeśli planujesz przeróbkę na kampera, wersja 140 KM to złoty środek. Dopła
 
 ![Silnik 2.3 MultiJet Fiat Ducato w warsztacie](/images/fiat-ducato-2-3-multijet-hero.jpg)
 
-## Spalanie w praktyce
+## Spalanie Fiata Ducato 2.3 MultiJet w praktyce
 
 Dane katalogowe producenta (6,4–7,8 l/100 km) mają niewiele wspólnego z rzeczywistością. Realne spalanie silnika Ducato 2.3 na podstawie pomiarów użytkowników metodą od baku do baku:
 
@@ -93,7 +93,7 @@ Silnik Fiat Ducato 2.3 MultiJet jest konstrukcyjnie solidny, ale jak każda jedn
 Wersje Euro 6 (od 2014) wyposażone są w układ SCR z [AdBlue](/serwis/adblue/). Zbiornik ma pojemność ok. 21 litrów, zużycie wynosi średnio 0,8 l/100 km – co wystarcza na 2500–2600 km. Brak uzupełnienia AdBlue powoduje ograniczenie mocy silnika przez komputer pokładowy.
 {{% /info %}}
 
-## Opinie użytkowników
+## Opinie o Ducato 2.3 MultiJet
 
 Silnik 2.3 MultiJet zbiera przeważnie pozytywne opinie wśród użytkowników busów dostawczych i kamperów. Najczęściej wymieniane zalety:
 

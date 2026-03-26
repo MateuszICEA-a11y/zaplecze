@@ -17,7 +17,7 @@ faq:
     answer: "Boxer Combi ma tylne boczne szyby, siedzenia pasażerskie, klimatyzację tylną i tapicerowane ściany. Boxer Van ma blaszaną zabudowę boczną i metalową podłogę ładowni. Wersja Combi jest rejestrowana jako M1 lub M2, Van – jako N1."
 lead: "Peugeot Boxer w wersji osobowej – Combi lub Minibus – to pojazd przewozowy dla grup do 9 osób. Stosowany przez firmy transportowe, szkoły, ośrodki pomocy społecznej i wynajem krótkoterminowy. Technicznie identyczny z Boxerem Van, różni się wyposażeniem wnętrza i homologacją."
 ---
-## Konfiguracje osobowe Boxera
+## Konfiguracje Peugeot Boxer osobowy
 
 Boxer osobowy jest dostępny w kilku układach miejsc:
 - Boxer Combi 5+1: 5 foteli pasażerskich + kierowca + przestrzeń bagażowa z tyłu
@@ -45,7 +45,7 @@ Wyposażenie standardowe Combi:
 Boxer Combi do użytku szkolnego lub transportu osób niepełnosprawnych to solidna baza. Problem, który obserwuję w serwisie: resory tylne przy intensywnej pracy z 8 pasażerami i częstym załadunkiem bagaży w tylnej komorze zużywają się szybciej niż u wersji Van z jednostajnym rozkładem ładunku. Zalecam regularną kontrolę resorów co 50 000 km – szczególnie w egzemplarzach pracujących na trasach z nierówną nawierzchnią.
 {{% /expert %}}
 
-## Silniki w wersji Combi
+## Silniki Peugeot Boxer Combi
 
 Boxer Combi oferuje te same silniki co Van:
 - 2.2 BlueHDi 120 KM: do przewozu osób na krótkich trasach miejskich

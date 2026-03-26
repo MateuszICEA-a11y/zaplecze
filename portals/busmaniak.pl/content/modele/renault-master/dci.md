@@ -22,7 +22,7 @@ faq:
     answer: "Producent podaje interwał 180 000 km lub 6 lat. Mechanicy serwisujący busy dostawcze zalecają wymianę co 120 000–150 000 km przy intensywnej eksploatacji (krótkie trasy, ciągłe obciążenie). Rozrząd jest paskiem – wymaga precyzyjnego ustawienia przy wymianie."
 ---
 
-## Silnik M9T – skąd pochodzi i co go wyróżnia?
+## Silnik Renault Master 2.3 dCi – skąd pochodzi M9T?
 
 Jednostka 2.3 dCi oznaczana kodem M9T to owoc sojuszu Renault-Nissan, produkowana w fabryce w Cléon (Francja). Silnik ten napędza nie tylko [Renault Mastera](/modele/renault-master/), ale też jego bliźniaki: Opla Movano, Nissana NV400 i Nissana Interstar. To czterocylindrowy rzędowy silnik o pojemności 2298 cm³ z bezpośrednim wtryskiem Common Rail, turbosprężarką o zmiennej geometrii (VGT) i systemem recyrkulacji spalin EGR.
 
@@ -50,7 +50,7 @@ Wersja 165 KM wprowadzona po liftingu 2019 to silnik z turbosprężarką twin-sc
 Silniki Euro 5 (roczniki 2010–2014 w Masterze) nie mają układu AdBlue – wymagają jedynie oleju i filtra cząstek stałych DPF. Wersje Euro 6 (od 2014 roku, powszechnie od 2019 po faceliftingu) dodają zbiornik AdBlue (17 l) i selektywną redukcję katalityczną (SCR). Koszt eksploatacji AdBlue to ok. 80–130 zł na 8000–12 000 km. Wersje Euro 6 mają surowsze wymagania środowiskowe i mogą wjeżdżać do stref czystego transportu.
 {{% /info %}}
 
-## Typowe usterki silnika 2.3 dCi
+## Usterki Mastera dCi – na co uważać?
 
 Przy zakupie używanego Mastera lub przy planowaniu serwisu prewencyjnego warto znać najczęstsze słabe punkty:
 
@@ -77,7 +77,7 @@ Rzeczywiste zużycie paliwa zależy znacząco od charakteru tras i obciążenia:
 
 Zużycie w mieście jest wysokie ze względu na częste starty i zimny silnik nieosiągający temperatury pracy. Trasa regionalna (50/50) to komfort codziennej eksploatacji.
 
-## Interwały serwisowe i koszty
+## Serwis Renault Master dCi – interwały i koszty
 
 Standardowe interwały serwisowe dla silnika M9T:
 

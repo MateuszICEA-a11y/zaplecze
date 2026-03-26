@@ -53,7 +53,7 @@ Silniki BlueHDi dzięki precyzyjnemu zarządzaniu wtryskiem trzymają spalanie w
 
 Komputer pokładowy w Partnerze potrafi zaniżać wskazania o 0,5–1 l/100 km – weryfikuj metodą od baku do baku.
 
-## Typowe usterki i koszty napraw
+## Typowe usterki Peugeot Partner HDI
 
 - **Filtr DPF/FAP** – zapychanie przy 150–250 tys. km (krótkie trasy). Regeneracja: 800–1500 zł, wymiana: 4000–7000 zł
 - **Wtryskiwacze (Delphi/Bosch)** – zużycie po 200–300 tys. km. Regeneracja 1 szt.: 400–800 zł, komplet: 2000–4000 zł
@@ -76,7 +76,7 @@ Przy przebiegach powyżej 200 tys. km warto profilaktycznie sprawdzić ciśnieni
 
 ![Peugeot Partner HDI – silnik DV6 pod maską](/images/peugeot-partner-hdi-hero.jpg)
 
-## Który rocznik i wariant wybrać?
+## Który rocznik Partnera HDI wybrać?
 
 | Rocznik | Cena | Uwagi |
 |---------|------|-------|

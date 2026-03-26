@@ -33,7 +33,7 @@ Wybór plandeki zamiast furgonu (blaszaka) jest uzasadniony w kilku konkretnych 
 
 Furgon jest lepszy do przewozu towarów wartościowych, wrażliwych na warunki atmosferyczne lub wymagających bezpieczeństwa (zamkniętej przestrzeni). Plandeka wygrywa elastycznością i dostępnością ładunku.
 
-## Rodzaje zabudów plandekowych
+## Zabudowy plandekowe Renault Master
 
 Na podwoziu Mastera montuje się kilka typów zabudów:
 
@@ -62,7 +62,7 @@ Standardowy otwór burtowy po złożeniu burty bocznej: szerokość ok. 1900–2
 
 ![Renault Master plandeka L3 – skrzynia z pałąkami i plandeką](/images/renault-master-plandeka-hero.jpg)
 
-## Silniki i skrzynie biegów
+## Silniki w Masterze plandekowym
 
 W wersji plandekowej zaleca się wyższe moce silnika ze względu na większą masę całkowitą przy pełnym załadunku:
 
@@ -87,7 +87,7 @@ Master i Ducato mają zbliżone parametry przy niższej cenie zakupu niż Crafte
 Najczęstszy problem z używanymi Masterami plandekowym to korozja ramy podwozia i spawów mocujących skrzynię. Zabudowa stalowa chroni ładunek, ale sama żre rdzą szybciej niż furgon, szczególnie w okolicach spodu burt i pod skrzynią. Przy zakupie używanego egzemplarza zawsze oglądam ramę od spodu latarką – jeśli widzę przetarcia powłoki i rdzę na spawach, to albo negocjuję cenę na naprawę, albo odpuszczam. Drugi punkt to plandeka – dobra brezentowa wytrzymuje 3–5 sezonów, tańsze folie zaledwie 1–2 lata. Sprawdzam szczelność przy deszczu przed zakupem.
 {{% /expert %}}
 
-## Serwis i koszty utrzymania
+## Serwis Renault Master plandeka – koszty utrzymania
 
 Mechanika jest identyczna jak w furgonie – silnik M9T, te same koszty serwisu. Dodatkowe koszty specyficzne dla wersji plandekowej:
 

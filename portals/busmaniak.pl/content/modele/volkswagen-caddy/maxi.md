@@ -22,13 +22,13 @@ faq:
     answer: "Standardowo 5, opcjonalnie 7 (z trzecim rzędem siedzeń 2+3+2). Opcja 7 miejsc dostępna tylko w wersji Maxi/Long."
 ---
 
-## Caddy Maxi – co to za wersja? {#czym-jest}
+## Volkswagen Caddy Maxi – co to za wersja? {#czym-jest}
 
 Caddy Maxi to wydłużona odmiana [Volkswagena Caddy](/modele/volkswagen-caddy/), dostępna od III generacji (2004). Dłuższy rozstaw osi przekłada się na większą przestrzeń wewnątrz – zarówno dla pasażerów, jak i dla ładunku. W V generacji (od 2020) nazwa Maxi została zastąpiona przez [Long](/modele/volkswagen-caddy/long/), ale parametry są zbliżone.
 
 Wersja Maxi/Long występuje zarówno jako osobowy (5 lub 7 miejsc), jak i jako Cargo (dostawczy).
 
-## Wymiary i przestrzeń {#wymiary}
+## Wymiary Caddy Maxi {#wymiary}
 
 Porównanie Caddy i Caddy Maxi (V generacja):
 
@@ -44,7 +44,7 @@ Bagażnik o pojemności 1720 litrów pomieści trzy duże walizki podróżne, w�
 
 Więcej o wersji standardowej w artykule o [Volkswagenie Caddy](/modele/volkswagen-caddy/).
 
-## Dane techniczne {#dane-techniczne}
+## Dane techniczne Volkswagen Caddy Maxi {#dane-techniczne}
 
 - **DMC** – 2300–2500 kg (zależnie od silnika)
 - **Masa własna** – 1550–1700 kg
@@ -59,7 +59,7 @@ Większy promień skrętu to jedyny zauważalny kompromis. Na ciasnych parkingac
 
 ![Volkswagen Caddy Maxi z boku](/images/volkswagen-caddy-maxi-hero.jpg)
 
-## Silniki {#silniki}
+## Silniki Caddy Maxi {#silniki}
 
 Gama silnikowa identyczna jak w Caddy standardowym:
 

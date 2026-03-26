@@ -20,7 +20,7 @@ faq:
     answer: "Brygadówka (crew cab + paka lub skrzynia) to zabudowa na podwoziu – kabina osobowa i oddzielna część ładunkowa bez wspólnej przestrzeni. Kombi to furgon z przegrodą wewnętrzną – oba człony są w jednej bryle nadwozia. Brygadówka pozwala na większą ładowność i modularną wymianę zabudowy paki."
 lead: "Mercedes Sprinter brygadówka to pojazd roboczy dla ekip terenowych – łączy kabinę osobową dla 5–7 osób z osobną paką lub skrzynią na narzędzia i sprzęt. To standardowe narzędzie w energetyce, telekomunikacji i drogownictwie, gdzie ekipa musi dojechać razem z całym osprzętem."
 ---
-## Budowa i zabudowa
+## Mercedes Sprinter brygadówka – budowa i zabudowa
 
 Brygadówka powstaje na podwoziu Sprinter Chassis Cab (podwozie z kabiną) lub jako zabudowa na furgonie z wyciętą tylną częścią. Dwa najpopularniejsze warianty:
 
@@ -31,7 +31,7 @@ Brygadówka powstaje na podwoziu Sprinter Chassis Cab (podwozie z kabiną) lub j
 Zabudowa z podwójną kabiną (Crew Cab) montowana przez zewnętrznego zabudowcę wymaga indywidualnej homologacji lub certyfikatu producenta zabudowy. Fotele w części pasażerskiej muszą spełniać normy ECE R14 (pasy) i ECE R17 (zakotwiczenie). Przed zakupem sprawdź dokumentację – brak homologacji blokuje rejestrację.
 {{% /info %}}
 
-## Liczba miejsc i przegroda
+## Liczba miejsc w Sprinterze brygadówce
 
 Konfiguracje kabiny:
 
@@ -48,7 +48,7 @@ Konfiguracje kabiny:
 
 Przegroda między kabiną a paką: stalowa lub aluminiowa z przesuwnymi okienkami lub litą. Standardem w energetyce i telekomunikacji jest przegroda z półką na dokumenty i zasilaczem 12 V.
 
-## Silnik i DMC
+## Silnik i DMC Mercedes Sprinter brygadówka
 
 Zalecany silnik do brygadówki: OM654 2.0 CDI 143 KM / 330 Nm. Uzasadnienie wyboru:
 
@@ -61,7 +61,7 @@ DMC 5,5 t – prawo jazdy C1, ładowność paki wzrasta do ok. 1500–2000 kg, w
 
 ![Mercedes Sprinter brygadówka – widok z zewnątrz z paką skrzyniową](/images/mercedes-sprinter-brygadowka-hero.jpg)
 
-## Zastosowania branżowe
+## Zastosowania Sprintera brygadówki
 
 Główne branże stosujące Sprinter brygadówkę:
 
@@ -73,7 +73,7 @@ Główne branże stosujące Sprinter brygadówkę:
 
 W energetyce standardem jest skrzynia aluminiowa z szufladami systemowymi (np. TruXedo, Zarges) i zewnętrznymi szafkami na boku paki. Zamknięte schowki boczne chronią sprzęt przed kradzieżą na postoju.
 
-## Wyposażenie paki
+## Wyposażenie paki brygadówki Sprinter
 
 Typowe wyposażenie skrzyni ładunkowej brygadówki:
 
@@ -87,7 +87,7 @@ Typowe wyposażenie skrzyni ładunkowej brygadówki:
 Przy zamawianiu brygadówki dla energetyki zawsze dorzuć do specyfikacji uchwyt na drabinę teleskopową na boku paki i blokady antynapadowe tylnej klapy. Ekipy terenowe zostawiają pojazd na postoju przy pracach na słupach – otwarta klapa bez blokady to zaproszenie dla złodziei narzędzi. Elektryka 230 V w pace to dziś standard, nie luksus.
 {{% /expert %}}
 
-## Ceny orientacyjne
+## Ceny Mercedes Sprinter brygadówka
 
 - Podwozie Sprinter Chassis 143 KM – od ok. 155 000 zł netto
 - Zabudowa podwójnej kabiny + skrzynia aluminiowa (zabudowca) – od ok. 35 000–60 000 zł netto

@@ -20,7 +20,7 @@ faq:
     answer: "Do codziennej logistyki miejskiej i regionalnej optymalny jest OM654 2.0 CDI 143 KM z przekładnią 9G-Tronic. Wersja 170 KM opłaca się przy stałym jeździe autostradowej lub dużych ładunkach powyżej 1500 kg."
 lead: "Mercedes Sprinter Van to najczęściej szukana wersja Sprinter w Polsce – i nieprzypadkowo. Furgon dostawczy w układach L1–L4 i H1–H3 pokrywa potrzeby od kurierów po logistykę paletową. Ładowność sięga 2100 kg, pojemność skrzyni – 17 m³."
 ---
-## Wersje nadwoziowe – długość i wysokość
+## Wersje nadwoziowe Sprinter Van – długość i wysokość
 
 Sprinter Van produkowany jest w czterech długościach (L1–L4) i trzech wysokościach dachu (H1–H3). Kombinacja decyduje o pojemności i dopuszczalnej ładowności.
 
@@ -45,7 +45,7 @@ Wysokość wewnętrzna wynosi odpowiednio: H1 – ok. 1410 mm, H2 – ok. 1825 m
 
 Drzwi boczne przesuwne dostępne są jednostronnie lub obustronnie. Drzwi tylne – dwuskrzydłowe, otwierane na 270°, opcjonalnie tylna klapa unoszona.
 
-## Ładowność i DMC
+## Ładowność i DMC Mercedes Sprinter Van
 
 {{% info title="DMC a ładowność" icon="engineering" %}}
 Sprinter Van dostępny jest z DMC 3,0 t oraz 3,5 t. Wersja 3,5 t pozwala na ładowność do ok. 2100 kg przy napędzie tylnym (RWD). Wybór napędu AWD obniża ten wynik o 300–350 kg ze względu na masę własną pojazdu.
@@ -118,7 +118,7 @@ Opcjonalnie dostępne:
 - Reversing Camera z systemem 360°
 - MBUX – ekran dotykowy 10,25" z nawigacją, Apple CarPlay / Android Auto
 
-## Ceny i konfiguracja
+## Ceny Sprinter Van i konfiguracja
 
 Ceny Sprinter Van 2026 (przybliżone, zależne od konfiguracji i dealera):
 
@@ -130,7 +130,7 @@ Ceny Sprinter Van 2026 (przybliżone, zależne od konfiguracji i dealera):
 
 Do cen netto należy doliczyć VAT 23% lub skorzystać z leasingu operacyjnego – raty dla L2H2 143 KM zaczynają się od ok. 3200–3500 zł netto/mies. przy 20% wpłacie własnej i 60 miesiącach.
 
-## Eksploatacja – spalanie i koszty serwisu
+## Eksploatacja Sprinter Van – spalanie i koszty serwisu
 
 Rzeczywiste zużycie paliwa OM654 przy pełnym załadunku:
 

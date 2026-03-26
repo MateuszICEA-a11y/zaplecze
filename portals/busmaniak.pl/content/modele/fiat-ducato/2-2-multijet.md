@@ -35,7 +35,7 @@ Pod oznaczeniem 2.2 MultiJet kryją się dwie zupełnie różne jednostki, dziel
 Starszy silnik 2.2 (100 KM) posiadał łańcuch rozrządu, który bywał problematyczny – rozciąganie występuje typowo po 150–250 tys. km. Nowoczesny 2.2 MultiJet3 (od 2021 r.) korzysta z paska rozrządu i jest znacznie bardziej zaawansowany technologicznie, oferując moce od 120 do 180 KM.
 {{% /info %}}
 
-## Dane techniczne i osiągi
+## Dane techniczne i osiągi Fiata Ducato 2.2
 
 Starsza jednostka 100 KM trafiała głównie do krótkich i średnich furgonów (L1H1, L2H2). MultiJet3 obsługuje całą gamę – od miejskich wersji kompaktowych po zabudowy Maxi z DMC 4250 kg.
 

@@ -17,7 +17,7 @@ faq:
     answer: "Crafter w wersji N1 do 3,5 t DMC wymaga tylko prawa jazdy kat. B. Wersje z DMC 4 t i 5 t (kategoria N2) wymagają odpowiednio C1 i C. Przy zakupie nowego pojazdu zawsze warto potwierdzić kategorię DMC w zamówieniu."
 lead: "Volkswagen Crafter II Van to zamknięta przestrzeń ładunkowa z dostępem przez tylne drzwi dwuskrzydłowe i opcjonalne drzwi boczne."
 ---
-## Konfiguracje przestrzeni ładunkowej
+## Konfiguracje Volkswagen Crafter Van
 
 | Wariant | Długość całkowita | Dług. przestrzeni | Pojemność | Ładowność |
 |---------|-------------------|-------------------|-----------|-----------|
@@ -56,7 +56,7 @@ Crafter Van II jest dostępny w czterech podstawowych wariantach:
 
 Szerokość podłogi (między nadkolami): 1782 mm – szersza niż w Boxerze (1422 mm). To kluczowa różnica przy załadunku palet bez konieczności rotacji.
 
-## Wejście załadunkowe
+## Drzwi i wejście załadunkowe Craftera
 
 Tylne drzwi dwuskrzydłowe (standard):
 - szerokość otworu: 1578 mm
@@ -71,7 +71,7 @@ Boczne drzwi przesuwne (prawe, opcja):
 Crafter ma jedną cechę, za którą go cenię ponadprzeciętnie: szeroką podłogę 1782 mm. Przy Boxerze czy Jumperze masz 1422 mm między nadkolami i na ładunku palety musisz je ustawiać ostrożnie. W Crafterze wchodzą swobodnie w poprzek bez problemu. Jeśli firma regularnie przeładowuje palety EUR, szerokość Craftera to argument przesądzający.
 {{% /expert %}}
 
-## Napęd i wpływ na ładowność
+## Napęd Crafter Van i wpływ na ładowność
 
 Wybór napędu wpływa na ładowność i zastosowania:
 
@@ -85,7 +85,7 @@ Do klasycznej logistyki miejskiej i regionalnej: FWD z 140 KM – optymalny wyb�
 
 ![VW Crafter L3H3 – przestrzeń ładunkowa z widokiem do tyłu](/images/volkswagen-crafter-van-hero.jpg)
 
-## Wyposażenie kabiny
+## Wyposażenie kabiny Volkswagen Crafter
 
 Crafter Van ma jedną z lepszych kabin w segmencie:
 - dwie szyby boczne tylne (opcja lub standard w wersji Combi)

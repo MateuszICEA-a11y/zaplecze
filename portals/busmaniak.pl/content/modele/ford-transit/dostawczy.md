@@ -20,7 +20,7 @@ faq:
     answer: "Najpopularniejsze zabudowy to regały aluminiowe lub stalowe, podłoga sklejkowa z uchwytami do mocowania ładunku, przegroda kabina–ładownia, oświetlenie LED, szuflady podpodłogowe oraz systemy mocowania rowerów lub maszyn."
 lead: "Ford Transit dostawczy to furgon przeznaczony do codziennego transportu towarów. Zamknięta przestrzeń ładunkowa, drzwi boczne przesuwne i tylne klapa 270° tworzą praktyczny zestaw dostępu do ładowni. DMC od 3,5 do 4,7 t pozwala dopasować pojazd do rzeczywistych potrzeb przewozowych."
 ---
-## DMC i kategorie prawa jazdy
+## DMC Ford Transit dostawczy i kategorie prawa jazdy
 
 Transit dostawczy jest oferowany w kilku wariantach DMC:
 
@@ -30,7 +30,7 @@ Transit dostawczy jest oferowany w kilku wariantach DMC:
 
 Wersje 3,5 t są najczęściej wybierane ze względu na łatwość prowadzenia i brak konieczności posiadania dodatkowych uprawnień. Wersje cięższe mają sens przy regularnym transporcie ładunków powyżej 1200 kg.
 
-## Drzwi boczne i tylne
+## Drzwi boczne i tylne Transita
 
 Dostęp do przestrzeni ładunkowej:
 
@@ -42,7 +42,7 @@ Dostęp do przestrzeni ładunkowej:
 Klapa tylna otwierana do 270° (przymocowana do boku pojazdu) jest niezastąpiona przy pracy z rampą załadunkową. Skrzydła klapy nie blokują wózka widłowego ani paleciarki. To standard w firmach kurierskich, logistycznych i przy zabudowach z hydrauliczną windą załadowczą.
 {{% /info %}}
 
-## Przestrzeń ładunkowa i wymiary
+## Przestrzeń ładunkowa Ford Transit furgon
 
 Wymiary przestrzeni ładunkowej w popularnych konfiguracjach:
 
@@ -62,7 +62,7 @@ Szerokość między nadkolami 1420 mm – europalet nie ustawimy obok siebie, ty
 
 ![Ford Transit dostawczy – drzwi tylne 270°](/images/ford-transit-dostawczy-hero.jpg)
 
-## Zabudowy serwisowe i magazynowe
+## Zabudowy serwisowe Transita dostawczego
 
 Rynek zabudów dla Transit dostawczego jest szeroki. Najpopularniejsze rozwiązania:
 
@@ -76,7 +76,7 @@ Rynek zabudów dla Transit dostawczego jest szeroki. Najpopularniejsze rozwiąza
 Przy zamawianiu Transita dostawczego z myślą o zabudowie warto wybrać opcję "przygotowanie do zabudowy" od Forda – obejmuje dodatkowe punkty mocowania podłogi, dedykowane otwory w poszyciu i okablowanie pod oświetlenie LED. Kosztuje ok. 800–1500 zł ekstra, ale oszczędza 3–4 godziny pracy zabudowcy i obniża całkowity koszt zabudowy.
 {{% /expert %}}
 
-## Ceny
+## Ceny Ford Transit dostawczy
 
 Nowy Ford Transit dostawczy L2H2 z silnikiem 130 KM FWD i DMC 3,5 t kosztuje od ok. 140 000 zł brutto. Wersje L3H2 RWD z DMC 4,25 t i silnikiem 170 KM to wydatek 160 000–180 000 zł bez zabudowy. Zabudowy regałowe od renomowanych producentów to dodatkowe 15 000–35 000 zł.
 

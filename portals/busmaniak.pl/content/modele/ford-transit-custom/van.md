@@ -17,7 +17,7 @@ faq:
     answer: "Tak – Transit Custom L2 z podłogą 2925 mm długości mieści dwie palety EUR 1200x800 mm ułożone wzdłuż. Przy ładowaniu przez tylne drzwi szerokość otworu 1478 mm pozwala na swobodny załadunek palet wózkowym ręcznym."
 lead: "Ford Transit Custom Van to dostawczak segmentu średniego (N1) oferujący przestrzeń 6,0–6,8 m³ przy DMC do 3,5 t. Wypełnia lukę między kompaktowymi vanami (Combo, Partner – do 4,4 m³) a dużymi (Crafter, Boxer – 9–18 m³)."
 ---
-## Konfiguracje i wymiary
+## Konfiguracje i wymiary Ford Transit Custom Van
 
 | Parametr | Custom L1 (Short) | Custom L2 (Long) |
 |---|---|---|

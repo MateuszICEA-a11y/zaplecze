@@ -20,7 +20,7 @@ faq:
     answer: "Tak, przy DMC 7,2 t i dwupoziomowym systemie załadunku – tzw. piętrus. Wymaga to osobnej homologacji zabudowy i odpowiedniego agregatu hamulcowego."
 lead: "Iveco Daily to jedyny van segmentu N2, który jako laweta mieści się w granicach kategorii C1 przy DMC do 7,2 t – żaden konkurent nie oferuje takiego zakresu DMC w tej klasie pojazdów."
 ---
-## DMC i kategoria prawa jazdy
+## Iveco Daily laweta – DMC i kategoria prawa jazdy
 
 Daily jako laweta dostępny jest w wariantach DMC 3,5 t, 5,0 t, 6,0 t i 7,2 t. Wersja 3,5 t to kategoria B – ale przy zabudowie lawety masa własna pochłania sporą część DMC, więc ładowność netto wynosi zwykle 800–1 000 kg. Mało.
 
@@ -31,7 +31,7 @@ Prawdziwe zastosowanie zaczyna się od DMC 5,0 t wzwyż – tutaj już jesteś n
 - DMC 6,0 t – kat. C1, ładowność ~2 200 kg
 - DMC 7,2 t – kat. C1, ładowność ~2 800–3 000 kg
 
-## Wymiary platformy i rodzaje najazdów
+## Wymiary platformy lawety na Daily
 
 Standardowa platforma lawety na podwoziu Daily mierzy 5,0–5,5 m długości przy rozstawie osi L3 i 5,5–6,0 m przy L4. Szerokość platformy 2,1–2,2 m pozwala swobodnie zmieścić każde auto osobowe.
 
@@ -51,7 +51,7 @@ Zabudowy wykonują firmy takie jak Barin, Wielton Laweta czy Lohr – czas reali
 
 ![Iveco Daily laweta – platforma i najazd hydrauliczny](/images/iveco-daily-laweta-hero.jpg)
 
-## Który silnik wybrać
+## Który silnik do lawety Iveco Daily
 
 Laweta to ciężka praca – silnik musi ciągnąć pełen ładunek przy rampie, na wzniesieniu, w upale. Przy DMC 5,0 t minimum to silnik 2.3 MultiJet w wersji 136 KM, ale już przy 7,2 t powinieneś patrzeć wyłącznie na 3.0 MultiJet.
 
@@ -62,7 +62,7 @@ Laweta to ciężka praca – silnik musi ciągnąć pełen ładunek przy rampie,
 
 Skrzynia automatyczna Hi-Matic jest zdecydowanie warta dopłaty – załadunek na lawetę wymaga precyzyjnych, powolnych manewrów, a manuał przy pełnym DMC jest uciążliwy.
 
-## Homologacja i formalności
+## Homologacja lawety Daily
 
 Zabudowa lawety wymaga oddzielnej homologacji jako podtyp N2. Po odebraniu pojazdu z zabudową konieczne jest zgłoszenie w wydziale komunikacji i wpisanie nowego DMC oraz rodzaju zabudowy do dowodu rejestracyjnego. Bez tego nie możesz legalnie przewozić aut.
 
@@ -70,7 +70,7 @@ Zabudowa lawety wymaga oddzielnej homologacji jako podtyp N2. Po odebraniu pojaz
 Najczęstszy błąd przy zakupie lawety na Daily to wybór za małego DMC, żeby uniknąć C1. W praktyce przy 3,5 t możesz załadować tylko lekkie auto miejskie i nic więcej – pierwsze zlecenie z SUV-em i jesteś przeciążony. Zainwestuj w C1 od razu, oszczędzisz nerwy i pieniądze.
 {{% /expert %}}
 
-## Koszty zabudowy i eksploatacji
+## Koszty zabudowy Iveco Daily laweta
 
 Cena samej zabudowy lawety (bez podwozia) wynosi 25–45 tys. zł netto w zależności od długości platformy i rodzaju najazdu. Podwozie Daily w wersji przygotowanej do zabudowy kosztuje od 120 tys. zł netto przy DMC 5,0 t.
 

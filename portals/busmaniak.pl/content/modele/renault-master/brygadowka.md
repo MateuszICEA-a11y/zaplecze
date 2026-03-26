@@ -33,7 +33,7 @@ Zasadnicze różnice:
 
 W praktyce na polskim rynku terminologia jest płynna i obydwie nazwy bywają stosowane zamiennie. Kluczem jest homologacja: brygadówka pozostaje pojazdem dostawczym (N1 lub N2), Combi – wielozadaniowym (M1 lub N1).
 
-## Dostępne warianty i wymiary
+## Warianty i wymiary Renault Master brygadówka
 
 Brygadówki Mastera dostępne są głównie w dwóch wariantach nadwozia:
 
@@ -51,7 +51,7 @@ Wersja L2H2 jest dobrym wyborem, gdy priorytetem jest zwrotność i miejskie war
 Przegrody do Mastera brygadowego dostępne są w trzech wersjach: stalowa pełna (najcięższe, ok. 25–35 kg, najlepsza separacja), stalowa z okienkiem (możliwość kontroli ładunku z kabiny) oraz siatkowa (lżejsza, ok. 10–15 kg, gorsza izolacja akustyczna). Montaż w autoryzowanym zabudowcy kosztuje 800–2500 zł zależnie od typu. Przy zamówieniu fabrycznym jest to opcja z cennika Renault.
 {{% /info %}}
 
-## Dobór silnika dla brygadówki
+## Silnik do Mastera brygadowego – jaki wybrać?
 
 Brygadówka przez większość czasu jedzie z pełnym obciążeniem – 5–6 osób plus sprzęt za przegrodą. To istotnie wpływa na wybór silnika.
 
@@ -87,7 +87,7 @@ Kabina brygadówki Mastera po faceliftingu 2019:
 Przy wyborze Mastera brygadowego na rynku wtórnym sprawdzaj stan przegrody – jeśli poprzedni właściciel przewoził ciężki sprzęt (kamienie, narzędzia, materiały sypkie), przegroda może być wygięta lub uszkodzona. Wymiana lub spawanie kosztuje 500–1500 zł. Sprawdź też czy kanapa tylna ma pełne pasy – w starszych konfiguracjach zdarzały się wersje tylko z 2-punktowymi pasami, co jest problematyczne przy przeglądach technicznych i ubezpieczeniach firmowych.
 {{% /expert %}}
 
-## Koszty nabycia i utrzymania
+## Koszty Renault Master brygadówka – zakup i utrzymanie
 
 Nowa brygadówka [Renault Master](/modele/renault-master/) L3H2 z silnikiem 150 KM kosztuje ok. 155 000–165 000 zł netto. Na rynku wtórnym (rocznik 2019–2022, przebieg 100 000–200 000 km) ceny wahają się między 80 000 a 120 000 zł.
 

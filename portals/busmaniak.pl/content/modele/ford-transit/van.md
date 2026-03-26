@@ -20,7 +20,7 @@ faq:
     answer: "Tak, Ford oferuje Transit Van z napędem AWD (4x4) opartym na tylnej osi z mechanizmem dołączanego napędu. Dostępny głównie w wersjach L2 i L3 z silnikiem 170 lub 185 KM."
 lead: "Ford Transit Van to najpopularniejsza wersja tego modelu na rynku – furgon z zamkniętą przestrzenią ładunkową, dostępny w 12 konfiguracjach długości i wysokości. Jeśli szukasz pojazdu do transportu towarów, tu znajdziesz wszystkie dane, które pozwolą wybrać właściwy wariant."
 ---
-## Wersje nadwozia: od L1H1 do L4H3
+## Ford Transit Van – wersje od L1H1 do L4H3
 
 Transit Van jest dostępny w czterech długościach nadwozia (L1–L4) i trzech wysokościach dachu (H1–H3). Nie każda kombinacja jest dostępna w katalogu – producent oferuje ok. 12 aktywnych konfiguracji.
 
@@ -39,7 +39,7 @@ Wysokość w zależności od dachu:
 
 Szerokość przestrzeni ładunkowej między nadkolami wynosi 1420 mm we wszystkich wersjach – to istotny parametr przy załadunku europalet.
 
-## Pojemność ładunkowa i ładowność
+## Pojemność i ładowność Transita Van
 
 Pojemność przestrzeni ładunkowej zależy wprost od kombinacji długości i wysokości:
 
@@ -70,7 +70,7 @@ Długość podłogi ładunkowej waha się od ok. 2554 mm (L1) do 4404 mm (L4). W
 Przedni napęd (FWD) jest wystarczający do większości zastosowań miejskich i regionalnych. Tylny napęd (RWD) stosuj wtedy, gdy priorytetem jest maksymalna ładowność lub regularnie poruszasz się po nieutwardzonych nawierzchniach. AWD warto rozważyć tylko przy regularnej pracy w terenie lub w trudnych warunkach zimowych.
 {{% /info %}}
 
-## Silniki 2.0 EcoBlue
+## Silniki Ford Transit Van 2.0 EcoBlue
 
 Od 2016 roku cały Transit Van jest napędzany wyłącznie jednostką 2.0 EcoBlue (Duratorq Panther). Dostępne moce:
 
@@ -85,7 +85,7 @@ Spalanie w cyklu mieszanym wynosi 8–10 l/100 km zależnie od wersji mocy i mas
 
 ![Ford Transit Van L3H2 – widok z boku](/images/ford-transit-van-hero.jpg)
 
-## Napęd: FWD, RWD, AWD
+## Napęd Transita Van – FWD, RWD, AWD
 
 Transit Van jest jednym z niewielu furgonów tej klasy oferowanych w trzech układach napędowych:
 
@@ -97,13 +97,13 @@ Transit Van jest jednym z niewielu furgonów tej klasy oferowanych w trzech ukł
 Przy wyborze między FWD a RWD kluczowa jest masa ładunku. Jeśli regularnie przewozisz towary powyżej 1200 kg, RWD zapewni lepszą trakcję i stabilność, szczególnie na mokrej nawierzchni. Wersja FWD przy pełnym załadunku wyraźnie traci na sterowalności – to odczuwalny problem przy szybkiej jeździe trasowej.
 {{% /expert %}}
 
-## Ceny i dostępność
+## Ceny Ford Transit Van
 
 Ceny nowych Ford Transit Van w Polsce zaczynają się od ok. 130 000 zł brutto za wariant L1H1 z silnikiem 105 KM FWD w wersji podstawowej. Popularne konfiguracje L2H2 i L3H2 z silnikiem 130 KM kosztują w katalogu 145 000–165 000 zł. Wersje z automatem i pakietami business mogą przekroczyć 210 000 zł.
 
 Rynek wtórny oferuje egzemplarze z lat 2019–2022 w cenie 80 000–130 000 zł za przebieg 80 000–150 000 km.
 
-## Dostępne opcje zabudów fabrycznych
+## Opcje zabudów fabrycznych Transit Van
 
 Transit Van wychodzi z fabryki z kilkoma opcjami wyposażenia przestrzeni ładunkowej:
 

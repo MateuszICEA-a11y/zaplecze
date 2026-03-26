@@ -20,7 +20,7 @@ faq:
     answer: "Przy DMC 3,5 t wersja 8-paletowa daje ~1300 kg, wersja 10-paletowa 1000–1100 kg."
 ---
 
-## Generacje i bazy pod zabudowę plandekową
+## Fiat Ducato plandeka – generacje i bazy pod zabudowę
 
 [Fiat Ducato](/modele/fiat-ducato/) jest produkowany od 1981 roku, ale w transporcie zawodowym liczy się właściwie tylko trzecia generacja – model 250 z 2006 roku, a od 2014 lifting jako model 290.
 
@@ -48,7 +48,7 @@ Od trzeciej generacji (2006+) nadwozia Ducato są w pełni ocynkowane. Problem k
 
 Wersje 10-paletowe często mają windę tylną (750 kg, ok. 200–300 kg masy własnej, koszt z UDT) oraz podnoszony dach. Producenci zabudów: **Lamar, Gruau, Odotrans, Uni-Truck**.
 
-## Który silnik pod plandekę?
+## Który silnik wybrać do Ducato z plandeką?
 
 Plandeka to duży opór powietrza i poważne obciążenie przy każdym wyjeździe:
 

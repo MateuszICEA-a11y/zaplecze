@@ -42,7 +42,7 @@ Deliver 9 zadebiutował w 2019 roku (początkowo jako V90) – kompletnie nowa k
 Maxus oferuje standardowo 5 lat lub 100 000 km gwarancji na Deliver 9 – to istotna przewaga nad europejską konkurencją, gdzie standardem jest 2–3 lata. Niektórzy dealerzy rozszerzają gwarancję do 7 lat.
 {{% /info %}}
 
-## Wymiary Deliver 9
+## Wymiary Maxus Deliver 9
 
 | Parametr | L2H2 | L3H2 | L3H3 | L4H3 |
 |----------|------|------|------|------|
@@ -82,7 +82,7 @@ Bateria 72 lub 88,5 kWh, realny zasięg 230–300 km w cyklu miejskim. Trzystopn
 Deliver 9 z napędem RWD to duża zaleta przy pełnym załadunku – koła napędowe są dociążone ładunkiem, co poprawia trakcję na mokrych i śliskich nawierzchniach. Europejska konkurencja w tej cenie (Ducato, Master) oferuje tylko FWD.
 {{% /expert %}}
 
-## Wersje nadwoziowe Deliver 9
+## Nadwozia i konfiguracje Delivera 9
 
 ### Furgon (Panel Van)
 
@@ -96,7 +96,7 @@ Najczęściej wybierany wariant, dostępny w trzech długościach (L2, L3, L4). 
 
 Rama L3 lub L4 z kabiną pojedynczą lub podwójną (do 7 osób). Idealne pod lawety, wywrotki, zabudowy izotermy i food trucki.
 
-### Deliver 9 osobowy
+### Maxus Deliver 9 osobowy
 
 Konfiguracje od 7 do 9 miejsc z regulowanymi fotelami i oddzielnym systemem nawiewów. Używany jako shuttle bus hotelowy i transport pracowniczy.
 
@@ -113,9 +113,9 @@ Negatywne opinie dotyczą:
 - **Powłoka antykorozyjna** – cieńsza niż u europejskich marek; zalecane dodatkowe zabezpieczenie podwozia
 - **Sieć serwisowa** – rozwijająca się, ale nadal mniejsza niż u Fiata czy Renault
 
-## Ceny Deliver 9
+## Ile kosztuje Maxus Deliver 9?
 
-### Nowy Deliver 9
+### Nowy Maxus Deliver 9
 
 | Wersja | Cena od (netto) |
 |--------|----------------|
@@ -125,11 +125,11 @@ Negatywne opinie dotyczą:
 | Furgon L4H3 | ok. 125 000 zł |
 | e-Deliver 9 (elektryczny) | ok. 220 000 zł (przed dotacjami) |
 
-### Używany Deliver 9
+### Deliver 9 z drugiej ręki
 
 Rynek wtórny dopiero się kształtuje – model jest na rynku od kilku lat. Egzemplarze 2022–2024 z przebiegiem 30–80 tys. km kosztują 85 000–130 000 zł.
 
-## Porównanie Deliver 9 z konkurencją
+## Deliver 9 na tle konkurencji
 
 | Parametr | Maxus Deliver 9 L3H2 | Fiat Ducato L3H2 | Renault Master L3H2 | Mercedes Sprinter L2H2 |
 |----------|---------------------|------------------|---------------------|----------------------|

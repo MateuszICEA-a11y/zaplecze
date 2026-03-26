@@ -30,7 +30,7 @@ Furgon (Van) ma fabrycznie zamkniętą, integralną przestrzeń ładunkową. Cha
 
 Transit chassis cab jest dostępny w rozstawach osi L2, L3 i L4 – co wprost przekłada się na długość zabudowy.
 
-## Dane techniczne podwozia
+## Dane techniczne podwozia Ford Transit skrzyniowy
 
 Parametry bazowe:
 
@@ -85,7 +85,7 @@ Wszystkie wersje chassis cab mają tylny napęd RWD. To wymaganie wynikające z 
 Przy wyborze między 130 a 170 KM do wersji z zabudową wywrotki lub chłodni zawsze biorę 170. Te 40 KM różnicy nie przekłada się na koszt paliwa – to tylko ok. 0,3–0,5 l/100 km więcej – ale znacząco poprawia żywotność sprzęgła i przekładni przy ciągłych rozruchach z ciężkim załadunkiem.
 {{% /expert %}}
 
-## Ceny podwozia i zabudów
+## Ceny podwozia i zabudów Transit skrzyniowego
 
 Podwozie Transit chassis cab L2 z silnikiem 130 KM i DMC 3,5 t kosztuje od ok. 125 000 zł brutto. Wersje L3 z silnikiem 170 KM i DMC 4,25 t to 145 000–165 000 zł.
 

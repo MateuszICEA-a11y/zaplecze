@@ -29,7 +29,7 @@ Warto od razu rozdzielić dwa modele, które bywają mylone:
 
 Oba modele mają homologację M1 – do 9 miejsc – i nie wymagają prawa jazdy na autobus.
 
-## Liczba miejsc i układ wnętrza
+## Liczba miejsc i układ wnętrza w Ford Transit Tourneo
 
 Standardowa konfiguracja to 8 lub 9 miejsc. W Transit Tourneo L2:
 
@@ -75,7 +75,7 @@ Przyspieszenie 0–100 km/h w wersji 130 KM wynosi ok. 14 s – niezbyt sportowe
 Dla firm kupujących Tourneo do przewozów VIP lub lotniczych warto rozważyć dopłatę do automatycznej skrzyni biegów. Przy długich trasach znacząco redukuje zmęczenie kierowcy, a rozmowy z pasażerami nie są przerywane szarpnięciami przy zmianie biegów.
 {{% /expert %}}
 
-## Ceny
+## Ceny Forda Transit osobowego
 
 Nowe Transit Tourneo kosztują od ok. 160 000 zł brutto w wersji Trend z silnikiem 130 KM. Wersja Limited zamyka się w przedziale 180 000–195 000 zł, Titanium przekracza 210 000 zł.
 

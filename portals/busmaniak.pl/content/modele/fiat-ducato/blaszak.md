@@ -20,7 +20,7 @@ faq:
     answer: "Najrozsądniejszy wybór to 2.3 MultiJet 130 lub 150 KM. Jeśli budżet pozwala na starszy rocznik (przed 2016), silnik 3.0 MultiJet 180 KM jest praktycznie niezniszczalny."
 ---
 
-## Generacje i ewolucja modelu
+## Fiat Ducato blaszak – generacje i ewolucja
 
 Na rynku wtórnym wciąż trafiają się egzemplarze [Fiata Ducato](/modele/fiat-ducato/) drugiej generacji (1994–2006) z silnikami 1.9 D czy 2.8 JTD, ale poniżej skupiamy się na generacji produkowanej od 2006 roku, która przeszła dwa liftingi:
 
@@ -30,7 +30,7 @@ Na rynku wtórnym wciąż trafiają się egzemplarze [Fiata Ducato](/modele/fiat
 
 {{% expert name="Kowalczyk" %}}Do budowy kampera wybieram Ducato z jednego konkretnego powodu: prostopadłościenna paka. Ściany są niemal pionowe, co zdecydowanie ułatwia montaż mebli i izolacji w porównaniu do zaokrąglonego Sprintera czy Transita.{{% /expert %}}
 
-## Wymiary i warianty L/H
+## Wymiary blaszaka Ducato – warianty L/H
 
 Oznaczenie "L" (długość) oraz "H" (wysokość) to klucz do oferty Ducato. Furgon dostępny jest w czterech długościach nadwozia i trzech wysokościach dachu.
 
@@ -45,7 +45,7 @@ Oznaczenie "L" (długość) oraz "H" (wysokość) to klucz do oferty Ducato. Fur
 
 Szerokość między nadkolami w wersji H2 wynosi 1422 mm – to wystarczy do poprzecznego załadunku europalet. DMC dla większości modeli to 3500 kg (prawo jazdy kat. B), a wersje Maxi oferują ładowność do 1600 kg.
 
-## Silniki – który wybrać?
+## Silniki Fiat Ducato – który wybrać?
 
 Jednostka napędowa bezpośrednio przekłada się na koszty eksploatacji i spokój przy serwisowaniu:
 
@@ -58,7 +58,7 @@ Jednostka napędowa bezpośrednio przekłada się na koszty eksploatacji i spok�
 
 ![Fiat Ducato blaszak – furgon, wymiary paki, ładowność](/images/fiat-ducato-blaszak-hero.jpg)
 
-## Typowe problemy i koszty utrzymania
+## Typowe problemy Ducato blaszaka
 
 Silniki Ducato mają opinię trwałych, ale kilka słabych punktów warto znać przed zakupem:
 

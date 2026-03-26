@@ -20,7 +20,7 @@ faq:
     answer: "Nowe podwozie z kabiną (2025–2026, 140–180 KM) to 150 000–200 000 zł netto. Używane z lat 2019–2023 kosztują 80 000–150 000 zł."
 ---
 
-## Generacje i ewolucja modelu (X250 i X290)
+## Fiat Ducato skrzyniowy – generacje X250 i X290
 
 Współczesne [Fiaty Ducato](/modele/fiat-ducato/) skrzyniowe to przede wszystkim III generacja: debiut w 2006 roku (X250) i gruntowny lifting w 2014 (X290).
 
@@ -31,7 +31,7 @@ Współczesne [Fiaty Ducato](/modele/fiat-ducato/) skrzyniowe to przede wszystki
 
 {{% expert name="Kowalczyk" %}}Fiat Ducato z otwartą skrzynią to ulubieniec ekip budowlanych. Największa zaleta to szerokość platformy – bez problemu mieści obok siebie dwie europalety, co w tej klasie nie zawsze jest standardem u konkurencji.{{% /expert %}}
 
-## Wymiary skrzyni ładunkowej i warianty kabin
+## Wymiary skrzyni Ducato i warianty kabin
 
 Ducato skrzyniowy występuje w dwóch konfiguracjach kabiny:
 
@@ -48,7 +48,7 @@ Ducato skrzyniowy występuje w dwóch konfiguracjach kabiny:
 
 Producenci zabudów skrzyniowych: **Carpol, Jegger, Bovis**.
 
-## Silniki – który wybrać do skrzyni?
+## Silniki Fiat Ducato skrzyniowy – który wybrać?
 
 Otwarta skrzynia generuje większy opór aerodynamiczny niż furgon:
 
@@ -62,20 +62,20 @@ Skrzynia automatyczna 9-biegowa ZF (od 2019 roku) – dopłata ok. 10 000–15 0
 
 ![Fiat Ducato skrzyniowy – podwozie, wymiary, ładowność](/images/fiat-ducato-skrzyniowy-hero.jpg)
 
-## Zastosowania
+## Zastosowania Ducato skrzyniowego
 
 - **Budownictwo** – przewóz materiałów sypkich (z wywrotem), rusztowań i narzędzi
 - **Ogrodnictwo** – transport krzewów, drzewek i maszyn
 - **Logistyka** – baza pod [plandekę](/modele/fiat-ducato/plandeka/) przy trasach międzynarodowych
 - **Służby komunalne** – wersje z podwójną kabiną do przewozu pracowników i sprzętu
 
-## Typowe problemy i serwis
+## Typowe problemy Fiat Ducato skrzyniowy
 
 - **Korozja ramy pomocniczej** – w starszych egzemplarzach skontroluj zabezpieczenie antykorozyjne pod skrzynią
 - **Elektronika** – częste błędy czujników ABS/ESP od wilgoci w wiązkach pod podwoziem
 - **Ergonomia** – ze względu na szerokość auta (ponad 2 m) niektóre przełączniki są odsunięte od kierowcy
 
-## Ceny
+## Ceny Ducato skrzyniowego
 
 - **Nowe podwozie (2025–2026, 140–180 KM)** – 150 000–200 000 zł netto
 - **Używane (2019–2023, L3/L4)** – 80 000–150 000 zł

@@ -43,7 +43,7 @@ L4 przeznaczony jest do regularnych transportów dużych gabarytów – budowlan
 Minimalny promień skrętu wynosi ok. 6,6 m dla L3 i ok. 7,2 m dla L4. Dla porównania – standardowy van klasy Sprinter L2 ma promień ok. 6,0 m. Transit L4 przy cofaniu na placu załadunkowym wymaga co najmniej 15 m wolnej przestrzeni manewrowej.
 {{% /info %}}
 
-## Pojemność ładunkowa w praktyce
+## Pojemność ładunkowa Ford Transit Long w praktyce
 
 Wersja L3H2 to najbardziej universalny wariant – 11,5 m³ wystarczy do załadowania mebli z jednego pokoju, pełnej palety materiałów budowlanych lub towaru z małego hurtownianego zamówienia.
 

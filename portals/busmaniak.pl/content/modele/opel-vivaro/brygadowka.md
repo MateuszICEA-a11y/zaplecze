@@ -26,7 +26,7 @@ W branży transportowej terminem „brygadówka" określa się samochód dostawc
 - **Vivaro furgon z przegrodą** – za pierwszym rzędem, tylne siedzenia montowane opcjonalnie
 - **Vivaro na podwoziu z zabudową zewnętrzną** – kareta lub skrzynia
 
-## Wymiary i przestrzeń w konfiguracji brygadówki
+## Wymiary Opel Vivaro w konfiguracji brygadówki
 
 Vivaro Combi 6-osobowy (2 rzędy siedzeń):
 
@@ -52,7 +52,7 @@ Masa własna Combi 6-osobowego jest wyższa niż furgonu o ok. 80–120 kg – d
 
 ![Opel Vivaro brygadówka – kabina dwurzędowa z przestrzenią ładunkową](/images/opel-vivaro-brygadowka-hero.jpg)
 
-## Silniki do brygadówki
+## Silniki do brygadówki Vivaro
 
 Do intensywnej eksploatacji z pełnym załadunkiem:
 

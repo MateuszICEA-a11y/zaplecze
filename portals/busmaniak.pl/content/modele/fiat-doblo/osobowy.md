@@ -59,7 +59,7 @@ Silniki gen II w wersji osobowej:
 
 ![Fiat Doblò Panorama – wnętrze i przestrzeń dla pasażerów](/images/fiat-doblo-osobowy-hero.jpg)
 
-## Przestrzeń dla pasażerów
+## Przestrzeń dla pasażerów w Fiacie Doblò osobowym
 
 | Konfiguracja             | Miejsca | Bagażnik (kanapa złożona) | Drzwi boczne |
 |--------------------------|---------|---------------------------|--------------|

@@ -48,7 +48,7 @@ W praktyce: L2 to wybór dla transferów lotniskowych i grup turystycznych, gdzi
 
 ![Renault Trafic Passenger L2 – wersja osobowa](/images/renault-trafic-osobowy-hero.jpg)
 
-## Silniki {#silniki}
+## Silniki Renault Trafic osobowy {#silniki}
 
 Renault Trafic III osobowy był dostępny wyłącznie z silnikami Diesla:
 

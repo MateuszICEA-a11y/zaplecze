@@ -30,7 +30,7 @@ Izoterma to kontener z izolacją termiczną ze styropianu (40–80 mm) lub piank
 - Izoterma bez agregatu – krótkie trasy, lody i nabiał na 2–3 h
 - Izoterma z agregatem – chłodnia ATP, transport na całą dobę
 
-## Wymiary zabudowy kontenerowej
+## Wymiary zabudowy kontenerowej Iveco Daily
 
 Przy podwoziu Daily Long (L3H2) wewnętrzna przestrzeń zabudowy wynosi ok. 3 600 × 1 950 × 1 900 mm, co daje 13–14 m³ pojemności. Przy Extra Long (L4H2) – do 4 300 × 1 950 × 1 900 mm, czyli 16 m³.
 

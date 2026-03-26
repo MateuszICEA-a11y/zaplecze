@@ -20,7 +20,7 @@ faq:
     answer: "Ford Transit Double Cab ma homologację N1 – pojazd ciężarowy o DMC do 3,5 t. Umożliwia to pełne odliczenie VAT i amortyzację jako środka trwałego. Nie jest klasyfikowany jako osobowy (M1), co ma znaczenie podatkowo dla firm."
 lead: "Ford Transit brygadówka – w katalogach Forda określany jako Double Cab – to pojazd zaprojektowany dla ekip serwisowych i budowlanych. Łączy miejsce dla 5–7 ludzi z oddzieloną przestrzenią na narzędzia i materiały. Jedno auto zamiast dwóch."
 ---
-## Co to jest Double Cab i jak jest zbudowany?
+## Ford Transit brygadówka – co to jest Double Cab?
 
 Wersja Double Cab to Transit z podwójną kabiną. Przednia część nadwozia mieści dwa rzędy siedzeń rozdzielone standardową przestrzenią między nimi. Tylna część – za stalową lub siatkową przegrodą – to przestrzeń ładunkowa dostępna przez tylne drzwi.
 
@@ -31,7 +31,7 @@ Przegroda między kabiną a ładownią jest obowiązkowym elementem homologacji 
 
 Tylne drzwi to skrzydłowe klapa lub dwie skrzydłowe drzwi 270°.
 
-## Wymiary i przestrzeń ładunkowa
+## Wymiary brygadówki Transit
 
 Brygadówka dostępna jest w wersjach L2 i L3. Przestrzeń ładunkowa jest krótsza niż w standardowym Van, bo część nadwozia zajmuje tylna kabina pasażerska.
 
@@ -53,7 +53,7 @@ Szerokość podłogi i wysokość ładunkowa są identyczne jak w standardowym V
 Przy wyborze przegrody siatkowej zamiast stalowej można zdemontować jej środkowy panel i przełożyć przez kabinę elementy o długości do 4 m (rury, listwy, szyny). To istotna zaleta dla ekip elektroinstalacyjnych i hydraulicznych. Przegroda stalowa jest szczelniejsza – lepiej sprawdza się przy przewozie materiałów sypkich i chemikaliów.
 {{% /info %}}
 
-## Liczba miejsc i układ kabiny
+## Liczba miejsc w Ford Transit Double Cab
 
 Kabina Double Cab w Transicie oferuje:
 
@@ -64,7 +64,7 @@ Kabina Double Cab w Transicie oferuje:
 
 ![Ford Transit Double Cab – brygadówka z przegrodą](/images/ford-transit-brygadowka-hero.jpg)
 
-## Homologacja N1 i korzyści podatkowe
+## Homologacja N1 Ford Transit brygadówka
 
 Homologacja N1 oznacza pojazd ciężarowy o DMC do 3,5 t. Dla firm wiąże się to z:
 
@@ -78,7 +78,7 @@ To jedna z głównych przyczyn popularności brygadówki – przy porównywalnej
 Przy zakupie Double Cab warto sprawdzić, czy pojazd faktycznie ma homologację N1, a nie M1. Zdarza się, że dealer rejestruje Transita jako osobowy dla klienta, który nie sprawdza dokumentów. Po fakcie zmiana homologacji jest kosztowna i wymaga badania technicznego. Zawsze żądaj świadectwa homologacji przed podpisaniem umowy.
 {{% /expert %}}
 
-## Zastosowania
+## Zastosowania Transita brygadówki
 
 Transit brygadówka jest najczęściej wybierany przez:
 

@@ -60,7 +60,7 @@ Wersja Long kosztuje zwykle 3000–5000 zł więcej niż Short. Jeśli regularni
 
 Szczegółową specyfikację wersji Long – w tym przestrzeń między łukami kół i opcje zabudowy – znajdziesz na stronie [Toyota Proace City Long](/modele/toyota-proace-city/long/).
 
-## Silniki ProAce City
+## Silniki Toyota ProAce City
 
 ### Benzyna – 1.2 PureTech
 
@@ -120,7 +120,7 @@ Różnice między bliźniakami na platformie EMP2 są minimalne pod względem te
 
 Jeśli interesuje cię większy dostawczak Toyoty – sprawdź [Toyota Proace](/modele/toyota-proace/), który oferuje przestrzeń ładunkową od 5,1 do 6,1 m³.
 
-## Ceny ProAce City
+## Ceny Toyota ProAce City
 
 | Rocznik / Wersja | Cena orientacyjna |
 |-------------------|-------------------|

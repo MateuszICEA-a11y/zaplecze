@@ -59,7 +59,7 @@ Producenci zabudów lawetowych w Polsce: Grupa Bemo, Dawix Car.
 
 ![Fiat Ducato laweta – autolaweta na bazie Ducato](/images/fiat-ducato-laweta-hero.jpg)
 
-## Wymagania prawne i DMC
+## Wymagania prawne i DMC Ducato jako lawety
 
 Większość autolawet na Ducato rejestruje się jako "pojazd specjalny – pomoc drogowa":
 

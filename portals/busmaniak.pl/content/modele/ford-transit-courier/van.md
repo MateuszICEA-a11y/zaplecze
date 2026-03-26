@@ -67,7 +67,7 @@ II generacja oferuje system SYNC 4 z 12-calowym ekranem dotykowym i integrację 
 1.0 EcoBoost 125 KM w najnowszej generacji to złoty środek dla kurierów. Sprawnie napędza auto nawet z pełnym ładunkiem. Diesel 1.5 EcoBlue ma sens przy przebiegach powyżej 20 tys. km rocznie – wtedy różnica w spalaniu (5,5 vs 9 l/100 km) realnie się zwraca.
 {{% /expert %}}
 
-## Ładowność i DMC
+## Ładowność i DMC Forda Transit Courier Van
 
 Ładowność II generacji z silnikiem benzynowym to 845 kg przy masie własnej 1329 kg. Wersja elektryczna – ok. 700 kg (cięższy akumulator). DMC mieści się w limicie kategorii B.
 

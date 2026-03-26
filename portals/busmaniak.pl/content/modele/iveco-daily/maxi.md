@@ -20,7 +20,7 @@ faq:
     answer: "Całkowita długość nadwozia wynosi 7 170 mm. Długość przestrzeni ładunkowej to ok. 4 750 mm, szerokość 1 870 mm, wysokość 1 900 mm (wersja H2)."
 lead: "Iveco Daily Maxi to rekord, który od lat nie ma rywali: 19,6 m³ pojemności przy DMC 3,5 t oznacza, że możesz przewozić sześć europalety i wciąż nie potrzebujesz prawa jazdy na ciężarówkę."
 ---
-## Wymiary, które robią różnicę
+## Wymiary Iveco Daily Maxi
 
 Daily Maxi to podwozie Extra Long w wersji High Roof – kombinacja L4H2. Całkowita długość pojazdu wynosi 7 170 mm, co przekracza wymiary standardowego miejsca parkingowego.
 
@@ -77,7 +77,7 @@ Daily Maxi ma 7 170 mm całkowitej długości. To problem w:
 
 Promień zawracania jest duży – szacuj ok. 7,5–8,0 m na osi przedniej. W centrum Warszawy czy Krakowa będziesz omijał wiele ulic.
 
-## Koszt zakupu
+## Koszt zakupu Daily Maxi
 
 Nowy Daily Maxi L4H2 z silnikiem 2.3/156 KM kosztuje ok. 130–145 tys. zł netto. Wersja z 3.0/170 KM to ok. 145–160 tys. zł netto. Na rynku wtórnym egzemplarze po 100–200 tys. km w stanie dobrym wyceniane są na 55–80 tys. zł.
 

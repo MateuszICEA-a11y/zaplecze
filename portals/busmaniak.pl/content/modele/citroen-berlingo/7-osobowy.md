@@ -41,7 +41,7 @@ Przestrzeń w trzecim rzędzie to kompromis. Fotele są węższe niż w środkow
 
 Trzeci rząd składa się płasko do podłogi, przywracając pełną pojemność bagażnika. To praktyczne rozwiązanie – na co dzień można jeździć z 5 osobami i dużym bagażnikiem, a trzeci rząd rozkładać okazjonalnie.
 
-## Komfort i bezpieczeństwo {#komfort}
+## Komfort i bezpieczeństwo w Citroënie Berlingo 7-osobowym {#komfort}
 
 - **Pasy bezpieczeństwa** – trzypunktowe na wszystkich siedmiu miejscach
 - **Zagłówki** – regulowane w 2. i 3. rzędzie
