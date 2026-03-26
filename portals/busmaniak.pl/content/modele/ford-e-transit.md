@@ -8,6 +8,7 @@ h1: "Ford E-Transit – elektryczny Transit"
 image: "/images/ford-e-transit-hero.jpg"
 image_alt: "Ford E-Transit furgon elektryczny na stacji ładowania"
 main_keyword: "ford e-transit"
+volume: 500
 lead: "Ford E-Transit to w pełni elektryczna wersja najpopularniejszego dużego dostawczaka w Europie. Produkowany od 2022 roku w tureckim zakładzie Ford Otosan, oferuje do 317 km zasięgu WLTP i ładowność sięgającą 1616 kg – parametry, które czynią go realną alternatywą dla diesla w logistyce miejskiej i regionalnej."
 faq:
   - question: "Jaki zasięg ma Ford E-Transit?"

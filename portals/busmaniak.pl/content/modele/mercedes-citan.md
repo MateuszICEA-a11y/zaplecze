@@ -7,6 +7,7 @@ author: "marek-kowalczyk"
 h1: "Mercedes Citan – kompaktowy van z gwiazdą na masce"
 type: "page"
 main_keyword: "mercedes citan"
+volume: 1000
 image: "/images/mercedes-citan-hero.jpg"
 image_alt: "Mercedes Citan II furgon dostawczy w wersji L2"
 lead: "Mercedes Citan to najmniejszy dostawczak w gamie Mercedesa – kompaktowy van zbudowany na platformie Renault Kangoo III. Druga generacja (W420) z 2021 roku oferuje silniki diesla i benzynowe, wersję elektryczną eCitan oraz pasażerskiego bliźniaka – Mercedes T-Class. Sprawdzone podzespoły Renault w opakowaniu premium."

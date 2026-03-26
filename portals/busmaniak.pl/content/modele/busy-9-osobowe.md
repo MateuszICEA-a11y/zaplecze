@@ -9,6 +9,7 @@ type: "page"
 image: "/images/busy-9-osobowe-hero.jpg"
 image_alt: "Busy 9-osobowe – porównanie najpopularniejszych modeli na polskim rynku"
 main_keyword: "busy 9 osobowe"
+volume: 500
 lead: "Bus 9-osobowy to pojazd, który można prowadzić na prawo jazdy kategorii B – pod warunkiem, że DMC nie przekracza 3,5 tony. Na polskim rynku jest kilkanaście modeli w różnych cenach i konfiguracjach. Poniżej znajdziesz konkretne porównanie wymiarów, silników, spalania i cen."
 faq:
   - question: "Czy na busa 9-osobowego potrzebne jest prawo jazdy C?"
