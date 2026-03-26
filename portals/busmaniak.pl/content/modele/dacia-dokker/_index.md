@@ -30,7 +30,7 @@ Model zaprezentowano po raz pierwszy w czerwcu 2012 roku na targach motoryzacyjn
 
 W lutym 2017 roku przeprowadzono lifting: odświeżono pas przedni i rozszerzono gamę silnikową o jednostkę 1.3 TCe opracowaną wspólnie z Mercedesem. Produkcję zakończono w marcu 2021 roku. Rolę auta dostawczego przejęło Dacia Express (dostępna od marca 2024), a wersję pasażerską zastąpił Jogger – model z 2021 roku. Przez blisko dekadę Dacia Dokker zapracowała na opinię "woła roboczego", który nie boi się trudnych warunków eksploatacji.
 
-## Silniki – co dostępne i co wybrać
+## Silniki Dacia Dokker
 
 Wybór jednostki determinuje późniejsze koszty użytkowania. Najpopularniejszy na rynku wtórnym diesel 1.5 dCi to sprawdzona konstrukcja Renault z niskim spalaniem – dobra opcja dla tych, którzy dużo jeżdżą w trasie. **Dacia Dokker 1.6 benzyna** w wersji wolnossącej SCe to z kolei wybór dla osób ceniących prostotę: silnik ten znosi zasilanie gazem bez zarzutu, co przy obecnych cenach LPG przekłada się na realne oszczędności.
 
@@ -74,7 +74,7 @@ Dacia Dokker kombi to 5-osobowy wariant z przesuwnymi drzwiami bocznymi – przy
 
 Dacia Dokker Stepway wyróżnia się prześwitem podwyższonym do 175 mm – o 40 mm więcej niż standardowe 135 mm. Wersja pojawiła się w ofercie od 2014 roku. W pakiecie dostaje się relingi dachowe, plastikowe nakładki nadkoli i progów, dedykowaną tapicerkę, klimatyzację i system multimedialny Media Nav. Bliźniacza konstrukcja [Renault Kangoo](/modele/renault-kangoo/) dzieli z Dokkerem platformę i silniki, stanowiąc nieco lepiej wykończoną alternatywę.
 
-## Typowe usterki i na co uważać przy zakupie
+## Typowe usterki Dacia Dokker
 
 Auto jest proste w budowie, ale ma kilka powtarzających się słabości – opinie o Dacii Dokker zbierane na portalach branżowych wskazują na nie konsekwentnie. Silnik 1.2 TCe nadmiernie pije olej i ma skłonność do rozciągania łańcucha rozrządu już od 60–80 tys. km. To poważna wada – wymiana łańcucha jest kosztowna i czasochłonna. Cewki zapłonowe w benzynowych jednostkach zawodzą po 50–100 tys. km.
 

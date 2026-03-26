@@ -21,7 +21,7 @@ faq:
     answer: "2.0 TSI 204 KM, 2.0 TDI 150 KM i 1.5 eHybrid 245 KM (plug-in). Wszystkie z DSG."
 ---
 
-## Historia i generacje
+## Historia i generacje Volkswagen Multivan
 
 Volkswagen Multivan ewoluował przez dekady z roboczego Transportera w stronę komfortowej salonki. Każda generacja wnosiła coś nowego w zagospodarowaniu przestrzeni pasażerskiej.
 
@@ -41,7 +41,7 @@ Platforma MQB oznacza rezygnację z konstrukcji ramowej na rzecz samonośnej. Sz
 
 T7 dostępny jest w dwóch długościach – L1 (4970 mm) i L2 (5170 mm). Szerokość bez lusterek wynosi 1941 mm, wysokość 1907 mm, rozstaw osi 3124 mm. Kto potrzebuje czegoś mniejszego, znajdzie [VW Caddy](/modele/volkswagen-caddy/) o klasę niżej pod względem przestrzeni.
 
-## Silniki i napędy
+## Silniki Multivana
 
 | Silnik | Moc | Skrzynia | Spalanie | Vmax |
 | :--- | :--- | :--- | :--- | :--- |
@@ -55,7 +55,7 @@ Diesel 2.0 TDI 150 KM sprawdza się najlepiej na długich trasach – niskie spa
 Hybryda plug-in o mocy 245 KM to najmocniejszy seryjny napęd w historii Multivana. Realnie obniża koszty paliwa tylko wtedy, gdy ładujesz ją codziennie – w trasie bez ładowania pali więcej niż diesel.
 {{% /expert %}}
 
-## Wymiary i przestrzeń pasażerska
+## Wymiary Volkswagen Multivan
 
 | Parametr | L1 | L2 |
 |----------|-----|-----|
@@ -70,7 +70,7 @@ Wnętrze opiera się na systemie szynowym – indywidualne fotele, o 25% lżejsz
 
 W segmencie premium Multivan konkuruje z [Mercedesem V-klasa](/modele/mercedes-vito/), który oferuje wyższy poziom wygłuszenia, ale za wyraźnie wyższą cenę.
 
-## Wyposażenie i wersje – Family, Style, Energetic
+## Wyposażenie Multivana – Family, Style, Energetic
 
 **Volkswagen Multivan Family** – wersja wejściowa dla rodzin z trwałymi materiałami wykończenia i systemem Travel Assist do półautomatycznej jazdy.
 
@@ -80,7 +80,7 @@ W segmencie premium Multivan konkuruje z [Mercedesem V-klasa](/modele/mercedes-v
 
 Centrum dowodzenia to ekran 10 cali, Digital Cockpit Pro i eSIM z nawigacją online. Wyższe wersje oferują elektrycznie podnoszoną klapę i drzwi przesuwne otwierane gestem stopy.
 
-## Typowe usterki i koszty serwisu
+## Typowe usterki Volkswagen Multivan
 
 **T5 (2003–2015):**
 - **Dwumasowe koło zamachowe** – zużywa się przy 150–200 tys. km. Koszt wymiany: 5000–8000 zł

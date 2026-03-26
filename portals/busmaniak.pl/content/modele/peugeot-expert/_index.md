@@ -22,7 +22,7 @@ faq:
     answer: "Z baterią 50 kWh do 230 km, z baterią 75 kWh do 330 km według WLTP."
 ---
 
-## Historia i generacje Experta
+## Historia i generacje Peugeot Expert
 
 Trzy generacje, zmiana platformy i rozrastająca się rodzina bliźniaków – Expert ewoluował od prostego vana Sevel Nord do zaawansowanego dostawczaka na modularnej platformie EMP2.
 
@@ -83,7 +83,7 @@ Klasyczny furgon (Panel Van) to najczęściej wybierana opcja, dostępna w konfi
 
 W gamie modelowej wyróżnia się luksusowy Expert Traveller, dedykowany do przewozu VIP-ów i dużych rodzin. Można go skonfigurować jako wariant 9-osobowy, co czyni go jednym z najbardziej pakownych busów w tej klasie wagowej. Wykończenie wnętrza w tej wersji znacząco odbiega od standardów typowo dostawczych – oferuje lepsze wyciszenie i materiały.
 
-## Typowe usterki Experta
+## Typowe usterki Peugeot Expert
 
 ### Expert I (1995–2006)
 

@@ -18,7 +18,7 @@ faq:
     answer: "Cargo to wersja dostawcza z przegrodą i homologacją N1. Panorama przewozi 5–7 pasażerów i ma tylną kanapę zamiast przestrzeni ładunkowej."
 lead: "Fiat Doblò to kompaktowy van, który przez ponad dwie dekady utrzymuje pozycję jednego z najbardziej wszechstronnych pojazdów segmentu. Kupujesz użytkowego czy rodzinnego – i tak trafisz na Doblò jako poważną opcję. Poniżej znajdziesz twarde dane dla wszystkich trzech generacji."
 ---
-## Generacje Fiata Doblò – skrót historii
+## Historia i generacje Fiat Doblò
 
 Doblò wjechał na rynek w 2000 roku jako odpowiedź Fiata na rosnące zapotrzebowanie na pojazdy łączące funkcje dostawcze i osobowe. Generacja I (2000–2010) zbudowana była na płycie Punty – prosty układ, solidna mechanika, klasyczne diesle JTD.
 
@@ -26,7 +26,7 @@ Generacja II (2010–2022) przyniosła platformę z Oplem Combo i nowe silniki M
 
 Generacja III (od 2022) to przełom: Doblò przeniosło się na platformę PSA EMP2. Auto jest bliźniakiem [Citroëna Berlingo](/modele/citroen-berlingo/) i Peugeota Partner. Kabina, zawieszenie, skrzynie biegów – wszystko wspólne z francuską rodziną. Fiatowi pozostał wygląd zewnętrzny i logo.
 
-## Fiat Doblò dane techniczne – generacja po generacji
+## Dane techniczne Doblò
 
 ### Generacja I (2000–2010)
 
@@ -66,7 +66,7 @@ Długość krótkiej wersji: 4403 mm. Wersja Maxi: 4753 mm. Pojemność ładunko
 Doblò III korzysta z tej samej skrzyni biegów EAT8 i silników PSA co Berlingo. Serwis jest tożsamy – mechanicy przyzwyczajeni do Berlingo obsłużą Doblò bez problemów. Części zamienne są wspólne, co dobrze wpływa na dostępność i ceny.
 {{% /info %}}
 
-## Wymiary – tabela porównawcza wersji
+## Wymiary Fiat Doblò
 
 | Parametr | Gen II standard | Gen II Maxi | Gen III standard | Gen III Maxi |
 |---|---|---|---|---|
@@ -75,7 +75,7 @@ Doblò III korzysta z tej samej skrzyni biegów EAT8 i silników PSA co Berlingo
 | Wysokość (mm) | 1845 | 1845 | 1800 | 1800 |
 | Rozstaw osi (mm) | 2755 | 3105 | 2975 | 3275 |
 
-## Wersje nadwozia
+## Wersje nadwoziowe Doblò
 
 **Cargo** – homologacja N1, przegroda, ładowność do 1000 kg. Przeznaczony dla firm.
 
@@ -87,7 +87,7 @@ Doblò III korzysta z tej samej skrzyni biegów EAT8 i silników PSA co Berlingo
 Przy zakupie używanego Doblò II z silnikiem 1.6 MultiJet sprawdź stan dwumasowego koła zamachowego – to pierwsza rzecz, która pada po 150 tys. km intensywnej eksploatacji miejskiej. Przy 2.0 MultiJet zwróć uwagę na układ wtryskowy – regenerowane wtryskiwacze potrafią nie dawać pełnej mocy przez kilka tygodni po wymianie.
 {{% /expert %}}
 
-## Na co zwrócić uwagę przy zakupie
+## Typowe usterki Fiat Doblò
 
 Używane Doblò II to rynek z dużą podażą. Problemy, których warto szukać:
 
@@ -108,7 +108,7 @@ Doblò III na platformie PSA jest za świeży, żeby mówić o typowych usterkac
 | Doblò III (od 2022) | 60 000–100 000 zł |
 | Nowy Doblò III Van L1 | od ok. 105 000 zł netto |
 
-## Porównanie Doblò z konkurencją
+## Porównanie Fiat Doblò z konkurencją
 
 | Parametr | Fiat Doblò III L1 | Opel Combo E L1 | Citroën Berlingo III M | Renault Kangoo III L1 | VW Caddy V |
 |----------|-------------------|----------------|------------------------|-----------------------|------------|

@@ -20,7 +20,7 @@ faq:
     answer: "Większość wersji 90 KM ma sztywne koło zamachowe – tańsza wymiana sprzęgła (ok. 1200 zł vs 2500 zł z dwumasowym)."
 ---
 
-## Historia NV200
+## Historia Nissan NV200
 
 Jedna generacja, ale w wielu wcieleniach – od nowojorskiej taksówki po elektryczny dostawczak dla kurierów.
 
@@ -63,7 +63,7 @@ W 2011 roku NV200 wygrał konkurs NYC Taxi of Tomorrow i od 2013 roku był jedyn
 - **Drzwi tylne** – asymetryczne skrzydełkowe, otwierane do 180°
 - **Drzwi boczne** – przesuwane, po jednej (standard) lub obu stronach (opcja)
 
-## Silniki NV200
+## Silniki Nissan NV200
 
 | Silnik | Moc | Moment | Spalanie (śr.) | Rozrząd | Roczniki |
 |--------|-----|--------|----------------|---------|----------|
@@ -102,7 +102,7 @@ Cywilizowana odmiana pełniąca rolę minivana. Wersja siedmioosobowa ma dodatko
 
 Wersja bezemisyjna z napędem z Leafa – silnik 109 KM, bateria 24 kWh (starsze) lub 40 kWh (od 2018). Realny zasięg 120–200 km. Dostępna jako furgon i Evalia. Przestrzeń ładunkowa identyczna jak w wersji spalinowej – bateria pod podłogą.
 
-## Typowe usterki NV200
+## Typowe usterki Nissan NV200
 
 ### Zawieszenie i podwozie
 

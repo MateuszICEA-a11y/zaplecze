@@ -20,6 +20,16 @@ faq:
 ---
 ## Dane techniczne Vivaro-e
 
+| Parametr | Bateria 50 kWh | Bateria 75 kWh |
+|----------|----------------|----------------|
+| Moc silnika | 136 KM (100 kW) | 136 KM (100 kW) |
+| Moment obrotowy | 260 Nm | 260 Nm |
+| Zasięg WLTP | ok. 230 km | ok. 330 km |
+| Ładowanie AC | do 11 kW | do 11 kW |
+| Ładowanie DC | do 100 kW | do 100 kW |
+| Czas DC 20–80% | ok. 45 min | ok. 45 min |
+| Ładowność | ok. 1000 kg | ok. 830 kg |
+
 - **Silnik elektryczny** – 136 KM (100 kW), 260 Nm
 - **Bateria** – 50 kWh lub 75 kWh (netto użyteczne)
 - **Napęd** – przedni

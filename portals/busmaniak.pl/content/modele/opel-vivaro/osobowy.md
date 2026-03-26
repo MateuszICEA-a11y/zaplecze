@@ -37,6 +37,15 @@ Vivaro Life:
 Vivaro Life z 8 miejscami jest często wygodniejszy na długich trasach niż wariant 9-osobowy – tylny rząd zyskuje trochę przestrzeni. Jeśli auto jedzie głównie z kompletem pasażerów, sprawdź [wersję Long](/modele/opel-vivaro/long/) – dłuższa kabina to realny zysk dla 3. rzędu.
 {{% /expert %}}
 
+## Konfiguracje miejsc i długości
+
+| Wersja | Długość | Układ siedzeń | Liczba miejsc |
+|--------|---------|---------------|---------------|
+| Combi L1 Standard | 4960 mm | 2+3+3 | 8 |
+| Combi L2 Long | 5310 mm | 2+3+4 | 9 |
+| Life L1 Standard | 4960 mm | 2+3+3 | 8 |
+| Life L2 Long | 5310 mm | 2+3+4 | 8 lub 9 |
+
 ## Dane techniczne wersji osobowej
 
 Wymiary (Vivaro C Life Standard):

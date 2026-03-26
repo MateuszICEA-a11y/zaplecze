@@ -20,7 +20,7 @@ faq:
     answer: "Do 1356 kg (L2, 2.0 EcoBlue 130 KM, manualna). Standardowo L1: 1150–1200 kg, L2: 1300–1356 kg."
 ---
 
-## Historia i generacje Transit Custom
+## Historia i generacje Ford Transit Custom
 
 Bestseller segmentu, który na europejskim rynku od ponad dekady utrzymuje czołową pozycję sprzedażową – zarówno w Polsce, jak i w Wielkiej Brytanii.
 
@@ -42,7 +42,7 @@ Nowa platforma, nowe wnętrze z 13-calowym ekranem SYNC 4 i gama napędów rozsz
 
 Wersja Trail z oponami All-Terrain i osłoną podwozia celuje w ekipy budowlane pracujące poza asfaltem.
 
-## Wymiary Transit Custom
+## Wymiary Transit Customa
 
 | Parametr | L1 (Short) | L2 (Long) |
 |----------|-----------|-----------|
@@ -61,7 +61,7 @@ Wersja Trail z oponami All-Terrain i osłoną podwozia celuje w ekipy budowlane 
 - **Europalety** – 2 sztuki w L2 (wzdłuż)
 - **Średnica zawracania** – 11,6 m (L1), 12,8 m (L2)
 
-## Silniki Transit Custom
+## Silniki Ford Transit Custom
 
 | Silnik | Generacja | Moc | Moment | Spalanie (śr.) | Skrzynia |
 |--------|-----------|-----|--------|----------------|----------|
@@ -80,7 +80,7 @@ Mild hybrid 48V (gen II) regeneruje energię przy hamowaniu i wspomaga rozruszni
 2.0 EcoBlue 130 KM to najczęstszy i najrozsądniejszy wybór: wystarczający moment od niskich obrotów, dostępny z manualem i automatem, tani w serwisie. Wariant 170 KM z 8AT to luksus, ale automat SelectShift potrafi szarpać – sprawdź aktualizację oprogramowania u dealera.
 {{% /expert %}}
 
-## Wersje wyposażenia
+## Wersje wyposażenia Transit Customa
 
 ### Gen I (2012–2023)
 
@@ -94,7 +94,7 @@ Mild hybrid 48V (gen II) regeneruje energię przy hamowaniu i wspomaga rozruszni
 - **Limited** – Full LED Matrix, 18-calowe felgi, kamera 360°, bezprzewodowy CarPlay
 - **Trail** – opony All-Terrain, osłona podwozia, podwyższony prześwit, blokada dyferencjału
 
-## Typowe usterki Transit Custom
+## Typowe usterki Ford Transit Custom
 
 ### Gen I (2012–2023)
 
@@ -107,7 +107,7 @@ Mild hybrid 48V (gen II) regeneruje energię przy hamowaniu i wspomaga rozruszni
 
 Zbyt wczesny na historię usterek – model dopiero wchodzi na rynek wtórny. Zwróć uwagę na układ mild hybrid 48V (nowa technologia w dostawczakach Forda) i elektronikę SYNC 4.
 
-## Ceny Transit Custom
+## Ceny Transit Customa
 
 ### Nowy gen II
 
@@ -128,7 +128,7 @@ Zbyt wczesny na historię usterek – model dopiero wchodzi na rynek wtórny. Zw
 | Gen I (2021–2023) | 90 000–130 000 zł |
 | Gen II (od 2024) | od 140 000 zł |
 
-## Porównanie Transit Custom z konkurencją
+## Porównanie Ford Transit Custom z konkurencją
 
 | Parametr | Ford Transit Custom L2 | VW Transporter T6.1 L2 | Mercedes Vito Long | Renault Trafic L2 | Peugeot Expert L2 |
 |----------|------------------------|------------------------|--------------------|--------------------|-------------------|

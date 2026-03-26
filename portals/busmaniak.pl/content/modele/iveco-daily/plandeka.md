@@ -34,6 +34,12 @@ Przy dłuższym podwoziu (L4) i skrzyni do 4,8 m długości osiągasz 20–21 m�
 
 Daily plandeka dostępna jest od DMC 3,5 t do 7,2 t. Masa samej zabudowy plandekowej wynosi 400–600 kg, więc przy DMC 3,5 t ładowność netto to zwykle 1 000–1 200 kg. Przy DMC 7,2 t możesz ładować 2 500–2 800 kg.
 
+| Podwozie | Dł. skrzyni | Pojemność | DMC | Ładowność netto |
+|----------|-------------|-----------|-----|-----------------|
+| L2 / L3 | 3 800 mm | ok. 16 m³ | 3,5–5,0 t | 1 000–1 800 kg |
+| L3 | 4 300 mm | ok. 18 m³ | 5,0–7,2 t | 1 500–2 500 kg |
+| L4 | 4 600–4 800 mm | 19–21 m³ | 7,2 t | 2 000–2 800 kg |
+
 {{% info title="Optymalne konfiguracje DMC" icon="engineering" %}}
 - DMC 3,5 t – kat. B, dobre dla lekkich towarów objętościowych (meble, AGD)
 - DMC 5,0 t – kat. C1, najlepszy kompromis dla firmy kurierskiej lub budowlanej

@@ -24,8 +24,14 @@ lead: "Toyota Proace Verso Long z 9 miejscami i bagażnikiem 850 litrów to jede
 
 [Toyota Proace Verso](/modele/toyota-proace-verso/) dostępna jest w dwóch długościach:
 
-- Medium – 4959 mm długości, do 7 miejsc (2+3+2), bagażnik ok. 1100 l przy złożonym trzecim rzędzie
-- Long – 5309 mm długości, do 9 miejsc (2+3+4), bagażnik 850 l przy pełnym obsadzeniu
+| Wymiar | Medium | Long |
+|---|---|---|
+| Długość całkowita | 4959 mm | 5309 mm |
+| Rozstaw osi | 2925 mm | 3275 mm |
+| Maks. liczba miejsc | 7 (2+3+2) | 9 (2+3+4) |
+| Bagażnik – pełne obsadzenie | ok. 440 l | 850 l |
+| Bagażnik – złożony 3. rząd | ok. 1100 l | ok. 2100 l |
+| Silniki | 1.5 / 2.0 D-4D | 2.0 D-4D |
 
 Szerokość i wysokość są identyczne dla obu wersji: szerokość całkowita ok. 1920 mm, wysokość ok. 1900 mm. Rozstaw osi w wersji Long wynosi 3275 mm wobec 2925 mm w Medium.
 

@@ -22,7 +22,7 @@ faq:
     answer: "Wersja Short mieści jedną europaletę (1200×800 mm) przy złożonych przednich siedzeniach pasażera. Wersja Long mieści dwie europalety – to kluczowa różnica przy wyborze długości nadwozia."
 ---
 
-## Proace City – co to za auto?
+## Historia i konstrukcja Toyota ProAce City
 
 Toyota weszła na segment kompaktowych dostawczaków w 2020 roku, przejmując gotową architekturę Stellantis (dawniej PSA). [Toyota Proace City](https://pl.wikipedia.org/wiki/Toyota_Proace_City) produkowany jest w fabryce w Vigo w Hiszpanii – tej samej, która składa Partnera i Berlingo. To decyzja biznesowa, nie kompromis techniczny: platforma EMP2 to dojrzała konstrukcja, sprawdzona w milionach egzemplarzy.
 
@@ -35,7 +35,7 @@ Czym Proace City wyróżnia się spośród bliźniaków:
 
 Proace City dostępny jest w dwóch wersjach nadwozia – furgon oraz osobowy (Proace City Verso). Ten przewodnik dotyczy wersji dostawczej. Wariant [osobowy opisujemy osobno](/modele/toyota-proace-city/osobowy/).
 
-## Wymiary i ładowność
+## Wymiary Toyota ProAce City
 
 ![Toyota Proace City Short vs Long – porównanie wymiarów nadwozia](/images/toyota-proace-city-wymiary.jpg)
 
@@ -60,7 +60,7 @@ Wersja Long kosztuje zwykle 3000–5000 zł więcej niż Short. Jeśli regularni
 
 Szczegółową specyfikację wersji Long – w tym przestrzeń między łukami kół i opcje zabudowy – znajdziesz na stronie [Toyota Proace City Long](/modele/toyota-proace-city/long/).
 
-## Silniki
+## Silniki ProAce City
 
 ### Benzyna – 1.2 PureTech
 
@@ -88,7 +88,7 @@ W segmencie kompaktowych dostawczaków diesel wciąż dominuje – zwłaszcza pr
 
 ![Toyota Proace City furgon](/images/toyota-proace-city-hero.jpg)
 
-## Wersja elektryczna
+## ProAce City Electric
 
 Toyota Proace City Electric korzysta z tego samego silnika elektrycznego co Peugeot e-Partner i Citroën ë-Berlingo. Parametry:
 
@@ -103,7 +103,7 @@ Proace City Electric zachowuje identyczne wymiary zewnętrzne i tę samą pojemn
 
 Elektryczny Proace City kwalifikuje się do polskich dopłat w programach wsparcia flot zeroemisyjnych. Całkowity koszt posiadania (TCO) w 5-letnim cyklu eksploatacyjnym przy przebiegu 30 000 km/rok jest zbliżony do wariantu 1.5 D-4D 100 KM – różnica zależy głównie od kosztu energii elektrycznej vs oleju napędowego.
 
-## Porównanie z konkurencją
+## Porównanie ProAce City z konkurencją
 
 Proace City konkuruje bezpośrednio z bliźniakami na platformie EMP2 oraz z Renault Kangoo IV.
 

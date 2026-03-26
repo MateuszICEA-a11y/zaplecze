@@ -61,6 +61,12 @@ Silniki gen II w wersji osobowej:
 
 ## Przestrzeń dla pasażerów
 
+| Konfiguracja             | Miejsca | Bagażnik (kanapa złożona) | Drzwi boczne |
+|--------------------------|---------|---------------------------|--------------|
+| Panorama krótka          | 5       | ok. 2693 l                | przesuwne    |
+| Panorama Maxi (2 rzędy)  | 5+2     | ok. 800 l                 | przesuwne    |
+| Panorama Maxi (3 rzędy)  | 7       | ok. 100 l                 | przesuwne    |
+
 Doblò Panorama jest wysoki (ok. 1800 mm) – to oznacza, że pasażerowie siadają wyprostowani, bez zginania głowy. Przestrzeń na nogi w drugim rzędzie jest wyraźnie lepsza niż w kompaktach.
 
 Dostęp przez drzwi boczne przesuwne to duże udogodnienie z dziećmi – nie martwisz się o sąsiedni samochód na parkingu. Wyjście przez duże drzwi jest też łatwiejsze dla osób starszych.

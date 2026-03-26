@@ -43,6 +43,15 @@ Szerokość przestrzeni ładunkowej między nadkolami wynosi 1420 mm we wszystki
 
 Pojemność przestrzeni ładunkowej zależy wprost od kombinacji długości i wysokości:
 
+| Wersja | Długość całkowita | Długość podłogi | Pojemność | Europalety |
+|---|---|---|---|---|
+| L1H1 | 4932 mm | 2554 mm | 6,0 m³ | 2 |
+| L2H2 | 5531 mm | 2807 mm | 8,6 m³ | 3 |
+| L2H3 | 5531 mm | 2807 mm | 9,5 m³ | 3 |
+| L3H2 | 6019 mm | 3545 mm | 11,5 m³ | 4 |
+| L3H3 | 6019 mm | 3545 mm | 12,9 m³ | 4 |
+| L4H3 | 6629 mm | 4404 mm | 15,1 m³ | 5 |
+
 - L1H1 – ok. 6,0 m³
 - L2H2 – ok. 8,6 m³
 - L2H3 – ok. 9,5 m³

@@ -32,6 +32,13 @@ Zewnętrznie Maxi różni się wydłużonym tyłem. Kabina kierowcy i cała prze
 
 ## Wymiary Fiat Doblò Maxi
 
+| Wersja         | Długość całkowita | Pojemność ładunkowa | Ładowność    |
+|----------------|-------------------|---------------------|--------------|
+| Standard       | 4390 mm           | 3,4 m³              | do ~900 kg   |
+| Maxi (gen II)  | ok. 4740 mm       | 4,2 m³              | do ~1000 kg  |
+| Maxi (gen III) | 4753 mm           | 4,4 m³              | do ~1000 kg  |
+| Maxi XL        | 5000 mm+          | –                   | –            |
+
 ### Generacja III (od 2022)
 
 - Długość: 4753 mm

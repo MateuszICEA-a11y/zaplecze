@@ -21,7 +21,7 @@ faq:
     answer: "Scudo II Panorama 2012–2016: 30 000–55 000 zł. Scudo III 2022–2024: 100 000–160 000 zł."
 ---
 
-## Scudo osobowy – konstrukcja i wersje nadwozia
+## Fiat Scudo osobowy – konstrukcja i wersje nadwozia
 
 Fiat Scudo w wersji osobowej nosi nazwę Panorama – to przeszklone nadwozie z klimatyzacją dla pasażerów, tapicerowanymi ścianami bocznymi i fotelami z regulacją oparć. W odróżnieniu od furgona, Panorama ma homologację M1 (samochód osobowy), co oznacza niższe stawki ubezpieczenia i możliwość odliczenia pełnego VAT przy zakupie na firmę (przy użytku mieszanym – 50%).
 
@@ -80,7 +80,7 @@ Panorama trafia do trzech głównych grup klientów:
 Scudo Panorama z homologacją M1 (osobowy) pozwala na odliczenie 50% VAT przy zakupie i eksploatacji przy użytku mieszanym. Wersja z kratką (N1 zarejestrowana jako osobowy) daje odliczenie 100% VAT, ale wymaga ewidencji przebiegu. Sprawdź z księgową, która opcja jest korzystniejsza dla Twojej firmy.
 {{% /info %}}
 
-## Wyposażenie i opcje Panoramy
+## Wyposażenie Fiat Scudo Panorama
 
 ### Standard w Scudo III Panorama
 

@@ -28,7 +28,7 @@ Marka Maxus należy do koncernu [SAIC Motor](https://en.wikipedia.org/wiki/SAIC_
 
 Na polskim rynku Maxus pozycjonuje się jako producent solidnych aut użytkowych o korzystnym stosunku ceny do jakości. Firma stawia na agresywną ekspansję – oprócz Deliver 9 oferuje mniejszego Deliver 3 i elektrycznego eDeliver 7.
 
-## Historia Deliver 9
+## Historia Maxus Deliver 9
 
 ### Maxus V80 (2011–2019)
 
@@ -64,7 +64,7 @@ Podwozie L4 pod zabudowę osiąga nawet 7418 mm długości.
 
 Ładowność 1500 kg stawia Deliver 9 na równi z [Renault Masterem](/modele/renault-master/) i powyżej bazowego [Fiata Ducato](/modele/fiat-ducato/) (1300 kg).
 
-## Silniki Deliver 9
+## Silniki Maxus Deliver 9
 
 | Silnik | Moc | Moment | Skrzynia | Spalanie (śr.) | Napęd |
 |--------|-----|--------|----------|----------------|-------|
@@ -100,7 +100,7 @@ Rama L3 lub L4 z kabiną pojedynczą lub podwójną (do 7 osób). Idealne pod la
 
 Konfiguracje od 7 do 9 miejsc z regulowanymi fotelami i oddzielnym systemem nawiewów. Używany jako shuttle bus hotelowy i transport pracowniczy.
 
-## Typowe usterki i opinie o Deliver 9
+## Typowe usterki Maxus Deliver 9
 
 Jako stosunkowo młody model (od 2019) nie ma jeszcze długiej historii awaryjności. Użytkownicy chwalą:
 - **Bogate wyposażenie seryjne** – aktywny tempomat i czujniki martwego pola w standardzie

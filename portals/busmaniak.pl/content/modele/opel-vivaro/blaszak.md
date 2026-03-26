@@ -21,7 +21,7 @@ faq:
     answer: "Vivaro A (2005–2010): 15 000–30 000 zł. Vivaro B (2014–2019): 40 000–70 000 zł. Vivaro C (2019–2024): 65 000–120 000 zł."
 ---
 
-## Vivaro blaszak – konstrukcja i wymiary
+## Opel Vivaro blaszak – konstrukcja i wymiary
 
 Blaszak to podstawowa, najczęściej sprzedawana wersja Vivaro – furgon z pełną stalową przegrodą między kabiną a paką, zaślepionymi tylnymi szybami i 2/3-osobową kabiną. Rejestracja N1 (ciężarowy do 3,5 t) pozwala na pełne odliczenie VAT. Wnętrze paki surowe: stalowe ściany, drewniana podłoga pokryta tworzywem, punkty mocowania i oświetlenie LED (w nowszych rocznikach).
 
@@ -70,7 +70,7 @@ Do lekkiej dystrybucji w mieście 1.5 D 100 KM wystarczy. Do regularnych tras z 
 Vivaro blaszak z 1.5 D 120 KM i 6-biegowym manualem to mój wybór dla firm kurierskich pokonujących 40 000+ km rocznie. Spalanie 5,5 l/100 km w cyklu mieszanym to realny wynik, który przy obecnych cenach diesla daje roczną oszczędność 3000–4000 zł wobec starszego Vivaro B z 1.6 CDTi. Przy zakupie używanego Vivaro C sprawdź stan DPF – filtr z dodatkiem Eolys jest droższy w regeneracji niż suchy DPF z generacji A.
 {{% /expert %}}
 
-## Na co uważać przy zakupie blaszaka
+## Na co uważać przy zakupie Opel Vivaro blaszak
 
 Blaszak to auto robocze – większość egzemplarzy na rynku wtórnym pochodzi z flot i ma intensywną historię eksploatacji. Na co patrzeć:
 

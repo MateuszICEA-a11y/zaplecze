@@ -34,6 +34,12 @@ Izoterma to kontener z izolacją termiczną ze styropianu (40–80 mm) lub piank
 
 Przy podwoziu Daily Long (L3H2) wewnętrzna przestrzeń zabudowy wynosi ok. 3 600 × 1 950 × 1 900 mm, co daje 13–14 m³ pojemności. Przy Extra Long (L4H2) – do 4 300 × 1 950 × 1 900 mm, czyli 16 m³.
 
+| Podwozie | Dł. zabudowy (zew.) | Poj. wnętrza | Europalety |
+|----------|---------------------|--------------|------------|
+| L2 | 3 800 mm | ok. 6–8 m³ | 3–4 szt. |
+| L3 | 4 600 mm | ok. 13–14 m³ | 5–6 szt. |
+| L4 | 5 400 mm | ok. 16–18 m³ | 7–8 szt. |
+
 {{% info title="Grubość izolacji a ładowność" icon="engineering" %}}
 - Styropian 40 mm – lżejszy, tańszy, utrata ok. 120–150 mm szerokości wewnętrznej
 - Styropian 80 mm – lepsza izolacja, utrata ok. 200 mm szerokości, cięższa zabudowa

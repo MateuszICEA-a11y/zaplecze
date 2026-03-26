@@ -22,7 +22,7 @@ faq:
     answer: "Toyota Proace II ma większą ładownię (Long: 6,1 m³ vs Trafic L2: ~5,2 m³) i nowocześniejszą platformę PSA EMP2. Renault Trafic wyróżnia się własną, sprawdzoną jednostką 2.0 dCi i rozbudowaną siecią serwisową w Polsce. Proace wygrywa objętością ładowni i dostępnością wersji elektrycznej, Trafic – ceną zakupu i kosztami eksploatacji w flotach z dostępem do ASO Renault."
 ---
 
-## Historia i generacje
+## Historia i generacje Toyota ProAce
 
 [Toyota Proace](https://pl.wikipedia.org/wiki/Toyota_Proace) pojawił się na rynku w 2013 roku jako odpowiedź marki na rosnące zapotrzebowanie na własny model średniego vana. Przez lata przeszedł dwie wyraźne generacje, różniące się platformą i poziomem integracji z siecią PSA/Stellantis.
 
@@ -31,7 +31,7 @@ faq:
 
 Przejście na platformę EMP2 oznaczało skok jakościowy: lepsze właściwości jezdne, nowocześniejsze jednostki napędowe i możliwość zaproponowania wersji elektrycznej. Proace II to de facto Toyota z logiem na samochodzie zaprojektowanym i zbudowanym przez Stellantis – co ma znaczenie zarówno przy wyborze warsztatu, jak i przy szacowaniu kosztów eksploatacji.
 
-## Silniki
+## Silniki ProAce'a
 
 Toyota Proace II jest dostępna z dwoma rodzinami silników Diesla oraz napędem elektrycznym.
 
@@ -60,7 +60,7 @@ Do tras głównie miejskich i regionalnych z ładunkiem do 800 kg wystarczy 1.5 
 
 ![Toyota Proace II furgon Long](/images/toyota-proace-hero.jpg)
 
-## Dane techniczne i wymiary
+## Dane techniczne Toyota ProAce
 
 Toyota Proace II jest dostępna w dwóch długościach nadwozia: Medium i Long. Poniżej zestawienie kluczowych parametrów.
 
@@ -80,7 +80,7 @@ Toyota Proace II jest dostępna w dwóch długościach nadwozia: Medium i Long. 
 
 Długość ładowni [Proace Long](/modele/toyota-proace/long/) pozwala zabrać trzy europalety – to istotna przewaga nad wersjami Medium przy pracy w logistyce i dystrybucji.
 
-## Wersje nadwoziowe
+## Wersje nadwoziowe Toyota ProAce
 
 Proace II jest oferowany w kilku konfiguracjach, różniących się przeznaczeniem i układem przestrzeni.
 
@@ -94,7 +94,7 @@ Wersja [osobowa Proace](/modele/toyota-proace/osobowy/) bywa mylona z Proace Ver
 Proace City to odpowiednik Peugeota Partner lub Citroëna Berlingo – mniejszy, lżejszy, z krótszą ładownią i niższą ładownością. Toyota Proace (bez dopisku City) to klasa wyżej: odpowiednik Peugeota Expert, z pełnymi 5,3–6,1 m³ przestrzeni ładunkowej. Przy zakupie floty warto upewnić się, który model jest przedmiotem oferty.
 {{% /info %}}
 
-## Typowe usterki i serwis
+## Typowe usterki ProAce'a
 
 Proace II dzieli platformę i mechanikę z Peugeotem Expert III oraz Citroënem Jumpy III. To oznacza, że znane usterki bliźniaków dotyczą go w równym stopniu.
 
@@ -106,7 +106,7 @@ Proace II dzieli platformę i mechanikę z Peugeotem Expert III oraz Citroënem 
 
 Serwis Proace II można realizować zarówno w ASO Toyota, jak i w sieci Peugeot/Citroën – te drugie często mają krótszy czas oczekiwania na części i niższe stawki robocizny.
 
-## Porównanie z konkurencją
+## Porównanie ProAce'a z konkurencją
 
 Toyota Proace II konkuruje bezpośrednio z kilkoma modelami w klasie średnich vanów.
 

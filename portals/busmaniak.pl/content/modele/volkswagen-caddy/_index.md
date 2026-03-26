@@ -25,7 +25,7 @@ faq:
     answer: "Najczęstsze problemy to awarie skrzyni DSG (mechatronik, sprzęgło), rozciąganie łańcucha rozrządu w 1.6 TDI EA189 oraz typowe dla diesli problemy z EGR i DPF."
 ---
 
-## Historia i generacje Volkswagena Caddy {#historia-generacje}
+## Historia i generacje Volkswagen Caddy {#historia-generacje}
 
 Historia [Volkswagena Caddy](https://pl.wikipedia.org/wiki/Volkswagen_Caddy) sięga 1979 roku, kiedy Volkswagen stworzył lekkiego pickupa na bazie Golfa pierwszej generacji. Od tamtej pory model przeszedł pięć generacji, ewoluując z prostego dostawczaka w nowoczesny kombivan.
 
@@ -51,7 +51,7 @@ Piąta generacja to zupełnie nowy samochód. Platforma MQB (ta sama co Golf VII
 
 {{% info title="Platforma MQB" icon="engineering" %}}Przeskok z PQ35 na MQB w Caddy V to zmiana porównywalna z przejściem z Golfa VI na Golfa VII. Nowa platforma pozwoliła na montaż systemów znanych z samochodów osobowych VW – Digital Cockpit, Travel Assist, matrycowe LED.{{% /info %}}
 
-## Dane techniczne i wymiary {#dane-techniczne}
+## Dane techniczne i wymiary Volkswagen Caddy {#dane-techniczne}
 
 Wymiary Caddy V generacji:
 
@@ -67,7 +67,7 @@ Wymiary Caddy V generacji:
 
 Caddy to jeden z większych kombivanów w segmencie – dłuższy od [Berlingo](/modele/citroen-berlingo/) o ok. 100 mm. Szczegóły o wydłużonej wersji w artykule o [Caddy Maxi](/modele/volkswagen-caddy/maxi/).
 
-## Silniki {#silniki}
+## Silniki Caddy'ego {#silniki}
 
 Gama silnikowa obejmuje diesle TDI i benzynowe TSI:
 
@@ -83,7 +83,7 @@ Volkswagen nie oferuje jeszcze elektrycznego Caddy, choć platforma MQB technicz
 
 ![Volkswagen Caddy V na drodze](/images/volkswagen-caddy-hero.jpg)
 
-## Wersje nadwoziowe {#wersje-nadwozia}
+## Wersje nadwoziowe Volkswagen Caddy {#wersje-nadwozia}
 
 - **[Caddy osobowy](/modele/volkswagen-caddy/osobowy/) (Life/Style/Move)** – wersja rodzinna z 5 lub 7 miejscami, bogate wyposażenie
 - **Caddy Cargo** – dostawczy z przegrodą, 2–3 miejsca, homologacja N1
@@ -104,7 +104,7 @@ Caddy rywalizuje z:
 
 Caddy wygrywa jakością wykończenia, prowadzeniem (platforma MQB) i wartością rezydualną. Przegrywa ceną – zarówno nowe, jak i na rynku wtórnym jest najdroższe w segmencie.
 
-## Typowe usterki i koszty eksploatacji {#usterki}
+## Typowe usterki Volkswagen Caddy {#usterki}
 
 Najczęstsze problemy per generacja:
 
@@ -114,7 +114,7 @@ Najczęstsze problemy per generacja:
 
 Koszty serwisowe Caddy są wyższe niż u konkurencji z grupy PSA. Przegląd olejowy to 400–600 zł (vs 300–500 zł w Berlingo), wymiana rozrządu 800–1500 zł. Części oryginalne VW są droższe, ale zamienniki są szeroko dostępne.
 
-## Ceny Caddy
+## Ceny Caddy'ego
 
 | Generacja / Rocznik | Cena orientacyjna |
 |---------------------|-------------------|

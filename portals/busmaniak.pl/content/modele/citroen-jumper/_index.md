@@ -17,7 +17,7 @@ faq:
     answer: "Jumper jest oferowany w konfiguracjach 8–17 m³. Najczęściej wybierana wersja L2H2 oferuje 13 m³, L3H2 – 15 m³. Wersja L4H3 osiąga 17 m³."
 lead: "Citroën Jumper III to duży van dostawczy segmentu N1/N2, techniczny bliźniak Fiata Ducato III i Peugeota Boxera III. Od 2006 roku budowany na platformie Sevel Sud, po faceliftingach w 2014 i 2020 roku zyskał silniki 2.2 BlueHDi spełniające normę Euro 6d."
 ---
-## Platforma Sevel Sud – wspólna podstawa trójki
+## Citroën Jumper i platforma Sevel Sud
 
 Jumper III dzieli z Ducatem i Boxerem:
 - przednionapędową platformę Sevel Sud
@@ -51,7 +51,7 @@ Jumper, Boxer czy Ducato – to pytanie, które słyszę regularnie od firm zaku
 
 Płyn AdBlue wymagany w wersjach BlueHDi (zbiornik 25 l, uzupełnianie co 10 000–15 000 km).
 
-## Wersje nadwoziowe i wymiary
+## Wersje nadwoziowe Citroën Jumper
 
 | Wariant | Długość | Pojemność | Ładowność |
 |---|---|---|---|
@@ -85,7 +85,7 @@ Szerokość maksymalna: 1870 mm
 ë-Jumper spełnia wymagania najwyższej kategorii (Zero Emission) we wszystkich europejskich strefach czystego transportu. W Polsce – gdzie strefy są wdrażane stopniowo – ë-Jumper będzie bezproblemowy przez najbliższe 15–20 lat regulacyjnie. Dla firm z kontraktami na obsługę centrów miast i stref pieszych to kluczowy argument przy zakupie.
 {{% /info %}}
 
-## Serwis i typowe usterki Jumpera
+## Typowe usterki Citroën Jumper
 
 Jumper korzysta z sieci Citroën (ok. 150 ASO w Polsce). Serwis identyczny z [Fiatem Ducato](/modele/fiat-ducato/) i Boxerem – te same części, procedury i interwały.
 
@@ -114,7 +114,7 @@ Jumper korzysta z sieci Citroën (ok. 150 ASO w Polsce). Serwis identyczny z [Fi
 | Nowy Jumper L2H2 (2.2 BlueHDi 140) | od ok. 160 000 zł netto |
 | ë-Jumper L2H2 (75 kWh) | od ok. 280 000 zł netto |
 
-## Porównanie Jumpera z konkurencją
+## Porównanie Citroën Jumper z konkurencją
 
 | Parametr | Citroën Jumper L3H2 | Peugeot Boxer L3H2 | Fiat Ducato L3H2 | Opel Movano C L3H2 | VW Crafter L3H3 |
 |----------|--------------------|--------------------|------------------|--------------------|--------------------|

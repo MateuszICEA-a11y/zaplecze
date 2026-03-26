@@ -21,7 +21,7 @@ faq:
     answer: "Tak – to najczęstsza usterka. Łańcuch rozciąga się po 150–200 tys. km. Wymiana: 1500–2500 zł. Objaw: terkotanie przy zimnym rozruchu."
 ---
 
-## Silniki CDTi w Combo – przegląd generacji
+## Silniki CDTi w Opel Combo – przegląd generacji
 
 Oznaczenie CDTi (Common rail Diesel Turbo injection) to handlowa nazwa Opla dla turbodiesli. W Combo stosowano je w trzech generacjach – każda z innym dostawcą silnika i inną charakterystyką.
 

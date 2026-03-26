@@ -46,6 +46,15 @@ Klapa tylna otwierana do 270° (przymocowana do boku pojazdu) jest niezastąpion
 
 Wymiary przestrzeni ładunkowej w popularnych konfiguracjach:
 
+| Parametr | L2H2 | L3H2 | L3H3 | L4H3 |
+|---|---|---|---|---|
+| Długość całkowita | 5531 mm | 6019 mm | 6019 mm | 6629 mm |
+| Długość podłogi | 2807 mm | 3545 mm | 3545 mm | 4217 mm |
+| Szerokość ładowni | 1785 mm | 1785 mm | 1785 mm | 1785 mm |
+| Wysokość ładowni | 1850 mm | 1850 mm | 2125 mm | 2125 mm |
+| Pojemność | 8,6 m³ | 11,5 m³ | 13,6 m³ | 15,1 m³ |
+| Szerokość między nadkolami | 1420 mm | 1420 mm | 1420 mm | 1420 mm |
+
 - L2H2 – długość 2807 mm, szerokość 1785 mm, wysokość 1850 mm, pojemność ok. 8,6 m³
 - L3H2 – długość 3545 mm, szerokość 1785 mm, wysokość 1850 mm, pojemność ok. 11,5 m³
 

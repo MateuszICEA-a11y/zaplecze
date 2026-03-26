@@ -21,7 +21,7 @@ faq:
     answer: "Nowy 9-osobowy od ok. 130 000 zł netto. 14-miejscowy od ok. 150 000 zł netto. Sprinter Tourer w porównywalnej konfiguracji: od 200 000 zł."
 ---
 
-## Deliver 9 osobowy – konstrukcja i wersje
+## Maxus Deliver 9 osobowy – konstrukcja i wersje
 
 Deliver 9 osobowy to przebudowana wersja furgona z zabudową pasażerską – przeszklone nadwozie, fotele z regulacją oparć, nawiewy klimatyzacji i oświetlenie sufitowe. Dostępne konfiguracje od 9 do 17 miejsc pozwalają na obsługę transferów lotniskowych, przewozów pracowniczych i turystyki grupowej.
 
@@ -95,7 +95,7 @@ Deliver 9 osobowy to najtańszy bus pasażerski na rynku – i jednocześnie jed
 | 17-miejscowy L4H3 | ok. 170 000 zł |
 | e-Deliver 9 osobowy | od ok. 250 000 zł |
 
-## Porównanie z konkurencją
+## Porównanie Maxus Deliver 9 osobowego z konkurencją
 
 | Parametr | Maxus Deliver 9 (9-os.) | Mercedes Sprinter Tourer | Ford Transit Kombi | Fiat Ducato Kombi |
 |----------|------------------------|------------------------|--------------------|-------------------|

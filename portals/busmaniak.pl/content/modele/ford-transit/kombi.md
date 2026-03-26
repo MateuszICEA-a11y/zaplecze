@@ -48,6 +48,14 @@ Szerokość wnętrza wynosi ok. 1770 mm – komfortowa dla 3 osób w rzędzie. W
 
 Kluczowe wymiary nadwozia:
 
+| Parametr | L2 Kombi | L3 Kombi | L4 Kombi |
+|---|---|---|---|
+| Długość całkowita | 6019 mm | 6437 mm | 6737 mm |
+| Rozstaw osi | 3300 mm | 3750 mm | 4035 mm |
+| Wysokość dachu | H1 lub H2 | H1 lub H2 | H2 |
+| Liczba miejsc | 6–9 | 9–13 | 12–15 |
+| Homologacja | M1 (do 9 miejsc) | M1 lub M2 | M2 |
+
 - L2: długość całkowita 6019 mm, rozstaw osi 3300 mm
 - L3: długość całkowita 6437 mm, rozstaw osi 3750 mm
 - L4: długość całkowita 6737 mm, rozstaw osi 4035 mm

@@ -21,7 +21,7 @@ faq:
     answer: "EGR (zapychanie), DPF (mokry filtr z Eolys), wtryskiwacze po 250 tys. km, turbosprężarka. W BlueHDi: pompa AdBlue."
 ---
 
-## Dane techniczne silników HDi w Jumperze
+## Dane techniczne silników HDi w Citroën Jumper
 
 Jumper od początku produkcji napędzany jest silnikami wysokoprężnymi z wtryskiem Common Rail, oznaczonymi jako HDi (do 2020) i BlueHDi (od 2020, z AdBlue).
 
@@ -69,7 +69,7 @@ Sześciocylindrowy 3.0 HDi 160 KM (2006–2014) to rzadkość na rynku wtórnym.
 
 Spalanie rośnie o 25–40% w porównaniu do trasy. 2.2 BlueHDi 140 KM w mieście z ładunkiem: 9,5–11 l/100 km. Główny czynnik to zabudowa – furgon z wysokim dachem (H3) pali 10–15% więcej niż niski (H1) z powodu oporu aerodynamicznego.
 
-## Typowe usterki HDi w Jumperze
+## Typowe usterki HDi w Citroën Jumper
 
 ### Problemy wspólne dla 2.2 HDi (do 2020)
 

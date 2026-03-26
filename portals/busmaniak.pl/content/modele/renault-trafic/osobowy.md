@@ -33,6 +33,12 @@ Obie wersje mają przesuwane drzwi z obu stron i tylną klapę – to standard s
 
 ## Wymiary i konfiguracja siedzeń {#wymiary}
 
+| Wersja | Długość całkowita | Układ siedzeń | Maks. pasażerów |
+|--------|-------------------|---------------|-----------------|
+| L1H1 Passenger | 5080 mm | 2+3+3 | 8 |
+| L2H1 Passenger | 5480 mm | 2+3+4 | 9 |
+| L2H1 SpaceClass | 5480 mm | 2+2+3 (kapitan.) | 7 |
+
 Dwa warianty długości przekładają się bezpośrednio na użyteczność:
 
 - **L1H1:** Długość całkowita 5080 mm, rozstaw do tylnej ściany 2700 mm. Maksymalnie 8 pasażerów w układzie 2+3+3 lub 2+2+3.

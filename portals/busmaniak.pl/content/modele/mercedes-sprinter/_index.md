@@ -22,7 +22,7 @@ faq:
     answer: "Odpowiedź zależy od zastosowania. Sprinter jest droższy w zakupie i serwisie, ale oferuje wyższy prestiż, lepsze zawieszenie tylne (zwłaszcza w RWD) i większy wybór konfiguracji DMC. Transit wygrywa ceną zakupu, dostępnością tanich zamienników i niższymi kosztami eksploatacji. W transporcie ciężkim i kampingowym Sprinter jest tradycyjnie preferowany; w dostawach kurierskich Transit lub Daily często okazują się bardziej opłacalne."
 ---
 
-## Historia i generacje {#historia-generacje}
+## Historia i generacje Mercedes Sprinter {#historia-generacje}
 
 [Mercedes-Benz Sprinter](https://pl.wikipedia.org/wiki/Mercedes-Benz_Sprinter){rel="nofollow"} zadebiutował w 1995 roku jako następca legendarnego TN (T1). Od pierwszego dnia wyznaczał standardy segmentu – tylnonapędowe podwozie, solidna konstrukcja ramowa w wersjach ciężkich i niezwykła jak na dostawczak kultura jazdy. Przez trzy dekady Sprinter stał się synonimem profesjonalnego transportu, a jego nazwa funkcjonuje w języku potocznym jako rzeczownik pospolity na określenie busa dostawczego.
 
@@ -42,7 +42,7 @@ Trzecia generacja to największa rewolucja w historii modelu. Po raz pierwszy Sp
 Mercedes Sprinter III to pierwszy w historii Sprinter dostępny z napędem na przednią oś. Wersja FWD (W910) jest szczególnie popularna w zastosowaniach kurierskich i komunalnych, gdzie niższy próg załadunku i lepsze właściwości trakcyjne na śliskich nawierzchniach mają kluczowe znaczenie.
 {{% /info %}}
 
-## Dane techniczne i wymiary {#dane-techniczne}
+## Dane techniczne i wymiary Mercedes Sprinter {#dane-techniczne}
 
 Sprinter III jest dostępny w wariantach nadwoziowych L1 do L4 (długość) i H1 do H3 (wysokość). Najpopularniejsza konfiguracja w Polsce to L2H2 – klasyczny furgon o pojemności ok. 10,5 m³, który mieści się na standardowym miejscu parkingowym i nie wymaga windy załadunkowej.
 
@@ -71,7 +71,7 @@ Sprinter III jest dostępny w wariantach nadwoziowych L1 do L4 (długość) i H1
 
 Sprinter w wersji podwozia i ciężkiej (6-kołowej) może mieć DMC 5500 kg – wówczas wymagane jest prawo jazdy kategorii C.
 
-## Silniki {#silniki}
+## Silniki Sprintera {#silniki}
 
 ### OM654 (2.0 CDI) – silnik nowej generacji
 
@@ -113,7 +113,7 @@ Wybierając między OM654 a OM651 w używanym Sprinterze III, zwróć uwagę na 
 
 ![Mercedes Sprinter III furgon](/images/mercedes-sprinter-hero.jpg)
 
-## Wersje nadwoziowe {#wersje-nadwoziowe}
+## Wersje nadwoziowe Mercedes Sprinter {#wersje-nadwoziowe}
 
 Sprinter oferuje jeden z najszerszych zakresów zabudów w klasie – od klasycznego furgona po specjalistyczne pojazdy sanitarne i ratownicze.
 
@@ -128,7 +128,7 @@ Sprinter oferuje jeden z najszerszych zakresów zabudów w klasie – od klasycz
 Fraza "Sprinter Van" generuje w Polsce 18 100 wyszukiwań miesięcznie – więcej niż ogólny "Mercedes Sprinter dane techniczne". Jeśli szukasz informacji wyłącznie o wersji furgon, przejdź do [szczegółowego artykułu o Sprinterze Van](/modele/mercedes-sprinter/van/).
 {{% /info %}}
 
-## Typowe usterki {#usterki}
+## Typowe usterki Mercedes Sprinter {#usterki}
 
 Znajomość słabych punktów modelu przed zakupem używanego Sprintera pozwala uniknąć kosztownych niespodzianek.
 
@@ -161,7 +161,7 @@ Znajomość słabych punktów modelu przed zakupem używanego Sprintera pozwala 
 - Czujniki parkowania i kamera cofania – awarie spowodowane korozją wtyczek.
 - Sterowanie zawieszeniem pneumatycznym (wersje z zawieszeniem Airmatic) – kosztowne naprawy: sprężarka od 3000 zł.
 
-## Porównanie z konkurencją {#porownanie}
+## Porównanie Sprintera z konkurencją {#porownanie}
 
 | Cecha | Sprinter III (W907) | Ford Transit V363 | Iveco Daily (VI gen.) |
 |-------|--------------------|--------------------|----------------------|

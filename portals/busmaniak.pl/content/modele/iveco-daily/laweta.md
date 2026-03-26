@@ -35,6 +35,12 @@ Prawdziwe zastosowanie zaczyna się od DMC 5,0 t wzwyż – tutaj już jesteś n
 
 Standardowa platforma lawety na podwoziu Daily mierzy 5,0–5,5 m długości przy rozstawie osi L3 i 5,5–6,0 m przy L4. Szerokość platformy 2,1–2,2 m pozwala swobodnie zmieścić każde auto osobowe.
 
+| Podwozie | Dł. platformy | Szer. platformy | Kąt najazdu | Nośność |
+|----------|---------------|-----------------|-------------|---------|
+| L3 / DMC 5,0 t | 4 500–5 000 mm | 2 000–2 100 mm | ok. 12° | ~1 800 kg |
+| L3 / DMC 7,2 t | 4 500–5 500 mm | 2 100–2 200 mm | ok. 12° | ~2 800 kg |
+| L4 / DMC 7,2 t | 5 500–6 000 mm | 2 100–2 200 mm | ok. 15° | ~3 000 kg |
+
 {{% info title="Rodzaje najazdów" icon="engineering" %}}
 - Najazd hydrauliczny – komfort obsługi, brak wysiłku fizycznego, cena zabudowy wyższa o 8–12 tys. zł
 - Najazd aluminiowy – lżejszy, prostszy, wystarczający przy DMC do 5,0 t

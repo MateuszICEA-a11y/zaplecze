@@ -19,6 +19,16 @@ lead: "Peugeot Boxer w wersjach Long – L3 i L4 – to wybór dla firm, które 
 ---
 ## Wersje L3 i L4 – charakterystyka
 
+| Parametr | L3H2 | L3H3 | L4H3 |
+|---|---|---|---|
+| Długość całkowita | 5998 mm | 5998 mm | 6363 mm |
+| Dł. przestrzeni ładunkowej | 3705 mm | 3705 mm | 4070 mm |
+| Wysokość przestrzeni | 2173 mm | 2486 mm | 2486 mm |
+| Pojemność | 15 m³ | 17 m³ (est.) | 17 m³ |
+| Ładowność (DMC 3,5 t) | ok. 1500 kg | ok. 1450 kg | ok. 1550 kg |
+| Ładowność (DMC 4 t) | – | – | do 1735 kg |
+| Silniki | 140 / 165 KM | 140 / 165 KM | 165 KM + EAT8 |
+
 **Boxer L3H2:**
 - długość całkowita: 5998 mm
 - pojemność: 15 m³

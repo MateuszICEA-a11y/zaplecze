@@ -21,7 +21,7 @@ faq:
     answer: "Nowy od ok. 130 000 zł brutto (Allure Long). Używany 2019–2021: 70 000–90 000 zł."
 ---
 
-## Wymiary Riftera Long
+## Wymiary Peugeot Rifter Long
 
 Rifter Long to 350 mm więcej nadwozia niż Standard – całość trafia do przestrzeni za 2. rzędem siedzeń. Rozstaw osi rośnie z 2785 do 2975 mm, co poprawia stabilność na autostradzie, ale zwiększa średnicę zawracania z 10,8 do 11,8 m.
 
@@ -94,7 +94,7 @@ Wersja 7-osobowa dostępna od wersji Allure wzwyż. Active Long to wyłącznie 5
 
 Wersja Long kosztuje ok. 10 000–15 000 zł więcej niż Standard w tej samej specyfikacji. Na rynku wtórnym różnica maleje do 5 000–8 000 zł, bo Long jest rzadszy i bardziej poszukiwany.
 
-## Porównanie Riftera Long z konkurencją
+## Porównanie Peugeot Rifter Long z konkurencją
 
 | Parametr | Peugeot Rifter Long | Citroën Berlingo XL | Opel Combo Life XL | Renault Grand Kangoo | VW Caddy Maxi |
 |----------|--------------------|--------------------|---------------------|----------------------|---------------|

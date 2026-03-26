@@ -21,7 +21,7 @@ faq:
     answer: "2.0 TDI: łańcuch rozrządu (rozciąga się po 150 tys. km), pompa wody. V6: trwały, ale kosztowny w serwisie. Oba: korozja układu wydechowego."
 ---
 
-## Dane techniczne TDI w Amaroku
+## Dane techniczne TDI w Volkswagen Amarok
 
 Dwie generacje Amaroka – dwie filozofie silnikowe. Amarok I (2010–2022) zaczynał od 2.0 TDI i doczekał się V6. Amarok II (od 2022) na platformie [Ford Ranger](/modele/ford-ranger/) T6 oferuje te same silniki co Ranger, ale z oprogramowaniem VW.
 

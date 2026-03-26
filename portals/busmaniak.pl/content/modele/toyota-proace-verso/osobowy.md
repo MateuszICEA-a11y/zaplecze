@@ -73,10 +73,14 @@ Verso zarejestrowany jako M1 podlega pełnemu opodatkowaniu VAT przy zakupie pry
 
 Ceny orientacyjne dla rynku polskiego:
 
-- Shuttle Medium od ok. 175 000 zł
-- Family Medium od ok. 205 000 zł
-- VIP Medium od ok. 250 000 zł
-- Shuttle Long – dopłata ok. 10 000–15 000 zł względem Medium
+| Konfiguracja | Długość | Miejsca | Cena orientacyjna |
+|---|---|---|---|
+| Shuttle Medium | 4959 mm | 5–7 | od ok. 175 000 zł |
+| Family Medium | 4959 mm | 5–7 | od ok. 205 000 zł |
+| VIP Medium | 4959 mm | 5–8 | od ok. 250 000 zł |
+| Shuttle Long | 5309 mm | 8–9 | od ok. 185 000–190 000 zł |
+| Family Long | 5309 mm | 8–9 | od ok. 215 000 zł |
+| VIP Long | 5309 mm | 8–9 | od ok. 260 000 zł |
 
 Bezpośrednia konkurencja:
 

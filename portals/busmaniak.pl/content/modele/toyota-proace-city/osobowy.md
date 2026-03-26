@@ -26,8 +26,10 @@ lead: "Toyota Proace City Verso w wersji Long z 7 miejscami kosztuje od około 1
 
 Samochód jest dostępny w dwóch długościach nadwozia:
 
-- Short/Medium – długość ok. 4403 mm, 5 miejsc w układzie 2+3
-- Long – długość ok. 4753 mm, 7 miejsc w układzie 2+3+2
+| Wersja | Długość | Miejsca | Układ siedzeń | Przesuwne drzwi |
+|---|---|---|---|---|
+| Short/Medium | 4403 mm | 5 | 2+3 | Prawe (opcja lewe) |
+| Long | 4753 mm | 5 lub 7 | 2+3+2 | Prawe (opcja lewe) |
 
 Wersja Long trafia do rodzin z dziećmi i firm przewozowych, które potrzebują małego, oszczędnego busa na krótkich trasach miejskich.
 

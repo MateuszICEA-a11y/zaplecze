@@ -22,7 +22,7 @@ faq:
     answer: "Wymiana łańcucha rozrządu w silniku 2.2 TDCi kosztuje orientacyjnie 2000–3500 zł z robocizną. To najczęstszy i najpoważniejszy problem mechaniczny Transita VII."
 ---
 
-## Historia i generacje
+## Historia i generacje Ford Transit
 
 [Ford Transit](https://pl.wikipedia.org/wiki/Ford_Transit) jest produkowany nieprzerwanie od 1965 roku – do dziś sprzedano ponad 13 milionów egzemplarzy, co czyni go numerem 1 wśród dużych furgonetek na świecie. Przez ten czas model przechodził gruntowne modernizacje; dla rynku wtórnego i użytkowego liczą się dwie ostatnie generacje:
 
@@ -38,7 +38,7 @@ Transit VII jest wciąż popularny ze względu na cenę – jego słabe punkty t
 Kupując Transita VII (2006–2014) warto zwrócić szczególną uwagę na hałas z okolicy silnika (łańcuch rozrządu) i stan progów oraz nadkoli (korozja). Koszty naprawy łańcucha mogą wynosić 2000–3500 zł, a korozja progów to często kilkanaście tysięcy złotych prac blacharsko-lakierniczych.
 {{% /info %}}
 
-## Dane techniczne i wymiary
+## Dane techniczne i wymiary Ford Transit
 
 ### Konfiguracje nadwozia
 
@@ -68,7 +68,7 @@ Transit VIII jest dostępny w 4 długościach (L1–L4) i do 3 wysokościach (H1
 - **Pojemność ładowni** – 9,5 m³
 - **Europalety** – 3
 
-## Silniki
+## Silniki Transita
 
 ### 2.0 EcoBlue (od 2016)
 
@@ -103,7 +103,7 @@ W mojej ocenie Ford Transit VIII z silnikiem 2.0 EcoBlue 130 KM to aktualnie naj
 
 ![Ford Transit VIII furgon](/images/ford-transit-hero.jpg)
 
-## Wersje nadwoziowe
+## Wersje nadwoziowe Ford Transit
 
 Ford Transit VIII jest oferowany w czterech podstawowych wersjach zabudowy:
 
@@ -114,7 +114,7 @@ Ford Transit VIII jest oferowany w czterech podstawowych wersjach zabudowy:
 
 Każda wersja jest dostępna z napędem FWD lub RWD – wersje z napędem tylnym (oznaczenie RWD) mają wyższą ładowność przy tym samym DMC.
 
-## Typowe usterki
+## Typowe usterki Ford Transit
 
 ### 2.0 EcoBlue
 
@@ -133,7 +133,7 @@ Każda wersja jest dostępna z napędem FWD lub RWD – wersje z napędem tylnym
 - **Synchronizatory 3. i 4. biegu (skrzynia manualna)** – twarde wbijanie biegów; objaw narasta stopniowo; naprawa 1500–2500 zł
 - **Korozja progów i nadkoli** – dotyczy głównie Transita VII i pierwszych egzemplarzy VIII; progresywna, wymaga interwencji przed sezonem zimowym
 
-## Porównanie z konkurencją
+## Porównanie Transita z konkurencją
 
 Transit walczy w segmencie dużych furgonetek z czterema głównymi rywalami:
 

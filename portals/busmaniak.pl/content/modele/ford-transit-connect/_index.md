@@ -20,7 +20,7 @@ faq:
     answer: "Wersja 100 KM zużywa 5,2–6,0 l/100 km. Przy pełnym obciążeniu na autostradzie do ok. 7,5 l."
 ---
 
-## Historia i generacje Transit Connect
+## Historia i generacje Ford Transit Connect
 
 Kompaktowy dostawczak wypełniający lukę między mikrovanami a średnim [Fordem Transit Custom](/modele/ford-transit-custom/). Trzy generacje, trzy różne platformy.
 
@@ -42,7 +42,7 @@ Connect Mk2 był jednym z pierwszych kompaktowych dostawczaków z systemem autom
 
 Najnowszy Connect to owoc współpracy z koncernem VAG – dzieli podzespoły z piątą generacją Caddy. Napęd Plug-in Hybrid, zaawansowane multimedia i cyfrowe zegary. Zachowuje jednak charakterystyczną fordowską stylistykę przedniego pasa i specyficzną kalibrację zawieszenia.
 
-## Wymiary Transit Connect
+## Wymiary Transit Connecta
 
 | Parametr | Mk2 L1 (Short) | Mk2 L2 (Long) | Mk3 L1 | Mk3 L2 |
 |----------|----------------|---------------|--------|--------|
@@ -58,7 +58,7 @@ Najnowszy Connect to owoc współpracy z koncernem VAG – dzieli podzespoły z 
 - **Próg załadowczy** – 596 mm
 - **Dwie europalety** – mieszczą się w wersji L2
 
-## Silniki Transit Connect
+## Silniki Ford Transit Connect
 
 | Silnik | Generacja | Moc | Moment | Spalanie (śr.) | Norma |
 |--------|-----------|-----|--------|----------------|-------|
@@ -74,7 +74,7 @@ Diesel 1.5 EcoBlue z katalizatorem [SCR](https://en.wikipedia.org/wiki/Selective
 Mk1 z silnikiem 1.8 TDCi to jedna z najbardziej trwałych konstrukcji Forda – na rynku wtórnym trafisz na egzemplarze z przebiegami ponad 400 tys. km przy żywym silniku. Kluczem jest regularna wymiana paska rozrządu co 160 tys. km i oleju co 15 tys. km.
 {{% /expert %}}
 
-## Wersje nadwoziowe Transit Connect
+## Wersje nadwoziowe Transit Connecta
 
 ### Furgon (Van)
 
@@ -91,7 +91,7 @@ Złoty środek między mobilnym warsztatem a autem codziennym. Drugi rząd siedz
 
 Luksusowa odmiana osobowa z wyższym standardem wykończenia. Grand Tourneo Connect w wersji Long oferuje siedem miejsc z dodatkowym trzecim rzędem. Wersja Active z podwyższonym zawieszeniem i plastikowymi osłonami progów celuje w klientów szukających alternatywy dla SUV-a.
 
-## Typowe usterki Transit Connect
+## Typowe usterki Ford Transit Connect
 
 ### Mk1 (2002–2013)
 
@@ -110,7 +110,7 @@ Luksusowa odmiana osobowa z wyższym standardem wykończenia. Grand Tourneo Conn
 W Mk2 z 2013–2015 częsty problem z utratą mocy i kodem P2111/P2135. Przyczyną jest zabrudzona przepustnica – czyszczenie specjalistycznym spray'em kosztuje 200 zł i rozwiązuje problem na stałe.
 {{% /info %}}
 
-## Ceny Transit Connect
+## Ceny Transit Connecta
 
 ### Nowy Transit Connect Mk3
 
@@ -130,7 +130,7 @@ W Mk2 z 2013–2015 częsty problem z utratą mocy i kodem P2111/P2135. Przyczyn
 | Mk2 (2017–2020) | 45 000–65 000 zł |
 | Mk2 Active (2020–2022) | 65 000–90 000 zł |
 
-## Porównanie Transit Connect z konkurencją
+## Porównanie Ford Transit Connect z konkurencją
 
 | Parametr | Ford Transit Connect L2 | Citroën Berlingo L2 | Peugeot Partner L2 | VW Caddy Maxi |
 |----------|------------------------|--------------------|--------------------|---------------|

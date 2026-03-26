@@ -21,7 +21,7 @@ faq:
     answer: "Rocznik 2015–2017: 20 000–30 000 zł. Rocznik 2019–2021: 30 000–45 000 zł."
 ---
 
-## Dokker Van – konstrukcja i wymiary paki
+## Dacia Dokker Van – konstrukcja i wymiary paki
 
 Dokker Van to dostawcza odmiana Dokkera – bez tylnych siedzeń, z pełną stalową przegrodą oddzielającą kabinę od paki i zaślepionymi szybami tylnymi. Rejestracja jako pojazd ciężarowy (N1) pozwala na pełne odliczenie VAT. Wersja dwuosobowa z ławką lub jednoosobowa z dodatkowym schowkiem.
 

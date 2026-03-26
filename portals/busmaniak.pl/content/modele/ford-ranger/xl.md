@@ -21,7 +21,7 @@ faq:
     answer: "Nowy od ok. 145 000 zł netto (gen II, 2.0 EcoBlue 170 KM). Używany gen I XL 2018–2020: 80 000–110 000 zł."
 ---
 
-## Ranger XL – wyposażenie seryjne
+## Ford Ranger XL – wyposażenie seryjne
 
 XL to wersja dla firm, które potrzebują pickupa jako narzędzia pracy – nie lifestyle'owego SUV-a. Czarne plastikowe zderzaki zamiast lakierowanych, stalowe felgi 16 cali, brak chromu i efektownych wstawek. Ale cała mechanika, napęd 4x4 i systemy bezpieczeństwa są identyczne jak w droższych wersjach.
 

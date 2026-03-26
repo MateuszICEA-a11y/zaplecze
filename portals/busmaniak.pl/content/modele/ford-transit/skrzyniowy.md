@@ -34,6 +34,16 @@ Transit chassis cab jest dostępny w rozstawach osi L2, L3 i L4 – co wprost pr
 
 Parametry bazowe:
 
+| Parametr | L2 Chassis Cab | L3 Chassis Cab | L4 Chassis Cab |
+|---|---|---|---|
+| Rozstaw osi | 3300 mm | 3750 mm | 4035 mm |
+| DMC | 3500–4700 kg | 3500–4700 kg | 3500–4700 kg |
+| Ładowność (DMC 3,5 t) | do 1500 kg | do 1400 kg | do 1300 kg |
+| Ładowność (DMC 4,7 t) | do 2300 kg | do 2200 kg | do 2100 kg |
+| Napęd | RWD | RWD | RWD |
+| Silniki | 130–185 KM | 130–185 KM | 170–185 KM |
+| Maks. długość zabudowy | ok. 4000 mm | ok. 4500 mm | ok. 5000 mm |
+
 - napęd: wyłącznie RWD (tylny) – wymóg przy zabudowach ciężkich
 - silniki: 130 KM, 170 KM, 185 KM – wszystkie z silnika 2.0 EcoBlue
 - DMC: 3500 kg, 4250 kg, 4700 kg – zależnie od wersji

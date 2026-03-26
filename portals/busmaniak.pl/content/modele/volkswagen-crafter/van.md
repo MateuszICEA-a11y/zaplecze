@@ -19,6 +19,13 @@ lead: "Volkswagen Crafter II Van to zamknięta przestrzeń ładunkowa z dostępe
 ---
 ## Konfiguracje przestrzeni ładunkowej
 
+| Wariant | Długość całkowita | Dług. przestrzeni | Pojemność | Ładowność |
+|---------|-------------------|-------------------|-----------|-----------|
+| L3H2 | 5986 mm | 3200 mm | 10,7 m³ | ok. 1100 kg |
+| L3H3 | 5986 mm | 3200 mm | 14,4 m³ | ok. 1100 kg |
+| L4H2 | 6849 mm | 4100 mm | 13,6 m³ | ok. 1500 kg |
+| L4H3 | 6849 mm | 4100 mm | 18,4 m³ | do 1700 kg |
+
 Crafter Van II jest dostępny w czterech podstawowych wariantach:
 
 **L3H2:**

@@ -20,6 +20,15 @@ faq:
 ---
 ## Wymiary zewnętrzne i ładownia
 
+| Parametr | Standard (L1) | Long (L2) |
+|----------|---------------|-----------|
+| Długość całkowita | 4960 mm | 5310 mm |
+| Rozstaw osi | 3098 mm | 3275 mm |
+| Długość ładowni | 2512 mm | 3120 mm |
+| Szerokość między nadkolami | 1268 mm | 1616 mm |
+| Wysokość ładowni | 1387 mm | 1387 mm |
+| Objętość | 5,3 m³ | 6,6 m³ |
+
 Vivaro C Long:
 - **Długość całkowita** – 5310 mm
 - **Szerokość bez lusterek** – 1956 mm

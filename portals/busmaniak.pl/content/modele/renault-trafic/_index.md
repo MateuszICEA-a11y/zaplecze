@@ -21,7 +21,7 @@ faq:
   - question: "Czy Renault Trafic i Opel Vivaro to to samo auto?"
     answer: "Tak – od Trafica II (2001) oba modele dzielą tę samą platformę i nadwozie. Różnice to logo, drobne elementy stylistyczne i opcje wyposażenia. Mechanicznie to identyczne pojazdy, co ułatwia dostępność części."
 ---
-## Historia i generacje
+## Historia i generacje Renault Trafic
 
 Trafic pojawił się w 1980 roku jako własna konstrukcja Renault – zaprojektowana z myślą o europejskim rynku komercyjnym. Model był od początku bardziej pragmatyczny niż efektowny, co okazało się jego największą zaletą w eksploatacji.
 
@@ -29,7 +29,7 @@ Trafic pojawił się w 1980 roku jako własna konstrukcja Renault – zaprojekto
 - **Trafic II (2001–2014)** – wspólna platforma z Oplem Vivaro i Nissanem Primastar. Wprowadzenie silników dCi to skok w kulturę pracy i spalanie, ale też nowe problemy z wtryskiwaczami, których wcześniej nie było. Generacja zdobyła tytuł Van of the Year 2002.
 - **Trafic III (2014–dziś)** – produkowany w fabryce Sandouville we Francji zdolnej do wytworzenia około 600 sztuk dziennie. Nowy design, lepsze wyposażenie, silniki 1.6 dCi i 2.0 dCi. 23 maja 2023 roku z taśmy zjechał milionowy egzemplarz trzeciej generacji. Pod względem przestrzeni ładunkowej i ergonomii kabiny to wyraźny krok do przodu względem poprzednika.
 
-## Dane techniczne i wymiary {#wymiary}
+## Dane techniczne Renault Trafic {#wymiary}
 
 | Wersja | Długość | Rozstaw osi | Wys. ładowni | Poj. ładowni | Ładowność | Palety |
 |--------|---------|------------|-------------|-------------|----------|--------|
@@ -67,7 +67,7 @@ Trafic III to wyłącznie diesle – to auto robocze, nie miejski kombivan.
 Przy zakupie używanego Trafica historia serwisowa ważniejsza jest niż przebieg. Auto z 250 tys. km, ale z wymianami oleju co 15 000 km, to lepszy wybór niż egzemplarz z 150 tys. bez rachunków. Sprawdź też zużycie wnętrza – podłoga ładowni i fotel kierowcy powiedzą o historii eksploatacji więcej niż licznik.
 {{% /expert %}}
 
-## Wersje nadwoziowe {#wersje}
+## Wersje nadwoziowe Renault Trafic {#wersje}
 
 Trafic jest dostępny w trzech podstawowych konfiguracjach:
 
@@ -75,7 +75,7 @@ Trafic jest dostępny w trzech podstawowych konfiguracjach:
 - **[Passenger / SpaceClass (osobowy)](/modele/renault-trafic/osobowy/)** – od 8 do 9 miejsc z możliwością różnych konfiguracji siedzeń. Wykorzystywany m.in. przez hotele i firmy przewozowe.
 - **[Brygadówka (Combi)](/modele/renault-trafic/brygadowka/)** – część ładunkowa z przodu, rząd siedzeń z tyłu kabiny. Przydatna dla ekip serwisowych wożących i ludzi, i sprzęt.
 
-## Typowe usterki i serwis {#usterki}
+## Typowe usterki Renault Trafic {#usterki}
 
 Trafic to auto robocze, więc lista usterek nie powinna zaskakiwać – większość problemów wynika z intensywnej eksploatacji lub zaniedbanego serwisu, nie z wad konstrukcyjnych.
 

@@ -40,7 +40,7 @@ Daily VII to facelifting szóstej generacji, a nie nowa platforma. Iveco odświe
 Iveco Daily jest jedynym vanem w segmencie L4 oferującym ramę drabinkową jako podstawę konstrukcji w wersjach o DMC powyżej 3,5 t. Konkurenci – Ford Transit, Mercedes Sprinter, Volkswagen Crafter i Renault Master – stosują wyłącznie nadwozia samonośne lub semi-ramowe, co ogranicza ich maksymalną ładowność.
 {{% /info %}}
 
-## Dane techniczne i wymiary {#dane-techniczne}
+## Dane techniczne Iveco Daily {#dane-techniczne}
 
 Iveco Daily oferuje największy zakres wariantów w klasie. Poniższa tabela obejmuje najpopularniejsze konfiguracje furgonu (generacja VI i VII – identyczne wymiary przestrzeni ładunkowej).
 
@@ -61,7 +61,7 @@ Iveco Daily oferuje największy zakres wariantów w klasie. Poniższa tabela obe
 
 Przy wyborze wersji podwoziowej (cab chassis) rama drabinkowa umożliwia dowolną zabudowę: wywrotkę, furgon izotermy, cysternę lub platformę z HDS. To przewaga, której samonośna konstrukcja konkurencji nie jest w stanie zapewnić.
 
-## Silniki {#silniki}
+## Silniki Daily {#silniki}
 
 Iveco oferuje dwie jednostki diesla i wariant elektryczny. Wybór zależy od planowanego obciążenia i DMC pojazdu.
 
@@ -102,7 +102,7 @@ W warsztacie najczęściej trafiają do mnie Daily z silnikiem 2.3 po 200–250 
 
 ![Iveco Daily VII furgon](/images/iveco-daily-hero.jpg)
 
-## Wersje nadwoziowe {#wersje-nadwoziowe}
+## Wersje nadwoziowe Iveco Daily {#wersje-nadwoziowe}
 
 Iveco Daily jest jednym z niewielu pojazdów dostawczych, który bez zmiany platformy obsługuje tak szerokie spektrum zabudów:
 
@@ -113,7 +113,7 @@ Iveco Daily jest jednym z niewielu pojazdów dostawczych, który bez zmiany plat
 - **[Chłodnia](/modele/iveco-daily/chlodnia/)** – izolowana przestrzeń ładunkowa z agregatem Thermo King lub Carrier; DMC 5,2 t pozwala na zabranie towarów chłodniczych bez ograniczeń kategorii B.
 - **[eDaily](/modele/iveco-daily/edaily/)** – elektryczna wersja furgonu i podwozia; dostępna wyłącznie w DMC 3,5 t i 5,2 t.
 
-## Typowe usterki {#usterki}
+## Typowe usterki Iveco Daily {#usterki}
 
 Daily VI i VII to pojazdy solidne, ale mają swoje słabe punkty. Lista poniżej dotyczy egzemplarzy z przebiegiem powyżej 150 tys. km:
 
@@ -139,7 +139,7 @@ Daily VI i VII to pojazdy solidne, ale mają swoje słabe punkty. Lista poniżej
 Przy zakupie egzemplarza z rynku wtórnego sprawdź historię serwisową pod kątem wymian EGR i wtryskiwaczy. Poproś o odczyt kodów błędów przed jazdą próbną. W wersjach z DMC powyżej 3,5 t zwróć uwagę na dokumentację przeglądów ramy – spawy i mocowania zabudowy to strefy, które wymagają oceny mechanika.
 {{% /info %}}
 
-## Porównanie z konkurencją {#porownanie-konkurencja}
+## Porównanie Daily z konkurencją {#porownanie-konkurencja}
 
 Iveco Daily zajmuje osobną niszę w segmencie dużych vanów – nie jest bezpośrednim rywalem Transita czy Craftera w wersjach 3,5 t, ale staje się niezastąpiony tam, gdzie potrzeba wyższego DMC.
 

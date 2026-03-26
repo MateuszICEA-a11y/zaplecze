@@ -21,7 +21,7 @@ faq:
     answer: "Nowy od ok. 175 000 zł netto (L3, 2.0 TDI 140 KM). Używany 2018–2021: 100 000–150 000 zł."
 ---
 
-## Crafter brygadówka – konstrukcja i wymiary
+## Volkswagen Crafter brygadówka – konstrukcja i wymiary
 
 Brygadówka to podwozie Craftera z kabiną podwójną (Doppelkabine) – dwa rzędy siedzeń pod jednym dachem, za kabiną otwarta paka lub zabudowa skrzyniowa. To rozwiązanie dla ekip budowlanych, serwisów technicznych i służb komunalnych, które muszą dowieźć na miejsce ludzi i sprzęt jednocześnie.
 

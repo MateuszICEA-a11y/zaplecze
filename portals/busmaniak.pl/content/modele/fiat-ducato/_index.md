@@ -23,7 +23,7 @@ faq:
     answer: "Ceny nowego Ducato furgon zaczynają się od ok. 130 000 zł netto (2.2 MultiJet3 140 KM). Wersje Maxi L4H3 z automatem od ok. 175 000 zł netto."
 ---
 
-## Historia i generacje Fiata Ducato {#historia-generacje}
+## Historia i generacje Fiat Ducato {#historia-generacje}
 
 [Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato) to najpopularniejszy bus dostawczy w Europie, produkowany od 1981 roku. Łącznie z fabryk Sevel w Val di Sangro zjechało ponad 6 milionów egzemplarzy (wraz z bliźniakami Citroën Jumper i Peugeot Boxer). Do 2017 roku sprzedano 2,7 mln Ducato pod marką Fiat.
 
@@ -45,7 +45,7 @@ Obecna generacja to ewolucja modelu z 2006 roku, z naciskiem na technologię i e
 Ponad 75% kamperów poruszających się po europejskich drogach bazuje na podwoziu Fiata Ducato. To najczęściej wybierana baza pod zabudowy kempingowe na świecie.
 {{% /info %}}
 
-## Dane techniczne i wymiary {#dane-techniczne}
+## Dane techniczne Fiat Ducato {#dane-techniczne}
 
 Wybór Ducato to przede wszystkim analiza parametrów przestrzeni ładunkowej. System oznaczeń L (długość) i H (wysokość):
 
@@ -61,7 +61,7 @@ Wybór Ducato to przede wszystkim analiza parametrów przestrzeni ładunkowej. S
 
 DMC standardowo 3500 kg (prawo jazdy kat. B). Wersje 3000, 3300 kg oraz wzmocnione Maxi do 4250 kg.
 
-## Silniki – serce włoskiego dostawczaka {#silniki}
+## Silniki Ducato {#silniki}
 
 - **[Silnik 2.2 MultiJet3](/modele/fiat-ducato/2-2-multijet/)** – obecnie podstawowa jednostka (od 2021). Warianty: 120, 140, 160, 180 KM. Technologia SCR z AdBlue.
 - **[Silnik 2.3 MultiJet](/modele/fiat-ducato/2-3-multijet/)** – produkowany przez IVECO, sprawdzony wybór roczników 2011–2021. Wersje 130 i 150 KM cenione za stosunek spalania do dynamiki.
@@ -74,7 +74,7 @@ Szukasz używanego Ducato do ciężkiej pracy? Celuj w 3.0 MultiJet sprzed 2016 
 
 ![Fiat Ducato IV furgon przy rampie załadunkowej](/images/fiat-ducato-hero.jpg)
 
-## Wersje nadwoziowe i zastosowania {#wersje-nadwozia}
+## Wersje nadwoziowe Fiat Ducato {#wersje-nadwozia}
 
 Dzięki konstrukcji ramowej (podwozie) i samonośnej (furgon) Ducato oferuje szerokie możliwości konfiguracji:
 
@@ -89,7 +89,7 @@ Dzięki konstrukcji ramowej (podwozie) i samonośnej (furgon) Ducato oferuje sze
 
 Wersja [Ducato Maxi](/modele/fiat-ducato/maxi/) to wzmocnione zawieszenie z podwójnymi resorami, 16-calowe koła i większe tarcze hamulcowe. Wariant L4H3 oferuje ponad 4 metry długości paki i 17 m³ pojemności – najczęstszy wybór pod zabudowy typu "międzynarodówka" (plandeka z kabiną sypialną).
 
-## Spalanie i koszty eksploatacji {#spalanie-eksploatacja}
+## Spalanie Ducato i koszty eksploatacji {#spalanie-eksploatacja}
 
 Koszty utrzymania Ducato są jednymi z najniższych w klasie dzięki ogromnej dostępności zamienników.
 
@@ -101,7 +101,7 @@ Koszty utrzymania Ducato są jednymi z najniższych w klasie dzięki ogromnej do
 
 Realne zużycie w furgonie L4H3 przy prędkościach autostradowych rośnie o 2–3 litry względem mniejszych wersji.
 
-## Typowe usterki i na co uważać przy zakupie {#usterki-zakup}
+## Typowe usterki Fiat Ducato {#usterki-zakup}
 
 Mimo ogólnej solidności, Ducato ma swoje słabe punkty:
 
@@ -117,7 +117,7 @@ Szerokość nadwozia (2050 mm bez lusterek) pozwala na zamontowanie łóżka pop
 
 Pod [zabudowę kamperową](/przerobki/fiat-ducato-kamper/) najlepiej sprawdza się L2H2 (dla par) lub L3H2 (dla rodzin).
 
-## Bliźniaki Ducato – Citroën Jumper i Peugeot Boxer {#blizniaki}
+## Bliźniaki Fiat Ducato – Citroën Jumper i Peugeot Boxer {#blizniaki}
 
 Fiat Ducato dzieli konstrukcję z [Citroënem Jumperem](/modele/citroen-jumper/) i [Peugeotem Boxerem](/modele/peugeot-boxer/). Nadwozia i zawieszenia są niemal identyczne. Kluczowa różnica historycznie dotyczyła silników – Fiat stosował własne MultiJet, a Francuzi jednostki PSA (2.0 BlueHDi, 2.2 HDi). Od powstania Stellantis różnice praktycznie znikły.
 

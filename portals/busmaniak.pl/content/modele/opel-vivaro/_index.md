@@ -20,7 +20,7 @@ faq:
     answer: "Furgon od ok. 120 000 zł netto (1.5 D 100 KM)."
 ---
 
-## Historia i generacje Vivaro
+## Historia i generacje Opel Vivaro
 
 Trzy generacje, dwie różne platformy i zmiana technicznego partnera – Vivaro przeszło od Renault do PSA/Stellantis.
 
@@ -44,7 +44,7 @@ Vivaro C to zupełnie inny samochód niż poprzedniki – inne podzespoły, skrz
 
 Platforma [PSA EMP2](https://en.wikipedia.org/wiki/PSA_EMP2_platform), bliźniak [Peugeot Expert](/modele/peugeot-expert/) i Citroën Jumpy. Produkcja przeniesiona do Sandouville (Francja). Silniki 1.5 D i 2.0 D plus elektryczny Vivaro-e. Trzy długości nadwozia: Compact (4609 mm), Standard (4959 mm) i Long (5309 mm).
 
-## Wymiary Vivaro C
+## Wymiary Opel Vivaro C
 
 | Parametr | Compact (L1) | Standard (L2) | Long (L3) |
 |----------|-------------|---------------|-----------|
@@ -81,7 +81,7 @@ Vivaro C nie jest dostępny z podwyższonym dachem – stała wysokość wnętrz
 Przy zakupie używanego Vivaro A lub B sprawdź stan turbiny i intercoolera – to pierwsza linia wydatków. W modelach z 1.6 CDTi BiTurbo układ dwóch turbin potrafi zaskoczyć rachunkiem rzędu 5000–8000 zł. Vivaro C z 2.0 D jest mechanicznie prostszy, ale części PSA bywają droższe niż zamienniki Renault z generacji A/B.
 {{% /expert %}}
 
-## Wersje nadwoziowe Vivaro
+## Wersje nadwoziowe Opel Vivaro
 
 - **Furgon** – klasyczny dostawczak 2/3-osobowy z pełną przegrodą
 - **Furgon Long** – przedłużona przestrzeń ładunkowa (3120 mm podłogi)
@@ -95,7 +95,7 @@ Przy zakupie używanego Vivaro A lub B sprawdź stan turbiny i intercoolera – 
 - **Innovation** – automatyczna klimatyzacja, kamera cofania, LED, czujniki martwego pola
 - **GS Line** – sportowy wygląd, 17-calowe felgi, skórzana kierownica
 
-## Typowe usterki Vivaro
+## Typowe usterki Opel Vivaro
 
 ### Vivaro A (2001–2014)
 
@@ -116,7 +116,7 @@ Przy zakupie używanego Vivaro A lub B sprawdź stan turbiny i intercoolera – 
 - **DPF (mokry filtr z Eolys)** – czyszczenie 1200–1800 zł
 - **Pasek rozrządu w oleju (1.5 D)** – znany problem platformy EMP2
 
-## Ceny Vivaro
+## Ceny Opla Vivaro
 
 | Generacja / Rocznik | Cena orientacyjna |
 |---------------------|-------------------|
@@ -128,7 +128,7 @@ Przy zakupie używanego Vivaro A lub B sprawdź stan turbiny i intercoolera – 
 | Nowy Vivaro C (od 1.5 D 100) | od ok. 120 000 zł netto |
 | Vivaro-e (elektryczny) | od ok. 210 000 zł netto |
 
-## Porównanie Vivaro z konkurencją
+## Porównanie Vivaro z konkurentami
 
 | Parametr | Opel Vivaro C L2 | Peugeot Expert L2 | Renault Trafic L2 | Ford Transit Custom L2 | Mercedes Vito Long |
 |----------|-----------------|--------------------|--------------------|------------------------|--------------------|

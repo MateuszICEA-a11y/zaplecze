@@ -22,7 +22,7 @@ faq:
     answer: "Tak – wersja z baterią 75 kWh ma do 420 km zasięgu WLTP. Mniejsza bateria (37 kWh, 117 km) nadaje się do tras lokalnych."
 ---
 
-## Historia i generacje Movano
+## Historia i generacje Opel Movano
 
 Trzy generacje i zmiana technicznego dawcy – po 23 latach współpracy z Renault, Movano przesiadło się na platformę Fiata Ducato.
 
@@ -46,7 +46,7 @@ Movano B oferowało jedną z najszerszych gam konfiguracji w segmencie: od krót
 
 Przełom – po fuzji w Stellantis Movano C bazuje na [platformie Sevel](https://en.wikipedia.org/wiki/Sevel) wspólnej z Fiatem Ducato, Citroënem Jumperem i Peugeotem Boxerem. Produkcja przeniesiona do **Gliwic** – co uprościło logistykę części w Polsce. Dostępny z napędem spalinowym i elektrycznym (Movano-e).
 
-## Wymiary Movano C
+## Wymiary Opel Movano C
 
 | Parametr | L1H1 | L2H2 | L3H2 | L4H3 |
 |----------|------|------|------|------|
@@ -101,7 +101,7 @@ Klasyczny blaszak z drzwiami przesuwnymi i tylnymi skrzydełkowymi (180° lub 27
 
 Shuttle-bus na 9–17 pasażerów. Pełne przeszklenie, klimatyzacja z nawiewami nad każdym rzędem, szerokie stopnie wejściowe. Regulowane fotele ułatwiają wsiadanie osobom starszym.
 
-## Typowe usterki Movano
+## Typowe usterki Opel Movano
 
 ### Movano A (1998–2010)
 
@@ -126,7 +126,7 @@ Shuttle-bus na 9–17 pasażerów. Pełne przeszklenie, klimatyzacja z nawiewami
 Opel objął akcją naprawczą 121 egzemplarzy Movano C z rocznika 2022 z powodu wadliwego oprogramowania sterownika BSI. Problem: auto nie odpala po całkowitym opróżnieniu zbiornika AdBlue. Sprawdź u dealera, czy Twój egzemplarz ma zaktualizowane oprogramowanie.
 {{% /info %}}
 
-## Ceny Movano
+## Ceny Opla Movano
 
 ### Nowe Movano C
 
@@ -148,7 +148,7 @@ Opel objął akcją naprawczą 121 egzemplarzy Movano C z rocznika 2022 z powodu
 | Movano B (2017–2021) poleasingowe | 80 000–120 000 zł |
 | Movano C (od 2022) | 120 000–160 000 zł |
 
-## Porównanie Movano z konkurencją
+## Porównanie Movano z konkurentami
 
 | Parametr | Opel Movano C L3H2 | Fiat Ducato L3H2 | Renault Master L3H2 | Mercedes Sprinter L2H2 |
 |----------|-------------------|------------------|---------------------|----------------------|

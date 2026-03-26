@@ -21,35 +21,13 @@ lead: "Peugeot Boxer Van to podstawowa wersja nadwoziowa Boxera III – zamknię
 
 Boxer Van jest produkowany w pięciu wariantach objętości:
 
-**L1H1 – 8 m³**
-- długość przestrzeni: 2167 mm
-- szerokość: 1870 mm
-- wysokość: 1697 mm
-- ładowność: ok. 1100 kg
-
-**L2H1 – 10 m³**
-- długość: 2583 mm
-- szerokość: 1870 mm
-- wysokość: 1697 mm
-- ładowność: ok. 1200 kg
-
-**L2H2 – 13 m³**
-- długość: 2977 mm
-- szerokość: 1870 mm
-- wysokość: 2173 mm
-- ładowność: ok. 1400 kg
-
-**L3H2 – 15 m³**
-- długość: 3705 mm
-- szerokość: 1870 mm
-- wysokość: 2173 mm
-- ładowność: ok. 1500 kg
-
-**L4H3 – 17 m³**
-- długość: 4070 mm
-- szerokość: 1870 mm
-- wysokość: 2486 mm
-- ładowność: do 1735 kg (DMC 4 t)
+| Wersja | Dł. ład. | Szer. | Wys. | Pojemność | Ładowność |
+|---|---|---|---|---|---|
+| L1H1 | 2167 mm | 1870 mm | 1697 mm | 8 m³ | ok. 1100 kg |
+| L2H1 | 2583 mm | 1870 mm | 1697 mm | 10 m³ | ok. 1200 kg |
+| L2H2 | 2977 mm | 1870 mm | 2173 mm | 13 m³ | ok. 1400 kg |
+| L3H2 | 3705 mm | 1870 mm | 2173 mm | 15 m³ | ok. 1500 kg |
+| L4H3 | 4070 mm | 1870 mm | 2486 mm | 17 m³ | do 1735 kg |
 
 Szerokość między nadkolami we wszystkich wariantach: 1422 mm – pozwala na ładowanie palet EUR 800 mm swobodnie.
 

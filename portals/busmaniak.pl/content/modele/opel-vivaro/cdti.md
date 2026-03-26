@@ -21,7 +21,7 @@ faq:
     answer: "Bardziej niż single turbo. Dwie turbosprężarki = dwa razy więcej elementów do awarii. Regeneracja układu BiTurbo to 5000–8000 zł. Przy zakupie używanego sprawdź historię serwisową turbin."
 ---
 
-## Dane techniczne silników CDTi w Vivaro
+## Dane techniczne silników CDTi w Opel Vivaro
 
 Oznaczenie CDTi (Common rail Diesel Turbo injection) to nazwa handlowa Opla dla silników wysokoprężnych z bezpośrednim wtryskiem Common Rail. W Vivaro A i B stosowano trzy rodziny silnikowe – wszystkie zaprojektowane przez Renault, ale sprzedawane pod marką Opela.
 
@@ -83,7 +83,7 @@ Jeśli kupujesz Vivaro B – bierz 1.6 CDTi 125 KM single turbo. Ma wystarczają
 
 Spalanie rośnie o 10–15% z zabudową wysokodachową (H2). Klimatyzacja w upale dodaje 0,5–1 l/100 km.
 
-## Typowe usterki CDTi per generacja
+## Typowe usterki CDTi w Vivaro
 
 ### 1.9 CDTi (F9Q)
 

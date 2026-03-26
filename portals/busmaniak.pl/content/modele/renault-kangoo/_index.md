@@ -22,7 +22,7 @@ faq:
     answer: "Elektryka to słaby punkt wszystkich generacji. W Kangoo II problemy z pompą paliwa 1.5 dCi i skrzynią biegów. Kangoo III jest dopracowany, choć objęty był akcją serwisową ograniczników drzwi."
 ---
 
-## Historia i generacje Kangoo
+## Historia i generacje Renault Kangoo
 
 Trzy generacje, trzy różne platformy i ponad 25 lat na rynku. Kangoo zaczynało jako prosty następca Expressa, a dziś to zaawansowany technologicznie kombivan z napędem elektrycznym i systemem Open Sesame.
 
@@ -48,7 +48,7 @@ Trzecia generacja to rewolucja. Platforma CMF–B, wymiary 4486 mm (standard) lu
 
 Kluczowa innowacja to system Open Sesame – brak słupka B po stronie pasażera umożliwia boczny załadunek przedmiotów o szerokości do 1446 mm, jak europalety czy płyty gipsowe. Facelifting spodziewany w 2025 roku.
 
-## Wymiary i dane techniczne Kangoo
+## Dane techniczne Renault Kangoo
 
 Trzecia generacja oferuje dwa rozstawy osi i największą w historii modelu przestrzeń ładunkową.
 
@@ -92,7 +92,7 @@ Wersja bezemisyjna z silnikiem 122 KM, baterią 45 kWh i zasięgiem do 285 km (W
 W silnikach 1.5 dCi montowanych w Kangoo II skróć interwał wymiany oleju do 15 000 km zamiast fabrycznych 30 000 km. Chroni to panewki i turbosprężarkę, które przy rzadkiej wymianie poddają się już przy 180 tys. km. W Kangoo III ten problem jest mniejszy dzięki lepszemu filtrowi oleju.
 {{% /expert %}}
 
-## Wersje nadwoziowe Kangoo
+## Wersje nadwoziowe Renault Kangoo
 
 ### Kangoo Express (dostawczy)
 
@@ -106,7 +106,7 @@ Klasyczny furgon z przesuwanymi drzwiami bocznymi (jedne lub dwoje) i asymetrycz
 
 Grand Kangoo to tańsza i często bardziej praktyczna alternatywa dla klasycznych vanów i SUV-ów.
 
-## Typowe usterki Kangoo
+## Typowe usterki Renault Kangoo
 
 Problemy zależą mocno od generacji – każda ma swoje piętno.
 

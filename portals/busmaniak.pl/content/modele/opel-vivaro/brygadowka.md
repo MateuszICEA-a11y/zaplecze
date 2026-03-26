@@ -40,6 +40,11 @@ Prawdziwa brygadówka to często nie fabryczna konfiguracja, ale zabudowa zewnę
 
 ## Ładowność i DMC
 
+| Wersja | Długość całkowita | Liczba miejsc | DMC | Ładowność |
+|--------|-------------------|---------------|-----|-----------|
+| Combi L1 | 4960 mm | 6 | 2800 kg | 700–900 kg |
+| Combi L2 | 5310 mm | 6 | 3100 kg | 900–1100 kg |
+
 - **DMC 2800 kg** – ładowność ok. 700–900 kg
 - **DMC 3100 kg** – ładowność ok. 900–1100 kg
 

@@ -22,7 +22,7 @@ faq:
     answer: "Z baterią 50 kWh do 280 km (przed faceliftem) lub do 340 km WLTP po modernizacji z 2024 roku."
 ---
 
-## Peugeot Rifter – historia i ewolucja modelu od 2018 roku
+## Historia i generacje Peugeot Rifter
 
 Model zaprezentowano podczas targów w Genewie w 2018 roku jako następca rekreacyjnej wersji Partnera Tepee, porzucając jednocześnie tę nazwę dla wersji osobowych. Zbudowany na modułowej platformie [EMP2](https://en.wikipedia.org/wiki/PSA_EMP2_platform), łączy cechy rodzinnego MPV z surowym wyglądem SUV-a dzięki zwiększonemu prześwitowi i plastikowym osłonom nadwozia. Samochód powstał w ramach projektu K9 grupy PSA, co sprawiło, że jego technicznymi bliźniakami są [Citroën Berlingo](/modele/citroen-berlingo/), [Opel Combo](/modele/opel-combo/), Toyota ProAce City Verso oraz Fiat Doblo III. Produkcja odbywa się w zakładach w Vigo (Hiszpania) oraz Mangualde (Portugalia).
 
@@ -49,7 +49,7 @@ Rifter najlepiej z całej rodziny K9 trzyma wartość rezydualną na rynku wtór
 - **Masa przyczepy** – do 1500 kg (z hamulcem)
 - **Prześwit** – 167 mm (wersja Allure), 200 mm (wersja 4x4 Dangel)
 
-## Silniki Riftera
+## Silniki Peugeot Rifter
 
 | Silnik | Moc | Moment | Spalanie (śr.) | Skrzynia | Norma |
 |--------|-----|--------|----------------|----------|-------|
@@ -72,7 +72,7 @@ Kombivan dostępny jest w kilku liniach – Active, Allure oraz usportowionej wi
 
 Standardowe wyposażenie obejmuje system i-Cockpit z mniejszą kierownicą, klimatyzację manualną oraz komplet systemów bezpieczeństwa. Wyższe wersje oferują otwierane okno w klapie bagażnika, trzy niezależne fotele w drugim rzędzie z systemem Isofix na każdym z nich oraz szklany dach Zenith z podświetlanym schowkiem pod sufitem.
 
-## Typowe usterki i opinie o Peugeot Rifter
+## Typowe usterki Peugeot Rifter
 
 Mimo wysokiej funkcjonalności, Rifter zbiera mieszane opinie ze względu na powtarzalne problemy techniczne. Największym mankamentem wersji wysokoprężnych są awarie układu AdBlue – pompy i zbiorniki – które potrafią unieruchomić auto już przy przebiegach rzędu 30 000 km.
 
@@ -85,7 +85,7 @@ Mimo wysokiej funkcjonalności, Rifter zbiera mieszane opinie ze względu na pow
 Modele z lat 2018–2020 były objęte akcjami naprawczymi dotyczącymi wadliwych drążków kierowniczych oraz mocowań pasów bezpieczeństwa.
 {{% /info %}}
 
-## Peugeot Rifter a konkurencja
+## Konkurencja Riftera
 
 Na tle rywali kombivan wyróżnia się bogatszym wyposażeniem seryjnym i najlepiej ocenianą przestronnością kabiny w tej klasie. Głównym konkurentem pozostaje [Renault Kangoo](/modele/renault-kangoo/), który oferuje zbliżoną funkcjonalność przy nieco niższej cenie zakupu, lecz słabszej ofercie elektrycznej. Volkswagen Caddy przyciąga nabywców wyższą kulturą jazdy i solidniejszą elektroniką, natomiast bliźniaczy [Citroën Berlingo](/modele/citroen-berlingo/) trafia do klientów szukających prostszej stylistyki przy identycznej bazie technicznej.
 

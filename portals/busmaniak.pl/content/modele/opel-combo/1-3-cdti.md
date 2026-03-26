@@ -7,4 +7,7 @@ author: "marek-kowalczyk"
 h1: "Opel Combo 1.3 CDTI – dane techniczne i opinie"
 parent: "opel-combo"
 type: "engine"
+aliases:
+  - /modele/opel-combo/1-3-cdti/
+redirect: /modele/opel-combo/1-3/
 ---

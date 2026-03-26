@@ -21,7 +21,7 @@ faq:
     answer: "Nowy Van L2 od ok. 120 000 zł netto. Używany Mk2 L2 2017–2020: 50 000–75 000 zł."
 ---
 
-## Transit Connect Long – wymiary i przestrzeń ładunkowa
+## Ford Transit Connect Long – wymiary i przestrzeń ładunkowa
 
 Wersja Long (L2) Transita Connecta ma 400 mm więcej nadwozia niż Short (L1) – cała różnica trafia do przestrzeni ładunkowej. Rozstaw osi rośnie z 2662 do 3062 mm, co stabilizuje auto przy pełnym załadunku, ale zwiększa promień skrętu o ponad metr.
 

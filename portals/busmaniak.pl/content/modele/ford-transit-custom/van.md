@@ -19,6 +19,18 @@ lead: "Ford Transit Custom Van to dostawczak segmentu średniego (N1) oferujący
 ---
 ## Konfiguracje i wymiary
 
+| Parametr | Custom L1 (Short) | Custom L2 (Long) |
+|---|---|---|
+| Długość całkowita | 4972 mm | 5340 mm |
+| Rozstaw osi | 3300 mm | 3670 mm |
+| Przestrzeń ładunkowa | 6,0 m³ | 6,8 m³ |
+| Długość podłogi | 2553 mm | 2925 mm |
+| Szerokość między nadkolami | 1393 mm | 1393 mm |
+| Szerokość maksymalna | 1786 mm | 1786 mm |
+| Wysokość przestrzeni | 1408 mm | 1408 mm |
+| Próg załadunku | ok. 540 mm | ok. 540 mm |
+| Ładowność | do 1200 kg | do 1356 kg |
+
 **Transit Custom L1 (Short)**
 - długość całkowita: 4972 mm
 - rozstaw osi: 3300 mm

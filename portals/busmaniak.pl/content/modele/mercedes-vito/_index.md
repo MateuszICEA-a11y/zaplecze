@@ -20,7 +20,7 @@ faq:
     answer: "Nie. W W447 dostępny jest FWD (1.6/1.7), RWD (2.0/2.2) i opcjonalny 4x4."
 ---
 
-## Historia i generacje Vito
+## Historia i generacje Mercedes Vito
 
 Trzy generacje i ewolucja od awaryjnego debiutanta do jednego z najlepszych vanów w segmencie premium.
 
@@ -55,7 +55,7 @@ Aktualna generacja – największy skok technologiczny. Trzy rodzaje napędu: FW
 - **Próg załadowczy** – 607 mm
 - **Wysokość dachu** – 1910 mm (mieści się w większości parkingów podziemnych)
 
-## Silniki Vito
+## Silniki Mercedes Vito
 
 | Silnik | Oznaczenie | Moc | Moment | Spalanie (śr.) | Roczniki |
 |--------|-----------|-----|--------|----------------|----------|
@@ -94,7 +94,7 @@ Przeszklone nadwozie z nawiewami dla każdego rzędu siedzeń. Trzy linie:
 
 Furgon z drugim rzędem siedzeń (5–6 miejsc) i oddzieloną przestrzenią towarową za nimi. Dla firm serwisowych dowożących zespół i narzędzia jednocześnie.
 
-## Typowe usterki Vito
+## Typowe usterki Mercedes Vito
 
 ### W638 (1996–2003)
 
@@ -135,7 +135,7 @@ Furgon z drugim rzędem siedzeń (5–6 miejsc) i oddzieloną przestrzenią towa
 | W447 (2015–2019) | 70 000–110 000 zł |
 | W447 (2020–2024) OM654 | 110 000–160 000 zł |
 
-## Porównanie Vito z konkurencją
+## Porównanie Mercedes Vito z konkurencją
 
 | Parametr | Mercedes Vito Long | VW Transporter T6.1 L2 | Ford Transit Custom L2 | Renault Trafic L2 |
 |----------|--------------------|------------------------|------------------------|-------------------|

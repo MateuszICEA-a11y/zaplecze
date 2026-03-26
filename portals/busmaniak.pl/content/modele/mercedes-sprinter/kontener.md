@@ -54,6 +54,11 @@ Typowe wymiary skrzyni kontenerowej na Sprinter (długi rozstaw osi):
 - Wysokość wewnętrzna: 1900–2100 mm
 - Pojemność: 14–19 m³
 
+| Rozstaw osi  | Długość zabudowy | Pojemność ładunkowa | Typowe zastosowanie       |
+|--------------|------------------|---------------------|---------------------------|
+| 3250 mm (L2) | do 3200 mm       | 8–12 m³             | Izotermika, dry box       |
+| 4325 mm (L3) | do 4200 mm       | 12–16 m³            | Chłodnia ATP, food truck  |
+
 Ładowność przy DMC 3,5 t i zabudowie izotermicznej (masa zabudowy ok. 600–800 kg): ok. 900–1100 kg netto.
 
 Przy DMC 5,5 t i zabudowie chłodniczej z agregatem (masa zabudowy ok. 1000–1200 kg): ładowność netto ok. 1600–1800 kg.

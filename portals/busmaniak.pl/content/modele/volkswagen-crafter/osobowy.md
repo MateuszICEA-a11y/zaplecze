@@ -19,6 +19,12 @@ lead: "Volkswagen Crafter II w wersji osobowej – Kombi – to pojazd do przewo
 ---
 ## Wersje osobowe Craftera
 
+| Wersja | Długość | Miejsca | Homologacja | DMC |
+|--------|---------|---------|-------------|-----|
+| Kombi L3 | 5986 mm | do 9 | M1 / M2 | do 3,5 t |
+| Kombi L4 | 6849 mm | do 14 | M2 | do 4,25 t |
+| Minibus L5 | 7391 mm | do 17 | M2 | do 5,0 t |
+
 Crafter II w układzie osobowym dostępny jest jako:
 - **Crafter Kombi 9-miejscowy**: 2 rzędy siedzeń pasażerskich za kierowcą, tylna przestrzeń bagażowa, rejestracja M1 lub M2
 - **Crafter Minibus**: do 17 miejsc, zabudowa specjalna, wymaga homologacji M2

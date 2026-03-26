@@ -20,7 +20,7 @@ faq:
     answer: "Wersja osobowa z przeszklonymi bokami, rozkładaną kanapą i opcją 7 miejsc. Odpowiada Berlingo Multispace i Peugeot Rifterowi."
 ---
 
-## Historia i generacje Combo (1993–2024)
+## Historia i generacje Opel Combo (1993–2024)
 
 ### Opel Combo A/B (do 2001)
 
@@ -38,7 +38,7 @@ Generacja D powstała we współpracy z koncernem FIAT, co zaowocowało pojawien
 
 Od 2018 roku na drogach króluje piąta generacja, zbudowana na modułowej [platformie PSA EMP2](https://en.wikipedia.org/wiki/PSA_EMP2_platform). Ta zmiana technologiczna pozwoliła na zunifikowanie modelu z takimi konstrukcjami jak [Citroën Berlingo](/modele/citroen-berlingo/) oraz [Peugeot Partner](/modele/peugeot-partner/). Auto występuje w dwóch długościach nadwozia: L1 (4,40 m) oraz XL (4,75 m), oferując niespotykany wcześniej komfort jazdy w tej klasie.
 
-## Wymiary i paka Combo Cargo
+## Wymiary i paka Opel Combo Cargo
 
 Wersja dostawcza Cargo została zaprojektowana z myślą o maksymalnej efektywności logistycznej. Dzięki systemowi FlexCargo, długość załadunku w wersji XL wzrasta do 3440 mm, co pozwala na transport rur lub drabin wewnątrz kabiny. Szerokość między nadkolami wynosząca 1229 mm umożliwia przewóz dwóch europalet nawet w krótszej wersji nadwozia.
 
@@ -80,7 +80,7 @@ Wersje robocze Cargo mogą być skonfigurowane jako furgony brygadowe, co pozwal
 - **Combo Life XL 7-osobowy** – trzeci rząd foteli, bagażnik 322 l za ostatnim rzędem
 - **Combo Cargo Crew Cab** – brygadówka z 5 miejscami + paka
 
-## Typowe usterki Combo
+## Typowe usterki Opel Combo
 
 ### Combo C (2001–2011)
 
@@ -95,7 +95,7 @@ Wersje robocze Cargo mogą być skonfigurowane jako furgony brygadowe, co pozwal
 - **Elektronika** – błędy czujników parkowania, zawieszenia systemu multimedialnego
 - **Akcja serwisowa (2019)** – 591 egzemplarzy w Polsce z wadliwymi mocowaniami pasów bezpieczeństwa
 
-## Ceny Combo
+## Ceny Opla Combo
 
 | Generacja | Lata produkcji | Cena używane | Cena nowe (netto) |
 |-----------|---------------|-------------|-------------------|

@@ -22,7 +22,7 @@ faq:
     answer: "Proace to furgon z homologacją N1 przeznaczony do transportu ładunków. Proace Verso ma homologację M1 – jest pojazdem osobowym z rzędami siedzeń pasażerskich, przeszklonymi bokami i wyposażeniem skierowanym do przewozu osób. Oba dzielą tę samą płytę podłogową i wymiary nadwozia."
 ---
 
-## Wersje wyposażenia
+## Wersje wyposażenia Toyota ProAce Verso
 
 [Toyota Proace Verso](https://pl.wikipedia.org/wiki/Toyota_Proace_Verso) jest dostępna w trzech wariantach wyposażenia, które różnią się przeznaczeniem i poziomem komfortu.
 
@@ -32,7 +32,7 @@ Family – wariant pośredni, rozszerzony o komfortowe fotele z regulacją podł
 
 VIP – wersja premium z indywidualnymi fotelami kapitańskimi w środkowym rzędzie, tapicerką skórzaną, panoramicznym szyberdachem, nagłośnieniem JBL oraz pełnym pakietem asystentów jazdy. Dostępna wyłącznie w nadwoziu Long, najczęściej stosowana do przewozów biznesowych i lotniskowych transferów.
 
-## Silniki
+## Silniki ProAce Verso
 
 Toyota Proace Verso jest oferowana z silnikami diesla o pojemności 1.5 i 2.0 litra oraz z napędem elektrycznym.
 
@@ -43,7 +43,7 @@ Toyota Proace Verso jest oferowana z silnikami diesla o pojemności 1.5 i 2.0 li
 
 Wszystkie odmiany diesla spełniają normę Euro 6d. Automatyczna skrzynia EAT8 jest dostępna przy silnikach 2.0 D-4D i stanowi de facto standard w wersjach Family i VIP.
 
-## Wymiary i konfiguracja siedzeń
+## Wymiary Toyota ProAce Verso
 
 ![Toyota Proace Verso II – wymiary i wnętrze](/images/toyota-proace-verso-hero.jpg)
 
@@ -64,7 +64,7 @@ Fotele środkowego rzędu można przesuwać wzdłuż prowadnic i składać do po
 
 Więcej o wariancie z wydłużonym nadwoziem: [Toyota Proace Verso Long](/modele/toyota-proace-verso/long/).
 
-## Wersja elektryczna
+## ProAce Verso Electric
 
 Toyota Proace Verso Electric to ta sama karoseria z silnikiem elektrycznym o mocy 136 KM i dwoma wariantami akumulatorów.
 
@@ -80,7 +80,7 @@ Wersja elektryczna jest dostępna wyłącznie w nadwoziu Medium i Long, bez wers
 Homologacja M1 (osobowa) oznacza pełne odliczenie VAT przy zakupie przez firmę, jeśli pojazd służy wyłącznie działalności gospodarczej i prowadzony jest ewidencja przebiegu. Proace Verso Electric dodatkowo kwalifikuje się do dotacji z programów wsparcia elektromobilności – warto sprawdzić aktualne warunki przed zakupem.
 {{% /info %}}
 
-## Porównanie z konkurencją
+## Porównanie ProAce Verso z konkurencją
 
 Toyota Proace Verso rywalizuje z VW Multivanem, Mercedesem V-klasy i Renaultem Trafic SpaceClass. Wszystkie oferują układ osobowy z opcją 7 lub 8 miejsc, ale różnią się szczegółami.
 

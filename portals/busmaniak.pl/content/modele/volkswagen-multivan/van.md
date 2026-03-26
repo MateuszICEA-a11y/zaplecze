@@ -21,7 +21,7 @@ faq:
     answer: "Od ok. 240 000 zł brutto (1.5 TSI). Wersja eHybrid od ok. 280 000 zł brutto."
 ---
 
-## Multivan Van – konstrukcja i wersje nadwozia
+## Volkswagen Multivan Van – konstrukcja i wersje nadwozia
 
 Volkswagen Multivan T7 (od 2021) to luksusowy MPV na platformie [MQB](https://en.wikipedia.org/wiki/Volkswagen_Group_MQB_platform) – tej samej co Golf, Passat czy Tiguan. To fundamentalna zmiana wobec T6.1, który bazował na platformie dostawczej Transportera. Multivan T7 jest samochodem osobowym z homologacją M1, nie dostawczakiem – ale jego modułowe wnętrze pozwala na użytkowanie w roli lekkiego vana.
 

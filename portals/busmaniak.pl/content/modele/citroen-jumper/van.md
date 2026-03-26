@@ -19,6 +19,14 @@ lead: "Citroën Jumper Van to zamknięta przestrzeń ładunkowa do intensywnej e
 ---
 ## Konfiguracje i wymiary przestrzeni ładunkowej
 
+| Wariant | Długość całkowita | Dług. przestrzeni | Pojemność | Ładowność |
+|---------|-------------------|-------------------|-----------|-----------|
+| L1H1 | 4963 mm | 2167 mm | 8 m³ | ok. 1100 kg |
+| L2H1 | 5413 mm | 2583 mm | 10 m³ | ok. 1200 kg |
+| L2H2 | 5413 mm | 2977 mm | 13 m³ | ok. 1400 kg |
+| L3H2 | 5998 mm | 3705 mm | 15 m³ | ok. 1500 kg |
+| L4H3 | 6363 mm | 4070 mm | 17 m³ | do 1735 kg |
+
 Jumper Van jest produkowany w pięciu konfiguracjach:
 
 **L1H1 – 8 m³:**

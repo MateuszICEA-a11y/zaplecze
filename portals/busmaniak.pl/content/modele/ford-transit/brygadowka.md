@@ -35,6 +35,15 @@ Tylne drzwi to skrzydłowe klapa lub dwie skrzydłowe drzwi 270°.
 
 Brygadówka dostępna jest w wersjach L2 i L3. Przestrzeń ładunkowa jest krótsza niż w standardowym Van, bo część nadwozia zajmuje tylna kabina pasażerska.
 
+| Parametr | L2 Double Cab | L3 Double Cab |
+|---|---|---|
+| Długość całkowita | 5531 mm | 6019 mm |
+| Długość podłogi ładunkowej | ok. 1850 mm | ok. 2550 mm |
+| Pojemność ładunkowa | ~6 m³ | ~8 m³ |
+| Liczba miejsc | 5–6 | 5–6 |
+| DMC | 3500 kg | 3500 kg |
+| Ładowność | ok. 800–1000 kg | ok. 800–1200 kg |
+
 - L2 Double Cab – długość podłogi ładunkowej ok. 1850 mm, pojemność ~6 m³
 - L3 Double Cab – długość podłogi ok. 2550 mm, pojemność ~8 m³
 

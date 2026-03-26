@@ -39,7 +39,7 @@ Produkcja odbywa się wyłącznie w fabryce w **Batilly** (Wielka Lotaryngia, Fr
 Renault Master III dzieli całą platformę z Oplem Movano B/C i Nissanem NV400. Oznacza to pełną zamienność mechanicznych podzespołów – od silnika M9T przez skrzynie biegów po elementy zawieszenia. Przy wyborze używanego egzemplarza warto monitorować też oferty pod marką Opel, gdzie ceny bywają niższe przy identycznej mechanice.
 {{% /info %}}
 
-## Dane techniczne i wymiary {#dane-techniczne}
+## Dane techniczne Renault Master {#dane-techniczne}
 
 Master III stosuje system oznaczeń znany z całej klasy: L (długość) i H (wysokość). Dostępne są konfiguracje L1 do L4 oraz H1 do H3, przy czym nie każda kombinacja długości i wysokości jest dostępna fabrycznie.
 
@@ -54,7 +54,7 @@ Master III stosuje system oznaczeń znany z całej klasy: L (długość) i H (wy
 
 Szerokość ładunkowa wynosi 1765 mm w standardowych wersjach i 1860 mm w wariantach Maxi. DMC zależy od wersji: 3100 kg, 3300 kg, 3500 kg lub 4500 kg w wzmocnionych wariantach podwoziowych.
 
-## Silniki 2.3 dCi – jednostka M9T {#silniki}
+## Silniki Mastera – 2.3 dCi M9T {#silniki}
 
 Renault Master III jest dostępny wyłącznie z silnikiem diesla 2.3 dCi (oznaczenie fabryczne M9T). To czterocylindrowa jednostka o pojemności 2298 cm³ ze wspólnym układem wtryskowym (Common Rail) i turbosprężarką o zmiennej geometrii.
 
@@ -76,7 +76,7 @@ Silnik M9T to jedna z trwalszych jednostek w klasie dostawczaków. W praktyce pr
 
 ![Renault Master III furgon L3H2 przy rampie załadunkowej](/images/renault-master-hero.jpg)
 
-## Wersje nadwoziowe i zastosowania {#wersje-nadwozia}
+## Wersje nadwoziowe Renault Master {#wersje-nadwozia}
 
 Master jest dostępny w kilku podstawowych konfiguracjach nadwoziowych, co czyni go jednym z bardziej elastycznych modeli w klasie:
 
@@ -88,7 +88,7 @@ Master jest dostępny w kilku podstawowych konfiguracjach nadwoziowych, co czyni
 - **[Master plandeka](/modele/renault-master/plandeka/)** – skrzynia z przykryciem plandeką
 - **[Master dCi](/modele/renault-master/dci/)** – artykuł skupiony na szczegółach silnikowych
 
-## Spalanie i koszty eksploatacji {#spalanie-eksploatacja}
+## Spalanie i koszty eksploatacji Mastera {#spalanie-eksploatacja}
 
 Rzeczywiste zużycie paliwa zależy od masy ładunku, trasy i stylu jazdy. Orientacyjne wartości dla najczęściej wybieranych wersji:
 
@@ -100,7 +100,7 @@ Rzeczywiste zużycie paliwa zależy od masy ładunku, trasy i stylu jazdy. Orien
 
 Interwał wymiany oleju wynosi 30 000 km lub 2 lata. Wersje Euro 6 wymagają płynu AdBlue – zbiornik o pojemności ok. 17 l wystarcza na 8000–12 000 km.
 
-## Typowe usterki i na co uważać przy zakupie {#usterki-zakup}
+## Typowe usterki Renault Master {#usterki-zakup}
 
 Master III jest modelem ogólnie solidnym, ale ma swoje charakterystyczne słabości. Przed zakupem warto sprawdzić:
 

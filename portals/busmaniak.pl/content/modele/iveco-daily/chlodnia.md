@@ -64,6 +64,12 @@ Agregat niezależny (własny silnik) jest konieczny przy postoju – uniezależn
 
 Zabudowa izoterma z agregatem waży 800–1 300 kg. To poważne obciążenie masy własnej. Przy DMC 3,5 t ładowność netto wynosi tylko 600–900 kg – na granicy opłacalności. Realna praca to DMC 5,0 t wzwyż.
 
+| DMC | Poj. komory | Zakres temp. | Ładowność netto |
+|-----|-------------|--------------|-----------------|
+| 3,5 t | do 8 m³ (L2) | 0°C / –20°C | 600–900 kg |
+| 5,0 t | 10–12 m³ (L3) | 0°C / –20°C | 1 500–1 800 kg |
+| 7,2 t | 13–15 m³ (L4) | 0°C / –20°C | 2 300–2 800 kg |
+
 - DMC 3,5 t – ładowność 600–900 kg, tylko małe dystrybucje
 - DMC 5,0 t – ładowność 1 500–1 800 kg, standard dla gastronomii i cukierni
 - DMC 7,2 t – ładowność 2 300–2 800 kg, dystrybucja hurtowa, mrożonki

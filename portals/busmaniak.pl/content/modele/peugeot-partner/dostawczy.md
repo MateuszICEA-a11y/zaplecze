@@ -20,10 +20,13 @@ lead: "Peugeot Partner III Van to kompaktowy dostawczak w kategorii N1, zaprojek
 ## Konfiguracje dostępne w Partnerze dostawczym
 
 Partner Van dostępny jest w czterech podstawowych wariantach:
-- Short (L1) bez tylnych szyb: przestrzeń 3,3 m³, ładowność do 800 kg
-- Long (L2) bez tylnych szyb: przestrzeń 4,4 m³, ładowność do 1000 kg
-- Short z przeszkleniem tylnym (wersja Combi M1): do 5 osób
-- Long z pełnym przeszkleniem: do 5 osób + opcja 3 rzędu
+
+| Wersja | Dł. całkowita | Przestrzeń | Ładowność | Homologacja |
+|---|---|---|---|---|
+| Short (L1) Van | 4403 mm | 3,3 m³ | do 800 kg | N1 |
+| Long (L2) Van | 4753 mm | 4,4 m³ | do 1000 kg | N1 |
+| Short Combi | 4403 mm | – | – | M1 (5 os.) |
+| Long Combi | 4753 mm | – | – | M1 (5–7 os.) |
 
 Konfiguracje dostawcze (Van) mają:
 - stalową boczną zabudowę (brak szyb)

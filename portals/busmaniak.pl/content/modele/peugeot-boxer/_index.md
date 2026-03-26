@@ -17,7 +17,7 @@ faq:
     answer: "Boxer oferuje przestrzeń ładunkową od 8 do 17 m³ w zależności od konfiguracji. Standardowe wersje Van to 8, 10, 11 i 13 m³. Wersja L4H3 (najdłuższa, najwyższa) oferuje 17 m³."
 lead: "Peugeot Boxer III to duży van dostawczy klasy ciężkiej segmentu N1/N2, budowany na wspólnej platformie Sevel Sud razem z Fiatem Ducato i Citroënem Jumperem. W Polsce jest jednym z dominujących wyborów dla firm transportowych, usługowych i producentów zabudów specjalnych."
 ---
-## Historia i generacje Boxera
+## Historia i generacje Peugeot Boxer
 
 ### Peugeot Boxer I (1994–2006)
 
@@ -81,7 +81,7 @@ Peugeot współpracuje z siecią certyfikowanych zabudowców w Polsce – m.in. 
 Boxer w wersji chłodniczej (zabudowa izotermiczna z agregatem chłodniczym) może być przystosowany do transportu żywności zgodnie z ATP (Umowa o Międzynarodowych Przewozach Szybko Psujących się Artykułów Spożywczych). Certyfikat ATP wymagany jest przy temperaturach poniżej +7°C. Boxer z DMC do 3,5 t nie wymaga prawa jazdy C.
 {{% /info %}}
 
-## Typowe usterki Boxera
+## Typowe usterki Peugeot Boxer
 
 Silnik 2.2 BlueHDi wymaga wymiany oleju co 30 000 km lub 2 lata. Koszt przeglądu: ok. 600–900 zł. Przy regularnym serwisie silnik pokonuje 500 000 km.
 

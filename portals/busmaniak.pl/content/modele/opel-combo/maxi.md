@@ -21,7 +21,7 @@ faq:
     answer: "Cargo XL nowy od ok. 115 000 zł netto. Używany 2019–2021: 55 000–85 000 zł."
 ---
 
-## Combo Maxi vs Short – różnice
+## Opel Combo Maxi vs Short – różnice
 
 Combo Maxi (XL) to 350 mm więcej nadwozia niż wersja Short – cała różnica trafia do przestrzeni ładunkowej. Rozstaw osi rośnie z 2785 do 2975 mm, co poprawia stabilność przy pełnym załadunku. Średnica zawracania rośnie z 10,6 do 11,6 m – w ciasnych uliczkach odczuwalna różnica.
 

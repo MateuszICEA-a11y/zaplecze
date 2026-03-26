@@ -20,7 +20,7 @@ faq:
     answer: "W drugiej generacji ok. 258 cm. W trzeciej, dzięki systemowi Moduwork, przestrzeń ładunkową można wydłużyć do 4 m."
 ---
 
-## Historia i generacje Scudo
+## Historia i generacje Fiat Scudo
 
 Trzy generacje i zmiana platformy – Scudo zaczynało jako wspólny projekt FIAT-u i PSA, a dziś bazuje na tej samej architekturze co Peugeot Expert i Toyota ProAce.
 
@@ -40,7 +40,7 @@ Scudo II zdobyło tytuł International Van of the Year 2008, pokonując m.in. Vo
 
 Po sześcioletniej przerwie (2016–2022, kiedy sprzedawano Talento na bazie Trafica) Scudo wróciło na platformie [EMP2](https://en.wikipedia.org/wiki/PSA_EMP2_platform). Bliźniaki: [Peugeot Expert](/modele/peugeot-expert/), Citroën Jumpy, Opel Vivaro, Toyota ProAce. Dostępne w wersji spalinowej i elektrycznej E-Scudo (136 KM, zasięg do 330 km WLTP).
 
-## Wymiary Scudo – generacja II i III
+## Wymiary Fiat Scudo
 
 | Parametr | Scudo II Short | Scudo II Long | Scudo III Compact | Scudo III Standard | Scudo III Long |
 |----------|---------------|--------------|-------------------|-------------------|---------------|
@@ -87,7 +87,7 @@ Scudo Panorama to pełne przeszklenie, nawiewy dla każdego rzędu i lepsze wyg�
 
 Dwa rzędy siedzeń + oddzielona przestrzeń towarowa. Przewóz 5–6 osób z zachowaniem dużej paki – złoty środek dla firm serwisowych dowożących zespół i sprzęt jednocześnie.
 
-## Typowe usterki Scudo
+## Typowe usterki Fiat Scudo
 
 Średnia ocena użytkowników: 3,69/5. Solidne rzemiosło z kilkoma słabymi punktami.
 
@@ -129,7 +129,7 @@ Większość problemów mechanicznych Scudo wynika z przeładowywania auta ponad
 
 Wersje osobowe Panorama trzymają cenę znacznie lepiej niż typowe furgony.
 
-## Porównanie Scudo z konkurencją
+## Porównanie Fiat Scudo z konkurencją
 
 | Parametr | Fiat Scudo III L2 | Renault Trafic III L2 | Ford Transit Custom L2 | VW Transporter T6.1 L2 |
 |----------|-------------------|----------------------|------------------------|------------------------|

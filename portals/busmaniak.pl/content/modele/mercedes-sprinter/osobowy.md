@@ -43,6 +43,13 @@ Konfiguracje miejsc w zależności od długości:
 - L3, układ 2+2: do 19 miejsc (kierowca + 18 pasażerów)
 - L3 Tourist VIP, fotele 1+1: 8–12 miejsc z rozszerzonym rozstawem
 
+| Wersja               | Nadwozie | Liczba miejsc | Układ foteli |
+|----------------------|----------|---------------|--------------|
+| Tourer Pro           | L2H2     | 12–16         | 2+2          |
+| Tourer Transfer      | L2H2     | 9–16          | 2+1 lub 2+2  |
+| Tourist Standard     | L3H2     | 14–19         | 2+2          |
+| Tourist Comfort/VIP  | L3H2     | 8–12          | 1+1          |
+
 Szerokość wnętrza umożliwia układ 2+1 (dwa fotele po lewej, jeden po prawej) – stosowany przy wersji Transfer dla maksymalnego komfortu przy zachowaniu rozsądnej pojemności.
 
 ## Silniki i napęd

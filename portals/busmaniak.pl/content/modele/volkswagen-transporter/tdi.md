@@ -21,7 +21,7 @@ faq:
     answer: "T4 2.5 TDI: pękająca głowica. T5 2.5 TDI: wtryskiwacze i koło dwumasowe. T5/T6 2.0 TDI: łańcuch rozrządu i DPF. DSG wymaga wymiany oleju co 60 tys. km."
 ---
 
-## Dane techniczne silników TDI w Transporterze
+## Dane techniczne silników TDI w Volkswagen Transporter
 
 Trzy dekady, trzy generacje silników – od pięciocylindrowego 2.5 TDI z lat 90. po czterocylindrowy 2.0 TDI, który w T6.1 ma aż pięć wariantów mocy. Każda generacja ma swój charakter, mocne strony i pułapki, o których trzeba wiedzieć przed zakupem.
 
@@ -84,7 +84,7 @@ Spalanie zależy od trzech czynników: silnika, zabudowy nadwozia i stylu jazdy.
 
 W ruchu miejskim dodaj 25–40% do wartości trasowych. 2.0 TDI 150 KM w mieście z ładunkiem: 9–11 l/100 km. California z podniesionym dachem i bagażnikiem na dachu: nawet 12 l.
 
-## Typowe usterki TDI per generacja
+## Typowe usterki TDI w Transporterze
 
 ### T4 – 2.5 TDI
 

@@ -34,6 +34,13 @@ Dostępne konfiguracje:
 - L4H2 – pojemność ok. 17 m³, długość całkowita 7345 mm – maksimum segmentu
 - L4H3 – pojemność ok. 17 m³ z wysokim dachem
 
+| Wersja | Długość całkowita | Pojemność ładunkowa |
+|--------|-------------------|---------------------|
+| L1H1   | 5267 mm           | 7,5 m³              |
+| L2H2   | 5910 mm           | 10,5 m³             |
+| L3H2   | 6945 mm           | 14,0 m³             |
+| L4H3   | 7345 mm           | 17,0 m³             |
+
 Wysokość wewnętrzna wynosi odpowiednio: H1 – ok. 1410 mm, H2 – ok. 1825 mm, H3 – ok. 2155 mm. Szerokość przestrzeni ładunkowej między nadkolami to 1125 mm, maksymalna szerokość 1780 mm.
 
 Drzwi boczne przesuwne dostępne są jednostronnie lub obustronnie. Drzwi tylne – dwuskrzydłowe, otwierane na 270°, opcjonalnie tylna klapa unoszona.

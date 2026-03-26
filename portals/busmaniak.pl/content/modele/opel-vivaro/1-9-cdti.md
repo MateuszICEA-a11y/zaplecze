@@ -7,4 +7,7 @@ author: "marek-kowalczyk"
 h1: "Opel Vivaro 1.9 CDTI – dane techniczne i opinie"
 parent: "opel-vivaro"
 type: "engine"
+aliases:
+  - /modele/opel-vivaro/1-9-cdti/
+redirect: /modele/opel-vivaro/1-9/
 ---

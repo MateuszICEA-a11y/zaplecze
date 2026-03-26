@@ -22,7 +22,7 @@ faq:
     answer: "We Wrześni (Wielkopolska) – specjalnie zbudowana fabryka z inwestycją ok. 800 mln euro, uruchomiona w 2017 roku."
 ---
 
-## Historia i generacje Craftera
+## Historia i generacje Volkswagen Crafter
 
 ### Volkswagen Crafter I (2006–2017)
 
@@ -44,7 +44,7 @@ Kluczowe innowacje generacji II:
 Crafter II i MAN TGE powstają w zakładach VW Poznań we Wrześni – jednym z najbardziej zautomatyzowanych zakładów produkcji dostawczaków w Europie (inwestycja ok. 800 mln euro). Dla polskich firm flotowych oznacza to szybsze terminy dostaw i łatwiejszy dostęp do serwisu.
 {{% /info %}}
 
-## Wymiary Craftera II
+## Wymiary Volkswagen Crafter II
 
 | Parametr | L3H2 | L3H3 | L4H2 | L4H3 |
 |----------|------|------|------|------|
@@ -85,7 +85,7 @@ Większość Crafterów w Polsce to wersje FWD – wystarczające dla 90% zastos
 Crafter 2.0 TDI 140 KM to jeden z lepszych silników w klasie – wystarczający moment od 1500 rpm i serwis łatwo dostępny w całej sieci VW w Polsce. Ale przy zakupie używanego sprawdź automat 8AT: wymaga wymiany oleju co 60 tys. km. Zaniedbanie tego = zużyte łączniki wielopłytkowe i naprawa za 6000–12 000 zł.
 {{% /expert %}}
 
-## Wersje nadwoziowe Craftera
+## Wersje nadwoziowe Volkswagen Crafter
 
 - **Furgon** – klasyczny dostawczak L3/L4, dach H2/H3, przesuwne drzwi po jednej lub obu stronach
 - **Podwozie pojedyncza kabina** – baza pod lawety, wywrotki, izotermy, food trucki
@@ -102,7 +102,7 @@ Crafter jest jednym z najlepiej wyposażonych seryjnie dostawczaków:
 - Adaptacyjny tempomat (ACC) z stop & go
 - System monitorowania zmęczenia kierowcy
 
-## Typowe usterki Craftera
+## Typowe usterki Volkswagen Crafter
 
 ### Crafter I (2006–2017)
 
@@ -139,7 +139,7 @@ Crafter jest jednym z najlepiej wyposażonych seryjnie dostawczaków:
 | Crafter II (2017–2020) | 80 000–130 000 zł |
 | Crafter II (2021–2024) | 120 000–180 000 zł |
 
-## Porównanie Craftera z konkurencją
+## Porównanie Craftera z konkurentami
 
 | Parametr | VW Crafter II L3H3 | Mercedes Sprinter L2H2 | Fiat Ducato L3H2 | Iveco Daily L3H2 |
 |----------|-------------------|----------------------|------------------|------------------|

@@ -22,8 +22,10 @@ faq:
 
 Vivaro furgon występuje w dwóch długościach:
 
-- **Standard (L1)** – długość całkowita 4960 mm, przestrzeń ładunkowa ok. 5,3 m³
-- **[Long (L2)](/modele/opel-vivaro/long/)** – długość całkowita 5310 mm, przestrzeń ładunkowa ok. 6,6 m³
+| Wersja | Długość całkowita | Przestrzeń ładunkowa | Ładowność (DMC 3100 kg) |
+|--------|-------------------|----------------------|-------------------------|
+| Standard (L1) | 4960 mm | 5,3 m³ | 1050–1200 kg |
+| Long (L2) | 5310 mm | 6,6 m³ | 1100–1400 kg |
 
 Brak opcji wysokiego dachu (H2) w Vivaro C odróżnia go od Transit Custom i ogranicza zastosowania wymagające stania w ładowni.
 

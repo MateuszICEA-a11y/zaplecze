@@ -22,7 +22,7 @@ faq:
     answer: "Od 2022 roku dzielą platformę T6, ale różnią się designem, kalibracją zawieszenia i wykończeniem wnętrza. Amarok jest droższy i bardziej premium."
 ---
 
-## Historia i generacje Rangera
+## Historia i generacje Ford Ranger
 
 Globalny przebój, który w Europie zdominował segment pickupów. Ranger ewoluował z surowego narzędzia pracy w komfortową terenówkę zdolną zastąpić rodzinnego SUV-a.
 
@@ -89,7 +89,7 @@ Diesel 3.2 Duratorq to legenda – pięciocylindrowy motor ceniony za charaktery
 W Rangerze z silnikiem 2.0 EcoBlue kluczowa jest wymiana oleju co 10–15 tys. km. Pasek rozrządu pracujący w kąpieli olejowej potrafi się łuszczyć i zapchać smok pompy olejowej – to najdroższa usterka tego silnika (wymiana silnika 15–25 tys. zł). Ford wymienia całe bloki na gwarancji.
 {{% /expert %}}
 
-## Wersje wyposażenia Rangera
+## Wersje wyposażenia Ford Ranger
 
 ### XL i XLT
 
@@ -107,7 +107,7 @@ Flagowy wariant od Ford Performance do szybkiej jazdy w terenie:
 - **Opony** – 285/70 R17 BFGoodrich All-Terrain (33 cale)
 - **Tryby jazdy** – 6 trybów terenowych w tym Baja (do rajdów po piasku)
 
-## Typowe usterki Rangera
+## Typowe usterki Ford Ranger
 
 ### Silnik 2.0 EcoBlue
 

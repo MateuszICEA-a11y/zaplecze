@@ -40,7 +40,7 @@ Volkswagen Transporter T6 (2015–2025) przyniósł lifting wizualny i nowoczesn
 
 Najnowszy Volkswagen T7 Transporter (od 2021) w wersji Multivan bazuje na osobowej [platformie MQB](https://en.wikipedia.org/wiki/Volkswagen_Group_MQB_platform) (Modularer Querbaukasten). Pozwala to na zastosowanie zaawansowanych systemów asystujących oraz napędów hybrydowych typu plug-in.
 
-## Wymiary Transportera T6.1
+## Wymiary Volkswagen Transporter T6.1
 
 | Parametr | L1 (krótki) | L2 (długi) |
 |----------|------------|-----------|
@@ -85,7 +85,7 @@ Model występuje w kilku kluczowych odmianach przeznaczenia:
 - **Multivan** – luksusowy MPV, idealny dla dużych rodzin lub jako mobilne biuro
 - **California** – kultowy kamper z podnoszonym dachem, wyposażony w kuchnię i miejsca do spania
 
-## Typowe usterki Transportera
+## Typowe usterki Volkswagen Transporter
 
 ### T4 (1990–2003)
 
@@ -139,7 +139,7 @@ T4 trzyma cenę jak youngtimer – zadbane Syncro z lat 90. potrafią kosztować
 California to jedyny van-kamper, który nie traci na wartości. Używane egzemplarze T5/T6 z wyposażeniem kuchennym i podnoszonym dachem kosztują 120 000–250 000 zł – często więcej niż nowe furgony.
 {{% /info %}}
 
-## Porównanie Transportera z konkurencją
+## Porównanie Transportera z konkurentami
 
 | Parametr | VW Transporter T6.1 L2 | Mercedes Vito Long | Ford Transit Custom L2 | Renault Trafic L2 |
 |----------|------------------------|--------------------|-----------------------|-------------------|

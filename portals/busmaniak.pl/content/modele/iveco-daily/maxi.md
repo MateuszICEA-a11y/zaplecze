@@ -24,6 +24,12 @@ lead: "Iveco Daily Maxi to rekord, który od lat nie ma rywali: 19,6 m³ pojemno
 
 Daily Maxi to podwozie Extra Long w wersji High Roof – kombinacja L4H2. Całkowita długość pojazdu wynosi 7 170 mm, co przekracza wymiary standardowego miejsca parkingowego.
 
+| Wariant | Dł. całk. | Dł. przestrzeni ład. | Szer. podłogi | Wys. wewn. | Pojemność |
+|---------|-----------|----------------------|---------------|------------|-----------|
+| L4H2 | 7 170 mm | 4 750 mm | 1 870 mm | 1 900 mm | 19,6 m³ |
+| L4H3 | 7 450 mm | 4 750 mm | 1 870 mm | 2 100 mm | ~21 m³ |
+| L5H3 | 8 000+ mm | 5 300+ mm | 1 870 mm | 2 100 mm | ~23 m³ |
+
 Przestrzeń ładunkowa:
 
 - Długość: ok. 4 750 mm

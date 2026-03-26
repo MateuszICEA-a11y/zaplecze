@@ -21,7 +21,7 @@ faq:
     answer: "Van Short Grip od ok. 95 000 zł netto. Van Long Pro od ok. 110 000 zł netto."
 ---
 
-## Partner blaszak – wymiary i paka
+## Peugeot Partner blaszak – wymiary i paka
 
 Blaszak (Van) to podstawowa, najchętniej sprzedawana wersja [Peugeota Partnera](/modele/peugeot-partner/) – furgon z pełną stalową przegrodą, zaślepionymi tylnymi szybami i 2/3-osobową kabiną. Paka z drewnianą podłogą pokrytą tworzywem, stalowe uchwyty mocowania i oświetlenie LED. Rejestracja N1 (ciężarowy) daje pełne odliczenie VAT.
 

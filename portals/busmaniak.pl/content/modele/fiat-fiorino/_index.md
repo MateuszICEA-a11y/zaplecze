@@ -20,7 +20,7 @@ faq:
     answer: "Tak – szerokość 1046 mm między nadkolami pozwala na wsunięcie jednej europalety pionowo."
 ---
 
-## Historia i generacje Fiorino
+## Historia i generacje Fiat Fiorino
 
 Trzy generacje, trzy różne bazy techniczne i prawie 50 lat na rynku. Fiorino zaczynało jako przerobiony Fiat 127, a skończyło jako wyspecjalizowany furgon miejski produkowany wspólnie z PSA.
 
@@ -40,7 +40,7 @@ Brazylijskie Fiorino II produkowano aż do 2013 roku – ponad 12 lat dłużej n
 
 Trzecia generacja to efekt współpracy FIAT-u i PSA, produkowana w tureckiej fabryce w Bursie. Wykorzystuje modułową [platformę SCCS](https://en.wikipedia.org/wiki/Fiat_Fiorino), którą dzieli z Citroënem Nemo i Peugeotem Bipper. Dostępna jako furgon Cargo i pięcioosobowy mikrovan Qubo. Produkcja zakończona w 2024 roku – Stellantis nie wprowadził następcy.
 
-## Wymiary i dane techniczne Fiorino III
+## Dane techniczne Fiat Fiorino
 
 Kompaktowe gabaryty to główny argument za Fiorino. Parkujesz tam, gdzie większe dostawczaki nie mają szans.
 
@@ -101,7 +101,7 @@ Klasyczny furgon do transportu towarów. Jedne lub dwoje przesuwnych drzwi boczn
 
 Mikrovan z pięcioma miejscami, kierowany do rzemieślników potrzebujących jednego auta do pracy i rodziny. Lepsze wyciszenie, pełne przeszklenie, bogatsze wyposażenie komfortowe (klimatyzacja, radio z Bluetooth od 2015 r.).
 
-## Typowe usterki Fiorino
+## Typowe usterki Fiat Fiorino
 
 ### Skrzynia biegów i sprzęgło
 
@@ -135,7 +135,7 @@ Produkcja zakończona w 2024 r. Ostatnie egzemplarze salonowe sprzedawane za ok.
 Przy oględzinach sprawdź działanie pompy ABS (częsta i droga usterka), stan łańcucha rozrządu (posłuchaj przy zimnym rozruchu) i stan rolek drzwi przesuwnych.
 {{% /info %}}
 
-## Porównanie Fiorino z konkurencją
+## Porównanie Fiat Fiorino z konkurencją
 
 | Parametr | Fiat Fiorino III | Citroën Nemo | Peugeot Bipper | Renault Kangoo II Compact |
 |----------|-----------------|--------------|----------------|--------------------------|

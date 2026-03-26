@@ -39,6 +39,13 @@ Konfiguracje kabiny:
 - 6 miejsc (2+4) – dwa rzędy foteli, węższe fotele w tylnym rzędzie
 - 7 miejsc (2+5) – maksimum, fotel środkowy w obu rzędach, tylko przy szerokich zabudowach L3/L4
 
+| Wariant         | Miejsca | Ładowność paki (netto) | Dostępne rozstawy |
+|-----------------|---------|------------------------|-------------------|
+| Krótki (L2)     | 5–6     | 900–1200 kg            | L2                |
+| Długi (L3)      | 6–7     | 900–1200 kg            | L3                |
+| DMC 3,5 t (B)   | 5–6     | ok. 700–900 kg         | L2/L3             |
+| DMC 5,5 t (C1)  | 5–6     | ok. 1500–2000 kg       | L2/L3             |
+
 Przegroda między kabiną a paką: stalowa lub aluminiowa z przesuwnymi okienkami lub litą. Standardem w energetyce i telekomunikacji jest przegroda z półką na dokumenty i zasilaczem 12 V.
 
 ## Silnik i DMC

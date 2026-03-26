@@ -20,7 +20,7 @@ faq:
     answer: "Tak – wersja Long (L2) z przestrzenią 4,4 m³ mieści 2 palety EUR wzdłuż. Wersja Short tylko jedną."
 ---
 
-## Historia i generacje Partnera
+## Historia i generacje Peugeot Partner
 
 Trzy generacje i zmiana nazwy wersji osobowej – Partner ewoluował od prostego dostawczaka na bazie 206 do zaawansowanego vana na platformie EMP2.
 
@@ -62,7 +62,7 @@ Trzecia generacja na platformie [EMP2](https://en.wikipedia.org/wiki/PSA_EMP2_pl
 - **Europalety** – 2 sztuki w wersji Long (wzdłuż), 1 w Short
 - **FlexCargo** – otwór w przegrodzie pozwala na transport przedmiotów do 3,44 m (L2)
 
-## Silniki Partnera
+## Silniki Peugeot Partner
 
 | Silnik | Moc | Moment | Spalanie (śr.) | Skrzynia | Norma |
 |--------|-----|--------|----------------|----------|-------|
@@ -92,7 +92,7 @@ Partner III ma jedną realną przewagę nad Combo i Berlingo: opcję automatu EA
 - **Crew Cab** – brygadówka z 5 miejscami + oddzielona paka
 - **e-Partner** – furgon elektryczny z identyczną paką jak wersja spalinowa
 
-## Typowe usterki Partnera
+## Typowe usterki Peugeot Partner
 
 ### Partner I i II
 

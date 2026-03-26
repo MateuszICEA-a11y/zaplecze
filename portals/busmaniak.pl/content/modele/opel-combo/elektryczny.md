@@ -32,6 +32,18 @@ Bateria i zasięg:
 - pojemność użytkowa: ok. 46 kWh
 - zasięg WLTP: 280 km (Van Short), 260 km (Van Long XL)
 
+| Parametr | Wartość |
+|----------|---------|
+| Moc szczytowa | 136 KM (100 kW) |
+| Moment obrotowy | 260 Nm |
+| Bateria | 50 kWh (46 kWh użytkowe) |
+| Zasięg WLTP – Short | 280 km |
+| Zasięg WLTP – Long XL | 260 km |
+| Ładowanie AC (standard) | 7,4 kW |
+| Ładowanie AC (opcja) | 11 kW |
+| Ładowanie DC (CCS) | do 100 kW |
+| Czas DC 20–80% | ok. 30 min |
+
 Ograniczenie prędkości do 130 km/h nie wpływa na użytek dostawczy – e-Combo jest przeznaczone do dystrybucji miejskiej i podmiejskiej, nie do tras ekspresowych.
 
 ## Ładowanie – opcje i czasy

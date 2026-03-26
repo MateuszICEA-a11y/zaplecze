@@ -20,8 +20,11 @@ lead: "Opel Combo E w wersji dostawczej Van to zarejestrowany jako N1 pojazd uż
 ## Dane techniczne wersji dostawczej
 
 Combo Van jest oferowane w dwóch długościach:
-- Short (L1): długość 4403 mm, przestrzeń 3,8 m³, ładowność do 950 kg
-- Long (XL): długość 4753 mm, przestrzeń 4,4 m³, ładowność do 1000 kg
+
+| Wersja | Długość całkowita | Przestrzeń ładunkowa | Ładowność |
+|--------|-------------------|----------------------|-----------|
+| Short (L1) | 4403 mm | 3,8 m³ | do 950 kg |
+| Long XL (L2) | 4753 mm | 4,4 m³ | do 1000 kg |
 
 Parametry przestrzeni ładunkowej (XL):
 - długość podłogi: 1817 mm

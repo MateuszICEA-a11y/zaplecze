@@ -21,7 +21,7 @@ faq:
     answer: "DPF (zapychanie miejskie), czujniki NOx (fałszywe błędy), automat 8AT (wymaga wymiany oleju co 60 tys. km). Silnik sam w sobie trwały."
 ---
 
-## Dane techniczne 2.0 TDI w Crafterze
+## Dane techniczne 2.0 TDI w Volkswagen Crafter
 
 Crafter I (2006–2017) korzystał z silników Mercedesa – diesle 2.5 TDI (88–163 KM) z Sprintera W906. Od generacji II (2017) Volkswagen zastosował własny czterocylindrowy 2.0 TDI z rodziny EA288, znany z Transportera T6 i Amaroka. To silnik dojrzały, przetestowany w milionach egzemplarzy – ale w Crafterze pracuje ciężej niż w mniejszych vanach, bo napędza auto o masie własnej 2000–2500 kg.
 
