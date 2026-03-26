@@ -98,4 +98,27 @@ Używane Doblò II to rynek z dużą podażą. Problemy, których warto szukać:
 
 Doblò III na platformie PSA jest za świeży, żeby mówić o typowych usterkach. Obserwuj jednak stan oprogramowania – elektryka PSA bywa wymagająca przy samodzielnych naprawach.
 
-*Źródła: Wikipedia, Fiat Professional, auto-data.net*
+## Ceny Doblò
+
+| Generacja / Rocznik | Cena orientacyjna |
+|---------------------|-------------------|
+| Doblò I (2001–2010) | 5 000–15 000 zł |
+| Doblò II (2010–2015) | 15 000–30 000 zł |
+| Doblò II (2015–2022, po liftingu) | 28 000–55 000 zł |
+| Doblò III (od 2022) | 60 000–100 000 zł |
+| Nowy Doblò III Van L1 | od ok. 105 000 zł netto |
+
+## Porównanie Doblò z konkurencją
+
+| Parametr | Fiat Doblò III L1 | Opel Combo E L1 | Citroën Berlingo III M | Renault Kangoo III L1 | VW Caddy V |
+|----------|-------------------|----------------|------------------------|-----------------------|------------|
+| Długość | 4403 mm | 4403 mm | 4403 mm | 4486 mm | 4501 mm |
+| Paka | 3,3 m³ | 3,3 m³ | 3,3 m³ | 3,3 m³ | 3,1 m³ |
+| Ładowność | do 1000 kg | do 1000 kg | do 1000 kg | do 800 kg | do 720 kg |
+| Diesel bazowy | 1.5 BlueHDi 100 KM | 1.5 BlueHDi 102 KM | 1.5 BlueHDi 100 KM | 1.5 Blue dCi 95 KM | 2.0 TDI 75 KM |
+| Elektryczny | ✅ e-Doblò | ✅ e-Combo | ✅ ë-Berlingo | ✅ E-Tech | ❌ |
+| Cena Van L1 (netto) | od 105 000 zł | od 105 000 zł | od 92 000 zł | od 90 000 zł | od 130 000 zł |
+
+Doblò III to bliźniak [Opla Combo](/modele/opel-combo/) E, [Citroëna Berlingo](/modele/citroen-berlingo/) III i Peugeota Partnera III na platformie EMP2. [Renault Kangoo](/modele/renault-kangoo/) wygrywa systemem Open Sesame, VW Caddy kulturą jazdy, a Doblò/Combo/Berlingo – ceną i największą ładownością w segmencie.
+
+*Źródła: Wikipedia – Fiat Doblò, Fiat Professional Polska, auto-data.net.*

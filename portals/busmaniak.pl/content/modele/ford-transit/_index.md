@@ -154,6 +154,15 @@ Kilka wniosków z porównania:
 
 Transit wygrywa przede wszystkim dostępnością serwisu i części – warsztatów znających ten model jest w Polsce więcej niż dla jakiegokolwiek innego dostawczaka. To istotny argument przy intensywnym użytkowaniu.
 
----
+## Ceny Transita
 
-*Źródła: Wikipedia, Ford, auto-data.net*
+| Generacja / Rocznik | Cena orientacyjna |
+|---------------------|-------------------|
+| Transit VII (2006–2013) | 15 000–35 000 zł |
+| Transit VIII (2014–2018) | 40 000–75 000 zł |
+| Transit VIII (2019–2022, facelift) | 70 000–120 000 zł |
+| Transit VIII (2023–2025) | 110 000–170 000 zł |
+| Nowy Transit L2H2 (2.0 EcoBlue 130) | od ok. 160 000 zł netto |
+| E-Transit L2H2 | od ok. 280 000 zł netto |
+
+*Źródła: Wikipedia – Ford Transit, oficjalne dane Ford Polska, auto-data.net.*

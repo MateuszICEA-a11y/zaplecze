@@ -155,4 +155,15 @@ W segmencie DMC 3,5 t Daily przegrywa z Transitem pod względem ceny zakupu i si
 
 Dla flot mieszanych, które potrzebują jednego modelu w DMC 3,5–7,2 t, Daily jest jedynym rozsądnym wyborem na rynku – żaden z konkurentów nie oferuje takiego zakresu w jednej platformie.
 
-*Źródła: Wikipedia, Iveco, auto-data.net*
+## Ceny Daily
+
+| Rocznik / Wersja | Cena orientacyjna |
+|-------------------|-------------------|
+| Daily V (2006–2014) | 20 000–45 000 zł |
+| Daily VI (2014–2019) | 45 000–90 000 zł |
+| Daily VI (2019–2024, facelift) | 80 000–150 000 zł |
+| Nowy Daily L2H2 (2.3 136 KM) | od ok. 165 000 zł netto |
+| Nowy Daily L3H2 (3.0 180 KM) | od ok. 200 000 zł netto |
+| eDaily L2H2 | od ok. 300 000 zł netto |
+
+*Źródła: Wikipedia – Iveco Daily, iveco.com, auto-data.net.*

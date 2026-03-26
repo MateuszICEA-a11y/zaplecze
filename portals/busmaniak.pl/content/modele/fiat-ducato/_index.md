@@ -121,4 +121,28 @@ Pod [zabudowę kamperową](/przerobki/fiat-ducato-kamper/) najlepiej sprawdza si
 
 Fiat Ducato dzieli konstrukcję z [Citroënem Jumperem](/modele/citroen-jumper/) i [Peugeotem Boxerem](/modele/peugeot-boxer/). Nadwozia i zawieszenia są niemal identyczne. Kluczowa różnica historycznie dotyczyła silników – Fiat stosował własne MultiJet, a Francuzi jednostki PSA (2.0 BlueHDi, 2.2 HDi). Od powstania Stellantis różnice praktycznie znikły.
 
-*Źródła: Wikipedia, Fiat Professional, katalogi techniczne Stellantis*
+## Ceny Ducato
+
+| Generacja / Rocznik | Cena orientacyjna |
+|---------------------|-------------------|
+| Ducato II (2002–2006) | 10 000–22 000 zł |
+| Ducato III (2007–2014) | 20 000–45 000 zł |
+| Ducato III (2014–2020, po liftingu) | 45 000–90 000 zł |
+| Ducato III BlueHDi (2020–2024) | 85 000–150 000 zł |
+| Nowy Ducato L2H2 (2.2 MJT 140) | od ok. 150 000 zł netto |
+| e-Ducato L2H2 | od ok. 260 000 zł netto |
+
+## Porównanie Ducato z konkurencją
+
+| Parametr | Fiat Ducato L3H2 | Citroën Jumper L3H2 | Peugeot Boxer L3H2 | Mercedes Sprinter L2H2 | VW Crafter L3H3 | Renault Master L3H2 |
+|----------|------------------|--------------------|--------------------|----------------------|-------------------|---------------------|
+| Paka | 13,0 m³ | 15,0 m³ | 15,0 m³ | 11,0 m³ | 14,4 m³ | 13,0 m³ |
+| Ładowność | 1500 kg | 1500 kg | 1500 kg | 1200 kg | 1300 kg | 1600 kg |
+| Diesel bazowy | 2.2 MJT 120 KM | 2.2 BlueHDi 120 KM | 2.2 BlueHDi 120 KM | 2.0 CDI 116 KM | 2.0 TDI 102 KM | 2.3 dCi 135 KM |
+| Platforma | Sevel Sud | Sevel Sud | Sevel Sud | Mercedes | VW | Renault |
+| Produkcja | Gliwice/Atessa | Atessa | Atessa | Düsseldorf | Wrzesień | Batilly |
+| Cena L3H2 (netto) | ~150 000 zł | ~160 000 zł | ~165 000 zł | ~195 000 zł | ~185 000 zł | ~150 000 zł |
+
+Ducato, [Jumper](/modele/citroen-jumper/) i [Boxer](/modele/peugeot-boxer/) to ten sam samochód pod trzema logotypami. [Renault Master](/modele/renault-master/) to główny konkurent z innej platformy. [Sprinter](/modele/mercedes-sprinter/) i [Crafter](/modele/volkswagen-crafter/) grają w wyższej lidze cenowej.
+
+*Źródła: Wikipedia – Sevel, Fiat Professional Polska, katalogi techniczne Stellantis.*

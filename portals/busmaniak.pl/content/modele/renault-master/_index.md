@@ -111,4 +111,28 @@ Master III jest modelem ogólnie solidnym, ale ma swoje charakterystyczne słabo
 - **Skrzynia EDC** – automat w pierwszych rocznikach po faceliftingu (2019–2021) zdarzało się przegrzewać przy intensywnym użytkowaniu; nowsze oprogramowanie (aktualizacja 2022+) poprawiło sytuację
 - **Korozja progów** – szczególnie w starszych egzemplarzach z regionów solonych; zawsze sprawdź od spodu
 
-*Źródła: Wikipedia, Renault, auto-data.net*
+## Ceny Mastera
+
+| Generacja / Rocznik | Cena orientacyjna |
+|---------------------|-------------------|
+| Master II (2003–2010) | 10 000–25 000 zł |
+| Master III (2010–2014) | 25 000–50 000 zł |
+| Master III (2015–2019, po liftingu) | 45 000–85 000 zł |
+| Master III (2019–2024, 2.3 dCi nowe) | 80 000–140 000 zł |
+| Nowy Master III L2H2 (2.3 dCi 135) | od ok. 150 000 zł netto |
+| Master E-Tech (elektryczny) | od ok. 280 000 zł netto |
+
+## Porównanie Mastera z konkurencją
+
+| Parametr | Renault Master L3H2 | Fiat Ducato L3H2 | Opel Movano C L3H2 | Mercedes Sprinter L2H2 | VW Crafter L3H3 |
+|----------|---------------------|------------------|---------------------|----------------------|-------------------|
+| Długość | 6198 mm | 5998 mm | 5998 mm | 5932 mm | 5986 mm |
+| Paka | 13,0 m³ | 13,0 m³ | 13,0 m³ | 11,0 m³ | 14,4 m³ |
+| Ładowność | 1600 kg (DMC 3,5 t) | 1500 kg | 2254 kg (DMC 4,25 t) | 1200 kg | 1300 kg |
+| Diesel bazowy | 2.3 dCi 135 KM | 2.2 MJT 120 KM | 2.2 MJT 120 KM | 2.0 CDI 116 KM | 2.0 TDI 102 KM |
+| Elektryczny | ✅ E-Tech | ✅ e-Ducato | ✅ Movano-e | ✅ eSprinter | ❌ |
+| Cena L3H2 (netto) | ~150 000 zł | ~150 000 zł | ~170 000 zł | ~195 000 zł | ~185 000 zł |
+
+Master wygrywa ceną, mocą silników i największą ładownością w segmencie 3,5 t. [Fiat Ducato](/modele/fiat-ducato/) oferuje zbliżone parametry przy identycznej cenie. [Opel Movano](/modele/opel-movano/) C to od 2021 bliźniak Ducato (nie Mastera!). [Mercedes Sprinter](/modele/mercedes-sprinter/) – premium z RWD. [VW Crafter](/modele/volkswagen-crafter/) – największa kubatura i AWD.
+
+*Źródła: Wikipedia – Renault Master, renault.pl, auto-data.net.*
