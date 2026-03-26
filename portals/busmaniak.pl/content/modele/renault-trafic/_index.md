@@ -47,19 +47,25 @@ Wysokość ładowni w tabeli jest mierzona od podłogi do dachu. Realna wysokoś
 
 ![Renault Trafic III furgon L2H2](/images/renault-trafic-hero.jpg)
 
-## Silniki {#silniki}
+## Silniki Trafica {#silniki}
 
-Trafic III to wyłącznie diesle. Benzyny tu nie ma i raczej nie będzie – to auto robocze, a nie miejski kombivan.
+Trafic III to wyłącznie diesle – to auto robocze, nie miejski kombivan.
 
-**1.6 dCi (kod R9M):**
-- 90 KM i 95 KM (single turbo) – do lekkiej eksploatacji i miasta
-- 115 KM (single turbo) – dobry kompromis mocy i trwałości
-- 120 KM i 140 KM (BiTurbo) – mocny, ale bardziej awaryjny
+| Silnik | Kod | Moc | Moment | Spalanie (śr.) | Typ turbo | Roczniki |
+|--------|-----|-----|--------|----------------|-----------|----------|
+| 1.6 dCi | R9M | 90 KM | 260 Nm | 5,7 l/100 km | single | 2014–2019 |
+| 1.6 dCi | R9M | 115 KM | 300 Nm | 6,0 l/100 km | single | 2014–2019 |
+| 1.6 dCi | R9M | 120 KM | 320 Nm | 6,0 l/100 km | BiTurbo | 2014–2019 |
+| 1.6 dCi | R9M | 140 KM | 340 Nm | 6,3 l/100 km | BiTurbo | 2014–2019 |
+| 2.0 dCi | M9R | 120 KM | 320 Nm | 6,2 l/100 km | single | 2019– |
+| 2.0 dCi | M9R | 150 KM | 350 Nm | 6,5 l/100 km | single | 2019– |
+| 2.0 dCi | M9R | 170 KM | 380 Nm | 6,8 l/100 km | twin | 2019– |
 
-**2.0 dCi (kod M9R, od 2019):**
-- 120 KM, 145 KM, 170 KM
+1.6 dCi single turbo to bezproblemowy silnik – przy regularnych wymianach oleju przejedzie 300 000 km. BiTurbo mocniejszy na papierze, ale dwa doładowania to dwa razy więcej elementów do awarii. Silnik 2.0 dCi od 2019 roku to inny poziom: większy moment, lepsza kultura pracy i spokojniejsza opinia wśród serwisantów.
 
-Jeśli masz wybierać: 1.6 dCi w wersji single turbo to bezproblemowy silnik, który przy regularnych wymianach oleju przejedzie 300 000 km bez większych historii. BiTurbo wygląda zachęcająco na papierze, ale dwa doładowania to dwa razy więcej elementów do awarii – przy wysokich przebiegach potrafi sprawiać kłopoty. Silnik 2.0 dCi od 2019 roku to inny poziom: większy moment obrotowy, lepsza kultura pracy i znacznie spokojniejsza opinia wśród serwisantów. Jeśli budżet pozwala – celuj w tę jednostkę.
+{{% expert name="Kowalczyk" %}}
+Przy zakupie używanego Trafica historia serwisowa ważniejsza jest niż przebieg. Auto z 250 tys. km, ale z wymianami oleju co 15 000 km, to lepszy wybór niż egzemplarz z 150 tys. bez rachunków. Sprawdź też zużycie wnętrza – podłoga ładowni i fotel kierowcy powiedzą o historii eksploatacji więcej niż licznik.
+{{% /expert %}}
 
 ## Wersje nadwoziowe {#wersje}
 
@@ -84,15 +90,28 @@ Trafic to auto robocze, więc lista usterek nie powinna zaskakiwać – większo
 Co kilkadziesiąt tysięcy kilometrów warto zlecić sprawdzenie ciśnienia wtrysku i korekcji dawek paliwa w specjalistycznym serwisie common rail. Wczesne wykrycie wycieku lub zaburzonej dawki pozwala uniknąć wymiany całego kompletu wtryskiwaczy – a to różnica kilku tysięcy złotych.
 {{% /info %}}
 
-## Porównanie z konkurencją {#konkurencja}
+## Ceny Trafica
 
-- **Volkswagen Transporter T6.1** – droższy o 20–30% przy zakupie, lepsza trwałość skrzyni biegów i wyższy prestiż. Jeśli auto musi robić wrażenie – VW. Jeśli ma po prostu jeździć – różnica nie jest warta tej dopłaty.
-- **Ford Transit Custom** – cena zbliżona do Trafica, ale lepsze fotele i ergonomia wnętrza. Kierowcy spędzający w aucie cały dzień doceniają tę różnicę.
-- **Mercedes Vito** – wyższy segment, wyższy koszt zakupu i utrzymania. Sensowny wybór przy kontraktach, gdzie auto musi reprezentować markę.
-- **Opel Vivaro** – to dosłownie ten sam samochód. Inne logo, identyczne podzespoły. Jedyna praktyczna różnica to cena używanych egzemplarzy i dostępność u dealera.
+| Rocznik / Generacja | Cena orientacyjna |
+|---------------------|-------------------|
+| Trafic II (2005–2010) | 15 000–30 000 zł |
+| Trafic II (2010–2014) | 25 000–45 000 zł |
+| Trafic III 1.6 dCi (2014–2019) | 40 000–75 000 zł |
+| Trafic III 2.0 dCi (2019–2022) | 70 000–110 000 zł |
+| Trafic III (2023–2025) | 100 000–140 000 zł |
+| Nowy Trafic L1H1 (2.0 dCi 120) | od ok. 135 000 zł netto |
 
-*Źródła: Wikipedia, Renault, auto-data.net*
+## Porównanie Trafica z konkurencją {#konkurencja}
 
-{{% expert name="Kowalczyk" %}}
-Przy zakupie używanego Trafica historia serwisowa ważniejsza jest niż przebieg. Auto z 250 000 km na liczniku, ale z dokumentowanymi wymianami oleju co 15 000 km, to lepszy wybór niż egzemplarz z 150 000 km bez żadnych rachunków. Sprawdź też zużycie wnętrza – podłoga ładowni, stopnie wejściowe i stan fotela kierowcy powiedzą Ci więcej o historii eksploatacji niż licznik.
-{{% /expert %}}
+| Parametr | Renault Trafic L2 | Opel Vivaro L2 | Ford Transit Custom L2 | VW Transporter T6.1 L2 | Mercedes Vito Long |
+|----------|-------------------|----------------|------------------------|------------------------|---------------------|
+| Długość | 5480 mm | 4959 mm | 5340 mm | 5304 mm | 5140 mm |
+| Paka | 6,7 m³ (L2H1) | 5,3 m³ | 6,8 m³ | 6,7 m³ | 6,0 m³ |
+| Ładowność | 1251 kg | 1400 kg | 1356 kg | 1328 kg | 1369 kg |
+| Diesel bazowy | 2.0 dCi 120 KM | 1.5 D 100 KM | 2.0 EcoBlue 105 KM | 2.0 TDI 110 KM | 2.0 CDI 116 KM |
+| Holowanie | 2500 kg | – | 2800 kg | 2500 kg | 2500 kg |
+| Cena nowego L2 (netto) | ~135 000 zł | ~125 000 zł | ~155 000 zł | ~175 000 zł | ~155 000 zł |
+
+[Opel Vivaro](/modele/opel-vivaro/) (Vivaro A/B) to dosłownie ten sam samochód – inne logo, identyczne podzespoły. [Ford Transit Custom](/modele/ford-transit-custom/) oferuje lepsze fotele i ergonomię, [VW Transporter](/modele/volkswagen-transporter/) wyższy prestiż i wartość rezydualną, [Mercedes Vito](/modele/mercedes-vito/) – premium wykończenie i opcję 4x4. Trafic wygrywa ceną i niskimi kosztami eksploatacji.
+
+*Źródła: Wikipedia – Renault Trafic, renault.pl, auto-data.net.*

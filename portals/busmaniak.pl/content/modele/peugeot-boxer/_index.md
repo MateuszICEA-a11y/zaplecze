@@ -17,29 +17,32 @@ faq:
     answer: "Boxer oferuje przestrzeń ładunkową od 8 do 17 m³ w zależności od konfiguracji. Standardowe wersje Van to 8, 10, 11 i 13 m³. Wersja L4H3 (najdłuższa, najwyższa) oferuje 17 m³."
 lead: "Peugeot Boxer III to duży van dostawczy klasy ciężkiej segmentu N1/N2, budowany na wspólnej platformie Sevel Sud razem z Fiatem Ducato i Citroënem Jumperem. W Polsce jest jednym z dominujących wyborów dla firm transportowych, usługowych i producentów zabudów specjalnych."
 ---
-## Platforma i produkcja
+## Historia i generacje Boxera
 
-Boxer III jest produkowany w zakładach Sevel Nord w Vigo (Hiszpania) i Atessa (Włochy) od 2006 roku. Facelifting z 2014 roku przyniósł odświeżone nadwozie i nowe silniki MultiJet II, a modernizacja z 2020 roku – silniki 2.2 BlueHDi i aktualizację systemów bezpieczeństwa ADAS.
+### Peugeot Boxer I (1994–2006)
 
-Platforma Sevel Sud charakteryzuje się:
-- przednim napędem (silnik poprzeczny)
-- zawieszeniem przednim: McPherson z wahaczem
-- zawieszeniem tylnym: resory piórowe (do pojazdów z ciężką zabudową) lub belka skrętna
-- nadwoziem stalowym spawanym, modyfikowalnym dla zabudowców
+Pierwsza generacja powstała na platformie [Sevel](https://en.wikipedia.org/wiki/Sevel) wspólnie z Fiatem Ducato II i Citroënem Jumperem I. Produkcja w Atessie (Włochy). Silniki diesel 2.0/2.2/2.8 HDi (84–128 KM). Wymiary: 4963–6173 mm długości. Model popularny jako baza kamperów i ambulansów.
 
-## Silniki po faceliftingu 2020
+### Peugeot Boxer II / III (od 2006)
 
-Wszystkie aktualne wersje Boxera napędza 2.2 BlueHDi:
-- 2.2 BlueHDi 120 KM + manualna 6-biegowa (dostępny w wersjach do L3)
-- 2.2 BlueHDi 140 KM + manualna 6-biegowa lub EAT8
-- 2.2 BlueHDi 165 KM + EAT8 (wyłącznie z automatem)
+Druga/trzecia generacja (numeracja zależy od źródła) na nowej platformie Sevel Sud. Facelifting 2014 przyniósł silniki MultiJet II, modernizacja 2020 – silniki 2.2 BlueHDi i systemy ADAS (AEB, LKA, BSM). Produkcja: Atessa (Włochy) i Gliwice (Polska, od 2021 dla Movano C – choć Boxer pozostaje w Atessie).
 
-Dane techniczne 2.2 BlueHDi 140 KM:
-- pojemność: 2179 cm³
-- moc: 140 KM (103 kW) przy 3500 rpm
-- moment: 350 Nm przy 1500 rpm
-- norma: Euro 6d
-- wtrysk: Common Rail, ciśnienie do 2000 bar
+Platforma Sevel Sud:
+- Napęd na przednią oś (silnik poprzeczny)
+- Zawieszenie: McPherson przód, resory piórowe tył (ciężkie zabudowy) lub belka skrętna
+- Nadwozie stalowe spawane, modyfikowalne dla zabudowców
+
+## Silniki Boxera
+
+| Silnik | Roczniki | Moc | Moment | Spalanie (śr.) | Skrzynia | Norma |
+|--------|----------|-----|--------|----------------|----------|-------|
+| 2.2 HDi | 2006–2014 | 100 KM | 250 Nm | 8,0 l/100 km | 6-bieg. man. | Euro 4 |
+| 2.2 HDi | 2006–2014 | 120 KM | 300 Nm | 8,5 l/100 km | 6-bieg. man. | Euro 4/5 |
+| 3.0 HDi | 2006–2014 | 160 KM | 400 Nm | 9,5 l/100 km | 6-bieg. man. | Euro 4 |
+| 2.2 BlueHDi | 2020– | 120 KM | 300 Nm | 7,5 l/100 km | 6-bieg. man. | Euro 6d |
+| 2.2 BlueHDi | 2020– | 140 KM | 350 Nm | 7,8 l/100 km | 6-bieg. man. / EAT8 | Euro 6d |
+| 2.2 BlueHDi | 2020– | 165 KM | 370 Nm | 8,0 l/100 km | EAT8 | Euro 6d |
+| e-Boxer | 2022– | 122 KM | 260 Nm | 30 kWh/100 km | 1-bieg. | – |
 
 {{% expert name="Kowalczyk" %}}
 Boxer 2.2 BlueHDi 140 KM z manualną skrzynią to mój pewnik dla firmy budowlanej lub kurierskiej z obciążeniem 2–3 t. Wystarczający moment od 1500 rpm sprawia, że na rampach załadunkowych i w drodze z pełnym ładunkiem silnik pracuje spokojnie. Unikam wersji 120 KM przy ładunku powyżej 1,5 t – silnik pracuje zbyt długo pod pełnym obciążeniem.
@@ -78,16 +81,41 @@ Peugeot współpracuje z siecią certyfikowanych zabudowców w Polsce – m.in. 
 Boxer w wersji chłodniczej (zabudowa izotermiczna z agregatem chłodniczym) może być przystosowany do transportu żywności zgodnie z ATP (Umowa o Międzynarodowych Przewozach Szybko Psujących się Artykułów Spożywczych). Certyfikat ATP wymagany jest przy temperaturach poniżej +7°C. Boxer z DMC do 3,5 t nie wymaga prawa jazdy C.
 {{% /info %}}
 
-## Serwis i koszty eksploatacji
+## Typowe usterki Boxera
 
-Silnik 2.2 BlueHDi wymaga wymiany oleju co 30 000 km lub 2 lata. Koszt przeglądu: ok. 600–900 zł. Przy regularnym serwisie silnik jest zdolny do 500 000 km.
+Silnik 2.2 BlueHDi wymaga wymiany oleju co 30 000 km lub 2 lata. Koszt przeglądu: ok. 600–900 zł. Przy regularnym serwisie silnik pokonuje 500 000 km.
 
-Typowe usterki Boxera III:
-- zawór EGR (zapychanie przy krótkich trasach lub złej jakości paliwie)
-- wtryskiwacze (zużycie po 250 000 km)
-- łożysko tylnej belki lub resorów (przy intensywnym załadunku)
-- aktuator skrzyni EAT8 (przy braku wymiany oleju skrzyni)
+- **Zawór EGR** – zapychanie przy krótkich trasach lub gorszej jakości paliwie (czyszczenie 400–600 zł, wymiana 1200 zł)
+- **Wtryskiwacze** – zużycie po 250 tys. km (regeneracja 600–1000 zł/szt.)
+- **Resory piórowe** – łamanie przy intensywnym załadunku (wymiana 800–1500 zł/strona)
+- **DPF** – mokry filtr z Eolys, regeneracja 1200–1800 zł
+- **Automat EAT8** – aktuator wymaga wymiany oleju co 60 tys. km; zaniedbanie = naprawa 5000–8000 zł
 
-Serwis Boxera dostępny jest w sieci Peugeot, Fiat i Citroën – wszystkie trzy marki obsługują tę platformę.
+Serwis Boxera dostępny w sieci Peugeot, Fiat i Citroën – wszystkie trzy marki obsługują platformę Sevel.
 
-*Źródła: Wikipedia, Peugeot, auto-data.net*
+## Ceny Boxera
+
+| Rocznik / Wersja | Cena orientacyjna |
+|-------------------|-------------------|
+| Boxer I (2000–2006) | 8 000–18 000 zł |
+| Boxer II/III (2007–2014) | 20 000–45 000 zł |
+| Boxer III (2014–2019, po facelifcie) | 40 000–80 000 zł |
+| Boxer III (2020–2024, BlueHDi) | 80 000–140 000 zł |
+| Nowy Boxer L1H1 (2.2 BlueHDi 120) | od ok. 140 000 zł netto |
+| Nowy Boxer L3H2 (2.2 BlueHDi 140) | od ok. 165 000 zł netto |
+| e-Boxer L2H2 | od ok. 280 000 zł netto |
+
+## Porównanie Boxera z konkurencją
+
+| Parametr | Peugeot Boxer L3H2 | Fiat Ducato L3H2 | Citroën Jumper L3H2 | Opel Movano C L3H2 | Mercedes Sprinter L2H2 |
+|----------|-------------------|------------------|---------------------|--------------------|----------------------|
+| Długość | 5998 mm | 5998 mm | 5998 mm | 5998 mm | 5932 mm |
+| Paka | 15,0 m³ | 13,0 m³ | 15,0 m³ | 13,0 m³ | 11,0 m³ |
+| Ładowność | 1500 kg | 1500 kg | 1500 kg | 2254 kg (DMC 4,25 t) | 1200 kg |
+| Diesel bazowy | 2.2 BlueHDi 120 KM | 2.2 MJT 120 KM | 2.2 BlueHDi 120 KM | 2.2 MJT 120 KM | 2.0 CDI 116 KM |
+| Platforma | Sevel Sud | Sevel Sud | Sevel Sud | Sevel Sud | Mercedes |
+| Cena L3H2 (netto) | ~165 000 zł | ~150 000 zł | ~160 000 zł | ~170 000 zł | ~195 000 zł |
+
+Boxer, [Fiat Ducato](/modele/fiat-ducato/) i Citroën Jumper to ten sam samochód pod trzema logotypami – identyczna platforma Sevel Sud z Atessy. Wybór zależy od bliskości serwisu i warunków cenowych dealera. [Opel Movano](/modele/opel-movano/) C to od 2021 też bliźniak (produkowany w Gliwicach). [Mercedes Sprinter](/modele/mercedes-sprinter/) gra w innej lidze cenowej, ale oferuje RWD i lepsze wyciszenie.
+
+*Źródła: Wikipedia – Sevel, Peugeot Professional Polska, dane techniczne Auto-Data.net.*
