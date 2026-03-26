@@ -55,7 +55,12 @@ Gama silnikowa identyczna jak w Short – Maxi nie wymaga mocniejszego silnika, 
 | 1.2 PureTech | 130 KM | 230 Nm | 7,0 l/100 km | EAT8 |
 | e-Combo XL | 136 KM | 260 Nm | 20 kWh/100 km | 1-bieg. |
 
-Do pracy dostawczej z ładunkiem 500+ kg regularnie: diesel 1.5 D 130 KM z automatem AT8 to najwygodniejsza konfiguracja. Do lekkiej dystrybucji miejskiej: 1.5 D 102 KM z manualem – tańszy w zakupie i serwisie.
+Dobór silnika zależy od profilu użytkowania:
+
+- **1.5 D 130 KM AT8** – najwygodniejsza konfiguracja do pracy dostawczej z regularnym ładunkiem 500+ kg
+- **1.5 D 102 KM manual** – tańszy w zakupie i serwisie, wystarczający do lekkiej dystrybucji miejskiej
+- **1.2 PureTech 130 KM EAT8** – benzyna z automatem dla tych, którzy unikają diesla i jeżdżą głównie po mieście
+- **e-Combo XL** – zeroemisyjny wariant do stref czystego transportu, zasięg ok. 275 km WLTP
 
 {{% expert name="Kowalczyk" %}}
 Combo Maxi Cargo XL z dieslem 130 KM i automatem to de facto ten sam samochód co [Peugeot Partner](/modele/peugeot-partner/) Long i Berlingo Van XL – identyczna paka, identyczny silnik, identyczna cena serwisu. Jedyna realna różnica to odległość do najbliższego ASO. Sprawdź, kto jest bliżej Twojej bazy: Opel, Peugeot czy Citroën. Na tym opieraj decyzję.
@@ -73,5 +78,12 @@ Combo Maxi Cargo XL z dieslem 130 KM i automatem to de facto ten sam samochód c
 | e-Combo XL | od ok. 170 000 zł netto |
 
 Na rynku wtórnym Maxi/XL kosztuje ok. 5 000–8 000 zł więcej niż Short – niewielka dopłata za 33% więcej paki i opcję 7 miejsc w wersji Life.
+
+Co zyskujesz wybierając Maxi zamiast Short:
+
+- **Przestrzeń ładunkowa** – 4,4 m³ zamiast 3,3 m³, czyli 33% więcej objętości
+- **Europalety** – 2 sztuki wzdłuż zamiast 1, kluczowe w logistyce paletowej
+- **Długość podłogi** – 2167 mm vs 1817 mm, mieści dłuższe ładunki bez składania fotela pasażera
+- **Opcja 7 miejsc** – wersja Life XL z trzecim rzędem siedzeń, niedostępna w Short
 
 *Źródła: Wikipedia – PSA EMP2 platform, Opel Polska (opel.pl), Auto-Data.net.*

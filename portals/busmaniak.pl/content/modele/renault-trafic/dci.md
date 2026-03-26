@@ -82,13 +82,10 @@ BiTurbo i wersja 170 KM przy intensywnym użytkowaniu miejskim mogą przekroczy�
 
 ### 1.6 dCi (R9M)
 
-**Wtryskiwacze** – najczęstszy problem przy przebiegu 150–200 tys. km. Koszt regeneracji jednego wtryskiwacza: 800–1200 zł. Przy uszkodzeniu całego kompletu wydatek rośnie do 3200–5000 zł.
-
-**Turbosprężarka BiTurbo** – regeneracja kosztuje 1500–2500 zł. Wersja single turbo jest tu wyraźnie bardziej ekonomiczna w naprawach.
-
-**Zawór EGR** – standardowe zużycie przy wysokich przebiegach, nagromadzony nagar powoduje problemy z pracą silnika. Czyszczenie lub wymiana to koszt 300–700 zł.
-
-**Łańcuch rozrządu** – przy regularnej wymianie oleju (co 15–20 tys. km) żyje długo. Zaniedbania olejowe przyspieszają rozciąganie łańcucha i zużycie napinacza.
+- **Wtryskiwacze** – najczęstszy problem przy przebiegu 150–200 tys. km. Regeneracja jednego: 800–1200 zł, komplet: 3200–5000 zł
+- **Turbosprężarka BiTurbo** – regeneracja kosztuje 1500–2500 zł. Wersja single turbo wyraźnie tańsza w naprawach
+- **Zawór EGR** – nagromadzony nagar przy wysokich przebiegach powoduje problemy z pracą silnika. Czyszczenie lub wymiana: 300–700 zł
+- **Łańcuch rozrządu** – przy regularnej wymianie oleju (co 15–20 tys. km) żyje długo. Zaniedbania olejowe przyspieszają rozciąganie łańcucha
 
 ### 2.0 dCi (M9R)
 
@@ -129,9 +126,12 @@ Renault wymaga oleju spełniającego normę RN0720 (dla R9M) lub RN0710/RN0720 (
 
 ## Który silnik dCi wybrać do Trafica?
 
-Jeśli kupujesz używanego Trafica z lat 2014–2019, silnik 1.6 dCi 115 to rozsądny kompromis – wystarczający moment do standardowego ładunku, łańcuch rozrządu eliminuje jeden koszt serwisowy. BiTurbo ma więcej charakteru, ale wyższą stawkę przy naprawie turbo.
+Wybór silnika w zależności od rocznika i profilu użytkowania:
 
-W autach po 2019 roku 2.0 dCi 145 to najpopularniejszy wybór – wystarczająca moc, możliwość automatu, a przy regularnej wymianie paska rozrządu bez zaskoczeń.
+- **1.6 dCi 115 (2014–2019)** – rozsądny kompromis do standardowej pracy dostawczej. Łańcuch rozrządu eliminuje jeden koszt serwisowy
+- **1.6 dCi 140 BiTurbo** – lepsza elastyczność na trasie przy pełnym załadunku, ale wyższy koszt naprawy turbosprężarki
+- **2.0 dCi 145 (od 2019)** – najpopularniejszy wybór w nowszych egzemplarzach. Wystarczająca moc, opcja automatu EDC
+- **2.0 dCi 170** – dla tych, którzy regularnie wożą ciężkie ładunki na długich trasach. Najwyższy moment 380 Nm
 
 *Źródła: Wikipedia, Renault, auto-data.net*
 
