@@ -120,4 +120,14 @@ Różnice między bliźniakami na platformie EMP2 są minimalne pod względem te
 
 Jeśli interesuje cię większy dostawczak Toyoty – sprawdź [Toyota Proace](/modele/toyota-proace/), który oferuje przestrzeń ładunkową od 5,1 do 6,1 m³.
 
-*Źródła: Wikipedia, Toyota, auto-data.net*
+## Ceny ProAce City
+
+| Rocznik / Wersja | Cena orientacyjna |
+|-------------------|-------------------|
+| ProAce City (2020–2022) | 55 000–80 000 zł |
+| ProAce City (2023–2025) | 75 000–110 000 zł |
+| Nowy ProAce City Van Short | od ok. 100 000 zł netto |
+| Nowy ProAce City Van Long | od ok. 110 000 zł netto |
+| ProAce City Electric | od ok. 175 000 zł netto |
+
+*Źródła: Wikipedia – Toyota ProAce City, toyota.pl, auto-data.net.*

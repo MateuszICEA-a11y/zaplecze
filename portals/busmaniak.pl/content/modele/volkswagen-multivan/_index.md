@@ -92,4 +92,15 @@ Centrum dowodzenia to ekran 10 cali, Digital Cockpit Pro i eSIM z nawigacją onl
 - **Łańcuch rozrządu** – warto skontrolować przy ok. 200 tys. km w silniku 2.0 TDI
 - **Elektronika** – multimedia w T6.1 potrafią się zawieszać
 
-*Źródła: Wikipedia, Volkswagen, auto-data.net*
+## Ceny Multivana
+
+| Generacja / Rocznik | Cena orientacyjna |
+|---------------------|-------------------|
+| T5 Multivan (2005–2010) | 30 000–55 000 zł |
+| T5 Multivan (2010–2015) | 50 000–90 000 zł |
+| T6 Multivan (2015–2019) | 80 000–140 000 zł |
+| T6.1 Multivan (2019–2024) | 120 000–200 000 zł |
+| Nowy T7 Multivan (1.4 TSI) | od ok. 240 000 zł brutto |
+| T7 Multivan eHybrid | od ok. 280 000 zł brutto |
+
+*Źródła: Wikipedia – Volkswagen Transporter, volkswagen-samochody-dostawcze.pl, auto-data.net.*

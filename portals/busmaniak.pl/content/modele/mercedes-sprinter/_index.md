@@ -184,4 +184,16 @@ Znajomość słabych punktów modelu przed zakupem używanego Sprintera pozwala 
 Jeśli priorytetem jest niezawodność przy dużych przebiegach i jakość wykonania kabiny – Sprinter. Jeśli liczy się cena całkowita posiadania (TCO) – Transit. Jeśli potrzebujesz DMC powyżej 5,5 tony – Daily nie ma konkurencji w tej klasie.
 {{% /info %}}
 
+## Ceny Sprintera
+
+| Generacja / Rocznik | Cena orientacyjna |
+|---------------------|-------------------|
+| Sprinter W906 (2006–2013) | 25 000–55 000 zł |
+| Sprinter W906 (2013–2018, facelift) | 50 000–100 000 zł |
+| Sprinter W907 (2018–2022) | 90 000–160 000 zł |
+| Sprinter W907 (2023–2025) | 140 000–220 000 zł |
+| Nowy Sprinter L2H2 (2.0 CDI 150 KM) | od ok. 195 000 zł netto |
+| Nowy Sprinter L3H2 RWD (2.0 CDI 170 KM) | od ok. 220 000 zł netto |
+| eSprinter L2H2 | od ok. 310 000 zł netto |
+
 *Źródła: Mercedes-Benz Vans (mercedes-benz-vans.pl), katalogi techniczne W907/W910, ADAC Fahrzeugtechnik, dane własne BusManiak.pl.*

@@ -101,4 +101,14 @@ Toyota Proace Verso Long 9-miejscowy z automatem EAT8 i silnikiem 177 KM to poja
 
 Szczegółowe dane o homologacji M1 i różnicach między wersjami znajdziesz na stronie [Toyota Proace Verso – wersja osobowa](/modele/toyota-proace-verso/osobowy/). Bazowa platforma i układ techniczny opisane są w artykule o [Toyocie Proace](/modele/toyota-proace/).
 
-*Źródła: Wikipedia, Toyota, auto-data.net*
+## Ceny ProAce Verso
+
+| Rocznik / Wersja | Cena orientacyjna |
+|-------------------|-------------------|
+| ProAce Verso I (2016–2019) | 55 000–85 000 zł |
+| ProAce Verso II (2019–2022) | 80 000–130 000 zł |
+| ProAce Verso II (2023–2025) | 120 000–180 000 zł |
+| Nowy ProAce Verso Long (2.0 D-4D 145) | od ok. 195 000 zł brutto |
+| Nowy ProAce Verso elektryczny (75 kWh) | od ok. 300 000 zł brutto |
+
+*Źródła: Wikipedia – Toyota ProAce, toyota.pl, auto-data.net.*

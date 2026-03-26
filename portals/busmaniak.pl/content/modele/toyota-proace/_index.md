@@ -129,4 +129,15 @@ Więcej na temat silnika [2.0 D-4D znajdziesz tutaj](/modele/toyota-proace/2-0/)
 Proace II to solidny wybór dla firm, które chcą mieć vana klasy Expert lub Jumpy pod marką, do której mają serwis Toyota w pobliżu. Mechanicznie to identyczny samochód – zalety i wady bliźniaków PSA dotyczą go w pełni. Kluczowe pytanie przy zakupie to nie marka, ale dostęp do serwisu i aktualna cena używanego egzemplarza na rynku. Proace bywa droższy od Jumpego przy porównywalnym wyposażeniu, bo Toyota ma wyższe residual values. Przy zakupie floty powyżej 5 sztuk warto negocjować bezpośrednio z importerem.
 {{% /expert %}}
 
-*Źródła: Wikipedia, Toyota, auto-data.net*
+## Ceny ProAce
+
+| Rocznik / Wersja | Cena orientacyjna |
+|-------------------|-------------------|
+| ProAce I (2013–2016) | 30 000–55 000 zł |
+| ProAce II (2016–2020) | 50 000–85 000 zł |
+| ProAce II (2020–2024) | 80 000–140 000 zł |
+| Nowy ProAce Van Medium (1.5 D-4D 100) | od ok. 130 000 zł netto |
+| Nowy ProAce Van Long (2.0 D-4D 145) | od ok. 150 000 zł netto |
+| ProAce Electric (75 kWh) | od ok. 230 000 zł netto |
+
+*Źródła: Wikipedia – Toyota ProAce, toyota.pl, auto-data.net.*

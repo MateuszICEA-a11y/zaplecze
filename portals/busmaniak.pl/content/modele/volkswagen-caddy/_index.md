@@ -114,4 +114,16 @@ Najczęstsze problemy per generacja:
 
 Koszty serwisowe Caddy są wyższe niż u konkurencji z grupy PSA. Przegląd olejowy to 400–600 zł (vs 300–500 zł w Berlingo), wymiana rozrządu 800–1500 zł. Części oryginalne VW są droższe, ale zamienniki są szeroko dostępne.
 
-*Źródła: Wikipedia, Volkswagen, auto-data.net*
+## Ceny Caddy
+
+| Generacja / Rocznik | Cena orientacyjna |
+|---------------------|-------------------|
+| Caddy III (2004–2010) | 10 000–22 000 zł |
+| Caddy III (2010–2015) | 20 000–40 000 zł |
+| Caddy IV (2015–2020) | 35 000–65 000 zł |
+| Caddy V (2021–2025) | 65 000–110 000 zł |
+| Nowy Caddy V Van (2.0 TDI 75) | od ok. 115 000 zł netto |
+| Nowy Caddy V Maxi Van | od ok. 130 000 zł netto |
+| Caddy California mini kamper | od ok. 180 000 zł brutto |
+
+*Źródła: Wikipedia – Volkswagen Caddy, volkswagen-samochody-dostawcze.pl, auto-data.net.*
