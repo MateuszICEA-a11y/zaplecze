@@ -48,11 +48,23 @@ Nowsza jednostka 1.3 TCe oferuje dobrą elastyczność nawet przy pełnym obcią
 Dokker dzieli platformę z Renault Lodgy, Dacią Sandero i Renault Kangoo II. Serwis jest tożsamy – mechanicy przyzwyczajeni do aut Renault obsłużą Dokkera bez problemów. Części zamienne są współdzielone.
 {{% /info %}}
 
-## Wymiary i przestrzeń ładunkowa
+## Wymiary Dokkera
 
-Auto ma 4361 mm długości i 1751 mm szerokości – te gabaryty sprawiają, że parkowanie w mieście nie jest problemem. Wysokość karoserii to 1824 mm w wersji osobowej i 1819 mm w Vanie. To właśnie wymiary paki Dacii Dokker przesądzają o jej popularności wśród rzemieślników: wersja 2-osobowa oferuje 3,1 m³ przestrzeni ładunkowej przy płaskiej podłodze, a po wyjęciu opcjonalnego fotela pasażera w systemie Easy Seat długość załadunku rośnie do 3,11 m. Bagażnik Dacii Dokker Van po złożeniu tylnych siedzeń może przyjąć nawet 3100 litrów.
+| Parametr | Dokker osobowy | Dokker Van |
+|----------|---------------|------------|
+| Długość całkowita | 4361 mm | 4361 mm |
+| Szerokość (bez lusterek) | 1751 mm | 1751 mm |
+| Wysokość | 1824 mm | 1819 mm |
+| Rozstaw osi | 2810 mm | 2810 mm |
+| Prześwit | 135 mm (Stepway: 175 mm) | 135 mm |
+| Bagażnik / paka | 800 l (do 3000 l po złożeniu) | 3,1 m³ (3100 l) |
+| Ładowność | 540–625 kg | 750–970 kg |
+| DMC | 1814 kg | 1959 kg |
 
-Ładowność Dacii Dokker wynosi od 750 do 970 kg zależnie od wersji i konfiguracji – dokładne dane dla poszczególnych wariantów zawiera [tabela ładowności busów](/porownania/ladownosc-tabela/). Wersja osobowa oferuje 800 litrów do linii okien, co w tej klasie cenowej jest wynikiem trudnym do pobicia.
+- **Długość załadunku (Van z Easy Seat)** – do 3,11 m (po wyjęciu fotela pasażera)
+- **Szerokość między nadkolami** – 1205 mm
+- **Próg załadowczy** – 580 mm
+- **Drzwi boczne** – przesuwane po prawej stronie (standard), obustronne (opcja)
 
 ![Dacia Dokker Van – kompaktowy kombivan dostawczy](/images/dacia-dokker-hero.jpg)
 
@@ -72,10 +84,26 @@ W silnikach dCi po 80–120 tys. km sprawdź świece żarowe i stan filtra DPF, 
 Przy zakupie używanej Dacii Dokker z silnikiem 1.2 TCe koniecznie sprawdź stan łańcucha rozrządu – rozciąga się nawet poniżej 100 tys. km. W dieslu 1.5 dCi zwróć uwagę na filtr DPF i układ wtryskowy, szczególnie jeśli auto jeździło głównie po mieście.
 {{% /expert %}}
 
-## Ceny używanych i dla kogo jest Dacia Dokker
+## Ceny Dokkera
 
-Rynek wtórny jest stabilny, bo popyt ze strony małych firm utrzymuje ceny na przewidywalnym poziomie. Roczniki 2013–2015 to wydatek 15–22 tys. zł, lecz zazwyczaj są to mocno wyeksploatowane egzemplarze poflotowe. Za roczniki 2016–2018 trzeba zapłacić 25–35 tys. zł. Samochody z lat 2019–2021, często z silnikami 1.3 TCe, kosztują 36–50 tys. zł – przykładowo furgon 1.3 TCe z 2020 roku przy przebiegu 94–140 tys. km wyceniany jest na 36–44 tys. zł brutto.
+Produkcja zakończona w marcu 2021 – nowe egzemplarze niedostępne. Rynek wtórny stabilny dzięki stałemu popytowi ze strony małych firm.
 
-Jeśli liczy się przede wszystkim budżet, Dokker trudno pobić w stosunku ceny do przestrzeni ładunkowej. Jeżeli jednak szukasz nowszej alternatywy z platform PSA, [Citroën Berlingo](/modele/citroen-berlingo/) oferuje podobną przestrzeń przy lepszym wyposażeniu i niższym poziomie hałasu w kabinie.
+| Rocznik | Silnik typowy | Cena orientacyjna |
+|---------|--------------|-------------------|
+| 2013–2015 | 1.5 dCi 90 / 1.6 SCe | 15 000–22 000 zł |
+| 2016–2018 (po liftingu) | 1.5 dCi 90 / 1.2 TCe | 25 000–35 000 zł |
+| 2019–2021 | 1.3 TCe 130 / 1.5 dCi | 36 000–50 000 zł |
+
+## Porównanie Dokkera z konkurencją
+
+| Parametr | Dacia Dokker Van | Renault Kangoo II | Citroën Berlingo II | Fiat Fiorino III |
+|----------|-----------------|-------------------|--------------------|--------------------|
+| Długość | 4361 mm | 4282 mm | 4380 mm | 3864 mm |
+| Paka | 3,1 m³ | 3,0 m³ | 3,3 m³ | 2,5 m³ |
+| Ładowność | 970 kg | 650 kg | 850 kg | 660 kg |
+| Diesel bazowy | 1.5 dCi 90 KM | 1.5 dCi 75 KM | 1.6 HDi 75 KM | 1.3 MJT 75 KM |
+| Cena używanego (2017) | ~28 000 zł | ~30 000 zł | ~25 000 zł | ~17 000 zł |
+
+Dokker trudno pobić w stosunku ceny do przestrzeni ładunkowej. [Citroën Berlingo](/modele/citroen-berlingo/) oferuje lepsze wyposażenie i ciszejszą kabinę. [Renault Kangoo](/modele/renault-kangoo/) to technicznie bliski krewny z identyczną mechaniką. [Fiat Fiorino](/modele/fiat-fiorino/) jest mniejszy, ale tańszy.
 
 *Źródła: Dacia (dacia.pl), AutoCentrum (autocentrum.pl), WyborKierowcow (wyborkierowcow.pl), Auto-Data (auto-data.net).*

@@ -50,12 +50,18 @@ Trzecia generacja korzysta z platformy EMP2 – lepsza sztywność nadwozia prze
 
 DMC: 2100–2400 kg. Ładowność [Berlingo dostawczego](/modele/citroen-berlingo/dostawczy/): 650–1000 kg. Bagażnik osobowego: 775 l (M) do 1050 l ([XL](/modele/citroen-berlingo/xl/)).
 
-## Silniki – napędy Berlingo {#silniki}
+## Silniki Berlingo {#silniki}
 
-- **[1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) (75–120 KM)** – sprawdzony diesel z dobrym kompromisem mocy i spalania; 2004–2018
-- **1.5 BlueHDI (75–130 KM)** – nowsza konstrukcja Euro 6, wyższa kultura pracy
-- **1.2 PureTech (110–130 KM)** – turbobenzyna o niskim zużyciu i żywym charakterze
-- **[ë-Berlingo](/modele/citroen-berlingo/elektryczny/) (136 KM)** – wersja elektryczna, bateria 50 kWh, zasięg do 280 km WLTP
+| Silnik | Generacja | Moc | Moment | Spalanie (śr.) | Norma |
+|--------|-----------|-----|--------|----------------|-------|
+| 1.6 HDi | II | 75 KM | 185 Nm | 5,5 l/100 km | Euro 4/5 |
+| 1.6 HDi | II | 92 KM | 230 Nm | 5,8 l/100 km | Euro 5 |
+| 1.5 BlueHDi | III | 75 KM | 200 Nm | 4,8 l/100 km | Euro 6d |
+| 1.5 BlueHDi | III | 100 KM | 250 Nm | 5,0 l/100 km | Euro 6d |
+| 1.5 BlueHDi | III | 130 KM | 300 Nm | 5,3 l/100 km | Euro 6d |
+| 1.2 PureTech | III | 110 KM | 205 Nm | 6,5 l/100 km | Euro 6d |
+| 1.2 PureTech | III | 130 KM | 230 Nm | 6,8 l/100 km | Euro 6d |
+| ë-Berlingo | III | 136 KM | 260 Nm | 20 kWh/100 km | – |
 
 ![Citroën Berlingo III na drodze](/images/citroen-berlingo-hero.jpg)
 
@@ -66,13 +72,34 @@ DMC: 2100–2400 kg. Ładowność [Berlingo dostawczego](/modele/citroen-berling
 - **[Berlingo Long / XL](/modele/citroen-berlingo/long/)** – wydłużona wersja
 - **[Berlingo 7-osobowy](/modele/citroen-berlingo/7-osobowy/)** – trzeci rząd siedzeń dla dużych rodzin
 
-## Berlingo na tle konkurencji {#konkurencja}
+## Porównanie Berlingo z konkurencją {#konkurencja}
 
-Berlingo rywalizuje z [Peugeotem Rifterem](/modele/peugeot-partner/), [Oplem Combo](/modele/opel-combo/), [VW Caddy](/modele/volkswagen-caddy/) i [Renault Kangoo](/modele/renault-kangoo/). Rifter to bliźniak z inną atrapą, Caddy oferuje lepsze wyciszenie, a Kangoo mocną sieć serwisową Renault. Berlingo wyróżnia się bagażnikiem klasy XL i szerokim wyborem długości nadwozia.
+| Parametr | Citroën Berlingo III XL | Peugeot Rifter Long | Opel Combo Life XL | VW Caddy Maxi | Renault Kangoo Long |
+|----------|------------------------|--------------------|--------------------|---------------|---------------------|
+| Długość | 4753 mm | 4753 mm | 4753 mm | 4853 mm | 4911 mm |
+| Bagażnik (5-os.) | 1050 l | 1050 l | 1050 l | 1060 l | 850 l |
+| 7-osobowy | ✅ | ✅ | ✅ | ✅ | ✅ Grand Kangoo |
+| Diesel bazowy | 1.5 BlueHDi 100 KM | 1.5 BlueHDi 100 KM | 1.5 D 102 KM | 2.0 TDI 75 KM | 1.5 Blue dCi 95 KM |
+| Elektryczny | ✅ ë-Berlingo | ✅ e-Rifter | ✅ e-Combo | ❌ | ✅ E-Tech |
+| Cena od (brutto) | ~110 000 zł | ~115 000 zł | ~115 000 zł | ~130 000 zł | ~113 000 zł |
+
+Berlingo rywalizuje z [Peugeotem Rifterem](/modele/peugeot-rifter/) (bliźniak z inną atrapą), [Oplem Combo](/modele/opel-combo/) (identyczna baza techniczna), [VW Caddy](/modele/volkswagen-caddy/) (lepsze wyciszenie, wyższa cena) i [Renault Kangoo](/modele/renault-kangoo/) (szersze nadwozie, Open Sesame). Berlingo wyróżnia się bagażnikiem XL i najniższą ceną w grupie EMP2.
 
 {{% expert name="Kowalczyk" %}}
 Kupując używane Berlingo, zwróć uwagę na stan zawieszenia, szczególnie w egzemplarzach z trudnych warunków. Sprawdź historię serwisową – silnik [1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) wymaga regularnej wymiany oleju, pominięte przeglądy szybko kończą się awarią turbosprężarki.
 {{% /expert %}}
+
+## Ceny Berlingo
+
+| Generacja / Rocznik | Cena orientacyjna |
+|---------------------|-------------------|
+| Berlingo I (2000–2008) | 5 000–12 000 zł |
+| Berlingo II (2008–2014) | 12 000–25 000 zł |
+| Berlingo II (2014–2018, BlueHDi) | 22 000–40 000 zł |
+| Berlingo III (2018–2021) | 45 000–75 000 zł |
+| Berlingo III (2022–2024) | 70 000–110 000 zł |
+| Nowy Berlingo III Van M | od ok. 92 000 zł netto |
+| Nowy ë-Berlingo | od ok. 170 000 zł netto |
 
 ## Typowe usterki i koszty eksploatacji {#usterki}
 
