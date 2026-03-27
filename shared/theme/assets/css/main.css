@@ -2625,6 +2625,11 @@ blockquote {
   position: relative;
   overflow: hidden;
   max-height: 400px;
+  margin-top: 0;
+}
+
+.rank-card__header + .rank-card__image {
+  margin-top: 0;
 }
 
 .rank-card__image img {
@@ -2647,6 +2652,11 @@ blockquote {
 
 .rank-card__desc p { margin: 0; }
 
+/* Kill any stray <p> margins inside rank-card from Markdown */
+.rank-card > p,
+.rank-card__header > p,
+.rank-card__body > p { display: none; }
+
 /* ── Specs box ── */
 .rank-card__specs {
   background: var(--c-bg-alt);
@@ -2667,15 +2677,26 @@ blockquote {
 
 .rank-card__specs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: .5rem 1.5rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 2rem;
 }
 
 .rank-card__spec {
   display: flex;
   justify-content: space-between;
-  padding: .3rem 0;
+  align-items: baseline;
+  padding: .4rem 0;
   border-bottom: 1px solid var(--c-border-light);
+  gap: 1rem;
+}
+
+.rank-card__spec-label {
+  white-space: nowrap;
+}
+
+.rank-card__spec-value {
+  text-align: right;
+  white-space: nowrap;
 }
 
 .rank-card__spec-label {
