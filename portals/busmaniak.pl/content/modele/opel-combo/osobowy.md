@@ -20,15 +20,22 @@ lead: "Opel Combo Life to osobowa wersja Combo E – z pełnym przeszkleniem, si
 ## Co wyróżnia Opel Combo Life
 
 Combo Life w stosunku do wersji Van różni się przede wszystkim:
+
+### Combo Life a Combo Van – różnice
+
 - tylnymi bocznymi szybami i opcją dwóch przesuwnych drzwi bocznych
 - tapicerowanymi siedzeniami i możliwością złożenia tylnej kanapy w stosunku 1/3 – 2/3
 - schowkami pod podłogą tylną – to cecha charakterystyczna pojazdów PSA EMP2
 - opcją panoramicznego dachu w wersji Edition i wyżej
 - tylną klimatyzacją (dwustrefową w wersji XL Ultimate)
 
+### Bagażnik Combo Life – pojemność
+
 Bagażnik Combo Life Short mieści 597 l przy złożonej tylnej kanapie lub 186 l przy 5 rozłożonych fotelach. Wersja XL oferuje 850 l lub 246 l odpowiednio.
 
 ## Wyposażenie wersji
+
+### Edition, Elegance i Ultimate
 
 Combo Life jest sprzedawane w kilku wersjach wyposażenia:
 - Edition – 8-calowy ekran Intellilink, czujniki parkowania tył, automatyczna klimatyzacja 1-strefowa, LED DRL

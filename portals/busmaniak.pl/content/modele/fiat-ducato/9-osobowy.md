@@ -30,6 +30,8 @@ Jedyny wyjątek to wersje Maxi z DMC 4005 kg – te wymagają już kategorii C. 
 
 ## Wersje nadwoziowe i wymiary Ducato 9-osobowego
 
+### Warianty L1, L2 i L3 – porównanie wymiarów
+
 Fiat Ducato III (w produkcji od 2006 roku, z kolejnymi liftingami) jest oferowany w kilku wariantach długości (L) i wysokości (H). Przy 9 osobach liczy się przede wszystkim to, ile bagażu zostaje po zapełnieniu wszystkich siedzeń.
 
 | Wersja | Długość pojazdu | Rozstaw osi | Wysokość | Bagażnik przy 9 os. | Długość bagażnika |
@@ -62,12 +64,16 @@ Szukając używanego Ducato do przewozu osób, celuj w silnik 2.3 MultiJet 130 l
 
 ## Komfort podróży i wyposażenie
 
+### Wersje Combi i Panorama
+
 Ducato 9-osobowy występuje w dwóch podstawowych wersjach wykończenia:
 
 - **Combi** – surowe wnętrze z blaszanymi elementami, popularne w ekipach budowlanych. Wariant [brygadówka](/modele/fiat-ducato/brygadowka/) to właśnie Combi z dodatkowym rzędem siedzeń
 - **Panorama / Ludovico** – wersja typowo osobowa z pełną tapicerką welurem, nawiewami dla każdego rzędu, klimatyzacją (w nowszych rocznikach 3-strefową) i lepszym wyciszeniem
 
 Wyposażenie seryjne obejmuje 9 foteli z zagłówkami i trzypunktowymi pasami, dywanową podłogę w kabinie pasażerskiej, ABS, elektryczne szyby i centralny zamek.
+
+### Wygłuszenie i akustyka kabiny
 
 Fabryczne wyciszenie Ducato zostawia sporo do życzenia. Wielu właścicieli wykleja nadkola i drzwi matami butylowymi – różnicę słychać już na pierwszym dłuższym przejeździe autostradą.
 

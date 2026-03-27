@@ -24,6 +24,8 @@ lead: "Mercedes Sprinter Van to najczęściej szukana wersja Sprinter w Polsce �
 
 Sprinter Van produkowany jest w czterech długościach (L1–L4) i trzech wysokościach dachu (H1–H3). Kombinacja decyduje o pojemności i dopuszczalnej ładowności.
 
+### Konfiguracje L1–L4
+
 Dostępne konfiguracje:
 
 - L1H1 – pojemność ok. 7,5 m³, długość całkowita 5124 mm
@@ -63,11 +65,15 @@ Dla przewozu palet EUR ważna jest szerokość przestrzeni – 1780 mm pozwala z
 
 Od generacji W907 (2018–) Mercedes zastąpił stary OM651 2.2 CDI nowym silnikiem OM654 2.0 CDI. To jednostka z rozrządem łańcuchowym, turbosprężarką ze zmienną geometrią i systemem wtrysku common rail Bosch.
 
+### Warianty mocy OM654 w Sprinterze
+
 Dostępne warianty mocy:
 
 - 116 KM / 300 Nm – wersja bazowa, ekonomiczna
 - 143 KM / 330 Nm – najlepiej sprzedająca się w Polsce
 - 170 KM / 380 Nm – do długodystansowych tras lub ładunków powyżej 1500 kg
+
+### Skrzynia 9G-Tronic i AdBlue
 
 Skrzynia biegów: 6-biegowa manualna lub 9G-Tronic (9-biegowy automat). Automat zalecany przy jeździe miejskiej i kursach powyżej 600 km/tydzień – amortyzuje się w czasie eksploatacji przez niższe zużycie oleju napędowego i mniejsze zużycie sprzęgła.
 
@@ -78,6 +84,8 @@ Norma emisji: Euro 6d. System SCR z AdBlue (zbiornik ok. 20 l). Zużycie AdBlue 
 ## Napęd – FWD, RWD, AWD
 
 Sprinter Van W907 jako pierwszy w klasie oferuje napęd przedni (FWD). Zmiana z tylnonapędowego układu na FWD zmniejszyła podłogę ładunkową – brak tunelu wału napędowego oznacza płaską podłogę na całej szerokości.
+
+### Porównanie napędów Sprinter Van
 
 Porównanie układów napędu:
 

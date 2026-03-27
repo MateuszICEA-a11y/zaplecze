@@ -65,15 +65,21 @@ DMC 5,5 t – prawo jazdy C1, ładowność paki wzrasta do ok. 1500–2000 kg, w
 
 Główne branże stosujące Sprinter brygadówkę:
 
+### Energetyka i telekomunikacja
+
 - Energetyka – ekipy remontowe sieci energetycznych, przewóz narzędzi liniarskich i agregatów
 - Telekomunikacja – ekipy instalacyjne i serwisowe, szafy z osprzętem teletechnicznym
 - Drogownictwo – sygnaliści, ekipy oznakowania poziomego, transportery znaków i słupków
 - Służby komunalne – pogotowie wodno-kanalizacyjne, ekipy naprawy nawierzchni
 - Przemysł naftowy i gazowy – ekipy serwisowe na terenie zakładów i rafinerii
 
+### Zabudowa skrzyni aluminiowej
+
 W energetyce standardem jest skrzynia aluminiowa z szufladami systemowymi (np. TruXedo, Zarges) i zewnętrznymi szafkami na boku paki. Zamknięte schowki boczne chronią sprzęt przed kradzieżą na postoju.
 
 ## Wyposażenie paki brygadówki Sprinter
+
+### Standardowe wyposażenie cargo
 
 Typowe wyposażenie skrzyni ładunkowej brygadówki:
 

@@ -34,6 +34,8 @@ Izoterma to kontener z izolacją termiczną ze styropianu (40–80 mm) lub piank
 
 Przy podwoziu Daily Long (L3H2) wewnętrzna przestrzeń zabudowy wynosi ok. 3 600 × 1 950 × 1 900 mm, co daje 13–14 m³ pojemności. Przy Extra Long (L4H2) – do 4 300 × 1 950 × 1 900 mm, czyli 16 m³.
 
+### Warianty podwozia L2–L4
+
 | Podwozie | Dł. zabudowy (zew.) | Poj. wnętrza | Europalety |
 |----------|---------------------|--------------|------------|
 | L2 | 3 800 mm | ok. 6–8 m³ | 3–4 szt. |
@@ -52,11 +54,15 @@ Przy podwoziu Daily Long (L3H2) wewnętrzna przestrzeń zabudowy wynosi ok. 3 60
 
 Do Daily stosuje się agregaty niezależne zasilane własnym silnikiem Diesla lub zależne – napędzane silnikiem pojazdu przez compressor.
 
+### Popularne modele agregatów do Daily
+
 Najpopularniejsze modele:
 
 - Thermo King V-300 – do -20°C, niezależny, do zabudów 10–15 m³
 - Thermo King V-500 – mocniejszy, do zabudów 15–20 m³
 - Carrier Viento 300/500 – alternatywa europejska, dobra dostępność serwisu w Polsce
+
+### Agregat zależny czy niezależny
 
 Agregat zależny (napędzany silnikiem pojazdu) jest tańszy, ale nie chłodzi podczas postoju. Do dystrybucji miejskiej z wieloma przystankami – niezależny jest obowiązkowy.
 

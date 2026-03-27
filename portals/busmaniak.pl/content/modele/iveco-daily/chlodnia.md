@@ -51,6 +51,8 @@ Zabudowa chłodnicza na Daily to sandwich z laminatu poliestrowego lub stali nie
 
 Dwa dominujące producenty agregatów do pojazdów dostawczych to Thermo King (koncern Trane Technologies) i Carrier (UTC Climate). W Polsce oba mają gęstą sieć serwisową.
 
+### Thermo King i Carrier – popularne modele
+
 Najpopularniejsze modele do Daily:
 
 - Thermo King V-300 – do -20°C, niezależny silnik Diesla, pojemność do 14 m³
@@ -58,11 +60,15 @@ Najpopularniejsze modele do Daily:
 - Carrier Viento 300 – europejska alternatywa, nieco cichszy agregat
 - Carrier Viento 500 – dla większych zabudów i klasy C
 
+### Agregat niezależny a zależny
+
 Agregat niezależny (własny silnik) jest konieczny przy postoju – uniezależnia chłodzenie od stanu silnika pojazdu. Przy dystrybucji miejskiej z wieloma przystankami jest to standard.
 
 ## DMC i ładowność Daily chłodni
 
 Zabudowa izoterma z agregatem waży 800–1 300 kg. To poważne obciążenie masy własnej. Przy DMC 3,5 t ładowność netto wynosi tylko 600–900 kg – na granicy opłacalności. Realna praca to DMC 5,0 t wzwyż.
+
+### Iveco Daily chłodnia – warianty DMC
 
 | DMC | Poj. komory | Zakres temp. | Ładowność netto |
 |-----|-------------|--------------|-----------------|

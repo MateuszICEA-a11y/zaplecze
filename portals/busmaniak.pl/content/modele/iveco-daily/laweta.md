@@ -24,6 +24,8 @@ lead: "Iveco Daily to jedyny van segmentu N2, który jako laweta mieści się w 
 
 Daily jako laweta dostępny jest w wariantach DMC 3,5 t, 5,0 t, 6,0 t i 7,2 t. Wersja 3,5 t to kategoria B – ale przy zabudowie lawety masa własna pochłania sporą część DMC, więc ładowność netto wynosi zwykle 800–1 000 kg. Mało.
 
+### Laweta Daily – ładowność w zależności od DMC
+
 Prawdziwe zastosowanie zaczyna się od DMC 5,0 t wzwyż – tutaj już jesteś na kategorii C1. Ładowność netto przy 7,2 t wynosi 2 500–3 000 kg, co pozwala przewieźć większy SUV bez kombinowania.
 
 - DMC 3,5 t – kat. B, ładowność ~1 000 kg, niszowe zastosowanie
@@ -55,10 +57,14 @@ Zabudowy wykonują firmy takie jak Barin, Wielton Laweta czy Lohr – czas reali
 
 Laweta to ciężka praca – silnik musi ciągnąć pełen ładunek przy rampie, na wzniesieniu, w upale. Przy DMC 5,0 t minimum to silnik 2.3 MultiJet w wersji 136 KM, ale już przy 7,2 t powinieneś patrzeć wyłącznie na 3.0 MultiJet.
 
+### Warianty mocy 2.3 i 3.0 MultiJet
+
 - 2.3 / 136 KM – wystarczający dla DMC 5,0 t, na płaskim terenie
 - 2.3 / 156 KM – lepszy kompromis dla DMC 6,0 t
 - 3.0 / 170 KM – zalecany przy DMC 7,2 t
 - 3.0 / 210 KM – wersja do najcięższych zastosowań, z automatyczną skrzynią Hi-Matic
+
+### Skrzynia Hi-Matic do lawety
 
 Skrzynia automatyczna Hi-Matic jest zdecydowanie warta dopłaty – załadunek na lawetę wymaga precyzyjnych, powolnych manewrów, a manuał przy pełnym DMC jest uciążliwy.
 

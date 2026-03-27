@@ -34,6 +34,8 @@ Przy dłuższym podwoziu (L4) i skrzyni do 4,8 m długości osiągasz 20–21 m�
 
 Daily plandeka dostępna jest od DMC 3,5 t do 7,2 t. Masa samej zabudowy plandekowej wynosi 400–600 kg, więc przy DMC 3,5 t ładowność netto to zwykle 1 000–1 200 kg. Przy DMC 7,2 t możesz ładować 2 500–2 800 kg.
 
+### Iveco Daily plandeka – warianty podwozia
+
 | Podwozie | Dł. skrzyni | Pojemność | DMC | Ładowność netto |
 |----------|-------------|-----------|-----|-----------------|
 | L2 / L3 | 3 800 mm | ok. 16 m³ | 3,5–5,0 t | 1 000–1 800 kg |
@@ -52,10 +54,14 @@ Daily plandeka dostępna jest od DMC 3,5 t do 7,2 t. Masa samej zabudowy plandek
 
 Plandeka na Daily dominuje tam, gdzie liczy się szybki dostęp do towaru z boku lub z góry:
 
+### Branże i typowe ładunki
+
 - Meble i AGD – rozkładany towar, łatwy załadunek dzięki otwartym burtom
 - Materiały budowlane – deski, rury, profile – długie elementy wchodzą bokiem
 - Catering i dostawy paletowe – wózek widłowy lub ręczny wchodzi z boku
 - Transport maszyn rolniczych – części można wsunąć z dowolnej strony
+
+### Plandeka a furgon – załadunek
 
 W porównaniu z furgonem plandeka pozwala załadować towar wózkiem widłowym z boku, co w przypadku furgonu jest niemożliwe.
 

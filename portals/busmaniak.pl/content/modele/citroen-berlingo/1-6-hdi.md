@@ -27,6 +27,8 @@ faq:
 
 Silnik oznaczony jako DV6 to wysokoprężna jednostka z bezpośrednim wtryskiem common rail i turbodoładowaniem. Montowano go w Berlingo od drugiej generacji modelu, a produkcja trwała od 2004 do 2018 roku. Trafiał też do Peugeota, Forda, Mazdy, Volvo i Mini – co ułatwia dostępność zamienników.
 
+### Parametry silnika DV6
+
 | Parametr             | Wartość                         |
 | --------------------- | ------------------------------- |
 | Pojemność             | 1560 cm³                        |
@@ -34,6 +36,8 @@ Silnik oznaczony jako DV6 to wysokoprężna jednostka z bezpośrednim wtryskiem 
 | Moment obrotowy       | 185 Nm – 270 Nm                 |
 | Rozrząd               | DOHC, 16 zaworów                |
 | Norma emisji spalin   | Euro 4, Euro 5                  |
+
+### Warianty mocy 75–110 KM
 
 Berlingo 1.6 HDI oferowano w czterech wariantach mocy:
 
@@ -46,6 +50,8 @@ Berlingo 1.6 HDI oferowano w czterech wariantach mocy:
 
 Między poszczególnymi odmianami jest kilka istotnych różnic konstrukcyjnych, nie tylko w liczbach na papierze.
 
+### Porównanie wariantów mocy
+
 | Parametr          | 75 KM                                  | 90 KM                                  | 110 KM                                 |
 | ------------------ | --------------------------------------- | --------------------------------------- | -------------------------------------- |
 | Moc                | 75 KM (55 kW)                           | 90 KM (66 kW)                           | 110 KM (82 kW)                          |
@@ -54,6 +60,8 @@ Między poszczególnymi odmianami jest kilka istotnych różnic konstrukcyjnych,
 | Wtryskiwacze       | Elektromagnetyczne                      | Elektromagnetyczne lub piezoelektryczne | Piezoelektryczne                       |
 | Zastosowanie       | Jazda miejska, transport lekki           | Jazda miejska i trasy, uniwersalne       | Jazda w trasie, większe obciążenia      |
 | Mapa silnika       | Zoptymalizowana pod kątem niskiego spalania | Zbalansowana moc i spalanie              | Zoptymalizowana pod kątem osiągów       |
+
+### Turbosprężarka i wtryskiwacze – różnice konstrukcyjne
 
 Podstawowa różnica między wersją 75 a 90 KM leży w turbosprężarce. Mocniejsza odmiana dostała turbinę o zmiennej geometrii łopatek (VGT), dzięki czemu wyższy moment obrotowy utrzymuje się w szerszym zakresie obrotów. Sto dziesięć koni to już konstruktywny krok dalej – piezoelektryczne wtryskiwacze precyzyjniej dozują paliwo, ale w razie awarii kosztują więcej.
 

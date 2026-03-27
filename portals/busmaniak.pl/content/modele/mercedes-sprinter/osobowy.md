@@ -24,10 +24,14 @@ lead: "Mercedes Sprinter osobowy w wersji Tourer to dedykowana platforma dla prz
 
 Mercedes oferuje Sprinter Tourer w czterech głównych wariantach:
 
+### Linie Pro, Transfer i Tourist
+
 - Tourer Pro – baza, 9–19 miejsc, fotele trójkowe, klimatyzacja strefowa
 - Tourer Transfer – zoptymalizowany pod lotniska i transfery hotelowe, 9–16 miejsc, standard komfort
 - Tourist Standard – fotele indywidualne, rozstaw min. 750 mm, klimatyzacja sufitowa
 - Tourist Comfort/VIP – fotele skórzane lub welurowe, rozstaw do 900 mm, 8–12 pasażerów, opcjonalnie mikrofon i nagłośnienie pokładowe
+
+### Podwozie i napęd Sprintera osobowego
 
 Każda linia bazuje na podwoziu Sprinter W907 z nadwoziem L2 lub L3, wysokość H2 lub H3. Napęd wyłącznie tylny (RWD) – FWD niedostępny w wersji osobowej ze względu na moment obrotowy przy pełnym załadunku pasażerskim.
 

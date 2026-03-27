@@ -82,10 +82,14 @@ Kluczowy wpływ na spalanie ma typ zabudowy. [Furgon (blaszak)](/modele/fiat-duc
 
 Silnik Fiat Ducato 2.3 MultiJet jest konstrukcyjnie solidny, ale jak każda jednostka wysokoprężna – ma swoje słabe punkty. Poniżej najczęściej zgłaszane problemy z orientacyjnymi przebiegami i kosztami napraw:
 
+### Usterki układu paliwowego i doładowania
+
 - **Filtr DPF** – przy jeździe wyłącznie miejskiej zapycha się już po 50–150 tys. km. Objawy: spadek mocy, komunikat na desce rozdzielczej. Regeneracja: 1500–3000 zł, wymiana filtra: 4000–7000 zł
 - **Wtryskiwacze** – zużycie końcówek po 150–250 tys. km. Objawy: nierówna praca, dymienie, trudności z odpalaniem. Regeneracja kompletu: 2000–4000 zł, wymiana na nowe: 6000–10 000 zł
 - **Turbosprężarka** – problemy z łożyskami i zmienną geometrią po 150–250 tys. km. Regeneracja: 1500–3500 zł, wymiana na nową: 5000–8000 zł
 - **Zawór EGR** – pokrywa się nagarem po 100–150 tys. km, co skutkuje utratą mocy i gryzącym zapachem spalin. Czyszczenie: 500–800 zł, wymiana: 1000–2000 zł
+### Rozrząd i dwumasowe koło zamachowe
+
 - **Łańcuch rozrządu** – rozciąga się po 200–300 tys. km, wymaga wymiany z prowadnicami i napinaczem. Koszt: 3000–5000 zł z robocizną
 - **Dwumasowe koło zamachowe** – zużywa się po 150–250 tys. km przy eksploatacji miejskiej. Wymiana samego koła: 2500–4500 zł, z kompletnym sprzęgłem: 5000–8000 zł
 
@@ -95,12 +99,16 @@ Wersje Euro 6 (od 2014) wyposażone są w układ SCR z [AdBlue](/serwis/adblue/)
 
 ## Opinie o Ducato 2.3 MultiJet
 
+### Zalety silnika 2.3 MultiJet
+
 Silnik 2.3 MultiJet zbiera przeważnie pozytywne opinie wśród użytkowników busów dostawczych i kamperów. Najczęściej wymieniane zalety:
 
 - **Trwałość** – przy regularnym serwisie przebiegi 300–400 tys. km bez poważnych awarii
 - **Dostępność części** – jeden z najpopularniejszych silników w segmencie, części dostępne od ręki
 - **Elastyczność** – dobry moment obrotowy w niskich obrotach, wygodna jazda nawet z ładunkiem
 - **Rozrząd łańcuchowy** – brak konieczności wymiany paska rozrządu
+
+### Wady i zastrzeżenia użytkowników
 
 Najczęstsze zastrzeżenia:
 
@@ -111,6 +119,8 @@ Najczęstsze zastrzeżenia:
 W porównaniu z konkurencją – Mercedesem Sprinterem 2.2 CDI czy [Iveco Daily 3.0](/modele/iveco-daily/) – Ducato 2.3 wypada korzystnie pod względem kosztów eksploatacji i dostępności serwisowej.
 
 ## Koszty eksploatacji i serwisu
+
+### Cennik przeglądów i materiałów eksploatacyjnych
 
 Orientacyjne koszty serwisowe silnika 2.3 MultiJet (ceny z 2026 roku, warsztaty niezależne – ASO droższe o 50–100%):
 

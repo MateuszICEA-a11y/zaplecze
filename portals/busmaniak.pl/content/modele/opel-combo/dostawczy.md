@@ -37,9 +37,14 @@ Standardowo Combo Van ma tylne drzwi dwuskrzydłowe otwierane do 270°. Przesuwn
 
 ## Silniki w Combo dostawczym – jaki wybrać
 
+### Benzyna 1.2 PureTech
+
 W Combo Van dostępne są cztery układy napędowe:
 - 1.2 PureTech 110 KM + manualna 6-biegowa: do transportu lekkiego poniżej 15 000 km/rok, głównie miasto
 - 1.2 PureTech 130 KM + ETG7: podobne zastosowanie, ETG7 wygodniejsza w korkach, ale mniej ekonomiczna
+
+### Diesel 1.5 BlueHDi
+
 - 1.5 BlueHDi 100 KM + manualna 6-biegowa: optymalny wybór dla regularnego transportu towarowego
 - 1.5 BlueHDi 130 KM + ETG7: dla flot z wymaganiami na komfort jazdy i duże przebiegi
 
@@ -49,10 +54,14 @@ Dla firm zajmujących się dostawami lokalnymi (40–100 km/dzień, załadunek 3
 
 ## Opcje zabudowy Opel Combo Van
 
+### Wersje wyposażenia Cargo
+
 Combo Van jest dostępne w trzech wersjach wyposażenia bazowego:
 - Combo Cargo: podstawowe bez klimatyzacji, radio z AUX, ABS, ESP
 - Cargo Edition: klimatyzacja manualna, radio z ekranem 7", czujniki parkowania tył
 - Cargo Edition Plus: kamera cofania, automatyczna klimatyzacja, pakiet bezpieczeństwa Opel Eye
+
+### Opcje dodatkowe Combo Van
 
 Dodatkowe opcje cargo:
 - drewniana podłoga ładowni z listwami mocującymi

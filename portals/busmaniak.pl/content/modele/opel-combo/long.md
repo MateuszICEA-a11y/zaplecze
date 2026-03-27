@@ -58,6 +58,9 @@ Wersja Short (L1, 4403 mm) jest lepsza do użytku wyłącznie miejskiego, gdzie 
 ## Silniki dostępne w Combo Long
 
 Combo E XL jest oferowane z tymi samymi silnikami co Short:
+
+### Gama silnikowa Opel Combo XL
+
 - 1.2 PureTech 110 KM / manualna 6-biegowa
 - 1.2 PureTech 130 KM / ETG7 (robotyzowana 6-biegowa)
 - 1.5 BlueHDi 100 KM / manualna 6-biegowa
@@ -68,6 +71,8 @@ Do użytku kurierskiego (wysoki przebieg dzienny, załadunek bliski maksymalnego
 ![Opel Combo Long – przestrzeń ładunkowa](/images/opel-combo-long-hero.jpg)
 
 ## Zabudowy i akcesoria cargo
+
+### Certyfikowane zabudowy Sortimo i Modul-System
 
 Opel oferuje certyfikowane zabudowy cargo dla Combo XL poprzez sieć autoryzowanych zabudowców (m.in. Sortimo, Modul-System). Standardowa oferta obejmuje:
 - aluminiowe regały ścienne z szufladkami

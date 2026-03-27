@@ -26,6 +26,8 @@ faq:
 
 Berlingo Van to furgon bez tylnych okien, z kabiną oddzieloną od przestrzeni ładunkowej stalową przegrodą. Długa historia modelu – od 1996 roku przez trzy generacje – jest udokumentowana na Wikipedii. Kabina mieści 2 lub 3 osoby (zależnie od wersji), a podłoga ładunkowa jest pokryta stalową blachą odporną na uszkodzenia.
 
+### Trzy generacje Berlingo Van
+
 Model produkowany jest od 1996 roku i przeszedł przez trzy generacje:
 
 - **I generacja (1996–2008)** – prosta konstrukcja, silniki 1.9D i późniejsze HDI
@@ -78,9 +80,16 @@ Do przewozu towarów o masie do 500 kg wystarczy wersja 75 lub 100 KM. Przy regu
 
 Kluczowe różnice między Berlingo Van a wersją osobową:
 
+### Homologacja N1 vs M1
+
 - **Homologacja** – Van ma N1 (ciężarowa), osobowy M1; wpływa to na podatki, ubezpieczenie i możliwość odliczenia VAT
+
+### Zawieszenie i wyposażenie
+
 - **Zawieszenie** – Van ma wzmocnione sprężyny i amortyzatory tył, przystosowane do większych obciążeń
 - **Wyposażenie** – Van w bazowej wersji jest surowy (brak radia, manualne szyby), ale da się go doposażyć
+
+### Przeróbka Vana na osobowy
 
 Przeróbka Vana na wersję osobową wymaga zmiany homologacji (badanie techniczne, dokumenty w wydziale komunikacji). Więcej o modyfikacjach w artykule o [tuningu Berlingo](/przerobki/citroen-berlingo-tuning/).
 

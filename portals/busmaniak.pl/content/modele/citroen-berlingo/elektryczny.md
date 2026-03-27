@@ -26,6 +26,8 @@ faq:
 
 [Citroën Berlingo](/modele/citroen-berlingo/) doczekał się elektrycznej wersji w III generacji – ë-Berlingo korzysta z napędu grupy Stellantis, wspólnego z Peugeotem e-Partnerem i Oplem e-Combo. Kluczowe parametry:
 
+### Silnik i bateria LFP
+
 | Parametr                | Wartość               |
 |-------------------------|-----------------------|
 | Silnik elektryczny      | 100 kW (136 KM)      |
@@ -37,6 +39,8 @@ faq:
 | Ładowanie DC            | do 100 kW             |
 | DC 0–80%                | ok. 30 min            |
 | Prędkość maksymalna     | 135 km/h              |
+
+### Technologia LFP – zalety i ograniczenia
 
 Bateria LFP (litowo-żelazowo-fosforanowa) to nowsza technologia – tańsza, bezpieczniejsza i bardziej trwała od tradycyjnych ogniw NMC. Wadą jest nieco niższa gęstość energii, ale przy 50 kWh i masie Berlingo to kompromis do zaakceptowania.
 
@@ -71,9 +75,16 @@ Wymiary nadwozia, bagażnika i przestrzeni ładunkowej są identyczne jak w wers
 
 Trzy główne scenariusze ładowania:
 
+### Ładowanie AC – wallbox domowy i firmowy
+
 - **Dom (wallbox 7,4 kW)** – pełne ładowanie w ok. 7 godzin; idealny scenariusz nocnego ładowania; koszt ok. 35–45 zł za pełen "zbiornik"
 - **Dom/firma (wallbox 11 kW)** – pełne ładowanie w ok. 5 godzin; wymaga opcjonalnego pokładowego ładowarki 11 kW
+
+### Ładowanie DC – szybkie stacje publiczne
+
 - **Stacja DC (do 100 kW)** – od 0 do 80% w ok. 30 minut; koszt ok. 70–100 zł na publicznej ładowarce
+
+### Roczne koszty energii
 
 Przy rocznym przebiegu 20 000 km koszt energii to ok. 3500–4500 zł (ładowanie domowe). Dla porównania, Berlingo 1.5 BlueHDI 100 KM spalający 5,5 l/100 km kosztuje ok. 7400 zł rocznie w paliwie.
 

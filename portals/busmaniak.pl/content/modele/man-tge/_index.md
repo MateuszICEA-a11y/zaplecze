@@ -27,9 +27,13 @@ faq:
 
 MAN TGE to duży samochód dostawczy klasy [Volkswagena Craftera](/modele/volkswagen-crafter/), [Mercedesa Sprintera](/modele/mercedes-sprinter/) i [Iveco Daily](/modele/iveco-daily/). Zaprezentowany po raz pierwszy we wrześniu 2016 roku, wszedł do sprzedaży w 2017 jako pierwszy lekki pojazd dostawczy w ofercie MAN Truck & Bus.
 
+### Platforma MNB i fabryka we Wrześni
+
 Nazwa TGE nawiązuje do ciężarowej nomenklatury MAN-a (TGL, TGM, TGS, TGX) i oznacza najlżejszy segment w portfolio marki. Samochód bazuje w całości na platformie MNB (Modular Light Commercial Vehicle) Volkswagena – tej samej, którą wykorzystuje Crafter II generacji.
 
 Produkcja odbywa się w fabryce Volkswagen Poznań we Wrześni. Na jednej linii montażowej powstają zarówno Craftery, jak i TGE – jedyną różnicą jest grill z logo MAN, oprogramowanie diagnostyczne i tabliczka znamionowa. Dla kierowcy oznacza to identyczne prowadzenie, identyczne serwisowanie podzespołów i identyczne części zamienne.
+
+### Sieć serwisowa MAN – główna przewaga
 
 Dlaczego więc ktoś miałby wybrać TGE zamiast Craftera? Odpowiedź tkwi w sieci serwisowej MAN, która obsługuje pojazdy ciężarowe w całej Europie – a to oznacza dłuższe godziny pracy warsztatów, lepszą dostępność terminów i warunki [leasingu](https://pl.wikipedia.org/wiki/Leasing) zbliżone do pojazdów ciężarowych.
 
@@ -57,10 +61,14 @@ MAN stosuje oznaczenia L2–L5, ale odpowiadają one kolejno: SWB (short wheelba
 
 Wszystkie warianty silnikowe TGE to czterocylindrowe jednostki 2.0 TDI produkcji Volkswagena, spełniające normę Euro 6d:
 
+### Warianty mocy 2.0 TDI
+
 - **2.0 TDI 102 KM (75 kW)** – bazowa jednostka do lekkich zastosowań miejskich. Moment obrotowy 300 Nm. Wystarczająca do furgonu L2H2, ale przy pełnym załadunku L4H3 odczuwalnie słaba na autostradzie.
 - **2.0 TDI 122 KM (90 kW)** – kompromis między oszczędnością a dynamiką. 340 Nm momentu. Dobry wybór do codziennej eksploatacji kurierskiej w wersjach do L3H2.
 - **2.0 TDI 140 KM (103 kW)** – najpopularniejsza jednostka w TGE. 410 Nm momentu zapewnia pewne przyspieszanie nawet pod pełnym obciążeniem. Najczęściej łączona z 8-biegowym automatem.
 - **2.0 BiTDI 177 KM (132 kW)** – topowa jednostka z podwójnym doładowaniem. 400 Nm momentu, dostępna wyłącznie z 8-stopniową skrzynią automatyczną. Przeznaczona do wersji z wyższym DMC i zabudów specjalistycznych.
+
+### Skrzynie biegów i spalanie MAN TGE
 
 Skrzynie biegów: 6-biegowa manualna (102–140 KM) lub 8-biegowa automatyczna (opcja dla 140 KM, standard dla 177 KM). Napęd na przód, tył lub 4MOTION (AWD) – w zależności od konfiguracji.
 
@@ -75,6 +83,8 @@ Jeśli planujesz TGE do regularnych tras międzymiastowych z pełnym ładunkiem,
 ## Wersje nadwoziowe MAN TGE
 
 Dzięki współdzieleniu platformy z Crafterem, TGE oferuje pełen wachlarz wariantów nadwoziowych:
+
+### Furgon, podwozie i zabudowy specjalne
 
 1. **Furgon (panel van)** – klasyczny blaszak do transportu towarowego. Najczęściej spotykany w wersjach L3H2 i L3H3 w firmach kurierskich.
 2. **Podwozie (chassis cab)** – kabina z ramą pod dowolną zabudowę: skrzynia, plandeka, chłodnia, kontener. DMC do 5 500 kg.
@@ -100,6 +110,8 @@ Ceny nowych TGE są wyższe niż analogicznych Crafterów o 5–15%, co odzwierc
 Na rynku wtórnym TGE jest rzadszy niż Crafter, co przekłada się na nieco wyższe ceny używanych egzemplarzy. Jednocześnie mniejsza podaż oznacza mniejszy przebieg – większość używanych TGE pochodzi z flot firmowych z regularnym serwisem.
 
 ## Porównanie TGE z Crafterem i konkurencją
+
+### MAN TGE a VW Crafter, Sprinter, Transit i Daily
 
 | Parametr | MAN TGE L3H2 | VW Crafter L3H2 | Mercedes Sprinter L2H2 | Ford Transit L3H2 | Iveco Daily L3H2 |
 |----------|--------------|-----------------|------------------------|--------------------|-------------------|

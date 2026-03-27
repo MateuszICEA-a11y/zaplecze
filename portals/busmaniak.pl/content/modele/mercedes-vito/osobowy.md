@@ -46,11 +46,15 @@ Najpopularniejszy wariant Long mieści 9 osób z bagażnikiem 1030 l. Po złoże
 
 Po liftingu 2019 sercem modelu jest dwulitrowy diesel [OM654](https://en.wikipedia.org/wiki/Mercedes-Benz_OM654_engine) w pięciu wariantach:
 
+### Warianty mocy OM654 w Vito
+
 - **116 KM** – 330 Nm, bazowy do shuttle bus
 - **136 KM** – 330 Nm, kompromis mocy i spalania
 - **163 KM** – 380 Nm, najpopularniejszy wariant
 - **190 KM** – 440 Nm, komfortowa jazda autostradowa
 - **237 KM** – 500 Nm, topowy, dynamika limuzyny
+
+### Napęd i skrzynia 9G-TRONIC
 
 Spalanie 6–8 l/100 km w cyklu mieszanym. Napęd tylny (RWD) standardowo, opcjonalnie 4MATIC. Skrzynia 9G-TRONIC lub manualna 6b (tylko słabsze wersje). Benzynowy M274 (156/211 KM) – rzadkość w Tourer.
 
@@ -74,8 +78,13 @@ Jeśli potrzebujesz jeszcze więcej przestrzeni, [Mercedes Sprinter osobowy](/mo
 
 ## Typowe usterki i serwis
 
+### DPF, EGR i skrzynia automatyczna
+
 - **DPF/EGR** – czyszczenie lub wymiana po 150 tys. km. Koszt: 5000–10 000 zł
 - **Skrzynia 9G-TRONIC** – wymiana oleju co 60 tys. km obowiązkowa. Koszt: 3000–5000 zł. Zaniedbanie prowadzi do szarpań i błędów
+
+### Korozja i zawieszenie Vito W447
+
 - **Korozja podwozia** – mimo poprawy względem W639, profili zamknięte wymagają dodatkowego zabezpieczenia
 - **Układ AdBlue** – czujniki i pompy kapryśne przy niskich temperaturach
 - **Zawieszenie** – tuleje wahaczy przednich i łączniki stabilizatora zużywają się szybciej przy pełnym obciążeniu 9 osobami

@@ -41,6 +41,8 @@ Szerokość przestrzeni ładunkowej między nadkolami wynosi 1420 mm we wszystki
 
 ## Pojemność i ładowność Transita Van
 
+### Pojemność w zależności od konfiguracji nadwozia
+
 Pojemność przestrzeni ładunkowej zależy wprost od kombinacji długości i wysokości:
 
 | Wersja | Długość całkowita | Długość podłogi | Pojemność | Europalety |
@@ -61,7 +63,7 @@ Pojemność przestrzeni ładunkowej zależy wprost od kombinacji długości i wy
 
 Długość podłogi ładunkowej waha się od ok. 2554 mm (L1) do 4404 mm (L4). W wersji L3H2 zmieszczą się 4 europalety ustawione w rzędzie, w L4H3 – do 5 palet.
 
-Ładowność:
+### Ładowność Transit Van – FWD vs RWD
 
 - wersje FWD (przedni napęd) – 1200–1550 kg przy DMC 3,5 t
 - wersje RWD (tylny napęd) – do 1900 kg przy DMC 3,5 t, do 2300 kg przy DMC 4,25–4,7 t

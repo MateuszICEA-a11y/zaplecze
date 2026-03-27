@@ -74,11 +74,15 @@ Dane katalogowe NEDC (7,1–7,4 l/100 km) nie mają związku z rzeczywistością
 
 Przy regularnej wymianie oleju co 15–20 tys. km silnik bez problemów dobija do 700–800 tys. km bez remontu kapitalnego. Trwałość oceniana na 9–10/10. Mimo to ma swoje słabe punkty:
 
+### Słabe punkty silnika 3.0 MultiJet
+
 - **Przepustnica** – awaria elektroniki po 150–250 tys. km. Wymiana/regeneracja: 1500–3000 zł
 - **Skrzynia biegów M40** – najsłabszy element układu napędowego. Zużycie synchronizatorów po 200–300 tys. km, szczególnie przy jeździe na niskich obrotach na 6. biegu. Remont: 4000–8000 zł
 - **Śruby kolektora wydechowego** – urywają się po 100–200 tys. km pod wpływem cykli cieplnych. Objaw: charakterystyczne cykanie na zimnym silniku. Wymiana z uszczelkami: 1000–2500 zł
 - **Wtryskiwacze** – zużycie po 200–400 tys. km, wrażliwe na jakość paliwa. Koszt jednego: 1500–2500 zł, komplet: 6000–10 000 zł
 - **Turbosprężarka** – usterki po ok. 250 tys. km. Regeneracja: 2000–4000 zł
+
+### Ceny Ducato 3.0 na rynku wtórnym
 
 Ceny używanych Ducato 3.0 MultiJet na rynku polskim (2026): **30 000–80 000 zł** przy przebiegach 200–400 tys. km, w zależności od stanu i konfiguracji nadwozia.
 

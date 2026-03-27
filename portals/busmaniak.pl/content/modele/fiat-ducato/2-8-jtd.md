@@ -85,6 +85,8 @@ Silnik 2.8 JTD cieszy się dobrą opinią wśród właścicieli dostawczaków. C
 Silnik 2.8 JTD to konstrukcja niemal pancerna. Przy regularnym serwisie olejowym co 10–15 tys. km te jednostki bez remontu pokonują 600–800 tysięcy kilometrów. Największym wrogiem tego auta nie jest silnik, a korozja nadwozia i awarie osprzętu – alternator czy łożyska w skrzyni biegów.
 {{% /expert %}}
 
+### Najczęstsze usterki Ducato 2.8 JTD
+
 Najczęstsze problemy z konkretnymi przebiegami i kosztami napraw:
 
 - **Skrzynia biegów (piąty bieg)** – wyskakuje lub zgrzyta od 150–250 tys. km z powodu zużytych synchronizatorów i niskiego poziomu oleju. Regeneracja przez dekiel boczny: 1500–3000 zł, pełny remont: 4000–6000 zł
@@ -93,6 +95,8 @@ Najczęstsze problemy z konkretnymi przebiegami i kosztami napraw:
 - **Turbosprężarka** – zużycie łożysk po 200–350 tys. km. Regeneracja: 1500–3000 zł, nowa (Garrett): 5000–7000 zł
 - **Alternator i rozrusznik** – awarie po 150–250 tys. km. Alternator regeneracja: 800–1500 zł, rozrusznik: 500–1000 zł
 - **Układ chłodzenia** – starzejące się przewody gumowe mogą pękać, co przy zaniedbaniu prowadzi do przegrzania silnika
+
+### Ceny na rynku wtórnym
 
 Ceny używanych Ducato 2.8 JTD na rynku polskim (2026): **12 000–25 000 zł** przy przebiegach 250–400 tys. km, zadbane kampery do 30 000 zł. Kto wybiera konkretny rocznik i wersję, znajdzie przegląd w [kompletnym przewodniku po Fiacie Ducato](/modele/fiat-ducato/).
 

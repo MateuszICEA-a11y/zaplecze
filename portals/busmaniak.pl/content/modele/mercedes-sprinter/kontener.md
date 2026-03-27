@@ -37,9 +37,14 @@ Sprinter kontener 3,5 t prowadzisz na prawo jazdy B (bez ograniczeń wieku pojaz
 
 Zabudowy montowane na podwoziu Sprinter:
 
+### Izoterma, chłodnia i mroźnia
+
 - Izotermiczna (bez agregatu) – przewóz artykułów wrażliwych temperaturowo, izolacja PU 45–80 mm, utrzymanie temperatury przez ok. 6–8 h
 - Chłodnicza ATP – agregat sprężarkowy napędzany silnikiem lub autonomiczny, temp. od +2°C do +8°C, certyfikat ATP/F lub ATP/FRC
 - Mroźnicza – temp. do -20°C, izolacja min. 100 mm, agregat o wyższej mocy chłodniczej
+
+### Skrzynia sucha i food truck
+
 - Skrzynia sucha (dry box) – standardowa skrzynia ładunkowa bez izolacji, do przewozu towarów niewymagających temperatury kontrolowanej
 - Kontener gastronomiczny (food truck) – zabudowa z wyposażeniem kuchennym, oknem wydawczym, okapem
 
@@ -66,6 +71,8 @@ Przy DMC 5,5 t i zabudowie chłodniczej z agregatem (masa zabudowy ok. 1000–12
 ## Zastosowania Sprinter kontener
 
 Popularne branże i zastosowania:
+
+### Mercedes Sprinter kontener – branże
 
 - Logistyka spożywcza – dystrybucja nabiału, mięsa, warzyw w łańcuchu chłodniczym
 - Gastronomia mobilna – food trucki z certyfikatem SANEPID, catering eventowy

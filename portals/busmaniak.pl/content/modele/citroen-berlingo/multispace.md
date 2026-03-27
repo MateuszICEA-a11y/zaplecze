@@ -57,7 +57,12 @@ Bagażnik o pojemności 675 litrów to jedna z większych wartości w segmencie.
 
 Gama silnikowa obejmowała jednostki benzynowe i wysokoprężne:
 
+### Diesel 1.6 HDI – 75, 90 i 110 KM
+
 - **[1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) 75/90/110 KM** – najpopularniejszy wybór; diesel z niskim spalaniem i dobrą dostępnością części
+
+### Benzyna 1.6 VTi – 98 i 120 KM
+
 - **1.6 VTi 98/120 KM** – benzyna z wielopunktowym wtryskiem; lepsza dynamika w mieście, ale wyższe spalanie
 
 W Multispace stosowano wyłącznie manualne skrzynie biegów – automatyczna nie była dostępna w żadnej wersji tej generacji.
@@ -68,8 +73,13 @@ W Multispace stosowano wyłącznie manualne skrzynie biegów – automatyczna ni
 
 Multispace oferował solidną listę wyposażenia jak na segment kombivanów:
 
+### Wyposażenie seryjne i bezpieczeństwo
+
 - **Bezpieczeństwo** – ABS, ESP, kontrola trakcji, poduszki powietrzne (czołowe, boczne, kurtynowe)
 - **Multimedia** – radio CD/MP3, Bluetooth, opcjonalnie nawigacja
+
+### Berlingo Multispace XTR – wersja terenowa
+
 - **Wersja XTR** – podwyższone zawieszenie, plastikowe nakładki ochronne nadwozia, lepsze właściwości na gruntowych drogach
 
 W wersji Long Multispace oferowano trzeci rząd siedzeń w konfiguracji 2+3+2. Szczegóły o wariancie [7-osobowym](/modele/citroen-berlingo/7-osobowy/) znajdziesz w osobnym artykule.

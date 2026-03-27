@@ -47,6 +47,8 @@ Combo Maxi w wersji Life XL oferuje trzeci rząd foteli – dwa niezależne, wyj
 
 Gama silnikowa identyczna jak w Short – Maxi nie wymaga mocniejszego silnika, choć przy regularnym wożeniu 2 europalet (400–500 kg) diesel 1.5 D 130 KM daje wyraźnie większy komfort niż bazowy 102 KM.
 
+### Dane techniczne silników Combo Maxi
+
 | Silnik | Moc | Moment | Spalanie (śr.) | Skrzynia |
 |--------|-----|--------|----------------|----------|
 | 1.5 Turbo D | 102 KM | 250 Nm | 5,4 l/100 km | 6-bieg. man. |
@@ -54,6 +56,8 @@ Gama silnikowa identyczna jak w Short – Maxi nie wymaga mocniejszego silnika, 
 | 1.2 PureTech | 110 KM | 205 Nm | 6,8 l/100 km | 6-bieg. man. |
 | 1.2 PureTech | 130 KM | 230 Nm | 7,0 l/100 km | EAT8 |
 | e-Combo XL | 136 KM | 260 Nm | 20 kWh/100 km | 1-bieg. |
+
+### Dobór silnika do profilu użytkowania
 
 Dobór silnika zależy od profilu użytkowania:
 

@@ -49,8 +49,13 @@ Ograniczenie prędkości do 130 km/h nie wpływa na użytek dostawczy – e-Comb
 ## Ładowanie e-Combo – opcje i czasy
 
 e-Combo obsługuje dwa standardy ładowania:
+
+### AC i DC – złącza i moce
+
 - AC (prąd zmienny): złącze Type 2, maksymalnie 11 kW (opcja), standardowo 7,4 kW
 - DC (prąd stały): złącze CCS Combo 2, maksymalnie 100 kW
+
+### Czasy ładowania e-Combo
 
 Czasy ładowania:
 - 0–100% przy 7,4 kW AC: ok. 7 h

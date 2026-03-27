@@ -51,10 +51,15 @@ Otwierana klapa w ścianie grodziowej i składane oparcie fotela pasażera pozwa
 
 ## Silniki i napędy Opel Combo Van
 
+### Diesel 1.5 D i benzyna PureTech
+
 - **1.5 Diesel 75 KM** – wersja bazowa do lekkiego transportu miejskiego
 - **1.5 Diesel 100 KM** – najpopularniejszy wariant flotowy
 - **1.5 Diesel 130 KM** – do większych ładunków i tras mieszanych
 - **1.2 PureTech 110/130 KM** – turbobenzyna, manualna lub 8-biegowy automat EAT8
+
+### Opel e-Combo – wersja elektryczna
+
 - **[e-Combo](/modele/opel-combo/elektryczny/) 136 KM** – bateria 50 kWh, zasięg do 275 km WLTP
 
 Wersja elektryczna zachowuje identyczne parametry ładunkowe – baterie umieszczono pod podłogą.
