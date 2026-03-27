@@ -72,7 +72,10 @@ All API calls use `curl` with credentials from `references/api-credentials.md`. 
 
 Use **two sources** in parallel for comprehensive research:
 
-#### Wikipedia (always first)
+#### Wikipedia (always first – MANDATORY)
+
+**STOP: Do NOT proceed to outline without completing this step.**
+
 For every article topic, fetch the Wikipedia page (Polish first, English fallback) to establish baseline facts: production years, platform, factory, engine codes, dimensions, generational changes. Wikipedia is the primary authoritative source for historical and technical data.
 
 ```bash
@@ -82,7 +85,19 @@ WebFetch https://pl.wikipedia.org/wiki/{Model_Name} → extract key specs, histo
 WebFetch https://en.wikipedia.org/wiki/{Model_Name} → same extraction
 ```
 
-Use Wikipedia data as the factual backbone of the article. Cite it in the source list at the end.
+Use Wikipedia data as the factual backbone of the article.
+
+**Wikipedia MUST appear in the final article in TWO ways:**
+1. **In the source list** – `*Źródła: Wikipedia – [Model Name], ...*` (always, no exceptions)
+2. **In the body as a contextual link** – link a technical concept (engine family, platform, emission standard), NOT the model name. Verify the URL exists with WebFetch before inserting.
+
+```
+✅ Silnik 2.3 MultiJet pochodzi z rodziny [Fiat F1A](https://pl.wikipedia.org/wiki/Fiat_F1A), stosowanej w ponad 15 modelach grupy Stellantis.
+✅ Boxer spełnia normę [Euro 6d](https://en.wikipedia.org/wiki/European_emission_standards), obowiązującą od 2021 roku.
+❌ [Peugeot Boxer](https://pl.wikipedia.org/wiki/Peugeot_Boxer) to popularny van dostawczy. ← NIGDY: model anchor → nasz pillar
+```
+
+If no Polish Wikipedia article exists for the concept → use English. If no Wikipedia article exists at all for any relevant concept → note it and skip body link (source list still required).
 
 #### Web Search (3-7 queries)
 Standard web searches for:
@@ -135,6 +150,162 @@ Example:
 ### 2c. Build Outline (internal – do NOT present to user)
 
 Build the outline internally as input for Stage 3. Include: Title, H1, H2/H3 structure, shortcode plan, source list, internal links with full contextual sentences, keywords with volumes. Do NOT show the outline to the user or ask for approval – proceed directly to Stage 3.
+
+#### Article type templates
+
+Use the appropriate template based on article type. **RÓŻNICUJ formę frazy w nagłówkach H2:** ~50% z pełną marką+modelem (odmienioną), ~50% sam model. Nie powtarzaj identycznej formy 2× pod rząd. Przykład: "Silniki Fiata Ducato" → "Wymiary Ducato" → "Ceny Fiata Ducato" → "Porównanie Ducato z konkurencją".
+
+---
+
+**Template: MODEL (pillar article)**
+
+```
+## Historia i generacje [Model]
+### [Model] I (RRRR–RRRR)   ← każda generacja jako H3, scrape + Sonar
+### [Model] II (RRRR–RRRR)
+### [Model] III (RRRR–dziś)
+
+## Dane techniczne i wymiary różnych wersji [Model]
+### [Model] L1H1 / krótki   ← każdy wariant jako H3 z tabelą
+### [Model] L2H1 / długi
+### [Model] L2H2 / wysoki (jeśli dotyczy)
+
+## Silniki [Model]
+### Diesel                   ← tabela: oznaczenie, moc, moment, norma, roczniki
+### Benzyna / elektryk (jeśli dotyczy)
+
+## Wersje nadwoziowe i wyposażenie [Model]
+### Furgon
+### Osobowy / Passenger (jeśli dotyczy)
+### Platforma / skrzynia (jeśli dotyczy)
+
+## Ceny [Model]
+### Nowy [Model]             ← aktualne ceny, warianty
+### Używany [Model]          ← widełki cenowe rocznikami
+
+## Typowe usterki [Model]    ← problemy per silnik/rocznik, koszty napraw
+
+## Porównanie [Model] z konkurencją   ← tabela: kluczowe parametry vs 3-4 rywale
+
+## FAQ (3-5 pytań)           ← H2/H3 w formie pytań, samowystarczalne odpowiedzi
+```
+
+---
+
+**Template: WERSJA SILNIKOWA** (podstrona modelu, np. `fiat-ducato/2-3-multijet`)
+
+```
+## Dane techniczne [Model] [Silnik]
+### [Model] [Silnik] [moc1] KM   ← każdy wariant mocy jako H3 z tabelą
+### [Model] [Silnik] [moc2] KM
+### [Model] [Silnik] [moc3] KM (jeśli dotyczy)
+
+## Spalanie [Model] [Silnik]
+### W trasie
+### W mieście / mieszane
+
+## Typowe usterki [Model] [Silnik]   ← problemy per rocznik/wariant, koszty napraw
+
+## Opinie i ocena silnika
+
+## Koszty serwisu i eksploatacji [Model] [Silnik]
+
+## FAQ (3-5 pytań)
+```
+
+---
+
+**Template: WERSJA NADWOZIOWA** (podstrona modelu, np. `fiat-ducato/brygadowka`, `fiat-ducato/skrzyniowy`)
+
+```
+## [Model] [wariant] – konstrukcja i wersje nadwozia
+### Wymiary [Model] [wariant]
+### Ładowność i przestrzeń ładunkowa
+
+## Silniki do [Model] [wariant]       ← skrótowo, linki do stron silnikowych
+
+## [Model] [wariant] w zastosowaniu   ← branże, typowe use-case'y
+
+## Wyposażenie i opcje [Model] [wariant]
+
+## Ceny [Model] [wariant]
+### Nowy [Model] [wariant]
+### Używany [Model] [wariant]
+
+## Typowe usterki i serwis [Model] [wariant]
+
+## FAQ (3-5 pytań)
+```
+
+---
+
+---
+
+**Template: SERWIS** (np. `serwis/fiat-ducato-rozrzad`, `serwis/bezpieczniki-fiat-ducato`)
+
+```
+## [Problem/Temat] w [Model]              ← lub: Gdzie/Co ile/Jak + model
+### [Model] [generacja1] (RRRR–RRRR)    ← jeśli różni się per generacja
+### [Model] [generacja2]
+
+## Diagnostyka – jak rozpoznać [problem] w [Model]
+
+## Naprawa [Model] – procedura / opcje   ← step-by-step lub warianty
+
+## Koszty [serwis/naprawa] [Model]
+### Części
+### Robocizna
+
+## Jak zapobiegać – eksploatacja [Model]
+
+## FAQ (3-5 pytań)
+```
+
+---
+
+**Template: PRZERÓBKI** (np. `przerobki/fiat-ducato-kamper`, `przerobki/citroen-berlingo-tuning`)
+
+```
+## Dlaczego [Model] [do przeróbki / jako kamper]?  ← zalety, popularność
+
+## Wybór bazy [Model] do przeróbki
+### Silniki – który wybrać
+### Wymiary – która wersja (L1/L2/L3)
+
+## Koszty przeróbki [Model]
+### Materiały i wyposażenie
+### Robocizna i warsztaty
+
+## Etapy przeróbki [Model]
+### [Główny element 1, np. instalacja elektryczna]
+### [Główny element 2, np. zabudowa meblowa]
+
+## Typowe błędy i na co uważać
+
+## FAQ (3-5 pytań)
+```
+
+---
+
+#### H3 headings – MANDATORY
+
+Every H2 section MUST contain at least 1-2 H3 subheadings. Articles without H3s look flat and thin. H3s break content into scannable chunks and improve SEO.
+
+Rules:
+- Pillar articles: min 2-3 H3s per major H2 (e.g. "## Silniki" → "### Diesel 2.0", "### Diesel 2.3", "### Elektryczny")
+- Subpage articles: min 1-2 H3s per H2 where applicable
+- H3 headings should contain specific details (engine variant, generation, price range, use case)
+- H3 headings follow same declension rule as H2: vary brand+model vs model-only
+
+**Research per sekcja:** Dla każdego H2 i H3 wykonaj:
+1. **WebFetch** – scrape co najmniej 1 strony konkurencji z SERP dla danego tematu
+2. **Sonar query** – zapytanie o twarde dane dla tej sekcji (specyfikacje, ceny, roczniki, koszty)
+
+Przykład dla `## Silniki [Model]`:
+```
+WebFetch → strona producenta lub auto-data.net dla specyfikacji silników
+Sonar → "[Model] silniki diesel dCi dane techniczne moc moment obrotowy norma emisji roczniki"
+```
 
 ---
 
@@ -257,6 +428,14 @@ FRAZY KLUCZOWE:
 3. Usuń nadmiarowe wystąpienia – zastąp synonimami lub po prostu usuń
 4. NIE dodawaj nowych fraz których nie ma w tekście
 
+LINKOWANIE ZEWNĘTRZNE (Wikipedia):
+1. Artykuł MUSI zawierać 1 link do Wikipedii (pl lub en) do pojęcia technicznego
+   - ✅ silnik, platforma, norma emisji, technologia
+   - ❌ NIGDY nazwa modelu – anchor modelu → nasz pillar
+2. Jeśli linku do Wikipedii nie ma w drafcie – DODAJ go do odpowiedniego zdania
+3. Wikipedia MUSI być w liście źródeł na końcu artykułu
+4. Nie weryfikuj URL – Claude Code zrobi to w Stage 2. Użyj URL z draftu
+
 LINKOWANIE WEWNĘTRZNE:
 1. Każdy link MUSI być częścią naturalnego zdania (kontekstowy)
 2. USUŃ linki w formie osobnych elementów:
@@ -300,7 +479,7 @@ Build Hugo frontmatter based on the article:
 
 ```yaml
 ---
-title: "{Title with keyword} | BusManiak.pl"  # NEVER em-dash
+title: "{Title with keyword}"  # NO "| BusManiak.pl" – Hugo appends site title automatically via head.html
 date: {YYYY-MM-DD}
 description: "{meta description – max 155 chars}"
 draft: false
@@ -322,14 +501,17 @@ faq:
 
 **FAQ in frontmatter:** Extract 3-5 FAQ items from the article's FAQ-style H2/H3 sections. Answers should be self-contained and concise.
 
+**Schema FAQ (automatic):** The Hugo theme automatically generates `FAQPage` JSON-LD structured data from the `faq:` frontmatter field via `layouts/partials/schema/faq.html`. No manual `<script>` tags needed – just populate `faq:` correctly and schema is live. This is mandatory for every article (E-E-A-T + featured snippet eligibility).
+
 ### 5b. Shortcode Normalization
 
 Gemini sometimes generates wrong shortcode syntax. Fix:
 - `{{< expert >}}` → `{{% expert %}}`  (double %)
 - `{{< info >}}` → `{{% info %}}`
 - Remove any `{{< image >}}`, `{{< table >}}` – convert to standard Markdown
-- Expert format: `{{% expert name="Nazwisko" %}}treść{{% /expert %}}`
-- Info format: `{{% info title="Tytuł" icon="engineering" %}}treść{{% /info %}}`
+- Expert format: `{{% expert name="Kowalczyk" %}}treść{{% /expert %}}` — name param REQUIRED, never bare `{{% expert %}}`
+- Info format: `{{% info title="Tytuł" icon="engineering" %}}treść{{% /info %}}` — title+icon params REQUIRED, never bare `{{% info %}}`
+- **CRITICAL:** Bare shortcodes without params crash Hugo build (nil map access on .Params)
 
 ### 5c. Hero Image Generation
 
@@ -348,7 +530,26 @@ Prompt guidelines:
 - Always: good lighting, clean composition, no text overlays
 - Model: nano-banana-2, 1K resolution, 16:9 aspect ratio
 
-### 5d. Final File Assembly
+**⚠️ PATH BUG:** The script saves to `pipeline/content-writer/portals/busmaniak.pl/static/images/` (wrong path). After generating, ALWAYS copy to the correct path:
+```bash
+cp pipeline/content-writer/portals/busmaniak.pl/static/images/{slug}.jpg portals/busmaniak.pl/static/images/{slug}.jpg
+```
+
+### 5d. YAML Safety Check
+
+Before saving, validate the frontmatter YAML:
+- **NEVER use typographic quotes** `„"` inside double-quoted YAML strings — they break the parser. Use `'single quotes'` or rephrase.
+- **NEVER use `\'` escape** in YAML double-quoted strings — not valid YAML. Just use `'` without backslash.
+- **All shortcodes** must have required params (name= for expert, title= icon= for info).
+- Run mental check: does any `lead:` or `answer:` field contain characters that could close the YAML string?
+
+### 5e. File Structure
+
+- **Pillar articles** (models with potential subpages): MUST be `{model-slug}/_index.md` (directory + _index.md), never flat `{model-slug}.md`. Hugo uses `list.html` template for `_index.md`.
+- **Subpages** (engine/body variants): regular `{parent}/{slug}.md` files.
+- **type: "page"** required in frontmatter for pillar articles to render correctly.
+
+### 5f. Final File Assembly
 
 Combine frontmatter + article body into a single `.md` file. Save to the portal's content directory.
 
@@ -360,7 +561,12 @@ Save the final `.md` file and report completion. Do NOT stop between stages to a
 
 File location: `portals/busmaniak.pl/content/{section}/{slug}.md`
 
-After saving, tell the user the article is ready and ask if they want to commit + push.
+After saving:
+1. **Validate YAML** — parse frontmatter with Python yaml.safe_load() to catch broken quotes/escapes BEFORE committing
+2. **Check shortcodes** — grep for bare `{{% info %}}` or `{{% expert %}}` without params
+3. **Verify image exists** — confirm the referenced hero image is at the correct path
+4. **Verify H3 presence** — article must have at least 2 H3 headings
+5. Tell the user the article is ready and ask if they want to commit + push
 
 ---
 

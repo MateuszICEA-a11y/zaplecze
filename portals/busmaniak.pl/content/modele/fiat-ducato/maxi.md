@@ -1,5 +1,5 @@
 ---
-title: "Fiat Ducato Maxi – wymiary, ładowność, zastosowania | BusManiak.pl"
+title: "Fiat Ducato Maxi – wymiary, ładowność, zastosowania"
 date: 2026-03-25
 description: "Fiat Ducato Maxi L4H2 i L4H3 – wymiary paki, ładowność, wzmocnione zawieszenie i porównanie z wersją standardową."
 draft: false

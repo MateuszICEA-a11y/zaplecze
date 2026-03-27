@@ -1,5 +1,5 @@
 ---
-title: "Dacia Dokker Van – wymiary paki, ładowność, dane techniczne | BusManiak.pl"
+title: "Dacia Dokker Van – wymiary paki, ładowność, dane techniczne"
 date: 2026-03-26
 description: "Dacia Dokker Van – wymiary paki 3,1 m³, ładowność do 970 kg, silniki 1.5 dCi i 1.6 SCe, system Easy Seat, ceny używanych egzemplarzy."
 draft: false

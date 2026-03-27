@@ -1,5 +1,5 @@
 ---
-title: "Fiat Ducato brygadówka – wersja dla ekip budowlanych | BusManiak.pl"
+title: "Fiat Ducato brygadówka – wersja dla ekip budowlanych"
 date: 2026-03-25
 description: "Fiat Ducato brygadówka – podwójna kabina do 7 osób, wymiary przestrzeni ładunkowej, silniki i ceny nowych oraz używanych."
 draft: false

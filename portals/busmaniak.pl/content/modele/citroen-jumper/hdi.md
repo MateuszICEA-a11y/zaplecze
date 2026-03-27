@@ -1,5 +1,5 @@
 ---
-title: "Citroën Jumper HDi – dane techniczne, spalanie, opinie | BusManiak.pl"
+title: "Citroën Jumper HDi – dane techniczne, spalanie, opinie"
 date: 2026-03-26
 description: "Silniki HDi i BlueHDi w Citroënie Jumperze – dane techniczne, warianty mocy, spalanie, typowe usterki i koszty serwisu."
 draft: false

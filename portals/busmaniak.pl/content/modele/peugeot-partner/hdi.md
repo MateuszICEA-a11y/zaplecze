@@ -1,5 +1,5 @@
 ---
-title: "Peugeot Partner HDI – dane techniczne, spalanie, usterki | BusManiak.pl"
+title: "Peugeot Partner HDI – dane techniczne, spalanie, usterki"
 date: 2026-03-25
 description: "Silnik 1.6 HDI (DV6) i 2.0 HDI w Peugeot Partner II – warianty 75–120 KM, realne spalanie, typowe usterki z kosztami i ceny używanych."
 draft: false

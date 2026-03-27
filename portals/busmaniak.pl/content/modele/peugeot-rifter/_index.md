@@ -1,5 +1,5 @@
 ---
-title: "Peugeot Rifter – dane techniczne, wersje, silniki | BusManiak.pl"
+title: "Peugeot Rifter – dane techniczne, wersje, silniki"
 date: 2026-03-25
 description: "Peugeot Rifter – dane techniczne, wymiary Standard i Long, silniki 1.2 PureTech i 1.5 BlueHDi, wersja 7-osobowa, e-Rifter elektryczny, typowe usterki i ceny."
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "Opel Vivaro Long – wymiary, ładowność i dane techniczne | BusManiak.pl"
+title: "Opel Vivaro Long – wymiary, ładowność i dane techniczne"
 date: 2026-03-25
 description: "Opel Vivaro Long – wymiary przestrzeni ładunkowej 3120 mm, ładowność do 1300 kg i różnice względem wersji Standard."
 draft: false

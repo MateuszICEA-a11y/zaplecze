@@ -1,5 +1,5 @@
 ---
-title: "Opel Vivaro blaszak – wymiary paki, ładowność, ceny | BusManiak.pl"
+title: "Opel Vivaro blaszak – wymiary paki, ładowność, ceny"
 date: 2026-03-26
 description: "Opel Vivaro w wersji furgon (blaszak) – wymiary paki Standard i Long, ładowność do 1400 kg, silniki CDTi i 2.0 D, porównanie z Trafic Van i Expert Van."
 draft: false

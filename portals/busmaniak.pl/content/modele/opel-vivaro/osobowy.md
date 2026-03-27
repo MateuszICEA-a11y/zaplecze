@@ -1,5 +1,5 @@
 ---
-title: "Opel Vivaro osobowy – Combi i Life, miejsca, dane techniczne | BusManiak.pl"
+title: "Opel Vivaro osobowy – Combi i Life, miejsca, dane techniczne"
 date: 2026-03-25
 description: "Opel Vivaro osobowy – wersje Combi i Life, do 9 miejsc, wymiary, silniki i różnice między generacjami."
 draft: false

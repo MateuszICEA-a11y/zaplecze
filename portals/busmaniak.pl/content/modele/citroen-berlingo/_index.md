@@ -1,5 +1,5 @@
 ---
-title: "Citroën Berlingo – generacje, wersje, dane techniczne | BusManiak.pl"
+title: "Citroën Berlingo – generacje, wersje, dane techniczne"
 date: 2026-03-25
 description: "Kompletny przewodnik po Citroënie Berlingo – historia 3 generacji, dane techniczne, wymiary M i XL, silniki HDI i PureTech, wersje nadwoziowe i typowe usterki."
 draft: false

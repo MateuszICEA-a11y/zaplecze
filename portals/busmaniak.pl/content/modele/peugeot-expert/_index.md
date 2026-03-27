@@ -1,5 +1,5 @@
 ---
-title: "Peugeot Expert – dane techniczne, wersje, silniki | BusManiak.pl"
+title: "Peugeot Expert – dane techniczne, wersje, silniki"
 date: 2026-03-25
 description: "Peugeot Expert – dane techniczne, wymiary Compact/Standard/Long, silniki 1.5 i 2.0 BlueHDi, wersja Traveller 9-osobowa, e-Expert, typowe usterki i ceny."
 draft: false

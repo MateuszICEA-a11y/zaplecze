@@ -1,5 +1,5 @@
 ---
-title: "Opel Vivaro 2.0 CDTi – dane techniczne, spalanie, opinie | BusManiak.pl"
+title: "Opel Vivaro 2.0 CDTi – dane techniczne, spalanie, opinie"
 date: 2026-03-26
 description: "Opel Vivaro 2.0 CDTi (M9R) – dane techniczne, warianty 90 i 114 KM, realne spalanie, typowe usterki wtrysków i turbo, koszty serwisu."
 draft: false

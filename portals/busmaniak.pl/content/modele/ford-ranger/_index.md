@@ -1,5 +1,5 @@
 ---
-title: "Ford Ranger – dane techniczne, wersje, silniki | BusManiak.pl"
+title: "Ford Ranger – dane techniczne, wersje, silniki"
 date: 2026-03-25
 description: "Ford Ranger – dane techniczne, wymiary paki, silniki 2.0 EcoBlue i 3.0 V6 EcoBoost, wersje Wildtrak i Raptor, typowe usterki oraz ceny nowych i używanych."
 draft: false

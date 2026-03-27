@@ -1,5 +1,5 @@
 ---
-title: "Porównania busów i vanów – face-to-face i rankingi | BusManiak.pl"
+title: "Porównania busów i vanów – face-to-face i rankingi"
 date: 2026-03-23
 lastmod: 2026-03-26
 description: "Porównania busów i vanów face-to-face – Ducato vs Sprinter, Transit vs Crafter, Daily vs Master. Rankingi, zestawienia danych technicznych i testy porównawcze modeli dostawczych."

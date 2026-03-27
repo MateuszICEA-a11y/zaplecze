@@ -1,5 +1,5 @@
 ---
-title: "Opel Vivaro brygadówka – kabina dwurzędowa, dane techniczne | BusManiak.pl"
+title: "Opel Vivaro brygadówka – kabina dwurzędowa, dane techniczne"
 date: 2026-03-25
 description: "Opel Vivaro brygadówka – kabina dwurzędowa z przestrzenią ładunkową. Dane techniczne, ładowność i zastosowania dla ekip remontowych."
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "Opel Combo 1.6 CDTi – dane techniczne, spalanie, opinie | BusManiak.pl"
+title: "Opel Combo 1.6 CDTi – dane techniczne, spalanie, opinie"
 date: 2026-03-26
 description: "Silnik 1.6 CDTi (Renault R9M) w Oplu Combo D – warianty 90 i 105 KM, spalanie 5,8–6,5 l/100 km, problem z DPF i EGR, koszty serwisu."
 draft: false

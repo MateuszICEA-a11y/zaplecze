@@ -1,5 +1,5 @@
 ---
-title: "Peugeot Boxer HDI – silniki, dane techniczne, usterki | BusManiak.pl"
+title: "Peugeot Boxer HDI – silniki, dane techniczne, usterki"
 date: 2026-03-25
 description: "Silniki HDI w Peugeot Boxer – warianty 2.0, 2.2 i 2.8, dane techniczne, realne spalanie, typowe usterki z kosztami i porównanie z Ducato/Jumper."
 draft: false

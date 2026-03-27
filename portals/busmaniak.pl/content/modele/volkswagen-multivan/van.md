@@ -1,5 +1,5 @@
 ---
-title: "Volkswagen Multivan Van – wymiary, dane techniczne, ceny | BusManiak.pl"
+title: "Volkswagen Multivan Van – wymiary, dane techniczne, ceny"
 date: 2026-03-26
 description: "Volkswagen Multivan w wersji Van – wymiary, przestrzeń ładunkowa, silniki 2.0 TDI i eHybrid, porównanie z Transporterem, ceny nowych i używanych."
 draft: false

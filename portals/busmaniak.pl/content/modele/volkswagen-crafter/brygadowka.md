@@ -1,5 +1,5 @@
 ---
-title: "Volkswagen Crafter brygadówka – wymiary, ładowność, ceny | BusManiak.pl"
+title: "Volkswagen Crafter brygadówka – wymiary, ładowność, ceny"
 date: 2026-03-26
 description: "VW Crafter brygadówka (podwójna kabina) – 6–7 miejsc + paka, wymiary, silniki 2.0 TDI, FWD/RWD, porównanie ze Sprinterem i Transitem, ceny."
 draft: false

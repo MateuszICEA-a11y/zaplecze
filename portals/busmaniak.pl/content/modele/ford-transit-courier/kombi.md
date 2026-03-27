@@ -1,5 +1,5 @@
 ---
-title: "Ford Transit Courier Kombi – wymiary, dane techniczne, ceny | BusManiak.pl"
+title: "Ford Transit Courier Kombi – wymiary, dane techniczne, ceny"
 date: 2026-03-25
 description: "Ford Transit Courier Kombi – wersja osobowa z 5 miejscami, homologacja M1, silniki EcoBoost/EcoBlue/elektryczny, wyposażenie Trend-Titanium i ceny."
 draft: false

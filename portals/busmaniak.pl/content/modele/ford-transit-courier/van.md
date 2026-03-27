@@ -1,5 +1,5 @@
 ---
-title: "Ford Transit Courier Van – wymiary, dane techniczne, ceny | BusManiak.pl"
+title: "Ford Transit Courier Van – wymiary, dane techniczne, ceny"
 date: 2026-03-25
 description: "Ford Transit Courier Van – wymiary paki (2,91 m³, 2 europalety), silniki EcoBoost i EcoBlue, ładowność 845 kg, ceny nowych i używanych."
 draft: false

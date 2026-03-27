@@ -1,5 +1,5 @@
 ---
-title: "Ford Transit Connect Long – wymiary, paka, dane techniczne | BusManiak.pl"
+title: "Ford Transit Connect Long – wymiary, paka, dane techniczne"
 date: 2026-03-26
 description: "Ford Transit Connect Long (L2) – wymiary, przestrzeń ładunkowa 3,6 m³, 2 europalety, silniki 1.5 EcoBlue, porównanie z wersją Short i konkurencją. Ceny."
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "Renault Kangoo 1.5 dCi – dane techniczne, spalanie, opinie | BusManiak.pl"
+title: "Renault Kangoo 1.5 dCi – dane techniczne, spalanie, opinie"
 date: 2026-03-26
 description: "Silnik 1.5 dCi (K9K) w Renault Kangoo II – dane techniczne, realne spalanie, typowe usterki i opinie. Porównanie wersji 68, 75, 90 i 110 KM."
 draft: false

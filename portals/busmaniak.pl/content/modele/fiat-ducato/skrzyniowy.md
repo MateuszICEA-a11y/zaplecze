@@ -1,5 +1,5 @@
 ---
-title: "Fiat Ducato skrzyniowy – podwozie, wymiary, ładowność | BusManiak.pl"
+title: "Fiat Ducato skrzyniowy – podwozie, wymiary, ładowność"
 date: 2026-03-25
 description: "Fiat Ducato skrzyniowy – wymiary skrzyni L2/L3/L4, ładowność, silniki i producenci zabudów."
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "Fiat Ducato 2.8 JTD – dane techniczne, spalanie, opinie | BusManiak.pl"
+title: "Fiat Ducato 2.8 JTD – dane techniczne, spalanie, opinie"
 date: 2026-03-25
 description: "Silnik 2.8 JTD Sofim w Fiacie Ducato – dane techniczne, realne spalanie, typowe usterki i opinie. Porównanie wersji TD, JTD i JTD Power."
 draft: false

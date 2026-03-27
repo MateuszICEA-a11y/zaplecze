@@ -1,5 +1,5 @@
 ---
-title: "Volkswagen California – fabryczny kamper | BusManiak.pl"
+title: "Volkswagen California – fabryczny kamper"
 date: 2026-03-23
 lastmod: 2026-03-26
 description: "Volkswagen California – jedyny fabryczny kamper van od VW. Wersje Ocean, Coast, Beach, Grand California 600/680. Silniki, wymiary, ceny."

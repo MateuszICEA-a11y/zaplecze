@@ -1,5 +1,5 @@
 ---
-title: "Fiat Scudo osobowy – Panorama, 9 miejsc, dane techniczne | BusManiak.pl"
+title: "Fiat Scudo osobowy – Panorama, 9 miejsc, dane techniczne"
 date: 2026-03-26
 description: "Fiat Scudo w wersji osobowej Panorama – 5, 8 i 9 miejsc, wymiary, silniki 2.0 MultiJet i BlueHDi, porównanie z Vito Tourer i Trafic SpaceClass, ceny."
 draft: false

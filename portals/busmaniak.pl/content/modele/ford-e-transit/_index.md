@@ -1,5 +1,5 @@
 ---
-title: "Ford E-Transit – elektryczny dostawczak Forda | BusManiak.pl"
+title: "Ford E-Transit – elektryczny dostawczak Forda"
 date: 2026-03-26
 description: "Ford E-Transit – dane techniczne, zasięg WLTP, ładowanie DC, wersje nadwoziowe i ceny. Elektryczny Transit kontra eSprinter i e-Ducato."
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "Mercedes Vito – dane techniczne, wersje, silniki | BusManiak.pl"
+title: "Mercedes Vito – dane techniczne, wersje, silniki"
 date: 2026-03-25
 description: "Mercedes Vito – dane techniczne, wymiary Compact/Long/Extra Long, silniki OM654 i OM651, wersja Tourer 9-osobowa, 4x4, typowe usterki i ceny."
 draft: false

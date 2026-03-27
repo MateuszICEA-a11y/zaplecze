@@ -1,5 +1,5 @@
 ---
-title: "Opel Movano 2.5 CDTi – dane techniczne, spalanie, opinie | BusManiak.pl"
+title: "Opel Movano 2.5 CDTi – dane techniczne, spalanie, opinie"
 date: 2026-03-26
 description: "Silnik 2.5 CDTi (G9U) w Oplu Movano A i B – dane techniczne, warianty 100–146 KM, realne spalanie, typowe usterki i koszty serwisu. Porównanie z 2.3 CDTi."
 draft: false

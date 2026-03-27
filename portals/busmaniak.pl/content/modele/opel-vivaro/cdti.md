@@ -1,5 +1,5 @@
 ---
-title: "Opel Vivaro CDTi – dane techniczne, spalanie, opinie | BusManiak.pl"
+title: "Opel Vivaro CDTi – dane techniczne, spalanie, opinie"
 date: 2026-03-26
 description: "Silniki CDTi w Opelu Vivaro A i B – dane techniczne, warianty mocy, spalanie, typowe usterki i koszty serwisu. Porównanie single turbo vs BiTurbo."
 draft: false

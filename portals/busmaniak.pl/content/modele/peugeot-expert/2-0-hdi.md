@@ -1,5 +1,5 @@
 ---
-title: "Peugeot Expert 2.0 HDi – dane techniczne, spalanie, opinie | BusManiak.pl"
+title: "Peugeot Expert 2.0 HDi – dane techniczne, spalanie, opinie"
 date: 2026-03-26
 description: "Silnik 2.0 HDi (DW10) w Peugeot Expert II – dane techniczne trzech wariantów mocy, realne spalanie, typowe usterki i koszty serwisu."
 draft: false

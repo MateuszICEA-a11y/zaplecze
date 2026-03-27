@@ -1,5 +1,5 @@
 ---
-title: "Opel Combo Maxi (XL) – wymiary, ładowność, dane techniczne | BusManiak.pl"
+title: "Opel Combo Maxi (XL) – wymiary, ładowność, dane techniczne"
 date: 2026-03-26
 description: "Opel Combo Maxi / XL – wydłużona wersja z paką 4,4 m³, ładowność do 1000 kg, silniki 1.5 D i 1.2 PureTech, porównanie z Combo Short, ceny."
 draft: false

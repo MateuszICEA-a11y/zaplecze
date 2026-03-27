@@ -1,5 +1,5 @@
 ---
-title: "Fiat Fiorino 1.3 MultiJet – dane techniczne, spalanie, opinie | BusManiak.pl"
+title: "Fiat Fiorino 1.3 MultiJet – dane techniczne, spalanie, opinie"
 date: 2026-03-26
 description: "Silnik 1.3 MultiJet w Fiacie Fiorino III – dane techniczne, realne spalanie, typowe usterki i opinie użytkowników. Koszty serwisu i poradnik zakupowy."
 draft: false

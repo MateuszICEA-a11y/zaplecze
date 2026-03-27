@@ -1,5 +1,5 @@
 ---
-title: "Opel Combo Van – wymiary, dane techniczne, ceny | BusManiak.pl"
+title: "Opel Combo Van – wymiary, dane techniczne, ceny"
 date: 2026-03-25
 description: "Opel Combo Van – wymiary paki Standard i XL, ładowność do 1000 kg, silniki 1.5 D i e-Combo, ceny nowych i używanych."
 draft: false

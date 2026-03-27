@@ -1,5 +1,5 @@
 ---
-title: "Mercedes Vito osobowy – Tourer, dane techniczne, ceny | BusManiak.pl"
+title: "Mercedes Vito osobowy – Tourer, dane techniczne, ceny"
 date: 2026-03-25
 description: "Mercedes Vito Tourer (W447) – wersje Compact/Long/Extra-Long, silniki OM654 116–237 KM, 9G-TRONIC, 4MATIC, 7–9 miejsc i ceny."
 draft: false

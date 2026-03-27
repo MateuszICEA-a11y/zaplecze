@@ -1,5 +1,5 @@
 ---
-title: "Fiat Ducato laweta – autolaweta na bazie Ducato | BusManiak.pl"
+title: "Fiat Ducato laweta – autolaweta na bazie Ducato"
 date: 2026-03-25
 description: "Fiat Ducato jako autolaweta – zabudowy, DMC, wymagania prawne, ceny platform aluminiowych i stalowych."
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "Ford Transit Connect – dane techniczne, wersje, silniki | BusManiak.pl"
+title: "Ford Transit Connect – dane techniczne, wersje, silniki"
 date: 2026-03-25
 description: "Ford Transit Connect – dane techniczne, wymiary L1 i L2, silniki 1.5 EcoBlue i 1.0 EcoBoost, wersje 5- i 7-osobowe Tourneo, typowe usterki oraz ceny."
 draft: false

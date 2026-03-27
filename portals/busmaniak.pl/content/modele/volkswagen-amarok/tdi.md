@@ -1,5 +1,5 @@
 ---
-title: "Volkswagen Amarok TDI – dane techniczne, spalanie, opinie | BusManiak.pl"
+title: "Volkswagen Amarok TDI – dane techniczne, spalanie, opinie"
 date: 2026-03-26
 description: "Silniki TDI w Volkswagenie Amarok – 2.0 TDI BiTurbo i 3.0 V6 TDI, dane techniczne, spalanie, typowe usterki łańcucha i pompy wody, koszty serwisu."
 draft: false

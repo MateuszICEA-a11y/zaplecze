@@ -1,5 +1,5 @@
 ---
-title: "Peugeot Rifter Long – wymiary, 7 miejsc, dane techniczne | BusManiak.pl"
+title: "Peugeot Rifter Long – wymiary, 7 miejsc, dane techniczne"
 date: 2026-03-26
 description: "Peugeot Rifter Long (XL) – wymiary, bagażnik 1050 l, wersja 7-osobowa, silniki 1.2 PureTech i 1.5 BlueHDi, e-Rifter Long, ceny nowych i używanych."
 draft: false

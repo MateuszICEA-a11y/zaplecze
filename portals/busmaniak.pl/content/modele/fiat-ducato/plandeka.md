@@ -1,5 +1,5 @@
 ---
-title: "Fiat Ducato plandeka – wymiary, ładowność, zastosowania | BusManiak.pl"
+title: "Fiat Ducato plandeka – wymiary, ładowność, zastosowania"
 date: 2026-03-25
 description: "Fiat Ducato z plandeką – wymiary zabudów 8- i 10-paletowych, ładowność realna, spalanie i ceny nowych oraz używanych."
 draft: false

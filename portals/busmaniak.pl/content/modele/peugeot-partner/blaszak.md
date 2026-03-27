@@ -1,5 +1,5 @@
 ---
-title: "Peugeot Partner blaszak – wymiary paki, ładowność, ceny | BusManiak.pl"
+title: "Peugeot Partner blaszak – wymiary paki, ładowność, ceny"
 date: 2026-03-26
 description: "Peugeot Partner blaszak (Van) – wymiary paki Short i Long, ładowność do 1000 kg, silniki 1.5 BlueHDi, e-Partner elektryczny, ceny nowych i używanych."
 draft: false

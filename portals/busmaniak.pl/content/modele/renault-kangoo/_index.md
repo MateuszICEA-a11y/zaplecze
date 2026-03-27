@@ -1,5 +1,5 @@
 ---
-title: "Renault Kangoo – dane techniczne, wersje, silniki | BusManiak.pl"
+title: "Renault Kangoo – dane techniczne, wersje, silniki"
 date: 2026-03-25
 description: "Renault Kangoo – dane techniczne, wymiary Standard i Long, silniki 1.5 Blue dCi i 1.3 TCe, Grand Kangoo 7-osobowy, Kangoo E-Tech, typowe usterki i ceny."
 draft: false

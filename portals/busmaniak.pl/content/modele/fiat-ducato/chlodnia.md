@@ -1,5 +1,5 @@
 ---
-title: "Fiat Ducato chłodnia – zabudowa izotermiczna i chłodnicza | BusManiak.pl"
+title: "Fiat Ducato chłodnia – zabudowa izotermiczna i chłodnicza"
 date: 2026-03-25
 description: "Fiat Ducato z zabudową chłodniczą – izoterma, chłodnia, mroźnia. Producenci zabudów, agregaty, certyfikat ATP i ceny."
 draft: false

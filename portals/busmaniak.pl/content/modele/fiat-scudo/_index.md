@@ -1,5 +1,5 @@
 ---
-title: "Fiat Scudo – dane techniczne, wersje, silniki | BusManiak.pl"
+title: "Fiat Scudo – dane techniczne, wersje, silniki"
 date: 2026-03-25
 description: "Fiat Scudo – dane techniczne, wymiary Short i Long, silniki 2.0 MultiJet, wersje Panorama i brygadówka, typowe usterki oraz ceny używanych egzemplarzy."
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "Maxus Deliver 9 osobowy – 9–17 miejsc, dane techniczne | BusManiak.pl"
+title: "Maxus Deliver 9 osobowy – 9–17 miejsc, dane techniczne"
 date: 2026-03-26
 description: "Maxus Deliver 9 osobowy – wersje 9, 14 i 17-miejscowe, wymiary, silnik 2.0 diesel, wyposażenie, porównanie ze Sprinterem Tourer i Crafterem Kombi, ceny."
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "Ford Ranger XL – dane techniczne, wyposażenie, ceny | BusManiak.pl"
+title: "Ford Ranger XL – dane techniczne, wyposażenie, ceny"
 date: 2026-03-26
 description: "Ford Ranger XL – bazowa wersja wyposażenia, dane techniczne, wymiary, silnik 2.0 EcoBlue, porównanie z XLT i Wildtrak, ceny nowych i używanych."
 draft: false
