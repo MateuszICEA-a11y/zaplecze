@@ -123,6 +123,139 @@ a:hover { color: var(--c-orange-hover); }
 #content { padding-top: 5rem; }
 .hero { margin-top: -5rem; }
 
+/* ══════════════════════════════════════
+   MEGA MENU – Modele (pure CSS, 3 levels)
+   ══════════════════════════════════════ */
+.mega-trigger {
+  position: relative;
+}
+
+.mega-trigger__arrow {
+  font-size: .65em;
+  opacity: .5;
+  transition: transform .2s;
+}
+
+.mega-trigger:hover .mega-trigger__arrow {
+  transform: rotate(180deg);
+}
+
+.mega-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: 1rem;
+  z-index: 100;
+}
+
+.mega-trigger:hover .mega-menu {
+  display: block;
+}
+
+.mega-menu__inner {
+  background: rgba(255,255,255,.98);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 48px rgba(0,0,0,.12), 0 4px 16px rgba(0,0,0,.06);
+  padding: 1.5rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(180px, 1fr));
+  gap: 1.5rem 2rem;
+  max-width: 1200px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.mega-col__title {
+  display: block;
+  font-family: var(--f-display);
+  font-size: .8125rem;
+  font-weight: 700;
+  color: var(--c-dark);
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  padding-bottom: .5rem;
+  margin-bottom: .5rem;
+  border-bottom: 2px solid var(--c-orange);
+  text-decoration: none;
+  transition: color .2s;
+  white-space: nowrap;
+}
+
+.mega-col__title:hover {
+  color: var(--c-orange);
+}
+
+.mega-col__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mega-col__list li {
+  line-height: 1.3;
+}
+
+.mega-col__list a {
+  display: block;
+  font-size: .8125rem;
+  font-weight: 400;
+  color: var(--c-text-mid);
+  text-decoration: none;
+  padding: .2rem 0;
+  transition: color .15s, padding-left .15s;
+}
+
+.mega-col__list a:hover {
+  color: var(--c-orange);
+  padding-left: .25rem;
+}
+
+/* ── Mega menu mobile ── */
+@media (max-width: 960px) {
+  .mega-trigger { width: 100%; }
+
+  .mega-trigger > .site-nav__link {
+    display: block;
+    width: 100%;
+    padding: .75rem 1.5rem;
+    font-size: .95rem;
+  }
+
+  .mega-menu {
+    position: static;
+    transform: none;
+    padding-top: 0;
+    display: none;
+  }
+
+  .mega-trigger:hover .mega-menu,
+  .mega-trigger:focus-within .mega-menu {
+    display: block;
+  }
+
+  .mega-menu__inner {
+    grid-template-columns: 1fr 1fr;
+    max-height: 50vh;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mega-menu__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ── Mobile toggle (pure CSS checkbox) ── */
 .nav-toggle { display: none; }
 .nav-toggle-label {

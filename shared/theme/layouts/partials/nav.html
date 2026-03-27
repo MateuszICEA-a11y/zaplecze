@@ -12,7 +12,50 @@
 
     <div class="site-nav__links">
       {{ range .Site.Menus.main }}
-      <a href="{{ .URL }}" class="site-nav__link{{ if $.IsMenuCurrent "main" . }} site-nav__link--active{{ end }}">{{ .Name }}</a>
+        {{ if eq .URL "/modele/" }}
+          {{/* ═══ MEGA MENU: Modele (3 levels) ═══ */}}
+          <div class="mega-trigger">
+            <a href="{{ .URL }}" class="site-nav__link{{ if $.IsMenuCurrent "main" . }} site-nav__link--active{{ end }}">
+              {{ .Name }} <span class="mega-trigger__arrow">▾</span>
+            </a>
+            <div class="mega-menu">
+              <div class="mega-menu__inner">
+                {{ $modele := $.Site.GetPage "/modele" }}
+                {{ if $modele }}
+                  {{ range $modele.Sections }}
+                    {{ $pillar := . }}
+                    {{ $h1 := .Params.h1 | default .Title }}
+                    {{/* Extract short brand+model name from h1 (strip everything after –) */}}
+                    {{ $shortName := $h1 }}
+                    {{ if findRE `\s–\s` $h1 }}
+                      {{ $shortName = index (split $h1 " – ") 0 }}
+                    {{ end }}
+                    <div class="mega-col">
+                      <a href="{{ $pillar.Permalink }}" class="mega-col__title">{{ $shortName }}</a>
+                      {{ if gt (len $pillar.Pages) 0 }}
+                        <ul class="mega-col__list">
+                          {{ range $pillar.Pages }}
+                            {{ if not .Params.redirect }}
+                              {{ $subTitle := .Params.h1 | default .Title }}
+                              {{/* Strip parent model name for brevity */}}
+                              {{ $subShort := $subTitle }}
+                              {{ if findRE `\s–\s` $subTitle }}
+                                {{ $subShort = index (split $subTitle " – ") 0 }}
+                              {{ end }}
+                              <li><a href="{{ .Permalink }}">{{ $subShort }}</a></li>
+                            {{ end }}
+                          {{ end }}
+                        </ul>
+                      {{ end }}
+                    </div>
+                  {{ end }}
+                {{ end }}
+              </div>
+            </div>
+          </div>
+        {{ else }}
+          <a href="{{ .URL }}" class="site-nav__link{{ if $.IsMenuCurrent "main" . }} site-nav__link--active{{ end }}">{{ .Name }}</a>
+        {{ end }}
       {{ end }}
     </div>
   </nav>
