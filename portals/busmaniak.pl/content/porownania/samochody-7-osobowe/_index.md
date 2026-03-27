@@ -1,5 +1,7 @@
 ---
 title: "Samochody 7-osobowe – ranking vanów i MPV 2026"
+aliases:
+  - /modele/samochody-7-osobowe/
 date: 2026-03-26
 description: "Ranking samochodów 7-osobowych z segmentu van/MPV – porównanie wymiarów, bagażników, silników i cen. Rifter, Berlingo, Caddy, Jogger i inne."
 draft: false

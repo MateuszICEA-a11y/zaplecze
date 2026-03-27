@@ -1,5 +1,7 @@
 ---
 title: "Elektryczne dostawcze – przegląd rynku 2026"
+aliases:
+  - /modele/elektryczne-dostawcze/
 date: 2026-03-26
 description: "Elektryczne samochody dostawcze w Polsce 2026 – porównanie zasięgów, baterii, ładowności i cen. Ford E-Transit, Mercedes eSprinter, Fiat e-Ducato i inne."
 draft: false
