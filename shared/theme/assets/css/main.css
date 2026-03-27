@@ -188,11 +188,11 @@ a:hover { color: var(--c-orange-hover); }
 }
 
 .brand-icon {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
-  color: var(--c-orange);
-  opacity: .7;
+  object-fit: contain;
+  opacity: .8;
 }
 
 .dropdown__model:hover .brand-icon {
