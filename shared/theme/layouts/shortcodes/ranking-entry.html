@@ -1,80 +1,53 @@
-{{/* Ranking entry card – usage:
-{{% ranking-entry position="1" title="Model" image="/images/x.jpg" score="9.2"
-  url="/modele/x/" engine="2.0 TDI" fuel="7-9 l" seats="9"
-  price-new="od 247 000 zł" price-used="80-250 000 zł"
-  pros="Pro 1|Pro 2|Pro 3" cons="Con 1|Con 2|Con 3" %}}
-Description text here.
-{{% /ranking-entry %}}
-*/}}
-
+{{- /* Ranking entry card */ -}}
 <div class="rank-card" id="rank-{{ .Get "position" }}">
-  <div class="rank-card__header">
-    <div class="rank-card__position">{{ .Get "position" }}</div>
-    <div class="rank-card__meta">
-      <h3 class="rank-card__title">{{ .Get "title" }}</h3>
-      {{ with .Get "score" }}
-      <div class="rank-card__score">
-        <div class="rank-card__stars">
-          {{ $score := float . }}
-          {{ $full := int (math.Floor (div $score 2)) }}
-          {{ $half := gt (sub (div $score 2) (math.Floor (div $score 2))) 0.24 }}
-          {{ range seq $full }}★{{ end }}{{ if $half }}★{{ end }}{{ $empty := sub 5 (add $full (cond $half 1 0)) }}{{ range seq $empty }}☆{{ end }}
-        </div>
-        <span class="rank-card__score-num">{{ . }}/10</span>
-      </div>
-      {{ end }}
-    </div>
-  </div>
-
-  {{ with .Get "image" }}
-  <div class="rank-card__image">
-    <img src="{{ . }}" alt="{{ $.Get "title" }}" loading="lazy">
-  </div>
-  {{ end }}
-
-  <div class="rank-card__body">
-    <div class="rank-card__desc">
-      {{ .Inner | markdownify }}
-    </div>
-
-    <div class="rank-card__specs">
-      <div class="rank-card__specs-title">Dane techniczne</div>
-      <div class="rank-card__specs-grid">
-        {{ with .Get "engine" }}<div class="rank-card__spec"><span class="rank-card__spec-label">Silnik</span><span class="rank-card__spec-value">{{ . }}</span></div>{{ end }}
-        {{ with .Get "fuel" }}<div class="rank-card__spec"><span class="rank-card__spec-label">Spalanie</span><span class="rank-card__spec-value">{{ . }}</span></div>{{ end }}
-        {{ with .Get "seats" }}<div class="rank-card__spec"><span class="rank-card__spec-label">Miejsca</span><span class="rank-card__spec-value">{{ . }}</span></div>{{ end }}
-        {{ with .Get "price-new" }}<div class="rank-card__spec"><span class="rank-card__spec-label">Cena nowy</span><span class="rank-card__spec-value">{{ . }}</span></div>{{ end }}
-        {{ with .Get "price-used" }}<div class="rank-card__spec"><span class="rank-card__spec-label">Cena używany</span><span class="rank-card__spec-value">{{ . }}</span></div>{{ end }}
-        {{ with .Get "range" }}<div class="rank-card__spec"><span class="rank-card__spec-label">Zasięg</span><span class="rank-card__spec-value">{{ . }}</span></div>{{ end }}
-        {{ with .Get "payload" }}<div class="rank-card__spec"><span class="rank-card__spec-label">Ładowność</span><span class="rank-card__spec-value">{{ . }}</span></div>{{ end }}
-      </div>
-    </div>
-
-    {{ $pros := .Get "pros" }}
-    {{ $cons := .Get "cons" }}
-    {{ if or $pros $cons }}
-    <div class="rank-card__verdict">
-      {{ with $pros }}
-      <div class="rank-card__pros">
-        <div class="rank-card__verdict-title rank-card__verdict-title--pro">Mocne strony</div>
-        <ul>
-          {{ range split . "|" }}<li>{{ . }}</li>{{ end }}
-        </ul>
-      </div>
-      {{ end }}
-      {{ with $cons }}
-      <div class="rank-card__cons">
-        <div class="rank-card__verdict-title rank-card__verdict-title--con">Słabe strony</div>
-        <ul>
-          {{ range split . "|" }}<li>{{ . }}</li>{{ end }}
-        </ul>
-      </div>
-      {{ end }}
-    </div>
-    {{ end }}
-
-    {{ with .Get "url" }}
-    <a href="{{ . }}" class="rank-card__link">Pełny artykuł →</a>
-    {{ end }}
-  </div>
+<div class="rank-card__header">
+<div class="rank-card__position">{{ .Get "position" }}</div>
+<div class="rank-card__meta">
+<h3 class="rank-card__title">{{ .Get "title" }}</h3>
+{{- with .Get "score" -}}
+<div class="rank-card__score">
+<div class="rank-card__stars">★★★★{{ if ge (float .) 9.0 }}★{{ else }}☆{{ end }}</div>
+<span class="rank-card__score-num">{{ . }}/10</span>
+</div>
+{{- end -}}
+</div>
+</div>
+{{- with .Get "image" -}}
+<div class="rank-card__image"><img src="{{ . }}" alt="{{ $.Get "title" }}" loading="lazy"></div>
+{{- end -}}
+<div class="rank-card__body">
+<div class="rank-card__desc">{{ .Inner }}</div>
+<div class="rank-card__specs">
+<div class="rank-card__specs-title">Dane techniczne</div>
+<div class="rank-card__specs-grid">
+{{- with .Get "engine" -}}<div class="rank-card__spec"><span class="rank-card__spec-label">Silnik</span><span class="rank-card__spec-value">{{ . }}</span></div>{{- end -}}
+{{- with .Get "fuel" -}}<div class="rank-card__spec"><span class="rank-card__spec-label">Spalanie</span><span class="rank-card__spec-value">{{ . }}</span></div>{{- end -}}
+{{- with .Get "seats" -}}<div class="rank-card__spec"><span class="rank-card__spec-label">Miejsca</span><span class="rank-card__spec-value">{{ . }}</span></div>{{- end -}}
+{{- with .Get "price-new" -}}<div class="rank-card__spec"><span class="rank-card__spec-label">Cena nowy</span><span class="rank-card__spec-value">{{ . }}</span></div>{{- end -}}
+{{- with .Get "price-used" -}}<div class="rank-card__spec"><span class="rank-card__spec-label">Cena używany</span><span class="rank-card__spec-value">{{ . }}</span></div>{{- end -}}
+{{- with .Get "range" -}}<div class="rank-card__spec"><span class="rank-card__spec-label">Zasięg</span><span class="rank-card__spec-value">{{ . }}</span></div>{{- end -}}
+{{- with .Get "payload" -}}<div class="rank-card__spec"><span class="rank-card__spec-label">Ładowność</span><span class="rank-card__spec-value">{{ . }}</span></div>{{- end -}}
+</div>
+</div>
+{{- $pros := .Get "pros" -}}{{- $cons := .Get "cons" -}}
+{{- if or $pros $cons -}}
+<div class="rank-card__verdict">
+{{- with $pros -}}
+<div class="rank-card__pros">
+<div class="rank-card__verdict-title rank-card__verdict-title--pro">Mocne strony</div>
+<ul>{{ range split . "|" }}<li>{{ . }}</li>{{ end }}</ul>
+</div>
+{{- end -}}
+{{- with $cons -}}
+<div class="rank-card__cons">
+<div class="rank-card__verdict-title rank-card__verdict-title--con">Słabe strony</div>
+<ul>{{ range split . "|" }}<li>{{ . }}</li>{{ end }}</ul>
+</div>
+{{- end -}}
+</div>
+{{- end -}}
+{{- with .Get "url" -}}
+<a href="{{ . }}" class="rank-card__link">Pełny artykuł →</a>
+{{- end -}}
+</div>
 </div>
