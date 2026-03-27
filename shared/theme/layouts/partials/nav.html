@@ -13,84 +13,25 @@
     <div class="site-nav__links">
       {{ range .Site.Menus.main }}
         {{ if eq .URL "/modele/" }}
-          {{/* ═══ CASCADE MENU: Modele (3 levels) ═══ */}}
-          <div class="cascade">
+          {{/* ═══ DROPDOWN: Modele (pillars only) ═══ */}}
+          <div class="dropdown">
             <a href="{{ .URL }}" class="site-nav__link{{ if $.IsMenuCurrent "main" . }} site-nav__link--active{{ end }}">
-              {{ .Name }} <span class="cascade__arrow">▾</span>
+              {{ .Name }} <span class="dropdown__arrow">▾</span>
             </a>
-
-            {{/* Level 1: list of pillar models */}}
-            <div class="cascade__drop">
-              <ul class="cascade__l1">
+            <div class="dropdown__panel">
+              <div class="dropdown__grid">
                 {{ $modele := $.Site.GetPage "/modele" }}
                 {{ if $modele }}
                   {{ range $modele.Sections }}
-                    {{ $pillar := . }}
                     {{ $h1 := .Params.h1 | default .Title }}
                     {{ $shortName := $h1 }}
                     {{ if findRE `\s–\s` $h1 }}
                       {{ $shortName = index (split $h1 " – ") 0 }}
                     {{ end }}
-
-                    {{ if gt (len $pillar.Pages) 0 }}
-                      <li class="cascade__has-sub">
-                        <a href="{{ $pillar.Permalink }}">{{ $shortName }} <span class="cascade__chevron">›</span></a>
-
-                        {{/* Level 2: flyout – silniki + nadwozia */}}
-                        <div class="cascade__flyout">
-                          <div class="cascade__flyout-inner">
-
-                            {{/* Categorize subpages: engine vs body */}}
-                            {{ $engines := slice }}
-                            {{ $bodies := slice }}
-                            {{ range $pillar.Pages }}
-                              {{ if not .Params.redirect }}
-                                {{ $slug := .File.ContentBaseName }}
-                                {{/* Engine: slug starts with digit, or matches engine family names */}}
-                                {{ $isEngine := false }}
-                                {{ if findRE `^\d` $slug }}{{ $isEngine = true }}{{ end }}
-                                {{ if findRE `(tdi|hdi|cdti|dci|jtd|multijet|ecobl|bluehdi|cdi)` $slug }}{{ $isEngine = true }}{{ end }}
-                                {{ if $isEngine }}
-                                  {{ $engines = $engines | append . }}
-                                {{ else }}
-                                  {{ $bodies = $bodies | append . }}
-                                {{ end }}
-                              {{ end }}
-                            {{ end }}
-
-                            {{ if gt (len $engines) 0 }}
-                              <div class="cascade__group">
-                                <div class="cascade__group-title">Silniki</div>
-                                <ul>
-                                  {{ range $engines }}
-                                    <li><a href="{{ .Permalink }}">{{ .Params.h1 | default .Title | truncate 40 }}</a></li>
-                                  {{ end }}
-                                </ul>
-                              </div>
-                            {{ end }}
-
-                            {{ if gt (len $bodies) 0 }}
-                              <div class="cascade__group">
-                                <div class="cascade__group-title">Wersje nadwoziowe</div>
-                                <ul>
-                                  {{ range $bodies }}
-                                    <li><a href="{{ .Permalink }}">{{ .Params.h1 | default .Title | truncate 40 }}</a></li>
-                                  {{ end }}
-                                </ul>
-                              </div>
-                            {{ end }}
-
-                          </div>
-                        </div>
-                      </li>
-                    {{ else }}
-                      <li>
-                        <a href="{{ $pillar.Permalink }}">{{ $shortName }}</a>
-                      </li>
-                    {{ end }}
+                    <a href="{{ .Permalink }}" class="dropdown__item">{{ $shortName }}</a>
                   {{ end }}
                 {{ end }}
-              </ul>
+              </div>
             </div>
           </div>
         {{ else }}

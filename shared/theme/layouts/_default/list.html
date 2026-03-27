@@ -77,77 +77,94 @@
   </div>
 </article>
 
-{{/* ═══ RELATED ARTICLES (children + cross-cluster, slider) ═══ */}}
-{{ $allRelated := slice }}
-
-{{/* 1. Children of this section */}}
-{{ range $.Pages }}
-  {{ $allRelated = $allRelated | append . }}
-{{ end }}
-
-{{/* 2. Cross-cluster (parent_model matching this slug) */}}
+{{/* ═══ PILLAR NAV: Engine variants / Body variants / Cross-cluster ═══ */}}
 {{ $slug := $.File.ContentBaseName }}
 {{ if eq $slug "_index" }}{{ $slug = $.File.Dir | path.Dir | path.Base }}{{ end }}
-{{ $crossCluster := where $.Site.RegularPages "Params.parent_model" $slug }}
-{{ range $crossCluster }}
-  {{ $allRelated = $allRelated | append . }}
+
+{{ $shortName := $.Params.h1 | default $.Title }}
+{{ if findRE `\s–\s` $shortName }}
+  {{ $shortName = index (split $shortName " – ") 0 }}
 {{ end }}
 
-{{/* Deduplicate */}}
-{{ $seen := slice }}
-{{ $unique := slice }}
-{{ range $allRelated }}
-  {{ if not (in $seen .Permalink) }}
-    {{ $unique = $unique | append . }}
-    {{ $seen = $seen | append .Permalink }}
+{{/* Categorize child pages into engines vs body variants */}}
+{{ $engines := slice }}
+{{ $bodies := slice }}
+{{ range $.Pages }}
+  {{ if not .Params.redirect }}
+    {{ $childSlug := .File.ContentBaseName }}
+    {{ $isEngine := false }}
+    {{ if findRE `^\d` $childSlug }}{{ $isEngine = true }}{{ end }}
+    {{ if findRE `(tdi|hdi|cdti|dci|jtd|multijet|ecobl|bluehdi|cdi)` $childSlug }}{{ $isEngine = true }}{{ end }}
+    {{ if $isEngine }}
+      {{ $engines = $engines | append . }}
+    {{ else }}
+      {{ $bodies = $bodies | append . }}
+    {{ end }}
   {{ end }}
 {{ end }}
 
-{{ if gt (len $unique) 0 }}
-<section class="related-section">
-  <div class="container">
-    <div class="related-section__header">
-      <div>
-        <div class="related-section__title">Powiązane artykuły</div>
-        <div class="related-section__bar"></div>
-      </div>
+{{/* Cross-cluster: articles from other sections referencing this model */}}
+{{ $crossCluster := where $.Site.RegularPages "Params.parent_model" $slug }}
+
+<div class="container content-narrow">
+
+  {{/* ── Wersje silnikowe ── */}}
+  {{ if gt (len $engines) 0 }}
+  <section class="pillar-nav">
+    <div class="pillar-nav__title">Wersje silnikowe {{ $shortName }}</div>
+    <div class="pillar-nav__grid">
+      {{ range $engines }}
+      <a href="{{ .Permalink }}" class="pillar-nav__card">
+        <span class="pillar-nav__card-icon material-symbols-outlined">manufacturing</span>
+        <div class="pillar-nav__card-body">
+          <div class="pillar-nav__card-name">{{ .Params.h1 | default .Title | truncate 50 }}</div>
+          {{ with .Description }}<div class="pillar-nav__card-desc">{{ . | truncate 80 }}</div>{{ end }}
+        </div>
+      </a>
+      {{ end }}
     </div>
-    <div class="related-slider" data-slider>
-      <button class="related-slider__btn related-slider__btn--prev" data-slider-prev aria-label="Poprzednie">
-        <span class="material-symbols-outlined">chevron_left</span>
-      </button>
-      <div class="related-slider__track" data-slider-track>
-        {{ range $unique }}
-        {{ $page := . }}
-        <article class="related-card">
-          <a href="{{ $page.Permalink }}">
-            {{ if $page.Params.image }}
-            <div class="related-card__image">
-              <img src="{{ $page.Params.image }}" alt="{{ $page.Params.image_alt | default $page.Title }}" loading="lazy">
-              <div class="related-card__badge">{{ with $page.Parent }}{{ .Title }}{{ else }}{{ $page.Section }}{{ end }}</div>
-            </div>
-            {{ else }}
-            <div class="related-card__image" style="background: linear-gradient(135deg, var(--c-dark), var(--c-navy));">
-              <div class="related-card__badge">{{ with $page.Parent }}{{ .Title }}{{ else }}{{ $page.Section }}{{ end }}</div>
-            </div>
-            {{ end }}
-            <div class="related-card__body">
-              <div class="related-card__title">{{ $page.Params.h1 | default $page.Title }}</div>
-              {{ with $page.Description }}
-              <p class="related-card__excerpt">{{ . | truncate 100 }}</p>
-              {{ end }}
-            </div>
-          </a>
-        </article>
-        {{ end }}
-      </div>
-      <button class="related-slider__btn related-slider__btn--next" data-slider-next aria-label="Następne">
-        <span class="material-symbols-outlined">chevron_right</span>
-      </button>
+  </section>
+  {{ end }}
+
+  {{/* ── Wersje nadwoziowe ── */}}
+  {{ if gt (len $bodies) 0 }}
+  <section class="pillar-nav">
+    <div class="pillar-nav__title">Wersje nadwoziowe {{ $shortName }}</div>
+    <div class="pillar-nav__grid">
+      {{ range $bodies }}
+      <a href="{{ .Permalink }}" class="pillar-nav__card">
+        <span class="pillar-nav__card-icon material-symbols-outlined">local_shipping</span>
+        <div class="pillar-nav__card-body">
+          <div class="pillar-nav__card-name">{{ .Params.h1 | default .Title | truncate 50 }}</div>
+          {{ with .Description }}<div class="pillar-nav__card-desc">{{ . | truncate 80 }}</div>{{ end }}
+        </div>
+      </a>
+      {{ end }}
     </div>
-  </div>
-</section>
-{{ end }}
+  </section>
+  {{ end }}
+
+  {{/* ── Powiązane artykuły (cross-cluster: serwis, przeróbki, porównania...) ── */}}
+  {{ if gt (len $crossCluster) 0 }}
+  <section class="pillar-nav">
+    <div class="pillar-nav__title">Powiązane artykuły</div>
+    <div class="pillar-nav__grid">
+      {{ range $crossCluster }}
+      <a href="{{ .Permalink }}" class="pillar-nav__card">
+        <span class="pillar-nav__card-icon material-symbols-outlined">
+          {{ if eq .Section "serwis" }}build{{ else if eq .Section "przerobki" }}handyman{{ else if eq .Section "porownania" }}compare_arrows{{ else }}article{{ end }}
+        </span>
+        <div class="pillar-nav__card-body">
+          <div class="pillar-nav__card-name">{{ .Params.h1 | default .Title | truncate 50 }}</div>
+          {{ with .Description }}<div class="pillar-nav__card-desc">{{ . | truncate 80 }}</div>{{ end }}
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+</div>
 
 {{ end }}
 
