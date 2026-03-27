@@ -2553,3 +2553,218 @@ blockquote {
   color: var(--c-dark);
   margin-bottom: .2rem;
 }
+
+/* ══════════════════════════════════════
+   RANKING ENTRY CARDS
+   ══════════════════════════════════════ */
+.rank-card {
+  background: #fff;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 2rem 0;
+  transition: box-shadow .2s;
+}
+
+.rank-card:hover {
+  box-shadow: 0 4px 24px rgba(0,0,0,.08);
+}
+
+.rank-card__header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--c-dark);
+}
+
+.rank-card__position {
+  font-family: var(--f-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--c-orange);
+  line-height: 1;
+  min-width: 56px;
+  text-align: center;
+}
+
+.rank-card__meta {
+  flex: 1;
+}
+
+.rank-card__title {
+  font-family: var(--f-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.rank-card__score {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-top: .25rem;
+}
+
+.rank-card__stars {
+  color: var(--c-orange);
+  font-size: .875rem;
+  letter-spacing: 1px;
+}
+
+.rank-card__score-num {
+  font-family: var(--f-display);
+  font-size: .875rem;
+  font-weight: 700;
+  color: var(--c-orange);
+}
+
+.rank-card__image {
+  position: relative;
+  overflow: hidden;
+  max-height: 400px;
+}
+
+.rank-card__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.rank-card__body {
+  padding: 1.5rem;
+}
+
+.rank-card__desc {
+  font-size: .9375rem;
+  line-height: 1.7;
+  color: var(--c-text);
+  margin-bottom: 1.5rem;
+}
+
+.rank-card__desc p { margin: 0; }
+
+/* ── Specs box ── */
+.rank-card__specs {
+  background: var(--c-bg-alt);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.rank-card__specs-title {
+  font-family: var(--f-display);
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--c-orange);
+  margin-bottom: .75rem;
+}
+
+.rank-card__specs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: .5rem 1.5rem;
+}
+
+.rank-card__spec {
+  display: flex;
+  justify-content: space-between;
+  padding: .3rem 0;
+  border-bottom: 1px solid var(--c-border-light);
+}
+
+.rank-card__spec-label {
+  font-size: .8125rem;
+  color: var(--c-text-light);
+}
+
+.rank-card__spec-value {
+  font-size: .8125rem;
+  font-weight: 600;
+  color: var(--c-dark);
+}
+
+/* ── Pros / Cons ── */
+.rank-card__verdict {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.rank-card__verdict-title {
+  font-family: var(--f-display);
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: .5rem;
+}
+
+.rank-card__verdict-title--pro { color: #16a34a; }
+.rank-card__verdict-title--con { color: #dc2626; }
+
+.rank-card__pros ul,
+.rank-card__cons ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rank-card__pros li,
+.rank-card__cons li {
+  font-size: .8125rem;
+  color: var(--c-text-mid);
+  padding: .25rem 0 .25rem 1.25rem;
+  position: relative;
+}
+
+.rank-card__pros li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.rank-card__cons li::before {
+  content: "✗";
+  position: absolute;
+  left: 0;
+  color: #dc2626;
+  font-weight: 700;
+}
+
+/* ── Link ── */
+.rank-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-size: .875rem;
+  font-weight: 600;
+  color: var(--c-orange);
+  text-decoration: none;
+  padding: .5rem 1rem;
+  border: 2px solid var(--c-orange);
+  border-radius: var(--radius-sm);
+  transition: background .15s, color .15s;
+}
+
+.rank-card__link:hover {
+  background: var(--c-orange);
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .rank-card__header { padding: 1rem; gap: .75rem; }
+  .rank-card__position { font-size: 2rem; min-width: 40px; }
+  .rank-card__title { font-size: 1.1rem; }
+  .rank-card__body { padding: 1rem; }
+  .rank-card__specs-grid { grid-template-columns: 1fr; }
+  .rank-card__verdict { grid-template-columns: 1fr; gap: 1rem; }
+}
