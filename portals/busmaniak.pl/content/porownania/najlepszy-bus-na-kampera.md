@@ -59,7 +59,7 @@ Wariant L3H2 oferuje 3 272 mm długości ładunkowej – wystarczająco na pełn
 
 Wadą jest cena – zarówno zakupu, jak i serwisu. Używany Sprinter kosztuje 20–40% więcej niż analogiczny Ducato, a oryginalne części zamienne potrafią zaskoczyć. Silnik OM651 (2.1 CDI) w rocznikach 2014–2018 miewa problemy z łańcuchem rozrządu, co warto sprawdzić przed zakupem.
 
-{{% expert %}}
+{{% expert name="Kowalczyk" %}}
 Przy zakupie Sprintera na kampera wybieraj wersje z zawieszeniem komfortowym (opcja 584) zamiast wzmocnionego. Fabryczne zawieszenie cargo jest zbyt twarde dla zabudowy camperowej i pogarsza komfort jazdy na nierównych drogach.
 {{% /expert %}}
 

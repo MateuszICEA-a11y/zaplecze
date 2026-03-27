@@ -67,7 +67,7 @@ Volkswagen oferuje napęd 4Motion w dwóch segmentach – średnim ([Transporter
 | Skrzynie | Manualna / DSG | Automat 8-biegowy |
 | Dopłata | ok. 15 000–20 000 zł netto | ok. 20 000–25 000 zł netto |
 
-{{% expert %}}
+{{% expert name="Kowalczyk" %}}
 System 4Motion w Transporterze T6.1 współpracuje z blokadą dyferencjału tylnego (opcja za ok. 2 500 zł netto). Połączenie Haldex + blokada tylna daje zdecydowanie lepszą trakcję na luźnych nawierzchniach niż sam Haldex. Przy zamawianiu warto doliczyć tę opcję.
 {{% /expert %}}
 

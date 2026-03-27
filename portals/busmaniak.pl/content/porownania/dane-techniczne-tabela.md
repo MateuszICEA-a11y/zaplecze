@@ -51,7 +51,7 @@ Duże busy dostawcze oferują szeroką gamę silników – od oszczędnych jedno
 
 Ford Transit wyróżnia się najszerszą paletą silników – cztery warianty mocy od 130 do 200 KM – oraz dostępnością 10-biegowego automatu w topowej wersji. Iveco Daily jako jedyny oferuje silnik 3.0 z momentem 470 Nm – absolutny rekord segmentu, przydatny przy DMC 7,2 t.
 
-{{% expert %}}
+{{% expert name="Kowalczyk" %}}
 Moment obrotowy jest ważniejszy od mocy przy wyborze busa dostawczego. Bus z silnikiem 140 KM i momentem 380 Nm będzie lepiej radził sobie z ciężkim ładunkiem niż jednostka 160 KM z momentem 350 Nm. Wysoki moment przy niskich obrotach (1500–2000 obr./min) oznacza mniej zmian biegów, niższe spalanie i mniejsze zużycie sprzęgła.
 {{% /expert %}}
 

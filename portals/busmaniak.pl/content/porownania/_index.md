@@ -58,7 +58,7 @@ Miejskie dostawy wymagają zwrotności i niskiego spalania. Małe vany są też 
 
 Więcej w artykule [Porównanie małych vanów](/porownania/porownanie-malych-vanow/).
 
-{{% expert %}}
+{{% expert name="Kowalczyk" %}}
 Przy wyborze małego vana zwróć uwagę na szerokość otworu bocznych drzwi przesuwnych – to kluczowy parametr przy załadunku palet ćwiartkowych. Berlingo i Kangoo oferują otwór powyżej 600 mm, co ułatwia pracę kurierom.
 {{% /expert %}}
 

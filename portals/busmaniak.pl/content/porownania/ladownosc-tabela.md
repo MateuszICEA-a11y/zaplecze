@@ -53,7 +53,7 @@ Duże busy dostawcze różnią się ładownością znacznie bardziej, niż mogł
 
 Ford Transit L2H2 oferuje najwyższą ładowność w segmencie do 3,5 t DMC – 1459 kg. To zasługa relatywnie niskiej masy własnej (2041 kg), co jest imponujące jak na duży bus z napędem przednim. Na drugim biegunie stoi Sprinter L3H2 – przy tym samym DMC 3,5 t daje zaledwie 1190 kg ładowności, bo waży pusty aż 2310 kg.
 
-{{% expert %}}
+{{% expert name="Kowalczyk" %}}
 Podana ładowność to wartość katalogowa dla wersji bazowej. Każda opcja dodatkowa obniża realną ładowność. Klimatyzacja automatyczna dodaje ok. 5 kg, skrzynia automatyczna – 30–50 kg, podwójne koło tylne – nawet 100 kg. Przy zamawianiu busa do ciężkich przewozów warto prosić dealera o dokładną masę własną konkretnej konfiguracji.
 {{% /expert %}}
 

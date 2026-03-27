@@ -63,7 +63,7 @@ Ducato ma też słabe strony. Jakość wykańczania kabiny ustępuje Sprinterowi
 
 Sprinter jako jedyny w zestawieniu oferuje pełną dowolność konfiguracji napędu: przednioosowy (FWD), tylnoosowy (RWD) z mechanicznym blokowaniem dyferencjału lub stały napęd na cztery koła (4x4). Wersja RWD opiera się na podwoziu ramowym, co czyni ją popularnym wyborem pod zabudowy specjalne i kampery premium.
 
-{{% expert %}}
+{{% expert name="Kowalczyk" %}}
 Sprinter RWD z zawieszeniem pneumatycznym to jedyny bus w tym zestawieniu, który pozwala na obniżenie podwozia podczas załadunku i podniesienie do poziomu jazdy. W praktyce oznacza to oszczędność czasu na rampie – różnica wysokości podłogi ładowni sięga 80 mm między trybami.
 {{% /expert %}}
 
