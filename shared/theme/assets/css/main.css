@@ -184,9 +184,8 @@ a:hover { color: var(--c-orange-hover); }
 }
 
 .dropdown__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: .2rem .75rem;
+  columns: 4;
+  column-gap: .75rem;
 }
 
 .dropdown__model {
@@ -201,6 +200,7 @@ a:hover { color: var(--c-orange-hover); }
   border-radius: 4px;
   transition: background .15s, color .15s;
   white-space: nowrap;
+  break-inside: avoid;
 }
 
 .dropdown__model:hover {
@@ -255,8 +255,8 @@ a:hover { color: var(--c-orange-hover); }
   }
 
   .dropdown__grid {
-    grid-template-columns: 1fr 1fr;
-    gap: .1rem .25rem;
+    columns: 2;
+    column-gap: .25rem;
   }
 
   .dropdown__model {
