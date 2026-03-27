@@ -88,7 +88,7 @@ a:hover { color: var(--c-orange-hover); }
 .site-logo__icon { margin-right: .5rem; flex-shrink: 0; }
 .site-logo__bus { color: var(--c-orange); }
 .site-logo__maniak { color: #fff; }
-.site-logo__dot { color: rgba(255,255,255,.5); font-weight: 600; font-size: .85em; }
+.site-logo__dot { color: #fff; font-weight: 600; font-size: .85em; }
 
 .site-footer .site-logo__maniak { color: rgba(255,255,255,.9); }
 .site-footer .site-logo__dot { color: rgba(255,255,255,.4); }
