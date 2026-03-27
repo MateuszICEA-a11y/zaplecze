@@ -51,12 +51,29 @@ Poniższe zestawienie obejmuje najpopularniejsze kampervany fabryczne i zabudowy
 | **Adria Twin Supreme 600 SPB** | Fiat Ducato L2H2 | ok. 310 000 zł | 2+2 | wysoki stały |
 | **Weinsberg CaraBus 630 ME** | Fiat Ducato L3H2 | ok. 290 000 zł | 3 | wysoki stały |
 
-1. **VW California Ocean** – ikona segmentu kampervanów, bazuje na [Volkswagenie Transporterze](/modele/volkswagen-transporter/) T7. Dwupalnikowa kuchenka, lodówka 42 l, dach podnoszony elektrycznie z materacem 1200 × 2000 mm. Dolne łóżko rozkładane z kanapy ma wymiary 1150 × 2000 mm. Silnik 2.0 TDI 150 KM z 7-biegowym DSG
-2. **Mercedes Marco Polo** – odpowiedź Mercedesa na Californię. Bazuje na [Mercedes Vito](/modele/mercedes-vito/) lub Klasie V. System MBUX z dedykowaną aplikacją kamperową sterującą oświetleniem, ogrzewaniem i dachem. Kuchnia z lodówką kompresową 40 l, dach podnoszony z materacem
-3. **Ford Nugget Plus** – jedyny kampervan w zestawieniu z dachem podwyższonym (high-roof pop-up), co daje stałą przestrzeń do stania nawet przy złożonym dachu. Bazuje na [Fordzie Transit Custom](/modele/ford-transit-custom/). Toaleta w wersji Plus to unikalna cecha w segmencie kompaktowych kampervanów
-4. **Citroën SpaceTourer Pössl Campster** – najtańszy punkt wejścia w segment fabrycznych kampervanów. Zabudowa Pössl na bazie SpaceTourer/Opel Zafira Life. Dach podnoszony, minimalistyczna kuchenka, lodówka 30 l. Idealny do weekendowych wypadów
-5. **Adria Twin Supreme 600 SPB** – pełnowymiarowy kampervan na bazie [Fiata Ducato](/modele/fiat-ducato/) L2H2. Stały dach wysoki pozwala na swobodne stanie (190 cm wewnątrz). Łóżko stałe w tyle (1350 × 1950 mm), opcjonalnie łóżko podnoszące pod sufitem. Kompaktowa łazienka z prysznicem
-6. **Weinsberg CaraBus 630 ME** – budżetowa alternatywa w segmencie kamperów na Ducato. Zabudowa niemieckiej firmy Knaus Tabbert. Pojedyncze łóżka w tyle (2 × 800 × 1950 mm), duża lodówka 90 l, kuchnia z trzypalnikową płytą gazową
+{{% ranking-entry position="1" title="VW California Ocean" image="/images/volkswagen-california-hero.jpg" score="9.4" url="/modele/volkswagen-california/" engine="2.0 TDI 150 KM, 7-biegowy DSG" fuel="8,5–10,0 l/100 km" seats="4" price-new="od 350 000 zł" price-used="180 000–320 000 zł" pros="Ikona segmentu z najdłuższą tradycją|Elektrycznie podnoszony dach z materacem 120×200 cm|Dwupalnikowa kuchenka i lodówka kompresowa 42 l" cons="Najwyższa cena w segmencie kompaktowym|Brak toalety nawet opcjonalnie|Mały zbiornik wody 30 l" %}}
+Ikona segmentu kampervanów, bazuje na Volkswagenie Transporterze T7. Dach podnoszony elektrycznie z materacem 1200 x 2000 mm, dolne łóżko rozkładane z kanapy o wymiarach 1150 x 2000 mm. Kompletna kuchnia z dwupalnikową płytą gazową i lodówką kompresową.
+{{% /ranking-entry %}}
+
+{{% ranking-entry position="2" title="Mercedes Marco Polo" image="/images/mercedes-vito-hero.jpg" score="9.2" url="/modele/mercedes-vito/" engine="2.0 CDI 136–237 KM, 9G-TRONIC" fuel="8,0–10,0 l/100 km" seats="4" price-new="od 340 000 zł" price-used="170 000–310 000 zł" pros="System MBUX z dedykowaną aplikacją kamperową|Szeroka gama mocy do 237 KM|Najcichsza kabina w segmencie kompaktowym" cons="Brak toalety nawet opcjonalnie|Drogie części i serwis Mercedesa|Mniejsza lodówka 40 l niż w Ducato" %}}
+Odpowiedź Mercedesa na Californię – bazuje na Mercedes Vito lub Klasie V. System MBUX z dedykowaną aplikacją sterującą oświetleniem, ogrzewaniem i dachem. Kuchnia z lodówką kompresową 40 l i dach podnoszony z materacem.
+{{% /ranking-entry %}}
+
+{{% ranking-entry position="3" title="Ford Nugget Plus" image="/images/ford-transit-custom-hero.jpg" score="9.0" url="/modele/ford-transit-custom/" engine="2.0 EcoBlue 150–170 KM" fuel="8,0–10,5 l/100 km" seats="4" price-new="od 280 000 zł" price-used="140 000–260 000 zł" pros="Jedyny kompaktowy kampervan z toaletą|Dach high-roof pop-up – stanie przy złożonym dachu|Najlepszy stosunek ceny do wyposażenia" cons="Zabudowa Westfalia – drogie części zamienne|Głośniejszy silnik niż konkurencja|Ograniczona dostępność na rynku wtórnym" %}}
+Jedyny kampervan w zestawieniu z dachem podwyższonym (high-roof pop-up), co daje stałą przestrzeń do stania nawet przy złożonym dachu. Bazuje na Fordzie Transit Custom. Toaleta w wersji Plus to unikalna cecha w segmencie kompaktowych kampervanów.
+{{% /ranking-entry %}}
+
+{{% ranking-entry position="4" title="Adria Twin Supreme 600 SPB" image="/images/fiat-ducato-kamper-hero.jpg" score="8.7" url="/modele/fiat-ducato/" engine="2.2 Multijet 140 KM / 2.3 Multijet 160 KM" fuel="9,0–12,0 l/100 km" seats="4" price-new="od 310 000 zł" price-used="160 000–280 000 zł" pros="Pełna łazienka z prysznicem|Stały dach wysoki – 190 cm wewnątrz|Duży zbiornik wody 100 l i lodówka 90 l" cons="Nie nadaje się do codziennej jazdy po mieście|Wyższe spalanie niż kompaktowe kampervany|Wymaga miejsca parkingowego na duży bus" %}}
+Pełnowymiarowy kampervan na bazie Fiata Ducato L2H2. Stały dach wysoki pozwala na swobodne stanie (190 cm wewnątrz). Łóżko stałe w tyle 1350 x 1950 mm, opcjonalnie łóżko podnoszące pod sufitem. Kompaktowa łazienka z prysznicem.
+{{% /ranking-entry %}}
+
+{{% ranking-entry position="5" title="Weinsberg CaraBus 630 ME" image="/images/fiat-ducato-hero.jpg" score="8.4" url="/modele/fiat-ducato/" engine="2.2 Multijet 140 KM / 2.3 Multijet 160 KM" fuel="9,0–12,0 l/100 km" seats="3" price-new="od 290 000 zł" price-used="140 000–250 000 zł" pros="Budżetowa opcja na bazie Ducato|Duża lodówka 90 l i trzypalnikowa kuchenka|Niemiecka jakość zabudowy Knaus Tabbert" cons="Tylko 3 miejsca do spania|Brak łóżka podnoszącego pod sufitem|Mniejsza wartość rezydualna niż California" %}}
+Budżetowa alternatywa w segmencie kamperów na Ducato. Zabudowa niemieckiej firmy Knaus Tabbert z pojedynczymi łóżkami w tyle (2 x 800 x 1950 mm), dużą lodówką 90 l i kuchnią z trzypalnikową płytą gazową.
+{{% /ranking-entry %}}
+
+{{% ranking-entry position="6" title="Citroën SpaceTourer Pössl Campster" image="/images/ranking-kamperow-hero.jpg" score="7.8" url="/modele/citroen-jumpy/" engine="2.0 BlueHDi 145–180 KM" fuel="7,5–9,5 l/100 km" seats="4" price-new="od 220 000 zł" price-used="110 000–190 000 zł" pros="Najniższa cena wejścia w segment|Kompaktowe wymiary – codzienne użytkowanie|Dach podnoszony z 2 dodatkowymi miejscami" cons="Minimalistyczna kuchenka i mała lodówka 30 l|Brak toalety i panelu solarnego|Uboższe wyposażenie seryjne" %}}
+Najtańszy punkt wejścia w segment fabrycznych kampervanów. Zabudowa Pössl na bazie SpaceTourer/Opel Zafira Life z dachem podnoszonym, minimalistyczną kuchenką i lodówką 30 l. Idealny do weekendowych wypadów bez dużego budżetu.
+{{% /ranking-entry %}}
 
 ![Ranking kamperów 2026 – najlepsze kampervany dostępne na polskim rynku](/images/ranking-kamperow-hero.jpg)
 

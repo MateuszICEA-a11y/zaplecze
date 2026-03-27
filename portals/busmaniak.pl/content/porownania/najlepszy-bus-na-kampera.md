@@ -41,74 +41,33 @@ W naszym rankingu uwzględniamy:
 | Citroën Jumper | 3 120 mm | 1 932 mm | 1 422 mm | 2.2 BlueHDi 140 KM |
 | Iveco Daily | 3 000 mm | 1 900 mm | 1 410 mm | 2.3 MultiJet 136 KM |
 
-## 1. Fiat Ducato – król camperów
+{{% ranking-entry position="1" title="Fiat Ducato" image="/images/fiat-ducato-hero.jpg" score="9.5" url="/modele/fiat-ducato/" engine="2.2 MultiJet 140 KM" fuel="9,0–10,5 l/100 km" payload="1 500 kg" price-new="od 155 000 zł" price-used="45 000–75 000 zł" pros="Najszersza przestrzeń między nadkolami (1 422 mm)|Najtańsze części zamienne w segmencie|75% fabrycznych kamperów na tej platformie" cons="Podatność na korozję progów i nadkoli|Przeciętna jakość plastików wewnętrznych|Głośna praca silnika na wyższych obrotach" %}}
+Bezapelacyjny numer jeden wśród baz camperowych w Europie – ponad 75% fabrycznych kamperów (Adria, Burstner, Knaus, Hymer) powstaje na platformie Ducato. Szerokość między nadkolami 1 422 mm pozwala zmieścić łóżko poprzeczne 130–135 cm bez nadstawek, a nasycony rynek wtórny i ogromna baza wiedzy czynią go optymalnym wyborem dla pierwszej konwersji.
+{{% /ranking-entry %}}
 
-[Fiat Ducato](/modele/fiat-ducato/) to bezapelacyjny numer jeden wśród busów camperowych w Europie. Ponad 75% fabrycznych kamperów (Adria, Bürstner, Knaus, Hymer) powstaje na platformie Ducato, co mówi samo za siebie.
+{{% ranking-entry position="2" title="Mercedes Sprinter" image="/images/mercedes-sprinter-hero.jpg" score="9.0" url="/modele/mercedes-sprinter/" engine="2.0 CDI 150 KM" fuel="9,5–11,0 l/100 km" payload="1 400 kg" price-new="od 195 000 zł" price-used="65 000–110 000 zł" pros="Najlepsza odporność na korozję w segmencie|Wysoka jakość materiałów i wykończenia|Długowieczność nadwozia – cynkowane blachy" cons="Cena zakupu 20–40% wyższa niż Ducato|Drogie oryginalne części zamienne|Problemy z łańcuchem rozrządu OM651 (2014–2018)" %}}
+Wybór dla wymagających, którzy cenią trwałość nadwozia i jakość materiałów. Dzięki cynkowaniu blach 20-letnie egzemplarze często nie mają śladów rdzy. Wariant L3H2 z 3 272 mm długości ładunkowej mieści pełnowymiarową zabudowę z łazienką – warto jednak wybierać wersje z zawieszeniem komfortowym zamiast wzmocnionego cargo.
+{{% /ranking-entry %}}
 
-Największą zaletą jest szerokość między nadkolami – 1 422 mm to najlepszy wynik w segmencie i pozwala zmieścić łóżko poprzeczne o szerokości 130–135 cm bez konieczności budowania nadstawek. Wysokość H2 (1 932 mm wewnątrz) umożliwia swobodne poruszanie się osobom do 185 cm wzrostu.
+{{% ranking-entry position="3" title="Ford Transit" image="/images/ford-transit-hero.jpg" score="8.5" url="/modele/ford-transit/" engine="2.0 EcoBlue 130 KM" fuel="8,5–9,5 l/100 km" payload="1 450 kg" price-new="od 165 000 zł" price-used="50 000–85 000 zł" pros="Najlepsze prowadzenie w segmencie – zachowanie osobówki|Oszczędny silnik 2.0 EcoBlue|Gęsta sieć serwisowa Forda w Polsce" cons="Mała popularność wśród camperowców|Mniej gotowych projektów zabudowy niż Ducato|Niższa wysokość wewnętrzna H2 (1 886 mm)" %}}
+Bus, który prowadzi się najbardziej jak osobówka – niezależne zawieszenie przednie i precyzyjny układ kierowniczy sprawiają, że długie przejazdy autostradowe są znacznie mniej męczące. Transit L3H2 oferuje 3 300 mm długości ładunkowej i nowoczesny silnik EcoBlue spalający realnie 8,5–9,5 l/100 km w trasie.
+{{% /ranking-entry %}}
 
-Rynek wtórny jest nasycony – Ducato L3H2 z roczników 2014–2019 z silnikiem 2.3 MultiJet znajdziesz w cenach 45 000–75 000 zł. Części zamienne są najtańsze w segmencie, a mechanika oparta na sprawdzonym silniku F1A jest dobrze znana warsztatom.
+{{% ranking-entry position="4" title="Volkswagen Crafter" image="/images/volkswagen-crafter-hero.jpg" score="8.0" url="/modele/volkswagen-crafter/" engine="2.0 TDI 140 KM" fuel="9,0–10,5 l/100 km" payload="1 350 kg" price-new="od 185 000 zł" price-used="60 000–100 000 zł" pros="Najdłuższa przestrzeń ładunkowa L3 (3 450 mm)|Trwały silnik 2.0 TDI EA288|Rosnąca społeczność camperowa" cons="Wysoka cena na rynku wtórnym – zbliżona do Sprintera|Mniejsza baza wiedzy niż Ducato|Niższa wysokość wewnętrzna H2 (1 861 mm)" %}}
+Druga generacja Craftera (od 2017) to pojazd na własnej platformie VW z najdłuższą przestrzenią ładunkową w wariancie L3 – 3 450 mm daje dodatkowe centymetry na garderobę lub większą łazienkę. Silnik 2.0 TDI (EA288) jest wspólny z mniejszymi modelami VW i znany z dobrej trwałości przy mocach od 102 do 177 KM.
+{{% /ranking-entry %}}
 
-Słabe strony to podatność na korozję (szczególnie progi i nadkola starszych generacji) oraz przeciętna jakość plastików wewnętrznych. Mimo to stosunek ceny do możliwości czyni Ducato oczywistym wyborem dla pierwszej konwersji.
+{{% ranking-entry position="5" title="Renault Master" image="/images/renault-master-hero.jpg" score="7.5" url="/modele/renault-master/" engine="2.3 dCi 150 KM" fuel="9,5–11,0 l/100 km" payload="1 400 kg" price-new="od 145 000 zł" price-used="35 000–60 000 zł" pros="Najniższa cena na rynku wtórnym – 15–25% taniej od Ducato|Trwały silnik 2.3 dCi z łańcuchem rozrządu|Zawieszenie piórowe dobrze znosi obciążenie zabudową" cons="Słabsza odporność na korozję niż Sprinter|Mniejsza społeczność camperowa|Mniej gotowych projektów zabudowy i akcesoriów" %}}
+Niedoceniany bus, który w rankingach camperowych wypada niezasłużenie nisko. Silnik 2.3 dCi (M9T) jest trwały i tani w naprawach, a resory piórowe tylnego zawieszenia świetnie znoszą dodatkowe obciążenie zabudową. Największa zaleta to cena – Master jest średnio 15–25% tańszy od Ducato w porównywalnym stanie.
+{{% /ranking-entry %}}
 
-## Mercedes Sprinter – premium na kółkach
+{{% ranking-entry position="6" title="Citroën Jumper" image="/images/citroen-jumper-hero.jpg" score="7.0" url="/modele/citroen-jumper/" engine="2.2 BlueHDi 140 KM" fuel="9,0–10,5 l/100 km" payload="1 500 kg" price-new="od 150 000 zł" price-used="40 000–65 000 zł" pros="Identyczne wymiary i mocowania jak Fiat Ducato|Pełna kompatybilność z akcesoriami Ducato|Niższa cena niż Ducato dzięki mniejszemu popytowi" cons="Znacznie mniej ofert na rynku wtórnym|Mniejsza sieć serwisowa Citroëna w Polsce|Mniejsza społeczność i mniej poradników" %}}
+Konstrukcyjny bliźniak Fiata Ducato – powstaje na tej samej platformie w zakładach Sevel Nord. Wymiary wewnętrzne, rozmieszczenie mocowań i geometria nadwozia są identyczne, co oznacza pełną kompatybilność z projektami zabudów dla Ducato. Niższa pozycja wynika z gorszej dostępności na rynku wtórnym, ale dobra oferta Jumpera L3H2 to równie solidna baza pod kampera.
+{{% /ranking-entry %}}
 
-[Mercedes Sprinter](/modele/mercedes-sprinter/) to wybór tych, którzy stawiają na jakość materiałów i długowieczność nadwozia. Sprinter wyróżnia się najlepszą odpornością na korozję w segmencie – dzięki cynkowaniu i grubszym blachom karoserii 20-letnie egzemplarze często nie mają śladów rdzy.
-
-Wariant L3H2 oferuje 3 272 mm długości ładunkowej – wystarczająco na pełnowymiarową zabudowę z łazienką. Szerokość między nadkolami (1 380 mm) jest nieco mniejsza niż w Ducato, ale wciąż wystarczająca na wygodne łóżko.
-
-Wadą jest cena – zarówno zakupu, jak i serwisu. Używany Sprinter kosztuje 20–40% więcej niż analogiczny Ducato, a oryginalne części zamienne potrafią zaskoczyć. Silnik OM651 (2.1 CDI) w rocznikach 2014–2018 miewa problemy z łańcuchem rozrządu, co warto sprawdzić przed zakupem.
-
-{{% expert name="Kowalczyk" %}}
-Przy zakupie Sprintera na kampera wybieraj wersje z zawieszeniem komfortowym (opcja 584) zamiast wzmocnionego. Fabryczne zawieszenie cargo jest zbyt twarde dla zabudowy camperowej i pogarsza komfort jazdy na nierównych drogach.
-{{% /expert %}}
-
-## 3. Ford Transit – najlepsze prowadzenie
-
-[Ford Transit](/modele/ford-transit/) wyróżnia się na tle konkurencji zachowaniem na drodze – to bus, który prowadzi się najbardziej „osobowo". Niezależne zawieszenie przednie i precyzyjny układ kierowniczy sprawiają, że długie przejazdy autostradowe są mniej męczące niż w konkurentach.
-
-Transit L3H2 oferuje 3 300 mm długości ładunkowej i 1 886 mm wysokości wewnętrznej. Szerokość między nadkolami (1 392 mm) jest dobra, choć nie najlepsza. Silnik 2.0 EcoBlue to nowoczesna, mocna i oszczędna jednostka – w trasie realnie spala 8,5–9,5 l/100 km.
-
-Na rynku wtórnym Transit jest dostępny w rozsądnych cenach, a sieć serwisowa Forda w Polsce należy do najgęstszych. Minusem jest mniejsza popularność wśród camperowców – trudniej znaleźć gotowe projekty zabudowy i dedykowane akcesoria niż dla Ducato czy Sprintera.
-
-## 4. Volkswagen Crafter – solidność z Hanoweru
-
-[Volkswagen Crafter](/modele/volkswagen-crafter/) drugiej generacji (od 2017) to pojazd budowany na własnej platformie VW, niezależnie od Mercedesa. Wyróżnia się najdłuższą przestrzenią ładunkową w wariancie L3 – 3 450 mm daje dodatkowe centymetry na garderobę lub większą łazienkę.
-
-Silnik 2.0 TDI (EA288) jest wspólny z mniejszymi modelami VW i znany z dobrej trwałości. Dostępne moce od 102 do 177 KM pozwalają dobrać wariant do stylu podróżowania – oszczędny lub dynamiczny.
-
-Cena Craftera na rynku wtórnym jest wysoka – zbliżona do Sprintera. Społeczność camperowa jest mniejsza niż w przypadku Ducato, ale rośnie dynamicznie dzięki popularności serii [Volkswagen California](/modele/volkswagen-california/) i [Multivan](/modele/volkswagen-multivan/).
-
-## Renault Master – niedoceniany wybór
-
-[Renault Master](/modele/renault-master/) trzeciej generacji to bus, który w rankingach camperowych wypada niezasłużenie nisko. Silnik 2.3 dCi (M9T) jest trwały i tani w naprawach, a zawieszenie tylne z resorami piórowymi świetnie znosi dodatkowe obciążenie zabudową.
-
-Master L3H2 oferuje 3 083 mm długości – nieco mniej niż konkurenci, ale w praktyce wystarczająco na standardowy układ. Wysokość wewnętrzna 1 900 mm jest dobra. Największą zaletą jest cena na rynku wtórnym – Master jest średnio 15–25% tańszy od Ducato w porównywalnym stanie.
-
-- **Zaleta** – niski koszt zakupu i eksploatacji
-- **Zaleta** – trwały silnik 2.3 dCi z łańcuchem rozrządu
-- **Wada** – słabsza odporność na korozję niż Sprinter
-- **Wada** – mniejsza społeczność camperowa i mniej gotowych projektów
-
-## 6. Citroën Jumper – bliźniak Ducato
-
-Citroën Jumper (znany też jako Peugeot Boxer) to konstrukcyjny bliźniak [Fiata Ducato](/modele/fiat-ducato/) – powstaje na tej samej platformie w zakładach Sevel Nord. Wymiary wewnętrzne, rozmieszczenie mocowań i geometria nadwozia są identyczne, co oznacza pełną kompatybilność z akcesoriami i projektami zabudów przewidzianymi dla Ducato.
-
-Dlaczego więc Jumper jest niżej w rankingu? Przede wszystkim z powodu dostępności – na rynku wtórnym jest ich znacznie mniej niż Ducato, co utrudnia znalezienie egzemplarza w dobrej konfiguracji. Sieć serwisowa Citroëna w Polsce jest też mniejsza niż Fiata.
-
-Jeśli trafisz na dobrą ofertę Jumpera L3H2, jest to równie dobra baza pod kampera jak Ducato – często w niższej cenie właśnie z powodu mniejszego popytu.
-
-{{% info title="Informacja" icon="info" %}}
-Pamiętaj, że Citroën Jumper, Peugeot Boxer i Fiat Ducato to ten sam pojazd – części zamienne są wymienne między tymi markami. Przy zakupie możesz szukać tańszych zamienników pod dowolną z trzech nazw.
-{{% /info %}}
-
-## 7. Iveco Daily – ramowy specjalista
-
-[Iveco Daily](/modele/iveco-daily/) wyróżnia się na tle konkurencji konstrukcją ramową – podczas gdy pozostałe modele w rankingu mają nadwozie samonośne, Daily bazuje na klasycznej ramie stalowej. To zaleta przy ciężkich zabudowach (powyżej 500 kg) i montażu dodatkowego wyposażenia pod podłogą.
-
-Daily w wariancie L3H2 oferuje 3 000 mm długości ładunkowej – najmniej w zestawieniu. Rekompensuje to szerokością między nadkolami (1 410 mm) i możliwością wyboru wersji z DMC do 7,2 tony, co daje ogromną rezerwę ładowności na zabudowę z pełnym wyposażeniem.
-
-Wadą jest wyższa masa własna (rama waży więcej niż konstrukcja samonośna) i głośniejsza praca zawieszenia na nierównościach. Daily to wybór dla tych, którzy planują ciężką, profesjonalną zabudowę – nie dla minimalistycznych konwersji weekendowych.
+{{% ranking-entry position="7" title="Iveco Daily" image="/images/iveco-daily-hero.jpg" score="6.5" url="/modele/iveco-daily/" engine="2.3 MultiJet 136 KM" fuel="10,0–12,0 l/100 km" payload="1 800 kg" price-new="od 170 000 zł" price-used="45 000–80 000 zł" pros="Konstrukcja ramowa – idealna pod ciężkie zabudowy|Wersje z DMC do 7,2 t – ogromna rezerwa ładowności|Szerokość między nadkolami 1 410 mm" cons="Najkrótsza przestrzeń ładunkowa L3 (3 000 mm)|Wyższa masa własna przez ramę stalową|Głośniejsza praca zawieszenia na nierównościach" %}}
+Wyróżnia się na tle konkurencji konstrukcją ramową – podczas gdy pozostałe modele mają nadwozie samonośne, Daily bazuje na klasycznej ramie stalowej. To zaleta przy ciężkich zabudowach powyżej 500 kg i montażu wyposażenia pod podłogą. Możliwość wyboru wersji z DMC do 7,2 tony daje ogromną rezerwę ładowności na profesjonalną zabudowę z pełnym wyposażeniem.
+{{% /ranking-entry %}}
 
 ## Który bus wybrać na kampera – podsumowanie
 
