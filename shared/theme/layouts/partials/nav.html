@@ -3,6 +3,7 @@
 
   <nav class="site-header__nav" aria-label="Nawigacja główna">
     <a href="{{ .Site.BaseURL }}" class="site-logo">
+      <svg class="site-logo__icon" viewBox="0 0 32 24" fill="var(--c-orange)" width="32" height="24"><path d="M4 4h20c2.2 0 4 1.8 4 4v8c0 1.1-.9 2-2 2h-1a3 3 0 0 1-6 0H11a3 3 0 0 1-6 0H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 2v4h8V6H4zm10 0v4h6V6h-6zm8 0v4h4V8c0-1.1-.9-2-2-2h-2zM8 16.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm14 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
       <span class="site-logo__bus">BUS</span><span class="site-logo__maniak">MANIAK</span><span class="site-logo__dot">.pl</span>
     </a>
 
@@ -19,6 +20,16 @@
             </a>
             <div class="dropdown__panel">
               <div class="dropdown__inner">
+                {{/* Breadcrumb inside mega menu */}}
+                <div class="dropdown__breadcrumb">
+                  <a href="{{ $.Site.BaseURL }}">Strona główna</a>
+                  <span>/</span>
+                  <a href="/modele/">Modele busów i vanów</a>
+                  {{ if and (eq $.Section "modele") (ne $.Kind "section") }}
+                    <span>/</span>
+                    <span>{{ $.Params.h1 | default $.Title | truncate 50 }}</span>
+                  {{ end }}
+                </div>
                 <div class="dropdown__grid">
                   {{ $modele := $.Site.GetPage "/modele" }}
                   {{ if $modele }}
