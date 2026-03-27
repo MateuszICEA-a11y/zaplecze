@@ -13,24 +13,28 @@
     <div class="site-nav__links">
       {{ range .Site.Menus.main }}
         {{ if eq .URL "/modele/" }}
-          {{/* ═══ DROPDOWN: Modele (pillars only) ═══ */}}
           <div class="dropdown">
             <a href="{{ .URL }}" class="site-nav__link{{ if $.IsMenuCurrent "main" . }} site-nav__link--active{{ end }}">
               {{ .Name }} <span class="dropdown__arrow">▾</span>
             </a>
             <div class="dropdown__panel">
-              <div class="dropdown__grid">
-                {{ $modele := $.Site.GetPage "/modele" }}
-                {{ if $modele }}
-                  {{ range $modele.Sections }}
-                    {{ $h1 := .Params.h1 | default .Title }}
-                    {{ $shortName := $h1 }}
-                    {{ if findRE `\s–\s` $h1 }}
-                      {{ $shortName = index (split $h1 " – ") 0 }}
+              <div class="dropdown__inner">
+                <div class="dropdown__grid">
+                  {{ $modele := $.Site.GetPage "/modele" }}
+                  {{ if $modele }}
+                    {{ range $modele.Sections }}
+                      {{ $h1 := .Params.h1 | default .Title }}
+                      {{ $shortName := $h1 }}
+                      {{ if findRE `\s–\s` $h1 }}
+                        {{ $shortName = index (split $h1 " – ") 0 }}
+                      {{ end }}
+                      <a href="{{ .Permalink }}" class="dropdown__model">
+                        <span class="dropdown__model-icon material-symbols-outlined">directions_bus</span>
+                        {{ $shortName }}
+                      </a>
                     {{ end }}
-                    <a href="{{ .Permalink }}" class="dropdown__item">{{ $shortName }}</a>
                   {{ end }}
-                {{ end }}
+                </div>
               </div>
             </div>
           </div>
