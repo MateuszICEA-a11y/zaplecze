@@ -21,7 +21,7 @@ faq:
 
 Każde porównanie na BusManiak.pl opiera się na danych technicznych producenta, doświadczeniach warsztatowych i opiniach kierowców z branży transportowej. Zestawiamy modele w tych samych kategoriach – silniki, wymiary przestrzeni ładunkowej, spalanie i koszty eksploatacji – żeby werdykt był rzetelny.
 
-{{% info %}}
+{{% info title="Informacja" icon="info" %}}
 Porównania aktualizujemy po każdym liftingu lub zmianie generacji modelu. Daty ostatniej aktualizacji znajdziesz w nagłówku każdego artykułu.
 {{% /info %}}
 

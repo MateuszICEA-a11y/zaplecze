@@ -100,7 +100,7 @@ Małe vany przeszły w ostatnich latach rewolucję napędową. Obecna generacja 
 
 Renault Kangoo jako jedyny w segmencie oferuje benzynowy silnik 1.3 TCe (130 KM) – rozwiązanie interesujące dla kierowców jeżdżących głównie po mieście na krótkich trasach, gdzie diesel nie zdąży się rozgrzać. Volkswagen Caddy wyróżnia się dwusprzęgłową skrzynią DSG i opcją napędu 4Motion.
 
-{{% info %}}
+{{% info title="Informacja" icon="info" %}}
 Berlingo, Partner i Doblo (nowa generacja) dzielą platformę Stellantis EMP2 i ten sam silnik 1.5 BlueHDi/MJT. Różnice sprowadzają się do stylistyki, wyposażenia seryjnego i sieci dealerskiej. Przy identycznej mechanice warto porównać warunki gwarancji – Fiat oferuje 4 lata, Peugeot i Citroën – 2 lata z opcją przedłużenia.
 {{% /info %}}
 

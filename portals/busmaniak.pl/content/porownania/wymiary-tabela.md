@@ -115,7 +115,7 @@ Producenci busów stosują system oznaczeń rozmiaru nadwozia oparty na dwóch p
 - **Różnice między markami** – Mercedes używa nazw opisowych (Standard, Long, Extra Long), Volkswagen stosuje oznaczenia MWB/LWB. Numery L i H mogą odpowiadać różnym wymiarom bezwzględnym u różnych producentów
 - **Wpływ na ładownię** – zmiana z L1 na L2 dodaje zwykle 400–500 mm długości ładowni. Zmiana z H1 na H2 to ok. 200–270 mm dodatkowej wysokości wewnętrznej
 
-{{% info %}}
+{{% info title="Informacja" icon="info" %}}
 Nie porównuj oznaczeń między markami. L2 Fiata Ducato (5413 mm) to zupełnie inny wymiar niż L2 Mercedesa Sprintera (5932 mm). Zawsze sprawdzaj wymiary bezwzględne w milimetrach – tylko one dają rzetelne porównanie.
 {{% /info %}}
 

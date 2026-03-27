@@ -98,7 +98,7 @@ Dlaczego więc Jumper jest niżej w rankingu? Przede wszystkim z powodu dostępn
 
 Jeśli trafisz na dobrą ofertę Jumpera L3H2, jest to równie dobra baza pod kampera jak Ducato – często w niższej cenie właśnie z powodu mniejszego popytu.
 
-{{% info %}}
+{{% info title="Informacja" icon="info" %}}
 Pamiętaj, że Citroën Jumper, Peugeot Boxer i Fiat Ducato to ten sam pojazd – części zamienne są wymienne między tymi markami. Przy zakupie możesz szukać tańszych zamienników pod dowolną z trzech nazw.
 {{% /info %}}
 

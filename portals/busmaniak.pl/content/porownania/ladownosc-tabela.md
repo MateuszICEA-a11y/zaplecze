@@ -110,7 +110,7 @@ Dopuszczalna masa całkowita to nie tylko parametr techniczny – to granica pra
 - **Kat. C (powyżej 7,5 t DMC)** – w praktyce nie dotyczy busów dostawczych, ale Daily 7,2 t z przyczepą może wymagać kat. C+E
 - **Tachograf** – obowiązkowy w transporcie zarobkowym pojazdami powyżej 2,5 t DMC (od 1 lipca 2026 r. nowe przepisy UE rozszerzają obowiązek). W transporcie na potrzeby własne próg to 3,5 t DMC
 
-{{% info %}}
+{{% info title="Informacja" icon="info" %}}
 Popularny „trik" z rejestracją busa jako samochodu ciężarowego o DMC 3490 kg (tuż pod progiem 3,5 t) pozwala uniknąć części obowiązków. Pamiętaj jednak, że realna ładowność spada o 10 kg – a w przypadku kontroli drogowej liczy się wpis w dowodzie, nie tabliczka znamionowa producenta.
 {{% /info %}}
 

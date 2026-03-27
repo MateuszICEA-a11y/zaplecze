@@ -31,7 +31,7 @@ Grupy użytkowników, które najczęściej wybierają busy 4x4:
 - **Kamperowcy off-road** – podróże poza utwardzonymi szlakami
 - **Służby ratunkowe** – karetki i pojazdy interwencyjne w rejonach górskich
 
-{{% info %}}
+{{% info title="Informacja" icon="info" %}}
 Napęd 4x4 w busie to nie to samo co terenówka. Żaden fabryczny dostawczak nie zastąpi Land Cruisera na ciężkim off-roadzie – chodzi raczej o pewne pokonywanie nieutwardzonych dróg, stromych podjazdów i śliskich nawierzchni.
 {{% /info %}}
 

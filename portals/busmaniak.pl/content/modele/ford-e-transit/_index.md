@@ -76,7 +76,7 @@ W praktyce zasięg zależy od kilku zmiennych:
 | AC (wallbox, 3-fazowy) | 11,3 kW | – | ok. 8 h | Nocne ładowanie w bazie |
 | DC (CCS Combo 2) | do 115 kW | ok. 34 min | ok. 45 min | Szybkie doładowanie w trasie |
 
-{{% info %}}
+{{% info title="Informacja" icon="info" %}}
 Ford E-Transit obsługuje precondycjonowanie baterii – system automatycznie podgrzewa ogniwa przed planowaną sesją ładowania DC (jeśli trasa jest ustawiona w nawigacji). Dzięki temu ładowanie zimą przebiega niemal tak szybko jak latem.
 {{% /info %}}
 
