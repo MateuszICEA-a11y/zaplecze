@@ -187,13 +187,25 @@ a:hover { color: var(--c-orange-hover); }
   color: var(--c-orange);
 }
 
-.dropdown__model-icon {
+.brand-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--c-orange);
+  opacity: .7;
+}
+
+.dropdown__model:hover .brand-icon {
+  opacity: 1;
+}
+
+.brand-icon-fallback {
   font-size: .875rem;
   color: var(--c-orange);
   opacity: .7;
 }
 
-.dropdown__model:hover .dropdown__model-icon {
+.dropdown__model:hover .brand-icon-fallback {
   opacity: 1;
 }
 

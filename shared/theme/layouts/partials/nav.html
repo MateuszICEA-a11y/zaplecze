@@ -28,8 +28,9 @@
                       {{ if findRE `\s–\s` $h1 }}
                         {{ $shortName = index (split $h1 " – ") 0 }}
                       {{ end }}
+                      {{ $dirName := .File.Dir | path.Dir | path.Base }}
                       <a href="{{ .Permalink }}" class="dropdown__model">
-                        <span class="dropdown__model-icon material-symbols-outlined">directions_bus</span>
+                        {{ partial "brand-icon.html" $dirName }}
                         {{ $shortName }}
                       </a>
                     {{ end }}
