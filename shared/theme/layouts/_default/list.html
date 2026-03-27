@@ -114,9 +114,9 @@
     <div class="pillar-nav__title">Wersje silnikowe {{ $shortName }}</div>
     <div class="pillar-nav__grid">
       {{ range $engines }}
-      {{ $img := .Params.image | default $.Params.image }}
-      <a href="{{ .Permalink }}" class="pillar-nav__card pillar-nav__card--img" {{ with $img }}style="background-image: url('{{ . }}')"{{ end }}>
-        <div class="pillar-nav__card-overlay">
+      <a href="{{ .Permalink }}" class="pillar-nav__card">
+        <span class="pillar-nav__card-icon material-symbols-outlined">manufacturing</span>
+        <div class="pillar-nav__card-body">
           <div class="pillar-nav__card-name">{{ .Params.h1 | default .Title | truncate 50 }}</div>
           {{ with .Description }}<div class="pillar-nav__card-desc">{{ . | truncate 80 }}</div>{{ end }}
         </div>
@@ -132,9 +132,9 @@
     <div class="pillar-nav__title">Wersje nadwoziowe {{ $shortName }}</div>
     <div class="pillar-nav__grid">
       {{ range $bodies }}
-      {{ $img := .Params.image | default $.Params.image }}
-      <a href="{{ .Permalink }}" class="pillar-nav__card pillar-nav__card--img" {{ with $img }}style="background-image: url('{{ . }}')"{{ end }}>
-        <div class="pillar-nav__card-overlay">
+      <a href="{{ .Permalink }}" class="pillar-nav__card">
+        <span class="pillar-nav__card-icon material-symbols-outlined">local_shipping</span>
+        <div class="pillar-nav__card-body">
           <div class="pillar-nav__card-name">{{ .Params.h1 | default .Title | truncate 50 }}</div>
           {{ with .Description }}<div class="pillar-nav__card-desc">{{ . | truncate 80 }}</div>{{ end }}
         </div>
@@ -150,10 +150,11 @@
     <div class="pillar-nav__title">Powiązane artykuły</div>
     <div class="pillar-nav__grid">
       {{ range $crossCluster }}
-      {{ $img := .Params.image }}
-      <a href="{{ .Permalink }}" class="pillar-nav__card pillar-nav__card--img" {{ with $img }}style="background-image: url('{{ . }}')"{{ end }}>
-        <div class="pillar-nav__card-overlay">
-          <div class="pillar-nav__card-badge">{{ .Section | humanize }}</div>
+      <a href="{{ .Permalink }}" class="pillar-nav__card">
+        <span class="pillar-nav__card-icon material-symbols-outlined">
+          {{ if eq .Section "serwis" }}build{{ else if eq .Section "przerobki" }}handyman{{ else if eq .Section "porownania" }}compare_arrows{{ else }}article{{ end }}
+        </span>
+        <div class="pillar-nav__card-body">
           <div class="pillar-nav__card-name">{{ .Params.h1 | default .Title | truncate 50 }}</div>
           {{ with .Description }}<div class="pillar-nav__card-desc">{{ . | truncate 80 }}</div>{{ end }}
         </div>
