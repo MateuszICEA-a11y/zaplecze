@@ -16,7 +16,7 @@ faq:
   - question: "Gdzie znajduje się przekaźnik kierunkowskazów w Ducato X250?"
     answer: "W modelach produkowanych od 2006 roku nie ma klasycznego, wymiennego przekaźnika kierunkowskazów. Funkcję tę pełni moduł elektroniczny w Body Computerze (pod deską rozdzielczą). Jeśli kierunkowskazy nie działają, sprawdź najpierw bezpieczniki i żarówki."
   - question: "Czy przekaźniki z Peugeota Boxera i Citroena Jumpera pasują do Ducato?"
-    answer: "Tak, modele te (tzw. \'trojaczki z Sevel\') mają identyczną architekturę elektryczną. Skrzynki bezpieczników i przekaźniki są zamienne, o ile zgadzają się parametry natężenia prądu (A) i układ pinów."
+    answer: "Tak, modele te (tzw. trojaczki z Sevel) mają identyczną architekturę elektryczną. Skrzynki bezpieczników i przekaźniki są zamienne, o ile zgadzają się parametry natężenia prądu (A) i układ pinów."
   - question: "Silnik kręci, ale nie odpala – który przekaźnik sprawdzić?"
     answer: "W pierwszej kolejności sprawdź przekaźnik T14 (pompa paliwa) oraz T09 (główny przekaźnik silnika) w skrzynce pod maską. Warto również zweryfikować bezpiecznik F22 (system wtrysku)."
 
