@@ -81,6 +81,8 @@ Na tle konkurencji – [Opla Combo Maxi](/modele/opel-combo/maxi/) z tym samym s
 
 ## Koszty serwisu Opel Combo 1.6 CDTi
 
+Utrzymanie Opel Combo generuje koszty, które warto znać przed zakupem – różnice między poszczególnymi operacjami serwisowymi bywają znaczące.
+
 | Czynność | Koszt | Interwał |
 |----------|-------|----------|
 | Wymiana oleju + filtr | 200–350 zł | 15 000 km |

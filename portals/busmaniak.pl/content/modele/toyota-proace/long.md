@@ -50,6 +50,8 @@ Standardowa europaleta ma 1200x800 mm i nośność 1000 kg. Trzy palety to 3,6 m
 
 ## Toyota Proace Long vs Medium – różnice, które mają znaczenie
 
+Kluczowe parametry Toyota Proace w tym zestawieniu obejmują m.in. parametr, long (l2), medium (l1) – różnice między wariantami mają realne przełożenie na codzienną eksploatację.
+
 | Parametr | Long (L2) | Medium (L1) |
 |---|---|---|
 | Długość całkowita | 5309 mm | 4959 mm |

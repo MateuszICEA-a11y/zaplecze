@@ -49,6 +49,8 @@ T7 dostępny jest w dwóch długościach – L1 (4970 mm) i L2 (5170 mm). Szerok
 
 ## Silniki Multivana
 
+Gama silnikowa Volkswagen Multivan obejmuje kilka wariantów mocy – wybór jednostki napędowej wpływa na osiągi, spalanie i koszty eksploatacji.
+
 | Silnik | Moc | Skrzynia | Spalanie | Vmax |
 | :--- | :--- | :--- | :--- | :--- |
 | **2.0 TSI** | 204 KM | DSG-7 | 7,6–7,7 l/100 km | 200 km/h |
@@ -62,6 +64,8 @@ Hybryda plug-in o mocy 245 KM to najmocniejszy seryjny napęd w historii Multiva
 {{% /expert %}}
 
 ## Wymiary Volkswagen Multivan
+
+Wymiary Volkswagen Multivan różnią się w zależności od wersji nadwoziowej – dotyczy to zarówno gabarytów zewnętrznych, jak i przestrzeni ładunkowej.
 
 | Parametr | L1 | L2 |
 |----------|-----|-----|
@@ -99,6 +103,8 @@ Centrum dowodzenia to ekran 10 cali, Digital Cockpit Pro i eSIM z nawigacją onl
 - **Elektronika** – multimedia w T6.1 potrafią się zawieszać
 
 ## Ceny Multivana
+
+Zakup Volkswagen Multivan to wydatek, który zależy od generacji, wersji silnikowej i stanu technicznego – rozstrzał cenowy na rynku wtórnym bywa spory.
 
 | Generacja / Rocznik | Cena orientacyjna |
 |---------------------|-------------------|

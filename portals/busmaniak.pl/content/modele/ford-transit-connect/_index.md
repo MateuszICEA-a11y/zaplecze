@@ -44,6 +44,8 @@ Najnowszy Connect to owoc współpracy z koncernem VAG – dzieli podzespoły z 
 
 ## Wymiary Transit Connecta
 
+Connect występuje w dwóch długościach – L1 (Short) i L2 (Long). Mk3 jest nieco większy od Mk2, a objętość paki wzrosła z 3,6 do 3,8 m³ w wersji Long. Ładowność sięga niemal 1000 kg w topowej konfiguracji Mk2 L2.
+
 | Parametr | Mk2 L1 (Short) | Mk2 L2 (Long) | Mk3 L1 | Mk3 L2 |
 |----------|----------------|---------------|--------|--------|
 | Długość | 4425 mm | 4825 mm | 4498 mm | 4853 mm |
@@ -59,6 +61,8 @@ Najnowszy Connect to owoc współpracy z koncernem VAG – dzieli podzespoły z 
 - **Dwie europalety** – mieszczą się w wersji L2
 
 ## Silniki Ford Transit Connect
+
+Gama silnikowa Connecta obejmuje diesle 1.5 EcoBlue (75–120 KM) i benzynowy 1.0 EcoBoost (100 KM). W starszym Mk1 dominował solidny 1.8 TDCi. Diesel 1.5 z katalizatorem SCR spala 5,2–6,0 l/100 km – jeden z najniższych wyników w segmencie.
 
 | Silnik | Generacja | Moc | Moment | Spalanie (śr.) | Norma |
 |--------|-----------|-----|--------|----------------|-------|
@@ -131,6 +135,8 @@ W Mk2 z 2013–2015 częsty problem z utratą mocy i kodem P2111/P2135. Przyczyn
 | Mk2 Active (2020–2022) | 65 000–90 000 zł |
 
 ## Porównanie Ford Transit Connect z konkurencją
+
+W segmencie kompaktowych dostawczaków Connect wygrywa właściwościami jezdnymi i trwałością nadwozia. Berlingo i Partner oferują większą pakę przy niższej cenie, a Caddy bierze wartością rezydualną – ale kosztuje o 20 tys. więcej.
 
 | Parametr | Ford Transit Connect L2 | Citroën Berlingo L2 | Peugeot Partner L2 | VW Caddy Maxi |
 |----------|------------------------|--------------------|--------------------|---------------|

@@ -68,6 +68,8 @@ Doblò III korzysta z tej samej skrzyni biegów EAT8 i silników PSA co Berlingo
 
 ## Wymiary Fiat Doblò
 
+Między II a III generacją Doblò zmiana platformy na PSA EMP2 przyniosła nieznaczne różnice w gabarytach. Szerokość wzrosła o 16 mm, a rozstaw osi w wersji Maxi zwiększył się o 170 mm – co przełożyło się na lepszy komfort jazdy i większą przestrzeń ładunkową.
+
 | Parametr | Gen II standard | Gen II Maxi | Gen III standard | Gen III Maxi |
 |---|---|---|---|---|
 | Długość (mm) | 4390 | 4740 | 4403 | 4753 |
@@ -100,6 +102,8 @@ Doblò III na platformie PSA jest za świeży, żeby mówić o typowych usterkac
 
 ## Ceny Doblò
 
+Na rynku wtórnym Doblò II generacji to jedne z najtańszych kompaktowych vanów – egzemplarze z lat 2010–2015 można kupić od 15 tys. zł. Nowe Doblò III na platformie PSA startuje od 105 tys. zł netto w wersji Van.
+
 | Generacja / Rocznik | Cena orientacyjna |
 |---------------------|-------------------|
 | Doblò I (2001–2010) | 5 000–15 000 zł |
@@ -109,6 +113,8 @@ Doblò III na platformie PSA jest za świeży, żeby mówić o typowych usterkac
 | Nowy Doblò III Van L1 | od ok. 105 000 zł netto |
 
 ## Porównanie Fiat Doblò z konkurencją
+
+Doblò III dzieli platformę EMP2 z Oplem Combo, Citroënem Berlingo i Peugeotem Partnerem – technicznie to ten sam samochód. Różnice sprowadzają się do ceny, dostępności serwisu i stylistyki. VW Caddy i Renault Kangoo to niezależne konstrukcje z innymi silnikami.
 
 | Parametr | Fiat Doblò III L1 | Opel Combo E L1 | Citroën Berlingo III M | Renault Kangoo III L1 | VW Caddy V |
 |----------|-------------------|----------------|------------------------|-----------------------|------------|

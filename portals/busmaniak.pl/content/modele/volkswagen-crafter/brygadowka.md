@@ -84,6 +84,8 @@ Standardowa paka to otwarta skrzynia z burtami aluminiowymi. Opcje zabudowy:
 
 ## Ceny VW Crafter brygadówka
 
+Brygadówka to specjalistyczna zabudowa, co przekłada się na wyższe ceny niż w przypadku standardowego furgonu – zwłaszcza w wersjach z podwójną kabiną fabryczną.
+
 | Wersja / Rocznik | Cena orientacyjna |
 |-------------------|-------------------|
 | Crafter I brygadówka (2010–2017) | 40 000–75 000 zł |
@@ -93,6 +95,8 @@ Standardowa paka to otwarta skrzynia z burtami aluminiowymi. Opcje zabudowy:
 | Nowy z zabudową wywrotki | od ok. 210 000 zł netto |
 
 ## Crafter brygadówka na tle konkurencji
+
+Kluczowe parametry Volkswagen Crafter w tym zestawieniu obejmują m.in. parametr, vw crafter ii l3, mercedes sprinter l2 – różnice między wariantami mają realne przełożenie na codzienną eksploatację.
 
 | Parametr | VW Crafter II L3 | Mercedes Sprinter L2 | Ford Transit L3 | Iveco Daily L3 | Renault Master L3 |
 |----------|-----------------|---------------------|-----------------|----------------|-------------------|

@@ -42,6 +42,8 @@ Wersja 177 KM:
 
 ## Rzeczywiste spalanie
 
+Katalogowe zużycie paliwa i rzeczywiste spalanie Volkswagen Crafter to dwie różne wartości – szczególnie przy pełnym załadunku różnice sięgają nawet 2–3 l/100 km.
+
 | Warunki | 102 KM | 140 KM | 177 KM |
 |---|---|---|---|
 | WLTP (bez ładunku) | ok. 7,5 l | ok. 8,0 l | ok. 8,5 l |

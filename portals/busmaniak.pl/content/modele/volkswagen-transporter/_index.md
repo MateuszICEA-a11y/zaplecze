@@ -42,6 +42,8 @@ Najnowszy Volkswagen T7 Transporter (od 2021) w wersji Multivan bazuje na osobow
 
 ## Wymiary Volkswagen Transporter T6.1
 
+Wymiary Volkswagen Transporter różnią się w zależności od wersji nadwoziowej – dotyczy to zarówno gabarytów zewnętrznych, jak i przestrzeni ładunkowej.
+
 | Parametr | L1 (krótki) | L2 (długi) |
 |----------|------------|-----------|
 | Długość całkowita | 4904 mm | 5304 mm |
@@ -59,6 +61,8 @@ Najnowszy Volkswagen T7 Transporter (od 2021) w wersji Multivan bazuje na osobow
 - **Średnica zawracania** – 11,9 m (L1), 13,2 m (L2)
 
 ## Silniki Transportera
+
+Gama silnikowa Volkswagen Transporter obejmuje kilka wariantów mocy – wybór jednostki napędowej wpływa na osiągi, spalanie i koszty eksploatacji.
 
 | Silnik | Model | Moc | Moment | Spalanie (śr.) | Skrzynia |
 |--------|-------|-----|--------|----------------|----------|
@@ -140,6 +144,8 @@ California to jedyny van-kamper, który nie traci na wartości. Używane egzempl
 {{% /info %}}
 
 ## Porównanie Transportera z konkurentami
+
+Segment dostawczaków to rynek pełen alternatyw – Volkswagen Transporter mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
 
 | Parametr | VW Transporter T6.1 L2 | Mercedes Vito Long | Ford Transit Custom L2 | Renault Trafic L2 |
 |----------|------------------------|--------------------|-----------------------|-------------------|

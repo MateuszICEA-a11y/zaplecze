@@ -42,6 +42,8 @@ Po sześcioletniej przerwie (2016–2022, kiedy sprzedawano Talento na bazie Tra
 
 ## Wymiary Fiat Scudo
 
+Scudo jest oferowane w kilku wariantach długości – od kompaktowego Scudo III Compact (4609 mm) po wydłużone Long (5309 mm). Między II a III generacją zmienił się rozstaw osi i proporcje nadwozia, a szerokość wzrosła o 25 mm.
+
 | Parametr | Scudo II Short | Scudo II Long | Scudo III Compact | Scudo III Standard | Scudo III Long |
 |----------|---------------|--------------|-------------------|-------------------|---------------|
 | Długość | 4805 mm | 5135 mm | 4609 mm | 4959 mm | 5309 mm |
@@ -60,6 +62,8 @@ W Scudo III możesz podnieść siedzisko pasażera i otworzyć klapę w przegrod
 {{% /info %}}
 
 ## Silniki Scudo
+
+W II generacji dominowały sprawdzone 2.0 MultiJet w wersjach 120 i 136 KM. Scudo III na platformie EMP2 przeszło na silniki PSA – od oszczędnego 1.5 BlueHDI 100 KM po mocnego 2.0 BlueHDI 145 KM. Dostępna jest też wersja elektryczna E-Scudo.
 
 | Silnik | Generacja | Moc | Moment | Spalanie (śr.) | Norma |
 |--------|-----------|-----|--------|----------------|-------|
@@ -130,6 +134,8 @@ Większość problemów mechanicznych Scudo wynika z przeładowywania auta ponad
 Wersje osobowe Panorama trzymają cenę znacznie lepiej niż typowe furgony.
 
 ## Porównanie Fiat Scudo z konkurencją
+
+W segmencie średnich vanów Scudo III mierzy się z Traficem, Transit Customem i Transporterem. Wygrywa ceną zakupu i dostępnością zamienników (wspólne z Expertem i Jumpy), ale przegrywa pojemnością paki z Fordem i VW.
 
 | Parametr | Fiat Scudo III L2 | Renault Trafic III L2 | Ford Transit Custom L2 | VW Transporter T6.1 L2 |
 |----------|-------------------|----------------------|------------------------|------------------------|

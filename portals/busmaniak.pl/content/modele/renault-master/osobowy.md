@@ -51,6 +51,8 @@ Kluczowym parametrem przy wyborze jest liczba miejsc i DMC. Wersja 9-miejscowa L
 
 ## Wymiary i układ siedzeń
 
+Konfiguracja siedzeń i wymiary wnętrza wpływają na komfort pasażerów – dostępne warianty różnią się liczbą miejsc i rozstawem rzędów.
+
 | Parametr | L2H2 Combi | L3H2 Combi | L3H2 Bus |
 |----------|------------|------------|----------|
 | Długość całkowita (mm) | 5548 | 6198 | 6198 |

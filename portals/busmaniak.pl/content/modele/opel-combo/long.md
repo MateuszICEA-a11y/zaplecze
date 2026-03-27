@@ -38,6 +38,8 @@ Combo XL to pojazd, który spokojnie zastępuje Transit Connect L2 lub Berlingo 
 
 ## Porównanie Combo Short i Long
 
+Różnice między wersjami długości przekładają się nie tylko na wymiary, ale też na ładowność, manewrowość i cenę – warto je zestawić punkt po punkcie.
+
 | Parametr | Short (L1) | Long XL (L2) |
 |----------|-----------|--------------|
 | Długość całkowita | 4403 mm | 4753 mm |

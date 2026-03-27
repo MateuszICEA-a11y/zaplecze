@@ -36,6 +36,8 @@ W 2011 roku NV200 wygrał konkurs NYC Taxi of Tomorrow i od 2013 roku był jedyn
 
 ## Wymiary i dane techniczne NV200
 
+Wymiary Nissan Nv200 różnią się w zależności od wersji nadwoziowej – dotyczy to zarówno gabarytów zewnętrznych, jak i przestrzeni ładunkowej.
+
 | Parametr | Wartość |
 |----------|---------|
 | Długość całkowita | 4400 mm |
@@ -64,6 +66,8 @@ W 2011 roku NV200 wygrał konkurs NYC Taxi of Tomorrow i od 2013 roku był jedyn
 - **Drzwi boczne** – przesuwane, po jednej (standard) lub obu stronach (opcja)
 
 ## Silniki Nissan NV200
+
+Gama silnikowa Nissan Nv200 obejmuje kilka wariantów mocy – wybór jednostki napędowej wpływa na osiągi, spalanie i koszty eksploatacji.
 
 | Silnik | Moc | Moment | Spalanie (śr.) | Rozrząd | Roczniki |
 |--------|-----|--------|----------------|---------|----------|
@@ -140,6 +144,8 @@ NV200 trzyma cenę na rynku wtórnym dzięki niezawodności i niskim kosztom eks
 Produkcja zakończona – ceny stabilne, bo brak nowego następcy (NV250 to tylko rebadge Kangoo).
 
 ## Porównanie NV200 z konkurencją
+
+Segment dostawczaków to rynek pełen alternatyw – Nissan Nv200 mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
 
 | Parametr | Nissan NV200 | Fiat Fiorino III | Citroën Berlingo II | Renault Kangoo II |
 |----------|-------------|-----------------|--------------------|--------------------|

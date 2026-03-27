@@ -46,6 +46,8 @@ Crafter II i MAN TGE powstają w zakładach VW Poznań we Wrześni – jednym z 
 
 ## Wymiary Volkswagen Crafter II
 
+Wymiary Volkswagen Crafter różnią się w zależności od wersji nadwoziowej – dotyczy to zarówno gabarytów zewnętrznych, jak i przestrzeni ładunkowej.
+
 | Parametr | L3H2 | L3H3 | L4H2 | L4H3 |
 |----------|------|------|------|------|
 | Długość całkowita | 5986 mm | 5986 mm | 6849 mm | 6849 mm |
@@ -62,6 +64,8 @@ Crafter II i MAN TGE powstają w zakładach VW Poznań we Wrześni – jednym z 
 L4H3 z 18,4 m³ to największa pojemność w segmencie – więcej niż Sprinter (17 m³) i Ducato (17 m³).
 
 ## Silniki Craftera
+
+Gama silnikowa Volkswagen Crafter obejmuje kilka wariantów mocy – wybór jednostki napędowej wpływa na osiągi, spalanie i koszty eksploatacji.
 
 | Silnik | Moc | Moment | Spalanie (śr.) | Skrzynia | Napęd |
 |--------|-----|--------|----------------|----------|-------|
@@ -140,6 +144,8 @@ Crafter jest jednym z najlepiej wyposażonych seryjnie dostawczaków:
 | Crafter II (2021–2024) | 120 000–180 000 zł |
 
 ## Porównanie Craftera z konkurentami
+
+Segment dostawczaków to rynek pełen alternatyw – Volkswagen Crafter mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
 
 | Parametr | VW Crafter II L3H3 | Mercedes Sprinter L2H2 | Fiat Ducato L3H2 | Iveco Daily L3H2 |
 |----------|-------------------|----------------------|------------------|------------------|

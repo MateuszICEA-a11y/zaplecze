@@ -109,6 +109,8 @@ Używane egzemplarze poprzedniej generacji (sprzedawane jako NV400) są wyraźni
 
 ## Porównanie Interstara z konkurencją
 
+Segment dostawczaków to rynek pełen alternatyw – Nissan Interstar mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
+
 | Parametr | Nissan Interstar L3H2 | Renault Master L3H2 | Opel Movano L3H2 | Mercedes Sprinter L2H2 | Ford Transit L3H2 |
 |----------|----------------------|---------------------|-------------------|------------------------|--------------------|
 | Silnik bazowy | 2.0 dCi 130 KM | 2.0 dCi 130 KM | 2.0 dCi 130 KM | 2.0 CDI 116 KM | 2.0 EcoBlue 130 KM |

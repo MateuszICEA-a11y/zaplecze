@@ -40,6 +40,8 @@ Każdy wariant oferuje 2 lub 3 miejsca siedzące. Wersja Van różni się od dos
 
 ## Wymiary i ładowność {#wymiary}
 
+Berlingo dostawczy występuje w dwóch długościach nadwozia – M i XL. Wersja M wystarczy do przewozu jednej europalety, a XL mieści dwie europalety ustawione jedna za drugą. Ładowność sięga 1000 kg w topowej konfiguracji.
+
 | Parametr           | Berlingo M  | Berlingo XL |
 |--------------------|------------|-------------|
 | Długość paki (mm)  | 1810       | 2160        |

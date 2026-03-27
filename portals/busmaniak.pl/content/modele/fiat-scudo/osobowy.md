@@ -99,6 +99,8 @@ Scudo Panorama z homologacją M1 (osobowy) pozwala na odliczenie 50% VAT przy za
 
 ## Ceny Scudo osobowego
 
+Wersje osobowe Panorama trzymają cenę znacznie lepiej niż furgony – po 5 latach Panorama traci 30–40% wartości, furgon 45–55%. Na rynku wtórnym Scudo II Panorama z lat 2012–2016 to sensowna propozycja w przedziale 30–55 tys. zł.
+
 | Generacja / Rocznik | Cena orientacyjna |
 |---------------------|-------------------|
 | Scudo II Panorama (2006–2012) | 18 000–35 000 zł |
@@ -110,6 +112,8 @@ Scudo Panorama z homologacją M1 (osobowy) pozwala na odliczenie 50% VAT przy za
 Wersje osobowe trzymają cenę znacznie lepiej niż furgony – po 5 latach Panorama traci 30–40% wartości, furgon 45–55%.
 
 ## Porównanie Scudo osobowego z konkurencją
+
+W segmencie 9-osobowych vanów Scudo Panorama rywalizuje z bliźniaczym Expert Traveller, premium Vito Tourerem i tańszym Traficem SpaceClass. Multivan T7 gra w innej lidze – osobowa platforma MQB, 7 miejsc i wyraźnie wyższa cena.
 
 | Parametr | Fiat Scudo III Panorama Long | Peugeot Expert Traveller Long | Mercedes Vito Tourer Long | Renault Trafic SpaceClass Long | VW Multivan T7 L1 |
 |----------|------------------------------|-------------------------------|--------------------------|-------------------------------|-------------------|

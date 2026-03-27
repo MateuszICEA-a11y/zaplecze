@@ -46,6 +46,8 @@ Platforma [PSA EMP2](https://en.wikipedia.org/wiki/PSA_EMP2_platform), bliźniak
 
 ## Wymiary Opel Vivaro C
 
+Wymiary Opel Vivaro różnią się w zależności od wersji nadwoziowej – dotyczy to zarówno gabarytów zewnętrznych, jak i przestrzeni ładunkowej.
+
 | Parametr | Compact (L1) | Standard (L2) | Long (L3) |
 |----------|-------------|---------------|-----------|
 | Długość całkowita | 4609 mm | 4959 mm | 5309 mm |
@@ -62,6 +64,8 @@ Platforma [PSA EMP2](https://en.wikipedia.org/wiki/PSA_EMP2_platform), bliźniak
 Vivaro C nie jest dostępny z podwyższonym dachem – stała wysokość wnętrza to maksymalnie 1397 mm.
 
 ## Silniki Vivaro
+
+Gama silnikowa Opel Vivaro obejmuje kilka wariantów mocy – wybór jednostki napędowej wpływa na osiągi, spalanie i koszty eksploatacji.
 
 | Silnik | Generacja | Moc | Moment | Spalanie (śr.) | Norma |
 |--------|-----------|-----|--------|----------------|-------|
@@ -118,6 +122,8 @@ Przy zakupie używanego Vivaro A lub B sprawdź stan turbiny i intercoolera – 
 
 ## Ceny Opla Vivaro
 
+Zakup Opel Vivaro to wydatek, który zależy od generacji, wersji silnikowej i stanu technicznego – rozstrzał cenowy na rynku wtórnym bywa spory.
+
 | Generacja / Rocznik | Cena orientacyjna |
 |---------------------|-------------------|
 | Vivaro A (2003–2010) | 10 000–25 000 zł |
@@ -129,6 +135,8 @@ Przy zakupie używanego Vivaro A lub B sprawdź stan turbiny i intercoolera – 
 | Vivaro-e (elektryczny) | od ok. 210 000 zł netto |
 
 ## Porównanie Vivaro z konkurentami
+
+Segment dostawczaków to rynek pełen alternatyw – Opel Vivaro mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
 
 | Parametr | Opel Vivaro C L2 | Peugeot Expert L2 | Renault Trafic L2 | Ford Transit Custom L2 | Mercedes Vito Long |
 |----------|-----------------|--------------------|--------------------|------------------------|--------------------|

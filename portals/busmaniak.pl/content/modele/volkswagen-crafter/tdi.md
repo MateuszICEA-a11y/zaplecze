@@ -102,6 +102,8 @@ Crafter 2.0 TDI 140 KM to mój pewnik w segmencie dużych vanów – dobrze zbil
 
 ## Koszty serwisu 2.0 TDI
 
+Utrzymanie Volkswagen Crafter generuje koszty, które warto znać przed zakupem – różnice między poszczególnymi operacjami serwisowymi bywają znaczące.
+
 | Czynność | Koszt orientacyjny | Interwał |
 |----------|-------------------|----------|
 | Wymiana oleju + filtr | 500–700 zł | 20 000 km / 1 rok |
@@ -116,6 +118,8 @@ Crafter 2.0 TDI 140 KM to mój pewnik w segmencie dużych vanów – dobrze zbil
 Koszty serwisowe Craftera są o 15–20% wyższe niż Ducato/Boxera, ale niższe niż [Sprintera](/modele/mercedes-sprinter/). Zamienniki aftermarket (LuK, Sachs, Bosch) obniżają rachunki o 30–40%.
 
 ## Porównanie silników: Crafter vs Sprinter vs Ducato
+
+Gama silnikowa Volkswagen Crafter obejmuje kilka wariantów mocy – wybór jednostki napędowej wpływa na osiągi, spalanie i koszty eksploatacji.
 
 | Parametr | VW Crafter 2.0 TDI 140 KM | Mercedes Sprinter 2.0 CDI 150 KM | Fiat Ducato 2.2 MJT 140 KM |
 |----------|---------------------------|----------------------------------|----------------------------|

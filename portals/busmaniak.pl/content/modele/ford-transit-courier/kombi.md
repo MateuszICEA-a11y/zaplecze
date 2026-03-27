@@ -32,6 +32,8 @@ Szerokość nadwozia wzrosła o 12,4 cm względem I generacji, co bezpośrednio 
 
 ## Wymiary i przestrzeń pasażerska
 
+Courier Kombi II generacji urósł w każdym wymiarze względem poprzednika – szerokość o 12,4 cm, a rozstaw osi o ponad 200 mm. Mimo większych gabarytów auto zachowuje średnicę zawracania 10,5 m, która pozwala manewrować w ciasnych uliczkach.
+
 | Parametr | Wartość |
 |----------|---------|
 | Długość | 4337 mm |
@@ -70,6 +72,8 @@ Każda wersja ma system SYNC 4 z bezprzewodowym Apple CarPlay i Android Auto.
 ![Ford Transit Courier Kombi – osobowa wersja z przeszklonymi bokami](/images/ford-transit-courier-kombi-hero.jpg)
 
 ## Kombi vs Van – kluczowe różnice
+
+Wybór między Kombi (M1) a Vanem (N1) to przede wszystkim decyzja podatkowa i użytkowa. Van z homologacją ciężarową daje pełne odliczenie VAT, ale traci na bezpieczeństwie biernym i miejscach siedzących. Kombi jest droższy o 10–15%, ale oferuje pełne wyposażenie M1.
 
 | Cecha | Kombi (M1) | [Van (N1)](/modele/ford-transit-courier/van/) |
 |-------|------------|----------------------------------------------|

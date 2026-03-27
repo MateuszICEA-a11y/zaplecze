@@ -36,6 +36,8 @@ Skrót L2H2 to długi furgon z wysokim dachem – najpopularniejszy wariant w fl
 
 ## Wymiary i ładowność Trafica furgon
 
+Wymiary Renault Trafic różnią się w zależności od wersji nadwoziowej – dotyczy to zarówno gabarytów zewnętrznych, jak i przestrzeni ładunkowej.
+
 | Wersja | Objętość | Udźwig | Palety | Dł. ładowni |
 |--------|----------|--------|--------|-------------|
 | L1H1   | 5,8 m³   | 1017 kg | 2     | ~2537 mm    |

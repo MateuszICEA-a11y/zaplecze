@@ -39,6 +39,8 @@ Wersja L2H2 jest klasycznym kompromisem – mieści się na parkingu wielopoziom
 
 ## Wymiary przestrzeni ładunkowej
 
+Pojemność i wymiary przestrzeni ładunkowej decydują o przydatności auta w codziennej pracy – kluczowe są długość podłogi i wysokość wewnętrzna.
+
 | Parametr | L2H2 | L3H2 | L4H2 |
 |----------|------|------|------|
 | Długość podłogi (mm) | 3083 | 3733 | 4383 |

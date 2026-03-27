@@ -60,6 +60,8 @@ Amarok I z V6 3.0 TDI 224 KM i automatem ZF to jeden z najlepszych pickupów, ja
 
 ## Spalanie – realne wartości
 
+Katalogowe zużycie paliwa i rzeczywiste spalanie Volkswagen Amarok to dwie różne wartości – szczególnie przy pełnym załadunku różnice sięgają nawet 2–3 l/100 km.
+
 | Silnik | Trasa pusto | Trasa z ładunkiem | Miasto | Z przyczepą 2 t |
 |--------|-----------|------------------|--------|----------------|
 | 2.0 TDI 163 KM | 7,5 l | 9,5 l | 10,5 l | 13–15 l |
@@ -90,6 +92,8 @@ Amarok II z silnikiem 2.0 TDI Forda ma pasek rozrządu w kąpieli olejowej zamia
 {{% /info %}}
 
 ## Koszty serwisu TDI
+
+Utrzymanie Volkswagen Amarok generuje koszty, które warto znać przed zakupem – różnice między poszczególnymi operacjami serwisowymi bywają znaczące.
 
 | Czynność | 2.0 TDI | 3.0 V6 TDI |
 |----------|---------|-----------|

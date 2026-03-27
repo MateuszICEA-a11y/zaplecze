@@ -19,6 +19,8 @@ lead: "Volkswagen Crafter II w wersji osobowej – Kombi – to pojazd do przewo
 ---
 ## Wersje osobowe Craftera
 
+Kluczowe parametry Volkswagen Crafter w tym zestawieniu obejmują m.in. wersja, długość, miejsca – różnice między wariantami mają realne przełożenie na codzienną eksploatację.
+
 | Wersja | Długość | Miejsca | Homologacja | DMC |
 |--------|---------|---------|-------------|-----|
 | Kombi L3 | 5986 mm | do 9 | M1 / M2 | do 3,5 t |

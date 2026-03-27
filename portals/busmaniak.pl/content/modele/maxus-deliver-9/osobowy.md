@@ -87,6 +87,8 @@ Deliver 9 osobowy to najtańszy bus pasażerski na rynku – i jednocześnie jed
 
 ## Ceny Deliver 9 osobowego
 
+Zakup Maxus Deliver 9 to wydatek, który zależy od generacji, wersji silnikowej i stanu technicznego – rozstrzał cenowy na rynku wtórnym bywa spory.
+
 | Konfiguracja | Cena od (netto) |
 |-------------|----------------|
 | 9-osobowy L3H2 (manual) | ok. 130 000 zł |
@@ -96,6 +98,8 @@ Deliver 9 osobowy to najtańszy bus pasażerski na rynku – i jednocześnie jed
 | e-Deliver 9 osobowy | od ok. 250 000 zł |
 
 ## Porównanie Maxus Deliver 9 osobowego z konkurencją
+
+Segment dostawczaków to rynek pełen alternatyw – Maxus Deliver 9 mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
 
 | Parametr | Maxus Deliver 9 (9-os.) | Mercedes Sprinter Tourer | Ford Transit Kombi | Fiat Ducato Kombi |
 |----------|------------------------|------------------------|--------------------|-------------------|

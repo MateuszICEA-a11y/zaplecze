@@ -108,6 +108,8 @@ W ruchu miejskim dodaj 25–40% do wartości trasowych. 2.0 TDI 150 KM w mieści
 
 ## Koszty serwisu TDI
 
+Utrzymanie Volkswagen Transporter generuje koszty, które warto znać przed zakupem – różnice między poszczególnymi operacjami serwisowymi bywają znaczące.
+
 | Czynność | Koszt orientacyjny | Interwał |
 |----------|-------------------|----------|
 | Wymiana oleju + filtr | 400–600 zł | 15 000 km / 1 rok |

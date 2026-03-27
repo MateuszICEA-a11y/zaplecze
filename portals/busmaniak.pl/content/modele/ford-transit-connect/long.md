@@ -84,6 +84,8 @@ Transit Connect L2 dostępny jest w kilku konfiguracjach:
 
 ## Ceny Transit Connect Long
 
+Na rynku wtórnym wersja Long kosztuje zaledwie 3–5 tys. zł więcej niż Short w tym samym stanie – niewielka dopłata za 24% większą pakę. Nowy Mk3 L2 Van startuje od ok. 120 tys. zł netto.
+
 | Wersja / Rocznik | Cena orientacyjna |
 |-------------------|-------------------|
 | Mk2 L2 Van (2014–2017) | 30 000–50 000 zł |
@@ -95,6 +97,8 @@ Transit Connect L2 dostępny jest w kilku konfiguracjach:
 Na rynku wtórnym Long kosztuje 3 000–5 000 zł więcej niż Short w tym samym stanie – niewielka dopłata za 24% więcej paki.
 
 ## Porównanie Transit Connect Long z konkurencją
+
+Connect Long wygrywa prowadzeniem i ergonomią kabiny, ale traci z Berlingo i Partnerem na pojemności paki (3,6 vs 3,9 m³). Kangoo oferuje najdłuższe nadwozie i unikalny system Open Sesame, a Caddy – najwyższy prestiż.
 
 | Parametr | Ford Transit Connect L2 | Peugeot Partner L2 | Citroën Berlingo L2 | Renault Kangoo Long | VW Caddy Maxi |
 |----------|------------------------|--------------------|---------------------|---------------------|---------------|

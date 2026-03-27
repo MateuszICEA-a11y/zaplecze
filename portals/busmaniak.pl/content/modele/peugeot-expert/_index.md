@@ -40,6 +40,8 @@ Trzecia generacja na platformie [EMP2](https://en.wikipedia.org/wiki/PSA_EMP2_pl
 
 ## Wymiary Experta III
 
+Wymiary Peugeot Expert różnią się w zależności od wersji nadwoziowej – dotyczy to zarówno gabarytów zewnętrznych, jak i przestrzeni ładunkowej.
+
 | Parametr | Compact (L1) | Standard (L2) | Long (L3) |
 |----------|-------------|---------------|-----------|
 | Długość całkowita | 4609 mm | 4956 mm | 5309 mm |
@@ -59,6 +61,8 @@ Rozwiązanie to pozwala na podniesienie skrajnego siedziska pasażera, co zwalni
 {{% /info %}}
 
 ## Silniki Experta
+
+Gama silnikowa Peugeot Expert obejmuje kilka wariantów mocy – wybór jednostki napędowej wpływa na osiągi, spalanie i koszty eksploatacji.
 
 | Silnik | Moc | Moment | Spalanie (śr.) | Skrzynia | Norma |
 |--------|-----|--------|----------------|----------|-------|
@@ -123,6 +127,8 @@ W gamie modelowej wyróżnia się luksusowy Expert Traveller, dedykowany do prze
 Zwróć uwagę na historię serwisową DPF – jego wymiana bywa kosztowna (1200–1800 zł).
 
 ## Porównanie Experta z konkurencją
+
+Segment dostawczaków to rynek pełen alternatyw – Peugeot Expert mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
 
 | Parametr | Peugeot Expert L2 | Citroën Jumpy L2 | Toyota ProAce L2 | Renault Trafic L2 | Ford Transit Custom L2 |
 |----------|-------------------|------------------|------------------|-------------------|------------------------|

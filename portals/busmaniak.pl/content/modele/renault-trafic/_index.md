@@ -31,6 +31,8 @@ Trafic pojawił się w 1980 roku jako własna konstrukcja Renault – zaprojekto
 
 ## Dane techniczne Renault Trafic {#wymiary}
 
+Znajomość danych technicznych pozwala ocenić, czy Renault Trafic spełni wymagania konkretnego zastosowania – od przewozu palet po codzienny serwis miejski.
+
 | Wersja | Długość | Rozstaw osi | Wys. ładowni | Poj. ładowni | Ładowność | Palety |
 |--------|---------|------------|-------------|-------------|----------|--------|
 | L1H1   | 5080 mm | 3098 mm    | 1971 mm     | 5,8 m³      | 1017 kg  | 2 pal  |
@@ -96,6 +98,8 @@ Co kilkadziesiąt tysięcy kilometrów warto zlecić sprawdzenie ciśnienia wtry
 
 ## Ceny Trafica
 
+Zakup Renault Trafic to wydatek, który zależy od generacji, wersji silnikowej i stanu technicznego – rozstrzał cenowy na rynku wtórnym bywa spory.
+
 | Rocznik / Generacja | Cena orientacyjna |
 |---------------------|-------------------|
 | Trafic II (2005–2010) | 15 000–30 000 zł |
@@ -106,6 +110,8 @@ Co kilkadziesiąt tysięcy kilometrów warto zlecić sprawdzenie ciśnienia wtry
 | Nowy Trafic L1H1 (2.0 dCi 120) | od ok. 135 000 zł netto |
 
 ## Porównanie Trafica z konkurencją {#konkurencja}
+
+Segment dostawczaków to rynek pełen alternatyw – Renault Trafic mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
 
 | Parametr | Renault Trafic L2 | Opel Vivaro L2 | Ford Transit Custom L2 | VW Transporter T6.1 L2 | Mercedes Vito Long |
 |----------|-------------------|----------------|------------------------|------------------------|---------------------|

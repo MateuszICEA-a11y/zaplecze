@@ -82,6 +82,8 @@ Blaszak to auto robocze – większość egzemplarzy na rynku wtórnym pochodzi 
 
 ## Ceny Vivaro blaszak
 
+Blaszak to najtańsza wersja nadwoziowa, ale ceny różnią się znacząco w zależności od rocznika i stanu technicznego.
+
 | Generacja / Rocznik | Cena orientacyjna |
 |---------------------|-------------------|
 | Vivaro A L1 (2003–2008) | 10 000–22 000 zł |
@@ -93,6 +95,8 @@ Blaszak to auto robocze – większość egzemplarzy na rynku wtórnym pochodzi 
 | Vivaro-e (elektryczny) | od ok. 210 000 zł netto |
 
 ## Porównanie Vivaro blaszak z konkurencją
+
+Segment dostawczaków to rynek pełen alternatyw – Opel Vivaro mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
 
 | Parametr | Opel Vivaro C Long | Renault Trafic L2 | Ford Transit Custom L2 | Peugeot Expert Long | Mercedes Vito Long |
 |----------|-------------------|-------------------|------------------------|--------------------|--------------------|

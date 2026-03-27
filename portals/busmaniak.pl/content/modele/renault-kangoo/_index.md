@@ -149,6 +149,8 @@ Kangoo III z opcją Open Sesame (brak słupka B) trzyma wartość lepiej niż we
 
 ## Porównanie Kangoo z konkurencją
 
+Segment dostawczaków to rynek pełen alternatyw – Renault Kangoo mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
+
 | Parametr | Renault Kangoo III L1 | Citroën Berlingo III L1 | Peugeot Partner III L1 | Fiat Doblo III L1 |
 |----------|----------------------|------------------------|----------------------|-------------------|
 | Długość | 4486 mm | 4403 mm | 4403 mm | 4403 mm |

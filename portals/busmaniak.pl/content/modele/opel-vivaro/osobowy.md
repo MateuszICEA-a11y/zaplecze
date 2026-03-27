@@ -43,6 +43,8 @@ Vivaro Life z 8 miejscami jest często wygodniejszy na długich trasach niż war
 
 ## Konfiguracje miejsc i długości
 
+Dostępne konfiguracje miejsc siedzących wpływają na liczbę pasażerów i pozostałą przestrzeń bagażową – wybór zależy od priorytetów użytkownika.
+
 | Wersja | Długość | Układ siedzeń | Liczba miejsc |
 |--------|---------|---------------|---------------|
 | Combi L1 Standard | 4960 mm | 2+3+3 | 8 |

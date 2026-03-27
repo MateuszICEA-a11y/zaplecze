@@ -34,6 +34,8 @@ Proace towarowy ma blaszane ściany, ściankę odgradzającą kabinę i twarde z
 
 ## Konfiguracje miejsc w Toyota Proace Verso
 
+Dostępne konfiguracje miejsc siedzących wpływają na liczbę pasażerów i pozostałą przestrzeń bagażową – wybór zależy od priorytetów użytkownika.
+
 | Konfiguracja | Rzędy | Nadwozie |
 |---|---|---|
 | 5 miejsc | 2 rzędy (kierowca + 4) | Medium lub Long |

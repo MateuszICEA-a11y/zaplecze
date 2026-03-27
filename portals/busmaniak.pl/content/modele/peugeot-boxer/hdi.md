@@ -38,6 +38,8 @@ Wśród użytkowników profesjonalnych Boxer HDI 2.2 o mocy 130 KM z roczników 
 
 ## Dane techniczne Peugeot Boxer HDI
 
+Parametry techniczne silnika wpływają na osiągi, spalanie i trwałość – warto je znać, zanim zdecydujesz się na konkretną wersję mocy.
+
 | Silnik | Kod | Moc | Moment | Lata | Rozrząd |
 |--------|-----|-----|--------|------|---------|
 | **2.0 HDI** | DW10UTD (RHV) | 84 KM | 192 Nm | 2002–2006 | Pasek |

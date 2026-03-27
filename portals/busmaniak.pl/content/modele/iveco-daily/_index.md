@@ -157,6 +157,8 @@ Dla flot mieszanych, które potrzebują jednego modelu w DMC 3,5–7,2 t, Daily 
 
 ## Ceny Daily
 
+Zakup Iveco Daily to wydatek, który zależy od generacji, wersji silnikowej i stanu technicznego – rozstrzał cenowy na rynku wtórnym bywa spory.
+
 | Rocznik / Wersja | Cena orientacyjna |
 |-------------------|-------------------|
 | Daily V (2006–2014) | 20 000–45 000 zł |

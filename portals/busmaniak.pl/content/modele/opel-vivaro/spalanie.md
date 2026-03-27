@@ -20,12 +20,16 @@ faq:
 ---
 ## Zużycie paliwa – silnik 1.5 D
 
+Silnik 1.5 w Opel Vivaro to propozycja dla szukających oszczędności – realne spalanie zależy jednak mocno od obciążenia i stylu jazdy.
+
 | Wariant | Miasto WLTP | Trasa WLTP | Realne (mieszane, ~500 kg) |
 |---------|-------------|------------|---------------------------|
 | **1.5 D 100 KM** | 8,2 l/100 km | 6,5 l/100 km | 7–8,5 l/100 km |
 | **1.5 D 120 KM** | 8,4 l/100 km | 6,7 l/100 km | 7,5–9 l/100 km |
 
 ## Zużycie paliwa – silnik 2.0 D
+
+Dwulitrowy diesel to kompromis między dynamiką a ekonomią – realne spalanie zależy od wersji mocy, obciążenia i stylu jazdy.
 
 | Wariant | Miasto WLTP | Trasa WLTP | Mieszane WLTP | Realne (trasa, ~500–800 kg) |
 |---------|-------------|------------|---------------|---------------------------|
@@ -37,6 +41,8 @@ Automat 8-biegowy w 2.0 D 177 KM jest zaskakująco oszczędny na trasie – dobr
 {{% /expert %}}
 
 ## Zużycie paliwa – silnik 1.6 CDTi (Vivaro B)
+
+Jednostka 1.6 w Opel Vivaro wypada przeciętnie pod względem spalania na tle konkurencji – kluczowe znaczenie ma tu obciążenie i trasa.
 
 | Wariant | Trasa | Miasto |
 |---------|-------|--------|

@@ -36,6 +36,8 @@ Starsze 2.0 HDI (DW10) o mocach do 136 KM słyną z trwałości, ale w nowszych 
 
 ## Dane techniczne i warianty mocy
 
+Znajomość danych technicznych pozwala ocenić, czy Peugeot Partner spełni wymagania konkretnego zastosowania – od przewozu palet po codzienny serwis miejski.
+
 | Wariant | Kod | Moment | 0–100 km/h | Vmax | Spalanie realne |
 |---------|-----|--------|------------|------|-----------------|
 | **75 KM** | DV6B | 145–190 Nm | 15–18 s | 150–158 km/h | 6–7,5 l/100 km |
@@ -87,6 +89,8 @@ Przy przebiegach powyżej 200 tys. km warto profilaktycznie sprawdzić ciśnieni
 ![Peugeot Partner HDI – silnik DV6 pod maską](/images/peugeot-partner-hdi-hero.jpg)
 
 ## Który rocznik Partnera HDI wybrać?
+
+Wybór rocznika to kompromis między ceną a ryzykiem ukrytych wad – poszczególne serie produkcyjne różnią się jakością wykonania i listą typowych usterek.
 
 | Rocznik | Cena | Uwagi |
 |---------|------|-------|

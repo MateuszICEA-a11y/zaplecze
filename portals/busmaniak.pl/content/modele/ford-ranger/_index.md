@@ -46,6 +46,8 @@ Najnowsza odsłona to głęboka modernizacja z wyraźnym pasem przednim w stylu 
 
 ## Wymiary i dane techniczne Rangera
 
+Ranger T6.2 jest oferowany w trzech konfiguracjach kabiny – Single Cab z najdłuższą paką (2315 mm), Super Cab z kompromisową przestrzenią za siedzeniami i Double Cab z pełnym drugim rzędem. Długość całkowita przekracza 5,3 m niezależnie od konfiguracji.
+
 | Parametr | Single Cab | Super Cab | Double Cab |
 |----------|-----------|-----------|------------|
 | Długość całkowita | 5363 mm | 5363 mm | 5370 mm |
@@ -74,6 +76,8 @@ Najnowsza odsłona to głęboka modernizacja z wyraźnym pasem przednim w stylu 
 | Holowanie (bez hamulca) | 750 kg | 750 kg |
 
 ## Silniki Rangera
+
+Gama silnikowa Rangera obejmuje sprawdzone diesle 2.0 EcoBlue, legendarnego 5-cylindrowego 3.2 Duratorq (wycofanego z produkcji) i benzynowe V6 3.0 EcoBoost zarezerwowane dla Raptora. Różnice w spalaniu i momencie obrotowym są znaczące.
 
 | Silnik | Moc | Moment | Spalanie (śr.) | Generacja | Norma |
 |--------|-----|--------|----------------|-----------|-------|
@@ -146,6 +150,8 @@ Wersje 2.0 EcoBlue wymagają regularnej kontroli paska rozrządu pracującego w 
 | T6.2 (od 2022) | 180 000–250 000 zł |
 
 ## Porównanie Rangera z konkurencją
+
+W europejskim segmencie pickupów Ranger walczy z bliźniaczym Amarokiem (wspólna platforma T6), niezależnym Hiluxem od Toyoty i budżetowym Isuzu D-Max. Kluczowe różnice to cena wejścia, topowy silnik i ładowność.
 
 | Parametr | Ford Ranger T6.2 | VW Amarok II | Toyota Hilux | Isuzu D-Max |
 |----------|-----------------|-------------|-------------|-------------|

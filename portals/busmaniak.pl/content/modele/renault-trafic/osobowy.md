@@ -37,6 +37,8 @@ Obie wersje mają przesuwane drzwi z obu stron i tylną klapę – to standard s
 
 ## Wymiary i konfiguracja siedzeń {#wymiary}
 
+Konfiguracja siedzeń i wymiary wnętrza wpływają na komfort pasażerów – dostępne warianty różnią się liczbą miejsc i rozstawem rzędów.
+
 | Wersja | Długość całkowita | Układ siedzeń | Maks. pasażerów |
 |--------|-------------------|---------------|-----------------|
 | L1H1 Passenger | 5080 mm | 2+3+3 | 8 |

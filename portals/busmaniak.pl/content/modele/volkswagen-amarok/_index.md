@@ -44,6 +44,8 @@ Przy pełnym obciążeniu kontroluj ciśnienie w tylnych oponach – Amarok ma t
 
 ## Silniki Amaroka
 
+Gama silnikowa Volkswagen Amarok obejmuje kilka wariantów mocy – wybór jednostki napędowej wpływa na osiągi, spalanie i koszty eksploatacji.
+
 | Silnik | Generacja | Moc | Moment | Spalanie (śr.) | Skrzynia |
 |--------|-----------|-----|--------|----------------|----------|
 | 2.0 TDI | II | 150 KM | 405 Nm | 8,0 l/100 km | 6-bieg. man. |
@@ -97,6 +99,8 @@ Kluczowe jest regularne serwisowanie oleju w skrzyniach automatycznych co 60–8
 Na rynku wtórnym Amarok trzyma cenę – dobre opinie i premium pozycjonowanie spowalniają deprecjację.
 
 ## Porównanie Amaroka z konkurencją
+
+Segment dostawczaków to rynek pełen alternatyw – Volkswagen Amarok mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
 
 | Parametr | VW Amarok II | Ford Ranger T6.2 | Toyota Hilux | Isuzu D-Max |
 |----------|-------------|-----------------|-------------|-------------|

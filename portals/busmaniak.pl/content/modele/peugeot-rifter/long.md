@@ -83,6 +83,8 @@ Wersja 7-osobowa dostępna od wersji Allure wzwyż. Active Long to wyłącznie 5
 
 ## Ceny Riftera Long
 
+Wersja Long kosztuje zazwyczaj kilka tysięcy złotych więcej od standardowej – dopłata ta przekłada się na większą przestrzeń ładunkową.
+
 | Wersja / Rocznik | Cena orientacyjna |
 |-------------------|-------------------|
 | Nowy Active Long (1.5 BlueHDi 100 man.) | od ok. 125 000 zł brutto |
@@ -95,6 +97,8 @@ Wersja 7-osobowa dostępna od wersji Allure wzwyż. Active Long to wyłącznie 5
 Wersja Long kosztuje ok. 10 000–15 000 zł więcej niż Standard w tej samej specyfikacji. Na rynku wtórnym różnica maleje do 5 000–8 000 zł, bo Long jest rzadszy i bardziej poszukiwany.
 
 ## Porównanie Peugeot Rifter Long z konkurencją
+
+Segment dostawczaków to rynek pełen alternatyw – Peugeot Rifter mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
 
 | Parametr | Peugeot Rifter Long | Citroën Berlingo XL | Opel Combo Life XL | Renault Grand Kangoo | VW Caddy Maxi |
 |----------|--------------------|--------------------|---------------------|----------------------|---------------|

@@ -51,6 +51,8 @@ W Combo E (od 2018) Opel porzucił oznaczenie CDTi. Nowe silniki to 1.5 Turbo D 
 
 ## Spalanie CDTi – realne wartości
 
+Silniki CDTi w Opel Combo mają ugruntowaną opinię na rynku – realne spalanie zależy od wersji mocy i warunków eksploatacji.
+
 | Silnik | Generacja | W trasie | W mieście | Mieszane |
 |--------|-----------|---------|-----------|---------|
 | 1.3 CDTi 75 KM | C | 4,5 l/100 km | 6,5 l/100 km | 5,2 l/100 km |
@@ -90,6 +92,8 @@ Przy zakupie Combo C z 1.3 CDTi posłuchaj silnika przy zimnym rozruchu – 3 se
 {{% /expert %}}
 
 ## Koszty serwisu CDTi
+
+Utrzymanie Opel Combo generuje koszty, które warto znać przed zakupem – różnice między poszczególnymi operacjami serwisowymi bywają znaczące.
 
 | Czynność | 1.3 CDTi | 1.7 CDTi | 1.6 CDTi |
 |----------|---------|---------|---------|

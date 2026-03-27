@@ -44,6 +44,8 @@ Wersja Trail z oponami All-Terrain i osłoną podwozia celuje w ekipy budowlane 
 
 ## Wymiary Transit Customa
 
+Transit Custom występuje w dwóch długościach – L1 (Short, 4972 mm) i L2 (Long, 5340 mm). Obie wersje mają identyczną szerokość i wysokość przestrzeni ładunkowej – zmienia się wyłącznie długość podłogi (2553 vs 2925 mm) i pojemność paki.
+
 | Parametr | L1 (Short) | L2 (Long) |
 |----------|-----------|-----------|
 | Długość całkowita | 4972 mm | 5340 mm |
@@ -62,6 +64,8 @@ Wersja Trail z oponami All-Terrain i osłoną podwozia celuje w ekipy budowlane 
 - **Średnica zawracania** – 11,6 m (L1), 12,8 m (L2)
 
 ## Silniki Ford Transit Custom
+
+Gen I opiera się wyłącznie na dieslu 2.0 EcoBlue (105–185 KM). Gen II wprowadza łagodną hybrydę 48V, plug-in hybrid 233 KM i w pełni elektryczną wersję E-Transit Custom 218 KM z zasięgiem 317 km WLTP.
 
 | Silnik | Generacja | Moc | Moment | Spalanie (śr.) | Skrzynia |
 |--------|-----------|-----|--------|----------------|----------|
@@ -129,6 +133,8 @@ Zbyt wczesny na historię usterek – model dopiero wchodzi na rynek wtórny. Zw
 | Gen II (od 2024) | od 140 000 zł |
 
 ## Porównanie Ford Transit Custom z konkurencją
+
+W segmencie średnich dostawczaków Transit Custom wygrywa największą paką (6,8 m³) i jako jedyny oferuje mild hybrid od fabryki. Transporter bierze wartością rezydualną, Vito napędem 4x4, a Trafic i Expert – ceną wejścia.
 
 | Parametr | Ford Transit Custom L2 | VW Transporter T6.1 L2 | Mercedes Vito Long | Renault Trafic L2 | Peugeot Expert L2 |
 |----------|------------------------|------------------------|--------------------|--------------------|-------------------|

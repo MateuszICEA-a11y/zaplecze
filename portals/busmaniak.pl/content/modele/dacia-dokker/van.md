@@ -109,6 +109,8 @@ Produkcja zakończona w marcu 2021. Rynek wtórny stabilny – Dokker Van nie tr
 
 ## Porównanie Dokkera Van z konkurencją
 
+Dokker Van rywalizuje z kompaktowymi dostawczakami o zbliżonej cenie, ale wyraźnie różnej kubaturze. Ładowność 970 kg to najwyższa wartość w zestawieniu – przewaga nad Kangoo i NV200 sięga 200–300 kg.
+
 | Parametr | Dacia Dokker Van | Fiat Fiorino III | Nissan NV200 Van | Renault Kangoo II Express |
 |----------|-----------------|-----------------|-----------------|--------------------------|
 | Długość | 4361 mm | 3864 mm | 4400 mm | 4282 mm |

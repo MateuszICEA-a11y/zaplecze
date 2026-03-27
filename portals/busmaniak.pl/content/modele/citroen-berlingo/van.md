@@ -52,6 +52,8 @@ Drzwi tylne dwuskrzydłowe otwierają się na 180° (opcjonalnie na 90° z bloka
 
 ## Ładowność i DMC {#ładowność}
 
+Dopuszczalna masa całkowita Berlingo Van zależy od wersji silnikowej i wybranego wyposażenia. Wersje z automatyczną skrzynią biegów są cięższe o ok. 30 kg, co nieznacznie obniża dostępną ładowność netto.
+
 | Parametr        | Van M        | Van XL       |
 |-----------------|-------------|-------------|
 | DMC (kg)        | 2100–2230   | 2130–2380   |

@@ -27,6 +27,8 @@ Różnica 400 mm długości i 400 mm rozstawu osi to nie tylko liczby w katalogu
 
 ## Wymiary wersji Long {#wymiary}
 
+Wymiary Renault Trafic różnią się w zależności od wersji nadwoziowej – dotyczy to zarówno gabarytów zewnętrznych, jak i przestrzeni ładunkowej.
+
 | Parametr | Trafic L2H1 | Trafic L2H2 | Trafic L1H1 |
 |---|---|---|---|
 | Długość całkowita | 5480 mm | 5480 mm | 5080 mm |

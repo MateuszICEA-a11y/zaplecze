@@ -72,6 +72,8 @@ Combo Maxi Cargo XL z dieslem 130 KM i automatem to de facto ten sam samochód c
 
 ## Ceny Combo Maxi
 
+Zakup Opel Combo to wydatek, który zależy od generacji, wersji silnikowej i stanu technicznego – rozstrzał cenowy na rynku wtórnym bywa spory.
+
 | Wersja / Rocznik | Cena orientacyjna |
 |-------------------|-------------------|
 | Combo D Maxi (2013–2018) | 20 000–40 000 zł |

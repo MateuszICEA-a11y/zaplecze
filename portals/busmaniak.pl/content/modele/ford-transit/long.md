@@ -22,6 +22,8 @@ lead: "Ford Transit Long to potoczna nazwa dla wersji L3 i L4 – dwóch najdłu
 ---
 ## Wymiary L3 i L4 – tabela porównawcza
 
+Różnica 300 mm w długości całkowitej między L3 a L4 przekłada się na niemal 900 mm więcej podłogi ładunkowej i dodatkowe miejsce na piątą europaletę. Oba warianty mają identyczną szerokość wnętrza – 1785 mm maksymalnie.
+
 | Parametr | L3 | L4 |
 |---|---|---|
 | Długość całkowita | 6437 mm | 6737 mm |

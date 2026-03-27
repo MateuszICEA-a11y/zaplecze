@@ -81,6 +81,8 @@ Jak każdy intensywnie eksploatowany bus, Ducato ma swoje słabsze punkty:
 
 ## Ceny Fiat Ducato brygadówka
 
+Nowa brygadówka L3H2 z silnikiem 140 KM to wydatek rzędu 140–160 tys. zł netto. Na rynku wtórnym ceny zaczynają się od ok. 57 tys. zł za starsze roczniki z 2.3 MultiJet i 7 miejscami.
+
 | Typ | Cena orientacyjna |
 |-----|-------------------|
 | Nowa L3H2, 140 KM | 140 000–160 000 zł netto |

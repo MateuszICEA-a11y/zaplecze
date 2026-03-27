@@ -56,6 +56,8 @@ Dwie europalety z towarem po 500 kg każda to już 1000 kg ładunku – maksimum
 
 ## Toyota Proace City Long vs Short – porównanie
 
+Różnice między wersjami długości przekładają się nie tylko na wymiary, ale też na ładowność, manewrowość i cenę – warto je zestawić punkt po punkcie.
+
 | Parametr | Long (L2) | Short (L1) |
 |---|---|---|
 | Długość całkowita | 4753 mm | 4403 mm |

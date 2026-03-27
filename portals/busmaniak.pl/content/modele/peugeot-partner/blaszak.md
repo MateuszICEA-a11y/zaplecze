@@ -87,6 +87,8 @@ Opcje szczególnie przydatne dla flot:
 
 ## Ceny Partnera blaszak
 
+Blaszak to najtańsza wersja nadwoziowa, ale ceny różnią się znacząco w zależności od rocznika i stanu technicznego.
+
 | Wersja / Rocznik | Cena orientacyjna |
 |-------------------|-------------------|
 | Partner II Van (2010–2015) | 12 000–25 000 zł |
@@ -99,6 +101,8 @@ Opcje szczególnie przydatne dla flot:
 | Używany Partner III Van (2022–2024) | 65 000–100 000 zł |
 
 ## Porównanie Partnera blaszak z konkurencją
+
+Segment dostawczaków to rynek pełen alternatyw – Peugeot Partner mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
 
 | Parametr | Peugeot Partner L2 | Citroën Berlingo L2 | Opel Combo Cargo XL | Renault Kangoo Long | Ford Transit Connect L2 |
 |----------|-------------------|---------------------|---------------------|---------------------|------------------------|

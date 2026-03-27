@@ -122,6 +122,8 @@ Jeśli interesuje cię większy dostawczak Toyoty – sprawdź [Toyota Proace](/
 
 ## Ceny Toyota ProAce City
 
+Zakup Toyota Proace City to wydatek, który zależy od generacji, wersji silnikowej i stanu technicznego – rozstrzał cenowy na rynku wtórnym bywa spory.
+
 | Rocznik / Wersja | Cena orientacyjna |
 |-------------------|-------------------|
 | ProAce City (2020–2022) | 55 000–80 000 zł |

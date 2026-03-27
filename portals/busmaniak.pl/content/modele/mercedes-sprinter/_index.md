@@ -163,6 +163,8 @@ Znajomość słabych punktów modelu przed zakupem używanego Sprintera pozwala 
 
 ## Porównanie Sprintera z konkurencją {#porownanie}
 
+Segment dostawczaków to rynek pełen alternatyw – Mercedes Sprinter mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
+
 | Cecha | Sprinter III (W907) | Ford Transit V363 | Iveco Daily (VI gen.) |
 |-------|--------------------|--------------------|----------------------|
 | Napęd | FWD / RWD / AWD | FWD / RWD / AWD | RWD / AWD |
@@ -185,6 +187,8 @@ Jeśli priorytetem jest niezawodność przy dużych przebiegach i jakość wykon
 {{% /info %}}
 
 ## Ceny Sprintera
+
+Zakup Mercedes Sprinter to wydatek, który zależy od generacji, wersji silnikowej i stanu technicznego – rozstrzał cenowy na rynku wtórnym bywa spory.
 
 | Generacja / Rocznik | Cena orientacyjna |
 |---------------------|-------------------|

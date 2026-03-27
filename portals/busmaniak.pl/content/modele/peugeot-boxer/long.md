@@ -19,6 +19,8 @@ lead: "Peugeot Boxer w wersjach Long – L3 i L4 – to wybór dla firm, które 
 ---
 ## Wersje L3 i L4 – charakterystyka
 
+Długie wersje nadwoziowe przeznaczone są przede wszystkim do transportu gabarytowych ładunków – różnią się wymiarami, masą własną i ceną.
+
 | Parametr | L3H2 | L3H3 | L4H3 |
 |---|---|---|---|
 | Długość całkowita | 5998 mm | 5998 mm | 6363 mm |

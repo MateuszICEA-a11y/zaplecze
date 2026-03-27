@@ -32,6 +32,8 @@ Auto popularne w transporcie VIP i jako rodzinny van, konkurujące z [VW Multiva
 
 ## Wymiary i warianty nadwozia
 
+Wymiary Mercedes Vito różnią się w zależności od wersji nadwoziowej – dotyczy to zarówno gabarytów zewnętrznych, jak i przestrzeni ładunkowej.
+
 | Wariant | Długość | Rozstaw osi | Bagażnik | DMC |
 |---------|---------|-------------|----------|-----|
 | **Compact** | 4895 mm | 3200 mm | 520–4800 l | 3100 kg |
@@ -90,6 +92,8 @@ Jeśli potrzebujesz jeszcze więcej przestrzeni, [Mercedes Sprinter osobowy](/mo
 - **Zawieszenie** – tuleje wahaczy przednich i łączniki stabilizatora zużywają się szybciej przy pełnym obciążeniu 9 osobami
 
 ## Ceny nowych i używanych Vito osobowego
+
+Rozpiętość cenowa Mercedes Vito zależy od rocznika, przebiegu i wersji wyposażenia – różnice między najtańszymi a najdroższymi egzemplarzami potrafią być znaczące.
 
 | Wersja | Cena nowa | Cena używana (2019–2024) |
 |--------|-----------|--------------------------|

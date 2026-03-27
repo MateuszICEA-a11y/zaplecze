@@ -62,6 +62,8 @@ XL z manualem to najlepsza konfiguracja dla firmy budowlanej: najtańszy w zakup
 
 ## XL vs XLT vs Wildtrak – porównanie wersji
 
+Dopłata od XL do XLT to ok. 30 tys. zł netto, a od XLT do Wildtraka kolejne 35 tys. zł. Różnice dotyczą wyłącznie wyposażenia i stylistyki – mechanika, napęd i bezpieczeństwo bierne są identyczne we wszystkich wersjach.
+
 | Cecha | XL | XLT | Wildtrak |
 |-------|-----|-----|----------|
 | Felgi | 16 cali stalowe | 17 cali aluminiowe | 18 cali aluminiowe |
@@ -76,6 +78,8 @@ XL z manualem to najlepsza konfiguracja dla firmy budowlanej: najtańszy w zakup
 Dopłata od XL do XLT to ok. 30 000 zł netto – LED, czujniki, kamera i aluminiowe felgi. Dla prywatnego użytkownika sensowna inwestycja. Dla floty 10 pickupów – 300 000 zł, które lepiej wydać na serwis kontraktowy.
 
 ## Ceny Ranger XL
+
+Na rynku wtórnym XL jest tańszy o 15–25% od Wildtraka w tym samym roczniku. Nowy XL Double Cab z 2.0 EcoBlue 170 KM startuje od ok. 145 tys. zł netto – najtaniej w gamie Rangera.
 
 | Rocznik / Generacja | Cena orientacyjna |
 |---------------------|-------------------|

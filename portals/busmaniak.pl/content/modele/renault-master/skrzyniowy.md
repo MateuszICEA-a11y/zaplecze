@@ -63,6 +63,8 @@ Specjalistyczne zastosowanie dla firm budowlanych i odpadów. Wymaga zabudowcy i
 
 ## Wymiary podwozia Renault Master skrzyniowy
 
+Wymiary podwozia determinują możliwości zabudowy – od wielkości platformy zależy, jakie nadwozie specjalistyczne można zamontować.
+
 | Parametr | Rozstaw 3682 mm | Rozstaw 4332 mm | 4332 mm Maxi |
 |----------|----------------|----------------|-------------|
 | Długość całkowita (mm) | ok. 5760 | ok. 6440 | ok. 6800 |

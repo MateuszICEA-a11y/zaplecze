@@ -105,6 +105,8 @@ Szczegółowe dane o homologacji M1 i różnicach między wersjami znajdziesz na
 
 ## Ceny Toyota Proace Verso
 
+Zakup Toyota Proace Verso to wydatek, który zależy od generacji, wersji silnikowej i stanu technicznego – rozstrzał cenowy na rynku wtórnym bywa spory.
+
 | Rocznik / Wersja | Cena orientacyjna |
 |-------------------|-------------------|
 | ProAce Verso I (2016–2019) | 55 000–85 000 zł |

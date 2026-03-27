@@ -89,6 +89,8 @@ Ducato jest solidny, ale ma kilka powtarzających się słabych punktów:
 
 ## Ceny Fiata Ducato 9-osobowego
 
+Używane 9-osobowe Ducato z 2.3 MultiJet z roczników 2010–2016 to popularna opcja dla przewoźników z budżetem 40–55 tys. zł. Nowy Ducato Panorama 2025 kosztuje od ok. 244 tys. zł brutto – ponad czterokrotnie więcej.
+
 | Rocznik | Silnik | Cena orientacyjna |
 |---------|--------|-------------------|
 | 2010–2016 | 2.3 MultiJet 130–150 KM | 40 000–55 000 zł |

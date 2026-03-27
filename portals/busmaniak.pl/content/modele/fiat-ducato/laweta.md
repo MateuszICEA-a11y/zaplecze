@@ -68,6 +68,8 @@ Większość autolawet na Ducato rejestruje się jako "pojazd specjalny – pomo
 
 ## Koszty zakupu i eksploatacji
 
+Gotowa autolaweta na Ducato to inwestycja od 200 tys. zł za nową konfigurację. Na rynku wtórnym ceny zaczynają się od ok. 45 tys. zł za egzemplarze z 3.0 MultiJet i dużym przebiegiem – ale platforma aluminiowa w dobrej kondycji pozwala na dalszą eksploatację.
+
 | Typ | Cena orientacyjna |
 |-----|-------------------|
 | Nowe podwozie z salonu | 150 000–180 000 zł netto |

@@ -97,6 +97,8 @@ Wersje robocze Cargo mogą być skonfigurowane jako furgony brygadowe, co pozwal
 
 ## Ceny Opla Combo
 
+Zakup Opel Combo to wydatek, który zależy od generacji, wersji silnikowej i stanu technicznego – rozstrzał cenowy na rynku wtórnym bywa spory.
+
 | Generacja | Lata produkcji | Cena używane | Cena nowe (netto) |
 |-----------|---------------|-------------|-------------------|
 | Combo C | 2001–2011 | 5 000–15 000 zł | – |
@@ -105,6 +107,8 @@ Wersje robocze Cargo mogą być skonfigurowane jako furgony brygadowe, co pozwal
 | e-Combo (elektryczne) | od 2021 | 90 000–130 000 zł | od ok. 160 000 zł |
 
 ## Porównanie Combo z konkurencją
+
+Segment dostawczaków to rynek pełen alternatyw – Opel Combo mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
 
 | Model | Ładowność | Pojemność paki | Diesel bazowy | Wersja elektr. | Cena nowego (netto) |
 |-------|-----------|---------------|--------------|----------------|---------------------|

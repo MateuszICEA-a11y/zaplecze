@@ -71,6 +71,8 @@ Kompaktowe gabaryty to główny argument za Fiorino. Parkujesz tam, gdzie więks
 
 ## Silniki Fiorino
 
+Gama silnikowa Fiorino III to przede wszystkim diesel 1.3 MultiJet w trzech wariantach mocy (75–95 KM) oraz benzyna 1.4 z opcją CNG. Diesel dominuje na rynku wtórnym – niskie spalanie i wysoki moment od dołu idealnie pasują do miejskiego dostawczaka.
+
 | Silnik | Moc | Moment | Spalanie (śr.) | Roczniki |
 |--------|-----|--------|----------------|----------|
 | 1.3 MultiJet 75 | 75 KM | 190 Nm | 4,4 l/100 km | 2007–2016 |
@@ -136,6 +138,8 @@ Przy oględzinach sprawdź działanie pompy ABS (częsta i droga usterka), stan 
 {{% /info %}}
 
 ## Porównanie Fiat Fiorino z konkurencją
+
+Fiorino dzieli platformę z Citroënem Nemo i Peugeotem Bipperem – wymiary i parametry tych trzech modeli są niemal identyczne. Kangoo Compact to niezależna konstrukcja z większą paką, ale wyższą ceną.
 
 | Parametr | Fiat Fiorino III | Citroën Nemo | Peugeot Bipper | Renault Kangoo II Compact |
 |----------|-----------------|--------------|----------------|--------------------------|

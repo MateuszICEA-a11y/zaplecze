@@ -38,6 +38,8 @@ Kluczowa zmiana to szerokość między nadkolami – w II generacji wynosi 1220 
 
 ## Wymiary i przestrzeń ładunkowa
 
+Skok generacyjny przyniósł Courierowi Vanowi prawie 50% wzrost objętości ładowni – z ok. 2,0 do 2,91 m³. Nowa szerokość między nadkolami (1220 mm) rozwiązuje kluczowy problem poprzednika: teraz bez kłopotów wchodzą 2 europalety.
+
 | Parametr | I generacja (2014–2023) | II generacja (od 2023) |
 |----------|------------------------|----------------------|
 | Długość całkowita | 4160 mm | 4337 mm |

@@ -81,6 +81,8 @@ Peugeot oferuje Partner Long w leasingu operacyjnym przez Peugeot Leasing Polska
 
 ## Porównanie Partner Long vs Berlingo L2 vs Combo XL
 
+Różnice między wersjami długości przekładają się nie tylko na wymiary, ale też na ładowność, manewrowość i cenę – warto je zestawić punkt po punkcie.
+
 | | Partner L2 | Berlingo L2 | Combo XL |
 |---|---|---|---|
 | Długość | 4753 mm | 4753 mm | 4753 mm |

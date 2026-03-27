@@ -78,6 +78,8 @@ Wyposażenie Limited:
 
 ## Tourneo vs VW Multivan
 
+Tourneo Custom i Multivan T7 to dwa zupełnie różne podejścia do segmentu vanów osobowych – Ford stawia na przestrzeń i cenę, VW na komfort jazdy i prestiż. Tourneo jest dłuższy, pojemniejszy i tańszy o ok. 30 tys. zł.
+
 | Cecha | Tourneo Custom L2 (gen II) | VW Multivan T7 |
 |---|---|---|
 | Długość | 5340 mm | 4973 mm |

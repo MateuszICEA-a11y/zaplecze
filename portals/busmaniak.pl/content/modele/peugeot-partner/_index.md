@@ -46,6 +46,8 @@ Trzecia generacja na platformie [EMP2](https://en.wikipedia.org/wiki/PSA_EMP2_pl
 
 ## Wymiary Partnera III
 
+Wymiary Peugeot Partner różnią się w zależności od wersji nadwoziowej – dotyczy to zarówno gabarytów zewnętrznych, jak i przestrzeni ładunkowej.
+
 | Parametr | Short (L1) | Long (L2) |
 |----------|-----------|-----------|
 | Długość całkowita | 4403 mm | 4753 mm |
@@ -63,6 +65,8 @@ Trzecia generacja na platformie [EMP2](https://en.wikipedia.org/wiki/PSA_EMP2_pl
 - **FlexCargo** – otwór w przegrodzie pozwala na transport przedmiotów do 3,44 m (L2)
 
 ## Silniki Peugeot Partner
+
+Gama silnikowa Peugeot Partner obejmuje kilka wariantów mocy – wybór jednostki napędowej wpływa na osiągi, spalanie i koszty eksploatacji.
 
 | Silnik | Moc | Moment | Spalanie (śr.) | Skrzynia | Norma |
 |--------|-----|--------|----------------|----------|-------|
@@ -134,6 +138,8 @@ e-Partner spełnia wymagania najwyższej kategorii emisji w polskich SCT (Warsza
 | Partner III (2022–2024) | 65 000–100 000 zł |
 
 ## Porównanie Partnera z konkurencją
+
+Segment dostawczaków to rynek pełen alternatyw – Peugeot Partner mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
 
 | Model | Ładowność | Paka | Diesel bazowy | Elektr. | Cena nowego Van L1 (netto) |
 |-------|-----------|------|--------------|---------|----------------------------|

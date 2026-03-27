@@ -34,6 +34,8 @@ Rifter najlepiej z całej rodziny K9 trzyma wartość rezydualną na rynku wtór
 
 ## Wymiary Riftera
 
+Wymiary Peugeot Rifter różnią się w zależności od wersji nadwoziowej – dotyczy to zarówno gabarytów zewnętrznych, jak i przestrzeni ładunkowej.
+
 | Parametr | Standard | Long |
 |----------|----------|------|
 | Długość całkowita | 4403 mm | 4753 mm |
@@ -50,6 +52,8 @@ Rifter najlepiej z całej rodziny K9 trzyma wartość rezydualną na rynku wtór
 - **Prześwit** – 167 mm (wersja Allure), 200 mm (wersja 4x4 Dangel)
 
 ## Silniki Peugeot Rifter
+
+Gama silnikowa Peugeot Rifter obejmuje kilka wariantów mocy – wybór jednostki napędowej wpływa na osiągi, spalanie i koszty eksploatacji.
 
 | Silnik | Moc | Moment | Spalanie (śr.) | Skrzynia | Norma |
 |--------|-----|--------|----------------|----------|-------|
@@ -111,6 +115,8 @@ Na tle rywali kombivan wyróżnia się bogatszym wyposażeniem seryjnym i najlep
 Bliźniaczy [Peugeot Partner](/modele/peugeot-partner/) w adaptacjach osobowych kosztuje zazwyczaj kilka–kilkanaście tysięcy złotych taniej.
 
 ## Porównanie Riftera z konkurencją
+
+Segment dostawczaków to rynek pełen alternatyw – Peugeot Rifter mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
 
 | Parametr | Peugeot Rifter Long | Citroën Berlingo Long | Opel Combo Life Long | Renault Kangoo Long | VW Caddy Maxi |
 |----------|--------------------|-----------------------|---------------------|---------------------|---------------|

@@ -156,6 +156,8 @@ Transit wygrywa przede wszystkim dostępnością serwisu i części – warsztat
 
 ## Ceny Transita
 
+Transit VII (2006–2013) to najtańsza opcja na rynku wtórnym – ceny zaczynają się od 15 tys. zł, ale ryzyko łańcucha rozrządu i korozji rośnie z wiekiem. Nowy Transit L2H2 z 2.0 EcoBlue 130 KM kosztuje od 160 tys. zł netto.
+
 | Generacja / Rocznik | Cena orientacyjna |
 |---------------------|-------------------|
 | Transit VII (2006–2013) | 15 000–35 000 zł |

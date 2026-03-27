@@ -109,6 +109,8 @@ Ogólna ocena użytkowników: 7,5/10. Silnik dla tych, którzy potrzebują mocy 
 
 ## Koszty serwisu Opel Vivaro 2.5 CDTi
 
+Utrzymanie Opel Vivaro generuje koszty, które warto znać przed zakupem – różnice między poszczególnymi operacjami serwisowymi bywają znaczące.
+
 | Czynność | Koszt | Interwał |
 |----------|-------|----------|
 | Wymiana oleju (8 l) + filtr | 350–500 zł | 15 000 km |

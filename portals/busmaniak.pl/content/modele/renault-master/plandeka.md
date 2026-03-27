@@ -53,6 +53,8 @@ Typowa zabudowa plandekowa na Mastera (skrzynia stalowa + pałąki + plandeka br
 
 ## Wymiary platformy i zabudowy
 
+Wymiary Renault Master różnią się w zależności od wersji nadwoziowej – dotyczy to zarówno gabarytów zewnętrznych, jak i przestrzeni ładunkowej.
+
 | Parametr | Rozstaw 3682 mm (L2) | Rozstaw 4332 mm (L3) |
 |----------|---------------------|---------------------|
 | Długość skrzyni wewn. (mm) | ok. 3000 | ok. 3600 |
@@ -78,6 +80,8 @@ W wersji plandekowej zaleca się wyższe moce silnika ze względu na większą m
 Skrzynia manualna jest standardem. Automat EDC nie jest polecany w wersji skrzyniowej przy ciągłym jeżdżeniu z pełnym ładunkiem – manualna przekładnia daje lepszą kontrolę momentu obrotowego przy ruszaniu.
 
 ## Porównanie z plandeką na innych modelach
+
+Zestawienie z bezpośrednimi konkurentami pokazuje, w których aspektach Renault Master wypada lepiej, a gdzie trzeba iść na kompromis.
 
 | Model | Ładowność L3 z plandeką | DMC max | Cena podwozia netto |
 |-------|------------------------|---------|---------------------|

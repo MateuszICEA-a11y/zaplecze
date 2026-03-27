@@ -41,6 +41,8 @@ Od trzeciej generacji (2006+) nadwozia Ducato są w pełni ocynkowane. Problem k
 
 ## Fiat Ducato plandeka – wymiary i pojemność
 
+Zabudowa plandeki znacząco zwiększa użytkową kubaturę w porównaniu z zamkniętym furgonem – wersja 10-paletowa osiąga 23–25 m³ wobec 17 m³ w standardowym L4H3. Wadą jest niższa ładowność netto ze względu na masę zabudowy i opcjonalnej windy.
+
 | Parametr | Plandeka 8 EP (L3/L4) | Plandeka 10 EP (L4 Maxi) |
 | :--- | :--- | :--- |
 | Długość wewnętrzna | 4200–4500 mm | 4850–4900 mm |

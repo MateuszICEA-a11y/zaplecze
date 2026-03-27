@@ -42,6 +42,8 @@ Aktualna generacja – największy skok technologiczny. Trzy rodzaje napędu: FW
 
 ## Wymiary Vito W447
 
+Wymiary Mercedes Vito różnią się w zależności od wersji nadwoziowej – dotyczy to zarówno gabarytów zewnętrznych, jak i przestrzeni ładunkowej.
+
 | Parametr | Compact | Long | Extra Long |
 |----------|---------|------|------------|
 | Długość całkowita | 4895 mm | 5140 mm | 5370 mm |
@@ -56,6 +58,8 @@ Aktualna generacja – największy skok technologiczny. Trzy rodzaje napędu: FW
 - **Wysokość dachu** – 1910 mm (mieści się w większości parkingów podziemnych)
 
 ## Silniki Mercedes Vito
+
+Gama silnikowa Mercedes Vito obejmuje kilka wariantów mocy – wybór jednostki napędowej wpływa na osiągi, spalanie i koszty eksploatacji.
 
 | Silnik | Oznaczenie | Moc | Moment | Spalanie (śr.) | Roczniki |
 |--------|-----------|-----|--------|----------------|----------|
@@ -136,6 +140,8 @@ Furgon z drugim rzędem siedzeń (5–6 miejsc) i oddzieloną przestrzenią towa
 | W447 (2020–2024) OM654 | 110 000–160 000 zł |
 
 ## Porównanie Mercedes Vito z konkurencją
+
+Segment dostawczaków to rynek pełen alternatyw – Mercedes Vito mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
 
 | Parametr | Mercedes Vito Long | VW Transporter T6.1 L2 | Ford Transit Custom L2 | Renault Trafic L2 |
 |----------|--------------------|------------------------|------------------------|-------------------|

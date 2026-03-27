@@ -44,6 +44,8 @@ faq:
 
 ## Wersje mocy Caddy 2.0 TDI {#wersje-mocy}
 
+Różnice między wersjami mocy Volkswagen Caddy nie ograniczają się do koni mechanicznych – wpływają też na moment obrotowy, spalanie i cenę na rynku wtórnym.
+
 | Wersja   | Moc     | Moment  | Skrzynia     | Generacja |
 |----------|---------|---------|-------------|-----------|
 | 2.0 TDI  | 75 KM   | 225 Nm  | manual 5-bieg | IV/V      |
@@ -105,6 +107,8 @@ Wady:
 Na tle konkurencji Caddy TDI oferuje lepsze prowadzenie i wyciszenie niż [Berlingo HDI](/modele/citroen-berlingo/1-6-hdi/), ale za wyższą cenę zakupu i serwisu.
 
 ## Koszty serwisu Caddy TDI {#koszty}
+
+Utrzymanie Volkswagen Caddy generuje koszty, które warto znać przed zakupem – różnice między poszczególnymi operacjami serwisowymi bywają znaczące.
 
 | Czynność                  | Koszt (zł)   | Częstotliwość    |
 |---------------------------|-------------|-----------------|

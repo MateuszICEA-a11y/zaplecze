@@ -42,6 +42,8 @@ Prawdziwa brygadówka to często nie fabryczna konfiguracja, ale zabudowa zewnę
 
 ## Ładowność i DMC
 
+Ładowność i dopuszczalna masa całkowita to kluczowe parametry przy wyborze busa do pracy – ich przekroczenie grozi mandatem i utratą gwarancji.
+
 | Wersja | Długość całkowita | Liczba miejsc | DMC | Ładowność |
 |--------|-------------------|---------------|-----|-----------|
 | Combi L1 | 4960 mm | 6 | 2800 kg | 700–900 kg |

@@ -30,6 +30,8 @@ Od wersji Cargo (dostawczej) różni się przede wszystkim konfiguracją wnętrz
 
 ## Wymiary Caddy osobowego {#wymiary}
 
+Wymiary Volkswagen Caddy różnią się w zależności od wersji nadwoziowej – dotyczy to zarówno gabarytów zewnętrznych, jak i przestrzeni ładunkowej.
+
 | Parametr              | Caddy       | Caddy Maxi  |
 |-----------------------|------------|-------------|
 | Długość (mm)          | 4500       | 4853        |

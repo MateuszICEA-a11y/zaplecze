@@ -89,6 +89,8 @@ JTD to silnik, który za mało kosztuje w eksploatacji, żeby go nie lubić. Wid
 
 ## Porównanie z nowszymi silnikami MultiJet
 
+JTD w konfrontacji z nowszymi MultiJetami wygrywa brakiem DPF i niską ceną zakupu, ale przegrywa normą emisji i wyższym spalaniem. Przy wyborze między generacjami kluczowe jest planowane zastosowanie i budżet.
+
 | Parametr | 1.9 JTD | 1.3 MultiJet | 1.6 MultiJet 120 KM |
 |---|---|---|---|
 | Moc (KM) | 100 | 90/95 | 120 |

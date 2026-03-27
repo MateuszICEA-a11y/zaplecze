@@ -20,6 +20,8 @@ faq:
 ---
 ## Wymiary zewnętrzne
 
+Gabaryt zewnętrzny Opel Vivaro determinuje, czy auto zmieści się w garażu, na parkingu podziemnym i w ciasnych uliczkach – warto znać dokładne wartości przed zakupem.
+
 | Parametr | Standard (L1) | Long (L2) |
 |----------|---------------|-----------|
 | Długość całkowita | 4960 mm | 5310 mm |
@@ -49,6 +51,8 @@ Szerokość między nadkolami 1268 mm to wartość, na którą trzeba zwrócić 
 
 ## Wymiary otworu załadunkowego
 
+Wymiary otworu załadunkowego decydują o tym, jakie ładunki da się wciągnąć do środka – paletyzacja i europalety mają tu kluczowe znaczenie.
+
 | Otwór | Szerokość | Wysokość |
 |-------|-----------|----------|
 | Drzwi tylne | 1544 mm | 1328 mm |
@@ -67,6 +71,8 @@ Dane dla Vivaro C L1 z silnikiem 1.5 D 100 KM:
 - **DMC Heavy** – 3100 kg → ładowność ~1285 kg
 
 ## Porównanie z konkurencją
+
+Segment dostawczaków to rynek pełen alternatyw – Opel Vivaro mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
 
 | Model | Długość L1 | Objętość L1 |
 |---|---|---|

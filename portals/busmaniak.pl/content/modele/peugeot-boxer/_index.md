@@ -34,6 +34,8 @@ Platforma Sevel Sud:
 
 ## Silniki Boxera
 
+Gama silnikowa Peugeot Boxer obejmuje kilka wariantów mocy – wybór jednostki napędowej wpływa na osiągi, spalanie i koszty eksploatacji.
+
 | Silnik | Roczniki | Moc | Moment | Spalanie (śr.) | Skrzynia | Norma |
 |--------|----------|-----|--------|----------------|----------|-------|
 | 2.2 HDi | 2006–2014 | 100 KM | 250 Nm | 8,0 l/100 km | 6-bieg. man. | Euro 4 |
@@ -95,6 +97,8 @@ Serwis Boxera dostępny w sieci Peugeot, Fiat i Citroën – wszystkie trzy mark
 
 ## Ceny Boxera
 
+Zakup Peugeot Boxer to wydatek, który zależy od generacji, wersji silnikowej i stanu technicznego – rozstrzał cenowy na rynku wtórnym bywa spory.
+
 | Rocznik / Wersja | Cena orientacyjna |
 |-------------------|-------------------|
 | Boxer I (2000–2006) | 8 000–18 000 zł |
@@ -106,6 +110,8 @@ Serwis Boxera dostępny w sieci Peugeot, Fiat i Citroën – wszystkie trzy mark
 | e-Boxer L2H2 | od ok. 280 000 zł netto |
 
 ## Porównanie Boxera z konkurencją
+
+Segment dostawczaków to rynek pełen alternatyw – Peugeot Boxer mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
 
 | Parametr | Peugeot Boxer L3H2 | Fiat Ducato L3H2 | Citroën Jumper L3H2 | Opel Movano C L3H2 | Mercedes Sprinter L2H2 |
 |----------|-------------------|------------------|---------------------|--------------------|----------------------|

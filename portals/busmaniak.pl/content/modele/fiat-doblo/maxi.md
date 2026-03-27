@@ -32,6 +32,8 @@ Zewnętrznie Maxi różni się wydłużonym tyłem. Kabina kierowcy i cała prze
 
 ## Wymiary Fiat Doblò Maxi
 
+Wersja Maxi jest o ok. 350 mm dłuższa od standardowej w obu generacjach. Przekłada się to na pojemność ładunkową do 4,4 m³ w gen III – o ponad litr (1000 l) więcej niż w krótkiej odmianie.
+
 | Wersja         | Długość całkowita | Pojemność ładunkowa | Ładowność    |
 |----------------|-------------------|---------------------|--------------|
 | Standard       | 4390 mm           | 3,4 m³              | do ~900 kg   |

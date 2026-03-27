@@ -93,6 +93,8 @@ DPF w silnikach MultiJet regeneruje się automatycznie podczas jazdy autostradow
 
 ## Koszty serwisu – porównanie silników
 
+Różnice w kosztach serwisu między silnikami MultiJet są znaczące – 1.3 bez dwumasowego koła zamachowego i DPF jest najtańszy, a 2.0 z pełnym pakietem filtrów i cięższym napędem najdroższy. Przy 200 tys. km przebiegu ta różnica to kilka tysięcy złotych.
+
 | Element | 1.3 MultiJet | 1.6 MultiJet | 2.0 MultiJet |
 |---|---|---|---|
 | Olej + filtr (co 15 tys. km) | ok. 250–350 zł | ok. 300–400 zł | ok. 350–450 zł |

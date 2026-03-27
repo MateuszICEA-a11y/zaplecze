@@ -41,6 +41,8 @@ Trzecia generacja korzysta z platformy EMP2 – lepsza sztywność nadwozia prze
 
 ## Dane techniczne Citroën Berlingo {#dane-techniczne}
 
+Berlingo III jest dostępne w dwóch długościach nadwozia – M i XL – zarówno w wersji osobowej, jak i dostawczej Van. Różnica w rozstawie osi wynosi 190 mm, co przekłada się na zauważalnie większy bagażnik i przestrzeń ładunkową w wersji XL.
+
 | Wymiar | Berlingo M (osobowy) | Berlingo XL (osobowy) | Berlingo Van M | Berlingo Van XL |
 |--------|----------------------|-----------------------|----------------|-----------------|
 | Długość (mm) | 4403 | 4753 | 4403 | 4753 |
@@ -51,6 +53,8 @@ Trzecia generacja korzysta z platformy EMP2 – lepsza sztywność nadwozia prze
 DMC: 2100–2400 kg. Ładowność [Berlingo dostawczego](/modele/citroen-berlingo/dostawczy/): 650–1000 kg. Bagażnik osobowego: 775 l (M) do 1050 l ([XL](/modele/citroen-berlingo/xl/)).
 
 ## Silniki Berlingo {#silniki}
+
+Berlingo oferuje szeroką gamę napędów – od oszczędnego 1.5 BlueHDI 75 KM po elektrycznego ë-Berlingo z silnikiem 136 KM i baterią 50 kWh. W II generacji dominowały sprawdzone 1.6 HDI, a w III generacji całą gamę odświeżono pod kątem normy Euro 6d.
 
 | Silnik | Generacja | Moc | Moment | Spalanie (śr.) | Norma |
 |--------|-----------|-----|--------|----------------|-------|
@@ -74,6 +78,8 @@ DMC: 2100–2400 kg. Ładowność [Berlingo dostawczego](/modele/citroen-berling
 
 ## Porównanie Citroën Berlingo z konkurencją {#konkurencja}
 
+W segmencie kombivanów XL Berlingo rywalizuje z bliźniakami platformy EMP2 (Rifter, Combo) oraz niezależnymi konstrukcjami VW Caddy i Renault Kangoo. Kluczowe różnice dotyczą bagażnika, dostępności wersji elektrycznej i ceny.
+
 | Parametr | Citroën Berlingo III XL | Peugeot Rifter Long | Opel Combo Life XL | VW Caddy Maxi | Renault Kangoo Long |
 |----------|------------------------|--------------------|--------------------|---------------|---------------------|
 | Długość | 4753 mm | 4753 mm | 4753 mm | 4853 mm | 4911 mm |
@@ -90,6 +96,8 @@ Kupując używane Berlingo, zwróć uwagę na stan zawieszenia, szczególnie w e
 {{% /expert %}}
 
 ## Ceny Berlingo
+
+Rozpiętość cenowa Berlingo na rynku wtórnym jest ogromna – od 5 tys. zł za I generację z 2000 roku po ponad 100 tys. zł za młode III generacji z silnikiem BlueHDI. Nowy ë-Berlingo startuje od 170 tys. zł netto.
 
 | Generacja / Rocznik | Cena orientacyjna |
 |---------------------|-------------------|

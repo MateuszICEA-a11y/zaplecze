@@ -34,6 +34,8 @@ Konstrukcja Maxi od początku projektowana była pod większe obciążenia. W Po
 
 ## Fiat Ducato Maxi – wymiary przestrzeni ładunkowej
 
+Przestrzeń ładunkowa Maxi to ponad 4 metry długości podłogi i szerokość 1870 mm, która pozwala na swobodny załadunek europalet w poprzek. Wersja L4H3 z wysokością 2172 mm umożliwia pracę wewnątrz ładowni w pozycji stojącej.
+
 | Parametr | L4H2 (XL) | L4H3 (XL High Roof) |
 | :--- | :--- | :--- |
 | **Długość paki** | 4070 mm | 4070 mm |
@@ -47,6 +49,8 @@ Konstrukcja Maxi od początku projektowana była pod większe obciążenia. W Po
 Szerokość 1422 mm między nadkolami oznacza, że europalety wchodzą w poprzek bez kombinowania.
 
 ## Ładowność i DMC
+
+Ładowność Ducato Maxi zależy od wybranego DMC – wersja z 3500 kg (kat. B) uniesie ok. 1400–1600 kg, a wariant z DMC 4250 kg (kat. C1) pozwala na załadunek do 2 ton.
 
 | Wersja | DMC | Ładowność |
 |--------|-----|-----------|

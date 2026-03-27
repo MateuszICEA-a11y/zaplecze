@@ -101,6 +101,8 @@ Na tle konkurencji – [Opla Movano](/modele/opel-movano/) z silnikiem 2.3 dCi R
 
 ## Koszty serwisu Peugeot Boxer 2.2 HDi
 
+Utrzymanie Peugeot Boxer generuje koszty, które warto znać przed zakupem – różnice między poszczególnymi operacjami serwisowymi bywają znaczące.
+
 | Czynność | Koszt | Interwał |
 |----------|-------|----------|
 | Wymiana oleju + filtr | 300–450 zł | 20 000 km / 1 rok |

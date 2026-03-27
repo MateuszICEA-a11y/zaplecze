@@ -109,6 +109,8 @@ Automat EDC w dostawczakach wymaga regularnej wymiany oleju – Renault formalni
 
 ## Koszty serwisu
 
+Utrzymanie Renault Trafic generuje koszty, które warto znać przed zakupem – różnice między poszczególnymi operacjami serwisowymi bywają znaczące.
+
 | Serwis | Interwał | Koszt |
 |---|---|---|
 | Olej silnikowy z filtrem | co 15–20 tys. km | 350–500 zł |

@@ -49,6 +49,8 @@ Od generacji T7 to dwa różne samochody. Multivan T7 stoi na platformie MQB (os
 
 ## Silniki Multivana
 
+Gama silnikowa Volkswagen Multivan obejmuje kilka wariantów mocy – wybór jednostki napędowej wpływa na osiągi, spalanie i koszty eksploatacji.
+
 | Silnik | Moc | Moment | Spalanie (śr.) | Skrzynia | Napęd |
 |--------|-----|--------|----------------|----------|-------|
 | 1.5 TSI | 136 KM | 220 Nm | 8,0 l/100 km | 7-bieg. DSG | FWD |
@@ -101,6 +103,8 @@ Multivan T7 jako "van" to kompromis. Masz luksusowe wnętrze i prowadzenie osob�
 | T7 Multivan (od 2021) | 200 000–300 000 zł |
 
 ## Porównanie Multivana z konkurencją
+
+Segment dostawczaków to rynek pełen alternatyw – Volkswagen Multivan mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
 
 | Parametr | VW Multivan T7 L1 | Mercedes V-Klasa Long | Ford Tourneo Custom L1 | Toyota ProAce Verso Long |
 |----------|-------------------|----------------------|------------------------|--------------------------|

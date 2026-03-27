@@ -69,6 +69,8 @@ Rifter i Partner Tepee są rejestrowane jako samochody osobowe (kategoria M1). Z
 
 ## Porównanie Tepee vs Rifter dla kupującego używane
 
+Różnice między wersjami długości przekładają się nie tylko na wymiary, ale też na ładowność, manewrowość i cenę – warto je zestawić punkt po punkcie.
+
 | Cecha | Partner Tepee (2012–2018) | Rifter (2018+) |
 |---|---|---|
 | Platforma | M49 | EMP2 |

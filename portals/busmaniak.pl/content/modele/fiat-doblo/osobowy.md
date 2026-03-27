@@ -61,6 +61,8 @@ Silniki gen II w wersji osobowej:
 
 ## Przestrzeń dla pasażerów w Fiacie Doblò osobowym
 
+Doblò Panorama jest dostępne w trzech konfiguracjach miejsc – od 5-osobowej krótkiej wersji po 7-osobowe Maxi z trzecim rzędem składanym w podłogę. Pojemność bagażnika drastycznie spada przy pełnym obłożeniu – z 2693 l do zaledwie 100 l.
+
 | Konfiguracja             | Miejsca | Bagażnik (kanapa złożona) | Drzwi boczne |
 |--------------------------|---------|---------------------------|--------------|
 | Panorama krótka          | 5       | ok. 2693 l                | przesuwne    |

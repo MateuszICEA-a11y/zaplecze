@@ -135,6 +135,8 @@ Proace II to solidny wybór dla firm, które chcą mieć vana klasy Expert lub J
 
 ## Ceny ProAce
 
+Zakup Toyota Proace to wydatek, który zależy od generacji, wersji silnikowej i stanu technicznego – rozstrzał cenowy na rynku wtórnym bywa spory.
+
 | Rocznik / Wersja | Cena orientacyjna |
 |-------------------|-------------------|
 | ProAce I (2013–2016) | 30 000–55 000 zł |

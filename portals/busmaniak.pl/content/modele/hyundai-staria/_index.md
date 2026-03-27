@@ -110,6 +110,8 @@ Na polskim rynku Staria dostępna jest u oficjalnych dealerów Hyundaia. Gwaranc
 
 ## Porównanie Starii z konkurencją
 
+Staria rywalizuje z europejskimi vanami premium – VW Multivan, Toyota ProAce Verso i Mercedes Vito Tourer. Wyróżnia się futurystycznym designem i bogatym wyposażeniem seryjnym, ale ustępuje konkurencji siecią serwisową.
+
 | Parametr | Hyundai Staria 9-os. | VW Multivan L1 | Toyota ProAce Verso L2 | Mercedes Vito Tourer L |
 |----------|----------------------|----------------|------------------------|------------------------|
 | Silnik diesel | 2.2 CRDi 177 KM | 2.0 TDI 150 KM | 2.0 D-4D 177 KM | 2.0 CDI 163 KM |

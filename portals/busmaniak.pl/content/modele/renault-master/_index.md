@@ -117,6 +117,8 @@ Master III jest modelem ogólnie solidnym, ale ma swoje charakterystyczne słabo
 
 ## Ceny Mastera
 
+Zakup Renault Master to wydatek, który zależy od generacji, wersji silnikowej i stanu technicznego – rozstrzał cenowy na rynku wtórnym bywa spory.
+
 | Generacja / Rocznik | Cena orientacyjna |
 |---------------------|-------------------|
 | Master II (2003–2010) | 10 000–25 000 zł |
@@ -127,6 +129,8 @@ Master III jest modelem ogólnie solidnym, ale ma swoje charakterystyczne słabo
 | Master E-Tech (elektryczny) | od ok. 280 000 zł netto |
 
 ## Porównanie Mastera z konkurencją
+
+Segment dostawczaków to rynek pełen alternatyw – Renault Master mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
 
 | Parametr | Renault Master L3H2 | Fiat Ducato L3H2 | Opel Movano C L3H2 | Mercedes Sprinter L2H2 | VW Crafter L3H3 |
 |----------|---------------------|------------------|---------------------|----------------------|-------------------|

@@ -20,6 +20,8 @@ faq:
 ---
 ## Dane techniczne Vivaro-e
 
+Znajomość danych technicznych pozwala ocenić, czy Opel Vivaro spełni wymagania konkretnego zastosowania – od przewozu palet po codzienny serwis miejski.
+
 | Parametr | Bateria 50 kWh | Bateria 75 kWh |
 |----------|----------------|----------------|
 | Moc silnika | 136 KM (100 kW) | 136 KM (100 kW) |

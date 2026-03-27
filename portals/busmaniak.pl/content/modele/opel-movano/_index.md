@@ -48,6 +48,8 @@ Przełom – po fuzji w Stellantis Movano C bazuje na [platformie Sevel](https:/
 
 ## Wymiary Opel Movano C
 
+Wymiary Opel Movano różnią się w zależności od wersji nadwoziowej – dotyczy to zarówno gabarytów zewnętrznych, jak i przestrzeni ładunkowej.
+
 | Parametr | L1H1 | L2H2 | L3H2 | L4H3 |
 |----------|------|------|------|------|
 | Długość całkowita | 5048 mm | 5413 mm | 5998 mm | 6363 mm |
@@ -64,6 +66,8 @@ Przełom – po fuzji w Stellantis Movano C bazuje na [platformie Sevel](https:/
 L3H2 to złoty środek – blisko 6 metrów długości, 13 m³ objętości i optymalna wysokość do pracy kurierskiej.
 
 ## Silniki Movano
+
+Gama silnikowa Opel Movano obejmuje kilka wariantów mocy – wybór jednostki napędowej wpływa na osiągi, spalanie i koszty eksploatacji.
 
 | Silnik | Generacja | Moc | Moment | Spalanie (śr.) | Norma |
 |--------|-----------|-----|--------|----------------|-------|
@@ -149,6 +153,8 @@ Opel objął akcją naprawczą 121 egzemplarzy Movano C z rocznika 2022 z powodu
 | Movano C (od 2022) | 120 000–160 000 zł |
 
 ## Porównanie Movano z konkurentami
+
+Segment dostawczaków to rynek pełen alternatyw – Opel Movano mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
 
 | Parametr | Opel Movano C L3H2 | Fiat Ducato L3H2 | Renault Master L3H2 | Mercedes Sprinter L2H2 |
 |----------|-------------------|------------------|---------------------|----------------------|

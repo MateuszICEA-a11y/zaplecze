@@ -72,6 +72,8 @@ Combo Life jest rejestrowane jako samochód osobowy (kategoria M1), co oznacza s
 
 ## Porównanie Combo Life XL a Berlingo III Multispace
 
+Wybór między modelami osobowymi w tym segmencie sprowadza się do kompromisu między ceną, przestrzenią a wyposażeniem – każdy z rywali ma swoje mocne strony.
+
 | Cecha | Combo Life XL | Berlingo III Multispace |
 |---|---|---|
 | Długość | 4753 mm | 4753 mm |

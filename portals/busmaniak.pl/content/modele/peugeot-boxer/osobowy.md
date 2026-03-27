@@ -80,6 +80,8 @@ Producentami zabudów w Polsce: Kutno Bus, AMZ, Orion Pojazdy Specjalne.
 
 ## Porównanie z Ducato Combi i Jumperem Combi
 
+Porównanie jednostek napędowych pokazuje, gdzie leżą przewagi i kompromisy poszczególnych konstrukcji – różnice dotyczą nie tylko mocy, ale też trwałości i kosztów serwisu.
+
 | Cecha | Boxer Combi | Ducato Combi | Jumper Combi |
 |---|---|---|---|
 | Platforma | Sevel Sud | Sevel Sud | Sevel Sud |

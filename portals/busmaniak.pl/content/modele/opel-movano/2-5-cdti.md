@@ -110,6 +110,8 @@ Na tle konkurencji – [Opla Vivaro](/modele/opel-vivaro/) z 2.0 CDTi czy Merced
 
 ## Koszty serwisu Opel Movano 2.5 CDTi
 
+Utrzymanie Opel Movano generuje koszty, które warto znać przed zakupem – różnice między poszczególnymi operacjami serwisowymi bywają znaczące.
+
 | Czynność | Koszt (części + robocizna) | Interwał |
 |----------|---------------------------|----------|
 | Wymiana oleju + filtr (8,2 l) | 350–550 zł | 15–20 tys. km / 1 rok |

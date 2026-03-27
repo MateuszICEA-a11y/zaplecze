@@ -19,6 +19,8 @@ lead: "Ford Transit Custom Van to dostawczak segmentu średniego (N1) oferujący
 ---
 ## Konfiguracje i wymiary Ford Transit Custom Van
 
+Transit Custom Van jest dostępny w dwóch długościach – L1 (Short) z paką 6,0 m³ i L2 (Long) z 6,8 m³. Obie wersje mają identyczną szerokość i wysokość przestrzeni ładunkowej, a L2 mieści dwie europalety ustawione wzdłuż.
+
 | Parametr | Custom L1 (Short) | Custom L2 (Long) |
 |---|---|---|
 | Długość całkowita | 4972 mm | 5340 mm |

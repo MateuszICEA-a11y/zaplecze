@@ -38,6 +38,8 @@ Jumper, Boxer czy Ducato – to pytanie, które słyszę regularnie od firm zaku
 
 ## Silniki Jumpera
 
+Gama silnikowa Jumpera obejmuje sprawdzone diesle 2.2 HDi/BlueHDi oraz wycofanego 3.0 HDi. Po faceliftingu 2020 wszystkie warianty 2.2 zyskały system AdBlue i oznaczenie BlueHDi. Od 2024 roku dostępna jest też wersja elektryczna ë-Jumper.
+
 | Silnik | Roczniki | Moc | Moment | Spalanie (śr.) | Skrzynia | Norma |
 |--------|----------|-----|--------|----------------|----------|-------|
 | 2.2 HDi | 2006–2014 | 100 KM | 250 Nm | 8,5 l/100 km | 6-bieg. man. | Euro 4 |
@@ -52,6 +54,8 @@ Jumper, Boxer czy Ducato – to pytanie, które słyszę regularnie od firm zaku
 Płyn AdBlue wymagany w wersjach BlueHDi (zbiornik 25 l, uzupełnianie co 10 000–15 000 km).
 
 ## Wersje nadwoziowe Citroën Jumper
+
+Jumper jest oferowany w pięciu konfiguracjach L/H – od kompaktowego L1H1 z 8 m³ po największy L4H3 z 17 m³ i ładownością do 1735 kg. Wybór konfiguracji decyduje o zastosowaniu pojazdu, kosztach ubezpieczenia i zużyciu paliwa.
 
 | Wariant | Długość | Pojemność | Ładowność |
 |---|---|---|---|
@@ -106,6 +110,8 @@ Jumper korzysta z sieci Citroën (ok. 150 ASO w Polsce). Serwis identyczny z [Fi
 
 ## Ceny Jumpera
 
+Na rynku wtórnym starsze Jumpery II generacji z roczników 2007–2014 można kupić od 20 tys. zł. Nowsze egzemplarze BlueHDi z lat 2020–2024 zaczynają się od 80 tys. zł, a fabrycznie nowy L2H2 kosztuje od 160 tys. zł netto.
+
 | Rocznik / Wersja | Cena orientacyjna |
 |-------------------|-------------------|
 | Jumper II (2007–2014) | 20 000–45 000 zł |
@@ -115,6 +121,8 @@ Jumper korzysta z sieci Citroën (ok. 150 ASO w Polsce). Serwis identyczny z [Fi
 | ë-Jumper L2H2 (75 kWh) | od ok. 280 000 zł netto |
 
 ## Porównanie Citroën Jumper z konkurencją
+
+W segmencie dużych vanów Jumper konkuruje bezpośrednio ze swoimi bliźniakami (Boxer, Ducato, Movano) oraz z VW Crafterem z osobnej platformy. Kluczowe różnice dotyczą ceny, pojemności paki i dostępności wersji elektrycznej.
 
 | Parametr | Citroën Jumper L3H2 | Peugeot Boxer L3H2 | Fiat Ducato L3H2 | Opel Movano C L3H2 | VW Crafter L3H3 |
 |----------|--------------------|--------------------|------------------|--------------------|--------------------|

@@ -58,6 +58,8 @@ Dokker dzieli platformę z Renault Lodgy, Dacią Sandero i Renault Kangoo II. Se
 
 ## Wymiary Dokkera
 
+Dokker osobowy i Van mają identyczne wymiary zewnętrzne – różnią się głównie wysokością (5 mm), ładownością i konfiguracją wnętrza. Wersja Stepway z prześwitem 175 mm jest wyższa o dodatkowe 40 mm.
+
 | Parametr | Dokker osobowy | Dokker Van |
 |----------|---------------|------------|
 | Długość całkowita | 4361 mm | 4361 mm |
@@ -111,6 +113,8 @@ Produkcja zakończona w marcu 2021 – nowe egzemplarze niedostępne. Rynek wtó
 | 2019–2021 | 1.3 TCe 130 / 1.5 dCi | 36 000–50 000 zł |
 
 ## Porównanie Dokkera z konkurencją
+
+Dokker trudno pobić w stosunku ceny do przestrzeni ładunkowej – przy ładowności 970 kg i paku 3,1 m³ wyprzedza droższe Kangoo i mniejsze Fiorino. Główni rywale to technicznie pokrewne Kangoo II oraz starsze Berlingo II.
 
 | Parametr | Dacia Dokker Van | Renault Kangoo II | Citroën Berlingo II | Fiat Fiorino III |
 |----------|-----------------|-------------------|--------------------|--------------------|

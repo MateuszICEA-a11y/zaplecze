@@ -44,6 +44,8 @@ Maxus oferuje standardowo 5 lat lub 100 000 km gwarancji na Deliver 9 – to ist
 
 ## Wymiary Maxus Deliver 9
 
+Wymiary Maxus Deliver 9 różnią się w zależności od wersji nadwoziowej – dotyczy to zarówno gabarytów zewnętrznych, jak i przestrzeni ładunkowej.
+
 | Parametr | L2H2 | L3H2 | L3H3 | L4H3 |
 |----------|------|------|------|------|
 | Długość całkowita | 5548 mm | 5992 mm | 5992 mm | 6753 mm |
@@ -65,6 +67,8 @@ Podwozie L4 pod zabudowę osiąga nawet 7418 mm długości.
 Ładowność 1500 kg stawia Deliver 9 na równi z [Renault Masterem](/modele/renault-master/) i powyżej bazowego [Fiata Ducato](/modele/fiat-ducato/) (1300 kg).
 
 ## Silniki Maxus Deliver 9
+
+Gama silnikowa Maxus Deliver 9 obejmuje kilka wariantów mocy – wybór jednostki napędowej wpływa na osiągi, spalanie i koszty eksploatacji.
 
 | Silnik | Moc | Moment | Skrzynia | Spalanie (śr.) | Napęd |
 |--------|-----|--------|----------|----------------|-------|
@@ -130,6 +134,8 @@ Negatywne opinie dotyczą:
 Rynek wtórny dopiero się kształtuje – model jest na rynku od kilku lat. Egzemplarze 2022–2024 z przebiegiem 30–80 tys. km kosztują 85 000–130 000 zł.
 
 ## Deliver 9 na tle konkurencji
+
+Kluczowe parametry Maxus Deliver 9 w tym zestawieniu obejmują m.in. parametr, maxus deliver 9 l3h2, fiat ducato l3h2 – różnice między wariantami mają realne przełożenie na codzienną eksploatację.
 
 | Parametr | Maxus Deliver 9 L3H2 | Fiat Ducato L3H2 | Renault Master L3H2 | Mercedes Sprinter L2H2 |
 |----------|---------------------|------------------|---------------------|----------------------|

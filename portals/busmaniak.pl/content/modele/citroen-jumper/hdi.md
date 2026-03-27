@@ -90,6 +90,8 @@ W silnikach 2.2 HDi kluczowa jest jakość oleju i regularna wymiana co 20 tys. 
 
 ## Koszty serwisu HDi
 
+Serwis silników HDi w Jumperze jest stosunkowo tani dzięki ogromnej dostępności zamienników – te same części pasują do Boxera i Ducato. Zamienniki aftermarket obniżają koszty o 30–40% wobec oryginalnych.
+
 | Czynność | Koszt orientacyjny | Interwał |
 |----------|-------------------|----------|
 | Wymiana oleju + filtr | 400–600 zł | 20 000 km / 1 rok |

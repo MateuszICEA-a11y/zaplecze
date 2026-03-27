@@ -73,6 +73,8 @@ Jeśli kupujesz Vivaro B – bierz 1.6 CDTi 125 KM single turbo. Ma wystarczają
 
 ## Spalanie CDTi – realne wartości
 
+Silniki CDTi w Opel Vivaro mają ugruntowaną opinię na rynku – realne spalanie zależy od wersji mocy i warunków eksploatacji.
+
 | Silnik | W trasie (pusto) | W trasie (ładunek) | W mieście |
 |--------|-----------------|-------------------|-----------|
 | 1.9 CDTi 100 KM | 6,5 l/100 km | 8,5 l/100 km | 9,5 l/100 km |
@@ -111,6 +113,8 @@ Spalanie rośnie o 10–15% z zabudową wysokodachową (H2). Klimatyzacja w upal
 - **Sprzęgło DMF** – wymiana po 120–150 tys. km w wersji BiTurbo (2500–4000 zł)
 
 ## Koszty serwisu CDTi
+
+Utrzymanie Opel Vivaro generuje koszty, które warto znać przed zakupem – różnice między poszczególnymi operacjami serwisowymi bywają znaczące.
 
 | Czynność | Koszt orientacyjny | Interwał |
 |----------|-------------------|----------|

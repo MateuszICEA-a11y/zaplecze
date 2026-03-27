@@ -123,6 +123,8 @@ Fiat Ducato dzieli konstrukcję z [Citroënem Jumperem](/modele/citroen-jumper/)
 
 ## Ceny Ducato
 
+Rozpiętość cenowa Ducato jest ogromna – od 10 tys. zł za II generację z przebiegiem 400 tys. km do ponad 150 tys. zł netto za nowy furgon L2H2. Elektryczny e-Ducato z Gliwic startuje od 260 tys. zł netto.
+
 | Generacja / Rocznik | Cena orientacyjna |
 |---------------------|-------------------|
 | Ducato II (2002–2006) | 10 000–22 000 zł |
@@ -133,6 +135,8 @@ Fiat Ducato dzieli konstrukcję z [Citroënem Jumperem](/modele/citroen-jumper/)
 | e-Ducato L2H2 | od ok. 260 000 zł netto |
 
 ## Porównanie Ducato z konkurencją
+
+W segmencie dużych vanów Ducato rywalizuje przede wszystkim ze swoimi bliźniakami z platformy Sevel (Jumper, Boxer) oraz z Sprinterem, Crafterem i Masterem. Kluczowe różnice to cena, ładowność i dostępność serwisu – Ducato wygrywa tym ostatnim w Polsce.
 
 | Parametr | Fiat Ducato L3H2 | Citroën Jumper L3H2 | Peugeot Boxer L3H2 | Mercedes Sprinter L2H2 | VW Crafter L3H3 | Renault Master L3H2 |
 |----------|------------------|--------------------|--------------------|----------------------|-------------------|---------------------|

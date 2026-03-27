@@ -42,6 +42,8 @@ Wersje L4 (Maxi) różnią się od L1–L3 wzmocnionym zawieszeniem, 16-calowymi
 
 ## Dane techniczne przestrzeni ładunkowej
 
+Parametry przestrzeni ładunkowej decydują o możliwościach transportowych – od nich zależy, ile towaru zmieścisz na jednym kursie.
+
 | Wariant | Dł. podłogi (mm) | Szer. max (mm) | Wys. (mm) | Poj. (m³) | DMC (kg) |
 |---------|-----------------|----------------|-----------|-----------|----------|
 | L1H1 | 2583 | 1765 | 1603 | 8,0 | 3100 |
@@ -91,6 +93,8 @@ Po faceliftingu 2019 roku Master furgon oferuje w standardzie (zależnie od wers
 Standardowe wyposażenie robocze ładowni to: boczne panele ze sklejki, podłoga ze sklejki, oświetlenie ładowni LED i uchwyt bezpiecznikowy na ścianie przedniej.
 
 ## Porównanie z głównymi rywalami
+
+Segment dostawczaków to rynek pełen alternatyw – Renault Master mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
 
 | Model | Poj. L3H2 (m³) | Szer. maks. (mm) | Dług. podłogi L3 (mm) | Ład. (kg) |
 |-------|---------------|-----------------|----------------------|-----------|

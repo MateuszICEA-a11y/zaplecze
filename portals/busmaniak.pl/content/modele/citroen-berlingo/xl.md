@@ -30,6 +30,8 @@ Berlingo XL jest dłuższe o 350 mm i ma o 190 mm większy rozstaw osi niż wers
 
 ## Wymiary i przestrzeń bagażowa Citroëna Berlingo XL {#wymiary}
 
+Różnica 350 mm w długości całkowitej i 190 mm w rozstawie osi przekłada się na zauważalny wzrost bagażnika – z 775 l w wersji M do 1050 l w XL. Dla wersji Van oznacza to skok pojemności ładowni z 3,3 do 3,9 m³.
+
 | Parametr              | Berlingo M  | Berlingo XL |
 |-----------------------|------------|-------------|
 | Długość całkowita (mm)| 4403       | 4753        |

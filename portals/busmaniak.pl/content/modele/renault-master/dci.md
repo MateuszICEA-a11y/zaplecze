@@ -35,6 +35,8 @@ Kluczowe cechy konstrukcyjne:
 
 ## Warianty mocy – różnice konstrukcyjne
 
+Różnice między wersjami mocy Renault Master nie ograniczają się do koni mechanicznych – wpływają też na moment obrotowy, spalanie i cenę na rynku wtórnym.
+
 | Wersja | Moc (KM) | Moment (Nm) | Norma emisji | Skrzynia |
 |--------|----------|-------------|-------------|---------|
 | M9T 100 | 100 | 290 | Euro 5/6 | manualna |
@@ -102,6 +104,8 @@ Silnik M9T to niezawodna jednostka, ale wymaga dyscypliny serwisowej. Największ
 {{% /expert %}}
 
 ## Porównanie M9T z konkurencją
+
+Segment dostawczaków to rynek pełen alternatyw – Renault Master mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
 
 | Silnik | Model | Trwałość | Koszty serwisu | Dostępność części |
 |--------|-------|----------|----------------|-------------------|

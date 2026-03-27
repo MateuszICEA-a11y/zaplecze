@@ -116,6 +116,8 @@ Koszty serwisowe Caddy są wyższe niż u konkurencji z grupy PSA. Przegląd ole
 
 ## Ceny Caddy'ego
 
+Zakup Volkswagen Caddy to wydatek, który zależy od generacji, wersji silnikowej i stanu technicznego – rozstrzał cenowy na rynku wtórnym bywa spory.
+
 | Generacja / Rocznik | Cena orientacyjna |
 |---------------------|-------------------|
 | Caddy III (2004–2010) | 10 000–22 000 zł |
