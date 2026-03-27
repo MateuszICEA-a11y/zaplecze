@@ -287,6 +287,19 @@ Use the appropriate template based on article type. **RÓŻNICUJ formę frazy w 
 
 ---
 
+#### No bare H2 → table
+
+NEVER place a Markdown table directly after an H2 heading. There MUST be 1-2 sentences of contextual intro between the heading and the table. The intro should reference specific details (model, price range, engine variant) – never generic filler like "Poniższa tabela przedstawia...".
+
+```
+❌ ## Silniki Berlingo
+   | Silnik | Moc | ...
+
+✅ ## Silniki Berlingo
+   Berlingo III oferuje cztery warianty – od 1.2 PureTech po elektryczny e-Berlingo z baterią 50 kWh.
+   | Silnik | Moc | ...
+```
+
 #### H3 headings – MANDATORY
 
 Every H2 section MUST contain at least 1-2 H3 subheadings. Articles without H3s look flat and thin. H3s break content into scannable chunks and improve SEO.
