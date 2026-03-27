@@ -54,6 +54,63 @@
           <a href="{{ .URL }}" class="site-nav__link{{ if $.IsMenuCurrent "main" . }} site-nav__link--active{{ end }}">{{ .Name }}</a>
         {{ end }}
       {{ end }}
+      {{/* ═══ SEARCH ═══ */}}
+      <div class="site-search">
+        <div class="site-search__box">
+          <input type="text" id="search-input" class="site-search__input" placeholder="Szukaj busa..." autocomplete="off">
+          <span class="material-symbols-outlined site-search__icon">search</span>
+        </div>
+        <div id="search-results" class="site-search__results"></div>
+      </div>
     </div>
   </nav>
 </header>
+
+<script>
+(function(){
+  let idx = null;
+  const input = document.getElementById('search-input');
+  const results = document.getElementById('search-results');
+  if (!input) return;
+
+  async function loadIndex() {
+    if (idx) return idx;
+    const res = await fetch('/index.json');
+    idx = await res.json();
+    return idx;
+  }
+
+  input.addEventListener('focus', loadIndex);
+
+  input.addEventListener('input', async function() {
+    const q = this.value.trim().toLowerCase();
+    if (q.length < 2) { results.innerHTML = ''; results.style.display = 'none'; return; }
+
+    const data = await loadIndex();
+    const matches = data.filter(p =>
+      p.title.toLowerCase().includes(q) ||
+      p.keyword.toLowerCase().includes(q) ||
+      p.description.toLowerCase().includes(q)
+    ).slice(0, 8);
+
+    if (matches.length === 0) {
+      results.innerHTML = '<div class="site-search__empty">Brak wyników</div>';
+    } else {
+      results.innerHTML = matches.map(m =>
+        '<a href="' + m.url + '" class="site-search__item">' +
+          '<span class="site-search__item-title">' + m.title + '</span>' +
+          '<span class="site-search__item-section">' + m.section + '</span>' +
+        '</a>'
+      ).join('');
+    }
+    results.style.display = 'block';
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.site-search')) {
+      results.style.display = 'none';
+    }
+  });
+})();
+</script>
+

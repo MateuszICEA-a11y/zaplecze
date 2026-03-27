@@ -103,7 +103,7 @@ a:hover { color: var(--c-orange-hover); }
   font-family: var(--f-body);
   font-size: .9375rem;
   font-weight: 500;
-  color: rgba(255,255,255,.75);
+  color: #fff;
   text-decoration: none;
   transition: color .2s;
   padding-bottom: .25rem;
@@ -115,6 +115,111 @@ a:hover { color: var(--c-orange-hover); }
   color: var(--c-orange);
   font-weight: 700;
   border-bottom: 2px solid var(--c-orange);
+}
+
+/* ── Search ── */
+.site-search {
+  position: relative;
+  margin-left: .5rem;
+}
+
+.site-search__box {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,.1);
+  border-radius: 6px;
+  padding: .35rem .6rem;
+  transition: background .2s;
+}
+
+.site-search__box:focus-within {
+  background: rgba(255,255,255,.18);
+}
+
+.site-search__input {
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-family: var(--f-body);
+  font-size: .8125rem;
+  width: 140px;
+  transition: width .2s;
+}
+
+.site-search__input::placeholder {
+  color: rgba(255,255,255,.45);
+}
+
+.site-search__input:focus {
+  width: 200px;
+}
+
+.site-search__icon {
+  font-size: 1rem;
+  color: rgba(255,255,255,.45);
+}
+
+.site-search__results {
+  display: none;
+  position: absolute;
+  top: calc(100% + .5rem);
+  right: 0;
+  width: 320px;
+  background: #fff;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 8px 32px rgba(0,0,0,.12);
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 200;
+}
+
+.site-search__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .6rem .75rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--c-border-light);
+  transition: background .1s;
+}
+
+.site-search__item:hover {
+  background: var(--c-bg-alt);
+}
+
+.site-search__item-title {
+  font-size: .8125rem;
+  font-weight: 500;
+  color: var(--c-text);
+}
+
+.site-search__item:hover .site-search__item-title {
+  color: var(--c-orange);
+}
+
+.site-search__item-section {
+  font-size: .6875rem;
+  color: var(--c-text-light);
+  text-transform: capitalize;
+}
+
+.site-search__empty {
+  padding: 1rem;
+  text-align: center;
+  font-size: .8125rem;
+  color: var(--c-text-light);
+}
+
+@media (max-width: 960px) {
+  .site-search {
+    margin: .5rem 1.5rem;
+    width: calc(100% - 3rem);
+  }
+  .site-search__input { width: 100%; }
+  .site-search__input:focus { width: 100%; }
+  .site-search__results { width: 100%; right: auto; left: 0; }
 }
 
 /* ── Fixed header content offset ── */

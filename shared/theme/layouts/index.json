@@ -1,0 +1,33 @@
+{{- $pages := slice -}}
+{{- range where .Site.RegularPages "Params.draft" "ne" true -}}
+  {{- $pages = $pages | append (dict
+    "title" (.Params.h1 | default .Title)
+    "url" .Permalink
+    "section" .Section
+    "description" (.Description | truncate 120)
+    "keyword" (.Params.main_keyword | default "")
+  ) -}}
+{{- end -}}
+{{- range .Site.Sections -}}
+  {{- if .Content -}}
+    {{- $pages = $pages | append (dict
+      "title" (.Params.h1 | default .Title)
+      "url" .Permalink
+      "section" .Section
+      "description" (.Description | truncate 120)
+      "keyword" (.Params.main_keyword | default "")
+    ) -}}
+  {{- end -}}
+  {{- range .Sections -}}
+    {{- if .Content -}}
+      {{- $pages = $pages | append (dict
+        "title" (.Params.h1 | default .Title)
+        "url" .Permalink
+        "section" .Section
+        "description" (.Description | truncate 120)
+        "keyword" (.Params.main_keyword | default "")
+      ) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $pages | jsonify -}}
