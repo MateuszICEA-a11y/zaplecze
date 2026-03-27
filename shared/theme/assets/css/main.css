@@ -84,11 +84,8 @@ a:hover { color: var(--c-orange-hover); }
   align-items: baseline;
 }
 
-.site-logo:hover { text-decoration: none; }
-.site-logo__icon { margin-right: .5rem; flex-shrink: 0; }
-.site-logo__bus { color: var(--c-orange); }
-.site-logo__maniak { color: #fff; }
-.site-logo__dot { color: #fff; font-weight: 600; font-size: .85em; }
+.site-logo:hover { text-decoration: none; opacity: .9; }
+.site-logo__img { height: 44px; width: auto; display: block; filter: brightness(0) invert(1); }
 
 .site-footer .site-logo__maniak { color: rgba(255,255,255,.9); }
 .site-footer .site-logo__dot { color: rgba(255,255,255,.4); }
