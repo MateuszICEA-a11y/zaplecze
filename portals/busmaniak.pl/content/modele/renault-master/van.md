@@ -68,6 +68,8 @@ Skrzynia manualna (6-biegowa) jest standardem. Automat EDC jest opcją od 135 KM
 
 ## Ładowność Mastera Van – jak obliczyć?
 
+### Obliczanie ładowności Mastera Van L3H2
+
 Ładowność to DMC minus masa własna pojazdu. Master Van L3H2 z silnikiem 135 KM waży ok. 2150 kg. Przy DMC 3500 kg daje to ładowność **1350 kg**. Każde wyposażenie dodatkowe obniża tę wartość:
 
 - przegroda stalowa: ok. 15–25 kg

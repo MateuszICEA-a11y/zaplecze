@@ -55,6 +55,8 @@ Proace Verso jest dostępny wyłącznie z dieslem 2.0 D-4D w dwóch wersjach moc
 - 2.0 D-4D 145 KM / 370 Nm – wystarcza do 7-8 osób na trasach płaskich
 - 2.0 D-4D 177 KM / 400 Nm – zalecany przy 9 osobach i załadowanym bagażniku
 
+### Skrzynia biegów i napęd Proace Verso
+
 Skrzynia biegów:
 
 - 6-biegowa manualna (standard)

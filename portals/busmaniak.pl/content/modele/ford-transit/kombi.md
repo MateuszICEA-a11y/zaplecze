@@ -44,9 +44,11 @@ Granica między M1 a M2 przebiega przy 9 miejscach łącznie z kierowcą. Pojazd
 
 ## Wymiary i przestrzeń pasażerska Transit Kombi
 
+### Wymiary wewnętrzne i wysokość kabiny
+
 Szerokość wnętrza wynosi ok. 1770 mm – komfortowa dla 3 osób w rzędzie. Wysokość wewnętrzna w wersji H2 (podwyższony dach) sięga ok. 1900 mm, co umożliwia swobodne poruszanie się w kabinie.
 
-Kluczowe wymiary nadwozia:
+### Porównanie wariantów L2, L3 i L4
 
 | Parametr | L2 Kombi | L3 Kombi | L4 Kombi |
 |---|---|---|---|

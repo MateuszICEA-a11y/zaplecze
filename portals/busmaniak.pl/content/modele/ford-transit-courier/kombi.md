@@ -46,6 +46,8 @@ System ISOFIX na skrajnych siedzeniach tylnej kanapy pozwala na bezpieczny monta
 
 ## Silniki i napędy w Transit Courier Kombi
 
+### EcoBoost, EcoBlue i e-Courier
+
 - **1.0 EcoBoost 100 KM** – benzyna, manualna 6b
 - **1.0 EcoBoost 125 KM** – benzyna, manualna 6b lub automat 7b. Holowanie do 1000 kg
 - **1.5 EcoBlue 100 KM** – diesel, 250 Nm, manualna 6b. Holowanie do 1100 kg

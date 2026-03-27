@@ -69,6 +69,8 @@ Egzemplarze z silnikiem 1.9 JTD spełniają normę Euro 3. W Polsce nie ma obecn
 
 ## Wiek pojazdu a zakup – na co zwrócić uwagę
 
+### Lista kontrolna przed zakupem Doblò JTD
+
 Generacja I Doblò ma dziś od 16 do 26 lat. Zakup wymaga dokładnego sprawdzenia:
 
 - Stan nadwozia – rdza progów, tylnych nadkoli, dna podłogi (szczególnie Cargo z ładunkami)
@@ -76,6 +78,8 @@ Generacja I Doblò ma dziś od 16 do 26 lat. Zakup wymaga dokładnego sprawdzeni
 - Stan wtryskiwaczy – próba dymna na zimno
 - Stan skrzyni biegów – czy nie ma luzów w sprzęgle (koło dwumasowe jest rzadkością w tej wersji)
 - Przebieg – przy przebiegach powyżej 300 tys. km sprawdź ciśnienie kompresji
+
+### Ceny używanych Doblò z silnikiem JTD
 
 Dobry egzemplarz JTD można kupić za 8000–18000 zł w zależności od stanu i przebiegu. Przy tej cenie warto przeznaczyć 300–500 zł na przegląd w niezależnym warsztacie przed zakupem.
 

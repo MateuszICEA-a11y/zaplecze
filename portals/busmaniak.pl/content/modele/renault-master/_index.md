@@ -31,6 +31,8 @@ lead: "Renault Master to jeden z najpopularniejszych dużych samochodów dostawc
 
 Przełom nastąpił przy **Masterze II** (1997–2010), który jako pierwszy w tej klasie wprowadził napęd na przednią oś i rozrząd paskiem zamiast łańcuchem w silnikach diesla. Model ten był produkowany wspólnie z Oplem Movano i szybko zyskał popularność na rynku flotowym.
 
+### Renault Master III – od 2010 roku
+
 **Master III** zadebiutował w 2010 roku. To właśnie ta generacja jest dziś powszechnie dostępna na rynku wtórnym i w salonach Renault Pro+. W 2019 roku przeszła gruntowną modernizację – otrzymała nowe wnętrze z ekranem dotykowym, cyfrową deską rozdzielczą, systemami ADAS i odświeżony przód. Po faceliftingu samochód wizualnie upodobnił się do osobowego Renault Trafic i jest wyraźnie nowocześniejszy od przedliftingowego modelu.
 
 Produkcja odbywa się wyłącznie w fabryce w **Batilly** (Wielka Lotaryngia, Francja) – ta lokalizacja pozostaje niezmieniona od pierwszej generacji.
@@ -57,6 +59,8 @@ Szerokość ładunkowa wynosi 1765 mm w standardowych wersjach i 1860 mm w waria
 ## Silniki Mastera – 2.3 dCi M9T {#silniki}
 
 Renault Master III jest dostępny wyłącznie z silnikiem diesla 2.3 dCi (oznaczenie fabryczne M9T). To czterocylindrowa jednostka o pojemności 2298 cm³ ze wspólnym układem wtryskowym (Common Rail) i turbosprężarką o zmiennej geometrii.
+
+### Warianty mocy silnika M9T
 
 Dostępne warianty mocy:
 

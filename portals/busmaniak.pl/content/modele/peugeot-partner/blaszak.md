@@ -25,6 +25,8 @@ faq:
 
 Blaszak (Van) to podstawowa, najchętniej sprzedawana wersja [Peugeota Partnera](/modele/peugeot-partner/) – furgon z pełną stalową przegrodą, zaślepionymi tylnymi szybami i 2/3-osobową kabiną. Paka z drewnianą podłogą pokrytą tworzywem, stalowe uchwyty mocowania i oświetlenie LED. Rejestracja N1 (ciężarowy) daje pełne odliczenie VAT.
 
+### Partner III na platformie EMP2
+
 Partner III blaszak (od 2018) na platformie [EMP2](https://en.wikipedia.org/wiki/PSA_EMP2_platform) to technicznie ten sam samochód co [Citroën Berlingo](/modele/citroen-berlingo/) Van i [Opel Combo](/modele/opel-combo/) Cargo – różni się logo, detalami stylistycznymi i systemem multimedialnym.
 
 | Parametr paki | Short (L1) | Long (L2) |
@@ -60,6 +62,8 @@ Do pracy dostawczej najchętniej wybierany jest diesel 1.5 BlueHDi – niskie sp
 | 1.5 BlueHDi | 130 KM | 300 Nm | 5,3 l/100 km | 6-bieg. man. / EAT8 |
 | 1.2 PureTech | 110 KM | 205 Nm | 6,5 l/100 km | 6-bieg. man. |
 | e-Partner (50 kWh) | 136 KM | 260 Nm | 20 kWh/100 km | 1-bieg. |
+
+### Który wariant BlueHDi wybrać do blaszaka?
 
 Wariant 75 KM to absolutne minimum – wystarczy do lekkiej dystrybucji w mieście, ale na autostradzie z ładunkiem 600+ kg jest bezsilny. 100 KM to złoty środek: wystarczający moment od 1500 obr., akceptowalne spalanie i niższy koszt ubezpieczenia niż 130 KM.
 

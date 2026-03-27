@@ -31,6 +31,8 @@ Oba modele mają homologację M1 – do 9 miejsc – i nie wymagają prawa jazdy
 
 ## Liczba miejsc i układ wnętrza w Ford Transit Tourneo
 
+### Porównanie Custom Tourneo i Transit Tourneo
+
 Standardowa konfiguracja to 8 lub 9 miejsc. W Transit Tourneo L2:
 
 | Parametr | Custom Tourneo L1 | Custom Tourneo L2 | Transit Tourneo L2 | Transit Tourneo L3 |
@@ -40,6 +42,8 @@ Standardowa konfiguracja to 8 lub 9 miejsc. W Transit Tourneo L2:
 | Bagażnik (za 3. rzędem) | ok. 1100 l | ok. 1480 l | ok. 1480 l | ok. 2000 l |
 | Bagażnik (złożone siedzenia) | ok. 3400 l | ok. 4500 l | ok. 4500 l | ok. 5500 l |
 | Homologacja | M1 | M1 | M1 | M1 |
+
+### Układ siedzeń i przestrzeń bagażowa
 
 - rząd 1 (kierowca + pasażer)
 - rząd 2 – 3 miejsca

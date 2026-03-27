@@ -44,6 +44,8 @@ Klapa tylna otwierana do 270° (przymocowana do boku pojazdu) jest niezastąpion
 
 ## Przestrzeń ładunkowa Ford Transit furgon
 
+### Wymiary paki w konfiguracjach L2–L4
+
 Wymiary przestrzeni ładunkowej w popularnych konfiguracjach:
 
 | Parametr | L2H2 | L3H2 | L3H3 | L4H3 |
@@ -63,6 +65,8 @@ Szerokość między nadkolami 1420 mm – europalet nie ustawimy obok siebie, ty
 ![Ford Transit dostawczy – drzwi tylne 270°](/images/ford-transit-dostawczy-hero.jpg)
 
 ## Zabudowy serwisowe Transita dostawczego
+
+### Systemy regałowe i wyposażenie ładowni
 
 Rynek zabudów dla Transit dostawczego jest szeroki. Najpopularniejsze rozwiązania:
 

@@ -56,6 +56,8 @@ Dane katalogowe vs. realne spalanie:
 | Trasa | 5,0 / 5,0–5,7 l | 5,0 / 4,8–5,5 l | 5,0–5,8 l |
 | Mieszane | 5,7 / 6,0–6,7 l | 5,7 / 5,5–6,5 l | 5,5–6,5 l |
 
+### 90 KM vs 75 KM – który wariant pali mniej?
+
 Wersja 90 KM (16V) okazuje się w praktyce oszczędniejsza od słabszej 75 KM. Wyższy moment obrotowy (215 vs. 185 Nm) pozwala jeździć na niższych obrotach, co przekłada się na niższe spalanie – szczególnie przy obciążeniu ładunkiem.
 
 {{% expert name="Kowalczyk" %}}
@@ -70,11 +72,15 @@ Silnik DV6 uchodzi za trwały, ale nie jest wolny od znanych słabości. Większ
 
 ![Peugeot Partner 1.6 HDi – silnik DV6 w komorze](/images/peugeot-partner-1-6-hdi-hero.jpg)
 
+### Rozrząd i układ napędowy
+
 Najczęstsze usterki:
 
 - **Pasek rozrządu** – jego zerwanie skutkuje gięciem zaworów i kosztowną naprawą (3000–5000 zł). Wymiana co 180 000–240 000 km lub co 10 lat. Przy ciężkiej eksploatacji dostawczej – co 160 000 km
 - **Uszczelki wtryskiwaczy** – nieszczelne podkładki miedziane powodują wycieki spalin wokół wtryskiwaczy. Objaw: brązowy „majonez" na głowicy i charakterystyczny zapach. Wymiana podkładek to wydatek 200–400 zł z robocizną
 - **Filtr DPF/FAP** – dotyczy wyłącznie wersji Euro 5 (92 KM). Przy krótkich trasach (<10 km) regeneracja nie zachodzi prawidłowo. Zapchany filtr ogranicza moc i zwiększa spalanie. Regeneracja serwisowa kosztuje 300–600 zł, wymiana nowego filtra – 2500–4000 zł
+### Turbo i układ wydechowy Partnera 1.6 HDi
+
 - **Turbosprężarka** – w wersjach ze zmienną geometrią (92 KM) mechanizm łopatek potrafi się zakleszczać. Objawy: utrata mocy, czarny dym. Regeneracja turbo to 1500–2500 zł
 - **Przepustnice wirowe (swirl flaps)** – w wersjach 16V mogą się zacinać lub pękać, co powoduje nierówną pracę silnika. Niektórzy serwisanci usuwają je i montują zaślepki
 - **Układ EGR** – zawór recyrkulacji spalin wymaga czyszczenia co 80 000–100 000 km. Zanieczyszczony EGR objawia się szarpaniem przy niskich obrotach
@@ -86,6 +92,8 @@ Przy zakupie używanego Partnera z 1.6 HDi warto świadomie wybrać wersję bez 
 ## Opinie i ocena silnika 1.6 HDi
 
 Wśród użytkowników [Peugeota Partnera](/modele/peugeot-partner/) jednostka 1.6 HDi zbiera generalnie pozytywne opinie – szczególnie w wersji 90 KM bez DPF. Na forach motoryzacyjnych i w serwisach oceny kształtują się na poziomie 7,5–8/10 za trwałość i 6,5–7/10 za koszty utrzymania.
+
+### Zalety 1.6 HDi DV6
 
 Co chwalą kierowcy:
 - **Trwałość bloku i głowicy** – przebiegi 300 000–400 000 km bez remontu to norma przy terminowym serwisie

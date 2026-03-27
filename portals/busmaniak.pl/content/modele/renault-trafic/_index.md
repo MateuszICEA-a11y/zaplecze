@@ -79,10 +79,14 @@ Trafic jest dostępny w trzech podstawowych konfiguracjach:
 
 Trafic to auto robocze, więc lista usterek nie powinna zaskakiwać – większość problemów wynika z intensywnej eksploatacji lub zaniedbanego serwisu, nie z wad konstrukcyjnych.
 
+### Wtryskiwacze i turbo w Traficu
+
 - **Wtryskiwacze Common Rail** – wycieki paliwa przy wtryskiwaczach to najczęstszy problem w autach po 150 000 km. Wymiana jednej sztuki: 800–1200 zł. Nie zwlekaj – wyciek paliwa przy wysokich ciśnieniach common rail to ryzyko pożaru.
 - **Turbosprężarka 1.6 dCi BiTurbo** – awarie zdarzają się przy dużych przebiegach, zwłaszcza gdy poprzedni właściciel zaniedbywał wymianę oleju. Regeneracja turbiny: 1500–2500 zł.
 - **Filtr DPF** – klasyczny problem przy jeździe miejskiej na krótkich trasach. DPF nie ma kiedy się wypalić, zapycha się i odbiera moc. Rozwiązanie: regularne trasy autostradowe albo profesjonalne wypalenie.
 - **Zawór EGR** – nagary to kwestia czasu w każdym dieslu tego segmentu. EGR w Traficu jest dostępny i tani w czyszczeniu – problem pojawia się, gdy właściciel ignoruje pierwsze objawy (szarpanie na biegu jałowym, dymienie).
+### Sprzęgło i korozja Renault Trafic
+
 - **Sprzęgło** – przy intensywnym użytkowaniu miejskim wymiana co 100 000–150 000 km to norma. Koszt: 1200–1800 zł.
 - **Korozja** – progi i podłoga ładowni w autach po 10 latach. Przed zakupem używanego egzemplarza wejdź pod auto.
 

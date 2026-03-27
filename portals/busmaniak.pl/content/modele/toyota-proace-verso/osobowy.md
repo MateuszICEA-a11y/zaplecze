@@ -51,6 +51,8 @@ Proace Verso jest oferowany w trzech liniach wyposażenia, które istotnie róż
 - fotele drugiego rzędu z regulacją podłużną i kąta oparcia
 - automatyczny hamulec parkingowy
 
+### Proace Verso VIP – linia premium
+
 **VIP** – linia premium
 
 - fotele skórzane z podgrzewaniem (wszystkie rzędy)

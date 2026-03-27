@@ -86,6 +86,8 @@ Koszt podstawowego wyposażenia: 800–2500 zł, w zależności od materiałów 
 
 Rynek wtórny Masterów blaszaków jest bardzo szeroki. Przy oglądaniu egzemplarza warto sprawdzić:
 
+### Na co zwrócić uwagę przy oględzinach
+
 - **Korozja podłogi ładowni** – szczególnie przy krawędziach i wokół otworów mocujących; rdza w środku świadczy o zaniedbaniu
 - **Stan uszczelki drzwi tylnych** – pęknięta uszczelka to przecieki przy deszczu; wymiana 200–400 zł
 - **Drzwi boczne przesuwne** – sprawdź prowadnice i smarowanie; ciągnące się drzwi to częsty problem

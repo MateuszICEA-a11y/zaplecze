@@ -64,14 +64,14 @@ Warto pamiętać, że 5-biegowa skrzynia manualna jest ograniczeniem przy jeźdz
 
 Silnik 1.3 MultiJet to jedna z najpopularniejszych jednostek Fiata – ponad 10 milionów wyprodukowanych egzemplarzy trafiło do kilkunastu modeli, w tym [Fiat Doblo](/modele/fiat-doblo/), [Opel Combo](/modele/opel-combo/) i Punto. Ogromna skala produkcji oznacza dobrą dostępność części, ale też dobrze rozpoznany katalog problemów.
 
-Usterki mechaniczne:
+### Usterki mechaniczne Fiorino 1.3
 
 - **Rozciągnięcie łańcucha rozrządu** – najpoważniejszy problem tej jednostki. Objawia się metalicznym grzechotaniem przy zimnym rozruchu, które ustępuje po nagrzaniu silnika. Pojawia się typowo po 150–200 tys. km, choć przy zaniedbanych wymianach oleju nawet wcześniej. Wymiana łańcucha z napinaczem i prowadnicami kosztuje 800–1500 zł
 - **Zawór EGR** – zapieka się i blokuje po 100–150 tys. km, powodując spadek mocy, nierówną pracę silnika i zapalenie kontrolki check engine. Czyszczenie: 200–400 zł, wymiana: 600–1200 zł
 - **Przepustnice wirowe (swirl flaps)** – plastikowe elementy w kolektorze ssącym ulegają pęknięciu lub zablokowaniu. Awaria powoduje utratę mocy i przejście w tryb awaryjny. Naprawa z usunięciem lub wymianą: 500–1000 zł
 - **Podwyższone zużycie oleju** – silnik zużywa 0,5–1 l oleju na 10 tys. km, co jest w normie. Zużycie powyżej 1,5 l/10 tys. km sygnalizuje problem z pierścieniami tłokowymi lub uszczelkami
 
-Usterki układu oczyszczania spalin (wersje Euro 5/6):
+### DPF i układ emisji w wersjach Euro 5/6
 
 - **Filtr DPF** – zapycha się po 80–120 tys. km przy przeważającej jeździe miejskiej. Krótkie trasy uniemożliwiają regenerację, a paliwo wtryskiwane do spalania sadzy rozcieńcza olej silnikowy. Wypalenie profesjonalne: 500–800 zł, wymiana filtra: 3000–5000 zł
 - **Czujniki ciśnienia i temperatury spalin** – awaria powoduje błędy regeneracji DPF. Wymiana pojedynczego czujnika: 300–600 zł
@@ -82,14 +82,14 @@ Wersja 75 KM Euro 4 (bez DPF) jest w tym kontekście najprostsza serwisowo – b
 
 Wśród użytkowników [Fiata Fiorino](/modele/fiat-fiorino/) silnik 1.3 MultiJet zbiera przeważnie pozytywne opinie, choć z zastrzeżeniami dotyczącymi trwałości rozrządu. Kurierzy i serwisanci cenią go za niskie spalanie i kompaktowe wymiary – silnik zajmuje mało miejsca w komorze, co ułatwia dojazd do podzespołów.
 
-Mocne strony według użytkowników:
+### Zalety 1.3 MultiJet w Fiorino
 
 - **Niskie koszty paliwa** – przy typowym przebiegu 20–30 tys. km rocznie oszczędność względem benzynowego 1.4 sięga 3000–4000 zł
 - **Dostępność części** – ze względu na masową produkcję części zamienne są tanie i dostępne natychmiast. Ten sam silnik pracuje w [Peugeot Partner](/modele/peugeot-partner/), [Citroën Berlingo](/modele/citroen-berlingo/) (jako 1.3 HDi) oraz Oplu Combo (jako 1.3 CDTi)
 - **Prostota konstrukcji** – szczególnie wersja Euro 4 bez DPF. Doświadczeni mechanicy znają ten silnik na pamięć
 - **Elastyczność** – moment obrotowy 190–200 Nm dostępny od 1500 obr./min sprawia, że Fiorino dobrze radzi sobie w korku i przy załadunku do 500 kg
 
-Słabe strony:
+### Słabe strony silnika
 
 - **Łańcuch rozrządu** – to największa bolączka i główny koszt eksploatacji po przekroczeniu 150 tys. km
 - **Hałaśliwość** – typowa cecha małych diesli. Charakterystyczne klekotanie na zimno i przy wyższych obrotach

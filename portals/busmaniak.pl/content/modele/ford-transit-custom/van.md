@@ -71,11 +71,15 @@ Transit Custom L2 to mój typ na pojazd do dostaw multi-drop (wiele punktów na 
 
 ## Silniki dostępne w Transit Custom Van
 
+### EcoBlue gen I – 105 do 185 KM
+
 Gen I (do 2023):
 - 2.0 EcoBlue 105 KM + manualna 6-biegowa: wyłącznie krótkie trasy i małe załadunki
 - 2.0 EcoBlue 130 KM + manualna 6-biegowa: optymalny dla większości zastosowań
 - 2.0 EcoBlue 170 KM + manualna lub 8AT: duże ładunki i trasy regionalne
 - 2.0 EcoBlue 185 KM + 8AT: Sport Van lub wymagające zastosowania
+
+### Mild hybrid 48V i E-Transit Custom gen II
 
 Gen II (od 2024):
 - 2.0 EcoBlue 136 KM mild hybrid 48V: obniżone spalanie o ok. 5–8%

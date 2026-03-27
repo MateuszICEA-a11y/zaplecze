@@ -79,6 +79,8 @@ Zużycie w mieście jest wysokie ze względu na częste starty i zimny silnik ni
 
 ## Serwis Renault Master dCi – interwały i koszty
 
+### Interwały wymiany oleju i rozrządu M9T
+
 Standardowe interwały serwisowe dla silnika M9T:
 
 - **Wymiana oleju i filtrów** – co 30 000 km lub 2 lata (olej 5W-30 lub 5W-40 według normy Renault RN17086)
@@ -86,6 +88,8 @@ Standardowe interwały serwisowe dla silnika M9T:
 - **Sprzęgło + koło dwumasowe** – co 250 000–350 000 km (stan zależy od stylu jazdy)
 - **Wtryskiwacze** – diagnostyka co 150 000 km, regeneracja lub wymiana zależnie od wyników
 - **AdBlue** – uzupełnienie co 8000–12 000 km (17 l zbiornik)
+
+### Koszty napraw i przeglądów Mastera dCi
 
 Orientacyjne koszty typowych serwisów:
 

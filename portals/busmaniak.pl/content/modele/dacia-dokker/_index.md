@@ -26,11 +26,17 @@ faq:
 
 ## Historia i generacje Dacii Dokker
 
+### Premiera i platforma Renault B0
+
 Model zaprezentowano po raz pierwszy w czerwcu 2012 roku na targach motoryzacyjnych w Casablance, a sprzedaż ruszyła jesienią tego samego roku. Produkcja odbywała się w zakładach w Tangerze w Maroku. Konstruktorzy oparli Dokkera na platformie Renault B0, którą dzieli z Lodgym, Sandero i Kangoo II – efekt jest taki, że mechanicy przyzwyczajeni do aut Renault obsłużą go bez przestawiania się na nowe schematy.
+
+### Lifting 2017 i koniec produkcji
 
 W lutym 2017 roku przeprowadzono lifting: odświeżono pas przedni i rozszerzono gamę silnikową o jednostkę 1.3 TCe opracowaną wspólnie z Mercedesem. Produkcję zakończono w marcu 2021 roku. Rolę auta dostawczego przejęło Dacia Express (dostępna od marca 2024), a wersję pasażerską zastąpił Jogger – model z 2021 roku. Przez blisko dekadę Dacia Dokker zapracowała na opinię "woła roboczego", który nie boi się trudnych warunków eksploatacji.
 
 ## Silniki Dacia Dokker
+
+### Diesel 1.5 dCi i benzyna 1.6 SCe
 
 Wybór jednostki determinuje późniejsze koszty użytkowania. Najpopularniejszy na rynku wtórnym diesel 1.5 dCi to sprawdzona konstrukcja Renault z niskim spalaniem – dobra opcja dla tych, którzy dużo jeżdżą w trasie. **Dacia Dokker 1.6 benzyna** w wersji wolnossącej SCe to z kolei wybór dla osób ceniących prostotę: silnik ten znosi zasilanie gazem bez zarzutu, co przy obecnych cenach LPG przekłada się na realne oszczędności.
 
@@ -41,6 +47,8 @@ Wybór jednostki determinuje późniejsze koszty użytkowania. Najpopularniejszy
 | 1.2 TCe | 115 | 190 | 10,8 s | 6,0–7,0 |
 | 1.3 TCe | 130 | 240 | 10,6 s | 6,0–6,8 |
 | 1.6 LPG | 102 | 156 | 13,2 s | 8,5 (LPG) |
+
+### Turbodoładowany 1.3 TCe od Renault i Mercedesa
 
 Nowsza jednostka 1.3 TCe oferuje dobrą elastyczność nawet przy pełnym obciążeniu. Jeśli po zakupie zapalą się kontrolki na desce rozdzielczej, [sprawdź ich znaczenie przed wizytą w serwisie](/serwis/kontrolki-w-busie/) – systemy diagnostyczne w Dacii bywają czułe na spadki napięcia.
 
@@ -70,13 +78,21 @@ Dokker dzieli platformę z Renault Lodgy, Dacią Sandero i Renault Kangoo II. Se
 
 ## Wersje nadwozia – kombi, Van, Stepway
 
+### Dokker kombi i Van
+
 Dacia Dokker kombi to 5-osobowy wariant z przesuwnymi drzwiami bocznymi – przydatne, gdy parkujesz ciasno między innymi autami. Dacia Dokker Van to furgon z pełną przegrodą i bez przeszklenia z tyłu, co daje lepszą ochronę przewożonego towaru. Wersja ta trafia głównie do kurierów i firm usługowych.
+
+### Dacia Dokker Stepway – podwyższony prześwit
 
 Dacia Dokker Stepway wyróżnia się prześwitem podwyższonym do 175 mm – o 40 mm więcej niż standardowe 135 mm. Wersja pojawiła się w ofercie od 2014 roku. W pakiecie dostaje się relingi dachowe, plastikowe nakładki nadkoli i progów, dedykowaną tapicerkę, klimatyzację i system multimedialny Media Nav. Bliźniacza konstrukcja [Renault Kangoo](/modele/renault-kangoo/) dzieli z Dokkerem platformę i silniki, stanowiąc nieco lepiej wykończoną alternatywę.
 
 ## Typowe usterki Dacia Dokker
 
+### Problemy z silnikiem 1.2 TCe
+
 Auto jest proste w budowie, ale ma kilka powtarzających się słabości – opinie o Dacii Dokker zbierane na portalach branżowych wskazują na nie konsekwentnie. Silnik 1.2 TCe nadmiernie pije olej i ma skłonność do rozciągania łańcucha rozrządu już od 60–80 tys. km. To poważna wada – wymiana łańcucha jest kosztowna i czasochłonna. Cewki zapłonowe w benzynowych jednostkach zawodzą po 50–100 tys. km.
+
+### Diesel dCi, elektryka i korozja
 
 W silnikach dCi po 80–120 tys. km sprawdź świece żarowe i stan filtra DPF, zwłaszcza jeśli auto pracowało w cyklu miejskim. Centralny zamek i elektryka potrafią sprawiać kłopoty już po 30–70 tys. km. Klimatyzacja ma problemy z nieszczelnościami układu chłodzącego i sprężarkami po 40–60 tys. km. Lakier jest cienki – odpryski pojawiają się szybko, a korozja na progach bywa widoczna już po 5–7 latach eksploatacji. W ogólnym [zestawieniu małych vanów](/porownania/porownanie-malych-vanow/) Dokker wygrywa jednak kosztami napraw, które należą do najniższych w segmencie.
 

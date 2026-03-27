@@ -33,6 +33,8 @@ Tylne drzwi to skrzydłowe klapa lub dwie skrzydłowe drzwi 270°.
 
 ## Wymiary brygadówki Transit
 
+### Porównanie L2 i L3 Double Cab
+
 Brygadówka dostępna jest w wersjach L2 i L3. Przestrzeń ładunkowa jest krótsza niż w standardowym Van, bo część nadwozia zajmuje tylna kabina pasażerska.
 
 | Parametr | L2 Double Cab | L3 Double Cab |

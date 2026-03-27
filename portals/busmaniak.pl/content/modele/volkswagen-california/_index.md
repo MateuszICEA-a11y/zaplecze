@@ -44,6 +44,8 @@ Volkswagen oferował Californię w trzech poziomach wyposażenia kempingowego. W
 
 **California Coast** (wycofana z oferty w 2022 roku) zajmowała środkową pozycję – podnoszony dach, pełna kuchnia z lodówką 42 l i dwupalnikową kuchenką gazową, ale bez elektrohydraulicznego dachu i części premium-dodatków.
 
+### California Ocean – pełne wyposażenie kempingowe
+
 **California Ocean** to topowa wersja z pełnym wyposażeniem kempingowym:
 
 - **Dach** – elektrohydraulicznie podnoszony (T6.1) z łóżkiem 200x120 cm
@@ -84,6 +86,8 @@ Jeśli szukasz bazy pod własną zabudowę kamperową, [Fiat Ducato](/modele/fia
 ## Dane techniczne i wymiary Californii
 
 Silniki w Californii to przede wszystkim diesle 2.0 TDI z rodziny EA288, oferujące szeroką gamę wariantów mocy:
+
+### Silniki California T6.1 i T7
 
 **California T6.1 (2019–2024):**
 

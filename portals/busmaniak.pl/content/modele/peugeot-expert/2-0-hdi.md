@@ -43,6 +43,8 @@ Rozrząd napędzany jest paskiem zębatym – producent przewiduje wymianę co 2
 
 ## Spalanie Experta 2.0 HDi
 
+### Realne zużycie paliwa 2.0 HDi
+
 Katalogowe zużycie paliwa (5,9–7,2 l/100 km w zależności od wersji nadwozia) ma niewiele wspólnego z codzienną eksploatacją. Realne spalanie silnika 2.0 HDi w Peugeot Expert na podstawie pomiarów użytkowników metodą od baku do baku:
 
 | Warunki jazdy | Spalanie | Uwagi |
@@ -55,6 +57,8 @@ Katalogowe zużycie paliwa (5,9–7,2 l/100 km w zależności od wersji nadwozia
 | Cykl mieszany | 7,5–8,5 l/100 km | Średnia z forów i raportów |
 
 Wariant 163 KM spala średnio o 0,5–1 l/100 km więcej od wersji 120 i 128 KM – różnica wynika głównie z wyższego ciśnienia doładowania. Komputer pokładowy w Expercie potrafi zaniżać wskazania o 0,5–1,5 l/100 km, dlatego rzetelny pomiar wymaga tankowania do pełna.
+
+### Wpływ długości nadwozia na spalanie Experta
 
 Na spalanie wpływa też długość nadwozia – Expert w wersji L2 (długi) zużywa nieco więcej paliwa niż L1 z powodu większej masy własnej i oporu aerodynamicznego. Dla porównania: [Renault Trafic](/modele/renault-trafic/) z silnikiem 2.0 dCi o zbliżonej mocy osiąga bardzo podobne wyniki.
 
@@ -73,6 +77,8 @@ Silnik DW10 jest konstrukcyjnie dojrzałą jednostką – produkowany od 2000 ro
 - **Aktuator turbosprężarki** – mechanizm zmiennej geometrii zacina się po 180–280 tys. km, zwłaszcza przy krótkich trasach. Naprawa aktuatora: 800–1500 zł, regeneracja pełnej turbosprężarki Garrett: 1500–3000 zł
 - **Wycieki oleju z pokrywy zaworowej** – typowa bolączka silników DW10 po 100–200 tys. km. Wymiana uszczelki: 300–600 zł z robocizną
 - **Zawór EGR** – zarastanie nagarem po 100–150 tys. km. Czyszczenie: 400–700 zł, wymiana: 800–1500 zł
+### Dwumasowe koło zamachowe i osprzęt
+
 - **Dwumasowe koło zamachowe** – zużywa się po 150–250 tys. km przy eksploatacji miejskiej. Wymiana z kompletnym sprzęgłem: 3500–6000 zł
 
 {{% info title="Wtryskiwacze Siemens vs Bosch" icon="engineering" %}}
@@ -81,12 +87,16 @@ Warianty 120 i 128 KM wyposażono we wtryskiwacze Siemens VDO, które są statys
 
 ## Opinie i ocena silnika 2.0 HDi
 
-Silnik 2.0 HDi w Peugeot Expert zbiera wśród użytkowników opinie umiarkowanie pozytywne – to solidna jednostka, ale wymagająca świadomej eksploatacji. Najczęściej wymieniane zalety:
+Silnik 2.0 HDi w Peugeot Expert zbiera wśród użytkowników opinie umiarkowanie pozytywne – to solidna jednostka, ale wymagająca świadomej eksploatacji. ### Zalety silnika DW10
+
+Najczęściej wymieniane zalety:
 
 - **Kultura pracy** – cichszy i bardziej wyważony niż starsze silniki HDi o mniejszej pojemności
 - **Elastyczność** – dobry moment obrotowy od 1500 obr./min, wygodna jazda nawet w mieście
 - **Dostępność części** – jeden z najpopularniejszych silników PSA, zamienniki dostępne od ręki
 - **Trwałość bloku i głowicy** – przy regularnym serwisie przebiegi 300–400 tys. km bez kapitalnego remontu
+
+### Zastrzeżenia użytkowników Experta 2.0 HDi
 
 Najczęstsze zastrzeżenia:
 

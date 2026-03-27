@@ -82,6 +82,8 @@ Homologacja M1 (osobowa) oznacza pełne odliczenie VAT przy zakupie przez firmę
 
 ## Porównanie ProAce Verso z konkurencją
 
+### Verso vs Multivan, V-klasa i Trafic SpaceClass
+
 Toyota Proace Verso rywalizuje z VW Multivanem, Mercedesem V-klasy i Renaultem Trafic SpaceClass. Wszystkie oferują układ osobowy z opcją 7 lub 8 miejsc, ale różnią się szczegółami.
 
 | Model | Maks. miejsc | Silniki | Cena od |

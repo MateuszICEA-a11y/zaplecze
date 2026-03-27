@@ -26,7 +26,11 @@ faq:
 
 ## Ford Transit Courier Van – dwie generacje
 
+### I generacja na platformie Fiesty (2014–2023)
+
 Pierwsza generacja (2014–2023) bazowała na platformie Forda Fiesty i powstawała w tureckim Kocaeli. Długość 4160 mm, rozstaw osi 2489 mm – zwinny dostawczak do miejskich dostaw, ale z ograniczoną przestrzenią ładunkową. Silniki: 1.0 EcoBoost 100 KM, 1.5 Duratorq 75 KM i 1.6 Duratorq 95 KM.
+
+### II generacja z Craiovej – nowa platforma i europalety
 
 W 2023 roku [Ford Transit Courier](/modele/ford-transit-courier/) przeszedł na nową platformę i przeniósł produkcję do Craiovej w Rumunii. Nadwozie urosło do 4337 mm długości, rozstaw osi do 2692 mm, a kanciasty design zwiększył użytkową objętość ładowni. Nowa architektura od podstaw uwzględnia napęd elektryczny.
 

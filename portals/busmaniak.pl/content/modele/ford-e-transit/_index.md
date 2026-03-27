@@ -23,11 +23,17 @@ faq:
 
 ## Historia i konstrukcja Ford E-Transit
 
+### Premiera i produkcja Ford Otosan
+
 Ford zaprezentował E-Transita po raz pierwszy w listopadzie 2020 roku, a produkcja seryjna ruszyła na początku 2022 roku. Na rynki europejskie samochód trafia z tureckiej fabryki Ford Otosan w Kocaeli – tego samego zakładu, w którym powstaje klasyczny [Ford Transit](/modele/ford-transit/) z silnikiem Diesla. Wersja na rynek północnoamerykański jest z kolei montowana w Kansas City Assembly Plant.
+
+### Układ napędowy i platforma V710
 
 E-Transit nie jest konwersją spalinowego Transita – Ford zaprojektował układ napędowy od podstaw, zachowując jednocześnie nadwozie i przestrzeń ładunkową identyczną z wersją konwencjonalną. Silnik elektryczny napędza tylną oś, co pozwoliło umieścić [akumulator trakcyjny](https://en.wikipedia.org/wiki/Electric_vehicle_battery) pod podłogą przestrzeni ładunkowej bez utraty objętości ładownej.
 
 Konstrukcja opiera się na ramie podłogowej Transita szóstej generacji (V710). Zawieszenie przednie to kolumny McPhersona, tylne – wielowahaczowe z resorami piórowymi (w wersji dostawczej). Układ hamulcowy wykorzystuje rekuperację energii z czterema trybami odzyskiwania – od minimalnego po tryb jednopedałowy, w którym samochód zatrzymuje się bez użycia hamulca mechanicznego.
+
+### Bateria 89 kWh od rocznika 2024
 
 Od modelowego roku 2024 Ford wprowadził aktualizację z większą baterią o pojemności użytkowej 89 kWh (zamiast dotychczasowych 68 kWh), co przełożyło się na wydłużenie zasięgu i lepszą wydajność ładowania DC.
 
@@ -58,6 +64,8 @@ Kluczowe cechy techniczne E-Transita:
 
 ## Zasięg i ładowanie E-Transita
 
+### Realny zasięg E-Transita w praktyce
+
 Zasięg Ford E-Transit w cyklu WLTP wynosi od 217 do 317 km, zależnie od konfiguracji nadwozia i masy własnej pojazdu. Najdłuższy zasięg osiąga najlżejsza wersja furgonowa L2H2, najkrótszy – ciężkie konfiguracje podwozia L4.
 
 ![Ford E-Transit furgon elektryczny na stacji ładowania](/images/ford-e-transit-hero.jpg)
@@ -68,6 +76,8 @@ W praktyce zasięg zależy od kilku zmiennych:
 - **Temperatura otoczenia** – w zimie (poniżej 0°C) realny zasięg spada o 20–35% względem warunków optymalnych
 - **Prędkość jazdy** – powyżej 90 km/h zużycie energii rośnie wykładniczo
 - **Styl jazdy** – agresywne przyspieszanie i częste hamowanie bez rekuperacji mogą obniżyć zasięg o 30%
+
+### Ładowanie AC i DC – czasy i koszty
 
 Ładowanie E-Transita odbywa się na dwa sposoby:
 
@@ -137,14 +147,14 @@ Segment dużych elektrycznych dostawczaków w Europie obejmuje obecnie kilku klu
 | Cena od (PLN netto) | ok. 250 000 | ok. 290 000 | ok. 260 000 |
 | Napęd | tylny | tylny | przedni |
 
-Przewagi Ford E-Transit nad konkurencją:
+### Przewagi E-Transita nad eSprinterem i e-Ducato
 
 - **Ładowność** – do 1616 kg, najwyższa w segmencie
 - **Szybkie DC** – 115 kW to standard w każdej wersji (e-Ducato oferuje maks. 50 kW)
 - **Pro Power Onboard** – gniazda 230V zasilane z baterii, przydatne na budowach i eventach
 - **Liczba konfiguracji** – Van, Chassis Cab, Cutaway w czterech długościach
 
-Słabsze strony:
+### Słabsze strony E-Transita
 
 - **Zasięg** – 317 km WLTP to mniej niż 400 km eSprinter z baterią 113 kWh
 - **Bateria** – 68 kWh użytkowe ustępuje większym pakom eSprinter i e-Ducato 79 kWh

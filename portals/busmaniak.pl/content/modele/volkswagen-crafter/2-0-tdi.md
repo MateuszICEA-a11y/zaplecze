@@ -61,6 +61,8 @@ Znane problemy w kolejności częstości:
 - **EGR** – najbardziej znana słabość. Zawór recyrkulacji spalin zapycha się przy krótkich trasach. Objaw: dym na biegu jałowym, nierówna praca. Czyszczenie co 80 000–100 000 km: 300–500 zł
 - **DPF** – przy cyklu miejskim poniżej 15–20 km/dzień regeneracja jest niepełna. Zapchany DPF: regeneracja mechaniczna 600–1000 zł lub wymiana 2500–4000 zł
 - **Pompa wtryskowa** – stare wersje (TDI Pumpe-Düse) są podatne na zużycie przy złej jakości oleju. W Crafterze II stosowany jest Common Rail – mniej problematyczny, ale wymaga dobrego paliwa
+### Turbo i skrzynia DSG7 w Crafterze
+
 - **Turbosprężarka VTG** – siłowniki łopatek zużywają się przy przebiegach 200 000+ km. Objaw: brak mocy przy pełnym gazie lub nadmierny dym
 - **DSG7** – automat przy braku wymiany oleju co 60 000 km degraduje się szybko. Naprawa: 6000–12 000 zł
 

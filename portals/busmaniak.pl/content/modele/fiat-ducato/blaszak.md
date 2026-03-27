@@ -22,6 +22,8 @@ faq:
 
 ## Fiat Ducato blaszak – generacje i ewolucja
 
+### Trzecia generacja Ducato i liftingi
+
 Na rynku wtórnym wciąż trafiają się egzemplarze [Fiata Ducato](/modele/fiat-ducato/) drugiej generacji (1994–2006) z silnikami 1.9 D czy 2.8 JTD, ale poniżej skupiamy się na generacji produkowanej od 2006 roku, która przeszła dwa liftingi:
 
 - **2006–2014** – trzecia generacja (typ 250)

@@ -19,6 +19,8 @@ lead: "Ford Tourneo Custom to osobowa wersja Transit Custom – van rodzinny lub
 ---
 ## Tourneo Custom Gen I (2012–2023)
 
+### Wyposażenie i silniki gen I
+
 Tourneo Custom gen I to rozwinięcie Transit Custom Van z tapicerowanym wnętrzem i trzema rzędami siedzeń. Wyposażenie w zależności od wersji:
 - Trend: klimatyzacja automatyczna, 8" SYNC 3, USB/Bluetooth, 3 rzędy siedzeń
 - Limited: skórzana tapicerka, panoramiczny szyberdach, 17" felgi, nagłośnienie B&O
@@ -30,6 +32,8 @@ Silniki gen I dostępne w Tourneo:
 - 2.0 EcoBlue 185 KM: wersja limitowana przy wybranych specyfikacjach
 
 ## Tourneo Custom Gen II (od 2024)
+
+### Napędy diesel, PHEV i elektryczny
 
 Gen II to gruntownie nowy pojazd: nowa platforma, nowa kabina i trzy wersje napędowe:
 - 2.0 EcoBlue 136 KM mild hybrid 48V: diesel + belt-starter-generator

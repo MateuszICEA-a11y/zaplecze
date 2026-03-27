@@ -61,6 +61,8 @@ Rozstaw osi wyznacza długość zabudowy i jej środek ciężkości. Zasada ogó
 
 ## Popularne zabudowy na Transit chassis cab
 
+### Typy zabudów skrzyniowych i specjalistycznych
+
 Zabudowy montowane przez specjalistyczne firmy:
 
 - skrzynia drewniana – najtańsza, popularna w rolnictwie i budownictwie

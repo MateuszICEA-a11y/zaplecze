@@ -45,7 +45,11 @@ Minimalny promień skrętu wynosi ok. 6,6 m dla L3 i ok. 7,2 m dla L4. Dla poró
 
 ## Pojemność ładunkowa Ford Transit Long w praktyce
 
+### L3H2 – uniwersalny wariant dla transportu
+
 Wersja L3H2 to najbardziej universalny wariant – 11,5 m³ wystarczy do załadowania mebli z jednego pokoju, pełnej palety materiałów budowlanych lub towaru z małego hurtownianego zamówienia.
+
+### L4H3 – granica możliwości Transita
 
 L4H3 z 15,1 m³ to już granica możliwości Transita – odpowiednik małej ciężarówki dostawczej. Na tym poziomie pojemności warto rozważyć, czy DMC 3,5 t wystarczy na planowany ładunek.
 

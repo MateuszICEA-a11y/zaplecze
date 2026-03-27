@@ -40,6 +40,8 @@ Kangoo II (2008–2021) oferowano z czterema wariantami mocy silnika K9K:
 
 Blok silnika wykonany z żeliwa, głowica aluminiowa z ośmioma zaworami i jednym wałkiem rozrządu (SOHC). Napęd rozrządu realizowany jest paskiem zębatym – to istotna różnica w porównaniu z łańcuchowymi konstrukcjami konkurencji. Pasek wymaga wymiany co 120 000–160 000 km lub 5–6 lat, w zależności od kodu silnika.
 
+### Który wariant K9K wybrać do Kangoo?
+
 Wersja 68 KM to absolutne minimum – sprawdza się w dostawach miejskich, ale na trasie z ładunkiem wyraźnie brakuje jej dynamiki. Wariant 90 KM stanowi optymalny kompromis dla większości zastosowań, natomiast 110 KM to najlepsza opcja dla tych, którzy często jeżdżą z pełnym załadunkiem lub po drogach ekspresowych.
 
 ## Spalanie Kangoo 1.5 dCi
@@ -71,11 +73,15 @@ Kangoo 1.5 dCi w wersji 90 KM to jedno z najbardziej oszczędnych rozwiązań w 
 
 Silnik K9K jest konstrukcyjnie prosty i dobrze poznany, ale wieloletnia eksploatacja ujawnia charakterystyczne słabe punkty. Poniżej najczęściej zgłaszane problemy z orientacyjnymi przebiegami i kosztami napraw:
 
+### Awarie turbo i wtryskiwaczy Delphi
+
 - **Turbosprężarka** – awarie łożysk i uszczelnień po 100–200 tys. km. Objawy: spadek mocy, biały lub niebieski dym, olej w rurach doładowania. Regeneracja: 1200–2500 zł, wymiana na nową: 3000–5500 zł
 - **Wtryskiwacze Delphi** – wczesne wersje z układem Delphi szczególnie podatne na wycieki i zużycie końcówek po 120–200 tys. km. Objawy: nierówna praca na biegu jałowym, dymienie, trudności z odpalaniem na ciepłym silniku. Regeneracja kompletu: 1500–3000 zł, wymiana na nowe: 4000–7000 zł
 - **Zawór EGR** – pokrywa się nagarem po 80–130 tys. km, szczególnie w eksploatacji miejskiej. Objawy: szarpanie, spadek mocy, kontrolka silnika. Czyszczenie: 400–700 zł, wymiana: 800–1500 zł
 - **Napinacz paska rozrządu** – zdarza się przedwczesne zużycie napinacza, co prowadzi do przeskoczenia paska i poważnego uszkodzenia silnika. Wymiana rozrządu z pompą wody: 1200–2000 zł
 - **Filtr DPF** – w wersjach Euro 5/6 zapychanie filtra przy jeździe wyłącznie miejskiej po 60–120 tys. km. Regeneracja wymuszona: 800–1500 zł, wymiana filtra: 3000–5000 zł
+### Pompa paliwa i układ DPF w Kangoo
+
 - **Pompa wysokiego ciśnienia** – uszkodzenie pompy paliwa generuje opiłki metalowe, które niszczą wtryskiwacze i rampę. Wymiana pompy z płukaniem układu: 3000–5000 zł
 
 {{% info title="Wtryskiwacze Delphi vs Siemens" icon="engineering" %}}
@@ -85,6 +91,8 @@ Wersje 68 i 75 KM wyposażano w układ wtrysku Delphi, natomiast mocniejsze wari
 ## Opinie i ocena silnika 1.5 dCi
 
 Silnik K9K to jedna z najpopularniejszych jednostek wysokoprężnych w historii motoryzacji – zamontowano go w kilkudziesięciu modelach Renault, Dacii, Nissana i Mercedesa. W Kangoo II zbiera przeważnie pozytywne opinie, choć ocena zależy mocno od przebiegu i historii serwisowej konkretnego egzemplarza.
+
+### Zalety silnika K9K w Kangoo
 
 Najczęściej wymieniane zalety:
 

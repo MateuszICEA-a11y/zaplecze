@@ -40,6 +40,8 @@ Toyota Proace II jest dostępna z dwoma rodzinami silników Diesla oraz napędem
 - 100 KM / 250 Nm – wersja bazowa, wystarczająca do lekkich tras miejskich i regionalnych
 - 120 KM / 300 Nm – rekomendowana przy regularnym załadunku zbliżonym do maksimum
 
+### Silnik 2.0 D-4D w Toyocie ProAce
+
 **2.0 D-4D (DW10, 1997 cc)**
 
 - 120 KM / 340 Nm – wersja wejściowa dwulitrowa
@@ -100,6 +102,8 @@ Proace II dzieli platformę i mechanikę z Peugeotem Expert III oraz Citroënem 
 
 - Wtryskiwacze 1.5 D-4D – przy przebiegach powyżej 150–180 tys. km mogą wymagać regeneracji lub wymiany; problem znany i dobrze zdiagnozowany w serwisach PSA
 - DPF – zapychanie się filtra cząstek stałych przy eksploatacji głównie miejskiej (krótkie trasy poniżej 15 km); problem dotyczy obu rodzin silnikowych, Diesla 1.5 i 2.0
+### Problemy z DPF i elektroniką ProAce
+
 - Skrzynia EAT8 – sporadyczne błędy mechatroniki, głównie przy autach z wysokimi przebiegami i bez regularnych wymian oleju skrzyni; serwis specjalistyczny wymaga dostępu do oprogramowania PSA/Stellantis
 - Korozja progów – charakterystyczna dla Proace I (2013–2016); Proace II znacznie mniej podatny, ale starsze egzemplarze warto sprawdzić przy zakupie używanym
 - Czujniki i elektryka – drobne usterki elektryki pomocniczej (ogrzewanie postojowe, systemy kamer), rozwiązywane standardowo w ASO Toyota lub w autoryzowanych serwisach PSA

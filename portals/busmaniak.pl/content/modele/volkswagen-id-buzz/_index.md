@@ -27,6 +27,8 @@ faq:
 
 ID. Buzz zadebiutował jako koncept w 2017 roku, a produkcyjną wersję zaprezentowano w marcu 2022. Produkcja ruszyła w czerwcu 2022 w fabryce Volkswagen Samochody Użytkowe w Hanowerze. Nazwa nawiązuje wprost do kultowego T1 – legendarnego „Bulli" z lat 50., który stał się symbolem wolności i podróży.
 
+### Platforma MEB i bezpieczeństwo
+
 Konstrukcyjnie ID. Buzz bazuje na [platformie MEB](https://en.wikipedia.org/wiki/Volkswagen_Group_MEB_platform) (Modularer E-Antriebs Baukasten) – modułowej architekturze dla pojazdów elektrycznych grupy Volkswagen. Ta sama platforma napędza m.in. ID.3, ID.4, Skodę Enyaq i Cupę Born. Bateria umieszczona płasko w podłodze obniża środek ciężkości i pozwala na całkowicie płaską podłogę kabiny.
 
 Współczynnik oporu aerodynamicznego Cx wynosi 0,285 – znaczna poprawa względem historycznego T1, który miał Cx na poziomie 0,44. W testach Euro NCAP ID. Buzz otrzymał 5 gwiazdek, a wersja Cargo zdobyła platynową ocenę ANCAP.
@@ -72,6 +74,8 @@ Zużycie energii w cyklu mieszanym to 19,0–20,9 kWh/100 km. Na zasięg wpływa
 ID. Buzz występuje w czterech wariantach nadwoziowych:
 
 - **SWB osobowy (5-miejscowy)** – kompaktowa wersja z bagażnikiem 1121 l (do 2205 l po złożeniu tylnych siedzeń). Rozstaw osi 2988 mm sprawia, że jest zwrotny w mieście – średnica zawracania to 11,1 m
+### ID. Buzz LWB i Cargo
+
 - **LWB osobowy (7-miejscowy)** – dłuższa wersja z trzecim rzędem siedzeń. Bagażnik od 306 l (z trzecim rzędem) do 2469 l (po złożeniu dwóch rzędów). Baza dla wersji GTX
 - **ID. Buzz Cargo** – dostawczy wariant z przegrodą za pierwszym rzędem siedzeń. Objętość ładunkowa do 3,9 m³, ładowność 824 kg. Dostępny też jako MIXT (brygadówka z dodatkowym rzędem siedzeń i mniejszą ładownią)
 - **GTX** – sportowa wersja z napędem 4x4, dostępna w nadwoziu SWB i LWB. Wyróżnia się mocniejszym napędem i specyficznymi elementami stylistycznymi

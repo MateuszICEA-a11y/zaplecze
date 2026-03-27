@@ -77,10 +77,14 @@ Najczęściej doradzam klientom Jumpera L2H2 – pojemność 13 m³ i ładownoś
 
 ## Silniki w Jumperze Van
 
+### Aktualna gama 2.2 BlueHDi (po 2020)
+
 Aktualnie (po 2020): tylko 2.2 BlueHDi:
 - 120 KM + manualna 6-biegowa: do ładunków do 1200 kg na krótkich trasach
 - 140 KM + manualna 6-biegowa lub EAT8: optymalny dla L2 i L3
 - 165 KM + EAT8: przy L4 i dużych ładunkach
+
+### Silniki na rynku wtórnym (sprzed 2020)
 
 Egzemplarze sprzed 2020 (rynek wtórny):
 - 2.0 HDi (BlueHDi) 110/130 KM
@@ -111,6 +115,8 @@ Jumper Van jest popularną bazą do zabudów chłodniczych ATP w Polsce. Typowe 
 
 ## Serwis Jumpera Van
 
+### Koszty przeglądów i napraw 2.2 BlueHDi
+
 Serwis dostępny w sieci Citroën – ASO w Polsce ok. 150 punktów. Jumper korzysta z tych samych części co Boxer i Ducato.
 
 Koszty serwisowe (2.2 BlueHDi 140 KM):
@@ -118,6 +124,8 @@ Koszty serwisowe (2.2 BlueHDi 140 KM):
 - EGR czyszczenie (co 80 000–100 000 km): 300–500 zł
 - DPF regeneracja lub wymiana: 600–3500 zł
 - wtryskiwacze (po 250 000 km): 400–700 zł/szt.
+
+### Obsługa skrzyni automatycznej EAT8
 
 Skrzynia EAT8: wymiana oleju co 60 000 km – ok. 700–900 zł. "Olej na życie" to zalecenie producenta przy normalnej eksploatacji, ale przy intensywnym użyciu zalecam skrócenie do 60 000 km.
 
