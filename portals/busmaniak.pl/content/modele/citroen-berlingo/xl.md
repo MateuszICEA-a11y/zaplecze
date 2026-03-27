@@ -37,7 +37,11 @@ Berlingo XL jest dłuższe o 350 mm i ma o 190 mm większy rozstaw osi niż wers
 | Bagażnik (l)          | 775        | 1050        |
 | Ładownia Van (m³)     | 3,3        | 3,9         |
 
+### Bagażnik 1050 l w praktyce
+
 Bagażnik o pojemności 1050 litrów mieści bez problemu trzy duże walizki, wózek dziecięcy i jeszcze zostaje miejsce na torby z zakupami. Po złożeniu tylnych siedzeń pojemność przekracza 3500 litrów.
+
+### Berlingo XL Van – przestrzeń ładunkowa
 
 W wersji [Van](/modele/citroen-berlingo/van/) XL ładownia o objętości 3,9 m³ mieści dwie europalety ustawione jedna za drugą.
 

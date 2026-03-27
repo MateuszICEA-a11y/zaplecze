@@ -33,6 +33,8 @@ Współczesne [Fiaty Ducato](/modele/fiat-ducato/) skrzyniowe to przede wszystki
 
 ## Wymiary skrzyni Ducato i warianty kabin
 
+### Kabina pojedyncza i podwójna
+
 Ducato skrzyniowy występuje w dwóch konfiguracjach kabiny:
 
 - **Kabina pojedyncza** – 3 miejsca, maksymalna długość zabudowy
@@ -50,11 +52,15 @@ Producenci zabudów skrzyniowych: **Carpol, Jegger, Bovis**.
 
 ## Silniki Fiat Ducato skrzyniowy – który wybrać?
 
+### Warianty diesla do zabudowy skrzyniowej
+
 Otwarta skrzynia generuje większy opór aerodynamiczny niż furgon:
 
 - **[2.3 MultiJet](/modele/fiat-ducato/2-3-multijet/) (120–180 KM)** – najbardziej uniwersalna opcja. Wersja 130–140 KM to najczęstszy wybór do transportu lokalnego
 - **[3.0 MultiJet](/modele/fiat-ducato/3-0-multijet/) (160–180 KM)** – montowany do 2016 roku, najlepsza opcja pod ciężkie przyczepy
 - **[2.2 MultiJet3](/modele/fiat-ducato/2-2-multijet/) (120–180 KM)** – nowsze jednostki Stellantis, lżejsze, wymagają serwisu AdBlue
+
+### Automat 9-biegowy ZF
 
 Skrzynia automatyczna 9-biegowa ZF (od 2019 roku) – dopłata ok. 10 000–15 000 zł netto. Wysoko oceniana za płynność i oszczędność paliwa (ok. 8,3 l/100 km w mieście).
 

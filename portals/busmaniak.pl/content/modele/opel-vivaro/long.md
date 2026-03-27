@@ -20,6 +20,8 @@ faq:
 ---
 ## Wymiary Opel Vivaro Long i ładownia
 
+### Porównanie Standard vs Long
+
 | Parametr | Standard (L1) | Long (L2) |
 |----------|---------------|-----------|
 | Długość całkowita | 4960 mm | 5310 mm |
@@ -29,11 +31,15 @@ faq:
 | Wysokość ładowni | 1387 mm | 1387 mm |
 | Objętość | 5,3 m³ | 6,6 m³ |
 
+### Wymiary zewnętrzne Vivaro C Long
+
 Vivaro C Long:
 - **Długość całkowita** – 5310 mm
 - **Szerokość bez lusterek** – 1956 mm
 - **Wysokość** – 1960 mm
 - **Rozstaw osi** – 3275 mm
+
+### Przestrzeń ładunkowa Long
 
 Przestrzeń ładunkowa:
 - **Długość** – 3120 mm

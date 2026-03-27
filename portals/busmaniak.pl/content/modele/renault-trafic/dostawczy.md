@@ -65,11 +65,15 @@ Podłoga ładowni w wersji fabrycznej jest stalowa z rowkami. Większość użyt
 
 Trafic III dostawczy był oferowany z dwoma jednostkami wysokoprężnymi:
 
+### Silnik 1.6 dCi
+
 **1.6 dCi** (produkowany we współpracy z Fiatem)
 - Moc: 90, 115, 125 lub 140 KM
 - Moment obrotowy: do 320 Nm
 - Holowanie: maks. 2000 kg
 - Skrzynia: 6-biegowa manualna lub EDC (automat)
+
+### Silnik 2.0 dCi
 
 **2.0 dCi** (od faceliftu 2019)
 - Moc: 120, 145 lub 170 KM
@@ -87,12 +91,16 @@ Trafic III dostawczy był oferowany z dwoma jednostkami wysokoprężnymi:
 
 ## Zabudowy ładowni Trafica dostawczego
 
+### Systemy regalowe i podłogi
+
 Trafic dostawczy ma ustandaryzowane punkty mocowania na podłodze i ścianach bocznych, co ułatwia montaż zabudów warsztatowych. Najpopularniejsze rozwiązania:
 
 - **Regały aluminiowe lub stalowe** – systemy modułowe (Sortimo, Bott, Modul-System), koszt kompletnej zabudowy 3000–8000 zł netto
 - **Podłoga sklejkowa** – antypoślizgowa, chroni stal przed korozją
 - **Uchwyty mocujące i szyny** – montowane wzdłuż podłogi i na ścianach bocznych, nośność od 250 do 500 kg na punkt
 - **Belki poprzeczne** – umożliwiają zawieszenie rur, profili stalowych, drabinek; typowy zestaw 2–3 belek do 800 mm długości elementów
+
+### Wpływ zabudowy na ładowność
 
 Warto pamiętać, że każdy kilogram stałej zabudowy obniża dopuszczalny ładunek. W przypadku Trafic L2H2 z pełną zabudową regałową i DMC 3100 kg realny udźwig towaru to często 900–1050 kg, nie tabelaryczne 1086 kg.
 

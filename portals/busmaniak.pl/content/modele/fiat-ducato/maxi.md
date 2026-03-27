@@ -22,7 +22,11 @@ faq:
 
 ## Czym właściwie jest Fiat Ducato Maxi?
 
+### Wzmocnione zawieszenie i podwozie
+
 Wielu kupujących myli Ducato z Ducato Maxi, traktując to jako kwestię samej długości nadwozia. To błąd. Wersja Maxi różni się przede wszystkim wzmocnionym zawieszeniem z podwójnymi resorami tylnej osi, większymi kołami (16 cali zamiast 15) i wydajniejszym układem hamulcowym.
+
+### Homologacja i DMC
 
 Konstrukcja Maxi od początku projektowana była pod większe obciążenia. W Polsce większość chodzi z homologacją do 3,5 tony – ale rama pozwala na fabryczne DMC 4,0 lub 4,25 t. [Fiat Ducato](/modele/fiat-ducato/) L4H3 dostępny jest wyłącznie w wersji Maxi, co czyni go jedynym wyborem przy zabudowach wymagających maksymalnej wysokości wnętrza.
 
@@ -54,9 +58,13 @@ Wersje z DMC 4250 kg wymagają prawa jazdy kat. C1.
 
 ## Silniki w Fiat Ducato Maxi
 
+### Warianty silnikowe
+
 - **[2.3 MultiJet](/modele/fiat-ducato/2-3-multijet/)** – najbardziej trwały silnik w historii modelu. Wersje 130, 150 i 180 KM bez problemu ciągną duże nadwozie
 - **[3.0 MultiJet](/modele/fiat-ducato/3-0-multijet/)** – 180 KM, wycofany z powodu norm emisji, ale na rynku wtórnym wciąż ceniony za bezawaryjność
 - **[2.2 MultiJet3](/modele/fiat-ducato/2-2-multijet/) (od 2021)** – dostępny jako 140 i 180 KM, lżejszy, spełnia normę Euro 6d-Final
+
+### Realne spalanie Ducato Maxi
 
 Spalanie L4H3 z 2.3 150 KM: realne 10–12 l/100 km w trasie, do 14 l przy pełnym załadunku na autostradzie.
 

@@ -29,12 +29,16 @@ lead: "Peugeot Boxer w wersjach Long – L3 i L4 – to wybór dla firm, które 
 | Ładowność (DMC 4 t) | – | – | do 1735 kg |
 | Silniki | 140 / 165 KM | 140 / 165 KM | 165 KM + EAT8 |
 
+### Peugeot Boxer L3H2
+
 **Boxer L3H2:**
 - długość całkowita: 5998 mm
 - pojemność: 15 m³
 - długość przestrzeni ładunkowej: 3705 mm
 - ładowność: ok. 1500 kg
 - zalecane silniki: 140 lub 165 KM
+
+### Boxer L4H3 – najdłuższa wersja
 
 **Boxer L4H3:**
 - długość całkowita: 6363 mm
@@ -59,11 +63,15 @@ Boxer L3H2 to dobry wybór dla firmy budowlanej lub serwisowej. 3705 mm długoś
 
 ## Konsekwencje eksploatacyjne długich wersji
 
+### Wady L3 i L4
+
 Wady eksploatacyjne L3 i L4:
 - manewrowanie w wąskich ulicach miejskich i ciasnych podwórkach wymaga doświadczenia
 - wyższe koszty ogumienia (większy rozstaw osi = szybsze zużycie tylnych opon przy załadunku asymetrycznym)
 - ograniczony dostęp do niektórych parkingów podziemnych (bariera 2,5 m – H2 ma 2,52 m wysokości całkowitej)
 - wyższe zużycie paliwa niż L1/L2 przy tym samym ładunku
+
+### Spalanie Boxera Long
 
 Zużycie paliwa Boxer L3H2 z 140 KM:
 - miasto z załadunkiem: ok. 9,5–11 l/100 km

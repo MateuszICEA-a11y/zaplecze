@@ -32,6 +32,8 @@ Pojazd bazuje na podwoziu do zabudowy, na którym montowana jest otwarta skrzyni
 
 ## Generacje i silniki
 
+### III generacja – od 2006 do dziś
+
 Na rynku wtórnym i w salonach dominuje III generacja (od 2006 roku, z liftingami). Najnowsze modele (Serie 9.2) oferują jednostki Euro 6E:
 
 - **[2.3 MultiJet](/modele/fiat-ducato/2-3-multijet/) (2006–2021)** – punkt odniesienia w segmencie. Konstrukcja Iveco, od 120 do 180 KM
@@ -41,6 +43,8 @@ Na rynku wtórnym i w salonach dominuje III generacja (od 2006 roku, z liftingam
 {{% info title="Kupno" icon="engineering" %}}Przy zakupie używanego Ducato z silnikiem 2.3 MultiJet sprawdź stan wtryskiwaczy i podszybia – w starszych rocznikach woda spływająca na silnik powodowała korozję osprzętu.{{% /info %}}
 
 ## Wymiary i ładowność Fiata Ducato doka
+
+### Warianty L3 i L4
 
 Ducato doka występuje w wariantach L3 oraz L4. Dane dla wersji z silnikiem 140 KM:
 
@@ -67,6 +71,8 @@ Doka trafia do węższej grupy odbiorców niż klasyczny furgon:
 Jeśli priorytetem jest zadaszenie całej przestrzeni pasażerskiej, lepszym wyborem będzie [Ducato brygadówka](/modele/fiat-ducato/brygadowka/).
 
 ## Typowe problemy i serwis
+
+### Eksploatacja i słabe punkty
 
 Ducato jest solidną konstrukcją – pod warunkiem że wymiana oleju nie przekracza 15–20 tys. km, niezależnie od wskazań komputera pokładowego:
 

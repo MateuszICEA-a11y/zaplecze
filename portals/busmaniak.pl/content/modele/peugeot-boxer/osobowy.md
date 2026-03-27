@@ -19,20 +19,28 @@ lead: "Peugeot Boxer w wersji osobowej – Combi lub Minibus – to pojazd przew
 ---
 ## Konfiguracje Peugeot Boxer osobowy
 
+### Układy miejsc 5+1 i 8+1
+
 Boxer osobowy jest dostępny w kilku układach miejsc:
 - Boxer Combi 5+1: 5 foteli pasażerskich + kierowca + przestrzeń bagażowa z tyłu
 - Boxer Combi 8+1: 8 foteli pasażerskich + kierowca, brak bagażnika lub minimalny
 - Boxer Minibus 8+1 z wyposażeniem specjalnym: tapicerka, ogrzewanie tylne, nagłośnienie
 
+### Wymogi homologacyjne wersji 9-osobowej
+
 Wersja 9-miejscowa (kategoria M2) wymaga spełnienia dodatkowych wymagań homologacyjnych – m.in. wyjścia awaryjne, gaśnica, apteczka, pasy bezpieczeństwa na wszystkich miejscach.
 
 ## Wymiary i wyposażenie wnętrza
+
+### Boxer Combi L2H2 i L3H2
 
 Boxer Combi bazuje na wymiarach L2H2 lub L3H2:
 - L2H2 Combi: 5413 mm długości całkowitej
 - przestrzeń pasażerska (7+1): 2800 mm długości za fotelem kierowcy
 - szerokość wnętrza: 1870 mm
 - wysokość wnętrza: ok. 1850 mm (H2)
+
+### Wyposażenie standardowe Combi
 
 Wyposażenie standardowe Combi:
 - fotele tapicerowane z regulacją

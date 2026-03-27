@@ -37,7 +37,12 @@ Furgon jest lepszy do przewozu towarów wartościowych, wrażliwych na warunki a
 
 Na podwoziu Mastera montuje się kilka typów zabudów:
 
+### Skrzynia stalowa z plandeką brezentową
+
 - **Skrzynia z pałąkami stalowymi i plandeką brezentową** – najtańsza i najpopularniejsza; pałąki składane lub stałe; plandeka z paskami i haczykami
+
+### Zabudowy aluminiowe i kurtynowe
+
 - **Skrzynia aluminiowa z plandeką rolowaną** – lżejsza (oszczędność 80–150 kg na ładowność), szybszy dostęp do ładunku; wyższy koszt zabudowy
 - **Plandeka kurtynowa (Curtainsider)** – zamiast pałąków stosuje się pionowe paski plandeki zawieszane na ramieniu; szczególnie popularna w transporcie drobnicowym
 - **Skrzynia wywrotna z plandeką** – kombinacja wywrotki tylnej i plandekowegopokrycia; stosowana w transporcie odpadów i materiałów sypkich
@@ -88,6 +93,8 @@ Najczęstszy problem z używanymi Masterami plandekowym to korozja ramy podwozia
 {{% /expert %}}
 
 ## Serwis Renault Master plandeka – koszty utrzymania
+
+### Koszty specyficzne dla wersji plandekowej
 
 Mechanika jest identyczna jak w furgonie – silnik M9T, te same koszty serwisu. Dodatkowe koszty specyficzne dla wersji plandekowej:
 

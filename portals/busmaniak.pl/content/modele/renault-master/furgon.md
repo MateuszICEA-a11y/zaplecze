@@ -26,10 +26,15 @@ faq:
 
 [Renault Master](/modele/renault-master/) furgon (wewnętrzne oznaczenia: FV dla wersji z napędem na przednią oś, RV dla tylnonapędowej – rzadkość w Polsce) produkowany jest w sześciu standardowych konfiguracjach:
 
+### Warianty L1–L3
+
 - **L1H1** – krótki, niski; dobry do centrum miasta; ograniczona przestrzeń (8 m³)
 - **L2H2** – średni, wysoki; bestseller; dobry kompromis między pojemnością a manewrowością
 - **L3H2** – długi, wysoki; standard dla firm budowlanych i dostawczych
 - **L3H3** – długi, bardzo wysoki; gdy gabaryty ładunku wymagają pełnej wysokości
+
+### Wersje L4 Maxi
+
 - **L4H2** – bardzo długi (Maxi), wysoki; maksymalna pojemność przy ograniczonej wysokości
 - **L4H3** – bardzo długi i wysoki; absolutne maksimum przestrzeni w standardowej zabudowie
 
@@ -54,6 +59,8 @@ Renault Master furgon jest dostępny z napędem na przednią oś (FWD, zdecydowa
 
 ## Silniki w wersji furgon
 
+### Warianty mocy silnika 2.3 dCi
+
 Pełne spektrum silników 2.3 dCi (M9T) dostępnych w furgonie:
 
 - **100 KM** – wersja L1H1 i L2H2; wyłącznie manualna skrzynia; dobra do typowej kurierki
@@ -61,6 +68,8 @@ Pełne spektrum silników 2.3 dCi (M9T) dostępnych w furgonie:
 - **150 KM** – zalecany dla L3H2 i L3H3 przy regularnym pełnym obciążeniu
 - **165 KM** – twin-scroll; najnowsza wersja, optymalna na trasy dłuższe
 - **180 KM** – L4H2 i L4H3; obowiązkowy wybór przy DMC powyżej 3500 kg
+
+### Skrzynie biegów w Masterze furgon
 
 Skrzynia manualna 6-biegowa jest standardem. Automat EDC (6-biegowa przekładnia dwusprzęgłowa) jest opcją dla wersji 135–165 KM – szczególnie wygodna w pracy kurierskiej w mieście z wieloma zatrzymaniami.
 

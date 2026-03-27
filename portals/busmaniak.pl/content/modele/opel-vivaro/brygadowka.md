@@ -20,6 +20,8 @@ faq:
 ---
 ## Co to jest brygadówka?
 
+### Definicja i warianty Vivaro
+
 W branży transportowej terminem „brygadówka" określa się samochód dostawczy z podwójną kabiną lub skonfigurowany tak, by zabrać 5–6 osób i zachować użyteczną przestrzeń ładunkową. [Opel Vivaro](/modele/opel-vivaro/) w tej roli pojawia się w kilku formach:
 
 - **Vivaro Combi 6-miejscowy** – dwa rzędy siedzeń, za nimi przestrzeń ładunkowa
@@ -44,6 +46,8 @@ Prawdziwa brygadówka to często nie fabryczna konfiguracja, ale zabudowa zewnę
 |--------|-------------------|---------------|-----|-----------|
 | Combi L1 | 4960 mm | 6 | 2800 kg | 700–900 kg |
 | Combi L2 | 5310 mm | 6 | 3100 kg | 900–1100 kg |
+
+### Vivaro brygadówka L1 i L2
 
 - **DMC 2800 kg** – ładowność ok. 700–900 kg
 - **DMC 3100 kg** – ładowność ok. 900–1100 kg

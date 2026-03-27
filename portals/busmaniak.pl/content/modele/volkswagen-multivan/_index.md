@@ -25,9 +25,15 @@ faq:
 
 Volkswagen Multivan ewoluował przez dekady z roboczego Transportera w stronę komfortowej salonki. Każda generacja wnosiła coś nowego w zagospodarowaniu przestrzeni pasażerskiej.
 
+### Multivan T4 (1990–2003)
+
 **Volkswagen T4 Multivan** (1990–2003) – przełomowa jak na ówczesne czasy konstrukcja z silnikiem z przodu i napędem na przednią oś. Z fabryk w Hanowerze i Poznaniu wyjechało ok. 1,8 mln egzemplarzy. Silniki w zakresie 1.9–2.5 TDI, długość nadwozia 4707–5107 mm.
 
+### Multivan T5 (2003–2015)
+
 **Volkswagen T5 Multivan** (2003–2015) – generacja nastawiona na komfort i prestiż, łącznie 2,4 mln sztuk. Silniki 2.0 TDI od 84 do 204 KM, długość 4892–5292 mm. Facelifting z 2009 roku przyniósł przednie lampy LED i skrzynię DSG 7-biegową.
+
+### Multivan T6 i T6.1 (2015–2024)
 
 **Volkswagen T6 Multivan** / T6.1 (2015–2024) – produkcja w Hanowerze i Poznaniu, ok. 1,7 mln sztuk. Silniki 2.0 TDI od 84 do 204 KM. W T6.1 (od 2019) pojawił się Digital Cockpit. [Volkswagen Transporter](/modele/volkswagen-transporter/) w wersji dostawczej kontynuował tę samą platformę.
 
@@ -82,12 +88,12 @@ Centrum dowodzenia to ekran 10 cali, Digital Cockpit Pro i eSIM z nawigacją onl
 
 ## Typowe usterki Volkswagen Multivan
 
-**T5 (2003–2015):**
+### Usterki Multivan T5
 - **Dwumasowe koło zamachowe** – zużywa się przy 150–200 tys. km. Koszt wymiany: 5000–8000 zł
 - **Turbosprężarka 2.0 TDI** – awarie pojawiają się po 200 tys. km. Wymiana: 3000–5000 zł
 - **Korozja** – dolne krawędzie drzwi i podwozie
 
-**T6/T6.1 (2015–2024):**
+### Usterki Multivan T6 i T6.1
 - **Układ AdBlue** – krystalizacja i błędy czujników. Naprawa: 2000–4000 zł
 - **Łańcuch rozrządu** – warto skontrolować przy ok. 200 tys. km w silniku 2.0 TDI
 - **Elektronika** – multimedia w T6.1 potrafią się zawieszać

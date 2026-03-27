@@ -39,12 +39,16 @@ Wersja Long ma dwa rzędy przesuwnych drzwi bocznych po prawej stronie – wejś
 
 ## Przestrzeń pasażerska i bagażnik Toyota Proace Verso Long
 
+### Wymiary kabiny pasażerskiej
+
 Kluczowe wymiary wnętrza wersji Long:
 
 - długość strefy pasażerskiej – ok. 3300 mm od przegrody do drzwi tylnych
 - wysokość wnętrza – ok. 1310 mm (można siedzieć wyprostowanym)
 - bagażnik przy 9 miejscach – 850 l (do dachu)
 - bagażnik przy złożonym trzecim rzędzie – ok. 2100 l
+
+### Trzeci rząd siedzeń
 
 Fotele trzeciego rzędu w wersji Long są pełnowymiarowe – każde z czterech miejsc ma zagłówek i 3-punktowy pas bezpieczeństwa. To istotna różnica wobec aut z dorobionym rzędem, gdzie tylne siedzenia są wyraźnie węższe.
 
@@ -70,6 +74,8 @@ Zużycie paliwa przy pełnym obsadzeniu (9 osób, masa ok. 2500 kg łącznie z p
 - miasto – ok. 10–12 l/100 km
 
 ## Ceny i wyposażenie Proace Verso Long
+
+### Linie wyposażenia Shuttle, Family, VIP
 
 Proace Verso Long jest oferowany w tych samych liniach wyposażenia co Medium:
 

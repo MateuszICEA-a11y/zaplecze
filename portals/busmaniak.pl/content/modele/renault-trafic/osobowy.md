@@ -25,7 +25,11 @@ faq:
 
 Trafic III osobowy występuje w dwóch konfiguracjach różniących się nie tylko wyposażeniem, ale całą filozofią użytkowania.
 
+### Trafic Passenger
+
 **Trafic Passenger** to wersja robocza w dobrym sensie tego słowa. Dostępna w długościach L1 i L2, oferuje do 9 miejsc w układzie 2+3+4 (L2) albo 8 miejsc w L1. Wnętrze jest funkcjonalne, materiały odporne na codzienną eksploatację, a konfiguracja siedzeń pozwala złożyć tylne rzędy pod podłogę lub całkowicie je wyjąć. Dla firmy transportowej to zasadnicza zaleta.
+
+### Trafic SpaceClass
 
 **Trafic SpaceClass** to inna kategoria zastosowań. Fotele kapitańskie z możliwością obrotu, skórzana tapicerka, opcjonalny dach panoramiczny i większy ekran multimedialny – to auto do transferów VIP, nie do wożenia ekipy budowlanej. Cena wyjściowa od ok. 175 000 zł (2024) uzasadnia to przeznaczenie.
 
@@ -52,10 +56,14 @@ W praktyce: L2 to wybór dla transferów lotniskowych i grup turystycznych, gdzi
 
 Renault Trafic III osobowy był dostępny wyłącznie z silnikami Diesla:
 
+### Silnik 1.6 dCi R9M
+
 **1.6 dCi (R9M)** – jednostka obecna od debiutu generacji:
 - 95 KM – podstawowa wersja, wystarczająca przy L1 z niepełnym obciążeniem
 - 115 KM i 120 KM – najczęściej spotykane w wersjach flotowych
 - 140 KM – dwuturbo, wariant dla L2 z pełnym ładunkiem pasażerów
+
+### Silnik 2.0 dCi M9R
 
 **2.0 dCi (M9R)** – wprowadzony od 2019 roku:
 - 120 KM, 145 KM i 170 KM

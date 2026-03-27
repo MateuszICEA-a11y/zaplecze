@@ -31,6 +31,8 @@ Brak opcji wysokiego dachu (H2) w Vivaro C odróżnia go od Transit Custom i ogr
 
 ## Przestrzeń ładunkowa Vivaro – wymiary
 
+### Vivaro C Standard (L1)
+
 Vivaro C Standard (L1):
 
 - **Długość** – 2512 mm
@@ -57,6 +59,8 @@ Masa własna wersji podstawowej (1.5 D 100 KM, L1): ok. 1815 kg. Każde dodatkow
 Vivaro C furgon dostępny z silnikami od [1.5 D 75 KM](/modele/opel-vivaro/1-5/) do [2.0 D 177 KM z automatem](/modele/opel-vivaro/2-0/).
 
 ## Dostęp do ładowni Opel Vivaro
+
+### Drzwi tylne i przesuwne
 
 - **Drzwi tylne dwuczęściowe** – otwieranie 180° (opcja 270°)
 - **Drzwi przesuwne prawe** – standard

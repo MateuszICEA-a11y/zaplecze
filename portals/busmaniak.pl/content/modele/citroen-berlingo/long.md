@@ -24,7 +24,11 @@ faq:
 
 ## Czym jest Berlingo Long? {#czym-jest}
 
+### Nazewnictwo – Long vs XL
+
 Berlingo Long to wydłużona wersja popularnego kombivana Citroëna, wyróżniająca się dłuższym rozstawem osi i większą przestrzenią wewnątrz. Model ten – opisany szczegółowo na Wikipedii – w drugiej generacji (2008–2018) używał nazwy Long, natomiast trzecia generacja (od 2018) nosi oznaczenie [XL](/modele/citroen-berlingo/xl/).
+
+### Zastosowania wydłużonej wersji
 
 Berlingo Long sprawdza się przede wszystkim jako:
 
@@ -75,7 +79,11 @@ Przy pełnym obciążeniu (5–7 osób + bagaże) mocniejsze warianty silnikowe 
 
 ## Berlingo Long jako auto rodzinne {#rodzinne}
 
+### Trzeci rząd siedzeń i konfiguracja 7-osobowa
+
 Wydłużona wersja Berlingo to naturalna baza dla wariantu [7-osobowego](/modele/citroen-berlingo/7-osobowy/) z trzecim rzędem siedzeń (konfiguracja 2+3+2). Krótkie Berlingo M nie oferuje tej opcji – brakuje miejsca na dodatkowe fotele.
+
+### Przesuwane drzwi i Isofix
 
 Przesuwane drzwi boczne (po obu stronach) to ogromna zaleta na ciasnych parkingach. Dzieci wsiadają i wysiadają bez ryzyka uderzenia drzwiami w sąsiedni samochód. Isofix w drugim rzędzie umożliwia bezpieczny montaż fotelików.
 

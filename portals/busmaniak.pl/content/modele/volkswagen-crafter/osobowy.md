@@ -31,7 +31,9 @@ Crafter II w układzie osobowym dostępny jest jako:
 - **VW Grand California**: oficjalny kamper VW na bazie Craftera, sprzedawany przez dealerów VW
 - **Baza do zabudów specjalnych**: ambulans, pojazd do przewozu osób z niepełnosprawnościami
 
-## Crafter Grand California – kamper z Polskim rodowodem
+## Crafter Grand California – kamper z polskim rodowodem
+
+### Wyposażenie kempingowe Grand California
 
 Grand California to jedyny oficjalny kamper produkowany przez VW – i jest produkowany w Polsce. Bazuje na Crafterze i oferuje:
 - układ spania dla 2 dorosłych (dach stały lub unoszony)
@@ -80,11 +82,15 @@ Crafter Kombi rejestrowany jako M1 (do 8 pasażerów + kierowca) daje prawo do 5
 
 ## Zabudowy specjalne na bazie Craftera
 
+### Ambulanse, busy szkolne i pojazdy specjalne
+
 Crafter jest popularną bazą dla producentów zabudów w Polsce:
 - ambulanse sanitarne: produkowane m.in. przez AMZ Kutno i Kamper Polska
 - pojazdy dla osób z niepełnosprawnościami: rampa lub winda hydrauliczna, kotwiczenia wózków
 - busy szkolne: z sygnalizacją STOP, blokadą drzwi i wymogami przepisów szkolnego transportu
 - pojazdy policyjne i wojskowe: specjalne konfiguracje kabiny i zabudowy
+
+### Crafter 4Motion AWD
 
 Crafter dzięki opcji AWD 4Motion jest jedynym dużym dostawczakiem z napędem 4x4 w standardowej ofercie katalogowej – co otwiera możliwości dla służb terenowych i firm w trudnym terenie.
 

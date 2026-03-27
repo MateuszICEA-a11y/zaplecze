@@ -20,7 +20,11 @@ faq:
 ---
 ## Opel Vivaro osobowy – Combi i Life
 
+### Vivaro Combi – wersja użytkowa
+
 **Vivaro Combi** – wersja z minimalnym prestiżem: kilka rzędów siedzeń, podstawowe wykończenie. Praktyczny wybór dla firm przewozowych, szkół i służb komunalnych. Dostępna od generacji A.
+
+### Vivaro Life – komfort dla pasażerów
 
 **Vivaro Life** (od generacji C, 2019) – wyższy poziom wykończenia, lepsze wygłuszenie. Dwie długości: Standard i Long.
 
@@ -73,7 +77,11 @@ Vivaro z 9 miejscami bywa homologowany jako autobus (kategoria M2), co wpływa n
 
 ## Combi czy Life?
 
+### Combi do intensywnej eksploatacji
+
 **Combi** – gdy potrzebujesz czystej funkcji wożenia ludzi, budżet jest ważniejszy niż komfort, a auto będzie intensywnie eksploatowane.
+
+### Life na dłuższe trasy
 
 **Life** – gdy pasażerowie to klienci lub pracownicy ceniący komfort, trasy są długie, a Ty chcesz coś bliższego minivanowi niż busowi.
 

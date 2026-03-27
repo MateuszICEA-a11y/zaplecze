@@ -30,12 +30,16 @@ faq:
 | Czas DC 20–80% | ok. 45 min | ok. 45 min |
 | Ładowność | ok. 1000 kg | ok. 830 kg |
 
+### Napęd i zasięg
+
 - **Silnik elektryczny** – 136 KM (100 kW), 260 Nm
 - **Bateria** – 50 kWh lub 75 kWh (netto użyteczne)
 - **Napęd** – przedni
 - **Ładowanie AC** – do 11 kW (trójfazowe)
 - **Ładowanie DC** – do 100 kW
 - **Vmax** – 130 km/h
+
+### Bateria 50 kWh vs 75 kWh
 
 Zasięg WLTP:
 - **Bateria 50 kWh** – ok. 230 km
@@ -47,10 +51,14 @@ Vivaro-e z baterią 75 kWh to realna propozycja dla floty miejskiej z wypadami p
 
 ## Przestrzeń ładunkowa i ładowność
 
+### Wymiary ładowni Standard i Long
+
 Vivaro-e zachowuje identyczną przestrzeń jak odpowiednik spalinowy:
 
 - **Standard (L1)** – 5,3 m³
 - **Long (L2)** – 6,6 m³
+
+### Wpływ baterii na ładowność
 
 Ładowność niższa przez masę baterii:
 

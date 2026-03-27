@@ -26,7 +26,12 @@ faq:
 
 W nomenklaturze Renault funkcjonują dwa określenia dla Mastera osobowego:
 
+### Renault Master Combi
+
 - **Combi** – hybryda furgonu i busa; część tylna zachowuje przestrzeń ładunkową, środkowe i tylne rzędy siedzeń można złożyć lub wyjąć; od 2 do 9 miejsc siedzących; szyby boczne za kabina
+
+### Renault Master Bus
+
 - **Bus** – w pełni pasażerski; wszystkie miejsca z zagłówkami i pasami; homologacja jako autobus; od 9 do 17 miejsc (zależnie od zabudowy); przeznaczony do regularnego transportu osób
 
 W polskiej praktyce rynkowej określenie „Master osobowy" używane jest dla obu tych wersji, bo różnica jest przede wszystkim homologacyjna. Kombi przewozi towar i ludzi; Bus przewozi wyłącznie ludzi.
@@ -83,6 +88,8 @@ Master osobowy po faceliftingu (2019) oferuje:
 Okna boczne pasażerów są w standardzie przyciemniane (Privacy Glass) w wersjach wyposażenia Confort i wyżej.
 
 ## Zastosowania w praktyce
+
+### Transport osób i usługi
 
 Najczęstsze aplikacje Mastera osobowego w Polsce:
 

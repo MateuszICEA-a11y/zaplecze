@@ -24,9 +24,15 @@ faq:
 
 ## Silnik HDI w Peugeot Partner – przegląd wariantów
 
+### Rodzina DV6 – 1.6 HDI
+
 [Peugeot Partner](/modele/peugeot-partner/) w drugiej generacji (2008–2018) opierał ofertę głównie na silnikach z rodziny DV6. Jednostka 1.6 HDI o pojemności 1560 cm³ stała się rynkowym standardem – ten sam silnik napędza bliźniaczego [Citroëna Berlingo 1.6 HDI](/modele/citroen-berlingo/1-6-hdi/), co ułatwia dostęp do części.
 
-W ofercie znajdziesz zarówno proste wersje 8-zaworowe (75 KM), jak i zaawansowane 16-zaworowe odmiany z turbiną o zmiennej geometrii. Starsze 2.0 HDI (DW10) o mocach do 136 KM słyną z trwałości, ale w nowszych rocznikach zostały wyparte przez mniejsze BlueHDi z systemem SCR i AdBlue (Euro 6).
+W ofercie znajdziesz zarówno proste wersje 8-zaworowe (75 KM), jak i zaawansowane 16-zaworowe odmiany z turbiną o zmiennej geometrii.
+
+### Starsze 2.0 HDI i nowsze BlueHDi
+
+Starsze 2.0 HDI (DW10) o mocach do 136 KM słyną z trwałości, ale w nowszych rocznikach zostały wyparte przez mniejsze BlueHDi z systemem SCR i AdBlue (Euro 6).
 
 ## Dane techniczne i warianty mocy
 
@@ -68,9 +74,13 @@ W silnikach 1.6 HDI kluczowy jest przewód doprowadzający olej do turbiny z sit
 
 ## Serwis i eksploatacja
 
+### Rozrząd i olej silnikowy
+
 Rozrząd na pasku – producent podaje 120–240 tys. km lub 10 lat. Bezpieczny interwał to 160 tys. km lub 6 lat. Koszt z pompą wody: 1500–2500 zł.
 
 Olej silnikowy wymieniaj co 12–15 tys. km (nie dłużej, mimo zaleceń Long Life). Stosuj oleje Low SAPS – konieczne dla poprawnego działania DPF i czystości kanałów olejowych turbo.
+
+### Diagnostyka przy dużych przebiegach
 
 Przy przebiegach powyżej 200 tys. km warto profilaktycznie sprawdzić ciśnienie wtrysku i korekcję dawek – wczesne wykrycie problemu oszczędza tysiące złotych.
 

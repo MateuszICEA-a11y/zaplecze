@@ -48,8 +48,13 @@ Automat 8-biegowy w 2.0 D 177 KM jest zaskakująco oszczędny na trasie – dobr
 
 ## Co wpływa na spalanie?
 
+### Obciążenie i prędkość
+
 - **Załadowanie** – każde 100 kg to +0,3–0,5 l/100 km
 - **Prędkość** – 130 km/h zamiast 100 km/h to +1,5–2 l/100 km
+
+### Stan techniczny pojazdu
+
 - **Ciśnienie w oponach** – zbyt niskie podnosi spalanie o 0,3–0,5 l/100 km
 - **Stan filtra powietrza** – zatkany filtr podbija spalanie o ~0,5 l/100 km
 - **Temperatura** – zimą silnik dłużej się rozgrzewa

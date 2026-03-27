@@ -49,11 +49,15 @@ Przy wyborze między Short a Long zawsze pytam klienta: jaki jest najdłuższy t
 
 ## Silniki w Partner Long
 
+### Gama silnikowa Partnera Long
+
 Dostępna gama silnikowa jest identyczna jak w Short:
 - 1.2 PureTech 130 KM + EAT8: komfortowy wybór dla mieszanej eksploatacji
 - 1.5 BlueHDi 75 KM + manualna 5-biegowa: tylko w wersji bez zabudowy, do lekkich dostaw
 - 1.5 BlueHDi 100 KM + manualna 6-biegowa: optymalny diesel dla pełnej ładowności
 - 1.5 BlueHDi 130 KM + EAT6: dla wymagających kierowców z dużymi przebiegami
+
+### Optymalny wybór dla pełnego załadunku
 
 Przy regularnym załadunku bliskim 900–1000 kg, diesel 1.5 D 100 KM z manualem to najlepszy wybór. Silnik benzynowy PureTech przy dużym załadunku traci na dynamice, choć normę emisji spełnia bez zastrzeżeń.
 
@@ -62,6 +66,8 @@ Przy regularnym załadunku bliskim 900–1000 kg, diesel 1.5 D 100 KM z manualem
 ![Peugeot Partner Long – przestrzeń ładunkowa i tylne drzwi](/images/peugeot-partner-long-hero.jpg)
 
 ## Możliwości zabudowy
+
+### Systemy regalowe i podłogi
 
 Partner Long jest certyfikowany do zabudów przez partnerów Peugeota. Typowe konfiguracje:
 - system regalowy Peugeot Storage (aluminium + plastik) ze standardem montażu L-Track

@@ -75,7 +75,12 @@ Crafter ma jedną cechę, za którą go cenię ponadprzeciętnie: szeroką podł
 
 Wybór napędu wpływa na ładowność i zastosowania:
 
+### Napęd przedni FWD
+
 - **FWD** (przód, standard): najlepsza ładowność (~1100–1500 kg), nieznacznie niższa trakcja przy pełnym załadunku tylnym
+
+### Napęd tylny RWD i 4Motion AWD
+
 - **RWD** (tył): wymagany przy zabudowach z ciężkim wyposażeniem z tyłu (dźwig, winda załadunkowa), wyższa ładowność w wersjach L4
 - **AWD 4Motion**: dostępny z 177 KM, ładowność nieco niższa (~900–1000 kg), ale możliwość pracy w terenie lub przy złej nawierzchni
 
@@ -99,6 +104,8 @@ Crafter II i MAN TGE są produkowane w tej samej fabryce, na tej samej linii mon
 {{% /info %}}
 
 ## Koszt serwisu Craftera Van
+
+### Typowe koszty przeglądów i napraw
 
 Zalecany przegląd co 30 000 km lub 2 lata. Typowe koszty:
 - wymiana oleju silnikowego (2.0 TDI): ok. 350–450 zł

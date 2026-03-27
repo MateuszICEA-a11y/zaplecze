@@ -42,8 +42,13 @@ W standardowej konfiguracji 5-osobowej bagażnik pomieści 1213 litrów (wersja 
 
 ## Wyposażenie Volkswagen Caddy – Life, Style, Move {#wyposażenie}
 
+### Linia bazowa i Life
+
 - **Caddy (bazowy)** – ABS, ESP, Front Assist, radio z 6,5" ekranem, manualna klimatyzacja, elektrycznie sterowane szyby przednie
 - **Life** – automatyczna klimatyzacja Climatronic, Composition Colour z 8,25" ekranem, czujniki parkowania tył, tempomat, podgrzewane fotele
+
+### Linia Style i Move
+
 - **Style** – Digital Cockpit Pro (10,25"), reflektory LED, kamera cofania, nawigacja Discover Media, dekoracyjne wstawki w kabinie
 - **Move** – pakiet outdoor (relingi dachowe, nakładki progowe), specjalna tapicerka, dodatkowe schowki, podwyższone zawieszenie
 
@@ -66,6 +71,8 @@ Pełny przegląd silników i generacji na stronie [Volkswagena Caddy](/modele/vo
 {{% expert name="Kowalczyk" %}}Do jazdy rodzinnej polecam 2.0 TDI 102 KM z manualną skrzynią biegów. DSG jest wygodniejsza, ale w razie awarii mechatronika koszty naprawy sięgają 3–5 tys. zł. Manual jest odporniejszy na usterki i tańszy w serwisie.{{% /expert %}}
 
 ## Caddy osobowy vs konkurencja {#konkurencja}
+
+### Berlingo, Kangoo i Combo Life
 
 - **[Citroën Berlingo](/modele/citroen-berlingo/)** – tańszy o 15–20%, większy bagażnik w wersji XL, ale gorsze prowadzenie i plastikowe wnętrze
 - **[Renault Kangoo](/modele/renault-kangoo/)** – nowocześniejszy design, opcja Open Sesame, konkurencyjna cena

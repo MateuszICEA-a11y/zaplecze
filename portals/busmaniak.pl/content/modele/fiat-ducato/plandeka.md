@@ -22,7 +22,11 @@ faq:
 
 ## Fiat Ducato plandeka – generacje i bazy pod zabudowę
 
+### Trzecia generacja jako standard branżowy
+
 [Fiat Ducato](/modele/fiat-ducato/) jest produkowany od 1981 roku, ale w transporcie zawodowym liczy się właściwie tylko trzecia generacja – model 250 z 2006 roku, a od 2014 lifting jako model 290.
+
+### Podwozia L3 i L4
 
 Pod plandekę wybiera się podwozia z kabiną (Chassis Cab) w dwóch wariantach:
 
@@ -49,6 +53,8 @@ Od trzeciej generacji (2006+) nadwozia Ducato są w pełni ocynkowane. Problem k
 Wersje 10-paletowe często mają windę tylną (750 kg, ok. 200–300 kg masy własnej, koszt z UDT) oraz podnoszony dach. Producenci zabudów: **Lamar, Gruau, Odotrans, Uni-Truck**.
 
 ## Który silnik wybrać do Ducato z plandeką?
+
+### Silniki diesla – porównanie generacji
 
 Plandeka to duży opór powietrza i poważne obciążenie przy każdym wyjeździe:
 

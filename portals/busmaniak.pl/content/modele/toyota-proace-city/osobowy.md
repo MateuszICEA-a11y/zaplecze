@@ -35,12 +35,17 @@ Wersja Long trafia do rodzin z dziećmi i firm przewozowych, które potrzebują 
 
 ## Silniki dostępne w Proace City Verso
 
+### Warianty benzynowe i diesla
+
 Oferta silnikowa jest taka sama jak w wersji dostawczej:
 
 - 1.2 PureTech 110 KM – benzyna, trójcylindrowy, skrzynia manualna 6-biegowa
 - 1.2 PureTech 130 KM – benzyna, trójcylindrowy, skrzynia automatyczna EAT8
 - 1.5 D-4D 100 KM – diesel, skrzynia manualna 6-biegowa
 - 1.5 D-4D 130 KM – diesel, skrzynia manualna 6-biegowa lub automatyczna EAT8
+
+### Wersja elektryczna e-Proace City
+
 - elektryczny e-Proace City – silnik 136 KM, bateria 50 kWh, zasięg ok. 280 km WLTP
 
 Do długich tras z pełnym obsadzeniem (7 osób plus bagaż) optymalny jest diesel 130 KM. Benzyna 130 KM sprawdza się w jeździe miejskiej i na spokojnych trasach.
@@ -59,7 +64,11 @@ Wysokość wnętrza pozwala na swobodne wejście bez zginania się. Duże przesu
 
 ## Ceny i wyposażenie
 
+### Cennik Proace City Verso
+
 Proace City Verso startuje od ok. 100 000 zł za wersję 5-miejscową z silnikiem benzynowym w podstawowym wyposażeniu. Wersja Long z dieslem 130 KM i automatem to ok. 130 000–140 000 zł.
+
+### Linie wyposażenia
 
 Dostępne linie wyposażenia:
 

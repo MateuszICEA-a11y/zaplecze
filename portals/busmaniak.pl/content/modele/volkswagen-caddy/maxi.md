@@ -46,6 +46,8 @@ Więcej o wersji standardowej w artykule o [Volkswagenie Caddy](/modele/volkswag
 
 ## Dane techniczne Volkswagen Caddy Maxi {#dane-techniczne}
 
+### Masy i ładowność
+
 - **DMC** – 2300–2500 kg (zależnie od silnika)
 - **Masa własna** – 1550–1700 kg
 - **Ładowność** – 650–800 kg
@@ -70,6 +72,8 @@ Gama silnikowa identyczna jak w Caddy standardowym:
 Przy pełnym obciążeniu (7 osób + bagaże) mocniejsze warianty mają realną przewagę. 2.0 TDI 102 KM to minimum dla regularnej jazdy z pełnym składem.
 
 ## Caddy Maxi jako auto rodzinne {#rodzinne}
+
+### Wersja 7-miejscowa i wyposażenie rodzinne
 
 Caddy Maxi to jedna z najlepszych propozycji w segmencie kombivanów rodzinnych:
 

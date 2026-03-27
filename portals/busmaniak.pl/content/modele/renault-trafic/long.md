@@ -45,9 +45,13 @@ Wyższa zabudowa L2H2 daje 8,9 m³ przestrzeni, ale waży więcej. Efekt: ładow
 
 ## Wersje Long: furgon i osobowy {#wersje}
 
+### Trafic Long furgon i Passenger
+
 Trafic L2 dostępny jest w dwóch wersjach nadwozia. Furgon przeznaczony do transportu towarów, wersja osobowa (Passenger) – do przewozu do 9 osób. Jeśli rozważasz adaptację na busa turystycznego lub shuttle, wersja osobowa ma fabrycznie wzmocnioną podłogę i mocowania siedzeń zgodne z homologacją.
 
 ## Kiedy warto wybrać Long? {#kiedy-long}
+
+### Argumenty za wersją L2
 
 L2 ma sens, jeśli spełniasz przynajmniej jeden z tych warunków:
 

@@ -71,11 +71,15 @@ Różnica w długości to 350 mm – identycznie jak między Proace Long i Mediu
 
 ## Kiedy wybrać Long, a kiedy Short?
 
+### Proace City Long – dla kogo
+
 Long jest właściwym wyborem, gdy:
 
 - regularne trasy obejmują załadunek z 2 palet lub dużego kartonu meblowego
 - firma obsługuje klientów e-commerce z gabarytowymi paczkami
 - zależy ci na ładowności 1000 kg – np. przy materiałach budowlanych drobnicowych
+
+### Proace City Short – kiedy wystarczy
 
 Short sprawdza się lepiej, gdy:
 
@@ -88,6 +92,8 @@ Proace City Long to jedno z moich ulubionych poleceń dla małych firm usługowy
 {{% /expert %}}
 
 ## Dostępne silniki w Proace City Long
+
+### Warianty diesla i benzyny
 
 Proace City Long jest dostępny z:
 

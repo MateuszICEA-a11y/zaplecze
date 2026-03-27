@@ -33,10 +33,14 @@ Szerokość między nadkolami we wszystkich wariantach: 1422 mm – pozwala na �
 
 ## Wejście załadunkowe
 
+### Drzwi tylne dwuskrzydłowe
+
 Tylne drzwi dwuskrzydłowe w standardzie:
 - szerokość otworu: 1556 mm
 - wysokość otworu: 1750 mm (H1) lub 1950 mm (H2/H3)
 - kąt otwarcia: 180° lub 270° (opcja)
+
+### Drzwi przesuwne boczne
 
 Opcjonalne przesuwane drzwi boczne (prawe lub lewe):
 - szerokość otworu: 870 mm
@@ -61,11 +65,15 @@ Do pracy z ładunkiem bliskim maksimum i powtarzalnymi trasami – 140 KM z manu
 
 ## Podłoga i wyposażenie ładowni
 
+### Standard fabryczny
+
 Standard Boxer Van obejmuje:
 - metalową podłogę ładowni (blacha stalowa, gładka)
 - szyny mocujące ładunek w podłodze (opcja)
 - kratę oddzielającą kabinę (opcja)
 - relingi boczne ładowni (opcja)
+
+### Opcjonalne wyposażenie cargo
 
 Opcjonalne wyposażenie cargo od Peugeota:
 - sklejka podłogi z listwami aluminiowymi

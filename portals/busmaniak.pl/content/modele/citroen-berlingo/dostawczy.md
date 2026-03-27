@@ -24,7 +24,11 @@ faq:
 
 ## Berlingo dostawczy – przegląd wersji {#przegląd}
 
+### Homologacja N1 i różnice wobec wersji osobowej
+
 [Citroën Berlingo](/modele/citroen-berlingo/) to model dostępny zarówno w wersji osobowej, jak i jako dostawczy furgon. Ta druga odmiana występuje z homologacją N1 (ciężarową), która daje firmom korzyści podatkowe: pełne odliczenie VAT od zakupu i eksploatacji. Różni się od wersji osobowej (M1) brakiem tylnych siedzeń, stalową przegrodą za kabiną i wzmocnionym zawieszeniem.
+
+### Warianty nadwozia
 
 Dostępne warianty:
 
@@ -51,11 +55,15 @@ Berlingo M mieści jedną europaletę (1200 x 800 mm). Wersja XL mieści dwie eu
 
 ## Silniki w Citroënie Berlingo dostawczym {#silniki}
 
+### III generacja – 1.5 BlueHDI
+
 W III generacji Berlingo dostawczego głównym silnikiem jest 1.5 BlueHDI:
 
 - **1.5 BlueHDI 75 KM** – bazowy wariant do lekkiego transportu miejskiego
 - **1.5 BlueHDI 100 KM** – najczęściej wybierany; dobry kompromis mocy i spalania
 - **1.5 BlueHDI 130 KM** – do większych ładunków i jazdy trasowej
+
+### II generacja i wersja elektryczna
 
 W II generacji popularny był [1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) w wersjach 75 i 90 KM. Dla firm zainteresowanych elektromobilnością dostępny jest [ë-Berlingo Van](/modele/citroen-berlingo/elektryczny/) z zasięgiem do 275 km WLTP.
 

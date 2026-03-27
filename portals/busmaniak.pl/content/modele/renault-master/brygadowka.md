@@ -55,9 +55,13 @@ Przegrody do Mastera brygadowego dostępne są w trzech wersjach: stalowa pełna
 
 Brygadówka przez większość czasu jedzie z pełnym obciążeniem – 5–6 osób plus sprzęt za przegrodą. To istotnie wpływa na wybór silnika.
 
+### Warianty mocy 135–180 KM
+
 - **135 KM** – minimalna sensowna moc dla wersji L2H2; na trasach krajowych z pełnym załadunkiem dynamika jest akceptowalna, ale nie komfortowa
 - **150 KM** – zalecany dla L3H2 przy regularnych trasach z pełnym załadunkiem; wyraźnie lepsza elastyczność na autostradzie
 - **165 KM lub 180 KM** – dla L3H2 i L4H2, gdy ekipa jeździ długie trasy; mniejsze zużycie paliwa niż mogłoby się wydawać, bo turbo twin-scroll lepiej pracuje przy ciągłym obciążeniu
+
+### Manual czy automat EDC?
 
 Automat EDC jest wygodny w mieście, ale w brygadówce użytkowanej intensywnie na trasach przełożenie manualne daje kierowcy lepszą kontrolę momentu przy ruszaniu z obciążonego samochodu.
 
@@ -88,6 +92,8 @@ Przy wyborze Mastera brygadowego na rynku wtórnym sprawdzaj stan przegrody – 
 {{% /expert %}}
 
 ## Koszty Renault Master brygadówka – zakup i utrzymanie
+
+### Ceny nowych i używanych
 
 Nowa brygadówka [Renault Master](/modele/renault-master/) L3H2 z silnikiem 150 KM kosztuje ok. 155 000–165 000 zł netto. Na rynku wtórnym (rocznik 2019–2022, przebieg 100 000–200 000 km) ceny wahają się między 80 000 a 120 000 zł.
 

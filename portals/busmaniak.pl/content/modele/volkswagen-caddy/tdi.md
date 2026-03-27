@@ -34,7 +34,13 @@ faq:
 | 1.6 TDI   | EA189     | 75–102   | 225–250     | łańcuch  | Euro 5 | 2010–2015 |
 | 2.0 TDI   | EA288     | 75–150   | 225–340     | pasek    | Euro 6 | 2015–dziś |
 
-1.9 TDI to legendarna jednostka z III generacji – prosta, trwała, z paskiem rozrządu wymienianym co 90–120 tys. km. 1.6 TDI (EA189) zastąpił go w 2010 roku, wprowadzając łańcuch rozrządu – co okazało się kontrowersyjnym rozwiązaniem. 2.0 TDI (EA288) w IV i V generacji wrócił do paska i jest uważany za najlepszą jednostkę w historii Caddy.
+### Caddy 1.9 TDI i 1.6 TDI
+
+1.9 TDI to legendarna jednostka z III generacji – prosta, trwała, z paskiem rozrządu wymienianym co 90–120 tys. km. 1.6 TDI (EA189) zastąpił go w 2010 roku, wprowadzając łańcuch rozrządu – co okazało się kontrowersyjnym rozwiązaniem.
+
+### Caddy 2.0 TDI EA288
+
+2.0 TDI (EA288) w IV i V generacji wrócił do paska i jest uważany za najlepszą jednostkę w historii Caddy.
 
 ## Wersje mocy Caddy 2.0 TDI {#wersje-mocy}
 
@@ -68,8 +74,13 @@ Caddy TDI pali nieco więcej niż [Berlingo 1.6 HDI](/modele/citroen-berlingo/1-
 
 ## Typowe usterki Volkswagen Caddy TDI {#usterki}
 
+### Skrzynia DSG i łańcuch rozrządu
+
 - **DSG (DQ200/DQ250)** – awarie mechatronika i sprzęgła, szczególnie sucha DQ200; naprawa 3000–6000 zł; wymiana oleju DSG co 60 000 km obniża ryzyko
 - **Łańcuch rozrządu 1.6 TDI (EA189)** – rozciąganie napinacza prowadzi do przeskoku łańcucha; wymiana 1500–3000 zł; dotyczy roczników 2010–2015
+
+### EGR, DPF i wtryskiwacze
+
 - **EGR** – zarastanie zaworu recyrkulacji spalin; objaw: szarpanie, spadek mocy; czyszczenie 500–1000 zł
 - **DPF** – zapychanie przy jeździe wyłącznie miejskiej; regeneracja 1000–2000 zł
 - **Wtryskiwacze (1.9 TDI)** – przy dużych przebiegach (250+ tys. km); wymiana kompletu 2000–4000 zł

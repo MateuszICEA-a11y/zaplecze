@@ -24,7 +24,11 @@ faq:
 
 ## Silniki HDI w Peugeot Boxer – przegląd wariantów
 
+### Trzy generacje diesli HDI
+
 [Peugeot Boxer](/modele/peugeot-boxer/) na przestrzeni trzech generacji (I: 2002–2006, II: 2006–2014, III: od 2014) stosował diesle HDI/BlueHDI o pojemnościach 2.0, 2.2 i 2.8 litra. W pierwszej generacji prym wiodły proste konstrukcje 2.0 HDI (84 KM) oraz pancerne 2.8 HDI produkcji Iveco. Od drugiej generacji standardem stały się silniki 2.2 HDI, które w najnowszej odsłonie BlueHDI spełniają normy Euro 6d z systemem AdBlue.
+
+### Dobór silnika do tonażu
 
 Szeroki wachlarz mocy (od 84 do 165 KM) pozwala dobrać auto do tonażu – od lekkich dostaw miejskich po ciężkie zabudowy typu międzynarodówka.
 
@@ -63,7 +67,11 @@ W silnikach 2.2 HDI kontroluj stan podkładek pod wtryskiwaczami. Nieszczelnoś�
 
 ## Serwis – rozrząd, olej, filtry
 
+### Pasek rozrządu – co 120 tys. km
+
 Wszystkie silniki HDI w Boxerze mają rozrząd na pasku – wymiana co 120 tys. km lub 5 lat. Zerwanie paska = kolizja zaworów z tłokami. Koszt wymiany z pompą wody: 1500–2500 zł.
+
+### Olej i filtry
 
 Olej wymieniaj co 15–20 tys. km, nie dłużej. W BlueHDI stosuj oleje Low SAPS – konieczne dla DPF i turbo. Filtr paliwa przy każdej wymianie oleju – układ wtryskowy jest wrażliwy na zanieczyszczenia.
 

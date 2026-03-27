@@ -65,12 +65,16 @@ Różnica w długości to 350 mm – tyle co standardowy karton kurierski. W pra
 
 ## Kiedy wybrać Long, a kiedy Medium?
 
+### Zastosowania dla Proace Long
+
 Long ma sens, gdy:
 
 - regularnie wozisz 3 palety lub więcej
 - pracujesz w budowlance i potrzebujesz miejsca na deski, rury, profile
 - ładujesz rower lub motocykl – przy uchyleniu przedniego koła wchodzą dwa rowery
 - masz dostęp do rampy załadunkowej i parking firmowy
+
+### Kiedy wystarczy Toyota Proace Medium
 
 Medium warto rozważyć, gdy:
 
@@ -83,6 +87,8 @@ Proace Long to twardszy zawodnik niż jego "europejskie rodzeństwo" z Peugeotem
 {{% /expert %}}
 
 ## Masa własna i DMC – na co uważać
+
+### DMC 3000 i 3500 kg
 
 Proace Long w wersji towarowej waży od ok. 1800 do 2000 kg w zależności od silnika i opcji. DMC (dopuszczalna masa całkowita) to 3000 lub 3500 kg – wersja 3,5 t wymaga kategorii B+E lub C1 powyżej ładowności 1000 kg netto.
 

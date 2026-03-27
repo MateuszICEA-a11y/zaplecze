@@ -21,17 +21,23 @@ lead: "Peugeot Partner w wersji osobowej przeszedł w 2018 roku znaczącą zmian
 
 Partner Tepee to osobowy van o bardzo praktycznym układzie – wysoki dach, szklana panoramiczna płyta w dachu (modular), składane tylne siedzenia. Dostępny w wersjach 5 i 7 miejsc (tylko w wersji Long Tepee).
 
+### Silniki Tepee
+
 Silniki Tepee:
 - benzynowy 1.6 VTi 120 KM – atmosferyczny, niezawodny, ale słaby przy długich trasach
 - benzynowy 1.6 THP 120/155 KM – turbodoładowany, lepszy moment, ale kosztowniejszy w serwisie
 - diesel 1.6 HDi 75/90/92 KM – najpopularniejszy, przy przebiegu 200 000 km wciąż sprawny
 - diesel 1.6 BlueHDi 100 KM (facelift 2015) – z filtrem DPF i spełniony Euro 6b
 
+### Wymiary Peugeot Partner Tepee
+
 Wymiary Tepee:
 - Short: 4328 mm długości, 550 l bagażnika (5 os.)
 - Long: 4628 mm, 675 l bagażnika (5 os.), opcja 7 miejsc
 
 ## Rifter – generacja III (od 2018)
+
+### Nowości na platformie EMP2
 
 Rifter to technicznie identyczny pojazd z Partnerem III Van i Berlingo Multispace III – ta sama platforma EMP2, te same silniki i wymiary. Wyróżnia się:
 - panoramicznym dachem opcjonalnym lub standardowym

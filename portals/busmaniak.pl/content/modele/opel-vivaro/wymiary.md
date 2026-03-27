@@ -33,6 +33,8 @@ Vivaro C nie oferuje wersji z wysokim dachem – to odróżnia go od Transit Cus
 
 ## Wymiary przestrzeni ładunkowej
 
+### Ładownia Standard i Long
+
 | Parametr | Standard (L1) | Long (L2) |
 |----------|---------------|-----------|
 | Długość | 2512 mm | 3120 mm |
@@ -55,6 +57,8 @@ Szerokość między nadkolami 1268 mm to wartość, na którą trzeba zwrócić 
 ![Opel Vivaro wymiary – rzut z boku i z góry](/images/opel-vivaro-wymiary-hero.jpg)
 
 ## Masa i ładowność
+
+### Vivaro C L1 – dane wagowe
 
 Dane dla Vivaro C L1 z silnikiem 1.5 D 100 KM:
 

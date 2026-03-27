@@ -46,6 +46,8 @@ Pełne dane techniczne na stronie [Volkswagena Caddy](/modele/volkswagen-caddy/)
 
 ## Silniki {#silniki}
 
+### Diesle i benzyny w Caddy Long
+
 Gama silnikowa identyczna jak w Caddy standardowym:
 
 - **[2.0 TDI](/modele/volkswagen-caddy/tdi/) 75/102/122 KM** – diesel; 102 KM to bestseller
@@ -59,6 +61,8 @@ Przy pełnym obciążeniu (7 osób + bagaże) silnik 102 KM to absolutne minimum
 ![Volkswagen Caddy Long V generacji](/images/volkswagen-caddy-long-hero.jpg)
 
 ## Zastosowania {#zastosowania}
+
+### Caddy Long osobowy, Cargo i California
 
 Caddy Long sprawdza się w trzech głównych scenariuszach:
 

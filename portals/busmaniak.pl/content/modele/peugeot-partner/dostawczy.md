@@ -57,9 +57,14 @@ Obydwie wersje mają te same wymiary szerokości i wysokości – zmienia się w
 
 ## Silniki Peugeot Partner dostawczy
 
+### Warianty benzynowe PureTech
+
 Dostępne agregaty:
 - 1.2 PureTech 110 KM + manualna 6-biegowa: do użytku lekkiego, krótkie trasy
 - 1.2 PureTech 130 KM + EAT8: wygodny automat, mniejsza ładowność (840 kg)
+
+### Diesle BlueHDi
+
 - 1.5 BlueHDi 75 KM + manualna 5-biegowa: dla ograniczonej DMC
 - 1.5 BlueHDi 100 KM + manualna 6-biegowa lub EAT6: optymalny diesel
 - 1.5 BlueHDi 130 KM + EAT6: dla flot wymagających komfortu
@@ -74,10 +79,14 @@ Partner Van jako N1 daje prawo do odliczenia 100% VAT od raty leasingowej i kosz
 
 ## Koszty serwisu i eksploatacji
 
+### Przeglądy i wymiana oleju
+
 Zalecany interwał wymiany oleju: 10 000 km lub 1 rok (silnik 1.5 D) / 15 000 km (1.2 PureTech)
 Koszt przeglądu (olej + filtry): ok. 280–380 zł w autoryzowanym serwisie, 200–280 zł w niezależnym
 
 Części zamienne Partnera III są identyczne z Berlingo III i Combo E – dostępne w Polsce przez sieć Stahlgruppe, LKQ i TecDoc. Ceny są konkurencyjne.
+
+### Roczne koszty eksploatacji
 
 Typowe koszty eksploatacji przy 30 000 km/rok (diesel 1.5 D 100 KM):
 - paliwo (5,8 l/100 km, cena 6,5 zł/l): ok. 11 300 zł/rok
