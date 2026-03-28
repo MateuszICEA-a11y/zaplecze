@@ -81,7 +81,7 @@ Integra (ang. *fully integrated*) to segment premium – kabina kierowcy jest w 
 
 Cena nowej integry startuje od 382 500 zł, a topowe konfiguracje Bürstnera Lyseo czy Dethleffsa Trend I przekraczają 600 000 zł.
 
-{{< related-articles "camper-van,mini-kamper,kamper-volkswagen,volkswagen-california" >}}
+{{< related-articles "camper-van,mini-kamper,kamper-volkswagen,volkswagen-california" "Poznaj poszczególne typy kamperów bliżej →" >}}
 
 ## Ile kosztuje kamper? Ceny nowych i używanych
 
@@ -113,7 +113,7 @@ Rynek wtórny to najpopularniejse wejście w świat kamperów – ok. 70% pierws
 Przy zakupie używanego kampera najważniejsze jest sprawdzenie szczelności zabudowy – koszt naprawy przeciekającego dachu potrafi sięgnąć 15 000–30 000 zł. Poproś sprzedawcę o protokół z testu wilgotnościowego wykonanego stacją kontroli. Jeśli go nie ma, zamów test samodzielnie przed finalizacją transakcji.
 {{% /expert %}}
 
-{{< related-articles "kamper-cena,tanie-kampery,kampery-uzywane,kampery-na-sprzedaz" >}}
+{{< related-articles "kamper-cena,tanie-kampery,kampery-uzywane,kampery-na-sprzedaz" "Sprawdź szczegółowe poradniki cenowe →" >}}
 
 ## Na jakiej bazie powstają kampery?
 
@@ -182,7 +182,7 @@ Wyposażenie opcjonalne, które warto rozważyć:
 - **Zbiornik wody 100+ l** – komfort kilkudniowego postoju bez podłączenia
 - **Markiza boczna** – ochrona przed słońcem i deszczem, cena 2000–5000 zł
 
-{{< related-articles "przewodnik-kupujacego,kamper-4-osobowy,kamper-5-osobowy,kamper-8-osobowy" >}}
+{{< related-articles "przewodnik-kupujacego,kamper-4-osobowy,kamper-5-osobowy,kamper-8-osobowy" "Dobierz kampera do swoich potrzeb →" >}}
 
 ## Popularniejsi producenci kamperów
 

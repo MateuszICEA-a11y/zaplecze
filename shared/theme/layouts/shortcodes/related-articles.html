@@ -1,10 +1,11 @@
 {{/*
   related-articles shortcode
-  Usage: {{% related-articles "slug1,slug2,slug3" %}}
-  Displays image card carousel for child pages matching given slugs.
+  Usage: {{< related-articles "slug1,slug2,slug3" "Optional title text" >}}
+  Displays horizontal scrollable carousel of image cards.
   Looks in the current section first, then site-wide.
 */}}
 {{ $slugs := split (.Get 0) "," }}
+{{ $title := .Get 1 }}
 {{ $section := .Page.Section }}
 {{ $pages := slice }}
 
@@ -32,12 +33,13 @@
 
 {{ if gt (len $pages) 0 }}
 <div class="related-inline">
-  <div class="related-inline__grid">
+  {{ with $title }}<div class="related-inline__title">{{ . }}</div>{{ end }}
+  <div class="related-inline__track">
     {{ range $pages }}
-    <a href="{{ .Permalink }}" class="pillar-nav__card pillar-nav__card--img"
+    <a href="{{ .Permalink }}" class="related-inline__card"
        {{ with .Params.image }}style="background-image: url('{{ . }}')"{{ end }}>
-      <div class="pillar-nav__card-overlay">
-        <div class="pillar-nav__card-name">{{ .Params.h1 | default .Title | truncate 60 }}</div>
+      <div class="related-inline__overlay">
+        <div class="related-inline__name">{{ .Params.h1 | default .Title | truncate 60 }}</div>
       </div>
     </a>
     {{ end }}

@@ -36,7 +36,7 @@ Segment dużych busów to fundament europejskiego transportu. Cztery modele domi
 
 Pełne zestawienie znajdziesz w artykule [Ducato vs Sprinter vs Daily vs Transit – porównanie dużych busów](/porownania/porownanie-duzych-busow/).
 
-{{< related-articles "porownanie-duzych-busow,najlepszy-bus-na-kampera,busy-vany-4x4" >}}
+{{< related-articles "porownanie-duzych-busow,najlepszy-bus-na-kampera,busy-vany-4x4" "Porównania dużych busów face-to-face →" >}}
 
 ## Średnie vany – Vivaro vs Trafic vs ProAce vs Expert
 
@@ -64,7 +64,7 @@ Więcej w artykule [Porównanie małych vanów](/porownania/porownanie-malych-va
 Przy wyborze małego vana zwróć uwagę na szerokość otworu bocznych drzwi przesuwnych – to kluczowy parametr przy załadunku palet ćwiartkowych. Berlingo i Kangoo oferują otwór powyżej 600 mm, co ułatwia pracę kurierom.
 {{% /expert %}}
 
-{{< related-articles "porownanie-srednich-vanow,porownanie-malych-vanow,ranking-busow-9-osobowych" >}}
+{{< related-articles "porownanie-srednich-vanow,porownanie-malych-vanow,ranking-busow-9-osobowych" "Zestawienia mniejszych vanów i busów →" >}}
 
 ## Ranking busów 9-osobowych
 
@@ -97,4 +97,4 @@ Czasem potrzebujesz samych liczb. Nasze tabele zbierają kluczowe parametry tech
 | [Ładowność – tabela](/porownania/ladownosc-tabela/) | DMC, ładowność i objętość przestrzeni ładunkowej |
 | [Dane techniczne – tabela](/porownania/dane-techniczne-tabela/) | Silniki, moc, moment obrotowy, skrzynie biegów |
 
-{{< related-articles "spalanie-porownanie,wymiary-tabela,ladownosc-tabela,dane-techniczne-tabela" >}}
+{{< related-articles "spalanie-porownanie,wymiary-tabela,ladownosc-tabela,dane-techniczne-tabela" "Tabele z danymi technicznymi na jeden rzut oka →" >}}
