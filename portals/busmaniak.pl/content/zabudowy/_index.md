@@ -47,6 +47,8 @@ Zamiana busa w kampera to osobna kategoria – obejmuje łóżko, aneks kuchenny
 
 System wymiennych modułów, które można rekonfigurować w zależności od zlecenia. Producenci tacy jak Sortimo oferują szyny podłogowe z szybkozłączami – wymiana zestawu regałów na skrzynię narzędziową zajmuje 15–20 minut.
 
+{{< related-articles "zabudowa-serwisowa,zabudowa-warsztatowa,zabudowa-izotermiczna,zabudowa-do-spania" >}}
+
 ## Producenci zabudów w Polsce
 
 Na polskim rynku działa kilkudziesięciu producentów zabudów, ale cztery marki dominują w segmencie profesjonalnym. Oprócz nich istnieje wielu lokalnych wytwórców oferujących tańsze rozwiązania ze stali i sklejki.
@@ -80,6 +82,8 @@ Koszt zabudowy busa zależy od czterech czynników: typu zabudowy, materiałów,
 | Zabudowa kamperowa (profesjonalna) | 25 000–80 000 zł | łóżko, kuchnia, instalacje, homologacja | 2–6 tyg. |
 
 Do ceny zabudowy należy doliczyć koszt podłogi ochronnej (800–2 000 zł), oklejenia ścian (500–1 500 zł) i ewentualnego oświetlenia LED (300–800 zł).
+
+{{< related-articles "zabudowa-busa-cena,zabudowa-sklejka-diy,regaly-do-busa" >}}
 
 ![Zabudowa serwisowa busa z regałami aluminiowymi](/images/zabudowy-hub-hero.jpg)
 
@@ -131,6 +135,8 @@ Zabudowa DIY sprawdza się, gdy masz jeden bus, podstawowe umiejętności stolar
 ### Kiedy wybrać zabudowę profesjonalną
 
 Przy flocie powyżej 3 pojazdów profesjonalna zabudowa jest tańsza w przeliczeniu na roboczogodzinę. Montaż trwa 4–6 godzin zamiast 2–4 dni, zabudowa posiada certyfikat crash-test, a gwarancja producenta obejmuje 3–5 lat. Dodatkowy plus – jednolity wygląd floty buduje wizerunek firmy.
+
+{{< related-articles "zabudowa-paki,zabudowa-busa-przewodnik,zabudowa-na-narzedzia" >}}
 
 ## Podsumowanie – jak wybrać zabudowę busa
 

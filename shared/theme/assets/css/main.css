@@ -495,6 +495,25 @@ a:hover { color: var(--c-orange-hover); }
   margin-top: .15rem;
 }
 
+/* ── Inline related articles (shortcode) ── */
+.related-inline {
+  margin: 2rem 0 2.5rem;
+}
+
+.related-inline__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: .75rem;
+}
+
+@media (min-width: 700px) {
+  .related-inline__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 500px) {
+  .related-inline__grid { grid-template-columns: 1fr; }
+}
+
 /* ── Mobile toggle (pure CSS checkbox) ── */
 .nav-toggle { display: none; }
 .nav-toggle-label {

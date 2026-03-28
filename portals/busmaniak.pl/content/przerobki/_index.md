@@ -81,6 +81,8 @@ Podane kwoty dotyczą samych materiałów i komponentów. Przy zleceniu przerób
 - **Panel solarny z rynku wtórnego** – panele monokrystaliczne tracą zaledwie 0,5% wydajności rocznie
 - **Zbiorniki na wodę z recyklingu** – kanistry spożywcze 20–30 l za ułamek ceny dedykowanych zbiorników kamperowych
 
+{{< related-articles "budowa-kampera-koszty,budowa-kampera-krok-po-kroku,fiat-ducato-kamper" >}}
+
 ## Popularne bazy pod kampera {#popularne-bazy}
 
 Wybór busa bazowego to decyzja, która determinuje wszystkie kolejne etapy. Kluczowe parametry to szerokość wewnętrzna (możliwość łóżka poprzecznego), wysokość stania i DMC pozwalające na rejestrację na kategorię B.
@@ -96,6 +98,8 @@ Wybór busa bazowego to decyzja, która determinuje wszystkie kolejne etapy. Klu
 - **Renault Master** – najtańsza baza w segmencie, szeroko dostępna na rynku wtórnym. Silniki 2.3 dCi sprawdzone i tanie w serwisie
 
 Szczegółowe porównanie modeli bazowych znajdziesz w artykule [jaki bus na kampera](/przerobki/jaki-bus-na-kampera/).
+
+{{< related-articles "jaki-bus-na-kampera,izolacja-busa,instalacja-elektryczna-kamper,instalacja-wodna-kamper" >}}
 
 ## Homologacja i przepisy prawne {#homologacja}
 
@@ -142,6 +146,8 @@ Samodzielna przeróbka pozwala zaoszczędzić 30 000–60 000 zł, ale wymaga cz
 ### Które prace zlecić nawet przy DIY
 
 Instalację gazową może wykonać wyłącznie osoba z uprawnieniami UDT – to wymóg prawny, nie rekomendacja. Instalację elektryczną powyżej 300 Ah warto powierzyć specjaliście ze względu na ryzyko pożarowe. Wklejanie okien kamperowych wymaga doświadczenia – źle zamontowane okno to gwarantowany przeciek.
+
+{{< related-articles "przerobka-busa-przepisy,zabudowa-kampera-projekt,kampery-samorobki" >}}
 
 ## Rejestracja i ubezpieczenie kampera {#rejestracja}
 

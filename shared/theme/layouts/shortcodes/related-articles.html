@@ -1,0 +1,46 @@
+{{/*
+  related-articles shortcode
+  Usage: {{% related-articles "slug1,slug2,slug3" %}}
+  Displays image card carousel for child pages matching given slugs.
+  Looks in the current section first, then site-wide.
+*/}}
+{{ $slugs := split (.Get 0) "," }}
+{{ $section := .Page.Section }}
+{{ $pages := slice }}
+
+{{ range $slugs }}
+  {{ $slug := strings.TrimSpace . }}
+  {{ $found := false }}
+  {{/* Try current section first */}}
+  {{ $sectionPages := where $.Page.Site.RegularPages "Section" $section }}
+  {{ range $sectionPages }}
+    {{ if and (not $found) (eq .File.ContentBaseName $slug) }}
+      {{ $pages = $pages | append . }}
+      {{ $found = true }}
+    {{ end }}
+  {{ end }}
+  {{/* Fallback: search all pages */}}
+  {{ if not $found }}
+    {{ range $.Page.Site.RegularPages }}
+      {{ if and (not $found) (eq .File.ContentBaseName $slug) }}
+        {{ $pages = $pages | append . }}
+        {{ $found = true }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ if gt (len $pages) 0 }}
+<div class="related-inline">
+  <div class="related-inline__grid">
+    {{ range $pages }}
+    <a href="{{ .Permalink }}" class="pillar-nav__card pillar-nav__card--img"
+       {{ with .Params.image }}style="background-image: url('{{ . }}')"{{ end }}>
+      <div class="pillar-nav__card-overlay">
+        <div class="pillar-nav__card-name">{{ .Params.h1 | default .Title | truncate 60 }}</div>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
