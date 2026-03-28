@@ -6,6 +6,8 @@ draft: false
 author: "tomasz-zielinski"
 h1: "Kalkulator zabudowy busa – ile kosztuje przeróbka?"
 main_keyword: "kalkulator zabudowy busa"
+image: "/images/kalkulator-zabudowy-hero.jpg"
+image_alt: "Kalkulator kosztów zabudowy busa"
 lead: "Koszt zabudowy busa to od 2 500 zł za prostą zabudowę DIY do ponad 80 000 zł za kompletną przeróbkę kamperową w wersji premium. Nasz kalkulator pomoże Ci oszacować budżet w 3 krokach – wystarczy wybrać typ zabudowy, poziom wykonania i opcjonalne dodatki."
 faq:
   - question: "Ile kosztuje zabudowa busa w 2026 roku?"
