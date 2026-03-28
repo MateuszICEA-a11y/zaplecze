@@ -237,7 +237,7 @@
 
 <script>
 (function() {
-  var buses = {{ $buses | jsonify }};
+  var buses = {{ $buses | jsonify | safeJS }};
   var select = document.getElementById('kp-model');
   var consumptionPanel = document.getElementById('kp-consumption');
   var distInput = document.getElementById('kp-distance');

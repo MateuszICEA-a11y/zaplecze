@@ -173,7 +173,7 @@
 
 <script>
 (function() {
-  var buses = {{ $buses | jsonify }};
+  var buses = {{ $buses | jsonify | safeJS }};
   var busMap = {};
   for (var i = 0; i < buses.length; i++) {
     busMap[buses[i].id] = buses[i];
