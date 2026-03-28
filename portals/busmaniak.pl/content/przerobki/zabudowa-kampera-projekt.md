@@ -3,6 +3,8 @@ title: "Zabudowa kampera – projekty i rozkłady wnętrza"
 date: 2026-03-23
 description: "Projekty zabudowy kampera – popularne rozkłady wnętrza i funkcjonalne rozwiązania."
 draft: false
+image: "/images/zabudowa-kampera-projekt-hero.jpg"
+image_alt: "Projekt zabudowy kampera – rzut i plan na laptopie"
 author: "anna-wozniak"
 h1: "Zabudowa kampera – projekty rozkładów wnętrza i wymiary minimalne"
 main_keyword: "zabudowa kampera projekt"

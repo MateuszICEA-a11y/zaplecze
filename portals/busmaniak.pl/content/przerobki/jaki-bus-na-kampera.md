@@ -3,6 +3,8 @@ title: "Jaki bus na kampera – który model wybrać pod przeróbkę"
 date: 2026-03-27
 description: "Porównanie najlepszych busów pod kampera – Fiat Ducato, Mercedes Sprinter, Ford Transit, VW Crafter i Renault Master. Wymiary, silniki, DMC i ceny baz."
 draft: false
+image: "/images/jaki-bus-na-kampera-hero.jpg"
+image_alt: "Porównanie busów pod przeróbkę na kampera"
 author: "marek-kowalczyk"
 h1: "Jaki bus na kampera – porównanie modeli pod przeróbkę"
 main_keyword: "jaki bus na kampera"

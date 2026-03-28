@@ -3,6 +3,8 @@ title: "Kampery samoróbki – DIY camper van projekty"
 date: 2026-03-23
 description: "Kampery samoróbki – najlepsze projekty DIY camper van, porady i inspiracje."
 draft: false
+image: "/images/kampery-samorobki-hero.jpg"
+image_alt: "Kamper samoróbka – kreatywna zabudowa DIY"
 author: "anna-wozniak"
 h1: "Kampery samoróbki – projekty DIY, koszty i legalizacja"
 main_keyword: "kampery samoróbki"

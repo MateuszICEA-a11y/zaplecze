@@ -3,6 +3,8 @@ title: "Przeróbka busa na kampera – przepisy i homologacja"
 date: 2026-03-23
 description: "Przepisy dotyczące przeróbki busa na kampera – wymagania prawne i proces homologacji."
 draft: false
+image: "/images/przerobka-busa-przepisy-hero.jpg"
+image_alt: "Przepisy dotyczące przeróbki busa – dowód rejestracyjny i homologacja"
 author: "anna-wozniak"
 h1: "Przeróbka busa na kampera – przepisy, homologacja i procedura w 2026 roku"
 main_keyword: "przeróbka busa przepisy"

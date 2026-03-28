@@ -3,6 +3,8 @@ title: "Izolacja busa – materiały i techniki"
 date: 2026-03-23
 description: "Izolacja termiczna i akustyczna busa – najlepsze materiały i techniki montażu."
 draft: false
+image: "/images/izolacja-busa-hero.jpg"
+image_alt: "Izolacja busa Armaflexem – ściany i sufit"
 author: "anna-wozniak"
 h1: "Izolacja busa – porównanie materiałów, techniki montażu i najczęstsze błędy"
 main_keyword: "izolacja busa"

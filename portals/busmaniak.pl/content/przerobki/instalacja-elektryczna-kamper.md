@@ -3,6 +3,8 @@ title: "Instalacja elektryczna w kamperze"
 date: 2026-03-23
 description: "Instalacja elektryczna w kamperze – schemat, komponenty i montaż krok po kroku."
 draft: false
+image: "/images/instalacja-elektryczna-kamper-hero.jpg"
+image_alt: "Instalacja elektryczna w kamperze – panel solarny i akumulator"
 author: "anna-wozniak"
 h1: "Instalacja elektryczna w kamperze – schemat, komponenty i koszty w 2026 roku"
 main_keyword: "instalacja elektryczna kamper"

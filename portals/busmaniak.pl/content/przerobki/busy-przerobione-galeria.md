@@ -3,6 +3,8 @@ title: "Busy przerobione na kampera – galeria realizacji"
 date: 2026-03-23
 description: "Galeria busów przerobionych na kampery – zdjęcia realizacji z opisami i kosztami."
 draft: false
+image: "/images/busy-przerobione-galeria-hero.jpg"
+image_alt: "Galeria przeróbek busów na kampery – różne projekty"
 author: "anna-wozniak"
 h1: "Busy przerobione na kampera – galeria realizacji z kosztorysami"
 main_keyword: "busy przerobione na kampera"
