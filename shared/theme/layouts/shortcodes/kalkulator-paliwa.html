@@ -1,0 +1,306 @@
+{{- $buses := slice -}}
+{{- range $.Page.Site.Data.buses -}}
+  {{- $buses = $buses | append (dict "id" .id "name" .name "spalanie_miasto" .spalanie_miasto "spalanie_trasa" .spalanie_trasa "spalanie_mieszane" .spalanie_mieszane) -}}
+{{- end -}}
+
+<div class="kp" id="kalkulator-paliwa">
+  <div class="kp__form">
+    <div class="kp__field">
+      <label class="kp__label" for="kp-model">Model busa</label>
+      <select class="kp__select" id="kp-model">
+        <option value="">– Wybierz model –</option>
+      </select>
+    </div>
+
+    <div class="kp__consumption" id="kp-consumption" hidden>
+      <div class="kp__consumption-title">Spalanie wybranego modelu</div>
+      <div class="kp__consumption-grid">
+        <div class="kp__consumption-item">
+          <span class="kp__consumption-label">Miasto</span>
+          <span class="kp__consumption-value" id="kp-val-miasto">–</span>
+        </div>
+        <div class="kp__consumption-item">
+          <span class="kp__consumption-label">Trasa</span>
+          <span class="kp__consumption-value" id="kp-val-trasa">–</span>
+        </div>
+        <div class="kp__consumption-item">
+          <span class="kp__consumption-label">Mieszane</span>
+          <span class="kp__consumption-value" id="kp-val-mieszane">–</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="kp__field">
+      <label class="kp__label" for="kp-distance">Dystans (km)</label>
+      <input class="kp__input" type="number" id="kp-distance" min="1" step="1" placeholder="np. 500">
+    </div>
+
+    <div class="kp__field">
+      <label class="kp__label" for="kp-price">Cena paliwa za litr (PLN)</label>
+      <input class="kp__input" type="number" id="kp-price" min="0.01" step="0.01" value="6.50">
+    </div>
+
+    <div class="kp__field">
+      <label class="kp__label">Typ jazdy</label>
+      <div class="kp__radios">
+        <label class="kp__radio">
+          <input type="radio" name="kp-drive" value="miasto"> Miasto
+        </label>
+        <label class="kp__radio">
+          <input type="radio" name="kp-drive" value="trasa"> Trasa
+        </label>
+        <label class="kp__radio">
+          <input type="radio" name="kp-drive" value="mieszane" checked> Mieszane
+        </label>
+      </div>
+    </div>
+
+    <button class="kp__btn" id="kp-calc" type="button">Oblicz koszt paliwa</button>
+  </div>
+
+  <div class="kp__results" id="kp-results" hidden>
+    <div class="kp__results-title">Wynik kalkulacji</div>
+    <div class="kp__results-grid">
+      <div class="kp__result-box">
+        <span class="kp__result-label">Zużycie paliwa</span>
+        <span class="kp__result-value" id="kp-res-liters">–</span>
+        <span class="kp__result-unit">litrów</span>
+      </div>
+      <div class="kp__result-box">
+        <span class="kp__result-label">Koszt całkowity</span>
+        <span class="kp__result-value" id="kp-res-cost">–</span>
+        <span class="kp__result-unit">PLN</span>
+      </div>
+      <div class="kp__result-box">
+        <span class="kp__result-label">Koszt za km</span>
+        <span class="kp__result-value" id="kp-res-perkm">–</span>
+        <span class="kp__result-unit">PLN/km</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.kp {
+  max-width: 680px;
+  margin: 1.5rem 0;
+  font-family: inherit;
+}
+.kp__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--c-bg-alt, #f8f8f8);
+  border: 1px solid var(--c-border, #ddd);
+  border-radius: var(--radius-sm, 6px);
+}
+.kp__label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--c-dark, #1a1a1a);
+}
+.kp__select,
+.kp__input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--c-border, #ddd);
+  border-radius: var(--radius-sm, 6px);
+  background: #fff;
+  color: var(--c-text, #333);
+  box-sizing: border-box;
+}
+.kp__select:focus,
+.kp__input:focus {
+  outline: 2px solid var(--c-orange, #e67e22);
+  outline-offset: -1px;
+}
+.kp__consumption {
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid var(--c-border, #ddd);
+  border-radius: var(--radius-sm, 6px);
+}
+.kp__consumption-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--c-dark, #1a1a1a);
+}
+.kp__consumption-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+.kp__consumption-item {
+  text-align: center;
+}
+.kp__consumption-label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--c-text, #666);
+  margin-bottom: 0.2rem;
+}
+.kp__consumption-value {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--c-orange, #e67e22);
+}
+.kp__radios {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+.kp__radio {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: var(--c-text, #333);
+}
+.kp__btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--c-orange, #e67e22);
+  border: none;
+  border-radius: var(--radius-sm, 6px);
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.kp__btn:hover {
+  opacity: 0.88;
+}
+.kp__results {
+  margin-top: 1.25rem;
+  padding: 1.5rem;
+  background: var(--c-bg-alt, #f8f8f8);
+  border: 2px solid var(--c-orange, #e67e22);
+  border-radius: var(--radius-sm, 6px);
+}
+.kp__results-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--c-dark, #1a1a1a);
+}
+.kp__results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.kp__result-box {
+  text-align: center;
+  padding: 1rem 0.5rem;
+  background: #fff;
+  border: 1px solid var(--c-border, #ddd);
+  border-radius: var(--radius-sm, 6px);
+}
+.kp__result-label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--c-text, #666);
+  margin-bottom: 0.3rem;
+}
+.kp__result-value {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--c-orange, #e67e22);
+}
+.kp__result-unit {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--c-text, #666);
+  margin-top: 0.15rem;
+}
+@media (max-width: 540px) {
+  .kp__results-grid {
+    grid-template-columns: 1fr;
+  }
+  .kp__consumption-grid {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .kp__radios {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+</style>
+
+<script>
+(function() {
+  var buses = {{ $buses | jsonify }};
+  var select = document.getElementById('kp-model');
+  var consumptionPanel = document.getElementById('kp-consumption');
+  var distInput = document.getElementById('kp-distance');
+  var priceInput = document.getElementById('kp-price');
+  var calcBtn = document.getElementById('kp-calc');
+  var resultsPanel = document.getElementById('kp-results');
+
+  buses.sort(function(a, b) { return a.name.localeCompare(b.name); });
+
+  buses.forEach(function(b) {
+    var opt = document.createElement('option');
+    opt.value = b.id;
+    opt.textContent = b.name;
+    select.appendChild(opt);
+  });
+
+  function findBus(id) {
+    for (var i = 0; i < buses.length; i++) {
+      if (buses[i].id === id) return buses[i];
+    }
+    return null;
+  }
+
+  function fmt(n, d) {
+    return n.toFixed(d).replace('.', ',');
+  }
+
+  select.addEventListener('change', function() {
+    var bus = findBus(this.value);
+    if (!bus) {
+      consumptionPanel.hidden = true;
+      return;
+    }
+    document.getElementById('kp-val-miasto').textContent = fmt(bus.spalanie_miasto, 1) + ' l/100 km';
+    document.getElementById('kp-val-trasa').textContent = fmt(bus.spalanie_trasa, 1) + ' l/100 km';
+    document.getElementById('kp-val-mieszane').textContent = fmt(bus.spalanie_mieszane, 1) + ' l/100 km';
+    consumptionPanel.hidden = false;
+  });
+
+  calcBtn.addEventListener('click', function() {
+    var bus = findBus(select.value);
+    if (!bus) { alert('Wybierz model busa.'); return; }
+
+    var dist = parseFloat(distInput.value);
+    if (!dist || dist <= 0) { alert('Podaj dystans większy niż 0.'); return; }
+
+    var price = parseFloat(priceInput.value);
+    if (!price || price <= 0) { alert('Podaj cenę paliwa większą niż 0.'); return; }
+
+    var drive = document.querySelector('input[name="kp-drive"]:checked').value;
+    var consumption;
+    if (drive === 'miasto') consumption = bus.spalanie_miasto;
+    else if (drive === 'trasa') consumption = bus.spalanie_trasa;
+    else consumption = bus.spalanie_mieszane;
+
+    var liters = (consumption / 100) * dist;
+    var cost = liters * price;
+    var perKm = cost / dist;
+
+    document.getElementById('kp-res-liters').textContent = fmt(liters, 1);
+    document.getElementById('kp-res-cost').textContent = fmt(cost, 2);
+    document.getElementById('kp-res-perkm').textContent = fmt(perKm, 2);
+    resultsPanel.hidden = false;
+  });
+})();
+</script>

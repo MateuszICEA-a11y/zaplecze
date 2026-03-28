@@ -1,0 +1,645 @@
+<div class="kz-calc" id="kz-calc">
+  <style>
+    .kz-calc {
+      max-width: 720px;
+      margin: 2rem auto;
+      font-family: inherit;
+      color: var(--c-text, #222);
+    }
+    .kz-calc *,
+    .kz-calc *::before,
+    .kz-calc *::after {
+      box-sizing: border-box;
+    }
+
+    /* Progress bar */
+    .kz-progress {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .kz-progress__step {
+      flex: 1;
+      height: 6px;
+      border-radius: var(--radius-sm, 4px);
+      background: var(--c-border, #ddd);
+      transition: background 0.3s;
+    }
+    .kz-progress__step.active {
+      background: var(--c-orange, #e67e22);
+    }
+
+    /* Step labels */
+    .kz-step-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      font-size: 0.8rem;
+      color: var(--c-text, #666);
+      opacity: 0.7;
+    }
+
+    /* Steps */
+    .kz-step {
+      display: none;
+      animation: kzFadeIn 0.3s ease;
+    }
+    .kz-step.active {
+      display: block;
+    }
+    @keyframes kzFadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .kz-step h3 {
+      font-size: 1.25rem;
+      margin: 0 0 0.25rem;
+      color: var(--c-dark, #1a1a1a);
+    }
+    .kz-step p.kz-subtitle {
+      margin: 0 0 1rem;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    /* Radio & checkbox cards */
+    .kz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .kz-option {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.85rem 1rem;
+      border: 2px solid var(--c-border, #ddd);
+      border-radius: var(--radius-sm, 4px);
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+      background: var(--c-bg-alt, #fafafa);
+    }
+    .kz-option:hover {
+      border-color: var(--c-orange, #e67e22);
+    }
+    .kz-option.selected {
+      border-color: var(--c-orange, #e67e22);
+      background: rgba(230, 126, 34, 0.06);
+    }
+    .kz-option input {
+      accent-color: var(--c-orange, #e67e22);
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+    .kz-option__info {
+      flex: 1;
+    }
+    .kz-option__name {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .kz-option__detail {
+      font-size: 0.8rem;
+      opacity: 0.65;
+      margin-top: 2px;
+    }
+    .kz-option__price {
+      font-weight: 700;
+      font-size: 0.95rem;
+      white-space: nowrap;
+      color: var(--c-dark, #1a1a1a);
+    }
+
+    /* Running total bar */
+    .kz-running {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.25rem;
+      padding: 0.75rem 1rem;
+      background: var(--c-dark, #1a1a1a);
+      color: #fff;
+      border-radius: var(--radius-sm, 4px);
+      font-size: 0.95rem;
+    }
+    .kz-running__amount {
+      font-weight: 700;
+      font-size: 1.15rem;
+    }
+
+    /* Buttons */
+    .kz-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      gap: 0.75rem;
+    }
+    .kz-btn {
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: var(--radius-sm, 4px);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .kz-btn:hover {
+      opacity: 0.85;
+    }
+    .kz-btn--prev {
+      background: var(--c-border, #ddd);
+      color: var(--c-dark, #333);
+    }
+    .kz-btn--next {
+      background: var(--c-orange, #e67e22);
+      color: #fff;
+      margin-left: auto;
+    }
+    .kz-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    /* Summary */
+    .kz-summary {
+      display: none;
+    }
+    .kz-summary.active {
+      display: block;
+      animation: kzFadeIn 0.3s ease;
+    }
+    .kz-summary h3 {
+      font-size: 1.25rem;
+      margin: 0 0 1rem;
+      color: var(--c-dark, #1a1a1a);
+    }
+    .kz-summary__rows {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .kz-summary__row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--c-border, #eee);
+      font-size: 0.9rem;
+    }
+    .kz-summary__row--total {
+      border-bottom: none;
+      border-top: 2px solid var(--c-dark, #1a1a1a);
+      margin-top: 0.5rem;
+      padding-top: 0.75rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .kz-summary__note {
+      margin-top: 1rem;
+      padding: 0.75rem 1rem;
+      background: var(--c-bg-alt, #fafafa);
+      border-left: 3px solid var(--c-orange, #e67e22);
+      border-radius: var(--radius-sm, 4px);
+      font-size: 0.85rem;
+      opacity: 0.8;
+    }
+    .kz-btn--reset {
+      background: var(--c-border, #ddd);
+      color: var(--c-dark, #333);
+      margin-top: 1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .kz-calc {
+        margin: 1rem auto;
+      }
+      .kz-option {
+        padding: 0.7rem;
+        gap: 0.5rem;
+      }
+      .kz-option__price {
+        font-size: 0.85rem;
+      }
+      .kz-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+
+  <!-- Progress -->
+  <div class="kz-progress">
+    <div class="kz-progress__step active" data-step="1"></div>
+    <div class="kz-progress__step" data-step="2"></div>
+    <div class="kz-progress__step" data-step="3"></div>
+  </div>
+  <div class="kz-step-labels">
+    <span>1. Typ zabudowy</span>
+    <span>2. Poziom wykonania</span>
+    <span>3. Dodatki</span>
+  </div>
+
+  <!-- Step 1: Buildout type -->
+  <div class="kz-step active" data-step="1">
+    <h3>Wybierz typ zabudowy</h3>
+    <p class="kz-subtitle">Wskaż rodzaj zabudowy, który Cię interesuje</p>
+    <div class="kz-options">
+      <label class="kz-option">
+        <input type="radio" name="kz-type" value="serwisowa" data-min="8000" data-max="35000">
+        <div class="kz-option__info">
+          <div class="kz-option__name">Serwisowa</div>
+          <div class="kz-option__detail">Regały, szuflady, organizery na narzędzia</div>
+        </div>
+        <div class="kz-option__price">8 000 – 35 000 zł</div>
+      </label>
+      <label class="kz-option">
+        <input type="radio" name="kz-type" value="warsztatowa" data-min="6000" data-max="22000">
+        <div class="kz-option__info">
+          <div class="kz-option__name">Warsztatowa</div>
+          <div class="kz-option__detail">Stół roboczy, mocowania maszyn, wentylacja</div>
+        </div>
+        <div class="kz-option__price">6 000 – 22 000 zł</div>
+      </label>
+      <label class="kz-option">
+        <input type="radio" name="kz-type" value="kamperowa" data-min="15000" data-max="80000">
+        <div class="kz-option__info">
+          <div class="kz-option__name">Kamperowa</div>
+          <div class="kz-option__detail">Łóżko, kuchnia, instalacje, ocieplenie</div>
+        </div>
+        <div class="kz-option__price">15 000 – 80 000 zł</div>
+      </label>
+      <label class="kz-option">
+        <input type="radio" name="kz-type" value="izotermiczna" data-min="15000" data-max="40000">
+        <div class="kz-option__info">
+          <div class="kz-option__name">Izotermiczna</div>
+          <div class="kz-option__detail">Izolacja termiczna, agregat chłodniczy</div>
+        </div>
+        <div class="kz-option__price">15 000 – 40 000 zł</div>
+      </label>
+      <label class="kz-option">
+        <input type="radio" name="kz-type" value="diy" data-min="2500" data-max="5000">
+        <div class="kz-option__info">
+          <div class="kz-option__name">DIY sklejka</div>
+          <div class="kz-option__detail">Samodzielna zabudowa ze sklejki brzozowej</div>
+        </div>
+        <div class="kz-option__price">2 500 – 5 000 zł</div>
+      </label>
+    </div>
+  </div>
+
+  <!-- Step 2: Quality level -->
+  <div class="kz-step" data-step="2">
+    <h3>Wybierz poziom wykonania</h3>
+    <p class="kz-subtitle">Poziom wpływa na jakość materiałów i wykończenie</p>
+    <div class="kz-options">
+      <label class="kz-option">
+        <input type="radio" name="kz-quality" value="budget" data-mult="0.7">
+        <div class="kz-option__info">
+          <div class="kz-option__name">Budżetowa</div>
+          <div class="kz-option__detail">Podstawowe materiały, prostsza konstrukcja</div>
+        </div>
+        <div class="kz-option__price">×0,7</div>
+      </label>
+      <label class="kz-option">
+        <input type="radio" name="kz-quality" value="standard" data-mult="1.0">
+        <div class="kz-option__info">
+          <div class="kz-option__name">Standardowa</div>
+          <div class="kz-option__detail">Sprawdzone materiały, solidne wykończenie</div>
+        </div>
+        <div class="kz-option__price">×1,0</div>
+      </label>
+      <label class="kz-option">
+        <input type="radio" name="kz-quality" value="premium" data-mult="1.5">
+        <div class="kz-option__info">
+          <div class="kz-option__name">Premium</div>
+          <div class="kz-option__detail">Aluminium anodowane, certyfikacja, gwarancja</div>
+        </div>
+        <div class="kz-option__price">×1,5</div>
+      </label>
+    </div>
+  </div>
+
+  <!-- Step 3: Extras -->
+  <div class="kz-step" data-step="3">
+    <h3>Wybierz dodatki</h3>
+    <p class="kz-subtitle">Opcjonalne wyposażenie i usługi</p>
+    <div class="kz-options">
+      <label class="kz-option">
+        <input type="checkbox" name="kz-extra" value="podloga" data-cost="1500">
+        <div class="kz-option__info">
+          <div class="kz-option__name">Podłoga ochronna</div>
+          <div class="kz-option__detail">Antypoślizgowa wykładzina ryflowana</div>
+        </div>
+        <div class="kz-option__price">+1 500 zł</div>
+      </label>
+      <label class="kz-option">
+        <input type="checkbox" name="kz-extra" value="led" data-cost="500">
+        <div class="kz-option__info">
+          <div class="kz-option__name">Oświetlenie LED</div>
+          <div class="kz-option__detail">Listwy LED w przestrzeni ładunkowej</div>
+        </div>
+        <div class="kz-option__price">+500 zł</div>
+      </label>
+      <label class="kz-option">
+        <input type="checkbox" name="kz-extra" value="oklejenie" data-cost="1000">
+        <div class="kz-option__info">
+          <div class="kz-option__name">Oklejenie ścian</div>
+          <div class="kz-option__detail">Panele ochronne lub tapicerka ścian</div>
+        </div>
+        <div class="kz-option__price">+1 000 zł</div>
+      </label>
+      <label class="kz-option">
+        <input type="checkbox" name="kz-extra" value="montaz" data-cost="3000">
+        <div class="kz-option__info">
+          <div class="kz-option__name">Montaż profesjonalny</div>
+          <div class="kz-option__detail">Instalacja przez certyfikowany serwis</div>
+        </div>
+        <div class="kz-option__price">+3 000 zł</div>
+      </label>
+      <label class="kz-option">
+        <input type="checkbox" name="kz-extra" value="crashtest" data-cost="2000">
+        <div class="kz-option__info">
+          <div class="kz-option__name">Certyfikat crash-test</div>
+          <div class="kz-option__detail">Badanie wytrzymałości wg normy ECE R17</div>
+        </div>
+        <div class="kz-option__price">+2 000 zł</div>
+      </label>
+    </div>
+  </div>
+
+  <!-- Running total -->
+  <div class="kz-running">
+    <span>Szacunkowy koszt:</span>
+    <span class="kz-running__amount" id="kz-running-total">– zł</span>
+  </div>
+
+  <!-- Navigation -->
+  <div class="kz-buttons">
+    <button class="kz-btn kz-btn--prev" id="kz-prev" disabled>← Wstecz</button>
+    <button class="kz-btn kz-btn--next" id="kz-next" disabled>Dalej →</button>
+  </div>
+
+  <!-- Summary -->
+  <div class="kz-summary" id="kz-summary">
+    <h3>Podsumowanie kosztów zabudowy</h3>
+    <div class="kz-summary__rows" id="kz-summary-rows"></div>
+    <p class="kz-summary__note">
+      Podane kwoty to orientacyjne szacunki na rok 2026. Rzeczywisty koszt zależy od modelu busa, regionu i wybranego wykonawcy. Skontaktuj się z co najmniej 2–3 firmami, aby uzyskać dokładną wycenę.
+    </p>
+    <button class="kz-btn kz-btn--reset" id="kz-reset">Oblicz ponownie</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  var calc = document.getElementById('kz-calc');
+  if (!calc) return;
+
+  var currentStep = 1;
+  var totalSteps = 3;
+
+  var state = {
+    type: null,
+    typeLabel: '',
+    min: 0,
+    max: 0,
+    quality: null,
+    qualityLabel: '',
+    mult: 1.0,
+    extras: []
+  };
+
+  var typeNames = {
+    serwisowa: 'Serwisowa',
+    warsztatowa: 'Warsztatowa',
+    kamperowa: 'Kamperowa',
+    izotermiczna: 'Izotermiczna',
+    diy: 'DIY sklejka'
+  };
+
+  var qualityNames = {
+    budget: 'Budżetowa',
+    standard: 'Standardowa',
+    premium: 'Premium'
+  };
+
+  var extraNames = {
+    podloga: 'Podłoga ochronna',
+    led: 'Oświetlenie LED',
+    oklejenie: 'Oklejenie ścian',
+    montaz: 'Montaż profesjonalny',
+    crashtest: 'Certyfikat crash-test'
+  };
+
+  var steps = calc.querySelectorAll('.kz-step');
+  var progressBars = calc.querySelectorAll('.kz-progress__step');
+  var btnNext = calc.querySelector('#kz-next');
+  var btnPrev = calc.querySelector('#kz-prev');
+  var runningTotal = calc.querySelector('#kz-running-total');
+  var summaryDiv = calc.querySelector('#kz-summary');
+  var summaryRows = calc.querySelector('#kz-summary-rows');
+  var buttonsDiv = calc.querySelector('.kz-buttons');
+  var runningDiv = calc.querySelector('.kz-running');
+
+  function formatPLN(n) {
+    return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' zł';
+  }
+
+  function getBaseMid() {
+    if (!state.type) return 0;
+    return Math.round((state.min + state.max) / 2);
+  }
+
+  function getBaseRange() {
+    if (!state.type) return { low: 0, high: 0 };
+    return {
+      low: Math.round(state.min * state.mult),
+      high: Math.round(state.max * state.mult)
+    };
+  }
+
+  function getExtrasTotal() {
+    var sum = 0;
+    for (var i = 0; i < state.extras.length; i++) {
+      sum += state.extras[i].cost;
+    }
+    return sum;
+  }
+
+  function updateRunningTotal() {
+    if (!state.type) {
+      runningTotal.textContent = '– zł';
+      return;
+    }
+    var range = getBaseRange();
+    var extras = getExtrasTotal();
+    var low = range.low + extras;
+    var high = range.high + extras;
+    runningTotal.textContent = formatPLN(low) + ' – ' + formatPLN(high);
+  }
+
+  function updateUI() {
+    // Steps visibility
+    for (var i = 0; i < steps.length; i++) {
+      steps[i].classList.toggle('active', i === currentStep - 1);
+    }
+    // Progress
+    for (var j = 0; j < progressBars.length; j++) {
+      progressBars[j].classList.toggle('active', j < currentStep);
+    }
+    // Prev button
+    btnPrev.disabled = currentStep === 1;
+    // Next button state
+    updateNextButton();
+    updateRunningTotal();
+  }
+
+  function updateNextButton() {
+    if (currentStep === 1) {
+      btnNext.disabled = !state.type;
+      btnNext.textContent = 'Dalej →';
+    } else if (currentStep === 2) {
+      btnNext.disabled = !state.quality;
+      btnNext.textContent = 'Dalej →';
+    } else if (currentStep === 3) {
+      btnNext.disabled = false;
+      btnNext.textContent = 'Pokaż wynik →';
+    }
+  }
+
+  function highlightOption(container, input) {
+    var options = container.querySelectorAll('.kz-option');
+    for (var i = 0; i < options.length; i++) {
+      var radio = options[i].querySelector('input[type="radio"]');
+      options[i].classList.toggle('selected', radio && radio.checked);
+    }
+  }
+
+  function highlightCheckboxes() {
+    var step3 = calc.querySelector('.kz-step[data-step="3"]');
+    var options = step3.querySelectorAll('.kz-option');
+    for (var i = 0; i < options.length; i++) {
+      var cb = options[i].querySelector('input[type="checkbox"]');
+      options[i].classList.toggle('selected', cb && cb.checked);
+    }
+  }
+
+  // Step 1: type selection
+  var typeRadios = calc.querySelectorAll('input[name="kz-type"]');
+  for (var i = 0; i < typeRadios.length; i++) {
+    typeRadios[i].addEventListener('change', function() {
+      state.type = this.value;
+      state.typeLabel = typeNames[this.value] || this.value;
+      state.min = parseInt(this.getAttribute('data-min'), 10);
+      state.max = parseInt(this.getAttribute('data-max'), 10);
+      highlightOption(calc.querySelector('.kz-step[data-step="1"]'), this);
+      updateNextButton();
+      updateRunningTotal();
+    });
+  }
+
+  // Step 2: quality selection
+  var qualityRadios = calc.querySelectorAll('input[name="kz-quality"]');
+  for (var j = 0; j < qualityRadios.length; j++) {
+    qualityRadios[j].addEventListener('change', function() {
+      state.quality = this.value;
+      state.qualityLabel = qualityNames[this.value] || this.value;
+      state.mult = parseFloat(this.getAttribute('data-mult'));
+      highlightOption(calc.querySelector('.kz-step[data-step="2"]'), this);
+      updateNextButton();
+      updateRunningTotal();
+    });
+  }
+
+  // Step 3: extras
+  var extraCheckboxes = calc.querySelectorAll('input[name="kz-extra"]');
+  for (var k = 0; k < extraCheckboxes.length; k++) {
+    extraCheckboxes[k].addEventListener('change', function() {
+      state.extras = [];
+      var checked = calc.querySelectorAll('input[name="kz-extra"]:checked');
+      for (var m = 0; m < checked.length; m++) {
+        state.extras.push({
+          id: checked[m].value,
+          label: extraNames[checked[m].value],
+          cost: parseInt(checked[m].getAttribute('data-cost'), 10)
+        });
+      }
+      highlightCheckboxes();
+      updateRunningTotal();
+    });
+  }
+
+  // Navigation
+  btnNext.addEventListener('click', function() {
+    if (currentStep < totalSteps) {
+      currentStep++;
+      updateUI();
+    } else {
+      showSummary();
+    }
+  });
+
+  btnPrev.addEventListener('click', function() {
+    if (currentStep > 1) {
+      currentStep--;
+      updateUI();
+    }
+  });
+
+  function showSummary() {
+    // Hide steps and nav
+    for (var i = 0; i < steps.length; i++) {
+      steps[i].classList.remove('active');
+    }
+    buttonsDiv.style.display = 'none';
+
+    var range = getBaseRange();
+    var extras = getExtrasTotal();
+
+    var html = '';
+    html += '<div class="kz-summary__row"><span>Typ zabudowy</span><span>' + state.typeLabel + '</span></div>';
+    html += '<div class="kz-summary__row"><span>Koszt bazowy</span><span>' + formatPLN(range.low) + ' – ' + formatPLN(range.high) + '</span></div>';
+    html += '<div class="kz-summary__row"><span>Poziom wykonania</span><span>' + state.qualityLabel + ' (×' + state.mult.toFixed(1).replace('.', ',') + ')</span></div>';
+
+    if (state.extras.length > 0) {
+      for (var j = 0; j < state.extras.length; j++) {
+        html += '<div class="kz-summary__row"><span>' + state.extras[j].label + '</span><span>+' + formatPLN(state.extras[j].cost) + '</span></div>';
+      }
+      html += '<div class="kz-summary__row"><span>Dodatki razem</span><span>+' + formatPLN(extras) + '</span></div>';
+    }
+
+    var totalLow = range.low + extras;
+    var totalHigh = range.high + extras;
+    html += '<div class="kz-summary__row kz-summary__row--total"><span>Szacunkowy koszt</span><span>' + formatPLN(totalLow) + ' – ' + formatPLN(totalHigh) + '</span></div>';
+
+    summaryRows.innerHTML = html;
+    summaryDiv.classList.add('active');
+  }
+
+  // Reset
+  calc.querySelector('#kz-reset').addEventListener('click', function() {
+    currentStep = 1;
+    state = { type: null, typeLabel: '', min: 0, max: 0, quality: null, qualityLabel: '', mult: 1.0, extras: [] };
+
+    // Clear selections
+    var allInputs = calc.querySelectorAll('input');
+    for (var i = 0; i < allInputs.length; i++) {
+      allInputs[i].checked = false;
+    }
+    var allOptions = calc.querySelectorAll('.kz-option');
+    for (var j = 0; j < allOptions.length; j++) {
+      allOptions[j].classList.remove('selected');
+    }
+
+    summaryDiv.classList.remove('active');
+    buttonsDiv.style.display = 'flex';
+    updateUI();
+  });
+
+  // Init
+  updateUI();
+})();
+</script>
+</div>

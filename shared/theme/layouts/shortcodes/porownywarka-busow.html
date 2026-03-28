@@ -1,0 +1,287 @@
+{{/* Porównywarka busów – interactive side-by-side comparison tool */}}
+{{ $buses := site.Data.buses }}
+
+<style>
+.ptool {
+  --pt-green: #e8f5e9;
+  --pt-green-text: #2e7d32;
+  max-width: 900px;
+  margin: 2rem auto;
+  font-family: inherit;
+}
+.ptool__selectors {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.ptool__select-group {
+  flex: 1;
+  min-width: 200px;
+}
+.ptool__select-group label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--c-dark, #1a1a1a);
+  font-size: 0.95rem;
+}
+.ptool__select-group select {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--c-border, #ddd);
+  border-radius: var(--radius-sm, 6px);
+  background: var(--c-bg-alt, #f8f8f8);
+  color: var(--c-text, #333);
+  font-size: 0.95rem;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23666' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.8rem center;
+}
+.ptool__select-group select:focus {
+  outline: 2px solid var(--c-orange, #e67e22);
+  outline-offset: 1px;
+}
+.ptool__result {
+  display: none;
+}
+.ptool__result.is-visible {
+  display: block;
+}
+.ptool__table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--c-border, #ddd);
+  border-radius: var(--radius-sm, 6px);
+}
+.ptool__table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 540px;
+  font-size: 0.92rem;
+}
+.ptool__table thead th {
+  background: var(--c-dark, #1a1a1a);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 700;
+  position: sticky;
+  top: 0;
+}
+.ptool__table thead th:first-child {
+  width: 30%;
+}
+.ptool__table thead th:not(:first-child) {
+  width: 35%;
+}
+.ptool__table thead th a {
+  color: var(--c-orange, #e67e22);
+  text-decoration: none;
+}
+.ptool__table thead th a:hover {
+  text-decoration: underline;
+}
+.ptool__table tbody tr {
+  border-bottom: 1px solid var(--c-border, #ddd);
+}
+.ptool__table tbody tr:last-child {
+  border-bottom: none;
+}
+.ptool__table tbody tr:nth-child(even) {
+  background: var(--c-bg-alt, #f8f8f8);
+}
+.ptool__table td {
+  padding: 0.6rem 1rem;
+  vertical-align: top;
+  color: var(--c-text, #333);
+}
+.ptool__table td:first-child {
+  font-weight: 600;
+  color: var(--c-dark, #1a1a1a);
+  white-space: nowrap;
+}
+.ptool__table td.is-better {
+  background: var(--pt-green);
+  color: var(--pt-green-text);
+  font-weight: 600;
+}
+.ptool__empty {
+  text-align: center;
+  padding: 2rem;
+  color: var(--c-text, #888);
+  font-style: italic;
+}
+@media (max-width: 600px) {
+  .ptool__selectors {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .ptool__table {
+    font-size: 0.82rem;
+  }
+  .ptool__table td,
+  .ptool__table thead th {
+    padding: 0.5rem 0.6rem;
+  }
+}
+</style>
+
+<div class="ptool" id="porownywarka">
+  <div class="ptool__selectors">
+    <div class="ptool__select-group">
+      <label for="ptool-bus1">Bus 1</label>
+      <select id="ptool-bus1">
+        <option value="">– wybierz model –</option>
+        {{ range $buses }}
+        <option value="{{ .id }}">{{ .name }}</option>
+        {{ end }}
+      </select>
+    </div>
+    <div class="ptool__select-group">
+      <label for="ptool-bus2">Bus 2</label>
+      <select id="ptool-bus2">
+        <option value="">– wybierz model –</option>
+        {{ range $buses }}
+        <option value="{{ .id }}">{{ .name }}</option>
+        {{ end }}
+      </select>
+    </div>
+  </div>
+
+  <div class="ptool__result" id="ptool-result">
+    <div class="ptool__table-wrap">
+      <table class="ptool__table">
+        <thead>
+          <tr>
+            <th>Parametr</th>
+            <th id="ptool-h1"></th>
+            <th id="ptool-h2"></th>
+          </tr>
+        </thead>
+        <tbody id="ptool-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="ptool__empty" id="ptool-empty">
+    Wybierz dwa modele z list powyżej, aby zobaczyć porównanie.
+  </div>
+</div>
+
+<script>
+(function() {
+  var buses = {{ $buses | jsonify }};
+  var busMap = {};
+  for (var i = 0; i < buses.length; i++) {
+    busMap[buses[i].id] = buses[i];
+  }
+
+  var sel1 = document.getElementById('ptool-bus1');
+  var sel2 = document.getElementById('ptool-bus2');
+  var result = document.getElementById('ptool-result');
+  var empty = document.getElementById('ptool-empty');
+  var head1 = document.getElementById('ptool-h1');
+  var head2 = document.getElementById('ptool-h2');
+  var tbody = document.getElementById('ptool-body');
+
+  function fmt(val, unit) {
+    if (val == null || val === '') return '–';
+    if (typeof val === 'number') {
+      return val.toLocaleString('pl-PL') + (unit ? ' ' + unit : '');
+    }
+    if (Array.isArray(val)) return val.join(', ');
+    return String(val);
+  }
+
+  function fmtPln(val) {
+    if (val == null) return '–';
+    return val.toLocaleString('pl-PL') + ' zł';
+  }
+
+  // Segment labels
+  var segmentLabels = {
+    'maly': 'Mały van',
+    'sredni': 'Średni van',
+    'duzy': 'Duży bus'
+  };
+
+  // Row definitions: [label, key/getter, unit, comparison mode]
+  // mode: 'lower' = lower is better, 'higher' = higher is better, 'none' = no comparison
+  var rows = [
+    ['Marka', function(b) { return b.brand; }, '', 'none'],
+    ['Segment', function(b) { return segmentLabels[b.segment] || b.segment; }, '', 'none'],
+    ['Masa własna', function(b) { return b.masa_wlasna_kg; }, 'kg', 'lower'],
+    ['DMC', function(b) { return b.dmc_kg; }, 'kg', 'higher'],
+    ['Ładowność', function(b) { return b.ladownosc_kg; }, 'kg', 'higher'],
+    ['Długość', function(b) { return b.dlugosc_mm; }, 'mm', 'higher'],
+    ['Szerokość', function(b) { return b.szerokosc_mm; }, 'mm', 'higher'],
+    ['Wysokość', function(b) { return b.wysokosc_mm; }, 'mm', 'higher'],
+    ['Rozstaw osi', function(b) { return b.rozstaw_osi_mm; }, 'mm', 'higher'],
+    ['Objętość ładowni', function(b) { return b.objetosc_ladowni_m3; }, 'm³', 'higher'],
+    ['Silniki', function(b) { return b.silniki; }, '', 'none'],
+    ['Spalanie miasto', function(b) { return b.spalanie_miasto; }, 'l/100km', 'lower'],
+    ['Spalanie trasa', function(b) { return b.spalanie_trasa; }, 'l/100km', 'lower'],
+    ['Spalanie mieszane', function(b) { return b.spalanie_mieszane; }, 'l/100km', 'lower'],
+    ['Cena nowy od', function(b) { return b.cena_nowy_od; }, 'pln', 'lower'],
+    ['Cena używany od', function(b) { return b.cena_uzywany_od; }, 'pln', 'lower']
+  ];
+
+  function render() {
+    var id1 = sel1.value;
+    var id2 = sel2.value;
+
+    if (!id1 || !id2) {
+      result.classList.remove('is-visible');
+      empty.style.display = '';
+      return;
+    }
+
+    var b1 = busMap[id1];
+    var b2 = busMap[id2];
+    if (!b1 || !b2) return;
+
+    // Headers with links
+    head1.innerHTML = b1.url ? '<a href="' + b1.url + '">' + b1.name + '</a>' : b1.name;
+    head2.innerHTML = b2.url ? '<a href="' + b2.url + '">' + b2.name + '</a>' : b2.name;
+
+    var html = '';
+    for (var r = 0; r < rows.length; r++) {
+      var label = rows[r][0];
+      var getter = rows[r][1];
+      var unit = rows[r][2];
+      var mode = rows[r][3];
+
+      var v1 = getter(b1);
+      var v2 = getter(b2);
+
+      var d1 = unit === 'pln' ? fmtPln(v1) : fmt(v1, unit);
+      var d2 = unit === 'pln' ? fmtPln(v2) : fmt(v2, unit);
+
+      var cls1 = '';
+      var cls2 = '';
+
+      if (mode !== 'none' && typeof v1 === 'number' && typeof v2 === 'number' && v1 !== v2) {
+        if (mode === 'lower') {
+          if (v1 < v2) cls1 = ' class="is-better"';
+          else cls2 = ' class="is-better"';
+        } else {
+          if (v1 > v2) cls1 = ' class="is-better"';
+          else cls2 = ' class="is-better"';
+        }
+      }
+
+      html += '<tr><td>' + label + '</td><td' + cls1 + '>' + d1 + '</td><td' + cls2 + '>' + d2 + '</td></tr>';
+    }
+
+    tbody.innerHTML = html;
+    empty.style.display = 'none';
+    result.classList.add('is-visible');
+  }
+
+  sel1.addEventListener('change', render);
+  sel2.addEventListener('change', render);
+})();
+</script>
