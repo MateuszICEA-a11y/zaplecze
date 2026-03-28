@@ -1,8 +1,7 @@
 {{/*
   related-articles shortcode
   Usage: {{< related-articles "slug1,slug2,slug3" "Optional title text" >}}
-  Displays horizontal scrollable carousel of image cards.
-  Looks in the current section first, then site-wide.
+  Displays horizontal scrollable carousel with arrow navigation.
 */}}
 {{ $slugs := split (.Get 0) "," }}
 {{ $title := .Get 1 }}
@@ -12,7 +11,6 @@
 {{ range $slugs }}
   {{ $slug := strings.TrimSpace . }}
   {{ $found := false }}
-  {{/* Try current section first */}}
   {{ $sectionPages := where $.Page.Site.RegularPages "Section" $section }}
   {{ range $sectionPages }}
     {{ if and (not $found) (eq .File.ContentBaseName $slug) }}
@@ -20,7 +18,6 @@
       {{ $found = true }}
     {{ end }}
   {{ end }}
-  {{/* Fallback: search all pages */}}
   {{ if not $found }}
     {{ range $.Page.Site.RegularPages }}
       {{ if and (not $found) (eq .File.ContentBaseName $slug) }}
@@ -33,13 +30,29 @@
 
 {{ if gt (len $pages) 0 }}
 <div class="related-inline">
-  {{ with $title }}<div class="related-inline__title">{{ . }}</div>{{ end }}
+  <div class="related-inline__header">
+    {{ with $title }}<div class="related-inline__title">{{ . }}</div>{{ end }}
+    <div class="related-inline__arrows">
+      <button class="related-inline__arrow related-inline__arrow--prev" aria-label="Poprzednie" type="button">
+        <span class="material-symbols-outlined">chevron_left</span>
+      </button>
+      <button class="related-inline__arrow related-inline__arrow--next" aria-label="Następne" type="button">
+        <span class="material-symbols-outlined">chevron_right</span>
+      </button>
+    </div>
+  </div>
   <div class="related-inline__track">
     {{ range $pages }}
-    <a href="{{ .Permalink }}" class="related-inline__card"
-       {{ with .Params.image }}style="background-image: url('{{ . }}')"{{ end }}>
-      <div class="related-inline__overlay">
-        <div class="related-inline__name">{{ .Params.h1 | default .Title | truncate 60 }}</div>
+    {{ $p := . }}
+    <a href="{{ $p.Permalink }}" class="related-inline__card">
+      <div class="related-inline__img">
+        {{ with $p.Params.image }}
+        <img src="{{ . }}" alt="{{ $p.Params.image_alt | default $p.Title }}" loading="lazy" width="400" height="225">
+        {{ end }}
+      </div>
+      <div class="related-inline__body">
+        <div class="related-inline__name">{{ $p.Params.h1 | default $p.Title | truncate 70 }}</div>
+        {{ with $p.Description }}<p class="related-inline__desc">{{ . | truncate 120 }}</p>{{ end }}
       </div>
     </a>
     {{ end }}

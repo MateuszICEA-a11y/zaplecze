@@ -15,20 +15,20 @@
   {{- partial "footer.html" . -}}
 
   <script>
-  document.querySelectorAll('[data-slider]').forEach(function(slider) {
-    var track = slider.querySelector('[data-slider-track]');
-    var prev = slider.querySelector('[data-slider-prev]');
-    var next = slider.querySelector('[data-slider-next]');
+  document.querySelectorAll('.related-inline').forEach(function(el) {
+    var track = el.querySelector('.related-inline__track');
+    var prev = el.querySelector('.related-inline__arrow--prev');
+    var next = el.querySelector('.related-inline__arrow--next');
     if (!track) return;
-    var scrollAmount = function() {
-      var card = track.querySelector('.related-card');
-      return card ? card.offsetWidth + 24 : 300;
+    var scrollAmt = function() {
+      var card = track.querySelector('.related-inline__card');
+      return card ? card.offsetWidth + 16 : 316;
     };
     if (prev) prev.addEventListener('click', function() {
-      track.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+      track.scrollBy({ left: -scrollAmt(), behavior: 'smooth' });
     });
     if (next) next.addEventListener('click', function() {
-      track.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+      track.scrollBy({ left: scrollAmt(), behavior: 'smooth' });
     });
   });
   </script>
