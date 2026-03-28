@@ -30,6 +30,8 @@ build/
 .env
 .env.*
 *.key
+**/api-credentials.md
+.hugo_build.lock
 
 # Node (if ever needed)
 node_modules/
