@@ -77,7 +77,7 @@
   </div>
 </article>
 
-{{/* ═══ PILLAR NAV: Engine variants / Body variants / Cross-cluster ═══ */}}
+{{/* ═══ PILLAR NAV ═══ */}}
 {{ $slug := $.File.ContentBaseName }}
 {{ if eq $slug "_index" }}{{ $slug = $.File.Dir | path.Dir | path.Base }}{{ end }}
 
@@ -86,7 +86,10 @@
   {{ $shortName = index (split $shortName " – ") 0 }}
 {{ end }}
 
-{{/* Categorize child pages into engines vs body variants */}}
+{{ $sectionName := $.Section }}
+
+{{ if eq $sectionName "modele" }}
+{{/* ── /modele/: Engine variants / Body variants ── */}}
 {{ $engines := slice }}
 {{ $bodies := slice }}
 {{ range $.Pages }}
@@ -103,12 +106,8 @@
   {{ end }}
 {{ end }}
 
-{{/* Cross-cluster: articles from other sections referencing this model */}}
-{{ $crossCluster := where $.Site.RegularPages "Params.parent_model" $slug }}
-
 <div class="container content-narrow">
 
-  {{/* ── Wersje silnikowe ── */}}
   {{ if gt (len $engines) 0 }}
   <section class="pillar-nav">
     <div class="pillar-nav__title">Wersje silnikowe {{ $shortName }}</div>
@@ -126,7 +125,6 @@
   </section>
   {{ end }}
 
-  {{/* ── Wersje nadwoziowe ── */}}
   {{ if gt (len $bodies) 0 }}
   <section class="pillar-nav">
     <div class="pillar-nav__title">Wersje nadwoziowe {{ $shortName }}</div>
@@ -144,8 +142,44 @@
   </section>
   {{ end }}
 
-  {{/* ── Powiązane artykuły (cross-cluster: serwis, przeróbki, porównania...) ── */}}
-  {{ if gt (len $crossCluster) 0 }}
+</div>
+
+{{ else }}
+{{/* ── Other sections: image card carousel ── */}}
+{{ $childPages := slice }}
+{{ range $.Pages }}
+  {{ if not .Params.redirect }}
+    {{ $childPages = $childPages | append . }}
+  {{ end }}
+{{ end }}
+
+{{ if gt (len $childPages) 0 }}
+<div class="container content-narrow">
+  <section class="pillar-nav">
+    {{ $sectionLabel := dict "kampery" "kamperach" "przerobki" "przeróbkach" "zabudowy" "zabudowach" "porownania" "porównaniach" "serwis" "serwisie" "wynajem" "wynajmie" "przepisy" "przepisach" "vanlife" "vanlife" }}
+    <div class="pillar-nav__title">Sprawdź pozostałe wpisy o {{ index $sectionLabel $sectionName | default $sectionName }}</div>
+    <div class="pillar-nav__grid">
+      {{ range $childPages }}
+      <a href="{{ .Permalink }}" class="pillar-nav__card pillar-nav__card--img"
+         {{ with .Params.image }}style="background-image: url('{{ . }}')"{{ end }}>
+        <div class="pillar-nav__card-overlay">
+          {{ with .Params.categories }}<span class="pillar-nav__card-badge">{{ index . 0 }}</span>{{ end }}
+          <div class="pillar-nav__card-name">{{ .Params.h1 | default .Title | truncate 60 }}</div>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+</div>
+{{ end }}
+
+{{ end }}
+
+{{/* ── Cross-cluster: articles from other sections referencing this page ── */}}
+{{ $crossCluster := where $.Site.RegularPages "Params.parent_model" $slug }}
+
+{{ if gt (len $crossCluster) 0 }}
+<div class="container content-narrow">
   <section class="pillar-nav">
     <div class="pillar-nav__title">Powiązane artykuły</div>
     <div class="pillar-nav__grid">
@@ -162,9 +196,8 @@
       {{ end }}
     </div>
   </section>
-  {{ end }}
-
 </div>
+{{ end }}
 
 {{ end }}
 
