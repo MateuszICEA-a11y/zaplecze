@@ -558,62 +558,45 @@ a:hover { color: var(--c-orange-hover); }
 
 .related-inline__card {
   flex: 0 0 300px;
-  display: flex;
-  flex-direction: column;
-  background: #fff;
+  min-height: 170px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
   border-radius: var(--radius-sm);
   overflow: hidden;
   text-decoration: none;
   scroll-snap-align: start;
-  border-top: 3px solid var(--c-orange);
-  box-shadow: 0 1px 4px rgba(0,0,0,.08);
   transition: box-shadow .2s, transform .2s;
 }
 
 .related-inline__card:hover {
-  box-shadow: 0 4px 16px rgba(0,0,0,.12);
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
   transform: translateY(-2px);
 }
 
-.related-inline__img {
-  width: 100%;
-  height: 170px;
-  overflow: hidden;
-  background: var(--c-bg-alt);
-}
-
-.related-inline__img img {
+.related-inline__overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform .3s;
-}
-
-.related-inline__card:hover .related-inline__img img {
-  transform: scale(1.05);
-}
-
-.related-inline__body {
-  padding: .875rem 1rem 1rem;
+  min-height: 170px;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(0deg, rgba(23,23,23,.88) 0%, rgba(23,23,23,.55) 50%, rgba(23,23,23,.15) 100%);
+  border-radius: var(--radius-sm);
 }
 
 .related-inline__name {
-  font-size: .9375rem;
+  color: #fff;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1.35;
-  color: var(--c-dark);
-}
-
-.related-inline__desc {
-  font-size: .8125rem;
-  line-height: 1.45;
-  color: var(--c-text-light);
-  margin-top: .4rem;
+  text-shadow: 0 1px 4px rgba(0,0,0,.5);
 }
 
 @media (max-width: 600px) {
-  .related-inline__card { flex: 0 0 260px; }
-  .related-inline__img { height: 140px; }
+  .related-inline__card { flex: 0 0 260px; min-height: 150px; }
+  .related-inline__overlay { min-height: 150px; }
 }
 
 /* ── Mobile toggle (pure CSS checkbox) ── */

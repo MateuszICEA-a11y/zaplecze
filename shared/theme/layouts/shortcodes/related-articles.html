@@ -44,15 +44,10 @@
   <div class="related-inline__track">
     {{ range $pages }}
     {{ $p := . }}
-    <a href="{{ $p.Permalink }}" class="related-inline__card">
-      <div class="related-inline__img">
-        {{ with $p.Params.image }}
-        <img src="{{ . }}" alt="{{ $p.Params.image_alt | default $p.Title }}" loading="lazy" width="400" height="225">
-        {{ end }}
-      </div>
-      <div class="related-inline__body">
-        <div class="related-inline__name">{{ $p.Params.h1 | default $p.Title | truncate 70 }}</div>
-        {{ with $p.Description }}<p class="related-inline__desc">{{ . | truncate 120 }}</p>{{ end }}
+    <a href="{{ $p.Permalink }}" class="related-inline__card"
+       {{ with $p.Params.image }}style="background-image: url('{{ . }}')"{{ end }}>
+      <div class="related-inline__overlay">
+        <div class="related-inline__name">{{ $p.Params.h1 | default $p.Title | truncate 60 }}</div>
       </div>
     </a>
     {{ end }}
