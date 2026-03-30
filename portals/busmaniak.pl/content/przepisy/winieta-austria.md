@@ -1,127 +1,123 @@
 ---
 title: "Winieta Austria 2026 – aktualne ceny i zasady"
 date: 2026-03-28
-description: "Winieta w Austrii na 2026 rok – ceny winiet cyfrowych i naklejanych, odcinki specjalne z tunelami oraz system GO-Maut dla busow powyzej 3,5 t."
+description: "Winieta w Austrii na 2026 rok – ceny winiet cyfrowych i naklejanych, odcinki specjalne z tunelami oraz system GO-Maut dla busów powyżej 3,5 t."
 draft: false
 author: "marek-kowalczyk"
 h1: "Winieta Austria 2026 – ceny, rodzaje i system oplat drogowych"
 image: "/images/winieta-austria-hero.jpg"
 image_alt: "Austriacka autostrada z widokiem na Alpy i bramka poboru oplat"
 main_keyword: "winieta austria"
-lead: "Roczna winieta w Austrii na 2026 rok kosztuje 106,80 EUR, dziesieciodniowa 12,80 EUR, a jednodniowa 9,60 EUR. To ostatni rok, w ktorym mozna kupic tradycyjna naklejke – od 2027 roku ASFINAG przechodzi wylacznie na winiete cyfrowa. Busy powyzej 3,5 t placa za przejazd w systemie GO-Maut, a przejazdy tunelami alpejskimi wymagaja dodatkowych oplat."
+lead: "Roczna winieta w Austrii na 2026 rok kosztuje 106,80 EUR, dziesięciodniowa 12,80 EUR, a jednodniowa 9,60 EUR. To ostatni rok, w którym można kupić tradycyjną naklejkę – od 2027 roku ASFINAG przechodzi wyłącznie na winietę cyfrową. Busy powyżej 3,5 t płacą za przejazd w systemie GO-Maut, a przejazdy tunelami alpejskimi wymagają dodatkowych opłat."
 faq:
   - question: "Ile kosztuje winieta w Austrii na 10 dni?"
-    answer: "Dziesieciodniowa winieta w Austrii kosztuje 12,80 EUR w 2026 roku. Mozesz ja kupic jako naklejke lub winiete cyfrowa w sklepie ASFINAG na shop.asfinag.at."
+    answer: "Dziesięciodniowa winieta w Austrii kosztuje 12,80 EUR w 2026 roku. Możesz ją kupić jako naklejkę lub winietę cyfrową w sklepie ASFINAG na shop.asfinag.at."
   - question: "Czy bus dostawczy do 3,5 t potrzebuje winiety w Austrii?"
-    answer: "Tak, kazdy pojazd do 3,5 t DMC potrzebuje winiety na austriackich autostradach i drogach ekspresowych. Dotyczy to rowniez kamperow i furgonow dostawczych."
-  - question: "Co to jest GO-Box i kto musi go miec?"
-    answer: "GO-Box to urzadzenie pokladowe systemu GO-Maut, obowiazkowe dla pojazdow powyzej 3,5 t DMC na austriackich autostradach. Oplata zalezy od przejechanych kilometrow, liczby osi i klasy emisji."
-  - question: "Czy za przejazd tunelem Brenner trzeba placic osobno?"
-    answer: "Tak. Tunel Brenner na autostradzie A13 to odcinek specjalny z dodatkowa oplata 12,50 EUR za przejazd w jednym kierunku, niezaleznie od posiadanej winiety."
+    answer: "Tak, każdy pojazd do 3,5 t DMC potrzebuje winiety na austriackich autostradach i drogach ekspresowych. Dotyczy to również kamperów i furgonów dostawczych."
+  - question: "Co to jest GO-Box i kto musi go mieć?"
+    answer: "GO-Box to urządzenie pokładowe systemu GO-Maut, obowiązkowe dla pojazdów powyżej 3,5 t DMC na austriackich autostradach. Opłata zależy od przejechanych kilometrów, liczby osi i klasy emisji."
+  - question: "Czy za przejazd tunelem Brenner trzeba płacić osobno?"
+    answer: "Tak. Tunel Brenner na autostradzie A13 to odcinek specjalny z dodatkową opłatą 12,50 EUR za przejazd w jednym kierunku, niezależnie od posiadanej winiety."
 ---
-## System winietowy ASFINAG – jak dziala w Austrii
+## System winietowy ASFINAG – jak działa w Austrii
 
-Austriackie autostrady (Autobahn) i drogi ekspresowe (Schnellstrasse) zarzadzane sa przez spolke ASFINAG. Przejazd nimi wymaga waznej winiety dla pojazdow do 3,5 tony [DMC](/przepisy/dmc-co-to/) lub rejestracji w systemie GO-Maut dla ciezszych pojazdow.
+Austriackie autostrady (Autobahn) i drogi ekspresowe (Schnellstrasse) zarządzane są przez spółkę ASFINAG. Przejazd nimi wymaga ważnej winiety dla pojazdów do 3,5 tony [DMC](/przepisy/dmc-co-to/) lub rejestracji w systemie GO-Maut dla cięższych pojazdów. Warto wiedzieć, że obowiązek winietowy dla zespołu pojazdów zależy wyłącznie od DMC pojazdu ciągnącego. Jeśli bus ma DMC do 3,5 t, wystarczy jedna winieta, a przyczepa – niezależnie od jej typu i masy – nie wymaga dodatkowej opłaty.
 
-W 2026 roku ASFINAG oferuje dwa formaty winiety – tradycyjna naklejke na szybie i winiete cyfrowa. To ostatni rok wspolnego funkcjonowania obu wersji. Od 1 lutego 2027 roku jedynym formatem bedzie winieta cyfrowa przypisana do numeru rejestracyjnego.
+W 2026 roku ASFINAG oferuje dwa formaty winiety – tradycyjną naklejkę na szybę i winietę cyfrową. To ostatni rok współistnienia obu wersji. Od 1 lutego 2027 roku jedynym formatem będzie winieta cyfrowa przypisana do numeru rejestracyjnego.
 
 ### Winieta naklejana – ostatni rok
 
-Naklejka na 2026 rok ma kolor ognistej czerwieni. Nalezy ja umieszczac na wewnetrznej stronie szyby przedniej, w lewym gornym rogu lub za lusterkiem wstecznym. Naklejka musi byc czytelna dla kamer – przyciemniane szyby lub nieprawidlowe przyklejenie moga skutkowac mandatem.
+Naklejka na 2026 rok ma kolor ognistej czerwieni. Należy ją umieścić na wewnętrznej stronie szyby przedniej, w lewym górnym rogu lub za lusterkiem wstecznym. Naklejka musi być czytelna dla kamer – przyciemniane pasy na szybie lub nieprawidłowe przyklejenie mogą skutkować mandatem.
 
 ### Winieta cyfrowa (Digitale Vignette)
 
-Winieta cyfrowa jest przypisana do numeru rejestracyjnego pojazdu. Kamery ANPR na autostradach automatycznie skanuja tablice i weryfikuja waznosc w centralnej bazie. Nie musisz nic drukowac ani przyklejac – po zakupie online winieta jest aktywna od wybranej daty.
+Winieta cyfrowa jest przypisana do numeru rejestracyjnego pojazdu. Kamery ANPR na autostradach automatycznie skanują tablice i weryfikują ważność winiety w centralnej bazie. Nie trzeba nic drukować ani przyklejać – po zakupie online winieta jest aktywna od wybranej daty.
 
 ## Rodzaje i ceny winiet w Austrii 2026
 
-Ceny winiet wzrosly o 2,9% w porownaniu z 2025 rokiem, zgodnie z coroczna indexacja inflacyjna.
+Ceny winiet wzrosły o 2,9% w porównaniu z 2025 rokiem, co jest wynikiem corocznej indeksacji inflacyjnej.
 
-| Okres waznosci | Cena 2026 (EUR) | Cena orientacyjna (PLN) |
+| Okres ważności | Cena 2026 (EUR) | Cena orientacyjna (PLN) |
 | :--- | :--- | :--- |
-| 1 dzien | 9,60 EUR | ok. 41 zl |
-| 10 dni | 12,80 EUR | ok. 55 zl |
-| 2 miesiace | 32,00 EUR | ok. 137 zl |
-| Roczna | 106,80 EUR | ok. 457 zl |
+| 1 dzień | 9,60 EUR | ok. 41 zł |
+| 10 dni | 12,80 EUR | ok. 55 zł |
+| 2 miesiące | 32,00 EUR | ok. 137 zł |
+| Roczna | 106,80 EUR | ok. 457 zł |
 
-Winieta roczna jest wazna od 1 grudnia 2025 do 31 stycznia 2027 – to czternascie miesiecy, nie dwanascie. Jesli planujesz wyjazd na narty w grudniu i wakacje latem, roczna winieta pokrywa oba wyjazdy.
+Winieta roczna jest ważna od 1 grudnia 2025 do 31 stycznia 2027 roku. Dzięki 14-miesięcznemu okresowi ważności jedna winieta może objąć zarówno zimowy, jak i letni wyjazd.
 
-### Gdzie kupic winiete
+### Gdzie kupić winietę
 
-- **Online** – oficjalny sklep ASFINAG na shop.asfinag.at lub aplikacja mobilna ASFINAG. Winieta cyfrowa jest aktywna natychmiast lub od wybranej daty
-- **Stacje benzynowe** – na terenie Austrii i w krajach osciennych (np. na stacjach przy granicy w Czechach i Slowacji)
-- **ADAC/OAMTC** – kluby motoryzacyjne sprzedaja winiety w swoich placowkach
-- **Tabaktrafiken** – austriackie kioski tytoniowe sa autoryzowanymi punktami sprzedazy
+- **Online** – oficjalny sklep ASFINAG na shop.asfinag.at lub aplikacja mobilna ASFINAG.
+- **Stacje benzynowe** – na terenie Austrii i w krajach ościennych (np. na stacjach przy granicy w Czechach i Słowacji).
+- **ADAC/ÖAMTC** – kluby motoryzacyjne sprzedają winiety w swoich placówkach.
+- **Tabaktrafiken** – austriackie kioski tytoniowe są autoryzowanymi punktami sprzedaży.
 
 ![Austriacka autostrada z widokiem na Alpy](/images/winieta-austria-hero.jpg)
 
 {{% info title="Cyfrowa winieta – uwaga na termin aktywacji" icon="clock" %}}
-Winieta cyfrowa kupiona online jest aktywna najwczesniej po 18 dniach od zakupu, chyba ze kupujesz ja w autoryzowanym punkcie sprzedazy – wtedy aktywuje sie natychmiast. Planujac wyjazd, kup winiete cyfrowa co najmniej trzy tygodnie wczesniej lub wybierz naklejke na stacji granicznej.
+Przy zakupie online winiet 2-miesięcznych i rocznych obowiązuje 18-dniowy okres karencji, wynikający z prawa do odstąpienia od umowy. Winiety 1-dniowe oraz 10-dniowe kupione przez internet są ważne natychmiast po zakupie.
 {{% /info %}}
 
-## Busy powyzej 3,5 t – GO-Box i GO-Maut
+## Busy powyżej 3,5 t – GO-Box i GO-Maut
 
-Pojazdy o [DMC powyzej 3,5 tony](/przepisy/dmc-co-to/) – ciezarowki, autobusy, ciezkie kampery – nie kupuja winiety. Zamiast niej korzystaja z systemu GO-Maut obslugiwanemu przez ASFINAG. Oplaty sa naliczane za kazdy przejechany kilometr autostrady.
+Pojazdy o [DMC powyżej 3,5 tony](/przepisy/dmc-co-to/) – ciężarówki, autobusy, ciężkie kampery – nie kupują winiety. Zamiast niej korzystają z elektronicznego systemu GO-Maut, w którym opłaty naliczane są za każdy przejechany kilometr autostrady. Korzystanie z płatnych dróg bez wymaganego urządzenia pokładowego (OBU) jest surowo karane.
 
-### Jak dziala GO-Maut
+Kierowcy busów i kamperów, którzy używają uniwersalnych urządzeń EETS (np. Telepass, Toll Collect, E100), nie muszą kupować dedykowanego GO-Boxa. Wystarczy, że przed wjazdem do Austrii aktywują w swoim urządzeniu domenę AT (Austria).
 
-System wymaga zamontowania urzadzenia pokladowego GO-Box na szybie przedniej. Bramki na autostradach komunikuja sie z urzadzeniem mikrofalowo i automatycznie naliczaja opiate.
+### Jak działa GO-Maut
 
-Stawka za kilometr zalezy od trzech czynnikow:
+System wymaga zamontowania na szybie urządzenia pokładowego GO-Box. Bramki na autostradach komunikują się z urządzeniem w technologii mikrofalowej i automatycznie naliczają opłatę.
 
-- **Liczba osi** – pojazdy dwuosiowe placa mniej niz trzy- i czteroosiowe
-- **Klasa emisji EURO** – czyste silniki (EURO VI) maja nizsze stawki
-- **Pora dnia** – na odcinku Brenner (A13) obowiazuje wyzsza taryfa nocna miedzy 22:00 a 5:00
+Stawka za kilometr zależy od trzech czynników:
 
-Od 2024 roku do stawki doliczane sa koszty zewnetrzne (emisje CO2, halas, zanieczyszczenie powietrza), co podnioslo oplaty o kilkanascie procent.
+- **Liczba osi** – pojazdy dwuosiowe płacą mniej niż trzy- i czteroosiowe.
+- **Klasa emisji EURO** – czystsze silniki (EURO VI) mają niższe stawki.
+- **Pora dnia** – na autostradzie A13 (Brenner) obowiązuje wyższa taryfa nocna między 22:00 a 5:00.
 
-### Alternatywa – GO-Maut online
+Od 2024 roku do stawki doliczane są koszty zewnętrzne (emisje CO2, hałas, zanieczyszczenie powietrza), co podniosło opłaty o kilkanaście procent.
 
-Zamiast GO-Box mozna korzystac z systemu GO-Maut online. Rejestrujesz pojazd na go-maut.at, podpinasz karte platnicza, a kamery na autostradach identyfikuja Twoj numer rejestracyjny i automatycznie naliczaja oplaty. Rozwiazanie wygodne dla kierowcow okazjonalnie wjezdzajacych do Austrii ciezkim busem.
+## Odcinki specjalne – tunele i przełęcze alpejskie
 
-## Odcinki specjalne – tunele i przejecze alpejskie
+Sama winieta nie uprawnia do przejazdu wszystkimi autostradami. Na kilku odcinkach z tunelami i wysokogórskimi przełęczami obowiązują dodatkowe opłaty – tzw. Sondermautstrecken.
 
-Sama winieta nie uprawnia do przejazdu wszystkimi autostradami. Na kilku odcinkach przechodzacych przez tunele i przeleczy alpejskie obowiazuja dodatkowe oplaty – tzw. Sondermautstrecken.
-
-| Odcinek | Autostrada | Cena 1 przejazd (EUR) | Karnet roczny (EUR) |
+| Odcinek | Autostrada | Cena za 1 przejazd (EUR) | Karnet roczny (EUR) |
 | :--- | :--- | :--- | :--- |
-| Przejezd Brenner | A13 | 12,50 | 75,00 |
+| Przejazd przez Brenner | A13 | 12,50 | 75,00 |
 | Tunel Arlberg | S16 | 13,00 | 78,00 |
 | Tunele Tauern i Katschberg | A10 | 15,00 | ok. 80 |
 | Tunel Karawanken | A11 | 9,00 | – |
 
-Oplaty za odcinki specjalne mozna uiscic na bramkach przy wjezdach lub kupic wczesniej w sklepie online ASFINAG. Dostepne sa bilety jednoprzejazdowe, dwuprzejazdowe i wieloprzejazdowe.
+Opłaty można uiścić na bramkach lub kupić online w sklepie ASFINAG. Wygodnym rozwiązaniem jest usługa FLEX, która pozwala powiązać numer rejestracyjny z kartą płatniczą na koncie klienta. Szlabany otwierają się wtedy automatycznie, a opłata jest pobierana z karty bez konieczności zatrzymywania się.
 
 {{% expert name="Kowalczyk" %}}
-Jadac busem z Polski na poludnie Austrii – np. do Karyntii czy Tyrolu – oprócz winiety za ok. 13 EUR (10-dniowa) musisz doliczyc 12–15 EUR za tunel alpejski. Na trasie Salzburg–Villach przez tunel Tauern laczny koszt w jedna strone to ok. 28 EUR. Warto to uwzglednic, planujac budzet podrozy.
+Jadąc busem z Polski na południe Austrii – np. do Karyntii czy Tyrolu – oprócz winiety za ok. 13 EUR (10-dniowa) musisz doliczyć 12–15 EUR za tunel alpejski. Na trasie Salzburg–Villach przez tunel Tauern łączny koszt w jedną stronę to ok. 28 EUR. Warto to uwzględnić, planując budżet podróży.
 {{% /expert %}}
 
 ## Kary za brak winiety w Austrii
 
-Austriacka policja i ASFINAG prowadza kontrole za pomoca kamer ANPR na portalach autostradowych. System dzial automatycznie – jesli kamera nie znajdzie Twojego numeru rejestracyjnego w bazie, generuje zdjecie dowodowe.
+Austriacka policja i ASFINAG prowadzą kontrole za pomocą kamer ANPR umieszczonych na portalach autostradowych. System działa automatycznie – jeśli kamera nie znajdzie numeru rejestracyjnego w bazie, generuje zdjęcie dowodowe i wszczyna procedurę.
 
-### Wysokosc mandatow
+### Wysokość mandatów
 
-- **Zastepczy mandat (Ersatzmaut)** – 120 EUR, mozna zaplacic na miejscu lub w ciagu 14 dni
-- **Postepowanie administracyjne** – od 300 do 3000 EUR w zaleznosci od okolicznosci
+- **Opłata zastępcza (Ersatzmaut)** – 120 EUR, płatna na miejscu kontroli lub w ciągu 14 dni.
+- **Postępowanie administracyjne** – od 300 do 3000 EUR, jeśli opłata zastępcza nie zostanie uregulowana.
 
-Mandat dotyczy rowniez nieprawidlowo przyklejonej naklejki (np. na tylnej szybie), uzywania winiety z innego pojazdu czy przejazdu odcinkiem specjalnym bez dodatkowej oplaty.
-
-Kierowcy busow z polskimi tablicami otrzymuja wezwanie do zaplaty listem poleconym. Nieuregulowanie mandatu moze skutkowac zatrzymaniem pojazdu przy kolejnym wjezdzie do Austrii.
+Mandat grozi również za nieprawidłowo przyklejoną naklejkę (np. za pasem przeciwsłonecznym), używanie winiety z innego pojazdu czy przejazd odcinkiem specjalnym bez dodatkowej opłaty. Kierowcy z Polski otrzymują wezwania do zapłaty listem poleconym.
 
 ## Trasy bez winiety w Austrii
 
-Niektore odcinki austriackich autostrad sa dostepne bez winiety. Najwazniejsze z perspektywy kierowcy busa:
+Niektóre odcinki austriackich autostrad są zwolnione z obowiązku posiadania winiety. Są to głównie krótkie odcinki przygraniczne.
 
-- **A1 Walserberg–Salzburg** – odcinek od granicy niemieckiej do zjazdu Salzburg-Nord
-- **A12 Kufstein–Innsbruck** – odcinek od granicy niemieckiej (przydatny jadac na narty do Tyrolu)
-- **A14 Bregenz–Hohenems** – odcinek w Vorarlbergu przy granicy szwajcarskiej
+- **A1 Walserberg–Salzburg** – odcinek od granicy niemieckiej do zjazdu Salzburg-Nord.
+- **A12 od granicy państwowej z Niemcami do węzła Kufstein Süd**.
+- **A14 Bregenz–Hohenems** – odcinek w Vorarlbergu od granicy niemieckiej do zjazdu Hohenems/Diepoldsau.
 
-Pelna mapa odcinkow zwolnionych z winiety dostepna jest na stronie ASFINAG. Pamietaj, ze zwolnienia dotycza konkretnych zjazdow – jesli przejedziesz o jeden zjazd dalej, potrzebujesz winiety.
+Pełna mapa odcinków zwolnionych z winiety dostępna jest na stronie ASFINAG. Pamiętaj, że zwolnienia dotyczą konkretnych węzłów – jeśli przejedziesz o jeden zjazd dalej, musisz posiadać ważną winietę.
 
-## Zrodla
+## Źródła
 
-- [Maut in Osterreich – Wikipedia](https://de.wikipedia.org/wiki/Maut_in_%C3%96sterreich)
+- Maut in Österreich – Wikipedia
 - asfinag.at – oficjalna strona operatora autostrad
-- shop.asfinag.at – sklep online z winietami i oplatami za odcinki specjalne
-- go-maut.at – system oplat dla pojazdow powyzej 3,5 t
+- shop.asfinag.at – sklep online z winietami i opłatami za odcinki specjalne
+- go-maut.at – system opłat dla pojazdów powyżej 3,5 t

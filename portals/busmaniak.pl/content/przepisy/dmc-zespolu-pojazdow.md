@@ -8,20 +8,20 @@ h1: "DMC zespołu pojazdów – jak obliczyć masę busa z przyczepą"
 image: "/images/dmc-zespolu-pojazdow-hero.jpg"
 image_alt: "Bus dostawczy z przyczepą na drodze krajowej"
 main_keyword: "dmc zespołu pojazdów"
-lead: "DMC zespołu pojazdów to maksymalna dopuszczalna masa busa razem z przyczepą. Od tej liczby zależy, jakie prawo jazdy potrzebujesz – B, B z kodem 96 czy B+E. Przekroczenie limitu grozi mandatem do 2000 zl, zatrzymaniem dowodu i regresem ubezpieczeniowym."
+lead: "DMC zespołu pojazdów to maksymalna dopuszczalna masa busa razem z przyczepą. Od tej liczby zależy, jakie prawo jazdy potrzebujesz – B, B z kodem 96 czy B+E. Przekroczenie limitu grozi mandatem do 3000 zł, zatrzymaniem dowodu i regresem ubezpieczeniowym."
 faq:
   - question: "Gdzie sprawdzić DMC zespołu pojazdów?"
     answer: "DMC zespołu pojazdów znajdziesz w polu F.3 dowodu rejestracyjnego pojazdu ciągnącego. To maksymalna masa całego zestawu (bus + przyczepa) dopuszczona przez producenta."
   - question: "Jak obliczyć DMC zespołu pojazdów?"
     answer: "Dodaj DMC pojazdu ciągnącego (pole F.2) do DMC przyczepy (pole F.2 z dowodu przyczepy). Wynik porównaj z wartością F.3 – obowiązuje niższa z dwóch wartości."
   - question: "Czy na kat. B mogę ciągnąć przyczepę busem o DMC 3500 kg?"
-    answer: "Na samą kat. B możesz holować tylko przyczepę o DMC do 750 kg, jeśli DMC busa wynosi 3500 kg. Przy cięższej przyczepie suma DMC przekroczy 3500 kg i potrzebujesz kodu 96 lub kat. B+E."
+    answer: "Tak, na kategorię B możesz holować busem o DMC 3500 kg przyczepę lekką, czyli o DMC do 750 kg. Taki zestaw ma DMC 4250 kg i jest to legalne. Kod 96 lub kategoria B+E są potrzebne dopiero, gdy chcesz holować przyczepę cięższą niż 750 kg."
   - question: "Ile wynosi mandat za przekroczenie DMC zespołu?"
-    answer: "Dla busów do 3,5 t mandaty wynoszą od 500 zł (do 5% przekroczenia) do 2000 zł (powyżej 20%). Dla pojazdów powyżej 3,5 t kary administracyjne ITD sięgają 10 000 zł."
+    answer: "Za przekroczenie DMC zespołu pojazdów, którego DMC nie przekracza 3,5 t, grozi mandat karny na podstawie Art. 97 Kodeksu wykroczeń. Jego wysokość zależy od decyzji funkcjonariusza i może wynieść od 20 zł do 3000 zł. Dla cięższych zestawów kary nakłada ITD i sięgają 10 000 zł."
 ---
 ## Czym jest DMC zespołu pojazdów
 
-DMC zespołu pojazdów to maksymalna masa, z jaką bus razem z przyczepą może legalnie poruszać się po drogach publicznych. Art. 2 pkt 54a ustawy [Prawo o ruchu drogowym](https://pl.wikipedia.org/wiki/Prawo_o_ruchu_drogowym) definiuje ją jako największą dopuszczalną masę pojazdu ciągnącego łącznie z przyczepą. Wartość ta jest wpisana w dowodzie rejestracyjnym pojazdu ciągnącego w polu F.3.
+DMC zespołu pojazdów to maksymalna masa, z jaką bus razem z przyczepą może legalnie poruszać się po drogach publicznych. Art. 2 pkt 54 ustawy [Prawo o ruchu drogowym](https://pl.wikipedia.org/wiki/Prawo_o_ruchu_drogowym) definiuje ją jako największą dopuszczalną masę pojazdu ciągnącego łącznie z przyczepą. Wartość ta jest wpisana w dowodzie rejestracyjnym pojazdu ciągnącego w polu F.3.
 
 Producent wyznacza DMC zespołu na podstawie wytrzymałości ramy, układu hamulcowego, zawieszenia i haka holowniczego. Nie jest to prosta suma DMC obu pojazdów – F.3 bywa niższa od sumy F.2 busa i F.2 przyczepy, bo uwzględnia ograniczenia konstrukcyjne.
 
@@ -45,7 +45,7 @@ Obliczenie DMC zespołu pojazdów wymaga porównania dwóch wartości. Pierwsza 
 
 ### Wzór krok po kroku
 
-Załóżmy, że masz [Fiata Ducato](/modele/fiat-ducato/) o DMC 3500 kg (F.2) i przyczepę bagażową o DMC 750 kg (F.2). W dowodzie Ducato pole F.3 wynosi 5900 kg.
+Załóżmy, że masz Fiata Ducato o DMC 3500 kg (F.2) i przyczepę bagażową o DMC 750 kg (F.2). W dowodzie Ducato pole F.3 wynosi 5900 kg.
 
 1. Suma DMC: 3500 kg + 750 kg = 4250 kg
 2. Wartość F.3: 5900 kg
@@ -53,50 +53,48 @@ Załóżmy, że masz [Fiata Ducato](/modele/fiat-ducato/) o DMC 3500 kg (F.2) i 
 
 Ta suma (4250 kg) to DMC Twojego zespołu pojazdów. Na jej podstawie ustalasz wymaganą kategorię prawa jazdy.
 
-Jeśli chcesz szybko sprawdzić swój zestaw, skorzystaj z [kalkulatora DMC](/narzedzia/kalkulator-dmc/) – wpisujesz dane z obu dowodów i dostajesz wynik z informacją o wymaganej kategorii.
-
 ### Przykłady obliczeń dla popularnych zestawów
 
 Poniższa tabela pokazuje realne kombinacje busów z przyczepami i wynikające z nich DMC zespołu.
 
 | Zestaw | DMC busa (F.2) | DMC przyczepy (F.2) | DMC zespołu | Wymagane prawo jazdy |
 | :--- | :--- | :--- | :--- | :--- |
-| Ducato 35 + przyczepa lekka | 3500 kg | 750 kg | 4250 kg | B + kod 96 |
-| Sprinter 316 + przyczepa lekka | 3500 kg | 750 kg | 4250 kg | B + kod 96 |
-| Ducato 35 + laweta na motocykl | 3500 kg | 600 kg | 4100 kg | B + kod 96 |
+| Ducato 35 + przyczepa lekka | 3500 kg | 750 kg | 4250 kg | kat. B |
+| Sprinter 316 + przyczepa lekka | 3500 kg | 750 kg | 4250 kg | kat. B |
+| Ducato 35 + laweta na motocykl | 3500 kg | 600 kg | 4100 kg | kat. B |
 | VW Transporter T6 + przyczepa 1300 kg | 3200 kg | 1300 kg | 4500 kg | B+E |
-| Renault Master 33 + przyczepa 750 kg | 3300 kg | 750 kg | 4050 kg | B + kod 96 |
+| Renault Master 33 + przyczepa 750 kg | 3300 kg | 750 kg | 4050 kg | kat. B |
 | Fiat Doblo + przyczepa 750 kg | 2300 kg | 750 kg | 3050 kg | B |
 
-Jak widać, bus o DMC 3500 kg z przyczepą 750 kg daje łączne 4250 kg – to dokładnie górny limit dla kodu 96. Cięższy zestaw wymaga już kategorii B+E.
+Jak widać, popularny zestaw – bus o DMC 3500 kg z przyczepą lekką o DMC 750 kg – ma łączne DMC 4250 kg i wymaga jedynie kategorii B. Cięższy zestaw wymaga już rozszerzenia uprawnień.
 
 ![Bus z przyczepą na drodze](/images/dmc-zespolu-pojazdow-hero.jpg)
 
 ## Prawo jazdy B, B+96 czy B+E – który wariant potrzebujesz
 
-Kategoria prawa jazdy przy holowaniu przyczepy zależy od sumy DMC zespołu pojazdów. Przepisy unijne wyznaczają trzy progi, które obowiązują w Polsce od 2013 roku.
+Kategoria prawa jazdy przy holowaniu przyczepy zależy od sumy DMC zespołu pojazdów, a także DMC samej przyczepy. Warto też pamiętać, że przekroczenie progu 3,5 tony DMC zespołu pojazdów rodzi dodatkowe obowiązki, nawet jeśli prowadzimy go na kategorię B. Należy do nich opłacanie przejazdów w systemie e-TOLL. Brak aktywnego urządzenia geolokalizacyjnego grozi karą administracyjną w wysokości 1500 zł.
 
-### Kategoria B – do 3500 kg
+Jeśli zespół pojazdów o DMC powyżej 3,5 tony jest używany do zarobkowego przewozu rzeczy, wchodzi w grę kolejny wymóg – tachograf. Obowiązek jego stosowania i przestrzegania norm czasu pracy kierowcy (zgodnie z Rozp. WE 561/2006) dotyczy przewozów komercyjnych. Prywatne i niezarobkowe przejazdy zestawem do 7,5 tony są z tego zwolnione.
 
-Na samą kategorię B możesz holować przyczepę o DMC do 750 kg bez ograniczeń. Przy cięższej przyczepie DMC zespołu nie może przekroczyć 3500 kg. W praktyce bus dostawczy o DMC 3500 kg na kat. B ciągnie wyłącznie lekkie przyczepki – bo każda przyczepa powyżej 0 kg podnosi sumę ponad limit.
+### Kategoria B – do 3500 kg lub 4250 kg
 
-Wyjątkiem są lżejsze pojazdy. Fiat Doblo o DMC 2300 kg może holować przyczepę o DMC 1200 kg i zmieścić się w limicie 3500 kg. Pełne omówienie uprawnień znajdziesz w artykule o [prawie jazdy kategorii B](/przepisy/prawo-jazdy-kategoria-b/).
+Podstawowa kategoria B pozwala kierować pojazdem o DMC do 3,5 t. Można do niego podpiąć przyczepę lekką (o DMC do 750 kg), a DMC całego zespołu może wtedy wynieść maksymalnie 4250 kg. To kluczowa zasada pozwalająca prowadzić np. busa 3,5 t z lekką przyczepką na standardowym prawie jazdy.
 
-### Kod 96 – do 4250 kg
+Jeśli przyczepa jest inna niż lekka (DMC powyżej 750 kg), obowiązuje drugi limit – DMC całego zespołu nie może przekroczyć 3500 kg. W praktyce oznacza to, że cięższym busem można wtedy holować tylko bardzo lekką przyczepę.
 
-Kod 96 w prawie jazdy podnosi limit DMC zespołu do 4250 kg. Uzyskanie go wymaga dodatkowego szkolenia i egzaminu praktycznego w WORD. Koszt to 800–1500 zł, a sam egzamin trwa około 25 minut.
+### Kod 96 – do 4250 kg z ciężką przyczepą
 
-Kod 96 rozwiązuje problem najczęstszego zestawu – bus 3,5 t z przyczepą do 750 kg. Łączne DMC 4250 kg mieści się dokładnie w limicie. Jeśli jednak Twoja przyczepa ma DMC 751 kg lub więcej, kod 96 nie wystarczy.
+Kod 96 to rozszerzenie uprawnień kategorii B, które pozwala na kierowanie zespołem pojazdów o DMC do 4250 kg, w którym przyczepa jest inna niż lekka (ma DMC powyżej 750 kg). Jest to idealne rozwiązanie np. dla zestawu: bus o DMC 2800 kg i przyczepa kempingowa o DMC 1400 kg.
+
+Aby uzyskać kod 96, nie trzeba przechodzić kursu. Wystarczy zdać państwowy egzamin praktyczny w WORD. Jego koszt to obecnie 200 zł.
 
 {{% info title="Kod 96 a kraje UE" icon="info" %}}
-Kod 96 jest uznawany we wszystkich krajach Unii Europejskiej. Jeśli planujesz podróż kamperem z przyczepką po Europie, nie musisz zdawać dodatkowych egzaminów za granicą. Pamiętaj jednak o różnicach w limitach prędkości z przyczepą – w Niemczech obowiązuje 80 km/h na autostradzie, jeśli przyczepa nie ma homologacji na 100 km/h.
+Kod 96 jest uznawany we wszystkich krajach Unii Europejskiej. Jeśli planujesz podróż z przyczepą po Europie, nie musisz zdawać dodatkowych egzaminów za granicą. Pamiętaj jednak o różnicach w limitach prędkości z przyczepą – w Niemczech obowiązuje 80 km/h na autostradzie, jeśli przyczepa nie ma homologacji na 100 km/h.
 {{% /info %}}
 
 ### Kategoria B+E – powyżej 4250 kg
 
-Kategoria B+E jest wymagana, gdy DMC zespołu przekracza 4250 kg. Uprawnia do holowania przyczep o DMC do 3500 kg niezależnie od masy pojazdu ciągnącego. Kurs kosztuje 1500–2500 zł, a egzamin obejmuje manewry z przyczepą: cofanie, parkowanie zestawu i ruszanie pod górę.
-
-Szczegółowe zestawienie kategorii prawa jazdy potrzebnych do prowadzenia busów znajdziesz w [przewodniku po prawie jazdy na busa](/przepisy/prawo-jazdy-na-busa/).
+Kategoria B+E jest wymagana, gdy DMC zespołu przekracza 4250 kg. Uprawnia do holowania pojazdem o DMC do 3,5 t przyczepy, której DMC również nie przekracza 3,5 t. Kurs kosztuje 1500–2500 zł, a egzamin obejmuje manewry z przyczepą: cofanie, parkowanie zestawu i ruszanie pod górę.
 
 ## Przykłady z praktyki – Ducato i Sprinter z przyczepą
 
@@ -104,43 +102,34 @@ Dwa najpopularniejsze busy w Polsce to Fiat Ducato i Mercedes Sprinter. Oba w st
 
 ### Fiat Ducato 35 z przyczepą
 
-Ducato w wersji L2H2 waży ok. 2100–2200 kg. Pole O.1 w dowodzie (max masa przyczepy z hamulcem) wynosi typowo 2000–2500 kg, a F.3 sięga 5900–6000 kg. To oznacza, że konstrukcyjnie Ducato poradzi sobie z ciężką przyczepą – ale Twoje prawo jazdy może tego nie pozwalać.
+Ducato w wersji L2H2 waży ok. 2100–2200 kg. Pole O.1 w dowodzie (max masa przyczepy z hamulcem) wynosi typowo 2000–2500 kg, a F.3 sięga 5900–6000 kg. To oznacza, że konstrukcyjnie Ducato poradzi sobie z ciężką przyczepą – ale Twoje prawo jazdy może na to nie pozwalać.
 
-Na kat. B z kodem 96 holowanie jest ograniczone do przyczepy o DMC 750 kg. Dopiero B+E pozwala wykorzystać pełny potencjał haka. Więcej o możliwościach tego modelu znajdziesz w [profilu Fiata Ducato](/modele/fiat-ducato/).
+Kategoria B pozwala na holowanie przyczepy lekkiej (do 750 kg), tworząc zestaw o DMC 4250 kg. Aby wykorzystać pełen potencjał uciągu i podpiąć przyczepę cięższą niż 750 kg, konieczne stają się rozszerzone uprawnienia. Kod 96 przyda się przy zestawach do 4250 kg, a kategoria B+E pozwoli legalnie ciągnąć najcięższe lawety.
 
 ### Mercedes Sprinter 316 z przyczepą
 
-Sprinter III w wersji 316 CDI waży ok. 2200–2500 kg w zależności od konfiguracji. Pole O.1 wynosi zazwyczaj 2000–3500 kg, a F.3 to 5500–7000 kg. Podobnie jak Ducato, Sprinter technicznie poradzi sobie z dużą przyczepą, ale na kat. B jesteś ograniczony do zestawu 3500 kg.
+Sprinter III w wersji 316 CDI waży ok. 2200–2500 kg w zależności od konfiguracji. Pole O.1 wynosi zazwyczaj 2000–3500 kg, a F.3 to 5500–7000 kg. Podobnie jak Ducato, Sprinter technicznie poradzi sobie z dużą przyczepą, ale na kat. B jesteś ograniczony do holowania przyczepy lekkiej (do 750 kg).
 
 Przy kamperze na bazie Sprintera sytuacja robi się jeszcze ciaśniejsza. Zabudowa kamperowa waży 300–600 kg, co zostawia minimalny margines na pasażerów i bagaże – a do tego dochodzi masa przyczepy.
 
 {{% expert name="Kowalczyk" %}}
-Kierowcy kamperów na bazie busów 3,5 t często zapominają, że DMC dotyczy busa z pełnym załadunkiem, a nie pustego pojazdu. Jeśli Twój kamper z pasażerami waży 3400 kg i podczepasz przyczepę 750 kg, łączna masa rzeczywista to 4150 kg. Nawet jeśli masz kod 96, policja może sprawdzić faktyczną wagę na wadze preselekcyjnej. Zostaw margines 200–300 kg.
+Kierowcy kamperów na bazie busów 3,5 t często zapominają, że DMC dotyczy busa z pełnym załadunkiem, a nie pustego pojazdu. Jeśli Twój kamper z pasażerami waży 3400 kg i podczepasz przyczepę 750 kg, łączna masa rzeczywista to 4150 kg. Nawet jeśli masz odpowiednie prawo jazdy, policja może sprawdzić faktyczną wagę. Zostaw margines bezpieczeństwa rzędu 200–300 kg.
 {{% /expert %}}
 
 ## Przekroczenie DMC zespołu pojazdów – kary 2026
 
-Przekroczenie DMC zespołu pojazdów to wykroczenie drogowe. Inspekcja Transportu Drogowego i Policja dysponują wagami preselekcyjnymi i najazdowymi, które weryfikują masę zestawu w kilka sekund.
+Przekroczenie DMC zespołu pojazdów to wykroczenie drogowe. Inspekcja Transportu Drogowego i Policja dysponują wagami preselekcyjnymi i najazdowymi, aby weryfikować masę zestawu. Należy też bezwzględnie pamiętać o limitach prędkości – zgodnie z Art. 20 Prawa o ruchu drogowym, w Polsce pojazd z przyczepą może jechać maksymalnie 70 km/h na drodze jednojezdniowej oraz 80 km/h na autostradach i drogach ekspresowych.
 
 ### Taryfikator mandatów dla busów do 3,5 t
 
-Kary są stopniowalne i dotyczą zarówno DMC samego pojazdu, jak i DMC zespołu:
+W polskim prawie nie istnieje sztywny, procentowy taryfikator za przeciążenie pojazdu o DMC do 3,5 tony. Przekroczenie dopuszczalnej masy całkowitej jest traktowane jako wykroczenie z Art. 97 Kodeksu wykroczeń, które dotyczy naruszenia innych przepisów Prawa o ruchu drogowym.
 
-- **Do 5% przekroczenia** – 500 zł mandatu
-- **Od 5% do 10%** – 1000 zł mandatu
-- **Od 10% do 20%** – 1500 zł mandatu
-- **Powyżej 20%** – 2000 zł mandatu plus obowiązkowy rozładunek
-
-Przy DMC zespołu 4250 kg (Ducato + przyczepa 750 kg) przekroczenie o 5% to zaledwie 213 kg. Wystarczy pełny zbiornik wody w kamperze (100 l = 100 kg) i sprzęt turystyczny, żeby zbliżyć się do granicy.
+Za przeładowanie busa lub zespołu pojazdów funkcjonariusz może nałożyć mandat karny w wysokości od 20 zł do 3000 zł. Wysokość grzywny zależy od oceny zagrożenia, jakie stwarzał pojazd. W przypadku znacznego przekroczenia DMC policjant może również nakazać rozładunek nadmiaru towaru.
 
 ### Kary dla zestawów powyżej 3,5 t
 
-Pojazdy o DMC powyżej 3,5 t podlegają kontrolom ITD. Kary administracyjne nakładane na przewoźnika sięgają 3000–10 000 zł. Do tego dochodzi mandat dla kierowcy. Jeśli zestaw wymaga kategorii B+E, a kierowca jej nie posiada – mowa o jeździe bez uprawnień. Art. 94 Kodeksu wykroczeń przewiduje za to grzywnę do 30 000 zł.
+Pojazdy o DMC powyżej 3,5 t podlegają kontrolom ITD. Kary administracyjne nakładane na przewoźnika za przeładowanie sięgają od 3000 zł do nawet 10 000 zł. Do tego dochodzi mandat dla kierowcy. Jeśli zestaw wymaga kategorii B+E, a kierowca jej nie posiada, mowa o jeździe bez uprawnień, za co Art. 94 Kodeksu wykroczeń przewiduje grzywnę do 30 000 zł.
 
 ### Konsekwencje ubezpieczeniowe
 
-Przekroczenie DMC zespołu w momencie wypadku daje ubezpieczycielowi podstawę do regresu. Oznacza to, że OC wypłaci odszkodowanie poszkodowanym, ale zażąda od Ciebie zwrotu pełnej kwoty. Przeładowany zestaw ma dłuższą drogę hamowania, gorszą stabilność boczną i większe ryzyko urwania przyczepy – ubezpieczyciel bez trudu udowodni związek przyczynowy.
-
-Więcej o dopuszczalnej masie całkowitej i jej wpływie na eksploatację busa znajdziesz w artykule [DMC – co to jest](/przepisy/dmc-co-to/). Zasady dotyczące samej przyczepy opisujemy w [przewodniku po DMC przyczepy](/przepisy/dmc-przyczepy/).
-
-*Źródła: Wikipedia – [Prawo o ruchu drogowym](https://pl.wikipedia.org/wiki/Prawo_o_ruchu_drogowym), unitrailer.pl, prawnicytransportu.pl, link4.pl*
+Przekroczenie DMC zespołu w momencie wypadku daje ubezpieczycielowi podstawę do regresu. Oznacza to, że OC wypłaci odszkodowanie poszkodowanym, ale zażąda od Ciebie zwrotu pełnej kwoty. Przeładowany zestaw ma dłuższą drogę hamowania, gorszą stabilność i większe ryzyko awarii – ubezpieczyciel bez trudu udowodni związek przyczynowy.

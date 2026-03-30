@@ -17,10 +17,8 @@ faq:
     answer: "Zazwyczaj znajduje się on w skrzynce w komorze silnika (oznaczony symbolem trąbki lub kodem F10). Ma wartość 15A."
   - question: "Dlaczego nie działają mi gniazdka 12V w części mieszkalnej kampera?"
     answer: "Jeśli masz kampera na bazie Ducato, gniazdka w części mieszkalnej zazwyczaj nie są podpięte pod fabryczne bezpieczniki Fiata. Szukaj ich przy 'Electroblocku' (EBL) – zazwyczaj pod fotelem kierowcy lub w szafie."
-  - question: "Jaki jest najlepszy silnik w Fiacie Ducato?"
-    answer: "Według użytkowników i mechaników, za najbardziej pancerne uchodzą jednostki 2.3 MultiJet (konstrukcji Iveco) oraz starsze 2.8 JTD. Nowsze 3.0 MultiJet są cenione za dynamikę, choć wymagają droższego serwisu."
-
-
+  - question: "Dlaczego przepala się bezpiecznik gniazda OBD/radia w Ducato?"
+    answer: "Często winowajcą jest bezpiecznik F39 (10A) w skrzynce pod kierownicą, który odpowiada za radio i złącze diagnostyczne. Problem może powodować wadliwa ładowarka w gniazdku zapalniczki lub zwarcie w instalacji któregoś z podłączonych urządzeń."
 
 ---
 
@@ -28,9 +26,9 @@ faq:
 
 Od generacji III (2006+) skrzynki rozrzucono po całym nadwoziu – ktoś w Fiacie wyraźnie nie lubił upraszczeń. W praktyce sprawdzasz trzy miejsca:
 
-1. **Deska rozdzielcza (strona kierowcy)** – główna skrzynka obsługująca wnętrze i systemy komfortu. Żeby się do niej dostać, odkręć śruby osłony po lewej stronie kolumny kierowniczej – to chwila roboty.
-2. **Komora silnika** – skrzynka po prawej stronie (od przodu), obok akumulatora lub filtra powietrza. Tu siedzą bezpieczniki wysokoprądowe: silnik, wentylatory, ABS/ESP.
-3. **Słupek prawy (strona pasażera)** – w generacji III (X250/X290) ta dodatkowa skrzynka jest szczególnie ważna przy zabudowach kamperowych i gniazdach pomocniczych.
+1.  **Deska rozdzielcza (strona kierowcy)** – główna skrzynka obsługująca wnętrze i systemy komfortu. Aby się do niej dostać, odkręć śruby osłony po lewej stronie kolumny kierowniczej. Za tą samą osłoną znajdziesz również gniazdo diagnostyczne OBD2, kluczowe przy skanowaniu błędów pojazdu.
+2.  **Komora silnika** – skrzynka jest zlokalizowana po lewej stronie, patrząc od przodu pojazdu, w pobliżu reflektora i nadkola. Tu siedzą bezpieczniki wysokoprądowe: silnik, wentylatory, ABS/ESP.
+3.  **Słupek prawy (strona pasażera)** – w generacji III (X250/X290) ta dodatkowa skrzynka jest szczególnie ważna przy zabudowach kamperowych i gniazdach pomocniczych.
 
 {{% info title="Technika" icon="engineering" %}}
 Zanim zaczniesz wymianę, zawsze wyłącz zapłon i odłącz odbiorniki prądu. Używaj dedykowanego chwytaka (zazwyczaj znajduje się w pokrywie skrzynki), aby nie uszkodzić gniazd bezpieczników.
@@ -38,28 +36,48 @@ Zanim zaczniesz wymianę, zawsze wyłącz zapłon i odłącz odbiorniki prądu. 
 
 ## Fiat Ducato III (2006–2014 oraz modele po 2015) – schemat
 
-Generacja III to najpopularniejsza baza pod zabudowy campingowe. Układ jest złożony – amperaże chodzą od 5A do 60A, więc pośpiech tu nie pomaga.
+Generacja III to najpopularniejsza baza pod zabudowy campingowe. Układ jest złożony – amperaże chodzą od 5A do 60A, więc pośpiech tu nie pomaga. Poniżej prezentujemy kluczowe obwody dla każdej ze skrzynek.
 
 ### Skrzynka na desce rozdzielczej (wybrane funkcje)
 
 | Numer bezpiecznika | Funkcja | Amperaż (A) |
 | :--- | :--- | :--- |
-| F12 | Światła mijania (prawe) | 7,5A |
-| F13 | Światła mijania (lewe) | 7,5A |
 | F31 | Wyłącznik zapłonu | 5A |
 | F37 | Światła stop | 10A |
+| F39 | Radio, złącze diagnostyczne EOBD | 10A |
 | F47 | Podnośnik szyby kierowcy | 20A |
 | F48 | Podnośnik szyby pasażera | 20A |
-| F49 | Oświetlenie wnętrza, system audio | 7,5A |
 | F51 | Tablica przyrządów (zegary) | 7,5A |
 
-### Bezpieczniki zapalniczki i gniazd 12V
-Przepalone gniazdo 12V to numer jeden wśród zgłoszeń na forach. W modelach po 2015 roku (facelift) za zasilanie akcesoriów odpowiadają:
-- **F14 (15A)** – gniazdo zasilania na desce rozdzielczej.
-- **F15 (15A)** – zapalniczka.
-- **F09 (15A)** – tylne gniazdo zasilania (jeśli występuje).
+### Skrzynka w komorze silnika (wybrane funkcje)
 
-{{% expert name="Kowalczyk" %}}W Fiacie Ducato III generacji bardzo często dochodzi do przepalenia bezpiecznika F49. Odpowiada on nie tylko za radio, ale i za pamięć ustawień komputera pokładowego. Jeśli Twoje radio nagle przestało działać, a zegary resetują się po każdym zgaszeniu silnika, zacznij sprawdzenie właśnie od tego elementu w skrzynce pod kierownicą.{{% /expert %}}
+To tutaj zlokalizowano bezpieczniki odpowiedzialne za kluczowe systemy pojazdu, takie jak światła zewnętrzne czy układy bezpieczeństwa.
+
+| Numer bezpiecznika | Funkcja | Amperaż (A) |
+| :--- | :--- | :--- |
+| F01 | Pompa ABS/ESP | 60A |
+| F03 | Zasilanie stacyjki | 20A |
+| F06/F07 | Wentylator chłodnicy | 40–60A |
+| F12 | Światła mijania (prawe) | 7,5A |
+| F13 | Światła mijania (lewe) | 7,5A |
+
+### Skrzynka w prawym słupku (opcjonalna)
+
+Skrzynka CPO, często wykorzystywana przez firmy wykonujące zabudowy, zawiera bezpieczniki dedykowane dodatkowym odbiornikom prądu w przestrzeni ładunkowej lub mieszkalnej.
+
+| Numer bezpiecznika | Funkcja | Amperaż (A) |
+| :--- | :--- | :--- |
+| F56 | Gniazdo 12V w przestrzeni ładunkowej | 15A |
+| F60 | Złącza do dalszej zabudowy | - |
+| F63 | Podgrzewanie foteli | 15A |
+
+### Bezpieczniki zapalniczki i gniazd 12V
+
+Przepalone gniazdo 12V to numer jeden wśród zgłoszeń na forach. W modelach po 2006 roku za zasilanie akcesoriów na desce rozdzielczej odpowiada bezpiecznik znajdujący się w kabinie:
+
+-   **F44 (20A)** – Gniazdo zapalniczki i gniazdo zasilania na desce rozdzielczej.
+
+{{% expert name="Kowalczyk" %}}W Fiacie Ducato III częstym winowajcą problemów z radiem lub niedziałającym gniazdem OBD jest bezpiecznik F39 (10A). Zanim umówisz się na kosztowną diagnostykę, sprawdź ten nieduży element w skrzynce pod kierownicą. Jego przepalenie to klasyczna usterka, często spowodowana przez wadliwe akcesoria podpięte do gniazda zapalniczki.{{% /expert %}}
 
 ## Fiat Ducato II (2002–2006) – starsza szkoła
 
@@ -70,9 +88,10 @@ Model 244 jest pod tym względem znacznie przyjaźniejszy. Skrzynka siedzi pod k
 ## Jak rozpoznać rodzaj i stan bezpiecznika?
 
 W Ducato chodzą głównie dwa typy: **Mini** i **Standard (Uni)**. W komorze silnika dochodzą jeszcze **Maxi** – duże kostki 30–60A.
-- **Spalony bezpiecznik** – drucik w środku jest przerwany albo widać czarny nalot na obudowie.
-- **Kolory** – są ustandaryzowane: czerwony to 10A, niebieski 15A, żółty 20A. Nigdy nie wstawiaj bezpiecznika o wyższej wartości niż oryginał – grozi to pożarem instalacji.
 
-Jeśli wymieniony bezpiecznik przepala się natychmiast, to pewny znak zwarcia. Sprawdź wtedy [kontrolki Ducato](/serwis/kontrolki-fiat-ducato/) – mogą naprowadzić na źródło problemu.
+-   **Spalony bezpiecznik** – drucik w środku jest przerwany albo widać czarny nalot na obudowie.
+-   **Kolory** – są ustandaryzowane: czerwony to 10A, niebieski 15A, żółty 20A. Nigdy nie wstawiaj bezpiecznika o wyższej wartości niż oryginał – grozi to pożarem instalacji.
+
+Jeśli wymieniony bezpiecznik przepala się natychmiast, to pewny znak [zwarcia](https://pl.wikipedia.org/wiki/Zwarcie). Sprawdź wtedy [kontrolki Ducato](/serwis/kontrolki-fiat-ducato/) – mogą naprowadzić na źródło problemu.
 
 *Źródła: instrukcja obsługi Fiat Ducato (eLum), dokumentacja techniczna Fiat Professional, auto-data.net*

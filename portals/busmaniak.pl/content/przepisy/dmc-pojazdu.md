@@ -17,14 +17,14 @@ faq:
   - question: "Jak obliczyć ładowność z dowodu rejestracyjnego?"
     answer: "Od wartości w polu F.2 (DMC) odejmij wartość z pola G (masa własna). Wynik to maksymalna masa ładunku, pasażerów i dodatkowego wyposażenia, jaką możesz legalnie przewozić."
   - question: "Czy mogę obniżyć DMC, żeby jeździć na prawo jazdy kat. B?"
-    answer: "Tak, pod warunkiem uzyskania opinii producenta lub rzeczoznawcy samochodowego. Po badaniu na OSKP i wpisie nowej wartości w wydziale komunikacji możesz legalnie obniżyć DMC do 3500 kg. Koszt procedury to 250-500 zł."
+    answer: "Obniżenie dopuszczalnej masy całkowitej z kategorii ciężarowej do 3500 kg bez przeprowadzenia istotnych zmian konstrukcyjnych jest w świetle polskich przepisów i aktualnych wytycznych dla urzędów praktycznie niemożliwe."
   - question: "Ile wynosi mandat za przekroczenie DMC?"
-    answer: "Mandat za przeładowanie pojazdu wynosi od 500 do 3000 zł, w zależności od stopnia przekroczenia masy. Kierowca otrzymuje do 15 punktów karnych, a pojazd zostaje zatrzymany do czasu przeładowania nadmiaru towaru."
+    answer: "Mandat za przeładowanie pojazdu dostawczego do 3,5 tony wynosi od 500 zł do 3000 zł. Ponadto służby kontrolne (Policja lub ITD) mogą wydać zakaz dalszej jazdy do czasu przeładowania nadmiaru towaru na inny pojazd."
 ---
 
 ## Gdzie znaleźć DMC w dowodzie rejestracyjnym
 
-Dowód rejestracyjny zawiera kilkadziesiąt rubryk oznaczonych literami i cyframi. Informacje o masach pojazdu kryją się w sekcjach F i G – to właśnie one decydują o limitach załadunku, wymaganej kategorii prawa jazdy i wysokości ubezpieczenia. Jeśli zastanawiasz się, gdzie jest DMC w dowodzie, odpowiedź jest prosta – szukaj pola F.2.
+Dowód rejestracyjny zawiera kilkadziesiąt rubryk oznaczonych literami i cyframi. Informacje o masach pojazdu kryją się w sekcjach F oraz G – to właśnie one decydują o limitach załadunku, wymaganej kategorii prawa jazdy i wysokości ubezpieczenia. Jeśli zastanawiasz się, gdzie jest DMC w dowodzie, odpowiedź jest prosta – szukaj pola F.2.
 
 ### Pole F.1 – technicznie dopuszczalna masa całkowita
 
@@ -32,7 +32,7 @@ Rubryka F.1 określa maksymalną masę pojazdu wynikającą z jego konstrukcji. 
 
 ### Pole F.2 – dopuszczalna masa całkowita pojazdu
 
-Pole F.2 to serce sprawy. Znajdziesz tu **dopuszczalną masę całkowitą pojazdu**, czyli maksymalną wagę auta z ładunkiem i osobami, dopuszczoną do ruchu na drogach publicznych. [Prawo o ruchu drogowym](https://pl.wikipedia.org/wiki/Prawo_o_ruchu_drogowym) definiuje DMC w art. 2 pkt 54 jako największą masę pojazdu obciążonego osobami i ładunkiem, określoną właściwymi warunkami technicznymi.
+Pole F.2 to serce sprawy. Znajdziesz tu **dopuszczalną masę całkowitą pojazdu**, czyli maksymalną wagę auta z ładunkiem i osobami, dopuszczoną do ruchu na drogach publicznych. [Prawo o ruchu drogowym](https://pl.wikipedia.org/wiki/Prawo_o_ruchu_drogowym) definiuje DMC jako największą masę pojazdu obciążonego osobami i ładunkiem, określoną właściwymi warunkami technicznymi.
 
 W wielu busach F.2 pokrywa się z F.1. Zdarza się jednak, że wartości te się różnią – szczególnie gdy auto miało fabrycznie DMC powyżej 3500 kg, a zostało zarejestrowane z obniżonym limitem, by właściciel mógł je prowadzić na kategorii B.
 
@@ -40,31 +40,31 @@ W wielu busach F.2 pokrywa się z F.1. Zdarza się jednak, że wartości te się
 
 Jeśli planujesz holować przyczepę, [DMC zespołu pojazdów](/przepisy/dmc-przyczepy/) znajdziesz w polu F.3. To łączna dopuszczalna waga Twojego busa i podpiętej do niego przyczepy. Suma mas obu pojazdów z osobnych dowodów rejestracyjnych nie może przekroczyć wartości wpisanej w F.3.
 
-Przekroczenie tego parametru grozi nie tylko mandatem. Prowadzenie przeciążonego zestawu przyspiesza zużycie sprzęgła, skrzyni biegów i tarcz hamulcowych – szczególnie niebezpieczne na górskich zjazdach.
+Przekroczenie tego parametru grozi nie tylko mandatem. Prowadzenie przeciążonego zestawu przyspiesza zużycie sprzęgła, skrzyni biegów i tarcz hamulcowych, co jest szczególnie niebezpieczne na górskich zjazdach.
 
 {{% expert name="Kowalczyk" %}}Często słyszę pytanie, czy można sumować DMC auta i przyczepy bez patrzenia na pole F.3. Nie można. F.3 to granica możliwości technicznych całego zestawu i nie wolno jej przekroczyć nawet o kilogram, niezależnie od posiadanej kategorii prawa jazdy.{{% /expert %}}
 
 ## Różnica między masą własną a DMC
 
-Mylenie tych pojęć prowadzi do błędów przy załadunku. **Masa całkowita a dopuszczalna masa całkowita** to dwie różne rzeczy. Masa całkowita to aktualna, rzeczywista waga auta w danym momencie – sprawdzana np. na wadze preselekcyjnej. DMC natomiast to sztywny limit administracyjny, który nie zmienia się w zależności od załadunku.
+Mylenie tych pojęć prowadzi do błędów przy załadunku. Masa całkowita (czyli aktualna, rzeczywista waga auta w danym momencie) i dopuszczalna masa całkowita to dwa różne terminy. DMC to sztywny limit administracyjny, który nie zmienia się w zależności od załadunku.
 
 ### Masa własna (pole G)
 
-Pole G w dowodzie rejestracyjnym podaje masę własną pojazdu gotowego do jazdy. Obejmuje wagę samego auta z pełnym zbiornikiem paliwa, płynami eksploatacyjnymi i standardowym wyposażeniem. Ducato furgon w wersji L2H2 waży od 1900 do 2200 kg – w zależności od silnika i opcji fabrycznych.
+Pole G w dowodzie rejestracyjnym podaje masę własną pojazdu, ale jej interpretacja bywa niejednoznaczna. Starsze pojazdy mają tam wpisaną polską definicję masy własnej (auto z wyposażeniem i płynami), jednak nowsze często korzystają z unijnej "masy w stanie gotowym do jazdy". Ta druga definicja obejmuje już standardowego kierowcę (75 kg) i zbiornik paliwa napełniony w 90%.
 
-Każda dodatkowa zabudowa, regały warsztatowe czy winda załadowcza zwiększają masę rzeczywistą pojazdu. To bezpośrednio uszczupla limit na towar.
+Ma to kluczowe znaczenie przy obliczaniu dostępnej ładowności, ponieważ w jednym przypadku wagę kierowcy trzeba odjąć od wyniku, a w drugim jest już uwzględniona. Dla przykładu, Ducato furgon w wersji L2H2 waży od 1900 do 2200 kg – w zależności od silnika i opcji fabrycznych.
 
 ### Ładowność – jak ją obliczyć
 
-Obliczenie ładowności jest proste: od wartości z pola F.2 odejmij wartość z pola G. Wynik to masa, jaką możesz legalnie załadować – wliczając kierowcę, pasażerów i ich bagaże.
+Obliczenie ładowności jest proste: od wartości z pola F.2 odejmij wartość z pola G. Wynik to masa, jaką możesz legalnie załadować – wliczając kierowcę (jeśli pole G go nie uwzględnia), pasażerów i ich bagaże.
 
-Przykład: F.2 wynosi 3500 kg, G to 2100 kg. Twoja ładowność wynosi 1400 kg. Szczegółowo o tym, [czym jest DMC i jak wpływa na eksploatację](/przepisy/dmc-co-to/), piszemy w osobnym artykule.
+Przykład: F.2 wynosi 3500 kg, G to 2100 kg. Twoja nominalna ładowność wynosi 1400 kg. Szczegółowo o tym, [czym jest DMC i jak wpływa na eksploatację](/przepisy/dmc-co-to/), piszemy w osobnym artykule.
 
 {{% info title="Uwaga na doposażenie" icon="engineering" %}}Masa własna w polu G dotyczy auta w wersji fabrycznej. Jeśli dołożyłeś klimatyzację postojową, hak holowniczy czy ciężką zabudowę ze sklejki, Twoja rzeczywista ładowność będzie mniejsza o wagę tych elementów. Z [kalkulatorem DMC](/narzedzia/kalkulator-dmc/) szybko sprawdzisz, ile ładunku możesz zabrać po modernizacji wnętrza.{{% /info %}}
 
 ## DMC popularnych busów dostawczych
 
-Producenci oferują te same modele w różnych wariantach wagowych – od lekkich kurierów po ciężkie podwozia pod zabudowę specjalistyczną. Wybór odpowiedniej wersji DMC wpływa na koszty eksploatacji, opłaty drogowe i wymagane uprawnienia kierowcy.
+Producenci oferują te same modele w różnych wariantach wagowych, najczęściej z graniczną wartością 3500 kg dla prawa jazdy kategorii B. Istnieje jednak ważny wyjątek dla pojazdów elektrycznych. Zgodnie z przepisami, kierowca z prawem jazdy kat. B od minimum dwóch lat może prowadzić pojazd zasilany paliwami alternatywnymi o DMC do 4250 kg, jeśli wzrost masy powyżej 3,5 tony wynika wyłącznie z wagi akumulatorów. Wybór odpowiedniej wersji DMC wpływa na koszty eksploatacji, opłaty drogowe i wymagane uprawnienia.
 
 | Model | Dostępne warianty DMC (kg) | Najpopularniejsza wersja |
 |---|---|---|
@@ -87,36 +87,28 @@ Transit dostępny jest w wersjach od 2,9 tony po ciężkie warianty 4,7 tony. Mo
 
 ## Zmiana DMC pojazdu – kiedy i jak
 
-Zmiana zapisu w dokumentach to sformalizowana procedura, przez którą przechodzi wielu właścicieli kamperów i busów sprowadzanych z zagranicy. Wymaga przejścia ścieżki technicznej i biurokratycznej.
+Zmiana zapisu w dokumentach to sformalizowana procedura, przez którą próbuje przejść wielu właścicieli busów. Wymaga ona jednak przejścia konkretnej ścieżki technicznej i biurokratycznej, która często okazuje się niemożliwa do zrealizowania.
 
 ### Podwyższenie DMC
 
-Jeśli Twoje auto konstrukcyjnie pozwala na więcej (F.1 jest większe niż F.2), możesz starać się o podwyższenie DMC. Wymaga to modyfikacji zawieszenia – montażu poduszek pneumatycznych, mocniejszych sprężyn oraz wymiany opon na takie o wyższym indeksie nośności.
+Podwyższenie DMC jest możliwe, ale procedura zależy od sytuacji wyjściowej pojazdu. Jeśli auto zostało fabrycznie zarejestrowane z DMC niższym niż technicznie dopuszczalne (wartość w polu F.2 jest niższa niż w F.1), można starać się o przywrócenie wartości homologacyjnej. Wymaga to najczęściej uzyskania oświadczenia od producenta i przejścia ścieżki administracyjnej, zazwyczaj bez konieczności przeróbek mechanicznych.
 
-Procedura obejmuje trzy kroki:
-
-- **Opinia rzeczoznawcy** – potwierdza, że modyfikacje spełniają wymogi bezpieczeństwa
-- **Badanie na OSKP** – diagnosta weryfikuje stan techniczny po zmianach
-- **Wpis w wydziale komunikacji** – aktualizacja danych w dowodzie rejestracyjnym
-
-Profesjonalne firmy oferują pakiety konwersji pozwalające podnieść DMC nawet do 4700 kg.
+Należy jednak podkreślić, że montaż wzmocnionego zawieszenia, na przykład poduszek pneumatycznych, poprawia właściwości jezdne, lecz w świetle polskich przepisów nie stanowi podstawy do legalnego podwyższenia wartości DMC w dowodzie rejestracyjnym. Takie zmiany wymagałyby skomplikowanej i kosztownej procedury nowej homologacji całopojazdowej.
 
 ### Obniżenie DMC
 
-To popularny zabieg przy autach sprowadzanych z zagranicy, które fabrycznie miały DMC np. 4005 kg. Obniżenie do 3500 kg pozwala prowadzić pojazd na kategorii B, co eliminuje konieczność posiadania uprawnień na ciężarówki.
+Wielu kierowców poszukuje sposobu na obniżenie DMC pojazdu powyżej 3,5 tony, by móc prowadzić go na prawie jazdy kategorii B. Należy jednak jasno podkreślić, że w świetle obecnych przepisów i wytycznych dla wydziałów komunikacji jest to praktycznie niemożliwe bez przeprowadzenia istotnych, trwałych zmian konstrukcyjnych.
 
-Potrzebujesz oświadczenia od producenta lub opinii rzeczoznawcy, że pojazd może bezpiecznie poruszać się z niższym limitem. Następnie badanie techniczne na OSKP i wizyta w wydziale komunikacji. Koszt całej procedury zamyka się w kwocie 250–500 zł.
+Popularny mit o "papierowym" obniżeniu masy na podstawie samej opinii rzeczoznawcy i badania na OSKP nie ma pokrycia w rzeczywistości. Legalna zmiana kategorii pojazdu z ciężarowego na lekki dostawczy to skomplikowany i kosztowny proces, często wymagający zgody instytutów badawczych i fizycznych modyfikacji w uprawnionym warsztacie.
 
 ## DMC a ubezpieczenie i przegląd techniczny
 
-Granica 3500 kg to kluczowy próg w polskim prawie. Pojazdy poniżej tej wartości traktowane są jako lekkie dostawcze – niższe składki OC, uproszczone badania techniczne i prawo jazdy kat. B. Powyżej wchodzisz w segment ciężarowy z obowiązkowymi corocznymi przeglądami (niezależnie od wieku auta) i wyższymi ubezpieczeniami.
+Granica 3500 kg to kluczowy próg w polskim prawie. Pojazdy poniżej tej wartości traktowane są jako lekkie dostawcze, co oznacza niższe składki OC, standardowe badania techniczne i możliwość prowadzenia na prawie jazdy kat. B. Powyżej tego limitu pojazd wchodzi w segment ciężarowy z obowiązkowymi corocznymi przeglądami i wyższymi ubezpieczeniami.
 
-Przekroczenie limitu wagowego to poważne ryzyko finansowe:
+Warto pamiętać, że próg 3,5 tony dotyczy także zestawów pojazdów. Jeśli suma DMC busa (F.2) i podpiętej przyczepy przekroczy 3500 kg, taki zestaw podlega opłatom w systemie e-TOLL na płatnych odcinkach autostrad i dróg ekspresowych.
 
-- **Mandat** – od 500 do 3000 zł, zależnie od stopnia przekroczenia
-- **Punkty karne** – do 15 punktów
-- **Zatrzymanie pojazdu** – policja lub ITD może zakazać dalszej jazdy do czasu przeładowania nadmiaru towaru
+Przekroczenie dopuszczalnej masy całkowitej to poważne ryzyko finansowe. Mandat za przeładowanie busa może wynieść od 500 zł do nawet 3000 zł. Co ważne, za to wykroczenie taryfikator nie przewiduje punktów karnych, ale Policja lub ITD nakaże przeładowanie nadmiaru towaru przed kontynuowaniem jazdy.
 
-Inspekcja Transportu Drogowego (ITD) kontroluje naciski osi za pomocą wag przenośnych. Nierównomierne rozmieszczenie ładunku może skutkować przekroczeniem dopuszczalnego nacisku na pojedynczą oś, nawet jeśli łączna waga mieści się w limicie DMC.
+Choć prawnie DMC jest wartością sztywną, w praktyce inspekcyjne wagi mają urzędowy błąd pomiarowy. Przykładowo, dla wag dynamicznych wynosi on 2%, a uzyskany margines jest odejmowany od wyniku ważenia na korzyść kierowcy. Nie jest to jednak "legalna tolerancja", a jedynie techniczny aspekt pomiaru.
 
-*Źródła: Wikipedia – [Dowód rejestracyjny](https://pl.wikipedia.org/wiki/Dow%C3%B3d_rejestracyjny), Wikipedia – [Dopuszczalna masa całkowita](https://pl.wikipedia.org/wiki/Dopuszczalna_masa_ca%C5%82kowita), Prawo o ruchu drogowym (Dz.U. 1997 nr 98 poz. 602)*
+Inspekcja Transportu Drogowego kontroluje również naciski na osie. Nierównomierne rozmieszczenie ładunku może skutkować przekroczeniem dopuszczalnego nacisku, nawet jeśli łączna waga pojazdu mieści się w limicie DMC.

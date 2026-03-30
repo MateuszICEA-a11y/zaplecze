@@ -14,7 +14,7 @@ image_alt: "Zestaw wskaźników i kontrolek na desce rozdzielczej Opla Vivaro"
 lead: "Opel Vivaro przeszedł trzy generacje – każda z innym zestawem wskaźników, ale z tą samą zasadą kolorów: czerwony wymaga natychmiastowej reakcji, żółty sygnalizuje usterkę lub zbliżający się serwis, a zielony i niebieski pełnią funkcję informacyjną. Poniżej znajdziesz listę kontrolek per generacja, najczęstsze przyczyny ich zapalenia i instrukcję resetu serwisowego."
 faq:
   - question: "Jak skasować kontrolkę serwisową w Vivaro?"
-    answer: "W Vivaro A: przekręć kluczyk na MAR, naciśnij i przytrzymaj przycisk resetu podróży (ok. 10 sek.) aż wyświetli się INSPEC, zwolnij i ponownie przytrzymaj 5 sek. W Vivaro B i C reset wymaga testera diagnostycznego lub aplikacji OBD."
+    answer: "W Vivaro A inspekcję kasuje się przyciskiem na zegarach po włączeniu zapłonu. W Vivaro B używa się przycisku na manetce wycieraczek, a w Vivaro C przytrzymuje się przycisk z symbolem klucza i włącza zapłon. Szczegółowe procedury opisano w dalszej części artykułu."
   - question: "Co oznacza migająca kontrolka DPF w Vivaro?"
     answer: "Miganie oznacza, że filtr cząstek stałych wymaga natychmiastowej regeneracji. Jedź na trasę, utrzymuj obroty powyżej 2000 obr./min przez 15–20 minut. Jeśli kontrolka nie zgaśnie – filtr jest zapchany i wymaga serwisu."
   - question: "Dlaczego kontrolka check engine świeci na pomarańczowo?"
@@ -25,7 +25,7 @@ faq:
 
 ## Kontrolki Vivaro A (2001–2014) – silniki Renault
 
-Pierwsza generacja Vivaro opiera się na platformie Renault Trafic i dzieli z nim większość wskaźników. Zestaw jest prosty – bez cyfrowego wyświetlacza, z klasycznym zestawem lampek.
+Pierwsza generacja Vivaro opiera się na platformie Renault Trafic i dzieli z nim większość wskaźników. Zestaw jest prosty i analogowy – bez cyfrowego wyświetlacza, z klasycznym zestawem lampek sygnalizacyjnych.
 
 ### Kontrolki czerwone (krytyczne)
 
@@ -33,63 +33,59 @@ Pierwsza generacja Vivaro opiera się na platformie Renault Trafic i dzieli z ni
 | :--- | :--- | :--- | :--- |
 | Oliwiarka | Ciśnienie oleju | Brak lub za niski poziom oleju, awaria pompy olejowej | Natychmiast zgaś silnik, sprawdź poziom |
 | Termometr | Temperatura silnika | Przegrzanie – brak płynu, awaria termostatu, uszkodzony wentylator | Zatrzymaj się, nie otwieraj korka na gorąco |
-| Akumulator | Ładowanie | Zerwany pasek klinowy, awaria alternatora | Jedź do warsztatu, wyłącz zbędne odbiorniki |
+| Akumulator | Ładowanie | Zerwany pasek alternatora, awaria alternatora | Jedź do warsztatu, wyłącz zbędne odbiorniki |
 | ! w kółku | Hamulec | Niski poziom płynu, zużyte klocki, awaria ABS | Sprawdź płyn hamulcowy i skuteczność hamowania |
 | Kłódka/auto | Immobilizer | System nie rozpoznaje kluczyka | Wyjmij kluczyk, odczekaj 10 sek., spróbuj ponownie |
 
 ### Kontrolki żółte (ostrzegawcze)
 
-- **Check engine** – w Vivaro A najczęściej wiąże się z zaworem EGR (silniki 1.9 dCi i 2.0 CDTI), przepływomierzem powietrza lub sondą lambda. Szczegóły w artykule o [check engine w busie](/serwis/check-engine/)
-- **Spirala (świece żarowe)** – migająca spirala po uruchomieniu silnika to uszkodzona świeca żarowa lub moduł sterujący. W Vivaro A z 1.9 dCi problem jest sezonowy – nasila się zimą
-- **Klucz (serwis)** – przypomnienie o przeglądzie, nie awaria. Kasowanie opisane w sekcji "Reset kontrolek"
-- **Woda w paliwie** – ikona dystrybutora z kroplami. Trzeba spuścić wodę z odstojnika filtra paliwa
-
-{{% info title="Uwaga" icon="engineering" %}}
-W Vivaro A z silnikiem 2.5 CDTI (G9U) kontrolka check engine potrafi się zapalić od poluzowanego korka wlewu paliwa. Zanim jedziesz do serwisu, sprawdź, czy korek jest dokręcony do kliknięcia.
-{{% /info %}}
+- **Check engine** – w Vivaro A najczęściej wiąże się z zaworem EGR (silniki 1.9 dCi i 2.0 CDTI), przepływomierzem powietrza lub czujnikami. Szczegóły w artykule o [check engine w busie](/serwis/check-engine/).
+- **Spirala / usterka elektroniki** – migająca spirala po uruchomieniu silnika oznacza uszkodzoną świecę żarową. W silnikach 1.9 i 2.0 dCi często występuje zintegrowana kontrolka prostokąta z zygzakiem (EKG), która sygnalizuje ogólną usterkę elektroniczną – np. problem z EGR, wtryskiwaczem, przepływomierzem lub spadkiem ciśnienia na listwie wtryskowej.
+- **Klucz (serwis)** – przypomnienie o przeglądzie, nie awaria. Kasowanie opisane w sekcji "Reset kontrolek".
+- **Woda w paliwie** – ikona dystrybutora z kroplami. Konieczne jest spuszczenie wody z odstojnika filtra paliwa.
 
 ## Kontrolki Vivaro B (2014–2019) – platforma Renault/Opel
 
-Druga generacja wnosi cyfrowy wyświetlacz między zegarami i kilka nowych wskaźników związanych z systemami wspomagania.
+Druga generacja wprowadziła cyfrowy wyświetlacz między zegarami, co pozwoliło na prezentowanie bardziej złożonych komunikatów. Pojawiło się też kilka nowych wskaźników związanych z systemami wspomagania kierowcy.
 
 ### Nowe kontrolki względem generacji A
 
-- **Kontrolka DPF** – filtr cząstek stałych (silniki 1.6 CDTI/BiTurbo). Świecąca = wymaga regeneracji. Migająca = zapchany, serwis konieczny
-- **Stop/Start** – zielona ikona "A" w kółku oznacza aktywny system. Żółta z wykrzyknikiem = system dezaktywowany (niska temperatura akumulatora, klima na maksa)
-- **ESP OFF** – żółte auto z falistymi śladami. Wyłączony system stabilizacji – pojawia się po ręcznym wyłączeniu lub przy awarii czujników
-- **Ciśnienie w oponach (TPMS)** – żółty wykrzyknik w nawiasie. Sprawdź ciśnienie we wszystkich oponach, łącznie z dojazdówką
+- **Kontrolka DPF** – filtr cząstek stałych (silniki 1.6 CDTI/BiTurbo). Świecąca stale = wymaga regeneracji. Migająca = filtr zapchany, serwis jest konieczny.
+- **Stop/Start** – zielona ikona "A" w kółku oznacza aktywny system. Żółta z wykrzyknikiem = system dezaktywowany (np. z powodu niskiej temperatury lub obciążenia akumulatora).
+- **ESP OFF** – żółte auto z falistymi śladami. Wyłączony system stabilizacji – pojawia się po ręcznym wyłączeniu lub przy awarii jednego z czujników.
+- **Ciśnienie w oponach (TPMS)** – żółty wykrzyknik w nawiasie. Sprawdź ciśnienie we wszystkich oponach.
 
 ### Najczęstsze kontrolki w codziennej eksploatacji
 
-W Vivaro B z silnikiem 1.6 CDTI trzy kontrolki pojawiają się najczęściej:
+W Vivaro B z silnikiem 1.6 CDTI trzy kontrolki pojawiają się statystycznie najczęściej:
 
-1. **DPF** – silnik 1.6 CDTI ma mały filtr cząstek stałych, który zapycha się szybciej niż w większych busach. Jazda wyłącznie miejska to recepta na problemy z [wypalaniem DPF](/serwis/wypalanie-dpf/)
-2. **Check engine + ograniczenie mocy** – zazwyczaj turbosprężarka (luzy w mechanizmie zmiennej geometrii) lub zawór EGR
-3. **Świece żarowe (migająca)** – uszkodzenie jednej z czterech świec. Wymiana kompletu kosztuje 200–400 zł z robocizną
+1. **DPF** – silnik 1.6 CDTI ma filtr cząstek stałych, który zapycha się szybciej niż w jednostkach o większej pojemności. Jazda wyłącznie po mieście to prosta droga do problemów z [wypalaniem DPF](/serwis/wypalanie-dpf/).
+2. **Check engine + ograniczenie mocy** – zazwyczaj oznacza to awarię turbosprężarki (luzy w mechanizmie zmiennej geometrii) lub zablokowany zawór EGR.
+3. **Świece żarowe (migająca)** – uszkodzenie jednej z czterech świec. Wymiana kompletu to koszt 200–400 zł z robocizną.
 
-{{% expert name="Kowalczyk" %}}Vivaro B z 1.6 BiTurbo (120/145 KM) ma specyficzny problem – pęka przewód intercoolera łączący obie turbosprężarki. Objaw: check engine, dymienie, utrata mocy. Kontrolka zapala się zanim poczujesz różnicę w jeździe, więc nie ignoruj jej nawet jeśli auto "jedzie normalnie".{{% /expert %}}
+{{% expert name="Kowalczyk" %}}Vivaro B z 1.6 BiTurbo (120/145 KM) ma specyficzny problem – pękanie przewodu intercoolera łączącego obie turbosprężarki. Objaw: check engine, dymienie i utrata mocy. Kontrolka zapala się zanim poczujesz różnicę w jeździe, więc nie ignoruj jej nawet jeśli auto "jedzie normalnie".{{% /expert %}}
 
 ![Kontrolki Opel Vivaro – znaczenie symboli na desce rozdzielczej](/images/opel-vivaro-kontrolki-hero.jpg)
 
 ## Kontrolki Vivaro C (2019+) – platforma PSA
 
-Trzecia generacja to zupełnie nowy samochód – bazuje na platformie Citroëna Jumpy/Peugeota Experta i ma cyfrowy kokpit z kolorowym wyświetlaczem TFT.
+Trzecia generacja to zupełnie nowy samochód – bazuje na platformie Citroëna Jumpy/Peugeota Experta i może być wyposażony w cyfrowy kokpit z kolorowym wyświetlaczem.
 
 ### Nowe wskaźniki nieobecne w starszych Vivaro
 
-- **Lane Departure Warning** – żółta ikona z falistymi pasami. System ostrzega o niezamierzonym opuszczeniu pasa ruchu
-- **Radarowy tempomat (ACC)** – zielony samochód z falami. Aktywny adaptacyjny tempomat z funkcją hamowania
-- **Martwe pole (BSM)** – żółty trójkąt w lusterku. Pojazd wykryty w martwym polu podczas zmiany pasa
-- **AdBlue** – pomarańczowy dystrybutor z kroplą. Silniki 2.0 BlueHDI wymagają regularnego uzupełniania [płynu AdBlue](/serwis/adblue/)
-- **Asystent parkowania** – zielone/żółte/czerwone paski. System czujników ultradźwiękowych (przód i tył)
+- **Lane Departure Warning** – żółta ikona z falistymi pasami. Asystent ostrzega o niezamierzonym opuszczeniu pasa ruchu.
+- **Radarowy tempomat (ACC)** – zielony samochód z falami. Sygnalizuje aktywny adaptacyjny tempomat z funkcją hamowania.
+- **Martwe pole (BSM)** – żółty trójkąt w lusterku. Wskazuje, że pojazd został wykryty w martwym polu podczas zmiany pasa.
+- **AdBlue/UREA** – pomarańczowy napis UREA wraz z ikoną dystrybutora i kluczem. Po zapaleniu się kontrolki rozpoczyna się odliczanie (zwykle od 2400 km), po którego wyczerpaniu uruchomienie silnika zostanie zablokowane. Ignorowanie ostrzeżenia unieruchomi pojazd.
+- **FAP / Eolys** – komunikat „Risk of Particle Filter Blocking” nie zawsze oznacza zapchany DPF. W Vivaro C stosuje się filtr FAP z dodatkiem Eolys, który wymaga uzupełnienia co 120 000–150 000 km. Koszt serwisu to około 600–900 zł.
 
 ### Kolory zestawu wskaźników Vivaro C
 
 Vivaro C stosuje trzy kolory kontrolek z takim samym znaczeniem jak w całej branży motoryzacyjnej:
 
-- **Czerwone** – krytyczne: ciśnienie oleju, temperatura, hamulec, airbag. Zatrzymaj się natychmiast
-- **Żółte/Pomarańczowe** – ostrzegawcze: check engine, DPF, ESP, TPMS. Jedź do serwisu
-- **Zielone/Niebieskie** – informacyjne: kierunkowskazy, światła drogowe, tempomat, eco mode
+- **Czerwone** – krytyczne: ciśnienie oleju, temperatura, hamulec, airbag. Zatrzymaj się natychmiast.
+- **Żółte/Pomarańczowe** – ostrzegawcze: check engine, DPF, ESP, TPMS. Jedź do serwisu.
+- **Zielone/Niebieskie** – informacyjne: kierunkowskazy, światła drogowe, tempomat, tryb eco.
 
 ## Najczęstsze kontrolki i ich przyczyny
 
@@ -102,28 +98,34 @@ Niezależnie od generacji, pewne problemy wracają regularnie. Oto ranking najcz
 | Świece żarowe | A, B | Uszkodzona świeca lub moduł sterujący | 200–600 zł |
 | Ciśnienie oleju | A | Zużyta pompa olejowa (silnik F9Q) | 800–2 000 zł |
 | TPMS | B, C | Uszkodzony czujnik w kole lub niska wartość ciśnienia | 100–400 zł |
-| AdBlue | C | Niski poziom płynu lub awaria czujnika | 150–800 zł |
+| AdBlue/UREA | C | Awaria modułu (pompy/czujnika) w zbiorniku | 3000–5000 zł |
 
 {{% info title="Diagnostyka" icon="engineering" %}}
-W Vivaro A kody błędów można odczytać bez testera – zwarcie pinów 4 i 5 w gnieździe OBD powoduje miganie kontrolki check engine. Liczba mignięć odpowiada numerowi błędu. W Vivaro B i C potrzebujesz już skanera OBD2 lub aplikacji (np. Torque, Car Scanner).
+Diagnostyka Vivaro A wymaga interfejsu obsługującego protokoły Renault, ponieważ metody domowe, takie jak „na spinacz”, nie działają. W generacjach B i C wystarczy standardowy skaner OBD2 lub popularne aplikacje mobilne.
 {{% /info %}}
 
 ## Reset kontrolek serwisowych
 
-Procedura resetowania wskaźnika przeglądu różni się w każdej generacji:
+Procedura resetowania wskaźnika przeglądu różni się w każdej generacji, ale w każdej można ją wykonać bez wizyty w serwisie.
 
 ### Vivaro A (2001–2014)
-1. Przekręć kluczyk do pozycji MAR (zapłon) bez uruchamiania silnika
-2. W ciągu 5 sekund naciśnij i przytrzymaj przycisk resetu podróży na zegarach
-3. Po ok. 10 sekundach wyświetli się napis "INSPEC" lub "OIL"
-4. Zwolnij przycisk, naciśnij ponownie i przytrzymaj 5 sekund
-5. Wyświetlacz zresetuje się do wartości początkowej
+1. Przekręć kluczyk w pozycję zapłonu bez uruchamiania silnika.
+2. W ciągu 5 sekund naciśnij i przytrzymaj przycisk resetu podróży na zegarach.
+3. Po ok. 10 sekundach wyświetli się napis "INSPEC" lub "OIL".
+4. Zwolnij przycisk, naciśnij ponownie i przytrzymaj przez kolejne 5 sekund.
+5. Wyświetlacz zresetuje się do wartości początkowej (np. 30 000 km).
 
 ### Vivaro B (2014–2019)
-Reset wymaga testera diagnostycznego (np. Opel GDS2, Delphi DS150) lub wizyty w ASO. Nie da się go wykonać ręcznie z poziomu deski rozdzielczej.
+1. Włącz zapłon (bez uruchamiania silnika).
+2. Używając przycisku na manetce wycieraczek, przejdź do podmenu przebiegu do przeglądu.
+3. Naciśnij i przytrzymaj ten sam przycisk przez około 10 sekund.
+4. Poczekaj, aż wyświetlana wartość zacznie migać, a następnie zresetuje się do nowego interwału.
 
 ### Vivaro C (2019+)
-Reset możliwy z poziomu menu komputera pokładowego: Ustawienia > Serwis > Resetuj interwał przeglądu. Wymaga potwierdzenia.
+1. Wyłącz zapłon.
+2. Naciśnij i przytrzymaj przycisk z symbolem klucza na zestawie wskaźników (lub na manetce, zależnie od wersji wyposażenia).
+3. Trzymając przycisk, włącz zapłon (bez uruchamiania silnika).
+4. Na wyświetlaczu rozpocznie się odliczanie od 10 do 0 – po jego zakończeniu zwolnij przycisk.
 
 Ogólne informacje o kontrolkach w dostawczakach znajdziesz w artykule [kontrolki w busie](/serwis/kontrolki-w-busie/).
 

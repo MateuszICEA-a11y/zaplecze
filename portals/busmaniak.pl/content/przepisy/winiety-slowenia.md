@@ -11,13 +11,13 @@ main_keyword: "winieta słowenia"
 lead: "Od 2022 roku w Słowenii obowiązują wyłącznie elektroniczne winiety przypisane do tablicy rejestracyjnej. E-winieta tygodniowa dla samochodu osobowego kosztuje 16 EUR, a busy powyżej 1,3 m nad pierwszą osią płacą dwukrotnie więcej. Kupujesz ją online na evinjeta.dars.si – bez naklejki, bez kolejki."
 faq:
   - question: "Czy kampery potrzebują winiety w Słowenii?"
-    answer: "Tak, kampery do 3,5 t z wysokością do 1,3 m nad pierwszą osią kwalifikują się do kategorii 2A. Wyższe kamper vany mogą zostać zakwalifikowane do kategorii 2B z dwukrotnie wyższą ceną. Sprawdź klasyfikację na evinjeta.dars.si."
+    answer: "Tak, wszystkie zarejestrowane kampery (kategoria M1) do 3,5 tony podlegają tańszej kategorii 2A, niezależnie od wysokości nad pierwszą osią."
   - question: "Ile kosztuje mandat za brak winiety w Słowenii?"
-    answer: "Mandat wynosi od 300 do 800 EUR. Jeśli zapłacisz w ciągu 8 dni od wystawienia, kwota spada o połowę. System kamer automatycznie kontroluje tablice rejestracyjne na autostradach."
+    answer: "Mandat za jazdę bez ważnej winiety wynosi 300 EUR. Jeśli zapłacisz w ciągu 8 dni od wystawienia, kwota spada o połowę do 150 EUR. System kamer automatycznie kontroluje tablice rejestracyjne na autostradach."
   - question: "Czy mogę kupić słoweńską e-winietę w Polsce?"
     answer: "Tak, przez oficjalny sklep evinjeta.dars.si lub polskie serwisy pośredniczące jak autopay.eu. Winieta aktywuje się od daty, którą sam wybierzesz przy zakupie."
   - question: "Czy tunel Karawanki wymaga dodatkowej opłaty?"
-    answer: "Tak, przejazd tunelem Karawanki na granicy austriacko-słoweńskiej kosztuje 9 EUR za pojazd do 3,5 t. Opłata jest niezależna od winiety."
+    answer: "Tak, przejazd tunelem Karawanki na granicy austriacko-słoweńskiej kosztuje 8,20 EUR za pojazd do 3,5 t. Opłata jest niezależna od winiety."
 ---
 ## System e-winiet w Słowenii
 
@@ -25,7 +25,7 @@ Słowenia zrezygnowała z winiet naklejanych na szybę w lutym 2022 roku. Od teg
 
 Przy zakupie podajesz numer tablicy, kraj rejestracji i kategorię pojazdu. Kamery na autostradach i drogach ekspresowych automatycznie odczytują tablice i weryfikują ważność winiety. System działa 24 godziny na dobę, bez bramek i bez zatrzymywania ruchu.
 
-E-winieta obowiązuje na wszystkich autostradach (oznaczonych literą A) i drogach ekspresowych (oznaczonych literą H) w Słowenii. Od 1 stycznia 2026 roku przejazd trasą H5 między granicą włoską a Izolą jest bezpłatny.
+E-winieta obowiązuje na wszystkich autostradach (oznaczonych literą A) i drogach ekspresowych (oznaczonych literą H) w Słowenii. Warto jednak wiedzieć, że winieta nie jest wymagana na niektórych odcinkach lokalnych – najważniejszym z nich jest droga H6 na odcinku Koper – Izola, która pozwala ominąć płatny tranzyt w tej części wybrzeża.
 
 ## Rodzaje i ceny e-winiet na 2026 rok
 
@@ -34,18 +34,20 @@ Słowenia dzieli pojazdy do 3,5 t na dwie kategorie w zależności od wysokości
 | Okres ważności | Kat. 2A (do 1,3 m) | Kat. 2B (powyżej 1,3 m) | Motocykle |
 | :--- | :--- | :--- | :--- |
 | Tygodniowa (7 dni) | 16,00 EUR | 32,00 EUR | 8,00 EUR |
-| Miesięczna (30 dni) | 32,00 EUR | 64,10 EUR | – |
+| Miesięczna | 32,00 EUR | 64,10 EUR | – |
 | Półroczna (6 mies.) | – | – | 32,00 EUR |
 | Roczna (365 dni) | 117,50 EUR | 235,00 EUR | 58,70 EUR |
 
-**Kategoria 2A** – samochody osobowe, SUV-y, kampery i przyczepy kempingowe, których wysokość nad pierwszą osią nie przekracza 1,3 m.
+**Kategoria 2A** – samochody osobowe i SUV-y, których wysokość nad pierwszą osią nie przekracza 1,3 m. Do tej kategorii zaliczają się również wszystkie kampery z wpisem „pojazd specjalny kempingowy” (kategoria M1) w dowodzie rejestracyjnym, niezależnie od ich wysokości.
 
 **Kategoria 2B** – pojazdy do 3,5 t DMC z wysokością nad pierwszą osią powyżej 1,3 m. Trafiają tu Fiat Ducato, Mercedes Sprinter, Iveco Daily i większość busów dostawczych.
 
-Nie masz pewności, do której kategorii należy Twój bus? Na stronie DARS działa narzędzie do weryfikacji – wpisujesz numer VIN i sprawdzasz przypisaną klasę.
+Nie masz pewności, czy Twój bus kwalifikuje się do droższej kategorii 2B? DARS prowadzi oficjalną, regularnie aktualizowaną listę pojazdów przyporządkowanych do tej grupy. Dokument PDF znajdziesz na stronie evinjeta.dars.si – dzięki niemu sprawdzisz, czy np. Twój Renault Trafic wymaga droższej winiety, podczas gdy VW Multivan T6 mieści się w tańszej kategorii 2A.
+
+Ważna informacja dla ciągnących przyczepy: pojazdy z DMC do 3,5 tony nie potrzebują dodatkowej winiety na przyczepę. Zasada ta obowiązuje nawet wtedy, gdy dopuszczalna masa całkowita całego zestawu przekracza 3,5 tony.
 
 {{% info title="Uwaga na pomiar wysokości" icon="warning" %}}
-Pomiar 1,3 m dotyczy wysokości nadwozia nad osią przednią, nie całkowitej wysokości pojazdu. Bagażnik dachowy, markiza czy klimatyzacja na dachu nie wpływają na klasyfikację. Liczy się konstrukcja fabryczna nadwozia.
+Pomiar 1,3 m dotyczy wysokości nadwozia nad osią przednią, nie całkowitej wysokości pojazdu. Bagażnik dachowy, markiza czy klimatyzacja na dachu nie wpływają на klasyfikację. Liczy się konstrukcja fabryczna надwozia.
 {{% /info %}}
 
 ## Jak kupić e-winietę do Słowenii
@@ -54,18 +56,20 @@ Najwygodniej kupujesz przez oficjalny sklep DARS pod adresem evinjeta.dars.si. S
 
 Inne sposoby zakupu:
 
-- **Online przez pośredników** – autopay.eu, winiety-online.pl i inne serwisy obsługują płatności BLIK-iem i przelewem, ale doliczają prowizję 2–5 EUR
-- **Stacje benzynowe w Słowenii** – Petrol i OMV sprzedają e-winiety przy kasie, potrzebujesz numeru rejestracyjnego i dowodu rejestracyjnego
+- **Online przez pośredników** – autopay.eu, winiety-online.pl i inne serwisy obsługują płatności BLIK-iem i przelewem, ale doliczają prowizję
+- **Stacje benzynowe w Słowenii** – Petrol i OMV sprzedają e-winiety przy kasie, potrzebujesz numeru rejestracyjnego
 - **Punkty DARS** – stanowiska samoobsługowe na przejściach granicznych i parkingach autostradowych
 - **Poczta Slovenija** – wybrane oddziały poczty na terenie całego kraju
 
-Przy zakupie wybierasz datę rozpoczęcia ważności. Możesz kupić winietę z wyprzedzeniem – aktywuje się od dnia, który wskażesz. Tygodniowa obowiązuje 7 kolejnych dni (np. od poniedziałku do niedzieli), miesięczna – 30 dni od wybranej daty.
+Pamiętaj, że winieta musi być aktywna w momencie wjazdu na drogę płatną. Słoweński system nie przewiduje żadnego okresu tolerancji. Zakup winiety online kilka minut po przekroczeniu granicy i minięciu kamer jest bezcelowy – system zdąży już zarejestrować wykroczenie i automatycznie wygeneruje mandat w wysokości 300 EUR.
+
+Przy zakupie wybierasz datę rozpoczęcia ważności. Możesz kupić winietę z wyprzedzeniem – aktywuje się od dnia, który wskażesz. Tygodniowa obowiązuje 7 kolejnych dni (np. od poniedziałku do niedzieli), a miesięczna – od wybranej daty do tego samego dnia w kolejnym miesiącu (np. od 15 lipca do 15 sierpnia).
 
 ## Busy powyżej 3,5 t – system DarsGo
 
 Jeśli Twój bus ma [DMC powyżej 3,5 t](/przepisy/dmc-co-to/), system winietowy Cię nie dotyczy. Pojazdy cięższe korzystają z systemu DarsGo – elektronicznego poboru opłat za przejechane kilometry.
 
-DarsGo wymaga zamontowania transpondera (OBU – On-Board Unit) na przedniej szybie. Urządzenie jest bezpłatne, bez kaucji i opłat serwisowych. Rejestrujesz się na darsgo.si lub w jednym z punktów obsługi przy granicy.
+DarsGo wymaga zamontowania transpondera (OBU – On-Board Unit) na przedniej szybie. Urządzenie jest bezpłatne, bez kaucji i opłat serwisowych. Rejestrujesz się na darsgo.si lub w jednym z punktów obsługi DarsGo na granicy.
 
 Stawki DarsGo zależą od trzech czynników:
 
@@ -83,23 +87,23 @@ Sieć autostrad i dróg ekspresowych w Słowenii liczy około 620 km. Winieta ob
 
 Główne trasy płatne:
 
-- **A1** – Koper (wybrzeże) przez Lublanę do Mariboru i granicy węgierskiej (Šentilj). To najdłuższa autostrada w kraju
+- **A1** – Koper (wybrzeże) przez Lublanę do Mariboru i granicy z Austrią (Šentilj). To najdłuższa autostrada w kraju
 - **A2** – Karawanki (granica z Austrią) przez Lublanę do Obrežja (granica z Chorwacją). Główna trasa tranzytowa z Austrii do Chorwacji
 - **A3** – odcinek łączący A1 z A2 w rejonie Lublany
-- **A4** – Maribor do granicy węgierskiej (Pince)
-- **A5** – Maribor do granicy węgierskiej (Dolga Vas)
+- **A4** – Maribor do granicy z Chorwacją (Gruškovje)
+- **A5** – Maribor do granicy z Węgrami (Pince)
 
 Drogi regionalne, lokalne i miejskie są bezpłatne. Jeśli chcesz ominąć opłaty, możesz korzystać z dróg drugorzędnych – ale w górskim terenie Słowenii trasa wydłuża się znacząco.
 
 {{% expert name="Kowalczyk" %}}
-Jadąc busem do Chorwacji przez Słowenię, nie ma sensu omijać autostrady. Trasa A2 od tunelu Karawanki do granicy chorwackiej to niecałe 200 km i zajmuje niecałe 2 godziny. Alternatywa górskimi drogami to 3,5–4 godziny i kilometry serpentyn, które przy dłuższym busie potrafią zmęczyć bardziej niż cały urlop.
+Jadąc busem do Chorwacji przez Słowenię, nie ma sensu omijać autostrady. Trasa A2 od tunelu Karawanki do granicy chorwackiej to niecałe 200 km i zajmuje mniej niż 2 godziny. Alternatywa górskimi drogami to 3,5–4 godziny i kilometry serpentyn, które przy dłuższym busie potrafią zmęczyć bardziej niż cały urlop.
 {{% /expert %}}
 
 ## Kary za brak winiety w Słowenii
 
 System kamer ANPR (Automatic Number Plate Recognition) kontroluje tablice rejestracyjne na wszystkich odcinkach płatnych. Nie ma bramek ani manualnych kontroli – weryfikacja jest w pełni automatyczna.
 
-Mandat za jazdę bez ważnej winiety wynosi od 300 do 800 EUR. Jeśli opłacisz karę w ciągu 8 dni od doręczenia, kwota spada o połowę – płacisz 150 EUR zamiast 300 EUR.
+Mandat za jazdę bez ważnej winiety wynosi 300 EUR. Jeśli opłacisz karę w ciągu 8 dni od doręczenia, kwota spada o połowę – płacisz 150 EUR zamiast 300 EUR.
 
 Kara obejmuje też sytuacje, gdy:
 
@@ -115,13 +119,11 @@ Słowenia to najczęstszy kraj tranzytowy na drodze z Polski do chorwackiego wyb
 
 Przydatne informacje na trasie:
 
-- **Tunel Karawanki** – 8 km, osobna opłata 9 EUR za pojazd do 3,5 t, niezależna od winiety
+- **Tunel Karawanki** – 8 km, osobna opłata 8,20 EUR za pojazd do 3,5 t, niezależna od winiety
 - **Obwodnica Lublany** – w szczycie (piątki i weekendy letnie) tworzą się korki, planuj przejazd rano
 - **Stacje Petrol** – sieć stacji benzynowych z LPG, cenami zbliżonymi do polskich i dobrym zapleczem sanitarnym
-- **Parkingi autostradowe** – zadbane, z toaletami i restauracjami, nadają się na nocleg w kamperze (choć formalnie camping na parkingach jest zabroniony)
+- **Parkingi autostradowe** – zadbane, z toaletami i restauracjami, nadają się na nocleg (choć formalnie camping na parkingach jest zabroniony)
 
-Jeśli jedziesz z [Węgier](/przepisy/winiety-wegry/), wygodniejsza jest trasa przez Maribor (A4/A1) i dalej A2 w kierunku Chorwacji. Omijasz Lublanę i korki na obwodnicy.
+Jeśli jedziesz z [Węgier](/przepisy/winiety-wegry/), wygodniejsza jest trasa przez Maribor (A5/A1) i dalej A4 w kierunku Chorwacji. Omijasz Lublanę i korki na obwodnicy.
 
-Niezależnie od trasy, pamiętaj o trzech winietach na tej podróży – austriackiej, słoweńskiej i chorwackiej (tam opłaty za autostrady pobierane są na bramkach, nie w systemie winietowym).
-
-*Źródła: [Motorways in Slovenia – Wikipedia](https://en.wikipedia.org/wiki/Motorways_in_Slovenia), evinjeta.dars.si, darsgo.si, tolls.eu*
+Niezależnie od trasy, pamiętaj o trzech różnych systemach opłat – austriackiej winiecie, słoweńskiej e-winiecie i chorwackich bramkach, gdzie płaci się za przejechane odcinki.

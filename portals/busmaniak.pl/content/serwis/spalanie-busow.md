@@ -13,13 +13,13 @@ main_keyword: "spalanie busów"
 lead: "Katalogowe zużycie paliwa busa dostawczego i realne spalanie to dwa różne światy. Producenci podają 6–8 l/100 km, a użytkownicy raportują 9–14 l/100 km w zależności od obciążenia i trasy. Ta różnica ma realne przełożenie na koszty – przy 40 000 km rocznie dodatkowe 2 litry na setkę to ponad 5000 zł więcej za paliwo. Zebraliśmy dane z raportów użytkowników i testów redakcyjnych, żeby pokazać prawdziwe spalanie sześciu najpopularniejszych busów w Polsce."
 faq:
   - question: "Który bus spala najmniej?"
-    answer: "W cyklu mieszanym najoszczędniejszy jest Fiat Ducato 2.3 MultiJet ze średnim spalaniem 8,5–9,5 l/100 km. Na trasie przy prędkości 90–100 km/h Ducato schodzi do 7–8 l/100 km. Renault Master 2.3 dCi jest porównywalny, ale nieco bardziej pije w mieście."
+    answer: "W cyklu mieszanym najoszczędniejszy jest Fiat Ducato 2.2 MultiJet3 ze średnim spalaniem 8,5–9,5 l/100 km. Na trasie przy prędkości 90–100 km/h Ducato schodzi do 7–8 l/100 km. Renault Master 2.3 dCi jest porównywalny, ale nieco bardziej pije w mieście."
   - question: "Ile pali bus z kamperową zabudową?"
     answer: "Kamper na bazie busa spala średnio 1,5–3 l/100 km więcej niż wersja dostawcza tego samego modelu. Dodatkowa masa zabudowy (300–800 kg), wyższy profil aerodynamiczny i bagażnik dachowy zwiększają opory. Ducato-kamper to realnie 10–13 l/100 km."
   - question: "Czy AdBlue zwiększa spalanie busa?"
     answer: "Nie, AdBlue nie wpływa na zużycie oleju napędowego. System SCR z AdBlue redukuje emisję tlenków azotu w katalizatorze, ale nie zmienia parametrów spalania w cylindrach. Zużycie AdBlue to dodatkowy koszt ok. 1–3 l/1000 km."
   - question: "Jak zmniejszyć spalanie busa?"
-    answer: "Najskuteczniejsze metody to: utrzymanie prędkości do 100 km/h na trasie (każde 10 km/h powyżej zwiększa spalanie o 0,5–1 l), prawidłowe ciśnienie w oponach, regularne wymiany filtrów powietrza i paliwa oraz unikanie gwałtownych przyspieszeń. Tempomat na trasie obniża spalanie o 5–10%."
+    answer: "Najskuteczniejsze metody to: utrzymanie prędkości do 100 km/h na trasie (każde 10 km/h powyżej zwiększa spalanie o 0,5–1 l), prawidłowe ciśnienie w oponach, regularne wymiany filtrów oraz unikanie gwałtownych przyspieszeń. Tempomat obniża spalanie na płaskich odcinkach tras o 5–10%, jednak w terenie górzystym ręczna kontrola pedału gazu jest często bardziej ekonomiczna."
 ---
 
 ## Od czego zależy spalanie busa
@@ -28,22 +28,25 @@ Zużycie paliwa w busie dostawczym to wypadkowa kilkunastu zmiennych, które w c
 
 Najważniejsze czynniki wpływające na spalanie:
 
-- **Masa ładunku** – każde dodatkowe 100 kg zwiększa spalanie o 0,3–0,5 l/100 km. Bus załadowany do pełnej DMC pali 15–25% więcej niż pusty
-- **Prędkość jazdy** – różnica między 90 a 130 km/h to nawet 3–4 l/100 km. Opór powietrza rośnie z kwadratem prędkości, a busy mają fatalną aerodynamikę (Cx 0,35–0,45)
-- **Profil trasy** – miasto z częstym hamowaniem i ruszaniem zwiększa spalanie o 30–50% względem trasy. Podbiegi górskie potrafią podnieść chwilowe zużycie do 20–25 l/100 km
-- **Stan techniczny** – zapchany [filtr DPF](/serwis/wypalanie-dpf/), zużyte wtryskiwacze czy nieszczelny turbo mogą dodać 1–3 l/100 km
-- **Opony** – nieprawidłowe [ciśnienie w oponach](/serwis/cisnienie-w-oponach/) (0,5 bar poniżej normy) zwiększa spalanie o 2–3%
-- **Temperatura otoczenia** – zimą busy spalają 10–15% więcej przez gęstsze powietrze, dłuższy czas nagrzewania i wyższe opory toczenia zimnych opon
-- **Skrzynia biegów** – automat dodaje 0,5–1 l/100 km względem manuala, choć nowoczesne skrzynie 9G-Tronic i PowerShift zmniejszyły tę różnicę
+- **Masa ładunku** – każde dodatkowe 100 kg zwiększa spalanie o 0,3–0,5 l/100 km. Bus załadowany do pełnej DMC pali 15–25% więcej niż pusty.
+- **Prędkość jazdy** – różnica między 90 a 130 km/h to nawet 3–4 l/100 km. [Opór aerodynamiczny](https://pl.wikipedia.org/wiki/Op%C3%B3r_aerodynamiczny) rośnie z kwadratem prędkości, a busy mają fatalną aerodynamikę (Cx 0,35–0,45).
+- **Profil trasy** – miasto z częstym hamowaniem i ruszaniem zwiększa spalanie o 30–50% względem trasy. Podbiegi górskie potrafią podnieść chwilowe zużycie do 20–25 l/100 km.
+- **Warunki pogodowe** – duża powierzchnia boczna i czołowa busów sprawia, że są bardzo podatne na wiatr. Silny wiatr czołowy przy prędkości 100 km/h może zwiększyć spalanie nawet o 2–4 l/100 km w porównaniu do bezwietrznej aury.
+- **Stan techniczny** – zapchany filtr DPF, zużyte wtryskiwacze czy nieszczelny układ doładowania mogą dodać 1–3 l/100 km.
+- **Opony** – nieprawidłowe ciśnienie w oponach (0,5 bar poniżej normy) zwiększa spalanie o 2–3%.
+- **Temperatura otoczenia** – zimą busy spalają 10–15% więcej przez gęstsze powietrze, dłuższy czas nagrzewania i wyższe opory toczenia zimnych opon.
+- **Skrzynia biegów** – automat dodaje 0,5–1 l/100 km względem manuala, choć nowoczesne skrzynie 9G-Tronic zmniejszyły tę różnicę.
 
 ## Tabela spalania busów – dane realne
 
 Poniższe dane pochodzą z raportów użytkowników portalu AutoCentrum.pl, testów redakcyjnych dostawczakiem.pl oraz forów branżowych. Wartości dotyczą wersji furgon (blaszak) z silnikiem diesla i manualną skrzynią biegów, bez ładunku lub z ładunkiem do 500 kg.
 
+Należy pamiętać, że tabela dotyczy standardowych furgonów. Popularne w transporcie międzynarodowym busy z zabudową kontenerową lub plandeką (tzw. międzynarodówki na 8–10 palet) mają znacznie większą powierzchnię czołową i wyższe opory powietrza. Ich realne spalanie na autostradzie przy prędkościach 100–110 km/h jest wyższe o 3–5 litrów i wynosi zazwyczaj 12–15 l/100 km.
+
 | Model | Silnik | Miasto | Trasa (90–100 km/h) | Mieszane | Z pełnym ładunkiem* |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| [Fiat Ducato](/modele/fiat-ducato/) | 2.3 MultiJet 140 KM | 10–12 l | 7–8 l | 8,5–9,5 l | 10–12 l |
-| Mercedes Sprinter | 2.1 CDI 163 KM | 11–14 l | 8–10 l | 9,5–11 l | 11–13 l |
+| [Fiat Ducato](/modele/fiat-ducato/) | 2.2 MultiJet3 140 KM | 10–12 l | 7–8 l | 8,5–9,5 l | 10–12 l |
+| Mercedes Sprinter | 2.0 CDI 170 KM | 11–14 l | 8–10 l | 9,5–11 l | 11–13 l |
 | Ford Transit | 2.0 EcoBlue 170 KM | 10–13 l | 7,5–9 l | 9–10,5 l | 10,5–12,5 l |
 | Iveco Daily | 2.3 HPI 136 KM | 11–14 l | 8–10 l | 10–12 l | 12–14 l |
 | Renault Master | 2.3 dCi 150 KM | 10–13 l | 7–9 l | 9–10,5 l | 10,5–12,5 l |
@@ -69,19 +72,22 @@ Eco driving w busie dostawczym sprowadza się do trzech zasad:
 2. Wyprzedzaj moment zmiany biegów – wrzucaj wyższy bieg przy 2000 obr/min, nie czekając na 2500+.
 3. Hamuj silnikiem zamiast hamulcami – odcinanie paliwa przy hamowaniu silnikiem oznacza dosłownie zerowe spalanie.
 
-Tempomat na trasie utrzymuje stałą prędkość i eliminuje mimowolne przyspieszenia – oszczędność 5–10% na dłuższych odcinkach. Ale na podjazdach tempomat potrafi „doładowywać" zbyt agresywnie – na górzystej trasie lepiej kontrolować gaz ręcznie.
+Tempomat na trasie utrzymuje stałą prędkość i eliminuje mimowolne przyspieszenia – oszczędność 5–10% na dłuższych, płaskich odcinkach. Ale na podjazdach tempomat potrafi „doładowywać” zbyt agresywnie – na górzystej trasie lepiej kontrolować gaz ręcznie.
 
 ### Utrzymanie techniczne
 
 Regularny serwis bezpośrednio wpływa na spalanie:
 
-- **Filtr powietrza** – zapchany filtr ogranicza dopływ powietrza, sterownik kompensuje bogatszą mieszanką. Wymiana co 30 000–40 000 km (20 000 km w warunkach zapylonych)
-- **Wtryskiwacze** – zużyte wtryskiwacze rozpylają paliwo nierównomiernie, co zwiększa spalanie o 5–15%. Regeneracja po 200 000 km
-- **Turbosprężarka** – nieszczelna turbo to utrata ciśnienia doładowania i wyższe spalanie. Kontrola łopatek VGT co 100 000 km
-- **Olej silnikowy** – syntetyk o odpowiedniej lepkości (np. 5W-30 zamiast 15W-40) zmniejsza opory wewnętrzne silnika o 1–2%
-- **Układ [AdBlue](/serwis/adblue/)** – niesprawny system SCR może wymusić tryb awaryjny z ograniczeniem mocy i podwyższonym spalaniem
+- **Filtr powietrza** – zapchany filtr ogranicza dopływ powietrza, sterownik kompensuje bogatszą mieszanką. Wymiana co 30 000–40 000 km (20 000 km w warunkach zapylonych).
+- **Filtr DPF** – jego cykliczna, aktywna regeneracja (wypalanie), zwłaszcza w cyklu miejskim, wymaga podania dodatkowej dawki paliwa. Proces ten może podnieść średnie zużycie paliwa o 0,5–1 l/100 km.
+- **Wtryskiwacze** – zużyte wtryskiwacze rozpylają paliwo nierównomiernie, co zwiększa spalanie o 5–15%. Regeneracja po 200 000 km.
+- **Turbosprężarka** – nieszczelna turbosprężarka to utrata ciśnienia doładowania i wyższe spalanie.
+- **Olej silnikowy** – stosowanie w pełni syntetycznego, energooszczędnego oleju Low-SAPS o lepkości zalecanej przez producenta (np. 0W-30 lub 5W-30) jest kluczowe dla ochrony filtra DPF i minimalizuje tarcie wewnętrzne w silniku.
+- **Układ AdBlue** – niesprawny system SCR może wymusić tryb awaryjny z ograniczeniem mocy i podwyższonym spalaniem.
 
-{{% expert name="Kowalczyk" %}}Najprostsza metoda monitorowania spalania to komputer pokładowy – ale w busach dostawczych zawyża on wyniki o 3–8%. Jeśli chcesz znać realne spalanie, licz od deski do deski: tankuj do pełna, zeruj licznik dzienny, po następnym tankowaniu do pełna dziel litry przez kilometry. Po trzech tankach masz wiarygodną średnią.{{% /expert %}}
+{{% expert name="Kowalczyk" %}}
+Najprostsza metoda monitorowania spalania to komputer pokładowy – ale w busach dostawczych zaniża on wyniki o 3–8%. Jeśli chcesz znać realne spalanie, licz od dystrybutora do dystrybutora: tankuj do pełna, zeruj licznik dzienny, po następnym tankowaniu do pełna dziel litry przez kilometry. Po trzech tankach masz wiarygodną średnią.
+{{% /expert %}}
 
 ## Spalanie a DMC – wpływ załadunku
 
@@ -96,34 +102,28 @@ Wpływ masy na spalanie w liczbach:
 | Ładunek 1000 kg (~3200 kg) | 10,5–11,5 l/100 km | +2 l |
 | Pełne DMC 3500 kg | 11,5–13 l/100 km | +3 l |
 
-Dane orientacyjne dla Fiata Ducato 2.3 MultiJet 140 KM, cykl mieszany.
+Dane orientacyjne dla Fiata Ducato 2.2 MultiJet3 140 KM, cykl mieszany.
 
 W praktyce kurierzy i firmy transportowe jeżdżą niemal wyłącznie z obciążeniem – stąd ich realne spalanie to nie katalogowe 7–8 l, ale 11–13 l/100 km. Firmy flotowe uwzględniają ten wzrost w kalkulacjach TCO (Total Cost of Ownership) i jest to główny powód, dla którego Ducato z jego niższym spalaniem bazowym dominuje na rynku dostawczaków w Polsce.
 
-Więcej o dopuszczalnej masie całkowitej znajdziesz w artykule [DMC – co to jest](/przepisy/dmc-co-to/).
-
 ## Spalanie kampera vs busa dostawczego
 
-Kamper na bazie busa dostawczego to ten sam silnik i podwozie, ale z kilkoma istotnymi różnicami wpływającymi na zużycie paliwa:
+Kamper na bazie busa dostawczego to ten sam silnik i podwozie, ale z kilkoma istotnymi różnicami wpływającymi na zużycie paliwa.
 
-- **Dodatkowa masa zabudowy** – meble, zbiorniki wody, instalacja elektryczna, ogrzewanie postojowe to 300–800 kg. Sam szkielet zabudowy waży 150–250 kg
-- **Wyższy profil** – podniesiony dach (high-top) lub alkowa zwiększa opór aerodynamiczny o 15–25%. Na autostradzie przy 120 km/h to dodatkowe 1,5–2,5 l/100 km
-- **Bagażnik dachowy i akcesoria** – markiza, panele solarne, skrzynki narzędziowe na dachu pogarszają aerodynamikę
-- **Większe opony** – niektóre kampery jeżdżą na oponach AT (all-terrain) o wyższym oporze toczenia
+Kluczowe czynniki to:
+
+- **Dodatkowa masa zabudowy** – meble, zbiorniki wody, instalacja elektryczna, ogrzewanie postojowe to 300–800 kg.
+- **Wyższy profil** – podniesiony dach w kampervanie typu „blaszak” zwiększa spalanie autostradowe o 1,5–2,5 l/100 km. W przypadku kamperów z dużą, pionową alkową nad kabiną, wzrost oporu powietrza jest drastyczny i przy 120 km/h może podnieść zużycie paliwa nawet o 4–6 l/100 km.
+- **Bagażnik dachowy i akcesoria** – markiza, panele solarne, skrzynki narzędziowe na dachu pogarszają aerodynamikę.
+- **Większe opony** – niektóre kampery jeżdżą na oponach AT (all-terrain) o wyższym oporze toczenia.
 
 Realne spalanie kamperów na bazach busowych:
 
 | Baza | Spalanie dostawczak | Spalanie kamper | Różnica |
 | :--- | :--- | :--- | :--- |
-| Fiat Ducato 2.3 | 8,5–9,5 l | 10–13 l | +1,5–3,5 l |
-| Mercedes Sprinter 2.1 | 9,5–11 l | 11–14 l | +1,5–3 l |
-| Ford Transit 2.0 | 9–10,5 l | 10,5–13 l | +1,5–2,5 l |
-| VW Crafter 2.0 | 9,5–11 l | 11–14 l | +1,5–3 l |
+| Fiat Ducato 2.2 MultiJet3 | 8,5–9,5 l | 10–13 l | +1,5–3,5 l |
+| Mercedes Sprinter 2.0 CDI | 9,5–11 l | 11–14 l | +1,5–3 l |
+| Ford Transit 2.0 EcoBlue | 9–10,5 l | 10,5–13 l | +1,5–2,5 l |
+| VW Crafter 2.0 TDI | 9,5–11 l | 11–14 l | +1,5–3 l |
 
-Przy planowaniu budżetu na [podróż kamperem](/kampery/) zakładaj spalanie 11–13 l/100 km dla Ducato i 12–14 l/100 km dla Sprintera. Do tego dochodzi zużycie gazu LPG na ogrzewanie (0,2–0,5 kg/h) i ewentualnie diesel na ogrzewanie Webasto/Eberspächer (0,1–0,3 l/h).
-
-Porównanie spalania różnych modeli w zestawieniu tabelarycznym znajdziesz w naszym [porównaniu spalania busów](/porownania/spalanie-porownanie/). Jeśli interesuje Cię spalanie konkretnego modelu, sprawdź dedykowane artykuły: [spalanie Fiata Ducato](/serwis/fiat-ducato-spalanie/) i [spalanie Renault Trafic](/serwis/renault-trafic-spalanie/).
-
-Kalkulator kosztów paliwa na trasie znajdziesz w zakładce [narzędzia](/narzedzia/kalkulator-paliwa/).
-
-*Źródła: raporty użytkowników AutoCentrum.pl, testy redakcyjne dostawczakiem.pl, [Wikipedia – opór aerodynamiczny](https://pl.wikipedia.org/wiki/Op%C3%B3r_aerodynamiczny), tec2000.pl*
+Przy planowaniu budżetu na podróż kamperem zakładaj spalanie 11–13 l/100 km dla Ducato i 12–14 l/100 km dla Sprintera. Do tego dochodzi zużycie gazu LPG na ogrzewanie (0,2–0,5 kg/h) i ewentualnie diesel na ogrzewanie Webasto/Eberspächer (0,1–0,3 l/h).

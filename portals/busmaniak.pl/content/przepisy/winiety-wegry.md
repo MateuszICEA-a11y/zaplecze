@@ -8,145 +8,136 @@ h1: "Winiety Wegry 2026 – ceny e-matrica, zakup online i system kontroli"
 image: "/images/winiety-wegry-hero.jpg"
 image_alt: "Wegierska autostrada z elektroniczna tablica informacyjna i bramka kontrolna"
 main_keyword: "winieta wegry"
-lead: "Wegierska e-matrica na 2026 rok kosztuje od 5550 HUF (ok. 65 zl) za jednodniowa do 61 760 HUF (ok. 720 zl) za roczna w kategorii D1. System jest w pelni elektroniczny – kupujesz winiete online, a kamery kontroluja tablice rejestracyjne. Busy powyzej 3,5 tony korzystaja z systemu HU-GO, w ktorym stawki wzrosly w 2026 roku lacznie o 35%."
+lead: "Węgierska e-matrica na 2026 rok kosztuje od 5550 HUF (ok. 65 zł) za jednodniową do 61 760 HUF (ok. 720 zł) za roczną w kategorii D1. System jest w pełni elektroniczny – kupujesz winietę online, a kamery kontrolują tablice rejestracyjne. Busy i inne pojazdy powyżej 3,5 tony korzystają z kilometrowego systemu opłat HU-GO."
 faq:
-  - question: "Ile kosztuje winieta na Wegry na 10 dni?"
-    answer: "Dziesieciodniowa e-matrica na Wegrzech kosztuje 6900 HUF (ok. 80 zl) w kategorii D1 (samochody osobowe) i 10 040 HUF (ok. 117 zl) w kategorii D2 (busy dostawcze, kampery) w 2026 roku."
-  - question: "Gdzie kupic wegierska e-winiete online?"
-    answer: "Oficjalnym portalem jest ematrica.nemzetiutdij.hu. Mozesz tez kupic winiete w aplikacji mobilnej NUSZ lub na wegierskich stacjach benzynowych."
-  - question: "Czy kamper powyzej 3,5 t potrzebuje e-matrica czy HU-GO?"
-    answer: "Od 1 stycznia 2026 roku kampery powyzej 3,5 t DMC kupuja e-matrice (winiete), a nie rejestruja sie w HU-GO. To zmiana w stosunku do lat ubieglych – ciezkie kampery wracaja do systemu winietowego."
-  - question: "Jaka kara grozi za brak e-matrica na Wegrzech?"
-    answer: "Brak waznej winiety skutkuje mandatem od 14 875 do 74 375 HUF (ok. 170-870 zl) w zaleznosci od kategorii pojazdu i czasu zwloki z zaplata."
+  - question: "Ile kosztuje winieta na Węgry na 10 dni?"
+    answer: "Dziesięciodniowa e-matrica na Węgrzech kosztuje 6900 HUF (ok. 80 zł) w kategorii D1 (samochody osobowe) i 10 040 HUF (ok. 117 zł) w kategorii D2 (busy dostawcze, kampery) w 2026 roku."
+  - question: "Gdzie kupić węgierską e-winietę online?"
+    answer: "Oficjalnym portalem jest ematrica.nemzetiutdij.hu. Możesz też kupić winietę w aplikacji mobilnej NUSZ lub na węgierskich stacjach benzynowych."
+  - question: "Czy kamper powyżej 3,5 t potrzebuje e-matrica czy HU-GO?"
+    answer: "Kamper o DMC powyżej 3,5 t bezwzględnie musi być zarejestrowany w systemie HU-GO i uiszczać opłaty za przejechane kilometry. Pojazdy o masie powyżej 3,5 t nie korzystają z systemu winiet e-matrica."
+  - question: "Jaka kara grozi za brak e-matrica na Węgrzech?"
+    answer: "Kierowca, który nie opłacił winiety, otrzymuje wezwanie do zapłaty opłaty dodatkowej. Dla kategorii D1/D2 wynosi ona 21 830 HUF (ok. 255 zł), jeśli zostanie uregulowana w ciągu 60 dni. Po tym terminie kwota wzrasta do 87 270 HUF (ok. 1015 zł)."
 ---
-## System e-matrica na Wegrzech – jak dziala
+## System e-matrica na Węgrzech – jak działa
 
-Wegry korzystaja z systemu elektronicznych winiet pod nazwa e-matrica od 2008 roku. Winieta jest przypisana do numeru rejestracyjnego pojazdu – nie trzeba nic przyklejac na szybie ani drukowac potwierdzenia. Kamery na autostradach i drogach ekspresowych automatycznie odczytuja tablice i sprawdzaja waznosc winiety w centralnej bazie danych.
+Węgry korzystają z systemu elektronicznych winiet pod nazwą e-matrica od 2008 roku. Winieta jest przypisana do numeru rejestracyjnego pojazdu – nie trzeba nic przyklejać na szybę ani drukować potwierdzenia. Kamery na autostradach i drogach ekspresowych automatycznie odczytują tablice i sprawdzają ważność winiety w centralnej bazie danych.
 
-System obsluguje Narodowa Spolka Oplat Drogowych (Nemzeti Utdijfizetesi Szolgaltato – NUSZ), ktora zarzadza zarowno e-matrica dla lekkich pojazdow, jak i systemem HU-GO dla ciezkich.
+System obsługuje Narodowa Spółka Opłat Drogowych (Nemzeti Útdíjfizetési Szolgáltató – NUSZ), która zarządza zarówno e-matrica dla lekkich pojazdów, jak i systemem HU-GO dla ciężkich.
 
-### Kategorie pojazdow
+### Kategorie pojazdów
 
-Wegierski system dzieli pojazdy na cztery kategorie:
+Węgierski system dzieli pojazdy na cztery podstawowe kategorie:
 
-- **D1M** – motocykle
-- **D1** – samochody osobowe do 7 miejsc i do 3,5 t DMC
-- **D2** – busy dostawcze, minivany powyzej 7 miejsc, kampery i przyczepy o DMC do 3,5 t
-- **U** – przyczepy pojazdow kategorii D2
+-   **D1M** – motocykle
+-   **D1** – samochody osobowe do 7 miejsc i do 3,5 t DMC
+-   **D2** – busy dostawcze, minivany powyżej 7 miejsc oraz kampery o DMC do 3,5 t
+-   **U** – przyczepy pojazdów kategorii D2
 
-Wiekszość busow dostawczych i kamperow do 3,5 t [DMC](/przepisy/dmc-co-to/) kwalifikuje sie do kategorii D2, ktora ma wyzsze ceny niz D1.
+Należy pamiętać, że jeśli bus posiada homologację ciężarową (kategoria N1 w dowodzie rejestracyjnym), automatycznie trafia do droższej kategorii D2, niezależnie od liczby miejsc. Ważna informacja dla podróżujących z przyczepą: samochód z kategorii D1 ciągnący przyczepę nie wymaga dodatkowej winiety. Winieta kategorii U jest obowiązkowa tylko dla przyczep ciągniętych przez pojazd z kategorii D2.
 
 ## Ceny e-matrica 2026 – aktualne stawki
 
-Od 1 stycznia 2026 roku obowiazuja nowe ceny skorygowane o wskaznik inflacji. Ponizej stawki dla dwoch najwazniejszych kategorii z perspektywy kierowcy busa.
+Od 1 stycznia 2026 roku obowiązują nowe ceny skorygowane o wskaźnik inflacji. Poniżej przedstawiamy stawki dla dwóch najważniejszych kategorii z perspektywy kierowcy busa lub kampera.
+
+Warto wiedzieć, że winieta jednodniowa jest ważna wyłącznie w dniu kalendarzowym jej obowiązywania, do godziny 23:59. Oznacza to, że kupując ją o godzinie 22:00, zyskujemy prawo do jazdy tylko przez dwie godziny, a nie na kolejne 24 godziny.
 
 ### Kategoria D1 – samochody osobowe
 
-| Okres waznosci | Cena 2026 (HUF) | Cena orientacyjna (PLN) |
+| Okres ważności | Cena 2026 (HUF) | Cena orientacyjna (PLN) |
 | :--- | :--- | :--- |
-| 1 dzien | 5 550 HUF | ok. 65 zl |
-| 10 dni | 6 900 HUF | ok. 80 zl |
-| 1 miesiac | 11 170 HUF | ok. 130 zl |
-| Roczna krajowa | 61 760 HUF | ok. 720 zl |
+| 1 dzień | 5 550 HUF | ok. 65 zł |
+| 10 dni | 6 900 HUF | ok. 80 zł |
+| 1 miesiąc | 11 170 HUF | ok. 130 zł |
+| Roczna krajowa | 61 760 HUF | ok. 720 zł |
 
 ### Kategoria D2 – busy, kampery, minivany
 
-| Okres waznosci | Cena 2026 (HUF) | Cena orientacyjna (PLN) |
+| Okres ważności | Cena 2026 (HUF) | Cena orientacyjna (PLN) |
 | :--- | :--- | :--- |
-| 1 dzien | 7 890 HUF | ok. 92 zl |
-| 10 dni | 10 040 HUF | ok. 117 zl |
-| 1 miesiac | 15 820 HUF | ok. 185 zl |
-| Roczna krajowa | 87 650 HUF | ok. 1020 zl |
+| 1 dzień | 7 890 HUF | ok. 92 zł |
+| 10 dni | 10 040 HUF | ok. 117 zł |
+| 1 miesiąc | 15 820 HUF | ok. 185 zł |
+| Roczna krajowa | 87 650 HUF | ok. 1020 zł |
 
-Nowosc 2026 roku to regionalna winieta roczna M1 za 7190 HUF (kategoria D1), obejmujaca wybrany region. Dla kierowcow tranzytowych bardziej oplacalna jest winieta dziesieciodniowa.
+Istnieje także możliwość zakupu winiety regionalnej (megyei matrica) za 7190 HUF (dla kat. D1). Obejmuje ona sieć dróg płatnych w obrębie jednego komitatu (odpowiednika województwa), co może być opłacalne dla osób poruszających się lokalnie.
 
-{{% info title="Kategoria D2 – sprawdz swoj pojazd" icon="warning" %}}
-Bus kamperowy, nawet jesli ma mniej niz 7 miejsc, moze trafic do kategorii D2 ze wzgledu na homologacje jako pojazd specjalny (kamper) lub przekroczenie masy wlasnej 2000 kg. Sprawdz dowod rejestracyjny – pole J.2 okresla typ nadwozia. Kupno winiety w zlej kategorii grozi mandatem.
+{{% info title="Kategoria D2 – sprawdź swój pojazd" icon="warning" %}}
+Twój bus, nawet jeśli ma mniej niż 7 miejsc, może wymagać winiety D2. Decyduje o tym homologacja – pojazdy zarejestrowane jako ciężarowe (kategoria N1 w dowodzie) lub specjalne (np. kamper) kwalifikują się do D2. Zawsze sprawdzaj pole J w dowodzie rejestracyjnym przed zakupem.
 {{% /info %}}
 
-## Jak kupic wegierska e-winiete
+## Jak kupić węgierską e-winietę
 
 ### Zakup online
 
-Oficjalnym portalem sprzedazy jest **ematrica.nemzetiutdij.hu** prowadzony przez NUSZ. Dostepne wersje jezykowe to wegierski, angielski, niemiecki, chorwacki, rumunski i slowacki.
+Oficjalnym portalem sprzedaży jest **ematrica.nemzetiutdij.hu** prowadzony przez NUSZ. Strona jest dostępna w kilku językach, w tym angielskim i niemieckim.
 
 Proces zakupu:
 
-1. Wybierz kategorie pojazdu (D1, D2)
-2. Wprowadz kraj rejestracji i numer tablicy
-3. Wybierz rodzaj winiety (krajowa, regionalna) i okres waznosci
-4. Ustaw date poczatku waznosci
-5. Zaplac karta (Visa, Mastercard) lub przelewem
-6. Potwierdzenie przychodzi na e-mail
+1.  Wybierz kategorię pojazdu (D1, D2).
+2.  Wprowadź kraj rejestracji i numer tablicy.
+3.  Wybierz rodzaj winiety (krajowa, regionalna) i okres ważności.
+4.  Ustaw datę początku ważności.
+5.  Zapłać kartą (Visa, Mastercard).
+6.  Potwierdzenie otrzymasz na adres e-mail.
 
-![Wegierska autostrada z bramka kontrolna](/images/winiety-wegry-hero.jpg)
-
-Winieta jest aktywna od wybranej daty. Mozna ja kupic z wyprzedzeniem – system pozwala ustawic poczatek waznosci na przyszla date.
+Winieta jest aktywna od wybranej daty. Można ją kupić z wyprzedzeniem – system pozwala ustawić początek ważności na przyszły termin.
 
 ### Zakup na stacji benzynowej
 
-Na Wegrzech e-matrice kupisz na wszystkich wiekszych stacjach benzynowych (MOL, Shell, OMV). Potrzebujesz numeru rejestracyjnego i kraju rejestracji. Mozna placic gotowka (HUF) lub karta.
+Na Węgrzech e-matricę kupisz na wszystkich większych stacjach benzynowych (MOL, Shell, OMV). Do zakupu potrzebujesz numeru rejestracyjnego i kraju rejestracji. Można płacić gotówką (forintami) lub kartą.
 
 ### Aplikacja mobilna
 
-NUSZ udostepnia aplikacje mobilna „Nemzeti Utdijfizetesi Mobilfizetes", przez ktora mozna kupic winiete z telefonu. Przydatna, jesli zapomniales o zakupie przed wjazdem na autostrade.
+NUSZ udostępnia aplikację mobilną „Nemzeti Útdíjfizetési Mobilfizetés", przez którą można kupić winietę za pomocą smartfona. To przydatna opcja, jeśli zapomniałeś o zakupie przed wjazdem na autostradę.
 
-## Busy powyzej 3,5 t – system HU-GO
+## Busy powyżej 3,5 t – system HU-GO
 
-Pojazdy ciezarowe o [DMC powyzej 3,5 tony](/przepisy/dmc-co-to/) korzystaja z systemu HU-GO. To system oparty na oplatach za przejechane kilometry, dzialajacy na autostradach, drogach ekspresowych i wybranych drogach krajowych.
+Pojazdy ciężarowe o [DMC powyżej 3,5 tony](/przepisy/dmc-co-to/) korzystają z systemu HU-GO. Jest to system oparty na opłatach za przejechane kilometry, działający na autostradach, drogach ekspresowych i wybranych drogach krajowych.
 
-### Wazna zmiana od 2026 roku
+### Ważna zmiana od 2026 roku
 
-Od 1 stycznia 2026 roku kampery o DMC powyzej 3,5 tony zostaly wylaczone z systemu HU-GO i przeniesione do systemu e-matrica (winiet). To istotna zmiana – ciezkie kampery kupuja teraz winiete zamiast placic za kilometry. Ciezarowki i autobusy nadal korzystaja z HU-GO.
+W przeciwieństwie do pojazdów lekkich, wszystkie pojazdy i zespoły pojazdów o DMC przekraczającej 3,5 tony podlegają elektronicznemu systemowi poboru opłat HU-GO. Dotyczy to również ciężkich kamperów. Nie ma dla nich wyjątku pozwalającego korzystać z ryczałtowego systemu winiet e-matrica.
 
 ### Stawki HU-GO w 2026 roku
 
-Stawki za przejazd w systemie HU-GO wzrosly dwuetapowo:
+Stawki w systemie HU-GO są regularnie waloryzowane. Od 1 stycznia 2026 roku wprowadzono podwyżkę o 4,3%, która odzwierciedla wskaźnik inflacji.
 
-- **Od 1 stycznia 2026** – podwyzka o 4,3% (indexacja inflacyjna)
-- **Od 1 marca 2026** – dodatkowa korekta, laczny wzrost o 35% wzgledem 2025 roku
-
-Kategorie pojazdow w HU-GO (J2–J5) zalezy od liczby osi, a stawka za kilometr rozni sie dodatkowo w zaleznosci od klasy emisji EURO i kategorii drogi. Od 1 lipca 2026 roku system obejmie nowe odcinki autostrad.
+Kategoria pojazdu (J2–J5) zależy od liczby osi, a finalna stawka za kilometr jest uzależniona również od klasy emisji spalin EURO i kategorii drogi.
 
 {{% expert name="Kowalczyk" %}}
-Przeniesienie ciezkich kamperow z HU-GO do systemu e-matrica to dobra wiadomosc dla wlascicieli duzych kamperow na bazie Ducato czy Sprintera z DMC powyzej 3,5 t. Zamiast montowac urzadzenie pokladowe i placic za kilometry, kupuja teraz zwykla e-winiete – czesto tansze rozwiazanie na dluzszych trasach. Sprawdz jednak, czy Twoj kamper ma poprawna homologacje – pojazd zarejestrowany jako ciezarowy nadal podlega HU-GO.
+Właściciele dużych kamperów, np. na bazie Ducato Maxi czy Sprintera, których DMC przekracza 3,5 tony, muszą pamiętać o obowiązku korzystania z systemu HU-GO. To zupełnie inne zasady niż w przypadku systemu winiet – wymagane jest urządzenie pokładowe (OBU) lub zakup biletu relacyjnego. Pomyłka i wjazd na płatną drogę bez aktywnej opłaty HU-GO prowadzi do wysokich kar.
 {{% /expert %}}
 
-## Drogi objetne winieta na Wegrzech
+## Drogi objęte winietą na Węgrzech
 
-E-matrica obejmuje autostrady (autopalya) oznaczone litera M i drogi ekspresowe (autoút) oznaczone litera M z dodatkiem. Lacznie to ponad 2000 km platnych drog.
+E-matrica obejmuje autostrady (autópálya) oznaczone literą M i drogi ekspresowe (autóút) oznaczone literą M. Łącznie to sieć ponad 2000 km płatnych dróg.
 
-### Najwazniejsze platne trasy
+### Najważniejsze płatne trasy
 
-- **M1** – Budapeszt–Gyor–granica austriacka (trasa do Wiednia)
-- **M3** – Budapeszt–Miskolc–granica slowacka
-- **M5** – Budapeszt–Szeged–granica serbska
-- **M7** – Budapeszt–Szekesfehervar–Balaton–granica chorwacka
-- **M15** – polaczenie z autostrada M1 w kierunku Bratyslawy
+-   **M1** – Budapeszt–Győr–granica austriacka (trasa do Wiednia)
+-   **M3** – Budapeszt–Miszkolc–granica słowacka
+-   **M5** – Budapeszt–Szeged–granica serbska
+-   **M7** – Budapeszt–Székesfehérvár–Balaton–granica chorwacka
+-   **M15** – połączenie z autostradą M1 w kierunku Bratysławy
 
-Jadac busem z Polski na [Slowacje](/przepisy/winiety-slowacja/) i dalej na Wegry, potrzebujesz dwoch winiet. Na trasie Krakow–Budapeszt przez Banska Bystrice i Esztergom mozesz czesc drogi przejechac drogami krajowymi bez winiety, ale autostrady M1 i M3 wymagaja e-matrica.
+Jadąc busem z Polski na [Słowację](/przepisy/winiety-slowacja/) i dalej na Węgry, często potrzebujesz dwóch winiet. Na trasie Kraków–Budapeszt przez Bańską Bystrzycę i Ostrzyhom część drogi można przejechać drogami krajowymi bez opłat, ale główne autostrady M1 i M3 wymagają e-matrica.
 
-## Kary za brak winiety na Wegrzech
+## Kary za brak winiety na Węgrzech
 
-System kontroli oparty jest na kamerach ANPR rozmieszczonych na portalach autostradowych i przy wjazdach na drogi ekspresowe. Mobilne patrole policji rowniez kontroluja winiety.
+System kontroli oparty jest na kamerach ANPR rozmieszczonych na portalach autostradowych i przy wjazdach na drogi ekspresowe. Mobilne patrole policji również kontrolują winiety. Kontrola odbywa się automatycznie – jeśli system nie znajdzie ważnej winiety przypisanej do numeru rejestracyjnego, generowana jest opłata dodatkowa.
 
-### Wysokosc mandatow
+**Okres karencji – 60 minut na zakup.** Jeśli nieumyślnie wjechałeś na płatny odcinek bez e-winiety, węgierskie prawo przewiduje 60-minutowy okres karencji. Masz dokładnie godzinę od momentu zarejestrowania pojazdu przez kamery na zakup winiety online lub w punkcie sprzedaży. Taki zakup dokonany w ciągu 60 minut anuluje ryzyko nałożenia kary.
 
-Kara za brak waznej e-matrica wynosi:
+### Wysokość mandatów
 
-- **Kategoria D1** – 14 875 HUF (ok. 170 zl) przy zaplacie w ciagu 60 dni, potem kwota rosnie
-- **Kategoria D2** – 14 875 HUF (ok. 170 zl) przy szybkiej zaplacie
-- **Przy odmowie lub zwloce** – do 74 375 HUF (ok. 870 zl)
+Wysokość podstawowej opłaty dodatkowej (mandatu) dla kategorii D1 i D2 wynosi **21 830 HUF** (ok. 255 zł), pod warunkiem jej uiszczenia w terminie 60 dni. Po upływie tego terminu kwota wzrasta do **87 270 HUF** (ok. 1015 zł).
 
-### Dodatkowe mandat za DMC
+Kupno winiety w złej kategorii (np. D1 zamiast wymaganej D2) jest traktowane jak jazda bez winiety i skutkuje nałożeniem takiej samej opłaty dodatkowej.
 
-Na Wegrzech kontrolowana jest rowniez zgodnosc kategorii winiety z rzeczywistym pojazdem. Jesli Twoj bus powinien miec winiete D2, a kupiles D1, traktowane jest to jak jazda bez winiety.
+## Źródła
 
-Kontrola wagi na Wegrzech jest rowniez rygorystyczna – przekroczenie [DMC](/przepisy/dmc-co-to/) na dynamicznych wagach autostradowych skutkuje mandatem i zakazem dalszej jazdy do rozladunku.
-
-## Zrodla
-
-- [Autopalya-matrica – Wikipedia](https://hu.wikipedia.org/wiki/Aut%C3%B3p%C3%A1lya-matrica)
-- ematrica.nemzetiutdij.hu – oficjalny portal sprzedazy e-winiet
-- hu-go.hu – system oplat dla pojazdow powyzej 3,5 t
-- Nemzeti Utdijfizetesi Szolgaltato (NUSZ) – informacje o zmianach stawek 2026
+-   [Autópálya-matrica – Wikipedia](https://hu.wikipedia.org/wiki/Aut%C3%B3p%C3%A1lya-matrica)
+-   ematrica.nemzetiutdij.hu – oficjalny portal sprzedaży e-winiet
+-   hu-go.hu – system opłat dla pojazdów powyżej 3,5 t
+-   Nemzeti Útdíjfizetési Szolgáltató (NUSZ) – informacje o zmianach stawek 2026
