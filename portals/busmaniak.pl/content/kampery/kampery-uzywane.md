@@ -8,14 +8,14 @@ h1: "Kampery używane – kompletny poradnik zakupu"
 main_keyword: "kampery używane"
 image: "/images/kampery-uzywane-hero.jpg"
 image_alt: "Używany kamper profilowany na parkingu podczas oględzin przed zakupem"
-lead: "Rynek używanych kamperów w Polsce rośnie z roku na rok – w 2024 zarejestrowano ponad 2000 nowych kamperów, a większość kupujących i tak wybiera rynek wtórny. Zanim podpiszesz umowę, musisz wiedzieć, gdzie szukać, co sprawdzić i ile realnie zapłacisz za kampera z drugiej ręki."
+lead: "Rynek kamperów w Polsce dynamicznie rośnie, ale to rynek wtórny gra pierwsze skrzypce. Zanim jednak podpiszesz umowę na wymarzone cztery kółka, musisz wiedzieć, gdzie szukać używanych kamperów, co sprawdzić i ile realnie zapłacisz."
 faq:
   - question: "Ile kosztuje używany kamper w Polsce?"
-    answer: "Najtańsze kampery (15-20 lat) kosztują 30 000-80 000 zł. Zadbane 10-15-letnie egzemplarze to wydatek 80 000-150 000 zł. Kampery 5-10 lat kosztują 150 000-250 000 zł, a 2-5-letnie zaczynają się od 200 000 zł."
+    answer: "Najtańsze kampery (15-20 lat) kosztują 80 000-150 000 zł. Zadbane 10-15-letnie egzemplarze to wydatek 80 000-150 000 zł. Kampery 5-10 lat kosztują 150 000-250 000 zł, a 2-5-letnie zaczynają się od 200 000 zł."
   - question: "Czy warto importować kampera z Niemiec?"
     answer: "Import z Niemiec daje oszczędność 15-30% wobec cen w Polsce. Trzeba jednak doliczyć akcyzę (3,1-18,6% wartości), badanie techniczne, tłumaczenia dokumentów i rejestrację – łącznie 10 000-25 000 zł dodatkowych kosztów."
   - question: "Jaki przebieg kampera jest akceptowalny?"
-    answer: "Kampery jeżdżą średnio 15-20 tys. km rocznie (dostawczaki 40-60 tys.). Przebieg do 100 tys. km to idealny stan, 150-250 tys. km jest akceptowalny po weryfikacji serwisowej, powyżej 300 tys. km rośnie ryzyko kosztownych awarii."
+    answer: "Prywatne kampery przejeżdżają średnio 5-10 tys. km rocznie. Przebiegi rzędu 15-30 tys. km rocznie to znak charakterystyczny dla ex-rentali (aut wycofanych z wypożyczalni). Przebieg do 100 tys. km to idealny stan, 150-250 tys. km jest akceptowalny po weryfikacji serwisowej, powyżej 300 tys. km rośnie ryzyko kosztownych awarii."
   - question: "Co sprawdzić przy oględzinach używanego kampera?"
     answer: "Przede wszystkim wilgoć (wilgotnościomierz w narożnikach, pod materacami, wokół okien), korozję podwozia, stan instalacji gazowej, elektrycznej i wodnej oraz szczelność dachu i okien. Koszt profesjonalnej inspekcji to 500-1500 zł."
   - question: "Czy importowany kamper wymaga homologacji?"
@@ -28,15 +28,15 @@ Wybór platformy wpływa na cenę, bezpieczeństwo transakcji i jakość ofert. 
 
 ### Otomoto i OLX
 
-Na Otomoto znajdziesz największą bazę ogłoszeń z rozbudowanymi filtrami (marka, rocznik, typ zabudowy, przebieg). Portal wymaga weryfikacji sprzedawców, co zmniejsza ryzyko oszustw. OLX działa na zasadzie tablicy ogłoszeń – więcej ofert od osób prywatnych, często w niższych cenach, ale bez weryfikacji stanu technicznego. Obie platformy to punkt wyjścia, nie cel sam w sobie – [kampery na sprzedaż](/kampery/kampery-na-sprzedaz/) znajdziesz także u dealerów.
+Otomoto to największa baza ofert **używanych kamperów** z precyzyjnymi filtrami, co ułatwia selekcję. Weryfikacja sprzedawcy daje tu minimum bezpieczeństwa. OLX to bardziej lokalna tablica ogłoszeń – znajdziesz tam okazje od osób prywatnych, ale wiąże się to z większym ryzykiem. Pamiętaj, obie platformy to tylko punkt startowy, bo ciekawe [kampery na sprzedaż](/kampery/kampery-na-sprzedaz/) oferują też dealerzy.
 
 ### Dealerzy kamperów
 
-Autoryzowani dealerzy (np. Elcamp, Caravaning Mikołajczyk, ACK Kampery) oferują pojazdy po przeglądzie technicznym, często z gwarancją na 6-12 miesięcy. Ceny wyższe o 10-20% niż od prywatnych sprzedawców, ale dostajesz historię serwisową i pewność prawną. Część dealerów oferuje odkup starego kampera w rozliczeniu.
+Zakup u dealera (np. Elcamp, Caravaning Mikołajczyk, ACK Kampery) to opcja dla tych, którzy cenią sobie spokój. Pojazdy są zazwyczaj po przeglądzie, często z 6- lub 12-miesięczną gwarancją. Zapłacisz **10–20%** więcej niż u osoby prywatnej, ale w zamian dostajesz pełną historię serwisową i bezpieczeństwo transakcji. Bonus: wielu dealerów przyjmuje starszy pojazd w rozliczeniu.
 
 ### Import z Niemiec, Francji i Włoch
 
-Niemcy to największy rynek kamperów w Europie – ofert jest kilkakrotnie więcej niż w Polsce, a ceny niższe o 15-30% przed doliczeniem kosztów importu. Kampery z Francji i Włoch mają dodatkową zaletę: łagodniejszy klimat oznacza mniej korozji podwozia. Transport z Niemiec kosztuje 2000-4000 zł, z Włoch czy Francji – 3000-6000 zł.
+Niemiecki rynek **używanych kamperów** jest gigantyczny – ofert jest wielokrotnie więcej, a ceny przed importem bywają niższe o **15–30%**. Szukając we Francji lub Włoszech, zyskujesz dodatkowy atut: łagodniejszy klimat to mniejsze ryzyko skorodowanego podwozia. Większość kamperów przekracza standardowe gabaryty, dlatego transport na lawecie niskopodwoziowej z Niemiec to realny koszt **4000–7000 zł**. Tańszą alternatywą może być powrót na kołach, wykorzystując niemieckie tablice wywozowe.
 
 ## Na co uważać – typowe pułapki
 
@@ -44,70 +44,78 @@ Największe koszty po zakupie wynikają nie z mechaniki, lecz z zabudowy kampero
 
 ### Wilgoć i nieszczelności
 
-Wilgoć to wróg numer jeden zabudowy kamperowej. Sprawdzaj wilgotnościomierzem narożniki szafek, przestrzeń pod materacami i obwódki okien – norma to poniżej 20%. Objawy wilgoci: odbarwienia, miękkie drewno, zapach stęchlizny, puchnące płyty. Szczególnie narażone są kampery typu alkowa (uszczelka między alkową a dachem) i [półzintegrowane](/kampery/samochody-kempingowe/) (krawędź kabiny kierowcy).
+Wilgoć to wróg numer jeden każdego kampera. Uzbrój się w wilgotnościomierz i sprawdzaj narożniki, szafki, przestrzeń pod materacami i wokół okien – odczyt powyżej 20% to czerwona flaga. Szukaj też wizualnych śladów: zapachu stęchlizny, odbarwień czy spuchniętych płyt meblowych. W alkowach newralgicznym punktem jest łączenie z dachem, a w [półzintegrowanych](/kampery/samochody-kempingowe/) – połączenie kabiny z zabudową.
+
+Bądź czujny na próby maskowania problemu. Jeśli w kamperze unosi się intensywny, chemiczny zapach ozonu lub wyjątkowo mocnej „choinki waniliowej”, to sygnał alarmowy. Nieuczciwi sprzedawcy często próbują w ten sposób zabić odór stęchlizny, który wydobywa się ze zgniłej, drewnianej konstrukcji ścian, zwłaszcza w upalne dni.
 
 ### Korozja podwozia i ramy
 
-W kamperach na bazie Fiata Ducato czy Mercedesa Sprintera po 15 latach bez konserwacji korozja podwozia to standard. Sprawdź śruby mocujące zabudowę, progi, ranty drzwi i zbiorniki. Rdza głębsza niż 2 mm w elementach nośnych dyskwalifikuje pojazd.
+W kilkunastoletnich kamperach na bazie Ducato czy Sprintera bez regularnej konserwacji rdza jest pewniakiem. Połóż się pod auto i dokładnie obejrzyj podłużnice, progi, mocowania zabudowy do ramy oraz okolice zbiorników. Perforacja lub rdza wgłębna na elementach nośnych to argument do natychmiastowego zakończenia oględzin.
 
 ### Instalacja gazowa, elektryczna i wodna
 
-Trzy instalacje, trzy źródła potencjalnych problemów:
+Trzy instalacje to trzy potencjalne pola minowe, które musisz sprawdzić przed zakupem.
 
-- **Instalacja gazowa** – reduktory i przewody mają żywotność ok. 10 lat. Sprawdzenie nieszczelności mydlaną wodą to minimum; pełny przegląd UDT kosztuje 300-500 zł
-- **Instalacja elektryczna** – testuj akumulator rozruchowy i bytowy (pojemność powyżej 80%), panel sterowania, gniazda 230V i 12V. Po 10 latach luźne styki są normą
-- **Instalacja wodna** – zbiorniki (czystość, pęknięcia), pompa (ciśnienie 2-3 bar), podgrzewacz. Przeciekająca instalacja wodna szybko prowadzi do wilgoci w ścianach
+- **Gazowa:** Reduktory i przewody gazowe mają 10-letni okres ważności. Profesjonalny przegląd szczelności w serwisie karawaningowym kosztuje **300–500 zł** – nie oszczędzaj na tym.
+- **Elektryczna:** Zweryfikuj kondycję obu akumulatorów, działanie panelu sterowania oraz wszystkich gniazd 12V i 230V. Po latach luźne styki czy zaśniedziałe połączenia to norma.
+- **Wodna:** Sprawdź czystość zbiorników, działanie pompy wody i bojlera. Każdy, nawet drobny wyciek, to prosta droga do zgnitej podłogi i ścian.
 
 {{% expert name="Kowalczyk" %}}
 Zanim pojedziesz oglądać kampera, poproś sprzedawcę o zdjęcia spodu pojazdu i wnętrza schowków. 90% poważnych problemów – korozja, wilgoć, ślady napraw po zalaniu – widać już na fotografiach. Jeśli sprzedawca odmawia, to sygnał ostrzegawczy.
 {{% /expert %}}
 
+Kolejną pułapką jest dopuszczalna masa całkowita. Starsze kampery z DMC 3,5 t mają znikomą ładowność, a po doposażeniu w markizę (30 kg), klimatyzację (35 kg) i solary, ich masa na pusto zbliża się do 3300 kg. Wystarczy czteroosobowa załoga i 100 litrów wody, by przekroczyć limit, co w Austrii grozi mandatem do 5000 EUR. Przed zakupem obowiązkowo wjedź na wagę – koszt 20–50 zł może oszczędzić Ci poważnych problemów.
+
 ## Przegląd techniczny kampera – co sprawdzić
 
-Przegląd kampera to dwa etapy: mechanika bazy (silnik, podwozie, hamulce) oraz zabudowa kempingowa (instalacje, meble, uszczelnienia). Profesjonalna inspekcja u specjalisty od kamperów kosztuje 500-1500 zł i zwraca się wielokrotnie.
+Solidny przegląd **używanego kampera** dzieli się na dwie części: mechanikę pojazdu bazowego i ocenę części mieszkalnej. Zlecenie inspekcji firmie specjalizującej się w kamperach to koszt **500–1500 zł**, ale to najlepiej wydane pieniądze w całym procesie zakupowym.
 
 ### Mechanika bazy
 
-Silnik i układ napędowy sprawdzasz jak w każdym dostawczaku – olej (wymiana co 15-20 tys. km), filtr paliwa, tarcze hamulcowe (grubość powyżej 8 mm), stan opon (bieżnik powyżej 3 mm, wiek poniżej 6 lat). Kampery na bazie [Ducato](/modele/fiat-ducato/) z silnikiem 2.3 MultiJet po 400 tys. km mogą wymagać regeneracji turbosprężarki (3000-5000 zł).
+Mechanikę sprawdzasz jak w typowym busie. Zwróć uwagę na historię wymiany oleju (max co 20 tys. km), stan opon (wiek do 6 lat, bieżnik min. 3 mm) i grubość okładzin klocków hamulcowych. W popularnych [Ducato](/modele/fiat-ducato/) z silnikami 2.3 MultiJet przy wyższych przebiegach (powyżej 250–300 tys. km) rośnie ryzyko awarii turbosprężarki. Jej wymiana na nową to koszt **3000–5000 zł**, a regeneracja **1000–2000 zł**.
+
+Warto uważać na konkretne jednostki napędowe. Unikaj silników 2.2 „Puma” w Fiatach Ducato i Peugeotach Boxerach z lat 2006–2011, które słyną z pękających tłoków. Podobne problemy z wypalaniem dziur w tłokach przez wadliwe wtryskiwacze trapią Fordy Transity Mk7 (2.2 TDCi). Bezpiecznym i „kuloodpornym” wyborem są silniki Fiata/Iveco – 2.3 JTD oraz 3.0 JTD. Pamiętaj też, że w modelach na bazie Ducato (X250/X290 od 2006 r.) notorycznie łuszczy się biały lakier z podszybia.
 
 ### Zabudowa i wyposażenie
 
-Sprawdź szczelność dachu i okien – najlepiej testem deszczowym. Otwórz wszystkie szafki, podnieś materace, zajrzyj za lodówkę. Testuj ogrzewanie (Truma lub Webasto powinno nagrzać wnętrze do 20°C w 30 minut), bojler wodny i kuchenkę gazową. Sprawdź zawiasy mebli – po 15 latach luzy są normą, ale wymiana całej zabudowy to koszt 8000-15 000 zł.
+Szczelność dachu i okien najlepiej zweryfikować polewając kampera wodą z węża ogrodowego. Otwórz każdą szafkę, podnieś materace i zajrzyj w najdalsze zakamarki. Koniecznie uruchom ogrzewanie (Truma, Webasto), bojler i kuchenkę. Zwróć uwagę na działanie zawiasów w meblach – luzy to standard, ale kompleksowa naprawa uszkodzonych elementów zabudowy może pochłonąć **8000–15 000 zł**.
 
 ![Używany kamper profilowany na parkingu podczas oględzin przed zakupem](/images/kampery-uzywane-hero.jpg)
 
 ## Przebiegi kamperów i ich znaczenie
 
-Kampery jeżdżą znacznie mniej niż busy dostawcze – średnio 15-20 tys. km rocznie wobec 40-60 tys. km w transporcie. Dlatego przebieg kampera oceniasz inaczej niż dostawczaka.
+Kampery jeżdżą znacznie mniej niż busy dostawcze – średnio **15–20 tys. km** rocznie wobec **40–60 tys. km** w transporcie. Dlatego przebieg kampera oceniasz inaczej niż dostawczaka.
 
 ### Ile to dużo w kamperze
 
+Orientacyjne przebiegi w kamperach można ocenić według poniższej skali, ale pamiętaj, że historia serwisowa jest ważniejsza niż same cyfry na liczniku.
+
 | Przebieg | Ocena | Uwagi |
 |----------|-------|-------|
-| do 100 tys. km | Idealny | Typowy dla 5-8-letniego kampera weekendowego |
-| 100-200 tys. km | Dobry | Sprawdź książkę serwisową, stan rozrządu |
-| 200-300 tys. km | Akceptowalny | Wymagaj pełnej dokumentacji, licz się z wymianą turbo i sprzęgła |
+| do 100 tys. km | Idealny | Typowy dla 5–8-letniego kampera weekendowego |
+| 100–200 tys. km | Dobry | Sprawdź książkę serwisową, stan rozrządu |
+| 200–300 tys. km | Akceptowalny | Wymagaj pełnej dokumentacji, licz się z wymianą turbo i sprzęgła |
 | powyżej 300 tys. km | Ryzykowny | Tylko przy udokumentowanym serwisie i niskiej cenie |
 
 ### Przebieg vs wiek zabudowy
 
-Niska liczba kilometrów nie oznacza dobrego stanu zabudowy. Kamper z przebiegiem 60 tys. km, który stał 15 lat na podwórku bez zadaszenia, będzie miał gorszą zabudowę niż regularnie używany egzemplarz ze 150 tys. km garażowany zimą. Wilgoć, promienie UV i cykle zamarzania niszczą uszczelnienia niezależnie od przebiegu.
+Niski przebieg nie gwarantuje dobrego stanu. Kamper, który przez 15 lat stał pod chmurką, mimo 60 tys. km na liczniku może być w gorszym stanie niż regularnie serwisowany i garażowany egzemplarz z przebiegiem 150 tys. km. Dla żywotności zabudowy kluczowe są warunki przechowywania, a nie przejechane kilometry.
 
 ## Ceny używanych kamperów per rocznik i typ
 
-Ceny zależą od trzech zmiennych: typu zabudowy, rocznika i stanu technicznego. Poniższa tabela pokazuje realne widełki cenowe na polskim rynku wtórnym w 2026 roku.
+Ceny **używanych kamperów** zależą głównie od typu zabudowy, rocznika i stanu technicznego. Poniższa tabela prezentuje orientacyjne widełki cenowe na polskim rynku wtórnym.
 
-| Typ kampera | 15-20 lat | 10-15 lat | 5-10 lat | 2-5 lat |
+| Typ kampera | 15–20 lat | 10–15 lat | 5–10 lat | 2–5 lat |
 |-------------|-----------|-----------|----------|---------|
-| Kampervan | 25 000-60 000 zł | 60 000-120 000 zł | 120 000-220 000 zł | 220 000-350 000 zł |
-| Profilowany | 40 000-80 000 zł | 80 000-150 000 zł | 150 000-280 000 zł | 280 000-400 000 zł |
-| Alkowa | 30 000-70 000 zł | 70 000-140 000 zł | 140 000-250 000 zł | 250 000-380 000 zł |
-| Integrał | 50 000-100 000 zł | 100 000-200 000 zł | 200 000-350 000 zł | 350 000-500 000+ zł |
+| Kampervan | 25 000–60 000 zł | 60 000–120 000 zł | 120 000–220 000 zł | 220 000–350 000 zł |
+| Profilowany | 80 000–150 000 zł | 80 000–150 000 zł | 150 000–280 000 zł | 280 000–400 000 zł |
+| Alkowa | 80 000–150 000 zł | 70 000–140 000 zł | 140 000-250 000 zł | 250 000–380 000 zł |
+| Integrał | 120 000–180 000 zł | 100 000–200 000 zł | 200 000–350 000 zł | 350 000–500 000+ zł |
 
 Alkowy są tańsze od profilowanych mimo większej przestrzeni – popyt na nie spada ze względu na wyższy profil aerodynamiczny i większe spalanie. [Tanie kampery](/kampery/tanie-kampery/) w segmencie do 50 000 zł to najczęściej alkowce i kampervany po 15 latach eksploatacji.
 
 {{% info title="Największy spadek wartości" icon="engineering" %}}
-Kamper traci najwięcej w pierwszych 3-5 latach – nawet 40-50% ceny katalogowej. Zakup 5-8-letniego egzemplarza z udokumentowanym serwisem to ekonomicznie najlepszy moment. Główny spadek wartości ma już za sobą, a zabudowa jest jeszcze w dobrym stanie.
+Kampery trzymają cenę znacznie lepiej niż samochody osobowe. Największy spadek wartości notują w pierwszych 3–5 latach, tracąc około **15–25%** ceny katalogowej. Dlatego zakup sprawdzonego, 5–8-letniego egzemplarza to często najrozsądniejszy wybór pod względem finansowym.
 {{% /info %}}
 
 ## Import vs Polska – różnice w stanie i cenie
@@ -116,26 +124,26 @@ Import kampera z Europy Zachodniej to popularna strategia oszczędnościowa, ale
 
 ### Różnice cenowe per kraj
 
-Kampery z Niemiec kosztują 15-30% mniej niż analogiczne oferty w Polsce. Włoskie egzemplarze (marki Rimor, Laika, Roller Team) bywają tańsze o 10-20%, a ich stan nadwozia jest często lepszy dzięki cieplejszemu klimatowi. Francuskie kampery (Chausson, Pilote, Rapido) to średnia półka cenowa z dobrą jakością wykończenia.
+Na niemieckim rynku ceny bywają niższe o **15–30%** w porównaniu do Polski. Z kolei we Włoszech (królestwie marek Rimor, Laika, Roller Team) oszczędności sięgają **10–20%**, a cieplejszy klimat sprzyja lepszemu stanowi blacharki. Francuskie marki (Chausson, Pilote) plasują się pośrodku, oferując solidny stosunek jakości do ceny.
 
 ### Ukryte koszty importu
 
-Do ceny zakupu dolicz: transport (2000-6000 zł zależnie od odległości), akcyzę (3,1-18,6% wartości – [stawka zależy od pojemności silnika i normy emisji](https://pl.wikipedia.org/wiki/Homologacja)), badanie techniczne (200-500 zł), tłumaczenie przysięgłe dokumentów (300-600 zł) oraz opłatę rejestracyjną (200-400 zł). Łącznie 10 000-25 000 zł dodatkowych wydatków.
+Do ceny zakupu musisz doliczyć cały pakiet kosztów dodatkowych. Na liście jest transport (**4000–7000 zł**), [podatek akcyzowy](https://pl.wikipedia.org/wiki/Podatek_akcyzowy_(Polska)) (**3,1%** lub **18,6%** wartości, w zależności od pojemności silnika), badanie techniczne, tłumaczenia i opłaty rejestracyjne. W sumie import uszczupli Twój portfel o dodatkowe **10 000–25 000 zł**.
 
 ### Stan techniczny – na co zwrócić uwagę przy imporcie
 
-Kampery z Niemiec mają zwykle dobrą dokumentację serwisową i niskie przebiegi, ale starsze egzemplarze mogą mieć korozję podwozia (niemieckie zimy są równie surowe jak polskie). Pojazdy z Włoch i południa Francji to odwrotność – mniej rdzy, ale luźniejsze podejście do dokumentacji. Przed zakupem za granicą sprawdź historię pojazdu w lokalnym rejestrze (np. niemiecki HU/AU).
+Niemieckie kampery często kuszą pełną dokumentacją serwisową (TÜV, książka serwisowa), ale uważaj na korozję w starszych modelach – tamtejsze zimy nie oszczędzają podwozi. Z kolei we Włoszech czy Hiszpanii rdza jest mniejszym problemem, ale dokumentacja bywa niekompletna. Niezależnie od kraju, zawsze próbuj zweryfikować historię pojazdu w lokalnych bazach danych.
 
 ## Homologacja importowanego kampera
 
-Procedura rejestracji zależy od tego, skąd pochodzi pojazd i czy ma fabryczną zabudowę kamperową.
+Procedura rejestracji zależy od tego, skąd pochodzi pojazd i czy ma fabryczną zabudowę kamperową. Pamiętaj też, że od lipca 2022 roku obowiązują zaostrzone przepisy akcyzowe. Każda zmiana przeznaczenia pojazdu, np. rejestracja furgonu jako kamper, rodzi obowiązek zapłaty akcyzy według stawek jak przy imporcie.
 
 ### Kamper z UE z certyfikatem CoC
 
-Najprostszy scenariusz – pojazd z ważnym dowodem rejestracyjnym i certyfikatem zgodności (CoC) z kraju UE. Potrzebujesz: tłumaczenia przysięgłego dokumentów, badania technicznego na polskiej stacji diagnostycznej i wizyty w wydziale komunikacji. Czas: 2-4 tygodnie, koszt: 500-1000 zł (bez akcyzy). Jeśli planujesz [budowę kampera od podstaw](/przerobki/budowa-kampera-krok-po-kroku/), potrzebujesz jednak pełnej homologacji indywidualnej.
+Najprostszy scenariusz to import fabrycznego kampera z kraju UE z kompletem dokumentów, w tym certyfikatem zgodności (CoC). Procedura sprowadza się do tłumaczeń, badania technicznego w Polsce i wizyty w wydziale komunikacji – całość zajmuje 2–4 tygodnie i kosztuje **500–1000 zł** (bez akcyzy). Zupełnie inaczej wygląda sytuacja, gdy planujesz samodzielną [budowę kampera od podstaw](/przerobki/budowa-kampera-krok-po-kroku/), co wymaga homologacji indywidualnej.
 
 ### Przerobiony bus bez homologacji kamperowej
 
-Jeśli kupujesz busa z zabudową kamperową, ale w dokumentach figuruje jako "furgon" lub "osobowy" – czeka Cię [zmiana kwalifikacji pojazdu](/przepisy/homologacja/). Wymaga to: ekspertyzy rzeczoznawcy (800-1500 zł), spełnienia wymagań technicznych (instalacja gazowa z certyfikatem, okna, wentylacja, miejsce do spania i gotowania) oraz badania w okręgowej stacji kontroli pojazdów. Cały proces trwa 1-3 miesiące i kosztuje 3000-6000 zł.
+Kupno busa przerobionego na kampera, ale zarejestrowanego jako furgon, oznacza konieczność [zmiany kwalifikacji pojazdu](/przepisy/homologacja/). Proces wymaga opinii rzeczoznawcy, a pojazd musi spełniać określone warunki, m.in. mieć stałe miejsce do spania, gotowania, okna i wentylację. Po badaniu technicznym w OSKP i złożeniu deklaracji AKC-U/S w Urzędzie Skarbowym, auto zostanie zarejestrowane jako „specjalny kempingowy”. Do kosztów operacyjnych (3000–6000 zł) należy doliczyć akcyzę, której stawka wynosi 3,1% (<2000 cm³) lub 18,6% (>2000 cm³) wartości rynkowej pojazdu.
 
-*Źródła: Wikipedia – [Samochód kempingowy](https://pl.wikipedia.org/wiki/Samoch%C3%B3d_kempingowy), Otomoto.pl, truck1-pl.com, raporty ADAC 2024-2025*
+*Źródła: Wikipedia, Otomoto.pl, truck1-pl.com, raporty ADAC*

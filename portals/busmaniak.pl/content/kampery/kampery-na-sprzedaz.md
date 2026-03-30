@@ -8,108 +8,129 @@ h1: "Kampery na sprzedaż – kompletny przewodnik po źródłach"
 image: "/images/kampery-na-sprzedaz-hero.jpg"
 image_alt: "Kampery na sprzedaż – rząd camper vanów w salonie dealerskim"
 main_keyword: "kampery na sprzedaż"
-lead: "Rynek kamperów w Polsce dynamicznie rośnie – w 2025 roku zarejestrowano ponad 4500 nowych pojazdów kempingowych, a oferta na portalach ogłoszeniowych przekracza 3000 aktywnych ogłoszeń. Kupić kampera można na OLX, Otomoto, u autoryzowanego dealera, na targach lub importując z Niemiec, Włoch czy Francji – każde źródło ma swoje zalety i pułapki."
+lead: "Rynek kamperów w Polsce dynamicznie się rozwija, a liczba ofert na portalach ogłoszeniowych idzie w tysiące. Nowe i używane **kampery na sprzedaż** znajdziesz na OLX i Otomoto, u autoryzowanych dealerów, na targach branżowych lub sprowadzając je z Niemiec czy Włoch. Każde z tych źródeł ma jednak swoje plusy, minusy i pułapki, na które warto uważać."
 faq:
   - question: "Gdzie najtaniej kupić kampera w Polsce?"
-    answer: "Najtańsze oferty znajdziesz na OLX i w grupach na Facebooku (sprzedaż prywatna). Import z Niemiec bywa tańszy o 15–30%, ale po doliczeniu akcyzy, transportu i formalności oszczędność maleje do 5–15%."
+    answer: "Najtańsze oferty pochodzą zwykle od sprzedawców prywatnych na OLX czy w grupach na Facebooku. Import z Niemiec może wydawać się atrakcyjny cenowo, ale po doliczeniu wysokiej akcyzy (**18,6%** dla większości silników), transportu i formalności, rzeczywista oszczędność bywa niewielka."
   - question: "Kiedy jest najlepszy czas na zakup kampera?"
-    answer: "Ceny kamperów są najniższe od listopada do lutego – spadek o 10–15% względem szczytu wiosennego. Warto też szukać okazji po targach kamperowych (październik/listopad), gdy dealerzy wyprzedają modele ekspozycyjne."
+    answer: "Ceny kamperów są najniższe od listopada do lutego – spadek o **10–15%** względem szczytu wiosennego. Warto też szukać okazji po targach kamperowych (październik/listopad), gdy dealerzy wyprzedają modele ekspozycyjne."
   - question: "Czy warto kupić kampera na targach?"
-    answer: "Tak – na Caravans Salon w Poznaniu dealerzy oferują rabaty 5–15% na modele z ekspozycji oraz pakiety wyposażenia w cenie. Można też obejrzeć dziesiątki modeli w jednym miejscu, co ułatwia porównanie."
+    answer: "Tak – na Caravans Salon w Poznaniu czy Camper Caravan Show w Nadarzynie dealerzy oferują rabaty **5–15%** na modele z ekspozycji oraz pakiety wyposażenia w cenie. Można też obejrzeć dziesiątki modeli w jednym miejscu, co ułatwia porównanie."
   - question: "Jak sprawdzić kampera przed zakupem online?"
-    answer: "Poproś sprzedawcę o zdjęcia spodu pojazdu, instalacji gazowej i wodnej. Sprawdź numer VIN w bazie CEPiK. Przed zakupem zawsze obejrzyj kampera osobiście z wilgotnościomierzem."
+    answer: "Poproś sprzedawcę o zdjęcia spodu pojazdu, instalacji gazowej i wodnej oraz dowodu rejestracyjnego w celu weryfikacji DMC. Sprawdź numer VIN w bazie CEPiK. Przed zakupem zawsze obejrzyj kampera osobiście z wilgotnościomierzem."
 ---
 
 ## Portale ogłoszeniowe – największy wybór
 
+Największy rynek i pierwszy kierunek poszukiwań to oczywiście internet. Portale ogłoszeniowe, specjalistyczne giełdy i grupy społecznościowe oferują tysiące pojazdów, ale wymagają od kupującego dużej czujności.
+
 ### OLX, Otomoto i Facebook
 
-Portale ogłoszeniowe to pierwsze miejsce, w którym większość kupujących zaczyna poszukiwania. Każda platforma ma swoją specyfikę:
+Portale ogłoszeniowe to absolutna podstawa, ale każda platforma ma swoją specyfikę, którą warto znać, by nie tracić czasu.
 
-- **Otomoto** – największy portal motoryzacyjny w Polsce, najlepsze filtry wyszukiwania (typ nadwozia "kamper/campervan", rocznik, przebieg). Dominują ogłoszenia komisów i dealerów, ceny wyższe o 5–10% niż na OLX
-- **OLX** – więcej ofert prywatnych, większy rozrzut cenowy. Okazje trafiają się częściej, ale wymaga więcej filtrowania i czujności
-- **Grupy Facebook** – "Kampery na sprzedaż", "Camper Vany Polska", grupy regionalne. Mniejszy wybór, ale społeczność szybko ostrzega przed nieuczciwymi sprzedawcami
-- **Sprzedajemy.pl** – mniejszy portal, ale bywa, że unikalne oferty pojawiają się wyłącznie tutaj
+- **Otomoto** – największy portal motoryzacyjny w Polsce z najlepszymi filtrami (typ nadwozia „kamper”, rocznik, przebieg). Dominują tu ogłoszenia komisów i dealerów, a ceny są średnio o **5–10%** wyższe niż na OLX.
+- **OLX** – królestwo ofert prywatnych. Oferuje większy rozrzut cenowy i jakościowy, więc trzeba się naszukać, ale prawdziwe okazje trafiają się tu częściej.
+- **Grupy na Facebooku** – "Kampery na sprzedaż", "Camper Vany Polska" i grupy regionalne. Mniejszy wybór, ale siłą jest społeczność, która często ostrzega przed nieuczciwymi sprzedawcami i znanymi na rynku „minami”.
 
-{{% expert name="Wozniak" %}}Ustawiam alerty na Otomoto i OLX z filtrem do 200 tys. zł. Najlepsze oferty znikają w ciągu 24–48 godzin – jeśli widzisz kampera w dobrej cenie i nie reagujesz tego samego dnia, ktoś inny wpłaci zaliczkę.{{% /expert %}}
+Oprócz głównych platform warto regularnie sprawdzać specjalistyczne fora takie jak „Karawaning.pl” i portal „CampRest.com”. Działające tam giełdy uchodzą za najbezpieczniejsze – pojazdy często należą do aktywnych członków społeczności, a ich ewentualne usterki były nierzadko opisywane wcześniej na forum.
+
+Na mniej popularnych portalach, jak Sprzedajemy.pl, ruch jest mniejszy, ale czasem można tam znaleźć unikalne ogłoszenia od osób, które nie korzystają z głównych platform.
+
+### Wyprzedaże poflotowe z wypożyczalni
+
+Potężnym i bezpiecznym źródłem zakupu są wyprzedaże pojazdów z profesjonalnych wypożyczalni, które wymieniają floty co 2–3 lata. Kampery te mają znany przebieg (zazwyczaj 50–120 tys. km) i pełną historię serwisową. Cena obejmuje fakturę VAT 23%, a pojazdy są często bogato doposażone w klimatyzację postojową, solary czy markizy. Wyprzedaże startują zwykle we wrześniu i październiku.
+
+{{% expert name="Wozniak" %}}Zawsze ustawiam alerty na Otomoto i OLX. Dobre oferty w uczciwej cenie znikają w ciągu **24–48 godzin**. Jeśli widzisz interesującego kampera i zwlekasz z telefonem do kolejnego dnia, prawdopodobnie ktoś inny zdąży już wpłacić zaliczkę.{{% /expert %}}
 
 ### Na co uważać przy zakupie online
 
-Ogłoszenia w internecie bywają pułapką – szczególnie w segmencie kamperów, gdzie kupujący często nie znają się na zabudowach kempingowych:
+Zakup kampera w internecie wymaga szczególnej czujności, bo oprócz mechaniki dochodzi jeszcze cała zabudowa kempingowa. Na te sygnały ostrzegawcze reaguj natychmiast.
 
-- **Zdjęcia z katalogu** – jeśli zdjęcia wyglądają zbyt profesjonalnie lub pojawiają się w wielu ogłoszeniach, to prawdopodobnie oszustwo
-- **Brak zdjęć instalacji** – uczciwy sprzedawca pokazuje stan instalacji gazowej, elektrycznej i wodnej bez problemu
-- **Przebieg** – weryfikuj w bazie CEPiK i porównuj ze stanem wizualnym (kierownica, pedały, fotel kierowcy)
-- **"Sprzedam pilnie"** – presja czasowa to klasyczny sygnał ostrzegawczy
+- **Zdjęcia z katalogu** – jeżeli fotki wyglądają nienaturalnie profesjonalnie lub powtarzają się w innych ogłoszeniach, to prawdopodobnie próba oszustwa lub oferta-widmo.
+- **Brak zdjęć instalacji** – uczciwy sprzedawca bez problemu pokaże zdjęcia szafki z instalacją gazową, wodną i elektryczną. Ukrywanie tych elementów to duży minus.
+- **DMC (Dopuszczalna Masa Całkowita)** – to kluczowy parametr. Użytkownik musi zweryfikować dowód rejestracyjny i wagę rzeczywistą. Jeśli DMC przekracza 3500 kg, pojazd wymaga prawa jazdy kat. C, e-TOLL'a w Polsce oraz wyższych opłat za autostrady zagraniczne (np. w systemie Go-Maut w Austrii). Co więcej, wiele kamperów z DMC 3500 kg ma rażąco małą ładowność (np. 150 kg po doposażeniu i zatankowaniu).
+- **Przebieg** – weryfikuj numer [VIN](https://pl.wikipedia.org/wiki/Vehicle_Identification_Number) w bazie CEPiK i porównuj go ze stanem wnętrza. Zużyta kierownica, wytarty fotel i pedały przy deklarowanym przebiegu 50 tys. km to czerwona flaga.
+- **Presja czasowa** – hasła typu "pilnie sprzedam", "okazja tylko dziś" to klasyczne techniki manipulacji. Sprawdzaj kampera na spokojnie, bez pośpiechu.
 
 ## Salony dealerskie i autoryzowani przedstawiciele
 
+Zakup nowego kampera u dealera to najbezpieczniejsza, choć najdroższa opcja. Zyskujesz fabryczną gwarancję, pełną historię pojazdu i możliwość idealnego skonfigurowania wyposażenia. To rozwiązanie dla osób ceniących spokój ducha i gotowych poczekać na odbiór wymarzonego modelu.
+
 ### Marki obecne na polskim rynku
 
-W Polsce działa kilkudziesięciu autoryzowanych dealerów kamperów. Główne marki i ich przedstawiciele:
+W Polsce działa kilkudziesięciu autoryzowanych dealerów, oferujących pojazdy najpopularniejszych europejskich marek. Wybór jest spory, od budżetowych modeli po luksusowe integry.
 
 | Marka kampera | Baza | Segment cenowy | Dealerzy w Polsce | Uwagi |
 | :--- | :--- | :--- | :--- | :--- |
-| **Knaus/Weinsberg** | [Fiat Ducato](/modele/fiat-ducato/) | 250–500 tys. zł | 6 salonów | Największa sieć w Polsce |
-| **Hymer/Carado** | Ducato, [Sprinter](/modele/mercedes-sprinter/) | 220–600 tys. zł | 4 salony | Premium + budżetowy Carado |
-| **Pössl/Globecar** | Ducato | 200–400 tys. zł | 5 salonów | Specjaliści od camper vanów |
-| **Adria** | Ducato, [Renault Master](/modele/renault-master/) | 230–450 tys. zł | 3 salony | Słoweńska marka, dobra jakość/cena |
-| **Sunlight/CI** | Ducato | 200–380 tys. zł | 4 salony | Budżetowy segment grupy Trigano |
-| **Volkswagen** | VW T6.1/T7 | 350–500 tys. zł | Sieć VW (wybrane) | [VW California](/kampery/volkswagen-california/) – ikona segmentu |
+| **Knaus/Weinsberg** | [Fiat Ducato](/modele/fiat-ducato/) | **400–700 tys. zł** | 6 salonów | Największa sieć w Polsce |
+| **Hymer/Carado** | Ducato, [Sprinter](/modele/mercedes-sprinter/) | **380–900 tys. zł** | 4 salony | Segment premium (Hymer) i budżetowy (Carado) |
+| **Pössl/Globecar** | Ducato | **320–550 tys. zł** | 5 salonów | Niemieccy specjaliści od camper vanów |
+| **Adria** | Ducato, Jumper, Sprinter | **380–650 tys. zł** | 3 salony | Słoweńska marka o świetnym stosunku jakości do ceny |
+| **Sunlight/CI** | Ducato | **350–500 tys. zł** | 4 salony | Popularny budżetowy segment z grupy Trigano |
+| **Volkswagen** | VW California T7, Grand California | **380–600 tys. zł** | Sieć VW (wybrane) | Ikona segmentu – [VW California](/kampery/volkswagen-california/) |
 
-Zakup w salonie oznacza gwarancję (2 lata na bazę, 3–5 lat na zabudowę), możliwość konfiguracji wyposażenia i finansowanie leasingowe. Minusy to czas oczekiwania (3–12 miesięcy na nowy model) i wyższe ceny niż na rynku wtórnym.
+Główne zalety zakupu w salonie to gwarancja (zwykle 2 lata na auto bazowe i do 7 lat na szczelność zabudowy), możliwość finansowania leasingiem i pełna personalizacja. Minusem jest cena oraz długi czas oczekiwania, często od 6 do nawet 12 miesięcy na skonfigurowany pod siebie egzemplarz.
 
 ![Kampery na sprzedaż – gdzie kupić kampera](/images/kampery-na-sprzedaz-hero.jpg)
 
 ## Import z zagranicy
 
+Sprowadzenie kampera z zagranicy, zwłaszcza z Niemiec, to popularny sposób na znalezienie zadbanego egzemplarza w dobrej cenie. Trzeba jednak pamiętać, że do ceny zakupu dochodzą niemałe koszty dodatkowe, a cały proces wymaga znajomości przepisów i formalności.
+
 ### Niemcy, Włochy i Francja
 
-Import kampera z Europy Zachodniej to popularna strategia oszczędnościowa. Trzy główne kierunki:
+Poszukiwania warto skoncentrować na trzech największych rynkach w Europie. Każdy ma inną charakterystykę dostępnych pojazdów.
 
-- **Niemcy** – największy rynek kamperów w Europie. Mobile.de i autoscout24.de oferują tysiące ogłoszeń. Kampery z Niemiec są dobrze serwisowane, ale ceny rosną szybciej niż w innych krajach
-- **Włochy** – kraj produkcji większości kamperów na bazie Ducato. Niższe ceny niż w Niemczech, ale uwaga na korozję (sól na alpejskich drogach)
-- **Francja** – Leboncoin.fr to skarbnica okazji. Francuzi często sprzedają kampery po 2–3 sezonach, przebieg bywa niski. Bariera językowa komplikuje negocjacje
+- **Niemcy** – największy wybór w Europie na portalach mobile.de i autoscout24.de. Niemieckie kampery są zazwyczaj dobrze wyposażone i regularnie serwisowane, choć ich ceny bywają wyższe niż w innych krajach.
+- **Włochy** – kraj produkcji wielu kamperów, co przekłada się na niższe ceny niż w Niemczech. Pojazdy z Włoch zazwyczaj nie mają problemów z korozją, ale warto dokładnie sprawdzić stan lakieru, który może być zniszczony od intensywnego słońca.
+- **Francja** – tutejszy portal Leboncoin.fr to prawdziwa skarbnica okazji. Francuzi często zmieniają kampery po kilku sezonach, dzięki czemu można znaleźć młode roczniki z niskim przebiegiem. Wyzwaniem bywa bariera językowa.
 
 ### Koszty i formalności importu
 
-Przy kalkulacji opłacalności importu uwzględnij wszystkie dodatkowe koszty:
+Kalkulując opłacalność importu, nigdy nie zapominaj o dodatkowych kosztach. Mogą one znacząco podnieść finalną cenę pojazdu.
 
-- **Akcyza** – 3,1% wartości pojazdu dla kampera (samochód specjalny kempingowy M1-SA)
-- **VAT** – 23% jeśli kupujesz od firmy (odliczalny przy leasingu), 0% przy zakupie od osoby prywatnej w UE
-- **Transport** – 2000–5000 zł w zależności od dystansu i metody (laweta vs jazda na kołach)
-- **Tłumaczenie dokumentów** – 150–300 zł
-- **Badanie techniczne** – 100–200 zł
-- **Przerejestrowanie** – 180–200 zł
+- **Akcyza** – jej wysokość zależy od pojemności silnika. Stawka wynosi **18,6%** dla silników powyżej 2.0 litra (co dotyczy większości kamperów) oraz **3,1%** dla silników do 2.0 litra.
+- **VAT** – 23% przy zakupie od firmy w UE (można go odliczyć przy zakupie na firmę i leasingu). Przy zakupie od osoby prywatnej podatek VAT nie występuje.
+- **Transport** – laweta to koszt rzędu **2000–5000 zł**. Jazda na kołach wymaga tymczasowych tablic rejestracyjnych i ubezpieczenia.
+- **Tłumaczenie dokumentów** – **150–300 zł**.
+- **Badanie techniczne w Polsce** – **100–200 zł**.
+- **Rejestracja pojazdu** – około **200 zł**.
 
-{{% info title="Akcyza" icon="info" %}}Kampery zarejestrowane jako "samochód specjalny kempingowy" (kod M1-SA) podlegają akcyzie 3,1% niezależnie od pojemności silnika. To istotnie mniej niż akcyza na samochody osobowe z silnikami powyżej 2.0 (18,6%). Upewnij się, że pojazd ma prawidłowy kod w dokumentach.{{% /info %}}
+Należy też uważać na popularne oszustwo: import furgonu jako ciężarowego (N1) bez akcyzy i przerabianie go na kampera już w Polsce. Zgodnie ze znowelizowanymi przepisami, zmiana przeznaczenia pojazdu na kempingowy skutkuje natychmiastowym obowiązkiem zapłaty zaległej akcyzy, co Urzędy Skarbowe rygorystycznie egzekwują.
+
+{{% info title="Kluczowa zmiana w akcyzie!" icon="info" %}}Od 1 lipca 2021 roku kampery podlegają takim samym stawkom akcyzy jak auta osobowe. Klasyfikacja jako „pojazd specjalny kempingowy” nie ma już znaczenia dla tego podatku. Akcyza wynosi **3,1%** dla silników do 2.0 l oraz aż **18,6%** dla silników powyżej 2.0 l. Niestety, większość popularnych kamperów ma silniki 2.2 lub 2.3 l, co oznacza konieczność zapłaty wyższej stawki.{{% /info %}}
 
 ## Targi kamperowe w Polsce
 
+Targi branżowe to najlepsza okazja, by w jednym miejscu zobaczyć dziesiątki modeli, porównać układy wnętrz i skorzystać ze specjalnych rabatów. To obowiązkowy punkt programu dla każdego, kto poważnie myśli o zakupie kampera.
+
 ### Kalendarz i korzyści
 
-Targi to jedyna okazja, by obejrzeć kilkadziesiąt modeli w jednym miejscu i porównać je bezpośrednio:
+W Polsce najważniejsze imprezy odbywają się jesienią, ale warto też odwiedzać mniejsze, regionalne wydarzenia.
 
-- **Caravans Salon Poznań** (październik) – największe targi w Polsce, ponad 200 wystawców. Premierowe modele na następny sezon, rabaty na modele ekspozycyjne 5–15%
-- **CamperFest** (maj/czerwiec, różne lokalizacje) – mniejsze imprezy z testami jazdy i noclegami w kamperach pokazowych
-- **Regionalne zloty kamperowe** – Wrocław, Gdańsk, Kraków. Bardziej kameralne, ale z udziałem lokalnych dealerów i warsztatów przeróbkowych
+- **Caravans Salon Poznań** (październik) – największe targi caravaningowe w Europie Środkowo-Wschodniej. To tu odbywają się polskie premiery modeli na kolejny rok i można wynegocjować rabaty na modele ekspozycyjne sięgające **5–15%**.
+- **Camper Caravan Show** (wrzesień/październik) – organizowana w Ptak Warsaw Expo w Nadarzynie impreza jest bezpośrednim konkurentem poznańskich targów. Często bywa największa powierzchniowo w kraju (ponad 100 tys. mkw) i przyciąga wszystkich czołowych dealerów.
+- **CamperFest** (maj/czerwiec) – cykl mniejszych imprez w różnych lokalizacjach, często połączony ze zlotem. Można tu nie tylko obejrzeć, ale i przetestować wybrane modele.
+- **Regionalne zloty i targi** – mniejsze wydarzenia we Wrocławiu czy Gdańsku. Uczestniczą w nich głównie lokalni dealerzy i firmy budujące kampery na zamówienie.
 
-Na targach warto negocjować – dealerzy mają budżety rabatowe specjalnie na wydarzenia. Pakiety "targowe" (markiza + panel solarny + ogrzewanie w cenie) bywają warte 10–20 tys. zł oszczędności.
+Na targach zawsze warto negocjować. Dealerzy często przygotowują specjalne pakiety „targowe”, dorzucając w cenie bogate wyposażenie (np. markizę, panele solarne), co może oznaczać oszczędność rzędu **10–20 tys. zł**.
 
 ## Sezonowość cen i strategia zakupowa
 
+Ceny kamperów, podobnie jak domów letniskowych, podlegają wyraźnym wahaniom sezonowym. Analizując rynek i kupując w odpowiednim momencie, można zaoszczędzić nawet kilkanaście procent budżetu. Kluczem jest cierpliwość i działanie pod prąd.
+
 ### Kiedy kupić, żeby nie przepłacić
 
-Ceny kamperów podlegają wyraźnej sezonowości. Zrozumienie tego cyklu pozwala zaoszczędzić 10–20% budżetu:
+Cykl cenowy na rynku kamperów jest bardzo przewidywalny. Wykorzystaj go na swoją korzyść.
 
-- **Styczeń–luty** – najniższe ceny roku. Sprzedający, którzy nie zdążyli sprzedać jesienią, obniżają oczekiwania. Najlepszy czas na zakup [używanego kampera](/kampery/kampery-uzywane/)
-- **Marzec–maj** – gwałtowny wzrost popytu przed sezonem. Ceny rosną o 10–15%, najlepsze oferty znikają w godzinach
-- **Czerwiec–sierpień** – szczyt sezonu. Mało nowych ofert, sprzedający nie negocjują. Najgorszy czas na zakup
-- **Wrzesień–październik** – po sezonie, część właścicieli rezygnuje z kamperowania i wystawia pojazdy. Targi w Poznaniu generują dodatkową podaż
-- **Listopad–grudzień** – ceny spadają, ale wybór się kurczy. Dobry czas na import z Niemiec (tam sezonowość działa podobnie)
+- **Styczeń–luty** – absolutny dołek cenowy. Sprzedający, którym nie udało się sprzedać pojazdu jesienią, są bardziej skorzy do negocjacji. To najlepszy moment na zakup [używanego kampera](/kampery/kampery-uzywane/).
+- **Marzec–maj** – przedsezonowa gorączka. Popyt gwałtownie rośnie, ceny idą w górę o **10–15%**, a najlepsze oferty znikają w ciągu kilku godzin.
+- **Czerwiec–sierpień** – szczyt sezonu urlopowego. Na rynku jest mało ofert, a sprzedający niechętnie obniżają ceny. To najgorszy czas na zakupy.
+- **Wrzesień–październik** – fala ofert posezonowych. Wiele osób po zakończeniu wakacji decyduje się na sprzedaż. Dużą podaż generują też jesienne targi.
+- **Listopad–grudzień** – ceny wyraźnie spadają, choć wybór jest już mniejszy niż na początku jesieni. To dobry moment na szukanie okazji za granicą.
 
-Strategia optymalna: obserwuj rynek od września, wyznacz budżet i kryteria, złóż ofertę w styczniu. Przy [tanich kamperach](/kampery/tanie-kampery/) poniżej 100 tys. zł sezonowość jest mniej wyraźna – tu bardziej liczy się szybkość reakcji niż timing.
+Idealna strategia to obserwowanie rynku od września, określenie budżetu i kryteriów, a następnie złożenie oferty w styczniu lub lutym. Pamiętaj jednak, że w segmencie [tanich kamperów](/kampery/tanie-kampery/) poniżej 100 tys. zł sezonowość jest mniej odczuwalna – tu liczy się głównie szybkość reakcji.
 
-Szczegóły dotyczące cen poszczególnych typów kamperów omawia artykuł o [cenach kamperów](/kampery/kamper-cena/).
+Więcej na temat kosztów zakupu i posiadania kampera przeczytasz w artykule o [cenach kamperów](/kampery/kamper-cena/).
 
-*Źródła: Polski Związek Przemysłu Motoryzacyjnego, dane z Otomoto i mobile.de, Caravans Salon Poznań (marzec 2026)*
+*Źródła: Polski Związek Przemysłu Motoryzacyjnego, dane z Otomoto i mobile.de, Caravans Salon Poznań*
