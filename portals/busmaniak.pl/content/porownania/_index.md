@@ -27,14 +27,15 @@ Porównania aktualizujemy po każdym liftingu lub zmianie generacji modelu. Daty
 
 ## Duże busy dostawcze – Ducato vs Sprinter vs Daily vs Transit
 
-Segment dużych busów to fundament europejskiego transportu. Cztery modele dominują rynek od lat i każdy ma swoich zagorzałych zwolenników.
+Segment dużych busów to fundament europejskiego transportu. Choć od lat rynek zdominowany jest przez kilku kluczowych graczy, każdy z nich ma swoje unikalne atuty.
 
 - **[Fiat Ducato](/modele/fiat-ducato/)** – najpopularniejszy bus w Polsce, ceniony za niską cenę części i prostotę konstrukcji
 - **[Mercedes Sprinter](/modele/mercedes-sprinter/)** – referencyjna jakość wykończenia i najszerszy wybór wariantów nadwozia
 - **[Iveco Daily](/modele/iveco-daily/)** – ramowa konstrukcja i DMC do 7,2 tony, idealne do ciężkich przewozów
 - **[Ford Transit](/modele/ford-transit/)** – najlepsze prowadzenie w segmencie i mocna sieć serwisowa
+- **Volkswagen Crafter** – razem z bliźniaczym MAN-em TGE produkowany w Polsce, oferuje wysoką ergonomię i silniki 2.0 TDI
 
-Pełne zestawienie znajdziesz w artykule [Ducato vs Sprinter vs Daily vs Transit – porównanie dużych busów](/porownania/porownanie-duzych-busow/).
+Rynkową siłę Fiata Ducato budują również jego technologiczni bliźniacy z koncernu Stellantis – Peugeot Boxer, Citroën Jumper, Opel Movano i najnowsza Toyota ProAce Max. Pełne zestawienie znajdziesz w artykule [Ducato vs Sprinter vs Daily vs Transit – porównanie dużych busów](/porownania/porownanie-duzych-busow/).
 
 {{< related-articles "porownanie-duzych-busow,najlepszy-bus-na-kampera,busy-vany-4x4" "Porównania dużych busów face-to-face →" >}}
 
@@ -42,7 +43,7 @@ Pełne zestawienie znajdziesz w artykule [Ducato vs Sprinter vs Daily vs Transit
 
 Średni segment to wybór firm kurierskich i rzemieślników. Modele dzielą platformy, ale różnią się wykończeniem i ofertą silnikową.
 
-- **[Opel Vivaro](/modele/opel-vivaro/)** – bliźniak Trafika z lepszym wyposażeniem bazowym
+- **[Opel Vivaro](/modele/opel-vivaro/)** – dzieli platformę i technologię z Peugeotem Expertem i Toyotą ProAce w ramach koncernu Stellantis
 - **[Renault Trafic](/modele/renault-trafic/)** – sprawdzona konstrukcja i tanie części zamienne
 - **[Toyota ProAce](/modele/toyota-proace/)** – japońska gwarancja na francuskiej platformie
 - **[Peugeot Expert](/modele/peugeot-expert/)** – kompaktowe wymiary przy dużej przestrzeni ładunkowej
@@ -61,7 +62,7 @@ Miejskie dostawy wymagają zwrotności i niskiego spalania. Małe vany są też 
 Więcej w artykule [Porównanie małych vanów](/porownania/porownanie-malych-vanow/).
 
 {{% expert name="Kowalczyk" %}}
-Przy wyborze małego vana zwróć uwagę na szerokość otworu bocznych drzwi przesuwnych – to kluczowy parametr przy załadunku palet ćwiartkowych. Berlingo i Kangoo oferują otwór powyżej 600 mm, co ułatwia pracę kurierom.
+Szerokość bocznego otworu załadunkowego to kluczowy parametr w miejskiej logistyce. Podczas gdy standardem w klasie jest otwór o szerokości ok. 716 mm, Renault Kangoo w systemie "Open Sesame by Renault" oferuje aż 1446 mm dzięki usunięciu prawego słupka B. To fundamentalna różnica w codziennej pracy.
 {{% /expert %}}
 
 {{< related-articles "porownanie-srednich-vanow,porownanie-malych-vanow,ranking-busow-9-osobowych" "Zestawienia mniejszych vanów i busów →" >}}
@@ -74,13 +75,15 @@ Sprawdź [ranking busów 9-osobowych](/porownania/ranking-busow-9-osobowych/) or
 
 ## Elektryczne busy dostawcze
 
-Elektromobilność w segmencie dostawczym rozwija się dynamicznie. [Ford E-Transit](/modele/ford-e-transit/), [Mercedes eSprinter](/modele/mercedes-esprinter/) i [Volkswagen ID. Buzz](/modele/volkswagen-id-buzz/) to modele, które już dziś zastępują diesle w miejskich flotach.
+Elektromobilność w segmencie dostawczym rozwija się dynamicznie, a kluczowe stają się pojemność baterii i zasięg. Liderem jest tu Mercedes eSprinter, który po liftingu oferuje akumulator o pojemności użytecznej 113 kWh i zasięg WLTP do 440 km. Ford E-Transit dostępny jest z baterią 68 kWh (ok. 317 km) lub w wersji Extended Range 89 kWh, podczas gdy Volkswagen ID. Buzz Cargo dysponuje pakietem 77 kWh netto (zasięg do 425 km).
 
 Przegląd modeli elektrycznych znajdziesz w sekcji [elektryczne dostawcze](/modele/elektryczne-dostawcze/).
 
 ## Najlepszy bus na kampera – ranking modeli
 
-Przeróbka busa na kampera to rosnący trend. Nie każdy model nadaje się do zabudowy – liczy się wysokość wnętrza, rozstaw osi i dostępność części. Sprawdź nasz [ranking busów na kampera](/porownania/najlepszy-bus-na-kampera/).
+Przeróbka busa na kampera to rosnący trend. Nie każdy model nadaje się do zabudowy – liczy się wysokość wnętrza, rozstaw osi i dostępność części.
+
+Dominacja Fiata Ducato w tej kategorii nie jest przypadkowa – jako jedyny w klasie oferuje szerokość wewnętrzną (187–190 cm) pozwalającą na montaż łóżka w poprzek pojazdu. To kluczowy argument dla firm budujących kampery, ponieważ pozwala na oszczędność cennej przestrzeni, podczas gdy konkurenci (np. zwężający się ku górze Sprinter) wymuszają układ wzdłużny. Sprawdź nasz [ranking busów na kampera](/porownania/najlepszy-bus-na-kampera/).
 
 ## Busy i vany z napędem 4x4
 

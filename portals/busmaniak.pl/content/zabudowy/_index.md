@@ -17,15 +17,16 @@ faq:
     answer: "Najpopularniejsze bazy to Fiat Ducato, Mercedes Sprinter i Ford Transit – mają największy wybór gotowych systemów zabudów. Ducato L2H2 to najczęściej wybierany model ze względu na niską cenę bazową i dużą przestrzeń ładunkową (10–13 m³)."
   - question: "Czy zabudowa busa wymaga rejestracji w wydziale komunikacji?"
     answer: "Prosta zabudowa regałowa nie wymaga zmian w dowodzie rejestracyjnym. Jeśli jednak zabudowa zmienia przeznaczenie pojazdu (np. z ciężarowego na specjalny) lub wpływa na DMC, konieczna jest wizyta u diagnosty i aktualizacja dokumentów."
+  - question: "Czy zmiana busa na kampera wymaga opłacenia akcyzy?"
+    answer: "Tak, zmiana klasyfikacji pojazdu z ciężarowego na „specjalny kempingowy” wymaga opłacenia podatku akcyzowego. Stawki wynoszą 3,1% wartości rynkowej dla silników do 2000 cm³ oraz 18,6% dla silników powyżej 2000 cm³. Uniknięcie tej opłaty jest poważnym przestępstwem skarbowym."
   - question: "Zabudowa DIY czy profesjonalna – co się bardziej opłaca?"
     answer: "DIY opłaca się przy prostych konfiguracjach i jednym pojeździe. Przy flocie powyżej 3 busów profesjonalna zabudowa wychodzi korzystniej – czas montażu spada z 2–3 dni do 4–6 godzin, a certyfikacja crash-test eliminuje ryzyko przy kontroli drogowej."
   - question: "Jakie materiały są najlepsze na zabudowę busa?"
     answer: "Aluminium anodowane to standard w zabudowach profesjonalnych – jest lekkie (40–60 kg na zestaw regałów) i odporne na korozję. Sklejka wodoodporna (brzozowa 9–12 mm) sprawdza się w zabudowach DIY. Stal ocynkowana jest najtańsza, ale najcięższa."
 ---
-
 ## Rodzaje zabudów busów
 
-Zabudowy busów dzielą się na kilka głównych kategorii w zależności od branży i przeznaczenia pojazdu. Każdy typ różni się konstrukcją, użytymi materiałami i ceną.
+Zabudowy busów dzielą się na kilka głównych kategorii w zależności od branży i przeznaczenia pojazdu. Każdy typ różni się konstrukcją, użytymi materiałami oraz finalną ceną.
 
 ### Zabudowa serwisowa
 
@@ -33,7 +34,7 @@ Zabudowa serwisowa to najpopularniejszy typ w Polsce – stosują ją firmy tele
 
 ### Zabudowa warsztatowa (na narzędzia)
 
-Zabudowa busa na narzędzia różni się od serwisowej mocniejszą konstrukcją i obecnością imadeł, uchwytów na elektronarzędzia oraz blatu roboczego. Popularna wśród ślusarzy, hydraulików i elektryków. Waga takiej zabudowy to zazwyczaj 120–200 kg.
+Zabudowa busa na narzędzia różni się od serwisowej mocniejszą konstrukcją i obecnością imadeł, uchwytów na elektronarzędzia oraz blatu roboczego. Często wymaga także rozbudowanej instalacji elektrycznej, obejmującej dodatkowe akumulatory LiFePO4, przetwornice napięcia 230V o mocy 2000–3000W oraz zewnętrzne gniazda do zasilania sieciowego. Waga takiej zabudowy to zazwyczaj 120–200 kg.
 
 ### Zabudowa izotermiczna
 
@@ -51,7 +52,7 @@ System wymiennych modułów, które można rekonfigurować w zależności od zle
 
 ## Producenci zabudów w Polsce
 
-Na polskim rynku działa kilkudziesięciu producentów zabudów, ale cztery marki dominują w segmencie profesjonalnym. Oprócz nich istnieje wielu lokalnych wytwórców oferujących tańsze rozwiązania ze stali i sklejki.
+Na polskim rynku działa kilkudziesięciu producentów, ale cztery marki dominują w segmencie profesjonalnym. Oprócz nich istnieje wielu lokalnych wytwórców oferujących tańsze rozwiązania ze stali i sklejki.
 
 | Producent | Kraj pochodzenia | Specjalizacja | Orientacyjna cena zestawu | Certyfikat crash-test |
 |-----------|-----------------|---------------|--------------------------|----------------------|
@@ -66,7 +67,7 @@ Certyfikat crash-test (ECE R17) to nie fanaberia – przy nagłym hamowaniu z 50
 
 ### Polscy producenci zabudów
 
-Oprócz zachodnich marek warto rozważyć polskich wytwórców: Bos (Poznań), Tecnolam Polska, czy warsztaty działające pod marką własną. Ceny są niższe o 30–50%, ale zazwyczaj brakuje certyfikacji crash-test. Dla firm z flotą do 3 pojazdów, które nie potrzebują atestów, to rozsądna alternatywa.
+Oprócz zachodnich marek warto rozważyć polskich wytwórców, takich jak Gema Poland czy Bos (Poznań), a także lokalne warsztaty działające pod własną marką. Ceny są niższe o 30–50%, ale zazwyczaj brakuje certyfikacji crash-test, co dla niektórych flot może być kluczowe.
 
 ## Ceny zabudów busów w 2026 roku
 
@@ -79,9 +80,9 @@ Koszt zabudowy busa zależy od czterech czynników: typu zabudowy, materiałów,
 | System modułowy (Store Van) | 6 000–18 000 zł | regały aluminiowe, szuflady, podłoga | 6–8 godz. |
 | Zabudowa serwisowa (Sortimo/Bott) | 12 000–35 000 zł | pełna konfiguracja, certyfikat, montaż | 4–6 godz. |
 | Zabudowa izotermiczna | 15 000–40 000 zł | izolacja, agregat, podłoga antypoślizgowa | 2–3 dni |
-| Zabudowa kamperowa (profesjonalna) | 25 000–80 000 zł | łóżko, kuchnia, instalacje, homologacja | 2–6 tyg. |
+| Zabudowa kamperowa (profesjonalna) | 80 000–250 000 zł | łóżko, kuchnia, instalacje, homologacja | 2–6 tyg. |
 
-Do ceny zabudowy należy doliczyć koszt podłogi ochronnej (800–2 000 zł), oklejenia ścian (500–1 500 zł) i ewentualnego oświetlenia LED (300–800 zł).
+Do ceny zabudowy należy doliczyć koszt podłogi ochronnej (800–2 000 zł), zabezpieczenia ścian bocznych (500–1 500 zł) i ewentualnego oświetlenia LED (300–800 zł).
 
 {{< related-articles "zabudowa-busa-cena,zabudowa-sklejka-diy,regaly-do-busa" "Ile to kosztuje? Sprawdź szczegółowe kalkulacje →" >}}
 
@@ -89,55 +90,55 @@ Do ceny zabudowy należy doliczyć koszt podłogi ochronnej (800–2 000 zł), o
 
 ## Materiały stosowane w zabudowach
 
-Wybór materiału wpływa na wagę zabudowy, trwałość i cenę. Każdy kilogram zabudowy to dodatkowe spalanie – w przypadku busa dostawczego różnica między zabudową stalową (180 kg) a aluminiową (70 kg) przekłada się na ok. 0,3–0,5 l/100 km mniej.
+Wybór materiału wpływa na wagę zabudowy, trwałość i cenę. Każdy kilogram zabudowy to dodatkowe obciążenie i wyższe spalanie – różnica między zabudową stalową (180 kg) a aluminiową (70 kg) przekłada się na oszczędność rzędu 0,3–0,5 l/100 km.
 
 ### Aluminium anodowane
 
-Standard w zabudowach Sortimo, Bott i Store Van. Waga zestawu regałów to 40–70 kg. Odporne na korozję, łatwe w utrzymaniu czystości. Wada – najwyższa cena (2–3x droższe od stali).
+Standard w zabudowach Sortimo, Bott i Store Van. Waga kompletnego zestawu regałów to 40–70 kg. Materiał jest odporny na korozję, estetyczny i łatwy w utrzymaniu czystości. Wada – najwyższa cena, nawet 2–3 razy wyższa od stali.
 
 ### Sklejka wodoodporna
 
-Sklejka brzozowa o grubości 9–12 mm to baza zabudów DIY i tańszych rozwiązań warsztatowych. Waga porównywalna z aluminium, ale niższa odporność na uszkodzenia mechaniczne. Powierzchnię warto zabezpieczyć lakierem poliuretanowym.
+Sklejka brzozowa o grubości 9–12 mm to baza dla zabudów DIY oraz tańszych rozwiązań warsztatowych. Jej waga jest porównywalna z aluminium, ale ma niższą odporność na uszkodzenia mechaniczne. Powierzchnię warto dodatkowo zabezpieczyć lakierem poliuretanowym.
 
 ### Stal ocynkowana
 
-Najtańszy materiał na regały, ale najcięższy – zestaw stalowych regałów waży 150–200 kg. Stosowana w budżetowych zabudowach warsztatowych i tam, gdzie waga nie jest kluczowa (busy z DMC 3,5 t z zapasem ładowności).
+Najtańszy materiał na regały, ale jednocześnie najcięższy – zestaw stalowych regałów waży 150–200 kg. Znajduje zastosowanie w budżetowych zabudowach warsztatowych, gdzie waga nie jest kluczowym parametrem, np. w cięższych busach z DMC 3,5 t ze sporym zapasem ładowności.
+
+Niezależnie od materiału, kluczowe jest prawidłowe rozmieszczenie masy. Cięższe komponenty – jak agregaty, butle gazowe czy najcięższe szafki – należy montować jak najbliżej ściany grodziowej i równomiernie obciążać obie strony osi. Zapobiega to przeciążeniu jednej strony pojazdu i potencjalnej awarii zawieszenia.
 
 {{% info title="Waga zabudowy a ładowność" icon="scale" %}}
-Przy wyborze materiału sprawdź ładowność swojego busa. [Fiat Ducato](/modele/fiat-ducato/) L2H2 w wersji furgon ma ładowność 1 200–1 400 kg – zabudowa aluminiowa (70 kg) zostawia znacznie więcej miejsca na ładunek niż stalowa (180 kg). W przypadku [Renault Master](/modele/renault-master/) różnica jest jeszcze bardziej istotna ze względu na niższą bazową ładowność.
+Przed wyborem materiału zawsze sprawdź dopuszczalną ładowność swojego busa. [Fiat Ducato](/modele/fiat-ducato/) L2H2 w wersji furgon ma ładowność 1 200–1 400 kg – zabudowa aluminiowa (70 kg) zostawia znacznie więcej rezerwy na ładunek niż stalowa (180 kg). W przypadku [Renault Master](/modele/renault-master/) różnica jest jeszcze bardziej istotna ze względu na niższą bazową ładowność.
 {{% /info %}}
 
 ## Które busy najlepiej nadają się pod zabudowę
 
-Nie każdy bus sprawdza się jako baza pod zabudowę. Kluczowe parametry to szerokość przestrzeni ładunkowej (minimum 1700 mm między nadkolami), wysokość wewnętrzna (minimum 1900 mm dla zabudowy serwisowej) i dostępność gotowych systemów od producentów.
+Nie każdy bus sprawdza się jako baza pod zabudowę. Kluczowe parametry to szerokość i regularny kształt przestrzeni ładunkowej, wysokość wewnętrzna oraz dostępność gotowych systemów od czołowych producentów.
 
 ### Segment duży – L2H2 i L3H2
 
 - **[Fiat Ducato](/modele/fiat-ducato/)** – najpopularniejsza baza w Polsce, największy wybór zabudów od wszystkich producentów, przestrzeń ładunkowa 10–13 m³
-- **[Mercedes Sprinter](/modele/mercedes-sprinter/)** – najwyższa jakość wykończenia, szeroka przestrzeń między nadkolami (1780 mm), cena bazowa wyższa o 20–30%
-- **[Ford Transit](/modele/ford-transit/)** – dobry stosunek ceny do przestrzeni, przedni napęd ułatwia załadunek (niska podłoga)
+- **[Mercedes Sprinter](/modele/mercedes-sprinter/)** – najwyższa jakość wykończenia, szeroka przestrzeń ładunkowa (do 1780 mm, a między nadkolami 1350 mm), cena bazowa wyższa o 20–30%
+- **[Ford Transit](/modele/ford-transit/)** – dobry stosunek ceny do przestrzeni, wersja z przednim napędem ułatwia załadunek dzięki niżej położonej podłodze
 - **[Iveco Daily](/modele/iveco-daily/)** – ramowa konstrukcja podwozia, najlepszy wybór przy DMC powyżej 3,5 t
 
 ### Segment średni – kompaktowe vany
 
 - **[Renault Trafic](/modele/renault-trafic/)** – szeroka przestrzeń ładunkowa jak na swoją klasę, popularna baza dla elektryków i hydraulików
-- **[Ford Transit Custom](/modele/ford-transit-custom/)** – najlepiej sprzedający się van w Europie, duży wybór zabudów od Sortimo i Bott
-- **[Volkswagen Transporter T6](/modele/volkswagen-transporter-t6/)** – najwyższa wartość rezydualna, ale wąska przestrzeń między nadkolami ogranicza szerokość regałów
+- **[Ford Transit Custom](/modele/ford-transit-custom/)** – najlepiej sprzedający się van w Europie, duży wybór dedykowanych zabudów od Sortimo i Bott
+- **[Volkswagen Transporter (T7)](/modele/volkswagen-transporter/)** – nowa generacja, bazująca na Fordzie Transit Custom, oferuje nowoczesne rozwiązania i szeroki wybór konfiguracji
 
 ## DIY vs profesjonalna zabudowa
 
-Samodzielna zabudowa busa kusi niską ceną, ale warto policzyć pełny koszt – nie tylko materiałów, ale również czasu pracy i ryzyka związanego z brakiem certyfikacji.
+Samodzielna zabudowa busa kusi niską ceną, ale warto policzyć pełny koszt – nie tylko materiałów, ale również czasu pracy i ryzyka związanego z brakiem atestów bezpieczeństwa.
 
 ### Kiedy DIY ma sens
 
-Zabudowa DIY sprawdza się, gdy masz jeden bus, podstawowe umiejętności stolarskie i czas (2–4 dni robocze). Koszt materiałów to 2 500–5 000 zł. Popularne rozwiązanie: regały ze sklejki 12 mm na stelażu z profili aluminiowych 40x40 mm, mocowane do szyn podłogowych.
+Zabudowa DIY sprawdza się, gdy masz jeden bus, podstawowe umiejętności stolarskie i czas (2–4 dni robocze). Koszt materiałów waha się od 2 500 do 5 000 zł. Popularne rozwiązanie to regały ze sklejki 12 mm na stelażu z profili aluminiowych, mocowane do szyn podłogowych.
 
 ### Kiedy wybrać zabudowę profesjonalną
 
-Przy flocie powyżej 3 pojazdów profesjonalna zabudowa jest tańsza w przeliczeniu na roboczogodzinę. Montaż trwa 4–6 godzin zamiast 2–4 dni, zabudowa posiada certyfikat crash-test, a gwarancja producenta obejmuje 3–5 lat. Dodatkowy plus – jednolity wygląd floty buduje wizerunek firmy.
+Przy flocie powyżej 3 pojazdów profesjonalna zabudowa jest tańsza w przeliczeniu na roboczogodzinę. Montaż trwa 4–6 godzin zamiast 2–4 dni, zabudowa posiada certyfikat crash-test, a gwarancja producenta obejmuje 3–5 lat.
+
+Profesjonalny montaż eliminuje też ryzyko korozji. Regałów nigdy nie przykręca się wkrętami bezpośrednio do karoserii – zamiast tego stosuje się [nitonakrętki](https://pl.wikipedia.org/wiki/Nitonakr%C4%99tka) M6/M8 w fabrycznych wzmocnieniach lub mocuje zabudowę do podłogi, która jest przytwierdzona do fabrycznych punktów kotwiczenia.
 
 {{< related-articles "zabudowa-paki,zabudowa-busa-przewodnik,zabudowa-na-narzedzia" "Sprawdź rozwiązania dopasowane do Twojej branży →" >}}
-
-## Podsumowanie – jak wybrać zabudowę busa
-
-Przy wyborze zabudowy busa zacznij od trzech pytań: jaki jest budżet, ile pojazdów ma flota i jakie narzędzia lub towary będą przewożone. Dla pojedynczego busa serwisowego rozsądnym kompromisem są gotowe regały aluminiowe w przedziale 6 000–12 000 zł. Przy flocie 5+ pojazdów warto zainwestować w system modułowy od Sortimo lub Bott – wyższy koszt początkowy zwraca się w postaci krótszego przestoju i możliwości rekonfiguracji.
