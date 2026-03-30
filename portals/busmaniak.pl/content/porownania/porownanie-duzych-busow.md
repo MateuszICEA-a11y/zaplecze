@@ -23,7 +23,7 @@ faq:
   - question: "Który bus dostawczy jest najlepszy na kampera?"
     answer: "Fiat Ducato to zdecydowany lider bazy kamperowej – ponad 75% europejskich kamperów powstaje na jego platformie. Sprinter jest popularny w segmencie premium. Daily i Transit mają mniejszy udział, ale zyskują w niestandardowych przeróbkach."
   - question: "Ile pali duży bus dostawczy?"
-    answer: "Średnie spalanie w cyklu mieszanym: Ducato 2.2 MJT3 – 8,0–9,5 l/100 km, Sprinter 2.0 CDI – 8,5–10,0 l/100 km, Daily 2.3 MJT – 9,0–11,0 l/100 km, Transit 2.0 EcoBlue – 8,0–9,5 l/100 km."
+    answer: "Średnie spalanie w cyklu mieszanym: Ducato 2.2 MJT3 – 8,0–9,5 l/100 km, Sprinter 2.0 CDI – 8,5–10,0 l/100 km, Daily 2.3 – 9,0–11,0 l/100 km, Transit 2.0 EcoBlue – 8,0–9,5 l/100 km."
 ---
 
 ## Kluczowe różnice w skrócie
@@ -32,134 +32,132 @@ Cztery duże busy dostawcze walczące o europejski rynek to modele o fundamental
 
 | Cecha | Fiat Ducato | Mercedes Sprinter | Iveco Daily | Ford Transit |
 |---|---|---|---|---|
-| Konstrukcja | samonośna | samonośna / rama (RWD) | rama drabinkowa | samonośna |
+| Konstrukcja | samonośna | samonośna | [rama drabinkowa](https://pl.wikipedia.org/wiki/Rama_pojazdu){rel="nofollow"} | samonośna |
 | Napędy | FWD | FWD / RWD / 4x4 | RWD | FWD / RWD / AWD |
 | Max. DMC (kat. B) | 3,5 t | 3,5 t | 3,5 t | 3,5 t |
-| Max. DMC (ogólnie) | 4,25 t | 5,5 t | 7,2 t | 4,7 t |
+| Max. DMC (ogólnie) | 4,25 t | 5,5 t | 7,2 t | 5,0 t |
 | Pojemność ładowni max | 17 m³ | 17 m³ | 19,6 m³ | 15,1 m³ |
 | Cena nowego (netto, od) | ~130 000 zł | ~185 000 zł | ~155 000 zł | ~140 000 zł |
 | Baza kamperowa | 75%+ rynku | segment premium | niszowa | rosnąca |
 
-Różnica w cenie nowego Sprintera i Ducato sięga nawet 55 000 zł netto przy podobnej konfiguracji. To kwota, która w perspektywie 5 lat eksploatacji może się zwrócić dzięki niższym kosztom serwisowym Mercedesa – albo nie, jeśli firma optymalizuje koszty floty.
+Różnica w cenie nowego Sprintera i Ducato sięga nawet 55 000 zł netto przy podobnej konfiguracji. To kwota, która w perspektywie 5 lat eksploatacji może się zwrócić dzięki niższym kosztom serwisowym Mercedesa – albo nie, jeśli firma priorytetowo traktuje optymalizację kosztów floty.
 
 ## Fiat Ducato – król rynku wtórnego
 
-[Fiat Ducato](/modele/fiat-ducato/) to najpopularniejszy bus dostawczy w Europie – ponad 6 milionów egzemplarzy wyprodukowanych od 1981 roku mówi samo za siebie. Na polskim rynku wtórnym Ducato jest niekwestionowanym liderem – ofert jest więcej niż Sprintera i Transita łącznie.
+Fiat Ducato to najpopularniejszy bus dostawczy w Europie – ponad 6 milionów egzemplarzy wyprodukowanych od 1981 roku mówi samo za siebie. Na polskim rynku wtórnym Ducato jest niekwestionowanym liderem, z liczbą ofert przewyższającą sumę Sprinterów i Transitów.
 
-Aktualna generacja (Serie 8, od 2021) przyniosła nowy silnik 2.2 MultiJet3 o mocach 120, 140 i 180 KM. To jednostka spełniająca normę Euro 6d-Final, wyposażona w filtr DPF, katalizator SCR i wtrysk AdBlue. Skrzynia automatyczna 9-biegowa (ZF 9HP) to opcja, która znacząco poprawia komfort jazdy w porównaniu ze starszym 6-biegowym automatem AMT.
+Aktualna generacja (Serie 8, od 2021) przyniosła nowy silnik 2.2 MultiJet3 o mocach 120, 140 i 180 KM, spełniający normę Euro 6d-Final. Wraz z modernizacją na rok 2024 Grupa Stellantis wprowadziła nową, 8-biegową skrzynię automatyczną AT8, która całkowicie zastąpiła starszą konstrukcję 9-biegową, znacząco poprawiając komfort jazdy.
 
 Największe atuty Ducato:
 
 - **Cena zakupu** – najtańszy spośród czwórki, zarówno nowy, jak i używany
 - **Dostępność części** – wspólna platforma z Jumperem i Boxerem oznacza ogromny rynek zamienników
-- **Baza kamperowa** – ponad 75% europejskich kamperów powstaje na platformie Ducato, co przekłada się na bogatą ofertę akcesoriów
-- **Prostota konstrukcji** – napęd przednioosowy i brak skomplikowanej elektroniki ułatwiają naprawy
+- **Baza kamperowa** – ponad 75% europejskich kamperów powstaje na platformie Ducato
+- **Prostota konstrukcji** – napęd przednioosowy i nieskomplikowana budowa ułatwiają naprawy
 
-Ducato ma też słabe strony. Jakość wykańczania kabiny ustępuje Sprinterowi i Transitowi. Zawieszenie tylne na resorach piórowych (w odróżnieniu od pneumatyki Sprintera) jest twardsze pod obciążeniem. Korozja nadkoli i progów to problem egzemplarzy starszych niż 10 lat.
+Ducato ma też słabe strony. Jakość wykończenia kabiny ustępuje Sprinterowi i Transitowi. Zawieszenie tylne na resorach piórowych jest twardsze pod obciążeniem niż opcjonalna pneumatyka u rywali. Korozja nadkoli i progów pozostaje problemem w egzemplarzach starszych niż 10 lat.
 
 ## Mercedes Sprinter – premium wśród dostawczaków
 
-[Mercedes Sprinter](/modele/mercedes-sprinter/) trzeciej generacji (W907/W910, od 2018) to technologiczny lider segmentu. System MBUX, cyfrowy kokpit, aktywny tempomat i zawieszenie pneumatyczne z tyłu – to wyposażenie nieosiągalne dla konkurencji w standardzie.
+Mercedes Sprinter trzeciej generacji (W907/W910, od 2018) to technologiczny lider segmentu. System MBUX, cyfrowy kokpit, aktywny tempomat i zawieszenie pneumatyczne z tyłu to wyposażenie, które wyznacza standardy w tej klasie pojazdów.
 
-Sprinter jako jedyny w zestawieniu oferuje pełną dowolność konfiguracji napędu: przednioosowy (FWD), tylnoosowy (RWD) z mechanicznym blokowaniem dyferencjału lub stały napęd na cztery koła (4x4). Wersja RWD opiera się na podwoziu ramowym, co czyni ją popularnym wyborem pod zabudowy specjalne i kampery premium.
+Sprinter, podobnie jak Transit, oferuje pełną dowolność w konfiguracji napędu: na oś przednią (FWD), tylną (RWD) lub na cztery koła (4x4). Wersja RWD opiera się na solidnym podwoziu, co czyni ją popularnym wyborem pod zabudowy specjalistyczne i kampery klasy premium.
 
 {{% expert name="Kowalczyk" %}}
-Sprinter RWD z zawieszeniem pneumatycznym to jedyny bus w tym zestawieniu, który pozwala na obniżenie podwozia podczas załadunku i podniesienie do poziomu jazdy. W praktyce oznacza to oszczędność czasu na rampie – różnica wysokości podłogi ładowni sięga 80 mm między trybami.
+Sprinter RWD z zawieszeniem pneumatycznym to jedyny bus w tym zestawieniu, który pozwala na obniżenie podwozia podczas załadunku i podniesienie go do poziomu jazdy. W praktyce oznacza to oszczędność czasu na rampie – różnica wysokości podłogi ładowni sięga 80 mm między trybami.
 {{% /expert %}}
 
-Silnik 2.0 CDI (OM654) w wariantach 116, 143 i 170 KM zastąpił starszego 2.2 CDI. Nowa jednostka jest cichsza i bardziej oszczędna, ale – w opiniach mechaników – bardziej wrażliwa na jakość oleju i paliwa. Koszty napraw Sprintera są najwyższe w zestawieniu: wymiana turbosprężarki to wydatek 6000–9000 zł, podczas gdy w Ducato 3500–5500 zł.
+Nowoczesny silnik 2.0 CDI (OM654) występuje w wariantach 114, 150, 170 oraz 190 KM. Jednostka jest cichsza i bardziej oszczędna od poprzednika, jednak w opiniach mechaników jest bardziej wrażliwa na jakość oleju i paliwa. Koszty napraw Sprintera są najwyższe w zestawieniu: wymiana turbosprężarki to wydatek 6000–9000 zł, podczas gdy w Ducato 3500–5500 zł.
 
 ## Iveco Daily – najwyższe DMC na kat. B
 
-[Iveco Daily](/modele/iveco-daily/) to jedyny bus w zestawieniu z prawdziwą ramą drabinkową we wszystkich wersjach nadwoziowych. To rozwiązanie typowe dla ciężarówek, nie vanów – i Daily celowo rozmywa te granice. W wersji 7,2 t to w zasadzie mała ciężarówka z karoserią furgonu.
+Iveco Daily to jedyny bus w zestawieniu z prawdziwą ramą drabinkową we wszystkich wersjach nadwoziowych. To rozwiązanie typowe dla ciężarówek, nie vanów – Daily celowo rozmywa te granice, a w wersji 7,2 t staje się małą ciężarówką z karoserią furgonu.
 
-Siódma generacja (od 2023) to modernizacja szóstej – nowy kokpit z zestawem wskaźników cyfrowych i system telematyczny Hi-Connect 2. Mechanicznie Daily pozostaje bez zmian: silniki 2.3 MultiJet II (116, 136, 156 KM) i 3.0 MultiJet II (160, 180, 210 KM) oraz tylny napęd z reduktorem w opcji.
+Siódma generacja (od 2023) to modernizacja szóstej, wprowadzająca nowy kokpit z cyfrowymi wskaźnikami i systemem telematycznym. Mechanicznie Daily pozostaje wierne sprawdzonym rozwiązaniom: silnikom wysokoprężnym serii F1A (2.3 litra; 116, 136, 156 KM) i F1C (3.0 litra; 160, 180, 207 KM) oraz tylnemu napędowi z opcjonalnym reduktorem.
 
 ![Porównanie dużych busów dostawczych](/images/porownanie-duzych-busow-hero.jpg)
 
 Gdzie Daily nie ma sobie równych:
 
-- **DMC do 7,2 t** – rywale kończą na 4,7 t (Transit) lub 5,5 t (Sprinter)
-- **Rama drabinkowa** – idealna pod zabudowy specjalne: kontenery, chłodnie, lawety
-- **Ładowność** – wersja 7,2 t zabiera nawet 4700 kg ładunku
-- **Mechaniczna prostota** – silniki 2.3 i 3.0 to sprawdzone konstrukcje bez nadmiernej elektroniki
+- **DMC do 7,2 t** – rywale kończą na 5,0 t (Transit) lub 5,5 t (Sprinter)
+- **Rama drabinkowa** – idealna pod ciężkie zabudowy: kontenery, chłodnie, lawety
+- **Solidność konstrukcji** – silniki serii F1 to trwałe i proste mechanicznie jednostki
 
-Minusy? Spalanie. Silnik 2.3 w wersji 3,5 t pali średnio 9,0–11,0 l/100 km – o litr więcej niż Ducato i Transit w porównywalnych konfiguracjach. Sieć serwisowa Iveco w Polsce jest też wyraźnie mniejsza niż u pozostałej trójki.
+Minusy? Z ciężką ramą wiąże się wysoka masa własna. Wersje z DMC do 3,5 t mają przez to bardzo niską realną ładowność, która po montażu np. kontenera może spaść do zaledwie 400–600 kg. Przeładowanie takiego pojazdu jest niemal pewne i grozi wysokimi karami od ITD.
 
 ## Ford Transit – nowa generacja 2024
 
-[Ford Transit](/modele/ford-transit/) ósmej generacji (od 2014, z dużym faceliftingiem w 2024) to bus, który w ciągu dekady przeszedł transformację z „roboczego konia" w nowoczesne narzędzie logistyczne. Silnik 2.0 EcoBlue (105–185 KM) z 6-biegową skrzynią manualną lub 10-biegowym automatem SelectShift to napęd, który wyrównuje koszty eksploatacji.
+Ford Transit ósmej generacji (od 2014, z dużym faceliftingiem w 2024) to bus, który w ciągu dekady przeszedł transformację z „roboczego konia" w nowoczesne narzędzie logistyczne. Silnik 2.0 EcoBlue (105–185 KM) współpracuje z 6-biegową skrzynią manualną lub 10-biegowym automatem SelectShift.
 
-Transit jako jedyny w zestawieniu oferuje 10-biegową skrzynię automatyczną – to rozwiązanie znane z pickupów Ford Ranger, które zapewnia płynne przełożenia i niższe obroty na autostradzie. W praktyce przekłada się to na spalanie o 0,5–1,0 l/100 km niższe niż z 6-biegowym manuałem przy stałej prędkości 120 km/h.
+Transit wyróżnia się na tle konkurencji nowoczesną, 10-biegową skrzynią automatyczną. To rozwiązanie znane z pickupów Forda, które zapewnia płynną zmianę przełożeń i niższe obroty na autostradzie. W praktyce przekłada się to na spalanie niższe o 0,5–1,0 l/100 km w porównaniu z 6-biegowym manualem przy stałej prędkości 120 km/h.
 
 {{% info title="Informacja" icon="info" %}}
-Ford Transit od modelu 2024 jest dostępny z cyfrowym zestawem wskaźników, systemem SYNC 4 z ekranem 12 cali i kamerą 360 stopni. To poziom wyposażenia porównywalny z Mercedesem Sprinterem – przy cenie niższej o 40 000 zł netto.
+Ford Transit od modelu 2024 jest dostępny z cyfrowym zestawem wskaźników, systemem SYNC 4 z ekranem 12 cali i kamerą 360 stopni. To poziom wyposażenia porównywalny z Mercedesem Sprinterem – przy cenie niższej o ok. 40 000 zł netto.
 {{% /info %}}
 
-Transit oferuje też najszerszą gamę wariantów nadwoziowych – od furgonu L1H1 przez podwozie L4 po minibus Kombi 18-osobowy. Opcjonalny napęd AWD (Intelligent All-Wheel Drive) działa automatycznie i nie wymaga skrzyni redukcyjnej.
+Ford oferuje też najszerszą gamę wariantów nadwoziowych – od furgonu L1H1 przez podwozie L4 po minibus Kombi 18-osobowy. Opcjonalny napęd AWD (Intelligent All-Wheel Drive) działa w pełni automatycznie.
 
 ## Porównanie wymiarów i ładowności
 
-Przy wyborze dużego busa wymiary i ładowność to często decydujące parametry. Poniższa tabela przedstawia najpopularniejsze konfiguracje – odpowiedniki klasy L2H2 / L3H2.
+Przy wyborze dużego busa wymiary i ładowność to często decydujące parametry. Poniższa tabela przedstawia porównanie popularnych wersji z nadwoziem o długości ok. 6 metrów.
 
-| Parametr | Ducato L3H2 | Sprinter L3H2 | Daily L3H2 (35S) | Transit L3H2 |
+| Parametr | Ducato L3H2 | Sprinter L2H2 | Daily L3H2 (35S) | Transit L3H2 |
 |---|---|---|---|---|
-| Długość całkowita | 5998 mm | 6967 mm | 6000 mm | 6042 mm |
+| Długość całkowita | 5998 mm | 5932 mm | 6000 mm | 5981 mm |
 | Szerokość (bez lusterek) | 2050 mm | 2020 mm | 2010 mm | 2059 mm |
-| Wysokość | 2524 mm | 2700 mm | 2545 mm | 2548 mm |
-| Rozstaw osi | 3450 mm | 3924 mm | 3520 mm | 3750 mm |
-| Długość ładowni | 3120 mm | 3267 mm | 3180 mm | 3300 mm |
-| Pojemność ładowni | 13 m³ | 14 m³ | 13,4 m³ | 11,5 m³ |
-| Ładowność (DMC 3,5 t) | ~1400 kg | ~1200 kg | ~1350 kg | ~1450 kg |
+| Wysokość | 2524 mm | 2638 mm | 2545 mm | 2548 mm |
+| Rozstaw osi | 4035 mm | 3665 mm | 3520 mm | 3750 mm |
+| Długość ładowni | 3705 mm | 3272 mm | 3540 mm | 3494 mm |
+| Pojemność ładowni | 13 m³ | 10,5 m³ | 12 m³ | 11,5 m³ |
+| Ładowność (DMC 3,5 t) | ~1400 kg | ~1300 kg | ~1350 kg | ~1450 kg |
 | Europalety | 4 | 4 | 4 | 4 |
 
-Sprinter L3H2 jest najdłuższy w zestawieniu – rozstaw osi 3924 mm to wynik o prawie pół metra większy niż w Ducato. W praktyce oznacza to większy promień skrętu, ale też lepszą stabilność przy prędkości autostradowej.
+Porównując wersje 6-metrowe, widać różnice w filozofii projektowania. Ducato z napędem na przód i długim rozstawem osi oferuje największą długość ładowni. Sprinter z kolei, mimo mniejszej pojemności, zapewnia najlepszą zwrotność dzięki najkrótszemu rozstawowi osi.
 
-Transit oferuje najwyższą ładowność w klasie 3,5 t – różnica sięga 250 kg w porównaniu ze Sprinterem. To efekt lżejszej konstrukcji samonośnej i oszczędności na masie własnej.
+Transit oferuje najwyższą ładowność w klasie 3,5 t – różnica sięga 150 kg w porównaniu ze Sprinterem. To efekt lżejszej konstrukcji samonośnej i optymalizacji masy własnej.
 
 ## Silniki i spalanie – co napędza duże busy
 
-Wszystkie cztery modele w aktualnych generacjach stawiają na turbodiesle o pojemności 2,0–2,3 litra. Większe jednostki (3.0) dostępne są w Ducato (do wygaszenia) i Daily.
+Aktualne generacje wszystkich czterech modeli stawiają na turbodiesle o pojemności 2,0–2,3 litra. Większe jednostki o pojemności 3.0 dostępne są już wyłącznie w ofercie Iveco Daily.
 
-- **Fiat Ducato 2.2 MultiJet3** – 120, 140 lub 180 KM, moment 380–450 Nm. Nowa jednostka od Serie 8 (2021). Spalanie 8,0–9,5 l/100 km
-- **Mercedes Sprinter 2.0 CDI (OM654)** – 116, 143 lub 170 KM, moment 330–400 Nm. Spalanie 8,5–10,0 l/100 km
-- **Iveco Daily 2.3 MultiJet II** – 116, 136 lub 156 KM, moment 320–400 Nm. Spalanie 9,0–11,0 l/100 km
+- **Fiat Ducato 2.2 MultiJet3** – 120, 140 lub 180 KM, moment 380–450 Nm. Spalanie 8,0–9,5 l/100 km
+- **Mercedes Sprinter 2.0 CDI (OM654)** – 114, 150, 170 lub 190 KM, moment 330–450 Nm. Spalanie 8,5–10,0 l/100 km
+- **Iveco Daily 2.3 (F1A)** – 116, 136 lub 156 KM, moment 320–400 Nm. Spalanie 9,0–11,0 l/100 km
 - **Ford Transit 2.0 EcoBlue** – 105, 130, 170 lub 185 KM, moment 360–415 Nm. Spalanie 8,0–9,5 l/100 km
 
-Daily 2.3 pali najwięcej – rama drabinkowa i tylny napęd zwiększają masę własną o 150–200 kg w porównaniu z samonośnymi rywalami. Z kolei Transit 2.0 EcoBlue 185 KM to najmocniejsza bazowa jednostka w zestawieniu i jednocześnie jedna z najoszczędniejszych dzięki współpracy z 10-biegowym automatem.
+Daily pali najwięcej – rama drabinkowa i tylny napęd zwiększają masę własną o 150–200 kg w porównaniu z samonośnymi rywalami. Z kolei wszystkie aktualne pojazdy spełniają normę Euro 6d-Final, co oznacza konieczność stosowania AdBlue, którego zużycie wynosi średnio 1,0–1,5 l/1000 km.
 
-Warto zwrócić uwagę na normy emisji. Wszystkie aktualne wersje spełniają Euro 6d-Final i wymagają AdBlue. Zużycie AdBlue wynosi średnio 1,0–1,5 l/1000 km – to dodatkowy koszt ok. 3–5 zł na 1000 km.
+Warto dodać, że każdy z producentów ma w ofercie zaawansowane wersje elektryczne. E-Ducato po liftingu oferuje baterię 110 kWh i zasięg 420 km WLTP. Nowy eSprinter (113 kWh) i E-Transit (89 kWh) zapewniają podobne zasięgi, przekraczające 400 km WLTP, co czyni je realną alternatywą w dystrybucji miejskiej.
 
 ## Koszty eksploatacji i części zamienne
 
 Koszt zakupu to jedno – ale prawdziwy obraz ekonomiczny busa rysuje się dopiero po 3–5 latach eksploatacji. Poniższa lista przedstawia orientacyjne koszty najczęstszych operacji serwisowych.
 
 - **Wymiana klocków hamulcowych (przód)** – Ducato: 250–400 zł, Sprinter: 450–700 zł, Daily: 350–500 zł, Transit: 280–450 zł
-- **Wymiana rozrządu** – Ducato 2.2: pasek, 800–1200 zł; Sprinter 2.0: łańcuch, 3000–5000 zł; Daily 2.3: łańcuch, 2500–4000 zł; Transit 2.0: łańcuch, 2000–3500 zł
+- **Wymiana rozrządu** – Ducato 2.2: pasek, 800–1200 zł; Sprinter 2.0: łańcuch, 3000–5000 zł; Daily 2.3: pasek, 1200–1800 zł; Transit 2.0: pasek w kąpieli olejowej, 4000-5000+ zł
 - **Filtr DPF (regeneracja/wymiana)** – Ducato: 1500–3500 zł, Sprinter: 3000–6000 zł, Daily: 2000–4500 zł, Transit: 1500–3500 zł
 - **Przegląd roczny (olej + filtry)** – Ducato: 500–800 zł, Sprinter: 900–1400 zł, Daily: 700–1000 zł, Transit: 600–900 zł
 - **Turbosprężarka** – Ducato: 3500–5500 zł, Sprinter: 6000–9000 zł, Daily: 4000–6500 zł, Transit: 3500–6000 zł
 
-Ducato i Transit to zdecydowani liderzy niskich kosztów – różnica w rocznych wydatkach serwisowych w porównaniu ze Sprinterem sięga 2000–4000 zł. Sprinter częściowo rekompensuje to dłuższymi interwałami serwisowymi (do 40 000 km lub 2 lat) i wyższą wartością rezydualną przy odsprzedaży.
+Ducato i Transit to liderzy niskich kosztów, a roczna oszczędność na serwisie w porównaniu ze Sprinterem może sięgać 2000–4000 zł. Należy jednak uważać na silnik 2.0 EcoBlue w Transitach sprzed modernizacji. Zastosowano w nim pasek rozrządu w kąpieli olejowej, który ma tendencję do łuszczenia się. Jego drobiny zatykają smok olejowy, co często prowadzi do zatarcia silnika, a kosztowna wymiana paska jest utrudniona.
 
-Iveco Daily wypada pośrednio – części są tańsze niż w Sprinterze, ale sieć serwisowa w Polsce liczy ok. 60 punktów (wobec 150+ u Forda i 200+ u Fiata). To oznacza dłuższy czas oczekiwania na naprawę i wyższe koszty logistyczne dla flot rozproszonych geograficznie.
+Iveco Daily wypada pośrednio – części są tańsze niż w Sprinterze, ale sieć serwisowa marki jest znacznie mniejsza niż u konkurentów. Oznacza to potencjalnie dłuższy czas oczekiwania na naprawę i wyższe koszty logistyczne dla flot rozproszonych geograficznie.
 
 ## Werdykt – który duży bus wybrać?
 
 Nie ma jednego „najlepszego" busa dostawczego – jest bus najlepszy dla konkretnego zastosowania. Oto rekomendacje według scenariuszy użytkowania:
 
-- **Firma kurierska / flota miejska** – [Ford Transit](/modele/ford-transit/). Najniższy TCO (Total Cost of Ownership), najszersza sieć serwisowa, 10-biegowy automat oszczędza paliwo w cyklu mieszanym
-- **Transport ciężki / zabudowy specjalne** – [Iveco Daily](/modele/iveco-daily/). Rama drabinkowa i DMC do 7,2 t to parametry nieosiągalne dla rywali. Jedyny wybór, gdy ładunek przekracza 2 tony
-- **Baza pod kampera** – [Fiat Ducato](/modele/fiat-ducato/). 75% rynku kamperowego nie bierze się znikąd – dostępność akcesoriów, serwisu kamperowego i wartości odsprzedaży są nie do pobicia
-- **Premium / wynajem długoterminowy** – [Mercedes Sprinter](/modele/mercedes-sprinter/). Najwyższy komfort, najlepsza wartość rezydualna i prestiż marki. Opłacalny przy leasingu dłuższym niż 4 lata
+- **Firma kurierska / flota miejska** – Ford Transit. Najniższy TCO (Total Cost of Ownership), najszersza sieć serwisowa, a 10-biegowy automat oszczędza paliwo w cyklu mieszanym.
+- **Transport ciężki / zabudowy specjalne** – Iveco Daily. Rama drabinkowa i DMC do 7,2 t to parametry nieosiągalne dla rywali. Jedyny wybór, gdy ładunek regularnie przekracza 2 tony.
+- **Baza pod kampera** – Fiat Ducato. 75% rynku kamperowego nie bierze się znikąd – dostępność akcesoriów, serwisów i wysoka wartość odsprzedaży są nie do pobicia.
+- **Premium / wynajem długoterminowy** – Mercedes Sprinter. Najwyższy komfort, najlepsza wartość rezydualna i prestiż marki. Opłacalny przy leasingu dłuższym niż 4 lata.
 
-Na rynku wtórnym proporcje się zmieniają. Ducato 10-letni z przebiegiem 250 000 km kosztuje 25 000–40 000 zł – o 30–50% mniej niż równolatni Sprinter. To sprawia, że Ducato jest naturalnym wyborem dla małych firm i indywidualnych użytkowników szukających taniego wejścia w segment dużych busów.
+Na rynku wtórnym proporcje się zmieniają. Używane Ducato z dużym przebiegiem kosztuje nawet o 30–50% mniej niż równoletni Sprinter. To sprawia, że Fiat jest naturalnym wyborem dla małych firm i indywidualnych użytkowników szukających taniego wejścia w segment dużych busów.
 
 ---
 
 **Źródła:**
 
 - Dane techniczne producentów: Fiat Professional, Mercedes-Benz Vans, Iveco, Ford Pro (katalogi 2024/2025)
-- [Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato){rel="nofollow"} – Wikipedia
 - Raporty rynkowe ACEA (European Automobile Manufacturers' Association), Commercial Vehicle Registrations 2024
 - Cenniki części zamiennych: Inter Cars, Auto Partner, Hart (stan na I kw. 2026)

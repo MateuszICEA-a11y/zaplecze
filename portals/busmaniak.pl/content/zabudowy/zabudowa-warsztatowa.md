@@ -20,7 +20,7 @@ faq:
   - question: "Czy zabudowa warsztatowa wymaga homologacji?"
     answer: "Sama zabudowa nie wymaga homologacji, ale montaż instalacji elektrycznej 230 V i zbiorników ze sprężonym powietrzem podlega przepisom BHP. Generator i sprężarka powinny mieć certyfikat CE."
   - question: "Jaki bus najlepiej nadaje się na mobilny warsztat?"
-    answer: "Najlepsze bazy to Fiat Ducato L3H2 i Mercedes Sprinter L3H2 – oferują ponad 15 m³ przestrzeni ładunkowej i 190 cm wysokości, co pozwala pracować na stojąco."
+    answer: "Najlepsze bazy to Fiat Ducato L3H2 (13 m³) i Mercedes Sprinter L3H2 (ok. 14 m³). Oferują dużą przestrzeń i wysokość wewnętrzną ponad 190 cm, co pozwala na pracę na stojąco."
 ---
 
 ## Czym jest zabudowa warsztatowa {#czym-jest}
@@ -35,11 +35,13 @@ Z mobilnych warsztatów korzystają przede wszystkim ślusarze, mechanicy maszyn
 
 Kompletny mobilny warsztat składa się z kilku współpracujących systemów:
 
-- **Blat roboczy** – stalowy lub aluminiowy, o nośności 150–300 kg, z imadłem obrotowym
-- **System regałowy** – [regały modułowe](/zabudowy/regaly-do-busa/) z szufladami teleskopowymi na narzędzia i części
-- **Zasilanie elektryczne** – generator inwertorowy lub przetwornica z instalacją 230 V
-- **Sprężone powietrze** – sprężarka z zbiornikiem 20–50 l na narzędzia pneumatyczne
-- **Oświetlenie** – panele LED 12 V zapewniające 500–1 000 lux na blacie roboczym
+-   **Blat roboczy** – stalowy lub aluminiowy, o nośności 150–300 kg, z imadłem obrotowym
+-   **System regałowy** – [regały modułowe](/zabudowy/regaly-do-busa/) z szufladami teleskopowymi na narzędzia i części
+-   **Zasilanie elektryczne** – generator inwertorowy lub przetwornica z instalacją 230 V
+-   **Sprężone powietrze** – sprężarka z zbiornikiem 20–50 l na narzędzia pneumatyczne
+-   **Oświetlenie** – panele LED 12 V zapewniające 500–1 000 lux na blacie roboczym
+
+Renomowane systemy zabudów (Bott, Sortimo, Modul-System) przechodzą rygorystyczne testy zderzeniowe według normy ECE R17. Certyfikat ten gwarantuje, że w razie wypadku ciężkie elementy pozostaną na swoim miejscu. Niefachowo zamocowany blat z sześciokilogramowym imadłem działa przy zderzeniu z siłą 20G jak pocisk, stanowiąc śmiertelne zagrożenie.
 
 ## Blaty robocze i stanowiska pracy {#blaty}
 
@@ -62,14 +64,16 @@ Na blacie montuje się imadło obrotowe (nośność 80–120 mm) oraz uchwyty na
 
 ## Generatory prądu i instalacja elektryczna {#zasilanie}
 
+Dobór odpowiedniego źródła zasilania 230 V jest kluczowy dla funkcjonalności mobilnego warsztatu. Choć tradycyjne agregaty spalinowe wciąż są popularne, na rynek wchodzą cichsze i bardziej ekologiczne alternatywy.
+
 ### Generatory inwertorowe
 
-Generator prądu to niezbędny element mobilnego warsztatu, jeśli planowane jest używanie spawarki, szlifierki kątowej lub innych elektronarzędzi o dużym poborze mocy. Najczęściej stosowane są generatory inwertorowe, które dostarczają czystą sinusoidę i nie uszkadzają wrażliwej elektroniki:
+Generator prądu to niezbędny element mobilnego warsztatu, jeśli planowane jest używanie spawarki, szlifierki kątowej lub innych elektronarzędzi o dużym poborze mocy. Najczęściej stosowane są generatory inwertorowe, które dzięki wbudowanej przetwornicy (tzw. [inwerterowi](https://pl.wikipedia.org/wiki/Falownik)) dostarczają prąd o stabilnej częstotliwości i napięciu (czysta sinusoida), bezpieczny dla elektroniki.
 
-- **Honda EU22i** – 2 200 W, 21 kg, cicha praca (59 dB), ok. 5 000 zł
-- **SDMO Inverter PRO 3000** – 3 000 W, 35 kg, wydajny, ok. 4 500 zł
-- **Honda EU30is** – 3 000 W, 60 kg, rozruch elektryczny, ok. 9 000 zł
-- **Pramac PMi 3000** – 2 800 W, 32 kg, dobry stosunek mocy do ceny, ok. 3 500 zł
+-   **Honda EU22i** – 2 200 W, 21 kg, cicha praca (59 dB), ok. 5 000 zł
+-   **SDMO Inverter PRO 3000** – 3 000 W, 35 kg, wydajny, ok. 4 500 zł
+-   **Honda EU30is** – 3 000 W, 60 kg, rozruch elektryczny, ok. 9 000 zł
+-   **Pramac PMi 3000** – 2 800 W, 32 kg, dobry stosunek mocy do ceny, ok. 3 500 zł
 
 ![Zabudowa warsztatowa z blatem roboczym w busie dostawczym](/images/zabudowa-warsztatowa-hero.jpg)
 
@@ -77,14 +81,22 @@ Generator prądu to niezbędny element mobilnego warsztatu, jeśli planowane jes
 
 Generator montuje się najczęściej na wysuwnej platformie z tyłu busa lub w skrzynce bocznej z odprowadzeniem spalin na zewnątrz. Instalacja elektryczna 230 V wewnątrz busa wymaga:
 
-- **Rozdzielnica z wyłącznikiem różnicowoprądowym** – RCD 30 mA chroni przed porażeniem
-- **Gniazda hermetyczne IP44** – minimum 2–3 sztuki rozmieszczone przy blacie i na regałach
-- **Przewody w peszlach** – ochrona przed uszkodzeniem mechanicznym
-- **Uziemienie** – podłączenie do masy pojazdu lub dedykowanego szpikulca uziemiającego
+-   **Rozdzielnica z wyłącznikiem różnicowoprądowym** – RCD 30 mA chroni przed porażeniem
+-   **Gniazda hermetyczne IP44** – minimum 2–3 sztuki rozmieszczone przy blacie i na regałach
+-   **Przewody w peszlach** – ochrona przed uszkodzeniem mechanicznym
+-   **Uziemienie** – podłączenie do masy pojazdu lub dedykowanego szpikulca uziemiającego
 
 {{% info title="Bezpieczeństwo instalacji" icon="engineering" %}}Instalację 230 V w busie powinien wykonać lub odebrać uprawniony elektryk (SEP). Niewłaściwie wykonana instalacja to ryzyko porażenia i pożaru – szczególnie w środowisku metalowego nadwozia.{{% /info %}}
 
+### Nowoczesne systemy zasilania
+
+Dominującym trendem w zaawansowanych zabudowach stają się bezemisyjne systemy oparte na akumulatorach litowo-żelazowo-fosforanowych (LiFePO4). Zintegrowane stacje zasilania (np. Victron Energy 3000W–5000W, Clayton Power LPS II) z potężnymi przetwornicami zapewniają prąd 230 V bez hałasu i spalin. Ładowane są z alternatora pojazdu za pomocą wydajnych ładowarek DC-DC (50–100A) w trakcie jazdy.
+
+W przypadku zapotrzebowania na wyjątkowo dużą moc, alternatywą są generatory hydrauliczne zasilane z przystawki odbioru mocy (PTO) silnika pojazdu. Systemy takie jak Dynaset HG oferują ciągłą moc bez zajmowania przestrzeni ładunkowej.
+
 ## Sprężarki i narzędzia pneumatyczne {#sprezarki}
+
+Sprężone powietrze to podstawa w wielu pracach mechanicznych, od odkręcania kół po malowanie. Wybór odpowiedniego systemu zależy od częstotliwości i rodzaju wykonywanych prac.
 
 ### Sprężarki do zabudowy warsztatowej
 
@@ -101,18 +113,32 @@ Sprężarka powietrza umożliwia korzystanie z narzędzi pneumatycznych – kluc
 
 ### Montaż i podłączenie
 
-Sprężarkę montuje się na podłodze busa, na antywibracyjnych podkładkach gumowych. Zbiornik ciśnieniowy (20–50 l) wymaga corocznego przeglądu UDT, jeśli przekracza pojemność 24 l i ciśnienie 0,5 bar. Instalacja pneumatyczna obejmuje szybkozłączki przy blacie roboczym, zwijacz węża i filtr powietrza z odwadniaczem.
+Sprężarkę montuje się na podłodze busa, na antywibracyjnych podkładkach gumowych. Zbiornik ciśnieniowy podlega zaostrzonym wymogom dozoru technicznego UDT, jeśli iloczyn jego pojemności i ciśnienia (V x P) przekracza wartość 300 barów na litr. Poniżej tego progu zbiorniki objęte są dozorem uproszczonym, niewymagającym cyklicznych badań przez inspektora.
+
+Instalacja pneumatyczna obejmuje szybkozłączki przy blacie roboczym, zwijacz węża i filtr powietrza z odwadniaczem.
+
+### Alternatywa – narzędzia akumulatorowe
+
+Nowoczesne warsztaty mobilne coraz częściej rezygnują z ciężkich sprężarek na rzecz profesjonalnych systemów elektronarzędzi akumulatorowych. Potężne klucze udarowe (np. Milwaukee M18 FUEL osiągające ponad 2000 Nm) czy szlifierki z platform 54V (np. DeWalt FlexVolt) oferują wydajność porównywalną z narzędziami pneumatycznymi.
+
+Eliminacja kompresora i instalacji pozwala zaoszczędzić 50–80 kg masy i cenną przestrzeń ładunkową.
 
 ## Dobór busa na mobilny warsztat {#dobor-busa}
+
+Podstawą profesjonalnego mobilnego warsztatu jest odpowiednio dobrany pojazd bazowy. Kluczowe parametry to nie tylko kubatura, ale przede wszystkim dopuszczalna masa całkowita i rzeczywista ładowność.
+
+Największym wyzwaniem jest legalna ładowność. Ciężki furgon z tylnym napędem, jak Sprinter L3H2, waży bez zabudowy 2400–2500 kg. Po dodaniu masy kierowcy, stalowych regałów (350–400 kg), agregatu i narzędzi, pozostaje zaledwie 200–300 kg ładowności w ramach 3500 kg DMC.
+
+Rozwiązaniem problemu przeładowania jest stosowanie ultralekkich zabudów wykonanych w 100% z aluminium (np. Aluca, Sortimo Globelyst M). Systemy te są o 30–50% lżejsze od stalowych odpowiedników, co pozwala zachować rozsądną rezerwę ładowności.
 
 ### Wymagania gabarytowe i wagowe
 
 Mobilny warsztat wymaga busa o dużej przestrzeni ładunkowej i wysokim DMC. Sama zabudowa (regały, blat, generator, sprężarka) waży 200–400 kg – w mniejszych busach nie zostaje miejsca na ładunek:
 
-- **[Fiat Ducato](/modele/fiat-ducato/) L3H2** – 17 m³, DMC 3 500 kg, najpopularniejsza baza w Polsce
-- **[Mercedes Sprinter](/modele/mercedes-sprinter/) 316 CDI L3H2** – 14 m³, DMC 3 500 kg, najlepsza jakość wykończenia
-- **[Ford Transit](/modele/ford-transit/) L4H3** – 15 m³, DMC 3 500 kg, największa objętość w segmencie
-- **[Renault Master](/modele/renault-master/) L3H2** – 13 m³, DMC 3 500 kg, najlepsza relacja ceny do przestrzeni
+-   **[Fiat Ducato](/modele/fiat-ducato/) L3H2** – 13 m³, DMC 3 500 kg, najpopularniejsza baza w Polsce
+-   **[Mercedes Sprinter](/modele/mercedes-sprinter/) 317 CDI L3H2** – 14 m³, DMC 3 500 kg, najlepsza jakość wykończenia
+-   **[Ford Transit](/modele/ford-transit/) L4H3** – 15 m³, DMC 3 500 kg, największa objętość w segmencie
+-   **[Renault Master](/modele/renault-master/) L3H2** – 13 m³, DMC 3 500 kg, najlepsza relacja ceny do przestrzeni
 
 ### Adaptacje pojazdu
 
@@ -124,11 +150,11 @@ Bus przeznaczony na mobilny warsztat wymaga kilku modyfikacji wykraczających po
 
 Zabudowa warsztatowa jest droższa od standardowej [zabudowy narzędziowej](/zabudowy/zabudowa-na-narzedzia/) ze względu na dodatkowy sprzęt. Orientacyjne koszty w 2026 roku:
 
-- **System regałowy z szufladami** – 8 000–25 000 zł netto (Sortimo, Bott, Store Van)
-- **Blat roboczy z imadłem** – 3 000–8 000 zł
-- **Generator inwertorowy** – 3 500–9 000 zł
-- **Sprężarka z instalacją** – 3 000–12 000 zł
-- **Instalacja elektryczna 230 V** – 2 000–4 000 zł
-- **Oświetlenie LED** – 500–1 500 zł
+-   **System regałowy z szufladami** – 8 000–25 000 zł netto (Sortimo, Bott, Store Van)
+-   **Blat roboczy z imadłem** – 3 000–8 000 zł
+-   **Generator inwertorowy** – 3 500–9 000 zł
+-   **Sprężarka z instalacją** – 3 000–12 000 zł
+-   **Instalacja elektryczna 230 V** – 2 000–4 000 zł
+-   **Oświetlenie LED** – 500–1 500 zł
 
 Łącznie kompletna zabudowa warsztatowa to wydatek 20 000–60 000 zł netto. Szczegółowe zestawienie cen różnych typów zabudów znajdziesz w artykule o [kosztach zabudowy busa](/zabudowy/zabudowa-busa-cena/). Ogólny przegląd opcji zabudowy opisuje [przewodnik po zabudowach busa](/zabudowy/zabudowa-busa-przewodnik/).

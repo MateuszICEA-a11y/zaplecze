@@ -16,11 +16,11 @@ faq:
   - question: "Ile kosztuje profesjonalna zabudowa busa na narzędzia?"
     answer: "Koszt zależy od producenta i konfiguracji. Podstawowe zestawy zaczynają się od 3 000–5 000 zł, kompletne zabudowy premium (Sortimo, Bott) kosztują 15 000–40 000 zł netto."
   - question: "Czy zabudowę narzędziową można przenieść do innego busa?"
-    answer: "Tak, systemy modułowe (np. Sortimo Globelyst) projektowane są z myślą o przenoszeniu między pojazdami. Wymaga to dopasowania punktów montażowych, ale sam regał pozostaje ten sam."
+    answer: "Tak, systemy modułowe (np. Sortimo SR5) projektowane są z myślą o przenoszeniu między pojazdami. Wymaga to dopasowania punktów montażowych, ale sam regał pozostaje ten sam."
   - question: "Jakie busy najlepiej nadają się pod zabudowę narzędziową?"
     answer: "Najczęściej wybierane są Fiat Ducato, Ford Transit, Mercedes Sprinter i Renault Master – ze względu na dużą przestrzeń ładunkową i szeroką ofertę dedykowanych systemów zabudów."
   - question: "Czy zabudowa narzędziowa wpływa na ładowność busa?"
-    answer: "Tak, aluminiowe systemy ważą 50–120 kg, stalowe 100–200 kg. Warto to uwzględnić przy planowaniu DMC, szczególnie w mniejszych busach typu Berlingo czy Kangoo."
+    answer: "Tak, aluminiowe systemy ważą 50–120 kg, a cięższe, stalowe konstrukcje mogą przekraczać 150 kg. Warto to uwzględnić przy planowaniu DMC, szczególnie w mniejszych busach typu Berlingo czy Kangoo."
 ---
 
 ## Czym jest zabudowa busa na narzędzia {#czym-jest}
@@ -39,13 +39,15 @@ Wybór między gotowym systemem a samodzielną zabudową zależy od budżetu i w
 - **Zabudowa DIY** – niższy koszt (materiały od 1 500 zł), pełna dowolność konfiguracji, ale brak certyfikatów bezpieczeństwa
 - **Rozwiązanie hybrydowe** – gotowy stelaż od producenta uzupełniony własnymi organizerami i wkładkami
 
-W praktyce wiele firm zaczyna od zabudowy DIY, a po roku lub dwóch przechodzi na system profesjonalny – gdy okazuje się, że drewniane półki nie wytrzymują codziennych obciążeń lub gdy firma rozwija się i potrzebuje przenieść zabudowę do nowego, większego busa. Więcej o samodzielnych zabudowach ze sklejki znajdziesz w artykule o [zabudowie DIY](/zabudowy/zabudowa-sklejka-diy/).
+W praktyce wiele firm zaczyna od zabudowy DIY, a po roku lub dwóch przechodzi na system profesjonalny – gdy okazuje się, że drewniane półki nie wytrzymują codziennych obciążeń lub gdy firma rozwija się i potrzebuje przenieść zabudowę do nowego, większego busa.
 
 ## Producenci systemów zabudów narzędziowych {#producenci}
 
+Rynek profesjonalnych zabudów zdominowany jest przez kilku niemieckich i włoskich graczy, ale na polskim rynku z powodzeniem konkurują z nimi także inne marki europejskie oraz producenci krajowi.
+
 ### Sortimo – lider rynku europejskiego
 
-Sortimo to niemiecki producent, który od ponad 50 lat specjalizuje się w zabudowach pojazdów użytkowych. System Globelyst oferuje aluminiowe regały z możliwością konfiguracji online – klient wybiera bus, a konfigurator dopasowuje wymiary. Wyróżnikiem Sortimo są wkłady L-BOXX i i-BOXX kompatybilne z elektronarzędziami Bosch Professional. Ceny kompletnych zabudów zaczynają się od 8 000 zł netto za mniejsze busy i sięgają 35 000 zł za pełną konfigurację Ducato L3H2.
+Sortimo to niemiecki producent, który od ponad 50 lat specjalizuje się w zabudowach pojazdów użytkowych. Flagowy system SR5 oferuje aluminiowe regały z możliwością konfiguracji online – klient wybiera bus, a konfigurator dopasowuje wymiary. Wyróżnikiem Sortimo są wkłady L-BOXX i i-BOXX kompatybilne z elektronarzędziami Bosch Professional.
 
 ### Würth ORSYmobil
 
@@ -53,16 +55,22 @@ Würth oferuje system ORSYmobil zaprojektowany z myślą o integracji z własnym
 
 ### Bott i Store Van
 
-Bott (Niemcy) stawia na ciężkie zabudowy warsztatowe z szufladami teleskopowymi i stalowymi blatami roboczymi. Store Van (Włochy) koncentruje się na lekkich aluminiowych regałach z szybkim montażem – ich system SmartFloor eliminuje wiercenie w podłodze busa.
+Bott (Niemcy) oferuje system „bott vario3” wykonany z wytłaczanych profili aluminiowych, co czyni go jednym z najlżejszych rozwiązań na rynku. Store Van (Włochy) koncentruje się na lekkich aluminiowych regałach z szybkim montażem – ich system SmartFloor eliminuje wiercenie w podłodze busa.
+
+### Polskie i europejskie alternatywy
+
+Poza markami premium warto zwrócić uwagę na innych graczy. Polska firma GEMA Poland produkuje atestowane zabudowy aluminiowe, których ceny są często o 30–40% niższe od zachodnich odpowiedników. Dużą popularnością w Polsce cieszy się także szwedzki Modul-System, doceniany za wysoką modułowość i konkurencyjną cenę.
 
 | Producent  | Materiał           | Waga zestawu     | Cena od (netto) | Montaż     |
 |------------|--------------------|--------------------|------------------|------------|
 | Sortimo    | Aluminium          | 50–100 kg        | 8 000 zł         | 4–6 h      |
 | Würth      | Stal/aluminium     | 80–150 kg        | 6 000 zł         | 5–8 h      |
-| Bott       | Stal               | 100–200 kg       | 10 000 zł        | 6–10 h     |
+| Bott       | Aluminium/stal     | 60–120 kg        | 10 000 zł        | 6–10 h     |
 | Store Van  | Aluminium          | 40–80 kg         | 5 000 zł         | 3–5 h      |
 
 ## Materiały i konstrukcja {#materialy}
+
+Kluczowym aspektem każdej zabudowy jest kompromis między masą, wytrzymałością i kosztem. Równie ważna staje się integracja zasilania dla nowoczesnych elektronarzędzi.
 
 ### Aluminium vs. stal vs. sklejka
 
@@ -73,27 +81,25 @@ Wybór materiału wpływa na wagę zabudowy, wytrzymałość i cenę. Każdy ma 
 - **Sklejka wodoodporna** – stosowana w zabudowach DIY i jako półki w systemach profesjonalnych, tłumi wibracje lepiej niż metal
 - **Kompozyty i tworzywa** – pojemniki, wkłady i organizery, lekkie, ale mniej wytrzymałe na obciążenia punktowe
 
-| Parametr             | Aluminium       | Stal             | Sklejka 18 mm   |
-|----------------------|-----------------|------------------|------------------|
-| Waga regału 1 m      | 4–6 kg          | 8–12 kg          | 6–8 kg           |
-| Nośność półki        | 40–60 kg        | 60–100 kg        | 30–50 kg         |
-| Odporność na korozję | Wysoka          | Niska (bez powłoki) | Niska (wymaga impregnacji) |
-| Cena za m² zabudowy  | 300–500 zł      | 150–300 zł       | 80–150 zł        |
-| Żywotność            | 15–20 lat       | 8–12 lat         | 5–8 lat          |
-
 ### Systemy mocowania
 
 Profesjonalne zabudowy wykorzystują certyfikowane szyny montażowe (np. Sortimo FlexRail, Bott FloorFix), które mocują się do podłogi i ścian busa bez wiercenia w poszyciu. Szyny przenoszą obciążenia na ramę pojazdu i spełniają normy crash-testów. Alternatywą jest montaż na śrubach bezpośrednio w podłogę – tańszy, ale utrudniający demontaż.
+
+### Integracja zasilania elektrycznego
+
+Współczesna zabudowa to nie tylko regały, ale też mobilne stanowisko ładowania. Niezbędna staje się instalacja przetwornicy napięcia 12 V/230 V, często o mocy 1500–3000 W z pełną sinusoidą (np. firm Dometic, Victron). System zasila się z dodatkowego akumulatora (AGM lub LiFePO4 >100 Ah) i doprowadza prąd do listew z gniazdami, umożliwiając ładowanie baterii systemowych (np. Bosch, Makita).
 
 ![Zabudowa narzędziowa w przestrzeni ładunkowej busa](/images/zabudowa-busa-narzedzia-hero.jpg)
 
 ## Konfiguracje zabudów do popularnych busów {#konfiguracje}
 
+Wybór konfiguracji zależy od wielkości pojazdu. Inaczej planuje się przestrzeń w dużym busie klasy L3H2, a inaczej w kompaktowym pojeździe dostawczym.
+
 ### Duże busy – Ducato, Transit, Sprinter
 
 [Fiat Ducato](/modele/fiat-ducato/) L2H2 i L3H2 to najpopularniejsze bazy pod zabudowy narzędziowe w Polsce. Przestrzeń ładunkowa o objętości 10–17 m³ pozwala zabudować obie ściany boczne regałami i zostawić środkiem korytarz roboczy. [Ford Transit](/modele/ford-transit/) L3H2 oferuje podobne możliwości, a jego zaletą jest niższy próg załadunkowy.
 
-{{% info title="Zabudowa obustronna" icon="engineering" %}}W busach o długości L3 (ok. 6 m przestrzeni ładunkowej) stosuje się zabudowę obustronną – regały po obu stronach z korytarzem 60–70 cm pośrodku. Taka konfiguracja mieści 200–400 pozycji narzędzi i drobnych materiałów.{{% /info %}}
+{{% info title="Zabudowa obustronna" icon="engineering" %}}W busach o długości całkowitej L3 (ok. 3,7 m przestrzeni ładunkowej) stosuje się zabudowę obustronną – regały po obu stronach z korytarzem 60–70 cm pośrodku. Taka konfiguracja mieści 200–400 pozycji narzędzi i drobnych materiałów.{{% /info %}}
 
 ### Średnie i małe busy
 
@@ -119,6 +125,8 @@ Profesjonalni serwisanci szacują, że zabudowa narzędziowa oszczędza 15–30 
 
 ## Bezpieczeństwo i normy {#bezpieczenstwo}
 
+Profesjonalna zabudowa narzędziowa musi spełniać rygorystyczne normy bezpieczeństwa, chroniąc zarówno kierowcę, jak i innych uczestników ruchu. Równie istotne jest przestrzeganie przepisów dotyczących dopuszczalnej masy całkowitej pojazdu.
+
 ### Norma DIN EN 12195 i crash-testy
 
 Zabudowa narzędziowa musi spełniać wymogi zabezpieczenia ładunku. Norma DIN EN 12195 określa, że ładunek musi wytrzymać siły odpowiadające: 0,8 g do przodu, 0,5 g do tyłu i 0,5 g na boki. Profesjonalne systemy (Sortimo, Bott) przechodzą crash-testy wg ECE R17 i posiadają certyfikaty TÜV.
@@ -130,6 +138,8 @@ Zabudowa narzędziowa musi spełniać wymogi zabezpieczenia ładunku. Norma DIN 
 - **Pasy i siatki** – dodatkowe zabezpieczenie większych przedmiotów na podłodze
 - **Równomierne obciążenie** – cięższe elementy na dole, lżejsze na górze, aby obniżyć środek ciężkości
 
-Niezabezpieczone narzędzia w paku to nie tylko ryzyko ich uszkodzenia. Przy zderzeniu czołowym przy 50 km/h klucz o wadze 2 kg uderza z siłą odpowiadającą 80–100 kg. Dlatego nawet przy zabudowie DIY warto zainwestować w stalową przegrodę i blokady szuflad – to minimum, które chroni zdrowie kierowcy i pasażera.
+### Kontrola DMC i ryzyko mandatu
 
-Ogólne informacje o typach zabudów znajdziesz w [przewodniku po zabudowach busa](/zabudowy/zabudowa-busa-przewodnik/). Szczegóły zabudów warsztatowych z blatami roboczymi opisuje artykuł o [zabudowie warsztatowej](/zabudowy/zabudowa-warsztatowa/).
+Należy pamiętać, że zabudowa wraz z narzędziami znacząco zwiększa masę pojazdu. Łatwo jest przekroczyć dopuszczalną masę całkowitą ([DMC](https://pl.wikipedia.org/wiki/Dopuszczalna_masa_całkowita)) 3500 kg, zwłaszcza przy cięższych, stalowych systemach. W Polsce od 2022 roku kontrole ITD lub policji mogą skutkować mandatem do 3000 zł oraz zakazem dalszej jazdy do czasu rozładowania nadwagi.
+
+Niezabezpieczone narzędzia w paku to nie tylko ryzyko ich uszkodzenia. Przy zderzeniu czołowym przy 50 km/h klucz o wadze 2 kg uderza z siłą odpowiadającą 80–100 kg. Dlatego nawet przy zabudowie DIY warto zainwestować w stalową przegrodę i blokady szuflad – to minimum, które chroni zdrowie kierowcy i pasażera.

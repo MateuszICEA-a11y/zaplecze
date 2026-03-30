@@ -21,7 +21,7 @@ faq:
 
 ## Napęd 4x4 w busach – kto go potrzebuje
 
-Fabryczny napęd na cztery koła w dostawczaku to rozwiązanie dla konkretnych zastosowań. Standardowy bus z napędem na przód (lub tył) radzi sobie na utwardzonych drogach, ale na placu budowy, leśnej drodze dojazdowej czy zaśnieżonym podjeździe – bywa bezradny.
+Fabryczny napęd na cztery koła w dostawczaku to rozwiązanie dla konkretnych zastosowań. Standardowy bus z napędem na przód lub tył radzi sobie na utwardzonych drogach, ale na placu budowy, leśnej drodze dojazdowej czy zaśnieżonym podjeździe – bywa bezradny.
 
 Grupy użytkowników, które najczęściej wybierają busy 4x4:
 
@@ -31,34 +31,40 @@ Grupy użytkowników, które najczęściej wybierają busy 4x4:
 - **Kamperowcy off-road** – podróże poza utwardzonymi szlakami
 - **Służby ratunkowe** – karetki i pojazdy interwencyjne w rejonach górskich
 
+Warto jednak pamiętać o kluczowym kompromisie – ładowności. Układ napędu 4x4 waży od 100 do ponad 150 kg, co drastycznie ogranicza dostępne kilogramy. W popularnych w Polsce busach z DMC do 3,5 tony, zwłaszcza z zabudową kempingową lub specjalistyczną, legalna ładowność po dodaniu napędu 4x4 może spaść niemal do zera.
+
 {{% info title="Informacja" icon="info" %}}
 Napęd 4x4 w busie to nie to samo co terenówka. Żaden fabryczny dostawczak nie zastąpi Land Cruisera na ciężkim off-roadzie – chodzi raczej o pewne pokonywanie nieutwardzonych dróg, stromych podjazdów i śliskich nawierzchni.
 {{% /info %}}
 
 ## Mercedes Sprinter 4x4 – najstarszy gracz
 
-[Mercedes Sprinter](/modele/mercedes-sprinter/) oferuje fabryczny napęd 4x4 od 2002 roku – to najdłużej obecny system AWD w segmencie dużych busów. Obecna generacja (W907, od 2018) korzysta ze stałego napędu na cztery koła z międzyosiowym dyferencjałem i możliwością blokady.
+[Mercedes Sprinter](/modele/mercedes-sprinter/) ma najdłuższą historię fabrycznego napędu 4x4 w segmencie. Pod koniec 2021 roku w generacji W907 zaszła jednak rewolucja – porzucono dotychczasowy, stały napęd z reduktorem na rzecz nowoczesnego, automatycznie dołączanego systemu Torque-on-Demand.
 
-System Sprintera 4x4 bazuje na skrzyni rozdzielczej z reduktorem – to jedyny bus w segmencie oferujący pełny zestaw terenowy z przełożeniem redukowanym. Prześwit wzrasta o ok. 30 mm względem wersji tylnonapędowej, a kąt natarcia wynosi 21°.
+Nowy układ, stosowany w modelach od rocznika 2022, opiera się na sprzęgle wielopłytkowym. System automatycznie rozdziela moment obrotowy między osiami w zależności od potrzeb, z możliwością przekazania do 50% na oś przednią. W nowej architekturze nie ma fabrycznej opcji reduktora, co orientuje Sprintera bardziej w stronę dróg o niskiej przyczepności niż ciężkiego terenu.
 
-Dostępne silniki to 2.0 CDI w wersjach 150 i 170 KM, wyłącznie z automatyczną skrzynią 9G-Tronic. Sprinter 4x4 jest produkowany w wariantach od L2H1 do L3H2 – nie ma wersji z najdłuższym rozstawem osi.
+Dla osób szukających aut używanych kluczowe jest rozróżnienie obu systemów. Modele sprzed 2022 roku korzystały z układu firmy Oberaigner – stałego napędu 4x4 z rozdziałem mocy 35:65 (przód:tył) oraz opcjonalnym reduktorem. Był to układ bardziej terenowy, ale i cięższy.
 
-- **Prześwit** – ok. 205 mm (najwyższy w segmencie)
-- **Reduktor** – tak, dwustopniowa skrzynia rozdzielcza
-- **Blokada dyferencjału** – międzyosiowa (standardowo), tylna (opcja)
+Aktualne modele 4x4 napędza nowoczesny silnik wysokoprężny 2.0 (OM 654), który w najmocniejszej wersji generuje 190 KM. Jest on połączony wyłącznie z 9-biegową automatyczną skrzynią biegów 9G-Tronic.
+
+- **Prześwit** – podniesiony względem wersji RWD
+- **Reduktor** – nie, brak opcji fabrycznej
+- **Blokada dyferencjału** – działanie oparte na elektronicznym systemie 4ETS
 - **Dopłata** – ok. 30 000–35 000 zł netto
 
-Wadą jest cena i dostępność – Sprinter 4x4 jest produkowany w ograniczonych ilościach, a czas oczekiwania na nowy egzemplarz potrafi przekroczyć 6 miesięcy.
+Mimo zmiany charakteru napędu, Sprinter 4x4 pozostaje jedną z najdroższych opcji na rynku, a czas oczekiwania na nowe egzemplarze może być wydłużony.
 
 ## Volkswagen Transporter i Crafter 4Motion
 
 Volkswagen oferuje napęd 4Motion w dwóch segmentach – średnim ([Transporter](/modele/volkswagen-transporter/)) i dużym ([Crafter](/modele/volkswagen-crafter/)).
 
-**Transporter T6.1 4Motion** korzysta ze sprzęgła Haldex piątej generacji, które automatycznie przekazuje moment na tylną oś, gdy przednie koła tracą przyczepność. To system dołączany – w normalnych warunkach bus jedzie na przodzie, co obniża spalanie. Dostępny z silnikami 2.0 TDI od 150 do 204 KM i zarówno z manualną, jak i automatyczną skrzynią DSG.
+**Transporter T6.1 4Motion**, którego produkcja zakończyła się w 2024 roku, pozostaje popularnym wyborem na rynku wtórnym. Korzysta ze sprzęgła Haldex piątej generacji, które automatycznie dołącza tylną oś w przypadku utraty przyczepności. System dostępny był z silnikami 2.0 TDI (od 150 do 204 KM) oraz skrzyniami manualnymi lub DSG.
 
-**Crafter 4Motion** (od 2017) bazuje na innym rozwiązaniu – wielopłytkowym sprzęgle międzyosiowym z elektroniczną blokadą dyferencjału. System jest dołączany, bez reduktora. Dostępny z silnikiem 2.0 TDI 177 KM i automatem.
+**Crafter 4Motion** bazuje na innym rozwiązaniu – jest to [sprzęgło wielopłytkowe](https://pl.wikipedia.org/wiki/Sprzęgło_wielopłytkowe), które również dołącza napęd w sposób automatyczny. System nie posiada reduktora i łączony jest z najmocniejszym silnikiem 2.0 TDI o mocy 177 KM i 8-biegowym automatem.
 
-| Parametr | Transporter 4Motion | Crafter 4Motion |
+Warto wspomnieć o bliźniaczym modelu MAN TGE 4x4. Mechanicznie jest to ten sam pojazd co Crafter 4Motion, ale często wybierany jest przez firmy ze względu na dostępność sieci serwisowej dla aut ciężarowych (24/7) oraz inną politykę cenową.
+
+| Parametr | Transporter 4Motion (rynek wtórny) | Crafter 4Motion |
 |---|---|---|
 | Typ napędu | Dołączany (Haldex) | Dołączany (sprzęgło płytkowe) |
 | Reduktor | Nie | Nie |
@@ -73,21 +79,21 @@ System 4Motion w Transporterze T6.1 współpracuje z blokadą dyferencjału tyln
 
 ## Ford Transit AWD – przystępna cena
 
-[Ford Transit](/modele/ford-transit/) z napędem AWD (All-Wheel Drive) pojawił się w Europie w 2019 roku. System bazuje na inteligentnym sprzęgle, które w ułamku sekundy przekazuje do 100% momentu na oś tylną. W normalnych warunkach Transit AWD jedzie na przedniej osi – dopiero utrata przyczepności aktywuje tylny napęd.
+[Ford Transit](/modele/ford-transit/) z napędem AWD opiera się na architekturze z napędem na tylną oś (RWD). W normalnych warunkach drogowych moment obrotowy trafia na tył, a w razie uślizgu inteligentne sprzęgło w ułamku sekundy dołącza przednią oś, zapewniając lepszą trakcję.
 
-Transit AWD jest dostępny wyłącznie z silnikiem 2.0 EcoBlue 170 KM i automatyczną skrzynią 10-biegową. To jedyny bus w zestawieniu z tak wieloma przełożeniami, co przekłada się na niskie obroty przy prędkościach autostradowych i umiarkowane spalanie.
+Transit AWD dostępny jest z silnikiem 2.0 EcoBlue o mocy do 170 KM, który współpracuje z 6-biegową skrzynią manualną lub 8-biegowym automatem. Dzięki temu Transit oferuje elastyczną konfigurację napędową, dopasowaną do różnych potrzeb użytkowników.
 
-Największą zaletą jest cena – dopłata za AWD w Transicie wynosi ok. 18 000–22 000 zł netto, co czyni go najtańszą fabryczną opcją 4x4 w segmencie dużych busów. System nie ma reduktora ani mechanicznej blokady dyferencjału, więc nie nadaje się do ciężkiego terenu, ale na nieutwardzonych drogach i w zimowych warunkach radzi sobie bez zastrzeżeń.
+Ford rozszerzył również ofertę 4x4 o mniejszy segment. Popularny model Transit Custom jest dostępny w wersji AWD lub uterenowionej Trail. Napędza go silnik 2.0 EcoBlue (150/170 KM) z 8-biegowym automatem, co czyni go atrakcyjną alternatywą w segmencie vanów o ładowności do 1 tony.
 
-Ford oferuje Transit AWD w wariantach furgon, podwozie i kombi – od L2H2 do L4H3, co daje szerokie pole do konfiguracji.
+Największą zaletą Transita AWD jest cena. Dopłata za napęd na cztery koła wynosi ok. 18 000–22 000 zł netto, co plasuje go jako jedną z najtańszych opcji 4x4 w segmencie dużych busów.
 
 ## Iveco Daily 4x4 – terenowe DNA
 
-[Iveco Daily](/modele/iveco-daily/) 4x4 to najbardziej terenowy bus w zestawieniu. Ramowa konstrukcja, stały napęd na cztery koła z reduktorem i blokadą obu dyferencjałów (międzyosiowego i tylnego) stawiają go bliżej pojazdów wojskowych niż dostawczaków.
+[Iveco Daily](/modele/iveco-daily/) 4x4 to propozycja dla najbardziej wymagających. Jego ramowa konstrukcja, stały napęd na cztery koła z reduktorem i blokadami dyferencjałów stawiają go w klasie pojazdów do zadań specjalnych, a nie typowych dostawczaków.
 
-Daily 4x4 jest produkowany w ograniczonych seriach i dostępny wyłącznie w wariantach z DMC 5,5 i 7,0 ton. Silnik 3.0 MultiJet o mocy 170 KM współpracuje z manualną 6-biegową skrzynią i dwustopniowym reduktorem. Prześwit wynosi ok. 210 mm, a kąty natarcia i zejścia pozwalają pokonywać przeszkody terenowe niedostępne dla konkurentów.
+Daily 4x4 jest oferowany w szerokim zakresie DMC – od wersji 3,5 tony (na prawo jazdy kat. B) po ciężkie warianty 5,5 i 7,0 tony. Pod maską pracuje silnik 3.0 MultiJet o mocy 170 KM, który może współpracować z 6-biegową skrzynią manualną lub cenionym, 8-biegowym automatem Hi-Matic.
 
-To pojazd dedykowany – służby ratownicze w Alpach, wojsko, ekipy budowlane w trudnym terenie. Cena nowego Daily 4x4 jest najwyższa w segmencie (dopłata przekracza 40 000 zł netto), a komfort jazdy po asfalcie ustępuje lżejszym konkurentom z napędem dołączanym.
+Prześwit przekraczający 200 mm oraz imponujące kąty natarcia i zejścia pozwalają pokonywać przeszkody niedostępne dla konkurentów. To pojazd dla służb ratowniczych, wojska i firm pracujących w ekstremalnie trudnym terenie, gdzie cena i komfort jazdy po asfalcie odgrywają drugorzędną rolę.
 
 ## Porównanie systemów 4x4 – co wybrać
 
@@ -95,15 +101,15 @@ Wybór systemu napędowego zależy od tego, jak często i w jakim terenie będzi
 
 | Kryterium | Sprinter 4x4 | VW 4Motion | Transit AWD | Daily 4x4 |
 |---|---|---|---|---|
-| Typ napędu | Stały | Dołączany | Dołączany | Stały |
-| Reduktor | Tak | Nie | Nie | Tak |
-| Blokada dyferencjału | Tak (opcja tylna) | Elektroniczna | Elektroniczna | Tak (obie osie) |
+| Typ napędu | AWD (Torque-on-Demand) | Dołączany | Dołączany | Stały |
+| Reduktor | Nie | Nie | Nie | Tak |
+| Blokada dyferencjału | Elektroniczna | Elektroniczna | Elektroniczna | Tak (obie osie) |
 | Prześwit | ~205 mm | ~180 mm | ~185 mm | ~210 mm |
 | Wpływ na spalanie | +1,0–1,5 l | +0,5–0,8 l | +0,5–0,8 l | +1,0–1,5 l |
 | Cena (dopłata netto) | 30 000–35 000 zł | 15 000–25 000 zł | 18 000–22 000 zł | 40 000+ zł |
 | Zastosowanie | Uniwersalne / teren | Drogi gruntowe / zima | Drogi gruntowe / zima | Ciężki teren |
 
-Dla większości użytkowników – kamperowców, firm serwisowych, kurierów w rejonach wiejskich – system dołączany (VW 4Motion lub Ford AWD) wystarczy i nie obciąża nadmiernie budżetu ani spalania. Stałe 4x4 z reduktorem (Sprinter, Daily) to wybór dla tych, którzy regularnie pokonują ciężki teren.
+Dla większości użytkowników – kamperowców, firm serwisowych, kurierów w rejonach wiejskich – system dołączany (VW 4Motion lub Ford AWD) wystarczy i nie obciąża nadmiernie budżetu ani spalania. Stałe 4x4 z reduktorem (Iveco Daily) to wybór dla tych, którzy regularnie pokonują ciężki teren.
 
 ## Alternatywy – konwersje aftermarket
 

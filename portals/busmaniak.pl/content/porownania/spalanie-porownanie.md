@@ -12,8 +12,8 @@ main_keyword: "spalanie busów"
 volume: 480
 lead: "Zużycie paliwa to jeden z głównych kosztów eksploatacji busa dostawczego. Różnice między modelami sięgają 3–4 l/100 km, co przy rocznym przebiegu 40 000 km oznacza nawet 8000 zł rocznie. Poniżej znajdziesz szczegółowe porównanie spalania busów i vanów – od dużych dostawczaków po małe vany miejskie."
 faq:
-  - question: "Ile pali Fiat Ducato 2.3 diesel?"
-    answer: "Fiat Ducato 2.3 Multijet 140 KM w cyklu mieszanym spala 8,5–10 l/100 km wg danych WLTP. W realnej eksploatacji z ładunkiem to 9,5–12 l/100 km, a na autostradzie przy 120 km/h nawet 11–13 l/100 km."
+  - question: "Ile pali Fiat Ducato 2.2 diesel?"
+    answer: "Fiat Ducato 2.2 Multijet 140 KM w cyklu mieszanym spala 8,7 l/100 km wg danych WLTP. W realnej eksploatacji z ładunkiem to 9,5–12 l/100 km, a na autostradzie przy 120 km/h zużycie wynosi 10,5–12 l/100 km."
   - question: "Który bus dostawczy pali najmniej?"
     answer: "W segmencie dużych busów najniższe spalanie oferuje Mercedes Sprinter 211 CDI (2.0, 114 KM) – ok. 8,2 l/100 km WLTP. Wśród średnich vanów wyróżnia się Renault Trafic 2.0 dCi 130 KM z wynikiem 6,4 l/100 km WLTP."
   - question: "Czy bus elektryczny jest tańszy w eksploatacji niż diesel?"
@@ -21,10 +21,11 @@ faq:
   - question: "Ile pali bus na autostradzie?"
     answer: "Na autostradzie przy 120–130 km/h busy spalają o 20–35% więcej niż w cyklu mieszanym. Duży bus (Ducato, Sprinter) zużywa 11–14 l/100 km, średni van (Vivaro, Trafic) 8–10 l/100 km, a mały van (Berlingo, Kangoo) 6,5–8 l/100 km."
 ---
-
 ## Spalanie dużych busów dostawczych
 
 Duże busy dostawcze o DMC 3,5 tony to [Fiat Ducato](/modele/fiat-ducato/), [Mercedes Sprinter](/modele/mercedes-sprinter/), [Ford Transit](/modele/ford-transit/), [Iveco Daily](/modele/iveco-daily/), Renault Master, MAN TGE i Volkswagen Crafter. Ich spalanie zależy przede wszystkim od masy ładunku, wersji nadwozia (L1H1 kontra L4H3) i stylu jazdy.
+
+Warto podkreślić, że poniższe dane dotyczą głównie furgonów (tzw. blaszaków). W przypadku popularnych w transporcie międzynarodowym podwozi z zabudową skrzyniową i plandeką, spalanie jest znacznie wyższe. Ze względu na olbrzymi opór czołowy, realne zużycie paliwa takich pojazdów jak Master czy Ducato na autostradzie wynosi 12,5–15 l/100 km.
 
 Realne spalanie dużych busów jest wyższe niż deklaracje WLTP o 1–2,5 l/100 km. Wpływ ma opór aerodynamiczny – wysoka zabudowa H3 zwiększa zużycie paliwa o ok. 15% w porównaniu z niską H1 przy prędkości autostradowej.
 
@@ -76,7 +77,7 @@ Małe vany to kategoria obejmująca Citroën Berlingo, Peugeot Partner/Rifter, O
 | **Opel Combo 1.5 D** | 130 | 5,3 | 6,5–8 | 5–6 | 6,5–7,5 |
 | **Renault Kangoo 1.5 dCi** | 95 | 5,4 | 7–8,5 | 5,5–6,5 | 6,5–7,5 |
 | **Fiat Doblò 1.5 BlueHDi** | 130 | 5,5 | 7–8,5 | 5,5–6,5 | 7–8 |
-| **Ford Transit Connect 1.5 EcoBlue** | 100 | 5,5 | 7–8,5 | 5,5–6,5 | 7–8 |
+| **Ford Transit Connect 2.0 EcoBlue**| 102 lub 122 | 5,5 | 7–8,5 | 5,5–6,5 | 7–8 |
 | **Toyota ProAce City 1.5 D** | 130 | 5,3 | 6,5–8 | 5–6 | 6,5–7,5 |
 
 Bliźniaki Stellantis (Berlingo, Partner, Combo, ProAce City) ponownie dominują – wspólna platforma i silnik 1.5 BlueHDi 130 KM to najoszczędniejszy zestaw w segmencie. Renault Kangoo ze starszym silnikiem 1.5 dCi spala minimalnie więcej, ale różnica w praktyce wynosi 0,5 l/100 km.
@@ -88,10 +89,12 @@ Zużycie paliwa busa zależy od wielu czynników, z których część można kon
 Główne czynniki wpływające na spalanie:
 
 - **Masa ładunku** – każde 100 kg dodatkowego obciążenia to 0,3–0,5 l/100 km więcej. Pusty bus spala nawet 25% mniej niż w pełni załadowany
-- **Opór aerodynamiczny** – wysoka zabudowa (H2, H3) zwiększa spalanie na autostradzie o 10–20%. Bagażnik dachowy dodaje 0,5–1,5 l/100 km przy 120 km/h
+- **[Opór aerodynamiczny](https://pl.wikipedia.org/wiki/Opór_aerodynamiczny)** – wysoka zabudowa (H2, H3) zwiększa spalanie na autostradzie o 10–20%. Bagażnik dachowy dodaje 0,5–1,5 l/100 km przy 120 km/h
+- **Przełożenie tylnego mostu** – w pojazdach z napędem na tył (np. Sprinter, Daily) wybór „krótkiego” przełożenia, idealnego do holowania przyczep, zwiększa obroty silnika na autostradzie, podnosząc spalanie o 1–2,5 l/100 km w porównaniu z mostem „długim”, zoptymalizowanym pod trasy
 - **Ogumienie** – opony klasy C (dostawcze) o niskich oporach toczenia oszczędzają 0,3–0,5 l/100 km w porównaniu z tanimi zamiennikami. Niedopompowane opony (0,5 bar poniżej normy) zwiększają spalanie o 3–5%
 - **Styl jazdy** – agresywne przyspieszanie i hamowanie zwiększa zużycie paliwa o 15–25% w porównaniu z jazdą ekonomiczną. Tempomat na trasie obniża spalanie o 5–10%
-- **Stan techniczny** – zatkany filtr DPF, zużyte wtryskiwacze lub nieprawidłowo działający turbosprężarka mogą zwiększyć spalanie o 1–3 l/100 km
+- **Stan techniczny** – zatkany filtr DPF, zużyte wtryskiwacze lub nieprawidłowo działająca turbosprężarka mogą zwiększyć spalanie o 1–3 l/100 km
+- **Zużycie AdBlue** – nowoczesne silniki diesla z normą Euro 6e wymagają płynu AdBlue, którego zużycie przy dużym obciążeniu sięga 1,5–3 litrów na 1000 km. Stanowi to dodatkowy, stały koszt eksploatacyjny, który należy uwzględnić w ogólnym budżecie paliwowym
 - **Temperatura otoczenia** – zimą spalanie rośnie o 10–20% z powodu dłuższego nagrzewania silnika, gęstszego powietrza i włączonego ogrzewania
 
 {{% expert title="Tip" icon="sports_score" %}}
@@ -107,6 +110,7 @@ Skuteczne metody redukcji spalania:
 - **Eco-driving** – płynne przyspieszanie, wcześniejsze zmiany biegów (przy 2000 obr./min dla diesla), wykorzystanie bezwładności pojazdu zamiast hamowania. Szkolenie z eco-drivingu obniża spalanie floty o 8–15%
 - **Optymalizacja tras** – nawigacja z uwzględnieniem korków i topografii. Unikanie tras górskich z pełnym ładunkiem oszczędza nawet 2 l/100 km
 - **Regularne serwisowanie** – wymiana filtrów (powietrza, paliwa) zgodnie z harmonogramem, kontrola ciśnienia w oponach co 2 tygodnie, regeneracja DPF przed zapchaniem
+- **Aerodynamika akcesoryjna** – montaż i prawidłowa regulacja spojlera dachowego na kabinie busa z zabudową kontenerową lub plandekową może obniżyć spalanie o 1,5–3 l/100 km przy prędkościach powyżej 90 km/h
 - **Odpowiednie opony** – opony o niskich oporach toczenia (klasa A lub B na etykiecie UE) i utrzymywanie ciśnienia 0,2 bar powyżej normy przy pełnym obciążeniu
 - **Redukcja masy** – usunięcie zbędnego wyposażenia z przestrzeni ładunkowej. Regały, półki i narzędzia, które nie są potrzebne na danej trasie, to dodatkowe kilogramy
 

@@ -25,99 +25,119 @@ faq:
 
 ## Wykładziny podłogowe {#podloga}
 
+Podłoga to fundament każdej zabudowy paki. Musi być wytrzymała, antypoślizgowa i odporna na wilgoć. Wybór odpowiedniego materiału zależy od rodzaju przewożonych towarów i intensywności eksploatacji pojazdu.
+
 ### Sklejka z wykładziną antypoślizgową
 
-Standardowa zabudowa podłogi to sklejka wodoodporna (9–12 mm) przykręcona do oryginalnej podłogi busa, pokryta wykładziną ryflowaną z PVC lub gumy. Sklejka wyrównuje nierówności podłogi, rozkłada obciążenie i chroni blachę przed wgnieceniami od ciężkich przedmiotów.
+Podstawę zabudowy stanowi sklejka wodoodporna o grubości 9–12 mm, pokryta wykładziną ryflowaną z PVC lub gumy. Montaż odbywa się bezinwazyjnie – podłogę przykleja się do blachy elastycznymi klejami montażowymi i mocuje za pomocą adapterów do fabrycznych punktów kotwiczenia. Takie rozwiązanie chroni karoserię przed korozją i nie narusza gwarancji producenta.
 
-Grubość sklejki dobiera się do obciążenia – 9 mm wystarcza dla kurierów i lekkich ładunków, 12 mm dla firm budowlanych i transportu palet. Wykładzina antypoślizgowa (tzw. "bananowa" lub ryflowana) zapobiega przesuwaniu się ładunku podczas hamowania i skręcania.
+Grubość sklejki dobiera się do obciążenia – 9 mm wystarcza dla kurierów i lekkich ładunków, 12 mm dla firm budowlanych i transportu palet. Wykładzina antypoślizgowa (tzw. „bananowa”) zapobiega przesuwaniu się ładunku podczas hamowania i skręcania.
 
 ### Płyty HPL i aluminium
 
-Płyty HPL (High Pressure Laminate) to premium alternatywa dla sklejki. Są cieńsze (3–6 mm), lżejsze i znacznie bardziej odporne na ścieranie, chemikalia i wilgoć. Powierzchnia HPL jest gładka, co ułatwia wsuwanie palet i pojemników, ale wymaga mat antypoślizgowych przy lekkich ładunkach.
+Płyty HPL (High Pressure Laminate) to premium alternatywa dla sklejki. Są cieńsze (3–6 mm), lżejsze i znacznie bardziej odporne na ścieranie, chemikalia i wilgoć. Gładka powierzchnia HPL ułatwia wsuwanie palet, ale wymaga stosowania mat antypoślizgowych przy luźniejszych ładunkach.
 
-Aluminium ryflowane (blacha łezka) stosuje się w busach o intensywnej eksploatacji – warsztatach mobilnych, pojazdach ratunkowych, busach kurierskich obsługujących kilkaset paczek dziennie. Aluminium jest najtrwalsze, ale najcięższe i najdroższe.
+Coraz popularniejsze stają się również podłogi kompozytowe z polipropylenu o strukturze plastra miodu, powlekanego włóknem szklanym. Ich główną zaletą jest niska masa, pozwalająca zredukować wagę zabudowy o kilkadziesiąt kilogramów w porównaniu do tradycyjnej sklejki.
+
+Aluminium ryflowane (blacha łezkowa) stosuje się w busach o intensywnej eksploatacji – warsztatach mobilnych czy pojazdach kurierskich. Aluminium jest najtrwalsze, ale jednocześnie najcięższe i najdroższe.
 
 - **Sklejka 9 mm + wykładzina PVC** – 80–150 zł/m², standard rynkowy
 - **Sklejka 12 mm + wykładzina gumowa** – 120–200 zł/m², ciężkie ładunki
 - **Płyta HPL 4 mm** – 200–350 zł/m², premium, kurierzy i floty
 - **Aluminium ryflowane 2 mm** – 250–400 zł/m², najwyższa trwałość
 
-| Materiał podłogi       | Grubość  | Waga/m²   | Odporność na ścieranie | Cena/m²          |
-|-------------------------|----------|-----------|------------------------|------------------|
-| Sklejka + PVC           | 9–12 mm  | 7–10 kg   | Średnia                | 80–200 zł        |
-| Płyta HPL               | 3–6 mm   | 4–7 kg    | Wysoka                 | 200–350 zł       |
-| Aluminium ryflowane     | 2–3 mm   | 5–8 kg    | Bardzo wysoka          | 250–400 zł       |
-| Podłoga kompozytowa     | 8–15 mm  | 5–8 kg    | Wysoka                 | 180–300 zł       |
+| Materiał podłogi | Grubość | Waga/m² | Odporność na ścieranie | Cena/m² |
+| :--- | :--- | :--- | :--- | :--- |
+| Sklejka + PVC | 9–12 mm | 7–10 kg | Średnia | 80–200 zł |
+| Płyta HPL | 3–6 mm | 4–7 kg | Wysoka | 200–350 zł |
+| Aluminium ryflowane | 2–3 mm | 5–8 kg | Bardzo wysoka | 250–400 zł |
+| Podłoga kompozytowa | 8–15 mm | 5–8 kg | Wysoka | 180–300 zł |
 
 ## Ochrona ścian bocznych {#sciany}
 
+Fabryczne blaszane ściany przestrzeni ładunkowej są cienkie i podatne na wgniecenia. Profesjonalna zabudowa chroni je przed uszkodzeniami mechanicznymi, wygłusza wnętrze i ułatwia montaż dodatkowych systemów mocowania.
+
 ### Okładziny drewniane i kompozytowe
 
-Ściany boczne paki narażone są na uderzenia podczas załadunku i przesuwanie się ładunku w trakcie jazdy. Standardowe zabezpieczenie to panele ze sklejki wodoodpornej (4–6 mm) lub płyty PP (polipropylenowe) montowane na klikach lub wkręcanych listwach.
+Ściany boczne paki narażone są na uderzenia podczas załadunku i przesuwanie się towaru. Standardowe zabezpieczenie to panele ze sklejki wodoodpornej (4–6 mm) lub płyty polipropylenowe (PP) montowane na klipsach lub wkrętach.
 
-Okładziny powinny sięgać do wysokości ładunku – w busach kurierskich wystarczy 100–120 cm, w busach budowlanych lepiej pokryć ściany do pełnej wysokości. Między okładziną a blachą warto zostawić 5–10 mm szczeliny wentylacyjnej, która zapobiega gromadzeniu się wilgoci i korozji.
+Okładziny powinny sięgać przynajmniej do wysokości ładunku – w busach kurierskich wystarczy 100–120 cm, w busach budowlanych lepiej pokryć ściany do pełnej wysokości. Między okładziną a blachą warto zostawić 5–10 mm szczeliny wentylacyjnej, która zapobiega gromadzeniu się wilgoci.
 
 ### Listwy ochronne i narożniki
 
-Listwy ochronne montuje się w miejscach najbardziej narażonych na uszkodzenia – dolna krawędź ściany, krawędzie drzwi, narożniki. Najpopularniejsze typy:
+Listwy ochronne montuje się w miejscach najbardziej narażonych na uszkodzenia – na dolnej krawędzi ścian, krawędziach drzwi oraz w narożnikach paki.
 
-- **Listwy aluminiowe L-profil** – na dolną krawędź ściany, chronią przed uderzeniami wózkiem paletowym
+- **Listwy aluminiowe L-profil** – na dolnej krawędzi ściany, chronią przed uderzeniami wózkiem paletowym
 - **Narożniki stalowe** – na rogach paki, odporne na wielokrotne uderzenia
 - **Listwy PVC elastyczne** – na krawędzie drzwi przesuwnych, tłumią uderzenia i chronią lakier
 - **Odbojniki gumowe** – na progu załadunkowym, ułatwiają wsuwanie palet i skrzyń
 
-{{% expert name="Zielinski" %}}Najtańszym sposobem ochrony ścian busa jest oklejenie ich folią ochronną PPF (Paint Protection Film) o grubości 150–200 mikronów. Koszt 200–500 zł za całą pakę, montaż w 2 godziny, a folia chroni lakier przed zarysowaniami i ułatwia usuwanie naklejek. To dobre rozwiązanie przejściowe przed właściwą zabudową.{{% /expert %}}
+Krytycznym elementem są nadkola – najczęściej uszkadzane przez wózki widłowe. Można je chronić na dwa sposoby: poprzez tradycyjną zabudowę ze sklejki 9–12 mm, tworzącą praktyczne „skrzynki” (koszt ok. 300–500 zł/para). Alternatywą są dedykowane, obłe wytłoczki z tworzywa ABS/HDPE, które nie zabierają cennej przestrzeni na szerokość (ok. 400–800 zł/komplet).
+
+W wyższych busach (H2/H3) warto również zabezpieczyć sufit przed uszkodzeniem przez wysokie ładunki. Stosuje się tu lekkie płyty z polipropylenu komorowego (od 4 mm), które ważą zaledwie 1,2–1,5 kg/m² i nie obciążają dachu. Koszt materiału z montażem to ok. 500–900 zł.
+
+Przy okazji montażu paneli na ścianach i suficie warto zainwestować w dodatkowe oświetlenie LED. Ciemne okładziny znacznie ograniczają widoczność. Listwy lub taśmy LED podłączone do krańcówek drzwi to wydatek rzędu 150–400 zł, który drastycznie ułatwia pracę po zmroku.
+
+{{% expert name="Zielinski" %}}Najtańszą formą fizycznej ochrony ścian jest zastosowanie cienkiej, lakierowanej płyty pilśniowej (HDF). Jest lekka i tania w wymianie, dzięki czemu stanowi dobrą, budżetową alternatywę dla sklejki w pojazdach przewożących mniej wymagające ładunki.{{% /expert %}}
 
 ## Systemy mocowania ładunku {#mocowanie}
 
-### Szyny kotwiczące i pasy transportowe
+Nawet najlepsza obudowa paki nie zda egzaminu bez skutecznego systemu unieruchomienia ładunku. Prawidłowe mocowanie towaru to nie tylko ochrona przed uszkodzeniem, ale przede wszystkim wymóg prawny i kluczowy element bezpieczeństwa na drodze.
 
 ![Paka busa dostawczego z wykładziną podłogową i listwami ochronnymi na ścianach](/images/zabudowa-paki-hero.jpg)
 
-Szyna kotwicząca (airline rail) to aluminiowy profil montowany na podłodze lub ścianach, w który wpinają się haki pasów transportowych. System pozwala mocować ładunek w dowolnym punkcie paki bez wiercenia dodatkowych otworów. Szyny montuje się parami – po obu stronach podłogi, w odstępie 20–30 cm od ścian.
+### Szyny kotwiczące i pasy transportowe
 
-Pasy transportowe z napinaczem (ratchet straps) to podstawowe wyposażenie każdej paki. Dla busów dostawczych standardem są pasy o wytrzymałości 500–2 000 daN (kg siły). Na jedną europaletę potrzeba minimum 2 pasów, na luźny ładunek – 4.
+Szyna kotwicząca (airline rail) to aluminiowy profil montowany na podłodze lub ścianach, w który wpinają się haki pasów transportowych. System pozwala mocować ładunek w dowolnym punkcie paki. Szyny montuje się parami, najczęściej po obu stronach podłogi.
+
+Pasy transportowe z napinaczem to podstawowe wyposażenie każdej paki. Dla busów dostawczych standardem są pasy o wytrzymałości 500–2 000 daN. Na jedną europaletę potrzeba minimum dwóch pasów.
 
 ### Siatki i przegrody
 
-Siatki ochronne dzielą przestrzeń ładunkową na strefy i zabezpieczają lekkie ładunki przed przemieszczaniem. Montuje się je na karabińczykach w szyny kotwiczące lub na dedykowanych hakach:
+Siatki ochronne dzielą przestrzeń ładunkową na strefy i zabezpieczają lżejsze ładunki. Montuje się je na karabińczykach do szyn kotwiczących lub na dedykowanych hakach.
 
 - **Siatka pionowa (przegroda)** – dzieli pakę na sekcje, zapobiega przesuwaniu się ładunku do przodu
-- **Siatka pozioma** – pod sufitem paki, zabezpiecza lekkie pudełka przed wypadaniem przy otwieraniu drzwi
-- **Przegroda stalowa za kabiną** – obowiązkowa w busach bez fabrycznej ściany działowej, chroni pasażerów
+- **Siatka pozioma** – pod sufitem paki, zabezpiecza lekkie pudełka przed wypadaniem
+- **Przegroda stalowa za kabiną** – obowiązkowa w busach bez fabrycznej ściany działowej
 - **Rozpórki teleskopowe** – aluminiowe belki rozporowe między ścianami, unieruchamiają ładunek bez pasów
 
-{{% info title="Norma DIN EN 12195" icon="engineering" %}}Zabezpieczenie ładunku w pojazdach dostawczych reguluje norma DIN EN 12195. Wymaga ona, aby siła mocowania wynosiła minimum 80% ciężaru ładunku w kierunku jazdy i 50% na boki. Przy kontroli ITD brak zabezpieczonego ładunku oznacza mandat 500–3 000 zł i zatrzymanie dowodu rejestracyjnego.{{% /info %}}
+{{% info title="Norma DIN EN 12195" icon="engineering" %}}Zabezpieczenie ładunku w pojazdach dostawczych reguluje norma DIN EN 12195. Wymaga ona, aby siła mocowania wynosiła minimum 80% ciężaru ładunku w kierunku jazdy i 50% na boki. Przy kontroli ITD brak zabezpieczenia ładunku karany jest mandatem karnym i zakazem dalszej jazdy do momentu prawidłowego zabezpieczenia towaru.{{% /info %}}
 
 ## Ochrona przed warunkami atmosferycznymi {#ochrona}
 
+Przestrzeń ładunkowa musi chronić towar nie tylko przed uszkodzeniami mechanicznymi, ale również przed wilgocią i skrajnymi temperaturami. Podstawowe zabiegi uszczelniające i opcjonalna izolacja termiczna podnoszą funkcjonalność busa.
+
 ### Uszczelnienie i hydroizolacja
 
-Paka busa jest narażona na wilgoć z dwóch stron – z zewnątrz (deszcz wpadający przez nieszczelne drzwi) i od wewnątrz (kondensacja przy przewożeniu ciepłych ładunków w zimie). Podstawowe zabezpieczenia:
+Paka busa jest narażona na wilgoć z zewnątrz (deszcz) i od wewnątrz (kondensacja). Podstawowe zabezpieczenia:
 
 - **Uszczelki drzwi** – wymiana co 3–5 lat, koszt 200–600 zł za komplet
 - **Silikon budowlany** – uszczelnienie styków podłogi ze ścianami, koszt 30–50 zł
 - **Farba antykorozyjna** – na odsłonięte elementy metalowe pod zabudową
-- **Mata absorbująca** – na podłodze przy drzwiach, zbiera wodę wnoszoną na butach i oponach wózka
+- **Mata absorbująca** – na podłodze przy drzwiach, zbiera wodę z butów i kół wózka
 
 ### Izolacja termiczna paki
 
-Izolacja termiczna nie jest potrzebna w każdym busie, ale chroni ładunki wrażliwe na temperaturę – elektronikę, farby, kleje, żywność niewymagającą chłodzenia. Pianka XPS (20–30 mm) na ścianach i suficie utrzymuje temperaturę w pace stabilną o 10–15°C dłużej niż w busie bez izolacji. Profesjonalne zabudowy izotermiczne opisuje osobny artykuł o [zabudowie izotermicznej busa](/zabudowy/zabudowa-izotermiczna/).
+Izolacja termiczna chroni ładunki wrażliwe na temperaturę – elektronikę, farby czy żywność niewymagającą chłodzenia. Pianka XPS (20–30 mm) na ścianach i suficie utrzymuje temperaturę stabilną o 10–15°C dłużej niż w busie bez izolacji. Profesjonalne zabudowy izotermiczne opisuje osobny artykuł o [zabudowie izotermicznej busa](/zabudowy/zabudowa-izotermiczna/).
 
 ## Koszty zabudowy paki w 2026 roku {#koszty}
+
+Analizując koszty, należy uwzględnić zarówno cenę materiałów, jak i robocizny. Coraz częściej tradycyjny montaż stolarski jest wypierany przez gotowe, prefabrykowane systemy do samodzielnego montażu.
+
+Dominującym trendem stają się gotowe zestawy do samodzielnego montażu (DIY), wycinane na maszynach CNC pod konkretny model i wersję busa. Pakiet zawiera idealnie dopasowane formatki podłogi i ścian z wyciętymi otworami montażowymi. Kompletny zestaw ze sklejką kosztuje 1800–2500 zł z wysyłką paletową, a jego montaż zajmuje 1–2 osobom zaledwie 2–3 godziny.
 
 ### Cennik materiałów i montażu
 
 Koszt zabudowy paki zależy od wielkości busa, wybranych materiałów i zakresu prac. Orientacyjne ceny dla popularnego [Fiata Ducato](/modele/fiat-ducato/) L2H2:
 
-| Element zabudowy          | Materiał + montaż  | Samodzielnie       |
-|---------------------------|---------------------|--------------------|
-| Podłoga (sklejka + PVC)   | 1 200–2 500 zł     | 600–1 200 zł      |
-| Okładziny ścian            | 800–2 000 zł       | 400–1 000 zł      |
-| Listwy ochronne           | 400–1 000 zł       | 200–500 zł        |
-| Szyny kotwiczące (2 szt.) | 600–1 500 zł       | 300–800 zł        |
-| Przegroda za kabiną       | 1 000–3 000 zł     | Montaż profesjonalny |
-| Siatka ochronna           | 300–800 zł         | 200–500 zł        |
+| Element zabudowy | Materiał + montaż | Samodzielnie |
+| :--- | :--- | :--- |
+| Podłoga (sklejka + PVC) | 1 200–2 500 zł | 600–1 200 zł |
+| Okładziny ścian | 800–2 000 zł | 400–1 000 zł |
+| Listwy ochronne | 400–1 000 zł | 200–500 zł |
+| Szyny kotwiczące (2 szt.) | 600–1 500 zł | 300–800 zł |
+| Przegroda za kabiną | 1 000–3 000 zł | Montaż profesjonalny |
+| Siatka ochronna | 300–800 zł | 200–500 zł |
 
 ### Zwrot z inwestycji
 
