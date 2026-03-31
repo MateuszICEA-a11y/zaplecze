@@ -1235,7 +1235,7 @@ a:hover { color: var(--c-orange-hover); }
 .why__link:hover { color: var(--c-orange-hover); }
 
 .why__card {
-  background: var(--c-bg-alt);
+  background: #e3e3e3;
   border: 1px solid var(--c-border);
   border-radius: var(--radius);
   padding: 2rem;
