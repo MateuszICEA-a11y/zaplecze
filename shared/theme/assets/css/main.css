@@ -1888,53 +1888,43 @@ blockquote {
   overflow: hidden;
 }
 
-.toc__toggle { display: none; }
-
 .toc__title {
   background: #f1f3f5;
   padding: 1rem 1.5rem;
   font-family: var(--f-body);
   font-size: .85rem;
   font-weight: 700;
-  border-bottom: 1px solid var(--c-border);
   margin-bottom: 0;
   cursor: pointer;
+  list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
   user-select: none;
 }
 
-.toc__icon::after {
+.toc__title::-webkit-details-marker { display: none; }
+
+.toc__title::after {
   content: '▸';
   font-size: 1rem;
   color: var(--c-text-light);
   transition: transform .2s;
-  display: inline-block;
 }
 
-.toc__toggle:checked ~ .toc__title .toc__icon::after {
+.toc[open] > .toc__title {
+  border-bottom: 1px solid var(--c-border);
+}
+
+.toc[open] > .toc__title::after {
   transform: rotate(90deg);
 }
 
-.toc__body {
-  padding: 1.5rem;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height .3s ease;
-}
-
-.toc__toggle:checked ~ .toc__body {
-  max-height: 1000px;
-}
-
-.toc__toggle:not(:checked) ~ .toc__title {
-  border-bottom: none;
-}
+.toc__body { padding: 1.5rem; }
 
 .toc ul { list-style: none; padding-left: 0; margin: 0; }
 .toc li { margin-bottom: .4rem; }
-.toc > #TableOfContents > ul > li > a::before {
+.toc__body > #TableOfContents > ul > li > a::before {
   content: '';
   display: inline-block;
   width: 8px;
@@ -1945,7 +1935,7 @@ blockquote {
   opacity: .5;
   transition: opacity .2s, transform .2s;
 }
-.toc > #TableOfContents > ul > li:hover > a::before {
+.toc__body > #TableOfContents > ul > li:hover > a::before {
   opacity: 1;
   transform: scale(1.2);
 }

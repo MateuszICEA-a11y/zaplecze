@@ -84,17 +84,10 @@
     {{/* Content with TOC inserted after intro (before first H2) */}}
     <div class="article__content">
       {{ $showToc := and (.Params.toc | default true) (gt (len .TableOfContents) 100) }}
-      {{ $tocHTML := "" }}
       {{ if $showToc }}
-        {{ $tocHTML = printf `<div class="toc"><input type="checkbox" id="toc-toggle" class="toc__toggle"><label for="toc-toggle" class="toc__title">Spis treści <span class="toc__icon"></span></label><div class="toc__body">%s</div></div>` .TableOfContents }}
+        {{ partial "toc.html" (dict "Page" .) }}
       {{ end }}
-      {{ if and $showToc (findRE `(?s)<h2[\s>]` .Content) }}
-        {{/* Insert TOC before first <h2> */}}
-        {{ replaceRE `(?s)(<h2[\s>])` (printf "%s$1" $tocHTML) .Content 1 | safeHTML }}
-      {{ else }}
-        {{ $tocHTML | safeHTML }}
-        {{ .Content }}
-      {{ end }}
+      {{ .Content }}
     </div>
 
     {{/* ═══ FAQ ═══ */}}
