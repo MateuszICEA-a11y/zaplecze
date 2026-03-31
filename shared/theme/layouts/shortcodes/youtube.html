@@ -1,0 +1,17 @@
+{{- with .Page.Params.youtube -}}
+<div class="youtube-embed">
+  <div class="youtube-embed__wrapper">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/{{ . }}"
+      title="{{ $.Page.Params.youtube_title | default "Film powiązany z artykułem" }}"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
+  {{- with $.Page.Params.youtube_title }}
+  <p class="youtube-embed__caption">{{ . }}</p>
+  {{- end }}
+</div>
+{{- end -}}

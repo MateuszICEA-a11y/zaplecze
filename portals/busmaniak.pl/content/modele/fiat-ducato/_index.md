@@ -9,6 +9,8 @@ type: "page"
 main_keyword: "Fiat Ducato"
 image: "/images/fiat-ducato-hero.webp"
 image_alt: "Fiat Ducato IV furgon przy rampie załadunkowej"
+youtube: "RCfJqA1ITlc"
+youtube_title: "Fiat Ducato L3H2 MAXI 2.2 MultiJet3 (2021) - test [PL]"
 lead: "Fiat Ducato to najpopularniejszy bus dostawczy w Europie i najczęściej wybierana baza pod kampery. Ponad 6 milionów egzemplarzy zjechało z fabryk Sevel od 1981 roku. Poznaj wszystkie wersje, silniki i warianty nadwoziowe."
 faq:
   - question: "Jakie są generacje Fiata Ducato?"
@@ -137,6 +139,8 @@ Rozpiętość cenowa Ducato jest ogromna – od 10 tys. zł za II generację z p
 | Ducato III BlueHDi (2020–2024) | 85 000–150 000 zł |
 | Nowy Ducato L2H2 (2.2 MJT 140) | od ok. 150 000 zł netto |
 | e-Ducato L2H2 | od ok. 260 000 zł netto |
+
+{{% youtube %}}
 
 ## Porównanie Ducato z konkurencją
 
