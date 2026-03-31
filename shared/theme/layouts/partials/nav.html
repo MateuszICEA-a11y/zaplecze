@@ -167,20 +167,52 @@
   });
 })();
 
-// Mobile dropdown toggle – first tap opens, second tap navigates
+// Mobile dropdown toggle
 (function(){
-  if (window.innerWidth > 960) return;
-  document.querySelectorAll('.dropdown > .site-nav__link').forEach(function(link) {
-    link.addEventListener('click', function(e) {
+  document.querySelectorAll('.dropdown').forEach(function(dd) {
+    var arrow = dd.querySelector('.dropdown__arrow');
+    if (!arrow) return;
+
+    // On mobile: arrow toggles panel, link navigates
+    arrow.addEventListener('click', function(e) {
       if (window.innerWidth > 960) return;
-      var panel = this.nextElementSibling;
-      if (!panel || !panel.classList.contains('dropdown__panel')) return;
-      if (panel.style.display === 'block') return; // second tap – navigate
       e.preventDefault();
-      // close other panels
-      document.querySelectorAll('.dropdown__panel').forEach(function(p) { p.style.display = ''; });
-      panel.style.display = 'block';
+      e.stopPropagation();
+
+      var panel = dd.querySelector('.dropdown__panel');
+      if (!panel) return;
+
+      var isOpen = panel.classList.contains('dropdown__panel--open');
+
+      // Close all panels first
+      document.querySelectorAll('.dropdown__panel--open').forEach(function(p) {
+        p.classList.remove('dropdown__panel--open');
+        p.style.display = '';
+      });
+      document.querySelectorAll('.dropdown__arrow--open').forEach(function(a) {
+        a.classList.remove('dropdown__arrow--open');
+      });
+
+      // Toggle this one
+      if (!isOpen) {
+        panel.classList.add('dropdown__panel--open');
+        panel.style.display = 'block';
+        arrow.classList.add('dropdown__arrow--open');
+      }
     });
+
+    // On mobile: prevent link navigation, let arrow handle it
+    var link = dd.querySelector('.site-nav__link');
+    if (link) {
+      link.addEventListener('click', function(e) {
+        if (window.innerWidth > 960) return;
+        var panel = dd.querySelector('.dropdown__panel');
+        if (panel && !panel.classList.contains('dropdown__panel--open')) {
+          e.preventDefault();
+          arrow.click();
+        }
+      });
+    }
   });
 })();
 </script>
