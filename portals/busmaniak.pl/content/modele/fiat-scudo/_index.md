@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Fiat Scudo – kompletny przewodnik po modelu"
 type: "page"
-image: "/images/fiat-scudo-hero.jpg"
+image: "/images/fiat-scudo-hero.webp"
 image_alt: "Fiat Scudo II furgon na tle magazynu"
 main_keyword: "fiat scudo"
 volume: 14800

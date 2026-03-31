@@ -9,7 +9,7 @@ parent: "opel-vivaro"
 type: "page"
 volume: 390
 main_keyword: "opel vivaro blaszak"
-image: "/images/opel-vivaro-hero.jpg"
+image: "/images/opel-vivaro-hero.webp"
 image_alt: "Opel Vivaro C furgon"
 lead: "Opel Vivaro blaszak to klasyczny furgon dostawczy z pełną przegrodą i zaślepionymi szybami – najpopularniejsza konfiguracja modelu. W gamie znajdziemy trzy generacje: Vivaro A (2001–2014), Vivaro B (2014–2019) oraz Vivaro C (od 2019)."
 faq:

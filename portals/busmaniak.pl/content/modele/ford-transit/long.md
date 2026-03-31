@@ -10,7 +10,7 @@ main_keyword: "Ford Transit Long"
 parent: "ford-transit"
 type: "page"
 volume: 720
-image: "/images/ford-transit-long-hero.jpg"
+image: "/images/ford-transit-long-hero.webp"
 faq:
   - question: "Ile wynosi długość Ford Transit Long L3 i L4?"
     answer: "Aby poprawnie porównać wymiary, trzeba wskazać generację i rynek. W europejskim Fordzie Transit Mk8 (od 2014 r., po liftingu od 2019 r.) wersja L3 ma długość całkowitą 5981 mm lub 6437 mm zależnie od konfiguracji, a najdłuższa wersja L4/Jumbo zwykle ok. 6704–6707 mm. Z tymi nadwoziami spotyka się rozstawy osi 3300 mm i 3750 mm. Długość przestrzeni ładunkowej dla L3 wynosi zwykle ok. 3530–3560 mm, a dla L4/Jumbo ok. 4217 mm."
@@ -78,7 +78,7 @@ W praktyce trzeba też pilnować masy. W Transicie występują wersje o DMC 3500
 
 Jeśli auto dostaje regały, izotermę albo zabudowę kamperową, użyteczna ładowność wyraźnie spada. Sama zabudowa warsztatowa potrafi zabrać 200–400 kg, a bardziej rozbudowane konwersje jeszcze więcej.
 
-![Ford Transit Long L4H3 – widok boczny](/images/ford-transit-long-hero.jpg)
+![Ford Transit Long L4H3 – widok boczny](/images/ford-transit-long-hero.webp)
 
 ## Silniki dla wersji Long
 

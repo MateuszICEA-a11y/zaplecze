@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "MAN TGE – kompletny przewodnik po modelu"
 type: "page"
 main_keyword: "man tge"
-image: "/images/man-tge-hero.jpg"
+image: "/images/man-tge-hero.webp"
 image_alt: "MAN TGE furgon na placu manewrowym"
 lead: "MAN TGE to technicznie ten sam samochód co Volkswagen Crafter II, ale sprzedawany przez MAN Truck & Bus – koncern znany z ciężarówek i autobusów. Produkowany od 2017 roku we Wrześni koło Poznania, TGE daje dostęp do sieci serwisowej MAN i warunków leasingu typowych dla pojazdów ciężarowych. Sprawdź, czy ta różnica jest warta dopłaty."
 faq:
@@ -82,7 +82,7 @@ Spalanie w cyklu mieszanym to 8,0–10,5 l/100 km dla wersji 140 KM. Realne zuż
 Jeśli planujesz TGE do regularnych tras międzymiastowych z pełnym ładunkiem, nie oszczędzaj na silniku – wariant 140 KM z automatem to absolutne minimum komfortu. Wersja 102 KM ma sens tylko w mieście. BiTDI 177 KM jest świetna, ale droższa w serwisie przez podwójną turbosprężarkę. Sprawdź też ofertę [Craftera](/modele/volkswagen-crafter/) – identyczna technika, czasem niższa cena.
 {{% /expert %}}
 
-![MAN TGE furgon na placu manewrowym](/images/man-tge-hero.jpg)
+![MAN TGE furgon na placu manewrowym](/images/man-tge-hero.webp)
 
 ## Wersje nadwoziowe MAN-a TGE
 

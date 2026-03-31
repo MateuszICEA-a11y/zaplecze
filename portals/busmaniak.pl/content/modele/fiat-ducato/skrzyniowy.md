@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Fiat Ducato skrzyniowy – przegląd wersji"
 parent: "fiat-ducato"
 type: "page"
-image: "/images/fiat-ducato-skrzyniowy-hero.jpg"
+image: "/images/fiat-ducato-skrzyniowy-hero.webp"
 image_alt: "Fiat Ducato skrzyniowy z otwartą platformą ładunkową"
 main_keyword: "Fiat Ducato skrzyniowy"
 lead: "Fiat Ducato skrzyniowy to jedna z najważniejszych baz pod zabudowy w segmencie lekkich aut dostawczych. Standardowe podwozia skrzyniowe najczęściej mają DMC 3,0–3,5 t, a wybrane warianty heavy lub special mogą występować także z wyższym DMC zależnie od rynku i homologacji. W podwoziach skrzyniowych najczęściej spotyka się rozstawy osi 3450, 3800 i 4035 mm. Sama szerokość zewnętrzna platformy 2034 mm nie wystarcza do oceny funkcjonalności – o tym, czy mieszczą się dwie europalety, decydują szerokość użytkowa między burtami i długość podłogi."
@@ -96,7 +96,7 @@ Przy ocenie skrzyni automatycznej nie warto opierać się na pojedynczych deklar
 
 {{% info title="Technika" icon="engineering" %}}Przy zakupie używanego Ducato z silnikiem 3.0 sprawdź mechanizm zmiany biegów i precyzję wybieraka. W aucie pracującym pod dużym obciążeniem ten element potrafi wyraźnie zdradzić realny przebieg i sposób eksploatacji.{{% /info %}}
 
-![Fiat Ducato skrzyniowy – podwozie, wymiary, ładowność](/images/fiat-ducato-skrzyniowy-hero.jpg)
+![Fiat Ducato skrzyniowy – podwozie, wymiary, ładowność](/images/fiat-ducato-skrzyniowy-hero.webp)
 
 ## Zastosowania Ducato skrzyniowego
 

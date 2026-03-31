@@ -10,7 +10,7 @@ parent: "renault-master"
 type: "page"
 volume: 320
 main_keyword: "Renault Master brygadówka"
-image: "/images/renault-master-brygadowka-hero.jpg"
+image: "/images/renault-master-brygadowka-hero.webp"
 image_alt: "Renault Master brygadówka L3H2 z przegrodą i podwójną kabiną"
 lead: "Renault Master brygadówka łączy dodatkowy rząd siedzeń z oddzieloną przestrzenią ładunkową. To popularna konfiguracja dla ekip budowlanych, instalatorów i serwisu mobilnego, ale przed zakupem trzeba jasno rozróżnić generację, homologację i realną ładowność konkretnej wersji."
 faq:
@@ -84,7 +84,7 @@ Nie warto używać tu automatycznie nazwy EDC bez odniesienia do konkretnej gene
 
 Jeśli auto ma regularnie ciągnąć przyczepę lub jeździć pod pełnym obciążeniem, znaczenie ma nie sama nazwa skrzyni, ale jej homologacja, dopuszczalne masy i charakter pracy w realnych warunkach. Tu najlepiej opierać się na dokumentacji konkretnej wersji.
 
-![Renault Master brygadówka L3H2 z przegrodą i podwójną kabiną](/images/renault-master-brygadowka-hero.jpg)
+![Renault Master brygadówka L3H2 z przegrodą i podwójną kabiną](/images/renault-master-brygadowka-hero.webp)
 
 ## Zagospodarowanie przestrzeni ładunkowej
 

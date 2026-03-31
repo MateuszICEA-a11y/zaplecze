@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Opel Vivaro 2.0 CDTi – dane techniczne i opinie"
 parent: "opel-vivaro"
 type: "engine"
-image: "/images/opel-vivaro-2-0-cdti-hero.jpg"
+image: "/images/opel-vivaro-2-0-cdti-hero.webp"
 image_alt: "Silnik 2.0 CDTi M9R w Opelu Vivaro A"
 main_keyword: "opel vivaro 2.0 cdti"
 volume: 1000

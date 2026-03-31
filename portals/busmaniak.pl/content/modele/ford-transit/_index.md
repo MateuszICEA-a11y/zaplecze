@@ -10,7 +10,7 @@ parent: ""
 type: "page"
 volume: 49500
 main_keyword: "Ford Transit dane techniczne"
-image: "/images/ford-transit-hero.jpg"
+image: "/images/ford-transit-hero.webp"
 image_alt: "Ford Transit VIII furgon"
 lead: "Ford Transit VIII to najpopularniejszy dostawczak w Polsce – dostępny w 12 konfiguracjach nadwozia, z silnikami EcoBlue 2.0 od 105 do 185 KM i ładownością do 2300 kg."
 faq:
@@ -105,7 +105,7 @@ W mojej ocenie Ford Transit VIII z silnikiem 2.0 EcoBlue 130 KM to aktualnie naj
 {{% /expert %}}
 
 
-![Ford Transit VIII furgon](/images/ford-transit-hero.jpg)
+![Ford Transit VIII furgon](/images/ford-transit-hero.webp)
 
 ## Wersje nadwoziowe Forda Transit
 

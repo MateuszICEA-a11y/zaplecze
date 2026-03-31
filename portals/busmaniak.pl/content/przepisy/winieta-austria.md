@@ -5,7 +5,7 @@ description: "Winieta w Austrii na 2026 rok – ceny winiet cyfrowych i naklejan
 draft: false
 author: "marek-kowalczyk"
 h1: "Winieta Austria 2026 – ceny, rodzaje i system oplat drogowych"
-image: "/images/winieta-austria-hero.jpg"
+image: "/images/winieta-austria-hero.webp"
 image_alt: "Austriacka autostrada z widokiem na Alpy i bramka poboru oplat"
 main_keyword: "winieta austria"
 lead: "Roczna winieta w Austrii na 2026 rok kosztuje 106,80 EUR, dziesięciodniowa 12,80 EUR, a jednodniowa 9,60 EUR. To ostatni rok, w którym można kupić tradycyjną naklejkę – od 2027 roku ASFINAG przechodzi wyłącznie na winietę cyfrową. Busy powyżej 3,5 t płacą za przejazd w systemie GO-Maut, a przejazdy tunelami alpejskimi wymagają dodatkowych opłat."
@@ -53,7 +53,7 @@ Winieta roczna jest ważna od 1 grudnia 2025 do 31 stycznia 2027 roku. Dzięki 1
 - **ADAC/ÖAMTC** – kluby motoryzacyjne sprzedają winiety w swoich placówkach.
 - **Tabaktrafiken** – austriackie kioski tytoniowe są autoryzowanymi punktami sprzedaży.
 
-![Austriacka autostrada z widokiem na Alpy](/images/winieta-austria-hero.jpg)
+![Austriacka autostrada z widokiem na Alpy](/images/winieta-austria-hero.webp)
 
 {{% info title="Cyfrowa winieta – uwaga na termin aktywacji" icon="clock" %}}
 Przy zakupie online winiet 2-miesięcznych i rocznych obowiązuje 18-dniowy okres karencji, wynikający z prawa do odstąpienia od umowy. Winiety 1-dniowe oraz 10-dniowe kupione przez internet są ważne natychmiast po zakupie.

@@ -9,7 +9,7 @@ parent: "ford-ranger"
 type: "page"
 volume: 390
 main_keyword: "ford ranger xl"
-image: "/images/ford-ranger-hero.jpg"
+image: "/images/ford-ranger-hero.webp"
 image_alt: "Ford Ranger pickup"
 lead: "Ford Ranger XL to bazowa wersja wyposażenia jednego z najpopularniejszych pickupów w Europie. Stalowe felgi, czarne zderzaki i robocza specyfikacja oznaczają zwykle niższą cenę od lepiej wyposażonych odmian. Sprawdź, kiedy ford ranger xl ma sens jako narzędzie pracy, a kiedy lepiej dopłacić do wyższej wersji."
 faq:

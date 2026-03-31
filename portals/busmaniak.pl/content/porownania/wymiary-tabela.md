@@ -8,7 +8,7 @@ author: "marek-kowalczyk"
 h1: "Wymiary busów i vanów – tabela porównawcza"
 type: "page"
 main_keyword: "wymiary busów"
-image: "/images/wymiary-tabela-hero.jpg"
+image: "/images/wymiary-tabela-hero.webp"
 image_alt: "Porównanie wymiarów busów dostawczych – od małych vanów po duże busy"
 lead: "Wybór busa zaczyna się od wymiarów – bo to one decydują, czy samochód zmieści się w garażu, wjedzie pod wiadukt i pomieści ładunek. Zebraliśmy wymiary wszystkich popularnych busów i vanów dostępnych na polskim rynku – od dużych dostawczaków jak Ducato i Sprinter, przez średnie vany typu Vivaro i Trafic, aż po kompaktowe Berlingo i Kangoo. Każdy model w każdej wersji nadwoziowej."
 faq:
@@ -101,7 +101,7 @@ Małe vany, czyli kombivany, to najszybciej rosnący segment rynku dostawczego w
 
 Analogicznie do segmentu średniego, w klasie małych vanów dominują konstrukcje bliźniacze. Berlingo, Partner i najnowszy Doblo to technicznie ten sam samochód. Volkswagen Caddy wyróżnia się najniższą wysokością nadwozia (1797 mm w L1), co jest zaletą w parkingach podziemnych, ale potencjalną wadą przy przewozie wyższych ładunków.
 
-![Tabela wymiarów busów i vanów](/images/wymiary-tabela-hero.jpg)
+![Tabela wymiarów busów i vanów](/images/wymiary-tabela-hero.webp)
 
 ## Jak czytać oznaczenia L1H1, L2H2?
 

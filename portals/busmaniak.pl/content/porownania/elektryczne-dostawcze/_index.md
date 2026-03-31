@@ -8,7 +8,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Elektryczne samochody dostawcze – przegląd rynku 2026"
 type: "page"
-image: "/images/elektryczne-dostawcze-hero.jpg"
+image: "/images/elektryczne-dostawcze-hero.webp"
 image_alt: "Elektryczne samochody dostawcze – przegląd modeli dostępnych w Polsce"
 main_keyword: "elektryczne dostawcze"
 lead: "W 2026 roku każdy duży producent ma w ofercie co najmniej jeden elektryczny model dostawczy. Zasięgi przekroczyły 400 km, ładowności dorównują dieselom, a koszty eksploatacji spadły o 30–50%. Poniżej znajdziesz konkretne porównanie wszystkich segmentów – od małych kurierskich po duże furgony klasy Sprinter."
@@ -64,7 +64,7 @@ Citroën ë-Jumper, Peugeot e-Boxer i Opel Movano Electric to ten sam samochód 
 
 Ford E-Transit wyróżnia się najszybszym ładowaniem DC (180 kW) – 10 minut na ładowarce daje dodatkowe 116 km zasięgu. Mercedes eSprinter z baterią 113 kWh oferuje najdłuższy zasięg w segmencie – 452 km WLTP, ale jest też najdroższy.
 
-![Elektryczne samochody dostawcze – przegląd modeli](/images/elektryczne-dostawcze-hero.jpg)
+![Elektryczne samochody dostawcze – przegląd modeli](/images/elektryczne-dostawcze-hero.webp)
 
 ## Średnie elektryczne dostawcze (segment Vivaro/Trafic)
 

@@ -3,7 +3,7 @@ title: "Budowa kampera od zera – kompletny poradnik"
 date: 2026-03-23
 description: "Kompletny poradnik budowy kampera krok po kroku – od wyboru busa po rejestrację."
 draft: false
-image: "/images/budowa-kampera-krok-po-kroku-hero.jpg"
+image: "/images/budowa-kampera-krok-po-kroku-hero.webp"
 image_alt: "Budowa kampera krok po kroku – izolacja i szkielet drewniany w busie"
 author: "anna-wozniak"
 h1: "Budowa kampera od zera – 8 etapów od pustego busa do gotowego kampera"
@@ -106,7 +106,7 @@ Samo rozprowadzenie przewodów w peszlach zajmuje **2–4 dni**. Pełne podłąc
 - **Zbiornik podpodłogowy** – ociepl go matą kauczukową. Pamiętaj jednak, że przy ujemnych temperaturach sama izolacja nie wystarczy. Aby zapobiec zamarzaniu wody, zamontuj w zbiorniku grzałkę 12V lub podklej pod nim matę grzewczą.
 - **Filtr węglowy** – montuj na wyjściu ze zbiornika czystej wody, by poprawić smak i jakość. Wymieniaj wkład co **3–6 miesięcy** (koszt **30–60 zł**).
 
-![Budowa kampera krok po kroku – etapy](/images/budowa-kampera-krok-po-kroku-hero.jpg)
+![Budowa kampera krok po kroku – etapy](/images/budowa-kampera-krok-po-kroku-hero.webp)
 
 ## Etap 5 – zabudowa meblowa {#meble}
 

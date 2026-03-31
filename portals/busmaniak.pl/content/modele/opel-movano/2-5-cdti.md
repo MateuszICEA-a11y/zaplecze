@@ -9,7 +9,7 @@ parent: "opel-movano"
 type: "page"
 volume: 0
 main_keyword: "opel movano 2.5 cdti"
-image: "/images/opel-movano-2-5-cdti-hero.jpg"
+image: "/images/opel-movano-2-5-cdti-hero.webp"
 image_alt: "Opel Movano furgon z silnikiem 2.5 CDTi"
 lead: "Silnik 2.5 CDTi (oznaczenie Renault G9U) to czterocylindrowy turbodiesel o pojemności 2463 cm³, stosowany w Oplu Movano A po liftingu, około 2003–2010. Warianty od 100 do 145 KM, rozrząd na pasku, wtrysk Common Rail Bosch. Konstrukcja Renault dzielona z Masterem i Nissanem Interstar – z bardzo dobrą dostępnością części i szerokim zapleczem serwisowym."
 faq:

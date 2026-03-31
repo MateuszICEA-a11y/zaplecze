@@ -8,7 +8,7 @@ h1: "Kontrolka silnika – co oznacza i czy można jechać"
 type: "page"
 volume: 5400
 main_keyword: "kontrolka silnika"
-image: "/images/kontrolka-silnika-hero.jpg"
+image: "/images/kontrolka-silnika-hero.webp"
 image_alt: "Deska rozdzielcza busa z podświetloną kontrolką silnika – widok zza kierownicy"
 lead: "Żółta kontrolka silnika na desce rozdzielczej nie musi oznaczać katastrofy – najczęściej przyczyną jest usterka czujnika lub problem z układem wydechowym. Czerwona ikona ostrzegawcza to natomiast sygnał do natychmiastowego zatrzymania. W tym artykule wyjaśniamy, co oznaczają poszczególne sygnały, jakie usterki powodują zapalenie kontrolki w busach dostawczych i co robić krok po kroku."
 faq:
@@ -71,7 +71,7 @@ W busach dostawczych z silnikami 2.0–3.0 dCi/CDI/JTD najczęstszą przyczyną 
 
 ## Kontrolka silnika a check engine – jaka jest różnica {#check-engine}
 
-![Deska rozdzielcza busa z kontrolką silnika](/images/kontrolka-silnika-hero.jpg)
+![Deska rozdzielcza busa z kontrolką silnika](/images/kontrolka-silnika-hero.webp)
 
 Wielu kierowców traktuje te terminy zamiennie – i słusznie. Kontrolka silnika i [check engine](/serwis/check-engine/) to dwie nazwy tego samego wskaźnika. Różnice wynikają wyłącznie z nazewnictwa stosowanego przez producenta pojazdu.
 

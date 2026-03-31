@@ -5,7 +5,7 @@ description: "Winieta w Słowenii 2026 – ceny e-winiet, kategorie pojazdów, j
 draft: false
 author: "marek-kowalczyk"
 h1: "Winieta Słowenia 2026 – ceny, zasady i jak kupić e-winietę"
-image: "/images/winiety-slowenia-hero.jpg"
+image: "/images/winiety-slowenia-hero.webp"
 image_alt: "Słoweńska autostrada z tablicą informacyjną o e-winiecie"
 main_keyword: "winieta słowenia"
 lead: "Od 2022 roku w Słowenii obowiązują wyłącznie elektroniczne winiety przypisane do tablicy rejestracyjnej. E-winieta tygodniowa dla samochodu osobowego kosztuje 16 EUR, a busy powyżej 1,3 m nad pierwszą osią płacą dwukrotnie więcej. Kupujesz ją online na evinjeta.dars.si – bez naklejki, bez kolejki."
@@ -79,7 +79,7 @@ Stawki DarsGo zależą od trzech czynników:
 
 Orientacyjny koszt przejazdu busa 2-osiowego Euro 6 z Mariboru do Lublany (ok. 125 km) to około 20 EUR. Przy starszej klasie emisji Euro 4 zapłacisz bliżej 25 EUR za tę samą trasę.
 
-![Słoweńska autostrada z widokiem na Alpy Julijskie](/images/winiety-slowenia-hero.jpg)
+![Słoweńska autostrada z widokiem na Alpy Julijskie](/images/winiety-slowenia-hero.webp)
 
 ## Drogi objęte winietą w Słowenii
 

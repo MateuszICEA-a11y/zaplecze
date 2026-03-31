@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Volkswagen Transporter – kompletny przewodnik po modelu"
 type: "page"
-image: "/images/volkswagen-transporter-hero.jpg"
+image: "/images/volkswagen-transporter-hero.webp"
 image_alt: "Volkswagen Transporter T6.1 furgon na drodze"
 main_keyword: "volkswagen transporter"
 volume: 9900

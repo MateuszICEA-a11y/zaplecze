@@ -6,7 +6,7 @@ description: "Renault Trafic brygadówka (Combi) – konfiguracja 5-6 osób + pa
 draft: false
 author: "marek-kowalczyk"
 h1: "Renault Trafic brygadówka – Combi dla ekip serwisowych"
-image: "/images/renault-trafic-brygadowka-hero.jpg"
+image: "/images/renault-trafic-brygadowka-hero.webp"
 image_alt: "Renault Trafic brygadówka Combi"
 parent: "renault-trafic"
 type: "page"
@@ -62,7 +62,7 @@ Kategoria N1 oznacza pojazd zaprojektowany do przewozu ładunków o DMC do 3,5 t
 Warto też odróżnić kategorię/homologację N1 od wpisów w dokumentach. Przy zakupie używanego egzemplarza trzeba sprawdzić w dowodzie rejestracyjnym rubryki F.1 i F.2 dotyczące DMC, S.1 z liczbą miejsc, rodzaj pojazdu oraz ewentualne adnotacje związane z VAT. Dla Trafica o DMC poniżej 3,5 t co do zasady nie ma też podatku od środków transportowych.
 {{% /info %}}
 
-![Renault Trafic brygadówka Combi](/images/renault-trafic-brygadowka-hero.jpg)
+![Renault Trafic brygadówka Combi](/images/renault-trafic-brygadowka-hero.webp)
 
 ## Silniki – który sprawdza się w brygadówce?
 

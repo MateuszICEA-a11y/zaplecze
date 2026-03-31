@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Kamperem po Polsce – trasy, kempingi i praktyczne porady"
 type: "post"
 volume: 3000
-image: "/images/kamperem-po-polsce-hero.jpg"
+image: "/images/kamperem-po-polsce-hero.webp"
 image_alt: "Kamper zaparkowany nad jeziorem na Mazurach – podróż kamperem po Polsce"
 main_keyword: "kamperem po Polsce"
 lead: "Polska to kraj, który z perspektywy kampera wygląda zupełnie inaczej niż z perspektywy samochodu osobowego. Ponad 500 kempingów, tysiące kilometrów tras widokowych i krajobrazy od morskich klifów po górskie połoniny – wszystko w odległości jednego zbiornika paliwa. Przygotowaliśmy pięć konkretnych tras z kilometrażem, liczbą dni i kosztami, żebyś mógł zaplanować wyjazd bez zgadywania."
@@ -70,7 +70,7 @@ Plan trasy:
 4. **Dzień 4: Ustrzyki Górne → Solina** (80 km) – zapora, rejs po zalewie, rozwinięta infrastruktura turystyczna
 5. **Dzień 5: Solina → Sanok** (60 km) – powrót przez Lesko i dolinę Sanu
 
-![Kamperem po Polsce – najlepsze trasy i miejsca](/images/kamperem-po-polsce-hero.jpg)
+![Kamperem po Polsce – najlepsze trasy i miejsca](/images/kamperem-po-polsce-hero.webp)
 
 Szacunkowy koszt: paliwo 200 zł, kempingi 250–500 zł, jedzenie 400–600 zł. Łącznie na 2 osoby: 850–1300 zł.
 

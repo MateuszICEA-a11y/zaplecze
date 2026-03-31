@@ -9,7 +9,7 @@ parent: "peugeot-rifter"
 type: "page"
 volume: 720
 main_keyword: "peugeot rifter long"
-image: "/images/peugeot-rifter-hero.jpg"
+image: "/images/peugeot-rifter-hero.webp"
 image_alt: "Peugeot Rifter Long na drodze"
 lead: "Peugeot Rifter Long to wydłużona wersja kombivana – ma 4753 mm długości, bagażnik 1050 l przy 5 osobach i opcję trzeciego rzędu foteli dla 7 pasażerów. Kluczowe pytanie brzmi: czy dłuższe nadwozie realnie poprawia funkcjonalność względem krótszej odmiany?"
 faq:

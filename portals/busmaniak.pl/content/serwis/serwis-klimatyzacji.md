@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Serwis klimatyzacji w busie – co obejmuje i ile kosztuje"
 type: "post"
 volume: 3000
-image: "/images/serwis-klimatyzacji-hero.jpg"
+image: "/images/serwis-klimatyzacji-hero.webp"
 image_alt: "Serwis klimatyzacji w busie dostawczym – napełnianie czynnika chłodniczego"
 main_keyword: "serwis klimatyzacji"
 lead: "Klimatyzacja w busie dostawczym pracuje znacznie ciężej niż w osobówce – duża kabina, ogromna powierzchnia szyb i częste otwieranie drzwi sprawiają, że układ chłodzenia działa niemal bez przerwy. Regularny serwis co 2 lata zapobiega spadkowi wydajności i chroni przed kosztowną wymianą sprężarki. W 2026 roku za pełny przegląd klimatyzacji z napełnieniem zapłacisz od 250 do 700 zł, w zależności od typu czynnika."
@@ -66,7 +66,7 @@ W busach dostawczych filtr kabinowy potrafi się zapchać znacznie szybciej niż
 
 Od 2017 roku Unia Europejska wymaga stosowania czynnika o niskim potencjale tworzenia efektu cieplarnianego (GWP) w nowych pojazdach. W praktyce oznacza to przejście z R134a (GWP = 1430) na R1234yf (GWP = 4).
 
-![Serwis klimatyzacji w busie – napełnianie i diagnostyka](/images/serwis-klimatyzacji-hero.jpg)
+![Serwis klimatyzacji w busie – napełnianie i diagnostyka](/images/serwis-klimatyzacji-hero.webp)
 
 Różnice z perspektywy właściciela busa:
 

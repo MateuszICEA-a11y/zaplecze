@@ -8,7 +8,7 @@ author: "marek-kowalczyk"
 h1: "Ładowność busów i vanów – tabela porównawcza"
 type: "page"
 main_keyword: "ładowność busów"
-image: "/images/ladownosc-tabela-hero.jpg"
+image: "/images/ladownosc-tabela-hero.webp"
 image_alt: "Busy dostawcze z otwartymi ładowniami – porównanie pojemności załadunkowej"
 lead: "Ładowność to jeden z najważniejszych parametrów busa dostawczego – bezpośrednio wpływa na rentowność każdego kursu. W tym zestawieniu porównujemy DMC, masę własną, realną ładowność i objętość ładunkową wszystkich popularnych busów i vanów na polskim rynku. Dane dotyczą wersji furgon z silnikiem bazowym, bez dodatkowego wyposażenia obciążającego masę własną."
 faq:
@@ -99,7 +99,7 @@ Małe vany zaskakują ładownością w stosunku do swoich kompaktowych wymiarów
 | Volkswagen Caddy | L1 2,2t | 2200 | 1460 | 740 | 3,2 |
 | Volkswagen Caddy | L2 (Maxi) 2,2t | 2200 | 1498 | 702 | 3,7 |
 
-![Porównanie ładowności busów](/images/ladownosc-tabela-hero.jpg)
+![Porównanie ładowności busów](/images/ladownosc-tabela-hero.webp)
 
 W segmencie małych vanów dominują nowe modele Forda. Transit Connect, bazujący na VW Caddy, oferuje ładowność do 870 kg. Z kolei całkowicie nowy Transit Courier, mimo mniejszych gabarytów, imponuje ładownością do 845 kg. Wśród modeli Stellantisa (Berlingo, Partner, Doblo) najlepszy wynik notuje Fiat Doblo L1 – 745 kg.
 

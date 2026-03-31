@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Fiat Ducato – kompletny przewodnik po modelu"
 type: "page"
 main_keyword: "Fiat Ducato"
-image: "/images/fiat-ducato-hero.jpg"
+image: "/images/fiat-ducato-hero.webp"
 image_alt: "Fiat Ducato IV furgon przy rampie załadunkowej"
 lead: "Fiat Ducato to najpopularniejszy bus dostawczy w Europie i najczęściej wybierana baza pod kampery. Ponad 6 milionów egzemplarzy zjechało z fabryk Sevel od 1981 roku. Poznaj wszystkie wersje, silniki i warianty nadwoziowe."
 faq:
@@ -76,7 +76,7 @@ DMC standardowo 3500 kg (prawo jazdy kat. B). Wersje 3000, 3300 kg oraz wzmocnio
 Szukasz używanego Ducato do ciężkiej pracy? Celuj w 3.0 MultiJet sprzed 2016 roku – silnik praktycznie niezniszczalny przy pełnym obciążeniu. W nowszych egzemplarzach 2.3 MultiJet 150 KM oferuje najlepszą kulturę pracy i rozsądne koszty serwisu, zwłaszcza jeśli regularnie kontrolujesz [rozrząd](/serwis/fiat-ducato-rozrzad/).
 {{% /expert %}}
 
-![Fiat Ducato IV furgon przy rampie załadunkowej](/images/fiat-ducato-hero.jpg)
+![Fiat Ducato IV furgon przy rampie załadunkowej](/images/fiat-ducato-hero.webp)
 
 ## Wersje nadwoziowe Fiata Ducato {#wersje-nadwozia}
 

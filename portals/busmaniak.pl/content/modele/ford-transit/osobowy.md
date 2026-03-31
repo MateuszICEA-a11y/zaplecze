@@ -10,7 +10,7 @@ main_keyword: "Ford Transit osobowy"
 parent: "ford-transit"
 type: "page"
 volume: 1300
-image: "/images/ford-transit-osobowy-hero.jpg"
+image: "/images/ford-transit-osobowy-hero.webp"
 faq:
   - question: "Czym różni się Transit Tourneo od Transit Custom Tourneo?"
     answer: "Najważniejsze jest nazewnictwo. Aktualnie trzeba wyraźnie rozróżnić Forda Tourneo Custom od osobowych odmian pełnowymiarowego Forda Transit. Tourneo Custom jest mniejszym modelem i w zależności od generacji ma ok. 4972 mm lub 5050 mm w krótszej wersji oraz ok. 5340 mm lub 5450 mm w dłuższej. Pełnowymiarowy Transit osobowy to większy samochód, ale jego nazwa handlowa i konfiguracje zależą od rynku oraz rocznika."
@@ -72,7 +72,7 @@ Zamiast przypisywać na sztywno elementy wyposażenia do nazw takich jak Trend, 
 
 Dla wielu kupujących kluczowe będą systemy bezpieczeństwa i ADAS. Na liście warto szukać takich pozycji jak AEB lub Pre-Collision Assist, aktywne utrzymanie pasa ruchu, monitorowanie martwego pola, adaptacyjny tempomat, czujniki parkowania, kamera 360 i rozpoznawanie znaków.
 
-![Ford Transit Tourneo – wnętrze pasażerskie](/images/ford-transit-osobowy-hero.jpg)
+![Ford Transit Tourneo – wnętrze pasażerskie](/images/ford-transit-osobowy-hero.webp)
 
 ## Silniki i osiągi
 

@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Wynajem małego kampera – dla par i małych rodzin"
 volume: 800
-image: "/images/maly-kamper-wynajem-hero.jpg"
+image: "/images/maly-kamper-wynajem-hero.webp"
 image_alt: "Wynajem małego kampera – kompaktowy kamper na kempingu"
 main_keyword: "wynajem małego kampera"
 lead: "Mały kamper to pojazd o długości 5,4–6,4 m, który łączy kompaktowe wymiary camper vana z komfortem dużego kampera – pełne zaplecze sanitarne, stałe łóżko i aneks kuchenny w pojeździe, który wciąż parkujesz na zwykłym parkingu. W polskich wypożyczalniach mały kamper kosztuje od 300 zł/dobę poza sezonem i jest idealnym kompromisem dla par i rodzin z jednym dzieckiem."
@@ -55,7 +55,7 @@ Mały kamper to nie kompromis, a świadomy wybór, który w wielu sytuacjach pod
 
 Warto jednak zwrócić uwagę na komfort snu wyższych osób. W furgonach z łóżkiem poprzecznym jego długość jest ograniczona szerokością karoserii do około 194–196 cm. Dla osób o wzroście powyżej 185 cm znacznie wygodniejsza będzie kompaktowa półintegra, której wewnętrzna szerokość zabudowy to około 210 cm.
 
-![Wynajem małego kampera – kompaktowy pojazd na kempingu](/images/maly-kamper-wynajem-hero.jpg)
+![Wynajem małego kampera – kompaktowy pojazd na kempingu](/images/maly-kamper-wynajem-hero.webp)
 
 **Niezależność od kempingów.** Mały kamper wyposażony w toaletę kasetową i zbiornik wody o pojemności 80–100 litrów zapewnia pełną autonomię na 2–3 dni. To pozwala na swobodne [biwakowanie](https://pl.wikipedia.org/wiki/Biwak) z dala od zorganizowanej infrastruktury.
 

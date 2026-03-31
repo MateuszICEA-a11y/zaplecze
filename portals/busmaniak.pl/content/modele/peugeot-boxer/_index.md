@@ -6,7 +6,7 @@ description: "Peugeot Boxer III (od 2006, facelifting 2014 i 2020) – bliźniak
 draft: false
 author: "marek-kowalczyk"
 type: "page"
-image: "/images/peugeot-boxer-hero.jpg"
+image: "/images/peugeot-boxer-hero.webp"
 parent: "peugeot-boxer"
 faq:
   - question: "Czy Peugeot Boxer to to samo co Fiat Ducato?"
@@ -70,7 +70,7 @@ Boxer jest oferowany w pięciu kombinacjach długość × wysokość:
 
 
 
-![Peugeot Boxer – van L2H2 w wersji dostawczej](/images/peugeot-boxer-hero.jpg)
+![Peugeot Boxer – van L2H2 w wersji dostawczej](/images/peugeot-boxer-hero.webp)
 
 ## Zastosowania specjalne i zabudowy
 

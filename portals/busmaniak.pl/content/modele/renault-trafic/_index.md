@@ -10,7 +10,7 @@ parent: ""
 type: "page"
 volume: 33100
 main_keyword: "Renault Trafic dane techniczne"
-image: "/images/renault-trafic-hero.jpg"
+image: "/images/renault-trafic-hero.webp"
 image_alt: "Renault Trafic III furgon L2H2"
 lead: "Renault Trafic to solidny środek transportu dla firm, które potrzebują ładowności powyżej tony bez przepłacania za markę. W segmencie średnich dostawczaków od lat utrzymuje się w czołówce sprzedaży – nie dlatego, że jest najlepszy pod każdym względem, ale dlatego, że rzadko zawodzi w codziennej robocie."
 faq:
@@ -51,7 +51,7 @@ Holowanie: 1.6 dCi – 2000 kg; 2.0 dCi – 2500 kg.
 Wysokość ładowni w tabeli jest mierzona od podłogi do dachu. Realna wysokość załadunku bywa mniejsza – elementy nadwozia i zabudowa potrafią zabrać kilka centymetrów, które mają znaczenie przy przewozie wysokich paczek.
 {{% /info %}}
 
-![Renault Trafic III furgon L2H2](/images/renault-trafic-hero.jpg)
+![Renault Trafic III furgon L2H2](/images/renault-trafic-hero.webp)
 
 ## Silniki Trafica {#silniki}
 

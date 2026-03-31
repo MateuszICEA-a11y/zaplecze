@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Ford Transit Custom – kompletny przewodnik po modelu"
 type: "page"
-image: "/images/ford-transit-custom-hero.jpg"
+image: "/images/ford-transit-custom-hero.webp"
 image_alt: "Ford Transit Custom gen II furgon na drodze"
 main_keyword: "ford transit custom"
 volume: 14800

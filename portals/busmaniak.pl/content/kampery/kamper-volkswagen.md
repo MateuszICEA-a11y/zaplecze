@@ -5,7 +5,7 @@ description: "Kampery Volkswagena – VW California T6.1/T7, Grand California 60
 draft: false
 author: "anna-wozniak"
 h1: "Kamper Volkswagen – California i Grand California w 2026 roku"
-image: "/images/volkswagen-california-hero.jpg"
+image: "/images/volkswagen-california-hero.webp"
 image_alt: "Volkswagen California z podnoszonym dachem na kempingu"
 main_keyword: "kamper volkswagen"
 lead: "Volkswagen to synonim kampera w Europie – marka, która od 1988 roku produkuje fabryczne camper vany. Aktualna oferta obejmuje kompaktowego VW California na bazie Transportera T6.1 (od 2025 również T7) oraz większego Grand California na bazie Craftera. Ceny zaczynają się od 320 tys. zł za wersję Beach i sięgają 600 tys. zł za Grand California 680."
@@ -61,7 +61,7 @@ Czołowa oferta VW T7 California obejmuje de facto pięć konfiguracji, a nie tr
 Różnica między Beach a Ocean to ponad 80 tys. zł, ale w praktyce Beach wymaga doposażenia za 30–40 tys. zł, żeby nadawał się do kamperowania (kuchenka, zlew, bateria dodatkowa). Realny spread to więc 40–50 tys. zł – i za tę kwotę dostajesz w Oceanie fabryczną integrację, gwarancję i wyższą wartość odsprzedaży.
 {{% /expert %}}
 
-![Volkswagen California z podnoszonym dachem](/images/volkswagen-california-hero.jpg)
+![Volkswagen California z podnoszonym dachem](/images/volkswagen-california-hero.webp)
 
 ## VW California T7 – nowości na 2025/2026
 

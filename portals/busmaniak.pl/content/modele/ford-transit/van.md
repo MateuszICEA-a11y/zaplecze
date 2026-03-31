@@ -10,7 +10,7 @@ main_keyword: "Ford Transit Van"
 parent: "ford-transit"
 type: "page"
 volume: 4400
-image: "/images/ford-transit-van-hero.jpg"
+image: "/images/ford-transit-van-hero.webp"
 faq:
   - question: "Ile wynosi pojemność ładunkowa Ford Transit Van?"
     answer: "W zależności od wersji nadwozia pojemność przestrzeni ładunkowej wynosi od 6,0 m³ do 15,1 m³. Najczęściej spotykane konfiguracje z wyższym dachem oferują od 8,6 m³ do 12,9 m³."
@@ -86,7 +86,7 @@ Skrzynie biegów należy wiązać z konkretną wersją silnika i rynku. Nie wart
 
 Nie podajemy tu uśrednionego spalania, bo w tej klasie zależy ono bardzo mocno od długości, wysokości, DMC, napędu i normy homologacyjnej. W praktyce sens mają wyłącznie dane dla konkretnej konfiguracji.
 
-![Ford Transit Van L3H2 – widok z boku](/images/ford-transit-van-hero.jpg)
+![Ford Transit Van L3H2 – widok z boku](/images/ford-transit-van-hero.webp)
 
 ## Napęd Transita Van – FWD, RWD, AWD
 

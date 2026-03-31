@@ -10,7 +10,7 @@ parent: "iveco-daily"
 type: "page"
 volume: 320
 main_keyword: "Iveco Daily Maxi"
-image: "/images/iveco-daily-maxi-hero.jpg"
+image: "/images/iveco-daily-maxi-hero.webp"
 faq:
   - question: "Czy Iveco Daily Maxi jedzie na prawo jazdy kat. B?"
     answer: "Tak – wersja homologowana z DMC 3500 kg wymaga prawa jazdy kat. B. Trzeba jednak pamiętać, że mowa o konkretnej konfiguracji 3,5 t, a nie o każdej odmianie Daily o największej kubaturze."
@@ -56,7 +56,7 @@ W praktyce warto też odróżnić DMC pojazdu od DMC zestawu. Sam samochód o DM
 Samo porównanie kubatur w m³ jest niewystarczające. Żeby rzetelnie zestawić Iveco Daily Maxi z konkurencją, trzeba porównać co najmniej: długość podłogi w mm, szerokość między nadkolami w mm, ładowność w kg, wysokość całkowitą w mm oraz średnicę zawracania w m – zawsze dla konkretnych wersji z oficjalnych katalogów producentów.
 {{% /info %}}
 
-![Iveco Daily Maxi – największa przestrzeń ładunkowa w klasie vanów na kat. B](/images/iveco-daily-maxi-hero.jpg)
+![Iveco Daily Maxi – największa przestrzeń ładunkowa w klasie vanów na kat. B](/images/iveco-daily-maxi-hero.webp)
 
 ## Który silnik do Maxi
 

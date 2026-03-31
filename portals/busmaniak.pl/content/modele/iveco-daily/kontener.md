@@ -10,7 +10,7 @@ parent: "iveco-daily"
 type: "page"
 volume: 480
 main_keyword: "Iveco Daily kontener"
-image: "/images/iveco-daily-kontener-hero.jpg"
+image: "/images/iveco-daily-kontener-hero.webp"
 faq:
   - question: "Czym różni się zabudowa kontenerowa od izotermicznej w Daily?"
     answer: "Kontener to sztywna zabudowa ze ścianami z laminatu lub stali, bez izolacji termicznej. Izoterma to kontener z izolacją, która ogranicza wymianę ciepła, ale bez agregatu nie zastępuje pełnoprawnej chłodni."
@@ -65,7 +65,7 @@ Europaleta ma 1200 × 800 mm, więc przy ocenie pojemności liczy się nie tylko
 
 Typowe ściany takich zabudów wykonuje się z płyt warstwowych z laminatu poliestrowo-szklanego z rdzeniem XPS lub PUR. Podłoga bywa z wodoodpornej sklejki z warstwą antypoślizgową albo aluminiową, a dla chłodni znaczenie mają także szczelność drzwi i współczynnik K.
 
-![Iveco Daily kontener izoterma z agregatem chłodniczym](/images/iveco-daily-kontener-hero.jpg)
+![Iveco Daily kontener izoterma z agregatem chłodniczym](/images/iveco-daily-kontener-hero.webp)
 
 ## Agregaty chłodnicze – Thermo King i Carrier
 

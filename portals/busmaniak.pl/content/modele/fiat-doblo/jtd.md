@@ -9,7 +9,7 @@ type: "page"
 volume: 590
 main_keyword: "Fiat Doblò JTD"
 parent: "fiat-doblo"
-image: "/images/fiat-doblo-jtd-hero.jpg"
+image: "/images/fiat-doblo-jtd-hero.webp"
 faq:
   - question: "Ile KM ma silnik JTD w Fiacie Doblò?"
     answer: "Opisywany tu Fiat Doblò JTD z pierwszej generacji z silnikiem 1.9 JTD ma 100 KM i 200 Nm momentu obrotowego."
@@ -70,7 +70,7 @@ Trzy najważniejsze powody popularności:
 
 Dla kierowcy, który szuka taniego auta roboczego i akceptuje wiek pojazdu, taki diesel nadal bywa rozsądnym wyborem. Warunek jest jeden – stan nadwozia i podwozia musi być równie dobry jak stan silnika.
 
-![Fiat Doblò JTD generacji I – widok zewnętrzny](/images/fiat-doblo-jtd-hero.jpg)
+![Fiat Doblò JTD generacji I – widok zewnętrzny](/images/fiat-doblo-jtd-hero.webp)
 
 ## Typowe usterki 1.9 JTD w Doblò
 

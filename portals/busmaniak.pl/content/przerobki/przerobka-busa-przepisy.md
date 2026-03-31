@@ -3,7 +3,7 @@ title: "Przeróbka busa na kampera – przepisy i zmiany konstrukcyjne"
 date: 2026-03-23
 description: "Przepisy dotyczące przeróbki busa na kampera – wymagania prawne i proces zmiany konstrukcyjnej."
 draft: false
-image: "/images/przerobka-busa-przepisy-hero.jpg"
+image: "/images/przerobka-busa-przepisy-hero.webp"
 image_alt: "Przepisy dotyczące przeróbki busa – dowód rejestracyjny i dokumenty zmian konstrukcyjnych"
 author: "anna-wozniak"
 h1: "Przeróbka busa na kampera – przepisy, zmiany konstrukcyjne i procedura w 2026 roku"
@@ -82,7 +82,7 @@ Okręgowa stacja kontroli pojazdów (OSKP) przeprowadza badanie techniczne pojaz
 
 Kluczowym elementem badania jest ustalenie nowej masy własnej pojazdu, która zostanie wpisana w pole „G” dowodu rejestracyjnego. Diagnosta wymaga zważenia kampera po zabudowie, dlatego często należy dostarczyć kwit z wagi najazdowej. Zgodnie z normą PN-EN 1646-2, pojazd musi zachować minimalną ładowność, obliczaną na podstawie liczby miejsc do jazdy (75 kg na pasażera plus 10 kg bagażu na osobę).
 
-![Przeróbka busa na kampera – przepisy](/images/przerobka-busa-przepisy-hero.jpg)
+![Przeróbka busa na kampera – przepisy](/images/przerobka-busa-przepisy-hero.webp)
 
 ### Etap 3 – Oświadczenie wykonawcy i opinia rzeczoznawcy
 

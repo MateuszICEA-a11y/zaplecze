@@ -9,7 +9,7 @@ parent: "volkswagen-amarok"
 type: "page"
 volume: 170
 main_keyword: "volkswagen amarok tdi"
-image: "/images/volkswagen-amarok-hero.jpg"
+image: "/images/volkswagen-amarok-hero.webp"
 image_alt: "Volkswagen Amarok pickup"
 lead: "Volkswagen Amarok TDI występował w dwóch generacjach i kilku wyraźnie różnych konfiguracjach. Amarok I oferował 2.0 TDI 122 i 140 KM, 2.0 BiTDI 163 i 180 KM oraz 3.0 V6 TDI w wersjach 163, 204, 224 i 245 KM, a 258 KM dotyczyło chwilowego overboosta w wybranych odmianach i na wybranych rynkach. W Europie Amarok II ma zwykle 2.0 TDI 170 KM, 2.0 BiTDI 205 KM oraz 3.0 V6 TDI 240 KM. Oto dane techniczne, realne spalanie i typowe usterki."
 faq:

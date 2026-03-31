@@ -10,7 +10,7 @@ main_keyword: "Toyota Proace Long"
 parent: "toyota-proace"
 type: "page"
 volume: 1300
-image: "/images/toyota-proace-long-hero.jpg"
+image: "/images/toyota-proace-long-hero.webp"
 faq:
   - question: "Ile wynosi długość Toyota Proace Long?"
     answer: "Toyota Proace Long ma 5309 mm długości całkowitej. Długość użytkowa podłogi to ok. 2862 mm, a z systemem Smart Cargo może wzrosnąć do ok. 4024 mm."
@@ -75,7 +75,7 @@ Na papierze różnica wydaje się niewielka, ale w codziennej pracy przekłada s
 
 Różnica długości to 350 mm, ale właśnie te 35 cm robi różnicę między autem na 2 palety a dostawczakiem, który pozwala wejść poziom wyżej w logistyce. Medium będzie łatwiejszy w mieście, Long lepiej broni się tam, gdzie liczy się pojemność i dłuższe elementy.
 
-{{< figure src="/images/toyota-proace-long-hero.jpg" alt="Toyota Proace Long – widok z boku z otwartymi drzwiami tylnymi" caption="Toyota Proace Long oferuje 6,1 m³ przestrzeni ładunkowej i do 3 europalet na podłodze" >}}
+{{< figure src="/images/toyota-proace-long-hero.webp" alt="Toyota Proace Long – widok z boku z otwartymi drzwiami tylnymi" caption="Toyota Proace Long oferuje 6,1 m³ przestrzeni ładunkowej i do 3 europalet na podłodze" >}}
 
 ## Kiedy wybrać Long, a kiedy Medium?
 

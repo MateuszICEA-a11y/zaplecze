@@ -3,7 +3,7 @@ title: "Jaki bus na kampera – który model wybrać pod przeróbkę"
 date: 2026-03-27
 description: "Porównanie najlepszych busów pod kampera – Fiat Ducato, Mercedes Sprinter, Ford Transit, VW Crafter i Renault Master. Wymiary, silniki, DMC i ceny baz."
 draft: false
-image: "/images/jaki-bus-na-kampera-hero.jpg"
+image: "/images/jaki-bus-na-kampera-hero.webp"
 image_alt: "Porównanie busów Fiat Ducato, Mercedes Sprinter i Ford Transit stojących obok siebie"
 author: "marek-kowalczyk"
 h1: "Jaki bus na kampera – porównanie modeli pod przeróbkę"
@@ -86,7 +86,7 @@ Ford Transit oferuje jeden z najlepszych kompromisów między wymiarami wewnętr
 
 Wysokość wewnętrzna 1886 mm (wersja H2) zapewnia komfortowe stanie osobom do 185 cm wzrostu bez konieczności podnoszenia dachu. Silnik 2.0 EcoBlue 130 KM jest cichy i oszczędny – w trasie zużywa 8,5–10,5 l/100 km. Ford w wersji L3 oferuje mniejszy rozstaw osi (3750 mm) niż 6-metrowe Ducato (4035 mm), co poprawia zwrotność.
 
-![Porównanie busów bazowych pod kampera](/images/jaki-bus-na-kampera-hero.jpg)
+![Porównanie busów bazowych pod kampera](/images/jaki-bus-na-kampera-hero.webp)
 
 ### Transit – słabe strony
 

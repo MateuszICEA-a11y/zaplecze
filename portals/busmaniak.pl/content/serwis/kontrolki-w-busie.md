@@ -9,7 +9,7 @@ h1: "Kontrolki w busie i vanie – co oznaczają i jak reagować"
 type: "page"
 volume: 33100
 main_keyword: "kontrolki w samochodzie"
-image: "/images/kontrolki-w-busie-hero.jpg"
+image: "/images/kontrolki-w-busie-hero.webp"
 image_alt: "Deska rozdzielcza busa dostawczego z podświetlonymi kontrolkami ostrzegawczymi w różnych kolorach"
 lead: "Współczesny bus dostawczy ma na desce rozdzielczej 30–50 kontrolek – od znanych ikon oleju i temperatury po specyficzne symbole DPF, AdBlue czy przeciążenia osi. Czerwona kontrolka oznacza natychmiastowe zatrzymanie, żółta wymaga uwagi, a zielona jedynie informuje. W tym artykule znajdziesz kompletną listę kontrolek z opisami, ich znaczenie w busach oraz schemat postępowania, gdy zapali się ostrzeżenie."
 faq:
@@ -82,7 +82,7 @@ Po włączeniu zapłonu (przed startem silnika) wszystkie kontrolki powinny zapa
 
 ## Żółte kontrolki – kompletna lista {#zolte}
 
-![Deska rozdzielcza busa z kontrolkami ostrzegawczymi](/images/kontrolki-w-busie-hero.jpg)
+![Deska rozdzielcza busa z kontrolkami ostrzegawczymi](/images/kontrolki-w-busie-hero.webp)
 
 Żółte kontrolki to najliczniejsza grupa – współczesny bus może mieć ich ponad 20. Poniżej najważniejsze, pogrupowane tematycznie.
 

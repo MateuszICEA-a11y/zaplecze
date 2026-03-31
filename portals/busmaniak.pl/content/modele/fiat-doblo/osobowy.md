@@ -9,7 +9,7 @@ type: "page"
 volume: 720
 main_keyword: "Fiat Doblò osobowy"
 parent: "fiat-doblo"
-image: "/images/fiat-doblo-osobowy-hero.jpg"
+image: "/images/fiat-doblo-osobowy-hero.webp"
 faq:
   - question: "Ile miejsc ma Fiat Doblò osobowy?"
     answer: "W aktualnej generacji Doblò III standardowo występuje jako 5-osobowy. W Doblò II Panorama zależnie od wersji i rynku spotykane były odmiany 5- oraz 7-miejscowe."
@@ -80,7 +80,7 @@ Silniki gen II w wersji osobowej:
 
 W praktyce generacja II oferowała szerszy wybór klasycznych napędów spalinowych niż gen III. Dla kupującego używane auto to często kluczowa różnica względem nowszego modelu.
 
-![Fiat Doblò Panorama – wnętrze i przestrzeń dla pasażerów](/images/fiat-doblo-osobowy-hero.jpg)
+![Fiat Doblò Panorama – wnętrze i przestrzeń dla pasażerów](/images/fiat-doblo-osobowy-hero.webp)
 
 ## Przestrzeń dla pasażerów w Fiacie Doblò osobowym
 

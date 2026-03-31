@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Check engine w busie – co oznacza i jak reagować"
 type: "post"
 volume: 18100
-image: "/images/check-engine-hero.jpg"
+image: "/images/check-engine-hero.webp"
 image_alt: "Kontrolka check engine na desce rozdzielczej busa"
 main_keyword: "check engine"
 lead: "Żółta kontrolka silnika na desce rozdzielczej busa potrafi zepsuć dzień każdemu kierowcy, ale w większości przypadków nie oznacza natychmiastowej katastrofy. Check engine informuje o problemie zarejestrowanym przez system diagnostyczny – od błahej usterki czujnika po poważną awarię układu wtryskowego. Kluczowe jest szybkie odczytanie kodu błędu i właściwa reakcja."
@@ -94,7 +94,7 @@ System EOBD wykorzystuje znormalizowane kody błędów, które składają się z
 - **C** – podwozie (ABS, ESP)
 - **U** – komunikacja między sterownikami
 
-![Kontrolka check engine w busie – przyczyny i diagnostyka](/images/check-engine-hero.jpg)
+![Kontrolka check engine w busie – przyczyny i diagnostyka](/images/check-engine-hero.webp)
 
 Pierwsza cyfra po literze mówi, czy kod jest generyczny (0), czy specyficzny dla producenta (1). Kod P0335 jest więc uniwersalny i oznacza to samo w każdym busie – problem z sygnałem czujnika położenia wału korbowego.
 

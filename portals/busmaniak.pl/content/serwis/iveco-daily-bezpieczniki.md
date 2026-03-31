@@ -9,7 +9,7 @@ parent_model: "iveco-daily"
 type: "post"
 volume: 500
 main_keyword: "iveco daily bezpieczniki"
-image: "/images/iveco-daily-bezpieczniki-hero.jpg"
+image: "/images/iveco-daily-bezpieczniki-hero.webp"
 image_alt: "Skrzynka bezpieczników w komorze silnika Iveco Daily"
 lead: "Iveco Daily dysponuje rozbudowaną instalacją elektryczną, która opiera się na trzech głównych skrzynkach bezpieczników: pod deską rozdzielczą, w komorze silnika oraz bezpośrednio przy akumulatorze. Prawidłowa identyfikacja modułów jest kluczowa dla skutecznej diagnostyki. Poniżej prezentujemy schematy i lokalizacje dla generacji V i VI."
 faq:
@@ -105,7 +105,7 @@ Wraz z debiutem szóstej generacji Daily w 2014 roku, instalacja elektryczna zos
 - **Wyświetlacz TFT** – osobny obwód 10A (w Daily V dzielił gniazdo z zegarami)
 - **Ogrzewanie AdBlue** – nowy bezpiecznik 15A w komorze silnika (zapobiega krystalizacji płynu zimą)
 
-![Bezpieczniki Iveco Daily – schemat i lokalizacja](/images/iveco-daily-bezpieczniki-hero.jpg)
+![Bezpieczniki Iveco Daily – schemat i lokalizacja](/images/iveco-daily-bezpieczniki-hero.webp)
 
 ### Skrzynka pod deską – Daily VI (wybrane pozycje)
 

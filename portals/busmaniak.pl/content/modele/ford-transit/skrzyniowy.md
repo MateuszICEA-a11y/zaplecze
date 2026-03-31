@@ -10,7 +10,7 @@ main_keyword: "Ford Transit skrzyniowy"
 parent: "ford-transit"
 type: "page"
 volume: 320
-image: "/images/ford-transit-skrzyniowy-hero.jpg"
+image: "/images/ford-transit-skrzyniowy-hero.webp"
 faq:
   - question: "Co to jest Ford Transit chassis cab?"
     answer: "Chassis cab (podwozie z kabiną) to wersja Transita bez zabudowy za kabiną – dostarczana z samą ramą i kabiną kierowcy. Zabudowca montuje skrzynię ładunkową, plandekarę, kontener lub wywrotkę zgodnie z potrzebami klienta."
@@ -96,7 +96,7 @@ Zabudowy montowane przez specjalistyczne firmy:
 - wywrotka hydrauliczna – do ziemi, żwiru, gruzu i odpadów budowlanych
 - platforma niskopodłogowa – transport maszyn i pojazdów
 
-![Ford Transit skrzyniowy z zabudową skrzynkową](/images/ford-transit-skrzyniowy-hero.jpg)
+![Ford Transit skrzyniowy z zabudową skrzynkową](/images/ford-transit-skrzyniowy-hero.webp)
 
 Przy izotermie i chłodni trzeba patrzeć szerzej niż tylko na sam typ kontenera. Dla przewozu żywności znaczenie mają klasy ATP/FRC, zakres temperatur – przykładowo 0 do +8°C w chłodniczej dystrybucji albo do -20°C dla mroźni – a także moc agregatu, zasilanie postojowe 230 V i grubość izolacji zabudowy.
 

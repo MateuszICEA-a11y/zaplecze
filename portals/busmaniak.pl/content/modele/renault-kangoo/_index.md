@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Renault Kangoo – kompletny przewodnik po modelu"
 type: "page"
-image: "/images/renault-kangoo-hero.jpg"
+image: "/images/renault-kangoo-hero.webp"
 image_alt: "Renault Kangoo III furgon na parkingu"
 main_keyword: "renault kangoo"
 volume: 12100

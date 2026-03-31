@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Kampery – kompletny przewodnik po świecie pojazdów kempingowych"
 type: "page"
-image: "/images/kampery-hub-hero.jpg"
+image: "/images/kampery-hub-hero.webp"
 image_alt: "Kamper zaparkowany na leśnej polanie o zachodzie słońca – widok z boku z rozłożoną markizą"
 main_keyword: "kamper"
 lead: "Kamper to autonomiczny pojazd turystyczny z miejscami do spania, kuchnią i sanitariatami – gotowy dom na kółkach, który pozwala podróżować bez rezerwacji hoteli. W 2024 roku Polacy zarejestrowali ponad 2000 nowych kamperów, a zainteresowanie rośnie o kilkadziesiąt procent rocznie. Ten przewodnik przeprowadzi Cię przez cztery główne typy zabudów, realne widełki cenowe i kluczowe kwestie zakupowe."

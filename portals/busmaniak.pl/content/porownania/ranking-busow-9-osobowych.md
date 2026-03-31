@@ -8,7 +8,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Busy 9-osobowe – ranking i porównanie modeli"
 type: "page"
-image: "/images/busy-9-osobowe-hero.jpg"
+image: "/images/busy-9-osobowe-hero.webp"
 image_alt: "Busy 9-osobowe – porównanie najpopularniejszych modeli na polskim rynku"
 main_keyword: "busy 9 osobowe"
 volume: 500
@@ -46,39 +46,39 @@ Każdy bus 9-osobowy z DMC do 3500 kg można prowadzić na kategorię B. Limity 
 
 Na polskim rynku w 2026 roku dostępnych jest dziewięć głównych modeli busów 9-osobowych. Każdy z nich ma swoje mocne strony – od budżetowych bliźniaków Stellantis po premium Mercedesa Vito Tourer.
 
-{{% ranking-entry position="1" title="Ford Transit Custom Kombi" image="/images/ford-transit-custom-hero.jpg" score="9.2" url="/modele/ford-transit-custom/" engine="2.0 EcoBlue 150–170 KM / PHEV 232 KM" fuel="7,5–9,0 l/100 km" seats="9" price-new="od 247 000 zł" price-used="80 000–250 000 zł" pros="Najnowsza platforma (2024+) z VW|PHEV 232 KM w ofercie|Ekran 13 cali i modułowe siedzenia" cons="Wysoka cena nowego|Krótka historia gen. IV na rynku wtórnym|Brak wersji 4x4" %}}
+{{% ranking-entry position="1" title="Ford Transit Custom Kombi" image="/images/ford-transit-custom-hero.webp" score="9.2" url="/modele/ford-transit-custom/" engine="2.0 EcoBlue 150–170 KM / PHEV 232 KM" fuel="7,5–9,0 l/100 km" seats="9" price-new="od 247 000 zł" price-used="80 000–250 000 zł" pros="Najnowsza platforma (2024+) z VW|PHEV 232 KM w ofercie|Ekran 13 cali i modułowe siedzenia" cons="Wysoka cena nowego|Krótka historia gen. IV na rynku wtórnym|Brak wersji 4x4" %}}
 Najnowsza generacja Transit Custom na wspólnej platformie z VW Transporter T7. Diesel 2.0 EcoBlue 150 lub 170 KM, dostępny także jako PHEV 232 KM. Modułowe siedzenia i nowoczesna deska rozdzielcza z ekranem 13 cali czynią go liderem segmentu.
 {{% /ranking-entry %}}
 
-{{% ranking-entry position="2" title="Volkswagen Transporter Caravelle" image="/images/volkswagen-transporter-hero.jpg" score="9.0" url="/modele/volkswagen-transporter/" engine="2.0 TDI 150 KM / PHEV" fuel="7,0–8,0 l/100 km" seats="9" price-new="od 260 000 zł" price-used="90 000–280 000 zł" pros="Premium wykończenie i wyciszenie|Ta sama platforma co Transit Custom|Opcja PHEV" cons="Wyższa cena niż Ford|Mniejsza sieć serwisowa w Polsce|Ograniczona oferta wersji długich" %}}
+{{% ranking-entry position="2" title="Volkswagen Transporter Caravelle" image="/images/volkswagen-transporter-hero.webp" score="9.0" url="/modele/volkswagen-transporter/" engine="2.0 TDI 150 KM / PHEV" fuel="7,0–8,0 l/100 km" seats="9" price-new="od 260 000 zł" price-used="90 000–280 000 zł" pros="Premium wykończenie i wyciszenie|Ta sama platforma co Transit Custom|Opcja PHEV" cons="Wyższa cena niż Ford|Mniejsza sieć serwisowa w Polsce|Ograniczona oferta wersji długich" %}}
 Bliźniak Forda na tej samej platformie, ale z wykończeniem premium. Diesel 2.0 TDI 150 KM, opcja PHEV. Wyższa cena rekompensowana lepszym wyciszeniem kabiny i jakością materiałów wykończeniowych.
 {{% /ranking-entry %}}
 
-{{% ranking-entry position="3" title="Mercedes Vito Tourer" image="/images/mercedes-vito-hero.jpg" score="8.8" url="/modele/mercedes-vito/" engine="2.0 CDI 136–237 KM" fuel="7,0–9,0 l/100 km" seats="9" price-new="od 280 000 zł" price-used="100 000–300 000 zł" pros="Najwyższy komfort w segmencie|Szeroka gama mocy (136–237 KM)|Kompaktowe wymiary od 4895 mm" cons="Najwyższa cena zakupu|Drogie części i serwis|Korozja w starszych rocznikach" %}}
+{{% ranking-entry position="3" title="Mercedes Vito Tourer" image="/images/mercedes-vito-hero.webp" score="8.8" url="/modele/mercedes-vito/" engine="2.0 CDI 136–237 KM" fuel="7,0–9,0 l/100 km" seats="9" price-new="od 280 000 zł" price-used="100 000–300 000 zł" pros="Najwyższy komfort w segmencie|Szeroka gama mocy (136–237 KM)|Kompaktowe wymiary od 4895 mm" cons="Najwyższa cena zakupu|Drogie części i serwis|Korozja w starszych rocznikach" %}}
 Kompaktowe wymiary (od 4895 mm długości) przy pełnych 9 miejscach. Diesel 2.0 CDI w zakresie 136–237 KM z 9-biegowym automatem. Najwyższy komfort w segmencie, ale też najwyższa cena zakupu i eksploatacji.
 {{% /ranking-entry %}}
 
-{{% ranking-entry position="4" title="Renault Trafic SpaceClass" image="/images/renault-trafic-hero.jpg" score="8.5" url="/modele/renault-trafic/" engine="2.0 dCi 120–170 KM" fuel="7,0–8,5 l/100 km" seats="9" price-new="od 230 000 zł" price-used="70 000–220 000 zł" pros="Dobry stosunek ceny do wyposażenia|Dwa warianty długości L1/L2|Tanie części zamienne" cons="Starsze wnętrze niż Transit/Transporter|Brak hybrydy plug-in|Ograniczone systemy bezpieczeństwa" %}}
+{{% ranking-entry position="4" title="Renault Trafic SpaceClass" image="/images/renault-trafic-hero.webp" score="8.5" url="/modele/renault-trafic/" engine="2.0 dCi 120–170 KM" fuel="7,0–8,5 l/100 km" seats="9" price-new="od 230 000 zł" price-used="70 000–220 000 zł" pros="Dobry stosunek ceny do wyposażenia|Dwa warianty długości L1/L2|Tanie części zamienne" cons="Starsze wnętrze niż Transit/Transporter|Brak hybrydy plug-in|Ograniczone systemy bezpieczeństwa" %}}
 Dobrze wyposażona wersja osobowa z silnikiem 2.0 dCi 120–170 KM. Dwa warianty długości L1 i L2, przestronny bagażnik w wersji długiej. Niezależna platforma Renault – nie dzieli podwozia z konkurencją Stellantis.
 {{% /ranking-entry %}}
 
-{{% ranking-entry position="5" title="Opel Zafira Life" image="/images/opel-vivaro-hero.jpg" score="8.3" url="/modele/opel-vivaro/" engine="2.0 diesel 120–180 KM" fuel="7,0–7,8 l/100 km" seats="9" price-new="od 220 000 zł" price-used="60 000–200 000 zł" pros="Najniższe spalanie w segmencie|Identyczny technicznie z Expert i ProAce|Atrakcyjna cena" cons="Plastikowe wnętrze|Mniej prestiżowa marka|Głośniejszy przy 130 km/h" %}}
+{{% ranking-entry position="5" title="Opel Zafira Life" image="/images/opel-vivaro-hero.webp" score="8.3" url="/modele/opel-vivaro/" engine="2.0 diesel 120–180 KM" fuel="7,0–7,8 l/100 km" seats="9" price-new="od 220 000 zł" price-used="60 000–200 000 zł" pros="Najniższe spalanie w segmencie|Identyczny technicznie z Expert i ProAce|Atrakcyjna cena" cons="Plastikowe wnętrze|Mniej prestiżowa marka|Głośniejszy przy 130 km/h" %}}
 Bliźniak platformy Stellantis EMP2, identyczny technicznie z Peugeot Traveller i Citroën SpaceTourer. Diesel 2.0 o mocy 120–180 KM. Niższa cena niż Ford czy VW przy niemal identycznych parametrach.
 {{% /ranking-entry %}}
 
-{{% ranking-entry position="6" title="Peugeot Traveller" image="/images/peugeot-expert-hero.jpg" score="8.2" url="/modele/peugeot-expert/" engine="2.0 BlueHDi 120–180 KM" fuel="7,0–7,8 l/100 km" seats="9" price-new="od 220 000 zł" price-used="60 000–200 000 zł" pros="Eleganckie wykończenie i-Cockpit|Identyczna mechanika co Zafira Life|Popularna opcja flotowa" cons="Droższy serwis niż Opel|Mniejszy bagażnik w L1|Brak napędu 4x4" %}}
+{{% ranking-entry position="6" title="Peugeot Traveller" image="/images/peugeot-expert-hero.webp" score="8.2" url="/modele/peugeot-expert/" engine="2.0 BlueHDi 120–180 KM" fuel="7,0–7,8 l/100 km" seats="9" price-new="od 220 000 zł" price-used="60 000–200 000 zł" pros="Eleganckie wykończenie i-Cockpit|Identyczna mechanika co Zafira Life|Popularna opcja flotowa" cons="Droższy serwis niż Opel|Mniejszy bagażnik w L1|Brak napędu 4x4" %}}
 Ten sam samochód co Zafira Life, różni się detalami wykończenia i ceną. Peugeot stawia na bardziej eleganckie wnętrze z charakterystycznym i-Cockpit. Popularna opcja flotowa.
 {{% /ranking-entry %}}
 
-{{% ranking-entry position="7" title="Citroën SpaceTourer" image="/images/citroen-berlingo-hero.jpg" score="8.1" url="/modele/citroen-jumpy/" engine="2.0 BlueHDi 120–180 KM" fuel="7,0–7,8 l/100 km" seats="9" price-new="od 210 000 zł" price-used="55 000–190 000 zł" pros="Najniższa cena nowego w segmencie|Identyczna mechanika Stellantis|Komfortowe zawieszenie" cons="Uboższe wyposażenie seryjne|Mniejsza sieć serwisowa|Niska wartość rezydualna" %}}
+{{% ranking-entry position="7" title="Citroën SpaceTourer" image="/images/citroen-berlingo-hero.webp" score="8.1" url="/modele/citroen-jumpy/" engine="2.0 BlueHDi 120–180 KM" fuel="7,0–7,8 l/100 km" seats="9" price-new="od 210 000 zł" price-used="55 000–190 000 zł" pros="Najniższa cena nowego w segmencie|Identyczna mechanika Stellantis|Komfortowe zawieszenie" cons="Uboższe wyposażenie seryjne|Mniejsza sieć serwisowa|Niska wartość rezydualna" %}}
 Najtańszy z trójki Stellantis. Identyczna mechanika jak Zafira Life i Traveller, ale nieco uboższe wyposażenie seryjne. Najlepsza opcja dla kupujących szukających najniższej ceny wejściowej.
 {{% /ranking-entry %}}
 
-{{% ranking-entry position="8" title="Toyota ProAce Verso" image="/images/toyota-proace-hero.jpg" score="8.4" url="/modele/toyota-proace-verso/" engine="2.0 D-4D 120–180 KM" fuel="7,0–7,8 l/100 km" seats="9" price-new="od 235 000 zł" price-used="70 000–230 000 zł" pros="5-letnia gwarancja producenta|Najwyższa niezawodność w segmencie|Dobra wartość rezydualna" cons="Ta sama platforma Stellantis|Mniejsza sieć Toyoty dla vanów|Wyższa cena niż Zafira/Traveller" %}}
+{{% ranking-entry position="8" title="Toyota ProAce Verso" image="/images/toyota-proace-hero.webp" score="8.4" url="/modele/toyota-proace-verso/" engine="2.0 D-4D 120–180 KM" fuel="7,0–7,8 l/100 km" seats="9" price-new="od 235 000 zł" price-used="70 000–230 000 zł" pros="5-letnia gwarancja producenta|Najwyższa niezawodność w segmencie|Dobra wartość rezydualna" cons="Ta sama platforma Stellantis|Mniejsza sieć Toyoty dla vanów|Wyższa cena niż Zafira/Traveller" %}}
 Kolejny bliźniak platformy Stellantis, ale z 5-letnią gwarancją producenta i reputacją niezawodności Toyoty. Diesel 2.0 D-4D 120–180 KM. Najwyższa wartość rezydualna wśród bliźniaków EMP2.
 {{% /ranking-entry %}}
 
-{{% ranking-entry position="9" title="Hyundai Staria" image="/images/hyundai-staria-hero.jpg" score="8.0" url="/modele/hyundai-staria/" engine="2.2 CRDi 177 KM" fuel="7,5–8,5 l/100 km" seats="9" price-new="od 250 000 zł" price-used="200 000–280 000 zł" pros="Futurystyczny design jedyny w swoim rodzaju|Bogate wyposażenie seryjne|5-letnia gwarancja" cons="Jedyny silnik do wyboru (2.2 CRDi)|Mała sieć serwisowa w Polsce|Brak wersji długiej" %}}
+{{% ranking-entry position="9" title="Hyundai Staria" image="/images/hyundai-staria-hero.webp" score="8.0" url="/modele/hyundai-staria/" engine="2.2 CRDi 177 KM" fuel="7,5–8,5 l/100 km" seats="9" price-new="od 250 000 zł" price-used="200 000–280 000 zł" pros="Futurystyczny design jedyny w swoim rodzaju|Bogate wyposażenie seryjne|5-letnia gwarancja" cons="Jedyny silnik do wyboru (2.2 CRDi)|Mała sieć serwisowa w Polsce|Brak wersji długiej" %}}
 Jedyny koreański model w zestawieniu. Futurystyczny design, diesel 2.2 CRDi 177 KM z 8-biegowym automatem. Bogata lista wyposażenia seryjnego i 5-letnia gwarancja. Wyróżnia się wizualnie na tle europejskiej konkurencji.
 {{% /ranking-entry %}}
 
@@ -104,7 +104,7 @@ Ford i VW dzielą platformę, więc mają identyczne wymiary zewnętrzne – ró
 
 Kluczowym aspektem dla rodzin jest dostępność mocowań ISOFIX. Warto wiedzieć, że Ford Transit Custom Kombi oferuje ich nawet sześć. Z kolei w Renault Trafic standardem są dwa punkty, a modele grupy Stellantis mogą mieć do sześciu uchwytów w zależności od konfiguracji foteli, co ma decydujące znaczenie przy przewozie kilkorga małych dzieci.
 
-![Busy 9-osobowe – porównanie modeli na polskim rynku](/images/busy-9-osobowe-hero.jpg)
+![Busy 9-osobowe – porównanie modeli na polskim rynku](/images/busy-9-osobowe-hero.webp)
 
 ## Silniki i spalanie busów 9-osobowych
 

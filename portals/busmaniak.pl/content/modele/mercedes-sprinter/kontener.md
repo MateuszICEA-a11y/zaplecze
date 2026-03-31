@@ -10,7 +10,7 @@ main_keyword: "Mercedes Sprinter kontener"
 parent: "mercedes-sprinter"
 type: "page"
 volume: 320
-image: "/images/mercedes-sprinter-kontener-hero.jpg"
+image: "/images/mercedes-sprinter-kontener-hero.webp"
 faq:
   - question: "Jaki DMC ma Mercedes Sprinter z zabudową kontenerową?"
     answer: "Mercedes Sprinter kontener występuje w kilku wariantach DMC zależnie od wersji podwozia i rynku – typowo od 3,0 t do 5,5 t. Najczęściej spotykane są konfiguracje 3,5 t oraz cięższe odmiany powyżej 3,5 t, ale nie są to jedyne dostępne warianty. Wersje 5,5 t występują jako odpowiednio skonfigurowane fabryczne podwozia z właściwymi osiami i zawieszeniem."
@@ -61,7 +61,7 @@ Jeśli chcesz zrozumieć samą zasadę działania izolacji, pomocne jest pojęci
 
 W food trucku liczy się nie tylko sama zabudowa, ale też wymagania sanitarne i techniczne. W praktyce trzeba przewidzieć rejestrację działalności, wymagania higieniczne, dostęp do czystej i brudnej wody, wentylację, materiały zmywalne, instalację gazową lub elektryczną, odbiory, a także wyposażenie takie jak zbiorniki wody i ścieków, zasilanie 230 V lub agregat, gaśnica i oznaczenia BHP.
 
-![Mercedes Sprinter z zabudową chłodniczą ATP](/images/mercedes-sprinter-kontener-hero.jpg)
+![Mercedes Sprinter z zabudową chłodniczą ATP](/images/mercedes-sprinter-kontener-hero.webp)
 
 ## Wymiary zabudowy
 

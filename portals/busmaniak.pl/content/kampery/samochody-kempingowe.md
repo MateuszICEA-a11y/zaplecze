@@ -5,7 +5,7 @@ description: "Samochody kempingowe – kompletny przewodnik po rodzajach kamper�
 draft: false
 author: "anna-wozniak"
 h1: "Samochody kempingowe – rodzaje, ceny i porady na 2026 rok"
-image: "/images/kampery-featured.jpg"
+image: "/images/kampery-featured.webp"
 image_alt: "Samochody kempingowe różnych typów na kempingu"
 main_keyword: "samochody kempingowe"
 lead: "Samochody kempingowe to pojazdy łączące transport z noclegiem – od kompaktowych camper vanów przez alkowy i półintegrały po luksusowe integrały. W Polsce zarejestrowanych jest ponad 30 tys. kamperów, a rynek rośnie o 12–15% rocznie. Ceny nowych samochodów kempingowych zaczynają się od 250 tys. zł, używanych – od 50 tys. zł."
@@ -66,7 +66,7 @@ Wybierając typ kampera, zacznij od odpowiedzi na trzy pytania: ile osób będzi
 
 [Camper van](/kampery/camper-van/) zachowuje oryginalne nadwozie busa, ewentualnie z podnoszonym dachem. Najpopularniejsze modele budowane są na bazach takich jak Fiat Ducato, VW Crafter czy Mercedes Sprinter, a uznani producenci to np. Pössl czy Globe-Traveller. Idealny jako jedyny samochód w rodzinie – parkujesz na zwykłym miejscu, spalasz **8–11 l/100 km** i codziennie korzystasz z pojazdu.
 
-![Samochody kempingowe różnych typów](/images/kampery-featured.jpg)
+![Samochody kempingowe różnych typów](/images/kampery-featured.webp)
 
 ### Alkowa – rodzinny koń roboczy
 

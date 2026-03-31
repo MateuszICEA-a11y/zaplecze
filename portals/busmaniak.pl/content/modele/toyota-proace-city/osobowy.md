@@ -10,7 +10,7 @@ parent: "toyota-proace-city"
 type: "page"
 volume: 390
 main_keyword: "Toyota Proace City osobowy"
-image: "/images/toyota-proace-city-osobowy-hero.jpg"
+image: "/images/toyota-proace-city-osobowy-hero.webp"
 faq:
   - question: "Ile miejsc ma Toyota Proace City Verso?"
     answer: "Toyota Proace City Verso była oferowana w dwóch długościach nadwozia: Medium (4403 mm) i Long (4753 mm). W zależności od wersji i konfiguracji występuje jako 5-osobowa, a odmiana Long może oferować układ 5+2, czyli łącznie 7 miejsc."
@@ -57,7 +57,7 @@ Homologacja M1 oznacza, że mówimy o samochodzie osobowym, ale praktyczne skutk
 
 ## Przestrzeń pasażerska i bagażnik
 
-![Toyota Proace City Verso Long – wnętrze z trzecim rzędem siedzeń](/images/toyota-proace-city-osobowy-hero.jpg)
+![Toyota Proace City Verso Long – wnętrze z trzecim rzędem siedzeń](/images/toyota-proace-city-osobowy-hero.webp)
 
 Najważniejsza różnica praktyczna między Medium a Long dotyczy nie tylko liczby miejsc, ale też bagażnika. Dla bliźniaczych modeli K9 producenci podawali zwykle około 597 l VDA dla krótszej wersji 5-miejscowej oraz około 850 l VDA dla dłuższej wersji 5-miejscowej.
 

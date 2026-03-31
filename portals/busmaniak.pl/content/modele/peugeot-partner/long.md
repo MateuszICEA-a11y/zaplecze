@@ -6,7 +6,7 @@ description: "Peugeot Partner III w wersji Long (L2, 4753 mm) – przestrzeń 4,
 draft: false
 author: "marek-kowalczyk"
 type: "page"
-image: "/images/peugeot-partner-long-hero.jpg"
+image: "/images/peugeot-partner-long-hero.webp"
 parent: "peugeot-partner"
 faq:
   - question: "Ile wynosi długość Peugeot Partnera Long?"
@@ -97,7 +97,7 @@ W gamie warto pamiętać także o e-Partnerze w długiej wersji. Odmiana elektry
 
 Jeśli planujesz holowanie, również trzeba sprawdzić homologację konkretnego wariantu. DMC przyczepy z hamulcem dla wersji 1.5 BlueHDi często wynosiło do 1350–1500 kg, bez hamulca 680–750 kg, a nacisk pionowy haka zwykle 70–75 kg.
 
-![Peugeot Partner Long – przestrzeń ładunkowa i tylne drzwi](/images/peugeot-partner-long-hero.jpg)
+![Peugeot Partner Long – przestrzeń ładunkowa i tylne drzwi](/images/peugeot-partner-long-hero.webp)
 
 ## Możliwości zabudowy
 

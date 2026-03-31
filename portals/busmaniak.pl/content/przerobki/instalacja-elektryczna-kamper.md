@@ -3,7 +3,7 @@ title: "Instalacja elektryczna w kamperze"
 date: 2026-03-23
 description: "Instalacja elektryczna w kamperze – schemat, komponenty i montaż krok po kroku."
 draft: false
-image: "/images/instalacja-elektryczna-kamper-hero.jpg"
+image: "/images/instalacja-elektryczna-kamper-hero.webp"
 image_alt: "Instalacja elektryczna w kamperze – panel solarny i akumulator"
 author: "anna-wozniak"
 h1: "Instalacja elektryczna w kamperze – schemat, komponenty i koszty w 2026 roku"
@@ -81,7 +81,7 @@ Panele słoneczne to podstawa niezależności energetycznej kampera. Na dachu bu
 - **400 W (np. jeden panel 175×110 cm)** – optymalny standard dla pary z lodówką i pracą zdalną. Daje pełną autonomię latem (800–1600 Wh dziennie) i znacząco wspiera bilans energetyczny zimą.
 - **800 W (2× 400 W)** – zapewnia niemal całkowitą niezależność nawet w mniej słoneczne dni. To rozwiązanie dla osób z dużym zapotrzebowaniem na energię, np. używających urządzeń 230V.
 
-![Instalacja elektryczna w kamperze – schemat](/images/instalacja-elektryczna-kamper-hero.jpg)
+![Instalacja elektryczna w kamperze – schemat](/images/instalacja-elektryczna-kamper-hero.webp)
 
 ### Regulator MPPT vs PWM
 

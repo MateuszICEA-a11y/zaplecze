@@ -6,7 +6,7 @@ description: "Ford Transit Custom Van II w wersjach L1 i L2 – przestrzeń 6,0�
 draft: false
 author: "marek-kowalczyk"
 type: "page"
-image: "/images/ford-transit-custom-van-hero.jpg"
+image: "/images/ford-transit-custom-van-hero.webp"
 parent: "ford-transit-custom"
 faq:
   - question: "Jakie są wymiary przestrzeni ładunkowej Transit Custom L2?"
@@ -103,7 +103,7 @@ Jeśli interesuje Cię konkretny diesel generacji II, przed zakupem warto sprawd
 
 
 
-![Ford Transit Custom L2 Van – przestrzeń ładunkowa](/images/ford-transit-custom-van-hero.jpg)
+![Ford Transit Custom L2 Van – przestrzeń ładunkowa](/images/ford-transit-custom-van-hero.webp)
 
 ## Wyposażenie cargo i zabudowy
 

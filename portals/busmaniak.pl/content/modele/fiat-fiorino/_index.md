@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Fiat Fiorino – kompletny przewodnik po modelu"
 type: "page"
-image: "/images/fiat-fiorino-hero.jpg"
+image: "/images/fiat-fiorino-hero.webp"
 image_alt: "Fiat Fiorino III furgon Cargo na tle miasta"
 main_keyword: "fiat fiorino"
 volume: 9900

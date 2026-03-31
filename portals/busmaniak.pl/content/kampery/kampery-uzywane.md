@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Kampery używane – kompletny poradnik zakupu"
 main_keyword: "kampery używane"
-image: "/images/kampery-uzywane-hero.jpg"
+image: "/images/kampery-uzywane-hero.webp"
 image_alt: "Używany kamper profilowany na parkingu podczas oględzin przed zakupem"
 lead: "Rynek kamperów w Polsce dynamicznie rośnie, ale to rynek wtórny gra pierwsze skrzypce. Zanim jednak podpiszesz umowę na wymarzone cztery kółka, musisz wiedzieć, gdzie szukać używanych kamperów, co sprawdzić i ile realnie zapłacisz."
 faq:
@@ -85,7 +85,7 @@ Warto uważać na konkretne jednostki napędowe. Unikaj silników 2.2 „Puma”
 
 Szczelność dachu i okien najlepiej zweryfikować polewając kampera wodą z węża ogrodowego. Otwórz każdą szafkę, podnieś materace i zajrzyj w najdalsze zakamarki. Koniecznie uruchom ogrzewanie (Truma, Webasto), bojler i kuchenkę. Zwróć uwagę na działanie zawiasów w meblach – luzy to standard, ale kompleksowa naprawa uszkodzonych elementów zabudowy może pochłonąć **8000–15 000 zł**.
 
-![Używany kamper profilowany na parkingu podczas oględzin przed zakupem](/images/kampery-uzywane-hero.jpg)
+![Używany kamper profilowany na parkingu podczas oględzin przed zakupem](/images/kampery-uzywane-hero.webp)
 
 ## Przebiegi kamperów i ich znaczenie
 

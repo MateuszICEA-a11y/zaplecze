@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Ford Transit Connect – kompletny przewodnik po modelu"
 type: "page"
-image: "/images/ford-transit-connect-hero.jpg"
+image: "/images/ford-transit-connect-hero.webp"
 image_alt: "Ford Transit Connect Mk2 furgon na parkingu"
 main_keyword: "ford transit connect"
 volume: 6600

@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Fiat Ducato 2.3 MultiJet – dane techniczne i opinie"
 parent: "fiat-ducato"
 type: "page"
-image: "/images/fiat-ducato-2-3-multijet-hero.jpg"
+image: "/images/fiat-ducato-2-3-multijet-hero.webp"
 image_alt: "Silnik 2.3 MultiJet Fiat Ducato w warsztacie"
 main_keyword: "Fiat Ducato 2.3 MultiJet"
 lead: "Silnik 2.3 MultiJet to jedna z najpopularniejszych jednostek w Fiacie Ducato od 2006 roku. Występował w kilku wariantach mocy, m.in. 120, 130, 140, 150, 160 oraz w późniejszych latach także 177–180 KM, i napędzał zarówno busy dostawcze, jak i kampery."
@@ -77,7 +77,7 @@ W gamie Ducato warto też pamiętać o alternatywach. Obok 2.3 występowały tak
 W praktyce wersje 140, 160 i 177–180 KM mają najwięcej sensu tam, gdzie auto jeździ stale ciężkie – z zabudową kamperową, kontenerem albo pełnym ładunkiem. Do klasycznego furgonu miejskiego 120–130 KM nadal pozostaje rozsądnym kompromisem.
 {{% /expert %}}
 
-![Silnik 2.3 MultiJet Fiat Ducato w warsztacie](/images/fiat-ducato-2-3-multijet-hero.jpg)
+![Silnik 2.3 MultiJet Fiat Ducato w warsztacie](/images/fiat-ducato-2-3-multijet-hero.webp)
 
 ## Spalanie Fiata Ducato 2.3 MultiJet w praktyce
 

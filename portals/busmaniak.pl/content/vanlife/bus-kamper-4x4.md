@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Kamper 4x4 – terenowe busy do offroadu i wypraw"
 type: "post"
 volume: 2000
-image: "/images/bus-kamper-4x4-hero.jpg"
+image: "/images/bus-kamper-4x4-hero.webp"
 image_alt: "Bus kamper 4x4 na szutrowej drodze w górach – terenowy kamper offroad"
 main_keyword: "kamper 4x4"
 lead: "Asfalt nie prowadzi do najpiękniejszych miejsc. Kamper z napędem 4x4 otwiera drogi, na które zwykły bus dostawczy nie wjedzie – szutrowe przełęcze, bieszczadzkie polany, skandynawskie bezdroża i bałkańskie szlaki. Ale napęd na cztery koła to nie tylko przygoda, lecz także wyższe koszty, większe spalanie i specyficzny serwis. Rozkładamy temat na części."
@@ -75,7 +75,7 @@ Kluczowe parametry:
 
 To właśnie reduktor i blokady najbardziej odróżniają Daily od bardziej „cywilnych” vanów AWD. Jeśli planujesz trudniejsze wyprawy, to różnica użytkowa jest fundamentalna.
 
-![Bus kamper 4x4 – terenowe kampery do offroadu](/images/bus-kamper-4x4-hero.jpg)
+![Bus kamper 4x4 – terenowe kampery do offroadu](/images/bus-kamper-4x4-hero.webp)
 
 Daily 4x4 jest świetne w terenie, ale ma też cenę za tę dzielność – wyższe spalanie, bardziej surowe prowadzenie i droższy serwis. To baza dla osób, które realnie chcą jeździć dalej niż na trawiasty parking.
 

@@ -5,7 +5,7 @@ description: "Kampery na sprzedaż w Polsce – portale ogłoszeniowe, salony de
 draft: false
 author: "anna-wozniak"
 h1: "Kampery na sprzedaż – kompletny przewodnik po źródłach"
-image: "/images/kampery-na-sprzedaz-hero.jpg"
+image: "/images/kampery-na-sprzedaz-hero.webp"
 image_alt: "Kampery na sprzedaż – rząd camper vanów w salonie dealerskim"
 main_keyword: "kampery na sprzedaż"
 lead: "Rynek kamperów w Polsce dynamicznie się rozwija, a liczba ofert na portalach ogłoszeniowych idzie w tysiące. Nowe i używane **kampery na sprzedaż** znajdziesz na OLX i Otomoto, u autoryzowanych dealerów, na targach branżowych lub sprowadzając je z Niemiec czy Włoch. Każde z tych źródeł ma jednak swoje plusy, minusy i pułapki, na które warto uważać."
@@ -75,7 +75,7 @@ W Polsce działa kilkudziesięciu autoryzowanych dealerów, oferujących pojazdy
 
 Główne zalety zakupu w salonie to gwarancja (zwykle 2 lata na auto bazowe i do 7 lat na szczelność zabudowy), możliwość finansowania leasingiem i pełna personalizacja. Minusem jest cena oraz długi czas oczekiwania, często od 6 do nawet 12 miesięcy na skonfigurowany pod siebie egzemplarz.
 
-![Kampery na sprzedaż – gdzie kupić kampera](/images/kampery-na-sprzedaz-hero.jpg)
+![Kampery na sprzedaż – gdzie kupić kampera](/images/kampery-na-sprzedaz-hero.webp)
 
 ## Import z zagranicy
 

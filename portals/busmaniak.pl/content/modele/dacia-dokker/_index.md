@@ -8,7 +8,7 @@ author: "marek-kowalczyk"
 h1: "Dacia Dokker – kompletny przewodnik po modelu"
 type: "page"
 main_keyword: "Dacia Dokker"
-image: "/images/dacia-dokker-hero.jpg"
+image: "/images/dacia-dokker-hero.webp"
 image_alt: "Dacia Dokker Van – kompaktowy kombivan dostawczy"
 lead: "Dacia Dokker to jeden z najbardziej opłacalnych kombivanów na rynku wtórnym – łączy prostą budowę z przestrzenią ładunkową, której trudno szukać w tej cenie. Produkcja zakończyła się w marcu 2021 roku, ale model wciąż cieszy się dużym popytem wśród małych firm i rzemieślników."
 faq:
@@ -81,7 +81,7 @@ Dokker osobowy i Van mają identyczne wymiary zewnętrzne – różnią się gł
 - **Próg załadowczy** – 580 mm
 - **Drzwi boczne** – przesuwane po prawej stronie (standard), obustronne (opcja)
 
-![Dacia Dokker Van – kompaktowy kombivan dostawczy](/images/dacia-dokker-hero.jpg)
+![Dacia Dokker Van – kompaktowy kombivan dostawczy](/images/dacia-dokker-hero.webp)
 
 ## Wersje nadwozia – kombi, Van, Stepway
 

@@ -5,7 +5,7 @@ description: "Kompletny przewodnik po zakupie kampera w 2026 roku – rodzaje, n
 draft: false
 author: "anna-wozniak"
 h1: "Samochody kempingowe – przewodnik kupującego 2026"
-image: "/images/ranking-kamperow-hero.jpg"
+image: "/images/ranking-kamperow-hero.webp"
 image_alt: "Kamper zaparkowany na polu kempingowym z otwartą markizą"
 main_keyword: "samochody kempingowe"
 lead: "Rynek samochodów kempingowych w Polsce rośnie o kilkanaście procent rocznie. W 2025 roku zarejestrowano ponad 4 000 nowych kamperów – to rekordowy wynik. Ten przewodnik pomoże Ci wybrać odpowiedni typ, uniknąć kosztownych błędów i przejść przez formalności rejestracyjne."
@@ -88,7 +88,7 @@ Przekroczenie DMC 3500 kg jest nie tylko nielegalne, ale i kosztowne. Typowy pó
 - **Markiza** – automatyczna (Fiamma, Thule) rozkłada się w 30 sekund, dając cień i schronienie.
 - **Kamera cofania** – przy długości 6–7 m jest to praktycznie niezbędny element wyposażenia.
 
-![Kamper zaparkowany na polu kempingowym z otwartą markizą](/images/ranking-kamperow-hero.jpg)
+![Kamper zaparkowany na polu kempingowym z otwartą markizą](/images/ranking-kamperow-hero.webp)
 
 ## Rejestracja i formalności
 

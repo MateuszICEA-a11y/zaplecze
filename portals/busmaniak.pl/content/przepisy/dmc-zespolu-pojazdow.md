@@ -5,7 +5,7 @@ description: "DMC zespołu pojazdów to suma mas busa i przyczepy wpisana w dowo
 draft: false
 author: "marek-kowalczyk"
 h1: "DMC zespołu pojazdów – jak obliczyć masę busa z przyczepą"
-image: "/images/dmc-zespolu-pojazdow-hero.jpg"
+image: "/images/dmc-zespolu-pojazdow-hero.webp"
 image_alt: "Bus dostawczy z przyczepą na drodze krajowej"
 main_keyword: "dmc zespołu pojazdów"
 lead: "DMC zespołu pojazdów to maksymalna dopuszczalna masa busa razem z przyczepą. Od tej liczby zależy, jakie prawo jazdy potrzebujesz – B, B z kodem 96 czy B+E. Przekroczenie limitu grozi mandatem do 3000 zł, zatrzymaniem dowodu i regresem ubezpieczeniowym."
@@ -68,7 +68,7 @@ Poniższa tabela pokazuje realne kombinacje busów z przyczepami i wynikające z
 
 Jak widać, popularny zestaw – bus o DMC 3500 kg z przyczepą lekką o DMC 750 kg – ma łączne DMC 4250 kg i wymaga jedynie kategorii B. Cięższy zestaw wymaga już rozszerzenia uprawnień.
 
-![Bus z przyczepą na drodze](/images/dmc-zespolu-pojazdow-hero.jpg)
+![Bus z przyczepą na drodze](/images/dmc-zespolu-pojazdow-hero.webp)
 
 ## Prawo jazdy B, B+96 czy B+E – który wariant potrzebujesz
 

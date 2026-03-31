@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Fiat Ducato kontener – przegląd zabudowy"
 parent: "fiat-ducato"
 type: "page"
-image: "/images/fiat-ducato-kontener-hero.jpg"
+image: "/images/fiat-ducato-kontener-hero.webp"
 image_alt: "Fiat Ducato z zabudową kontenerową – widok z boku z otwartymi drzwiami"
 main_keyword: "Fiat Ducato kontener"
 lead: "Fiat Ducato dominuje na rynku podwozi pod zabudowę kontenerową dzięki przedniemu napędowi, który daje niższy próg załadunku niż u konkurencji. Przy zabudowie kontenerowej trzeba jednak oddzielać oznaczenie długości bazowego podwozia od rzeczywistych wymiarów samego kontenera – a liczba europalet zależy od faktycznych wymiarów użytkowych podłogi i układu załadunku."
@@ -86,7 +86,7 @@ Warto też pamiętać o przepisach. Dla 3,5 t wystarcza prawo jazdy kat. B, nato
 
 Przy wyższych DMC dochodzą też inne obowiązki zależne od masy całkowitej i charakteru przewozu drogowego. Z punktu widzenia użytkownika różnica między busem 3,5 t a wersją 4,25 t to nie tylko większa nośność, ale również inny reżim formalny eksploatacji.
 
-![Fiat Ducato kontener – zabudowa kontenerowa, wymiary](/images/fiat-ducato-kontener-hero.jpg)
+![Fiat Ducato kontener – zabudowa kontenerowa, wymiary](/images/fiat-ducato-kontener-hero.webp)
 
 ## Na co uważać przy zakupie?
 

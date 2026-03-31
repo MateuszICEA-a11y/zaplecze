@@ -8,7 +8,7 @@ author: "marek-kowalczyk"
 h1: "Dane techniczne busów – kompletna tabela porównawcza"
 type: "page"
 main_keyword: "dane techniczne busów"
-image: "/images/dane-techniczne-tabela-hero.jpg"
+image: "/images/dane-techniczne-tabela-hero.webp"
 image_alt: "Silniki busów dostawczych – porównanie danych technicznych"
 lead: "Silnik, skrzynia biegów i układ napędowy to trójka parametrów, które decydują o codziennej eksploatacji busa dostawczego. W tym zestawieniu porównujemy dane techniczne wszystkich popularnych busów i vanów na polskim rynku – od mocy i momentu obrotowego, przez typy skrzyń biegów, po normy emisji spalin. Dane dotyczą aktualnych generacji dostępnych u polskich dealerów."
 faq:
@@ -84,7 +84,7 @@ Moment obrotowy jest ważniejszy od mocy przy wyborze busa dostawczego. Bus z si
 
 Mercedes Vito oferuje najwyższą moc w segmencie – 190 KM z momentem 440 Nm, co plasuje go bliżej dużych busów niż rywali z klasy średniej. Lider sprzedaży, Ford Transit Custom, jako jeden z nielicznych oferuje napęd AWD w połączeniu z nowym, 8-biegowym automatem.
 
-![Porównanie danych technicznych busów](/images/dane-techniczne-tabela-hero.jpg)
+![Porównanie danych technicznych busów](/images/dane-techniczne-tabela-hero.webp)
 
 ## Dane techniczne małych vanów
 

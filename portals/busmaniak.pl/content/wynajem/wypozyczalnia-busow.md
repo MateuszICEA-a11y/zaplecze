@@ -4,7 +4,7 @@ date: 2026-03-28
 draft: false
 author: "marek-kowalczyk"
 description: "Wypożyczalnie busów dostawczych i osobowych w Polsce – przegląd firm, ceny wynajmu na 2026, wymagania i ubezpieczenie."
-image: "/images/wypozyczalnia-busow-hero.jpg"
+image: "/images/wypozyczalnia-busow-hero.webp"
 image_alt: "Biały bus dostawczy zaparkowany pod magazynem"
 main_keyword: "wypożyczalnia busów"
 volume: 2000
@@ -57,7 +57,7 @@ Na rynku działa kilkadziesiąt firm – od międzynarodowych sieci po lokalne w
 
 **Europcar** – międzynarodowa sieć z oddziałami w polskich miastach i na lotniskach. Szeroki wybór vanów i busów. Wyższe ceny bazowe, ale standaryzowana jakość i możliwość odbioru/zdania w różnych lokalizacjach. Strona: europcar.com
 
-![Wypożyczalnia busów – dostawcze i osobowe](/images/wypozyczalnia-busow-hero.jpg)
+![Wypożyczalnia busów – dostawcze i osobowe](/images/wypozyczalnia-busow-hero.webp)
 
 **Moto-Partner** – sieć wypożyczalni z rozbudowaną ofertą pojazdów dostawczych różnej wielkości. Cennik online i szybka rezerwacja. Strona: moto-partner.eu
 

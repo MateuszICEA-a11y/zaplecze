@@ -10,7 +10,7 @@ parent: "toyota-proace-verso"
 type: "page"
 volume: 590
 main_keyword: "Toyota Proace Verso Long"
-image: "/images/toyota-proace-verso-long-hero.jpg"
+image: "/images/toyota-proace-verso-long-hero.webp"
 faq:
   - question: "Ile miejsc ma Toyota Proace Verso Long?"
     answer: "Toyota Proace Verso Long może oferować do 9 miejsc. W artykule nie podajemy szczegółowego układu foteli dla każdej konfiguracji, ponieważ zależy on od wersji i specyfikacji."
@@ -56,7 +56,7 @@ Wcześniej pojawiły się bardzo konkretne liczby dotyczące pojemności i głę
 
 ## Silniki dostępne w Proace Verso Long
 
-![Toyota Proace Verso Long – widok z zewnątrz, tylne drzwi otwarte](/images/toyota-proace-verso-long-hero.jpg)
+![Toyota Proace Verso Long – widok z zewnątrz, tylne drzwi otwarte](/images/toyota-proace-verso-long-hero.webp)
 
 Poprzednia wersja artykułu zbyt kategorycznie stwierdzała, że Toyota Proace Verso Long występuje wyłącznie z silnikami diesla. To wymaga doprecyzowania pod konkretny rynek, rocznik i wersję, dlatego takie uogólnienie usuwamy.
 

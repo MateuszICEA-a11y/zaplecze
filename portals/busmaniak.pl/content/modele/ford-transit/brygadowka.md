@@ -10,7 +10,7 @@ main_keyword: "Ford Transit brygadówka"
 parent: "ford-transit"
 type: "page"
 volume: 480
-image: "/images/ford-transit-brygadowka-hero.jpg"
+image: "/images/ford-transit-brygadowka-hero.webp"
 faq:
   - question: "Ile miejsc ma Ford Transit brygadówka?"
     answer: "Ford Transit w wersji Double Cab ma łącznie 5 lub 6 miejsc siedzących. Z przodu występuje układ 2 lub 3 miejsc, a z tyłu zwykle 3 miejsca – zależnie od konfiguracji kabiny i homologacji oferowanej na danym rynku."
@@ -64,7 +64,7 @@ To oznacza, że najczęściej spotkamy układ 2+3 albo 3+3. W artykule nie ma po
 
 Dostęp do drugiego rzędu odbywa się przez drzwi przesuwne zgodnie z konfiguracją wybraną w cenniku. W zależności od rynku i opcji drzwi boczne mogą występować standardowo po prawej stronie, a lewa strona bywa opcjonalna albo niedostępna.
 
-![Ford Transit Double Cab – brygadówka z przegrodą](/images/ford-transit-brygadowka-hero.jpg)
+![Ford Transit Double Cab – brygadówka z przegrodą](/images/ford-transit-brygadowka-hero.webp)
 
 W praktyce użytkowej drugi rząd siedzeń zawsze ogranicza długość ładowni. Znaczenie mają też takie detale jak obecność klapy pod siedziskiem, otworu pod przegrodą, liczba punktów mocowania ładunku, oświetlenie LED w części towarowej oraz wykończenie podłogi sklejką lub wykładziną ochronną.
 

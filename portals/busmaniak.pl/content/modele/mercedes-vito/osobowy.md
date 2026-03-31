@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Mercedes Vito osobowy – kompletny przewodnik"
 parent: "mercedes-vito"
 type: "page"
-image: "/images/mercedes-vito-osobowy-hero.jpg"
+image: "/images/mercedes-vito-osobowy-hero.webp"
 image_alt: "Mercedes Vito Tourer – osobowy van premium z przeszklonymi bokami"
 main_keyword: "Mercedes Vito osobowy"
 lead: "Mercedes Vito Tourer (W447) to osobowy van z 7–9 miejscami, dostępny w trzech wariantach długości nadwozia. Po modernizacji gamę na wielu rynkach europejskich tworzyły diesle 2.0 CDI 110/114/116/119 CDI o mocy od 102 do 190 KM, z manualem lub automatem oraz zależnie od wersji z napędem FWD, RWD albo 4MATIC. Chronologia jest prosta: generacja W447 zadebiutowała w 2014 roku, a modernizacja pojawiła się w 2020 roku zależnie od rynku i roku modelowego."
@@ -87,7 +87,7 @@ W Vito Tourer zakres multimediów i usług online zależy od roku modelowego ora
 
 Jeśli potrzebujesz jeszcze więcej przestrzeni, [Mercedes Sprinter osobowy](/modele/mercedes-sprinter/osobowy/) oferuje znacznie większe możliwości przewozowe, ale kosztem gabarytów i łatwości manewrowania.
 
-![Mercedes Vito Tourer – osobowy van premium](/images/mercedes-vito-osobowy-hero.jpg)
+![Mercedes Vito Tourer – osobowy van premium](/images/mercedes-vito-osobowy-hero.webp)
 
 ## Typowe usterki i serwis
 

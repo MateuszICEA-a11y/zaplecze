@@ -5,7 +5,7 @@ description: "Mercedes Marco Polo – luksusowy camper van na bazie klasy V. Por
 draft: false
 author: "anna-wozniak"
 h1: "Mercedes Marco Polo – luksusowy camper van na bazie klasy V"
-image: "/images/mercedes-vito-hero.jpg"
+image: "/images/mercedes-vito-hero.webp"
 image_alt: "Mercedes Marco Polo z podnoszonym dachem na kempingu"
 main_keyword: "mercedes marco polo"
 lead: "Mercedes Marco Polo to najbardziej luksusowy fabryczny camper van na rynku – budowany na bazie Mercedesa klasy V (lub Vito w tańszej wersji Activity), z wyposażeniem kempingowym projektowanym wspólnie z firmą Westfalia. Ceny zaczynają się od 340 tys. zł za Marco Polo Activity i sięgają 500 tys. zł za pełną specyfikację AMG Line."
@@ -62,7 +62,7 @@ Aneks kuchenny Marco Polo znajduje się po lewej stronie pojazdu, za fotelem kie
 
 Standardowo Mercedes Marco Polo zasilany jest z dodatkowego akumulatora AGM o pojemności 80-95 Ah, umieszczonego pod fotelem. Pozwala to na pełną niezależność przez 1,5 do 2 dni, zasilając lodówkę, ogrzewanie i oświetlenie. W przeciwieństwie do customowych zabudów opartych na LiFePO4, fabryczna instalacja ma ograniczone możliwości rozbudowy, a panele solarne (ok. 150-200W) najczęściej montowane są we własnym zakresie.
 
-![Mercedes Marco Polo z podnoszonym dachem](/images/mercedes-vito-hero.jpg)
+![Mercedes Marco Polo z podnoszonym dachem](/images/mercedes-vito-hero.webp)
 
 ### System spania
 

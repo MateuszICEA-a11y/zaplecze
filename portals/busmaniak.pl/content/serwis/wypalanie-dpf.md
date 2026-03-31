@@ -9,7 +9,7 @@ h1: "Wypalanie DPF w busie – kiedy i jak regenerować filtr cząstek stałych"
 type: "page"
 volume: 2900
 main_keyword: "wypalanie dpf"
-image: "/images/wypalanie-dpf-hero.jpg"
+image: "/images/wypalanie-dpf-hero.webp"
 image_alt: "Filtr cząstek stałych DPF wyjęty z układu wydechowego busa dostawczego podczas regeneracji w serwisie"
 lead: "Zapchany filtr DPF w busie to utrata mocy, tryb awaryjny i wizyta w serwisie za 500–1 500 zł. Problem dotyczy praktycznie każdego diesla wyprodukowanego po 2009 roku – a busy dostawcze są szczególnie narażone przez częstą jazdę w mieście z niskimi obrotami. W tym artykule wyjaśniamy trzy rodzaje regeneracji DPF, objawy zapchania i realne koszty naprawy."
 faq:
@@ -73,7 +73,7 @@ Gdy regeneracja pasywna i aktywna nie nadążają za zapychaniem, a filtr przekr
 
 ## Objawy zapchania filtra DPF {#objawy-zapchania}
 
-![Filtr DPF z busa podczas profesjonalnego czyszczenia](/images/wypalanie-dpf-hero.jpg)
+![Filtr DPF z busa podczas profesjonalnego czyszczenia](/images/wypalanie-dpf-hero.webp)
 
 Zapchany DPF nie jest problemem, który pojawia się z dnia na dzień. Proces ten jest stopniowy, ale ignorowanie pierwszych objawów niemal zawsze prowadzi do trybu awaryjnego i kosztownej naprawy.
 

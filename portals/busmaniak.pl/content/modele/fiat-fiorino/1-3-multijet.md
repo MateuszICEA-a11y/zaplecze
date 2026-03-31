@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Fiat Fiorino 1.3 MultiJet – dane techniczne i opinie"
 parent: "fiat-fiorino"
 type: "engine"
-image: "/images/fiat-fiorino-1-3-multijet-hero.jpg"
+image: "/images/fiat-fiorino-1-3-multijet-hero.webp"
 image_alt: "Fiat Fiorino III z silnikiem 1.3 MultiJet – widok z przodu na tle warsztatu"
 main_keyword: "fiat fiorino 1.3 multijet"
 lead: "Silnik 1.3 MultiJet w Fiacie Fiorino to jedna z najczęściej spotykanych jednostek napędowych w miejskich dostawczakach. Mały turbodiesel FPT o pojemności 1248 cm³ łączy niskie spalanie z przyzwoitą dynamiką, ale po przekroczeniu 150 tysięcy kilometrów potrafi zaskoczyć kosztownymi usterkami łańcucha rozrządu i układu EGR."
@@ -65,7 +65,7 @@ Wersja 75 KM bez DPF bywa nieco oszczędniejsza od mocniejszych odmian. Różnic
 
 Warto pamiętać, że 5-biegowa skrzynia manualna ogranicza komfort jazdy autostradowej. Na drogach krajowych Fiorino potrafi być bardzo oszczędne, ale przy wyższych prędkościach wzrasta zarówno spalanie, jak i hałas w kabinie.
 
-![Fiat Fiorino 1.3 MultiJet – dane techniczne, spalanie, opinie](/images/fiat-fiorino-1-3-multijet-hero.jpg)
+![Fiat Fiorino 1.3 MultiJet – dane techniczne, spalanie, opinie](/images/fiat-fiorino-1-3-multijet-hero.webp)
 
 ## Typowe usterki 1.3 MultiJet w Fiorino
 

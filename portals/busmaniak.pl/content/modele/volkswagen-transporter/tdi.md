@@ -9,7 +9,7 @@ parent: "volkswagen-transporter"
 type: "page"
 volume: 1000
 main_keyword: "volkswagen transporter tdi"
-image: "/images/volkswagen-transporter-hero.jpg"
+image: "/images/volkswagen-transporter-hero.webp"
 image_alt: "Volkswagen Transporter T6.1 furgon"
 lead: "Silniki TDI to kręgosłup Volkswagena Transportera od ponad 30 lat. Od legendarnego 2.5 TDI w T4, przez problematyczny, ale popularny 2.5 TDI w T5, po nowoczesny 2.0 TDI w T6.1, który występował zasadniczo w 4 wariantach mocy: 90, 110, 150 i 199 KM. Oto wszystko, co musisz wiedzieć przed zakupem – od spalania po koszty napraw."
 faq:

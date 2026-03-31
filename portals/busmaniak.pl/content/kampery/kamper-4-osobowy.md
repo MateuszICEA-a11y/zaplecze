@@ -5,7 +5,7 @@ description: "Kamper 4-osobowy – najlepsze modele dla rodziny, porównanie cam
 draft: false
 author: "anna-wozniak"
 h1: "Kamper 4-osobowy – modele dla rodziny"
-image: "/images/kamper-4-osobowy-hero.jpg"
+image: "/images/kamper-4-osobowy-hero.webp"
 image_alt: "Kamper 4-osobowy typu camper van z podnoszonym dachem"
 main_keyword: "kamper 4-osobowy"
 lead: "Kamper 4-osobowy to najpopularniejsza kategoria wśród rodzin z dziećmi – wystarczająco przestronny na wygodne spanie we czwórkę, a jednocześnie na tyle kompaktowy, by mieścił się na standardowym parkingu. Wybór obejmuje camper vany z dachem podnoszonym, małe alkowy i modułowe zabudowy – ceny używanych, starszych modeli zaczynają się od 80 tys. zł."
@@ -65,7 +65,7 @@ Volkswagen California i Mercedes Marco Polo to ikony segmentu, ale ich ceny bywa
 
 Zabudowa kempingowa wykonana na zamówienie przez wyspecjalizowany warsztat na bazie używanego Fiata Ducato L2H2 czy Forda Transita L2H2 kosztuje **40–80 tys. zł**. Po dodaniu ceny pojazdu bazowego (**50–100 tys. zł**), kompletny kamper 4-osobowy zamyka się w budżecie **90–180 tys. zł** – to znacząco taniej niż fabryczne odpowiedniki.
 
-![Kamper 4-osobowy – który model wybrać](/images/kamper-4-osobowy-hero.jpg)
+![Kamper 4-osobowy – który model wybrać](/images/kamper-4-osobowy-hero.webp)
 
 ## Układ łóżek i przestrzeń do spania
 

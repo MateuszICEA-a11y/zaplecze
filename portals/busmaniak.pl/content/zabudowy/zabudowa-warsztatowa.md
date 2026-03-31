@@ -9,7 +9,7 @@ h1: "Zabudowa warsztatowa busa – mobilny warsztat"
 type: "page"
 volume: 320
 main_keyword: "zabudowa warsztatowa busa"
-image: "/images/zabudowa-warsztatowa-hero.jpg"
+image: "/images/zabudowa-warsztatowa-hero.webp"
 image_alt: "Zabudowa warsztatowa z blatem roboczym w busie dostawczym"
 lead: "Zabudowa warsztatowa busa to coś więcej niż regały na narzędzia – to kompletne stanowisko pracy z blatem roboczym, imadłem, generatorem prądu i sprężarką. Mobilny warsztat pozwala wykonywać naprawy, spawanie czy obróbkę materiałów bezpośrednio u klienta, bez konieczności transportu sprzętu do stacjonarnego warsztatu."
 faq:
@@ -75,7 +75,7 @@ Generator prądu to niezbędny element mobilnego warsztatu, jeśli planowane jes
 -   **Honda EU30is** – 3 000 W, 60 kg, rozruch elektryczny, ok. 9 000 zł
 -   **Pramac PMi 3000** – 2 800 W, 32 kg, dobry stosunek mocy do ceny, ok. 3 500 zł
 
-![Zabudowa warsztatowa z blatem roboczym w busie dostawczym](/images/zabudowa-warsztatowa-hero.jpg)
+![Zabudowa warsztatowa z blatem roboczym w busie dostawczym](/images/zabudowa-warsztatowa-hero.webp)
 
 ### Instalacja 230 V w busie
 

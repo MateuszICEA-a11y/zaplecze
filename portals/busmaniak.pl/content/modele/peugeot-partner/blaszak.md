@@ -9,7 +9,7 @@ parent: "peugeot-partner"
 type: "page"
 volume: 320
 main_keyword: "peugeot partner blaszak"
-image: "/images/peugeot-partner-hero.jpg"
+image: "/images/peugeot-partner-hero.webp"
 image_alt: "Peugeot Partner III furgon"
 lead: "Peugeot Partner blaszak to klasyczny furgon dostawczy z pełną przegrodą – najpopularniejsza konfiguracja modelu od 1996 roku. W generacji Partner III od 2018 roku oferuje pakę 3,3–4,4 m³ i ładowność do ok. 1000 kg. Technicznie jest spokrewniony z Citroënem Berlingo Van, Oplem Combo Cargo oraz Toyotą ProAce City."
 faq:

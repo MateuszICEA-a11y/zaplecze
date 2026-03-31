@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Vanlife – jak zacząć życie w busie w Polsce"
 type: "post"
 volume: 1500
-image: "/images/vanlife-jak-zaczac-hero.jpg"
+image: "/images/vanlife-jak-zaczac-hero.webp"
 image_alt: "Bus kamper z otwartymi drzwiami na tle polskiego krajobrazu – vanlife jak zacząć"
 main_keyword: "vanlife jak zacząć"
 lead: "Vanlife wygląda na Instagramie jak wieczne wakacje – kawa z widokiem na góry, laptop na kolanach i zachód słońca za oknem. Rzeczywistość jest bardziej prozaiczna, ale nie mniej fascynująca. Życie w busie to konkretne decyzje: jaki pojazd kupić, jak go przerobić, jak ogarnąć formalności, pracę i noclegi. Ten poradnik przeprowadzi Cię przez każdy z tych kroków."
@@ -80,7 +80,7 @@ Trzeba też ostrożnie mówić o akcyzie. Nie da się uczciwie napisać, że „
 
 Alternatywa to pozostawienie auta jako busa z zabudową kempingową bez zmiany rodzaju pojazdu. To bywa prostsze formalnie, ale może utrudniać późniejsze kwestie ubezpieczeniowe i nie daje statusu samochodu specjalnego kempingowego.
 
-![Vanlife w Polsce – jak zacząć życie w busie](/images/vanlife-jak-zaczac-hero.jpg)
+![Vanlife w Polsce – jak zacząć życie w busie](/images/vanlife-jak-zaczac-hero.webp)
 
 ## Meldunek i sprawy urzędowe
 

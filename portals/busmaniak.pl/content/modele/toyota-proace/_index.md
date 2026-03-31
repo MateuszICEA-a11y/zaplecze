@@ -10,7 +10,7 @@ parent: ""
 type: "page"
 volume: 14800
 main_keyword: "Toyota Proace dane techniczne"
-image: "/images/toyota-proace-hero.jpg"
+image: "/images/toyota-proace-hero.webp"
 image_alt: "Toyota Proace II furgon Long"
 lead: "Toyota Proace II to średni van na platformie PSA EMP2 – bliźniak Peugeota Expert III i Citroëna Jumpy III, produkowany w Hordain od 2017 roku. Jeśli szukasz danych technicznych, wymiarów ładowni lub zestawienia silników 1.5 i 2.0 D-4D, znajdziesz je tutaj w jednym miejscu."
 faq:
@@ -64,7 +64,7 @@ Skrzynia manualna 6-biegowa jest dostępna przy wszystkich wersjach Diesla. Auto
 Do tras głównie miejskich i regionalnych z ładunkiem do 800 kg wystarczy 1.5 D-4D 100 KM. Przy regularnym załadunku powyżej 1000 kg i trasach ekspresowych warto sięgnąć po 2.0 D-4D 145 KM – dwulitrówka oferuje wyraźnie lepszą elastyczność i niższe zużycie paliwa pod obciążeniem. Wersja 177 KM ma sens przede wszystkim przy holowaniu przyczep o masie powyżej 1500 kg.
 {{% /info %}}
 
-![Toyota Proace II furgon Long](/images/toyota-proace-hero.jpg)
+![Toyota Proace II furgon Long](/images/toyota-proace-hero.webp)
 
 ## Dane techniczne Toyoty ProAce
 

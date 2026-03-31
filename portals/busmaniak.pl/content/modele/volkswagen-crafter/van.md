@@ -6,7 +6,7 @@ description: "Volkswagen Crafter II Van – wymiary 9–18 m³, ładowność do 
 draft: false
 author: "marek-kowalczyk"
 type: "page"
-image: "/images/volkswagen-crafter-van-hero.jpg"
+image: "/images/volkswagen-crafter-van-hero.webp"
 parent: "volkswagen-crafter"
 lead: "Volkswagen Crafter II Van to zamknięta przestrzeń ładunkowa z dostępem przez tylne drzwi dwuskrzydłowe i opcjonalne drzwi boczne."
 faq:
@@ -95,7 +95,7 @@ W gamie występowały również różne przekładnie:
 
 Dostępność konkretnego zestawu silnik + skrzynia + napęd zależy od rynku i roku modelowego. Przy wyborze używanego egzemplarza warto więc sprawdzać dane z konkretnego VIN-u albo fabrycznej specyfikacji, a nie opierać się na uogólnieniach.
 
-![VW Crafter L3H3 – przestrzeń ładunkowa z widokiem do tyłu](/images/volkswagen-crafter-van-hero.jpg)
+![VW Crafter L3H3 – przestrzeń ładunkowa z widokiem do tyłu](/images/volkswagen-crafter-van-hero.webp)
 
 ## Wyposażenie kabiny Volkswagena Crafter
 

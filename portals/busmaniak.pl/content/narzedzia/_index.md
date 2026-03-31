@@ -2,7 +2,7 @@
 title: "Narzędzia i kalkulatory dla właścicieli busów"
 description: "Narzędzia online dla właścicieli busów – kalkulator DMC, kalkulator kosztów paliwa, porównywarka vanów i busów dostawczych, kalkulator kosztów zabudowy. Sprawdź, zanim kupisz lub przerobisz busa."
 type: "page"
-image: "/images/narzedzia-hub-hero.jpg"
+image: "/images/narzedzia-hub-hero.webp"
 image_alt: "Narzędzia online BusManiak.pl – kalkulatory i porównywarki dla właścicieli busów"
 h1: "Narzędzia i kalkulatory BusManiak.pl"
 lead: "Cztery darmowe narzędzia, które pomogą Ci podjąć lepszą decyzję – od sprawdzenia, czy zmieścisz się w DMC, po oszacowanie kosztów zabudowy kampera. Wybierz kalkulator i oblicz w kilka sekund."

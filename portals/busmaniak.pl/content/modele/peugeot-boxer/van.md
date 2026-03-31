@@ -6,7 +6,7 @@ description: "Peugeot Boxer Van w wersjach L1–L4 i H1–H3 – pojemność 8�
 draft: false
 author: "marek-kowalczyk"
 type: "page"
-image: "/images/peugeot-boxer-van-hero.jpg"
+image: "/images/peugeot-boxer-van-hero.webp"
 parent: "peugeot-boxer"
 faq:
   - question: "Jakie są wymiary przestrzeni ładunkowej Peugeot Boxer L2H2?"
@@ -77,7 +77,7 @@ Typowy układ napędowy w tej klasie to napęd na przód i 6-biegowa skrzynia ma
 
 Do pracy z dużym obciążeniem ważniejszy od samej mocy bywa moment obrotowy i dobór skrzyni. W praktyce wybór silnika powinien być powiązany z długością nadwozia, planowaną masą ładunku i profilem trasy.
 
-![Peugeot Boxer L2H2 – przestrzeń ładunkowa i tylne drzwi](/images/peugeot-boxer-van-hero.jpg)
+![Peugeot Boxer L2H2 – przestrzeń ładunkowa i tylne drzwi](/images/peugeot-boxer-van-hero.webp)
 
 ## Podłoga i wyposażenie ładowni
 

@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Wynajem camper vana – kiedy warto wybrać mniejszy pojazd"
 volume: 1000
-image: "/images/camper-van-wynajem-hero.jpg"
+image: "/images/camper-van-wynajem-hero.webp"
 image_alt: "Wynajem camper vana – VW California zaparkowany nad morzem"
 main_keyword: "wynajem camper vana"
 lead: "Camper van to kamper dla tych, którzy cenią zwrotność, niskie spalanie i możliwość zaparkowania na zwykłym miejscu postojowym. W polskich wypożyczalniach camper vany stanowią ok. 20–25% floty i kosztują od 250 zł/dobę poza sezonem do 600 zł w szczycie lata. Jeśli jedziesz w parze, solo lub po prostu nie chcesz manewrować siedmiometrowym kolosem – ten poradnik jest dla Ciebie."
@@ -61,7 +61,7 @@ Wynajem camper vana ma sens w kilku konkretnych scenariuszach – i w każdym z 
 
 **Niższa cena wynajmu.** W sezonie wysokim camper van kosztuje 450–600 zł/dobę, a półintegra 550–700 zł. Przy 7-dniowym wynajmie to oszczędność 700–1000 zł.
 
-![Wynajem camper vana – kompaktowy pojazd na wakacje](/images/camper-van-wynajem-hero.jpg)
+![Wynajem camper vana – kompaktowy pojazd na wakacje](/images/camper-van-wynajem-hero.webp)
 
 {{% info title="Kiedy camper van to za mało" icon="warning" %}}
 Jeśli jedziesz z dziećmi (3+ osoby), potrzebujesz toalety na pokładzie lub planujesz nocleg poza kempingiem bez dostępu do sanitariatów – mały camper van może nie wystarczyć. Rozważ wynajem większego modelu na bazie furgonu lub małą półintegrę, które łączą kompaktowe wymiary z pełnym zapleczem sanitarnym.

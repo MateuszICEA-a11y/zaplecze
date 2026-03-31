@@ -10,7 +10,7 @@ parent: "citroen-berlingo"
 type: "page"
 volume: 480
 main_keyword: "Citroën Berlingo 7-osobowy"
-image: "/images/citroen-berlingo-7-osobowy-hero.jpg"
+image: "/images/citroen-berlingo-7-osobowy-hero.webp"
 image_alt: "Wnętrze Citroëna Berlingo z trzecim rzędem siedzeń"
 lead: "Citroën Berlingo 7-osobowy to wariant z trzecim rzędem siedzeń, dostępny tylko w dłuższych odmianach nadwozia: w II generacji jako L2, a w III generacji jako XL. Typowy układ wnętrza to 2+3+2, choć forma drugiego rzędu zależy od wersji. Trzeci rząd najlepiej sprawdza się okazjonalnie, a przy pełnym obciążeniu warto wybierać mocniejsze silniki."
 faq:
@@ -77,7 +77,7 @@ To ważna przewaga praktyczna dla rodzin 2+3 lub 2+4. Trzy miejsca z Isofix w dr
 
 {{% info title="Dla kogo 7-osobowe?" icon="engineering" %}}Berlingo 7-osobowy najlepiej sprawdza się jako auto rodzinne, gdy potrzebujesz elastycznego wnętrza i okazjonalnych dwóch dodatkowych miejsc. Największą zaletą jest możliwość jazdy na co dzień w układzie 5-miejscowym i wykorzystania trzeciego rzędu tylko wtedy, gdy naprawdę jest potrzebny.{{% /info %}}
 
-![Wnętrze Citroëna Berlingo z trzecim rzędem siedzeń](/images/citroen-berlingo-7-osobowy-hero.jpg)
+![Wnętrze Citroëna Berlingo z trzecim rzędem siedzeń](/images/citroen-berlingo-7-osobowy-hero.webp)
 
 ## Silniki w wersji 7-osobowej {#silniki}
 

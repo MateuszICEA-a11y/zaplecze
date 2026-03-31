@@ -9,7 +9,7 @@ parent: "dacia-dokker"
 type: "page"
 volume: 590
 main_keyword: "dacia dokker van"
-image: "/images/dacia-dokker-hero.jpg"
+image: "/images/dacia-dokker-hero.webp"
 image_alt: "Dacia Dokker Van furgon"
 lead: "Dacia Dokker Van to dostawcza wersja kombivana z pełną przegrodą i zaślepionymi tylnymi szybami. 3,1 m³ przestrzeni ładunkowej, ładowność do 970 kg i ceny od 12 000 zł na rynku wtórnym. Produkcja zakończona w 2021 roku, ale model wciąż pozostaje jedną z najtańszych propozycji w segmencie kompaktowych dostawczaków."
 faq:

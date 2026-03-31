@@ -9,7 +9,7 @@ parent: "opel-combo"
 type: "page"
 volume: 110
 main_keyword: "opel combo 1.6 cdti"
-image: "/images/opel-combo-1-6-cdti-hero.jpg"
+image: "/images/opel-combo-1-6-cdti-hero.webp"
 image_alt: "Opel Combo D z silnikiem 1.6 CDTi"
 lead: "Opel Combo 1.6 CDTi w generacji D to diesel dla użytkowników, którzy oczekują rozsądnego spalania i lepszej elastyczności niż w słabszych odmianach użytkowych. Przy ocenie takiego auta najważniejsze są nie tylko parametry silnika, ale też wersja nadwozia, masa, ładunek oraz stan osprzętu – przede wszystkim DPF, EGR, dolotu, sprzęgła i koła dwumasowego."
 faq:

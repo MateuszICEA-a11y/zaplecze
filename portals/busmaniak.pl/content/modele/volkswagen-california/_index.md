@@ -8,7 +8,7 @@ author: "marek-kowalczyk"
 h1: "Volkswagen California – fabryczny kamper od VW"
 parent: "modele"
 type: "page"
-image: "/images/volkswagen-california-hero.jpg"
+image: "/images/volkswagen-california-hero.webp"
 image_alt: "Volkswagen California T6.1 Ocean z podniesionym dachem na kempingu"
 main_keyword: "volkswagen california"
 lead: "Volkswagen California to jedyny fabryczny kamper van na rynku – produkowany od 1988 roku, początkowo we współpracy z Westfalią. Aktualnie dostępny jako California T6.1 i T7 (na bazie Transportera i Multivana) oraz Grand California 600/680 (na bazie Craftera). Ceny nowej Californii zaczynają się od ok. 320 000 zł."
@@ -66,7 +66,7 @@ W generacji T7 California oferuje kuchnię z indukcyjną płytą grzewczą zamia
 
 ## Grand California – kamper na bazie Craftera
 
-![Volkswagen California](/images/volkswagen-california-hero.jpg)
+![Volkswagen California](/images/volkswagen-california-hero.webp)
 
 Grand California to zupełnie inna liga – pełnowymiarowy kamper na bazie [Volkswagen Crafter](/modele/volkswagen-crafter/). Produkowany od 2019 roku w dwóch wariantach długości: 600 (6,0 m) i 680 (6,8 m).
 

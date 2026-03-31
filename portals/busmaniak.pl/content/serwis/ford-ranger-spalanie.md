@@ -8,7 +8,7 @@ h1: "Ford Ranger spalanie – tabela zużycia per silnik"
 type: "post"
 volume: 800
 main_keyword: "ford ranger spalanie"
-image: "/images/ford-ranger-spalanie-hero.jpg"
+image: "/images/ford-ranger-spalanie-hero.webp"
 image_alt: "Ford Ranger na drodze – zużycie paliwa w warunkach rzeczywistych"
 lead: "Ford Ranger w wersji 2.0 EcoBlue 170 KM spala realnie 8–10 l/100 km na trasie i 10–13 l w mieście. Wariant Bi-Turbo 205 KM dokłada ok. 1 litr, a topowy 3.0 V6 w wersji Raptor potrafi sięgnąć 14 litrów w mieście. Poniżej tabela spalania per silnik, porównanie z konkurencją i praktyczne sposoby na obniżenie zużycia."
 faq:
@@ -64,7 +64,7 @@ W terenie spalanie rośnie do 15–20 l/100 km i więcej. Tryb 4L (reduktor) i n
 
 {{% expert name="Marek Kowalczyk" %}}Ranger z automatem 10-biegowym (od 2019) spala ok. 0,5 l/100 km mniej niż starszy model ze skrzynią 6-biegową. Nowa przekładnia szybciej redukuje i sprawniej utrzymuje obroty w optymalnym zakresie 1600–2200 obr./min. Jeśli szukasz oszczędności, celuj w roczniki od 2019 z nowszym automatem.{{% /expert %}}
 
-![Ford Ranger – realne spalanie i zużycie paliwa](/images/ford-ranger-spalanie-hero.jpg)
+![Ford Ranger – realne spalanie i zużycie paliwa](/images/ford-ranger-spalanie-hero.webp)
 
 ## Ranger vs konkurencja – porównanie spalania
 

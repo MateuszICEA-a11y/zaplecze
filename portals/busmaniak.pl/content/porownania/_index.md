@@ -6,7 +6,7 @@ description: "Porównania busów i vanów face-to-face – Ducato vs Sprinter, T
 main_keyword: "porównanie busów"
 author: "marek-kowalczyk"
 draft: false
-image: /images/porownanie-busow-hero.jpg
+image: /images/porownanie-busow-hero.webp
 lead: "Sekcja porównań BusManiak.pl to miejsce, w którym zestawiamy popularne busy i vany face-to-face. Rankingi, tabele danych technicznych i konkretne werdykty – wszystko, czego potrzebujesz przed zakupem dostawczaka."
 faq:
   - question: "Który bus dostawczy jest najlepszy?"

@@ -6,7 +6,7 @@ description: "Peugeot Partner Tepee (do 2018) i jego następnik Rifter – osobo
 draft: false
 author: "marek-kowalczyk"
 type: "page"
-image: "/images/peugeot-partner-osobowy-hero.jpg"
+image: "/images/peugeot-partner-osobowy-hero.webp"
 parent: "peugeot-partner"
 faq:
   - question: "Czym jest Peugeot Partner Tepee?"
@@ -96,7 +96,7 @@ Rifter Long (L2) dodatkowo oferuje:
 - większy bagażnik
 - dodatkowe nawiewy dla drugiego lub trzeciego rzędu – jeśli występowały w danej wersji
 
-![Peugeot Rifter – widok z tyłu z otwartymi drzwiami](/images/peugeot-partner-osobowy-hero.jpg)
+![Peugeot Rifter – widok z tyłu z otwartymi drzwiami](/images/peugeot-partner-osobowy-hero.webp)
 
 {{% info title="Rejestracja jako osobowy – konsekwencje podatkowe" icon="engineering" %}}
 Rifter i Partner Tepee są rejestrowane jako samochody osobowe M1. W Polsce dla samochodu osobowego standardowo odlicza się 50% VAT od zakupu i kosztów eksploatacji, a 100% VAT wymaga użytkowania wyłącznie firmowego, ewidencji przebiegu i regulaminu. Samochód osobowy ma też limit amortyzacji lub podatkowego kosztu 150 000 zł dla auta spalinowego i hybrydy oraz 225 000 zł dla elektryka.

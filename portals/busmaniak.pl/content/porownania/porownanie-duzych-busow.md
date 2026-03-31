@@ -8,7 +8,7 @@ author: "marek-kowalczyk"
 h1: "Ducato vs Sprinter vs Daily vs Transit – porównanie dużych busów dostawczych"
 type: "page"
 main_keyword: "porównanie dużych busów"
-image: "/images/porownanie-duzych-busow-hero.jpg"
+image: "/images/porownanie-duzych-busow-hero.webp"
 image_alt: "Cztery duże busy dostawcze – Ducato, Sprinter, Daily i Transit – ustawione obok siebie"
 lead: "Fiat Ducato, Mercedes Sprinter, Iveco Daily i Ford Transit to czwórka, która zdominowała europejski rynek busów dostawczych. Każdy z nich ma inne atuty – Ducato dominuje na rynku wtórnym, Sprinter wyznacza standardy premium, Daily oferuje najwyższe DMC na kat. B, a Transit przekonuje ceną i elastycznością. Sprawdź, który z nich najlepiej pasuje do Twoich potrzeb."
 faq:
@@ -79,7 +79,7 @@ Iveco Daily to jedyny bus w zestawieniu z prawdziwą ramą drabinkową we wszyst
 
 Siódma generacja (od 2023) to modernizacja szóstej, wprowadzająca nowy kokpit z cyfrowymi wskaźnikami i systemem telematycznym. Mechanicznie Daily pozostaje wierne sprawdzonym rozwiązaniom: silnikom wysokoprężnym serii F1A (2.3 litra; 116, 136, 156 KM) i F1C (3.0 litra; 160, 180, 207 KM) oraz tylnemu napędowi z opcjonalnym reduktorem.
 
-![Porównanie dużych busów dostawczych](/images/porownanie-duzych-busow-hero.jpg)
+![Porównanie dużych busów dostawczych](/images/porownanie-duzych-busow-hero.webp)
 
 Gdzie Daily nie ma sobie równych:
 

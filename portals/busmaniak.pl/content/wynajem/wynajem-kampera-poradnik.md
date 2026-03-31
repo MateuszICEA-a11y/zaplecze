@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Wynajem kampera – poradnik krok po kroku dla tych, którzy robią to pierwszy raz"
 volume: 2000
-image: "/images/wynajem-kampera-poradnik-hero.jpg"
+image: "/images/wynajem-kampera-poradnik-hero.webp"
 image_alt: "Wynajem kampera – para odbierająca kampera z wypożyczalni"
 main_keyword: "wynajem kampera poradnik"
 lead: "Pierwszy wynajem kampera budzi mieszankę ekscytacji i stresu – ile to kosztuje, co jeśli coś zepsuję, jak w ogóle działa ta toaleta? Ten poradnik przeprowadzi Cię przez cały proces – od wyboru typu kampera, przez formalności i odbiór, po codzienną eksploatację i zwrot bez niespodzianek finansowych."
@@ -63,7 +63,7 @@ Więcej o przepisach dotyczących prawa jazdy przeczytasz w [poradniku o prawie 
 
 Dzień odbioru to moment, w którym decyduje się, czy Twój wyjazd będzie bezproblemowy. Pośpiech jest Twoim wrogiem – zarezerwuj na odbiór minimum 60–90 minut.
 
-![Wynajem kampera – odbiór pojazdu z wypożyczalni](/images/wynajem-kampera-poradnik-hero.jpg)
+![Wynajem kampera – odbiór pojazdu z wypożyczalni](/images/wynajem-kampera-poradnik-hero.webp)
 
 **Instruktaż od wypożyczalni** powinien obejmować:
 

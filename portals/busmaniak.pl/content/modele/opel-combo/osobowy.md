@@ -6,7 +6,7 @@ description: "Opel Combo Life – osobowa wersja Combo z 5 lub 7 miejscami. Dane
 draft: false
 author: "marek-kowalczyk"
 type: "page"
-image: "/images/opel-combo-osobowy-hero.jpg"
+image: "/images/opel-combo-osobowy-hero.webp"
 parent: "opel-combo"
 faq:
   - question: "Ile osób mieści Opel Combo Life?"
@@ -72,7 +72,7 @@ W rodzinnej eksploatacji benzynowe 1.2 130 KM jest najbardziej uniwersalne, zwł
 
 Na rynku wtórnym warto też pamiętać o charakterystycznych zagadnieniach serwisowych. W 1.2 PureTech pojawia się temat paska rozrządu pracującego w oleju i kampanii serwisowych zależnie od generacji, a interwały olejowe zwykle wynoszą 1 rok lub są wyznaczane przez OLM.
 
-![Opel Combo Life – wnętrze i tylna kanapa](/images/opel-combo-osobowy-hero.jpg)
+![Opel Combo Life – wnętrze i tylna kanapa](/images/opel-combo-osobowy-hero.webp)
 
 ## Bezpieczeństwo i wyniki crash testów
 

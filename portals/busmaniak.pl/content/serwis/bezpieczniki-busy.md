@@ -9,7 +9,7 @@ h1: "Bezpieczniki w busie – rodzaje, lokalizacja i typowe awarie"
 type: "page"
 volume: 1500
 main_keyword: "bezpieczniki bus"
-image: "/images/bezpieczniki-busy-hero.jpg"
+image: "/images/bezpieczniki-busy-hero.webp"
 image_alt: "Otwarta skrzynka bezpieczników w busie dostawczym z kolorowymi bezpiecznikami płytkowymi"
 lead: "Przepalony bezpiecznik w busie potrafi unieruchomić cały pojazd – brak zasilania pompy paliwa, sterownika silnika czy świec żarowych oznacza, że silnik nie odpali. W busach dostawczych układ elektryczny jest bardziej rozbudowany niż w osobówkach, a skrzynek bezpieczników jest 2–3 w różnych miejscach pojazdu. W tym artykule znajdziesz kompletny przewodnik po rodzajach bezpieczników, ich lokalizacji w popularnych busach i najczęstszych awariach elektrycznych."
 faq:
@@ -90,7 +90,7 @@ Szczegółowy schemat z opisem każdego bezpiecznika znajdziesz w artykule [bezp
 
 ### Mercedes Sprinter (W906 / W907)
 
-![Otwarta skrzynka bezpieczników w busie dostawczym](/images/bezpieczniki-busy-hero.jpg)
+![Otwarta skrzynka bezpieczników w busie dostawczym](/images/bezpieczniki-busy-hero.webp)
 
 [Mercedes Sprinter](/modele/mercedes-sprinter/) ma dwie główne skrzynki:
 

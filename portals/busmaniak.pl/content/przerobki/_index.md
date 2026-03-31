@@ -3,7 +3,7 @@ title: "Przeróbka busa na kampera – kompletny poradnik"
 date: 2026-03-27
 description: "Jak przerobić busa na kampera krok po kroku – etapy budowy, koszty, homologacja, popularne bazy pod kamper van. Poradnik DIY i zlecenie przeróbki w warsztacie."
 draft: false
-image: "/images/przerobka-busa-na-kampera-hero.jpg"
+image: "/images/przerobka-busa-na-kampera-hero.webp"
 image_alt: "Przeróbka busa na kampera – warsztat z Fiatem Ducato w trakcie zabudowy"
 author: "marek-kowalczyk"
 h1: "Przeróbka busa na kampera – kompletny poradnik krok po kroku"
@@ -89,7 +89,7 @@ Podane kwoty dotyczą samych materiałów i komponentów. Przy zleceniu przerób
 
 Wybór busa bazowego to decyzja, która determinuje wszystkie kolejne etapy. Kluczowe parametry to szerokość wewnętrzna, pozwalająca na montaż łóżka w poprzek, oraz wysokość umożliwiająca swobodne poruszanie się w środku. Najpopularniejsze są wersje L3H2 i L4H2 z DMC do 3,5 tony.
 
-![Przeróbka busa na kampera – wnętrze w budowie](/images/przerobka-busa-na-kampera-hero.jpg)
+![Przeróbka busa na kampera – wnętrze w budowie](/images/przerobka-busa-na-kampera-hero.webp)
 
 ### Najpopularniejsze modele bazowe w Polsce
 

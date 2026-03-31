@@ -9,7 +9,7 @@ h1: "Zabudowa busa sklejką – DIY krok po kroku"
 type: "page"
 volume: 720
 main_keyword: "zabudowa busa sklejką"
-image: "/images/zabudowa-sklejka-diy-hero.jpg"
+image: "/images/zabudowa-sklejka-diy-hero.webp"
 image_alt: "Wnętrze busa podczas zabudowy sklejką wodoodporną – widoczne panele i narzędzia"
 lead: "Zabudowa busa sklejką to najpopularniejszy sposób na samodzielne zagospodarowanie przestrzeni ładunkowej. Sklejka wodoodporna jest tania, łatwa w obróbce i wystarczająco wytrzymała na potrzeby większości zabudów – od prostych regałów po kompletne wnętrze kamperowe. Ten poradnik prowadzi krok po kroku przez cały proces – od wyboru materiału, przez narzędzia, po montaż i wykończenie."
 faq:
@@ -79,7 +79,7 @@ Do samodzielnej zabudowy busa sklejką potrzebne są następujące narzędzia:
 
 ### Materiały dodatkowe
 
-![Wnętrze busa podczas zabudowy sklejką wodoodporną – widoczne panele i narzędzia](/images/zabudowa-sklejka-diy-hero.jpg)
+![Wnętrze busa podczas zabudowy sklejką wodoodporną – widoczne panele i narzędzia](/images/zabudowa-sklejka-diy-hero.webp)
 
 Poza sklejką potrzebne są materiały montażowe i wykończeniowe:
 

@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Fiat Ducato Maxi – wymiary i ładowność"
 parent: "fiat-ducato"
 type: "page"
-image: "/images/fiat-ducato-maxi-hero.jpg"
+image: "/images/fiat-ducato-maxi-hero.webp"
 image_alt: "Fiat Ducato Maxi L4H3 – widok z boku"
 main_keyword: "Fiat Ducato Maxi"
 lead: "Fiat Ducato Maxi to nie tylko dłuższe nadwozie, ale przede wszystkim wzmocnione podwozie i wyższe dopuszczalne masy – przy czym konkretne elementy jezdne zależą od generacji i wersji. W wariancie L4H3 pojemność sięga 17 m³, a ładowność ma charakter orientacyjny i zależy od rocznika, silnika, skrzyni oraz wyposażenia – zwykle około 1200–1450 kg przy DMC 3,5 t lub około 1900–2200 kg przy DMC 4,25 t."
@@ -98,7 +98,7 @@ Spalanie L4H3 z silnikiem 2.3 150 KM wynosi zwykle około 10–12 l/100 km w tra
 
 {{% info title="AdBlue" icon="engineering" %}}Obecność AdBlue w 2.3 MultiJet zależy od konkretnej wersji emisji, rynku i rocznika, a nie wyłącznie od prostej granicy rocznikowej. Nowsze 2.2 MultiJet3 korzystają już z bardziej rozbudowanych układów oczyszczania spalin.{{% /info %}}
 
-![Fiat Ducato Maxi – wymiary, ładowność, zastosowania](/images/fiat-ducato-maxi-hero.jpg)
+![Fiat Ducato Maxi – wymiary, ładowność, zastosowania](/images/fiat-ducato-maxi-hero.webp)
 
 ## Zastosowania – od kurierki po vanlife
 

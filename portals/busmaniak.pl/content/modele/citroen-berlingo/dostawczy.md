@@ -10,7 +10,7 @@ parent: "citroen-berlingo"
 type: "page"
 volume: 390
 main_keyword: "Citroën Berlingo dostawczy"
-image: "/images/citroen-berlingo-dostawczy-hero.jpg"
+image: "/images/citroen-berlingo-dostawczy-hero.webp"
 image_alt: "Citroën Berlingo dostawczy przy magazynie"
 lead: "Berlingo dostawczy to wersja z homologacją ciężarową N1, przystosowana do transportu towarów. Dostępna w wariantach furgon M i XL, z ładownością zależnie od wersji do 1000 kg oraz przestrzenią ładunkową od ok. 3,3 m3 do 3,9 m3, a z systemem Extenso do ok. 4,4 m3."
 faq:
@@ -94,7 +94,7 @@ Dla firm zainteresowanych elektromobilnością dostępny jest [ë-Berlingo Van](
 
 Szczegółowe dane techniczne i historię kolejnych generacji napędów znajdziesz w artykule o [silniku 1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) oraz w opisie [ë-Berlingo](/modele/citroen-berlingo/elektryczny/).
 
-![Citroën Berlingo dostawczy przy magazynie](/images/citroen-berlingo-dostawczy-hero.jpg)
+![Citroën Berlingo dostawczy przy magazynie](/images/citroen-berlingo-dostawczy-hero.webp)
 
 ## Koszty eksploatacji firmowej {#koszty}
 

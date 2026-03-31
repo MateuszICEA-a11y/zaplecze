@@ -5,7 +5,7 @@ description: "Mini kamper dla dwojga – kompaktowe camper vany na bazie VW Cadd
 draft: false
 author: "anna-wozniak"
 h1: "Mini kamper – kompaktowe kampervany dla par"
-image: "/images/mini-kamper-hero.jpg"
+image: "/images/mini-kamper-hero.webp"
 image_alt: "Mini kamper na bazie VW Caddy Maxi z rozłożonym łóżkiem"
 main_keyword: "mini kamper"
 lead: "Mini kamper to kompaktowy pojazd kempingowy, który mieści się na zwykłym miejscu parkingowym i pali tyle co osobówka. Modele na bazie VW Caddy Maxi, Citroena Berlingo czy Dacii Jogger oferują wygodne spanie dla dwóch osób, a koszt podstawowej zabudowy DIY to wydatek rzędu 3–8 tys. zł."
@@ -64,7 +64,7 @@ VW Caddy Maxi oferuje najdłuższe miejsce do spania, ale jego cena na rynku wt�
 
 Volkswagen, jako jeden z najbardziej rozpoznawalnych pionierów segmentu, oferuje fabrycznie przygotowanego Caddy California. Model ten ma rozkładane łóżko, zintegrowaną mini kuchenkę w bagażniku i opcjonalny namiot. Cena startująca od **160 tys. zł** sprawia jednak, że większość entuzjastów wybiera drogę DIY lub gotowe systemy modułowe, takie jak pakiet Sleep w Dacii Jogger czy zabudowy oferowane przez dealerów Forda.
 
-![Mini kamper – najlepsze modele dla 2 osób](/images/mini-kamper-hero.jpg)
+![Mini kamper – najlepsze modele dla 2 osób](/images/mini-kamper-hero.webp)
 
 ## Przeróbka DIY – jak zbudować mini kampera
 

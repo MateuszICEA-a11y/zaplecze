@@ -9,7 +9,7 @@ h1: "Berlingo vs Kangoo vs Partner vs Doblò – porównanie"
 type: "page"
 volume: 720
 main_keyword: "berlingo vs kangoo"
-image: "/images/porownanie-malych-vanow-hero.jpg"
+image: "/images/porownanie-malych-vanow-hero.webp"
 image_alt: "Cztery małe vany dostawcze – Berlingo, Kangoo, Partner i Doblò – ustawione obok siebie"
 lead: "Berlingo, Kangoo, Partner i Doblò to rdzeń segmentu małych vanów w Europie. Większość z nich – Berlingo, Partner, Doblò, a także Opel Combo i Toyota ProAce City – dzieli wspólną platformę Stellantis. Kangoo idzie własną drogą, bazując na architekturze Renault. Sprawdzamy, czym różnią się w praktyce – od wymiarów ładowni po kluczowe kwestie serwisowe."
 faq:
@@ -87,7 +87,7 @@ Ostateczny wybór między Partnerem a Berlingo to głównie kwestia indywidualny
 
 ## Fiat Doblò – włoska alternatywa
 
-![Porównanie małych vanów dostawczych](/images/porownanie-malych-vanow-hero.jpg)
+![Porównanie małych vanów dostawczych](/images/porownanie-malych-vanow-hero.webp)
 
 Doblò czwartej generacji (od 2022) to efekt unifikacji w ramach koncernu Stellantis. Wcześniejsze, popularne generacje były samodzielną konstrukcją Fiata. Obecny model to w praktyce Berlingo z włoskim logo i zmienionym pasem przednim.
 

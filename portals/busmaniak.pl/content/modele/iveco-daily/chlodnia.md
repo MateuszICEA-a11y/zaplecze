@@ -10,7 +10,7 @@ parent: "iveco-daily"
 type: "page"
 volume: 320
 main_keyword: "Iveco Daily chłodnia"
-image: "/images/iveco-daily-chlodnia-hero.jpg"
+image: "/images/iveco-daily-chlodnia-hero.webp"
 faq:
   - question: "Jakie klasy ATP ma Iveco Daily chłodnia?"
     answer: "Najczęściej spotyka się konfiguracje odpowiadające klasie A (+12°C do 0°C) oraz klasie C (do -20°C). Sama klasa ATP nie zastępuje wymagań dla konkretnego produktu – np. farmacja może wymagać węższego zakresu, jak +2 do +8°C, a o klasyfikacji decyduje komplet pojazd + zabudowa + agregat oraz badanie ATP."
@@ -65,7 +65,7 @@ Przy wyborze zabudowy warto patrzeć także na użyteczny wymiar komory, a nie t
 
 Jeśli auto ma pracować w dystrybucji spożywki lub farmacji, praktyczne znaczenie ma wyposażenie dodatkowe. Najczęściej wybiera się kurtyny paskowe, listwy odbojowe, szyny cargo lub przegrody, rejestrator temperatury z wydrukiem albo telematyką, alarm otwartych drzwi, dodatkowy parownik do pracy wielokomorowej oraz windę załadowczą 500–750 kg.
 
-![Iveco Daily chłodnia z agregatem Thermo King – dystrybucja mrożonek](/images/iveco-daily-chlodnia-hero.jpg)
+![Iveco Daily chłodnia z agregatem Thermo King – dystrybucja mrożonek](/images/iveco-daily-chlodnia-hero.webp)
 
 ## Agregaty chłodnicze do Iveco Daily
 

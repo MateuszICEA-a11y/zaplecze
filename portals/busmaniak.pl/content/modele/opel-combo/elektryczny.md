@@ -6,7 +6,7 @@ description: "Opel e-Combo – elektryczny van z silnikiem 136 KM i baterią 50 
 draft: false
 author: "marek-kowalczyk"
 type: "page"
-image: "/images/opel-combo-elektryczny-hero.jpg"
+image: "/images/opel-combo-elektryczny-hero.webp"
 parent: "opel-combo"
 faq:
   - question: "Jaki jest rzeczywisty zasięg Opla e-Combo?"
@@ -97,7 +97,7 @@ W krótszej odmianie długość przestrzeni ładunkowej bez systemu przelotowego
 
 Ładowność nie powinna być podawana jedną sztywną wartością dla całej gamy. Zależy od wersji homologacyjnej, długości nadwozia, kabiny i wyposażenia, a elektryczna odmiana jest z natury cięższa od diesla ze względu na masę akumulatora.
 
-![Opel e-Combo – ładowanie prądem stałym](/images/opel-combo-elektryczny-hero.jpg)
+![Opel e-Combo – ładowanie prądem stałym](/images/opel-combo-elektryczny-hero.webp)
 
 {{% info title="Dofinansowania dla e-Combo" icon="engineering" %}}
 Dla firm ważniejsze od niezweryfikowanych kwot dopłat są dziś twarde kwestie formalne. Opel e-Combo z homologacją N1 może być istotny pod kątem rozliczeń firmowych, pełnego odliczenia VAT przy użytkowaniu zgodnym z przepisami, leasingu lub amortyzacji, a samochód elektryczny w Polsce korzysta ze zwolnienia z podatku akcyzowego. W praktyce warto też sprawdzić zasady wjazdu do SCT zgodnie z lokalnymi uchwałami miast oraz aktualne programy wsparcia wyłącznie w oficjalnych regulaminach operatorów naboru.

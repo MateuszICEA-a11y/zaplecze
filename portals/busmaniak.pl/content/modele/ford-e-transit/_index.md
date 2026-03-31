@@ -5,7 +5,7 @@ description: "Ford E-Transit – dane techniczne, zasięg WLTP, ładowanie DC, w
 draft: false
 author: "marek-kowalczyk"
 h1: "Ford E-Transit – elektryczny Transit"
-image: "/images/ford-e-transit-hero.jpg"
+image: "/images/ford-e-transit-hero.webp"
 image_alt: "Ford E-Transit furgon elektryczny na stacji ładowania"
 main_keyword: "ford e-transit"
 volume: 500
@@ -68,7 +68,7 @@ Kluczowe cechy techniczne E-Transita:
 
 Zasięg Ford E-Transit w cyklu WLTP wynosi od 217 do 317 km, zależnie od konfiguracji nadwozia i masy własnej pojazdu. Najdłuższy zasięg osiąga najlżejsza wersja furgonowa L2H2, najkrótszy – ciężkie konfiguracje podwozia L4.
 
-![Ford E-Transit furgon elektryczny na stacji ładowania](/images/ford-e-transit-hero.jpg)
+![Ford E-Transit furgon elektryczny na stacji ładowania](/images/ford-e-transit-hero.webp)
 
 W praktyce zasięg zależy od kilku zmiennych:
 

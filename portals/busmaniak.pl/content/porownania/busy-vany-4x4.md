@@ -6,7 +6,7 @@ description: "Przegląd busów i vanów z napędem 4x4 – Mercedes Sprinter 4x4
 main_keyword: "bus 4x4"
 author: "marek-kowalczyk"
 draft: false
-image: /images/busy-vany-4x4-hero.jpg
+image: /images/busy-vany-4x4-hero.webp
 lead: "Napęd na cztery koła w busie dostawczym to nadal nisza – ale nisza rosnąca. Firmy budowlane, służby leśne, ekipy telewizyjne i miłośnicy kamperów off-road coraz częściej szukają dostawczaków z napędem 4x4. Sprawdzamy, które modele oferują fabryczny AWD i czym różnią się ich systemy."
 faq:
   - question: "Które busy dostawcze mają napęd 4x4?"

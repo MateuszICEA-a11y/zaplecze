@@ -9,7 +9,7 @@ parent: "maxus-deliver-9"
 type: "page"
 volume: 320
 main_keyword: "maxus deliver 9 osobowy"
-image: "/images/maxus-deliver-9-hero.jpg"
+image: "/images/maxus-deliver-9-hero.webp"
 image_alt: "Maxus Deliver 9 bus"
 lead: "Maxus Deliver 9 osobowy to bus pasażerski na bazie dużego dostawczaka SAIC Motor – od 9 do 17 miejsc w zależności od konfiguracji i zabudowy. W praktyce kluczowe jest rozróżnienie wersji 9-osobowych, które mogą mieścić się w uprawnieniach kat. B, od minibusów powyżej 9 miejsc, gdzie liczy się homologacja, DMC i wymagania wobec kierowcy."
 faq:

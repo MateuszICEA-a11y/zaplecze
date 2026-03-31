@@ -10,7 +10,7 @@ parent: "renault-trafic"
 type: "page"
 volume: 4400
 main_keyword: "Renault Trafic osobowy"
-image: "/images/renault-trafic-osobowy-hero.jpg"
+image: "/images/renault-trafic-osobowy-hero.webp"
 image_alt: "Renault Trafic Passenger L2 – wersja osobowa"
 lead: "Renault Trafic osobowy występował w konfiguracjach do 9 miejsc, ale liczba pasażerów zależy od długości nadwozia, wersji, homologacji i rynku. To od lat jedno z podstawowych narzędzi flotowego transportu pasażerskiego w segmencie VAN – praktyczne, użytkowe i wyraźnie podporządkowane funkcji."
 faq:
@@ -64,7 +64,7 @@ W vanach osobowych tej klasy pojemność bagażnika za trzecim rzędem mocno zal
 
 W praktyce L2 lepiej wypada w transferach lotniskowych i przewozie grup z bagażem. L1 pozostaje rozsądniejszym wyborem tam, gdzie auto codziennie pracuje w mieście.
 
-![Renault Trafic Passenger L2 – wersja osobowa](/images/renault-trafic-osobowy-hero.jpg)
+![Renault Trafic Passenger L2 – wersja osobowa](/images/renault-trafic-osobowy-hero.webp)
 
 ## Silniki Renault Trafic osobowy {#silniki}
 

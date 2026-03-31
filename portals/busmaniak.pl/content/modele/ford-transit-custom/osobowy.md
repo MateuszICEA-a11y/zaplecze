@@ -6,7 +6,7 @@ description: "Ford Tourneo Custom – osobowa wersja Transit Custom do 9 miejsc.
 draft: false
 author: "marek-kowalczyk"
 type: "page"
-image: "/images/ford-transit-custom-osobowy-hero.jpg"
+image: "/images/ford-transit-custom-osobowy-hero.webp"
 parent: "ford-transit-custom"
 faq:
   - question: "Ile osób mieści Ford Tourneo Custom?"
@@ -66,7 +66,7 @@ W gen II siedzenia drugiego rzędu mogą być montowane na szynach, a część f
 
 W codziennym użytkowaniu znaczenie mają też drzwi i dostęp do kabiny. Warto zwrócić uwagę na liczbę drzwi przesuwnych, dostępność elektrycznie sterowanych drzwi bocznych i klapy oraz wysokość progu załadunku – to szczególnie ważne przy fotelikach dziecięcych i obsłudze pasażerów w shuttle.
 
-![Ford Tourneo Custom – wnętrze z trzema rzędami siedzeń](/images/ford-transit-custom-osobowy-hero.jpg)
+![Ford Tourneo Custom – wnętrze z trzema rzędami siedzeń](/images/ford-transit-custom-osobowy-hero.webp)
 
 ## Wyposażenie kabiny gen II
 

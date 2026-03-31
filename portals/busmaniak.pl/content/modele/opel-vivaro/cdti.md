@@ -9,7 +9,7 @@ parent: "opel-vivaro"
 type: "page"
 volume: 1000
 main_keyword: "opel vivaro cdti"
-image: "/images/opel-vivaro-hero.jpg"
+image: "/images/opel-vivaro-hero.webp"
 image_alt: "Opel Vivaro furgon"
 lead: "Wysokoprężne jednostki stosowano w Oplu Vivaro od debiutu modelu w 2001 roku, choć oznaczenie handlowe CDTi zależało od rynku i rocznika. W gamie były zarówno proste 1.9, mocniejsze 2.5, późniejsze 2.0, jak i downsizingowe 1.6 w Vivaro B. Oto rzeczowy przewodnik po wariantach, spalaniu, typowych usterkach i kosztach serwisu."
 faq:

@@ -10,7 +10,7 @@ parent: "citroen-berlingo"
 type: "page"
 volume: 110
 main_keyword: "Citroën ë-Berlingo"
-image: "/images/citroen-e-berlingo-hero.jpg"
+image: "/images/citroen-e-berlingo-hero.webp"
 image_alt: "Citroën ë-Berlingo na stacji ładowania"
 lead: "Citroën ë-Berlingo to elektryczna odmiana Berlingo III generacji z silnikiem 100 kW (136 KM) i akumulatorem 50 kWh brutto. Zasięg WLTP sięga 280 km, a ładowanie DC od 0 do 80% trwa ok. 30 minut w optymalnych warunkach. W zależności od rynku i rocznika oferta obejmuje wersję osobową ë-Berlingo oraz użytkowe odmiany ë-Berlingo Van."
 faq:
@@ -78,7 +78,7 @@ Przy zabudowie i transporcie dłuższych elementów znaczenie ma nie tylko kubat
 
 Bateria zamontowana pod podłogą nie zabiera przestrzeni pasażerom ani towarom. To jedna z największych zalet tej konstrukcji, bo elektryczny napęd nie eliminuje praktycznego charakteru Berlingo.
 
-![Citroën ë-Berlingo na stacji ładowania](/images/citroen-e-berlingo-hero.jpg)
+![Citroën ë-Berlingo na stacji ładowania](/images/citroen-e-berlingo-hero.webp)
 
 ## Ładowanie Citroëna ë-Berlingo {#ładowanie}
 

@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Renault Kangoo 1.5 dCi – dane techniczne i opinie"
 parent: "renault-kangoo"
 type: "page"
-image: "/images/renault-kangoo-1-5-dci-hero.jpg"
+image: "/images/renault-kangoo-1-5-dci-hero.webp"
 image_alt: "Silnik 1.5 dCi K9K w Renault Kangoo II"
 main_keyword: "renault kangoo 1.5 dci"
 lead: "Silnik 1.5 dCi to zdecydowanie najpopularniejsza jednostka napędowa w Renault Kangoo II. Sam motor K9K o pojemności 1461 cm³ trafił do produkcji około 2001 roku, natomiast w Kangoo II był oferowany od debiutu tej generacji w 2008 roku. W zależności od rynku, rocznika i wersji nadwozia występował w kilku odmianach mocy – od słabszych wariantów użytkowych po 110-konną wersję do cięższej pracy i jazdy w trasie."
@@ -77,7 +77,7 @@ Część użytkowników zwraca uwagę, że komputer pokładowy bywa zbyt optymis
 W praktyce najbardziej ekonomiczna jest nie tyle konkretna moc, ile dobrze utrzymany egzemplarz z właściwie dobraną wersją do pracy. Do miasta i lekkiego ładunku wystarczy 75 KM, ale przy regularnych trasach i cięższej eksploatacji 90 KM lub 110 KM zwykle okazują się rozsądniejszym wyborem.
 {{% /expert %}}
 
-![Silnik 1.5 dCi K9K w Renault Kangoo II](/images/renault-kangoo-1-5-dci-hero.jpg)
+![Silnik 1.5 dCi K9K w Renault Kangoo II](/images/renault-kangoo-1-5-dci-hero.webp)
 
 ## Typowe usterki 1.5 dCi w Kangoo
 

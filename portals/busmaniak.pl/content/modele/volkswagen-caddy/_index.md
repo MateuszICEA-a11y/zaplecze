@@ -9,7 +9,7 @@ h1: "Volkswagen Caddy – kompletny przewodnik po modelu"
 type: "page"
 volume: 40500
 main_keyword: "Volkswagen Caddy"
-image: "/images/volkswagen-caddy-hero.jpg"
+image: "/images/volkswagen-caddy-hero.webp"
 image_alt: "Volkswagen Caddy V na drodze"
 lead: "Volkswagen Caddy to jeden z najpopularniejszych kombivanów w Europie, produkowany od 1979 roku w pięciu generacjach. Piąta generacja na platformie MQB przeniosła model na zupełnie nowy poziom jakości i technologii."
 faq:
@@ -85,7 +85,7 @@ Volkswagen nie oferuje jeszcze elektrycznego Caddy, choć platforma MQB technicz
 
 
 
-![Volkswagen Caddy V na drodze](/images/volkswagen-caddy-hero.jpg)
+![Volkswagen Caddy V na drodze](/images/volkswagen-caddy-hero.webp)
 
 ## Wersje nadwoziowe Volkswagena Caddy {#wersje-nadwozia}
 

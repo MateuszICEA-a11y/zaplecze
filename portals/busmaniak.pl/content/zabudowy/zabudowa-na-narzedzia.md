@@ -9,7 +9,7 @@ h1: "Zabudowa busa na narzędzia – systemy i regały"
 type: "page"
 volume: 590
 main_keyword: "zabudowa busa na narzędzia"
-image: "/images/zabudowa-busa-narzedzia-hero.jpg"
+image: "/images/zabudowa-busa-narzedzia-hero.webp"
 image_alt: "Zabudowa narzędziowa w przestrzeni ładunkowej busa"
 lead: "Profesjonalna zabudowa busa na narzędzia to inwestycja, która zwraca się w ciągu pierwszych miesięcy pracy. Dobrze zaprojektowany system regałów, szuflad i organizerów skraca czas szukania sprzętu, chroni go przed uszkodzeniem i zwiększa bezpieczeństwo jazdy."
 faq:
@@ -89,7 +89,7 @@ Profesjonalne zabudowy wykorzystują certyfikowane szyny montażowe (np. Sortimo
 
 Współczesna zabudowa to nie tylko regały, ale też mobilne stanowisko ładowania. Niezbędna staje się instalacja przetwornicy napięcia 12 V/230 V, często o mocy 1500–3000 W z pełną sinusoidą (np. firm Dometic, Victron). System zasila się z dodatkowego akumulatora (AGM lub LiFePO4 >100 Ah) i doprowadza prąd do listew z gniazdami, umożliwiając ładowanie baterii systemowych (np. Bosch, Makita).
 
-![Zabudowa narzędziowa w przestrzeni ładunkowej busa](/images/zabudowa-busa-narzedzia-hero.jpg)
+![Zabudowa narzędziowa w przestrzeni ładunkowej busa](/images/zabudowa-busa-narzedzia-hero.webp)
 
 ## Konfiguracje zabudów do popularnych busów {#konfiguracje}
 

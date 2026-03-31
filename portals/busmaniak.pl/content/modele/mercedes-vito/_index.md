@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Mercedes Vito – kompletny przewodnik po modelu"
 type: "page"
-image: "/images/mercedes-vito-hero.jpg"
+image: "/images/mercedes-vito-hero.webp"
 image_alt: "Mercedes Vito W447 furgon na drodze"
 main_keyword: "mercedes vito"
 volume: 18100

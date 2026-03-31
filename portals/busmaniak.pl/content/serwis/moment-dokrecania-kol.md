@@ -8,7 +8,7 @@ h1: "Moment dokręcania kół w busie – tabela wartości Nm"
 type: "page"
 volume: 5400
 main_keyword: "moment dokręcania kół"
-image: "/images/moment-dokrecania-kol-hero.jpg"
+image: "/images/moment-dokrecania-kol-hero.webp"
 image_alt: "Klucz dynamometryczny dokręcający śrubę koła w busie dostawczym – zbliżenie na felgę"
 lead: "Prawidłowy moment dokręcania kół w busie może wahać się od ok. 140 Nm w mniejszych modelach do ponad 300 Nm w pojazdach na kołach bliźniaczych. Zbyt luźno dokręcone koło grozi jego odpadnięciem, a zbyt mocno – uszkodzeniem gwintu lub odkształceniem tarczy hamulcowej. Precyzyjne wartości dla popularnych aut dostawczych oraz instrukcję obsługi klucza dynamometrycznego zebraliśmy w poniższym poradniku."
 faq:
@@ -68,7 +68,7 @@ Fiat Ducato, Citroën Jumper i Peugeot Boxer powstają w tej samej fabryce Sevel
 
 ## Jak użyć klucza dynamometrycznego {#klucz}
 
-![Klucz dynamometryczny przy kole busa](/images/moment-dokrecania-kol-hero.jpg)
+![Klucz dynamometryczny przy kole busa](/images/moment-dokrecania-kol-hero.webp)
 
 Klucz dynamometryczny to jedyne narzędzie pozwalające precyzyjnie kontrolować moment dokręcania. Do profesjonalnej obsługi busów dostawczych niezbędny jest klucz o szerokim zakresie, najlepiej 60–330 Nm, z trzpieniem napędowym 1/2 lub 3/4 cala. Modele o maksymalnym momencie 200 Nm mogą być niewystarczające, szczególnie przy obsłudze pojazdów na kołach bliźniaczych.
 

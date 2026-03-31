@@ -5,7 +5,7 @@ description: "DMC co to? Dopuszczalna masa całkowita to limit wagi pojazdu z ł
 draft: false
 author: "marek-kowalczyk"
 h1: "DMC – co to jest i dlaczego musisz to wiedzieć"
-image: "/images/dmc-co-to-hero.jpg"
+image: "/images/dmc-co-to-hero.webp"
 image_alt: "Dowód rejestracyjny z zaznaczonym polem F.2 dopuszczalnej masy całkowitej"
 main_keyword: "dmc co to"
 lead: "DMC, czyli dopuszczalna masa całkowita, to maksymalna waga pojazdu z pasażerami i ładunkiem dopuszczona do ruchu drogowego. Przekroczenie tego limitu grozi mandatem do 3000 zł, utratą ochrony ubezpieczeniowej i zakazem dalszej jazdy."

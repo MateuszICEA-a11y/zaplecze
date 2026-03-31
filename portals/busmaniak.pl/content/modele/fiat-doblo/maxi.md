@@ -9,7 +9,7 @@ type: "page"
 volume: 2900
 main_keyword: "Fiat Doblò Maxi"
 parent: "fiat-doblo"
-image: "/images/fiat-doblo-maxi-hero.jpg"
+image: "/images/fiat-doblo-maxi-hero.webp"
 faq:
   - question: "O ile Doblò Maxi jest dłuższy od standardowego?"
     answer: "W generacji III różnica długości całkowitej wynosi 350 mm – wersja L1 ma 4403 mm, a L2 4753 mm. Różnica rozstawu osi jest mniejsza i wynosi 190 mm. W generacji II wersja Maxi miała długość ok. 4740 mm, a standardowa ok. 4390 mm."
@@ -106,7 +106,7 @@ W spalinowym Doblò III dostępne są manualne skrzynie 6-biegowe, a w wybranych
 
 W Doblò II dominowały skrzynie manualne 5- i 6-biegowe, a automaty występowały ograniczenie i zależnie od rynku. Przy wyborze używanego egzemplarza warto więc patrzeć nie tylko na moc, ale też na konkretną konfigurację skrzyni i homologacji.
 
-![Fiat Doblò Maxi – przestrzeń ładunkowa](/images/fiat-doblo-maxi-hero.jpg)
+![Fiat Doblò Maxi – przestrzeń ładunkowa](/images/fiat-doblo-maxi-hero.webp)
 
 ## Doblò Maxi Cargo – przestrzeń i ładowność
 

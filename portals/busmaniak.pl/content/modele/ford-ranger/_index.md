@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Ford Ranger – kompletny przewodnik po modelu"
 type: "page"
-image: "/images/ford-ranger-hero.jpg"
+image: "/images/ford-ranger-hero.webp"
 image_alt: "Ford Ranger T6.2 Wildtrak pickup na polnej drodze"
 main_keyword: "ford ranger"
 volume: 33100

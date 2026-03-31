@@ -9,7 +9,7 @@ parent_model: "iveco-daily"
 type: "post"
 volume: 500
 main_keyword: "iveco daily kontrolki"
-image: "/images/iveco-daily-kontrolki-hero.jpg"
+image: "/images/iveco-daily-kontrolki-hero.webp"
 image_alt: "Zestaw wskaźników TFT na desce rozdzielczej Iveco Daily VI"
 lead: "Iveco Daily ma więcej kontrolek niż większość busów dostawczych – wynika to z obecności systemów typowych dla ciężarówek: retardera, zawieszenia pneumatycznego i zaawansowanych układów hamulcowych. Poniżej znajdziesz kompletną listę wskaźników dla generacji V (2006–2014) i VI (2014+), najczęstsze przyczyny ich zapalenia oraz instrukcję resetu."
 faq:
@@ -83,7 +83,7 @@ Częstym problemem jest żółta kontrolka immobilizera (kluczyk z kłódką), k
 
 {{% expert name="Marek Kowalczyk" %}}W Daily VI z lat 2016–2018 widuję plagę awarii modułu SCR – kontrolka AdBlue zapala się mimo pełnego zbiornika, a komputer odlicza kilometry do ograniczenia mocy. Przyczyna to najczęściej czujnik NOx (ok. 2 000 zł) lub moduł dozujący AdBlue (1 500–3 000 zł). Zanim wymienisz moduł, sprawdź, czy problem nie leży w jakości płynu – tani AdBlue z nieznanych źródeł krystalizuje się i blokuje wtryskiwacz.{{% /expert %}}
 
-![Kontrolki Iveco Daily – znaczenie symboli na desce rozdzielczej](/images/iveco-daily-kontrolki-hero.jpg)
+![Kontrolki Iveco Daily – znaczenie symboli na desce rozdzielczej](/images/iveco-daily-kontrolki-hero.webp)
 
 ## Specyficzne kontrolki Daily – retarder, pneumatyka, ESP
 

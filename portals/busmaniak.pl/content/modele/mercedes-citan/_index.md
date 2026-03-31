@@ -8,7 +8,7 @@ h1: "Mercedes Citan – kompaktowy van z gwiazdą na masce"
 type: "page"
 main_keyword: "mercedes citan"
 volume: 1000
-image: "/images/mercedes-citan-hero.jpg"
+image: "/images/mercedes-citan-hero.webp"
 image_alt: "Mercedes Citan II furgon dostawczy w wersji L2"
 lead: "Mercedes Citan to najmniejszy dostawczak w gamie Mercedesa – kompaktowy van zbudowany na platformie Renault Kangoo III. Druga generacja (W420) z 2021 roku oferuje silniki diesla i benzynowe, wersję elektryczną eCitan oraz pasażerskiego bliźniaka – Mercedes T-Class. Sprawdzone podzespoły Renault w opakowaniu premium."
 faq:
@@ -77,7 +77,7 @@ Gama silnikowa Citana II obejmuje jednostki diesla, benzynowe i elektryczny eCit
 
 Wszystkie wersje spalinowe mają napęd na przednią oś. Skrzynie biegów: 6-biegowa manualna (standard) lub 7-biegowy automat dwusprzęgłowy EDC (opcja / standard w 113).
 
-![Mercedes Citan II furgon dostawczy](/images/mercedes-citan-hero.jpg)
+![Mercedes Citan II furgon dostawczy](/images/mercedes-citan-hero.webp)
 
 {{% expert name="Marek Kowalczyk" %}}
 Dla kuriera miejskiego eCitan to sensowny wybór – 283 km zasięgu w zupełności wystarcza na dzienną trasę, a nocne ładowanie z wallboxa 22 kW uzupełnia baterię w niecałe 3 godziny. Jeśli jednak jeździsz dużo po trasie, sięgnij po 112 CDI z automatem – spalanie poniżej 6 litrów i moment diesla przy niskich obrotach robią różnicę w komforcie długich tras.

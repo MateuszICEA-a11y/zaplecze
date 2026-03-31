@@ -9,7 +9,7 @@ parent: "volkswagen-crafter"
 type: "page"
 volume: 390
 main_keyword: "volkswagen crafter brygadówka"
-image: "/images/volkswagen-crafter-hero.jpg"
+image: "/images/volkswagen-crafter-hero.webp"
 image_alt: "Volkswagen Crafter II z podwójną kabiną i skrzynią"
 lead: "VW Crafter brygadówka (Doppelkabine) to podwozie z podwójną kabiną i otwartą paką – standardowo 7 miejsc plus przestrzeń na materiały budowlane, narzędzia i sprzęt. To jedna z nielicznych brygadówek w segmencie dużych aut dostawczych dostępnych z napędem AWD 4MOTION."
 faq:

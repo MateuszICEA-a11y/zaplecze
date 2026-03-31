@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Ford Transit Courier Van – kompletny przewodnik"
 parent: "ford-transit-courier"
 type: "page"
-image: "/images/ford-transit-courier-van-hero.jpg"
+image: "/images/ford-transit-courier-van-hero.webp"
 image_alt: "Ford Transit Courier Van II generacji – widok z boku"
 main_keyword: "Ford Transit Courier Van"
 lead: "Ford Transit Courier Van II generacji (od 2023) to najmniejszy dostawczak Forda z ładownią 2,91 m³ i miejscem na 2 europalety. Benzynowy 1.0 EcoBoost występuje w wariantach 100 KM i 125 KM, obok diesla 1.5 EcoBlue 100 KM oraz elektrycznego e-Transit Courier 136 KM. Ładowność dochodzi do 845 kg, a ceny startują od ok. 96 000 zł."
@@ -109,4 +109,4 @@ Dla kogo ten model? Przede wszystkim dla kurierów ostatniej mili, ekip serwisow
 
 W tekście pojawiają się orientacyjne dane dotyczące spalania i pojemności zbiornika paliwa 45 l, ale brakuje pełnych norm WLTP i szczegółowego harmonogramu serwisowego dla rynku PL/EU. To element, który warto zawsze sprawdzić już w aktualnej specyfikacji konkretnej wersji.
 
-![Ford Transit Courier Van II generacji](/images/ford-transit-courier-van-hero.jpg)
+![Ford Transit Courier Van II generacji](/images/ford-transit-courier-van-hero.webp)

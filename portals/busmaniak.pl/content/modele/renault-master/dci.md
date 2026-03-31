@@ -10,7 +10,7 @@ parent: "renault-master"
 type: "page"
 volume: 320
 main_keyword: "Renault Master 2.3 dCi"
-image: "/images/renault-master-dci-hero.jpg"
+image: "/images/renault-master-dci-hero.webp"
 image_alt: "Silnik Renault Master 2.3 dCi M9T – widok komory silnika"
 lead: "Renault Master 2.3 dCi to główna i najpopularniejsza jednostka napędowa stosowana w Masterze III. Silnik M9T produkowano w fabryce Renault w Cléon we Francji, a jego dostępność obejmowała kilka wariantów mocy zależnych od rynku, wersji nadwozia i rocznika – od 100 do 180 KM. To jedna z bardziej cenionych jednostek w klasie dużych dostawczaków."
 faq:
@@ -72,7 +72,7 @@ Przy zakupie używanego egzemplarza warto zwrócić uwagę na:
 
 Przed zakupem warto zrobić konkretną checklistę diagnostyczną. Odczyt korekt wtrysków, kontrola błędów SCR i NOx, ocena dymienia pod obciążeniem, sprawdzenie temperatury pracy po rozgrzaniu w zakresie 85–95°C oraz logi ciśnienia doładowania dają dużo pełniejszy obraz niż sama jazda próbna.
 
-![Silnik Renault Master 2.3 dCi M9T – widok komory silnika](/images/renault-master-dci-hero.jpg)
+![Silnik Renault Master 2.3 dCi M9T – widok komory silnika](/images/renault-master-dci-hero.webp)
 
 ## Spalanie w praktyce
 

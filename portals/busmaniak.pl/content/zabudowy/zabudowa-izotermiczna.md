@@ -9,7 +9,7 @@ h1: "Zabudowa izotermiczna busa – transport chłodniczy"
 type: "page"
 volume: 480
 main_keyword: "zabudowa izotermiczna busa"
-image: "/images/zabudowa-izotermiczna-hero.jpg"
+image: "/images/zabudowa-izotermiczna-hero.webp"
 image_alt: "Bus dostawczy z zabudową izotermiczną i agregatem chłodniczym"
 lead: "Zabudowa izotermiczna busa to specjalistyczna nadbudówka utrzymująca stabilną temperaturę wewnątrz przestrzeni ładunkowej. W zależności od klasy izolacji i typu agregatu chłodniczego pozwala transportować żywność, leki, kwiaty i inne produkty wrażliwe na temperaturę. Kluczowe są tu normy ATP, dobór materiałów izolacyjnych i prawidłowa homologacja pojazdu."
 faq:
@@ -70,7 +70,7 @@ Pianka PIR (poliizocyjanuratowa) to ulepszona wersja PUR – ma nieco lepszą iz
 
 Agregat chłodniczy przekształca izotermę w pełnoprawną chłodnię, aktywnie utrzymując zadaną temperaturę, niezależnie od warunków zewnętrznych. W busach dostawczych stosuje się kilka typów agregatów różniących się sposobem napędu i przeznaczeniem.
 
-![Bus dostawczy z zabudową izotermiczną i agregatem chłodniczym](/images/zabudowa-izotermiczna-hero.jpg)
+![Bus dostawczy z zabudową izotermiczną i agregatem chłodniczym](/images/zabudowa-izotermiczna-hero.webp)
 
 ### Typy agregatów do busów
 

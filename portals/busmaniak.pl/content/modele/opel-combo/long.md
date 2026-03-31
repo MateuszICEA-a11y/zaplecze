@@ -6,7 +6,7 @@ description: "Opel Combo E w wersji Long (XL) – długość 4753 mm, przestrze�
 draft: false
 author: "marek-kowalczyk"
 type: "page"
-image: "/images/opel-combo-long-hero.jpg"
+image: "/images/opel-combo-long-hero.webp"
 parent: "opel-combo"
 faq:
   - question: "Ile wynosi przestrzeń ładunkowa Opla Combo Long?"
@@ -90,7 +90,7 @@ Dla użytkownika flotowego mocnym argumentem pozostaje także wersja elektryczna
 
 Przy wyborze napędu warto patrzeć nie tylko na moc, ale też na masę własną, dopuszczalną masę całkowitą i docelowy profil pracy. Ładowność jest pochodną DMC minus masa własna, więc ta sama karoseria może mieć różne możliwości przewozowe zależnie od konfiguracji.
 
-![Opel Combo Long – przestrzeń ładunkowa](/images/opel-combo-long-hero.jpg)
+![Opel Combo Long – przestrzeń ładunkowa](/images/opel-combo-long-hero.webp)
 
 ## Zabudowy i akcesoria cargo
 

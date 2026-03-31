@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Maxus Deliver 9 – kompletny przewodnik po modelu"
 type: "page"
-image: "/images/maxus-deliver-9-hero.jpg"
+image: "/images/maxus-deliver-9-hero.webp"
 image_alt: "Maxus Deliver 9 furgon L3H2 na parkingu"
 main_keyword: "maxus deliver 9"
 volume: 5400

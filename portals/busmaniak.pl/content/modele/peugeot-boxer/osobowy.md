@@ -6,7 +6,7 @@ description: "Peugeot Boxer w wersji osobowej – minibus do 9 miejsc, mikrobus 
 draft: false
 author: "marek-kowalczyk"
 type: "page"
-image: "/images/peugeot-boxer-osobowy-hero.jpg"
+image: "/images/peugeot-boxer-osobowy-hero.webp"
 parent: "peugeot-boxer"
 faq:
   - question: "Ile osób mieści Peugeot Boxer osobowy?"
@@ -77,7 +77,7 @@ W praktyce w ogłoszeniach i cennikach najczęściej spotyka się diesle 2.2 o r
 
 Brakuje jednego uniwersalnego „najlepszego” silnika dla wszystkich zastosowań. W przewozie osób trzeba patrzeć na całe zestawienie: rocznik, normę emisji, serwis, rodzaj przekładni oraz to, czy auto pracuje głównie w mieście, regionalnie czy na dłuższych trasach.
 
-![Peugeot Boxer Combi – wnętrze z miejscami pasażerskimi](/images/peugeot-boxer-osobowy-hero.jpg)
+![Peugeot Boxer Combi – wnętrze z miejscami pasażerskimi](/images/peugeot-boxer-osobowy-hero.webp)
 
 {{% info title="Boxer Combi a taxi i wynajem" icon="engineering" %}}
 Boxer Combi 8+1 nie powinien być automatycznie utożsamiany z kategorią M2 – przy DMC do 3,5 t zwykle mówimy o M1. Rejestracja pojazdu do pracy jako taxi lub w odpłatnym przewozie osób to osobna kwestia i nie wynika wyłącznie z liczby miejsc.

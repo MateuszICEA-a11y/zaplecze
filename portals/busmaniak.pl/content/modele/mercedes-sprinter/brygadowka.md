@@ -10,7 +10,7 @@ main_keyword: "Mercedes Sprinter brygadówka"
 parent: "mercedes-sprinter"
 type: "page"
 volume: 320
-image: "/images/mercedes-sprinter-brygadowka-hero.jpg"
+image: "/images/mercedes-sprinter-brygadowka-hero.webp"
 faq:
   - question: "Ile miejsc ma Sprinter brygadówka?"
     answer: "Standardowa brygadówka na bazie Sprintera z podwójną kabiną oferuje zwykle 6 lub 7 miejsc siedzących, zależnie od konfiguracji siedzeń i homologacji. Liczba miejsc wynika z układu foteli oraz wpisów w dokumentach pojazdu, a nie z oznaczenia długości L2, L3 czy L4."
@@ -83,7 +83,7 @@ Powyżej 3,5 t wchodzą też dodatkowe skutki eksploatacyjne i prawne. W zależn
 
 W użytkowaniu firmowym znaczenie mają również obowiązki kierowcy poza samą kategorią prawa jazdy. Dla pojazdów 5,5 t mogą być istotne badania lekarskie i psychologiczne, kwalifikacja wstępna lub okresowa dla przewozu drogowego rzeczy oraz wyjątki od tych wymogów przy przewozie narzędzi na potrzeby własne.
 
-![Mercedes Sprinter brygadówka – widok z zewnątrz z paką skrzyniową](/images/mercedes-sprinter-brygadowka-hero.jpg)
+![Mercedes Sprinter brygadówka – widok z zewnątrz z paką skrzyniową](/images/mercedes-sprinter-brygadowka-hero.webp)
 
 ## Zastosowania Sprintera brygadówki
 

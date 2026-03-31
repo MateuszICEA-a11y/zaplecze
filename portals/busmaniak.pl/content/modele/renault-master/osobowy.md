@@ -10,7 +10,7 @@ parent: "renault-master"
 type: "page"
 volume: 720
 main_keyword: "Renault Master osobowy"
-image: "/images/renault-master-osobowy-hero.jpg"
+image: "/images/renault-master-osobowy-hero.webp"
 image_alt: "Renault Master Combi L3H2 – widok z boku z przeszkleniem bocznym"
 lead: "Renault Master osobowy to wersja Combi lub Bus – furgon z bocznymi oknami i siedzeniami dla pasażerów. W praktyce najczęściej spotyka się fabryczne Combi 8+1, a większe busy 9–17 miejsc zwykle zależą od rynku, zabudowy i homologacji. Poznaj dostępne konfiguracje, wymiary i dane techniczne."
 faq:
@@ -81,7 +81,7 @@ W praktyce wysokość progu załadunku oraz długość przestrzeni ładunkowej z
 
 Wersja H2 daje wygodniejszą pozycję we wnętrzu, ale wpływa też na wygodę wsiadania. Przy wyborze auta do przewozu osób warto zwrócić uwagę na szerokość otworu drzwi przesuwnych, obecność stopnia bocznego, sposób otwierania tylnych drzwi i możliwość montażu dodatkowego stopnia elektrycznego.
 
-![Renault Master Combi L3H2 – widok z boku z przeszkleniem bocznym](/images/renault-master-osobowy-hero.jpg)
+![Renault Master Combi L3H2 – widok z boku z przeszkleniem bocznym](/images/renault-master-osobowy-hero.webp)
 
 ## Silniki w Masterze osobowym
 

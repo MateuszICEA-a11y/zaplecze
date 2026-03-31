@@ -5,7 +5,7 @@ description: "Tanie kampery – przeróbka DIY od 20 tys. zł, używane od 30 ty
 draft: false
 author: "anna-wozniak"
 h1: "Tanie kampery – poradnik oszczędnego kupującego"
-image: "/images/tanie-kampery-hero.jpg"
+image: "/images/tanie-kampery-hero.webp"
 image_alt: "Tani kamper – przeróbka DIY furgonu na kampera"
 main_keyword: "tanie kampery"
 lead: "Kamper nie musi kosztować fortuny. Przeróbka DIY starego furgonu to wydatek od 20 tys. zł, używane kampery na rynku wtórnym startują od 30 tys. zł, a najtańsze nowe modele pełnowymiarowych kamperów od 250 tys. zł. Każda z tych dróg ma swoje ryzyka – ten poradnik pomoże je zminimalizować."
@@ -63,7 +63,7 @@ Koszty materiałów na podstawową zabudowę DIY zamykają się w następującyc
 
 Należy pamiętać o konsekwencjach podatkowych. Od lipca 2022 roku zmiana klasyfikacji pojazdu z ciężarowego (N1) na specjalny kempingowy (M1) wiąże się z obowiązkiem zapłaty akcyzy. Stawka wynosi 3,1% dla silników do 2000 cm³ i aż 18,6% dla większych, a podatek liczy się od rynkowej wartości pojazdu, co może dodać do budżetu nawet kilka tysięcy złotych.
 
-![Tanie kampery – jak kupić kampera za małe pieniądze](/images/tanie-kampery-hero.jpg)
+![Tanie kampery – jak kupić kampera za małe pieniądze](/images/tanie-kampery-hero.webp)
 
 ## Używane kampery – gdzie szukać okazji
 Znalezienie dobrego, używanego kampera w rozsądnej cenie wymaga wiedzy, gdzie i kiedy szukać. Kluczem jest połączenie portali ogłoszeniowych z cierpliwym obserwowaniem rynku, zwłaszcza poza sezonem.

@@ -10,7 +10,7 @@ parent: "citroen-berlingo"
 type: "page"
 volume: 390
 main_keyword: "Citroën Berlingo XL"
-image: "/images/citroen-berlingo-xl-hero.jpg"
+image: "/images/citroen-berlingo-xl-hero.webp"
 image_alt: "Citroën Berlingo XL III generacji"
 lead: "Berlingo XL to wydłużona wersja III generacji Citroëna Berlingo (od 2018). Jest o 350 mm dłuższe od wersji M i ma o 190 mm większy rozstaw osi. W wersji osobowej oferuje większą przestrzeń bagażową, a w odmianie Van – większą objętość ładowni."
 faq:
@@ -77,7 +77,7 @@ W praktyce oznacza to też różnice w masach, DMC i ładowności. Bez wskazania
 
 Warto przy tym rozróżnić średnicę zawracania od promienia skrętu. Producenci zwykle podają średnicę zawracania, czyli przestrzeń potrzebną do wykonania nawrotu, a nie sam geometryczny promień toru jazdy.
 
-![Citroën Berlingo XL III generacji](/images/citroen-berlingo-xl-hero.jpg)
+![Citroën Berlingo XL III generacji](/images/citroen-berlingo-xl-hero.webp)
 
 ## Silniki w Berlingo XL {#silniki}
 

@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Nissan Interstar – kompletny przewodnik po modelu"
 type: "page"
 main_keyword: "nissan interstar"
-image: "/images/nissan-interstar-hero.jpg"
+image: "/images/nissan-interstar-hero.webp"
 image_alt: "Nissan Interstar furgon nowej generacji"
 lead: "Nissan Interstar to duży dostawczak, który od trzech generacji bazuje na platformie Renault Mastera. Nowa generacja z 2024 roku przynosi silnik 2.0 dCi, elektrycznego e-Interstara z baterią 87 kWh i tytuł International Van of the Year 2025 (wspólnie z Masterem). Sprawdź, czy warto wybrać go zamiast francuskiego oryginału."
 faq:
@@ -83,7 +83,7 @@ e-Interstar celuje w dostawy ostatniej mili w strefach zeroemisyjnych, które co
 Przeskok z 2.3 dCi na 2.0 Blue dCi to dobra decyzja inżynierów Renault. Mniejszy silnik jest cichszy, oszczędniejszy i spełnia najnowsze normy emisji bez kompromisów w zakresie momentu obrotowego. Jeśli szukasz używanego Interstara z 2.3 dCi – sprawdź koniecznie stan turbosprężarki i wtrysków, bo te elementy po 200 tys. km wymagały regeneracji. Nowe 2.0 Blue dCi jest pod tym względem znacznie trwalsze. Z kolei [NV200](/modele/nissan-nv200/) to zupełnie inna klasa – kompaktowy dostawczak do miasta.
 {{% /expert %}}
 
-![Nissan Interstar furgon nowej generacji](/images/nissan-interstar-hero.jpg)
+![Nissan Interstar furgon nowej generacji](/images/nissan-interstar-hero.webp)
 
 ## Wersje nadwoziowe Nissana Interstar
 

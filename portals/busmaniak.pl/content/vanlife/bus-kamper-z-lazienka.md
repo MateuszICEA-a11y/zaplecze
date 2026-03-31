@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Kamper z łazienką – toaleta i prysznic w busie"
 type: "post"
 volume: 1500
-image: "/images/bus-kamper-z-lazienka-hero.jpg"
+image: "/images/bus-kamper-z-lazienka-hero.webp"
 image_alt: "Łazienka w busie kamperze – toaleta kasetowa i prysznic z odpływem"
 main_keyword: "kamper z łazienką"
 lead: "Łazienka w busie to temat, który dzieli kamperowiczów na dwa obozy. Jedni uważają, że toaleta kasetowa i prysznic to absolutna konieczność, drudzy wolą oszczędzić miejsce i korzystać z infrastruktury kempingowej. Prawda jest taka, że łazienka w kamperze decyduje o tym, czy vanlife jest wygodny przez tydzień czy przez rok – szczególnie zimą, nocą i w miejscach bez zaplecza sanitarnego."
@@ -66,7 +66,7 @@ Alternatywa dla chemii. Modele tego typu rozdzielają płyny od części stałyc
 
 Zaletą jest brak chemii i rzadsza obsługa części stałej. Wadą – wyższa cena, konieczność wentylacji oraz fakt, że pojemnik na mocz trzeba opróżniać często, nawet codziennie lub co 1–3 dni.
 
-![Bus kamper z łazienką – toaleta i prysznic](/images/bus-kamper-z-lazienka-hero.jpg)
+![Bus kamper z łazienką – toaleta i prysznic](/images/bus-kamper-z-lazienka-hero.webp)
 
 ## Prysznic w kamperze – warianty montażu
 

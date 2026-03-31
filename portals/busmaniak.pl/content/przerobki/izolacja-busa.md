@@ -3,7 +3,7 @@ title: "Izolacja busa – materiały i techniki"
 date: 2026-03-23
 description: "Izolacja termiczna i akustyczna busa – najlepsze materiały i techniki montażu."
 draft: false
-image: "/images/izolacja-busa-hero.jpg"
+image: "/images/izolacja-busa-hero.webp"
 image_alt: "Izolacja busa Armaflexem – ściany i sufit"
 author: "anna-wozniak"
 h1: "Izolacja busa – porównanie materiałów, techniki montażu i najczęstsze błędy"
@@ -87,7 +87,7 @@ Podłoga wymaga innego podejścia niż ściany i sufit. Izolacja musi wytrzymać
 
 Fabryczna podłoga w busach nie jest płaska, lecz składa się z przetłoczeń. Przed ułożeniem sztywnych płyt XPS należy wyrównać powierzchnię, wklejając w rowki paski Armaflexu (9–10 mm) lub drewniane listewki. Bez tego podłoga będzie pracować i skrzypieć w pustych przestrzeniach.
 
-![Izolacja busa – materiały i montaż](/images/izolacja-busa-hero.jpg)
+![Izolacja busa – materiały i montaż](/images/izolacja-busa-hero.webp)
 
 ### Budowa podłogi krok po kroku
 

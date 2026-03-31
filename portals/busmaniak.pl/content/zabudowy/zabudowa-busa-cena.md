@@ -9,7 +9,7 @@ h1: "Ile kosztuje zabudowa busa – cennik 2026"
 type: "page"
 volume: 720
 main_keyword: "zabudowa busa cena"
-image: "/images/zabudowa-busa-cena-hero.jpg"
+image: "/images/zabudowa-busa-cena-hero.webp"
 image_alt: "Różne typy zabudów busów z podanymi cenami"
 lead: "Koszt zabudowy busa w 2026 roku waha się od 1 500 zł za prostą zabudowę DIY ze sklejki do ponad 100 000 zł za zaawansowane zabudowy specjalistyczne. Cena zależy od typu zabudowy, wielkości busa, wybranego producenta i tego, czy wykonujesz ją samodzielnie, czy zlecasz profesjonalnej firmie. Ten artykuł zbiera aktualne ceny wszystkich popularnych typów zabudów w jednym miejscu."
 faq:
@@ -87,7 +87,7 @@ Branża coraz częściej odchodzi od hałaśliwych i emitujących spaliny genera
 
 Sam blat roboczy kosztuje 2 000–4 000 zł (składany) do 5 000–8 000 zł (wysuwany Bott vario). Imadło obrotowe to dodatkowe 500–1 500 zł.
 
-![Różne typy zabudów busów z podanymi cenami](/images/zabudowa-busa-cena-hero.jpg)
+![Różne typy zabudów busów z podanymi cenami](/images/zabudowa-busa-cena-hero.webp)
 
 ## Zabudowa izotermiczna i chłodnicza – ceny {#izotermiczna}
 

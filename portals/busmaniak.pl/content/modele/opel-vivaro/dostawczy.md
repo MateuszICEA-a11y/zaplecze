@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 type: "page"
 main_keyword: "Opel Vivaro dostawczy"
-image: "/images/opel-vivaro-dostawczy-hero.jpg"
+image: "/images/opel-vivaro-dostawczy-hero.webp"
 image_alt: "Opel Vivaro dostawczy – przestrzeń ładunkowa i dostęp"
 parent: "opel-vivaro"
 lead: "Vivaro furgon to najważniejsza wersja w gamie – bezpośrednia konkurencja dla Transit Custom i Transportera. W generacji C oferuje ładowność do ok. 1400 kg oraz przestrzeń ładunkową 5,3 m³ w wersji S, 6,1 m³ w M i 6,6 m³ w L."
@@ -67,7 +67,7 @@ W przypadku Vivaro C nie ma jednej uniwersalnej wartości DMC i ładowności dla
 
 Masa własna nie powinna być podawana bez kontekstu, bo mocno zmienia się zależnie od konfiguracji. Automat, podwójne drzwi przesuwne, koło zapasowe, hak, zabudowa warsztatowa czy dodatkowe fotele potrafią obniżyć ładowność o kilkadziesiąt do ponad 100 kg, a w zależności od metodologii homologacyjnej w masie gotowej do jazdy może być też uwzględniona masa kierowcy 75 kg.
 
-![Opel Vivaro dostawczy – przestrzeń ładunkowa i dostęp](/images/opel-vivaro-dostawczy-hero.jpg)
+![Opel Vivaro dostawczy – przestrzeń ładunkowa i dostęp](/images/opel-vivaro-dostawczy-hero.webp)
 
 ## Silniki Vivaro dostawczego
 

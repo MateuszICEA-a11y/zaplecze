@@ -8,7 +8,7 @@ h1: "Olej silnikowy do busa – dobór, normy i interwały wymiany"
 type: "post"
 volume: 1500
 main_keyword: "olej silnikowy do busa"
-image: "/images/olej-silnikowy-hero.jpg"
+image: "/images/olej-silnikowy-hero.webp"
 image_alt: "Wlew oleju silnikowego w busie dostawczym"
 lead: "Wybór oleju silnikowego do busa sprowadza się do trzech parametrów: klasy lepkości (np. 5W-30), normy producenta (np. Fiat 9.55535-S1, MB 229.52, VW 507.00, Ford WSS-M2C950-A) i pojemności miski olejowej, która w dużych dostawczakach sięga nawet 12 litrów. Poniżej znajdziesz konkretne zalecenia per model, interwały wymiany oraz tabelę pojemności – wszystko, żebyś nie musiał szukać w instrukcji obsługi."
 faq:
@@ -67,7 +67,7 @@ Trzy najpopularniejsze busy w Polsce mają bardzo różne wymagania. Poniższa t
 | Ford Transit Custom 2.0 EcoBlue | 105/130/170 KM | 0W-30 syntetyk | WSS-M2C950-A |
 | VW Crafter 2.0 TDI | 102/140/177 KM | 5W-30 syntetyk | VW 507.00 |
 
-![Olej silnikowy do busa – jaki wybrać, co ile wymieniać](/images/olej-silnikowy-hero.jpg)
+![Olej silnikowy do busa – jaki wybrać, co ile wymieniać](/images/olej-silnikowy-hero.webp)
 
 ## Co ile wymieniać olej w busie
 

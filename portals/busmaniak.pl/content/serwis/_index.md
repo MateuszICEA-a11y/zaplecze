@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Serwis busa – wszystko, co musisz wiedzieć o eksploatacji"
 type: "page"
 volume: 2000
-image: "/images/serwis-hub-hero.jpg"
+image: "/images/serwis-hub-hero.webp"
 image_alt: "Serwis busa – mechanik przy silniku dostawczaka"
 main_keyword: "serwis busa"
 lead: "Utrzymanie busa w dobrej kondycji technicznej to nie kwestia szczęścia, lecz regularnego serwisu i znajomości typowych punktów zapominanych przez właścicieli. Busy dostawcze pracują w warunkach, które osobówki widziałyby tylko w koszmarach – pełne obciążenie, miejskie korki, setki tysięcy kilometrów rocznie. Ten poradnik zbiera w jednym miejscu wiedzę o kontrolkach, rozrządzie, elektryce, płynach, oponach, przeglądach i filtrze DPF, żebyś nie musiał szukać po forach."
@@ -79,7 +79,7 @@ Kompletny schemat bezpieczników dla najpopularniejszego modelu znajdziesz w art
 
 Płyny w busie to ostatnie miejsce na oszczędności. Różnica między tanim a dobrym olejem przekłada się bezpośrednio na żywotność turbosprężarki, DPF i samego silnika.
 
-![Serwis busa – kompletny poradnik eksploatacji](/images/serwis-hub-hero.jpg)
+![Serwis busa – kompletny poradnik eksploatacji](/images/serwis-hub-hero.webp)
 
 Kluczowe płyny eksploatacyjne:
 

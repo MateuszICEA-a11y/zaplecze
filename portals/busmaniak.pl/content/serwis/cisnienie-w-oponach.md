@@ -9,7 +9,7 @@ h1: "Ciśnienie w oponach busa – tabela wartości dla popularnych modeli"
 type: "page"
 volume: 3600
 main_keyword: "ciśnienie w oponach"
-image: "/images/cisnienie-w-oponach-hero.jpg"
+image: "/images/cisnienie-w-oponach-hero.webp"
 image_alt: "Kierowca sprawdza ciśnienie w oponie busa dostawczego za pomocą manometru cyfrowego"
 lead: "Nieprawidłowe ciśnienie w oponach busa skraca żywotność ogumienia nawet o 30% i generuje odczuwalnie wyższe koszty paliwa. W busach dostawczych stawka jest wyższa niż w osobówkach – przy masie 3,5 tony każde 0,5 bar odchylenia zmienia rozkład sił na bieżniku. W tym artykule znajdziesz kompletną tabelę ciśnień dla Ducato, Sprintera, Transita i Daily oraz instrukcję prawidłowego pomiaru."
 faq:
@@ -85,7 +85,7 @@ Naklejka to jedyne w pełni wiarygodne źródło informacji o ciśnieniu – pro
 
 ## Jak prawidłowo mierzyć ciśnienie w oponach busa {#jak-mierzyc}
 
-![Manometr cyfrowy do pomiaru ciśnienia w oponach busa](/images/cisnienie-w-oponach-hero.jpg)
+![Manometr cyfrowy do pomiaru ciśnienia w oponach busa](/images/cisnienie-w-oponach-hero.webp)
 
 Pomiar ciśnienia wydaje się prosty, ale kilka błędów potrafi zafałszować wynik nawet o 0,5 bar – a przy busie to różnica, która ma realne znaczenie.
 

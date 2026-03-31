@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Peugeot Rifter – kompletny przewodnik po modelu"
 type: "page"
-image: "/images/peugeot-rifter-hero.jpg"
+image: "/images/peugeot-rifter-hero.webp"
 image_alt: "Peugeot Rifter Long na drodze"
 main_keyword: "peugeot rifter"
 volume: 8100

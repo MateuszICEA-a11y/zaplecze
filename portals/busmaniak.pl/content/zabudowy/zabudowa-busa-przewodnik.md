@@ -9,7 +9,7 @@ h1: "Zabudowa busa – kompletny przewodnik 2026"
 type: "page"
 volume: 720
 main_keyword: "zabudowa busa"
-image: "/images/zabudowa-busa-przewodnik-hero.jpg"
+image: "/images/zabudowa-busa-przewodnik-hero.webp"
 image_alt: "Bus dostawczy z profesjonalną zabudową wnętrza przestrzeni ładunkowej"
 lead: "Zabudowa busa to proces dopasowania przestrzeni ładunkowej do konkretnych potrzeb – od regałów narzędziowych, przez izolacje izotermiczne, po pełne przeróbki kamperowe. W 2026 roku rynek oferuje zarówno gotowe systemy modułowe od producentów premium, jak i materiały do samodzielnej zabudowy w budżecie od kilkuset złotych. Ten przewodnik opisuje wszystkie warianty, materiały, koszty i etapy realizacji."
 faq:
@@ -74,7 +74,7 @@ Stal z powłoką proszkową to tańsza alternatywa o wyższej nośności. Sprawd
 Rynek zabudów pojazdów dostawczych w Polsce jest podzielony między globalnych liderów segmentu premium a liczne firmy krajowe, oferujące konkurencyjne cenowo rozwiązania.
 
 ### Segment premium – Sortimo, Bott, Würth
-![Bus dostawczy z profesjonalną zabudową wnętrza przestrzeni ładunkowej](/images/zabudowa-busa-przewodnik-hero.jpg)
+![Bus dostawczy z profesjonalną zabudową wnętrza przestrzeni ładunkowej](/images/zabudowa-busa-przewodnik-hero.webp)
 Sortimo, Bott i Würth to niemieccy producenci dominujący na polskim rynku zabudów profesjonalnych. Oferują konfiguratory online, dedykowane zestawy dla konkretnych modeli busów i certyfikaty bezpieczeństwa TÜV. Ceny są najwyższe (od 3 000 zł za pojedynczy moduł), ale systemy zachowują 40–60% wartości po 5 latach.
 
 ### Polscy producenci i firmy regionalne

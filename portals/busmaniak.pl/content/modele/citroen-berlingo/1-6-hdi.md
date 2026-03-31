@@ -10,7 +10,7 @@ parent: "citroen-berlingo"
 type: "page"
 volume: 2900
 main_keyword: "Citroën Berlingo 1.6 HDI"
-image: "/images/citroen-berlingo-1-6-hdi-hero.jpg"
+image: "/images/citroen-berlingo-1-6-hdi-hero.webp"
 image_alt: "Silnik 1.6 HDI DV6 w Citroënie Berlingo"
 lead: "Berlingo z silnikiem 1.6 HDI to jeden z częściej trafiających do warsztatu przedstawicieli segmentu małych dostawczaków. Jednostka DV6 produkcji PSA zdobyła popularność dzięki niewysokim kosztom eksploatacji i dostępności części – choć ma też swoje słabości, o których lepiej wiedzieć przed zakupem."
 faq:
@@ -96,7 +96,7 @@ Berlingo występowało jako van i osobowe Multispace, a typowa ładowność vana
 
 Szczegółowe dane z pomiarów właścicieli znajdziesz w artykule o [spalaniu Berlingo](/serwis/citroen-berlingo-spalanie/).
 
-![Silnik 1.6 HDI DV6 w Citroënie Berlingo](/images/citroen-berlingo-1-6-hdi-hero.jpg)
+![Silnik 1.6 HDI DV6 w Citroënie Berlingo](/images/citroen-berlingo-1-6-hdi-hero.webp)
 
 ## Typowe usterki i problemy {#usterki}
 

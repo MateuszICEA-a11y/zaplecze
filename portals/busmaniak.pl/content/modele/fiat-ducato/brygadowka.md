@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Fiat Ducato brygadówka – kompletny przewodnik"
 parent: "fiat-ducato"
 type: "page"
-image: "/images/fiat-ducato-brygadowka-hero.jpg"
+image: "/images/fiat-ducato-brygadowka-hero.webp"
 image_alt: "Fiat Ducato brygadówka z podwójną kabiną – widok z boku"
 main_keyword: "Fiat Ducato brygadówka"
 lead: "Fiat Ducato w wersji brygadowej łączy transport 6 lub 7 osób z częścią ładunkową oddzieloną przegrodą. Trzeba jednak jasno oddzielić dane bazowego furgonu od parametrów auta po konwersji – rzeczywista ładowność i długość przestrzeni za drugim rzędem siedzeń zależą od DMC, długości nadwozia oraz zakresu zabudowy."
@@ -81,7 +81,7 @@ Wyposażenie zawsze trzeba sprawdzać dla konkretnej wersji i roku produkcji. El
 
 W nowszych rocznikach istotnym argumentem są też systemy ADAS. Zależnie od wersji można spotkać tempomat, asystenta pasa ruchu, rozpoznawanie znaków, kamerę cofania, czujniki parkowania czy automatyczne hamowanie awaryjne – w aucie przewożącym 6–7 osób to realna wartość, nie tylko marketing.
 
-![Fiat Ducato brygadówka – wersja dla ekip budowlanych](/images/fiat-ducato-brygadowka-hero.jpg)
+![Fiat Ducato brygadówka – wersja dla ekip budowlanych](/images/fiat-ducato-brygadowka-hero.webp)
 
 ## Typowe problemy brygadówki Ducato
 

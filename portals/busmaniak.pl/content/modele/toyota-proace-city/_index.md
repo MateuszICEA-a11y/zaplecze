@@ -10,7 +10,7 @@ parent: ""
 type: "page"
 volume: 6600
 main_keyword: "Toyota Proace City"
-image: "/images/toyota-proace-city-hero.jpg"
+image: "/images/toyota-proace-city-hero.webp"
 image_alt: "Toyota Proace City furgon"
 lead: "Toyota Proace City to kompaktowy furgon zbudowany na platformie PSA EMP2 – bliźniak Peugeota Partner III i Citroëna Berlingo III. Wybierasz między wersjami Short i Long, trzema rodzajami napędu oraz gamą silników od 75 do 136 KM."
 faq:
@@ -89,7 +89,7 @@ W segmencie kompaktowych dostawczaków diesel wciąż dominuje – zwłaszcza pr
 {{% /expert %}}
 
 
-![Toyota Proace City furgon](/images/toyota-proace-city-hero.jpg)
+![Toyota Proace City furgon](/images/toyota-proace-city-hero.webp)
 
 ## ProAce City Electric
 

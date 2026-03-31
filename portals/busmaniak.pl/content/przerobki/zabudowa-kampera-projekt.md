@@ -8,7 +8,7 @@ h1: "Fiat Ducato kamper – dlaczego jest najpopularniejszy"
 parent_model: "fiat-ducato"
 type: "post"
 volume: 2600
-image: "/images/fiat-ducato-kamper-hero.jpg"
+image: "/images/fiat-ducato-kamper-hero.webp"
 image_alt: ""
 main_keyword: "Fiat Ducato Kamper"
 lead: "Fiat Ducato dominuje na rynku kamperów dzięki unikalnej konstrukcji podwozia i kwadratowej bryle nadwozia, które od dekad stanowią najlepszą bazę do zabudowy mieszkalnej. Jego popularność to efekt ewolucji od 1981 roku – do sprawdzonej konstrukcji z czasem dołączyły legendarne silniki JTD, a całość uzupełniły rozwiązania techniczne projektowane z myślą o caravaningu."
@@ -68,7 +68,7 @@ Fakt, że Ducato to najczęstsza baza fabrycznych kamperów w Europie, bezpośre
 - **Serwis** – każdy mechanik w Europie zna ten samochód, a części są tanie i dostępne od ręki. To kluczowe, gdy jakaś usterka zdarzy się w trasie w Grecji albo Portugalii.
 - **Wsparcie społeczności** – liczba poradników o [budowie kampera krok po kroku](/przerobki/budowa-kampera-krok-po-kroku/) na bazie tego modelu jest po prostu nie do pobicia.
 
-![Fiat Ducato kamper – dlaczego jest numerem jeden pod przeróbkę](/images/fiat-ducato-kamper-hero.jpg)
+![Fiat Ducato kamper – dlaczego jest numerem jeden pod przeróbkę](/images/fiat-ducato-kamper-hero.webp)
 
 ## Typowe usterki i na co uważać
 

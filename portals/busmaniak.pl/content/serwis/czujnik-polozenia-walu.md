@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Czujnik położenia wału korbowego – mały element, duży problem"
 type: "post"
 volume: 6600
-image: "/images/czujnik-polozenia-walu-hero.jpg"
+image: "/images/czujnik-polozenia-walu-hero.webp"
 image_alt: "Czujnik położenia wału korbowego CKP zamontowany przy kole zamachowym"
 main_keyword: "czujnik położenia wału korbowego"
 lead: "Czujnik położenia wału korbowego (CKP) to niewielki element wielkości kciuka, bez którego silnik busa nie uruchomi się lub zgaśnie w najmniej oczekiwanym momencie. Monitoruje obroty i pozycję wału, dostarczając sterownikowi dane kluczowe dla synchronizacji wtrysku paliwa. Awaria tego czujnika jest jedną z częstszych przyczyn nagłego unieruchomienia busa na trasie, a diagnostyka wymaga znajomości kodów P0335 i P0336."
@@ -77,7 +77,7 @@ Awaria czujnika położenia wału daje dość charakterystyczne objawy, choć mo
 
 6.  **Tachometr na zerze podczas jazdy** – przy przerwanym sygnale CKP obrotomierz na desce rozdzielczej spada do zera, mimo że silnik jeszcze pracuje. To jednoznaczny sygnał, że czujnik traci kontakt.
 
-![Czujnik położenia wału korbowego – objawy awarii w busie](/images/czujnik-polozenia-walu-hero.jpg)
+![Czujnik położenia wału korbowego – objawy awarii w busie](/images/czujnik-polozenia-walu-hero.webp)
 
 ## Diagnostyka – oscyloskop, multimetr, skaner
 

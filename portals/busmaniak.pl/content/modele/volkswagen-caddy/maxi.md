@@ -10,7 +10,7 @@ parent: "volkswagen-caddy"
 type: "page"
 volume: 3600
 main_keyword: "Volkswagen Caddy Maxi"
-image: "/images/volkswagen-caddy-maxi-hero.jpg"
+image: "/images/volkswagen-caddy-maxi-hero.webp"
 image_alt: "Volkswagen Caddy Maxi z boku"
 lead: "Caddy Maxi to wydłużona wersja Volkswagena Caddy, dostępna od III generacji (2004). Dłuższy rozstaw osi daje więcej miejsca na pasażerów i bagaż. W V generacji osobowe Caddy Maxi/Long oferuje do 1720 litrów bagażnika w konfiguracji 5-osobowej oraz do 3105 litrów po złożeniu siedzeń."
 faq:
@@ -68,7 +68,7 @@ Poprawna terminologia to **średnica zawracania**, nie promień skrętu. Dla V g
 
 W dostępnych danych do tego artykułu nie ma pełnych wymiarów ładowni Cargo Maxi, takich jak długość przestrzeni ładunkowej, szerokość maksymalna, szerokość między nadkolami, wysokość ładowni, długość złożonego fotela pasażera czy liczba europalet. Dlatego nie rozwijamy tego tematu o nieweryfikowalne szczegóły.
 
-![Volkswagen Caddy Maxi z boku](/images/volkswagen-caddy-maxi-hero.jpg)
+![Volkswagen Caddy Maxi z boku](/images/volkswagen-caddy-maxi-hero.webp)
 
 ## Silniki Caddy Maxi {#silniki}
 

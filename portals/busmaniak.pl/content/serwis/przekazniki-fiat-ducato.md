@@ -8,7 +8,7 @@ h1: "Przekaźniki Fiat Ducato – kompletny schemat"
 parent_model: "fiat-ducato"
 type: "post"
 volume: 1000
-image: "/images/przekazniki-fiat-ducato-hero.jpg"
+image: "/images/przekazniki-fiat-ducato-hero.webp"
 image_alt: ""
 main_keyword: "Fiat Ducato Przekaźniki"
 lead: "Przekaźniki w Fiacie Ducato odpowiadają za kluczowe funkcje elektryczne – od pompy paliwa po wycieraczki i świece żarowe. Gdy bus odmawia posłuszeństwa, warto zacząć diagnostykę właśnie od nich. Oto kompletny schemat i lokalizacja przekaźników w Ducato III i IV."
@@ -61,7 +61,7 @@ Funkcję przekaźnika świec żarowych w Ducato pełni większy moduł (sterowni
 Właściciele kamperów na bazie Ducato muszą pamiętać o kluczowej zmianie w nowszych modelach (Seria 8, po 2021 roku), które spełniają normę Euro 6D-Temp. Wprowadzenie inteligentnych alternatorów sprawiło, że klasyczny przekaźnik separujący, aktywowany sygnałem D+, przestał być skutecznym rozwiązaniem. Alternator w trybie „smart” obniża napięcie podczas jazdy, co powoduje rozłączanie przekaźnika. W tych pojazdach do ładowania akumulatora zabudowy niezbędne jest zastosowanie boostera, czyli ładowarki [DC-DC](https://pl.wikipedia.org/wiki/Przetwornica_napi%C4%99cia).
 {{% /expert %}}
 
-![Przekaźniki Fiat Ducato – schemat, lokalizacja, opis](/images/przekazniki-fiat-ducato-hero.jpg)
+![Przekaźniki Fiat Ducato – schemat, lokalizacja, opis](/images/przekazniki-fiat-ducato-hero.webp)
 
 ## Typowe awarie i diagnostyka
 

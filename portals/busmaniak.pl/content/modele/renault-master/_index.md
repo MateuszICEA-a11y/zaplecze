@@ -20,7 +20,7 @@ faq:
     answer: "Renault Master III zadebiutował w 2010 roku, zastępując model Master II z 1997 roku. W 2019 roku przeszedł gruntowny facelifting (nowe wnętrze, ADAS, wirtualna deska rozdzielcza). Na dzień 2026 roku jest to wciąż aktualny model w ofercie Renault Pro+."
   - question: "Ile kosztuje nowy Renault Master furgon?"
     answer: "Ceny katalogowe nowego Mastera zaczynają się od ok. 130 000–140 000 zł netto za wersję L2H2 z silnikiem 135 KM. Wersje L3H2 i L4H2 są droższe o 15 000–25 000 zł netto. Cena rośnie wraz z pakietami wyposażenia (pakiet Komfort, pakiet Bezpieczeństwo)."
-image: "/images/renault-master-hero.jpg"
+image: "/images/renault-master-hero.webp"
 image_alt: "Renault Master III furgon L3H2 przy rampie załadunkowej"
 lead: "Renault Master to jeden z najpopularniejszych dużych samochodów dostawczych w Europie – konkurent Fiata Ducato, Mercedesa Sprinter i Volkswagena Craftera. Master III produkowany od 2010 roku w fabryce Batilly we Francji oferuje silniki 2.3 dCi w zakresie 100–180 KM, pojemność ładunkową 8–17 m³ i DMC od 3,1 do 4,5 t. Ten przewodnik zbiera wszystkie dane techniczne, wersje nadwoziowe i praktyczne informacje serwisowe w jednym miejscu."
 sources:
@@ -82,7 +82,7 @@ Skrzynia biegów to 6-biegowy manuał lub – od faceliftingu – 6-biegowy auto
 Silnik M9T to jedna z trwalszych jednostek w klasie dostawczaków. W praktyce przy regularnej wymianie oleju co 30 000 km i sprawnym układzie AdBlue (od Euro 6) spokojnie przechodzi 400 000 km bez remontu. Słabym punktem są wtryskiwacze – w egzemplarzach z wysokim przebiegiem warto zrobić diagnozę przed zakupem. Trwałość rozrządu szacuję na 150 000–200 000 km, ale przy intensywnej eksploatacji miejskiej lepiej sprawdzić stan przy 120 000 km.
 {{% /expert %}}
 
-![Renault Master III furgon L3H2 przy rampie załadunkowej](/images/renault-master-hero.jpg)
+![Renault Master III furgon L3H2 przy rampie załadunkowej](/images/renault-master-hero.webp)
 
 ## Wersje nadwoziowe Renault Master {#wersje-nadwozia}
 

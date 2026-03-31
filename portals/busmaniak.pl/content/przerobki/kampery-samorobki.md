@@ -3,7 +3,7 @@ title: "Kampery samoróbki – DIY camper van projekty"
 date: 2026-03-23
 description: "Kampery samoróbki – najlepsze projekty DIY camper van, porady i inspiracje."
 draft: false
-image: "/images/kampery-samorobki-hero.jpg"
+image: "/images/kampery-samorobki-hero.webp"
 image_alt: "Kamper samoróbka – kreatywna zabudowa DIY"
 author: "anna-wozniak"
 h1: "Kampery samoróbki – projekty DIY, koszty i legalizacja"
@@ -93,7 +93,7 @@ Użycie zbyt ciężkich materiałów, jak płyta meblowa MDF zamiast dedykowanej
 
 ### Gdzie szukać oszczędności
 
-![Kampery samoróbki – projekty DIY](/images/kampery-samorobki-hero.jpg)
+![Kampery samoróbki – projekty DIY](/images/kampery-samorobki-hero.webp)
 
 - **Materiały z odzysku** – sklejka pozostała po budowie, meble kuchenne z demontażu czy okna ze starych przyczep kempingowych to świetny sposób na cięcie kosztów. Szukaj na portalach ogłoszeniowych i grupach na Facebooku.
 - **Chińskie odpowiedniki** – popularne ogrzewanie postojowe typu "chińskie webasto" jest o **3 000–4 000 zł** tańsze od markowego oryginału. Podobnie można zaoszczędzić na pompach wody czy panelach solarnych.

@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Peugeot Partner HDI – dane techniczne i opinie"
 parent: "peugeot-partner"
 type: "page"
-image: "/images/peugeot-partner-hdi-hero.jpg"
+image: "/images/peugeot-partner-hdi-hero.webp"
 image_alt: "Peugeot Partner II z silnikiem HDI – komora silnika"
 main_keyword: "Peugeot Partner HDI"
 lead: "Silnik 1.6 HDI (DV6) w Peugeot Partner II to najczęstszy wybór na rynku wtórnym – dostępny w odmianach HDi, e-HDi i BlueHDi o mocy od 75 do 120 KM. Realne spalanie zwykle mieści się w przedziale 5,8–8 l/100 km, a typowe problemy dotyczą m.in. FAP/DPF, EGR, turbo i uszczelnień pod wtryskiwaczami. W nowszych wersjach BlueHDi dochodzi także układ SCR z AdBlue."
@@ -118,7 +118,7 @@ Przy zakupie lub przed większym serwisem warto sprawdzić korekty wtrysków na 
 
 Koniecznie sprawdź także szczelność podkładek pod wtryskami, luz turbo oraz dymienie pod obciążeniem. To proste punkty kontrolne, które często pozwalają szybko odsiać egzemplarze z kosztownymi problemami.
 
-![Peugeot Partner HDI – silnik DV6 pod maską](/images/peugeot-partner-hdi-hero.jpg)
+![Peugeot Partner HDI – silnik DV6 pod maską](/images/peugeot-partner-hdi-hero.webp)
 
 ## Który rocznik Partnera HDI wybrać?
 

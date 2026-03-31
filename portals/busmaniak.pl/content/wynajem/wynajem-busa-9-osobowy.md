@@ -4,7 +4,7 @@ date: 2026-03-28
 draft: false
 author: "marek-kowalczyk"
 description: "Wynajem busa 9-osobowego w Polsce – ceny na 2026, popularne modele, wypożyczalnie i wymagania dotyczące kierowcy."
-image: "/images/wynajem-busa-9-osobowy-hero.jpg"
+image: "/images/wynajem-busa-9-osobowy-hero.webp"
 image_alt: "Bus 9-osobowy zaparkowany przed hotelem"
 main_keyword: "wynajem busa 9-osobowego"
 volume: 1500
@@ -56,7 +56,7 @@ Na rynku wynajmu dominuje kilka modeli – od popularnych i ekonomicznych, po te
 
 **Toyota Proace Verso** – oparta na tej samej platformie co Vivaro. Wyróżnia się dostępnością wersji Long (5,3 m) z trzecim rzędem siedzeń i pojemnym bagażnikiem. Silnik 2.0 D-4D zapewnia spalanie na poziomie 7–9 l/100 km.
 
-![Wynajem busa 9-osobowego – oferty i ceny 2026](/images/wynajem-busa-9-osobowy-hero.jpg)
+![Wynajem busa 9-osobowego – oferty i ceny 2026](/images/wynajem-busa-9-osobowy-hero.webp)
 
 ## Ceny wynajmu busa 9-osobowego w 2026
 

@@ -6,7 +6,7 @@ description: "Opel Combo E jako dostawczy van N1 – ładowność do 1000 kg, pr
 draft: false
 author: "marek-kowalczyk"
 type: "page"
-image: "/images/opel-combo-dostawczy-hero.jpg"
+image: "/images/opel-combo-dostawczy-hero.webp"
 parent: "opel-combo"
 faq:
   - question: "Jaka jest ładowność Opla Combo dostawczego?"
@@ -88,7 +88,7 @@ Wśród istotnych opcji użytkowych znajdują się jedna lub dwoje drzwi przesuw
 
 Do typowych opcji roboczych należą też wykończenie przestrzeni ładunkowej, mocowania ładunku i wyposażenie dachu. Jeśli auto ma pracować jako nośnik drabin, rur lub długich profili, warto zwrócić uwagę na praktyczny limit długości ładunku po wykorzystaniu otworu w przegrodzie – w tej klasie zwykle około 3,0–3,4 m.
 
-![Opel Combo Van – przestrzeń ładunkowa z widokiem na tylne drzwi](/images/opel-combo-dostawczy-hero.jpg)
+![Opel Combo Van – przestrzeń ładunkowa z widokiem na tylne drzwi](/images/opel-combo-dostawczy-hero.webp)
 
 {{% info title="VAT i amortyzacja" icon="engineering" %}}
 W firmie trzeba rozróżnić dwa scenariusze odliczenia VAT. Przy użytkowaniu mieszanym standardem jest 50% VAT, natomiast 100% VAT przysługuje przy użytkowaniu wyłącznie firmowym po spełnieniu wymogów formalnych, w tym zgłoszeniu VAT-26 i prowadzeniu ewidencji przebiegu, chyba że pojazd spełnia warunki konstrukcyjne z art. 86a ustawy o VAT.

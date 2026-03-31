@@ -10,7 +10,7 @@ parent_model: "citroen-berlingo"
 type: "post"
 volume: 140
 main_keyword: "Citroën Berlingo spalanie"
-image: "/images/citroen-berlingo-spalanie-hero.jpg"
+image: "/images/citroen-berlingo-spalanie-hero.webp"
 image_alt: "Wskaźnik spalania w Citroënie Berlingo"
 lead: "Ile pali Berlingo? Zależy od silnika, rocznika i stylu jazdy. Poniżej zbiorcza tabela realnego spalania dla wszystkich jednostek napędowych – od diesla 1.6 HDI po elektryczne ë-Berlingo."
 faq:
@@ -73,7 +73,7 @@ Kilka praktycznych wskazówek:
 -   **Regularne przeglądy** – brudny filtr powietrza może zwiększyć spalanie o 5–10%, a zanieczyszczone wtryskiwacze nawet o 10–15%.
 -   **Tempomat** – na trasie pozwala utrzymać stałą prędkość i zmniejsza zużycie paliwa o 5–8%.
 
-![Wskaźnik spalania w Citroënie Berlingo](/images/citroen-berlingo-spalanie-hero.jpg)
+![Wskaźnik spalania w Citroënie Berlingo](/images/citroen-berlingo-spalanie-hero.webp)
 
 ## Koszty paliwa – Berlingo vs konkurencja {#koszty}
 

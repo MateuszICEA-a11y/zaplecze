@@ -3,7 +3,7 @@ title: "Bus przerobiony na kamper – projekty i inspiracje"
 date: 2026-03-23
 description: "Inspirujące projekty busów przerobionych na kampery – zdjęcia, opisy i koszty."
 draft: false
-image: "/images/bus-przerobiony-na-kamper-hero.jpg"
+image: "/images/bus-przerobiony-na-kamper-hero.webp"
 image_alt: "Bus przerobiony na kampera – gotowe wnętrze z łóżkiem i kuchnią"
 author: "anna-wozniak"
 h1: "Bus przerobiony na kamper – projekty, layout'y i realne koszty"
@@ -74,7 +74,7 @@ L3H2 (długość ładunkowa ok. 3,7 m) to złoty standard konwersji kamperowych.
 
 Tylna część – łóżko stałe 1400×1900 mm z garażem pod spodem (miejsce na 2 rowery złożone). Środek – łazienka po prawej stronie (WC kasetowe Thetford, prysznic z odpływem liniowym, wymiary 700×900 mm) i kuchnia naprzeciwko. Przód – dinette ze stołem składanym do ściany, szafki górne na całej długości.
 
-![Bus przerobiony na kamper – projekty](/images/bus-przerobiony-na-kamper-hero.jpg)
+![Bus przerobiony na kamper – projekty](/images/bus-przerobiony-na-kamper-hero.webp)
 
 ### Materiały wykończeniowe
 

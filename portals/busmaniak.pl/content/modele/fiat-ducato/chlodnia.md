@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Fiat Ducato chłodnia – przegląd zabudowy"
 parent: "fiat-ducato"
 type: "page"
-image: "/images/fiat-ducato-chlodnia-hero.jpg"
+image: "/images/fiat-ducato-chlodnia-hero.webp"
 image_alt: "Fiat Ducato z zabudową chłodniczą i agregatem na dachu"
 main_keyword: "Fiat Ducato chłodnia"
 lead: "Fiat Ducato chłodnia to popularna baza pod izotermę, chłodnię i mroźnię, ale realna ładowność zależy przede wszystkim od DMC, typu zabudowy i masy agregatu. W praktyce zabudowa izotermiczna z agregatem może zwiększyć masę auta orientacyjnie o 250–500 kg, dlatego przed zakupem trzeba sprawdzić konfigurację konkretnego egzemplarza."
@@ -99,7 +99,7 @@ Ceny trzeba rozbijać na elementy składowe, bo sama kwota końcowa niewiele mó
 
 Bez takiego podziału nie da się uczciwie porównać, czy dana oferta dotyczy prostej izotermy, pełnej chłodni czy mroźni.
 
-![Fiat Ducato chłodnia – zabudowa izotermiczna i chłodnicza](/images/fiat-ducato-chlodnia-hero.jpg)
+![Fiat Ducato chłodnia – zabudowa izotermiczna i chłodnicza](/images/fiat-ducato-chlodnia-hero.webp)
 
 ## Eksploatacja i serwis – o czym pamiętać?
 

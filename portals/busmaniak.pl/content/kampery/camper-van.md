@@ -5,7 +5,7 @@ description: "Camper van vs klasyczny kamper – różnice, popularne modele (VW
 draft: false
 author: "anna-wozniak"
 h1: "Camper van – różnice, modele i ceny w 2026 roku"
-image: "/images/najlepszy-bus-na-kampera-hero.jpg"
+image: "/images/najlepszy-bus-na-kampera-hero.webp"
 image_alt: "Camper van z rozłożonym dachem na kempingu"
 main_keyword: "camper van"
 lead: "Camper van to samochód kempingowy zbudowany na bazie busa bez zewnętrznej zabudowy – z wyglądu przypomina zwykłego vana, a w środku kryje łóżko, kuchenkę i miejsce do siedzenia. Od kilku lat camper vany stanowią ponad 50% nowych rejestracji kamperów w Europie, wyprzedzając tradycyjne alkowy i półintegrały."
@@ -95,7 +95,7 @@ Volkswagen California to prawdziwa ikona segmentu, produkowana nieprzerwanie od 
 
 Mercedes Marco Polo stawia na wyższy poziom wykończenia wnętrza, a w standardowej specyfikacji znajdziemy praktyczną kuchnię z lodówką kompresorową i dwupalnikową kuchenką gazową. Z kolei Ford Nugget czy Pössl Campster to często najkorzystniejsze cenowo opcje wśród fabrycznych kamperów z podnoszonym dachem.
 
-![Camper van z rozłożonym dachem na kempingu](/images/najlepszy-bus-na-kampera-hero.jpg)
+![Camper van z rozłożonym dachem na kempingu](/images/najlepszy-bus-na-kampera-hero.webp)
 
 ### Przeróbki DIY – popularne bazy
 

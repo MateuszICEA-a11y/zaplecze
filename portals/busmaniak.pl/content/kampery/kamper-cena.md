@@ -9,7 +9,7 @@ h1: "Ile kosztuje kamper? Ceny nowych i używanych w 2026"
 type: "page"
 volume: 1600
 main_keyword: "kamper cena"
-image: "/images/ranking-kamperow-hero.jpg"
+image: "/images/ranking-kamperow-hero.webp"
 image_alt: "Rząd kamperów na placu dealera – campervany, półintegry i alkowy z cenami na szybkach"
 lead: "Nowego kampera chińskiej marki można kupić od ok. 260 000 – 300 000 zł. Ceny europejskich producentów startują od 280 000 zł za popularną półintegrę. Na rynku wtórnym znajdziesz pojazdy już od 40 000 zł, ale to dopiero początek wydatków."
 faq:
@@ -88,7 +88,7 @@ Przy zakupie używanego kampera absolutnym priorytetem jest sprawdzenie szczelno
 
 ## Chińskie kampery – tania alternatywa? {#chinskie}
 
-![Kampery na placu dealera – porównanie cenowe](/images/ranking-kamperow-hero.jpg)
+![Kampery na placu dealera – porównanie cenowe](/images/ranking-kamperow-hero.webp)
 
 Od 2024 roku polski rynek zdobywają kampery chińskich marek, takich jak Deddle RV czy zabudowy na podwoziach Maxus. Ceny nowych modeli startują od około 260 000 – 300 000 zł, co czyni je nie tyle ultratanią, co raczej konkurencyjną cenowo i wyposażeniowo alternatywą dla europejskich marek budżetowych.
 

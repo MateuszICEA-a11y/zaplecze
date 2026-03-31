@@ -10,7 +10,7 @@ main_keyword: "Toyota Proace osobowy"
 parent: "toyota-proace"
 type: "page"
 volume: 390
-image: "/images/toyota-proace-osobowy-hero.jpg"
+image: "/images/toyota-proace-osobowy-hero.webp"
 faq:
   - question: "Ile miejsc ma Toyota Proace osobowy?"
     answer: "Toyota Proace Verso (wersja osobowa) oferuje konfiguracje 5-, 7-, 8- i 9-miejscowe w zależności od wariantu i wyposażenia."
@@ -75,7 +75,7 @@ Napęd w Proace Verso występował jako przedni. Przy porównaniu ofert warto ze
 
 Jeśli zależy Ci na technicznym tle, sama konstrukcja należy do rodziny średnich vanów opartych na platformie EMP2 dla pojazdów użytkowych. To tłumaczy bliskie pokrewieństwo z modelami Peugeot Traveller, Citroën SpaceTourer czy Opel Zafira Life.
 
-![Toyota Proace osobowy – Verso, miejsca, ceny](/images/toyota-proace-osobowy-hero.jpg)
+![Toyota Proace osobowy – Verso, miejsca, ceny](/images/toyota-proace-osobowy-hero.webp)
 
 ## Wymiary i bagażnik Proace Verso
 

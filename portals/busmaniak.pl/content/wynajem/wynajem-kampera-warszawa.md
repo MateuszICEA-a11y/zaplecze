@@ -4,7 +4,7 @@ date: 2026-03-28
 draft: false
 author: "marek-kowalczyk"
 description: "Wynajem kampera w Warszawie i okolicach – przegląd wypożyczalni, cennik na sezon 2026, typy dostępnych kamperów i praktyczne porady."
-image: "/images/wynajem-kampera-warszawa-hero.jpg"
+image: "/images/wynajem-kampera-warszawa-hero.webp"
 image_alt: "Kamper zaparkowany na tle panoramy Warszawy"
 main_keyword: "wynajem kampera warszawa"
 volume: 2000
@@ -64,7 +64,7 @@ Kluczowym elementem budżetu jest także kaucja zwrotna, blokowana na karcie lub
 
 Planując trasę, sprawdź warunki dotyczące limitu kilometrów. Chociaż niektóre sieci, jak McRent, oferują przejazdy bez limitu, standardem u większości firm przy najmie krótszym niż 14 dni jest limit dobowy (zazwyczaj 300–400 km). Przekroczenie go wiąże się z dopłatą w wysokości od 1,00 do 2,50 zł za każdy dodatkowy kilometr.
 
-![Wynajem kampera Warszawa – wypożyczalnie i ceny 2026](/images/wynajem-kampera-warszawa-hero.jpg)
+![Wynajem kampera Warszawa – wypożyczalnie i ceny 2026](/images/wynajem-kampera-warszawa-hero.webp)
 
 ## Jakie kampery dostępne w warszawskich wypożyczalniach
 

@@ -10,7 +10,7 @@ parent: "renault-master"
 type: "page"
 volume: 390
 main_keyword: "Renault Master blaszak"
-image: "/images/renault-master-blaszak-hero.jpg"
+image: "/images/renault-master-blaszak-hero.webp"
 image_alt: "Renault Master blaszak L3H2 – zamknięta przestrzeń ładunkowa"
 lead: "Renault Master blaszak to potoczne, powszechnie używane w ogłoszeniach i flotach określenie wersji furgon – zamkniętego, stalowego nadwozia bez bocznych okien. Poniżej wyjaśniamy, jakie warianty kryją się pod tym pojęciem, jakie mają wymiary i na co zwrócić uwagę przy zakupie."
 faq:
@@ -75,7 +75,7 @@ Tak samo wygląda kwestia oświetlenia. Typ źródła światła w ładowni zale�
 
 Drzwi boczne przesuwne to jedna z ważniejszych opcji użytkowych. W pracy kurierskiej albo serwisowej ułatwiają dostęp do ładunku bez otwierania tylnych skrzydeł i bez manewrowania w ciasnej przestrzeni.
 
-![Renault Master blaszak L3H2 – zamknięta przestrzeń ładunkowa](/images/renault-master-blaszak-hero.jpg)
+![Renault Master blaszak L3H2 – zamknięta przestrzeń ładunkowa](/images/renault-master-blaszak-hero.webp)
 
 ## Wyposażenie robocze – co warto zamówić lub dokupić
 

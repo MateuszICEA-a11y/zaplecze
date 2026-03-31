@@ -6,7 +6,7 @@ description: "Silnik 2.0 TDI w VW Crafter II – wersje 102, 122, 140 i 177 KM. 
 draft: false
 author: "marek-kowalczyk"
 type: "page"
-image: "/images/volkswagen-crafter-2-0-tdi-hero.jpg"
+image: "/images/volkswagen-crafter-2-0-tdi-hero.webp"
 parent: "volkswagen-crafter"
 faq:
   - question: "Ile pali VW Crafter 2.0 TDI 140 KM?"
@@ -91,7 +91,7 @@ Najczęstsze problemy nie dotyczą samego żeliwa i głowicy, lecz osprzętu emi
 
 Przy diagnostyce warto zwracać uwagę nie tylko na sam błąd w sterowniku, ale też na objawy towarzyszące – komunikaty o AdBlue, błędy NOx, częstotliwość regeneracji DPF i ewentualny przyrost poziomu oleju. W dostawczaku jeżdżącym głównie po mieście to często ważniejsze niż sam przebieg.
 
-![VW Crafter 2.0 TDI – komora silnika](/images/volkswagen-crafter-2-0-tdi-hero.jpg)
+![VW Crafter 2.0 TDI – komora silnika](/images/volkswagen-crafter-2-0-tdi-hero.webp)
 
 {{% info title="Serwis 2.0 TDI – co i kiedy" icon="engineering" %}}
 Volkswagen przewiduje wymianę oleju silnikowego w Crafterze nawet co 30 000 km lub 2 lata, ale przy intensywnej eksploatacji miejskiej rozsądniej skrócić interwał. Filtr paliwa warto wymieniać regularnie, a przy dużych przebiegach flotowych pilnować także stanu osprzętu DPF/SCR. Ponieważ w EA288 zastosowano pasek rozrządu, artykuł powinien uwzględniać kontrolę i wymianę zgodnie z dokumentacją dla konkretnego Craftera i rynku serwisowego.

@@ -8,7 +8,7 @@ h1: "Fiat Ducato spalanie – tabela per silnik"
 parent_model: "fiat-ducato"
 type: "post"
 volume: 170
-image: "/images/fiat-ducato-spalanie-hero.jpg"
+image: "/images/fiat-ducato-spalanie-hero.webp"
 image_alt: ""
 main_keyword: "Fiat Ducato Spalanie"
 lead: "Średnie spalanie Fiata Ducato w najpopularniejszych wersjach silnikowych 2.3 MultiJet mieści się w granicach 8–11 l/100 km, choć ostateczny wynik zależy od gabarytów nadwozia i aktualnego obciążenia. Poniższe zestawienie pomoże Ci sprawdzić realne zapotrzebowanie na paliwo dla konkretnych jednostek napędowych, od starszych konstrukcji po najnowsze silniki spełniające normy Euro 6."
@@ -57,7 +57,7 @@ Silnik 3.0 MultiJet (oznaczenie F1C) to legenda trwałości. W tabelach wypada n
 Dowiedz się więcej o tej jednostce: [Silnik 3.0 MultiJet](/modele/fiat-ducato/3-0-multijet/).
 
 
-![Fiat Ducato spalanie – zużycie paliwa per silnik i wersja](/images/fiat-ducato-spalanie-hero.jpg)
+![Fiat Ducato spalanie – zużycie paliwa per silnik i wersja](/images/fiat-ducato-spalanie-hero.webp)
 
 ## Silnik 2.3 MultiJet – złoty środek dla busiarza i kamperowicza
 

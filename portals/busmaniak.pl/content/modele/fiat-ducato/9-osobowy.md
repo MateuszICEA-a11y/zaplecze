@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Fiat Ducato 9-osobowy – kompletny przewodnik"
 parent: "fiat-ducato"
 type: "page"
-image: "/images/fiat-ducato-9-osobowy-hero.jpg"
+image: "/images/fiat-ducato-9-osobowy-hero.webp"
 image_alt: "Fiat Ducato 9-osobowy Panorama – widok z boku z otwartymi drzwiami"
 main_keyword: "Fiat Ducato 9 osobowy"
 lead: "Fiat Ducato 9 osobowy można prowadzić na prawo jazdy kategorii B tylko wtedy, gdy konkretny egzemplarz ma DMC do 3,5 t i maksymalnie 9 miejsc łącznie z kierowcą. Wersje o DMC powyżej 3,5 t wymagają wyższej kategorii prawa jazdy, a przy pełnym składzie pasażerów i bagażu zapas ładowności szybko się kurczy."
@@ -79,7 +79,7 @@ Jeśli chodzi o przeniesienie napędu, standardem w Ducato jest **napęd na prze
 
 Dla busa wożącego komplet pasażerów najważniejsze jest nie tylko przyspieszenie na pusto, ale elastyczność pod obciążeniem. Dlatego przy ocenie konkretnego auta warto patrzeć równocześnie na moc, rocznik, długość nadwozia i DMC.
 
-![Fiat Ducato 9-osobowy – wersja pasażerska, prawo jazdy, ceny](/images/fiat-ducato-9-osobowy-hero.jpg)
+![Fiat Ducato 9-osobowy – wersja pasażerska, prawo jazdy, ceny](/images/fiat-ducato-9-osobowy-hero.webp)
 
 ## Komfort podróży i wyposażenie
 

@@ -10,7 +10,7 @@ parent: ""
 type: "page"
 volume: 40500
 main_keyword: "Mercedes Sprinter dane techniczne"
-image: "/images/mercedes-sprinter-hero.jpg"
+image: "/images/mercedes-sprinter-hero.webp"
 image_alt: "Mercedes Sprinter III furgon"
 lead: "Mercedes Sprinter to najlepiej sprzedający się bus powyżej 3,5 tony w Europie i synonim niezawodności w transporcie. Trzecia generacja (W907/W910, od 2018) to rewolucja: po raz pierwszy Sprinter dostał napęd na przednią oś, a kabinę wyposażono w system MBUX. Znajdziesz tu pełne dane techniczne, wymiary wszystkich wersji, charakterystykę silników OM654 i OM651 oraz listę najczęstszych usterek."
 faq:
@@ -116,7 +116,7 @@ Wybierając między OM654 a OM651 w używanym Sprinterze III, zwróć uwagę na 
 
 
 
-![Mercedes Sprinter III furgon](/images/mercedes-sprinter-hero.jpg)
+![Mercedes Sprinter III furgon](/images/mercedes-sprinter-hero.webp)
 
 ## Wersje nadwoziowe Mercedesa Sprinter {#wersje-nadwoziowe}
 

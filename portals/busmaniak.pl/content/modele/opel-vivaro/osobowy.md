@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 type: "page"
 main_keyword: "Opel Vivaro osobowy"
-image: "/images/opel-vivaro-osobowy-hero.jpg"
+image: "/images/opel-vivaro-osobowy-hero.webp"
 image_alt: "Opel Vivaro osobowy – Combi i Life w zestawieniu"
 parent: "opel-vivaro"
 lead: "Opel Vivaro osobowy to temat, który trzeba rozdzielić na generacje i nazewnictwo. W starszych odsłonach mówimy o Vivaro A i B spokrewnionych z Renault Trafic, a od 2019 roku Vivaro C jest już konstrukcją na platformie EMP2, natomiast osobowy van Opla nosi nazwę Zafira Life."
@@ -83,7 +83,7 @@ Wymiary i parametry typowe dla osobowych odmian EMP2:
 
 W kwestii bagażnika warto trzymać się danych z podaną metodą pomiaru. W osobowych vanach klasy EMP2 wersje M i L oferują około 989–1500 l według VDA za 3. rzędem, a po złożeniu lub demontażu siedzeń przestrzeń rośnie do kilku tysięcy litrów.
 
-![Opel Vivaro osobowy – Combi i Life w zestawieniu](/images/opel-vivaro-osobowy-hero.jpg)
+![Opel Vivaro osobowy – Combi i Life w zestawieniu](/images/opel-vivaro-osobowy-hero.webp)
 
 ## Silniki w Vivaro Life
 

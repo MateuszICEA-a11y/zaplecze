@@ -5,7 +5,7 @@ description: "Volkswagen California – szczegółowy opis wersji Beach, Coast, 
 draft: false
 author: "anna-wozniak"
 h1: "VW California – fabryczny camper van Volkswagena"
-image: "/images/volkswagen-california-hero.jpg"
+image: "/images/volkswagen-california-hero.webp"
 image_alt: "Volkswagen California Ocean z podnoszonym dachem"
 main_keyword: "volkswagen california"
 lead: "Volkswagen California to najsłynniejszy camper van świata – produkowany od 1988 roku fabryczny pojazd kempingowy na bazie VW Multivana. Aktualna generacja T7 (od 2025) oferuje wersje Beach, Coast i Ocean w cenach 320–480 tys. zł. California łączy kompaktowe wymiary (5,17 m) z pełnym wyposażeniem kempingowym dla 4 osób."
@@ -83,7 +83,7 @@ Nowa California T7 jest zauważalnie dłuższa od poprzedniczki T6.1, co przekł
 
 DMC wynoszące 3080–3200 kg oznacza, że California mieści się komfortowo w limicie prawa jazdy kategorii B (do 3500 kg). Przy czterech pasażerach i bagażach zapas masy wynosi 200–400 kg – wystarczająco na standardowe wyposażenie kempingowe.
 
-![Volkswagen California Ocean z podnoszonym dachem](/images/volkswagen-california-hero.jpg)
+![Volkswagen California Ocean z podnoszonym dachem](/images/volkswagen-california-hero.webp)
 
 ## Silniki i napęd
 

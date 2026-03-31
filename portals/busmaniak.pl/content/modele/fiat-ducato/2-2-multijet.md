@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Fiat Ducato 2.2 MultiJet – dane techniczne i opinie"
 parent: "fiat-ducato"
 type: "engine"
-image: "/images/fiat-ducato-2-2-multijet-hero.jpg"
+image: "/images/fiat-ducato-2-2-multijet-hero.webp"
 image_alt: "Fiat Ducato z silnikiem 2.2 MultiJet – widok z przodu na tle hali serwisowej"
 main_keyword: "Fiat Ducato 2.2 MultiJet"
 lead: "Fiat Ducato z silnikiem 2.2 MultiJet to w praktyce dwie różne konstrukcje: starsza jednostka 2.2 pochodzenia Ford/PSA stosowana w Ducato X250 w kilku wariantach mocy, w tym 100 KM, oraz nowoczesny motor 2.2 MultiJet3 stosowany od 2021 roku. Wybór konkretnego rocznika determinuje nie tylko dynamikę jazdy, ale przede wszystkim osprzęt emisyjny, sposób serwisowania i koszty eksploatacji."
@@ -81,7 +81,7 @@ W starszym 2.2 z lat 2006–2011 dodatkowym ograniczeniem jest 5-biegowa skrzyni
 
 W nowszym 2.2 MultiJet3 różnice między wersjami mocy bywają mniej istotne niż sama konfiguracja auta. Wskazania komputera pokładowego również mogą odbiegać od realnych wyników liczonych od tankowania do tankowania, dlatego warto porównywać pomiary z kilku pełnych zbiorników.
 
-![Fiat Ducato 2.2 MultiJet – dane techniczne, spalanie, opinie](/images/fiat-ducato-2-2-multijet-hero.jpg)
+![Fiat Ducato 2.2 MultiJet – dane techniczne, spalanie, opinie](/images/fiat-ducato-2-2-multijet-hero.webp)
 
 ## Typowe usterki i opinie użytkowników
 

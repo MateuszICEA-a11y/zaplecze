@@ -10,7 +10,7 @@ main_keyword: "Toyota Proace City Long"
 parent: "toyota-proace-city"
 type: "page"
 volume: 1000
-image: "/images/toyota-proace-city-long-hero.jpg"
+image: "/images/toyota-proace-city-long-hero.webp"
 faq:
   - question: "Ile wynosi długość Toyota Proace City Long?"
     answer: "Toyota Proace City Long ma 4753 mm długości całkowitej i przestrzeń ładunkową o objętości 3,9 m³."
@@ -88,7 +88,7 @@ Różnica w długości wynosi 350 mm. W praktyce Long daje wyraźnie więcej uż
 
 Warto też pamiętać, że długość 4753 mm i rozstaw osi 2975 mm są wspólne dla całej bliźniaczej rodziny – dotyczy to także modeli Citroen Berlingo Van XL, Peugeot Partner Long i Opel Combo Cargo XL. To dobry punkt odniesienia, gdy porównujesz oferty z rynku wtórnego.
 
-{{< figure src="/images/toyota-proace-city-long-hero.jpg" alt="Toyota Proace City Long – widok z tyłu przy otwartych drzwiach" caption="Toyota Proace City Long – wydłużona wersja małego vana z ładownią 3,9 m³" >}}
+{{< figure src="/images/toyota-proace-city-long-hero.webp" alt="Toyota Proace City Long – widok z tyłu przy otwartych drzwiach" caption="Toyota Proace City Long – wydłużona wersja małego vana z ładownią 3,9 m³" >}}
 
 ## Kiedy wybrać Long, a kiedy Short?
 

@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 type: "page"
 main_keyword: "Opel Vivaro wymiary"
-image: "/images/opel-vivaro-wymiary-hero.jpg"
+image: "/images/opel-vivaro-wymiary-hero.webp"
 image_alt: "Opel Vivaro wymiary – rzut z boku i z góry"
 parent: "opel-vivaro"
 lead: "Opel Vivaro wymiary w generacji Vivaro C na rynku europejskim po debiucie w 2019 r. obejmują dwie długości nadwozia: Standard 4960 mm i Long 5310 mm. Przestrzeń ładunkowa ma odpowiednio 5,3 m³ i 6,6 m³, a fabrycznie oferowane vany L1/L2 nie występują jako klasyczny furgon H2."
@@ -72,7 +72,7 @@ Przy ocenie auta dostawczego same liczby z ładowni nie wystarczą. Liczy się t
 
 W zależności od konfiguracji Vivaro C może mieć jedne lub dwoje drzwi przesuwnych po bokach. Z tyłu stosowane są drzwi 50/50, w wielu wersjach otwierane standardowo do 180°, a na wybranych rynkach i w niektórych odmianach spotyka się także klapę tylną.
 
-![Opel Vivaro wymiary – rzut z boku i z góry](/images/opel-vivaro-wymiary-hero.jpg)
+![Opel Vivaro wymiary – rzut z boku i z góry](/images/opel-vivaro-wymiary-hero.webp)
 
 ## Masa i ładowność
 

@@ -10,7 +10,7 @@ parent: "volkswagen-caddy"
 type: "page"
 volume: 590
 main_keyword: "Volkswagen Caddy Long"
-image: "/images/volkswagen-caddy-long-hero.jpg"
+image: "/images/volkswagen-caddy-long-hero.webp"
 image_alt: "Volkswagen Caddy Long V generacji"
 lead: "Volkswagen Caddy Long to określenie wydłużonej wersji Caddy V generacji, stosowane opisowo od 2020 roku. W III generacji oraz w poliftingowej odmianie sprzed V generacji wydłużona wersja nosiła nazwę Caddy Maxi, ale między generacjami różnią się platforma, wymiary szczegółowe, wyposażenie i oferta silników."
 faq:
@@ -67,7 +67,7 @@ Przy pełnym obciążeniu, zwłaszcza w aucie 7-osobowym, 102 KM to rozsądne mi
 
 Na rynku wtórnym szczególną uwagę warto zwrócić na konfigurację silnika i skrzyni. Używane egzemplarze z lat 2020/2021 mogą wyraźnie różnić się wyposażeniem między wersjami Caddy, Life, Style, Cargo i California, dlatego sama nazwa modelu nie mówi jeszcze wszystkiego o specyfikacji auta.
 
-![Volkswagen Caddy Long V generacji](/images/volkswagen-caddy-long-hero.jpg)
+![Volkswagen Caddy Long V generacji](/images/volkswagen-caddy-long-hero.webp)
 
 ## Zastosowania {#zastosowania}
 

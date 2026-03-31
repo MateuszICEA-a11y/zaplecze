@@ -10,7 +10,7 @@ parent: "renault-master"
 type: "page"
 volume: 1000
 main_keyword: "Renault Master plandeka"
-image: "/images/renault-master-plandeka-hero.jpg"
+image: "/images/renault-master-plandeka-hero.webp"
 image_alt: "Renault Master plandeka L3 – skrzynia z pałąkami i plandeką"
 lead: "Renault Master plandeka to wersja skrzyniowa z pałąkami i płachtą zasłaniającą ładunek, stosowana głównie w transporcie towarów ponadgabarytowych, elementów budowlanych i dostawach regionalnych wymagających dostępu do ładunku z boków. W praktyce ładowność po zabudowie zależy od wersji podwozia, DMC i masy samej skrzyni z plandeką. W artykule odnosimy się przede wszystkim do Renault Master III produkowanego od 2010 r., z uwzględnieniem tego, że gama silników, skrzyń biegów, DMC i wyposażenia różni się zależnie od rocznika i faceliftingów z 2014 i 2019 r.; Master IV zadebiutował w 2024 r."
 faq:
@@ -85,7 +85,7 @@ Przy typowej skrzyni o wymiarach ok. 3600 × 2000 mm można zwykle zmieścić 6 
 
 Standardowy dostęp po złożeniu burty bocznej ułatwia pracę wózkiem widłowym, ale legalny załadunek wyznacza nie tylko sama przestrzeń, lecz także naciski osi. W aucie o DMC 3500 kg trzeba sprawdzać masę własną po zabudowie z kierowcą i paliwem według homologacji oraz dopuszczalne naciski osi – typowo rzędu ok. 1850–2100 kg z przodu i 2000–2400 kg z tyłu zależnie od wersji.
 
-![Renault Master plandeka L3 – skrzynia z pałąkami i plandeką](/images/renault-master-plandeka-hero.jpg)
+![Renault Master plandeka L3 – skrzynia z pałąkami i plandeką](/images/renault-master-plandeka-hero.webp)
 
 ## Silniki w Masterze plandekowym
 

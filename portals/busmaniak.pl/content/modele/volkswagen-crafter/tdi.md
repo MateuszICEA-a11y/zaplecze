@@ -9,7 +9,7 @@ parent: "volkswagen-crafter"
 type: "page"
 volume: 720
 main_keyword: "volkswagen crafter tdi"
-image: "/images/volkswagen-crafter-hero.jpg"
+image: "/images/volkswagen-crafter-hero.webp"
 image_alt: "Volkswagen Crafter II furgon"
 lead: "Crafter II (od 2017) napędza wyłącznie czterocylindrowy 2.0 TDI w trzech wariantach mocy: 102, 140 i 177 KM. To pierwszy Crafter z własnym silnikiem VW – poprzednik korzystał z jednostek Mercedesa. Oto wszystko o danych technicznych, spalaniu i typowych usterkach."
 faq:

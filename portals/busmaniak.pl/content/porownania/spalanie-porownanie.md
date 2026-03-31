@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Spalanie busów i vanów – porównanie zużycia paliwa"
 type: "page"
-image: "/images/spalanie-porownanie-hero.jpg"
+image: "/images/spalanie-porownanie-hero.webp"
 image_alt: "Spalanie busów i vanów – porównanie zużycia paliwa najpopularniejszych modeli"
 main_keyword: "spalanie busów"
 volume: 480
@@ -64,7 +64,7 @@ Każde 100 kg ładunku zwiększa spalanie dużego busa o ok. 0,3–0,5 l/100 km.
 
 Platformy bliźniacze dają zbliżone wyniki – Opel Vivaro, Peugeot Expert, Citroën Jumpy i Toyota ProAce dzielą tę samą jednostkę napędową Stellantis 2.0 BlueHDi i mają praktycznie identyczne spalanie. Renault Trafic z silnikiem 2.0 dCi 130 KM regularnie wygrywa testy spalania w tym segmencie.
 
-![Spalanie busów i vanów – porównanie zużycia paliwa](/images/spalanie-porownanie-hero.jpg)
+![Spalanie busów i vanów – porównanie zużycia paliwa](/images/spalanie-porownanie-hero.webp)
 
 ## Spalanie małych vanów miejskich
 

@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Fiat Ducato 2.8 JTD – dane techniczne i opinie"
 parent: "fiat-ducato"
 type: "engine"
-image: "/images/fiat-ducato-2-8-jtd-hero.jpg"
+image: "/images/fiat-ducato-2-8-jtd-hero.webp"
 image_alt: "Fiat Ducato II z silnikiem 2.8 JTD – widok z przodu"
 main_keyword: "Fiat Ducato 2.8 JTD"
 lead: "Silnik 2.8 JTD produkowany przez Sofim to jedna z najbardziej cenionych jednostek w historii Fiata Ducato. W opiniach użytkowników i mechaników uchodzi za trwały oraz stosunkowo prosty w eksploatacji, a brak DPF i AdBlue ogranicza liczbę kosztownych problemów osprzętu typowych dla nowszych diesli."
@@ -100,7 +100,7 @@ W praktyce oznacza to, że porównując oferty, trzeba patrzeć nie tylko na sam
 
 Nowszy [2.3 MultiJet](/modele/fiat-ducato/2-3-multijet/) zwykle oferuje niższe spalanie, ale 2.8 JTD pozostaje ciekawą propozycją dla osób, które wolą starszy, prostszy układ napędowy.
 
-![Fiat Ducato 2.8 JTD – dane techniczne, spalanie, opinie](/images/fiat-ducato-2-8-jtd-hero.jpg)
+![Fiat Ducato 2.8 JTD – dane techniczne, spalanie, opinie](/images/fiat-ducato-2-8-jtd-hero.webp)
 
 ## Opinie użytkowników i typowe usterki
 

@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Opel Movano – kompletny przewodnik po modelu"
 type: "page"
-image: "/images/opel-movano-hero.jpg"
+image: "/images/opel-movano-hero.webp"
 image_alt: "Opel Movano C furgon L3H2 na parkingu"
 main_keyword: "opel movano"
 volume: 9900

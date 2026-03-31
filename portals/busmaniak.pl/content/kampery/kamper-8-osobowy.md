@@ -5,7 +5,7 @@ description: "Kamper 8-osobowy – duże alkowy i busowe przeróbki dla dużych 
 draft: false
 author: "anna-wozniak"
 h1: "Kamper 8-osobowy – modele dla dużych rodzin i grup"
-image: "/images/ranking-kamperow-hero.jpg"
+image: "/images/ranking-kamperow-hero.webp"
 image_alt: "Duży kamper 8-osobowy typu alkowa na kempingu"
 main_keyword: "kamper 8-osobowy"
 lead: "Kamper 8-osobowy to pojazd dla dużych rodzin i grup podróżnych, który łączy funkcję transportu z noclegiem na pokładzie. Modele z homologacją na 8 osób to głównie duże alkowy na ciężarowych podwoziach lub specjalistyczne zabudowy kontenerowe. Ich DMC powyżej 3500 kg oznacza konieczność posiadania prawa jazdy C1."
@@ -63,7 +63,7 @@ Na rynku europejskim najwyższa liczba homologowanych miejsc w pojazdach seryjny
 
 Większość modeli opiera się na [Fiacie Ducato](/modele/fiat-ducato/) w wersji Maxi z silnikiem 2.2 MultiJet o mocy 160–180 KM. Przy masie pojazdu rzędu 4–5 ton jednostki te pracują pod dużym obciążeniem – na alpejskich podjazdach prędkość potrafi spaść do 40–60 km/h.
 
-![Duży kamper 8-osobowy typu alkowa](/images/ranking-kamperow-hero.jpg)
+![Duży kamper 8-osobowy typu alkowa](/images/ranking-kamperow-hero.webp)
 
 ### Przeróbki busowe – alternatywa dla alków
 

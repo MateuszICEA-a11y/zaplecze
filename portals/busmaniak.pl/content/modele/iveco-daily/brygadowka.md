@@ -10,7 +10,7 @@ parent: "iveco-daily"
 type: "page"
 volume: 320
 main_keyword: "Iveco Daily brygadówka"
-image: "/images/iveco-daily-brygadowka-hero.jpg"
+image: "/images/iveco-daily-brygadowka-hero.webp"
 faq:
   - question: "Ile miejsc ma Iveco Daily brygadówka?"
     answer: "W zależności od wersji i homologacji Iveco Daily brygadówka ma zwykle 5, 6 albo 7 miejsc łącznie z kierowcą. Kluczowe jest to, co wpisano w dokumentach pojazdu po zabudowie lub w wersji fabrycznej."
@@ -66,7 +66,7 @@ W praktyce dla aut powyżej 3,5 t dochodzą też obowiązki eksploatacyjne i pra
 - Leśnictwo i usługi komunalne – transport pracowników i ładunku
 {{% /info %}}
 
-![Iveco Daily brygadówka – kabina pasażerska z przegrodą i przestrzeń ładunkowa](/images/iveco-daily-brygadowka-hero.jpg)
+![Iveco Daily brygadówka – kabina pasażerska z przegrodą i przestrzeń ładunkowa](/images/iveco-daily-brygadowka-hero.webp)
 
 ## Silnik – 2.3 MultiJet wystarczy
 

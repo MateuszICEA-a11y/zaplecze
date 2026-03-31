@@ -9,7 +9,7 @@ parent: "fiat-scudo"
 type: "page"
 volume: 880
 main_keyword: "fiat scudo osobowy"
-image: "/images/fiat-scudo-hero.jpg"
+image: "/images/fiat-scudo-hero.webp"
 image_alt: "Fiat Scudo Panorama w wersji osobowej"
 lead: "Fiat Scudo osobowy (Panorama) to przeszklona wersja pasażerska średniego vana – zależnie od generacji i konfiguracji oferowana zwykle jako 5-, 8- lub 9-miejscowa. Scudo II produkowano w latach 2007–2016 i technicznie było spokrewnione z Peugeotem Expert oraz Citroënem Jumpy w odmianach osobowych. Scudo III (od 2022) bazuje na platformie EMP2 i występuje także jako elektryczne E-Scudo."
 faq:

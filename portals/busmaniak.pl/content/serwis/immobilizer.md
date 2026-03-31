@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Immobilizer w busie – gdy kluczyk nie chce współpracować"
 type: "post"
 volume: 9900
-image: "/images/immobilizer-hero.jpg"
+image: "/images/immobilizer-hero.webp"
 image_alt: "Kluczyk z transponderem immobilizera do busa"
 main_keyword: "immobilizer"
 lead: "Rozrusznik kręci, silnik nie odpala, a na desce miga kontrolka kluczyka – to klasyczny obraz awarii immobilizera, który potrafi unieruchomić busa skuteczniej niż brak paliwa. System zabezpieczenia przed kradzieżą działa na zasadzie wymiany kodów między transponderem w kluczyku a sterownikiem silnika, a każde ogniwo tego łańcucha może odmówić współpracy. W busach dostawczych problem dotyka najczęściej właścicieli starszych egzemplarzy z przebiegami powyżej 200 tys. km."
@@ -73,7 +73,7 @@ W Mercedesach Sprinterach W906 częstą przyczyną braku reakcji na kluczyk jest
 
 ### Uszkodzony transponder w kluczyku
 
-![Immobilizer w busie – awaria, objawy, programowanie kluczyka](/images/immobilizer-hero.jpg)
+![Immobilizer w busie – awaria, objawy, programowanie kluczyka](/images/immobilizer-hero.webp)
 
 Transponder to chip o rozmiarze ziarna ryżu, zamknięty w szklanej ampułce wewnątrz główki klucza. Uszkodzenie mechaniczne (upadek kluczyka, zalanie wodą) lub naturalne starzenie mogą spowodować jego awarię. W starszych busach (Ducato 244, Sprinter W903) transpondery po 15–20 latach eksploatacji tracą zdolność do prawidłowej komunikacji.
 

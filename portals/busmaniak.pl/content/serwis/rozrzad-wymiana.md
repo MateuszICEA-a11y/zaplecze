@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Wymiana rozrządu w busie – kiedy, ile kosztuje i na co uważać"
 type: "post"
 volume: 4000
-image: "/images/rozrzad-wymiana-hero.jpg"
+image: "/images/rozrzad-wymiana-hero.webp"
 image_alt: "Wymiana paska rozrządu w busie dostawczym – widok na silnik"
 main_keyword: "wymiana rozrządu"
 lead: "Rozrząd to jeden z najważniejszych układów w silniku busa – synchronizuje pracę wału korbowego z wałkiem rozrządu i decyduje o tym, czy zawory otwierają się we właściwym momencie. Zerwanie paska rozrządu w Fiacie Ducato 2.3 kończy się pogięciem zaworów i rachunkiem za 8000–15 000 zł. Tymczasem planowa wymiana razem z napinaczem, rolkami i pompą wody kosztuje 1500–3500 zł. To jeden z tych serwisów, na którym nie warto oszczędzać."
@@ -67,7 +67,7 @@ Ford Transit 2.0 EcoBlue wykorzystuje tzw. mokry pasek rozrządu, pracujący w k
 
 Napęd rozrządu rzadko ulega awarii bez ostrzeżenia. W większości przypadków silnik sygnalizuje problem na tygodnie lub miesiące przed katastrofą – trzeba tylko wiedzieć, czego słuchać.
 
-![Wymiana rozrządu w busie – pasek z napinaczem i rolkami](/images/rozrzad-wymiana-hero.jpg)
+![Wymiana rozrządu w busie – pasek z napinaczem i rolkami](/images/rozrzad-wymiana-hero.webp)
 
 Objawy zużytego paska rozrządu:
 

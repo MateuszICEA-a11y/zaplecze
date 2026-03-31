@@ -5,7 +5,7 @@ description: "Kamper 5-osobowy – najlepsze modele alkowy i półintegry z homo
 draft: false
 author: "anna-wozniak"
 h1: "Kamper 5-osobowy – modele dla rodzin z dziećmi"
-image: "/images/ranking-kamperow-hero.jpg"
+image: "/images/ranking-kamperow-hero.webp"
 image_alt: "Kamper 5-osobowy typu alkowa na kempingu"
 main_keyword: "kamper 5-osobowy"
 lead: "Kamper 5-osobowy to optymalny wybór dla rodziny z dwójką lub trójką dzieci – oferuje więcej przestrzeni niż camper van, a jednocześnie mieści się w kategorii prawa jazdy B. Modele alkowy i półintegry z homologacją na 5 osób kosztują od 150 tys. zł na rynku wtórnym do ponad 600 tys. zł za nowe pojazdy."
@@ -70,7 +70,7 @@ Większość **5-osobowych kamperów** ma dopuszczalną masę całkowitą (DMC) 
 
 Przekroczenie DMC to nie tylko formalność. Podczas kontroli drogowej, np. w Austrii, mandaty od ASFINAG sięgają od kilkudziesięciu do nawet 5000 euro. Co gorsza, funkcjonariusze nakażą rozładowanie nadmiaru bagażu na miejscu, a w razie wypadku ubezpieczyciel może odmówić wypłaty odszkodowania z AC/OC, powołując się na użytkowanie pojazdu niezgodnie z homologacją.
 
-![Kamper 5-osobowy typu alkowa na kempingu](/images/ranking-kamperow-hero.jpg)
+![Kamper 5-osobowy typu alkowa na kempingu](/images/ranking-kamperow-hero.webp)
 
 ## Układy łóżek w kamperach 5-osobowych
 

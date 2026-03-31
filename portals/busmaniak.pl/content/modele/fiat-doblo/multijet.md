@@ -9,7 +9,7 @@ type: "page"
 volume: 720
 main_keyword: "Fiat Doblò MultiJet"
 parent: "fiat-doblo"
-image: "/images/fiat-doblo-multijet-hero.jpg"
+image: "/images/fiat-doblo-multijet-hero.webp"
 faq:
   - question: "Który silnik MultiJet jest najtrwalszy w Doblò?"
     answer: "Nie ma jednej bezwarunkowo najlepszej jednostki. 1.3 MultiJet jest prostszy i zwykle tańszy w serwisie, 1.6 MultiJet lepiej znosi pracę w trasie i pod obciążeniem, a 2.0 MultiJet ma najwięcej sensu w ciężej pracujących wersjach Cargo Maxi. Trwałość w praktyce zależy głównie od obsługi, doboru wersji do pracy auta i stanu osprzętu."
@@ -87,7 +87,7 @@ Trzeba też rozdzielić parametry silnika od parametrów nadwozia. Ładowność 
 
 Spalanie w praktyce zwykle wynosi około 6,5–9,0 l/100 km zależnie od masy, nadwozia i stylu jazdy.
 
-![Fiat Doblò – silnik MultiJet w komorze silnikowej](/images/fiat-doblo-multijet-hero.jpg)
+![Fiat Doblò – silnik MultiJet w komorze silnikowej](/images/fiat-doblo-multijet-hero.webp)
 
 ## Typowe usterki silników MultiJet w Doblò
 

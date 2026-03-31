@@ -10,7 +10,7 @@ parent_model: "renault-trafic"
 type: "post"
 volume: 320
 main_keyword: "Renault Trafic spalanie"
-image: "/images/renault-trafic-spalanie-hero.jpg"
+image: "/images/renault-trafic-spalanie-hero.webp"
 image_alt: "Renault Trafic na stacji paliw"
 lead: "Renault Trafic pali realnie od 6,5 do ponad 11 litrów na 100 km – w zależności od generacji, silnika i warunków pracy. Dane producenta to jedno, a codzienna eksploatacja to drugie."
 faq:
@@ -74,7 +74,7 @@ Raportowane zużycie paliwa to wypadkowa kilku kluczowych czynników. Różnica 
 
 **Opony i skrzynia biegów** – ogumienie typu cargo o twardym bieżniku zużywa mniej paliwa niż opony komfortowe (różnica do 0,3 l/100 km). Automatyczna skrzynia EDC w mieście spali 0,3–0,5 l więcej niż manual, natomiast na trasie wartości te się wyrównują.
 
-![Renault Trafic na stacji paliw](/images/renault-trafic-spalanie-hero.jpg)
+![Renault Trafic na stacji paliw](/images/renault-trafic-spalanie-hero.webp)
 
 {{% expert name="Marek Kowalczyk" %}}
 Najczęstszy błąd, który widzę u klientów flot, to porównywanie spalania między pojazdami bez uwzględnienia wersji H1/H2 i stylu eksploatacji. Kierowca jeżdżący głównie po mieście z klimatyzacją i pełnym załadunkiem nigdy nie osiągnie wyników trasowych. Zamiast gonić "normę", warto ustalić realny punkt odniesienia dla konkretnej trasy i ładunku – i na tej podstawie wykrywać anomalie sygnalizujące problemy mechaniczne.

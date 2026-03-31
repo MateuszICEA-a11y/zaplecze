@@ -9,7 +9,7 @@ parent: "opel-vivaro"
 type: "page"
 volume: 110
 main_keyword: "opel vivaro 2.5 cdti"
-image: "/images/opel-vivaro-2-5-cdti-hero.jpg"
+image: "/images/opel-vivaro-2-5-cdti-hero.webp"
 image_alt: "Opel Vivaro 2.5 CDTi furgon"
 lead: "Silnik 2.5 CDTi (Renault G9U) to najmocniejsza jednostka napędowa w Vivaro A – 135 lub 146 KM i 310–320 Nm momentu. Radzi sobie z pełnym obciążeniem i przyczepą, ale wymaga regularnego serwisu. Na rynku wtórnym warto sprawdzić stan uszczelki pod głowicą, turbosprężarki oraz historię wymian rozrządu."
 faq:

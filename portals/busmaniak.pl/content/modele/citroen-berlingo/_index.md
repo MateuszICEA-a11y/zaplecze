@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Citroën Berlingo – kompletny przewodnik po modelu"
 type: "page"
 main_keyword: "Citroën Berlingo"
-image: "/images/citroen-berlingo-hero.jpg"
+image: "/images/citroen-berlingo-hero.webp"
 image_alt: "Citroën Berlingo III na drodze"
 lead: "Citroën Berlingo to jeden z najpopularniejszych kombivanów w Europie, produkowany od 1996 roku. Z fabryki w Vigo zjechało ponad 15 milionów Berlingo i bliźniaczych Partnerów. Model sprawdza się jako auto rodzinne, dostawcze i serwisowe."
 faq:
@@ -72,7 +72,7 @@ Berlingo oferuje szeroką gamę napędów – od oszczędnego 1.5 BlueHDI 75 KM 
 | 1.2 PureTech | III | 130 KM | 230 Nm | 6,8 l/100 km | Euro 6d |
 | ë-Berlingo | III | 136 KM | 260 Nm | 20 kWh/100 km | – |
 
-![Citroën Berlingo III na drodze](/images/citroen-berlingo-hero.jpg)
+![Citroën Berlingo III na drodze](/images/citroen-berlingo-hero.webp)
 
 ## Wersje nadwoziowe Citroëna Berlingo {#wersje-nadwozia}
 

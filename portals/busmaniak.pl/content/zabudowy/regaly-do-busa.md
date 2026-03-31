@@ -9,7 +9,7 @@ h1: "Regały do busa – systemy zabudowy modułowej"
 type: "page"
 volume: 590
 main_keyword: "regał do busa"
-image: "/images/regaly-do-busa-hero.jpg"
+image: "/images/regaly-do-busa-hero.webp"
 image_alt: "Modułowe regały aluminiowe zamontowane w busie dostawczym"
 lead: "Regały do busa to fundament każdej zabudowy narzędziowej i serwisowej. Dobrze dobrany system modułowy porządkuje przestrzeń ładunkową, zabezpiecza ładunek podczas jazdy i przyspiesza codzienną pracę. Na rynku dostępne są rozwiązania od aluminiowych systemów premium po drewniane regały DIY – każde z własnymi zaletami."
 faq:
@@ -98,7 +98,7 @@ W Berlingo, Kangoo czy Caddy przestrzeń jest ograniczona. Regał montuje się z
 | VW Transporter T6    | 140 cm        | 2–3           | Aluminium            |
 | Citroën Berlingo XL  | 125 cm        | 1–2           | Aluminium            |
 
-![Modułowe regały aluminiowe zamontowane w busie dostawczym](/images/regaly-do-busa-hero.jpg)
+![Modułowe regały aluminiowe zamontowane w busie dostawczym](/images/regaly-do-busa-hero.webp)
 
 ## Montaż regałów – na co zwrócić uwagę {#montaz}
 

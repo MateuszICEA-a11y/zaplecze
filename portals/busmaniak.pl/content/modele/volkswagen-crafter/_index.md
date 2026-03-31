@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Volkswagen Crafter – kompletny przewodnik po modelu"
 type: "page"
-image: "/images/volkswagen-crafter-hero.jpg"
+image: "/images/volkswagen-crafter-hero.webp"
 image_alt: "Volkswagen Crafter II furgon L3H3 na drodze"
 main_keyword: "volkswagen crafter"
 volume: 9900

@@ -6,7 +6,7 @@ description: "Peugeot Boxer w wersjach Long L3 i L4 – pojemność 15–17 m³,
 draft: false
 author: "marek-kowalczyk"
 type: "page"
-image: "/images/peugeot-boxer-long-hero.jpg"
+image: "/images/peugeot-boxer-long-hero.webp"
 parent: "peugeot-boxer"
 faq:
   - question: "Ile wynosi długość Peugeot Boxer L3?"
@@ -110,7 +110,7 @@ Zużycie paliwa w Boxerze Long trzeba zawsze odnosić do konkretnej konfiguracji
 
 Bez takiego doprecyzowania przedziały spalania są zbyt ogólne, dlatego nie warto traktować pojedynczej liczby jako uniwersalnej. Najrozsądniej porównywać dane dla tej samej długości nadwozia, tej samej wysokości i tej samej masy roboczej.
 
-![Peugeot Boxer L3H2 – van dostawczy widok z boku](/images/peugeot-boxer-long-hero.jpg)
+![Peugeot Boxer L3H2 – van dostawczy widok z boku](/images/peugeot-boxer-long-hero.webp)
 
 {{% info title="Boxer L4H3 a prawo jazdy" icon="engineering" %}}
 Boxer L4H3 w standardowej konfiguracji z DMC 3,5 t pozostaje w kategorii N1, więc wystarczy prawo jazdy kat. B. Wersja z DMC 4,0 t trafia już do kategorii N2 i wymaga co najmniej prawa jazdy kat. C1 lub C.

@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Fiat Ducato doka – przegląd wersji"
 parent: "fiat-ducato"
 type: "page"
-image: "/images/fiat-ducato-doka-hero.jpg"
+image: "/images/fiat-ducato-doka-hero.webp"
 image_alt: "Fiat Ducato doka z podwójną kabiną i otwartą skrzynią ładunkową"
 main_keyword: "Fiat Ducato doka"
 lead: "Fiat Ducato doka to podwozie z podwójną kabiną i otwartą platformą ładunkową. Najczęściej spotyka się konfiguracje 6- lub 7-miejscowe, a wymiary skrzyni oraz ładowność zależą od konkretnej zabudowy, DMC i homologacji – orientacyjnie platformy na tym podwoziu mają ok. 2300–3100 mm długości."
@@ -75,7 +75,7 @@ W praktyce oznacza to, że dwie doki o podobnym rozstawie osi mogą mieć zupeł
 
 Warto też pamiętać, że kiper jest cięższy od zwykłej platformy, więc zwykle zmniejsza realną ładowność. Wersje Maxi i Heavy zazwyczaj oferują wyższą dopuszczalną nośność osi niż lżejsze odmiany 3,3–3,5 t.
 
-![Fiat Ducato doka – podwójna kabina z platformą](/images/fiat-ducato-doka-hero.jpg)
+![Fiat Ducato doka – podwójna kabina z platformą](/images/fiat-ducato-doka-hero.webp)
 
 ## Zastosowania – nie tylko budowlanka
 

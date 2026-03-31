@@ -10,7 +10,7 @@ parent: "citroen-berlingo"
 type: "page"
 volume: 720
 main_keyword: "Citroën Berlingo Multispace"
-image: "/images/citroen-berlingo-multispace-hero.jpg"
+image: "/images/citroen-berlingo-multispace-hero.webp"
 image_alt: "Citroën Berlingo Multispace II generacji"
 lead: "Citroën Berlingo Multispace to nazwa stosowana dla osobowych odmian Berlingo także w I generacji, ale ten artykuł dotyczy głównie II generacji (B9) z lat 2008–2018. Lepsze wykończenie wnętrza, przeszklone szyby boczne i bogatsza lista wyposażenia odróżniały ją od wersji Van."
 faq:
@@ -61,7 +61,7 @@ W wersji 7-osobowej po rozłożeniu trzeciego rzędu przestrzeń bagażowa jest 
 
 Porównanie z wersją dostawczą znajdziesz w artykule o [Berlingo Van](/modele/citroen-berlingo/van/).
 
-![Citroën Berlingo Multispace II generacji](/images/citroen-berlingo-multispace-hero.jpg)
+![Citroën Berlingo Multispace II generacji](/images/citroen-berlingo-multispace-hero.webp)
 
 ## Silniki dostępne w Multispace {#silniki}
 

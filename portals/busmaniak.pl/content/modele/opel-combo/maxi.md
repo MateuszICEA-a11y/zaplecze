@@ -9,7 +9,7 @@ parent: "opel-combo"
 type: "page"
 volume: 320
 main_keyword: "opel combo maxi"
-image: "/images/opel-combo-hero.jpg"
+image: "/images/opel-combo-hero.webp"
 image_alt: "Opel Combo E furgon"
 lead: "Nazewnictwo wymaga tu rozróżnienia: w starszej generacji funkcjonuje Opel Combo D Maxi, a w nowszej – Combo Cargo XL i Combo Life XL. W wersji dostawczej Cargo XL przestrzeń ładunkowa ma 3,9 m³ standardowo i do 4,4 m³ z rozwiązaniem wydłużającym długość użytkową. To właśnie wymiary paki, a nie sama długość nadwozia 4753 mm, decydują o praktycznej możliwości przewozu ładunku."
 faq:

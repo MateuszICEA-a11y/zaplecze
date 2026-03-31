@@ -10,7 +10,7 @@ parent: ""
 type: "page"
 volume: 5400
 main_keyword: "Toyota Proace Verso"
-image: "/images/toyota-proace-verso-hero.jpg"
+image: "/images/toyota-proace-verso-hero.webp"
 image_alt: "Toyota Proace Verso II"
 lead: "Toyota Proace Verso to osobowa wersja dostawczaka Proace z homologacją M1 – oferuje od 5 do 9 miejsc, karoserię Medium lub Long i wybór między silnikami diesla a elektrycznym napędem o zasięgu do 330 km. To bezpośredni rywal VW Multivana i Mercedesa V-klasy w segmencie przestronnych vanów osobowych."
 faq:
@@ -49,7 +49,7 @@ Wszystkie odmiany diesla spełniają normę Euro 6d. Automatyczna skrzynia EAT8 
 
 ## Wymiary Toyoty ProAce Verso
 
-![Toyota Proace Verso II – wymiary i wnętrze](/images/toyota-proace-verso-hero.jpg)
+![Toyota Proace Verso II – wymiary i wnętrze](/images/toyota-proace-verso-hero.webp)
 
 Proace Verso występuje w dwóch długościach nadwozia, co przekłada się bezpośrednio na liczbę dostępnych miejsc i przestrzeń bagażową.
 

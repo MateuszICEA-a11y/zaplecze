@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Hyundai Staria – kompletny przewodnik po modelu"
 type: "page"
 main_keyword: "hyundai staria"
-image: "/images/hyundai-staria-hero.jpg"
+image: "/images/hyundai-staria-hero.webp"
 image_alt: "Hyundai Staria w kolorze białym na drodze"
 lead: "Hyundai Staria to koreański van, który wygląda jak statek kosmiczny, a jedzie jak duży SUV. Produkowany od 2021 roku, łączy futurystyczny design z praktyczną przestrzenią na 9 lub 11 pasażerów. Diesel 2.2 CRDi o mocy 177 KM, napęd tylny lub AWD i 8-biegowy automat – to propozycja dla tych, którym klasyczne busy europejskie wydają się zbyt konserwatywne."
 faq:
@@ -81,7 +81,7 @@ Dla pełnego obrazu – poza Europą Staria oferowana jest z bogatszą gamą nap
 Staria to samochód, który trzeba zobaczyć na żywo, żeby docenić. Na papierze diesel 177 KM nie robi wrażenia, ale w połączeniu z napędem na tył i 8-biegowym automatem prowadzi się zaskakująco dynamicznie jak na swoje gabaryty. Jeśli szukasz alternatywy dla [Multivana](/modele/volkswagen-multivan/) i nie boisz się wyrazistego designu – warto się przejechać.
 {{% /expert %}}
 
-![Hyundai Staria w kolorze białym na drodze](/images/hyundai-staria-hero.jpg)
+![Hyundai Staria w kolorze białym na drodze](/images/hyundai-staria-hero.webp)
 
 ## Wersje osobowe i dostawcze Starii
 

@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Peugeot Expert – kompletny przewodnik po modelu"
 type: "page"
-image: "/images/peugeot-expert-hero.jpg"
+image: "/images/peugeot-expert-hero.webp"
 image_alt: "Peugeot Expert III furgon na drodze"
 main_keyword: "peugeot expert"
 volume: 9900

@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Mercedes eSprinter – elektryczny dostawczak z gwiazdą"
 type: "page"
 main_keyword: "mercedes esprinter"
-image: "/images/mercedes-esprinter-hero.jpg"
+image: "/images/mercedes-esprinter-hero.webp"
 image_alt: "Mercedes eSprinter furgon elektryczny podczas ładowania"
 lead: "Mercedes eSprinter to elektryczna wersja najpopularniejszego dużego dostawczaka klasy premium. Druga generacja z 2024 roku oferuje do 440 km zasięgu WLTP, ładowność do 1730 kg i szybkie ładowanie DC 115 kW. To poważna propozycja dla flot miejskich i kurierskich."
 faq:
@@ -71,7 +71,7 @@ Mniejsza bateria 56 kWh zapewnia ok. 260 km WLTP. To wystarczająco dla kurieró
 - **Precondycjonowanie baterii** – system automatycznie nagrzewa lub chłodzi akumulator przed przyjazdem na stację, co zapewnia maksymalną moc ładowania
 - **Tryby jazdy** – Comfort, Eco i Max Range pozwalają optymalizować zasięg kosztem dynamiki
 
-![Mercedes eSprinter furgon elektryczny podczas ładowania](/images/mercedes-esprinter-hero.jpg)
+![Mercedes eSprinter furgon elektryczny podczas ładowania](/images/mercedes-esprinter-hero.webp)
 
 ## Wersje nadwoziowe eSprintera
 

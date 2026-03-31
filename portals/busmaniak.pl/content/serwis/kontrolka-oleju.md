@@ -8,7 +8,7 @@ h1: "Kontrolka oleju w busie – co oznacza i co robić"
 type: "page"
 volume: 4400
 main_keyword: "kontrolka oleju"
-image: "/images/kontrolka-oleju-hero.jpg"
+image: "/images/kontrolka-oleju-hero.webp"
 image_alt: "Kontrolka oleju na desce rozdzielczej busa – czerwony symbol olejki na tle wskaźników"
 lead: "Czerwona kontrolka oleju to jeden z najgroźniejszych sygnałów na desce rozdzielczej – zignorowanie jej grozi zniszczeniem silnika wartego nawet 30 000 zł. Z kolei żółty symbol ostrzega o zbyt niskim poziomie środka smarnego, ale pozwala bezpiecznie dotrzeć na stację. Warto znać różnicę między awarią ciśnienia a niskim poziomem, by uniknąć kosztownych napraw."
 faq:
@@ -79,7 +79,7 @@ W takiej sytuacji czerwona kontrolka ciśnienia może zapalić się na rozgrzany
 
 ## Żółta kontrolka oleju – dolej olej {#zolta}
 
-![Kontrolka oleju na desce rozdzielczej busa](/images/kontrolka-oleju-hero.jpg)
+![Kontrolka oleju na desce rozdzielczej busa](/images/kontrolka-oleju-hero.webp)
 
 Żółta kontrolka daje więcej czasu na reakcję, ale nie powinna być ignorowana. Niski poziom oleju oznacza, że pompa olejowa może chwytać powietrze przy ostrych zakrętach lub intensywnym hamowaniu – chwilowy brak smarowania uszkadza łożyska.
 

@@ -5,7 +5,7 @@ description: "E-winieta na Slowacji w 2026 roku – aktualne ceny, jak kupic onl
 draft: false
 author: "marek-kowalczyk"
 h1: "Winiety Slowacja 2026 – ceny e-winiety, zakup online i kary"
-image: "/images/winiety-slowacja-hero.jpg"
+image: "/images/winiety-slowacja-hero.webp"
 image_alt: "Slowacka autostrada z oznakowaniem platnego odcinka i tablica informacyjna"
 main_keyword: "winieta slowacja"
 lead: "Słowacka e-winieta na 2026 rok kosztuje od 5,40 EUR za jednodniową do 60 EUR za roczną. System jest w pełni elektroniczny – kupujesz winietę na oficjalnym portalu eznamka.sk, a kamery automatycznie kontrolują tablice rejestracyjne. Busy powyżej 3,5 tony podlegają oddzielnemu systemowi myto."
@@ -63,7 +63,7 @@ Jedynym oficjalnym portalem sprzedaży jest **eznamka.sk** prowadzony przez Nár
 5.  Zapłać kartą płatniczą (Visa, Mastercard).
 6.  Potwierdzenie otrzymasz na podany adres e-mail.
 
-![Słowacka autostrada z oznakowaniem płatnego odcinka](/images/winiety-slowacja-hero.jpg)
+![Słowacka autostrada z oznakowaniem płatnego odcinka](/images/winiety-slowacja-hero.webp)
 
 {{% info title="Można ustawić datę ważności z wyprzedzeniem" icon="calendar" %}}
 Datę początku ważności e-winiety można wskazać podczas zakupu, wybierając termin obejmujący maksymalnie kilkanaście dni w przód. Jeśli planujesz wyjazd, możesz kupić winietę wcześniej i ustawić jej aktywację na dzień wyjazdu.

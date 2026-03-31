@@ -8,7 +8,7 @@ h1: "Peugeot Boxer 2.2 HDi – dane techniczne silnika DW12"
 parent: "peugeot-boxer"
 type: "page"
 main_keyword: "peugeot boxer 2.2 hdi"
-image: "/images/peugeot-boxer-2-2-hdi-hero.jpg"
+image: "/images/peugeot-boxer-2-2-hdi-hero.webp"
 image_alt: "Peugeot Boxer 2.2 HDi furgon"
 lead: "Peugeot Boxer 2.2 HDi wymaga ostrożnego rozróżnienia wersji silnikowych według rocznika i kodu jednostki. W Boxerze od 2006 r. kluczowe są silniki 2.2 o pojemności 2198 cm³ z rodziny Ford/Puma, a po modernizacji pojawiły się także nowsze odmiany BlueHDi. Dlatego przy opisie tego modelu nie można wrzucać wszystkich wersji 2.2 do jednego worka ani zakładać jednego typu rozrządu dla całej gamy."
 faq:

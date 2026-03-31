@@ -10,7 +10,7 @@ parent: "renault-master"
 type: "page"
 volume: 390
 main_keyword: "Renault Master skrzyniowy"
-image: "/images/renault-master-skrzyniowy-hero.jpg"
+image: "/images/renault-master-skrzyniowy-hero.webp"
 image_alt: "Renault Master skrzyniowy – otwarta skrzynia ładunkowa L3"
 lead: "Renault Master skrzyniowy to gotowy samochód z zabudową skrzyniową – otwartą lub z plandeką. Trzeba go odróżnić od wersji podwoziowej bez stałej zabudowy, czyli podwozia z kabiną do dalszej zabudowy. W tym artykule rozdzielamy oba poziomy opisu i odnosimy dane do Renault Master III, produkowanego od 2010 roku, z faceliftingiem w 2019 roku. To ważne, bo nowy Master IV pokazany w 2023 roku ma inną gamę napędów, DMC i wariantów."
 faq:
@@ -87,7 +87,7 @@ Bez tych danych nie da się rzetelnie dobrać zabudowy. Równie ważne są param
 
 W praktyce trzeba też pamiętać, że pojedyncza i podwójna kabina mogą różnić się ładownością o kilkaset kilogramów. Dlatego nie należy mieszać wymiarów samego chassis cab z długością gotowego Renault Master skrzyniowy po montażu konkretnej zabudowy.
 
-![Renault Master skrzyniowy – otwarta skrzynia ładunkowa L3](/images/renault-master-skrzyniowy-hero.jpg)
+![Renault Master skrzyniowy – otwarta skrzynia ładunkowa L3](/images/renault-master-skrzyniowy-hero.webp)
 
 ## Dobór silnika dla wersji skrzyniowej
 

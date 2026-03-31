@@ -10,7 +10,7 @@ parent: "citroen-berlingo"
 type: "page"
 volume: 720
 main_keyword: "Citroën Berlingo Long"
-image: "/images/citroen-berlingo-long-hero.jpg"
+image: "/images/citroen-berlingo-long-hero.webp"
 image_alt: "Citroën Berlingo Long z boku"
 lead: "Berlingo Long to wydłużona wersja Citroëna Berlingo. W II generacji funkcjonuje nazwa Long, a w III generacji – XL. W najnowszym modelu dodatkowe 350 mm długości oznacza więcej miejsca na bagaż i opcję trzeciego rzędu siedzeń, ale bez większego rozstawu osi względem wersji M."
 faq:
@@ -81,7 +81,7 @@ Dłuższe nadwozie nie zmienia charakteru auta, ale wymaga większej uwagi w mie
 
 
 
-![Citroën Berlingo Long z boku](/images/citroen-berlingo-long-hero.jpg)
+![Citroën Berlingo Long z boku](/images/citroen-berlingo-long-hero.webp)
 
 ## Silniki w wersji Long {#silniki}
 

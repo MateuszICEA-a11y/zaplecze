@@ -8,7 +8,7 @@ h1: "Kontrolki Fiat Ducato – co oznaczają"
 parent_model: "fiat-ducato"
 type: "post"
 volume: 390
-image: "/images/kontrolki-fiat-ducato-hero.jpg"
+image: "/images/kontrolki-fiat-ducato-hero.webp"
 image_alt: ""
 main_keyword: "Fiat Ducato Kontrolki"
 lead: "Zrozumienie kontrolek w Fiacie Ducato opiera się na hierarchii kolorów: czerwony oznacza krytyczną awarię wymagającą postoju, żółty sygnalizuje usterkę lub zbliżający się serwis, a zielony i niebieski pełnią funkcję informacyjną. Poniższy przewodnik wyjaśnia znaczenie poszczególnych ikon, co pozwoli Ci szybko zareagować na komunikaty komputera pokładowego i uniknąć kosztownych napraw w trasie."
@@ -68,7 +68,7 @@ To kontrolka ogólna – prawie zawsze towarzyszy jej komunikat tekstowy na wyś
 ### Błąd ESP / Hill Holder
 Nagłe pojawienie się komunikatów „Hill Holder unavailable” lub „ESC failure” wraz z żółtą ikoną poślizgu to częsta przypadłość w Ducato. Rzadko jednak oznacza to rzeczywistą awarię kosztownej pompy ABS. Zazwyczaj przyczyną jest uszkodzony czujnik położenia pedału hamulca (koszt części 50–80 zł), naderwany przewód czujnika ABS na osi lub chwilowy spadek napięcia akumulatora.
 
-![Kontrolki Fiat Ducato – opis symboli na desce rozdzielczej](/images/kontrolki-fiat-ducato-hero.jpg)
+![Kontrolki Fiat Ducato – opis symboli na desce rozdzielczej](/images/kontrolki-fiat-ducato-hero.webp)
 
 ## Specyficzne ikony dla diesla i kamperów
 

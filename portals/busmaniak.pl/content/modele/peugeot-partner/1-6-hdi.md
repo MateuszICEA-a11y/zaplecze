@@ -6,7 +6,7 @@ description: "Silnik 1.6 HDi (DV6) w Peugeot Partner II – wersje 75, 90 i 92 K
 draft: false
 author: "marek-kowalczyk"
 type: "page"
-image: "/images/peugeot-partner-1-6-hdi-hero.jpg"
+image: "/images/peugeot-partner-1-6-hdi-hero.webp"
 parent: "peugeot-partner"
 main_keyword: "peugeot partner 1.6 hdi"
 faq:
@@ -84,7 +84,7 @@ Przy zabudowie chłodniczej lub intensywnym użytkowaniu kurierskim spalanie zwy
 
 Silnik DV6 ma opinię trwałej jednostki, ale wymaga pilnowania serwisu i znajomości typowych słabych punktów. W Partnerze większość problemów dotyczy osprzętu, układu smarowania i eksploatacji typowej dla auta dostawczego.
 
-![Peugeot Partner 1.6 HDi – silnik DV6 w komorze](/images/peugeot-partner-1-6-hdi-hero.jpg)
+![Peugeot Partner 1.6 HDi – silnik DV6 w komorze](/images/peugeot-partner-1-6-hdi-hero.webp)
 
 ### Rozrząd i układ napędowy
 

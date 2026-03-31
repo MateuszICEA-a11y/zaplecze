@@ -5,7 +5,7 @@ description: "E-winieta na Wegrzech w 2026 roku – aktualne ceny e-matrica, jak
 draft: false
 author: "marek-kowalczyk"
 h1: "Winiety Wegry 2026 – ceny e-matrica, zakup online i system kontroli"
-image: "/images/winiety-wegry-hero.jpg"
+image: "/images/winiety-wegry-hero.webp"
 image_alt: "Wegierska autostrada z elektroniczna tablica informacyjna i bramka kontrolna"
 main_keyword: "winieta wegry"
 lead: "Węgierska e-matrica na 2026 rok kosztuje od 5550 HUF (ok. 65 zł) za jednodniową do 61 760 HUF (ok. 720 zł) za roczną w kategorii D1. System jest w pełni elektroniczny – kupujesz winietę online, a kamery kontrolują tablice rejestracyjne. Busy i inne pojazdy powyżej 3,5 tony korzystają z kilometrowego systemu opłat HU-GO."

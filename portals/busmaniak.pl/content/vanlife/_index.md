@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Vanlife – jak żyć i podróżować kamperem"
 type: "page"
 volume: 6000
-image: "/images/vanlife-hub-hero.jpg"
+image: "/images/vanlife-hub-hero.webp"
 image_alt: "Bus kamper zaparkowany nad jeziorem o zachodzie słońca – vanlife w Polsce"
 main_keyword: "vanlife"
 lead: "Vanlife przestał być niszowym trendem z Instagrama i stał się realnym stylem życia tysięcy Polaków. Przerobiony bus, laptop z internetem mobilnym i otwarta droga – brzmi jak wakacje, ale coraz więcej osób tak żyje przez cały rok. Ten poradnik zbiera w jednym miejscu wszystko, co musisz wiedzieć, żeby zacząć: od kosztów przez trasy po kwestie techniczne."
@@ -64,7 +64,7 @@ Do kosztów stałych trzeba doliczyć przede wszystkim ubezpieczenie, internet i
 
 Z przeglądem technicznym nie ma jednej stawki dla każdego busa czy kampera. Opłata zależy od rodzaju pojazdu wpisanego w dowodzie rejestracyjnym, DMC oraz ewentualnej instalacji LPG – dla pojazdów do 3,5 t podstawowe stawki są inne niż dla zwykłego uproszczenia typu „kamper = 149 zł rocznie”.
 
-![Vanlife – życie i podróże kamperem](/images/vanlife-hub-hero.jpg)
+![Vanlife – życie i podróże kamperem](/images/vanlife-hub-hero.webp)
 
 Zmienne koszty to paliwo, jedzenie, kempingi lub camperparki, pranie, gaz i woda. Przy aktywnym przemieszczaniu paliwo zwykle jest największą pozycją w budżecie, a częste noclegi na płatnych obiektach potrafią podnieść miesięczne wydatki bardziej niż samo jedzenie.
 

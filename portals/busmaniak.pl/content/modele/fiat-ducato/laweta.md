@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Fiat Ducato laweta – przegląd zabudowy"
 parent: "fiat-ducato"
 type: "page"
-image: "/images/fiat-ducato-laweta-hero.jpg"
+image: "/images/fiat-ducato-laweta-hero.webp"
 image_alt: "Fiat Ducato autolaweta z aluminiową platformą i najazdami"
 main_keyword: "Fiat Ducato laweta"
 lead: "Fiat Ducato w wersji autolaweta jest popularną bazą w polskich firmach pomocy drogowej i transporcie aut, głównie ze względu na korzystną relację masy własnej do dostępnej ładowności w klasie 3,5 t. W praktyce masa własna i realna ładowność zależą od konkretnego podwozia, DMC z tabliczki, rodzaju zabudowy oraz masy gotowego pojazdu wpisanej w homologacji zabudowy."
@@ -69,7 +69,7 @@ To właśnie dlatego realna ładowność autolawety 3,5 t po kompletnej zabudowi
 
 {{% expert name="Marek Kowalczyk" %}}Szukając używanego Ducato pod lawetę, zwracaj uwagę na tylne zawieszenie. Standardowe pióra często siadają pod ciężarem, dlatego dodatkowe poduszki pneumatyczne są praktycznym doposażeniem – poprawiają poziomowanie auta i ułatwiają pracę z ładunkiem.{{% /expert %}}
 
-![Fiat Ducato laweta – autolaweta na bazie Ducato](/images/fiat-ducato-laweta-hero.jpg)
+![Fiat Ducato laweta – autolaweta na bazie Ducato](/images/fiat-ducato-laweta-hero.webp)
 
 ## Wymagania prawne i DMC Ducato jako lawety
 

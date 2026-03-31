@@ -8,7 +8,7 @@ author: "tomasz-zielinski"
 h1: "Kalkulator DMC – sprawdź, czy Twój bus mieści się w 3,5 tony"
 type: "page"
 main_keyword: "kalkulator DMC"
-image: "/images/ladownosc-tabela-hero.jpg"
+image: "/images/ladownosc-tabela-hero.webp"
 image_alt: "Bus dostawczy na wadze samochodowej z wyświetloną masą całkowitą"
 lead: "Przekroczenie DMC 3500 kg grozi dotkliwymi konsekwencjami, w tym wysokim mandatem i zakazem dalszej jazdy. Nasz kalkulator pozwala w kilka sekund sprawdzić, ile ważysz z pasażerami, ładunkiem i dodatkowym wyposażeniem – dla konkretnego modelu busa."
 faq:

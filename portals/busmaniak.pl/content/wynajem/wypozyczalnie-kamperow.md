@@ -4,7 +4,7 @@ date: 2026-03-28
 draft: false
 author: "marek-kowalczyk"
 description: "Przegląd wypożyczalni kamperów w Polsce na sezon 2026 – firmy, floty, ceny i platformy agregujące oferty wynajmu kamperów."
-image: "/images/wypozyczalnie-kamperow-hero.jpg"
+image: "/images/wypozyczalnie-kamperow-hero.webp"
 image_alt: "Rząd kamperów zaparkowanych na placu wypożyczalni w Polsce"
 main_keyword: "wypożyczalnie kamperów"
 volume: 5000
@@ -77,7 +77,7 @@ Wypożyczalnia z Rzeszowa, dostępna też przez platformę wynajem-kampera.pl. K
 ### TripCamper
 Oddziały w Goleniowie (blisko Szczecina) i Radomiu. Sprzedaż i wynajem, obecni na rynku od kilku sezonów. Strona: tripcamper.pl
 
-![Wypożyczalnie kamperów w Polsce – przegląd firm 2026](/images/wypozyczalnie-kamperow-hero.jpg)
+![Wypożyczalnie kamperów w Polsce – przegląd firm 2026](/images/wypozyczalnie-kamperow-hero.webp)
 
 ## Tabela porównawcza wypożyczalni
 

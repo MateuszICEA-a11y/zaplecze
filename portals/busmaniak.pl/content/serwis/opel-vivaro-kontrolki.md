@@ -9,7 +9,7 @@ parent_model: "opel-vivaro"
 type: "post"
 volume: 600
 main_keyword: "opel vivaro kontrolki"
-image: "/images/opel-vivaro-kontrolki-hero.jpg"
+image: "/images/opel-vivaro-kontrolki-hero.webp"
 image_alt: "Zestaw wskaźników i kontrolek na desce rozdzielczej Opla Vivaro"
 lead: "Opel Vivaro przeszedł trzy generacje – każda z innym zestawem wskaźników, ale z tą samą zasadą kolorów: czerwony wymaga natychmiastowej reakcji, żółty sygnalizuje usterkę lub zbliżający się serwis, a zielony i niebieski pełnią funkcję informacyjną. Poniżej znajdziesz listę kontrolek per generacja, najczęstsze przyczyny ich zapalenia i instrukcję resetu serwisowego."
 faq:
@@ -68,7 +68,7 @@ W Vivaro B z silnikiem 1.6 CDTI trzy kontrolki pojawiają się statystycznie naj
 
 {{% expert name="Marek Kowalczyk" %}}Vivaro B z 1.6 BiTurbo (120/145 KM) ma specyficzny problem – pękanie przewodu intercoolera łączącego obie turbosprężarki. Objaw: check engine, dymienie i utrata mocy. Kontrolka zapala się zanim poczujesz różnicę w jeździe, więc nie ignoruj jej nawet jeśli auto "jedzie normalnie".{{% /expert %}}
 
-![Kontrolki Opel Vivaro – znaczenie symboli na desce rozdzielczej](/images/opel-vivaro-kontrolki-hero.jpg)
+![Kontrolki Opel Vivaro – znaczenie symboli na desce rozdzielczej](/images/opel-vivaro-kontrolki-hero.webp)
 
 ## Kontrolki Vivaro C (2019+) – platforma PSA
 

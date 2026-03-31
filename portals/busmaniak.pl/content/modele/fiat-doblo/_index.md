@@ -9,7 +9,7 @@ author: "marek-kowalczyk"
 type: "page"
 volume: 14800
 main_keyword: "Fiat Doblò dane techniczne"
-image: "/images/fiat-doblo-hero.jpg"
+image: "/images/fiat-doblo-hero.webp"
 faq:
   - question: "Ile generacji ma Fiat Doblò?"
     answer: "Trzy generacje: I (2000–2010), II (2010–2022) i III (od 2022, platforma PSA – bliźniak Citroëna Berlingo i Peugeota Partner)."
@@ -57,7 +57,7 @@ Długość standardowa: ok. 4390 mm, Maxi: ok. 4740 mm. Ładowność Cargo: do 1
 
 ### Generacja III (od 2022)
 
-![Fiat Doblò III generacji – widok z przodu](/images/fiat-doblo-hero.jpg)
+![Fiat Doblò III generacji – widok z przodu](/images/fiat-doblo-hero.webp)
 
 Platforma PSA EMP2. Silniki zgodne z Euro 6d:
 

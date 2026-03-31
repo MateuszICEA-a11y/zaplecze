@@ -9,7 +9,7 @@ parent: "ford-transit-connect"
 type: "page"
 volume: 720
 main_keyword: "ford transit connect long"
-image: "/images/ford-transit-connect-hero.jpg"
+image: "/images/ford-transit-connect-hero.webp"
 image_alt: "Ford Transit Connect furgon"
 lead: "Ford Transit Connect Long (L2) to wydłużona odmiana drugiej generacji kompaktowego vana Forda. Ma ok. 4818 mm długości, przestrzeń ładunkową 3,6 m³ i dłuższą podłogę paki niż wersja Short. Sprawdzamy wymiary, praktyczność, gamę silników oraz najważniejsze różnice między L1 i L2."
 faq:

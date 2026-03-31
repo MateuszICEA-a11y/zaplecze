@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Wynajem kampera – ile kosztuje w 2026 roku i jakie koszty Cię zaskoczą"
 volume: 3000
-image: "/images/wynajem-kampera-cena-hero.jpg"
+image: "/images/wynajem-kampera-cena-hero.webp"
 image_alt: "Wynajem kampera cena – kamper na tle gór z cenami wynajmu"
 main_keyword: "wynajem kampera cena"
 lead: "Cena wynajmu kampera w Polsce na sezon 2026 zaczyna się od 250 zł za dobę za camper vana poza sezonem, a kończy na 900 zł za integrę w szczycie letniego boomu. Ale stawka za dobę to dopiero początek – kaucja, ubezpieczenie, opłata serwisowa i limit kilometrów potrafią podnieść realny koszt wyjazdu o 30–50%. W tym artykule rozkładam cennik na czynniki pierwsze."
@@ -63,7 +63,7 @@ Przy wynajmie powyżej 10 dni wiele wypożyczalni oferuje rabat w wysokości 3�
 
 Stawka dobowa z cennika jest tylko punktem wyjścia. Realne koszty wynajmu kampera obejmują kilka pozycji, o których regulaminy wypożyczalni wspominają często małym drukiem.
 
-![Wynajem kampera – cennik i koszty ukryte](/images/wynajem-kampera-cena-hero.jpg)
+![Wynajem kampera – cennik i koszty ukryte](/images/wynajem-kampera-cena-hero.webp)
 
 **Kaucja (3000–8000 zł).** Jest zwrotna po zdaniu pojazdu bez uszkodzeń, ale blokuje znaczną kwotę na czas wyjazdu. Dla nowszych, lepiej wyposażonych kamperów może sięgać górnej granicy widełek. Jej wysokość można obniżyć, wykupując zewnętrzne ubezpieczenie udziału własnego (polisa CDW).
 

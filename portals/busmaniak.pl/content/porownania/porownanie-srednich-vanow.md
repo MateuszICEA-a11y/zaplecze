@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 type: "page"
 main_keyword: "vivaro vs trafic"
-image: "/images/porownanie-srednich-vanow-hero.jpg"
+image: "/images/porownanie-srednich-vanow-hero.webp"
 image_alt: "Opel Vivaro, Renault Trafic, Toyota ProAce i Peugeot Expert – porównanie średnich vanów"
 lead: "Cztery najpopularniejsze średnie vany w Polsce – Opel Vivaro, Renault Trafic, Toyota ProAce i Peugeot Expert. Trzy z nich to techniczni bliźniacy na platformie Stellantis EMP2, a Trafic idzie własną drogą. Który wybrać do firmy, a który na kampera?"
 faq:
@@ -59,7 +59,7 @@ Opel pozycjonuje Vivaro jako van z bogatym wyposażeniem. Nowy, cyfrowy kokpit z
 
 Trafic III to jedyny niezależny gracz w tym zestawieniu. Napędza go sprawdzony silnik 2.0 dCi z rodziny M9R w wersjach od 110 do 170 KM. To udoskonalana od lat jednostka, ceniona za trwałość. Moc trafia na koła przez 6-biegową skrzynię manualną lub dwusprzęgłową EDC.
 
-![Porównanie średnich vanów – Vivaro, Trafic, ProAce, Expert](/images/porownanie-srednich-vanow-hero.jpg)
+![Porównanie średnich vanów – Vivaro, Trafic, ProAce, Expert](/images/porownanie-srednich-vanow-hero.webp)
 
 - **Jednosilnikowa oferta** – wyłącznie 2.0 dCi, co upraszcza wybór
 - **Zawieszenie** – z tyłu pracuje belka skrętna z drążkiem Panharda, podczas gdy rywale z EMP2 wykorzystują zawieszenie półzależne z wahaczami skośnymi

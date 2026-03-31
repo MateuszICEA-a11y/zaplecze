@@ -10,7 +10,7 @@ main_keyword: "Ford Transit Kombi"
 parent: "ford-transit"
 type: "page"
 volume: 4400
-image: "/images/ford-transit-kombi-hero.jpg"
+image: "/images/ford-transit-kombi-hero.webp"
 faq:
   - question: "Ile miejsc ma Ford Transit Kombi?"
     answer: "Ford Transit Kombi jest spotykany w konfiguracjach od 6 do 15 miejsc łącznie z kierowcą. Dokładna liczba miejsc zależy od długości nadwozia, układu siedzeń, homologacji i konkretnej specyfikacji rynkowej."
@@ -85,7 +85,7 @@ Poniższe zestawienie pokazuje, jakie parametry warto porównać przy wyborze Fo
 
 Dostępność długości i wysokości dachu nie jest stała dla wszystkich rynków i wszystkich roczników. Z tego powodu nie należy zakładać z góry, że Kombi występuje wyłącznie w jednym lub dwóch wariantach dachu.
 
-![Ford Transit Kombi L3 – widok z zewnątrz](/images/ford-transit-kombi-hero.jpg)
+![Ford Transit Kombi L3 – widok z zewnątrz](/images/ford-transit-kombi-hero.webp)
 
 ## Silniki i napęd
 

@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Spalanie busów – ile naprawdę pali Ducato, Sprinter i reszta"
 type: "post"
 volume: 1500
-image: "/images/spalanie-busow-hero.jpg"
+image: "/images/spalanie-busow-hero.webp"
 image_alt: "Porównanie spalania busów dostawczych – dystrybutor paliwa"
 main_keyword: "spalanie busów"
 lead: "Katalogowe zużycie paliwa busa dostawczego i realne spalanie to dwa różne światy. Producenci podają 6–8 l/100 km, a użytkownicy raportują 9–14 l/100 km w zależności od obciążenia i trasy. Ta różnica ma realne przełożenie na koszty – przy 40 000 km rocznie dodatkowe 2 litry na setkę to ponad 5000 zł więcej za paliwo. Zebraliśmy dane z raportów użytkowników i testów redakcyjnych, żeby pokazać prawdziwe spalanie sześciu najpopularniejszych busów w Polsce."
@@ -66,7 +66,7 @@ Obniżenie spalania o 1–2 l/100 km to przy rocznym przebiegu 40 000 km oszczę
 
 Eco driving w busie dostawczym sprowadza się do trzech zasad:
 
-![Porównanie spalania busów dostawczych](/images/spalanie-busow-hero.jpg)
+![Porównanie spalania busów dostawczych](/images/spalanie-busow-hero.webp)
 
 1. Utrzymuj obroty w zakresie 1400–2200 obr/min – tu silniki diesla mają najlepszą sprawność.
 2. Wyprzedzaj moment zmiany biegów – wrzucaj wyższy bieg przy 2000 obr/min, nie czekając na 2500+.

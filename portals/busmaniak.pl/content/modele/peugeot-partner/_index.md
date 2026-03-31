@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Peugeot Partner – kompletny przewodnik po modelu"
 type: "page"
-image: "/images/peugeot-partner-hero.jpg"
+image: "/images/peugeot-partner-hero.webp"
 image_alt: "Peugeot Partner III furgon na drodze"
 main_keyword: "peugeot partner"
 volume: 9900

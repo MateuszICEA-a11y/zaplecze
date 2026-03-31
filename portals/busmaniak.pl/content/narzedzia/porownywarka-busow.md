@@ -5,7 +5,7 @@ date: 2026-03-23
 description: "Porównywarka busów BusManiak.pl – wybierz dwa modele i porównaj dane techniczne, spalanie, wymiary i ceny obok siebie."
 lead: "Wybierz dwa busy z listy i natychmiast zobacz porównanie najważniejszych parametrów – od wymiarów i ładowności, przez spalanie, aż po ceny nowych i używanych egzemplarzy."
 main_keyword: "porównywarka busów"
-image: "/images/porownywarka-busow-hero.jpg"
+image: "/images/porownywarka-busow-hero.webp"
 image_alt: "Porównywarka busów – dwa busy obok siebie"
 draft: false
 author: "tomasz-zielinski"

@@ -6,7 +6,7 @@ description: "Citroën Jumper Van w wersjach L1–L4 – pojemność 8–17 m³,
 draft: false
 author: "marek-kowalczyk"
 type: "page"
-image: "/images/citroen-jumper-van-hero.jpg"
+image: "/images/citroen-jumper-van-hero.webp"
 parent: "citroen-jumper"
 faq:
   - question: "Jaka jest szerokość podłogi Citroën Jumper Van?"
@@ -116,7 +116,7 @@ Przy zakupie używanego kluczowe są nie tyle same deklarowane moce, co stan osp
 
 Przy autach z przebiegami 150000 km, 200000 km i 300000 km znaczenie ma kompletna dokumentacja serwisowa. W dostawczaku to często ważniejsze niż sama liczba właścicieli.
 
-![Citroën Jumper L2H2 Van – przestrzeń ładunkowa z otwartymi drzwiami](/images/citroen-jumper-van-hero.jpg)
+![Citroën Jumper L2H2 Van – przestrzeń ładunkowa z otwartymi drzwiami](/images/citroen-jumper-van-hero.webp)
 
 ## ë-Jumper – elektryczna wersja Vana
 

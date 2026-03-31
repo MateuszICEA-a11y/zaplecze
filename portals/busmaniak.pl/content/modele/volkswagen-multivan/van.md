@@ -9,7 +9,7 @@ parent: "volkswagen-multivan"
 type: "page"
 volume: 6600
 main_keyword: "volkswagen multivan van"
-image: "/images/volkswagen-multivan-hero.jpg"
+image: "/images/volkswagen-multivan-hero.webp"
 image_alt: "Volkswagen Multivan T7 na drodze"
 lead: "Volkswagen Multivan T7 to samochód osobowy M1 z modułowym wnętrzem; nie ma oficjalnej wersji modelowej „Volkswagen Multivan Van”. W praktyce może pełnić rolę rodzinnego vana lub auta do przewozu lekkiego ładunku, ale od generacji T7 (2021) Multivan i Transporter są już dwoma odrębnymi modelami na różnych platformach."
 faq:

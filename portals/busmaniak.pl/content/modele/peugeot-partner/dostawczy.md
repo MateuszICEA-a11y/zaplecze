@@ -6,7 +6,7 @@ description: "Peugeot Partner III w konfiguracji dostawczej Van N1 – ładowno�
 draft: false
 author: "marek-kowalczyk"
 type: "page"
-image: "/images/peugeot-partner-dostawczy-hero.jpg"
+image: "/images/peugeot-partner-dostawczy-hero.webp"
 parent: "peugeot-partner"
 faq:
   - question: "Jaka jest ładowność Peugeot Partnera dostawczego?"
@@ -102,7 +102,7 @@ Orientacyjne dane homologacyjne WLTP:
 - 1.2 PureTech – zwykle ok. 6,3–7,1 l/100 km
 - emisja CO2 zależnie od wersji: ok. 136–170 g/km WLTP
 
-![Peugeot Partner Van – widok na przestrzeń ładunkową z otwartymi drzwiami tylnymi](/images/peugeot-partner-dostawczy-hero.jpg)
+![Peugeot Partner Van – widok na przestrzeń ładunkową z otwartymi drzwiami tylnymi](/images/peugeot-partner-dostawczy-hero.webp)
 
 {{% info title="Partner Van w leasingu operacyjnym" icon="engineering" %}}
 Homologacja N1 sama w sobie nie daje automatycznie prawa do 100% odliczenia VAT. W Polsce pełne odliczenie co do zasady wymaga wyłącznego użycia pojazdu w działalności, regulaminu użytkowania, zgłoszenia VAT-26 i ewidencji przebiegu, chyba że pojazd spełnia szczególne kryteria konstrukcyjne wyłączające użytek prywatny. Przy użytku mieszanym standardem jest 50% odliczenia VAT od wydatków eksploatacyjnych.

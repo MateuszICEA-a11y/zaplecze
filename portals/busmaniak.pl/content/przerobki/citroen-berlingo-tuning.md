@@ -10,7 +10,7 @@ parent_model: "citroen-berlingo"
 type: "post"
 volume: 170
 main_keyword: "Citroën Berlingo tuning"
-image: "/images/citroen-berlingo-tuning-hero.jpg"
+image: "/images/citroen-berlingo-tuning-hero.webp"
 image_alt: "Zmodyfikowany Citroën Berlingo"
 lead: "Berlingo nie kojarzy się z tuningiem, ale kilka modyfikacji potrafi zauważalnie poprawić komfort i osiągi. Chiptuning 1.6 HDI daje **20–30** dodatkowych KM, a wymiana zawieszenia na sportowe zmienia charakter jazdy."
 faq:
@@ -68,7 +68,7 @@ Zmiany wizualne mogą odświeżyć wygląd Berlingo i zwiększyć jego funkcjona
 - **Folie przyciemniające** – redukcja nagrzewania wnętrza i lepsza estetyka; od 600 zł za tylne szyby
 
 
-![Zmodyfikowany Citroën Berlingo](/images/citroen-berlingo-tuning-hero.jpg)
+![Zmodyfikowany Citroën Berlingo](/images/citroen-berlingo-tuning-hero.webp)
 
 ## Wnętrze {#wnętrze}
 

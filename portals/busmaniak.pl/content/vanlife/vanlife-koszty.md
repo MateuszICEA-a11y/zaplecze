@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Vanlife koszty – ile naprawdę wydasz na życie w busie"
 type: "post"
 volume: 1000
-image: "/images/vanlife-koszty-hero.jpg"
+image: "/images/vanlife-koszty-hero.webp"
 image_alt: "Wnętrze kampera z kuchenką i rachunkami – koszty vanlife w Polsce"
 main_keyword: "vanlife koszty"
 lead: "Pytanie o koszty vanlife'u pada zawsze jako pierwsze i odpowiedź nigdy nie jest prosta. Jedno jest pewne – życie w busie nie jest darmowe, ale może być tańsze niż wynajem kawalerki w dużym mieście. Wszystko zależy od stylu: oszczędny vanlife z częstym postojem poza kempingami i gotowaniem na kuchence to inna liga cenowa niż komfortowe postoje z pełną infrastrukturą i jedzenie na mieście. Rozbijamy budżet na czynniki pierwsze."
@@ -74,7 +74,7 @@ Porównanie spalania popularnych busów kamperowych znajdziesz w artykule o [spa
 
 Gotowanie w kamperze to jedna z największych oszczędności vanlife'u. Kuchenka gazowa, lodówka i podstawowy zestaw garnków wystarczają do przygotowania normalnych posiłków, ale ważne jest, by jasno rozdzielić koszty dla jednej i dwóch osób.
 
-![Vanlife koszty – ile kosztuje życie w busie](/images/vanlife-koszty-hero.jpg)
+![Vanlife koszty – ile kosztuje życie w busie](/images/vanlife-koszty-hero.webp)
 
 Porównanie kosztów jedzenia dla **1 osoby**:
 

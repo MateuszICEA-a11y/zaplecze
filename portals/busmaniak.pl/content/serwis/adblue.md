@@ -8,7 +8,7 @@ h1: "AdBlue w busach – co to jest, ile kosztuje, jak uzupełniać"
 type: "page"
 volume: 4400
 main_keyword: "adblue co to"
-image: "/images/adblue-hero.jpg"
+image: "/images/adblue-hero.webp"
 image_alt: "Wlew AdBlue w busie dostawczym z niebieską nakrętką – zbliżenie na korek obok wlewu paliwa"
 lead: "AdBlue to 32,5-procentowy roztwór mocznika w wodzie demineralizowanej, który redukuje emisję tlenków azotu w busach z silnikami diesla Euro 6. Bus dostawczy zużywa 1,5–2,5 litra AdBlue na 1000 km, co odpowiada 1–2% zużycia paliwa. Zignorowanie komunikatu o niskim poziomie płynu skutkuje zablokowaniem ponownego rozruchu silnika lub, w niektórych modelach, ograniczeniem prędkości do 20 km/h. W tym artykule znajdziesz aktualne ceny, instrukcję uzupełniania i rozwiązania problemów z kontrolką."
 faq:
@@ -81,7 +81,7 @@ Zużycie AdBlue w busach dostawczych wynosi zazwyczaj od 1% do 2% zużycia paliw
 
 ### Kalkulacja zużycia
 
-![Wlew AdBlue w busie dostawczym](/images/adblue-hero.jpg)
+![Wlew AdBlue w busie dostawczym](/images/adblue-hero.webp)
 
 W przeliczeniu na dystans, średnie zużycie AdBlue dla busa wynosi od 1,5 do 2,5 litra na 1000 km. Standardowy zbiornik AdBlue o pojemności 22 litrów (np. w Ducato czy Sprinterze) wystarcza na przejechanie od 8 800 do nawet 14 500 km.
 

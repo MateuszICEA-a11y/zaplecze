@@ -3,7 +3,7 @@ title: "Budowa kampera – koszty, etapy, materiały"
 date: 2026-03-23
 description: "Ile kosztuje budowa kampera – szczegółowy kosztorys, etapy prac i potrzebne materiały."
 draft: false
-image: "/images/budowa-kampera-koszty-hero.jpg"
+image: "/images/budowa-kampera-koszty-hero.webp"
 image_alt: "Koszty budowy kampera – kalkulator i materiały na stole warsztatowym"
 author: "anna-wozniak"
 h1: "Budowa kampera – kosztorys, etapy i materiały w 2026 roku"
@@ -99,7 +99,7 @@ System wodny w kamperze może być prosty (zbiornik + pompka ręczna) lub rozbud
 
 Meble to etap, na którym najłatwiej stracić kontrolę nad budżetem. Każdy dodatkowy element – wysuwana szuflada, blat z litego drewna czy system mocowania łóżka – znacząco podnosi koszt.
 
-![Budowa kampera – etapy kosztorysu](/images/budowa-kampera-koszty-hero.jpg)
+![Budowa kampera – etapy kosztorysu](/images/budowa-kampera-koszty-hero.webp)
 
 ### Materiały meblowe i ich ceny
 

@@ -10,7 +10,7 @@ parent: "renault-trafic"
 type: "page"
 volume: 480
 main_keyword: "Renault Trafic dostawczy"
-image: "/images/renault-trafic-dostawczy-hero.jpg"
+image: "/images/renault-trafic-dostawczy-hero.webp"
 image_alt: "Renault Trafic III furgon dostawczy"
 lead: "Renault Trafic dostawczy to średni furgon dostępny przede wszystkim w dwóch długościach nadwozia – L1H1 i L2H1. W praktyce oferuje około 5,8–6,7 m³ przestrzeni ładunkowej, wysokość poniżej 2,0 m i ładowność zwykle około 1000–1250 kg zależnie od konfiguracji."
 faq:
@@ -62,7 +62,7 @@ Jeśli auto ma zabudowę warsztatową, bagażnik dachowy, hak albo dodatkowe ogr
 
 ---
 
-![Renault Trafic III furgon dostawczy](/images/renault-trafic-dostawczy-hero.jpg)
+![Renault Trafic III furgon dostawczy](/images/renault-trafic-dostawczy-hero.webp)
 
 ## Drzwi i dostęp do ładowni Renault Trafic
 

@@ -9,7 +9,7 @@ h1: "Zabudowa busa do spania – proste rozwiązania"
 type: "page"
 volume: 880
 main_keyword: "zabudowa busa do spania"
-image: "/images/zabudowa-do-spania-hero.jpg"
+image: "/images/zabudowa-do-spania-hero.webp"
 image_alt: "Wnętrze busa z rozłożoną platformą do spania i materacem"
 lead: "Zabudowa busa do spania nie musi oznaczać pełnej przeróbki kamperowej za dziesiątki tysięcy złotych. Proste rozwiązania – składana platforma, materac na wymiar, podstawowa izolacja – pozwalają nocować w busie podczas weekendowych wypadów za budżet od 500 zł. Kluczowe jest dopasowanie wymiarów łóżka do konkretnego modelu busa i zapewnienie wentylacji."
 faq:
@@ -79,7 +79,7 @@ Dopasowany materac i podstawowa izolacja to fundament komfortowego snu w busie. 
 
 Materac to element, na którym nie warto oszczędzać – od niego zależy jakość snu. W zabudowach busów sprawdzają się trzy rodzaje materacy:
 
-![Wnętrze busa z rozłożoną platformą do spania i materacem](/images/zabudowa-do-spania-hero.jpg)
+![Wnętrze busa z rozłożoną platformą do spania i materacem](/images/zabudowa-do-spania-hero.webp)
 
 - **Pianka HR (wysokoelastyczna)** – grubość 8–12 cm, dobra wentylacja, cena 300–800 zł na wymiar
 - **Lateks naturalny** – grubość 8–10 cm, antyalergiczny, odporny na wilgoć, cena 600–1 500 zł

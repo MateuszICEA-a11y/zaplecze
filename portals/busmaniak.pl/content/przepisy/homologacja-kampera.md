@@ -5,7 +5,7 @@ description: "Homologacja kampera to procedura zmiany przeznaczenia busa na poja
 draft: false
 author: "marek-kowalczyk"
 h1: "Homologacja kampera – procedura, wymagania i koszty legalizacji"
-image: "/images/homologacja-kampera-hero.jpg"
+image: "/images/homologacja-kampera-hero.webp"
 image_alt: "Bus dostawczy w trakcie przeróbki na kampera w warsztacie"
 main_keyword: "homologacja kampera"
 lead: "Homologacja kampera to formalny proces zmiany przeznaczenia busa z ciężarowego lub osobowego na pojazd specjalny kempingowy. Wymaga spełnienia wymagań technicznych, przejścia badania w OSKP i wizyty w Wydziale Komunikacji. Koszt samej procedury to 400-1500 zł, ale pozwala obniżyć OC nawet o 40%."
@@ -80,7 +80,7 @@ Okręgowa Stacja Kontroli Pojazdów (nie zwykła SKP) przeprowadza dodatkowe bad
 
 Nowa masa wraz z masą pasażerów (przyjmuje się 75 kg na osobę) i bagażu nie może przekroczyć DMC pojazdu (pole F.1). Diagnostyk weryfikuje też trwałość montażu wyposażenia i zgodność instalacji z normami. Badanie kosztuje 82 zł za zmiany konstrukcyjne plus opłata za badanie okresowe.
 
-![Bus w trakcie homologacji kampera](/images/homologacja-kampera-hero.jpg)
+![Bus w trakcie homologacji kampera](/images/homologacja-kampera-hero.webp)
 
 ### Krok 3 – Zapłata akcyzy
 

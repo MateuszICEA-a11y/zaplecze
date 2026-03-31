@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Opel Vivaro – kompletny przewodnik po modelu"
 type: "page"
-image: "/images/opel-vivaro-hero.jpg"
+image: "/images/opel-vivaro-hero.webp"
 image_alt: "Opel Vivaro C furgon na drodze"
 main_keyword: "opel vivaro"
 volume: 9900

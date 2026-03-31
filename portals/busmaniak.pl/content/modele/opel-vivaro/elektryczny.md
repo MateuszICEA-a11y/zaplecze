@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 type: "page"
 main_keyword: "Opel Vivaro-e"
-image: "/images/opel-vivaro-elektryczny-hero.jpg"
+image: "/images/opel-vivaro-elektryczny-hero.webp"
 image_alt: "Opel Vivaro-e – ładowanie DC i przestrzeń ładunkowa"
 parent: "opel-vivaro"
 lead: "Opel Vivaro-e, obecnie na części rynków oferowany jako Vivaro Electric, to elektryczna wersja dostawczego Vivaro. Oferuje bardzo zbliżoną przestrzeń ładunkową do odmiany spalinowej, zależnie od konfiguracji, oraz brak emisji spalin z rury wydechowej podczas jazdy. Zasięg wynosi ok. 230–330 km WLTP, a ładowanie DC do 80% trwa ok. 32 min dla baterii 50 kWh i ok. 45 min dla 75 kWh."
@@ -109,7 +109,7 @@ W Europie model korzysta z gniazda **Type 2** do AC i **CCS Combo 2** do DC. Pok
 
 Warto podkreślić, że czasy AC rzędu 5 i 7,5 godziny nie oznaczają pełnego ładowania od 0 do 100%. Pełne ładowanie trwa dłużej z uwagi na straty i spadek mocy pod koniec procesu, typowy dla akumulatorów litowo-jonowych.
 
-![Opel Vivaro-e – ładowanie DC i przestrzeń ładunkowa](/images/opel-vivaro-elektryczny-hero.jpg)
+![Opel Vivaro-e – ładowanie DC i przestrzeń ładunkowa](/images/opel-vivaro-elektryczny-hero.webp)
 
 ## Koszty eksploatacji Opel Vivaro-e
 

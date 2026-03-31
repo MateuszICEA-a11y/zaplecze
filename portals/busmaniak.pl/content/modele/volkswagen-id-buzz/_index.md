@@ -8,7 +8,7 @@ author: "marek-kowalczyk"
 h1: "Volkswagen ID. Buzz – elektryczny Bulli wraca na drogi"
 parent: "modele"
 type: "page"
-image: "/images/volkswagen-id-buzz-hero.jpg"
+image: "/images/volkswagen-id-buzz-hero.webp"
 image_alt: "Volkswagen ID. Buzz w kolorze żółtym na tle nowoczesnego miasta"
 main_keyword: "volkswagen id buzz"
 lead: "Volkswagen ID. Buzz to elektryczny van na platformie MEB, produkowany od 2022 roku w Hanowerze. Silnik o mocy 150–250 kW (204–339 KM), bateria 77 lub 85 kWh i zasięg do 461 km WLTP. Dostępny w wersjach osobowej (SWB i LWB), dostawczej Cargo oraz sportowej GTX z napędem 4x4."
@@ -76,7 +76,7 @@ Zużycie energii w cyklu mieszanym to 19,0–20,9 kWh/100 km. Na zasięg wpływa
 
 ## Wersje nadwoziowe Volkswagena ID. Buzz
 
-![Volkswagen ID. Buzz](/images/volkswagen-id-buzz-hero.jpg)
+![Volkswagen ID. Buzz](/images/volkswagen-id-buzz-hero.webp)
 
 ID. Buzz występuje w czterech wariantach nadwoziowych:
 

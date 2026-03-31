@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Peugeot Expert 2.0 HDi – dane techniczne i opinie"
 parent: "peugeot-expert"
 type: "page"
-image: "/images/peugeot-expert-2-0-hdi-hero.jpg"
+image: "/images/peugeot-expert-2-0-hdi-hero.webp"
 image_alt: "Silnik 2.0 HDi DW10 w Peugeot Expert II"
 main_keyword: "peugeot expert 2.0 hdi"
 lead: "Silnik 2.0 HDi z rodziny PSA DW10 to jedna z głównych jednostek napędowych Peugeota Experta drugiej generacji (2007–2016). W praktyce najczęściej spotyka się warianty 120 i 163 KM, montowane zarówno w wersjach dostawczych, jak i osobowych tego vana średniej wielkości."
@@ -69,7 +69,7 @@ To samo dotyczy porównania wariantów 120 i 163 KM. Wyższa moc nie musi automa
 Przy zakupie używanego Experta nie oceniałbym silnika wyłącznie po katalogowym spalaniu. W vanie ważniejsze jest, czy auto pracowało pusto czy z ładunkiem, w mieście czy w trasie, oraz czy mamy krótkie L1, czy cięższe L2.
 {{% /expert %}}
 
-![Silnik 2.0 HDi DW10 w Peugeot Expert II](/images/peugeot-expert-2-0-hdi-hero.jpg)
+![Silnik 2.0 HDi DW10 w Peugeot Expert II](/images/peugeot-expert-2-0-hdi-hero.webp)
 
 ## Typowe usterki 2.0 HDi w Expercie
 

@@ -10,7 +10,7 @@ main_keyword: "Ford Transit dostawczy"
 parent: "ford-transit"
 type: "page"
 volume: 320
-image: "/images/ford-transit-dostawczy-hero.jpg"
+image: "/images/ford-transit-dostawczy-hero.webp"
 faq:
   - question: "Jaka jest DMC Ford Transit dostawczy?"
     answer: "Ford Transit w wersji dostawczej furgon występuje w wybranych popularnych wariantach DMC 3,5 t, 4,25 t i 4,7 t, zależnie od wersji i rynku. Standardowo 3,5 t można prowadzić na kat. B, natomiast 4,25 t i 4,7 t wymagają wyższej kategorii, choć w UE istnieją wyjątki ustawowe dla wybranych pojazdów alternatywnie zasilanych do 4,25 t po spełnieniu określonych warunków."
@@ -88,7 +88,7 @@ Przy zakupie warto pamiętać, że w aktualnej gamie Transita występują także
 
 W praktyce znaczenie mają też wymiary zewnętrzne całego auta. Oprócz popularnych konfiguracji L2H2, L3H2, L3H3 i L4H3, przy zakupie warto sprawdzić także niższe wersje H1, rozstaw osi i wysokość całkowitą, bo to one decydują o wjeździe do hal, garaży i na parkingi podziemne.
 
-![Ford Transit dostawczy – drzwi tylne 270°](/images/ford-transit-dostawczy-hero.jpg)
+![Ford Transit dostawczy – drzwi tylne 270°](/images/ford-transit-dostawczy-hero.webp)
 
 ## Zabudowy serwisowe Transita dostawczego
 

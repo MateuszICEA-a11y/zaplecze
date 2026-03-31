@@ -10,7 +10,7 @@ parent: "renault-master"
 type: "page"
 volume: 2900
 main_keyword: "Renault Master Van"
-image: "/images/renault-master-van-hero.jpg"
+image: "/images/renault-master-van-hero.webp"
 image_alt: "Renault Master Van L3H2 z otwartymi drzwiami bocznymi"
 lead: "Renault Master Van to duży furgon dostawczy, a w tym artykule skupiamy się przede wszystkim na generacji Master III produkowanej od 2010 roku, po liftingach z 2014 i 2019 roku. W standardowych odmianach furgon oferował zwykle od ok. 8 do 17 m³ przestrzeni ładunkowej, a cięższe wersje o wyższym DMC mogły przekraczać 1500–2000 kg ładowności zależnie od napędu i homologacji."
 faq:
@@ -76,7 +76,7 @@ W gamie występowała też wersja elektryczna – najpierw jako Master Z.E., pó
 
 Na koszty użytkowania wpływa również pojemność zbiornika paliwa i realne spalanie. W Masterze III zbiornik paliwa miał zwykle ok. 80 l, a w wybranych wersjach ok. 105 l, natomiast rzeczywiste zużycie paliwa dla 2.3 dCi najczęściej mieści się w przedziale ok. 8,5–12,0 l/100 km zależnie od DMC, nadwozia i stylu jazdy.
 
-![Renault Master Van L3H2 z otwartymi drzwiami bocznymi](/images/renault-master-van-hero.jpg)
+![Renault Master Van L3H2 z otwartymi drzwiami bocznymi](/images/renault-master-van-hero.webp)
 
 ## Ładowność Mastera Van – jak obliczyć?
 

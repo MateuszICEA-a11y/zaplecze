@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Fiat Ducato blaszak – przegląd wersji"
 parent: "fiat-ducato"
 type: "page"
-image: "/images/fiat-ducato-blaszak-hero.jpg"
+image: "/images/fiat-ducato-blaszak-hero.webp"
 image_alt: "Fiat Ducato furgon blaszak L3H2 – widok z boku"
 main_keyword: "Fiat Ducato blaszak"
 lead: "Fiat Ducato w wersji furgon to jeden z najważniejszych modeli w segmencie dużych dostawczaków. W generacji X250/X290 najczęściej spotyka się konfiguracje L2H1, L2H2, L3H2, L4H2 i L4H3, a na wybranych rynkach także L3H3. Wersje 3,0–3,5 t mieszczą się w prawie jazdy kat. B, natomiast odmiany Heavy dochodzą do 4,0–4,25 t DMC. Realna ładowność zależy od długości, wysokości, silnika i zabudowy – od około 1000 kg do ponad 2000 kg w wersjach Heavy."
@@ -76,7 +76,7 @@ Obecność AdBlue trzeba wiązać z normą emisji i konkretną wersją silnika, 
 
 {{% info title="Serwis" icon="engineering" %}}W silnikach 2.3 MultiJet wymiana oleju co 15–20 tys. km wyraźnie pomaga turbosprężarce i osprzętowi. Przy oględzinach używanego egzemplarza warto sprawdzić historię takich wymian, korekty wtrysków, stan DPF/SCR oraz zgodność VIN z wyposażeniem i wersją silnika.{{% /info %}}
 
-![Fiat Ducato blaszak – furgon, wymiary paki, ładowność](/images/fiat-ducato-blaszak-hero.jpg)
+![Fiat Ducato blaszak – furgon, wymiary paki, ładowność](/images/fiat-ducato-blaszak-hero.webp)
 
 ## Typowe problemy Ducato blaszaka
 

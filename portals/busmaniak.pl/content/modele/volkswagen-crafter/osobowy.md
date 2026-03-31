@@ -6,7 +6,7 @@ description: "Volkswagen Crafter w wersji osobowej – Kombi do 9 miejsc, minibu
 draft: false
 author: "marek-kowalczyk"
 type: "page"
-image: "/images/volkswagen-crafter-osobowy-hero.jpg"
+image: "/images/volkswagen-crafter-osobowy-hero.webp"
 parent: "volkswagen-crafter"
 faq:
   - question: "Ile osób mieści VW Crafter osobowy?"
@@ -80,7 +80,7 @@ Warto też uważać na ogólne stwierdzenia o liczbie poduszek powietrznych. W C
 
 W wersjach 8- i 9-osobowych kluczowe znaczenie ma sam układ wnętrza. Najczęściej liczy się konfiguracja foteli **2+1** lub **2+2+3**, możliwość szybkiego demontażu drugiego i trzeciego rzędu, szerokość drzwi przesuwnych oraz realna pojemność bagażnika za ostatnim rzędem siedzeń.
 
-![VW Crafter Kombi – wnętrze z miejscami pasażerskimi](/images/volkswagen-crafter-osobowy-hero.jpg)
+![VW Crafter Kombi – wnętrze z miejscami pasażerskimi](/images/volkswagen-crafter-osobowy-hero.webp)
 
 ## Silniki dostępne w Kombi
 

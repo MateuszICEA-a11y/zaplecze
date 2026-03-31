@@ -10,7 +10,7 @@ parent: "citroen-berlingo"
 type: "page"
 volume: 720
 main_keyword: "Citroën Berlingo Van"
-image: "/images/citroen-berlingo-van-hero.jpg"
+image: "/images/citroen-berlingo-van-hero.webp"
 image_alt: "Citroën Berlingo Van III generacji załadowany"
 lead: "Berlingo Van to wersja dostawcza Citroëna Berlingo z homologacją ciężarową N1, stalową przegrodą za kabiną i przestrzenią ładunkową zamiast tylnych siedzeń. Dostępna w dwóch długościach – M i XL – oferuje objętość ładunkową 3,3 lub 3,9 m3, a ładowność zależnie od wersji wynosi od ok. 650 do ok. 1000 kg."
 faq:
@@ -80,7 +80,7 @@ W praktyce oznacza to, że wersje podstawowe sprawdzają się w lekkim transporc
 
 Więcej o wariantach dostawczych w artykule o [Berlingo dostawczym](/modele/citroen-berlingo/dostawczy/).
 
-![Citroën Berlingo Van III generacji załadowany](/images/citroen-berlingo-van-hero.jpg)
+![Citroën Berlingo Van III generacji załadowany](/images/citroen-berlingo-van-hero.webp)
 
 ## Silniki w wersji Van {#silniki}
 

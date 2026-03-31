@@ -10,7 +10,7 @@ main_keyword: "Mercedes Sprinter osobowy"
 parent: "mercedes-sprinter"
 type: "page"
 volume: 590
-image: "/images/mercedes-sprinter-osobowy-hero.jpg"
+image: "/images/mercedes-sprinter-osobowy-hero.webp"
 faq:
   - question: "Ile miejsc ma Mercedes Sprinter osobowy?"
     answer: "Mercedes Sprinter osobowy może występować od 9 miejsc łącznie do 19 miejsc siedzących, ale trzeba rozdzielić fabryczny Tourer od zabudów wykonywanych przez firmy karosujące. W praktyce liczba miejsc zależy od długości pojazdu, DMC i homologowanej zabudowy."
@@ -92,7 +92,7 @@ Sprinter osobowy występuje z DMC od 3500 kg do 5000 kg zależnie od wersji. Im 
 
 Nowoczesne diesle Euro 6 wymagają stosowania AdBlue. W eksploatacji warto uwzględnić także interwały serwisowe ASSYST sięgające do 60 000 km lub 2 lat zależnie od warunków użytkowania, a także koszty opon 16- i 17-calowych, ubezpieczenia i przeglądów dla pojazdów M1 oraz M2.
 
-![Mercedes Sprinter Tourer – wnętrze wersji Tourist Comfort](/images/mercedes-sprinter-osobowy-hero.jpg)
+![Mercedes Sprinter Tourer – wnętrze wersji Tourist Comfort](/images/mercedes-sprinter-osobowy-hero.webp)
 
 ## MBUX i systemy pokładowe
 

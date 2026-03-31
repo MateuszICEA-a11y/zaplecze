@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 type: "page"
 main_keyword: "Opel Vivaro Long"
-image: "/images/opel-vivaro-long-hero.jpg"
+image: "/images/opel-vivaro-long-hero.webp"
 image_alt: "Opel Vivaro Long – wymiary przestrzeni ładunkowej"
 parent: "opel-vivaro"
 lead: "Opel Vivaro Long w tym materiale dotyczy generacji C produkowanej od 2019 roku. To dłuższa odmiana vana na platformie EMP2, z objętością przestrzeni ładunkowej ok. 6,1 m³ i wyraźnie większym potencjałem do przewozu długich ładunków niż wersja Standard."
@@ -93,7 +93,7 @@ W ofercie Vivaro C warto uwzględnić:
 
 W wersji elektrycznej dostępne są akumulatory **50 kWh** i **75 kWh**. Deklarowany zasięg WLTP to odpowiednio ok. **230 km** i **330 km**, a ładowanie prądem stałym może odbywać się z mocą do **100 kW**; ładowarka pokładowa AC ma zwykle **7,4 lub 11 kW** zależnie od wersji.
 
-![Opel Vivaro Long – wymiary przestrzeni ładunkowej](/images/opel-vivaro-long-hero.jpg)
+![Opel Vivaro Long – wymiary przestrzeni ładunkowej](/images/opel-vivaro-long-hero.webp)
 
 ## Dostęp do przestrzeni ładunkowej
 

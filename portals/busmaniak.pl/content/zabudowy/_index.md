@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Zabudowa busa – kompletny przewodnik po zabudowach 2026"
 type: "page"
-image: "/images/zabudowy-hub-hero.jpg"
+image: "/images/zabudowy-hub-hero.webp"
 image_alt: "Zabudowa serwisowa busa z regałami i organizerami na narzędzia"
 main_keyword: "zabudowa busa"
 lead: "Zabudowa busa to inwestycja, która zamienia pustą przestrzeń ładunkową w mobilne miejsce pracy. Od prostych regałów za kilka tysięcy złotych po kompletne zabudowy serwisowe za 30 000 zł – wybór zależy od branży, budżetu i modelu pojazdu. Ten przewodnik pomoże Ci podjąć właściwą decyzję."
@@ -86,7 +86,7 @@ Do ceny zabudowy należy doliczyć koszt podłogi ochronnej (800–2 000 zł), z
 
 {{< related-articles "zabudowa-busa-cena,zabudowa-sklejka-diy,regaly-do-busa" "Ile to kosztuje? Sprawdź szczegółowe kalkulacje →" >}}
 
-![Zabudowa serwisowa busa z regałami aluminiowymi](/images/zabudowy-hub-hero.jpg)
+![Zabudowa serwisowa busa z regałami aluminiowymi](/images/zabudowy-hub-hero.webp)
 
 ## Materiały stosowane w zabudowach
 

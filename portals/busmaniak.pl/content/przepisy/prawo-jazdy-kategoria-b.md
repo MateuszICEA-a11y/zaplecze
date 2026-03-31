@@ -5,7 +5,7 @@ description: "Prawo jazdy kategorii B uprawnia do prowadzenia busów do 3,5 t DM
 draft: false
 author: "marek-kowalczyk"
 h1: "Prawo jazdy kategorii B – jakim busem możesz jeździć"
-image: "/images/prawo-jazdy-kategoria-b-hero.jpg"
+image: "/images/prawo-jazdy-kategoria-b-hero.webp"
 image_alt: "Kluczyki samochodowe i prawo jazdy kategorii B obok busa dostawczego"
 main_keyword: "prawo jazdy kategoria b"
 lead: "Prawo jazdy kategorii B uprawnia do prowadzenia pojazdów o DMC do 3500 kg i przewozu maksymalnie 9 osób łącznie z kierowcą. Obejmuje większość busów dostawczych, vanów kempingowych i kamperów na rynku. Od grudnia 2021 roku posiadacze kat. B z 2-letnim stażem mogą prowadzić pojazdy elektryczne do 4250 kg."
@@ -72,7 +72,7 @@ Poza dużymi furgonami kategoria B obejmuje również segment mniejszych vanów,
 
 Lżejsze vany oferują większy margines masy przy holowaniu przyczepy w ramach limitu 3500 kg dla całego zestawu pojazdów.
 
-![Prawo jazdy kategorii B i bus dostawczy](/images/prawo-jazdy-kategoria-b-hero.jpg)
+![Prawo jazdy kategorii B i bus dostawczy](/images/prawo-jazdy-kategoria-b-hero.webp)
 
 ## Kategoria B z przyczepą – zasady holowania
 

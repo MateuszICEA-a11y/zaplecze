@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Opel Combo – kompletny przewodnik po modelu"
 type: "page"
-image: "/images/opel-combo-hero.jpg"
+image: "/images/opel-combo-hero.webp"
 image_alt: "Opel Combo E Cargo furgon na parkingu"
 main_keyword: "opel combo"
 volume: 18100

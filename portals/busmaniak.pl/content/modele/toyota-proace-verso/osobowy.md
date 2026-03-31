@@ -10,7 +10,7 @@ parent: "toyota-proace-verso"
 type: "page"
 volume: 390
 main_keyword: "Toyota Proace Verso osobowy"
-image: "/images/toyota-proace-verso-osobowy-hero.jpg"
+image: "/images/toyota-proace-verso-osobowy-hero.webp"
 faq:
   - question: "Ile miejsc ma Toyota Proace Verso?"
     answer: "Od 5 do 9 miejsc, zależnie od wersji długości i wybranej konfiguracji siedzeń. Wersja Medium oferuje do 7 miejsc, Long do 9 miejsc."
@@ -77,7 +77,7 @@ W pierwotnej wersji tekstu pojawiły się zbyt daleko idące doprecyzowania doty
 Toyota Proace Verso jest samochodem osobowym z homologacją M1. Przy zakupie prywatnym nabywca płaci po prostu cenę brutto, natomiast w firmie odliczenie VAT zależy od sposobu użytkowania pojazdu – zwykle 50% przy użytku mieszanym albo 100% po spełnieniu warunków pełnego odliczenia. Jeśli mówimy o zastosowaniach przewozowych, Proace Verso oferuje konfiguracje do 9 miejsc, a nie powyżej 9 osób.
 {{% /info %}}
 
-![Toyota Proace Verso VIP – wnętrze kabiny pasażerskiej](/images/toyota-proace-verso-osobowy-hero.jpg)
+![Toyota Proace Verso VIP – wnętrze kabiny pasażerskiej](/images/toyota-proace-verso-osobowy-hero.webp)
 
 ## Ceny Toyoty Proace Verso i konkurencja
 

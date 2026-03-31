@@ -10,7 +10,7 @@ parent: "renault-master"
 type: "page"
 volume: 480
 main_keyword: "Renault Master furgon"
-image: "/images/renault-master-furgon-hero.jpg"
+image: "/images/renault-master-furgon-hero.webp"
 image_alt: "Renault Master furgon L3H2 – widok z tyłu przy rampie"
 lead: "Renault Master furgon występował w kilku długościach i wysokościach nadwozia, z przestrzenią ładunkową od około 8 m³ w krótszych odmianach do 17 m³ w największych wersjach. Trzeba jednak wyraźnie rozdzielić generacje: Master III był produkowany od 2010 r., przeszedł lifting w 2019 r., a w 2024 r. zadebiutował Master IV z inną gamą napędów, multimediami i systemami wsparcia kierowcy. W tym przewodniku skupiamy się głównie na Masterze III furgon, bo właśnie dla tej generacji najczęściej porównia się wersje L1–L4."
 faq:

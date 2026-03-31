@@ -10,7 +10,7 @@ parent: "iveco-daily"
 type: "page"
 volume: 1000
 main_keyword: "Iveco Daily laweta"
-image: "/images/iveco-daily-laweta-hero.jpg"
+image: "/images/iveco-daily-laweta-hero.webp"
 faq:
   - question: "Jakie prawo jazdy potrzebne do Iveco Daily laweta 7,2 t?"
     answer: "DMC 7,2 t mieści się w limicie kategorii C1 do 7,5 t. Dla wersji 3,5 t wystarczy kat. B, ale realna ładowność po zabudowie jest wyraźnie mniejsza."
@@ -79,7 +79,7 @@ Dobór najazdów zależy od konstrukcji zabudowy, dopuszczalnego obciążenia os
 
 Na rynku występują różne typy zabudów: platforma stała, hydraulicznie opuszczana, przesuwna, z wyciągarką, z najazdami chowanymi czy systemy do transportu dwóch aut. Każda z nich inaczej wpływa na masę własną, ładowność i sposób użytkowania.
 
-![Iveco Daily laweta – platforma i najazd hydrauliczny](/images/iveco-daily-laweta-hero.jpg)
+![Iveco Daily laweta – platforma i najazd hydrauliczny](/images/iveco-daily-laweta-hero.webp)
 
 ## Który silnik do lawety Iveco Daily
 

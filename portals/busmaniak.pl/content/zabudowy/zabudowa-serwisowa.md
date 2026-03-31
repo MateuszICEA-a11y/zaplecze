@@ -9,7 +9,7 @@ h1: "Zabudowa serwisowa busa – dla ekip serwisowych"
 type: "page"
 volume: 390
 main_keyword: "zabudowa serwisowa busa"
-image: "/images/zabudowa-serwisowa-hero.jpg"
+image: "/images/zabudowa-serwisowa-hero.webp"
 image_alt: "Zabudowa serwisowa w przestrzeni ładunkowej busa dostawczego"
 lead: "Zabudowa serwisowa busa to fundament pracy każdej ekipy technicznej. Dobrze zaprojektowany system regałów, szuflad i organizerów skraca czas dojazdu do narzędzi, chroni sprzęt przed uszkodzeniem i spełnia normy bezpieczeństwa ładunku. Wybór między gotowym systemem a zabudową na wymiar zależy od branży, budżetu i modelu pojazdu."
 faq:
@@ -77,7 +77,7 @@ Profesjonalna zabudowa dzieli przestrzeń ładunkową na strefy funkcjonalne, gd
 
 Kluczowym trendem jest autonomiczne zasilanie przestrzeni ładunkowej. Instalacja dodatkowego akumulatora (np. LiFePO4 100–200 Ah) oraz przetwornicy prądu 12V/230V z czystym sinusem (min. 1500–3000 W) pozwala na ładowanie baterii i zasilanie elektronarzędzi bez ryzyka rozładowania akumulatora rozruchowego. Uzupełnieniem jest oświetlenie LED paki o mocy min. 1500–2000 lumenów, niezbędne do pracy po zmroku.
 
-![Zabudowa serwisowa w przestrzeni ładunkowej busa](/images/zabudowa-serwisowa-hero.jpg)
+![Zabudowa serwisowa w przestrzeni ładunkowej busa](/images/zabudowa-serwisowa-hero.webp)
 
 ### Zasady ergonomii
 

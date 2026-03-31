@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Fiat Ducato plandeka – przegląd wersji"
 parent: "fiat-ducato"
 type: "page"
-image: "/images/fiat-ducato-plandeka-hero.jpg"
+image: "/images/fiat-ducato-plandeka-hero.webp"
 image_alt: "Fiat Ducato z zabudową plandekową 10-paletową – widok z boku"
 main_keyword: "Fiat Ducato plandeka"
 lead: "Fiat Ducato to popularna baza pod zabudowę plandekową w transporcie lekkim do 3,5 tony. Wersje 8-paletowe zwykle bazują na długości użytkowej około 4200–4500 mm, natomiast układ 10 europalet najczęściej wymaga około 5000 mm długości użytkowej lub zależy od konkretnego układu palet i wymiarów zabudowy."
@@ -90,7 +90,7 @@ Dla popularnego 2.3 MultiJet przewoźnicy zwracają uwagę na typowe elementy ek
 
 {{% expert name="Marek Kowalczyk" %}}Szukając używanego Ducato pod plandekę, celowałbym w roczniki 2017–2019 z silnikiem 2.3 o mocy 150 lub 180 KM. To udany kompromis między dynamiką, kosztami serwisu i spalaniem, które przy pełnej zabudowie zwykle zamyka się w przedziale 11–13 l/100 km.{{% /expert %}}
 
-![Fiat Ducato plandeka – wymiary, ładowność, zastosowania](/images/fiat-ducato-plandeka-hero.jpg)
+![Fiat Ducato plandeka – wymiary, ładowność, zastosowania](/images/fiat-ducato-plandeka-hero.webp)
 
 ## Praktyczne zastosowania i doposażenie
 

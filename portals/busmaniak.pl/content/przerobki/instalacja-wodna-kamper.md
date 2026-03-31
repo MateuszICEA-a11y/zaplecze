@@ -3,7 +3,7 @@ title: "Instalacja wodna w kamperze – zbiorniki, pompy"
 date: 2026-03-23
 description: "Instalacja wodna w kamperze – dobór zbiorników, pomp i montaż systemu wodnego."
 draft: false
-image: "/images/instalacja-wodna-kamper-hero.jpg"
+image: "/images/instalacja-wodna-kamper-hero.webp"
 image_alt: "Instalacja wodna w kamperze – pompa, zbiornik i armatura"
 author: "anna-wozniak"
 h1: "Instalacja wodna w kamperze – zbiorniki, pompy, bojler i schemat montażu"
@@ -91,7 +91,7 @@ Pompy zanurzeniowe (np. Reich, Comet), wrzucane bezpośrednio do zbiornika, są 
 -   **Presostat wbudowany** – to standard w pompach ciśnieniowych. Jest to czujnik, który automatycznie wyłącza pompę po zamknięciu kranu i włącza po jego otwarciu.
 -   **Bezpiecznik 10 A** – pompę należy podłączyć na osobnym obwodzie w skrzynce bezpieczników [instalacji elektrycznej](/przerobki/instalacja-elektryczna-kamper/).
 
-![Instalacja wodna w kamperze – schemat](/images/instalacja-wodna-kamper-hero.jpg)
+![Instalacja wodna w kamperze – schemat](/images/instalacja-wodna-kamper-hero.webp)
 
 ## Bojler – ciepła woda w kamperze {#bojler}
 

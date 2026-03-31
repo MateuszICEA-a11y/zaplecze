@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Przegląd techniczny busa – kompletny przewodnik na 2026 rok"
 type: "post"
 volume: 5000
-image: "/images/przeglad-techniczny-hero.jpg"
+image: "/images/przeglad-techniczny-hero.webp"
 image_alt: "Przegląd techniczny busa na stacji kontroli pojazdów"
 main_keyword: "przegląd techniczny"
 lead: "Od września 2025 roku badanie techniczne busa kosztuje 149 zł zamiast dotychczasowych 99 zł – to pierwsza podwyżka od ponad dwudziestu lat. Ale sama opłata to najmniejszy problem. Negatywny wynik przeglądu oznacza zakaz poruszania się po drogach i konieczność naprawy usterki w ciągu 14 dni. Busy dostawcze oblewają przegląd częściej niż osobówki, bo ich eksploatacja jest intensywniejsza. Sprawdź, co dokładnie kontroluje diagnosta i jak przygotować busa, żeby przejść badanie za pierwszym razem."
@@ -60,7 +60,7 @@ To najważniejszy element przeglądu i jednocześnie najczęstsza przyczyna nega
 - Działanie hamulca postojowego (minimum 16% DMC)
 - Stan przewodów i węży hamulcowych (pęknięcia, korozja, wycieki)
 
-![Przegląd techniczny busa na stacji kontroli pojazdów](/images/przeglad-techniczny-hero.jpg)
+![Przegląd techniczny busa na stacji kontroli pojazdów](/images/przeglad-techniczny-hero.webp)
 
 ### Oświetlenie
 

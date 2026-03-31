@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Volkswagen Amarok – kompletny przewodnik po modelu"
 type: "page"
-image: "/images/volkswagen-amarok-hero.jpg"
+image: "/images/volkswagen-amarok-hero.webp"
 image_alt: "Volkswagen Amarok II pickup na szutrowej drodze"
 main_keyword: "volkswagen amarok"
 volume: 12100

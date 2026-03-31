@@ -9,7 +9,7 @@ h1: "Zabudowa paki busa – ochrona ładunku"
 type: "page"
 volume: 590
 main_keyword: "zabudowa paki busa"
-image: "/images/zabudowa-paki-hero.jpg"
+image: "/images/zabudowa-paki-hero.webp"
 image_alt: "Paka busa dostawczego z wykładziną podłogową i listwami ochronnymi na ścianach"
 lead: "Zabudowa paki busa chroni zarówno ładunek, jak i sam pojazd. Wykładziny podłogowe, okładziny ścian, listwy ochronne i systemy mocowania zapobiegają uszkodzeniom towaru podczas transportu i wydłużają żywotność przestrzeni ładunkowej. Prawidłowo zabezpieczona paka obniża koszty eksploatacji, ułatwia utrzymanie czystości i podnosi wartość odsprzedaży busa."
 faq:
@@ -84,7 +84,7 @@ Przy okazji montażu paneli na ścianach i suficie warto zainwestować w dodatko
 
 Nawet najlepsza obudowa paki nie zda egzaminu bez skutecznego systemu unieruchomienia ładunku. Prawidłowe mocowanie towaru to nie tylko ochrona przed uszkodzeniem, ale przede wszystkim wymóg prawny i kluczowy element bezpieczeństwa na drodze.
 
-![Paka busa dostawczego z wykładziną podłogową i listwami ochronnymi na ścianach](/images/zabudowa-paki-hero.jpg)
+![Paka busa dostawczego z wykładziną podłogową i listwami ochronnymi na ścianach](/images/zabudowa-paki-hero.webp)
 
 ### Szyny kotwiczące i pasy transportowe
 

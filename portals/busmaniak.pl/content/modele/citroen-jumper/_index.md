@@ -6,7 +6,7 @@ description: "Citroën Jumper III (od 2006) – bliźniak Fiata Ducato III i Peu
 draft: false
 author: "marek-kowalczyk"
 type: "page"
-image: "/images/citroen-jumper-hero.jpg"
+image: "/images/citroen-jumper-hero.webp"
 parent: "citroen-jumper"
 faq:
   - question: "Czy Citroën Jumper to to samo co Fiat Ducato?"
@@ -74,7 +74,7 @@ Szerokość maksymalna: 1870 mm
 
 
 
-![Citroën Jumper – van L2H2 z zewnątrz](/images/citroen-jumper-hero.jpg)
+![Citroën Jumper – van L2H2 z zewnątrz](/images/citroen-jumper-hero.webp)
 
 ## Elektryczny ë-Jumper (od 2024)
 

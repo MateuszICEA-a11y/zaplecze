@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Volkswagen Multivan – kompletny przewodnik"
 type: "page"
 main_keyword: "Volkswagen Multivan"
-image: "/images/volkswagen-multivan-hero.jpg"
+image: "/images/volkswagen-multivan-hero.webp"
 image_alt: "Volkswagen Multivan T7 – widok z boku z otwartymi drzwiami przesuwnymi"
 lead: "Volkswagen Multivan T7 to luksusowy minibus na platformie MQB – zupełnie nowa konstrukcja od 2021 roku z silnikami 2.0 TSI, 2.0 TDI i hybrydą plug-in 245 KM. Na rynku wtórnym dostępne też kultowe generacje T4–T6.1 w cenach od 35 000 zł."
 faq:

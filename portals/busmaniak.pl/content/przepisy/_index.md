@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Przepisy i prawo jazdy – przewodnik dla kierowców busów i kamperów"
 type: "page"
-image: "/images/przepisy-hub-hero.jpg"
+image: "/images/przepisy-hub-hero.webp"
 image_alt: "Tablica informacyjna z ograniczeniem tonażu na tle drogi ekspresowej – symbolika przepisów drogowych dla busów"
 main_keyword: "przepisy busy"
 lead: "Prowadzisz busa dostawczego albo planujesz podróż kamperem po Europie? Musisz znać przepisy dotyczące dopuszczalnej masy całkowitej, kategorii prawa jazdy i opłat drogowych – ich złamanie grozi mandatami od 500 do 3000 zł. Ten przewodnik zbiera w jednym miejscu najważniejsze regulacje na 2026 rok: od DMC przez winiety po homologację kampera."
@@ -113,7 +113,7 @@ Szczegółowe przewodniki po opłatach w poszczególnych krajach: [winieta Czech
 
 ## Homologacja kampera – jak zalegalizować przeróbkę {#homologacja}
 
-![Wnętrze kampera z zabudową meblową](/images/przepisy-hub-hero.jpg)
+![Wnętrze kampera z zabudową meblową](/images/przepisy-hub-hero.webp)
 
 Jeśli [przerabiasz busa na kampera](/przerobki/), musisz zmienić jego klasyfikację w dowodzie rejestracyjnym z „samochód ciężarowy" (N1) na „samochód specjalny – kempingowy" (M1 SA). Bez tego formalnie poruszasz się pojazdem ciężarowym z nielegalnie zamontowanym wyposażeniem mieszkalnym.
 

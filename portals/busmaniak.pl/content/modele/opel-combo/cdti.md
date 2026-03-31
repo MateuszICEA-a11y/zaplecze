@@ -9,7 +9,7 @@ parent: "opel-combo"
 type: "page"
 volume: 480
 main_keyword: "opel combo cdti"
-image: "/images/opel-combo-hero.jpg"
+image: "/images/opel-combo-hero.webp"
 image_alt: "Opel Combo furgon"
 lead: "Silniki CDTi napędzały Opla Combo głównie w generacjach C i D – od popularnego 1.3 CDTi z rodziny Fiat/GM MultiJet po 1.6 CDTi w Combo D. Każdy wariant ma inną charakterystykę, typowe usterki i inne koszty serwisu. W Combo E (od 2018) oznaczenie CDTi zastąpiono przez nowsze diesle 1.5."
 faq:

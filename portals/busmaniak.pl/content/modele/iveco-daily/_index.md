@@ -10,7 +10,7 @@ parent: ""
 type: "page"
 volume: 27100
 main_keyword: "Iveco Daily dane techniczne"
-image: "/images/iveco-daily-hero.jpg"
+image: "/images/iveco-daily-hero.webp"
 image_alt: "Iveco Daily VII furgon"
 lead: "Iveco Daily to jedyny van w segmencie, który oferuje DMC od 3,5 do 7,2 tony w ramach jednej platformy. Rama drabinkowa zamiast samonośnego nadwozia, silniki 2.3 i 3.0 MultiJet II oraz elektryczne eDaily – to cechy, które odróżniają go od Transita, Sprintera i Craftera."
 faq:
@@ -104,7 +104,7 @@ W warsztacie najczęściej trafiają do mnie Daily z silnikiem 2.3 po 200–250 
 
 
 
-![Iveco Daily VII furgon](/images/iveco-daily-hero.jpg)
+![Iveco Daily VII furgon](/images/iveco-daily-hero.webp)
 
 ## Wersje nadwoziowe Iveco Daily {#wersje-nadwoziowe}
 

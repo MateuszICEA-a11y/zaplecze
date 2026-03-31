@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 h1: "Nissan NV200 – kompletny przewodnik po modelu"
 type: "page"
-image: "/images/nissan-nv200-hero.jpg"
+image: "/images/nissan-nv200-hero.webp"
 image_alt: "Nissan NV200 furgon na ulicy miasta"
 main_keyword: "nissan nv200"
 volume: 4400

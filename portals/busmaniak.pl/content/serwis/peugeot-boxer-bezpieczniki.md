@@ -9,7 +9,7 @@ parent_model: "peugeot-boxer"
 type: "post"
 volume: 800
 main_keyword: "peugeot boxer bezpieczniki"
-image: "/images/peugeot-boxer-bezpieczniki-hero.jpg"
+image: "/images/peugeot-boxer-bezpieczniki-hero.webp"
 image_alt: "Skrzynka bezpieczników w Peugeocie Boxer pod deską rozdzielczą"
 lead: "Peugeot Boxer dzieli platformę z Fiatem Ducato i Citroënem Jumperem, więc układ bezpieczników jest bardzo zbliżony – ale nie identyczny. Różnice w oznaczeniach i rozmieszczeniu funkcji potrafią zmylić nawet doświadczonych mechaników. Poniżej znajdziesz schematy obu wersji (2006–2014 i facelift od 2014), lokalizacje skrzynek oraz instrukcję wymiany."
 faq:
@@ -86,7 +86,7 @@ Facelift z 2014 roku wprowadził zmiany w kilku obwodach. Najważniejsze różni
 
 Struktura skrzynek pozostała taka sama (trzy lokalizacje), a typy bezpieczników się nie zmieniły. Jeśli masz schemat z [Fiata Ducato](/serwis/bezpieczniki-fiat-ducato/) X290 (po 2014), będzie on w 90% zgodny z Boxerem FL.
 
-![Bezpieczniki Peugeot Boxer – schemat i lokalizacja](/images/peugeot-boxer-bezpieczniki-hero.jpg)
+![Bezpieczniki Peugeot Boxer – schemat i lokalizacja](/images/peugeot-boxer-bezpieczniki-hero.webp)
 
 ## Najczęstsze awarie elektryczne w Boxerze
 

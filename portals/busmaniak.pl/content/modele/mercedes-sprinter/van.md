@@ -10,7 +10,7 @@ main_keyword: "Mercedes Sprinter Van"
 parent: "mercedes-sprinter"
 type: "page"
 volume: 18100
-image: "/images/mercedes-sprinter-van-hero.jpg"
+image: "/images/mercedes-sprinter-van-hero.webp"
 faq:
   - question: "Ile wynosi ładowność Mercedes Sprinter Van?"
     answer: "Ładowność Mercedes Sprinter Van zależy od wersji nadwozia, napędu i DMC. W gamie występują warianty od 3,0 t do 5,5 t DMC, dlatego ładowność trzeba zawsze odnosić do konkretnej konfiguracji – szczególnie przy porównaniu FWD, RWD i AWD."
@@ -83,7 +83,7 @@ W FWD zależnie od rocznika stosowano 6-biegowy manual i 9-biegowy automat 9G-TR
 
 Norma emisji i osprzęt oczyszczania spalin obejmują układ SCR z AdBlue. W eksploatacji warto regularnie kontrolować działanie układu SCR/NOx, DPF i EGR, bo to jedne z kluczowych punktów serwisowych w nowoczesnym dieslu. Więcej o samym układzie można przeczytać w haśle [SCR](https://pl.wikipedia.org/wiki/Selektywna_redukcja_katalityczna).
 
-![Mercedes Sprinter Van – przestrzeń ładunkowa L4H2](/images/mercedes-sprinter-van-hero.jpg)
+![Mercedes Sprinter Van – przestrzeń ładunkowa L4H2](/images/mercedes-sprinter-van-hero.webp)
 
 ## Napęd – FWD, RWD, AWD
 

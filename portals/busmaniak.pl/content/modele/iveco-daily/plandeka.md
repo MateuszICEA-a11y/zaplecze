@@ -10,7 +10,7 @@ parent: "iveco-daily"
 type: "page"
 volume: 480
 main_keyword: "Iveco Daily plandeka"
-image: "/images/iveco-daily-plandeka-hero.jpg"
+image: "/images/iveco-daily-plandeka-hero.webp"
 faq:
   - question: "Ile europalety mieści Iveco Daily plandeka?"
     answer: "Europaleta ma 1200 × 800 mm. Przy szerokości wewnętrznej ok. 2100 mm zwykle mieszczą się 2 palety w poprzek. Dla skrzyni o długości 4300 mm teoretycznie daje to do 6 palet w jednej warstwie, a przy 4800 mm do 8, ale zawsze zależy to od realnej szerokości między słupkami, nadkolami i sposobu ustawienia."
@@ -63,7 +63,7 @@ Sama etykieta L2, L3 czy L4 nie wystarcza bez odniesienia do konkretnego cennika
 
 Warto pamiętać też o przepisach dla transportu drogowego rzeczy powyżej 3,5 t DMC. Poza samą kategorią prawa jazdy dochodzą obowiązki przedsiębiorcy i kierowcy zawodowego, m.in. kwalifikacja wstępna lub szkolenie okresowe, karta kierowcy i tachograf – zależnie od zastosowania oraz przepisów UE i PL.
 
-![Iveco Daily plandeka – trójstronny dostęp do ładunku](/images/iveco-daily-plandeka-hero.jpg)
+![Iveco Daily plandeka – trójstronny dostęp do ładunku](/images/iveco-daily-plandeka-hero.webp)
 
 ## Zastosowania Iveco Daily plandeka
 

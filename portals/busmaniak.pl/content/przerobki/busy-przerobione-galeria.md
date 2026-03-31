@@ -3,7 +3,7 @@ title: "Busy przerobione na kampera – galeria realizacji"
 date: 2026-03-23
 description: "Galeria busów przerobionych na kampery – zdjęcia realizacji z opisami i kosztami."
 draft: false
-image: "/images/busy-przerobione-galeria-hero.jpg"
+image: "/images/busy-przerobione-galeria-hero.webp"
 image_alt: "Galeria przeróbek busów na kampery – różne projekty"
 author: "anna-wozniak"
 h1: "Busy przerobione na kampera – galeria realizacji z kosztorysami"
@@ -72,7 +72,7 @@ Sprinter L2H2 wymaga precyzyjnego projektowania – każdy centymetr ma znaczeni
 
 ## Realizacja 3 – Ford Transit L3H2 z garażem na motocykl {#transit-l3h2}
 
-![Busy przerobione na kampera – galeria](/images/busy-przerobione-galeria-hero.jpg)
+![Busy przerobione na kampera – galeria](/images/busy-przerobione-galeria-hero.webp)
 
 [Ford Transit](/modele/ford-transit/) L3H2 z 2015 roku (silnik 2.2 TDCi 155 KM, przebieg 162 000 km). Projekt ukierunkowany na aktywny tryb życia – tylny garaż pomieścił motocykl enduro.
 

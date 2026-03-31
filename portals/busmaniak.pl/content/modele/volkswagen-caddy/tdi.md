@@ -10,7 +10,7 @@ parent: "volkswagen-caddy"
 type: "page"
 volume: 390
 main_keyword: "Volkswagen Caddy TDI"
-image: "/images/volkswagen-caddy-tdi-hero.jpg"
+image: "/images/volkswagen-caddy-tdi-hero.webp"
 image_alt: "Silnik 2.0 TDI w Volkswagenie Caddy"
 lead: "Silniki TDI to serce większości Caddy sprzedawanych w Polsce. Od legendarnego 1.9 TDI przez oszczędnego 1.6 TDI po nowoczesnego 2.0 TDI – każda generacja ma swoje mocne strony i typowe punkty wymagające kontroli."
 faq:
@@ -78,7 +78,7 @@ Wersja 102 KM to bestseller – dobry kompromis mocy, spalania i kosztów utrzym
 
 {{% expert name="Marek Kowalczyk" %}}2.0 TDI 102 KM z manualną skrzynią to najbezpieczniejszy zakup. Unikasz większego ryzyka kosztów DSG, a silnik nadal daje rozsądną dynamikę do codziennego użytku.{{% /expert %}}
 
-![Silnik 2.0 TDI w Volkswagenie Caddy](/images/volkswagen-caddy-tdi-hero.jpg)
+![Silnik 2.0 TDI w Volkswagenie Caddy](/images/volkswagen-caddy-tdi-hero.webp)
 
 ## Spalanie Caddy TDI w praktyce {#spalanie}
 

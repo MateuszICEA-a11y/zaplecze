@@ -10,7 +10,7 @@ parent: "volkswagen-caddy"
 type: "page"
 volume: 720
 main_keyword: "Volkswagen Caddy osobowy"
-image: "/images/volkswagen-caddy-osobowy-hero.jpg"
+image: "/images/volkswagen-caddy-osobowy-hero.webp"
 image_alt: "Volkswagen Caddy osobowy V generacji"
 lead: "Volkswagen Caddy osobowy to rodzinna odmiana modelu Caddy z 5 lub 7 miejscami. W V generacji na wielu rynkach europejskich gama osobowa opierała się przede wszystkim na liniach Caddy, Life i Style – od praktycznej wersji bazowej po lepiej wyposażone odmiany z cyfrowymi zegarami i nowocześniejszym oświetleniem LED, zależnie od rynku i rocznika."
 faq:
@@ -64,7 +64,7 @@ W zakresie bezpieczeństwa i wsparcia kierowcy Caddy V mógł oferować m.in. Fr
 
 {{% info title="Life vs Style" icon="engineering" %}}Life zwykle stanowi rozsądny środek oferty, ale dokładna opłacalność zależy od konkretnego cennika i pakietów. Style daje bardziej prestiżową konfigurację, lecz warto sprawdzić, które elementy są w standardzie, a które wymagają dopłaty.{{% /info %}}
 
-![Volkswagen Caddy osobowy V generacji](/images/volkswagen-caddy-osobowy-hero.jpg)
+![Volkswagen Caddy osobowy V generacji](/images/volkswagen-caddy-osobowy-hero.webp)
 
 ## Silniki Caddy osobowego {#silniki}
 

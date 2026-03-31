@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 type: "page"
 main_keyword: "Opel Vivaro brygadówka"
-image: "/images/opel-vivaro-brygadowka-hero.jpg"
+image: "/images/opel-vivaro-brygadowka-hero.webp"
 image_alt: "Opel Vivaro brygadówka – kabina dwurzędowa z przestrzenią ładunkową"
 parent: "opel-vivaro"
 lead: "Opel Vivaro brygadówka to układ, w którym auto przewozi jednocześnie ludzi i sprzęt. W praktyce trzeba jednak zawsze rozróżnić generację modelu, liczbę miejsc, homologację i konkretną wersję DMC."
@@ -92,7 +92,7 @@ W praktyce ładowność brygadówki obniża drugi rząd siedzeń, dodatkowe moco
 
 Bezpieczeństwo jest tu równie ważne jak liczby z katalogu. Brygadówka powinna mieć przegrodę lub ścianę działową za drugim rzędem, a ładunek musi być zabezpieczony w punktach mocowania – niezabezpieczony sprzęt stanowi zagrożenie dla pasażerów.
 
-![Opel Vivaro brygadówka – kabina dwurzędowa z przestrzenią ładunkową](/images/opel-vivaro-brygadowka-hero.jpg)
+![Opel Vivaro brygadówka – kabina dwurzędowa z przestrzenią ładunkową](/images/opel-vivaro-brygadowka-hero.webp)
 
 ## Silniki do brygadówki Vivaro
 

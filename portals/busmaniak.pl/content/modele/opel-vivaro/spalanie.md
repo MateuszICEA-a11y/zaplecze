@@ -6,7 +6,7 @@ draft: false
 author: "marek-kowalczyk"
 type: "page"
 main_keyword: "Opel Vivaro spalanie"
-image: "/images/opel-vivaro-spalanie-hero.jpg"
+image: "/images/opel-vivaro-spalanie-hero.webp"
 image_alt: "Opel Vivaro spalanie – porównanie silników 1.5 D i 2.0 D"
 parent: "opel-vivaro"
 lead: "Opel Vivaro spalanie trzeba rozpatrywać osobno dla dwóch generacji. Vivaro B (2014–2019) korzysta z diesli 1.6 CDTi i architektury wspólnej z Renault Trafic/Nissan NV300/Fiat Talento, a Vivaro C (od 2019) bazuje na platformie EMP2 grupy PSA/Stellantis i silnikach 1.5D oraz 2.0D. W praktyce zużycie paliwa zależy nie tylko od mocy, ale też od wersji nadwozia, długości L1/L2, skrzyni biegów, masy, obciążenia i warunków jazdy."
@@ -76,7 +76,7 @@ W tej generacji poprawna gama obejmuje wersje 1.6 CDTi 95 KM, 120 KM, 125 KM BiT
 
 Na rynku wtórnym Vivaro B warto zestawiać bezpośrednio z Trafikiem III, NV300 i Talento, bo korzystają z tej samej architektury i zbliżonych diesli 1.6 dCi/CDTi. To ważne zwłaszcza wtedy, gdy szukasz konkretnego poziomu spalania, ale dopuszczasz zakup jednego z bliźniaczych modeli.
 
-![Opel Vivaro spalanie – porównanie silników 1.5 D i 2.0 D](/images/opel-vivaro-spalanie-hero.jpg)
+![Opel Vivaro spalanie – porównanie silników 1.5 D i 2.0 D](/images/opel-vivaro-spalanie-hero.webp)
 
 ## Co wpływa na spalanie?
 

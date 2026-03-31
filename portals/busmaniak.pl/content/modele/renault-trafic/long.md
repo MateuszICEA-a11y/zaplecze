@@ -10,7 +10,7 @@ parent: "renault-trafic"
 type: "page"
 volume: 1600
 main_keyword: "Renault Trafic Long"
-image: "/images/renault-trafic-long-hero.jpg"
+image: "/images/renault-trafic-long-hero.webp"
 image_alt: "Renault Trafic Long L2H1 furgon"
 lead: "Renault Trafic Long w generacji Trafic III to wydłużona wersja L2, która ma o 400 mm większą długość całkowitą i o 400 mm większy rozstaw osi niż L1. W praktyce przekłada się to na około 0,8 m³ więcej objętości przestrzeni ładunkowej i możliwość przewozu 3 europalet zamiast 2, ale nie oznacza pełnych 400 mm dodatkowej długości podłogi ładunkowej. Przed wyborem wersji Long warto sprawdzić nie tylko pojemność, ale też gabaryty do parkowania i manewrowania."
 faq:
@@ -57,7 +57,7 @@ W autach dostawczych kluczowe jest też DMC. W Trafic III spotyka się wersje o 
 
 Po montażu regałów, zabudowy warsztatowej albo kamperowej masa pojazdu rośnie często o 100–400 kg. To bezpośrednio obniża legalną ładowność, co w praktyce ma duże znaczenie szczególnie przy autach około 3,0 t DMC.
 
-![Renault Trafic Long L2H1 furgon](/images/renault-trafic-long-hero.jpg)
+![Renault Trafic Long L2H1 furgon](/images/renault-trafic-long-hero.webp)
 
 ## Wersje Long: furgon i osobowy {#wersje}
 

@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Wynajem busów i kamperów – wszystko, co musisz wiedzieć przed pierwszą rezerwacją"
 type: "page"
 volume: 8000
-image: "/images/wynajem-hub-hero.jpg"
+image: "/images/wynajem-hub-hero.webp"
 image_alt: "Wynajem kampera – kamper zaparkowany na kempingu nad jeziorem"
 main_keyword: "wynajem kampera"
 lead: "Rynek wynajmu kamperów w Polsce, po boomie z lat 2020–2021, ustabilizował się na poziomie około 1300 nowych rejestracji rocznie. Wypożyczalnie pękają w szwach od maja do września. Jeśli planujesz pierwszy wynajem kampera, busa 9-osobowego albo camper vana, ten poradnik przeprowadzi Cię przez ceny, formalności, typy pojazdów i pułapki ukryte w umowach."

@@ -9,7 +9,7 @@ parent: "citroen-jumper"
 type: "page"
 volume: 1300
 main_keyword: "citroen jumper hdi"
-image: "/images/citroen-jumper-hero.jpg"
+image: "/images/citroen-jumper-hero.webp"
 image_alt: "Citroën Jumper III furgon"
 lead: "Citroën Jumper od debiutu w 1994 roku korzystał z różnych silników wysokoprężnych – początkowo także starszych jednostek 1.9 D/TD i 2.5 D/TD, a później motorów HDi oraz BlueHDi. W nowszych generacjach to właśnie citroen jumper hdi stał się podstawą oferty, ale gama zmieniała się etapami wraz z kolejnymi liftingami i normami emisji. Jumper dzieli platformę z Peugeotem Boxerem i Fiatem Ducato, choć oferta silników nie zawsze była identyczna między markami."
 faq:

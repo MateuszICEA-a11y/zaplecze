@@ -5,7 +5,7 @@ description: "Prawo jazdy na busa zależy od DMC i liczby miejsc. Sprawdź, któ
 draft: false
 author: "marek-kowalczyk"
 h1: "Prawo jazdy na busa – kategorie, wymagania i koszty 2026"
-image: "/images/prawo-jazdy-na-busa-hero.jpg"
+image: "/images/prawo-jazdy-na-busa-hero.webp"
 image_alt: "Kierowca busa dostawczego za kierownicą z prawem jazdy"
 main_keyword: "prawo jazdy na busa"
 lead: "Prawo jazdy na busa – to zależy od dwóch parametrów: dopuszczalnej masy całkowitej i liczby miejsc siedzących. Lekki furgon do 3,5 t wymaga kategorii B, cięższy bus do 7,5 t – kategorii C1, a pojazd na ponad 9 osób – kategorii D. Oto kompletny przewodnik po uprawnieniach, kosztach i zmianach przepisów na 2026 rok."
@@ -87,7 +87,7 @@ Szczegółowe obliczenia dla konkretnych zestawów znajdziesz w artykule o [DMC 
 
 To jedno z najczęstszych pytań wśród kierowców busów. Odpowiedź jest jednoznaczna: bus do 9 osób łącznie z kierowcą wymaga kategorii B (przy DMC do 3500 kg). Bus na 10 lub więcej osób wymaga kategorii D1 lub D.
 
-![Prawo jazdy na busa](/images/prawo-jazdy-na-busa-hero.jpg)
+![Prawo jazdy na busa](/images/prawo-jazdy-na-busa-hero.webp)
 
 ### 9-osobowy bus na kat. B
 
