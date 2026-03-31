@@ -51,7 +51,7 @@ a:hover { color: var(--c-orange-hover); }
 
 /* ── Layout ── */
 .container { max-width: var(--w-max); margin: 0 auto; padding: 0 var(--sp); }
-.content-narrow { max-width: var(--w-content); margin: 0 auto; }
+.content-narrow { max-width: var(--w-content); margin: 0 auto; overflow-x: hidden; }
 
 /* ══════════════════════════════════════
    HEADER – Light glass, fixed top
@@ -1806,6 +1806,7 @@ blockquote {
   font-size: 1.05rem;
   line-height: 1.82;
   color: var(--c-text);
+  overflow-x: hidden;
 }
 
 .article__content h2 {
@@ -1841,6 +1842,7 @@ blockquote {
   margin: 1.5rem 0;
   border-radius: var(--radius);
   border: 1px solid var(--c-border);
+  max-width: 100%;
 }
 
 .article__content .table-wrap table {
