@@ -2,7 +2,7 @@
 title: "Opel Combo Life – osobowy van rodzinny, dane techniczne i opinie"
 date: 2026-03-24
 lastmod: 2026-03-24
-description: "Opel Combo Life – wersja osobowa Combo E z 5 lub 7 miejscami. Dane techniczne, wymiary, wyposażenie i porównanie z Citroënem Berlingo Multispace."
+description: "Opel Combo Life – osobowa wersja Combo z 5 lub 7 miejscami. Dane techniczne, wymiary, wyposażenie i porównanie z Citroënem Berlingo III."
 draft: false
 author: "marek-kowalczyk"
 type: "page"
@@ -10,77 +10,103 @@ image: "/images/opel-combo-osobowy-hero.jpg"
 parent: "opel-combo"
 faq:
   - question: "Ile osób mieści Opel Combo Life?"
-    answer: "Combo Life w wersji XL mieści do 7 osób – 2 z przodu, 3 w drugim rzędzie i 2 w trzecim. W wersji podstawowej (Short) są 5 miejsc. Trzeci rząd to opcja dostępna wyłącznie w XL."
+    answer: "Combo Life występowało jako auto 5-osobowe, a w wybranych konfiguracjach XL także jako 7-osobowe – 2 z przodu, 3 w drugim rzędzie i 2 w trzecim. Dostępność trzeciego rzędu zależała od długości nadwozia, rynku i wersji."
   - question: "Czym różni się Combo Life od dostawczego Combo E?"
-    answer: "Combo Life ma tylne boczne szyby i opcję przesuwnych drzwi po obu stronach, tapicerię foteli, tylną kanapę, tylne ogrzewanie i klimatyzację oraz pakiet bezpieczeństwa. Wersja Van ma blachę zamiast szyb i przestrzeń ładunkową z metalową podłogą."
-  - question: "Jak Combo Life wypada w porównaniu z Berlingo Multispace?"
-    answer: "Oba auta stoją na tej samej platformie PSA EMP2, więc napęd, zawieszenie i nadwozie są identyczne. Combo Life ma inny design przodu, system Intellilink zamiast Connectra oraz inne opcje wyposażenia. Ceny są porównywalne."
-lead: "Opel Combo Life to osobowa wersja Combo E – z pełnym przeszkleniem, siedzeniami dla 5 lub 7 pasażerów i wyposażeniem rodem z kompaktowego SUV-a. Platforma PSA EMP2 gwarantuje sprawdzoną mechanikę, a praktyczność na poziomie klasycznego dostawczaka."
+    answer: "Combo Life ma pełne przeszklenie, osobowe wykończenie kabiny, tylną kanapę lub dodatkowe siedzenia oraz wyposażenie ukierunkowane na przewóz pasażerów. Wersja dostawcza stawia przede wszystkim na przestrzeń ładunkową i użytkowy charakter zabudowy."
+  - question: "Jak Combo Life wypada w porównaniu z Berlingo III?"
+    answer: "To bardzo blisko spokrewnione konstrukcje rodziny PSA/Stellantis K9, więc mają zbliżone wymiary, układ wnętrza i gamę napędów. Różnice dotyczą głównie stylizacji, konfiguracji wyposażenia i oferty na danym rynku."
+lead: "Opel Combo Life to osobowy van z pełnym przeszkleniem, siedzeniami dla 5 lub 7 pasażerów i bardzo praktycznym nadwoziem. Korzysta ze wspólnej architektury rodziny PSA/Stellantis K9, łącząc użytkową funkcjonalność z wyposażeniem typowym dla auta rodzinnego."
 ---
 ## Co wyróżnia Opel Combo Life
 
-Combo Life w stosunku do wersji Van różni się przede wszystkim:
+W osobowej odmianie Combo najważniejsze są nie stylistyczne dodatki, ale funkcjonalność kabiny i różne konfiguracje wnętrza. To auto projektowane z myślą o rodzinach, przewozie dzieci i codziennym użytkowaniu, a nie wyłącznie o transporcie towaru.
 
 ### Combo Life a Combo Van – różnice
 
-- tylnymi bocznymi szybami i opcją dwóch przesuwnych drzwi bocznych
-- tapicerowanymi siedzeniami i możliwością złożenia tylnej kanapy w stosunku 1/3 – 2/3
-- schowkami pod podłogą tylną – to cecha charakterystyczna pojazdów PSA EMP2
-- opcją panoramicznego dachu w wersji Edition i wyżej
-- tylną klimatyzacją (dwustrefową w wersji XL Ultimate)
+- pełnym przeszkleniem nadwozia i osobowym wykończeniem kabiny
+- przesuwnymi drzwiami bocznymi – zależnie od wersji po jednej lub obu stronach
+- tapicerowanymi siedzeniami oraz konfiguracjami 5- i w wybranych odmianach 7-miejscowymi
+- wyposażeniem nastawionym na komfort pasażerów, w tym nawiewami dla tylnej części kabiny zależnie od wersji i rynku
+- opcjonalnym dachem panoramicznym, którego dostępność zależała od wersji, rynku i rocznika
 
 ### Bagażnik Combo Life – pojemność
 
-Bagażnik Combo Life Short mieści 597 l przy złożonej tylnej kanapie lub 186 l przy 5 rozłożonych fotelach. Wersja XL oferuje 850 l lub 246 l odpowiednio.
+W 5-miejscowym Combo Life standardowej długości bagażnik ma około 597 l według metody VDA. Wersja XL oferuje około 850 l w konfiguracji 5-osobowej.
+
+W odmianie 7-miejscowej przestrzeń za trzecim rzędem jest wyraźnie mniejsza i w XL wynosi około 153–209 l zależnie od metodologii pomiaru i rynku. Po złożeniu siedzeń pojemność rośnie do kilku tysięcy litrów, więc Combo Life pozostaje jednym z najbardziej pakownych aut rodzinnych w klasie.
 
 ## Wyposażenie wersji
 
+W przypadku Combo Life trzeba uważać na zbyt daleko idące uogólnienia, bo nazwy wersji i ich zawartość różniły się zależnie od rynku oraz rocznika. Dotyczy to zwłaszcza multimediów, systemów wsparcia kierowcy i elementów komfortowych.
+
 ### Edition, Elegance i Ultimate
 
-Combo Life jest sprzedawane w kilku wersjach wyposażenia:
-- Edition – 8-calowy ekran Intellilink, czujniki parkowania tył, automatyczna klimatyzacja 1-strefowa, LED DRL
-- Elegance – kamera cofania, 16-calowe felgi, fotel kierowcy z regulacją lędźwiową
-- Ultimate – panoramiczny dach, 17-calowe felgi, kamera 360°, LED full, podgrzewane fotele
+Combo Life było oferowane w kilku liniach wyposażenia, ale ich dokładna specyfikacja zależała od konkretnego rynku. W praktyce warto patrzeć nie tylko na nazwę wersji, lecz także na listę opcji, bo elementy takie jak dach panoramiczny, system multimedialny z 8-calowym ekranem, kamera cofania czy rozbudowane pakiety bezpieczeństwa nie zawsze były przypisane sztywno do jednej odmiany.
+
+W codziennym użytkowaniu ważniejsze od samej nazwy wersji są: liczba miejsc, układ drzwi przesuwnych, obecność nawiewów dla tylnej części kabiny, multimedia oraz pakiety asystentów. To te elementy realnie wpływają na wygodę rodziny w trasie.
 
 {{% expert name="Kowalczyk" %}}
-Combo Life XL to jedno z lepiej skrojonych praktycznie aut rodzinnych w swoim segmencie. Schowki pod podłogą bagażnika to rzecz, za którą rodzice z wózkami są wdzięczni na co dzień. Jedyne zastrzeżenie – automatyczna skrzynia ETG7 (robotyzowana) jest zauważalnie gorsza od dwusprzęgłówki w Volkswagenie. Przy spokojnej jeździe miejskiej wystarczy, ale na autostradzie potrafi irytować.
+Największą siłą Combo Life nie są efektowne listy wyposażenia, tylko przestrzeń i praktyczność. Przy wyborze używanego egzemplarza dużo ważniejsze od nazwy wersji jest to, czy auto ma odpowiednią konfigurację siedzeń, drzwi przesuwnych i sensowny napęd – zwłaszcza jeśli ma regularnie wozić komplet pasażerów z bagażem. W mocniejszych odmianach automatyczna skrzynia to 8-biegowy automat EAT8, a nie starsza zautomatyzowana przekładnia znana z dawnych modeli PSA.
 {{% /expert %}}
 
 ## Silniki w Combo Life
 
-Wersja osobowa Combo Life jest dostępna z tymi samymi silnikami co Van:
-- 1.2 PureTech 110 KM – manualna 6-biegowa, wystarczający do zastosowań miejskich i krótkich tras
-- 1.2 PureTech 130 KM – ETG7, nieco lepsze osiągi, ale skrzynia wymaga cierpliwości
-- 1.5 BlueHDi 100 KM – dla osób pokonujących powyżej 20 000 km rocznie
-- e-Combo Life 136 KM – wersja elektryczna z baterią 50 kWh
+Gama napędów w Combo Life obejmowała zarówno wersje benzynowe i wysokoprężne, jak i odmianę elektryczną. W zależności od roku oraz rynku dostępność poszczególnych wariantów mogła się różnić, ale trzon oferty był dość czytelny.
 
-Przy zastosowaniu rodzinnym (mieszczan, dwa dzieci, wyjazdy weekendowe) polecam 1.2 PureTech 130 KM. Dla rodzin jeżdżących dużo poza miastem – 1.5 BlueHDi 100 KM z manualem.
+### Silniki w Combo Life
+
+W ofercie występowały m.in.:
+- 1.2 Turbo/PureTech 110 KM – manualna skrzynia 6-biegowa
+- 1.2 Turbo/PureTech 130 KM – manualna 6-biegowa lub 8-biegowy automat EAT8
+- 1.5 Diesel 100 KM – manualna skrzynia 6-biegowa
+- 1.5 Diesel 130 KM – zależnie od wersji z 6MT lub 8-biegowym automatem EAT8
+- e-Combo Life 100 kW/136 KM – elektryczna odmiana z akumulatorem o pojemności użytecznej około 46,3 kWh i około 50 kWh brutto
+
+Wersja elektryczna oferowała zasięg WLTP około 280 km. W praktyce poza miastem realny zasięg bywał zauważalnie niższy i często mieścił się w przedziale około 180–230 km, zależnie od temperatury oraz prędkości.
+
+Jeśli chodzi o ładowanie, e-Combo Life obsługiwało AC 7,4 lub 11 kW oraz DC do 100 kW. Przy szybkiej ładowarce prąd stały pozwalał uzupełnić energię od 0 do 80% w około 30 minut.
+
+W rodzinnej eksploatacji benzynowe 1.2 130 KM jest najbardziej uniwersalne, zwłaszcza z automatem EAT8. Dla kierowców pokonujących długie trasy sensowniejszy będzie 1.5 Diesel, ale przy jeździe głównie na krótkich odcinkach trzeba brać pod uwagę typowe tematy eksploatacyjne układu emisji spalin, AdBlue i DPF.
+
+Na rynku wtórnym warto też pamiętać o charakterystycznych zagadnieniach serwisowych. W 1.2 PureTech pojawia się temat paska rozrządu pracującego w oleju i kampanii serwisowych zależnie od generacji, a interwały olejowe zwykle wynoszą 1 rok lub są wyznaczane przez OLM.
 
 ![Opel Combo Life – wnętrze i tylna kanapa](/images/opel-combo-osobowy-hero.jpg)
 
 ## Bezpieczeństwo i wyniki crash testów
 
-Combo E (wspólna platforma PSA) uzyskało 5 gwiazdek Euro NCAP w 2018 roku. Standardowo montowane są:
-- 6 poduszek powietrznych (czołowe, boczne, kurtynowe)
-- AEB (automatyczne hamowanie awaryjne) z detekcją pieszych
-- LKA (asystent pasa ruchu)
-- ESP z kontrolą trakcji
+W przypadku Combo Life kluczowe jest rozróżnienie między ogólnym potencjałem konstrukcji a wyposażeniem konkretnego egzemplarza. Wynik testów bezpieczeństwa dla tej rodziny aut zależał od pakietu systemów wsparcia i konfiguracji badanego samochodu.
+
+### Bezpieczeństwo i wyniki crash testów
+
+Euro NCAP w 2018 roku dla bliźniaczych modeli rodziny K9 podawał wyniki na poziomie około 91% za ochronę dorosłych, 81% za ochronę dzieci, 58% za ochronę pieszych i 68% za safety assist. To ważne, bo pokazuje solidną bazę konstrukcyjną, ale nie oznacza automatycznie identycznej oceny każdej wersji wyposażenia.
+
+W praktyce systemy ADAS nie były standardem we wszystkich odmianach i latach produkcji. Dlatego przy zakupie trzeba sprawdzić, czy dany egzemplarz ma konkretne elementy wyposażenia bezpieczeństwa, a nie zakładać ich obecność tylko na podstawie rocznika modelu.
 
 {{% info title="Rejestracja: osobowy czy dostawczy?" icon="engineering" %}}
-Combo Life jest rejestrowane jako samochód osobowy (kategoria M1), co oznacza standardowe ubezpieczenie OC/AC i brak ograniczeń prędkości jak dla N1. Podatek VAT przy zakupie nowego Combo Life jako firmowego wynosi 50% odliczenia – chyba że pojazd jest używany wyłącznie do działalności (wymagana ewidencja).
+Combo Life jest samochodem osobowym kategorii M1. Oznacza to standardowe limity prędkości w Polsce: 50 km/h w obszarze zabudowanym, 90 km/h poza obszarem zabudowanym, 100 km/h na drodze ekspresowej jednojezdniowej, 120 km/h na ekspresowej dwujezdniowej i 140 km/h na autostradzie. Przy zakupie firmowym standardowo można odliczyć 50% VAT, a 100% tylko przy wyłącznym użyciu w działalności i prowadzeniu ewidencji przebiegu.
 {{% /info %}}
+
+Combo Life to samochód praktyczny, ale przy pełnym obciążeniu warto patrzeć także na masę i ładowność. Masa własna zwykle przekracza 1400 kg, DMC wynosi około 2000–2450 kg, a w odmianach 7-osobowych i elektrycznych ładowność potrafi być wyraźnie niższa – to istotne przy komplecie pasażerów i wakacyjnym bagażu.
 
 ## Porównanie Combo Life XL a Berlingo III Multispace
 
-Wybór między modelami osobowymi w tym segmencie sprowadza się do kompromisu między ceną, przestrzenią a wyposażeniem – każdy z rywali ma swoje mocne strony.
+Porównanie z Citroënem trzeba odnieść do właściwej generacji modelu osobowego. W praktyce Combo Life i Berlingo III to auta bardzo blisko spokrewnione, więc różnice techniczne są ograniczone, a większe znaczenie mają konfiguracja, wyposażenie i oferta na danym rynku.
 
-| Cecha | Combo Life XL | Berlingo III Multispace |
+### Porównanie Combo Life XL a Berlingo III Multispace
+
+| Cecha | Combo Life XL | Berlingo III |
 |---|---|---|
 | Długość | 4753 mm | 4753 mm |
-| Pojemność bagażnika (5 os.) | 246 l | 246 l |
-| Infotainment | Intellilink 8" | Connectra 8" |
-| Skrzynia auto | ETG7 | EAT8 (opcja) |
+| Rozstaw osi | 2975 mm | 2975 mm |
+| Pojemność bagażnika (5 os.) | ok. 850 l | ok. 850 l |
+| Pojemność bagażnika przy 7 miejscach | ok. 153–209 l | ok. 153–209 l |
+| Skrzynia automatyczna | EAT8 zależnie od silnika/rocznika | EAT8 zależnie od silnika/rocznika |
+| Architektura | rodzina PSA/Stellantis K9 | rodzina PSA/Stellantis K9 |
 
-Berlingo III oferuje opcję 8-biegowego automatu EAT8, którego brakuje w Combo. To istotna różnica przy jeździe w mieście.
+Pod względem gabarytów Combo Life występowało w dwóch długościach nadwozia. Krótsza wersja ma około 4403 mm długości i rozstaw osi 2785 mm, a XL około 4753 mm długości i 2975 mm rozstawu osi. Szerokość z lusterkami to około 2107 mm, a wysokość zwykle mieści się w przedziale około 1841–1880 mm zależnie od wersji.
 
-*Źródła: Wikipedia, Opel, auto-data.net*
+Jeśli patrzeć szerzej na segment, realnymi rywalami są także Peugeot Rifter, Toyota Proace City Verso, Volkswagen Caddy i Ford Tourneo Connect. W tej klasie auta mają zwykle od około 4,40 do 4,85 m długości, oferują 5 lub 7 miejsc, duży bagażnik i – w zależności od wersji – automat.
+
+W codziennej eksploatacji najważniejsze pytania brzmią więc nie „czy Berlingo jest lepsze technicznie”, ale „czy dany egzemplarz ma właściwy układ siedzeń, odpowiedni napęd i potrzebne wyposażenie”. Technicznie to bardzo bliscy krewni, dlatego o wyborze często decydują stan auta, cena i konkretna specyfikacja.
+
+*Źródła: oficjalne cenniki i katalogi Opla oraz dokumenty homologacyjne dla danego rocznika i rynku.*

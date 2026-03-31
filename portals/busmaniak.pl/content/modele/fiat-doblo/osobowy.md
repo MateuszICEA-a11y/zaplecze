@@ -12,96 +12,125 @@ parent: "fiat-doblo"
 image: "/images/fiat-doblo-osobowy-hero.jpg"
 faq:
   - question: "Ile miejsc ma Fiat Doblò osobowy?"
-    answer: "Standardowa wersja Panorama ma 5 miejsc. Wersja Panorama Maxi oferuje opcjonalnie trzeci rząd i łącznie 7 miejsc."
+    answer: "W aktualnej generacji Doblò III standardowo występuje jako 5-osobowy. W Doblò II Panorama zależnie od wersji i rynku spotykane były odmiany 5- oraz 7-miejscowe."
   - question: "Czym różni się Doblò Panorama od Cargo?"
-    answer: "Panorama ma kanapę tylną zamiast przestrzeni ładunkowej i homologację M1 (samochód osobowy). Cargo ma przegrodę, homologację N1 i wyższą ładowność."
+    answer: "Panorama ma tylną kanapę lub dodatkowe siedzenia, boczne szyby i homologację M1. Cargo jest wersją użytkową z homologacją N1 i inną organizacją przestrzeni ładunkowej."
   - question: "Czy Doblò Panorama nadaje się dla rodziny z dziećmi?"
-    answer: "Tak – wysoka podłoga ułatwia wsiadanie, drzwi boczne przesuwne są bezpieczne na parkingach, a przestrzeń bagażowa jest spora. Wersja Maxi Panorama z 7 miejscami sprawdza się jako auto rodzinne do 6-7 osób."
-lead: "Fiat Doblò osobowy, sprzedawany pod nazwą Panorama, to ten sam van co Cargo – ale z kanapą zamiast przestrzeni ładunkowej i homologacją M1. Dla wielu rodzin to praktyczna alternatywa wobec klasycznych SUV-ów: więcej przestrzeni za mniejsze pieniądze."
+    answer: "Tak – przesuwne drzwi boczne i wysoka kabina są bardzo praktyczne. Trzeba jednak rozróżnić generacje: Doblò II Panorama oferowało więcej wariantów rodzinnych, a Doblò III stawia głównie na układ 5-miejscowy."
+lead: "Fiat Doblò osobowy to praktyczny van rodzinny, ale nazewnictwo zależy od generacji. W Doblò II funkcjonowała wersja Panorama, natomiast od 2022 roku osobowe odmiany występują głównie jako Fiat Doblò lub e-Doblò. To nadal bliski krewny wersji Cargo, ale z pasażerską kabiną i homologacją M1."
 ---
 ## Doblò Panorama – co dostaje kupujący
 
-Wersja Panorama różni się od Cargo kilkoma kluczowymi elementami:
+W osobowym Doblò najważniejsza jest różnica funkcjonalna względem Cargo. Zamiast czysto roboczej przestrzeni dostajemy kabinę przygotowaną do przewozu pasażerów, z bocznymi szybami, dodatkowymi siedzeniami i wykończeniem bardziej zbliżonym do auta rodzinnego.
 
-- tylna kanapa z możliwością składania (zazwyczaj w proporcji 60/40 lub 1/3–2/3)
+W praktyce oznacza to także inną homologację – M1 zamiast N1. Sama koncepcja pozostaje jednak podobna: wysokie nadwozie, duży otwór drzwiowy i nacisk na użyteczność.
+
+- tylna kanapa lub dodatkowe siedzenia zależnie od generacji i wersji
 - okna boczne z tyłu
 - wykończenie wnętrza dopasowane do przewozu pasażerów
-- homologacja M1 – ubezpieczenie jak samochód osobowy
+- homologacja M1
 
-Silniki, zawieszenie, skrzynia biegów – identyczne z Cargo. Masa własna nieco wyższa przez dodatkowe fotele i tapicerkę.
+Warto też rozróżnić generacje. Doblò II było własną konstrukcją Fiata, z bardziej pudełkowatym nadwoziem i szeroką gamą silników MultiJet oraz Natural Power, natomiast Doblò III to konstrukcja z rodziny Stellantis K9, spokrewniona z innymi vanami koncernu i oferowana także jako e-Doblò.
 
 ## Dane techniczne – generacja III (od 2022)
 
-- Długość (wersja krótka): 4403 mm
-- Długość (Maxi): 4753 mm
+Aktualne Doblò III to już zupełnie inny samochód niż poprzednik. Bazuje na platformie K9 Stellantis i w osobowej odmianie występuje jako Doblò oraz e-Doblò, z naciskiem na nowocześniejsze systemy wsparcia kierowcy i wersję elektryczną.
+
+- Długość L1: 4403 mm
+- Długość L2: 4753 mm
 - Szerokość: 1848 mm
 - Wysokość: 1800 mm
-- Liczba miejsc: 5 (krótka) lub 7 (Maxi z trzecim rzędem)
-- Pojemność bagażnika (5 miejsc, tylna kanapa złożona): ok. 2693 litrów
+- Rozstaw osi L1: ok. 2785 mm
+- Rozstaw osi L2: ok. 2975 mm
+- Liczba miejsc: standardowo 5
+- DMC wersji użytkowych: do 2,4 t
+
+W generacji III warto zwrócić uwagę na parametry praktyczne. Dłuższy rozstaw osi poprawia ilość miejsca w kabinie i możliwości przewozowe, a przy parkowaniu znaczenie mają też gabaryty i średnica zawracania – w vanach tej klasy zwykle jest to ok. 11,2–12,5 m zależnie od wersji.
 
 Silniki gen III:
 
-- 1.2 PureTech 110 KM (benzyna, skrzynia 6-biegowa manualna lub EAT8 automatyczna)
+- 1.2 PureTech 110 KM (benzyna, dostępność skrzyni zależy od rynku i rocznika)
 - 1.5 BlueHDi 100 KM (diesel)
-- 1.5 BlueHDi 130 KM (diesel, dostępna z EAT8)
+- 1.5 BlueHDi 130 KM (diesel)
+- e-Doblò – silnik elektryczny 100 kW (136 KM), akumulator 50 kWh brutto, zasięg WLTP do ok. 280 km, ładowanie DC do 100 kW, AC 7,4 kW lub opcjonalnie 11 kW
+
+W tej generacji ważnym argumentem są także systemy ADAS. Dostępne były m.in. automatyczne hamowanie awaryjne, asystent pasa ruchu, rozpoznawanie znaków, tempomat, kamera cofania i czujniki parkowania.
 
 ## Dane techniczne – generacja II (2010–2022)
 
+Doblò II zadebiutowało w 2009 roku, a sprzedaż ruszyła od 2010. Następca pojawił się w 2022 roku, natomiast osobowe odmiany Panorama – zależnie od rynku – były dostępne do końca cyklu modelu.
+
+To właśnie ta generacja najmocniej zapisała się jako rodzinny, bardzo przestronny van. Nadwozie było bardziej pionowe i „pudełkowate”, co przekładało się na ilość miejsca nad głową i dużą elastyczność wnętrza.
+
 - Długość (standard): ok. 4390 mm
 - Długość (Maxi): ok. 4740 mm
-- Liczba miejsc: 5 lub 7 (Maxi Panorama)
+- Rozstaw osi standard: ok. 2755 mm
+- Rozstaw osi Maxi: ok. 3105 mm
+- Liczba miejsc: 5 lub – zależnie od wersji i rynku – 7
+- Facelifting: 2015 r.
 
 Silniki gen II w wersji osobowej:
 
+- 1.4 95 KM
+- 1.4 T-Jet 120 KM – na wybranych rynkach i w wybranych wersjach
+- 1.4 T-Jet 120 KM Natural Power (fabryczne CNG)
 - 1.3 MultiJet 90/95 KM
-- 1.6 MultiJet 105/120 KM
-- 1.4 T-Jet 120 KM (benzyna)
+- 1.6 MultiJet 90/105/120 KM
+- 2.0 MultiJet 135 KM
+
+W praktyce generacja II oferowała szerszy wybór klasycznych napędów spalinowych niż gen III. Dla kupującego używane auto to często kluczowa różnica względem nowszego modelu.
 
 ![Fiat Doblò Panorama – wnętrze i przestrzeń dla pasażerów](/images/fiat-doblo-osobowy-hero.jpg)
 
 ## Przestrzeń dla pasażerów w Fiacie Doblò osobowym
 
-Doblò Panorama jest dostępne w trzech konfiguracjach miejsc – od 5-osobowej krótkiej wersji po 7-osobowe Maxi z trzecim rzędem składanym w podłogę. Pojemność bagażnika drastycznie spada przy pełnym obłożeniu – z 2693 l do zaledwie 100 l.
+Przy ocenie rodzinnego vana trzeba bardzo wyraźnie oddzielić Doblò II od Doblò III. W starszej generacji Panorama występowała jako 5-osobowa oraz – zależnie od wersji i rynku – także 7-osobowa, natomiast w Doblò III standardem jest układ 5-miejscowy.
 
-| Konfiguracja             | Miejsca | Bagażnik (kanapa złożona) | Drzwi boczne |
-|--------------------------|---------|---------------------------|--------------|
-| Panorama krótka          | 5       | ok. 2693 l                | przesuwne    |
-| Panorama Maxi (2 rzędy)  | 5+2     | ok. 800 l                 | przesuwne    |
-| Panorama Maxi (3 rzędy)  | 7       | ok. 100 l                 | przesuwne    |
+Różni się też sposób aranżacji wnętrza. W Doblò II dodatkowe siedzenia w trzecim rzędzie nie powinny być opisywane uniwersalnie jako składane w podłogę – w praktyce były to siedzenia składane lub wyjmowane zależnie od odmiany.
+
+| Konfiguracja                         | Miejsca | Bagażnik | Drzwi boczne |
+|--------------------------------------|---------|----------|--------------|
+| Doblò II Panorama standard           | 5       | zależny od metody pomiaru | przesuwne |
+| Doblò II Panorama Maxi, 2 rzędy      | 5       | większy niż w krótkiej wersji | przesuwne |
+| Doblò II Panorama Maxi, 3 rzędy      | 7       | wyraźnie mniejszy przy komplecie pasażerów | przesuwne |
+| Doblò III / e-Doblò                  | 5       | zależny od wersji L1/L2 i metody pomiaru | przesuwne |
+
+Właśnie metoda pomiaru ma tu duże znaczenie. Producenci podają pojemność bagażnika albo według standardu VDA, albo jako objętość liczona do dachu – w vanach różnice między tymi metodami są bardzo duże.
 
 ### Komfort i dostęp do kabiny Panoramy
 
-Doblò Panorama jest wysoki (ok. 1800 mm) – to oznacza, że pasażerowie siadają wyprostowani, bez zginania głowy. Przestrzeń na nogi w drugim rzędzie jest wyraźnie lepsza niż w kompaktach.
+Wysokie nadwozie przekłada się na wygodne wsiadanie i bardziej wyprostowaną pozycję. To jedna z największych zalet Doblò jako auta rodzinnego, zwłaszcza przy codziennym wożeniu dzieci lub starszych pasażerów.
 
-Dostęp przez drzwi boczne przesuwne to duże udogodnienie z dziećmi – nie martwisz się o sąsiedni samochód na parkingu. Wyjście przez duże drzwi jest też łatwiejsze dla osób starszych.
+Duży atut stanowią też przesuwne drzwi boczne. Na ciasnych parkingach działają znacznie wygodniej niż klasyczne drzwi rozwierane, a przy montażu fotelika ułatwiają dostęp do drugiego rzędu.
 
 ### Bagażnik Panoramy – pojemność w litrach
 
-Bagażnik przy wszystkich 5 miejscach (tylna kanapa rozłożona): ok. 790 litrów w wersji krótkiej. Po złożeniu kanapy – ponad 2600 litrów. To poziom dużych kombilimuzyn.
+Pojemność bagażnika w Doblò trzeba czytać bardzo ostrożnie, bo łatwo pomieszać różne standardy pomiaru. W materiałach producentów spotyka się wartości według VDA oraz objętość liczona do dachu, a różnice potrafią iść w setki litrów.
+
+Dlatego nie warto zestawiać bez komentarza liczb typu ok. 775 l według VDA z objętością przekraczającą 3000 l do dachu po złożeniu siedzeń. W praktyce dla kupującego ważniejsze jest to, czy porównujemy krótkie nadwozie z długim oraz czy mówimy o przestrzeni do linii okien, czy do sufitu. Więcej o samej metodzie pomiaru można przeczytać w haśle [VDA](https://pl.wikipedia.org/wiki/VDA).
 
 {{% info title="Panorama vs. SUV – co wybrać dla rodziny" icon="engineering" %}}
-Doblò Panorama często kosztuje 10–20% mniej niż porównywalny SUV z podobną przestrzenią. Płaci się za to wyższym zużyciem paliwa (niższy opór aerodynamiczny SUV-a nie dotyczy van'a o płaskim przodzie) i brakiem prestiżu. Za to masz drzwi przesuwne, wyższe fotele i zazwyczaj tańszy serwis.
+Doblò jako van rodzinny zwykle wygrywa z SUV-em ilością miejsca i wygodą dostępu do kabiny. Trzeba jednak pamiętać, że przy prędkościach autostradowych taki samochód często zużywa więcej paliwa ze względu na mniej korzystną aerodynamikę i większe pole czołowe, choć zależy to od konkretnego modelu.
 {{% /info %}}
 
 ## Panorama a Cargo – czy można zarejestrować jako osobowy?
 
-Cargo jest fabrycznie rejestrowane jako N1 (ciężarowy do 3,5 t) – kupując używane, możesz przerobić je na M1, ale wymaga to homologacji, badania technicznego i formalności w wydziale komunikacji. Panorama jest fabrycznie M1 – bez dodatkowej pracy.
+Teoretycznie zmiana z Cargo na osobowy wariant M1 jest możliwa, ale w praktyce to dużo więcej niż montaż kanapy. Trzeba spełnić warunki techniczne właściwe dla auta osobowego i przejść pełną procedurę formalną.
 
-Jeśli zależy ci na osobowej rejestracji, kup Panoramę od razu. Przeróbka Cargo to zazwyczaj 1500–3000 zł kosztów plus czas.
+Zwykle potrzebne są odpowiednie siedzenia z mocowaniami i pasami, zagłówki, punkty kotwiczenia, szyby, oświetlenie, a często także dokument od producenta lub jednostki uprawnionej. Do tego dochodzi badanie techniczne po zmianach i decyzja wydziału komunikacji.
+
+Jeśli zależy ci na bezproblemowym użytkowaniu rodzinnym, fabryczna Panorama lub osobowe Doblò/e-Doblò są po prostu bezpieczniejszym wyborem. Sama „kanapa” nie wystarcza, by legalnie i bezproblemowo zmienić N1 na M1.
 
 {{% expert name="Kowalczyk" %}}
-Przy zakupie Panoramy z gen II sprawdź stan tylnej kanapy i prowadnic składania. Auta używane jako pojazdy rodzinne potrafią mieć mechanizm składania mocno zużyty. Kanapa, która nie składa się płasko, niszczy użyteczność bagażnika. Koszt naprawy zazwyczaj 200–400 zł, ale wymaga demontażu tylnego wnętrza.
+Przy zakupie używanego Doblò II sprawdź nie tylko wnętrze, ale też elementy typowo eksploatacyjne. Najważniejsze punkty kontroli to zużycie dwumasy i sprzęgła w 1.6 oraz 2.0 MultiJet, stan DPF i EGR w dieslach, luzy przedniego zawieszenia, korozja podwozia i drzwi przesuwnych oraz działanie elektryki szyb i zamków. Interwał rozrządu i osprzętu zależy od konkretnego silnika i rocznika, więc trzeba go weryfikować oddzielnie dla 1.3, 1.6 i 2.0 MultiJet.
 {{% /expert %}}
 
 ## Koszty eksploatacji Panoramy
 
-Ubezpieczenie Panoramy jako M1 jest droższe niż Cargo N1 – ale różnica bywa kompensowana przez możliwość korzystania z programów lojalnościowych i zniżek dla samochodów osobowych.
+Koszty użytkowania zależą przede wszystkim od silnika, rocznika, przebiegu i sposobu eksploatacji. Nie da się przyjąć jednej reguły dla ubezpieczenia – składka zależy od ubezpieczyciela, regionu, profilu kierowcy, przebiegu i sposobu użytkowania auta.
 
-Serwis identyczny z Cargo. Spalanie przy normalnej jeździe:
+W praktyce używane Doblò II wymaga szczególnie dokładnych oględzin pod kątem diesli MultiJet. To właśnie stan osprzętu, zawieszenia, elementów przesuwnych drzwi i elektryki częściej przesądza o kosztach niż sam typ nadwozia.
 
-- 1.3 MultiJet: ok. 6–7 l/100 km
-- 1.6 MultiJet 120 KM: ok. 7–8 l/100 km
-- 1.5 BlueHDi 130 KM (gen III): ok. 6,5–7,5 l/100 km
-- 1.2 PureTech 110 KM (gen III): ok. 7–9 l/100 km (zależy mocno od stylu jazdy)
+Z punktu widzenia praktyczności rodzinnej warto też patrzeć na dane masowe i homologacyjne. W vanach osobowych tej klasy ładowność zwykle wynosi ok. 600–900 kg zależnie od wersji, a dopuszczalna masa przyczepy z hamulcem może sięgać ok. 1000–1500 kg.
 
-*Źródła: Wikipedia, Fiat Professional, auto-data.net*
+Nowe Doblò III ma przewagę w bezpieczeństwie i dostępności systemów wsparcia kierowcy, a e-Doblò daje możliwość jazdy bezemisyjnej. Z kolei Doblò II pozostaje ciekawą opcją dla osób szukających prostszego, bardzo pakownego vana z szeroką gamą diesli i wersji paliwowych.

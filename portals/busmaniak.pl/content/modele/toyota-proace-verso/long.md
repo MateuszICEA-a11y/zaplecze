@@ -2,7 +2,7 @@
 title: "Toyota Proace Verso Long – wymiary, miejsca, ceny"
 date: 2026-03-24
 lastmod: 2026-03-24
-description: "Toyota Proace Verso Long ma 5309 mm długości i do 9 miejsc w układzie 2+3+4. Bagażnik 850 l przy pełnym obsadzeniu. Dane techniczne, wymiary i ceny."
+description: "Toyota Proace Verso Long ma 5309 mm długości i może oferować do 9 miejsc. Sprawdzamy wymiary, układ wnętrza oraz najważniejsze informacje o wersji Long."
 draft: false
 author: "marek-kowalczyk"
 h1: "Toyota Proace Verso Long – wymiary, miejsca, ceny"
@@ -13,80 +13,65 @@ main_keyword: "Toyota Proace Verso Long"
 image: "/images/toyota-proace-verso-long-hero.jpg"
 faq:
   - question: "Ile miejsc ma Toyota Proace Verso Long?"
-    answer: "Do 9 miejsc w układzie 2+3+4. Standardowe konfiguracje to 8 lub 9 siedzeń. Możliwa jest też konfiguracja 7-miejscowa z powiększoną przestrzenią bagażową za trzecim rzędem."
+    answer: "Toyota Proace Verso Long może oferować do 9 miejsc. W artykule nie podajemy szczegółowego układu foteli dla każdej konfiguracji, ponieważ zależy on od wersji i specyfikacji."
   - question: "Jaką długość ma Toyota Proace Verso Long?"
-    answer: "Toyota Proace Verso Long mierzy 5309 mm długości. Wersja Medium ma 4959 mm. Różnica 350 mm wynika z dłuższego zwisu tylnego i większej przestrzeni między drugim a trzecim rzędem."
+    answer: "Toyota Proace Verso Long mierzy 5309 mm długości. Wersja Medium ma 4959 mm, więc różnica wynosi 350 mm."
   - question: "Ile kosztuje Toyota Proace Verso Long?"
-    answer: "Ceny Proace Verso Long w wersji Shuttle startują od ok. 185 000–195 000 zł. Wersje Family i VIP kosztują odpowiednio więcej – VIP Long przekracza 260 000 zł."
-lead: "Toyota Proace Verso Long z 9 miejscami i bagażnikiem 850 litrów to jeden z najbardziej pojemnych vanów w segmencie C. Przy pełnym obsadzeniu nadal mieści tygodniowy bagaż całej grupy – coś, czego nie oferuje żaden konkurent tej klasy."
+    answer: "W tym materiale nie podajemy konkretnych cen, ponieważ brak tu aktualnego cennika Toyota Polska dla wskazanego rocznika i wersji."
+lead: "Toyota Proace Verso Long to przedłużona odmiana osobowego vana Toyoty, nastawiona na przewóz większej liczby pasażerów i większego bagażu. Wersja Long ma 5309 mm długości i może występować w konfiguracjach do 9 miejsc."
 ---
 ## Wymiary Proace Verso Long a Medium
 
-[Toyota Proace Verso](/modele/toyota-proace-verso/) dostępna jest w dwóch długościach:
+[Toyota Proace Verso](/modele/toyota-proace-verso/) dostępna jest w dwóch długościach nadwozia:
 
 | Wymiar | Medium | Long |
 |---|---|---|
 | Długość całkowita | 4959 mm | 5309 mm |
-| Rozstaw osi | 2925 mm | 3275 mm |
-| Maks. liczba miejsc | 7 (2+3+2) | 9 (2+3+4) |
-| Bagażnik – pełne obsadzenie | ok. 440 l | 850 l |
-| Bagażnik – złożony 3. rząd | ok. 1100 l | ok. 2100 l |
-| Silniki | 1.5 / 2.0 D-4D | 2.0 D-4D |
 
-Szerokość i wysokość są identyczne dla obu wersji: szerokość całkowita ok. 1920 mm, wysokość ok. 1900 mm. Rozstaw osi w wersji Long wynosi 3275 mm wobec 2925 mm w Medium.
+Różnica długości między obiema wersjami wynosi 350 mm. W dostarczonych danych brakuje jednak spójnych i wiarygodnych informacji o rozstawie osi, zwisach oraz pełnych wymiarach nadwozia dla rynku polskiego, dlatego nie uzupełniamy tych pozycji na siłę.
 
-Wersja Long ma dwa rzędy przesuwnych drzwi bocznych po prawej stronie – wejście do trzeciego rzędu odbywa się przez przesunięcie foteli drugiego rzędu lub przez oddzielne tylne drzwi boczne (zależnie od konfiguracji).
+Nie podajemy też maksymalnej liczby miejsc osobno dla Medium i Long w formie tabeli, ponieważ wcześniejsze dane były niespójne. Wiadomo jedynie, że Toyota Proace Verso Long może oferować do 9 miejsc.
+
+W opisie dostępu do tylnych siedzeń warto to uporządkować: Proace Verso ma drzwi przesuwne boczne, ale nie występują dwa niezależne rzędy takich drzwi po jednej stronie nadwozia.
 
 ## Przestrzeń pasażerska i bagażnik Toyota Proace Verso Long
 
 ### Wymiary kabiny pasażerskiej
 
-Kluczowe wymiary wnętrza wersji Long:
+Wcześniejsza wersja tekstu zawierała niezweryfikowane wymiary wnętrza, dlatego zostały usunięte. Dotyczy to zwłaszcza długości strefy pasażerskiej oraz orientacyjnych pomiarów przestrzeni za trzecim rzędem.
 
-- długość strefy pasażerskiej – ok. 3300 mm od przegrody do drzwi tylnych
-- wysokość wnętrza – ok. 1310 mm (można siedzieć wyprostowanym)
-- bagażnik przy 9 miejscach – 850 l (do dachu)
-- bagażnik przy złożonym trzecim rzędzie – ok. 2100 l
+Na podstawie dostarczonych danych można bezpiecznie wskazać jedynie, że wersja Long została pomyślana jako bardziej praktyczna odmiana dla większej liczby pasażerów i ich bagażu. Brakuje natomiast twardych danych producenta dotyczących pojemności bagażnika według jednej metodologii dla konfiguracji 5-, 7-, 8- i 9-miejscowej.
 
 ### Trzeci rząd siedzeń
 
-Fotele trzeciego rzędu w wersji Long są pełnowymiarowe – każde z czterech miejsc ma zagłówek i 3-punktowy pas bezpieczeństwa. To istotna różnica wobec aut z dorobionym rzędem, gdzie tylne siedzenia są wyraźnie węższe.
+W poprzedniej wersji artykułu błędnie opisano trzeci rząd jako 4-osobowy. Taki układ nie został tu potwierdzony, dlatego pozostajemy przy bezpiecznym stwierdzeniu, że Toyota Proace Verso Long może być oferowana jako auto do 9 osób, ale dokładny układ siedzeń zależy od wersji.
+
+Nie ma też podstaw, by przypisywać każdemu miejscu w trzecim rzędzie konkretne wyposażenie bezpieczeństwa bez odniesienia do realnej konfiguracji. To wymagałoby danych katalogowych dla konkretnej specyfikacji.
 
 {{% info title="Bagażnik Long przy pełnym obsadzeniu" icon="engineering" %}}
-850 litrów przy 9 pasażerach brzmi niepozornie, ale to przestrzeń między trzecim rzędem a drzwiami tylnymi mierząca ok. 500 mm głębokości. Wystarczy na 4–5 walizek kabinowych lub 2 duże torby podróżne na osobę. Do dłuższych wyjazdów grupowych warto korzystać z bagażnika dachowego.
+Wcześniej pojawiły się bardzo konkretne liczby dotyczące pojemności i głębokości przestrzeni bagażowej przy komplecie pasażerów, ale nie zostały one podparte wiarygodnym źródłem. Dlatego w tym materiale nie powielamy tych wartości.
 {{% /info %}}
 
 ## Silniki dostępne w Proace Verso Long
 
 ![Toyota Proace Verso Long – widok z zewnątrz, tylne drzwi otwarte](/images/toyota-proace-verso-long-hero.jpg)
 
-Wersja Long jest dostępna wyłącznie z silnikami diesla:
+Poprzednia wersja artykułu zbyt kategorycznie stwierdzała, że Toyota Proace Verso Long występuje wyłącznie z silnikami diesla. To wymaga doprecyzowania pod konkretny rynek, rocznik i wersję, dlatego takie uogólnienie usuwamy.
 
-- 2.0 D-4D 145 KM / 370 Nm – skrzynia manualna 6-biegowa
-- 2.0 D-4D 177 KM / 400 Nm – skrzynia automatyczna EAT8
+Nie podajemy również szczegółowej listy jednostek napędowych, osiągów ani zużycia paliwa, ponieważ w dostarczonych danych brak oficjalnych i spójnych wartości dla konkretnych odmian. Dotyczy to także wyników WLTP, emisji CO2, rodzaju skrzyni biegów czy dostępności napędu w określonych konfiguracjach.
 
-Silnik 1.5 D-4D jest dostępny tylko w wersji Medium. Do przewożenia 9 osób zalecany jest wariant 177 KM z automatem – różnica w osiągach załadowanego pojazdu jest wyraźna.
-
-Zużycie paliwa przy pełnym obsadzeniu (9 osób, masa ok. 2500 kg łącznie z pojazdem):
-
-- trasa autostradowa – ok. 8–9,5 l/100 km
-- drogi krajowe – ok. 7–8 l/100 km
-- miasto – ok. 10–12 l/100 km
+Jeśli zależy Ci na wyborze odpowiedniego silnika do wersji Long, najlepiej sięgnąć do aktualnego cennika i specyfikacji Toyota Polska dla konkretnego roku modelowego.
 
 ## Ceny i wyposażenie Proace Verso Long
 
 ### Linie wyposażenia Shuttle, Family, VIP
 
-Proace Verso Long jest oferowany w tych samych liniach wyposażenia co Medium:
+Wcześniejszy opis wyposażenia wersji Shuttle, Family i VIP był zbyt stanowczy, ponieważ zawartość tych odmian może się różnić w zależności od rynku i rocznika. Bez konkretnego cennika nie da się rzetelnie przesądzić, które elementy są standardem, a które opcją.
 
-- Shuttle – baza: manualny fotel kierowcy, standardowe multimedia
-- Family – automatyczna klimatyzacja strefowa, kamera cofania, składane stoły między rzędami
-- VIP – fotele skórzane, oddzielna regulacja tylnej klimatyzacji, roletki boczne, elektrycznie otwierana klapa tylna
-
-Ceny wersji Long są o ok. 10 000–15 000 zł wyższe niż odpowiadające im warianty Medium.
+Z tego samego powodu usuwamy orientacyjne widełki cenowe i dopłaty do wersji Long względem Medium. Takie informacje powinny pochodzić z aktualnego cennika Toyota Polska z podaniem daty obowiązywania.
 
 {{% expert name="Kowalczyk" %}}
-Proace Verso Long 177 KM z automatem to solidny wybór dla firm transportowych i dużych rodzin. Jedyne zastrzeżenie: przy zakupie sprawdź wariant drzwi bocznych. Konfiguracja z jedną parą przesuwnych drzwi po prawej stronie utrudnia wsiadanie do trzeciego rzędu przez osoby starsze lub z bagażem. Lepsza jest wersja z podwójnymi drzwiami prawostronnym lub z drzwiami po obu stronach.
+Przy zakupie Toyota Proace Verso Long warto zwrócić uwagę nie tylko na długość nadwozia, ale też na faktyczną konfigurację siedzeń i sposób dostępu do trzeciego rzędu. W praktyce to właśnie układ wnętrza, a nie sama liczba miejsc na papierze, decyduje o wygodzie codziennego użytkowania.
 {{% /expert %}}
 
-*Źródła: Wikipedia, Toyota, auto-data.net*
+*Źródła: Toyota*

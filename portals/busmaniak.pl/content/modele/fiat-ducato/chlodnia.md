@@ -10,77 +10,113 @@ type: "page"
 image: "/images/fiat-ducato-chlodnia-hero.jpg"
 image_alt: "Fiat Ducato z zabudową chłodniczą i agregatem na dachu"
 main_keyword: "Fiat Ducato chłodnia"
-lead: "Fiat Ducato dominuje na rynku aut dostawczych z zabudową chłodniczą dzięki modułowości i niskim kosztom eksploatacji. Ładowność z agregatem wynosi 1000–1300 kg, a spalanie rośnie o 2–3 l/100 km względem standardowego furgonu."
+lead: "Fiat Ducato chłodnia to popularna baza pod izotermę, chłodnię i mroźnię, ale realna ładowność zależy przede wszystkim od DMC, typu zabudowy i masy agregatu. W praktyce zabudowa izotermiczna z agregatem może zwiększyć masę auta orientacyjnie o 250–500 kg, dlatego przed zakupem trzeba sprawdzić konfigurację konkretnego egzemplarza."
 faq:
   - question: "Czy Fiat Ducato chłodnia może jeździć na kategorii B?"
-    answer: "Tak, większość wersji ma DMC do 3500 kg. Realna ładowność po montażu zabudowy i agregatu spada jednak do ok. 1000–1300 kg."
+    answer: "Tak, jeśli DMC wynosi do 3500 kg. Trzeba jednak pamiętać, że Ducato występuje także w cięższych wariantach 4250 kg, a sama zabudowa izotermiczna z agregatem może dodać orientacyjnie 250–500 kg i wyraźnie obniżyć realną ładowność."
   - question: "Który silnik najlepiej znosi pracę z agregatem?"
-    answer: "Najbardziej polecany jest 2.3 MultiJet (130–180 KM) – trwała konstrukcja Iveco z dobrym momentem obrotowym, istotnym przy większej masie i oporze powietrza."
+    answer: "W nowszych Ducato trzeba patrzeć na aktualne 2.2 MultiJet3, a w starszych używanych egzemplarzach na 2.3 MultiJet. Do pracy z chłodnią istotne są nie tylko moc, ale też moment obrotowy, obciążenie auta i dostępność automatu."
   - question: "Ile pali Fiat Ducato chłodnia?"
-    answer: "Z pracującym agregatem spalanie wzrasta o 2–3 l/100 km. Realne wartości to 10–15 l/100 km w cyklu mieszanym. Sam agregat na postoju zużywa 1,5–2,5 l/h."
+    answer: "Zużycie paliwa zależy od masy zabudowy, temperatury pracy, typu agregatu i warunków eksploatacji. Nie da się rzetelnie podać jednej uniwersalnej wartości bez odniesienia do konkretnej konfiguracji."
   - question: "Ile kosztuje nowy Ducato z zabudową chłodniczą?"
-    answer: "Nowy Ducato L3H2 z izotermą i agregatem to 160 000–250 000 zł netto. Używane (5–8 lat) kosztują 45 000–95 000 zł netto."
+    answer: "Cena końcowa zależy od tego, czy mówimy o izotermie, chłodni czy mroźni. Na wycenę składają się baza auta, izolacja lub kontener, agregat, montaż, opcjonalne standby 230 V oraz wyposażenie dodatkowe, np. półki, listwy, haki i rejestrator temperatury."
 ---
 
 ## Rodzaje zabudowy – izoterma, chłodnia czy mroźnia?
 
-Zanim zdecydujesz się na konkretny egzemplarz, określ wymagany zakres temperatur. [Fiat Ducato](/modele/fiat-ducato/) to uniwersalna baza, ale w transporcie chłodniczym dzieli się na trzy kategorie:
+W przypadku auta takiego jak [Fiat Ducato](/modele/fiat-ducato/) kluczowe jest nie tylko to, czy w zabudowie jest agregat, ale też jaki standard temperaturowy ma spełniać cały pojazd. W praktyce trzeba odróżnić zwykłą izotermę od chłodni i mroźni oraz rozumieć, jak działa klasyfikacja ATP.
 
-- **Izoterma** – zabudowa bez agregatu, oparta wyłącznie na izolacji termicznej (styrodur lub pianka poliuretanowa 60–80 mm pokryta laminatem); nadaje się do krótkich kursów z produktami niewymagającymi aktywnego chłodzenia
-- **Chłodnia (ATP klasa B)** – wyposażona w agregat chłodniczy, utrzymuje temperaturę od 0°C do +12°C; sprawdza się przy transporcie nabiału, mięsa czy kwiatów; izolacja 80–100 mm
-- **Mroźnia (ATP klasa A)** – grubsza izolacja (100–120 mm poliuretan, U=0,25 W/m²K) i wydajniejszy agregat pozwalają utrzymać temperaturę do –20°C
+- **Izoterma** – zabudowa z izolacją termiczną, bez aktywnego chłodzenia; ogranicza wpływ temperatury zewnętrznej, ale sama nie wytwarza zimna
+- **Chłodnia** – zabudowa z agregatem chłodniczym, przeznaczona do utrzymania dodatnich lub lekko ujemnych temperatur zależnie od klasy i wydajności układu
+- **Mroźnia** – zabudowa z grubszą izolacją i agregatem dobranym do pracy przy znacznie niższych temperaturach, zwykle do transportu głęboko mrożonych produktów
+
+ATP rozróżnia m.in. typy zabudów **IN, IR, FNA, FRC**. Dla wyposażenia chłodniczego klasy **A/B/C** odpowiadają utrzymaniu temperatury przy **+30°C** otoczenia odpowiednio do **0°C, -10°C i -20°C**.
+
+To oznacza, że klasa **A** nie jest mroźnią do -20°C, a klasa **C** nie dotyczy zwykłej chłodni. Jeśli mówimy o temperaturach do **-20°C**, właściwym odniesieniem jest **ATP klasa C**.
+
+Świadectwo ATP wydaje się zwykle na **6 lat**, a następnie – po badaniu przedłużającym – na kolejne okresy **3-letnie**. Warto też pamiętać, że ATP ma największe znaczenie w **międzynarodowym przewozie szybko psujących się artykułów żywnościowych oraz specjalnych środków transportu**.
 
 {{% info title="Kupno" icon="engineering" %}}
-Przy wyborze chłodni kluczowy jest atest PZH (do kontaktu z żywnością) oraz certyfikat ATP. Świadectwo ATP określa zdolność zabudowy do utrzymania określonej temperatury i jest wymagane w transporcie międzynarodowym produktów szybkopsujących się.
+Przy wyborze chłodni nie warto sprowadzać tematu wyłącznie do „atestu PZH”. W praktyce liczą się wymagania sanitarne, HACCP, zgodność materiałów mających kontakt z żywnością oraz – jeśli dotyczy danego rodzaju przewozu – ważne świadectwo ATP. W krajowym transporcie żywności nie każdy przewóz pieczywa, napojów czy cateringu wymaga tej samej klasy zabudowy.
 {{% /info %}}
 
 ## Fiat Ducato chłodnia – dane techniczne i popularne wersje
 
-Najczęściej wybieraną bazą pod chłodnię jest wersja **L3H2** (przestrzeń ładunkowa ok. 3,7 m) oraz **L4H2**. Do zabudów kontenerowych stosuje się podwozia pod zabudowę.
+Pod zabudowę chłodniczą stosuje się zarówno furgony, jak i podwozia pod kontener. W praktyce najczęściej spotyka się konfiguracje **L2H2, L3H2 i L4H2** oraz podwozia do zabudowy kontenerowej – wybór zależy od wymaganej kubatury netto, temperatury pracy i oczekiwanej ładowności.
+
+Typowe długości przestrzeni ładunkowej Ducato to około **3120 mm (L2)**, **3705 mm (L3)** i **4070 mm (L4)**. Szerokość maksymalna wynosi około **1870 mm**, między nadkolami około **1420 mm**, a wysokość wewnętrzna **H2** około **1930 mm**.
+
+Po wykonaniu izolacji **60–100 mm** wymiary netto spadają zwykle o około **120–200 mm** na szerokości i wysokości oraz o grubość ściany przedniej i tylnej. To właśnie dlatego przy chłodni i mroźni trzeba patrzeć nie na katalogową kubaturę furgonu, ale na realne wymiary po zabudowie.
 
 | Parametr | Furgon L3H2 | Podwozie L4 |
 | :--- | :--- | :--- |
-| **DMC** | 3500 kg | 3500 kg / 4250 kg (Maxi) |
-| **Silniki** | 2.2 MultiJet3 / 2.3 MultiJet | 2.2 MultiJet3 / 2.3 MultiJet |
-| **Moc** | 140 / 160 / 180 KM | 140 / 180 KM |
-| **Pojemność ładowni** | ok. 10–13 m³ (po zabudowie) | zależna od kontenera (8–10 palet) |
-| **Ładowność z agregatem** | ok. 1000–1300 kg | ok. 900–1000 kg |
+| **DMC** | 3300 kg / 3500 kg | 3500 kg / 4250 kg |
+| **Silniki** | nowe roczniki: 2.2 MultiJet3; starsze używane: 2.3 MultiJet | nowe roczniki: 2.2 MultiJet3; starsze używane: 2.3 MultiJet |
+| **Długość przestrzeni ładunkowej** | ok. 3705 mm | zależna od zabudowy |
+| **Szerokość / między nadkolami** | ok. 1870 mm / 1420 mm | zależna od zabudowy |
+| **Wysokość wewnętrzna** | H2: ok. 1930 mm | zależna od kontenera |
+| **Wymiary netto po izolacji** | mniejsze o ok. 120–200 mm na szerokości i wysokości oraz o grubość ścian czołowych | zależne od typu kontenera |
+| **Ładowność po zabudowie** | silnie zależna od DMC i typu zabudowy | silnie zależna od DMC i typu zabudowy |
 
-{{% expert name="Kowalczyk" %}}Wybierając Ducato pod chłodnię, szukaj wersji z mocniejszym alternatorem. Agregat chłodniczy to dodatkowy odbiornik prądu, który przy częstych postojach i otwieraniu drzwi mocno obciąża układ elektryczny. Warto też rozważyć wzmocnione zawieszenie – zabudowa chłodnicza zabiera od 150 do 300 kg ładowności.{{% /expert %}}
+Typowe DMC Ducato to **3300 kg**, **3500 kg** oraz cięższe warianty **4250 kg**. Sama zabudowa izotermiczna z agregatem może dodawać orientacyjnie **250–500 kg** zależnie od tego, czy mówimy o furgonie czy kontenerze, jak gruba jest izolacja i jaki agregat zastosowano.
+
+Ma to bezpośredni wpływ na realną ładowność oraz na to, czy auto nadal mieści się w limicie kategorii **B**. Lżejsza izoterma wewnątrz furgonu i cięższa mroźnia na podwoziu to zupełnie inne scenariusze użytkowe.
+
+{{% expert name="Kowalczyk" %}}Przy wyborze bazy pod chłodnię patrz nie tylko na długość nadwozia, ale przede wszystkim na DMC i masę gotowej zabudowy. W praktyce różnica między prostą izotermą a pełną mroźnią z agregatem i osprzętem może zdecydować o realnej ładowności oraz o tym, czy auto pozostanie w klasie do 3,5 t.{{% /expert %}}
 
 ## Wyposażenie i producenci zabudów
 
-W Polsce zabudowy chłodnicze na Ducato wykonują głównie firmy **Igloocar, Lamar, Konar i Kerstner**. Dobrze wykonana zabudowa powinna mieć:
+Dobrze wykonana chłodnia na bazie Ducato powinna być oceniana przede wszystkim po jakości samej zabudowy i jej dopasowaniu do zadania. Najważniejsze są szczelność, łatwość mycia, odporność powierzchni oraz sposób zasilania agregatu.
 
-- **Bezspoinową konstrukcję** – łatwość mycia i zachowanie higieny
-- **Podłogę antypoślizgową** – wylewka kwarcowa lub blacha ryflowana
-- **Oświetlenie LED** – sterowane z kabiny
-- **Agregat sprawdzonej marki** – Thermo King, Carrier lub Zanotti
+Na liście wyposażenia warto szukać takich elementów jak:
+
+- **bezspoinowa konstrukcja** – ułatwia mycie i utrzymanie higieny
+- **podłoga przystosowana do intensywnego użytkowania** – ważna przy codziennym załadunku
+- **oświetlenie wnętrza** – przydatne podczas nocnych dostaw
+- **rejestrator temperatury** – istotny w przewozach wymagających kontroli warunków
+- **standby 230 V** – pozwala chłodzić na postoju bez spalania paliwa, ale wymaga gniazda zewnętrznego i wpływa na dobór osprzętu
+
+W lekkich chłodniach spotyka się trzy podstawowe sposoby zasilania agregatu: napęd **od silnika pojazdu**, agregat z **własnym silnikiem diesla** oraz zasilanie **sieciowe 230 V** w trybie standby. Dobór rozwiązania ma wpływ na koszty, serwis i sposób użytkowania auta na postoju.
+
+Warto też odróżnić zabudowę izotermiczną w furgonie od **kontenera chłodniczego na podwoziu**. Furgon daje zwykle mniejszą kubaturę netto, ale jest tańszy w zakupie i łatwiejszy w parkowaniu, natomiast kontener oferuje większą kubaturę i prostsze mycie ścian – często także lepszą funkcjonalność przy przewozie **6–8 europalet** w małych DMC i więcej w cięższych wariantach, kosztem wyższej masy i ceny.
 
 ### Agregaty chłodnicze – modele i ceny
 
-| Producent | Model | Moc | Cena nowego | Cena używanego |
-|-----------|-------|-----|-------------|----------------|
-| **Thermo King** | MD-100 / T-1000 | 5–8 kW | 45 000–65 000 zł | 20 000–35 000 zł |
-| **Carrier** | Xarios 150 / 200 | 4–10 kW | 50 000–70 000 zł | 25 000–40 000 zł |
-| **Zanotti** | Z.300 / Z.500 | 3–7 kW | 40 000–55 000 zł | 18 000–30 000 zł |
+Przy agregatach chłodniczych nie warto porównywać samych wartości w kW bez kontekstu. Wydajność należy podawać katalogowo w standardowych punktach odniesienia, np. przy temperaturze skrzyni **0°C** oraz **-20°C** i temperaturze otoczenia **+30°C** – dopiero wtedy da się rzetelnie zestawić różne urządzenia.
 
-Montaż agregatu z instalacją to dodatkowe 10 000–15 000 zł. Na postoju agregat diesla zużywa 1,5–2,5 l/h (przy –20°C).
+Bez takich warunków pomiaru liczby są nieporównywalne. Dlatego przy zakupie trzeba prosić sprzedawcę o kartę katalogową konkretnego modelu oraz sprawdzić, czy dany agregat jest dobrany do kubatury netto i zakładanego zakresu temperatur.
 
 ### Ceny Fiata Ducato z zabudową chłodniczą
 
-- **Używane (5–8 lat, przebieg 200–300 tys. km)** – 45 000–95 000 zł netto
-- **Nowe (2025–2026, L3H2 + izoterma + agregat)** – 160 000–250 000 zł netto
+Ceny trzeba rozbijać na elementy składowe, bo sama kwota końcowa niewiele mówi. W praktyce na koszt zestawu składają się:
+
+- **baza auta** – furgon albo podwozie
+- **izolacja lub kontener**
+- **agregat chłodniczy**
+- **montaż**
+- **standby 230 V** – jeśli jest wymagane
+- **wyposażenie dodatkowe** – listwy, półki, haki, rejestrator temperatury
+
+Bez takiego podziału nie da się uczciwie porównać, czy dana oferta dotyczy prostej izotermy, pełnej chłodni czy mroźni.
 
 ![Fiat Ducato chłodnia – zabudowa izotermiczna i chłodnicza](/images/fiat-ducato-chlodnia-hero.jpg)
 
 ## Eksploatacja i serwis – o czym pamiętać?
 
-Ducato z zabudową chłodniczą wymaga kilku dodatkowych punktów w harmonogramie serwisu:
+Eksploatacja chłodni na bazie Ducato to nie tylko standardowy serwis samochodu, ale też regularna kontrola samej zabudowy i agregatu. Zakres obsługi zależy od modelu urządzenia, rodzaju napędu i warunków pracy, dlatego podstawą zawsze powinna być instrukcja producenta agregatu.
 
-- **Agregat** – raz w roku sprawdź szczelność układu i poziom czynnika chłodniczego
-- **Uszczelki drzwi** – każda nieszczelność tylnych lub bocznych drzwi zwiększa zużycie paliwa przez agregat; kontroluj przy każdym przeglądzie
-- **Spalanie** – z pracującym agregatem wzrasta o 2–3 l/100 km względem standardowego furgonu; realne wartości to 10–15 l/100 km w cyklu mieszanym
-- **Rozrząd** – w silniku [2.3 MultiJet](/modele/fiat-ducato/2-3-multijet/) zalecany interwał to 100–120 tys. km przy eksploatacji miejskiej z częstym start-stop
+W praktyce serwis może obejmować m.in. kontrolę szczelności układu, filtr-osuszacz, pasek osprzętu, czyszczenie, kalibrację sterownika czy obsługę własnego silnika diesla – jeśli agregat taki posiada. Nie da się więc sprowadzić serwisu do jednej corocznej kontroli czynnika chłodniczego.
 
-*Źródła: Wikipedia, Fiat Professional, Igloocar.pl, auto-data.net*
+W codziennej pracy trzeba pilnować również:
+
+- **uszczelek drzwi** – ich stan bezpośrednio wpływa na utrzymanie temperatury
+- **odpływów skroplin** – muszą być drożne
+- **cykli odszraniania parownika** – mają znaczenie dla skuteczności chłodzenia
+- **mycia i dezynfekcji wnętrza** – szczególnie przy przewozie żywności
+- **rejestru temperatury podczas transportu** – jeśli wymaga tego charakter przewozu
+
+Przy zakupie używanej chłodni warto wykonać prostą checklistę odbiorową. Należy sprawdzić **ważność ATP i tabliczkę zabudowy, test utrzymania temperatury np. od +20°C do 0°C, stan uszczelek, szczelność odpływów skroplin, pracę agregatu na postoju i podczas jazdy, liczbę motogodzin agregatu, stan parownika i skraplacza oraz historię mycia i serwisu**.
+
+W przypadku silników również trzeba rozdzielić generacje. W **nowych** Ducato mówimy o **2.2 MultiJet3**, a w **starszych używanych** egzemplarzach o **2.3 MultiJet 130/150/180 KM** – bez mieszania ich jako jednej równoległej oferty.
+
+Jeśli auto ma pracować stale z pełnym obciążeniem i zabudową chłodniczą, warto porównać w nowych rocznikach co najmniej **2.2 MultiJet3 140 KM i 180 KM**. Mocniejsza wersja będzie korzystniejsza przy cięższej zabudowie i intensywnej eksploatacji, zwłaszcza gdy znaczenie mają dynamika pod obciążeniem i komfort jazdy.

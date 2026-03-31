@@ -1,7 +1,7 @@
 ---
 title: "Peugeot Expert 2.0 HDi – dane techniczne, spalanie, opinie"
 date: 2026-03-26
-description: "Silnik 2.0 HDi (DW10) w Peugeot Expert II – dane techniczne trzech wariantów mocy, realne spalanie, typowe usterki i koszty serwisu."
+description: "Silnik 2.0 HDi (DW10) w Peugeot Expert II – dane techniczne, spalanie, typowe usterki i koszty serwisu."
 draft: false
 author: "marek-kowalczyk"
 h1: "Peugeot Expert 2.0 HDi – dane techniczne i opinie"
@@ -10,121 +10,139 @@ type: "page"
 image: "/images/peugeot-expert-2-0-hdi-hero.jpg"
 image_alt: "Silnik 2.0 HDi DW10 w Peugeot Expert II"
 main_keyword: "peugeot expert 2.0 hdi"
-lead: "Silnik 2.0 HDi z rodziny PSA DW10 to podstawowa jednostka napędowa Peugeota Experta drugiej generacji (2007–2016). Dostępny w trzech wariantach mocy – 120, 128 i 163 KM – napędza zarówno wersje dostawcze, jak i osobowe tego popularnego vana średniej wielkości."
+lead: "Silnik 2.0 HDi z rodziny PSA DW10 to jedna z głównych jednostek napędowych Peugeota Experta drugiej generacji (2007–2016). W praktyce najczęściej spotyka się warianty 120 i 163 KM, montowane zarówno w wersjach dostawczych, jak i osobowych tego vana średniej wielkości."
 faq:
   - question: "Ile pali Peugeot Expert 2.0 HDi?"
-    answer: "Peugeot Expert 2.0 HDi spala realnie 7,5–8,5 l/100 km w cyklu mieszanym. Na trasie przy 90 km/h zużycie spada do 6,5–7,5 l/100 km, a w mieście wzrasta do 9–10,5 l/100 km."
+    answer: "Zużycie paliwa zależy od wersji nadwozia, długości L1 lub L2, obciążenia i stylu jazdy. W praktyce wartości trzeba traktować orientacyjnie, bo Expert II występował jako furgon, kombi/Tepee oraz w różnych konfiguracjach masy."
   - question: "Który wariant 2.0 HDi w Expercie jest najlepszy?"
-    answer: "Dla większości użytkowników optymalny jest wariant 128 KM (DW10CTED4) – oferuje wystarczającą moc i lepszy moment obrotowy niż wersja 120 KM, przy zbliżonym spalaniu. Wersja 163 KM ma sens przy regularnym jeżdżeniu z pełnym obciążeniem."
+    answer: "Wybór zależy od zastosowania. W porównaniu z 1.6 HDi o mocy zwykle 90 lub 90/95 KM i momencie ok. 180–210 Nm, 2.0 HDi oferuje ok. 300–340 Nm, więc wyraźnie lepiej radzi sobie z ładunkiem i jazdą trasową."
   - question: "Co ile wymienia się rozrząd w Peugeot Expert 2.0 HDi?"
-    answer: "Producent zaleca wymianę paska rozrządu co 240 tys. km lub 10 lat. W praktyce mechanicy rekomendują wymianę co 160–200 tys. km, zwłaszcza w wariantach z wtryskiem Siemens, które generują większe obciążenia rozrządu."
+    answer: "Producent przewiduje wymianę paska rozrządu co 240 tys. km lub 10 lat. W praktyce ostrożniejszy interwał to 160–200 tys. km, zależnie od wieku auta, warunków pracy i stylu eksploatacji."
   - question: "Jakie są typowe usterki 2.0 HDi w Expercie?"
-    answer: "Najczęstsze problemy to awarie wtryskiwaczy Siemens VDO (150–250 tys. km), zapychanie filtra DPF przy jeździe miejskiej (80–150 tys. km), problemy z aktuatorem turbosprężarki (180–280 tys. km) i wycieki oleju z pokrywy zaworowej."
+    answer: "Najczęściej wracają tematy osprzętu i eksploatacji: problemy z układem DPF/FAP przy jeździe miejskiej, zużycie dwumasy, awarie osprzętu dolotu i podciśnienia, kłopoty z wtryskiem w części wersji oraz wycieki oleju zależne od odmiany pokrywy i osprzętu."
 ---
 
 ## Dane techniczne 2.0 HDi w Peugeot Expert
 
-Silnik 2.0 HDi to czterocylindrowy diesel z rodziny [PSA DW10](https://en.wikipedia.org/wiki/PSA_EW/DW_engine) o pojemności 1997 cm³. Blok cylindrów jest żeliwny, głowica aluminiowa z 16 zaworami. Układ wtrysku to Common Rail – w zależności od wariantu stosowano systemy Siemens VDO (SID803/SID807) lub Bosch. Napęd rozrządu realizuje pasek zębaty, a silnik ma układ interferencyjny – zerwanie paska oznacza uszkodzenie zaworów.
+Silnik 2.0 HDi z rodziny DW10 to klasyczny czterocylindrowy diesel common rail o pojemności 1997 cm³. W praktyce serwisowej najważniejsze są tu 16-zaworowa konstrukcja, pasek rozrządu, turbosprężarka o zmiennej geometrii oraz obecność koła dwumasowego i filtra DPF/FAP – zależnie od wersji i rocznika.
 
-W [Peugeot Expert](/modele/peugeot-expert/) drugiej generacji (2007–2016) silnik 2.0 HDi występował w trzech wersjach mocy. Ten sam silnik montowano również w bliźniaczych modelach – [Citroën Jumpy](/modele/citroen-jumpy/) i [Fiat Scudo](/modele/fiat-scudo/).
+W Peugeot Expert drugiej generacji jednostka 2.0 HDi występowała w różnych odmianach nadwoziowych. To ważne, bo Expert II był oferowany jako Furgon, Kombi/Tepee oraz platformy, w długościach L1 i L2, a różnice masy własnej liczone są w setkach kilogramów. Z tego powodu osiągi, spalanie, DMC, ładowność i parametry użytkowe trzeba zawsze odnosić do konkretnej konfiguracji auta.
 
-| Parametr | DW10BTED4 | DW10CTED4 | DW10FD |
-|----------|-----------|-----------|--------|
-| Pojemność | 1997 cm³ | 1997 cm³ | 1997 cm³ |
-| Moc | 120 KM (88 kW) | 128 KM (94 kW) | 163 KM (120 kW) |
-| Moment obrotowy | 300 Nm | 320 Nm | 340 Nm |
-| Wtrysk | Common Rail Siemens VDO | Common Rail Siemens VDO | Common Rail Bosch |
-| Turbosprężarka | Garrett, zmienna geometria | Garrett, zmienna geometria | Garrett, zmienna geometria |
-| Norma emisji | Euro 4 | Euro 4/5 | Euro 5 |
-| Skrzynia biegów | manualna 6-biegowa | manualna 6-biegowa | manualna 6-biegowa |
-| 0–100 km/h | ok. 13,8 s | ok. 12,5 s | ok. 11,2 s |
+| Parametr | 2.0 HDi 120 | 2.0 HDi 163 |
+|----------|-------------|-------------|
+| Pojemność | 1997 cm³ | 1997 cm³ |
+| Układ cylindrów | R4 | R4 |
+| Głowica / zawory | 16V | 16V |
+| Wtrysk | Common Rail | Common Rail |
+| Doładowanie | turbosprężarka VGT | turbosprężarka VGT |
+| Moment obrotowy | ok. 300 Nm | ok. 340 Nm |
+| Skrzynia biegów | manualna 6-biegowa | manualna 6-biegowa |
+| Rozrząd | pasek zębaty | pasek zębaty |
+| Dwumasa | tak | tak |
+| DPF/FAP | zależnie od wersji i rocznika | zależnie od wersji i rocznika |
 
-Rozrząd napędzany jest paskiem zębatym – producent przewiduje wymianę co 240 tys. km lub 10 lat, ale w praktyce warsztatowej bezpieczniejszy interwał to 160–200 tys. km. Przy okazji wymiany paska należy wymienić pompę wody, napinacz i rolkę prowadzącą – koszt zestawu części to 800–1500 zł.
+W praktyce użytkowej same suche dane o mocy nie wystarczą. Dla vana kluczowe są też DMC zwykle do 2,7–3,0 t, ładowność zależna od wersji – często ok. 1000–1200+ kg – oraz długość i objętość przestrzeni ładunkowej, które różnią się między L1 i L2. To właśnie te parametry najmocniej wpływają na odczuwalną dynamikę auta.
+
+Normę emisji spalin trzeba wiązać z rocznikiem i konkretną wersją homologacyjną, a nie wyłącznie z samą mocą. W Expert II nie da się jej bezpiecznie przypisać do każdej odmiany 2.0 HDi bez sprawdzenia konkretnego egzemplarza.
+
+Producent przewiduje wymianę paska rozrządu co 240 tys. km lub 10 lat. W realnej eksploatacji bezpieczniej trzymać się zakresu 160–200 tys. km, szczególnie w starszych autach pracujących pod obciążeniem. Przy tej operacji warto wymienić komplet osprzętu rozrządu i pompę wody.
+
+W praktyce serwisowej istotne są też konkretna aprobata olejowa PSA oraz pojemność układu smarowania przy wymianie z filtrem. Te dane należy potwierdzić po VIN w dokumentacji producenta lub Service Box, bo mogą zależeć od wersji silnika i rocznika.
 
 ## Spalanie Experta 2.0 HDi
 
+W przypadku modelu użytkowego spalanie zawsze trzeba czytać z dużą ostrożnością. Peugeot Expert 2.0 HDi występował w wersjach L1 i L2, jako furgon oraz odmiana osobowa, a masa auta i obciążenie potrafią zmienić wynik bardziej niż sama różnica mocy.
+
 ### Realne zużycie paliwa 2.0 HDi
 
-Katalogowe zużycie paliwa (5,9–7,2 l/100 km w zależności od wersji nadwozia) ma niewiele wspólnego z codzienną eksploatacją. Realne spalanie silnika 2.0 HDi w Peugeot Expert na podstawie pomiarów użytkowników metodą od baku do baku:
+Zamiast podawać pozornie dokładne wartości dla każdej wersji, lepiej przyjąć zasadę: im cięższe nadwozie, dłuższa zabudowa i większy ładunek, tym wyższe zużycie paliwa. Dotyczy to szczególnie porównania L1 do L2 oraz furgonu do wersji 9-osobowej.
 
-| Warunki jazdy | Spalanie | Uwagi |
-|---------------|----------|-------|
-| Trasa, pusty, 90 km/h | 6,5–7,5 l/100 km | Optymalne warunki |
-| Trasa, pusty, 120 km/h | 8,5–10 l/100 km | Wyraźny wzrost oporów aerodynamicznych |
-| Trasa, z ładunkiem 500 kg, 90 km/h | 7,5–9 l/100 km | Typowa praca dostawcza |
-| Miasto, pusty | 9–10,5 l/100 km | Częste ruszanie, korki |
-| Miasto, z ładunkiem | 10,5–12,5 l/100 km | Dostawy miejskie |
-| Cykl mieszany | 7,5–8,5 l/100 km | Średnia z forów i raportów |
-
-Wariant 163 KM spala średnio o 0,5–1 l/100 km więcej od wersji 120 i 128 KM – różnica wynika głównie z wyższego ciśnienia doładowania. Komputer pokładowy w Expercie potrafi zaniżać wskazania o 0,5–1,5 l/100 km, dlatego rzetelny pomiar wymaga tankowania do pełna.
+Przy ocenie spalania warto rozdzielać przynajmniej cztery scenariusze: trasa 90 km/h, trasa 120 km/h, miasto oraz jazda z ładunkiem 500–1000 kg. Osobno należy traktować też autobusowe odmiany osobowe, bo pełna obsada pasażerów mocno zmienia wynik.
 
 ### Wpływ długości nadwozia na spalanie Experta
 
-Na spalanie wpływa też długość nadwozia – Expert w wersji L2 (długi) zużywa nieco więcej paliwa niż L1 z powodu większej masy własnej i oporu aerodynamicznego. Dla porównania: [Renault Trafic](/modele/renault-trafic/) z silnikiem 2.0 dCi o zbliżonej mocy osiąga bardzo podobne wyniki.
+Dłuższy Expert L2 z reguły zużywa więcej paliwa niż L1, bo ma większą masę własną i większe opory ruchu. Różnice nie wynikają więc wyłącznie z samego silnika, ale z całej konfiguracji pojazdu.
+
+To samo dotyczy porównania wariantów 120 i 163 KM. Wyższa moc nie musi automatycznie oznaczać jednej stałej różnicy spalania, bo w praktyce znaczenie mają też przełożenia, masa wersji nadwoziowej, obciążenie i styl jazdy.
 
 {{% expert name="Kowalczyk" %}}
-Wersja 128 KM to najrozsądniejszy wybór dla większości użytkowników Experta. Różnica w spalaniu względem 120 KM jest minimalna – rzędu 0,2–0,3 l/100 km – a dodatkowe 20 Nm momentu obrotowego odczujesz przy wyprzedzaniu i ruszaniu z ładunkiem. Wersję 163 KM polecam przy regularnym jeżdżeniu z obciążeniem powyżej 600 kg lub przy wersji 9-osobowej z pełną obsadą.
+Przy zakupie używanego Experta nie oceniałbym silnika wyłącznie po katalogowym spalaniu. W vanie ważniejsze jest, czy auto pracowało pusto czy z ładunkiem, w mieście czy w trasie, oraz czy mamy krótkie L1, czy cięższe L2.
 {{% /expert %}}
 
 ![Silnik 2.0 HDi DW10 w Peugeot Expert II](/images/peugeot-expert-2-0-hdi-hero.jpg)
 
 ## Typowe usterki 2.0 HDi w Expercie
 
-Silnik DW10 jest konstrukcyjnie dojrzałą jednostką – produkowany od 2000 roku, zdążył przejść kilka modernizacji. Mimo to ma charakterystyczne słabe punkty, szczególnie widoczne przy przebiegach powyżej 150 tys. km:
+Jednostka DW10 jest konstrukcją dojrzałą, ale w Expercie liczy się nie tylko sam silnik, lecz także stan osprzętu i układów oczyszczania spalin. W starszych autach problemy zwykle wynikają z przebiegu, ciężkiej pracy i zaniedbanego serwisu.
 
-- **Wtryskiwacze Siemens VDO** – najczęściej zgłaszany problem w wariantach 120 i 128 KM. Objawy: nierówna praca silnika, dymienie na biało, trudności z odpalaniem na zimno. Regeneracja kompletu: 3500–5000 zł, wymiana na nowe: 5000–8000 zł. Wtryskiwacze Bosch w wersji 163 KM są wyraźnie trwalsze
-- **Filtr cząstek stałych (DPF)** – przy jeździe wyłącznie miejskiej zapycha się po 80–150 tys. km. Objawy: utrata mocy, kontrolka DPF na desce rozdzielczej. Regeneracja chemiczna: 800–1500 zł, wymiana filtra: 3000–5000 zł
-- **Aktuator turbosprężarki** – mechanizm zmiennej geometrii zacina się po 180–280 tys. km, zwłaszcza przy krótkich trasach. Naprawa aktuatora: 800–1500 zł, regeneracja pełnej turbosprężarki Garrett: 1500–3000 zł
-- **Wycieki oleju z pokrywy zaworowej** – typowa bolączka silników DW10 po 100–200 tys. km. Wymiana uszczelki: 300–600 zł z robocizną
-- **Zawór EGR** – zarastanie nagarem po 100–150 tys. km. Czyszczenie: 400–700 zł, wymiana: 800–1500 zł
+- **Wtryskiwacze** – w części wersji problematyczny bywa układ wtryskowy, ale możliwość i koszt regeneracji zależą od konkretnego typu wtryskiwacza. Nie każdy wariant daje się naprawić tak samo łatwo i opłacalnie.
+- **Filtr DPF/FAP** – przy jeździe miejskiej i niedogrzanym silniku układ oczyszczania spalin potrafi sprawiać kłopoty. Objawy to spadek mocy, błędy związane z filtrem i problemy z regeneracją.
+- **Turbosprężarka i sterowanie doładowaniem** – wracają tematy zacierającej się geometrii, nieszczelności przewodów doładowania i intercoolera oraz usterek przewodów podciśnienia.
+- **EGR i dolot** – zanieczyszczenia wpływają na pracę zaworu EGR, klapy gaszącej i całego układu dolotowego.
+- **Wycieki oleju** – zakres naprawy zależy od wersji pokrywy i osprzętu. Nie zawsze kończy się to na prostej wymianie samej uszczelki.
+
+W praktyce warto dopisać do listy typowych drobiazgów także czujnik różnicy ciśnień DPF, przepływomierz i termostat. To elementy, które potrafią dawać objawy podobne do poważniejszej awarii, a wpływają na kulturę pracy, spalanie i regenerację filtra.
+
 ### Dwumasowe koło zamachowe i osprzęt
 
-- **Dwumasowe koło zamachowe** – zużywa się po 150–250 tys. km przy eksploatacji miejskiej. Wymiana z kompletnym sprzęgłem: 3500–6000 zł
+Koło dwumasowe to standardowy element tej konfiguracji i zużywa się zależnie od sposobu eksploatacji. W vanie pracującym w mieście, z częstym ruszaniem i obciążeniem, jego stan trzeba traktować jako jeden z kluczowych punktów kontroli.
 
-{{% info title="Wtryskiwacze Siemens vs Bosch" icon="engineering" %}}
-Warianty 120 i 128 KM wyposażono we wtryskiwacze Siemens VDO, które są statystycznie bardziej awaryjne niż Bosch stosowane w wersji 163 KM. Przy zakupie używanego Experta warto zweryfikować typ wtrysku – numer VIN pozwala dokładnie ustalić wariant silnika. Regeneracja wtryskiwaczy Siemens jest możliwa, ale wymaga specjalistycznego sprzętu diagnostycznego.
+W autach PSA ważny jest też sam układ FAP/DPF. W zależności od egzemplarza samochód może korzystać z dodatku do paliwa Eolys i mieć osobny zbiornik dodatku. Orientacyjny interwał uzupełniania to zwykle ok. 120–180 tys. km, a przy obsłudze trzeba pamiętać nie tylko o samym uzupełnieniu, ale też o resecie licznika serwisowego.
+
+{{% info title="Na co zwrócić uwagę przy oględzinach?" icon="engineering" %}}
+Przed zakupem warto sprawdzić korekty wtrysków na zimno i ciepło, ciśnienie różnicowe DPF, historię uzupełniania Eolys, stan dwumasy przy ruszaniu, dymienie pod obciążeniem, wycieki spod vacum pompy i pokrywy oraz potwierdzenie wymiany rozrządu datą i przebiegiem.
 {{% /info %}}
 
 ## Opinie i ocena silnika 2.0 HDi
 
-Silnik 2.0 HDi w Peugeot Expert zbiera wśród użytkowników opinie umiarkowanie pozytywne – to solidna jednostka, ale wymagająca świadomej eksploatacji. ### Zalety silnika DW10
+Peugeot Expert 2.0 HDi zbiera na rynku wtórnym opinie umiarkowanie dobre. To silnik ceniony za użyteczność w pracy, ale wymagający regularnego serwisu i kontroli osprzętu, szczególnie w autach eksploatowanych głównie w mieście.
+
+### Zalety silnika DW10
 
 Najczęściej wymieniane zalety:
 
-- **Kultura pracy** – cichszy i bardziej wyważony niż starsze silniki HDi o mniejszej pojemności
-- **Elastyczność** – dobry moment obrotowy od 1500 obr./min, wygodna jazda nawet w mieście
-- **Dostępność części** – jeden z najpopularniejszych silników PSA, zamienniki dostępne od ręki
-- **Trwałość bloku i głowicy** – przy regularnym serwisie przebiegi 300–400 tys. km bez kapitalnego remontu
+- **Lepsza użyteczność niż 1.6 HDi** – w Expercie 1.6 HDi miał zwykle 90 lub 90/95 KM i ok. 180–210 Nm, podczas gdy 2.0 HDi oferuje ok. 300–340 Nm
+- **Wyraźnie lepsza jazda z ładunkiem** – większy moment ma realne znaczenie w pracy dostawczej i w trasie
+- **Dojrzała konstrukcja** – jednostka jest dobrze znana warsztatom i szeroko obecna w gamie PSA
+- **Uniwersalność** – sprawdza się zarówno w furgonie, jak i cięższych wersjach osobowych
 
 ### Zastrzeżenia użytkowników Experta 2.0 HDi
 
 Najczęstsze zastrzeżenia:
 
-- Awaryjność wtryskiwaczy Siemens VDO (szczególnie w wariantach 120/128 KM)
-- Problemy z DPF przy eksploatacji wyłącznie miejskiej
-- Wyższe koszty napraw niż w przypadku prostszych silników 1.6 HDi
+- Wrażliwość na zaniedbania serwisowe i jazdę wyłącznie na krótkich odcinkach
+- Ryzyko problemów z DPF/FAP i osprzętem dolotu
+- Wyższe koszty napraw niż w prostszych, słabszych dieslach
+- Zależna od wersji trwałość osprzętu wtryskowego
 
-W porównaniu z bezpośrednią konkurencją – [Opel Vivaro](/modele/opel-vivaro/) z silnikiem 2.0 CDTI (ten sam segment, podobna moc) czy [Toyota ProAce](/modele/toyota-proace/) pierwszej generacji (bazująca na tej samej platformie PSA) – Expert 2.0 HDi wypada korzystnie pod względem dynamiki i elastyczności, ale nieco gorzej pod względem niezawodności wtrysku w wariantach z systemem Siemens.
+W porównaniu z Oplem Vivaro mówimy o konkurencie segmentowym, a nie modelu na tej samej platformie. Z kolei Toyota ProAce pierwszej generacji była technicznie spokrewniona z Expert/Jumpy/Scudo, więc porównanie tych aut jest bardziej bezpośrednie.
 
-Użytkownicy podkreślają, że kluczem do bezproblemowej eksploatacji jest regularna wymiana oleju (co 15–20 tys. km, nie co 30 tys. km jak zaleca producent), stosowanie oleju klasy C2/C3 i unikanie jazdy na krótkich odcinkach – co pozwala na prawidłową regenerację DPF.
+Użytkownicy zgodnie podkreślają, że kluczowe są częstsze wymiany oleju, potwierdzona historia obsługi rozrządu i dbanie o prawidłową pracę układu DPF/FAP. W przypadku oleju najważniejsza jest nie ogólna klasa ACEA, lecz właściwa aprobata PSA dla konkretnej wersji silnika.
 
 ## Koszty serwisu Peugeot Expert 2.0 HDi
 
-Orientacyjne koszty serwisowe silnika 2.0 HDi (ceny z 2026 roku, warsztaty niezależne – ASO droższe o 40–80%):
+W przypadku tego modelu warto oddzielić zwykłą eksploatację od kosztów awarii. Taki podział lepiej pokazuje realne wydatki niż jedna zbiorcza kwota roczna, zwłaszcza że van użytkowy może w ciągu roku przejeżdżać bardzo różne dystanse.
 
-| Czynność | Interwał | Koszt orientacyjny |
-|----------|----------|--------------------|
-| Wymiana oleju + filtr | co 15–20 000 km | 400–600 zł |
-| Filtr paliwa | co 60 000 km | 100–200 zł |
-| Filtr powietrza | co 40 000 km | 80–150 zł |
-| Płyn chłodniczy | co 4 lata | 200–350 zł |
-| Pasek rozrządu (zestaw z pompą) | co 160–200 000 km | 1800–3500 zł z robocizną |
-| Klocki hamulcowe (przód) | co 40–60 000 km | 250–500 zł |
-| Sprzęgło z dwumasą | co 150–250 000 km | 3500–6000 zł |
-| Diagnostyka komputerowa | w razie potrzeby | 150–350 zł |
+### Koszty eksploatacyjne
 
-Łączny roczny koszt serwisowy przy przebiegu 25 tys. km wynosi szacunkowo 1800–2800 zł – wynik porównywalny z konkurencją w segmencie vanów średniej wielkości. Pasek rozrządu to najważniejsza pozycja w budżecie serwisowym – jego zerwanie w silniku interferencyjnym oznacza koszty naprawy rzędu 5000–10 000 zł.
+| Czynność | Interwał orientacyjny |
+|----------|------------------------|
+| Wymiana oleju + filtr | co 15–20 tys. km |
+| Filtr paliwa | co 40–60 tys. km |
+| Rozrząd | co 10 lat / 180–240 tys. km |
+| Uzupełnienie Eolys | ok. 120–180 tys. km |
 
-Przy zakupie używanego Experta z silnikiem 2.0 HDi warto zwrócić uwagę na historię serwisową – udokumentowana wymiana rozrządu i wtryskiwaczy znacząco podnosi wartość auta. Egzemplarze z przebiegiem 150–200 tys. km i kompletną historią serwisową to rozsądny kompromis między ceną a ryzykiem kosztownych napraw.
+Przy oleju i filtrach najlepiej trzymać się konserwatywnego serwisu, szczególnie w aucie pracującym na krótkich odcinkach lub pod dużym obciążeniem. Interwały długodystansowe są mniej korzystne dla trwałości osprzętu.
 
-*Źródła: AutoKatalog.pl, Wikipedia, fora motoryzacyjne, Inter Cars*
+### Koszty potencjalnych napraw
+
+| Element | Kiedy zwykle wraca temat |
+|---------|--------------------------|
+| DPF/FAP – czyszczenie lub wymiana | zależnie od stylu jazdy i stanu układu |
+| Dwumasa | zwykle ok. 150–250 tys. km |
+| Wtrysk | zależnie od wersji i historii serwisu |
+| Turbo i osprzęt doładowania | przy większych przebiegach lub nieszczelnościach układu |
+
+Przy zakupie używanego egzemplarza kluczowe znaczenie ma dokumentacja. Potwierdzona wymiana rozrządu z datą i przebiegiem, historia obsługi Eolys oraz diagnostyka DPF i wtrysku dają znacznie lepszy obraz auta niż sam deklarowany przebieg.
+
+*Źródła i metodologia: dane należy weryfikować w instrukcji obsługi PSA, katalogu homologacyjnym oraz Service Box po VIN. Dla spalania i kosztów serwisu kluczowe jest odniesienie do konkretnej wersji nadwozia, długości L1/L2, masy i sposobu eksploatacji.*

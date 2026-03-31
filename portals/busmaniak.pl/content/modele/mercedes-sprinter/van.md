@@ -2,7 +2,7 @@
 title: "Mercedes Sprinter Van – wymiary, ładowność, ceny"
 date: 2026-03-24
 lastmod: 2026-03-24
-description: "Mercedes Sprinter Van – kompletny przewodnik: wymiary L1–L4, ładowność do 2100 kg, silniki OM654, ceny od 180 000 zł. Dane techniczne i porównanie wersji."
+description: "Mercedes Sprinter Van – przewodnik po wymiarach, DMC, napędach i silnikach. Oficjalne warianty rozstawu osi, praktyka załadunku i najważniejsze dane techniczne."
 draft: false
 author: "marek-kowalczyk"
 h1: "Mercedes Sprinter Van – wymiary, ładowność, ceny"
@@ -13,145 +13,152 @@ volume: 18100
 image: "/images/mercedes-sprinter-van-hero.jpg"
 faq:
   - question: "Ile wynosi ładowność Mercedes Sprinter Van?"
-    answer: "W zależności od wersji i napędu ładowność Mercedes Sprinter Van wynosi od ok. 1000 kg (AWD) do 2100 kg (L4H2, RWD, DMC 3,5 t). Napęd 4x4 redukuje ładowność o ok. 300–350 kg."
+    answer: "Ładowność Mercedes Sprinter Van zależy od wersji nadwozia, napędu i DMC. W gamie występują warianty od 3,0 t do 5,5 t DMC, dlatego ładowność trzeba zawsze odnosić do konkretnej konfiguracji – szczególnie przy porównaniu FWD, RWD i AWD."
   - question: "Jakie są wymiary przestrzeni ładunkowej Sprinter Van L4?"
-    answer: "Najdłuższa wersja L4 oferuje ok. 4,32 m długości przestrzeni ładunkowej przy pojemności do 17 m³. Szerokość między nadkolami to 1125 mm, szerokość max 1780 mm."
+    answer: "Najdłuższa wersja opiera się na rozstawie osi 4325 mm. W praktyce daje największą długość przestrzeni ładunkowej w gamie, przy szerokości maksymalnej ok. 1780 mm i szerokości między nadkolami ok. 1350 mm zależnie od wersji i zabudowy."
   - question: "Jaki silnik do Mercedes Sprinter Van wybrać?"
-    answer: "Do codziennej logistyki miejskiej i regionalnej optymalny jest OM654 2.0 CDI 143 KM z przekładnią 9G-Tronic. Wersja 170 KM opłaca się przy stałym jeździe autostradowej lub dużych ładunkach powyżej 1500 kg."
-lead: "Mercedes Sprinter Van to najczęściej szukana wersja Sprinter w Polsce – i nieprzypadkowo. Furgon dostawczy w układach L1–L4 i H1–H3 pokrywa potrzeby od kurierów po logistykę paletową. Ładowność sięga 2100 kg, pojemność skrzyni – 17 m³."
+    answer: "W gamie Sprintera występowały jednostki OM651 i OM654. W nowszych odmianach OM654 ma pojemność 1950 cm3 i był oferowany w kilku wariantach mocy, dlatego wybór trzeba dopasować do napędu, skrzyni i roku modelowego."
+lead: "Mercedes Sprinter Van to jeden z kluczowych furgonów w segmencie dużych aut dostawczych. W praktyce o jego przydatności decydują nie tylko długość nadwozia, ale też rozstaw osi, wysokość dachu, rodzaj napędu i dopuszczalna masa całkowita. Dlatego zamiast operować uproszczeniami typu L1–L4 i H1–H3, lepiej spojrzeć na konkretne konfiguracje techniczne."
 ---
 ## Wersje nadwoziowe Sprinter Van – długość i wysokość
 
-Sprinter Van produkowany jest w czterech długościach (L1–L4) i trzech wysokościach dachu (H1–H3). Kombinacja decyduje o pojemności i dopuszczalnej ładowności.
+W przypadku Sprintera Van najważniejszy jest oficjalny podział według rozstawu osi i wysokości dachu. To on realnie określa długość przestrzeni ładunkowej, wysokość auta oraz możliwości załadunku palet, kontenerów i zabudów specjalistycznych.
 
 ### Konfiguracje L1–L4
 
-Dostępne konfiguracje:
+W obecnej rodzinie Sprintera W907/W910 warto operować rozstawami osi, a nie samymi skrótami L1–L4. W gamie występują warianty z rozstawem osi 3259 mm, 3665 mm, 3924 mm i 4325 mm.
 
-- L1H1 – pojemność ok. 7,5 m³, długość całkowita 5124 mm
-- L2H1 – pojemność ok. 9,5 m³, długość całkowita 5932 mm
-- L2H2 – pojemność ok. 11,5 m³ – najpopularniejsza kombinacja w Polsce
-- L3H2 – pojemność ok. 13,5 m³, długość całkowita 6924 mm
-- L3H3 – pojemność ok. 15,5 m³, wysoki dach standar
-- L4H2 – pojemność ok. 17 m³, długość całkowita 7345 mm – maksimum segmentu
-- L4H3 – pojemność ok. 17 m³ z wysokim dachem
+To właśnie rozstaw osi należy powiązać z długością całkowitą pojazdu, długością przestrzeni ładunkowej i dostępną wysokością dachu. W zależności od rynku i zabudowy różnią się też wymiary wewnętrzne oraz wysokość całkowita pojazdu.
 
-| Wersja | Długość całkowita | Pojemność ładunkowa |
-|--------|-------------------|---------------------|
-| L1H1   | 5267 mm           | 7,5 m³              |
-| L2H2   | 5910 mm           | 10,5 m³             |
-| L3H2   | 6945 mm           | 14,0 m³             |
-| L4H3   | 7345 mm           | 17,0 m³             |
+| Parametr | Zakres / dostępne wartości |
+|--------|-----------------------------|
+| Rozstaw osi | 3259 mm / 3665 mm / 3924 mm / 4325 mm |
+| Szerokość przestrzeni ładunkowej maks. | ok. 1780 mm |
+| Szerokość między nadkolami | ok. 1350 mm w wielu katalogach, zależnie od wersji FWD/RWD i zabudowy |
+| Wysokości dachu | zależnie od konfiguracji rynku i wersji |
+| Wysokość całkowita pojazdu | zależnie od rozstawu osi i dachu |
+| Wysokość otworu drzwi tylnych | zależnie od wysokości nadwozia |
+| Wysokość i szerokość bocznego otworu | zależnie od wersji drzwi i wysokości dachu |
 
-Wysokość wewnętrzna wynosi odpowiednio: H1 – ok. 1410 mm, H2 – ok. 1825 mm, H3 – ok. 2155 mm. Szerokość przestrzeni ładunkowej między nadkolami to 1125 mm, maksymalna szerokość 1780 mm.
+W praktyce trzeba też pamiętać, że FWD zwykle daje niższą podłogę i niższy próg załadunku niż RWD. To ważniejsze z punktu widzenia kuriera czy operatora wózka niż sama długość nadwozia.
 
-Drzwi boczne przesuwne dostępne są jednostronnie lub obustronnie. Drzwi tylne – dwuskrzydłowe, otwierane na 270°, opcjonalnie tylna klapa unoszona.
+Drzwi boczne przesuwne mogą występować po jednej lub po obu stronach. Tylne drzwi dwuskrzydłowe mogą mieć różny kąt otwarcia, a otwieranie do 270° należy traktować jako element zależny od konfiguracji, a nie standard całej gamy.
 
 ## Ładowność i DMC Mercedes Sprinter Van
 
+Przy Sprinterze Van nie da się rzetelnie mówić o ładowności bez powiązania jej z DMC, napędem i konkretną wersją. To szczególnie ważne, bo w gamie występują nie tylko warianty 3,0 t i 3,5 t, ale również 4,1 t, 4,25 t, 5,0 t oraz 5,5 t – zależnie od rynku i wersji.
+
 {{% info title="DMC a ładowność" icon="engineering" %}}
-Sprinter Van dostępny jest z DMC 3,0 t oraz 3,5 t. Wersja 3,5 t pozwala na ładowność do ok. 2100 kg przy napędzie tylnym (RWD). Wybór napędu AWD obniża ten wynik o 300–350 kg ze względu na masę własną pojazdu.
+Ładowność Mercedes Sprinter Van należy zawsze liczyć dla konkretnej konfiguracji. Jeśli masa własna wynosi ok. 1900–2200 kg, to przy DMC 3,5 t realna ładowność będzie wyraźnie niższa niż 2100 kg. Wyższe wartości ładowności dotyczą wersji o wyższym DMC.
 {{% /info %}}
 
-Masa własna Sprinter Van zależnie od wersji i wyposażenia wynosi od ok. 1900 do 2200 kg. Przeliczając przy DMC 3,5 t:
+Dla użytkownika flotowego równie ważne jak DMC są maksymalna masa całkowita zespołu pojazdów i możliwości holowania. W wybranych wersjach uciąg przyczepy z hamulcem sięga do 3500 kg, bez hamulca do 750 kg.
 
-- RWD (tylna oś) – ładowność do ok. 2100 kg
-- FWD (przednia oś) – ładowność do ok. 1800 kg
-- AWD (4x4) – ładowność do ok. 1700–1750 kg
+Znaczenie ma też nacisk na hak oraz dostępność fabrycznego haka, ale ostateczne wartości trzeba sprawdzać w homologacji wybranej konfiguracji. To samo dotyczy dopuszczalnych nacisków osi przedniej i tylnej – w aucie dostawczym właśnie one często ograniczają realną ładowność przy nierównym rozłożeniu towaru.
 
-Dla przewozu palet EUR ważna jest szerokość przestrzeni – 1780 mm pozwala załadować dwie palety EUR obok siebie tylko w wersji L3/L4. W L2 palety ustawia się szeregowo.
+W praktyce załadunku palet nie decyduje sama długość auta, tylko długość podłogi oraz szerokość między nadkolami. Europaleta ma 1200 x 800 mm, a przy szerokości między nadkolami ok. 1350 mm trzeba każdorazowo sprawdzić, czy dana zabudowa pozwala na swobodny przejazd wózkiem i ustawienie palet.
+
+Orientacyjnie przyjmuje się, że krótsza wersja odpowiadająca L2 zwykle mieści 3 europalety, L3 – 4 europalety, a L4 – 5 europalet, zależnie od dokładnej długości podłogi i wykonania zabudowy. To znacznie praktyczniejsze kryterium niż proste porównywanie samej kubatury.
 
 ## Silniki – rodzina OM654
 
-Od generacji W907 (2018–) Mercedes zastąpił stary OM651 2.2 CDI nowym silnikiem OM654 2.0 CDI. To jednostka z rozrządem łańcuchowym, turbosprężarką ze zmienną geometrią i systemem wtrysku common rail Bosch.
+Opis gamy silnikowej Sprintera wymaga doprecyzowania, bo nie można sprowadzać całej rodziny W907 wyłącznie do OM654. W początkowym okresie występowały również jednostki OM651 2.1/2.2 CDI, a na części rynków i w wybranych okresach także 3.0 V6 CDI.
+
+OM654 to nowsza jednostka wysokoprężna o pojemności 1950 cm3. W zależności od roku modelowego i rynku była oferowana równolegle z różnymi układami napędu i przekładniami.
 
 ### Warianty mocy OM654 w Sprinterze
 
-Dostępne warianty mocy:
+W materiałach dla rynku PL/EU należy brać pod uwagę kilka wariantów mocy zależnie od okresu. W praktyce pojawiają się m.in. wersje 114 CDI 114 KM, 116 KM, 143/150 KM oraz 170/190 KM – zależnie od rynku i roku modelowego.
 
-- 116 KM / 300 Nm – wersja bazowa, ekonomiczna
-- 143 KM / 330 Nm – najlepiej sprzedająca się w Polsce
-- 170 KM / 380 Nm – do długodystansowych tras lub ładunków powyżej 1500 kg
+Dlatego przed zakupem trzeba sprawdzić nie tylko moc, ale też mapowanie konkretnej wersji na FWD, RWD albo AWD. Właśnie tu pojawiają się największe różnice katalogowe między rocznikami.
 
 ### Skrzynia 9G-Tronic i AdBlue
 
-Skrzynia biegów: 6-biegowa manualna lub 9G-Tronic (9-biegowy automat). Automat zalecany przy jeździe miejskiej i kursach powyżej 600 km/tydzień – amortyzuje się w czasie eksploatacji przez niższe zużycie oleju napędowego i mniejsze zużycie sprzęgła.
+Skrzynie biegów w Sprinterze trzeba rozdzielać według napędu i roku produkcji. Nie każda wersja występowała z tą samą przekładnią, a uproszczenie do „manual albo 9G-TRONIC” dla całej gamy jest zbyt szerokie.
 
-Norma emisji: Euro 6d. System SCR z AdBlue (zbiornik ok. 20 l). Zużycie AdBlue ok. 1,5–2 l/100 km.
+W FWD zależnie od rocznika stosowano 6-biegowy manual i 9-biegowy automat 9G-TRONIC. W RWD i AWD również trzeba sprawdzać konkretną konfigurację silnika, skrzyni i przełożenia końcowego.
+
+Norma emisji i osprzęt oczyszczania spalin obejmują układ SCR z AdBlue. W eksploatacji warto regularnie kontrolować działanie układu SCR/NOx, DPF i EGR, bo to jedne z kluczowych punktów serwisowych w nowoczesnym dieslu. Więcej o samym układzie można przeczytać w haśle [SCR](https://pl.wikipedia.org/wiki/Selektywna_redukcja_katalityczna).
 
 ![Mercedes Sprinter Van – przestrzeń ładunkowa L4H2](/images/mercedes-sprinter-van-hero.jpg)
 
 ## Napęd – FWD, RWD, AWD
 
-Sprinter Van W907 jako pierwszy w klasie oferuje napęd przedni (FWD). Zmiana z tylnonapędowego układu na FWD zmniejszyła podłogę ładunkową – brak tunelu wału napędowego oznacza płaską podłogę na całej szerokości.
+W gamie Sprintera duże znaczenie ma wybór napędu, bo wpływa on nie tylko na trakcję, ale też na wysokość podłogi, próg załadunku i charakter pracy auta pod obciążeniem. W praktyce FWD zwykle oznacza niższą podłogę i łatwiejszy dostęp do ładowni, a RWD lepiej sprawdza się przy cięższych zabudowach i pracy pod dużym obciążeniem.
+
+AWD w W907 nie powinien być opisywany jako klasyczny stały napęd 4x4 z reduktorem. To układ innego typu niż starsze rozwiązania i nie należy automatycznie przypisywać mu reduktora.
 
 ### Porównanie napędów Sprinter Van
 
-Porównanie układów napędu:
+Porównując napędy, warto patrzeć przede wszystkim na geometrię ładowni i dopuszczalne masy. FWD zwykle daje niższy próg załadunku i niższą podłogę, natomiast RWD i AWD są częściej wybierane tam, gdzie liczy się trakcja pod dużym obciążeniem albo przy pracy z przyczepą.
 
-- FWD – płaska podłoga, niższe koszty eksploatacji, ładowność do ~1800 kg
-- RWD – wyższa ładowność (do 2100 kg), lepsza trakcja przy pełnym załadunku, wymagany przy DMC 3,5 t z zabudowami
-- AWD (4x4) – terenowy, stały napęd na obie osie, reduktor, dla trudnych warunków i placów budowy
-
-RWD i AWD dostępne wyłącznie z silnikiem 143 lub 170 KM. FWD dostępny od 116 KM.
+Nie da się też sztywno przypisać wszystkich wariantów mocy do jednego układu napędu dla całej gamy. Dostępność konkretnych silników z FWD, RWD i AWD zależała od rynku oraz roku modelowego.
 
 ## Drzwi i dostęp do ładowni
 
-Konfiguracje drzwi bocznych:
+W aucie dostawczym sam układ drzwi jest równie ważny jak kubatura. To od szerokości i wysokości otworów załadunkowych zależy, czy bezproblemowo wjedzie wózek, roll-kontener albo towar na palecie.
 
-- 1 drzwi przesuwne prawe – standardowa wersja bazowa
-- 2 drzwi przesuwne (lewe + prawe) – opcja dla kurierów i rozładunku przy krawężniku
+### Konfiguracje drzwi bocznych
+
+W praktyce spotyka się wersje z jednymi prawymi drzwiami przesuwnymi albo z drzwiami po obu stronach. Druga opcja szczególnie dobrze sprawdza się w pracy kurierskiej i przy częstych rozładunkach w mieście.
+
+Przy wyborze konkretnej wersji trzeba sprawdzić szerokość i wysokość bocznego otworu drzwi przesuwnych oraz tylnego otworu załadunkowego. Te wartości różnią się zależnie od wysokości dachu i konfiguracji nadwozia, a są kluczowe przy pracy z wózkami i kontenerami rolkowymi.
 
 Drzwi tylne:
-- Dwuskrzydłowe 270° – umożliwiają rozładunek przy rampie bez blokowania skrzydłami
-- Tylna klapa unoszona – opcja, ogranicza otwór załadowczy
+- dwuskrzydłowe – podstawowe rozwiązanie do pracy z rampą i wózkiem
+- otwieranie do 270° – zależnie od konfiguracji, nie jako standard całej gamy
+- tylna klapa unoszona – opcja, która może ograniczać wygodę pracy przy rampie
 
 {{% expert name="Kowalczyk" %}}
-Przy zakupie na dostawę kurierską zawsze pytaj o wersję z obustronnym drzwiami przesuwnymi. Zysk z szybszego rozładunku przy krawężniku zwraca się w ciągu pierwszego roku. Drzwi tylne 270° to standard – klapa jest wygodna, ale przy pracy z rampą wyrównawczą blokuje podejście wózkiem paletowym.
+W aucie do dystrybucji miejskiej warto sprawdzać nie tylko długość paki, ale też rzeczywistą geometrię wejścia do ładowni. Obustronne drzwi przesuwne i odpowiedni kąt otwarcia drzwi tylnych często robią większą różnicę operacyjną niż sama deklarowana kubatura.
 {{% /expert %}}
 
 ## Systemy bezpieczeństwa i ADAS
 
-Sprinter Van W907 wyposażony jest seryjnie w:
+Zakres systemów bezpieczeństwa w Sprinterze zależy od rynku, roku produkcji i poziomu wyposażenia. Dlatego elementów takich jak Active Brake Assist nie należy automatycznie uznawać za seryjne w całej gamie bez sprawdzenia konkretnego rocznika.
 
-- Active Brake Assist – automatyczne hamowanie awaryjne z wykrywaniem pieszych
-- Attention Assist – system wykrywania zmęczenia kierowcy
-- ESP – elektroniczny program stabilizacji
-- Hill Start Assist
+W praktyce w wyposażeniu Sprintera pojawiały się systemy takie jak Attention Assist, ESP, Hill Start Assist czy Crosswind Assist. Część z nich była standardem, a część opcją – zależnie od wersji i okresu produkcji.
 
-Opcjonalnie dostępne:
-
+Wśród dostępnych rozwiązań warto uwzględnić także:
 - Active Lane Keeping Assist
 - Blind Spot Assist
-- Reversing Camera z systemem 360°
-- MBUX – ekran dotykowy 10,25" z nawigacją, Apple CarPlay / Android Auto
+- aktywny tempomat / DISTRONIC
+- Traffic Sign Assist
+- asystenta parkowania
+- kamerę cofania
+- system widoku otoczenia 360°
+- MBUX
+
+Ważne, by rozdzielać kamerę cofania od systemu 360°. To dwa różne elementy wyposażenia, choć w części konfiguracji mogły występować razem.
 
 ## Ceny Sprinter Van i konfiguracja
 
-Ceny Sprinter Van 2026 (przybliżone, zależne od konfiguracji i dealera):
+Bez aktualnego cennika z datą obowiązywania nie ma sensu podawać orientacyjnych cen netto ani rat leasingowych. Takie liczby szybko się dezaktualizują i bez konkretnego źródła bardziej wprowadzają w błąd niż pomagają.
 
-- L2H2 FWD 116 KM manualna – od ok. 180 000 zł netto
-- L2H2 FWD 143 KM 9G-Tronic – od ok. 195 000 zł netto
-- L3H2 RWD 143 KM – od ok. 210 000 zł netto
-- L4H2 RWD 170 KM – od ok. 225 000 zł netto
-- AWD 143 KM dowolna długość – dopłata ok. 25 000–30 000 zł
+Przy konfiguracji warto natomiast pamiętać, że rodzina Sprintera obejmuje nie tylko klasycznego blaszaka. Osobno należy traktować Tourera, podwozia do zabudowy oraz eSprintera, który ma inną charakterystykę ładowności, baterii i zasięgu.
 
-Do cen netto należy doliczyć VAT 23% lub skorzystać z leasingu operacyjnego – raty dla L2H2 143 KM zaczynają się od ok. 3200–3500 zł netto/mies. przy 20% wpłacie własnej i 60 miesiącach.
+Przed zakupem warto też sprawdzić długość gwarancji podstawowej, ewentualne limity kilometrów, gwarancję perforacyjną i lakierniczą oraz dostępność pakietów serwisowych Mercedes-Benz Vans w Polsce. To elementy, które realnie wpływają na koszt użytkowania, ale wymagają potwierdzenia w aktualnej ofercie importera.
 
 ## Eksploatacja Sprinter Van – spalanie i koszty serwisu
 
-Rzeczywiste zużycie paliwa OM654 przy pełnym załadunku:
+Realne spalanie w dużym furgonie trzeba zawsze wiązać z masą, prędkością i typem trasy. Dla Sprintera sensowniej przyjąć praktyczny zakres około 9,5–11,5 l/100 km niż zbyt optymistyczne wartości autostradowe.
 
-- Trasa miejska: 10–13 l/100 km
-- Trasa mieszana: 8–10 l/100 km
-- Autostrada: 7–9 l/100 km
+Znaczenie ma też pojemność zbiornika paliwa. W zależności od wersji można spotkać zbiorniki około 65–71 l lub opcjonalnie większe, co bezpośrednio przekłada się na zasięg.
 
-Interwał serwisowy: co 40 000 km lub 2 lata (ASSYST Plus). Koszt przeglądu podstawowego u autoryzowanego dealera: 800–1400 zł. Niezależny serwis: 500–900 zł.
+W codziennej eksploatacji warto kontrolować kilka newralgicznych obszarów:
+- układ SCR/NOx
+- DPF
+- EGR
+- automatyczną skrzynię przy wysokich przebiegach
+- korozję elementów podwozia
+- zużycie zawieszenia i hamulców
 
-Opony: rozmiar 225/75 R16C (standardowy) lub 235/65 R16C. Zestaw czterech opon klasy medium: 1400–2000 zł. Przebieg opon przednich przy FWD i ciężkim załadunku – ok. 60 000–80 000 km.
+Przy zakupie używanego egzemplarza dobrze rozdzielić ocenę aut z OM651 i OM654, bo różnią się osprzętem i typowymi punktami kontroli. W samochodzie pracującym flotowo właśnie stan układu oczyszczania spalin i automatu częściej decyduje o kosztach niż sama deklarowana moc silnika.
 
 ## Kiedy wybrać Sprinter Van zamiast konkurencji
 
-Sprinter Van wygrywa nad Fordiem Transitiem i VW Crafterem w trzech obszarach: szerokość sieci serwisowej w Polsce, dostępność części zamiennych oraz rozpiętość konfiguracji (12 kombinacji L/H plus trzy układy napędowe). Ford Transit ma niższy próg wejścia cenowego, VW Crafter – bardziej rozbudowany standard ADAS. Jeśli priorytetem jest ładowność i dostępność serwisu 24/7, Sprinter Van pozostaje pierwszym wyborem dla flot powyżej 10 pojazdów.
+Porównanie Sprintera z VW Crafterem, Fordem Transitem czy Fiatem Ducato warto oprzeć na twardych danych, a nie na ogólnych hasłach. Najważniejsze są: długość podłogi ładunkowej, kubatura w zakresie około 10,5–17 m3, ładowność, szerokość między nadkolami, dostępne napędy FWD/RWD/AWD oraz zakres DMC od 3,5 do 5,5 t.
 
-*Źródła: Wikipedia, Mercedes-Benz, auto-data.net*
+Dopiero takie zestawienie pozwala uczciwie ocenić, czy w danym zastosowaniu lepszy będzie Sprinter, Crafter, Transit czy Ducato. Bez aktualnych danych katalogowych i cenników nie ma podstaw, by przesądzać o przewadze któregoś modelu w zakresie cen, serwisu czy konfiguracji.
+
+*Źródła: konkretne dane należy weryfikować w aktualnych dokumentach producenta – katalogu danych technicznych, homologacji i cenniku z datą obowiązywania.*

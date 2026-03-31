@@ -1,7 +1,7 @@
 ---
 title: "Opel Vivaro blaszak – wymiary paki, ładowność, ceny"
 date: 2026-03-26
-description: "Opel Vivaro w wersji furgon (blaszak) – wymiary paki Standard i Long, ładowność do 1400 kg, silniki CDTi i 2.0 D, porównanie z Trafic Van i Expert Van."
+description: "Opel Vivaro w wersji furgon (blaszak) – wymiary paki, ładowność, silniki i ceny generacji A, B oraz C."
 draft: false
 author: "marek-kowalczyk"
 h1: "Opel Vivaro blaszak – furgon dostawczy"
@@ -11,101 +11,117 @@ volume: 390
 main_keyword: "opel vivaro blaszak"
 image: "/images/opel-vivaro-hero.jpg"
 image_alt: "Opel Vivaro C furgon"
-lead: "Opel Vivaro blaszak to klasyczny furgon dostawczy z pełną przegrodą i zaślepionymi szybami – najpopularniejsza konfiguracja modelu. Od generacji A z 2001 roku po obecne Vivaro C na platformie EMP2, blaszak dominuje we flotach kurierskich, budowlanych i serwisowych."
+lead: "Opel Vivaro blaszak to klasyczny furgon dostawczy z pełną przegrodą i zaślepionymi szybami – najpopularniejsza konfiguracja modelu. W gamie znajdziemy trzy generacje: Vivaro A (2001–2014), Vivaro B (2014–2019) oraz Vivaro C (od 2019)."
 faq:
   - question: "Jakie są wymiary paki Vivaro blaszak?"
-    answer: "Vivaro C Standard: 5,3 m³, podłoga 2512 mm. Vivaro C Long: 6,6 m³, podłoga 2862 mm. Szer. między nadkolami: 1258 mm."
+    answer: "Vivaro C w wersji M ma ok. 5,3 m³ pojemności i podłogę o długości 2512 mm. Wersja XL ma podłogę 2862 mm i ok. 6,1 m³ pojemności bazowej, a większą przestrzeń uzyskuje dopiero z systemem Moduwork/FlexCargo."
   - question: "Ile zmieści się palet w Vivaro blaszaku?"
-    answer: "2 europalety w Standard, 3 w wersji Long (dzięki długości podłogi 2862 mm)."
+    answer: "W praktyce najbezpieczniej przyjmować 2 europalety w standardowych konfiguracjach. Większe deklaracje zależą od konkretnej wersji nadwozia, sposobu załadunku i specyfikacji producenta."
   - question: "Ile kosztuje używany Vivaro blaszak?"
-    answer: "Vivaro A (2005–2010): 15 000–30 000 zł. Vivaro B (2014–2019): 40 000–70 000 zł. Vivaro C (2019–2024): 65 000–120 000 zł."
+    answer: "Orientacyjnie: Vivaro A (2001–2014) 10 000–35 000 zł, Vivaro B (2014–2019) 40 000–70 000 zł, Vivaro C (od 2019) 65 000–130 000 zł – zależnie od długości, przebiegu, wyposażenia i formy sprzedaży netto/brutto."
 ---
 
 ## Opel Vivaro blaszak – konstrukcja i wymiary
 
-Blaszak to podstawowa, najczęściej sprzedawana wersja Vivaro – furgon z pełną stalową przegrodą między kabiną a paką, zaślepionymi tylnymi szybami i 2/3-osobową kabiną. Rejestracja N1 (ciężarowy do 3,5 t) pozwala na pełne odliczenie VAT. Wnętrze paki surowe: stalowe ściany, drewniana podłoga pokryta tworzywem, punkty mocowania i oświetlenie LED (w nowszych rocznikach).
+Blaszak to podstawowa wersja Vivaro – furgon z pełną stalową przegrodą, zabudowaną przestrzenią ładunkową i kabiną 2- lub 3-osobową. W praktyce to właśnie ta odmiana najczęściej trafia do kurierów, ekip serwisowych i firm budowlanych.
 
-Vivaro C (od 2019) na platformie EMP2 dzieli wymiary paki z [Peugeotem Expertem](/modele/peugeot-expert/) i Citroënem Jumpy – to ten sam samochód pod innym logo.
+W Polsce nie można automatycznie łączyć homologacji N1 z pełnym odliczeniem VAT. Przy użytku mieszanym zwykle mówimy o 50% odliczenia, a 100% wymaga spełnienia warunków podatkowych dla użytkowania firmowego.
+
+Vivaro C (od 2019) korzysta z platformy [EMP2](https://pl.wikipedia.org/wiki/PSA_EMP2) i konstrukcyjnie jest blisko spokrewnione z Peugeotem Expert oraz Citroënem Jumpy. W ogłoszeniach warto też odróżniać klasycznego blaszaka od wersji brygadowej/doublecab – ta druga ma krótszą pakę i inną ładowność.
 
 ### Wymiary paki Vivaro per generacja
 
-| Parametr | Vivaro A L1 | Vivaro A L2 | Vivaro C Standard | Vivaro C Long |
-|----------|------------|------------|-------------------|---------------|
-| Długość podłogi | 2406 mm | 2806 mm | 2512 mm | 2862 mm |
-| Szerokość maks. | 1662 mm | 1662 mm | 1628 mm | 1628 mm |
-| Szer. między nadkolami | 1268 mm | 1268 mm | 1258 mm | 1258 mm |
-| Wysokość wewnętrzna | 1387 mm | 1387 mm | 1397 mm | 1397 mm |
-| Objętość | 4,0 m³ | 5,0 m³ | 5,3 m³ | 6,6 m³ |
-| Europalety | 2 | 2–3 | 2 | 3 |
+Poniżej najważniejsze wymiary trzech generacji. W przypadku Vivaro C trzeba rozróżnić pojemność bazową od maksymalnej uzyskiwanej po wykorzystaniu klapy w przegrodzie.
 
-- **Ładowność** – 900–1400 kg (zależnie od DMC, silnika i generacji)
-- **DMC** – 2800 lub 3100 kg (Vivaro C)
-- **Próg załadowczy** – 555 mm (Vivaro C)
-- **Drzwi tylne** – asymetryczne skrzydełkowe (180° standard, 270° opcja)
-- **Drzwi boczne** – przesuwane po jednej (standard) lub obu stronach (opcja)
+| Parametr | Vivaro A L1 | Vivaro A L2 | Vivaro B | Vivaro C M | Vivaro C XL |
+|----------|-------------|-------------|----------|------------|-------------|
+| Długość podłogi | 2406 mm | 2806 mm | – | 2512 mm | 2862 mm |
+| Szerokość maks. | 1662 mm | 1662 mm | – | 1628 mm | 1628 mm |
+| Szer. między nadkolami | 1268 mm | 1268 mm | – | 1258 mm | 1258 mm |
+| Wysokość wewnętrzna | 1387 mm | 1387 mm | – | 1397 mm | 1397 mm |
+| Objętość | 4,0 m³ | ok. 5,9–6,0 m³ | – | ok. 5,3 m³ | ok. 6,1 m³ bazowo |
+| Europalety | 2 | 2 | – | 2 | 2 |
 
-Vivaro nie jest dostępny z podwyższonym dachem (H2) – stała wysokość wewnętrzna 1397 mm. Jeśli potrzebujesz wyższej paki w tym segmencie, [Ford Transit Custom](/modele/ford-transit-custom/) oferuje wariant H2 (1408 mm wewnątrz).
+W Vivaro C liczą się też same otwory załadunkowe. Tylne drzwi dają ok. 1282 mm szerokości i ok. 1220 mm wysokości, a boczne drzwi przesuwne – ok. 935 mm szerokości i ok. 1241 mm wysokości.
+
+Z punktu widzenia miasta ważne są też gabaryty zewnętrzne. Vivaro C występuje jako M i XL, z długością nadwozia ok. 4959 mm lub 5309 mm, wysokością ok. 1890–1935 mm i rozstawem osi ok. 3275 mm.
+
+- **Ładowność Vivaro C** – typowo ok. 1000–1400 kg zależnie od długości, silnika i DMC
+- **DMC Vivaro C** – zależnie od wersji zwykle ok. 2,7–3,1 t
+- **Masa własna diesla furgon** – zwykle ok. 1660–1800 kg
+- **Próg załadunkowy Vivaro C** – 555 mm
+- **Drzwi tylne** – asymetryczne skrzydłowe, typowo z otwarciem 180°
+- **Drzwi boczne** – przesuwane po jednej stronie lub po obu stronach zależnie od wersji
+
+Wysokość Vivaro C na poziomie ok. 1,90 m bywa kluczowa przy parkingach podziemnych. Część egzemplarzy zmieści się pod ograniczeniem 1,9–2,0 m, ale zawsze trzeba brać poprawkę na konkretną wersję, opony i wyposażenie.
 
 {{% info title="Vivaro C a Moduwork" icon="engineering" %}}
-W Vivaro C (platforma EMP2) dostępny jest system Moduwork – składany fotel pasażera z otworem w przegrodzie pozwalającym na transport przedmiotów do 4 m długości. To ta sama funkcja co w Experce i Jumpy.
+W Vivaro C dostępny jest system Moduwork – składany fotel pasażera z otworem w przegrodzie, który pozwala przewozić dłuższe elementy. To rozwiązanie odpowiada funkcji znanej także z modeli Peugeot Expert i Citroën Jumpy.
 {{% /info %}}
 
 ## Silniki w Vivaro blaszaku
 
-W wersji dostawczej najchętniej kupowane są warianty z niskim spalaniem i odpowiednim momentem do jazdy z ładunkiem. W Vivaro C dominuje 1.5 D 120 KM – optymalny kompromis dla kuriera pokonującego 30 000–50 000 km rocznie.
+W dostawczym Vivaro liczy się nie tylko sama moc, ale też skrzynia, moment obrotowy i osprzęt emisyjny. Dla kupującego używane auto to często ważniejsze niż katalogowe spalanie.
 
-| Silnik | Generacja | Moc | Moment | Spalanie (śr.) |
-|--------|-----------|-----|--------|----------------|
-| 1.9 CDTi | A | 100 KM | 240 Nm | 8,0 l/100 km |
-| 2.0 CDTi | A | 115 KM | 300 Nm | 7,5 l/100 km |
-| 1.6 CDTi | B | 125 KM | 320 Nm | 6,5 l/100 km |
-| 1.5 D | C | 100 KM | 250 Nm | 5,2 l/100 km |
-| 1.5 D | C | 120 KM | 300 Nm | 5,5 l/100 km |
-| 2.0 D | C | 145 KM | 370 Nm | 6,0 l/100 km |
-| 2.0 D | C | 177 KM | 400 Nm | 6,5 l/100 km |
+Generacja A i B opierała się na innych układach napędowych niż obecne Vivaro C. W najnowszym modelu napęd trafia na przód, a w zależności od wersji spotkamy 6-biegowy manual lub 8-biegowy automat EAT8 przy wybranych 2.0 D.
 
-Do lekkiej dystrybucji w mieście 1.5 D 100 KM wystarczy. Do regularnych tras z pełnym ładunkiem – 1.5 D 120 KM lub 2.0 D 145 KM z automatem. Wariant 177 KM ma sens wyłącznie przy holowaniu lub stałym obciążeniu bliskim DMC.
+| Silnik | Generacja | Moc | Moment |
+|--------|-----------|-----|--------|
+| 1.9 CDTi | A | 100 KM | ok. 260 Nm |
+| 1.6 CDTi | B | 90–145 KM | zależnie od wersji |
+| 1.5 D | C | 100 KM | 250 Nm |
+| 1.5 D | C | 120 KM | 300 Nm |
+| 2.0 D | C | 145 KM | 370 Nm |
 
-{{% expert name="Kowalczyk" %}}
-Vivaro blaszak z 1.5 D 120 KM i 6-biegowym manualem to mój wybór dla firm kurierskich pokonujących 40 000+ km rocznie. Spalanie 5,5 l/100 km w cyklu mieszanym to realny wynik, który przy obecnych cenach diesla daje roczną oszczędność 3000–4000 zł wobec starszego Vivaro B z 1.6 CDTi. Przy zakupie używanego Vivaro C sprawdź stan DPF – filtr z dodatkiem Eolys jest droższy w regeneracji niż suchy DPF z generacji A.
-{{% /expert %}}
+W Vivaro C diesle 1.5 D i 2.0 D spełniają normę Euro 6 i korzystają z układu SCR/AdBlue. Na rynku wtórnym trzeba więc patrzeć nie tylko na silnik, ale też na stan osprzętu AdBlue, NOx i DPF.
+
+Osobną pozycją jest Vivaro-e. Elektryczna wersja występowała z akumulatorami 50 kWh lub 75 kWh oraz zasięgiem WLTP ok. 230 km i 330 km.
 
 ## Na co uważać przy zakupie Opel Vivaro blaszak
 
-Blaszak to auto robocze – większość egzemplarzy na rynku wtórnym pochodzi z flot i ma intensywną historię eksploatacji. Na co patrzeć:
+Opel Vivaro blaszak to typowe auto robocze, więc na rynku wtórnym dominują egzemplarze po ciężkiej służbie flotowej. Oględziny trzeba zacząć od nadwozia, stanu paki i zgodności zużycia wnętrza z deklarowanym przebiegiem.
 
-- **Podłoga paki** – spróchniała drewniana podłoga to sygnał, że auto wożyło mokre ładunki lub stało otwarte na deszczu
-- **Drzwi przesuwane** – rolki i prowadnice zużywają się po 150–200 tys. km (wymiana 500–1000 zł)
-- **Progi i nadkola** – korozja w autach po 8+ latach, szczególnie w regionach solonych
-- **Stan przegrody** – wgniecenia i odkształcenia sugerują, że auto wożiło ciężkie, niezabezpieczone ładunki
-- **Historia DPF** – zapytaj o regeneracje; częste regeneracje (co 300–500 km) to sygnał problemu
+Warto też pamiętać, że różne generacje mają różne słabe punkty. Bez tego łatwo porównać auta z podobnych ogłoszeń, które w praktyce niosą zupełnie inne ryzyko serwisowe.
+
+- **Vivaro A** – sprawdź korozję progów i nadkoli, a także osprzęt diesli 1.9 i 2.5, dwumasę oraz wtrysk
+- **Vivaro B** – w 1.6 CDTi i biturbo zwróć uwagę na EGR, DPF, turbo oraz łańcuch/osprzęt zależnie od wersji
+- **Vivaro C** – kontroluj układ AdBlue/SCR, DPF, elektronikę drzwi i osprzętu oraz ogólne zużycie aut flotowych z przebiegiem 150–250 tys. km
+- **Podłoga paki** – zniszczona podłoga i wgnieciona przegroda zwykle świadczą o ciężkiej pracy i słabym zabezpieczaniu ładunku
+- **Drzwi boczne i tylne** – sprawdź lekkość pracy, prowadzenie i stan osprzętu elektrycznego
+- **Historia serwisowa** – szczególnie cenna jest udokumentowana obsługa ASO i potwierdzone naprawy układu emisji spalin
+
+Jeśli oglądasz wersję brygadową, porównaj ją z klasycznym furgonem nie tylko ceną, ale też funkcjonalnością. Doublecab ma krótszą pakę i inną ładowność, więc w praktyce nie zastępuje zwykłego blaszaka 1:1.
 
 ## Ceny Vivaro blaszak
 
-Blaszak to najtańsza wersja nadwoziowa, ale ceny różnią się znacząco w zależności od rocznika i stanu technicznego.
+Ceny Vivaro bardzo mocno zależą od generacji, długości nadwozia i sposobu sprzedaży. Na rynku wtórnym trzeba też od razu odróżniać oferty netto i brutto – firmowe ogłoszenia często podawane są jako netto + 23% VAT, a prywatne jako kwota brutto.
+
+To ważne w praktyce. Przykładowo 70 000 zł netto oznacza 86 100 zł brutto, więc bez tej informacji łatwo błędnie porównać dwa podobne auta.
 
 | Generacja / Rocznik | Cena orientacyjna |
 |---------------------|-------------------|
-| Vivaro A L1 (2003–2008) | 10 000–22 000 zł |
-| Vivaro A L2 (2008–2014) | 18 000–35 000 zł |
+| Vivaro A (2001–2014) | 10 000–35 000 zł |
 | Vivaro B (2014–2019) | 40 000–70 000 zł |
-| Vivaro C Standard (2019–2022) | 65 000–100 000 zł |
-| Vivaro C Long (2023–2025) | 90 000–130 000 zł |
-| Nowy Vivaro C Standard (1.5 D 100) | od ok. 120 000 zł netto |
-| Vivaro-e (elektryczny) | od ok. 210 000 zł netto |
+| Vivaro C (2019–2025) | 65 000–130 000 zł |
+
+Na wartość używanego egzemplarza najmocniej wpływają: długość M lub XL, liczba drzwi bocznych, automat EAT8, klimatyzacja, kamera cofania, przebieg 100 tys. kontra 250 tys. km, kraj pochodzenia oraz historia serwisowa. Między dwoma zbliżonymi rocznikami różnica może sięgać 15 000–30 000 zł.
+
+W praktyce najtańsze są auta po flotach z wysokim przebiegiem, a najdroższe – dobrze wyposażone egzemplarze krajowe z udokumentowanym serwisem. W przypadku Vivaro-e cenę dodatkowo mocno determinuje pojemność akumulatora.
 
 ## Porównanie Vivaro blaszak z konkurencją
 
-Segment dostawczaków to rynek pełen alternatyw – Opel Vivaro mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
+W segmencie średnich vanów same suche wymiary nie wystarczą. Dla firmy równie ważne są koszty eksploatacji, interwały przeglądów, ceny podstawowego serwisu oraz realne spalanie pod obciążeniem.
 
-| Parametr | Opel Vivaro C Long | Renault Trafic L2 | Ford Transit Custom L2 | Peugeot Expert Long | Mercedes Vito Long |
-|----------|-------------------|-------------------|------------------------|--------------------|--------------------|
-| Paka | 6,6 m³ | 6,7 m³ | 6,8 m³ | 6,6 m³ | 6,0 m³ |
-| Ładowność | 1400 kg | 1251 kg | 1356 kg | 1400 kg | 1369 kg |
-| Europalety | 3 | 3 | 2 | 3 | 2 |
-| Diesel bazowy | 1.5 D 100 KM | 2.0 dCi 120 KM | 2.0 EcoBlue 105 KM | 1.5 BlueHDi 100 KM | 2.0 CDI 116 KM |
-| Cena nowego (netto) | ~130 000 zł | ~140 000 zł | ~155 000 zł | ~140 000 zł | ~155 000 zł |
+To szczególnie istotne przy dużych przebiegach. Różnica 0,8 l/100 km przy 40 000 km rocznie oznacza ok. 320 litrów paliwa rocznie więcej lub mniej.
 
-Vivaro C blaszak i [Peugeot Expert](/modele/peugeot-expert/) to ten sam samochód – identyczna paka, identyczne silniki. [Renault Trafic](/modele/renault-trafic/) oferuje zbliżone wymiary przy innej mechanice. [Transit Custom](/modele/ford-transit-custom/) wygrywa prowadzeniem. [Mercedes Vito](/modele/mercedes-vito/) – prestiżem i opcją 4x4.
+| Model | Najważniejsza uwaga porównawcza |
+|-------|---------------------------------|
+| Opel Vivaro C | Pojemność ok. 5,3 m³ w M i ok. 6,1 m³ bazowo w XL, większa przestrzeń po użyciu Moduwork |
+| Renault Trafic L2 | Pojemność zależy od konfiguracji – warto odróżniać wartości standardowe od maksymalnych z long load |
+| Ford Transit Custom L2 | Parametry paki zależą od generacji i konfiguracji, więc trzeba porównywać konkretne wersje tej samej klasy |
+| Peugeot Expert Long | Konstrukcyjnie najbliższy Vivaro C, zbliżone wymiary i rozwiązania użytkowe |
+| Mercedes Vito Long | Dane paki i dostępność napędu 4x4 zależą od rynku i rocznika, więc wymagają sprawdzenia dla konkretnej oferty |
 
-*Źródła: Wikipedia – PSA EMP2 platform, dane techniczne Opel Polska, Auto-Data.net.*
+Jeśli porównujesz koszty floty, zestaw obok ceny zakupu także gwarancję producenta, ceny oleju i filtrów oraz spalanie przy realnym ładunku 500–800 kg. To właśnie te elementy najczęściej decydują, czy dany blaszak opłaca się bardziej od konkurenta.
+
+*Źródła: dane techniczne i cenniki producenta z datą obowiązywania, katalogi techniczne oraz dokumenty homologacyjne dla poszczególnych wersji.*

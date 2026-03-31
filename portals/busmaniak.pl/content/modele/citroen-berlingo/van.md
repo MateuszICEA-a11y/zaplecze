@@ -12,19 +12,21 @@ volume: 720
 main_keyword: "Citroën Berlingo Van"
 image: "/images/citroen-berlingo-van-hero.jpg"
 image_alt: "Citroën Berlingo Van III generacji załadowany"
-lead: "Berlingo Van to wersja dostawcza Citroëna Berlingo z homologacją ciężarową N1, stalową przegrodą za kabiną i przestrzenią ładunkową zamiast tylnych siedzeń. Dostępna w dwóch długościach (M i XL), z ładownością do 1000 kg."
+lead: "Berlingo Van to wersja dostawcza Citroëna Berlingo z homologacją ciężarową N1, stalową przegrodą za kabiną i przestrzenią ładunkową zamiast tylnych siedzeń. Dostępna w dwóch długościach – M i XL – oferuje objętość ładunkową 3,3 lub 3,9 m3, a ładowność zależnie od wersji wynosi od ok. 650 do ok. 1000 kg."
 faq:
   - question: "Ile ładunku zmieści Berlingo Van?"
-    answer: "Berlingo Van M oferuje 3,3 m3 przestrzeni ładunkowej, a XL – 3,9 m3. Ładowność netto wynosi od 650 do 1000 kg, zależnie od wersji silnikowej."
+    answer: "Berlingo Van M oferuje 3,3 m3 przestrzeni ładunkowej, a XL – 3,9 m3. Z systemem Extenso/Moduwork wartości rosną odpowiednio do ok. 3,8 i 4,4 m3. Ładowność zależnie od wersji wynosi od ok. 650 do ok. 1000 kg."
   - question: "Czy do Berlingo Van wchodzi europaleta?"
-    answer: "Do wersji M wchodzi jedna europaleta (1200x800 mm) – szerokość między nadkolami wynosi ok. 1230 mm. Wersja XL mieści dwie europalety jedna za drugą."
+    answer: "Tak. Berlingo Van mieści 1 europaletę w poprzek dzięki szerokości między nadkolami ok. 1229–1230 mm. W wersji XL można przewieźć 2 europalety wzdłużnie, jedna za drugą, ale zależy to od konfiguracji przegrody i wyposażenia przestrzeni ładunkowej."
   - question: "Czym różni się Berlingo Van od Berlingo osobowego?"
-    answer: "Van ma homologację ciężarową N1, stalową przegrodę, gołą podłogę ładunkową i 2-3 miejsca. Osobowy ma homologację M1, przeszklone szyby, 5-7 miejsc i lepsze wyposażenie."
+    answer: "Van ma homologację N1, stalową przegrodę, przestrzeń ładunkową zamiast tylnej części pasażerskiej oraz 2–3 miejsca. Wersja osobowa ma homologację M1, przeszklone nadwozie, więcej miejsc i inne przeznaczenie."
 ---
 
 ## Berlingo Van – wersja dostawcza {#wersja-dostawcza}
 
-Berlingo Van to furgon bez tylnych okien, z kabiną oddzieloną od przestrzeni ładunkowej stalową przegrodą. Długa historia modelu – od 1996 roku przez trzy generacje – jest udokumentowana na Wikipedii. Kabina mieści 2 lub 3 osoby (zależnie od wersji), a podłoga ładunkowa jest pokryta stalową blachą odporną na uszkodzenia.
+Citroën Berlingo Van to furgon bez tylnych okien, z kabiną oddzieloną od przestrzeni ładunkowej stalową przegrodą. W zależności od wersji oferuje 2 lub 3 miejsca z przodu, a wykończenie podłogi przestrzeni ładunkowej oraz dodatkowe zabezpieczenia zależą od odmiany i wyposażenia.
+
+W III generacji auto występuje w dwóch długościach nadwozia – M i XL. Długość całkowita to ok. 4403 mm dla M i ok. 4753 mm dla XL, przy rozstawie osi odpowiednio 2785 mm i 2975 mm.
 
 ### Trzy generacje Berlingo Van
 
@@ -32,75 +34,104 @@ Model produkowany jest od 1996 roku i przeszedł przez trzy generacje:
 
 - **I generacja (1996–2008)** – prosta konstrukcja, silniki 1.9D i późniejsze HDI
 - **II generacja (2008–2018)** – platforma PSA PF2, silniki 1.6 HDI, wersja Long
-- **III generacja (od 2018)** – platforma EMP2, silniki 1.5 BlueHDI, wersje M i XL
+- **III generacja (od 2018)** – platforma EMP2, silniki 1.5 BlueHDi, wersje M i XL
+
+Berlingo Van III ma zwykle ok. 1840–1860 mm wysokości bez anteny i ok. 1848 mm szerokości nadwozia bez lusterek. To ważne w codziennej pracy – zwłaszcza przy wjazdach do parkingów podziemnych i załadunku przy rampie.
 
 ## Wymiary przestrzeni ładunkowej {#wymiary-paki}
 
-Wymiary paki dla III generacji Berlingo Van:
+W praktyce najważniejsze są nie tylko litry pojemności, ale też rzeczywiste wymiary paki i otworów załadunkowych. W Berlingo Van III różnice między M i XL dotyczą głównie długości użytkowej oraz możliwości przewozu długich elementów.
 
-| Wymiar                   | Van M       | Van XL      |
-|--------------------------|------------|------------|
-| Długość paki (mm)        | 1810       | 2160       |
-| Szerokość (mm)           | 1230       | 1230       |
-| Wysokość (mm)            | 1250       | 1250       |
-| Objętość (m³)            | 3,3        | 3,9        |
-| Szerokość między nadkolami (mm) | 1230 | 1230       |
+| Wymiar | Van M | Van XL |
+|---|---:|---:|
+| Długość użytkowa paki (mm) | ok. 1817 | ok. 2167 |
+| Szerokość maksymalna przestrzeni ładunkowej (mm) | ok. 1630 | ok. 1630 |
+| Szerokość między nadkolami (mm) | ok. 1229–1230 | ok. 1229–1230 |
+| Wysokość przestrzeni ładunkowej (mm) | ok. 1200–1243 | ok. 1200–1243 |
+| Objętość (m³) | 3,3 | 3,9 |
+| Szerokość bocznego otworu drzwi przesuwnych (mm) | ok. 675 | ok. 675 |
+| Wysokość tylnego otworu (mm) | ok. 1196 | ok. 1196 |
 
-Drzwi tylne dwuskrzydłowe otwierają się na 180° (opcjonalnie na 90° z blokadą). Boczne drzwi przesuwane ułatwiają załadunek w ciasnych miejscach – w topowych wersjach dostępne po obu stronach.
+Drzwi tylne standardowo zatrzymują się przy 90°, a po odblokowaniu mogą otwierać się do 180°, jeśli dana wersja to oferuje. Boczne drzwi przesuwane ułatwiają pracę w mieście, szczególnie przy dostawach pod krawężnik lub w wąskich zatokach.
 
-{{% info title="Europalety" icon="engineering" %}}Do Berlingo Van M wchodzi jedna europaleta (1200 x 800 mm). Wersja XL mieści dwie europalety ustawione jedna za drugą. Szerokość między nadkolami (1230 mm) jest wystarczająca, ale bez marginesu – przy ręcznym załadunku trzeba uważać.{{% /info %}}
+### Trzy generacje Berlingo Van
+
+W codziennym użytkowaniu kluczowy jest też system Extenso/Moduwork. Składanie środkowego fotela i klapa w przegrodzie pozwalają zwiększyć objętość z 3,3 do ok. 3,8 m3 w M oraz z 3,9 do ok. 4,4 m3 w XL.
+
+Ten sam układ pozwala przewozić dłuższe elementy – do ok. 3090 mm w wersji M i do ok. 3440 mm w XL. To przydatne przy transporcie rur, listew, profili i lekkich elementów montażowych.
+
+{{% info title="Europalety" icon="engineering" %}}Berlingo Van mieści 1 europaletę w poprzek dzięki szerokości między nadkolami ok. 1229–1230 mm. W wersji XL można przewieźć 2 europalety wzdłużnie, jedna za drugą, ale zależy to od konfiguracji przegrody i wyposażenia przestrzeni ładunkowej.{{% /info %}}
 
 ## Ładowność i DMC {#ładowność}
 
-Dopuszczalna masa całkowita Berlingo Van zależy od wersji silnikowej i wybranego wyposażenia. Wersje z automatyczną skrzynią biegów są cięższe o ok. 30 kg, co nieznacznie obniża dostępną ładowność netto.
+W Citroënie Berlingo Van ładowność i DMC trzeba zawsze wiązać z konkretną wersją, silnikiem i homologacją. To nie jest model, w którym jedna wartość opisuje całą gamę.
 
-| Parametr        | Van M        | Van XL       |
-|-----------------|-------------|-------------|
-| DMC (kg)        | 2100–2230   | 2130–2380   |
-| Masa własna (kg)| 1300–1450   | 1350–1500   |
-| Ładowność (kg)  | 650–900     | 750–1000    |
+Typowe parametry dla III generacji wyglądają następująco:
 
-Ładowność zależy od wybranego silnika i wyposażenia. Wersje z automatyczną skrzynią biegów są cięższe o ok. 30 kg. Więcej o wariantach dostawczych w artykule o [Berlingo dostawczym](/modele/citroen-berlingo/dostawczy/).
+| Parametr | Wartości |
+|---|---|
+| Objętość przestrzeni ładunkowej | 3,3 m3 (M) / 3,9 m3 (XL) |
+| Objętość z systemem Extenso/Moduwork | ok. 3,8 m3 (M) / ok. 4,4 m3 (XL) |
+| Ładowność | ok. 650–1000 kg |
+| DMC | ok. 1960–2400 kg |
+| Długość przewożonych przedmiotów z Extenso/Moduwork | ok. 3090 mm (M) / ok. 3440 mm (XL) |
 
+W praktyce oznacza to, że wersje podstawowe sprawdzają się w lekkim transporcie miejskim, a wybrane odmiany o zwiększonej nośności potrafią dojść do ok. 1000 kg ładowności. Przy ocenie konkretnego egzemplarza trzeba więc patrzeć nie tylko na nazwę wersji, ale też na masę własną, skrzynię biegów i konfigurację kabiny.
 
+Więcej o wariantach dostawczych w artykule o [Berlingo dostawczym](/modele/citroen-berlingo/dostawczy/).
 
 ![Citroën Berlingo Van III generacji załadowany](/images/citroen-berlingo-van-hero.jpg)
 
 ## Silniki w wersji Van {#silniki}
 
-Gama silnikowa Berlingo Van:
+Gama napędowa Berlingo Van zależy od generacji, ale w III generacji najważniejsze są diesle 1.5 BlueHDi i wersja elektryczna. Warto od razu patrzeć nie tylko na moc, ale też na skrzynię biegów i rocznik, bo normy emisji różniły się zależnie od rynku i roku produkcji.
 
-- **[1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) 75/90/110 KM** – sprawdzony diesel z II generacji (2008–2018)
-- **1.5 BlueHDI 75/100/130 KM** – nowszy diesel z III generacji, norma Euro 6d
-- **[ë-Berlingo Van](/modele/citroen-berlingo/elektryczny/)** – wersja elektryczna 136 KM, zasięg do 275 km WLTP
+- **[1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) 75/90/110 KM** – diesel z II generacji
+- **1.5 BlueHDi 75 KM** – manual 5-biegowy
+- **1.5 BlueHDi 100 KM** – manual 6-biegowy
+- **1.5 BlueHDi 130 KM** – manual 6-biegowy lub automat EAT8
+- **[ë-Berlingo Van](/modele/citroen-berlingo/elektryczny/)** – 136 KM, akumulator 50 kWh brutto, ładowanie AC 7,4 kW lub 11 kW oraz DC do 100 kW; zasięg do 275 km WLTP dotyczy określonych konfiguracji
 
-Do przewozu towarów o masie do 500 kg wystarczy wersja 75 lub 100 KM. Przy regularnym ładunku 700–900 kg warto wybrać 130 KM – szczególnie jeśli trasy obejmują autostrady i dłuższe odcinki.
+W dieslach 1.5 BlueHDi trzeba pamiętać, że wymagają AdBlue, a interwał przeglądów zwykle wynosi 1 rok lub 25 000 km – zależnie od rynku i warunków eksploatacji. Występują też odmiany z paskiem rozrządu pracującym w kąpieli olejowej, więc regularny serwis ma tu duże znaczenie.
 
-{{% expert name="Kowalczyk" %}}W wersji Van zdecydowanie polecam 1.5 BlueHDI 100 KM – to najczęściej wybierany wariant, który dobrze radzi sobie z typowym ładunkiem kurierskim. Wersja 75 KM jest zbyt słaba przy pełnym obciążeniu na autostradzie.{{% /expert %}}
+Realne spalanie dostawczego 1.5 BlueHDi zwykle mieści się w zakresie ok. 5,5–7,0 l/100 km, zależnie od obciążenia i trasy. Do pracy miejskiej i lekkiej dystrybucji wystarczą 75 lub 100 KM, natomiast przy stałej jeździe z większym ładunkiem lepiej wypada 130 KM.
+
+{{% expert name="Kowalczyk" %}}W wersji Van najrozsądniej wygląda 1.5 BlueHDi 100 KM z manualem 6-biegowym. To kompromis między osiągami, zużyciem paliwa i kosztami codziennej eksploatacji.{{% /expert %}}
 
 ## Wersja Van vs osobowa {#van-vs-osobowy}
 
-Kluczowe różnice między Berlingo Van a wersją osobową:
+Berlingo Van i Berlingo osobowe wyglądają podobnie, ale w praktyce są przygotowane do innych zadań. Różnice dotyczą homologacji, wnętrza i specyfikacji użytkowej.
 
 ### Homologacja N1 vs M1
 
-- **Homologacja** – Van ma N1 (ciężarowa), osobowy M1; wpływa to na podatki, ubezpieczenie i możliwość odliczenia VAT
+- **Homologacja** – Van ma N1, czyli pojazd do przewozu ładunków o DMC do 3,5 t, a osobowy M1
+- **VAT** – samo N1 nie gwarantuje automatycznie pełnego odliczenia VAT; zasady zależą od konstrukcji i sposobu użytkowania, a pełne 100% odliczenia zwykle wymaga użytkowania wyłącznie firmowego oraz ewidencji przebiegu, chyba że pojazd spełnia ustawowe kryteria konstrukcyjne
 
 ### Zawieszenie i wyposażenie
 
-- **Zawieszenie** – Van ma wzmocnione sprężyny i amortyzatory tył, przystosowane do większych obciążeń
-- **Wyposażenie** – Van w bazowej wersji jest surowy (brak radia, manualne szyby), ale da się go doposażyć
+- **Specyfikacja użytkowa** – Van ma inną specyfikację zawieszenia i nośności zależną od wersji
+- **Wyposażenie** – Van w bazowej konfiguracji jest zwykle prostszy od odmiany osobowej, ale zakres wyposażenia zależy od wersji i rynku
 
 ### Przeróbka Vana na osobowy
 
-Przeróbka Vana na wersję osobową wymaga zmiany homologacji (badanie techniczne, dokumenty w wydziale komunikacji). Więcej o modyfikacjach w artykule o [tuningu Berlingo](/przerobki/citroen-berlingo-tuning/).
+Przeróbka Vana na wersję osobową wymaga zmiany homologacji, badań i formalności w wydziale komunikacji. W praktyce oznacza to, że zakup wersji dostawczej warto od początku dopasować do docelowego sposobu użytkowania.
 
 ## Berlingo Van na tle konkurencji {#konkurencja}
 
-Berlingo Van rywalizuje z:
+Citroën Berlingo Van działa w bardzo mocnym segmencie kompaktowych aut dostawczych. Najbliżsi rywale różnią się głównie detalami zabudowy, długościami nadwozia i maksymalną objętością przestrzeni ładunkowej.
 
-- **[Peugeot Partner Van](/modele/peugeot-partner/)** – bliźniak techniczny, identyczne wymiary paki, różnice w cenie i wyposażeniu
-- **[Renault Kangoo Van](/modele/renault-kangoo/)** – podobna ładowność, ale inne wymiary paki (nieco szerszy)
-- **[Opel Combo Cargo](/modele/opel-combo/)** – w III generacji dzieli platformę z Berlingo, różnice kosmetyczne
+| Model | Objętość paki |
+|---|---|
+| Citroën Berlingo Van | ok. 3,3–4,4 m3 |
+| Peugeot Partner | ok. 3,3–4,4 m3 |
+| Opel Combo Cargo generacji E | ok. 3,3–4,4 m3 |
+| Renault Kangoo Van | do ok. 3,9–4,9 m3 zależnie od wersji |
+| VW Caddy Cargo | ok. 3,1–3,7 m3 |
 
-Berlingo Van wygrywa cenowo na rynku wtórnym i ma dobrą dostępność części. Kangoo oferuje opcję Open Sesame (bez słupka B po stronie pasażera), której Berlingo nie ma.
+W tej grupie typowa ładowność zwykle mieści się w zakresie ok. 650–1000 kg, a większość modeli występuje w krótszych i wydłużonych wariantach nadwozia. Peugeot Partner i Opel Combo Cargo generacji E są najbliżej spokrewnione technicznie z Berlingo III.
+
+- **[Peugeot Partner Van](/modele/peugeot-partner/)** – techniczny bliźniak, bardzo zbliżone możliwości transportowe
+- **[Renault Kangoo Van](/modele/renault-kangoo/)** – w zależności od wersji oferuje większą maksymalną objętość paki
+- **[Opel Combo Cargo](/modele/opel-combo/)** – generacja E jest technicznym bliźniakiem Berlingo III
+
+Berlingo Van wypada mocno tam, gdzie liczy się połączenie kompaktowych gabarytów z praktyczną paką i systemem Extenso/Moduwork. To właśnie elastyczność konfiguracji jest jedną z jego najważniejszych zalet.

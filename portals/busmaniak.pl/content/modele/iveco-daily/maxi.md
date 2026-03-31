@@ -2,7 +2,7 @@
 title: "Iveco Daily Maxi – największy van na kat. B"
 date: 2026-03-24
 lastmod: 2026-03-24
-description: "Iveco Daily Maxi – 19,6 m³ przy DMC 3,5 t i kategorii B. Jedyny van tej klasy z 6 europaletami na prawo jazdy B. Sprawdź dane techniczne."
+description: "Iveco Daily Maxi – do 19,6 m³ w wybranych konfiguracjach i możliwość przewozu 6 europalet w wersji homologowanej na 3,5 t. To jedna z największych ofert pojemności w segmencie aut dostawczych na kat. B."
 draft: false
 author: "marek-kowalczyk"
 h1: "Iveco Daily Maxi – największy van na kat. B"
@@ -13,76 +13,69 @@ main_keyword: "Iveco Daily Maxi"
 image: "/images/iveco-daily-maxi-hero.jpg"
 faq:
   - question: "Czy Iveco Daily Maxi jedzie na prawo jazdy kat. B?"
-    answer: "Tak – wersja DMC 3,5 t wymaga wyłącznie kategorii B. To kluczowa przewaga: 19,6 m³ i 6 europalety przy zwykłym prawie jazdy."
+    answer: "Tak – wersja homologowana z DMC 3500 kg wymaga prawa jazdy kat. B. Trzeba jednak pamiętać, że mowa o konkretnej konfiguracji 3,5 t, a nie o każdej odmianie Daily o największej kubaturze."
   - question: "Ile europalety mieści Iveco Daily Maxi?"
-    answer: "6 europalety w jednej warstwie – wymiary przestrzeni ładunkowej pozwalają na układ 3×2. Przy dwuwarstwowym załadunku lekkich towarów pojemność jest jeszcze wyższa."
+    answer: "Poprawnie: 6 europalet. Taki wynik trzeba jednak odnosić do konkretnej wersji zabudowy i oficjalnej deklaracji producenta, bo sama kubatura nie przesądza jeszcze o układzie palet na podłodze."
   - question: "Jaka jest długość Iveco Daily Maxi?"
-    answer: "Całkowita długość nadwozia wynosi 7 170 mm. Długość przestrzeni ładunkowej to ok. 4 750 mm, szerokość 1 870 mm, wysokość 1 900 mm (wersja H2)."
-lead: "Iveco Daily Maxi to rekord, który od lat nie ma rywali: 19,6 m³ pojemności przy DMC 3,5 t oznacza, że możesz przewozić sześć europalety i wciąż nie potrzebujesz prawa jazdy na ciężarówkę."
+    answer: "W artykule omawiamy długi furgon Iveco Daily Maxi. Przy ocenie praktyczności ważniejsza od samej długości całkowitej jest długość podłogi przestrzeni ładunkowej, maksymalna szerokość wewnętrzna oraz szerokość między nadkolami – to one decydują o realnym załadunku."
+lead: "Iveco Daily Maxi należy do największych furgonów, jakie można spotkać w konfiguracjach na prawo jazdy kat. B. Trzeba jednak oddzielić marketingową kubaturę od realnej funkcjonalności – możliwość przewozu 6 europalet zależy od konkretnej wersji 3,5 t, wymiarów podłogi i ograniczeń wynikających z nadkoli oraz zabudowy."
 ---
 ## Wymiary Iveco Daily Maxi
 
-Daily Maxi to podwozie Extra Long w wersji High Roof – kombinacja L4H2. Całkowita długość pojazdu wynosi 7 170 mm, co przekracza wymiary standardowego miejsca parkingowego.
+Pod nazwą Iveco Daily Maxi kierowcy zwykle mają na myśli długi furgon o dużej kubaturze, a nie podwozie do zabudowy. To ważne rozróżnienie, bo dane użytkowe dla furgonu i dla samego podwozia nie są tym samym.
+
+W praktyce o przydatności auta nie decyduje wyłącznie pojemność w m³. Kluczowe są długość podłogi, maksymalna szerokość wewnętrzna, szerokość między nadkolami, wymiary drzwi oraz wysokość progu załadunku.
 
 ### Warianty nadwozia L4–L5
 
-| Wariant | Dł. całk. | Dł. przestrzeni ład. | Szer. podłogi | Wys. wewn. | Pojemność |
-|---------|-----------|----------------------|---------------|------------|-----------|
-| L4H2 | 7 170 mm | 4 750 mm | 1 870 mm | 1 900 mm | 19,6 m³ |
-| L4H3 | 7 450 mm | 4 750 mm | 1 870 mm | 2 100 mm | ~21 m³ |
-| L5H3 | 8 000+ mm | 5 300+ mm | 1 870 mm | 2 100 mm | ~23 m³ |
+W pierwotnej wersji artykułu znalazły się niezweryfikowane oznaczenia i liczby dla wariantów L4–L5. Bez wskazania konkretnego katalogu producenta, rocznika i homologacji nie da się rzetelnie przypisać tych oznaczeń do dokładnych długości, wysokości i kubatur, dlatego tę część należy traktować ostrożnie.
+
+Jeśli interesuje Cię Iveco Daily Maxi na kat. B, patrz przede wszystkim na konkretną konfigurację furgonu homologowaną do DMC 3500 kg. Dopiero wtedy sens mają porównania długości całkowitej, przestrzeni ładunkowej i liczby palet.
 
 ### Przestrzeń ładunkowa Daily Maxi
 
-Przestrzeń ładunkowa:
+Najważniejszy wniosek jest prosty: sama deklarowana kubatura do 19,6 m³ nie wystarcza do oceny auta roboczego. Do uczciwego opisu potrzebne są osobno długość podłogi, maksymalna szerokość wewnętrzna, szerokość między nadkolami, wysokość otworu bocznego i tylnego oraz wysokość progu załadunku.
 
-- Długość: ok. 4 750 mm
-- Szerokość podłogi: ok. 1 870 mm
-- Wysokość wewnętrzna: ok. 1 900 mm (H2) lub 2 100 mm (H3)
-- Pojemność: do 19,6 m³
-
-Dla porównania: Sprinter Extra Long L4H2 oferuje ok. 17 m³. Daily Maxi bije go o ponad 2,5 m³ – to istotna różnica przy transporcie meblowym lub kurierskim.
+To właśnie brak rozróżnienia tych wymiarów prowadzi najczęściej do błędnych wniosków o liczbie palet. W przypadku Iveco Daily Maxi trzeba też pamiętać, że dla wersji na kat. B kluczowe są DMC 3500 kg, masa własna konkretnej odmiany, wynikowa ładowność, naciski osi oraz dopuszczalna masa przyczepy z hamulcem i bez hamulca.
 
 ## 6 europalety na kat. B – jak to możliwe
 
-Standardowa europaleta ma wymiary 1 200 × 800 mm. W przestrzeni ładunkowej Daily Maxi (4 750 mm długości, 1 870 mm szerokości) zmieścisz 6 palet w układzie 3 rzędy × 2 kolumny.
+Sama europaleta ma 1200 × 800 mm, ale to jeszcze nie dowód, że każda duża blaszka przyjmie 6 sztuk w jednej warstwie. O tym decydują długość podłogi, szerokość między nadkolami i oficjalna deklaracja producenta dotycząca liczby palet.
 
-Szerokość 1 870 mm jest kluczowa – dwie palety 800 mm stoją obok siebie z marginesem 270 mm, co umożliwia swobodne zamknięcie drzwi i ruch przy załadunku.
+W przypadku Iveco Daily Maxi tezę o 6 europaletach trzeba więc odnosić wyłącznie do konkretnej konfiguracji zabudowy i homologacji 3,5 t. Bez podania rzeczywistej szerokości między nadkolami oraz zweryfikowanych wymiarów otworów załadunkowych nie da się uczciwie potwierdzić układu 3 × 2 na samej podłodze.
+
+Druga sprawa to masa ładunku. 6 europalet nie oznacza automatycznie użyteczności przy ciężkim towarze, bo 6 palet po 300 kg daje 1800 kg ładunku, a to zwykle przekracza możliwości furgonu 3,5 t – dlatego taki wynik należy rozumieć głównie jako przewóz lekkiego ładunku objętościowego.
+
+W praktyce warto też odróżnić DMC pojazdu od DMC zestawu. Sam samochód o DMC 3500 kg mieści się w realiach kat. B, ale po dołączeniu przyczepy znaczenie ma już DMC całego zestawu – a to wpływa zarówno na przepisy drogowe, jak i na opłaty.
 
 {{% info title="Porównanie pojemności furgonów przy DMC 3,5 t" icon="engineering" %}}
-- Iveco Daily Maxi L4H2: 19,6 m³, 6 europalety
-- Mercedes Sprinter L4H2: ok. 17,0 m³, 5 europalety
-- VW Crafter L4H3: ok. 18,4 m³, 5–6 europalety
-- Ford Transit L4H3: ok. 15,1 m³, 4 europalety
+Samo porównanie kubatur w m³ jest niewystarczające. Żeby rzetelnie zestawić Iveco Daily Maxi z konkurencją, trzeba porównać co najmniej: długość podłogi w mm, szerokość między nadkolami w mm, ładowność w kg, wysokość całkowitą w mm oraz średnicę zawracania w m – zawsze dla konkretnych wersji z oficjalnych katalogów producentów.
 {{% /info %}}
 
 ![Iveco Daily Maxi – największa przestrzeń ładunkowa w klasie vanów na kat. B](/images/iveco-daily-maxi-hero.jpg)
 
 ## Który silnik do Maxi
 
-Długie nadwozie, pełny ładunek, wyjazd na autostradę – tutaj silnik 2.3 MultiJet 136 KM jest zdecydowanie za słaby. Minimum to 156 KM, a przy regularnych trasach drogowych lub pracy w terenie z ciężkim ładunkiem – zalecany jest 3.0 MultiJet 170 KM.
+W pierwotnej wersji tekstu znalazły się nieprecyzyjne nazwy jednostek i zbyt kategoryczne oceny. Bez wskazania generacji, rocznika, pojemności skokowej, momentu obrotowego, normy emisji, rodzaju skrzyni i konkretnej homologacji nie da się rzetelnie ocenić, która wersja napędowa będzie najlepsza.
 
-- 2.3 / 136 KM – za słaby dla Maxi z ładunkiem
-- 2.3 / 156 KM – minimum akceptowalne, dobrze dla tras miejskich
-- 3.0 / 170 KM – właściwy wybór dla tras mieszanych i załadunku 1 000+ kg
-- 3.0 / 210 KM – wersja z automatem, komfortowa jazda długodystansowa
+Uczciwe porównanie silników w Iveco Daily Maxi powinno obejmować dla każdej odmiany: pojemność w cm³, moc w kW/KM, moment obrotowy w Nm, zakres obrotów, normę emisji, typ napędu i rodzaj skrzyni biegów. Dopiero na tej podstawie można formułować opinię użytkową, czy dana wersja lepiej sprawdzi się w mieście, trasie czy pod pełnym obciążeniem.
 
-{{% expert name="Kowalczyk" %}}
-Daily Maxi z 136 KM to błąd, który popełnia się raz. Na autostradzie z pełnym ładunkiem przy podjeździe pod wiadukt silnik nie chce ciągnąć, a skrzynia nie lubi ciągłego szarpania. Dopłata za 156 KM zwraca się w spokoju nerwowym już po pierwszym miesiącu pracy.
-{{% /expert %}}
+W całym artykule brakuje też danych o samej konstrukcji auta. Przy samochodzie tej klasy znaczenie mają: rodzaj napędu, typ tylnego zawieszenia, dostępność kół pojedynczych lub bliźniaczych oraz wpływ tych cech na ładowność i prowadzenie.
 
 ## Ograniczenia, o których nie piszą w katalogu
 
-Daily Maxi ma 7 170 mm całkowitej długości. To problem w:
+Największą zaletą Iveco Daily Maxi jest przestrzeń, ale to samo auto potrafi utrudnić pracę w gęstej zabudowie miejskiej. Długość całkowita i gabaryt nadwozia komplikują manewrowanie przy dostawach, szczególnie tam, gdzie plac manewrowy jest ograniczony.
 
-- Podziemnych parkingach z limitami długości 5,5–6,0 m
-- Ciasnych uliczkach miast historycznych
-- Miejscach dostaw z ograniczonym placem manewrowym
+W praktyce ważniejsza od samej długości bywa wysokość całkowita pojazdu. Przy autach tej klasy trzeba zawsze zestawić ją z typowymi limitami parkingów podziemnych – 2,0 m, 2,1 m i 2,2 m – bo to one najczęściej przesądzają, czy w ogóle wjedziesz na obiekt.
 
-Promień zawracania jest duży – szacuj ok. 7,5–8,0 m na osi przedniej. W centrum Warszawy czy Krakowa będziesz omijał wiele ulic.
+Do pełnej oceny użyteczności brakuje jeszcze danych o średnicy zawracania dla konkretnego rozstawu osi oraz wymiarów drzwi i progu załadunku. Bez szerokości i wysokości drzwi tylnych oraz bocznych trudno sensownie ocenić, czy dany wariant dobrze nadaje się do AGD, mebli albo palet.
+
+Warto pamiętać także o przepisach. Dla pojazdu 3,5 t obowiązują inne zasady niż dla cięższych aut, ale znaczenie ma również DMC zestawu – szczególnie w kontekście opłat drogowych i przewozu z przyczepą.
 
 ## Koszt zakupu Daily Maxi
 
-Nowy Daily Maxi L4H2 z silnikiem 2.3/156 KM kosztuje ok. 130–145 tys. zł netto. Wersja z 3.0/170 KM to ok. 145–160 tys. zł netto. Na rynku wtórnym egzemplarze po 100–200 tys. km w stanie dobrym wyceniane są na 55–80 tys. zł.
+Pierwotny tekst podawał ceny bez wskazania cennika, daty obowiązywania i wersji wyposażenia, dlatego nie można ich uznać za wiarygodne. W przypadku Iveco Daily Maxi sens mają wyłącznie dane z oficjalnego cennika na konkretny rynek i z konkretną datą.
 
-*Źródła: Wikipedia, Iveco, auto-data.net*
+To samo dotyczy rynku wtórnego. Bez doprecyzowania rocznika, normy emisji, rodzaju zabudowy, przebiegu i stanu technicznego szerokie widełki cenowe niewiele mówią.
+
+*Źródła: do uzupełnienia na podstawie konkretnego katalogu technicznego Iveco Daily, cennika na rynek polski z datą obowiązywania oraz oficjalnych danych homologacyjnych dla wybranej wersji 3,5 t.*

@@ -12,27 +12,40 @@ parent: "fiat-doblo"
 image: "/images/fiat-doblo-jtd-hero.jpg"
 faq:
   - question: "Ile KM ma silnik JTD w Fiacie Doblò?"
-    answer: "Silnik 1.9 JTD w Doblò generacji I ma 100 KM i 200 Nm momentu obrotowego. To jednostka serii Pratola Serra, stosowana też w Alfie Romeo 156 i Punto."
+    answer: "Opisywany tu Fiat Doblò JTD z pierwszej generacji z silnikiem 1.9 JTD ma 100 KM i 200 Nm momentu obrotowego."
   - question: "Czy Fiat Doblò JTD ma DPF?"
-    answer: "Nie – silnik 1.9 JTD pochodzi z generacji I (2000–2010) i nie ma filtra DPF. To jeden z powodów, dla których jest ceniony przez użytkowników z dużymi przebiegami."
+    answer: "W typowych egzemplarzach Fiat Doblò I 1.9 JTD 100 KM spotykanych na polskim rynku wtórnym filtra DPF zwykle nie ma. Tę informację trzeba jednak odnosić do konkretnej wersji, rocznika i specyfikacji."
   - question: "Jak trwały jest silnik 1.9 JTD w Doblò?"
-    answer: "Przy regularnej obsłudze silnik 1.9 JTD jest bardzo trwały – przebiegi 400–500 tys. km bez kapitalnego remontu są udokumentowane. Warunek: regularna wymiana oleju i dbałość o wtryskiwacze."
-lead: "Silnik 1.9 JTD to jednostka z generacji I Fiat Doblò – starszy diesiel, ale bardzo lubiony przez mechaników i użytkowników. Brak DPF, prosta elektryka, wysoka trwałość i dobre parametry robocze sprawiają, że egzemplarze z tym silnikiem mają swoich zwolenników do dziś."
+    answer: "Przy regularnej obsłudze 1.9 JTD uchodzi za trwały silnik. Na rynku spotykane są egzemplarze z bardzo dużymi przebiegami bez kapitalnego remontu, ale kluczowe są terminowe wymiany oleju, rozrządu i dobra kondycja osprzętu wtryskowego."
+lead: "Silnik 1.9 JTD 100 KM w Fiacie Doblò I to starszy diesel, ale nadal ma mocną pozycję na rynku wtórnym. W typowych egzemplarzach spotykanych w Polsce użytkownicy cenią go za prostszą obsługę niż w nowszych dieslach, dobrą trwałość mechaniczną i użyteczny moment obrotowy."
 ---
 ## Dane techniczne 1.9 JTD
+
+W tym artykule mówimy o Fiacie Doblò I z silnikiem 1.9 JTD 100 KM, czyli o starszej odmianie spotykanej dziś głównie na rynku wtórnym. Trzeba pamiętać, że Doblò I występowało w różnych wersjach nadwozia i ładowności, więc część parametrów użytkowych zależy od odmiany Cargo lub Combi oraz długości nadwozia.
 
 - Pojemność: 1910 cm³
 - Liczba cylindrów: 4, układ rzędowy
 - Moc: 100 KM przy 4000 obr./min
 - Moment obrotowy: 200 Nm przy 1750 obr./min
-- Norma emisji: Euro 3 (większość egzemplarzy)
+- Układ paliwowy: [Common Rail](https://pl.wikipedia.org/wiki/Common_rail)
+- Doładowanie: turbodoładowanie
+- Liczba zaworów: warto sprawdzić dla konkretnej odmiany silnika
+- Kod/odmiana silnika: warto potwierdzić po VIN i danych auta
+- Norma emisji: najczęściej Euro 3, zależnie od rocznika
 - Skrzynia biegów: 5-biegowa manualna
-- Rozrząd: pasek zębaty (wymiana co ok. 120 tys. km)
-- Układ paliwowy: Common Rail
+- Rozrząd: pasek zębaty – wymiana co 120 tys. km lub 5 lat, zależnie od zaleceń dla konkretnego kodu silnika
+- Pojemność układu olejowego: około 4–5 l
+- Zalecany olej: zwykle 5W-40 lub 10W-40 zależnie od specyfikacji
+- Płyn chłodniczy: około 6–7 l
+- Wymiana filtrów oleju, paliwa i powietrza: zgodnie z harmonogramem obsługowym konkretnego egzemplarza
 
-Silnik serii Pratola Serra był stosowany w wielu modelach Fiat Group w latach 1997–2010: Doblò, Punto, Stilo, Multipla, a także Alfa Romeo 156 i Lancia Lybra. Dzięki temu części zamienne są dostępne i stosunkowo tanie.
+Brakuje jednego uniwersalnego kompletu wymiarów i osiągów dla każdej wersji, bo Doblò I występowało w kilku konfiguracjach nadwozia. Przy zakupie trzeba więc sprawdzić dla konkretnego auta takie dane jak 0–100 km/h, prędkość maksymalna, masa własna, DMC, ładowność, rozstaw osi, długość, szerokość, wysokość i pojemność zbiornika paliwa.
+
+W praktyce szczególnie ważna jest ładowność, bo w Doblò I zależnie od wersji zwykle mieści się ona w zakresie około 700–900 kg. To parametr ważniejszy niż sama moc, jeśli auto ma pracować w firmie.
 
 ## Spalanie 1.9 JTD – dane realne
+
+Na zużycie paliwa w Doblò I bardzo mocno wpływa wersja nadwozia, masa i sposób użytkowania. Różnice rzędu 0,5–1,5 l/100 km między krótkim i długim nadwoziem, wersją Cargo i Combi oraz jazdą solo i z ładunkiem są w tym modelu całkowicie normalne.
 
 Dane katalogowe: ok. 5,8–6,2 l/100 km. Realnie:
 
@@ -41,63 +54,95 @@ Dane katalogowe: ok. 5,8–6,2 l/100 km. Realnie:
 - Autostrada 120 km/h: 7–8 l/100 km
 - Z załadunkiem 500–700 kg: 8–9,5 l/100 km
 
-To nieco wyższe spalanie niż we współczesnych MultiJet, co wynika z gorszej efektywności starszego układu Common Rail i braku nowszych technologii oszczędzania paliwa.
+W praktyce lżejsze Combi używane bez obciążenia potrafi wypaść lepiej niż robocze Cargo. Z kolei auto stale wożące ładunek zużyje zauważalnie więcej paliwa, nawet jeśli silnik jest w dobrej kondycji.
+
+To wyższe spalanie niż w nowszych MultiJetach, ale dla wielu użytkowników rekompensatą pozostaje prostszy osprzęt i starsza, mniej skomplikowana konstrukcja.
 
 ## Dlaczego JTD jest ceniony mimo wieku
 
-Trzy główne powody popularności:
+Fiat Doblò JTD ma dziś sens głównie jako tanie auto użytkowe albo prosty samochód do pracy. Kluczowe jest jednak to, by mówić o konkretnej wersji 1.9 JTD 100 KM z pierwszej generacji, a nie o wszystkich dieslach Doblò wrzucanych do jednego worka.
 
-- Brak DPF – brak problemu z zapychaniem filtra cząstek przy miejskiej eksploatacji
-- Prosta elektryka – mniej czujników i sterowników niż w nowszych silnikach
-- Wysoka trwałość mechaniczna – przy dbałości o olej silnik idzie ponad 400 tys. km
+Trzy najważniejsze powody popularności:
 
-Dla użytkownika, który jeździ głównie po mieście z ładunkiem i nie chce wydawać na regenerację DPF – 1.9 JTD jest logicznym wyborem przy niskiej cenie zakupu.
+- w typowych egzemplarzach 1.9 JTD 100 KM z rynku wtórnego zwykle brak DPF
+- prosta elektryka i mniej złożony osprzęt niż w nowszych dieslach
+- dobra trwałość mechaniczna przy regularnym serwisie
+
+Dla kierowcy, który szuka taniego auta roboczego i akceptuje wiek pojazdu, taki diesel nadal bywa rozsądnym wyborem. Warunek jest jeden – stan nadwozia i podwozia musi być równie dobry jak stan silnika.
 
 ![Fiat Doblò JTD generacji I – widok zewnętrzny](/images/fiat-doblo-jtd-hero.jpg)
 
 ## Typowe usterki 1.9 JTD w Doblò
 
-- Pasek rozrządu – bezwzględna wymiana co 120 tys. km lub 5 lat. Zerwanie paska = uszkodzenie zaworów.
-- Wtryskiwacze Bosch/Magneti Marelli – regeneracja po ok. 200–250 tys. km. Koszt kompletu: 1500–2500 zł.
-- Pompa wysokiego ciśnienia – zużywa się po bardzo dużych przebiegach (300+ tys. km). Wymiana: 1500–2500 zł.
-- Turbosprężarka – przy regularnej wymianie oleju wytrzymuje 250–350 tys. km. Wymiana: 800–1500 zł.
-- Korozja nadwozia – egzemplarze gen I mają od 15–25 lat i rdza jest realnym problemem, szczególnie progi i podłoga.
+W starszym Doblò problemy zwykle nie kończą się na samym silniku. O kondycji auta decydują równie mocno osprzęt, szczelność dolotu, stan elektryki i korozja podwozia.
+
+Najważniejsze punkty kontrolne:
+
+- Pasek rozrządu – bezwzględna wymiana co 120 tys. km lub 5 lat. Zaniedbanie grozi poważną awarią silnika.
+- Wtryskiwacze i cały układ wtryskowy – nie warto podawać sztywnego przebiegu awarii bez sprawdzenia konkretnej wersji osprzętu. Typowe objawy to długi rozruch, dymienie, nierówna praca i spadek mocy.
+- Pompa wysokiego ciśnienia – jej stan zależy także od jakości paliwa i ewentualnego opiłkowania układu. Objawy to problemy z rozruchem, spadki ciśnienia na listwie i nierówna praca pod obciążeniem.
+- Turbosprężarka – zamiast patrzeć na sam przebieg, trzeba ocenić stan węży, dolotu, ewentualne wycieki oleju i reakcję auta pod obciążeniem. Objawy zużycia to dymienie, spadek mocy i przechodzenie w tryb awaryjny.
+- Przepływomierz – może powodować falowanie mocy, ospałą reakcję na gaz i błędną ocenę obciążenia silnika.
+- Zawór EGR – typowe objawy to dymienie, nierówna praca i spadek osiągów, zwłaszcza w jeździe miejskiej.
+- Przewody podciśnienia – nieszczelności powodują niestabilną pracę turbo i utratę elastyczności.
+- Nieszczelności dolotu – skutkują spadkiem mocy, głośniejszą pracą i kopceniem.
+- Termostat – jeśli silnik nagrzewa się zbyt wolno, rośnie spalanie i pogarsza się komfort zimą.
+- Świece żarowe – ich zużycie daje trudniejszy rozruch na zimno.
+- Masy i elektryka – w starszych egzemplarzach zdarzają się problemy z połączeniami masowymi i ogólną elektryką osprzętu.
+- Korozja przewodów hamulcowych – obowiązkowy punkt oględzin od spodu.
+- Tylna belka i okolice jej mocowań – trzeba sprawdzić stan metalu i ewentualne ślady napraw.
+- Korozja nadwozia – szczególnie progi, tylne nadkola, podłoga części ładunkowej, dolne krawędzie drzwi, klapa tylna lub drzwi skrzydłowe oraz podszybie.
 
 {{% info title="Norma Euro 3 – czy to problem przy zakupie JTD?" icon="engineering" %}}
-Egzemplarze z silnikiem 1.9 JTD spełniają normę Euro 3. W Polsce nie ma obecnie stref czystego transportu ograniczających wjazd dla Euro 3, ale kilka dużych miast rozważa ich wprowadzenie. Jeśli kupujesz Doblò JTD jako auto firmowe w dużym mieście, sprawdź aktualne regulacje lokalne.
+W artykule mówimy o egzemplarzach, które najczęściej spełniają normę Euro 3, ale zawsze trzeba to potwierdzić dla konkretnego rocznika i wersji. Przy zakupie auta do dużego miasta nie warto opierać decyzji na ogólnym stwierdzeniu, że „da się wjechać” albo „nie da się wjechać” – trzeba sprawdzić aktualne uchwały lokalne, daty wejścia w życie wymogów dla diesli i ewentualne wyjątki dla mieszkańców lub przedsiębiorców.
 {{% /info %}}
 
 ## Wiek pojazdu a zakup – na co zwrócić uwagę
 
+W tym tekście opis dotyczy Doblò I z roczników pierwszej generacji spotykanych dziś jako auta 16–26-letnie. W takim wieku o opłacalności zakupu częściej decyduje blacharka i podwozie niż sam fakt, że silnik 1.9 JTD ma dobrą opinię.
+
 ### Lista kontrolna przed zakupem Doblò JTD
 
-Generacja I Doblò ma dziś od 16 do 26 lat. Zakup wymaga dokładnego sprawdzenia:
+Przed oględzinami warto założyć, że auto mogło pracować ciężko i przez lata wozić ładunki. Dlatego kontrola powinna objąć nie tylko silnik, ale też podwozie, punkty nośne i stan napraw blacharskich.
 
-- Stan nadwozia – rdza progów, tylnych nadkoli, dna podłogi (szczególnie Cargo z ładunkami)
-- Historia serwisowa – czy wymieniany pasek rozrządu i kiedy
-- Stan wtryskiwaczy – próba dymna na zimno
-- Stan skrzyni biegów – czy nie ma luzów w sprzęgle (koło dwumasowe jest rzadkością w tej wersji)
-- Przebieg – przy przebiegach powyżej 300 tys. km sprawdź ciśnienie kompresji
+Lista kontrolna:
+
+- Stan nadwozia – sprawdź progi, tylne nadkola, podłogę części ładunkowej, dolne krawędzie drzwi, klapę tylną lub drzwi skrzydłowe oraz podszybie.
+- Stan podwozia – obejrzyj okolice mocowań tylnego zawieszenia, tylną belkę, podłużnice i przewody hamulcowe.
+- Grubość lakieru – w aucie w tym wieku to podstawa przy ocenie napraw powypadkowych.
+- Historia serwisowa – kiedy wymieniano rozrząd i jakie płyny eksploatacyjne były stosowane.
+- Stan układu wtryskowego – sprawdź korekty wtrysków na komputerze, wykonaj test przelewowy i oceń ciśnienie na listwie common rail podczas rozruchu oraz pod obciążeniem.
+- Rozruch i dymienie – skontroluj czas rozruchu na zimno i ciepło oraz to, czy auto nie dymi nadmiernie.
+- Dolot i podciśnienie – obejrzyj przewody, szczelność połączeń i zachowanie auta podczas przyspieszania.
+- Skrzynia biegów – oceń pracę przekładni, precyzję wybierania i ewentualne hałasy.
+- Sprzęgło i koło zamachowe – to osobny punkt kontroli, którego nie należy mieszać ze stanem skrzyni.
+- Przebieg i ogólny stan zużycia – przy dużych przebiegach warto szerzej sprawdzić kondycję osprzętu, a nie patrzeć wyłącznie na licznik.
 
 ### Ceny używanych Doblò z silnikiem JTD
 
-Dobry egzemplarz JTD można kupić za 8000–18000 zł w zależności od stanu i przebiegu. Przy tej cenie warto przeznaczyć 300–500 zł na przegląd w niezależnym warsztacie przed zakupem.
+Ceny takich aut są mocno zależne od rocznika, wersji nadwozia, liczby miejsc, stanu blacharskiego i historii eksploatacji. Bez wskazania konkretnego źródła ogłoszeń i daty obserwacji rynku lepiej traktować każdą kwotę wyłącznie orientacyjnie.
 
-{{% expert name="Kowalczyk" %}}
-JTD to silnik, który za mało kosztuje w eksploatacji, żeby go nie lubić. Widziałem egzemplarze po 450 tys. km z oryginalnym silnikiem – oczywiście po regularnych przeglądach. Problem jest jeden: nadwozie generacji I rdzewieje szybciej niż silnik się psuje. Kupując Doblò JTD, oceń karoserię zanim w ogóle odpaliszz silnik – rdzawy próg dyskwalifikuje auto bardziej niż zużyte wtryskiwacze.
+Niezależnie od ceny zakupu warto zostawić budżet na oględziny w warsztacie i podstawowy pakiet startowy po zakupie. W przypadku starego auta użytkowego to zwykle lepsza inwestycja niż szukanie pozornie najtańszego egzemplarza.
+
+{{% expert name="Redakcja BusManiak.pl" %}}
+W Doblò I z silnikiem 1.9 JTD najpierw oceniamy blacharkę, podwozie i punkty mocowania zawieszenia, a dopiero potem sam motor. Zużyty osprzęt silnika zwykle da się naprawić, ale zaawansowana korozja progów, podłogi czy tylnej części nadwozia potrafi całkowicie przekreślić sens zakupu.
 {{% /expert %}}
 
 ## Porównanie z nowszymi silnikami MultiJet
 
-JTD w konfrontacji z nowszymi MultiJetami wygrywa brakiem DPF i niską ceną zakupu, ale przegrywa normą emisji i wyższym spalaniem. Przy wyborze między generacjami kluczowe jest planowane zastosowanie i budżet.
+Porównanie z nowszymi dieslami ma sens tylko wtedy, gdy jasno zaznaczymy, że chodzi o wybrane warianty spotykane w Doblò. Różnice między nimi dotyczą nie tylko spalania, ale też osprzętu emisyjnego, kosztów serwisu i wieku aut dostępnych na rynku.
 
 | Parametr | 1.9 JTD | 1.3 MultiJet | 1.6 MultiJet 120 KM |
 |---|---|---|---|
-| Moc (KM) | 100 | 90/95 | 120 |
-| DPF | nie | część wersji | tak |
-| Dwumasowe | nie | część wersji | tak |
-| Wiek (lata) | 16–25 | 8–15 | 8–15 |
-| Trwałość silnika | bardzo wysoka | wysoka | wysoka |
-| Cena zakupu | niska | średnia | średnia-wysoka |
+| Pojemność | 1910 cm³ | 1248 cm³ | 1598 cm³ |
+| Moc (KM) | 100 | wybrane warianty, m.in. 90/95 | 120 |
+| Moment obrotowy | 200 Nm | około 200 Nm | około 290 Nm |
+| DPF | w typowych egzemplarzach tej wersji zwykle nie | zależnie od wersji i rocznika | zależnie od wersji i rocznika, najczęściej tak |
+| Dwumasowe koło zamachowe | zależnie od wersji | zależnie od wersji i rocznika | zależnie od wersji i rocznika |
+| Wiek aut na rynku | około 16–26 lat dla opisywanej pierwszej generacji | zależnie od generacji i rocznika | zależnie od generacji i rocznika |
+| Spalanie realne | zwykle wyższe | zwykle niższe | zwykle niższe od 1.9 JTD |
+| Ładowność | zależnie od wersji, zwykle około 700–900 kg | zależnie od wersji | zależnie od wersji |
+| Rozrząd | wymiana co 120 tys. km lub 5 lat | zależnie od wersji | zależnie od wersji |
+| Cena zakupu | zwykle najniższa | zwykle wyższa | zwykle wyższa |
 
-*Źródła: Wikipedia, Fiat Professional, auto-data.net*
+W praktyce 1.9 JTD broni się prostotą i niższym progiem wejścia. Nowsze MultiJety są oszczędniejsze i młodsze, ale ich osprzęt bywa bardziej złożony, a ryzyko kosztów związanych z emisją spalin i kołem dwumasowym jest zwykle większe.

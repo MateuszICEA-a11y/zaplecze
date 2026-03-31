@@ -1,7 +1,7 @@
 ---
 title: "Volkswagen Amarok TDI – dane techniczne, spalanie, opinie"
 date: 2026-03-26
-description: "Silniki TDI w Volkswagenie Amarok – 2.0 TDI BiTurbo i 3.0 V6 TDI, dane techniczne, spalanie, typowe usterki łańcucha i pompy wody, koszty serwisu."
+description: "Silniki TDI w Volkswagenie Amarok – dane techniczne, spalanie, typowe usterki i koszty serwisu w generacjach I oraz II."
 draft: false
 author: "marek-kowalczyk"
 h1: "Volkswagen Amarok TDI – dane techniczne silników"
@@ -11,101 +11,111 @@ volume: 170
 main_keyword: "volkswagen amarok tdi"
 image: "/images/volkswagen-amarok-hero.jpg"
 image_alt: "Volkswagen Amarok pickup"
-lead: "Silniki TDI w Amaroku to dwie rodziny: czterocylindrowy 2.0 TDI BiTurbo (150–204 KM) i sześciocylindrowy 3.0 V6 TDI (224–258 KM). Obie napędzają pickupa z napędem 4MOTION. Oto dane techniczne, realne spalanie i typowe usterki per wariant."
+lead: "Volkswagen Amarok TDI występował w dwóch generacjach i kilku wyraźnie różnych konfiguracjach. Amarok I oferował 2.0 TDI 122 i 140 KM, 2.0 BiTDI 163 i 180 KM oraz 3.0 V6 TDI w wersjach 163, 204, 224 i 245 KM, a 258 KM dotyczyło chwilowego overboosta w wybranych odmianach i na wybranych rynkach. W Europie Amarok II ma zwykle 2.0 TDI 170 KM, 2.0 BiTDI 205 KM oraz 3.0 V6 TDI 240 KM. Oto dane techniczne, realne spalanie i typowe usterki."
 faq:
   - question: "Który TDI w Amaroku jest lepszy – 2.0 czy V6?"
-    answer: "2.0 TDI BiTurbo 204 KM – optymalny kompromis mocy i kosztów dla firm. V6 3.0 TDI – do holowania powyżej 2,5 t i ciężkiego terenu, ale droższy w serwisie."
+    answer: "Do firmy i codziennej pracy zwykle wystarczy 2.0 TDI lub 2.0 BiTDI, zwłaszcza jeśli priorytetem są niższe koszty utrzymania. V6 3.0 TDI lepiej pasuje do częstego holowania i cięższej eksploatacji – homologowany uciąg zależnie od wersji sięga około 3,0–3,5 t, 2.0 BiTDI 180 KM przyspiesza do 100 km/h w około 10–11 s, a mocne V6 z overboostem w około 7,9 s. W praktyce różnice w spalaniu zwykle mieszczą się w przedziale około 0,5–1,5 l/100 km."
   - question: "Ile pali Amarok TDI?"
-    answer: "2.0 TDI 170 KM: 8,0–9,0 l. V6 224 KM: 9,0–10,5 l. V6 258 KM: 9,5–11 l."
+    answer: "W praktyce 2.0 TDI i 2.0 BiTDI najczęściej mieszczą się w przedziale około 7,5–11,0 l/100 km zależnie od obciążenia, a V6 zwykle około 8,0–11,5 l/100 km. Z przyczepą spalanie rośnie wyraźnie i często przekracza 12 l/100 km."
   - question: "Jakie usterki ma Amarok TDI?"
-    answer: "2.0 TDI: łańcuch rozrządu (rozciąga się po 150 tys. km), pompa wody. V6: trwały, ale kosztowny w serwisie. Oba: korozja układu wydechowego."
+    answer: "W 2.0 TDI i 2.0 BiTDI częściej wracają problemy osprzętu i układów emisji – EGR, DPF, klapa gasząca, przewody dolotu, wtryskiwacze oraz chłodnica EGR. W 3.0 V6 TDI warto zwrócić uwagę na EGR/AdBlue oraz możliwe wycieki z chłodnicy oleju, termostatu i osprzętu."
 ---
 
 ## Dane techniczne TDI w Volkswagen Amarok
 
-Dwie generacje Amaroka – dwie filozofie silnikowe. Amarok I (2010–2022) zaczynał od 2.0 TDI i doczekał się V6. Amarok II (od 2022) na platformie [Ford Ranger](/modele/ford-ranger/) T6 oferuje te same silniki co Ranger, ale z oprogramowaniem VW.
+Dwie generacje Amaroka oznaczają dwie różne architektury auta. Amarok I rozwijano jako własną konstrukcję Volkswagena, natomiast Amarok II powstał we współpracy z Fordem, bazuje na architekturze Rangera nowej generacji T6.2 i jest produkowany w Silverton w RPA. To ważne, bo gama silnikowa i konfiguracje napędu nie są identyczne na wszystkich rynkach.
+
+Z punktu widzenia użytkownika BusManiak.pl liczą się nie tylko moce, ale też parametry pracy. W Amaroku II uciąg przyczepy z hamulcem sięga do 3500 kg, a ładowność wynosi około 1,0–1,2 t zależnie od wersji. To właśnie te wartości, obok prześwitu i możliwości brodzenia, w praktyce decydują o przydatności pickupa w firmie.
 
 | Silnik | Generacja | Moc | Moment | Spalanie (śr.) | Skrzynia | Napęd |
 |--------|-----------|-----|--------|----------------|----------|-------|
 | 2.0 TDI | I | 122 KM | 340 Nm | 7,8 l/100 km | 6-bieg. man. | 4x2 / 4MOTION |
-| 2.0 TDI BiTurbo | I | 163 KM | 400 Nm | 8,5 l/100 km | 8-bieg. aut. | 4MOTION |
+| 2.0 TDI | I | 140 KM | 340 Nm | 8,0 l/100 km | 6-bieg. man. | 4x2 / 4MOTION |
+| 2.0 BiTDI | I | 163 KM | 400 Nm | 8,5 l/100 km | 8-bieg. aut. | 4MOTION |
+| 2.0 BiTDI | I | 180 KM | 420 Nm | 8,7 l/100 km | 6-bieg. man. / 8-bieg. aut. | 4MOTION |
+| 3.0 V6 TDI | I | 163 KM | b.d. | b.d. | b.d. | 4MOTION |
+| 3.0 V6 TDI | I | 204 KM | b.d. | b.d. | b.d. | 4MOTION |
 | 3.0 V6 TDI | I | 224 KM | 550 Nm | 9,0 l/100 km | 8-bieg. aut. | 4MOTION |
-| 3.0 V6 TDI | I | 258 KM | 580 Nm | 9,5 l/100 km | 8-bieg. aut. | 4MOTION |
-| 2.0 TDI | II | 150 KM | 405 Nm | 8,0 l/100 km | 6-bieg. man. | 4MOTION |
-| 2.0 TDI BiTurbo | II | 170 KM | 450 Nm | 8,5 l/100 km | 10-bieg. aut. | 4MOTION |
-| 2.0 TDI BiTurbo | II | 204 KM | 500 Nm | 9,0 l/100 km | 10-bieg. aut. | 4MOTION |
-| 3.0 V6 TDI | II | 241 KM | 600 Nm | 9,5 l/100 km | 10-bieg. aut. | 4MOTION |
+| 3.0 V6 TDI | I | 245 KM | b.d. | b.d. | 8-bieg. aut. | 4MOTION |
+| 3.0 V6 TDI | I | 258 KM overboost | 580 Nm | 9,5 l/100 km | 8-bieg. aut. | 4MOTION |
+| 2.0 TDI | II | 170 KM | 405 Nm | 8,0 l/100 km | b.d. | 4MOTION |
+| 2.0 BiTDI | II | 205 KM | 500 Nm | 9,0 l/100 km | 10-bieg. aut. | 4MOTION |
+| 3.0 V6 TDI | II | 240 KM | 600 Nm | 9,5 l/100 km | 10-bieg. aut. | 4MOTION |
 
 ### 2.0 TDI BiTurbo (Amarok I)
 
-Czterocylindrowa jednostka z dwiema turbosprężarkami sekwencyjnymi. Mała turbo rozkręca się do 1800 obr., duża przejmuje powyżej 2500 obr. Efekt: szeroki pas użytecznego momentu obrotowego od 1500 do 3500 obr. Wariant 163 KM z automatem 8-biegowym ZF to najczęstszy wybór na rynku wtórnym – spokojnie holuje przyczepę do 3 t i utrzymuje 130 km/h z ładunkiem na pace.
+Czterocylindrowe 2.0 BiTDI było najmocniejszym dieslem Amaroka I przed debiutem V6. Układ doładowania pracuje sekwencyjnie, ale przejście między turbosprężarkami nie odbywa się przy jednej sztywnej wartości obrotów – zależy od obciążenia i zapotrzebowania na moment.
 
-Znana usterka: łańcuch rozrządu rozciąga się wcześniej niż w jednopłaszczyznowych TDI – BiTurbo pracuje ciężej, wyższe ciśnienie spalania przyspiesza zużycie. Wymiana co 150–200 tys. km (2500–4000 zł).
+Na rynku wtórnym najczęściej spotyka się odmiany 163 i 180 KM. W praktyce to sensowny wybór do pracy, zwłaszcza jeśli auto nie jeździ stale z ciężką przyczepą i nie ma zastępować dużego SUV-a na autostradzie.
 
 ### 3.0 V6 TDI (Amarok I)
 
-Sześciocylindrowy diesel to inna liga. 550–580 Nm momentu – Amarok rusza jak osobówka nawet z 2 tonami na haku. Sprint do setki w 7,5 s (258 KM) to wynik lepszy niż większość SUV-ów. Silnik niezwykle kulturalny – na autostradzie przy 130 km/h obroty ledwie przekraczają 2000.
+Diesel V6 wyniósł Amaroka I do zupełnie innej ligi. W wersjach 224 i 245 KM oferował wyraźnie lepszą elastyczność, a odmiany z chwilowym overboostem do 258 KM potrafiły rozpędzać się do 100 km/h w około 7,9 s.
 
-V6 jest trwalszy mechanicznie od 2.0 BiTurbo – brak podwójnego turbodoładowania eliminuje główne źródło usterek. Ale serwis jest droższy: rozrząd łańcuchowy z dwiema stronami (przód i tył bloku), olej syntetyczny 0W-30 co 15 tys. km, sprzęgło dwumasowe za 5000–7000 zł.
+To silnik dla kierowców, którzy realnie korzystają z uciągu i często jeżdżą pod obciążeniem. Trzeba jednak pamiętać, że rozrząd ma tu układ łańcuchowy umieszczony od strony skrzyni biegów, więc ewentualne naprawy są bardziej złożone i droższe niż w 2.0 TDI.
 
 ### 2.0 TDI (Amarok II, od 2022)
 
-W drugiej generacji silniki 2.0 TDI to jednostki Forda EcoBlue (nie VW). Oferowane w trzech wariantach: 150, 170 i 204 KM. Skrzynia 10-biegowa automatyczna (lub 6-biegowa manualna w 150 KM). Napęd 4MOTION z elektronicznym rozdziałem momentu.
+W Europie Amarok II występuje zwykle jako 2.0 TDI 170 KM, 2.0 BiTDI 205 KM oraz 3.0 V6 TDI 240 KM. Na innych rynkach gama może wyglądać inaczej i obejmować również inne konfiguracje, w tym benzynowe 2.3 EcoBoost.
 
-Kluczowa różnica wobec Amaroka I: pasek rozrządu w kąpieli olejowej (jak w Rangerze) zamiast łańcucha. Znany problem z łuszczeniem się paska – sprawdź TSB u dealera.
+W zależności od wersji Amarok II korzysta z dołączanego 4MOTION z reduktorem albo ze stałego 4MOTION. To ważne rozróżnienie, bo inaczej zachowuje się auto robocze z klasycznym układem part-time, a inaczej bogatsza wersja nastawiona również na codzienną jazdę po asfalcie.
 
 {{% expert name="Kowalczyk" %}}
-Amarok I z V6 3.0 TDI 224 KM i automatem ZF to jeden z najlepszych pickupów, jakie znam. Silnik praktycznie bezusterkowy do 300 tys. km, a moment 550 Nm daje spokój ducha przy każdym holowaniu. Ale kupujesz za to prestiż – V6 jest droższy w serwisie o 40% od 2.0 BiTurbo. Jeśli nie holokujesz ciężko i nie jeździsz po terenie – 2.0 BiTurbo 163 KM wystarczy i oszczędzi 3000–5000 zł rocznie na serwisie.
+Amarok I z 3.0 V6 TDI to jeden z najbardziej udanych pickupów klasy średniej do cięższej pracy i holowania. Jeśli jednak auto ma głównie wozić ekipę, narzędzia i okazjonalnie ciągnąć przyczepę, rozsądniej wypada 2.0 BiTDI – zwłaszcza 180 KM. Różnica osiągów względem V6 jest odczuwalna, ale koszty wejścia i serwisu pozostają niższe.
 {{% /expert %}}
 
 ## Spalanie – realne wartości
 
-Katalogowe zużycie paliwa i rzeczywiste spalanie Volkswagen Amarok to dwie różne wartości – szczególnie przy pełnym załadunku różnice sięgają nawet 2–3 l/100 km.
+Katalog i codzienna eksploatacja to zwykle dwie różne historie. W pickupie dużo zależy od opon, zabudowy paki, masy przewożonego ładunku i tego, czy auto regularnie pracuje z przyczepą.
 
 | Silnik | Trasa pusto | Trasa z ładunkiem | Miasto | Z przyczepą 2 t |
-|--------|-----------|------------------|--------|----------------|
+|--------|-------------|------------------|--------|----------------|
 | 2.0 TDI 163 KM | 7,5 l | 9,5 l | 10,5 l | 13–15 l |
+| 2.0 BiTDI 180 KM | 7,8 l | 9,8 l | 10,8 l | 13–15 l |
 | 3.0 V6 224 KM | 8,0 l | 10,0 l | 11,0 l | 12–14 l |
-| 3.0 V6 258 KM | 8,5 l | 10,5 l | 11,5 l | 13–15 l |
-| 2.0 TDI 204 KM (gen II) | 8,0 l | 10,0 l | 11,0 l | 13–15 l |
+| 3.0 V6 258 KM overboost | 8,5 l | 10,5 l | 11,5 l | 13–15 l |
+| 2.0 BiTDI 205 KM (gen II) | 8,0 l | 10,0 l | 11,0 l | 13–15 l |
 
-V6 pod obciążeniem pali podobnie do 2.0 BiTurbo – większy silnik pracuje luźniej, mniejszy musi się bardziej starać. Różnica widoczna dopiero pusto na autostradzie.
+V6 pod obciążeniem często pali tylko nieznacznie więcej niż 2.0 BiTDI, bo pracuje z większym zapasem momentu. W praktyce różnica zwykle wynosi około 0,5–1,5 l/100 km, a największa przewaga czterocylindrowego diesla pojawia się przy spokojnej jeździe bez ładunku.
 
 ## Typowe usterki TDI w Amaroku
 
 ### 2.0 TDI BiTurbo (Amarok I)
 
-- **Łańcuch rozrządu** – rozciąga się po 150–200 tys. km; wymiana 2500–4000 zł. Objaw: terkotanie
-- **Pompa wody** – awaria prowadzi do przegrzania; wymiana profilaktyczna co 120 tys. km (800–1200 zł)
-- **BiTurbo** – awaria małej turbosprężarki po 180 tys. km; regeneracja obu 3500–6000 zł
-- **Korozja wydechowa** – powierzchowna rdza kolektora i DPF, szczególnie w egzemplarzach z regionów solonych
+- **Rozrząd na pasku** – wymianę warto wiązać z harmonogramem dla konkretnego silnika i rocznika; przy tej operacji zwykle robi się też pompę wody
+- **EGR i chłodnica EGR** – typowe źródła problemów eksploatacyjnych, szczególnie w autach jeżdżących głównie na krótkich odcinkach
+- **DPF** – zapychanie przy niedogrzewaniu auta i miejskim trybie pracy
+- **Klapa gasząca i przewody dolotu** – drobniejszy osprzęt, ale potrafi powodować nierówną pracę i błędy
+- **Wtryskiwacze** – warto kontrolować kulturę pracy, rozruch i korekty
+- **Turbodoładowanie** – układ jest bardziej złożony niż w zwykłym 2.0 TDI, więc zaniedbania serwisowe szybciej wychodzą przy większych przebiegach
 
 ### 3.0 V6 TDI
 
-- **Rzadko się psuje** – mechanicznie niezwykle trwały do 300 tys. km
-- **Łańcuch rozrządu** – wymiana co 250–300 tys. km; koszt wyższy: 5000–8000 zł (dwa łańcuchy)
-- **Koło dwumasowe** – wymiana po 200–250 tys. km; z sprzęgłem 5000–7000 zł
-- **Automat ZF 8HP** – wymiana oleju co 60 tys. km obowiązkowa; zaniedbanie = naprawa 6000–10 000 zł
-
-{{% info title="Amarok II – pasek zamiast łańcucha" icon="engineering" %}}
-Amarok II z silnikiem 2.0 TDI Forda ma pasek rozrządu w kąpieli olejowej zamiast łańcucha. To ta sama jednostka co w [Fordzie Rangerze](/modele/ford-ranger/) T6.2 z analogicznym problemem łuszczenia. Producent wydał kilka TSB – sprawdź u dealera, czy Twój egzemplarz ma zaktualizowane oprogramowanie.
-{{% /info %}}
+- **EGR i AdBlue** – elementy układu emisji pozostają najczęstszym punktem uwagi w codziennym serwisie
+- **Wycieki** – warto sprawdzać okolice chłodnicy oleju, termostatu i osprzętu
+- **Rozrząd łańcuchowy** – nie ma tu okresowej wymiany „co określony przebieg”; to kosztowna naprawa wykonywana przy objawach zużycia
+- **Koło dwumasowe i osprzęt przeniesienia napędu** – przy intensywnym holowaniu zużycie może pojawić się szybciej
+- **Automatyczna skrzynia Aisin 8AT** – regularna obsługa olejowa ma duże znaczenie dla trwałości
 
 ## Koszty serwisu TDI
 
-Utrzymanie Volkswagen Amarok generuje koszty, które warto znać przed zakupem – różnice między poszczególnymi operacjami serwisowymi bywają znaczące.
+Utrzymanie Volkswagen Amarok TDI jest wyraźnie droższe niż typowego SUV-a z dieslem, bo dochodzi masa własna, roboczy charakter auta i obsługa napędu 4x4. Największe różnice między 2.0 a V6 widać przy większych naprawach oraz w kosztach osprzętu.
 
-| Czynność | 2.0 TDI | 3.0 V6 TDI |
-|----------|---------|-----------|
+| Czynność | 2.0 TDI / BiTDI | 3.0 V6 TDI |
+|----------|------------------|-----------|
 | Wymiana oleju + filtr | 400–600 zł | 600–900 zł |
 | Filtr paliwa | 200–350 zł | 250–400 zł |
-| Rozrząd (łańcuch) | 2500–4000 zł | 5000–8000 zł |
+| Rozrząd (pasek / obsługa wg harmonogramu) | 2500–4000 zł | b.d. |
+| Naprawa rozrządu łańcuchowego przy objawach zużycia | b.d. | 5000–8000 zł |
 | Sprzęgło + DMF | 3000–5000 zł | 5000–7000 zł |
-| Olej w automacie ZF | 800–1200 zł | 800–1200 zł |
+| Olej w automacie Aisin 8AT | 800–1200 zł | 800–1200 zł |
+| Olej w automacie Ford 10AT | 800–1200 zł | 800–1200 zł |
 | Klocki ham. (oś) | 400–600 zł | 400–600 zł |
+| Przednie tarcze i klocki | 800–1600 zł | 800–1600 zł |
+| Komplet opon A/T 255/65 R17 lub 255/60 R18 | 2500–4500 zł | 2500–4500 zł |
 
-V6 kosztuje w serwisie 30–40% więcej niż 2.0 – głównie przez droższy rozrząd i koło dwumasowe. Na rynku wtórnym V6 trzyma cenę lepiej, więc wyższe koszty serwisu częściowo rekompensuje niższa deprecjacja.
+W pickupie trzeba doliczyć także serwis napędu 4x4. Oleje w moście i reduktorze zwykle wymienia się co 60–120 tys. km, zależnie od sposobu użytkowania i obciążenia.
 
 Pełne dane o [Volkswagenie Amaroku](/modele/volkswagen-amarok/) – wymiary, wersje wyposażenia i porównanie z konkurencją.
 
-*Źródła: Wikipedia – 4MOTION, volkswagen-samochody-dostawcze.pl, Auto-Data.net, fora użytkowników Amarok.*
+*Źródła: cenniki i prospekty Volkswagen Samochody Dostawcze, dane homologacyjne WLTP/NEDC, materiały prasowe VW i Forda z lat 2010–2024.*

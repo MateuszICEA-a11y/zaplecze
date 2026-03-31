@@ -9,74 +9,119 @@ main_keyword: "Opel Vivaro brygadówka"
 image: "/images/opel-vivaro-brygadowka-hero.jpg"
 image_alt: "Opel Vivaro brygadówka – kabina dwurzędowa z przestrzenią ładunkową"
 parent: "opel-vivaro"
-lead: "Vivaro brygadówka to układ, w którym auto wiezie zarówno ludzi (5–6 osób), jak i sprzęt. Ładowność 700–1100 kg w zależności od DMC."
+lead: "Opel Vivaro brygadówka to układ, w którym auto przewozi jednocześnie ludzi i sprzęt. W praktyce trzeba jednak zawsze rozróżnić generację modelu, liczbę miejsc, homologację i konkretną wersję DMC."
 faq:
   - question: "Ile osób mieści brygadówka Opel Vivaro?"
-    answer: "Vivaro w wersji brygadówka (Combi z przestrzenią ładunkową) zabiera 5–6 osób i zachowuje przestrzeń ładunkową z tyłu (ok. 2,5–3,5 m³)."
+    answer: "Opel Vivaro brygadówka zwykle przewozi 5–6 osób. W praktyce spotyka się układy 2+3 lub 3+3, zależnie od wersji przednich siedzeń i homologacji."
   - question: "Jaka jest ładowność Vivaro brygadówki?"
-    answer: "Ładowność wersji z podwójną kabiną to ok. 700–900 kg (DMC 2800 kg) lub 900–1100 kg (DMC 3100 kg)."
+    answer: "Nie ma jednej uniwersalnej wartości dla każdej generacji i każdej wersji. Ładowność zależy m.in. od długości nadwozia, silnika, skrzyni biegów, liczby miejsc, wyposażenia, homologacji oraz dopuszczalnej masy całkowitej."
   - question: "Czy Vivaro brygadówka to fabryczna wersja?"
-    answer: "Vivaro oferowany jest fabrycznie jako Combi (6 miejsc), ale typowa brygadówka z otwartą skrzynią to często zabudowa zewnętrzna na podwoziu."
+    answer: "Tak, ale trzeba odróżnić fabryczne wersje załogowe/doublecab/combi od zwykłego furgonu. Indywidualne zabudowy wykonywane przez firmy zewnętrzne również się zdarzają, ale nie należy ich mylić ze standardową wersją katalogową."
 ---
 ## Co to jest brygadówka?
 
+Brygadówka w klasie średniego vana to konfiguracja łącząca drugi rząd siedzeń z oddzieloną częścią ładunkową. W przypadku Vivaro kluczowe jest rozróżnienie generacji oraz samej odmiany nadwoziowej, bo nie każda wersja modelu oznacza to samo.
+
 ### Definicja i warianty Vivaro
 
-W branży transportowej terminem „brygadówka" określa się samochód dostawczy z podwójną kabiną lub skonfigurowany tak, by zabrać 5–6 osób i zachować użyteczną przestrzeń ładunkową. [Opel Vivaro](/modele/opel-vivaro/) w tej roli pojawia się w kilku formach:
+W branży transportowej terminem „brygadówka” określa się samochód dostawczy zdolny przewieźć 5–6 osób i zachować użyteczną przestrzeń ładunkową za drugim rzędem. [Opel Vivaro](/modele/opel-vivaro/) w tej roli występuje przede wszystkim jako odrębna wersja załogowa, doublecab lub combi – a nie jako zwykły furgon z opcjonalnie dokładanymi siedzeniami.
 
-- **Vivaro Combi 6-miejscowy** – dwa rzędy siedzeń, za nimi przestrzeń ładunkowa
-- **Vivaro furgon z przegrodą** – za pierwszym rzędem, tylne siedzenia montowane opcjonalnie
-- **Vivaro na podwoziu z zabudową zewnętrzną** – kareta lub skrzynia
+Warto też rozdzielić generacje modelu. Opel Vivaro A był produkowany w latach 2001–2014, Vivaro B w latach 2014–2019, a Vivaro C jest oferowany od 2019 roku.
+
+Do brygadówki zalicza się przede wszystkim:
+- **Vivaro Combi / załogowy / doublecab** – dwa rzędy siedzeń i oddzielona przestrzeń ładunkowa
+- **Indywidualne zabudowy zewnętrzne** – wykonywane przez firmy zabudowujące, jeśli auto zostało przystosowane do przewozu ludzi i sprzętu jednocześnie
+
+W praktyce nie można wrzucać do jednego worka fabrycznej wersji załogowej i zewnętrznej konwersji. To ważne również ze względu na homologację – **N1** jako samochód ciężarowy do 3,5 t oraz **M1** jako samochód osobowy do 8 miejsc poza kierowcą – bo od tego zależą kwestie firmowe, podatkowe, badania techniczne i wpis liczby miejsc w dowodzie rejestracyjnym.
 
 ## Wymiary Opel Vivaro w konfiguracji brygadówki
 
-Vivaro Combi 6-osobowy (2 rzędy siedzeń):
+Wymiary brygadówki trzeba przypisać do konkretnej generacji. Dla Vivaro C, czyli modelu od 2019 roku, długości nadwozia to XS 4606 mm, M 4959 mm i XL 5309 mm, przy szerokości bez lusterek 1920 mm.
 
-- **Przestrzeń za 2. rzędem** – ok. 1400–1700 mm długości (zależnie od L1/L2)
-- **Szerokość** – jak w standardowym furgonie
-- **Objętość ładunkowa** – ok. 2,5–3,5 m³
+W praktyce konfiguracja brygadowa dotyczy przede wszystkim długości **M** i **XL**. Dla tych wersji warto przyjąć następujące dane bazowe:
+- **Długość całkowita M** – 4959 mm
+- **Długość całkowita XL** – 5309 mm
+- **Szerokość bez lusterek** – 1920 mm
+- **Wysokość** – ok. 1890–1935 mm zależnie od wersji
+- **Rozstaw osi M** – 3275 mm
+- **Rozstaw osi XL** – 3275 mm, z dłuższym zwisem tylnym
+- **Szerokość między nadkolami** – ok. 1258 mm
+
+W wersjach załogowych przestrzeń ładunkowa za drugim rzędem jest wyraźnie mniejsza niż w klasycznym furgonie. Dla vanów tej klasy to najczęściej ok. **3,2–4,0 m3**, a długość podłogi za drugim rzędem wynosi zwykle ok. **1,4–2,0 m** zależnie od długości nadwozia.
+
+Istotne są też same otwory załadunkowe. Dla praktyki warsztatowej i remontowej znaczenie mają orientacyjnie:
+- **szerokość drzwi bocznych** – ok. 935 mm
+- **wysokość otworu bocznego** – ok. 1241 mm
+- **wysokość progu załadunku** – ok. 600–650 mm zależnie od wersji
 
 {{% expert name="Kowalczyk" %}}
-Prawdziwa brygadówka to często nie fabryczna konfiguracja, ale zabudowa zewnętrzna na podwoziu z wywrotką lub otwartą skrzynią. Vivaro na podwoziu z zabudową aluminiową skrzynią i separowaną kabiną 5-osobową – to klasyk dla ekip instalacyjnych i remontowych.
+W przypadku Vivaro warto patrzeć nie tylko na długość auta, ale też na realną długość podłogi za drugim rzędem i wysokość progu. Indywidualne zabudowy wykonywane przez firmy zewnętrzne są możliwe, ale nie należy traktować ich jako typowej, fabrycznej konfiguracji modelu.
 {{% /expert %}}
 
 ## Ładowność i DMC
 
-Ładowność i dopuszczalna masa całkowita to kluczowe parametry przy wyborze busa do pracy – ich przekroczenie grozi mandatem i utratą gwarancji.
+Przy brygadówce sama długość nadwozia nie mówi jeszcze wszystkiego. DMC i ładowność zależą od konkretnej wersji homologacyjnej, silnika, skrzyni biegów, liczby miejsc, wyposażenia oraz masy samej zabudowy.
 
-| Wersja | Długość całkowita | Liczba miejsc | DMC | Ładowność |
-|--------|-------------------|---------------|-----|-----------|
-| Combi L1 | 4960 mm | 6 | 2800 kg | 700–900 kg |
-| Combi L2 | 5310 mm | 6 | 3100 kg | 900–1100 kg |
+Dla praktyki flotowej trzeba pamiętać, że w tej klasie aut DMC wynosi zwykle do **3100 kg lub 3500 kg** zależnie od wersji. Dodatkowo realna ładowność może różnić się między skrajnymi odmianami tej samej rodziny modelowej nawet o **ponad 200–300 kg**.
+
+| Parametr | Informacja praktyczna |
+|--------|-------------------|
+| DMC | zwykle do 3100 kg lub 3500 kg zależnie od wersji |
+| Ładowność | zależna od homologacji, długości, silnika, skrzyni, liczby miejsc i wyposażenia |
+| Przyczepa hamowana | często do 2000–2500 kg zależnie od silnika i skrzyni |
+| Przyczepa bez hamulca | 750 kg |
+| Nacisk pionowy haka | zwykle 70–100 kg zależnie od homologacji |
 
 ### Vivaro brygadówka L1 i L2
 
-- **DMC 2800 kg** – ładowność ok. 700–900 kg
-- **DMC 3100 kg** – ładowność ok. 900–1100 kg
+Nazewnictwo długości trzeba powiązać z generacją. W starszych Vivaro A i B stosowano oznaczenia w rodzaju **L1/L2**, natomiast w Vivaro C mamy **XS/M/XL**.
 
-Masa własna Combi 6-osobowego jest wyższa niż furgonu o ok. 80–120 kg – dodatkowe siedzenia i ich mocowania robią swoje.
+Nie należy utożsamiać długości nadwozia z jednym konkretnym DMC. To, czy auto ma DMC 3100 czy 3500 kg, wynika z wersji homologacyjnej, a nie wyłącznie z tego, czy nadwozie jest krótsze czy dłuższe.
+
+W praktyce ładowność brygadówki obniża drugi rząd siedzeń, dodatkowe mocowania i wyższa masa własna. Trzeba też uwzględnić wpływ:
+- długości nadwozia
+- wersji silnikowej
+- skrzyni manualnej lub automatycznej
+- wyposażenia
+- liczby miejsc
+- homologacji N1 lub M1
+- masy dodatkowej zabudowy
+
+Bezpieczeństwo jest tu równie ważne jak liczby z katalogu. Brygadówka powinna mieć przegrodę lub ścianę działową za drugim rzędem, a ładunek musi być zabezpieczony w punktach mocowania – niezabezpieczony sprzęt stanowi zagrożenie dla pasażerów.
 
 ![Opel Vivaro brygadówka – kabina dwurzędowa z przestrzenią ładunkową](/images/opel-vivaro-brygadowka-hero.jpg)
 
 ## Silniki do brygadówki Vivaro
 
-Do intensywnej eksploatacji z pełnym załadunkiem:
+Silniki trzeba przypisać do odpowiedniej generacji. Poniższa gama dotyczy **Vivaro C od 2019 roku**, a nie wcześniejszych Vivaro A i B.
 
-- **[1.5 D 120 KM](/modele/opel-vivaro/1-5/)** – dla ekip z lżejszym sprzętem
-- **[2.0 D 145 KM](/modele/opel-vivaro/2-0/)** – do większych ładunków i długich tras
-- **2.0 D 177 KM z automatem** – komfort przy codziennych przejazdach wieloosobową załogą
+Do pracy pod obciążeniem w Vivaro C spotykamy m.in.:
+- **[1.5 D 120 KM](/modele/opel-vivaro/1-5/)** – ok. 300 Nm
+- **[2.0 D 145 KM](/modele/opel-vivaro/2-0/)** – ok. 340 Nm
+- **2.0 D 177 KM** – ok. 400 Nm
+
+W praktyce moment obrotowy ma większe znaczenie niż sama moc maksymalna, zwłaszcza przy pełnej obsadzie i narzędziach na pace. Warto też sprawdzić, które wersje były łączone z automatem **EAT8**, bo ma to wpływ na masę własną i finalną ładowność.
+
+Jeśli rozważasz starsze generacje, pamiętaj, że podane wyżej jednostki nie odnoszą się do Vivaro A ani Vivaro B. To ważne przy zakupie auta używanego, bo w ogłoszeniach bardzo często miesza się nazewnictwo wszystkich trzech generacji.
 
 ## Zastosowania
 
-- **Ekipy remontowo-budowlane** – transport ludzi i materiałów jednym pojazdem
-- **Serwisy techniczne** – elektryczne, hydrauliczne, HVAC
-- **Służby komunalne i awaryjne** – szybki dojazd z ekipą
-- **Firmy instalacyjne** – konieczność transportu sprzętu i ekipy razem
+Opel Vivaro brygadówka ma sens tam, gdzie jedna załoga musi jechać razem z wyposażeniem. Taki układ sprawdza się lepiej niż osobówka plus przyczepa, ale zawsze oznacza kompromis względem klasycznego furgonu.
+
+Typowe zastosowania:
+- **ekipy remontowo-budowlane** – transport ludzi i materiałów jednym autem
+- **serwisy techniczne** – elektryczne, hydrauliczne, HVAC
+- **służby komunalne i awaryjne** – szybki dojazd z załogą i sprzętem
+- **firmy instalacyjne** – przewóz narzędzi i ekipy w jednej kabinie
+
+Trzeba jednak pamiętać o ograniczeniach. Drugi rząd siedzeń skraca długość użytkową przestrzeni ładunkowej zwykle o kilkadziesiąt centymetrów do ponad 1 m i obniża ładowność przez wzrost masy własnej, więc brygadówka mieści mniej europalet i długich elementów niż zwykły van tej samej długości.
+
+Znaczenie ma również układ siedzeń. W praktyce spotyka się konfiguracje **2+3** lub **3+3**, przy czym obecność środkowego miejsca z przodu zależy od zastosowania przedniej kanapy i konkretnej specyfikacji auta; przy zakupie warto też sprawdzić pełnowymiarowość drugiego rzędu, typ pasów oraz obecność mocowań ISOFIX.
 
 {{% info title="Zabudowa zewnętrzna" icon="engineering" %}}
-Vivaro jako baza pod zabudowę wymaga sprawdzenia wersji – furgon lub podwozie z kabiną. Podwozie z kabiną to opcja fabryczna, choć rzadko dostępna z magazynu dealera.
+Jeśli rozważasz zabudowę wykonywaną poza fabryką, trzeba sprawdzić bazową wersję auta, homologację oraz dopuszczalne masy po zabudowie. W przypadku Vivaro nie należy zakładać, że klasyczne podwozie z kabiną jest standardową, typową wersją katalogową modelu.
 {{% /info %}}
 
-Bliźniak [Renault Trafic](/modele/renault-trafic/) w wersji wieloosobowej oferuje identyczną przestrzeń i ładowność – decyzja sprowadza się do ceny u dealera.
+Porównanie z konkurencją również zależy od generacji. Dla **Vivaro A i B** naturalnym punktem odniesienia są Renault Trafic oraz Nissan Primastar/NV300, natomiast dla **Vivaro C** właściwymi konkurentami i bliźniakami są Peugeot Expert, Citroën Jumpy/SpaceTourer cargo crew i Toyota ProAce.
 
-*Źródła: Wikipedia, Fiat Professional, auto-data.net*
+*Źródła: oficjalne materiały Opel/Vauxhall/Stellantis, katalogi homologacyjne i cenniki producenta*

@@ -1,7 +1,7 @@
 ---
 title: "Opel Movano 2.5 CDTi – dane techniczne, spalanie, opinie"
 date: 2026-03-26
-description: "Silnik 2.5 CDTi (G9U) w Oplu Movano A i B – dane techniczne, warianty 100–146 KM, realne spalanie, typowe usterki i koszty serwisu. Porównanie z 2.3 CDTi."
+description: "Silnik 2.5 CDTi (G9U) w Oplu Movano A – dane techniczne, warianty 100–145 KM, realne spalanie, typowe usterki i koszty serwisu. Porównanie z 2.3 CDTi."
 draft: false
 author: "marek-kowalczyk"
 h1: "Opel Movano 2.5 CDTi – dane techniczne silnika G9U"
@@ -11,121 +11,136 @@ volume: 0
 main_keyword: "opel movano 2.5 cdti"
 image: "/images/opel-movano-2-5-cdti-hero.jpg"
 image_alt: "Opel Movano furgon z silnikiem 2.5 CDTi"
-lead: "Silnik 2.5 CDTi (oznaczenie Renault G9U) to czterocylindrowy turbodiesel o pojemności 2463 cm³, stosowany w Oplu Movano A (2003–2010) i wczesnym Movano B (2010–2012). Warianty od 100 do 146 KM, rozrząd na pasku, wtrysk Common Rail Bosch. Konstrukcja Renault dzielona z Masterem i Nissan Interstar – ogromna dostępność części i wiedzy serwisowej."
+lead: "Silnik 2.5 CDTi (oznaczenie Renault G9U) to czterocylindrowy turbodiesel o pojemności 2463 cm³, stosowany w Oplu Movano A po liftingu, około 2003–2010. Warianty od 100 do 145 KM, rozrząd na pasku, wtrysk Common Rail Bosch. Konstrukcja Renault dzielona z Masterem i Nissanem Interstar – z bardzo dobrą dostępnością części i szerokim zapleczem serwisowym."
 faq:
   - question: "Ile pali Opel Movano 2.5 CDTi?"
-    answer: "W trasie pusto: 8–9,5 l/100 km. W mieście z ładunkiem: 12–14 l. Średnia mieszana: 10–12 l. Wersja 146 KM pali paradoksalnie niewiele więcej od 120 KM – ma lepsze przełożenia momentu."
+    answer: "W trasie pusto zwykle 8–9,5 l/100 km, w mieście z ładunkiem około 12–14 l/100 km, a średnio 10–12 l/100 km. Realne zużycie mocno zależy od wersji nadwozia, DMC, ładunku, prędkości i zabudowy."
   - question: "Czy 2.5 CDTi w Movano jest trwały?"
-    answer: "Tak, pod warunkiem terminowej wymiany rozrządu (co 120 tys. km) i regularnych wymian oleju (co 15–20 tys. km). Przebiegi 300–400 tys. km nie są rzadkością. Słabe punkty: uszczelka głowicy, turbosprężarka i wtryskiwacze."
+    answer: "Tak, pod warunkiem terminowej wymiany rozrządu, regularnych wymian oleju i pilnowania układu chłodzenia. Do typowych słabszych punktów należą uszczelka pod głowicą, turbosprężarka, wtryskiwacze i dwumasa."
   - question: "Czym różni się 2.5 CDTi od 2.3 CDTi?"
-    answer: "Silnik 2.5 CDTi (G9U) to konstrukcja Renault z lat 2003–2012. Następca 2.3 CDTi (M9T) ma mniejszą pojemność, wyższą moc, rozrząd łańcuchowy i spełnia normy Euro 5/6. Przesiadka na 2.3 nastąpiła w Movano B od 2012 roku."
+    answer: "2.5 CDTi (G9U) ma 2463 cm3, rozrząd paskowy, moce 100–145 KM i normy Euro 3/4. Nowszy 2.3 CDTi (M9T) ma 2298 cm3, rozrząd łańcuchowy, w Movano B występował w wersjach około 100–163 KM i spełniał normy Euro 5/6. 2.3 CDTi pojawił się w Movano B od 2010 roku."
   - question: "Ile kosztuje wymiana rozrządu w Movano 2.5 CDTi?"
-    answer: "Komplet części (pasek, rolki, pompa wody): 700–1200 zł. Robocizna: 800–1500 zł. Łącznie: 1500–2700 zł w zależności od warsztatu i regionu."
+    answer: "Komplet części z pompą wody zwykle kosztuje 700–1200 zł, a robocizna 800–1500 zł. Łącznie najczęściej trzeba liczyć 1500–2700 zł, zależnie od warsztatu i zakresu prac."
 ---
 
 ## Dane techniczne 2.5 CDTi w Opel Movano
 
-Silnik 2.5 CDTi nosi fabryczne oznaczenie Renault G9U – to czterocylindrowy turbodiesel o pojemności 2463 cm³, z blokiem żeliwnym i aluminiową głowicą 16-zaworową. Konstrukcja pochodzi z koncernu Renault i jest identyczna z jednostką 2.5 dCi stosowaną w [Renault Masterze](/modele/renault-master/) II oraz Nissanie Interstar. W [Oplu Movano](/modele/opel-movano/) montowano ją od liftingu modelu A w 2003 roku aż do początku produkcji Movano B (2010–2012), kiedy zastąpił ją nowszy 2.3 CDTi (M9T).
+Silnik 2.5 CDTi nosi oznaczenie G9U i był montowany w Oplu Movano A po liftingu, mniej więcej od 2003 do 2010 roku. Wraz z wejściem Movano B w 2010 roku jednostka 2.5 zniknęła z oferty, a jej miejsce zajął nowszy 2.3 CDTi.
+
+To czterocylindrowy turbodiesel o pojemności 2463 cm³, z układem Common Rail Bosch i rozrządem napędzanym paskiem. Standardowo łączono go z napędem na przód i 6-biegową manualną skrzynią PF6, a realne obroty przy 100 km/h oraz spalanie zależą także od przełożeń i rozmiaru kół.
 
 | Parametr | Wartość |
 |----------|---------|
-| Oznaczenie | G9U (warianty 632, 650, 720, 724, 750, 754) |
+| Oznaczenie | G9U |
 | Pojemność | 2463 cm³ |
 | Układ | R4, 16V, turbodiesel |
-| Średnica cylindra / skok tłoka | 89 mm / 99 mm |
-| Stopień sprężania | 17,1–17,8:1 |
+| Średnica cylindra / skok tłoka | 89,0 mm / 99,0 mm |
 | Wtrysk | Common Rail Bosch |
-| Turbosprężarka | Garrett GT1752V (zmiennogeometryczna) |
-| Rozrząd | Pasek zębaty (wymiana co 120 tys. km) |
-| Pojemność oleju | 8,2 l |
+| Turbosprężarka | turbosprężarka, w części wersji VGT/VNT |
+| Rozrząd | pasek zębaty |
+| Napęd | przedni |
+| Skrzynia biegów | manualna 6-biegowa PF6 |
+| Pojemność układu olejowego | ok. 7,4–7,8 l z filtrem – zależnie od wersji |
 | Norma emisji | Euro 3 / Euro 4 |
+
+Przy obsłudze rozrządu warto traktować usługę jako pełny pakiet: pasek, rolki, napinacz, pompa wody i pasek osprzętu. Interwał zwykle podaje się jako 120 tys. km lub 5 lat, ale w praktyce najlepiej potwierdzić go po VIN lub dokładnym kodzie silnika.
 
 ### Warianty mocy Movano 2.5 CDTi
 
-| Wariant | Moc | Moment obrotowy | Kod G9U | Roczniki | Norma |
-|---------|-----|-----------------|---------|----------|-------|
-| 2.5 CDTi | 100 KM (74 kW) | 260 Nm | G9U 750/754 | 2003–2006 | Euro 3 |
-| 2.5 CDTi | 115 KM (84 kW) | 290 Nm | G9U 720 | 2006–2010 | Euro 4 |
-| 2.5 CDTi | 120 KM (88 kW) | 300 Nm | G9U 650 | 2003–2010 | Euro 3/4 |
-| 2.5 CDTi | 146 KM (107 kW) | 320 Nm | G9U 632 | 2006–2010 | Euro 4 |
+W gamie Opel Movano 2.5 CDTi występowały cztery główne poziomy mocy. Różnice dotyczą nie tylko osiągów, ale też charakteru pracy pod obciążeniem i zgodności z normami emisji zależnie od rocznika.
 
-Wersja 100 KM to najtańsza konfiguracja – wystarczająca do jazdy pustym furgonetem po mieście, ale przy załadowanym Movano L3H2 brakuje dynamiki na autostradzie. Wersja 120 KM stanowi optymalny kompromis i jest najczęściej spotykana na rynku wtórnym. Topowa 146 KM z momentem 320 Nm radzi sobie nawet z masą całkowitą 3,5 tony.
+| Wariant | Moc | Moment obrotowy | Roczniki | Norma |
+|---------|-----|-----------------|----------|-------|
+| 2.5 CDTi | 100 KM (74 kW) | ok. 260 Nm | 2003–2010 | Euro 3 / Euro 4 zależnie od rocznika |
+| 2.5 CDTi | 115 KM (84 kW) | ok. 290 Nm | 2003–2010 | Euro 3 / Euro 4 zależnie od rocznika |
+| 2.5 CDTi | 120 KM (88 kW) | ok. 300 Nm | 2003–2010 | Euro 3 / Euro 4 zależnie od rocznika |
+| 2.5 CDTi | 145 KM (107 kW) | ok. 310–320 Nm | 2003–2010 | Euro 3 / Euro 4 zależnie od rocznika |
+
+Wersja 100 KM wystarcza do lżejszej pracy, ale pod pełnym obciążeniem ma wyraźnie ograniczoną dynamikę. Odmiany 115 i 120 KM są najbardziej uniwersalne, natomiast 145 KM najlepiej radzi sobie przy wyższej masie całkowitej i cięższych zabudowach.
+
+Na realne osiągi wpływa też sama specyfikacja auta. W zależności od wersji DMC wynosi zwykle 2,8 t, 3,3 t lub 3,5 t, ładowność najczęściej mieści się w przedziale około 1000–1600 kg, a długości L1/L2/L3 i wysokości H1/H2/H3 wyraźnie zmieniają masę własną oraz opory powietrza.
 
 ## Spalanie Movano 2.5 CDTi
 
-Realne spalanie zależy przede wszystkim od wariantu mocy, masy załadunku i wersji nadwoziowej. Movano z wysokim dachem (H2/H3) zużywa 10–15% więcej paliwa niż niskodachowe z powodu oporu aerodynamicznego. Poniższe wartości dotyczą wersji furgon L2H2, która stanowi większość egzemplarzy na rynku.
+W przypadku Opel Movano 2.5 CDTi spalanie zależy przede wszystkim od mocy, DMC, ładunku, długości i wysokości nadwozia oraz prędkości przelotowej. Różnice między furgonem H1, H2 i H3, brygadówką czy autem z zabudową kamperową są na tyle duże, że warto patrzeć na widełki, a nie jedną sztywną wartość.
+
+Typowe DMC dla tych aut to 2,8 t, 3,3 t lub 3,5 t, a ładowność zwykle wynosi około 1000–1600 kg. To właśnie masa i aerodynamika w dużej mierze decydują o tym, czy auto spali bliżej 8, czy raczej 12 l/100 km.
 
 | Wariant | Trasa pusto | Trasa z ładunkiem | Miasto | Średnia mieszana |
 |---------|-----------|------------------|--------|-----------------|
 | 100 KM | 9,0 l/100 km | 10,5 l/100 km | 13,0 l/100 km | 11,0 l/100 km |
 | 115 KM | 8,5 l/100 km | 10,0 l/100 km | 12,5 l/100 km | 10,5 l/100 km |
 | 120 KM | 8,0 l/100 km | 9,5 l/100 km | 12,0 l/100 km | 10,0 l/100 km |
-| 146 KM | 8,5 l/100 km | 10,0 l/100 km | 12,5 l/100 km | 10,5 l/100 km |
+| 145 KM | 8,5 l/100 km | 10,0 l/100 km | 12,5 l/100 km | 10,5 l/100 km |
 
-Użytkownicy forów raportują spalanie w trasie na poziomie 7,5–8,5 l/100 km przy spokojnej jeździe pustym autem. Wersja 146 KM pali niewiele więcej od 120 KM – mocniejszy silnik pracuje na niższych obrotach przy tej samej prędkości, co kompensuje wyższą moc. Klimatyzacja dodaje 0,5–1 l/100 km w ruchu miejskim.
+Przy spokojnej jeździe w trasie pustym autem realne zużycie zwykle mieści się w okolicach 8–9,5 l/100 km. W mieście i pod obciążeniem typowy wynik rośnie do około 12–14 l/100 km, a średnia mieszana najczęściej zamyka się w przedziale 10–12 l/100 km.
 
-Na tle konkurencji spalanie jest porównywalne z [Mercedesem Sprinterem](/modele/mercedes-sprinter/) 2.2 CDI i [Iveco Daily](/modele/iveco-daily/) 2.3 HPI tej samej generacji. Wyraźnie niższe spalanie oferuje dopiero następca – 2.3 CDTi w Movano B, który zużywa o 1–1,5 l mniej na 100 km.
+Prędkość ma bardzo duże znaczenie – przy 90 km/h, 110 km/h i 130 km/h zużycie paliwa będzie wyraźnie różne. Zabudowa kamperowa potrafi podnieść spalanie o ponad 1 l/100 km względem pustego furgonu opartego na tej samej bazie, a wpływ klimatyzacji jest zmienny i zależy od warunków pracy układu.
 
 {{% expert name="Kowalczyk" %}}
-Movano z 2.5 CDTi 120 KM to najrozsądniejszy wybór na rynku wtórnym. Wersja 100 KM jest za słaba do ciężkiej pracy – na autostradzie z ładunkiem jedzie 80 km/h. 146 KM to ideał do ciężkich zabudów (kontener, food truck), ale egzemplarzy jest mało i są droższe. Przy zakupie sprawdź przede wszystkim rozrząd, turbo i historię oleju. Movano z regularnym serwisem ASO chodzi 350–400 tys. km. Z garażowym olejem co 30 tys. – ledwo 200 tys.
+Najrozsądniej celować w wersje 115 albo 120 KM – oferują dobry kompromis między osiągami, spalaniem i kosztami zakupu. Odmiana 100 KM nadaje się do lżejszej pracy, ale przy dużym ładunku jej dynamika jest wyraźnie ograniczona. Wariant 145 KM najlepiej sprawdza się w cięższych zabudowach, choć na rynku jest go mniej.
 {{% /expert %}}
 
 ## Typowe usterki 2.5 CDTi w Movano
 
-Silnik G9U jest trwały, ale ma kilka znanych słabych punktów. Większość awarii wynika z zaniedbań serwisowych lub intensywnej eksploatacji powyżej 200 tys. km. Lista najczęstszych problemów:
+Silnik G9U uchodzi za trwały, ale jest wrażliwy na zaniedbania serwisowe i przegrzewanie. Najwięcej problemów dotyczy układu chłodzenia, osprzętu doładowania, wtrysku oraz elementów przeniesienia napędu.
 
-- **Uszczelka głowicy** – jeden z najpoważniejszych problemów G9U. Przegrzewanie silnika prowadzi do uszkodzenia uszczelki, a w skrajnych przypadkach do pęknięcia głowicy. Naprawa: 2000–4000 zł. Objaw: mleczny olej, utrata płynu chłodniczego, biały dym z wydechu
-- **Turbosprężarka Garrett** – zużycie łożysk i mechanizmu zmiennej geometrii po 150–200 tys. km. Regeneracja: 1500–2500 zł, nowa: 3000–5000 zł. Objaw: gwizd, utrata mocy, nadmierne dymienie
-- **Wtryskiwacze Common Rail** – po 200–250 tys. km tracą szczelność. Regeneracja: 500–800 zł/szt., komplet: 2000–3200 zł. Objaw: nierówna praca silnika, trudny rozruch na zimno
-- **Pompa paliwa wysokiego ciśnienia** – awaria po 180–250 tys. km. Regeneracja: 1500–2500 zł. Opiłki z pompy potrafią zniszczyć wtryskiwacze – wymaga przepłukania całego układu
-- **Napinacz rozrządu** – zdarza się, że napinacz ulega awarii przed planową wymianą paska. Koszt naprawy całego rozrządu: 1500–2700 zł. Opóźnienie wymiany to ryzyko zerwania paska i zniszczenia silnika
-- **Dwumasowe koło zamachowe** – drgania i stuki przy gaszeniu po 150–200 tys. km. Wymiana z kompletnym sprzęgłem: 2500–4000 zł
-- **Sterownik silnika (ECU)** – awarie zgłaszane po 300+ tys. km. Naprawa elektroniczna: 800–1500 zł
+Najpoważniejszym ryzykiem pozostaje uszczelka pod głowicą i skutki jazdy z przegrzewającym się silnikiem. W praktyce warto patrzeć nie tylko na samą temperaturę, ale też na stan całego układu chłodzenia – termostatu, chłodnicy, wentylatora z modułem sterowania, korka zbiorniczka wyrównawczego, przewodów oraz jakości i poziomu płynu.
 
-Większość problemów dotyczy egzemplarzy z przebiegiem powyżej 200 tys. km i historią taniego serwisowania. Przy regularnej wymianie oleju co 15–20 tys. km (olej 5W-30 lub 5W-40) i terminowej wymianie rozrządu silnik G9U jest jedną z trwalszych jednostek w dostawczakach tej klasy.
+- **Uszczelka pod głowicą / przegrzewanie** – typowy słaby punkt przy zaniedbanym układzie chłodzenia. Objawy alarmowe to twarde przewody po zimnym starcie, wyrzucanie płynu, wzrost temperatury pod obciążeniem oraz ogrzewanie kabiny, które raz grzeje, a raz nie
+- **Turbosprężarka** – zużycie układu doładowania objawia się spadkiem mocy, gwizdem i dymieniem
+- **Wtryskiwacze Common Rail** – problemy dają nierówną pracę, trudny rozruch i pogorszenie kultury pracy
+- **Pompa paliwa wysokiego ciśnienia** – szczególnie groźne są opiłki w układzie paliwowym, bo mogą uszkodzić także wtryskiwacze
+- **Rozrząd i jego osprzęt** – opóźnianie wymiany paska, rolek, napinacza i pompy wody zwiększa ryzyko poważnej awarii
+- **Dwumasowe koło zamachowe** – zużycie objawia się drganiami i stukami przy gaszeniu oraz ruszaniu
+
+Kupując używane Movano 2.5 CDTi, warto zrobić prostą checklistę warsztatową. Najważniejsze punkty to test na obecność CO2 w płynie chłodniczym, kontrola ciśnienia w układzie chłodzenia po zimnym starcie, odczyt korekt wtrysków, sprawdzenie ciśnienia doładowania, kontrola opiłków w filtrze paliwa, potwierdzenie daty i przebiegu wymiany rozrządu oraz odsłuch dwumasy przy gaszeniu i ruszaniu.
+
+Regularny serwis mocno ogranicza ryzyko kosztownych napraw. Kluczowe są terminowe wymiany oleju, pilnowanie rozrządu i szybka reakcja na pierwsze objawy przegrzewania.
 
 {{% info title="G9U a przegrzewanie – jak zapobiec" icon="engineering" %}}
-Silnik 2.5 CDTi jest wrażliwy na przegrzewanie – to główna przyczyna awarii uszczelki głowicy. Kontroluj poziom płynu co miesiąc, wymieniaj termostat profilaktycznie co 100 tys. km (150–300 zł) i sprawdzaj wentylator chłodnicy. Przy pierwszych objawach (temperatura powyżej normy, bąbelki w płynie) – natychmiast do warsztatu. Jazda z uszkodzoną uszczelką głowicy prowadzi do pęknięcia bloku – koszt naprawy wtedy przekracza wartość auta.
+W 2.5 CDTi trzeba regularnie kontrolować poziom i stan płynu chłodniczego oraz obserwować zachowanie układu pod obciążeniem. Jeśli przewody robią się twarde już po zimnym starcie, auto wyrzuca płyn albo temperatura rośnie podczas jazdy, problem wymaga natychmiastowej diagnostyki. Dalsza eksploatacja może skończyć się poważnym uszkodzeniem głowicy lub całego silnika.
 {{% /info %}}
 
 ## Opinie i ocena silnika 2.5 CDTi
 
-Silnik G9U w [Oplu Movano](/modele/opel-movano/) cieszy się opinią solidnej, choć wymagającej jednostki. Użytkownicy na forach podkreślają, że przy terminowym serwisie przebiegi 300–400 tys. km nie stanowią problemu. Kluczowe zalety i wady z perspektywy eksploatacyjnej:
+Opel Movano 2.5 CDTi ma opinię solidnej jednostki roboczej, ale takiej, która wymaga dyscypliny serwisowej. Najważniejsze atuty to prosta, dobrze znana konstrukcja, szeroka dostępność części i sensowna elastyczność w wersjach 115, 120 i 145 KM.
 
 **Zalety:**
 
-- **Trwałość mechaniczna** – żeliwny blok i aluminiowa głowica wytrzymują duże obciążenia; przebiegi powyżej 300 tys. km przy regularnym serwisie
-- **Dostępność części** – identyczny silnik jak w Renault Masterze i Nissanie Interstar, ogromna baza zamienników i wiedzy serwisowej
-- **Elastyczność** – szczególnie wersje 120 i 146 KM oferują wysoki moment obrotowy dostępny już od niskich obrotów
-- **Niskie koszty eksploatacji** – tanie zamienniki aftermarket (Gates, SNR, Valeo), każdy warsztat zna ten silnik
+- **Dobra dostępność części i wiedzy serwisowej** – to popularna konstrukcja z rodziny G9U
+- **Udane połączenie osiągów i prostoty** – szczególnie w odmianach 115–145 KM
+- **Manualna skrzynia PF6 i napęd na przód** – sprawdzony układ do codziennej pracy
+- **Szeroki wybór wersji mocy** – od użytkowych odmian 100 KM po wyraźnie mocniejsze 145 KM
 
 **Wady:**
 
-- **Skłonność do przegrzewania** – najpoważniejsza wada, wymaga kontroli układu chłodzenia
-- **Głośna praca** – typowa cecha silników G9U, szczególnie na zimno
-- **Dwumasowe koło zamachowe** – drogi element eksploatacyjny (2500–4000 zł z wymianą sprzęgła)
-- **Brak DPF, ale niska norma emisji** – Euro 3/4 oznacza wyższy podatek i zakaz wjazdu do stref czystego transportu w niektórych miastach europejskich
+- **Wrażliwość na przegrzewanie** – kluczowy punkt całej eksploatacji
+- **Głośniejsza praca niż w nowszych dieslach** – cecha starszej konstrukcji
+- **Koszty elementów zużywających się pod obciążeniem** – zwłaszcza dwumasy i osprzętu wtryskowego
+- **Normy Euro 3/4** – ograniczenia wjazdu do stref zależą od lokalnych regulacji, miasta i kategorii pojazdu; nie oznacza to automatycznego zakazu w całej Europie
+- **W wielu wersjach brak DPF** – zależnie od rynku i specyfikacji
 
-Na tle konkurencji – [Opla Vivaro](/modele/opel-vivaro/) z 2.0 CDTi czy Mercedesa Sprintera z OM 646 – Movano 2.5 CDTi wypada jako rozwiązanie budżetowe o niższych kosztach serwisu, ale wymagające większej uwagi w kwestii chłodzenia. Konstrukcyjnie to ten sam silnik co w Renault Masterze, więc opinie o obu modelach są wymienne.
+W praktyce 2.5 CDTi jest silnikiem dla użytkownika, który akceptuje starszą kulturę pracy w zamian za prostszą budowę i dobrą dostępność części. Na tle nowszego 2.3 CDTi różnica sprowadza się głównie do konstrukcji rozrządu, norm emisji i potencjału mocy.
 
 ## Koszty serwisu Opel Movano 2.5 CDTi
 
-Utrzymanie Opel Movano generuje koszty, które warto znać przed zakupem – różnice między poszczególnymi operacjami serwisowymi bywają znaczące.
+Serwis Opel Movano 2.5 CDTi nie jest szczególnie skomplikowany, ale przy zaniedbaniach potrafi szybko zrobić się kosztowny. Najważniejsze są olej, filtry, chłodzenie i terminowa wymiana kompletnego rozrządu.
+
+Do tego silnika najczęściej stosuje się olej 5W-40 lub 5W-30, spełniający ACEA B4 lub C3 – zależnie od wersji i rynku. Pojemność układu olejowego nie jest jedna dla wszystkich odmian i zwykle wynosi około 7,4–7,8 l z filtrem.
 
 | Czynność | Koszt (części + robocizna) | Interwał |
 |----------|---------------------------|----------|
-| Wymiana oleju + filtr (8,2 l) | 350–550 zł | 15–20 tys. km / 1 rok |
+| Wymiana oleju + filtr | 350–550 zł | 15–20 tys. km / 1 rok |
 | Filtr paliwa | 100–200 zł | 30 tys. km |
 | Filtr powietrza | 60–120 zł | 30 tys. km |
-| Rozrząd (pasek + rolki + pompa wody) | 1500–2700 zł | 120 tys. km / 5 lat |
-| Sprzęgło + dwumasowe koło | 2500–4000 zł | 150–200 tys. km |
-| Klocki hamulcowe (oś) | 200–400 zł | 40–60 tys. km |
-| Płyn chłodniczy | 150–250 zł | 60 tys. km / 3 lata |
+| Rozrząd (pasek + rolki + napinacz + pompa wody + pasek osprzętu) | 1500–2700 zł | zwykle 120 tys. km / 5 lat – do potwierdzenia po VIN |
+| Sprzęgło + dwumasowe koło | 2500–4000 zł | zależnie od eksploatacji |
+| Klocki hamulcowe (oś) | 200–400 zł | zależnie od eksploatacji |
+| Płyn chłodniczy | 150–250 zł | zwykle co 4–5 lat według praktyki serwisowej |
 
-Roczny koszt utrzymania przy przebiegu 30 tys. km/rok wynosi orientacyjnie 2000–3500 zł (olej, filtry, drobne naprawy). Zamienniki aftermarket od Gates, SNR i Valeo obniżają rachunki o 30–50% wobec części oryginalnych. Serwis w niezależnym warsztacie jest tańszy o 30–40% niż w ASO Opla – i w przypadku tego silnika równie kompetentny, bo G9U to jedna z najpopularniejszych jednostek w dostawczakach lat 2003–2012.
+Roczny koszt utrzymania zależy głównie od przebiegu, obciążenia auta i stanu wyjściowego egzemplarza. Przy zakupie używanego samochodu ważniejsze od samej ceny są potwierdzenia wymiany rozrządu, regularnego serwisu olejowego i brak objawów problemów z chłodzeniem.
 
-Przy zakupie używanego Movano z 2.5 CDTi warto sprawdzić dokumentację wymiany rozrządu i historię serwisową oleju. Egzemplarze z udokumentowanym serwisem są warte 3000–5000 zł więcej niż te bez historii – a oszczędzają wielokrotnie więcej na naprawach.
+Jeśli porównać 2.5 CDTi z nowszym 2.3 CDTi, różnica jest dość czytelna. Starszy G9U ma 2463 cm3, pasek rozrządu, moce 100–145 KM i normy Euro 3/4, natomiast 2.3 CDTi M9T ma 2298 cm3, łańcuch rozrządu, w Movano B występował w wersjach około 100–163 KM i spełniał Euro 5/6. W praktyce 2.3 bywa oszczędniejszy i nowocześniejszy, ale w 2.5 łatwiej przewidzieć koszt planowej wymiany rozrządu, podczas gdy w silniku z łańcuchem trzeba brać pod uwagę ewentualne problemy samego napędu rozrządu.
 
-Pełne dane o [Oplu Movano](/modele/opel-movano/) – wszystkie generacje, silniki i porównanie z konkurencją.
-
-*Źródła: [Renault G-Type engine](https://en.wikipedia.org/wiki/Renault_G-Type_engine) – Wikipedia, AutoCentrum.pl, MotoDiesel.pl, Auto-Data.net.*
+*Źródła: [Common rail](https://en.wikipedia.org/wiki/Common_rail) – Wikipedia, AutoCentrum.pl, MotoDiesel.pl, Auto-Data.net.*
