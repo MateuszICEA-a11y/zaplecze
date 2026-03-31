@@ -15,7 +15,6 @@
   {{- partial "footer.html" . -}}
 
   <script>
-  document.fonts.ready.then(function(){document.documentElement.classList.add('fonts-loaded')});
   document.querySelectorAll('.related-inline').forEach(function(el) {
     var track = el.querySelector('.related-inline__track');
     var prev = el.querySelector('.related-inline__arrow--prev');

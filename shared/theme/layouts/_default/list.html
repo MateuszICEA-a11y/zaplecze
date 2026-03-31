@@ -15,14 +15,26 @@
   </div>
 </nav>
 
-{{/* ═══ HERO ═══ */}}
-<header class="post-header post-header--page"{{ with .Params.image }} style="background-image: url('{{ . }}')"{{ end }}>
-  <div class="post-header__content">
-    <div class="post-header__meta">
-      {{ .Section | humanize | upper }}
-      &middot; Ostatnia aktualizacja: {{ with .Params.lastmod }}{{ .Format "01.2006" }}{{ else }}{{ .Date.Format "01.2006" }}{{ end }}
+{{/* ═══ HERO (same as single.html) ═══ */}}
+{{ $isPage := true }}
+<header class="article-hero article-hero--page">
+  <div class="article-hero__inner">
+    {{ with .Params.image }}
+    <img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}" class="article-hero__img" loading="eager">
+    {{ else }}
+    <div class="article-hero__img" style="background: linear-gradient(135deg, var(--c-dark) 0%, var(--c-navy) 100%);"></div>
+    {{ end }}
+
+    <div class="article-hero__body">
+      <div class="article-hero__badge">{{ .Section | humanize | upper }}</div>
+      <h1 class="article-hero__title">{{ .Params.h1 | default .Title }}</h1>
+      <div class="article-hero__meta">
+        <div class="article-hero__meta-item">
+          <span class="material-symbols-outlined">update</span>
+          <span>Ostatnia aktualizacja: {{ with .Params.lastmod }}{{ .Format "01.2006" }}{{ else }}{{ .Date.Format "01.2006" }}{{ end }}</span>
+        </div>
+      </div>
     </div>
-    <h1 class="post-header__title">{{ .Params.h1 | default .Title }}</h1>
   </div>
 </header>
 
