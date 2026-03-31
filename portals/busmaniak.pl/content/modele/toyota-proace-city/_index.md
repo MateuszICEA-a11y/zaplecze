@@ -41,7 +41,6 @@ Proace City dostępny jest w dwóch wersjach nadwozia – furgon oraz osobowy (P
 
 ## Wymiary Toyoty ProAce City
 
-![Toyota Proace City Short vs Long – porównanie wymiarów nadwozia](/images/toyota-proace-city-wymiary.jpg)
 
 Kluczowy wybór przy zakupie Proace City to długość nadwozia. Różnica 350 mm między Short a Long przekłada się na dodatkową europaletę i 0,6 m³ przestrzeni ładunkowej.
 

@@ -84,7 +84,6 @@ W tym artykule nie rozpisujemy szczegółowo wyposażenia tych wersji, ponieważ
 
 To samo dotyczy systemów bezpieczeństwa i ADAS. Wiadomo jedynie, że w osobowej konfiguracji istotne znaczenie mają mocowania ISOFIX, natomiast pełną listę takich elementów jak AEB, ISA, Lane Keeping Aid, rozpoznawanie znaków, monitor martwego pola czy liczba poduszek powietrznych trzeba potwierdzić w oficjalnej specyfikacji producenta.
 
-![Ford Transit Courier Kombi – osobowa wersja z przeszklonymi bokami](/images/ford-transit-courier-kombi-hero.jpg)
 
 ## Kombi vs Van – kluczowe różnice
 

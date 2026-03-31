@@ -81,7 +81,7 @@ Lokalni producenci (np. AutoSystem) oferują zabudowy o 30–50% taniej niż mar
 | Oświetlenie LED | 500–1 500 zł |
 | **Łącznie** | **20 000–60 000 zł** |
 
-Branża coraz częściej odchodzi od hałaśliwych i emitujących spaliny generatorów spalinowych na rzecz zintegrowanych systemów zasilania [litowo-jonowego](/wiki/Akumulator_litowo-jonowy) (LPS). Moduł taki jak Clayton Power LPS II 3000W, wyceniany na 12 000–15 000 zł, ładuje się podczas jazdy z alternatora pojazdu lub paneli fotowoltaicznych i zapewnia cichy dostęp do gniazd 230V na postoju.
+Branża coraz częściej odchodzi od hałaśliwych i emitujących spaliny generatorów spalinowych na rzecz zintegrowanych systemów zasilania litowo-jonowego (LPS). Moduł taki jak Clayton Power LPS II 3000W, wyceniany na 12 000–15 000 zł, ładuje się podczas jazdy z alternatora pojazdu lub paneli fotowoltaicznych i zapewnia cichy dostęp do gniazd 230V na postoju.
 
 ### Blaty i stanowiska pracy
 

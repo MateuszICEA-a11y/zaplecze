@@ -34,7 +34,7 @@ sources:
 
 Szósta generacja to przełom pod względem możliwości ładunkowych. Iveco zdecydowało się zachować ramę drabinkową i rozszerzyć zakres DMC do 7,2 t, wchodząc tym samym w przestrzeń zarezerwowaną dotychczas dla małych ciężarówek. Deska rozdzielcza przeszła gruntowną modernizację, kabina zyskała wyraźnie wyższy standard wykończenia, a system telematyczny Iveco Fleet Management stał się opcją standardową w wersjach fleetowych.
 
-Silniki tej generacji to dwie sprawdzone jednostki: F1A 2.3 MultiJet II i F1C 3.0 MultiJet II. Obie stosują technologię Common Rail i spełniają normy Euro 6. W 2018 roku ofertę uzupełnił elektryczny [eDaily](/modele/iveco-daily/edaily/) z baterią modułową.
+Silniki tej generacji to dwie sprawdzone jednostki: F1A 2.3 MultiJet II i F1C 3.0 MultiJet II. Obie stosują technologię Common Rail i spełniają normy Euro 6. W 2018 roku ofertę uzupełnił elektryczny eDaily z baterią modułową.
 
 ### Daily VII (od 2023)
 
@@ -111,11 +111,11 @@ W warsztacie najczęściej trafiają do mnie Daily z silnikiem 2.3 po 200–250 
 Iveco Daily jest jednym z niewielu pojazdów dostawczych, który bez zmiany platformy obsługuje tak szerokie spektrum zabudów:
 
 - **Furgon** – klasyczny blaszak w wersjach S, M, L, XL z trzema wysokościami dachu. Idealny dla kurierów, transportu paletowego i rzemieślników.
-- **[Podwozie z kabiną (cab chassis)](/modele/iveco-daily/podwozie/)** – baza pod dowolną zabudowę; dzięki ramie drabinkowej przyjmuje zabudowy, które nie zmieszczą się na konkurencji o DMC powyżej 3,5 t.
+- **Podwozie z kabiną (cab chassis)** – baza pod dowolną zabudowę; dzięki ramie drabinkowej przyjmuje zabudowy, które nie zmieszczą się na konkurencji o DMC powyżej 3,5 t.
 - **[Brygadówka](/modele/iveco-daily/brygadowka/)** – furgon z przeszklonym przedziałem za kabiną i dodatkowym rzędem siedzeń (do 5+2 lub 5+4 miejsc). Popularna w budownictwie i energetyce.
 - **[Laweta](/modele/iveco-daily/laweta/)** – podwozie Daily XL z DMC 5,2–7,2 t to najczęściej wybierana baza pod lawety o nośności 3–4 t w Polsce.
 - **[Chłodnia](/modele/iveco-daily/chlodnia/)** – izolowana przestrzeń ładunkowa z agregatem Thermo King lub Carrier; DMC 5,2 t pozwala na zabranie towarów chłodniczych bez ograniczeń kategorii B.
-- **[eDaily](/modele/iveco-daily/edaily/)** – elektryczna wersja furgonu i podwozia; dostępna wyłącznie w DMC 3,5 t i 5,2 t.
+- **eDaily** – elektryczna wersja furgonu i podwozia; dostępna wyłącznie w DMC 3,5 t i 5,2 t.
 
 ## Typowe usterki Iveco Daily {#usterki}
 

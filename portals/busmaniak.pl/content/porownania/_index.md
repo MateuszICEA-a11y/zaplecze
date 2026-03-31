@@ -71,13 +71,13 @@ Szerokość bocznego otworu załadunkowego to kluczowy parametr w miejskiej logi
 
 Busy 9-osobowe to osobna kategoria – wymagają jedynie prawa jazdy kat. B, a oferują przestrzeń zbliżoną do minibusów. W naszym rankingu oceniamy komfort pasażerów, bagażnik i koszty utrzymania.
 
-Sprawdź [ranking busów 9-osobowych](/porownania/ranking-busow-9-osobowych/) oraz nasz przegląd [samochodów 9-osobowych w ofercie](/modele/busy-9-osobowe/).
+Sprawdź [ranking busów 9-osobowych](/porownania/ranking-busow-9-osobowych/) oraz nasz przegląd [samochodów 9-osobowych w ofercie](/porownania/ranking-busow-9-osobowych/).
 
 ## Elektryczne busy dostawcze
 
 Elektromobilność w segmencie dostawczym rozwija się dynamicznie, a kluczowe stają się pojemność baterii i zasięg. Liderem jest tu Mercedes eSprinter, który po liftingu oferuje akumulator o pojemności użytecznej 113 kWh i zasięg WLTP do 440 km. Ford E-Transit dostępny jest z baterią 68 kWh (ok. 317 km) lub w wersji Extended Range 89 kWh, podczas gdy Volkswagen ID. Buzz Cargo dysponuje pakietem 77 kWh netto (zasięg do 425 km).
 
-Przegląd modeli elektrycznych znajdziesz w sekcji [elektryczne dostawcze](/modele/elektryczne-dostawcze/).
+Przegląd modeli elektrycznych znajdziesz w sekcji [elektryczne dostawcze](/porownania/elektryczne-dostawcze/).
 
 ## Najlepszy bus na kampera – ranking modeli
 

@@ -102,7 +102,7 @@ Zakup samochodu kempingowego to decyzja na lata – średni okres użytkowania k
 
 ### Kluczowe kryteria wyboru
 
-- **Liczba osób** – [kamper 4-osobowy](/kampery/kamper-4-osobowy/) dla małej rodziny, [kamper 5-osobowy](/kampery/kamper-5-osobowy/) dla większej lub nawet [6-osobowy](/kampery/kamper-6-osobowy/) dla dużych grup.
+- **Liczba osób** – [kamper 4-osobowy](/kampery/kamper-4-osobowy/) dla małej rodziny, [kamper 5-osobowy](/kampery/kamper-5-osobowy/) dla większej lub nawet 6-osobowy dla dużych grup.
 - **Budżet eksploatacyjny** – roczne koszty utrzymania (ubezpieczenie, serwis, przechowywanie) wynoszą **8–25 tys. zł** w zależności od wielkości pojazdu.
 - **Styl podróżowania** – krótkie, weekendowe wycieczki (camper van), dwutygodniowe urlopy (alkowa) czy wielomiesięczne trasy po Europie (integrał).
 - **Codzienna użyteczność** – czy camper van ma służyć jako jedyny samochód w rodzinie, czy też duży kamper będzie stał przez 10 miesięcy na parkingu.

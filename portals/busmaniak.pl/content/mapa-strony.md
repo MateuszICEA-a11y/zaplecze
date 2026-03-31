@@ -41,7 +41,7 @@ layout: "sitemap-html"
 - [Opel Combo](/modele/opel-combo/) – platforma EMP2
 - [Volkswagen Caddy](/modele/volkswagen-caddy/) – Caddy 5
 - [Ford Transit Connect](/modele/ford-transit-connect/) – kompaktowy Transit
-- [Ford Transit Courier](/modele/ford-transit-courier/) – najmniejszy Ford
+- [Ford Transit Courier](/modele/ford-transit-courier/van/) – najmniejszy Ford
 - [Mercedes Citan](/modele/mercedes-citan/) – bliźniak Kangoo
 - [Toyota Proace City](/modele/toyota-proace-city/) – miejski dostawczy
 - [Nissan NV200](/modele/nissan-nv200/) – e-NV200
@@ -51,7 +51,7 @@ layout: "sitemap-html"
 - [Peugeot Rifter](/modele/peugeot-rifter/) – osobowy partner
 
 ### Osobowe i MPV (7–9 osobowe)
-- [Busy 9-osobowe – ranking](/modele/busy-9-osobowe/) – porównanie modeli
+- [Busy 9-osobowe – ranking](/porownania/ranking-busow-9-osobowych/) – porównanie modeli
 - [Samochody 7-osobowe – przewodnik](/modele/samochody-7-osobowe/)
 - [Volkswagen Multivan](/modele/volkswagen-multivan/) – premium MPV
 - [Toyota Proace Verso](/modele/toyota-proace-verso/) – osobowy Proace
@@ -65,7 +65,7 @@ layout: "sitemap-html"
 - [Ford E-Transit](/modele/ford-e-transit/) – elektryczny Transit
 - [Mercedes eSprinter](/modele/mercedes-esprinter/) – elektryczny Sprinter
 - [Volkswagen ID.Buzz](/modele/volkswagen-id-buzz/) – nowy Bulli
-- [Elektryczne dostawcze – przegląd rynku](/modele/elektryczne-dostawcze/)
+- [Elektryczne dostawcze – przegląd rynku](/porownania/elektryczne-dostawcze/)
 
 ---
 
