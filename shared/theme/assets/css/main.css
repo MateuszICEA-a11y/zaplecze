@@ -247,10 +247,9 @@ a:hover { color: var(--c-orange-hover); }
   display: none;
   position: absolute;
   top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
   width: 100vw;
-  max-width: 1400px;
+  max-width: 1200px;
   padding-top: .5rem;
   z-index: 100;
 }
