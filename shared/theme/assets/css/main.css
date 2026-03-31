@@ -700,6 +700,7 @@ a:hover { color: var(--c-orange-hover); }
 /* ── Inline related articles carousel (shortcode) ── */
 .related-inline {
   margin: 2.5rem 0;
+  overflow: hidden;
 }
 
 .related-inline__header {
@@ -2753,6 +2754,7 @@ blockquote {
 /* Slider wrapper */
 .related-slider {
   position: relative;
+  overflow: hidden;
 }
 
 .related-slider__track {
