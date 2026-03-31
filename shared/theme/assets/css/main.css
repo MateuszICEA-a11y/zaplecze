@@ -326,6 +326,12 @@ a:hover { color: var(--c-orange-hover); }
   transform: none;
 }
 
+.dropdown--small .dropdown__inner {
+  display: flex;
+  flex-direction: column;
+  padding: .75rem;
+}
+
 .dropdown__tool {
   display: flex;
   align-items: center;
