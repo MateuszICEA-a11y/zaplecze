@@ -15,8 +15,14 @@
 {{ end }}
 {{ end }}
 
-{{/* Canonical URL */}}
+{{/* Canonical URL – self-referencing on paginated pages */}}
+{{ if .IsNode }}{{ $pag := .Paginate (where .Pages "Kind" "ne" "term") }}{{ if $pag.HasPrev }}
+<link rel="canonical" href="{{ .Paginator.URL | absURL }}">
+{{ else }}
 <link rel="canonical" href="{{ .Permalink }}">
+{{ end }}{{ else }}
+<link rel="canonical" href="{{ .Permalink }}">
+{{ end }}
 
 {{/* Robots – noindex on dev, index on production */}}
 {{ if .Site.Params.noindex }}
