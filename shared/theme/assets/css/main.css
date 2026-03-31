@@ -1153,18 +1153,19 @@ a:hover { color: var(--c-orange-hover); }
   flex: 1;
 }
 
-/* Dark variant – last card */
+/* Accent variant – last card */
 .bento__card--dark {
-  background: var(--c-dark);
+  background: var(--c-orange);
   border-color: transparent;
 }
 
-.bento__card--dark .material-symbols-outlined { color: var(--c-orange-glow); }
+.bento__card--dark .material-symbols-outlined { color: #fff; }
 .bento__card--dark h3 { color: #fff; }
-.bento__card--dark p { color: rgba(255,255,255,.55); }
+.bento__card--dark p { color: rgba(255,255,255,.8); }
 
 .bento__card--dark:hover {
-  box-shadow: 0 20px 60px rgba(13,17,23,.3), 0 8px 20px rgba(255,107,0,.08);
+  background: var(--c-orange-hover);
+  box-shadow: 0 20px 60px rgba(255,107,0,.2), 0 8px 20px rgba(255,107,0,.12);
 }
 
 @media (max-width: 960px) {
