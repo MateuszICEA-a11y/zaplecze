@@ -21,6 +21,13 @@ faq:
     answer: "Na stacji DC o mocy do 185 kW ładowanie od 10% do 80% trwa ok. 26–30 minut. Na wallboxie AC 11 kW pełne ładowanie zajmuje ok. 7,5 godziny."
   - question: "Czy ID. Buzz nadaje się na kampera?"
     answer: "Volkswagen planuje wersję ID. California na bazie ID. Buzza, ale premierę przesunięto z powodu zbyt dużej masy. Obecnie dostępne są prywatne konwersje kamperowe, szczególnie wersji LWB z dłuższym rozstawem osi."
+sources:
+  - "Wikipedia – Volkswagen ID. Buzz"
+  - "Wikipedia – Volkswagen Group MEB platform"
+  - "volkswagen.pl"
+  - "vwdostawcze.pl"
+  - "autocentrum.pl"
+  - "elektromobilni.pl"
 ---
 
 ## Historia i konstrukcja Volkswagen ID. Buzz
@@ -116,5 +123,3 @@ Bezpośrednich rywali dla ID. Buzza jest niewielu. Mercedes EQV to jedyny porów
 | Cena od | 278 000 zł | ok. 350 000 zł | ok. 200 000 zł |
 
 ID. Buzz wygrywa zasięgiem, szybkością ładowania DC i zwrotnością. EQV oferuje więcej przestrzeni i luksusowe wykończenie w stylu V-Klasy. Hyundai Staria – choć spalinowy – przyciąga ceną i ogromnym wnętrzem.
-
-*Źródła: Wikipedia – Volkswagen ID. Buzz, Wikipedia – Volkswagen Group MEB platform, volkswagen.pl, vwdostawcze.pl, autocentrum.pl, elektromobilni.pl*

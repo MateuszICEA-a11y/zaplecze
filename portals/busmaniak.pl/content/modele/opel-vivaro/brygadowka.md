@@ -17,6 +17,9 @@ faq:
     answer: "Nie ma jednej uniwersalnej wartości dla każdej generacji i każdej wersji. Ładowność zależy m.in. od długości nadwozia, silnika, skrzyni biegów, liczby miejsc, wyposażenia, homologacji oraz dopuszczalnej masy całkowitej."
   - question: "Czy Vivaro brygadówka to fabryczna wersja?"
     answer: "Tak, ale trzeba odróżnić fabryczne wersje załogowe/doublecab/combi od zwykłego furgonu. Indywidualne zabudowy wykonywane przez firmy zewnętrzne również się zdarzają, ale nie należy ich mylić ze standardową wersją katalogową."
+sources:
+  - "oficjalne materiały Opel/Vauxhall/Stellantis"
+  - "katalogi homologacyjne i cenniki producenta"
 ---
 ## Co to jest brygadówka?
 
@@ -123,5 +126,3 @@ Jeśli rozważasz zabudowę wykonywaną poza fabryką, trzeba sprawdzić bazową
 {{% /info %}}
 
 Porównanie z konkurencją również zależy od generacji. Dla **Vivaro A i B** naturalnym punktem odniesienia są Renault Trafic oraz Nissan Primastar/NV300, natomiast dla **Vivaro C** właściwymi konkurentami i bliźniakami są Peugeot Expert, Citroën Jumpy/SpaceTourer cargo crew i Toyota ProAce.
-
-*Źródła: oficjalne materiały Opel/Vauxhall/Stellantis, katalogi homologacyjne i cenniki producenta*

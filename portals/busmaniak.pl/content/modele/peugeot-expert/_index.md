@@ -20,6 +20,10 @@ faq:
     answer: "Tak – Traveller to handlowa nazwa wersji osobowej Experta, dostępnej w konfiguracjach 5, 7 lub 9 miejsc z lepszym wykończeniem wnętrza."
   - question: "Jaki zasięg ma e-Expert?"
     answer: "Z baterią 50 kWh do 230 km, z baterią 75 kWh do 330 km według WLTP."
+sources:
+  - "Wikipedia – PSA EMP2 platform"
+  - "materiały prasowe Stellantis"
+  - "katalogi techniczne Peugeot 2016–2024."
 ---
 
 ## Historia i generacje Peugeot Expert
@@ -140,5 +144,3 @@ Segment dostawczaków to rynek pełen alternatyw – Peugeot Expert mierzy się 
 | Cena furgon L2 (netto) | ~135 000 zł | ~130 000 zł | ~140 000 zł | ~135 000 zł | ~145 000 zł |
 
 Expert dzieli podzespoły z [Toyota ProAce](/modele/toyota-proace/) i Citroën Jumpy – identyczna konstrukcja, różne logotypy i warunki gwarancji. [Renault Trafic](/modele/renault-trafic/) oferuje inną kabinę i szerszą sieć serwisową. [Ford Transit Custom](/modele/ford-transit-custom/) wygrywa największą paką i właściwościami jezdnymi. Expert bierze niższą masą własną i mniejszym promieniem skrętu.
-
-*Źródła: Wikipedia – PSA EMP2 platform, materiały prasowe Stellantis, katalogi techniczne Peugeot 2016–2024.*

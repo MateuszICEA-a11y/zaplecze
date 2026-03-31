@@ -21,6 +21,8 @@ faq:
     answer: "To objaw zwarcia w obwodzie. Nie wstawiaj bezpiecznika o wyższym amperażu – grozi to pożarem instalacji. Szukaj przyczyny: uszkodzona wiązka, zalany sterownik lub wadliwy odbiornik."
   - question: "Ile kosztuje wymiana skrzynki bezpieczników w Boxer?"
     answer: "Sama skrzynka (moduł BSI) to koszt 800–2 000 zł za część używaną lub 2 500–4 500 zł za nową. Do tego dochodzi programowanie – BSI wymaga zakodowania do konkretnego VIN."
+sources:
+  - "- Instrukcja obsługi Peugeot Boxer III (2006–2018): dokumentacja serwisowa PSA"
 ---
 
 ## Lokalizacja skrzynek bezpieczników
@@ -115,7 +117,5 @@ Warto wiedzieć, że złącze diagnostyczne OBD2 znajduje się pod tą samą os�
 
 Ogólny przegląd typów i kolorów bezpieczników opisujemy w materiale o [bezpiecznikach w busach](/serwis/bezpieczniki-busy/). W razie problemów z elektroniką sprawdź też [przekaźniki Fiata Ducato](/serwis/przekazniki-fiat-ducato/) – są kompatybilne z Boxerem i montowane w tych samych gniazdach. Informacje o modelu znajdziesz na stronie [Peugeot Boxer](/modele/peugeot-boxer/).
 
-Źródła:
-- Instrukcja obsługi Peugeot Boxer III (2006–2018): dokumentacja serwisowa PSA
 - Schematy bezpieczników Boxer: autobezpieczniki.pl, bezpieczniki24.pl
 - Bezpiecznik (Wikipedia): https://pl.wikipedia.org/wiki/Bezpiecznik

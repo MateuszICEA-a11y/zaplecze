@@ -20,6 +20,11 @@ faq:
     answer: "Nowy od ok. 115 000 zł za wersję spalinową. Bogato wyposażony Long przekracza 150 000 zł."
   - question: "Jaki zasięg ma e-Rifter?"
     answer: "Z baterią 50 kWh do 280 km (przed faceliftem) lub do 340 km WLTP po modernizacji z 2024 roku."
+sources:
+  - "Wikipedia – PSA EMP2 platform"
+  - "katalog techniczny Stellantis Peugeot Rifter 2018–2024"
+  - "dane homologacyjne WLTP"
+  - "archiwum akcji serwisowych UOKiK."
 ---
 
 ## Historia i generacje Peugeot Rifter
@@ -128,5 +133,3 @@ Segment dostawczaków to rynek pełen alternatyw – Peugeot Rifter mierzy się 
 | Cena od (brutto) | ~115 000 zł | ~110 000 zł | ~115 000 zł | ~113 000 zł | ~130 000 zł |
 
 Na tle rywali Rifter wyróżnia się bogatszym wyposażeniem seryjnym i najlepiej ocenianą przestronnością kabiny. [Renault Kangoo](/modele/renault-kangoo/) wygrywa systemem Open Sesame, VW Caddy kulturą jazdy, a bliźniaczy [Citroën Berlingo](/modele/citroen-berlingo/) prostszą stylistyką przy identycznej bazie technicznej.
-
-*Źródła: Wikipedia – PSA EMP2 platform, katalog techniczny Stellantis Peugeot Rifter 2018–2024, dane homologacyjne WLTP, archiwum akcji serwisowych UOKiK.*

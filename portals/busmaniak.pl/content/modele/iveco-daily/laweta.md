@@ -19,6 +19,14 @@ faq:
   - question: "Czy Iveco Daily laweta może przewozić 2 auta jednocześnie?"
     answer: "To bywa możliwe tylko w wybranych zabudowach do transportu dwóch aut, ale legalność zależy od realnej ładowności po zabudowie, długości, szerokości i dopuszczalnych nacisków osi. Przy DMC 7,2 t dwa cięższe auta osobowe często przekraczają możliwości zestawu."
 lead: "Iveco Daily jako baza pod lawetę występuje zarówno w wersjach do 3,5 t, jak i powyżej 3,5 t DMC. Kluczowe są tu nie tylko sama masa całkowita, ale też kategoria prawa jazdy, rzeczywista ładowność po zabudowie oraz parametry podwozia."
+sources:
+  - "dokumentacja homologacyjna i techniczna pojazdu bazowego"
+  - "dokumentacja producenta zabudowy"
+  - "cennik/model year"
+  - "przepisy dotyczące kategorii prawa jazdy"
+  - "rejestracji pojazdu skompletowanego"
+  - "zmian konstrukcyjnych"
+  - "tachografów i e-TOLL."
 ---
 ## Iveco Daily laweta – DMC i kategoria prawa jazdy
 
@@ -118,5 +126,3 @@ Podobnie jest z ceną samego podwozia – zależy od wersji DMC, kabiny, rozstaw
 W kosztach użytkowania nie warto skupiać się wyłącznie na paliwie. Przy lawetach powyżej 3,5 t trzeba doliczyć opłaty drogowe, ubezpieczenie OC/AC, coroczne badanie techniczne pojazdu ciężarowego, opony klasy C/CP lub ciężarowe, serwis wyciągarki i hydrauliki oraz legalizację tachografu – jeśli dany pojazd i sposób użytkowania tego wymagają.
 
 Jeżeli planujesz przewóz dwóch aut, kluczowa jest chłodna kalkulacja masy. Dwa samochody osobowe to zwykle łącznie około 2200–4000 kg, a po odjęciu masy podwozia, zabudowy i wyposażenia realna ładowność wersji 7,2 t często nie pozwala legalnie zabrać dwóch cięższych aut jednocześnie.
-
-*Źródła: dokumentacja homologacyjna i techniczna pojazdu bazowego, dokumentacja producenta zabudowy, cennik/model year, przepisy dotyczące kategorii prawa jazdy, rejestracji pojazdu skompletowanego, zmian konstrukcyjnych, tachografów i e-TOLL.*

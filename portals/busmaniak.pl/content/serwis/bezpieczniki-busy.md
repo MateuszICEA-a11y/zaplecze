@@ -23,6 +23,12 @@ faq:
     answer: "Powtarzające się przepalanie tego samego bezpiecznika oznacza zwarcie w obwodzie – uszkodzony przewód, wadliwy odbiornik lub wilgoć w złączu. Wymiana bezpiecznika nie rozwiąże problemu – trzeba znaleźć przyczynę zwarcia."
   - question: "Gdzie kupić bezpieczniki do busa?"
     answer: "Bezpieczniki płytkowe (blade) są uniwersalne – pasują do każdego busa i kosztują 10–30 zł za komplet. Dostępne w sklepach motoryzacyjnych, na stacjach benzynowych i w marketach. Bezpieczniki śrubowe (maxi, mega) warto kupować w markowych sklepach z częściami."
+sources:
+  - "QServiceCastrol.eu – rodzaje bezpieczników samochodowych (2024)"
+  - "Autobezpieczniki.pl – schematy skrzynek Fiat Ducato, Mercedes Sprinter"
+  - "Selected.pl – lokalizacja bezpieczników w Fiat Ducato (2006–2019)"
+  - "[Bezpiecznik](https://pl.wikipedia.org/wiki/Bezpiecznik) – Wikipedia"
+  - "OtoMoto.pl – bezpieczniki samochodowe – rodzaje i oznaczenia"
 ---
 ## Rodzaje bezpieczników w busach dostawczych {#rodzaje}
 
@@ -166,11 +172,3 @@ Każdy model busa ma inny układ bezpieczników, inne amperaże i inne opisy na 
 Instrukcja obsługi to najlepsze źródło informacji o bezpiecznikach w konkretnym busie – producent podaje tam schemat aktualny dla danej wersji wyposażenia. Jeśli nie masz papierowej instrukcji, pobierz ją ze strony producenta lub poszukaj na forach właścicieli danego modelu.
 
 ---
-
-**Źródła:**
-
-- QServiceCastrol.eu – rodzaje bezpieczników samochodowych (2024)
-- Autobezpieczniki.pl – schematy skrzynek Fiat Ducato, Mercedes Sprinter
-- Selected.pl – lokalizacja bezpieczników w Fiat Ducato (2006–2019)
-- [Bezpiecznik](https://pl.wikipedia.org/wiki/Bezpiecznik) – Wikipedia
-- OtoMoto.pl – bezpieczniki samochodowe – rodzaje i oznaczenia

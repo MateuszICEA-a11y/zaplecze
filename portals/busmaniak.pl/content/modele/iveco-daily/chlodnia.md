@@ -19,6 +19,12 @@ faq:
   - question: "Co ile kilometrów serwis agregatu chłodniczego w Daily?"
     answer: "Interwał serwisowy zależy od modelu agregatu i zwykle określa się go godzinami pracy oraz kalendarzowo, a nie tylko przebiegiem pojazdu. W praktyce przegląd wykonuje się zwykle co 500–1000 mth lub co 6–12 miesięcy, zależnie od modelu."
 lead: "Iveco Daily chłodnia to popularna baza pod zabudowę do dystrybucji spożywczej i farmaceutycznej. Kluczowe przy wyborze są nie tylko agregat i grubość paneli, ale też klasa ATP, współczynnik przenikania ciepła K, DMC bazowego podwozia oraz rzeczywista ładowność po zabudowie."
+sources:
+  - "tekst Umowy ATP"
+  - "wytyczne właściwej jednostki badającej ATP w Polsce"
+  - "karty katalogowe Thermo King i Carrier Transicold"
+  - "oferty i cenniki zabudowców z lat 2024–2026"
+  - "dane homologacyjne Iveco Daily."
 ---
 ## Iveco Daily chłodnia – klasy ATP
 
@@ -122,5 +128,3 @@ W agregatach zawierających fluorowane gazy cieplarniane trzeba uwzględnić obo
 Ważne są też kwestie formalne ATP. Pierwsze świadectwo ATP dla nowego środka transportu wydaje się na 6 lat, a następnie może być ono przedłużane po badaniach na kolejne okresy zgodnie z procedurą ATP. Nie jest to więc jednorazowy schemat „6 lat i koniec”, tylko system badań i przedłużeń.
 
 Przy zakupie używanego Daily do miasta trzeba dodatkowo sprawdzić normę emisji wpisaną w dokumentach pojazdu. W praktyce dla dystrybucji miejskiej i flot kontraktowych znaczenie mają wymagania Euro 6/Euro VI oraz lokalne zasady wjazdu do stref niskiej emisji.
-
-*Źródła: tekst Umowy ATP, wytyczne właściwej jednostki badającej ATP w Polsce, karty katalogowe Thermo King i Carrier Transicold, oferty i cenniki zabudowców z lat 2024–2026, dane homologacyjne Iveco Daily.*

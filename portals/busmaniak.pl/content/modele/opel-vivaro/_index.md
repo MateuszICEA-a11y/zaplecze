@@ -18,6 +18,11 @@ faq:
     answer: "1.5 D (75/100/120 KM), 2.0 D (120/145/177 KM) i elektryczny Vivaro-e (136 KM, bateria 50 lub 75 kWh)."
   - question: "Ile kosztuje nowy Vivaro?"
     answer: "Furgon od ok. 120 000 zł netto (1.5 D 100 KM)."
+sources:
+  - "Wikipedia – PSA EMP2 platform"
+  - "dane techniczne Opel Polska"
+  - "raporty DEKRA"
+  - "AutoCentrum.pl."
 ---
 
 ## Historia i generacje Opel Vivaro
@@ -148,5 +153,3 @@ Segment dostawczaków to rynek pełen alternatyw – Opel Vivaro mierzy się z r
 | Cena nowego L2 (netto) | ~125 000 zł | ~135 000 zł | ~135 000 zł | ~155 000 zł | ~155 000 zł |
 
 Vivaro C, [Peugeot Expert](/modele/peugeot-expert/) i Citroën Jumpy to ten sam samochód pod trzema logotypami – ten sam serwis, te same części. Wybór zależy od bliskości dealera i warunków gwarancji. [Ford Transit Custom](/modele/ford-transit-custom/) wygrywa prowadzeniem i większą paką, [Mercedes Vito](/modele/mercedes-vito/) – prestiżem i opcją 4x4.
-
-*Źródła: Wikipedia – PSA EMP2 platform, dane techniczne Opel Polska, raporty DEKRA, AutoCentrum.pl.*

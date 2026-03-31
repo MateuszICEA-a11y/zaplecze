@@ -20,6 +20,11 @@ faq:
     answer: "Na rynku wtórnym najczęściej spotyka się 2.3 MultiJet/F1A w odmianach 120, 130, 140, 150, 160, 177 i 180 KM zależnie od roku i rynku. W nowszych egzemplarzach popularny jest 2.2 MultiJet3 120, 140 lub 180 KM."
   - question: "Ile kosztuje Fiat Ducato doka?"
     answer: "Cena zależy od tego, czy mówimy o samym podwoziu z podwójną kabiną, czy o gotowym aucie z platformą albo kiprem. Do ceny bazowego pojazdu dochodzi koszt zabudowy, który może podnieść finalną kwotę o dziesiątki tysięcy zł netto, a kiper 3-stronny jest zwykle wyraźnie droższy od prostej platformy."
+sources:
+  - "cenniki PL"
+  - "karty techniczne podwozi"
+  - "homologacje zabudów"
+  - "katalogi zabudowców."
 ---
 
 ## Fiat Ducato doka – co to za konstrukcja?
@@ -107,5 +112,3 @@ Na liście najważniejszych punktów kontrolnych są:
 Przy wersjach 4,25 t dochodzi jeszcze ważna kwestia formalna. DMC 4250 kg wykracza poza standardową kategorię B dla zwykłego pojazdu ciężarowego, więc znaczenie mają zasady kategorii C1 lub C oraz przepisy dotyczące tachografu i czasu pracy – zależnie od DMC i sposobu użytkowania.
 
 Warto też spojrzeć szerzej na alternatywy rynkowe. Naturalnymi konkurentami Ducato doka są Peugeot Boxer i Citroen Jumper jako konstrukcje bliźniacze, a także Ford Transit, Mercedes Sprinter Doka i Iveco Daily Doka – szczególnie wtedy, gdy porównujemy 3,5 t z 4,25 t albo napęd FWD z rozwiązaniami nastawionymi na wyższą nośność.
-
-*Źródła: cenniki PL, karty techniczne podwozi, homologacje zabudów, katalogi zabudowców.*

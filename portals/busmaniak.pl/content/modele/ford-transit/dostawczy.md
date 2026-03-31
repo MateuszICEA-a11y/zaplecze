@@ -19,6 +19,10 @@ faq:
   - question: "Jakie zabudowy można zamontować w Transit dostawczym?"
     answer: "Najpopularniejsze zabudowy to regały aluminiowe lub stalowe, podłoga sklejkowa z uchwytami do mocowania ładunku, przegroda kabina–ładownia, oświetlenie LED, szuflady podpodłogowe oraz systemy mocowania specjalistycznego wyposażenia. Trzeba pamiętać, że zabudowa zwiększa masę pojazdu i zmniejsza realną ładowność."
 lead: "Ford Transit dostawczy to furgon przeznaczony do codziennego transportu towarów. Zamknięta przestrzeń ładunkowa, drzwi boczne przesuwne oraz tylne drzwi dwuskrzydłowe otwierane do 180° lub 270° tworzą praktyczny zestaw dostępu do ładowni. W wybranych popularnych wariantach DMC od 3,5 do 4,7 t można dopasować auto do potrzeb przewozowych, pamiętając, że realna ładowność zależy od konkretnej wersji."
+sources:
+  - "katalog Ford Transit"
+  - "cennik Ford Polska/Ford Pro"
+  - "dane homologacyjne/WLTP"
 ---
 ## DMC Ford Transit dostawczy i kategorie prawa jazdy
 
@@ -111,5 +115,3 @@ W przypadku Ford Transit dostawczy ceny silnie zależą od długości nadwozia, 
 Dotyczy to zarówno nowych aut, jak i rynku wtórnego. Przy porównywaniu ofert trzeba osobno analizować wersje L2H2 FWD 3,5 t, L3H2 RWD 3,5/4,25 t czy L4H3 4,25/4,7 t, a także dopłaty wynikające z automatu, AWD, podwójnych drzwi przesuwnych, tylnych drzwi 270° oraz przygotowania pod zabudowę.
 
 Jeśli zależy Ci na rzetelnym porównaniu kosztów, ceny trzeba odnosić do konkretnego cennika Ford Polska lub Ford Pro oraz do dokładnej specyfikacji pojazdu. To samo dotyczy aut używanych – przebieg, stan, zabudowa, napęd i DMC mają tu decydujący wpływ na wartość.
-
-*Źródła: katalog Ford Transit, cennik Ford Polska/Ford Pro, dane homologacyjne/WLTP*

@@ -20,6 +20,10 @@ faq:
     answer: "Trafic L1 (5080 mm) pomieści 2 europalety, Trafic L2 (5480 mm) – 3 europalety. Przy ładowności do 1251 kg (L2H1) to solidna pojemność jak na segment średnich dostawczaków."
   - question: "Czy Renault Trafic i Opel Vivaro to to samo auto?"
     answer: "Tak – od Trafica II (2001) oba modele dzielą tę samą platformę i nadwozie. Różnice to logo, drobne elementy stylistyczne i opcje wyposażenia. Mechanicznie to identyczne pojazdy, co ułatwia dostępność części."
+sources:
+  - "Wikipedia – Renault Trafic"
+  - "renault.pl"
+  - "auto-data.net."
 ---
 ## Historia i generacje Renault Trafic
 
@@ -123,5 +127,3 @@ Segment dostawczaków to rynek pełen alternatyw – Renault Trafic mierzy się 
 | Cena nowego L2 (netto) | ~135 000 zł | ~125 000 zł | ~155 000 zł | ~175 000 zł | ~155 000 zł |
 
 [Opel Vivaro](/modele/opel-vivaro/) (Vivaro A/B) to dosłownie ten sam samochód – inne logo, identyczne podzespoły. [Ford Transit Custom](/modele/ford-transit-custom/) oferuje lepsze fotele i ergonomię, [VW Transporter](/modele/volkswagen-transporter/) wyższy prestiż i wartość rezydualną, [Mercedes Vito](/modele/mercedes-vito/) – premium wykończenie i opcję 4x4. Trafic wygrywa ceną i niskimi kosztami eksploatacji.
-
-*Źródła: Wikipedia – Renault Trafic, renault.pl, auto-data.net.*

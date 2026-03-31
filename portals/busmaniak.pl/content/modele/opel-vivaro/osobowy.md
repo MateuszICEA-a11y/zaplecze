@@ -17,6 +17,10 @@ faq:
     answer: "W generacji C trzeba to doprecyzować: po stronie użytkowej występowały odmiany Combi, a osobowy van Opla był oferowany jako Zafira Life. Zakres wyposażenia, liczba miejsc i detale wykończenia zależały od wersji oraz rynku."
   - question: "Czy Vivaro osobowy wymaga specjalnego ubezpieczenia?"
     answer: "Typowy wariant 8+1, czyli 9 miejsc łącznie z kierowcą, zwykle należy do kategorii M1. Kategoria M2 dotyczy pojazdów mających więcej niż 8 miejsc oprócz siedzenia kierowcy i DMC do 5 t, dlatego warto sprawdzić wpis w dowodzie rejestracyjnym."
+sources:
+  - "Opel"
+  - "dane producentów dla platformy EMP2"
+  - "Wikipedia"
 ---
 ## Opel Vivaro osobowy – Combi i Life
 
@@ -126,5 +130,3 @@ Warto zwrócić uwagę nie tylko na liczbę miejsc, ale też na długość nadwo
 ### Life na dłuższe trasy
 
 Jeśli zależy Ci na osobowym charakterze auta, właściwym adresem w generacji C jest **Zafira Life**. Taki wariant lepiej pasuje do dłuższych tras, przewozu rodzinnego albo klientów, zwłaszcza gdy znaczenie mają systemy wsparcia kierowcy i bogatsza konfiguracja kabiny.
-
-*Źródła: Opel, dane producentów dla platformy EMP2, Wikipedia*

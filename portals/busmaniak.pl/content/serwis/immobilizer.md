@@ -20,6 +20,12 @@ faq:
     answer: "Formalnie tak, ale wiąże się z ryzykiem – ubezpieczyciel może odmówić wypłaty odszkodowania za kradzież, jeśli stwierdzi dezaktywację fabrycznego zabezpieczenia. Ponadto trwałe wyłączenie immobilizera może skutkować unieważnieniem homologacji pojazdu."
   - question: "Jak uruchomić Fiata Ducato z awarią immobilizera?"
     answer: "Starsze Ducato z systemem CODE posiadają procedurę awaryjną. Po włączeniu zapłonu należy wcisnąć i przytrzymać pedał gazu, obserwując migającą kontrolkę wtrysku. Kolejne cyfry 5-cyfrowego kodu z karty CODE wprowadza się, licząc mignięcia kontrolki i puszczając pedał gazu po odliczeniu właściwej liczby dla każdej z cyfr."
+sources:
+  - "dokumentacja techniczna Fiat Professional"
+  - "Mercedes-Benz Vans"
+  - "[Wikipedia – Immobiliser](https://pl.wikipedia.org/wiki/Immobiliser)"
+  - "auto-klucze.com"
+  - "iparts.pl"
 ---
 
 ## Jak działa immobilizer w busie
@@ -140,5 +146,3 @@ Aspekty prawne i praktyczne:
 Zanim zdecydujesz się na IMMO OFF, rozważ fizyczne emulatory (koszt 100–250 zł plus montaż). To mikroukłady wlutowywane w sterownik silnika, które symulują sygnał autoryzacji z fabrycznego immobilizera, oszukując ECU. To rozwiązanie często lepsze niż całkowite usunięcie zabezpieczenia z oprogramowania.
 
 Jeśli podejrzewasz awarię immobilizera, a jednocześnie widzisz [kontrolkę check engine](/serwis/check-engine/), problem może leżeć w komunikacji CAN-bus między sterownikami. W takim przypadku sprawdź też kody błędów w module silnika – usterka magistrali danych objawia się pozornie niepowiązanymi awariami w kilku systemach jednocześnie.
-
-*Źródła: dokumentacja techniczna Fiat Professional, Mercedes-Benz Vans, [Wikipedia – Immobiliser](https://pl.wikipedia.org/wiki/Immobiliser), auto-klucze.com, iparts.pl*

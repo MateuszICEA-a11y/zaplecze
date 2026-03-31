@@ -20,6 +20,11 @@ faq:
     answer: "T4 to trwała konstrukcja, ale wymaga starannej weryfikacji stanu głowicy (2.5 TDI) i blacharki. Zadbane egzemplarze trzymają cenę – od 10 000 do 35 000 zł za wersje Syncro."
   - question: "Jaka jest pojemność ładunkowa Transportera T6.1?"
     answer: "Od 4,3 m³ (L1 niski dach) do 9,3 m³ (L2 wysoki dach). DMC od 2800 do 3200 kg."
+sources:
+  - "Wikipedia – Volkswagen Group MQB platform"
+  - "volkswagen-samochody-dostawcze.pl"
+  - "adac.de"
+  - "pzpm.org.pl."
 ---
 
 ## Historia i generacje Volkswagen Transporter
@@ -158,5 +163,3 @@ Segment dostawczaków to rynek pełen alternatyw – Volkswagen Transporter mier
 | Cena furgon L2 (netto) | ~175 000 zł | ~155 000 zł | ~145 000 zł | ~135 000 zł |
 
 Głównym rywalem jest [Mercedes Vito](/modele/mercedes-vito/) – podobny prestiż, ale wyższe koszty serwisu. [Ford Transit Custom](/modele/ford-transit-custom/) wygrywa wielkością paki i niższą ceną. [Renault Trafic](/modele/renault-trafic/) i [Opel Vivaro](/modele/opel-vivaro/) to tańsze alternatywy. Transporter bije wszystkich wartością rezydualną – po 5 latach traci najmniej w segmencie.
-
-*Źródła: Wikipedia – Volkswagen Group MQB platform, volkswagen-samochody-dostawcze.pl, adac.de, pzpm.org.pl.*

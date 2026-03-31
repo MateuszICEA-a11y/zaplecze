@@ -18,6 +18,8 @@ faq:
   - question: "Czy Doblò Maxi Panorama mieści 7 osób?"
     answer: "Tak, w osobowych odmianach Doblò Maxi liczba miejsc może wynosić do 7 zależnie od generacji, rozstawu osi i wyposażenia. Mechanizm składania trzeciego rzędu zależy od konkretnej wersji."
 lead: "Fiat Doblò Maxi to dłuższa odmiana Doblò, w której większy rozstaw osi i wydłużone nadwozie przekładają się na bardziej praktyczne wnętrze. W zależności od wersji może to oznaczać większą przestrzeń ładunkową w Cargo albo dodatkowe miejsca w odmianach osobowych."
+sources:
+  - "dane katalogowe producenta i broszury modelowe dla odpowiednich generacji oraz wersji nadwoziowych."
 ---
 ## Co dokładnie różni Maxi od standardowego Doblò
 
@@ -156,5 +158,3 @@ Zestawienie podstawowych danych wygląda tak:
 - Volkswagen Caddy Maxi Cargo – ok. 4853 mm długości i ok. 3,7 m³
 
 W obecnej generacji to właśnie Doblò III dzieli platformę i mechanikę z Combo, Berlingo i Partnerem. Dlatego przewaga Fiata nie wynika z samych wymiarów, lecz raczej z dostępności konkretnej wersji, wyposażenia i oferty handlowej.
-
-*Źródła: dane katalogowe producenta i broszury modelowe dla odpowiednich generacji oraz wersji nadwoziowych.*

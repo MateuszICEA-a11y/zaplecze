@@ -16,6 +16,9 @@ faq:
   - question: "Jaka jest różnica między Crafterem Kombi a Crafterem Van?"
     answer: "Crafter Kombi ma boczne szyby i siedzenia pasażerskie, a układ wyposażenia zależy od wersji i konfiguracji. Crafter Van to klasyczna blaszana zabudowa do transportu ładunku. Kombi może występować jako M1 lub M2 – zależnie od liczby miejsc."
 lead: "Volkswagen Crafter II w wersji osobowej – Kombi – to pojazd do przewozu do 9 osób łącznie z kierowcą, budowany na tej samej bazie co Crafter Van."
+sources:
+  - "Volkswagen"
+  - "dane modelowe Crafter II"
 ---
 ## Wersje osobowe Craftera
 
@@ -127,5 +130,3 @@ Sprinter występuje m.in. w długościach około **5,93 m** i **6,97 m**, podcza
 Istotna jest też skrzynia biegów. W Volkswagenie stosowany był **8-biegowy automat**, a w Mercedesie **9G-TRONIC**. W praktyce dla przewoźników oznacza to różne charakterystyki pracy w trasie, przy pełnym obciążeniu i w jeździe miejskiej.
 
 Jeżeli priorytetem jest zabudowa pod minibus lub pojazd specjalny, oba modele dają szerokie możliwości. Jeśli jednak porównujemy czysto osobowego busa do przewozu grup, trzeba patrzeć nie tylko na liczbę miejsc, ale też na długość nadwozia, układ napędu i realną przestrzeń bagażową za ostatnim rzędem siedzeń.
-
-*Źródła: Volkswagen, dane modelowe Crafter II*

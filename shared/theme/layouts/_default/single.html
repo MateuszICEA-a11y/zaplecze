@@ -113,6 +113,18 @@
     </section>
     {{ end }}
 
+    {{/* ═══ SOURCES ═══ */}}
+    {{ with .Params.sources }}
+    <section class="sources">
+      <div class="sources__title">Źródła:</div>
+      <ul class="sources__list">
+        {{ range . }}
+        <li>{{ . | markdownify }}</li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+
     {{/* ═══ AUTHOR CARD ═══ */}}
     {{ if not $isPage }}
     {{ if $authorData }}

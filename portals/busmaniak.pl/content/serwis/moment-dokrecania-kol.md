@@ -22,6 +22,11 @@ faq:
     answer: "Klucz udarowy można stosować do wstępnego dokręcania, ale końcowe dokręcenie powinno zawsze odbywać się kluczem dynamometrycznym. Klucz udarowy nie pozwala kontrolować momentu obrotowego."
   - question: "Co się stanie jeśli za mocno dokręcę koła?"
     answer: "Zbyt wysoki moment dokręcania może spowodować rozciągnięcie lub zerwanie śrub, odkształcenie tarczy hamulcowej (bicie kierownicy przy hamowaniu) oraz uszkodzenie gwintu w piaście."
+sources:
+  - "Instrukcje serwisowe: Fiat Ducato (2014–2026), Mercedes Sprinter (W906/W907), Ford Transit MK8"
+  - "Oponeo.pl – moment dokręcania kół – poradnik"
+  - "OponyAlbert.pl – tabela momentów dokręcania kół kluczem dynamometrycznym"
+  - "Wikipedia – [Torque wrench](https://en.wikipedia.org/wiki/Torque_wrench)"
 ---
 ## Dlaczego moment dokręcania kół jest tak ważny {#dlaczego}
 
@@ -137,10 +142,3 @@ Nieprawidłowe dokręcanie kół w busach to częsty problem, który może prowa
 {{% /info %}}
 
 ---
-
-**Źródła:**
-
-- Instrukcje serwisowe: Fiat Ducato (2014–2026), Mercedes Sprinter (W906/W907), Ford Transit MK8
-- Oponeo.pl – moment dokręcania kół – poradnik
-- OponyAlbert.pl – tabela momentów dokręcania kół kluczem dynamometrycznym
-- Wikipedia – [Torque wrench](https://en.wikipedia.org/wiki/Torque_wrench)

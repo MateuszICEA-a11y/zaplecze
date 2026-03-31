@@ -16,6 +16,8 @@ faq:
   - question: "Jak Combo Life wypada w porównaniu z Berlingo III?"
     answer: "To bardzo blisko spokrewnione konstrukcje rodziny PSA/Stellantis K9, więc mają zbliżone wymiary, układ wnętrza i gamę napędów. Różnice dotyczą głównie stylizacji, konfiguracji wyposażenia i oferty na danym rynku."
 lead: "Opel Combo Life to osobowy van z pełnym przeszkleniem, siedzeniami dla 5 lub 7 pasażerów i bardzo praktycznym nadwoziem. Korzysta ze wspólnej architektury rodziny PSA/Stellantis K9, łącząc użytkową funkcjonalność z wyposażeniem typowym dla auta rodzinnego."
+sources:
+  - "oficjalne cenniki i katalogi Opla oraz dokumenty homologacyjne dla danego rocznika i rynku."
 ---
 ## Co wyróżnia Opel Combo Life
 
@@ -108,5 +110,3 @@ Pod względem gabarytów Combo Life występowało w dwóch długościach nadwozi
 Jeśli patrzeć szerzej na segment, realnymi rywalami są także Peugeot Rifter, Toyota Proace City Verso, Volkswagen Caddy i Ford Tourneo Connect. W tej klasie auta mają zwykle od około 4,40 do 4,85 m długości, oferują 5 lub 7 miejsc, duży bagażnik i – w zależności od wersji – automat.
 
 W codziennej eksploatacji najważniejsze pytania brzmią więc nie „czy Berlingo jest lepsze technicznie”, ale „czy dany egzemplarz ma właściwy układ siedzeń, odpowiedni napęd i potrzebne wyposażenie”. Technicznie to bardzo bliscy krewni, dlatego o wyborze często decydują stan auta, cena i konkretna specyfikacja.
-
-*Źródła: oficjalne cenniki i katalogi Opla oraz dokumenty homologacyjne dla danego rocznika i rynku.*

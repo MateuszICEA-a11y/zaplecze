@@ -18,6 +18,13 @@ faq:
     answer: "Najpraktyczniejszy układ to alkowa nad kabiną (2 osoby) + stałe łóżko tylne (2 osoby) + dineta rozkładana na dodatkowe miejsce. Dzieci zazwyczaj zajmują alkowę, dorośli – łóżko tylne."
   - question: "Czy kamper 5-osobowy zmieści się na zwykłym parkingu?"
     answer: "Długością (6–7 m) tak, ale wysokość alkowy (3,0–3,2 m) uniemożliwia wjazd do parkingów podziemnych i pod niskie wiadukty. Na parkingach naziemnych nie ma problemu."
+sources:
+  - "Knaus Tabbert"
+  - "Bürstner"
+  - "Chausson"
+  - "CIVD"
+  - "CEPiK"
+  - "dane z portali OLX i Otomoto"
 ---
 
 ## Typy kamperów 5-osobowych
@@ -109,5 +116,3 @@ Pięcioosobowa załoga generuje znacznie większe zapotrzebowanie na wodę, prą
 - **Markiza 3,5–4 m** – skutecznie rozszerza przestrzeń życiową o dodatkowe **10–14 m²**. Przy piątce osób w środku zamkniętego kampera szybko robi się ciasno, a markiza tworzy zadaszony taras.
 
 Przy wyborze [używanego kampera](/kampery/kampery-uzywane/) zwróć szczególną uwagę na pojemność zbiorników i moc ogrzewania. Tańsze modele, często z flot wynajmu, bywają konfigurowane pod 2–3 osoby. Więcej praktycznych porad znajdziesz w naszym [przewodniku kupującego kampera](/kampery/przewodnik-kupujacego/).
-
-*Źródła: Knaus Tabbert, Bürstner, Chausson, CIVD, CEPiK, dane z portali OLX i Otomoto (marzec 2026)*

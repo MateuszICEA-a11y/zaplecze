@@ -19,6 +19,10 @@ faq:
   - question: "Jaki silnik do brygadówki Daily?"
     answer: "To zależy od generacji i rocznika. W Iveco Daily występowały jednostki 2.3 oraz 3.0, a moce, moment obrotowy i dostępne skrzynie różniły się między latami produkcji oraz wariantami DMC."
 lead: "Iveco Daily brygadówka to typowo robocza konfiguracja dla firm, które muszą przewieźć ekipę i sprzęt jednym autem. Trzeba jednak bardzo precyzyjnie patrzeć na generację, rocznik, DMC, liczbę miejsc i homologację, bo w Daily te parametry zmieniały się między kolejnymi aktualizacjami gamy."
+sources:
+  - "dokumentacja producenta"
+  - "cenniki"
+  - "konfigurator i dane homologacyjne Iveco dla rynku PL/EU"
 ---
 ## Co to jest brygadówka i jak wygląda zabudowa
 
@@ -87,5 +91,3 @@ Podobnie jest z serwisem. Nie ma sensu podawać szerokich, nieprzypisanych do we
 Można natomiast wskazać najważniejsze punkty kontroli przy zakupie używanego Daily brygadowego. Trzeba sprawdzić korozję ramy i progów, stan przegrody, mocowania siedzeń i pasów, zużycie tylnego zawieszenia pod obciążeniem, historię DPF/EGR/SCR-AdBlue, wycieki z mostu i skrzyni, stan bliźniaków lub opon oraz zgodność liczby miejsc z dowodem rejestracyjnym.
 
 Warto też pamiętać, że łańcuchowy rozrząd nie ma stałego interwału wymiany wpisanego tak samo dla każdej odmiany, ale wymaga diagnostyki przy objawach zużycia. To bezpieczniejsze i bardziej precyzyjne podejście niż stwierdzenie, że „nie wymaga wymiany” bez żadnych zastrzeżeń.
-
-*Źródła: dokumentacja producenta, cenniki, konfigurator i dane homologacyjne Iveco dla rynku PL/EU*

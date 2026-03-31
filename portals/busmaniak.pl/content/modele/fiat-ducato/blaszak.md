@@ -18,6 +18,10 @@ faq:
     answer: "Długość paki wynosi 3120 mm, szerokość maksymalna około 1870 mm, wysokość 1932 mm. Szerokość między nadkolami to około 1422 mm i jest zasadniczo stała dla wersji furgon tej generacji."
   - question: "Z jakim silnikiem kupić Ducato blaszaka?"
     answer: "Najbezpieczniejszym wyborem na rynku wtórnym zwykle pozostaje 2.3 MultiJet 130 lub 150 KM. Starszy 3.0 MultiJet jest trwały i ceniony, ale także wymaga normalnego serwisu i może mieć typowe usterki osprzętu, EGR, turbo czy wycieki."
+sources:
+  - "[Wikipedia – silnik wysokoprężny](https://pl.wikipedia.org/wiki/Silnik_wysokopr%C4%99%C5%BCny)"
+  - "Fiat Professional"
+  - "auto-data.net"
 ---
 
 ## Fiat Ducato blaszak – generacje i ewolucja
@@ -91,5 +95,3 @@ W **3.0 MultiJet** zdarzają się wycieki i usterki osprzętu, mimo że sama baz
 Przed zakupem warto też zweryfikować **VIN pod kątem kampanii producenta**. W autach dostawczych znaczenie mają akcje dotyczące między innymi poduszek powietrznych, oprogramowania emisji, przewodów paliwowych czy układu hamulcowego – zależnie od rocznika.
 
 Na rynku wtórnym kluczowe są też dane z tabliczki i dowodu. Trzeba sprawdzić **masę własną**, realną **ładowność po zabudowie**, stan progów i podwozia, historię wymian oleju co **15–20 tys. km** oraz zgodność numeru VIN z wyposażeniem. Jeśli auto ma pracować w mieście lub za granicą, stan DPF/SCR i norma Euro są równie ważne jak sam przebieg.
-
-*Źródła: [Wikipedia – silnik wysokoprężny](https://pl.wikipedia.org/wiki/Silnik_wysokopr%C4%99%C5%BCny), Fiat Professional, auto-data.net*

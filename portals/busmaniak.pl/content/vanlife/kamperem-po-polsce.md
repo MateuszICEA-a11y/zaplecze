@@ -20,6 +20,11 @@ faq:
     answer: "Wrzesień – kempingi są tańsze, pogoda bywa lepsza niż w sierpniu, a tłumy turystów znikają. Maj i czerwiec to dobra alternatywa, szczególnie na Mazurach i Kaszubach, gdy przyroda jest najładniejsza."
   - question: "Jakie aplikacje pomagają w podróży kamperem?"
     answer: "Park4Night (370 000+ lokalizacji, dzikie spoty i kempingi), CamperContact (50 000+ obiektów z recenzjami), Grupa Biwakowa (polska społeczność), Fuelio (śledzenie spalania) i Google Maps/Mapy.cz (nawigacja i planowanie aktywności)."
+sources:
+  - "Park4Night"
+  - "CamperContact"
+  - "Grupa Biwakowa"
+  - "dane cenowe kempingów"
 ---
 
 ## Najlepsze regiony na podróż kamperem
@@ -175,5 +180,3 @@ Te kwoty nie obejmują wszystkich wydatków specyficznych dla caravaningu. W pra
 Jeśli planujesz wyjazd z wypożyczalni, pamiętaj, że sam najem kampera w sezonie w Polsce to zwykle około **350–800 zł za dobę**, a do tego dochodzi kaucja rzędu **5000–10000 zł**. Dlatego budżet „podróży kamperem po Polsce” warto zawsze liczyć w dwóch wersjach: dla właściciela pojazdu i dla osoby wynajmującej.
 
 W FAQ pada widełka 1500–3500 zł za tydzień dla dwóch osób, ale ona również ma charakter orientacyjny. Bez jednolitych założeń dotyczących spalania, ceny paliwa, standardu noclegów i liczby atrakcji płatnych nie da się jej uczciwie traktować jako uniwersalnego kosztorysu.
-
-*Źródła: Park4Night, CamperContact, Grupa Biwakowa, dane cenowe kempingów (marzec 2026)*

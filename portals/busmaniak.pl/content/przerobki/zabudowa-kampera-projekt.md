@@ -19,6 +19,12 @@ faq:
     answer: "Średnie spalanie zależy od typu zabudowy. Camper vany (furgony) palą średnio 9–11 l/100 km. Alkowy i duże integry, ze względu na duży opór powietrza, mogą spalać od 12 do nawet 15 l/100 km."
   - question: "Czy Fiat Ducato to dobry materiał na pierwszego kampera DIY?"
     answer: "Tak, to prawdopodobnie najlepsza baza. Dzięki regularnym kształtom paki montaż izolacji i mebli jest znacznie prostszy niż w autach o bardziej obłych kształtach."
+sources:
+  - "Fiat Professional (fiatprofessional.com)"
+  - "Wikipedia"
+  - "katalogi techniczne Dethleffs"
+  - "Hymer"
+  - "Adria."
 ---
 
 ## Historia i ewolucja – od Ducato I do dzisiaj
@@ -76,5 +82,3 @@ W nowszych egzemplarzach (generacja X250) powtarzają się trzy problemy:
 Kluczowym aspektem, zwłaszcza na rynku wtórnym, jest skrzynia biegów. Tańsze modele wyposażone w zautomatyzowaną przekładnię „Comfort-Matic” cechują się niską kulturą pracy, szczególnie pod obciążeniem na wzniesieniach. Znacznie lepszym wyborem jest wprowadzony w 2020 roku 9-biegowy automat hydrokinetyczny ZF, a w modelach z 2024 roku jego 8-biegowy następca (AT8). Różnica w komforcie i niezawodności jest kolosalna.
 
 Przed zakupem koniecznie przejrzyj nasz [przewodnik kupującego kampera](/kampery/przewodnik-kupujacego/) – znajdziesz tam listę kontrolną punktów do sprawdzenia na miejscu.
-
-*Źródła: Fiat Professional (fiatprofessional.com), Wikipedia, katalogi techniczne Dethleffs, Hymer, Adria.*

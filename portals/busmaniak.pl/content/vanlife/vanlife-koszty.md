@@ -20,6 +20,13 @@ faq:
     answer: "Gotowanie zamiast restauracji, spokojna jazda 80–90 km/h zamiast 120 km/h, dobra organizacja postoju, panele solarne zamiast pracy silnika na postoju oraz korzystanie z homologowanych systemów refill/GPL lub fabrycznych zbiorników gazu zamiast drogich jednorazowych rozwiązań."
   - question: "Ile kosztuje ubezpieczenie kampera?"
     answer: "OC kampera to 400–1500 zł/rok, AC 1500–4000 zł/rok w zależności od wartości pojazdu. Kamper zarejestrowany jako pojazd specjalny bywa tańszy w OC niż bus dostawczy."
+sources:
+  - "Vanlife – Wikipedia"
+  - "Kampery Gorzów"
+  - "PodróżoVanie.pl"
+  - "ZbudujSamKampera.pl"
+  - "SzukamVibu.pl"
+  - "CamperSpot.pl"
 ---
 
 ## Stałe koszty – rachunki, które nie znikają
@@ -166,5 +173,3 @@ Minimum oznacza zwykle jazdę mało, gotowanie samemu i bardzo ostrożne korzyst
 Jest jeszcze jeden koszt, którego nie wolno pomijać przy uczciwym porównaniu z najmem mieszkania – **amortyzacja zakupu i zabudowy busa**. Przy pojeździe za 60 000–150 000 zł i założeniu 5 lat użytkowania sama amortyzacja kapitału to orientacyjnie **1000–2500 zł miesięcznie**, bez kosztu finansowania.
 
 Szczegóły o [vanlife – jak zacząć](/vanlife/vanlife-jak-zaczac/) i [najlepszych trasach kamperowych po Polsce](/vanlife/kamperem-po-polsce/) znajdziesz w kolejnych artykułach. Sprawdź też [kalkulator paliwa](/narzedzia/kalkulator-paliwa/), żeby zaplanować budżet na konkretną trasę.
-
-*Źródła: Vanlife – Wikipedia, Kampery Gorzów, PodróżoVanie.pl, ZbudujSamKampera.pl, SzukamVibu.pl, CamperSpot.pl*

@@ -20,6 +20,13 @@ faq:
     answer: "Mercedes Sprinter 4x4 oferuje bardzo dobry kompromis między komfortem jazdy a możliwościami terenowymi. Iveco Daily 4x4 ma wyraźnie bardziej użytkowy i terenowy charakter – z reduktorem i blokadami – ale jest cięższe i droższe w serwisie. VW Crafter 4Motion to dobra opcja na śnieg, szuter i śliskie dojazdy, lecz słabsza w ciężkim terenie."
   - question: "Ile pali kamper 4x4?"
     answer: "Zwykle o ok. 1–3 l/100 km więcej niż wersja 2WD tego samego modelu. Sprinter 4x4 z zabudową kamperową spala orientacyjnie 12–15 l/100 km na trasie, a w terenie nawet 18–20 l/100 km. Daily 4x4 jest jeszcze mniej oszczędne – około 14–18 l/100 km."
+sources:
+  - "[Napęd na cztery koła – Wikipedia](https://pl.wikipedia.org/wiki/Nap%C4%99d_na_cztery_ko%C5%82a)"
+  - "Vannado.com"
+  - "ZmienBusWKampera.pl"
+  - "Buskup.pl"
+  - "Truck.pl"
+  - "40ton.net"
 ---
 
 ## Czym jest kamper 4x4 – fabryczny vs przeróbka
@@ -176,5 +183,3 @@ Szczerze? Wielu kamperowiczów kupuje 4x4 bardziej dla poczucia bezpieczeństwa 
 {{% /expert %}}
 
 Więcej o [przeróbkach busów na kampery](/przerobki/jaki-bus-na-kampera/) i wyborze bazy pod zabudowę kamperową w naszej sekcji o [kamperach](/kampery/).
-
-*Źródła: [Napęd na cztery koła – Wikipedia](https://pl.wikipedia.org/wiki/Nap%C4%99d_na_cztery_ko%C5%82a), Vannado.com, ZmienBusWKampera.pl, Buskup.pl, Truck.pl, 40ton.net*

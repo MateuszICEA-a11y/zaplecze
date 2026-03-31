@@ -16,6 +16,9 @@ faq:
   - question: "Czy Transit Custom L1 też mieści 2 europalety?"
     answer: "Artykuł potwierdza taką możliwość dla L2. Dla L1 nie podano tu jednoznacznego potwierdzenia, dlatego przed zakupem warto odnieść długość podłogi 2553 mm do sposobu ustawienia palet i konkretnej zabudowy."
 lead: "Ford Transit Custom Van II to średni furgon oferowany zazwyczaj w furgonowych wersjach homologowanych jako N1, z DMC zależnym od wariantu do 3,5 t. W tym tekście skupiamy się wyłącznie na generacji II, czyli modelu od 2023/2024, żeby nie mieszać jej z wcześniejszym Transit Custom I z lat 2012–2023."
+sources:
+  - "konkretna specyfikacja Forda dla Transit Custom II"
+  - "cennik i dokumentacja techniczna dla wybranego rynku oraz roku modelowego – z datą dostępu przy weryfikacji parametrów konkretnej wersji."
 ---
 ## Konfiguracje i wymiary Ford Transit Custom Van
 
@@ -135,5 +138,3 @@ Dla diesla 2.0 EcoBlue nominalny interwał serwisowy należy traktować jako do 
 W praktyce warto też pamiętać, że koszty eksploatacji vana to nie tylko olej i filtry. Duże znaczenie mają opony, elementy układu hamulcowego, sprzęgło, elementy osprzętu silnika, ewentualne układy oczyszczania spalin oraz ubezpieczenie – ale w dostarczonych danych nie ma wiarygodnych kwot, więc nie ma sensu ich zgadywać.
 
 Podobnie jest z oponami – nie podajemy jednego „uniwersalnego” rozmiaru dla całej gamy Transit Custom, bo zależy on od generacji, DMC i wersji. Przy wycenie eksploatacji konkretnego egzemplarza trzeba odnieść cenę opon do rzeczywistego rozmiaru homologowanego dla danego auta.
-
-*Źródła: konkretna specyfikacja Forda dla Transit Custom II, cennik i dokumentacja techniczna dla wybranego rynku oraz roku modelowego – z datą dostępu przy weryfikacji parametrów konkretnej wersji.*

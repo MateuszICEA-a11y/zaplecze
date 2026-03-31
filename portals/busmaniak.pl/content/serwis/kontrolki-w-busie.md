@@ -23,6 +23,12 @@ faq:
     answer: "To normalny autotest – po włączeniu zapłonu (przed uruchomieniem silnika) wszystkie kontrolki zapalają się na 3–5 sekund, a następnie gasną. Sprawdzasz w ten sposób, czy żarówki kontrolek są sprawne. Jeśli któraś nie gaśnie po starcie – oznacza to realny problem."
   - question: "Co oznacza migająca kontrolka check engine w busie?"
     answer: "Migająca kontrolka check engine (w odróżnieniu od stałego świecenia) oznacza aktywne uszkodzenie wymagające natychmiastowej reakcji – najczęściej wypadanie zapłonów, które mogą uszkodzić katalizator lub filtr DPF. Zmniejsz obroty i jedź do najbliższego serwisu."
+sources:
+  - "OtoMoto.pl – kontrolki w samochodzie – co oznaczają (2025)"
+  - "Rankomat.pl – pełna lista kontrolek i ich znaczenie"
+  - "Avalon Logistics Group – kontrolki w samochodzie (poradnik flotowy)"
+  - "[Tablica wskaźników samochodu](https://pl.wikipedia.org/wiki/Tablica_rozdzielcza) – Wikipedia"
+  - "Instrukcje obsługi: Fiat Ducato (2014–2024), Mercedes Sprinter W907, Ford Transit Mk8"
 ---
 ## Kolory kontrolek – system sygnalizacji {#kolory}
 
@@ -164,11 +170,3 @@ Nie próbuj dojechać do serwisu, jeśli:
 Więcej o konkretnych kontrolkach znajdziesz w dedykowanych artykułach – [kontrolka oleju](/serwis/kontrolka-oleju/), [kontrolka silnika](/serwis/kontrolka-silnika/) i [kontrolki Fiat Ducato](/serwis/kontrolki-fiat-ducato/). Jeśli problem dotyczy [AdBlue](/serwis/adblue/), sprawdź osobny poradnik – system SCR ma własną logikę ostrzeżeń z odliczaniem kilometrów do blokady silnika.
 
 ---
-
-**Źródła:**
-
-- OtoMoto.pl – kontrolki w samochodzie – co oznaczają (2025)
-- Rankomat.pl – pełna lista kontrolek i ich znaczenie
-- Avalon Logistics Group – kontrolki w samochodzie (poradnik flotowy)
-- [Tablica wskaźników samochodu](https://pl.wikipedia.org/wiki/Tablica_rozdzielcza) – Wikipedia
-- Instrukcje obsługi: Fiat Ducato (2014–2024), Mercedes Sprinter W907, Ford Transit Mk8

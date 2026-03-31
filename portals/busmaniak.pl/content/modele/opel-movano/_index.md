@@ -20,6 +20,10 @@ faq:
     answer: "Do 2254 kg w wersjach z DMC 4,25 t. Standardowe 3,5 t – ładowność 1300–1500 kg."
   - question: "Czy Movano-e nadaje się do logistyki?"
     answer: "Tak – wersja z baterią 75 kWh ma do 420 km zasięgu WLTP. Mniejsza bateria (37 kWh, 117 km) nadaje się do tras lokalnych."
+sources:
+  - "Wikipedia – Platforma Sevel"
+  - "Wikipedia – Normy emisji spalin Euro 6"
+  - "katalogi techniczne Opel Professional."
 ---
 
 ## Historia i generacje Opel Movano
@@ -166,5 +170,3 @@ Segment dostawczaków to rynek pełen alternatyw – Opel Movano mierzy się z r
 | Cena furgon L3H2 (netto) | ~170 000 zł | ~145 000 zł | ~150 000 zł | ~185 000 zł |
 
 Generacje A i B to technicznie [Renault Master](/modele/renault-master/) – identyczne podzespoły, inny logotyp. Movano C dzieli platformę z [Fiatem Ducato](/modele/fiat-ducato/) produkowanym w tej samej fabryce w Gliwicach. [Mercedes Sprinter](/modele/mercedes-sprinter/) to segment premium z wyższymi kosztami, a [Iveco Daily](/modele/iveco-daily/) wygrywa napędem RWD i kołami bliźniaczymi do najcięższych zadań.
-
-*Źródła: Wikipedia – Platforma Sevel, Wikipedia – Normy emisji spalin Euro 6, katalogi techniczne Opel Professional.*

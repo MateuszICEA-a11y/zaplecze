@@ -20,6 +20,14 @@ faq:
     answer: "To zależy od wersji nadwozia. W standardowych, krótkich wersjach (L1, ok. 4,9 m) przestrzeń bagażowa przy 9 osobach jest mocno ograniczona i wynosi ok. 800–1200 litrów do sufitu. Aby komfortowo spakować 9 osób z dużymi walizkami, należy wybrać wersję przedłużaną (Long, L2/L3), która dzięki nadwoziu o długości ponad 5,3 m oferuje od 1800 do nawet 2000 litrów przestrzeni ładunkowej."
   - question: "Czy mogę wyjechać wynajętym busem za granicę?"
     answer: "Tak, większość wypożyczalni dopuszcza wyjazdy do krajów UE po wcześniejszym zgłoszeniu. Część firm pobiera dodatkową opłatę za ubezpieczenie zagraniczne."
+sources:
+  - "cenniki wypożyczalni (Alpin Wypożyczalnia"
+  - "Wynajbus.pl"
+  - "CarFree"
+  - "Regina Tour)"
+  - "dane kb.pl"
+  - "portal OLX"
+  - "[Wikipedia – Mikrobus](https://pl.wikipedia.org/wiki/Mikrobus)."
 ---
 
 ## Kiedy potrzebujesz 9-osobowego busa
@@ -126,5 +134,3 @@ Jeśli na co dzień jeździsz autem osobowym, bus 9-osobowy wymaga chwili adapta
 Po kilkunastu kilometrach jazda busem staje się naturalna. Większość kierowców adaptuje się w ciągu pierwszej godziny.
 
 Szczegółowe opisy modeli znajdziesz w artykułach o [Fordzie Transit Custom](/modele/ford-transit-custom/) i [Volkswagenie Transporter T6](/modele/volkswagen-transporter-t6/). Informacje o wymaganiach prawnych w artykule o [prawie jazdy kategorii B](/przepisy/prawo-jazdy-kategoria-b/). Jeśli szukasz busa dostawczego zamiast osobowego, sprawdź nasz przegląd [wypożyczalni busów](/wynajem/wypozyczalnia-busow/). Zestawienie busów 9-osobowych znajdziesz w [rankingu busów 9-osobowych](/porownania/ranking-busow-9-osobowych/).
-
-*Źródła: cenniki wypożyczalni (Alpin Wypożyczalnia, Wynajbus.pl, CarFree, Regina Tour), dane kb.pl, portal OLX, [Wikipedia – Mikrobus](https://pl.wikipedia.org/wiki/Mikrobus).*

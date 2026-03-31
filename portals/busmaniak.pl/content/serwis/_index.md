@@ -20,6 +20,11 @@ faq:
     answer: "Tak. Pojazdy o DMC do 3,5 tony wymagają badania technicznego co 12 miesięcy. Obecnie kosztuje ono 99 zł. Brak ważnego badania grozi mandatem do 3000 zł i zatrzymaniem dowodu rejestracyjnego."
   - question: "Co zrobić, gdy zapali się kontrolka check engine w busie?"
     answer: "Nie panikuj, ale nie ignoruj. Podłącz skaner OBD2, odczytaj kod błędu i sprawdź, czy silnik pracuje stabilnie. Jeśli kontrolka miga, natychmiast zjazd na pobocze – to oznacza wyładowania w cylindrach. Więcej w naszym poradniku o check engine."
+sources:
+  - "dokumentacja techniczna Fiat Professional"
+  - "Mercedes-Benz Vans"
+  - "Ford Commercial Vehicles"
+  - "cenauslug.pl"
 ---
 ## Kontrolki i diagnostyka – co mówi deska rozdzielcza
 
@@ -121,5 +126,3 @@ Koszty związane z DPF:
 - **Nowy filtr DPF (zamiennik)** – 2000–8000 zł, zależnie od modelu. Oryginał potrafi kosztować nawet 15 000 zł.
 
 Kłopoty z układem wydechowym nie kończą się na filtrze cząstek stałych. Szczególnie w autach produkowanych po 2016 roku prawdziwą plagą są awarie modułu SCR odpowiedzialnego za dawkowanie AdBlue. Usterka pompy mocznika lub jej czujników, sygnalizowana kontrolką UREA, może unieruchomić pojazd. ASO często proponuje jedynie wymianę całego zbiornika, co generuje koszty rzędu 3500–5500 zł za samą część.
-
-*Źródła: dokumentacja techniczna Fiat Professional, Mercedes-Benz Vans, Ford Commercial Vehicles, cenauslug.pl*

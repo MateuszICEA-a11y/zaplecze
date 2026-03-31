@@ -16,6 +16,12 @@ faq:
   - question: "Czy 2.0 TDI w Crafterze wymaga AdBlue?"
     answer: "Tak – Crafter II z silnikiem 2.0 TDI i układem SCR wymaga AdBlue. Po wyczerpaniu AdBlue pojawia się odliczanie do niemożności ponownego uruchomienia silnika."
 lead: "Silnik 2.0 TDI w VW Crafterze II to czterocylindrowy diesel o pojemności 1968 cm³, dostępny fabrycznie w czterech wariantach mocy: 102, 122, 140 i 177 KM. To jednostka stosowana także w MAN-ie TGE, ceniona za dobrą elastyczność i trwałość, ale wymagająca właściwego serwisu osprzętu Euro 6."
+sources:
+  - "instrukcja obsługi Craftera II"
+  - "cenniki i homologacje Volkswagen"
+  - "dokumentacja techniczna producenta"
+  - "ETKA/ELSA lub TPI"
+  - "dokumenty WLTP dla konkretnych wariantów"
 ---
 
 ## Dane techniczne 2.0 TDI 140 KM
@@ -99,5 +105,3 @@ Volkswagen przewiduje wymianę oleju silnikowego w Crafterze nawet co 30 000 km 
 Rodzaj skrzyni jest powiązany z napędem FWD, RWD lub 4Motion oraz z konkretną wersją mocy. To oznacza, że przy zakupie używanego egzemplarza trzeba sprawdzać specyfikację po VIN-ie, a nie opierać się wyłącznie na ogłoszeniu.
 
 Automat w Crafterze wymaga normalnej obsługi serwisowej, szczególnie w aucie pracującym pod obciążeniem. W materiale źródłowym zabrakło jednak pewnej identyfikacji konkretnego typu przekładni i twardych kosztów serwisu olejowego, więc nie ma podstaw, by wpisywać tu precyzyjne kwoty.
-
-*Źródła: instrukcja obsługi Craftera II, cenniki i homologacje Volkswagen, dokumentacja techniczna producenta, ETKA/ELSA lub TPI, dokumenty WLTP dla konkretnych wariantów*

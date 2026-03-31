@@ -18,6 +18,10 @@ faq:
     answer: "Jumpy III oferuje diesle 1.5 BlueHDi (100/120 KM) i 2.0 BlueHDi (120/145/180 KM). Są to te same jednostki co w Toyota ProAce i Peugeot Expert."
   - question: "Czy części do Jumpy pasują do ProAce i Expert?"
     answer: "Tak – większość części mechanicznych i nadwoziowych jest wymienna między Jumpy, ProAce i Expert. Różnią się elementy z logo producenta (grill, kołpaki, emblematy)."
+sources:
+  - "Wikipedia – [Citroën Jumpy](https://en.wikipedia.org/wiki/Citro%C3%ABn_Jumpy)"
+  - "katalogi producenta"
+  - "AutoCentrum.pl"
 ---
 
 ## Citroën Jumpy – co to za model?
@@ -73,5 +77,3 @@ Przy zakupie używanego Jumpy/ProAce/Expert liczy się przebieg i historia serwi
 {{% /expert %}}
 
 Pełne porównanie średnich vanów znajdziesz w artykule [Vivaro vs Trafic vs ProAce vs Expert](/porownania/porownanie-srednich-vanow/).
-
-*Źródła: Wikipedia – [Citroën Jumpy](https://en.wikipedia.org/wiki/Citro%C3%ABn_Jumpy), katalogi producenta, AutoCentrum.pl*

@@ -16,6 +16,10 @@ faq:
   - question: "Jaka jest pojemność ładunkowa Peugeot Boxera?"
     answer: "Boxer oferuje przestrzeń ładunkową od 8 do 17 m³ w zależności od konfiguracji. Standardowe wersje Van to 8, 10, 11 i 13 m³. Wersja L4H3 (najdłuższa, najwyższa) oferuje 17 m³."
 lead: "Peugeot Boxer III to duży van dostawczy klasy ciężkiej segmentu N1/N2, budowany na wspólnej platformie Sevel Sud razem z Fiatem Ducato i Citroënem Jumperem. W Polsce jest jednym z dominujących wyborów dla firm transportowych, usługowych i producentów zabudów specjalnych."
+sources:
+  - "Wikipedia – Sevel"
+  - "Peugeot Professional Polska"
+  - "dane techniczne Auto-Data.net."
 ---
 ## Historia i generacje Peugeot Boxer
 
@@ -123,5 +127,3 @@ Segment dostawczaków to rynek pełen alternatyw – Peugeot Boxer mierzy się z
 | Cena L3H2 (netto) | ~165 000 zł | ~150 000 zł | ~160 000 zł | ~170 000 zł | ~195 000 zł |
 
 Boxer, [Fiat Ducato](/modele/fiat-ducato/) i Citroën Jumper to ten sam samochód pod trzema logotypami – identyczna platforma Sevel Sud z Atessy. Wybór zależy od bliskości serwisu i warunków cenowych dealera. [Opel Movano](/modele/opel-movano/) C to od 2021 też bliźniak (produkowany w Gliwicach). [Mercedes Sprinter](/modele/mercedes-sprinter/) gra w innej lidze cenowej, ale oferuje RWD i lepsze wyciszenie.
-
-*Źródła: Wikipedia – Sevel, Peugeot Professional Polska, dane techniczne Auto-Data.net.*

@@ -19,6 +19,8 @@ faq:
   - question: "Czy Ford Transit L4 wymaga specjalnych uprawnień do prowadzenia?"
     answer: "Prawo jazdy kat. B obejmuje pojazdy do 3500 kg DMC. W Transicie występują także wersje 3900 kg, 4100 kg, 4250 kg i 4700 kg – standardowo zakres 3501–7500 kg wymaga kat. C1. Wyjątek dotyczy niektórych pojazdów z napędem alternatywnym, gdzie po spełnieniu warunków ustawowych limit może wzrosnąć do 4250 kg."
 lead: "Ford Transit Long to potoczne określenie dłuższych odmian Transita, ale w praktyce trzeba rozróżnić konkretną generację, rocznik i oznaczenia L3 oraz L4/Jumbo. Bez tego łatwo pomylić długości nadwozia, rozstaw osi i realną pojemność przestrzeni ładunkowej."
+sources:
+  - "oficjalne materiały wymiarowe i homologacyjne Ford Pro dla europejskiego Forda Transit Mk8"
 ---
 ## Wymiary L3 i L4 – tabela porównawcza
 
@@ -101,5 +103,3 @@ Ford Transit Long trafia najczęściej tam, gdzie liczy się duża kubatura i el
 - zabudów specjalnych, gdzie długość przestrzeni ma większe znaczenie niż sama zwrotność
 
 Na tle konkurencji Transit z pojemnością od 11,5 do 15,1 m³ pozostaje w środku stawki. Mercedes Sprinter L3/L4 oferuje do ok. 14–17 m³, Volkswagen Crafter i MAN TGE do ok. 18,4 m³, a Renault Master L3H2/L4H3 ok. 13–17 m³.
-
-*Źródła: oficjalne materiały wymiarowe i homologacyjne Ford Pro dla europejskiego Forda Transit Mk8*

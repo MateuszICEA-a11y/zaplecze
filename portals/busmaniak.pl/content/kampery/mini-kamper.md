@@ -18,6 +18,10 @@ faq:
     answer: "Wystarczy prawo jazdy kategorii B. Mini kampery bazują na samochodach osobowych o DMC do 2500 kg, więc nie ma żadnych ograniczeń."
   - question: "Czy przeróbka samochodu na mini kampera wymaga homologacji?"
     answer: "Jeśli nie zmieniasz trwale konstrukcji nadwozia, zwykle nie potrzebujesz formalności. Wyjmowany moduł kempingowy (np. rozkładane łóżko, skrzynka kuchenna) traktowany jest jak bagaż."
+sources:
+  - "VW Samochody Użytkowe"
+  - "Citroen Polska"
+  - "dane z portali OLX i Otomoto"
 ---
 
 ## Czym jest mini kamper i dla kogo się sprawdza
@@ -123,5 +127,3 @@ Mini kamper nie zastąpi pełnowymiarowego kampera w każdej sytuacji:
 -   **Wysoki wzrost** – osoby powyżej 190 cm mogą mieć problem z wygodnym snem na platformie w krótszych modelach, jak Dacia Jogger.
 
 Dla par, które szukają kompromisu między kompaktowością a przestrzenią, dobrą alternatywą jest [samochód kempingowy](/kampery/samochody-kempingowe/) na bazie średniego vana – np. Citroena Jumpy czy Toyoty Proace.
-
-*Źródła: VW Samochody Użytkowe, Citroen Polska, dane z portali OLX i Otomoto (marzec 2026)*

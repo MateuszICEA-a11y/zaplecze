@@ -18,6 +18,10 @@ faq:
     answer: "Tak – California (4,9 m) ma wymiary zbliżone do dużego SUV-a, mieści się na standardowym parkingu i oferuje przyzwoity komfort jazdy. To jedyny camper van, który realnie zastępuje samochód osobowy na co dzień."
   - question: "Jaki silnik ma VW California?"
     answer: "California T6.1 oferuje silnik 2.0 TDI o mocy 150 lub 199 KM, opcjonalnie z napędem 4MOTION. Nowa California T7 ma silnik 2.0 TDI 150 KM, benzynowy 2.0 TSI o mocy 204 KM (DSG, napęd na przód) lub hybrydę plug-in eHybrid. Jednostka eHybrid generuje moc systemową 245 KM i jest fabrycznie zestrojona z napędem na cztery koła 4MOTION."
+sources:
+  - "Volkswagen Samochody Użytkowe"
+  - "VW Polska"
+  - "dane z portali OLX i Otomoto"
 ---
 
 ## Historia kamperów Volkswagena
@@ -124,5 +128,3 @@ Kampery VW celują w dwa odmienne segmenty rynku – California to pojazd dla os
 - **Grand California 680** – pary na wielotygodniowych trasach. Najszersze łóżko wzdłużne i zintegrowana łazienka z prysznicem
 
 Jeśli wahasz się między Californią a konkurencyjnym [Mercedesem Marco Polo](/kampery/mercedes-marco-polo/), kluczowe różnice to cena (California tańsza o 10–15%), wartość odsprzedaży (California lepsza) i jakość wnętrza (Marco Polo wyższa). Więcej informacji o kosztach znajdziesz w artykule o [cenach kamperów](/kampery/kamper-cena/).
-
-*Źródła: Volkswagen Samochody Użytkowe, VW Polska, dane z portali OLX i Otomoto (marzec 2026)*

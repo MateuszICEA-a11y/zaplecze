@@ -20,6 +20,11 @@ faq:
     answer: "Najczęściej wymienia się problemy z 5. biegiem w skrzyni, korozję nadwozia i podwozia, zużycie osprzętu oraz typowe dla wieku wycieki i problemy układu chłodzenia."
   - question: "Ile kosztuje używany Fiat Ducato 2.8 JTD?"
     answer: "Ceny mocno zależą od typu nadwozia, stanu technicznego i zabudowy. Najtańsze są zwykle surowe dostawczaki i podwozia, natomiast kampery na bazie Ducato 2.8 JTD są wyraźnie droższe i zwykle kosztują wielokrotnie więcej niż 30 000 zł."
+sources:
+  - "Wikipedia"
+  - "AutoCentrum.pl"
+  - "Fiat Professional"
+  - "auto-data.net"
 ---
 
 ## Fiat Ducato II – ewolucja silnika 2.8
@@ -136,5 +141,3 @@ Na rynku wtórnym trzeba wyraźnie rozdzielać typ nadwozia, bo ceny mocno się 
 Najtańsze są zwykle surowe dostawczaki i podwozia wymagające pracy blacharskiej lub mechanicznej. Wyżej stoją zadbane furgony i specjalistyczne zabudowy, a kampery na bazie Fiat Ducato 2.8 JTD są osobną kategorią i w 2026 roku zwykle znacząco przekraczają 30 000 zł – nawet starsze alkowy i półintegry często kosztują wielokrotnie więcej niż zwykłe dostawczaki.
 
 Kto wybiera konkretny rocznik i wersję, znajdzie przegląd w [kompletnym przewodniku po Fiacie Ducato](/modele/fiat-ducato/).
-
-*Źródła: Wikipedia, AutoCentrum.pl, Fiat Professional, auto-data.net*

@@ -20,6 +20,8 @@ faq:
     answer: "Trafic L2 ma 5480 mm długości, więc często będzie wystawał poza miejsce o długości 5,0 m. Ocena zależy od rodzaju parkingu i sposobu usytuowania stanowiska, a przy wysokości około 1971 mm trzeba też sprawdzić limit wjazdu na parking podziemny lub do myjni."
   - question: "Jaki silnik wybrać do Trafic L2 przy regularnym załadunku?"
     answer: "Przy regularnej pracy pod obciążeniem warto celować co najmniej w mocniejsze odmiany 1.6 dCi lub 2.0 dCi. W praktyce znaczenie ma nie tylko moc, ale też to, czy dana wersja ma pojedyncze czy podwójne doładowanie oraz z jaką skrzynią biegów jest zestawiona."
+sources:
+  - "dane producenta dla Renault Trafic III oraz dane rynkowe dla wskazanych wersji i konfiguracji"
 ---
 ## Trafic L1 vs L2 – czym się różnią? {#l1-vs-l2}
 
@@ -103,5 +105,3 @@ Przy Traficu L2 do regularnej pracy pod obciążeniem szukałbym raczej mocniejs
 {{% /expert %}}
 
 Renault Trafic Long funkcjonuje w segmencie, w którym konkurują też konstrukcje o długości około 5,3–5,5 m i objętości ładunkowej około 6–6,8 m³. Najbliższe porównania to bliźniacze Opel Vivaro B, Nissan NV300 i Fiat Talento, a także Ford Transit Custom L2 oraz VW Transporter/Caravelle LWB.
-
-*Źródła: dane producenta dla Renault Trafic III oraz dane rynkowe dla wskazanych wersji i konfiguracji*

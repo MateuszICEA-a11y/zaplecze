@@ -18,6 +18,12 @@ faq:
     answer: "Nie, posiadacze kat. B z 2-letnim stażem mogą prowadzić elektryczne busy towarowe o DMC do 4250 kg. Dotyczy to pojazdów, w których przekroczenie 3500 kg wynika wyłącznie z masy baterii trakcyjnych."
   - question: "Od kiedy obowiązuje tachograf dla busów z przyczepą?"
     answer: "Od 1 lipca 2026 roku tachograf jest wymagany dla busów do 3,5 t z przyczepą, jeśli DMC zespołu przekracza 3,5 t i pojazd wykonuje zarobkowy transport międzynarodowy."
+sources:
+  - "Wikipedia – [Dopuszczalna masa całkowita](https://pl.wikipedia.org/wiki/Dopuszczalna_masa_ca%C5%82kowita)"
+  - "gov.pl – kategorie prawa jazdy"
+  - "rankomat.pl"
+  - "dostawczakiem.pl"
+  - "abc-szkolenia.com"
 ---
 ## Kategorie prawa jazdy na busy – przegląd
 
@@ -159,5 +165,3 @@ Zwolnienie do 4250 kg obowiązuje w Polsce, Niemczech, Austrii, Belgii i większ
 Zwolnienie do 4250 kg z kategorią B dotyczy wyłącznie pojazdów przeznaczonych do przewozu rzeczy (homologacja N1/N2). Prawo to nie obejmuje busów osobowych (M1) ani kamperów (pojazd specjalny). Oznacza to, że elektryczny bus 9-osobowy lub kamper o DMC powyżej 3500 kg wciąż wymaga od kierowcy prawa jazdy kategorii C1.
 
 Pełny przegląd kamperów, w tym elektrycznych, znajdziesz w sekcji [kampery](/kampery/).
-
-*Źródła: Wikipedia – [Dopuszczalna masa całkowita](https://pl.wikipedia.org/wiki/Dopuszczalna_masa_ca%C5%82kowita), gov.pl – kategorie prawa jazdy, rankomat.pl, dostawczakiem.pl, abc-szkolenia.com*

@@ -20,6 +20,11 @@ faq:
     answer: "eCitan z baterią 45 kWh osiąga do 283 km w cyklu WLTP. Ładowanie DC do 80 kW pozwala naładować akumulator od 10 do 80% w ok. 38 minut."
   - question: "Ile kosztuje Mercedes Citan w Polsce?"
     answer: "Ceny Citana furgon zaczynają się od ok. 95 000 zł netto (110 CDI 95 KM). Wersja eCitan od ok. 155 000 zł netto. T-Class osobowy od ok. 120 000 zł brutto."
+sources:
+  - "Mercedes-Benz Vans Polska"
+  - "katalog techniczny Citan W420"
+  - "Wikipedia – Mercedes-Benz Citan"
+  - "testy Euro NCAP 2021."
 ---
 
 ## Historia i generacje Mercedes Citan
@@ -125,5 +130,3 @@ Citan rywalizuje z kompaktowymi vanami: [Renault Kangoo](/modele/renault-kangoo/
 | Cena furgon (netto) | ~95 000 zł | ~80 000 zł | ~85 000 zł | ~95 000 zł |
 
 Kangoo oferuje identyczną mechanikę taniej. [Opel Combo](/modele/opel-combo/) wyróżnia się większą kubaturą paki na platformie PSA. Caddy to jedyny model na niezależnej platformie (MQB) – z najlepszą kulturą jazdy, ale bez opcji elektrycznej. Citan wygrywa systemem multimedialnym MBUX i pozycjonowaniem premium, co przekłada się na wyższą wartość rezydualną przy odsprzedaży.
-
-*Źródła: Mercedes-Benz Vans Polska, katalog techniczny Citan W420, Wikipedia – Mercedes-Benz Citan, testy Euro NCAP 2021.*

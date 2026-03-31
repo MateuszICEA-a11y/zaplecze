@@ -16,6 +16,10 @@ faq:
   - question: "Jak Partner dostawczy wypada w porównaniu z Fordiem Transit Connect?"
     answer: "Peugeot Partner należy do ścisłej czołówki segmentu kompaktowych vanów. Jego mocne strony to objętość ładowni 3,3–4,4 m³, długość maksymalna przewożonych elementów do ok. 3,44 m z systemem Moduwork oraz ładowność sięgająca ok. 1000 kg. W praktyce należy go porównywać z konkretną wersją i rocznikiem Transit Connecta, bo parametry użytkowe zależą od generacji i konfiguracji."
 lead: "Peugeot Partner III Van to kompaktowy dostawczak w kategorii N1, zaprojektowany do intensywnej eksploatacji w logistyce miejskiej i podmiejskiej."
+sources:
+  - "dane producenta dla Peugeot Partner III/K9 dotyczące wymiarów"
+  - "przestrzeni ładunkowej"
+  - "gamy silnikowej i parametrów użytkowych; informacje o warunkach odliczenia VAT zgodnie z ogólnymi zasadami dla użytkowania firmowego pojazdu w Polsce."
 ---
 ## Konfiguracje dostępne w Partnerze dostawczym
 
@@ -135,5 +139,3 @@ Typowe pozycje kosztowe dla Partnera Van przy 30 000 km/rok:
 - utrata wartości
 
 Na rynku kompaktowych vanów Partner wypada bardzo konkurencyjnie pod względem parametrów użytkowych. Zakres ładowności ok. 650–1000 kg, objętość 3,3–4,4 m³ i długość maksymalna ładunku do ok. 3,44 m stawiają go w jednym szeregu z takimi modelami jak Renault Kangoo Van, VW Caddy Cargo czy Ford Transit Connect.
-
-*Źródła: dane producenta dla Peugeot Partner III/K9 dotyczące wymiarów, przestrzeni ładunkowej, gamy silnikowej i parametrów użytkowych; informacje o warunkach odliczenia VAT zgodnie z ogólnymi zasadami dla użytkowania firmowego pojazdu w Polsce.*

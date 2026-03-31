@@ -23,6 +23,10 @@ faq:
     answer: "Z trzecim rzędem siedzeń bagażnik wynosi od 160 l (Dacia Jogger) do 400 l (Renault Kangoo Long). Po złożeniu trzeciego rzędu pojemność rośnie do 2000–3100 l."
   - question: "Czy van 7-osobowy da się prowadzić jak osobówkę?"
     answer: "Tak – wszystkie modele w zestawieniu mają długość poniżej 4,80 m i prowadzą się zbliżenie do kompaktowych SUV-ów. Jedyna różnica to wyższy środek ciężkości przy większej wysokości nadwozia."
+sources:
+  - "UltimateSpecs.com"
+  - "oficjalne cenniki producentów"
+  - "Otomoto.pl"
 ---
 
 ## Dlaczego van 7-osobowy zamiast SUV-a
@@ -153,5 +157,3 @@ Na co zwrócić uwagę:
 Unikaj egzemplarzy z historią taxi lub shuttle – mają duże przebiegi i intensywnie eksploatowane wnętrza. Najlepsze okazje to vany z leasingów firmowych, gdzie kierowcy dbali o samochód, a serwis był regularny.
 
 Przy budżecie 60 000–80 000 zł optymalnym wyborem jest [Citroën Berlingo](/modele/citroen-berlingo/) Long lub Peugeot Rifter Long z lat 2019–2021 z silnikiem 1.5 BlueHDi 130 KM. Przy wyższym budżecie 100 000–130 000 zł warto rozważyć [VW Caddy](/modele/volkswagen-caddy/) Maxi z 2020–2022 – lepsze materiały, cichsze wnętrze i wyższa wartość rezydualna.
-
-*Źródła: UltimateSpecs.com, oficjalne cenniki producentów, Otomoto.pl*

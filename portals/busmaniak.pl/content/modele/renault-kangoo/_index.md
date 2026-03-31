@@ -20,6 +20,11 @@ faq:
     answer: "Z baterią 45 kWh do 285 km według WLTP."
   - question: "Czy Kangoo jest awaryjny?"
     answer: "Elektryka to słaby punkt wszystkich generacji. W Kangoo II problemy z pompą paliwa 1.5 dCi i skrzynią biegów. Kangoo III jest dopracowany, choć objęty był akcją serwisową ograniczników drzwi."
+sources:
+  - "Wikipedia – Renault K9K engine"
+  - "materiały prasowe Renault Polska"
+  - "dane techniczne Auto-Data.net"
+  - "raporty awaryjności DEKRA."
 ---
 
 ## Historia i generacje Renault Kangoo
@@ -162,5 +167,3 @@ Segment dostawczaków to rynek pełen alternatyw – Renault Kangoo mierzy się 
 | Open Sesame | ✅ tak | ❌ nie | ❌ nie | ❌ nie |
 
 Kangoo wygrywa z konkurencją spod znaku Stellantis szerokością nadwozia (1919 vs 1848 mm), dostępnością silnika benzynowego 1.3 TCe i unikalnym systemem Open Sesame. [Citroën Berlingo](/modele/citroen-berlingo/) i [Peugeot Partner](/modele/peugeot-partner/) oferują nieco wyższą ładowność, a [Fiat Doblo](/modele/fiat-doblo/) – bliźniaczą konstrukcję Stellantis w innej szacie. [Peugeot Rifter](/modele/peugeot-rifter/) celuje w klientów szukających bardziej lifestylowego wykończenia.
-
-*Źródła: Wikipedia – Renault K9K engine, materiały prasowe Renault Polska, dane techniczne Auto-Data.net, raporty awaryjności DEKRA.*

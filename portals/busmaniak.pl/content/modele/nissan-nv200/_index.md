@@ -18,6 +18,10 @@ faq:
     answer: "1220 mm – mieści standardową europaletę w poprzek."
   - question: "Czy silnik 1.5 dCi ma koło dwumasowe?"
     answer: "Większość wersji 90 KM ma sztywne koło zamachowe – tańsza wymiana sprzęgła (ok. 1200 zł vs 2500 zł z dwumasowym)."
+sources:
+  - "Wikipedia – Renault K9K engine"
+  - "oficjalna dokumentacja Nissan Europe"
+  - "katalog części Nissan Parts."
 ---
 
 ## Historia Nissan NV200
@@ -157,5 +161,3 @@ Segment dostawczaków to rynek pełen alternatyw – Nissan Nv200 mierzy się z 
 | Wersja elektryczna | ✅ e-NV200 | ❌ | ❌ (w gen II) | ✅ Kangoo Z.E. |
 
 NV200 wygrywa objętością paki w stosunku do wymiarów zewnętrznych – 4,2 m³ z nadwozia o długości 4400 mm to wynik, którego nie powtórzył żaden konkurent. [Citroën Berlingo](/modele/citroen-berlingo/) oferuje wyższy komfort jazdy, [Renault Kangoo](/modele/renault-kangoo/) bogatszą gamę silnikową, a [Peugeot Partner](/modele/peugeot-partner/) lepsze wykończenie wnętrza.
-
-*Źródła: Wikipedia – Renault K9K engine, oficjalna dokumentacja Nissan Europe, katalog części Nissan Parts.*

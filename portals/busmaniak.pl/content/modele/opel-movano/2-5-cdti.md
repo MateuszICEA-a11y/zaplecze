@@ -21,6 +21,11 @@ faq:
     answer: "2.5 CDTi (G9U) ma 2463 cm3, rozrząd paskowy, moce 100–145 KM i normy Euro 3/4. Nowszy 2.3 CDTi (M9T) ma 2298 cm3, rozrząd łańcuchowy, w Movano B występował w wersjach około 100–163 KM i spełniał normy Euro 5/6. 2.3 CDTi pojawił się w Movano B od 2010 roku."
   - question: "Ile kosztuje wymiana rozrządu w Movano 2.5 CDTi?"
     answer: "Komplet części z pompą wody zwykle kosztuje 700–1200 zł, a robocizna 800–1500 zł. Łącznie najczęściej trzeba liczyć 1500–2700 zł, zależnie od warsztatu i zakresu prac."
+sources:
+  - "[Common rail](https://en.wikipedia.org/wiki/Common_rail) – Wikipedia"
+  - "AutoCentrum.pl"
+  - "MotoDiesel.pl"
+  - "Auto-Data.net."
 ---
 
 ## Dane techniczne 2.5 CDTi w Opel Movano
@@ -142,5 +147,3 @@ Do tego silnika najczęściej stosuje się olej 5W-40 lub 5W-30, spełniający A
 Roczny koszt utrzymania zależy głównie od przebiegu, obciążenia auta i stanu wyjściowego egzemplarza. Przy zakupie używanego samochodu ważniejsze od samej ceny są potwierdzenia wymiany rozrządu, regularnego serwisu olejowego i brak objawów problemów z chłodzeniem.
 
 Jeśli porównać 2.5 CDTi z nowszym 2.3 CDTi, różnica jest dość czytelna. Starszy G9U ma 2463 cm3, pasek rozrządu, moce 100–145 KM i normy Euro 3/4, natomiast 2.3 CDTi M9T ma 2298 cm3, łańcuch rozrządu, w Movano B występował w wersjach około 100–163 KM i spełniał Euro 5/6. W praktyce 2.3 bywa oszczędniejszy i nowocześniejszy, ale w 2.5 łatwiej przewidzieć koszt planowej wymiany rozrządu, podczas gdy w silniku z łańcuchem trzeba brać pod uwagę ewentualne problemy samego napędu rozrządu.
-
-*Źródła: [Common rail](https://en.wikipedia.org/wiki/Common_rail) – Wikipedia, AutoCentrum.pl, MotoDiesel.pl, Auto-Data.net.*

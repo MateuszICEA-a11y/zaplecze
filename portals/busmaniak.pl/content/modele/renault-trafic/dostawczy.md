@@ -20,6 +20,11 @@ faq:
     answer: "W starszych rocznikach trzeba rozróżnić 1.6 dCi dostępne przed zmianą gamy silnikowej oraz nowsze 2.0 dCi/Blue dCi oferowane po 2020/2021 zależnie od rynku. Do intensywnej pracy z ładunkiem i częstego holowania lepiej patrzeć na mocniejsze wersje 2.0, ale wybór trzeba powiązać z rocznikiem, skrzynią biegów i rzeczywistą homologacją danej sztuki."
   - question: "Od jakiej ceny dostępny jest Renault Trafic dostawczy nowy?"
     answer: "Żeby podać wiarygodną cenę nowego auta, trzeba oprzeć się na konkretnym oficjalnym cenniku z datą publikacji. Bez wskazania takiego dokumentu nie warto podawać sztywnych kwot, zwłaszcza że artykuł dotyczy także starszych roczników z silnikami 1.6 dCi."
+sources:
+  - "oficjalny cennik Renault"
+  - "katalog techniczny"
+  - "homologacja"
+  - "instrukcja zabudowy"
 ---
 ## Renault Trafic dostawczy – wersje nadwoziowe
 
@@ -139,8 +144,6 @@ Na wycenę bardzo mocno wpływa przebieg. Granice około **150 tys. km**, **250 
 W praktyce warto też uwzględnić konkurencję. W tej klasie Renault Trafic dostawczy rywalizuje z modelami takimi jak Ford Transit Custom, VW Transporter T6.1, Opel Vivaro, Peugeot Expert, Citroen Jumpy czy Toyota ProAce – zwykle przy zbliżonej objętości około 5,8–6,8 m³, ładowności około 1000–1400 kg, wysokości poniżej 2,0 m i dostępności automatu w wybranych wersjach.
 
 ---
-
-*Źródła: oficjalny cennik Renault, katalog techniczny, homologacja, instrukcja zabudowy*
 
 ## Eksploatacja Trafica furgon w praktyce
 

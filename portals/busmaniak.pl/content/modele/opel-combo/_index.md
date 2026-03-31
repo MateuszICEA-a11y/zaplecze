@@ -18,6 +18,11 @@ faq:
     answer: "Benzyna 1.2 PureTech (110/130 KM), diesel 1.5 BlueHDi (102/130 KM) oraz elektryczny e-Combo (136 KM, zasięg 280 km WLTP)."
   - question: "Co to jest Combo Life?"
     answer: "Wersja osobowa z przeszklonymi bokami, rozkładaną kanapą i opcją 7 miejsc. Odpowiada Berlingo Multispace i Peugeot Rifterowi."
+sources:
+  - "Wikipedia – PSA EMP2 platform"
+  - "dane techniczne Opel Polska (opel.pl)"
+  - "raporty niezawodności TUV i DEKRA"
+  - "katalogi serwisowe Stellantis."
 ---
 
 ## Historia i generacje Opel Combo (1993–2024)
@@ -118,5 +123,3 @@ Segment dostawczaków to rynek pełen alternatyw – Opel Combo mierzy się z ry
 | **Ford Transit Connect** | do 860 kg | 2,9–3,6 m³ | 1.5 EcoBlue 100 KM | ❌ | od 110 000 zł |
 
 Combo wyróżnia się ergonomią wnętrza i dostępnością wersji elektrycznej. Technologicznie niemal identyczne z [Citroënem Berlingo](/modele/citroen-berlingo/) i Peugeotem Partnerem – pod blachą ten sam samochód. [Peugeot Rifter](/modele/peugeot-rifter/) celuje w klientów lifestylowych, a [Renault Kangoo](/modele/renault-kangoo/) wygrywa systemem Open Sesame i szerszym nadwoziem.
-
-*Źródła: Wikipedia – PSA EMP2 platform, dane techniczne Opel Polska (opel.pl), raporty niezawodności TUV i DEKRA, katalogi serwisowe Stellantis.*

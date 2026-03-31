@@ -20,6 +20,10 @@ faq:
     answer: "Trafic III z silnikiem 2.0 dCi 120 KM spala w mieście 8,5–9,5 l/100 km. Wersja 145 KM to 9–10 l, a topowy 170 KM – 9,5–11 l przy intensywnej eksploatacji miejskiej."
   - question: "Dlaczego Trafic H2 pali więcej niż H1?"
     answer: "Wersja wysokodachowa H2 ma znacznie większy opór aerodynamiczny, co przekłada się na wyższe zużycie paliwa o 0,5–1 l/100 km, szczególnie przy jeździe trasowej powyżej 100 km/h."
+sources:
+  - "dane użytkowników flot i pomiary własne"
+  - "karty techniczne Renault"
+  - "auto-data.net"
 ---
 ## Tabela spalania – Trafic III (od 2014)
 
@@ -84,5 +88,3 @@ Jeśli Trafic nagle zaczyna palić wyraźnie więcej przy identycznym stylu jazd
 *   **DPF** – zapełniony filtr cząstek stałych wymusza częste regeneracje, co bezpośrednio przekłada się na wyższe spalanie.
 *   **Układ wtryskowy** – zużyte wtryskiwacze, szczególnie w jednostkach 2.5 dCi, potrafią podnieść zużycie o 1–1,5 l/100 km.
 *   **Ciśnienie w oponach** – zbyt niskie ciśnienie to łatwy do przeoczenia, ale realny czynnik zwiększający spalanie o 0,3–0,5 l/100 km.
-
-*Źródła: dane użytkowników flot i pomiary własne, karty techniczne Renault, auto-data.net*

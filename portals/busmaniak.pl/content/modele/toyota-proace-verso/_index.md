@@ -20,6 +20,10 @@ faq:
     answer: "Cena nowej Toyoty Proace Verso w wersji Shuttle zaczyna się od około 175 000 zł. Wersja VIP wyceniana jest od ok. 250 000 zł. Elektryczny Proace Verso Electric kosztuje więcej – ceny zależą od wybranego wariantu baterii (50 lub 75 kWh)."
   - question: "Czym różni się Proace Verso od Proace?"
     answer: "Proace to furgon z homologacją N1 przeznaczony do transportu ładunków. Proace Verso ma homologację M1 – jest pojazdem osobowym z rzędami siedzeń pasażerskich, przeszklonymi bokami i wyposażeniem skierowanym do przewozu osób. Oba dzielą tę samą płytę podłogową i wymiary nadwozia."
+sources:
+  - "Wikipedia – Toyota ProAce"
+  - "toyota.pl"
+  - "auto-data.net."
 ---
 
 ## Wersje wyposażenia Toyota ProAce Verso
@@ -114,5 +118,3 @@ Zakup Toyota Proace Verso to wydatek, który zależy od generacji, wersji silnik
 | ProAce Verso II (2023–2025) | 120 000–180 000 zł |
 | Nowy ProAce Verso Long (2.0 D-4D 145) | od ok. 195 000 zł brutto |
 | Nowy ProAce Verso elektryczny (75 kWh) | od ok. 300 000 zł brutto |
-
-*Źródła: Wikipedia – Toyota ProAce, toyota.pl, auto-data.net.*

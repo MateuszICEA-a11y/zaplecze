@@ -18,6 +18,10 @@ faq:
     answer: "Kierowcy chwalą ergonomię kabiny i precyzję prowadzenia. Negatywne głosy dotyczą cen autoryzowanego serwisu i ograniczonej szerokości między nadkolami."
   - question: "Ile pali diesel 1.5 EcoBlue?"
     answer: "Wersja 100 KM zużywa 5,2–6,0 l/100 km. Przy pełnym obciążeniu na autostradzie do ok. 7,5 l."
+sources:
+  - "Wikipedia – Selective catalytic reduction"
+  - "oficjalne dane Ford Polska"
+  - "dokumentacja techniczna Ford Transit Connect."
 ---
 
 ## Historia i generacje Ford Transit Connect
@@ -147,5 +151,3 @@ W segmencie kompaktowych dostawczaków Connect wygrywa właściwościami jezdnym
 | Cena nowego (netto) | od 110 000 zł | od 100 000 zł | od 100 000 zł | od 130 000 zł |
 
 Bezpośrednimi rywalami są [Citroën Berlingo](/modele/citroen-berlingo/) i [Peugeot Partner](/modele/peugeot-partner/) – większa paka przy niższej cenie. Connect wygrywa właściwościami jezdnymi i trwałością nadwozia. Na tle większego [Forda Transita](/modele/ford-transit/) wygrywa zwrotnością i kosztami eksploatacji.
-
-*Źródła: Wikipedia – Selective catalytic reduction, oficjalne dane Ford Polska, dokumentacja techniczna Ford Transit Connect.*

@@ -20,6 +20,8 @@ faq:
     answer: "Silniki 2.0 EcoBlue wymagają znacznie więcej oleju niż starsze jednostki. Wersje z napędem na przednią oś (FWD) potrzebują ok. 9,1 litra, a z napędem na tylną oś (RWD) ok. 9,5 litra oleju przy wymianie z filtrem."
   - question: "Czy syntetyk jest lepszy od półsyntetyku w busie?"
     answer: "Tak – olej syntetyczny lepiej znosi wydłużone interwały wymiany i chroni DPF dzięki niższej zawartości popiołu (Low SAPS). Półsyntetyk ma sens wyłącznie w starszych silnikach bez filtra cząstek stałych."
+sources:
+  - "- Instrukcja obsługi Fiat Ducato (eLum): https://aftersales.fiat.com/elum/"
 ---
 ## Klasy lepkości – 5W-30 vs 5W-40
 
@@ -117,8 +119,6 @@ Na rynku dostępnych jest kilkadziesiąt marek, ale w praktyce mechanicy serwisu
 
 Niezależnie od marki, liczy się wyłącznie dopuszczenie producenta pojazdu. Olej za 30 zł/litr z właściwą normą jest zawsze lepszy niż najdroższy olej na rynku, który tej normy nie posiada.
 
-Źródła:
-- Instrukcja obsługi Fiat Ducato (eLum): https://aftersales.fiat.com/elum/
 - Ford Transit – pojemności układów: https://www.fordservicecontent.com
 - Mercedes-Benz – instrukcje eksploatacji: https://www.mercedes-benz.pl/passengercars/services/manuals.html
 - Klasyfikacja olejów silnikowych (Wikipedia): https://pl.wikipedia.org/wiki/Olej_silnikowy

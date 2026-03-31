@@ -16,6 +16,9 @@ faq:
   - question: "Czy ë-Jumper elektryczny ma taką samą przestrzeń co diesel?"
     answer: "Artykuł wskazuje, że przestrzeń ładunkowa pozostaje taka sama jak w wersjach spalinowych, ponieważ akumulator umieszczono pod podłogą. Różnice dotyczą głównie ładowności i parametrów napędu."
 lead: "Citroën Jumper Van to duży furgon do intensywnej pracy w transporcie i usługach. Model należy do tej samej rodziny konstrukcyjnej co Peugeot Boxer Van i Fiat Ducato Van, ale zależnie od rynku, rocznika i konfiguracji występowały różnice w gamie silników, skrzyniach biegów, wyposażeniu i homologacjach."
+sources:
+  - "oficjalne katalogi i cenniki producenta dla konkretnego roku modelowego"
+  - "dane homologacyjne WLTP dla ë-Jumpera oraz dokumentacja techniczna odpowiednia dla wskazanej wersji rynkowej. Odesłanie ogólne do [silnika Diesla](https://pl.wikipedia.org/wiki/Silnik_Diesla) nie zastępuje danych katalogowych dla konkretnej odmiany auta."
 ---
 ## Konfiguracje i wymiary przestrzeni ładunkowej
 
@@ -154,5 +157,3 @@ Jeżeli pojawia się temat czyszczenia EGR albo regeneracji DPF, trzeba to opisy
 W przypadku Jumpera nie należy zbyt szeroko przypisywać skrzyni EAT8 do całej gamy bez odniesienia do konkretnego rynku i rocznika. Jeśli artykuł nie operuje na oficjalnym katalogu dla danej wersji, bezpieczniej jest pozostać przy stwierdzeniu, że konfiguracje skrzyń różniły się zależnie od rynku.
 
 Przy obsłudze przekładni zawsze warto odróżnić oficjalny harmonogram producenta od praktyki serwisowej warsztatów. To dwie różne rzeczy i w artykule eksperckim trzeba je jasno rozdzielać.
-
-*Źródła: oficjalne katalogi i cenniki producenta dla konkretnego roku modelowego, dane homologacyjne WLTP dla ë-Jumpera oraz dokumentacja techniczna odpowiednia dla wskazanej wersji rynkowej. Odesłanie ogólne do [silnika Diesla](https://pl.wikipedia.org/wiki/Silnik_Diesla) nie zastępuje danych katalogowych dla konkretnej odmiany auta.*

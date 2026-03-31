@@ -18,6 +18,12 @@ faq:
     answer: "Nie, jeśli DMC kampera nie przekracza 3500 kg. Większość kamperów na bazie Ducato, Sprintera czy Craftera mieści się w tym limicie. Cięższe kampery zintegrowane mogą wymagać C1."
   - question: "Czy na kat. B mogę prowadzić busa elektrycznego powyżej 3,5 t?"
     answer: "Tak, od grudnia 2021 roku posiadacze kat. B z minimum 2-letnim stażem mogą prowadzić pojazdy na paliwa alternatywne o DMC do 4250 kg, jeśli przekroczenie 3500 kg wynika z masy baterii."
+sources:
+  - "Wikipedia – [Samochód](https://pl.wikipedia.org/wiki/Samoch%C3%B3d)"
+  - "gov.pl – kategorie prawa jazdy"
+  - "cuk.pl"
+  - "dostawczakiem.pl"
+  - "rankomat.pl"
 ---
 ## Co obejmuje prawo jazdy kategorii B
 
@@ -141,5 +147,3 @@ Uprawnienie to działa automatycznie i nie wymaga dodatkowego wpisu w dokumencie
 Wbrew powszechnym mitom, zmiana od 1 lipca 2026 roku nie dotyczy busów z przyczepą – zespoły pojazdów powyżej 3,5 t DMC w międzynarodowym transporcie zarobkowym podlegają pod tachografy od dawna. Nowe przepisy Pakietu Mobilności obniżają próg dla pojazdów wykorzystywanych do międzynarodowego przewozu drogowego rzeczy.
 
 Od lipca 2026 obowiązek montażu tachografu obejmie pojazdy (lub zespoły pojazdów) o DMC od 2,5 do 3,5 tony, wykonujące transport zarobkowy w ruchu międzynarodowym.
-
-*Źródła: Wikipedia – [Samochód](https://pl.wikipedia.org/wiki/Samoch%C3%B3d), gov.pl – kategorie prawa jazdy, cuk.pl, dostawczakiem.pl, rankomat.pl*

@@ -18,6 +18,15 @@ faq:
     answer: "Potrzebujesz prawa jazdy kategorii B (ważne min. 2 lata), dowodu osobistego i karty kredytowej do zablokowania kaucji. Niektóre firmy wymagają minimalnego wieku 23 lub 25 lat."
   - question: "Czy opłaca się wynajmować kampera na weekend?"
     answer: "Tak, choć stawka dobowa jest wyższa niż przy tygodniowym wynajmie. Weekendowy wypad (piątek–niedziela, 2 doby) to koszt ok. 900–1800 zł – atrakcyjna alternatywa dla hotelu, jeśli podróżujesz w 4–6 osób."
+sources:
+  - "dane wypożyczalni (KoKo Kamper"
+  - "CamperyASONE"
+  - "McRent"
+  - "Drewmet-Trans"
+  - "KamperStacja)"
+  - "BookingCamper.pl"
+  - "portal CampRest.com"
+  - "[Wikipedia – Samochód kempingowy](https://pl.wikipedia.org/wiki/Samoch%C3%B3d_kempingowy)."
 ---
 ## Wypożyczalnie kamperów w Warszawie i okolicach
 
@@ -119,5 +128,3 @@ Warto dopytać o warunki ubezpieczenia. Kampery posiadają pełny pakiet AC, ale
 Przy zdaniu kampera procedura jest analogiczna – ponowne zdjęcia i wspólna inspekcja. Opróżnij zbiorniki sanitarne, zatankuj paliwo do pełna i odkurz wnętrze, żeby uniknąć opłat za sprzątanie końcowe (rzędu 300–1000 zł, w zależności od stanu pojazdu).
 
 Więcej o cenach wynajmu znajdziesz w artykule [wynajem kampera – cennik 2026](/wynajem/wynajem-kampera-cena/). Ogólnopolski przegląd firm prezentujemy w [wypożyczalniach kamperów w Polsce](/wynajem/wypozyczalnie-kamperow/), a praktyczne wskazówki zebraliśmy w [poradniku wynajmu](/wynajem/wynajem-kampera-poradnik/).
-
-*Źródła: dane wypożyczalni (KoKo Kamper, CamperyASONE, McRent, Drewmet-Trans, KamperStacja), BookingCamper.pl, portal CampRest.com, [Wikipedia – Samochód kempingowy](https://pl.wikipedia.org/wiki/Samoch%C3%B3d_kempingowy).*

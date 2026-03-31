@@ -19,6 +19,9 @@ faq:
   - question: "Jaki silnik do Mercedes Sprinter Van wybrać?"
     answer: "W gamie Sprintera występowały jednostki OM651 i OM654. W nowszych odmianach OM654 ma pojemność 1950 cm3 i był oferowany w kilku wariantach mocy, dlatego wybór trzeba dopasować do napędu, skrzyni i roku modelowego."
 lead: "Mercedes Sprinter Van to jeden z kluczowych furgonów w segmencie dużych aut dostawczych. W praktyce o jego przydatności decydują nie tylko długość nadwozia, ale też rozstaw osi, wysokość dachu, rodzaj napędu i dopuszczalna masa całkowita. Dlatego zamiast operować uproszczeniami typu L1–L4 i H1–H3, lepiej spojrzeć na konkretne konfiguracje techniczne."
+sources:
+  - "konkretne dane należy weryfikować w aktualnych dokumentach producenta – katalogu danych technicznych"
+  - "homologacji i cenniku z datą obowiązywania."
 ---
 ## Wersje nadwoziowe Sprinter Van – długość i wysokość
 
@@ -160,5 +163,3 @@ Przy zakupie używanego egzemplarza dobrze rozdzielić ocenę aut z OM651 i OM65
 Porównanie Sprintera z VW Crafterem, Fordem Transitem czy Fiatem Ducato warto oprzeć na twardych danych, a nie na ogólnych hasłach. Najważniejsze są: długość podłogi ładunkowej, kubatura w zakresie około 10,5–17 m3, ładowność, szerokość między nadkolami, dostępne napędy FWD/RWD/AWD oraz zakres DMC od 3,5 do 5,5 t.
 
 Dopiero takie zestawienie pozwala uczciwie ocenić, czy w danym zastosowaniu lepszy będzie Sprinter, Crafter, Transit czy Ducato. Bez aktualnych danych katalogowych i cenników nie ma podstaw, by przesądzać o przewadze któregoś modelu w zakresie cen, serwisu czy konfiguracji.
-
-*Źródła: konkretne dane należy weryfikować w aktualnych dokumentach producenta – katalogu danych technicznych, homologacji i cenniku z datą obowiązywania.*

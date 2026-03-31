@@ -19,6 +19,10 @@ faq:
     answer: "W wersji Cargo XL producent podaje możliwość przewozu 2 europalet. Trzeba jednak odnosić to do konkretnej konfiguracji przestrzeni ładunkowej, a nie wyłącznie do długości nadwozia."
   - question: "Ile kosztuje Combo Maxi?"
     answer: "Na rynku wtórnym ceny zależą od generacji i rocznika. W artykule podajemy wyłącznie orientacyjne widełki dla aut używanych."
+sources:
+  - "Opel Polska"
+  - "dane modelowe producenta"
+  - "[Wikipedia – SCR](https://pl.wikipedia.org/wiki/Selektywna_redukcja_katalityczna)."
 ---
 
 ## Opel Combo Maxi vs Short – różnice
@@ -121,5 +125,3 @@ Co zyskujesz, wybierając wydłużoną wersję zamiast krótszej:
 - **Lepszą funkcjonalność rodzinnej odmiany Life XL** – także z układem 7-osobowym
 
 W nowszych rocznikach warto odróżnić Combo E sprzed liftingu od wersji po 2023/2024. Zmiany objęły pas przedni, multimedia, systemy ADAS, a w e-Combo także zaktualizowane parametry akumulatora i zasięgu.
-
-*Źródła: Opel Polska, dane modelowe producenta, [Wikipedia – SCR](https://pl.wikipedia.org/wiki/Selektywna_redukcja_katalityczna).*

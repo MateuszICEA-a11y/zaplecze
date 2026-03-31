@@ -21,6 +21,8 @@ faq:
     answer: "Procedura jest złożona. W niektórych wersjach reset interwału serwisowego (klucz) jest możliwy przez sekwencję: wciśnij do oporu pedał gazu, włącz zapłon, wciśnij 10 razy pedał hamulca i wyłącz zapłon. Jednak kasowanie inspekcji degradacji oleju (czerwona, migająca oliwiarka) zawsze wymaga komputera diagnostycznego."
   - question: "Co oznacza kontrolka retardera w Iveco Daily?"
     answer: "Żółta ikona oznacza awarię opcjonalnego retardera elektromagnetycznego (Telma), montowanego na wale napędowym. Pojazd jest zdatny do jazdy, ale dodatkowa siła hamowania jest niedostępna. Stanowi to zagrożenie podczas jazdy z ładunkiem w terenie górzystym."
+sources:
+  - "- Instrukcja obsługi Iveco Daily (lampki kontrolne TFT): tirmet.pl"
 ---
 
 ## Kontrolki Daily V (2006–2014)
@@ -134,7 +136,5 @@ Resetowanie obu inspekcji wymaga użycia komputera diagnostycznego. Reset interw
 
 Ogólne informacje o kontrolkach w dostawczakach znajdziesz w artykule [kontrolki w busie](/serwis/kontrolki-w-busie/).
 
-Źródła:
-- Instrukcja obsługi Iveco Daily (lampki kontrolne TFT): tirmet.pl
 - Kody błędów Iveco: motocezar.pl
 - Kontrolka (Wikipedia): https://pl.wikipedia.org/wiki/Kontrolka)

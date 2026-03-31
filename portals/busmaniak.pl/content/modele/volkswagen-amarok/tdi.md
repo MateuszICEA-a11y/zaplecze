@@ -19,6 +19,10 @@ faq:
     answer: "W praktyce 2.0 TDI i 2.0 BiTDI najczęściej mieszczą się w przedziale około 7,5–11,0 l/100 km zależnie od obciążenia, a V6 zwykle około 8,0–11,5 l/100 km. Z przyczepą spalanie rośnie wyraźnie i często przekracza 12 l/100 km."
   - question: "Jakie usterki ma Amarok TDI?"
     answer: "W 2.0 TDI i 2.0 BiTDI częściej wracają problemy osprzętu i układów emisji – EGR, DPF, klapa gasząca, przewody dolotu, wtryskiwacze oraz chłodnica EGR. W 3.0 V6 TDI warto zwrócić uwagę na EGR/AdBlue oraz możliwe wycieki z chłodnicy oleju, termostatu i osprzętu."
+sources:
+  - "cenniki i prospekty Volkswagen Samochody Dostawcze"
+  - "dane homologacyjne WLTP/NEDC"
+  - "materiały prasowe VW i Forda z lat 2010–2024."
 ---
 
 ## Dane techniczne TDI w Volkswagen Amarok
@@ -117,5 +121,3 @@ Utrzymanie Volkswagen Amarok TDI jest wyraźnie droższe niż typowego SUV-a z d
 W pickupie trzeba doliczyć także serwis napędu 4x4. Oleje w moście i reduktorze zwykle wymienia się co 60–120 tys. km, zależnie od sposobu użytkowania i obciążenia.
 
 Pełne dane o [Volkswagenie Amaroku](/modele/volkswagen-amarok/) – wymiary, wersje wyposażenia i porównanie z konkurencją.
-
-*Źródła: cenniki i prospekty Volkswagen Samochody Dostawcze, dane homologacyjne WLTP/NEDC, materiały prasowe VW i Forda z lat 2010–2024.*

@@ -20,6 +20,12 @@ faq:
     answer: "Ceny furgonów zaczynają się od ok. 110 000–120 000 zł netto. Najtańszy bywa Peugeot Expert (lub jego bliźniacy – Fiat Scudo i Citroen Jumpy), najdroższa – Toyota ProAce ze względu na wyższy standard wyposażenia bazowego."
   - question: "Który średni van jest najlepszy na kampera?"
     answer: "Do zabudowy kamperowej Renault Trafic ma istotną przewagę konstrukcyjną nad rywalami. Jego przestrzeň ładunkowa ma bardziej prostopadłościenny kształt, ze ścianami bocznymi, które nie zwężają się tak mocno ku górze. Ułatwia to montaż łóżka w poprzek i budowę szafek. Vany z grupy Stellantis są węższe w górnej części paki, co komplikuje zabudowę."
+sources:
+  - "Stellantis Media"
+  - "Renault Polska"
+  - "Toyota Professional"
+  - "auto-data.net"
+  - "AutoCentrum.pl"
 ---
 ## Kluczowe różnice między średnimi vanami
 
@@ -142,5 +148,3 @@ Nie ma jednej odpowiedzi – wybór zależy od priorytetów.
 - **Najlepszy balans i technologia** – Opel Vivaro. Po liftingu oferuje świetny cyfrowy kokpit, ma rozbudowaną sieć ASO i szeroką gamę wersji nadwoziowych.
 
 Dla flot szukających nowoczesnych rozwiązań i opcji elektrycznej z największym zasięgiem – platforma EMP2 daje więcej możliwości. Dla użytkowników ceniących prostotę mechaniczną i niskie koszty serwisu – Trafic z 2.0 dCi pozostaje bardzo rozsądnym wyborem.
-
-*Źródła: Stellantis Media, Renault Polska, Toyota Professional, auto-data.net, AutoCentrum.pl*

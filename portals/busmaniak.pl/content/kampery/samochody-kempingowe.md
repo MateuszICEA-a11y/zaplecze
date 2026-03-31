@@ -18,6 +18,11 @@ faq:
     answer: "Prawo jazdy kat. B wystarcza do pojazdów o DMC do 3500 kg – obejmuje to camper vany i mniejsze alkowy. Większe kampery (DMC 3501–7500 kg) wymagają kat. C1, a powyżej 7500 kg – kat. C."
   - question: "Czy warto kupić samochód kempingowy?"
     answer: "Finansowo kamper zwraca się przy 30–50 noclegach rocznie w porównaniu z hotelami. Główna wartość to elastyczność podróżowania – brak rezerwacji, własne łóżko i kuchnia. Warto zacząć od wynajmu, by sprawdzić, czy styl kamperowy nam odpowiada."
+sources:
+  - "CIVD"
+  - "CEPiK"
+  - "Polski Związek Karawaningowy"
+  - "dane z portali OLX i Otomoto"
 ---
 
 ## Czym jest samochód kempingowy
@@ -121,5 +126,3 @@ Posiadanie samochodu kempingowego generuje stałe koszty, niezależne od tego, j
 | **Łącznie** | **9000–17 000 zł** | **15 500–26 000 zł** | **20 000–36 000 zł** |
 
 Camper van ma najniższe koszty utrzymania, ponieważ często nie wymaga osobnego miejsca do parkowania i spala mniej paliwa. Duży, luksusowy integrał generuje natomiast koszty porównywalne z utrzymaniem małego mieszkania. Więcej porad znajdziesz w [przewodniku kupującego kampera](/kampery/przewodnik-kupujacego/) oraz w zestawieniu [tanich kamperów](/kampery/tanie-kampery/).
-
-*Źródła: CIVD, CEPiK, Polski Związek Karawaningowy, dane z portali OLX i Otomoto (marzec 2026)*

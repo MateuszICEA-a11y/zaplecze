@@ -20,6 +20,11 @@ faq:
     answer: "Sprinter III (W907/W910) oferuje przede wszystkim nowy 4-cylindrowy diesel OM654 (2.0 CDI) w wariantach 116, 143 i 170 KM. W pierwszych latach produkcji (2018–2019) montowano również stary OM651 (2.2 CDI) o mocy 114, 143 i 163 KM. Dostępny jest też elektryczny eSprinter z silnikiem 113 KM i baterią 35 lub 55 kWh."
   - question: "Sprinter vs Transit – co lepsze?"
     answer: "Odpowiedź zależy od zastosowania. Sprinter jest droższy w zakupie i serwisie, ale oferuje wyższy prestiż, lepsze zawieszenie tylne (zwłaszcza w RWD) i większy wybór konfiguracji DMC. Transit wygrywa ceną zakupu, dostępnością tanich zamienników i niższymi kosztami eksploatacji. W transporcie ciężkim i kampingowym Sprinter jest tradycyjnie preferowany; w dostawach kurierskich Transit lub Daily często okazują się bardziej opłacalne."
+sources:
+  - "Mercedes-Benz Vans (mercedes-benz-vans.pl)"
+  - "katalogi techniczne W907/W910"
+  - "ADAC Fahrzeugtechnik"
+  - "dane własne BusManiak.pl."
 ---
 
 ## Historia i generacje Mercedes Sprinter {#historia-generacje}
@@ -199,5 +204,3 @@ Zakup Mercedes Sprinter to wydatek, który zależy od generacji, wersji silnikow
 | Nowy Sprinter L2H2 (2.0 CDI 150 KM) | od ok. 195 000 zł netto |
 | Nowy Sprinter L3H2 RWD (2.0 CDI 170 KM) | od ok. 220 000 zł netto |
 | eSprinter L2H2 | od ok. 310 000 zł netto |
-
-*Źródła: Mercedes-Benz Vans (mercedes-benz-vans.pl), katalogi techniczne W907/W910, ADAC Fahrzeugtechnik, dane własne BusManiak.pl.*

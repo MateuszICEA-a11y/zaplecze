@@ -20,6 +20,10 @@ faq:
     answer: "Tak, sieć obejmuje większość miast wojewódzkich, często przy wsparciu grup dealerskich obsługujących inne marki."
   - question: "Jaka jest gwarancja na Deliver 9?"
     answer: "Standardowo 5 lat lub 100 000 km – znacznie więcej niż u europejskiej konkurencji (2–3 lata)."
+sources:
+  - "Wikipedia – SAIC Motor"
+  - "materiały prasowe Maxus Polska"
+  - "katalog techniczny Maxus Deliver 9."
 ---
 
 ## Maxus – co to za marka? {#marka-maxus}
@@ -148,5 +152,3 @@ Kluczowe parametry Maxus Deliver 9 w tym zestawieniu obejmują m.in. parametr, m
 | Cena furgon L3H2 (netto) | ~115 000 zł | ~145 000 zł | ~150 000 zł | ~185 000 zł |
 
 Deliver 9 wygrywa ceną i gwarancją. Przegrywa rozpoznawalnością marki i wielkością sieci serwisowej. [Iveco Daily](/modele/iveco-daily/) to mocny rywal z napędem RWD i solidną konstrukcją ramową, ale kosztuje więcej. [Mercedes Sprinter](/modele/mercedes-sprinter/) to segment premium z odpowiednio wyższymi cenami zakupu i serwisu.
-
-*Źródła: Wikipedia – SAIC Motor, materiały prasowe Maxus Polska, katalog techniczny Maxus Deliver 9.*

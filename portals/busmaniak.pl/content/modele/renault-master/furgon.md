@@ -20,6 +20,10 @@ faq:
     answer: "Oba modele konkurują w tym samym segmencie i w zbliżonych konfiguracjach oferują podobną przestrzeń ładunkową. W praktyce porównanie trzeba robić zawsze dla tej samej długości i wysokości nadwozia, bo same liczby zależą od konkretnej wersji. W przypadku Mastera istotne są też różnice między Masterem III po liftingu 2019 a nowym Masterem IV od 2024 r., bo to już auta z wyraźnie inną techniką pokładową."
   - question: "Czy Renault Master furgon mieści palety EURO?"
     answer: "Tak, Renault Master furgon jest projektowany pod przewóz europalet 1200 × 800 mm, ale liczba palet zależy od długości podłogi i szerokości między nadkolami. Przy ocenie konkretnej wersji trzeba patrzeć jednocześnie na długość przestrzeni ładunkowej, szerokość między nadkolami oraz wymiary otworów załadunkowych. W praktyce najkrótsze i najdłuższe wersje różnią się tu bardzo wyraźnie."
+sources:
+  - "Renault"
+  - "auto-data.net"
+  - "[Wikipedia](https://pl.wikipedia.org/wiki/EGR)"
 ---
 
 ## Wszystkie wersje Mastera furgon – przegląd
@@ -148,5 +152,3 @@ Przy wyborze wersji warto myśleć zastosowaniem:
 - **L4H3** – do lekkiego, ale objętościowego ładunku
 
 Wysokość całkowita ma tu duże znaczenie praktyczne, bo część garaży i parkingów ogranicza przejazd do około 2,0–2,2 m. To prosty parametr, który często decyduje o tym, czy dany Master będzie naprawdę użyteczny w codziennej pracy.
-
-*Źródła: Renault, auto-data.net, [Wikipedia](https://pl.wikipedia.org/wiki/EGR)*

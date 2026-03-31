@@ -16,6 +16,10 @@ faq:
     answer: "Najbardziej praktyczny układ to stałe łóżko tylne dla dorosłych oraz podnoszony dach z materacem dla dzieci. Alternatywą jest alkowa nad kabiną kierowcy, która oferuje większą, stałą powierzchnię do spania i lepszą izolację."
   - question: "Czy kamper 4-osobowy mieści się na zwykłym parkingu?"
     answer: "Camper van na bazie VW T6.1 czy Fiata Ducato L2 – tak. Alkowa ze względu na swoją długość oraz wysokość najczęściej nie mieści się na standardowym miejscu parkingowym i wymaga dedykowanych stanowisk dla większych pojazdów."
+sources:
+  - "VW Samochody Użytkowe"
+  - "Knaus Tabbert"
+  - "dane z portali OLX i Otomoto"
 ---
 
 ## Typy kamperów 4-osobowych
@@ -113,5 +117,3 @@ Oto jak kształtują się ceny w zależności od wieku i typu pojazdu:
 Przy zakupie używanego kampera kluczowe jest sprawdzenie stanu instalacji wodnej, gazowej (ważność certyfikatu) i elektrycznej. Sama zabudowa meblowa rzadko sprawia problemy – to mechanika pojazdu bazowego generuje największe koszty eksploatacji.
 
 Dla rodziny, która dopiero zaczyna przygodę z karawaningiem, rozsądnym pomysłem na start jest tani kamper w postaci używanego camper vana za **100–150 tys. zł**, by przetestować ten styl podróżowania przez jeden sezon.
-
-*Źródła: VW Samochody Użytkowe, Knaus Tabbert, dane z portali OLX i Otomoto (marzec 2026)*

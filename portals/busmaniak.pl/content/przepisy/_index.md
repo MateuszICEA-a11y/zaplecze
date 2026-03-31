@@ -21,6 +21,11 @@ faq:
     answer: "Tak – po wykonaniu przeróbki przez firmę z PKD 45.20.Z i uzyskaniu pozytywnego wyniku badania w OSKP możesz zmienić wpis w dowodzie na 'pojazd specjalny – kempingowy'. Wymaga to trwale zamontowanego stolika, łóżka i siedzisk z pasami."
   - question: "Ile kosztuje OC kampera w Polsce?"
     answer: "Ubezpieczenie OC kampera w 2026 roku kosztuje od 800 do 3000 zł rocznie. Najniższe składki dostają właściciele kamperów wpisanych jako pojazd specjalny kempingowy – ta klasyfikacja oznacza niższe ryzyko dla ubezpieczyciela."
+sources:
+  - "[Dopuszczalna masa całkowita](https://pl.wikipedia.org/wiki/Dopuszczalna_masa_ca%C5%82kowita) – Wikipedia"
+  - "Ustawa z dnia 20 czerwca 1997 r. – Prawo o ruchu drogowym, art. 2 pkt 54"
+  - "Rozporządzenie (WE) nr 561/2006 – czas jazdy i odpoczynku kierowców"
+  - "Rozporządzenie Parlamentu Europejskiego 2020/1054 – Pakiet Mobilności I"
 ---
 ## DMC – fundament przepisów dla busów {#dmc-podstawy}
 
@@ -225,10 +230,3 @@ Pojazdy o DMC powyżej 3,5 tony podlegają w Europie znacznie surowszym regulacj
 Zasady biwakowania kamperem różnią się dramatycznie – od liberalnej Skandynawii (prawo Allemansrätten w Szwecji pozwala na 24h postój w terenie) po restrykcyjne Włochy i Chorwację, gdzie biwakowanie poza wyznaczonymi campingami grozi mandatem od 150 do 3500 €. W Polsce nie ma ogólnego zakazu noclegu w kamperze na parkingach publicznych – o ile nie rozkładasz markizy i nie stawiasz mebli na zewnątrz.
 
 ---
-
-**Źródła:**
-
--   [Dopuszczalna masa całkowita](https://pl.wikipedia.org/wiki/Dopuszczalna_masa_ca%C5%82kowita) – Wikipedia
--   Ustawa z dnia 20 czerwca 1997 r. – Prawo o ruchu drogowym, art. 2 pkt 54
--   Rozporządzenie (WE) nr 561/2006 – czas jazdy i odpoczynku kierowców
--   Rozporządzenie Parlamentu Europejskiego 2020/1054 – Pakiet Mobilności I

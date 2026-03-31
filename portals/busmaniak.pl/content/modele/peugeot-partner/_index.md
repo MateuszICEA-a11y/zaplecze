@@ -18,6 +18,10 @@ faq:
     answer: "Z baterią 50 kWh do 275 km WLTP. Realnie w mieście z ładunkiem 190–220 km, zimą ok. 150–160 km."
   - question: "Czy Partner III mieści dwie europalety?"
     answer: "Tak – wersja Long (L2) z przestrzenią 4,4 m³ mieści 2 palety EUR wzdłuż. Wersja Short tylko jedną."
+sources:
+  - "Wikipedia – PSA EMP2 platform"
+  - "materiały prasowe Peugeot Polska"
+  - "dane techniczne Auto-Data.net."
 ---
 
 ## Historia i generacje Peugeot Partner
@@ -150,5 +154,3 @@ Segment dostawczaków to rynek pełen alternatyw – Peugeot Partner mierzy się
 | **VW Caddy V** | do 720 kg | 3,1–3,7 m³ | 2.0 TDI 75 KM | ❌ | od 130 000 zł |
 
 Partner, [Berlingo](/modele/citroen-berlingo/) i [Combo](/modele/opel-combo/) to ten sam samochód pod trzema logotypami. Różnice: design, multimedia i warunki gwarancji. [Renault Kangoo](/modele/renault-kangoo/) wygrywa systemem Open Sesame i większą paką w wersji Long. VW Caddy kosztuje więcej, ale oferuje wyższą kulturę jazdy i solidniejszą elektronikę.
-
-*Źródła: Wikipedia – PSA EMP2 platform, materiały prasowe Peugeot Polska, dane techniczne Auto-Data.net.*

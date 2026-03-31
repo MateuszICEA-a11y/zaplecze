@@ -21,6 +21,9 @@ faq:
     answer: "Ceny Hyundai Staria w Polsce zaczynają się od ok. 220 000 zł brutto za wersję 9-osobową. Bogato wyposażone wersje Executive przekraczają 280 000 zł."
   - question: "Czy Hyundai Staria nadaje się na kampera?"
     answer: "Staria ma mniejszą przestrzeń ładunkową niż klasyczne busy dostawcze (np. Ducato), ale jej płaska podłoga i duża szerokość (1 995 mm) sprawiają, że powstają kompaktowe zabudowy kamperowe, szczególnie popularne w Korei i Australii."
+sources:
+  - "Wikipedia – Hyundai Staria; Hyundai Motor Poland"
+  - "katalogi techniczne 2024/2025."
 ---
 
 ## Hyundai Staria – co to za samochód
@@ -126,5 +129,3 @@ Staria rywalizuje z europejskimi vanami premium – VW Multivan, Toyota ProAce V
 Staria wyróżnia się napędem na tył (lepszym pod obciążeniem), 5-letnią gwarancją i najodważniejszym designem w stawce. [Multivan](/modele/volkswagen-multivan/) oferuje modułowe wnętrze i prestiż marki VW. [ProAce Verso](/modele/toyota-proace-verso/) to pragmatyczny wybór z najniższą ceną wejścia. [Mercedes Vito](/modele/mercedes-vito/) gra kartą komfortu i sieci serwisowej.
 
 Największą barierą dla Starii w Polsce jest ograniczona rozpoznawalność marki w segmencie vanów i mniejsza sieć serwisowa Hyundaia w kontekście pojazdów użytkowych – choć 5-letnia gwarancja skutecznie tę obawę neutralizuje.
-
-*Źródła: Wikipedia – Hyundai Staria; Hyundai Motor Poland, katalogi techniczne 2024/2025.*

@@ -20,6 +20,13 @@ faq:
     answer: "Tak, choć znacznie rzadziej niż pasek. W Mercedesie Sprinterze z silnikiem OM651 łańcuch rozciąga się po 150 000–200 000 km, co objawia się charakterystycznym dzwonieniem na zimnym silniku. Wymiana kosztuje 4300–6500 zł ze względu na umiejscowienie rozrządu od strony skrzyni biegów."
   - question: "Co się stanie, gdy zerwie się pasek rozrządu w busie?"
     answer: "W silnikach z kolidującymi zaworami (większość diesli w busach) zerwanie paska powoduje zderzenie tłoków z zaworami. Skutki to pogięte zawory, uszkodzone tłoki, a w skrajnych przypadkach pęknięty blok silnika. Koszt naprawy to 8000–15 000 zł, często przekraczający wartość starszego busa."
+sources:
+  - "dokumentacja serwisowa Fiat Professional"
+  - "Ford Etis"
+  - "Mercedes EPC"
+  - "[Wikipedia – rozrząd](https://pl.wikipedia.org/wiki/Rozrz%C4%85d)"
+  - "dobrymechanik.pl"
+  - "forum.fordclubpolska.org"
 ---
 
 ## Co to jest rozrząd i dlaczego jest tak ważny
@@ -124,5 +131,3 @@ Najczęstsze problemy z łańcuchem rozrządu w busach:
 Wymiana łańcucha rozrządu w Sprinterze OM651 trwa 8–12 roboczogodzin. Całkowity koszt operacji w niezależnym warsztacie to 4300–6500 zł – więcej niż wymiana paska w Ducato, ale przy dwukrotnie dłuższych interwałach koszt roczny jest porównywalny. Nowszy silnik OM654 (w Sprinterze od 2018 roku) ma łańcuch o znacznie lepszej trwałości i problemy pojawiają się zwykle powyżej 250 000 km.
 
 Więcej o rozrządzie w najpopularniejszym busie znajdziesz w artykule [rozrząd Fiat Ducato – co ile wymiana](/serwis/fiat-ducato-rozrzad/).
-
-*Źródła: dokumentacja serwisowa Fiat Professional, Ford Etis, Mercedes EPC, [Wikipedia – rozrząd](https://pl.wikipedia.org/wiki/Rozrz%C4%85d), dobrymechanik.pl, forum.fordclubpolska.org*

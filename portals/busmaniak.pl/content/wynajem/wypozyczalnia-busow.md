@@ -20,6 +20,14 @@ faq:
     answer: "OC pojazdu jest zawsze w cenie. AC (autocasco) bywa dodatkowe – sprawdź warunki, bo bez AC odpowiadasz za szkody do pełnej wartości pojazdu."
   - question: "Ile paliwa zużywa bus dostawczy?"
     answer: "Fiat Ducato 2.2 MultiJet3 spala 9–12 l/100 km w zależności od obciążenia. Mercedes Sprinter 2.0 CDI to 10–13 l/100 km. Przy planowaniu budżetu licz średnio 11 l/100 km."
+sources:
+  - "cenniki wypożyczalni (Halobus"
+  - "SadybaBus"
+  - "EastRent"
+  - "Traficar)"
+  - "dane Europcar Polska"
+  - "platforma Panek"
+  - "[Wikipedia – Samochód dostawczy](https://pl.wikipedia.org/wiki/Samoch%C3%B3d_dostawczy)."
 ---
 
 ## Kiedy warto wynająć busa
@@ -117,5 +125,3 @@ Przed załadunkiem zabezpiecz meble kocami lub folią bąbelkową. Większość 
 Zaplanuj trasę z uwzględnieniem ograniczeń wysokości. Bus Ducato L4H3 ma 2,76 m wysokości – nie wjedzie pod każdy wiadukt czy parking podziemny. Korzystaj z nawigacji ustawionej na pojazd dostawczy (np. Sygic Truck).
 
 Jeśli interesuje Cię wynajem [busa 9-osobowego](/wynajem/wynajem-busa-9-osobowy/) do przewozu pasażerów, sprawdź dedykowany artykuł. Porównanie popularnych modeli dostawczych znajdziesz w opisach [Fiata Ducato](/modele/fiat-ducato/) i [Mercedesa Sprintera](/modele/mercedes-sprinter/).
-
-*Źródła: cenniki wypożyczalni (Halobus, SadybaBus, EastRent, Traficar), dane Europcar Polska, platforma Panek, [Wikipedia – Samochód dostawczy](https://pl.wikipedia.org/wiki/Samoch%C3%B3d_dostawczy).*

@@ -19,6 +19,13 @@ faq:
   - question: "Ile kosztuje zabudowa kontenerowa izoterma na Daily?"
     answer: "Sama zabudowa izoterma bez agregatu to zwykle 20–35 tys. zł netto. Dodanie agregatu chłodniczego to najczęściej kolejne 15–25 tys. zł netto, a ostateczny koszt zależy też od wyposażenia, ATP i montażu."
 lead: "Iveco Daily w zabudowie kontenerowej i izotermicznej to częsty wybór w dystrybucji żywności, gastronomii i farmacji. Sztywna skrzynia lepiej zabezpiecza ładunek niż plandeka, a izolacja termiczna i odpowiednio dobrany agregat pozwalają dopasować auto do konkretnego profilu transportu."
+sources:
+  - "dane fact-checkera dotyczące rozstawów osi Daily chassis cab"
+  - "typowych zakresów wymiarów zabudów kontenerowych i izotermicznych"
+  - "klas ATP"
+  - "ważności świadectw ATP"
+  - "typów napędu agregatów"
+  - "wpływu konfiguracji podwozia na ładowność oraz wymogów eksploatacyjnych dla transportu żywności i farmacji."
 ---
 ## Kontener vs. izoterma – różnica, którą musisz znać
 
@@ -109,5 +116,3 @@ Sama zabudowa izotermiczna bez agregatu to zwykle 20–35 tys. zł netto. Po dod
 Certyfikat ATP jest wymagany przy międzynarodowym przewozie towarów szybko psujących się. Pierwsze świadectwo ATP dla nowej zabudowy jest zwykle wydawane na 6 lat, a po badaniu okresowym można je przedłużać zazwyczaj na 3 lata.
 
 W praktyce warto pamiętać także o tabliczce ATP i oznaczeniu klasy, np. FRC. Po istotnej naprawie ścian, dachu lub drzwi zabudowa może wymagać ponownego badania, bo szczelność i parametry izolacyjne mają bezpośredni wpływ na zgodność z ATP.
-
-Źródła: dane fact-checkera dotyczące rozstawów osi Daily chassis cab, typowych zakresów wymiarów zabudów kontenerowych i izotermicznych, klas ATP, ważności świadectw ATP, typów napędu agregatów, wpływu konfiguracji podwozia na ładowność oraz wymogów eksploatacyjnych dla transportu żywności i farmacji.

@@ -19,6 +19,12 @@ faq:
     answer: "Standardowy camper van oferuje 2 miejsca do spania (rozkładana tylna kanapa lub łóżko na podniesionym dachu). VW California w wersji Ocean ma 4 miejsca – 2 na dole i 2 na podnoszonym dachu."
   - question: "Czy camper van nadaje się na dłuższy wyjazd?"
     answer: "Tak, pod warunkiem że jedziesz w 1–2 osoby. Przy 2-tygodniowej trasie brak toalety i ograniczona przestrzeń do przechowywania bagażu mogą być uciążliwe. Warto korzystać z kempingów z zapleczem sanitarnym."
+sources:
+  - "Wikipedia"
+  - "Chalifornia.pl"
+  - "BookingCamper.pl"
+  - "FastCamper.eu"
+  - "Auto Swiat"
 ---
 
 ## Czym jest camper van i czym różni się od dużego kampera
@@ -115,5 +121,3 @@ Spanie w podnoszonym dachu wymaga jednak kompromisów. Namiotowe, materiałowe �
 Jeśli potrzebujesz nieco więcej przestrzeni, ale wciąż cenisz kompaktowe wymiary – sprawdź [wynajem małego kampera](/wynajem/maly-kamper-wynajem/), który łączy zalety vana z pełnym zapleczem sanitarnym. Dokładne ceny wszystkich typów kamperów znajdziesz w [cenniku wynajmu na 2026 rok](/wynajem/wynajem-kampera-cena/).
 
 Rozważasz camper vana na własność? Przeczytaj nasz [poradnik o camper vanach](/kampery/camper-van/), w którym omawiamy modele, ceny i porównania.
-
-*Źródła: Wikipedia, Chalifornia.pl, BookingCamper.pl, FastCamper.eu, Auto Swiat*

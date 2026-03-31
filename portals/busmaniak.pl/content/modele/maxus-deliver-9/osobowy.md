@@ -19,6 +19,11 @@ faq:
     answer: "Tak – szczególnie w konfiguracji 9-miejscowej, gdzie łatwiej pogodzić komfort pasażerów z miejscem na bagaż. Wyposażenie i układ wnętrza zależą jednak od konkretnej zabudowy."
   - question: "Ile kosztuje Deliver 9 osobowy?"
     answer: "Cena zależy od auta bazowego i zakresu zabudowy pasażerskiej. W przypadku busów 9-, 14- i 17-miejscowych trzeba liczyć osobno koszt pojazdu bazowego oraz wykonania i homologacji zabudowy."
+sources:
+  - "dane wymagają wskazania precyzyjnych kart katalogowych"
+  - "cenników i wersji pojazdów wraz z datą dostępu. Wcześniejsze ogólne odwołanie do „Maxus Polska"
+  - "dane techniczne SAIC Motor"
+  - "Auto-Data.net” nie wystarcza do potwierdzenia szczegółowych tabel."
 ---
 
 ## Maxus Deliver 9 osobowy – konstrukcja i wersje
@@ -142,5 +147,3 @@ Ponieważ wcześniejsze porównanie zawierało nieprecyzyjne dane – między in
 Taki układ lepiej oddaje realia rynku niż pozornie dokładna tabela z przypadkowymi liczbami. W segmencie busów osobowych kluczowe jest bowiem porównywanie konkretnych konfiguracji nadwozia, homologacji i DMC, a nie samych nazw modeli.
 
 W samym artykule nie ma podstaw do stwierdzeń typu „najniższa cena serwisu” czy „lepsze prowadzenie”, dlatego takie oceny usuwamy. Bez twardych danych o kosztach przeglądów, częściach i TCO byłyby to tylko marketingowe skróty.
-
-*Źródła: dane wymagają wskazania precyzyjnych kart katalogowych, cenników i wersji pojazdów wraz z datą dostępu. Wcześniejsze ogólne odwołanie do „Maxus Polska, dane techniczne SAIC Motor, Auto-Data.net” nie wystarcza do potwierdzenia szczegółowych tabel.*

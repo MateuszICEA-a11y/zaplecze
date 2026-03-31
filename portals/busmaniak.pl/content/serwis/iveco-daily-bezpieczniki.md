@@ -21,6 +21,9 @@ faq:
     answer: "Nie – grozi to pożarem instalacji elektrycznej. Bezpiecznik chroni wiązkę przewodów, nie odbiornik. Wyższy amperaż oznacza, że przewody mogą się przegrzać, zanim bezpiecznik zadziała."
   - question: "Dlaczego Daily nie odpala po wymianie bezpiecznika?"
     answer: "Prawdopodobnie wymieniłeś bezpiecznik, ale nie usunąłeś przyczyny zwarcia. Sterownik silnika (ECU) mógł przejść w tryb awaryjny. Odłącz akumulator na 10 minut, podłącz ponownie i spróbuj uruchomić."
+sources:
+  - "- Instrukcja obsługi Iveco Daily (lampki kontrolne"
+  - "schemat): tirmet.pl"
 ---
 ## Lokalizacja skrzynek bezpieczników
 
@@ -148,7 +151,5 @@ Wymiana przepalonego bezpiecznika jest prostą czynnością, ale wymaga precyzji
 6.  Wstaw nowy bezpiecznik o identycznym amperażu. Nigdy nie używaj bezpiecznika o wyższej wartości.
 7.  Włącz zapłon i sprawdź, czy chroniony obwód działa. Jeśli nowy bezpiecznik przepali się natychmiast – w instalacji występuje zwarcie, które wymaga diagnostyki w warsztacie.
 
-Źródła:
-- Instrukcja obsługi Iveco Daily (lampki kontrolne, schemat): tirmet.pl
 - Schematy bezpieczników Daily: autobezpieczniki.pl, selected.pl
 - Bezpiecznik (Wikipedia): https://pl.wikipedia.org/wiki/Bezpiecznik

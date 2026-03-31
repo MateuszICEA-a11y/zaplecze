@@ -20,6 +20,10 @@ faq:
     answer: "Długość przekracza 5,3 m, wysokość prawie 1,9 m – w starszych garażach podziemnych może być ciasno."
   - question: "Jaka jest różnica między Rangerem a Amarokiem?"
     answer: "Od 2022 roku dzielą platformę T6, ale różnią się designem, kalibracją zawieszenia i wykończeniem wnętrza. Amarok jest droższy i bardziej premium."
+sources:
+  - "Wikipedia – Filtr cząstek stałych DPF"
+  - "oficjalne dane techniczne Ford Polska"
+  - "dokumentacja serwisowa Ford EcoBlue."
 ---
 
 ## Historia i generacje Ford Ranger
@@ -164,5 +168,3 @@ W europejskim segmencie pickupów Ranger walczy z bliźniaczym Amarokiem (wspól
 | Cena bazowa (netto) | ~145 000 zł | ~200 000 zł | ~155 000 zł | ~130 000 zł |
 
 Głównym rywalem jest bliźniaczy [Volkswagen Amarok](/modele/volkswagen-amarok/) – ta sama platforma T6, ale premium wykończenie i wyższa cena. Do typowego transportu miejskiego lepszym wyborem będzie [Ford Transit Custom](/modele/ford-transit-custom/), a w segmencie dużych dostawczaków – [Ford Transit](/modele/ford-transit/).
-
-*Źródła: Wikipedia – Filtr cząstek stałych DPF, oficjalne dane techniczne Ford Polska, dokumentacja serwisowa Ford EcoBlue.*

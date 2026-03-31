@@ -21,6 +21,8 @@ faq:
     answer: "Jeśli auto nie straciło mocy i nie wydaje dziwnych dźwięków, możesz kontynuować jazdę do najbliższego serwisu. Unikaj jednak dużych obciążeń silnika, gdyż usterka może doprowadzić do zapchania filtra DPF lub uszkodzenia turbosprężarki."
   - question: "Co oznacza żółta/pomarańczowa kontrolka z symbolem kłódki/samochodu?"
     answer: "To błąd systemu Fiat Code (immobilizer). Jeśli świeci się po przekręceniu kluczyka, silnik może nie zapalić, ponieważ system nie rozpoznał kodu w kluczyku. Często pomaga wyjęcie kluczyka i ponowna próba po kilku sekundach."
+sources:
+  - "- Instrukcja obsługi Fiat Ducato (eLum Fiat): [https://aftersales.fiat.com/elum/](https://aftersales.fiat.com/elum/)"
 ---
 
 ## Kolory kontrolek – hierarchia ważności
@@ -79,7 +81,5 @@ Użytkownicy [Fiata Ducato](/modele/fiat-ducato/) powinni rozpoznawać symbole t
 
 Warto też zajrzeć do ogólnego poradnika [kontrolki w busie](/serwis/kontrolki-w-busie/), gdzie opisujemy różnice między popularnymi modelami dostawczaków.
 
-Źródła:
-- Instrukcja obsługi Fiat Ducato (eLum Fiat): [https://aftersales.fiat.com/elum/](https://aftersales.fiat.com/elum/)
 - Dane techniczne modeli Fiat Professional: [https://www.fiatprofessional.com/pl/ducato](https://www.fiatprofessional.com/pl/ducato)
 - Forum użytkowników Fiat: [fiatklubpolska.pl](https://fiatklubpolska.pl)

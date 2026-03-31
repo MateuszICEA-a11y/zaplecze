@@ -27,6 +27,9 @@ faq:
     answer: "Nie zalecamy. Stare rolki mogą zatrzeć się tuż po wymianie paska, co prowadzi do jego zerwania."
   - question: "Jak często wymieniać rozrząd w Ducato używanym kuriersko?"
     answer: "W intensywnej eksploatacji miejskiej zalecamy skrócenie interwału do 100 000 km."
+sources:
+  - "dokumentacja techniczna Fiat Professional"
+  - "katalogi Gates/Dayco."
 ---
 ## Co ile wymiana rozrządu w Fiat Ducato 2.3 MultiJet?
 
@@ -78,5 +81,3 @@ Nie każdy Fiat Ducato ma silnik 2.3 MultiJet. To ważne przy zakupie używanego
 2.  **Silnik 2.2 MultiJet3 (od 2021 r., jednostka Stellantis)** – to całkowicie nowa konstrukcja na pasku rozrządu, która zastąpiła silnik 2.3. Interwał wymiany wynosi 144 000 km lub 5 lat. Pasek pracuje na sucho, a koszt zestawu części jest zbliżony do silnika 2.3 MultiJet, choć sama wymiana wymaga nowszych blokad wałka rozrządu.
 3.  **Silnik 3.0 MultiJet (IVECO)** – legendarna jednostka na łańcuchu. Przy odpowiednim serwisie olejowym łańcuch wytrzymuje tu nawet 400–500 tys. km.
 4.  **Silnik 2.0 MultiJet** – mniejsza jednostka, również na pasku, wymagająca regularnej wymiany co ok. 120 tys. km.
-
-*Źródła: dokumentacja techniczna Fiat Professional, katalogi Gates/Dayco.*

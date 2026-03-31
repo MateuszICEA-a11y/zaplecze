@@ -23,6 +23,11 @@ faq:
     answer: "Zazwyczaj tak. Profesjonalne kompresory na stacjach paliw obsługują też ciężarówki i dysponują ciśnieniem 8–10 bar, co bez problemu pozwala nabić 5,5 bar w oponie busa. Problemem bywają natomiast tanie, przenośne kompresory na 12V, których wydajność często kończy się na 3,5–4,0 bar."
   - question: "Czy ciśnienie w oponach kampera jest inne niż w busie dostawczym?"
     answer: "Kamper na bazie busa ma zazwyczaj stałe obciążenie (zabudowa waży 400–800 kg), dlatego jeździ na ciśnieniu zbliżonym do wartości 'z ładunkiem'. Dla kampera na Ducato to zwykle 4,0–4,5 bar z przodu i 4,5–5,0 bar z tyłu."
+sources:
+  - "Dane producenta: instrukcje obsługi Fiat Ducato (2014–2024), Mercedes Sprinter (W906/W907), Ford Transit Mk8, Iveco Daily (2014–2024)"
+  - "Oponeo.pl – tabela ciśnień dla pojazdów dostawczych"
+  - "[Opona samochodowa](https://pl.wikipedia.org/wiki/Opona_samochodowa) – Wikipedia"
+  - "ETRTO – European Tyre and Rim Technical Organisation, standardy nośności opon C"
 ---
 ## Dlaczego ciśnienie w oponach busa jest ważniejsze niż w osobówce {#dlaczego-wazne}
 
@@ -136,10 +141,3 @@ Opony do busów dostawczych, oznaczone literą „C” (Cargo) lub „CP” (Cam
 Technicznie jest to możliwe, ale to poważny i niebezpieczny błąd. Opona osobowa na busie o masie 3,5 tony pracuje znacznie powyżej swojej nośności – ściana boczna nadmiernie się ugina, opona przegrzewa, co grozi jej wystrzałem. Co więcej, jazda na oponach o niewłaściwym indeksie nośności to naruszenie warunków homologacji, które może być podstawą do odmowy wypłaty odszkodowania w razie wypadku.
 
 ---
-
-**Źródła:**
-
-- Dane producenta: instrukcje obsługi Fiat Ducato (2014–2024), Mercedes Sprinter (W906/W907), Ford Transit Mk8, Iveco Daily (2014–2024)
-- Oponeo.pl – tabela ciśnień dla pojazdów dostawczych
-- [Opona samochodowa](https://pl.wikipedia.org/wiki/Opona_samochodowa) – Wikipedia
-- ETRTO – European Tyre and Rim Technical Organisation, standardy nośności opon C

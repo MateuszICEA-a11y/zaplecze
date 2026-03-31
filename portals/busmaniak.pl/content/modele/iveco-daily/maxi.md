@@ -19,6 +19,10 @@ faq:
   - question: "Jaka jest długość Iveco Daily Maxi?"
     answer: "W artykule omawiamy długi furgon Iveco Daily Maxi. Przy ocenie praktyczności ważniejsza od samej długości całkowitej jest długość podłogi przestrzeni ładunkowej, maksymalna szerokość wewnętrzna oraz szerokość między nadkolami – to one decydują o realnym załadunku."
 lead: "Iveco Daily Maxi należy do największych furgonów, jakie można spotkać w konfiguracjach na prawo jazdy kat. B. Trzeba jednak oddzielić marketingową kubaturę od realnej funkcjonalności – możliwość przewozu 6 europalet zależy od konkretnej wersji 3,5 t, wymiarów podłogi i ograniczeń wynikających z nadkoli oraz zabudowy."
+sources:
+  - "do uzupełnienia na podstawie konkretnego katalogu technicznego Iveco Daily"
+  - "cennika na rynek polski z datą obowiązywania oraz oficjalnych danych homologacyjnych dla wybranej wersji 3"
+  - "5 t."
 ---
 ## Wymiary Iveco Daily Maxi
 
@@ -77,5 +81,3 @@ Warto pamiętać także o przepisach. Dla pojazdu 3,5 t obowiązują inne zasady
 Pierwotny tekst podawał ceny bez wskazania cennika, daty obowiązywania i wersji wyposażenia, dlatego nie można ich uznać za wiarygodne. W przypadku Iveco Daily Maxi sens mają wyłącznie dane z oficjalnego cennika na konkretny rynek i z konkretną datą.
 
 To samo dotyczy rynku wtórnego. Bez doprecyzowania rocznika, normy emisji, rodzaju zabudowy, przebiegu i stanu technicznego szerokie widełki cenowe niewiele mówią.
-
-*Źródła: do uzupełnienia na podstawie konkretnego katalogu technicznego Iveco Daily, cennika na rynek polski z datą obowiązywania oraz oficjalnych danych homologacyjnych dla wybranej wersji 3,5 t.*

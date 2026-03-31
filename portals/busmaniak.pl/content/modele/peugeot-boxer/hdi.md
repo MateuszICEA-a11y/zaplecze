@@ -20,6 +20,12 @@ faq:
     answer: "Zużycie paliwa mocno zależy od długości i wysokości nadwozia, DMC, zabudowy oraz obciążenia. Między krótszym L1H1 a dużym L4H3 albo autem pustym i obciążonym różnice rzędu 1,5–3,0 l/100 km są normalne."
   - question: "Czy silniki w Boxerze, Ducato i Jumperze są takie same?"
     answer: "Nie zawsze. Te modele są blisko spokrewnione konstrukcyjnie, ale zależnie od generacji i rocznika stosowano różne silniki, osprzęt i sterowanie, więc nie wszystkie części są zamienne."
+sources:
+  - "Peugeot"
+  - "katalogi serwisowe i katalogi części dobierane po VIN"
+  - "homologacje"
+  - "instrukcje obsługi"
+  - "[common rail](https://pl.wikipedia.org/wiki/Common_Rail)"
 ---
 
 ## Silniki HDI w Peugeot Boxer – przegląd wariantów
@@ -125,5 +131,3 @@ Dotyczy to także mocy. W Boxerze spotyka się m.in. 100/120/130/140/165 KM, a w
 Wiele elementów nadwoziowych i części eksploatacyjnych jest wspólnych, jednak parametry techniczne, usterki i koszty napraw nie są identyczne niezależnie od znaczka na masce. Różnice mogą dotyczyć samej rodziny silnika, osprzętu, sterowników, skrzyń i wyceny robocizny.
 
 To samo dotyczy wymienności osprzętu. Alternator, elementy chłodzenia czy inne podzespoły bywają podobne, ale każdorazowo trzeba to potwierdzić po VIN i numerze OE, bo wpływ mają także norma emisji, klimatyzacja, zabudowa i rok produkcji.
-
-*Źródła: Peugeot, katalogi serwisowe i katalogi części dobierane po VIN, homologacje, instrukcje obsługi, [common rail](https://pl.wikipedia.org/wiki/Common_Rail)*

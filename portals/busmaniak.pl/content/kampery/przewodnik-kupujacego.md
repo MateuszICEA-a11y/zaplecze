@@ -20,6 +20,10 @@ faq:
     answer: "Tak, pod warunkiem że mieści się w wymiarach miejsca parkingowego. Większość kamperów nie wjedzie jednak na parkingi podziemne z limitem wysokości 2,1 m. Alkowa (3,10–3,25 m) czy półintegra (2,80–3,10 m) zniszczyłaby dach. Zmieszczą się tam niemal wyłącznie fabryczne minivany z podnoszonym dachem, jak VW California (1,99 m)."
   - question: "Kiedy najlepiej kupić kampera?"
     answer: "Najkorzystniejsze ceny są jesienią i zimą (październik–luty), gdy popyt spada o 20–30%. Wiosną i latem ceny rosną, a dostępność popularnych modeli maleje."
+sources:
+  - "PSPA"
+  - "CEPiK"
+  - "Caravaning Industrie Verband (CIVD)"
 ---
 
 ## Rodzaje samochodów kempingowych
@@ -156,5 +160,3 @@ Najwyższe ceny panują w marcu–maju, gdy kupujący przygotowują się do sezo
 - **Komisy kamperowe** – rosnąca liczba wyspecjalizowanych komisów w dużych miastach. Pośredni poziom zaufania.
 
 Przed zakupem warto sprawdzić [ranking kamperów 2026](/porownania/ranking-kamperow/), który porównuje najpopularniejsze modele pod względem stosunku jakości do ceny. Przegląd dostępnych typów i rozmiarów znajdziesz w sekcji [samochody kempingowe](/kampery/).
-
-*Źródła: PSPA, CEPiK, Caravaning Industrie Verband (CIVD)*

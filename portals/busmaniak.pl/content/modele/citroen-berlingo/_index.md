@@ -21,6 +21,11 @@ faq:
     answer: "Tak – wersja XL (4753 mm) ma bagażnik 1050 l. Dostępna jest też wersja 7-osobowa z trzecim rzędem siedzeń."
   - question: "Jakie są typowe usterki Berlingo?"
     answer: "I gen. – elektryka i zawieszenie. II gen. – awarie turbo 1.6 HDI i filtry FAP. III gen. znacznie lepsza pod względem niezawodności."
+sources:
+  - "Wikipedia"
+  - "Citroën"
+  - "AutoCentrum.pl"
+  - "auto-data.net"
 ---
 
 ## Historia i generacje Citroën Berlingo {#historia-generacje}
@@ -118,5 +123,3 @@ Przegląd olejowy: 300–500 zł. Wymiana rozrządu: 800–1200 zł. Części za
 {{% info title="Ciekawostka" icon="engineering" %}}
 Berlingo było jednym z pierwszych kombivanów z napędem elektrycznym. Już w 1998 roku Citroën wprowadził Berlingo Electrique z akumulatorami niklowo-kadmowymi – na dwie dekady przed modą na elektromobilność.
 {{% /info %}}
-
-*Źródła: Wikipedia, Citroën, AutoCentrum.pl, auto-data.net*

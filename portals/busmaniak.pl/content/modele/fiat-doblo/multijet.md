@@ -18,6 +18,11 @@ faq:
   - question: "Czy Doblò MultiJet ma DPF?"
     answer: "To zależy od wersji, normy emisji, rocznika i rynku. W Doblò II filtr DPF występował w różnych konfiguracjach także przed 2015 rokiem, dlatego każdą sztukę trzeba weryfikować po VIN i wyposażeniu."
 lead: "MultiJet to rodzina silników diesla Fiata stosowana w Fiat Doblò generacji II. Model Doblò II, oznaczony jako Typ 263, zadebiutował w 2009 roku, a lifting przeprowadzono w 2015 roku. Przy zakupie używanego auta trzeba więc rozdzielać wersje z okresu 2010–2015 i egzemplarze po liftingu od 2015 roku, bo zmieniały się gamy silników, normy emisji i osprzęt."
+sources:
+  - "katalogi producenta"
+  - "instrukcje obsługi"
+  - "cenniki i broszury model year"
+  - "ePER/VIN-spec dla poszczególnych wersji."
 ---
 ## Silnik 1.3 MultiJet – parametry i zastosowanie
 
@@ -155,5 +160,3 @@ Przed zakupem używanego Doblò MultiJet warto sprawdzić:
 - historię wymiany rozrządu w 1.6 i 2.0
 - rozruch na zimno
 - dymienie pod obciążeniem
-
-Źródła: katalogi producenta, instrukcje obsługi, cenniki i broszury model year, ePER/VIN-spec dla poszczególnych wersji.

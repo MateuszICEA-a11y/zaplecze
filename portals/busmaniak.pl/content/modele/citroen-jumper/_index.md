@@ -16,6 +16,10 @@ faq:
   - question: "Jaka jest pojemność Citroëna Jumpera?"
     answer: "Jumper jest oferowany w konfiguracjach 8–17 m³. Najczęściej wybierana wersja L2H2 oferuje 13 m³, L3H2 – 15 m³. Wersja L4H3 osiąga 17 m³."
 lead: "Citroën Jumper III to duży van dostawczy segmentu N1/N2, techniczny bliźniak Fiata Ducato III i Peugeota Boxera III. Od 2006 roku budowany na platformie Sevel Sud, po faceliftingach w 2014 i 2020 roku zyskał silniki 2.2 BlueHDi spełniające normę Euro 6d."
+sources:
+  - "Wikipedia – Sevel"
+  - "Citroën Professional Polska"
+  - "auto-data.net."
 ---
 ## Citroën Jumper i platforma Sevel Sud
 
@@ -133,5 +137,3 @@ W segmencie dużych vanów Jumper konkuruje bezpośrednio ze swoimi bliźniakami
 | Cena L3H2 (netto) | ~160 000 zł | ~165 000 zł | ~150 000 zł | ~170 000 zł | ~185 000 zł |
 
 Jumper, [Peugeot Boxer](/modele/peugeot-boxer/) i [Ducato](/modele/fiat-ducato/) to ten sam samochód pod trzema logotypami. ë-Jumper z 420 km zasięgu WLTP (75 kWh) to lider elektrycznych dużych vanów. [Opel Movano](/modele/opel-movano/) C (od 2021) to kolejny bliźniak na platformie Sevel. [VW Crafter](/modele/volkswagen-crafter/) gra w innej lidze cenowej, ale oferuje AWD.
-
-*Źródła: Wikipedia – Sevel, Citroën Professional Polska, auto-data.net.*

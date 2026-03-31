@@ -17,6 +17,10 @@ faq:
     answer: "Przy DC 100 kW bateria 50 kWh ładuje się do 80% w ok. 32 min, a 75 kWh w ok. 45 min. Przy AC 11 kW typowy czas do poziomu użytkowego to ok. 5 h dla 50 kWh i ok. 7,5 h dla 75 kWh, ale pełne 0–100% trwa dłużej."
   - question: "Czy Vivaro-e nadaje się do dostawek w mieście?"
     answer: "Tak – szczególnie w pracy miejskiej i podmiejskiej, jeśli auto ma regularny dostęp do ładowania. W takich warunkach łatwiej wykorzystać zalety napędu elektrycznego i ograniczyć koszt energii."
+sources:
+  - "katalog producenta"
+  - "cennik"
+  - "homologacja WLTP i dane ładowania dla konkretnych wersji modelu."
 ---
 ## Dane techniczne Vivaro-e
 
@@ -128,5 +132,3 @@ Przy dopłatach nie warto operować procentem „różnicy ceny względem spalin
 Vivaro-e dzieli układ napędowy z technicznymi bliźniakami: **Peugeot e-Expert**, **Citroën ë-Jumpy**, **Fiat E-Scudo** i **Toyota Proace Electric**. Zwykle oferują one **136 KM**, baterie **50/75 kWh** i bardzo podobne parametry ładowania.
 
 Wśród konkurentów warto wskazać także [akumulator litowo-jonowy](https://pl.wikipedia.org/wiki/Akumulator_litowo-jonowy) stosowany w elektrycznych vanach różnych marek oraz same modele rynkowe. **Renault Trafic E-Tech Electric** oferuje **90 kW/122 KM**, baterię **52 kWh** i zasięg WLTP do ok. **297 km**, a **Mercedes eVito Tourer/Furgon** występuje w różnych wariantach mocy i akumulatorów zależnie od rocznika.
-
-*Źródła: katalog producenta, cennik, homologacja WLTP i dane ładowania dla konkretnych wersji modelu.*

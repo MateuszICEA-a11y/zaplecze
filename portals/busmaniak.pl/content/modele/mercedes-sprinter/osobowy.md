@@ -19,6 +19,16 @@ faq:
   - question: "Jaka jest różnica między fabrycznym Sprinterem Tourer a zabudową typu transfer lub tourist?"
     answer: "Fabryczne linie Mercedes-Benz to przede wszystkim BASE, PRO i SELECT. Określenia transfer, tourist czy VIP odnoszą się najczęściej do charakteru zabudowy pasażerskiej wykonywanej przez bodybuilderów, a nie do oficjalnych linii fabrycznych Mercedes-Benz."
 lead: "Mercedes Sprinter osobowy w wersji Tourer to baza do przewozu pasażerów od 9 do nawet 19 miejsc – od prostych konfiguracji shuttle po rozbudowane minibusy turystyczne. W tym segmencie realnie konkuruje z Fordem Transit Minibus, Iveco Daily Line, MAN TGE Coach/Intercity oraz z minibusowymi zabudowami na bazie Volkswagena Craftera."
+sources:
+  - "dane homologacyjne i specyfikacyjne przekazane przez fact-checkera dla rynku PL/EU; informacje o gamie linii BASE"
+  - "PRO i SELECT; dane o rozstawach osi"
+  - "długościach"
+  - "wysokościach"
+  - "kategoriach M1/M2/M3"
+  - "wariantach mocy 114/150/170/190 KM"
+  - "napędach FWD/RWD/4x4"
+  - "DMC 3500–5000 kg"
+  - "aktualizacji MBUX w 2024 r. oraz wymaganiach prawa jazdy B/D1/D."
 ---
 ## Wersje Sprinter Tourer – przegląd linii
 
@@ -114,5 +124,3 @@ Dlatego przy wycenie warto osobno porównywać:
 - koszt wyposażenia dodatkowego, np. klimatyzacji dachowej, półek bagażowych, stopnia elektrycznego czy rampy
 
 Warunki finansowania i rabaty flotowe nie są stałe rynkowo. Mogą się pojawiać w praktyce, ale zawsze są ustalane indywidualnie i zależą od wersji, wolumenu, terminu dostawy oraz polityki dealera.
-
-*Źródła: dane homologacyjne i specyfikacyjne przekazane przez fact-checkera dla rynku PL/EU; informacje o gamie linii BASE, PRO i SELECT; dane o rozstawach osi, długościach, wysokościach, kategoriach M1/M2/M3, wariantach mocy 114/150/170/190 KM, napędach FWD/RWD/4x4, DMC 3500–5000 kg, aktualizacji MBUX w 2024 r. oraz wymaganiach prawa jazdy B/D1/D.*

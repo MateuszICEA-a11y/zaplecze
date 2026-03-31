@@ -18,6 +18,12 @@ faq:
     answer: "Tak, choć wymaga to pewnych kompromisów. Zbiornik wody o pojemności **30–100 l**, w zależności od modelu, wymusza regularne postoje na kempingach co 2–3 dni. Pary i single z powodzeniem podróżują camper vanami przez wiele tygodni."
   - question: "Jaki bus jest najlepszy na camper vana?"
     answer: "Najpopularniejszą bazą jest Fiat Ducato L3H2 (długość 5,99 m) ze względu na świetny stosunek przestrzeni do ceny. Inne popularne wybory to Mercedes Sprinter (komfort jazdy), VW Transporter (kompaktowe wymiary) i Ford Transit Custom (korzystna cena)."
+sources:
+  - "CIVD"
+  - "CEPiK"
+  - "Volkswagen AG"
+  - "Mercedes-Benz"
+  - "producenci zabudów kamperowych"
 ---
 
 ## Czym jest camper van – definicja i cechy
@@ -145,5 +151,3 @@ Decyzja o zakupie camper vana powinna być poprzedzona chłodną analizą jego p
 - **Gorsza izolacja** – standardowe, blaszane nadwozie busa jest gorzej zaizolowane termicznie i akustycznie niż wielowarstwowe ściany klasycznego kampera.
 
 Więcej informacji o wyborze odpowiedniego typu kampera znajdziesz w naszym [przewodniku kupującego](/kampery/przewodnik-kupujacego/). Porównanie konkretnych modeli pod kątem przeróbek kamperowych zawiera [ranking kamperów 2026](/porownania/ranking-kamperow/) oraz zestawienie [najlepszych busów na kampera](/porownania/najlepszy-bus-na-kampera/).
-
-*Źródła: CIVD, CEPiK, Volkswagen AG, Mercedes-Benz, producenci zabudów kamperowych*

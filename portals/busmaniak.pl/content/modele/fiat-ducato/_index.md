@@ -21,6 +21,10 @@ faq:
     answer: "Silnik 2.3 MultiJet spala 8,5–10,5 l/100 km, silnik 2.2 MultiJet3 – 7,8–9,5 l/100 km. Wersje Maxi przy pełnym obciążeniu 11–13 l/100 km."
   - question: "Ile kosztuje nowy Fiat Ducato?"
     answer: "Ceny nowego Ducato furgon zaczynają się od ok. 130 000 zł netto (2.2 MultiJet3 140 KM). Wersje Maxi L4H3 z automatem od ok. 175 000 zł netto."
+sources:
+  - "Wikipedia – Sevel"
+  - "Fiat Professional Polska"
+  - "katalogi techniczne Stellantis."
 ---
 
 ## Historia i generacje Fiat Ducato {#historia-generacje}
@@ -148,5 +152,3 @@ W segmencie dużych vanów Ducato rywalizuje przede wszystkim ze swoimi bliźnia
 | Cena L3H2 (netto) | ~150 000 zł | ~160 000 zł | ~165 000 zł | ~195 000 zł | ~185 000 zł | ~150 000 zł |
 
 Ducato, [Jumper](/modele/citroen-jumper/) i [Boxer](/modele/peugeot-boxer/) to ten sam samochód pod trzema logotypami. [Renault Master](/modele/renault-master/) to główny konkurent z innej platformy. [Sprinter](/modele/mercedes-sprinter/) i [Crafter](/modele/volkswagen-crafter/) grają w wyższej lidze cenowej.
-
-*Źródła: Wikipedia – Sevel, Fiat Professional Polska, katalogi techniczne Stellantis.*

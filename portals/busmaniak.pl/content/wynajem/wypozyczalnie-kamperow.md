@@ -20,6 +20,14 @@ faq:
     answer: "Na sezon letni rezerwuj minimum 3–6 miesięcy wcześniej. Popularne terminy (długie weekendy, lipiec) potrafią być wykupione już w styczniu."
   - question: "Czy mogę wyjechać wypożyczonym kamperem za granicę?"
     answer: "Tak, większość firm zezwala na wyjazdy do krajów UE. Należy jednak pamiętać, że zakup winiet drogowych (np. w Austrii, Czechach) leży po stronie wynajmującego. Przy planowaniu podróży poza Unię Europejską (np. na Bałkany) trzeba z wyprzedzeniem poprosić wypożyczalnię o wydanie Zielonej Karty i ewentualnie pisemnego upoważnienia."
+sources:
+  - "dane wypożyczalni (KoKo Kamper"
+  - "CarGO! Rent a Camp"
+  - "McRent"
+  - "CamperyASONE)"
+  - "portal CampRest.com"
+  - "GoCamp.pl"
+  - "[Wikipedia – Samochód kempingowy](https://pl.wikipedia.org/wiki/Samoch%C3%B3d_kempingowy)."
 ---
 
 ## Jak wybrać wypożyczalnię kamperów
@@ -131,5 +139,3 @@ Przed podpisaniem umowy przeczytaj ją w całości. Kilka punktów wymaga szczeg
 - **Stan paliwa** – odbieraj i zdawaj z pełnym bakiem. Wypożyczalnie naliczają wysoką marżę za usługę dotankowania.
 
 Przy planowaniu budżetu na [wynajem kampera](/wynajem/wynajem-kampera-cena/) uwzględnij oprócz stawki dobowej także kaucję, paliwo i opłaty za kempingi. Przydatne wskazówki znajdziesz w naszym [poradniku wynajmu kampera](/wynajem/wynajem-kampera-poradnik/). Jeśli szukasz wypożyczalni w konkretnym mieście, sprawdź oferty [wynajmu w Warszawie](/wynajem/wynajem-kampera-warszawa/). Natomiast jeśli dopiero zastanawiasz się nad kamperingiem, zajrzyj do sekcji o [kamperach](/kampery/).
-
-*Źródła: dane wypożyczalni (KoKo Kamper, CarGO! Rent a Camp, McRent, CamperyASONE), portal CampRest.com, GoCamp.pl, [Wikipedia – Samochód kempingowy](https://pl.wikipedia.org/wiki/Samoch%C3%B3d_kempingowy).*

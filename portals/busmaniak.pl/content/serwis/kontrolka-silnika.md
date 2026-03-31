@@ -22,6 +22,11 @@ faq:
     answer: "Migająca kontrolka silnika sygnalizuje wypadanie zapłonów (misfire) – kontynuowanie jazdy grozi uszkodzeniem katalizatora. Natychmiast zmniejsz obroty i jedź do najbliższego warsztatu."
   - question: "Czy kontrolka silnika zapala się przed przeglądem technicznym?"
     answer: "Zapalona kontrolka silnika oznacza automatyczne negatywne badanie techniczne – diagnosta nie może wystawić pozytywnego wyniku, jeśli lampka check engine świeci na desce rozdzielczej."
+sources:
+  - "Regulamin ECE R-OBD (European On-Board Diagnostics) – wymagania diagnostyczne pojazdów"
+  - "Instrukcje serwisowe: Fiat Ducato (2014–2026), Mercedes Sprinter (W906/W907), Ford Transit (2016–2026)"
+  - "Motointegrator.com – najczęstsze przyczyny zapalenia kontrolki silnika"
+  - "Wikipedia – [On-board diagnostics](https://en.wikipedia.org/wiki/On-board_diagnostics)"
 ---
 ## Co oznacza kontrolka silnika – żółta vs czerwona {#co-oznacza}
 
@@ -166,10 +171,3 @@ Inwestycja w prosty skaner OBD2 z Bluetooth (60–150 zł) szybko się zwraca. P
 {{% /info %}}
 
 ---
-
-**Źródła:**
-
-- Regulamin ECE R-OBD (European On-Board Diagnostics) – wymagania diagnostyczne pojazdów
-- Instrukcje serwisowe: Fiat Ducato (2014–2026), Mercedes Sprinter (W906/W907), Ford Transit (2016–2026)
-- Motointegrator.com – najczęstsze przyczyny zapalenia kontrolki silnika
-- Wikipedia – [On-board diagnostics](https://en.wikipedia.org/wiki/On-board_diagnostics)

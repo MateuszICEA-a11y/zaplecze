@@ -19,6 +19,13 @@ faq:
     answer: "Do ceny dobowej dochodzą: kaucja (3000–8000 zł, zwrotna), opłata serwisowa (ok. 300-500 zł), kary umowne (np. za nieopróżnienie toalety), pakiet pościelowy (100–150 zł), opłaty za nadkilometry (0,30–0,50 zł/km) i sprzątanie końcowe (200–500 zł)."
   - question: "Kiedy wynajem kampera jest najtańszy?"
     answer: "Najtaniej wynajmiesz kampera od listopada do marca – stawki spadają o 30–50% względem szczytu sezonu. Dobry kompromis to czerwiec i wrzesień, kiedy ceny są niższe o 15–25%, a pogoda wciąż sprzyja podróżowaniu."
+sources:
+  - "Wikipedia – [Pojazd kempingowy](https://pl.wikipedia.org/wiki/Samoch%C3%B3d_kempingowy)"
+  - "CampVenture.pl"
+  - "Drewmet-Trans.pl"
+  - "CamperCentrum.pl"
+  - "SundayTravel.pl"
+  - "Rankomat.pl"
 ---
 
 ## Ceny wynajmu kampera w 2026 – tabela porównawcza
@@ -109,5 +116,3 @@ Oszczędności podczas wyjazdu kamperem znajdziesz, gotując samodzielnie (rodzi
 Dokładne ceny różnych typów kamperów znajdziesz w [poradniku dla początkujących](/wynajem/wynajem-kampera-poradnik/), a jeśli szukasz kompaktowej opcji – sprawdź [cennik wynajmu camper vanów](/wynajem/camper-van-wynajem/). Porównanie wypożyczalni po całej Polsce zebraliśmy w [przeglądzie wypożyczalni kamperów](/wynajem/wypozyczalnie-kamperow/).
 
 Jeśli interesują Cię tańsze kampery na własność, zajrzyj do naszego poradnika o [tanich kamperach](/kampery/tanie-kampery/). A na trasie przyda Ci się [kalkulator paliwa](/narzedzia/kalkulator-paliwa/), żeby oszacować koszty dojazdu.
-
-*Źródła: Wikipedia – [Pojazd kempingowy](https://pl.wikipedia.org/wiki/Samoch%C3%B3d_kempingowy), CampVenture.pl, Drewmet-Trans.pl, CamperCentrum.pl, SundayTravel.pl, Rankomat.pl*

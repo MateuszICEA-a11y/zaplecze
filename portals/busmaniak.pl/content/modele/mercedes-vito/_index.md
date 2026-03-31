@@ -18,6 +18,10 @@ faq:
     answer: "7,5–9 l/100 km w cyklu mieszanym dla wersji 114/116 CDI, zależnie od obciążenia."
   - question: "Czy każdy Vito ma napęd na tył?"
     answer: "Nie. W W447 dostępny jest FWD (1.6/1.7), RWD (2.0/2.2) i opcjonalny 4x4."
+sources:
+  - "Wikipedia – Mercedes-Benz OM654"
+  - "oficjalna dokumentacja Mercedes-Benz Vans Polska"
+  - "dane techniczne Auto-Data.net."
 ---
 
 ## Historia i generacje Mercedes Vito
@@ -153,5 +157,3 @@ Segment dostawczaków to rynek pełen alternatyw – Mercedes Vito mierzy się z
 | Cena nowego (netto) | od 155 000 zł | od 180 000 zł | od 145 000 zł | od 135 000 zł |
 
 Głównym rywalem jest [Volkswagen Transporter](/modele/volkswagen-transporter/) – podobny prestiż, ale wyższe koszty serwisu VW. [Ford Transit Custom](/modele/ford-transit-custom/) wygrywa właściwościami jezdnymi i wielkością paki. [Renault Trafic](/modele/renault-trafic/) i [Opel Vivaro](/modele/opel-vivaro/) to tańsze alternatywy, ale bez premium wykończenia.
-
-*Źródła: Wikipedia – Mercedes-Benz OM654, oficjalna dokumentacja Mercedes-Benz Vans Polska, dane techniczne Auto-Data.net.*

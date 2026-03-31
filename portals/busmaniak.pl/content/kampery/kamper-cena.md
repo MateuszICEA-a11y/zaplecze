@@ -23,6 +23,10 @@ faq:
     answer: "Chińskie kampery debiutujące w Europie kosztują od ok. 260 000 zł i oferują bogate wyposażenie standardowe. Ich głównym minusem jest mocno ograniczona sieć serwisowa, co rodzi ryzyko związane z dostępem do części zamiennych i naprawami zabudowy."
   - question: "Kiedy własny kamper jest tańszy od wynajmu?"
     answer: "Przy wyjazdach do 4–5 tygodni rocznie, wynajem jest korzystniejszy finansowo w skali roku. Zakup własnego kampera zaczyna się zwracać po kilku latach intensywnego użytkowania, przy założeniu zachowania wysokiej wartości rezydualnej pojazdu na koniec tego okresu."
+sources:
+  - "Dane cenowe dealerów: Elcamp, Kampery.info, Auto-Mobil"
+  - "Polski Związek Przemysłu Motoryzacyjnego – dane rejestracyjne 2024"
+  - "Europejski Związek Przemysłu Caravaningowego (ECF) – raport rynkowy 2025"
 ---
 ## Ceny nowych kamperów w 2026 roku {#ceny-nowych}
 
@@ -169,9 +173,3 @@ Ceny kamperów, podobnie jak ich wynajmu, podlegają wahaniom sezonowym. Najdro�
 Więcej porad dla początkujących znajdziesz w naszym [przewodniku po kamperach](/kampery/).
 
 ---
-
-**Źródła:**
-
-- Dane cenowe dealerów: Elcamp, Kampery.info, Auto-Mobil (marzec 2026)
-- Polski Związek Przemysłu Motoryzacyjnego – dane rejestracyjne 2024
-- Europejski Związek Przemysłu Caravaningowego (ECF) – raport rynkowy 2025

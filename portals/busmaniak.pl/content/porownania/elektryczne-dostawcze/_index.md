@@ -23,6 +23,11 @@ faq:
     answer: "Tak, jeśli trasy nie przekraczają 200–300 km dziennie i masz dostęp do ładowania. TCO na 100 000 km jest niższe o 30 000–60 000 zł vs diesel. Strefy Czystego Transportu w Warszawie i Krakowie dodatkowo przemawiają za elektrykiem."
   - question: "Jakie dotacje na elektryczne dostawcze są dostępne w Polsce?"
     answer: "Program Mój Elektryk (NFOŚiGW) oferuje dotacje do 70 000 zł netto dla firm na zakup elektrycznego samochodu dostawczego. Warunkiem jest utrzymanie pojazdu przez minimum 2 lata."
+sources:
+  - "Elektromobilni.pl"
+  - "NowaDostawa.pl"
+  - "oficjalne cenniki producentów"
+  - "GreenWay Polska"
 ---
 
 ## Rynek elektrycznych dostawczaków w 2026 roku
@@ -130,5 +135,3 @@ Sieci ładowarek w Polsce obsługujące dostawczaki:
 - **Orlen Charge** – szybko rozbudowywana sieć przy stacjach Orlen
 - **Ionity** – ultraszybkie ładowarki 350 kW przy autostradach (głównie dla większych baterii)
 - **Shell Recharge, BP Pulse** – rosnące sieci przy stacjach paliw
-
-*Źródła: Elektromobilni.pl, NowaDostawa.pl, oficjalne cenniki producentów, GreenWay Polska*

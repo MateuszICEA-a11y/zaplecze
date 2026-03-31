@@ -19,7 +19,10 @@ faq:
     answer: "Jeśli masz kampera na bazie Ducato, gniazdka w części mieszkalnej zazwyczaj nie są podpięte pod fabryczne bezpieczniki Fiata. Szukaj ich przy 'Electroblocku' (EBL) – zazwyczaj pod fotelem kierowcy lub w szafie."
   - question: "Dlaczego przepala się bezpiecznik gniazda OBD/radia w Ducato?"
     answer: "Często winowajcą jest bezpiecznik F39 (10A) w skrzynce pod kierownicą, który odpowiada za radio i złącze diagnostyczne. Problem może powodować wadliwa ładowarka w gniazdku zapalniczki lub zwarcie w instalacji któregoś z podłączonych urządzeń."
-
+sources:
+  - "instrukcja obsługi Fiat Ducato (eLum)"
+  - "dokumentacja techniczna Fiat Professional"
+  - "auto-data.net"
 ---
 
 ## Gdzie znajdują się bezpieczniki w Fiacie Ducato?
@@ -93,5 +96,3 @@ W Ducato chodzą głównie dwa typy: **Mini** i **Standard (Uni)**. W komorze si
 -   **Kolory** – są ustandaryzowane: czerwony to 10A, niebieski 15A, żółty 20A. Nigdy nie wstawiaj bezpiecznika o wyższej wartości niż oryginał – grozi to pożarem instalacji.
 
 Jeśli wymieniony bezpiecznik przepala się natychmiast, to pewny znak [zwarcia](https://pl.wikipedia.org/wiki/Zwarcie). Sprawdź wtedy [kontrolki Ducato](/serwis/kontrolki-fiat-ducato/) – mogą naprowadzić na źródło problemu.
-
-*Źródła: instrukcja obsługi Fiat Ducato (eLum), dokumentacja techniczna Fiat Professional, auto-data.net*

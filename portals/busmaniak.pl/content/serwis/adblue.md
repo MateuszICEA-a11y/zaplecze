@@ -22,6 +22,12 @@ faq:
     answer: "Gdy zbiornik AdBlue się opróżni, sterownik uniemożliwi ponowne uruchomienie silnika po jego zgaszeniu lub ograniczy prędkość do ok. 20 km/h (tryb awaryjny). To wymóg prawny dla pojazdów Euro 6."
   - question: "Czy AdBlue ma datę ważności?"
     answer: "Tak – AdBlue zachowuje właściwości przez ok. 12 miesięcy w temperaturze do 25°C. Przechowywanie w upale (powyżej 30°C) skraca termin do 6 miesięcy. Przeterminowany AdBlue krystalizuje się i może uszkodzić wtryskiwacz."
+sources:
+  - "Norma ISO 22241 – specyfikacja płynu AdBlue"
+  - "Rozporządzenie (WE) 715/2007 – normy emisji Euro 6"
+  - "Dostawczakiem.pl – Euro 6 w autach dostawczych – jak to jest z AdBlue"
+  - "Motointegrator.com – SCR i AdBlue – poradnik diesel"
+  - "Wikipedia – [Diesel exhaust fluid](https://en.wikipedia.org/wiki/Diesel_exhaust_fluid)"
 ---
 ## Co to jest AdBlue {#co-to-jest}
 
@@ -167,11 +173,3 @@ Ceny AdBlue ustabilizowały się po wzrostach w latach 2022–2023. Aktualne kos
 Roczny koszt AdBlue przy przebiegu 30 000 km/rok i zużyciu 2 l/1000 km to ok. 60 litrów. Kupując płyn w kanistrach 20 l, roczny wydatek wyniesie około 150–210 zł.
 
 ---
-
-**Źródła:**
-
--   Norma ISO 22241 – specyfikacja płynu AdBlue
--   Rozporządzenie (WE) 715/2007 – normy emisji Euro 6
--   Dostawczakiem.pl – Euro 6 w autach dostawczych – jak to jest z AdBlue
--   Motointegrator.com – SCR i AdBlue – poradnik diesel
--   Wikipedia – [Diesel exhaust fluid](https://en.wikipedia.org/wiki/Diesel_exhaust_fluid)

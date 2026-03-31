@@ -18,6 +18,11 @@ faq:
     answer: "Nowy od ok. 200 000 zł netto za wersję Life. Topowa Aventura z V6 przekracza 300 000 zł netto."
   - question: "Jaki silnik wybrać do Amaroka?"
     answer: "2.0 TDI BiTurbo 204 KM to optymalny kompromis ceny i mocy. V6 3.0 TDI (224–258 KM) wybierz jeśli planujesz ciężkie holowanie lub jazdę terenową."
+sources:
+  - "Wikipedia – 4MOTION"
+  - "materiały techniczne Volkswagen Vehiculos Comerciales"
+  - "specyfikacje platformy Ford T6"
+  - "dane homologacyjne WLTP."
 ---
 
 ## Historia i generacje Volkswagen Amarok {#historia-generacje}
@@ -117,5 +122,3 @@ Głównym rywalem jest bliźniaczy [Ford Ranger](/modele/ford-ranger/) – ta sa
 {{% info title="Torsen w Amaroku" icon="engineering" %}}
 Volkswagen Amarok I był jednym z nielicznych pickupów w Europie ze stałym napędem 4MOTION i międzyosiowym mechanizmem różnicowym Torsen – rozwiązaniem rodem z Audi quattro.
 {{% /info %}}
-
-*Źródła: Wikipedia – 4MOTION, materiały techniczne Volkswagen Vehiculos Comerciales, specyfikacje platformy Ford T6, dane homologacyjne WLTP.*

@@ -22,6 +22,11 @@ faq:
     answer: "Po wymianie oleju czujnik ciśnienia potrzebuje kilku sekund pracy silnika, aby olej wypełnił kanały smarowania. Jeśli kontrolka nie gaśnie po 2–3 sekundach, natychmiast wyłącz silnik i sprawdź poziom oleju bagnetem."
   - question: "Ile kosztuje wymiana pompy oleju w busie?"
     answer: "Wymiana pompy oleju w busach dostawczych kosztuje 1 500–4 000 zł (część + robocizna). W Fiacie Ducato 2.3 JTD to ok. 2 000–2 500 zł, w Mercedesie Sprinterze 2 500–3 500 zł."
+sources:
+  - "Instrukcje serwisowe: Fiat Ducato (2014–2026), Mercedes Sprinter (W906/W907), Ford Transit MK8"
+  - "Q Service Castrol – kontrolka ciśnienia oleju – co robić"
+  - "Moto-Blog.pl – kontrolka ciśnienia oleju – co warto wiedzieć"
+  - "Wikipedia – [Oil pressure](https://en.wikipedia.org/wiki/Oil_pressure)"
 ---
 ## Kontrolka oleju – co oznacza {#co-oznacza}
 
@@ -166,10 +171,3 @@ Po wymianie oleju i filtra żółta kontrolka poziomu oleju powinna zgasnąć au
 Jeśli po wymianie oleju i resecie interwału czerwona kontrolka ciśnienia nadal świeci po uruchomieniu silnika dłużej niż 2–3 sekundy, natychmiast go wyłącz i nie kontynuuj jazdy. Możliwe przyczyny to niewłaściwy filtr oleju (za mała przepustowość), brak oleju (błąd przy napełnianiu) lub uszkodzenie czujnika podczas serwisu.
 
 ---
-
-**Źródła:**
-
--   Instrukcje serwisowe: Fiat Ducato (2014–2026), Mercedes Sprinter (W906/W907), Ford Transit MK8
--   Q Service Castrol – kontrolka ciśnienia oleju – co robić
--   Moto-Blog.pl – kontrolka ciśnienia oleju – co warto wiedzieć
--   Wikipedia – [Oil pressure](https://en.wikipedia.org/wiki/Oil_pressure)

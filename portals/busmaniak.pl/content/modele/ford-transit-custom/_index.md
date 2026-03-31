@@ -18,6 +18,10 @@ faq:
     answer: "L1 (Short): 6,0 m³. L2 (Long): 6,8 m³. To segment pośredni między Combo/Partnerem (3,3–4,4 m³) a Crafterem/Sprinterem (9–18 m³)."
   - question: "Ile uniesie Transit Custom?"
     answer: "Do 1356 kg (L2, 2.0 EcoBlue 130 KM, manualna). Standardowo L1: 1150–1200 kg, L2: 1300–1356 kg."
+sources:
+  - "Wikipedia – Ford Transit Custom"
+  - "oficjalne dane Ford Polska"
+  - "dokumentacja Ford Pro."
 ---
 
 ## Historia i generacje Ford Transit Custom
@@ -147,5 +151,3 @@ W segmencie średnich dostawczaków Transit Custom wygrywa największą paką (6
 | Cena nowego L2 (netto) | ~155 000 zł | ~175 000 zł | ~155 000 zł | ~135 000 zł | ~135 000 zł |
 
 Transit Custom wygrywa największą paką w segmencie, mild hybridem (gen II) i najlepszym prowadzeniem. [VW Transporter](/modele/volkswagen-transporter/) bierze wartością rezydualną i prestiżem. [Mercedes Vito](/modele/mercedes-vito/) oferuje napęd 4x4. [Renault Trafic](/modele/renault-trafic/) i [Peugeot Expert](/modele/peugeot-expert/) wygrywają ceną.
-
-*Źródła: Wikipedia – Ford Transit Custom, oficjalne dane Ford Polska, dokumentacja Ford Pro.*

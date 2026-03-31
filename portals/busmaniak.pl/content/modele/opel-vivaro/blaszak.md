@@ -19,6 +19,9 @@ faq:
     answer: "W praktyce najbezpieczniej przyjmować 2 europalety w standardowych konfiguracjach. Większe deklaracje zależą od konkretnej wersji nadwozia, sposobu załadunku i specyfikacji producenta."
   - question: "Ile kosztuje używany Vivaro blaszak?"
     answer: "Orientacyjnie: Vivaro A (2001–2014) 10 000–35 000 zł, Vivaro B (2014–2019) 40 000–70 000 zł, Vivaro C (od 2019) 65 000–130 000 zł – zależnie od długości, przebiegu, wyposażenia i formy sprzedaży netto/brutto."
+sources:
+  - "dane techniczne i cenniki producenta z datą obowiązywania"
+  - "katalogi techniczne oraz dokumenty homologacyjne dla poszczególnych wersji."
 ---
 
 ## Opel Vivaro blaszak – konstrukcja i wymiary
@@ -123,5 +126,3 @@ To szczególnie istotne przy dużych przebiegach. Różnica 0,8 l/100 km przy 40
 | Mercedes Vito Long | Dane paki i dostępność napędu 4x4 zależą od rynku i rocznika, więc wymagają sprawdzenia dla konkretnej oferty |
 
 Jeśli porównujesz koszty floty, zestaw obok ceny zakupu także gwarancję producenta, ceny oleju i filtrów oraz spalanie przy realnym ładunku 500–800 kg. To właśnie te elementy najczęściej decydują, czy dany blaszak opłaca się bardziej od konkurenta.
-
-*Źródła: dane techniczne i cenniki producenta z datą obowiązywania, katalogi techniczne oraz dokumenty homologacyjne dla poszczególnych wersji.*

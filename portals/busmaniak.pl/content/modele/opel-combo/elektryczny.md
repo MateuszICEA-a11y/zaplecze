@@ -16,6 +16,11 @@ faq:
   - question: "Czy e-Combo opłaca się jako firmowy dostawczak?"
     answer: "Najwięcej zyskują firmy, które ładują auto w bazie i jeżdżą głównie lokalnie. Dla biznesu znaczenie mają też homologacja N1, możliwość odliczenia VAT zgodnie z przepisami oraz zwolnienie auta elektrycznego z akcyzy w Polsce."
 lead: "Opel e-Combo to elektryczny bliźniak Citroëna ë-Berlingo Van i Peugeota e-Partner, oparty na kompaktowej architekturze vanów PSA/Stellantis. W opisywanej wersji oferuje silnik 136 KM oraz akumulator 50 kWh montowany pod podłogą, dzięki czemu nie zabiera przestrzeni ładunkowej. Warto przy tym odróżnić tę odmianę od nowszego e-Combo po modernizacji gamy Stellantis, które otrzymało akumulator 54 kWh i zasięg przekraczający 300 km WLTP zależnie od wersji."
+sources:
+  - "katalog techniczny i materiały producenta Opel dotyczące e-Combo"
+  - "dane homologacyjne WLTP"
+  - "instrukcje i materiały producenta dotyczące ładowania oraz oficjalne regulaminy programów wsparcia"
+  - "jeśli są aktywne."
 ---
 ## Napęd i osiągi Opel Combo-e
 
@@ -107,5 +112,3 @@ Po stronie serwisu elektryk jest prostszy od diesla, bo odpadają elementy takie
 W autach elektrycznych Stellantis przeglądy okresowe wykonuje się zwykle co 1 rok lub co 25 000 km. Zakres obejmuje m.in. kontrolę układu hamulcowego, zawieszenia, układu HV, a także wymianę filtra kabinowego i płynów eksploatacyjnych zgodnie z harmonogramem producenta.
 
 Dla użytkowników flotowych ważna jest także praktyczność. W tej klasie elektrycznych vanów uciąg przyczepy hamowanej bywa ograniczony, często do ok. 750 kg, a dostępność haka i dopuszczalny nacisk zależą od konkretnej wersji. Jeśli firma regularnie wozi sprzęt na lekkiej przyczepie, ten punkt trzeba sprawdzić przed zakupem.
-
-*Źródła: katalog techniczny i materiały producenta Opel dotyczące e-Combo, dane homologacyjne WLTP, instrukcje i materiały producenta dotyczące ładowania oraz oficjalne regulaminy programów wsparcia, jeśli są aktywne.*

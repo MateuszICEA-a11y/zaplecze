@@ -20,6 +20,10 @@ faq:
     answer: "Daily VII (od 2023) to facelifting szóstej generacji. Wprowadzono nowy kokpit z cyfrowym zestawem wskaźników, system Hi-Connect drugiej generacji i poprawioną aerodynamikę. Mechanika pozostała bez zmian."
   - question: "Czy Iveco Daily ma ramę drabinkową?"
     answer: "Tak – w wersjach podwoziowych i furgonowych o DMC powyżej 3,5 t Daily opiera się na ramie drabinkowej. To wyjątek w klasie – Transit, Sprinter i Crafter mają nadwozia samonośne lub semi-ramowe."
+sources:
+  - "Wikipedia – Iveco Daily"
+  - "iveco.com"
+  - "auto-data.net."
 ---
 
 ## Generacje Iveco Daily {#generacje}
@@ -167,5 +171,3 @@ Zakup Iveco Daily to wydatek, który zależy od generacji, wersji silnikowej i s
 | Nowy Daily L2H2 (2.3 136 KM) | od ok. 165 000 zł netto |
 | Nowy Daily L3H2 (3.0 180 KM) | od ok. 200 000 zł netto |
 | eDaily L2H2 | od ok. 300 000 zł netto |
-
-*Źródła: Wikipedia – Iveco Daily, iveco.com, auto-data.net.*

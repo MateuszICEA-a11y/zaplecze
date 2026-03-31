@@ -18,6 +18,11 @@ faq:
     answer: "Kluczowe jest sprawdzenie szczelności instalacji gazowej, stanu instalacji wodnej i przede wszystkim podłogi oraz ścian pod kątem wilgoci. Wiele tanich kamperów ma za sobą historię przecieków."
   - question: "Ile kosztuje utrzymanie taniego kampera rocznie?"
     answer: "Roczne koszty stałe (OC/AC, przegląd, serwis pozakupowy) to zwykle **4–8 tys. zł**. Do tego dochodzi paliwo – starsze kampery spalają średnio 10–14 l/100 km, co warto wliczyć w budżet wyjazdowy."
+sources:
+  - "dane z portali OLX"
+  - "Otomoto i mobile.de"
+  - "Dreamer Campers"
+  - "Pössl/Globecar"
 ---
 ## Trzy drogi do taniego kampera
 Rynek kamperów w Polsce oferuje trzy główne ścieżki dla osób z ograniczonym budżetem. Każda z nich wymaga innego zaangażowania, wiedzy i wiąże się ze specyficznymi ryzykami.
@@ -111,5 +116,3 @@ Przed podjęciem decyzji absolutnie kluczowe jest dokładne sprawdzenie kilku ne
 Złota zasada każdego mechanika: im tańszy pojazd, tym większy bufor na naprawy musisz sobie zostawić. Przy zakupie za **30–50 tys. zł** bezpiecznie jest mieć w rezerwie dodatkowe **10–15 tys. zł** na „pakiet startowy”.
 
 Więcej o sprawdzaniu kamperów przed zakupem znajdziesz w [przewodniku kupującego](/kampery/przewodnik-kupujacego/).
-
-*Źródła: dane z portali OLX, Otomoto i mobile.de, Dreamer Campers, Pössl/Globecar (marzec 2026)*

@@ -20,6 +20,10 @@ faq:
     answer: "W cyklu mieszanym WLTP silnik 1.5 D-4D 100 KM zużywa około 5,5–6,2 l/100 km. W praktyce przy jeździe miejskiej spodziewaj się 6,5–7,5 l/100 km."
   - question: "Czy Proace City mieści europaletę?"
     answer: "Wersja Short mieści jedną europaletę (1200×800 mm) przy złożonych przednich siedzeniach pasażera. Wersja Long mieści dwie europalety – to kluczowa różnica przy wyborze długości nadwozia."
+sources:
+  - "Wikipedia – Toyota ProAce City"
+  - "toyota.pl"
+  - "auto-data.net."
 ---
 
 ## Historia i konstrukcja Toyota ProAce City
@@ -131,5 +135,3 @@ Zakup Toyota Proace City to wydatek, który zależy od generacji, wersji silniko
 | Nowy ProAce City Van Short | od ok. 100 000 zł netto |
 | Nowy ProAce City Van Long | od ok. 110 000 zł netto |
 | ProAce City Electric | od ok. 175 000 zł netto |
-
-*Źródła: Wikipedia – Toyota ProAce City, toyota.pl, auto-data.net.*

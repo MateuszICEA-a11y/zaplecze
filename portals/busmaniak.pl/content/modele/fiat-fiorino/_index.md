@@ -18,6 +18,10 @@ faq:
     answer: "Pasek rozrządu wymień co 5 lat lub 100–120 tys. km; przy intensywnym ruchu miejskim skróć interwał do 80 tys. km."
   - question: "Czy w Fiorino zmieści się europaleta?"
     answer: "Tak – szerokość 1046 mm między nadkolami pozwala na wsunięcie jednej europalety pionowo."
+sources:
+  - "Wikipedia – Fiat Fiorino"
+  - "dokumentacja techniczna Stellantis"
+  - "katalog części Fiat Professional."
 ---
 
 ## Historia i generacje Fiat Fiorino
@@ -151,5 +155,3 @@ Fiorino dzieli platformę z Citroënem Nemo i Peugeotem Bipperem – wymiary i p
 | Cena używanego (2015) | ~17 000 zł | ~14 000 zł | ~14 000 zł | ~22 000 zł |
 
 Fiorino zajmuje specyficzną niszę – jest wyraźnie mniejszy od typowych kombivanów. Jeśli potrzebujesz większej przestrzeni ładunkowej, [Citroën Berlingo](/modele/citroen-berlingo/) lub [Peugeot Partner](/modele/peugeot-partner/) oferują pojemniejszy przedział towarowy, choć kosztem zwrotności. [Renault Kangoo](/modele/renault-kangoo/) wygrywa gamą silnikową, ale Fiorino bije je ceną zakupu i prostotą serwisu.
-
-*Źródła: Wikipedia – Fiat Fiorino, dokumentacja techniczna Stellantis, katalog części Fiat Professional.*

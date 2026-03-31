@@ -22,6 +22,12 @@ faq:
     answer: "Nie jest to zalecane. Polskie prawo i unijna 'ustawa F-gazowa' wymagają od serwisów posiadania Certyfikatu F-Gaz. Amatorskie zestawy często zamiast czynnika R134a lub R1234yf zawierają mieszankę propanu i izobutanu. Serwisant, który podłączy maszynę do tak napełnionego auta, ryzykuje uszkodzeniem drogiego analizatora gazu w stacji klimatyzacji."
   - question: "Jaki czynnik chłodniczy jest w moim busie?"
     answer: "Busy produkowane przed 2017 rokiem najczęściej używają czynnika R134a. Nowszy R1234yf jest obowiązkowy w modelach z homologacją po 1 stycznia 2017, jak np. VW Crafter II generacji. W praktyce, popularne modele jak Sprinter W907 czy Transit Mk8 po face-liftingu przeszły na nowy czynnik w rocznikach 2018–2019. Informacja o typie czynnika znajduje się na naklejce pod maską."
+sources:
+  - "dokumentacja techniczna Fiat Professional"
+  - "Delphi Technologies – serwis klimatyzacji pojazdów"
+  - "[Wikipedia – czynnik chłodniczy](https://pl.wikipedia.org/wiki/Czynnik_ch%C5%82odniczy)"
+  - "cenauslug.pl"
+  - "dobrymechanik.pl"
 ---
 ## Jak działa klimatyzacja w busie
 
@@ -136,5 +142,3 @@ Serwisowanie klimatyzacji w [kamperze](/kampery/) wymaga uwzględnienia kilku do
 Przed sezonem [campingowym](/kampery/) warto uruchomić klimatyzację i sprawdzić, czy chłodzi równomiernie na wszystkich nawiewach. Nierównomierny przepływ powietrza to często jedynie zapchany filtr lub zablokowana klapka mieszająca – naprawa kosztuje 50–200 zł.
 
 Regularny [przegląd techniczny](/serwis/przeglad-techniczny/) busa nie obejmuje kontroli klimatyzacji, więc odpowiedzialność za jej stan spoczywa wyłącznie na właścicielu. Zainwestowane 400–700 zł rocznie w serwis klimatyzacji to ułamek kosztu wymiany sprężarki za 3000–5000 zł, do której prowadzi wieloletnie zaniedbanie.
-
-*Źródła: dokumentacja techniczna Fiat Professional, Delphi Technologies – serwis klimatyzacji pojazdów, [Wikipedia – czynnik chłodniczy](https://pl.wikipedia.org/wiki/Czynnik_ch%C5%82odniczy), cenauslug.pl, dobrymechanik.pl*

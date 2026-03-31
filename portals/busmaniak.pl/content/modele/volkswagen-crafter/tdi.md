@@ -19,6 +19,10 @@ faq:
     answer: "102 KM: 7,5 l/100 km. 140 KM: 7,8 l. 177 KM: 8,5 l. W mieście z ładunkiem dodaj 25–35%."
   - question: "Jakie są typowe usterki 2.0 TDI w Crafterze?"
     answer: "DPF (zapychanie miejskie), czujniki NOx (fałszywe błędy), automat 8AT (wymaga wymiany oleju co 60 tys. km). Silnik sam w sobie trwały."
+sources:
+  - "Volkswagen AG – dane techniczne Crafter"
+  - "Dokumentacja serwisowa VW"
+  - "Dane WLTP"
 ---
 
 ## Dane techniczne 2.0 TDI w Volkswagen Crafter
@@ -157,5 +161,3 @@ Crafter i Sprinter występują w szerokim zakresie konfiguracji od około 3,5 do
 Sprinter nie ustępuje Crafterowi samą różnorodnością napędów, dlatego nie ma sensu przypisywać tu przewagi „na sztywno” jednej marce. Podobnie z wartością rezydualną – bez twardych danych z konkretnych raportów flotowych i rynku wtórnego byłby to zbyt daleko idący wniosek.
 
 Ducato z kolei kusi prostszą kalkulacją kosztów i popularnością w zabudowach specjalnych, ale jego ocena także zależy od konkretnej wersji. W praktyce porównanie tych modeli warto robić zawsze przez pryzmat DMC, ładowności, rodzaju napędu i planowanego sposobu pracy, a nie tylko suchej mocy katalogowej.
-
-*Źródła: katalogi producentów, dokumentacja serwisowa i dane homologacyjne producentów. Przy ocenie awaryjności i eksploatacji warto opierać się na materiałach technicznych VW, danych WLTP oraz dokumentach serwisowych, a nie wyłącznie na forach czy encyklopedycznych zestawieniach.*

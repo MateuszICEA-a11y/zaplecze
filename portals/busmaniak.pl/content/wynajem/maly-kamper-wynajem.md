@@ -19,6 +19,12 @@ faq:
     answer: "Większość małych kamperów dostępnych w polskich wypożyczalniach mieści się w DMC do 3,5 tony – wystarczy standardowe prawo jazdy kategorii B. Należy jednak zwrócić uwagę na większe modele, takie jak VW Grand California 680, które mogą być zarejestrowane z DMC powyżej 3,5 tony i wymagać kategorii C."
   - question: "Czy mały kamper nadaje się dla rodziny z dziećmi?"
     answer: "Mały kamper sprawdza się dla rodziny 2+1 (2 dorosłych + 1 dziecko). Stałe łóżko + dineta rozkładana na drugie miejsce do spania wystarczą. Dla rodziny 2+2 lepszym wyborem jest alkowa lub większa półintegra z 4–6 miejscami do spania."
+sources:
+  - "Wikipedia – [Pojazd kempingowy](https://pl.wikipedia.org/wiki/Samoch%C3%B3d_kempingowy)"
+  - "Kamperomania.pl"
+  - "CamperCentrum.pl"
+  - "McRent.pl"
+  - "PolskiCaravaning.pl"
 ---
 
 ## Co to jest mały kamper – camper van a mini półintegra
@@ -115,5 +121,3 @@ Zasada jest prosta – mały kamper to idealne rozwiązanie dla 1–3 osób. Od 
 Jeśli mały kamper Ci odpowiada, ale chcesz jeszcze bardziej kompaktowy pojazd – sprawdź [wynajem camper vana](/wynajem/camper-van-wynajem/). Pełne porównanie cen wszystkich typów kamperów znajdziesz w [cenniku wynajmu na 2026 rok](/wynajem/wynajem-kampera-cena/). A jeśli rozważasz zakup małego kampera na własność, odwiedź nasz [poradnik o mini kamperach](/kampery/mini-kamper/).
 
 Na trasie przyda Ci się [kalkulator paliwa](/narzedzia/kalkulator-paliwa/), żeby precyzyjnie oszacować koszty dojazdu i porównać opcje.
-
-*Źródła: Wikipedia – [Pojazd kempingowy](https://pl.wikipedia.org/wiki/Samoch%C3%B3d_kempingowy), Kamperomania.pl, CamperCentrum.pl, McRent.pl, PolskiCaravaning.pl*

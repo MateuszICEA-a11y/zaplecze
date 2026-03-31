@@ -19,6 +19,9 @@ faq:
     answer: "Tak, ale wymaga to odpowiedniego układu załadunku. Europaleta ma 1200 × 800 mm, a przy długości podłogi ok. 2150 mm nie układa się dwóch palet klasycznie jedna za drugą po długości."
   - question: "Ile kosztuje Transit Connect Long?"
     answer: "Cena zależy od rocznika, wersji silnikowej, przebiegu, homologacji N1/M1 i stanu auta. W artykule skupiamy się na czynnikach wpływających na wycenę, bo bez konkretnego cennika i daty nie da się rzetelnie podać aktualnej ceny nowego egzemplarza."
+sources:
+  - "oficjalne dane wymiarowe i zakresy specyfikacji przytoczone w materiale fact-checkera"
+  - "w tym dane homologacyjne i porównawcze dla Connecta II oraz konkurentów segmentu C; ogólne informacje techniczne o [DPF](https://pl.wikipedia.org/wiki/Filtr_cz%C4%85stek_sta%C5%82ych)."
 ---
 
 ## Ford Transit Connect Long – wymiary i przestrzeń ładunkowa
@@ -146,5 +149,3 @@ Najważniejsze jest też to, by porównywać wartości bazowe z bazowymi, a maks
 Na tle rywali ford transit connect long oferuje 3,6 m³ przestrzeni, więc ustępuje niektórym konkurentom z grupy Stellantis czy Kangoo Long pod względem samej pojemności. Z drugiej strony jego realna użyteczność zależy nie tylko od litrów, ale też od długości podłogi, wysokości progu i geometrii otworów załadunkowych.
 
 Warto pamiętać, że Partner i Berlingo mają w odpowiednich wersjach praktycznie te same parametry. Podobnie Proace City Long i Doblo LWB należą do ścisłego grona najważniejszych rywali w segmencie C.
-
-*Źródła: oficjalne dane wymiarowe i zakresy specyfikacji przytoczone w materiale fact-checkera, w tym dane homologacyjne i porównawcze dla Connecta II oraz konkurentów segmentu C; ogólne informacje techniczne o [DPF](https://pl.wikipedia.org/wiki/Filtr_cz%C4%85stek_sta%C5%82ych).*

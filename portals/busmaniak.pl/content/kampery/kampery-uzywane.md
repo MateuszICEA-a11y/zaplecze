@@ -20,6 +20,11 @@ faq:
     answer: "Przede wszystkim wilgoć (wilgotnościomierz w narożnikach, pod materacami, wokół okien), korozję podwozia, stan instalacji gazowej, elektrycznej i wodnej oraz szczelność dachu i okien. Koszt profesjonalnej inspekcji to 500-1500 zł."
   - question: "Czy importowany kamper wymaga homologacji?"
     answer: "Kamper z UE z ważnym dowodem rejestracyjnym i certyfikatem CoC nie wymaga osobnej homologacji – wystarczy badanie techniczne w Polsce i rejestracja w wydziale komunikacji. Homologacja indywidualna dotyczy pojazdów spoza UE lub przerabianych."
+sources:
+  - "Wikipedia"
+  - "Otomoto.pl"
+  - "truck1-pl.com"
+  - "raporty ADAC"
 ---
 
 ## Gdzie szukać używanych kamperów
@@ -145,5 +150,3 @@ Najprostszy scenariusz to import fabrycznego kampera z kraju UE z kompletem doku
 ### Przerobiony bus bez homologacji kamperowej
 
 Kupno busa przerobionego na kampera, ale zarejestrowanego jako furgon, oznacza konieczność [zmiany kwalifikacji pojazdu](/przepisy/homologacja/). Proces wymaga opinii rzeczoznawcy, a pojazd musi spełniać określone warunki, m.in. mieć stałe miejsce do spania, gotowania, okna i wentylację. Po badaniu technicznym w OSKP i złożeniu deklaracji AKC-U/S w Urzędzie Skarbowym, auto zostanie zarejestrowane jako „specjalny kempingowy”. Do kosztów operacyjnych (3000–6000 zł) należy doliczyć akcyzę, której stawka wynosi 3,1% (<2000 cm³) lub 18,6% (>2000 cm³) wartości rynkowej pojazdu.
-
-*Źródła: Wikipedia, Otomoto.pl, truck1-pl.com, raporty ADAC*

@@ -18,6 +18,11 @@ faq:
     answer: "Długość wewnętrzna ok. 4850–4900 mm, szerokość 2200–2350 mm, wysokość 2150–2500 mm (regulowana). Dla 10 europalet w układzie 2 × 5 zwykle potrzeba około 5000 mm długości użytkowej i odpowiedniej szerokości zabudowy."
   - question: "Jaka jest realna ładowność Ducato z plandeką?"
     answer: "Przy DMC 3,5 t wersja 8-paletowa daje około 1300 kg, a wersja 10-paletowa zwykle 1000–1100 kg, zależnie od masy zabudowy i windy."
+sources:
+  - "Wikipedia"
+  - "Fiat Professional"
+  - "Lamar"
+  - "Gruau"
 ---
 
 ## Fiat Ducato plandeka – generacje i bazy pod zabudowę
@@ -115,5 +120,3 @@ Przy wycenie plandeki trzeba oddzielić koszt podwozia od ceny samej zabudowy i 
 Na końcową cenę nowego auta składają się zwykle: podwozie chassis cab, zabudowa skrzyniowo-plandekowa, ewentualna kabina sypialna, spoiler oraz winda 500 lub 750 kg. Dlatego oferta na poziomie około 270 000 zł netto może oznaczać zupełnie inny zakres wyposażenia niż egzemplarz gotowy do międzynarodowej pracy.
 
 Inne warianty zabudowy na tym samym podwoziu: [Ducato skrzyniowy](/modele/fiat-ducato/skrzyniowy/) i [Ducato kontener](/modele/fiat-ducato/kontener/).
-
-*Źródła: Wikipedia, Fiat Professional, Lamar, Gruau*

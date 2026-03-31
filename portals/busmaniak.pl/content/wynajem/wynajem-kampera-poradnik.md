@@ -19,6 +19,11 @@ faq:
     answer: "Większość wypożyczalni wymaga ukończenia 21 lat i minimum 2 lat posiadania prawa jazdy kat. B. Część firm podnosi granicę do 23 lub 25 lat. Warto sprawdzić warunki konkretnej wypożyczalni."
   - question: "Co się stanie, jeśli uszkodzę kampera w trakcie podróży?"
     answer: "Drobne szkody (zarysowania, uszkodzenia wnętrza) są pokrywane z kaucji – wypożyczalnia potrąca koszt naprawy. Większe szkody komunikacyjne idą z polisy OC/AC kampera. Zawsze zrób zdjęcia i zgłoś szkodę wypożyczalni telefonicznie."
+sources:
+  - "Wikipedia – [Pojazd kempingowy](https://pl.wikipedia.org/wiki/Samoch%C3%B3d_kempingowy)"
+  - "Rankomat.pl"
+  - "PolskiCaravaning.pl"
+  - "MaciejStraus.pl"
 ---
 
 ## Na co zwrócić uwagę przed wynajmem kampera
@@ -117,5 +122,3 @@ Najczęstszym powodem potrąceń z kaucji nie są wypadki drogowe, tylko uszkodz
 Jeśli interesują Cię konkretne ceny i cenniki wypożyczalni, sprawdź [aktualny cennik wynajmu kampera na 2026 rok](/wynajem/wynajem-kampera-cena/). A jeśli szukasz kompaktowej opcji – przeczytaj o [wynajmie camper vana](/wynajem/camper-van-wynajem/) lub zajrzyj do [przeglądu wypożyczalni kamperów](/wynajem/wypozyczalnie-kamperow/) po całej Polsce.
 
 Rozważasz zakup własnego kampera po udanym wynajmie? Odwiedź naszą sekcję o [kamperach](/kampery/) – znajdziesz tam porównania modeli, poradniki zakupowe i recenzje.
-
-*Źródła: Wikipedia – [Pojazd kempingowy](https://pl.wikipedia.org/wiki/Samoch%C3%B3d_kempingowy), Rankomat.pl, PolskiCaravaning.pl, MaciejStraus.pl*

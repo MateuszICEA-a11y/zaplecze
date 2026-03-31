@@ -19,6 +19,8 @@ faq:
     answer: "Dostępność wersji Single Cab zależy od rynku i generacji. Nie da się tego traktować jako uniwersalnej cechy każdej odmiany XL bez odniesienia do konkretnego kraju i rocznika."
   - question: "Ile kosztuje Ranger XL?"
     answer: "Cena zależy od rynku, roku modelowego, typu kabiny, napędu i skrzyni biegów. Różnice między konfiguracjami mogą wynosić od kilkunastu do kilkudziesięciu tysięcy złotych, dlatego trzeba porównywać konkretne oferty netto i brutto."
+sources:
+  - "oficjalny cennik i specyfikacja Ford Polska dla konkretnego roku modelowego oraz dane homologacyjne producenta."
 ---
 
 ## Ford Ranger XL – wyposażenie seryjne
@@ -143,5 +145,3 @@ W opisie cen warto zachować spójny podział modelowy. Lata 2012–2022 obejmuj
 Przy pickupie sama cena zakupu to dopiero początek. W codziennym użytkowaniu równie ważne są wymiary skrzyni, szerokość między nadkolami, liczba punktów mocowania ładunku, możliwość przewozu europalety, dostępność wykładziny, rolety i hardtopu oraz dopuszczalne obciążenie klapy i akcesoryjnego dachu.
 
 Do tego dochodzą parametry drogowe i użytkowe, które też warto sprawdzić przed zakupem: średnica zawracania, prześwit, osiągi, zużycie paliwa WLTP, obciążenie dachu oraz lokalne ograniczenia prędkości dla pojazdów do 3,5 t w Polsce.
-
-*Źródła: oficjalny cennik i specyfikacja Ford Polska dla konkretnego roku modelowego oraz dane homologacyjne producenta.*

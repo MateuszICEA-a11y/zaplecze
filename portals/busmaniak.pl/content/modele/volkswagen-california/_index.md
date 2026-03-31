@@ -19,6 +19,12 @@ faq:
     answer: "California T6.1/T7 oferuje 4 miejsca do spania – dwuosobowe łóżko w podnoszonym dachu (200x120 cm) i dwuosobowe łóżko z rozłożonych tylnych siedzeń (200x116 cm). Grand California 600/680 ma stałe łóżko dolne i górne, łącznie dla 4 osób."
   - question: "Czym różni się California od Grand California?"
     answer: "California bazuje na Transporterze/Multivanie (długość ok. 5 m), Grand California na Crafterze (6–6,8 m). Grand California ma stały wysoki dach, własną łazienkę z prysznicem i toaletą, większą kuchnię i zbiorniki wody 110 l. California jest bardziej zwrotna i nadaje się do codziennej jazdy."
+sources:
+  - "Wikipedia – Volkswagen California"
+  - "volkswagen.pl"
+  - "vwdostawcze.pl"
+  - "autocentrum.pl"
+  - "auto-swiat.pl"
 ---
 
 ## Historia Volkswagen California
@@ -141,5 +147,3 @@ Bezpośrednich rywali fabrycznej Californii jest zaledwie kilku. Ford Nugget (na
 California wygrywa jakością wykończenia, wartością rezydualną i rozpoznawalnością marki. Ford Nugget oferuje więcej przestrzeni za niższą cenę. Marco Polo kusi luksusowym wnętrzem w stylu V-Klasy, ale kempingowe wyposażenie jest skromniejsze.
 
 Dla klientów szukających więcej przestrzeni niż California, ale mniej niż Grand California, rynek oferuje też zabudowy firm zewnętrznych (Reimo, Vanessa) na bazie Transportera T6.1 lub Craftera.
-
-*Źródła: Wikipedia – Volkswagen California, volkswagen.pl, vwdostawcze.pl, autocentrum.pl, auto-swiat.pl*

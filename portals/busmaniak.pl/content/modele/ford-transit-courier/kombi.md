@@ -18,6 +18,10 @@ faq:
     answer: "W tym tekście nie podajemy widełek cenowych, bo brak tu zweryfikowanego cennika dla konkretnego rynku, miesiąca i wersji silnikowej. Przy zakupie warto sprawdzić aktualny cennik Ford Polska dla właściwej odmiany nadwoziowej i napędu."
   - question: "Czy Courier Kombi nadaje się dla rodziny?"
     answer: "Tak, przede wszystkim dzięki 5-miejscowemu układowi kabiny, mocowaniom ISOFIX na skrajnych miejscach tylnej kanapy oraz przesuwanym drzwiom bocznym, które ułatwiają wsiadanie na ciasnych parkingach."
+sources:
+  - "oficjalny cennik producenta"
+  - "katalog techniczny"
+  - "homologacja WLTP i komunikaty prasowe Ford – do weryfikacji dla konkretnego rynku i wersji."
 ---
 
 ## Ford Transit Courier Kombi – osobowa wersja Couriera
@@ -98,5 +102,3 @@ W praktyce van nie daje automatycznie pełnego odliczenia VAT tylko dlatego, że
 Nie ma też podstaw, by z góry twierdzić, że van jest mniej bezpieczny biernie od wersji osobowej. Takie różnice można opisywać wyłącznie wtedy, gdy są potwierdzone konkretną specyfikacją wyposażenia lub dokumentacją producenta.
 
 W tej wersji tekstu nie podajemy pojemności przestrzeni ładunkowej vana, liczby europalet ani jego ładowności, bo wymagają one wskazania dokładnej konfiguracji i oficjalnych danych homologacyjnych.
-
-*Źródła: oficjalny cennik producenta, katalog techniczny, homologacja WLTP i komunikaty prasowe Ford – do weryfikacji dla konkretnego rynku i wersji.*

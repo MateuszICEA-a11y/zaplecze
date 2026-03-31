@@ -20,6 +20,10 @@ faq:
     answer: "Passenger to wersja nastawiona na praktyczność, trwałość i przewóz większej liczby osób. SpaceClass oferował bardziej reprezentacyjne konfiguracje kabiny – m.in. wybrane układy z niezależnymi fotelami, możliwością obrotu części siedzeń, stolikiem, bogatszym wykończeniem, dodatkową klimatyzacją dla tyłu, przyciemnianymi szybami i rozbudowanymi multimediami."
   - question: "Czy Renault Trafic osobowy jest dostępny z automatyczną skrzynią biegów?"
     answer: "Tak. Po modernizacji stosowano 6-biegową przekładnię EDC z silnikami 2.0 Blue dCi 150 KM i 170 KM."
+sources:
+  - "[Wikipedia – silnik wysokoprężny](https://pl.wikipedia.org/wiki/Silnik_wysokopr%C4%99%C5%BCny)"
+  - "Renault"
+  - "auto-data.net"
 ---
 ## Wersje osobowe Renault Trafic {#wersje}
 
@@ -114,5 +118,3 @@ Przy wyborze długości nadwozia sprawdź najpierw miejsce codziennego parkowani
 {{% info title="Ceny Renault Trafic osobowy" icon="engineering" %}}
 W tym materiale nie podajemy orientacyjnych cen nowych egzemplarzy bez oparcia w oficjalnym cenniku dla rynku polskiego z określoną datą obowiązywania. Przy zakupie używanego auta warto dodatkowo rozdzielić cenę brutto i netto/VAT-1 oraz porównać rocznik, przebieg i wersję homologacyjną.
 {{% /info %}}
-
-*Źródła: [Wikipedia – silnik wysokoprężny](https://pl.wikipedia.org/wiki/Silnik_wysokopr%C4%99%C5%BCny), Renault, auto-data.net*

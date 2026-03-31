@@ -19,6 +19,10 @@ faq:
   - question: "Jaka jest ładowność Toyota Proace City Long?"
     answer: "Ładowność Toyota Proace City Long zależy od konkretnej wersji i homologacji. W artykule zachowujemy bezpieczne sformułowanie: do około 1000 kg."
 lead: "Toyota Proace City Long to wydłużona wersja małego vana o długości 4753 mm, z ładownią 3,9 m³ i ładownością sięgającą około 1000 kg. Jeśli porównujesz Long i Short, najważniejsze są nie tylko same wymiary, ale też realna długość podłogi, konfiguracja kabiny oraz sposób przewozu palet."
+sources:
+  - "Toyota"
+  - "Wikipedia"
+  - "auto-data.net"
 ---
 ## Wymiary Toyota Proace City Long
 
@@ -125,5 +129,3 @@ W artykule brakuje też ważnych danych użytkowych związanych z holowaniem i p
 Prawo jazdy kategorii B wciąż wystarczy, o ile konkretna wersja pojazdu mieści się w limicie 3,5 t DMC zestawu zgodnie z przepisami i homologacją.
 
 Link: [Toyota Proace City – strona modelu](/modele/toyota-proace-city/)
-
-*Źródła: Toyota, Wikipedia, auto-data.net*

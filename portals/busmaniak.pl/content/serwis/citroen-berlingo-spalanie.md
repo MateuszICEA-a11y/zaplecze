@@ -22,6 +22,10 @@ faq:
     answer: "Średnio 20–25 kWh/100 km w cyklu mieszanym. Latem mniej (18–22 kWh), zimą więcej (22–28 kWh)."
   - question: "Czy Berlingo z LPG ma sens?"
     answer: "Silnik 1.6 VTi nadaje się do instalacji LPG. Spalanie rośnie o ok. 15%, ale koszt paliwa spada o 40–50%. Przy przebiegach powyżej 20 tys. km rocznie instalacja zwraca się w 1–2 lata."
+sources:
+  - "dane użytkowników"
+  - "karty techniczne Citroën"
+  - "auto-data.net"
 ---
 
 ## Spalanie per silnik – tabela zbiorcza {#tabela}
@@ -89,5 +93,3 @@ Porównanie rocznych kosztów paliwa przy przebiegu 20 000 km (ceny z 2025 r.: O
 Analizując koszty silnika 1.5 BlueHDI, należy uwzględnić zużycie płynu AdBlue. Zbiornik o pojemności 17 litrów wystarcza na 6000–8000 km, a koszt jego uzupełnienia jest niewielki. Poważniejszym ryzykiem finansowym jest znana usterka układu [selektywnej redukcji katalitycznej (SCR)](https://pl.wikipedia.org/wiki/Selektywna_redukcja_katalityczna). Krystalizacja mocznika może prowadzić do awarii pompy lub czujników, a koszt wymiany całego zbiornika w ASO sięga 3500–4500 zł.
 
 {{% expert name="Tomasz Zieliński" %}}Berlingo z silnikiem 1.5 BlueHDI to jeden z najtańszych w eksploatacji kombivanów na rynku. Partner i Rifter z identycznym silnikiem kosztują tyle samo, ale Caddy z 2.0 TDI pali zauważalnie więcej. Jeśli masz dostęp do ładowarki, ë-Berlingo obniża koszty paliwa o ponad 45%.{{% /expert %}}
-
-*Źródła: dane użytkowników, karty techniczne Citroën, auto-data.net*

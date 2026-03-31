@@ -20,6 +20,12 @@ faq:
     answer: "Nie. Negatywny wynik przeglądu technicznego oznacza zakaz poruszania się po drogach publicznych, z wyjątkiem dojazdu do warsztatu i z powrotem na SKP. Masz 14 dni na usunięcie usterki i ponowne stawienie się na badanie, które wiąże się z opłatami cząstkowymi za sprawdzenie naprawionych elementów."
   - question: "Jaka kara za brak przeglądu technicznego busa?"
     answer: "Jazda bez ważnego badania technicznego grozi mandatem od 1500 zł (w razie zakwalifikowania pojazdu jako niedopuszczony do ruchu) do 3000 zł. W lżejszych przypadkach może zakończyć się pouczeniem. Policja obligatoryjnie zatrzymuje dowód rejestracyjny. Ubezpieczyciel może też odmówić wypłaty odszkodowania z AC lub wystąpić z regresem w ramach OC."
+sources:
+  - "Prawo o ruchu drogowym (Dz.U. 2024 poz. 1251)"
+  - "Rozporządzenie MI w sprawie badań technicznych"
+  - "Wikipedia – badanie techniczne pojazdu"
+  - "autokierowca.pl"
+  - "mubi.pl"
 ---
 
 ## Terminy przeglądów technicznych busów
@@ -166,5 +172,3 @@ Dodatkowe elementy kontrolowane w kamperze:
 Bytowe instalacje gazowe (kuchenka, ogrzewanie, lodówka) nie podlegają kontroli z wpisem do dowodu – ich stan techniczny weryfikuje się we własnym zakresie lub w serwisach karawaningowych w ramach tzw. przeglądu G 607. Od 1 lipca 2022 roku przy badaniu technicznym po zmianie konstrukcyjnej z busa (N1) na kamper (M1) diagnosta wymaga okazania dokumentu potwierdzającego zapłatę akcyzy. Bez zaświadczenia z Urzędu Skarbowego badanie rozszerzone nie zostanie zaliczone.
 
 Informacje o ciśnieniu w oponach, które diagnosta sprawdza podczas badania, znajdziesz w artykule [ciśnienie w oponach busa](/serwis/cisnienie-w-oponach/). Stan opon (głębokość bieżnika minimum 1,6 mm, brak uszkodzeń) to kolejny element kontroli – w busach dostawczych opony zużywają się nierównomiernie przy częstej jeździe z pełnym obciążeniem, dlatego warto sprawdzić je przed wizytą na SKP.
-
-*Źródła: Prawo o ruchu drogowym (Dz.U. 2024 poz. 1251), Rozporządzenie MI w sprawie badań technicznych, Wikipedia – badanie techniczne pojazdu, autokierowca.pl, mubi.pl*

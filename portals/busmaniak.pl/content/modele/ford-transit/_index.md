@@ -20,6 +20,10 @@ faq:
     answer: "Ford Transit VIII jest produkowany z silnikiem 2.0 EcoBlue (od 2016 r.) w wersjach 105, 130, 170 i 185 KM. Starsze egzemplarze z lat 2014–2016 mają 2.2 TDCi o mocy 100, 125 lub 155 KM."
   - question: "Ile kosztuje naprawa łańcucha rozrządu w Transicie 2.2 TDCi?"
     answer: "Wymiana łańcucha rozrządu w silniku 2.2 TDCi kosztuje orientacyjnie 2000–3500 zł z robocizną. To najczęstszy i najpoważniejszy problem mechaniczny Transita VII."
+sources:
+  - "Wikipedia – Ford Transit"
+  - "oficjalne dane Ford Polska"
+  - "auto-data.net."
 ---
 
 ## Historia i generacje Ford Transit
@@ -166,5 +170,3 @@ Transit VII (2006–2013) to najtańsza opcja na rynku wtórnym – ceny zaczyna
 | Transit VIII (2023–2025) | 110 000–170 000 zł |
 | Nowy Transit L2H2 (2.0 EcoBlue 130) | od ok. 160 000 zł netto |
 | E-Transit L2H2 | od ok. 280 000 zł netto |
-
-*Źródła: Wikipedia – Ford Transit, oficjalne dane Ford Polska, auto-data.net.*

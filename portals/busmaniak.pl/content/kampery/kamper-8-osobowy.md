@@ -18,6 +18,13 @@ faq:
     answer: "Najpopularniejsze podwozia pod seryjne kampery 6-7 osobowe to Fiat Ducato Maxi i Mercedes Sprinter 5xx. Prawdziwe 8-osobowe zabudowy customowe wymagają baz ciężarowych, jak Iveco Daily 70C, a nie standardowych furgonów."
   - question: "Czy kampera 8-osobowego można parkować na zwykłym parkingu?"
     answer: "Jest to praktycznie niemożliwe. Długość 7–9 m i wysokość powyżej 3 metrów wykluczają parkowanie na standardowych miejscach. Konieczne są dedykowane parkingi dla kamperów lub obszerne place."
+sources:
+  - "Knaus Tabbert"
+  - "Bürstner"
+  - "Chausson"
+  - "CIVD"
+  - "CEPiK"
+  - "Stowarzyszenie Rzeczoznawców Samochodowych"
 ---
 
 ## Kto potrzebuje kampera 8-osobowego
@@ -123,5 +130,3 @@ Rynek oferuje szeroki przekrój pojazdów, od kilkunastoletnich, budżetowych al
 Przy zakupie [używanego kampera](/kampery/kampery-uzywane/) 8-osobowego priorytetem jest kontrola szczelności nadwozia. Duże alkowy są podatne na przecieki wokół okien dachowych i na łączeniach zabudowy. Sprawdzenie pojazdu miernikiem wilgotności kosztuje **300–500 zł** i może oszczędzić dziesiątek tysięcy złotych na potencjalnych naprawach.
 
 Więcej informacji o kosztach znajdziesz w artykule o [cenach kamperów](/kampery/kamper-cena/) oraz w naszym kompletnym [przewodniku kupującego](/kampery/przewodnik-kupujacego/).
-
-*Źródła: Knaus Tabbert, Bürstner, Chausson, CIVD, CEPiK, Stowarzyszenie Rzeczoznawców Samochodowych*

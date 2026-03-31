@@ -19,6 +19,10 @@ faq:
     answer: "Od 5 do 7 indywidualnych siedzeń. W T7 zrezygnowano z ciężkiej kanapy na rzecz lekkich, pojedynczych foteli – można je przesuwać, obracać lub całkowicie wyjąć z kabiny."
   - question: "Jakie silniki ma Multivan T7?"
     answer: "2.0 TSI 204 KM, 2.0 TDI 150 KM i 1.5 eHybrid 245 KM (plug-in). Wszystkie z DSG."
+sources:
+  - "Wikipedia – Volkswagen Transporter"
+  - "volkswagen-samochody-dostawcze.pl"
+  - "auto-data.net."
 ---
 
 ## Historia i generacje Volkswagen Multivan
@@ -114,5 +118,3 @@ Zakup Volkswagen Multivan to wydatek, który zależy od generacji, wersji silnik
 | T6.1 Multivan (2019–2024) | 120 000–200 000 zł |
 | Nowy T7 Multivan (1.4 TSI) | od ok. 240 000 zł brutto |
 | T7 Multivan eHybrid | od ok. 280 000 zł brutto |
-
-*Źródła: Wikipedia – Volkswagen Transporter, volkswagen-samochody-dostawcze.pl, auto-data.net.*

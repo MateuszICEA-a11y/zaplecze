@@ -18,6 +18,11 @@ faq:
     answer: "4 osoby – dwoje w podnoszonym dachu (200 × 120 cm) i dwoje na łóżku powstałym po złożeniu indywidualnych, wyjmowanych foteli tylnych (200 × 115 cm). Praktycznie komfortowo śpią 2 dorosłych i 2 dzieci."
   - question: "Czy VW California ma łazienkę?"
     answer: "Nie – żadna wersja Californii (Beach, Coast, Ocean) nie ma wbudowanej łazienki ani toalety. To główna różnica wobec Grand California, który oferuje pełną łazienkę z prysznicem."
+sources:
+  - "Volkswagen Samochody Użytkowe"
+  - "VW Polska"
+  - "ADAC"
+  - "dane z portali OLX i Otomoto"
 ---
 
 ## Wersje VW California – Beach, Coast, Ocean
@@ -136,5 +141,3 @@ Popularnym trendem wśród właścicieli Californii jest doposażanie pojazdu w 
 -   **Namiot do tylnej klapy** – powiększa przestrzeń mieszkalną o 3–4 m². Jego koszt to 1500–3000 zł.
 
 Więcej o wszystkich kamperach Volkswagena, w tym o modelach Grand California 600 i 680, przeczytasz w naszym artykule [Kamper Volkswagen](/kampery/kamper-volkswagen/).
-
-*Źródła: Volkswagen Samochody Użytkowe, VW Polska, ADAC, dane z portali OLX i Otomoto (marzec 2026)*

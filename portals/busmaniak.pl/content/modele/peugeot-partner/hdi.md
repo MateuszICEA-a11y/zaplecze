@@ -20,6 +20,9 @@ faq:
     answer: "Najczęściej wracają problemy z FAP/DPF, EGR, turbosprężarką, nieszczelnościami podkładek pod wtryskiwaczami, przewodem olejowym turbo i osprzętem podciśnienia. W starszych wersjach z FAP dochodzi obsługa dodatku Eolys, a w BlueHDi także układ SCR/AdBlue."
   - question: "Ile kosztuje używany Peugeot Partner HDI?"
     answer: "Roczniki 2008–2012 kosztują zwykle 12 000–22 000 zł, 2013–2015 około 25 000–38 000 zł, a 2016–2018 około 35 000–55 000 zł. Tepee jest zazwyczaj droższy od furgonu o kilka do kilkunastu tysięcy zł, podobnie jak wersje L2, brygadówki i auta z niższym przebiegiem."
+sources:
+  - "broszury modelowe i katalogi producenta"
+  - "instrukcje serwisowe oraz dokumentacja homologacyjna dla wersji Partner II i silników 1.6 HDi/BlueHDi."
 ---
 
 ## Silnik HDI w Peugeot Partner – przegląd wariantów
@@ -132,5 +135,3 @@ Wyceny mocno zależą od konfiguracji. Partner Tepee jest zwykle droższy od fur
 Najbezpieczniej szukać auta z udokumentowanym serwisem olejowym, sprawdzonym FAP/DPF i bez oznak nieszczelności pod wtryskiwaczami. Jeśli zależy Ci na niższym ryzyku kosztownych napraw, prostszy 1.6 HDi 90 zwykle będzie łatwiejszy w utrzymaniu niż BlueHDi 100/120, choć te nowsze odmiany oferują lepszą dynamikę dzięki 254 Nm i 300 Nm.
 
 Na tle rynku wtórnego Partner wypada podobnie jak bliźniaczy Citroën Berlingo II, bo korzysta z tej samej bazy technicznej. Konkurenci pokroju Renault Kangoo 1.5 dCi i VW Caddy 1.6/2.0 TDI różnią się m.in. ładownością, cenami części i typowymi awariami, dlatego przed zakupem warto porównywać nie tylko cenę auta, ale też profil kosztów serwisowych.
-
-*Źródła: broszury modelowe i katalogi producenta, instrukcje serwisowe oraz dokumentacja homologacyjna dla wersji Partner II i silników 1.6 HDi/BlueHDi.*

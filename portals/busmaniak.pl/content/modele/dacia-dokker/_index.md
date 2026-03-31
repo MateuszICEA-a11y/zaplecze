@@ -22,6 +22,11 @@ faq:
     answer: "Rozciąganie łańcucha rozrządu w 1.2 TCe (od 60–80 tys. km), cewki zapłonowe w benzynach (50–100 tys. km), świece żarowe w dCi (80–120 tys. km), nierównomierne zużycie klocków hamulcowych, usterki centralnego zamka i cienki lakier."
   - question: "Ile kosztuje używana Dacia Dokker?"
     answer: "Roczniki 2013–2015: 15–22 tys. zł, 2016–2018: 25–35 tys. zł, 2019–2021: 36–50 tys. zł."
+sources:
+  - "Dacia (dacia.pl)"
+  - "AutoCentrum (autocentrum.pl)"
+  - "WyborKierowcow (wyborkierowcow.pl)"
+  - "Auto-Data (auto-data.net)."
 ---
 
 ## Historia i generacje Dacii Dokker
@@ -125,5 +130,3 @@ Dokker trudno pobić w stosunku ceny do przestrzeni ładunkowej – przy ładown
 | Cena używanego (2017) | ~28 000 zł | ~30 000 zł | ~25 000 zł | ~17 000 zł |
 
 Dokker trudno pobić w stosunku ceny do przestrzeni ładunkowej. [Citroën Berlingo](/modele/citroen-berlingo/) oferuje lepsze wyposażenie i ciszejszą kabinę. [Renault Kangoo](/modele/renault-kangoo/) to technicznie bliski krewny z identyczną mechaniką. [Fiat Fiorino](/modele/fiat-fiorino/) jest mniejszy, ale tańszy.
-
-*Źródła: Dacia (dacia.pl), AutoCentrum (autocentrum.pl), WyborKierowcow (wyborkierowcow.pl), Auto-Data (auto-data.net).*

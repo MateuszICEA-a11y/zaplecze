@@ -16,6 +16,9 @@ faq:
   - question: "Czy do Boxera L3 potrzeba prawa jazdy C?"
     answer: "Nie – Boxer L3 przy DMC do 3,5 t jest kategorią N1 i wymaga prawa jazdy kat. B, a z przyczepą odpowiednio B+E. Dopiero Boxer z DMC powyżej 3,5 t, czyli w kategorii N2, wymaga prawa jazdy C1 lub C."
 lead: "Peugeot Boxer w wersjach Long – L3 i L4 – to wybór dla firm, które regularnie transportują ładunki gabarytowe, wymagają dużej przestrzeni lub budują specjalistyczne zabudowy. Długość całkowita około 6,0–6,36 m i wysokość około 2,5–2,76 m oznaczają większą funkcjonalność, ale też konkretne ograniczenia w codziennej eksploatacji."
+sources:
+  - "katalogi producenta"
+  - "cenniki i homologacje Peugeot Professional dla konkretnych roczników oraz dokumentacja zabudów dla danej wersji nadwozia"
 ---
 ## Wersje L3 i L4 – charakterystyka
 
@@ -129,5 +132,3 @@ Najczęstsze zastosowania Boxera L3 i L4 w Polsce:
 - minibusy i kombi do 9 osób
 
 W przypadku chłodni, ambulansu czy kampera trzeba szczególnie uważnie liczyć masę końcową. Agregat chłodniczy, izolacja, instalacje i meble wyraźnie obniżają ładowność użytkową, dlatego w praktyce wiele zabudów na bazie 3,5 t zbliża się do limitu DMC już po wyposażeniu i pasażerach.
-
-*Źródła: katalogi producenta, cenniki i homologacje Peugeot Professional dla konkretnych roczników oraz dokumentacja zabudów dla danej wersji nadwozia*

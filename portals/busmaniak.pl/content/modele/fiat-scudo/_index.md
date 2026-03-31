@@ -18,6 +18,10 @@ faq:
     answer: "Od 5 do 9 osób. Najpopularniejsza konfiguracja to 8 siedzeń w układzie 2+3+3."
   - question: "Jaką długość ma paka w wersji Long?"
     answer: "W drugiej generacji ok. 258 cm. W trzeciej, dzięki systemowi Moduwork, przestrzeń ładunkową można wydłużyć do 4 m."
+sources:
+  - "Wikipedia – PSA EMP2 platform"
+  - "materiały prasowe Fiat Professional"
+  - "raporty niezawodności DEKRA."
 ---
 
 ## Historia i generacje Fiat Scudo
@@ -146,5 +150,3 @@ W segmencie średnich vanów Scudo III mierzy się z Traficem, Transit Customem 
 | Cena nowego (netto) | od 130 000 zł | od 135 000 zł | od 145 000 zł | od 180 000 zł |
 
 Głównym rywalem spoza Stellantis jest [Renault Trafic](/modele/renault-trafic/) – kwadratowa paka i niższa cena serwisu. [Ford Transit Custom](/modele/ford-transit-custom/) wygrywa właściwościami jezdnymi i większą paką. Scudo konkuruje ceną i dostępnością zamienników (wspólne z Peugeotem Expertem i Citroënem Jumpy).
-
-*Źródła: Wikipedia – PSA EMP2 platform, materiały prasowe Fiat Professional, raporty niezawodności DEKRA.*

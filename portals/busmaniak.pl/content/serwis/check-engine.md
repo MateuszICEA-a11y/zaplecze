@@ -20,6 +20,10 @@ faq:
     answer: "Tak, zwłaszcza jeśli towarzyszy jej kontrolka filtra paliwa. Zdarza się to po zatankowaniu paliwa niskiej jakości, które zawiera wodę. Sterownik wykrywa wodę w filtrze paliwa i sygnalizuje konieczność jego opróżnienia lub wymiany."
   - question: "Jak skasować kontrolkę check engine?"
     answer: "Kontrolkę kasuje się skanerem OBD2 po usunięciu przyczyny problemu. Odłączanie akumulatora również kasuje błędy, ale resetuje przy tym adaptacje sterownika silnika. Nie kasuj błędu bez naprawy – kontrolka i tak powróci."
+sources:
+  - "dokumentacja techniczna Fiat Professional"
+  - "obd-codes.com"
+  - "mycarly.com"
 ---
 
 ## Co oznacza kontrolka check engine
@@ -148,5 +152,3 @@ Drogie naprawy (powyżej 2000 zł):
 - **Wymiana filtra DPF na nowy** – 3000–8000 zł
 
 Kontrolka check engine nie musi oznaczać katastrofy finansowej. Jednak ignorowanie jej przez tygodnie niemal zawsze prowadzi do eskalacji problemu i wielokrotnie wyższych kosztów napraw. Pamiętaj, że w nowoczesnych busach z systemem SCR ([AdBlue](/serwis/adblue/)) kontrolka silnika jest często powiązana z usterkami układu oczyszczania spalin, co może w krótkim czasie unieruchomić pojazd.
-
-*Źródła: dokumentacja techniczna Fiat Professional, obd-codes.com, mycarly.com*

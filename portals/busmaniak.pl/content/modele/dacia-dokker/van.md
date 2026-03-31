@@ -19,6 +19,10 @@ faq:
     answer: "750–970 kg zależnie od wersji silnikowej i homologacyjnej. DMC wynosi ok. 1,95–2,02 t."
   - question: "Ile kosztuje używany Dokker Van?"
     answer: "Rocznik 2015–2017: 12 000–30 000 zł. Rocznik 2019–2021: 28 000–48 000 zł."
+sources:
+  - "Dacia (dacia.pl)"
+  - "AutoCentrum (autocentrum.pl)"
+  - "Auto-Data (auto-data.net)."
 ---
 
 ## Dacia Dokker Van – konstrukcja i wymiary paki
@@ -136,5 +140,3 @@ W praktyce Dokker broni się prostotą, systemem Easy Seat i atrakcyjną ceną z
 Pod względem funkcjonalności kabiny trzeba pamiętać, że wyposażenie bazowe w starszych rocznikach bywało bardzo skromne. Klimatyzacja, tempomat, multimedia, ESP/ASR czy liczba poduszek bezpieczeństwa zależały od wersji, a nie od samej nazwy modelu, więc przed zakupem warto sprawdzić konkretny egzemplarz zamiast zakładać obecność wyposażenia z katalogu.
 
 W kosztach eksploatacji przewaga Dokkera zwykle wynika z prostoty konstrukcji i popularności części. Przy porównaniu z Kangoo, Fiorino i NV200 warto uwzględnić nie tylko spalanie, ale też koszty typowego serwisu – rozrządu 1.5 dCi, sprzęgła, hamulców oraz opon 15 lub 16 cali, bo to właśnie te pozycje decydują o realnym budżecie użytkowym.
-
-*Źródła: Dacia (dacia.pl), AutoCentrum (autocentrum.pl), Auto-Data (auto-data.net).*

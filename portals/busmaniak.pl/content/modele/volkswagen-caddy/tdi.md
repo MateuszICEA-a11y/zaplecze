@@ -22,6 +22,10 @@ faq:
     answer: "102 KM to najbezpieczniejszy i najbardziej uniwersalny wybór. 75 KM bywa zbyt słabe przy pełnym obciążeniu, a 122 KM ma sens głównie wtedy, gdy często jeździsz w trasie, z kompletem pasażerów albo wersją Maxi."
   - question: "Czy warto brać Caddy z DSG?"
     answer: "DSG daje wysoki komfort, ale wymaga większej uwagi serwisowej. Mokra DQ250 potrzebuje regularnej wymiany oleju i filtra co 60 000 km, a sucha DQ200 ma inne ryzyka eksploatacyjne, więc przed zakupem trzeba ustalić dokładny typ skrzyni."
+sources:
+  - "Wikipedia"
+  - "Volkswagen"
+  - "auto-data.net"
 ---
 
 ## Dane techniczne Volkswagen Caddy TDI {#dane-techniczne}
@@ -161,5 +165,3 @@ Utrzymanie Volkswagen Caddy z dieslem nie należy do najtańszych w segmencie, a
 Przed zakupem warto potwierdzić fakturami lub wpisami, kiedy był robiony rozrząd i jaki dokładnie typ DSG ma dany egzemplarz. To dwie informacje, które bardzo mocno wpływają na realny koszt wejścia w używane Caddy.
 
 Więcej o modelu – historia, wersje nadwoziowe, wyposażenie – na stronie [Volkswagena Caddy](/modele/volkswagen-caddy/).
-
-*Źródła: Wikipedia, Volkswagen, auto-data.net*

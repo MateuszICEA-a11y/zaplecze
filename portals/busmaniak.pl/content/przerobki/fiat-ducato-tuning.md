@@ -23,7 +23,9 @@ faq:
     answer: "Głównym problemem bywa przegrzewanie się układu hamulcowego przy znacznie zwiększonej mocy. Kłopotliwe bywa też szybsze zużycie przegubów napędowych przy gwałtownym ruszaniu z dużym momentem obrotowym."
   - question: "Ile kosztuje profesjonalny chiptuning?"
     answer: "Ceny w wyspecjalizowanych warsztatach wahają się od 1200 do 2500 zł. Koszt zależy od modelu sterownika i konieczności wykonania pomiarów na hamowni podwoziowej."
-
+sources:
+  - "Fiat Professional (fiatprofessional.com)"
+  - "dokumentacja techniczna silników MultiJet."
 ---
 
 ## Chiptuning silnika – więcej mocy pod maską
@@ -71,5 +73,3 @@ Twój Fiat Ducato nie musi wyglądać jak typowy pojazd kurierski. Często wysta
 - **Orurowanie (bullbary)** – warto pamiętać, że legalne mogą być wyłącznie produkty posiadające homologację europejską, zgodną z przepisami o ochronie pieszych. Stanowią one jednak świetną podstawę pod montaż dodatkowego oświetlenia drogowego, tzw. LED-barów.
 - **Spoiler dachowy i dokładki zderzaka** – poza efektem wizualnym, przy długich trasach autostradowych elementy te mogą subtelnie wpłynąć na aerodynamikę, potencjalnie redukując zużycie paliwa.
 - **Legalna modernizacja oświetlenia LED** – fabryczne światła halogenowe w modelu Typ 250 (2006–2021) można legalnie zastąpić żarówkami typu retro-LED. Produkty z europejską homologacją (np. Osram Night Breaker LED, Philips Ultinon Pro6000) oferują nawet 220% mocniejsze światło, a koszt kompletu to ok. 500–600 zł.
-
-*Źródła: Fiat Professional (fiatprofessional.com), dokumentacja techniczna silników MultiJet.*

@@ -1,3 +1,32 @@
+---
+title: "Ford Ranger spalanie – realne zużycie paliwa per silnik"
+date: 2026-03-28
+description: "Realne spalanie Forda Rangera – 2.0 EcoBlue 170 KM, Bi-Turbo 205 KM i 3.0 V6. Tabela miasto/trasa/mieszane, porównanie z Hiluxem i Amarokiem."
+draft: false
+author: "marek-kowalczyk"
+h1: "Ford Ranger spalanie – tabela zużycia per silnik"
+type: "post"
+volume: 800
+main_keyword: "ford ranger spalanie"
+image: "/images/ford-ranger-spalanie-hero.jpg"
+image_alt: "Ford Ranger na drodze – zużycie paliwa w warunkach rzeczywistych"
+lead: "Ford Ranger w wersji 2.0 EcoBlue 170 KM spala realnie 8–10 l/100 km na trasie i 10–13 l w mieście. Wariant Bi-Turbo 205 KM dokłada ok. 1 litr, a topowy 3.0 V6 w wersji Raptor potrafi sięgnąć 14 litrów w mieście. Poniżej tabela spalania per silnik, porównanie z konkurencją i praktyczne sposoby na obniżenie zużycia."
+faq:
+  - question: "Ile pali Ford Ranger 2.0 EcoBlue 170 KM?"
+    answer: "Realnie 8,0–9,5 l/100 km na trasie, 10,5–13,0 l w mieście i 9,0–10,5 l w cyklu mieszanym. Katalogowo WLTP podaje 8,0–9,2 l/100 km."
+  - question: "Ile pali Ford Ranger 3.0 V6?"
+    answer: "Silnik 3.0 V6 250 KM (Raptor) spala 10–12 l/100 km na trasie i 12–15 l w mieście. Przy szybkiej jeździe autostradowej (140 km/h) zużycie rośnie do 13–14 l/100 km."
+  - question: "Czy Ranger pali więcej z przyczepą?"
+    answer: "Tak – holowanie przyczepy o masie 1 500–2 000 kg zwiększa spalanie o 2–4 l/100 km w zależności od profilu trasy i prędkości. Na autostradzie z przyczepą kempingową Ranger potrafi spalić 14–16 l/100 km."
+  - question: "Jaki jest zasięg Forda Rangera na pełnym baku?"
+    answer: "Zbiornik paliwa ma pojemność 80 litrów. Przy spalaniu mieszanym 10 l/100 km daje to zasięg ok. 800 km. Na trasie przy 8,5 l/100 km – nawet 940 km."
+sources:
+  - "Dane techniczne Ford Ranger – autokatalog.pl, autocentrum.pl"
+  - "Raporty spalania użytkowników – autocentrum.pl"
+  - "Testy porównawcze pickupów – magazynauto.pl"
+  - "[Ford Ranger](https://pl.wikipedia.org/wiki/Ford_Ranger) – Wikipedia"
+---
+
 ## Spalanie per silnik – tabela zbiorcza
 
 Realne zużycie paliwa oparte na danych użytkowników i testów drogowych, nie na katalogowych wartościach WLTP. Wartości te w przypadku pickupów potrafią odbiegać od rzeczywistości o 15–25%.
@@ -85,8 +114,3 @@ Przy holowaniu ciężkich przyczep kluczowe staje się [uzupełnianie AdBlue](/s
 
 Do planowania kosztów przydaje się nasz [kalkulator paliwa](/narzedzia/kalkulator-paliwa/), który uwzględnia aktualną cenę ON i [spalanie busów](/serwis/spalanie-busow/) w porównaniu z pickupami.
 
-Źródła:
-- Dane techniczne Ford Ranger: autokatalog.pl, autocentrum.pl
-- Raporty spalania użytkowników: autocentrum.pl/spalanie/ford/ranger
-- Testy porównawcze pickupów: magazynauto.pl
-- Ford Ranger (Wikipedia): https://pl.wikipedia.org/wiki/Ford_Ranger

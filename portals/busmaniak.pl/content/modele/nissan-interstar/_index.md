@@ -21,6 +21,10 @@ faq:
     answer: "Elektryczny e-Interstar wyposażony jest w baterię 87 kWh i oferuje zasięg ok. 200–260 km w cyklu WLTP, zależnie od wariantu nadwozia i obciążenia."
   - question: "Czy Nissan Interstar to dobry samochód dostawczy?"
     answer: "Interstar to sprawdzona konstrukcja Renault Mastera z dostępem do sieci Nissana. Nowa generacja (2024+) zdobyła tytuł International Van of the Year 2025. Warto go rozważyć, jeśli dealer Nissana oferuje lepsze warunki finansowe niż Renault."
+sources:
+  - "Wikipedia – Nissan Interstar"
+  - "Renault Master; Nissan Polska"
+  - "katalogi techniczne 2024/2025."
 ---
 
 ## Nissan Interstar – co to za model
@@ -124,5 +128,3 @@ Segment dostawczaków to rynek pełen alternatyw – Nissan Interstar mierzy si�
 Interstar, [Master](/modele/renault-master/) i [Movano](/modele/opel-movano/) to ten sam samochód pod trzema markami – różnice ograniczają się do grilla, logo i szczegółów wyposażenia standardowego. Wybór sprowadza się do tego, który dealer oferuje lepsze warunki leasingu i bliższy serwis. [Sprinter](/modele/mercedes-sprinter/) gra w wyższej lidze cenowej, ale oferuje większą baterię w wersji elektrycznej. Ford Transit to najtańsza alternatywa z innej platformy.
 
 Dla firm posiadających już w flocie modele Nissana (np. [NV200](/modele/nissan-nv200/) do dostaw miejskich), Interstar stanowi naturalne uzupełnienie parku – jeden dealer, spójna polityka serwisowa.
-
-*Źródła: Wikipedia – Nissan Interstar, Renault Master; Nissan Polska, katalogi techniczne 2024/2025.*

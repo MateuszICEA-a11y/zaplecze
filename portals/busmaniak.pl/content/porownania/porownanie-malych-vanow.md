@@ -23,6 +23,11 @@ faq:
     answer: "Fiat Doblò IV generacji (od 2022) powstaje na platformie EMP2 Stellantis i dzieli większość podzespołów z Berlingo oraz Partnerem. Różni się głównie frontem, logo i detalami wyposażenia."
   - question: "Który mały van najlepiej nadaje się do miasta?"
     answer: "Do jazdy miejskiej najlepiej sprawdzają się Berlingo M i Partner M – mają krótki rozstaw osi (2785 mm) i promień skrętu 10,8 m. Kangoo w wersji standardowej (rozstaw osi 2716 mm) jest minimalnie zwrotniejszy, ale oferuje mniejszą ładownię."
+sources:
+  - "[Wikipedia – Renault-Nissan CMF](https://en.wikipedia.org/wiki/Renault%E2%80%93Nissan_Common_Module_Family)"
+  - "auto-data.net"
+  - "oficjalne katalogi Stellantis i Renault Pro+"
+  - "dane producentów 2025/2026."
 ---
 ## Małe vany – czym się różnią?
 
@@ -163,5 +168,3 @@ Odpowiedź zależy od priorytetów. Oto krótki przewodnik:
 - **Załadunek niestandardowy** – Kangoo z systemem Open Sesame. Boczny otwór 1446 mm bez słupka B to unikalna i bardzo praktyczna cecha.
 
 Grupa vanów Stellantis to bezpieczny i racjonalny wybór – sprawdzona konstrukcja, niskie koszty serwisu i ogromna podaż na rynku. Kangoo III to ciekawa alternatywa dla firm, które potrzebują rekordowej przestrzeni ładunkowej lub cenią innowacyjne rozwiązania Renault. Każdy z tych pojazdów sprawdzi się jako solidne narzędzie pracy.
-
-*Źródła: [Wikipedia – Renault-Nissan CMF](https://en.wikipedia.org/wiki/Renault%E2%80%93Nissan_Common_Module_Family), auto-data.net, oficjalne katalogi Stellantis i Renault Pro+, dane producentów 2025/2026.*

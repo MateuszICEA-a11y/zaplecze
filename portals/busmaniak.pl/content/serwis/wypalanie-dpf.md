@@ -23,6 +23,12 @@ faq:
     answer: "Nie, usunięcie filtra DPF jest nielegalne. Grozi za to mandat do 3 000 zł nałożony przez policję (na podstawie art. 97 Kodeksu Wykroczeń), utrata dowodu rejestracyjnego i odholowanie pojazdu. W Polsce stacje kontroli pojazdów na razie nie mają obowiązku używania liczników cząstek stałych, ale takie kontrole są standardem np. w Niemczech czy Belgii, co stanowi ryzyko w transporcie międzynarodowym."
   - question: "Po czym poznać, że DPF jest zapchany?"
     answer: "Typowe objawy to kontrolka DPF lub check engine na desce rozdzielczej, wyczuwalny spadek mocy, zwiększone spalanie, nieprzyjemny zapach z wydechu i w skrajnych przypadkach – przejście silnika w tryb awaryjny z ograniczeniem obrotów do 2 500–3 000 obr./min."
+sources:
+  - "Autokult.pl – koszty wypalania i czyszczenia DPF (2025)"
+  - "InterCars.pl – budowa i działanie filtra DPF"
+  - "[Filtr cząstek stałych](https://pl.wikipedia.org/wiki/Filtr_cz%C4%85stek_sta%C5%82ych) – Wikipedia"
+  - "MuniPro.pl – kary za usunięcie DPF w 2026 r."
+  - "Dane serwisowe: Fiat Ducato eLEARN, Mercedes WIS"
 ---
 ## Co to jest DPF i jak działa {#co-to-dpf}
 
@@ -152,11 +158,3 @@ Zamiast usuwać DPF, warto zainwestować w profilaktykę:
 Jeśli na desce rozdzielczej zapala się kontrolka silnika wraz z kontrolką DPF, sprawdź najpierw [co oznacza kontrolka silnika](/serwis/kontrolka-silnika/) – problem może leżeć nie w filtrze, a w jednym z jego czujników.
 
 ---
-
-**Źródła:**
-
-- Autokult.pl – koszty wypalania i czyszczenia DPF (2025)
-- InterCars.pl – budowa i działanie filtra DPF
-- [Filtr cząstek stałych](https://pl.wikipedia.org/wiki/Filtr_cz%C4%85stek_sta%C5%82ych) – Wikipedia
-- MuniPro.pl – kary za usunięcie DPF w 2026 r.
-- Dane serwisowe: Fiat Ducato eLEARN, Mercedes WIS

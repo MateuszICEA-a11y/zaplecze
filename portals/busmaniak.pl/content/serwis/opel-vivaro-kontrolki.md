@@ -21,6 +21,9 @@ faq:
     answer: "Pomarańczowy check engine to usterka wykryta przez ECU – najczęściej problem z sondą lambda, zaworem EGR lub czujnikiem ciśnienia doładowania. Auto zazwyczaj jedzie dalej, ale wymaga diagnostyki komputerowej."
   - question: "Czy Vivaro C ma inne kontrolki niż starsze generacje?"
     answer: "Tak – Vivaro C (od 2019) bazuje na platformie PSA i ma zupełnie inny zestaw wskaźników. Pojawiły się kontrolki systemu lane assist, radarowego tempomatu i asystenta martwego pola, nieobecne w starszych wersjach."
+sources:
+  - "- Instrukcja obsługi Opel Vivaro (2007"
+  - "2017): public-servicebox.opel.com"
 ---
 
 ## Kontrolki Vivaro A (2001–2014) – silniki Renault
@@ -129,7 +132,5 @@ Procedura resetowania wskaźnika przeglądu różni się w każdej generacji, al
 
 Ogólne informacje o kontrolkach w dostawczakach znajdziesz w artykule [kontrolki w busie](/serwis/kontrolki-w-busie/).
 
-Źródła:
-- Instrukcja obsługi Opel Vivaro (2007, 2017): public-servicebox.opel.com
 - Kontrolki samochodowe (Wikipedia): https://pl.wikipedia.org/wiki/Kontrolka)
 - Dane serwisowe: dixi-car.pl, opel24.com

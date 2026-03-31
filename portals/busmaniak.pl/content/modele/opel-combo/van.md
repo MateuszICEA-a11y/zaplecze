@@ -20,6 +20,10 @@ faq:
     answer: "Generacja E weszła na rynek w 2018 roku, a lifting z pasem Vizor i cyfrowym kokpitem pojawił się w latach 2023/2024 zależnie od rynku. Nowe egzemplarze po liftingu są wyraźnie droższe od przedliftowych, dlatego przy wycenie trzeba zawsze rozdzielać roczniki i wersje. Używane auta z lat 2018–2020 mają ceny mocno zależne od przebiegu 100–250 tys. km, rodzaju nadwozia oraz statusu VAT-1/VAT-23."
   - question: "Jaka jest ładowność Opel Combo Van?"
     answer: "Ładowność zależy od wersji i zwykle wynosi od około 650 do ponad 1000 kg. DMC, zależnie od odmiany i rocznika, mieści się zwykle w przedziale około 2000–2400 kg."
+sources:
+  - "Wikipedia"
+  - "Opel"
+  - "auto-data.net"
 ---
 
 ## Opel Combo Van – co to za auto?
@@ -103,5 +107,3 @@ W praktyce przydatne są także Surround Rear Vision z ekranem zamiast klasyczne
 Przy porównaniu z konkurencją Opel Combo Van wypada mocno w trzech punktach: pojemność ładowni 3,3–4,4 m³, ładowność od około 650 do ponad 1000 kg oraz szeroka gama napędów – diesel, benzyna i EV. To właśnie ten zestaw sprawia, że model pozostaje jedną z najbardziej uniwersalnych propozycji w klasie.
 
 ![Opel Combo Van – kompaktowy furgon dostawczy](/images/opel-combo-van-hero.jpg)
-
-*Źródła: Wikipedia, Opel, auto-data.net*

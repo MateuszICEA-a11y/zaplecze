@@ -24,6 +24,10 @@ faq:
     answer: "Fiat Ducato to zdecydowany lider bazy kamperowej – ponad 75% europejskich kamperów powstaje na jego platformie. Sprinter jest popularny w segmencie premium. Daily i Transit mają mniejszy udział, ale zyskują w niestandardowych przeróbkach."
   - question: "Ile pali duży bus dostawczy?"
     answer: "Średnie spalanie w cyklu mieszanym: Ducato 2.2 MJT3 – 8,0–9,5 l/100 km, Sprinter 2.0 CDI – 8,5–10,0 l/100 km, Daily 2.3 – 9,0–11,0 l/100 km, Transit 2.0 EcoBlue – 8,0–9,5 l/100 km."
+sources:
+  - "Dane techniczne producentów: Fiat Professional, Mercedes-Benz Vans, Iveco, Ford Pro (katalogi 2024/2025)"
+  - "Raporty rynkowe ACEA (European Automobile Manufacturers' Association), Commercial Vehicle Registrations 2024"
+  - "Cenniki części zamiennych: Inter Cars, Auto Partner, Hart (stan na I kw. 2026)"
 ---
 
 ## Kluczowe różnice w skrócie
@@ -155,9 +159,3 @@ Nie ma jednego „najlepszego" busa dostawczego – jest bus najlepszy dla konkr
 Na rynku wtórnym proporcje się zmieniają. Używane Ducato z dużym przebiegiem kosztuje nawet o 30–50% mniej niż równoletni Sprinter. To sprawia, że Fiat jest naturalnym wyborem dla małych firm i indywidualnych użytkowników szukających taniego wejścia w segment dużych busów.
 
 ---
-
-**Źródła:**
-
-- Dane techniczne producentów: Fiat Professional, Mercedes-Benz Vans, Iveco, Ford Pro (katalogi 2024/2025)
-- Raporty rynkowe ACEA (European Automobile Manufacturers' Association), Commercial Vehicle Registrations 2024
-- Cenniki części zamiennych: Inter Cars, Auto Partner, Hart (stan na I kw. 2026)

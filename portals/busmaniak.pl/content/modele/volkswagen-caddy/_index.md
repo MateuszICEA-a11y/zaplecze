@@ -23,6 +23,10 @@ faq:
     answer: "Tak, w wersji Maxi (III/IV gen.) lub Long (V gen.) dostępny jest trzeci rząd siedzeń w konfiguracji 2+3+2."
   - question: "Jakie są typowe usterki Caddy?"
     answer: "Najczęstsze problemy to awarie skrzyni DSG (mechatronik, sprzęgło), rozciąganie łańcucha rozrządu w 1.6 TDI EA189 oraz typowe dla diesli problemy z EGR i DPF."
+sources:
+  - "Wikipedia – Volkswagen Caddy"
+  - "volkswagen-samochody-dostawcze.pl"
+  - "auto-data.net."
 ---
 
 ## Historia i generacje Volkswagen Caddy {#historia-generacje}
@@ -127,5 +131,3 @@ Zakup Volkswagen Caddy to wydatek, który zależy od generacji, wersji silnikowe
 | Nowy Caddy V Van (2.0 TDI 75) | od ok. 115 000 zł netto |
 | Nowy Caddy V Maxi Van | od ok. 130 000 zł netto |
 | Caddy California mini kamper | od ok. 180 000 zł brutto |
-
-*Źródła: Wikipedia – Volkswagen Caddy, volkswagen-samochody-dostawcze.pl, auto-data.net.*

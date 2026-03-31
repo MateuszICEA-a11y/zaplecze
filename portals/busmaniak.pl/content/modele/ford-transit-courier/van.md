@@ -20,6 +20,9 @@ faq:
     answer: "Nowy z salonu: ok. 96 000–110 000 zł netto, zależnie od silnika i wyposażenia. Używany egzemplarz z 2023 roku z niskim przebiegiem to ok. 96 000 zł brutto. W artykule brakuje pełnego rozbicia cen według napędu i rocznika cennika."
   - question: "Jaka jest ładowność Transit Courier Van?"
     answer: "Maksymalnie do 845 kg w wybranych wersjach spalinowych II generacji. W e-Transit Courier jest niższa, ok. 700 kg. Ładownia ma 2,91 m³, a długość przewożonych elementów może sięgać ok. 2,6 m."
+sources:
+  - "cennik 2025/2026"
+  - "katalog techniczny i specyfikacja producenta Ford dla Transit Courier Van / e-Transit Courier"
 ---
 
 ## Ford Transit Courier Van – dwie generacje
@@ -107,5 +110,3 @@ Dla kogo ten model? Przede wszystkim dla kurierów ostatniej mili, ekip serwisow
 W tekście pojawiają się orientacyjne dane dotyczące spalania i pojemności zbiornika paliwa 45 l, ale brakuje pełnych norm WLTP i szczegółowego harmonogramu serwisowego dla rynku PL/EU. To element, który warto zawsze sprawdzić już w aktualnej specyfikacji konkretnej wersji.
 
 ![Ford Transit Courier Van II generacji](/images/ford-transit-courier-van-hero.jpg)
-
-*Źródła: cennik 2025/2026, katalog techniczny i specyfikacja producenta Ford dla Transit Courier Van / e-Transit Courier*

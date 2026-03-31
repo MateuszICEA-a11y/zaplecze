@@ -17,6 +17,10 @@ faq:
     answer: "Bez lusterek: 1956 mm. Z rozłożonymi lusterkami: ok. 2272 mm."
   - question: "Jak wysoka jest przestrzeń ładunkowa?"
     answer: "Wysokość ładowni wynosi 1387 mm. W Opel Vivaro C Van/Furgon w fabrycznych wersjach L1 i L2 nie ma klasycznej odmiany z wysokim dachem H2."
+sources:
+  - "dane producenta i homologacyjne dla Opel Vivaro C po debiucie w 2019 r. na rynku europejskim; wartości porównawcze dla modeli bliźniaczych EMP2 zgodnie z danymi wskazanymi przez fact-checking. Dokładne wymiary"
+  - "masy i wyposażenie mogą różnić się między rocznikami 2019"
+  - "2021 i 2024 oraz między rynkami UE/PL/UK."
 ---
 ## Wymiary zewnętrzne
 
@@ -99,5 +103,3 @@ W praktyce auta z tej rodziny oferują bardzo zbliżoną użyteczność. L1 zwyk
 {{% info title="Wymiary Vivaro A i B" icon="engineering" %}}
 Starsze generacje miały inne gabaryty niż Vivaro C. Vivaro A miało krótką wersję o długości około 4808 mm, natomiast Vivaro B L1 około 4998 mm, dlatego nie wolno mieszać danych między generacjami przy porównywaniu długości i przestrzeni ładunkowej.
 {{% /info %}}
-
-*Źródła: dane producenta i homologacyjne dla Opel Vivaro C po debiucie w 2019 r. na rynku europejskim; wartości porównawcze dla modeli bliźniaczych EMP2 zgodnie z danymi wskazanymi przez fact-checking. Dokładne wymiary, masy i wyposażenie mogą różnić się między rocznikami 2019, 2021 i 2024 oraz między rynkami UE/PL/UK.*

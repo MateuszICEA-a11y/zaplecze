@@ -17,6 +17,15 @@ faq:
     answer: "W Vivaro C silnik 2.0D zwykle zużywa więcej paliwa niż 1.5D, ale różnica zależy od wersji 145 lub 177 KM, skrzyni 6MT albo 8AT, długości nadwozia i obciążenia. W zamian 2.0D lepiej znosi cięższą pracę i jazdę z większym ładunkiem."
   - question: "Jak obniżyć spalanie Vivaro?"
     answer: "Najwięcej daje dobranie silnika do pracy auta, unikanie krótkich odcinków, utrzymywanie prawidłowego ciśnienia w oponach i spokojniejsza jazda z umiarkowaną prędkością. W dieslach Euro 6 znaczenie mają też warunki regeneracji DPF, temperatura otoczenia i regularny serwis."
+sources:
+  - "dane modelowe i zakresy generacji wskazane przez fact-checkera; informacje o konfiguracjach WLTP"
+  - "platformach"
+  - "wariantach silnikowych"
+  - "bateriach 50/75 kWh"
+  - "zasięgach WLTP do ok. 230 km i do ok. 330 km"
+  - "ładowaniu DC do 100 kW"
+  - "kosztach energii oraz wpływie obciążenia"
+  - "DPF i AdBlue zgodnie z danymi weryfikacyjnymi do artykułu."
 ---
 ## Zużycie paliwa – silnik 1.5 D
 
@@ -101,5 +110,3 @@ Chip tuning może zmienić charakterystykę pracy silnika, ale nie ma podstaw, b
 {{% /info %}}
 
 Dla porównań technicznych warto trzymać się właściwych rodzin modeli. Vivaro B zestawiamy z Renault Trafic, Nissan NV300 i Fiat Talento, natomiast Vivaro C z Peugeot Expert, Citroën Jumpy/Dispatch, Toyota ProAce oraz Fiat Scudo/Ulysse dostawczym, bo to jego rzeczywiści bliźniacy konstrukcyjni.
-
-*Źródła: dane modelowe i zakresy generacji wskazane przez fact-checkera; informacje o konfiguracjach WLTP, platformach, wariantach silnikowych, bateriach 50/75 kWh, zasięgach WLTP do ok. 230 km i do ok. 330 km, ładowaniu DC do 100 kW, kosztach energii oraz wpływie obciążenia, DPF i AdBlue zgodnie z danymi weryfikacyjnymi do artykułu.*

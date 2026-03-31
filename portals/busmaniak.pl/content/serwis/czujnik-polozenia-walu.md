@@ -20,6 +20,12 @@ faq:
     answer: "Bezpośrednio nie – czujnik jest elementem pomiarowym, nie wykonawczym. Jednak jazda z wadliwym czujnikiem powoduje nieprawidłowy wtrysk paliwa, co obciąża filtr DPF i może prowadzić do jego przedwczesnego zapchania."
   - question: "Gdzie znajduje się czujnik położenia wału w Fiacie Ducato 2.3?"
     answer: "W Ducato z silnikiem 2.3 MultiJet czujnik CKP jest zamontowany z tyłu silnika, od strony skrzyni biegów, i odczytuje sygnał z koła zamachowego. Dostęp do niego wymaga najczęściej podniesienia pojazdu."
+sources:
+  - "dokumentacja techniczna Fiat Professional"
+  - "motofocus.pl"
+  - "Wikipedia – Crankshaft position sensor"
+  - "ucando.pl"
+  - "incar.pl"
 ---
 
 ## Czym jest czujnik CKP i jak działa
@@ -138,5 +144,3 @@ Lokalizacja czujnika CKP różni się między modelami, ale w każdym przypadku 
 Pamiętaj, że w każdym z tych silników oprócz czujnika CKP na wale korbowym zamontowany jest również czujnik CMP na wałku rozrządu. Oba muszą „widzieć się" poprawnie, żeby sterownik zsynchronizował wtrysk. Wymiana jednego przy objawach wskazujących na oba (kody P0335 + P0340 jednocześnie) może nie rozwiązać problemu.
 
 Jeśli diagnostyka wykazała sprawny czujnik CKP, a objawy przypominają awarię [immobilizera](/serwis/immobilizer/) (rozrusznik kręci, silnik nie odpala), sprawdź, czy sterownik nie blokuje wtrysku z innego powodu. W busach z dużym przebiegiem problemy z komunikacją CAN-bus potrafią imitować awarię czujnika wału. Kontrolka [check engine](/serwis/check-engine/) z kodem P0335 w [Fiacie Ducato](/modele/fiat-ducato/) lub [Mercedesie Sprinterze](/modele/mercedes-sprinter/) wymaga zawsze sprawdzenia zarówno czujnika, jak i stanu koła zamachowego.
-
-*Źródła: dokumentacja techniczna Fiat Professional, motofocus.pl, Wikipedia – Crankshaft position sensor, ucando.pl, incar.pl*

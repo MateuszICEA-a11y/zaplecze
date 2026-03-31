@@ -20,6 +20,11 @@ faq:
     answer: "Tak – wersja 4Motion z silnikiem 2.0 TDI 177 KM. Rzadkie rozwiązanie w klasie dużych dostawczaków."
   - question: "Gdzie jest produkowany Crafter?"
     answer: "We Wrześni (Wielkopolska) – specjalnie zbudowana fabryka z inwestycją ok. 800 mln euro, uruchomiona w 2017 roku."
+sources:
+  - "Wikipedia – Volkswagen Crafter"
+  - "volkswagen-samochody-dostawcze.pl"
+  - "dane techniczne Auto-Data.net"
+  - "raporty DEKRA."
 ---
 
 ## Historia i generacje Volkswagen Crafter
@@ -160,5 +165,3 @@ Segment dostawczaków to rynek pełen alternatyw – Volkswagen Crafter mierzy s
 | Cena furgon L3H3 (netto) | ~185 000 zł | ~195 000 zł | ~150 000 zł | ~165 000 zł |
 
 Crafter wygrywa elastycznością napędu (jedyny z FWD+RWD+AWD) i największą pojemnością w segmencie (18,4 m³ w L4H3). [Sprinter](/modele/mercedes-sprinter/) oferuje wyższy prestiż i lepsze wyciszenie. [Fiat Ducato](/modele/fiat-ducato/) bije ceną. [Iveco Daily](/modele/iveco-daily/) – ramą pod najcięższe zabudowy.
-
-*Źródła: Wikipedia – Volkswagen Crafter, volkswagen-samochody-dostawcze.pl, dane techniczne Auto-Data.net, raporty DEKRA.*

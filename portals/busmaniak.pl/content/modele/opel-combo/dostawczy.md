@@ -16,6 +16,10 @@ faq:
   - question: "Czy Combo Van mieści europaletę?"
     answer: "W tej klasie aut wersja L1 mieści 1 europaletę, a L2 do 2 europalet. Sposób ustawienia ładunku zależy od rzeczywistych wymiarów przestrzeni ładunkowej i konfiguracji przegrody oraz drzwi."
 lead: "Opel Combo E w wersji dostawczej to lekki samochód użytkowy segmentu kompaktowych vanów, oferowany w dwóch długościach nadwozia i z ładownością sięgającą około 1000 kg w wybranych konfiguracjach. Sprawdza się w logistyce ostatniej mili, usługach serwisowych i codziennej pracy miejskiej."
+sources:
+  - "Opel"
+  - "dane homologacyjne i specyfikacje modelowe"
+  - "[Wikipedia – DMC](https://pl.wikipedia.org/wiki/Dopuszczalna_masa_ca%C5%82kowita)"
 ---
 ## Dane techniczne Opel Combo dostawczy
 
@@ -109,5 +113,3 @@ W benzynowym 1.2 Turbo kluczowy jest pasek rozrządu pracujący w oleju w starsz
 Filtr DPF nie jest elementem wymienianym według stałego przebiegu jak filtr oleju. W praktyce może wymagać diagnostyki, czyszczenia albo wymiany dopiero w razie zużycia, zapchania lub awarii osprzętu współpracującego.
 
 Tak samo nie da się uczciwie zadeklarować jednego „pewnego” przebiegu bez poważnych napraw. Trwałość 1.5 Diesel i 1.2 Turbo zależy od rocznika, warunków pracy, jakości serwisu oraz tego, czy auto jeździło głównie po mieście, czy w trasie.
-
-*Źródła: Opel, dane homologacyjne i specyfikacje modelowe, [Wikipedia – DMC](https://pl.wikipedia.org/wiki/Dopuszczalna_masa_ca%C5%82kowita)*

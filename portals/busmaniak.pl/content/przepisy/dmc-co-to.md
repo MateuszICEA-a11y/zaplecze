@@ -18,6 +18,10 @@ faq:
     answer: "Mandat do 3000 zł dla pojazdów do 3,5 t, zakaz dalszej jazdy do czasu rozładunku, a w razie wypadku ryzyko regresu ubezpieczeniowego."
   - question: "Czy DMC obejmuje masę kierowcy?"
     answer: "DMC to limit dla całego pojazdu z pasażerami i ładunkiem. Natomiast masa własna pojazdu wpisana w polskim dowodzie rejestracyjnym (pole G) jest zdefiniowana bez wagi kierowcy."
+sources:
+  - "Wikipedia – Dopuszczalna masa całkowita"
+  - "autocentrum.pl"
+  - "GITD"
 ---
 ## Czym jest DMC – dopuszczalna masa całkowita
 
@@ -146,5 +150,3 @@ Procedura podwyższenia DMC wymaga kilku kroków:
 - **Wymiana dowodu rejestracyjnego** – w Wydziale Komunikacji z kompletem dokumentów
 
 Koszt procedury wynosi 1500–5000 zł, a czas realizacji to 1–3 miesiące. Pamiętaj, że podwyższenie DMC powyżej 3,5 tony ma poważne konsekwencje. Wymaga prawa jazdy kategorii C1, a pojazd staje się ciężarówką. Oznacza to obowiązek korzystania z systemu e-TOLL w Polsce i odpowiedników za granicą (np. GO-Box w Austrii), a także ograniczenie prędkości na autostradach do 80 km/h.
-
-*Źródła: Wikipedia – Dopuszczalna masa całkowita, autocentrum.pl, GITD*

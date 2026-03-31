@@ -16,6 +16,11 @@ faq:
   - question: "Czy Partner Long mieści 2 europalety?"
     answer: "Deklaracja przewozu 2 europalet wymaga odniesienia do oficjalnej konfiguracji producenta. Wersja L2 ma szerokość między nadkolami ok. 1225 mm i standardową objętość 4,4 m³, ale sama długość podłogi oraz sposób ustawienia palet muszą być potwierdzone dla konkretnej zabudowy i układu kabiny."
 lead: "Peugeot Partner III Long (L2) to wydłużona wersja kompaktowego vana o rozstawie osi 2975 mm. W porównaniu z Short (L1) ma ok. 4753 mm długości zamiast 4403 mm, większy rozstaw osi i wyraźnie większą przestrzeń ładunkową, co realnie poprawia funkcjonalność w pracy."
+sources:
+  - "katalog/model year"
+  - "cennik"
+  - "dane homologacyjne"
+  - "oficjalny konfigurator lub broszura techniczna producenta dla konkretnego rynku i rocznika."
 ---
 ## Wymiary kluczowe
 
@@ -120,5 +125,3 @@ W tej części rynku Partner Long nie funkcjonuje w próżni. Berlingo L2 i Comb
 | Automat | EAT8 w odpowiednich wersjach | EAT8 w odpowiednich wersjach | automat stosowany zależnie od rocznika i rynku |
 
 Mechanika i główne wymiary są bardzo zbliżone, dlatego o wyborze często decydują cena, dostępność konkretnej wersji i warunki flotowe. Z perspektywy segmentu warto pamiętać, że Toyota ProAce City Long i Fiat Doblò LWB również korzystają z tej samej architektury, mają długość ok. 4753 mm, zbliżoną objętość 4,4 m³ i podobne diesle 1.5.
-
-*Źródła: katalog/model year, cennik, dane homologacyjne, oficjalny konfigurator lub broszura techniczna producenta dla konkretnego rynku i rocznika.*

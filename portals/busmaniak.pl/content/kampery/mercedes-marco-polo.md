@@ -18,6 +18,10 @@ faq:
     answer: "Marco Polo oferuje wyższy standard wykończenia wnętrza, zbliżony do luksusowych limuzyn Mercedesa. California jest bardziej kompaktowa, ma legendarną wartość odsprzedaży i szerszy rynek akcesoriów. Oba modele w wyższych wersjach (Ocean/Coast) mają podobną funkcjonalność kuchni. Wybór zależy od priorytetu – luksus czy praktyczność."
   - question: "Ile osób śpi w Mercedesie Marco Polo?"
     answer: "Marco Polo ma 4 miejsca spalne. Łóżko w podnoszonym dachu ma wymiary 205 × 113 cm. Dolne łóżko, powstałe z rozłożenia kanapy, ma szerokość ok. 113 cm (w wersji z aneksem kuchennym). To pojazd dla pary lub rodziny z dwójką małych dzieci."
+sources:
+  - "Mercedes-Benz Vans"
+  - "Westfalia"
+  - "dane z portali OLX i Otomoto"
 ---
 
 ## Czym jest Mercedes Marco Polo
@@ -142,5 +146,3 @@ Przed podjęciem decyzji warto uczciwie zestawić mocne i słabe strony tego poj
 -   **Brak hybrydy** – California T7 oferuje eHybrid, Marco Polo pozostaje przy dieslu.
 
 Choć brakuje napędu hybrydowego, Mercedes oferuje alternatywę w postaci w pełni elektrycznego EQV z modułem Marco Polo Module. Oferuje on akumulator o pojemności 90 kWh netto, co przekłada się na realny zasięg autostradowy rzędu 220-250 km (oraz do 350 km w cyklu mieszanym WLTP).
-
-*Źródła: Mercedes-Benz Vans, Westfalia, dane z portali OLX i Otomoto (marzec 2026)*

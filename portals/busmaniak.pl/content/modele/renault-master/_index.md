@@ -23,6 +23,10 @@ faq:
 image: "/images/renault-master-hero.jpg"
 image_alt: "Renault Master III furgon L3H2 przy rampie załadunkowej"
 lead: "Renault Master to jeden z najpopularniejszych dużych samochodów dostawczych w Europie – konkurent Fiata Ducato, Mercedesa Sprinter i Volkswagena Craftera. Master III produkowany od 2010 roku w fabryce Batilly we Francji oferuje silniki 2.3 dCi w zakresie 100–180 KM, pojemność ładunkową 8–17 m³ i DMC od 3,1 do 4,5 t. Ten przewodnik zbiera wszystkie dane techniczne, wersje nadwoziowe i praktyczne informacje serwisowe w jednym miejscu."
+sources:
+  - "Wikipedia – Renault Master"
+  - "renault.pl"
+  - "auto-data.net."
 ---
 
 ## Historia i generacje Renault Master {#historia-generacje}
@@ -142,5 +146,3 @@ Segment dostawczaków to rynek pełen alternatyw – Renault Master mierzy się 
 | Cena L3H2 (netto) | ~150 000 zł | ~150 000 zł | ~170 000 zł | ~195 000 zł | ~185 000 zł |
 
 Master wygrywa ceną, mocą silników i największą ładownością w segmencie 3,5 t. [Fiat Ducato](/modele/fiat-ducato/) oferuje zbliżone parametry przy identycznej cenie. [Opel Movano](/modele/opel-movano/) C to od 2021 bliźniak Ducato (nie Mastera!). [Mercedes Sprinter](/modele/mercedes-sprinter/) – premium z RWD. [VW Crafter](/modele/volkswagen-crafter/) – największa kubatura i AWD.
-
-*Źródła: Wikipedia – Renault Master, renault.pl, auto-data.net.*

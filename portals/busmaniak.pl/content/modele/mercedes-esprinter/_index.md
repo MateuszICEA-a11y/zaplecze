@@ -19,6 +19,11 @@ faq:
     answer: "eSprinter obsługuje ładowanie prądem stałym (DC) o mocy do 115 kW. Ładowanie od 10 do 80% trwa ok. 32 minuty przy pełnej mocy."
   - question: "Czy eSprinter ma napęd na przednią czy tylną oś?"
     answer: "Druga generacja eSprintera (od 2024) oferuje napęd na tylną oś (RWD). Pierwsza generacja (2019–2023) miała napęd na przód (FWD)."
+sources:
+  - "Mercedes-Benz Vans Polska"
+  - "katalog techniczny eSprinter 2024"
+  - "Wikipedia – Rekuperacja"
+  - "testy prasowe eSprinter 2024."
 ---
 
 ## Historia i konstrukcja Mercedes eSprinter
@@ -118,5 +123,3 @@ eSprinter rywalizuje z [Fordem E-Transit](/modele/ford-e-transit/), Renault Mast
 | Cena (netto, PL) | od ~330 000 zł | od ~270 000 zł | od ~280 000 zł | od ~260 000 zł |
 
 Ford E-Transit wyróżnia się wyższą ładownością i niższą ceną. Renault Master E-Tech imponuje zasięgiem przy mniejszej baterii. E-Ducato oferuje największą kubaturę. eSprinter za to zapewnia najwyższy komfort jazdy, zaawansowane systemy ADAS i prestiż marki Mercedes – co ma znaczenie w usługach kurierskich i flotach korporacyjnych.
-
-*Źródła: Mercedes-Benz Vans Polska, katalog techniczny eSprinter 2024, Wikipedia – Rekuperacja, testy prasowe eSprinter 2024.*

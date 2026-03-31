@@ -20,6 +20,10 @@ faq:
     answer: "Najczęstsze usterki Toyoty Proace II to zarastanie wtryskiwaczy silnika 1.5 D-4D przy dużych przebiegach oraz zapychanie się filtra DPF przy krótkich trasach miejskich – identyczne jak w bliźniaczych Peugeot Expert i Citroën Jumpy. W autach z automatyczną skrzynią EAT8 zdarzają się sporadyczne problemy z mechatronikiem. Starsze egzemplarze Proace I (2013–2016) bywają dotknięte korozją progów."
   - question: "Co jest lepsze Renault Trafic czy Toyota Proace?"
     answer: "Toyota Proace II ma większą ładownię (Long: 6,1 m³ vs Trafic L2: ~5,2 m³) i nowocześniejszą platformę PSA EMP2. Renault Trafic wyróżnia się własną, sprawdzoną jednostką 2.0 dCi i rozbudowaną siecią serwisową w Polsce. Proace wygrywa objętością ładowni i dostępnością wersji elektrycznej, Trafic – ceną zakupu i kosztami eksploatacji w flotach z dostępem do ASO Renault."
+sources:
+  - "Wikipedia – Toyota ProAce"
+  - "toyota.pl"
+  - "auto-data.net."
 ---
 
 ## Historia i generacje Toyota ProAce
@@ -145,5 +149,3 @@ Zakup Toyota Proace to wydatek, który zależy od generacji, wersji silnikowej i
 | Nowy ProAce Van Medium (1.5 D-4D 100) | od ok. 130 000 zł netto |
 | Nowy ProAce Van Long (2.0 D-4D 145) | od ok. 150 000 zł netto |
 | ProAce Electric (75 kWh) | od ok. 230 000 zł netto |
-
-*Źródła: Wikipedia – Toyota ProAce, toyota.pl, auto-data.net.*

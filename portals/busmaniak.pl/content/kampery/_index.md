@@ -23,6 +23,10 @@ faq:
     answer: "Fiat Ducato stanowi bazę dla ponad 75% europejskich kamperów dzięki niskiemu progowi podłogi, szerokiej gamie rozstawów osi i dedykowanemu podwoziu kamperowemu oferowanemu przez fabrykę."
   - question: "Ile kamperów jest zarejestrowanych w Polsce?"
     answer: "Na koniec 2024 roku w Polsce zarejestrowanych było ok. 21 000 kamperów i ok. 120 000 przyczep kempingowych. W samym 2024 roku przybyło 2093 nowych rejestracji, co oznacza wzrost o 26% rok do roku."
+sources:
+  - "Wikipedia – [Samochód kempingowy](https://pl.wikipedia.org/wiki/Samoch%C3%B3d_kempingowy)"
+  - "Polski Związek Przemysłu Motoryzacyjnego – dane rejestracyjne 2024"
+  - "Dane cenowe dealerów: Elcamp, Kampery.info, Auto-Mobil"
 ---
 
 ## Czym jest kamper i dlaczego warto?
@@ -211,9 +215,3 @@ Wybór producenta wpływa na stosunek ceny do jakości, dostępność serwisu w 
 Pełne zestawienie modeli z cenami i opiniami znajdziesz w [rankingu kamperów 2026](/porownania/ranking-kamperow/).
 
 ---
-
-**Źródła:**
-
-- Wikipedia – [Samochód kempingowy](https://pl.wikipedia.org/wiki/Samoch%C3%B3d_kempingowy)
-- Polski Związek Przemysłu Motoryzacyjnego – dane rejestracyjne 2024
-- Dane cenowe dealerów: Elcamp, Kampery.info, Auto-Mobil (marzec 2026)

@@ -17,6 +17,10 @@ faq:
   - question: "Czym różni się Doblò Cargo od Panoramy?"
     answer: "Cargo to wersja dostawcza z przegrodą i homologacją N1. Panorama przewozi 5–7 pasażerów i ma tylną kanapę zamiast przestrzeni ładunkowej."
 lead: "Fiat Doblò to kompaktowy van, który przez ponad dwie dekady utrzymuje pozycję jednego z najbardziej wszechstronnych pojazdów segmentu. Kupujesz użytkowego czy rodzinnego – i tak trafisz na Doblò jako poważną opcję. Poniżej znajdziesz twarde dane dla wszystkich trzech generacji."
+sources:
+  - "Wikipedia – Fiat Doblò"
+  - "Fiat Professional Polska"
+  - "auto-data.net."
 ---
 ## Historia i generacje Fiat Doblò
 
@@ -126,5 +130,3 @@ Doblò III dzieli platformę EMP2 z Oplem Combo, Citroënem Berlingo i Peugeotem
 | Cena Van L1 (netto) | od 105 000 zł | od 105 000 zł | od 92 000 zł | od 90 000 zł | od 130 000 zł |
 
 Doblò III to bliźniak [Opla Combo](/modele/opel-combo/) E, [Citroëna Berlingo](/modele/citroen-berlingo/) III i Peugeota Partnera III na platformie EMP2. [Renault Kangoo](/modele/renault-kangoo/) wygrywa systemem Open Sesame, VW Caddy kulturą jazdy, a Doblò/Combo/Berlingo – ceną i największą ładownością w segmencie.
-
-*Źródła: Wikipedia – Fiat Doblò, Fiat Professional Polska, auto-data.net.*

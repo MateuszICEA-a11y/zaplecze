@@ -20,6 +20,10 @@ faq:
     answer: "Nie automatycznie. W Polsce standardowo przy użytku mieszanym odlicza się 50% VAT. Pełne, 100-procentowe odliczenie jest możliwe przy użytkowaniu wyłącznie firmowym i spełnieniu formalności, takich jak VAT-26 i ewidencja przebiegu, albo gdy pojazd spełnia ustawowe kryteria konstrukcyjne wyłączające użytek prywatny. Sama kategoria N1 nie wystarcza."
   - question: "Który silnik Trafic Combi jest bardziej niezawodny – 1.6 czy 2.0 dCi?"
     answer: "W praktyce wybór zależy od rocznika i sposobu użytkowania. 1.6 dCi w słabszych odmianach to prostsza propozycja do spokojniejszej pracy, a 2.0 dCi M9T od 2019 roku daje wyraźnie lepszą elastyczność. Przy zakupie używanego egzemplarza ważniejsze od samej pojemności bywają stan DPF, EGR, układu AdBlue/SCR w nowszych autach, dwumasy, turbosprężarki oraz historia serwisowa."
+sources:
+  - "dokumentacja modelowa Renault Trafic III"
+  - "dane homologacyjne i rejestracyjne pojazdów"
+  - "obowiązujące zasady rozliczania VAT dla pojazdów firmowych w Polsce"
 ---
 ## Czym jest brygadówka i dlaczego Trafic?
 
@@ -99,5 +103,3 @@ Taki układ ma sens wtedy, gdy ważniejsza od maksymalnej kubatury jest mobilno�
 Trzeba jednak pamiętać o ograniczeniach. W porównaniu z klasycznym furgonem paka jest krótsza, przewóz długich elementów bywa problematyczny, a montaż regałów jest trudniejszy. Do tego dochodzi mniejsza ładowność przy 5–6 osobach oraz wyższa masa własna wynikająca z drugiego rzędu siedzeń i przegrody.
 
 Na rynku wtórnym warto podejść do zakupu bardzo praktycznie. Trzeba sprawdzić stan drzwi przesuwnych, korozję podwozia i krawędzi, kompletność przegrody, historię serwisu olejowego oraz ogólne zużycie wnętrza. W brygadówce właśnie te elementy najczęściej pokazują, czy auto było narzędziem pracy używanym rozsądnie, czy eksploatowanym bez większej kontroli.
-
-*Źródła: dokumentacja modelowa Renault Trafic III, dane homologacyjne i rejestracyjne pojazdów, obowiązujące zasady rozliczania VAT dla pojazdów firmowych w Polsce*

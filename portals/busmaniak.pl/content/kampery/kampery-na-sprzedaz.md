@@ -18,6 +18,10 @@ faq:
     answer: "Tak – na Caravans Salon w Poznaniu czy Camper Caravan Show w Nadarzynie dealerzy oferują rabaty **5–15%** na modele z ekspozycji oraz pakiety wyposażenia w cenie. Można też obejrzeć dziesiątki modeli w jednym miejscu, co ułatwia porównanie."
   - question: "Jak sprawdzić kampera przed zakupem online?"
     answer: "Poproś sprzedawcę o zdjęcia spodu pojazdu, instalacji gazowej i wodnej oraz dowodu rejestracyjnego w celu weryfikacji DMC. Sprawdź numer VIN w bazie CEPiK. Przed zakupem zawsze obejrzyj kampera osobiście z wilgotnościomierzem."
+sources:
+  - "Polski Związek Przemysłu Motoryzacyjnego"
+  - "dane z Otomoto i mobile.de"
+  - "Caravans Salon Poznań"
 ---
 
 ## Portale ogłoszeniowe – największy wybór
@@ -132,5 +136,3 @@ Cykl cenowy na rynku kamperów jest bardzo przewidywalny. Wykorzystaj go na swoj
 Idealna strategia to obserwowanie rynku od września, określenie budżetu i kryteriów, a następnie złożenie oferty w styczniu lub lutym. Pamiętaj jednak, że w segmencie [tanich kamperów](/kampery/tanie-kampery/) poniżej 100 tys. zł sezonowość jest mniej odczuwalna – tu liczy się głównie szybkość reakcji.
 
 Więcej na temat kosztów zakupu i posiadania kampera przeczytasz w artykule o [cenach kamperów](/kampery/kamper-cena/).
-
-*Źródła: Polski Związek Przemysłu Motoryzacyjnego, dane z Otomoto i mobile.de, Caravans Salon Poznań*
