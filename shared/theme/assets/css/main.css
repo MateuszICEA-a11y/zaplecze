@@ -1092,6 +1092,11 @@ a:hover { color: var(--c-orange-hover); }
 /* ══════════════════════════════════════
    BENTO GRID – 4 cards, Stitch 9e85712a
    ══════════════════════════════════════ */
+.bento-why-wrap {
+  background: var(--c-bg-alt);
+  padding-bottom: 1rem;
+}
+
 .bento {
   max-width: 1400px;
   margin: 0 auto;
@@ -1209,8 +1214,7 @@ a:hover { color: var(--c-orange-hover); }
   margin-bottom: 1.25rem;
 }
 
-.why__title em {
-  font-style: italic;
+.why__title span {
   color: var(--c-orange);
 }
 
