@@ -228,12 +228,15 @@ a:hover { color: var(--c-orange-hover); }
    ══════════════════════════════════════ */
 .dropdown {
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .dropdown__arrow {
-  font-size: .65em;
+  font-size: 1.1em;
   opacity: .5;
   transition: transform .2s;
+  vertical-align: middle;
 }
 
 .dropdown:hover .dropdown__arrow {
