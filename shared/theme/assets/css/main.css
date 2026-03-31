@@ -338,6 +338,8 @@ a:hover { color: var(--c-orange-hover); }
   border-radius: 4px;
   transition: background .15s, color .15s;
   white-space: nowrap;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .dropdown__tool:hover {
