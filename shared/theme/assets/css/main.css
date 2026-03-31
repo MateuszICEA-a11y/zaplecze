@@ -485,6 +485,7 @@ a:hover { color: var(--c-orange-hover); }
     transform: none;
     padding-top: 0;
     left: auto;
+    overflow: hidden;
   }
 
   .dropdown:hover .dropdown__panel:not(.dropdown__panel--open) {
@@ -492,10 +493,12 @@ a:hover { color: var(--c-orange-hover); }
   }
 
   .dropdown__inner {
-    padding: .5rem 1.5rem 1rem;
+    padding: .5rem 1rem 1rem;
     background: #f8f8f8;
     border-bottom: 1px solid #eee;
     box-shadow: inset 0 2px 4px rgba(0,0,0,.04);
+    overflow: hidden;
+    max-width: 100%;
   }
 
   .dropdown__breadcrumb { display: none; }
@@ -528,6 +531,8 @@ a:hover { color: var(--c-orange-hover); }
   .brand-icon {
     filter: none;
     opacity: .6;
+    width: 18px;
+    height: 18px;
   }
 
   /* "Zobacz wszystko" link */
