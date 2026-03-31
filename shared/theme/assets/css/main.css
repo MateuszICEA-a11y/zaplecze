@@ -2132,14 +2132,14 @@ blockquote {
   overflow: hidden;
 }
 .sources__side {
-  background: var(--c-bg-alt);
+  background: #000;
   writing-mode: vertical-lr;
   transform: rotate(180deg);
   padding: 15px 10px;
   text-align: center;
   font-size: .7rem;
   font-weight: 800;
-  color: var(--c-text-light);
+  color: #fff;
   border-right: 1px solid var(--c-border);
   letter-spacing: .1em;
   text-transform: uppercase;
@@ -2149,12 +2149,13 @@ blockquote {
   flex: 1;
 }
 .sources__list {
-  list-style: none;
-  padding: 0;
+  list-style: disc;
+  padding-left: 1.25rem;
   margin: 0;
 }
 .sources__list li {
   font-size: .85rem;
+  font-style: italic;
   margin-bottom: 6px;
   line-height: 1.5;
 }
