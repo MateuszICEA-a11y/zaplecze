@@ -109,12 +109,14 @@
     {{/* ═══ SOURCES ═══ */}}
     {{ with .Params.sources }}
     <section class="sources">
-      <div class="sources__title">Źródła:</div>
-      <ul class="sources__list">
-        {{ range . }}
-        <li>{{ . | markdownify }}</li>
-        {{ end }}
-      </ul>
+      <div class="sources__side">Źródła</div>
+      <div class="sources__body">
+        <ul class="sources__list">
+          {{ range . }}
+          <li>{{ . | markdownify }}</li>
+          {{ end }}
+        </ul>
+      </div>
     </section>
     {{ end }}
 
