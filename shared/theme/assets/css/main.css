@@ -329,26 +329,30 @@ a:hover { color: var(--c-orange-hover); }
 .dropdown__tool {
   display: flex;
   align-items: center;
-  gap: .75rem;
-  padding: .75rem 1rem;
-  text-decoration: none;
+  gap: .6rem;
+  padding: .55rem .75rem;
+  font-size: .9375rem;
+  font-weight: 500;
   color: var(--c-text);
-  border-radius: var(--radius);
-  transition: background .15s;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background .15s, color .15s;
+  white-space: nowrap;
 }
 
 .dropdown__tool:hover {
   background: var(--c-bg-alt);
+  color: var(--c-orange);
 }
 
 .dropdown__tool-icon {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: var(--c-orange);
   flex-shrink: 0;
 }
 
 .dropdown__tool-name {
-  font-weight: 600;
+  font-weight: 500;
   font-size: .9375rem;
 }
 
