@@ -560,17 +560,23 @@ a:hover { color: var(--c-orange-hover); }
     right: auto;
   }
 
+  .dropdown__panel--small {
+    position: static;
+    width: 100%;
+    transform: none;
+    left: auto;
+    right: auto;
+  }
+
   .dropdown--small .dropdown__inner {
+    padding: .25rem 0 .75rem;
+    margin: 0;
+    max-width: 100%;
     background: #f8f8f8;
-  }
-
-  .dropdown__tool {
-    color: var(--c-dark);
-    padding: .45rem 1rem;
-  }
-
-  .dropdown__tool-icon {
-    font-size: 16px;
+    border-radius: 0;
+    border-bottom: 1px solid #eee;
+    box-shadow: none;
+    overflow: hidden;
   }
 
   .dropdown__tool:hover {
