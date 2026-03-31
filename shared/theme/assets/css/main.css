@@ -555,14 +555,7 @@ a:hover { color: var(--c-orange-hover); }
   .dropdown__panel--small {
     position: static;
     width: 100%;
-    transform: none;
-    left: auto;
-    right: auto;
-  }
-
-  .dropdown__panel--small {
-    position: static;
-    width: 100%;
+    max-width: 100%;
     transform: none;
     left: auto;
     right: auto;
