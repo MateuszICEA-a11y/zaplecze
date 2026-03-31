@@ -29,7 +29,7 @@ Wybierz model busa z listy rozwijanej – kalkulator automatycznie załaduje mas
 
 ## Dopuszczalna masa całkowita – co musisz wiedzieć
 
-[Dopuszczalna masa całkowita](https://pl.wikipedia.org/wiki/Dopuszczalna_masa_całkowita) (DMC) to suma masy własnej pojazdu i maksymalnego obciążenia, jakie producent dopuszcza dla danego modelu. W Polsce limit 3500 kg ma kluczowe znaczenie – pojazdy do tej masy można prowadzić na prawie jazdy kategorii B.
+[Dopuszczalna masa całkowita](https://pl.wikipedia.org/wiki/Dopuszczalna_masa_ca%C5%82kowita) (DMC) to suma masy własnej pojazdu i maksymalnego obciążenia, jakie producent dopuszcza dla danego modelu. W Polsce limit 3500 kg ma kluczowe znaczenie – pojazdy do tej masy można prowadzić na prawie jazdy kategorii B.
 
 Masa własna pojazdu, widniejąca w dowodzie rejestracyjnym w polu G, nie oznacza „gołego” auta. Zgodnie z unijną definicją, uwzględnia ona masę pojazdu gotowego do drogi z płynami eksploatacyjnymi, zbiornikiem paliwa napełnionym w 90% oraz zryczałtowaną wagę kierowcy wynoszącą 75 kg. Każdy dodatkowy element – hak holowniczy (15–30 kg), bagażnik dachowy (10–25 kg), markiza (15–35 kg) czy zabudowa kempingowa (200–600 kg) – zmniejsza realną ładowność.
 

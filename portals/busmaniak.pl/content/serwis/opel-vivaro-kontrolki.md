@@ -131,5 +131,5 @@ Ogólne informacje o kontrolkach w dostawczakach znajdziesz w artykule [kontrolk
 
 Źródła:
 - Instrukcja obsługi Opel Vivaro (2007, 2017): public-servicebox.opel.com
-- Kontrolki samochodowe (Wikipedia): https://pl.wikipedia.org/wiki/Kontrolka_(motoryzacja)
+- Kontrolki samochodowe (Wikipedia): https://pl.wikipedia.org/wiki/Kontrolka)
 - Dane serwisowe: dixi-car.pl, opel24.com

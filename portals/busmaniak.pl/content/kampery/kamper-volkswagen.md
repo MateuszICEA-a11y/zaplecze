@@ -61,7 +61,7 @@ Różnica między Beach a Ocean to ponad 80 tys. zł, ale w praktyce Beach wymag
 
 ## VW California T7 – nowości na 2025/2026
 
-Generacja T7 to największa zmiana w historii modelu California. Nowa [platforma MQB](https://pl.wikipedia.org/wiki/Volkswagen_Group_MQB_platform) Evo oznacza całkowicie przeprojektowane wnętrze i napęd hybrydowy. Ogromną nowością jest też zastosowanie obustronnych drzwi przesuwnych we wszystkich wersjach. Dzięki temu można dostać się do aneksu kuchennego zarówno od wewnątrz, jak i z zewnątrz, co tworzy wokół pojazdu dwie strefy tarasowe po rozłożeniu markiz.
+Generacja T7 to największa zmiana w historii modelu California. Nowa platforma MQB Evo oznacza całkowicie przeprojektowane wnętrze i napęd hybrydowy. Ogromną nowością jest też zastosowanie obustronnych drzwi przesuwnych we wszystkich wersjach. Dzięki temu można dostać się do aneksu kuchennego zarówno od wewnątrz, jak i z zewnątrz, co tworzy wokół pojazdu dwie strefy tarasowe po rozłożeniu markiz.
 
 ### Kluczowe zmiany względem T6.1
 

@@ -69,7 +69,7 @@ Dostępność skrzyni automatycznej zależała od silnika, rocznika i rynku. Nie
 
 Napęd w Proace Verso występował jako przedni. Przy porównaniu ofert warto zestawiać nie tylko silnik i skrzynię, ale też rok modelowy – szczególnie po liftingu 2024, gdy zmieniły się multimedia, ADAS i część konfiguracji napędowych.
 
-Jeśli zależy Ci na technicznym tle, sama konstrukcja należy do rodziny średnich vanów opartych na platformie [EMP2](https://pl.wikipedia.org/wiki/PSA_EMP2) dla pojazdów użytkowych. To tłumaczy bliskie pokrewieństwo z modelami Peugeot Traveller, Citroën SpaceTourer czy Opel Zafira Life.
+Jeśli zależy Ci na technicznym tle, sama konstrukcja należy do rodziny średnich vanów opartych na platformie EMP2 dla pojazdów użytkowych. To tłumaczy bliskie pokrewieństwo z modelami Peugeot Traveller, Citroën SpaceTourer czy Opel Zafira Life.
 
 ![Toyota Proace osobowy – Verso, miejsca, ceny](/images/toyota-proace-osobowy-hero.jpg)
 

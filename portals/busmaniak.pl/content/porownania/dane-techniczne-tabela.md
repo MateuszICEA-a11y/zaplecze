@@ -17,7 +17,7 @@ faq:
   - question: "Czy w busie dostawczym lepszy jest automat czy manual?"
     answer: "Automat (zwłaszcza klasyczny, np. 9G-Tronic w Sprinterze, ZF 8HP w Iveco Daily, czy nowoczesny, 8-biegowy automat (AT8) w Ducato) znacząco poprawia komfort i obniża spalanie w mieście. Manual jest tańszy w zakupie i naprawach. Dla kurierów miejskich – automat, dla tras długodystansowych – oba rozwiązania sprawdzają się równie dobrze."
   - question: "Co oznacza norma Euro 6d i Euro 6e?"
-    answer: "Normy Euro 6d i 6e określają dopuszczalne limity emisji spalin. Euro 6e (obowiązkowa od 2024 r. dla nowych typów) jest bardziej restrykcyjna – wymaga niższych emisji NOx w testach [RDE (Real Driving Emissions)](https://pl.wikipedia.org/wiki/Real_Driving_Emissions). W praktyce oznacza to wyższe koszty układu wydechowego (AdBlue, SCR, DPF), ale lepszą jakość powietrza w miastach."
+    answer: "Normy Euro 6d i 6e określają dopuszczalne limity emisji spalin. Euro 6e (obowiązkowa od 2024 r. dla nowych typów) jest bardziej restrykcyjna – wymaga niższych emisji NOx w testach [RDE (Real Driving Emissions)](https://pl.wikipedia.org/wiki/RDE). W praktyce oznacza to wyższe koszty układu wydechowego (AdBlue, SCR, DPF), ale lepszą jakość powietrza w miastach."
   - question: "Który bus dostawczy ma napęd na cztery koła?"
     answer: "Napęd 4x4 oferują: Mercedes Sprinter (4x4 stały), Ford Transit (AWD automatyczny), Iveco Daily (4x4 dołączany) oraz Volkswagen Crafter/MAN TGE (4Motion). Wśród średnich vanów opcjonalne systemy poprawy trakcji oferują m.in. modele koncernu Stellantis."
 ---

@@ -60,7 +60,7 @@ Volkswagen oferuje napęd 4Motion w dwóch segmentach – średnim ([Transporter
 
 **Transporter T6.1 4Motion**, którego produkcja zakończyła się w 2024 roku, pozostaje popularnym wyborem na rynku wtórnym. Korzysta ze sprzęgła Haldex piątej generacji, które automatycznie dołącza tylną oś w przypadku utraty przyczepności. System dostępny był z silnikami 2.0 TDI (od 150 do 204 KM) oraz skrzyniami manualnymi lub DSG.
 
-**Crafter 4Motion** bazuje na innym rozwiązaniu – jest to [sprzęgło wielopłytkowe](https://pl.wikipedia.org/wiki/Sprzęgło_wielopłytkowe), które również dołącza napęd w sposób automatyczny. System nie posiada reduktora i łączony jest z najmocniejszym silnikiem 2.0 TDI o mocy 177 KM i 8-biegowym automatem.
+**Crafter 4Motion** bazuje na innym rozwiązaniu – jest to [sprzęgło wielopłytkowe](https://pl.wikipedia.org/wiki/Sprz%C4%99g%C5%82o), które również dołącza napęd w sposób automatyczny. System nie posiada reduktora i łączony jest z najmocniejszym silnikiem 2.0 TDI o mocy 177 KM i 8-biegowym automatem.
 
 Warto wspomnieć o bliźniaczym modelu MAN TGE 4x4. Mechanicznie jest to ten sam pojazd co Crafter 4Motion, ale często wybierany jest przez firmy ze względu na dostępność sieci serwisowej dla aut ciężarowych (24/7) oraz inną politykę cenową.
 

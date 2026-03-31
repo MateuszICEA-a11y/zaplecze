@@ -89,7 +89,7 @@ Zużycie paliwa busa zależy od wielu czynników, z których część można kon
 Główne czynniki wpływające na spalanie:
 
 - **Masa ładunku** – każde 100 kg dodatkowego obciążenia to 0,3–0,5 l/100 km więcej. Pusty bus spala nawet 25% mniej niż w pełni załadowany
-- **[Opór aerodynamiczny](https://pl.wikipedia.org/wiki/Opór_aerodynamiczny)** – wysoka zabudowa (H2, H3) zwiększa spalanie na autostradzie o 10–20%. Bagażnik dachowy dodaje 0,5–1,5 l/100 km przy 120 km/h
+- **[Opór aerodynamiczny](https://pl.wikipedia.org/wiki/Op%C3%B3r_aerodynamiczny)** – wysoka zabudowa (H2, H3) zwiększa spalanie na autostradzie o 10–20%. Bagażnik dachowy dodaje 0,5–1,5 l/100 km przy 120 km/h
 - **Przełożenie tylnego mostu** – w pojazdach z napędem na tył (np. Sprinter, Daily) wybór „krótkiego” przełożenia, idealnego do holowania przyczep, zwiększa obroty silnika na autostradzie, podnosząc spalanie o 1–2,5 l/100 km w porównaniu z mostem „długim”, zoptymalizowanym pod trasy
 - **Ogumienie** – opony klasy C (dostawcze) o niskich oporach toczenia oszczędzają 0,3–0,5 l/100 km w porównaniu z tanimi zamiennikami. Niedopompowane opony (0,5 bar poniżej normy) zwiększają spalanie o 3–5%
 - **Styl jazdy** – agresywne przyspieszanie i hamowanie zwiększa zużycie paliwa o 15–25% w porównaniu z jazdą ekonomiczną. Tempomat na trasie obniża spalanie o 5–10%

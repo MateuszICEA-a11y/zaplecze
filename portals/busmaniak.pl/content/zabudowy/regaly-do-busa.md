@@ -57,7 +57,7 @@ Samodzielna zabudowa ze sklejki wodoodpornej, zwykle o grubości 9–12 mm (rzad
 
 ## Producenci regałów do busów {#producenci}
 
-Oprócz dominujących na rynku systemów aluminiowych i stalowych warto zwrócić uwagę na rozwiązania alternatywne. Czołowym przykładem jest szwedzki koncern Modul-System, który do produkcji regałów wykorzystuje [stal ultra-wysokowytrzymałą (UHSS)](https://pl.wikipedia.org/wiki/Stal_o_podwyższonej_wytrzymałości). Materiał ten pozwala osiągnąć wagę porównywalną z aluminium (lub tylko o 10% wyższą) przy zachowaniu nośności charakterystycznej dla ciężkiej stali.
+Oprócz dominujących na rynku systemów aluminiowych i stalowych warto zwrócić uwagę na rozwiązania alternatywne. Czołowym przykładem jest szwedzki koncern Modul-System, który do produkcji regałów wykorzystuje stal ultra-wysokowytrzymałą (UHSS). Materiał ten pozwala osiągnąć wagę porównywalną z aluminium (lub tylko o 10% wyższą) przy zachowaniu nośności charakterystycznej dla ciężkiej stali.
 
 ### Sortimo i Bott – segment premium
 

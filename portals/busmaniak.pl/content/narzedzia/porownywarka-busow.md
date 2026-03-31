@@ -20,7 +20,7 @@ faq:
 
 ## Porównaj busy obok siebie
 
-Wybór odpowiedniego busa to decyzja, w której liczy się każdy detal techniczny. Porównywarka BusManiak.pl pozwala zestawić dwa dowolne modele i błyskawicznie ocenić kluczowe parametry: od rodzaju napędu (FWD/RWD/AWD) i rozstawu osi, przez wysokość użyteczną wnętrza (np. 1932 mm w Ducato H2 vs ok. 1820 mm w Sprinterze H2, gdzie podłogę podnosi wał napędowy), aż po uciąg przyczepy z hamulcem, który w modelach z [napędem na tylne koła](https://pl.wikipedia.org/wiki/Napęd_na_tylne_koła) sięga nawet 3500 kg.
+Wybór odpowiedniego busa to decyzja, w której liczy się każdy detal techniczny. Porównywarka BusManiak.pl pozwala zestawić dwa dowolne modele i błyskawicznie ocenić kluczowe parametry: od rodzaju napędu (FWD/RWD/AWD) i rozstawu osi, przez wysokość użyteczną wnętrza (np. 1932 mm w Ducato H2 vs ok. 1820 mm w Sprinterze H2, gdzie podłogę podnosi wał napędowy), aż po uciąg przyczepy z hamulcem, który w modelach z [napędem na tylne koła](https://pl.wikipedia.org/wiki/Nap%C4%99d_tylny) sięga nawet 3500 kg.
 
 Pamiętaj, że oznaczenia długości (L) i wysokości (H) nie są uniwersalne. Nomenklatura różni się między producentami – „L2” w Fiacie Ducato (dł. 5413 mm) nie odpowiada wymiarom „L2” w Fordzie Transicie (5531 mm), a „Standard” w Sprinterze (5932 mm) jest bliższy długością do Ducato L3 (5998 mm). Nasze narzędzie uwzględnia te różnice, bazując na konkretnych danych.
 

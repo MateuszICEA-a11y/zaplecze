@@ -29,7 +29,7 @@ Ducato to nie jeden model – to platforma, na której zbudowano dziesiątki war
 *   **Wysokość i długość (H1–H3, L1–L4)** – większa powierzchnia czołowa to wyższy opór powietrza i odczuwalna różnica w trasie.
 *   **Zabudowa** – klasyczny furgon spali mniej niż kontener czy kamper z alkową.
 *   **Obciążenie** – między pustym autem a wersją przy DMC 3500 kg różnica wynosi nawet 2–3 litry na 100 km.
-*   **Skrzynia biegów** – modele z 9-biegowym automatem (od 2019 r.) często osiągają niższe spalanie trasowe niż starsze przekładnie manualne. Po liftingu z rocznika modelowego 2024 (Seria 9) Fiat oferuje nową, 8-biegową skrzynię automatyczną AT8 z [hydrokinetycznym przemiennikiem momentu obrotowego](https://pl.wikipedia.org/wiki/Sprzęgło_hydrokinetyczne), która ma redukować spalanie o kolejne 10% względem skrzyni 9-biegowej.
+*   **Skrzynia biegów** – modele z 9-biegowym automatem (od 2019 r.) często osiągają niższe spalanie trasowe niż starsze przekładnie manualne. Po liftingu z rocznika modelowego 2024 (Seria 9) Fiat oferuje nową, 8-biegową skrzynię automatyczną AT8 z [hydrokinetycznym przemiennikiem momentu obrotowego](https://pl.wikipedia.org/wiki/Sprz%C4%99g%C5%82o_hydrokinetyczne), która ma redukować spalanie o kolejne 10% względem skrzyni 9-biegowej.
 
 ## Fiat Ducato spalanie – zestawienie tabelaryczne
 

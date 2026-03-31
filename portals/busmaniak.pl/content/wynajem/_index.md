@@ -123,4 +123,4 @@ Jeśli planujesz pierwszy wynajem, przeczytaj [kompletny poradnik dla początkuj
 
 Warto też zapoznać się z [przepisami dotyczącymi prawa jazdy na busa](/przepisy/prawo-jazdy-na-busa/), szczególnie jeśli rozważasz pojazd powyżej 3,5 t DMC. A jeżeli wynajem Ci się spodoba i zaczniesz myśleć o własnym kamperze – zajrzyj do naszej sekcji o [kamperach](/kampery/).
 
-*Źródła: Wikipedia – [Pojazd kempingowy](https://pl.wikipedia.org/wiki/Pojazd_kempingowy), Rankomat.pl, BookingCamper.pl, motorhome.pl*
+*Źródła: Wikipedia – [Pojazd kempingowy](https://pl.wikipedia.org/wiki/Samoch%C3%B3d_kempingowy), Rankomat.pl, BookingCamper.pl, motorhome.pl*

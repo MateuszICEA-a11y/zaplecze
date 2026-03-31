@@ -92,7 +92,7 @@ W obecnej generacji Vivaro C warto porównywać przede wszystkim z modelami tech
 | Toyota ProAce | ok. 4956 mm | ok. 1920–1924 mm | około 1890–1935 mm |
 | Fiat Scudo | ok. 4956 mm | ok. 1920–1924 mm | około 1890–1935 mm |
 
-Vivaro C jest technicznym bliźniakiem modeli Peugeot Expert, Citroën Jumpy/Dispatch, Toyota ProAce i Fiat Scudo. Wspólny rodowód z Renault Trafic dotyczył starszych generacji Vivaro, a nie obecnego Vivaro C opartego na platformie [EMP2](https://pl.wikipedia.org/wiki/PSA_EMP2).
+Vivaro C jest technicznym bliźniakiem modeli Peugeot Expert, Citroën Jumpy/Dispatch, Toyota ProAce i Fiat Scudo. Wspólny rodowód z Renault Trafic dotyczył starszych generacji Vivaro, a nie obecnego Vivaro C opartego na platformie EMP2.
 
 W praktyce auta z tej rodziny oferują bardzo zbliżoną użyteczność. L1 zwykle mieści 2 europalety, a L2 3 europalety, przy szerokości między nadkolami około 1258–1260 mm w bliźniaczych modelach tej samej architektury.
 

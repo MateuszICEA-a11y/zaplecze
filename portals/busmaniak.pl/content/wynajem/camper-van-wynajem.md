@@ -106,7 +106,7 @@ Camper van nie jest pojazdem uniwersalnym – i właśnie dlatego dla odpowiedni
 
 **Pary** stanowią główną grupę wynajmującą camper vany. Dwie osoby w pojeździe o długości 5 metrów mają wystarczająco miejsca na wygodne spanie, gotowanie i przechowywanie bagażu na 2–3-tygodniowy wyjazd.
 
-**Solo podróżnicy** doceniają camper vana za jeden powód – samodzielne prowadzenie i parkowanie nie różni się od jazdy osobówką. Nie potrzebujesz nikogo do naprowadzania przy cofaniu, nie boisz się wąskich dróg, a na dziko zaparkujesz tam, gdzie [pojazd kempingowy](https://pl.wikipedia.org/wiki/Pojazd_kempingowy) o długości 7 metrów nie zmieściłby się fizycznie.
+**Solo podróżnicy** doceniają camper vana za jeden powód – samodzielne prowadzenie i parkowanie nie różni się od jazdy osobówką. Nie potrzebujesz nikogo do naprowadzania przy cofaniu, nie boisz się wąskich dróg, a na dziko zaparkujesz tam, gdzie [pojazd kempingowy](https://pl.wikipedia.org/wiki/Samoch%C3%B3d_kempingowy) o długości 7 metrów nie zmieściłby się fizycznie.
 
 **Osoby wynajmujące po raz pierwszy** zyskują łagodne wprowadzenie w świat karawaningu. Camper van nie wymaga nauki obsługi kasetki WC ani manewrowania pojazdem o dużym zwisie tylnym. Jeśli pierwszy wynajem okaże się sukcesem, następnym razem można świadomie wybrać większy pojazd.
 

@@ -128,7 +128,7 @@ Na niemieckim rynku ceny bywają niższe o **15–30%** w porównaniu do Polski.
 
 ### Ukryte koszty importu
 
-Do ceny zakupu musisz doliczyć cały pakiet kosztów dodatkowych. Na liście jest transport (**4000–7000 zł**), [podatek akcyzowy](https://pl.wikipedia.org/wiki/Podatek_akcyzowy_(Polska)) (**3,1%** lub **18,6%** wartości, w zależności od pojemności silnika), badanie techniczne, tłumaczenia i opłaty rejestracyjne. W sumie import uszczupli Twój portfel o dodatkowe **10 000–25 000 zł**.
+Do ceny zakupu musisz doliczyć cały pakiet kosztów dodatkowych. Na liście jest transport (**4000–7000 zł**), [podatek akcyzowy](https://pl.wikipedia.org/wiki/Podatek_akcyzowy)) (**3,1%** lub **18,6%** wartości, w zależności od pojemności silnika), badanie techniczne, tłumaczenia i opłaty rejestracyjne. W sumie import uszczupli Twój portfel o dodatkowe **10 000–25 000 zł**.
 
 ### Stan techniczny – na co zwrócić uwagę przy imporcie
 

@@ -118,4 +118,4 @@ Jeśli interesują Cię konkretne ceny i cenniki wypożyczalni, sprawdź [aktual
 
 Rozważasz zakup własnego kampera po udanym wynajmie? Odwiedź naszą sekcję o [kamperach](/kampery/) – znajdziesz tam porównania modeli, poradniki zakupowe i recenzje.
 
-*Źródła: Wikipedia – [Pojazd kempingowy](https://pl.wikipedia.org/wiki/Pojazd_kempingowy), Rankomat.pl, PolskiCaravaning.pl, MaciejStraus.pl*
+*Źródła: Wikipedia – [Pojazd kempingowy](https://pl.wikipedia.org/wiki/Samoch%C3%B3d_kempingowy), Rankomat.pl, PolskiCaravaning.pl, MaciejStraus.pl*

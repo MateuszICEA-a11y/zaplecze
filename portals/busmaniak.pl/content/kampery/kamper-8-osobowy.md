@@ -84,7 +84,7 @@ Bus przerobiony na kampera wymaga zmiany przeznaczenia w dowodzie na „specjaln
 
 ### Wymagania homologacyjne
 
-Pojazd z legalną [homologacją](https://pl.wikipedia.org/wiki/Homologacja_pojazdu) na 8 osób musi spełniać konkretne normy techniczne:
+Pojazd z legalną [homologacją](https://pl.wikipedia.org/wiki/Homologacja) na 8 osób musi spełniać konkretne normy techniczne:
 
 - **Fotele z pasami bezpieczeństwa** – każde z 8 miejsc siedzących musi być wyposażone w trzypunktowy pas bezpieczeństwa i zagłówek.
 - **Wyposażenie kempingowe** – na stałe zamontowane łóżko, stolik, aneks kuchenny oraz instalacja wodna.

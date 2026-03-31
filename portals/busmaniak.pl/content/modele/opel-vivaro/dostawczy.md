@@ -91,4 +91,4 @@ Szerokość otworu bocznych drzwi przesuwnych wynosi ok. 935 mm, a wysokość ok
 Fabryczna przegroda kabinowa ze składanym okienkiem może współpracować z systemem FlexCargo/Moduwork. Dzięki klapie w przegrodzie długość przewożonych elementów rośnie z ok. 2162 do 3320 mm w S, z 2512 do 3670 mm w M oraz z 2862 do 4020 mm w L, a objętość zwiększa się o ok. 0,5 m³.
 {{% /info %}}
 
-Vivaro C jest technicznie spokrewnione z modelami z rodziny PSA/Stellantis opartymi na platformie [EMP2](https://pl.wikipedia.org/wiki/PSA_EMP2) – Citroënem Jumpy/Dispatch, Peugeotem Expertem, Toyotą ProAce, a później także Fiatem Scudo. Renault Trafic było bliźniakiem wcześniejszych generacji Vivaro A i B, ale nie Vivaro C.
+Vivaro C jest technicznie spokrewnione z modelami z rodziny PSA/Stellantis opartymi na platformie EMP2 – Citroënem Jumpy/Dispatch, Peugeotem Expertem, Toyotą ProAce, a później także Fiatem Scudo. Renault Trafic było bliźniakiem wcześniejszych generacji Vivaro A i B, ale nie Vivaro C.

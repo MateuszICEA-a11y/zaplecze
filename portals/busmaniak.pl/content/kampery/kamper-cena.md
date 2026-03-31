@@ -39,7 +39,7 @@ Cena kampera w Polsce jest silnie uzależniona od pojemności silnika pojazdu ba
 | **Alkowa** | 280 000 zł | **500 000 zł** | Bürstner Lyseo A, Dethleffs Trend A |
 | **Integra** | 382 500 zł | **650 000+ zł** | Bürstner Lyseo I, Dethleffs Trend I |
 
-Najtańszym typem zabudowy wśród marek europejskich jest półintegra. W przeciwieństwie do campervana, którego wnętrze aranżuje się w fabrycznym, blaszanym furgonie, półintegra powstaje na dedykowanym podwoziu z szoferką. Na nim buduje się od podstaw całą część mieszkalną ze [ścian warstwowych](https://pl.wikipedia.org/wiki/Płyta_warstwowa), co optymalizuje koszty produkcji.
+Najtańszym typem zabudowy wśród marek europejskich jest półintegra. W przeciwieństwie do campervana, którego wnętrze aranżuje się w fabrycznym, blaszanym furgonie, półintegra powstaje na dedykowanym podwoziu z szoferką. Na nim buduje się od podstaw całą część mieszkalną ze ścian warstwowych, co optymalizuje koszty produkcji.
 
 Najdroższe są integry – ich w pełni zintegrowana z zabudową kabina, z charakterystyczną panoramiczną szybą przednią, podnosi finalną cenę pojazdu nawet o 30–40% w stosunku do półintegry.
 

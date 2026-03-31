@@ -61,7 +61,7 @@ Wersja Standard oferuje ok. 5,3 m³, więc zysk w Longu wynosi ok. 0,8 m³. W pr
 
 W bliźniaczych konstrukcjach PSA/Opel stosowane jest też rozwiązanie typu Moduwork/FlexCargo, czyli klapa w grodzi umożliwiająca przewóz elementów dłuższych niż sama podłoga ładowni. W dłuższej wersji maksymalna długość użytkowa po otwarciu klapy sięga ok. 3674 mm.
 
-Opel Vivaro C jest spokrewniony z Peugeot Expert, Citroën Jumpy/Dispatch, Fiat Scudo i Toyota Proace. Modele te dzielą tę samą platformę [EMP2](https://pl.wikipedia.org/wiki/PSA_EMP2) i mają bardzo zbliżone wymiary oraz parametry przestrzeni ładunkowej.
+Opel Vivaro C jest spokrewniony z Peugeot Expert, Citroën Jumpy/Dispatch, Fiat Scudo i Toyota Proace. Modele te dzielą tę samą platformę EMP2 i mają bardzo zbliżone wymiary oraz parametry przestrzeni ładunkowej.
 
 ## Ładowność i DMC
 

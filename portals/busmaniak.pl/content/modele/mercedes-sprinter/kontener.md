@@ -48,7 +48,7 @@ W przypadku Sprintera warto od razu rozróżnić samą formę zabudowy od jej fu
 
 W nomenklaturze ATP zabudowy izotermiczne oznacza się m.in. jako IN lub IR, a chłodzone mechanicznie jako serie FNA/FNB/FNC oraz FRA/FRB/FRC. FRC to jedna z najważniejszych klas dla dystrybucji chłodniczej – oznacza pojazd mechanicznie chłodzony, silnie izolowany.
 
-Jeśli chcesz zrozumieć samą zasadę działania izolacji, pomocne jest pojęcie [izolacji cieplnej](https://pl.wikipedia.org/wiki/Izolacja_cieplna). W praktyce o klasie zabudowy nie decyduje jedna „minimalna grubość”, tylko parametry izolacyjne i wynik certyfikacji kompletnego nadwozia.
+Jeśli chcesz zrozumieć samą zasadę działania izolacji, pomocne jest pojęcie [izolacji cieplnej](https://pl.wikipedia.org/wiki/Izolacja_termiczna). W praktyce o klasie zabudowy nie decyduje jedna „minimalna grubość”, tylko parametry izolacyjne i wynik certyfikacji kompletnego nadwozia.
 
 ### Skrzynia sucha i food truck
 

@@ -105,7 +105,7 @@ W segmencie małych vanów dominują nowe modele Forda. Transit Connect, bazują
 
 ## DMC a prawo jazdy – co musisz wiedzieć
 
-[Dopuszczalna masa całkowita](https://pl.wikipedia.org/wiki/Dopuszczalna_masa_całkowita) to nie tylko parametr techniczny – to granica prawna, która determinuje wymagane uprawnienia i obowiązki kierowcy.
+[Dopuszczalna masa całkowita](https://pl.wikipedia.org/wiki/Dopuszczalna_masa_ca%C5%82kowita) to nie tylko parametr techniczny – to granica prawna, która determinuje wymagane uprawnienia i obowiązki kierowcy.
 
 - **Kat. B (do 3,5 t DMC)** – standardowe prawo jazdy. Obejmuje wszystkie małe i średnie vany oraz duże busy w wersjach bazowych.
 - **Kat. C1 (3,5–7,5 t DMC)** – wymagane dla Iveco Daily 5,0 t i 7,2 t, Sprintera 5,0 t i cięższych wersji Ducato. Dodatkowe badania lekarskie co 5 lat.

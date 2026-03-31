@@ -127,4 +127,4 @@ Warto zwrócić uwagę nie tylko na liczbę miejsc, ale też na długość nadwo
 
 Jeśli zależy Ci na osobowym charakterze auta, właściwym adresem w generacji C jest **Zafira Life**. Taki wariant lepiej pasuje do dłuższych tras, przewozu rodzinnego albo klientów, zwłaszcza gdy znaczenie mają systemy wsparcia kierowcy i bogatsza konfiguracja kabiny.
 
-*Źródła: Opel, dane producentów dla platformy EMP2, [Wikipedia](https://pl.wikipedia.org/wiki/EMP2)*
+*Źródła: Opel, dane producentów dla platformy EMP2, Wikipedia*

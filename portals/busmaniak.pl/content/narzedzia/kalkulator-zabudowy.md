@@ -36,7 +36,7 @@ Typ zabudowy to punkt wyjścia, ale ostateczna cena zależy od kilku kluczowych 
 
 -   **Model busa** – zabudowa Ducato L2H2 kosztuje mniej niż identyczna konfiguracja w Sprinterze L3H3, ponieważ różnią się wymiary przestrzeni ładunkowej i kubatura materiałów.
 
--   **Materiały** – wybór między sklejką a systemami z aluminium czy stali wpływa nie tylko na cenę, ale i na masę. Ciężka zabudowa ze sklejki 12 mm potrafi ważyć 300–400 kg, co w busach o [Dopuszczalnej Masie Całkowitej](https://pl.wikipedia.org/wiki/Dopuszczalna_masa_całkowita) do 3,5 t gwałtownie ogranicza ładowność i grozi mandatem za przeładowanie. Modułowe systemy ze stali i aluminium redukują masę zabudowy o 30–50%.
+-   **Materiały** – wybór między sklejką a systemami z aluminium czy stali wpływa nie tylko na cenę, ale i na masę. Ciężka zabudowa ze sklejki 12 mm potrafi ważyć 300–400 kg, co w busach o [Dopuszczalnej Masie Całkowitej](https://pl.wikipedia.org/wiki/Dopuszczalna_masa_ca%C5%82kowita) do 3,5 t gwałtownie ogranicza ładowność i grozi mandatem za przeładowanie. Modułowe systemy ze stali i aluminium redukują masę zabudowy o 30–50%.
 
 -   **Instalacja elektryczna** – w zabudowach serwisowych i kamperowych to jeden z najdroższych komponentów. Kompletny system off-grid z akumulatorem LiFePO4 (100–200 Ah), przetwornicą (2000–3000 W), ładowarką DC-DC i panelami solarnymi to wydatek od 10 000 zł do nawet 25 000 zł przy wyborze komponentów premium.
 

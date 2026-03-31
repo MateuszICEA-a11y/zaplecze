@@ -51,7 +51,7 @@ Od 2019 roku ofertę uzupełnia doceniana, 9-biegowa skrzynia automatyczna ZF, k
 - **3.0 JTD/MultiJet** – 160–180 KM i rozrząd na łańcuchu; to uzasadniony wybór przy ciężkich zabudowach zintegrowanych i regularnych trasach autostradowych.
 
 {{% info title="DMC" icon="engineering" %}}
-Budując kampera samodzielnie, musisz rygorystycznie pilnować [dopuszczalnej masy całkowitej (DMC)](https://pl.wikipedia.org/wiki/Dopuszczalna_masa_całkowita). Większość Ducato ma limit 3500 kg. Sama zabudowa, zbiorniki z wodą, akumulatory i pasażerowie mogą szybko go przekroczyć. Zawsze waż auto przed rozpoczęciem prac i w ich trakcie.
+Budując kampera samodzielnie, musisz rygorystycznie pilnować [dopuszczalnej masy całkowitej (DMC)](https://pl.wikipedia.org/wiki/Dopuszczalna_masa_ca%C5%82kowita). Większość Ducato ma limit 3500 kg. Sama zabudowa, zbiorniki z wodą, akumulatory i pasażerowie mogą szybko go przekroczyć. Zawsze waż auto przed rozpoczęciem prac i w ich trakcie.
 {{% /info %}}
 
 ## Koszty przeróbki i dostępność części

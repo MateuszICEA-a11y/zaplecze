@@ -39,7 +39,7 @@ Volkswagen Multivan ewoluował przez dekady z roboczego Transportera w stronę k
 
 ## Volkswagen Multivan T7 – dane techniczne
 
-Najnowszy **T7** (od 2021) to zupełnie nowa konstrukcja oparta na platformie [MQB](https://pl.wikipedia.org/wiki/Modularer_Querbaukasten) – tej samej, którą zna Golf czy Arteon. Przejście z ramy Transportera na nadwozie samonośne poprawiło sztywność skrętną, zaostrzyło prowadzenie i obniżyło masę pojazdu. Produkcja odbywa się w Hanowerze.
+Najnowszy **T7** (od 2021) to zupełnie nowa konstrukcja oparta na platformie MQB – tej samej, którą zna Golf czy Arteon. Przejście z ramy Transportera na nadwozie samonośne poprawiło sztywność skrętną, zaostrzyło prowadzenie i obniżyło masę pojazdu. Produkcja odbywa się w Hanowerze.
 
 {{% info title="Przełom" icon="engineering" %}}
 Platforma MQB oznacza rezygnację z konstrukcji ramowej na rzecz samonośnej. Sztywność nadwozia wzrosła, prowadzenie zbliżyło się do SUV-ów, a masa spadła o ok. 200 kg względem T6.1.

@@ -149,4 +149,4 @@ Przy wyborze wersji warto myśleć zastosowaniem:
 
 Wysokość całkowita ma tu duże znaczenie praktyczne, bo część garaży i parkingów ogranicza przejazd do około 2,0–2,2 m. To prosty parametr, który często decyduje o tym, czy dany Master będzie naprawdę użyteczny w codziennej pracy.
 
-*Źródła: Renault, auto-data.net, [Wikipedia](https://pl.wikipedia.org/wiki/Uk%C5%82ad_EGR)*
+*Źródła: Renault, auto-data.net, [Wikipedia](https://pl.wikipedia.org/wiki/EGR)*

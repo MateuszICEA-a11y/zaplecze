@@ -167,4 +167,4 @@ Bytowe instalacje gazowe (kuchenka, ogrzewanie, lodówka) nie podlegają kontrol
 
 Informacje o ciśnieniu w oponach, które diagnosta sprawdza podczas badania, znajdziesz w artykule [ciśnienie w oponach busa](/serwis/cisnienie-w-oponach/). Stan opon (głębokość bieżnika minimum 1,6 mm, brak uszkodzeń) to kolejny element kontroli – w busach dostawczych opony zużywają się nierównomiernie przy częstej jeździe z pełnym obciążeniem, dlatego warto sprawdzić je przed wizytą na SKP.
 
-*Źródła: Prawo o ruchu drogowym (Dz.U. 2024 poz. 1251), Rozporządzenie MI w sprawie badań technicznych, [Wikipedia – badanie techniczne pojazdu](https://pl.wikipedia.org/wiki/Badanie_techniczne_pojazdu), autokierowca.pl, mubi.pl*
+*Źródła: Prawo o ruchu drogowym (Dz.U. 2024 poz. 1251), Rozporządzenie MI w sprawie badań technicznych, Wikipedia – badanie techniczne pojazdu, autokierowca.pl, mubi.pl*

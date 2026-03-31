@@ -85,7 +85,7 @@ Poza sklejką potrzebne są materiały montażowe i wykończeniowe:
 
 - **Wkręty do drewna 3,5–5 × 30–50 mm** – ok. 200–400 sztuk
 - **Kątowniki stalowe** – łączenie elementów pod kątem prostym
-- **Klej [MS Polimer](https://pl.wikipedia.org/wiki/Poliuretany_modyfikowane_silanami) (Sikaflex, Bostik)** – elastyczny, wibroodporny
+- **Klej [MS Polimer](https://pl.wikipedia.org/wiki/Poliuretan) (Sikaflex, Bostik)** – elastyczny, wibroodporny
 - **Nitonakrętki stalowe M5/M6 i śruby metryczne** – do mocowania do karoserii
 - **Lakier jachtowy lub olej do drewna** – impregnacja
 - **Taśma obrzeżowa** – na krawędzie mebli

@@ -89,7 +89,7 @@ Agregat chłodniczy przekształca izotermę w pełnoprawną chłodnię, aktywnie
 
 Dobór agregatu musi uwzględniać objętość przestrzeni ładunkowej i wymagany zakres temperatur. Agregat o zbyt małej wydajności nie utrzyma temperatury w upalne dni, a przewymiarowany zużywa więcej paliwa. Zasada kciuka: na każdy 1 m³ paki potrzeba ok. 300–500 W wydajności chłodniczej przy temperaturze docelowej 0°C i 500–800 W przy -18°C.
 
-Kluczową kwestią staje się unijna ustawa F-gazowa, która wymusza wycofanie czynnika chłodniczego R404A. Nowoczesne agregaty korzystają z zamienników o niższym [GWP (Global Warming Potential)](https://pl.wikipedia.org/wiki/Wskaźnik_tworzenia_efektu_cieplarnianego), takich jak R452A (mroźnie) lub R134a (chłodnie). W zależności od ilości czynnika w układzie, operator może być zobowiązany do rejestracji urządzenia w Centralnym Rejestrze Operatorów (CRO).
+Kluczową kwestią staje się unijna ustawa F-gazowa, która wymusza wycofanie czynnika chłodniczego R404A. Nowoczesne agregaty korzystają z zamienników o niższym [GWP (Global Warming Potential)](https://pl.wikipedia.org/wiki/GWP), takich jak R452A (mroźnie) lub R134a (chłodnie). W zależności od ilości czynnika w układzie, operator może być zobowiązany do rejestracji urządzenia w Centralnym Rejestrze Operatorów (CRO).
 
 {{% info title="Rejestracja temperatury" icon="engineering" %}}Od 2006 roku przepisy wymagają ciągłej rejestracji temperatury podczas transportu żywności. Nowoczesne agregaty mają wbudowane rejestratory (data loggery), ale w starszych modelach trzeba montować zewnętrzne czujniki z wydrukiem termicznym lub łącznością GSM.{{% /info %}}
 

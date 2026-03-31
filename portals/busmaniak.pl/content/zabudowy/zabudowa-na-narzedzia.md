@@ -140,6 +140,6 @@ Zabudowa narzędziowa musi spełniać wymogi zabezpieczenia ładunku. Norma DIN 
 
 ### Kontrola DMC i ryzyko mandatu
 
-Należy pamiętać, że zabudowa wraz z narzędziami znacząco zwiększa masę pojazdu. Łatwo jest przekroczyć dopuszczalną masę całkowitą ([DMC](https://pl.wikipedia.org/wiki/Dopuszczalna_masa_całkowita)) 3500 kg, zwłaszcza przy cięższych, stalowych systemach. W Polsce od 2022 roku kontrole ITD lub policji mogą skutkować mandatem do 3000 zł oraz zakazem dalszej jazdy do czasu rozładowania nadwagi.
+Należy pamiętać, że zabudowa wraz z narzędziami znacząco zwiększa masę pojazdu. Łatwo jest przekroczyć dopuszczalną masę całkowitą ([DMC](https://pl.wikipedia.org/wiki/Dopuszczalna_masa_ca%C5%82kowita)) 3500 kg, zwłaszcza przy cięższych, stalowych systemach. W Polsce od 2022 roku kontrole ITD lub policji mogą skutkować mandatem do 3000 zł oraz zakazem dalszej jazdy do czasu rozładowania nadwagi.
 
 Niezabezpieczone narzędzia w paku to nie tylko ryzyko ich uszkodzenia. Przy zderzeniu czołowym przy 50 km/h klucz o wadze 2 kg uderza z siłą odpowiadającą 80–100 kg. Dlatego nawet przy zabudowie DIY warto zainwestować w stalową przegrodę i blokady szuflad – to minimum, które chroni zdrowie kierowcy i pasażera.

@@ -24,7 +24,7 @@ faq:
 
 ## Chiptuning silnika {#chiptuning}
 
-Chiptuning to najpopularniejsza modyfikacja w Berlingo. Polega na zmianie map w sterowniku silnika ([ECU](https://pl.wikipedia.org/wiki/Elektroniczna_jednostka_steruj%C4%85ca)), co zwiększa moc i moment obrotowy bez ingerencji mechanicznej.
+Chiptuning to najpopularniejsza modyfikacja w Berlingo. Polega na zmianie map w sterowniku silnika ([ECU](https://pl.wikipedia.org/wiki/Sterownik_silnika)), co zwiększa moc i moment obrotowy bez ingerencji mechanicznej.
 
 Potencjał poszczególnych silników jest znaczący:
 

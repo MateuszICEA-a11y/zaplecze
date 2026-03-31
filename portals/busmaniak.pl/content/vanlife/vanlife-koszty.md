@@ -167,4 +167,4 @@ Jest jeszcze jeden koszt, którego nie wolno pomijać przy uczciwym porównaniu 
 
 Szczegóły o [vanlife – jak zacząć](/vanlife/vanlife-jak-zaczac/) i [najlepszych trasach kamperowych po Polsce](/vanlife/kamperem-po-polsce/) znajdziesz w kolejnych artykułach. Sprawdź też [kalkulator paliwa](/narzedzia/kalkulator-paliwa/), żeby zaplanować budżet na konkretną trasę.
 
-*Źródła: [Vanlife – Wikipedia](https://pl.wikipedia.org/wiki/Vanlife), Kampery Gorzów, PodróżoVanie.pl, ZbudujSamKampera.pl, SzukamVibu.pl, CamperSpot.pl*
+*Źródła: Vanlife – Wikipedia, Kampery Gorzów, PodróżoVanie.pl, ZbudujSamKampera.pl, SzukamVibu.pl, CamperSpot.pl*

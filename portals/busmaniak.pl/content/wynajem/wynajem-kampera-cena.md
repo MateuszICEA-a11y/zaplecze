@@ -110,4 +110,4 @@ Dokładne ceny różnych typów kamperów znajdziesz w [poradniku dla początkuj
 
 Jeśli interesują Cię tańsze kampery na własność, zajrzyj do naszego poradnika o [tanich kamperach](/kampery/tanie-kampery/). A na trasie przyda Ci się [kalkulator paliwa](/narzedzia/kalkulator-paliwa/), żeby oszacować koszty dojazdu.
 
-*Źródła: Wikipedia – [Pojazd kempingowy](https://pl.wikipedia.org/wiki/Pojazd_kempingowy), CampVenture.pl, Drewmet-Trans.pl, CamperCentrum.pl, SundayTravel.pl, Rankomat.pl*
+*Źródła: Wikipedia – [Pojazd kempingowy](https://pl.wikipedia.org/wiki/Samoch%C3%B3d_kempingowy), CampVenture.pl, Drewmet-Trans.pl, CamperCentrum.pl, SundayTravel.pl, Rankomat.pl*

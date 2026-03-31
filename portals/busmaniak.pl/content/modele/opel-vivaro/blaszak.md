@@ -27,7 +27,7 @@ Blaszak to podstawowa wersja Vivaro – furgon z pełną stalową przegrodą, za
 
 W Polsce nie można automatycznie łączyć homologacji N1 z pełnym odliczeniem VAT. Przy użytku mieszanym zwykle mówimy o 50% odliczenia, a 100% wymaga spełnienia warunków podatkowych dla użytkowania firmowego.
 
-Vivaro C (od 2019) korzysta z platformy [EMP2](https://pl.wikipedia.org/wiki/PSA_EMP2) i konstrukcyjnie jest blisko spokrewnione z Peugeotem Expert oraz Citroënem Jumpy. W ogłoszeniach warto też odróżniać klasycznego blaszaka od wersji brygadowej/doublecab – ta druga ma krótszą pakę i inną ładowność.
+Vivaro C (od 2019) korzysta z platformy EMP2 i konstrukcyjnie jest blisko spokrewnione z Peugeotem Expert oraz Citroënem Jumpy. W ogłoszeniach warto też odróżniać klasycznego blaszaka od wersji brygadowej/doublecab – ta druga ma krótszą pakę i inną ładowność.
 
 ### Wymiary paki Vivaro per generacja
 

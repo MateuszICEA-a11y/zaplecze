@@ -129,4 +129,4 @@ Na tle konkurencji Peugeot Rifter Long stawia przede wszystkim na praktyczne nad
 
 Jeśli priorytetem jest maksymalna zgodność części i rozwiązań technicznych, najbliżej mu do Berlingo XL, Combo Life XL i Toyoty ProAce City Verso Long. Jeśli ważniejsza jest inna charakterystyka jazdy i platforma z rodziny MQB, wtedy naturalnym punktem odniesienia będą Caddy Maxi oraz Tourneo Connect L2.
 
-W tym artykule nie podajemy cen konkurentów ani pełnych tabel silnikowych, bo takie dane trzeba wiązać z konkretnym rynkiem i rocznikiem. Jedyny techniczny punkt wspólny, który można bezpiecznie wskazać, to wykorzystanie architektury [EMP2](https://pl.wikipedia.org/wiki/PSA_EMP2) w bliźniaczych modelach grupy PSA/Stellantis.
+W tym artykule nie podajemy cen konkurentów ani pełnych tabel silnikowych, bo takie dane trzeba wiązać z konkretnym rynkiem i rocznikiem. Jedyny techniczny punkt wspólny, który można bezpiecznie wskazać, to wykorzystanie architektury EMP2 w bliźniaczych modelach grupy PSA/Stellantis.

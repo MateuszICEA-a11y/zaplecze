@@ -94,7 +94,7 @@ Podobnie wygląda kwestia systemów ADAS. Zakres wyposażenia seryjnego i opcjon
 
 Przy aucie do przewozu osób warto też zwracać uwagę na elementy praktyczne dla pasażerów. Kluczowe są szerokość drzwi bocznych, wysokość wejścia, możliwość montażu stopnia elektrycznego oraz dostępność rampy lub windy dla wózków, jeśli pojazd ma pracować w hotelach, shuttle’ach albo przewozach osób z niepełnosprawnościami.
 
-W specyfikacjach technicznych można spotkać odniesienia do systemów wspomagania opartych na rozwiązaniach typu [ADAS](https://pl.wikipedia.org/wiki/Zaawansowany_system_wspomagania_kierowcy). W praktyce dla operatora ważniejsze od samej nazwy są jednak konkretne pozycje wyposażenia w ofercie danego rocznika.
+W specyfikacjach technicznych można spotkać odniesienia do systemów wspomagania opartych na rozwiązaniach typu [ADAS](https://pl.wikipedia.org/wiki/ADAS). W praktyce dla operatora ważniejsze od samej nazwy są jednak konkretne pozycje wyposażenia w ofercie danego rocznika.
 
 {{% expert name="Marek Kowalczyk" %}}
 Przy zamówieniu Sprintera do przewozów pasażerskich najpierw ustal bazę fabryczną – linię wyposażenia, napęd, DMC i długość – a dopiero potem konfigurację zabudowy. To najlepszy sposób, by uniknąć rozczarowania liczbą miejsc, bagażnikiem i realną nośnością po odbiorze gotowego auta.

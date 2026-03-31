@@ -144,4 +144,4 @@ Jeśli firma rozważa cięższą wersję N2 albo pracę w transporcie międzynar
 
 W praktyce znaczenie mają też uprawnienia kierowcy. Kategoria B obejmuje pojazd do 3,5 t DMC, z przyczepą lekką do 750 kg lub zestaw do 3,5 t, z kodem B96 do 4,25 t, a B+E zwykle pozwala na zestaw z pojazdem do 3,5 t i cięższą przyczepą zgodnie z homologacją. Kategoria C1 dotyczy pojazdów od 3,5 do 7,5 t.
 
-*Źródło pomocnicze pojęcia technicznego: [homologacja](https://pl.wikipedia.org/wiki/Homologacja_typu_pojazdu)*
+*Źródło pomocnicze pojęcia technicznego: [homologacja](https://pl.wikipedia.org/wiki/Homologacja)*

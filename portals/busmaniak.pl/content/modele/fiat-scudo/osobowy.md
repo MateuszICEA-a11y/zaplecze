@@ -11,7 +11,7 @@ volume: 880
 main_keyword: "fiat scudo osobowy"
 image: "/images/fiat-scudo-hero.jpg"
 image_alt: "Fiat Scudo Panorama w wersji osobowej"
-lead: "Fiat Scudo osobowy (Panorama) to przeszklona wersja pasażerska średniego vana – zależnie od generacji i konfiguracji oferowana zwykle jako 5-, 8- lub 9-miejscowa. Scudo II produkowano w latach 2007–2016 i technicznie było spokrewnione z Peugeotem Expert oraz Citroënem Jumpy w odmianach osobowych. Scudo III (od 2022) bazuje na platformie [EMP2](https://pl.wikipedia.org/wiki/EMP2) i występuje także jako elektryczne E-Scudo."
+lead: "Fiat Scudo osobowy (Panorama) to przeszklona wersja pasażerska średniego vana – zależnie od generacji i konfiguracji oferowana zwykle jako 5-, 8- lub 9-miejscowa. Scudo II produkowano w latach 2007–2016 i technicznie było spokrewnione z Peugeotem Expert oraz Citroënem Jumpy w odmianach osobowych. Scudo III (od 2022) bazuje na platformie EMP2 i występuje także jako elektryczne E-Scudo."
 faq:
   - question: "Ile miejsc ma Scudo Panorama?"
     answer: "Zależnie od generacji i konfiguracji najczęściej spotykane są wersje 5-, 8- i 9-miejscowe. W praktyce Scudo II i III najczęściej występuje jako 8- lub 9-osobowy van pasażerski."

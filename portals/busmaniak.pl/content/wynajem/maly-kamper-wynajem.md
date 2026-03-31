@@ -116,4 +116,4 @@ Jeśli mały kamper Ci odpowiada, ale chcesz jeszcze bardziej kompaktowy pojazd 
 
 Na trasie przyda Ci się [kalkulator paliwa](/narzedzia/kalkulator-paliwa/), żeby precyzyjnie oszacować koszty dojazdu i porównać opcje.
 
-*Źródła: Wikipedia – [Pojazd kempingowy](https://pl.wikipedia.org/wiki/Pojazd_kempingowy), Kamperomania.pl, CamperCentrum.pl, McRent.pl, PolskiCaravaning.pl*
+*Źródła: Wikipedia – [Pojazd kempingowy](https://pl.wikipedia.org/wiki/Samoch%C3%B3d_kempingowy), Kamperomania.pl, CamperCentrum.pl, McRent.pl, PolskiCaravaning.pl*

@@ -137,4 +137,4 @@ Ogólne informacje o kontrolkach w dostawczakach znajdziesz w artykule [kontrolk
 Źródła:
 - Instrukcja obsługi Iveco Daily (lampki kontrolne TFT): tirmet.pl
 - Kody błędów Iveco: motocezar.pl
-- Kontrolka (Wikipedia): https://pl.wikipedia.org/wiki/Kontrolka_(motoryzacja)
+- Kontrolka (Wikipedia): https://pl.wikipedia.org/wiki/Kontrolka)

@@ -30,7 +30,7 @@ Kluczowe kryteria wyboru kampervana:
 
 - **Bazowy van** – średni van (Multivan, Klasa V) oznacza łatwiejsze parkowanie w mieście, ale mniejszą przestrzeń. Duży furgon ([Fiat Ducato](/modele/fiat-ducato/), [Mercedes Sprinter](/modele/mercedes-sprinter/)) daje pełnowymiarową łazienkę i więcej miejsca, ale gorzej sprawdza się w codziennej jeździe.
 - **Typ dachu** – dach podnoszony dodaje dwa miejsca do spania i zachowuje niski profil podczas jazdy. Dach wysoki (stały) zapewnia pełną wysokość we wnętrzu, ale zwiększa zużycie paliwa o 0,5–1 l/100 km.
-- **[Dopuszczalna masa całkowita (DMC)](https://pl.wikipedia.org/wiki/Dopuszczalna_masa_całkowita)** – większe kampervany (np. Adria, Weinsberg) często ważą na sucho ponad 3100 kg. Oznacza to realną ładowność na poziomie 350–450 kg, co przy 4 osobach z bagażem i pełnymi zbiornikami łatwo przekroczyć, narażając się na wysokie mandaty.
+- **[Dopuszczalna masa całkowita (DMC)](https://pl.wikipedia.org/wiki/Dopuszczalna_masa_ca%C5%82kowita)** – większe kampervany (np. Adria, Weinsberg) często ważą na sucho ponad 3100 kg. Oznacza to realną ładowność na poziomie 350–450 kg, co przy 4 osobach z bagażem i pełnymi zbiornikami łatwo przekroczyć, narażając się na wysokie mandaty.
 - **Użytkowanie zimowe** – modele z podnoszonym dachem z materiału wymagają dodatkowej izolacji w ujemnych temperaturach. W pełni izolowane kampervany z podgrzewanym zbiornikiem wody szarej są przystosowane do użytku całorocznego, np. na wyjazdy narciarskie.
 - **Autonomia energetyczna** – bateria litowa 100 Ah i panel solarny 200 W pozwalają na 2–3 dni postoju bez podłączenia do prądu.
 

@@ -55,7 +55,7 @@ Budowa kampera wymaga podstawowego zestawu narzędzi, na który trzeba przeznacz
 - **Wyrzynarka** – niezastąpiona przy cięciu sklejki na meble. Model z prowadnicą ułatwi uzyskanie prostych linii. Koszt: **200–500 zł**.
 - **Szlifierka oscylacyjna** – niezbędna do wygładzania drewna i sklejki przed lakierowaniem. Cena: **150–350 zł**.
 - **Piła oscylacyjna (multitool)** – idealna do precyzyjnych cięć w blasze, na przykład przy montażu okna dachowego. Znacznie dokładniejsza niż wyrzynarka przy pracy z metalem. Koszt: **200–500 zł**.
-- **Nitownica i nity zrywalne** – do mocowania konstrukcji i elementów wykończenia do [nadwozia](https://pl.wikipedia.org/wiki/Nadwozie_samochodowe) pojazdu. Zestaw to koszt rzędu **80–150 zł**.
+- **Nitownica i nity zrywalne** – do mocowania konstrukcji i elementów wykończenia do [nadwozia](https://pl.wikipedia.org/wiki/Nadwozie) pojazdu. Zestaw to koszt rzędu **80–150 zł**.
 
 {{% info title="Wskazówka od ekspertów" icon="info" %}}
 Nie oszczędzaj na kluczowych narzędziach, ponieważ niska jakość przełoży się na frustrację i stracony czas. Dobra wiertarko-wkrętarka (min. 500 zł) posłuży przez dekadę, a wyrzynarka z regulacją obrotów i funkcją podcinania to absolutne minimum, by uzyskać proste cięcia w sklejce meblowej 15 mm.

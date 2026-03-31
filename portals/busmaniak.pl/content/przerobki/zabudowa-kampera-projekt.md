@@ -51,7 +51,7 @@ Wybór silnika w Fiacie Ducato powinien zależeć od rocznika auta i planowanej 
 - **1.9 TD (historyczne)** – spotykany w najstarszych egzemplarzach. Prędkość przelotowa rzędu 80–85 km/h i słaba dynamika na wzniesieniach czynią go wyborem wyłącznie dla cierpliwych entuzjastów retro caravaningu.
 
 {{% info title="DMC" icon="engineering" %}}
-Budując kampera samodzielnie, musisz rygorystycznie pilnować [dopuszczalnej masy całkowitej (DMC)](https://pl.wikipedia.org/wiki/Dopuszczalna_masa_całkowita). Większość Ducato ma limit 3500 kg. Sama zabudowa, zbiorniki z wodą, akumulatory i pasażerowie mogą szybko go przekroczyć. Zawsze waż auto przed rozpoczęciem prac i w ich trakcie.
+Budując kampera samodzielnie, musisz rygorystycznie pilnować [dopuszczalnej masy całkowitej (DMC)](https://pl.wikipedia.org/wiki/Dopuszczalna_masa_ca%C5%82kowita). Większość Ducato ma limit 3500 kg. Sama zabudowa, zbiorniki z wodą, akumulatory i pasażerowie mogą szybko go przekroczyć. Zawsze waż auto przed rozpoczęciem prac i w ich trakcie.
 {{% /info %}}
 
 ## Koszty przeróbki i dostępność części
