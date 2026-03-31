@@ -715,7 +715,7 @@ a:hover { color: var(--c-orange-hover); }
 .nav-toggle-label span::before,
 .nav-toggle-label span::after {
   display: block;
-  background: var(--c-text);
+  background: #fff;
   height: 2px;
   width: 22px;
   position: relative;
