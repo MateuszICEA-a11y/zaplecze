@@ -3317,3 +3317,85 @@ blockquote {
   .rank-card__specs-grid { grid-template-columns: 1fr; }
   .rank-card__verdict { grid-template-columns: 1fr; gap: 1rem; }
 }
+
+/* ══════════════════════════════════════
+   404 ERROR PAGE
+   ══════════════════════════════════════ */
+.error-page {
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-page__content {
+  max-width: 560px;
+}
+
+.error-page__code {
+  font-family: var(--f-display);
+  font-size: clamp(5rem, 12vw, 8rem);
+  font-weight: 700;
+  color: var(--c-orange);
+  line-height: 1;
+  margin-bottom: .5rem;
+}
+
+.error-page__title {
+  font-family: var(--f-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--c-dark);
+  margin-bottom: 1rem;
+}
+
+.error-page__text {
+  font-size: .95rem;
+  color: var(--c-text-mid);
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+.error-page__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.error-page__links {
+  text-align: left;
+  background: var(--c-bg-alt);
+  border-radius: var(--radius);
+  padding: 1.5rem 2rem;
+}
+
+.error-page__links-title {
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--c-text-light);
+  margin-bottom: .75rem;
+}
+
+.error-page__links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .4rem;
+}
+
+.error-page__links a {
+  font-size: .875rem;
+  font-weight: 500;
+  color: var(--c-text-mid);
+  text-decoration: none;
+}
+
+.error-page__links a:hover { color: var(--c-orange); }
