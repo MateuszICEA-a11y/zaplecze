@@ -93,8 +93,9 @@ a:hover { color: var(--c-orange-hover); }
 
 .site-nav__links {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 1.2rem;
+  flex-wrap: nowrap;
 }
 
 .site-nav__link {
@@ -229,10 +230,12 @@ a:hover { color: var(--c-orange-hover); }
    ══════════════════════════════════════ */
 .dropdown {
   position: relative;
+  white-space: nowrap;
 }
 
 .dropdown > .site-nav__link {
   position: relative;
+  white-space: nowrap;
 }
 
 .dropdown > .site-nav__link::after {
