@@ -71,7 +71,7 @@ Szerokość bocznego otworu załadunkowego to kluczowy parametr w miejskiej logi
 
 Busy 9-osobowe to osobna kategoria – wymagają jedynie prawa jazdy kat. B, a oferują przestrzeń zbliżoną do minibusów. W naszym rankingu oceniamy komfort pasażerów, bagażnik i koszty utrzymania.
 
-Sprawdź [ranking busów 9-osobowych](/porownania/ranking-busow-9-osobowych/) oraz nasz przegląd [samochodów 9-osobowych w ofercie](/porownania/ranking-busow-9-osobowych/).
+Sprawdź [ranking busów 9-osobowych](/porownania/ranking-busow-9-osobowych/).
 
 ## Elektryczne busy dostawcze
 
