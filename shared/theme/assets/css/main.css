@@ -317,10 +317,12 @@ a:hover { color: var(--c-orange-hover); }
 
 /* ── Narzędzia dropdown (small) ── */
 .dropdown__panel--small {
+  position: absolute;
+  top: 100%;
   width: 400px;
   max-width: 95vw;
   left: auto;
-  right: 0;
+  right: -1rem;
   transform: none;
 }
 
