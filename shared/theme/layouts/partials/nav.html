@@ -169,6 +169,21 @@
   });
 })();
 
+// Lock body when hamburger open
+(function(){
+  var toggle = document.getElementById('nav-toggle');
+  if (toggle) {
+    toggle.addEventListener('change', function() {
+      if (this.checked) {
+        document.body.style.overflow = 'hidden';
+        window.scrollTo(0, 0);
+      } else {
+        document.body.style.overflow = '';
+      }
+    });
+  }
+})();
+
 // Mobile dropdown toggle
 (function(){
   document.querySelectorAll('.dropdown').forEach(function(dd) {
