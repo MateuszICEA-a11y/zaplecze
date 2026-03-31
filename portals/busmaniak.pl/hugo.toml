@@ -78,6 +78,11 @@ enableRobotsTXT = true
   weight = 8
 
 [[menus.main]]
+  name = "Vanlife"
+  url = "/vanlife/"
+  weight = 9
+
+[[menus.main]]
   name = "Narzędzia"
   url = "/narzedzia/"
-  weight = 9
+  weight = 10

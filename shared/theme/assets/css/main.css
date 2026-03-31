@@ -257,14 +257,14 @@ a:hover { color: var(--c-orange-hover); }
 .dropdown__inner {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 1rem 2.5rem 1.5rem;
+  padding: 1.5rem 2.5rem 2rem;
   background: #fff;
   border-bottom: 1px solid var(--c-border);
   box-shadow: 0 4px 24px rgba(0,0,0,.08);
 }
 
 .dropdown__breadcrumb {
-  font-size: .75rem;
+  font-size: .8125rem;
   color: var(--c-text-light);
   margin-bottom: .75rem;
   padding-bottom: .5rem;
@@ -287,15 +287,15 @@ a:hover { color: var(--c-orange-hover); }
 
 .dropdown__grid {
   columns: 4;
-  column-gap: .75rem;
+  column-gap: 1.25rem;
 }
 
 .dropdown__model {
   display: flex;
   align-items: center;
-  gap: .5rem;
-  padding: .4rem .5rem;
-  font-size: .8125rem;
+  gap: .6rem;
+  padding: .55rem .75rem;
+  font-size: .9375rem;
   font-weight: 500;
   color: var(--c-text);
   text-decoration: none;
@@ -311,8 +311,8 @@ a:hover { color: var(--c-orange-hover); }
 }
 
 .brand-icon {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
   object-fit: contain;
   opacity: .8;

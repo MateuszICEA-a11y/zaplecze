@@ -14,7 +14,7 @@
       {{ range .Site.Menus.main }}
         {{ if eq .URL "/modele/" }}
           <div class="dropdown">
-            <a href="{{ .URL }}" class="site-nav__link{{ if $.IsMenuCurrent "main" . }} site-nav__link--active{{ end }}">
+            <a href="{{ .URL }}" class="site-nav__link{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} site-nav__link--active{{ end }}">
               {{ .Name }} <span class="dropdown__arrow">▾</span>
             </a>
             <div class="dropdown__panel">
@@ -50,7 +50,7 @@
             </div>
           </div>
         {{ else }}
-          <a href="{{ .URL }}" class="site-nav__link{{ if $.IsMenuCurrent "main" . }} site-nav__link--active{{ end }}">{{ .Name }}</a>
+          <a href="{{ .URL }}" class="site-nav__link{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }} site-nav__link--active{{ end }}">{{ .Name }}</a>
         {{ end }}
       {{ end }}
       {{/* ═══ SEARCH ═══ */}}
