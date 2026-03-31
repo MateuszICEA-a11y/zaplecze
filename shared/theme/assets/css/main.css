@@ -449,9 +449,8 @@ a:hover { color: var(--c-orange-hover); }
   }
 
 
-  .dropdown:hover .dropdown__panel,
-  .dropdown:focus-within .dropdown__panel {
-    display: block;
+  .dropdown:hover .dropdown__panel {
+    display: none;
   }
 
   .dropdown__inner {
@@ -466,6 +465,14 @@ a:hover { color: var(--c-orange-hover); }
   .dropdown__model {
     font-size: .75rem;
     padding: .3rem .4rem;
+  }
+
+  .dropdown__panel--small {
+    position: static;
+    width: 100%;
+    transform: none;
+    left: auto;
+    right: auto;
   }
 }
 

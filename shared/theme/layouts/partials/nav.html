@@ -166,5 +166,22 @@
     }
   });
 })();
+
+// Mobile dropdown toggle – first tap opens, second tap navigates
+(function(){
+  if (window.innerWidth > 960) return;
+  document.querySelectorAll('.dropdown > .site-nav__link').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      if (window.innerWidth > 960) return;
+      var panel = this.nextElementSibling;
+      if (!panel || !panel.classList.contains('dropdown__panel')) return;
+      if (panel.style.display === 'block') return; // second tap – navigate
+      e.preventDefault();
+      // close other panels
+      document.querySelectorAll('.dropdown__panel').forEach(function(p) { p.style.display = ''; });
+      panel.style.display = 'block';
+    });
+  });
+})();
 </script>
 
