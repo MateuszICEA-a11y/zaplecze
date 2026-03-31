@@ -304,13 +304,13 @@ a:hover { color: var(--c-orange-hover); }
 }
 
 .dropdown__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem 1.5rem;
+  columns: 4;
+  column-gap: 1.5rem;
 }
 
 .dropdown__brand-group {
   break-inside: avoid;
+  margin-bottom: .75rem;
 }
 
 .dropdown__brand-label {
