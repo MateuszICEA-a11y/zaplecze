@@ -21,5 +21,4 @@
 {{ else if hasPrefix $slug "volkswagen" }}{{ $brand = "volkswagen" }}
 {{ end }}
 
-{{ $svgBrands := slice "fiat" "ford" "hyundai" "mercedes-benz" "nissan" "toyota" "volkswagen" }}
-{{ if $brand }}{{ if in $svgBrands $brand }}<img src="/images/brands/{{ $brand }}.svg" alt="{{ $brand }}" class="brand-icon" loading="lazy">{{ else }}<img src="/images/brands/{{ $brand }}.png" alt="{{ $brand }}" class="brand-icon" loading="lazy">{{ end }}{{ else }}<span class="material-symbols-outlined brand-icon-fallback">directions_bus</span>{{ end }}
+{{ if $brand }}<img src="/images/brands/{{ $brand }}.png" alt="{{ $brand }}" class="brand-icon" loading="lazy">{{ else }}<span class="material-symbols-outlined brand-icon-fallback">directions_bus</span>{{ end }}
