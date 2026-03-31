@@ -319,7 +319,7 @@ a:hover { color: var(--c-orange-hover); }
 .dropdown__panel--small {
   position: absolute;
   top: 100%;
-  width: 400px;
+  width: 300px;
   max-width: 95vw;
   left: auto;
   right: -1rem;

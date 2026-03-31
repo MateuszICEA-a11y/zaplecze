@@ -92,10 +92,7 @@
                     <span class="material-symbols-outlined dropdown__tool-icon">
                       {{ if findRE `dmc` .File.ContentBaseName }}scale{{ else if findRE `paliw` .File.ContentBaseName }}local_gas_station{{ else if findRE `zabudow` .File.ContentBaseName }}straighten{{ else }}compare_arrows{{ end }}
                     </span>
-                    <div>
-                      <div class="dropdown__tool-name">{{ .Params.h1 | default .Title }}</div>
-                      {{ with .Description }}<div class="dropdown__tool-desc">{{ . | truncate 80 }}</div>{{ end }}
-                    </div>
+                    <span class="dropdown__tool-name">{{ .Params.h1 | default .Title }}</span>
                   </a>
                   {{ end }}
                 {{ end }}
