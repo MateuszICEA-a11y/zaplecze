@@ -147,22 +147,4 @@ Procedura podwyższenia DMC wymaga kilku kroków:
 
 Koszt procedury wynosi 1500–5000 zł, a czas realizacji to 1–3 miesiące. Pamiętaj, że podwyższenie DMC powyżej 3,5 tony ma poważne konsekwencje. Wymaga prawa jazdy kategorii C1, a pojazd staje się ciężarówką. Oznacza to obowiązek korzystania z systemu e-TOLL w Polsce i odpowiedników za granicą (np. GO-Box w Austrii), a także ograniczenie prędkości na autostradach do 80 km/h.
 
-## FAQ
-
-**Ile wynosi DMC mojego pojazdu?**
-
-DMC znajdziesz w dowodzie rejestracyjnym w polu F.2. Bez dokumentu pod ręką sprawdź tabliczkę znamionową – zazwyczaj jest umieszczona na słupku drzwi kierowcy lub pod maską.
-
-**Czy mogę podwyższyć DMC kampera?**
-
-Tak, jeśli konstrukcja podwozia na to pozwala. Wymaga to opinii uprawnionego rzeczoznawcy samochodowego, badania technicznego w OSKP i wymiany dowodu rejestracyjnego. Koszt to 1500–5000 zł.
-
-**Co grozi za przekroczenie DMC?**
-
-Mandat do 3000 zł dla pojazdów do 3,5 t, zakaz dalszej jazdy do czasu rozładunku, a w razie wypadku – ryzyko regresu ubezpieczeniowego i pokrycia szkody z własnej kieszeni.
-
-**Czy DMC obejmuje masę kierowcy?**
-
-DMC to limit dla całego pojazdu z pasażerami i ładunkiem. Natomiast masa własna pojazdu wpisana w polskim dowodzie rejestracyjnym (pole G) jest zdefiniowana bez wagi kierowcy.
-
 *Źródła: Wikipedia – Dopuszczalna masa całkowita, autocentrum.pl, GITD*

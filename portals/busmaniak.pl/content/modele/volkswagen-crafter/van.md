@@ -1,3 +1,23 @@
+---
+title: "Volkswagen Crafter Van – pojemność, ładowność, konfiguracje"
+date: 2026-03-24
+lastmod: 2026-03-24
+description: "Volkswagen Crafter II Van – wymiary 9–18 m³, ładowność do 1700 kg. Konfiguracje L3/L4 × H2/H3, silniki 2.0 TDI i opcje napędowe FWD/RWD."
+draft: false
+author: "marek-kowalczyk"
+type: "page"
+image: "/images/volkswagen-crafter-van-hero.jpg"
+parent: "volkswagen-crafter"
+lead: "Volkswagen Crafter II Van to zamknięta przestrzeń ładunkowa z dostępem przez tylne drzwi dwuskrzydłowe i opcjonalne drzwi boczne."
+faq:
+  - question: "Jaka jest maksymalna pojemność VW Craftera Van?"
+    answer: "Największy Crafter Van – wariant L4H3 – oferuje pojemność 18,4 m³. To jedna z największych przestrzeni ładunkowych dostępnych w kategorii pojazdów N1/N2 do 5 t DMC."
+  - question: "Ile palet mieści VW Crafter L4H3?"
+    answer: "Crafter L4H3 mieści 6–7 palet EUR 1200x800 mm. Szerokość podłogi 1782 mm pozwala na układanie palet zarówno wzdłuż, jak i poprzecznie (przy rotacji 90°)."
+  - question: "Czy VW Crafter Van wymaga prawa jazdy C?"
+    answer: "Crafter w wersji N1 do 3,5 t DMC wymaga tylko prawa jazdy kat. B. Wersje z DMC 4 t i 5 t (kategoria N2) wymagają odpowiednio C1 i C."
+---
+
 ## Konfiguracje Volkswagen Crafter Van
 
 Dostępne konfiguracje Volkswagen Crafter różnią się przede wszystkim rozstawem osi, zwisem tylnym, wysokością dachu, napędem oraz DMC. W praktyce to właśnie te elementy decydują o długości nadwozia, kubaturze i realnej ładowności.

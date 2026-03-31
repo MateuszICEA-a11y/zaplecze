@@ -1,3 +1,26 @@
+---
+title: "Volkswagen Crafter TDI – dane techniczne, spalanie, opinie"
+date: 2026-03-26
+description: "Silnik 2.0 TDI w Volkswagenie Crafter II – warianty 102–177 KM, spalanie, typowe usterki, koszty serwisu. Porównanie z silnikami Sprintera i Ducato."
+draft: false
+author: "marek-kowalczyk"
+h1: "Volkswagen Crafter TDI – dane techniczne i opinie"
+parent: "volkswagen-crafter"
+type: "page"
+volume: 720
+main_keyword: "volkswagen crafter tdi"
+image: "/images/volkswagen-crafter-hero.jpg"
+image_alt: "Volkswagen Crafter II furgon"
+lead: "Crafter II (od 2017) napędza wyłącznie czterocylindrowy 2.0 TDI w trzech wariantach mocy: 102, 140 i 177 KM. To pierwszy Crafter z własnym silnikiem VW – poprzednik korzystał z jednostek Mercedesa. Oto wszystko o danych technicznych, spalaniu i typowych usterkach."
+faq:
+  - question: "Który wariant 2.0 TDI w Crafterze wybrać?"
+    answer: "140 KM z manualem lub 8AT – optymalny kompromis mocy i kosztów. 102 KM do lekkiej miejskiej dystrybucji. 177 KM z 8AT i 4MOTION do ciężkich zastosowań."
+  - question: "Ile pali Crafter TDI?"
+    answer: "102 KM: 7,5 l/100 km. 140 KM: 7,8 l. 177 KM: 8,5 l. W mieście z ładunkiem dodaj 25–35%."
+  - question: "Jakie są typowe usterki 2.0 TDI w Crafterze?"
+    answer: "DPF (zapychanie miejskie), czujniki NOx (fałszywe błędy), automat 8AT (wymaga wymiany oleju co 60 tys. km). Silnik sam w sobie trwały."
+---
+
 ## Dane techniczne 2.0 TDI w Volkswagen Crafter
 
 Volkswagen Crafter TDI drugiej generacji, produkowany od 2017 roku, korzysta z czterocylindrowego diesla 2.0 TDI w użytkowej odmianie rodziny EA288, przygotowanej do pracy w dużych autach dostawczych. W zależności od rocznika i rynku występowały warianty mocy 102, 122, 140 i 177 KM.
