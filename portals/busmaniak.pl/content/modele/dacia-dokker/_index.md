@@ -10,6 +10,8 @@ type: "page"
 main_keyword: "Dacia Dokker"
 image: "/images/dacia-dokker-hero.webp"
 image_alt: "Dacia Dokker Van – kompaktowy kombivan dostawczy"
+youtube: "w74l3ezd61A"
+youtube_title: "(PL) Dacia Dokker Laureate 1.5 dCi - test i jazda próbna"
 lead: "Dacia Dokker to jeden z najbardziej opłacalnych kombivanów na rynku wtórnym – łączy prostą budowę z przestrzenią ładunkową, której trudno szukać w tej cenie. Produkcja zakończyła się w marcu 2021 roku, ale model wciąż cieszy się dużym popytem wśród małych firm i rzemieślników."
 faq:
   - question: "Jakie silniki ma Dacia Dokker?"
@@ -117,7 +119,10 @@ Produkcja zakończona w marcu 2021 – nowe egzemplarze niedostępne. Rynek wtó
 | 2016–2018 (po liftingu) | 1.5 dCi 90 / 1.2 TCe | 25 000–35 000 zł |
 | 2019–2021 | 1.3 TCe 130 / 1.5 dCi | 36 000–50 000 zł |
 
-## Porównanie Dokkera z konkurencją
+#
+{{% youtube %}}
+
+# Porównanie Dokkera z konkurencją
 
 Dokker trudno pobić w stosunku ceny do przestrzeni ładunkowej – przy ładowności 970 kg i paku 3,1 m³ wyprzedza droższe Kangoo i mniejsze Fiorino. Główni rywale to technicznie pokrewne Kangoo II oraz starsze Berlingo II.
 

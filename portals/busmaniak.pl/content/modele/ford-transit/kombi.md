@@ -19,6 +19,8 @@ faq:
   - question: "Czy Ford Transit Kombi nadaje się do przewozów pracowniczych?"
     answer: "Tak – Ford Transit Kombi jest często wybierany do przewozów pracowniczych. Trzeba jednak pamiętać, że obowiązki dotyczące prawa jazdy, przewozu drogowego osób, licencji czy tachografu zależą od liczby miejsc, DMC, rodzaju działalności i przepisów szczególnych. Nie każda wersja M2 automatycznie podlega tym samym wymaganiom w każdej sytuacji."
 lead: "Ford Transit Kombi to wersja osobowo-mieszana Transita – pojazd przeznaczony do przewozu osób lub jednocześnie osób i ładunków. W zależności od konfiguracji może występować jako auto do użytku firmowego, przewozów pracowniczych albo baza pod bardziej wyspecjalizowane zastosowania."
+youtube: "NKiMcMFSsHQ"
+youtube_title: "Ford Transit L4H3 2022 - TEST PL - 2.0 EcoBlue 130 KM vs pełna paka"
 ---
 ## Czym różni się Kombi od Van i Tourneo?
 
@@ -134,7 +136,10 @@ Przy oględzinach używanego egzemplarza warto przejść prostą checklistę:
 
 W kosztach eksploatacji znaczenie mają również interwały serwisowe, ceny materiałów eksploatacyjnych i różnice między wersjami FWD oraz RWD. W tym materiale nie podajemy jednak konkretnych wartości, ponieważ powinny one wynikać z oficjalnego harmonogramu obsługi i aktualnych cen części dla określonej wersji.
 
-## Zastosowania komercyjne
+#
+{{% youtube %}}
+
+# Zastosowania komercyjne
 
 Ford Transit Kombi jest pojazdem typowo zadaniowym, dlatego dobrze sprawdza się wszędzie tam, gdzie trzeba połączyć przewóz ludzi z odpornością auta dostawczego. To jeden z powodów, dla których często trafia do flot firmowych i zastosowań specjalnych.
 

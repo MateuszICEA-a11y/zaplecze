@@ -19,6 +19,8 @@ faq:
   - question: "Co ile kilometrów serwis agregatu chłodniczego w Daily?"
     answer: "Interwał serwisowy zależy od modelu agregatu i zwykle określa się go godzinami pracy oraz kalendarzowo, a nie tylko przebiegiem pojazdu. W praktyce przegląd wykonuje się zwykle co 500–1000 mth lub co 6–12 miesięcy, zależnie od modelu."
 lead: "Iveco Daily chłodnia to popularna baza pod zabudowę do dystrybucji spożywczej i farmaceutycznej. Kluczowe przy wyborze są nie tylko agregat i grubość paneli, ale też klasa ATP, współczynnik przenikania ciepła K, DMC bazowego podwozia oraz rzeczywista ładowność po zabudowie."
+youtube: "l72kHTNlkIM"
+youtube_title: "Test: Iveco Daily 2025 - spalanie, realna ładowność, opinie"
 sources:
   - "tekst Umowy ATP"
   - "wytyczne właściwej jednostki badającej ATP w Polsce"
@@ -115,7 +117,10 @@ Z punktu widzenia rynku Daily wyróżnia się tym, że obejmuje zakres od 3.5 t 
 Przy wyborze bazy patrz najpierw na ładowność po zabudowie, a dopiero potem na samą pojemność komory. W chłodni bardzo łatwo zamówić za dużą skrzynię do zbyt lekkiego podwozia i zostać z autem, które ma dobrą kubaturę, ale za mały zapas masy roboczej.
 {{% /expert %}}
 
-## Koszty zabudowy Iveco Daily chłodnia
+#
+{{% youtube %}}
+
+# Koszty zabudowy Iveco Daily chłodnia
 
 Koszt wykonania chłodni na Daily trzeba liczyć szerzej niż tylko cenę skrzyni i agregatu. Na finalną wycenę wpływają długość i wysokość zabudowy, wymagana klasa ATP, typ agregatu, funkcja standby, rodzaj podłogi, liczba drzwi, wyposażenie dodatkowe oraz sam montaż.
 

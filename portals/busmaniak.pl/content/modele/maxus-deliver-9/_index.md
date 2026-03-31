@@ -8,6 +8,8 @@ h1: "Maxus Deliver 9 – kompletny przewodnik po modelu"
 type: "page"
 image: "/images/maxus-deliver-9-hero.webp"
 image_alt: "Maxus Deliver 9 furgon L3H2 na parkingu"
+youtube: "Aj5XyCqxSiA"
+youtube_title: "Maxus Deliver 9 - Nowy Chiński Van z Dieslem | Test pod obciążeniem"
 main_keyword: "maxus deliver 9"
 volume: 5400
 lead: "Maxus Deliver 9 to chiński duży dostawczak marki SAIC Motor, rywalizujący cenowo z Ducato, Sprinterem i Masterem. Silnik 2.0 diesel 136–150 KM, ładowność do 1500 kg i cena od 96 000 zł netto. Sprawdź, czy to realna alternatywa dla europejskiej konkurencji."
@@ -137,7 +139,10 @@ Negatywne opinie dotyczą:
 
 Rynek wtórny dopiero się kształtuje – model jest na rynku od kilku lat. Egzemplarze 2022–2024 z przebiegiem 30–80 tys. km kosztują 85 000–130 000 zł.
 
-## Deliver 9 na tle konkurencji
+#
+{{% youtube %}}
+
+# Deliver 9 na tle konkurencji
 
 Kluczowe parametry Maxus Deliver 9 w tym zestawieniu obejmują m.in. parametr, maxus deliver 9 l3h2, fiat ducato l3h2 – różnice między wariantami mają realne przełożenie na codzienną eksploatację.
 

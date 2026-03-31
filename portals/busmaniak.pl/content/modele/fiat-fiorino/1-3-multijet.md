@@ -9,6 +9,8 @@ parent: "fiat-fiorino"
 type: "engine"
 image: "/images/fiat-fiorino-1-3-multijet-hero.webp"
 image_alt: "Fiat Fiorino III z silnikiem 1.3 MultiJet – widok z przodu na tle warsztatu"
+youtube: "v-yMeGSpBMw"
+youtube_title: "Test: Fiat Fiorino Cargo 1.3 MultiJet2 95 KM – zwinna furgonetka"
 main_keyword: "fiat fiorino 1.3 multijet"
 lead: "Silnik 1.3 MultiJet w Fiacie Fiorino to jedna z najczęściej spotykanych jednostek napędowych w miejskich dostawczakach. Mały turbodiesel FPT o pojemności 1248 cm³ łączy niskie spalanie z przyzwoitą dynamiką, ale po przekroczeniu 150 tysięcy kilometrów potrafi zaskoczyć kosztownymi usterkami łańcucha rozrządu i układu EGR."
 faq:
@@ -116,7 +118,10 @@ Odmiana 1.4 Natural Power/CNG 70 KM obniża koszt paliwa, ale ogranicza praktycz
 Silnik 1.3 MultiJet w Fiorino to solidna jednostka do pracy miejskiej i podmiejskiej. W części wersji występowały dłuższe interwały serwisowe, ale przy ciężkiej eksploatacji miejskiej bezpieczniej trzymać się wymiany oleju co 10–15 tys. km lub raz w roku. W wersjach z DPF warto stosować olej 5W-30 spełniający Fiat 9.55535-S1 / ACEA C2, a pojemność układu z filtrem to około 3,2 l. Jeśli szukasz auta możliwie prostego w utrzymaniu, najłatwiejsza serwisowo będzie wczesna wersja Euro 4 bez DPF.
 {{% /expert %}}
 
-## Koszty serwisu Fiat Fiorino 1.3 MultiJet
+#
+{{% youtube %}}
+
+# Koszty serwisu Fiat Fiorino 1.3 MultiJet
 
 Fiat fiorino 1.3 multijet nie jest drogi w utrzymaniu, ale koszty zależą wyraźnie od wersji emisji i sposobu użytkowania. Najtańsze w serwisie są egzemplarze Euro 4 bez DPF, a najwyższe ryzyko dodatkowych wydatków dotyczy aut Euro 5/6 jeżdżących głównie po mieście.
 

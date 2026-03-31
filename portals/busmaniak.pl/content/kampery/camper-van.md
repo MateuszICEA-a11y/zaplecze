@@ -7,6 +7,8 @@ author: "anna-wozniak"
 h1: "Camper van – różnice, modele i ceny w 2026 roku"
 image: "/images/najlepszy-bus-na-kampera-hero.webp"
 image_alt: "Camper van z rozłożonym dachem na kempingu"
+youtube: "V5PfogqNJ1A"
+youtube_title: "Polski campervan kontra niemiecki kamper - co lepsze? Grand California vs mój Weinsberg"
 main_keyword: "camper van"
 lead: "Camper van to samochód kempingowy zbudowany na bazie busa bez zewnętrznej zabudowy – z wyglądu przypomina zwykłego vana, a w środku kryje łóżko, kuchenkę i miejsce do siedzenia. Od kilku lat camper vany stanowią ponad 50% nowych rejestracji kamperów w Europie, wyprzedzając tradycyjne alkowy i półintegrały."
 faq:
@@ -129,7 +131,10 @@ Rozpiętość cenowa na rynku camper vanów jest ogromna. Najtańsze, samodzieln
 
 Camper vany często tracą na wartości wolniej niż klasyczne kampery. To efekt dużego popytu i ograniczonej podaży, szczególnie w przypadku kultowych modeli jak VW California, na które czas oczekiwania w salonie nierzadko sięga 9–12 miesięcy.
 
-## Zalety i wady camper vana
+#
+{{% youtube %}}
+
+# Zalety i wady camper vana
 
 Decyzja o zakupie camper vana powinna być poprzedzona chłodną analizą jego plusów i minusów w kontekście własnych potrzeb.
 

@@ -8,6 +8,8 @@ h1: "Fiat Fiorino – kompletny przewodnik po modelu"
 type: "page"
 image: "/images/fiat-fiorino-hero.webp"
 image_alt: "Fiat Fiorino III furgon Cargo na tle miasta"
+youtube: "0hZChy1adaI"
+youtube_title: "Fiat Qubo/Citroen Nemo/Peugeot Bipper opinie, zalety, wady, usterki, jaki silnik, spalanie, ceny?"
 main_keyword: "fiat fiorino"
 volume: 9900
 lead: "Fiat Fiorino to najmniejszy dostawczak w ofercie włoskiej marki, produkowany od 1977 roku w trzech generacjach. Trzecia odsłona (2007–2024) dzieli platformę z Citroënem Nemo i Peugeotem Bipper. Oto wszystko, co musisz wiedzieć o wymiarach, silnikach i typowych usterkach tego kompaktowego vana."
@@ -141,7 +143,10 @@ Produkcja zakończona w 2024 r. Ostatnie egzemplarze salonowe sprzedawane za ok.
 Przy oględzinach sprawdź działanie pompy ABS (częsta i droga usterka), stan łańcucha rozrządu (posłuchaj przy zimnym rozruchu) i stan rolek drzwi przesuwnych.
 {{% /info %}}
 
-## Porównanie Fiata Fiorino z konkurencją
+#
+{{% youtube %}}
+
+# Porównanie Fiata Fiorino z konkurencją
 
 Fiorino dzieli platformę z Citroënem Nemo i Peugeotem Bipperem – wymiary i parametry tych trzech modeli są niemal identyczne. Kangoo Compact to niezależna konstrukcja z większą paką, ale wyższą ceną.
 

@@ -7,6 +7,8 @@ author: "anna-wozniak"
 h1: "Kamper 4-osobowy – modele dla rodziny"
 image: "/images/kamper-4-osobowy-hero.webp"
 image_alt: "Kamper 4-osobowy typu camper van z podnoszonym dachem"
+youtube: "5TwsNshtq_A"
+youtube_title: "✨ Luksusowy Mercedes V-klasa – gotowy kamper w perfekcyjnym stanie!"
 main_keyword: "kamper 4-osobowy"
 lead: "Kamper 4-osobowy to najpopularniejsza kategoria wśród rodzin z dziećmi – wystarczająco przestronny na wygodne spanie we czwórkę, a jednocześnie na tyle kompaktowy, by mieścił się na standardowym parkingu. Wybór obejmuje camper vany z dachem podnoszonym, małe alkowy i modułowe zabudowy – ceny używanych, starszych modeli zaczynają się od 80 tys. zł."
 faq:
@@ -101,7 +103,10 @@ Oto lista kluczowych elementów wyposażenia w kamperze 4-osobowym:
 
 Kompletne wyposażenie nowego kampera 4-osobowego obejmuje również panel słoneczny (**100–200 W**), dodatkowy akumulator LiFePO4 (**100–200 Ah**) oraz [przetwornicę](https://pl.wikipedia.org/wiki/Przetwornica_napi%C4%99cia) 12/230 V.
 
-## Koszty i co wybrać przy określonym budżecie
+#
+{{% youtube %}}
+
+# Koszty i co wybrać przy określonym budżecie
 
 Rynek kamperów 4-osobowych jest bardzo zróżnicowany cenowo, co pozwala znaleźć odpowiedni pojazd niemal w każdym budżecie.
 

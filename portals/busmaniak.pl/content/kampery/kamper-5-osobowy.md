@@ -7,6 +7,8 @@ author: "anna-wozniak"
 h1: "Kamper 5-osobowy – modele dla rodzin z dziećmi"
 image: "/images/ranking-kamperow-hero.webp"
 image_alt: "Kamper 5-osobowy typu alkowa na kempingu"
+youtube: "YhIKBoNAe_U"
+youtube_title: "5-OSOBOWY KAMPER-VAN NA BAZIE... HYUNDAI&#39;A! *NA SPRZEDAŻ*"
 main_keyword: "kamper 5-osobowy"
 lead: "Kamper 5-osobowy to optymalny wybór dla rodziny z dwójką lub trójką dzieci – oferuje więcej przestrzeni niż camper van, a jednocześnie mieści się w kategorii prawa jazdy B. Modele alkowy i półintegry z homologacją na 5 osób kosztują od 150 tys. zł na rynku wtórnym do ponad 600 tys. zł za nowe pojazdy."
 faq:
@@ -103,7 +105,10 @@ Budżet na rodzinnego kampera zależy od tego, czy celujesz w nowy pojazd z salo
 
 Kampery utrzymują wartość znacznie lepiej niż auta osobowe – spadek o **10–15%** w ciągu pierwszych trzech lat jest normą. Dlatego zakup 3- lub 4-letniego modelu to finansowo często najrozsądniejsza opcja.
 
-## Wyposażenie niezbędne dla 5 osób
+#
+{{% youtube %}}
+
+# Wyposażenie niezbędne dla 5 osób
 
 Pięcioosobowa załoga generuje znacznie większe zapotrzebowanie na wodę, prąd i przestrzeń magazynową niż standardowa para.
 

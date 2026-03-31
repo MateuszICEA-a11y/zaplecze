@@ -9,6 +9,8 @@ type: "page"
 main_keyword: "Citroën Berlingo"
 image: "/images/citroen-berlingo-hero.webp"
 image_alt: "Citroën Berlingo III na drodze"
+youtube: "iTN4kNu9Dbo"
+youtube_title: "Citroën Berlingo 1.6HDI - Vano-Szczak, dom zbuduje, na wakacje zawiezie! (test PL) - AutoMarian 500+"
 lead: "Citroën Berlingo to jeden z najpopularniejszych kombivanów w Europie, produkowany od 1996 roku. Z fabryki w Vigo zjechało ponad 15 milionów Berlingo i bliźniaczych Partnerów. Model sprawdza się jako auto rodzinne, dostawcze i serwisowe."
 faq:
   - question: "Jakie są generacje Citroëna Berlingo?"
@@ -114,7 +116,10 @@ Rozpiętość cenowa Berlingo na rynku wtórnym jest ogromna – od 5 tys. zł z
 | Nowy Berlingo III Van M | od ok. 92 000 zł netto |
 | Nowy ë-Berlingo | od ok. 170 000 zł netto |
 
-## Typowe usterki Berlingo {#usterki}
+#
+{{% youtube %}}
+
+# Typowe usterki Berlingo {#usterki}
 
 Problemy różnią się między generacjami. W pierwszej – usterki elektryki i zawieszenia. W drugiej – awarie turbo w 1.6 HDI i zatykające się filtry FAP. Trzecia generacja jest pod tym względem lepsza, ale wymaga pilnowania terminów przeglądów.
 

@@ -194,7 +194,7 @@ Wyposażenie opcjonalne, które warto rozważyć:
 
 {{< related-articles "przewodnik-kupujacego,kamper-4-osobowy,kamper-5-osobowy" "Dobierz kampera do swoich potrzeb →" >}}
 
-## Popularniejsi producenci kamperów
+# Popularniejsi producenci kamperów
 
 Europejski rynek kamperów zdominowany jest przez grupy kapitałowe – Trigano (Francja/Włochy) i Erwin Hymer Group (Niemcy/Thor Industries). Poniżej najważniejsi gracze dostępni u polskich dealerów.
 

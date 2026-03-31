@@ -12,6 +12,8 @@ volume: 27100
 main_keyword: "Iveco Daily dane techniczne"
 image: "/images/iveco-daily-hero.webp"
 image_alt: "Iveco Daily VII furgon"
+youtube: "C9CL8AEpbO4"
+youtube_title: "Iveco Daily 2025 to stara szkoła w nowych czasach"
 lead: "Iveco Daily to jedyny van w segmencie, który oferuje DMC od 3,5 do 7,2 tony w ramach jednej platformy. Rama drabinkowa zamiast samonośnego nadwozia, silniki 2.3 i 3.0 MultiJet II oraz elektryczne eDaily – to cechy, które odróżniają go od Transita, Sprintera i Craftera."
 faq:
   - question: "Jaka jest maksymalna ładowność Iveco Daily?"
@@ -159,7 +161,10 @@ W segmencie DMC 3,5 t Daily przegrywa z Transitem pod względem ceny zakupu i si
 
 Dla flot mieszanych, które potrzebują jednego modelu w DMC 3,5–7,2 t, Daily jest jedynym rozsądnym wyborem na rynku – żaden z konkurentów nie oferuje takiego zakresu w jednej platformie.
 
-## Ceny Daily
+#
+{{% youtube %}}
+
+# Ceny Daily
 
 Zakup Iveco Daily to wydatek, który zależy od generacji, wersji silnikowej i stanu technicznego – rozstrzał cenowy na rynku wtórnym bywa spory.
 

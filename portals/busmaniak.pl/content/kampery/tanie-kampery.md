@@ -7,6 +7,8 @@ author: "anna-wozniak"
 h1: "Tanie kampery – poradnik oszczędnego kupującego"
 image: "/images/tanie-kampery-hero.webp"
 image_alt: "Tani kamper – przeróbka DIY furgonu na kampera"
+youtube: "MF76vTzVZAs"
+youtube_title: "CHIŃSKIE KAMPERY. MIAŁY BYĆ TANIE - ILE KOSZTUJĄ?"
 main_keyword: "tanie kampery"
 lead: "Kamper nie musi kosztować fortuny. Przeróbka DIY starego furgonu to wydatek od 20 tys. zł, używane kampery na rynku wtórnym startują od 30 tys. zł, a najtańsze nowe modele pełnowymiarowych kamperów od 250 tys. zł. Każda z tych dróg ma swoje ryzyka – ten poradnik pomoże je zminimalizować."
 faq:
@@ -100,7 +102,10 @@ W ostatnich latach na polskim rynku pojawiło się kilku producentów, którzy o
 
 Różnica w cenie między budżetowym a premium camper vanem sięga **40–60%**. Często wyposażenie jest niemal identyczne – płaci się głównie za markę, jakość wykończenia detali i wyższą wartość rezydualną.
 
-## Na co uważać przy zakupie taniego kampera
+#
+{{% youtube %}}
+
+# Na co uważać przy zakupie taniego kampera
 Tani kamper to niestety większe ryzyko kosztownych niespodzianek. Wiedza o tym, gdzie szukać potencjalnych problemów, to najlepsza polisa ubezpieczeniowa od nietrafionego zakupu.
 
 ### Czerwone flagi i obowiązkowe kontrole

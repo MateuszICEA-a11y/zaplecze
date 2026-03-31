@@ -9,6 +9,8 @@ parent: "fiat-ducato"
 type: "page"
 image: "/images/fiat-ducato-doka-hero.webp"
 image_alt: "Fiat Ducato doka z podwójną kabiną i otwartą skrzynią ładunkową"
+youtube: "2pgVFFnaIfI"
+youtube_title: "Fiat Ducato MY2021 z nowym silnikiem 2.2 MultiJet3 - pierwsza jazda testowa"
 main_keyword: "Fiat Ducato doka"
 lead: "Fiat Ducato doka to podwozie z podwójną kabiną i otwartą platformą ładunkową. Najczęściej spotyka się konfiguracje 6- lub 7-miejscowe, a wymiary skrzyni oraz ładowność zależą od konkretnej zabudowy, DMC i homologacji – orientacyjnie platformy na tym podwoziu mają ok. 2300–3100 mm długości."
 faq:
@@ -91,7 +93,10 @@ Typowe burty aluminiowe mają około 350–400 mm wysokości, ale ten parametr z
 
 Jeśli priorytetem jest zadaszenie całej przestrzeni pasażerskiej, lepszym wyborem będzie [Ducato brygadówka](/modele/fiat-ducato/brygadowka/).
 
-## Typowe problemy i serwis
+#
+{{% youtube %}}
+
+# Typowe problemy i serwis
 
 W doki serwis trzeba oceniać jednocześnie od strony bazowego auta i od strony zabudowy. Oprócz silnika oraz osprzętu równie ważny jest stan mocowań platformy, ramy pomocniczej i elementów pracujących stale pod obciążeniem.
 

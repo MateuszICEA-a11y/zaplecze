@@ -12,6 +12,8 @@ volume: 390
 main_keyword: "Citroën Berlingo dostawczy"
 image: "/images/citroen-berlingo-dostawczy-hero.webp"
 image_alt: "Citroën Berlingo dostawczy przy magazynie"
+youtube: "Gkfl1LL1OoU"
+youtube_title: "Citroën Berlingo 1.5 BlueHDi 130 KM - test, opinie, spalanie"
 lead: "Berlingo dostawczy to wersja z homologacją ciężarową N1, przystosowana do transportu towarów. Dostępna w wariantach furgon M i XL, z ładownością zależnie od wersji do 1000 kg oraz przestrzenią ładunkową od ok. 3,3 m3 do 3,9 m3, a z systemem Extenso do ok. 4,4 m3."
 faq:
   - question: "Czy od Berlingo dostawczego można odliczyć 100% VAT?"
@@ -110,7 +112,10 @@ Porównanie zużycia paliwa dla każdego wariantu silnikowego zawiera artykuł o
 
 {{% expert name="Tomasz Zieliński" %}}W ocenie firmowego furgonu najważniejsze są konfiguracja przestrzeni ładunkowej, dopasowanie napędu do pracy i realne wymagania serwisowe. W Berlingo warto zwrócić uwagę na obecność AdBlue, DPF i SCR w dieslach 1.5 BlueHDi oraz na możliwości systemu Extenso przy przewozie długich elementów.{{% /expert %}}
 
-## Konkurencja w segmencie dostawczym {#konkurencja}
+#
+{{% youtube %}}
+
+# Konkurencja w segmencie dostawczym {#konkurencja}
 
 Najbliżsi rywale Berlingo dostawczego to zarówno konstrukcje z tego samego segmentu C-van, jak i mniejsze auta użytkowe. Najlepiej porównywać je na liczbach – przede wszystkim po objętości, ładowności i możliwościach przewozowych.
 

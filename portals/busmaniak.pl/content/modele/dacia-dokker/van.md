@@ -11,6 +11,8 @@ volume: 590
 main_keyword: "dacia dokker van"
 image: "/images/dacia-dokker-hero.webp"
 image_alt: "Dacia Dokker Van furgon"
+youtube: "u0C_vss83aI"
+youtube_title: "Dacia Dokker opinie, recenzja, zalety, wady, usterki, awarie, jaki silnik, spalanie, ceny, używane?"
 lead: "Dacia Dokker Van to dostawcza wersja kombivana z pełną przegrodą i zaślepionymi tylnymi szybami. 3,1 m³ przestrzeni ładunkowej, ładowność do 970 kg i ceny od 12 000 zł na rynku wtórnym. Produkcja zakończona w 2021 roku, ale model wciąż pozostaje jedną z najtańszych propozycji w segmencie kompaktowych dostawczaków."
 faq:
   - question: "Jakie są wymiary paki Dokkera Van?"
@@ -122,7 +124,10 @@ W praktyce egzemplarze z lat 2016–2018 z przebiegiem 150–250 tys. km są wyr
 | 2018–2019 (po liftingu) | 1.5 dCi 90 | 28 000–38 000 zł |
 | 2020–2021 | 1.5 dCi | 35 000–48 000 zł |
 
-## Porównanie Dokkera Van z konkurencją
+#
+{{% youtube %}}
+
+# Porównanie Dokkera Van z konkurencją
 
 Na tle rywali Dokker Van kusi głównie relacją ceny do przestrzeni użytkowej. Trzeba jednak porównywać wersje homologacyjnie zbliżone, bo ładowność w każdym z tych modeli zależy od silnika, wyposażenia i konkretnej odmiany, a pojedyncze skrajne liczby łatwo wypaczają obraz.
 

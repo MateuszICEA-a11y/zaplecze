@@ -7,6 +7,8 @@ author: "anna-wozniak"
 h1: "Kamper Volkswagen – California i Grand California w 2026 roku"
 image: "/images/volkswagen-california-hero.webp"
 image_alt: "Volkswagen California z podnoszonym dachem na kempingu"
+youtube: "K_G4_y0p0cg"
+youtube_title: "VW Crafter California 2020 Volkswagen Kamper krótkie przedstawienie  recenzja VAN Kampervan Camper"
 main_keyword: "kamper volkswagen"
 lead: "Volkswagen to synonim kampera w Europie – marka, która od 1988 roku produkuje fabryczne camper vany. Aktualna oferta obejmuje kompaktowego VW California na bazie Transportera T6.1 (od 2025 również T7) oraz większego Grand California na bazie Craftera. Ceny zaczynają się od 320 tys. zł za wersję Beach i sięgają 600 tys. zł za Grand California 680."
 faq:
@@ -116,7 +118,10 @@ Kampery Volkswagena trzymają wartość lepiej niż jakikolwiek inny pojazd kemp
 
 Volkswagen California to jeden z niewielu samochodów, które potrafią zyskać na wartości – egzemplarze T3 i T4 Westfalia w dobrym stanie kosztują dziś więcej niż w dniu premiery.
 
-## Dla kogo kamper Volkswagen
+#
+{{% youtube %}}
+
+# Dla kogo kamper Volkswagen
 
 Kampery VW celują w dwa odmienne segmenty rynku – California to pojazd dla osób szukających kompaktowego camper vana do codziennego użytku, Grand California to pełnowymiarowy kamper dla par i małych rodzin ceniących komfort łazienki.
 

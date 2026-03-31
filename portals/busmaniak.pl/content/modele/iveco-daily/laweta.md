@@ -19,6 +19,8 @@ faq:
   - question: "Czy Iveco Daily laweta może przewozić 2 auta jednocześnie?"
     answer: "To bywa możliwe tylko w wybranych zabudowach do transportu dwóch aut, ale legalność zależy od realnej ładowności po zabudowie, długości, szerokości i dopuszczalnych nacisków osi. Przy DMC 7,2 t dwa cięższe auta osobowe często przekraczają możliwości zestawu."
 lead: "Iveco Daily jako baza pod lawetę występuje zarówno w wersjach do 3,5 t, jak i powyżej 3,5 t DMC. Kluczowe są tu nie tylko sama masa całkowita, ale też kategoria prawa jazdy, rzeczywista ładowność po zabudowie oraz parametry podwozia."
+youtube: "8mk-2gk1JaQ"
+youtube_title: "Coobcio Garage - #059 Test lawety Iveco Daily (kod: Coobcio)"
 sources:
   - "dokumentacja homologacyjna i techniczna pojazdu bazowego"
   - "dokumentacja producenta zabudowy"
@@ -117,7 +119,10 @@ Najczęstszy błąd przy zakupie lawety na Daily to patrzenie wyłącznie na sam
 
 Dla wersji powyżej 3,5 t trzeba też pamiętać o obowiązkach eksploatacyjnych niezwiązanych bezpośrednio z rejestracją. W Polsce pojazdy o DMC powyżej 3,5 t podlegają systemowi e-TOLL na wybranych odcinkach dróg płatnych, co przy lawetach 5,0–7,2 t jest istotnym kosztem operacyjnym.
 
-## Koszty zabudowy Iveco Daily laweta
+#
+{{% youtube %}}
+
+# Koszty zabudowy Iveco Daily laweta
 
 Koszt Iveco Daily laweta zależy przede wszystkim od konfiguracji podwozia, rocznika, rodzaju platformy i wyposażenia. Nie da się rzetelnie podać jednej ceny bez rozbicia na elementy takie jak platforma stała lub hydraulicznie opuszczana, wyciągarka, pilot sterowania, najazdy, oświetlenie i dokumentacja do rejestracji.
 

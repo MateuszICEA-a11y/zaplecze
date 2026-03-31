@@ -19,6 +19,8 @@ faq:
   - question: "Jaka jest maksymalna DMC Ford Transit skrzyniowy?"
     answer: "Ford Transit w wersji chassis cab na rynku europejskim jest spotykany z DMC do 4700 kg. W praktyce występują warianty 3500 kg, 3900 kg, 4100 kg, 4250 kg i 4700 kg. Wersje do 3,5 t mieszczą się w kat. B, a powyżej 3,5 t co do zasady wymagają prawa jazdy kat. C1 albo C, zależnie od posiadanych uprawnień."
 lead: "Ford Transit skrzyniowy to pojazd bazowy – gotowe podwozie z kabiną kierowcy, bez zabudowy z tyłu. Kupujesz bazę pod zabudowę, a finalną skrzynię, plandekę, kontener czy wywrotkę wykonuje wyspecjalizowana firma. To jedna z najbardziej elastycznych odmian Transita, ale o parametrach gotowego auta decyduje dopiero kompletna konfiguracja i homologacja końcowa."
+youtube: "NKiMcMFSsHQ"
+youtube_title: "Ford Transit L4H3 2022 - TEST PL - 2.0 EcoBlue 130 KM vs pełna paka"
 sources:
   - "oficjalny cennik i specyfikacja Ford Pro"
   - "dokumentacja Body & Equipment Mounting Manual oraz homologacje zabudowców."
@@ -118,7 +120,10 @@ W praktyce lżejsze zabudowy i jazda miejska mogą dobrze współpracować ze s�
 Do chłodni, wywrotki albo platformy pod cięższy sprzęt zwykle rozsądniej wybierać mocniejszą wersję silnikową niż absolutne minimum. Nie chodzi tylko o osiągi, ale o lepsze dopasowanie auta do masy zabudowy i charakteru pracy z pełnym obciążeniem.
 {{% /expert %}}
 
-## Ceny podwozia i zabudów Transit skrzyniowego
+#
+{{% youtube %}}
+
+# Ceny podwozia i zabudów Transit skrzyniowego
 
 W przypadku podwozi do zabudowy ceny bardzo mocno zależą od rynku, roku modelowego, konfiguracji, promocji i specyfikacji zabudowy. Bez wskazania konkretnego cennika i daty obowiązywania nie ma sensu traktować takich kwot jako twardych danych technicznych.
 

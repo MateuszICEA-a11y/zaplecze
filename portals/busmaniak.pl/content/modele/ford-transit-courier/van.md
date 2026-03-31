@@ -9,6 +9,8 @@ parent: "ford-transit-courier"
 type: "page"
 image: "/images/ford-transit-courier-van-hero.webp"
 image_alt: "Ford Transit Courier Van II generacji – widok z boku"
+youtube: "0lSKLrJ_WIQ"
+youtube_title: "2024 Ford TRANSIT COURIER 1.0 EcoBoost 125KM POWERSHIFT A7 Test PL/ENG"
 main_keyword: "Ford Transit Courier Van"
 lead: "Ford Transit Courier Van II generacji (od 2023) to najmniejszy dostawczak Forda z ładownią 2,91 m³ i miejscem na 2 europalety. Benzynowy 1.0 EcoBoost występuje w wariantach 100 KM i 125 KM, obok diesla 1.5 EcoBlue 100 KM oraz elektrycznego e-Transit Courier 136 KM. Ładowność dochodzi do 845 kg, a ceny startują od ok. 96 000 zł."
 faq:
@@ -99,7 +101,10 @@ Dlatego podawane 845 kg należy traktować jako wartość dla wybranych wersji s
 
 Na tle konkurencji Ford Transit Courier Van wpisuje się w segment małych vanów o objętości ładowni ok. 2,9–3,3 m³ i ładowności rzędu ok. 650–900 kg. W tym kontekście rywalizuje z modelami pokroju VW Caddy Cargo, Renault Kangoo Van, Toyota Proace City Short i Ford Transit Connect – kluczowe punkty porównania to pojemność paki, możliwość przewozu 2 europalet i długość nadwozia.
 
-## Transit Courier Van w codziennej pracy
+#
+{{% youtube %}}
+
+# Transit Courier Van w codziennej pracy
 
 W codziennej robocie najmocniejszym argumentem Couriera jest połączenie kompaktowych wymiarów z sensowną paką. II generacja daje dostęp do ładowni przez 2 asymetryczne drzwi tylne oraz 1 lub 2 drzwi przesuwne, a przegroda z klapą pozwala przewozić elementy o długości do ok. 2600 mm.
 

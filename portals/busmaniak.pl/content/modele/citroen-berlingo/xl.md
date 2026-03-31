@@ -12,6 +12,8 @@ volume: 390
 main_keyword: "Citroën Berlingo XL"
 image: "/images/citroen-berlingo-xl-hero.webp"
 image_alt: "Citroën Berlingo XL III generacji"
+youtube: "Gkfl1LL1OoU"
+youtube_title: "Citroën Berlingo 1.5 BlueHDi 130 KM - test, opinie, spalanie"
 lead: "Berlingo XL to wydłużona wersja III generacji Citroëna Berlingo (od 2018). Jest o 350 mm dłuższe od wersji M i ma o 190 mm większy rozstaw osi. W wersji osobowej oferuje większą przestrzeń bagażową, a w odmianie Van – większą objętość ładowni."
 faq:
   - question: "Jaka jest różnica między Berlingo M a XL?"
@@ -95,7 +97,10 @@ W odmianie elektrycznej stosowano akumulator użyteczny 50 kWh. Zasięg WLTP wyn
 
 W III generacji stosowano też manuale 5- i 6-biegowe oraz automat EAT8 w wybranych wersjach 1.2 PureTech 130 i 1.5 BlueHDi 130. Jeśli chcesz sprawdzić zasadę działania automatu, warto zajrzeć do hasła o [automatycznej skrzyni biegów](https://pl.wikipedia.org/wiki/Automatyczna_skrzynia_bieg%C3%B3w).
 
-## XL jako auto rodzinne {#rodzinne}
+#
+{{% youtube %}}
+
+# XL jako auto rodzinne {#rodzinne}
 
 Citroën Berlingo XL to jedyny wariant, w którym dostępna jest opcja 7 miejsc. W konfiguracji 2+3+2 trzeci rząd występuje wyłącznie w dłuższej wersji nadwozia, co dla dużej rodziny jest jedną z kluczowych przewag nad Berlingo M.
 

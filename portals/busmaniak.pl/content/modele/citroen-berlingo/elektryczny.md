@@ -12,6 +12,8 @@ volume: 110
 main_keyword: "Citroën ë-Berlingo"
 image: "/images/citroen-e-berlingo-hero.webp"
 image_alt: "Citroën ë-Berlingo na stacji ładowania"
+youtube: "nYEGMJKYE3Y"
+youtube_title: "Citroën e Berlingo XTR – Elektryczna rewolucja w klasie kombivan! TEST"
 lead: "Citroën ë-Berlingo to elektryczna odmiana Berlingo III generacji z silnikiem 100 kW (136 KM) i akumulatorem 50 kWh brutto. Zasięg WLTP sięga 280 km, a ładowanie DC od 0 do 80% trwa ok. 30 minut w optymalnych warunkach. W zależności od rynku i rocznika oferta obejmuje wersję osobową ë-Berlingo oraz użytkowe odmiany ë-Berlingo Van."
 faq:
   - question: "Jaki jest realny zasięg ë-Berlingo?"
@@ -100,7 +102,10 @@ Na stacji DC złącze CCS pozwala ładować auto z mocą do 100 kW. W optymalnyc
 
 Przy rocznym przebiegu 20 000 km koszt energii może wynieść ok. 3500–4500 zł przy ładowaniu domowym. Dla porównania Berlingo 1.5 BlueHDi 100 KM spalające 5,5 l/100 km to wydatek ok. 7400 zł rocznie na paliwo.
 
-## Ceny i dostępność {#ceny}
+#
+{{% youtube %}}
+
+# Ceny i dostępność {#ceny}
 
 Nowy ë-Berlingo osobowy w 2025 roku startuje od ok. 150 000–170 000 zł, zależnie od wersji i wyposażenia. ë-Berlingo Van to zwykle poziom ok. 130 000–150 000 zł netto.
 

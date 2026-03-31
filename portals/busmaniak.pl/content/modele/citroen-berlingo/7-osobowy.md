@@ -12,6 +12,8 @@ volume: 480
 main_keyword: "Citroën Berlingo 7-osobowy"
 image: "/images/citroen-berlingo-7-osobowy-hero.webp"
 image_alt: "Wnętrze Citroëna Berlingo z trzecim rzędem siedzeń"
+youtube: "e0ckP9A97Jg"
+youtube_title: "Citroen Berlingo II zaskakuje miejscem, schowkami i… hałasem | Zanim kupisz | Test OTOMOTO News"
 lead: "Citroën Berlingo 7-osobowy to wariant z trzecim rzędem siedzeń, dostępny tylko w dłuższych odmianach nadwozia: w II generacji jako L2, a w III generacji jako XL. Typowy układ wnętrza to 2+3+2, choć forma drugiego rzędu zależy od wersji. Trzeci rząd najlepiej sprawdza się okazjonalnie, a przy pełnym obciążeniu warto wybierać mocniejsze silniki."
 faq:
   - question: "Czy Berlingo jest dostępne jako 7-osobowe?"
@@ -97,7 +99,10 @@ W III generacji istniał także ë-Berlingo, ale dostępność konfiguracji 7-os
 
 {{% expert name="Marek Kowalczyk" %}}Jeśli planujesz regularnie wykorzystywać Citroëna Berlingo 7-osobowego z kompletem pasażerów, celowałbym w mocniejsze odmiany 130 KM. Wersje 100 KM mają sens wtedy, gdy trzeci rząd będzie używany sporadycznie.{{% /expert %}}
 
-## Berlingo 7-osobowy vs konkurencja {#konkurencja}
+#
+{{% youtube %}}
+
+# Berlingo 7-osobowy vs konkurencja {#konkurencja}
 
 W segmencie rodzinnych kombivanów Berlingo ma kilku bezpośrednich rywali. Najbliższe konstrukcyjnie są modele z tej samej grupy, ale w praktyce kluczowe znaczenie mają długość nadwozia, układ foteli i dostępność 7 miejsc.
 

@@ -10,6 +10,8 @@ main_keyword: "mercedes citan"
 volume: 1000
 image: "/images/mercedes-citan-hero.webp"
 image_alt: "Mercedes Citan II furgon dostawczy w wersji L2"
+youtube: "Shy7chzIBLw"
+youtube_title: "Mercedes Citan W415 - Renault Kangoo w wersji Premium? | Test OTOMOTO TV"
 lead: "Mercedes Citan to najmniejszy dostawczak w gamie Mercedesa – kompaktowy van zbudowany na platformie Renault Kangoo III. Druga generacja (W420) z 2021 roku oferuje silniki diesla i benzynowe, wersję elektryczną eCitan oraz pasażerskiego bliźniaka – Mercedes T-Class. Sprawdzone podzespoły Renault w opakowaniu premium."
 faq:
   - question: "Na jakiej platformie zbudowany jest Mercedes Citan?"
@@ -115,7 +117,10 @@ Ceny Citana w Polsce plasują go między [Renault Kangoo](/modele/renault-kangoo
 
 Różnica cenowa między Citanem a Kangoo III wynosi ok. 15 000–20 000 zł netto na korzyść Renault. Za tę dopłatę Mercedes oferuje system MBUX, lepsze materiały i prestiż marki – co dla części klientów biznesowych uzasadnia wyższą cenę.
 
-## Porównanie Citana z konkurencją
+#
+{{% youtube %}}
+
+# Porównanie Citana z konkurencją
 
 Citan rywalizuje z kompaktowymi vanami: [Renault Kangoo](/modele/renault-kangoo/), [Oplem Combo](/modele/opel-combo/), Volkswagenem Caddy, Toyotą Proace City i Fiatem Doblo.
 

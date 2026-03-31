@@ -7,6 +7,8 @@ author: "anna-wozniak"
 h1: "Kampery na sprzedaż – kompletny przewodnik po źródłach"
 image: "/images/kampery-na-sprzedaz-hero.webp"
 image_alt: "Kampery na sprzedaż – rząd camper vanów w salonie dealerskim"
+youtube: "v96JJ0i2tc8"
+youtube_title: "🇵🇱Oglądamy KAMPERY. Układy, CENY, roczniki. Kraina Kamperów Siedlce"
 main_keyword: "kampery na sprzedaż"
 lead: "Rynek kamperów w Polsce dynamicznie się rozwija, a liczba ofert na portalach ogłoszeniowych idzie w tysiące. Nowe i używane **kampery na sprzedaż** znajdziesz na OLX i Otomoto, u autoryzowanych dealerów, na targach branżowych lub sprowadzając je z Niemiec czy Włoch. Każde z tych źródeł ma jednak swoje plusy, minusy i pułapki, na które warto uważać."
 faq:
@@ -119,7 +121,10 @@ W Polsce najważniejsze imprezy odbywają się jesienią, ale warto też odwiedz
 
 Na targach zawsze warto negocjować. Dealerzy często przygotowują specjalne pakiety „targowe”, dorzucając w cenie bogate wyposażenie (np. markizę, panele solarne), co może oznaczać oszczędność rzędu **10–20 tys. zł**.
 
-## Sezonowość cen i strategia zakupowa
+#
+{{% youtube %}}
+
+# Sezonowość cen i strategia zakupowa
 
 Ceny kamperów, podobnie jak domów letniskowych, podlegają wyraźnym wahaniom sezonowym. Analizując rynek i kupując w odpowiednim momencie, można zaoszczędzić nawet kilkanaście procent budżetu. Kluczem jest cierpliwość i działanie pod prąd.
 

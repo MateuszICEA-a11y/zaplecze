@@ -19,6 +19,8 @@ faq:
   - question: "Czy Ford Transit brygadówka to samochód osobowy czy dostawczy?"
     answer: "Ford Transit Double Cab występuje jako pojazd z homologacją N1, czyli użytkowy. Nie oznacza to jednak automatycznie pełnego odliczenia VAT ani szczególnych korzyści podatkowych – zależą one od sposobu użytkowania pojazdu i spełnienia warunków wynikających z przepisów."
 lead: "Ford Transit brygadówka – w katalogach Forda określany jako Double Cab – to odmiana użytkowa dla ekip serwisowych, budowlanych i technicznych. Łączy 5–6 miejsc w dwóch rzędach siedzeń z oddzieloną przestrzenią ładunkową. Trzeba jednak pamiętać, że Transit V363/V363 MCA występuje w wielu konfiguracjach, a poprawna ocena wymiarów, ładowności i napędów wymaga zawsze wskazania rocznika oraz rynku."
+youtube: "NKiMcMFSsHQ"
+youtube_title: "Ford Transit L4H3 2022 - TEST PL - 2.0 EcoBlue 130 KM vs pełna paka"
 sources:
   - "specyfikacja i cenniki Ford Transit Double Cab dla konkretnego rocznika i rynku należy każdorazowo sprawdzić przed zakupem"
   - "ponieważ parametry zależą od generacji V363/V363 MCA"
@@ -82,7 +84,10 @@ Równie ostrożnie trzeba podchodzić do kosztów uzyskania przychodu. Zakres ro
 
 Homologacja ma też praktyczne skutki drogowe. W Polsce samochody ciężarowe o DMC do 3,5 t podlegają innym limitom niż osobowe na części dróg – 80 km/h poza obszarem zabudowanym na drogach jednojezdniowych oraz 100 km/h na drogach ekspresowych dwujezdniowych i autostradach. Z kolei e-TOLL dotyczy pojazdów lub zespołów pojazdów o DMC powyżej 3,5 t.
 
-## Zastosowania Transita brygadówki
+#
+{{% youtube %}}
+
+# Zastosowania Transita brygadówki
 
 Ford Transit brygadówka najczęściej trafia do firm, które muszą jednocześnie przewozić ludzi i sprzęt. To typowy wybór dla ekip budowlanych, serwisantów, instalatorów czy służb utrzymania ruchu.
 

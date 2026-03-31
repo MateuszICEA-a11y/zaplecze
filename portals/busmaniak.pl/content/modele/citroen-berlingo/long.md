@@ -12,6 +12,8 @@ volume: 720
 main_keyword: "Citroën Berlingo Long"
 image: "/images/citroen-berlingo-long-hero.webp"
 image_alt: "Citroën Berlingo Long z boku"
+youtube: "e0ckP9A97Jg"
+youtube_title: "Citroen Berlingo II zaskakuje miejscem, schowkami i… hałasem | Zanim kupisz | Test OTOMOTO News"
 lead: "Berlingo Long to wydłużona wersja Citroëna Berlingo. W II generacji funkcjonuje nazwa Long, a w III generacji – XL. W najnowszym modelu dodatkowe 350 mm długości oznacza więcej miejsca na bagaż i opcję trzeciego rzędu siedzeń, ale bez większego rozstawu osi względem wersji M."
 faq:
   - question: "Jaka jest różnica między Berlingo Long a Berlingo XL?"
@@ -101,7 +103,10 @@ Przy wyborze rodzinnej wersji pod duże przebiegi najczęściej kluczowy jest di
 
 Wersja elektryczna ma akumulator 50 kWh i homologacyjny zasięg WLTP około 280 km. W praktyce na autostradzie i zimą realny zasięg jest zwykle niższy, więc przy rodzinnych trasach trzeba dobrze zaplanować ładowanie.
 
-## Berlingo Long jako auto rodzinne {#rodzinne}
+#
+{{% youtube %}}
+
+# Berlingo Long jako auto rodzinne {#rodzinne}
 
 To właśnie tu dłuższa odmiana pokazuje pełnię sensu. Berlingo XL łączy dużą kabinę, przesuwane drzwi i możliwość konfiguracji wnętrza pod dzieci, foteliki oraz bagaże.
 

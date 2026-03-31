@@ -9,6 +9,8 @@ parent: "fiat-ducato"
 type: "page"
 image: "/images/fiat-ducato-9-osobowy-hero.webp"
 image_alt: "Fiat Ducato 9-osobowy Panorama – widok z boku z otwartymi drzwiami"
+youtube: "8hUr95yTqTk"
+youtube_title: "Fiat Ducato 2.3 JTD 9 osobowy"
 main_keyword: "Fiat Ducato 9 osobowy"
 lead: "Fiat Ducato 9 osobowy można prowadzić na prawo jazdy kategorii B tylko wtedy, gdy konkretny egzemplarz ma DMC do 3,5 t i maksymalnie 9 miejsc łącznie z kierowcą. Wersje o DMC powyżej 3,5 t wymagają wyższej kategorii prawa jazdy, a przy pełnym składzie pasażerów i bagażu zapas ładowności szybko się kurczy."
 faq:
@@ -127,7 +129,10 @@ Do kosztów, o które warto pytać jeszcze przed zakupem, należą orientacyjnie
 
 Przy aucie 9-osobowym nie można też ignorować nośności. Jeśli wersja ma niewielką rezerwę ładowności, regularna jazda w komplecie pasażerów przyspiesza zużycie ogumienia, hamulców i elementów zawieszenia.
 
-## Ceny Fiata Ducato 9-osobowego
+#
+{{% youtube %}}
+
+# Ceny Fiata Ducato 9-osobowego
 
 Przy wycenie Ducato trzeba oddzielić rynek wtórny od aktualnej oferty. Równie ważne jest rozróżnienie między autem fabrycznie 9-osobowym a furgonem z później dołożonymi siedzeniami, bo taka różnica potrafi mocno wpływać na wartość pojazdu.
 

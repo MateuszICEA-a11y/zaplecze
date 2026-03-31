@@ -18,6 +18,8 @@ faq:
   - question: "Czy Doblò Panorama nadaje się dla rodziny z dziećmi?"
     answer: "Tak – przesuwne drzwi boczne i wysoka kabina są bardzo praktyczne. Trzeba jednak rozróżnić generacje: Doblò II Panorama oferowało więcej wariantów rodzinnych, a Doblò III stawia głównie na układ 5-miejscowy."
 lead: "Fiat Doblò osobowy to praktyczny van rodzinny, ale nazewnictwo zależy od generacji. W Doblò II funkcjonowała wersja Panorama, natomiast od 2022 roku osobowe odmiany występują głównie jako Fiat Doblò lub e-Doblò. To nadal bliski krewny wersji Cargo, ale z pasażerską kabiną i homologacją M1."
+youtube: "5xfRg3DH_F4"
+youtube_title: "Fiat Doblò 2.0 MultiJet Lounge (2015) - test [PL]"
 ---
 ## Doblò Panorama – co dostaje kupujący
 
@@ -125,7 +127,10 @@ Jeśli zależy ci na bezproblemowym użytkowaniu rodzinnym, fabryczna Panorama l
 Przy zakupie używanego Doblò II sprawdź nie tylko wnętrze, ale też elementy typowo eksploatacyjne. Najważniejsze punkty kontroli to zużycie dwumasy i sprzęgła w 1.6 oraz 2.0 MultiJet, stan DPF i EGR w dieslach, luzy przedniego zawieszenia, korozja podwozia i drzwi przesuwnych oraz działanie elektryki szyb i zamków. Interwał rozrządu i osprzętu zależy od konkretnego silnika i rocznika, więc trzeba go weryfikować oddzielnie dla 1.3, 1.6 i 2.0 MultiJet.
 {{% /expert %}}
 
-## Koszty eksploatacji Panoramy
+#
+{{% youtube %}}
+
+# Koszty eksploatacji Panoramy
 
 Koszty użytkowania zależą przede wszystkim od silnika, rocznika, przebiegu i sposobu eksploatacji. Nie da się przyjąć jednej reguły dla ubezpieczenia – składka zależy od ubezpieczyciela, regionu, profilu kierowcy, przebiegu i sposobu użytkowania auta.
 

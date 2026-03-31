@@ -9,6 +9,8 @@ parent: "fiat-ducato"
 type: "engine"
 image: "/images/fiat-ducato-2-2-multijet-hero.webp"
 image_alt: "Fiat Ducato z silnikiem 2.2 MultiJet – widok z przodu na tle hali serwisowej"
+youtube: "RCfJqA1ITlc"
+youtube_title: "Fiat Ducato L3H2 MAXI 2.2 MultiJet3 (2021) - test [PL]"
 main_keyword: "Fiat Ducato 2.2 MultiJet"
 lead: "Fiat Ducato z silnikiem 2.2 MultiJet to w praktyce dwie różne konstrukcje: starsza jednostka 2.2 pochodzenia Ford/PSA stosowana w Ducato X250 w kilku wariantach mocy, w tym 100 KM, oraz nowoczesny motor 2.2 MultiJet3 stosowany od 2021 roku. Wybór konkretnego rocznika determinuje nie tylko dynamikę jazdy, ale przede wszystkim osprzęt emisyjny, sposób serwisowania i koszty eksploatacji."
 faq:
@@ -105,7 +107,10 @@ W praktyce należy sprawdzić stan DPF/SCR, liczbę udanych regeneracji i ogóln
 Nowy silnik 2.2 MultiJet3 to naturalny następca 2.3 w aktualnym Ducato. Przy cięższych zabudowach najwięcej znaczą poprawny dobór mocy do DMC, regularny serwis i diagnostyka układu emisji, a nie same deklaracje katalogowe.
 {{% /expert %}}
 
-## Który rocznik wybrać?
+#
+{{% youtube %}}
+
+# Który rocznik wybrać?
 
 Wybór konkretnego rocznika i silnika powinien wynikać z zastosowania. Innego Ducato potrzebuje kurier miejski do 3.5 t, innego właściciel lawety, a jeszcze innego użytkownik kampera 4.25 t lub zabudowy chłodniczej.
 

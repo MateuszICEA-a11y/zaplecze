@@ -9,6 +9,8 @@ parent: "fiat-ducato"
 type: "page"
 image: "/images/fiat-ducato-maxi-hero.webp"
 image_alt: "Fiat Ducato Maxi L4H3 – widok z boku"
+youtube: "RCfJqA1ITlc"
+youtube_title: "Fiat Ducato L3H2 MAXI 2.2 MultiJet3 (2021) - test [PL]"
 main_keyword: "Fiat Ducato Maxi"
 lead: "Fiat Ducato Maxi to nie tylko dłuższe nadwozie, ale przede wszystkim wzmocnione podwozie i wyższe dopuszczalne masy – przy czym konkretne elementy jezdne zależą od generacji i wersji. W wariancie L4H3 pojemność sięga 17 m³, a ładowność ma charakter orientacyjny i zależy od rocznika, silnika, skrzyni oraz wyposażenia – zwykle około 1200–1450 kg przy DMC 3,5 t lub około 1900–2200 kg przy DMC 4,25 t."
 faq:
@@ -100,7 +102,10 @@ Spalanie L4H3 z silnikiem 2.3 150 KM wynosi zwykle około 10–12 l/100 km w tra
 
 ![Fiat Ducato Maxi – wymiary, ładowność, zastosowania](/images/fiat-ducato-maxi-hero.webp)
 
-## Zastosowania – od kurierki po vanlife
+#
+{{% youtube %}}
+
+# Zastosowania – od kurierki po vanlife
 
 Fiat Ducato Maxi jest popularny zarówno w pracy, jak i w zabudowach rekreacyjnych, ale sens konkretnej wersji zależy od DMC, wysokości dachu i planowanej zabudowy. W furgonie L4 mówimy o przestrzeni 15–17 m³, ładowności zależnej od DMC na poziomie około 1,3–2,1 t i możliwości przewozu do 5 europalet.
 

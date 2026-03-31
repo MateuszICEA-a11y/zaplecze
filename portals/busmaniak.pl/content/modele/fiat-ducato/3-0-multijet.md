@@ -9,6 +9,8 @@ parent: "fiat-ducato"
 type: "engine"
 image: "/images/fiat-ducato-3-0-multijet-hero.webp"
 image_alt: "Fiat Ducato z silnikiem 3.0 MultiJet – komora silnika"
+youtube: "qRh7RWiEaGE"
+youtube_title: "Średnie spalanie Fiat Ducato 3.0 160 multijet fuel consumption test"
 main_keyword: "Fiat Ducato 3.0 MultiJet"
 lead: "Silnik 3.0 MultiJet w Fiacie Ducato to żeliwna jednostka rodziny F1C opracowana w ramach Iveco/FPT, ceniona w cięższych zastosowaniach transportowych i zabudowach kamperowych. Dobrze serwisowane egzemplarze potrafią osiągać bardzo wysokie przebiegi, często liczone w setkach tysięcy kilometrów."
 faq:
@@ -92,7 +94,10 @@ W kwestii oleju nie ma jednego uniwersalnego zestawu danych dla wszystkich odmia
 
 ![Fiat Ducato 3.0 MultiJet – dane techniczne, spalanie, opinie](/images/fiat-ducato-3-0-multijet-hero.webp)
 
-## Typowe usterki i opinie użytkowników
+#
+{{% youtube %}}
+
+# Typowe usterki i opinie użytkowników
 
 Dobrze utrzymany Fiat Ducato 3.0 MultiJet uchodzi za trwały napęd do cięższej pracy, ale nie jest wolny od typowych problemów osprzętu i eksploatacji. Trwałość konkretnych podzespołów mocno zależy od obciążenia auta, jakości paliwa, serwisu i tego, czy egzemplarz pracował w trasie, czy w cyklu miejskim.
 

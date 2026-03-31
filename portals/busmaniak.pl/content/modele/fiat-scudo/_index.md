@@ -8,6 +8,8 @@ h1: "Fiat Scudo – kompletny przewodnik po modelu"
 type: "page"
 image: "/images/fiat-scudo-hero.webp"
 image_alt: "Fiat Scudo II furgon na tle magazynu"
+youtube: "O7nwjwVnw-E"
+youtube_title: "Fiat Scudo Maxi 180 Multijet3 AT test PL Pertyn Ględzi"
 main_keyword: "fiat scudo"
 volume: 14800
 lead: "Fiat Scudo to średni dostawczak produkowany od 1996 roku we współpracy z PSA. Trzy generacje, silniki 1.6 i 2.0 MultiJet, wersje osobowe Panorama do 9 miejsc i wariant brygadówki. Sprawdź dane techniczne, typowe usterki i ceny na rynku wtórnym."
@@ -137,7 +139,10 @@ Większość problemów mechanicznych Scudo wynika z przeładowywania auta ponad
 
 Wersje osobowe Panorama trzymają cenę znacznie lepiej niż typowe furgony.
 
-## Porównanie Fiata Scudo z konkurencją
+#
+{{% youtube %}}
+
+# Porównanie Fiata Scudo z konkurencją
 
 W segmencie średnich vanów Scudo III mierzy się z Traficem, Transit Customem i Transporterem. Wygrywa ceną zakupu i dostępnością zamienników (wspólne z Expertem i Jumpy), ale przegrywa pojemnością paki z Fordem i VW.
 

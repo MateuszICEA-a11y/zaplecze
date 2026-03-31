@@ -11,6 +11,8 @@ volume: 880
 main_keyword: "fiat scudo osobowy"
 image: "/images/fiat-scudo-hero.webp"
 image_alt: "Fiat Scudo Panorama w wersji osobowej"
+youtube: "O7nwjwVnw-E"
+youtube_title: "Fiat Scudo Maxi 180 Multijet3 AT test PL Pertyn Ględzi"
 lead: "Fiat Scudo osobowy (Panorama) to przeszklona wersja pasażerska średniego vana – zależnie od generacji i konfiguracji oferowana zwykle jako 5-, 8- lub 9-miejscowa. Scudo II produkowano w latach 2007–2016 i technicznie było spokrewnione z Peugeotem Expert oraz Citroënem Jumpy w odmianach osobowych. Scudo III (od 2022) bazuje na platformie EMP2 i występuje także jako elektryczne E-Scudo."
 faq:
   - question: "Ile miejsc ma Scudo Panorama?"
@@ -129,7 +131,10 @@ Przy autach używanych kluczowe są nie tylko ceny zakupu, ale też stan technic
 
 W nowszych dieslach trzeba dodatkowo sprawdzić filtr DPF i układ AdBlue/SCR. To właśnie te elementy należą do najważniejszych punktów kontrolnych przy zakupie osobowego Scudo z rynku wtórnego.
 
-## Porównanie Scudo osobowego z konkurencją
+#
+{{% youtube %}}
+
+# Porównanie Scudo osobowego z konkurencją
 
 Najbliższą konkurencją Scudo III są przede wszystkim bliźniacze vany osobowe z tej samej rodziny Stellantis. To one oferują najbardziej zbliżone wymiary, identyczną architekturę techniczną i tę samą gamę napędów.
 

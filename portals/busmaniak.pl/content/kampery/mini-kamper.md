@@ -7,6 +7,8 @@ author: "anna-wozniak"
 h1: "Mini kamper – kompaktowe kampervany dla par"
 image: "/images/mini-kamper-hero.webp"
 image_alt: "Mini kamper na bazie VW Caddy Maxi z rozłożonym łóżkiem"
+youtube: "gUI0aBfK70g"
+youtube_title: "Mini kamper za 2999 zł z darmowym prądem. Jak go zbudowałem?"
 main_keyword: "mini kamper"
 lead: "Mini kamper to kompaktowy pojazd kempingowy, który mieści się na zwykłym miejscu parkingowym i pali tyle co osobówka. Modele na bazie VW Caddy Maxi, Citroena Berlingo czy Dacii Jogger oferują wygodne spanie dla dwóch osób, a koszt podstawowej zabudowy DIY to wydatek rzędu 3–8 tys. zł."
 faq:
@@ -113,7 +115,10 @@ Roczny koszt utrzymania mini kampera (bez paliwa) to **2000–4000 zł** – oko
 
 Mini kampery na bazie popularnych modeli (Caddy, Berlingo) tracą na wartości wolniej niż duże kampery. Dzieje się tak, ponieważ kupujący traktują je przede wszystkim jako praktyczne samochody osobowe. [Używany kamper](/kampery/kampery-uzywane/) traci **15–25%** wartości w pierwszym roku, podczas gdy kompaktowy van osobowy tylko **10–15%**.
 
-## Ograniczenia mini kamperów
+#
+{{% youtube %}}
+
+# Ograniczenia mini kamperów
 
 Mimo wielu zalet, mini kamper nie jest rozwiązaniem dla każdego. Warto świadomie ocenić jego ograniczenia, by uniknąć rozczarowania w trasie i dopasować pojazd do swoich realnych potrzeb.
 

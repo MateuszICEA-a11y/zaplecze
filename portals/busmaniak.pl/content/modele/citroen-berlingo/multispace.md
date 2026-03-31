@@ -12,6 +12,8 @@ volume: 720
 main_keyword: "Citroën Berlingo Multispace"
 image: "/images/citroen-berlingo-multispace-hero.webp"
 image_alt: "Citroën Berlingo Multispace II generacji"
+youtube: "e0ckP9A97Jg"
+youtube_title: "Citroen Berlingo II zaskakuje miejscem, schowkami i… hałasem | Zanim kupisz | Test OTOMOTO News"
 lead: "Citroën Berlingo Multispace to nazwa stosowana dla osobowych odmian Berlingo także w I generacji, ale ten artykuł dotyczy głównie II generacji (B9) z lat 2008–2018. Lepsze wykończenie wnętrza, przeszklone szyby boczne i bogatsza lista wyposażenia odróżniały ją od wersji Van."
 faq:
   - question: "Czym różni się Berlingo Multispace od Berlingo Van?"
@@ -120,7 +122,10 @@ W wydłużonym wariancie L2/XTR+ zależnie od rynku oferowano trzeci rząd siedz
 
 {{% info title="Ciekawostka" icon="engineering" %}}W odmianach rodzinnych o charakterze użytkowym to właśnie praktyczne dodatki robiły największą różnicę. W Berlingo Multispace do takich elementów należały przede wszystkim Modutop, przesuwne drzwi boczne oraz układ trzech niezależnych foteli w drugim rzędzie.{{% /info %}}
 
-## Multispace vs konkurencja {#konkurencja}
+#
+{{% youtube %}}
+
+# Multispace vs konkurencja {#konkurencja}
 
 Na rynku Citroën Berlingo Multispace konkurował z kilkoma bardzo mocnymi modelami tej samej epoki. Najważniejsze różnice najlepiej widać w wymiarach i pojemności bagażnika, a nie w ogólnikowych ocenach.
 

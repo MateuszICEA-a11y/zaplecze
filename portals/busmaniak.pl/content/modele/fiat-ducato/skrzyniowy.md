@@ -9,6 +9,8 @@ parent: "fiat-ducato"
 type: "page"
 image: "/images/fiat-ducato-skrzyniowy-hero.webp"
 image_alt: "Fiat Ducato skrzyniowy z otwartą platformą ładunkową"
+youtube: "2pgVFFnaIfI"
+youtube_title: "Fiat Ducato MY2021 z nowym silnikiem 2.2 MultiJet3 - pierwsza jazda testowa"
 main_keyword: "Fiat Ducato skrzyniowy"
 lead: "Fiat Ducato skrzyniowy to jedna z najważniejszych baz pod zabudowy w segmencie lekkich aut dostawczych. Standardowe podwozia skrzyniowe najczęściej mają DMC 3,0–3,5 t, a wybrane warianty heavy lub special mogą występować także z wyższym DMC zależnie od rynku i homologacji. W podwoziach skrzyniowych najczęściej spotyka się rozstawy osi 3450, 3800 i 4035 mm. Sama szerokość zewnętrzna platformy 2034 mm nie wystarcza do oceny funkcjonalności – o tym, czy mieszczą się dwie europalety, decydują szerokość użytkowa między burtami i długość podłogi."
 faq:
@@ -136,7 +138,10 @@ Przy zakupie używanego egzemplarza warto zrobić prostą checklistę oględzin:
 - stan instalacji elektrycznej zabudowy
 - zgodność DMC i wymiarów w dokumentach
 
-## Ceny Ducato skrzyniowego
+#
+{{% youtube %}}
+
+# Ceny Ducato skrzyniowego
 
 W przypadku Ducato skrzyniowego trzeba koniecznie rozdzielić **cenę samego podwozia z kabiną** od **ceny kompletnego auta po zabudowie**. To dwie różne wartości, a końcowa kwota zależy od typu skrzyni i zakresu wyposażenia.
 

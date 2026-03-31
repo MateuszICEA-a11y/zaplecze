@@ -9,6 +9,8 @@ type: "page"
 main_keyword: "man tge"
 image: "/images/man-tge-hero.webp"
 image_alt: "MAN TGE furgon na placu manewrowym"
+youtube: "CFvz_VVse4I"
+youtube_title: "Test MAN&#39;a TGE Next Level  | Na Osi 1154"
 lead: "MAN TGE to technicznie ten sam samochód co Volkswagen Crafter II, ale sprzedawany przez MAN Truck & Bus – koncern znany z ciężarówek i autobusów. Produkowany od 2017 roku we Wrześni koło Poznania, TGE daje dostęp do sieci serwisowej MAN i warunków leasingu typowych dla pojazdów ciężarowych. Sprawdź, czy ta różnica jest warta dopłaty."
 faq:
   - question: "Czym MAN TGE różni się od Volkswagena Craftera?"
@@ -113,7 +115,10 @@ Ceny nowych TGE są wyższe niż analogicznych Crafterów o 5–15%, co odzwierc
 
 Na rynku wtórnym TGE jest rzadszy niż Crafter, co przekłada się na nieco wyższe ceny używanych egzemplarzy. Jednocześnie mniejsza podaż oznacza mniejszy przebieg – większość używanych TGE pochodzi z flot firmowych z regularnym serwisem.
 
-## Porównanie TGE z Crafterem i konkurencją
+#
+{{% youtube %}}
+
+# Porównanie TGE z Crafterem i konkurencją
 
 ### MAN TGE a VW Crafter, Sprinter, Transit i Daily
 

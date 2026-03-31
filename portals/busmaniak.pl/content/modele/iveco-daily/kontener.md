@@ -19,6 +19,8 @@ faq:
   - question: "Ile kosztuje zabudowa kontenerowa izoterma na Daily?"
     answer: "Sama zabudowa izoterma bez agregatu to zwykle 20–35 tys. zł netto. Dodanie agregatu chłodniczego to najczęściej kolejne 15–25 tys. zł netto, a ostateczny koszt zależy też od wyposażenia, ATP i montażu."
 lead: "Iveco Daily w zabudowie kontenerowej i izotermicznej to częsty wybór w dystrybucji żywności, gastronomii i farmacji. Sztywna skrzynia lepiej zabezpiecza ładunek niż plandeka, a izolacja termiczna i odpowiednio dobrany agregat pozwalają dopasować auto do konkretnego profilu transportu."
+youtube: "b_u9_lfFdw8"
+youtube_title: "IVECO DAILY 35S14 KONTENER WINDA WEBASTO KLIMATYZACJA 8246 AUTO-PLUS.COM.PL TEL. +48 607 888 556"
 sources:
   - "dane fact-checkera dotyczące rozstawów osi Daily chassis cab"
   - "typowych zakresów wymiarów zabudów kontenerowych i izotermicznych"
@@ -107,7 +109,10 @@ Przy zakupie używanego Daily z izotermą sprawdź pęknięcia laminatu, mostki 
 
 W transporcie żywności często wymagane są rejestratory temperatury, kalibracja czujników i procedury HACCP. Dla farmacji dochodzą wymagania GDP oraz typowe zakresy pracy 2–8°C lub 15–25°C, więc sama obecność agregatu nie załatwia jeszcze całego tematu zgodności operacyjnej.
 
-## Koszty zabudowy i certyfikat ATP
+#
+{{% youtube %}}
+
+# Koszty zabudowy i certyfikat ATP
 
 Koszt zabudowy trzeba rozbić na elementy, bo sama skrzynia to tylko część wydatku. Znaczenie mają ściana warstwowa, podłoga antypoślizgowa, portal drzwi, kurtyna paskowa, listwy kotwiące, ewentualna winda załadowcza 500–750 kg, agregat, rejestrator temperatury, atest ATP i montaż.
 

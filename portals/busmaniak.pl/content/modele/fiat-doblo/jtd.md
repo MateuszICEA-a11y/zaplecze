@@ -18,6 +18,8 @@ faq:
   - question: "Jak trwały jest silnik 1.9 JTD w Doblò?"
     answer: "Przy regularnej obsłudze 1.9 JTD uchodzi za trwały silnik. Na rynku spotykane są egzemplarze z bardzo dużymi przebiegami bez kapitalnego remontu, ale kluczowe są terminowe wymiany oleju, rozrządu i dobra kondycja osprzętu wtryskowego."
 lead: "Silnik 1.9 JTD 100 KM w Fiacie Doblò I to starszy diesel, ale nadal ma mocną pozycję na rynku wtórnym. W typowych egzemplarzach spotykanych w Polsce użytkownicy cenią go za prostszą obsługę niż w nowszych dieslach, dobrą trwałość mechaniczną i użyteczny moment obrotowy."
+youtube: "5xfRg3DH_F4"
+youtube_title: "Fiat Doblò 2.0 MultiJet Lounge (2015) - test [PL]"
 ---
 ## Dane techniczne 1.9 JTD
 
@@ -128,7 +130,10 @@ Niezależnie od ceny zakupu warto zostawić budżet na oględziny w warsztacie i
 W Doblò I z silnikiem 1.9 JTD najpierw oceniamy blacharkę, podwozie i punkty mocowania zawieszenia, a dopiero potem sam motor. Zużyty osprzęt silnika zwykle da się naprawić, ale zaawansowana korozja progów, podłogi czy tylnej części nadwozia potrafi całkowicie przekreślić sens zakupu.
 {{% /expert %}}
 
-## Porównanie z nowszymi silnikami MultiJet
+#
+{{% youtube %}}
+
+# Porównanie z nowszymi silnikami MultiJet
 
 Porównanie z nowszymi dieslami ma sens tylko wtedy, gdy jasno zaznaczymy, że chodzi o wybrane warianty spotykane w Doblò. Różnice między nimi dotyczą nie tylko spalania, ale też osprzętu emisyjnego, kosztów serwisu i wieku aut dostępnych na rynku.
 

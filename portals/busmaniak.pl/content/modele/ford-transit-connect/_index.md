@@ -8,6 +8,8 @@ h1: "Ford Transit Connect – kompletny przewodnik po modelu"
 type: "page"
 image: "/images/ford-transit-connect-hero.webp"
 image_alt: "Ford Transit Connect Mk2 furgon na parkingu"
+youtube: "gJwF-WKhC6U"
+youtube_title: "Courier, Connect, Custom, Transit - test aut dostawczych Forda [PL]"
 main_keyword: "ford transit connect"
 volume: 6600
 lead: "Ford Transit Connect to kompaktowy dostawczak łączący cechy auta osobowego z użytkową wytrzymałością. Trzy generacje od 2002 roku, silniki 1.5 EcoBlue od 75 do 120 KM, wersje od furgona po 7-osobowe Tourneo. Oto wszystko o wymiarach, silnikach i typowych usterkach."
@@ -138,7 +140,10 @@ W Mk2 z 2013–2015 częsty problem z utratą mocy i kodem P2111/P2135. Przyczyn
 | Mk2 (2017–2020) | 45 000–65 000 zł |
 | Mk2 Active (2020–2022) | 65 000–90 000 zł |
 
-## Porównanie Forda Transit Connect z konkurencją
+#
+{{% youtube %}}
+
+# Porównanie Forda Transit Connect z konkurencją
 
 W segmencie kompaktowych dostawczaków Connect wygrywa właściwościami jezdnymi i trwałością nadwozia. Berlingo i Partner oferują większą pakę przy niższej cenie, a Caddy bierze wartością rezydualną – ale kosztuje o 20 tys. więcej.
 

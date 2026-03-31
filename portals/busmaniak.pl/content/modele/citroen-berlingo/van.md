@@ -12,6 +12,8 @@ volume: 720
 main_keyword: "Citroën Berlingo Van"
 image: "/images/citroen-berlingo-van-hero.webp"
 image_alt: "Citroën Berlingo Van III generacji załadowany"
+youtube: "iTN4kNu9Dbo"
+youtube_title: "Citroën Berlingo 1.6HDI - Vano-Szczak, dom zbuduje, na wakacje zawiezie! (test PL) - AutoMarian 500+"
 lead: "Berlingo Van to wersja dostawcza Citroëna Berlingo z homologacją ciężarową N1, stalową przegrodą za kabiną i przestrzenią ładunkową zamiast tylnych siedzeń. Dostępna w dwóch długościach – M i XL – oferuje objętość ładunkową 3,3 lub 3,9 m3, a ładowność zależnie od wersji wynosi od ok. 650 do ok. 1000 kg."
 faq:
   - question: "Ile ładunku zmieści Berlingo Van?"
@@ -116,7 +118,10 @@ Berlingo Van i Berlingo osobowe wyglądają podobnie, ale w praktyce są przygot
 
 Przeróbka Vana na wersję osobową wymaga zmiany homologacji, badań i formalności w wydziale komunikacji. W praktyce oznacza to, że zakup wersji dostawczej warto od początku dopasować do docelowego sposobu użytkowania.
 
-## Berlingo Van na tle konkurencji {#konkurencja}
+#
+{{% youtube %}}
+
+# Berlingo Van na tle konkurencji {#konkurencja}
 
 Citroën Berlingo Van działa w bardzo mocnym segmencie kompaktowych aut dostawczych. Najbliżsi rywale różnią się głównie detalami zabudowy, długościami nadwozia i maksymalną objętością przestrzeni ładunkowej.
 

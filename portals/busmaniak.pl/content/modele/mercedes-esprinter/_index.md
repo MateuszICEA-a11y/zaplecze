@@ -9,6 +9,8 @@ type: "page"
 main_keyword: "mercedes esprinter"
 image: "/images/mercedes-esprinter-hero.webp"
 image_alt: "Mercedes eSprinter furgon elektryczny podczas ładowania"
+youtube: "-qcO_aid8vA"
+youtube_title: "Mercedes-Benz eSprinter 320 Furgon SELECT – test elektrycznego dostawczaka do miasta i firmy"
 lead: "Mercedes eSprinter to elektryczna wersja najpopularniejszego dużego dostawczaka klasy premium. Druga generacja z 2024 roku oferuje do 440 km zasięgu WLTP, ładowność do 1730 kg i szybkie ładowanie DC 115 kW. To poważna propozycja dla flot miejskich i kurierskich."
 faq:
   - question: "Jaki zasięg ma Mercedes eSprinter?"
@@ -108,7 +110,10 @@ Do ceny netto należy doliczyć 23% VAT. Firmy leasingujące pojazdy dostawcze m
 
 Koszty eksploatacji eSprintera są niższe niż spalinowego [Sprintera](/modele/mercedes-sprinter/) – brak oleju silnikowego, filtrów DPF, AdBlue, wymian rozrządu. Serwis ogranicza się głównie do hamulców, opon i płynów.
 
-## Porównanie eSprintera z konkurencją
+#
+{{% youtube %}}
+
+# Porównanie eSprintera z konkurencją
 
 eSprinter rywalizuje z [Fordem E-Transit](/modele/ford-e-transit/), Renault Master E-Tech, [Volkswagenem Crafterem](/modele/volkswagen-crafter/) HyMotion (wodorowy prototyp) oraz [Fiatem Ducato](/modele/fiat-ducato/) e-Ducato.
 

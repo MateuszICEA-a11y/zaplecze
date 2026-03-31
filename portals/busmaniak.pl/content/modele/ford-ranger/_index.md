@@ -8,6 +8,8 @@ h1: "Ford Ranger – kompletny przewodnik po modelu"
 type: "page"
 image: "/images/ford-ranger-hero.webp"
 image_alt: "Ford Ranger T6.2 Wildtrak pickup na polnej drodze"
+youtube: "Buu2rymDkcM"
+youtube_title: "Ford Ranger Wildtrak TEST 2024 pl | Do pracy, lansu i bansu"
 main_keyword: "ford ranger"
 volume: 33100
 lead: "Ford Ranger to najpopularniejszy pickup w Europie, produkowany na platformie T6 od 2011 roku w fabryce Silverton w RPA. Najnowsza generacja T6.2 oferuje silniki od 170 do 292 KM, napęd 4x4 i ładowność ponad tony. Oto kompletny przewodnik po wymiarach, silnikach, wersjach i cenach."
@@ -153,7 +155,10 @@ Wersje 2.0 EcoBlue wymagają regularnej kontroli paska rozrządu pracującego w 
 | T6 (2020–2022) Wildtrak | 140 000–180 000 zł |
 | T6.2 (od 2022) | 180 000–250 000 zł |
 
-## Porównanie Rangera z konkurencją
+#
+{{% youtube %}}
+
+# Porównanie Rangera z konkurencją
 
 W europejskim segmencie pickupów Ranger walczy z bliźniaczym Amarokiem (wspólna platforma T6), niezależnym Hiluxem od Toyoty i budżetowym Isuzu D-Max. Kluczowe różnice to cena wejścia, topowy silnik i ładowność.
 

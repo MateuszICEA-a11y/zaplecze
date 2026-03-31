@@ -151,7 +151,7 @@ Kalkulacja roczna jasno pokazuje, że przy wyjazdach na około 4 tygodnie w roku
 
 Wynajem jest idealnym rozwiązaniem na 1–3 wyjazdy w roku. Pozwala też bez zobowiązań przetestować różne typy zabudów przed podjęciem decyzji o zakupie. Zakup staje się sensowny, gdy planujesz regularne i dłuższe podróże przez wiele lat oraz dysponujesz miejscem do parkowania pojazdu poza sezonem. Zobacz polecane modele w naszym [rankingu kamperów 2026](/porownania/ranking-kamperow/).
 
-## Jak znaleźć kampera w dobrej cenie {#jak-kupic}
+# Jak znaleźć kampera w dobrej cenie {#jak-kupic}
 
 Polski rynek kamperów charakteryzuje się ograniczoną podażą i rosnącym popytem, co winduje ceny. Istnieje jednak kilka sposobów na znalezienie pojazdu w atrakcyjnej cenie.
 

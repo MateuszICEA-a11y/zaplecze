@@ -8,6 +8,8 @@ h1: "Kampery używane – kompletny poradnik zakupu"
 main_keyword: "kampery używane"
 image: "/images/kampery-uzywane-hero.webp"
 image_alt: "Używany kamper profilowany na parkingu podczas oględzin przed zakupem"
+youtube: "pSwMLbBG_sw"
+youtube_title: "Przegląd Używanych Kamperów! Hymer, Knaus, Carthago – Ile Kosztują?"
 lead: "Rynek kamperów w Polsce dynamicznie rośnie, ale to rynek wtórny gra pierwsze skrzypce. Zanim jednak podpiszesz umowę na wymarzone cztery kółka, musisz wiedzieć, gdzie szukać używanych kamperów, co sprawdzić i ile realnie zapłacisz."
 faq:
   - question: "Ile kosztuje używany kamper w Polsce?"
@@ -139,7 +141,10 @@ Do ceny zakupu musisz doliczyć cały pakiet kosztów dodatkowych. Na liście je
 
 Niemieckie kampery często kuszą pełną dokumentacją serwisową (TÜV, książka serwisowa), ale uważaj na korozję w starszych modelach – tamtejsze zimy nie oszczędzają podwozi. Z kolei we Włoszech czy Hiszpanii rdza jest mniejszym problemem, ale dokumentacja bywa niekompletna. Niezależnie od kraju, zawsze próbuj zweryfikować historię pojazdu w lokalnych bazach danych.
 
-## Homologacja importowanego kampera
+#
+{{% youtube %}}
+
+# Homologacja importowanego kampera
 
 Procedura rejestracji zależy od tego, skąd pochodzi pojazd i czy ma fabryczną zabudowę kamperową. Pamiętaj też, że od lipca 2022 roku obowiązują zaostrzone przepisy akcyzowe. Każda zmiana przeznaczenia pojazdu, np. rejestracja furgonu jako kamper, rodzi obowiązek zapłaty akcyzy według stawek jak przy imporcie.
 

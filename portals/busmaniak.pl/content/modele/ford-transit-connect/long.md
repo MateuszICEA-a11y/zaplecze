@@ -11,6 +11,8 @@ volume: 720
 main_keyword: "ford transit connect long"
 image: "/images/ford-transit-connect-hero.webp"
 image_alt: "Ford Transit Connect furgon"
+youtube: "gJwF-WKhC6U"
+youtube_title: "Courier, Connect, Custom, Transit - test aut dostawczych Forda [PL]"
 lead: "Ford Transit Connect Long (L2) to wydłużona odmiana drugiej generacji kompaktowego vana Forda. Ma ok. 4818 mm długości, przestrzeń ładunkową 3,6 m³ i dłuższą podłogę paki niż wersja Short. Sprawdzamy wymiary, praktyczność, gamę silników oraz najważniejsze różnice między L1 i L2."
 faq:
   - question: "Jakie są wymiary Transit Connect Long?"
@@ -134,7 +136,10 @@ Na rynku wtórnym wycena jest jeszcze bardziej zależna od szczegółów. Liczą
 
 Dobry przykład to poliftowy egzemplarz z 2019 roku z silnikiem 1.5 EcoBlue i przebiegiem ok. 180 tys. km. Taki samochód może różnić się ceną o 15 000–20 000 zł względem słabszej wersji 75 KM.
 
-## Porównanie Transit Connect Long z konkurencją
+#
+{{% youtube %}}
+
+# Porównanie Transit Connect Long z konkurencją
 
 W segmencie kompaktowych vanów wersja L2 musi być oceniana przede wszystkim przez pryzmat długości nadwozia i objętości przestrzeni ładunkowej. W tej klasie różnice między modelami nie są ogromne, ale przy pracy flotowej potrafią mieć realne znaczenie.
 

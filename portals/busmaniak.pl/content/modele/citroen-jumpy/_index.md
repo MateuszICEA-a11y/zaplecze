@@ -10,6 +10,8 @@ type: "page"
 main_keyword: "citroen jumpy"
 image: "/images/toyota-proace-hero.webp"
 image_alt: "Citroën Jumpy III furgon – bliźniak Toyota ProAce"
+youtube: "sHOqVX2pISw"
+youtube_title: "CITROEN JUMPY 2.0HDI 120KM (2008) - Jazda Próbna"
 lead: "Citroën Jumpy III to średni van produkowany od 2016 roku w fabryce Sevelnord (Hordain, Francja). Technicznie jest identyczny z Toyota ProAce II i Peugeot Expert III – ta sama platforma EMP2, te same silniki 1.5 i 2.0 BlueHDi, te same wymiary. Różnice ograniczają się do logo na masce i detali wyposażenia."
 faq:
   - question: "Czy Citroën Jumpy i Toyota ProAce to ten sam samochód?"
@@ -63,7 +65,10 @@ Jumpy III jest **technicznie identyczny** z Toyota ProAce II. Wszystkie parametr
 Citroën Jumpy, Toyota ProAce i Peugeot Expert mają identyczne silniki z tymi samymi kodami (DV5RC, DW10FC). Części zamienne są w pełni wymienne między tymi modelami.
 {{% /info %}}
 
-## Jumpy vs ProAce vs Expert – czym się różnią?
+#
+{{% youtube %}}
+
+# Jumpy vs ProAce vs Expert – czym się różnią?
 
 Różnice między bliźniakami ograniczają się do:
 

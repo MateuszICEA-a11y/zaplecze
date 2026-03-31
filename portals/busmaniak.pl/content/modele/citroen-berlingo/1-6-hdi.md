@@ -12,6 +12,8 @@ volume: 2900
 main_keyword: "Citroën Berlingo 1.6 HDI"
 image: "/images/citroen-berlingo-1-6-hdi-hero.webp"
 image_alt: "Silnik 1.6 HDI DV6 w Citroënie Berlingo"
+youtube: "iTN4kNu9Dbo"
+youtube_title: "Citroën Berlingo 1.6HDI - Vano-Szczak, dom zbuduje, na wakacje zawiezie! (test PL) - AutoMarian 500+"
 lead: "Berlingo z silnikiem 1.6 HDI to jeden z częściej trafiających do warsztatu przedstawicieli segmentu małych dostawczaków. Jednostka DV6 produkcji PSA zdobyła popularność dzięki niewysokim kosztom eksploatacji i dostępności części – choć ma też swoje słabości, o których lepiej wiedzieć przed zakupem."
 faq:
   - question: "Ile pali Berlingo 1.6 HDI?"
@@ -124,7 +126,10 @@ Na tle innych silników stosowanych w Berlingo 1.6 HDI wypada jako środek stawk
 
 W praktyce wybór zależy od oczekiwań. Jeśli priorytetem jest prostota, starsze diesle wypadają korzystniej konstrukcyjnie, ale przegrywają kulturą pracy i osiągami. Jeśli liczą się spalanie, dostępność części i szeroki wybór egzemplarzy na rynku wtórnym, 1.6 HDI nadal pozostaje bardzo mocną opcją.
 
-## Koszty eksploatacji i serwisu {#koszty}
+#
+{{% youtube %}}
+
+# Koszty eksploatacji i serwisu {#koszty}
 
 Koszty obsługi 1.6 HDI zależą głównie od wersji silnika, obecności FAP/DPF i historii serwisowej. W tej jednostce najbardziej opłaca się profilaktyka, bo odkładanie napraw szybko kończy się kaskadą kolejnych wydatków.
 

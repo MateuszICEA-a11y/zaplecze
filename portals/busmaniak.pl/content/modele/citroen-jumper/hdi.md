@@ -11,6 +11,8 @@ volume: 1300
 main_keyword: "citroen jumper hdi"
 image: "/images/citroen-jumper-hero.webp"
 image_alt: "Citroën Jumper III furgon"
+youtube: "3zmwYawO7e0"
+youtube_title: "Rozmiar XXL Citroen JUMPER H2 L3 - TEST PL"
 lead: "Citroën Jumper od debiutu w 1994 roku korzystał z różnych silników wysokoprężnych – początkowo także starszych jednostek 1.9 D/TD i 2.5 D/TD, a później motorów HDi oraz BlueHDi. W nowszych generacjach to właśnie citroen jumper hdi stał się podstawą oferty, ale gama zmieniała się etapami wraz z kolejnymi liftingami i normami emisji. Jumper dzieli platformę z Peugeotem Boxerem i Fiatem Ducato, choć oferta silników nie zawsze była identyczna między markami."
 faq:
   - question: "Jaki silnik HDi wybrać w Jumperze?"
@@ -123,7 +125,10 @@ Równie ważna jest profilaktyka. W 2.2 HDi warto skrócić interwał wymiany ol
 W 2.2 HDi najwięcej problemów bierze się z przeciąganych interwałów olejowych i zaniedbań w podstawowej obsłudze. Jeśli auto pracuje ciężko, olej co 15–20 tys. km, kontrola dolotu, podciśnienia i okolic wtrysków daje więcej niż późniejsze kosztowne naprawy.
 {{% /expert %}}
 
-## Koszty serwisu HDi
+#
+{{% youtube %}}
+
+# Koszty serwisu HDi
 
 Koszty serwisu w Jumperze zależą nie tylko od silnika, ale też od wyboru części i warsztatu. Ta sama naprawa potrafi różnić się o 30–50% między ASO a niezależnym serwisem, a części OE są zwykle droższe od zamienników aftermarket.
 

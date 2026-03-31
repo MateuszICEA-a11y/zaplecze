@@ -9,6 +9,8 @@ parent: "fiat-ducato"
 type: "page"
 image: "/images/fiat-ducato-kontener-hero.webp"
 image_alt: "Fiat Ducato z zabudową kontenerową – widok z boku z otwartymi drzwiami"
+youtube: "2pgVFFnaIfI"
+youtube_title: "Fiat Ducato MY2021 z nowym silnikiem 2.2 MultiJet3 - pierwsza jazda testowa"
 main_keyword: "Fiat Ducato kontener"
 lead: "Fiat Ducato dominuje na rynku podwozi pod zabudowę kontenerową dzięki przedniemu napędowi, który daje niższy próg załadunku niż u konkurencji. Przy zabudowie kontenerowej trzeba jednak oddzielać oznaczenie długości bazowego podwozia od rzeczywistych wymiarów samego kontenera – a liczba europalet zależy od faktycznych wymiarów użytkowych podłogi i układu załadunku."
 faq:
@@ -88,7 +90,10 @@ Przy wyższych DMC dochodzą też inne obowiązki zależne od masy całkowitej i
 
 ![Fiat Ducato kontener – zabudowa kontenerowa, wymiary](/images/fiat-ducato-kontener-hero.webp)
 
-## Na co uważać przy zakupie?
+#
+{{% youtube %}}
+
+# Na co uważać przy zakupie?
 
 Przy zakupie zabudowanego Ducato najpierw trzeba zweryfikować dokumenty, a dopiero potem stan techniczny. W przypadku auta typu Fiat Ducato kontener błędy w papierach potrafią być większym problemem niż sama mechanika.
 

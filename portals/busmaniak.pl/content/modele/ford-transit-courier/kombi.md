@@ -9,6 +9,8 @@ parent: "ford-transit-courier"
 type: "page"
 image: "/images/ford-transit-courier-van-hero.webp"
 image_alt: "Ford Transit Courier Kombi – osobowa wersja z przeszklonymi bokami"
+youtube: "Ckn7D4ne9Rw"
+youtube_title: "Ford Tourneo Courier i Transit Courier - TEST PL. Wszystko, co chcesz o nich wiedzieć"
 main_keyword: "Ford Transit Courier Kombi"
 lead: "Ford Transit Courier Kombi (od 2023) to osobowa odmiana najmniejszego Couriera z 5 miejscami i homologacją M1. W gamie przewidziano silniki benzynowe i wysokoprężne, a także wariant elektryczny e-Courier. W praktyce kluczowe są tu kompaktowe wymiary nadwozia oraz większa funkcjonalność kabiny niż w typowym aucie miejskim."
 faq:
@@ -85,7 +87,10 @@ W tym artykule nie rozpisujemy szczegółowo wyposażenia tych wersji, ponieważ
 To samo dotyczy systemów bezpieczeństwa i ADAS. Wiadomo jedynie, że w osobowej konfiguracji istotne znaczenie mają mocowania ISOFIX, natomiast pełną listę takich elementów jak AEB, ISA, Lane Keeping Aid, rozpoznawanie znaków, monitor martwego pola czy liczba poduszek powietrznych trzeba potwierdzić w oficjalnej specyfikacji producenta.
 
 
-## Kombi vs Van – kluczowe różnice
+#
+{{% youtube %}}
+
+# Kombi vs Van – kluczowe różnice
 
 Różnica między odmianą Kombi a Vanem nie sprowadza się wyłącznie do liczby siedzeń. Kluczowe są tu także kategorie homologacyjne – M1 dla auta osobowego i N1 dla pojazdu użytkowego – oraz sposób późniejszego użytkowania w firmie.
 

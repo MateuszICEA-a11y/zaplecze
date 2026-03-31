@@ -12,6 +12,8 @@ volume: 49500
 main_keyword: "Ford Transit dane techniczne"
 image: "/images/ford-transit-hero.webp"
 image_alt: "Ford Transit VIII furgon"
+youtube: "NKiMcMFSsHQ"
+youtube_title: "Ford Transit L4H3 2022 - TEST PL - 2.0 EcoBlue 130 KM vs pełna paka"
 lead: "Ford Transit VIII to najpopularniejszy dostawczak w Polsce – dostępny w 12 konfiguracjach nadwozia, z silnikami EcoBlue 2.0 od 105 do 185 KM i ładownością do 2300 kg."
 faq:
   - question: "Ile m³ ma Ford Transit L2H2?"
@@ -158,7 +160,10 @@ Kilka wniosków z porównania:
 
 Transit wygrywa przede wszystkim dostępnością serwisu i części – warsztatów znających ten model jest w Polsce więcej niż dla jakiegokolwiek innego dostawczaka. To istotny argument przy intensywnym użytkowaniu.
 
-## Ceny Transita
+#
+{{% youtube %}}
+
+# Ceny Transita
 
 Transit VII (2006–2013) to najtańsza opcja na rynku wtórnym – ceny zaczynają się od 15 tys. zł, ale ryzyko łańcucha rozrządu i korozji rośnie z wiekiem. Nowy Transit L2H2 z 2.0 EcoBlue 130 KM kosztuje od 160 tys. zł netto.
 

@@ -7,6 +7,8 @@ author: "anna-wozniak"
 h1: "Kamper 8-osobowy – modele dla dużych rodzin i grup"
 image: "/images/ranking-kamperow-hero.webp"
 image_alt: "Duży kamper 8-osobowy typu alkowa na kempingu"
+youtube: "u5ivN1iSMfs"
+youtube_title: "KAMPER DO 3,5 TONY I POWYŻEJ - CO WYBRAĆ?"
 main_keyword: "kamper 8-osobowy"
 lead: "Kamper 8-osobowy to pojazd dla dużych rodzin i grup podróżnych, który łączy funkcję transportu z noclegiem na pokładzie. Modele z homologacją na 8 osób to głównie duże alkowy na ciężarowych podwoziach lub specjalistyczne zabudowy kontenerowe. Ich DMC powyżej 3500 kg oznacza konieczność posiadania prawa jazdy C1."
 faq:
@@ -116,7 +118,10 @@ Dla pojazdów powyżej 3,5 t nie obowiązują standardowe winiety, lecz elektron
 
 Spalanie dużych alków rzadko spada poniżej 14–18 l/100 km – to o 40–60% więcej niż w typowych [camper vanach](/kampery/camper-van/). Na trasie z Warszawy do Chorwacji (1200 km w jedną stronę), sam koszt paliwa wyniesie **1200–1500 zł**.
 
-## Ceny kamperów 8-osobowych
+#
+{{% youtube %}}
+
+# Ceny kamperów 8-osobowych
 
 Rynek oferuje szeroki przekrój pojazdów, od kilkunastoletnich, budżetowych alków po luksusowe, fabrycznie nowe integrały.
 

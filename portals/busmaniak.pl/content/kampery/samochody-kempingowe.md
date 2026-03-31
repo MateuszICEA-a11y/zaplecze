@@ -7,6 +7,8 @@ author: "anna-wozniak"
 h1: "Samochody kempingowe – rodzaje, ceny i porady na 2026 rok"
 image: "/images/kampery-featured.webp"
 image_alt: "Samochody kempingowe różnych typów na kempingu"
+youtube: "K_G4_y0p0cg"
+youtube_title: "VW Crafter California 2020 Volkswagen Kamper krótkie przedstawienie  recenzja VAN Kampervan Camper"
 main_keyword: "samochody kempingowe"
 lead: "Samochody kempingowe to pojazdy łączące transport z noclegiem – od kompaktowych camper vanów przez alkowy i półintegrały po luksusowe integrały. W Polsce zarejestrowanych jest ponad 30 tys. kamperów, a rynek rośnie o 12–15% rocznie. Ceny nowych samochodów kempingowych zaczynają się od 250 tys. zł, używanych – od 50 tys. zł."
 faq:
@@ -111,7 +113,10 @@ Kluczową kwestią jest realna ładowność pojazdów na kategorię B. Większo�
 
 Przed zakupem warto skorzystać z wypożyczalni. Tygodniowy wynajem kampera kosztuje **3–6 tys. zł** i pozwala przetestować konkretny typ w praktyce.
 
-## Eksploatacja i koszty utrzymania
+#
+{{% youtube %}}
+
+# Eksploatacja i koszty utrzymania
 
 Posiadanie samochodu kempingowego generuje stałe koszty, niezależne od tego, jak często podróżujesz. Warto je oszacować przed zakupem, aby uniknąć rozczarowania i cieszyć się swobodą podróżowania.
 

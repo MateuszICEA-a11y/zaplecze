@@ -19,6 +19,8 @@ faq:
   - question: "Jakie wyposażenie oferuje wersja Titanium Ford Transit Tourneo?"
     answer: "Wyposażenie wersji Titanium zależy od konkretnego modelu, rocznika i rynku, dlatego nie da się uczciwie przypisać jednej stałej specyfikacji do wszystkich odmian Forda Transit osobowego. Przy zakupie trzeba sprawdzać wyposażenie w cenniku dla danego roku modelowego i konkretnego auta, zwłaszcza w zakresie multimediów, kamer, tempomatu adaptacyjnego i wykończenia wnętrza."
 lead: "Ford Transit osobowy to temat szerszy, niż sugeruje sama nazwa. W praktyce najczęściej chodzi o Tourneo Custom albo o osobowe odmiany pełnowymiarowego Transita. To dwa różne samochody, dlatego przed zakupem trzeba oddzielić nazewnictwo, wymiary, liczbę miejsc i ofertę napędów."
+youtube: "NKiMcMFSsHQ"
+youtube_title: "Ford Transit L4H3 2022 - TEST PL - 2.0 EcoBlue 130 KM vs pełna paka"
 ---
 ## Tourneo Custom vs Transit Tourneo – dwa różne pojazdy
 
@@ -88,7 +90,10 @@ Przy wyborze napędu warto patrzeć nie tylko na moc. Równie istotne są homolo
 Jeśli auto ma jeździć głównie po mieście albo w przewozach hotelowych i lotniskowych, napędy zelektryfikowane zasługują dziś na osobną analizę. W Fordzie Transit osobowym różnice między dieslem, PHEV i BEV są na tyle duże, że najlepiej dobierać wersję pod konkretny profil trasy.
 {{% /expert %}}
 
-## Ceny Forda Transit osobowego
+#
+{{% youtube %}}
+
+# Ceny Forda Transit osobowego
 
 Bez wskazania modelu, roku modelowego i daty obowiązywania cennika nie da się podać rzetelnej ceny nowego Forda Transit osobowego. Wcześniejsze wartości były zbyt ogólne i mieszały różne auta, dlatego nie warto ich powielać.
 

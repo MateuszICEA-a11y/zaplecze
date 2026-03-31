@@ -19,6 +19,8 @@ faq:
   - question: "Jak długo trwa realizacja zabudowy plandeki na Daily?"
     answer: "Zazwyczaj 6–10 tygodni od dostarczenia podwozia do firmy zabudowującej. Terminy mogą się wydłużyć przy niestandardowych wymiarach."
 lead: "Iveco Daily z zabudową plandekową to jeden z najchętniej wybieranych wariantów w branży meblarskiej, kurierskiej i budowlanej. Trójstronny dostęp do ładunku skraca czas rozładunku – nie musisz wyciągać towaru z głębi skrzyni, bo załadunek i rozładunek można prowadzić z boku, z tyłu, a w części konfiguracji także od góry."
+youtube: "asg0TFE1zO8"
+youtube_title: "Iveco Daily Plandeka międzynarodówka 10 europalet burtofirana"
 sources:
   - "katalogi i dane techniczne Iveco Daily dla konkretnych wersji"
   - "homologacje pojazdów"
@@ -96,7 +98,10 @@ Ponieważ artykuł nie odnosi się do konkretnej generacji, rocznika ani oficjal
 Kupując plandekę, patrz nie tylko na podwozie, ale też na samą zabudowę. Sprawdź stan poszycia PVC, narożniki, szwy, stelaż i punkty mocowania ładunku. W aucie pracującym codziennie właśnie te elementy najszybciej pokazują, czy zabudowa była eksploatowana z głową.
 {{% /expert %}}
 
-## Koszty zabudowy Iveco Daily plandeka
+#
+{{% youtube %}}
+
+# Koszty zabudowy Iveco Daily plandeka
 
 Koszt zabudowy plandekowej i samego podwozia zależy od roku, rynku, konfiguracji oraz oferty konkretnego zabudowcy lub dealera. Bez odniesienia do aktualnego cennika i dokładnej specyfikacji nie warto podawać sztywnych kwot jako punktu odniesienia.
 

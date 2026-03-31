@@ -11,6 +11,8 @@ volume: 320
 main_keyword: "maxus deliver 9 osobowy"
 image: "/images/maxus-deliver-9-hero.webp"
 image_alt: "Maxus Deliver 9 bus"
+youtube: "Aj5XyCqxSiA"
+youtube_title: "Maxus Deliver 9 - Nowy Chiński Van z Dieslem | Test pod obciążeniem"
 lead: "Maxus Deliver 9 osobowy to bus pasażerski na bazie dużego dostawczaka SAIC Motor – od 9 do 17 miejsc w zależności od konfiguracji i zabudowy. W praktyce kluczowe jest rozróżnienie wersji 9-osobowych, które mogą mieścić się w uprawnieniach kat. B, od minibusów powyżej 9 miejsc, gdzie liczy się homologacja, DMC i wymagania wobec kierowcy."
 faq:
   - question: "Ile miejsc ma Deliver 9 osobowy?"
@@ -130,7 +132,10 @@ W praktyce to właśnie koszt zabudowy robi największą różnicę między wers
 
 Przed zakupem warto też sprawdzić koszty eksploatacji konkretnej wersji. Do najważniejszych należą interwały serwisowe, koszt kompletu opon, koszt ubezpieczenia dla 9-osobowego busa i większego minibusu oraz zużycie AdBlue – jeśli dana wersja korzysta z układu SCR.
 
-## Porównanie Maxusa Deliver 9 osobowego z konkurencją
+#
+{{% youtube %}}
+
+# Porównanie Maxusa Deliver 9 osobowego z konkurencją
 
 Jeśli mówimy o wersjach 9-, 14- i 17-miejscowych, punktem odniesienia nie powinny być wyłącznie klasyczne kombivany 9-osobowe. Realnymi rywalami w segmencie minibusów są też Mercedes Sprinter Transfer/Tourer, VW Crafter Kombi/Minibus, Ford Transit Minibus oraz Iveco Daily Minibus.
 

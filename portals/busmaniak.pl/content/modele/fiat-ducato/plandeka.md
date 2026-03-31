@@ -9,6 +9,8 @@ parent: "fiat-ducato"
 type: "page"
 image: "/images/fiat-ducato-plandeka-hero.webp"
 image_alt: "Fiat Ducato z zabudową plandekową 10-paletową – widok z boku"
+youtube: "2ymwCHp7Tq4"
+youtube_title: "Fiat Ducato opinia warsztatu!Czy warto kupić dużego busa ? Ile kosztuje serwis dostawczaka?"
 main_keyword: "Fiat Ducato plandeka"
 lead: "Fiat Ducato to popularna baza pod zabudowę plandekową w transporcie lekkim do 3,5 tony. Wersje 8-paletowe zwykle bazują na długości użytkowej około 4200–4500 mm, natomiast układ 10 europalet najczęściej wymaga około 5000 mm długości użytkowej lub zależy od konkretnego układu palet i wymiarów zabudowy."
 faq:
@@ -110,7 +112,10 @@ Warto też pamiętać, że od 1 lipca 2026 r. lekkie pojazdy użytkowe 2,5–3,5
 
 Na tle konkurencji Ducato pozostaje jedną z najpopularniejszych baz FWD, podobnie jak bliźniacze konstrukcje Peugeot Boxer, Citroën Jumper i Opel Movano. Alternatywy takie jak Ford Transit, Iveco Daily czy Mercedes Sprinter oferują różne układy napędu FWD/RWD oraz szerszy zakres DMC 3,5–5,0 t, ale zwykle trzeba je oceniać także przez pryzmat kosztu zakupu i docelowej ładowności plandeki 8–10 EP.
 
-## Ceny
+#
+{{% youtube %}}
+
+# Ceny
 
 Przy wycenie plandeki trzeba oddzielić koszt podwozia od ceny samej zabudowy i osprzętu. Bez tego oferta może wyglądać atrakcyjnie, ale w praktyce dotyczyć auta bez windy, spojlera czy kabiny sypialnej.
 

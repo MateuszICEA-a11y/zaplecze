@@ -9,6 +9,8 @@ parent: "fiat-ducato"
 type: "page"
 image: "/images/fiat-ducato-brygadowka-hero.webp"
 image_alt: "Fiat Ducato brygadówka z podwójną kabiną – widok z boku"
+youtube: "2pgVFFnaIfI"
+youtube_title: "Fiat Ducato MY2021 z nowym silnikiem 2.2 MultiJet3 - pierwsza jazda testowa"
 main_keyword: "Fiat Ducato brygadówka"
 lead: "Fiat Ducato w wersji brygadowej łączy transport 6 lub 7 osób z częścią ładunkową oddzieloną przegrodą. Trzeba jednak jasno oddzielić dane bazowego furgonu od parametrów auta po konwersji – rzeczywista ładowność i długość przestrzeni za drugim rzędem siedzeń zależą od DMC, długości nadwozia oraz zakresu zabudowy."
 faq:
@@ -96,7 +98,10 @@ Podstawą przy oględzinach jest checklist zamiast ogólnego „jeździ albo nie
 - **Układy emisji spalin** – w autach z odpowiednimi wersjami układów SCR/DPF/AdBlue trzeba zweryfikować obecność błędów i objawów usterek; zakres problemów zależy od rocznika i silnika
 - **Zabudowa brygadowa** – skontroluj korozję elementów zabudowy, datę montażu, komplet homologacji siedzeń i zgodność liczby miejsc z dowodem rejestracyjnym
 
-## Ceny Fiata Ducato brygadówka
+#
+{{% youtube %}}
+
+# Ceny Fiata Ducato brygadówka
 
 Przy wycenie brygadówki nie można patrzeć wyłącznie na cenę bazowego Ducato. Równie ważny jest koszt samej konwersji, bo drugi rząd siedzeń, przegroda, podsufitka, nawiew lub ogrzewanie, wykończenie ścian i podłogi oraz homologacja potrafią mocno podnieść końcową kwotę.
 

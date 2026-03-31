@@ -19,6 +19,8 @@ faq:
   - question: "Czy Ford Transit L4 wymaga specjalnych uprawnień do prowadzenia?"
     answer: "Prawo jazdy kat. B obejmuje pojazdy do 3500 kg DMC. W Transicie występują także wersje 3900 kg, 4100 kg, 4250 kg i 4700 kg – standardowo zakres 3501–7500 kg wymaga kat. C1. Wyjątek dotyczy niektórych pojazdów z napędem alternatywnym, gdzie po spełnieniu warunków ustawowych limit może wzrosnąć do 4250 kg."
 lead: "Ford Transit Long to potoczne określenie dłuższych odmian Transita, ale w praktyce trzeba rozróżnić konkretną generację, rocznik i oznaczenia L3 oraz L4/Jumbo. Bez tego łatwo pomylić długości nadwozia, rozstaw osi i realną pojemność przestrzeni ładunkowej."
+youtube: "NKiMcMFSsHQ"
+youtube_title: "Ford Transit L4H3 2022 - TEST PL - 2.0 EcoBlue 130 KM vs pełna paka"
 sources:
   - "oficjalne materiały wymiarowe i homologacyjne Ford Pro dla europejskiego Forda Transit Mk8"
 ---
@@ -92,7 +94,10 @@ RWD częściej spotyka się w cięższych odmianach serii 350–470. Nie oznacza
 Przy wyborze silnika do Ford Transit Long warto patrzeć nie tylko na moc, ale też na DMC, rodzaj zabudowy i realną masę roboczą auta. W praktyce auto z regałami, izotermą albo zabudową specjalistyczną może ważyć wyraźnie więcej niż seryjny furgon, dlatego konfigurację napędu najlepiej dobierać pod konkretny scenariusz pracy.
 {{% /expert %}}
 
-## Zastosowania
+#
+{{% youtube %}}
+
+# Zastosowania
 
 Ford Transit Long trafia najczęściej tam, gdzie liczy się duża kubatura i elastyczność konfiguracji. W zależności od wersji może pełnić rolę klasycznego vana kurierskiego, auta budowlanego albo bazy pod zabudowę specjalistyczną.
 

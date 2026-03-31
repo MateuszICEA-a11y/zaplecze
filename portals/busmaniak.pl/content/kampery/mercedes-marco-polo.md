@@ -7,6 +7,8 @@ author: "anna-wozniak"
 h1: "Mercedes Marco Polo – luksusowy camper van na bazie klasy V"
 image: "/images/mercedes-vito-hero.webp"
 image_alt: "Mercedes Marco Polo z podnoszonym dachem na kempingu"
+youtube: "Hn0xzfOGpJ4"
+youtube_title: "Przeżyłem burzę na kempingu. Syn nie był zadowolony – Test Mercedesa Marco Polo"
 main_keyword: "mercedes marco polo"
 lead: "Mercedes Marco Polo to najbardziej luksusowy fabryczny camper van na rynku – budowany na bazie Mercedesa klasy V (lub Vito w tańszej wersji Activity), z wyposażeniem kempingowym projektowanym wspólnie z firmą Westfalia. Ceny zaczynają się od 340 tys. zł za Marco Polo Activity i sięgają 500 tys. zł za pełną specyfikację AMG Line."
 faq:
@@ -126,7 +128,10 @@ Mercedes Marco Polo to pojazd segmentu premium – ceny nowych egzemplarzy zaczy
 
 Czas oczekiwania na nowego Marco Polo wynosi 6–10 miesięcy. Marco Polo trzyma wartość gorzej niż konkurencyjna VW California – spadek 15–20% w ciągu pierwszych 3 lat wobec 8–12% u Volkswagena. To efekt mniejszego rynku wtórnego i wyższych kosztów serwisowych.
 
-## Zalety i wady Marco Polo
+#
+{{% youtube %}}
+
+# Zalety i wady Marco Polo
 
 Przed podjęciem decyzji warto uczciwie zestawić mocne i słabe strony tego pojazdu.
 

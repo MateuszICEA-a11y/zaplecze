@@ -7,6 +7,8 @@ author: "marek-kowalczyk"
 h1: "Ford E-Transit – elektryczny Transit"
 image: "/images/ford-e-transit-hero.webp"
 image_alt: "Ford E-Transit furgon elektryczny na stacji ładowania"
+youtube: "ADGatOSZx8w"
+youtube_title: "🚐 Nowy Ford e-Transit Custom – 100% elektryk! Czy nadaje się do karawaningu? ⚡️"
 main_keyword: "ford e-transit"
 volume: 500
 lead: "Ford E-Transit to w pełni elektryczna wersja najpopularniejszego dużego dostawczaka w Europie. Produkowany od 2022 roku w tureckim zakładzie Ford Otosan, oferuje do 317 km zasięgu WLTP i ładowność sięgającą 1616 kg – parametry, które czynią go realną alternatywą dla diesla w logistyce miejskiej i regionalnej."
@@ -132,7 +134,10 @@ Na cenę wpływają:
 
 Koszty eksploatacji E-Transita są wyraźnie niższe niż diesla. Przy cenie energii 0,80 PLN/kWh (taryfa nocna) i zużyciu ok. 25 kWh/100 km koszt pokonania 100 km wynosi ok. 20 PLN – w porównaniu z 50–70 PLN na paliwo w dieslowym Transicie. Serwis ogranicza się do wymiany płynu hamulcowego, filtra kabinowego i kontroli zawieszenia – brak oleju silnikowego, filtrów paliwa, paska rozrządu i układu wydechowego.
 
-## Porównanie E-Transita z konkurencją
+#
+{{% youtube %}}
+
+# Porównanie E-Transita z konkurencją
 
 Segment dużych elektrycznych dostawczaków w Europie obejmuje obecnie kilku kluczowych graczy. E-Transit konkuruje bezpośrednio z Mercedesem eSprinter, platformą Stellantis (e-Ducato, e-Relay, e-Boxer) oraz MAN eTGE.
 

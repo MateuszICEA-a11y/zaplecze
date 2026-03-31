@@ -9,6 +9,8 @@ type: "page"
 main_keyword: "hyundai staria"
 image: "/images/hyundai-staria-hero.webp"
 image_alt: "Hyundai Staria w kolorze białym na drodze"
+youtube: "W-SdhdHhzF4"
+youtube_title: "Hyundai Staria, czyli spieszmy się kochać minivany! (TEST PL/ENG 4K) | CaroSeria"
 lead: "Hyundai Staria to koreański van, który wygląda jak statek kosmiczny, a jedzie jak duży SUV. Produkowany od 2021 roku, łączy futurystyczny design z praktyczną przestrzenią na 9 lub 11 pasażerów. Diesel 2.2 CRDi o mocy 177 KM, napęd tylny lub AWD i 8-biegowy automat – to propozycja dla tych, którym klasyczne busy europejskie wydają się zbyt konserwatywne."
 faq:
   - question: "Ile miejsc ma Hyundai Staria?"
@@ -111,7 +113,10 @@ Staria pozycjonowana jest w segmencie premium vanów – ceny są wyższe niż u
 
 Na polskim rynku Staria dostępna jest u oficjalnych dealerów Hyundaia. Gwarancja producenta to 5 lat bez limitu przebiegu – znacząca przewaga nad europejską konkurencją oferującą standardowo 2–3 lata.
 
-## Porównanie Starii z konkurencją
+#
+{{% youtube %}}
+
+# Porównanie Starii z konkurencją
 
 Staria rywalizuje z europejskimi vanami premium – VW Multivan, Toyota ProAce Verso i Mercedes Vito Tourer. Wyróżnia się futurystycznym designem i bogatym wyposażeniem seryjnym, ale ustępuje konkurencji siecią serwisową.
 

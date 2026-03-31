@@ -19,6 +19,8 @@ faq:
   - question: "Czy Ford Transit Van jest dostępny z napędem 4x4?"
     answer: "Tak, w gamie występuje także wariant AWD. Dostępność konkretnych konfiguracji zależy jednak od rynku, rocznika, długości nadwozia, silnika i specyfikacji."
 lead: "Ford Transit Van to klasyczny furgon z zamkniętą przestrzenią ładunkową, dostępny w czterech długościach nadwozia i trzech wysokościach dachu. Liczba faktycznie oferowanych kombinacji zależy od rynku i rocznika, dlatego przy wyborze konkretnej wersji warto sprawdzić bieżącą specyfikację."
+youtube: "gB-FOZ4IMzY"
+youtube_title: "Ford E-Transit L3H2 TEST Najszybszy kurier w mieście, ale najwolniejszy w trasie...[4k]"
 ---
 ## Ford Transit Van – wersje od L1H1 do L4H3
 
@@ -108,7 +110,10 @@ Cena Forda Transit Van zależy przede wszystkim od długości nadwozia L1–L4, 
 
 Z tego powodu nie warto podawać uniwersalnych widełek bez odniesienia do konkretnego cennika i daty obowiązywania. W przypadku auta użytkowego różnice cenowe między bazowym furgonem a egzemplarzem z automatem, wyższym DMC i pakietami roboczymi są bardzo duże.
 
-## Opcje zabudów fabrycznych Transit Van
+#
+{{% youtube %}}
+
+# Opcje zabudów fabrycznych Transit Van
 
 Ford Transit Van może być doposażony w rozwiązania przygotowujące auto do pracy jeszcze na etapie zamówienia. To szczególnie ważne wtedy, gdy samochód od razu ma trafić do intensywnej eksploatacji flotowej.
 

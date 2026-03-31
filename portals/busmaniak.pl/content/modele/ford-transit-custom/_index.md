@@ -8,6 +8,8 @@ h1: "Ford Transit Custom – kompletny przewodnik po modelu"
 type: "page"
 image: "/images/ford-transit-custom-hero.webp"
 image_alt: "Ford Transit Custom gen II furgon na drodze"
+youtube: "DQMtQVg8gh4"
+youtube_title: "Ford Transit Custom L1H1 2.0 EcoBlue 150 TEST Najlepszy dostawczak na rynku? [4k]"
 main_keyword: "ford transit custom"
 volume: 14800
 lead: "Ford Transit Custom to bestseller segmentu średnich dostawczaków w Europie od 2012 roku. Dwie generacje – klasyczny z 2.0 EcoBlue i nowy od 2024 z mild hybrid 48V. Silniki od 105 do 185 KM, paka do 6,8 m³, ładowność do 1356 kg. Wersja elektryczna E-Transit Custom z zasięgiem do 317 km."
@@ -136,7 +138,10 @@ Zbyt wczesny na historię usterek – model dopiero wchodzi na rynek wtórny. Zw
 | Gen I (2021–2023) | 90 000–130 000 zł |
 | Gen II (od 2024) | od 140 000 zł |
 
-## Porównanie Forda Transit Custom z konkurencją
+#
+{{% youtube %}}
+
+# Porównanie Forda Transit Custom z konkurencją
 
 W segmencie średnich dostawczaków Transit Custom wygrywa największą paką (6,8 m³) i jako jedyny oferuje mild hybrid od fabryki. Transporter bierze wartością rezydualną, Vito napędem 4x4, a Trafic i Expert – ceną wejścia.
 
