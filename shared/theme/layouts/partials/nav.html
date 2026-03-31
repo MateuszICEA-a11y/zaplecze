@@ -34,17 +34,35 @@
                 <div class="dropdown__grid">
                   {{ $modele := $.Site.GetPage "/modele" }}
                   {{ if $modele }}
+                    {{/* Group sections by brand (first part of folder name) */}}
+                    {{ $brands := dict }}
                     {{ range $modele.Sections }}
-                      {{ $h1 := .Params.h1 | default .Title }}
-                      {{ $shortName := $h1 }}
-                      {{ if findRE `\s–\s` $h1 }}
-                        {{ $shortName = index (split $h1 " – ") 0 }}
-                      {{ end }}
                       {{ $dirName := .File.Dir | path.Dir | path.Base }}
-                      <a href="{{ .Permalink }}" class="dropdown__model">
-                        {{ partial "brand-icon.html" $dirName }}
-                        {{ $shortName }}
-                      </a>
+                      {{ $brand := index (split $dirName "-") 0 }}
+                      {{/* Handle multi-word brands */}}
+                      {{ if findRE `^(ford|fiat|opel|toyota|volkswagen|mercedes|citroen|peugeot|renault|nissan|iveco|man|dacia|hyundai|maxus)$` $brand }}
+                      {{ else }}
+                        {{ $brand = $dirName }}
+                      {{ end }}
+                      {{ $existing := index $brands $brand | default slice }}
+                      {{ $brands = merge $brands (dict $brand ($existing | append .)) }}
+                    {{ end }}
+                    {{ range $brand, $pages := $brands }}
+                    <div class="dropdown__brand-group">
+                      <div class="dropdown__brand-label">{{ $brand | title }}</div>
+                      {{ range $pages }}
+                        {{ $h1 := .Params.h1 | default .Title }}
+                        {{ $shortName := $h1 }}
+                        {{ if findRE `\s–\s` $h1 }}
+                          {{ $shortName = index (split $h1 " – ") 0 }}
+                        {{ end }}
+                        {{ $dirName := .File.Dir | path.Dir | path.Base }}
+                        <a href="{{ .Permalink }}" class="dropdown__model">
+                          {{ partial "brand-icon.html" $dirName }}
+                          {{ $shortName }}
+                        </a>
+                      {{ end }}
+                    </div>
                     {{ end }}
                   {{ end }}
                 </div>
