@@ -144,7 +144,7 @@ W ostatnich latach, szczególnie w okresie 2022–2025, na rynku nastąpiło ist
 
 Dzięki temu Ford stał się obecnie drugą, obok Ducato, siłą na rynku kamperów typu półintegra. Ceniony jest za bardzo dobre właściwości jezdne i nowoczesny silnik 2.0 EcoBlue (130–170 KM). Volkswagen Crafter i jego bliźniak MAN TGE pozostają bazą niszową, wykorzystywaną głównie w customowych camper vanach.
 
-## Na co zwrócić uwagę przy zakupie kampera?
+# Na co zwrócić uwagę przy zakupie kampera?
 
 Zakup kampera to decyzja na lata – średni okres użytkowania to 8–12 lat. Warto poświęcić czas na analizę potrzeb, zanim wydasz kilkaset tysięcy złotych.
 

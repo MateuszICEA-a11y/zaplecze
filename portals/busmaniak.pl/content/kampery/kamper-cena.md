@@ -133,7 +133,7 @@ Warto wiedzieć, że około 70-80% nowych kamperów w Polsce kupowanych jest prz
 Kampery, mimo rejestracji jako pojazdy specjalne (kategoria M1 SA), podlegają pełnej stawce akcyzy obowiązującej dla samochodów osobowych. Stawka wynosi 3,1% wartości dla pojazdów z silnikiem o pojemności do 2,0 l oraz 18,6% powyżej 2,0 l. Przy zakupie używanego kampera w Polsce należy zapłacić podatek od czynności cywilnoprawnych (PCC) w wysokości 2% wartości rynkowej pojazdu.
 {{% /info %}}
 
-## Kamper vs wynajem vs hotel – co się bardziej opłaca {#porownanie}
+# Kamper vs wynajem vs hotel – co się bardziej opłaca {#porownanie}
 
 Zakup kampera to duża inwestycja, która zwraca się dopiero przy regularnym użytkowaniu. Poniższa kalkulacja pokazuje, który scenariusz jest najkorzystniejszy dla 4-osobowej rodziny planującej 4-tygodniowe wakacje.
 
