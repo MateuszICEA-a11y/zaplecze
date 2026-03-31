@@ -15,12 +15,8 @@
 {{ end }}
 {{ end }}
 
-{{/* Canonical URL – paginated pages point to first page */}}
-{{ $canonical := .Permalink }}
-{{ if findRE `/page/\d+/$` .RelPermalink }}
-  {{ $canonical = replaceRE `/page/\d+/$` `/` .Permalink }}
-{{ end }}
-<link rel="canonical" href="{{ $canonical }}">
+{{/* Canonical URL */}}
+<link rel="canonical" href="{{ .Permalink }}">
 
 {{/* Robots – noindex on dev, index on production */}}
 {{ if .Site.Params.noindex }}
