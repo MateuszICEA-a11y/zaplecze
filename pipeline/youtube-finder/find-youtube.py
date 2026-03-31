@@ -14,12 +14,16 @@ Output (JSON):
 
 import argparse
 import json
+import os
 import re
 import sys
 import urllib.parse
 import urllib.request
 
-API_KEY = "AIzaSyCZACFqg96R911xpTCv5Xpi5QAD_k6WuiI"
+API_KEY = os.environ.get("YOUTUBE_API_KEY", "")
+if not API_KEY:
+    print(json.dumps({"video_id": None, "reason": "YOUTUBE_API_KEY env var not set"}))
+    sys.exit(1)
 SEARCH_URL = "https://www.googleapis.com/youtube/v3/search"
 
 # Channels/terms that indicate spam or irrelevant content
