@@ -85,17 +85,22 @@
             </a>
             <div class="dropdown__panel dropdown__panel--small">
               <div class="dropdown__inner">
-                {{ $narzedzia := $.Site.GetPage "/narzedzia" }}
-                {{ if $narzedzia }}
-                  {{ range $narzedzia.Pages }}
-                  <a href="{{ .Permalink }}" class="dropdown__tool">
-                    <span class="material-symbols-outlined dropdown__tool-icon">
-                      {{ if findRE `dmc` .File.ContentBaseName }}scale{{ else if findRE `paliw` .File.ContentBaseName }}local_gas_station{{ else if findRE `zabudow` .File.ContentBaseName }}straighten{{ else }}compare_arrows{{ end }}
-                    </span>
-                    <span class="dropdown__tool-name">{{ .Title }}</span>
-                  </a>
-                  {{ end }}
-                {{ end }}
+                <a href="/narzedzia/kalkulator-dmc/" class="dropdown__tool">
+                  <span class="material-symbols-outlined dropdown__tool-icon">scale</span>
+                  <span class="dropdown__tool-name">Kalkulator DMC</span>
+                </a>
+                <a href="/narzedzia/kalkulator-paliwa/" class="dropdown__tool">
+                  <span class="material-symbols-outlined dropdown__tool-icon">local_gas_station</span>
+                  <span class="dropdown__tool-name">Kalkulator paliwa</span>
+                </a>
+                <a href="/narzedzia/kalkulator-zabudowy/" class="dropdown__tool">
+                  <span class="material-symbols-outlined dropdown__tool-icon">straighten</span>
+                  <span class="dropdown__tool-name">Kalkulator zabudowy</span>
+                </a>
+                <a href="/narzedzia/porownywarka-busow/" class="dropdown__tool">
+                  <span class="material-symbols-outlined dropdown__tool-icon">compare_arrows</span>
+                  <span class="dropdown__tool-name">Porównywarka busów</span>
+                </a>
               </div>
             </div>
           </div>
