@@ -417,8 +417,7 @@ a:hover { color: var(--c-orange-hover); }
   height: 24px;
   flex-shrink: 0;
   object-fit: contain;
-  opacity: .7;
-  filter: brightness(0) invert(1);
+  opacity: .8;
 }
 
 .dropdown__model:hover .brand-icon {
