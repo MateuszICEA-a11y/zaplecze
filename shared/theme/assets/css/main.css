@@ -31,6 +31,8 @@
   --radius-sm: 8px;
 }
 
+.material-symbols-outlined { font-size: 16px; }
+
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
@@ -564,6 +566,11 @@ a:hover { color: var(--c-orange-hover); }
 
   .dropdown__tool {
     color: var(--c-dark);
+    padding: .45rem 1rem;
+  }
+
+  .dropdown__tool-icon {
+    font-size: 16px;
   }
 
   .dropdown__tool:hover {
