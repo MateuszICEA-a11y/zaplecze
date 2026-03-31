@@ -46,7 +46,7 @@ Deliver 9 zadebiutował w 2019 roku (początkowo jako V90) – kompletnie nowa k
 Maxus oferuje standardowo 5 lat lub 100 000 km gwarancji na Deliver 9 – to istotna przewaga nad europejską konkurencją, gdzie standardem jest 2–3 lata. Niektórzy dealerzy rozszerzają gwarancję do 7 lat.
 {{% /info %}}
 
-## Wymiary Maxus Deliver 9
+## Wymiary Maxusa Deliver 9
 
 Wymiary Maxus Deliver 9 różnią się w zależności od wersji nadwoziowej – dotyczy to zarówno gabarytów zewnętrznych, jak i przestrzeni ładunkowej.
 
@@ -70,7 +70,7 @@ Podwozie L4 pod zabudowę osiąga nawet 7418 mm długości.
 
 Ładowność 1500 kg stawia Deliver 9 na równi z [Renault Masterem](/modele/renault-master/) i powyżej bazowego [Fiata Ducato](/modele/fiat-ducato/) (1300 kg).
 
-## Silniki Maxus Deliver 9
+## Silniki Maxusa Deliver 9
 
 Gama silnikowa Maxus Deliver 9 obejmuje kilka wariantów mocy – wybór jednostki napędowej wpływa na osiągi, spalanie i koszty eksploatacji.
 

@@ -111,7 +111,7 @@ Spalanie T6.1 z silnikiem 2.0 TDI 150 KM w trasie to 7,5–8,5 l/100 km. W mieś
 
 {{% expert name="Marek Kowalczyk" %}}Przy wyborze silnika do Californii polecam 2.0 TDI 150 KM z DSG – to optymalny kompromis mocy, spalania i ceny. Wersja 110 KM sprawdza się w trasie, ale przy pełnym obciążeniu (4 osoby + bagaże) na podjazdach czuć brak momentu. Dwulitrowy 204 KM to luksus, ale różnica w cenie sięga 25 000–30 000 zł.{{% /expert %}}
 
-## Ceny Volkswagen California
+## Ceny Volkswagena California
 
 California nigdy nie była tanim samochodem. Ceny nowych egzemplarzy w Polsce (2025):
 

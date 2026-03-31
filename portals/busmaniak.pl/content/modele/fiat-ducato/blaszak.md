@@ -64,7 +64,7 @@ Na tle bliźniaczych modeli, czyli Peugeot Boxera i Citroëna Jumpera, Ducato ws
 
 W porównaniu z konkurencją pokroju Sprintera czy Transita Ducato wyróżnia się szerokością między nadkolami około 1422 mm i bardzo regularnym kształtem przestrzeni ładunkowej. To jedna z przyczyn, dla których tak często trafia do firm kurierskich, zabudów specjalnych i kamperów.
 
-## Silniki Fiat Ducato – który wybrać?
+## Silniki Fiata Ducato – który wybrać?
 
 Gama silnikowa Ducato zmieniała się wraz z liftingami i normami emisji, dlatego przy zakupie warto patrzeć nie tylko na moc, ale też na rodzinę jednostki, pojemność, typ rozrządu i osprzęt emisyjny. W praktyce właśnie to decyduje o kosztach serwisu i użyteczności w trasie.
 

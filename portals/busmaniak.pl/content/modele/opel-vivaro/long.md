@@ -18,7 +18,7 @@ faq:
   - question: "Czy Vivaro Long wymaga prawa jazdy C?"
     answer: "Nie, jeśli DMC pojazdu nie przekracza 3,5 t. W gamie Vivaro C spotyka się zwykle wersje o DMC od ok. 2830 do 3100 lub 3200 kg, więc do ich prowadzenia wystarcza prawo jazdy kategorii B."
 ---
-## Wymiary Opel Vivaro Long i ładownia
+## Wymiary Opla Vivaro Long i ładownia
 
 W przypadku Opel Vivaro Long trzeba jasno rozdzielić dane dla dwóch długości nadwozia generacji C – Standard i Long. To ważne, bo obie wersje mają ten sam rozstaw osi, a dodatkowa długość w odmianie Long nie przekłada się wprost 1:1 na długość podłogi ładowni.
 

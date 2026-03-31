@@ -21,7 +21,7 @@ sources:
   - "Peugeot Professional Polska"
   - "dane techniczne Auto-Data.net."
 ---
-## Historia i generacje Peugeot Boxer
+## Historia i generacje Peugeota Boxer
 
 ### Peugeot Boxer I (1994–2006)
 

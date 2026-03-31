@@ -24,7 +24,7 @@ sources:
   - "raporty niezawodności DEKRA."
 ---
 
-## Historia i generacje Fiat Scudo
+## Historia i generacje Fiata Scudo
 
 Trzy generacje i zmiana platformy – Scudo zaczynało jako wspólny projekt FIAT-u i PSA, a dziś bazuje na tej samej architekturze co Peugeot Expert i Toyota ProAce.
 
@@ -44,7 +44,7 @@ Scudo II zdobyło tytuł International Van of the Year 2008, pokonując m.in. Vo
 
 Po sześcioletniej przerwie (2016–2022, kiedy sprzedawano Talento na bazie Trafica) Scudo wróciło na platformie [EMP2](https://en.wikipedia.org/wiki/PSA_EMP2_platform). Bliźniaki: [Peugeot Expert](/modele/peugeot-expert/), Citroën Jumpy, Opel Vivaro, Toyota ProAce. Dostępne w wersji spalinowej i elektrycznej E-Scudo (136 KM, zasięg do 330 km WLTP).
 
-## Wymiary Fiat Scudo
+## Wymiary Fiata Scudo
 
 Scudo jest oferowane w kilku wariantach długości – od kompaktowego Scudo III Compact (4609 mm) po wydłużone Long (5309 mm). Między II a III generacją zmienił się rozstaw osi i proporcje nadwozia, a szerokość wzrosła o 25 mm.
 
@@ -137,7 +137,7 @@ Większość problemów mechanicznych Scudo wynika z przeładowywania auta ponad
 
 Wersje osobowe Panorama trzymają cenę znacznie lepiej niż typowe furgony.
 
-## Porównanie Fiat Scudo z konkurencją
+## Porównanie Fiata Scudo z konkurencją
 
 W segmencie średnich vanów Scudo III mierzy się z Traficem, Transit Customem i Transporterem. Wygrywa ceną zakupu i dostępnością zamienników (wspólne z Expertem i Jumpy), ale przegrywa pojemnością paki z Fordem i VW.
 

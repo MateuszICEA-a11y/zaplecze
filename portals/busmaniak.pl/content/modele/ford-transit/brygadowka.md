@@ -54,7 +54,7 @@ Równie istotna jest ładowność. W Fordzie Transit brygadówka zależy ona od 
 W niektórych zabudowach przegroda siatkowa lub odpowiednio zaprojektowany otwór pod przegrodą mogą ułatwić przewóz dłuższych elementów. To jednak nie jest uniwersalna cecha każdego fabrycznego Double Caba i zawsze zależy od konkretnej wersji. Pełna przegroda zwykle lepiej ogranicza przenikanie hałasu, pyłu i zapachów do kabiny.
 {{% /info %}}
 
-## Liczba miejsc w Ford Transit Double Cab
+## Liczba miejsc w Fordzie Transit Double Cab
 
 Liczba miejsc w Fordzie Transit brygadówka zależy od układu przednich siedzeń i konkretnej homologacji. W praktyce należy patrzeć na specyfikację dla danego rocznika i rynku, bo w brygadówkach spotyka się różne konfiguracje kabiny.
 

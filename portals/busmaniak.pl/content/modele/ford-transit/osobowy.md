@@ -32,7 +32,7 @@ Trzeba też uważać z homologacją. Nie da się z góry założyć, że każda 
 
 W praktyce samochody o DMC do 3,5 t i do 9 miejsc łącznie z kierowcą prowadzi się z prawem jazdy kat. B. Jeżeli konfiguracja przekracza 9 miejsc lub 3,5 t DMC, mogą być potrzebne inne uprawnienia.
 
-## Liczba miejsc i układ wnętrza w Ford Transit Tourneo
+## Liczba miejsc i układ wnętrza w Fordzie Transit Tourneo
 
 Przy Fordzie Transit osobowym sama liczba miejsc to za mało. Równie ważne są długość nadwozia, wysokość całkowita, szerokość z lusterkami, liczba drzwi przesuwnych oraz sposób montażu foteli w drugim i trzecim rzędzie.
 

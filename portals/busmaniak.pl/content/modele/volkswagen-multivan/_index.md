@@ -25,7 +25,7 @@ sources:
   - "auto-data.net."
 ---
 
-## Historia i generacje Volkswagen Multivan
+## Historia i generacje Volkswagena Multivan
 
 Volkswagen Multivan ewoluował przez dekady z roboczego Transportera w stronę komfortowej salonki. Każda generacja wnosiła coś nowego w zagospodarowaniu przestrzeni pasażerskiej.
 
@@ -67,7 +67,7 @@ Diesel 2.0 TDI 150 KM sprawdza się najlepiej na długich trasach – niskie spa
 Hybryda plug-in o mocy 245 KM to najmocniejszy seryjny napęd w historii Multivana. Realnie obniża koszty paliwa tylko wtedy, gdy ładujesz ją codziennie – w trasie bez ładowania pali więcej niż diesel.
 {{% /expert %}}
 
-## Wymiary Volkswagen Multivan
+## Wymiary Volkswagena Multivan
 
 Wymiary Volkswagen Multivan różnią się w zależności od wersji nadwoziowej – dotyczy to zarówno gabarytów zewnętrznych, jak i przestrzeni ładunkowej.
 

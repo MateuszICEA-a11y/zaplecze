@@ -24,7 +24,7 @@ sources:
   - "dokumentacja techniczna Ford Transit Connect."
 ---
 
-## Historia i generacje Ford Transit Connect
+## Historia i generacje Forda Transit Connect
 
 Kompaktowy dostawczak wypełniający lukę między mikrovanami a średnim [Fordem Transit Custom](/modele/ford-transit-custom/). Trzy generacje, trzy różne platformy.
 
@@ -64,7 +64,7 @@ Connect występuje w dwóch długościach – L1 (Short) i L2 (Long). Mk3 jest n
 - **Próg załadowczy** – 596 mm
 - **Dwie europalety** – mieszczą się w wersji L2
 
-## Silniki Ford Transit Connect
+## Silniki Forda Transit Connect
 
 Gama silnikowa Connecta obejmuje diesle 1.5 EcoBlue (75–120 KM) i benzynowy 1.0 EcoBoost (100 KM). W starszym Mk1 dominował solidny 1.8 TDCi. Diesel 1.5 z katalizatorem SCR spala 5,2–6,0 l/100 km – jeden z najniższych wyników w segmencie.
 
@@ -138,7 +138,7 @@ W Mk2 z 2013–2015 częsty problem z utratą mocy i kodem P2111/P2135. Przyczyn
 | Mk2 (2017–2020) | 45 000–65 000 zł |
 | Mk2 Active (2020–2022) | 65 000–90 000 zł |
 
-## Porównanie Ford Transit Connect z konkurencją
+## Porównanie Forda Transit Connect z konkurencją
 
 W segmencie kompaktowych dostawczaków Connect wygrywa właściwościami jezdnymi i trwałością nadwozia. Berlingo i Partner oferują większą pakę przy niższej cenie, a Caddy bierze wartością rezydualną – ale kosztuje o 20 tys. więcej.
 

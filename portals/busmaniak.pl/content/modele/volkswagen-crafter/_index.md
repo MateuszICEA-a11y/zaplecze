@@ -27,7 +27,7 @@ sources:
   - "raporty DEKRA."
 ---
 
-## Historia i generacje Volkswagen Crafter
+## Historia i generacje Volkswagena Crafter
 
 ### Volkswagen Crafter I (2006–2017)
 
@@ -49,7 +49,7 @@ Kluczowe innowacje generacji II:
 Crafter II i MAN TGE powstają w zakładach VW Poznań we Wrześni – jednym z najbardziej zautomatyzowanych zakładów produkcji dostawczaków w Europie (inwestycja ok. 800 mln euro). Dla polskich firm flotowych oznacza to szybsze terminy dostaw i łatwiejszy dostęp do serwisu.
 {{% /info %}}
 
-## Wymiary Volkswagen Crafter II
+## Wymiary Volkswagena Crafter II
 
 Wymiary Volkswagen Crafter różnią się w zależności od wersji nadwoziowej – dotyczy to zarówno gabarytów zewnętrznych, jak i przestrzeni ładunkowej.
 
@@ -94,7 +94,7 @@ Większość Crafterów w Polsce to wersje FWD – wystarczające dla 90% zastos
 Crafter 2.0 TDI 140 KM to jeden z lepszych silników w klasie – wystarczający moment od 1500 rpm i serwis łatwo dostępny w całej sieci VW w Polsce. Ale przy zakupie używanego sprawdź automat 8AT: wymaga wymiany oleju co 60 tys. km. Zaniedbanie tego = zużyte łączniki wielopłytkowe i naprawa za 6000–12 000 zł.
 {{% /expert %}}
 
-## Wersje nadwoziowe Volkswagen Crafter
+## Wersje nadwoziowe Volkswagena Crafter
 
 - **Furgon** – klasyczny dostawczak L3/L4, dach H2/H3, przesuwne drzwi po jednej lub obu stronach
 - **Podwozie pojedyncza kabina** – baza pod lawety, wywrotki, izotermy, food trucki

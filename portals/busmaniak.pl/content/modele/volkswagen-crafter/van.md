@@ -97,7 +97,7 @@ Dostępność konkretnego zestawu silnik + skrzynia + napęd zależy od rynku i 
 
 ![VW Crafter L3H3 – przestrzeń ładunkowa z widokiem do tyłu](/images/volkswagen-crafter-van-hero.jpg)
 
-## Wyposażenie kabiny Volkswagen Crafter
+## Wyposażenie kabiny Volkswagena Crafter
 
 W użytkowym Crafterze najważniejsze są nie efektowne nazwy wersji, lecz ergonomia pracy i wyposażenie wspierające kierowcę. Dlatego poprzednie odniesienia do linii Trendline, Comfortline i Highline oraz przypisanych im ekranów należało usunąć – nie są one uniwersalne dla całej gamy i wszystkich roczników.
 

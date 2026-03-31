@@ -36,7 +36,7 @@ Staria powstaje w fabrykach Hyundaia w Ulsan i Jeonju (Korea Południowa) oraz w
 
 Model pozycjonowany jest między klasycznymi vanami dostawczymi a luksusowymi MPV – bezpośrednio konkuruje z [Volkswagenem Multivan](/modele/volkswagen-multivan/) i [Toyota ProAce Verso](/modele/toyota-proace-verso/), choć oferuje znacznie bardziej wyrazisty design.
 
-## Dane techniczne Hyundai Staria
+## Dane techniczne Hyundaia Staria
 
 Staria to pojazd jednonadwoziowy (monocoque) – w przeciwieństwie do ramowych busów dostawczych. To przekłada się na niższy środek ciężkości i lepszą dynamikę jazdy:
 
@@ -97,7 +97,7 @@ Hyundai oferuje Starię w kilku konfiguracjach dostosowanych do różnych potrze
 
 1. **Staria Load (Cargo)** – 3-miejscowy furgon z zaślepionymi szybami tylnymi i płaską podłogą ładunkową. Pojemność ładunkowa ok. 5 000 l, ładowność do ok. 800 kg. Konkurent kompaktowych vanów dostawczych.
 
-## Ceny Hyundai Staria
+## Ceny Hyundaia Staria
 
 Staria pozycjonowana jest w segmencie premium vanów – ceny są wyższe niż u japońskiej i europejskiej konkurencji w klasie dostawczej, ale konkurencyjne wobec [Volkswagena Multivan](/modele/volkswagen-multivan/):
 

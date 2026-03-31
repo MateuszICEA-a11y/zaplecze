@@ -24,7 +24,7 @@ sources:
   - "dane techniczne Auto-Data.net."
 ---
 
-## Historia i generacje Peugeot Partner
+## Historia i generacje Peugeota Partner
 
 Trzy generacje i zmiana nazwy wersji osobowej – Partner ewoluował od prostego dostawczaka na bazie 206 do zaawansowanego vana na platformie EMP2.
 
@@ -68,7 +68,7 @@ Wymiary Peugeot Partner różnią się w zależności od wersji nadwoziowej – 
 - **Europalety** – 2 sztuki w wersji Long (wzdłuż), 1 w Short
 - **FlexCargo** – otwór w przegrodzie pozwala na transport przedmiotów do 3,44 m (L2)
 
-## Silniki Peugeot Partner
+## Silniki Peugeota Partner
 
 Gama silnikowa Peugeot Partner obejmuje kilka wariantów mocy – wybór jednostki napędowej wpływa na osiągi, spalanie i koszty eksploatacji.
 

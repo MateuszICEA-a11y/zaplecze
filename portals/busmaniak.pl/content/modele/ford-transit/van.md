@@ -76,7 +76,7 @@ W gamie pojawiają się również różne poziomy DMC: 3,5 t, 3,9 t, 4,1 t, 4,25
 Przedni napęd FWD zwykle lepiej sprawdza się w lżejszej dystrybucji i pracy miejskiej, bo oferuje niższy próg załadunku i korzystniejszą masę własną. Tylny napęd RWD warto wybierać wtedy, gdy priorytetem jest wysoka ładowność, regularna jazda pod obciążeniem albo częste holowanie. AWD ma sens tam, gdzie liczy się trakcja w trudniejszych warunkach.
 {{% /info %}}
 
-## Silniki Ford Transit Van 2.0 EcoBlue
+## Silniki Forda Transit Van 2.0 EcoBlue
 
 W spalinowych wersjach Forda Transit Van na wybranych rynkach europejskich kluczową jednostką jest 2.0 EcoBlue. Przy opisie silników trzeba jednak pamiętać, że dostępność mocy, skrzyń i odmian napędu zmieniała się zależnie od rocznika oraz specyfikacji rynku.
 
@@ -102,7 +102,7 @@ Najważniejsza różnica praktyczna między FWD a RWD dotyczy charakteru pracy a
 Jeśli auto ma regularnie pracować blisko maksymalnej ładowności albo ciągnąć przyczepę, wybór RWD jest po prostu bardziej logiczny. FWD ma sens tam, gdzie liczy się łatwy załadunek, mniejsza masa własna i typowo miejski profil użytkowania.
 {{% /expert %}}
 
-## Ceny Ford Transit Van
+## Ceny Forda Transit Van
 
 Cena Forda Transit Van zależy przede wszystkim od długości nadwozia L1–L4, wysokości dachu H1–H3, DMC w zakresie 3,5–4,7 t, rodzaju napędu FWD/RWD/AWD, mocy silnika oraz typu skrzyni biegów. Istotne są też wersja wyposażenia, pakiety zabudowy i systemy bezpieczeństwa.
 

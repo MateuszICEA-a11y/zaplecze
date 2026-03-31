@@ -28,7 +28,7 @@ sources:
   - "Auto-Data.net."
 ---
 
-## Dane techniczne 2.5 CDTi w Opel Movano
+## Dane techniczne 2.5 CDTi w Oplu Movano
 
 Silnik 2.5 CDTi nosi oznaczenie G9U i był montowany w Oplu Movano A po liftingu, mniej więcej od 2003 do 2010 roku. Wraz z wejściem Movano B w 2010 roku jednostka 2.5 zniknęła z oferty, a jej miejsce zajął nowszy 2.3 CDTi.
 

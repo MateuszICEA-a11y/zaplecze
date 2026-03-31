@@ -37,7 +37,7 @@ Do brygadówki zalicza się przede wszystkim:
 
 W praktyce nie można wrzucać do jednego worka fabrycznej wersji załogowej i zewnętrznej konwersji. To ważne również ze względu na homologację – **N1** jako samochód ciężarowy do 3,5 t oraz **M1** jako samochód osobowy do 8 miejsc poza kierowcą – bo od tego zależą kwestie firmowe, podatkowe, badania techniczne i wpis liczby miejsc w dowodzie rejestracyjnym.
 
-## Wymiary Opel Vivaro w konfiguracji brygadówki
+## Wymiary Opla Vivaro w konfiguracji brygadówki
 
 Wymiary brygadówki trzeba przypisać do konkretnej generacji. Dla Vivaro C, czyli modelu od 2019 roku, długości nadwozia to XS 4606 mm, M 4959 mm i XL 5309 mm, przy szerokości bez lusterek 1920 mm.
 

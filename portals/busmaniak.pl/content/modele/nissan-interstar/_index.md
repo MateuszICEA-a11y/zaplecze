@@ -39,7 +39,7 @@ Nowa generacja to nie kolejny lifting, ale gruntowna przebudowa. Nowy silnik 2.0
 Platforma [Renault Mastera](/modele/renault-master/) IV generacji (współdzielona z Interstarem i Movano) zdobyła tytuł International Van of the Year 2025 – prestiżową nagrodę przyznawaną przez jury złożone z dziennikarzy motoryzacyjnych z 25 krajów.
 {{% /info %}}
 
-## Dane techniczne Nissan Interstar
+## Dane techniczne Nissana Interstar
 
 Nowy Interstar (2024+) dostępny jest w kilku konfiguracjach długości i wysokości nadwozia:
 
@@ -85,7 +85,7 @@ Przeskok z 2.3 dCi na 2.0 Blue dCi to dobra decyzja inżynierów Renault. Mniejs
 
 ![Nissan Interstar furgon nowej generacji](/images/nissan-interstar-hero.jpg)
 
-## Wersje nadwoziowe Nissan Interstar
+## Wersje nadwoziowe Nissana Interstar
 
 Interstar oferowany jest w kilku konfiguracjach nadwoziowych, choć gama jest nieco węższa niż u [Renault Mastera](/modele/renault-master/):
 

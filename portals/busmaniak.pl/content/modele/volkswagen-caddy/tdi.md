@@ -28,7 +28,7 @@ sources:
   - "auto-data.net"
 ---
 
-## Dane techniczne Volkswagen Caddy TDI {#dane-techniczne}
+## Dane techniczne Volkswagena Caddy TDI {#dane-techniczne}
 
 [Volkswagen Caddy](/modele/volkswagen-caddy/) występowało z kilkoma rodzinami diesli TDI, a kluczowe różnice dotyczą nie tylko mocy, ale też generacji, norm emisji i osprzętu. W praktyce na rynku wtórnym najczęściej spotkasz 1.9 TDI w Caddy III, 1.6 TDI i 2.0 TDI w poliftowym Caddy III oraz 2.0 TDI w generacjach IV i V.
 

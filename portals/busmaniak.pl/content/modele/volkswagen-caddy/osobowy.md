@@ -44,7 +44,7 @@ W standardowej konfiguracji 5-osobowej bagażnik ma 1213 litrów w krótszym Cad
 
 W praktyce to właśnie Maxi jest ciekawszą propozycją dla dużej rodziny, bo zapewnia więcej miejsca na trzeci rząd siedzeń i bagaże. Trzeba jednak pamiętać, że szczegóły konfiguracji foteli, ich składania lub demontażu mogą różnić się zależnie od rynku.
 
-## Wyposażenie Volkswagen Caddy – Life, Style, Move {#wyposażenie}
+## Wyposażenie Volkswagena Caddy – Life, Style, Move {#wyposażenie}
 
 W przypadku osobowego Caddy kluczowe jest rozróżnienie wyposażenia seryjnego od opcji i pakietów. Zakres standardu potrafi zmieniać się wraz z rynkiem, rokiem modelowym i lokalnym cennikiem, dlatego poniżej warto traktować jako ogólny schemat gamy, a nie sztywną specyfikację dla każdej wersji.
 
@@ -102,7 +102,7 @@ Nie da się uczciwie stwierdzić, że Berlingo jest zawsze tańsze od Caddy o 15
 
 Na tle konkurencji Caddy zwykle wygrywa jakością prowadzenia, ergonomią i ogólnym dopracowaniem kabiny. Przegrywa natomiast wtedy, gdy dla kupującego najważniejsza jest relacja ceny do przestrzeni.
 
-## Ceny Volkswagen Caddy osobowy {#ceny}
+## Ceny Volkswagena Caddy osobowy {#ceny}
 
 Tytuł artykułu zapowiada ceny, ale bez konkretnego cennika dla Polski i daty publikacji nie da się rzetelnie podać twardych kwot startowych dla wersji Caddy, Life i Style ani dopłat za Maxi, 7 miejsc czy DSG. Takie wartości zmieniają się wraz z rokiem modelowym, promocjami i zmianami wyposażenia.
 

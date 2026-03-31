@@ -24,7 +24,7 @@ sources:
   - "dokumentacja Ford Pro."
 ---
 
-## Historia i generacje Ford Transit Custom
+## Historia i generacje Forda Transit Custom
 
 Bestseller segmentu, który na europejskim rynku od ponad dekady utrzymuje czołową pozycję sprzedażową – zarówno w Polsce, jak i w Wielkiej Brytanii.
 
@@ -67,7 +67,7 @@ Transit Custom występuje w dwóch długościach – L1 (Short, 4972 mm) i L2 (L
 - **Europalety** – 2 sztuki w L2 (wzdłuż)
 - **Średnica zawracania** – 11,6 m (L1), 12,8 m (L2)
 
-## Silniki Ford Transit Custom
+## Silniki Forda Transit Custom
 
 Gen I opiera się wyłącznie na dieslu 2.0 EcoBlue (105–185 KM). Gen II wprowadza łagodną hybrydę 48V, plug-in hybrid 233 KM i w pełni elektryczną wersję E-Transit Custom 218 KM z zasięgiem 317 km WLTP.
 
@@ -136,7 +136,7 @@ Zbyt wczesny na historię usterek – model dopiero wchodzi na rynek wtórny. Zw
 | Gen I (2021–2023) | 90 000–130 000 zł |
 | Gen II (od 2024) | od 140 000 zł |
 
-## Porównanie Ford Transit Custom z konkurencją
+## Porównanie Forda Transit Custom z konkurencją
 
 W segmencie średnich dostawczaków Transit Custom wygrywa największą paką (6,8 m³) i jako jedyny oferuje mild hybrid od fabryki. Transporter bierze wartością rezydualną, Vito napędem 4x4, a Trafic i Expert – ceną wejścia.
 

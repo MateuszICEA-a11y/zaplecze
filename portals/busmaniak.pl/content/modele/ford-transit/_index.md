@@ -26,7 +26,7 @@ sources:
   - "auto-data.net."
 ---
 
-## Historia i generacje Ford Transit
+## Historia i generacje Forda Transit
 
 [Ford Transit](https://pl.wikipedia.org/wiki/Ford_Transit) jest produkowany nieprzerwanie od 1965 roku – do dziś sprzedano ponad 13 milionów egzemplarzy, co czyni go numerem 1 wśród dużych furgonetek na świecie. Przez ten czas model przechodził gruntowne modernizacje; dla rynku wtórnego i użytkowego liczą się dwie ostatnie generacje:
 
@@ -42,7 +42,7 @@ Transit VII jest wciąż popularny ze względu na cenę – jego słabe punkty t
 Kupując Transita VII (2006–2014) warto zwrócić szczególną uwagę na hałas z okolicy silnika (łańcuch rozrządu) i stan progów oraz nadkoli (korozja). Koszty naprawy łańcucha mogą wynosić 2000–3500 zł, a korozja progów to często kilkanaście tysięcy złotych prac blacharsko-lakierniczych.
 {{% /info %}}
 
-## Dane techniczne i wymiary Ford Transit
+## Dane techniczne i wymiary Forda Transit
 
 ### Konfiguracje nadwozia
 
@@ -107,7 +107,7 @@ W mojej ocenie Ford Transit VIII z silnikiem 2.0 EcoBlue 130 KM to aktualnie naj
 
 ![Ford Transit VIII furgon](/images/ford-transit-hero.jpg)
 
-## Wersje nadwoziowe Ford Transit
+## Wersje nadwoziowe Forda Transit
 
 Ford Transit VIII jest oferowany w czterech podstawowych wersjach zabudowy:
 

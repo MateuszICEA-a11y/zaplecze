@@ -21,7 +21,7 @@ sources:
   - "cennik i katalog techniczny modelu dla odpowiedniego rynku i roku modelowego – dane należy każdorazowo weryfikować dla konkretnej wersji"
   - "DMC i rocznika."
 ---
-## Wymiary przestrzeni ładunkowej Peugeot Boxer Van
+## Wymiary przestrzeni ładunkowej Peugeota Boxer Van
 
 Peugeot Boxer III jest obecny na rynku od 2006 roku, po dużym liftingu w 2014 roku i kolejnych modernizacjach w latach 2019–2024. To ważne, bo w zależności od rocznika i rynku mogą różnić się silniki, wyposażenie i część danych katalogowych, dlatego poniżej traktujemy liczby jako typowe dla tej rodziny nadwozi.
 

@@ -41,7 +41,7 @@ Produkcja odbywa się w fabryce Volkswagen Poznań we Wrześni. Na jednej linii 
 
 Dlaczego więc ktoś miałby wybrać TGE zamiast Craftera? Odpowiedź tkwi w sieci serwisowej MAN, która obsługuje pojazdy ciężarowe w całej Europie – a to oznacza dłuższe godziny pracy warsztatów, lepszą dostępność terminów i warunki [leasingu](https://pl.wikipedia.org/wiki/Leasing) zbliżone do pojazdów ciężarowych.
 
-## Dane techniczne MAN TGE
+## Dane techniczne MAN-a TGE
 
 TGE dostępny jest w kilku wariantach rozstawu osi, długości i wysokości nadwozia. System oznaczeń odpowiada konwencji VW Craftera:
 
@@ -84,7 +84,7 @@ Jeśli planujesz TGE do regularnych tras międzymiastowych z pełnym ładunkiem,
 
 ![MAN TGE furgon na placu manewrowym](/images/man-tge-hero.jpg)
 
-## Wersje nadwoziowe MAN TGE
+## Wersje nadwoziowe MAN-a TGE
 
 Dzięki współdzieleniu platformy z Crafterem, TGE oferuje pełen wachlarz wariantów nadwoziowych:
 
@@ -99,7 +99,7 @@ Dzięki współdzieleniu platformy z Crafterem, TGE oferuje pełen wachlarz wari
 
 W Polsce najczęściej spotykane konfiguracje to furgon L3H2/L3H3 w firmach transportowych oraz podwozie pod zabudowę lawety lub plandeki.
 
-## Ceny MAN TGE
+## Ceny MAN-a TGE
 
 Ceny nowych TGE są wyższe niż analogicznych Crafterów o 5–15%, co odzwierciedla dostęp do sieci serwisowej MAN:
 

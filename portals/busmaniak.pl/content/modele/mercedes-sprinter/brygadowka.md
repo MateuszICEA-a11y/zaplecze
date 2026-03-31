@@ -131,7 +131,7 @@ Instalacja 230 V z gniazdami w pace nie jest standardem bazowej brygadówki. To 
 Przy zamawianiu brygadówki dla ekipy terenowej warto dopisać do specyfikacji uchwyt na drabinę, solidne punkty mocowania ładunku i blokady tylnej klapy oraz schowków. Jeśli pojazd ma zasilać elektronarzędzia na postoju, instalację 230 V trzeba traktować jako wyposażenie specjalistyczne, a nie oczywisty standard każdej zabudowy.
 {{% /expert %}}
 
-## Ceny Mercedes Sprinter brygadówka
+## Ceny Mercedesa Sprinter brygadówka
 
 W tej sekcji nie warto podawać jednej kwoty bez odniesienia do konkretnej wersji. Cena Mercedes Sprinter brygadówka zależy od DMC, rodzaju napędu, typu kabiny, rozstawu osi, długości całkowitej i zakresu zabudowy.
 

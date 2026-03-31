@@ -22,7 +22,7 @@ faq:
     answer: "Zestaw części (łańcuch, napinacz, prowadnice) kosztuje 300–500 zł, a robocizna 500–1000 zł. Łącznie za wymianę należy zapłacić 800–1500 zł w niezależnym warsztacie."
 ---
 
-## Dane techniczne 1.3 MultiJet w Fiat Fiorino
+## Dane techniczne 1.3 MultiJet w Fiacie Fiorino
 
 Silnik [FPT 1.3 MultiJet](https://pl.wikipedia.org/wiki/Common_Rail) to czterocylindrowy turbodiesel o pojemności 1248 cm³, produkowany od 2003 roku w fabryce w Bielsko-Białej. W [Fiacie Fiorino](/modele/fiat-fiorino/) III występował od 2007 roku, a w Europie był oferowany do pierwszej połowy lat 2020. W praktyce trzeba rozróżniać wersje mocy, normy emisji oraz obecność DPF zależną od rocznika, rynku i kodu silnika.
 

@@ -26,7 +26,7 @@ sources:
   - "auto-data.net."
 ---
 
-## Historia i generacje Toyota ProAce
+## Historia i generacje Toyoty ProAce
 
 [Toyota Proace](https://pl.wikipedia.org/wiki/Toyota_Proace) pojawił się na rynku w 2013 roku jako odpowiedź marki na rosnące zapotrzebowanie na własny model średniego vana. Przez lata przeszedł dwie wyraźne generacje, różniące się platformą i poziomem integracji z siecią PSA/Stellantis.
 
@@ -66,7 +66,7 @@ Do tras głównie miejskich i regionalnych z ładunkiem do 800 kg wystarczy 1.5 
 
 ![Toyota Proace II furgon Long](/images/toyota-proace-hero.jpg)
 
-## Dane techniczne Toyota ProAce
+## Dane techniczne Toyoty ProAce
 
 Toyota Proace II jest dostępna w dwóch długościach nadwozia: Medium i Long. Poniżej zestawienie kluczowych parametrów.
 
@@ -86,7 +86,7 @@ Toyota Proace II jest dostępna w dwóch długościach nadwozia: Medium i Long. 
 
 Długość ładowni [Proace Long](/modele/toyota-proace/long/) pozwala zabrać trzy europalety – to istotna przewaga nad wersjami Medium przy pracy w logistyce i dystrybucji.
 
-## Wersje nadwoziowe Toyota ProAce
+## Wersje nadwoziowe Toyoty ProAce
 
 Proace II jest oferowany w kilku konfiguracjach, różniących się przeznaczeniem i układem przestrzeni.
 

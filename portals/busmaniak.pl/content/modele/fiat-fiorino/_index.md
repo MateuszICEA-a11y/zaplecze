@@ -24,7 +24,7 @@ sources:
   - "katalog części Fiat Professional."
 ---
 
-## Historia i generacje Fiat Fiorino
+## Historia i generacje Fiata Fiorino
 
 Trzy generacje, trzy różne bazy techniczne i prawie 50 lat na rynku. Fiorino zaczynało jako przerobiony Fiat 127, a skończyło jako wyspecjalizowany furgon miejski produkowany wspólnie z PSA.
 
@@ -44,7 +44,7 @@ Brazylijskie Fiorino II produkowano aż do 2013 roku – ponad 12 lat dłużej n
 
 Trzecia generacja to efekt współpracy FIAT-u i PSA, produkowana w tureckiej fabryce w Bursie. Wykorzystuje modułową [platformę SCCS](https://en.wikipedia.org/wiki/Fiat_Fiorino), którą dzieli z Citroënem Nemo i Peugeotem Bipper. Dostępna jako furgon Cargo i pięcioosobowy mikrovan Qubo. Produkcja zakończona w 2024 roku – Stellantis nie wprowadził następcy.
 
-## Dane techniczne Fiat Fiorino
+## Dane techniczne Fiata Fiorino
 
 Kompaktowe gabaryty to główny argument za Fiorino. Parkujesz tam, gdzie większe dostawczaki nie mają szans.
 
@@ -141,7 +141,7 @@ Produkcja zakończona w 2024 r. Ostatnie egzemplarze salonowe sprzedawane za ok.
 Przy oględzinach sprawdź działanie pompy ABS (częsta i droga usterka), stan łańcucha rozrządu (posłuchaj przy zimnym rozruchu) i stan rolek drzwi przesuwnych.
 {{% /info %}}
 
-## Porównanie Fiat Fiorino z konkurencją
+## Porównanie Fiata Fiorino z konkurencją
 
 Fiorino dzieli platformę z Citroënem Nemo i Peugeotem Bipperem – wymiary i parametry tych trzech modeli są niemal identyczne. Kangoo Compact to niezależna konstrukcja z większą paką, ale wyższą ceną.
 

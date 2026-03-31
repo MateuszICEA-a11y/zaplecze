@@ -77,7 +77,7 @@ Partner Van Long:
 
 Szerokość bez lusterek wynosi ok. 1848 mm, a wysokość całkowita auta zależnie od wersji zwykle mieści się w przedziale ok. 1796–1860 mm. To parametry istotne przy wjazdach do garaży podziemnych i centrach logistycznych.
 
-## Silniki Peugeot Partner dostawczy
+## Silniki Peugeota Partner dostawczy
 
 Oferta silnikowa Partnera III zmieniała się zależnie od rocznika, rynku i aktualnych norm emisji. W zależności od roku modelowego występowały benzynowe 1.2 PureTech 110 i 130 KM oraz diesle 1.5 BlueHDi 75, 100 i 130 KM, a po zmianach związanych z Euro 6d i późniejszymi aktualizacjami gama była na części rynków ograniczana.
 

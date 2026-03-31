@@ -25,7 +25,7 @@ sources:
   - "instrukcje serwisowe oraz dokumentacja homologacyjna dla wersji Partner II i silników 1.6 HDi/BlueHDi."
 ---
 
-## Silnik HDI w Peugeot Partner – przegląd wariantów
+## Silnik HDI w Peugeocie Partner – przegląd wariantów
 
 W Peugeot Partner HDI drugiej generacji europejska oferta opierała się przede wszystkim na jednostkach 1.6 z rodziny DV6. To właśnie te silniki dominują dziś na rynku wtórnym i występują także w bliźniaczym Citroënie Berlingo II, z którym Partner dzieli bazę techniczną oraz bardzo zbliżone odmiany 1.6 HDi i BlueHDi.
 

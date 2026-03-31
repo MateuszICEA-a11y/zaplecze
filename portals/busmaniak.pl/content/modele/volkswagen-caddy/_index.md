@@ -29,7 +29,7 @@ sources:
   - "auto-data.net."
 ---
 
-## Historia i generacje Volkswagen Caddy {#historia-generacje}
+## Historia i generacje Volkswagena Caddy {#historia-generacje}
 
 Historia [Volkswagena Caddy](https://pl.wikipedia.org/wiki/Volkswagen_Caddy) sięga 1979 roku, kiedy Volkswagen stworzył lekkiego pickupa na bazie Golfa pierwszej generacji. Od tamtej pory model przeszedł pięć generacji, ewoluując z prostego dostawczaka w nowoczesny kombivan.
 
@@ -55,7 +55,7 @@ Piąta generacja to zupełnie nowy samochód. Platforma MQB (ta sama co Golf VII
 
 {{% info title="Platforma MQB" icon="engineering" %}}Przeskok z PQ35 na MQB w Caddy V to zmiana porównywalna z przejściem z Golfa VI na Golfa VII. Nowa platforma pozwoliła na montaż systemów znanych z samochodów osobowych VW – Digital Cockpit, Travel Assist, matrycowe LED.{{% /info %}}
 
-## Dane techniczne i wymiary Volkswagen Caddy {#dane-techniczne}
+## Dane techniczne i wymiary Volkswagena Caddy {#dane-techniczne}
 
 Wymiary Caddy V generacji:
 
@@ -87,7 +87,7 @@ Volkswagen nie oferuje jeszcze elektrycznego Caddy, choć platforma MQB technicz
 
 ![Volkswagen Caddy V na drodze](/images/volkswagen-caddy-hero.jpg)
 
-## Wersje nadwoziowe Volkswagen Caddy {#wersje-nadwozia}
+## Wersje nadwoziowe Volkswagena Caddy {#wersje-nadwozia}
 
 - **[Caddy osobowy](/modele/volkswagen-caddy/osobowy/) (Life/Style/Move)** – wersja rodzinna z 5 lub 7 miejscami, bogate wyposażenie
 - **Caddy Cargo** – dostawczy z przegrodą, 2–3 miejsca, homologacja N1

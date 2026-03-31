@@ -25,7 +25,7 @@ sources:
   - "dane homologacyjne WLTP."
 ---
 
-## Historia i generacje Volkswagen Amarok {#historia-generacje}
+## Historia i generacje Volkswagena Amarok {#historia-generacje}
 
 Volkswagen Amarok to jeden z najbardziej wszechstronnych pickupów na rynku, łączący walory użytkowe auta dostawczego z komfortem SUV-a. Druga generacja modelu, opracowana we współpracy z Fordem, definiuje na nowo standardy w segmencie aut z napędem na cztery koła.
 
@@ -35,7 +35,7 @@ Pierwsza odsłona modelu była samodzielną konstrukcją koncernu VAG, produkowa
 ### Amarok II (od 2022)
 Druga generacja to owoc strategicznego sojuszu z Fordem, współdzielący architekturę z nowym modelem [Ford Ranger](/modele/ford-ranger/). Samochód urósł, zyskał nowoczesne systemy wspomagania oraz zaawansowany napęd [4MOTION](https://en.wikipedia.org/wiki/4Motion). Mimo wspólnych genów z Rangerem, Volkswagen zachował unikalny design nadwozia i specyficzne wykończenie wnętrza.
 
-## Dane techniczne Volkswagen Amarok
+## Dane techniczne Volkswagena Amarok
 
 ### Wymiary i skrzynia ładunkowa
 Nowy model charakteryzuje się długością w przedziale 5350–5540 mm oraz rozstawem osi 3270 mm. Szerokość nadwozia bez lusterek to 1919 mm, co pozwala na stabilne prowadzenie w każdych warunkach. Skrzynia ładunkowa między nadkolami mieści europaletę, co wyróżnia go na tle mniejszych aut typu [Volkswagen Transporter](/modele/volkswagen-transporter/).

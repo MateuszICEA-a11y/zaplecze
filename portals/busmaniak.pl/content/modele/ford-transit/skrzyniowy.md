@@ -37,7 +37,7 @@ Pozwala to na:
 
 Transit chassis cab jest dostępny w rozstawach osi L2, L3 i L4, ale sama długość rozstawu osi nie przesądza jeszcze o możliwej długości zabudowy.
 
-## Dane techniczne podwozia Ford Transit skrzyniowy
+## Dane techniczne podwozia Forda Transit skrzyniowy
 
 W przypadku podwozia do zabudowy najważniejsze są nie tylko rozstaw osi i DMC, ale też typ kabiny, masa własna, układ napędu i wymiary wykorzystywane przez zabudowców. To właśnie one decydują, czy dana konfiguracja ma sens użytkowy i czy po zabudowie zachowa legalną ładowność.
 

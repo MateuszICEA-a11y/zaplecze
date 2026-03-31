@@ -38,7 +38,7 @@ Konstrukcja opiera się na stalowej ramie z podłużnicami, do której mocowana 
 Europejskie eSprintery powstają w fabryce Mercedes-Benz w Ludwigsfelde pod Berlinem – tym samym zakładzie, który produkuje konwencjonalne Sprintery. Linia montażowa obsługuje zarówno wersje spalinowe, jak i elektryczne na jednej taśmie.
 {{% /info %}}
 
-## Dane techniczne Mercedes eSprinter
+## Dane techniczne Mercedesa eSprinter
 
 Druga generacja eSprintera oferuje dwa warianty mocy i dwie pojemności baterii. Wszystkie wersje mają napęd na tylną oś i jednostopniową przekładnię.
 
@@ -93,7 +93,7 @@ DMC do 4250 kg oznacza, że cięższy wariant wymaga prawa jazdy kategorii C1, c
 Jeśli planujesz zakup eSprintera do dostaw miejskich, bateria 56 kWh w wersji L2 to optymalny wybór – mniejsza masa własna daje wyższą ładowność, a nocne ładowanie AC w bazie w zupełności wystarcza na dzienny przebieg 150–200 km. Dużą baterię 113 kWh warto rozważyć tylko przy trasach powyżej 250 km dziennie lub braku możliwości ładowania w ciągu dnia.
 {{% /expert %}}
 
-## Ceny Mercedes eSprinter
+## Ceny Mercedesa eSprinter
 
 Ceny eSprintera w Polsce kształtują się na poziomie premium – Mercedes nie ukrywa, że pozycjonuje model jako dostawczaka klasy wyższej, także w wersji elektrycznej.
 

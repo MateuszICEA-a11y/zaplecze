@@ -21,7 +21,7 @@ faq:
     answer: "Jest bardziej złożony od wersji single turbo, więc wymaga większej ostrożności przy zakupie. Potencjalne koszty napraw układu doładowania są szerokie i mocno zależą od zakresu uszkodzeń."
 ---
 
-## Dane techniczne silników CDTi w Opel Vivaro
+## Dane techniczne silników CDTi w Oplu Vivaro
 
 Oznaczenie CDTi to nazwa handlowa Opla dla diesli common rail. W praktyce Vivaro A i B korzystało z jednostek pochodzących z aliansu i wspólnej bazy technicznej z Renault – z kodami F9Q, G9U, M9R i R9M, stosowanymi również w Renault Trafic.
 

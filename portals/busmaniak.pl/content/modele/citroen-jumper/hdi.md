@@ -21,7 +21,7 @@ faq:
     answer: "Najczęściej wymienia się problemy z EGR, wtryskiwaczami, turbosprężarką oraz elementami układu oczyszczania spalin w nowszych wersjach. Poza samym silnikiem w bliźniakach Sevel zdarzają się też zużycie dwumasy i sprzęgła, łożysk skrzyni, korozja podwozia oraz usterki elektryki drzwi i centralnego zamka."
 ---
 
-## Dane techniczne silników HDi w Citroën Jumper
+## Dane techniczne silników HDi w Citroënie Jumper
 
 Żeby dobrze opisać gamę Jumpera, trzeba rozdzielić generacje i fazy modelu. Pierwsza generacja była produkowana w latach 1994–2006, druga/trzecia generacja X250 weszła w 2006 roku, lifting X290 pojawił się w 2014 roku, a modernizacja gamy 2.2 BlueHDi/Euro 6d nastąpiła w latach 2019–2020 zależnie od rynku.
 
@@ -93,7 +93,7 @@ W ruchu miejskim znaczenie mają częste ruszanie, masa przewożonego towaru i l
 
 W praktyce użytkowej trzeba też brać poprawkę na rodzaj trasy. Auto eksploatowane lokalnie, z wieloma postojami i niskimi przebiegami dobowymi, będzie paliło więcej niż egzemplarz jeżdżący głównie w regularnych kursach pozamiejskich.
 
-## Typowe usterki HDi w Citroën Jumper
+## Typowe usterki HDi w Citroënie Jumper
 
 W Jumperze trzeba patrzeć szerzej niż tylko na sam osprzęt silnika. To dostawczak pracujący często pod dużym obciążeniem, więc o kosztach eksploatacji decydują również skrzynia, sprzęgło, korozja podwozia i drobna elektryka.
 

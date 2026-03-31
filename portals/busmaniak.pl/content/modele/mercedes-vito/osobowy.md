@@ -46,7 +46,7 @@ Liczba miejsc zależy od układu foteli i rynku, dlatego w Vito Tourer spotyka s
 
 W praktyce Compact jest najłatwiejszy w mieście, Long stanowi najbardziej uniwersalny wybór, a Extra-Long najlepiej sprawdza się tam, gdzie priorytetem jest maksymalna przestrzeń za trzecim rzędem. To właśnie długość nadwozia najmocniej wpływa na użyteczność bagażową Vito Tourer.
 
-## Silniki i napędy Mercedes Vito Tourer
+## Silniki i napędy Mercedesa Vito Tourer
 
 Po modernizacji wprowadzonej w 2020 roku zależnie od rynku Mercedes uporządkował ofertę silnikową Vito Tourer wokół diesli 2.0 CDI. Warto oddzielić tę gamę od Klasy V, bo w internetowych zestawieniach bardzo często mieszają się moce i oznaczenia z różnych modeli.
 

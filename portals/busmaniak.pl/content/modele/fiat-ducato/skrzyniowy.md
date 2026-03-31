@@ -69,7 +69,7 @@ Na bazie Ducato montuje się różne typy zabudów:
 
 Każda z tych wersji inaczej wpływa na masę własną i ładowność. Wzór jest prosty: **ładowność = DMC minus masa własna pojazdu gotowego do jazdy z zabudową**, dlatego brygadówka i cięższa skrzynia zawsze ograniczają realny udźwig.
 
-## Silniki Fiat Ducato skrzyniowy – który wybrać?
+## Silniki Fiata Ducato skrzyniowy – który wybrać?
 
 W Ducato skrzyniowym silnik trzeba dobierać nie tylko do masy ładunku, ale też do rocznika auta. Bez osi czasu łatwo pomylić starsze jednostki z nowszą gamą diesli.
 

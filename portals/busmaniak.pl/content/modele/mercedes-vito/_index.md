@@ -24,7 +24,7 @@ sources:
   - "dane techniczne Auto-Data.net."
 ---
 
-## Historia i generacje Mercedes Vito
+## Historia i generacje Mercedesa Vito
 
 Trzy generacje i ewolucja od awaryjnego debiutanta do jednego z najlepszych vanów w segmencie premium.
 
@@ -61,7 +61,7 @@ Wymiary Mercedes Vito różnią się w zależności od wersji nadwoziowej – do
 - **Próg załadowczy** – 607 mm
 - **Wysokość dachu** – 1910 mm (mieści się w większości parkingów podziemnych)
 
-## Silniki Mercedes Vito
+## Silniki Mercedesa Vito
 
 Gama silnikowa Mercedes Vito obejmuje kilka wariantów mocy – wybór jednostki napędowej wpływa na osiągi, spalanie i koszty eksploatacji.
 
@@ -143,7 +143,7 @@ Furgon z drugim rzędem siedzeń (5–6 miejsc) i oddzieloną przestrzenią towa
 | W447 (2015–2019) | 70 000–110 000 zł |
 | W447 (2020–2024) OM654 | 110 000–160 000 zł |
 
-## Porównanie Mercedes Vito z konkurencją
+## Porównanie Mercedesa Vito z konkurencją
 
 Segment dostawczaków to rynek pełen alternatyw – Mercedes Vito mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
 

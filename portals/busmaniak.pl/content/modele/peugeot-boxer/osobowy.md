@@ -67,7 +67,7 @@ Warto też zwrócić uwagę na systemy bezpieczeństwa i ADAS. Przy aucie do prz
 Boxer Combi do użytku szkolnego lub transportu osób z ograniczoną mobilnością to solidna baza, ale tylko wtedy, gdy punkt wyjścia stanowi poprawnie dobrana homologacja i realna ładowność po zabudowie. W praktyce największy błąd kupujących to skupienie się na liczbie miejsc bez sprawdzenia, ile przestrzeni i masy zostaje po zajęciu wszystkich foteli.
 {{% /expert %}}
 
-## Silniki Peugeot Boxer Combi
+## Silniki Peugeota Boxer Combi
 
 Oferta silnikowa Boxera zmieniała się zależnie od generacji i rocznika, dlatego przy zakupie nie można wrzucać wszystkich odmian do jednego worka. W różnych okresach pojawiały się jednostki 2.2 HDi i 2.2 BlueHDi w kilku wariantach mocy, a w niektórych latach także 2.0 BlueHDi.
 

@@ -55,7 +55,7 @@ Trzeba jednak oddzielić katalogową ładowność od realnej użyteczności. Bry
 FWD zwykle daje niższy próg załadunku i korzystniejszą masę własną, dlatego dobrze wypada w lekkiej skrzyni i miejskiej eksploatacji. RWD, zwłaszcza w cięższych konfiguracjach, lepiej znosi stałe obciążenie i częstą jazdę z przyczepą, a 4MOTION ma sens tam, gdzie auto regularnie zjeżdża na błoto, żwir albo nieutwardzony plac budowy.
 {{% /info %}}
 
-## Silniki Volkswagen Crafter brygadówka
+## Silniki Volkswagena Crafter brygadówka
 
 Brygadówka korzysta z tej samej rodziny 2.0 TDI co inne odmiany Craftera, ale dobór napędu i skrzyni ma tu większe znaczenie niż w furgonie. Przy 7 osobach w kabinie i ładunku na pace słabsze wersje szybko tracą zapas dynamiki.
 

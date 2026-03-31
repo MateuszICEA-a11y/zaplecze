@@ -25,7 +25,7 @@ sources:
   - "Dane WLTP"
 ---
 
-## Dane techniczne 2.0 TDI w Volkswagen Crafter
+## Dane techniczne 2.0 TDI w Volkswagenie Crafter
 
 Volkswagen Crafter TDI drugiej generacji, produkowany od 2017 roku, korzysta z czterocylindrowego diesla 2.0 TDI w użytkowej odmianie rodziny EA288, przygotowanej do pracy w dużych autach dostawczych. W zależności od rocznika i rynku występowały warianty mocy 102, 122, 140 i 177 KM.
 

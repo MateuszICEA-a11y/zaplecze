@@ -27,7 +27,7 @@ sources:
   - "archiwum akcji serwisowych UOKiK."
 ---
 
-## Historia i generacje Peugeot Rifter
+## Historia i generacje Peugeota Rifter
 
 Model zaprezentowano podczas targów w Genewie w 2018 roku jako następca rekreacyjnej wersji Partnera Tepee, porzucając jednocześnie tę nazwę dla wersji osobowych. Zbudowany na modułowej platformie [EMP2](https://en.wikipedia.org/wiki/PSA_EMP2_platform), łączy cechy rodzinnego MPV z surowym wyglądem SUV-a dzięki zwiększonemu prześwitowi i plastikowym osłonom nadwozia. Samochód powstał w ramach projektu K9 grupy PSA, co sprawiło, że jego technicznymi bliźniakami są [Citroën Berlingo](/modele/citroen-berlingo/), [Opel Combo](/modele/opel-combo/), Toyota ProAce City Verso oraz Fiat Doblo III. Produkcja odbywa się w zakładach w Vigo (Hiszpania) oraz Mangualde (Portugalia).
 
@@ -56,7 +56,7 @@ Wymiary Peugeot Rifter różnią się w zależności od wersji nadwoziowej – d
 - **Masa przyczepy** – do 1500 kg (z hamulcem)
 - **Prześwit** – 167 mm (wersja Allure), 200 mm (wersja 4x4 Dangel)
 
-## Silniki Peugeot Rifter
+## Silniki Peugeota Rifter
 
 Gama silnikowa Peugeot Rifter obejmuje kilka wariantów mocy – wybór jednostki napędowej wpływa na osiągi, spalanie i koszty eksploatacji.
 

@@ -22,7 +22,7 @@ faq:
     answer: "Najczęściej wracają tematy osprzętu i eksploatacji: problemy z układem DPF/FAP przy jeździe miejskiej, zużycie dwumasy, awarie osprzętu dolotu i podciśnienia, kłopoty z wtryskiem w części wersji oraz wycieki oleju zależne od odmiany pokrywy i osprzętu."
 ---
 
-## Dane techniczne 2.0 HDi w Peugeot Expert
+## Dane techniczne 2.0 HDi w Peugeocie Expert
 
 Silnik 2.0 HDi z rodziny DW10 to klasyczny czterocylindrowy diesel common rail o pojemności 1997 cm³. W praktyce serwisowej najważniejsze są tu 16-zaworowa konstrukcja, pasek rozrządu, turbosprężarka o zmiennej geometrii oraz obecność koła dwumasowego i filtra DPF/FAP – zależnie od wersji i rocznika.
 

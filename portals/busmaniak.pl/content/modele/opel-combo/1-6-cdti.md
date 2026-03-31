@@ -23,7 +23,7 @@ faq:
     answer: "Przed zakupem warto sprawdzić korekty wtrysków na biegu jałowym, poziom zapełnienia DPF w %, liczbę udanych i przerwanych regeneracji, ciśnienie doładowania pod obciążeniem, błędy EGR/NOx/AdBlue, szczelność dolotu oraz stan dwumasy i sprzęgła przy 1500–2000 obr/min na 4. lub 5. biegu."
 ---
 
-## Dane techniczne 1.6 CDTi w Opel Combo
+## Dane techniczne 1.6 CDTi w Oplu Combo
 
 W przypadku modelu Opel Combo 1.6 CDTi najważniejsze jest poprawne rozdzielenie danych silnika od danych całego auta. Wersje użytkowe i osobowe różnią się masą, ładownością i objętością przestrzeni ładunkowej, a to bezpośrednio wpływa na osiągi, spalanie i trwałość osprzętu.
 

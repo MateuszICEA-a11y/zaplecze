@@ -34,7 +34,7 @@ Citroën Jumpy (w niektórych krajach sprzedawany jako Citroën Dispatch) to śr
 - **Jumpy II (2007–2016)** – druga generacja, nadal na wspólnej platformie z Expert II i Scudo II
 - **Jumpy III (od 2016)** – przesiadka na platformę EMP2, nowy bliźniak: Toyota ProAce II
 
-## Dane techniczne Citroën Jumpy III
+## Dane techniczne Citroëna Jumpy III
 
 Jumpy III jest **technicznie identyczny** z Toyota ProAce II. Wszystkie parametry – wymiary, ładowność, silniki – są takie same. Pełne dane techniczne znajdziesz w artykule o [Toyota ProAce – dane techniczne](/modele/toyota-proace/).
 

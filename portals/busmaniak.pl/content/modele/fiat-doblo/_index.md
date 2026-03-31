@@ -23,7 +23,7 @@ sources:
   - "Fiat Professional Polska"
   - "auto-data.net."
 ---
-## Historia i generacje Fiat Doblò
+## Historia i generacje Fiata Doblò
 
 Doblò wjechał na rynek w 2000 roku jako odpowiedź Fiata na rosnące zapotrzebowanie na pojazdy łączące funkcje dostawcze i osobowe. Generacja I (2000–2010) zbudowana była na płycie Punty – prosty układ, solidna mechanika, klasyczne diesle JTD.
 
@@ -71,7 +71,7 @@ Długość krótkiej wersji: 4403 mm. Wersja Maxi: 4753 mm. Pojemność ładunko
 Doblò III korzysta z tej samej skrzyni biegów EAT8 i silników PSA co Berlingo. Serwis jest tożsamy – mechanicy przyzwyczajeni do Berlingo obsłużą Doblò bez problemów. Części zamienne są wspólne, co dobrze wpływa na dostępność i ceny.
 {{% /info %}}
 
-## Wymiary Fiat Doblò
+## Wymiary Fiata Doblò
 
 Między II a III generacją Doblò zmiana platformy na PSA EMP2 przyniosła nieznaczne różnice w gabarytach. Szerokość wzrosła o 16 mm, a rozstaw osi w wersji Maxi zwiększył się o 170 mm – co przełożyło się na lepszy komfort jazdy i większą przestrzeń ładunkową.
 
@@ -117,7 +117,7 @@ Na rynku wtórnym Doblò II generacji to jedne z najtańszych kompaktowych vanó
 | Doblò III (od 2022) | 60 000–100 000 zł |
 | Nowy Doblò III Van L1 | od ok. 105 000 zł netto |
 
-## Porównanie Fiat Doblò z konkurencją
+## Porównanie Fiata Doblò z konkurencją
 
 Doblò III dzieli platformę EMP2 z Oplem Combo, Citroënem Berlingo i Peugeotem Partnerem – technicznie to ten sam samochód. Różnice sprowadzają się do ceny, dostępności serwisu i stylistyki. VW Caddy i Renault Kangoo to niezależne konstrukcje z innymi silnikami.
 

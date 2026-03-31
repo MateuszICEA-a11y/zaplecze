@@ -21,7 +21,7 @@ faq:
     answer: "Tak, to jedna z częściej opisywanych usterek tej jednostki. Objawem bywa terkotanie przy zimnym rozruchu, a koszt naprawy zwykle wynosi około 1500–2500 zł."
 ---
 
-## Silniki CDTi w Opel Combo – przegląd generacji
+## Silniki CDTi w Oplu Combo – przegląd generacji
 
 Oznaczenie CDTi to handlowa nazwa Opla dla turbodiesli z wtryskiem common rail. W praktyce w przypadku Opel Combo CDTi trzeba rozdzielić przede wszystkim generacje C i D, bo stosowano w nich zupełnie inne rodziny jednostek oraz różne poziomy osprzętu i norm emisji.
 

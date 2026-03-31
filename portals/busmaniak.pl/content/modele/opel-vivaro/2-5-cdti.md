@@ -23,7 +23,7 @@ faq:
     answer: "Najczęściej 6-biegowa manualna PF6 i napęd na przód. Zautomatyzowana Quickshift/Tecshift była rzadsza i zależna od rynku oraz rocznika."
 ---
 
-## Dane techniczne 2.5 CDTi w Opel Vivaro
+## Dane techniczne 2.5 CDTi w Oplu Vivaro
 
 Jednostka G9U to czterocylindrowy turbodiesel Renault o pojemności 2463/2464 cm³, z 16-zaworowym rozrządem i układem wtryskowym [Common Rail](https://en.wikipedia.org/wiki/Common_rail). W [Oplu Vivaro](/modele/opel-vivaro/) A pełniła rolę najmocniejszego diesla, a jej charakter najlepiej pasował do cięższych konfiguracji i pracy pod obciążeniem.
 

@@ -27,7 +27,7 @@ sources:
   - "katalogi techniczne Stellantis."
 ---
 
-## Historia i generacje Fiat Ducato {#historia-generacje}
+## Historia i generacje Fiata Ducato {#historia-generacje}
 
 [Fiat Ducato](https://pl.wikipedia.org/wiki/Fiat_Ducato) to najpopularniejszy bus dostawczy w Europie, produkowany od 1981 roku. Łącznie z fabryk Sevel w Val di Sangro zjechało ponad 6 milionów egzemplarzy (wraz z bliźniakami Citroën Jumper i Peugeot Boxer). Do 2017 roku sprzedano 2,7 mln Ducato pod marką Fiat.
 
@@ -49,7 +49,7 @@ Obecna generacja to ewolucja modelu z 2006 roku, z naciskiem na technologię i e
 Ponad 75% kamperów poruszających się po europejskich drogach bazuje na podwoziu Fiata Ducato. To najczęściej wybierana baza pod zabudowy kempingowe na świecie.
 {{% /info %}}
 
-## Dane techniczne Fiat Ducato {#dane-techniczne}
+## Dane techniczne Fiata Ducato {#dane-techniczne}
 
 Wybór Ducato to przede wszystkim analiza parametrów przestrzeni ładunkowej. System oznaczeń L (długość) i H (wysokość):
 
@@ -78,7 +78,7 @@ Szukasz używanego Ducato do ciężkiej pracy? Celuj w 3.0 MultiJet sprzed 2016 
 
 ![Fiat Ducato IV furgon przy rampie załadunkowej](/images/fiat-ducato-hero.jpg)
 
-## Wersje nadwoziowe Fiat Ducato {#wersje-nadwozia}
+## Wersje nadwoziowe Fiata Ducato {#wersje-nadwozia}
 
 Dzięki konstrukcji ramowej (podwozie) i samonośnej (furgon) Ducato oferuje szerokie możliwości konfiguracji:
 

@@ -28,7 +28,7 @@ Transit Van to furgon nastawiony na przewóz ładunku – bez bocznych okien w c
 
 Tourneo to wariant bardziej pasażerski, z wyższym poziomem wykończenia, lepszym wygłuszeniem i większym naciskiem na komfort podróży. W praktyce Kombi jest rozwiązaniem firmowym i zadaniowym, a Tourneo – bardziej osobowym i przewozowym.
 
-## Wersje i liczba miejsc w Ford Transit Kombi
+## Wersje i liczba miejsc w Fordzie Transit Kombi
 
 W przypadku Ford Transit Kombi liczba miejsc nie powinna być opisywana wyłącznie przez długość nadwozia. Kluczowe są też homologacja, układ siedzeń i konkretna konfiguracja przygotowana na dany rynek oraz rocznik.
 
@@ -114,7 +114,7 @@ W praktyce w wersjach pasażersko-użytkowych istotne są przede wszystkim:
 
 Przy wyborze konkretnego egzemplarza warto też sprawdzić obecność systemów bezpieczeństwa i wsparcia kierowcy. W zależności od wersji mogą to być systemy takie jak ABS, ESC, asystent ruszania pod górę, tempomat, system utrzymania pasa ruchu, automatyczne hamowanie awaryjne, kamera cofania, czujniki parkowania, monitorowanie martwego pola i poduszki powietrzne – przy czym zakres standardu i opcji zależy od roku modelowego.
 
-## Ceny nowych i używanych Ford Transit Kombi
+## Ceny nowych i używanych Forda Transit Kombi
 
 Ceny Ford Transit Kombi silnie zależą od liczby miejsc, długości nadwozia, DMC, rodzaju napędu, skrzyni biegów i wyposażenia. Bez oparcia o aktualny oficjalny cennik albo wskazaną analizę rynku wtórnego nie warto podawać sztywnych kwot, bo szybko stają się nieaktualne.
 

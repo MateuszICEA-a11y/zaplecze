@@ -21,7 +21,7 @@ faq:
     answer: "T4 2.5 TDI: problemy z głowicą przy przegrzaniu. T5 2.5 TDI: pompowtryskiwacze, dwumasa i zużycie oleju. W 2.0 TDI w T5/T6/T6.1 należy mówić o pasku rozrządu, a typowe problemy dotyczą m.in. EGR, DPF, układu SCR/NOx i osprzętu. DSG wymaga wymiany oleju co 60 tys. km."
 ---
 
-## Dane techniczne silników TDI w Volkswagen Transporter
+## Dane techniczne silników TDI w Volkswagenie Transporter
 
 Trzy dekady diesli w gamie Transportera to kilka zupełnie różnych konstrukcji – od prostszych jednostek T4 po nowoczesne 2.0 TDI z T6.1. W praktyce różnice dotyczą nie tylko mocy, ale też kultury pracy, emisji spalin, kosztów serwisu i przydatności pod obciążeniem.
 

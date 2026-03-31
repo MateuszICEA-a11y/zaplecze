@@ -110,7 +110,7 @@ W specyfikacjach technicznych można spotkać odniesienia do systemów wspomagan
 Przy zamówieniu Sprintera do przewozów pasażerskich najpierw ustal bazę fabryczną – linię wyposażenia, napęd, DMC i długość – a dopiero potem konfigurację zabudowy. To najlepszy sposób, by uniknąć rozczarowania liczbą miejsc, bagażnikiem i realną nośnością po odbiorze gotowego auta.
 {{% /expert %}}
 
-## Ceny Mercedes Sprinter osobowy
+## Ceny Mercedesa Sprinter osobowy
 
 W przypadku modelu Mercedes Sprinter osobowy nie wystarczy podać jednej ceny „za Tourera”. Trzeba rozdzielić cenę bazową auta fabrycznego od kosztu kompletnej zabudowy pasażerskiej, bo to właśnie zabudowa często decyduje o końcowym budżecie zakupu.
 

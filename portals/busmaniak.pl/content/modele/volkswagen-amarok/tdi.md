@@ -25,7 +25,7 @@ sources:
   - "materiały prasowe VW i Forda z lat 2010–2024."
 ---
 
-## Dane techniczne TDI w Volkswagen Amarok
+## Dane techniczne TDI w Volkswagenie Amarok
 
 Dwie generacje Amaroka oznaczają dwie różne architektury auta. Amarok I rozwijano jako własną konstrukcję Volkswagena, natomiast Amarok II powstał we współpracy z Fordem, bazuje na architekturze Rangera nowej generacji T6.2 i jest produkowany w Silverton w RPA. To ważne, bo gama silnikowa i konfiguracje napędu nie są identyczne na wszystkich rynkach.
 

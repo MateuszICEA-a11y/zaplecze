@@ -26,7 +26,7 @@ sources:
   - "katalogi techniczne Peugeot 2016–2024."
 ---
 
-## Historia i generacje Peugeot Expert
+## Historia i generacje Peugeota Expert
 
 Trzy generacje, zmiana platformy i rozrastająca się rodzina bliźniaków – Expert ewoluował od prostego vana Sevel Nord do zaawansowanego dostawczaka na modularnej platformie EMP2.
 

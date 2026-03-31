@@ -28,7 +28,7 @@ sources:
   - "auto-data.net"
 ---
 
-## Historia i generacje Citroën Berlingo {#historia-generacje}
+## Historia i generacje Citroëna Berlingo {#historia-generacje}
 
 [Citroën Berlingo](https://pl.wikipedia.org/wiki/Citro%C3%ABn_Berlingo) trafił na rynek w 1996 roku jako jeden z pierwszych kombivanów łączących przestrzeń dostawczaka z codzienną użytecznością. Produkowany głównie w fabryce Citroëna w Vigo (Hiszpania) – zdolność produkcyjna zakładu sięga 300 tys. pojazdów rocznie. Łącznie z Vigo zjechało ponad 15 milionów Berlingo i bliźniaczych Partnerów. Sama pierwsza generacja zamknęła się wynikiem 3,2 mln sztuk, a rekordowy rok 2007 przyniósł 348 tys. sprzedanych egzemplarzy, co odpowiadało 29% europejskiego rynku furgonetek.
 
@@ -44,7 +44,7 @@ Druga generacja bazowała na platformie PSA PF2, dzielonej z [Peugeotem Partnere
 
 Trzecia generacja korzysta z platformy EMP2 – lepsza sztywność nadwozia przełożyła się na wyższy komfort jazdy i bezpieczeństwo bierne. Dostępne są dwie długości nadwozia: M i [XL](/modele/citroen-berlingo/xl/). Silniki benzynowe 1.2 PureTech i wysokoprężne 1.5 BlueHDI. W 2021 roku dołączył [elektryczny ë-Berlingo](/modele/citroen-berlingo/elektryczny/) z silnikiem 100 kW i baterią 50 kWh.
 
-## Dane techniczne Citroën Berlingo {#dane-techniczne}
+## Dane techniczne Citroëna Berlingo {#dane-techniczne}
 
 Berlingo III jest dostępne w dwóch długościach nadwozia – M i XL – zarówno w wersji osobowej, jak i dostawczej Van. Różnica w rozstawie osi wynosi 190 mm, co przekłada się na zauważalnie większy bagażnik i przestrzeń ładunkową w wersji XL.
 
@@ -74,14 +74,14 @@ Berlingo oferuje szeroką gamę napędów – od oszczędnego 1.5 BlueHDI 75 KM 
 
 ![Citroën Berlingo III na drodze](/images/citroen-berlingo-hero.jpg)
 
-## Wersje nadwoziowe Citroën Berlingo {#wersje-nadwozia}
+## Wersje nadwoziowe Citroëna Berlingo {#wersje-nadwozia}
 
 - **[Berlingo Multispace](/modele/citroen-berlingo/multispace/)** – wersja osobowa dla rodzin
 - **[Berlingo Van](/modele/citroen-berlingo/van/)** – narzędzie pracy z dużą przestrzenią ładunkową
 - **[Berlingo Long / XL](/modele/citroen-berlingo/long/)** – wydłużona wersja
 - **[Berlingo 7-osobowy](/modele/citroen-berlingo/7-osobowy/)** – trzeci rząd siedzeń dla dużych rodzin
 
-## Porównanie Citroën Berlingo z konkurencją {#konkurencja}
+## Porównanie Citroëna Berlingo z konkurencją {#konkurencja}
 
 W segmencie kombivanów XL Berlingo rywalizuje z bliźniakami platformy EMP2 (Rifter, Combo) oraz niezależnymi konstrukcjami VW Caddy i Renault Kangoo. Kluczowe różnice dotyczą bagażnika, dostępności wersji elektrycznej i ceny.
 

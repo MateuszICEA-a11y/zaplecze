@@ -36,7 +36,7 @@ Przekłada się to na:
 
 W praktyce trzeba też odróżniać wersje Cargo/N1 od osobowych M1. Różnią się one liczbą miejsc, ładownością, wyposażeniem, a dla użytkownika również konsekwencjami podatkowymi, ubezpieczeniowymi i zakresem badań technicznych.
 
-## Wymiary Fiat Doblò Maxi
+## Wymiary Fiata Doblò Maxi
 
 Żeby poprawnie porównać Fiat Doblò Maxi, trzeba patrzeć osobno na generację II i III. W najnowszym modelu producent wyraźnie rozdziela wersje L1 i L2, natomiast w starszym Doblò II dane zależą bardziej od odmiany nadwozia i rocznika.
 

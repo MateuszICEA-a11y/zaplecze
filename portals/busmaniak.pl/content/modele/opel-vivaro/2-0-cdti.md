@@ -23,7 +23,7 @@ faq:
     answer: "Osprzęt wtryskowy w M9R zależy od wersji i rocznika, dlatego producenta oraz możliwość naprawy trzeba potwierdzić po VIN lub kodzie silnika. Przed zakupem auta warto sprawdzić korekty wtrysków i historię diagnostyczną, zamiast zakładać jeden typ układu dla wszystkich odmian."
 ---
 
-## Dane techniczne 2.0 CDTi w Opel Vivaro
+## Dane techniczne 2.0 CDTi w Oplu Vivaro
 
 Opel Vivaro 2.0 CDTi to silnik M9R stosowany w generacji Vivaro A produkowanej w latach 2001–2014, przy czym sama jednostka 2.0 CDTi pojawiła się po modernizacji gamy około 2006 r. W praktyce trzeba też rozróżniać egzemplarze przed i po zmianach związanych z normami emisji około 2010/2011, bo szczegóły zależą od rynku i homologacji konkretnego auta.
 

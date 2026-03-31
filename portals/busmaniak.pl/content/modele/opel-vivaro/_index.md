@@ -25,7 +25,7 @@ sources:
   - "AutoCentrum.pl."
 ---
 
-## Historia i generacje Opel Vivaro
+## Historia i generacje Opla Vivaro
 
 Trzy generacje, dwie różne platformy i zmiana technicznego partnera – Vivaro przeszło od Renault do PSA/Stellantis.
 
@@ -49,7 +49,7 @@ Vivaro C to zupełnie inny samochód niż poprzedniki – inne podzespoły, skrz
 
 Platforma [PSA EMP2](https://en.wikipedia.org/wiki/PSA_EMP2_platform), bliźniak [Peugeot Expert](/modele/peugeot-expert/) i Citroën Jumpy. Produkcja przeniesiona do Sandouville (Francja). Silniki 1.5 D i 2.0 D plus elektryczny Vivaro-e. Trzy długości nadwozia: Compact (4609 mm), Standard (4959 mm) i Long (5309 mm).
 
-## Wymiary Opel Vivaro C
+## Wymiary Opla Vivaro C
 
 Wymiary Opel Vivaro różnią się w zależności od wersji nadwoziowej – dotyczy to zarówno gabarytów zewnętrznych, jak i przestrzeni ładunkowej.
 
@@ -90,7 +90,7 @@ Gama silnikowa Opel Vivaro obejmuje kilka wariantów mocy – wybór jednostki n
 Przy zakupie używanego Vivaro A lub B sprawdź stan turbiny i intercoolera – to pierwsza linia wydatków. W modelach z 1.6 CDTi BiTurbo układ dwóch turbin potrafi zaskoczyć rachunkiem rzędu 5000–8000 zł. Vivaro C z 2.0 D jest mechanicznie prostszy, ale części PSA bywają droższe niż zamienniki Renault z generacji A/B.
 {{% /expert %}}
 
-## Wersje nadwoziowe Opel Vivaro
+## Wersje nadwoziowe Opla Vivaro
 
 - **Furgon** – klasyczny dostawczak 2/3-osobowy z pełną przegrodą
 - **Furgon Long** – przedłużona przestrzeń ładunkowa (3120 mm podłogi)

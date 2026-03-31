@@ -38,7 +38,7 @@ Proace towarowy jest odmianą użytkową. W praktyce nie warto mieszać obu wers
 
 Warto też pamiętać o zmianach po liftingu 2024. Facelift gamy średnich vanów Toyota/Stellantis przyniósł zmiany pasa przedniego, multimediów, systemów ADAS i oferty napędów, dlatego przy porównywaniu ogłoszeń trzeba sprawdzać, czy mówimy o aucie przedliftowym czy poliftowym.
 
-## Konfiguracje miejsc w Toyota Proace Verso
+## Konfiguracje miejsc w Toyocie Proace Verso
 
 W Proace Verso liczba miejsc zależy od wersji, długości nadwozia i konkretnej specyfikacji rynkowej. W artykule warto trzymać się wyłącznie osobowego Verso, bez mieszania go z odmianami użytkowymi.
 
@@ -94,7 +94,7 @@ W sekcji bagażnik trzeba zachować ostrożność. Dostarczone dane nie zawieraj
 
 Pewne jest natomiast to, że funkcjonalność wnętrza mocno zależy od konfiguracji siedzeń. W praktyce przy vanie rodzinnym i shuttle duże znaczenie mają możliwość demontażu foteli, liczba drzwi przesuwnych oraz konkretna aranżacja kabiny, ale do rzetelnego podania szerokości otworu drzwi, wysokości progu czy masy poszczególnych foteli potrzebne są dane katalogowe dla danej wersji.
 
-## Ceny Toyota Proace Verso
+## Ceny Toyoty Proace Verso
 
 Poniższe kwoty to archiwalne widełki cenowe z lat 2024–2025, a nie aktualny cennik na dzień publikacji. To ważne rozróżnienie, bo artykuł ma datę 2026 i bez takiego doprecyzowania łatwo o mylne wrażenie, że chodzi o bieżącą ofertę.
 

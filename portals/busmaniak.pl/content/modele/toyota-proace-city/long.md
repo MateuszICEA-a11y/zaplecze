@@ -24,7 +24,7 @@ sources:
   - "Wikipedia"
   - "auto-data.net"
 ---
-## Wymiary Toyota Proace City Long
+## Wymiary Toyoty Proace City Long
 
 Proace City jest produkowany przez Stellantis w Vigo (Hiszpania) i należy do tej samej rodziny co Citroen Berlingo, Peugeot Partner oraz Opel Combo. Konstrukcyjnie to bliźniaczy model oparty na platformie EMP2 / architekturze K9, a nie na platformie CMP.
 

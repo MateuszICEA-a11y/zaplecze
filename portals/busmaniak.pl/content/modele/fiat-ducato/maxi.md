@@ -78,7 +78,7 @@ W heavy/maxi bardzo ważne są też naciski na osie, bo to one często ogranicza
 
 Wersje z DMC 4250 kg wymagają prawa jazdy co najmniej kat. C1 lub C.
 
-## Silniki w Fiat Ducato Maxi
+## Silniki w Fiacie Ducato Maxi
 
 W tej części najważniejsze jest rozróżnienie roczników. W Ducato X250 i jego liftingach spotkamy różne generacje napędów – od 2.3 MultiJet II po 2.2 MultiJet3 – a wraz z nimi zmieniały się normy emisji, skrzynie biegów i masa własna auta.
 

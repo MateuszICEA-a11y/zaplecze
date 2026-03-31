@@ -74,7 +74,7 @@ Zużycie energii w cyklu mieszanym to 19,0–20,9 kWh/100 km. Na zasięg wpływa
 
 {{% expert name="Marek Kowalczyk" %}}Przy planowaniu dłuższych tras ID. Buzzem pamiętaj o funkcji Plug & Charge – samochód automatycznie autoryzuje sesję ładowania na kompatybilnych stacjach. Realna przerwa na ładowanie DC to 25–35 minut, więc idealnie wpasowuje się w postój na kawę.{{% /expert %}}
 
-## Wersje nadwoziowe Volkswagen ID. Buzz
+## Wersje nadwoziowe Volkswagena ID. Buzz
 
 ![Volkswagen ID. Buzz](/images/volkswagen-id-buzz-hero.jpg)
 

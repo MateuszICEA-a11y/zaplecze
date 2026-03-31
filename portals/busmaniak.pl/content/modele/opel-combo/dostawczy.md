@@ -21,7 +21,7 @@ sources:
   - "dane homologacyjne i specyfikacje modelowe"
   - "[Wikipedia – DMC](https://pl.wikipedia.org/wiki/Dopuszczalna_masa_ca%C5%82kowita)"
 ---
-## Dane techniczne Opel Combo dostawczy
+## Dane techniczne Opla Combo dostawczy
 
 Opel Combo dostawczy występuje w dwóch długościach nadwozia i kilku konfiguracjach ładowni. Najważniejsze parametry użytkowe trzeba czytać z uwzględnieniem konkretnej wersji silnikowej, skrzyni, wyposażenia i dopuszczalnej masy całkowitej.
 

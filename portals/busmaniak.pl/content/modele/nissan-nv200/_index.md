@@ -69,7 +69,7 @@ Wymiary Nissan Nv200 różnią się w zależności od wersji nadwoziowej – dot
 - **Drzwi tylne** – asymetryczne skrzydełkowe, otwierane do 180°
 - **Drzwi boczne** – przesuwane, po jednej (standard) lub obu stronach (opcja)
 
-## Silniki Nissan NV200
+## Silniki Nissana NV200
 
 Gama silnikowa Nissan Nv200 obejmuje kilka wariantów mocy – wybór jednostki napędowej wpływa na osiągi, spalanie i koszty eksploatacji.
 

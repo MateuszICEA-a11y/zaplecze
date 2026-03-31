@@ -22,7 +22,7 @@ faq:
     answer: "Przy silnikach wymagających planowej obsługi użytkownik powinien sprawdzić interwał z dokumentacji dla konkretnego kodu silnika. Typowy punkt odniesienia to wymiana kompletu rozrządu z pompą wody co 180000 km lub 10 lat, a koszt usługi może sięgać kilku tysięcy zł zależnie od części i warsztatu."
 ---
 
-## Dane techniczne 2.2 HDi w Peugeot Boxer
+## Dane techniczne 2.2 HDi w Peugeocie Boxer
 
 W przypadku hasła peugeot boxer 2.2 hdi najważniejsze jest poprawne rozdzielenie rodzin silników. Dla Boxera/Jumpera generacji od 2006 r. kluczowe są jednostki 2.2 o pojemności 2198 cm³ z rodziny Ford/Puma, a po liftingu pojawiły się także późniejsze odmiany BlueHDi.
 

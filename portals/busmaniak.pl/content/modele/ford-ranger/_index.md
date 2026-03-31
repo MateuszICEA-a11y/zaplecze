@@ -26,7 +26,7 @@ sources:
   - "dokumentacja serwisowa Ford EcoBlue."
 ---
 
-## Historia i generacje Ford Ranger
+## Historia i generacje Forda Ranger
 
 Globalny przebój, który w Europie zdominował segment pickupów. Ranger ewoluował z surowego narzędzia pracy w komfortową terenówkę zdolną zastąpić rodzinnego SUV-a.
 

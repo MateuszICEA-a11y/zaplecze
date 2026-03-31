@@ -57,7 +57,7 @@ Gama silnikowa Jumpera obejmuje sprawdzone diesle 2.2 HDi/BlueHDi oraz wycofaneg
 
 Płyn AdBlue wymagany w wersjach BlueHDi (zbiornik 25 l, uzupełnianie co 10 000–15 000 km).
 
-## Wersje nadwoziowe Citroën Jumper
+## Wersje nadwoziowe Citroëna Jumper
 
 Jumper jest oferowany w pięciu konfiguracjach L/H – od kompaktowego L1H1 z 8 m³ po największy L4H3 z 17 m³ i ładownością do 1735 kg. Wybór konfiguracji decyduje o zastosowaniu pojazdu, kosztach ubezpieczenia i zużyciu paliwa.
 
@@ -124,7 +124,7 @@ Na rynku wtórnym starsze Jumpery II generacji z roczników 2007–2014 można k
 | Nowy Jumper L2H2 (2.2 BlueHDi 140) | od ok. 160 000 zł netto |
 | ë-Jumper L2H2 (75 kWh) | od ok. 280 000 zł netto |
 
-## Porównanie Citroën Jumper z konkurencją
+## Porównanie Citroëna Jumper z konkurencją
 
 W segmencie dużych vanów Jumper konkuruje bezpośrednio ze swoimi bliźniakami (Boxer, Ducato, Movano) oraz z VW Crafterem z osobnej platformy. Kluczowe różnice dotyczą ceny, pojemności paki i dostępności wersji elektrycznej.
 

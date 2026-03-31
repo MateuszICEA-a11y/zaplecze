@@ -37,7 +37,7 @@ Konstrukcja opiera się na ramie podłogowej Transita szóstej generacji (V710).
 
 Od modelowego roku 2024 Ford wprowadził aktualizację z większą baterią o pojemności użytkowej 89 kWh (zamiast dotychczasowych 68 kWh), co przełożyło się na wydłużenie zasięgu i lepszą wydajność ładowania DC.
 
-## Dane techniczne Ford E-Transit
+## Dane techniczne Forda E-Transit
 
 E-Transit jest dostępny z dwoma wariantami silnika elektrycznego – oba napędzają tylną oś przez jednostopniową przekładnię redukcyjną.
 
@@ -92,7 +92,7 @@ Ford E-Transit obsługuje precondycjonowanie baterii – system automatycznie po
 
 Dla operatorów flot kluczowe jest ładowanie nocne w bazie – wallbox 11,3 kW zapewnia pełne naładowanie w ciągu jednej zmiany nocnej (8 godzin). Ford Pro Charging oferuje zarządzanie ładowaniem wielu pojazdów jednocześnie, z optymalizacją kosztów energii w oparciu o taryfę nocną.
 
-## Wersje nadwoziowe Ford E-Transit
+## Wersje nadwoziowe Forda E-Transit
 
 Ford E-Transit jest dostępny w trzech typach nadwozia i wielu konfiguracjach wymiarowych, co czyni go jednym z najbardziej wszechstronnych elektrycznych dostawczaków na rynku. Pod tym względem wyprzedza zarówno [Mercedes Sprinter](/modele/mercedes-sprinter/) w wersji elektrycznej, jak i [Fiata Ducato](/modele/fiat-ducato/) e-Ducato.
 

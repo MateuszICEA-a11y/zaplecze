@@ -31,7 +31,7 @@ sources:
   - "dokumentacja techniczna Fiat Professional"
   - "katalogi Gates/Dayco."
 ---
-## Co ile wymiana rozrządu w Fiat Ducato 2.3 MultiJet?
+## Co ile wymiana rozrządu w Fiacie Ducato 2.3 MultiJet?
 
 Oficjalne instrukcje producenta często podają optymistyczne interwały, sięgające nawet 180 000 km. Jednak praktyka warsztatowa i doświadczenia mechaników sugerują znacznie większą ostrożność w przypadku tak eksploatowanego pojazdu jak Fiat Ducato. Rozrząd warto traktować jako priorytet.
 

@@ -27,7 +27,7 @@ sources:
   - "testy Euro NCAP 2021."
 ---
 
-## Historia i generacje Mercedes Citan
+## Historia i generacje Mercedesa Citan
 
 Mercedes Citan zadebiutował w 2012 roku jako odpowiedź na rosnące zapotrzebowanie na kompaktowe dostawczaki w segmencie, w którym Gwiazda nie miała własnej propozycji. Zamiast projektować model od zera, Mercedes nawiązał współpracę z Renault i oparł Citana na [platformie](https://pl.wikipedia.org/wiki/Renault_Kangoo) Renault Kangoo.
 
@@ -47,7 +47,7 @@ Premiera odbyła się w sierpniu 2021 roku, a dostawy ruszyły na początku 2022
 Mercedes Citan, Renault Kangoo III i Nissan Townstar powstają na tej samej linii montażowej w fabryce Renault MCA w Maubeuge (Francja). Każdy model różni się designem, wnętrzem i pozycjonowaniem cenowym, ale mechanicznie to ten sam samochód.
 {{% /info %}}
 
-## Dane techniczne Mercedes Citan
+## Dane techniczne Mercedesa Citan
 
 Citan II to kompaktowy van o wymiarach pozwalających na swobodne manewrowanie w miejskich uliczkach. Dostępny w dwóch długościach nadwozia – L1 (standardowy) i L2 (długi).
 
@@ -100,7 +100,7 @@ Technicznie to ten sam samochód, ale T-Class celuje w klientów indywidualnych 
 - Inne opcje lakierów i felg
 - Wyższa cena bazowa o ok. 15–20% względem Citana Tourer
 
-## Ceny Mercedes Citan
+## Ceny Mercedesa Citan
 
 Ceny Citana w Polsce plasują go między [Renault Kangoo](/modele/renault-kangoo/) a [Mercedesem Vito](/modele/mercedes-vito/) – premium względem francuskiego bliźniaka, ale znacznie przystępniej niż większe modele z gwiazdą.
 

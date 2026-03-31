@@ -20,7 +20,7 @@ faq:
     answer: "Ładowność Proace Long wynosi realnie ok. 1000–1400 kg, zależnie od wersji, rynku i konfiguracji."
 lead: "Toyota Proace Long to wersja o długości 5309 mm z ładownią 6,1 m³ – wybór dla firm, które potrzebują do 3 europalet i większej długości użytkowej niż w Medium. Poniżej znajdziesz konkrety dla nadwozia Van, z uwzględnieniem tego, że parametry mogą różnić się zależnie od rocznika i rynku."
 ---
-## Wymiary Toyota Proace Long
+## Wymiary Toyoty Proace Long
 
 W przypadku Toyota Proace II warto pilnować rocznika i konkretnej wersji nadwozia, bo na przestrzeni lat zmieniały się silniki, nazewnictwo i szczegóły specyfikacji. Dla wersji Van kluczowe liczby dla odmiany Long wyglądają następująco:
 

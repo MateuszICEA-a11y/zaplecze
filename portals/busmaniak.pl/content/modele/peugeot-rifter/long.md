@@ -21,7 +21,7 @@ faq:
     answer: "Ceny zależą od rocznika, napędu i rynku. W artykule podajemy wyłącznie orientacyjne widełki dla aut używanych."
 ---
 
-## Wymiary Peugeot Rifter Long
+## Wymiary Peugeota Rifter Long
 
 Peugeot Rifter Long ma 4753 mm długości, czyli o 350 mm więcej niż wersja Standard. Trzeba jednak zaznaczyć, że dodatkowa długość nie trafia wyłącznie za drugi rząd siedzeń – w odmianie Long rośnie także rozstaw osi, więc zmienia się proporcja całego nadwozia.
 
@@ -112,7 +112,7 @@ Przy serwisie warto pamiętać o kilku typowych punktach. W 1.2 PureTech w stars
 
 Rifter Long to auto osobowe kategorii M1, więc standardowo wystarcza prawo jazdy kat. B. W Polsce dla M1 do 3,5 t bez przyczepy nie ma e-TOLL, ale przy holowaniu znaczenie ma już DMC całego zestawu.
 
-## Porównanie Peugeot Rifter Long z konkurencją
+## Porównanie Peugeota Rifter Long z konkurencją
 
 Peugeot Rifter Long działa w bardzo mocno obsadzonym segmencie. Najbliżsi rywale to nie tylko bliźniacze modele Stellantis, ale też Toyota ProAce City Verso Long i Ford Tourneo Connect L2, a z innej strony – Volkswagen Caddy Maxi.
 

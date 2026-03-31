@@ -97,7 +97,7 @@ Aby odliczać 100% VAT, pojazd musi być używany wyłącznie w działalności, 
 
 Warto też pamiętać o prawie jazdy. Fiat Scudo Panorama 9-osobowy nadal mieści się w kategorii B, o ile jego DMC nie przekracza 3,5 t.
 
-## Wyposażenie Fiat Scudo Panorama
+## Wyposażenie Fiata Scudo Panorama
 
 W wyposażeniu Scudo Panorama trzeba wyraźnie oddzielić elementy podstawowe od opcji, bo zakres zależy od wersji, rynku i rocznika. Dotyczy to zwłaszcza klimatyzacji, kamer, systemów wsparcia kierowcy i elektrycznych drzwi przesuwnych.
 

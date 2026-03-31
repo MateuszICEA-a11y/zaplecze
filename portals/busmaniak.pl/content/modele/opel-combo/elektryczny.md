@@ -22,7 +22,7 @@ sources:
   - "instrukcje i materiały producenta dotyczące ładowania oraz oficjalne regulaminy programów wsparcia"
   - "jeśli są aktywne."
 ---
-## Napęd i osiągi Opel Combo-e
+## Napęd i osiągi Opla Combo-e
 
 W tej wersji Opel e-Combo korzysta z napędu elektrycznego o mocy 100 kW, czyli 136 KM. To typowa konfiguracja dla użytkowych modeli Stellantis tej klasy i wystarczająca do jazdy miejskiej, podmiejskiej oraz pracy z częstym zatrzymywaniem.
 

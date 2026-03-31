@@ -79,7 +79,7 @@ Toyota Proace Verso jest samochodem osobowym z homologacją M1. Przy zakupie pry
 
 ![Toyota Proace Verso VIP – wnętrze kabiny pasażerskiej](/images/toyota-proace-verso-osobowy-hero.jpg)
 
-## Ceny Toyota Proace Verso i konkurencja
+## Ceny Toyoty Proace Verso i konkurencja
 
 Poniżej zestawiamy ceny orientacyjne dla rynku polskiego, odnoszone w artykule do stanu na marzec 2026. To wartości poglądowe brutto, zależne od długości, liczby miejsc, silnika i konkretnej specyfikacji.
 

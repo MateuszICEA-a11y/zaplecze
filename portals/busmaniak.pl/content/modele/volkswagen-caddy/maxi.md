@@ -50,7 +50,7 @@ W tym materiale nie podajemy szerokości z lusterkami i bez lusterek, wysokości
 
 Pod względem praktycznym długość 4853 mm oznacza, że Caddy Maxi/Long mieści się jeszcze w typowym miejscu parkingowym 5,0 x 2,5 m, ale z niewielkim zapasem. Średnica zawracania ok. 12,1 m sprawia też, że na ciasnych parkingach jest mniej poręczne niż krótsza wersja.
 
-## Dane techniczne Volkswagen Caddy Maxi {#dane-techniczne}
+## Dane techniczne Volkswagena Caddy Maxi {#dane-techniczne}
 
 ### Masy i ładowność
 

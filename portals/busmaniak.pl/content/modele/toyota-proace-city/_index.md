@@ -39,7 +39,7 @@ Czym Proace City wyróżnia się spośród bliźniaków:
 
 Proace City dostępny jest w dwóch wersjach nadwozia – furgon oraz osobowy (Proace City Verso). Ten przewodnik dotyczy wersji dostawczej. Wariant [osobowy opisujemy osobno](/modele/toyota-proace-city/osobowy/).
 
-## Wymiary Toyota ProAce City
+## Wymiary Toyoty ProAce City
 
 ![Toyota Proace City Short vs Long – porównanie wymiarów nadwozia](/images/toyota-proace-city-wymiary.jpg)
 
@@ -64,7 +64,7 @@ Wersja Long kosztuje zwykle 3000–5000 zł więcej niż Short. Jeśli regularni
 
 Szczegółową specyfikację wersji Long – w tym przestrzeń między łukami kół i opcje zabudowy – znajdziesz na stronie [Toyota Proace City Long](/modele/toyota-proace-city/long/).
 
-## Silniki Toyota ProAce City
+## Silniki Toyoty ProAce City
 
 ### Benzyna – 1.2 PureTech
 
@@ -124,7 +124,7 @@ Różnice między bliźniakami na platformie EMP2 są minimalne pod względem te
 
 Jeśli interesuje cię większy dostawczak Toyoty – sprawdź [Toyota Proace](/modele/toyota-proace/), który oferuje przestrzeń ładunkową od 5,1 do 6,1 m³.
 
-## Ceny Toyota ProAce City
+## Ceny Toyoty ProAce City
 
 Zakup Toyota Proace City to wydatek, który zależy od generacji, wersji silnikowej i stanu technicznego – rozstrzał cenowy na rynku wtórnym bywa spory.
 

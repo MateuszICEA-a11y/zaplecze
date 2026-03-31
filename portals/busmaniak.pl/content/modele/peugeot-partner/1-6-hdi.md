@@ -20,7 +20,7 @@ faq:
     answer: "Przy regularnym serwisie silnik DV6 w Partnerze potrafi osiągać bardzo duże przebiegi. Kluczowe są częste wymiany oleju, kontrola układu smarowania turbo, terminowy rozrząd oraz szybka reakcja na nieszczelności wtryskiwaczy i błędy EGR/FAP."
 lead: "Silnik 1.6 HDi z rodziny PSA DV6 to najpopularniejszy diesel w Peugeot Partnerze II generacji B9, która zadebiutowała w 2008 roku i zasadniczo została zastąpiona w 2018 roku, choć na części rynków była oferowana dłużej równolegle z nowszą generacją. W tym artykule skupiamy się na najczęściej spotykanych w Partnerze odmianach 75, 90 i 92 KM. Bliźniacze rozwiązania stosowano także w Citroënie Berlingo, co realnie ułatwia dostęp do części i doświadczenia warsztatów."
 ---
-## Dane techniczne 1.6 HDi w Peugeot Partner
+## Dane techniczne 1.6 HDi w Peugeocie Partner
 
 Silnik DV6 to czterocylindrowa jednostka wysokoprężna o pojemności 1560 cm³ z układem wtryskowym [Common Rail](https://pl.wikipedia.org/wiki/Common_rail). W Partnerze II występowały różne warianty tej rodziny – z odmiennym zaworowaniem, osprzętem, normą emisji i wyposażeniem układu oczyszczania spalin.
 

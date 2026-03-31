@@ -28,7 +28,7 @@ sources:
   - "[common rail](https://pl.wikipedia.org/wiki/Common_Rail)"
 ---
 
-## Silniki HDI w Peugeot Boxer – przegląd wariantów
+## Silniki HDI w Peugeocie Boxer – przegląd wariantów
 
 W przypadku modelu Peugeot Boxer HDI kluczowe jest rozdzielenie generacji i roczników. To właśnie od nich zależą rodzina silnika, norma emisji, osprzęt oraz potencjalne koszty serwisu.
 
@@ -54,7 +54,7 @@ Wśród części użytkowników i warsztatów Boxer 2.2 HDi 130 KM z nowszych ro
 
 Przy oględzinach auta z przebiegiem 200–300 tys. km warto sprawdzić korekty wtrysków, przedmuchy spod wtryskiwaczy, stan dwumasy i sprzęgła, ciśnienie doładowania, historię rozrządu, poziom sadzy i popiołu w DPF, działanie SCR/AdBlue oraz korozję podwozia i stan tylnej belki lub resorów.
 
-## Dane techniczne Peugeot Boxer HDI
+## Dane techniczne Peugeota Boxer HDI
 
 W przypadku Peugeot Boxer HDI dane techniczne trzeba czytać szerzej niż tylko przez pryzmat pojemności i mocy. Dla użytkownika równie ważne są okres produkcji, norma emisji, rodzaj układu oczyszczania spalin oraz konfiguracja samego auta.
 

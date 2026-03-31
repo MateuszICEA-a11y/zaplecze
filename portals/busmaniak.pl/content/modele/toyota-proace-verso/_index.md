@@ -36,7 +36,7 @@ Family – wariant pośredni, rozszerzony o komfortowe fotele z regulacją podł
 
 VIP – wersja premium z indywidualnymi fotelami kapitańskimi w środkowym rzędzie, tapicerką skórzaną, panoramicznym szyberdachem, nagłośnieniem JBL oraz pełnym pakietem asystentów jazdy. Dostępna wyłącznie w nadwoziu Long, najczęściej stosowana do przewozów biznesowych i lotniskowych transferów.
 
-## Silniki Toyota Proace Verso
+## Silniki Toyoty Proace Verso
 
 Toyota Proace Verso jest oferowana z silnikami diesla o pojemności 1.5 i 2.0 litra oraz z napędem elektrycznym.
 
@@ -47,7 +47,7 @@ Toyota Proace Verso jest oferowana z silnikami diesla o pojemności 1.5 i 2.0 li
 
 Wszystkie odmiany diesla spełniają normę Euro 6d. Automatyczna skrzynia EAT8 jest dostępna przy silnikach 2.0 D-4D i stanowi de facto standard w wersjach Family i VIP.
 
-## Wymiary Toyota ProAce Verso
+## Wymiary Toyoty ProAce Verso
 
 ![Toyota Proace Verso II – wymiary i wnętrze](/images/toyota-proace-verso-hero.jpg)
 
@@ -107,7 +107,7 @@ Toyota Proace Verso Long 9-miejscowy z automatem EAT8 i silnikiem 177 KM to poja
 
 Szczegółowe dane o homologacji M1 i różnicach między wersjami znajdziesz na stronie [Toyota Proace Verso – wersja osobowa](/modele/toyota-proace-verso/osobowy/). Bazowa platforma i układ techniczny opisane są w artykule o [Toyocie Proace](/modele/toyota-proace/).
 
-## Ceny Toyota Proace Verso
+## Ceny Toyoty Proace Verso
 
 Zakup Toyota Proace Verso to wydatek, który zależy od generacji, wersji silnikowej i stanu technicznego – rozstrzał cenowy na rynku wtórnym bywa spory.
 

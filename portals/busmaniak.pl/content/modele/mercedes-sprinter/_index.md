@@ -27,7 +27,7 @@ sources:
   - "dane własne BusManiak.pl."
 ---
 
-## Historia i generacje Mercedes Sprinter {#historia-generacje}
+## Historia i generacje Mercedesa Sprinter {#historia-generacje}
 
 [Mercedes-Benz Sprinter](https://pl.wikipedia.org/wiki/Mercedes-Benz_Sprinter){rel="nofollow"} zadebiutował w 1995 roku jako następca legendarnego TN (T1). Od pierwszego dnia wyznaczał standardy segmentu – tylnonapędowe podwozie, solidna konstrukcja ramowa w wersjach ciężkich i niezwykła jak na dostawczak kultura jazdy. Przez trzy dekady Sprinter stał się synonimem profesjonalnego transportu, a jego nazwa funkcjonuje w języku potocznym jako rzeczownik pospolity na określenie busa dostawczego.
 
@@ -47,7 +47,7 @@ Trzecia generacja to największa rewolucja w historii modelu. Po raz pierwszy Sp
 Mercedes Sprinter III to pierwszy w historii Sprinter dostępny z napędem na przednią oś. Wersja FWD (W910) jest szczególnie popularna w zastosowaniach kurierskich i komunalnych, gdzie niższy próg załadunku i lepsze właściwości trakcyjne na śliskich nawierzchniach mają kluczowe znaczenie.
 {{% /info %}}
 
-## Dane techniczne i wymiary Mercedes Sprinter {#dane-techniczne}
+## Dane techniczne i wymiary Mercedesa Sprinter {#dane-techniczne}
 
 Sprinter III jest dostępny w wariantach nadwoziowych L1 do L4 (długość) i H1 do H3 (wysokość). Najpopularniejsza konfiguracja w Polsce to L2H2 – klasyczny furgon o pojemności ok. 10,5 m³, który mieści się na standardowym miejscu parkingowym i nie wymaga windy załadunkowej.
 
@@ -118,7 +118,7 @@ Wybierając między OM654 a OM651 w używanym Sprinterze III, zwróć uwagę na 
 
 ![Mercedes Sprinter III furgon](/images/mercedes-sprinter-hero.jpg)
 
-## Wersje nadwoziowe Mercedes Sprinter {#wersje-nadwoziowe}
+## Wersje nadwoziowe Mercedesa Sprinter {#wersje-nadwoziowe}
 
 Sprinter oferuje jeden z najszerszych zakresów zabudów w klasie – od klasycznego furgona po specjalistyczne pojazdy sanitarne i ratownicze.
 

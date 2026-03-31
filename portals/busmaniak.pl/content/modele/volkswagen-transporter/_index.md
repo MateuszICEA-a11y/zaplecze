@@ -27,7 +27,7 @@ sources:
   - "pzpm.org.pl."
 ---
 
-## Historia i generacje Volkswagen Transporter
+## Historia i generacje Volkswagena Transporter
 
 Volkswagen Transporter to legenda segmentu aut dostawczych, która od ponad 70 lat wyznacza standardy funkcjonalności i trwałości. Model ewoluował od prostego narzędzia pracy do zaawansowanego technologicznie pojazdu, oferowanego w setkach konfiguracji nadwoziowych.
 
@@ -45,7 +45,7 @@ Volkswagen Transporter T6 (2015–2025) przyniósł lifting wizualny i nowoczesn
 
 Najnowszy Volkswagen T7 Transporter (od 2021) w wersji Multivan bazuje na osobowej [platformie MQB](https://en.wikipedia.org/wiki/Volkswagen_Group_MQB_platform) (Modularer Querbaukasten). Pozwala to na zastosowanie zaawansowanych systemów asystujących oraz napędów hybrydowych typu plug-in.
 
-## Wymiary Volkswagen Transporter T6.1
+## Wymiary Volkswagena Transporter T6.1
 
 Wymiary Volkswagen Transporter różnią się w zależności od wersji nadwoziowej – dotyczy to zarówno gabarytów zewnętrznych, jak i przestrzeni ładunkowej.
 

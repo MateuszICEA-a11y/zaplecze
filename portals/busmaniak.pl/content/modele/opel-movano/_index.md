@@ -26,7 +26,7 @@ sources:
   - "katalogi techniczne Opel Professional."
 ---
 
-## Historia i generacje Opel Movano
+## Historia i generacje Opla Movano
 
 Trzy generacje i zmiana technicznego dawcy – po 23 latach współpracy z Renault, Movano przesiadło się na platformę Fiata Ducato.
 
@@ -50,7 +50,7 @@ Movano B oferowało jedną z najszerszych gam konfiguracji w segmencie: od krót
 
 Przełom – po fuzji w Stellantis Movano C bazuje na [platformie Sevel](https://en.wikipedia.org/wiki/Sevel) wspólnej z Fiatem Ducato, Citroënem Jumperem i Peugeotem Boxerem. Produkcja przeniesiona do **Gliwic** – co uprościło logistykę części w Polsce. Dostępny z napędem spalinowym i elektrycznym (Movano-e).
 
-## Wymiary Opel Movano C
+## Wymiary Opla Movano C
 
 Wymiary Opel Movano różnią się w zależności od wersji nadwoziowej – dotyczy to zarówno gabarytów zewnętrznych, jak i przestrzeni ładunkowej.
 

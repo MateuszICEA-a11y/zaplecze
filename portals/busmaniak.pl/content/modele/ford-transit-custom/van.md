@@ -20,7 +20,7 @@ sources:
   - "konkretna specyfikacja Forda dla Transit Custom II"
   - "cennik i dokumentacja techniczna dla wybranego rynku oraz roku modelowego – z datą dostępu przy weryfikacji parametrów konkretnej wersji."
 ---
-## Konfiguracje i wymiary Ford Transit Custom Van
+## Konfiguracje i wymiary Forda Transit Custom Van
 
 Transit Custom II występuje w dwóch długościach nadwozia – L1 i L2. W obu przypadkach mówimy o tej samej szerokości i wysokości przestrzeni ładunkowej, a podstawowa różnica dotyczy długości podłogi i pojemności przedziału towarowego.
 

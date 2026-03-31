@@ -62,7 +62,7 @@ Ważne są też same otwory załadunkowe, bo to one decydują, czy da się wygod
 Otwierana klapa w ścianie grodziowej i składane oparcie fotela pasażera pozwalają przewozić długie elementy także w krótszej wersji nadwozia. W praktyce Standard zyskuje wtedy około 3,8 m³, a XL dochodzi do 4,4 m³.
 {{% /info %}}
 
-## Silniki i napędy Opel Combo Van
+## Silniki i napędy Opla Combo Van
 
 W gamie Opel Combo Van znalazły się diesle, benzyna i odmiana elektryczna. Wszystkie klasyczne wersje napędzają przednią oś, a dobór silnika warto uzależnić od masy ładunku, częstotliwości jazdy autostradowej i planowanego przebiegu rocznego.
 
