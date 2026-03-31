@@ -844,8 +844,14 @@ a:hover { color: var(--c-orange-hover); }
     gap: 0;
     max-height: calc(100vh - 68px);
     overflow-y: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     box-shadow: 0 8px 24px rgba(0,0,0,.15);
+    scrollbar-width: none;
+  }
+
+  .site-nav__links::-webkit-scrollbar {
+    display: none;
   }
   .nav-toggle:checked ~ .site-header__nav .site-nav__links { display: flex; }
   .nav-toggle:checked ~ .site-header__nav .nav-toggle-label span { background: transparent; }
