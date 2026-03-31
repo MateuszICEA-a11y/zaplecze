@@ -61,11 +61,13 @@
             <span>{{ $readTime }} min czytania</span>
           </div>
         {{ else }}
-          {{/* PAGE: last updated only */}}
+          {{/* PAGE: last updated only (unless hide_meta) */}}
+          {{ if not .Params.hide_meta }}
           <div class="article-hero__meta-item">
             <span class="material-symbols-outlined">update</span>
             <span>Ostatnia aktualizacja: {{ with .Params.lastmod }}{{ .Format "01.2006" }}{{ else }}{{ .Date.Format "01.2006" }}{{ end }}</span>
           </div>
+          {{ end }}
         {{ end }}
       </div>
     </div>

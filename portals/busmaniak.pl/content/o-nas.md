@@ -2,7 +2,10 @@
 title: "O nas – BusManiak.pl"
 description: "BusManiak.pl to niezależny portal poświęcony busom dostawczym, kamperom i vanom. Tworzymy kompleksową bazę wiedzy – od danych technicznych po poradniki przeróbek."
 type: "page"
+hide_meta: true
 h1: "O nas"
+image: "/images/o-nas-hero.webp"
+image_alt: "BusManiak.pl – niezależny portal o busach, kamperach i vanach"
 lead: "BusManiak.pl to niezależny portal tworzony z pasji do busów, kamperów i vanów. Budujemy największą polską bazę wiedzy o pojazdach dostawczych – od danych technicznych po praktyczne poradniki."
 ---
 
