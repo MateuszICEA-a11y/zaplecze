@@ -4,7 +4,7 @@
    Zero JS, pure CSS, Hugo pipes inlined
    ═══════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:ital,wght@0,400;0,900;1,400;1,900&family=Space+Grotesk:wght@500;600;700&display=swap');
 
 :root {
   --c-dark: #171717;
