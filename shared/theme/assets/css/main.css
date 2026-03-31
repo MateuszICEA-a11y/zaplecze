@@ -1381,9 +1381,13 @@ a:hover { color: var(--c-orange-hover); }
    ══════════════════════════════════════ */
 .editorial-section {
   padding: 4rem var(--sp) 5rem;
-  max-width: 1280px;
-  margin: 0 auto;
   background: var(--c-bg-alt);
+}
+
+.editorial-section > * {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .editorial-section__header {
