@@ -72,7 +72,7 @@ Wersja 102 KM to bestseller – dobry kompromis mocy, spalania i kosztów utrzym
 
 75 KM wystarczy do spokojnej eksploatacji, ale przy pełnym obciążeniu 500–700 kg albo komplecie pasażerów szybko wychodzi brak zapasu mocy. 122 KM jest wyraźnie przyjemniejsze w trasie i w [wersji Maxi](/modele/volkswagen-caddy/maxi/), zwłaszcza przy autostradowym tempie.
 
-{{% expert name="Kowalczyk" %}}2.0 TDI 102 KM z manualną skrzynią to najbezpieczniejszy zakup. Unikasz większego ryzyka kosztów DSG, a silnik nadal daje rozsądną dynamikę do codziennego użytku.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}2.0 TDI 102 KM z manualną skrzynią to najbezpieczniejszy zakup. Unikasz większego ryzyka kosztów DSG, a silnik nadal daje rozsądną dynamikę do codziennego użytku.{{% /expert %}}
 
 ![Silnik 2.0 TDI w Volkswagenie Caddy](/images/volkswagen-caddy-tdi-hero.jpg)
 

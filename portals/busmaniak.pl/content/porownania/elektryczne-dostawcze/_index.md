@@ -108,7 +108,7 @@ Serwis elektrycznego dostawczaka ogranicza się do:
 - **Opony** – identyczne jak w dieslu
 - **Brak wymiany oleju, filtrów DPF, rozrządu** – te pozycje po prostu nie istnieją
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Firmy rozważające przejście na elektryczne dostawcze powinny zacząć od tras miejskich do 200 km dziennie. Zainstaluj ładowarkę wallbox 22 kW na bazie – koszt 5000–8000 zł z montażem. Nocne ładowanie AC zapewni pełny zasięg rano i najniższy koszt energii. Szybkie ładowarki DC traktuj jako awaryjne uzupełnienie, nie codzienny standard.
 {{% /expert %}}
 

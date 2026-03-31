@@ -40,7 +40,7 @@ Na mniej popularnych portalach, jak Sprzedajemy.pl, ruch jest mniejszy, ale czas
 
 Potężnym i bezpiecznym źródłem zakupu są wyprzedaże pojazdów z profesjonalnych wypożyczalni, które wymieniają floty co 2–3 lata. Kampery te mają znany przebieg (zazwyczaj 50–120 tys. km) i pełną historię serwisową. Cena obejmuje fakturę VAT 23%, a pojazdy są często bogato doposażone w klimatyzację postojową, solary czy markizy. Wyprzedaże startują zwykle we wrześniu i październiku.
 
-{{% expert name="Wozniak" %}}Zawsze ustawiam alerty na Otomoto i OLX. Dobre oferty w uczciwej cenie znikają w ciągu **24–48 godzin**. Jeśli widzisz interesującego kampera i zwlekasz z telefonem do kolejnego dnia, prawdopodobnie ktoś inny zdąży już wpłacić zaliczkę.{{% /expert %}}
+{{% expert name="Anna Wóźniak" %}}Zawsze ustawiam alerty na Otomoto i OLX. Dobre oferty w uczciwej cenie znikają w ciągu **24–48 godzin**. Jeśli widzisz interesującego kampera i zwlekasz z telefonem do kolejnego dnia, prawdopodobnie ktoś inny zdąży już wpłacić zaliczkę.{{% /expert %}}
 
 ### Na co uważać przy zakupie online
 

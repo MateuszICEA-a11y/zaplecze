@@ -74,7 +74,7 @@ Skrzynie biegów: 6-biegowa manualna (102–140 KM) lub 8-biegowa automatyczna (
 
 Spalanie w cyklu mieszanym to 8,0–10,5 l/100 km dla wersji 140 KM. Realne zużycie w furgonie L4H3 przy pełnym załadunku oscyluje wokół 11–13 l/100 km.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Jeśli planujesz TGE do regularnych tras międzymiastowych z pełnym ładunkiem, nie oszczędzaj na silniku – wariant 140 KM z automatem to absolutne minimum komfortu. Wersja 102 KM ma sens tylko w mieście. BiTDI 177 KM jest świetna, ale droższa w serwisie przez podwójną turbosprężarkę. Sprawdź też ofertę [Craftera](/modele/volkswagen-crafter/) – identyczna technika, czasem niższa cena.
 {{% /expert %}}
 

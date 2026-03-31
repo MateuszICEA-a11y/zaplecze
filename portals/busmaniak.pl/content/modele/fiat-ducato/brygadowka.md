@@ -65,7 +65,7 @@ W tej klasie warto patrzeć na konkretne parametry techniczne: moc, moment obrot
 - **[2.2 MultiJet3](/modele/fiat-ducato/2-2-multijet/)** – nowsza jednostka dostępna w rocznikach po zmianach około 2021 roku; konkretne warianty mocy zależą od rynku i roku modelowego
 - **[3.0 MultiJet](/modele/fiat-ducato/3-0-multijet/)** – spotykany w starszych rocznikach, przed przejściem na nowszą gamę Euro 6; dostępność zależy od rynku i specyfikacji
 
-{{% expert name="Kowalczyk" %}}Przy zakupie używanej brygadówki nie opieraj decyzji wyłącznie na oznaczeniu 2.3 albo 2.2. Sprawdź konkretny wariant silnika po VIN, jego moment obrotowy, normę emisji, typ skrzyni i harmonogram serwisowy – zwłaszcza w przypadku rozrządu, bo interwały zależą od jednostki i rocznika.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Przy zakupie używanej brygadówki nie opieraj decyzji wyłącznie na oznaczeniu 2.3 albo 2.2. Sprawdź konkretny wariant silnika po VIN, jego moment obrotowy, normę emisji, typ skrzyni i harmonogram serwisowy – zwłaszcza w przypadku rozrządu, bo interwały zależą od jednostki i rocznika.{{% /expert %}}
 
 ## Komfort i ergonomia Fiat Ducato brygadówka
 

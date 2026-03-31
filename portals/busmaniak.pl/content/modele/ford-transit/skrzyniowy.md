@@ -111,7 +111,7 @@ Dobór mocy powinien wynikać z rodzaju zabudowy. Chłodnia z agregatem i izolac
 
 W praktyce lżejsze zabudowy i jazda miejska mogą dobrze współpracować ze słabszymi wersjami, ale przy cięższej pracy użytkowej zwykle warto brać pod uwagę mocniejsze odmiany. Trzeba jednak traktować to jako dobór eksploatacyjny do zadania, a nie prostą regułę obowiązującą dla każdego Transita.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Do chłodni, wywrotki albo platformy pod cięższy sprzęt zwykle rozsądniej wybierać mocniejszą wersję silnikową niż absolutne minimum. Nie chodzi tylko o osiągi, ale o lepsze dopasowanie auta do masy zabudowy i charakteru pracy z pełnym obciążeniem.
 {{% /expert %}}
 

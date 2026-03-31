@@ -112,7 +112,7 @@ Na tle alternatyw w Fiorino diesel 1.3 MultiJet jest najbardziej sensowny dla au
 
 Odmiana 1.4 Natural Power/CNG 70 KM obniża koszt paliwa, ale ogranicza praktyczność auta i wymaga kontroli zbiorników. Jeśli samochód jeździ głównie lokalnie i na krótkich trasach, benzyna lub CNG mogą być rozsądniejszym wyborem niż diesel z DPF.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Silnik 1.3 MultiJet w Fiorino to solidna jednostka do pracy miejskiej i podmiejskiej. W części wersji występowały dłuższe interwały serwisowe, ale przy ciężkiej eksploatacji miejskiej bezpieczniej trzymać się wymiany oleju co 10–15 tys. km lub raz w roku. W wersjach z DPF warto stosować olej 5W-30 spełniający Fiat 9.55535-S1 / ACEA C2, a pojemność układu z filtrem to około 3,2 l. Jeśli szukasz auta możliwie prostego w utrzymaniu, najłatwiejsza serwisowo będzie wczesna wersja Euro 4 bez DPF.
 {{% /expert %}}
 

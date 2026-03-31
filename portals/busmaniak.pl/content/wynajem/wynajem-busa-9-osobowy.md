@@ -98,7 +98,7 @@ Wynajem busa 9-osobowego wiąże się z kilkoma formalnymi wymaganiami, które w
 
 Planując podróż, należy pamiętać o opłatach drogowych. W Polsce od 1 lipca 2023 r. autostrady państwowe są bezpłatne dla pojazdów do 3,5 t, ale na odcinkach koncesyjnych (A1, A2, A4) opłaty pobierane są na bramkach tak jak dla aut osobowych. Przy wyjazdach zagranicznych (np. do Austrii, Czech czy Słowacji) należy pamiętać o wykupieniu e-winiety – bus do 3,5 t traktowany jest jak zwykły samochód osobowy.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Pamiętaj, że bus 9-osobowy z pełnym obłożeniem i bagażami zbliża się do granicy 3,5 tony DMC. Zwłaszcza w Niemczech i Austrii policja rutynowo waży busy na kontrolach. Przekroczenie DMC skutkuje nałożeniem wysokiego mandatu (w Polsce do 3000 zł, za granicą liczonego w setkach lub tysiącach euro) oraz bezwzględnym zakazem dalszej jazdy do momentu przeładowania nadmiaru pasażerów lub bagażu do innego pojazdu.
 {{% /expert %}}
 

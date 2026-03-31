@@ -90,7 +90,7 @@ Sama winieta nie uprawnia do przejazdu wszystkimi autostradami. Na kilku odcinka
 
 Opłaty można uiścić na bramkach lub kupić online w sklepie ASFINAG. Wygodnym rozwiązaniem jest usługa FLEX, która pozwala powiązać numer rejestracyjny z kartą płatniczą na koncie klienta. Szlabany otwierają się wtedy automatycznie, a opłata jest pobierana z karty bez konieczności zatrzymywania się.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Jadąc busem z Polski na południe Austrii – np. do Karyntii czy Tyrolu – oprócz winiety za ok. 13 EUR (10-dniowa) musisz doliczyć 12–15 EUR za tunel alpejski. Na trasie Salzburg–Villach przez tunel Tauern łączny koszt w jedną stronę to ok. 28 EUR. Warto to uwzględnić, planując budżet podróży.
 {{% /expert %}}
 

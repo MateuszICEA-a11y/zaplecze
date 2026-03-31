@@ -29,7 +29,7 @@ Opcje dla oszczędnych można podsumować następująco:
 - **Używany kamper** – gotowy pojazd z rynku wtórnego. Najszybsza droga do kamperowania (ceny startują od **30 tys. zł**), ale obarczona ryzykiem kosztownych, ukrytych wad.
 - **Nowy budżetowy model** – fabryczny kamper od tańszego producenta (od ok. **250 tys. zł**). Daje gwarancję i pewność, ale kosztem ograniczonego wyboru i wyższej ceny wejścia.
 
-{{% expert name="Kowalczyk" %}}Zbudowałem kampera na bazie Ducato za łączną kwotę 28 tys. zł i zjeździłem nim Europę przez cztery sezony. Ale patrząc z perspektywy czasu – gdybym wliczył w to roboczogodziny, zakup używanego egzemplarza za 60 tys. zł byłby lepszą inwestycją. DIY ma sens tylko wtedy, gdy samo budowanie sprawia ci frajdę.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Zbudowałem kampera na bazie Ducato za łączną kwotę 28 tys. zł i zjeździłem nim Europę przez cztery sezony. Ale patrząc z perspektywy czasu – gdybym wliczył w to roboczogodziny, zakup używanego egzemplarza za 60 tys. zł byłby lepszą inwestycją. DIY ma sens tylko wtedy, gdy samo budowanie sprawia ci frajdę.{{% /expert %}}
 
 ## Przeróbka DIY – kamper od zera
 Fundamentem każdego kampera-samoróbki jest odpowiednio dobrany pojazd bazowy. Jego stan techniczny i charakterystyka zadecydują o kosztach i komforcie finalnego projektu.

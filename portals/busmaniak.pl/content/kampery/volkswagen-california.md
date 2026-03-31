@@ -56,7 +56,7 @@ Ocean to topowa wersja Californii z elektrohydraulicznie podnoszonym dachem, dwu
 
 Nowością w T7 jest cyfrowa obsługa części kempingowej. W słupku C po stronie pasażera umieszczono 5-calowy, dotykowy wyświetlacz do sterowania dachem (wersja Ocean), oświetleniem, ogrzewaniem postojowym czy lodówką. Wszystkie funkcje, włącznie z poziomowaniem pojazdu, są dostępne także z poziomu aplikacji „California on Tour” na smartfona.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Coast to najrozsądniejszy wybór dla większości kupujących. Dopłata względem Beach daje pełny aneks kuchenny – niezbędny do kamperowania bez dostępu do infrastruktury. Skok z Coast do Ocean to głównie komfort – elektrohydrauliczny dach i lepsze oświetlenie. Miły dodatek, ale niekonieczny.
 {{% /expert %}}
 

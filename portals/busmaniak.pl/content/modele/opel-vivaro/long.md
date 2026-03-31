@@ -74,7 +74,7 @@ Typowe zakresy dla Vivaro C:
 - **Masa przyczepy hamowanej w dieslu** – do ok. 2500 kg
 - **Masa przyczepy hamowanej w e-Vivaro** – niższa niż w wersjach spalinowych
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy zakupie Vivaro Long warto patrzeć nie tylko na długość nadwozia, ale przede wszystkim na konfigurację DMC i ładowności. W praktyce właśnie tu rozstrzyga się, czy auto lepiej sprawdzi się w kurierce, serwisie mobilnym czy przewozie cięższego wyposażenia.
 {{% /expert %}}
 

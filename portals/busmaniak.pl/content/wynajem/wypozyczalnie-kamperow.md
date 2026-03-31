@@ -97,7 +97,7 @@ Oprócz kontaktu bezpośredniego z wypożyczalniami, istnieją platformy zbieraj
 - **Yescapa** – europejska platforma peer-to-peer z rosnącą bazą kamperów w Polsce. Model podobny do Airbnb – wynajmujesz pojazd od prywatnego właściciela. Strona: yescapa.com
 - **CampRest.com** – jeden z największych portali caravaningowych, który prowadzi również bazę wypożyczalni z recenzjami. Nie jest to system rezerwacyjny, ale stanowi cenne źródło wiedzy przy wyborze firmy. Strona: camprest.com
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Platformy agregujące dają wygodę porównywania, ale przy wynajmie od prywatnego właściciela przez Yescapę sprawdź dokładnie, kto odpowiada za serwis w razie awarii w trasie. Profesjonalne wypożyczalnie mają procedury i pojazd zastępczy – prywatny właściciel raczej nie.
 {{% /expert %}}
 

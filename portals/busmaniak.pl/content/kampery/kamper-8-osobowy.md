@@ -35,7 +35,7 @@ Dla 8 osób sama waga pasażerów to ok. 600 kg, zakładając średnio 75 kg na 
 
 Taki pojazd sprawdza się na dłuższych trasach, gdzie przewaga nad wynajmem hoteli rośnie z każdym kolejnym noclegiem i uczestnikiem.
 
-{{% expert name="Wozniak" %}}
+{{% expert name="Anna Wóźniak" %}}
 Zanim kupisz kampera na 8 osób, policz realistycznie, ile razy w roku faktycznie pojedziesz w pełnym składzie. Jeśli to mniej niż 4–5 wyjazdów, wynajem będzie tańszą opcją. Sam koszt utrzymania (ubezpieczenie, przeglądy, garażowanie) dużego pojazdu to **10–17 tys. zł rocznie**, nawet jeśli stoi on nieużywany.
 {{% /expert %}}
 

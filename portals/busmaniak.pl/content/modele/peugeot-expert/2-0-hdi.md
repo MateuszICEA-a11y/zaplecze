@@ -65,7 +65,7 @@ Dłuższy Expert L2 z reguły zużywa więcej paliwa niż L1, bo ma większą ma
 
 To samo dotyczy porównania wariantów 120 i 163 KM. Wyższa moc nie musi automatycznie oznaczać jednej stałej różnicy spalania, bo w praktyce znaczenie mają też przełożenia, masa wersji nadwoziowej, obciążenie i styl jazdy.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy zakupie używanego Experta nie oceniałbym silnika wyłącznie po katalogowym spalaniu. W vanie ważniejsze jest, czy auto pracowało pusto czy z ładunkiem, w mieście czy w trasie, oraz czy mamy krótkie L1, czy cięższe L2.
 {{% /expert %}}
 

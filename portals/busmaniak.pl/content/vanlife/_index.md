@@ -143,7 +143,7 @@ Zamiast operować nieprecyzyjnymi hasłami o „95% zamieszkanych terenów”, l
 
 Równie ważny jest bilans energetyczny. Laptop zużywa zwykle około 40–100 W, router 5–15 W, ładowanie telefonów 10–30 W, a wentylator dachowy 10–50 W. Akumulator LiFePO4 100 Ah przy 12,8 V to około 1,28 kWh energii brutto, więc przy regularnej pracy zdalnej szybko widać, że sama „setka” nie zawsze daje duży zapas, zwłaszcza bez jazdy i bez słońca.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Praca zdalna z kampera wymaga dwóch rzeczy: stabilnego internetu i uczciwości wobec siebie. Router z anteną zewnętrzną rozwiązuje pierwszy problem, ale drugi jest trudniejszy – musisz umieć oddzielić czas pracy od podróżowania. Najlepiej działa prosty podział: rano praca, popołudnie przejazd albo zwiedzanie.
 {{% /expert %}}
 

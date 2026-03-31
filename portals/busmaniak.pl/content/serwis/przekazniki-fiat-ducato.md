@@ -54,7 +54,7 @@ W silnikach MultiJet 2.3 i 3.0 przekaźnik pompy paliwa (T14) jest jednym z najc
 
 Funkcję przekaźnika świec żarowych w Ducato pełni większy moduł (sterownik), zazwyczaj przykręcony bezpośrednio do ściany grodziowej. Jeśli ulegnie awarii, kontrolka świec żarowych miga po odpaleniu, a zimny silnik przy temperaturach poniżej 5°C uruchamia się z dużym trudem.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Właściciele kamperów na bazie Ducato muszą pamiętać o kluczowej zmianie w nowszych modelach (Seria 8, po 2021 roku), które spełniają normę Euro 6D-Temp. Wprowadzenie inteligentnych alternatorów sprawiło, że klasyczny przekaźnik separujący, aktywowany sygnałem D+, przestał być skutecznym rozwiązaniem. Alternator w trybie „smart” obniża napięcie podczas jazdy, co powoduje rozłączanie przekaźnika. W tych pojazdach do ładowania akumulatora zabudowy niezbędne jest zastosowanie boostera, czyli ładowarki [DC-DC](https://pl.wikipedia.org/wiki/Przetwornica_DC/DC).
 {{% /expert %}}
 

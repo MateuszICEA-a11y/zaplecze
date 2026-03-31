@@ -72,7 +72,7 @@ V6 katapultuje auto do setki w poniżej 8 sekund przy momencie 600 Nm. Idealny d
 
 Mimo solidnej opinii, użytkownicy wskazują na kilka powtarzających się problemów. W starszych egzemplarzach 2.0 TDI krytykowany bywa napęd łańcucha rozrządu oraz pompy wody o ograniczonej żywotności. Częstym zjawiskiem jest również powierzchowna korozja układu wydechowego oraz szybkie zużycie tulei w przednim zawieszeniu przy częstej jeździe terenowej.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Kluczowe jest regularne serwisowanie oleju w skrzyniach automatycznych co 60–80 tys. km. Pozwala to uniknąć kosztownych napraw sterownika ZF, który przy starym oleju potrafi odmówić współpracy już przy 150 tys. km.
 {{% /expert %}}
 

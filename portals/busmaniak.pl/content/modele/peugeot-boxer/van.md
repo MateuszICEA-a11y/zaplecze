@@ -54,7 +54,7 @@ Przesuwane drzwi boczne są standardowo dostępne po prawej stronie. Lewe drzwi 
 
 Dla wejścia bocznego trzeba sprawdzać konkretną specyfikację pojazdu. Fact-checker wskazuje potrzebę osobnego podawania szerokości i wysokości dla różnych dachów, ale w dostarczonych danych nie ma pełnej tabeli liczbowej dla wszystkich kombinacji H1/H2/H3.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Boxer L2H2 pozostaje jedną z najbardziej uniwersalnych konfiguracji w tej rodzinie nadwozi. Daje 13 m³ przestrzeni, wysokość wnętrza 1932 mm i nadal zachowuje gabaryty łatwiejsze w codziennej dystrybucji niż dłuższe odmiany L3 i L4.
 {{% /expert %}}
 

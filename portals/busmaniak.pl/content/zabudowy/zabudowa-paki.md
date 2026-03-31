@@ -78,7 +78,7 @@ W wyższych busach (H2/H3) warto również zabezpieczyć sufit przed uszkodzenie
 
 Przy okazji montażu paneli na ścianach i suficie warto zainwestować w dodatkowe oświetlenie LED. Ciemne okładziny znacznie ograniczają widoczność. Listwy lub taśmy LED podłączone do krańcówek drzwi to wydatek rzędu 150–400 zł, który drastycznie ułatwia pracę po zmroku.
 
-{{% expert name="Zielinski" %}}Najtańszą formą fizycznej ochrony ścian jest zastosowanie cienkiej, lakierowanej płyty pilśniowej (HDF). Jest lekka i tania w wymianie, dzięki czemu stanowi dobrą, budżetową alternatywę dla sklejki w pojazdach przewożących mniej wymagające ładunki.{{% /expert %}}
+{{% expert name="Tomasz Zieliński" %}}Najtańszą formą fizycznej ochrony ścian jest zastosowanie cienkiej, lakierowanej płyty pilśniowej (HDF). Jest lekka i tania w wymianie, dzięki czemu stanowi dobrą, budżetową alternatywę dla sklejki w pojazdach przewożących mniej wymagające ładunki.{{% /expert %}}
 
 ## Systemy mocowania ładunku {#mocowanie}
 

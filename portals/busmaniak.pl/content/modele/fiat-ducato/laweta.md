@@ -67,7 +67,7 @@ Na funkcjonalność i masę zabudowy mocno wpływa wyposażenie dodatkowe. Typow
 
 To właśnie dlatego realna ładowność autolawety 3,5 t po kompletnej zabudowie i doposażeniu często mieści się raczej w przedziale około 1100–1400 kg. Taki wynik trzeba zawsze liczyć dla gotowego pojazdu z kierowcą, paliwem i osprzętem, a nie dla samego podwozia-kabiny.
 
-{{% expert name="Kowalczyk" %}}Szukając używanego Ducato pod lawetę, zwracaj uwagę na tylne zawieszenie. Standardowe pióra często siadają pod ciężarem, dlatego dodatkowe poduszki pneumatyczne są praktycznym doposażeniem – poprawiają poziomowanie auta i ułatwiają pracę z ładunkiem.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Szukając używanego Ducato pod lawetę, zwracaj uwagę na tylne zawieszenie. Standardowe pióra często siadają pod ciężarem, dlatego dodatkowe poduszki pneumatyczne są praktycznym doposażeniem – poprawiają poziomowanie auta i ułatwiają pracę z ładunkiem.{{% /expert %}}
 
 ![Fiat Ducato laweta – autolaweta na bazie Ducato](/images/fiat-ducato-laweta-hero.jpg)
 

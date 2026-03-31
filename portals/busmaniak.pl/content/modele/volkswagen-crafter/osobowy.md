@@ -51,7 +51,7 @@ Na pokładzie znajdują się:
 
 Grand California 600 ma długość **5986 mm**, a Grand California 680 – **6836 mm**. Oba warianty bazują na Crafterze z wysokim dachem, bez wersji z dachem unoszonym.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Crafter Kombi 9-miejscowy do usług transportowych – busy szkolne czy pracownicze – to solidna propozycja, ale zwykle droższa w serwisie niż Ducato Combi. Wynika to głównie z wyższych cen części VW i droższej robocizny w ASO. Dla firm mających własne zaplecze warsztatowe różnica bywa jednak mniej odczuwalna.
 {{% /expert %}}
 

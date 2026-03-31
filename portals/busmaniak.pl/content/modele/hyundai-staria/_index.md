@@ -74,7 +74,7 @@ Dla pełnego obrazu – poza Europą Staria oferowana jest z bogatszą gamą nap
 - **1.6 T-GDi HEV** – 245 KM, hybryda, Korea
 - **Staria Electric** (od 2026) – 218 KM, silnik elektryczny FWD, bateria 84 kWh z architekturą 800 V
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Staria to samochód, który trzeba zobaczyć na żywo, żeby docenić. Na papierze diesel 177 KM nie robi wrażenia, ale w połączeniu z napędem na tył i 8-biegowym automatem prowadzi się zaskakująco dynamicznie jak na swoje gabaryty. Jeśli szukasz alternatywy dla [Multivana](/modele/volkswagen-multivan/) i nie boisz się wyrazistego designu – warto się przejechać.
 {{% /expert %}}
 

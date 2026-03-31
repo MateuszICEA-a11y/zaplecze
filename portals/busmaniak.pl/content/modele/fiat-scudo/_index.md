@@ -107,7 +107,7 @@ Dwa rzędy siedzeń + oddzielona przestrzeń towarowa. Przewóz 5–6 osób z za
 - **DPF (Scudo III)** – mokry filtr z dodatkiem Eolys; regeneracja 1200–1800 zł
 - **Wtryskiwacze** – wrażliwe na jakość paliwa po 200 tys. km; regeneracja 600–1000 zł/szt.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Większość problemów mechanicznych Scudo wynika z przeładowywania auta ponad limit z dowodu rejestracyjnego. Przy zakupie używanego egzemplarza sprawdź tylną belkę i stan uszczelek w drzwiach przesuwnych – to dwa najdroższe elementy w naprawie.
 {{% /expert %}}
 

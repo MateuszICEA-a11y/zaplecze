@@ -83,7 +83,7 @@ Plandeka to duży opór powietrza i poważne obciążenie przy każdym wyjeździ
 
 Dla popularnego 2.3 MultiJet przewoźnicy zwracają uwagę na typowe elementy eksploatacyjne, takie jak EGR, DPF, dwumasowe koło zamachowe, wtryskiwacze i turbosprężarka. Przy większych przebiegach znaczenie mają też koszty rozrządu, osprzętu i interwały olejowe – według producenta zwykle rzędu 30 000 km lub 2 lata, choć w praktyce często skracane do 15 000–20 000 km.
 
-{{% expert name="Kowalczyk" %}}Szukając używanego Ducato pod plandekę, celowałbym w roczniki 2017–2019 z silnikiem 2.3 o mocy 150 lub 180 KM. To udany kompromis między dynamiką, kosztami serwisu i spalaniem, które przy pełnej zabudowie zwykle zamyka się w przedziale 11–13 l/100 km.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Szukając używanego Ducato pod plandekę, celowałbym w roczniki 2017–2019 z silnikiem 2.3 o mocy 150 lub 180 KM. To udany kompromis między dynamiką, kosztami serwisu i spalaniem, które przy pełnej zabudowie zwykle zamyka się w przedziale 11–13 l/100 km.{{% /expert %}}
 
 ![Fiat Ducato plandeka – wymiary, ładowność, zastosowania](/images/fiat-ducato-plandeka-hero.jpg)
 

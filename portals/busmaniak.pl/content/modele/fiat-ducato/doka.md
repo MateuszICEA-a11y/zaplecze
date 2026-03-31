@@ -28,7 +28,7 @@ Termin „doka" wywodzi się z niemieckiego *Doppelkabine* i oznacza podwójną 
 
 To ważne rozróżnienie, bo w doki trzeba oddzielić parametry bazowego podwozia od parametrów gotowej zabudowy. Sam pojazd jest bazą, a otwarta platforma ładunkowa, burty czy kiper zależą już od zabudowcy.
 
-{{% expert name="Kowalczyk" %}}Przy zakupie wersji Maxi zwróć uwagę na wzmocnione zawieszenie, nośność osi i koła 15 lub 16 cali zależnie od wersji. W praktyce właśnie te elementy najmocniej wpływają na zachowanie auta pod pełnym obciążeniem.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Przy zakupie wersji Maxi zwróć uwagę na wzmocnione zawieszenie, nośność osi i koła 15 lub 16 cali zależnie od wersji. W praktyce właśnie te elementy najmocniej wpływają na zachowanie auta pod pełnym obciążeniem.{{% /expert %}}
 
 ## Generacje i silniki
 

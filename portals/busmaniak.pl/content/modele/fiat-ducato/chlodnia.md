@@ -62,7 +62,7 @@ Typowe DMC Ducato to **3300 kg**, **3500 kg** oraz cięższe warianty **4250 kg*
 
 Ma to bezpośredni wpływ na realną ładowność oraz na to, czy auto nadal mieści się w limicie kategorii **B**. Lżejsza izoterma wewnątrz furgonu i cięższa mroźnia na podwoziu to zupełnie inne scenariusze użytkowe.
 
-{{% expert name="Kowalczyk" %}}Przy wyborze bazy pod chłodnię patrz nie tylko na długość nadwozia, ale przede wszystkim na DMC i masę gotowej zabudowy. W praktyce różnica między prostą izotermą a pełną mroźnią z agregatem i osprzętem może zdecydować o realnej ładowności oraz o tym, czy auto pozostanie w klasie do 3,5 t.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Przy wyborze bazy pod chłodnię patrz nie tylko na długość nadwozia, ale przede wszystkim na DMC i masę gotowej zabudowy. W praktyce różnica między prostą izotermą a pełną mroźnią z agregatem i osprzętem może zdecydować o realnej ładowności oraz o tym, czy auto pozostanie w klasie do 3,5 t.{{% /expert %}}
 
 ## Wyposażenie i producenci zabudów
 

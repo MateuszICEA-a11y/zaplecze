@@ -100,7 +100,7 @@ Rynek zabudów dla Transit dostawczego jest szeroki. Najpopularniejsze rozwiąza
 - oświetlenie LED
 - przegroda stalowa lub siatkowa między kabiną a ładownią
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy projektowaniu zabudowy najważniejsze jest przeliczenie masy całego wyposażenia. Lekka zabudowa może ważyć ok. 80–150 kg, a rozbudowana nawet kilkaset kilogramów, co bezpośrednio zmniejsza realną ładowność auta i może zmienić opłacalność wyboru wersji 3,5 t względem cięższej odmiany.
 {{% /expert %}}
 

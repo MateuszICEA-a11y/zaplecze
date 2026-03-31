@@ -103,7 +103,7 @@ Silniki w Californii to przede wszystkim diesle 2.0 TDI z rodziny EA288, oferuj�
 
 Spalanie T6.1 z silnikiem 2.0 TDI 150 KM w trasie to 7,5–8,5 l/100 km. W mieście zużycie rośnie do 9,5–11 l/100 km – podnoszony dach i blaszana zabudowa kuchenna zwiększają masę i opór aerodynamiczny w porównaniu ze standardowym [Volkswagen Transporter](/modele/volkswagen-transporter/).
 
-{{% expert name="Kowalczyk" %}}Przy wyborze silnika do Californii polecam 2.0 TDI 150 KM z DSG – to optymalny kompromis mocy, spalania i ceny. Wersja 110 KM sprawdza się w trasie, ale przy pełnym obciążeniu (4 osoby + bagaże) na podjazdach czuć brak momentu. Dwulitrowy 204 KM to luksus, ale różnica w cenie sięga 25 000–30 000 zł.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Przy wyborze silnika do Californii polecam 2.0 TDI 150 KM z DSG – to optymalny kompromis mocy, spalania i ceny. Wersja 110 KM sprawdza się w trasie, ale przy pełnym obciążeniu (4 osoby + bagaże) na podjazdach czuć brak momentu. Dwulitrowy 204 KM to luksus, ale różnica w cenie sięga 25 000–30 000 zł.{{% /expert %}}
 
 ## Ceny Volkswagen California
 

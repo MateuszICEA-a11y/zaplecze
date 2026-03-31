@@ -67,7 +67,7 @@ W W447 nie da się opisać całej gamy jednym schematem napędu. W zależności 
 
 To oznacza, że przy zakupie konkretnego egzemplarza trzeba sprawdzić specyfikację po numerze VIN albo w dokumentacji auta. Taka ostrożność jest konieczna także przy ocenie skrzyni – w ofercie spotyka się zarówno manual, jak i automat 9G-TRONIC, ale ich dostępność zależy od wariantu silnikowego.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W przypadku Vito Tourer najbezpieczniej patrzeć nie na samą moc, ale na pełną konfigurację: silnik, skrzynię, napęd i długość nadwozia. To właśnie masa własna oraz liczba miejsc decydują, czy dana wersja będzie wystarczająco sprawna w codziennej pracy.
 {{% /expert %}}
 

@@ -64,7 +64,7 @@ Pianka PIR (poliizocyjanuratowa) to ulepszona wersja PUR – ma nieco lepszą iz
 - **Styropian XPS** – tańsza alternatywa (λ = 0,032–0,038), stosowana w zabudowach budżetowych, gorsza izolacyjność
 - **Wełna mineralna** – rzadko stosowana w busach ze względu na nasiąkliwość i wagę
 
-{{% expert name="Zielinski" %}}Najsłabszym ogniwem izolacji izotermicznej nie są ściany, ale drzwi i uszczelki. Wymiana uszczelek co 2–3 lata i stosowanie kurtyn paskowych PVC przy drzwiach tylnych potrafi poprawić efektywność izolacji o 15–25% – taniej niż docieplanie ścian.{{% /expert %}}
+{{% expert name="Tomasz Zieliński" %}}Najsłabszym ogniwem izolacji izotermicznej nie są ściany, ale drzwi i uszczelki. Wymiana uszczelek co 2–3 lata i stosowanie kurtyn paskowych PVC przy drzwiach tylnych potrafi poprawić efektywność izolacji o 15–25% – taniej niż docieplanie ścian.{{% /expert %}}
 
 ## Agregaty chłodnicze {#agregaty}
 

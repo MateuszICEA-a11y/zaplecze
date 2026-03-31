@@ -78,7 +78,7 @@ Brakuje też kompletnych danych eksploatacyjnych rozpisanych według rynku i rok
 
 Diesel 2.0 TDI 150 KM pozostaje najbardziej racjonalnym wyborem do długich tras. Benzynowe 1.5 TSI będzie tańsze na wejściu, a eHybrid ma największy sens przy regularnym ładowaniu i codziennej jeździe miejskiej.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Multivan T7 używany jako „van” jest wygodny, ale to wciąż auto osobowe. Modułowe wnętrze i szyny w podłodze robią świetną robotę przy przewozie rowerów, walizek czy sprzętu, jednak do ciężkiej pracy lepiej nadaje się [Transporter](/modele/volkswagen-transporter/), który ma wyższą ładowność i prawdziwie użytkową przestrzeń ładunkową.
 {{% /expert %}}
 

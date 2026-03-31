@@ -65,7 +65,7 @@ Najoszczędniejsze zwykle są wersje z napędem przednim i lżejszą zabudową. 
 
 Spalanie Craftera 2.0 TDI jest zbliżone do MAN-a TGE 2.0, bo technicznie to bardzo bliskie konstrukcje. W artykule brakuje twardych, porównywalnych danych liczbowych dla Sprintera, Transita i Boxera, więc nie ma sensu dopisywać tu wartości spoza dostępnego materiału.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 2.0 TDI 140 KM to optymalny silnik do Craftera L3. Przy załadunku do 1000 kg jest wystarczająco mocny i ekonomiczny. Wersję 177 KM polecam głównie przy regularnym załadunku, cięższej zabudowie albo napędzie 4Motion. Wersja 102 KM w dużym L4 pod pełnym obciążeniem wyraźnie traci oddech, co odbija się na komforcie jazdy i pracy DPF.
 {{% /expert %}}
 

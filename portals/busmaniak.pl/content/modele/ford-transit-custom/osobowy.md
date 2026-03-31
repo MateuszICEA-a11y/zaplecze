@@ -47,7 +47,7 @@ Wersja PHEV rozwija 233 KM i łączy silnik benzynowy 2.5 w cyklu Atkinsona z na
 
 W ofercie jest też wariant elektryczny E-Tourneo Custom / E-Transit Custom. Korzysta z akumulatora 64 kWh użytecznej pojemności, występuje w wersjach 100 lub 160 kW, czyli 136 albo 218 KM, i obsługuje ładowanie DC do 125 kW oraz AC 11 kW.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Tourneo Custom PHEV gen II to ciekawe rozwiązanie dla firm, które wykonują krótkie trasy miejskie i regularnie wracają do bazy. Jeśli ładujesz auto nocą, tryb elektryczny może dobrze sprawdzić się w codziennej eksploatacji. Po wyczerpaniu energii pracę przejmuje silnik benzynowy, ale trzeba pamiętać, że wyższa masa własna ogranicza praktyczną ładowność względem diesla.
 {{% /expert %}}
 

@@ -86,7 +86,7 @@ Generacja V, produkowana w latach 2006–2014, posiadała już rozbudowaną elek
 | BF04 | Ogrzewanie przedniej szyby (opcja) | 40A |
 | BF05 | Zasilanie skrzynki w komorze silnika | 60A |
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W silniku 3.0 F1C (HPI/HPT) bezpiecznik świec żarowych MF04 (60A) jest jednym z kluczowych. Jego przepalenie niemal zawsze sygnalizuje zwarcie na jednej ze świec. Koszt samej części to ok. 80 zł, jednak silnik ten słynie z zapiekania się i urywania świec. Standardowa wymiana to koszt 200–500 zł, ale w przypadku jej urwania, operacja wyjęcia resztek może kosztować od 1000 do nawet 3000 zł. Nigdy nie wymieniaj tego bezpiecznika bez diagnostyki świec.
 {{% /expert %}}
 

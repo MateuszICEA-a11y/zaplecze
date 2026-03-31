@@ -53,7 +53,7 @@ W wersjach z klapą w przegrodzie i systemem Moduwork długość użytkowa rośn
 
 W praktyce wysokość krawędzi załadunku w średnich vanach tej klasy zwykle wynosi około 600–650 mm zależnie od wersji. To parametr istotny szczególnie przy częstym ręcznym załadunku.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Szerokość między nadkolami 1268 mm to kluczowa wartość robocza. W praktyce L1 zwykle mieści 2 europalety, a L2 3 europalety, co lepiej pokazuje użyteczność auta niż sama objętość w m³.
 {{% /expert %}}
 

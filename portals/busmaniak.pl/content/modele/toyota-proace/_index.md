@@ -129,7 +129,7 @@ Renault Trafic ma mniejszą ładownię, ale własną i sprawdzoną mechanikę. M
 
 Więcej na temat silnika [2.0 D-4D znajdziesz tutaj](/modele/toyota-proace/2-0/).
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Proace II to solidny wybór dla firm, które chcą mieć vana klasy Expert lub Jumpy pod marką, do której mają serwis Toyota w pobliżu. Mechanicznie to identyczny samochód – zalety i wady bliźniaków PSA dotyczą go w pełni. Kluczowe pytanie przy zakupie to nie marka, ale dostęp do serwisu i aktualna cena używanego egzemplarza na rynku. Proace bywa droższy od Jumpego przy porównywalnym wyposażeniu, bo Toyota ma wyższe residual values. Przy zakupie floty powyżej 5 sztuk warto negocjować bezpośrednio z importerem.
 {{% /expert %}}
 

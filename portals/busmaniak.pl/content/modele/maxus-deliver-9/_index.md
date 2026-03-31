@@ -82,7 +82,7 @@ Diesel 2.0 to jednostka z wtryskiem Common Rail – zadowalająca kultura pracy,
 
 Bateria 72 lub 88,5 kWh, realny zasięg 230–300 km w cyklu miejskim. Trzystopniowy system odzyskiwania energii pozwala na efektywną jazdę w korkach. Ładowanie DC do 80 kW: od 20% do 80% w ok. 45 minut.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Deliver 9 z napędem RWD to duża zaleta przy pełnym załadunku – koła napędowe są dociążone ładunkiem, co poprawia trakcję na mokrych i śliskich nawierzchniach. Europejska konkurencja w tej cenie (Ducato, Master) oferuje tylko FWD.
 {{% /expert %}}
 

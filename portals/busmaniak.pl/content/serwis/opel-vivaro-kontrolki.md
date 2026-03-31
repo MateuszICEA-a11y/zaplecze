@@ -63,7 +63,7 @@ W Vivaro B z silnikiem 1.6 CDTI trzy kontrolki pojawiają się statystycznie naj
 2. **Check engine + ograniczenie mocy** – zazwyczaj oznacza to awarię turbosprężarki (luzy w mechanizmie zmiennej geometrii) lub zablokowany zawór EGR.
 3. **Świece żarowe (migająca)** – uszkodzenie jednej z czterech świec. Wymiana kompletu to koszt 200–400 zł z robocizną.
 
-{{% expert name="Kowalczyk" %}}Vivaro B z 1.6 BiTurbo (120/145 KM) ma specyficzny problem – pękanie przewodu intercoolera łączącego obie turbosprężarki. Objaw: check engine, dymienie i utrata mocy. Kontrolka zapala się zanim poczujesz różnicę w jeździe, więc nie ignoruj jej nawet jeśli auto "jedzie normalnie".{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Vivaro B z 1.6 BiTurbo (120/145 KM) ma specyficzny problem – pękanie przewodu intercoolera łączącego obie turbosprężarki. Objaw: check engine, dymienie i utrata mocy. Kontrolka zapala się zanim poczujesz różnicę w jeździe, więc nie ignoruj jej nawet jeśli auto "jedzie normalnie".{{% /expert %}}
 
 ![Kontrolki Opel Vivaro – znaczenie symboli na desce rozdzielczej](/images/opel-vivaro-kontrolki-hero.jpg)
 

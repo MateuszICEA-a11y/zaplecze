@@ -80,7 +80,7 @@ W praktyce odmiany L3 i L4 opłacają się, gdy:
 
 Warto też patrzeć na różnice względem L2 i modeli bliźniaczych Citroën Jumper oraz Fiat Ducato. To właśnie długość całkowita, długość przestrzeni ładunkowej, kubatura 13/15/17 m³, ładowność i wysokość całkowita pokazują, czy dopłata do longa jest uzasadniona w konkretnej pracy.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W praktyce sama liczba m³ nie mówi wszystkiego. Przy Boxerze Long ważniejsze są długość podłogi, szerokość 1870 mm, około 1420 mm między nadkolami oraz szerokość bocznego wejścia około 1250 mm, bo to te wartości decydują, jak wygodnie załadujesz towar i czy zmieszczą się standardowe elementy transportowe.
 
 Przy wyborze między L2 a L3 trzeba też sprawdzić warunki parkowania i place manewrowe. L3 ma około 5,99 m długości, a L4 około 6,36 m, więc na standardowym miejscu parkingowym 5,0 m oba warianty i tak będą problematyczne.

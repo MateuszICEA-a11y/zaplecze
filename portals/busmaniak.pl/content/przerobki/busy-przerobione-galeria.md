@@ -62,7 +62,7 @@ Sprinter L2H2 ma szerokość wewnętrzną 1780 mm – łóżko w układzie poprz
 - **Okna** – 1× Dometic S4, wentylator Maxxair. Koszt: 3 200 zł
 - **Wykończenie** – tapicerka, podłoga, oświetlenie LED. Koszt: 3 200 zł
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Sprinter L2H2 wymaga precyzyjnego projektowania – każdy centymetr ma znaczenie. Łóżko wzdłużne 1900×700 mm po lewej stronie z podnoszoną platformą i kuchnia po prawej to układ, który sprawdza się najlepiej. Korytarz 500 mm wystarczy do swobodnego przejścia. Nie próbuj wpychać łazienki – zabierze 25% przestrzeni.
 {{% /expert %}}
 

@@ -80,7 +80,7 @@ Gen I opiera się wyłącznie na dieslu 2.0 EcoBlue (105–185 KM). Gen II wprow
 
 Mild hybrid 48V (gen II) regeneruje energię przy hamowaniu i wspomaga rozrusznikiem w fazie rozruchu – obniżenie spalania o 5–8% wobec gen I.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 2.0 EcoBlue 130 KM to najczęstszy i najrozsądniejszy wybór: wystarczający moment od niskich obrotów, dostępny z manualem i automatem, tani w serwisie. Wariant 170 KM z 8AT to luksus, ale automat SelectShift potrafi szarpać – sprawdź aktualizację oprogramowania u dealera.
 {{% /expert %}}
 

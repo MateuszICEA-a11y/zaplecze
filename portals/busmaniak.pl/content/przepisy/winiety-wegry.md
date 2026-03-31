@@ -105,7 +105,7 @@ Stawki w systemie HU-GO są regularnie waloryzowane. Od 1 stycznia 2026 roku wpr
 
 Kategoria pojazdu (J2–J5) zależy od liczby osi, a finalna stawka za kilometr jest uzależniona również od klasy emisji spalin EURO i kategorii drogi.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Właściciele dużych kamperów, np. na bazie Ducato Maxi czy Sprintera, których DMC przekracza 3,5 tony, muszą pamiętać o obowiązku korzystania z systemu HU-GO. To zupełnie inne zasady niż w przypadku systemu winiet – wymagane jest urządzenie pokładowe (OBU) lub zakup biletu relacyjnego. Pomyłka i wjazd na płatną drogę bez aktywnej opłaty HU-GO prowadzi do wysokich kar.
 {{% /expert %}}
 

@@ -61,7 +61,7 @@ Migająca spirala po odpaleniu silnika, w jednostkach MultiJet (2.0, 2.3, 3.0), 
 ### Pomarańczowy trójkąt ostrzegawczy
 To kontrolka ogólna – prawie zawsze towarzyszy jej komunikat tekstowy na wyświetlaczu. Przyczyną może być awaria czujników parkowania, przepalona żarówka oświetlenia zewnętrznego lub zadziałanie wyłącznika bezwładnościowego paliwa po uderzeniu lub silnym wstrząsie.
 
-{{% expert name="Kowalczyk" %}}W Fiacie Ducato III (X250 i X290) żółty trójkąt często zapala się z powodu… oświetlenia tablicy rejestracyjnej. System jest bardzo czuły na zmianę oporności, dlatego odradzam montowanie tanich zamienników LED bez rezystora CAN-BUS.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}W Fiacie Ducato III (X250 i X290) żółty trójkąt często zapala się z powodu… oświetlenia tablicy rejestracyjnej. System jest bardzo czuły na zmianę oporności, dlatego odradzam montowanie tanich zamienników LED bez rezystora CAN-BUS.{{% /expert %}}
 
 ### Błąd ESP / Hill Holder
 Nagłe pojawienie się komunikatów „Hill Holder unavailable” lub „ESC failure” wraz z żółtą ikoną poślizgu to częsta przypadłość w Ducato. Rzadko jednak oznacza to rzeczywistą awarię kosztownej pompy ABS. Zazwyczaj przyczyną jest uszkodzony czujnik położenia pedału hamulca (koszt części 50–80 zł), naderwany przewód czujnika ABS na osi lub chwilowy spadek napięcia akumulatora.

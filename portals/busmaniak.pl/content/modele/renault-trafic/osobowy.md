@@ -107,7 +107,7 @@ Renault Trafic osobowy konkuruje zarówno z klasycznymi vanami 8–9-osobowymi, 
 
 Przy bezpośrednim porównaniu warto zestawić długość nadwozia, liczbę miejsc, dostępność automatu oraz charakter wnętrza. W tym segmencie to właśnie układ kabiny i funkcjonalność częściej decydują o wyborze niż sama moc silnika.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy wyborze długości nadwozia sprawdź najpierw miejsce codziennego parkowania i manewrowania – różnica 40 cm między L1 a L2 potrafi przesądzić o sensie zakupu. Dopiero później oceniaj komfort ostatniego rzędu i przestrzeń na bagaż.
 {{% /expert %}}
 

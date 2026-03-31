@@ -88,7 +88,7 @@ Przy cięższych konfiguracjach liczy się też dobór podwozia do zabudowy, w t
 
 Ponieważ artykuł nie odnosi się do konkretnej generacji, rocznika ani oficjalnej gamy silnikowej dla danego rynku, nie ma sensu wskazywać jednego „właściwego” silnika po samych wartościach 136, 156 czy 170 KM. Przy Iveco Daily plandeka sensowniejsze jest dopasowanie napędu do DMC, udziału jazdy z pełnym ładunkiem i topografii trasy.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Kupując plandekę, patrz nie tylko na podwozie, ale też na samą zabudowę. Sprawdź stan poszycia PVC, narożniki, szwy, stelaż i punkty mocowania ładunku. W aucie pracującym codziennie właśnie te elementy najszybciej pokazują, czy zabudowa była eksploatowana z głową.
 {{% /expert %}}
 

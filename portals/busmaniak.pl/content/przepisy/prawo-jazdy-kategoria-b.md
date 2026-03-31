@@ -118,7 +118,7 @@ Standardowy kamper na bazie Fiata Ducato czy Mercedesa Sprintera jest legalny na
 
 Przed zakupem kampera należy dokładnie sprawdzić pole G (masa własna) i F.2 (DMC) w dowodzie rejestracyjnym. Różnica między nimi to twoja faktyczna ładowność.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Kupując kampera na kat. B, zawsze pytaj o wagę pojazdu z pełnymi zbiornikami. Producenci podają masę własną w konfiguracji minimalnej – bez markizy, roweru na bagażniku i dodatkowego akumulatora. Te „drobiazgi" potrafią zjeść 150–200 kg ładowności. Najlepiej jechać na wagę zaraz po odbiorze pojazdu.
 {{% /expert %}}
 

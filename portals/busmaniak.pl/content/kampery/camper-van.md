@@ -67,7 +67,7 @@ Wybór zależy od stylu podróżowania i tego, czy pojazd ma służyć tylko do 
 - **Półintegrał/integrał** – to propozycja dla rodzin z dziećmi i osób wyjeżdżających na długie trasy, dla których liczy się przede wszystkim komfort i przestrzeń.
 - **Alkowa** – najczęściej wybierana przez duże rodziny (4–6 osób) oraz wypożyczalnie, ze względu na maksymalną liczbę miejsc do spania w relacji do ceny.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Jeśli wahasz się między camper vanem a półintegrałem, kluczowe pytanie brzmi: czy zamierzasz korzystać z pojazdu poza urlopem? Camper van świetnie sprawdza się w codziennym życiu – podwieziesz nim dzieci do szkoły lub pojedziesz na zakupy. Półintegrał przez większość roku stoi na parkingu, generując koszty ubezpieczenia i serwisu.
 {{% /expert %}}
 

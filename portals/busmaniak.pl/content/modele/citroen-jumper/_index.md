@@ -32,7 +32,7 @@ Różnice między markami są wyłącznie w:
 - ofercie wyposażenia dodatkowego
 - cenach i akcjach handlowych
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Jumper, Boxer czy Ducato – to pytanie, które słyszę regularnie od firm zakupujących flotę. Moja odpowiedź jest zawsze prosta: jedź do dealera, który jest najbliżej twojej bazy serwisowej i zapytaj o warunki serwisu kontraktowego. Technicznie to ten sam pojazd – decyduje cena, dealer i dostępność mobilnego serwisu. W Polsce sieć Fiat/Abarth ma historycznie największą gęstość, ale Citroën i Peugeot doganiają.
 {{% /expert %}}
 

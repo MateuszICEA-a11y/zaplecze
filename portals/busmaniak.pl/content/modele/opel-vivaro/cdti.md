@@ -77,7 +77,7 @@ Single turbo to zwykle najrozsądniejszy wybór do codziennej pracy. Warianty 95
 
 BiTurbo 140 KM oferuje najlepsze osiągi w tej rodzinie, ale ma bardziej złożony osprzęt. W praktyce większej uwagi wymagają tu układy EGR, DPF, a w późniejszych wersjach Euro 6 także AdBlue i chłodnica EGR. Potencjalne koszty napraw układu BiTurbo są szerokie i zależą od zakresu uszkodzeń.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Jeśli kupujesz Vivaro B do normalnej pracy, najbezpieczniej patrzeć w stronę 1.6 CDTi single turbo. BiTurbo ma lepszą elastyczność, ale jest bardziej złożone i zwykle droższe w ewentualnych naprawach osprzętu. Do cięższej eksploatacji kluczowy jest nie tylko wariant mocy, ale przede wszystkim historia serwisowa.
 {{% /expert %}}
 

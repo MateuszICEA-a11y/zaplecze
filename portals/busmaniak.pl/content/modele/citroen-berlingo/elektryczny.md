@@ -114,4 +114,4 @@ Poza bliźniaczymi konstrukcjami Stellantis warto patrzeć też na Renault Kango
 
 W Polsce samochody elektryczne mogą korzystać z zielonych tablic. Uprawnienia do jazdy buspasami i darmowego parkowania w SPPN zależą jednak od aktualnych przepisów lokalnych oraz terminów ustawowych, dlatego przed zakupem warto sprawdzić stan prawny obowiązujący w danym mieście na 2026 rok.
 
-{{% expert name="Zielinski" %}}ë-Berlingo ma sens przede wszystkim dla firm z własnym parkingiem i wallboxem oraz dla użytkowników, którzy codziennie pokonują do około 200 km. Jeśli auto regularnie robi dłuższe trasy, wozi cięższe ładunki albo nie ma łatwego dostępu do ładowania AC, diesel 1.5 BlueHDi pozostaje rozwiązaniem wygodniejszym operacyjnie.{{% /expert %}}
+{{% expert name="Tomasz Zieliński" %}}ë-Berlingo ma sens przede wszystkim dla firm z własnym parkingiem i wallboxem oraz dla użytkowników, którzy codziennie pokonują do około 200 km. Jeśli auto regularnie robi dłuższe trasy, wozi cięższe ładunki albo nie ma łatwego dostępu do ładowania AC, diesel 1.5 BlueHDi pozostaje rozwiązaniem wygodniejszym operacyjnie.{{% /expert %}}

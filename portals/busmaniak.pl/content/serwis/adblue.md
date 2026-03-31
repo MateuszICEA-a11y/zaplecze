@@ -108,7 +108,7 @@ Wlew AdBlue to charakterystyczna, mniejsza nakrętka obok wlewu paliwa, oznaczon
 
 Częste jazdy miejskie i kurierskie sprawiają, że układ wydechowy nie osiąga temperatury 200°C, niezbędnej do prawidłowej pracy SCR. Prowadzi to do krystalizacji mocznika i zatykania wtryskiwaczy. Aby temu zapobiec, warto profilaktycznie stosować dodatki antykrystalizujące (np. Tunap 983, Clearnox), dodając ok. 25 ml preparatu na 10 litrów AdBlue.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Największy błąd przy uzupełnianiu AdBlue to wlanie go do zbiornika paliwa – nawet niewielka ilość (200–300 ml) uszkadza wtryskiwacze, pompę wysokiego ciśnienia i katalizator. Koszt naprawy sięga 10 000–25 000 zł. Jeśli pomylisz wlewy, nie uruchamiaj silnika i natychmiast wezwij pomoc – wypompowanie AdBlue ze zbiornika paliwa kosztuje 500–1 000 zł, czyli ułamek kosztów naprawy po uruchomieniu silnika.
 {{% /expert %}}
 

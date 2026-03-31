@@ -74,7 +74,7 @@ Gama silnikowa Connecta obejmuje diesle 1.5 EcoBlue (75–120 KM) i benzynowy 1.
 
 Diesel 1.5 EcoBlue z katalizatorem [SCR](https://en.wikipedia.org/wiki/Selective_catalytic_reduction) to serce Mk2 – wysoki moment już od niskich obrotów. Trzycylindrowy 1.0 EcoBoost to nagradzany motor, dobrze współpracujący z LPG (spalanie na gaz ~8 l/100 km).
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Mk1 z silnikiem 1.8 TDCi to jedna z najbardziej trwałych konstrukcji Forda – na rynku wtórnym trafisz na egzemplarze z przebiegami ponad 400 tys. km przy żywym silniku. Kluczem jest regularna wymiana paska rozrządu co 160 tys. km i oleju co 15 tys. km.
 {{% /expert %}}
 

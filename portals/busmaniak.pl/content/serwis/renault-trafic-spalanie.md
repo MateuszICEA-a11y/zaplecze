@@ -72,7 +72,7 @@ Raportowane zużycie paliwa to wypadkowa kilku kluczowych czynników. Różnica 
 
 ![Renault Trafic na stacji paliw](/images/renault-trafic-spalanie-hero.jpg)
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Najczęstszy błąd, który widzę u klientów flot, to porównywanie spalania między pojazdami bez uwzględnienia wersji H1/H2 i stylu eksploatacji. Kierowca jeżdżący głównie po mieście z klimatyzacją i pełnym załadunkiem nigdy nie osiągnie wyników trasowych. Zamiast gonić "normę", warto ustalić realny punkt odniesienia dla konkretnej trasy i ładunku – i na tej podstawie wykrywać anomalie sygnalizujące problemy mechaniczne.
 {{% /expert %}}
 

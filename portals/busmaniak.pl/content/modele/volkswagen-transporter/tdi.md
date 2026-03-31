@@ -83,7 +83,7 @@ Topowe 199 KM i 450 Nm w BiTDI to propozycja dla tych, którzy często holują l
 
 W T6.1 od 2019 roku wybrane wersje 2.0 TDI Euro 6d korzystają z układu podwójnego dozowania AdBlue. Taki układ ogranicza emisję NOx i pomaga spełnić normę Euro 6d.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy zakupie używanego T6.1 z DSG koniecznie sprawdź, czy olej w skrzyni był wymieniany co 60 tys. km. Brak potwierdzonego serwisu skrzyni powinien obniżać cenę auta, bo ryzyko kosztownej naprawy mechatroniki jest wtedy wyraźnie wyższe.
 {{% /expert %}}
 

@@ -42,7 +42,7 @@ Liczba miejsc w osobowych i półosobowych odmianach Vivaro nie sprowadza się d
 
 W generacji C po stronie użytkowej spotykamy wersje Combi, a po stronie osobowej – Zafirę Life. W praktyce występowały konfiguracje 8- i 9-miejscowe, a układy siedzeń mogły się różnić, więc nie należy z góry zakładać jednego schematu typu 2+3+4 dla każdej odmiany.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy aucie używanym najważniejsze jest nie tylko to, ile miejsc wpisano w ogłoszeniu, ale też jaką długość nadwozia wybrano. W vanach na platformie EMP2 realna funkcjonalność przy komplecie pasażerów mocno zależy od wersji S, M albo L i od tego, czy pojemność bagażnika podano według normy VDA, czy „do dachu”.
 {{% /expert %}}
 

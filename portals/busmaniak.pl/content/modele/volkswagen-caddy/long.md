@@ -83,4 +83,4 @@ W osobowym Caddy trzeba pamiętać, że pojemność bagażnika 1213 i 1720 l dot
 
 Dla rodzin i przewozu osób kluczowa jest właśnie możliwość zabrania siedmiu pasażerów. Artykułowane w ogłoszeniach hasło „7 miejsc” warto jednak zawsze weryfikować ze zdjęciami wnętrza i układem foteli, bo w praktyce wyposażenie oraz konfiguracje potrafią się różnić zależnie od wersji.
 
-{{% expert name="Kowalczyk" %}}Caddy California w wydłużonej wersji to ciekawa alternatywa dla większych kampervanów. Oficjalnie najważniejszym elementem tej odmiany jest łóżko o wymiarach około 1,98 x 1,07 m oraz turystyczny charakter zabudowy, ale bez przypisywania jej stałej fabrycznej kuchenki jako standardu.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Caddy California w wydłużonej wersji to ciekawa alternatywa dla większych kampervanów. Oficjalnie najważniejszym elementem tej odmiany jest łóżko o wymiarach około 1,98 x 1,07 m oraz turystyczny charakter zabudowy, ale bez przypisywania jej stałej fabrycznej kuchenki jako standardu.{{% /expert %}}

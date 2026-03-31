@@ -73,7 +73,7 @@ Słabsze odmiany zwykle potrafią być minimalnie oszczędniejsze, ale różnice
 
 Część użytkowników zwraca uwagę, że komputer pokładowy bywa zbyt optymistyczny. Dlatego przy ocenie faktycznego spalania najlepiej opierać się na tankowaniu do pełna i porównywaniu wyników z kilku kolejnych zbiorników.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W praktyce najbardziej ekonomiczna jest nie tyle konkretna moc, ile dobrze utrzymany egzemplarz z właściwie dobraną wersją do pracy. Do miasta i lekkiego ładunku wystarczy 75 KM, ale przy regularnych trasach i cięższej eksploatacji 90 KM lub 110 KM zwykle okazują się rozsądniejszym wyborem.
 {{% /expert %}}
 

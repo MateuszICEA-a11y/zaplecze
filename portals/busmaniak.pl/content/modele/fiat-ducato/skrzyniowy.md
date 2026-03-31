@@ -32,7 +32,7 @@ W przypadku wersji skrzyniowych mówimy przede wszystkim o trzeciej generacji Du
 
 W praktyce sam rozstaw osi nie wyznacza jeszcze długości skrzyni. Przy podwoziu liczą się także rodzaj kabiny i zwis tylny, dlatego długość zabudowy trzeba zawsze odnosić do konkretnej konfiguracji pojazdu i zabudowy.
 
-{{% expert name="Kowalczyk" %}}W Ducato skrzyniowym najłatwiej popełnić błąd przy czytaniu katalogów, bo dane podwozia i dane zabudowy często są mieszane. Rozstaw osi, typ kabiny i zwis tylny trzeba traktować jako komplet, a nie jako pojedynczy parametr.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}W Ducato skrzyniowym najłatwiej popełnić błąd przy czytaniu katalogów, bo dane podwozia i dane zabudowy często są mieszane. Rozstaw osi, typ kabiny i zwis tylny trzeba traktować jako komplet, a nie jako pojedynczy parametr.{{% /expert %}}
 
 ## Wymiary skrzyni Ducato i warianty kabin
 

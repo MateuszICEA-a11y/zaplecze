@@ -92,6 +92,6 @@ Krytycznym problemem technicznym jest jednak brak fabrycznych punktów kotwienia
 
 Koszt przeróbki wynosi **3000–8000 zł**, w zależności od zakresu prac i tego, czy części są nowe, czy używane. Cały proces wraz z formalnościami w wydziale komunikacji trwa od **1 do 3 tygodni**.
 
-{{% expert name="Zielinski" %}}Przeróbka Vana na osobowy ma sens, gdy różnica cen na rynku wtórnym jest duża (Van bywa o **5–10 tys. zł** tańszy). Ale liczaj realnie – koszt przeróbki + formalności to **5000–8000 zł**. Czasem taniej wyjść kupić gotowe Berlingo osobowe.{{% /expert %}}
+{{% expert name="Tomasz Zieliński" %}}Przeróbka Vana na osobowy ma sens, gdy różnica cen na rynku wtórnym jest duża (Van bywa o **5–10 tys. zł** tańszy). Ale liczaj realnie – koszt przeróbki + formalności to **5000–8000 zł**. Czasem taniej wyjść kupić gotowe Berlingo osobowe.{{% /expert %}}
 
 *Źródła: dokumentacja techniczna Citroën, dane warsztatów tuningowych, auto-data.net*

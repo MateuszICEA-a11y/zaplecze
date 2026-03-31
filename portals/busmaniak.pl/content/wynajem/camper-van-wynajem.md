@@ -96,7 +96,7 @@ Niemiecki producent budujący na bazie Citroëna SpaceTourer lub Peugeota Travel
 ### Randger R535
 Francuski camper van zbudowany na bazie Renault Trafic (L2H1). Jest nieco większy od rywali (5,48 m) i seryjnie wyposażony w podnoszony dach oraz zintegrowaną łazienkę w tylnej części pojazdu. To dobra opcja dla par ceniących większą przestrzeń i niezależność.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Na pierwszy wynajem camper vana polecam VW California Ocean – nie dlatego, że jest najlepszy na papierze, ale dlatego, że wypożyczalnie oferują świetnie utrzymane egzemplarze, a instruktaż jest prosty. Intuicyjny system sterowania i rozbudowana sieć serwisowa VW w Europie zapewniają spokój w podróży.
 {{% /expert %}}
 

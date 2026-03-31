@@ -69,7 +69,7 @@ Dla auta dystrybucyjnego liczą się też parametry załadunkowe: nośność pod
 
 W praktyce duże znaczenie mają opcje. Winda załadowcza zwykle dodaje ok. 150–250 kg, spoiler dachowy kilkanaście–kilkadziesiąt kg, a klimatyzacja i wyposażenie kabiny kolejne kilogramy, więc w wersji 3,5 t realna ładowność może spaść nawet poniżej 1000 kg.
 
-{{% expert name="Kowalczyk" %}}Przy wyborze używanego Ducato z kontenerem zawsze sprawdzaj realną ładowność w dowodzie rejestracyjnym. Dwa auta o tym samym DMC 3,5 t mogą mieć zupełnie inną użyteczność, jeśli jedno ma lekką zabudowę suchą, a drugie windę, spoiler i bogate wyposażenie kabiny.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Przy wyborze używanego Ducato z kontenerem zawsze sprawdzaj realną ładowność w dowodzie rejestracyjnym. Dwa auta o tym samym DMC 3,5 t mogą mieć zupełnie inną użyteczność, jeśli jedno ma lekką zabudowę suchą, a drugie windę, spoiler i bogate wyposażenie kabiny.{{% /expert %}}
 
 ## Zastosowania zabudowy kontenerowej
 

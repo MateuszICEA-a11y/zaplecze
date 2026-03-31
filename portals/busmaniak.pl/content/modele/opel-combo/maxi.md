@@ -93,7 +93,7 @@ Przy wyborze diesla 1.5 D warto uwzględnić układ AdBlue/SCR, DPF przy jeździ
 
 W rodzinie 1.2 Turbo trzeba zwracać uwagę na kwestie związane z paskiem rozrządu pracującym w oleju w części wariantów tej rodziny silników. Tu znaczenie ma regularna kontrola jakości oleju i pilnowanie interwałów.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Cargo XL, Partner Long i Berlingo Van XL są technicznie bardzo zbliżone, bo bazują na wspólnej architekturze koncernu. To ułatwia porównanie wersji i części eksploatacyjnych, ale koszty serwisu nadal zależą od sieci, lokalizacji i stawek konkretnego warsztatu.
 {{% /expert %}}
 

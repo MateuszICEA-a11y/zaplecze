@@ -69,7 +69,7 @@ Warto podkreślić, że grupa Sevel (Ducato, Jumper, Boxer) jako jedyna na rynku
 
 VW Transporter T6 i [Renault Trafic](/modele/renault-trafic/) mają pakę o wysokości 130–140 cm i szerokości 120–130 cm między nadkolami. Spanie jest wygodne na materacu 120 × 190 cm, ale siedzenie na łóżku wymaga pochylenia głowy. Te busy sprawdzają się dla jednej osoby lub pary akceptującej ciasną przestrzeń.
 
-{{% expert name="Zielinski" %}}Przy planowaniu zabudowy do spania mierz wymiary między nadkolami, nie między ścianami – to nadkola ograniczają szerokość materaca. W Ducato różnica wynosi ponad 40 cm (1 420 mm między nadkolami vs 1 870 mm maksymalnej szerokości). Materac musi leżeć stabilnie na platformie, więc projektuj pod najwęższy punkt.{{% /expert %}}
+{{% expert name="Tomasz Zieliński" %}}Przy planowaniu zabudowy do spania mierz wymiary między nadkolami, nie między ścianami – to nadkola ograniczają szerokość materaca. W Ducato różnica wynosi ponad 40 cm (1 420 mm między nadkolami vs 1 870 mm maksymalnej szerokości). Materac musi leżeć stabilnie na platformie, więc projektuj pod najwęższy punkt.{{% /expert %}}
 
 ## Materac i izolacja termiczna {#materac}
 

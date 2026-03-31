@@ -34,7 +34,7 @@ Mercedes oferuje kilka wariantów Marco Polo, które różnią się bazą i pozi
 
 Wszystkie warianty mają identyczne wymiary zewnętrzne – 5140 mm długości i 1928 mm szerokości. Kluczowa jest wysokość 1980 mm (z zamkniętym dachem), która ze sportowym zawieszeniem lub Airmatic może sięgać 1990 mm. Wartość ta pozwala na bezproblemowy wjazd do znakomitej większości garaży podziemnych i myjni automatycznych, co czyni Marco Polo świetnym daily-carem.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Activity to pozornie atrakcyjna opcja – 60 tys. zł taniej niż pełny Marco Polo. Ale baza Vito ma cieńszą izolację akustyczną, twarde plastiki w kabinie i słabsze nagłośnienie. Jeśli planujesz korzystać z pojazdu jako codziennego samochodu, różnica w komforcie jazdy jest odczuwalna na każdym kilometrze.
 {{% /expert %}}
 

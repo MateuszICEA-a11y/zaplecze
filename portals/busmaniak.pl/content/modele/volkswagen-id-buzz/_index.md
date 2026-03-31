@@ -65,7 +65,7 @@ Zużycie energii w cyklu mieszanym to 19,0–20,9 kWh/100 km. Na zasięg wpływa
 
 Ładowanie DC obsługuje moc do 185 kW (170 kW w starszych wersjach). Od 10% do 80% baterii naładujesz w ok. 26–30 minut na szybkiej ładowarce. Ładowanie AC przez wallbox 11 kW trwa ok. 7,5 godziny do pełna. Standardowy pokładowy ładownik AC ma moc 11 kW.
 
-{{% expert name="Kowalczyk" %}}Przy planowaniu dłuższych tras ID. Buzzem pamiętaj o funkcji Plug & Charge – samochód automatycznie autoryzuje sesję ładowania na kompatybilnych stacjach. Realna przerwa na ładowanie DC to 25–35 minut, więc idealnie wpasowuje się w postój na kawę.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Przy planowaniu dłuższych tras ID. Buzzem pamiętaj o funkcji Plug & Charge – samochód automatycznie autoryzuje sesję ładowania na kompatybilnych stacjach. Realna przerwa na ładowanie DC to 25–35 minut, więc idealnie wpasowuje się w postój na kawę.{{% /expert %}}
 
 ## Wersje nadwoziowe Volkswagen ID. Buzz
 

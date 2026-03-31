@@ -61,7 +61,7 @@ Miejskie dostawy wymagają zwrotności i niskiego spalania. Małe vany są też 
 
 Więcej w artykule [Porównanie małych vanów](/porownania/porownanie-malych-vanow/).
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Szerokość bocznego otworu załadunkowego to kluczowy parametr w miejskiej logistyce. Podczas gdy standardem w klasie jest otwór o szerokości ok. 716 mm, Renault Kangoo w systemie "Open Sesame by Renault" oferuje aż 1446 mm dzięki usunięciu prawego słupka B. To fundamentalna różnica w codziennej pracy.
 {{% /expert %}}
 

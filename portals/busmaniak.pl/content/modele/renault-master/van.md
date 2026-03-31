@@ -97,7 +97,7 @@ Trzeba też pamiętać o przepisach. Pojazd o DMC do 3,5 t można prowadzić z p
 
 Jeśli planujesz holowanie, znaczenie ma nie tylko sama ładowność auta, ale też masa zestawu. Dopuszczalna masa przyczepy z hamulcem zależnie od wersji zwykle wynosi od ok. 2000 kg do 2500 kg, a ostatecznie trzeba jeszcze sprawdzić GCM/GCW oraz nacisk na hak wpisany w homologacji.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Najczęstszy błąd przy wyborze Mastera Van to porównywanie samych wersji L2, L3 czy L4 bez spojrzenia na napęd i homologację. Dwa podobnie wyglądające auta mogą mieć zupełnie inną ładowność, inną masę przyczepy i inne wymagania wobec kierowcy. W praktyce FWD, RWD i cięższe odmiany z bliźniakiem trzeba traktować jak trzy różne narzędzia pracy.
 {{% /expert %}}
 

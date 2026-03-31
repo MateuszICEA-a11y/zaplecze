@@ -108,7 +108,7 @@ Praktycznie warto pamiętać także o pojemności zbiornika paliwa wynoszącej o
 
 Porównanie zużycia paliwa dla każdego wariantu silnikowego zawiera artykuł o [spalaniu Berlingo](/serwis/citroen-berlingo-spalanie/).
 
-{{% expert name="Zielinski" %}}W ocenie firmowego furgonu najważniejsze są konfiguracja przestrzeni ładunkowej, dopasowanie napędu do pracy i realne wymagania serwisowe. W Berlingo warto zwrócić uwagę na obecność AdBlue, DPF i SCR w dieslach 1.5 BlueHDi oraz na możliwości systemu Extenso przy przewozie długich elementów.{{% /expert %}}
+{{% expert name="Tomasz Zieliński" %}}W ocenie firmowego furgonu najważniejsze są konfiguracja przestrzeni ładunkowej, dopasowanie napędu do pracy i realne wymagania serwisowe. W Berlingo warto zwrócić uwagę na obecność AdBlue, DPF i SCR w dieslach 1.5 BlueHDi oraz na możliwości systemu Extenso przy przewozie długich elementów.{{% /expert %}}
 
 ## Konkurencja w segmencie dostawczym {#konkurencja}
 

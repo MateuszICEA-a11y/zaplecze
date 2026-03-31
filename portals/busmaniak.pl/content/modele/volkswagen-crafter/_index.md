@@ -85,7 +85,7 @@ Wszystkie silniki diesel to czterocylindrowe 2.0 TDI z turbodoładowaniem i AdBl
 
 Większość Crafterów w Polsce to wersje FWD – wystarczające dla 90% zastosowań transportowych.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Crafter 2.0 TDI 140 KM to jeden z lepszych silników w klasie – wystarczający moment od 1500 rpm i serwis łatwo dostępny w całej sieci VW w Polsce. Ale przy zakupie używanego sprawdź automat 8AT: wymaga wymiany oleju co 60 tys. km. Zaniedbanie tego = zużyte łączniki wielopłytkowe i naprawa za 6000–12 000 zł.
 {{% /expert %}}
 

@@ -121,7 +121,7 @@ Koszt zabudowy narzędziowej zależy od trzech czynników: wielkości busa, wybr
 
 Profesjonalni serwisanci szacują, że zabudowa narzędziowa oszczędza 15–30 minut dziennie na szukaniu sprzętu. Przy stawce technika 80–120 zł/h to 200–600 zł tygodniowo. Zabudowa za 10 000 zł zwraca się w 4–12 miesięcy, nie licząc oszczędności na uszkodzonych narzędziach i wypadkach z niezabezpieczonym ładunkiem.
 
-{{% expert name="Zielinski" %}}Przy wyborze zabudowy narzędziowej warto zacząć od inwentaryzacji narzędzi i materiałów, które wożone są codziennie. Producenci tacy jak Sortimo oferują bezpłatne konsultacje i projektowanie zabudowy w konfiguratorze 3D – to pozwala uniknąć przepłacania za niepotrzebne moduły.{{% /expert %}}
+{{% expert name="Tomasz Zieliński" %}}Przy wyborze zabudowy narzędziowej warto zacząć od inwentaryzacji narzędzi i materiałów, które wożone są codziennie. Producenci tacy jak Sortimo oferują bezpłatne konsultacje i projektowanie zabudowy w konfiguratorze 3D – to pozwala uniknąć przepłacania za niepotrzebne moduły.{{% /expert %}}
 
 ## Bezpieczeństwo i normy {#bezpieczenstwo}
 

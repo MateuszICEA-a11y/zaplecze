@@ -101,7 +101,7 @@ Nowszy [2.3 MultiJet](/modele/fiat-ducato/2-3-multijet/) zwykle oferuje niższe 
 
 Fiat Ducato 2.8 JTD ma dobrą opinię jako silnik roboczy do cięższej eksploatacji. Właściciele cenią elastyczność, prostszą elektronikę i brak osprzętu emisyjnego charakterystycznego dla dużo nowszych diesli.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W środowisku użytkowników i mechaników 2.8 JTD uchodzi za jednostkę trwałą i odporną na ciężką pracę. Często można spotkać opinie o bardzo dużych przebiegach bez remontu, ale warto traktować to jako doświadczenia poszczególnych właścicieli, a nie gwarantowaną cechę każdego egzemplarza.
 {{% /expert %}}
 

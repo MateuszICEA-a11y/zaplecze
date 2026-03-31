@@ -88,6 +88,6 @@ Porównanie rocznych kosztów paliwa przy przebiegu 20 000 km (ceny z 2025 r.: O
 
 Analizując koszty silnika 1.5 BlueHDI, należy uwzględnić zużycie płynu AdBlue. Zbiornik o pojemności 17 litrów wystarcza na 6000–8000 km, a koszt jego uzupełnienia jest niewielki. Poważniejszym ryzykiem finansowym jest znana usterka układu [selektywnej redukcji katalitycznej (SCR)](https://pl.wikipedia.org/wiki/Selektywna_redukcja_katalityczna). Krystalizacja mocznika może prowadzić do awarii pompy lub czujników, a koszt wymiany całego zbiornika w ASO sięga 3500–4500 zł.
 
-{{% expert name="Zielinski" %}}Berlingo z silnikiem 1.5 BlueHDI to jeden z najtańszych w eksploatacji kombivanów na rynku. Partner i Rifter z identycznym silnikiem kosztują tyle samo, ale Caddy z 2.0 TDI pali zauważalnie więcej. Jeśli masz dostęp do ładowarki, ë-Berlingo obniża koszty paliwa o ponad 45%.{{% /expert %}}
+{{% expert name="Tomasz Zieliński" %}}Berlingo z silnikiem 1.5 BlueHDI to jeden z najtańszych w eksploatacji kombivanów na rynku. Partner i Rifter z identycznym silnikiem kosztują tyle samo, ale Caddy z 2.0 TDI pali zauważalnie więcej. Jeśli masz dostęp do ładowarki, ë-Berlingo obniża koszty paliwa o ponad 45%.{{% /expert %}}
 
 *Źródła: dane użytkowników, karty techniczne Citroën, auto-data.net*

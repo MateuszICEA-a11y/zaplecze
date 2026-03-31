@@ -97,7 +97,7 @@ Przy wyborze napędu do auta pod zabudowę trzeba patrzeć nie tylko na moc, ale
 
 Ważne są także wartości dopuszczalnej masy przyczepy bez hamulca i z hamulcem oraz dopuszczalna masa całkowita zespołu pojazdów. Te parametry zależą od silnika, napędu, skrzyni i homologacji, dlatego w aucie pracującym z lawetą lub przyczepą nie wolno ich traktować jako takich samych dla całej gamy.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Największy błąd przy zakupie bazowego podwozia pod Renault Master skrzyniowy to patrzenie tylko na DMC z katalogu. O legalności i użyteczności auta decyduje masa po zabudowie, naciski osi i dokumenty końcowe od zabudowcy. W praktyce warto zestawić masę własną bazy, masę zabudowy i planowany ładunek jeszcze przed podpisaniem zamówienia – wtedy łatwo wychwycić, czy 3,5 t wystarczy, czy trzeba od razu myśleć o cięższej homologacji.
 {{% /expert %}}
 

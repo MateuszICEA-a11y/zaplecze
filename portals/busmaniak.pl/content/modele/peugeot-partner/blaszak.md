@@ -99,7 +99,7 @@ Elektryczny e-Partner ma akumulator o pojemności ok. 50 kWh brutto i ok. 45 kWh
 
 Na szybkim ładowaniu DC maksymalna moc sięga 100 kW, a katalogowo do 80% można dojść w ok. 30 minut przy ładowarce DC 100 kW. Prędkość maksymalna e-Partnera wynosi 135 km/h.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Jeśli auto ma robić duże przebiegi i pracować codziennie z ładunkiem, najbezpieczniejszym wyborem jest 1.5 BlueHDi 100 KM albo 130 KM. Słabsze 75 KM obroni się głównie w lekkiej robocie miejskiej, a e-Partner ma sens tam, gdzie trasa jest przewidywalna i kończy się regularnym ładowaniem pod bazą.
 {{% /expert %}}
 

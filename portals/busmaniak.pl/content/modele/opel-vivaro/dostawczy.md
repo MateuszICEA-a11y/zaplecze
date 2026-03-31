@@ -50,7 +50,7 @@ Dla uporządkowania nomenklatury: parametry odpowiadające długości użytkowej
 
 Dla porównania, wersja S ma ok. 2162 mm długości użytkowej i 5,3 m³, a L – ok. 2862 mm oraz 6,6 m³. Z systemem FlexCargo/Moduwork maksymalna długość przewożonego elementu rośnie do ok. 3320 mm w S, 3670 mm w M i 4020 mm w L, a objętość zwiększa się o ok. 0,5 m³.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Szerokość między nadkolami na poziomie ok. 1258–1268 mm nie blokuje ustawienia pojedynczej europalety poprzecznie, bo sama paleta ma 1200 x 800 mm. Ograniczenie dotyczy raczej liczby palet i układu załadunku – w krótszych wersjach zwykle mieszczą się 2 europalety, a w najdłuższej 3.
 {{% /expert %}}
 

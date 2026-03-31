@@ -88,7 +88,7 @@ Silnik 1.3 TCe o mocy 131 KM to turbodoładowana czwórka opracowana wspólnie z
 
 Wersja bezemisyjna z silnikiem 122 KM, baterią 45 kWh i zasięgiem do 285 km (WLTP). Ładowanie DC do 80 kW pozwala uzupełnić energię od 15% do 80% w ok. 30 minut. Przestrzeń ładunkowa identyczna jak w wersji spalinowej – bateria ukryta pod podłogą.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W silnikach 1.5 dCi montowanych w Kangoo II skróć interwał wymiany oleju do 15 000 km zamiast fabrycznych 30 000 km. Chroni to panewki i turbosprężarkę, które przy rzadkiej wymianie poddają się już przy 180 tys. km. W Kangoo III ten problem jest mniejszy dzięki lepszemu filtrowi oleju.
 {{% /expert %}}
 

@@ -62,7 +62,7 @@ Trafic III to jedyny niezależny gracz w tym zestawieniu. Napędza go sprawdzony
 
 Renault oferuje 3-letnią gwarancję fabryczną – o rok dłuższą niż Opel i Peugeot. Sieć serwisowa w Polsce liczy ponad 100 punktów, co przekłada się na dobrą dostępność części i krótkie czasy napraw.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Jeśli szukasz sprawdzonego silnika diesla z ogromnym rynkiem części zamiennych, Trafic z 2.0 dCi M9R to bezpieczny wybór. Z drugiej strony, lifting modeli Stellantis sprawił, że ich cyfrowe kokpity są znacznie nowocześniejsze niż deska rozdzielcza w Renault.
 {{% /expert %}}
 

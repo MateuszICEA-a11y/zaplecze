@@ -119,7 +119,7 @@ Równie ważna jest profilaktyka. W 2.2 HDi warto skrócić interwał wymiany ol
 - **Korozja elementów podwozia i układu wydechowego** – warto sprawdzać szczególnie w autach flotowych
 - **Elektryka drzwi i centralnego zamka** – częsta grupa drobnych, ale irytujących awarii
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W 2.2 HDi najwięcej problemów bierze się z przeciąganych interwałów olejowych i zaniedbań w podstawowej obsłudze. Jeśli auto pracuje ciężko, olej co 15–20 tys. km, kontrola dolotu, podciśnienia i okolic wtrysków daje więcej niż późniejsze kosztowne naprawy.
 {{% /expert %}}
 

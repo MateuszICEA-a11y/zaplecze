@@ -56,7 +56,7 @@ Dobór zbiorników to kompromis między autonomią (ile dni bez uzupełniania wo
 
 Przy oszczędnym gospodarowaniu wodą (mycie naczyń, higiena, gotowanie) jedna osoba zużywa **8–15 litrów** dziennie. Jeśli w planach jest codzienny prysznic, zużycie skacze do **20–25 litrów**. Prosta kalkulacja: para na tygodniowy wyjazd bez dostępu do kranu potrzebuje zbiornika o pojemności **80–100 litrów**, aby zachować komfort.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Montuj zbiornik wody czystej jak najniżej – idealnie pod łóżkiem lub pod podłogą. Pełny zbiornik 100 l waży 100 kg – umieszczony wysoko podnosi środek ciężkości i pogarsza stabilność busa na zakrętach. Pod podłogą trzeba go ocieplić, ale zysk w stabilności jazdy jest wart dodatkowej pracy.
 {{% /expert %}}
 

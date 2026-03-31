@@ -68,7 +68,7 @@ Stal z powłoką proszkową to tańsza alternatywa o wyższej nośności. Sprawd
 - **Stal proszkowa** – 80–200 zł/m², wysoka nośność, podatność na korozję
 - **Pianka PUR (izolacja)** – 100–250 zł/m², stosowana w zabudowach izotermicznych
 
-{{% expert name="Zielinski" %}}Przy wyborze materiału zabudowy warto przeliczyć koszt na kilogram ładowności. W busie o DMC 3 500 kg każdy zaoszczędzony kilogram zabudowy to kilogram więcej towaru. Aluminium kosztuje więcej na starcie, ale pozwala przewozić 100–200 kg więcej niż zabudowa stalowa o tej samej funkcjonalności.{{% /expert %}}
+{{% expert name="Tomasz Zieliński" %}}Przy wyborze materiału zabudowy warto przeliczyć koszt na kilogram ładowności. W busie o DMC 3 500 kg każdy zaoszczędzony kilogram zabudowy to kilogram więcej towaru. Aluminium kosztuje więcej na starcie, ale pozwala przewozić 100–200 kg więcej niż zabudowa stalowa o tej samej funkcjonalności.{{% /expert %}}
 
 ## Producenci zabudów w Polsce {#producenci}
 Rynek zabudów pojazdów dostawczych w Polsce jest podzielony między globalnych liderów segmentu premium a liczne firmy krajowe, oferujące konkurencyjne cenowo rozwiązania.

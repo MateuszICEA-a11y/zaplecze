@@ -87,7 +87,7 @@ System korzysta z technologii satelitarnej (GNSS/GPS). Przed wjazdem na płatne 
 
 Stawka za kilometr zależy od klasy emisji EURO, liczby osi i kategorii drogi (autostrada, droga ekspresowa, droga I klasy).
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Słowackim mytem objęte są nie tylko autostrady, ale też wiele dróg krajowych I klasy. Bus dostawczy powyżej 3,5 t jadący z Żyliny do Bańskiej Bystrzycy drogą nr 18 również płaci myto. Przed wyjazdem sprawdź mapę płatnych odcinków na emyto.sk – może się okazać, że droga, która wydaje się „zwykłą krajówką”, jest objęta opłatami.
 {{% /expert %}}
 

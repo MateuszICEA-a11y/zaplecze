@@ -103,7 +103,7 @@ W praktyce kluczowe są: DMC, rozstaw osi, rodzaj kabiny, masa konkretnej zabudo
 
 Jeśli priorytetem jest niska masa zabudowy i dostęp z boków, plandeka zwykle wygrywa z kontenerem. Jeśli ważniejsza jest sztywność zabudowy i lepsza ochrona ładunku, sensowniejszy będzie kontener lub furgon, a do materiałów sypkich – wywrotka.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Najczęstszy problem w używanych autach z plandeką nie dotyczy samego logo na masce, tylko jakości zabudowy i jej montażu. Zawsze sprawdzam ramę pomocniczą, mocowania do podwozia, stan podłogi, zamki burt, naciąg plandeki i szczelność dachu. W kurtynach trzeba obejrzeć także rolki i prowadnice, a na końcu oświetlenie obrysowe oraz odblaski wymagane przepisami.
 {{% /expert %}}
 

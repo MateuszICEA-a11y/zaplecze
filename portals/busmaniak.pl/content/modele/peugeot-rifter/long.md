@@ -75,7 +75,7 @@ Pod względem masy własnej rodzinny kombivan tej klasy zwykle mieści się w wi
 
 Jeśli auto ma regularnie jeździć w komplecie pasażerów i z bagażem, najbardziej uniwersalny pozostaje 1.5 BlueHDi 130. Benzynowy 1.2 PureTech sprawdzi się przy spokojniejszym użytkowaniu, natomiast e-Rifter najlepiej pasuje do jazdy lokalnej i przewidywalnych tras.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W długim Rifterze największy sens mają dwie skrajnie różne konfiguracje. Diesel 1.5 BlueHDi 130 jest najlepszy na trasy i rodzinne wyjazdy, a e-Rifter broni się tam, gdzie codzienny przebieg jest powtarzalny i można regularnie ładować auto. Przy zakupie używanego PureTecha trzeba z kolei szczególnie uważać na starsze odmiany i historię serwisową.
 {{% /expert %}}
 

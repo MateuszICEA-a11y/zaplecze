@@ -64,7 +64,7 @@ Najczęstszą przyczyną awarii układu rozrządu w Ducato 2.3 nie jest jednak s
 
 Dlatego podczas wymiany rozrządu należy bezwzględnie wymienić pasek osprzętu (ok. 60–80 zł), jego napinacz (150–200 zł) oraz skontrolować stan sprzęgiełka jednokierunkowego alternatora.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Najczęstszym błędem podczas wymiany rozrządu w Ducato 2.3 jest próba ustawiania go „na znaki" malowane flamastrem zamiast użycia profesjonalnych blokad. Ten silnik jest bardzo czuły na precyzję synchronizacji. Nawet przesunięcie o jeden ząb może nie spowodować kolizji zaworów z tłokami, ale drastycznie pogorszy kulturę pracy, zwiększy spalanie i skróci życie filtra DPF.
 {{% /expert %}}
 

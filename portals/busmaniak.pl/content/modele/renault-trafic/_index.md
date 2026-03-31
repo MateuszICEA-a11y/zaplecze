@@ -65,7 +65,7 @@ Trafic III to wyłącznie diesle – to auto robocze, nie miejski kombivan.
 
 1.6 dCi single turbo to bezproblemowy silnik – przy regularnych wymianach oleju przejedzie 300 000 km. BiTurbo mocniejszy na papierze, ale dwa doładowania to dwa razy więcej elementów do awarii. Silnik 2.0 dCi od 2019 roku to inny poziom: większy moment, lepsza kultura pracy i spokojniejsza opinia wśród serwisantów.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy zakupie używanego Trafica historia serwisowa ważniejsza jest niż przebieg. Auto z 250 tys. km, ale z wymianami oleju co 15 000 km, to lepszy wybór niż egzemplarz z 150 tys. bez rachunków. Sprawdź też zużycie wnętrza – podłoga ładowni i fotel kierowcy powiedzą o historii eksploatacji więcej niż licznik.
 {{% /expert %}}
 

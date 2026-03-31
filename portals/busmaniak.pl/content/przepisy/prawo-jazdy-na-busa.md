@@ -124,7 +124,7 @@ Zanim zapiszesz się na kurs, musisz wyrobić Profil Kandydata na Kierowcę (PKK
 
 Ceny kursów różnią się między województwami. Najtaniej jest w mniejszych miastach – Radom, Kielce, Białystok (2500–3000 zł). W Warszawie, Krakowie i Wrocławiu ceny sięgają 4000–5000 zł.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Jeśli planujesz zakup kampera o DMC powyżej 3,5 t, rozważ zrobienie C1 jeszcze przed zakupem. Kurs trwa 2–4 tygodnie i kosztuje mniej niż jedna rata leasingu kampera. Alternatywa – szukanie modelu zarejestrowanego na 3,5 t z minimalną ładownością – to oszczędność pozorna, bo na co dzień będziesz walczyć o każdy kilogram.
 {{% /expert %}}
 

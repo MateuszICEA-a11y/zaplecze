@@ -68,7 +68,7 @@ Oblicz dzienne zużycie energii, by dobrać pojemność. Przykładowe zużycie w
 
 Łączne dzienne zużycie: 565–765 Wh, czyli 47–64 Ah przy 12V. Bateria LiFePO4 100 Ah pokryje ok. 1,5 dnia autonomii, a 200 Ah – ponad 3 dni. Aby uzyskać ten sam zapas z akumulatora AGM, potrzebujesz co najmniej 200 Ah (ze względu na 50% DOD).
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Nie kupuj baterii LiFePO4 bez wbudowanego BMS (Battery Management System). BMS chroni ogniwa przed przeładowaniem, głębokim rozładowaniem i zwarciem. Baterie bez BMS – spotykane w tanich ofertach z Chin – wymagają osobnego zabezpieczenia i mogą być niebezpieczne. Sprawdzone marki z BMS: Victron, LiTime, Renogy, Redodo.
 {{% /expert %}}
 

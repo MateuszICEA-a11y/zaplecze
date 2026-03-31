@@ -53,7 +53,7 @@ Podstawowy wariant rozwija 66 kW, czyli 90 KM, oraz 240 Nm. To odmiana nastawion
 
 Mocniejsza wersja osiąga 84 kW, czyli 114 KM, oraz 290 Nm. W praktyce daje wyraźnie lepszą elastyczność od słabszej odmiany, co ma znaczenie zwłaszcza w dłuższych wersjach nadwozia i przy regularnej jeździe z ładunkiem.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Na rynku wtórnym opel vivaro 2.0 cdti jest zwykle rozsądniejszym wyborem niż słabsze starsze diesle, ale kluczowe pozostaje rozróżnienie trwałości mechaniki od trwałości osprzętu. Sam blok i rozrząd potrafią znieść duże przebiegi, natomiast turbo, EGR, DPF i wtrysk są bardzo wrażliwe na jakość serwisu i sposób eksploatacji.
 {{% /expert %}}
 

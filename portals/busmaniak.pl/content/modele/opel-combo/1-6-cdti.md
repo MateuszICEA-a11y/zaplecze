@@ -48,7 +48,7 @@ Wariant 105 KM jest bardziej uniwersalny i lepiej pasuje do cięższej eksploata
 
 To także bezpieczniejszy wybór dla firm, które używają jednego auta w różnych zadaniach – od miasta po trasy krajowe. W takiej eksploatacji większy zapas momentu zwykle oznacza mniej męczące prowadzenie i mniejsze ryzyko ciągłego „męczenia” silnika pod obciążeniem.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy zakupie używanego Combo 1.6 CDTi nie skupiaj się wyłącznie na deklarowanym spalaniu. Kluczowe są masa wersji, rodzaj pracy auta i diagnostyka osprzętu. W vanie dostawczym historia przebiegu bez odczytu DPF, korekt wtrysków i stanu dwumasy mówi niewiele.
 {{% /expert %}}
 

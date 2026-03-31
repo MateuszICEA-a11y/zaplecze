@@ -81,7 +81,7 @@ Czterocylindrowy olej napędowy o pojemności 1499 cm³, dostępny w trzech stan
 
 Silnik 1.5 D-4D 100 KM w cyklu mieszanym WLTP spala 5,5–6,2 l/100 km. Norma emisji: Euro 6d. Dostępna skrzynia 6-biegowa manualna lub 8-biegowa automatyczna (EAT8).
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W segmencie kompaktowych dostawczaków diesel wciąż dominuje – zwłaszcza przy przebiegu powyżej 40 000 km rocznie. Proace City 1.5 D-4D 100 KM to aktualnie najchętniej wybierany wariant w Polsce: dobry balans mocy, rozsądne spalanie i niski koszt serwisu dzięki sieci Toyoty. Jeśli twój przebieg jest niższy i poruszasz się głównie w mieście, rozważ elektryka – zwłaszcza gdy masz dostęp do ładowania w miejscu pracy.
 {{% /expert %}}
 

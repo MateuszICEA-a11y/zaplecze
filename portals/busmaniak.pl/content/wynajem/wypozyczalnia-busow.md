@@ -86,7 +86,7 @@ Wynajem busa dostawczego o DMC do 3,5 tony wymaga spełnienia kilku podstawowych
 
 Kluczową kwestią jest realna ładowność pojazdu. Największe furgony, jak Fiat Ducato L4H3, ważą bez ładunku ok. 2200–2400 kg, co przy DMC 3,5 t pozostawia zaledwie 1100–1300 kg legalnej ładowności. Modele z windą mogą mieć jej jeszcze mniej, często tylko 700–900 kg. Przeładowanie busa jest częstym błędem, karanym przez ITD lub Policję mandatem w wysokości od 50 zł do nawet 3000 zł.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Zanim wyjedziesz wynajętym busem w trasę, poświęć 15 minut na jazdę próbną po pustym parkingu. Duży dostawczak (np. Ducato L4H3) ma zupełnie inne gabaryty niż samochód osobowy – szerokość, zwis tylny i martwe pola mogą zaskoczyć niedoświadczonego kierowcę. Szczególną uwagę zwróć na wysokość pojazdu – busy 2,7 m nie wjadą pod każdy wiadukt.
 {{% /expert %}}
 

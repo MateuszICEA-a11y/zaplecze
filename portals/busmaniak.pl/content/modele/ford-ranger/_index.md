@@ -89,7 +89,7 @@ Gama silnikowa Rangera obejmuje sprawdzone diesle 2.0 EcoBlue, legendarnego 5-cy
 
 Diesel 3.2 Duratorq to legenda – pięciocylindrowy motor ceniony za charakterystyczny dźwięk i pancerną trwałość. Mniej ekonomiczny, ale idealny do ciężkiego holowania. EcoBlue 2.0 jest nowocześniejszy i tańszy w eksploatacji.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W Rangerze z silnikiem 2.0 EcoBlue kluczowa jest wymiana oleju co 10–15 tys. km. Pasek rozrządu pracujący w kąpieli olejowej potrafi się łuszczyć i zapchać smok pompy olejowej – to najdroższa usterka tego silnika (wymiana silnika 15–25 tys. zł). Ford wymienia całe bloki na gwarancji.
 {{% /expert %}}
 

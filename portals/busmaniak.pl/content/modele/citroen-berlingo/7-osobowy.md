@@ -95,7 +95,7 @@ To samo dotyczy tezy, że „130 KM to minimum”. Bardziej precyzyjnie będzie 
 
 W III generacji istniał także ë-Berlingo, ale dostępność konfiguracji 7-osobowej zależała od rynku i roku modelowego. To wariant, który trzeba sprawdzać indywidualnie dla konkretnej oferty.
 
-{{% expert name="Kowalczyk" %}}Jeśli planujesz regularnie wykorzystywać Citroëna Berlingo 7-osobowego z kompletem pasażerów, celowałbym w mocniejsze odmiany 130 KM. Wersje 100 KM mają sens wtedy, gdy trzeci rząd będzie używany sporadycznie.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Jeśli planujesz regularnie wykorzystywać Citroëna Berlingo 7-osobowego z kompletem pasażerów, celowałbym w mocniejsze odmiany 130 KM. Wersje 100 KM mają sens wtedy, gdy trzeci rząd będzie używany sporadycznie.{{% /expert %}}
 
 ## Berlingo 7-osobowy vs konkurencja {#konkurencja}
 

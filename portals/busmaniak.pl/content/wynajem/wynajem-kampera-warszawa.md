@@ -88,7 +88,7 @@ Kilka opcji odbioru:
 
 Stawka dobowa przy krótkim wynajmie (2–3 dni) jest wyższa niż przy tygodniowym. Wypożyczalnie kompensują sobie w ten sposób koszty przygotowania pojazdu – czyszczenie, sprawdzenie techniczne i administracja są takie same niezależnie od długości wynajmu.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Weekend kamperem (piątek–niedziela) ma sens finansowy, gdy podróżujesz w grupie 4–6 osób. Koszt 900–1800 zł za 2 doby to mniej niż dwa pokoje hotelowe plus wyżywienie w restauracjach. Ale prawdziwe oszczędności widać przy tygodniowym wynajmie – stawka spada, a ty zdążysz naprawdę odpocząć, zamiast spędzić połowę weekendu na drodze.
 {{% /expert %}}
 

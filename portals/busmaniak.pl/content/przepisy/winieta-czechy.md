@@ -89,7 +89,7 @@ System wykorzystuje technologię satelitarną GPS. Przed wjazdem na czeskie drog
 
 Stawka za kilometr zależy od klasy emisji silnika (EURO), liczby osi i kategorii drogi. Pojazdy spełniające normę EURO VI płacą najniższe stawki.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Wielu kierowców busów kamperowych o DMC 3,5 t nie zdaje sobie sprawy, że ich pojazd po zabudowie i z pełnym zbiornikiem wody może przekraczać tę granicę. Jeśli dowód rejestracyjny wskazuje DMC powyżej 3500 kg – nawet 3501 kg – musisz korzystać z systemu mytne zamiast winiety. Warto to sprawdzić przed wyjazdem.
 {{% /expert %}}
 

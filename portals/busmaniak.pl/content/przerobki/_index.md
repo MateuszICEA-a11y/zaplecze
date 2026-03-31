@@ -126,7 +126,7 @@ Zgodnie z rozporządzeniem Ministra Infrastruktury, diagnosta na stacji kontroli
 
 Koszt procedury to opłata za badanie techniczne w OSKP i wymianę dowodu rejestracyjnego. Koszt uzyskania oświadczenia z warsztatu jest ustalany indywidualnie.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Zaplanuj zabudowę pod kątem wymagań diagnosty od samego początku. Widziałem dziesiątki projektów, w których budowniczy musiał przerabiać gotowe wnętrze, bo zapomniał o trwale zamontowanym stoliku lub bloku kuchennym ze zlewem podłączonym do zbiorników.
 {{% /expert %}}
 

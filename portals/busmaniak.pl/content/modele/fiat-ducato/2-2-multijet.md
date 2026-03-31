@@ -101,7 +101,7 @@ W nowym 2.2 MultiJet3 kluczowym obszarem ryzyka jest osprzęt emisji zgodny z Eu
 
 W praktyce należy sprawdzić stan DPF/SCR, liczbę udanych regeneracji i ogólną historię błędów związanych z emisją. To ważniejsze niż próba zgadywania, po jakim przebiegu dany element „powinien” się zepsuć.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Nowy silnik 2.2 MultiJet3 to naturalny następca 2.3 w aktualnym Ducato. Przy cięższych zabudowach najwięcej znaczą poprawny dobór mocy do DMC, regularny serwis i diagnostyka układu emisji, a nie same deklaracje katalogowe.
 {{% /expert %}}
 

@@ -96,7 +96,7 @@ W dieslach 1.5 BlueHDi trzeba pamiętać, że wymagają AdBlue, a interwał prze
 
 Realne spalanie dostawczego 1.5 BlueHDi zwykle mieści się w zakresie ok. 5,5–7,0 l/100 km, zależnie od obciążenia i trasy. Do pracy miejskiej i lekkiej dystrybucji wystarczą 75 lub 100 KM, natomiast przy stałej jeździe z większym ładunkiem lepiej wypada 130 KM.
 
-{{% expert name="Kowalczyk" %}}W wersji Van najrozsądniej wygląda 1.5 BlueHDi 100 KM z manualem 6-biegowym. To kompromis między osiągami, zużyciem paliwa i kosztami codziennej eksploatacji.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}W wersji Van najrozsądniej wygląda 1.5 BlueHDi 100 KM z manualem 6-biegowym. To kompromis między osiągami, zużyciem paliwa i kosztami codziennej eksploatacji.{{% /expert %}}
 
 ## Wersja Van vs osobowa {#van-vs-osobowy}
 

@@ -78,7 +78,7 @@ Inspekcja używanego kampera jest znacznie bardziej złożona niż w przypadku a
 - **Podłoga i ściany** – miękkie miejsca czy odkształcenia to sygnał alarmowy, mogący świadczyć o zgniliźnie.
 - **Lodówka, bojler i ogrzewanie** – sprawdź działanie na wszystkich źródłach zasilania (gaz, 12V, 230V). Naprawa tych urządzeń to koszt rzędu **3 000–8 000 zł**.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy zakupie używanego kampera absolutnym priorytetem jest sprawdzenie szczelności zabudowy. Koszt profesjonalnej naprawy przeciekającego dachu lub ściany sięga **15 000–30 000 zł**. Poproś sprzedawcę o aktualny protokół z testu wilgotności – jeśli go nie ma, zleć badanie na własną rękę. Kosztuje to ok. **300–500 zł** i może uchronić Cię przed finansową katastrofą.
 {{% /expert %}}
 

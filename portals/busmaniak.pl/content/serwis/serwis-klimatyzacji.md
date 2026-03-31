@@ -76,7 +76,7 @@ R1234yf jest droższy, ale bardziej ekologiczny. W przeciwieństwie do R134a jes
 
 Warto również wspomnieć o nowej technologii pojawiającej się w elektrycznych vanach, jak VW ID. Buzz Cargo. Wykorzystują one pompy ciepła z czynnikiem R744, czyli dwutlenkiem węgla (GWP=1). Układy te pracują pod ekstremalnie wysokim ciśnieniem, przekraczającym 100 bar, co wymaga specjalistycznych stacji serwisowych i wyklucza obsługę w przypadkowych warsztatach.
 
-{{% expert name="Kowalczyk" %}}Przy kupnie używanego busa z rocznika 2016–2018 sprawdź naklejkę na zaworach serwisowych. Niektóre egzemplarze z przełomu generacji miały jeszcze R134a, inne już R1234yf – zależy od daty produkcji, nie rejestracji. Różnica w koszcie rocznego serwisu to 200–300 zł, a przy wymianie sprężarki nawet 500 zł.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Przy kupnie używanego busa z rocznika 2016–2018 sprawdź naklejkę na zaworach serwisowych. Niektóre egzemplarze z przełomu generacji miały jeszcze R134a, inne już R1234yf – zależy od daty produkcji, nie rejestracji. Różnica w koszcie rocznego serwisu to 200–300 zł, a przy wymianie sprężarki nawet 500 zł.{{% /expert %}}
 
 ## Koszty serwisu klimatyzacji w 2026 roku
 

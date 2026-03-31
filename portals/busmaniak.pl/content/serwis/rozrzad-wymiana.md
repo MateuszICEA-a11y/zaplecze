@@ -76,7 +76,7 @@ Objawy rozciągniętego łańcucha rozrządu:
 - **Utrudniony rozruch** – przeskok łańcucha o ogniwo zmienia kąt wyprzedzenia, rozrusznik kręci dłużej przed zapłonem.
 - **Nierówna praca na biegu jałowym** – wibracje i wahania obrotów spowodowane rozregulowaniem faz.
 
-{{% expert name="Kowalczyk" %}}Przy zakupie używanego Sprintera z silnikiem OM651 i przebiegiem powyżej 150 000 km zawsze nasłuchuję pracy zimnego silnika przez pierwsze 10–15 sekund. Rozciągnięty łańcuch to koszt naprawy rzędu 4500–6500 zł, o którym sprzedający często „zapominają". W Ducato 2.3 patrzę na datę produkcji paska – nawet jeśli przebieg jest niski, pasek starszy niż 5 lat wymaga wymiany, bo guma twardnieje i traci elastyczność.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Przy zakupie używanego Sprintera z silnikiem OM651 i przebiegiem powyżej 150 000 km zawsze nasłuchuję pracy zimnego silnika przez pierwsze 10–15 sekund. Rozciągnięty łańcuch to koszt naprawy rzędu 4500–6500 zł, o którym sprzedający często „zapominają". W Ducato 2.3 patrzę na datę produkcji paska – nawet jeśli przebieg jest niski, pasek starszy niż 5 lat wymaga wymiany, bo guma twardnieje i traci elastyczność.{{% /expert %}}
 
 ## Co wymieniać razem z paskiem rozrządu
 

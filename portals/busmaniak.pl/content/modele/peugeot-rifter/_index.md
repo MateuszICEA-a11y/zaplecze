@@ -28,7 +28,7 @@ Model zaprezentowano podczas targów w Genewie w 2018 roku jako następca rekrea
 
 W 2021 roku ofertę uzupełnił w pełni elektryczny e-Rifter, który przez pewien czas był jedyną dostępną wersją w salonach Unii Europejskiej ze względu na limity emisji spalin. Rok 2024 przyniósł głęboki facelifting, obejmujący nowy pas przedni z sygnaturą świetlną w kształcie trzech pazurów oraz zaktualizowane wnętrze z 10-calowym ekranem dotykowym.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Rifter najlepiej z całej rodziny K9 trzyma wartość rezydualną na rynku wtórnym.
 {{% /expert %}}
 

@@ -123,7 +123,7 @@ Przy wymianie warto jednocześnie:
 - Pamiętać o odpowiednim momencie dokręcania – zazwyczaj 8–10 Nm. Obudowa czujnika jest plastikowa i łatwo ją uszkodzić.
 - Sprawdzić luz między czujnikiem a kołem zamachowym – powinien wynosić 0,5–1,5 mm.
 
-{{% expert name="Kowalczyk" %}}W wielu busach plastikowa obudowa czujnika zapieka się w aluminiowym otworze bloku lub skrzyni biegów. Próba wyciagnięcia go na siłę kończy się ułamaniem na równo z blokiem. Wydobycie resztek wymaga wtedy nawiercania lub nawet demontażu skrzyni. Zawsze stosujcie penetrator i ostrożnie obracajcie czujnikiem na boki, zanim użyjecie siły.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}W wielu busach plastikowa obudowa czujnika zapieka się w aluminiowym otworze bloku lub skrzyni biegów. Próba wyciagnięcia go na siłę kończy się ułamaniem na równo z blokiem. Wydobycie resztek wymaga wtedy nawiercania lub nawet demontażu skrzyni. Zawsze stosujcie penetrator i ostrożnie obracajcie czujnikiem na boki, zanim użyjecie siły.{{% /expert %}}
 
 ## Gdzie jest czujnik w popularnych busach
 

@@ -75,7 +75,7 @@ Od 2024 roku dostępna jest wersja w pełni elektryczna:
 
 e-Interstar celuje w dostawy ostatniej mili w strefach zeroemisyjnych, które coraz powszechniej wprowadzają europejskie miasta.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przeskok z 2.3 dCi na 2.0 Blue dCi to dobra decyzja inżynierów Renault. Mniejszy silnik jest cichszy, oszczędniejszy i spełnia najnowsze normy emisji bez kompromisów w zakresie momentu obrotowego. Jeśli szukasz używanego Interstara z 2.3 dCi – sprawdź koniecznie stan turbosprężarki i wtrysków, bo te elementy po 200 tys. km wymagały regeneracji. Nowe 2.0 Blue dCi jest pod tym względem znacznie trwalsze. Z kolei [NV200](/modele/nissan-nv200/) to zupełnie inna klasa – kompaktowy dostawczak do miasta.
 {{% /expert %}}
 

@@ -84,7 +84,7 @@ Wersja PHEV wykorzystuje benzynowy silnik 2.5 i napęd hybrydowy plug-in. Z kole
 
 Przy wyborze napędu warto patrzeć nie tylko na moc. Równie istotne są homologacyjne zużycie paliwa WLTP i pojemność zbiornika w dieslu oraz zasięg WLTP i moc ładowania AC/DC w wersji elektrycznej, bo to one decydują o realnej przydatności auta w przewozie osób.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Jeśli auto ma jeździć głównie po mieście albo w przewozach hotelowych i lotniskowych, napędy zelektryfikowane zasługują dziś na osobną analizę. W Fordzie Transit osobowym różnice między dieslem, PHEV i BEV są na tyle duże, że najlepiej dobierać wersję pod konkretny profil trasy.
 {{% /expert %}}
 

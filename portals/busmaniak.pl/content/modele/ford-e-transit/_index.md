@@ -115,7 +115,7 @@ Wymiary i objętości:
 
 Ładowność do 1616 kg w wersji L2H2 to wynik porównywalny z dieslowym Transitem – Ford osiągnął to dzięki optymalizacji masy baterii i zastosowaniu aluminium w wybranych elementach nadwozia. Objętość 15,1 m³ w największej konfiguracji L4H3 pozwala na przewóz pięciu europalet.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Dla firm kurierskich najlepszym wyborem jest L3H2 – wystarczająca objętość 11,3 m³ przy rozsądnej ładowności 1575 kg i zasięgu ok. 260 km WLTP. Wersja L4H3 ma sens głównie dla operatorów, którzy potrzebują maksymalnej objętości, ale muszą liczyć się z krótszym zasięgiem i wyższą masą własną.
 {{% /expert %}}
 

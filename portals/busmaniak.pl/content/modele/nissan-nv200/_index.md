@@ -81,7 +81,7 @@ Sercem gamy diesla jest legendarny [silnik K9K](https://en.wikipedia.org/wiki/Re
 
 Benzyna 1.6 HR16DE – prosta konstrukcja z łańcuchem rozrządu (bezobsługowy). Dobrze współpracuje z LPG. Optymalny wybór dla firm na krótkich dystansach miejskich, gdzie diesel miałby problemy z DPF.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 NV200 wjeżdża tam, gdzie [Fiat Fiorino](/modele/fiat-fiorino/) czuje się swobodnie, ale oferuje znacznie większą pakę – 4,2 m³ wobec 2,8 m³. W egzemplarzach dCi z początku produkcji (do 2012 r.) wymień profilaktycznie panewki co 150 tys. km. Zaniedbanie tego grozi zatarciem na dolnych łożyskach wału.
 {{% /expert %}}
 

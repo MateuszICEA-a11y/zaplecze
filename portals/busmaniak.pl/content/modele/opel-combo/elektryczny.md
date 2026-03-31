@@ -78,7 +78,7 @@ Zużycie energii w tej klasie elektrycznych vanów wynosi zwykle ok. 18–20,5 k
 
 Do bazy nocnej wystarczy wallbox 7,4 kW, ale ekonomicznie najważniejsza jest sama możliwość regularnego ładowania pod firmą lub w domu. Bez tego przewaga kosztowa auta elektrycznego szybko maleje, zwłaszcza przy częstym korzystaniu z publicznych ładowarek szybkich.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Opel e-Combo ma sens przede wszystkim tam, gdzie samochód wraca codziennie do bazy i pokonuje powtarzalne trasy. W takim układzie łatwo wykorzystać tanią energię nocną i ograniczyć postoje na publicznym DC, które najmocniej psują ekonomikę użytkowania.
 {{% /expert %}}
 

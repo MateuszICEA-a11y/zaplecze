@@ -87,7 +87,7 @@ W ofertach polskich wypożyczalni dominują sprawdzone konstrukcje od niemieckic
 
 Uwaga: dłuższy model VW Grand California 680, ze względu na wysoką masę własną, jest często rejestrowany z dopuszczalną masą całkowitą 3880 kg. Wynajem takiego pojazdu wymaga od kierowcy posiadania prawa jazdy kategorii C lub C1 i wiąże się z wyższymi opłatami drogowymi w systemie e-TOLL.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Dla par planujących 2–3-tygodniowy wyjazd po Europie polecam mini półintegrę typu Pössl Summit 540 – ma toaletę, mieści się na parkingu w Dubrowiku i spala mniej niż duża półintegra. VW Grand California jest komfortowszy, ale kosztuje 100–150 zł/dobę więcej przy podobnej przestrzeni.
 {{% /expert %}}
 

@@ -115,7 +115,7 @@ Można przyjąć, że:
 - w wersjach Euro 6 koszty mogą podnosić awarie SCR, czujników NOx, przewodów i osprzętu AdBlue
 - diagnostyka łańcucha rozrządu jest ważniejsza niż planowanie „książkowej” wymiany, bo tu nie ma klasycznego zestawu paska, rolek i pompy wody
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Silnik M9T jest trwały, ale wymaga dyscypliny serwisowej. W autach dostawczych największym błędem pozostaje przeciąganie wymiany oleju, zwłaszcza przy jeździe miejskiej, pracy na biegu jałowym i dużym obciążeniu – wtedy bezpieczniej trzymać się przedziału 15 000–20 000 km niż maksymalnych wartości katalogowych.
 
 Przy zakupie używanego egzemplarza nie wystarczy sprawdzić, czy silnik „ładnie chodzi”. Trzeba zobaczyć korekty wtrysków, historię błędów DPF i SCR, temperaturę pracy po rozgrzaniu, stan przewodów dolotu i to, czy pod obciążeniem auto nie dymi oraz buduje prawidłowe ciśnienie doładowania.

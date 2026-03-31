@@ -34,7 +34,7 @@ Rynek kamperów 4-osobowych dzieli się na trzy główne kategorie, z których k
 
 Wybór sprowadza się do prostego pytania o priorytety. Jeśli liczy się mobilność i zwinność, opcją jest camper van. Gdy kluczowy jest komfort termiczny i bezkompromisowa przestrzeń do spania, alkowa nie ma sobie równych. Moduł to z kolei kompromis dla tych, którzy używają jednego auta na co dzień i do podróży.
 
-{{% expert name="Wozniak" %}}Dla rodziny z dziećmi do 10 lat polecam camper vana z podnoszonym dachem – maluchy śpią na górze, gdzie niższy sufit im nie przeszkadza, a dorośli mają pełnowymiarowe łóżko na dole. Alkowa ma sens dopiero przy nastolatkach, które potrzebują więcej prywatności i przestrzeni.{{% /expert %}}
+{{% expert name="Anna Wóźniak" %}}Dla rodziny z dziećmi do 10 lat polecam camper vana z podnoszonym dachem – maluchy śpią na górze, gdzie niższy sufit im nie przeszkadza, a dorośli mają pełnowymiarowe łóżko na dole. Alkowa ma sens dopiero przy nastolatkach, które potrzebują więcej prywatności i przestrzeni.{{% /expert %}}
 
 ## Porównanie modeli 4-osobowych
 

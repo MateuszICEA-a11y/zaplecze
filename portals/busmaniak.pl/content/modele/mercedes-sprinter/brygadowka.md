@@ -123,7 +123,7 @@ Typowe elementy zabudowy skrzyniowej to:
 
 Instalacja 230 V z gniazdami w pace nie jest standardem bazowej brygadówki. To opcja zabudowy specjalistycznej, wymagająca dodatkowych komponentów zasilania, dlatego trzeba ją zamawiać świadomie pod konkretny scenariusz pracy.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy zamawianiu brygadówki dla ekipy terenowej warto dopisać do specyfikacji uchwyt na drabinę, solidne punkty mocowania ładunku i blokady tylnej klapy oraz schowków. Jeśli pojazd ma zasilać elektronarzędzia na postoju, instalację 230 V trzeba traktować jako wyposażenie specjalistyczne, a nie oczywisty standard każdej zabudowy.
 {{% /expert %}}
 

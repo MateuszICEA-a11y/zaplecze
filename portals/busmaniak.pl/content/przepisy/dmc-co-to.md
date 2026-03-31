@@ -110,7 +110,7 @@ Konsekwencje wykraczają daleko poza sam mandat. Funkcjonariusz ma prawo zakaza�
 
 Wbrew powszechnym mitom, dla pojazdów o DMC do 3,5 tony nie istnieje sztywny, procentowy taryfikator mandatów. Policjant podczas kontroli ocenia sytuację indywidualnie. Na podstawie art. 97 Kodeksu Wykroczeń może nałożyć mandat w wysokości od 20 zł do 3000 zł, przy czym w praktyce za przeładowanie mandaty zaczynają się zazwyczaj od 500 zł.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy DMC 3500 kg, 175 kg nadwagi to już 5% przekroczenia, co może skutkować mandatem w wysokości 500 zł. Policja nie musi stosować żadnej tolerancji błędu pomiarowego. Dlatego zawsze zostawiaj 100–150 kg zapasu.
 {{% /expert %}}
 

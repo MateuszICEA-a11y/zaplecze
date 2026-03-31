@@ -85,7 +85,7 @@ Manual pozostaje tańszy w utrzymaniu i prostszy konstrukcyjnie. DSG daje lepszy
 
 Pełny przegląd silników i generacji na stronie [Volkswagena Caddy](/modele/volkswagen-caddy/).
 
-{{% expert name="Kowalczyk" %}}Do rodzinnego użytkowania najbezpieczniejszym wyborem pozostaje 2.0 TDI 102 KM, zwłaszcza jeśli auto ma regularnie jeździć w trasie albo z kompletem pasażerów. Przy egzemplarzach z DSG najważniejsza jest udokumentowana obsługa skrzyni, a nie sama obecność automatu.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Do rodzinnego użytkowania najbezpieczniejszym wyborem pozostaje 2.0 TDI 102 KM, zwłaszcza jeśli auto ma regularnie jeździć w trasie albo z kompletem pasażerów. Przy egzemplarzach z DSG najważniejsza jest udokumentowana obsługa skrzyni, a nie sama obecność automatu.{{% /expert %}}
 
 ## Caddy osobowy vs konkurencja {#konkurencja}
 

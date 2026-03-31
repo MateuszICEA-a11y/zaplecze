@@ -97,7 +97,7 @@ Proace Verso wygrywa ceną wejścia i opcją 9 miejsc w standardowej konfiguracj
 
 Dla przewoźników i firm, dla których liczy się stosunek ceny do ładowności i liczby miejsc, Proace Verso Long z silnikiem 2.0 D-4D 177 KM to jeden z najbardziej opłacalnych wyborów w segmencie.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Toyota Proace Verso Long 9-miejscowy z automatem EAT8 i silnikiem 177 KM to pojazd, który od lat dominuje w segmencie transferów lotniskowych w Polsce. Kluczową zaletą jest niska cena eksploatacji przy intensywnym przebiegu – silniki 2.0 D-4D są stosunkowo prostą konstrukcją wywodzącą się z grupy PSA, a ich serwis jest tani i dostępny w całej sieci. Wersja elektryczna jest atrakcyjna podatkowo, ale realny zasięg 75 kWh baterii w trasie z pełnym obłożeniem spada do ok. 250 km zimą – trzeba to uwzględnić przy planowaniu.
 {{% /expert %}}
 

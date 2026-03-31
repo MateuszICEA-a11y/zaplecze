@@ -109,7 +109,7 @@ Rynek wtórny to najpopularniejsze wejście w świat kamperów – ok. 70% pierw
 | **Alkowa** | 2008–2018 | 70 000 zł | 250 000 zł |
 | **Integra** | 2010–2020 | 150 000 zł | 400 000 zł |
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy zakupie używanego kampera najważniejsze jest sprawdzenie szczelności zabudowy – koszt naprawy przeciekającego dachu potrafi sięgnąć 15 000–30 000 zł. Poproś sprzedawcę o protokół z testu wilgotnościowego wykonanego przez specjalistyczny serwis kamperów. Jeśli go nie ma, zamów test samodzielnie przed finalizacją transakcji.
 {{% /expert %}}
 

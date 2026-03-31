@@ -129,7 +129,7 @@ Warto również zwrócić uwagę na pojemność zbiornika paliwa, kluczową w tr
 
 Coraz większą rolę odgrywają wersje w pełni elektryczne (BEV), skierowane głównie do firm transportowych w ruchu miejskim i podmiejskim. Do wyboru są m.in. Mercedes EQV (bateria 60/90 kWh, realny zasięg 250–330 km), modele koncernu Stellantis jak ë-SpaceTourer czy Zafira-e (baterie 50/75 kWh) oraz Ford E-Transit Custom.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Jeśli planujesz regularne trasy z kompletem pasażerów, wybierz silnik o mocy minimum 150 KM ze skrzynią automatyczną. Jednostki 120 KM w korku dają radę, ale na autostradzie przy pełnym obciążeniu brakuje im rezerwy mocy do wyprzedzania. Ford i VW z 8-biegowym automatem oferują najlepszy kompromis między dynamiką a spalaniem.
 {{% /expert %}}
 

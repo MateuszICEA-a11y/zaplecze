@@ -127,7 +127,7 @@ Podane niżej kwoty należy traktować wyłącznie jako orientacyjne ceny rynkow
 | Wtryskiwacze | koszt zależy od typu układu i cen części | koszt zależy od typu układu i cen części | koszt zależy od typu układu i cen części |
 | DPF | tylko w wersjach wyposażonych w filtr | zależnie od wersji i rynku | zależnie od wersji i rynku |
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy Doblò 1.6 i 2.0 kluczowe są trzy pytania: kiedy był robiony rozrząd, czy była wymieniana dwumasa i jaki jest stan DPF na diagnostyce. Jeśli sprzedający nie ma potwierdzeń, trzeba założyć budżet serwisowy po zakupie.
 {{% /expert %}}
 

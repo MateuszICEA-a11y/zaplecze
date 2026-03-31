@@ -46,7 +46,7 @@ Tak jak w 1.5D, dane WLTP trzeba przypisywać do konkretnej konfiguracji – Fur
 
 W praktyce 2.0D zwykle spala więcej niż 1.5D, ale różnica nie jest stała i zależy od scenariusza użycia. Przy cięższej pracy i większym ładunku mocniejszy silnik nie musi być proporcjonalnie dużo bardziej paliwożerny, bo pracuje z mniejszym wysiłkiem niż słabsza jednostka.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W Vivaro C nie ma jednej odpowiedzi na pytanie, ile pali 2.0D. Lżejszy furgon L1 z manualem pokaże inny wynik niż dłuższe L2 albo Combi, a automat 8AT trzeba oceniać w kontekście konkretnego zastosowania. Do regularnej jazdy z ładunkiem i tras szybkiego ruchu 2.0D ma po prostu więcej sensu użytkowego niż bazowe 1.5D.
 {{% /expert %}}
 

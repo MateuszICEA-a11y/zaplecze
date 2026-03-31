@@ -74,7 +74,7 @@ Skrzynie biegów również trzeba przypisać do konkretnej wersji. W tej rodzini
 
 Przy wyborze jednostki do brygadówki najważniejsze jest więc nie hasło marketingowe, ale konkret: rocznik, pojemność, moc, moment obrotowy, rodzaj napędu i przewidywana masa robocza auta. Bez tych danych nie da się uczciwie wskazać jednej „najlepszej” wersji.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy zakupie auta z rynku wtórnego sprawdź nie tylko silnik, ale też zgodność zabudowy z dokumentami. W brygadówce krytyczne są stan przegrody, mocowania siedzeń i pasów, zgodność liczby miejsc z dowodem oraz ślady przeciążeń tylnego zawieszenia.
 {{% /expert %}}
 

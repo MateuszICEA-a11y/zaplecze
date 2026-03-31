@@ -85,7 +85,7 @@ Między II a III generacją Doblò zmiana platformy na PSA EMP2 przyniosła niez
 
 **Maxi** – rozstawiony rozstaw osi. Dostępny zarówno jako Cargo, jak i Panorama. Ładowność i przestrzeń wyraźnie większe niż w krótkiej wersji.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy zakupie używanego Doblò II z silnikiem 1.6 MultiJet sprawdź stan dwumasowego koła zamachowego – to pierwsza rzecz, która pada po 150 tys. km intensywnej eksploatacji miejskiej. Przy 2.0 MultiJet zwróć uwagę na układ wtryskowy – regenerowane wtryskiwacze potrafią nie dawać pełnej mocy przez kilka tygodni po wymianie.
 {{% /expert %}}
 

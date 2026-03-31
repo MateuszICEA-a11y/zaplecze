@@ -126,6 +126,6 @@ Przy oględzinach używanego egzemplarza trzeba sprawdzić:
 
 Warto pamiętać, że ta sama baza techniczna występowała również jako Peugeot Boxer i Citroen Jumper/Relay. Jednostka 3.0 F1C pojawiała się też w pokrewnych pojazdach dostawczych zależnie od rynku, co ma znaczenie dla dostępności części.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Silnik 3.0 MultiJet to bardzo dobry wybór pod ciężkiego kampera, autolawetę albo intensywną jazdę trasową z dużym obciążeniem. Jeśli jednak auto ma pracować głównie w lekkiej dystrybucji miejskiej, popularny 2.3 MultiJet często okazuje się rozsądniejszy kosztowo.
 {{% /expert %}}

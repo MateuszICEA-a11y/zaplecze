@@ -85,7 +85,7 @@ Gama silnikowa Opel Movano obejmuje kilka wariantów mocy – wybór jednostki n
 
 Starszy 2.5 CDTI (gen A) ceniony za mechaniczną prostotę – łatwy w serwisie, ale żarłoczny. Silniki 2.3 CDTI (gen B) to rdzeń gamy: BiTurbo w mocniejszych wariantach zapewnia dynamikę przy pełnym załadunku. W gen C przejście na 2.2 MultiJet z rodziny Ducato.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W Movano C kluczowe jest monitorowanie stanu filtra DPF, który potrafi zapełnić się już po 7500 km miejskiej jazdy. Koszt regeneracji serwisowej to ok. 1400 zł. Regularne trasy autostradowe (30+ km) wypalają sadzę naturalnie.
 {{% /expert %}}
 

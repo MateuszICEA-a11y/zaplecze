@@ -100,7 +100,7 @@ W zależności od marki busa procedura wygląda inaczej:
 - **Mercedes Sprinter** – programowanie przez system FDOK/Xentry. Wymaga połączenia online z serwerem Mercedesa do autoryzacji. Koszt usługi w ASO: 500–1000 zł.
 - **Ford Transit** – programowanie przez IDS/FDRS. Możliwe zaprogramowanie do 8 kluczyków jednocześnie.
 
-{{% expert name="Kowalczyk" %}}Przy zakupie używanego busa zawsze pytaj o oba kluczyki – oryginalny i zapasowy. Dorobienie kluczyka do nowszego Ducato czy Sprintera bez żadnego działającego klucza (tzw. „all keys lost") to procedura wymagająca zdejmowania sterownika, odczytu pamięci EEPROM i programowania offline. Koszt takiej operacji to 1000–2500 zł, podczas gdy dorobienie drugiego klucza, gdy mamy pierwszy, kosztuje 300–800 zł.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Przy zakupie używanego busa zawsze pytaj o oba kluczyki – oryginalny i zapasowy. Dorobienie kluczyka do nowszego Ducato czy Sprintera bez żadnego działającego klucza (tzw. „all keys lost") to procedura wymagająca zdejmowania sterownika, odczytu pamięci EEPROM i programowania offline. Koszt takiej operacji to 1000–2500 zł, podczas gdy dorobienie drugiego klucza, gdy mamy pierwszy, kosztuje 300–800 zł.{{% /expert %}}
 
 ## Dorabianie kluczyka do busa – koszt i opcje
 

@@ -63,7 +63,7 @@ Dowiedz się więcej o tej jednostce: [Silnik 3.0 MultiJet](/modele/fiat-ducato/
 
 To najpopularniejszy wybór na rynku wtórnym i trudno się temu dziwić. Jednostka z rodziny F1A opracowana przez inżynierów Iveco (FPT) łączy przyzwoitą dynamikę z rozsądnym apetytem na paliwo. W wersji 130 KM w cyklu mieszanym spokojnie zejdziemy poniżej 9 litrów – pod warunkiem że nie forsujemy prędkości powyżej 110 km/h.
 
-{{% expert name="Kowalczyk" %}}Pracując przy serwisowaniu flot opartych na Ducato, zauważam, że najniższe realne spalanie osiągają kierowcy korzystający z wersji 2.3 MultiJet o mocy 150 KM. Ten wariant ma najlepszy stosunek mocy do masy, co pozwala na sprawną jazdę bez konieczności ciągłego "kręcenia" silnika na wysokich obrotach.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Pracując przy serwisowaniu flot opartych na Ducato, zauważam, że najniższe realne spalanie osiągają kierowcy korzystający z wersji 2.3 MultiJet o mocy 150 KM. Ten wariant ma najlepszy stosunek mocy do masy, co pozwala na sprawną jazdę bez konieczności ciągłego "kręcenia" silnika na wysokich obrotach.{{% /expert %}}
 
 Więcej szczegółów technicznych znajdziesz tutaj: [Silnik 2.3 MultiJet](/modele/fiat-ducato/2-3-multijet/).
 

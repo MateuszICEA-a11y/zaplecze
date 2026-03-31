@@ -117,7 +117,7 @@ W segmencie małych vanów 7-osobowych dominują dwa silniki: diesel 1.5 o mocy 
 
 Najtańszym w eksploatacji wariantem jest diesel 1.5 w bliźniakach Stellantis – przy spokojnej jeździe spala poniżej 5 l/100 km. Dacia Jogger Hybrid 140 KM to ciekawa alternatywa dla osób jeżdżących głównie w mieście – rekuperacja i tryb elektryczny obniżają spalanie do 4,8 l/100 km.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Na rynku wtórnym szukaj diesla 1.5 BlueHDi/dCi z manualną skrzynią. Ten silnik (rodzina DV5) przy regularnych wymianach oleju co 15 000 km bez problemu wytrzymuje 300 000 km. Unikaj wersji 1.6 HDi (DV6) z lat 2014–2017 – miały problemy z rozrządem łańcuchowym.
 {{% /expert %}}
 

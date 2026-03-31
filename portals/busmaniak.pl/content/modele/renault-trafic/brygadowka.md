@@ -78,7 +78,7 @@ W gamie Trafica III występowały jednostki 1.6 dCi 95/115/120/140 KM oraz póź
 
 Przy używanym egzemplarzu ważniejsza od marketingowej nazwy wersji jest lista punktów kontrolnych. W nowszych dieslach trzeba sprawdzić układ AdBlue/SCR, stan DPF i EGR, a niezależnie od wersji także dwumasę, turbosprężarkę lub turbosprężarki, wtryski oraz historię obsługi skrzyni EDC, jeśli auto ją ma. Kluczowa jest też regularna wymiana oleju – najlepiej potwierdzona w historii serwisowej.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Do codziennej pracy brygadowej patrzyłbym przede wszystkim na konfigurację całego auta, a nie tylko na moc. Słabsze 1.6 dCi wystarczy tam, gdzie auto jeździ lokalnie i bez przyczepy. Jeśli jednak Trafic regularnie wozi pełną ekipę i sprzęt, 2.0 dCi M9T od 2019 roku jest po prostu bardziej naturalnym wyborem. Przy oględzinach używanego egzemplarza najwięcej mówi stan osprzętu i jakość serwisu, nie sama liczba koni mechanicznych.
 {{% /expert %}}
 

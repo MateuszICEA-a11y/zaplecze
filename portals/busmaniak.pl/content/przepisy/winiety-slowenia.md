@@ -95,7 +95,7 @@ Główne trasy płatne:
 
 Drogi regionalne, lokalne i miejskie są bezpłatne. Jeśli chcesz ominąć opłaty, możesz korzystać z dróg drugorzędnych – ale w górskim terenie Słowenii trasa wydłuża się znacząco.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Jadąc busem do Chorwacji przez Słowenię, nie ma sensu omijać autostrady. Trasa A2 od tunelu Karawanki do granicy chorwackiej to niecałe 200 km i zajmuje mniej niż 2 godziny. Alternatywa górskimi drogami to 3,5–4 godziny i kilometry serpentyn, które przy dłuższym busie potrafią zmęczyć bardziej niż cały urlop.
 {{% /expert %}}
 

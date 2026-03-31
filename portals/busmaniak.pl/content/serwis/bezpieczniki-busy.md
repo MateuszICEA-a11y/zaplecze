@@ -100,7 +100,7 @@ Ford Transit ma dwie skrzynki:
 - **Skrzynka kabinowa** – pod deską rozdzielczą po stronie pasażera, za schowkiem. Dostęp po wyjęciu schowka (dociśnij boki i pociągnij). Ponad 40 bezpieczników mini.
 - **Skrzynka silnikowa** – przy akumulatorze, pod pokrywą zatrzaskową. Bezpieczniki maxi i mega – główne obwody zasilania.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Najczęstszy problem w busach kurierskich i kamperach to bezpieczniki gniazd 12V – urządzenia dodatkowe (lodówka, przetwornica, ładowarka) przeciążają fabryczny obwód 15–20 A. Zamiast wkładać mocniejszy bezpiecznik, poprowadź osobny przewód z grubszym przekrojem bezpośrednio od akumulatora z własnym bezpiecznikiem. To bezpieczniejsze i eliminuje problem przepalania.
 {{% /expert %}}
 

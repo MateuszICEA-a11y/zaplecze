@@ -74,7 +74,7 @@ Każdy producent umieszcza naklejkę z zalecanymi wartościami ciśnienia w łat
 
 Naklejka podaje ciśnienie dla różnych wariantów obciążenia – zazwyczaj dla pojazdu pustego i z pełnym ładunkiem. W niektórych busach (np. Sprinter 5xx) znajdziesz nawet trzy warianty: pusty, częściowo załadowany i pełny.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Naklejka to jedyne w pełni wiarygodne źródło informacji o ciśnieniu – producent uwzględnia na niej konkretny model, wariant nadwozia i rozmiar opon. Tabele internetowe podają wartości uśrednione, ale różnica między wariantami tego samego modelu potrafi sięgać 1,0 bar. Jeśli naklejka jest nieczytelna, zamów duplikat u dealera – kosztuje kilkanaście złotych.
 {{% /expert %}}
 

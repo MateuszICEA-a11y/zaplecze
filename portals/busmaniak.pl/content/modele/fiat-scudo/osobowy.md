@@ -79,7 +79,7 @@ Dla E-Scudo przewidziano akumulatory 50 i 75 kWh. Deklarowany zasięg WLTP wynos
 
 W praktyce szybkie ładowanie 0–80% przy DC 100 kW zajmuje ok. 30–45 minut zależnie od pojemności baterii. Trzeba też pamiętać, że realny zasięg zimą, przy pełnym obciążeniu i ogrzewaniu, może spaść do ok. 180–250 km dla wersji 75 kWh.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Jeśli fiat scudo osobowy ma pracować jako auto transferowe, celowałbym przede wszystkim w Scudo III z dieslem 2.0 – najlepiej 145 lub 177 KM. Słabsze jednostki 1.5 mają sens głównie przy lżejszej eksploatacji i krótszych trasach, natomiast przy pełnym obłożeniu wyraźnie bardziej komfortowe okazują się mocniejsze diesle.
 {{% /expert %}}
 

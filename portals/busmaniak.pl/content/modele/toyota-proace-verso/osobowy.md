@@ -98,7 +98,7 @@ Ważnym punktem odniesienia są też bliźniacze vany Stellantis – Citroën Sp
 
 Renault Trafic SpaceClass pozostaje alternatywą dla klientów szukających dużego vana osobowego, ale w tym materiale nie ma twardych danych liczbowych pozwalających rzetelnie porównać bagażnik, wyposażenie i ceny. Z tego samego powodu nie rozwijamy też kosztów eksploatacji – w źródłowym tekście zabrakło danych o zużyciu paliwa WLTP, pojemności zbiornika, interwałach serwisowych, kosztach przeglądów i warunkach gwarancji.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Proace Verso Family to najlepszy stosunek ceny do wyposażenia w tej rodzinie. VIP jest wyraźnie droższy, a dopłata względem Family ma sens głównie wtedy, gdy naprawdę wykorzystasz elementy komfortowe i bardziej reprezentacyjny charakter auta. Zanim zamówisz VIP, sprawdź realną dostępność konkretnej konfiguracji – przy mniej popularnych wersjach terminy potrafią być dłuższe niż dla odmian Family.
 {{% /expert %}}
 

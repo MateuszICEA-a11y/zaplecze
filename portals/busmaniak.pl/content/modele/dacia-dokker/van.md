@@ -80,7 +80,7 @@ Silnik 1.5 dCi 90 KM z rodziny K9K to najbezpieczniejszy punkt odniesienia przy 
 
 Przed zakupem diesla warto sprawdzić stan wtryskiwaczy, EGR, DPF w autach eksploatowanych głównie po mieście, turbo i ewentualne wycieki. W benzynach TCe trzeba skontrolować układ rozrządu i zużycie oleju, a niezależnie od silnika także skrzynię, sprzęgło, korozję dolnych krawędzi drzwi, podwozia oraz stan rolek drzwi przesuwnych.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Do pracy nadal najrozsądniej wygląda 1.5 dCi 90 KM, ale tylko po dokładnej kontroli osprzętu i historii serwisowej. W autach benzynowych TCe nie skreślałbym egzemplarza z góry, jednak przed zakupem obowiązkowo sprawdziłbym układ rozrządu i zużycie oleju. W używanym Dokkerze ważniejszy od samego oznaczenia silnika jest realny stan konkretnego auta.
 {{% /expert %}}
 

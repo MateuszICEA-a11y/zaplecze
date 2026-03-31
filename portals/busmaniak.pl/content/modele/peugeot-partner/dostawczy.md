@@ -39,7 +39,7 @@ Konfiguracje dostawcze Van mogą obejmować:
 - podłogę z punktami mocowania ładunku
 - zabudowę bez szyb bocznych
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W Partnerze dostawczym najważniejsza jest nie sama długość nadwozia, ale konfiguracja pracy. Jeśli auto regularnie wozi dłuższe elementy, warto szukać wersji z Moduwork, bo realnie zwiększa użyteczność ładowni bez przeskoku do większego segmentu.
 {{% /expert %}}
 

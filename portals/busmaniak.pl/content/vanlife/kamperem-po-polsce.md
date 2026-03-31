@@ -117,7 +117,7 @@ W praktyce trzeba też odróżnić zwykły postój od biwakowania. Wystawienie m
 
 Warto pamiętać również o serwisie. Zrzut szarej wody i opróżnianie toalety kasetowej powinny odbywać się wyłącznie w wyznaczonych punktach serwisowych, a korzystanie z wody lub samego serwisu dla gości z zewnątrz często jest płatne – orientacyjnie 10–30 zł, jeśli obiekt w ogóle dopuszcza taką opcję.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Złota zasada dzikiego postoju jest prosta: przyjeżdżasz późno, wyjeżdżasz wcześnie i nie zostawiasz po sobie śladu. To nie zastępuje przepisów ani regulaminów, ale dobrze pokazuje, jak powinno wyglądać odpowiedzialne korzystanie z miejsc, które nie są typowym kempingiem.
 {{% /expert %}}
 

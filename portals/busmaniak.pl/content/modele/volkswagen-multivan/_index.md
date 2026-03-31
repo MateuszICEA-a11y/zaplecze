@@ -59,7 +59,7 @@ Gama silnikowa Volkswagen Multivan obejmuje kilka wariantów mocy – wybór jed
 
 Diesel 2.0 TDI 150 KM sprawdza się najlepiej na długich trasach – niskie spalanie i wysoki moment obrotowy to jego atuty. TSI 204 KM daje najlepszą dynamikę spośród jednostek benzynowych. eHybrid 245 KM pozwala jeździć bezemisyjnie po mieście, ale wymaga codziennego ładowania, żeby miało to ekonomiczny sens.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Hybryda plug-in o mocy 245 KM to najmocniejszy seryjny napęd w historii Multivana. Realnie obniża koszty paliwa tylko wtedy, gdy ładujesz ją codziennie – w trasie bez ładowania pali więcej niż diesel.
 {{% /expert %}}
 

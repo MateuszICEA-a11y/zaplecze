@@ -103,7 +103,7 @@ Inaczej wygląda sytuacja przy zmianach konstrukcyjnych w pojeździe już zareje
 
 Nie zawsze dochodzi do „wpisania nowego DMC”, bo może ono pozostać zgodne z homologacją bazową. Kluczowe jest to, czy mamy do czynienia z pierwszą rejestracją pojazdu skompletowanego, czy z przebudową auta już zarejestrowanego.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Najczęstszy błąd przy zakupie lawety na Daily to patrzenie wyłącznie na samo DMC. Równie ważne są rozstaw osi, masa własna zabudowy i naciski osi, bo to one decydują, czy auto będzie legalnie pracowało z realnym ładunkiem.
 {{% /expert %}}
 

@@ -81,7 +81,7 @@ Gama silnikowa Opel Vivaro obejmuje kilka wariantów mocy – wybór jednostki n
 | Vivaro-e (50 kWh) | C | 136 KM | 260 Nm | 25 kWh/100 km | – |
 | Vivaro-e (75 kWh) | C | 136 KM | 260 Nm | 27 kWh/100 km | – |
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy zakupie używanego Vivaro A lub B sprawdź stan turbiny i intercoolera – to pierwsza linia wydatków. W modelach z 1.6 CDTi BiTurbo układ dwóch turbin potrafi zaskoczyć rachunkiem rzędu 5000–8000 zł. Vivaro C z 2.0 D jest mechanicznie prostszy, ale części PSA bywają droższe niż zamienniki Renault z generacji A/B.
 {{% /expert %}}
 

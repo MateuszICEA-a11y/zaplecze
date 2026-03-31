@@ -97,7 +97,7 @@ To samo dotyczy normy emisji spalin, DMC, masy własnej, ładowności i możliwo
 
 Jeśli wybierasz auto do pracy z pełnym kompletem pasażerów, patrz nie tylko na moc. W praktyce równie istotne są dopuszczalna masa całkowita, rodzaj napędu, skrzynia biegów i realna konfiguracja siedzeń, bo to one decydują o funkcjonalności i zgodności z przepisami.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy zakupie Ford Transit Kombi do przewozów pracowniczych najważniejsza jest granica 9 miejsc łącznie z kierowcą. Wersja mieszcząca się w M1 jest prostsza od strony formalnej dla kierowcy z prawem jazdy kat. B, ale jeśli potrzebujesz więcej miejsc, trzeba od razu uwzględnić właściwą kategorię prawa jazdy oraz obowiązki wynikające z przepisów o przewozie osób.
 {{% /expert %}}
 

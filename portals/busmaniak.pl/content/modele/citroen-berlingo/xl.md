@@ -103,4 +103,4 @@ Trzeba jednak pamiętać, że po rozłożeniu trzeciego rzędu pojemność baga�
 
 Przesuwane drzwi boczne po obu stronach ułatwiają wsiadanie i wysiadanie na ciasnych parkingach. Dłuższy rozstaw osi XL poprawia też praktyczność kabiny, zwłaszcza gdy auto ma regularnie wozić komplet pasażerów i ich bagaże.
 
-{{% expert name="Kowalczyk" %}}W zastosowaniach rodzinnych największą zaletą XL nie jest sama długość nadwozia, ale elastyczność kabiny. Jeśli potrzebujesz 7 miejsc choćby okazjonalnie, krótsza wersja M po prostu nie daje takiej możliwości, a to często przesądza o wyborze.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}W zastosowaniach rodzinnych największą zaletą XL nie jest sama długość nadwozia, ale elastyczność kabiny. Jeśli potrzebujesz 7 miejsc choćby okazjonalnie, krótsza wersja M po prostu nie daje takiej możliwości, a to często przesądza o wyborze.{{% /expert %}}

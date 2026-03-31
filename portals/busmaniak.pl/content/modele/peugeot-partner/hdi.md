@@ -62,7 +62,7 @@ Pod względem wymiarów Peugeot Partner II występował m.in. jako L1 o długoś
 
 Starsze 1.6 HDi korzystały z filtra FAP z dodatkiem Eolys. Nowsze BlueHDi Euro 6 mają układ SCR i AdBlue, a pojemność zbiornika AdBlue w autach tej klasy to zwykle około 17 l, przy orientacyjnym zużyciu około 1–2 l/1000 km.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W Peugeot Partner HDI nie ma jednej „najlepszej” odmiany dla każdego. Starszy 1.6 HDi 90 zwykle oznacza prostszy osprzęt i niższe ryzyko kosztownych napraw, natomiast BlueHDi 100 i 120 dają lepszą elastyczność, ale wymagają kontroli także układu SCR z AdBlue.
 {{% /expert %}}
 

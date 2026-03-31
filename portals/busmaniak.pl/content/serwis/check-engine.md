@@ -101,7 +101,7 @@ Pierwsza cyfra po literze mówi, czy kod jest generyczny (0), czy specyficzny dl
 3.  Włącz zapłon (nie uruchamiaj silnika), podłącz skaner i odczytaj zarejestrowane kody błędów.
 4.  Zanotuj wszystkie kody – często kilka błędów jest ze sobą powiązanych i wskazuje na jedną przyczynę.
 
-{{% expert name="Kowalczyk" %}}Tanie skanery za 40 zł czytają tylko generyczne kody z grupy „P0”. W nowoczesnych busach większość szczegółowych usterek zapisywana jest jako kody specyficzne producenta. Do grupy aut PSA/Fiat polecam aplikację MultiECUScan z adapterem ELM327 (koszt ok. 150 zł) – różnica w ilości danych jest kolosalna.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Tanie skanery za 40 zł czytają tylko generyczne kody z grupy „P0”. W nowoczesnych busach większość szczegółowych usterek zapisywana jest jako kody specyficzne producenta. Do grupy aut PSA/Fiat polecam aplikację MultiECUScan z adapterem ELM327 (koszt ok. 150 zł) – różnica w ilości danych jest kolosalna.{{% /expert %}}
 
 ## Czy można jechać z check engine
 

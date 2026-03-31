@@ -78,7 +78,7 @@ W słabszych odmianach 75 i 90 KM najczęściej spotyka się prostsze konfigurac
 
 Nie warto też upraszczać tematu wtrysku do jednego typu dla każdej wersji mocy. W DV6 stosowano różne układy zależnie od kodu silnika i rocznika, dlatego przy zakupie konkretnego egzemplarza trzeba patrzeć na oznaczenie jednostki, a nie tylko na liczbę koni mechanicznych.
 
-{{% expert name="Kowalczyk" %}}Silnik 1.6 HDI w wersjach 90 KM i późniejszej 92 KM to zwykle najrozsądniejszy wybór do Berlingo. Oferuje wystarczającą dynamikę bez wyraźnego wzrostu kosztów względem bazowych odmian. Kluczowe jest jednak to, jak auto było serwisowane, zwłaszcza pod kątem oleju i układu doładowania.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Silnik 1.6 HDI w wersjach 90 KM i późniejszej 92 KM to zwykle najrozsądniejszy wybór do Berlingo. Oferuje wystarczającą dynamikę bez wyraźnego wzrostu kosztów względem bazowych odmian. Kluczowe jest jednak to, jak auto było serwisowane, zwłaszcza pod kątem oleju i układu doładowania.{{% /expert %}}
 
 ## Spalanie Citroëna Berlingo 1.6 HDI w praktyce {#spalanie}
 

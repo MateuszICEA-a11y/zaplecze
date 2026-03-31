@@ -114,7 +114,7 @@ Najczęściej omawiane punkty kontrolne to:
 
 Także w tej generacji obecność DPF i koła dwumasowego należy potwierdzić dla konkretnego silnika i rocznika. W praktyce 1.6 CDTi daje lepszy kompromis między osiągami a spalaniem niż starsze jednostki, ale zwykle jest bardziej wymagające pod względem osprzętu.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy oględzinach używanego Combo warto zacząć od zimnego rozruchu, pracy silnika na biegu jałowym i kontroli osprzętu, a potem przejść pod auto. W dostawczaku stan podwozia, zawieszenia i zamków drzwi bywa równie ważny jak sama jednostka napędowa.
 {{% /expert %}}
 

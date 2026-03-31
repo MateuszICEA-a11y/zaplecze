@@ -70,7 +70,7 @@ Wcześniejszy opis wyposażenia wersji Shuttle, Family i VIP był zbyt stanowczy
 
 Z tego samego powodu usuwamy orientacyjne widełki cenowe i dopłaty do wersji Long względem Medium. Takie informacje powinny pochodzić z aktualnego cennika Toyota Polska z podaniem daty obowiązywania.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy zakupie Toyota Proace Verso Long warto zwrócić uwagę nie tylko na długość nadwozia, ale też na faktyczną konfigurację siedzeń i sposób dostępu do trzeciego rzędu. W praktyce to właśnie układ wnętrza, a nie sama liczba miejsc na papierze, decyduje o wygodzie codziennego użytkowania.
 {{% /expert %}}
 

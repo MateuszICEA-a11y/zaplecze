@@ -98,7 +98,7 @@ Auto jest proste w budowie, ale ma kilka powtarzających się słabości – opi
 
 W silnikach dCi po 80–120 tys. km sprawdź świece żarowe i stan filtra DPF, zwłaszcza jeśli auto pracowało w cyklu miejskim. Centralny zamek i elektryka potrafią sprawiać kłopoty już po 30–70 tys. km. Klimatyzacja ma problemy z nieszczelnościami układu chłodzącego i sprężarkami po 40–60 tys. km. Lakier jest cienki – odpryski pojawiają się szybko, a korozja na progach bywa widoczna już po 5–7 latach eksploatacji. W ogólnym [zestawieniu małych vanów](/porownania/porownanie-malych-vanow/) Dokker wygrywa jednak kosztami napraw, które należą do najniższych w segmencie.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy zakupie używanej Dacii Dokker z silnikiem 1.2 TCe koniecznie sprawdź stan łańcucha rozrządu – rozciąga się nawet poniżej 100 tys. km. W dieslu 1.5 dCi zwróć uwagę na filtr DPF i układ wtryskowy, szczególnie jeśli auto jeździło głównie po mieście.
 {{% /expert %}}
 

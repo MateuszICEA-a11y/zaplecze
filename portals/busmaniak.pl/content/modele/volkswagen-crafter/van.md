@@ -43,7 +43,7 @@ W poprzedniej wersji artykułu padła liczba **6–7 palet**, ale bez rozpisania
 
 To oznacza, że nie można uczciwie napisać, iż europalety „wchodzą swobodnie w poprzek między nadkolami”. Taki opis był błędny i mógł wprowadzać w błąd firmy planujące transport paletowy.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W Crafterze kluczowe jest właściwe czytanie wymiarów. Szerokość maksymalna przestrzeni ładunkowej i szerokość między nadkolami to nie to samo – a przy pracy na europaletach ta różnica ma realne znaczenie operacyjne.
 {{% /expert %}}
 

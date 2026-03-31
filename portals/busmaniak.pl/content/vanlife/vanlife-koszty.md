@@ -140,7 +140,7 @@ Poniżej wariant umiarkowany dla jednej osoby:
 
 Ten wynik pokazuje najważniejszą rzecz: vanlife bywa tańszy od wynajmu mieszkania, ale nie zawsze i nie w każdym stylu. Przy porównaniu z pokojem albo tańszą kawalerką poza Warszawą przewaga finansowa szybko maleje.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Najczęstszy błąd początkujących vanliferów to niedoszacowanie kosztów paliwa i przeszacowanie oszczędności na noclegach. Paliwo jest bezlitosne – Ducato z pełną zabudową, jadący po górach z klimatyzacją, potrafi spalić 14 l/100 km. Budżet planuj pesymistycznie dla paliwa i serwisu, a ostrożnie dla darmowych postojów.
 {{% /expert %}}
 

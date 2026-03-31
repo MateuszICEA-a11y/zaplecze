@@ -77,7 +77,7 @@ Przy spokojnej jeździe w trasie pustym autem realne zużycie zwykle mieści si�
 
 Prędkość ma bardzo duże znaczenie – przy 90 km/h, 110 km/h i 130 km/h zużycie paliwa będzie wyraźnie różne. Zabudowa kamperowa potrafi podnieść spalanie o ponad 1 l/100 km względem pustego furgonu opartego na tej samej bazie, a wpływ klimatyzacji jest zmienny i zależy od warunków pracy układu.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Najrozsądniej celować w wersje 115 albo 120 KM – oferują dobry kompromis między osiągami, spalaniem i kosztami zakupu. Odmiana 100 KM nadaje się do lżejszej pracy, ale przy dużym ładunku jej dynamika jest wyraźnie ograniczona. Wariant 145 KM najlepiej sprawdza się w cięższych zabudowach, choć na rynku jest go mniej.
 {{% /expert %}}
 

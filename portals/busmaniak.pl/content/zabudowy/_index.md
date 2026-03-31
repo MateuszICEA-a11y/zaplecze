@@ -61,7 +61,7 @@ Na polskim rynku działa kilkudziesięciu producentów, ale cztery marki dominuj
 | Würth ORSYmobil | Niemcy | regały na narzędzia, pojemniki | 8 000–22 000 zł | tak |
 | Store Van | Włochy | zabudowy lekkie, aluminium | 6 000–18 000 zł | tak |
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Certyfikat crash-test (ECE R17) to nie fanaberia – przy nagłym hamowaniu z 50 km/h niezabezpieczony regał o wadze 80 kg uderza z siłą ponad 2 ton. Firmy ubezpieczeniowe coraz częściej weryfikują, czy zabudowa posiada atest. Brak certyfikatu może oznaczać odmowę wypłaty odszkodowania po wypadku.
 {{% /expert %}}
 

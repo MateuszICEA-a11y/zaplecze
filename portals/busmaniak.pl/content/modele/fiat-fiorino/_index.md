@@ -85,7 +85,7 @@ Diesel 1.3 MultiJet (1248 cm³) to najczęstszy wybór na rynku wtórnym. Silnik
 
 Benzyna 1.4 (1368 cm³, 77 KM) to prosta, ośmiozaworowa konstrukcja. Dobrze współpracuje z LPG, ale spalanie w mieście sięga 10 l/100 km. Wybieraj ją tylko do krótkich tras, gdzie diesel miałby problemy z DPF.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W silnikach 1.3 MultiJet kluczowa jest wymiana oleju co 10–12 tys. km, a nie co 30 tys. jak sugerował producent. Zapobiega to przedwczesnemu zużyciu napinacza łańcucha rozrządu i samej turbiny. Regeneracja turbo to koszt 2500–3500 zł.
 {{% /expert %}}
 

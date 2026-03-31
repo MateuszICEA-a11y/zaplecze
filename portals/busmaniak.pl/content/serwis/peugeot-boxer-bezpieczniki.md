@@ -69,7 +69,7 @@ Poniższe tabele prezentują najważniejsze obwody elektryczne. Pełny schemat (
 | MF11 | Rozrusznik | 50A |
 | MF13 | Świece żarowe | 60A |
 
-{{% expert name="Kowalczyk" %}}Bezpiecznik F49 w Boxerze to dokładnie ten sam problem co w Ducato – odpowiada za pamięć radia i komputera pokładowego. Jeśli radio "zapomina" stację po każdym wyłączeniu silnika, a zegar resetuje się do 00:00, zacznij od tego bezpiecznika. Kosztuje grosze, a oszczędza godziny diagnostyki.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Bezpiecznik F49 w Boxerze to dokładnie ten sam problem co w Ducato – odpowiada za pamięć radia i komputera pokładowego. Jeśli radio "zapomina" stację po każdym wyłączeniu silnika, a zegar resetuje się do 00:00, zacznij od tego bezpiecznika. Kosztuje grosze, a oszczędza godziny diagnostyki.{{% /expert %}}
 
 ## Schemat bezpieczników Boxer III FL (2014+)
 

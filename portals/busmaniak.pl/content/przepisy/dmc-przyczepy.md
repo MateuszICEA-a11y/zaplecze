@@ -126,7 +126,7 @@ Taryfikator przewiduje kilka rodzajów sankcji za naruszenia związane z DMC:
 - **Do 15 punktów karnych** – w przypadku stworzenia zagrożenia w ruchu drogowym.
 - **Zatrzymanie dowodu rejestracyjnego** przyczepy i uniemożliwienie dalszej jazdy do czasu rozładowania nadmiaru towaru.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przekroczenie DMC nawet o 50 kg jest formalnym wykroczeniem. Choć patrole rzadko ważą przyczepy podczas rutynowych kontroli, każdy wypadek z udziałem przeładowanego zestawu oznacza automatyczną weryfikację masy. A wtedy konsekwencje mogą być bardzo kosztowne.
 {{% /expert %}}
 

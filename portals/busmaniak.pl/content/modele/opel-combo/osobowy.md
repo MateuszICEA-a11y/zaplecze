@@ -45,7 +45,7 @@ Combo Life było oferowane w kilku liniach wyposażenia, ale ich dokładna specy
 
 W codziennym użytkowaniu ważniejsze od samej nazwy wersji są: liczba miejsc, układ drzwi przesuwnych, obecność nawiewów dla tylnej części kabiny, multimedia oraz pakiety asystentów. To te elementy realnie wpływają na wygodę rodziny w trasie.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Największą siłą Combo Life nie są efektowne listy wyposażenia, tylko przestrzeń i praktyczność. Przy wyborze używanego egzemplarza dużo ważniejsze od nazwy wersji jest to, czy auto ma odpowiednią konfigurację siedzeń, drzwi przesuwnych i sensowny napęd – zwłaszcza jeśli ma regularnie wozić komplet pasażerów z bagażem. W mocniejszych odmianach automatyczna skrzynia to 8-biegowy automat EAT8, a nie starsza zautomatyzowana przekładnia znana z dawnych modeli PSA.
 {{% /expert %}}
 

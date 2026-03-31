@@ -98,7 +98,7 @@ Transit Van należy do grona dużych furgonów oferowanych z różnymi układami
 
 Najważniejsza różnica praktyczna między FWD a RWD dotyczy charakteru pracy auta. FWD zwykle lepiej wypada przy częstych dostawach i niższej podłodze ładowni, natomiast RWD lepiej znosi stałe obciążenie, jazdę z ciężkim ładunkiem i wykorzystanie wyższych DMC.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Jeśli auto ma regularnie pracować blisko maksymalnej ładowności albo ciągnąć przyczepę, wybór RWD jest po prostu bardziej logiczny. FWD ma sens tam, gdzie liczy się łatwy załadunek, mniejsza masa własna i typowo miejski profil użytkowania.
 {{% /expert %}}
 

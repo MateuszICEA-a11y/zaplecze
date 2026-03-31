@@ -77,7 +77,7 @@ Gama silnikowa Peugeot Partner obejmuje kilka wariantów mocy – wybór jednost
 | 1.5 BlueHDi | 130 KM | 300 Nm | 5,5 l/100 km | 6-bieg. man. / EAT8 | Euro 6d |
 | e-Partner (50 kWh) | 136 KM | 260 Nm | 20 kWh/100 km | 1-bieg. | – |
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Partner III ma jedną realną przewagę nad Combo i Berlingo: opcję automatu EAT8 do silnika 1.2 PureTech 130 KM. To prawdziwa 8-biegowa przekładnia, nie robotyzowana – różnicę w komforcie czuć wyraźnie. Dla firm z kierowcami pokonującymi tysiące kilometrów w mieście to argument nie do przecenienia.
 {{% /expert %}}
 

@@ -113,7 +113,7 @@ Popularne zawody wśród osób żyjących mobilnie to programowanie, copywriting
 
 ## Gdzie parkować legalnie – Polska i Europa
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Legalne parkowanie kampera w Polsce zaczyna się od rozróżnienia trzech rzeczy: zwykłego postoju pojazdu, noclegu wewnątrz auta i campingu z wystawionym wyposażeniem. To nie są synonimy. W wielu krajach właśnie to rozróżnienie decyduje, czy jesteś tylko kierowcą na postoju, czy już biwakujesz.
 {{% /expert %}}
 

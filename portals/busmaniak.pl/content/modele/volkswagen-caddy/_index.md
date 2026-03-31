@@ -90,7 +90,7 @@ Volkswagen nie oferuje jeszcze elektrycznego Caddy, choć platforma MQB technicz
 - **[Caddy Maxi](/modele/volkswagen-caddy/maxi/) / [Long](/modele/volkswagen-caddy/long/)** – wydłużona wersja (+353 mm), bagażnik 1720 l, opcja 7 miejsc
 - **Caddy California** – mini-kamper z rozkładanym łóżkiem, kuchenką i stolikiem; alternatywa dla droższego Transportera California
 
-{{% expert name="Kowalczyk" %}}Caddy California to najciekawsza propozycja w ofercie – pełnoprawny mini-kamper za ułamek ceny Transportera California. Rozkładane łóżko 1,98 x 1,07 m mieści dwie dorosłe osoby. Minus: stojąc w środku trzeba się pochylać (wysokość wnętrza ok. 1,20 m).{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Caddy California to najciekawsza propozycja w ofercie – pełnoprawny mini-kamper za ułamek ceny Transportera California. Rozkładane łóżko 1,98 x 1,07 m mieści dwie dorosłe osoby. Minus: stojąc w środku trzeba się pochylać (wysokość wnętrza ok. 1,20 m).{{% /expert %}}
 
 ## Caddy na tle konkurencji {#konkurencja}
 

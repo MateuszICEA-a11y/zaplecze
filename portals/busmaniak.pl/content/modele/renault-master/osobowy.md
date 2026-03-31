@@ -127,7 +127,7 @@ W przypadku przewozu dzieci nie wystarczy samo ogólne stwierdzenie o „odpowie
 
 Przy zabudowie WAV lub WTP kluczowe są parametry przebudowy. Po montażu rampy lub windy liczba miejsc zwykle się zmienia, nośność windy wynosi zazwyczaj 300–350 kg, a przewóz wózka wymaga 4-punktowego mocowania i 3-punktowego pasa dla pasażera oraz właściwej homologacji po przebudowie.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W używanym Masterze osobowym najważniejsza jest zgodność faktycznej zabudowy z dokumentami. Trzeba sprawdzić kompletność mocowań siedzeń i pasów, stan podłogi, rolek drzwi przesuwnych, a w dieslach Euro 6 także DPF i SCR. Przy autach z przebiegami 200–500 tys. km warto skontrolować również dwumasę, sprzęgło, wtryskiwacze i działanie tylnej klimatyzacji, jeśli auto ją ma.
 {{% /expert %}}
 

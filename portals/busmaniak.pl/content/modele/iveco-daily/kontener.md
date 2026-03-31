@@ -94,7 +94,7 @@ Zabudowa izotermiczna z agregatem może ważyć ok. 700–1200 kg, ale końcowy 
 
 Trzeba też pamiętać o skutkach prawnych wyboru auta powyżej 3,5 t. W wielu krajach UE dochodzi tachograf lub smart tachograph, inne limity prędkości, opłaty drogowe oraz zwykle prawo jazdy kat. C1 lub C, a w Polsce dla pojazdów ciężarowych powyżej 3,5 t na wybranych odcinkach obowiązuje e-TOLL.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy zakupie używanego Daily z izotermą sprawdź pęknięcia laminatu, mostki cieplne przy narożach, stan uszczelek drzwi, odpływy skroplin, pracę agregatu przy 0°C i -20°C, historię ATP, stan podłogi oraz korozję ramy pomocniczej. Ewentualne naprawy izolacji i poszycia są zawsze kosztami orientacyjnymi, silnie zależnymi od zakresu uszkodzeń i technologii zabudowy.
 {{% /expert %}}
 

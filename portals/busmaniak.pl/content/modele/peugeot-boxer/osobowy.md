@@ -59,7 +59,7 @@ Do typowych elementów należą fotele pasażerskie, przeszklenie części tylne
 
 Warto też zwrócić uwagę na systemy bezpieczeństwa i ADAS. Przy aucie do przewozu osób praktyczne znaczenie mają dostępność ABS, ESP, asystenta ruszania pod górę, tempomatu, czujników martwego pola, kamery cofania, asystenta pasa ruchu, automatycznego hamowania awaryjnego oraz liczba poduszek powietrznych – ale ich obecność trzeba potwierdzać dla konkretnego rocznika i wersji.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Boxer Combi do użytku szkolnego lub transportu osób z ograniczoną mobilnością to solidna baza, ale tylko wtedy, gdy punkt wyjścia stanowi poprawnie dobrana homologacja i realna ładowność po zabudowie. W praktyce największy błąd kupujących to skupienie się na liczbie miejsc bez sprawdzenia, ile przestrzeni i masy zostaje po zajęciu wszystkich foteli.
 {{% /expert %}}
 

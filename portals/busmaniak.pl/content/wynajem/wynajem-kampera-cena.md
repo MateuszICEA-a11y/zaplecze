@@ -82,7 +82,7 @@ Zestawiłem cenniki trzech wypożyczalni na sezon wysoki 2026, żeby pokazać re
 
 Pozornie ceny są zbliżone, ale Camper Centrum oferuje wynajem bez limitu kilometrów. Przy trasie 3500 km w ciągu 7 dni w Drewmet-Trans dopłacisz ok. 750 zł za nadkilometry. Z kolei Sunday Travel wyróżnia się niższą o 1000 zł kaucją.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Porównując ceny wypożyczalni, zawsze przeliczam koszt na osobodzień. Alkowa za 700 zł/dobę dla 5 osób to 140 zł na osobę – mniej niż pokój w agroturystyce. Camper van za 500 zł dla 2 osób to już 250 zł/osobę. Typ kampera musi pasować do składu ekipy, inaczej przepłacisz.
 {{% /expert %}}
 

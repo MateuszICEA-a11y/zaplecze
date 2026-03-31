@@ -114,7 +114,7 @@ Całkowity koszt legalizacji kampera składa się z kilku elementów. Sama proce
 | **Łącznie (bez akcyzy)** | **ok. 800–1300 zł** |
 | **Łącznie (z akcyzą dla silnika > 2.0 l)** | **ok. 16 000 zł** |
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Akcyza to największy koszt homologacji kampera. Różnica między stawką 3,1% a 18,6% jest ogromna. Dlatego niektórzy kamperowicze celowo wybierają busy z silnikami do 2.0 litra – właśnie z powodu sześciokrotnie niższej akcyzy przy legalizacji.
 {{% /expert %}}
 

@@ -86,7 +86,7 @@ W takiej sytuacji czerwona kontrolka ciśnienia może zapalić się na rozgrzany
 4.  Dolej olej małymi porcjami (po 200–300 ml), sprawdzając poziom po każdym dolaniu.
 5.  Nie przekraczaj poziomu MAX – nadmiar oleju jest tak samo szkodliwy jak niedobór (pieniący się olej traci właściwości smarne).
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Kierowcy busów dostawczych często ignorują żółtą kontrolkę oleju, bo „bus jedzie normalnie". To błąd – niski poziom oleju w busie obciążonym ładunkiem oznacza przyspieszone zużycie turbosprężarki, która jest smarowana olejem silnikowym. Wymiana turbo to 3 000–6 000 zł. Dolanie litra oleju kosztuje 30–50 zł. Matematyka jest prosta.
 {{% /expert %}}
 

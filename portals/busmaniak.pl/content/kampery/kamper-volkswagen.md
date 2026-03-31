@@ -53,7 +53,7 @@ Czołowa oferta VW T7 California obejmuje de facto pięć konfiguracji, a nie tr
 
 [VW California](/kampery/volkswagen-california/) Beach to wersja bazowa – bez kuchenki i zlewu, z ręcznie podnoszonym dachem. Coast dodaje aneks kuchenny, a Ocean oferuje pełne wyposażenie z elektrohydraulicznym dachem i LED-owym oświetleniem ambient.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Różnica między Beach a Ocean to ponad 80 tys. zł, ale w praktyce Beach wymaga doposażenia za 30–40 tys. zł, żeby nadawał się do kamperowania (kuchenka, zlew, bateria dodatkowa). Realny spread to więc 40–50 tys. zł – i za tę kwotę dostajesz w Oceanie fabryczną integrację, gwarancję i wyższą wartość odsprzedaży.
 {{% /expert %}}
 

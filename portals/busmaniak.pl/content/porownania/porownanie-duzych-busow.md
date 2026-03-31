@@ -63,7 +63,7 @@ Mercedes Sprinter trzeciej generacji (W907/W910, od 2018) to technologiczny lide
 
 Sprinter, podobnie jak Transit, oferuje pełną dowolność w konfiguracji napędu: na oś przednią (FWD), tylną (RWD) lub na cztery koła (4x4). Wersja RWD opiera się na solidnym podwoziu, co czyni ją popularnym wyborem pod zabudowy specjalistyczne i kampery klasy premium.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Sprinter RWD z zawieszeniem pneumatycznym to jedyny bus w tym zestawieniu, który pozwala na obniżenie podwozia podczas załadunku i podniesienie go do poziomu jazdy. W praktyce oznacza to oszczędność czasu na rampie – różnica wysokości podłogi ładowni sięga 80 mm między trybami.
 {{% /expert %}}
 

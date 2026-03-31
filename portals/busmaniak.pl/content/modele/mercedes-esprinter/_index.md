@@ -84,7 +84,7 @@ Wymiary przestrzeni ładunkowej furgona L3 z wysokim dachem:
 
 DMC do 4250 kg oznacza, że cięższy wariant wymaga prawa jazdy kategorii C1, chyba że kierowca ma uprawnienia nabyte przed 2006 rokiem. Wersje do 3500 kg mieszczą się w kategorii B.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Jeśli planujesz zakup eSprintera do dostaw miejskich, bateria 56 kWh w wersji L2 to optymalny wybór – mniejsza masa własna daje wyższą ładowność, a nocne ładowanie AC w bazie w zupełności wystarcza na dzienny przebieg 150–200 km. Dużą baterię 113 kWh warto rozważyć tylko przy trasach powyżej 250 km dziennie lub braku możliwości ładowania w ciągu dnia.
 {{% /expert %}}
 

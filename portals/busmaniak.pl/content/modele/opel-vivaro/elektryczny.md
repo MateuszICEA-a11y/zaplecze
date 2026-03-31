@@ -60,7 +60,7 @@ Zasięg WLTP:
 - **Bateria 50 kWh** – ok. 230 km
 - **Bateria 75 kWh** – ok. 330 km
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Do kurierki i serwisu miejskiego bateria 50 kWh zwykle wystarcza, jeśli auto codziennie wraca do bazy i ładuje się nocą. Wersja 75 kWh daje większy bufor na trasy podmiejskie i pracę zimą, ale wybór warto oprzeć na realnym przebiegu dziennym oraz dostępie do ładowania AC lub DC.
 {{% /expert %}}
 

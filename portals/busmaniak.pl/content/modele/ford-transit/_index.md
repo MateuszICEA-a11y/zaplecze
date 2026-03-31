@@ -96,7 +96,7 @@ Pierwsza seria Transita VIII jeździła jeszcze z poprzednią jednostką Durator
 
 Silnik ten ma gorszą kulturę pracy niż EcoBlue i identyczny problem z wtryskiwaczami co Transit VII. Od 2016 roku wycofany na rzecz 2.0 EcoBlue.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W mojej ocenie Ford Transit VIII z silnikiem 2.0 EcoBlue 130 KM to aktualnie najlepszy wybór w segmencie – silnik jest mniej awaryjny niż poprzednie 2.2 TDCi, a moc wystarczająca dla zdecydowanej większości zastosowań w wersji L2 i L3. Jeśli kupujesz używany egzemplarz sprzed 2019 roku, koniecznie sprawdź historię serwisową wtryskiwaczy – to największe ryzyko przy tym silniku.
 {{% /expert %}}
 

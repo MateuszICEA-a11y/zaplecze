@@ -105,7 +105,7 @@ Przy cięższych Daily trzeba pamiętać także o formalnościach. Wersje 5.0 t 
 
 Z punktu widzenia rynku Daily wyróżnia się tym, że obejmuje zakres od 3.5 t do cięższych wersji 7.2 t, z napędem RWD, ramą pod zabudowę i dostępnością bliźniaków. To odróżnia go od wielu typowych dostawczaków kończących się na 3.5–5.0 t.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy wyborze bazy patrz najpierw na ładowność po zabudowie, a dopiero potem na samą pojemność komory. W chłodni bardzo łatwo zamówić za dużą skrzynię do zbyt lekkiego podwozia i zostać z autem, które ma dobrą kubaturę, ale za mały zapas masy roboczej.
 {{% /expert %}}
 

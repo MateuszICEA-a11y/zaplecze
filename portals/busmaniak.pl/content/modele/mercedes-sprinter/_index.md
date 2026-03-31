@@ -105,7 +105,7 @@ eSprinter to odpowiedź Mercedesa na rosnące zapotrzebowanie na elektryczne bus
 
 eSprinter sprawdza się w logistyce ostatniej mili w centrach miast objętych strefami czystego transportu.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Wybierając między OM654 a OM651 w używanym Sprinterze III, zwróć uwagę na datę produkcji. Egzemplarze z 2018–2019 mogą mieć OM651 – dobrze znany silnik, ale wymagający uwagi w kwestii łańcucha rozrządu przy przebiegach powyżej 200 000 km. Nowsze egzemplarze z OM654 mają nowocześniejszą konstrukcję, ale wciąż zbyt krótką historię eksploatacji przy bardzo dużych przebiegach, by wyciągać ostateczne wnioski o trwałości. W obu przypadkach kluczowa jest regularna wymiana oleju co 15 000 km – nie co 40 000 km, jak sugeruje komputer pokładowy.
 {{% /expert %}}
 

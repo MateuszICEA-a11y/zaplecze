@@ -63,7 +63,7 @@ Na twardych danych wygląda to jasno: L1 ma ok. 4403 mm długości, rozstaw osi 
 
 Jeśli regularnie przewozisz elementy dłuższe niż typowa zabudowa miejska albo potrzebujesz miejsca na regały i części serwisowe, L2 ma wyraźną przewagę. Short pozostaje sensownym wyborem głównie tam, gdzie priorytetem są kompaktowe gabaryty i codzienna jazda po zatłoczonym mieście.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy wyborze między Short a Long najważniejsze jest nie to, ile razy w roku przewieziesz długi ładunek, tylko czy robisz to regularnie. Jeśli w aucie często lądują rury, listwy, drabiny albo rozbudowana zabudowa warsztatowa, L2 po prostu daje większy margines użytkowy.
 {{% /expert %}}
 

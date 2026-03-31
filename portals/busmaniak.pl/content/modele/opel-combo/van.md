@@ -30,7 +30,7 @@ Czwarta generacja tego modelu, produkowana od 2018 roku, porzuciła technologię
 
 W praktyce to jeden z technicznych bliźniaków segmentu kompaktowych vanów dostawczych. Najbliższe konstrukcyjnie modele to Citroën Berlingo Van, Peugeot Partner, Fiat Doblo od 2022 i Toyota Proace City, a wśród głównych konkurentów warto uwzględnić Renault Kangoo Van, Forda Transita Connect i VW Caddy Cargo.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W czwartej generacji Opel Combo Van konstruktorzy postawili na ergonomię kabiny zbliżoną do aut osobowych. Krótka maska i wysoko umieszczony fotel kierowcy dają bardzo dobrą widoczność w gęstym ruchu miejskim.
 {{% /expert %}}
 

@@ -68,7 +68,7 @@ Różnice między bliźniakami ograniczają się do:
 - **Gwarancja** – Toyota oferuje 5 lat, Citroën i Peugeot 2 lata
 - **Sieć serwisowa** – Toyota ma mniejszą sieć w Polsce, ale wyższą jakość obsługi
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy zakupie używanego Jumpy/ProAce/Expert liczy się przebieg i historia serwisowa, nie marka na masce. Części kosztują tyle samo. Jedyna realna różnica to gwarancja – jeśli kupujesz egzemplarz do 5 lat, Toyota z 5-letnią gwarancją ma przewagę.
 {{% /expert %}}
 

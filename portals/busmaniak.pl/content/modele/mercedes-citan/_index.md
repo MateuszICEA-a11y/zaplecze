@@ -74,7 +74,7 @@ Wszystkie wersje spalinowe mają napęd na przednią oś. Skrzynie biegów: 6-bi
 
 ![Mercedes Citan II furgon dostawczy](/images/mercedes-citan-hero.jpg)
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Dla kuriera miejskiego eCitan to sensowny wybór – 283 km zasięgu w zupełności wystarcza na dzienną trasę, a nocne ładowanie z wallboxa 22 kW uzupełnia baterię w niecałe 3 godziny. Jeśli jednak jeździsz dużo po trasie, sięgnij po 112 CDI z automatem – spalanie poniżej 6 litrów i moment diesla przy niskich obrotach robią różnicę w komforcie długich tras.
 {{% /expert %}}
 

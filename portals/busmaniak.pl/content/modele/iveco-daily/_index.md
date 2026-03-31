@@ -94,7 +94,7 @@ Elektryczny Daily dostępny jest w trzech konfiguracjach baterii modułowej:
 
 Silnik elektryczny o mocy 140 KM / 400 Nm współpracuje z 1-biegową przekładnią. Ładowanie AC do 22 kW (opcja), DC do 80 kW (CCS).
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W warsztacie najczęściej trafiają do mnie Daily z silnikiem 2.3 po 200–250 tys. km z zapchanym EGR i zużytymi wtryskiwaczami. To nie jest wada konstrukcyjna – to wynik eksploatacji miejskiej bez regeneracji na trasie. Daily 3.0 MultiJet serwisuje się rzadziej, ale koszt jednej wizyty jest wyraźnie wyższy. Przy wyborze między tymi jednostkami decydujące jest pytanie: czy pojazd jedzie głównie po mieście, czy obsługuje trasy regionalne i krajowe?
 {{% /expert %}}
 

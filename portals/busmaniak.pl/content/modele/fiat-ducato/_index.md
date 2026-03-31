@@ -68,7 +68,7 @@ DMC standardowo 3500 kg (prawo jazdy kat. B). Wersje 3000, 3300 kg oraz wzmocnio
 - **[Silnik 3.0 MultiJet](/modele/fiat-ducato/3-0-multijet/)** – długodystansowa jednostka z łańcuchem rozrządu. 160–180 KM, produkowany do 2016 roku.
 - **[Silnik 2.8 JTD](/modele/fiat-ducato/2-8-jtd/)** – spotykany w II generacji. Prosta konstrukcja, 500–700 tys. km bez remontu przy regularnym serwisie.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Szukasz używanego Ducato do ciężkiej pracy? Celuj w 3.0 MultiJet sprzed 2016 roku – silnik praktycznie niezniszczalny przy pełnym obciążeniu. W nowszych egzemplarzach 2.3 MultiJet 150 KM oferuje najlepszą kulturę pracy i rozsądne koszty serwisu, zwłaszcza jeśli regularnie kontrolujesz [rozrząd](/serwis/fiat-ducato-rozrzad/).
 {{% /expert %}}
 

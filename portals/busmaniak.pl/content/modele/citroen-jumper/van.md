@@ -87,7 +87,7 @@ Boczne drzwi przesuwne:
 
 Przy wyborze wersji do konkretnej pracy warto sprawdzić jeszcze wysokość progu załadunku od ziemi oraz dokładne wymiary otworu bocznego i tylnego dla danego rocznika. To szczególnie ważne przy zabudowie kurierskiej, serwisowej i chłodniczej.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W praktyce flotowej L2H2 faktycznie jest jednym z najbardziej uniwersalnych wariantów, ale trzeba uczciwie powiedzieć jedno – wersje H2 i H3 przekraczają 2,5 m wysokości całkowitej. Jeśli auto ma regularnie wjeżdżać do parkingów podziemnych z ograniczeniem 2,0 m, 2,1 m, 2,2 m albo 2,5 m, bezpiecznym punktem odniesienia jest dopiero H1, bo to właśnie on mieści się poniżej 2250 mm.
 {{% /expert %}}
 

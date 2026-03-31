@@ -79,7 +79,7 @@ Podobnie usuwamy procentowy wzrost zużycia paliwa przy pełnym obłożeniu. Mo�
 
 W tej sekcji warto jeszcze pamiętać o brakach specyfikacyjnych, które powinny być sprawdzone przed zakupem konkretnego egzemplarza: norma emisji Euro 6/Euro VI, obecność układu SCR/AdBlue, pojemność zbiornika paliwa, prędkość maksymalna, typ zawieszenia, ogumienie, promień zawracania i dopuszczalne obciążenia osi. To parametry ważne eksploatacyjnie, ale muszą wynikać z konkretnej karty katalogowej danej wersji.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Największą zaletą Deliver 9 w wersji pasażerskiej pozostaje sama architektura auta – duży van z napędem RWD dobrze znosi obciążenie pasażerami. Trzeba jednak oddzielić prosty serwis mechaniczny od pełnej obsługi modelu: podstawowe prace wykona wiele warsztatów, ale diagnostyka, części i procedury producenta nadal mają znaczenie.
 {{% /expert %}}
 

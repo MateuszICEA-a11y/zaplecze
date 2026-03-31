@@ -68,7 +68,7 @@ Wskaźniki cenowe często pomijają kluczowe elementy bezpieczeństwa, takie jak
 
 Samodzielny montaż [instalacji elektrycznej](/przerobki/instalacja-elektryczna-kamper/) pozwala zaoszczędzić 2 000–5 000 zł w porównaniu ze zleceniem tego etapu specjaliście. Wymaga jednak podstawowej wiedzy o obwodach 12V i zasadach bezpieczeństwa.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Nie oszczędzaj na przekroju przewodów i zabezpieczeniach. Przewody 1 mm² dla oświetlenia LED i minimum 35–50 mm² dla głównych obwodów baterii i przetwornicy to absolutne minimum. Każdy obwód musi mieć osobny bezpiecznik. Pożar w kamperze rozwija się w 2–3 minuty – nie ma czasu na reakcję.
 {{% /expert %}}
 

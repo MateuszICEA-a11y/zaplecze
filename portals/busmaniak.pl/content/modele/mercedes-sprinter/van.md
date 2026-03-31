@@ -109,7 +109,7 @@ Drzwi tylne:
 - otwieranie do 270° – zależnie od konfiguracji, nie jako standard całej gamy
 - tylna klapa unoszona – opcja, która może ograniczać wygodę pracy przy rampie
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W aucie do dystrybucji miejskiej warto sprawdzać nie tylko długość paki, ale też rzeczywistą geometrię wejścia do ładowni. Obustronne drzwi przesuwne i odpowiedni kąt otwarcia drzwi tylnych często robią większą różnicę operacyjną niż sama deklarowana kubatura.
 {{% /expert %}}
 

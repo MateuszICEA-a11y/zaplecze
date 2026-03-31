@@ -42,7 +42,7 @@ Jeśli planujesz holować przyczepę, [DMC zespołu pojazdów](/przepisy/dmc-prz
 
 Przekroczenie tego parametru grozi nie tylko mandatem. Prowadzenie przeciążonego zestawu przyspiesza zużycie sprzęgła, skrzyni biegów i tarcz hamulcowych, co jest szczególnie niebezpieczne na górskich zjazdach.
 
-{{% expert name="Kowalczyk" %}}Często słyszę pytanie, czy można sumować DMC auta i przyczepy bez patrzenia na pole F.3. Nie można. F.3 to granica możliwości technicznych całego zestawu i nie wolno jej przekroczyć nawet o kilogram, niezależnie od posiadanej kategorii prawa jazdy.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Często słyszę pytanie, czy można sumować DMC auta i przyczepy bez patrzenia na pole F.3. Nie można. F.3 to granica możliwości technicznych całego zestawu i nie wolno jej przekroczyć nawet o kilogram, niezależnie od posiadanej kategorii prawa jazdy.{{% /expert %}}
 
 ## Różnica między masą własną a DMC
 

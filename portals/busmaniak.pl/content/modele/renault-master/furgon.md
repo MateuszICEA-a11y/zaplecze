@@ -119,7 +119,7 @@ W praktyce do Renault Master furgon najczęściej porównia się Fiata Ducato, M
 
 Równie ważne są kwestie eksploatacyjne. W samochodzie flotowym o wyborze często decydują warunki obsługi, terminowość napraw i dostępność zabudów, a nie sam katalogowy wynik pojemności przestrzeni ładunkowej.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W praktyce Master furgon najlepiej ocenia się nie po samym oznaczeniu L3H2 czy L4H3, ale po całej specyfikacji: napędzie, DMC, roczniku i poziomie wyposażenia. To szczególnie ważne przy autach po liftingu 2019, bo różnice względem wcześniejszych odmian oraz nowego Mastera IV są większe, niż sugerują ogólne ogłoszenia sprzedaży.
 {{% /expert %}}
 

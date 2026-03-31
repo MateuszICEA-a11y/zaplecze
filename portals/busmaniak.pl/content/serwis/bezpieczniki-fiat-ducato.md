@@ -77,7 +77,7 @@ Przepalone gniazdo 12V to numer jeden wśród zgłoszeń na forach. W modelach p
 
 -   **F44 (20A)** – Gniazdo zapalniczki i gniazdo zasilania na desce rozdzielczej.
 
-{{% expert name="Kowalczyk" %}}W Fiacie Ducato III częstym winowajcą problemów z radiem lub niedziałającym gniazdem OBD jest bezpiecznik F39 (10A). Zanim umówisz się na kosztowną diagnostykę, sprawdź ten nieduży element w skrzynce pod kierownicą. Jego przepalenie to klasyczna usterka, często spowodowana przez wadliwe akcesoria podpięte do gniazda zapalniczki.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}W Fiacie Ducato III częstym winowajcą problemów z radiem lub niedziałającym gniazdem OBD jest bezpiecznik F39 (10A). Zanim umówisz się na kosztowną diagnostykę, sprawdź ten nieduży element w skrzynce pod kierownicą. Jego przepalenie to klasyczna usterka, często spowodowana przez wadliwe akcesoria podpięte do gniazda zapalniczki.{{% /expert %}}
 
 ## Fiat Ducato II (2002–2006) – starsza szkoła
 

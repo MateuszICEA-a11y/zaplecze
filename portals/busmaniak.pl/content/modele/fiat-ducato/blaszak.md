@@ -34,7 +34,7 @@ Ducato III przeszło dwa istotne etapy modernizacji:
 
 W praktyce zakupowej warto też patrzeć na normę emisji. Starsze egzemplarze z lat 2006–2011 to zwykle Euro 4 lub Euro 5, po liftingu pojawiły się wersje Euro 5 i Euro 6, a od 2021 roku – Euro 6d-Final. Ma to znaczenie przy wjeździe do stref LEZ w Europie.
 
-{{% expert name="Kowalczyk" %}}Do budowy kampera wybieram Ducato z jednego konkretnego powodu: prostopadłościenna paka. Ściany są niemal pionowe, co zdecydowanie ułatwia montaż mebli i izolacji w porównaniu do bardziej zaokrąglonych konkurentów.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Do budowy kampera wybieram Ducato z jednego konkretnego powodu: prostopadłościenna paka. Ściany są niemal pionowe, co zdecydowanie ułatwia montaż mebli i izolacji w porównaniu do bardziej zaokrąglonych konkurentów.{{% /expert %}}
 
 ## Wymiary blaszaka Ducato – warianty L/H
 

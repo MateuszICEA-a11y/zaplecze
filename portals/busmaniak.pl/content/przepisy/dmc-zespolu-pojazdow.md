@@ -112,7 +112,7 @@ Sprinter III w wersji 316 CDI waży ok. 2200–2500 kg w zależności od konfigu
 
 Przy kamperze na bazie Sprintera sytuacja robi się jeszcze ciaśniejsza. Zabudowa kamperowa waży 300–600 kg, co zostawia minimalny margines na pasażerów i bagaże – a do tego dochodzi masa przyczepy.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Kierowcy kamperów na bazie busów 3,5 t często zapominają, że DMC dotyczy busa z pełnym załadunkiem, a nie pustego pojazdu. Jeśli Twój kamper z pasażerami waży 3400 kg i podczepasz przyczepę 750 kg, łączna masa rzeczywista to 4150 kg. Nawet jeśli masz odpowiednie prawo jazdy, policja może sprawdzić faktyczną wagę. Zostaw margines bezpieczeństwa rzędu 200–300 kg.
 {{% /expert %}}
 

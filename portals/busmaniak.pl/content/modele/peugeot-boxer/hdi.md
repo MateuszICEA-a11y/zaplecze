@@ -42,7 +42,7 @@ Sama moc nie wystarcza przy wyborze dużego vana. W praktyce trzeba zestawić si
 
 Im większa buda i wyższe DMC, tym bardziej odczuwalna staje się różnica między słabszymi i mocniejszymi wariantami 2.2. To ważne zwłaszcza w autach pracujących stale pod obciążeniem albo w zabudowach specjalnych.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Wśród części użytkowników i warsztatów Boxer 2.2 HDi 130 KM z nowszych roczników uchodzi za rozsądny kompromis między dynamiką a kosztami eksploatacji. Nie jest to jednak uniwersalna reguła – przy zakupie liczy się przede wszystkim stan konkretnego egzemplarza, historia serwisowa i typ zabudowy.
 {{% /expert %}}
 

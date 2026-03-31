@@ -79,7 +79,7 @@ Częstym problemem jest żółta kontrolka immobilizera (kluczyk z kłódką), k
 | Zielony | Tempomat | Aktywny tempomat |
 | Niebieski | Światła drogowe | Włączone światła dalekie |
 
-{{% expert name="Kowalczyk" %}}W Daily VI z lat 2016–2018 widuję plagę awarii modułu SCR – kontrolka AdBlue zapala się mimo pełnego zbiornika, a komputer odlicza kilometry do ograniczenia mocy. Przyczyna to najczęściej czujnik NOx (ok. 2 000 zł) lub moduł dozujący AdBlue (1 500–3 000 zł). Zanim wymienisz moduł, sprawdź, czy problem nie leży w jakości płynu – tani AdBlue z nieznanych źródeł krystalizuje się i blokuje wtryskiwacz.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}W Daily VI z lat 2016–2018 widuję plagę awarii modułu SCR – kontrolka AdBlue zapala się mimo pełnego zbiornika, a komputer odlicza kilometry do ograniczenia mocy. Przyczyna to najczęściej czujnik NOx (ok. 2 000 zł) lub moduł dozujący AdBlue (1 500–3 000 zł). Zanim wymienisz moduł, sprawdź, czy problem nie leży w jakości płynu – tani AdBlue z nieznanych źródeł krystalizuje się i blokuje wtryskiwacz.{{% /expert %}}
 
 ![Kontrolki Iveco Daily – znaczenie symboli na desce rozdzielczej](/images/iveco-daily-kontrolki-hero.jpg)
 

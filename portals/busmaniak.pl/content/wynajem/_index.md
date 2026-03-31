@@ -97,7 +97,7 @@ Największe wypożyczalnie i agregatory w Polsce:
 - **California Rent** – wypożyczalnia specjalizująca się w modelach VW California (Beach, Coast, Ocean), oferująca także wersje 4Motion.
 - **CamperDays** – międzynarodowy portal z ofertami z całego świata, w tym polskie wypożyczalnie.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy wyborze wypożyczalni zawsze pytam o trzy rzeczy: wiek najstarszego kampera we flocie, co dokładnie obejmuje kaucja i czy jest możliwość jej ubezpieczenia. Te trzy informacje mówią więcej niż cały cennik na stronie.
 {{% /expert %}}
 

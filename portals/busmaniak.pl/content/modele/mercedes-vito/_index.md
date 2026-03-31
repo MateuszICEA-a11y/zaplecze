@@ -77,7 +77,7 @@ Wersje FWD (114 CDI, 116 CDI) mają silniki 1.6/1.7 z Renault – tańsze w serw
 
 Stały napęd na cztery koła z rozdziałem momentu 45:55 (przód:tył). Dostępny z silnikami RWD od 163 KM wzwyż. Idealny do górskich tras transferowych i terenów budowlanych.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy zakupie Vito 4x4 sprawdź stan przegubów, mostów i oleju w dyferencjale. Serwis napędu na wszystkie koła w Mercedesie to koszt 3000–5000 zł za przegląd z wymianą olejów. Ale 4x4 trzyma wartość – na rynku wtórnym tracisz 15–20% mniej niż w wersjach FWD.
 {{% /expert %}}
 

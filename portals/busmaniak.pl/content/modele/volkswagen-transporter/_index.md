@@ -103,7 +103,7 @@ Model występuje w kilku kluczowych odmianach przeznaczenia:
 - **Wtryskiwacze 2.5 TDI** – regeneracja 800–1200 zł/szt.
 - **DSG 7-bieg.** – wymaga wymiany oleju co 60 tys. km; zaniedbanie = naprawa mechatroniki 4000–7000 zł
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Dobrze utrzymane T5 regularnie przekraczają 400–500 tys. km bez kapitalnego remontu silnika. Kluczem jest terminowa wymiana rozrządu i oleju w DSG. Unikaj T5 z 2.5 TDI z lat 2003–2007 – wtryskiwacze i dwumasowe potrafią pochłonąć kilkanaście tysięcy złotych.
 {{% /expert %}}
 

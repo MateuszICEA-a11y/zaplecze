@@ -102,7 +102,7 @@ Po włączeniu zapłonu (przed startem silnika) wszystkie kontrolki powinny zapa
 - **Trójkąt z wykrzyknikiem** – ogólna kontrolka ostrzegawcza. Szczegóły na wyświetlaczu komputera pokładowego.
 - **Klucz / immobilizer** – problem z rozpoznaniem kluczyka. Spróbuj ponownie – jeśli nie pomoże, wymień baterię w kluczyku.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Najczęstszy żółty alarm w busach dostawczych to check engine spowodowany czujnikiem NOx lub czujnikiem ciśnienia różnicowego DPF. W 70% przypadków to sam czujnik, nie układ, który monitoruje. Diagnostyka OBD-II kosztuje 150–250 zł i pozwala odróżnić awarię czujnika za 200 zł od naprawy turbosprężarki za 5 000 zł.
 {{% /expert %}}
 

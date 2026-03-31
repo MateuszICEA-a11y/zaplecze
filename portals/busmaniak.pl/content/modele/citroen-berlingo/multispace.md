@@ -94,7 +94,7 @@ Po stronie eksploatacji benzynowe 1.6 VTi mają swoje typowe słabsze punkty. Na
 
 W Multispace dominowały skrzynie manualne, ale nie było tak, że automat nie istniał wcale. W części rynków i roczników dostępna była zautomatyzowana przekładnia ETG/EGS/BMP6.
 
-{{% expert name="Kowalczyk" %}}Jeśli szukasz używanego Citroëna Berlingo Multispace do rodzinnej eksploatacji, najbezpieczniejszym wyborem zwykle pozostaje 1.6 HDi 90 lub 92 KM z dobrze udokumentowanym serwisem. Benzynowe 1.6 VTi ma sens głównie przy mniejszych przebiegach, ale wymaga czujności wobec rozrządu i zużycia oleju.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Jeśli szukasz używanego Citroëna Berlingo Multispace do rodzinnej eksploatacji, najbezpieczniejszym wyborem zwykle pozostaje 1.6 HDi 90 lub 92 KM z dobrze udokumentowanym serwisem. Benzynowe 1.6 VTi ma sens głównie przy mniejszych przebiegach, ale wymaga czujności wobec rozrządu i zużycia oleju.{{% /expert %}}
 
 ## Wyposażenie i komfort {#wyposażenie}
 

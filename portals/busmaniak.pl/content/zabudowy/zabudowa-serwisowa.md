@@ -59,7 +59,7 @@ Czołowi producenci oferują odmienne podejście do organizacji przestrzeni:
 
 Systemy modułowe pozwalają konfigurować zabudowę z gotowych elementów – regałów, szuflad, uchwytów i pojemników o standardowych wymiarach. Ich zaletą jest łatwość rekonfiguracji i możliwość przeniesienia do innego busa. Zabudowa na wymiar (custom) jest tańsza, ale spawana ze stali lub aluminium, przez co trudniejsza do przeniesienia i pozbawiona certyfikatów bezpieczeństwa.
 
-{{% expert name="Zielinski" %}}Przy wyborze systemu zabudowy warto zacząć od inwentaryzacji. Spisz wszystkie narzędzia i materiały, które ekipa wozi codziennie, i dopiero na tej podstawie projektuj układ regałów. Producenci tacy jak Sortimo oferują bezpłatne konsultacje – to pozwala uniknąć przepłacania za niepotrzebne moduły.{{% /expert %}}
+{{% expert name="Tomasz Zieliński" %}}Przy wyborze systemu zabudowy warto zacząć od inwentaryzacji. Spisz wszystkie narzędzia i materiały, które ekipa wozi codziennie, i dopiero na tej podstawie projektuj układ regałów. Producenci tacy jak Sortimo oferują bezpłatne konsultacje – to pozwala uniknąć przepłacania za niepotrzebne moduły.{{% /expert %}}
 
 ## Organizacja narzędzi i sprzętu {#organizacja}
 

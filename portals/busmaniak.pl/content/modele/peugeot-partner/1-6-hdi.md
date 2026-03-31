@@ -74,7 +74,7 @@ W praktyce wariant 90 KM często wypada korzystniej od 75 KM, zwłaszcza gdy aut
 
 Nie warto jednak traktować tego jako sztywnej reguły. Partner L2 z dużą zabudową lub pracujący stale w mieście może spalić więcej niezależnie od tego, czy ma 75 czy 90 KM.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Jeśli auto ma pracować głównie jako miejski furgon, najważniejsze są nie same deklaracje spalania, tylko zgodność wersji silnikowej z profilem jazdy. Przy krótkich odcinkach i częstym gaszeniu silnika lepiej wypada prostsza konfiguracja bez FAP, a przy trasie i równym obciążeniu także 92 KM potrafi być oszczędny.
 {{% /expert %}}
 

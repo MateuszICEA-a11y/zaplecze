@@ -38,7 +38,7 @@ W codziennym użytkowaniu ważne są nie tylko wymiary zewnętrzne, ale też par
 
 Przy wysokości około 1848 mm Combo XL zwykle mieści się pod belkami 2,0 m. Przy ograniczeniu 1,9 m trzeba już zachować ostrożność, bo zapas jest niewielki.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Combo XL to sensowny wybór dla firm, które potrzebują więcej niż typowy miejski van, ale nie chcą przeskakiwać do większego dostawczaka. Niska wysokość załadunku 576 mm pozostaje jednym z najmocniejszych argumentów przy intensywnej pracy kurierskiej i serwisowej.
 {{% /expert %}}
 

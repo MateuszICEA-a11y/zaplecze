@@ -60,7 +60,7 @@ W nomenklaturze Opla właściwa nazwa to 1.5 Diesel lub 1.5 D. Wariant 100 KM ro
 
 Do regularnej pracy z ładunkiem diesel pozostaje najbardziej logicznym wyborem. W praktyce użytkowej 1.5 Diesel zużywa orientacyjnie około 5,5–7,0 l/100 km w mieście i 4,8–6,0 l/100 km w trasie, przy czym końcowy wynik mocno zależy od masy ładunku i stylu jazdy.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Do pracy kurierskiej, serwisowej i codziennego wożenia towaru najrozsądniej wypada 1.5 Diesel 100 KM z manualem. Ma około 250 Nm, dobrze pasuje do charakteru auta i zwykle lepiej znosi intensywną eksploatację flotową niż benzyna używana stale pod obciążeniem.
 {{% /expert %}}
 

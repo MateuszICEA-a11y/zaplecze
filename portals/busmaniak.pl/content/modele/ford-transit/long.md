@@ -86,7 +86,7 @@ W długich wersjach nie ma jednej uniwersalnej konfiguracji napędu. Transit wys
 
 RWD częściej spotyka się w cięższych odmianach serii 350–470. Nie oznacza to jednak, że każda wersja L3 lub L4 ma napęd na tylną oś jako standard.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy wyborze silnika do Ford Transit Long warto patrzeć nie tylko na moc, ale też na DMC, rodzaj zabudowy i realną masę roboczą auta. W praktyce auto z regałami, izotermą albo zabudową specjalistyczną może ważyć wyraźnie więcej niż seryjny furgon, dlatego konfigurację napędu najlepiej dobierać pod konkretny scenariusz pracy.
 {{% /expert %}}
 

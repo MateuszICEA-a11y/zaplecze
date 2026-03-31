@@ -116,7 +116,7 @@ Montaż bezpośredni przez podłogę do ramy jest opcją najtańszą, ale utrudn
 
 Montaż pojedynczego regału modułowego zajmuje 1–2 godziny. Kompletna zabudowa obustronna w Ducato L3H2 to 6–10 godzin pracy. Autoryzowani montażyści pobierają 100–200 zł/h netto. Samodzielny montaż jest możliwy przy systemach na szynach – producenci dostarczają szablony wiercenia i instrukcje krok po kroku.
 
-{{% expert name="Zielinski" %}}Przy rozmieszczaniu ładunku kluczowe jest zachowanie prawidłowego rozkładu masy. Najcięższe elementy muszą znajdować się jak najniżej i pomiędzy osiami pojazdu, najlepiej tuż za przegrodą kabiny. Umieszczenie ich za tylną osią tworzy efekt dźwigni, odciąża przednie koła i grozi utratą sterowności.{{% /expert %}}
+{{% expert name="Tomasz Zieliński" %}}Przy rozmieszczaniu ładunku kluczowe jest zachowanie prawidłowego rozkładu masy. Najcięższe elementy muszą znajdować się jak najniżej i pomiędzy osiami pojazdu, najlepiej tuż za przegrodą kabiny. Umieszczenie ich za tylną osią tworzy efekt dźwigni, odciąża przednie koła i grozi utratą sterowności.{{% /expert %}}
 
 ## Ceny regałów do busów w 2026 roku {#ceny}
 

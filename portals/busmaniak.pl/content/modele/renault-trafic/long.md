@@ -98,7 +98,7 @@ W 1.6 dCi odmiany 120 i 145 KM były znane z układu twin-turbo, podczas gdy sł
 
 Przy regularnej pracy z ładunkiem ważna jest nie tylko moc maksymalna, ale też charakter oddawania momentu i realne obciążenie auta. W praktyce mocniejsze odmiany 1.6 dCi i 2.0 dCi będą lepszym wyborem do L2 niż podstawowe wersje silnikowe, szczególnie jeśli auto jeździ w trasie lub z zabudową.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy Traficu L2 do regularnej pracy pod obciążeniem szukałbym raczej mocniejszych odmian silnikowych niż bazowych. W 1.6 dCi trzeba pamiętać, że wersje twin-turbo oferują lepszą elastyczność, ale mają też bardziej rozbudowany osprzęt, a przy aucie z zabudową lub wysoką masą własną zapas mocy po prostu ułatwia codzienną pracę.
 {{% /expert %}}
 

@@ -49,7 +49,7 @@ Sama lepkość nie wystarczy. Każdy producent busa wymaga spełnienia konkretne
 
 W silnikach 2.0 EcoBlue Forda (prod. 2016–2023) pasek rozrządu pracuje w kąpieli olejowej. Zastosowanie oleju niespełniającego normy WSS-M2C950-A prowadzi do jego degradacji. Fragmenty paska zatykają smok pompy oleju, co kończy się zatarciem silnika.
 
-{{% expert name="Kowalczyk" %}}Norma MB 229.52 dla Sprintera to nie fanaberia – to olej niskopopiołowy (Low SAPS), który chroni filtr DPF. Wlanie oleju ACEA A3/B4 zamiast C3 skraca żywotność filtra nawet o połowę. Widuję takie oszczędności na co dzień – kończą się rachunkiem za nowy DPF za 4–6 tys. zł.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Norma MB 229.52 dla Sprintera to nie fanaberia – to olej niskopopiołowy (Low SAPS), który chroni filtr DPF. Wlanie oleju ACEA A3/B4 zamiast C3 skraca żywotność filtra nawet o połowę. Widuję takie oszczędności na co dzień – kończą się rachunkiem za nowy DPF za 4–6 tys. zł.{{% /expert %}}
 
 ## Jaki olej do Ducato, Sprintera i Transita – tabela doboru
 

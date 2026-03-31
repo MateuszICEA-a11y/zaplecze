@@ -83,7 +83,7 @@ Nazwy wersji wyposażenia i ich zakres zmieniały się zależnie od rynku oraz r
 
 Warto szukać takich elementów jak automatyczna klimatyzacja, kamera cofania, przesuwne drzwi po obu stronach, czujniki parkowania oraz systemy ADAS. W tej klasie szczególnie przydatne są AEB, utrzymanie pasa ruchu, rozpoznawanie znaków, tempomat adaptacyjny, monitoring martwego pola i kamera o szerokim kącie widzenia.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Jeśli szukasz Toyota Proace City osobowy dla rodziny, najpraktyczniejsza jest odmiana Long – zwłaszcza wtedy, gdy planujesz okazjonalnie wozić 7 osób. Trzeci rząd traktowałbym jednak jako rozwiązanie dodatkowe, bo po jego rozłożeniu bagażnik mocno się kurczy. Przed zakupem koniecznie sprawdź też konkretny układ drugiego rzędu siedzeń, bo to właśnie on najmocniej wpływa na codzienną wygodę.
 {{% /expert %}}
 

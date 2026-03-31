@@ -121,7 +121,7 @@ Zwykle potrzebne są odpowiednie siedzenia z mocowaniami i pasami, zagłówki, p
 
 Jeśli zależy ci na bezproblemowym użytkowaniu rodzinnym, fabryczna Panorama lub osobowe Doblò/e-Doblò są po prostu bezpieczniejszym wyborem. Sama „kanapa” nie wystarcza, by legalnie i bezproblemowo zmienić N1 na M1.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy zakupie używanego Doblò II sprawdź nie tylko wnętrze, ale też elementy typowo eksploatacyjne. Najważniejsze punkty kontroli to zużycie dwumasy i sprzęgła w 1.6 oraz 2.0 MultiJet, stan DPF i EGR w dieslach, luzy przedniego zawieszenia, korozja podwozia i drzwi przesuwnych oraz działanie elektryki szyb i zamków. Interwał rozrządu i osprzętu zależy od konkretnego silnika i rocznika, więc trzeba go weryfikować oddzielnie dla 1.3, 1.6 i 2.0 MultiJet.
 {{% /expert %}}
 

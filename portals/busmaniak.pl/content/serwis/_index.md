@@ -83,7 +83,7 @@ Kluczowe płyny eksploatacyjne:
 - **Płyn hamulcowy** – wymiana co 2 lata, niezależnie od przebiegu. W ciężkich busach jakość płynu hamulcowego ma kluczowe znaczenie dla bezpieczeństwa.
 - **Płyn chłodniczy** – wymiana co 5 lat lub 150 000 km. Busy mają duże układy chłodzenia, więc jednorazowo potrzeba 10–15 litrów płynu.
 
-{{% expert name="Kowalczyk" %}}Wielu właścicieli busów leje pierwszy lepszy olej 5W-30, bo „tak było w osobówce". To poważny błąd. Silniki 2.3 MultiJet w normie Euro 5 wymagają oleju spełniającego normę Fiat 9.55535-S1 (np. popularne 5W30), a nowsze jednostki Euro 6 potrzebują specyfikacji 9.55535-DS1 (zazwyczaj 0W30). Niewłaściwy olej przyspiesza zapychanie DPF i skraca żywotność turbosprężarki.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Wielu właścicieli busów leje pierwszy lepszy olej 5W-30, bo „tak było w osobówce". To poważny błąd. Silniki 2.3 MultiJet w normie Euro 5 wymagają oleju spełniającego normę Fiat 9.55535-S1 (np. popularne 5W30), a nowsze jednostki Euro 6 potrzebują specyfikacji 9.55535-DS1 (zazwyczaj 0W30). Niewłaściwy olej przyspiesza zapychanie DPF i skraca żywotność turbosprężarki.{{% /expert %}}
 
 ## Opony i koła – ciśnienie, rozmiary, moment dokręcania
 

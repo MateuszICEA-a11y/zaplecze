@@ -60,7 +60,7 @@ To najczęstsza grupa przyczyn w busach dostawczych z silnikami Diesla:
 - **Uszkodzone wtryskiwacze** – nieszczelne lub zużyte wtryskiwacze zaburzają dawkowanie paliwa i powodują nierówną pracę silnika, a także dymienie.
 - **Nieszczelność układu dolotowego** – pęknięty wąż intercoolera lub luźna obejma skutkują spadkiem ciśnienia doładowania i głośnym sykiem pod obciążeniem.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W busach dostawczych z silnikami 2.0–3.0 dCi/CDI/JTD najczęstszą przyczyną żółtej kontrolki jest połączenie zapchanego filtra DPF z zabrudzoną sondą lambda. Te dwie usterki wzajemnie się napędzają – nieprawidłowy odczyt sondy blokuje automatyczną regenerację DPF, a zapchany DPF generuje kolejne kody błędów. Dlatego przy diagnostyce zawsze warto sprawdzić oba elementy jednocześnie.
 {{% /expert %}}
 

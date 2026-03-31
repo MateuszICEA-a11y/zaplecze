@@ -60,7 +60,7 @@ W Europie Amarok II występuje zwykle jako 2.0 TDI 170 KM, 2.0 BiTDI 205 KM oraz
 
 W zależności od wersji Amarok II korzysta z dołączanego 4MOTION z reduktorem albo ze stałego 4MOTION. To ważne rozróżnienie, bo inaczej zachowuje się auto robocze z klasycznym układem part-time, a inaczej bogatsza wersja nastawiona również na codzienną jazdę po asfalcie.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Amarok I z 3.0 V6 TDI to jeden z najbardziej udanych pickupów klasy średniej do cięższej pracy i holowania. Jeśli jednak auto ma głównie wozić ekipę, narzędzia i okazjonalnie ciągnąć przyczepę, rozsądniej wypada 2.0 BiTDI – zwłaszcza 180 KM. Różnica osiągów względem V6 jest odczuwalna, ale koszty wejścia i serwisu pozostają niższe.
 {{% /expert %}}
 

@@ -173,7 +173,7 @@ Wariant budżetowy to rozwiązanie tymczasowe albo weekendowe. Standardowy jest 
 
 W kosztach eksploatacji też są duże różnice. Toaleta kasetowa generuje stały koszt chemii i droższego papieru, toaleta separacyjna eliminuje chemię, ale wymaga medium typu włókno kokosowe i częstszego opróżniania pojemnika na mocz, a bojler gazowy oznacza zużycie gazu, podczas gdy elektryczny potrzebuje odpowiednio dużej mocy zasilania.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Łazienka w kamperze to jedna z tych rzeczy, na których nie warto przesadnie oszczędzać, jeśli planujesz dłuższe wyjazdy. Na weekend wystarczy Porta Potti i prysznic zewnętrzny, ale przy regularnym użytkowaniu wygodniejsza okazuje się stała toaleta i sensownie rozwiązana wentylacja całej strefy mokrej.
 {{% /expert %}}
 

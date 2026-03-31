@@ -73,7 +73,7 @@ Do miejskiego furgonu o DMC 3,0–3,3 t zwykle wystarczają odmiany 120–130 KM
 
 W gamie Ducato warto też pamiętać o alternatywach. Obok 2.3 występowały także 2.2 o mocy 100–120 KM oraz 3.0 o mocy 157–177 KM, a w bliźniaczych modelach Peugeot Boxer i Citroën Jumper spotykano odpowiedniki na tej samej platformie Sevel. Silnik 3.0 oferował wyższy moment i lepszą pracę pod obciążeniem, ale zwykle oznaczał też wyższe koszty.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W praktyce wersje 140, 160 i 177–180 KM mają najwięcej sensu tam, gdzie auto jeździ stale ciężkie – z zabudową kamperową, kontenerem albo pełnym ładunkiem. Do klasycznego furgonu miejskiego 120–130 KM nadal pozostaje rozsądnym kompromisem.
 {{% /expert %}}
 

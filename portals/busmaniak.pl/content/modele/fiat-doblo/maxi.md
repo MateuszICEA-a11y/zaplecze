@@ -139,7 +139,7 @@ W gamie występowały wersje Cargo/N1 oraz osobowe M1. W Cargo liczba miejsc to 
 
 Dostęp do tyłu zapewniają drzwi boczne przesuwne. Sam mechanizm trzeciego rzędu zależy od wersji – nie należy zakładać, że siedzenia zawsze składają się w podłogę, bo w praktyce rozwiązania różniły się między odmianami.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy zakupie Doblò Maxi do celów rodzinnych lub przewozowych kluczowe jest sprawdzenie homologacji oraz faktycznej liczby miejsc wpisanej w dokumentach. W tym modelu różnice między Cargo i osobowym Doblò mają znaczenie nie tylko użytkowe, ale też formalne.
 {{% /expert %}}
 

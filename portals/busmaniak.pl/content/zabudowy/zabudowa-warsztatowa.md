@@ -60,7 +60,7 @@ Blat roboczy to serce zabudowy warsztatowej. Montuje się go najczęściej z ty�
 
 Na blacie montuje się imadło obrotowe (nośność 80–120 mm) oraz uchwyty na elektronarzędzia. Imadło powinno mieć szybkozacisk i możliwość składania – w pozycji transportowej nie może wystawać ponad obrys blatu. Popularne modele warsztatowe (np. Heuer Compact) ważą 4–6 kg i wytrzymują siłę zacisku do 35 kN.
 
-{{% expert name="Zielinski" %}}Blat roboczy w busie musi być zamontowany na amortyzowanych wspornikach, nie bezpośrednio do ściany. Wibracje podczas jazdy przenoszą się na imadło i narzędzia – bez amortyzacji po roku spawy zaczynają pękać, a blat się odkształca.{{% /expert %}}
+{{% expert name="Tomasz Zieliński" %}}Blat roboczy w busie musi być zamontowany na amortyzowanych wspornikach, nie bezpośrednio do ściany. Wibracje podczas jazdy przenoszą się na imadło i narzędzia – bez amortyzacji po roku spawy zaczynają pękać, a blat się odkształca.{{% /expert %}}
 
 ## Generatory prądu i instalacja elektryczna {#zasilanie}
 

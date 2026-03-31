@@ -125,7 +125,7 @@ Renault Kangoo III ma własną gamę jednostek napędowych:
 
 W 2024 roku cała rodzina elektrycznych vanów Stellantis przeszła lifting. Wprowadzono nową baterię LFP o pojemności 50 kWh i standardową pompę ciepła, co zwiększyło realny zasięg z ok. 275 km do 330–340 km w cyklu WLTP. Zmieniono też stylistykę frontu i wprowadzono nowy system multimedialny.
 
-{{% expert name="Kowalczyk" %}}W codziennej eksploatacji kurierskiej najlepszy stosunek dynamiki do spalania oferuje silnik 1.5 BlueHDi 130 KM z automatem EAT8. Średnie zużycie na poziomie 5,5–6,5 l/100 km w cyklu mieszanym jest w pełni osiągalne. Kangoo z dieslem 1.5 dCi spala podobne ilości paliwa, ale subiektywnie lepiej radzi sobie pod dużym obciążeniem dzięki charakterystyce momentu obrotowego.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}W codziennej eksploatacji kurierskiej najlepszy stosunek dynamiki do spalania oferuje silnik 1.5 BlueHDi 130 KM z automatem EAT8. Średnie zużycie na poziomie 5,5–6,5 l/100 km w cyklu mieszanym jest w pełni osiągalne. Kangoo z dieslem 1.5 dCi spala podobne ilości paliwa, ale subiektywnie lepiej radzi sobie pod dużym obciążeniem dzięki charakterystyce momentu obrotowego.{{% /expert %}}
 
 | Silnik | Berlingo/Partner/Doblò | Kangoo |
 |--------|----------------------|--------|

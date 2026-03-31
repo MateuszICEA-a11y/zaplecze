@@ -60,7 +60,7 @@ Trzy instalacje to trzy potencjalne pola minowe, które musisz sprawdzić przed 
 - **Elektryczna:** Zweryfikuj kondycję obu akumulatorów, działanie panelu sterowania oraz wszystkich gniazd 12V i 230V. Po latach luźne styki czy zaśniedziałe połączenia to norma.
 - **Wodna:** Sprawdź czystość zbiorników, działanie pompy wody i bojlera. Każdy, nawet drobny wyciek, to prosta droga do zgnitej podłogi i ścian.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Zanim pojedziesz oglądać kampera, poproś sprzedawcę o zdjęcia spodu pojazdu i wnętrza schowków. 90% poważnych problemów – korozja, wilgoć, ślady napraw po zalaniu – widać już na fotografiach. Jeśli sprzedawca odmawia, to sygnał ostrzegawczy.
 {{% /expert %}}
 

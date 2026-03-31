@@ -171,7 +171,7 @@ Napęd na cztery koła ma sens, ale nie jest darmowy ani w zakupie, ani w codzie
 - **Opony** – AT/LT są zwykle droższe od drogowych, głośniejsze i mogą wydłużać drogę hamowania na mokrym asfalcie
 - **Prowadzenie** – bardziej terenowa konfiguracja zwykle oznacza mniej „osobowe” zachowanie auta na co dzień
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Szczerze? Wielu kamperowiczów kupuje 4x4 bardziej dla poczucia bezpieczeństwa niż z realnej potrzeby. Jeśli Twój świat to głównie asfalt, kempingi i sporadyczny szuter, rozsądniej bywa kupić zwykłą wersję i dołożyć dobre opony AT, blokadę oraz osłony. Ale jeśli planujesz Islandię, Maroko albo regularne zjazdy na trudne dojazdy – kamper 4x4 ma sens i potrafi odwdzięczyć się spokojem w miejscach, gdzie 2WD zaczyna się poddawać.
 {{% /expert %}}
 

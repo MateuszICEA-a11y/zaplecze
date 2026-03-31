@@ -65,7 +65,7 @@ Nowoczesna gama jednostek napędowych obejmuje oszczędne diesle 1.5 BlueHDi ora
 | 1.2 PureTech | 110 KM | 205 Nm | 6,5–7,1 l/100 km | Euro 6d |
 | Elektryczny (50 kWh) | 136 KM | 260 Nm | 18–22 kWh/100 km | Zero Emission |
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W najnowszych dieslach 1.5 szczególną uwagę należy zwrócić na łańcuszek rozrządu – zdarzały się przypadki jego rozciągnięcia przed przebiegiem 100 tys. km. Z kolei w Combo D newralgicznym punktem są łożyska w manualnych skrzyniach biegów produkcji Fiata.
 {{% /expert %}}
 

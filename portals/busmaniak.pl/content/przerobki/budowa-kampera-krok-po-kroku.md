@@ -63,7 +63,7 @@ Zanim przejdziesz dalej, zaplanuj rozmieszczenie okien, wentylatorów i wlotu og
 - **Izoluj nadkola matą bitumiczną** – tłumi hałas drogowy skuteczniej niż sama mata kauczukowa.
 - **Podłoga na XPS** – pianka polistyrenowa (styrodur) wytrzymuje obciążenie mebli i nie nasiąka wodą.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Najczęstszy błąd to pomijanie izolacji profili konstrukcyjnych. Każdy odsłonięty fragment zimnej blachy to punkt kondensacji – zimą zbiera się tam woda, która spływa za izolację i powoduje korozję. Poświęć dodatkowe godziny na dokładne oklejenie wszystkich zakamarków.
 {{% /expert %}}
 

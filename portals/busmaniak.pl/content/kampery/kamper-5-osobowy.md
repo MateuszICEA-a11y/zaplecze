@@ -36,7 +36,7 @@ Warto wiedzieć, że półintegrały fabrycznie mają najczęściej homologację
 - **Półintegrał** – nowocześniejszy design, lepsza dynamika jazdy, mniej miejsca do spania.
 - **Integrał** – najdroższy, najlepiej wyciszony, ale rzadko spotykany w homologacji na 5 osób.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Dla rodziny z trójką małych dzieci alkowa jest bezkonkurencyjna – masz dwa stałe łóżka bez rozkładania czegokolwiek. Wieczorem kładziesz dzieci spać, a sami siadacie przy stole. W półintegrale opuszczenie przedniego łóżka z sufitu blokuje cały salon – z małymi dziećmi to organizacyjny koszmar.
 {{% /expert %}}
 

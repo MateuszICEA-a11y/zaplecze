@@ -50,7 +50,7 @@ Stacja kontroli pojazdów sprawdza obecność i prawidłowy montaż obowiązkowy
 - **Szafki do przechowywania** – minimum jedna zamykana przestrzeń (szafka, szuflada, schowek z drzwiczkami).
 - **Oświetlenie wnętrza** – niezależne od oświetlenia pojazdu, zasilane z [instalacji elektrycznej](/przerobki/instalacja-elektryczna-kamper/) 12V lub 230V.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Najczęstszy powód negatywnego wyniku badania to luźne, niestarannie przymocowane elementy zabudowy. Diagnosta sprawdza, czy meble, łóżko i urządzenia są zamontowane na stałe. Drugi powód to brak odpływu ze zlewu – sam zlew bez podłączonego zbiornika ścieków to niekompletna instalacja. Sprawdź wszystko przed wizytą na stacji.
 {{% /expert %}}
 

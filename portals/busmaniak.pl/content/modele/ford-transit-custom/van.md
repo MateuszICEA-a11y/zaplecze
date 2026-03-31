@@ -78,7 +78,7 @@ Boczne drzwi przesuwne:
 
 Dostępne są także drzwi boczne po obu stronach. To rozwiązanie szczególnie przydatne w pracy kurierskiej, serwisowej i wszędzie tam, gdzie auto często zatrzymuje się przy krawężniku.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Transit Custom L2 to bardzo sensowna konfiguracja do dostaw wielopunktowych. Dłuższa podłoga ułatwia rozdzielenie towaru według kolejności zrzutów, a drzwi przesuwne po obu stronach po prostu poprawiają ergonomię pracy kierowcy.
 {{% /expert %}}
 

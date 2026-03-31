@@ -78,7 +78,7 @@ Na starcie sprzedaży Rifter oferował:
 
 W zależności od rynku i rocznika Rifter mógł mieć panoramiczny dach jako opcję lub element wyższych wersji wyposażenia. Ważną przewagą nad Tepee są systemy ADAS, takie jak Active Safety Brake, rozpoznawanie znaków, ostrzeżenie o opuszczeniu pasa, adaptacyjny tempomat, Grip Control czy kamera cofania.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Kupując używanego Tepee z 1.6 HDi, sprawdź stan DPF/FAP, EGR, historię wymian oleju i ewentualne ślady problemów z turbo oraz dolotem. W Rifterze z 1.5 BlueHDi warto zweryfikować temat łańcucha wałków rozrządu 7 mm w części aut z pierwszych lat produkcji oraz działanie układu AdBlue/SCR, a przy benzynowym 1.2 PureTech pamiętać o ryzyku paska rozrządu pracującego w oleju w starszych odmianach.
 {{% /expert %}}
 

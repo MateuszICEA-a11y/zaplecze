@@ -91,7 +91,7 @@ W segmencie kombivanów XL Berlingo rywalizuje z bliźniakami platformy EMP2 (Ri
 
 Berlingo rywalizuje z [Peugeotem Rifterem](/modele/peugeot-rifter/) (bliźniak z inną atrapą), [Oplem Combo](/modele/opel-combo/) (identyczna baza techniczna), [VW Caddy](/modele/volkswagen-caddy/) (lepsze wyciszenie, wyższa cena) i [Renault Kangoo](/modele/renault-kangoo/) (szersze nadwozie, Open Sesame). Berlingo wyróżnia się bagażnikiem XL i najniższą ceną w grupie EMP2.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Kupując używane Berlingo, zwróć uwagę na stan zawieszenia, szczególnie w egzemplarzach z trudnych warunków. Sprawdź historię serwisową – silnik [1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) wymaga regularnej wymiany oleju, pominięte przeglądy szybko kończą się awarią turbosprężarki.
 {{% /expert %}}
 

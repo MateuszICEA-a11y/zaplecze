@@ -86,7 +86,7 @@ Dla felg z 6 otworami (Sprinter, Daily bliźniak):
 
 - 1 → 4 → 2 → 5 → 3 → 6 (dokręcając naprzeciwległe pary)
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Najczęstszy błąd, jaki widzę w warsztatach, to dokręcanie kół kluczem udarowym bez końcowej weryfikacji kluczem dynamometrycznym. Klucze udarowe generują moment 300–800 Nm – często dwu- lub trzykrotnie więcej niż potrzeba. Efektem są zdeformowane tarcze hamulcowe i rozciągnięte śruby. Jeśli oddajesz busa do wulkanizatora, poproś o dokręcenie kół kluczem dynamometrycznym.
 {{% /expert %}}
 

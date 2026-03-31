@@ -118,7 +118,7 @@ Przy imporcie i autach flotowych trzeba koniecznie sprawdzić VIN, wpisy w CEPiK
 
 Bardzo ważne są również dane w dokumentach. Przed zakupem trzeba porównać wpisy dotyczące mas i homologacji – zwłaszcza pola F.1, F.2, O.1 i O.2 – z realną konfiguracją auta.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Najbezpieczniej kupować używanego Mastera nie „po przebiegu”, tylko po stanie i historii. Egzemplarz z przebiegiem 150–180 tys. km może być dobrym wyborem, ale tylko wtedy, gdy ma czytelną dokumentację, regularny serwis i nie nosi śladów ciężkiej eksploatacji miejskiej. W autach jeżdżących głównie na krótkich odcinkach szczególnej uwagi wymagają DPF, EGR i układ SCR.
 {{% /expert %}}
 

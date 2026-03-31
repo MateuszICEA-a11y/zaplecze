@@ -91,7 +91,7 @@ Podwozie Sprintera dobrze sprawdza się tam, gdzie trzeba połączyć relatywnie
 
 W branży gastronomicznej sama zabudowa to dopiero początek. W praktyce trzeba zaplanować układ roboczy, wentylację, źródło zasilania, zbiorniki na wodę i ścieki, materiały łatwo zmywalne oraz odbiory wymagane dla danej działalności.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy wyborze podwozia pod chłodnię skup się na właściwej specyfikacji osi, zawieszenia, instalacji elektrycznej pod agregat, alternatorze, akumulatorach i przygotowaniu pod zabudowę. Jeśli agregat ma pracować na postoju, zasilanie standby 230 V dotyczy samego układu chłodniczego i zabudowy, a nie uniwersalnie podwozia. Dopilnuj też pełnej dokumentacji montażowej zgodnej z wytycznymi producenta nadwozi – nieprawidłowa zabudowa może ograniczyć odpowiedzialność gwarancyjną w zakresie elementów, na które miała wpływ.
 {{% /expert %}}
 

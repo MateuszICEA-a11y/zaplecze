@@ -74,7 +74,7 @@ Silniki OM651 (2.1 CDI) i OM654 (2.0 CDI) należą do najtrwalszych jednostek w 
 
 Szerokość wewnętrzna ok. 1780 mm sprawia, że łóżko w układzie poprzecznym jest zbyt krótkie dla osób wyższych niż 175 cm. Cena na rynku wtórnym jest najwyższa – Sprinter 314 CDI z 2018 roku kosztuje 70 000–100 000 zł, podczas gdy analogiczny Ducato 50 000–70 000 zł. Starsze generacje (przed 2018) są podatne na korozję.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Jeśli budżet pozwala na Sprintera – wybierz wersję 314 CDI (2.1, 143 KM) z lat 2014–2018. To optymalny punkt równowagi między ceną a wyposażeniem. Dokładnie sprawdź jednak stan nadwozia pod kątem korozji, typowej dla tej generacji. Unikaj wersji 210/213 CDI – silnik w wariancie 95/129 KM jest zbyt słaby dla obciążonego kampera.
 {{% /expert %}}
 

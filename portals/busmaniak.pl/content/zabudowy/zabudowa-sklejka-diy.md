@@ -58,7 +58,7 @@ Dobór grubości sklejki zależy od funkcji elementu w zabudowie:
 | 18 mm   | ~13,0 kg  | Podłoga, platforma       | 85–120 zł              |
 | 21 mm   | ~15,1 kg  | Podłoga ciężka, stopnie  | 100–140 zł             |
 
-{{% expert name="Zielinski" %}}Sklejka z marketu budowlanego to zazwyczaj klasa II/III – wystarczająca do prostych zabudów. Do bardziej wymagających projektów szukaj sklejki u hurtowników drewna. Różnica w cenie to 10–20%, ale różnica w jakości i trwałości jest odczuwalna.{{% /expert %}}
+{{% expert name="Tomasz Zieliński" %}}Sklejka z marketu budowlanego to zazwyczaj klasa II/III – wystarczająca do prostych zabudów. Do bardziej wymagających projektów szukaj sklejki u hurtowników drewna. Różnica w cenie to 10–20%, ale różnica w jakości i trwałości jest odczuwalna.{{% /expert %}}
 
 ## Narzędzia i materiały dodatkowe {#narzedzia}
 

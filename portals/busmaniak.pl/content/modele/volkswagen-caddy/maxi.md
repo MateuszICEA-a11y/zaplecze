@@ -96,7 +96,7 @@ Najważniejsze atuty rodzinne:
 
 Warto jednak zaznaczyć, że w dostępnych danych brakuje konkretnych informacji o pojemności bagażnika przy komplecie 7 miejsc oraz o tym, czy fotele trzeciego rzędu są wyjmowane lub składane w identyczny sposób we wszystkich wersjach. Nie ma też potwierdzonych danych, czy dwa foteliki ISOFIX mieszczą się obok trzeciego pasażera w każdej konfiguracji kanapy.
 
-{{% expert name="Kowalczyk" %}}Volkswagen Caddy Maxi ma dwie mocne strony, które rodziny szybko doceniają – ogromny bagażnik w układzie 5-osobowym i wygodę przesuwnych drzwi. W praktyce to auto bardziej użytkowe niż klasyczny SUV, ale właśnie dlatego tak dobrze sprawdza się przy wózku, rowerkach i codziennym wożeniu dzieci.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Volkswagen Caddy Maxi ma dwie mocne strony, które rodziny szybko doceniają – ogromny bagażnik w układzie 5-osobowym i wygodę przesuwnych drzwi. W praktyce to auto bardziej użytkowe niż klasyczny SUV, ale właśnie dlatego tak dobrze sprawdza się przy wózku, rowerkach i codziennym wożeniu dzieci.{{% /expert %}}
 
 ## Porównanie: Volkswagen Caddy Maxi vs Berlingo XL {#porownanie}
 

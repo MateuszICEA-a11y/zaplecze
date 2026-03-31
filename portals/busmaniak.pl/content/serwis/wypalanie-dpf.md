@@ -80,7 +80,7 @@ Zapchany DPF nie jest problemem, który pojawia się z dnia na dzień. Proces te
 5.  **Tryb awaryjny** – silnik ogranicza obroty do 2 500–3 000 obr./min i moc do ok. 50%, co uniemożliwia jazdę z prędkością powyżej 80 km/h.
 6.  **Nieprzyjemny zapach** – intensywny, gryzący zapach spalenizny z wydechu świadczy o niedopalaniu sadzy.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Najczęstszy scenariusz w busach kurierskich to cykl: jazda w mieście → kontrolka DPF → ignorowanie → check engine → tryb awaryjny → panika. Wystarczy raz w tygodniu przejechać 30–40 km autostradą, żeby filtr się sam zregenerował. Koszt? Kilka litrów paliwa zamiast kilkuset złotych w serwisie.
 {{% /expert %}}
 

@@ -54,7 +54,7 @@ Dane silnikowe to tylko część obrazu. Kluczowe dla biznesu są parametry uży
 
 Nowy Renault Master IV generacji otrzymał nowoczesny, 9-biegowy automat. Iveco Daily jako jedyny oferuje potężny silnik 3.0 z momentem 470 Nm – absolutny rekord segmentu, kluczowy dla wersji o DMC powyżej 3,5 t.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Moment obrotowy jest ważniejszy od mocy przy wyborze busa dostawczego. Bus z silnikiem 140 KM i momentem 380 Nm będzie lepiej radził sobie z ciężkim ładunkiem niż jednostka 160 KM z momentem 350 Nm. Wysoki moment przy niskich obrotach (1500–2000 obr./min) oznacza mniej zmian biegów, niższe spalanie i mniejsze zużycie sprzęgła.
 {{% /expert %}}
 

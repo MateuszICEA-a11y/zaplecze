@@ -84,7 +84,7 @@ W praktyce oznacza to, że Ford Transit Courier Van można dopasować zarówno d
 
 W przypadku wersji elektrycznej warto doprecyzować jedno – deklarowane ładowanie DC do 100 kW oznacza wartość maksymalną. Kluczowa informacja użytkowa jest taka, że uzupełnienie energii od 10 do 80% zajmuje ok. 35 minut przy szybkiej ładowarce DC.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Najbardziej uniwersalnie wygląda dziś układ 1.0 EcoBoost 125 KM, zwłaszcza jeśli auto pracuje w mieście i na krótkich trasach. 1.5 EcoBlue 100 KM pozostaje sensownym wyborem przy większych przebiegach, a e-Transit Courier jest propozycją dla firm, które chcą jeździć lokalnie i regularnie wracają do bazy.
 {{% /expert %}}
 

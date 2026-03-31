@@ -85,7 +85,7 @@ Regularny serwis bezpośrednio wpływa na spalanie:
 - **Olej silnikowy** – stosowanie w pełni syntetycznego, energooszczędnego oleju Low-SAPS o lepkości zalecanej przez producenta (np. 0W-30 lub 5W-30) jest kluczowe dla ochrony filtra DPF i minimalizuje tarcie wewnętrzne w silniku.
 - **Układ AdBlue** – niesprawny system SCR może wymusić tryb awaryjny z ograniczeniem mocy i podwyższonym spalaniem.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Najprostsza metoda monitorowania spalania to komputer pokładowy – ale w busach dostawczych zaniża on wyniki o 3–8%. Jeśli chcesz znać realne spalanie, licz od dystrybutora do dystrybutora: tankuj do pełna, zeruj licznik dzienny, po następnym tankowaniu do pełna dziel litry przez kilometry. Po trzech tankach masz wiarygodną średnią.
 {{% /expert %}}
 

@@ -95,7 +95,7 @@ Nowsze egzemplarze otrzymały silnik **2.0 dCi / Blue dCi**.
 
 W nowszych dieslach do listy kontroli dochodzi układ AdBlue. Poza tym nadal trzeba ocenić stan DPF, EGR, skrzyni manualnej lub EDC oraz ogólną kondycję osprzętu przy dużych przebiegach.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy wyborze używanego Trafica ważniejszy od samej mocy jest rocznik, historia serwisowa i sposób eksploatacji. Egzemplarz z zadbanym układem dolotowym, sprawnym DPF i dobrze pracującą skrzynią będzie lepszym wyborem niż teoretycznie mocniejsza wersja z zaniedbanym serwisem.
 {{% /expert %}}
 

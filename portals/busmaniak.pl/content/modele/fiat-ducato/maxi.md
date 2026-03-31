@@ -40,7 +40,7 @@ W praktyce pojazd powyżej 3,5 t oznacza nie tylko większą ładowność, ale t
 
 Warto też pamiętać o systemie e-TOLL. W Polsce pojazdy samochodowe oraz zespoły pojazdów o DMC powyżej 3,5 t podlegają temu systemowi na odcinkach płatnych, więc dla użytkownika Ducato Maxi 4,25 t to realny koszt i dodatkowy obowiązek organizacyjny.
 
-{{% expert name="Kowalczyk" %}}Przy ciężkiej zabudowie albo regularnej jeździe pod obciążeniem wersja heavy/maxi ma sens nie tylko z powodu papierowego DMC. Równie ważne są naciski osi, konfiguracja zawieszenia i masa własna po zabudowie.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Przy ciężkiej zabudowie albo regularnej jeździe pod obciążeniem wersja heavy/maxi ma sens nie tylko z powodu papierowego DMC. Równie ważne są naciski osi, konfiguracja zawieszenia i masa własna po zabudowie.{{% /expert %}}
 
 ## Fiat Ducato Maxi – wymiary przestrzeni ładunkowej
 

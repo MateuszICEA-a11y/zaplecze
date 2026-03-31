@@ -77,7 +77,7 @@ Diesel 1.5 BlueHDi (1499 cm³) to oszczędna baza – wystarczająca dynamika do
 
 Elektryczny e-Expert: bateria 50 kWh (zasięg 230 km WLTP) lub 75 kWh (330 km). Niska masa akumulatorów w wersji 50 kWh korzystnie wpływa na ładowność użytkową.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Silnik 2.0 BlueHDi to konstrukcja pancerna, która przy odpowiednim serwisie olejowym co 20 tysięcy kilometrów bez trudu pokonuje dystanse rzędu 400 tysięcy kilometrów. Raz na rok kontroluj stan zbiornika płynu AdBlue, który bywa kapryśny w nowszych egzemplarzach.
 {{% /expert %}}
 

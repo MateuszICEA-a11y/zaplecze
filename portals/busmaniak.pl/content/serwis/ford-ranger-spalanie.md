@@ -33,7 +33,7 @@ W mieście Ranger pali od 10,5 do 13 l/100 km. Masa własna przekraczająca dwie
 
 W terenie spalanie rośnie do 15–20 l/100 km i więcej. Tryb 4L (reduktor) i niskie biegi podnoszą obroty, a jazda po piasku, w błocie czy na stromych podjazdach wymaga od silnika ciągłej pracy pod wysokim obciążeniem.
 
-{{% expert name="Kowalczyk" %}}Ranger z automatem 10-biegowym (od 2019) spala ok. 0,5 l/100 km mniej niż starszy model ze skrzynią 6-biegową. Nowa przekładnia szybciej redukuje i sprawniej utrzymuje obroty w optymalnym zakresie 1600–2200 obr./min. Jeśli szukasz oszczędności, celuj w roczniki od 2019 z nowszym automatem.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Ranger z automatem 10-biegowym (od 2019) spala ok. 0,5 l/100 km mniej niż starszy model ze skrzynią 6-biegową. Nowa przekładnia szybciej redukuje i sprawniej utrzymuje obroty w optymalnym zakresie 1600–2200 obr./min. Jeśli szukasz oszczędności, celuj w roczniki od 2019 z nowszym automatem.{{% /expert %}}
 
 ![Ford Ranger – realne spalanie i zużycie paliwa](/images/ford-ranger-spalanie-hero.jpg)
 

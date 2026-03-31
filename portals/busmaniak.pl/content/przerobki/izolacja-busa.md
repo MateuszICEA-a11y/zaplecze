@@ -60,7 +60,7 @@ Sufit to najważniejsza powierzchnia do zaizolowania – ciepłe powietrze unosi
 
 W busach używanych do zimowych wyjazdów (temperatury poniżej –10°C) warto zastosować podwójną warstwę izolacji na suficie – 2×19 mm Armaflexu daje 38 mm izolacji o łącznym oporze cieplnym zbliżonym do 50 mm XPS. Koszt dodatkowy to 400–600 zł, ale różnica w temperaturze wnętrza przy –15°C na zewnątrz sięga 3–5°C.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Przy montażu izolacji na suficie pracuj w temperaturze powyżej 15°C – klej na Armaflexie schnie wolniej w chłodzie i izolacja może odpaść po kilku tygodniach. Jeśli budujesz zimą w nieogrzewanym garażu, użyj dodatkowego kleju kontaktowego (np. Kaiflex 414) zamiast polegać na warstwie samoprzylepnej.
 {{% /expert %}}
 

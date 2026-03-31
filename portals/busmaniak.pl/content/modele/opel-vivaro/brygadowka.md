@@ -54,7 +54,7 @@ Istotne są też same otwory załadunkowe. Dla praktyki warsztatowej i remontowe
 - **wysokość otworu bocznego** – ok. 1241 mm
 - **wysokość progu załadunku** – ok. 600–650 mm zależnie od wersji
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W przypadku Vivaro warto patrzeć nie tylko na długość auta, ale też na realną długość podłogi za drugim rzędem i wysokość progu. Indywidualne zabudowy wykonywane przez firmy zewnętrzne są możliwe, ale nie należy traktować ich jako typowej, fabrycznej konfiguracji modelu.
 {{% /expert %}}
 

@@ -64,7 +64,7 @@ To jednostki stosowane w małych modelach Forda i Ford Pro. W tym tekście nie p
 
 Nie ma też podstaw, by mieszać dane wersji osobowej z vanem. Dotyczy to zwłaszcza e-Couriera, gdzie pojemność akumulatora, moc ładowania DC i sama dostępność odmiany osobowej powinny być każdorazowo weryfikowane w aktualnych materiałach producenta.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 W praktyce wybór napędu warto uzależnić od sposobu użytkowania. Benzynowy 1.0 EcoBoost będzie naturalnym wyborem do miasta i krótszych tras, a diesel 1.5 EcoBlue ma sens wtedy, gdy auto regularnie pokonuje dłuższe odcinki i częściej jeździ z obciążeniem.
 {{% /expert %}}
 

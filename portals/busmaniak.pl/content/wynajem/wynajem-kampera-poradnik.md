@@ -104,7 +104,7 @@ Dzień zwrotu decyduje o tym, czy odzyskasz pełną kaucję. Większość potrą
 
 **Czystość pojazdu.** Umowa najczęściej wymaga zwrotu „w stanie czystości odpowiadającym odbiorowi". W praktyce oznacza to: odkurzenie wnętrza, umycie naczyń, wyczyszczenie kuchenki i lodówki, umycie podłogi. Mycie zewnętrzne zwykle nie jest wymagane, ale za brudne wnętrze naliczana jest opłata 200–500 zł.
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Najczęstszym powodem potrąceń z kaucji nie są wypadki drogowe, tylko uszkodzenia wnętrza – urwane zawiasy szafek, pęknięte rolety, zabrudzenia tapicerki, które nie schodzą. Koszt takich napraw to 1000–2000 zł. Obchodź się z wyposażeniem kampera tak, jak ze swoimi meblami w domu.
 {{% /expert %}}
 

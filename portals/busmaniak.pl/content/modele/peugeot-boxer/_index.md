@@ -46,7 +46,7 @@ Gama silnikowa Peugeot Boxer obejmuje kilka wariantów mocy – wybór jednostki
 | 2.2 BlueHDi | 2020– | 165 KM | 370 Nm | 8,0 l/100 km | EAT8 | Euro 6d |
 | e-Boxer | 2022– | 122 KM | 260 Nm | 30 kWh/100 km | 1-bieg. | – |
 
-{{% expert name="Kowalczyk" %}}
+{{% expert name="Marek Kowalczyk" %}}
 Boxer 2.2 BlueHDi 140 KM z manualną skrzynią to mój pewnik dla firmy budowlanej lub kurierskiej z obciążeniem 2–3 t. Wystarczający moment od 1500 rpm sprawia, że na rampach załadunkowych i w drodze z pełnym ładunkiem silnik pracuje spokojnie. Unikam wersji 120 KM przy ładunku powyżej 1,5 t – silnik pracuje zbyt długo pod pełnym obciążeniem.
 {{% /expert %}}
 
