@@ -413,13 +413,10 @@ a:hover { color: var(--c-orange-hover); }
 }
 
 .brand-icon {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
   object-fit: contain;
-  background: #fff;
-  border-radius: 4px;
-  padding: 3px;
 }
 
 .dropdown__model:hover .brand-icon {
