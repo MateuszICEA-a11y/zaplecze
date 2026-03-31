@@ -1372,6 +1372,7 @@ a:hover { color: var(--c-orange-hover); }
   padding: 4rem var(--sp) 5rem;
   max-width: 1280px;
   margin: 0 auto;
+  background: var(--c-bg-alt);
 }
 
 .editorial-section__header {
@@ -1514,8 +1515,10 @@ blockquote {
    ══════════════════════════════════════ */
 .section {
   padding: 3.5rem 0;
+  border-top: 1px solid var(--c-border-light);
 }
 
+.section:nth-of-type(even) { background: var(--c-bg-alt); }
 .section--alt { background: var(--c-bg-alt); }
 
 .section__header {
