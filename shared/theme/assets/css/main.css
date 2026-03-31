@@ -743,6 +743,7 @@ a:hover { color: var(--c-orange-hover); }
   .site-nav__links {
     display: none;
     flex-direction: column;
+    flex-wrap: wrap;
     position: absolute;
     top: 100%;
     left: 0;
@@ -752,6 +753,9 @@ a:hover { color: var(--c-orange-hover); }
     border-top: 1px solid rgba(255,255,255,.1);
     padding: 1rem 0;
     gap: 0;
+    max-height: calc(100vh - 68px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
   .nav-toggle:checked ~ .site-header__nav .site-nav__links { display: flex; }
   .nav-toggle:checked ~ .site-header__nav .nav-toggle-label span { background: transparent; }
