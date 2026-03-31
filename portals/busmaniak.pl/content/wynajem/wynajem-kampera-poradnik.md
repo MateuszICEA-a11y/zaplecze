@@ -8,6 +8,8 @@ h1: "Wynajem kampera – poradnik krok po kroku dla tych, którzy robią to pier
 volume: 2000
 image: "/images/wynajem-kampera-poradnik-hero.webp"
 image_alt: "Wynajem kampera – para odbierająca kampera z wypożyczalni"
+youtube: "P53I2Idxm1A"
+youtube_title: "PRYWATNY WYNAJEM KAMPERA - CZY TO SIĘ OPŁACA?"
 main_keyword: "wynajem kampera poradnik"
 lead: "Pierwszy wynajem kampera budzi mieszankę ekscytacji i stresu – ile to kosztuje, co jeśli coś zepsuję, jak w ogóle działa ta toaleta? Ten poradnik przeprowadzi Cię przez cały proces – od wyboru typu kampera, przez formalności i odbiór, po codzienną eksploatację i zwrot bez niespodzianek finansowych."
 faq:
@@ -100,6 +102,9 @@ Inspekcje wagowe w Austrii, Niemczech czy Szwajcarii są bezwzględne, a mandaty
 **Szara woda.** Zbiornik na brudną wodę z kuchni i prysznica (80–120 l) opróżniasz przez zawór pod podwoziem na stanowisku „grey water" na kempingu. Nie wylewaj jej na trawę – to niezgodne z regulaminem większości obiektów.
 
 **Nocleg poza kempingiem.** W Polsce nie ma jednoznacznego zakazu noclegu w kamperze na parkingach, ale gminy mogą to regulować lokalnie. Bezpieczne opcje to oznakowane parkingi dla kamperów (coraz więcej przy atrakcjach turystycznych) i aplikacje typu Park4Night czy Camper Contact.
+
+
+{{% youtube %}}
 
 ## Zwrot kampera – jak uniknąć dodatkowych opłat
 

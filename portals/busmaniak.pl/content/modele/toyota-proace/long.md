@@ -19,6 +19,8 @@ faq:
   - question: "Jaka jest ładowność Toyota Proace Long?"
     answer: "Ładowność Proace Long wynosi realnie ok. 1000–1400 kg, zależnie od wersji, rynku i konfiguracji."
 lead: "Toyota Proace Long to wersja o długości 5309 mm z ładownią 6,1 m³ – wybór dla firm, które potrzebują do 3 europalet i większej długości użytkowej niż w Medium. Poniżej znajdziesz konkrety dla nadwozia Van, z uwzględnieniem tego, że parametry mogą różnić się zależnie od rocznika i rynku."
+youtube: "5JgT3lIiTik"
+youtube_title: "Test: Toyota Proace Verso 2.0 D-4D - plusy i minusy"
 ---
 ## Wymiary Toyoty Proace Long
 
@@ -121,6 +123,9 @@ W praktyce warto pamiętać o kilku rzeczach:
 - w Polsce samochód dostawczy do 3,5 t korzysta z e-TOLL tylko w określonych konfiguracjach zestawu – znaczenie ma DMC zestawu, nie sama ładowność
 
 Sprawdź też dowód rejestracyjny: pole F.1 oznacza maksymalną masę całkowitą pojazdu, F.2 – dopuszczalną masę całkowitą pojazdu, a F.3 – dopuszczalną masę całkowitą zespołu pojazdów. To podstawowe dane, od których zależy legalny załadunek i holowanie.
+
+
+{{% youtube %}}
 
 ## Praktyczne pytania przy zakupie
 

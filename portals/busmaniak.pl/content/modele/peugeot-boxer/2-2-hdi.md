@@ -10,6 +10,8 @@ type: "page"
 main_keyword: "peugeot boxer 2.2 hdi"
 image: "/images/peugeot-boxer-2-2-hdi-hero.webp"
 image_alt: "Peugeot Boxer 2.2 HDi furgon"
+youtube: "At2D5MktTJU"
+youtube_title: "Peugeot Boxer Kamper – autotest"
 lead: "Peugeot Boxer 2.2 HDi wymaga ostrożnego rozróżnienia wersji silnikowych według rocznika i kodu jednostki. W Boxerze od 2006 r. kluczowe są silniki 2.2 o pojemności 2198 cm³ z rodziny Ford/Puma, a po modernizacji pojawiły się także nowsze odmiany BlueHDi. Dlatego przy opisie tego modelu nie można wrzucać wszystkich wersji 2.2 do jednego worka ani zakładać jednego typu rozrządu dla całej gamy."
 faq:
   - question: "Czy 2.2 HDi w Boxerze ma łańcuch czy pasek rozrządu?"
@@ -108,6 +110,9 @@ Rzeczowe porównanie z konkurencją wygląda następująco:
 - **VW Crafter 2.0 TDI** w starszej generacji – 109–163 KM
 
 Na tle tych konstrukcji Boxer 2.2 wypada rozsądnie jako użytkowy diesel do pracy, ale ostateczna ocena zależy od wersji napędowej, emisji spalin, typu rozrządu i kosztów serwisu konkretnego egzemplarza. Właśnie dlatego przed zakupem lepiej porównywać auta po VIN i historii napraw niż tylko po samej mocy.
+
+
+{{% youtube %}}
 
 ## Koszty serwisu Peugeot Boxer 2.2 HDi
 

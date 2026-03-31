@@ -8,6 +8,8 @@ type: "page"
 main_keyword: "Opel Vivaro brygadówka"
 image: "/images/opel-vivaro-brygadowka-hero.webp"
 image_alt: "Opel Vivaro brygadówka – kabina dwurzędowa z przestrzenią ładunkową"
+youtube: "kh0MbFQS2fg"
+youtube_title: "Opel Vivaro – Czy 1.5 wystarczy? | TEST PL"
 parent: "opel-vivaro"
 lead: "Opel Vivaro brygadówka to układ, w którym auto przewozi jednocześnie ludzi i sprzęt. W praktyce trzeba jednak zawsze rozróżnić generację modelu, liczbę miejsc, homologację i konkretną wersję DMC."
 faq:
@@ -106,6 +108,9 @@ Do pracy pod obciążeniem w Vivaro C spotykamy m.in.:
 W praktyce moment obrotowy ma większe znaczenie niż sama moc maksymalna, zwłaszcza przy pełnej obsadzie i narzędziach na pace. Warto też sprawdzić, które wersje były łączone z automatem **EAT8**, bo ma to wpływ na masę własną i finalną ładowność.
 
 Jeśli rozważasz starsze generacje, pamiętaj, że podane wyżej jednostki nie odnoszą się do Vivaro A ani Vivaro B. To ważne przy zakupie auta używanego, bo w ogłoszeniach bardzo często miesza się nazewnictwo wszystkich trzech generacji.
+
+
+{{% youtube %}}
 
 ## Zastosowania
 

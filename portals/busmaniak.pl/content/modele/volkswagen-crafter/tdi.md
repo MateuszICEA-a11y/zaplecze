@@ -11,6 +11,8 @@ volume: 720
 main_keyword: "volkswagen crafter tdi"
 image: "/images/volkswagen-crafter-hero.webp"
 image_alt: "Volkswagen Crafter II furgon"
+youtube: "3mLxBsw60oA"
+youtube_title: "#Test Volkswagen Crafter 2.0 l, 177 KM, 6M"
 lead: "Crafter II (od 2017) napędza wyłącznie czterocylindrowy 2.0 TDI w trzech wariantach mocy: 102, 140 i 177 KM. To pierwszy Crafter z własnym silnikiem VW – poprzednik korzystał z jednostek Mercedesa. Oto wszystko o danych technicznych, spalaniu i typowych usterkach."
 faq:
   - question: "Który wariant 2.0 TDI w Crafterze wybrać?"
@@ -142,6 +144,9 @@ Koszty obsługi Craftera różnią się mocno w zależności od tego, czy auto t
 | AdBlue | koszt zależny od pojemności zbiornika i cen lokalnych | koszt zależny od pojemności zbiornika i cen lokalnych | według zużycia |
 
 Największe różnice kosztowe pojawiają się zwykle przy rozrządzie, hamulcach i obsłudze automatu. W aucie pracującym zarobkowo oszczędzanie na jakości części i płynów zwykle szybko mści się przestojem.
+
+
+{{% youtube %}}
 
 ## Porównanie silników: Crafter vs Sprinter vs Ducato
 

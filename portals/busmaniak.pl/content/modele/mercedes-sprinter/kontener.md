@@ -19,6 +19,8 @@ faq:
   - question: "Kto wykonuje zabudowy kontenerowe na Sprinter?"
     answer: "Zabudowy kontenerowe wykonują wyspecjalizowani zabudowcy pojazdów użytkowych. Kluczowe jest nie tyle logo wykonawcy, co komplet dokumentów do rejestracji: dokument od producenta zabudowy, oświadczenie o montażu, dane mas i wymiarów po zabudowie oraz – jeśli wymagane – badanie techniczne po zmianach konstrukcyjnych i aktualizacja danych pojazdu w wydziale komunikacji."
 lead: "Mercedes Sprinter w wersji podwoziowej to baza dla zabudów kontenerowych – od suchej skrzyni i izotermy po chłodnię, food truck i laboratorium mobilne. W gamie występują wersje od 3,0 do 5,5 t DMC, więc można zbudować zarówno lekkie auto dostawcze do 3,5 t, jak i lekki samochód ciężarowy powyżej 3,5 t."
+youtube: "YONtDgHE50c"
+youtube_title: "Mercedes Sprinter 317 CDI L1H2 TEST Najlepszy bus? [4k]"
 sources:
   - "dokumentacja Mercedes-Benz Vans dla podwozi i wytyczne dla zabudowców"
   - "dokumentacja ATP"
@@ -98,6 +100,9 @@ W branży gastronomicznej sama zabudowa to dopiero początek. W praktyce trzeba 
 {{% expert name="Marek Kowalczyk" %}}
 Przy wyborze podwozia pod chłodnię skup się na właściwej specyfikacji osi, zawieszenia, instalacji elektrycznej pod agregat, alternatorze, akumulatorach i przygotowaniu pod zabudowę. Jeśli agregat ma pracować na postoju, zasilanie standby 230 V dotyczy samego układu chłodniczego i zabudowy, a nie uniwersalnie podwozia. Dopilnuj też pełnej dokumentacji montażowej zgodnej z wytycznymi producenta nadwozi – nieprawidłowa zabudowa może ograniczyć odpowiedzialność gwarancyjną w zakresie elementów, na które miała wpływ.
 {{% /expert %}}
+
+
+{{% youtube %}}
 
 ## Ceny orientacyjne
 

@@ -19,6 +19,8 @@ faq:
   - question: "Czym różni się brygadówka od kombi?"
     answer: "Brygadówka to zwykle podwozie z podwójną kabiną i oddzielną zabudową ładunkową za kabiną. Kombi lub furgon brygadowy pozostaje nadwoziem jednobryłowym, z częścią osobową i ładunkową w jednej bryle."
 lead: "Mercedes Sprinter brygadówka to pojazd roboczy dla ekip terenowych – łączy kabinę dla kilkuosobowej załogi z oddzielną częścią ładunkową na narzędzia i sprzęt. W praktyce kluczowe są tu nie tylko liczba miejsc, ale też DMC, masa zabudowy i realna ładowność po zajęciu miejsc przez ekipę."
+youtube: "YONtDgHE50c"
+youtube_title: "Mercedes Sprinter 317 CDI L1H2 TEST Najlepszy bus? [4k]"
 sources:
   - "dokumentacja techniczna Sprintera"
   - "cennik"
@@ -130,6 +132,9 @@ Instalacja 230 V z gniazdami w pace nie jest standardem bazowej brygadówki. To 
 {{% expert name="Marek Kowalczyk" %}}
 Przy zamawianiu brygadówki dla ekipy terenowej warto dopisać do specyfikacji uchwyt na drabinę, solidne punkty mocowania ładunku i blokady tylnej klapy oraz schowków. Jeśli pojazd ma zasilać elektronarzędzia na postoju, instalację 230 V trzeba traktować jako wyposażenie specjalistyczne, a nie oczywisty standard każdej zabudowy.
 {{% /expert %}}
+
+
+{{% youtube %}}
 
 ## Ceny Mercedesa Sprinter brygadówka
 

@@ -11,6 +11,8 @@ volume: 110
 main_keyword: "opel combo 1.6 cdti"
 image: "/images/opel-combo-1-6-cdti-hero.webp"
 image_alt: "Opel Combo D z silnikiem 1.6 CDTi"
+youtube: "bKDW0v_tOng"
+youtube_title: "Opel Combo 1.5 Diesel Test - Kombivan dla rodziny"
 lead: "Opel Combo 1.6 CDTi w generacji D to diesel dla użytkowników, którzy oczekują rozsądnego spalania i lepszej elastyczności niż w słabszych odmianach użytkowych. Przy ocenie takiego auta najważniejsze są nie tylko parametry silnika, ale też wersja nadwozia, masa, ładunek oraz stan osprzętu – przede wszystkim DPF, EGR, dolotu, sprzęgła i koła dwumasowego."
 faq:
   - question: "Ile pali Opel Combo 1.6 CDTi?"
@@ -93,6 +95,9 @@ Profil użytkownika ma tu duże znaczenie. Dla kuriera miejskiego robiącego 20�
 W porównaniu z realnymi konkurentami segmentu warto patrzeć na Fiat Doblo 1.6 MultiJet 90/105 KM, VW Caddy 1.6 TDI 102 KM, Renault Kangoo 1.5 dCi 90/110 KM oraz Citroena Berlingo i Peugeota Partnera 1.6 HDi 90/100 KM. Najważniejsze kryteria to nie tylko moc i moment, ale też średnie spalanie, typ rozrządu, typowe awarie i koszt obsługi rozrządu.
 
 Praktycznie rzecz biorąc, najlepsza decyzja zakupowa nie wynika z samej nazwy silnika. Liczy się to, czy dana wersja odpowiada profilowi pracy auta i czy egzemplarz ma zdrowy osprzęt. W segmencie kompaktowych vanów to zwykle ważniejsze niż różnice kilku koni mechanicznych.
+
+
+{{% youtube %}}
 
 ## Koszty serwisu Opel Combo 1.6 CDTi
 

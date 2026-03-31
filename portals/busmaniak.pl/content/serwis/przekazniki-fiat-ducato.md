@@ -10,6 +10,8 @@ type: "post"
 volume: 1000
 image: "/images/przekazniki-fiat-ducato-hero.webp"
 image_alt: ""
+youtube: "dxIymQCZEfc"
+youtube_title: "Fiat Ducato Bezpieczniki opis"
 main_keyword: "Fiat Ducato Przekaźniki"
 lead: "Przekaźniki w Fiacie Ducato odpowiadają za kluczowe funkcje elektryczne – od pompy paliwa po wycieraczki i świece żarowe. Gdy bus odmawia posłuszeństwa, warto zacząć diagnostykę właśnie od nich. Oto kompletny schemat i lokalizacja przekaźników w Ducato III i IV."
 faq:
@@ -62,6 +64,9 @@ Właściciele kamperów na bazie Ducato muszą pamiętać o kluczowej zmianie w 
 {{% /expert %}}
 
 ![Przekaźniki Fiat Ducato – schemat, lokalizacja, opis](/images/przekazniki-fiat-ducato-hero.webp)
+
+
+{{% youtube %}}
 
 ## Typowe awarie i diagnostyka
 

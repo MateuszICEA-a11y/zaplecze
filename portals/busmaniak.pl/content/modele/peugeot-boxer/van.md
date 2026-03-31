@@ -16,6 +16,8 @@ faq:
   - question: "Jaka jest maksymalna ładowność Peugeot Boxera Van?"
     answer: "Maksymalna ładowność Boxera Van zależy od wersji, DMC i wyposażenia. Popularne warianty mają DMC 3,0 t, 3,3 t lub 3,5 t, ale dostępne są też odmiany 4,0 t. W praktyce masa własna furgonu tej klasy wynosi zwykle ok. 1900–2300 kg, a ładowność może sięgać do 1735 kg w wybranych konfiguracjach."
 lead: "Peugeot Boxer Van to podstawowa wersja nadwoziowa Boxera III – zamknięta przestrzeń ładunkowa z dostępem przez tylne drzwi dwuskrzydłowe i opcjonalnie przesuwane drzwi boczne. To pojazd dla firm potrzebujących dużej kubatury i szerokiego wyboru wersji DMC – najpopularniejsze odmiany kończą się na 3,5 t, ale w ofercie występują też warianty heavy powyżej 3,5 t, w tym 4,0 t."
+youtube: "At2D5MktTJU"
+youtube_title: "Peugeot Boxer Kamper – autotest"
 sources:
   - "oficjalna specyfikacja producenta Peugeot"
   - "cennik i katalog techniczny modelu dla odpowiedniego rynku i roku modelowego – dane należy każdorazowo weryfikować dla konkretnej wersji"
@@ -106,6 +108,9 @@ LQ oznacza „Limited Quantities”, czyli ilości ograniczone. Zwolnienia i upr
 
 Wersje Boxera o DMC do 3,5 t są najprostsze z punktu widzenia uprawnień kierowcy, ale odmiany 4,0 t wchodzą już w inny reżim prawny. Taki pojazd zwykle wymaga prawa jazdy kategorii C1/C i może podlegać dodatkowym zasadom eksploatacji, zależnie od zastosowania i kraju.
 {{% /info %}}
+
+
+{{% youtube %}}
 
 ## Porównanie Boxer Van vs Ducato vs Jumper
 

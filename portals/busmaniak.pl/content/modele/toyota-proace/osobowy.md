@@ -19,6 +19,8 @@ faq:
   - question: "Czym różni się Proace Verso od Proace towarowego?"
     answer: "Proace Verso ma pełne oszklenie, fotele pasażerskie na całej długości nadwozia i inne zestrojenie pod przewóz osób. Proace towarowy jest odmianą użytkową."
 lead: "Toyota Proace osobowy to Proace Verso – van pasażerski do 9 miejsc, będący bliźniaczą konstrukcją PSA/Stellantis z rodziny średnich vanów opartą na platformie EMP2 dla pojazdów użytkowych, sprzedawaną obok Citroëna SpaceTourer i Peugeot Traveller. Jeśli szukasz dużego busa do przewozu rodziny, grupy lub jako shuttle firmowy, poniżej masz konkretne dane."
+youtube: "5JgT3lIiTik"
+youtube_title: "Test: Toyota Proace Verso 2.0 D-4D - plusy i minusy"
 sources:
   - "oficjalny cennik"
   - "katalog techniczny"
@@ -93,6 +95,9 @@ Wysokość należy zawsze odnosić do konkretnej odmiany i specyfikacji. Fact-ch
 W sekcji bagażnik trzeba zachować ostrożność. Dostarczone dane nie zawierają oficjalnych pojemności dla konfiguracji 5-, 7-, 8- i 9-miejscowych w wersjach Medium i Long, a właśnie te wartości potrafią różnić się o setki litrów w zależności od liczby i typu foteli oraz metody pomiaru.
 
 Pewne jest natomiast to, że funkcjonalność wnętrza mocno zależy od konfiguracji siedzeń. W praktyce przy vanie rodzinnym i shuttle duże znaczenie mają możliwość demontażu foteli, liczba drzwi przesuwnych oraz konkretna aranżacja kabiny, ale do rzetelnego podania szerokości otworu drzwi, wysokości progu czy masy poszczególnych foteli potrzebne są dane katalogowe dla danej wersji.
+
+
+{{% youtube %}}
 
 ## Ceny Toyoty Proace Verso
 

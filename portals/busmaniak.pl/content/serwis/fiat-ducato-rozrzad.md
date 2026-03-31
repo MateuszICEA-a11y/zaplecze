@@ -10,6 +10,8 @@ type: "post"
 volume: 280
 image: "/images/fiat-ducato-rozrzad-hero.webp"
 image_alt: ""
+youtube: "bBf2vMSs0tE"
+youtube_title: "Fiat Ducato 2,3 JTD 130km wymiana rozrządu"
 main_keyword: "Fiat Ducato Rozrząd"
 lead: "Rozrząd w Fiacie Ducato najlepiej wymieniać co 120 000 km lub co 5 lat, mimo że oficjalne instrukcje dopuszczają znacznie dłuższe interwały. W przypadku aut eksploatowanych w trudnych warunkach miejskich lub jako ciężkie kampery, mechanicy zalecają skrócenie tego czasu, aby uniknąć kosztownej awarii silnika MultiJet."
 faq:
@@ -72,6 +74,9 @@ Najczęstszym błędem podczas wymiany rozrządu w Ducato 2.3 jest próba ustawi
 {{% /expert %}}
 
 ![Fiat Ducato rozrząd – co ile wymiana, koszty, objawy zużycia](/images/fiat-ducato-rozrzad-hero.webp)
+
+
+{{% youtube %}}
 
 ## Rozrząd w innych silnikach Ducato
 

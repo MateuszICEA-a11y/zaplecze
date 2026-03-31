@@ -8,6 +8,8 @@ h1: "Opel Combo – kompletny przewodnik po modelu"
 type: "page"
 image: "/images/opel-combo-hero.webp"
 image_alt: "Opel Combo E Cargo furgon na parkingu"
+youtube: "bKDW0v_tOng"
+youtube_title: "Opel Combo 1.5 Diesel Test - Kombivan dla rodziny"
 main_keyword: "opel combo"
 volume: 18100
 lead: "Opel Combo to kompaktowy kombivan produkowany od 1993 roku w pięciu generacjach. Obecna odsłona (Combo E) dzieli platformę EMP2 z Citroënem Berlingo i Peugeotem Partnerem. Silniki 1.5 BlueHDi i 1.2 PureTech od 75 do 130 KM, wersja osobowa Life na 7 miejsc i elektryczny e-Combo."
@@ -110,6 +112,9 @@ Zakup Opel Combo to wydatek, który zależy od generacji, wersji silnikowej i st
 | Combo D | 2011–2018 | 18 000–38 000 zł | – |
 | Combo E (spalinowe) | od 2018 | 45 000–110 000 zł | od ok. 105 000 zł |
 | e-Combo (elektryczne) | od 2021 | 90 000–130 000 zł | od ok. 160 000 zł |
+
+
+{{% youtube %}}
 
 ## Porównanie Combo z konkurencją
 

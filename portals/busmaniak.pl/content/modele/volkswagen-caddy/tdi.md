@@ -12,6 +12,8 @@ volume: 390
 main_keyword: "Volkswagen Caddy TDI"
 image: "/images/volkswagen-caddy-tdi-hero.webp"
 image_alt: "Silnik 2.0 TDI w Volkswagenie Caddy"
+youtube: "HWOAeVgnhuM"
+youtube_title: "Volkswagen Caddy 2.0 TDI 122 DSG TEST Kombivana za 180 000 zł"
 lead: "Silniki TDI to serce większości Caddy sprzedawanych w Polsce. Od legendarnego 1.9 TDI przez oszczędnego 1.6 TDI po nowoczesnego 2.0 TDI – każda generacja ma swoje mocne strony i typowe punkty wymagające kontroli."
 faq:
   - question: "Ile pali Caddy 2.0 TDI?"
@@ -148,6 +150,9 @@ Wady:
 W praktyce Caddy dobrze sprawdza się zarówno jako auto rodzinne, jak i robocze. Krótki rozstaw osi jest poręczniejszy w mieście, a Maxi lepiej znosi jazdę z kompletem pasażerów lub większym bagażem, ale wtedy warto celować co najmniej w 102 KM, a najlepiej 122 KM.
 
 Przy 120 km/h diesel pozostaje akceptowalny, choć nie jest to poziom klasycznego osobowego kombi. W codziennym użyciu największą różnicę robi nie tyle sama moc maksymalna, co zapas momentu przy wyprzedzaniu i jeździe z obciążeniem.
+
+
+{{% youtube %}}
 
 ## Koszty serwisu Caddy TDI {#koszty}
 

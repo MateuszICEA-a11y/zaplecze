@@ -11,6 +11,8 @@ volume: 720
 main_keyword: "zabudowa busa"
 image: "/images/zabudowa-busa-przewodnik-hero.webp"
 image_alt: "Bus dostawczy z profesjonalną zabudową wnętrza przestrzeni ładunkowej"
+youtube: "gRdfzqndxJE"
+youtube_title: "ZRÓB TO SAM | QBRICK SYSTEM ZABUDOWA SAMOCHODU DOSTAWCZEGO"
 lead: "Zabudowa busa to proces dopasowania przestrzeni ładunkowej do konkretnych potrzeb – od regałów narzędziowych, przez izolacje izotermiczne, po pełne przeróbki kamperowe. W 2026 roku rynek oferuje zarówno gotowe systemy modułowe od producentów premium, jak i materiały do samodzielnej zabudowy w budżecie od kilkuset złotych. Ten przewodnik opisuje wszystkie warianty, materiały, koszty i etapy realizacji."
 faq:
   - question: "Ile kosztuje zabudowa busa?"
@@ -112,6 +114,9 @@ Ceny zabudów w 2026 roku zależą od typu, materiałów i producenta. Najwięks
 
 ### Co wpływa na cenę
 Poza materiałami i robocizną na koszt zabudowy wpływa model busa – zabudowa [Mercedesa Sprintera](/modele/mercedes-sprinter/) L3H2 wymaga więcej materiału niż [VW Caddy](/modele/volkswagen-caddy/). Dodatkowe koszty generują: formalności po zmianach konstrukcyjnych (opinia rzeczoznawcy, zmiana przeznaczenia w OSKP i Wydziale Komunikacji), instalacja elektryczna (2 000–8 000 zł) i ogrzewanie postojowe (3 000–6 000 zł z montażem).
+
+
+{{% youtube %}}
 
 ## Etapy realizacji zabudowy {#etapy}
 Niezależnie od skali projektu, proces zabudowy busa można podzielić na kilka kluczowych etapów, od precyzyjnego planowania po finalny montaż i instalacje.

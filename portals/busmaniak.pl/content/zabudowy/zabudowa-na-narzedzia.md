@@ -11,6 +11,8 @@ volume: 590
 main_keyword: "zabudowa busa na narzędzia"
 image: "/images/zabudowa-busa-narzedzia-hero.webp"
 image_alt: "Zabudowa narzędziowa w przestrzeni ładunkowej busa"
+youtube: "POvCR6oByW0"
+youtube_title: "BUS MARZEŃ! | Zabudowa samochodu dostawczego RHINO MR4"
 lead: "Profesjonalna zabudowa busa na narzędzia to inwestycja, która zwraca się w ciągu pierwszych miesięcy pracy. Dobrze zaprojektowany system regałów, szuflad i organizerów skraca czas szukania sprzętu, chroni go przed uszkodzeniem i zwiększa bezpieczeństwo jazdy."
 faq:
   - question: "Ile kosztuje profesjonalna zabudowa busa na narzędzia?"
@@ -122,6 +124,9 @@ Koszt zabudowy narzędziowej zależy od trzech czynników: wielkości busa, wybr
 Profesjonalni serwisanci szacują, że zabudowa narzędziowa oszczędza 15–30 minut dziennie na szukaniu sprzętu. Przy stawce technika 80–120 zł/h to 200–600 zł tygodniowo. Zabudowa za 10 000 zł zwraca się w 4–12 miesięcy, nie licząc oszczędności na uszkodzonych narzędziach i wypadkach z niezabezpieczonym ładunkiem.
 
 {{% expert name="Tomasz Zieliński" %}}Przy wyborze zabudowy narzędziowej warto zacząć od inwentaryzacji narzędzi i materiałów, które wożone są codziennie. Producenci tacy jak Sortimo oferują bezpłatne konsultacje i projektowanie zabudowy w konfiguratorze 3D – to pozwala uniknąć przepłacania za niepotrzebne moduły.{{% /expert %}}
+
+
+{{% youtube %}}
 
 ## Bezpieczeństwo i normy {#bezpieczenstwo}
 

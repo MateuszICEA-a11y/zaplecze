@@ -11,6 +11,8 @@ volume: 480
 main_keyword: "opel combo cdti"
 image: "/images/opel-combo-hero.webp"
 image_alt: "Opel Combo furgon"
+youtube: "bKDW0v_tOng"
+youtube_title: "Opel Combo 1.5 Diesel Test - Kombivan dla rodziny"
 lead: "Silniki CDTi napędzały Opla Combo głównie w generacjach C i D – od popularnego 1.3 CDTi z rodziny Fiat/GM MultiJet po 1.6 CDTi w Combo D. Każdy wariant ma inną charakterystykę, typowe usterki i inne koszty serwisu. W Combo E (od 2018) oznaczenie CDTi zastąpiono przez nowsze diesle 1.5."
 faq:
   - question: "Który CDTi w Combo jest najlepszy?"
@@ -117,6 +119,9 @@ Także w tej generacji obecność DPF i koła dwumasowego należy potwierdzić d
 {{% expert name="Marek Kowalczyk" %}}
 Przy oględzinach używanego Combo warto zacząć od zimnego rozruchu, pracy silnika na biegu jałowym i kontroli osprzętu, a potem przejść pod auto. W dostawczaku stan podwozia, zawieszenia i zamków drzwi bywa równie ważny jak sama jednostka napędowa.
 {{% /expert %}}
+
+
+{{% youtube %}}
 
 ## Koszty serwisu CDTi
 

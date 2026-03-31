@@ -5,6 +5,8 @@ description: "Izolacja termiczna i akustyczna busa – najlepsze materiały i te
 draft: false
 image: "/images/izolacja-busa-hero.webp"
 image_alt: "Izolacja busa Armaflexem – ściany i sufit"
+youtube: "ypnDpUON3Fc"
+youtube_title: "IZOLACJA KAMPERA - Jak solidnie wykonać izolację w kamperze?"
 author: "anna-wozniak"
 h1: "Izolacja busa – porównanie materiałów, techniki montażu i najczęstsze błędy"
 main_keyword: "izolacja busa"
@@ -122,6 +124,9 @@ Drzwi tylne i boczne to miejsca o dużej powierzchni blachy, które zimą stają
 ### Drzwi przesuwne
 
 Drzwi przesuwne izoluj cieńszym materiałem (10 mm), by nie utrudniać mechanizmu przesuwu. Szczególną uwagę zwróć na prowadnicę dolną – izolacja nie może wchodzić w tor rolki.
+
+
+{{% youtube %}}
 
 ## Najczęstsze błędy przy izolacji busa {#bledy}
 

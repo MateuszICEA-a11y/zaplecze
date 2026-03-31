@@ -9,6 +9,8 @@ type: "page"
 main_keyword: "nissan interstar"
 image: "/images/nissan-interstar-hero.webp"
 image_alt: "Nissan Interstar furgon nowej generacji"
+youtube: "f1aL5k2t84s"
+youtube_title: "Nowy Nissan Interstar L3H2 dCi150 (2025) - test [PL]"
 lead: "Nissan Interstar to duży dostawczak, który od trzech generacji bazuje na platformie Renault Mastera. Nowa generacja z 2024 roku przynosi silnik 2.0 dCi, elektrycznego e-Interstara z baterią 87 kWh i tytuł International Van of the Year 2025 (wspólnie z Masterem). Sprawdź, czy warto wybrać go zamiast francuskiego oryginału."
 faq:
   - question: "Czym Nissan Interstar różni się od Renault Mastera?"
@@ -110,6 +112,9 @@ Nowy Interstar pozycjonowany jest cenowo poniżej Sprintera i na poziomie Master
 | Interstar podwozie L3 150 KM | od ok. 135 000 zł | – |
 
 Używane egzemplarze poprzedniej generacji (sprzedawane jako NV400) są wyraźnie tańsze od Masterów w analogicznym stanie – marka Nissan w segmencie dostawczym nie cieszy się w Polsce takim uznaniem jak Renault, co przekłada się na korzystniejsze ceny na rynku wtórnym.
+
+
+{{% youtube %}}
 
 ## Porównanie Interstara z konkurencją
 

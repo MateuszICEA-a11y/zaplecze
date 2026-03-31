@@ -12,6 +12,8 @@ volume: 590
 main_keyword: "Volkswagen Caddy Long"
 image: "/images/volkswagen-caddy-long-hero.webp"
 image_alt: "Volkswagen Caddy Long V generacji"
+youtube: "HWOAeVgnhuM"
+youtube_title: "Volkswagen Caddy 2.0 TDI 122 DSG TEST Kombivana za 180 000 zł"
 lead: "Volkswagen Caddy Long to określenie wydłużonej wersji Caddy V generacji, stosowane opisowo od 2020 roku. W III generacji oraz w poliftingowej odmianie sprzed V generacji wydłużona wersja nosiła nazwę Caddy Maxi, ale między generacjami różnią się platforma, wymiary szczegółowe, wyposażenie i oferta silników."
 faq:
   - question: "Czy Caddy Long i Caddy Maxi to to samo?"
@@ -68,6 +70,9 @@ Przy pełnym obciążeniu, zwłaszcza w aucie 7-osobowym, 102 KM to rozsądne mi
 Na rynku wtórnym szczególną uwagę warto zwrócić na konfigurację silnika i skrzyni. Używane egzemplarze z lat 2020/2021 mogą wyraźnie różnić się wyposażeniem między wersjami Caddy, Life, Style, Cargo i California, dlatego sama nazwa modelu nie mówi jeszcze wszystkiego o specyfikacji auta.
 
 ![Volkswagen Caddy Long V generacji](/images/volkswagen-caddy-long-hero.webp)
+
+
+{{% youtube %}}
 
 ## Zastosowania {#zastosowania}
 

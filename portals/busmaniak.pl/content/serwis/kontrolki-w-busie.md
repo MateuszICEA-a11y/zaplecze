@@ -11,6 +11,8 @@ volume: 33100
 main_keyword: "kontrolki w samochodzie"
 image: "/images/kontrolki-w-busie-hero.webp"
 image_alt: "Deska rozdzielcza busa dostawczego z podświetlonymi kontrolkami ostrzegawczymi w różnych kolorach"
+youtube: "8ah9jovavMM"
+youtube_title: "Co oznaczają kontrolki na desce rozdzielczej?"
 lead: "Współczesny bus dostawczy ma na desce rozdzielczej 30–50 kontrolek – od znanych ikon oleju i temperatury po specyficzne symbole DPF, AdBlue czy przeciążenia osi. Czerwona kontrolka oznacza natychmiastowe zatrzymanie, żółta wymaga uwagi, a zielona jedynie informuje. W tym artykule znajdziesz kompletną listę kontrolek z opisami, ich znaczenie w busach oraz schemat postępowania, gdy zapali się ostrzeżenie."
 faq:
   - question: "Co oznacza żółta kontrolka trójkąta z wykrzyknikiem w busie?"
@@ -145,6 +147,9 @@ Busy z zawieszeniem pneumatycznym (Iveco Daily, Mercedes Sprinter 5xx) mają czu
 W busach z pneumatyką (opcja w Sprinterze i Daily) żółta kontrolka oznacza tryb załadunkowy lub wyrównywanie poziomu, a czerwona – usterkę kompresora lub wyciek powietrza z mieszka.
 
 Warto też zwrócić uwagę na alerty z tachografu, jeśli pojazd go posiada (np. praca z przyczepą i DMC zespołu > 3.5t). Pomarańczowa litera "T" lub ikona wykrzyknika na zegarach może sygnalizować brak karty kierowcy, błąd czujnika lub przekroczenie dozwolonego czasu jazdy.
+
+
+{{% youtube %}}
 
 ## Schemat postępowania – co robić gdy zapali się kontrolka {#schemat}
 

@@ -10,6 +10,8 @@ volume: 800
 main_keyword: "ford ranger spalanie"
 image: "/images/ford-ranger-spalanie-hero.webp"
 image_alt: "Ford Ranger na drodze – zużycie paliwa w warunkach rzeczywistych"
+youtube: "v6rnruTVWsY"
+youtube_title: "Ford Ranger Raptor 2.0 EcoBlue 213 KM - pomiar zużycia paliwa"
 lead: "Ford Ranger w wersji 2.0 EcoBlue 170 KM spala realnie 8–10 l/100 km na trasie i 10–13 l w mieście. Wariant Bi-Turbo 205 KM dokłada ok. 1 litr, a topowy 3.0 V6 w wersji Raptor potrafi sięgnąć 14 litrów w mieście. Poniżej tabela spalania per silnik, porównanie z konkurencją i praktyczne sposoby na obniżenie zużycia."
 faq:
   - question: "Ile pali Ford Ranger 2.0 EcoBlue 170 KM?"
@@ -96,6 +98,9 @@ Pickupy mają spory potencjał do optymalizacji zużycia paliwa. Kilka prostych 
 - **Tryb Eco** – dostępny w Rangerze od 2019 roku. Zmiękcza reakcję przepustnicy i optymalizuje pracę skrzyni biegów pod kątem oszczędności.
 - **Prędkość** – każde 10 km/h powyżej 100 km/h kosztuje ok. 0,5 l/100 km więcej. Przy 130 km/h Ranger pali niemal tyle co w mieście.
 - **Regularny serwis** – brudny filtr powietrza, zwłaszcza po jeździe w terenie, może zwiększyć spalanie o 5–10%. Jego wymiana kosztuje 60–120 zł.
+
+
+{{% youtube %}}
 
 ## Spalanie z przyczepą
 

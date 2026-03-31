@@ -12,6 +12,8 @@ volume: 33100
 main_keyword: "Renault Trafic dane techniczne"
 image: "/images/renault-trafic-hero.webp"
 image_alt: "Renault Trafic III furgon L2H2"
+youtube: "B84L-5QUpN0"
+youtube_title: "RENAULT TRAFIC (NOWY MODEL) - TEST, OPIS I RECENZJA MODELU"
 lead: "Renault Trafic to solidny środek transportu dla firm, które potrzebują ładowności powyżej tony bez przepłacania za markę. W segmencie średnich dostawczaków od lat utrzymuje się w czołówce sprzedaży – nie dlatego, że jest najlepszy pod każdym względem, ale dlatego, że rzadko zawodzi w codziennej robocie."
 faq:
   - question: "Jaka jest różnica między 1.6 dCi a 2.0 dCi w Renault Trafic?"
@@ -112,6 +114,9 @@ Zakup Renault Trafic to wydatek, który zależy od generacji, wersji silnikowej 
 | Trafic III 2.0 dCi (2019–2022) | 70 000–110 000 zł |
 | Trafic III (2023–2025) | 100 000–140 000 zł |
 | Nowy Trafic L1H1 (2.0 dCi 120) | od ok. 135 000 zł netto |
+
+
+{{% youtube %}}
 
 ## Porównanie Trafica z konkurencją {#konkurencja}
 

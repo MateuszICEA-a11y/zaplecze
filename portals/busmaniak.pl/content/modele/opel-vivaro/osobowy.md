@@ -8,6 +8,8 @@ type: "page"
 main_keyword: "Opel Vivaro osobowy"
 image: "/images/opel-vivaro-osobowy-hero.webp"
 image_alt: "Opel Vivaro osobowy – Combi i Life w zestawieniu"
+youtube: "kh0MbFQS2fg"
+youtube_title: "Opel Vivaro – Czy 1.5 wystarczy? | TEST PL"
 parent: "opel-vivaro"
 lead: "Opel Vivaro osobowy to temat, który trzeba rozdzielić na generacje i nazewnictwo. W starszych odsłonach mówimy o Vivaro A i B spokrewnionych z Renault Trafic, a od 2019 roku Vivaro C jest już konstrukcją na platformie EMP2, natomiast osobowy van Opla nosi nazwę Zafira Life."
 faq:
@@ -116,6 +118,9 @@ Dla generacji C i osobowej Zafiry Life właściwymi punktami odniesienia są Peu
 {{% info title="Homologacja jako autobus" icon="engineering" %}}
 Typowy Opel Vivaro osobowy w układzie 8+1, czyli z 9 miejscami łącznie z kierowcą, zwykle należy do kategorii **M1**. Prawo jazdy kategorii **B** pozwala prowadzić pojazd do 3,5 t DMC i do 9 miejsc łącznie z kierowcą, natomiast **M2** dotyczy pojazdów mających więcej niż 8 miejsc oprócz siedzenia kierowcy i DMC do 5 t.
 {{% /info %}}
+
+
+{{% youtube %}}
 
 ## Combi czy Life?
 

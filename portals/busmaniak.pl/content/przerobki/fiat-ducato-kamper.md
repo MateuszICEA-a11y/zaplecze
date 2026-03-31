@@ -10,6 +10,8 @@ type: "post"
 volume: 2600
 image: "/images/fiat-ducato-kamper-hero.webp"
 image_alt: ""
+youtube: "DFWlA6RZB-Q"
+youtube_title: "L2H2 Mały blaszak, wielkie możliwości! Fiat Ducato zamienia się w kampera (DIY)"
 main_keyword: "Fiat Ducato Kamper"
 lead: "Fiat Ducato dominuje na rynku kamperów dzięki unikalnej konstrukcji podwozia i kwadratowej bryle nadwozia, które od dekad stanowią najlepszą bazę do zabudowy mieszkalnej. Jego popularność to efekt ewolucji od 1981 roku – do sprawdzonej konstrukcji z czasem dołączyły legendarne silniki JTD, a całość uzupełniły rozwiązania techniczne projektowane z myślą o caravaningu."
 faq:
@@ -69,6 +71,9 @@ Fakt, że Ducato to najczęstsza baza fabrycznych kamperów w Europie, bezpośre
 - **Wsparcie społeczności** – liczba poradników o [budowie kampera krok po kroku](/przerobki/budowa-kampera-krok-po-kroku/) na bazie tego modelu jest po prostu nie do pobicia.
 
 ![Fiat Ducato kamper – dlaczego jest numerem jeden pod przeróbkę](/images/fiat-ducato-kamper-hero.webp)
+
+
+{{% youtube %}}
 
 ## Typowe usterki i na co uważać
 

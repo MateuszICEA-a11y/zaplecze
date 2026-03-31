@@ -11,6 +11,8 @@ volume: 110
 main_keyword: "opel vivaro 2.5 cdti"
 image: "/images/opel-vivaro-2-5-cdti-hero.webp"
 image_alt: "Opel Vivaro 2.5 CDTi furgon"
+youtube: "kh0MbFQS2fg"
+youtube_title: "Opel Vivaro – Czy 1.5 wystarczy? | TEST PL"
 lead: "Silnik 2.5 CDTi (Renault G9U) to najmocniejsza jednostka napędowa w Vivaro A – 135 lub 146 KM i 310–320 Nm momentu. Radzi sobie z pełnym obciążeniem i przyczepą, ale wymaga regularnego serwisu. Na rynku wtórnym warto sprawdzić stan uszczelki pod głowicą, turbosprężarki oraz historię wymian rozrządu."
 faq:
   - question: "Ile pali Opel Vivaro 2.5 CDTi?"
@@ -111,6 +113,9 @@ Użytkownicy [Opla Vivaro](/modele/opel-vivaro/) z silnikiem 2.5 CDTi najczęśc
 Najczęściej powtarzane plusy są trzy. Po pierwsze – 310–320 Nm daje wyraźnie lepszą reakcję pod obciążeniem niż w 1.9 CDTi. Po drugie – silnik nie wymaga tak częstego redukowania biegów. Po trzecie – dobrze znosi długą pracę w trasie, o ile serwis chłodzenia i rozrządu nie był odkładany.
 
 Najczęstsze zastrzeżenia też są przewidywalne. Spalanie jest wyższe niż w poliftowym 2.0 CDTI, a ewentualne naprawy osprzętu i układu chłodzenia bywają kosztowne. Do tego dochodzi większa ilość oleju przy obsłudze i wyraźna wrażliwość na zaniedbania poprzednich właścicieli.
+
+
+{{% youtube %}}
 
 ## Koszty serwisu Opel Vivaro 2.5 CDTi
 

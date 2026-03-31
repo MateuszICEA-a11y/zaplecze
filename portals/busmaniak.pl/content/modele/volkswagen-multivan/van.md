@@ -11,6 +11,8 @@ volume: 6600
 main_keyword: "volkswagen multivan van"
 image: "/images/volkswagen-multivan-hero.webp"
 image_alt: "Volkswagen Multivan T7 na drodze"
+youtube: "qptXMa9fY24"
+youtube_title: "Volkswagen Multivan, czyli Golf za 400.000 zł (TEST PL 4K)"
 lead: "Volkswagen Multivan T7 to samochód osobowy M1 z modułowym wnętrzem; nie ma oficjalnej wersji modelowej „Volkswagen Multivan Van”. W praktyce może pełnić rolę rodzinnego vana lub auta do przewozu lekkiego ładunku, ale od generacji T7 (2021) Multivan i Transporter są już dwoma odrębnymi modelami na różnych platformach."
 faq:
   - question: "Czy Multivan to to samo co Transporter?"
@@ -125,6 +127,9 @@ Jeśli w artykule mają pojawić się aktualne ceny, powinny być opisane np. ja
 Przy zakupie używanego T5 lub T6 trzeba uważać m.in. na problemy z silnikiem **2.0 BiTDI**, stan skrzyni **DSG DQ500**, zużycie dwumasy, zawieszenia i ślady korozji elementów nadwozia. To właśnie te obszary najczęściej decydują o realnych kosztach doprowadzenia auta do porządku.
 
 W T7 warto zwrócić uwagę przede wszystkim na elektronikę pokładową, kompletność wyposażenia oraz stan drogich elementów wnętrza – szczególnie foteli i mechanizmu szyn. W tym modelu uszkodzenia wyposażenia kabiny mogą oznaczać bardzo wysokie koszty.
+
+
+{{% youtube %}}
 
 ## Porównanie Multivana z konkurencją
 

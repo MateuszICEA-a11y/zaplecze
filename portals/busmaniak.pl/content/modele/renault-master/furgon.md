@@ -12,6 +12,8 @@ volume: 480
 main_keyword: "Renault Master furgon"
 image: "/images/renault-master-furgon-hero.webp"
 image_alt: "Renault Master furgon L3H2 – widok z tyłu przy rampie"
+youtube: "vgKn6Nr9OHM"
+youtube_title: "Renault Master Extra - samochód dostawczy roku 2025 TEST PL"
 lead: "Renault Master furgon występował w kilku długościach i wysokościach nadwozia, z przestrzenią ładunkową od około 8 m³ w krótszych odmianach do 17 m³ w największych wersjach. Trzeba jednak wyraźnie rozdzielić generacje: Master III był produkowany od 2010 r., przeszedł lifting w 2019 r., a w 2024 r. zadebiutował Master IV z inną gamą napędów, multimediami i systemami wsparcia kierowcy. W tym przewodniku skupiamy się głównie na Masterze III furgon, bo właśnie dla tej generacji najczęściej porównia się wersje L1–L4."
 faq:
   - question: "Jaka jest największa dostępna wersja Renault Master furgon?"
@@ -126,6 +128,9 @@ Równie ważne są kwestie eksploatacyjne. W samochodzie flotowym o wyborze czę
 {{% expert name="Marek Kowalczyk" %}}
 W praktyce Master furgon najlepiej ocenia się nie po samym oznaczeniu L3H2 czy L4H3, ale po całej specyfikacji: napędzie, DMC, roczniku i poziomie wyposażenia. To szczególnie ważne przy autach po liftingu 2019, bo różnice względem wcześniejszych odmian oraz nowego Mastera IV są większe, niż sugerują ogólne ogłoszenia sprzedaży.
 {{% /expert %}}
+
+
+{{% youtube %}}
 
 ## Typowe wyposażenie dodatkowe dla furgonu
 

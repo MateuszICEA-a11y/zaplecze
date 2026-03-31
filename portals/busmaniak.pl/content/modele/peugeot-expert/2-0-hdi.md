@@ -9,6 +9,8 @@ parent: "peugeot-expert"
 type: "page"
 image: "/images/peugeot-expert-2-0-hdi-hero.webp"
 image_alt: "Silnik 2.0 HDi DW10 w Peugeot Expert II"
+youtube: "LvVoNhdkhmw"
+youtube_title: "PEUGEOT EXPERT 2.0 HDI TEST 0-100 I PRÓBA AUTOSTRADOWA"
 main_keyword: "peugeot expert 2.0 hdi"
 lead: "Silnik 2.0 HDi z rodziny PSA DW10 to jedna z głównych jednostek napędowych Peugeota Experta drugiej generacji (2007–2016). W praktyce najczęściej spotyka się warianty 120 i 163 KM, montowane zarówno w wersjach dostawczych, jak i osobowych tego vana średniej wielkości."
 faq:
@@ -118,6 +120,9 @@ Najczęstsze zastrzeżenia:
 W porównaniu z Oplem Vivaro mówimy o konkurencie segmentowym, a nie modelu na tej samej platformie. Z kolei Toyota ProAce pierwszej generacji była technicznie spokrewniona z Expert/Jumpy/Scudo, więc porównanie tych aut jest bardziej bezpośrednie.
 
 Użytkownicy zgodnie podkreślają, że kluczowe są częstsze wymiany oleju, potwierdzona historia obsługi rozrządu i dbanie o prawidłową pracę układu DPF/FAP. W przypadku oleju najważniejsza jest nie ogólna klasa ACEA, lecz właściwa aprobata PSA dla konkretnej wersji silnika.
+
+
+{{% youtube %}}
 
 ## Koszty serwisu Peugeot Expert 2.0 HDi
 

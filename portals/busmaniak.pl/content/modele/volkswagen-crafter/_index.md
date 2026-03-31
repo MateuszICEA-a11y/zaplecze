@@ -8,6 +8,8 @@ h1: "Volkswagen Crafter – kompletny przewodnik po modelu"
 type: "page"
 image: "/images/volkswagen-crafter-hero.webp"
 image_alt: "Volkswagen Crafter II furgon L3H3 na drodze"
+youtube: "3mLxBsw60oA"
+youtube_title: "#Test Volkswagen Crafter 2.0 l, 177 KM, 6M"
 main_keyword: "volkswagen crafter"
 volume: 9900
 lead: "Volkswagen Crafter to duży dostawczak produkowany od 2006 roku – początkowo jako bliźniak Sprintera, od 2017 roku na w pełni własnej platformie VW. Fabryka we Wrześni (Polska), silniki 2.0 TDI od 102 do 177 KM, trzy rodzaje napędu (FWD/RWD/AWD) i pojemność do 18,4 m³."
@@ -147,6 +149,9 @@ Crafter jest jednym z najlepiej wyposażonych seryjnie dostawczaków:
 | Crafter I (2014–2017) | 50 000–80 000 zł |
 | Crafter II (2017–2020) | 80 000–130 000 zł |
 | Crafter II (2021–2024) | 120 000–180 000 zł |
+
+
+{{% youtube %}}
 
 ## Porównanie Craftera z konkurentami
 

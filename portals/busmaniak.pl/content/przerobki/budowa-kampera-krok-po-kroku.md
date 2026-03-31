@@ -5,6 +5,8 @@ description: "Kompletny poradnik budowy kampera krok po kroku – od wyboru busa
 draft: false
 image: "/images/budowa-kampera-krok-po-kroku-hero.webp"
 image_alt: "Budowa kampera krok po kroku – izolacja i szkielet drewniany w busie"
+youtube: "WRtCV1mRFlo"
+youtube_title: "BUDOWA KAMPERA: przepisy, dodatkowe siedzenia, akcyza, PKD - SCHEMAT krok po kroku"
 author: "anna-wozniak"
 h1: "Budowa kampera od zera – 8 etapów od pustego busa do gotowego kampera"
 main_keyword: "budowa kampera krok po kroku"
@@ -157,6 +159,9 @@ Ogrzewanie montuje się jako jeden z ostatnich kluczowych elementów, bo wymaga 
 - **Gazowe (np. Truma)** – często integrują ogrzewanie powietrza i wody (tzw. combi). Wymagają profesjonalnej, atestowanej instalacji gazowej.
 
 Montaż ogrzewacza diesla zajmuje **1–2 dni**. Jednostkę grzewczą montuje się pod podłogą, przewód wydechowy wyprowadza pod podwozie, a nawiew ciepłego powietrza rozprowadza się kanałami po wnętrzu.
+
+
+{{% youtube %}}
 
 ## Etap 8 – homologacja i rejestracja {#homologacja}
 

@@ -7,6 +7,8 @@ author: "marek-kowalczyk"
 h1: "DMC – co to jest i dlaczego musisz to wiedzieć"
 image: "/images/dmc-co-to-hero.webp"
 image_alt: "Dowód rejestracyjny z zaznaczonym polem F.2 dopuszczalnej masy całkowitej"
+youtube: "HvmwW7XA1QA"
+youtube_title: "Nowim porady – Dopuszczalna masa całkowita (DMC) w teorii i praktyce"
 main_keyword: "dmc co to"
 lead: "DMC, czyli dopuszczalna masa całkowita, to maksymalna waga pojazdu z pasażerami i ładunkiem dopuszczona do ruchu drogowego. Przekroczenie tego limitu grozi mandatem do 3000 zł, utratą ochrony ubezpieczeniowej i zakazem dalszej jazdy."
 faq:
@@ -125,6 +127,9 @@ Pojazdy powyżej 3,5 tony podlegają karom administracyjnym ITD nakładanym na p
 To najbardziej dotkliwa i najczęściej ignorowana konsekwencja. Ubezpieczyciel po kolizji bada stan techniczny pojazdu. Jeśli przeładowanie wydłużyło drogę hamowania lub doprowadziło do uszkodzenia opony, firma ubezpieczeniowa może zastosować regres.
 
 Regres oznacza, że ubezpieczyciel wypłaci odszkodowanie poszkodowanym, ale zażąda od Ciebie zwrotu pełnej kwoty. Przy poważnych wypadkach sumy sięgają setek tysięcy złotych. Przekroczenie DMC bywa kwalifikowane jako rażące niedbalstwo – a to przekreśla Twoją ochronę.
+
+
+{{% youtube %}}
 
 ## DMC w kontekście przeróbki busa na kampera
 

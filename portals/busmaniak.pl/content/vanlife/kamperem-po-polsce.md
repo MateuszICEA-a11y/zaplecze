@@ -9,6 +9,8 @@ type: "post"
 volume: 3000
 image: "/images/kamperem-po-polsce-hero.webp"
 image_alt: "Kamper zaparkowany nad jeziorem na Mazurach – podróż kamperem po Polsce"
+youtube: "QxQs7R3SRjQ"
+youtube_title: "KAMPEREM w nieznane. Nie spodziewaliśmy się TEGO w Polsce…"
 main_keyword: "kamperem po Polsce"
 lead: "Polska to kraj, który z perspektywy kampera wygląda zupełnie inaczej niż z perspektywy samochodu osobowego. Ponad 500 kempingów, tysiące kilometrów tras widokowych i krajobrazy od morskich klifów po górskie połoniny – wszystko w odległości jednego zbiornika paliwa. Przygotowaliśmy pięć konkretnych tras z kilometrażem, liczbą dni i kosztami, żebyś mógł zaplanować wyjazd bez zgadywania."
 faq:
@@ -162,6 +164,9 @@ Najlepszy zestaw aplikacji to taki, który łączy bazę miejsc, mapy offline i 
 - **Google Maps** – wygodna nawigacja ogólna i wyszukiwanie punktów po drodze, ale nie należy traktować jej jako narzędzia do prowadzenia kampera według wysokości, masy czy długości pojazdu
 
 Jeśli jedziesz większym kamperem, do ograniczeń dla dużych pojazdów potrzebujesz dedykowanej nawigacji RV/truck. To ważne zwłaszcza w górach, miastach i przy niskich wiaduktach, bo zwykłe aplikacje mapowe nie rozwiązują tego problemu w wiarygodny sposób.
+
+
+{{% youtube %}}
 
 ## Koszty podróży kamperem po Polsce – zestawienie
 

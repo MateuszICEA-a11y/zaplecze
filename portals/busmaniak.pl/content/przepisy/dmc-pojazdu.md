@@ -9,6 +9,8 @@ parent: "przepisy"
 type: "page"
 image: "/images/dmc-pojazdu-hero.webp"
 image_alt: "Dowód rejestracyjny z zaznaczonymi polami F.1, F.2 i F.3 dotyczącymi DMC pojazdu"
+youtube: "5xQXEQUGGq4"
+youtube_title: "Dopuszczalna masa i rzeczywista masa całkowita DMC i RMC – tłumaczymy o co chodzi"
 main_keyword: "dopuszczalna masa całkowita pojazdu"
 lead: "Dopuszczalna masa całkowita pojazdu to jeden z najważniejszych parametrów w dowodzie rejestracyjnym. Decyduje o tym, ile możesz załadować, jakie prawo jazdy potrzebujesz i jak często musisz robić przegląd techniczny. Sprawdź, gdzie dokładnie szukać DMC i jak prawidłowo je odczytać."
 faq:
@@ -100,6 +102,9 @@ Należy jednak podkreślić, że montaż wzmocnionego zawieszenia, na przykład 
 Wielu kierowców poszukuje sposobu na obniżenie DMC pojazdu powyżej 3,5 tony, by móc prowadzić go na prawie jazdy kategorii B. Należy jednak jasno podkreślić, że w świetle obecnych przepisów i wytycznych dla wydziałów komunikacji jest to praktycznie niemożliwe bez przeprowadzenia istotnych, trwałych zmian konstrukcyjnych.
 
 Popularny mit o "papierowym" obniżeniu masy na podstawie samej opinii rzeczoznawcy i badania na OSKP nie ma pokrycia w rzeczywistości. Legalna zmiana kategorii pojazdu z ciężarowego na lekki dostawczy to skomplikowany i kosztowny proces, często wymagający zgody instytutów badawczych i fizycznych modyfikacji w uprawnionym warsztacie.
+
+
+{{% youtube %}}
 
 ## DMC a ubezpieczenie i przegląd techniczny
 

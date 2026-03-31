@@ -12,6 +12,8 @@ volume: 5400
 main_keyword: "Toyota Proace Verso"
 image: "/images/toyota-proace-verso-hero.webp"
 image_alt: "Toyota Proace Verso II"
+youtube: "kMUvc1hQ-KQ"
+youtube_title: "Solidne narzędzie, czyli Toyota Proace Verso"
 lead: "Toyota Proace Verso to osobowa wersja dostawczaka Proace z homologacją M1 – oferuje od 5 do 9 miejsc, karoserię Medium lub Long i wybór między silnikami diesla a elektrycznym napędem o zasięgu do 330 km. To bezpośredni rywal VW Multivana i Mercedesa V-klasy w segmencie przestronnych vanów osobowych."
 faq:
   - question: "Ile miejsc ma Toyota Proace Verso?"
@@ -106,6 +108,9 @@ Toyota Proace Verso Long 9-miejscowy z automatem EAT8 i silnikiem 177 KM to poja
 {{% /expert %}}
 
 Szczegółowe dane o homologacji M1 i różnicach między wersjami znajdziesz na stronie [Toyota Proace Verso – wersja osobowa](/modele/toyota-proace-verso/osobowy/). Bazowa platforma i układ techniczny opisane są w artykule o [Toyocie Proace](/modele/toyota-proace/).
+
+
+{{% youtube %}}
 
 ## Ceny Toyoty Proace Verso
 

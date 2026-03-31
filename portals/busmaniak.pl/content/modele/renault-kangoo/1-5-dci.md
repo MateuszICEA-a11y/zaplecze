@@ -9,6 +9,8 @@ parent: "renault-kangoo"
 type: "page"
 image: "/images/renault-kangoo-1-5-dci-hero.webp"
 image_alt: "Silnik 1.5 dCi K9K w Renault Kangoo II"
+youtube: "IvKQFWhRTss"
+youtube_title: "Renault Kangoo 2023 - TEST PL (1.5 dCi 115 KM)"
 main_keyword: "renault kangoo 1.5 dci"
 lead: "Silnik 1.5 dCi to zdecydowanie najpopularniejsza jednostka napędowa w Renault Kangoo II. Sam motor K9K o pojemności 1461 cm³ trafił do produkcji około 2001 roku, natomiast w Kangoo II był oferowany od debiutu tej generacji w 2008 roku. W zależności od rynku, rocznika i wersji nadwozia występował w kilku odmianach mocy – od słabszych wariantów użytkowych po 110-konną wersję do cięższej pracy i jazdy w trasie."
 faq:
@@ -125,6 +127,9 @@ W praktyce wybór wariantu wygląda następująco:
 Na tle benzynowych odmian Kangoo II, takich jak 1.6 16V i 1.2 TCe, diesel 1.5 dCi pozostaje sensowną opcją dla kierowców robiących większe przebiegi roczne – około 20 tys. km i więcej. Przy około 10 tys. km rocznie opłacalność diesla jest mniej oczywista, bo większą rolę zaczynają odgrywać koszty osprzętu i serwisu.
 
 W segmencie małych vanów K9K zestawia się zwykle z dieslami konkurencji, ale porównania trzeba prowadzić ostrożnie i z uwzględnieniem konkretnej generacji modelu. To samo dotyczy Opla Combo – bez wskazania generacji i lat produkcji takie zestawienie łatwo upraszcza obraz rynku.
+
+
+{{% youtube %}}
 
 ## Koszty serwisu Renault Kangoo 1.5 dCi
 

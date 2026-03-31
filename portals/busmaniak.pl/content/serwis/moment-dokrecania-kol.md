@@ -10,6 +10,8 @@ volume: 5400
 main_keyword: "moment dokręcania kół"
 image: "/images/moment-dokrecania-kol-hero.webp"
 image_alt: "Klucz dynamometryczny dokręcający śrubę koła w busie dostawczym – zbliżenie na felgę"
+youtube: "pQgOkslt_jY"
+youtube_title: "Jak dokręcać koła | Kolejność śrub | Klucz dynamometryczny"
 lead: "Prawidłowy moment dokręcania kół w busie może wahać się od ok. 140 Nm w mniejszych modelach do ponad 300 Nm w pojazdach na kołach bliźniaczych. Zbyt luźno dokręcone koło grozi jego odpadnięciem, a zbyt mocno – uszkodzeniem gwintu lub odkształceniem tarczy hamulcowej. Precyzyjne wartości dla popularnych aut dostawczych oraz instrukcję obsługi klucza dynamometrycznego zebraliśmy w poniższym poradniku."
 faq:
   - question: "Jakim momentem dokręcać koła w Fiacie Ducato?"
@@ -111,6 +113,9 @@ W busach dostawczych, które często jeżdżą z pełnym obciążeniem, dokręce
 2. Kluczem dynamometrycznym, ustawionym na prawidłową wartość, sprawdź moment każdej śruby w kolejności krzyżowej.
 3. Jeśli którakolwiek śruba „puści" (klucz zacznie się obracać przed kliknięciem), dokręć ją do właściwego momentu.
 4. Po pozytywnej kontroli dalsze dokręcanie nie jest konieczne aż do następnej wymiany koła.
+
+
+{{% youtube %}}
 
 ## Najczęstsze błędy przy dokręcaniu kół {#bledy}
 

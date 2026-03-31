@@ -12,6 +12,8 @@ volume: 320
 main_keyword: "Renault Master 2.3 dCi"
 image: "/images/renault-master-dci-hero.webp"
 image_alt: "Silnik Renault Master 2.3 dCi M9T – widok komory silnika"
+youtube: "vgKn6Nr9OHM"
+youtube_title: "Renault Master Extra - samochód dostawczy roku 2025 TEST PL"
 lead: "Renault Master 2.3 dCi to główna i najpopularniejsza jednostka napędowa stosowana w Masterze III. Silnik M9T produkowano w fabryce Renault w Cléon we Francji, a jego dostępność obejmowała kilka wariantów mocy zależnych od rynku, wersji nadwozia i rocznika – od 100 do 180 KM. To jedna z bardziej cenionych jednostek w klasie dużych dostawczaków."
 faq:
   - question: "Jak trwały jest silnik M9T Renault Master?"
@@ -120,6 +122,9 @@ Silnik M9T jest trwały, ale wymaga dyscypliny serwisowej. W autach dostawczych 
 
 Przy zakupie używanego egzemplarza nie wystarczy sprawdzić, czy silnik „ładnie chodzi”. Trzeba zobaczyć korekty wtrysków, historię błędów DPF i SCR, temperaturę pracy po rozgrzaniu, stan przewodów dolotu i to, czy pod obciążeniem auto nie dymi oraz buduje prawidłowe ciśnienie doładowania.
 {{% /expert %}}
+
+
+{{% youtube %}}
 
 ## Porównanie M9T z konkurencją
 

@@ -11,6 +11,8 @@ volume: 170
 main_keyword: "volkswagen amarok tdi"
 image: "/images/volkswagen-amarok-hero.webp"
 image_alt: "Volkswagen Amarok pickup"
+youtube: "bbANtxlKBAQ"
+youtube_title: "Volkswagen Amarok 3.0 V6 TDI (TEST PL/ENG 4K)"
 lead: "Volkswagen Amarok TDI występował w dwóch generacjach i kilku wyraźnie różnych konfiguracjach. Amarok I oferował 2.0 TDI 122 i 140 KM, 2.0 BiTDI 163 i 180 KM oraz 3.0 V6 TDI w wersjach 163, 204, 224 i 245 KM, a 258 KM dotyczyło chwilowego overboosta w wybranych odmianach i na wybranych rynkach. W Europie Amarok II ma zwykle 2.0 TDI 170 KM, 2.0 BiTDI 205 KM oraz 3.0 V6 TDI 240 KM. Oto dane techniczne, realne spalanie i typowe usterki."
 faq:
   - question: "Który TDI w Amaroku jest lepszy – 2.0 czy V6?"
@@ -100,6 +102,9 @@ V6 pod obciążeniem często pali tylko nieznacznie więcej niż 2.0 BiTDI, bo p
 - **Rozrząd łańcuchowy** – nie ma tu okresowej wymiany „co określony przebieg”; to kosztowna naprawa wykonywana przy objawach zużycia
 - **Koło dwumasowe i osprzęt przeniesienia napędu** – przy intensywnym holowaniu zużycie może pojawić się szybciej
 - **Automatyczna skrzynia Aisin 8AT** – regularna obsługa olejowa ma duże znaczenie dla trwałości
+
+
+{{% youtube %}}
 
 ## Koszty serwisu TDI
 

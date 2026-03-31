@@ -8,6 +8,8 @@ h1: "Wynajem camper vana – kiedy warto wybrać mniejszy pojazd"
 volume: 1000
 image: "/images/camper-van-wynajem-hero.webp"
 image_alt: "Wynajem camper vana – VW California zaparkowany nad morzem"
+youtube: "p-a5yIMVeDY"
+youtube_title: "VAN TOUR kampera na wynajem"
 main_keyword: "wynajem camper vana"
 lead: "Camper van to kamper dla tych, którzy cenią zwrotność, niskie spalanie i możliwość zaparkowania na zwykłym miejscu postojowym. W polskich wypożyczalniach camper vany stanowią ok. 20–25% floty i kosztują od 250 zł/dobę poza sezonem do 600 zł w szczycie lata. Jeśli jedziesz w parze, solo lub po prostu nie chcesz manewrować siedmiometrowym kolosem – ten poradnik jest dla Ciebie."
 faq:
@@ -105,6 +107,9 @@ Francuski camper van zbudowany na bazie Renault Trafic (L2H1). Jest nieco więks
 {{% expert name="Marek Kowalczyk" %}}
 Na pierwszy wynajem camper vana polecam VW California Ocean – nie dlatego, że jest najlepszy na papierze, ale dlatego, że wypożyczalnie oferują świetnie utrzymane egzemplarze, a instruktaż jest prosty. Intuicyjny system sterowania i rozbudowana sieć serwisowa VW w Europie zapewniają spokój w podróży.
 {{% /expert %}}
+
+
+{{% youtube %}}
 
 ## Dla kogo jest camper van – pary, solo podróżnicy, pierwsza przygoda
 

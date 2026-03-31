@@ -11,6 +11,8 @@ volume: 320
 main_keyword: "peugeot partner blaszak"
 image: "/images/peugeot-partner-hero.webp"
 image_alt: "Peugeot Partner III furgon"
+youtube: "k5bg9RYxSiM"
+youtube_title: "Peugeot Partner Tepee Outdoor (PL) - test i jazda próbna"
 lead: "Peugeot Partner blaszak to klasyczny furgon dostawczy z pełną przegrodą – najpopularniejsza konfiguracja modelu od 1996 roku. W generacji Partner III od 2018 roku oferuje pakę 3,3–4,4 m³ i ładowność do ok. 1000 kg. Technicznie jest spokrewniony z Citroënem Berlingo Van, Oplem Combo Cargo oraz Toyotą ProAce City."
 faq:
   - question: "Jakie są wymiary paki Partnera blaszak?"
@@ -133,6 +135,9 @@ Na rynku wtórnym Partner II i Partner III funkcjonują dziś równolegle, ale t
 W codziennym TCO diesel 1.5 BlueHDi zwykle zużywa ok. 5–7 l/100 km w mieście i trasie, zależnie od obciążenia i profilu jazdy. Auto korzysta z opon 16-calowych w specyfikacji dostawczej, a serwis olejowy wypada zwykle co 1 rok lub do 25 000 km – zależnie od planu obsługowego.
 
 Do kosztów eksploatacji diesla trzeba doliczyć nie tylko paliwo, ale też DPF, AdBlue i osprzęt SCR. Przy zakupie używanego egzemplarza flotowego ważniejsze od bogatej wersji wyposażenia bywają historia serwisowa, stan zawieszenia, układu hamulcowego i kondycja przestrzeni ładunkowej.
+
+
+{{% youtube %}}
 
 ## Porównanie Partnera blaszak z konkurencją
 

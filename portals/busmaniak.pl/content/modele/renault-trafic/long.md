@@ -12,6 +12,8 @@ volume: 1600
 main_keyword: "Renault Trafic Long"
 image: "/images/renault-trafic-long-hero.webp"
 image_alt: "Renault Trafic Long L2H1 furgon"
+youtube: "B84L-5QUpN0"
+youtube_title: "RENAULT TRAFIC (NOWY MODEL) - TEST, OPIS I RECENZJA MODELU"
 lead: "Renault Trafic Long w generacji Trafic III to wydłużona wersja L2, która ma o 400 mm większą długość całkowitą i o 400 mm większy rozstaw osi niż L1. W praktyce przekłada się to na około 0,8 m³ więcej objętości przestrzeni ładunkowej i możliwość przewozu 3 europalet zamiast 2, ale nie oznacza pełnych 400 mm dodatkowej długości podłogi ładunkowej. Przed wyborem wersji Long warto sprawdzić nie tylko pojemność, ale też gabaryty do parkowania i manewrowania."
 faq:
   - question: "Ile europalet zmieści Trafic L2?"
@@ -89,6 +91,9 @@ W mieście trzeba brać pod uwagę konkretne ograniczenia. Długość 5480 mm oz
 Różnica między 5080 a 5480 mm jest odczuwalna także przy zawracaniu. To właśnie zestawienie długości całkowitej i rozstawu osi – 3098 vs 3498 mm – ma bezpośredni wpływ na manewrowanie, dlatego przed zakupem warto sprawdzić średnicę zawracania dla konkretnej wersji L1 i L2.
 
 Jeśli jeździsz głównie po mieście z okazjonalnymi dużymi ładunkami, najpierw policz, jak często naprawdę potrzebujesz trzeciej palety. W wielu firmach to właśnie ta odpowiedź rozstrzyga, czy dopłata do Renault Trafic Long ma sens.
+
+
+{{% youtube %}}
 
 ## Silniki {#silniki}
 

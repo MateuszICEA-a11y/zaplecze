@@ -12,6 +12,8 @@ volume: 590
 main_keyword: "Renault Trafic dCi"
 image: "/images/renault-trafic-dci-hero.webp"
 image_alt: "Silnik dCi w Renault Trafic III"
+youtube: "B84L-5QUpN0"
+youtube_title: "RENAULT TRAFIC (NOWY MODEL) - TEST, OPIS I RECENZJA MODELU"
 lead: "Renault Trafic dCi w generacji III występuje w dwóch głównych odsłonach: 1.6 dCi (R9M, 2014–2019) oraz 2.0 Blue dCi z rodziny M9T / M9T Gen2 (od 2019). Przy zakupie kluczowe są nie tylko moc i rocznik, ale też osprzęt silnika, układ oczyszczania spalin oraz historia serwisowa."
 faq:
   - question: "Ile pali Renault Trafic dCi 115 KM?"
@@ -150,6 +152,9 @@ Dla opisywanych diesli z DPF należy trzymać się właściwej normy Renault prz
 {{% /info %}}
 
 ---
+
+
+{{% youtube %}}
 
 ## Który silnik dCi wybrać do Trafica?
 

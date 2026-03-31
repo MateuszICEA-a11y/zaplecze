@@ -10,6 +10,8 @@ type: "post"
 volume: 210
 image: "/images/fiat-ducato-tuning-hero.webp"
 image_alt: "Fiat Ducato po tuningu wizualnym stoi na parkingu"
+youtube: "TF770Enj_kw"
+youtube_title: "Kivi Racing Factory - Fiat Ducato 2.3JTD"
 main_keyword: "Fiat Ducato Tuning"
 lead: "Najskuteczniejszym sposobem na tuning Fiata Ducato jest modyfikacja oprogramowania silników MultiJet, która pozwala na bezpieczny wzrost mocy o nawet 25%. Przykładowo, popularna jednostka 2.3 o mocy 150 KM po profesjonalnym strojeniu może zyskać dodatkowe 30 KM, co znacząco poprawia dynamikę jazdy przy pełnym obciążeniu."
 faq:
@@ -64,6 +66,9 @@ Fabryczna izolacja akustyczna w Ducato jest, mówiąc delikatnie, skromna. W kab
 {{% info title="Uwaga" icon="engineering" %}}Przy modyfikacjach mechanicznych starszych jednostek, jak 2.5 TDI (116 KM), chiptuning elektroniczny nie jest możliwy w taki sam sposób jak w MultiJetach. Tutaj tuning polega na mechanicznej regulacji dawki paliwa na [pompie wtryskowej](https://pl.wikipedia.org/wiki/Pompa_wtryskowa) oraz modyfikacji ciśnienia doładowania.{{% /info %}}
 
 ![Fiat Ducato z tuningowymi felgami](/images/fiat-ducato-tuning-hero.webp)
+
+
+{{% youtube %}}
 
 ## Tuning wizualny – jak wyróżnić swojego busa?
 

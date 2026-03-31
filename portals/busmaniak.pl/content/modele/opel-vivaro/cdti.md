@@ -11,6 +11,8 @@ volume: 1000
 main_keyword: "opel vivaro cdti"
 image: "/images/opel-vivaro-hero.webp"
 image_alt: "Opel Vivaro furgon"
+youtube: "kh0MbFQS2fg"
+youtube_title: "Opel Vivaro – Czy 1.5 wystarczy? | TEST PL"
 lead: "Wysokoprężne jednostki stosowano w Oplu Vivaro od debiutu modelu w 2001 roku, choć oznaczenie handlowe CDTi zależało od rynku i rocznika. W gamie były zarówno proste 1.9, mocniejsze 2.5, późniejsze 2.0, jak i downsizingowe 1.6 w Vivaro B. Oto rzeczowy przewodnik po wariantach, spalaniu, typowych usterkach i kosztach serwisu."
 faq:
   - question: "Który CDTi w Vivaro jest najlepszy?"
@@ -130,6 +132,9 @@ Największy błąd przy ocenie diesla w Vivaro to patrzenie wyłącznie na przeb
 - **Przy zakupie** – sprawdź błędy EGR/DPF, historię regeneracji DPF i kulturę pracy na zimno
 
 Przy każdym używanym Vivaro CDTi warto przejść tę samą checklistę. Diagnostyka korekt wtrysków, ciśnienie doładowania, szczelność intercoolera, stan dwumasy, błędy EGR i DPF, odpalanie na zimno, dymienie pod obciążeniem, korozja podwozia i progów oraz potwierdzona historia rozrządu i wymian oleju to absolutne minimum.
+
+
+{{% youtube %}}
 
 ## Koszty serwisu CDTi
 

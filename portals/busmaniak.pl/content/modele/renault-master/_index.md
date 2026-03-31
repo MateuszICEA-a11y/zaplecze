@@ -22,6 +22,8 @@ faq:
     answer: "Ceny katalogowe nowego Mastera zaczynają się od ok. 130 000–140 000 zł netto za wersję L2H2 z silnikiem 135 KM. Wersje L3H2 i L4H2 są droższe o 15 000–25 000 zł netto. Cena rośnie wraz z pakietami wyposażenia (pakiet Komfort, pakiet Bezpieczeństwo)."
 image: "/images/renault-master-hero.webp"
 image_alt: "Renault Master III furgon L3H2 przy rampie załadunkowej"
+youtube: "vgKn6Nr9OHM"
+youtube_title: "Renault Master Extra - samochód dostawczy roku 2025 TEST PL"
 lead: "Renault Master to jeden z najpopularniejszych dużych samochodów dostawczych w Europie – konkurent Fiata Ducato, Mercedesa Sprinter i Volkswagena Craftera. Master III produkowany od 2010 roku w fabryce Batilly we Francji oferuje silniki 2.3 dCi w zakresie 100–180 KM, pojemność ładunkową 8–17 m³ i DMC od 3,1 do 4,5 t. Ten przewodnik zbiera wszystkie dane techniczne, wersje nadwoziowe i praktyczne informacje serwisowe w jednym miejscu."
 sources:
   - "Wikipedia – Renault Master"
@@ -131,6 +133,9 @@ Zakup Renault Master to wydatek, który zależy od generacji, wersji silnikowej 
 | Master III (2019–2024, 2.3 dCi nowe) | 80 000–140 000 zł |
 | Nowy Master III L2H2 (2.3 dCi 135) | od ok. 150 000 zł netto |
 | Master E-Tech (elektryczny) | od ok. 280 000 zł netto |
+
+
+{{% youtube %}}
 
 ## Porównanie Mastera z konkurencją
 

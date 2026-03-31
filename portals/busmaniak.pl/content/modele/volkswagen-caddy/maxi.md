@@ -12,6 +12,8 @@ volume: 3600
 main_keyword: "Volkswagen Caddy Maxi"
 image: "/images/volkswagen-caddy-maxi-hero.webp"
 image_alt: "Volkswagen Caddy Maxi z boku"
+youtube: "HWOAeVgnhuM"
+youtube_title: "Volkswagen Caddy 2.0 TDI 122 DSG TEST Kombivana za 180 000 zł"
 lead: "Caddy Maxi to wydłużona wersja Volkswagena Caddy, dostępna od III generacji (2004). Dłuższy rozstaw osi daje więcej miejsca na pasażerów i bagaż. W V generacji osobowe Caddy Maxi/Long oferuje do 1720 litrów bagażnika w konfiguracji 5-osobowej oraz do 3105 litrów po złożeniu siedzeń."
 faq:
   - question: "Jaka jest różnica między Caddy a Caddy Maxi?"
@@ -111,6 +113,9 @@ W tytule i opisie zapowiedziane było porównanie z Berlingo XL, więc warto zes
 Caddy Maxi/Long jest więc dłuższe o 100 mm, ma minimalnie krótszy rozstaw osi niż Berlingo XL, ale wyraźnie większy bagażnik w konfiguracji 5-osobowej. To właśnie przestrzeń bagażowa jest tu najważniejszą przewagą Volkswagena.
 
 Berlingo XL pozostaje mocnym rywalem, ale jeśli priorytetem jest maksymalnie duży kufer przy pięciu miejscach, Volkswagen Caddy Maxi wypada w tym zestawieniu bardzo mocno. Z drugiej strony różnice cenowe na rynku wtórnym zwykle działają na korzyść Citroena.
+
+
+{{% youtube %}}
 
 ## Rynek wtórny {#rynek-wtorny}
 

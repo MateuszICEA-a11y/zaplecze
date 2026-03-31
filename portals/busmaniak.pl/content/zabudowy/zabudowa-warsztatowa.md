@@ -11,6 +11,8 @@ volume: 320
 main_keyword: "zabudowa warsztatowa busa"
 image: "/images/zabudowa-warsztatowa-hero.webp"
 image_alt: "Zabudowa warsztatowa z blatem roboczym w busie dostawczym"
+youtube: "POvCR6oByW0"
+youtube_title: "BUS MARZEŃ! | Zabudowa samochodu dostawczego RHINO MR4"
 lead: "Zabudowa warsztatowa busa to coś więcej niż regały na narzędzia – to kompletne stanowisko pracy z blatem roboczym, imadłem, generatorem prądu i sprężarką. Mobilny warsztat pozwala wykonywać naprawy, spawanie czy obróbkę materiałów bezpośrednio u klienta, bez konieczności transportu sprzętu do stacjonarnego warsztatu."
 faq:
   - question: "Ile kosztuje zabudowa warsztatowa busa?"
@@ -143,6 +145,9 @@ Mobilny warsztat wymaga busa o dużej przestrzeni ładunkowej i wysokim DMC. Sam
 ### Adaptacje pojazdu
 
 Bus przeznaczony na mobilny warsztat wymaga kilku modyfikacji wykraczających poza samą zabudowę: wzmocnione zawieszenie tylne (sprężyny progresywne lub pneumatyczne), dodatkowy akumulator do zasilania oświetlenia LED 12 V, wentylacja mechaniczna przestrzeni ładunkowej (obowiązkowa przy pracy generatora) i antypoślizgowa wykładzina podłogi.
+
+
+{{% youtube %}}
 
 ## Koszty zabudowy warsztatowej {#koszty}
 

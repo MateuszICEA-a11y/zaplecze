@@ -19,6 +19,8 @@ faq:
   - question: "Jaki silnik do Mercedes Sprinter Van wybrać?"
     answer: "W gamie Sprintera występowały jednostki OM651 i OM654. W nowszych odmianach OM654 ma pojemność 1950 cm3 i był oferowany w kilku wariantach mocy, dlatego wybór trzeba dopasować do napędu, skrzyni i roku modelowego."
 lead: "Mercedes Sprinter Van to jeden z kluczowych furgonów w segmencie dużych aut dostawczych. W praktyce o jego przydatności decydują nie tylko długość nadwozia, ale też rozstaw osi, wysokość dachu, rodzaj napędu i dopuszczalna masa całkowita. Dlatego zamiast operować uproszczeniami typu L1–L4 i H1–H3, lepiej spojrzeć na konkretne konfiguracje techniczne."
+youtube: "YONtDgHE50c"
+youtube_title: "Mercedes Sprinter 317 CDI L1H2 TEST Najlepszy bus? [4k]"
 sources:
   - "konkretne dane należy weryfikować w aktualnych dokumentach producenta – katalogu danych technicznych"
   - "homologacji i cenniku z datą obowiązywania."
@@ -157,6 +159,9 @@ W codziennej eksploatacji warto kontrolować kilka newralgicznych obszarów:
 - zużycie zawieszenia i hamulców
 
 Przy zakupie używanego egzemplarza dobrze rozdzielić ocenę aut z OM651 i OM654, bo różnią się osprzętem i typowymi punktami kontroli. W samochodzie pracującym flotowo właśnie stan układu oczyszczania spalin i automatu częściej decyduje o kosztach niż sama deklarowana moc silnika.
+
+
+{{% youtube %}}
 
 ## Kiedy wybrać Sprinter Van zamiast konkurencji
 

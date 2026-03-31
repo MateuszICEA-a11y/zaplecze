@@ -8,6 +8,8 @@ type: "page"
 main_keyword: "Opel Vivaro dostawczy"
 image: "/images/opel-vivaro-dostawczy-hero.webp"
 image_alt: "Opel Vivaro dostawczy – przestrzeń ładunkowa i dostęp"
+youtube: "kh0MbFQS2fg"
+youtube_title: "Opel Vivaro – Czy 1.5 wystarczy? | TEST PL"
 parent: "opel-vivaro"
 lead: "Vivaro furgon to najważniejsza wersja w gamie – bezpośrednia konkurencja dla Transit Custom i Transportera. W generacji C oferuje ładowność do ok. 1400 kg oraz przestrzeń ładunkową 5,3 m³ w wersji S, 6,1 m³ w M i 6,6 m³ w L."
 faq:
@@ -74,6 +76,9 @@ Masa własna nie powinna być podawana bez kontekstu, bo mocno zmienia się zale
 W generacji C typowa gama diesli obejmuje silniki 1.5D 100 KM i 120 KM oraz 2.0D 145 KM i 177 KM. Z większością wersji występowała 6-biegowa skrzynia manualna, a w wybranych odmianach 2.0D dostępny był 8-biegowy automat EAT8/Aisin.
 
 Od 2020 roku w ofercie pojawił się także Vivaro-e. To wersja elektryczna o mocy 100 kW/136 KM, z akumulatorem 50 kWh lub 75 kWh i zasięgiem WLTP do ok. 230 km albo 330 km.
+
+
+{{% youtube %}}
 
 ## Dostęp do ładowni Opel Vivaro
 

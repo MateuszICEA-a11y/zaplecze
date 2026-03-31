@@ -9,6 +9,8 @@ type: "page"
 main_keyword: "Volkswagen Multivan"
 image: "/images/volkswagen-multivan-hero.webp"
 image_alt: "Volkswagen Multivan T7 – widok z boku z otwartymi drzwiami przesuwnymi"
+youtube: "qptXMa9fY24"
+youtube_title: "Volkswagen Multivan, czyli Golf za 400.000 zł (TEST PL 4K)"
 lead: "Volkswagen Multivan T7 to luksusowy minibus na platformie MQB – zupełnie nowa konstrukcja od 2021 roku z silnikami 2.0 TSI, 2.0 TDI i hybrydą plug-in 245 KM. Na rynku wtórnym dostępne też kultowe generacje T4–T6.1 w cenach od 35 000 zł."
 faq:
   - question: "Ile kosztuje Volkswagen Multivan?"
@@ -105,6 +107,9 @@ Centrum dowodzenia to ekran 10 cali, Digital Cockpit Pro i eSIM z nawigacją onl
 - **Układ AdBlue** – krystalizacja i błędy czujników. Naprawa: 2000–4000 zł
 - **Łańcuch rozrządu** – warto skontrolować przy ok. 200 tys. km w silniku 2.0 TDI
 - **Elektronika** – multimedia w T6.1 potrafią się zawieszać
+
+
+{{% youtube %}}
 
 ## Ceny Multivana
 

@@ -5,6 +5,8 @@ description: "Inspirujące projekty busów przerobionych na kampery – zdjęcia
 draft: false
 image: "/images/bus-przerobiony-na-kamper-hero.webp"
 image_alt: "Bus przerobiony na kampera – gotowe wnętrze z łóżkiem i kuchnią"
+youtube: "omJadm-E3pg"
+youtube_title: "Zobacz jak zmienić swojego busa w Kampera!"
 author: "anna-wozniak"
 h1: "Bus przerobiony na kamper – projekty, layout'y i realne koszty"
 main_keyword: "bus przerobiony na kamper"
@@ -107,6 +109,9 @@ Wariant budżetowy to minimum funkcjonalności – chiński grzejnik, akumulator
 {{% info title="Bus bazowy" icon="info" %}}
 Do powyższych kwot doliczyć trzeba cenę busa. Używany Ducato L2H2 z lat **2014–2018** to wydatek **35 000–60 000 zł**, [Sprinter](/modele/mercedes-sprinter/) w tym rozmiarze – **55 000–90 000 zł**. Łączny budżet projektu (bus + zabudowa) wynosi więc **50 000–180 000 zł** w zależności od standardu.
 {{% /info %}}
+
+
+{{% youtube %}}
 
 ## Inspiracje – co wyróżnia udane projekty {#inspiracje}
 

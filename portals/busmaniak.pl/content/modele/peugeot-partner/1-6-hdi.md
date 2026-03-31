@@ -19,6 +19,8 @@ faq:
   - question: "Jaka jest trwałość silnika 1.6 HDi w Peugeot Partnerze?"
     answer: "Przy regularnym serwisie silnik DV6 w Partnerze potrafi osiągać bardzo duże przebiegi. Kluczowe są częste wymiany oleju, kontrola układu smarowania turbo, terminowy rozrząd oraz szybka reakcja na nieszczelności wtryskiwaczy i błędy EGR/FAP."
 lead: "Silnik 1.6 HDi z rodziny PSA DV6 to najpopularniejszy diesel w Peugeot Partnerze II generacji B9, która zadebiutowała w 2008 roku i zasadniczo została zastąpiona w 2018 roku, choć na części rynków była oferowana dłużej równolegle z nowszą generacją. W tym artykule skupiamy się na najczęściej spotykanych w Partnerze odmianach 75, 90 i 92 KM. Bliźniacze rozwiązania stosowano także w Citroënie Berlingo, co realnie ułatwia dostęp do części i doświadczenia warsztatów."
+youtube: "k5bg9RYxSiM"
+youtube_title: "Peugeot Partner Tepee Outdoor (PL) - test i jazda próbna"
 ---
 ## Dane techniczne 1.6 HDi w Peugeocie Partner
 
@@ -135,6 +137,9 @@ Najczęściej krytykowane są:
 W samym Partnerze II alternatywą dla 1.6 HDi były m.in. benzynowe 1.6 VTi i 1.6 oraz mocniejsze diesle 1.6 HDi 110, 112 i 115 KM. U konkurencji najbliższe odpowiedniki to Citroën Berlingo z bliźniaczymi jednostkami, Dacia Dokker 1.5 dCi zwykle 75 lub 90 KM oraz Opel Combo D z 1.3 CDTI 90 KM i późniejszym 1.6 CDTI.
 
 Na rynku wtórnym najważniejszy nie jest sam wybór mocy, tylko stan konkretnego egzemplarza. Lepiej kupić zadbane 75 KM z udokumentowanym serwisem niż 90 lub 92 KM po zaniedbaniach olejowych i z niewiadomą historią FAP.
+
+
+{{% youtube %}}
 
 ## Koszty serwisu Peugeot Partner 1.6 HDi
 

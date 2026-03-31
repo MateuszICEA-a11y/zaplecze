@@ -11,6 +11,8 @@ volume: 0
 main_keyword: "opel movano 2.5 cdti"
 image: "/images/opel-movano-2-5-cdti-hero.webp"
 image_alt: "Opel Movano furgon z silnikiem 2.5 CDTi"
+youtube: "SeHx9m65Aq0"
+youtube_title: "Opel Movano-e Elektryczny samochód dostawczy Test"
 lead: "Silnik 2.5 CDTi (oznaczenie Renault G9U) to czterocylindrowy turbodiesel o pojemności 2463 cm³, stosowany w Oplu Movano A po liftingu, około 2003–2010. Warianty od 100 do 145 KM, rozrząd na pasku, wtrysk Common Rail Bosch. Konstrukcja Renault dzielona z Masterem i Nissanem Interstar – z bardzo dobrą dostępnością części i szerokim zapleczem serwisowym."
 faq:
   - question: "Ile pali Opel Movano 2.5 CDTi?"
@@ -127,6 +129,9 @@ Opel Movano 2.5 CDTi ma opinię solidnej jednostki roboczej, ale takiej, która 
 - **W wielu wersjach brak DPF** – zależnie od rynku i specyfikacji
 
 W praktyce 2.5 CDTi jest silnikiem dla użytkownika, który akceptuje starszą kulturę pracy w zamian za prostszą budowę i dobrą dostępność części. Na tle nowszego 2.3 CDTi różnica sprowadza się głównie do konstrukcji rozrządu, norm emisji i potencjału mocy.
+
+
+{{% youtube %}}
 
 ## Koszty serwisu Opel Movano 2.5 CDTi
 

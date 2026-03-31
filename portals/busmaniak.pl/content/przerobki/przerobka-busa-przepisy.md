@@ -5,6 +5,8 @@ description: "Przepisy dotyczące przeróbki busa na kampera – wymagania prawn
 draft: false
 image: "/images/przerobka-busa-przepisy-hero.webp"
 image_alt: "Przepisy dotyczące przeróbki busa – dowód rejestracyjny i dokumenty zmian konstrukcyjnych"
+youtube: "WRtCV1mRFlo"
+youtube_title: "BUDOWA KAMPERA: przepisy, dodatkowe siedzenia, akcyza, PKD - SCHEMAT krok po kroku"
 author: "anna-wozniak"
 h1: "Przeróbka busa na kampera – przepisy, zmiany konstrukcyjne i procedura w 2026 roku"
 main_keyword: "przeróbka busa przepisy"
@@ -123,6 +125,9 @@ Przepisy dotyczące zmiany konstrukcji na kampery są stabilne. Najważniejsze z
 ### Co się nie zmieniło
 
 Podstawowe wymagania dotyczące wyposażenia kempingowego (łóżko, stół, kuchnia, szafki) pozostają niezmienione od lat. Kluczowe jest trwałe zamontowanie tych elementów w pojeździe.
+
+
+{{% youtube %}}
 
 ## Korzyści z rejestracji jako kamper {#korzysci}
 

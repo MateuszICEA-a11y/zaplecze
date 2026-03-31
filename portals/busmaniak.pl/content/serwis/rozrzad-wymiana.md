@@ -9,6 +9,8 @@ type: "post"
 volume: 4000
 image: "/images/rozrzad-wymiana-hero.webp"
 image_alt: "Wymiana paska rozrządu w busie dostawczym – widok na silnik"
+youtube: "z__LLS1W7SY"
+youtube_title: "Ford Transit 2.0 EcoBlue – wymiana rozrządu, pompy wody i paska pompy oleju"
 main_keyword: "wymiana rozrządu"
 lead: "Rozrząd to jeden z najważniejszych układów w silniku busa – synchronizuje pracę wału korbowego z wałkiem rozrządu i decyduje o tym, czy zawory otwierają się we właściwym momencie. Zerwanie paska rozrządu w Fiacie Ducato 2.3 kończy się pogięciem zaworów i rachunkiem za 8000–15 000 zł. Tymczasem planowa wymiana razem z napinaczem, rolkami i pompą wody kosztuje 1500–3500 zł. To jeden z tych serwisów, na którym nie warto oszczędzać."
 faq:
@@ -115,6 +117,9 @@ Cena wymiany rozrządu zależy od modelu busa, typu napędu i lokalizacji warszt
 | VW Crafter 2.0 TDI | 600–900 zł | 1000–1800 zł | 1600–2700 zł | 3500–5000 zł |
 
 Różnica między niezależnym warsztatem a ASO sięga 50–100%. Przy wymianie rozrządu jakość wykonania jest ważniejsza niż cena – błędne ustawienie faz o jeden ząb paska powoduje spadek mocy o 10–15% i zwiększone spalanie. Szukaj warsztatu, który specjalizuje się w danej marce i ma dedykowane blokady rozrządu.
+
+
+{{% youtube %}}
 
 ## Łańcuch rozrządu – czy naprawdę jest bezobsługowy
 

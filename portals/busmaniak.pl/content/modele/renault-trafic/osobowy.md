@@ -12,6 +12,8 @@ volume: 4400
 main_keyword: "Renault Trafic osobowy"
 image: "/images/renault-trafic-osobowy-hero.webp"
 image_alt: "Renault Trafic Passenger L2 – wersja osobowa"
+youtube: "B84L-5QUpN0"
+youtube_title: "RENAULT TRAFIC (NOWY MODEL) - TEST, OPIS I RECENZJA MODELU"
 lead: "Renault Trafic osobowy występował w konfiguracjach do 9 miejsc, ale liczba pasażerów zależy od długości nadwozia, wersji, homologacji i rynku. To od lat jedno z podstawowych narzędzi flotowego transportu pasażerskiego w segmencie VAN – praktyczne, użytkowe i wyraźnie podporządkowane funkcji."
 faq:
   - question: "Ile osób mieści Renault Trafic osobowy?"
@@ -99,6 +101,9 @@ To nie są tylko dwa poziomy wyposażenia, ale dwa różne sposoby użytkowania 
 Różnice obejmują też charakter wyposażenia bezpieczeństwa i komfortu, zależnie od rocznika. W różnych latach Trafic oferował m.in. ESC, ABS, HSA, tempomat z ogranicznikiem, czujniki parkowania, kamerę cofania, monitorowanie martwego pola, aktywne hamowanie awaryjne oraz ostrzeganie o opuszczeniu pasa.
 
 W praktyce SpaceClass opłaca się wtedy, gdy wyższy standard można realnie sprzedać klientowi. Do ciężkiej, codziennej pracy przewozowej Passenger zwykle pozostaje ekonomicznie rozsądniejszy.
+
+
+{{% youtube %}}
 
 ## Porównanie z konkurencją {#konkurencja}
 

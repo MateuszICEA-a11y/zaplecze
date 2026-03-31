@@ -9,6 +9,8 @@ type: "post"
 volume: 2000
 image: "/images/bus-kamper-4x4-hero.webp"
 image_alt: "Bus kamper 4x4 na szutrowej drodze w górach – terenowy kamper offroad"
+youtube: "lqGeCMCU3zA"
+youtube_title: "PÖSSL ROADSTAR XT - PIERWSZY TEST TERENOWY KAMPER-VANA 4X4"
 main_keyword: "kamper 4x4"
 lead: "Asfalt nie prowadzi do najpiękniejszych miejsc. Kamper z napędem 4x4 otwiera drogi, na które zwykły bus dostawczy nie wjedzie – szutrowe przełęcze, bieszczadzkie polany, skandynawskie bezdroża i bałkańskie szlaki. Ale napęd na cztery koła to nie tylko przygoda, lecz także wyższe koszty, większe spalanie i specyficzny serwis. Rozkładamy temat na części."
 faq:
@@ -165,6 +167,9 @@ Kamper 4x4 daje większą swobodę, ale nie zwalnia z przestrzegania przepisów.
 - **Islandia** – off-road poza drogami jest co do zasady zakazany. F-roads są sezonowo otwierane, a ich dostępność zależy od warunków i przepisów
 
 Porównanie busów z napędem na cztery koła znajdziesz w artykule [porównanie busów i vanów 4x4](/porownania/busy-vany-4x4/).
+
+
+{{% youtube %}}
 
 ## Wady napędu 4x4 w kamperze
 

@@ -8,6 +8,8 @@ h1: "Opel Vivaro – kompletny przewodnik po modelu"
 type: "page"
 image: "/images/opel-vivaro-hero.webp"
 image_alt: "Opel Vivaro C furgon na drodze"
+youtube: "kh0MbFQS2fg"
+youtube_title: "Opel Vivaro – Czy 1.5 wystarczy? | TEST PL"
 main_keyword: "opel vivaro"
 volume: 9900
 lead: "Opel Vivaro to jeden z najpopularniejszych średnich dostawczaków w Polsce, produkowany od 2001 roku w trzech generacjach. Vivaro A i B to bliźniaki Renault Trafic, a Vivaro C (od 2019) bazuje na platformie PSA EMP2 – bliźniak Peugeot Expert i Citroën Jumpy. Silniki od 75 do 177 KM i elektryczny Vivaro-e."
@@ -138,6 +140,9 @@ Zakup Opel Vivaro to wydatek, który zależy od generacji, wersji silnikowej i s
 | Vivaro C furgon (2023–2025) | 90 000–140 000 zł |
 | Nowy Vivaro C (od 1.5 D 100) | od ok. 120 000 zł netto |
 | Vivaro-e (elektryczny) | od ok. 210 000 zł netto |
+
+
+{{% youtube %}}
 
 ## Porównanie Vivaro z konkurentami
 

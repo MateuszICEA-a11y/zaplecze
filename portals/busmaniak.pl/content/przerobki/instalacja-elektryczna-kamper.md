@@ -5,6 +5,8 @@ description: "Instalacja elektryczna w kamperze – schemat, komponenty i monta�
 draft: false
 image: "/images/instalacja-elektryczna-kamper-hero.webp"
 image_alt: "Instalacja elektryczna w kamperze – panel solarny i akumulator"
+youtube: "7P6pphvyIOo"
+youtube_title: "Instalacja elektryczna w kamperze – co zrobić, aby używać klimatyzację zabudowy w czasie jazdy"
 author: "anna-wozniak"
 h1: "Instalacja elektryczna w kamperze – schemat, komponenty i koszty w 2026 roku"
 main_keyword: "instalacja elektryczna kamper"
@@ -123,6 +125,9 @@ Przetwornica (inwerter) zamienia prąd stały 12V z baterii na prąd przemienny 
 ### Schemat podłączenia przetwornicy
 
 Dla przetwornicy 1000 W wystarczą przewody 35 mm², ale przy 2000 W niezbędne są kable o przekroju minimum 50 mm² (a najlepiej 70 mm²). Im krótszy i grubszy przewód, tym mniejsze straty energii. Wyjście 230V prowadź standardowymi przewodami 3×1,5 mm² z uziemieniem i zabezpieczeniem różnicowo-prądowym (RCD 30 mA).
+
+
+{{% youtube %}}
 
 ## Schemat instalacji i okablowanie {#schemat}
 

@@ -11,6 +11,8 @@ volume: 720
 main_keyword: "peugeot rifter long"
 image: "/images/peugeot-rifter-hero.webp"
 image_alt: "Peugeot Rifter Long na drodze"
+youtube: "cSgWs0-bB-g"
+youtube_title: "Peugeot Rifter 1.5 BlueHDi 130 KM Allure Long (2019) - test [PL]"
 lead: "Peugeot Rifter Long to wydłużona wersja kombivana – ma 4753 mm długości, bagażnik 1050 l przy 5 osobach i opcję trzeciego rzędu foteli dla 7 pasażerów. Kluczowe pytanie brzmi: czy dłuższe nadwozie realnie poprawia funkcjonalność względem krótszej odmiany?"
 faq:
   - question: "Ile mierzy Rifter Long?"
@@ -111,6 +113,9 @@ Koszty eksploatacji też są różne zależnie od napędu. Realnie 1.5 BlueHDi 1
 Przy serwisie warto pamiętać o kilku typowych punktach. W 1.2 PureTech w starszych odmianach istotny jest temat mokrego paska, w 1.5 BlueHDi trzeba pilnować obsługi układu AdBlue/SCR i DPF przy jeździe miejskiej, a przy każdym egzemplarzu kluczowe są udokumentowane wymiany oleju i realizacja harmonogramu producenta.
 
 Rifter Long to auto osobowe kategorii M1, więc standardowo wystarcza prawo jazdy kat. B. W Polsce dla M1 do 3,5 t bez przyczepy nie ma e-TOLL, ale przy holowaniu znaczenie ma już DMC całego zestawu.
+
+
+{{% youtube %}}
 
 ## Porównanie Peugeota Rifter Long z konkurencją
 

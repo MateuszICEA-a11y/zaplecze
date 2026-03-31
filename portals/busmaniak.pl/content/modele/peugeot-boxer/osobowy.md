@@ -16,6 +16,8 @@ faq:
   - question: "Czym różni się Boxer Combi od Boxera Van?"
     answer: "Boxer Combi to wersja osobowa lub mieszana z szybami bocznymi, fotelami pasażerskimi i odpowiednią homologacją do przewozu osób. Boxer Van jest bazowym furgonem towarowym. W praktyce kluczowa różnica dotyczy nie tylko wnętrza, ale też wpisów w dokumentach, liczby miejsc, mocowań foteli i zakresu homologacji po stronie producenta lub zabudowcy."
 lead: "Peugeot Boxer w wersji osobowej – Combi lub Minibus – to pojazd przewozowy dla grup do 9 osób. Stosowany przez firmy transportowe, szkoły, ośrodki pomocy społecznej i wynajem krótkoterminowy. Technicznie bazuje na tej samej rodzinie co odmiany dostawcze, ale w praktyce trzeba odróżnić fabryczne Combi od wtórnej zabudowy furgonu, bo ma to znaczenie dla homologacji, liczby miejsc i wpisów w dowodzie rejestracyjnym."
+youtube: "At2D5MktTJU"
+youtube_title: "Peugeot Boxer Kamper – autotest"
 sources:
   - "oficjalne specyfikacje i cenniki Peugeot Boxer dla odpowiednich roczników"
   - "dokumenty homologacyjne i dokumentacja rejestracyjna pojazdu"
@@ -96,6 +98,9 @@ W przypadku przewozu osób z niepełnosprawnościami kluczowe są elementy techn
 Po zmianach konstrukcyjnych konieczny jest właściwy wpis w dokumentach pojazdu. To szczególnie ważne przy autach kupowanych z rynku wtórnego, gdzie liczba miejsc i sposób przewozu pasażerów bywają inne niż w pierwotnej homologacji.
 
 Busy szkolne czy hotelowe również mogą powstawać na bazie Boxera, ale konkretne wyposażenie zależy od indywidualnej zabudowy i przepisów właściwych dla danej kategorii pojazdu. Nie ma podstaw, by traktować rzadkie rozwiązania specjalne jako standardową ofertę każdego Boxera osobowego.
+
+
+{{% youtube %}}
 
 ## Porównanie z Ducato Combi i Jumperem Combi
 

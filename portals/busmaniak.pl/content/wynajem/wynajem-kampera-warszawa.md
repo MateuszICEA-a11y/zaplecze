@@ -6,6 +6,8 @@ author: "marek-kowalczyk"
 description: "Wynajem kampera w Warszawie i okolicach – przegląd wypożyczalni, cennik na sezon 2026, typy dostępnych kamperów i praktyczne porady."
 image: "/images/wynajem-kampera-warszawa-hero.webp"
 image_alt: "Kamper zaparkowany na tle panoramy Warszawy"
+youtube: "D2qkg2YwRhM"
+youtube_title: "Ile tak naprawdę kosztuje wynajem kampera w Polsce"
 main_keyword: "wynajem kampera warszawa"
 volume: 2000
 lead: "Warszawa i okolice to punkt startowy dla wielu kamperowych wypraw – nad morze, na Mazury czy w Bieszczady. Na stołecznym rynku działa kilkanaście wypożyczalni, od dużych sieci europejskich po lokalne firmy z kilkoma starannie utrzymanymi pojazdami. Ceny w sezonie 2026 zaczynają się od ok. 400 zł za dobę, ale różnice w standardzie i warunkach bywają znaczne."
@@ -108,6 +110,9 @@ Orientacyjne porównanie kosztów:
 - **2 tygodnie (14 dób)** – 4500–9000 zł + paliwo ok. 1200–2000 zł. Razem: 5700–11 000 zł
 
 Do kosztów dolicz opłaty za kempingi (50–150 zł za noc) lub korzystaj z darmowych postojów – baza takich miejsc jest dostępna w aplikacjach typu Park4Night.
+
+
+{{% youtube %}}
 
 ## Co sprawdzić przed odbiorem kampera
 

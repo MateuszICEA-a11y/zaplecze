@@ -12,6 +12,8 @@ volume: 720
 main_keyword: "Volkswagen Caddy osobowy"
 image: "/images/volkswagen-caddy-osobowy-hero.webp"
 image_alt: "Volkswagen Caddy osobowy V generacji"
+youtube: "HWOAeVgnhuM"
+youtube_title: "Volkswagen Caddy 2.0 TDI 122 DSG TEST Kombivana za 180 000 zł"
 lead: "Volkswagen Caddy osobowy to rodzinna odmiana modelu Caddy z 5 lub 7 miejscami. W V generacji na wielu rynkach europejskich gama osobowa opierała się przede wszystkim na liniach Caddy, Life i Style – od praktycznej wersji bazowej po lepiej wyposażone odmiany z cyfrowymi zegarami i nowocześniejszym oświetleniem LED, zależnie od rynku i rocznika."
 faq:
   - question: "Jakie linie wyposażenia ma Caddy osobowy?"
@@ -101,6 +103,9 @@ Volkswagen Caddy osobowy rywalizuje z najpopularniejszymi kombivanami na rynku e
 Nie da się uczciwie stwierdzić, że Berlingo jest zawsze tańsze od Caddy o 15–20%, bo różnice zależą od silnika, długości nadwozia, wersji wyposażenia i aktualnych promocji. Tak samo pojemność bagażnika trzeba porównywać między odpowiadającymi sobie wersjami długości.
 
 Na tle konkurencji Caddy zwykle wygrywa jakością prowadzenia, ergonomią i ogólnym dopracowaniem kabiny. Przegrywa natomiast wtedy, gdy dla kupującego najważniejsza jest relacja ceny do przestrzeni.
+
+
+{{% youtube %}}
 
 ## Ceny Volkswagena Caddy osobowy {#ceny}
 

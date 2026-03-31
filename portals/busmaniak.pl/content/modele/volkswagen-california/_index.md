@@ -10,6 +10,8 @@ parent: "modele"
 type: "page"
 image: "/images/volkswagen-california-hero.webp"
 image_alt: "Volkswagen California T6.1 Ocean z podniesionym dachem na kempingu"
+youtube: "cZtz1UVvPTk"
+youtube_title: "VW Grand California (2023) TEST Ile kosztują wakacje kamperem? [4k]"
 main_keyword: "volkswagen california"
 lead: "Volkswagen California to jedyny fabryczny kamper van na rynku – produkowany od 1988 roku, początkowo we współpracy z Westfalią. Aktualnie dostępny jako California T6.1 i T7 (na bazie Transportera i Multivana) oraz Grand California 600/680 (na bazie Craftera). Ceny nowej Californii zaczynają się od ok. 320 000 zł."
 faq:
@@ -127,6 +129,9 @@ Na rynku wtórnym California trzyma wartość lepiej niż niemal każdy inny sam
 Dlaczego tak drogo? California to niszowy produkt z ograniczoną produkcją. Zabudowa kempingowa montowana fabrycznie podlega tym samym standardom jakości co reszta pojazdu, a czas oczekiwania na nowy egzemplarz sięga 6–12 miesięcy. Rynek wtórny jest płytki – egzemplarze sprzedają się szybko.
 
 Warto wiedzieć, że [Volkswagen Caddy](/modele/volkswagen-caddy/) California to budżetowa alternatywa – mniejszy kamper na bazie Caddy V z rozkładanym łóżkiem 198x107 cm i wysuwaną kuchenką, w cenie od ok. 160 000 zł.
+
+
+{{% youtube %}}
 
 ## California a konkurencja
 

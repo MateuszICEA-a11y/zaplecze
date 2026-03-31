@@ -12,6 +12,8 @@ volume: 2900
 main_keyword: "Renault Master Van"
 image: "/images/renault-master-van-hero.webp"
 image_alt: "Renault Master Van L3H2 z otwartymi drzwiami bocznymi"
+youtube: "vgKn6Nr9OHM"
+youtube_title: "Renault Master Extra - samochód dostawczy roku 2025 TEST PL"
 lead: "Renault Master Van to duży furgon dostawczy, a w tym artykule skupiamy się przede wszystkim na generacji Master III produkowanej od 2010 roku, po liftingach z 2014 i 2019 roku. W standardowych odmianach furgon oferował zwykle od ok. 8 do 17 m³ przestrzeni ładunkowej, a cięższe wersje o wyższym DMC mogły przekraczać 1500–2000 kg ładowności zależnie od napędu i homologacji."
 faq:
   - question: "Jaka jest pojemność ładunkowa Renault Master Van L3H2?"
@@ -110,6 +112,9 @@ Na plus można zaliczyć fotel kierowcy z regulacją lędźwiową i podłokietni
 Po liftingu 2019 roku poprawiono także obszar bezpieczeństwa i wsparcia kierowcy. W Masterze dostępne były m.in. ESC, asystent bocznego wiatru, Trailer Swing Assist, Rear View Assist oraz czujniki lub kamera cofania – zależnie od wersji wyposażenia.
 
 Na tle konkurentów Master wypadał jako klasyczny duży van o pojemności ładunkowej od ok. 10 do 17 m³, rywalizujący z modelami takimi jak Fiat Ducato, Peugeot Boxer, Citroen Jumper, Ford Transit, Mercedes Sprinter, VW Crafter i MAN TGE. Warto pamiętać, że np. Ducato oferuje ok. 1422 mm między nadkolami, podczas gdy w Masterze jest to ok. 1380 mm – i to może mieć znaczenie przy załadunku palet lub skrzyń transportowych.
+
+
+{{% youtube %}}
 
 ## Koszty serwisu Renault Master Van
 

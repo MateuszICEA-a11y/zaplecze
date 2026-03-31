@@ -9,6 +9,8 @@ type: "post"
 volume: 1500
 image: "/images/vanlife-jak-zaczac-hero.webp"
 image_alt: "Bus kamper z otwartymi drzwiami na tle polskiego krajobrazu – vanlife jak zacząć"
+youtube: "cdfINqrjHwk"
+youtube_title: "TWÓJ PIERWSZY RAZ... Z KAMPEREM LUB PRZYCZEPĄ KEMPINGOWĄ!"
 main_keyword: "vanlife jak zacząć"
 lead: "Vanlife wygląda na Instagramie jak wieczne wakacje – kawa z widokiem na góry, laptop na kolanach i zachód słońca za oknem. Rzeczywistość jest bardziej prozaiczna, ale nie mniej fascynująca. Życie w busie to konkretne decyzje: jaki pojazd kupić, jak go przerobić, jak ogarnąć formalności, pracę i noclegi. Ten poradnik przeprowadzi Cię przez każdy z tych kroków."
 faq:
@@ -138,6 +140,9 @@ Aplikacje, które pomagają znaleźć miejsca i serwis:
 - **Park4Night** – baza miejsc postojowych, kamperparków i punktów serwisowych
 - **CamperContact** – rozbudowana baza obiektów z recenzjami i zdjęciami
 - **Grupa Biwakowa** – społeczność z lokalnymi rekomendacjami
+
+
+{{% youtube %}}
 
 ## Społeczność vanlife w Polsce
 

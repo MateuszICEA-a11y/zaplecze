@@ -9,6 +9,8 @@ parent: "przepisy"
 type: "page"
 image: "/images/dmc-przyczepy-hero.webp"
 image_alt: "Bus dostawczy z przyczepą na europejskiej autostradzie"
+youtube: "ClOzf671L7g"
+youtube_title: "Przepisy dotyczące ciągnięcia przyczepy – DMC przyczepy"
 main_keyword: "dmc przyczepy"
 lead: "DMC przyczepy decyduje o tym, czy możesz legalnie holować ją swoim busem na prawo jazdy kat. B. Przekroczenie limitów grozi grzywną w sądzie do 30 000 zł, utratą odszkodowania z OC i realnym zagrożeniem na drodze. Oto kompletny przewodnik po masie przyczepy, zasadach holowania i procedurze zmiany DMC."
 faq:
@@ -159,6 +161,9 @@ Jeśli chcesz wrócić do wyższej wartości DMC, którą przyczepa miała pierw
 Znaczące podwyższenie DMC ponad wartości przewidziane w pierwotnej homologacji wymaga przeprowadzenia nowej, indywidualnej homologacji jednostkowej. Jest to skomplikowany i kosztowny proces realizowany przez Transportowy Dozór Techniczny (TDT).
 
 Po każdej zmianie DMC konieczna jest aktualizacja danych w dowodzie rejestracyjnym oraz wymiana tabliczki znamionowej na nową. Jazda z niezgodnymi danymi na tabliczce i w dokumentach jest osobnym wykroczeniem.
+
+
+{{% youtube %}}
 
 ## Przyczepy z DMC do 750 kg – najpopularniejsze modele
 

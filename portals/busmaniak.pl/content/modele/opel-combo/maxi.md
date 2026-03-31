@@ -11,6 +11,8 @@ volume: 320
 main_keyword: "opel combo maxi"
 image: "/images/opel-combo-hero.webp"
 image_alt: "Opel Combo E furgon"
+youtube: "bKDW0v_tOng"
+youtube_title: "Opel Combo 1.5 Diesel Test - Kombivan dla rodziny"
 lead: "Nazewnictwo wymaga tu rozróżnienia: w starszej generacji funkcjonuje Opel Combo D Maxi, a w nowszej – Combo Cargo XL i Combo Life XL. W wersji dostawczej Cargo XL przestrzeń ładunkowa ma 3,9 m³ standardowo i do 4,4 m³ z rozwiązaniem wydłużającym długość użytkową. To właśnie wymiary paki, a nie sama długość nadwozia 4753 mm, decydują o praktycznej możliwości przewozu ładunku."
 faq:
   - question: "Ile mierzy Combo Maxi?"
@@ -100,6 +102,9 @@ W rodzinie 1.2 Turbo trzeba zwracać uwagę na kwestie związane z paskiem rozrz
 {{% expert name="Marek Kowalczyk" %}}
 Cargo XL, Partner Long i Berlingo Van XL są technicznie bardzo zbliżone, bo bazują na wspólnej architekturze koncernu. To ułatwia porównanie wersji i części eksploatacyjnych, ale koszty serwisu nadal zależą od sieci, lokalizacji i stawek konkretnego warsztatu.
 {{% /expert %}}
+
+
+{{% youtube %}}
 
 ## Ceny Combo Maxi
 

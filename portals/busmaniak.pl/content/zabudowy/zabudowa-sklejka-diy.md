@@ -11,6 +11,8 @@ volume: 720
 main_keyword: "zabudowa busa sklejką"
 image: "/images/zabudowa-sklejka-diy-hero.webp"
 image_alt: "Wnętrze busa podczas zabudowy sklejką wodoodporną – widoczne panele i narzędzia"
+youtube: "POvCR6oByW0"
+youtube_title: "BUS MARZEŃ! | Zabudowa samochodu dostawczego RHINO MR4"
 lead: "Zabudowa busa sklejką to najpopularniejszy sposób na samodzielne zagospodarowanie przestrzeni ładunkowej. Sklejka wodoodporna jest tania, łatwa w obróbce i wystarczająco wytrzymała na potrzeby większości zabudów – od prostych regałów po kompletne wnętrze kamperowe. Ten poradnik prowadzi krok po kroku przez cały proces – od wyboru materiału, przez narzędzia, po montaż i wykończenie."
 faq:
   - question: "Jaka sklejka do zabudowy busa jest najlepsza?"
@@ -146,6 +148,9 @@ Krawędzie sklejki to jej najsłabszy punkt, ponieważ odsłonięte warstwy forn
 - **Silikon bezbarwny** – szybkie i skuteczne uszczelnienie krawędzi, choć mniej estetyczne.
 - **Lakier grubowarstwowy** – nałożenie 3–4 grubych warstw lakieru jachtowego na samych krawędziach.
 - **Listwy aluminiowe** – na krawędziach podłogi i półek, najtrwalsze rozwiązanie mechaniczne.
+
+
+{{% youtube %}}
 
 ## Koszty i najczęstsze błędy {#koszty}
 

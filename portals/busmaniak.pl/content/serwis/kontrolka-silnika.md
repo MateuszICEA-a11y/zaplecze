@@ -10,6 +10,8 @@ volume: 5400
 main_keyword: "kontrolka silnika"
 image: "/images/kontrolka-silnika-hero.webp"
 image_alt: "Deska rozdzielcza busa z podświetloną kontrolką silnika – widok zza kierownicy"
+youtube: "UpkehtrA93I"
+youtube_title: "Zapaliła się kontrolka CHECK ENGINE - poradnik krok po kroku"
 lead: "Żółta kontrolka silnika na desce rozdzielczej nie musi oznaczać katastrofy – najczęściej przyczyną jest usterka czujnika lub problem z układem wydechowym. Czerwona ikona ostrzegawcza to natomiast sygnał do natychmiastowego zatrzymania. W tym artykule wyjaśniamy, co oznaczają poszczególne sygnały, jakie usterki powodują zapalenie kontrolki w busach dostawczych i co robić krok po kroku."
 faq:
   - question: "Czy mogę jechać z zapaloną żółtą kontrolką silnika?"
@@ -141,6 +143,9 @@ W Fordzie Transicie z silnikami EcoBlue 2.0:
 - Czujnik ciśnienia w szynie paliwowej (common rail) – błędne odczyty przy niskim ciśnieniu
 - Moduł sterujący DPF – problemy z komunikacją ze sterownikiem głównym
 - Turbina o zmiennej geometrii – zakleszczenie łopatek po przebiegu ponad 100 000 km
+
+
+{{% youtube %}}
 
 ## Co robić krok po kroku {#krok-po-kroku}
 

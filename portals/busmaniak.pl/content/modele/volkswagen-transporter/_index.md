@@ -8,6 +8,8 @@ h1: "Volkswagen Transporter – kompletny przewodnik po modelu"
 type: "page"
 image: "/images/volkswagen-transporter-hero.webp"
 image_alt: "Volkswagen Transporter T6.1 furgon na drodze"
+youtube: "hMpnvp50mXM"
+youtube_title: "Volkswagen Transporter 6.1 Furgon 2.0 TDI 150 TEST Budowlańca"
 main_keyword: "volkswagen transporter"
 volume: 9900
 lead: "Volkswagen Transporter to legenda segmentu aut dostawczych, produkowana od 1950 roku w siedmiu generacjach (T1–T7). Ponad 13 milionów egzemplarzy, silniki 2.0 TDI od 84 do 204 KM, wersje od furgonu po kultowego kampera California. Najnowszy T7 Multivan na platformie MQB z napędem hybrydowym."
@@ -147,6 +149,9 @@ T4 trzyma cenę jak youngtimer – zadbane Syncro z lat 90. potrafią kosztować
 {{% info title="California – inwestycja" icon="engineering" %}}
 California to jedyny van-kamper, który nie traci na wartości. Używane egzemplarze T5/T6 z wyposażeniem kuchennym i podnoszonym dachem kosztują 120 000–250 000 zł – często więcej niż nowe furgony.
 {{% /info %}}
+
+
+{{% youtube %}}
 
 ## Porównanie Transportera z konkurentami
 

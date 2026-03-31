@@ -5,6 +5,8 @@ description: "Instalacja wodna w kamperze – dobór zbiorników, pomp i montaż
 draft: false
 image: "/images/instalacja-wodna-kamper-hero.webp"
 image_alt: "Instalacja wodna w kamperze – pompa, zbiornik i armatura"
+youtube: "dfr03szyshQ"
+youtube_title: "Instalacja wodna w kamperze. Czujnik poziomu wody, pompa i zbiornik wyrównawczy"
 author: "anna-wozniak"
 h1: "Instalacja wodna w kamperze – zbiorniki, pompy, bojler i schemat montażu"
 main_keyword: "instalacja wodna kamper"
@@ -126,6 +128,9 @@ Instalacja wodna nie wymaga skomplikowanych i drogich narzędzi. Większość ma
 ### Narzędzia
 
 Do zmontowania całej instalacji wystarczą podstawowe narzędzia: wiertarko-wkrętarka, klucz nastawny, nożyce do rur PEX oraz zaciskarka, jeśli wybrałeś złączki prasowane. Przy złączkach skręcanych wystarczą dwa płaskie klucze. Całość prac, przy dobrym planie, nie powinna zająć więcej niż **1–2 dni**.
+
+
+{{% youtube %}}
 
 ## Konserwacja i zimowanie instalacji {#konserwacja}
 

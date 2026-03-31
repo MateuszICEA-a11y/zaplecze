@@ -8,6 +8,8 @@ type: "page"
 main_keyword: "Opel Vivaro-e"
 image: "/images/opel-vivaro-elektryczny-hero.webp"
 image_alt: "Opel Vivaro-e – ładowanie DC i przestrzeń ładunkowa"
+youtube: "kh0MbFQS2fg"
+youtube_title: "Opel Vivaro – Czy 1.5 wystarczy? | TEST PL"
 parent: "opel-vivaro"
 lead: "Opel Vivaro-e, obecnie na części rynków oferowany jako Vivaro Electric, to elektryczna wersja dostawczego Vivaro. Oferuje bardzo zbliżoną przestrzeń ładunkową do odmiany spalinowej, zależnie od konfiguracji, oraz brak emisji spalin z rury wydechowej podczas jazdy. Zasięg wynosi ok. 230–330 km WLTP, a ładowanie DC do 80% trwa ok. 32 min dla baterii 50 kWh i ok. 45 min dla 75 kWh."
 faq:
@@ -118,6 +120,9 @@ Opłacalność elektrycznego vana zależy głównie od tego, gdzie auto jest ła
 Przy ładowaniu z wallboxa nocą i cenie **0,80 zł/kWh** koszt przejazdu 100 km wynosi około **20–25,6 zł**. Przy publicznym AC za **1,60 zł/kWh** będzie to **40–51,2 zł**, a przy publicznym DC za **2,50 zł/kWh** już **62,5–80 zł**.
 
 To pokazuje, że Opel Vivaro-e jest najbardziej sensowny tam, gdzie flota ma własne ładowanie w bazie. Dla porównania podany wcześniej diesel zużywający 8 l/100 km przy cenie 7 zł/l generuje koszt około **56 zł/100 km**, więc przewaga elektryka może być duża, ale nie w każdym scenariuszu ładowania.
+
+
+{{% youtube %}}
 
 ## Vivaro-e Life – wersja osobowa
 

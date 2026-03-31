@@ -9,6 +9,8 @@ parent: "opel-vivaro"
 type: "engine"
 image: "/images/opel-vivaro-2-0-cdti-hero.webp"
 image_alt: "Silnik 2.0 CDTi M9R w Opelu Vivaro A"
+youtube: "kh0MbFQS2fg"
+youtube_title: "Opel Vivaro – Czy 1.5 wystarczy? | TEST PL"
 main_keyword: "opel vivaro 2.0 cdti"
 volume: 1000
 lead: "Opel Vivaro 2.0 CDTi to dwulitrowy diesel z rodziny M9R stosowany w Vivaro A po modernizacji gamy około 2006 r. i oferowany do końca produkcji tej generacji w 2014 r. Warianty 90 i 114 KM uchodzą za trwałe mechanicznie, ale żywotność osprzętu zależy od serwisu, stylu jazdy i konkretnej wersji."
@@ -95,6 +97,9 @@ Opinie o tej jednostce są na ogół dobre, szczególnie w wersji 114 KM. Użytk
 Minusy też są konkretne. Przy zaniedbaniach serwisowych szybko wychodzą problemy z EGR, DPF i turbo, a w skrajnych przypadkach kosztowny okazuje się demontaż zapieczonych wtryskiwaczy.
 
 Na tle innych diesli Vivaro A silnik 2.0 CDTi wypada jako środkowy wariant gamy. 1.9 CDTi występował zwykle w wersjach 82/100 KM, a 2.5 CDTi najczęściej jako 146 KM – dlatego 2.0 jest kompromisem między osiągami, kulturą pracy i kosztami napraw osprzętu. W autach z DPF szczególnie ważne są regularne trasy, a trwałość turbo i łańcucha mocno wspiera częsta wymiana oleju.
+
+
+{{% youtube %}}
 
 ## Koszty serwisu Opel Vivaro 2.0 CDTi
 

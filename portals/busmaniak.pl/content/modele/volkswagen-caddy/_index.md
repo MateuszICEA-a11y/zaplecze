@@ -11,6 +11,8 @@ volume: 40500
 main_keyword: "Volkswagen Caddy"
 image: "/images/volkswagen-caddy-hero.webp"
 image_alt: "Volkswagen Caddy V na drodze"
+youtube: "HWOAeVgnhuM"
+youtube_title: "Volkswagen Caddy 2.0 TDI 122 DSG TEST Kombivana za 180 000 zł"
 lead: "Volkswagen Caddy to jeden z najpopularniejszych kombivanów w Europie, produkowany od 1979 roku w pięciu generacjach. Piąta generacja na platformie MQB przeniosła model na zupełnie nowy poziom jakości i technologii."
 faq:
   - question: "Jakie są generacje Volkswagena Caddy?"
@@ -117,6 +119,9 @@ Najczęstsze problemy per generacja:
 - **EGR i DPF** – typowe dla diesli problemy z nagarem; czyszczenie EGR 500–1000 zł, regeneracja DPF 1000–2000 zł
 
 Koszty serwisowe Caddy są wyższe niż u konkurencji z grupy PSA. Przegląd olejowy to 400–600 zł (vs 300–500 zł w Berlingo), wymiana rozrządu 800–1500 zł. Części oryginalne VW są droższe, ale zamienniki są szeroko dostępne.
+
+
+{{% youtube %}}
 
 ## Ceny Caddy'ego
 

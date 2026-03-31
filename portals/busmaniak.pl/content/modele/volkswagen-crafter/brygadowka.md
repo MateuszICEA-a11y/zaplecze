@@ -11,6 +11,8 @@ volume: 390
 main_keyword: "volkswagen crafter brygadówka"
 image: "/images/volkswagen-crafter-hero.webp"
 image_alt: "Volkswagen Crafter II z podwójną kabiną i skrzynią"
+youtube: "3mLxBsw60oA"
+youtube_title: "#Test Volkswagen Crafter 2.0 l, 177 KM, 6M"
 lead: "VW Crafter brygadówka (Doppelkabine) to podwozie z podwójną kabiną i otwartą paką – standardowo 7 miejsc plus przestrzeń na materiały budowlane, narzędzia i sprzęt. To jedna z nielicznych brygadówek w segmencie dużych aut dostawczych dostępnych z napędem AWD 4MOTION."
 faq:
   - question: "Ile osób mieści Crafter brygadówka?"
@@ -115,6 +117,9 @@ Brygadówka jest wyraźnie droższa od zwykłego furgonu, bo płacisz nie tylko 
 W praktyce sam cennik bazowy niewiele mówi o gotowym aucie do pracy. Dopłaty dotyczą nie tylko mocniejszego silnika, ale też 4MOTION, automatu, cięższego DMC, tylnego napędu, bliźniaków oraz samej zabudowy – od prostej skrzyni po wywrotkę 3-stronną.
 
 Na rynku wtórnym kluczowe są stan ramy, jakość zabudowy i historia pracy auta. Egzemplarz po lekkiej eksploatacji komunalnej może być lepszym zakupem niż młodsza brygadówka po budowie, która całe życie jeździła z przeciążeniem.
+
+
+{{% youtube %}}
 
 ## Crafter brygadówka na tle konkurencji
 

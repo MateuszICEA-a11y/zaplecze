@@ -9,6 +9,8 @@ parent: "opel-combo"
 type: "page"
 image: "/images/opel-combo-van-hero.webp"
 image_alt: "Opel Combo Van – kompaktowy furgon dostawczy z otwartymi drzwiami przesuwnymi"
+youtube: "bKDW0v_tOng"
+youtube_title: "Opel Combo 1.5 Diesel Test - Kombivan dla rodziny"
 main_keyword: "Opel Combo Van"
 lead: "Opel Combo Van czwartej generacji (od 2018) to kompaktowy furgon produkowany w Vigo, oparty na platformie grupy PSA dla lekkich aut dostawczych, spokrewnionej z EMP2/CMP. Wersje Standard i XL oferują 3,3–4,4 m³ przestrzeni ładunkowej, ładowność od około 650 do ponad 1000 kg oraz gamę silników obejmującą diesle 75/100/130 KM, benzynę 110/130 KM i elektryczne e-Combo o mocy 136 KM."
 faq:
@@ -97,6 +99,9 @@ W zależności od wersji Opel Combo Van oferuje ładowność od około 650 do po
 W praktyce trzeba patrzeć na konkretną homologację, bo różnice wynikają z długości nadwozia, silnika, skrzyni biegów i wyposażenia. Dłuższa wersja nie zawsze ma wyższą ładowność – często dodatkowa długość oznacza też większą masę własną.
 
 Możliwości holowania także są zależne od odmiany. Wersje spalinowe zwykle pozwalają ciągnąć przyczepę z hamulcem o masie do 1000–1500 kg, a bez hamulca 680–750 kg. W e-Combo wartości są niższe i zazwyczaj kończą się na 750 kg przyczepy z hamulcem.
+
+
+{{% youtube %}}
 
 ## Combo Van w codziennej pracy
 

@@ -10,6 +10,8 @@ type: "post"
 volume: 1600
 image: "/images/bezpieczniki-fiat-ducato-hero.webp"
 image_alt: ""
+youtube: "dxIymQCZEfc"
+youtube_title: "Fiat Ducato Bezpieczniki opis"
 main_keyword: "Fiat Ducato Bezpieczniki"
 lead: "Prawidłowa lokalizacja bezpieczników w Fiacie Ducato obejmuje trzy punkty: deskę rozdzielczą po stronie kierowcy, komorę silnika oraz słupek boczny, co jest kluczową wiedzą przy diagnozowaniu awarii elektrycznych. Odnalezienie właściwej skrzynki wymaga demontażu osłon, a nasz kompletny schemat ułatwi Ci szybką identyfikację konkretnych obwodów w Twoim aucie lub kamperze."
 faq:
@@ -87,6 +89,9 @@ Przepalone gniazdo 12V to numer jeden wśród zgłoszeń na forach. W modelach p
 Model 244 jest pod tym względem znacznie przyjaźniejszy. Skrzynka siedzi pod klapką w desce po stronie pasażera i w komorze silnika – bez szukania po słupkach. Warto pamiętać, że 2.3 JTD i 2.8 JTD mają oddzielne zabezpieczenia pompy paliwa w komorze – często pomijane przy diagnozie.
 
 ![Bezpieczniki Fiat Ducato – schemat, opis, lokalizacja](/images/bezpieczniki-fiat-ducato-hero.webp)
+
+
+{{% youtube %}}
 
 ## Jak rozpoznać rodzaj i stan bezpiecznika?
 

@@ -19,6 +19,8 @@ faq:
   - question: "Jaka jest różnica między fabrycznym Sprinterem Tourer a zabudową typu transfer lub tourist?"
     answer: "Fabryczne linie Mercedes-Benz to przede wszystkim BASE, PRO i SELECT. Określenia transfer, tourist czy VIP odnoszą się najczęściej do charakteru zabudowy pasażerskiej wykonywanej przez bodybuilderów, a nie do oficjalnych linii fabrycznych Mercedes-Benz."
 lead: "Mercedes Sprinter osobowy w wersji Tourer to baza do przewozu pasażerów od 9 do nawet 19 miejsc – od prostych konfiguracji shuttle po rozbudowane minibusy turystyczne. W tym segmencie realnie konkuruje z Fordem Transit Minibus, Iveco Daily Line, MAN TGE Coach/Intercity oraz z minibusowymi zabudowami na bazie Volkswagena Craftera."
+youtube: "YONtDgHE50c"
+youtube_title: "Mercedes Sprinter 317 CDI L1H2 TEST Najlepszy bus? [4k]"
 sources:
   - "dane homologacyjne i specyfikacyjne przekazane przez fact-checkera dla rynku PL/EU; informacje o gamie linii BASE"
   - "PRO i SELECT; dane o rozstawach osi"
@@ -109,6 +111,9 @@ W specyfikacjach technicznych można spotkać odniesienia do systemów wspomagan
 {{% expert name="Marek Kowalczyk" %}}
 Przy zamówieniu Sprintera do przewozów pasażerskich najpierw ustal bazę fabryczną – linię wyposażenia, napęd, DMC i długość – a dopiero potem konfigurację zabudowy. To najlepszy sposób, by uniknąć rozczarowania liczbą miejsc, bagażnikiem i realną nośnością po odbiorze gotowego auta.
 {{% /expert %}}
+
+
+{{% youtube %}}
 
 ## Ceny Mercedesa Sprinter osobowy
 

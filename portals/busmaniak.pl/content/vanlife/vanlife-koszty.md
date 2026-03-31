@@ -9,6 +9,8 @@ type: "post"
 volume: 1000
 image: "/images/vanlife-koszty-hero.webp"
 image_alt: "Wnętrze kampera z kuchenką i rachunkami – koszty vanlife w Polsce"
+youtube: "tNOkCOV-AQs"
+youtube_title: "Co musisz wiedzieć zanim zdecydujesz się na vanlife?"
 main_keyword: "vanlife koszty"
 lead: "Pytanie o koszty vanlife'u pada zawsze jako pierwsze i odpowiedź nigdy nie jest prosta. Jedno jest pewne – życie w busie nie jest darmowe, ale może być tańsze niż wynajem kawalerki w dużym mieście. Wszystko zależy od stylu: oszczędny vanlife z częstym postojem poza kempingami i gotowaniem na kuchence to inna liga cenowa niż komfortowe postoje z pełną infrastrukturą i jedzenie na mieście. Rozbijamy budżet na czynniki pierwsze."
 faq:
@@ -150,6 +152,9 @@ Ten wynik pokazuje najważniejszą rzecz: vanlife bywa tańszy od wynajmu mieszk
 {{% expert name="Marek Kowalczyk" %}}
 Najczęstszy błąd początkujących vanliferów to niedoszacowanie kosztów paliwa i przeszacowanie oszczędności na noclegach. Paliwo jest bezlitosne – Ducato z pełną zabudową, jadący po górach z klimatyzacją, potrafi spalić 14 l/100 km. Budżet planuj pesymistycznie dla paliwa i serwisu, a ostrożnie dla darmowych postojów.
 {{% /expert %}}
+
+
+{{% youtube %}}
 
 ## Budżet minimalny vs komfortowy – zestawienie
 

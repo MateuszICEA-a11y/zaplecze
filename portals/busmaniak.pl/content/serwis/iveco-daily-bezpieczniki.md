@@ -11,6 +11,8 @@ volume: 500
 main_keyword: "iveco daily bezpieczniki"
 image: "/images/iveco-daily-bezpieczniki-hero.webp"
 image_alt: "Skrzynka bezpieczników w komorze silnika Iveco Daily"
+youtube: "9Kt0v6gzolQ"
+youtube_title: "Bezpieczniki komputera pokładowego w Iveco Daily"
 lead: "Iveco Daily dysponuje rozbudowaną instalacją elektryczną, która opiera się na trzech głównych skrzynkach bezpieczników: pod deską rozdzielczą, w komorze silnika oraz bezpośrednio przy akumulatorze. Prawidłowa identyfikacja modułów jest kluczowa dla skutecznej diagnostyki. Poniżej prezentujemy schematy i lokalizacje dla generacji V i VI."
 faq:
   - question: "Gdzie jest bezpiecznik od zapalniczki w Iveco Daily?"
@@ -138,6 +140,9 @@ Mimo że instalacja elektryczna Daily jest stosunkowo solidna, kilka problemów 
 {{% info title="Profilaktyka" icon="engineering" %}}
 Raz w roku oczyść zaciski akumulatora i połączenia masowe, a następnie zabezpiecz je smarem dielektrycznym lub wazeliną techniczną. Taka prosta czynność eliminuje ponad 30% potencjalnych problemów z elektryką w Daily.
 {{% /info %}}
+
+
+{{% youtube %}}
 
 ## Wymiana bezpiecznika – instrukcja
 

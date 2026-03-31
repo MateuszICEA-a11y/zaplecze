@@ -9,6 +9,8 @@ parent: "peugeot-boxer"
 type: "page"
 image: "/images/peugeot-boxer-hdi-hero.webp"
 image_alt: "Peugeot Boxer z silnikiem HDI – komora silnika"
+youtube: "At2D5MktTJU"
+youtube_title: "Peugeot Boxer Kamper – autotest"
 main_keyword: "Peugeot Boxer HDI"
 lead: "Peugeot Boxer HDI obejmuje kilka rodzin diesli stosowanych od 1994 roku – od prostszych jednostek starszej generacji po nowsze 2.2 HDi i 2.2 BlueHDi. Boxer i Citroën Jumper w wielu rocznikach dzieliły głównie silniki 2.2 HDi, natomiast Fiat Ducato często korzystał z innych diesli 2.3 i 3.0 MultiJet. W opiniach części użytkowników i warsztatów 2.2 HDi 130 KM uchodzi za udany kompromis między osiągami a kosztami eksploatacji. Używane egzemplarze z rynku wtórnego spotyka się od około 30 000 zł."
 faq:
@@ -121,6 +123,9 @@ W artykule nie podajemy jednej pojemności układu olejowego ani jednego standar
 W aucie użytkowym bezpieczniej skracać przebiegi między wymianami niż je maksymalnie wydłużać. Szczególnie ważna jest regularna obsługa filtra paliwa, bo układ wtryskowy w nowocześniejszych dieslach źle znosi zanieczyszczenia i wodę w paliwie.
 
 ![Peugeot Boxer HDI – silnik pod maską](/images/peugeot-boxer-hdi-hero.webp)
+
+
+{{% youtube %}}
 
 ## Boxer, Ducato, Jumper – ten sam silnik?
 

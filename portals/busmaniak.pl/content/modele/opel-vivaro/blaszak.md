@@ -11,6 +11,8 @@ volume: 390
 main_keyword: "opel vivaro blaszak"
 image: "/images/opel-vivaro-hero.webp"
 image_alt: "Opel Vivaro C furgon"
+youtube: "kh0MbFQS2fg"
+youtube_title: "Opel Vivaro – Czy 1.5 wystarczy? | TEST PL"
 lead: "Opel Vivaro blaszak to klasyczny furgon dostawczy z pełną przegrodą i zaślepionymi szybami – najpopularniejsza konfiguracja modelu. W gamie znajdziemy trzy generacje: Vivaro A (2001–2014), Vivaro B (2014–2019) oraz Vivaro C (od 2019)."
 faq:
   - question: "Jakie są wymiary paki Vivaro blaszak?"
@@ -110,6 +112,9 @@ To ważne w praktyce. Przykładowo 70 000 zł netto oznacza 86 100 zł brutto, w
 Na wartość używanego egzemplarza najmocniej wpływają: długość M lub XL, liczba drzwi bocznych, automat EAT8, klimatyzacja, kamera cofania, przebieg 100 tys. kontra 250 tys. km, kraj pochodzenia oraz historia serwisowa. Między dwoma zbliżonymi rocznikami różnica może sięgać 15 000–30 000 zł.
 
 W praktyce najtańsze są auta po flotach z wysokim przebiegiem, a najdroższe – dobrze wyposażone egzemplarze krajowe z udokumentowanym serwisem. W przypadku Vivaro-e cenę dodatkowo mocno determinuje pojemność akumulatora.
+
+
+{{% youtube %}}
 
 ## Porównanie Vivaro blaszak z konkurencją
 

@@ -12,6 +12,8 @@ volume: 40500
 main_keyword: "Mercedes Sprinter dane techniczne"
 image: "/images/mercedes-sprinter-hero.webp"
 image_alt: "Mercedes Sprinter III furgon"
+youtube: "YONtDgHE50c"
+youtube_title: "Mercedes Sprinter 317 CDI L1H2 TEST Najlepszy bus? [4k]"
 lead: "Mercedes Sprinter to najlepiej sprzedający się bus powyżej 3,5 tony w Europie i synonim niezawodności w transporcie. Trzecia generacja (W907/W910, od 2018) to rewolucja: po raz pierwszy Sprinter dostał napęd na przednią oś, a kabinę wyposażono w system MBUX. Znajdziesz tu pełne dane techniczne, wymiary wszystkich wersji, charakterystykę silników OM654 i OM651 oraz listę najczęstszych usterek."
 faq:
   - question: "Ile kosztuje nowy Sprinter?"
@@ -190,6 +192,9 @@ Segment dostawczaków to rynek pełen alternatyw – Mercedes Sprinter mierzy si
 {{% info title="Jak wybrać?" icon="checklist" %}}
 Jeśli priorytetem jest niezawodność przy dużych przebiegach i jakość wykonania kabiny – Sprinter. Jeśli liczy się cena całkowita posiadania (TCO) – Transit. Jeśli potrzebujesz DMC powyżej 5,5 tony – Daily nie ma konkurencji w tej klasie.
 {{% /info %}}
+
+
+{{% youtube %}}
 
 ## Ceny Sprintera
 

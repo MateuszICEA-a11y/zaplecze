@@ -8,6 +8,8 @@ type: "page"
 main_keyword: "Opel Vivaro wymiary"
 image: "/images/opel-vivaro-wymiary-hero.webp"
 image_alt: "Opel Vivaro wymiary – rzut z boku i z góry"
+youtube: "kh0MbFQS2fg"
+youtube_title: "Opel Vivaro – Czy 1.5 wystarczy? | TEST PL"
 parent: "opel-vivaro"
 lead: "Opel Vivaro wymiary w generacji Vivaro C na rynku europejskim po debiucie w 2019 r. obejmują dwie długości nadwozia: Standard 4960 mm i Long 5310 mm. Przestrzeń ładunkowa ma odpowiednio 5,3 m³ i 6,6 m³, a fabrycznie oferowane vany L1/L2 nie występują jako klasyczny furgon H2."
 faq:
@@ -83,6 +85,9 @@ W danych wagowych trzeba unikać uogólnień, bo masa własna i ładowność zal
 Dla Vivaro C nie ma jednej uniwersalnej wartości masy własnej i ładowności dla wszystkich odmian L1. Furgon 2–3-osobowy, brygadówka oraz Kombi różnią się konfiguracją, więc przed zakupem trzeba sprawdzić konkretną homologację i cennik producenta dla danej wersji.
 
 Dla użytkowników flotowych ważna jest też masa przyczepy z hamulcem, która zależnie od wersji silnikowej wynosi do około 1900–2500 kg. Znaczenie mają również naciski osi z homologacji, szczególnie przy jeździe z przyczepą, zabudową lub ciężkim ładunkiem.
+
+
+{{% youtube %}}
 
 ## Porównanie z konkurencją
 

@@ -11,6 +11,8 @@ volume: 600
 main_keyword: "opel vivaro kontrolki"
 image: "/images/opel-vivaro-kontrolki-hero.webp"
 image_alt: "Zestaw wskaźników i kontrolek na desce rozdzielczej Opla Vivaro"
+youtube: "8Bi7fPHiOjw"
+youtube_title: "Brak ładowania a kontrolki – Opel Vivaro"
 lead: "Opel Vivaro przeszedł trzy generacje – każda z innym zestawem wskaźników, ale z tą samą zasadą kolorów: czerwony wymaga natychmiastowej reakcji, żółty sygnalizuje usterkę lub zbliżający się serwis, a zielony i niebieski pełnią funkcję informacyjną. Poniżej znajdziesz listę kontrolek per generacja, najczęstsze przyczyny ich zapalenia i instrukcję resetu serwisowego."
 faq:
   - question: "Jak skasować kontrolkę serwisową w Vivaro?"
@@ -106,6 +108,9 @@ Niezależnie od generacji, pewne problemy wracają regularnie. Oto ranking najcz
 {{% info title="Diagnostyka" icon="engineering" %}}
 Diagnostyka Vivaro A wymaga interfejsu obsługującego protokoły Renault, ponieważ metody domowe, takie jak „na spinacz”, nie działają. W generacjach B i C wystarczy standardowy skaner OBD2 lub popularne aplikacje mobilne.
 {{% /info %}}
+
+
+{{% youtube %}}
 
 ## Reset kontrolek serwisowych
 

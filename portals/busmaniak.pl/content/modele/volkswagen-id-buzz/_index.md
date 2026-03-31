@@ -10,6 +10,8 @@ parent: "modele"
 type: "page"
 image: "/images/volkswagen-id-buzz-hero.webp"
 image_alt: "Volkswagen ID. Buzz w kolorze żółtym na tle nowoczesnego miasta"
+youtube: "hkvv4xWLEeQ"
+youtube_title: "Elektryczny Volkswagen ID.Buzz (TEST PL 4K)"
 main_keyword: "volkswagen id buzz"
 lead: "Volkswagen ID. Buzz to elektryczny van na platformie MEB, produkowany od 2022 roku w Hanowerze. Silnik o mocy 150–250 kW (204–339 KM), bateria 77 lub 85 kWh i zasięg do 461 km WLTP. Dostępny w wersjach osobowej (SWB i LWB), dostawczej Cargo oraz sportowej GTX z napędem 4x4."
 faq:
@@ -107,6 +109,9 @@ To kwoty za wersje bazowe – w praktyce większość klientów dokłada pakiety
 Dla firm ID. Buzz Cargo kwalifikuje się do dopłat w ramach programów wspierających elektromobilność. Warto sprawdzić aktualne warunki leasingu – raty miesięczne zaczynają się od ok. 2500–3000 zł netto.
 
 Porównując cenowo z klasycznym [Volkswagen Multivan](/modele/volkswagen-multivan/) – nowy Multivan 2.0 TDI startuje od ok. 220 000 zł, ale koszty eksploatacji elektryka są znacznie niższe.
+
+
+{{% youtube %}}
 
 ## Porównanie ID. Buzza z konkurencją
 

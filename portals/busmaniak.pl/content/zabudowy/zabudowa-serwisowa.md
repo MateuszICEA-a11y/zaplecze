@@ -11,6 +11,8 @@ volume: 390
 main_keyword: "zabudowa serwisowa busa"
 image: "/images/zabudowa-serwisowa-hero.webp"
 image_alt: "Zabudowa serwisowa w przestrzeni ładunkowej busa dostawczego"
+youtube: "POvCR6oByW0"
+youtube_title: "BUS MARZEŃ! | Zabudowa samochodu dostawczego RHINO MR4"
 lead: "Zabudowa serwisowa busa to fundament pracy każdej ekipy technicznej. Dobrze zaprojektowany system regałów, szuflad i organizerów skraca czas dojazdu do narzędzi, chroni sprzęt przed uszkodzeniem i spełnia normy bezpieczeństwa ładunku. Wybór między gotowym systemem a zabudową na wymiar zależy od branży, budżetu i modelu pojazdu."
 faq:
   - question: "Ile kosztuje zabudowa serwisowa busa?"
@@ -126,6 +128,9 @@ Najczęściej wybierane bazy to duże furgony o kubaturze 10–17 m³:
 ### Mniejsze busy dla lekkich ekip
 
 Dwuosobowe ekipy (np. monterzy alarmów, serwisanci AGD) nie potrzebują dużego busa. Modele kompaktowe – [VW Caddy](/modele/volkswagen-caddy/), Renault Kangoo czy Peugeot Partner – wystarczą pod zabudowę jednostronną z 2–3 [regałami](/zabudowy/regaly-do-busa/) i szufladami podpodłogowymi. Koszt zabudowy mniejszego busa jest niższy o 30–50%.
+
+
+{{% youtube %}}
 
 ## Koszty zabudowy serwisowej {#koszty}
 

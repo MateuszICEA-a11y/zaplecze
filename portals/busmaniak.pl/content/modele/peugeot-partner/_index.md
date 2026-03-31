@@ -8,6 +8,8 @@ h1: "Peugeot Partner – kompletny przewodnik po modelu"
 type: "page"
 image: "/images/peugeot-partner-hero.webp"
 image_alt: "Peugeot Partner III furgon na drodze"
+youtube: "k5bg9RYxSiM"
+youtube_title: "Peugeot Partner Tepee Outdoor (PL) - test i jazda próbna"
 main_keyword: "peugeot partner"
 volume: 9900
 lead: "Peugeot Partner to kompaktowy van dostawczy, produkowany od 1996 roku w trzech generacjach. Obecna odsłona (od 2018) dzieli platformę EMP2 z Citroënem Berlingo i Oplem Combo. Silniki 1.5 BlueHDi od 75 do 130 KM, wersja osobowa przemianowana na Rifter, elektryczny e-Partner z zasięgiem 275 km."
@@ -140,6 +142,9 @@ e-Partner spełnia wymagania najwyższej kategorii emisji w polskich SCT (Warsza
 | Partner II (2015–2018, BlueHDi) | 25 000–40 000 zł |
 | Partner III (2018–2021) | 40 000–70 000 zł |
 | Partner III (2022–2024) | 65 000–100 000 zł |
+
+
+{{% youtube %}}
 
 ## Porównanie Partnera z konkurencją
 

@@ -16,6 +16,8 @@ faq:
   - question: "Czy ë-Jumper elektryczny ma taką samą przestrzeń co diesel?"
     answer: "Artykuł wskazuje, że przestrzeń ładunkowa pozostaje taka sama jak w wersjach spalinowych, ponieważ akumulator umieszczono pod podłogą. Różnice dotyczą głównie ładowności i parametrów napędu."
 lead: "Citroën Jumper Van to duży furgon do intensywnej pracy w transporcie i usługach. Model należy do tej samej rodziny konstrukcyjnej co Peugeot Boxer Van i Fiat Ducato Van, ale zależnie od rynku, rocznika i konfiguracji występowały różnice w gamie silników, skrzyniach biegów, wyposażeniu i homologacjach."
+youtube: "3zmwYawO7e0"
+youtube_title: "Rozmiar XXL Citroen JUMPER H2 L3 - TEST PL"
 sources:
   - "oficjalne katalogi i cenniki producenta dla konkretnego roku modelowego"
   - "dane homologacyjne WLTP dla ë-Jumpera oraz dokumentacja techniczna odpowiednia dla wskazanej wersji rynkowej. Odesłanie ogólne do [silnika Diesla](https://pl.wikipedia.org/wiki/Silnik_Diesla) nie zastępuje danych katalogowych dla konkretnej odmiany auta."
@@ -133,6 +135,9 @@ Przy ocenie użyteczności ë-Jumpera trzeba patrzeć na realne scenariusze prac
 {{% info title="Jumper Van a zabudowy chłodnicze" icon="engineering" %}}
 Jumper jest popularną bazą pod zabudowy chłodnicze i izotermiczne, ale temat ATP wymaga precyzji. Zasady ważności świadectw i przedłużeń nie sprowadzają się do prostego stwierdzenia, że po 6 latach trzeba wymienić izolację – w praktyce obowiązują badania i procedury przedłużenia zgodne z przepisami.
 {{% /info %}}
+
+
+{{% youtube %}}
 
 ## Serwis Jumpera Van
 

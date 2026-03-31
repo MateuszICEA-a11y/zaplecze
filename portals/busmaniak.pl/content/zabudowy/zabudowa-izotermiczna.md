@@ -11,6 +11,8 @@ volume: 480
 main_keyword: "zabudowa izotermiczna busa"
 image: "/images/zabudowa-izotermiczna-hero.webp"
 image_alt: "Bus dostawczy z zabudową izotermiczną i agregatem chłodniczym"
+youtube: "-EdYpHuf3AU"
+youtube_title: "MGR-Zabudowy – Zabudowa izotermiczna (chłodnia) dla Cateringu Dietetycznego"
 lead: "Zabudowa izotermiczna busa to specjalistyczna nadbudówka utrzymująca stabilną temperaturę wewnątrz przestrzeni ładunkowej. W zależności od klasy izolacji i typu agregatu chłodniczego pozwala transportować żywność, leki, kwiaty i inne produkty wrażliwe na temperaturę. Kluczowe są tu normy ATP, dobór materiałów izolacyjnych i prawidłowa homologacja pojazdu."
 faq:
   - question: "Ile kosztuje zabudowa izotermiczna busa?"
@@ -115,6 +117,9 @@ Pojazd z zabudową izotermiczną wymaga kilku formalności:
 - **Książka kontroli temperatury** – wymagana podczas transportu, z wydrukami z rejestratorów
 
 Należy pamiętać, że transport żywności w Polsce wymaga zatwierdzenia pojazdu przez Państwową Inspekcję Sanitarną (Sanepid) i wpisu do rejestru zakładów. Materiały wykończeniowe muszą posiadać Atest Higieniczny PZH. Podczas gdy certyfikat ATP jest kluczowy w transporcie międzynarodowym, na rynku krajowym nadrzędna jest decyzja Sanepidu.
+
+
+{{% youtube %}}
 
 ## Koszty zabudowy izotermicznej {#koszty}
 

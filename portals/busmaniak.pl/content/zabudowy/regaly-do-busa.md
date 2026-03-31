@@ -11,6 +11,8 @@ volume: 590
 main_keyword: "regał do busa"
 image: "/images/regaly-do-busa-hero.webp"
 image_alt: "Modułowe regały aluminiowe zamontowane w busie dostawczym"
+youtube: "gRdfzqndxJE"
+youtube_title: "ZRÓB TO SAM | QBRICK SYSTEM ZABUDOWA SAMOCHODU DOSTAWCZEGO"
 lead: "Regały do busa to fundament każdej zabudowy narzędziowej i serwisowej. Dobrze dobrany system modułowy porządkuje przestrzeń ładunkową, zabezpiecza ładunek podczas jazdy i przyspiesza codzienną pracę. Na rynku dostępne są rozwiązania od aluminiowych systemów premium po drewniane regały DIY – każde z własnymi zaletami."
 faq:
   - question: "Jaki regał do busa wybrać – aluminiowy czy stalowy?"
@@ -134,6 +136,9 @@ Cena regału zależy od materiału, producenta, wielkości i wyposażenia dodatk
 ### Regał a wartość odsprzedaży busa
 
 Bus z profesjonalną zabudową narzędziową ma wyższą wartość na rynku wtórnym – szczególnie jeśli pochodzi ona od znanego producenta. Systemy Sortimo i Bott zachowują 40–60% wartości po 5 latach użytkowania, co obniża rzeczywisty koszt posiadania. Przy leasingu warto uwzględnić zabudowę w finansowaniu – można ją amortyzować razem z pojazdem.
+
+
+{{% youtube %}}
 
 ## Bezpieczeństwo ładunku na regałach {#bezpieczenstwo}
 

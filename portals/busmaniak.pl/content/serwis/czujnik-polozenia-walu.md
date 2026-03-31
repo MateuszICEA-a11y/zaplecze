@@ -9,6 +9,8 @@ type: "post"
 volume: 6600
 image: "/images/czujnik-polozenia-walu-hero.webp"
 image_alt: "Czujnik położenia wału korbowego CKP zamontowany przy kole zamachowym"
+youtube: "yYqhg9spjfU"
+youtube_title: "Sprawdzenie czujnika położenia wału korbowego"
 main_keyword: "czujnik położenia wału korbowego"
 lead: "Czujnik położenia wału korbowego (CKP) to niewielki element wielkości kciuka, bez którego silnik busa nie uruchomi się lub zgaśnie w najmniej oczekiwanym momencie. Monitoruje obroty i pozycję wału, dostarczając sterownikowi dane kluczowe dla synchronizacji wtrysku paliwa. Awaria tego czujnika jest jedną z częstszych przyczyn nagłego unieruchomienia busa na trasie, a diagnostyka wymaga znajomości kodów P0335 i P0336."
 faq:
@@ -130,6 +132,9 @@ Przy wymianie warto jednocześnie:
 - Sprawdzić luz między czujnikiem a kołem zamachowym – powinien wynosić 0,5–1,5 mm.
 
 {{% expert name="Marek Kowalczyk" %}}W wielu busach plastikowa obudowa czujnika zapieka się w aluminiowym otworze bloku lub skrzyni biegów. Próba wyciagnięcia go na siłę kończy się ułamaniem na równo z blokiem. Wydobycie resztek wymaga wtedy nawiercania lub nawet demontażu skrzyni. Zawsze stosujcie penetrator i ostrożnie obracajcie czujnikiem na boki, zanim użyjecie siły.{{% /expert %}}
+
+
+{{% youtube %}}
 
 ## Gdzie jest czujnik w popularnych busach
 

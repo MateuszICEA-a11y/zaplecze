@@ -16,6 +16,8 @@ faq:
   - question: "Jaka jest różnica między Crafterem Kombi a Crafterem Van?"
     answer: "Crafter Kombi ma boczne szyby i siedzenia pasażerskie, a układ wyposażenia zależy od wersji i konfiguracji. Crafter Van to klasyczna blaszana zabudowa do transportu ładunku. Kombi może występować jako M1 lub M2 – zależnie od liczby miejsc."
 lead: "Volkswagen Crafter II w wersji osobowej – Kombi – to pojazd do przewozu do 9 osób łącznie z kierowcą, budowany na tej samej bazie co Crafter Van."
+youtube: "3mLxBsw60oA"
+youtube_title: "#Test Volkswagen Crafter 2.0 l, 177 KM, 6M"
 sources:
   - "Volkswagen"
   - "dane modelowe Crafter II"
@@ -120,6 +122,9 @@ W pojazdach dla osób z niepełnosprawnościami znaczenie mają przede wszystkim
 Crafter z napędem **4Motion/AWD** nie jest jedynym dużym dostawczakiem z napędem na cztery koła w ofercie rynkowej. Konkurencyjne rozwiązania mają również m.in. **Mercedes-Benz Sprinter** i **MAN TGE**.
 
 W Crafterze II napęd AWD był łączony z wybranymi silnikami i skrzyniami biegów. Przy zakupie warto sprawdzić, z jaką konfiguracją przekładni, DMC i typem zabudowy dany wariant może występować, bo to właśnie te ograniczenia mają największe znaczenie dla firm terenowych, służb i zabudów specjalnych.
+
+
+{{% youtube %}}
 
 ## Porównanie Craftera ze Sprinterem
 

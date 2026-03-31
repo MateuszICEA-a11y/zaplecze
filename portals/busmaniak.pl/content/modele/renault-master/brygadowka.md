@@ -12,6 +12,8 @@ volume: 320
 main_keyword: "Renault Master brygadówka"
 image: "/images/renault-master-brygadowka-hero.webp"
 image_alt: "Renault Master brygadówka L3H2 z przegrodą i podwójną kabiną"
+youtube: "vgKn6Nr9OHM"
+youtube_title: "Renault Master Extra - samochód dostawczy roku 2025 TEST PL"
 lead: "Renault Master brygadówka łączy dodatkowy rząd siedzeń z oddzieloną przestrzenią ładunkową. To popularna konfiguracja dla ekip budowlanych, instalatorów i serwisu mobilnego, ale przed zakupem trzeba jasno rozróżnić generację, homologację i realną ładowność konkretnej wersji."
 faq:
   - question: "Ile osób mieści Renault Master brygadówka?"
@@ -121,6 +123,9 @@ W praktyce warto sprawdzić:
 {{% expert name="Marek Kowalczyk" %}}
 Przy zakupie używanej brygadówki sprawdź przede wszystkim stan przegrody i jej mocowań, zgodność liczby miejsc z dowodem i homologacją, korozję podłogi oraz progów, a także stan drzwi przesuwnych i tylnych. Warto też ocenić zużycie sprzęgła i dwumasy lub skrzyni automatycznej, a w zależności od silnika skontrolować układ wtryskowy, turbo, DPF i AdBlue oraz potwierdzić przebieg historią serwisową. Liczbę miejsc, typ pasów i homologację siedzeń zawsze porównuj z dokumentami pojazdu.
 {{% /expert %}}
+
+
+{{% youtube %}}
 
 ## Koszty Renault Master brygadówka – zakup i utrzymanie
 

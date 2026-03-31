@@ -8,6 +8,8 @@ h1: "Renault Kangoo – kompletny przewodnik po modelu"
 type: "page"
 image: "/images/renault-kangoo-hero.webp"
 image_alt: "Renault Kangoo III furgon na parkingu"
+youtube: "IvKQFWhRTss"
+youtube_title: "Renault Kangoo 2023 - TEST PL (1.5 dCi 115 KM)"
 main_keyword: "renault kangoo"
 volume: 12100
 lead: "Renault Kangoo to fundament segmentu kombivanów, produkowany od 1997 roku w trzech generacjach w fabryce w Maubeuge. Trzecia odsłona na platformie CMF-B dzieli konstrukcję z Mercedesem Citanem II i Nissanem Townstarem. Silniki od 75 do 131 KM, wersja elektryczna E-Tech i osobowy Grand Kangoo na 7 miejsc."
@@ -151,6 +153,9 @@ Trzecia generacja jest dopracowana, ale objęta była akcją serwisową dotyczą
 {{% info title="Open Sesame a wartość rezydualna" icon="engineering" %}}
 Kangoo III z opcją Open Sesame (brak słupka B) trzyma wartość lepiej niż wersje standardowe – to unikalne rozwiązanie na rynku, którego nie oferuje żaden konkurent.
 {{% /info %}}
+
+
+{{% youtube %}}
 
 ## Porównanie Kangoo z konkurencją
 

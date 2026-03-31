@@ -11,6 +11,8 @@ volume: 590
 main_keyword: "zabudowa paki busa"
 image: "/images/zabudowa-paki-hero.webp"
 image_alt: "Paka busa dostawczego z wykładziną podłogową i listwami ochronnymi na ścianach"
+youtube: "LeRw0aiufKo"
+youtube_title: "Montaż boczków paki Volkswagen Crafter zabudowa busa"
 lead: "Zabudowa paki busa chroni zarówno ładunek, jak i sam pojazd. Wykładziny podłogowe, okładziny ścian, listwy ochronne i systemy mocowania zapobiegają uszkodzeniom towaru podczas transportu i wydłużają żywotność przestrzeni ładunkowej. Prawidłowo zabezpieczona paka obniża koszty eksploatacji, ułatwia utrzymanie czystości i podnosi wartość odsprzedaży busa."
 faq:
   - question: "Ile kosztuje zabudowa paki busa?"
@@ -119,6 +121,9 @@ Paka busa jest narażona na wilgoć z zewnątrz (deszcz) i od wewnątrz (kondens
 ### Izolacja termiczna paki
 
 Izolacja termiczna chroni ładunki wrażliwe na temperaturę – elektronikę, farby czy żywność niewymagającą chłodzenia. Pianka XPS (20–30 mm) na ścianach i suficie utrzymuje temperaturę stabilną o 10–15°C dłużej niż w busie bez izolacji. Profesjonalne zabudowy izotermiczne opisuje osobny artykuł o [zabudowie izotermicznej busa](/zabudowy/zabudowa-izotermiczna/).
+
+
+{{% youtube %}}
 
 ## Koszty zabudowy paki w 2026 roku {#koszty}
 

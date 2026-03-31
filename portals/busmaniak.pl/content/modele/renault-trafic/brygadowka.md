@@ -8,6 +8,8 @@ author: "marek-kowalczyk"
 h1: "Renault Trafic brygadówka – Combi dla ekip serwisowych"
 image: "/images/renault-trafic-brygadowka-hero.webp"
 image_alt: "Renault Trafic brygadówka Combi"
+youtube: "B84L-5QUpN0"
+youtube_title: "RENAULT TRAFIC (NOWY MODEL) - TEST, OPIS I RECENZJA MODELU"
 parent: "renault-trafic"
 type: "page"
 volume: 590
@@ -93,6 +95,9 @@ W aucie brygadowym kabina jest miejscem pracy, nie dodatkiem. Dlatego liczy się
 W praktyce warto zwrócić uwagę na ogrzewanie i wentylację tylnej części kabiny, bo to bezpośrednio wpływa na komfort ekipy. Istotne są też elementy codziennego wyposażenia: klimatyzacja manualna lub automatyczna, tempomat, multimedia, gniazda 12 V/USB, kamera cofania lub czujniki parkowania oraz systemy bezpieczeństwa, takie jak ESP i ASR. To właśnie te rzeczy robią różnicę przy wielogodzinnej pracy w terenie.
 
 W używanym Traficu trzeba też obejrzeć zużycie foteli drugiego rzędu, stan przegrody i działanie klimatyzacji tylnej części kabiny, jeśli auto ją ma. W brygadówce te elementy pracują intensywniej niż w zwykłym vanie osobowym, dlatego szybciej pokazują realną historię eksploatacji.
+
+
+{{% youtube %}}
 
 ## Kto kupuje Trafica Combi – zastosowania
 

@@ -12,6 +12,8 @@ volume: 720
 main_keyword: "Renault Master osobowy"
 image: "/images/renault-master-osobowy-hero.webp"
 image_alt: "Renault Master Combi L3H2 – widok z boku z przeszkleniem bocznym"
+youtube: "vgKn6Nr9OHM"
+youtube_title: "Renault Master Extra - samochód dostawczy roku 2025 TEST PL"
 lead: "Renault Master osobowy to wersja Combi lub Bus – furgon z bocznymi oknami i siedzeniami dla pasażerów. W praktyce najczęściej spotyka się fabryczne Combi 8+1, a większe busy 9–17 miejsc zwykle zależą od rynku, zabudowy i homologacji. Poznaj dostępne konfiguracje, wymiary i dane techniczne."
 faq:
   - question: "Ile osób mieści Renault Master osobowy?"
@@ -132,6 +134,9 @@ W używanym Masterze osobowym najważniejsza jest zgodność faktycznej zabudowy
 {{% /expert %}}
 
 Na tle konkurencji Master porusza się w tym samym segmencie co Fiat Ducato, Peugeot Boxer, Citroen Jumper, Ford Transit, Mercedes Sprinter i VW Crafter. W tej klasie standardem są długości od ok. 5,5 do 6,8 m, konfiguracje od 8+1 do 16+1, DMC od 3,5 do 5,0 t i moce mniej więcej 130–190 KM.
+
+
+{{% youtube %}}
 
 ## Ceny Renault Master Combi – nowe i używane
 

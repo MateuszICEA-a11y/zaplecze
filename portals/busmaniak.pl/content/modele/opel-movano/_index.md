@@ -8,6 +8,8 @@ h1: "Opel Movano – kompletny przewodnik po modelu"
 type: "page"
 image: "/images/opel-movano-hero.webp"
 image_alt: "Opel Movano C furgon L3H2 na parkingu"
+youtube: "SeHx9m65Aq0"
+youtube_title: "Opel Movano-e Elektryczny samochód dostawczy Test"
 main_keyword: "opel movano"
 volume: 9900
 lead: "Opel Movano to duży dostawczak produkowany od 1998 roku w trzech generacjach. Movano A i B bazowały na Renault Masterze, ale generacja C (od 2021) to bliźniak Fiata Ducato – produkowany w Gliwicach. Silniki 2.3 CDTI od 120 do 180 KM, ładowność do 2254 kg, objętość do 17 m³."
@@ -155,6 +157,9 @@ Opel objął akcją naprawczą 121 egzemplarzy Movano C z rocznika 2022 z powodu
 | Movano B (2011–2016) | 40 000–80 000 zł |
 | Movano B (2017–2021) poleasingowe | 80 000–120 000 zł |
 | Movano C (od 2022) | 120 000–160 000 zł |
+
+
+{{% youtube %}}
 
 ## Porównanie Movano z konkurentami
 

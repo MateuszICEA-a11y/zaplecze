@@ -8,6 +8,8 @@ h1: "Peugeot Expert – kompletny przewodnik po modelu"
 type: "page"
 image: "/images/peugeot-expert-hero.webp"
 image_alt: "Peugeot Expert III furgon na drodze"
+youtube: "LvVoNhdkhmw"
+youtube_title: "PEUGEOT EXPERT 2.0 HDI TEST 0-100 I PRÓBA AUTOSTRADOWA"
 main_keyword: "peugeot expert"
 volume: 9900
 lead: "Peugeot Expert to średni dostawczak produkowany od 1995 roku w trzech generacjach, bliźniak Citroëna Jumpy i Toyoty ProAce. Platforma EMP2 od 2016 roku, silniki 1.5 i 2.0 BlueHDi od 100 do 177 KM, e-Expert elektryczny z zasięgiem do 330 km. Wersja osobowa Traveller pomieści do 9 osób."
@@ -129,6 +131,9 @@ W gamie modelowej wyróżnia się luksusowy Expert Traveller, dedykowany do prze
 | Expert III (2020–2024) | 80 000–150 000 zł |
 
 Zwróć uwagę na historię serwisową DPF – jego wymiana bywa kosztowna (1200–1800 zł).
+
+
+{{% youtube %}}
 
 ## Porównanie Experta z konkurencją
 

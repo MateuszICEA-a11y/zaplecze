@@ -19,6 +19,8 @@ faq:
   - question: "Czym różni się Proace Verso Shuttle od VIP?"
     answer: "Shuttle to linia podstawowa – standardowe fotele tkaninowe, podstawowe multimedia, klimatyzacja manualna. VIP oferuje bogatsze wykończenie, automatyczną klimatyzację dla pasażerów, elektrycznie sterowaną klapę tylną i bardziej rozbudowane systemy komfortu."
 lead: "Toyota Proace Verso osobowy w wersji VIP może być tańszą alternatywą dla Mercedes-Benz V-Klasy, ale przy cenach podanych niżej mówimy raczej o różnicy startowej rzędu ok. 30 000 zł, a nie 80 000–100 000 zł. Shuttle startuje od ok. 175 000 zł i pozostaje propozycją dla firm oraz rodzin, które potrzebują dużego vana osobowego bez premium dodatków. Podane niżej kwoty mają charakter orientacyjny dla rynku polskiego na marzec 2026 i należy je odnosić do konkretnych konfiguracji."
+youtube: "kMUvc1hQ-KQ"
+youtube_title: "Solidne narzędzie, czyli Toyota Proace Verso"
 sources:
   - "oficjalna oferta i specyfikacje Toyota dla rynku polskiego oraz aktualne cenniki konkurencji dla porównywanych modeli."
 ---
@@ -78,6 +80,9 @@ Toyota Proace Verso jest samochodem osobowym z homologacją M1. Przy zakupie pry
 {{% /info %}}
 
 ![Toyota Proace Verso VIP – wnętrze kabiny pasażerskiej](/images/toyota-proace-verso-osobowy-hero.webp)
+
+
+{{% youtube %}}
 
 ## Ceny Toyoty Proace Verso i konkurencja
 

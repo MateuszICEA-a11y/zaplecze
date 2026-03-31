@@ -7,6 +7,8 @@ author: "marek-kowalczyk"
 h1: "Winieta Czechy 2026 – aktualne ceny, gdzie kupić i jakie kary"
 image: "/images/winieta-czechy-hero.webp"
 image_alt: "Tablica informacyjna na czeskiej autostradzie z symbolem winiety elektronicznej"
+youtube: "Jg6o__KW8G8"
+youtube_title: "Winiety w Czechach - ceny"
 main_keyword: "winieta czechy"
 lead: "Czeska e-winieta w 2026 roku kosztuje od 230 CZK za jednodniową do 2570 CZK za roczną. System jest w pełni elektroniczny – rejestrujesz numer tablicy, a kamery same sprawdzają ważność. Busy powyżej 3,5 tony podlegają oddzielnemu systemowi mytne. Przejazd bez winiety grozi mandatem do 20 000 CZK."
 faq:
@@ -121,6 +123,9 @@ Popularne trasy alternatywne:
 - **Tranzyt PL–AT** – przejazd przez Ołomuniec drogami I klasy z pominięciem D1 i D47.
 
 Pamiętaj jednak, że trasy alternatywne są wolniejsze, przechodzą przez miejscowości i nie zawsze nadają się dla długich busów z ograniczoną zwrotnością.
+
+
+{{% youtube %}}
 
 ## Źródła
 

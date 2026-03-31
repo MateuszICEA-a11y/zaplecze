@@ -12,6 +12,8 @@ volume: 6600
 main_keyword: "Toyota Proace City"
 image: "/images/toyota-proace-city-hero.webp"
 image_alt: "Toyota Proace City furgon"
+youtube: "2DDdOjFILLs"
+youtube_title: "Toyota Proace CITY - gdzie tu Toyota?"
 lead: "Toyota Proace City to kompaktowy furgon zbudowany na platformie PSA EMP2 – bliźniak Peugeota Partner III i Citroëna Berlingo III. Wybierasz między wersjami Short i Long, trzema rodzajami napędu oraz gamą silników od 75 do 136 KM."
 faq:
   - question: "Ile kosztuje Toyota Proace City?"
@@ -122,6 +124,9 @@ Proace City konkuruje bezpośrednio z bliźniakami na platformie EMP2 oraz z Ren
 Różnice między bliźniakami na platformie EMP2 są minimalne pod względem technicznym. Proace City wyróżnia się gwarancją Toyoty i systemem bezpieczeństwa Toyota Safety Sense w standardzie. Renault Kangoo IV to odrębna platforma – nieco większa przestrzeń ładunkowa w wersji Short, ale krótsza historia niezawodności nowej generacji.
 
 Jeśli interesuje cię większy dostawczak Toyoty – sprawdź [Toyota Proace](/modele/toyota-proace/), który oferuje przestrzeń ładunkową od 5,1 do 6,1 m³.
+
+
+{{% youtube %}}
 
 ## Ceny Toyoty ProAce City
 

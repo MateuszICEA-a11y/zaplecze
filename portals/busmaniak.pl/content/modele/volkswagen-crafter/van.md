@@ -9,6 +9,8 @@ type: "page"
 image: "/images/volkswagen-crafter-van-hero.webp"
 parent: "volkswagen-crafter"
 lead: "Volkswagen Crafter II Van to zamknięta przestrzeń ładunkowa z dostępem przez tylne drzwi dwuskrzydłowe i opcjonalne drzwi boczne."
+youtube: "3mLxBsw60oA"
+youtube_title: "#Test Volkswagen Crafter 2.0 l, 177 KM, 6M"
 faq:
   - question: "Jaka jest maksymalna pojemność VW Craftera Van?"
     answer: "Największy Crafter Van – wariant L4H3 – oferuje pojemność 18,4 m³. To jedna z największych przestrzeni ładunkowych dostępnych w kategorii pojazdów N1/N2 do 5 t DMC."
@@ -119,6 +121,9 @@ Dla firm zabudowujących Craftera istotne są także parametry użytkowe wykracz
 {{% info title="Crafter vs MAN TGE – który wybrać?" icon="engineering" %}}
 Crafter II i MAN TGE to konstrukcje blisko spokrewnione, ale porównując je, warto unikać przesady dotyczącej sieci serwisowej. Na podstawie danych użytych w tym artykule można jedynie uczciwie stwierdzić, że różnią się zapleczem dealersko-serwisowym i ofertą wyposażenia, natomiast bez aktualnych, źródłowych liczb nie ma sensu twierdzić, że jedna marka jest obecna „praktycznie w każdym mieście powiatowym”.
 {{% /info %}}
+
+
+{{% youtube %}}
 
 ## Koszt serwisu Craftera Van
 

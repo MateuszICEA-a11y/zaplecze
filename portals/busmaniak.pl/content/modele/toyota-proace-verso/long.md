@@ -19,6 +19,8 @@ faq:
   - question: "Ile kosztuje Toyota Proace Verso Long?"
     answer: "W tym materiale nie podajemy konkretnych cen, ponieważ brak tu aktualnego cennika Toyota Polska dla wskazanego rocznika i wersji."
 lead: "Toyota Proace Verso Long to przedłużona odmiana osobowego vana Toyoty, nastawiona na przewóz większej liczby pasażerów i większego bagażu. Wersja Long ma 5309 mm długości i może występować w konfiguracjach do 9 miejsc."
+youtube: "kMUvc1hQ-KQ"
+youtube_title: "Solidne narzędzie, czyli Toyota Proace Verso"
 sources:
   - "Toyota"
 ---
@@ -63,6 +65,9 @@ Poprzednia wersja artykułu zbyt kategorycznie stwierdzała, że Toyota Proace V
 Nie podajemy również szczegółowej listy jednostek napędowych, osiągów ani zużycia paliwa, ponieważ w dostarczonych danych brak oficjalnych i spójnych wartości dla konkretnych odmian. Dotyczy to także wyników WLTP, emisji CO2, rodzaju skrzyni biegów czy dostępności napędu w określonych konfiguracjach.
 
 Jeśli zależy Ci na wyborze odpowiedniego silnika do wersji Long, najlepiej sięgnąć do aktualnego cennika i specyfikacji Toyota Polska dla konkretnego roku modelowego.
+
+
+{{% youtube %}}
 
 ## Ceny i wyposażenie Proace Verso Long
 

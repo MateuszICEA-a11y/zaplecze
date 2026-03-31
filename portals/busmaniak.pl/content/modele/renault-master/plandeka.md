@@ -12,6 +12,8 @@ volume: 1000
 main_keyword: "Renault Master plandeka"
 image: "/images/renault-master-plandeka-hero.webp"
 image_alt: "Renault Master plandeka L3 – skrzynia z pałąkami i plandeką"
+youtube: "vgKn6Nr9OHM"
+youtube_title: "Renault Master Extra - samochód dostawczy roku 2025 TEST PL"
 lead: "Renault Master plandeka to wersja skrzyniowa z pałąkami i płachtą zasłaniającą ładunek, stosowana głównie w transporcie towarów ponadgabarytowych, elementów budowlanych i dostawach regionalnych wymagających dostępu do ładunku z boków. W praktyce ładowność po zabudowie zależy od wersji podwozia, DMC i masy samej skrzyni z plandeką. W artykule odnosimy się przede wszystkim do Renault Master III produkowanego od 2010 r., z uwzględnieniem tego, że gama silników, skrzyń biegów, DMC i wyposażenia różni się zależnie od rocznika i faceliftingów z 2014 i 2019 r.; Master IV zadebiutował w 2024 r."
 faq:
   - question: "Jaka jest ładowność Renault Master plandeka?"
@@ -106,6 +108,9 @@ Jeśli priorytetem jest niska masa zabudowy i dostęp z boków, plandeka zwykle 
 {{% expert name="Marek Kowalczyk" %}}
 Najczęstszy problem w używanych autach z plandeką nie dotyczy samego logo na masce, tylko jakości zabudowy i jej montażu. Zawsze sprawdzam ramę pomocniczą, mocowania do podwozia, stan podłogi, zamki burt, naciąg plandeki i szczelność dachu. W kurtynach trzeba obejrzeć także rolki i prowadnice, a na końcu oświetlenie obrysowe oraz odblaski wymagane przepisami.
 {{% /expert %}}
+
+
+{{% youtube %}}
 
 ## Serwis Renault Master plandeka – koszty utrzymania
 

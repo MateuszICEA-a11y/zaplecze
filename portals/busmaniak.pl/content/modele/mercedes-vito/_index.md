@@ -8,6 +8,8 @@ h1: "Mercedes Vito – kompletny przewodnik po modelu"
 type: "page"
 image: "/images/mercedes-vito-hero.webp"
 image_alt: "Mercedes Vito W447 furgon na drodze"
+youtube: "9lnjRHBjYz4"
+youtube_title: "Mercedes-Benz Vito Tourer 2015 (PL) - test i jazda próbna"
 main_keyword: "mercedes vito"
 volume: 18100
 lead: "Mercedes Vito to jeden z najbardziej rozpoznawalnych dostawczaków średniej wielkości, łączący luksus klasy premium z użytkową wytrzymałością. Trzy generacje od 1996 roku, silniki od 116 do 237 KM, warianty od furgonu po 9-osobowego Tourera i napęd 4x4."
@@ -142,6 +144,9 @@ Furgon z drugim rzędem siedzeń (5–6 miejsc) i oddzieloną przestrzenią towa
 | W639 (2010–2014) OM651 | 40 000–70 000 zł |
 | W447 (2015–2019) | 70 000–110 000 zł |
 | W447 (2020–2024) OM654 | 110 000–160 000 zł |
+
+
+{{% youtube %}}
 
 ## Porównanie Mercedesa Vito z konkurencją
 

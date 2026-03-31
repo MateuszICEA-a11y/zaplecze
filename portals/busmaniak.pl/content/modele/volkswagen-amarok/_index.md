@@ -8,6 +8,8 @@ h1: "Volkswagen Amarok – kompletny przewodnik po modelu"
 type: "page"
 image: "/images/volkswagen-amarok-hero.webp"
 image_alt: "Volkswagen Amarok II pickup na szutrowej drodze"
+youtube: "bbANtxlKBAQ"
+youtube_title: "Volkswagen Amarok 3.0 V6 TDI (TEST PL/ENG 4K)"
 main_keyword: "volkswagen amarok"
 volume: 12100
 lead: "Volkswagen Amarok to pickup klasy premium, produkowany od 2010 roku w dwóch generacjach. Pierwsza była samodzielną konstrukcją VW, druga (od 2022) dzieli platformę z Fordem Rangerem T6. Silniki od 150 do 258 KM, napęd 4MOTION i ładowność ponad tony."
@@ -102,6 +104,9 @@ Kluczowe jest regularne serwisowanie oleju w skrzyniach automatycznych co 60–8
 | Amarok II (od 2023) | 200 000–270 000 zł |
 
 Na rynku wtórnym Amarok trzyma cenę – dobre opinie i premium pozycjonowanie spowalniają deprecjację.
+
+
+{{% youtube %}}
 
 ## Porównanie Amaroka z konkurencją
 

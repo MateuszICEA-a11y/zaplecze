@@ -11,6 +11,8 @@ volume: 1000
 main_keyword: "volkswagen transporter tdi"
 image: "/images/volkswagen-transporter-hero.webp"
 image_alt: "Volkswagen Transporter T6.1 furgon"
+youtube: "hMpnvp50mXM"
+youtube_title: "Volkswagen Transporter 6.1 Furgon 2.0 TDI 150 TEST Budowlańca"
 lead: "Silniki TDI to kręgosłup Volkswagena Transportera od ponad 30 lat. Od legendarnego 2.5 TDI w T4, przez problematyczny, ale popularny 2.5 TDI w T5, po nowoczesny 2.0 TDI w T6.1, który występował zasadniczo w 4 wariantach mocy: 90, 110, 150 i 199 KM. Oto wszystko, co musisz wiedzieć przed zakupem – od spalania po koszty napraw."
 faq:
   - question: "Który silnik TDI w Transporterze jest najlepszy?"
@@ -159,6 +161,9 @@ Szczególnie ważne jest prawidłowe podejście do rozrządu. W 2.0 TDI EA189/EA
 | Klocki hamulcowe (oś) | 350–550 zł | 50–80 tys. km |
 
 W praktyce niezależny warsztat zwykle będzie wyraźnie tańszy niż ASO, zwłaszcza przy rozrządzie czy obsłudze DSG. Różnice potrafią sięgać kilkudziesięciu procent, a w przypadku oleju w skrzyni DQ500 autoryzowany serwis bywa zauważalnie droższy niż podane podstawowe widełki.
+
+
+{{% youtube %}}
 
 ## Który TDI wybrać?
 

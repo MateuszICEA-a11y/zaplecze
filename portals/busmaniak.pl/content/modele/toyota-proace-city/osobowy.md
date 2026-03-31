@@ -19,6 +19,8 @@ faq:
   - question: "Czy Toyota Proace City Verso to to samo co Citroën Berlingo osobowy?"
     answer: "To bliźniacza konstrukcja z rodziny K9, spokrewniona także z Peugeotem Rifterem i Oplem Combo Life. Samochody dzielą architekturę modelową i wiele rozwiązań technicznych, ale nie są identycznymi ofertami handlowymi – różnią się detalami, wyposażeniem, gwarancją i dostępnością wersji zależnie od rynku oraz rocznika."
 lead: "Toyota Proace City Verso to osobowy van Toyoty z rodziny K9, blisko spokrewniony z Citroënem Berlingo, Peugeotem Rifterem i Oplem Combo Life. Występuje w dwóch długościach nadwozia – Medium i Long – a w dłuższej odmianie może oferować nawet 7 miejsc."
+youtube: "2DDdOjFILLs"
+youtube_title: "Toyota Proace CITY - gdzie tu Toyota?"
 ---
 ## Proace City Verso – czym jest i dla kogo
 
@@ -68,6 +70,9 @@ Trzeci rząd w tej klasie aut najlepiej sprawdza się dla dzieci albo na krótsz
 Układ siedzeń zależy od rynku i konfiguracji. W części wersji drugi rząd może mieć formę dzielonej kanapy, w innych występują osobne miejsca, a możliwość składania lub wyjmowania poszczególnych foteli nie jest identyczna w każdej odmianie.
 
 Duże przesuwne drzwi i wysoka pozycja dachu ułatwiają codzienne wsiadanie dzieciom oraz starszym pasażerom. Z drugiej strony trzeba pamiętać, że to wysoki van – przy autostradowych 140 km/h komfort akustyczny zwykle ustępuje klasycznym kombi i SUV-om.
+
+
+{{% youtube %}}
 
 ## Ceny i wyposażenie
 

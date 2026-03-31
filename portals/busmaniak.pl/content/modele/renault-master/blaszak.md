@@ -12,6 +12,8 @@ volume: 390
 main_keyword: "Renault Master blaszak"
 image: "/images/renault-master-blaszak-hero.webp"
 image_alt: "Renault Master blaszak L3H2 – zamknięta przestrzeń ładunkowa"
+youtube: "vgKn6Nr9OHM"
+youtube_title: "Renault Master Extra - samochód dostawczy roku 2025 TEST PL"
 lead: "Renault Master blaszak to potoczne, powszechnie używane w ogłoszeniach i flotach określenie wersji furgon – zamkniętego, stalowego nadwozia bez bocznych okien. Poniżej wyjaśniamy, jakie warianty kryją się pod tym pojęciem, jakie mają wymiary i na co zwrócić uwagę przy zakupie."
 faq:
   - question: "Czym różni się blaszak od furgonu Renault Master?"
@@ -121,6 +123,9 @@ Bardzo ważne są również dane w dokumentach. Przed zakupem trzeba porównać 
 {{% expert name="Marek Kowalczyk" %}}
 Najbezpieczniej kupować używanego Mastera nie „po przebiegu”, tylko po stanie i historii. Egzemplarz z przebiegiem 150–180 tys. km może być dobrym wyborem, ale tylko wtedy, gdy ma czytelną dokumentację, regularny serwis i nie nosi śladów ciężkiej eksploatacji miejskiej. W autach jeżdżących głównie na krótkich odcinkach szczególnej uwagi wymagają DPF, EGR i układ SCR.
 {{% /expert %}}
+
+
+{{% youtube %}}
 
 ## Ceny – nowy i używany Master blaszak
 

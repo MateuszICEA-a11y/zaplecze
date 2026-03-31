@@ -5,6 +5,8 @@ description: "Porównanie najlepszych busów pod kampera – Fiat Ducato, Merced
 draft: false
 image: "/images/jaki-bus-na-kampera-hero.webp"
 image_alt: "Porównanie busów Fiat Ducato, Mercedes Sprinter i Ford Transit stojących obok siebie"
+youtube: "7At1pK85j6M"
+youtube_title: "Jaki bus na kampera? Będzie się psuł?"
 author: "marek-kowalczyk"
 h1: "Jaki bus na kampera – porównanie modeli pod przeróbkę"
 main_keyword: "jaki bus na kampera"
@@ -142,6 +144,9 @@ Wybór silnika wpływa na spalanie, dynamikę na autostradzie i koszty serwisowe
 -   **Napęd przedni (FWD)** – Ducato, Master, a także opcjonalnie Transit i najpopularniejsze wersje Craftera. Oferuje niższą, płaską podłogę, co ułatwia aranżację wnętrza i obniża próg wejściowy.
 -   **Napęd tylny (RWD)** – Sprinter oraz opcjonalnie Transit i Crafter. Zapewnia lepszą trakcję pod dużym obciążeniem i stabilniejsze prowadzenie na autostradzie. Wadą jest tunel wału napędowego, który podnosi podłogę o ok. 10 cm.
 -   **Napęd 4×4** – dostępny fabrycznie w Sprinterze (4Matic) i Crafterze (4Motion). W Transicie oferowany jest system AWD. W Ducato stosowane są konwersje zewnętrznych firm, jak Dangel.
+
+
+{{% youtube %}}
 
 ## Na co zwrócić uwagę przy zakupie {#zakup}
 

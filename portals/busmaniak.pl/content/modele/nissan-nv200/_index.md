@@ -8,6 +8,8 @@ h1: "Nissan NV200 – kompletny przewodnik po modelu"
 type: "page"
 image: "/images/nissan-nv200-hero.webp"
 image_alt: "Nissan NV200 furgon na ulicy miasta"
+youtube: "NHeJhvSm1qc"
+youtube_title: "Nissan NV200 Combi 1,5 dCi Tekna - test PGD"
 main_keyword: "nissan nv200"
 volume: 4400
 lead: "Nissan NV200 to kompaktowy furgon produkowany w Barcelonie w latach 2009–2019, znany z rekordowego stosunku wymiarów zewnętrznych do przestrzeni ładunkowej. Silniki 1.5 dCi i 1.6 benzyna, wersja osobowa Evalia na 7 miejsc i bezemisyjny e-NV200."
@@ -146,6 +148,9 @@ NV200 trzyma cenę na rynku wtórnym dzięki niezawodności i niskim kosztom eks
 | 2018–2019 | e-NV200 40 kWh | 55 000–75 000 zł |
 
 Produkcja zakończona – ceny stabilne, bo brak nowego następcy (NV250 to tylko rebadge Kangoo).
+
+
+{{% youtube %}}
 
 ## Porównanie NV200 z konkurencją
 

@@ -8,6 +8,8 @@ h1: "Wynajem kampera – ile kosztuje w 2026 roku i jakie koszty Cię zaskoczą"
 volume: 3000
 image: "/images/wynajem-kampera-cena-hero.webp"
 image_alt: "Wynajem kampera cena – kamper na tle gór z cenami wynajmu"
+youtube: "yoXmIorN4W4"
+youtube_title: "WYNAJEM KAMPERA - GDZIE SZUKAĆ POJAZDÓW?"
 main_keyword: "wynajem kampera cena"
 lead: "Cena wynajmu kampera w Polsce na sezon 2026 zaczyna się od 250 zł za dobę za camper vana poza sezonem, a kończy na 900 zł za integrę w szczycie letniego boomu. Ale stawka za dobę to dopiero początek – kaucja, ubezpieczenie, opłata serwisowa i limit kilometrów potrafią podnieść realny koszt wyjazdu o 30–50%. W tym artykule rozkładam cennik na czynniki pierwsze."
 faq:
@@ -92,6 +94,9 @@ Pozornie ceny są zbliżone, ale Camper Centrum oferuje wynajem bez limitu kilom
 {{% expert name="Marek Kowalczyk" %}}
 Porównując ceny wypożyczalni, zawsze przeliczam koszt na osobodzień. Alkowa za 700 zł/dobę dla 5 osób to 140 zł na osobę – mniej niż pokój w agroturystyce. Camper van za 500 zł dla 2 osób to już 250 zł/osobę. Typ kampera musi pasować do składu ekipy, inaczej przepłacisz.
 {{% /expert %}}
+
+
+{{% youtube %}}
 
 ## Wynajem kampera vs hotel – co taniej dla rodziny
 

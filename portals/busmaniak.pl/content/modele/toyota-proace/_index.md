@@ -12,6 +12,8 @@ volume: 14800
 main_keyword: "Toyota Proace dane techniczne"
 image: "/images/toyota-proace-hero.webp"
 image_alt: "Toyota Proace II furgon Long"
+youtube: "5JgT3lIiTik"
+youtube_title: "Test: Toyota Proace Verso 2.0 D-4D - plusy i minusy"
 lead: "Toyota Proace II to średni van na platformie PSA EMP2 – bliźniak Peugeota Expert III i Citroëna Jumpy III, produkowany w Hordain od 2017 roku. Jeśli szukasz danych technicznych, wymiarów ładowni lub zestawienia silników 1.5 i 2.0 D-4D, znajdziesz je tutaj w jednym miejscu."
 faq:
   - question: "Jakie silniki w Toyocie Proace?"
@@ -136,6 +138,9 @@ Więcej na temat silnika [2.0 D-4D znajdziesz tutaj](/modele/toyota-proace/2-0/)
 {{% expert name="Marek Kowalczyk" %}}
 Proace II to solidny wybór dla firm, które chcą mieć vana klasy Expert lub Jumpy pod marką, do której mają serwis Toyota w pobliżu. Mechanicznie to identyczny samochód – zalety i wady bliźniaków PSA dotyczą go w pełni. Kluczowe pytanie przy zakupie to nie marka, ale dostęp do serwisu i aktualna cena używanego egzemplarza na rynku. Proace bywa droższy od Jumpego przy porównywalnym wyposażeniu, bo Toyota ma wyższe residual values. Przy zakupie floty powyżej 5 sztuk warto negocjować bezpośrednio z importerem.
 {{% /expert %}}
+
+
+{{% youtube %}}
 
 ## Ceny ProAce
 

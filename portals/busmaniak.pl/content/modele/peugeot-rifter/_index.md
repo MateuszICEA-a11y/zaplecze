@@ -8,6 +8,8 @@ h1: "Peugeot Rifter – kompletny przewodnik po modelu"
 type: "page"
 image: "/images/peugeot-rifter-hero.webp"
 image_alt: "Peugeot Rifter Long na drodze"
+youtube: "cSgWs0-bB-g"
+youtube_title: "Peugeot Rifter 1.5 BlueHDi 130 KM Allure Long (2019) - test [PL]"
 main_keyword: "peugeot rifter"
 volume: 8100
 lead: "Peugeot Rifter to kombivan na platformie EMP2, produkowany od 2018 roku jako następca Partnera Tepee. Bliźniak Citroëna Berlingo i Opla Combo Life. Silniki 1.2 PureTech i 1.5 BlueHDi od 100 do 130 KM, wersja 7-osobowa Long i elektryczny e-Rifter z zasięgiem do 340 km."
@@ -118,6 +120,9 @@ Na tle rywali kombivan wyróżnia się bogatszym wyposażeniem seryjnym i najlep
 | 2022–2024 | 90 000–125 000 zł |
 
 Bliźniaczy [Peugeot Partner](/modele/peugeot-partner/) w adaptacjach osobowych kosztuje zazwyczaj kilka–kilkanaście tysięcy złotych taniej.
+
+
+{{% youtube %}}
 
 ## Porównanie Riftera z konkurencją
 

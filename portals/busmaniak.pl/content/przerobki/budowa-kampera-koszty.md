@@ -5,6 +5,8 @@ description: "Ile kosztuje budowa kampera – szczegółowy kosztorys, etapy pra
 draft: false
 image: "/images/budowa-kampera-koszty-hero.webp"
 image_alt: "Koszty budowy kampera – kalkulator i materiały na stole warsztatowym"
+youtube: "kNMVAP0Q6dU"
+youtube_title: "Koszty budowy kampera, czyli za ile zbudowaliśmy Ducatosa?"
 author: "anna-wozniak"
 h1: "Budowa kampera – kosztorys, etapy i materiały w 2026 roku"
 main_keyword: "budowa kampera koszty"
@@ -126,6 +128,9 @@ Wybór między wariantem budżetowym a komfortowym nie jest zero-jedynkowy. Najr
 - **Nie oszczędzaj na elektryce** – źle dobrane przewody i brak zabezpieczeń to ryzyko pożaru, którego nie można ignorować.
 
 [Budowa kampera krok po kroku](/przerobki/budowa-kampera-krok-po-kroku/) wymaga planowania nie tylko kolejności prac, ale też kolejności zakupów. Rozłożenie wydatków na 3–6 miesięcy pozwala uniknąć jednorazowego obciążenia budżetu kwotą rzędu 30 000–60 000 zł.
+
+
+{{% youtube %}}
 
 ## Zmiana przeznaczenia pojazdu i koszty rejestracji {#rejestracja}
 

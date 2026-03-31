@@ -11,6 +11,8 @@ volume: 800
 main_keyword: "peugeot boxer bezpieczniki"
 image: "/images/peugeot-boxer-bezpieczniki-hero.webp"
 image_alt: "Skrzynka bezpieczników w Peugeocie Boxer pod deską rozdzielczą"
+youtube: "dxIymQCZEfc"
+youtube_title: "Fiat Ducato Bezpieczniki opis"
 lead: "Peugeot Boxer dzieli platformę z Fiatem Ducato i Citroënem Jumperem, więc układ bezpieczników jest bardzo zbliżony – ale nie identyczny. Różnice w oznaczeniach i rozmieszczeniu funkcji potrafią zmylić nawet doświadczonych mechaników. Poniżej znajdziesz schematy obu wersji (2006–2014 i facelift od 2014), lokalizacje skrzynek oraz instrukcję wymiany."
 faq:
   - question: "Gdzie jest bezpiecznik od zapalniczki w Peugeocie Boxer?"
@@ -100,6 +102,9 @@ Elektryka to pięta achillesowa platformy Sevel – niezależnie od tego, czy ma
 {{% info title="Diagnostyka" icon="engineering" %}}
 Jeśli nie wiesz, który bezpiecznik jest spalony, nie sprawdzaj ich wzrokowo – użyj multimetru w trybie ciągłości. Niektóre bezpieczniki wyglądają na sprawne, ale mają mikroprzerwy niewidoczne gołym okiem.
 {{% /info %}}
+
+
+{{% youtube %}}
 
 ## Wymiana bezpiecznika – krok po kroku
 

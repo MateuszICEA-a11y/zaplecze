@@ -9,6 +9,8 @@ parent: "mercedes-vito"
 type: "page"
 image: "/images/mercedes-vito-osobowy-hero.webp"
 image_alt: "Mercedes Vito Tourer – osobowy van premium z przeszklonymi bokami"
+youtube: "9lnjRHBjYz4"
+youtube_title: "Mercedes-Benz Vito Tourer 2015 (PL) - test i jazda próbna"
 main_keyword: "Mercedes Vito osobowy"
 lead: "Mercedes Vito Tourer (W447) to osobowy van z 7–9 miejscami, dostępny w trzech wariantach długości nadwozia. Po modernizacji gamę na wielu rynkach europejskich tworzyły diesle 2.0 CDI 110/114/116/119 CDI o mocy od 102 do 190 KM, z manualem lub automatem oraz zależnie od wersji z napędem FWD, RWD albo 4MATIC. Chronologia jest prosta: generacja W447 zadebiutowała w 2014 roku, a modernizacja pojawiła się w 2020 roku zależnie od rynku i roku modelowego."
 faq:
@@ -106,6 +108,9 @@ W codziennej eksploatacji czytelne są podstawowe interwały obsługowe: olej si
 Podczas oględzin używanego auta trzeba sprawdzić korozję podwozia, stan zawieszenia oraz prowadnice drzwi przesuwnych. To szczególnie ważne w egzemplarzach intensywnie eksploatowanych w przewozach osób, gdzie duże obciążenia i częste użytkowanie drzwi mają realny wpływ na zużycie.
 
 Warto też zwrócić uwagę na luzy w zawieszeniu i ogólną kulturę pracy auta na nierównościach. W połączeniu z historią serwisową i realnym przebiegiem daje to znacznie lepszy obraz stanu technicznego niż sam rocznik wpisany w ogłoszeniu.
+
+
+{{% youtube %}}
 
 ## Ceny nowych i używanych Vito osobowego
 
