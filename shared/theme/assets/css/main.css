@@ -86,6 +86,7 @@ a:hover { color: var(--c-orange-hover); }
 
 .site-logo:hover { text-decoration: none; opacity: .9; }
 .site-logo__img { height: 44px; width: auto; display: block; filter: brightness(0) invert(1); }
+.site-logo__svg { height: 40px; width: auto; display: block; }
 
 .site-footer .site-logo__maniak { color: rgba(255,255,255,.9); }
 .site-footer .site-logo__dot { color: rgba(255,255,255,.4); }
@@ -311,6 +312,47 @@ a:hover { color: var(--c-orange-hover); }
 .dropdown__brand-group {
   break-inside: avoid;
   margin-bottom: .75rem;
+}
+
+/* ── Narzędzia dropdown (small) ── */
+.dropdown__panel--small {
+  width: 400px;
+  max-width: 95vw;
+  left: auto;
+  right: 0;
+  transform: none;
+}
+
+.dropdown__tool {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .75rem 1rem;
+  text-decoration: none;
+  color: var(--c-text);
+  border-radius: var(--radius);
+  transition: background .15s;
+}
+
+.dropdown__tool:hover {
+  background: var(--c-bg-alt);
+}
+
+.dropdown__tool-icon {
+  font-size: 1.5rem;
+  color: var(--c-orange);
+  flex-shrink: 0;
+}
+
+.dropdown__tool-name {
+  font-weight: 600;
+  font-size: .9375rem;
+}
+
+.dropdown__tool-desc {
+  font-size: .8125rem;
+  color: var(--c-text-light);
+  margin-top: .15rem;
 }
 
 .dropdown__brand-label {
