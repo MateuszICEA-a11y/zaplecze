@@ -1180,6 +1180,10 @@ a:hover { color: var(--c-orange-hover); }
 /* ══════════════════════════════════════
    FEATURED BANNER – 21:9 wide
    ══════════════════════════════════════ */
+.featured-banner-section {
+  padding: 3.5rem 0 0;
+}
+
 .featured-banner {
   max-width: 1400px;
   margin: 0 auto 4rem;
@@ -1229,7 +1233,7 @@ a:hover { color: var(--c-orange-hover); }
   width: fit-content;
 }
 
-.featured-banner__overlay h2 {
+.featured-banner__title {
   font-family: var(--f-display);
   font-size: clamp(1.25rem, 2.5vw, 2rem);
   font-weight: 700;
