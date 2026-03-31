@@ -357,7 +357,7 @@ a:hover { color: var(--c-orange-hover); }
 }
 
 .dropdown__tool-icon {
-  font-size: 1.25rem;
+  font-size: 16px;
   color: var(--c-orange);
   flex-shrink: 0;
 }
