@@ -2376,7 +2376,7 @@ blockquote {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(26,28,30,.85) 0%, rgba(26,28,30,.3) 50%, rgba(26,28,30,0) 100%);
+  background: linear-gradient(to top, rgba(26,28,30,.9) 0%, rgba(26,28,30,.5) 50%, rgba(26,28,30,.35) 100%);
 }
 
 .article-hero__body {
