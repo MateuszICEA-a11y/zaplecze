@@ -38,6 +38,5 @@ node_modules/
 *.png
 .claude/
 
-# FB poster (environment-specific state)
-pipeline/fb-poster/posted.json
+# FB poster log
 pipeline/fb-poster/fb-poster.log

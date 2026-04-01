@@ -1,0 +1,32 @@
+name: Facebook Auto-Poster
+on:
+  schedule:
+    - cron: '0 8 * * *'  # 10:00 PL (UTC+2)
+  workflow_dispatch:  # manual trigger from GitHub UI
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Post to Facebook
+        run: python pipeline/fb-poster/post_to_fb.py
+        env:
+          OPENROUTER_KEY: ${{ secrets.OPENROUTER_KEY }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_ACCESS_TOKEN: ${{ secrets.FB_ACCESS_TOKEN }}
+
+      - name: Commit posted.json tracking
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add pipeline/fb-poster/posted.json
+          git diff --cached --quiet || git commit -m "chore: update fb-poster tracking"
+          git push
