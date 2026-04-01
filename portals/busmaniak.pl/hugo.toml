@@ -1,4 +1,4 @@
-baseURL = "https://zaplecze.pages.dev/"
+baseURL = "https://busmaniak.pl/"
 languageCode = "pl"
 title = "BusManiak.pl"
 theme = "theme"
@@ -13,7 +13,7 @@ enableRobotsTXT = true
 [params]
   description = "Portal o busach, vanach i kamperach – Ducato, Sprinter, Iveco Daily. Porównania, zabudowy, przeróbki, kalkulatory."
   ogImage = "/images/og-default.jpg"
-  noindex = true  # DEV: wyłącz przed przeniesieniem na busmaniak.pl
+  noindex = false
 
 [taxonomies]
   category = "categories"
