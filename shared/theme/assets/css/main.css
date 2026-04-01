@@ -2491,7 +2491,9 @@ blockquote {
 
 /* ── Mobile adjustments ── */
 @media (max-width: 768px) {
-  .hero { padding: 3.5rem 0 4rem; min-height: auto; }
+  .hero { padding: 3.5rem 0 4rem; min-height: auto; height: 85vh; max-height: 700px; }
+  .hero__bg { object-position: center 30%; }
+  .hero__content { padding: 0 1.5rem 3rem; }
   .hero__title { font-size: 2rem; }
   .author-box { flex-direction: column; align-items: center; text-align: center; }
   .author-profile__header { flex-direction: column; align-items: center; text-align: center; }
@@ -2612,7 +2614,8 @@ blockquote {
 
 @media (max-width: 768px) {
   .article-hero { padding: 0 1.5rem; margin-bottom: 2rem; }
-  .article-hero__inner { min-height: 360px; }
+  .article-hero__inner { min-height: 300px; }
+  .article-hero__img { object-position: center 30%; }
   .article-hero__body { padding: 1.5rem; }
 }
 
