@@ -50,23 +50,14 @@
           <span>{{ .name }}</span>
         </div>
         {{ end }}
-        {{ if not $isPage }}
-          <div class="article-hero__meta-item">
-            <span class="material-symbols-outlined">calendar_today</span>
-            <span>{{ .Date.Format "02.01.2006" }}</span>
-          </div>
-          <div class="article-hero__meta-item">
-            <span class="material-symbols-outlined">schedule</span>
-            <span>{{ $readTime }} min czytania</span>
-          </div>
-        {{ else }}
-          {{ if not .Params.hide_meta }}
-          <div class="article-hero__meta-item">
-            <span class="material-symbols-outlined">update</span>
-            <span>Ostatnia aktualizacja: {{ with .Params.lastmod }}{{ .Format "01.2006" }}{{ else }}{{ .Date.Format "01.2006" }}{{ end }}</span>
-          </div>
-          {{ end }}
-        {{ end }}
+        <div class="article-hero__meta-item">
+          <span class="material-symbols-outlined">calendar_today</span>
+          <span>{{ with .Params.lastmod }}{{ .Format "02.01.2006" }}{{ else }}{{ .Date.Format "02.01.2006" }}{{ end }}</span>
+        </div>
+        <div class="article-hero__meta-item">
+          <span class="material-symbols-outlined">schedule</span>
+          <span>{{ $readTime }} min czytania</span>
+        </div>
       </div>
     </div>
   </div>
