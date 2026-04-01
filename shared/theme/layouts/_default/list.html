@@ -15,7 +15,147 @@
   </div>
 </nav>
 
-{{/* ═══ SECTION HEADER ═══ */}}
+{{ if .Content }}
+{{/* ═══ SUB-SECTION WITH BODY (e.g. /modele/fiat-ducato/) ═══ */}}
+
+{{ $authorData := false }}
+{{ $authorKey := .Params.author | default "" }}
+{{ with $authorKey }}
+  {{ with $.Site.Data.authors }}
+    {{ with index . $authorKey }}
+      {{ $authorData = . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<header class="article-hero article-hero--page">
+  <div class="article-hero__inner">
+    {{ with .Params.image }}
+    <img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}" class="article-hero__img" loading="eager">
+    {{ else }}
+    <div class="article-hero__img" style="background: linear-gradient(135deg, var(--c-dark) 0%, var(--c-navy) 100%);"></div>
+    {{ end }}
+    <div class="article-hero__body">
+      <div class="article-hero__badge">{{ .Section | humanize | upper }}</div>
+      <h1 class="article-hero__title">{{ .Params.h1 | default .Title }}</h1>
+      <div class="article-hero__meta">
+        {{ with $authorData }}
+        <div class="article-hero__meta-item">
+          <div class="article-hero__avatar">
+            {{ with .avatar }}<img src="{{ . }}" alt="{{ $.Params.author }}">{{ end }}
+          </div>
+          <span>{{ .name }}</span>
+        </div>
+        {{ end }}
+        <div class="article-hero__meta-item">
+          <span class="material-symbols-outlined">update</span>
+          <span>Ostatnia aktualizacja: {{ with .Params.lastmod }}{{ .Format "01.2006" }}{{ else }}{{ .Date.Format "01.2006" }}{{ end }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<article class="article">
+  <div class="container content-narrow">
+    {{ with .Params.lead }}
+    <p class="article-lead">{{ . }}</p>
+    {{ end }}
+    <div class="article__content">
+      {{ if gt (len .TableOfContents) 100 }}
+        {{ partial "toc.html" (dict "Page" .) }}
+      {{ end }}
+      {{ .Content }}
+    </div>
+    {{ with .Params.faq }}
+    <section class="faq">
+      <div class="faq__title" role="heading" aria-level="2">
+        {{ $.Params.main_keyword | default ($.Params.h1 | default $.Title) }} – najczęściej zadawane pytania (FAQ)
+      </div>
+      {{ range $i, $q := . }}
+      <div class="faq__item">
+        <input type="checkbox" id="faq-{{ $i }}" class="faq__toggle" aria-hidden="true">
+        <label for="faq-{{ $i }}" class="faq__question">{{ $q.question }}</label>
+        <div class="faq__answer">{{ $q.answer | markdownify }}</div>
+      </div>
+      {{ end }}
+    </section>
+    {{ end }}
+    {{ with .Params.sources }}
+    <section class="sources">
+      <div class="sources__side">Źródła</div>
+      <div class="sources__body">
+        <ul class="sources__list">
+          {{ range . }}<li>{{ . | markdownify }}</li>{{ end }}
+        </ul>
+      </div>
+    </section>
+    {{ end }}
+  </div>
+</article>
+
+{{/* ═══ PILLAR NAV for /modele/ sub-sections ═══ */}}
+{{ $sectionName := .Section }}
+{{ $shortName := .Params.h1 | default .Title }}
+{{ if findRE `\s–\s` $shortName }}
+  {{ $shortName = index (split $shortName " – ") 0 }}
+{{ end }}
+
+{{ if eq $sectionName "modele" }}
+{{ $engines := slice }}
+{{ $bodies := slice }}
+{{ range .Pages }}
+  {{ if not .Params.redirect }}
+    {{ $childSlug := .File.ContentBaseName }}
+    {{ $isEngine := false }}
+    {{ if and (findRE `^\d` $childSlug) (not (findRE `osobow` $childSlug)) }}{{ $isEngine = true }}{{ end }}
+    {{ if findRE `(tdi|hdi|cdti|dci|jtd|multijet|ecobl|bluehdi|cdi)` $childSlug }}{{ $isEngine = true }}{{ end }}
+    {{ if $isEngine }}
+      {{ $engines = $engines | append . }}
+    {{ else }}
+      {{ $bodies = $bodies | append . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+<div class="container content-narrow">
+  {{ if gt (len $engines) 0 }}
+  <section class="pillar-nav">
+    <div class="pillar-nav__title">Wersje silnikowe {{ $shortName }}</div>
+    <div class="pillar-nav__grid">
+      {{ range $engines }}
+      <a href="{{ .Permalink }}" class="pillar-nav__card">
+        <span class="pillar-nav__card-icon material-symbols-outlined">manufacturing</span>
+        <div class="pillar-nav__card-body">
+          <div class="pillar-nav__card-name">{{ .Params.h1 | default .Title | truncate 50 }}</div>
+          {{ with .Description }}<div class="pillar-nav__card-desc">{{ . | truncate 80 }}</div>{{ end }}
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+  {{ if gt (len $bodies) 0 }}
+  <section class="pillar-nav">
+    <div class="pillar-nav__title">Wersje nadwoziowe {{ $shortName }}</div>
+    <div class="pillar-nav__grid">
+      {{ range $bodies }}
+      <a href="{{ .Permalink }}" class="pillar-nav__card">
+        <span class="pillar-nav__card-icon material-symbols-outlined">local_shipping</span>
+        <div class="pillar-nav__card-body">
+          <div class="pillar-nav__card-name">{{ .Params.h1 | default .Title | truncate 50 }}</div>
+          {{ with .Description }}<div class="pillar-nav__card-desc">{{ . | truncate 80 }}</div>{{ end }}
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+</div>
+{{ end }}
+
+{{ else }}
+{{/* ═══ CLEAN LISTING (top-level sections) ═══ */}}
+
 <div class="container" style="padding-top: 2.5rem; padding-bottom: 1rem;">
   <h1 class="section__title" style="font-size: 2rem;">{{ .Params.h1 | default .Title }}</h1>
   {{ with .Params.description }}
@@ -23,7 +163,6 @@
   {{ end }}
 </div>
 
-{{/* ═══ CHILD PAGES GRID ═══ */}}
 {{ $allPages := .Pages }}
 {{ if gt (len $allPages) 0 }}
 <div class="container" style="padding-top: 1rem;">
@@ -53,6 +192,8 @@
   </nav>
   {{ end }}
 </div>
+{{ end }}
+
 {{ end }}
 
 {{ end }}
