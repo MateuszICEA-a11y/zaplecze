@@ -85,6 +85,9 @@
     {{ partial "schema/faq.html" $ }}
   {{ end }}
 {{ end }}
+{{ if eq .Type "authors" }}
+  {{ partial "schema/person.html" . }}
+{{ end }}
 {{ partial "schema/breadcrumb.html" . }}
 
 {{/* CSS - inlined for performance */}}
