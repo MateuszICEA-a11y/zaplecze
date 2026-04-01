@@ -1,0 +1,247 @@
+{{ define "main" }}
+
+{{/* ═══ BREADCRUMBS ═══ */}}
+<nav class="breadcrumbs">
+  <div class="container">
+    <a href="{{ .Site.BaseURL }}">Strona główna</a>
+    <span class="breadcrumbs__sep">/</span>
+    {{ with .Parent }}
+    {{ if ne .Kind "home" }}
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+    <span class="breadcrumbs__sep">/</span>
+    {{ end }}
+    {{ end }}
+    <span>{{ .Title | truncate 50 }}</span>
+  </div>
+</nav>
+
+{{/* ═══ HERO (same as single.html) ═══ */}}
+{{ $isPage := true }}
+<header class="article-hero article-hero--page">
+  <div class="article-hero__inner">
+    {{ with .Params.image }}
+    <img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}" class="article-hero__img" loading="eager">
+    {{ else }}
+    <div class="article-hero__img" style="background: linear-gradient(135deg, var(--c-dark) 0%, var(--c-navy) 100%);"></div>
+    {{ end }}
+
+    <div class="article-hero__body">
+      <div class="article-hero__badge">{{ .Section | humanize | upper }}</div>
+      <h1 class="article-hero__title">{{ .Params.h1 | default .Title }}</h1>
+      <div class="article-hero__meta">
+        <div class="article-hero__meta-item">
+          <span class="material-symbols-outlined">update</span>
+          <span>Ostatnia aktualizacja: {{ with .Params.lastmod }}{{ .Format "01.2006" }}{{ else }}{{ .Date.Format "01.2006" }}{{ end }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+{{/* ═══ CONTENT (if _index.md has body) ═══ */}}
+{{ with .Content }}
+<article class="article">
+  <div class="container content-narrow">
+
+    {{ with $.Params.lead }}
+    <p class="article-lead">{{ . }}</p>
+    {{ end }}
+
+    <div class="article__content">
+      {{/* TOC before content */}}
+      {{ if gt (len $.TableOfContents) 100 }}
+        {{ partial "toc.html" (dict "Page" $) }}
+      {{ end }}
+      {{ $.Content }}
+    </div>
+
+    {{/* ═══ FAQ ═══ */}}
+    {{ with $.Params.faq }}
+    <section class="faq">
+      <div class="faq__title" role="heading" aria-level="2">
+        {{ $.Params.main_keyword | default ($.Params.h1 | default $.Title) }} – najczęściej zadawane pytania (FAQ)
+      </div>
+      {{ range $i, $q := . }}
+      <div class="faq__item">
+        <input type="checkbox" id="faq-{{ $i }}" class="faq__toggle" aria-hidden="true">
+        <label for="faq-{{ $i }}" class="faq__question">{{ $q.question }}</label>
+        <div class="faq__answer">{{ $q.answer | markdownify }}</div>
+      </div>
+      {{ end }}
+    </section>
+    {{ end }}
+
+    {{/* ═══ SOURCES ═══ */}}
+    {{ with $.Params.sources }}
+    <section class="sources">
+      <div class="sources__side">Źródła</div>
+      <div class="sources__body">
+        <ul class="sources__list">
+          {{ range . }}
+          <li>{{ . | markdownify }}</li>
+          {{ end }}
+        </ul>
+      </div>
+    </section>
+    {{ end }}
+
+  </div>
+</article>
+
+{{/* ═══ PILLAR NAV ═══ */}}
+{{ $slug := $.File.ContentBaseName }}
+{{ if eq $slug "_index" }}{{ $slug = $.File.Dir | path.Dir | path.Base }}{{ end }}
+
+{{ $shortName := $.Params.h1 | default $.Title }}
+{{ if findRE `\s–\s` $shortName }}
+  {{ $shortName = index (split $shortName " – ") 0 }}
+{{ end }}
+
+{{ $sectionName := $.Section }}
+
+{{ if eq $sectionName "modele" }}
+{{/* ── /modele/: Engine variants / Body variants ── */}}
+{{ $engines := slice }}
+{{ $bodies := slice }}
+{{ range $.Pages }}
+  {{ if not .Params.redirect }}
+    {{ $childSlug := .File.ContentBaseName }}
+    {{ $isEngine := false }}
+    {{ if and (findRE `^\d` $childSlug) (not (findRE `osobow` $childSlug)) }}{{ $isEngine = true }}{{ end }}
+    {{ if findRE `(tdi|hdi|cdti|dci|jtd|multijet|ecobl|bluehdi|cdi)` $childSlug }}{{ $isEngine = true }}{{ end }}
+    {{ if $isEngine }}
+      {{ $engines = $engines | append . }}
+    {{ else }}
+      {{ $bodies = $bodies | append . }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<div class="container content-narrow">
+
+  {{ if gt (len $engines) 0 }}
+  <section class="pillar-nav">
+    <div class="pillar-nav__title">Wersje silnikowe {{ $shortName }}</div>
+    <div class="pillar-nav__grid">
+      {{ range $engines }}
+      <a href="{{ .Permalink }}" class="pillar-nav__card">
+        <span class="pillar-nav__card-icon material-symbols-outlined">manufacturing</span>
+        <div class="pillar-nav__card-body">
+          <div class="pillar-nav__card-name">{{ .Params.h1 | default .Title | truncate 50 }}</div>
+          {{ with .Description }}<div class="pillar-nav__card-desc">{{ . | truncate 80 }}</div>{{ end }}
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  {{ if gt (len $bodies) 0 }}
+  <section class="pillar-nav">
+    <div class="pillar-nav__title">Wersje nadwoziowe {{ $shortName }}</div>
+    <div class="pillar-nav__grid">
+      {{ range $bodies }}
+      <a href="{{ .Permalink }}" class="pillar-nav__card">
+        <span class="pillar-nav__card-icon material-symbols-outlined">local_shipping</span>
+        <div class="pillar-nav__card-body">
+          <div class="pillar-nav__card-name">{{ .Params.h1 | default .Title | truncate 50 }}</div>
+          {{ with .Description }}<div class="pillar-nav__card-desc">{{ . | truncate 80 }}</div>{{ end }}
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+</div>
+
+{{ else }}
+{{/* ── Other sections: image card carousel ── */}}
+{{ $childPages := slice }}
+{{ range $.Pages }}
+  {{ if not .Params.redirect }}
+    {{ $childPages = $childPages | append . }}
+  {{ end }}
+{{ end }}
+
+{{ if gt (len $childPages) 0 }}
+<div class="container content-narrow">
+  <section class="pillar-nav">
+    {{ $sectionLabel := dict "kampery" "kamperach" "przerobki" "przeróbkach" "zabudowy" "zabudowach" "porownania" "porównaniach" "serwis" "serwisie" "wynajem" "wynajmie" "przepisy" "przepisach" "vanlife" "vanlife" }}
+    <div class="pillar-nav__title">Sprawdź pozostałe wpisy o {{ index $sectionLabel $sectionName | default $sectionName }}</div>
+    <div class="pillar-nav__grid">
+      {{ range $childPages }}
+      <a href="{{ .Permalink }}" class="pillar-nav__card pillar-nav__card--img"
+         {{ with .Params.image }}style="background-image: url('{{ . }}')"{{ end }}>
+        <div class="pillar-nav__card-overlay">
+          {{ with .Params.categories }}<span class="pillar-nav__card-badge">{{ index . 0 }}</span>{{ end }}
+          <div class="pillar-nav__card-name">{{ .Params.h1 | default .Title | truncate 60 }}</div>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+</div>
+{{ end }}
+
+{{ end }}
+
+{{/* ── Cross-cluster: articles from other sections referencing this page ── */}}
+{{ $crossCluster := where $.Site.RegularPages "Params.parent_model" $slug }}
+
+{{ if gt (len $crossCluster) 0 }}
+<div class="container content-narrow">
+  <section class="pillar-nav">
+    <div class="pillar-nav__title">Powiązane artykuły</div>
+    <div class="pillar-nav__grid">
+      {{ range $crossCluster }}
+      <a href="{{ .Permalink }}" class="pillar-nav__card">
+        <span class="pillar-nav__card-icon material-symbols-outlined">
+          {{ if eq .Section "serwis" }}build{{ else if eq .Section "przerobki" }}handyman{{ else if eq .Section "porownania" }}compare_arrows{{ else }}article{{ end }}
+        </span>
+        <div class="pillar-nav__card-body">
+          <div class="pillar-nav__card-name">{{ .Params.h1 | default .Title | truncate 50 }}</div>
+          {{ with .Description }}<div class="pillar-nav__card-desc">{{ . | truncate 80 }}</div>{{ end }}
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </section>
+</div>
+{{ end }}
+
+{{ end }}
+
+{{/* ═══ CHILD PAGES GRID (if no body content, show cards) ═══ */}}
+{{ if not .Content }}
+<div class="container" style="padding-top: 2rem;">
+  {{ $pages := .Pages }}
+  {{ $paginator := .Paginate $pages 12 }}
+
+  <div class="card-grid card-grid--3">
+    {{ range $paginator.Pages }}
+    {{ partial "article-card.html" . }}
+    {{ end }}
+  </div>
+
+  {{ if gt $paginator.TotalPages 1 }}
+  <nav class="pagination" aria-label="Paginacja">
+    {{ if $paginator.HasPrev }}
+    <a href="{{ $paginator.Prev.URL }}">&larr; Nowsze</a>
+    {{ end }}
+    {{ range $paginator.Pagers }}
+    {{ if eq . $paginator }}
+    <span class="active">{{ .PageNumber }}</span>
+    {{ else }}
+    <a href="{{ .URL }}">{{ .PageNumber }}</a>
+    {{ end }}
+    {{ end }}
+    {{ if $paginator.HasNext }}
+    <a href="{{ $paginator.Next.URL }}">Starsze &rarr;</a>
+    {{ end }}
+  </nav>
+  {{ end }}
+</div>
+{{ end }}
+
+{{ end }}
