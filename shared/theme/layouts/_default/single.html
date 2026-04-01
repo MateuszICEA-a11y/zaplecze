@@ -42,16 +42,15 @@
       <h1 class="article-hero__title">{{ .Params.h1 | default .Title }}</h1>
 
       <div class="article-hero__meta">
-        {{ if not $isPage }}
-          {{/* POST: author + date + reading time */}}
-          {{ with $authorData }}
-          <div class="article-hero__meta-item">
-            <div class="article-hero__avatar">
-              {{ with .avatar }}<img src="{{ . }}" alt="{{ $.Params.author }}">{{ end }}
-            </div>
-            <span>{{ .name }}</span>
+        {{ with $authorData }}
+        <div class="article-hero__meta-item">
+          <div class="article-hero__avatar">
+            {{ with .avatar }}<img src="{{ . }}" alt="{{ $.Params.author }}">{{ end }}
           </div>
-          {{ end }}
+          <span>{{ .name }}</span>
+        </div>
+        {{ end }}
+        {{ if not $isPage }}
           <div class="article-hero__meta-item">
             <span class="material-symbols-outlined">calendar_today</span>
             <span>{{ .Date.Format "02.01.2006" }}</span>
@@ -61,7 +60,6 @@
             <span>{{ $readTime }} min czytania</span>
           </div>
         {{ else }}
-          {{/* PAGE: last updated only (unless hide_meta) */}}
           {{ if not .Params.hide_meta }}
           <div class="article-hero__meta-item">
             <span class="material-symbols-outlined">update</span>
