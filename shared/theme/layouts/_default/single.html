@@ -112,7 +112,6 @@
     {{ end }}
 
     {{/* ═══ AUTHOR CARD ═══ */}}
-    {{ if not $isPage }}
     {{ if $authorData }}
     {{ $a := $authorData }}
     <div class="author-card">
@@ -131,7 +130,6 @@
         {{ end }}
       </div>
     </div>
-    {{ end }}
     {{ end }}
 
   </div>
