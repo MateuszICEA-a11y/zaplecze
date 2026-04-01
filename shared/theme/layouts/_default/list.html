@@ -212,11 +212,11 @@
 
 {{ end }}
 
-{{/* ═══ CHILD PAGES GRID (if no body content, show cards) ═══ */}}
-{{ if not .Content }}
+{{/* ═══ CHILD PAGES GRID (always show) ═══ */}}
+{{ $allPages := .Pages }}
+{{ if gt (len $allPages) 0 }}
 <div class="container" style="padding-top: 2rem;">
-  {{ $pages := .Pages }}
-  {{ $paginator := .Paginate $pages 12 }}
+  {{ $paginator := .Paginate $allPages 12 }}
 
   <div class="card-grid card-grid--3">
     {{ range $paginator.Pages }}
