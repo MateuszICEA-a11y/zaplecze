@@ -196,11 +196,6 @@
         <div class="related-section__title">Powiązane artykuły</div>
         <div class="related-section__bar"></div>
       </div>
-      {{ with .CurrentSection }}
-      <a href="{{ .Permalink }}" class="section__link">
-        Wszystkie {{ .Title | lower }} <span class="material-symbols-outlined" style="font-size:.9rem;vertical-align:middle;">arrow_forward</span>
-      </a>
-      {{ end }}
     </div>
     <div class="related-slider" data-slider>
       <button class="related-slider__btn related-slider__btn--prev" data-slider-prev aria-label="Poprzednie">

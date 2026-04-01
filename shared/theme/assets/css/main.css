@@ -3043,17 +3043,15 @@ blockquote {
   box-shadow: 0 4px 16px rgba(255,107,0,.25);
 }
 .related-slider__btn .material-symbols-outlined { font-size: 1.25rem; }
-.related-slider__btn--prev { left: -20px; }
-.related-slider__btn--next { right: -20px; }
+.related-slider__btn--prev { left: 8px; }
+.related-slider__btn--next { right: 8px; }
 
 @media (max-width: 900px) {
   .related-slider__track > .related-card { flex: 0 0 calc(50% - .75rem); }
-  .related-slider__btn--prev { left: -10px; }
-  .related-slider__btn--next { right: -10px; }
 }
 @media (max-width: 600px) {
   .related-slider__track > .related-card { flex: 0 0 85%; }
-  .related-slider__btn { display: none; }
+  .related-slider__btn { width: 36px; height: 36px; }
 }
 
 /* ══════════════════════════════════════
