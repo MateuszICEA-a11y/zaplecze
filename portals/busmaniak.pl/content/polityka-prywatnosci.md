@@ -10,7 +10,7 @@ robots: "noindex, follow"
 
 ## Administrator danych
 
-Administratorem danych osobowych jest ICEA Group Sp. z o.o., ul. Altowa 2, 02-386 Warszawa, NIP: 5213518539.
+Administratorem danych osobowych jest właściciel portalu BusManiak.pl.
 
 ## Zakres zbieranych danych
 
