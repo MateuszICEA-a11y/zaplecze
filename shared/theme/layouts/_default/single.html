@@ -170,11 +170,11 @@
   {{ end }}
 {{ end }}
 
-{{/* 4. Same section fallback */}}
-{{ if eq (len $allRelated) 0 }}
+{{/* 4. Fill from same section if fewer than 6 related */}}
+{{ if lt (len $allRelated) 6 }}
   {{ $section := .CurrentSection }}
   {{ range $section.RegularPages }}
-    {{ if ne $.Permalink .Permalink }}
+    {{ if and (ne $.Permalink .Permalink) (lt (len $allRelated) 12) }}
       {{ $allRelated = $allRelated | append . }}
     {{ end }}
   {{ end }}
