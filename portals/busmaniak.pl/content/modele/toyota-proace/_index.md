@@ -30,127 +30,177 @@ sources:
 
 ## Historia i generacje Toyoty ProAce
 
-[Toyota Proace](https://pl.wikipedia.org/wiki/Toyota_Proace) pojawił się na rynku w 2013 roku jako odpowiedź marki na rosnące zapotrzebowanie na własny model średniego vana. Przez lata przeszedł dwie wyraźne generacje, różniące się platformą i poziomem integracji z siecią PSA/Stellantis.
+Toyota Proace pojawiła się na rynku w 2013 roku jako średni van przygotowany we współpracy z PSA. W praktyce trzeba rozdzielić dwa etapy: pierwszą generację będącą rebadge'em modeli PSA oraz drugą, znacznie nowocześniejszą generację na platformie EMP2.
 
-- Proace I (2013–2016) - platforma Sevel Nord, bliźniak Fiata Scudo II i Peugeota Expert II; krótka produkcja, stosunkowo mała popularność w Polsce, słabsze wyposażenie i starszy napęd
-- Proace II (od 2017) - platforma PSA EMP2, technicznie identyczny z Peugeotem Expert III, Citroënem Jumpy III i Oplem Vivaro C; produkcja w zakładach Stellantis w Hordain we Francji; facelifting w 2024 roku odświeżył wzornictwo i ofertę silnikową
+### ProAce I (2013–2016)
 
-Przejście na platformę EMP2 oznaczało skok jakościowy: lepsze właściwości jezdne, nowocześniejsze jednostki napędowe i możliwość zaproponowania wersji elektrycznej. Proace II to de facto Toyota z logiem na samochodzie zaprojektowanym i zbudowanym przez Stellantis – co ma znaczenie zarówno przy wyborze warsztatu, jak i przy szacowaniu kosztów eksploatacji.
+Pierwsza Toyota ProAce zadebiutowała jako bliźniak Peugeot Expert II, Citroëna Jumpy II i brytyjskiego Dispatcha. To była konstrukcja produkowana w Valenciennes/Sevel Nord, bez traktowania Fiata Scudo jako bezpośredniego bliźniaka Toyoty.
+
+Typowe silniki to diesle 1.6 i 2.0 D-4D. W zależności od wersji auto oferowało około **5–7 m³** przestrzeni ładunkowej, więc było pełnoprawnym vanem do pracy, ale dziś to już wyraźnie starsza konstrukcja.
+
+### ProAce II (2016/2017–2024)
+
+Druga generacja weszła na rynek w latach **2016/2017 – zależnie od rynku** i przyniosła największą zmianę w historii modelu. Auto zbudowano na platformie EMP2, a produkcja odbywała się w Hordain we Francji.
+
+W ofercie pojawiły się trzy długości nadwozia: **Compact 4606 mm**, **Medium 4959 mm** i **Long 5309 mm**. Gama silników objęła diesle **1.5 i 2.0 D-4D**, a od **2021 roku** także wersję **Electric**.
+
+### ProAce II po liftingu (od 2024)
+
+Poliftingowa Toyota ProAce dostała zmieniony pas przedni, nowe multimedia oraz odświeżoną ofertę systemów ADAS. Przy opisie silników trzeba tu uważać, bo gama po liftingu nie jest tożsama z ofertą przedliftową.
+
+Najbezpieczniej rozdzielać roczniki na **2016/2017–2023** oraz **od 2024**. Dzięki temu nie miesza się wersji przedliftowych z poliftingowymi przy wyborze silnika, skrzyni i wyposażenia.
 
 ## Silniki ProAce'a
 
-Toyota Proace II jest dostępna z dwoma rodzinami silników Diesla oraz napędem elektrycznym.
+Toyota Proace II występuje z dieslami 1.5 i 2.0 D-4D oraz z napędem elektrycznym. Najważniejsze jest jedno: oferta silnikowa zależy od rocznika, a wariant **177 KM** dotyczy głównie aut przed liftingiem.
 
-**1.5 D-4D (DV5, 1499 cc)**
+### Silniki wysokoprężne i elektryczne – tabela
 
-- 100 KM / 250 Nm – wersja bazowa, wystarczająca do lekkich tras miejskich i regionalnych
-- 120 KM / 300 Nm – rekomendowana przy regularnym załadunku zbliżonym do maksimum
+Poniżej masz pełne zestawienie podstawowych wersji napędowych.
 
-### Silnik 2.0 D-4D w Toyocie ProAce
+| Silnik | Pojemność / bateria | Moc | Moment obrotowy | Norma | Skrzynia biegów | Średnie spalanie / zasięg |
+|---|---:|---:|---:|---|---|---|
+| 1.5 D-4D | 1499 cm³ | 100 KM | 250 Nm | Euro 6d | 6MT | ok. 6,0–6,8 l/100 km |
+| 1.5 D-4D | 1499 cm³ | 120 KM | 300 Nm | Euro 6d | 6MT | ok. 6,1–6,9 l/100 km |
+| 2.0 D-4D | 1997 cm³ | 145 KM | 370 Nm | Euro 6d | 6MT lub EAT8 zależnie od rynku/rocznika | ok. 6,3–7,2 l/100 km |
+| 2.0 D-4D | 1997 cm³ | 177 KM | 400 Nm | Euro 6d | EAT8 | ok. 6,6–7,4 l/100 km |
+| Electric | 50 / 75 kWh | 136 KM | 260 Nm | – | automatyczna redukcyjna | WLTP **224–230 km** lub **330–350 km** zależnie od nadwozia |
 
-**2.0 D-4D (DW10, 1997 cc)**
+### 1.5 D-4D
 
-- 120 KM / 340 Nm – wersja wejściowa dwulitrowa
-- 145 KM / 370 Nm – najczęściej wybierana w polskich flotach transportowych
-- 177 KM / 400 Nm – topowa wersja, w parze z automatem EAT8; umożliwia holowanie do 2500 kg
+To bazowy diesel dla aut pracujących głównie w mieście i na trasach regionalnych. Wersja **100 KM** wystarczy do lekkiego transportu, a **120 KM** jest rozsądniejszym wyborem przy częstym załadunku.
 
-**Proace Electric**
+### 2.0 D-4D w Toyocie ProAce
 
-- akumulator 50 kWh lub 75 kWh
-- moc 136 KM
-- zasięg WLTP: 230 km (50 kWh) lub 330 km (75 kWh)
+Dwulitrowy diesel lepiej pasuje do cięższej pracy, jazdy ekspresowej i regularnego wożenia dużych ładunków. Wariant **145 KM** jest najbardziej uniwersalny, a **177 KM** to mocniejsza odmiana dostępna przede wszystkim w autach przed liftingiem.
 
-Skrzynia manualna 6-biegowa jest dostępna przy wszystkich wersjach Diesla. Automat EAT8 (8-biegowy, Aisin) – w wybranych konfiguracjach 2.0 D-4D.
+### Proace Electric
+
+Elektryczna wersja ma **136 KM**, **260 Nm** oraz akumulator **50 albo 75 kWh**. Zasięg WLTP wynosi około **224–230 km** dla mniejszej baterii i **330–350 km** dla większej – zależnie od nadwozia.
 
 {{% info title="Dobór silnika – praktyczna wskazówka" icon="engineering" %}}
-Do tras głównie miejskich i regionalnych z ładunkiem do 800 kg wystarczy 1.5 D-4D 100 KM. Przy regularnym załadunku powyżej 1000 kg i trasach ekspresowych warto sięgnąć po 2.0 D-4D 145 KM – dwulitrówka oferuje wyraźnie lepszą elastyczność i niższe zużycie paliwa pod obciążeniem. Wersja 177 KM ma sens przede wszystkim przy holowaniu przyczep o masie powyżej 1500 kg.
+Do tras głównie miejskich i regionalnych z ładunkiem do 800 kg wystarczy 1.5 D-4D 100 KM. Przy regularnym załadunku powyżej 1000 kg i trasach ekspresowych lepszy będzie 2.0 D-4D 145 KM. Wersję 177 KM traktuj jako opcję dla konkretnych zastosowań i głównie aut przedliftowych.
 {{% /info %}}
 
 ![Toyota Proace II furgon Long](/images/toyota-proace-hero.webp)
 
 ## Dane techniczne Toyoty ProAce
 
-Toyota Proace II jest dostępna w dwóch długościach nadwozia: Medium i Long. Poniżej zestawienie kluczowych parametrów.
+Największa zaleta ProAce to sensownie rozpisana gama długości nadwozia i praktyczna ładownia. W przeciwieństwie do wielu skróconych opisów, tutaj trzeba uwzględnić także wersję Compact oraz parametry związane z systemem Moduwork.
 
-| Parametr | Medium | Long |
-|---|---|---|
-| Długość całkowita | 4959 mm | 5309 mm |
-| Szerokość z lusterkami | 2204 mm | 2204 mm |
-| Szerokość bez lusterek | ~1920 mm | ~1920 mm |
-| Wysokość (H1) | 1910 mm | 1910 mm |
-| Pojemność ładunkowa | 5,3 m³ | 6,1 m³ |
-| Długość ładowni | ~2512 mm | ~2862 mm |
-| Szerokość między nadkolami | 1258 mm | 1258 mm |
-| Ładowność | do 1400 kg | do 1400 kg |
-| Europalety | 2 | 3 |
-| DMC | 2800–3100 kg | 2800–3100 kg |
-| Holowanie (2.0 D-4D) | do 2500 kg | do 2500 kg |
+| Parametr | Compact | Medium | Long |
+|---|---:|---:|---:|
+| Długość całkowita | 4606 mm | 4959 mm | 5309 mm |
+| Rozstaw osi | 2925 mm | 3275 mm | 3275 mm |
+| Wysokość | ok. 1905–1910 mm | ok. 1905–1910 mm | ok. 1905–1910 mm |
+| Pojemność ładunkowa | 4,6 m³ | 5,3 m³ | 6,1 m³ |
+| Pojemność z Moduwork | 5,1 m³ | 5,8 m³ | 6,6 m³ |
+| Długość ładowni | 2162 mm | 2512 mm | 2862 mm |
 
-Długość ładowni [Proace Long](/modele/toyota-proace/long/) pozwala zabrać trzy europalety – to istotna przewaga nad wersjami Medium przy pracy w logistyce i dystrybucji.
+Poniżej parametry wspólne dla większości wersji użytkowych:
+
+| Parametr użytkowy | Wartość |
+|---|---:|
+| Szerokość między nadkolami | 1258 mm |
+| Szerokość otworu bocznych drzwi | ok. 935 mm |
+| Wysokość otworu tylnego | ok. 1220 mm |
+| Maks. długość ładunku z klapą Moduwork w Long | do ok. 3674 mm |
+| Ładowność | do ok. 1400 kg |
+| DMC | 2800–3100 kg |
+
+Długość ładowni [Proace Long](/modele/toyota-proace/long/) pozwala przewieźć trzy europalety bez kombinowania. Jeśli liczy się zwrotność w mieście, Compact ma sens, ale do typowej logistyki Medium i Long są po prostu praktyczniejsze.
 
 ## Wersje nadwoziowe Toyoty ProAce
 
-Proace II jest oferowany w kilku konfiguracjach, różniących się przeznaczeniem i układem przestrzeni.
+Rodzina ProAce obejmuje kilka realnie różnych odmian użytkowych i osobowych. Tu łatwo o pomyłkę, dlatego warto oddzielić wersje nadwoziowe ProAce od osobnego modelu Proace City.
 
-- Furgon – klasyczna zabudowa dostawcza z blaszaną przegrodą; dostępny w Medium i Long
-- [Proace Verso (osobowy)](/modele/toyota-proace-verso/) – wersja kombi z miejscami dla 5 lub 9 pasażerów, bagażnikiem i przeszklonymi bokami; przeznaczony do transportu osób
-- [Proace City](/modele/toyota-proace-city/) – mniejszy brat Proace, odpowiednik Peugeota Partner III; inna platforma (EMP2 skrócona), mniejszy ładunek, do zastosowań miejskich
+- **Van / Furgon** – 2 lub 3 miejsca z przodu, długości Compact / Medium / Long, od **4,6 do 6,6 m³** z Moduwork.
+- **Crew Cab / brygadowy** – zwykle **5–6 miejsc**, ale kosztem mniejszej przestrzeni ładunkowej.
+- **Platform Cab / podwozie do zabudowy** – baza pod chłodnię, kontener albo lawetę.
+- **Proace Verso** – osobowa odmiana rodziny Proace; w zależności od rynku i wersji oferuje **5, 7, 8 lub 9 miejsc**.
+- **Campery i zabudowy turystyczne** – najczęściej na bazie Proace Verso; po konwersji długość łóżka zwykle wynosi około **190–200 cm**.
 
-Wersja [osobowa Proace](/modele/toyota-proace/osobowy/) bywa mylona z Proace Verso – w praktyce to dwa różne modele. Proace Verso opiera się na tym samym nadwoziu co furgon, Proace City to osobna linia produktowa.
+Wersja [osobowa Proace](/modele/toyota-proace/osobowy/) i [Proace Verso (osobowy)](/modele/toyota-proace-verso/) należą do tej samej rodziny modelowej. Proace Verso to osobowa odmiana rodziny Proace, natomiast [Proace City](/modele/toyota-proace-city/) jest osobnym, mniejszym modelem.
 
-{{% info title="Proace a Proace City – nie myl modeli" icon="engineering" %}}
-Proace City to odpowiednik Peugeota Partner lub Citroëna Berlingo – mniejszy, lżejszy, z krótszą ładownią i niższą ładownością. Toyota Proace (bez dopisku City) to klasa wyżej: odpowiednik Peugeota Expert, z pełnymi 5,3–6,1 m³ przestrzeni ładunkowej. Przy zakupie floty warto upewnić się, który model jest przedmiotem oferty.
+{{% info title="Proace a Proace City – porządek w gamie" icon="engineering" %}}
+Proace City nie jest wersją nadwoziową ProAce, tylko osobnym modelem z niższej klasy. Jeśli porównujesz oferty flotowe albo ogłoszenia z rynku wtórnego, sprawdź nazwę dokładnie – różnice w wielkości i funkcji auta są duże.
 {{% /info %}}
 
 ## Typowe usterki ProAce'a
 
-Proace II dzieli platformę i mechanikę z Peugeotem Expert III oraz Citroënem Jumpy III. To oznacza, że znane usterki bliźniaków dotyczą go w równym stopniu.
+Toyota Proace ma mechanikę znaną z bliźniaczych modeli PSA, więc typowe problemy są dobrze rozpoznane przez warsztaty. Najwięcej zależy od przebiegu, rodzaju tras i tego, czy auto miało regularny serwis.
 
-- Wtryskiwacze 1.5 D-4D – przy przebiegach powyżej 150–180 tys. km mogą wymagać regeneracji lub wymiany; problem znany i dobrze zdiagnozowany w serwisach PSA
-- DPF – zapychanie się filtra cząstek stałych przy eksploatacji głównie miejskiej (krótkie trasy poniżej 15 km); problem dotyczy obu rodzin silnikowych, Diesla 1.5 i 2.0
-### Problemy z DPF i elektroniką ProAce
+### 1.5 D-4D – łańcuch, wtryski, AdBlue
 
-- Skrzynia EAT8 – sporadyczne błędy mechatroniki, głównie przy autach z wysokimi przebiegami i bez regularnych wymian oleju skrzyni; serwis specjalistyczny wymaga dostępu do oprogramowania PSA/Stellantis
-- Korozja progów – charakterystyczna dla Proace I (2013–2016); Proace II znacznie mniej podatny, ale starsze egzemplarze warto sprawdzić przy zakupie używanym
-- Czujniki i elektryka – drobne usterki elektryki pomocniczej (ogrzewanie postojowe, systemy kamer), rozwiązywane standardowo w ASO Toyota lub w autoryzowanych serwisach PSA
+W 1.5 D-4D najczęściej przewijają się tematy wtryskiwaczy, układu EGR i AdBlue. Przy dużych przebiegach albo ciężkiej eksploatacji koszty zaczynają rosnąć szybko.
 
-Serwis Proace II można realizować zarówno w ASO Toyota, jak i w sieci Peugeot/Citroën – te drugie często mają krótszy czas oczekiwania na części i niższe stawki robocizny.
+- regeneracja wtryskiwacza – **500–900 zł/szt.**
+- nowy wtryskiwacz – **1200–1800 zł/szt.**
+- czyszczenie EGR – **300–700 zł**
+- pompa lub zbiornik AdBlue – **2500–5000 zł**
+
+### 2.0 D-4D – DPF, turbo, EGR
+
+Dwulitrowy diesel dobrze znosi cięższą pracę, ale przy krótkich trasach i jeździe miejskiej potrafi zapchać DPF. Do tego dochodzi typowe zużycie osprzętu przy wysokich przebiegach.
+
+- wymuszone wypalanie DPF – **150–300 zł**
+- czyszczenie DPF – **600–1200 zł**
+- nowy filtr DPF – **3000–7000 zł**
+- regeneracja turbo – **1500–2500 zł**
+
+### EAT8 – szarpanie i błędy
+
+Automat EAT8 jest wygodny, ale nie lubi zaniedbanego serwisu. Jeśli pojawiają się szarpanie albo błędy skrzyni, warto zacząć od diagnostyki i historii wymian oleju.
+
+- wymiana oleju – **700–1200 zł**
+- naprawa mechatroniki – **3500–7000 zł**
+
+### Zawieszenie i elektryka
+
+W autach dostawczych pracujących codziennie po mieście zużycie elementów zawieszenia i osprzętu elektrycznego nie jest niczym zaskakującym. To zwykle drobniejsze naprawy, ale przy aucie flotowym ich suma ma znaczenie.
+
+- łączniki stabilizatora z robocizną – **150–300 zł/szt.**
+- czujniki parkowania – **200–500 zł/szt.**
+- kamera cofania – **600–1200 zł**
+
+Serwis ProAce II można robić zarówno w ASO Toyota, jak i w warsztatach ogarniających konstrukcje PSA/Stellantis. Dla użytkownika liczy się przede wszystkim dostęp do części i rozsądna diagnostyka, bo mechanicznie to nie jest egzotyka.
 
 ## Porównanie ProAce'a z konkurencją
 
-Toyota Proace II konkuruje bezpośrednio z kilkoma modelami w klasie średnich vanów.
+Toyota Proace konkuruje nie tylko z własnymi bliźniakami technicznymi, ale też z modelami, które firmy faktycznie biorą pod uwagę przy zakupie vana do pracy. Najlepiej porównać objętość, ładowność, DMC, napędy i cenę nowego auta.
 
-| Model | Platforma | Long (m³) | Silniki (KM) |
-|---|---|---|---|
-| Toyota Proace II Long | PSA EMP2 | 6,1 | 100–177 (D) / 136 (E) |
-| Peugeot Expert III L3 | PSA EMP2 | 6,6 | 100–177 (D) / 136 (E) |
-| Citroën Jumpy III XL | PSA EMP2 | 6,6 | 100–177 (D) / 136 (E) |
-| Opel Vivaro C L3 | PSA EMP2 | 6,6 | 100–177 (D) / 136 (E) |
-| Renault Trafic L2 | własna | ~5,2 | 110–170 (D) |
-| Mercedes-Benz Vito L | własna (MRA2) | ~6,0 | 116–239 (D/P) |
+| Model | Objętość | Ładowność | DMC | Napędy | Cena nowego od |
+|---|---:|---:|---:|---|---:|
+| Toyota Proace Long | 6,1 m³ | do ok. 1400 kg | 2800–3100 kg | diesel 100–177 KM, EV 136 KM | od ok. 150 000 zł netto |
+| Renault Trafic L2H1 | ok. 5,8–6,0 m³ | zwykle do ok. 1200 kg | do 3070 kg | 2.0 dCi 110–170 KM | – |
+| Ford Transit Custom L2H1 | ok. 6,8 m³ | do ok. 1300 kg | do 3225 kg | diesel 110–170 KM / PHEV / EV | – |
+| Mercedes Vito L2 | ok. 6,0 m³ | do ok. 1300 kg | do 3200 kg | 102–190 KM | – |
 
-Proace, Expert, Jumpy i Vivaro to technicznie ten sam samochód z różnymi emblematami – różnice ograniczają się do wzornictwa, wyposażenia i sieci serwisowej. Proace nie dorównuje pojemnościowo wersjom L3 bliźniaków (6,6 m³), bo Toyota oferuje tylko Medium i Long bez wariantu XL.
+Proace wypada mocno pod względem ładowności i funkcjonalności ładowni. Nie jest rekordzistą objętości, ale daje dobry kompromis między gabarytem, ładunkiem i dostępnością wersji elektrycznej.
 
-Renault Trafic ma mniejszą ładownię, ale własną i sprawdzoną mechanikę. Mercedes Vito to wyższa półka cenowa z lepszym wykończeniem kabiny.
+Renault Trafic stawia na sprawdzoną własną mechanikę. Ford Transit Custom ma szeroką ofertę napędów, a Mercedes Vito bazuje na własnej platformie Mercedes-Benz **W447**, bez błędnego przypisywania mu platformy MRA2.
 
 Więcej na temat silnika [2.0 D-4D znajdziesz tutaj](/modele/toyota-proace/2-0/).
 
 {{% expert name="Marek Kowalczyk" %}}
-Proace II to solidny wybór dla firm, które chcą mieć vana klasy Expert lub Jumpy pod marką, do której mają serwis Toyota w pobliżu. Mechanicznie to identyczny samochód – zalety i wady bliźniaków PSA dotyczą go w pełni. Kluczowe pytanie przy zakupie to nie marka, ale dostęp do serwisu i aktualna cena używanego egzemplarza na rynku. Proace bywa droższy od Jumpego przy porównywalnym wyposażeniu, bo Toyota ma wyższe residual values. Przy zakupie floty powyżej 5 sztuk warto negocjować bezpośrednio z importerem.
+Proace to wybór dla firm, które chcą średniego vana z prostą do ogarnięcia mechaniką i mocnym zapleczem serwisowym. Najważniejsze przy zakupie używanego egzemplarza są rocznik, przebieg, historia serwisu i to, czy auto pracowało głównie w mieście czy w trasie. Sama plakietka na grillu ma mniejsze znaczenie niż stan konkretnej sztuki.
 {{% /expert %}}
-
 
 {{% youtube %}}
 
 ## Ceny ProAce
 
-Zakup Toyota Proace to wydatek, który zależy od generacji, wersji silnikowej i stanu technicznego – rozstrzał cenowy na rynku wtórnym bywa spory.
+Na rynku wtórnym ceny Toyoty ProAce mocno zależą od generacji, rocznika, przebiegu i wersji nadwoziowej. Największy sens ma patrzenie na konkretne widełki rocznikowe, a nie na jedno ogólne hasło „Proace używany”.
 
-| Rocznik / Wersja | Cena orientacyjna |
-|-------------------|-------------------|
-| ProAce I (2013–2016) | 30 000–55 000 zł |
-| ProAce II (2016–2020) | 50 000–85 000 zł |
-| ProAce II (2020–2024) | 80 000–140 000 zł |
-| Nowy ProAce Van Medium (1.5 D-4D 100) | od ok. 130 000 zł netto |
-| Nowy ProAce Van Long (2.0 D-4D 145) | od ok. 150 000 zł netto |
-| ProAce Electric (75 kWh) | od ok. 230 000 zł netto |
+| Rocznik / wersja | Typowy przebieg | Cena orientacyjna |
+|---|---:|---:|
+| 2013–2014 ProAce I 2.0 D-4D | 200–300 tys. km | 30–40 tys. zł |
+| 2015–2016 ProAce I | – | 40–55 tys. zł |
+| 2017 ProAce II 1.6 / 2.0 D-4D | 180–250 tys. km | 52–68 tys. zł |
+| 2018–2019 ProAce II 1.5 / 2.0 D-4D | – | 60–85 tys. zł |
+| 2020–2021 ProAce II | – | 75–105 tys. zł |
+| 2022–2023 ProAce II | – | 95–135 tys. zł |
+| 2024–2025 ProAce II po liftingu | – | 120–170 tys. zł |
+| ProAce Electric 2021–2023 | zależnie od baterii i przebiegu | 90–140 tys. zł |
+
+Wersje brygadowe i Verso są zwykle droższe od furgonu o **10–25%**. Przy zakupie warto też pamiętać o spójnym nazewnictwie generacji – druga generacja funkcjonuje jako model obecny od **2016/2017 zależnie od rynku**, więc takie oznaczenie najlepiej trzymać konsekwentnie w całym porównaniu cen.

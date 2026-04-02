@@ -33,74 +33,110 @@ sources:
 
 ## Historia i generacje Renault Master {#historia-generacje}
 
-[Renault Master](https://pl.wikipedia.org/wiki/Renault_Master) to model z długą historią, który ewoluował przez trzy wyraźne generacje. Pierwszy Master pojawił się w 1980 roku jako następca Renault Estafette – tylnonapędowego, już przestarzałego modelu. Master I (1980–1997) oferował napęd na tylną oś i prymitywne jak na dzisiejsze standardy silniki benzynowe i diesla.
+Renault Master to duży dostawczak z historią sięgającą 1980 roku. Przez lata model przechodził kolejne zmiany konstrukcyjne, liftingi i rozszerzenia gamy nadwozi, ale zawsze pozostawał autem roboczym do transportu, zabudów specjalnych i przewozu osób.
 
-Przełom nastąpił przy **Masterze II** (1997–2010), który jako pierwszy w tej klasie wprowadził napęd na przednią oś i rozrząd paskiem zamiast łańcuchem w silnikach diesla. Model ten był produkowany wspólnie z Oplem Movano i szybko zyskał popularność na rynku flotowym.
+### Master I (1980–1997)
 
-### Renault Master III – od 2010 roku
+Pierwsza generacja weszła do produkcji w 1980 roku. W trakcie rynkowego życia przeszła faceliftingi w **1989** i **1994** roku.
 
-**Master III** zadebiutował w 2010 roku. To właśnie ta generacja jest dziś powszechnie dostępna na rynku wtórnym i w salonach Renault Pro+. W 2019 roku przeszła gruntowną modernizację – otrzymała nowe wnętrze z ekranem dotykowym, cyfrową deską rozdzielczą, systemami ADAS i odświeżony przód. Po faceliftingu samochód wizualnie upodobnił się do osobowego Renault Trafic i jest wyraźnie nowocześniejszy od przedliftingowego modelu.
+W gamie były różne nadwozia: **furgon, bus i podwozie**. Klienci mogli wybierać między silnikami **benzynowymi i diesla**, a sam model był prostą, użytkową konstrukcją nastawioną na pracę.
 
-Produkcja odbywa się wyłącznie w fabryce w **Batilly** (Wielka Lotaryngia, Francja) – ta lokalizacja pozostaje niezmieniona od pierwszej generacji.
+### Master II (1997–2010)
+
+Druga generacja zadebiutowała w 1997 roku jako wspólny projekt z **Opel Movano A** i **Nissan Interstar**. Model przeszedł liftingi w **2003** i **2006** roku.
+
+Master II wprowadził nową platformę i był oferowany głównie z napędem na przednią oś, a w wybranych cięższych wersjach także z napędem na tył. W porównaniu z poprzednikiem poprawiono też ergonomię kabiny, co w codziennej pracy miało większe znaczenie niż sama stylizacja.
+
+### Master III (2010–2024 w Europie, następca od 2024)
+
+**Master III** zadebiutował w 2010 roku. To generacja wspólna z **Opel Movano B** i **Nissan NV400**, bardzo dobrze znana na rynku wtórnym i w zabudowach specjalistycznych.
+
+Pierwszy większy lifting przyszedł w **2014 roku** – odświeżono front i wprowadzono silniki **Energy**. Druga, ważniejsza modernizacja miała miejsce w **2019 roku**: auto otrzymało nowe wnętrze, ekran multimedialny, przeprojektowaną deskę rozdzielczą i systemy ADAS, a także dostosowanie do normy **Euro 6d**.
+
+Od **2024 roku** w Europie debiutuje nowa generacja Mastera z nową platformą i napędami **diesel oraz elektrycznymi**. To ważne przy sprawdzaniu ofert z 2026 roku – na rynku funkcjonują równolegle egzemplarze Mastera III oraz jego następcy.
+
+Produkcja Mastera była związana z fabryką w **Batilly** we Francji.
 
 {{% info title="Bliźniaki Mastera" icon="engineering" %}}
-Renault Master III dzieli całą platformę z Oplem Movano B/C i Nissanem NV400. Oznacza to pełną zamienność mechanicznych podzespołów – od silnika M9T przez skrzynie biegów po elementy zawieszenia. Przy wyborze używanego egzemplarza warto monitorować też oferty pod marką Opel, gdzie ceny bywają niższe przy identycznej mechanice.
+Renault Master III dzieli całą platformę z Oplem Movano B i Nissanem NV400. Przy zakupie używanego auta warto sprawdzać też te modele, bo mechanicznie są bardzo bliskie Masterowi, a ceny potrafią się różnić.
 {{% /info %}}
 
 ## Dane techniczne Renault Master {#dane-techniczne}
 
-Master III stosuje system oznaczeń znany z całej klasy: L (długość) i H (wysokość). Dostępne są konfiguracje L1 do L4 oraz H1 do H3, przy czym nie każda kombinacja długości i wysokości jest dostępna fabrycznie.
+W Masterze III oznaczenia **L** i **H** określają długość oraz wysokość nadwozia. W praktyce najczęściej spotkasz wersje od **L1H1** do **L4H3**, a wybór konkretnej konfiguracji wpływa nie tylko na kubaturę, ale też na DMC i realną ładowność.
 
-| Wariant | Rozstaw osi (mm) | Długość paki (mm) | Wysokość paki (mm) | Pojemność (m³) |
-|---------|-----------------|-------------------|--------------------|----------------|
-| L1H1    | 3182            | 2583              | 1603               | 8,0            |
-| L2H2    | 3682            | 3083              | 1855               | 11,0           |
-| L3H2    | 4332            | 3733              | 1855               | 13,0           |
-| L3H3    | 4332            | 3733              | 2143               | 15,0           |
-| L4H2    | 4332 (Maxi)     | 4383              | 1855               | 17,0           |
-| L4H3    | 4332 (Maxi)     | 4383              | 2143               | 17,0           |
+| Wariant | Długość całkowita (mm) | Rozstaw osi (mm) | Wysokość zewn. (mm) | Długość paki (mm) | Wysokość paki (mm) | Pojemność (m³) |
+|---------|------------------------:|-----------------:|--------------------:|------------------:|-------------------:|---------------:|
+| L1H1    | 5048                    | 3182             | ok. 2307            | 2583              | 1603               | 8.0            |
+| L2H2    | 5548                    | 3682             | ok. 2499            | 3083              | 1855               | 10.8–11.0      |
+| L3H2    | 6198                    | 4332             | ok. 2499            | 3733              | 1855               | 13.0           |
+| L3H3    | 6198                    | 4332             | ok. 2749            | 3733              | 2143               | 14.8–15.0      |
+| L4H2    | 6848                    | 4332             | ok. 2499            | 4383              | 1855               | 16.3–17.0      |
+| L4H3    | 6848                    | 4332             | ok. 2749            | 4383              | 2143               | 17.0–17.5      |
 
-Szerokość ładunkowa wynosi 1765 mm w standardowych wersjach i 1860 mm w wariantach Maxi. DMC zależy od wersji: 3100 kg, 3300 kg, 3500 kg lub 4500 kg w wzmocnionych wariantach podwoziowych.
+W wariantach **L4** rozstaw osi nadal wynosi **4332 mm**; większa długość całkowita wynika z dłuższego zwisu tylnego. To istotne, bo wiele ogłoszeń błędnie sugeruje, że L4 ma osobny, większy rozstaw osi.
+
+Szerokość zewnętrzna nadwozia bez lusterek wynosi ok. **2070 mm**, a z lusterkami ok. **2470 mm**. Szerokość przestrzeni ładunkowej to ok. **1765 mm**, a między nadkolami ok. **1380 mm**.
+
+Dla furgonów dostępne były wersje o DMC **2800, 3000, 3300 i 3500 kg**. Wybrane podwozia i cięższe konfiguracje dochodziły do **4500 kg**, a ładowność furgonów zwykle mieści się w zakresie ok. **1000–1625 kg** zależnie od długości, wysokości i DMC.
 
 ## Silniki Mastera – 2.3 dCi M9T {#silniki}
 
-Renault Master III jest dostępny wyłącznie z silnikiem diesla 2.3 dCi (oznaczenie fabryczne M9T). To czterocylindrowa jednostka o pojemności 2298 cm³ ze wspólnym układem wtryskowym (Common Rail) i turbosprężarką o zmiennej geometrii.
+Renault Master III występował z jednym podstawowym silnikiem wysokoprężnym: **2.3 dCi M9T**. To czterocylindrowa jednostka o pojemności **2298 cm³**, z układem **Common Rail** i **łańcuchem rozrządu**.
+
+W zależności od wersji stosowano układ doładowania z **turbosprężarką lub układem twin-turbo**. Najczęściej spotkasz tu przede wszystkim **6-biegowy manual**.
 
 ### Warianty mocy silnika M9T
 
-Dostępne warianty mocy:
+Gama mocy była szeroka, dzięki czemu Master dało się dobrać zarówno do lekkiego kuriera, jak i do ciężkiej zabudowy.
 
-- **100 KM** – wersja podstawowa, wystarczająca do lekkich aplikacji kurierskich w mieście
-- **110 KM** – korekta momentu obrotowego, spotykana głównie w starszych rocznikach
-- **125 KM** – popularny wariant pośredni dla standardowych zastosowań transportowych
-- **135 KM** – od faceliftingu 2019 r. zastąpił wersję 125 KM jako standardowy wybór
-- **150 KM** – optymalny dla wersji L3-L4 i regularnych tras między miastami
-- **165 KM** – wersja z turbosprężarką twin-scroll, nowoczesna i oszczędna
-- **180 KM** – najmocniejsza wersja, dedykowana cięższym zabudowom i trasom autostradowym
+- **100 KM** – wersja podstawowa do lżejszych zastosowań
+- **110 KM** – starsze roczniki, umiarkowane osiągi
+- **125 KM** – popularny wariant pośredni
+- **135 KM Energy** – częsty wybór w autach Euro 6
+- **145/150 KM Energy** – sensowny kompromis do L3 i L4
+- **165 KM** – wersja biturbo (twin-turbo)
+- **170/180 KM Biturbo** – najmocniejsze odmiany do cięższej pracy i tras
 
-Skrzynia biegów to 6-biegowy manuał lub – od faceliftingu – 6-biegowy automat EDC (Efficient Dual Clutch), dostępny przy mocach 135–165 KM.
+| Wersja silnika | Moc | Moment obrotowy | Norma Euro | Spalanie realne |
+|----------------|----:|----------------:|------------|-----------------|
+| 2.3 dCi 100    | 100 KM | 285 Nm     | Euro 5/6 zależnie od rocznika | 8.5–10.5 l/100 km |
+| 2.3 dCi 110    | 110 KM | 285 Nm     | Euro 5     | 8.5–10.5 l/100 km |
+| 2.3 dCi 125    | 125 KM | 310 Nm     | Euro 5     | 9.0–11.0 l/100 km |
+| 2.3 dCi 135 Energy | 135 KM | 360 Nm | Euro 6     | 9.0–11.0 l/100 km |
+| 2.3 dCi 145/150 Energy | 145–150 KM | 360 Nm | Euro 6 | 9.5–11.5 l/100 km |
+| 2.3 dCi 165 Energy / Biturbo | 165 KM | 380 Nm | Euro 6 | 9.5–11.5 l/100 km |
+| 2.3 dCi 170/180 Biturbo | 170–180 KM | 380–400 Nm | Euro 6d | 10.0–12.5 l/100 km |
 
 {{% expert name="Marek Kowalczyk" %}}
-Silnik M9T to jedna z trwalszych jednostek w klasie dostawczaków. W praktyce przy regularnej wymianie oleju co 30 000 km i sprawnym układzie AdBlue (od Euro 6) spokojnie przechodzi 400 000 km bez remontu. Słabym punktem są wtryskiwacze – w egzemplarzach z wysokim przebiegiem warto zrobić diagnozę przed zakupem. Trwałość rozrządu szacuję na 150 000–200 000 km, ale przy intensywnej eksploatacji miejskiej lepiej sprawdzić stan przy 120 000 km.
+W praktyce najlepszy wybór do uniwersalnej pracy to środkowe warianty mocy. Podstawowe odmiany są tańsze, ale przy pełnym załadunku i na trasie szybciej wychodzi brak zapasu momentu.
 {{% /expert %}}
 
 ![Renault Master III furgon L3H2 przy rampie załadunkowej](/images/renault-master-hero.webp)
 
 ## Wersje nadwoziowe Renault Master {#wersje-nadwozia}
 
-Master jest dostępny w kilku podstawowych konfiguracjach nadwoziowych, co czyni go jednym z bardziej elastycznych modeli w klasie:
+Renault Master występował w wielu odmianach roboczych i pasażerskich. To właśnie szerokość gamy nadwozi sprawiła, że model stał się popularną bazą zarówno dla kurierów, ekip budowlanych, jak i producentów zabudów specjalnych.
 
-- **[Furgon (Van)](/modele/renault-master/van/)** – klasyczna zabudowa blaszana, podstawa oferty
-- **[Master osobowy](/modele/renault-master/osobowy/)** – wersja Combi/Bus z przeszkleniem i siedzeniami dla pasażerów
-- **[Master brygadówka](/modele/renault-master/brygadowka/)** – podwójna kabina dla ekip budowlanych
-- **[Master skrzyniowy](/modele/renault-master/skrzyniowy/)** – platforma bez zabudowy, baza pod różne nadbudówki
-- **[Master blaszak](/modele/renault-master/blaszak/)** – pojęcie potoczne na wersję furgon, często używane w ogłoszeniach
-- **[Master plandeka](/modele/renault-master/plandeka/)** – skrzynia z przykryciem plandeką
-- **[Master dCi](/modele/renault-master/dci/)** – artykuł skupiony na szczegółach silnikowych
+- **[Furgon (Van)](/modele/renault-master/van/)** – klasyczny blaszak od **L1H1 do L4H3**, z kubaturą od **8 do 17 m³** i zwykle **3 miejscami** z przodu. To podstawowa wersja do transportu towaru, kurierki i miejskiej logistyki.
+
+- **[Master brygadówka](/modele/renault-master/brygadowka/)** / furgon brygadowy – odmiana z podwójną kabiną dla **6–7 osób**. Ma mniejszą przestrzeń ładunkową, ale dobrze sprawdza się w budowlance i serwisie terenowym.
+
+- **[Master osobowy](/modele/renault-master/osobowy/)** / Combi, Bus – wersje przeszklone, przewożące od **6 do 9 osób**. Często spotyka się tu tylną klimatyzację i układ siedzeń dopasowany do przewozu pracowników albo pasażerów.
+
+- **Podwozie z pojedynczą kabiną** – baza pod skrzynię, izotermę, lawetę i inne zabudowy. W zależności od wersji DMC sięga do **4.5 t**.
+
+- **Podwozie z podwójną kabiną** – rozwiązanie dla ekip, które muszą przewieźć jednocześnie ludzi i sprzęt. Potem na ramie montuje się konkretną zabudowę roboczą.
+
+- **[Master skrzyniowy](/modele/renault-master/skrzyniowy/)** / skrzynia, plandeka – długość zabudowy zwykle wynosi **4.2–4.8 m** zależnie od wersji. To częsty wybór w transporcie lokalnym i dystrybucji.
+
+- **Kontener i chłodnia** – specjalistyczne zabudowy do przewozu towaru objętościowego albo wymagającego temperatury kontrolowanej. Na rynku wtórnym zwykle kosztują wyraźnie więcej niż goły furgon.
+
+- **Kampery i alkowy** – Master jest popularną bazą do zabudów caravaningowych dzięki szerokiej sieci serwisowej i dopuszczalnej masie **3.5–4.5 t**.
 
 ## Spalanie i koszty eksploatacji Mastera {#spalanie-eksploatacja}
 
-Rzeczywiste zużycie paliwa zależy od masy ładunku, trasy i stylu jazdy. Orientacyjne wartości dla najczęściej wybieranych wersji:
+Zużycie paliwa w Masterze zależy głównie od długości auta, masy ładunku i prędkości przelotowej. W praktyce furgon miejski i kontener na trasie potrafią różnić się spalaniem o kilka litrów.
 
 | Silnik | Trasa mieszana | Trasa autostradowa (pełny ład) |
 |--------|---------------|-------------------------------|
@@ -108,46 +144,69 @@ Rzeczywiste zużycie paliwa zależy od masy ładunku, trasy i stylu jazdy. Orien
 | 2.3 dCi 150 KM | 9,5–11,5 l/100 km | 12,0–14,0 l/100 km |
 | 2.3 dCi 180 KM | 10,0–12,5 l/100 km | 12,5–15,0 l/100 km |
 
-Interwał wymiany oleju wynosi 30 000 km lub 2 lata. Wersje Euro 6 wymagają płynu AdBlue – zbiornik o pojemności ok. 17 l wystarcza na 8000–12 000 km.
+Interwał wymiany oleju wynosi **30 000 km lub 2 lata**. Wersje Euro 6 wymagają płynu **AdBlue** – zbiornik o pojemności ok. **17 l** zwykle wystarcza na **8000–12 000 km**.
 
 ## Typowe usterki Renault Master {#usterki-zakup}
 
-Master III jest modelem ogólnie solidnym, ale ma swoje charakterystyczne słabości. Przed zakupem warto sprawdzić:
+Master III uchodzi za solidne auto robocze, ale przy dużych przebiegach liczą się konkretne punkty kontrolne. Najwięcej problemów dotyczy osprzętu diesla, układu oczyszczania spalin i zawieszenia w autach stale jeżdżących pod obciążeniem.
 
-- **Wtryskiwacze diesla** – powyżej 200 000 km mogą wymagać regeneracji lub wymiany; koszt kompletu to 3000–6000 zł
-- **Filtr DPF** – szczególnie problematyczny przy eksploatacji miejskiej z krótkimi trasami; regeneracja pasywna nie zachodzi prawidłowo
-- **Zawieszenie przednie** – wahacze i sworznie zużywają się szybciej przy dużym obciążeniu; warto sprawdzić luzy
-- **EGR i przepływomierz** – standardowe słabości diesli tej klasy; objawy to dym, utrata mocy i błędy OBD
-- **Skrzynia EDC** – automat w pierwszych rocznikach po faceliftingu (2019–2021) zdarzało się przegrzewać przy intensywnym użytkowaniu; nowsze oprogramowanie (aktualizacja 2022+) poprawiło sytuację
-- **Korozja progów** – szczególnie w starszych egzemplarzach z regionów solonych; zawsze sprawdź od spodu
+### Wtryskiwacze 2.3 dCi
 
-## Ceny Mastera
+W egzemplarzach z wysokim przebiegiem wtryski potrafią wymagać regeneracji lub wymiany. Regeneracja to zwykle **500–900 zł/szt.**, nowy wtrysk **1200–1800 zł/szt.**, a komplet z robocizną zamyka się najczęściej w zakresie **3000–7000 zł**.
 
-Zakup Renault Master to wydatek, który zależy od generacji, wersji silnikowej i stanu technicznego – rozstrzał cenowy na rynku wtórnym bywa spory.
+### DPF/SCR/AdBlue
 
-| Generacja / Rocznik | Cena orientacyjna |
-|---------------------|-------------------|
-| Master II (2003–2010) | 10 000–25 000 zł |
-| Master III (2010–2014) | 25 000–50 000 zł |
-| Master III (2015–2019, po liftingu) | 45 000–85 000 zł |
-| Master III (2019–2024, 2.3 dCi nowe) | 80 000–140 000 zł |
-| Nowy Master III L2H2 (2.3 dCi 135) | od ok. 150 000 zł netto |
-| Master E-Tech (elektryczny) | od ok. 280 000 zł netto |
+Przy jeździe miejskiej szybko wychodzą problemy z dopalaniem filtra cząstek stałych i osprzętem SCR. Czyszczenie DPF kosztuje zwykle **600–1000 zł**, nowy filtr **2500–5000 zł**, wtryskiwacz AdBlue **400–900 zł**, a pompa lub moduł SCR **1500–3500 zł**.
 
+### EGR i dolot
 
-{{% youtube %}}
+Typowy zestaw objawów to spadek mocy, dymienie i błędy zapisane w sterowniku. Czyszczenie EGR kosztuje zwykle **200–400 zł**, nowy zawór **700–1500 zł**, a przepływomierz **250–700 zł**.
+
+### Rozrząd osprzętu i łańcuch
+
+W silniku M9T warto kontrolować stan układu po ok. **200 tys. km**, zwłaszcza jeśli pojawia się hałas albo objawy rozciągnięcia. Naprawa zwykle kosztuje **2500–5000 zł**.
+
+### Zawieszenie przednie
+
+Przy dużym obciążeniu szybciej zużywają się elementy przedniego zawieszenia. Wahacz to zwykle **350–700 zł/szt.**, sworzeń **100–250 zł**, łącznik stabilizatora **80–180 zł**, a amortyzator **350–600 zł/szt.**
+
+### Sprzęgło i dwumasa
+
+W mocniejszych wersjach oraz autach jeżdżących z ciężkim ładunkiem trzeba liczyć się z kosztami wymiany kompletu. Zestaw sprzęgła z dwumasą to zwykle **2500–4500 zł**.
+
+### Korozja i podwozie
+
+W starszych autach warto dobrze obejrzeć progi, nadkola i spód nadwozia. Naprawa progów lub nadkoli zaczyna się od ok. **1000 zł za stronę**, a konserwacja podwozia zwykle kosztuje **800–1800 zł**.
 
 ## Porównanie Mastera z konkurencją
 
-Segment dostawczaków to rynek pełen alternatyw – Renault Master mierzy się z rywalami, którzy oferują zbliżone parametry w różnych konfiguracjach cenowych.
+W segmencie dużych dostawczaków najlepiej porównywać auta nie po samych oznaczeniach L2 czy L3, ale po realnej długości, kubaturze i DMC. Poniżej zestawienie dla porównywalnych furgonów około **13 m³** i **3.5 t DMC**.
 
-| Parametr | Renault Master L3H2 | Fiat Ducato L3H2 | Opel Movano C L3H2 | Mercedes Sprinter L2H2 | VW Crafter L3H3 |
-|----------|---------------------|------------------|---------------------|----------------------|-------------------|
-| Długość | 6198 mm | 5998 mm | 5998 mm | 5932 mm | 5986 mm |
-| Paka | 13,0 m³ | 13,0 m³ | 13,0 m³ | 11,0 m³ | 14,4 m³ |
-| Ładowność | 1600 kg (DMC 3,5 t) | 1500 kg | 2254 kg (DMC 4,25 t) | 1200 kg | 1300 kg |
-| Diesel bazowy | 2.3 dCi 135 KM | 2.2 MJT 120 KM | 2.2 MJT 120 KM | 2.0 CDI 116 KM | 2.0 TDI 102 KM |
-| Elektryczny | ✅ E-Tech | ✅ e-Ducato | ✅ Movano-e | ✅ eSprinter | ❌ |
-| Cena L3H2 (netto) | ~150 000 zł | ~150 000 zł | ~170 000 zł | ~195 000 zł | ~185 000 zł |
+| Model | Długość całkowita | Pojemność | Ładowność | Silniki |
+|-------|------------------:|----------:|----------:|---------|
+| Renault Master L3H2 | 6198 mm | 13.0 m³ | ok. 1350–1600 kg | 2.3 dCi 135–180 |
+| Fiat Ducato L3H2 | 5998 mm | 13.0 m³ | ok. 1300–1550 kg | 2.2 MultiJet 120–180 |
+| Mercedes Sprinter FWD/RWD średni | 5932–6967 mm | 11–14 m³ | ok. 1200–1500+ kg | 2.0 CDI 114–190 |
+| VW Crafter L3H3 | 5986 mm | 14.4 m³ | ok. 1300–1500 kg | 2.0 TDI 140–177 |
 
-Master wygrywa ceną, mocą silników i największą ładownością w segmencie 3,5 t. [Fiat Ducato](/modele/fiat-ducato/) oferuje zbliżone parametry przy identycznej cenie. [Opel Movano](/modele/opel-movano/) C to od 2021 bliźniak Ducato (nie Mastera!). [Mercedes Sprinter](/modele/mercedes-sprinter/) – premium z RWD. [VW Crafter](/modele/volkswagen-crafter/) – największa kubatura i AWD.
+Master zwykle broni się **ceną zakupu** i **prostotą serwisu**. Sprinter daje więcej konfiguracji napędu, Crafter ma bardzo dobrą ergonomię kabiny, a [Fiat Ducato](/modele/fiat-ducato/) pozostaje mocnym graczem w zabudowach kamperowych.
+
+Pod względem ładowności Renault Master oferuje konkurencyjne wartości, ale ostateczny wynik zawsze zależy od konkretnej konfiguracji: długości, wysokości, DMC i rodzaju zabudowy.
+
+## Ceny Mastera
+
+Na rynku wtórnym ceny Mastera mocno zależą od rocznika, przebiegu i rodzaju zabudowy. Sam rocznik nie wystarczy – kontener, chłodnia czy plandeka potrafią kosztować wyraźnie więcej niż zwykły furgon.
+
+| Rocznik | Cena orientacyjna | Typowy przebieg |
+|---------|-------------------|-----------------|
+| 2010–2012 | 22 000–38 000 zł | zwykle 250–450 tys. km |
+| 2013–2015 | 30 000–50 000 zł | 220–380 tys. km |
+| 2016–2018 | 42 000–68 000 zł | 180–320 tys. km |
+| 2019–2021, polift | 65 000–105 000 zł | 120–260 tys. km |
+| 2022–2024 | 95 000–145 000 zł | 40–180 tys. km |
+
+Wersje **kontener** lub **plandeka** są zwykle droższe o **10 000–30 000 zł** względem gołego furgonu. **Chłodnia** potrafi podnosić cenę nawet o **20 000–50 000 zł**.
+
+Jeśli patrzysz na auta fabrycznie nowe z końca produkcji Mastera III, warto brać pod uwagę raczej **ostatnie ceny katalogowe przed zmianą generacji**. Dla wersji **2.3 dCi** było to orientacyjnie ok. **145 000–190 000 zł netto** zależnie od długości i mocy.
+
+{{% youtube %}}

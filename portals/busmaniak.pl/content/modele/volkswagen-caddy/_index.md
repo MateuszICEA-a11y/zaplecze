@@ -37,49 +37,54 @@ Historia Volkswagena Caddy zaczęła się w 1979 roku. Przez kolejne generacje m
 
 ### Caddy I (1979–1992, Typ 14D)
 
-Pierwszy Caddy był pickupem na bazie Golfa I. W Europie produkowano go w latach 1979–1992, a w RPA wytwarzano tę koncepcję dłużej.
+Pierwszy Caddy był pickupem na bazie Golfa I i Jetty. W Europie produkowano go w latach 1979–1992, a był to samochód prosty, użytkowy i nastawiony na tani transport.
 
 Najważniejsze cechy tej generacji:
-- bazował na technice Golfa I
-- miał klasyczne, proste nadwozie pickup
-- był nastawiony głównie na tani transport i łatwy serwis
+- pickup na bazie Golfa I/Jetta
+- **2 miejsca**
+- napęd **FWD**
+- produkcja m.in. w **Sarajewie**
 
 ### Caddy II (1995–2004, Typ 9K / Seat Inca)
 
-Druga generacja powstała na bazie Polo i SEAT-a Ibizy 6K. Występowała jako Caddy oraz bliźniaczy Seat Inca, a produkcja zależnie od wersji była związana z Martorell i Poznaniem.
+Druga generacja powstała jako furgon na bazie Polo i Ibizy 6K. To był już wyraźny zwrot w stronę małego auta użytkowego z zabudowanym tyłem.
 
-To był ważny krok w stronę małego auta użytkowego z zabudowanym tyłem. W praktyce Caddy II był bardziej furgonem niż pickupem i wyraźnie lepiej trafiał do firm niż poprzednik.
+Najważniejsze cechy tej generacji:
+- furgon na bazie **Polo/Ibiza 6K**
+- długość około **4,20 m**
+- bliźniaczy model: **Seat Inca**
+- znacznie bardziej użytkowy charakter niż w Caddy I
 
 ### Caddy III (2003–2015, Typ 2K)
 
 To generacja, która zbudowała pozycję modelu w Europie. Caddy III wszedł do gry jako pełnoprawny kombivan z szeroką gamą wersji użytkowych i osobowych.
 
 Kluczowe zmiany:
-- nowa generacja oznaczona jako Typ 2K
-- znacznie szersza oferta nadwozi i silników
+- debiut jako **kombivan**
+- rozstaw osi **2682 mm**
 - od 2007 roku dostępna wersja [Maxi](/modele/volkswagen-caddy/maxi/) z dłuższym rozstawem osi
-- lifting przeprowadzono w 2010 roku
+- lifting przeprowadzono w **2010 roku**
 
 ### Caddy IV (2015–2020, 2K SA / 2KN)
 
-Czwarta generacja była w praktyce głębokim faceliftingiem Caddy III, a nie całkowicie nową konstrukcją. Volkswagen mocno poprawił technikę, multimedia i bezpieczeństwo, ale zachował podstawę znaną z rodziny 2K.
+Czwarta generacja była w praktyce głębokim faceliftingiem Caddy III, a nie całkowicie nową konstrukcją. Volkswagen poprawił technikę, bezpieczeństwo i ofertę silnikową, ale baza pozostała ta sama.
 
 Najważniejsze zmiany:
-- oznaczenia 2K SA / 2KN
-- silniki dostosowane do normy Euro 6
-- odświeżone systemy bezpieczeństwa
-- dopracowane wnętrze i wyposażenie codzienne
+- głęboki facelift Caddy III
+- oznaczenia **2K SA / 2KN**
+- nowe TDI dostosowane do **Euro 6**
+- więcej systemów bezpieczeństwa, przy zachowaniu platformy poprzednika
 
 ### Caddy V (od 2020, Typ SB)
 
-Piąta generacja to już zupełnie inny samochód. Caddy V przeszedł na platformę MQB, dostał cyfrowe zegary, system Travel Assist i bardziej nowoczesną architekturę wnętrza.
+Piąta generacja to już zupełnie inny samochód. Caddy V przeszedł na platformę MQB, dostał cyfrowy kokpit i system Travel Assist, a do tego poprawiono praktyczne wymiary zabudowy.
 
 Najważniejsze zmiany:
-- platforma MQB
-- cyfrowe zegary i nowa elektronika pokładowa
-- nowy rozstaw osi
-- szerszy przedział ładunkowy
-- szerokość między nadkolami **1230 mm**, dzięki czemu można załadować europaletę bokiem
+- platforma **MQB**
+- długość **4500 mm** lub **4853 mm**
+- rozstaw osi **2755 mm** lub **2970 mm**
+- szerokość między nadkolami **1230 mm**
+- cyfrowy kokpit i **Travel Assist**
 
 {{% info title="Platforma MQB" icon="info" %}}Przeskok z wcześniejszej konstrukcji na MQB w Caddy V to nie kosmetyka. Ta zmiana dała nowe systemy wsparcia kierowcy, nowocześniejsze wnętrze i bardziej praktyczną przestrzeń ładunkową.{{% /info %}}
 
@@ -89,52 +94,41 @@ Wymiary i parametry Caddy zależą od wersji nadwozia. W praktyce dla firmy najw
 
 ### Wymiary zewnętrzne i użytkowe Caddy V
 
-| Parametr                              | Caddy Cargo krótkie | Caddy Cargo Maxi | Caddy osobowy | Caddy Maxi/Long osobowy |
-|---------------------------------------|---------------------:|-----------------:|--------------:|------------------------:|
-| Długość (mm)                          | 4500                 | 4853             | 4500          | 4853                    |
-| Rozstaw osi (mm)                      | 2755                 | 2970             | 2755          | 2970                    |
-| Szerokość bez lusterek (mm)           | 1855                 | 1855             | 1855          | 1855                    |
-| Szerokość z lusterkami (mm)           | 2100                 | 2100             | 2100          | 2100                    |
-| Wysokość (mm)                         | ok. 1856             | ok. 1856         | ok. 1856      | ok. 1856                |
-| Objętość przestrzeni ładunkowej (m3)  | 3,1                  | 3,7              | –             | –                       |
-| Długość przestrzeni ładunkowej (mm)   | 1797                 | 2150             | –             | –                       |
-| Szerokość maks. przestrzeni (mm)      | 1614                 | 1614             | –             | –                       |
-| Szerokość między nadkolami (mm)       | 1230                 | 1230             | –             | –                       |
-| Bagażnik do linii okien (l)           | –                    | –                | ok. 1213      | ok. 1720                |
-| Ładowność (kg)                        | ok. 700–723          | ok. 730–776      | –             | –                       |
-| DMC (kg)                              | zwykle 2220–2300     | do ok. 2300–2350 | 2200–2500     | 2300–2500               |
+| Wersja                   | Długość | Rozstaw osi | Szerokość | Wysokość   | Objętość | Długość paki | DMC              | Ładowność       |
+|--------------------------|--------:|------------:|----------:|-----------:|---------:|-------------:|-----------------:|----------------:|
+| Cargo krótki             | 4500 mm | 2755 mm     | 1855 mm   | ok. 1856 mm| 3,1 m3   | 1797 mm      | 2220–2300 kg     | ok. 700–723 kg  |
+| Cargo Maxi/Long          | 4853 mm | 2970 mm     | 1855 mm   | ok. 1856 mm| 3,7 m3   | 2150 mm      | ok. 2300–2350 kg | ok. 730–776 kg  |
+| Osobowy krótki           | 4500 mm | 2755 mm     | 1855 mm   | ok. 1856 mm| –        | –            | 2200–2500 kg     | –               |
+| Osobowy Long             | 4853 mm | 2970 mm     | 1855 mm   | ok. 1856 mm| –        | –            | 2300–2500 kg     | –               |
 
-W krótkim Caddy Cargo zmieścisz **3,1 m3**, a w Maxi **3,7 m3**. Najważniejsza praktyczna zmiana w V generacji to **1230 mm między nadkolami** – to właśnie ta wartość pozwala ładować europaletę bokiem, bez kombinowania z ustawieniem.
+W krótkim Caddy Cargo zmieścisz **3,1 m3**, a w wydłużonym **3,7 m3**. Maksymalna szerokość przestrzeni to **1614 mm**, a **1230 mm między nadkolami** pozwala załadować europaletę bokiem.
 
-W wersjach osobowych bagażnik do linii okien ma około **1213 l** w krótkim nadwoziu i około **1720 l** w odmianie Maxi/Long. Po złożeniu siedzeń wartości są wyraźnie większe, co w praktyce robi z Caddy pełnoprawne auto rodzinno-wypadowe.
+W wersjach osobowych bagażnik do linii okien ma około **1213 l** w krótkim nadwoziu i około **1720 l** w odmianie Long. To właśnie dlatego Caddy w wersji osobowej bywa traktowane jak pełnoprawny rodzinny van, a nie tylko podniesiony kombivan.
 
 ## Silniki Caddy'ego {#silniki}
 
-Gama silnikowa Caddy zmieniała się wraz z generacjami, ale trzon oferty od lat stanowią diesle TDI. W nowszych rocznikach dochodzą benzynowe TSI, a w Caddy V oferta jest już uporządkowana pod normy Euro 6d.
+Gama silnikowa Caddy zmieniała się wraz z generacjami, ale od lat trzon oferty stanowią diesle TDI. W starszych rocznikach liczy się prostota i stan osprzętu, a w nowszych – emisja, serwis i to, czy auto jeździło głównie po mieście czy po trasach.
 
-- **[2.0 TDI](/modele/volkswagen-caddy/tdi/) 75/102/122/150 KM** – w Caddy IV/V występował m.in. w wersjach 75, 102, 122 i 150 KM, zależnie od rynku i roku
-- **1.6 TDI 75/102 KM** – stosowany w III/IV gen.; pasek rozrządu, a typowe problemy to EGR, DPF, wtryski i osprzęt
+- **[2.0 TDI](/modele/volkswagen-caddy/tdi/) 75/102 KM – IV generacja** oraz **102/122/150 KM – V generacja**
+- **1.6 TDI 75/102 KM** – stosowany w III/IV gen.; **pasek rozrządu**, a typowe problemy to EGR, DPF, wtryski i osprzęt
 - **1.5 TSI 114 KM (84 kW)** – turbobenzyna z V generacji
-- **1.0 TSI 116 KM** – benzynowy wariant do spokojniejszej jazdy i krótszych tras
 - **1.9 TDI 75/105 KM** – prosta i ceniona jednostka z wcześniejszych lat
 
 ### Tabela silników Volkswagena Caddy
 
-| Silnik                 | Generacja | Kod silnika | Napęd            | Skrzynia       | Moment obrotowy | Norma Euro | Spalanie / realne spalanie |
-|------------------------|-----------|-------------|------------------|----------------|----------------:|------------|----------------------------|
-| 1.9 TDI 75 KM          | III       | –           | przedni          | manual         | 210 Nm          | –          | realnie zależnie od wersji |
-| 1.9 TDI 105 KM         | III       | –           | przedni          | manual         | 250 Nm          | –          | realnie zależnie od wersji |
-| 1.6 TDI 75 KM          | III/IV    | EA189       | przedni          | manual         | 225 Nm          | –          | realnie zależnie od wersji |
-| 1.6 TDI 102 KM         | III/IV    | EA189       | przedni          | manual/DSG     | 250 Nm          | –          | realnie zależnie od wersji |
-| 2.0 TDI 75 KM          | IV/V      | –           | przedni          | manual         | 225–250 Nm      | Euro 6d*   | ok. 5,3–5,8 l/100 km       |
-| 2.0 TDI 102 KM         | IV/V      | –           | przedni          | manual/DSG     | 280 Nm          | Euro 6d*   | ok. 5,4–5,9 l/100 km       |
-| 2.0 TDI 122 KM         | IV/V      | –           | przedni          | manual/DSG     | 320 Nm          | Euro 6d*   | ok. 5,6–6,1 l/100 km       |
-| 2.0 TDI 150 KM         | IV/V      | –           | przedni/4Motion  | DSG            | 340–360 Nm      | Euro 6d*   | zależnie od wersji         |
-| 1.5 TSI 114 KM (84 kW) | V         | –           | przedni          | manual/DSG     | 220 Nm          | Euro 6d    | ok. 6,5–7,2 l/100 km       |
+| Silnik                 | Generacja | Moc    | Moment | Norma Euro          | Rozrząd          | Średnie spalanie realne |
+|------------------------|-----------|--------|-------:|---------------------|------------------|-------------------------|
+| 1.9 TDI                | III       | 75 KM  | 210 Nm | –                   | –                | 5,5–7,0 l/100 km        |
+| 1.9 TDI                | III       | 105 KM | 250 Nm | –                   | –                | 5,8–7,2 l/100 km        |
+| 1.6 TDI EA189          | III/IV    | 75 KM  | 225 Nm | Euro 5              | pasek rozrządu   | 5,2–6,5 l/100 km        |
+| 1.6 TDI EA189          | III/IV    | 102 KM | 250 Nm | Euro 5/6 zależnie od rocznika | pasek rozrządu | 5,3–6,8 l/100 km        |
+| 2.0 TDI                | IV        | 75 KM  | –      | –                   | –                | –                       |
+| 2.0 TDI                | IV/V      | 102 KM | 280 Nm | Euro 6d w V generacji| –               | 5,4–5,9 l/100 km        |
+| 2.0 TDI                | IV/V      | 122 KM | 320 Nm | Euro 6d             | –                | 5,6–6,1 l/100 km        |
+| 2.0 TDI                | IV/V      | 150 KM | 340 Nm | –                   | –                | ok. 6,0–7,0 l/100 km    |
+| 1.5 TSI                | V         | 114 KM | 220 Nm | Euro 6d             | –                | 6,5–7,2 l/100 km        |
 
-\* W Caddy IV i V zależnie od rynku, rocznika i wersji norma oraz szczegóły oferty różniły się.
-
-Jeśli szukasz diesla do pracy, najbezpieczniejszym wyborem w nowszym aucie zwykle jest **2.0 TDI 102 KM**. W starszych rocznikach wciąż mocną opinię ma **1.9 TDI**, natomiast **1.6 TDI EA189** trzeba kupować po prostu świadomie – tam kluczowy jest stan EGR, DPF, wtrysków i osprzętu, a nie żaden „łańcuch rozrządu”, bo ten silnik ma pasek.
+Jeśli szukasz diesla do pracy, najbezpieczniejszym wyborem w nowszym aucie zwykle jest **2.0 TDI 102 KM**. W starszych rocznikach wciąż mocną opinię ma **1.9 TDI**, natomiast **1.6 TDI EA189** trzeba kupować świadomie – ten silnik ma **pasek rozrządu**, więc przy zakupie sprawdź przede wszystkim EGR, DPF, wtryski i historię serwisową.
 
 ![Volkswagen Caddy V na drodze](/images/volkswagen-caddy-hero.webp)
 
@@ -142,15 +136,15 @@ Jeśli szukasz diesla do pracy, najbezpieczniejszym wyborem w nowszym aucie zwyk
 
 Volkswagen Caddy występował i występuje w kilku wyraźnie różnych odmianach. To ważne, bo „Caddy” może oznaczać i mały furgon dla kuriera, i rodzinnego vana, i mini-kampera.
 
-- **Caddy Cargo** – dostawczy furgon z przegrodą, **2 lub 3 miejsca**, przestrzeń ładunkowa **3,1 m3**
-- **Caddy Cargo Maxi** – wydłużony furgon z większą paką, **3,7 m3**
-- **Caddy Kombi** – wersja użytkowo-osobowa z drugim rzędem siedzeń; coś pomiędzy dostawczakiem a autem rodzinnym
-- **[Caddy osobowy](/modele/volkswagen-caddy/osobowy/) (Life/Style/Move)** – odmiana rodzinna, standardowo **5 miejsc**, w wersji Long opcjonalnie **7 miejsc**
-- **[Caddy Maxi](/modele/volkswagen-caddy/maxi/) / [Long](/modele/volkswagen-caddy/long/)** – wydłużone nadwozie; w III i IV generacji jako Maxi, w V jako normal/Long
-- **Caddy California** – mini-kamper z łóżkiem około **198 x 107 cm**, modułem kempingowym i namiotem tylnym
+- **Caddy Cargo** – dostawczy furgon z przegrodą, **2 lub 3 miejsca**, przestrzeń ładunkowa **3,1 m3**, długość **4500 mm**
+- **Caddy Cargo Maxi/Long** – wydłużony furgon, **2 lub 3 miejsca**, przestrzeń **3,7 m3**, długość **4853 mm**
+- **Caddy Kombi** – zwykle **5 miejsc**, wersja użytkowo-osobowa; może pracować jako auto brygadowe
+- **[Caddy osobowy](/modele/volkswagen-caddy/osobowy/) (Life/Style/Move)** – standardowo **5 miejsc**, w wersji Long opcjonalnie **7 miejsc**, bagażnik około **1213 l** lub **1720 l**
+- **[Caddy Maxi](/modele/volkswagen-caddy/maxi/) / [Long](/modele/volkswagen-caddy/long/)** – wydłużone nadwozie z rozstawem osi **2970 mm**; w układzie 7-osobowym konfiguracja siedzeń **2+3+2**
+- **Caddy California** – mini-kamper z łóżkiem około **198 x 107 cm**, bazujący na wersji osobowej z pakietem kempingowym
 - **Wersje specjalne i zabudowy** – chłodnia, serwis mobilny, taxi, auto dla osób z niepełnosprawnościami, zabudowy warsztatowe
 
-W praktyce wybór wersji zależy od jednego pytania: czy priorytetem jest paka, liczba miejsc czy uniwersalność. Caddy Cargo i Cargo Maxi to typowo robocze narzędzia, Kombi jest kompromisem, a Life/Style/Move celują już w rodzinę i dłuższe wyjazdy.
+W III i IV generacji wydłużona odmiana nosiła nazwę **Maxi**, a w V spotkasz oznaczenie **Long**. W praktyce wybór wersji zależy od jednego pytania: czy priorytetem jest paka, liczba miejsc czy uniwersalność.
 
 {{% expert name="Marek Kowalczyk" %}}Caddy California ma sens wtedy, gdy chcesz spać w aucie, ale nie potrzebujesz pełnego kampera. Łóżko około 198 x 107 cm wystarcza dla dwóch osób, a namiot tylny realnie zwiększa funkcjonalność na postoju.{{% /expert %}}
 
@@ -158,18 +152,19 @@ W praktyce wybór wersji zależy od jednego pytania: czy priorytetem jest paka, 
 
 W segmencie kombivanów i małych furgonów Caddy ma mocnych rywali. Różnice nie sprowadzają się tylko do ceny – liczą się też wymiary, ładowność i charakter auta.
 
-| Model                     | Długość standard (mm) | Długość long (mm) | Objętość ładunkowa (m3) | Ładowność (kg)   | Diesel bazowy      | Cena nowego od |
-|--------------------------|----------------------:|------------------:|------------------------:|-----------------:|--------------------|----------------|
-| VW Caddy Cargo           | 4500                  | 4853              | 3,1–3,7                 | ok. 700–776      | 2.0 TDI 75         | od ok. 115 tys. zł netto |
-| Citroën Berlingo Van M/XL| 4403                  | 4753              | 3,3–4,4                 | do ok. 1000      | 1.5 BlueHDi 100    | zwykle taniej od Caddy |
-| Renault Kangoo Van       | 4486                  | 4910              | 3,3–4,9                 | do ok. 800–1000  | 1.5 Blue dCi 95    | cena pośrodku segmentu |
+| Model                               | Długość standard (mm) | Długość long (mm) | Objętość ładunkowa (m3) | Ładowność (kg)  | Diesel bazowy   | Cena nowego od                 |
+|-------------------------------------|----------------------:|------------------:|------------------------:|----------------:|-----------------|-------------------------------|
+| VW Caddy Cargo                      | 4500                  | 4853              | 3,1–3,7                 | ok. 700–776     | 2.0 TDI 102 KM  | ok. **115 tys. zł netto**     |
+| Citroën Berlingo Van M/XL           | 4403                  | 4753              | 3,3–4,4                 | do ok. 1000     | 1.5 BlueHDi 100 | ok. **95–105 tys. zł netto**  |
+| Renault Kangoo Van                  | 4486                  | 4910              | 3,3–4,9                 | do ok. 800–1000 | 1.5 Blue dCi 95 | ok. **100–110 tys. zł netto** |
+| Ford Transit Connect/Tourneo Connect| ok. 4500              | ok. 4850          | –                       | –               | –               | oferta zbliżona konstrukcyjnie |
 
-| Ocena                     | VW Caddy Cargo | Citroën Berlingo Van | Renault Kangoo Van |
-|--------------------------|----------------|----------------------|--------------------|
-| Mocne strony             | jakość wykończenia, MQB, wartość rezydualna | cena, ładowność | praktyczność, mocna oferta użytkowa |
-| Słabe strony             | wyższa cena zakupu | zwykle słabsze postrzeganie jakości | mniej prestiżowy wybór niż VW |
+| Ocena         | VW Caddy Cargo                             | Citroën Berlingo Van                | Renault Kangoo Van                 |
+|---------------|---------------------------------------------|-------------------------------------|------------------------------------|
+| Mocne strony  | jakość wykończenia, MQB, wartość rezydualna | cena, ładowność                     | praktyczność, mocna oferta użytkowa |
+| Słabe strony  | wyższa cena zakupu                          | zwykle słabsze postrzeganie jakości | mniej prestiżowy wybór niż VW      |
 
-Warto też pamiętać, że **Ford Transit Connect nowej generacji jest technicznie spokrewniony z Caddy**. To oznacza zbliżoną bazę techniczną, choć różnice w konfiguracji i ofercie rynkowej nadal mają znaczenie przy zakupie.
+Warto też pamiętać, że **Ford Transit Connect nowej generacji jest technicznie spokrewniony z Caddy**. To oznacza zbliżoną bazę techniczną i podobne gabaryty, choć przy zakupie nadal liczy się konkretna konfiguracja i wyposażenie.
 
 Caddy zwykle wygrywa jakością kabiny i tym, jak jeździ. Berlingo i Kangoo częściej kontratakują ceną, objętością ładunkową albo wyższą ładownością w części wersji.
 
@@ -202,9 +197,11 @@ W nowszych Caddy diesel **2.0 TDI** jest rozsądnym wyborem, ale koszty napraw b
 
 - **EGR** – objawy: falowanie obrotów, check engine, spadek mocy; zwykle **1000–2000 zł**
 - **AdBlue / NOx** w nowszych wersjach – objawy: komunikaty o emisji, ograniczenie możliwości rozruchu, błędy układu; naprawy zwykle **1500–4000 zł**
-- **wtryski / pompa wysokiego ciśnienia** – koszt zależy od zakresu uszkodzenia i nie ma jednej typowej kwoty
+- **wtryskiwacze** – regeneracja zwykle **700–1200 zł/szt.**, nowy wtryskiwacz często **1200–2000 zł/szt.**
+- **pompa wysokiego ciśnienia** – regeneracja zwykle **1500–3000 zł**, nowa kosztuje więcej
+- **DPF** – czyszczenie zwykle **800–1500 zł**, wymiana to zwykle kilka tysięcy złotych
 
-### 1.0 / 1.5 TSI
+### 1.5 TSI
 
 Benzynowe TSI są sensowną opcją do krótszych tras i jazdy mieszanej. Typowe problemy nie wyglądają tu tak groźnie jak w dieslach z zapchanym DPF, ale osprzęt też potrafi upomnieć się o budżet.
 
@@ -225,9 +222,11 @@ Automaty DSG poprawiają komfort, ale przy zaniedbanym serwisie potrafią wygene
 Przy autach flotowych i dostawczych często właśnie te drobiazgi dają o sobie znać najszybciej. Same części zwykle nie są bardzo drogie, ale liczba usterek potrafi irytować.
 
 - **łączniki stabilizatora** – objawy: stuki z przodu; zwykle **100–250 zł**
-- **tuleje** – objawy: stuki, pływanie auta, gorsze prowadzenie
-- **przesuwne drzwi** – warto sprawdzić mechanizmy i prowadzenie
-- **czujniki parkowania, kamera cofania, infotainment** – typowe problemy osprzętu elektrycznego przy eksploatacji miejskiej i dostawczej
+- **tuleje zawieszenia** – objawy: stuki, pływanie auta, gorsze prowadzenie; zwykle **200–600 zł** za oś/przód zależnie od zakresu
+- **przesuwne drzwi** – sprawdź rolki i prowadnice; naprawa zwykle **300–800 zł**
+- **czujniki parkowania** – zwykle **100–250 zł/szt.**
+- **kamera cofania** – zwykle **300–1000 zł**
+- **infotainment** – naprawa od kilkuset do około **2000 zł** zależnie od usterki
 
 Koszty serwisowe Caddy są zwykle wyższe niż w tańszych rywalach. Z drugiej strony części są szeroko dostępne, więc przy dobrze wybranym warsztacie da się utrzymać auto bez przepłacania.
 
@@ -237,22 +236,25 @@ Koszty serwisowe Caddy są zwykle wyższe niż w tańszych rywalach. Z drugiej s
 
 Ceny Volkswagena Caddy mocno zależą od generacji, przebiegu, wersji nadwozia i tego, czy mówimy o aucie „do roboty”, czy o zadbanym osobowym egzemplarzu. Największa różnica zwykle dotyczy stanu technicznego i historii eksploatacji, a nie samego rocznika.
 
-| Generacja / rocznik        | Egzemplarz do pracy | Zadbany osobowy | Maxi/Long | Typowy przebieg |
-|----------------------------|--------------------:|----------------:|----------:|-----------------|
-| Caddy II 1995–2004         | **5–15 tys. zł**    | **5–15 tys. zł**| –         | zwykle wysoki |
-| Caddy III 2003–2010        | **10–22 tys. zł**   | **18–28 tys. zł** | zwykle drożej | zwykle wysoki |
-| Caddy III FL 2010–2015     | **20–40 tys. zł**   | **20–40 tys. zł** | zwykle **+5–10 tys. zł** | średni do wysokiego |
-| Caddy IV 2015–2020         | **35–65 tys. zł**   | **55–80 tys. zł** | zwykle drożej | średni |
-| Caddy V 2020–2022          | **70–110 tys. zł**  | **70–110 tys. zł** | zależnie od wersji | niższy do średniego |
-| Caddy V 2023–2025          | **95–140 tys. zł**  | **95–140 tys. zł** | zależnie od wersji i VAT | niski |
-| Caddy California           | –                   | **150–220 tys. zł** | –         | zwykle niski lub średni |
+| Rocznik       | Typowy przedział cenowy |
+|---------------|------------------------:|
+| 2005–2007     | **10–18 tys. zł**       |
+| 2008–2010     | **14–24 tys. zł**       |
+| 2011–2013     | **20–32 tys. zł**       |
+| 2014–2015     | **28–40 tys. zł**       |
+| 2016–2017     | **40–55 tys. zł**       |
+| 2018–2020     | **55–80 tys. zł**       |
+| 2021–2022     | **75–105 tys. zł**      |
+| 2023–2024     | **95–140 tys. zł**      |
+
+Wersje osobowe oraz odmiany **Maxi/Long** zwykle kosztują o **5–15 tys. zł** więcej niż bazowy furgon z podobnego rocznika i w podobnym stanie. Najmocniej widać to przy zadbanych autach rodzinnych i egzemplarzach z niskim przebiegiem.
 
 ### Ceny nowych egzemplarzy
 
-| Wersja                         | Cena orientacyjna |
-|--------------------------------|-------------------|
-| Nowy Caddy V Van 2.0 TDI 75    | od ok. **115 tys. zł netto** |
-| Nowy Caddy V Maxi Van          | od ok. **130 tys. zł netto** |
-| Caddy California mini kamper   | od ok. **180 tys. zł brutto** |
+| Wersja                       | Cena orientacyjna                |
+|------------------------------|----------------------------------|
+| Nowy Caddy V Van 2.0 TDI 102 KM | od ok. **115 tys. zł netto** |
+| Nowy Caddy V Maxi Van        | od ok. **130 tys. zł netto**     |
+| Caddy California mini kamper | od ok. **180 tys. zł brutto**    |
 
-Na rynku wtórnym najtańsze sztuki zwykle wymagają wkładu. W przypadku Caddy oznacza to najczęściej poprawki blacharskie, zawieszenie, osprzęt diesla albo skrzynię DSG. Zadbane osobowe wersje i odmiany Maxi/Long trzymają cenę wyraźnie lepiej niż robocze furgony.
+Na rynku wtórnym najtańsze sztuki zwykle wymagają wkładu. W przypadku Caddy oznacza to najczęściej poprawki blacharskie, zawieszenie, osprzęt diesla albo skrzynię DSG.

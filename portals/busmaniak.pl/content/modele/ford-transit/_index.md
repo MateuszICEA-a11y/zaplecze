@@ -30,148 +30,244 @@ sources:
 
 ## Historia i generacje Forda Transit
 
-[Ford Transit](https://pl.wikipedia.org/wiki/Ford_Transit) jest produkowany nieprzerwanie od 1965 roku – do dziś sprzedano ponad 13 milionów egzemplarzy, co czyni go numerem 1 wśród dużych furgonetek na świecie. Przez ten czas model przechodził gruntowne modernizacje; dla rynku wtórnego i użytkowego liczą się dwie ostatnie generacje:
+Ford Transit jest produkowany nieprzerwanie od 1965 roku. Dla kupującego używanego dostawczaka najważniejsze są dziś ostatnie generacje dużego Transita, bo to one dominują na rynku wtórnym i w ogłoszeniach flotowych.
 
-- **Transit VI (2000–2006)** – ostatnia generacja z napędem tylnym jako standardem, dziś rzadkość na rynkach UE
-- **Transit VII (2006–2014)** – pierwsza generacja z napędem przednim (FWD) jako opcją bazową, silniki Duratorq 2.2 TDCi w wariantach 85, 100, 115, 125, 140 i 155 KM; ta generacja dominuje dziś na polskim rynku wtórnym
-- **Transit VIII (od 2014)** – aktualna generacja, produkowana w zakładach Forda w Kocaeli w Turcji; facelifting 2019 przyniósł zmodernizowany przód i ulepszone układy wspomagania kierownicy, facelifting 2024 wprowadził 10-biegowy automat i odświeżone wnętrze
+Trzeba też uporządkować nazewnictwo. Duży Ford Transit 2014–obecnie bywa opisywany jako Mk8 / VIII generacja w uproszczonej nomenklaturze, ale nie wolno mylić go z modelem Transit Custom.
 
-Warto pamiętać, że Transit był montowany również w Polsce – w Płońsku, w latach 1997–2000, co wpłynęło na wczesną popularność modelu na polskim rynku. W ciągu ostatniej dekady sprzedaż Transitów wzrosła o 52% – między rokiem 2014 a 2024 Ford umocnił swoją pozycję lidera segmentu mimo rosnącej konkurencji ze strony Sprintera i Craftera.
+### Transit VI (2000–2006)
 
-Transit VII jest wciąż popularny ze względu na cenę – jego słabe punkty to łańcuch rozrządu i korozja, które omówię w dalszej części artykułu.
+To generacja, która mocno unowocześniła ofertę i była oferowana z napędem FWD i RWD, zależnie od wersji.
+
+- debiut nowej generacji dużego Transita
+- w gamie były wersje z napędem przednim i tylnym
+- pojawiły się różne odmiany nadwoziowe: furgon, kombi i podwozie
+- to dziś starsza, wyraźnie mniej spotykana baza na rynku UE
+
+### Transit VII (2006–2013)
+
+To właśnie ten Transit najczęściej trafia dziś do budżetowych zakupów firmowych. Jest tani, ale wymaga dokładnego sprawdzenia stanu technicznego.
+
+- lifting wprowadzony w 2006 roku
+- silniki 2.2 TDCi: **85 / 100 / 110 / 115 / 140 KM**
+- silniki 2.4 TDCi: **115 / 140 KM**
+- zmieniono wnętrze i elektronikę
+- ta generacja wciąż mocno trzyma się na polskim rynku wtórnym
+
+### Transit 2014–2019
+
+To całkowicie nowa generacja dużego Transita. W praktyce właśnie od tego modelu zaczyna się współczesny Transit, którego najczęściej porównuje się dziś ze Sprinterem, Crafterem i Masterem.
+
+- całkowicie nowa konstrukcja dużego Transita
+- dostępne wersje **FWD, RWD i AWD**
+- szeroka gama nowych nadwozi i konfiguracji użytkowych
+- na wybranych rynkach dostępne było DMC do **5,0 t**
+- wyraźnie rozdzielono duży Transit od linii Transit Custom
+
+### Facelifting 2019–2023
+
+Po modernizacji Ford poprawił przede wszystkim układ napędowy i wyposażenie wspomagające kierowcę.
+
+- w gamie pojawił się silnik **2.0 EcoBlue**
+- zmieniono pas przedni
+- doszły nowe systemy bezpieczeństwa
+- rozwijano wersje użytkowe pod różne DMC i zabudowy
+
+### Facelifting 2024–obecnie
+
+Nowsze odmiany skupiają się głównie na elektronice pokładowej i napędach zelektryfikowanych.
+
+- nowe multimedia
+- w nowszych wersjach pojawiła się **8-biegowa automatyczna skrzynia biegów**
+- dalej rozwijana jest gama **E-Transit**
+- utrzymano szeroką ofertę wersji dostawczych i zabudów specjalnych
+
+Transit VII nadal kusi ceną zakupu, ale to właśnie w tej generacji najczęściej wychodzą korozja i problemy z rozrządem. W nowszym Transicie kluczowe są z kolei historia serwisowa, stan osprzętu diesla i dobór wersji napędowej do realnej pracy.
 
 {{% info title="Transit VII na rynku wtórnym" icon="engineering" %}}
-Kupując Transita VII (2006–2014) warto zwrócić szczególną uwagę na hałas z okolicy silnika (łańcuch rozrządu) i stan progów oraz nadkoli (korozja). Koszty naprawy łańcucha mogą wynosić 2000–3500 zł, a korozja progów to często kilkanaście tysięcy złotych prac blacharsko-lakierniczych.
+Kupując Transita VII (2006–2014) warto zwrócić szczególną uwagę na hałas z okolicy silnika i stan progów oraz nadkoli. Zaniedbany egzemplarz szybko kasuje oszczędność z niskiej ceny zakupu.
 {{% /info %}}
 
 ## Dane techniczne i wymiary Forda Transit
 
+Wymiary dużego Forda Transit trzeba czytać ostrożnie, bo różnice między FWD i RWD nie kończą się na samym napędzie. Zmieniają się też wysokość podłogi, ładowność i dostępne konfiguracje DMC.
+
 ### Konfiguracje nadwozia
 
-Transit VIII jest dostępny w 4 długościach (L1–L4) i do 3 wysokościach (H1–H3), zależnie od wersji. Nie każda kombinacja jest produkowana – najdłuższy L4 występuje tylko z H3.
+Duży Transit występuje w kilku długościach i wysokościach, ale konkretne parametry zależą od wersji napędowej i zabudowy. Szerokość przestrzeni ładunkowej między nadkolami wynosi **1392 mm**, a szerokość maksymalna **1784 mm**.
 
-| Wersja | Dł. całk. (mm) | Poj. ładowni | Europalety | DMC (kg) |
-|--------|----------------|--------------|------------|----------|
-| L1H1 | 4932 | 6,0 m³ | 2 | 3500 |
-| L2H2 | 5531 | 9,5 m³ | 3 | 3500 |
-| L3H2 | 6019 | 11,8 m³ | 4 | 3500 / 4700 |
-| L3H3 | 6019 | 13,6 m³ | 4 | 3500 / 4700 |
-| L4H3 | 6629 | 15,1 m³ | 4–5 | 4700 |
+| Wersja | Napęd | Rozstaw osi | Długość całkowita | Wysokość całkowita | Długość przestrzeni ładunkowej | Wysokość ładowni | Pojemność ładowni | DMC | Ładowność | Szerokość między nadkolami | Szerokość maks. |
+|--------|-------|-------------|-------------------|--------------------|-------------------------------|------------------|-------------------|-----|-----------|----------------------------|-----------------|
+| L3H2 | FWD | do weryfikacji | do weryfikacji | do weryfikacji | do weryfikacji | do weryfikacji | do weryfikacji | **3500 kg** | do **1600 kg** | **1392 mm** | **1784 mm** |
+| L3H3 | FWD | do weryfikacji | do weryfikacji | do weryfikacji | do weryfikacji | do weryfikacji | do weryfikacji | **3500 kg** | do **1600 kg** | **1392 mm** | **1784 mm** |
+| L4H3 | RWD | do weryfikacji | **6629 mm** | do weryfikacji | do weryfikacji | do weryfikacji | **15,1 m³** | **4700 kg** | do **2300 kg** | **1392 mm** | **1784 mm** |
 
-Ładowność zależy od wersji silnikowej i DMC:
-- do 2300 kg przy DMC 4700 kg (kategoria C1)
-- do 1600 kg przy DMC 3500 kg (kategoria B)
+Najważniejsze w praktyce są dwie rzeczy:
 
-### Wymiary szczegółowe – L2H2 (najpopularniejszy)
+- przy **DMC 3500 kg** zwykle celujesz w prawo jazdy kategorii B
+- przy cięższych odmianach, zwłaszcza **4700 kg**, rośnie potencjalna ładowność, ale wchodzą już ograniczenia wynikające z wyższej kategorii pojazdu
 
-- **Długość całkowita** – 5531 mm
-- **Szerokość z lusterkami** – 2474 mm
-- **Szerokość bez lusterek** – 2059 mm
-- **Wysokość** – 2547 mm
-- **Długość ładowni** – 3300 mm
-- **Szerokość ładowni** – 1784 mm
-- **Wysokość ładowni** – 1786 mm
-- **Pojemność ładowni** – 9,5 m³
-- **Europalety** – 3
+### Co sprawdzić przed zakupem pod kątem wymiarów
+
+Jeśli kupujesz Transita pod konkretną robotę, sam kod L/H nie wystarczy. Sprawdź jeszcze:
+
+- typ napędu: **FWD, RWD albo AWD**
+- DMC z dowodu i tabliczki
+- długość przestrzeni ładunkowej pod twoje ładunki lub zabudowę
+- wysokość auta z uwzględnieniem garaży, ramp i stref miejskich
 
 ## Silniki Transita
 
+W dużym Transicie najczęściej spotkasz dwie rodziny diesli: starsze **2.2 TDCi** i nowsze **2.0 EcoBlue**. Różnice między nimi są istotne nie tylko w kulturze pracy, ale też w osprzęcie, normach emisji i kosztach późniejszych napraw.
+
+| Silnik | Lata | Moc | Moment | Norma Euro | Rozrząd | Skrzynie | Napęd | Spalanie realne | AdBlue / DPF |
+|--------|------|-----|--------|------------|---------|----------|-------|-----------------|--------------|
+| 2.2 TDCi | 2014–2016 | **100 / 125 / 155 KM** | do weryfikacji | do weryfikacji | do weryfikacji | do weryfikacji | do weryfikacji | do weryfikacji | DPF – tak, AdBlue – do weryfikacji |
+| 2.0 EcoBlue | od 2016 | **105 / 130 / 170 / 185 KM** | do weryfikacji | do weryfikacji | do weryfikacji | **6-biegowy manual, a w nowszych rocznikach także 8-biegowy automat** | FWD / RWD / AWD zależnie od wersji | **8,0–10,0 l/100 km** w furgonie FWD 130 KM, **9,0–12,0 l/100 km** w cięższych RWD/L4H3 | AdBlue i DPF – zależnie od wersji i normy |
+
 ### 2.0 EcoBlue (od 2016)
 
-Obecny silnik Transita VIII to czterocylindrowy diesel 2.0 EcoBlue z turbodoładowaniem zmiennej geometrii. Produkowany w czterech wersjach mocy:
+To podstawowy silnik współczesnego Transita. Występuje w kilku wariantach mocy i zależnie od wersji może współpracować z napędem FWD, RWD albo AWD.
 
-- **105 KM / 360 Nm** – wersja bazowa dla lżejszych zastosowań
-- **130 KM / 385 Nm** – najpopularniejsza wersja dla L2 i L3
-- **170 KM / 390 Nm** – do cięższych konfiguracji i AWD
-- **185 KM / 415 Nm** – wersja biturbo, dla L3 i L4 z DMC 4700 kg
-
-Skrzynie biegów:
-- **6-biegowa manualna** – standard we wszystkich wersjach mocy
-- **6-biegowy automat SelectShift** – opcja dla 130 i 170 KM
-- **10-biegowy automat** – dostępny od faceliftingu 2024, dla 185 KM
-
-Napęd: standardowo przedni (FWD), opcjonalnie tylny (RWD) lub AWD dla wersji 170 KM.
+- dostępne odmiany mocy: **105 / 130 / 170 / 185 KM**
+- w nowszych rocznikach spotkasz także **8-biegowy automat**
+- w lekkim furgonie FWD 130 KM realne spalanie zwykle mieści się w przedziale **8,0–10,0 l/100 km**
+- cięższe odmiany RWD i L4H3 potrafią zużywać około **9,0–12,0 l/100 km**
 
 ### 2.2 TDCi (2014–2016)
 
-Pierwsza seria Transita VIII jeździła jeszcze z poprzednią jednostką Duratorq 2.2 TDCi:
+To silnik z pierwszych lat produkcji nowej generacji dużego Transita. Dziś najczęściej występuje w tańszych egzemplarzach flotowych i poleasingowych.
 
-- **100 KM / 310 Nm**
-- **125 KM / 370 Nm**
-- **155 KM / 385 Nm**
-
-Silnik ten ma gorszą kulturę pracy niż EcoBlue i identyczny problem z wtryskiwaczami co Transit VII. Od 2016 roku wycofany na rzecz 2.0 EcoBlue.
+- warianty mocy: **100 / 125 / 155 KM**
+- starsza konstrukcja niż 2.0 EcoBlue
+- częściej pojawiają się pytania o wtryski i osprzęt
+- zakup ma sens głównie wtedy, gdy auto ma potwierdzony serwis i dobry stan blacharski
 
 {{% expert name="Marek Kowalczyk" %}}
-W mojej ocenie Ford Transit VIII z silnikiem 2.0 EcoBlue 130 KM to aktualnie najlepszy wybór w segmencie – silnik jest mniej awaryjny niż poprzednie 2.2 TDCi, a moc wystarczająca dla zdecydowanej większości zastosowań w wersji L2 i L3. Jeśli kupujesz używany egzemplarz sprzed 2019 roku, koniecznie sprawdź historię serwisową wtryskiwaczy – to największe ryzyko przy tym silniku.
+Jeśli szukasz używanego Transita do normalnej pracy kurierskiej, serwisowej albo pod lekką zabudowę, najbezpieczniej celować w 2.0 EcoBlue 130 KM z udokumentowaną obsługą. Sama moc nie załatwia sprawy – ważniejsze są stan wtrysku, DPF i to, czy auto nie było stale przeciążane.
 {{% /expert %}}
-
 
 ![Ford Transit VIII furgon](/images/ford-transit-hero.webp)
 
 ## Wersje nadwoziowe Forda Transit
 
-Ford Transit VIII jest oferowany w czterech podstawowych wersjach zabudowy:
+To jeden z powodów, dla których Transit tak dobrze trzyma się w firmach. Ford daje szeroki wybór nadwozi, DMC i napędów, więc łatwiej dobrać bazę pod konkretną robotę niż próbować dopasować jedną uniwersalną wersję do wszystkiego.
 
-- [**Furgon**](/modele/ford-transit/van/) – zamknięta ładownia ze skrzydłowymi drzwiami tylnymi, dostępny w L1–L4 i H1–H3; najpopularniejsza wersja na rynku
-- [**Kombi**](/modele/ford-transit/kombi/) – okna w bocznych ścianach i siedzenia dla pasażerów (do 17 osób), popularne w transporcie osobowym i szkołach
-- [**Skrzyniowy**](/modele/ford-transit/long/) – platforma z odkrytą skrzynią ładunkową, dostępny na podwoziu L2 i L3; DMC do 4700 kg
-- **Brygadówka (kabina załogi)** – podwójna kabina z czterema drzwiami i krótką ładownią lub skrzynią, popularna w budownictwie
+- [**Furgon**](/modele/ford-transit/van/) – 2–3 miejsca z przodu, zamknięta paka, typowe DMC **3500 / 3900 / 4700 kg**; dostępne wersje **FWD, RWD i AWD** zależnie od odmiany. Najczęstszy wybór do kurierski, serwisu i transportu towaru.
+- **Van brygadowy / brygadówka** – zwykle 2–3 miejsca z przodu plus dodatkowy rząd siedzeń, krótsza część ładunkowa; popularny w budownictwie i ekipach montażowych. W zależności od wersji występuje jako **FWD, RWD lub AWD**.
+- [**Kombi**](/modele/ford-transit/kombi/) / **minibus** – od kilku miejsc aż do **17 osób**; używany do przewozu pracowników, pasażerów i transportu specjalnego. Typowe DMC to **3500 / 3900 / 4700 kg**.
+- **Podwozie do zabudowy** – baza pod kontener, pomoc drogową, zabudowę warsztatową albo specjalistyczną. Dostępne w kilku rozstawach osi i wariantach DMC, zależnie od rynku i zabudowy.
+- [**Skrzynia / skrzyniowy**](/modele/ford-transit/long/) – otwarta paka do materiałów budowlanych, maszyn i ładunków gabarytowych. Występuje w kilku rozstawach osi i wariantach DMC, zależnie od rynku i zabudowy.
+- **Wywrotka** – robocza odmiana dla budowlanki, zieleni miejskiej i usług komunalnych. Najczęściej wybierana tam, gdzie liczy się szybki zrzut ładunku i prosta zabudowa.
+- **Izoterma / chłodnia** – wersje pod transport spożywczy i farmaceutyczny. Cena zabudowy mocno wpływa na wartość auta używanego.
+- **Kamper / baza pod kampera** – Transit jest regularnie wybierany jako baza pod zabudowę wyprawową i turystyczną. W praktyce liczą się tu głównie długość, wysokość dachu i DMC.
+- **Wersje AWD** – przydają się tam, gdzie auto pracuje na budowie, w lesie albo w zimowych warunkach. Nie każda wersja nadwozia i DMC była oferowana z każdym napędem, dlatego zawsze trzeba sprawdzić konkretną konfigurację.
 
-Każda wersja jest dostępna z napędem FWD lub RWD – wersje z napędem tylnym (oznaczenie RWD) mają wyższą ładowność przy tym samym DMC.
+W praktyce wybór wygląda tak: do miejskiej dystrybucji zwykle lepiej wypada **FWD**, do cięższej zabudowy i wyższych DMC częściej wybierany jest **RWD**, a do pracy w trudnych warunkach sens ma **AWD**.
 
 ## Typowe usterki Ford Transit
 
-### 2.0 EcoBlue
-
-- **Wtryskiwacze** – wycieki oleju lub paliwa przy uszczelnieniu; wymiana jednej sztuki to koszt 1000–1500 zł z częścią i robocizną; objaw to biały dym po zimnym starcie i spadek mocy
-- **DPF (filtr cząstek stałych)** – zatykanie przy krótkich trasach miejskich; regeneracja 400–800 zł, wymiana 2000–4000 zł
-- **Turbosprężarka** – zdarza się przy przebiegach powyżej 200 000 km i przy nieprawidłowej obsłudze oleju; wymiana 2500–4500 zł
+Transit nie jest autem bezproblemowym, ale większość typowych usterek jest dobrze znana warsztatom. Kluczowe jest to, żeby patrzeć nie tylko na sam silnik, lecz także na skrzynię, korozję i osprzęt eksploatacyjny przy dużych przebiegach.
 
 ### 2.2 TDCi
 
-- **Łańcuch rozrządu** – rozciąganie łańcucha i zużycie napinaczy; objaw to metaliczny stukot zimnym silnikiem; naprawa 2000–3500 zł; ignorowanie prowadzi do skoku łańcucha i zniszczenia silnika
-- **Wtryskiwacze** – te same problemy co w 2.0 EcoBlue, ale częstsze; zalecana weryfikacja i czyszczenie co 100 000 km
-- **Uszczelka pod głowicą** – przy zaniedbanych wymianach oleju i przegrzaniach, dotyczy głównie starszych egzemplarzy
+W starszych egzemplarzach to właśnie ten silnik najczęściej generuje największe wydatki po zakupie.
 
-### Skrzynia biegów i nadwozie
+- **wtryskiwacze** – objawy to nierówna praca, dymienie, spadek mocy i trudniejszy rozruch; problemy często wychodzą po **180–250 tys. km**  
+  - regeneracja: **500–900 zł/szt.**
+  - nowy wtryskiwacz: **1200–2000 zł/szt.**
+- **turbosprężarka** – przy zaniedbanych wymianach oleju pojawia się gwizd, spadek mocy i tryb awaryjny, zwykle po większych przebiegach  
+  - regeneracja turbiny: **1500–2500 zł**
+  - nowa turbina: **2500–4500 zł**
+- **DPF** – przy krótkich trasach i jeździe miejskiej może się zapychać; objawy to częste wypalanie, kontrolki i spadek osiągów, zwykle po **180–250 tys. km**  
+  - komplet DPF z montażem: **2500–5000 zł**
 
-- **Synchronizatory 3. i 4. biegu (skrzynia manualna)** – twarde wbijanie biegów; objaw narasta stopniowo; naprawa 1500–2500 zł
-- **Korozja progów i nadkoli** – dotyczy głównie Transita VII i pierwszych egzemplarzy VIII; progresywna, wymaga interwencji przed sezonem zimowym
+### 2.0 EcoBlue
+
+Nowszy diesel jest nowocześniejszy, ale też wrażliwy na serwis i styl eksploatacji.
+
+- **wtryskiwacze** – objawy podobne jak w 2.2 TDCi: nierówna praca, dymienie, gorszy rozruch; problemy potrafią wyjść po **180–250 tys. km**  
+  - regeneracja: **500–900 zł/szt.**
+  - nowy wtryskiwacz: **1200–2000 zł/szt.**
+- **turbina** – przy opóźnionych wymianach oleju albo ciężkiej pracy pod obciążeniem dochodzi do zużycia po większych przebiegach  
+  - regeneracja: **1500–2500 zł**
+  - nowa turbina: **2500–4500 zł**
+- **DPF** – typowy problem w autach jeżdżących stale po mieście i na krótkich odcinkach  
+  - komplet DPF z montażem: **2500–5000 zł**
+
+### Skrzynie biegów i sprzęgło
+
+Tu dużo zależy od tego, czy auto jeździło puste, czy stale pod obciążeniem.
+
+- **sprzęgło** – objawy to ślizganie, szarpanie przy ruszaniu i twardy pedał; zużycie często wychodzi po **180–250 tys. km**  
+  - wymiana kompletu sprzęgła: **1800–3200 zł**
+- **sprzęgło z kołem dwumasowym** – w ciężej eksploatowanych autach dochodzą drgania i stuki przy ruszaniu  
+  - komplet ze sprzęgłem i dwumasą: **2800–5000 zł**
+- **manualna skrzynia biegów** – z czasem mogą pojawić się problemy z wybieraniem przełożeń i narastający opór przy zmianie biegów
+
+### Zawieszenie i hamulce
+
+Dostawczak pracujący z ładunkiem zużywa podwozie szybciej niż osobówka. To normalne, ale trzeba liczyć koszty.
+
+- **łożysko / piasta koła** – objawy to buczenie narastające z prędkością i luz koła; zwykle problem wychodzi po większych przebiegach flotowych  
+  - koszt: **400–900 zł/strona**
+- elementy zawieszenia i hamulców zużywają się szybciej w autach pracujących stale z dużym obciążeniem
+- przy oględzinach warto sprawdzić zużycie tarcz, stan zacisków i ewentualne stuki na nierównościach
+
+### Korozja i nadwozie
+
+Starsze roczniki, szczególnie intensywnie eksploatowane zimą, potrafią korodować wyraźnie szybciej niż wynikałoby to z wieku.
+
+- **progi i okolice nadkoli** – najczęstsze miejsca korozji; im wcześniej zareagujesz, tym taniej  
+  - naprawa progu z lakierowaniem: **1500–3000 zł/strona**
+- korozja zwykle pojawia się w autach kilkunastoletnich albo po naprawach blacharskich wykonanych po kosztach
+- przy zakupie oglądaj nie tylko lakier z zewnątrz, ale też ranty, podłogę i spód zabudowy
+
+### Elektronika
+
+W nowszych Transitach elektroniki jest więcej, więc rośnie też liczba drobnych usterek.
+
+- problemy mogą dotyczyć osprzętu silnika, czujników i układów odpowiedzialnych za emisję spalin
+- objawy to komunikaty błędów, tryb awaryjny albo nieregularna praca po rozruchu
+- w autach flotowych warto sprawdzić historię wizyt serwisowych, bo część usterek była rozwiązywana etapami
 
 ## Porównanie Transita z konkurencją
 
-Transit walczy w segmencie dużych furgonetek z czterema głównymi rywalami:
+Ford Transit walczy w segmencie dużych furgonów z kilkoma bardzo mocnymi rywalami. Sama moc silnika mówi tu niewiele – ważniejsze są napędy, DMC, możliwości zabudowy i późniejsze koszty utrzymania.
 
-| Model | Silniki (KM) | Max poj. (m³) | Max ład. (kg) | Napęd |
-|-------|-------------|---------------|---------------|-------|
-| Ford Transit VIII | 105–185 | 15,1 | 2300 | FWD/RWD/AWD |
-| Mercedes Sprinter W907 | 114–190 | 17,0 | 2200 | FWD/RWD/AWD |
-| Volkswagen Crafter | 102–177 | 18,4 | 2200 | FWD/RWD/AWD |
-| Iveco Daily VI | 120–210 | 19,6 | 3300 | RWD |
-| Renault Master IV | 110–170 | 17,0 | 1800 | FWD/RWD |
+| Model | Silniki (KM) | Max DMC | Dostępne rozstawy osi | Automat | Wersja elektryczna | Orientacyjna cena bazowa netto | Napęd |
+|-------|--------------|---------|------------------------|---------|--------------------|-------------------------------|-------|
+| Ford Transit | **105–185** | do **5,0 t** na wybranych rynkach | kilka wariantów | tak | tak, **E-Transit** | do weryfikacji | FWD / RWD / AWD |
+| Mercedes Sprinter | **114–190** | do weryfikacji | kilka wariantów | tak | do weryfikacji | do weryfikacji | FWD / RWD / AWD |
+| Volkswagen Crafter | **102–177** | do weryfikacji | kilka wariantów | tak | do weryfikacji | do weryfikacji | FWD / RWD / AWD |
+| Renault Master | **110–170** | do weryfikacji | kilka wariantów | do weryfikacji | do weryfikacji | do weryfikacji | FWD / RWD |
+| Iveco Daily | **120–210** | do weryfikacji | kilka wariantów | do weryfikacji | do weryfikacji | do weryfikacji | RWD |
 
-Kilka wniosków z porównania:
+### Wnioski praktyczne
 
-- Transit ma mniejszą pojemność ładowni niż Crafter i Daily – wybieraj go wtedy, gdy liczy się ładowność, a nie kubatura
-- Sprinter i Crafter mają lepszą kulturę jazdy, ale są droższe w serwisie
-- Daily to jedyna propozycja z ładownością przekraczającą 3000 kg w kategorii C1 – dla naprawdę ciężkich ładunków
-- Master jest tańszy w zakupie, ale ma niższą ładowność i gorzej znosi intensywną eksploatację
+- **Transit** – mocną stroną jest szeroka sieć serwisowa i duża dostępność części używanych. To ważne, jeśli auto ma zarabiać codziennie, a nie stać tydzień na podnośniku.
+- **Sprinter** – mocne systemy ADAS i wysoki poziom dopracowania, ale zwykle trzeba liczyć się z wyższymi kosztami serwisu.
+- **Crafter** – przewaga to bardzo duża kubatura, dlatego często wygrywa w zabudowach nastawionych na objętość.
+- **Daily** – najmocniejszy kandydat pod ciężkie zabudowy i wysokie DMC. To naturalny wybór tam, gdzie zwykły furgon jest już za lekki.
+- **Master** – często kusi prostszą kalkulacją zakupu, ale przed wyborem trzeba porównać konkretną wersję pod zabudowę, ładowność i napęd.
 
-Transit wygrywa przede wszystkim dostępnością serwisu i części – warsztatów znających ten model jest w Polsce więcej niż dla jakiegokolwiek innego dostawczaka. To istotny argument przy intensywnym użytkowaniu.
+Jeśli patrzysz stricte użytkowo, Transit jest mocny tam, gdzie liczy się szybki serwis, łatwa odsprzedaż i szeroka oferta wersji. Jeśli priorytetem jest maksymalne DMC albo bardzo ciężka zabudowa, konkurenci potrafią mieć przewagę w konkretnych niszach.
 
-#
 {{% youtube %}}
 
-# Ceny Transita
+## Ceny Transita
 
-Transit VII (2006–2013) to najtańsza opcja na rynku wtórnym – ceny zaczynają się od 15 tys. zł, ale ryzyko łańcucha rozrządu i korozji rośnie z wiekiem. Nowy Transit L2H2 z 2.0 EcoBlue 130 KM kosztuje od 160 tys. zł netto.
+Na rynku wtórnym cena Transita zależy głównie od rocznika, rodzaju zabudowy, przebiegu i stanu blacharskiego. Duże znaczenie ma też to, czy kupujesz zwykły furgon, czy auto już po kosztownej zabudowie – podwozie ze skrzynią, chłodnia albo kamper potrafią być wyraźnie droższe od bazowego vana.
 
-| Generacja / Rocznik | Cena orientacyjna |
-|---------------------|-------------------|
-| Transit VII (2006–2013) | 15 000–35 000 zł |
-| Transit VIII (2014–2018) | 40 000–75 000 zł |
-| Transit VIII (2019–2022, facelift) | 70 000–120 000 zł |
-| Transit VIII (2023–2025) | 110 000–170 000 zł |
-| Nowy Transit L2H2 (2.0 EcoBlue 130) | od ok. 160 000 zł netto |
-| E-Transit L2H2 | od ok. 280 000 zł netto |
+| Rocznik / wersja | Typowa zabudowa | Przebieg typowy | Stan | Cena brutto / netto |
+|------------------|-----------------|-----------------|------|---------------------|
+| **2006–2008** | furgon L2H2 | wysoki | roboczy / budżetowy | **15–25 tys. zł brutto** |
+| **2009–2011** | furgon L2H2 | wysoki | używany, stan zależny od korozji | **20–35 tys. zł brutto** |
+| **2012–2013** | furgon L2H2 | średni do wysokiego | zadbany egzemplarz wyraźnie droższy | **28–45 tys. zł brutto** |
+| **2014–2016** | furgon L2H2 | średni do wysokiego | poleasingowy / firmowy | **40–65 tys. zł brutto** |
+| **2017–2018** | furgon L2H2 | średni | zwykle lepsza baza do dalszej pracy | **55–85 tys. zł brutto** |
+| **2019–2020** | furgon L2H2 | średni | po faceliftingu, zwykle droższy | **75–115 tys. zł brutto** |
+| **2021–2022** | furgon L2H2 | niższy do średniego | zadbany, nowsza flota | **95–145 tys. zł brutto** |
+| **2023–2024** | furgon L2H2 | niski | świeże roczniki, często z pełną historią | **120–180 tys. zł brutto** |
+| **2014–2024** | podwozie / skrzynia | zależny od zabudowy | cena zwykle wyższa o **10–30%** względem porównywalnego furgonu | brutto lub netto zależnie od oferty |
+
+W praktyce najłatwiej kupić Transita z roczników **2017–2020**, bo to kompromis między ceną a wiekiem auta. Starsze egzemplarze są dużo tańsze, ale ryzyko wydatków po zakupie rośnie bardzo szybko, zwłaszcza gdy dochodzi korozja i zużycie osprzętu diesla.
