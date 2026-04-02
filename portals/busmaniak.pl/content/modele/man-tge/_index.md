@@ -43,67 +43,146 @@ Produkcja odbywa się w fabryce Volkswagen Poznań we Wrześni. Na jednej linii 
 
 Dlaczego więc ktoś miałby wybrać TGE zamiast Craftera? Odpowiedź tkwi w sieci serwisowej MAN, która obsługuje pojazdy ciężarowe w całej Europie – a to oznacza dłuższe godziny pracy warsztatów, lepszą dostępność terminów i warunki [leasingu](https://pl.wikipedia.org/wiki/Leasing) zbliżone do pojazdów ciężarowych.
 
+## Historia i generacje
+
+MAN TGE nie miał dotąd pełnoprawnej zmiany generacji. To wciąż pierwsza generacja modelu, rozwijana przez kolejne modernizacje i aktualizacje wyposażenia.
+
+### Debiut modelu (2016–2017)
+
+Premiera MAN-a TGE odbyła się w 2016 roku, a sprzedaż ruszyła w 2017. Model od początku produkowano we Wrześni, w tej samej fabryce co Volkswagena Craftera II.
+
+Od strony technicznej TGE jest bliźniakiem Craftera drugiej generacji. Oznacza to wspólną konstrukcję, układ napędowy i bazowe wymiary, a różnice sprowadzają się głównie do marki, sieci sprzedaży i obsługi serwisowej.
+
+### Modernizacje i TGE Next Level (2020–2025)
+
+W latach 2020–2025 MAN rozwijał TGE przez modernizacje, a nie przez zmianę generacji. Aktualizowano systemy bezpieczeństwa, infotainment, wyposażenie oraz wnętrze, równolegle rozwijając wersje specjalne.
+
+W praktyce oznaczenie TGE Next Level odnosi się do odświeżonego auta z poprawioną elektroniką pokładową i wyposażeniem, ale nadal mówimy o tej samej, pierwszej generacji modelu.
+
 ## Dane techniczne MAN-a TGE
 
-TGE dostępny jest w kilku wariantach rozstawu osi, długości i wysokości nadwozia. System oznaczeń odpowiada konwencji VW Craftera:
+W przypadku TGE trzeba rozdzielić dane dla furgonów i podwozi od wersji pasażerskich. Poniżej są parametry dotyczące przede wszystkim odmian dostawczych – to one najczęściej trafiają do firm transportowych, kurierskich i zabudów specjalnych.
 
-| Wariant | Rozstaw osi (mm) | Długość całkowita (mm) | Wysokość (mm) | Pojemność ładunkowa (m³) |
-|---------|-------------------|------------------------|---------------|--------------------------|
-| L2H2    | 3 250             | 5 986                  | 2 590         | ok. 9,0                  |
-| L3H2    | 3 665             | 6 836                  | 2 590         | ok. 11,3                 |
-| L3H3    | 3 665             | 6 836                  | 2 798         | ok. 13,0                 |
-| L4H3    | 4 325             | 7 391                  | 2 798         | ok. 15,5                 |
-| L5H3    | 4 325             | 7 391                  | 3 050         | ok. 17,5                 |
+| Wariant furgonu | Rozstaw osi (mm) | Długość (mm) | Wysokość (mm) | Objętość (m³)     | DMC (kg) | Orientacyjna ładowność |
+|-----------------|------------------|--------------|---------------|-------------------|----------|------------------------|
+| L2H2            | 3 250            | 5 986        | ok. 2 590     | ok. 9,0           | 3 500    | ok. 1 200–1 300 kg     |
+| L3H2            | 3 640            | 6 836        | ok. 2 590     | 11,3              | 3 500    | ok. 1 300–1 500 kg     |
+| L3H3            | 3 640            | 6 836        | ok. 2 798     | 13,0              | 3 500    | ok. 1 300–1 500 kg     |
+| L4H3            | 4 490            | 7 391        | ok. 2 798     | 14,4–16,1         | 3 500    | ok. 1 300–1 500 kg     |
 
-Szerokość nadwozia we wszystkich wariantach to 1 993 mm (bez lusterek). DMC w standardowej konfiguracji wynosi 3 500 kg (prawo jazdy kat. B), ale dostępne są wersje o DMC 5 000 i 5 500 kg – te wymagają już kategorii C1.
+Szerokość zewnętrzna nadwozia wynosi **2 040 mm**, a z lusterkami **2 427 mm**. Szerokość między nadkolami to około **1 380 mm**, a długość przestrzeni ładunkowej zależnie od wersji wynosi od około **3 200 do 4 300 mm**.
 
-Ładowność sięga od ok. 1 200 kg w krótszych wersjach do ponad 2 100 kg w wariantach podwozie + zabudowa o wyższym DMC.
+Zakres DMC w gamie TGE to około **3,0–5,0 t** zależnie od wersji. Najwyższe wartości ładowności dotyczą głównie podwozi i zabudów przy wyższym DMC, a nie klasycznych furgonów 3,5 t.
 
 {{% info title="Oznaczenia długości" icon="straighten" %}}
-MAN stosuje oznaczenia L2–L5, ale odpowiadają one kolejno: SWB (short wheelbase), MWB (medium), LWB (long) i XL w nomenklaturze VW. Przy zamawianiu części warto znać obie konwencje, bo katalogi Craftera i TGE różnią się nazewnictwem.
+W praktyce najważniejsze są trzy długości nadwozia oraz wariant ze zwiększonym tylnym zwisem. Przy porównywaniu ofert lepiej patrzeć na rozstaw osi, długość całkowitą i wysokość dachu niż tylko na oznaczenie L.
 {{% /info %}}
 
 ## Silniki TGE
 
-Wszystkie warianty silnikowe TGE to czterocylindrowe jednostki 2.0 TDI produkcji Volkswagena, spełniające normę Euro 6d:
+W gamie MAN-a TGE stosowano czterocylindrowe jednostki 2.0 TDI. Dostępność konkretnych mocy zależy od rocznika i rynku, dlatego przy zakupie warto sprawdzać nie tylko samą moc, ale też skrzynię biegów, napęd i normę emisji.
 
 ### Warianty mocy 2.0 TDI
 
-- **2.0 TDI 102 KM (75 kW)** – bazowa jednostka do lekkich zastosowań miejskich. Moment obrotowy 300 Nm. Wystarczająca do furgonu L2H2, ale przy pełnym załadunku L4H3 odczuwalnie słaba na autostradzie.
-- **2.0 TDI 122 KM (90 kW)** – kompromis między oszczędnością a dynamiką. 340 Nm momentu. Dobry wybór do codziennej eksploatacji kurierskiej w wersjach do L3H2.
-- **2.0 TDI 140 KM (103 kW)** – najpopularniejsza jednostka w TGE. 410 Nm momentu zapewnia pewne przyspieszanie nawet pod pełnym obciążeniem. Najczęściej łączona z 8-biegowym automatem.
-- **2.0 BiTDI 177 KM (132 kW)** – topowa jednostka z podwójnym doładowaniem. 400 Nm momentu, dostępna wyłącznie z 8-stopniową skrzynią automatyczną. Przeznaczona do wersji z wyższym DMC i zabudów specjalistycznych.
+- **2.0 TDI 102 KM (75 kW)** – bazowa jednostka do lżejszych zastosowań. Generuje **300 Nm** i najlepiej pasuje do krótszych wersji oraz pracy miejskiej.
+- **2.0 TDI 122 KM (90 kW)** – rozsądny środek w gamie. Oferuje **340 Nm** i sprawdza się w codziennej eksploatacji dostawczej.
+- **2.0 TDI 140 KM (103 kW)** – jedna z najpraktyczniejszych odmian. W zależności od wersji rozwija **340 lub 410 Nm** i może współpracować z manualem albo automatem.
+- **2.0 TDI 177 KM (130/132 kW)** – topowy wariant w gamie. Ma **410 Nm** i najczęściej łączony jest z 8-biegowym automatem.
+
+### Tabela silników MAN TGE
+
+| Silnik             | Moc         | Moment obrotowy        | Skrzynia         | Norma emisji | Napęd           | Realne spalanie      |
+|--------------------|-------------|------------------------|------------------|--------------|-----------------|----------------------|
+| 2.0 TDI 102 KM     | 75 kW       | 300 Nm                 | manual 6-bieg.   | Euro 6/6d    | FWD/RWD/AWD     | 8,5–10,5 l/100 km    |
+| 2.0 TDI 122 KM     | 90 kW       | 340 Nm                 | manual 6-bieg.   | Euro 6/6d    | FWD/RWD/AWD     | 8,5–10,5 l/100 km    |
+| 2.0 TDI 140 KM     | 103 kW      | 340 lub 410 Nm         | manual/automat 8-bieg. | Euro 6/6d | FWD/RWD/AWD     | 9,0–11,5 l/100 km    |
+| 2.0 TDI 177 KM     | 130/132 kW  | 410 Nm                 | automat 8-bieg.  | Euro 6/6d    | FWD/RWD/AWD     | 9,5–12,5 l/100 km    |
 
 ### Skrzynie biegów i spalanie MAN TGE
 
-Skrzynie biegów: 6-biegowa manualna (102–140 KM) lub 8-biegowa automatyczna (opcja dla 140 KM, standard dla 177 KM). Napęd na przód, tył lub 4MOTION (AWD) – w zależności od konfiguracji.
+W zależności od konfiguracji TGE występował z 6-biegowym manualem albo 8-biegowym automatem. Do tego dochodzi wybór napędu na przód, tył lub AWD, co ma znaczenie nie tylko dla trakcji, ale też dla ładowności i doboru zabudowy.
 
-Spalanie w cyklu mieszanym to 8,0–10,5 l/100 km dla wersji 140 KM. Realne zużycie w furgonie L4H3 przy pełnym załadunku oscyluje wokół 11–13 l/100 km.
+Realne spalanie zależy głównie od długości auta, zabudowy, masy i rodzaju trasy. Furgon z wysokim dachem i pełnym ładunkiem zużyje wyraźnie więcej paliwa niż krótsza wersja pracująca lokalnie.
 
 {{% expert name="Marek Kowalczyk" %}}
-Jeśli planujesz TGE do regularnych tras międzymiastowych z pełnym ładunkiem, nie oszczędzaj na silniku – wariant 140 KM z automatem to absolutne minimum komfortu. Wersja 102 KM ma sens tylko w mieście. BiTDI 177 KM jest świetna, ale droższa w serwisie przez podwójną turbosprężarkę. Sprawdź też ofertę [Craftera](/modele/volkswagen-crafter/) – identyczna technika, czasem niższa cena.
+Jeśli jeździsz regularnie w trasie z ładunkiem, celowałbym co najmniej w 140 KM. Bazowe wersje mają sens głównie w mieście albo w lżejszej pracy. Przy zakupie używanego egzemplarza ważniejsze od samej mocy jest to, czy auto miało regularny serwis i dobrze dobraną konfigurację napędu.
 {{% /expert %}}
 
 ![MAN TGE furgon na placu manewrowym](/images/man-tge-hero.webp)
 
 ## Wersje nadwoziowe MAN-a TGE
 
-Dzięki współdzieleniu platformy z Crafterem, TGE oferuje pełen wachlarz wariantów nadwoziowych:
+Gama TGE jest szeroka, ale łatwo pogubić się między furgonem, podwoziem i wersjami pasażerskimi. Najprościej podzielić ją na odmiany dostawcze, zabudowy specjalne oraz wersje do przewozu osób.
 
-### Furgon, podwozie i zabudowy specjalne
+### Furgon, kombi i wersje brygadowe
 
-1. **Furgon (panel van)** – klasyczny blaszak do transportu towarowego. Najczęściej spotykany w wersjach L3H2 i L3H3 w firmach kurierskich.
-2. **Podwozie (chassis cab)** – kabina z ramą pod dowolną zabudowę: skrzynia, plandeka, chłodnia, kontener. DMC do 5 500 kg.
-3. **Podwozie z podwójną kabiną (crew cab)** – 6–7 miejsc plus zabudowa. Popularna konfiguracja w firmach budowlanych i komunalnych.
-4. **Skrzyniowy (dropside)** – fabryczna zabudowa z aluminiowymi burtami. Wygodny do transportu materiałów sypkich i paletowych.
-5. **Wywrotka (tipper)** – podwozie z hydraulicznym wywrotem, spotykane na budowach i w ogrodnictwie.
-6. **Bus (Intercity/CoC)** – wersja pasażerska z homologacją autobusu, do 19 miejsc. Stosowana w komunikacji lokalnej i turystyce.
+- **Furgon** – klasyczny blaszak, z objętością przestrzeni ładunkowej od około **9,0 do 18,4 m³** zależnie od długości i wysokości. To najpopularniejszy wybór w kurierce, transporcie lokalnym i zabudowach kamperowych.
+- **Kombi / brygadówka** – odmiany łączące przewóz ludzi i towaru. W praktyce mieszczą **5 do 7 miejsc**.
+- W wersjach dostawczych dostępne były napędy **FWD, RWD i AWD**, a konfiguracje z wyższym DMC częściej łączono z napędem na tył lub AWD.
 
-W Polsce najczęściej spotykane konfiguracje to furgon L3H2/L3H3 w firmach transportowych oraz podwozie pod zabudowę lawety lub plandeki.
+### Podwozie, skrzynia i zabudowy robocze
+
+- **Podwozie z pojedynczą kabiną** – baza pod skrzynię, plandekę, chłodnię, kontener albo lawetę. W gamie występowały wersje o **DMC do 5,0 t**.
+- **Podwozie z podwójną kabiną** – rozwiązanie dla ekip budowlanych i komunalnych. Zwykle daje **6–7 miejsc** i miejsce na zabudowę z tyłu.
+- **Skrzyniowy / dropside** – fabryczna zabudowa z burtami. Najczęściej w układzie **3 miejsca** lub **7 miejsc** w double cab.
+- **Wyższe DMC** najczęściej spotyka się właśnie w podwoziach i zabudowach roboczych, a nie w zwykłych furgonach 3,5 t.
+
+### Minibus i Intercity
+
+- **Minibus / Intercity** – wersje pasażerskie mieszczące zwykle **16–19 miejsc** zależnie od zabudowy i homologacji.
+- To osobna część gamy niż klasyczne furgony. Dlatego parametrów takich jak objętość paki czy ładowność nie warto mieszać z danymi autobusowymi.
+
+W Polsce najczęściej spotyka się furgony L3H2 i L3H3 oraz podwozia pod plandeki, kontenery i lawety. Wersje pasażerskie są rzadsze i trafiają głównie do przewozów lokalnych.
+
+## Typowe usterki MAN-a TGE
+
+MAN TGE korzysta z tej samej techniki co Crafter, więc typowe problemy są dobrze znane warsztatom. Najdroższe tematy zwykle dotyczą osprzętu nowoczesnego diesla i aut, które robią duże przebiegi w pracy flotowej.
+
+### 2.0 TDI EA288 – EGR i DPF
+
+W intensywnie eksploatowanych autach wraca temat układu EGR i filtra DPF. To typowy punkt kontrolny przy aucie jeżdżącym głównie po mieście albo na krótkich trasach.
+
+- czyszczenie DPF – **600–1200 zł**
+- nowy DPF – **3500–7000 zł**
+- zawór EGR – **1200–2500 zł**
+
+### Układ AdBlue / NOx
+
+W nowszych dieslach potrafią dokuczać elementy układu AdBlue i czujniki NOx. Objawy zwykle zaczynają się od błędów emisji spalin i ograniczenia możliwości dalszej jazdy bez naprawy.
+
+- czujnik NOx – **1200–2500 zł**
+- pompa/moduł AdBlue – **2000–4500 zł**
+
+### Osprzęt rozrządu i pasek
+
+Tu nie ma miejsca na odwlekanie serwisu. Wymiana zestawu z pompą wody to koszt, który lepiej zaplanować niż czekać na awarię w trasie.
+
+- wymiana zestawu z pompą wody – **1800–3200 zł**
+
+### Turbosprężarka
+
+Przy wysokich przebiegach i ciężkiej pracy dochodzi temat turbiny. Koszt zależy od tego, czy kończy się na regeneracji, czy potrzebna jest nowa część.
+
+- regeneracja turbosprężarki – **1800–2800 zł**
+- nowa turbosprężarka – **3500–6000 zł**
+
+### Zawieszenie i eksploatacja flotowa
+
+W autach pracujących pod obciążeniem szybko widać zużycie elementów zawieszenia i hamulców. To normalne koszty eksploatacyjne, ale przy zakupie używanego egzemplarza warto je wkalkulować od razu.
+
+- łączniki / stabilizator – **200–500 zł**
+- tarcze i klocki przód – **900–1800 zł**
+- sprzęgło z dwumasą – **3500–6000 zł**
+
+Dla wersji z automatem warto doliczyć regularny serwis olejowy skrzyni co **60 tys. km**. Taka obsługa kosztuje zwykle **1200–2200 zł**.
+
+{{% info title="Przed zakupem używanego TGE" icon="info" %}}
+Najlepiej szukać auta z udokumentowanym serwisem układu AdBlue, wymianami eksploatacyjnymi i historią pracy. Sam przebieg mówi mniej niż to, czy auto jeździło lekko po trasach, czy codziennie pracowało na maksymalnym obciążeniu.
+{{% /info %}}
 
 ## Ceny MAN-a TGE
 
-Ceny nowych TGE są wyższe niż analogicznych Crafterów o 5–15%, co odzwierciedla dostęp do sieci serwisowej MAN:
+Nowy TGE zwykle kosztuje więcej niż porównywalny Crafter, ale różnica wynika głównie z sieci dealerskiej i sposobu pozycjonowania modelu. Na rynku wtórnym dużo zależy od nadwozia, przebiegu i tego, czy mówimy o czystym furgonie, czy aucie już z zabudową.
 
 | Wariant | Cena netto (nowy) | Cena brutto (używany 2019–2022) |
 |---------|-------------------|---------------------------------|
@@ -113,25 +192,34 @@ Ceny nowych TGE są wyższe niż analogicznych Crafterów o 5–15%, co odzwierc
 | TGE L4H3 furgon 177 KM AT | od ok. 200 000 zł | 130 000–175 000 zł |
 | TGE podwozie L3 140 KM | od ok. 140 000 zł | 75 000–110 000 zł |
 
-Na rynku wtórnym TGE jest rzadszy niż Crafter, co przekłada się na nieco wyższe ceny używanych egzemplarzy. Jednocześnie mniejsza podaż oznacza mniejszy przebieg – większość używanych TGE pochodzi z flot firmowych z regularnym serwisem.
+### Ceny używanego MAN TGE w Polsce
+
+| Rocznik     | Cena netto              | Typowy przebieg         |
+|-------------|-------------------------|-------------------------|
+| 2017–2018   | **55 000–85 000 zł**    | 250–400 tys. km         |
+| 2019–2020   | **75 000–115 000 zł**   | 180–300 tys. km         |
+| 2021–2022   | **95 000–145 000 zł**   | 100–220 tys. km         |
+| 2023–2024   | **130 000–190 000 zł**  | 20–120 tys. km          |
+
+Podwozia i auta z gotową zabudową zwykle kosztują **o 10–25% więcej** niż goły furgon z porównywalnego rocznika. To ważne przy analizie ogłoszeń, bo sama cena bez uwzględnienia zabudowy często prowadzi do mylnych wniosków.
 
 #
 {{% youtube %}}
 
 # Porównanie TGE z Crafterem i konkurencją
 
+W papierach TGE wygląda bardzo podobnie do Craftera, ale przy zakupie flotowym liczy się też zakres DMC, objętość paki i dostępność napędów. To właśnie te elementy najlepiej pokazują, komu opłaca się MAN, a komu bardziej Sprinter, Transit albo Daily.
+
 ### MAN TGE a VW Crafter, Sprinter, Transit i Daily
 
-| Parametr | MAN TGE L3H2 | VW Crafter L3H2 | Mercedes Sprinter L2H2 | Ford Transit L3H2 | Iveco Daily L3H2 |
-|----------|--------------|-----------------|------------------------|--------------------|-------------------|
-| Silnik bazowy | 2.0 TDI 102 KM | 2.0 TDI 102 KM | 2.0 CDI 116 KM | 2.0 EcoBlue 130 KM | 2.3 D 116 KM |
-| Silnik topowy | 2.0 BiTDI 177 KM | 2.0 BiTDI 177 KM | 2.0 CDI 190 KM | 2.0 EcoBlue 185 KM | 3.0 D 210 KM |
-| Pojemność paki | ok. 11,3 m³ | ok. 11,3 m³ | ok. 11,0 m³ | ok. 11,5 m³ | ok. 12,0 m³ |
-| DMC | 3 500 kg | 3 500 kg | 3 500 kg | 3 500 kg | 3 500 kg |
-| Napęd 4x4 | 4MOTION | 4MOTION | opcja | opcja | brak |
-| Cena netto L3H2 | od ~160 000 zł | od ~150 000 zł | od ~195 000 zł | od ~145 000 zł | od ~155 000 zł |
-| Sieć serwisowa | MAN Truck | VW Samochody Użytkowe | Mercedes-Benz Vans | Ford | Iveco |
+| Model               | Silnik bazowy       | Silnik topowy       | Maks. objętość ładunkowa | Maks. DMC | Rodzaje napędu | Cena netto L3H2 | Sieć serwisowa         |
+|---------------------|---------------------|---------------------|--------------------------|-----------|----------------|-----------------|------------------------|
+| MAN TGE             | 2.0 TDI 102 KM      | 2.0 TDI 177 KM      | do 18,4 m³               | do 5,0 t  | FWD/RWD/AWD    | od ~160 000 zł  | MAN Truck              |
+| VW Crafter          | 2.0 TDI 102 KM      | 2.0 TDI 177 KM      | do 18,4 m³               | do 5,0 t  | FWD/RWD/AWD    | od ~150 000 zł  | VW Samochody Użytkowe  |
+| Mercedes Sprinter   | 2.0 CDI 116 KM      | 2.0 CDI 190 KM      | do ok. 17 m³             | do 5,5 t  | FWD/RWD/AWD    | od ~195 000 zł  | Mercedes-Benz Vans     |
+| Ford Transit        | 2.0 EcoBlue 130 KM  | 2.0 EcoBlue 185 KM  | do ok. 15,1 m³           | do 4,7 t  | FWD/RWD/AWD    | od ~145 000 zł  | Ford                   |
+| Iveco Daily         | 2.3 D 116 KM        | 3.0 D 210 KM        | do ok. 19,6 m³           | do 7,2 t  | RWD/AWD        | od ~155 000 zł  | Iveco                  |
 
-TGE i [Crafter](/modele/volkswagen-crafter/) to technicznie identyczne pojazdy – jedyną realną różnicą jest sieć serwisowa i warunki finansowania. [Sprinter](/modele/mercedes-sprinter/) oferuje wyższy komfort i prestiż, ale za wyraźnie wyższą cenę. [Ford Transit](/modele/ford-transit/) to najtańsza opcja z szeroką siecią dealerską. [Iveco Daily](/modele/iveco-daily/) wyróżnia się większą ładownością i gamą silników, w tym 3.0 o mocy do 210 KM.
+TGE i [Crafter](/modele/volkswagen-crafter/) są technicznie praktycznie tym samym autem, więc wybór zwykle sprowadza się do ceny, dostępności konkretnej konfiguracji i preferowanej sieci serwisowej. [Sprinter](/modele/mercedes-sprinter/) ma sens tam, gdzie liczy się szeroka gama i wyższe DMC. [Ford Transit](/modele/ford-transit/) jest rozsądną opcją dla firm szukających niższego progu wejścia, a [Iveco Daily](/modele/iveco-daily/) najbardziej opłaca się tam, gdzie priorytetem jest duża ładowność i cięższa praca.
 
-Dla firm z flotą ciężarową MAN, TGE ma sens jako uzupełnienie parku maszynowego – jeden serwis, jedna faktura, jedno zarządzanie. Dla pojedynczego użytkownika różnica wobec Craftera rzadko się opłaca.
+Dla firmy, która już jeździ ciężarówkami MAN-a, TGE jest logicznym uzupełnieniem floty. Dla pojedynczego użytkownika Crafter zwykle będzie najbliższym i najbardziej oczywistym punktem odniesienia.

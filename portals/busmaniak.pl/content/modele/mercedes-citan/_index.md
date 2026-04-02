@@ -15,7 +15,7 @@ youtube_title: "Mercedes Citan W415 - Renault Kangoo w wersji Premium? | Test OT
 lead: "Mercedes Citan to najmniejszy dostawczak w gamie Mercedesa – kompaktowy van zbudowany na platformie Renault Kangoo III. Druga generacja (W420) z 2021 roku oferuje silniki diesla i benzynowe, wersję elektryczną eCitan oraz pasażerskiego bliźniaka – Mercedes T-Class. Sprawdzone podzespoły Renault w opakowaniu premium."
 faq:
   - question: "Na jakiej platformie zbudowany jest Mercedes Citan?"
-    answer: "Citan II (W420) bazuje na platformie CMF-C/D Renault-Nissan, dzielonej z Renault Kangoo III i Nissanem Townstar. Produkcja odbywa się w fabryce Renault w Maubeuge (Francja)."
+    answer: "Citan II jest technicznym bliźniakiem Renault Kangoo III i Nissana Townstar; produkcja odbywa się w Maubeuge we Francji."
   - question: "Czym różni się Mercedes Citan od T-Class?"
     answer: "Citan to wersja dostawcza (Panel Van) i osobowo-dostawcza (Tourer). T-Class to stricte osobowy wariant z wyższym wyposażeniem, lepszymi materiałami wykończeniowymi i pozycjonowaniem jako rodzinny van premium."
   - question: "Jaki zasięg ma eCitan?"
@@ -31,107 +31,183 @@ sources:
 
 ## Historia i generacje Mercedesa Citan
 
-Mercedes Citan zadebiutował w 2012 roku jako odpowiedź na rosnące zapotrzebowanie na kompaktowe dostawczaki w segmencie, w którym Gwiazda nie miała własnej propozycji. Zamiast projektować model od zera, Mercedes nawiązał współpracę z Renault i oparł Citana na [platformie](https://pl.wikipedia.org/wiki/Renault_Kangoo) Renault Kangoo.
+Mercedes Citan zadebiutował w 2012 roku jako odpowiedź na rosnące zapotrzebowanie na kompaktowe dostawczaki. Zamiast projektować model od zera, Mercedes wszedł we współpracę z Renault i oparł Citana na technice znanej z Kangoo.
 
 ### Citan I (W415, 2012–2021)
 
-Pierwsza generacja powstawała w fabryce Renault w Maubeuge we Francji na bazie Kangoo II. Oferowała trzy długości nadwozia i silniki diesla 1.5 dCi w wersjach 75, 90 i 109 KM (oznaczenia 108, 109, 111 CDI). Dostępny był także benzynowy 1.2 TCe 114 KM (112 CDI). Model zyskał opinię solidnego dostawczaka, choć krytycy zwracali uwagę na zbyt widoczne pokrewieństwo z Kangoo – szczególnie we wnętrzu.
+Pierwsza generacja powstawała w fabryce Renault w Maubeuge we Francji na bazie Kangoo II. Oferowała trzy długości nadwozia i silniki diesla 1.5 dCi w wersjach 75, 90 i 110 KM, sprzedawane jako 108 CDI, 109 CDI i 111 CDI. Dostępny był także benzynowy 1.2 TCe 114 KM (112).
 
-W testach Euro NCAP Citan I uzyskał zaledwie 3 gwiazdki, co dla marki premium było wynikiem poniżej oczekiwań. Mercedes zapowiedział, że druga generacja całkowicie zmieni ten obraz.
+Model szybko zyskał opinię praktycznego dostawczaka, ale użytkownicy widzieli, jak blisko spokrewniony jest z Renault. Najbardziej było to widać w kabinie i detalach wykończenia.
+
+#### Najważniejsze zmiany w trakcie produkcji W415
+
+- **2012** – debiut modelu
+- **2015 lifting** – zmieniony pas przedni, poprawione wykończenie wnętrza, rozszerzone wyposażenie z zakresu bezpieczeństwa
+- **Długości nadwozia**:
+  - **Compact** – ok. 3937 mm
+  - **Long** – ok. 4321 mm
+  - **Extra-Long** – ok. 4705 mm
+- **Silniki**:
+  - **108 CDI** – 75 KM
+  - **109 CDI** – 90 KM
+  - **111 CDI** – 110 KM
+  - **112** – benzyna 114 KM
+
+W testach Euro NCAP Citan I uzyskał 3 gwiazdki. Jak na auto z gwiazdą na masce to wynik przeciętny, dlatego przy drugiej generacji Mercedes mocno podkreślał poprawę bezpieczeństwa.
 
 ### Citan II (W420, od 2021)
 
-Druga generacja przyniosła gruntowną zmianę. Citan W420 bazuje na Renault Kangoo III i platformie CMF-C/D Renault-Nissan, ale Mercedes zadbał o wyraźniejszą tożsamość marki – przeprojektowane wnętrze z systemem MBUX, nowy pas przedni z charakterystyczną gwiazdą i wyższa jakość materiałów. W testach Euro NCAP model zdobył 5 gwiazdek.
+Druga generacja przyniosła dużą zmianę jakościową. Citan W420 jest technicznym bliźniakiem Renault Kangoo III i korzysta z architektury sojuszu Renault-Nissan-Mitsubishi, a produkcja odbywa się w Maubeuge. Mercedes dołożył jednak własny przód, inne wnętrze, system MBUX i wyraźnie lepsze materiały w kabinie.
 
-Premiera odbyła się w sierpniu 2021 roku, a dostawy ruszyły na początku 2022. Jednocześnie Mercedes wprowadził pasażerski wariant – T-Class – pozycjonowany jako rodzinny van klasy premium, konkurent [Volkswagena Caddy](/modele/volkswagen-caddy/) Life i Renault Kangoo Zen.
+Premiera odbyła się w sierpniu 2021 roku, a dostawy ruszyły na początku 2022. Równolegle pokazano też pasażerskiego bliźniaka – T-Class – pozycjonowanego jako rodzinny van premium, konkurent [Volkswagena Caddy](/modele/volkswagen-caddy/) Life i przeszklonych wersji Kangoo.
 
 {{% info title="Bliźniaki na jednej linii" icon="engineering" %}}
-Mercedes Citan, Renault Kangoo III i Nissan Townstar powstają na tej samej linii montażowej w fabryce Renault MCA w Maubeuge (Francja). Każdy model różni się designem, wnętrzem i pozycjonowaniem cenowym, ale mechanicznie to ten sam samochód.
+Mercedes Citan, Renault Kangoo III i Nissan Townstar powstają na tej samej linii montażowej w fabryce Renault MCA w Maubeuge (Francja). Każdy model różni się designem, wnętrzem i pozycjonowaniem cenowym, ale mechanicznie to bardzo bliskie konstrukcje.
 {{% /info %}}
 
 ## Dane techniczne Mercedesa Citan
 
-Citan II to kompaktowy van o wymiarach pozwalających na swobodne manewrowanie w miejskich uliczkach. Dostępny w dwóch długościach nadwozia – L1 (standardowy) i L2 (długi).
+Citan II to miejski dostawczak bez kombinowania z wysokościami dachu. W praktyce wybierasz głównie długość nadwozia, typ zabudowy i układ drzwi.
 
 | Parametr | Citan L1 | Citan L2 |
 |----------|----------|----------|
-| Długość całkowita | 4498 mm | 4922 mm |
+| Wersje nadwozia | Panel Van, Tourer | Panel Van, Tourer |
+| Długość nadwozia | L1 | L2 |
+| Długość całkowita | ok. 4498 mm | wersja długa W420 występuje jako L2 |
 | Szerokość (bez lusterek) | 1859 mm | 1859 mm |
 | Wysokość | 1832 mm | 1832 mm |
-| Rozstaw osi | 2716 mm | 2716 mm |
-| Pojemność ładunkowa | 2,9 m³ | 3,3–3,7 m³ |
-| Ładowność | do 544 kg | do 630 kg |
-| DMC | 2100–2200 kg | 2200–2490 kg |
-| Długość przestrzeni ładunkowej | 1810 mm | 2170 mm |
-| Szerokość między nadkolami | 1220 mm | 1220 mm |
+| Rozstaw osi | 2716 mm | 3100 mm |
+| Warianty dachu | jeden dach – brak H2/H3 | jeden dach – brak H2/H3 |
+| Długość przestrzeni ładunkowej | ok. 1806 mm | ok. 2175 mm |
+| Pojemność przestrzeni ładunkowej | 2,9 m³ | 3,1–3,7 m³ |
+| Szerokość między nadkolami | 1248 mm | 1248 mm |
+| Wysokość otworu bocznego | ok. 1059 mm | ok. 1059 mm |
+| DMC | ok. 2020–2230 kg | ok. 2020–2230 kg |
+| Ładowność | zależnie od wersji, do ok. 780 kg | zależnie od wersji, do ok. 780 kg |
+| Uciąg przyczepy z hamulcem | do 1500 kg dla wybranych diesli | do 1500 kg dla wybranych diesli |
+| Średnica zawracania | ok. 11,1 m | ok. 12,5 m |
 
-Drzwi boczne przesuwne (po prawej stronie seryjnie, po obu opcjonalnie) z otworem 627 mm szerokości ułatwiają załadunek w ciasnych przestrzeniach. Próg załadunkowy tylnych drzwi na wysokości ok. 580 mm.
+W praktyce najważniejsze są trzy liczby: **2,9 m³** w krótkim furgonie, do **3,7 m³** w dłuższym i maksymalna ładowność sięgająca około **780 kg**. To już wystarcza do pracy kurierskiej, serwisowej i miejskiej dystrybucji.
 
 ## Silniki Citana
 
-Gama silnikowa Citana II obejmuje jednostki diesla, benzynowe i elektryczny eCitan:
+Oferta silnikowa Citana II obejmuje diesle, benzyny i wersję elektryczną. Poniżej masz konkrety: pojemność, moc, moment, emisję, skrzynie i orientacyjne spalanie.
 
-- **110 CDI (1.5 dCi, 95 KM)** – czterocylindrowy turbodiesel Renault OM608, moment 260 Nm. Spalanie 5,0–5,6 l/100 km. Podstawowy wybór dla dostawczaków – ekonomiczny i sprawdzony w Kangoo
-- **112 CDI (1.5 dCi, 116 KM)** – mocniejszy wariant tego samego diesla, moment 270 Nm. Prędkość maks. 175 km/h, 0–100 km/h w 11,7 s
-- **110 (1.3 TCe, 102 KM)** – benzynowy turbodoładowany, spalanie 6,5–7,2 l/100 km. Przeznaczony głównie na rynki, gdzie diesel traci popularność
-- **113 (1.3 TCe, 131 KM)** – najmocniejsza jednostka spalinowa, 0–100 km/h w 12 s. Współpracuje z 7-biegowym automatem DCT
-- **eCitan (90 kW / 122 KM)** – silnik elektryczny, bateria 45 kWh, zasięg WLTP do 283 km. Moment 245 Nm dostępny od zera
+| Wersja | Pojemność / typ | Moc | Moment obrotowy | Norma emisji | Skrzynia | Spalanie / zasięg |
+|--------|------------------|-----|------------------|--------------|----------|-------------------|
+| 110 CDI | 1461 cm3 diesel | 95 KM | 260 Nm | Euro 6d | 6MT lub 7DCT | ok. 5,3–5,9 l/100 km |
+| 112 CDI | 1461 cm3 diesel | 116 KM | 270 Nm | Euro 6d | 6MT lub 7DCT | ok. 5,4–6,0 l/100 km |
+| 110 benzyna | 1332 cm3 turbo | 102 KM | 200 Nm | Euro 6d | 6MT | ok. 6,6–7,3 l/100 km |
+| 113 benzyna | 1332 cm3 turbo | 131 KM | 240 Nm | Euro 6d | 6MT lub 7DCT | ok. 6,8–7,6 l/100 km |
+| eCitan | silnik elektryczny 90 kW | 122 KM | 245 Nm | – | automatyczna redukcyjna | bateria użyteczna 45 kWh, WLTP do 282–284 km |
 
-Wszystkie wersje spalinowe mają napęd na przednią oś. Skrzynie biegów: 6-biegowa manualna (standard) lub 7-biegowy automat dwusprzęgłowy EDC (opcja / standard w 113).
+Najbardziej uniwersalny w pracy zostaje **112 CDI**. Ma sensowny zapas momentu, można go zestawić z manualem albo 7DCT i nie wymaga kręcenia silnika przy pełnym załadunku.
+
+**110 CDI** to wybór dla flot i kurierów, gdzie liczy się koszt paliwa. Z kolei benzynowe **110** i **113** sprawdzą się tam, gdzie auto robi krótsze trasy i częściej jeździ bez ładunku.
+
+**eCitan** ma baterię użyteczną **45 kWh**, ładowanie **AC 11 kW** i **DC 75/80 kW**. W mieście jego parametry są wystarczające, ale w trasie ograniczeniem pozostaje zasięg do **282–284 km WLTP** zależnie od wersji.
 
 ![Mercedes Citan II furgon dostawczy](/images/mercedes-citan-hero.webp)
 
 {{% expert name="Marek Kowalczyk" %}}
-Dla kuriera miejskiego eCitan to sensowny wybór – 283 km zasięgu w zupełności wystarcza na dzienną trasę, a nocne ładowanie z wallboxa 22 kW uzupełnia baterię w niecałe 3 godziny. Jeśli jednak jeździsz dużo po trasie, sięgnij po 112 CDI z automatem – spalanie poniżej 6 litrów i moment diesla przy niskich obrotach robią różnicę w komforcie długich tras.
+Dla kuriera miejskiego eCitan ma sens, jeśli auto wraca codziennie do bazy. Jeśli robisz dłuższe odcinki albo jeździsz z ładunkiem poza miasto, 112 CDI nadal jest po prostu wygodniejszym wyborem.
 {{% /expert %}}
 
 ## Wersje nadwoziowe Citana
 
-Mercedes oferuje Citana w trzech podstawowych konfiguracjach nadwozia:
+W gamie Citana najważniejszy jest podział na furgon i wersję przeszkloną. Trzeba też oddzielić Citana od T-Class – to modele pokrewne, ale nie ta sama wersja nadwoziowa.
 
-1. **Panel Van (furgon)** – klasyczny dostawczak z pełną przegrodą za kabiną. Wersje L1 (2,9 m³) i L2 (3,3–3,7 m³). Podstawowy wybór dla firm kurierskich i serwisów
-2. **Tourer (osobowo-dostawczy)** – przeszklony wariant z tylną kanapą, 5 miejsc. Łączy funkcję transportu osób z przestrzenią bagażową. Odpowiednik Kangoo Zen
-3. **T-Class (osobowy premium)** – pozycjonowany jako samodzielny model. Wyższe wyposażenie seryjne: MBUX z ekranem 7", kamera cofania, czujniki parkowania, skórzana kierownica. Dostępny także jako EQT (elektryczny T-Class)
+- **Panel Van (furgon)** – 2 miejsca albo 3 miejsca z dwuosobową ławką z przodu. Dostępny w długościach **L1** i **L2**, z przestrzenią ładunkową od **2,9 do 3,7 m³**.
+- **Tourer** – przeszklona wersja **5-miejscowa**, łącząca przewóz osób i bagażu.
+- **eCitan** – oferowany jako furgon oraz Tourer.
+- **T-Class / EQT** – osobne modele pokrewne, a nie formalne wersje nadwoziowe Citana.
+
+W codziennym użytkowaniu liczy się też konfiguracja drzwi. Możesz spotkać tylne drzwi **dwuskrzydłowe otwierane do 180°** albo **klapę**, a po bokach **jedne lub dwoje drzwi przesuwnych**. To detal, ale przy pracy w mieście albo pod rampą robi różnicę.
+
+Na rynku wtórnym trafiają się również zabudowy chłodnicze i serwisowe. To zwykle przeróbki wykonywane przez firmy zewnętrzne, a nie osobne fabryczne warianty Mercedesa.
 
 ### Citan vs T-Class – różnice
 
-Technicznie to ten sam samochód, ale T-Class celuje w klientów indywidualnych i rodziny. Różnice obejmują:
+Technicznie auta są bardzo blisko siebie, ale celują w innych klientów. T-Class jest bardziej rodzinny i lepiej wyposażony, a Citan ma przede wszystkim zarabiać.
 
-- Bogatsze wyposażenie seryjne (klimatyzacja automatyczna, system audio)
-- Lepsze materiały tapicerki i wykończenia deski rozdzielczej
+- Bogatsze wyposażenie seryjne w T-Class
+- Lepsze materiały tapicerki i wykończenia
 - Inne opcje lakierów i felg
-- Wyższa cena bazowa o ok. 15–20% względem Citana Tourer
+- Wyższa cena względem porównywalnego Citana Tourer
 
-## Ceny Mercedesa Citan
+## Typowe usterki Mercedesa Citan
 
-Ceny Citana w Polsce plasują go między [Renault Kangoo](/modele/renault-kangoo/) a [Mercedesem Vito](/modele/mercedes-vito/) – premium względem francuskiego bliźniaka, ale znacznie przystępniej niż większe modele z gwiazdą.
+Citan nie jest autem szczególnie awaryjnym, ale ma kilka powtarzalnych punktów, które warto sprawdzić przed zakupem. Najwięcej zależy od silnika, skrzyni i sposobu eksploatacji.
 
-| Wariant | Cena orientacyjna |
-|---------|-------------------|
-| Citan 110 CDI Panel Van (nowy, netto) | od ok. 95 000 zł |
-| Citan 113 Tourer (nowy, netto) | od ok. 110 000 zł |
-| eCitan Panel Van (nowy, netto) | od ok. 155 000 zł |
-| T-Class 113 (nowy, brutto) | od ok. 120 000 zł |
-| Citan I używany (2015–2020) | 25 000–55 000 zł |
-| Citan II używany (2022–2024) | 65 000–95 000 zł |
+### 1.5 dCi / OM608
 
-Różnica cenowa między Citanem a Kangoo III wynosi ok. 15 000–20 000 zł netto na korzyść Renault. Za tę dopłatę Mercedes oferuje system MBUX, lepsze materiały i prestiż marki – co dla części klientów biznesowych uzasadnia wyższą cenę.
+Diesel 1.5 to znana konstrukcja i przy normalnym serwisie potrafi zrobić duże przebiegi. Najczęściej wracają jednak problemy osprzętu i układu oczyszczania spalin.
+
+- **EGR** – zwykle **800–1800 zł**
+- **DPF – czyszczenie** – **600–900 zł**
+- **DPF – nowy** – **3500–7000 zł**
+- **Wtryski – regeneracja** – **700–1200 zł/szt.**
+- **Komplet rozrządu z pompą** – **1400–2500 zł**
+
+### 1.3 TCe / M282
+
+Benzynowy 1.3 jest cichszy i lepiej pasuje do jazdy miejskiej, ale też ma swoje typowe koszty. Najczęściej wychodzą drobiazgi osprzętu, a przy wysokich przebiegach trzeba pilnować rozrządu.
+
+- **Cewki zapłonowe** – **150–300 zł/szt.**
+- **Świece** – **200–400 zł komplet**
+- **Zawór EVAP / układ dolotowy** – **300–900 zł**
+- **Łańcuch rozrządu przy dużych przebiegach** – **3000–5000 zł**
+
+### 7DCT / EDC
+
+Dwusprzęgłowa skrzynia poprawia komfort w mieście, ale wymaga serwisu. Objawami problemów są szarpanie, opóźnione ruszanie i błędy sterowania.
+
+- **Mechatronika / sterowanie** – **2500–6000 zł**
+- **Wymiana oleju** – **700–1200 zł**
+
+### eCitan
+
+W elektryku odpada część typowych problemów spalinowych, ale dochodzą elementy układu ładowania i elektroniki. W eksploatacji flotowej wracają też zwykłe tematy zawieszenia.
+
+- **OBC / osprzęt ładowania** – **3000–8000 zł**
+- **Łożyska / zawieszenie przód** – **500–1200 zł strona**
+- **Elektronika i czujniki ADAS** – **300–1500 zł**
 
 #
 {{% youtube %}}
 
-# Porównanie Citana z konkurencją
+Materiał dotyczy I generacji W415.
 
-Citan rywalizuje z kompaktowymi vanami: [Renault Kangoo](/modele/renault-kangoo/), [Oplem Combo](/modele/opel-combo/), Volkswagenem Caddy, Toyotą Proace City i Fiatem Doblo.
+## Porównanie Citana z konkurencją
 
-| Parametr | Mercedes Citan L2 | Renault Kangoo III L2 | Opel Combo L2 | VW Caddy Cargo Maxi |
-|----------|--------------------|-----------------------|---------------|----------------------|
-| Długość | 4922 mm | 4909 mm | 4753 mm | 4853 mm |
-| Paka | 3,7 m³ | 3,9 m³ | 4,4 m³ | 3,7 m³ |
-| Ładowność | 630 kg | 700 kg | 650 kg | 700 kg |
-| Diesel bazowy | 1.5 dCi 95 KM | 1.5 dCi 95 KM | 1.5 D 100 KM | 2.0 TDI 75 KM |
-| Wersja elektryczna | eCitan 122 KM | Kangoo E-Tech 122 KM | Combo-e 136 KM | – |
-| Platforma | CMF-C/D | CMF-C/D | EMP2 | MQB |
-| Cena furgon (netto) | ~95 000 zł | ~80 000 zł | ~85 000 zł | ~95 000 zł |
+Citan konkuruje głównie z modelami z tego samego segmentu kompaktowych vanów. W praktyce najczęściej porównuje się go z Kangoo, Caddy Cargo Maxi oraz autami Stellantis, które zwykle oferują większą pakę.
 
-Kangoo oferuje identyczną mechanikę taniej. [Opel Combo](/modele/opel-combo/) wyróżnia się większą kubaturą paki na platformie PSA. Caddy to jedyny model na niezależnej platformie (MQB) – z najlepszą kulturą jazdy, ale bez opcji elektrycznej. Citan wygrywa systemem multimedialnym MBUX i pozycjonowaniem premium, co przekłada się na wyższą wartość rezydualną przy odsprzedaży.
+| Model | Długość | Kubatura | Ładowność | Maks. DMC | Maks. masa przyczepy | Oferta EV | Cena bazowa |
+|-------|---------|----------|-----------|-----------|----------------------|-----------|-------------|
+| Mercedes Citan L2 | wersja długa W420 | do 3,7 m³ | do ok. 780 kg | ok. 2020–2230 kg | do 1500 kg | eCitan 122 KM | od ok. 95 000 zł netto |
+| Renault Kangoo Van L2 | L2 | do 3,9 m³ | – | – | – | E-Tech 122 KM | – |
+| VW Caddy Cargo Maxi | 4853 mm | ok. 3,7 m³ | – | – | – | brak | – |
+| Toyota Proace City Long | Long | do 4,4 m³ | – | – | – | EV 136 KM | – |
+| Opel Combo Cargo XL | ok. 4900 mm | do 4,4 m³ | – | – | – | EV 136 KM | – |
+
+Wnioski są dość proste. **Citan wygrywa kabiną, MBUX-em i ogólnym wrażeniem jakości**, ale **przegrywa ceną** i zwykle **ładownością** z niektórymi modelami Stellantis.
+
+Jeśli zależy Ci na marce i lepszym wnętrzu, Mercedes ma sens. Jeśli liczy się głównie maksymalna paka za jak najmniejsze pieniądze, lepiej wypadają rywale z większą kubaturą.
+
+## Ceny Mercedesa Citan
+
+Nowy Citan nie jest tani, ale na rynku wtórnym wybór jest już szeroki. Najważniejsze jest rozróżnienie między starszym W415, nowszym W420 oraz droższymi odmianami osobowymi.
+
+| Rocznik | Ceny używanych w Polsce |
+|---------|--------------------------|
+| 2013–2014 | **18 000–30 000 zł** |
+| 2015–2016 | **24 000–38 000 zł** |
+| 2017–2018 | **32 000–48 000 zł** |
+| 2019–2021 | **42 000–62 000 zł** |
+| 2022 | **68 000–90 000 zł** |
+| 2023 | **78 000–105 000 zł** |
+| 2024 | **88 000–120 000 zł** |
+
+Dla porządku: **Tourer i T-Class** są zwykle droższe od porównywalnego furgonu o **10–25 tys. zł**. Wynika to z bogatszego wyposażenia, przeszklonego nadwozia i mniejszej podaży na rynku używanym.
+
+W przypadku nowych aut punkt odniesienia pozostaje podobny jak wcześniej: furgon od ok. **95 000 zł netto**, eCitan od ok. **155 000 zł netto**, a T-Class od ok. **120 000 zł brutto**. Mercedes każe dopłacić za markę i lepszą kabinę – pytanie tylko, czy w Twojej firmie to realnie pracuje na wartość auta.

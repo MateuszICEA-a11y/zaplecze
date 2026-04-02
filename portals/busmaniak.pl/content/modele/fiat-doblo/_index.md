@@ -31,9 +31,14 @@ Fiat Doblò zadebiutował w 2000 roku jako kompaktowy van łączący funkcje aut
 
 ### Doblò I (Typ 223, 2000–2005)
 
-Pierwsza generacja weszła na rynek w 2000 roku. Była to konstrukcja Fiata segmentu B/C dostosowana do auta użytkowego, z długością ok. 4158 mm i rozstawem osi 2583 mm.
+Pierwsza generacja weszła na rynek w 2000 roku. Była to konstrukcja Fiata segmentu B/C dostosowana do auta użytkowego, z długością ok. 4158 mm i rozstawem osi ok. 2963 mm.
 
 To właśnie ten model zbudował pozycję Doblò wśród małych firm, kurierów i użytkowników szukających taniego vana z prostą mechaniką.
+
+- napęd przedni
+- wersje Cargo i osobowe
+- silniki benzynowe 1.2 i 1.6 oraz diesle 1.9 D i 1.9 JTD
+- tytuł Van of the Year 2006 dotyczył faceliftingu i całej rodziny modelowej
 
 ### Doblò I FL (Typ 223, 2005–2010)
 
@@ -41,11 +46,21 @@ Lifting z 2005 roku przyniósł zmieniony przód i odświeżone wnętrze. W gami
 
 Po modernizacji Doblò I było już wyraźnie dojrzalszym autem, ale dalej pozostało prostym i użytkowym vanem z tanimi częściami.
 
+- nowy pas przedni
+- wprowadzenie 1.3 MultiJet 85 KM
+- poprawa wyposażenia bezpieczeństwa
+- utrzymanie jednej długości nadwozia
+
 ### Doblò II (Typ 263, 2010–2015)
 
 Druga generacja była dużym krokiem naprzód. Auto urosło do 4390 mm, a wariant Maxi do 4740 mm; rozstaw osi wynosił odpowiednio 2755 lub 3105 mm.
 
 Generacja II (2010–2022) otrzymała nową platformę Fiata (typ 263); późniejszy Opel Combo D był jej bliźniakiem. To właśnie ta odsłona stała się najpopularniejsza na rynku wtórnym – wybór aut używanych jest bardzo szeroki, podobnie jak dostępność części.
+
+- całkowicie nowe nadwozie
+- dwie długości: SWB i Maxi
+- większa paka: 3,4 lub 4,2 m³
+- od 2011 roku bliźniaczy Opel Combo D
 
 ### Doblò II FL (Typ 263, 2015–2022)
 
@@ -53,11 +68,21 @@ W 2015 roku pojawił się lifting. Zmieniono pas przedni, odświeżono wyposaże
 
 Mechanicznie był to dalej ten sam, dobrze znany Doblò II, ale w nowszym wydaniu i z bardziej uporządkowaną ofertą silników.
 
+- nowy przód
+- multimedia Uconnect
+- dostosowanie diesli do Euro 6
+- rozwój wersji Trekking i Adventure na wybranych rynkach
+
 ### Doblò III (K9, od 2022)
 
 Trzecia generacja to już zupełnie inna konstrukcja. Doblò przeszło na platformę EMP2/Stellantis i stało się technicznym bliźniakiem [Citroëna Berlingo](/modele/citroen-berlingo/) oraz Peugeota Partnera.
 
 Auto ma długość 4403 lub 4753 mm i korzysta z jednostek 1.5 BlueHDi 100/130 KM oraz elektrycznej wersji e-Doblò 100 kW z baterią 50 kWh. Fiat zachował własny wygląd przodu i oznaczenia, ale technicznie to van z tej samej rodziny co pozostałe modele K9.
+
+- przejście na platformę EMP2/K9 Stellantis
+- wspólnota techniczna z Berlingo, Partnerem i Combo
+- wprowadzenie e-Doblò 136 KM z akumulatorem 50 kWh
+- dwa rozstawy i dwie długości: L1 i L2
 
 ## Dane techniczne i wymiary
 
@@ -65,29 +90,15 @@ Najważniejsze liczby różnią się zależnie od generacji i długości nadwozi
 
 ### Generacja I (2000–2010)
 
-W pierwszym Doblò gama silników zmieniała się w trakcie produkcji, dlatego lepiej patrzeć na całą generację z podziałem na starsze i poliftingowe wersje. Najczęściej spotkasz:
+W pierwszym Doblò gama silników zmieniała się w trakcie produkcji, dlatego najlepiej patrzeć na całą generację z podziałem na wersje przedliftowe i poliftingowe. Najczęściej spotkasz benzynowe 1.2 16V, 1.4 8V i 1.6 16V oraz diesle 1.9 D, 1.9 JTD i późniejsze 1.3 MultiJet.
 
-- 1.2 16V 80 KM
-- 1.4 8V 77 KM
-- 1.6 16V 103 KM
-- 1.9 D 63 KM
-- 1.9 JTD 100/105 KM
-- 1.3 MultiJet 70/85 KM
-
-Długość w wersji standardowej wynosiła ok. 4158 mm. W zależności od wersji użytkowej parametry ładowności były wyraźnie skromniejsze niż w późniejszych generacjach.
+Długość standardowego nadwozia wynosiła ok. 4158 mm. W porównaniu z późniejszymi generacjami była to konstrukcja wyraźnie skromniejsza ładunkowo, ale nadal praktyczna w małej firmie i prostym transporcie miejskim.
 
 ### Generacja II (2010–2022)
 
-Druga generacja była zauważalnie większa i praktyczniejsza. Wersja standardowa miała 4390 mm długości, a Maxi 4740 mm.
+Druga generacja była zauważalnie większa i praktyczniejsza. Wersja standardowa miała 4390 mm długości, a Maxi 4740 mm, przy rozstawie osi 2755 lub 3105 mm.
 
-Silniki obejmowały:
-
-- 1.3 MultiJet 90/95 KM
-- 1.6 MultiJet 90/105/120 KM
-- 2.0 MultiJet 135 KM
-- 1.4 T-Jet 120 KM
-
-Ładowność Cargo sięgała ok. 750–1000 kg zależnie od wersji i DMC.
+Silniki obejmowały 1.3 MultiJet 90/95 KM, 1.6 MultiJet 90/105/120 KM, 2.0 MultiJet 135 KM oraz 1.4 T-Jet 120 KM. Ładowność Cargo sięgała **750–1000 kg**, zależnie od wersji i DMC.
 
 ### Generacja III (od 2022)
 
@@ -96,7 +107,6 @@ Silniki obejmowały:
 Obecne Doblò korzysta z platformy EMP2/Stellantis i ma dwie długości nadwozia. W ofercie są benzynowe, wysokoprężne i elektryczne warianty napędu.
 
 Silniki:
-
 - 1.2 PureTech 110 KM
 - 1.5 BlueHDi 100 KM
 - 1.5 BlueHDi 130 KM
@@ -104,22 +114,24 @@ Silniki:
 
 Pojemność ładunkowa Cargo wynosi ok. 3,3 m³ w L1 i 3,9 m³ w L2. Z systemem Magic Cargo rośnie odpowiednio do 3,8 i 4,4 m³.
 
+W praktyce przy zabudowie i codziennej robocie ważne są też wymiary samej paki. W III generacji szerokość między nadkolami to ok. 1229 mm, szerokość maksymalna ok. 1630 mm, a wysokość przestrzeni ładunkowej ok. 1243 mm.
+
 {{% info title="Platforma PSA – co to oznacza w praktyce" icon="engineering" %}}
 Doblò III korzysta z tej samej skrzyni biegów EAT8 i silników PSA co Berlingo. Serwis jest tożsamy – mechanicy przyzwyczajeni do Berlingo obsłużą Doblò bez problemów. Części zamienne są wspólne, co dobrze wpływa na dostępność i ceny.
 {{% /info %}}
 
 ### Zbiorcza tabela wymiarów i ładowności
 
-Poniżej masz najważniejsze parametry użytkowe wersji cargo z II i III generacji. To dane, które realnie decydują, czy wózek, regał albo zabudowa minicampera zmieszczą się bez kombinowania.
+Poniżej masz najważniejsze parametry użytkowe wszystkich generacji. To dane, które realnie decydują, czy europaleta, regał albo prosta zabudowa minicampera zmieszczą się bez kombinowania.
 
-| Wersja | Długość | Rozstaw osi | Wysokość | Pojemność ładunkowa | Dł. przestrzeni ładunkowej | DMC | Ładowność |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| Doblò II Cargo SWB | 4390 mm | 2755 mm | ok. 1845 mm | 3,4 m³ | – | 2000–2410 kg | do ok. 750–1000 kg |
-| Doblò II Cargo LWB/Maxi | 4740 mm | 3105 mm | ok. 1845 mm | 4,2 m³ | – | 2000–2410 kg | do ok. 750–1000 kg |
-| Doblò III Cargo L1 | 4403 mm | 2785 mm | ok. 1812 mm | 3,3 m³ | ok. 1817 mm | 2370–2450 kg | do ok. 1000 kg |
-| Doblò III Cargo L1 + Magic Cargo | 4403 mm | 2785 mm | ok. 1812 mm | 3,8 m³ | ok. 1817 mm | 2370–2450 kg | do ok. 1000 kg |
-| Doblò III Cargo L2 | 4753 mm | 2975 mm | ok. 1812 mm | 3,9 m³ | ok. 2167 mm | 2370–2500 kg | do ok. 950–1000 kg |
-| Doblò III Cargo L2 + Magic Cargo | 4753 mm | 2975 mm | ok. 1812 mm | 4,4 m³ | ok. 2167 mm | 2370–2500 kg | do ok. 950–1000 kg |
+| Generacja / wersja      | Długość | Rozstaw osi | Wysokość         | Pojemność ładunkowa                         | DMC            | Ładowność        |
+|-------------------------|--------:|------------:|-----------------:|--------------------------------------------|---------------:|-----------------:|
+| Doblò I Cargo           | 4158 mm | 2963 mm     | ok. 1818–1845 mm | ok. 3,0 m³                                  | ok. 1965–2020 kg | ok. 730–805 kg |
+| Doblò I Panorama        | 4158 mm | 2963 mm     | ok. 1818–1845 mm | bagażnik zależny od układu siedzeń          | ok. 1825–1870 kg | ok. 550–650 kg |
+| Doblò II Cargo SWB      | 4390 mm | 2755 mm     | ok. 1845 mm      | 3,4 m³                                      | 2000–2410 kg   | 750–1000 kg      |
+| Doblò II Cargo Maxi     | 4740 mm | 3105 mm     | ok. 1845 mm      | 4,2 m³                                      | 2000–2410 kg   | 750–1000 kg      |
+| Doblò III Cargo L1      | 4403 mm | 2785 mm     | 1812 mm          | 3,3 m³                                      | 2370–2450 kg   | do 1000 kg       |
+| Doblò III Cargo L2      | 4753 mm | 2975 mm     | 1812 mm          | 3,9 m³                                      | 2370–2500 kg   | 950–1000 kg      |
 
 ## Silniki
 
@@ -127,20 +139,26 @@ W Doblò dobór silnika ma większe znaczenie niż w zwykłej osobówce. Ten sam
 
 ### Tabela silników Fiat Doblò
 
-| Generacja | Silnik | Moc | Moment obrotowy | Norma / bateria | Średnie zużycie / zasięg |
+Poniżej masz przekrojowe zestawienie najważniejszych jednostek napędowych ze wszystkich generacji. To wystarcza, żeby szybko ocenić, czy szukasz prostego diesla do pracy, benzyny do krótkich tras czy nowszego diesla pod większe przebiegi.
+
+| Generacja | Silnik         | Moc        | Moment | Norma Euro / bateria | Średnie spalanie / zasięg |
 |---|---|---:|---:|---|---|
-| Doblò I | 1.2 16V | 80 KM | – | – | – |
-| Doblò I | 1.4 8V | 77 KM | – | – | – |
-| Doblò I | 1.3 MultiJet | 70/85 KM | 180/200 Nm | – | – |
-| Doblò I | 1.9 JTD | 100/105 KM | 200 Nm | – | – |
-| Doblò II | 1.3 MultiJet | 90/95 KM | 200 Nm | Euro 5/6 | ok. 5,1–5,7 l/100 km |
-| Doblò II | 1.6 MultiJet | 90/105/120 KM | 290–320 Nm | Euro 5/6 | ok. 5,4–6,0 l/100 km |
-| Doblò II | 2.0 MultiJet | 135 KM | 320 Nm | Euro 5 | ok. 5,8–6,4 l/100 km |
-| Doblò II | 1.4 T-Jet | 120 KM | 206 Nm | Euro 5/6 | ok. 7,6–8,5 l/100 km |
-| Doblò III | 1.2 PureTech | 110 KM | 205 Nm | Euro 6d | ok. 6,3–7,0 l/100 km |
-| Doblò III | 1.5 BlueHDi | 100 KM | 250 Nm | Euro 6d | ok. 5,3–5,9 l/100 km |
-| Doblò III | 1.5 BlueHDi | 130 KM | 300 Nm | Euro 6d | ok. 5,5–6,1 l/100 km |
-| Doblò III | e-Doblò | 100 kW / 136 KM | 260 Nm | bateria 50 kWh | WLTP do ok. 275–280 km |
+| Doblò I    | 1.2 16V       | 80 KM      | 114 Nm | Euro 3               | 7,0–7,6 l/100 km          |
+| Doblò I    | 1.4 8V        | 77 KM      | 115 Nm | Euro 4               | 7,2–7,8 l/100 km          |
+| Doblò I    | 1.6 16V       | 103 KM     | 145 Nm | Euro 3/4             | 7,8–8,6 l/100 km          |
+| Doblò I    | 1.9 D         | 63 KM      | 118 Nm | Euro 3               | 6,4–7,0 l/100 km          |
+| Doblò I    | 1.9 JTD       | 100/105 KM | 200 Nm | Euro 3/4             | 5,8–6,5 l/100 km          |
+| Doblò I FL | 1.3 MultiJet  | 70/85 KM   | 180/200 Nm | Euro 4            | 5,2–5,8 l/100 km          |
+| Doblò II   | 1.3 MultiJet  | 90/95 KM   | 200 Nm | Euro 5/6             | 5,1–5,7 l/100 km          |
+| Doblò II   | 1.6 MultiJet  | 90 KM      | 290 Nm | Euro 5               | 5,4–5,8 l/100 km          |
+| Doblò II   | 1.6 MultiJet  | 105 KM     | 290 Nm | Euro 5/6             | 5,5–5,9 l/100 km          |
+| Doblò II   | 1.6 MultiJet  | 120 KM     | 320 Nm | Euro 5/6             | 5,6–6,0 l/100 km          |
+| Doblò II   | 2.0 MultiJet  | 135 KM     | 320 Nm | Euro 5               | 5,8–6,4 l/100 km          |
+| Doblò II   | 1.4 T-Jet     | 120 KM     | 206 Nm | Euro 5/6             | 7,6–8,5 l/100 km          |
+| Doblò III  | 1.2 PureTech  | 110 KM     | 205 Nm | Euro 6d              | 6,3–7,0 l/100 km          |
+| Doblò III  | 1.5 BlueHDi   | 100 KM     | 250 Nm | Euro 6d              | 5,3–5,9 l/100 km          |
+| Doblò III  | 1.5 BlueHDi   | 130 KM     | 300 Nm | Euro 6d              | 5,5–6,1 l/100 km          |
+| Doblò III  | e-Doblò       | 136 KM     | 260 Nm | 50 kWh               | WLTP 275–280 km           |
 
 Dla użytkownika najpraktyczniejsze wybory to zwykle 1.6 MultiJet w II generacji oraz 1.5 BlueHDi w III generacji. W starszych autach 1.3 MultiJet kusi spalaniem, ale wymaga pilnowania osprzętu i serwisu.
 
@@ -218,21 +236,37 @@ Zdarzają się też aktualizacje softu w serwisie – koszt od **0–500 zł** n
 
 Na papierze Doblò konkuruje z wieloma modelami, ale część tej „konkurencji” to w praktyce to samo auto z innym znaczkiem. Doblò, Combo, Berlingo i Partner należą do rodziny K9/Stellantis, więc realną konkurencją platformową pozostają głównie Renault Kangoo i Volkswagen Caddy.
 
-| Parametr | Fiat Doblò III L1 | Opel Combo E L1 | Citroën Berlingo III M | Renault Kangoo III L1 | VW Caddy V |
+| Parametr                    | Fiat Doblò III L1 | Opel Combo E L1 | Citroën Berlingo III M | Renault Kangoo III L1 | VW Caddy V |
 |---|---:|---:|---:|---:|---:|
-| Długość | 4403 mm | 4403 mm | 4403 mm | 4486 mm | 4501 mm |
-| Rozstaw osi | 2785 mm | 2785 mm | 2785 mm | 2716 mm | 2755 mm |
-| Wysokość | ok. 1812 mm | ok. 1812 mm | ok. 1812 mm | ok. 1864 mm | ok. 1856 mm |
-| Pojemność ładunkowa | 3,3 m³ | 3,3 m³ | 3,3 m³ | 3,3 m³ | 3,1 m³ |
-| Długość przestrzeni ładunkowej | ok. 1817 mm | ok. 1817 mm | ok. 1817 mm | – | – |
-| Ładowność maks. | do ok. 1000 kg | do ok. 1000 kg | do ok. 1000 kg | do ok. 987 kg | do ok. 700–750 kg |
-| Liczba miejsc | 2–3 | 2–3 | 2–3 | 2–3 | 2–3 |
-| Diesel bazowy | 1.5 BlueHDi 100 KM | 1.5 BlueHDi 102 KM | 1.5 BlueHDi 100 KM | 1.5 Blue dCi 95 KM | 2.0 TDI 75 KM |
-| Automat | tak | tak | tak | tak | tak |
-| Wersja EV | tak | tak | tak | tak | brak fabrycznej wersji BEV w polskiej oficjalnej ofercie |
-| Cena Van L1 (netto) | od 105 000 zł | od 105 000 zł | od 92 000 zł | od 90 000 zł | od 130 000 zł |
+| Długość                     | 4403 mm           | 4403 mm         | 4403 mm                | 4486 mm               | 4501 mm    |
+| Rozstaw osi                 | 2785 mm           | 2785 mm         | 2785 mm                | 2716 mm               | 2755 mm    |
+| Wysokość                    | ok. 1812 mm       | ok. 1812 mm     | ok. 1812 mm            | ok. 1864 mm           | ok. 1856 mm |
+| Pojemność ładunkowa         | 3,3 m³            | 3,3 m³          | 3,3 m³                 | 3,3 m³                | 3,1 m³     |
+| Długość przestrzeni ładunkowej | ok. 1817 mm    | ok. 1817 mm     | ok. 1817 mm            | –                     | –          |
+| Ładowność maks.             | do ok. 1000 kg    | do ok. 1000 kg  | do ok. 1000 kg         | do ok. 987 kg         | do ok. 700–750 kg |
+| Liczba miejsc               | 2–3               | 2–3             | 2–3                    | 2–3                   | 2–3        |
+| Diesel bazowy               | 1.5 BlueHDi 100 KM | 1.5 BlueHDi 102 KM | 1.5 BlueHDi 100 KM  | 1.5 Blue dCi 95 KM    | 2.0 TDI 75 KM |
+| Automat                     | tak               | tak             | tak                    | tak                   | tak        |
+| Wersja EV                   | tak               | tak             | tak                    | tak                   | brak oficjalnej fabrycznej wersji BEV w gamie Caddy |
+| Cena Van L1 (netto)         | od 105 000 zł     | od 105 000 zł   | od 92 000 zł           | od 90 000 zł          | od 130 000 zł |
 
 Doblò III to bliźniak [Opla Combo](/modele/opel-combo/), [Citroëna Berlingo](/modele/citroen-berlingo/) i Peugeota Partnera, więc przy porównaniu tych modeli patrz głównie na cenę, wyposażenie i dostępność konkretnej konfiguracji. Jeśli zależy Ci na innej konstrukcji niż K9/Stellantis, sens ma porównanie przede wszystkim z [Renault Kangoo](/modele/renault-kangoo/) i Volkswagenem Caddy.
+
+### Realna konkurencja spoza bliźniaków
+
+Jeśli odrzucisz auta z tej samej rodziny technicznej, zostają trzy sensowne kierunki: Kangoo, Caddy i ProAce City. Wtedy porównanie robi się prostsze, bo patrzysz już nie na znaczek, tylko na wymiary, ładowność i bazowe silniki.
+
+| Model                | Długość | Pojemność ładunkowa | Ładowność        | Silniki bazowe                    |
+|---|---:|---:|---:|---|
+| Fiat Doblò III L1    | 4403 mm | 3,3 m³              | do 1000 kg       | 1.2 110 KM / 1.5 100 KM          |
+| Renault Kangoo Van L1| 4486 mm | 3,3 m³              | do 987 kg        | 1.3 TCe 100/130 KM, 1.5 Blue dCi 95 KM |
+| VW Caddy Cargo       | 4501 mm | 3,1 m³              | ok. 700–750 kg   | 2.0 TDI 75/102/122 KM, 1.5 TSI 114 KM |
+| Toyota ProAce City   | 4403 mm | 3,3 m³              | do ok. 1000 kg   | 1.5 D-4D 100/130 KM              |
+
+Wnioski zakupowe są dość proste:
+- Doblò zwykle wygrywa ceną względem Caddy.
+- Z Kangoo remisuje funkcjonalnością, bo oba auta oferują bardzo zbliżone parametry użytkowe.
+- Z ProAce City różni się głównie siecią dealerską i wyceną.
 
 #
 {{% youtube %}}

@@ -28,13 +28,39 @@ sources:
   - "testy prasowe eSprinter 2024."
 ---
 
+## Historia i generacje
+
+eSprinter przeszedł wyraźną zmianę między pierwszym a drugim wcieleniem. To nie jest lifting z większą baterią, tylko przeskok z auta typowo miejskiego do pełnoprawnego elektrycznego vana dla szerszego zastosowania.
+
+### I generacja eSprinter (2019–2023)
+
+Pierwszy Mercedes eSprinter był projektowany głównie pod dostawy ostatniej mili. Oferował napęd na przednią oś, silnik **85 kW (116 KM)** i **295 Nm**, a użytkowa pojemność baterii wynosiła ok. **35 kWh**.
+
+Zasięg WLTP wynosił ok. **120–168 km**, więc auto najlepiej sprawdzało się w pracy wokół miasta i przy stałych, przewidywalnych trasach. Katalogowo najczęściej kojarzono go z konfiguracją **L2H2**.
+
+### II generacja eSprinter (od 2024)
+
+Druga generacja to już zupełnie inna konstrukcja. Mercedes zastosował nową modułową architekturę eSprintera z trzema modułami: przednim, środkowym z baterią i tylnym z napędem.
+
+Nowy model przeszedł na napęd **RWD**, dostał silniki **100 lub 150 kW**, baterie **56 / 81 / 113 kWh** i zasięg WLTP do **440 km**. Produkcja dla Europy odbywa się m.in. w **Ludwigsfelde**, a gama obejmuje zarówno **furgon**, jak i **podwozie do zabudowy**.
+
+### Co zmieniło się w II generacji
+
+Najważniejsze różnice względem pierwszego eSprintera są konkretne:
+
+- nowa architektura modułowa
+- większe baterie: **56 / 81 / 113 kWh**
+- szybsze ładowanie DC do **115 kW**
+- szersza oferta zabudów
+- dostępność wersji o DMC do **4,25 t**
+
 ## Historia i konstrukcja Mercedes eSprinter
 
-Mercedes eSprinter pojawił się po raz pierwszy w 2019 roku jako elektryczna odmiana trzeciej generacji [Sprintera](/modele/mercedes-sprinter/). Pierwsza generacja eSprintera powstawała w fabryce w Düsseldorfie i oferowała stosunkowo skromne parametry – baterię o pojemności ok. 55 kWh, silnik elektryczny 85 kW (116 KM) z napędem na przednią oś i zasięg WLTP rzędu 120–150 km. Wystarczało to do dostaw ostatniej mili, ale nie przekonywało flot potrzebujących większego zasięgu.
+Mercedes eSprinter pojawił się po raz pierwszy w 2019 roku jako elektryczna odmiana trzeciej generacji [Sprintera](/modele/mercedes-sprinter/). Pierwsza generacja była propozycją głównie dla firm kurierskich i operatorów miejskich flot, gdzie dzienne przebiegi były krótkie, a ładowanie odbywało się nocą w bazie.
 
-Przełom nastąpił w 2024 roku wraz z drugą generacją. Mercedes zaprojektował eSprintera od podstaw na platformie Electric Versatility Platform (EVP), dzielonej z konwencjonalnym Sprinterem. Produkcja przeniosła się do fabryki w Charleston (USA) oraz Ludwigsfelde (Niemcy). Nowy eSprinter zmienił napęd na tylną oś (RWD), co poprawiło trakcję pod obciążeniem i pozwoliło na montaż większych baterii w podłodze.
+W drugiej generacji Mercedes zmienił podejście do samej konstrukcji. Zamiast opierać projekt na prostym przeniesieniu napędu elektrycznego do istniejącego vana, zastosowano nową modułową architekturę z trzema częściami: przednią, środkową z baterią i tylną z układem napędowym. To pozwoliło przejść na napęd tylnej osi i otworzyło drogę do większych akumulatorów oraz większej liczby wersji użytkowych.
 
-Konstrukcja opiera się na stalowej ramie z podłużnicami, do której mocowana jest zabudowa furgonowa lub podwozie pod zabudowę. Silnik elektryczny napędza tylną oś przez jednostopniową przekładnię. System [rekuperacji](https://pl.wikipedia.org/wiki/Rekuperacja) energii oferuje pięć poziomów odzyskiwania, włącznie z trybem jazdy jednym pedałem.
+Konstrukcja nadal bazuje na ramie i rozwiązaniach typowych dla dużego dostawczaka. Silnik elektryczny napędza tylną oś przez jednostopniową przekładnię, a kierowca może regulować poziom rekuperacji łopatkami przy kierownicy; dostępny jest także adaptacyjny tryb D-AUTO.
 
 {{% info title="Produkcja w Europie" icon="engineering" %}}
 Europejskie eSprintery powstają w fabryce Mercedes-Benz w Ludwigsfelde pod Berlinem – tym samym zakładzie, który produkuje konwencjonalne Sprintery. Linia montażowa obsługuje zarówno wersje spalinowe, jak i elektryczne na jednej taśmie.
@@ -42,89 +68,171 @@ Europejskie eSprintery powstają w fabryce Mercedes-Benz w Ludwigsfelde pod Berl
 
 ## Dane techniczne Mercedesa eSprinter
 
-Druga generacja eSprintera oferuje dwa warianty mocy i dwie pojemności baterii. Wszystkie wersje mają napęd na tylną oś i jednostopniową przekładnię.
+W drugiej generacji gama jest szersza niż w pierwszych materiałach prasowych. Kluczowe są trzy pojemności akumulatora i dwa warianty mocy, a dostępność konkretnej konfiguracji zależy od wersji nadwozia i rynku.
 
 | Parametr | eSprinter 100 kW | eSprinter 150 kW |
-|----------|-------------------|-------------------|
+|----------|------------------:|-----------------:|
 | Moc silnika | 100 kW (136 KM) | 150 kW (204 KM) |
-| Moment obrotowy | 300 Nm | 400 Nm |
-| Bateria | 56 kWh lub 113 kWh | 113 kWh |
-| Zasięg WLTP (113 kWh) | do 440 km | do 400 km |
-| Zasięg WLTP (56 kWh) | do 260 km | – |
+| Moment obrotowy | 400 Nm | 400 Nm |
+| Bateria | 56 kWh / 81 kWh / 113 kWh | 113 kWh |
+| Zasięg WLTP | do ok. 250–330 km zależnie od baterii i wersji | do 440 km |
 | Ładowanie DC (maks.) | 115 kW | 115 kW |
 | Ładowanie AC (maks.) | 11 kW | 11 kW |
-| Prędkość maks. | 140 km/h | 140 km/h |
-| DMC | 3500–4250 kg | 3500–4250 kg |
+| Prędkość maks. | 120 lub 140 km/h | 140 km/h |
+| DMC | furgon 3,5 t / 4,25 t | furgon 3,5 t / 4,25 t, podwozie także do 5,0 t tam, gdzie oferowane |
 
-Ładowność zależy od konfiguracji nadwozia i wybranej baterii. Wersja z baterią 56 kWh jest lżejsza o ok. 250 kg, co bezpośrednio przekłada się na wyższą ładowność – do 1730 kg w wariancie podwozie. Furgon z baterią 113 kWh oferuje ładowność rzędu 1100–1200 kg.
+Ładowność mocno zależy od baterii, DMC i typu zabudowy. Lżejsze wersje z akumulatorem **56 kWh** dają więcej zapasu na towar, a najcięższe konfiguracje z dużą baterią i zabudową specjalną naturalnie ten zapas ograniczają.
 
-Zużycie energii według WLTP wynosi 27,5–34,5 kWh/100 km w zależności od wariantu nadwozia i stylu jazdy. W praktyce zimowe warunki zwiększają zużycie o 20–30%.
+Zużycie energii według WLTP zależy od nadwozia, masy i prędkości maksymalnej. W praktyce zimą trzeba doliczyć zauważalny wzrost poboru energii, szczególnie przy jeździe ekspresowej i pracy z pełnym obciążeniem.
+
+## Dane techniczne i wymiary
+
+W przypadku eSprintera same kilowaty i zasięg nie wystarczą. Dla firmy ważniejsze bywa to, ile realnie wejdzie do środka, jakie jest DMC i czy dana konfiguracja zmieści się w założeniach zabudowy.
+
+| Wersja | Rozstaw osi | Dach | Długość przestrzeni ładunkowej | Wysokość przestrzeni | Pojemność | DMC | Ładowność |
+|--------|------------:|------|-------------------------------:|---------------------:|----------:|-----|-----------|
+| Furgon L2H2 | 3665 mm | H2 | ok. 3267 mm | ok. 2009 mm | 11 m3 | 3500 / 4250 kg | ok. 1200–1600 kg zależnie od baterii |
+| Furgon L3H2 | 4325 mm | H2 | ok. 4307 mm | ok. 2009 mm | 14 m3 | 3500 / 4250 kg | ok. 1000–1400 kg |
+| Podwozie L3 | 4325 mm | – | długość zabudowy wg producenta | – | – | 3500 / 4250 / 5000 kg | do ok. 1730 kg |
+
+Powyższe dane należy traktować jako orientacyjne i zależne od rynku oraz wersji. W praktyce ostateczne liczby potrafią zmienić się wraz z baterią, kabiną, wyposażeniem i typem homologacji.
+
+## Silniki
+
+W nowym eSprinterze nie ma dużej liczby odmian napędowych, ale różnice między nimi są istotne. Wybór sprowadza się do mocy, pojemności baterii i tego, czy priorytetem jest ładowność, czy zasięg.
+
+| Wersja | Moc | Moment | Napęd | Bateria | Zużycie WLTP | Zasięg WLTP | Vmax |
+|--------|-----|--------|-------|---------|--------------|-------------|------|
+| eSprinter 100 kW | 100 kW (136 KM) | 400 Nm | RWD | 56 kWh | ok. 21–28 kWh/100 km zależnie od wersji | do ok. 250–270 km | 120 lub 140 km/h |
+| eSprinter 100 kW | 100 kW (136 KM) | 400 Nm | RWD | 81 kWh | ok. 23–30 kWh/100 km | do ok. 330 km | 120 lub 140 km/h |
+| eSprinter 150 kW | 150 kW (204 KM) | 400 Nm | RWD | 113 kWh | ok. 26–34 kWh/100 km | do 440 km | 140 km/h |
+
+Jako **BEV**, eSprinter nie ma normy Euro w takim znaczeniu jak diesel. Z punktu widzenia dokumentów i eksploatacji ważniejsze są klasa pojazdu **N1/N2** oraz lokalna emisja **CO2 = 0 g/km**.
 
 ## Zasięg i ładowanie eSprintera
 
-Zasięg to kluczowy parametr elektrycznego dostawczaka. eSprinter z baterią 113 kWh pokonuje do 440 km w cyklu WLTP – to jeden z najlepszych wyników w segmencie dużych e-vanów. W realnych warunkach miejskich (częste zatrzymywanie, niska prędkość) zasięg utrzymuje się blisko wartości katalogowej dzięki odzyskiwaniu energii. Na trasie ekspresowej przy prędkości 100–120 km/h spada do 280–320 km.
+To właśnie tu druga generacja zrobiła największy postęp. Wariant z największą baterią wszedł na poziom, który pozwala myśleć nie tylko o mieście, ale też o dłuższych trasach regionalnych.
 
-Mniejsza bateria 56 kWh zapewnia ok. 260 km WLTP. To wystarczająco dla kurierów realizujących trasy miejskie, którzy wracają do bazy na nocne ładowanie.
+eSprinter z baterią **113 kWh** osiąga do **440 km WLTP**. Wersja **81 kWh** celuje w środek oferty, a **56 kWh** pozostaje rozwiązaniem dla flot, które jeżdżą krócej, ale chcą zachować lepszą ładowność i niższy koszt zakupu.
 
 ### Ładowanie DC i AC
 
-- **Szybkie ładowanie DC** – do 115 kW, ładowanie 10–80% w ok. 32 minuty (bateria 113 kWh). Złącze CCS2
-- **Ładowanie AC** – do 11 kW (trójfazowe), pełne ładowanie baterii 113 kWh w ok. 12 godzin
-- **Precondycjonowanie baterii** – system automatycznie nagrzewa lub chłodzi akumulator przed przyjazdem na stację, co zapewnia maksymalną moc ładowania
-- **Tryby jazdy** – Comfort, Eco i Max Range pozwalają optymalizować zasięg kosztem dynamiki
+- **Szybkie ładowanie DC** – do **115 kW**, ładowanie **10–80%** w ok. **32 minuty** przy sprzyjających warunkach
+- **Ładowanie AC** – do **11 kW** (trójfazowe)
+- **Prekondycjonowanie baterii** – pomaga utrzymać lepszą moc ładowania
+- **Tryby jazdy** – Comfort, Eco i Max Range pozwalają ograniczać zużycie energii
+
+W mieście eSprinter korzysta z rekuperacji i częstych faz toczenia, więc wyniki potrafią być bliskie katalogowym. Na trasie szybkiego ruchu zapotrzebowanie na energię rośnie wyraźnie, szczególnie przy pełnym załadunku.
 
 ![Mercedes eSprinter furgon elektryczny podczas ładowania](/images/mercedes-esprinter-hero.webp)
 
 ## Wersje nadwoziowe eSprintera
 
-Mercedes oferuje eSprintera w dwóch długościach nadwozia i dwóch wysokościach dachu:
+Oferta nadwoziowa eSprintera zależy od rynku i wersji. Zamiast patrzeć tylko na długość i wysokość, lepiej rozdzielić ją według przeznaczenia – wtedy łatwiej dobrać auto pod kuriera, serwis mobilny czy zabudowę specjalną.
 
-1. **Furgon L2 (długi)** – rozstaw osi ok. 3665 mm, pojemność ładunkowa do 11 m³, standardowy dach lub wysoki dach
-2. **Furgon L3 (extra długi)** – rozstaw osi ok. 4325 mm, pojemność do 14 m³ z wysokim dachem
-3. **Podwozie (Chassis Cab)** – platforma pod zabudowę specjalistyczną: kontenery, chłodnie, plandeki
+- **Furgon** – **11 lub 14 m3**, zwykle **2 lub 3 miejsca z przodu**
+- **Podwozie do zabudowy** – baza pod kontener, chłodnię, skrzynię lub lawetę
+- **Zabudowy specjalne** – warianty serwisowe, kurierskie, izotermy
+- **Kamper/vanlife** – na dziś brak seryjnej oferty kamperowej eSprintera na polskim rynku, ale technicznie możliwe są konwersje indywidualne; ograniczeniem pozostają masa baterii i zasięg pod obciążeniem
 
-Wymiary przestrzeni ładunkowej furgona L3 z wysokim dachem:
+W zależności od konfiguracji dostępne są **boczne drzwi przesuwne** oraz **tylne drzwi dwuskrzydłowe 270°**. To ważne przy pracy z rampą, załadunku palet i zabudowach kurierskich, gdzie liczy się szybki dostęp do przestrzeni ładunkowej.
 
-- Długość paki – ok. 3430 mm
-- Szerokość paki – ok. 1787 mm
-- Wysokość paki – ok. 2100 mm (wysoki dach)
-
-DMC do 4250 kg oznacza, że cięższy wariant wymaga prawa jazdy kategorii C1, chyba że kierowca ma uprawnienia nabyte przed 2006 rokiem. Wersje do 3500 kg mieszczą się w kategorii B.
+DMC do **4,25 t** w furgonie i do **5,0 t** w części wersji podwoziowych pokazuje, że eSprinter nie jest tylko miejskim vanem. Da się go wykorzystać także w cięższej pracy, ale trzeba pilnować relacji między baterią, zabudową i realną ładownością.
 
 {{% expert name="Marek Kowalczyk" %}}
-Jeśli planujesz zakup eSprintera do dostaw miejskich, bateria 56 kWh w wersji L2 to optymalny wybór – mniejsza masa własna daje wyższą ładowność, a nocne ładowanie AC w bazie w zupełności wystarcza na dzienny przebieg 150–200 km. Dużą baterię 113 kWh warto rozważyć tylko przy trasach powyżej 250 km dziennie lub braku możliwości ładowania w ciągu dnia.
+Jeśli planujesz zakup eSprintera do dostaw miejskich, bateria 56 kWh w wersji L2 to rozsądny wybór – mniejsza masa własna daje wyższą ładowność, a nocne ładowanie AC zwykle wystarcza na codzienną trasę. Dużą baterię 113 kWh warto brać wtedy, gdy auto robi dłuższe przebiegi albo nie ma pewnego ładowania w ciągu dnia.
 {{% /expert %}}
+
+## Typowe usterki Mercedes eSprinter
+
+Druga generacja jest jeszcze zbyt młoda, by mówić o pełnym obrazie trwałości. Część kosztów poniżej pochodzi z sieci serwisowej oraz analogii do Sprintera W907/W910, ale już teraz widać kilka typowych punktów, które warto sprawdzić przed zakupem i w eksploatacji flotowej.
+
+### Akumulator 12 V i elektronika pokładowa
+
+Najbardziej prozaiczna rzecz potrafi unieruchomić auto. Zużyty lub osłabiony akumulator **12 V** może wywoływać komunikaty błędów i brak gotowości do jazdy.
+
+Koszty:
+- akumulator AGM 12 V – **700–1200 zł**
+- diagnostyka – **250–500 zł**
+
+### Ładowarka pokładowa / port CCS
+
+W autach pracujących codziennie problemem bywają przerwane sesje AC/DC albo blokada wtyku. Przy dużym obciążeniu eksploatacyjnym warto kontrolować stan portu ładowania i osprzętu.
+
+Koszty:
+- gniazdo ładowania – **2500–5000 zł**
+- moduł sterowania – **3000–7000 zł**
+
+### Układ chłodzenia baterii
+
+Wycieki, błędy temperatury i spadki mocy ładowania to sygnały, których nie wolno ignorować. W elektrycznym dostawczaku chłodzenie baterii ma bezpośredni wpływ na osiągi, ładowanie i żywotność pakietu.
+
+Koszty:
+- pompa obiegu – **1200–2500 zł**
+- serwis układu – **500–1200 zł**
+
+### Zawieszenie i eksploatacja flotowa
+
+Jak w większości dużych dostawczaków, zawieszenie dostaje mocno w kość przy jeździe z ładunkiem i po mieście. W autach kurierskich szybciej wychodzą luzy i zużycie elementów hamulcowych.
+
+Koszty:
+- łączniki stabilizatora, komplet – **300–600 zł**
+- klocki hamulcowe przód – **700–1400 zł**
+- tarcze i klocki – **1800–3200 zł**
+
+### Nadwozie i drzwi przesuwne
+
+W pracy dostawczej drzwi boczne i tylne są otwierane setki razy tygodniowo. Zużywają się rolki, prowadnice i zamki, a naprawa zwykle nie jest dramatycznie droga, ale potrafi unieruchomić auto na dzień lub dwa.
+
+Koszty:
+- rolki, zamki, prowadnice – **500–1800 zł**
+
+## Porównanie eSprintera z konkurencją
+
+Na rynku dużych elektrycznych vanów sensowne porównanie trzeba robić tylko z modelami seryjnymi. Dziś najbliżsi rywale eSprintera to przede wszystkim [Ford E-Transit](/modele/ford-e-transit/) i Iveco eDaily.
+
+| Parametr | Mercedes eSprinter 113 kWh | Ford E-Transit | Iveco eDaily |
+|----------|----------------------------|----------------|--------------|
+| Moc | 150 kW | 135 lub 198 kW | 140 kW |
+| Bateria | 113 kWh | 68 kWh użyteczne / 89 kWh brutto | 37 / 74 / 111 kWh brutto |
+| Zasięg | do 440 km WLTP | do ok. 317 km WLTP | do ok. 400 km miejskiego/WLTP zależnie od wersji |
+| Ładowanie DC | 115 kW | 115 kW | zależnie od wersji |
+| Pojemność przestrzeni ładunkowej | do 14 m3 | do 15,1 m3 | zależnie od zabudowy |
+| DMC | do 4,25 t | zależnie od wersji | nawet do 7,2 t |
+| Charakter auta | duży zasięg i dopracowana oferta flotowa | mocna pozycja cenowa i duża sieć | wysoka nośność i duże możliwości zabudowy |
+
+W praktyce wybór wygląda prosto. **Mercedes** wygrywa zasięgiem, **Ford** zwykle broni się ceną i flotową dostępnością, a **Iveco** ma przewagę tam, gdzie liczy się nośność i cięższa zabudowa.
 
 ## Ceny Mercedesa eSprinter
 
-Ceny eSprintera w Polsce kształtują się na poziomie premium – Mercedes nie ukrywa, że pozycjonuje model jako dostawczaka klasy wyższej, także w wersji elektrycznej.
+eSprinter nie jest tani, ale jego oferta jest dziś szersza niż tylko jeden furgon z jedną baterią. Przy zakupie nowego auta trzeba patrzeć nie tylko na cenę bazową, ale też na pojemność baterii, DMC i docelową zabudowę.
 
 | Wariant | Cena orientacyjna (netto) |
-|---------|---------------------------|
+|---------|---------------------------:|
 | eSprinter L2 (56 kWh, 100 kW) | od ok. 280 000 zł |
+| eSprinter L2 (81 kWh, 100 kW) | od ok. 300 000 zł |
 | eSprinter L2 (113 kWh, 100 kW) | od ok. 330 000 zł |
 | eSprinter L3 (113 kWh, 150 kW) | od ok. 350 000 zł |
 | eSprinter Chassis Cab (113 kWh) | od ok. 310 000 zł |
 
-Do ceny netto należy doliczyć 23% VAT. Firmy leasingujące pojazdy dostawcze mogą odliczyć pełny VAT. W ramach programów dopłat do pojazdów elektrycznych (np. „Mój Elektryk") możliwe jest uzyskanie dofinansowania do 70 000 zł na pojazd N1 – co znacząco poprawia kalkulację TCO (Total Cost of Ownership).
+Do ceny netto trzeba doliczyć **23% VAT**. Dla firm znaczenie mają też dopłaty i cały koszt użytkowania, bo brak oleju silnikowego, DPF czy AdBlue realnie upraszcza serwis względem diesla.
 
-Koszty eksploatacji eSprintera są niższe niż spalinowego [Sprintera](/modele/mercedes-sprinter/) – brak oleju silnikowego, filtrów DPF, AdBlue, wymian rozrządu. Serwis ogranicza się głównie do hamulców, opon i płynów.
+Koszty eksploatacji eSprintera są niższe niż spalinowego [Sprintera](/modele/mercedes-sprinter/), ale przy aucie elektrycznym trzeba pilnować stanu portu ładowania, akumulatora 12 V i historii pracy baterii. W przypadku rynku wtórnego kluczowy jest też stan SOH.
 
 #
 {{% youtube %}}
 
-# Porównanie eSprintera z konkurencją
+## Ceny używanych Mercedesów eSprinter
 
-eSprinter rywalizuje z [Fordem E-Transit](/modele/ford-e-transit/), Renault Master E-Tech, [Volkswagenem Crafterem](/modele/volkswagen-crafter/) HyMotion (wodorowy prototyp) oraz [Fiatem Ducato](/modele/fiat-ducato/) e-Ducato.
+Na rynku wtórnym rozstrzał jest duży. O cenie decydują przede wszystkim generacja, bateria, zabudowa, DMC i stan akumulatora trakcyjnego.
 
-| Parametr | Mercedes eSprinter (113 kWh) | Ford E-Transit (89 kWh) | Renault Master E-Tech (87 kWh) | e-Ducato (110 kWh) |
-|----------|------------------------------|-------------------------|-------------------------------|---------------------|
-| Moc | 150 kW (204 KM) | 198 kW (269 KM) | 105 kW (143 KM) | 200 kW (270 KM) |
-| Zasięg WLTP | do 440 km | do 317 km | do 410 km | do 420 km |
-| Bateria | 113 kWh | 89 kWh | 87 kWh | 110 kWh |
-| Ładowanie DC | 115 kW | 115 kW | 130 kW | 150 kW |
-| Ładowność maks. | ~1200 kg | ~1600 kg | ~1500 kg | ~1300 kg |
-| Paka maks. | 14 m³ | 15,1 m³ | 13 m³ | 17 m³ |
-| Cena (netto, PL) | od ~330 000 zł | od ~270 000 zł | od ~280 000 zł | od ~260 000 zł |
+| Rok | Generacja | Typowa cena brutto | Co dostajesz |
+|-----|-----------|-------------------:|--------------|
+| 2020 | I gen, 35 kWh, furgon | **75 000–115 000 zł** | zwykle 80–180 tys. km |
+| 2021 | I gen | **90 000–130 000 zł** | często auta poleasingowe |
+| 2022 | I gen | **105 000–150 000 zł** | lepsze wyposażenie, nadal mały zasięg |
+| 2023 | I gen schyłkowa | **120 000–165 000 zł** | mała podaż |
+| 2024 | II gen 56/81/113 kWh | **230 000–320 000 zł** | pojedyncze egzemplarze demonstracyjne/import |
+| 2025 | II gen | **260 000–360 000 zł** | niemal nowe sztuki |
 
-Ford E-Transit wyróżnia się wyższą ładownością i niższą ceną. Renault Master E-Tech imponuje zasięgiem przy mniejszej baterii. E-Ducato oferuje największą kubaturę. eSprinter za to zapewnia najwyższy komfort jazdy, zaawansowane systemy ADAS i prestiż marki Mercedes – co ma znaczenie w usługach kurierskich i flotach korporacyjnych.
+Ceny zależą silnie od baterii, DMC, zabudowy i stanu **SOH** akumulatora. Przy używanym eSprinterze to ważniejsze niż sam przebieg, bo dwa auta z podobnym licznikiem mogą mieć zupełnie inną użyteczność w codziennej pracy.

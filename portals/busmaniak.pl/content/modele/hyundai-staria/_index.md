@@ -18,7 +18,7 @@ faq:
   - question: "Jaki silnik ma Hyundai Staria?"
     answer: "W Europie Staria oferowana jest z silnikiem 2.2 CRDi diesel o mocy 177 KM i momencie obrotowym 430 Nm, w połączeniu z 8-biegową skrzynią automatyczną."
   - question: "Czy Hyundai Staria jest dostępna z napędem 4x4?"
-    answer: "Tak, Staria oferuje opcjonalny napęd AWD na wybranych rynkach. W standardzie dostępny jest napęd na tylną oś (RWD) lub przednią (FWD) – zależnie od wersji silnikowej."
+    answer: "Tak, Staria oferuje opcjonalny napęd AWD na wybranych rynkach. W standardzie dostępny jest napęd na tylną oś (RWD)."
   - question: "Ile kosztuje Hyundai Staria w Polsce?"
     answer: "Ceny Hyundai Staria w Polsce zaczynają się od ok. 220 000 zł brutto za wersję 9-osobową. Bogato wyposażone wersje Executive przekraczają 280 000 zł."
   - question: "Czy Hyundai Staria nadaje się na kampera?"
@@ -30,17 +30,29 @@ sources:
 
 ## Hyundai Staria – co to za samochód
 
-[Hyundai Staria](https://pl.wikipedia.org/wiki/Hyundai_Staria) to samochód, który łamie wszelkie konwencje segmentu vanów. Zaprezentowana w 2021 roku, zastąpiła wieloletniego Hyundaia H-1 (Starex) i od pierwszego spojrzenia daje do zrozumienia, że koreański producent celuje w zupełnie inną grupę klientów niż dotychczas.
+[Hyundai Staria](https://pl.wikipedia.org/wiki/Hyundai_Staria) to van, który od początku miał odciąć się od zachowawczego stylu segmentu. Zaprezentowana w 2021 roku, zastąpiła model H-1 / Grand Starex i od razu pokazała, że Hyundai celuje nie tylko w przewóz osób, ale też w bardziej premium odmiany shuttle i VIP.
 
-Futurystyczna linia nadwozia z panoramicznym pasem przeszklenia, brak widocznego grilla i opływowe kształty sprawiają, że Staria bardziej przypomina koncepcyjny pojazd z targów motoryzacyjnych niż seryjnego vana. Pod tą awangardową formą kryje się jednak solidna mechanika – sprawdzony diesel 2.2 CRDi, napęd na tył (lub AWD) i 8-biegowa skrzynia automatyczna.
+Charakterystyczne nadwozie z nisko poprowadzonym pasem świetlnym, dużą powierzchnią szyb i gładkim przodem sprawia, że Staria wygląda bardziej jak koncept niż klasyczny bus. Pod tą formą kryje się jednak dość tradycyjna mechanika – w Europie przede wszystkim diesel 2.2 CRDi, 8-biegowy automat oraz napęd na tył, a na wybranych rynkach także AWD.
 
-Staria powstaje w fabrykach Hyundaia w Ulsan i Jeonju (Korea Południowa) oraz w Ałmatach (Kazachstan, montaż SKD). Na rynkach azjatyckich oferowana jest z silnikami benzynowymi V6 3.5 i hybrydą 1.6 T-GDi, ale do Europy trafia wyłącznie z dieslem 2.2 CRDi.
+Staria powstaje w fabrykach Hyundaia w Ulsan i Jeonju w Korei Południowej oraz w Ałmatach w Kazachstanie w montażu SKD. Poza Europą występowała również z benzynowym silnikiem V6 3.5, ale europejska gama opiera się głównie na dieslu 2.2 CRDi.
 
-Model pozycjonowany jest między klasycznymi vanami dostawczymi a luksusowymi MPV – bezpośrednio konkuruje z [Volkswagenem Multivan](/modele/volkswagen-multivan/) i [Toyota ProAce Verso](/modele/toyota-proace-verso/), choć oferuje znacznie bardziej wyrazisty design.
+Model pozycjonowany jest między klasycznymi vanami dostawczymi a luksusowymi MPV. Najczęściej porównuje się go z [Volkswagenem Multivan](/modele/volkswagen-multivan/) i [Toyota ProAce Verso](/modele/toyota-proace-verso/), choć stylistycznie Hyundai idzie własną drogą.
+
+## Historia i generacje
+
+Staria to wciąż młody model, więc historia gamy jest krótka, ale dość wyraźnie pokazuje zmianę kierunku względem poprzednika.
+
+### Hyundai Staria (US4, od 2021)
+
+Premiera globalna odbyła się w 2021 roku, a sam model został następcą Hyundaia H-1 / Grand Starex. Najważniejsze zmiany względem poprzednika to całkowicie nowe nadwozie o futurystycznym designie, większy nacisk na wersje osobowe premium, platforma z napędem RWD/AWD oraz debiut luksusowej odmiany Lounge i użytkowej Staria Load.
+
+W latach 2022–2025 gama europejska opierała się głównie na dieslu 2.2 CRDi o mocy 177 KM z 8-biegowym automatem. To właśnie ta konfiguracja jest dziś najczęściej spotykana na rynku polskim i w imporcie.
+
+Staria nie ma jeszcze pełnoprawnych generacji – to nadal pierwsza generacja modelu. Mówimy raczej o drobnych zmianach wyposażenia, specyfikacji i homologacji zależnie od rynku niż o dużych liftingach czy nowej odsłonie.
 
 ## Dane techniczne Hyundaia Staria
 
-Staria to pojazd jednonadwoziowy (monocoque) – w przeciwieństwie do ramowych busów dostawczych. To przekłada się na niższy środek ciężkości i lepszą dynamikę jazdy:
+W przypadku Starii najważniejsze jest rozróżnienie między wersją osobową a użytkową. Z zewnątrz auta są do siebie podobne, ale pod kątem liczby miejsc, mas i przestrzeni bagażowej różnice są już wyraźne.
 
 | Parametr | Wartość |
 |----------|---------|
@@ -48,77 +60,130 @@ Staria to pojazd jednonadwoziowy (monocoque) – w przeciwieństwie do ramowych 
 | Szerokość | 1 995 mm |
 | Wysokość | 1 990–2 030 mm |
 | Rozstaw osi | 3 275 mm |
-| Masa własna | 1 990–2 390 kg |
-| DMC | ok. 3 060 kg |
-| Pojemność bagażnika (9-os.) | ok. 1 303 l (za III rzędem) |
-| Promień skrętu | 5,95 m |
+| Masa własna | ok. 2 190–2 360 kg zależnie od wersji |
+| DMC | ok. 3 030–3 060 kg |
+| Średnica zawracania | ok. 11,9 m |
 | Zbiornik paliwa | 75 l |
 
-Rozstaw osi 3 275 mm to wartość porównywalna z [Mercedesem Vito](/modele/mercedes-vito/) w wersji kompaktowej, ale Staria oferuje większą szerokość wewnętrzną dzięki pionowym ścianom bocznym.
+Rozstaw osi 3 275 mm stawia Starię w gronie pełnowymiarowych vanów rodzinno-shuttle. Duża szerokość i pionowe ściany boczne pomagają wygospodarować sensowną przestrzeń zarówno dla pasażerów, jak i dla bagażu.
+
+### Wymiary i parametry użytkowe wersji
+
+Poniższe wartości trzeba traktować jako orientacyjne dla różnych rynków i specyfikacji. W zależności od homologacji mogą się one lekko różnić.
+
+| Wersja | Długość | Szerokość | Wysokość | Rozstaw osi | Liczba miejsc | DMC | Masa własna | Ładowność | Pojemność bagażnika/ładunkowa |
+|--------|---------|-----------|----------|-------------|---------------|-----|-------------|-----------|-------------------------------|
+| Staria Passenger 9-os. | 5255 mm | 1995 mm | 1990–2000 mm | 3275 mm | 9 | ok. 3030–3060 kg | ok. 2190–2360 kg | zależnie od rynku/specyfikacji | ok. 831 l / do ok. 1303 l zależnie od metody pomiaru i ustawienia siedzeń |
+| Staria Passenger 11-os. | 5255 mm | 1995 mm | ok. 1990 mm | 3275 mm | 11 | zależnie od rynku/specyfikacji | zależnie od rynku/specyfikacji | zależnie od rynku/specyfikacji | zależnie od konfiguracji siedzeń |
+| Staria Load 2-seat cargo | 5255 mm | 1995 mm | ok. 2000 mm | 3275 mm | 2 | zależnie od rynku/specyfikacji | zależnie od rynku/specyfikacji | ok. 1000–1090 kg | 4935 l |
+| Staria Load 3-seat cargo | 5255 mm | 1995 mm | ok. 2000 mm | 3275 mm | 3 | zależnie od rynku/specyfikacji | zależnie od rynku/specyfikacji | ok. 1000–1090 kg | 2890 l |
+
+W wersji Load 2-seat cargo przestrzeń ładunkowa ma około 2607 mm długości, około 1640 mm szerokości i około 1436 mm wysokości. To ważne, jeśli myślisz o zabudowie warsztatowej, kurierskiej albo lekkim day-vanie.
 
 ## Silniki i napędy Starii
 
-Na rynku europejskim Staria dostępna jest z jednym silnikiem, za to w dobrze dobranej konfiguracji:
+Europejska Staria ma prostą ofertę napędową. To nie jest model z szeroką paletą diesli i benzyn jak klasyczne busy flotowe – tutaj producent postawił na jedną, główną konfigurację.
 
-- **2.2 CRDi (D2.2)** – czterocylindrowy turbodiesel o mocy 177 KM (130 kW) przy 3 800 obr./min. Moment obrotowy 430 Nm dostępny już od 1 500 obr./min, co zapewnia pewne ruszanie nawet z pełnym obciążeniem. Wtrysk common rail, turbosprężarka o zmiennej geometrii, filtr DPF i układ SCR z AdBlue (norma Euro 6d).
+- **2.2 CRDi (D4HB)** – czterocylindrowy turbodiesel o pojemności 2199 cm3, mocy 177 KM i momencie obrotowym 430 Nm. Silnik współpracuje wyłącznie z 8-biegowym automatem i w zależności od rynku występuje z napędem RWD lub AWD.
 
-Skrzynia biegów: wyłącznie 8-stopniowy automat. Napęd standardowo na tylną oś (RWD) – układ rzadko spotykany we współczesnych vanach, który zapewnia lepszą trakcję przy obciążeniu i bardziej zbalansowane prowadzenie. Na wybranych rynkach dostępny jest napęd AWD.
+To jednostka z filtrem DPF i układem SCR z AdBlue, spełniająca normę Euro 6d. W praktyce oznacza to dobrą elastyczność w trasie, ale też typowe dla nowoczesnego diesla wymagania serwisowe.
 
-Spalanie w cyklu mieszanym WLTP to 8,2–9,1 l/100 km. W praktyce, przy spokojnej jeździe podmiejskiej z 6–7 pasażerami, realne zużycie oscyluje wokół 9,5–11,0 l/100 km.
+### Dane silnika i osiągi
 
-{{% info title="Napęd na tył" icon="settings" %}}
-Staria to jeden z nielicznych współczesnych vanów z napędem na tylną oś. Takie rozwiązanie oznacza brak wpływu napędu na układ kierowniczy, mniejszy promień skrętu i lepszą trakcję pod obciążeniem. Wadą jest nieco gorsze zachowanie na śliskiej nawierzchni bez ładunku – stąd opcja AWD na rynkach nordyckich.
+W jednym miejscu warto zebrać parametry, które zwykle są rozrzucone po katalogach.
+
+| Silnik | Pojemność | Moc | Moment | Skrzynia | Napęd | 0–100 km/h | Vmax | WLTP | Norma Euro |
+|--------|-----------|-----|--------|----------|-------|------------|------|------|------------|
+| 2.2 CRDi (D4HB) | 2199 cm3 | 177 KM (130 kW) przy 3800 obr./min | 430 Nm przy 1500–2500 obr./min | 8AT | RWD / AWD zależnie od rynku | ok. 12,4–13,5 s | ok. 185 km/h | 8,2–9,1 l/100 km | Euro 6d |
+
+Przy spokojnej jeździe podmiejskiej realne zużycie paliwa zwykle mieści się w okolicach 9,5–11,0 l/100 km. W trasie Staria potrafi być oszczędniejsza niż sugeruje sylwetka, ale w mieście i przy pełnym obciążeniu spalanie szybko rośnie.
+
+{{% info title="Napęd na tył" icon="info" %}}
+Staria należy do nielicznych współczesnych vanów, które wciąż stawiają na napęd na tylną oś. Przy pełnym obciążeniu to ma sens – auto lepiej przenosi moment na asfalt i nie męczy przedniej osi tak jak ciężkie vany z FWD.
 {{% /info %}}
 
 ### Silniki na innych rynkach
 
-Dla pełnego obrazu – poza Europą Staria oferowana jest z bogatszą gamą napędów:
+Poza Europą gama była szersza niż u nas.
 
-- **3.5 V6 MPI** – 272 KM, benzynowy, Korea/Bliski Wschód
-- **3.5 V6 LPG** – 240 KM, wersja na autogaz, Korea
-- **1.6 T-GDi HEV** – 245 KM, hybryda, Korea
-- **Staria Electric** (od 2026) – 218 KM, silnik elektryczny FWD, bateria 84 kWh z architekturą 800 V
+- **3.5 V6 MPI** – 3470 cm3, 272 KM, 331 Nm, 8AT, zależnie od rynku
+- **3.5 V6 LPG** – wersja oferowana na wybranych rynkach
 
 {{% expert name="Marek Kowalczyk" %}}
-Staria to samochód, który trzeba zobaczyć na żywo, żeby docenić. Na papierze diesel 177 KM nie robi wrażenia, ale w połączeniu z napędem na tył i 8-biegowym automatem prowadzi się zaskakująco dynamicznie jak na swoje gabaryty. Jeśli szukasz alternatywy dla [Multivana](/modele/volkswagen-multivan/) i nie boisz się wyrazistego designu – warto się przejechać.
+Na papierze 177 KM nie wygląda imponująco przy aucie tej wielkości, ale w codziennej jeździe ważniejszy jest moment 430 Nm i sensownie zestopniowany automat. Staria nie jest rakietą, tylko dużym vanem, który ma jechać płynnie z rodziną albo kompletem pasażerów.
 {{% /expert %}}
 
 ![Hyundai Staria w kolorze białym na drodze](/images/hyundai-staria-hero.webp)
 
 ## Wersje osobowe i dostawcze Starii
 
-Hyundai oferuje Starię w kilku konfiguracjach dostosowanych do różnych potrzeb:
+To właśnie odmiany nadwoziowe najlepiej pokazują, czym Staria różni się od klasycznego vana użytkowego. Jedna bryła obsługuje tu przewóz rodzinny, shuttle VIP i wersje cargo.
 
 ### Wersje osobowe
 
-1. **Staria 9-osobowa** – najpopularniejsza konfiguracja w Europie. Trzy rzędy siedzeń (2+3+4 lub 2+3+3+1), przesuwne drzwi boczne po obu stronach. Przestronny bagażnik za trzecim rzędem.
-2. **Staria 11-osobowa** – wersja z dodatkowym rzędem siedzeń, spotykana na rynkach azjatyckich i bliskowschodnich. Wymaga homologacji autobusu na niektórych rynkach europejskich.
-3. **Staria Lounge** – luksusowa odmiana z 7 fotelami typu „captain's chair" z elektrycznie regulowanym podparciem i podnóżkami. Dedykowana głównie rynkowi koreańskiemu, ale importowana przez niezależnych dealerów do Europy.
+- **Staria 9-os.** – najczęściej spotykana konfiguracja w Europie, zwykle w układzie **3+3+3**. To wersja nastawiona na przewóz rodzinny albo shuttle.
+- **Staria 11-os.** – wariant częściej spotykany w Azji i na Bliskim Wschodzie, zwykle w układzie **3+3+2+3** albo innym zależnym od rynku i homologacji.
+- **Staria Lounge 7-os.** – odmiana bardziej VIP niż rodzinna. Ma fotele kapitańskie w drugim rzędzie, funkcje relaksu, podnóżki i wyraźnie wyższy poziom komfortu.
+
+W praktyce właśnie 9-osobowa odmiana jest najbardziej uniwersalna. Nadaje się zarówno dla dużej rodziny, jak i dla hotelu, firmy przewozowej czy shuttle’a lotniskowego.
 
 ### Wersje dostawcze
 
-1. **Staria Load (Cargo)** – 3-miejscowy furgon z zaślepionymi szybami tylnymi i płaską podłogą ładunkową. Pojemność ładunkowa ok. 5 000 l, ładowność do ok. 800 kg. Konkurent kompaktowych vanów dostawczych.
+- **Staria Load 2-seat** – około **4935 l** przestrzeni ładunkowej. To główna odmiana cargo dla kuriera, serwisu albo lekkiej zabudowy specjalnej.
+- **Staria Load 3-seat** – około **2890 l** przestrzeni ładunkowej. Drugi rząd z przodu ogranicza kubaturę, ale poprawia funkcjonalność w pracy zespołowej.
+- Ładowność, zależnie od wersji i rynku, wynosi około **1000–1090 kg**.
 
-## Ceny Hyundaia Staria
+Na niektórych rynkach spotyka się też zabudowy specjalne – hotelowy shuttle, taxi, vana VIP czy campera typu day-van przygotowanego przez firmy zewnętrzne. To nie jest jednak osobna fabryczna generacja modelu, tylko odmiany tworzone na bazie seryjnej Starii.
 
-Staria pozycjonowana jest w segmencie premium vanów – ceny są wyższe niż u japońskiej i europejskiej konkurencji w klasie dostawczej, ale konkurencyjne wobec [Volkswagena Multivan](/modele/volkswagen-multivan/):
+## Typowe usterki Hyundai Staria
 
-| Wersja | Cena orientacyjna (Polska) |
-|--------|---------------------------|
-| Staria 9-os. Essential | od ok. 220 000 zł brutto |
-| Staria 9-os. Executive | od ok. 260 000 zł brutto |
-| Staria 9-os. AWD | od ok. 275 000 zł brutto |
-| Staria Load (cargo) | od ok. 160 000 zł brutto |
-| Używana (2021–2023, import) | 140 000–200 000 zł |
+Staria jest modelem stosunkowo młodym, więc baza usterek nie opiera się jeszcze na wieloletnich statystykach awarii. Najwięcej informacji pochodzi z flot, serwisów i pierwszych kilku lat eksploatacji, głównie dla diesla 2.2 CRDi i wersji z automatem.
 
-Na polskim rynku Staria dostępna jest u oficjalnych dealerów Hyundaia. Gwarancja producenta to 5 lat bez limitu przebiegu – znacząca przewaga nad europejską konkurencją oferującą standardowo 2–3 lata.
+### 2.2 CRDi – układ AdBlue i SCR
 
-#
-{{% youtube %}}
+Typowe objawy to komunikaty związane z emisją spalin oraz ograniczenie możliwości rozruchu po wykryciu błędu układu SCR. To nie jest problem wyjątkowy dla Starii – podobne przypadki występują w wielu nowoczesnych dieslach.
 
-# Porównanie Starii z konkurencją
+Koszty wyglądają następująco:
+- diagnostyka: **200–400 zł**
+- wtryskiwacz AdBlue: **700–1500 zł**
+- czujnik NOx: **1200–2500 zł**
 
-Staria rywalizuje z europejskimi vanami premium – VW Multivan, Toyota ProAce Verso i Mercedes Vito Tourer. Wyróżnia się futurystycznym designem i bogatym wyposażeniem seryjnym, ale ustępuje konkurencji siecią serwisową.
+### 2.2 CRDi – DPF i eksploatacja miejska
+
+Jeśli auto jeździ głównie po mieście, filtr DPF może wymagać częstszej interwencji. Krótkie odcinki i niedogrzany silnik to najprostsza droga do problemów z wypalaniem.
+
+Najczęstsze koszty:
+- wymuszone wypalanie: **300–600 zł**
+- czyszczenie DPF: **800–1500 zł**
+- nowy filtr: **4000–8000 zł**
+
+### 8-biegowy automat
+
+Sama skrzynia uchodzi za sensowną, ale źle znosi zaniedbania serwisu olejowego. Objawem bywają szarpnięcia i pogorszenie płynności pracy.
+
+Orientacyjne koszty:
+- wymiana oleju: **800–1400 zł**
+- naprawa mechatroniki lub sterowania: **2500–6000 zł**
+
+### Zawieszenie i hamulce
+
+Przy intensywnej eksploatacji shuttle’owej czy flotowej zużywają się elementy typowe dla ciężkiego vana. Najczęściej mówimy o częściach eksploatacyjnych, nie o wadach konstrukcyjnych.
+
+Przykładowe wydatki:
+- łączniki stabilizatora: **150–350 zł/szt. z robocizną**
+- komplet tarcz i klocków przód: **900–1800 zł**
+
+### Elektronika drzwi przesuwnych i multimedia
+
+W bogatszych wersjach problematyczne potrafią być napędy drzwi przesuwnych oraz elektronika systemu multimedialnego. Zwykle nie kończy się to unieruchomieniem auta, ale potrafi zirytować przy codziennym użytkowaniu.
+
+Koszty napraw:
+- siłownik lub napęd drzwi: **1200–3000 zł**
+- aktualizacja albo naprawa multimediów: **300–1500 zł**
+
+## Porównanie Starii z konkurencją
+
+Staria gra w tej samej lidze co rodzinne i shuttle’owe vany z Europy i Japonii, ale robi to po swojemu. Nie wygrywa samą marką czy historią modelu – nadrabia stylem, wyposażeniem i nietypową konfiguracją napędu.
 
 | Parametr | Hyundai Staria 9-os. | VW Multivan L1 | Toyota ProAce Verso L2 | Mercedes Vito Tourer L |
 |----------|----------------------|----------------|------------------------|------------------------|
@@ -131,6 +196,38 @@ Staria rywalizuje z europejskimi vanami premium – VW Multivan, Toyota ProAce V
 | Gwarancja | 5 lat | 2 lata | 3 lata | 2 lata |
 | Cena od | ~220 000 zł | ~250 000 zł | ~210 000 zł | ~240 000 zł |
 
-Staria wyróżnia się napędem na tył (lepszym pod obciążeniem), 5-letnią gwarancją i najodważniejszym designem w stawce. [Multivan](/modele/volkswagen-multivan/) oferuje modułowe wnętrze i prestiż marki VW. [ProAce Verso](/modele/toyota-proace-verso/) to pragmatyczny wybór z najniższą ceną wejścia. [Mercedes Vito](/modele/mercedes-vito/) gra kartą komfortu i sieci serwisowej.
+Na tle konkurencji Hyundai wyróżnia się napędem na tył, 5-letnią gwarancją i bardzo charakterystycznym nadwoziem. [Multivan](/modele/volkswagen-multivan/) stawia mocniej na modułowe wnętrze i wizerunek marki, [ProAce Verso](/modele/toyota-proace-verso/) jest bardziej pragmatyczny cenowo, a [Mercedes Vito](/modele/mercedes-vito/) korzysta z mocnej pozycji w segmencie przewozowym.
 
-Największą barierą dla Starii w Polsce jest ograniczona rozpoznawalność marki w segmencie vanów i mniejsza sieć serwisowa Hyundaia w kontekście pojazdów użytkowych – choć 5-letnia gwarancja skutecznie tę obawę neutralizuje.
+W praktyce wybór często sprowadza się do priorytetów. Jeśli chcesz vana „jak wszyscy” – sięgniesz po model europejski. Jeśli zależy Ci na czymś mniej oczywistym, Staria ma sens.
+
+#
+{{% youtube %}}
+
+## Ceny Hyundaia Staria
+
+Ceny Starii zależą mocno od wersji, rocznika i pochodzenia auta. Na polskim rynku spotkasz zarówno egzemplarze z oficjalnej sprzedaży, jak i import z innych rynków, zwłaszcza w bogatszych odmianach osobowych.
+
+Cena nowej Starii osobowej to około **220–280 tys. zł brutto**, a Staria Load startuje od około **160 tys. zł brutto**. W praktyce wszystko zależy od roku modelowego, promocji i specyfikacji.
+
+### Ceny orientacyjne nowych egzemplarzy
+
+| Wersja | Cena orientacyjna (Polska) |
+|--------|---------------------------|
+| Staria 9-os. Essential | od ok. 220 000 zł brutto |
+| Staria 9-os. Executive | od ok. 260 000 zł brutto |
+| Staria 9-os. AWD | od ok. 275 000 zł brutto |
+| Staria Load (cargo) | od ok. 160 000 zł brutto |
+
+### Ceny używanych Hyundai Staria
+
+Poniższe widełki dotyczą rynku PL i importu, orientacyjnie na 2026 rok.
+
+| Rok produkcji | Typ oferty | Przebieg | Cena |
+|---------------|------------|----------|------|
+| 2021 | 9-os. import | 80–140 tys. km | 145–185 tys. zł |
+| 2022 | 9-os. / Lounge import | 50–110 tys. km | 165–210 tys. zł |
+| 2023 | 9-os. kraj/import | 20–80 tys. km | 190–240 tys. zł |
+| 2024 | demo / młode używane | do 30 tys. km | 220–270 tys. zł |
+| 2021–2023 | Staria Load cargo | 40–120 tys. km | 120–175 tys. zł netto/brutto zależnie od ogłoszenia i homologacji |
+
+Przy zakupie z importu trzeba zwrócić uwagę na homologację, liczbę miejsc i specyfikację rynku pochodzenia. W Starii to ważne, bo ten sam model może wyglądać podobnie, ale różnić się układem siedzeń, wyposażeniem i statusem podatkowym.

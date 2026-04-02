@@ -33,105 +33,163 @@ sources:
 
 ## Historia i generacje Dacii Dokker
 
-### Premiera i platforma Renault B0
+Dokker występował tylko w jednej generacji, ale w praktyce da się go podzielić na dwie wyraźne fazy modelowe: przed liftingiem i po liftingu. To ważne przy zakupie używanego egzemplarza, bo różnice dotyczą nie tylko wyglądu, ale też wyposażenia i dostępnych wersji silnikowych.
 
-Model zaprezentowano po raz pierwszy w czerwcu 2012 roku na targach motoryzacyjnych w Casablance, a sprzedaż ruszyła jesienią tego samego roku. Produkcja odbywała się w zakładach w Tangerze w Maroku. Konstruktorzy oparli Dokkera na platformie Renault B0, którą dzieli z Lodgym, Sandero i Kangoo II – efekt jest taki, że mechanicy przyzwyczajeni do aut Renault obsłużą go bez przestawiania się na nowe schematy.
+### Faza I (2012–2016) – debiut modelu
 
-### Lifting 2017 i koniec produkcji
+Model zadebiutował w 2012 roku jako osobowy Dokker i dostawczy Dokker Van. Produkcja odbywała się w Tangerze, a bazą była platforma M0/B0, dobrze znana z innych prostych konstrukcji koncernu Renault.
 
-W lutym 2017 roku przeprowadzono lifting: odświeżono pas przedni i rozszerzono gamę silnikową o jednostkę 1.3 TCe opracowaną wspólnie z Mercedesem. Produkcję zakończono w marcu 2021 roku. Rolę auta dostawczego przejęło Dacia Express (dostępna od marca 2024), a wersję pasażerską zastąpił Jogger – model z 2021 roku. Przez blisko dekadę Dacia Dokker zapracowała na opinię "woła roboczego", który nie boi się trudnych warunków eksploatacji.
+W gamie silnikowej na starcie pojawiły się: 1.2 TCe 115, 1.6 MPI 85/102 oraz 1.5 dCi 75/90. Już wtedy Dokker celował w klientów, którzy szukali taniego auta użytkowego albo rodzinnego kombivana bez skomplikowanej techniki.
+
+### Faza II po liftingu (2016/2017–2021)
+
+Po liftingu z lat 2016/2017 Dokker dostał nowy grill i reflektory, zmienione zderzaki oraz odświeżone wnętrze. Doszły też nowsze multimedia Media Nav i korekty wyposażenia, które poprawiły codzienną użyteczność auta.
+
+W ofercie utrzymano również wersję Stepway. W końcowych latach produkcji na części rynków diesel 1.5 dCi występował także w odmianie 95 KM.
+
+### Koniec produkcji (2021)
+
+Produkcję osobowego Dokkera i wersji Van zakończono w 2021 roku. W ofercie Dacii model nie doczekał się bezpośredniego następcy jako osobny kombivan; rolę rodzinnego auta przejął Jogger, a w segmencie dostawczym na części rynków funkcjonował pokrewny Renault Express Van.
 
 ## Silniki Dacia Dokker
 
-### Diesel 1.5 dCi i benzyna 1.6 SCe
+Gama silników Dacii Dokker była prosta i dość czytelna. Na rynku wtórnym najczęściej trafisz na diesla 1.5 dCi oraz benzynowe 1.6 i 1.2 TCe – i to właśnie od wyboru jednostki najbardziej zależą późniejsze koszty serwisu.
 
-Wybór jednostki determinuje późniejsze koszty użytkowania. Najpopularniejszy na rynku wtórnym diesel 1.5 dCi to sprawdzona konstrukcja Renault z niskim spalaniem – dobra opcja dla tych, którzy dużo jeżdżą w trasie. **Dacia Dokker 1.6 benzyna** w wersji wolnossącej SCe to z kolei wybór dla osób ceniących prostotę: silnik ten znosi zasilanie gazem bez zarzutu, co przy obecnych cenach LPG przekłada się na realne oszczędności.
+### Pełna gama jednostek napędowych
 
-| Silnik | Moc (KM) | Moment (Nm) | 0–100 km/h | Spalanie (l/100 km) |
-|---|---|---|---|---|
-| 1.5 dCi | 90 | 220 | 12,5 s | 4,5–6,0 |
-| 1.6 SCe | 102 | 156 | 13,2 s | 6,2–7,5 |
-| 1.2 TCe | 115 | 190 | 10,8 s | 6,0–7,0 |
-| 1.3 TCe | 130 | 240 | 10,6 s | 6,0–6,8 |
-| 1.6 LPG | 102 | 156 | 13,2 s | 8,5 (LPG) |
+| Silnik          | Paliwo         | Moc      | Moment      | Rozrząd                               | Norma Euro | Realne spalanie     | Uwagi                                               |
+|-----------------|----------------|----------|-------------|----------------------------------------|------------|---------------------|-----------------------------------------------------|
+| 1.2 TCe 115     | benzyna turbo  | 115 KM   | 190 Nm      | łańcuch                                | Euro 5/6   | 6,8–8,0 l/100 km    | ryzyko nadmiernego zużycia oleju i rozciągania łańcucha |
+| 1.6 MPI 85      | benzyna        | 85 KM    | 134 Nm      | pasek                                  | Euro 5     | 7,5–8,5 l/100 km    | prosty, wolnossący                                  |
+| 1.6 MPI/SCe 100/102 | benzyna    | 100–102 KM | 148–156 Nm | łańcuch lub pasek zależnie od wersji/rynku | Euro 5/6   | 7,0–8,2 l/100 km    | dobra baza pod LPG                                  |
+| 1.6 LPG 102     | benzyna/LPG    | 102 KM   | 156 Nm      | jak wyżej                              | Euro 6     | 9,0–10,5 l LPG      | fabryczna instalacja LPG                            |
+| 1.5 dCi 75      | diesel         | 75 KM    | 180 Nm      | pasek                                  | Euro 5     | 5,0–5,8 l/100 km    | wersja bazowa                                       |
+| 1.5 dCi 90      | diesel         | 90 KM    | 200–220 Nm  | pasek                                  | Euro 5/6   | 5,0–6,0 l/100 km    | najpopularniejszy na rynku wtórnym                  |
+| 1.5 dCi 95      | diesel         | 95 KM    | 220 Nm      | pasek                                  | Euro 6     | 5,1–6,0 l/100 km    | końcowe lata produkcji na części rynków             |
 
-### Turbodoładowany 1.3 TCe od Renault i Mercedesa
+### Który silnik wybrać?
 
-Nowsza jednostka 1.3 TCe oferuje dobrą elastyczność nawet przy pełnym obciążeniu. Jeśli po zakupie zapalą się kontrolki na desce rozdzielczej, [sprawdź ich znaczenie przed wizytą w serwisie](/serwis/kontrolki-w-busie/) – systemy diagnostyczne w Dacii bywają czułe na spadki napięcia.
+Najpopularniejszy na rynku wtórnym 1.5 dCi ma sens, jeśli Dokker robi dłuższe trasy i regularnie pracuje pod obciążeniem. W codziennym użytkowaniu to właśnie ten silnik zwykle daje najlepszy kompromis między spalaniem a elastycznością.
+
+Benzynowe 1.6 MPI/SCe są prostsze i spokojniejsze w eksploatacji. Jeśli szukasz auta do miasta, krótkich dojazdów albo chcesz jeździć na gazie, to zwykle bezpieczniejszy wybór niż 1.2 TCe.
 
 {{% info title="Platforma Renault B0" icon="engineering" %}}
 Dokker dzieli platformę z Renault Lodgy, Dacią Sandero i Renault Kangoo II. Serwis jest tożsamy – mechanicy przyzwyczajeni do aut Renault obsłużą Dokkera bez problemów. Części zamienne są współdzielone.
 {{% /info %}}
 
-## Wymiary Dokkera
+## Dane techniczne i wymiary
 
-Dokker osobowy i Van mają identyczne wymiary zewnętrzne – różnią się głównie wysokością (5 mm), ładownością i konfiguracją wnętrza. Wersja Stepway z prześwitem 175 mm jest wyższa o dodatkowe 40 mm.
+Dacia Dokker miała jeden rozstaw osi i jedną długość nadwozia, ale wyraźnie różniła się funkcją zależnie od wersji. Osobówka stawiała na pojemny bagażnik, a Van na prostą, dużą przestrzeń ładunkową i sensowną ładowność.
 
-| Parametr | Dokker osobowy | Dokker Van |
-|----------|---------------|------------|
-| Długość całkowita | 4361 mm | 4361 mm |
-| Szerokość (bez lusterek) | 1751 mm | 1751 mm |
-| Wysokość | 1824 mm | 1819 mm |
-| Rozstaw osi | 2810 mm | 2810 mm |
-| Prześwit | 135 mm (Stepway: 175 mm) | 135 mm |
-| Bagażnik / paka | 800 l (do 3000 l po złożeniu) | 3,1 m³ (3100 l) |
-| Ładowność | 540–625 kg | 750–970 kg |
-| DMC | 1814 kg | 1959 kg |
+| Wersja          | Długość | Szerokość | Wysokość        | Rozstaw osi | Pojemność bagażnika/paki                    | Ładowność            | DMC                         |
+|-----------------|---------|-----------|-----------------|-------------|---------------------------------------------|----------------------|-----------------------------|
+| Dokker osobowy  | 4363 mm | 1751 mm   | 1814–1852 mm    | 2810 mm     | 800 l / do 3000 l                           | ok. 500–625 kg       | ok. 1782–1854 kg            |
+| Dokker Van      | 4363 mm | 1751 mm   | ok. 1809–1814 mm | 2810 mm    | 3,3 m³ (często podawane także 3,1 m³ netto) | 750–800 kg, w wybranych wersjach do ok. 900 kg | ok. 1950–2019 kg |
 
-- **Długość załadunku (Van z Easy Seat)** – do 3,11 m (po wyjęciu fotela pasażera)
-- **Szerokość między nadkolami** – 1205 mm
-- **Próg załadowczy** – 580 mm
-- **Drzwi boczne** – przesuwane po prawej stronie (standard), obustronne (opcja)
+Pod względem praktyki ważniejsze od samych wymiarów zewnętrznych są parametry przestrzeni ładunkowej. W Vanie długość paki wynosi 1900 mm, a z Easy Seat rośnie do 3110 mm. Szerokość między nadkolami to 1170–1200 mm, a wysokość progu załadunku około 570 mm.
 
 ![Dacia Dokker Van – kompaktowy kombivan dostawczy](/images/dacia-dokker-hero.webp)
 
 ## Wersje nadwozia – kombi, Van, Stepway
 
-### Dokker kombi i Van
+Dokker występował w kilku odmianach, które z zewnątrz są do siebie podobne, ale w praktyce służą do zupełnie innych zadań. Przy zakupie warto patrzeć nie tylko na silnik, ale też na konfigurację kabiny, przeszklenie i sposób otwierania przestrzeni ładunkowej.
 
-Dacia Dokker kombi to 5-osobowy wariant z przesuwnymi drzwiami bocznymi – przydatne, gdy parkujesz ciasno między innymi autami. Dacia Dokker Van to furgon z pełną przegrodą i bez przeszklenia z tyłu, co daje lepszą ochronę przewożonego towaru. Wersja ta trafia głównie do kurierów i firm usługowych.
+### Dokker osobowy
 
-### Dacia Dokker Stepway – podwyższony prześwit
+To 5-miejscowa wersja dla rodzin albo firm, które czasem przewożą ludzi, a czasem większy bagaż. Bagażnik ma 800 l, a po złożeniu oparć pojemność rośnie do 3000 l.
 
-Dacia Dokker Stepway wyróżnia się prześwitem podwyższonym do 175 mm – o 40 mm więcej niż standardowe 135 mm. Wersja pojawiła się w ofercie od 2014 roku. W pakiecie dostaje się relingi dachowe, plastikowe nakładki nadkoli i progów, dedykowaną tapicerkę, klimatyzację i system multimedialny Media Nav. Bliźniacza konstrukcja [Renault Kangoo](/modele/renault-kangoo/) dzieli z Dokkerem platformę i silniki, stanowiąc nieco lepiej wykończoną alternatywę.
+W tej odmianie można było mieć dwoje przesuwnych drzwi bocznych w opcji. To detal, ale przy dzieciach, paczkach albo pracy w mieście robi sporą różnicę.
+
+### Dokker Van
+
+Dokker Van to klasyczny wariant użytkowy z 2 miejscami i pełną przegrodą. Przestrzeń ładunkowa ma 3,3 m³, długość paki 1900 mm, a z Easy Seat do 3110 mm.
+
+Ładowność wynosi zwykle 750–800+ kg. To nie rekord segmentu, ale przy cenach zakupu i prostocie konstrukcji Dokker nadal pozostaje bardzo mocnym graczem na rynku wtórnym.
+
+### Dokker Van z przeszkleniem / brygadówka na wybranych rynkach
+
+Na części rynków spotyka się też odmiany z bocznym przeszkleniem albo uproszczoną brygadówką. Takie wersje miały 2 lub 2+1 miejsca i opcjonalne przeszklenie boczne.
+
+Dla małych ekip serwisowych to praktyczny kompromis między zwykłym vanem a autem osobowym. W Polsce są rzadsze, ale na rynku wtórnym da się je znaleźć.
+
+### Dokker Stepway
+
+Stepway to wersja stylizowana, z relingami, nakładkami ochronnymi i bogatszym wyposażeniem. Prześwit wynosił 190 mm lub był wyższy o około 20 do 40 mm zależnie od specyfikacji rynku.
+
+To nie jest terenówka, ale na gorszej drodze, podjeździe pod budowę albo na kempingu taka odmiana bywa po prostu wygodniejsza w codziennym użytkowaniu.
+
+### Zabudowy specjalne
+
+Na bazie Dokkera powstawały także lekkie kamper-vany, auta serwisowe, chłodnicze i wersje z zabudową regałową wykonywane przez firmy zewnętrzne. Fabrycznie nie było klasycznego podwozia do zabudowy, więc większość takich przeróbek to praca niezależnych wykonawców.
 
 ## Typowe usterki Dacia Dokker
 
-### Problemy z silnikiem 1.2 TCe
+Dokker nie jest autem szczególnie skomplikowanym, ale ma kilka powtarzalnych punktów kontrolnych. Dobra wiadomość jest taka, że większość napraw da się przewidzieć, a koszty zwykle nie rozwalają budżetu tak jak w droższych kombivanach.
 
-Auto jest proste w budowie, ale ma kilka powtarzających się słabości – opinie o Dacii Dokker zbierane na portalach branżowych wskazują na nie konsekwentnie. Silnik 1.2 TCe nadmiernie pije olej i ma skłonność do rozciągania łańcucha rozrządu już od 60–80 tys. km. To poważna wada – wymiana łańcucha jest kosztowna i czasochłonna. Cewki zapłonowe w benzynowych jednostkach zawodzą po 50–100 tys. km.
+### 1.2 TCe – łańcuch rozrządu i zużycie oleju
 
-### Diesel dCi, elektryka i korozja
+Najwięcej ostrożności wymaga 1.2 TCe. W tej jednostce pojawia się ryzyko nadmiernego zużycia oleju oraz rozciągania łańcucha rozrządu już przy relatywnie niewielkich przebiegach.
 
-W silnikach dCi po 80–120 tys. km sprawdź świece żarowe i stan filtra DPF, zwłaszcza jeśli auto pracowało w cyklu miejskim. Centralny zamek i elektryka potrafią sprawiać kłopoty już po 30–70 tys. km. Klimatyzacja ma problemy z nieszczelnościami układu chłodzącego i sprężarkami po 40–60 tys. km. Lakier jest cienki – odpryski pojawiają się szybko, a korozja na progach bywa widoczna już po 5–7 latach eksploatacji. W ogólnym [zestawieniu małych vanów](/porownania/porownanie-malych-vanow/) Dokker wygrywa jednak kosztami napraw, które należą do najniższych w segmencie.
+Komplet rozrządu to zwykle **1800–3200 zł**. Jeśli silnik długo jeździł z dużym poborem oleju, remont góry silnika może kosztować **3000–6000 zł**.
+
+### 1.5 dCi – wtryski, EGR, DPF
+
+Diesel 1.5 dCi jest oszczędny, ale wymaga pilnowania osprzętu. Najczęstsze punkty zapalne to wtryski, zawór EGR i filtr DPF, zwłaszcza w autach jeżdżących głównie po mieście.
+
+Regeneracja wtrysku kosztuje zwykle **400–700 zł/szt.**. Czyszczenie EGR to wydatek rzędu **200–400 zł**, nowy EGR **700–1200 zł**, czyszczenie DPF **500–900 zł**, a nowy DPF **2500–4500 zł**.
+
+### Benzynowe 1.6 – cewki i osprzęt
+
+W wolnossących benzynach 1.6 problemy są zazwyczaj prostsze i tańsze. Najczęściej kończą się na osprzęcie zapłonu i drobnych elementach eksploatacyjnych.
+
+Cewka to zwykle **100–250 zł/szt.**, komplet świec **80–180 zł**, a sonda lambda **250–600 zł**. Na tle nowocześniejszych turbobenzyn to nadal rozsądne koszty.
+
+### Zawieszenie i hamulce
+
+W zawieszeniu zużywają się głównie typowe elementy eksploatacyjne. Przy aucie roboczym, które często jeździ z ładunkiem, dzieje się to szybciej niż w osobówce używanej okazjonalnie.
+
+Łącznik stabilizatora kosztuje zwykle **80–150 zł**, wahacz **250–450 zł**, a tarcze i klocki na przód **350–700 zł**.
+
+### Klimatyzacja i elektryka
+
+W Dokkerze potrafią wracać drobne problemy z zamkami, siłownikami drzwi i układem klimatyzacji. To nie są awarie unieruchamiające auto na tydzień, ale warto je uwzględnić przy oględzinach.
+
+Nabicie i test szczelności klimatyzacji to zwykle **200–350 zł**. Skraplacz kosztuje **300–700 zł**, sprężarka **900–1800 zł**, a siłownik lub zamek drzwi **150–400 zł**.
+
+### Korozja i lakier
+
+Lakier w Dokkerze jest cienki, więc odpryski pojawiają się dość szybko. Po kilku latach eksploatacji warto dokładnie obejrzeć progi i dolne partie nadwozia.
+
+Lokalna naprawa progu to zwykle **600–1500 zł**. Lakierowanie pojedynczego elementu zamyka się najczęściej w widełkach **500–900 zł**.
 
 {{% expert name="Marek Kowalczyk" %}}
 Przy zakupie używanej Dacii Dokker z silnikiem 1.2 TCe koniecznie sprawdź stan łańcucha rozrządu – rozciąga się nawet poniżej 100 tys. km. W dieslu 1.5 dCi zwróć uwagę na filtr DPF i układ wtryskowy, szczególnie jeśli auto jeździło głównie po mieście.
 {{% /expert %}}
 
-## Ceny Dokkera
+## Porównanie Dokkera z konkurencją
 
-Produkcja zakończona w marcu 2021 – nowe egzemplarze niedostępne. Rynek wtórny stabilny dzięki stałemu popytowi ze strony małych firm.
+Dokker nie zawsze wygrywa parametrami w każdej rubryce, ale bardzo często wygrywa całościowym bilansem kosztów. To auto dla kogoś, kto chce dużo przestrzeni i prostą mechanikę bez dopłacania za znaczek na masce.
 
-| Rocznik | Silnik typowy | Cena orientacyjna |
-|---------|--------------|-------------------|
-| 2013–2015 | 1.5 dCi 90 / 1.6 SCe | 15 000–22 000 zł |
-| 2016–2018 (po liftingu) | 1.5 dCi 90 / 1.2 TCe | 25 000–35 000 zł |
-| 2019–2021 | 1.3 TCe 130 / 1.5 dCi | 36 000–50 000 zł |
+| Model                          | Długość   | Pojemność paki | Ładowność      | Silnik bazowy diesel | Orientacyjne ceny używanych 2017 r. |
+|--------------------------------|-----------|----------------|----------------|----------------------|-------------------------------------|
+| Dacia Dokker Van 1.5 dCi 90    | 4363 mm   | 3,3 m³         | 750–800+ kg    | 1.5 dCi 75/90        | 24–32 tys. zł                       |
+| Renault Kangoo Express Compact/Maxi | 4282–4666 mm | 3,0–4,6 m³ | 650–800 kg     | 1.5 dCi 75/90        | 26–38 tys. zł                       |
+| Citroën Berlingo II L1         | 4380 mm   | 3,3 m³         | 625–850 kg     | 1.6 HDi 75/90        | 22–35 tys. zł                       |
+| Fiat Fiorino Cargo             | 3864 mm   | 2,5 m³         | 610–660 kg     | 1.3 Multijet 75/80   | 15–24 tys. zł                       |
 
-#
+Dokker wygrywa ceną zakupu i prostotą, Berlingo komfortem, Kangoo gamą wersji, a Fiorino zwrotnością w mieście.
+
 {{% youtube %}}
 
-# Porównanie Dokkera z konkurencją
+## Ceny Dokkera
 
-Dokker trudno pobić w stosunku ceny do przestrzeni ładunkowej – przy ładowności 970 kg i paku 3,1 m³ wyprzedza droższe Kangoo i mniejsze Fiorino. Główni rywale to technicznie pokrewne Kangoo II oraz starsze Berlingo II.
+Nowych egzemplarzy nie kupisz już w salonie, ale warto znać także historyczny poziom cen. To właśnie niska cena wyjściowa była jednym z głównych powodów, dla których Dokker zrobił karierę w małych firmach.
 
-| Parametr | Dacia Dokker Van | Renault Kangoo II | Citroën Berlingo II | Fiat Fiorino III |
-|----------|-----------------|-------------------|--------------------|--------------------|
-| Długość | 4361 mm | 4282 mm | 4380 mm | 3864 mm |
-| Paka | 3,1 m³ | 3,0 m³ | 3,3 m³ | 2,5 m³ |
-| Ładowność | 970 kg | 650 kg | 850 kg | 660 kg |
-| Diesel bazowy | 1.5 dCi 90 KM | 1.5 dCi 75 KM | 1.6 HDi 75 KM | 1.3 MJT 75 KM |
-| Cena używanego (2017) | ~28 000 zł | ~30 000 zł | ~25 000 zł | ~17 000 zł |
+| Wersja                         | Okres        | Cena orientacyjna                                                                 |
+|--------------------------------|--------------|-----------------------------------------------------------------------------------|
+| Nowy w salonie (historycznie) | lata 2012–2021 | od ok. 37 900 zł za bazowego vana na początku sprzedaży; po liftingu i w bogatszych wersjach osobowych/Stepway zwykle 55 000–70 000 zł |
+| Używany 2013–2015             | lata 2013–2015 | 15 000–22 000 zł                                                                 |
+| Używany 2016–2018             | lata 2016–2018 | 25 000–35 000 zł                                                                 |
+| Używany 2019–2021             | lata 2019–2021 | 36 000–50 000 zł                                                                 |
 
-Dokker trudno pobić w stosunku ceny do przestrzeni ładunkowej. [Citroën Berlingo](/modele/citroen-berlingo/) oferuje lepsze wyposażenie i ciszejszą kabinę. [Renault Kangoo](/modele/renault-kangoo/) to technicznie bliski krewny z identyczną mechaniką. [Fiat Fiorino](/modele/fiat-fiorino/) jest mniejszy, ale tańszy.
+Dokker Van był jednym z najtańszych nowych aut dostawczych w Polsce. Końcowe egzemplarze osobowe Stepway z mocniejszym dieslem i lepszym wyposażeniem przekraczały 60 tys. zł.
