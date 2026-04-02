@@ -1,5 +1,6 @@
 ---
 title: "Polityka prywatności – BusManiak.pl"
+date: 2026-03-20
 description: "Polityka prywatności portalu BusManiak.pl – informacje o przetwarzaniu danych osobowych, plikach cookies i prawach użytkowników."
 type: "page"
 hide_meta: true

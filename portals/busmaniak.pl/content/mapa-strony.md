@@ -1,5 +1,6 @@
 ---
 title: "Mapa strony"
+date: 2026-03-20
 description: "Pełna struktura serwisu BusManiak.pl – wszystkie sekcje, modele, artykuły i narzędzia"
 layout: "sitemap-html"
 ---
