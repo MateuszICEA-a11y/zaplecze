@@ -129,18 +129,30 @@ a:hover { color: var(--c-orange-hover); }
   margin-right: 1rem;
 }
 
-.site-nav__fb-mobile,
 .site-nav__search-mobile {
   display: flex;
   align-items: center;
+  opacity: .8;
+  transition: opacity .2s;
 }
-
-.site-nav__search-mobile { opacity: .8; transition: opacity .2s; }
 .site-nav__search-mobile:hover { opacity: 1; }
+
+.site-nav__fb-banner {
+  display: none;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-top: 1rem;
+}
+.site-nav__fb-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
 @media (max-width: 960px) {
   .site-nav__mobile-icons { display: flex; }
   .site-nav__social { display: none; }
+  .site-nav__fb-banner { display: block; }
 }
 
 .site-nav__link--active {
