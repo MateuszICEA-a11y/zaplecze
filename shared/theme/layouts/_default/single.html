@@ -41,6 +41,7 @@
 
       <h1 class="article-hero__title">{{ .Params.h1 | default .Title }}</h1>
 
+      {{ if not .Params.hide_meta }}
       <div class="article-hero__meta">
         {{ with $authorData }}
         <div class="article-hero__meta-item">
@@ -59,6 +60,7 @@
           <span>{{ $readTime }} min czytania</span>
         </div>
       </div>
+      {{ end }}
     </div>
   </div>
 </header>
