@@ -2020,7 +2020,8 @@ blockquote {
 
 /* ── TOC ── */
 .toc {
-  background: var(--c-dark);
+  background: #fff;
+  border: 1px solid var(--c-border);
   border-radius: var(--radius-sm);
   padding: 0;
   margin-bottom: 2rem;
@@ -2043,7 +2044,7 @@ blockquote {
   user-select: none;
 }
 
-.toc__icon { flex-shrink: 0; opacity: .7; }
+.toc__icon { flex-shrink: 0; color: #fff; }
 
 .toc__title::-webkit-details-marker { display: none; }
 
@@ -2056,7 +2057,7 @@ blockquote {
 }
 
 .toc[open] > .toc__title {
-  border-bottom: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid var(--c-border);
 }
 
 .toc[open] > .toc__title::after {
@@ -2075,16 +2076,16 @@ blockquote {
   background: var(--c-orange);
   border-radius: 50%;
   margin-right: 10px;
-  opacity: .6;
+  opacity: .5;
   transition: opacity .2s, transform .2s;
 }
 .toc__body > #TableOfContents > ul > li:hover > a::before {
   opacity: 1;
   transform: scale(1.2);
 }
-.toc a { font-size: .875rem; color: rgba(255,255,255,.75); text-decoration: none; font-weight: 600; }
+.toc a { font-size: .875rem; color: var(--c-text-mid); text-decoration: none; font-weight: 600; }
 .toc a:hover { color: var(--c-orange); }
-.toc ul ul { border-left: 2px solid rgba(255,255,255,.15); margin-left: 4px; padding-left: 1.25rem; }
+.toc ul ul { border-left: 2px solid var(--c-border); margin-left: 4px; padding-left: 1.25rem; }
 
 /* ── FAQ ── */
 .faq {
