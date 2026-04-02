@@ -22,7 +22,7 @@ faq:
   - question: "Co oznacza żółta/pomarańczowa kontrolka z symbolem kłódki/samochodu?"
     answer: "To błąd systemu Fiat Code (immobilizer). Jeśli świeci się po przekręceniu kluczyka, silnik może nie zapalić, ponieważ system nie rozpoznał kodu w kluczyku. Często pomaga wyjęcie kluczyka i ponowna próba po kilku sekundach."
 sources:
-  - "- Instrukcja obsługi Fiat Ducato (eLum Fiat): [https://aftersales.fiat.com/elum/](https://aftersales.fiat.com/elum/)"
+  - "Instrukcja obsługi Fiat Ducato (eLum Fiat) – aftersales.fiat.com"
 ---
 
 ## Kolory kontrolek – hierarchia ważności

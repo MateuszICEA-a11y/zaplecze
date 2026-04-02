@@ -24,8 +24,7 @@ faq:
   - question: "Dlaczego Daily nie odpala po wymianie bezpiecznika?"
     answer: "Prawdopodobnie wymieniłeś bezpiecznik, ale nie usunąłeś przyczyny zwarcia. Sterownik silnika (ECU) mógł przejść w tryb awaryjny. Odłącz akumulator na 10 minut, podłącz ponownie i spróbuj uruchomić."
 sources:
-  - "- Instrukcja obsługi Iveco Daily (lampki kontrolne"
-  - "schemat): tirmet.pl"
+  - "Instrukcja obsługi Iveco Daily (lampki kontrolne, schemat) – tirmet.pl"
 ---
 ## Lokalizacja skrzynek bezpieczników
 

@@ -24,8 +24,7 @@ faq:
   - question: "Czy Vivaro C ma inne kontrolki niż starsze generacje?"
     answer: "Tak – Vivaro C (od 2019) bazuje na platformie PSA i ma zupełnie inny zestaw wskaźników. Pojawiły się kontrolki systemu lane assist, radarowego tempomatu i asystenta martwego pola, nieobecne w starszych wersjach."
 sources:
-  - "- Instrukcja obsługi Opel Vivaro (2007"
-  - "2017): public-servicebox.opel.com"
+  - "Instrukcja obsługi Opel Vivaro (2007–2017) – public-servicebox.opel.com"
 ---
 
 ## Kontrolki Vivaro A (2001–2014) – silniki Renault

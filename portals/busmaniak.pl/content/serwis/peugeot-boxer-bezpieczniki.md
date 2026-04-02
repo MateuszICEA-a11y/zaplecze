@@ -24,7 +24,7 @@ faq:
   - question: "Ile kosztuje wymiana skrzynki bezpieczników w Boxer?"
     answer: "Sama skrzynka (moduł BSI) to koszt 800–2 000 zł za część używaną lub 2 500–4 500 zł za nową. Do tego dochodzi programowanie – BSI wymaga zakodowania do konkretnego VIN."
 sources:
-  - "- Instrukcja obsługi Peugeot Boxer III (2006–2018): dokumentacja serwisowa PSA"
+  - "Instrukcja obsługi Peugeot Boxer III (2006–2018) – dokumentacja serwisowa PSA"
 ---
 
 ## Lokalizacja skrzynek bezpieczników

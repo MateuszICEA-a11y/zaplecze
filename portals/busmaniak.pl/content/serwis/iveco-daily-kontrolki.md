@@ -22,7 +22,7 @@ faq:
   - question: "Co oznacza kontrolka retardera w Iveco Daily?"
     answer: "Żółta ikona oznacza awarię opcjonalnego retardera elektromagnetycznego (Telma), montowanego na wale napędowym. Pojazd jest zdatny do jazdy, ale dodatkowa siła hamowania jest niedostępna. Stanowi to zagrożenie podczas jazdy z ładunkiem w terenie górzystym."
 sources:
-  - "- Instrukcja obsługi Iveco Daily (lampki kontrolne TFT): tirmet.pl"
+  - "Instrukcja obsługi Iveco Daily (lampki kontrolne TFT) – tirmet.pl"
 ---
 
 ## Kontrolki Daily V (2006–2014)

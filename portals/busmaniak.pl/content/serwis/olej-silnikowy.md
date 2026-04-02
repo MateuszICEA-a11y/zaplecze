@@ -21,7 +21,7 @@ faq:
   - question: "Czy syntetyk jest lepszy od półsyntetyku w busie?"
     answer: "Tak – olej syntetyczny lepiej znosi wydłużone interwały wymiany i chroni DPF dzięki niższej zawartości popiołu (Low SAPS). Półsyntetyk ma sens wyłącznie w starszych silnikach bez filtra cząstek stałych."
 sources:
-  - "- Instrukcja obsługi Fiat Ducato (eLum): https://aftersales.fiat.com/elum/"
+  - "Instrukcja obsługi Fiat Ducato (eLum) – aftersales.fiat.com"
 ---
 ## Klasy lepkości – 5W-30 vs 5W-40
 
