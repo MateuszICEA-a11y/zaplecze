@@ -1,6 +1,7 @@
 {{ define "main" }}
 
 {{/* ═══ BREADCRUMBS ═══ */}}
+{{ if not .Params.hide_meta }}
 <nav class="breadcrumbs">
   <div class="container">
     <a href="{{ .Site.BaseURL }}">Strona główna</a>
@@ -12,6 +13,7 @@
     <span>{{ .Title | truncate 50 }}</span>
   </div>
 </nav>
+{{ end }}
 
 {{/* ═══ HERO ═══ */}}
 {{ $authorData := false }}
