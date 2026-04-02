@@ -1897,7 +1897,7 @@ blockquote {
 /* ══════════════════════════════════════
    ARTICLE PAGE
    ══════════════════════════════════════ */
-.article { padding: 2.5rem 0 4rem; }
+.article { padding: 2.5rem 0 4rem; overflow-x: hidden; }
 
 .article__header { margin-bottom: 2rem; }
 
