@@ -81,9 +81,9 @@
 {{/* Schema JSON-LD */}}
 {{ if .IsPage }}
   {{ partial "schema/article.html" . }}
-  {{ with .Params.faq }}
-    {{ partial "schema/faq.html" $ }}
-  {{ end }}
+{{ end }}
+{{ with .Params.faq }}
+  {{ partial "schema/faq.html" $ }}
 {{ end }}
 {{ if eq .Type "authors" }}
   {{ partial "schema/person.html" . }}
