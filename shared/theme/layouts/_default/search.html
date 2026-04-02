@@ -1,0 +1,86 @@
+{{ define "main" }}
+<section class="search-page">
+  <div class="container content-narrow">
+    <h1 class="search-page__title">Szukaj artykułu</h1>
+    <div class="search-page__box">
+      <input type="text" id="search-page-input" class="search-page__input" placeholder="Np. Fiat Ducato spalanie..." autocomplete="off" autofocus>
+      <button id="search-page-btn" class="search-page__btn" aria-label="Szukaj">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </button>
+    </div>
+    <div id="search-page-results" class="search-page__results"></div>
+    <div id="search-page-empty" class="search-page__empty" style="display:none;">Brak wyników dla tego zapytania.</div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var input = document.getElementById('search-page-input');
+  var btn = document.getElementById('search-page-btn');
+  var resultsEl = document.getElementById('search-page-results');
+  var emptyEl = document.getElementById('search-page-empty');
+  var idx = null;
+
+  async function loadIndex() {
+    if (idx) return idx;
+    var res = await fetch('/index.json');
+    idx = await res.json();
+    return idx;
+  }
+
+  function doSearch() {
+    var q = input.value.trim().toLowerCase();
+    if (q.length < 2) { resultsEl.innerHTML = ''; emptyEl.style.display = 'none'; return; }
+
+    loadIndex().then(function(data) {
+      var words = q.split(/\s+/);
+      var matches = data.filter(function(p) {
+        var haystack = (p.title + ' ' + p.keyword + ' ' + p.description).toLowerCase();
+        return words.every(function(w) { return haystack.includes(w); });
+      });
+
+      if (matches.length === 0) {
+        resultsEl.innerHTML = '';
+        emptyEl.style.display = 'block';
+        return;
+      }
+
+      emptyEl.style.display = 'none';
+      resultsEl.innerHTML = matches.map(function(m) {
+        return '<a href="' + m.url + '" class="search-page__card">' +
+          (m.image ? '<div class="search-page__card-img" style="background-image:url(\'' + m.image + '\')"></div>' : '') +
+          '<div class="search-page__card-body">' +
+            '<div class="search-page__card-section">' + m.section + '</div>' +
+            '<div class="search-page__card-title">' + m.title + '</div>' +
+            '<p class="search-page__card-desc">' + (m.description || '').substring(0, 120) + '</p>' +
+          '</div>' +
+        '</a>';
+      }).join('');
+    });
+  }
+
+  // Search on type (debounced)
+  var timer;
+  input.addEventListener('input', function() {
+    clearTimeout(timer);
+    timer = setTimeout(doSearch, 250);
+  });
+
+  // Search on button click
+  btn.addEventListener('click', doSearch);
+
+  // Search on Enter
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') doSearch();
+  });
+
+  // Pre-fill from URL param ?q=
+  var params = new URLSearchParams(window.location.search);
+  var preQ = params.get('q');
+  if (preQ) {
+    input.value = preQ;
+    doSearch();
+  }
+})();
+</script>
+{{ end }}
