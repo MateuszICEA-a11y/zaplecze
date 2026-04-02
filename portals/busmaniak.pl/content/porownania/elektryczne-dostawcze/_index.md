@@ -36,7 +36,7 @@ Elektryczne samochody dostawcze w Polsce to już nie eksperyment – to rosnący
 
 Trzy czynniki napędzają zmianę:
 
-- **Strefy Czystego Transportu** – od 2026 roku Warszawa i Kraków zaostrzają zasady wjazdu dla diesli niespełniających normy Euro 6{rel="nofollow"}. Elektryki wjeżdżają bez ograniczeń
+- **Strefy Czystego Transportu** – od 2026 roku Warszawa i Kraków zaostrzają zasady wjazdu dla diesli niespełniających normy Euro 6. Elektryki wjeżdżają bez ograniczeń
 - **Spadek cen baterii** – koszt ogniw LFP spadł poniżej 100 USD/kWh, co obniżyło ceny pojazdów o 15–20% w ciągu dwóch lat
 - **TCO niższe o 30–50%** – przy przebiegach powyżej 30 000 km rocznie elektryczny dostawczak jest tańszy w eksploatacji od diesla
 

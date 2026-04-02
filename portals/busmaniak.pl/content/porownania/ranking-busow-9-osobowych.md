@@ -36,7 +36,7 @@ Przed zakupem warto przeanalizować:
 - **DMC i rzeczywista ładowność** – przy DMC 3500 kg i masie własnej pojazdu rzędu 2100–2400 kg, na 9 dorosłych pasażerów (ok. 720 kg) pozostaje zaledwie 350–400 kg na bagaż. Na wakacyjnym wyjeździe łatwo o przeładowanie i mandat.
 - **Typ silnika** – diesel 2.0 o mocy 150 KM to minimum dla komfortowej jazdy z pełnym obciążeniem. Słabsze jednostki 120 KM wyraźnie męczą się na autostradzie.
 - **Drzwi przesuwne** – w busie 9-osobowym dostęp do trzeciego rzędu jest kluczowy. Drzwi przesuwne po obu stronach to standard w większości modeli.
-- **Norma emisji** – planowane strefy czystego transportu wprowadzają ograniczenia. Przykładowo, od 2026 roku SCT w Warszawie{rel="nofollow"} będzie wymagać dla diesli normy Euro 5, a od 2028 roku – Euro 6.
+- **Norma emisji** – planowane strefy czystego transportu wprowadzają ograniczenia. Przykładowo, od 2026 roku SCT w Warszawie będzie wymagać dla diesli normy Euro 5, a od 2028 roku – Euro 6.
 
 {{% info title="Prawo jazdy" icon="engineering" %}}
 Każdy bus 9-osobowy z DMC do 3500 kg można prowadzić na kategorię B. Limity dotyczą łącznej masy pojazdu z pasażerami i bagażem – nie samej liczby miejsc. Przy zakupie sprawdź DMC w dowodzie rejestracyjnym.

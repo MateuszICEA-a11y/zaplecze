@@ -36,7 +36,7 @@ Cztery duże busy dostawcze walczące o europejski rynek to modele o fundamental
 
 | Cecha | Fiat Ducato | Mercedes Sprinter | Iveco Daily | Ford Transit |
 |---|---|---|---|---|
-| Konstrukcja | samonośna | samonośna | [rama drabinkowa](https://pl.wikipedia.org/wiki/Rama_pojazdu){rel="nofollow"} | samonośna |
+| Konstrukcja | samonośna | samonośna | [rama drabinkowa](https://pl.wikipedia.org/wiki/Rama_pojazdu) | samonośna |
 | Napędy | FWD | FWD / RWD / 4x4 | RWD | FWD / RWD / AWD |
 | Max. DMC (kat. B) | 3,5 t | 3,5 t | 3,5 t | 3,5 t |
 | Max. DMC (ogólnie) | 4,25 t | 5,5 t | 7,2 t | 5,0 t |

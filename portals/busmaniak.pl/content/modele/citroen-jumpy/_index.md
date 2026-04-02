@@ -28,7 +28,7 @@ sources:
 
 ## Citroën Jumpy – co to za model?
 
-Citroën Jumpy, w niektórych krajach sprzedawany jako Citroën Dispatch, to średni van dostawczy produkowany od 1995 roku. Aktualna, trzecia generacja jest obecna na rynku od 2016 roku i powstaje na platformie [PSA EMP2](https://en.wikipedia.org/wiki/EMP2_platform){rel="nofollow"} wspólnie z [Toyota ProAce](/modele/toyota-proace/) i [Peugeot Expert](/modele/peugeot-expert/).
+Citroën Jumpy, w niektórych krajach sprzedawany jako Citroën Dispatch, to średni van dostawczy produkowany od 1995 roku. Aktualna, trzecia generacja jest obecna na rynku od 2016 roku i powstaje na platformie [PSA EMP2](https://en.wikipedia.org/wiki/EMP2_platform) wspólnie z [Toyota ProAce](/modele/toyota-proace/) i [Peugeot Expert](/modele/peugeot-expert/).
 
 Jumpy III celuje w środek rynku – jest niższy od wielu klasycznych blaszaków, ale nadal oferuje dużą ładownię, sensowną ładowność i trzy długości nadwozia. To auto często wybierane do pracy w mieście, kurierki, serwisu mobilnego i przewozu ekip.
 
