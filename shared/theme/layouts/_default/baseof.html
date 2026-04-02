@@ -15,6 +15,7 @@
   {{- partial "footer.html" . -}}
 
   <script>
+  /* Related-inline shortcode slider */
   document.querySelectorAll('.related-inline').forEach(function(el) {
     var track = el.querySelector('.related-inline__track');
     var prev = el.querySelector('.related-inline__arrow--prev');
@@ -30,6 +31,36 @@
     if (next) next.addEventListener('click', function() {
       track.scrollBy({ left: scrollAmt(), behavior: 'smooth' });
     });
+  });
+
+  /* Related-slider (single/list page bottom) */
+  document.querySelectorAll('.related-slider').forEach(function(el) {
+    var track = el.querySelector('[data-slider-track]');
+    var prev = el.querySelector('[data-slider-prev]');
+    var next = el.querySelector('[data-slider-next]');
+    if (!track || !prev || !next) return;
+
+    var scrollAmt = function() {
+      var card = track.querySelector('.related-card');
+      return card ? card.offsetWidth + 24 : 320;
+    };
+
+    function updateArrows() {
+      var canScroll = track.scrollWidth > track.clientWidth + 2;
+      prev.style.display = canScroll && track.scrollLeft > 0 ? '' : 'none';
+      next.style.display = canScroll && track.scrollLeft < track.scrollWidth - track.clientWidth - 2 ? '' : 'none';
+    }
+
+    prev.addEventListener('click', function() {
+      track.scrollBy({ left: -scrollAmt(), behavior: 'smooth' });
+    });
+    next.addEventListener('click', function() {
+      track.scrollBy({ left: scrollAmt(), behavior: 'smooth' });
+    });
+
+    track.addEventListener('scroll', updateArrows);
+    window.addEventListener('resize', updateArrows);
+    updateArrows();
   });
   </script>
 </body>
