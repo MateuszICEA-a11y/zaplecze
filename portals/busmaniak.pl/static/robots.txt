@@ -1,3 +1,9 @@
+Sitemap: https://busmaniak.pl/sitemap.xml
+
+User-agent: *
+Allow: /
+Disallow: /szukaj/
+
 #
 #        ______
 #       /|_||_\`.__
@@ -16,10 +22,3 @@
 #         |_.__/ \__, |\____/____|_____\____|_| |_|\___/
 #                |___/
 #
-
-User-agent: *
-Allow: /
-
-Disallow: /szukaj/
-
-Sitemap: https://busmaniak.pl/sitemap.xml
