@@ -1,0 +1,32 @@
+{{/*
+  Cluster navigation – shows all sibling articles under the same parent model.
+  Rendered on child pages (pages with parent: "model-slug" in frontmatter).
+  Groups: engine articles (contain digits in slug) and body/variant articles.
+*/}}
+{{ with .Params.parent }}
+  {{ $parentPage := $.Site.GetPage (printf "/modele/%s" .) }}
+  {{ if $parentPage }}
+    {{ $siblings := slice }}
+    {{ range $parentPage.Pages }}
+      {{ if ne $.Permalink .Permalink }}
+        {{ $siblings = $siblings | append . }}
+      {{ end }}
+    {{ end }}
+
+    {{ if gt (len $siblings) 0 }}
+    <nav class="cluster-nav" aria-label="Artykuły o {{ $parentPage.Title }}">
+      <div class="cluster-nav__title">
+        <a href="{{ $parentPage.Permalink }}">{{ $parentPage.Params.h1 | default $parentPage.Title }}</a> – więcej artykułów
+      </div>
+      <div class="cluster-nav__list">
+        {{ range $siblings }}
+        <a href="{{ .Permalink }}" class="cluster-nav__item">
+          <span class="cluster-nav__icon material-symbols-outlined">{{ if findRE `\d` .File.ContentBaseName }}bolt{{ else }}local_shipping{{ end }}</span>
+          <span class="cluster-nav__label">{{ .Params.h1 | default .Title }}</span>
+        </a>
+        {{ end }}
+      </div>
+    </nav>
+    {{ end }}
+  {{ end }}
+{{ end }}

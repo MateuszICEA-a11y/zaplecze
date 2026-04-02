@@ -74,6 +74,9 @@
     <p class="article-lead">{{ . }}</p>
     {{ end }}
 
+    {{/* Cluster navigation (sibling articles under same parent model) */}}
+    {{ partial "cluster-nav.html" . }}
+
     {{/* Content with TOC inserted after intro (before first H2) */}}
     <div class="article__content">
       {{ $showToc := and (.Params.toc | default true) (gt (len .TableOfContents) 100) }}
