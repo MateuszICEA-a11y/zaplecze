@@ -124,9 +124,9 @@ a:hover { color: var(--c-orange-hover); }
 .site-nav__mobile-icons {
   display: none;
   align-items: center;
-  gap: .75rem;
+  gap: 1.25rem;
   margin-left: auto;
-  margin-right: 1rem;
+  margin-right: 1.25rem;
 }
 
 .site-nav__search-mobile {
