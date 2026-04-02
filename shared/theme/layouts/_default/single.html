@@ -28,6 +28,7 @@
 {{ $readTime := math.Round (div (countwords .Content) 200.0) }}
 {{ if lt $readTime 1 }}{{ $readTime = 1 }}{{ end }}
 
+{{ if or .Params.image (not .Params.hide_meta) }}
 <header class="article-hero{{ if $isPage }} article-hero--page{{ end }}">
   <div class="article-hero__inner">
     {{ with .Params.image }}
@@ -64,6 +65,11 @@
     </div>
   </div>
 </header>
+{{ else }}
+<div class="container content-narrow" style="padding-top: 2rem;">
+  <h1>{{ .Params.h1 | default .Title }}</h1>
+</div>
+{{ end }}
 
 {{/* ═══ ARTICLE BODY ═══ */}}
 <article class="article">
