@@ -137,97 +137,103 @@
   </div>
 </article>
 
-{{/* ═══ RELATED ARTICLES ═══ */}}
-{{/* Pages with parent: use cluster-nav (tag-style links to all siblings) */}}
-{{ if .Params.parent }}
-  <section class="related-section">
-    <div class="container content-narrow">
-      {{ partial "cluster-nav.html" . }}
-    </div>
-  </section>
-{{ else }}
-  {{/* Other pages: slider with children / same-section fallback */}}
-  {{ $allRelated := slice }}
+{{/* ═══ RELATED ARTICLES (merged: children + siblings + cross-cluster) ═══ */}}
+{{ $allRelated := slice }}
 
-  {{ if .IsNode }}
-    {{ range .Pages }}
+{{/* 1. Children (if this is a section/node page) */}}
+{{ if .IsNode }}
+  {{ range .Pages }}
+    {{ $allRelated = $allRelated | append . }}
+  {{ end }}
+{{ end }}
+
+{{/* 2. Siblings (same parent) */}}
+{{ with .Params.parent }}
+  {{ $parentPage := $.Site.GetPage (printf "/modele/%s" .) }}
+  {{ if $parentPage }}
+    {{ range $parentPage.Pages }}
+      {{ if ne $.Permalink .Permalink }}
+        {{ $allRelated = $allRelated | append . }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* 3. Cross-cluster (same parent_model) */}}
+{{ with .Params.parent_model }}
+  {{ $pm := . }}
+  {{ $cross := where $.Site.RegularPages "Params.parent_model" $pm }}
+  {{ range $cross }}
+    {{ if ne $.Permalink .Permalink }}
       {{ $allRelated = $allRelated | append . }}
     {{ end }}
   {{ end }}
+{{ end }}
 
-  {{ with .Params.parent_model }}
-    {{ $pm := . }}
-    {{ $cross := where $.Site.RegularPages "Params.parent_model" $pm }}
-    {{ range $cross }}
-      {{ if ne $.Permalink .Permalink }}
-        {{ $allRelated = $allRelated | append . }}
-      {{ end }}
+{{/* 4. Same section fallback */}}
+{{ if eq (len $allRelated) 0 }}
+  {{ $section := .CurrentSection }}
+  {{ range $section.RegularPages }}
+    {{ if ne $.Permalink .Permalink }}
+      {{ $allRelated = $allRelated | append . }}
     {{ end }}
   {{ end }}
+{{ end }}
 
-  {{ if eq (len $allRelated) 0 }}
-    {{ $section := .CurrentSection }}
-    {{ range $section.RegularPages }}
-      {{ if ne $.Permalink .Permalink }}
-        {{ $allRelated = $allRelated | append . }}
-      {{ end }}
-    {{ end }}
+{{/* Deduplicate by Permalink */}}
+{{ $seen := slice }}
+{{ $unique := slice }}
+{{ range $allRelated }}
+  {{ if not (in $seen .Permalink) }}
+    {{ $unique = $unique | append . }}
+    {{ $seen = $seen | append .Permalink }}
   {{ end }}
+{{ end }}
 
-  {{ $seen := slice }}
-  {{ $unique := slice }}
-  {{ range $allRelated }}
-    {{ if not (in $seen .Permalink) }}
-      {{ $unique = $unique | append . }}
-      {{ $seen = $seen | append .Permalink }}
-    {{ end }}
-  {{ end }}
-
-  {{ if gt (len $unique) 0 }}
-  <section class="related-section">
-    <div class="container">
-      <div class="related-section__header">
-        <div>
-          <div class="related-section__title">Powiązane artykuły</div>
-          <div class="related-section__bar"></div>
-        </div>
-      </div>
-      <div class="related-slider" data-slider>
-        <button class="related-slider__btn related-slider__btn--prev" data-slider-prev aria-label="Poprzednie">
-          <span class="material-symbols-outlined">chevron_left</span>
-        </button>
-        <div class="related-slider__track" data-slider-track>
-          {{ range $unique }}
-          {{ $page := . }}
-          <article class="related-card">
-            <a href="{{ $page.Permalink }}">
-              {{ if $page.Params.image }}
-              <div class="related-card__image">
-                <img src="{{ $page.Params.image }}" alt="{{ $page.Params.image_alt | default $page.Title }}" loading="lazy">
-                <div class="related-card__badge">{{ with $page.Parent }}{{ .Title }}{{ else }}{{ $page.Section }}{{ end }}</div>
-              </div>
-              {{ else }}
-              <div class="related-card__image" style="background: linear-gradient(135deg, var(--c-dark), var(--c-navy));">
-                <div class="related-card__badge">{{ with $page.Parent }}{{ .Title }}{{ else }}{{ $page.Section }}{{ end }}</div>
-              </div>
-              {{ end }}
-              <div class="related-card__body">
-                <div class="related-card__title">{{ $page.Params.h1 | default $page.Title }}</div>
-                {{ with $page.Description }}
-                <p class="related-card__excerpt">{{ . | truncate 100 }}</p>
-                {{ end }}
-              </div>
-            </a>
-          </article>
-          {{ end }}
-        </div>
-        <button class="related-slider__btn related-slider__btn--next" data-slider-next aria-label="Następne">
-          <span class="material-symbols-outlined">chevron_right</span>
-        </button>
+{{ if gt (len $unique) 0 }}
+<section class="related-section">
+  <div class="container">
+    <div class="related-section__header">
+      <div>
+        <div class="related-section__title">Powiązane artykuły</div>
+        <div class="related-section__bar"></div>
       </div>
     </div>
-  </section>
-  {{ end }}
+    <div class="related-slider" data-slider>
+      <button class="related-slider__btn related-slider__btn--prev" data-slider-prev aria-label="Poprzednie">
+        <span class="material-symbols-outlined">chevron_left</span>
+      </button>
+      <div class="related-slider__track" data-slider-track>
+        {{ range $unique }}
+        {{ $page := . }}
+        <article class="related-card">
+          <a href="{{ $page.Permalink }}">
+            {{ if $page.Params.image }}
+            <div class="related-card__image">
+              <img src="{{ $page.Params.image }}" alt="{{ $page.Params.image_alt | default $page.Title }}" loading="lazy">
+              <div class="related-card__badge">{{ with $page.Parent }}{{ .Title }}{{ else }}{{ $page.Section }}{{ end }}</div>
+            </div>
+            {{ else }}
+            <div class="related-card__image" style="background: linear-gradient(135deg, var(--c-dark), var(--c-navy));">
+              <div class="related-card__badge">{{ with $page.Parent }}{{ .Title }}{{ else }}{{ $page.Section }}{{ end }}</div>
+            </div>
+            {{ end }}
+            <div class="related-card__body">
+              <div class="related-card__title">{{ $page.Params.h1 | default $page.Title }}</div>
+              {{ with $page.Description }}
+              <p class="related-card__excerpt">{{ . | truncate 100 }}</p>
+              {{ end }}
+            </div>
+          </a>
+        </article>
+        {{ end }}
+      </div>
+      <button class="related-slider__btn related-slider__btn--next" data-slider-next aria-label="Następne">
+        <span class="material-symbols-outlined">chevron_right</span>
+      </button>
+    </div>
+  </div>
+</section>
 {{ end }}
 
 {{ end }}
