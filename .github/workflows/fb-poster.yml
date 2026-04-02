@@ -1,7 +1,7 @@
 name: Facebook Auto-Poster
 on:
   schedule:
-    - cron: '0 8 * * *'  # 10:00 PL (UTC+2)
+    - cron: '30 9 * * *'  # 11:30 PL (UTC+2)
   workflow_dispatch:  # manual trigger from GitHub UI
 
 permissions:
