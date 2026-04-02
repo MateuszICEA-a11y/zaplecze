@@ -180,11 +180,13 @@
   {{ end }}
 {{ end }}
 
-{{/* Deduplicate by Permalink */}}
+{{/* Deduplicate and filter out utility pages */}}
 {{ $seen := slice }}
 {{ $unique := slice }}
 {{ range $allRelated }}
-  {{ if not (in $seen .Permalink) }}
+  {{ $noindex := findRE "noindex" (.Params.robots | default "") }}
+  {{ $isUtility := or (eq .Layout "search") (eq .Layout "sitemap-html") }}
+  {{ if and (not (in $seen .Permalink)) (not $noindex) (not $isUtility) }}
     {{ $unique = $unique | append . }}
     {{ $seen = $seen | append .Permalink }}
   {{ end }}

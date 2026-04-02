@@ -1,5 +1,5 @@
 {{- $pages := slice -}}
-{{- range where .Site.RegularPages "Params.draft" "ne" true -}}
+{{- range where (where .Site.RegularPages "Params.draft" "ne" true) "Params.robots" "ne" "noindex, follow" -}}
   {{- $pages = $pages | append (dict
     "title" (.Params.h1 | default .Title)
     "url" .Permalink
