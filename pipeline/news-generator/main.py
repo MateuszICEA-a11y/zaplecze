@@ -122,8 +122,6 @@ def run() -> None:
     signals = collect_all_signals(
         feeds_config=feeds,
         trends_seeds=trends_seeds,
-        trends_geo=trends_cfg.get("geo", "PL"),
-        trends_category=trends_cfg.get("category", 47),
         max_age_hours=scoring_cfg.get("max_age_hours", 48),
         published_history=published,
         dedup_threshold=scoring_cfg.get("dedup_similarity_threshold", 0.7),

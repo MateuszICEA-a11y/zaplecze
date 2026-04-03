@@ -1,19 +1,19 @@
-"""Signal collector – RSS feeds, Google Trends, Google Alerts."""
+"""Signal collector – RSS feeds, Google Trends (DataForSEO), Google Alerts."""
 
 from __future__ import annotations
 
+import json
+import os
 import time
+import urllib.request
+import urllib.error
+from base64 import b64encode
 from dataclasses import dataclass, asdict
 from datetime import datetime, timezone, timedelta
 from difflib import SequenceMatcher
 from time import mktime
 
 import feedparser
-
-try:
-    from pytrends.request import TrendReq
-except ImportError:
-    TrendReq = None
 
 
 @dataclass
@@ -81,43 +81,76 @@ def fetch_google_trends(
     geo: str = "PL",
     category: int = 47,
 ) -> list[Signal]:
-    """Fetch trending queries from Google Trends related to seed keywords."""
-    if TrendReq is None:
+    """Fetch trending queries from DataForSEO Google Trends API.
+
+    Uses 'explore' endpoint to get rising related queries for each seed keyword.
+    Auth via DATAFORSEO_LOGIN + DATAFORSEO_PASSWORD env vars.
+    """
+    login = os.environ.get("DATAFORSEO_LOGIN", "")
+    password = os.environ.get("DATAFORSEO_PASSWORD", "")
+    if not login or not password:
         return []
 
+    auth = b64encode(f"{login}:{password}".encode()).decode()
     signals: list[Signal] = []
     now = datetime.now(timezone.utc)
 
-    try:
-        pytrends = TrendReq(hl="pl-PL", tz=-60)
+    # Process seeds one by one (DataForSEO handles one keyword per request)
+    for seed in seeds:
+        try:
+            payload = json.dumps([{
+                "keywords": [seed],
+                "location_code": 2616,  # Poland
+                "language_code": "pl",
+                "type": "web",
+                "time_range": "past_7_days",
+            }]).encode("utf-8")
 
-        # Process seeds in batches of 5 (pytrends limit)
-        for i in range(0, len(seeds), 5):
-            batch = seeds[i : i + 5]
-            try:
-                pytrends.build_payload(batch, cat=category, geo=geo, timeframe="now 1-d")
-                related = pytrends.related_queries()
+            req = urllib.request.Request(
+                "https://api.dataforseo.com/v3/keywords_data/google_trends/explore/live",
+                data=payload,
+                headers={
+                    "Authorization": f"Basic {auth}",
+                    "Content-Type": "application/json",
+                },
+            )
 
-                for keyword, data in related.items():
-                    if data and data.get("rising") is not None:
-                        for _, row in data["rising"].iterrows():
-                            query = row.get("query", "")
-                            value = row.get("value", 0)
-                            if query:
-                                signals.append(Signal(
-                                    title=query,
-                                    summary=f"Rising trend for '{keyword}': {query}",
-                                    source="trends",
-                                    category="general",
-                                    published=now,
-                                    url="",
-                                    trend_score=min(value / 500, 1.0),
-                                ))
-                time.sleep(1)  # Rate limiting
-            except Exception:
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                data = json.loads(resp.read().decode())
+
+            tasks = data.get("tasks", [])
+            if not tasks or not tasks[0].get("result"):
                 continue
-    except Exception:
-        pass
+
+            for result in tasks[0]["result"]:
+                # Extract rising queries from related searches
+                items = result.get("items", [])
+                for item in items:
+                    if item.get("type") != "google_trends_graph":
+                        continue
+                    # Main trend data – check if there's a spike
+                    values = item.get("data", {}).get("values", [])
+                    if not values:
+                        continue
+                    # Get the most recent value vs average
+                    recent = values[-1].get("values", [0])[0] if values else 0
+                    avg = sum(v.get("values", [0])[0] for v in values) / max(len(values), 1)
+                    if avg > 0 and recent > avg * 1.3:
+                        # Trend is rising – add as signal
+                        spike_ratio = recent / avg
+                        signals.append(Signal(
+                            title=seed,
+                            summary=f"Google Trends spike for '{seed}': {spike_ratio:.1f}x above average",
+                            source="trends",
+                            category="general",
+                            published=now,
+                            url="",
+                            trend_score=min(spike_ratio / 5.0, 1.0),
+                        ))
+
+            time.sleep(0.5)  # Rate limiting
+        except Exception:
+            continue
 
     return signals
 
@@ -178,8 +211,6 @@ def filter_already_published(
 def collect_all_signals(
     feeds_config: list[dict],
     trends_seeds: list[str],
-    trends_geo: str,
-    trends_category: int,
     max_age_hours: int,
     published_history: list[dict],
     dedup_threshold: float,
@@ -191,12 +222,8 @@ def collect_all_signals(
     rss_signals = parse_rss_feeds(feeds_config, max_age_hours=max_age_hours)
     signals.extend(rss_signals)
 
-    # 2. Google Trends
-    trends_signals = fetch_google_trends(
-        seeds=trends_seeds,
-        geo=trends_geo,
-        category=trends_category,
-    )
+    # 2. Google Trends (DataForSEO)
+    trends_signals = fetch_google_trends(seeds=trends_seeds)
     signals.extend(trends_signals)
 
     # 3. Deduplicate

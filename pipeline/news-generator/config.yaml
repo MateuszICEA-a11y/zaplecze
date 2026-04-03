@@ -17,8 +17,8 @@ scoring:
   dedup_similarity_threshold: 0.7
 
 trends:
-  geo: "PL"
-  category: 47  # Vehicles & Transportation
+  location_code: 2616  # Poland (DataForSEO)
+  language_code: "pl"
   seeds_static:
     - "bus dostawczy"
     - "van"
