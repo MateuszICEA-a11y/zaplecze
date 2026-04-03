@@ -25,12 +25,16 @@ Zasady:
 - Nie powtarzaj treści z lead w body
 - NIE dodawaj sekcji FAQ – newsy nie mają FAQ
 - Sources: podaj źródła informacji
-- Linki wewnętrzne: OBOWIĄZKOWO wstaw podane linki do powiązanych artykułów. Każdy news MUSI zawierać co najmniej 1 link wewnętrzny.
-  WAŻNE: NIGDY nie używaj pełnego tytułu artykułu jako anchor text. Linkuj z krótkiej, naturalnej frazy.
-  ŹLE: [Iveco Daily lawecie – DMC, wymiary, homologacja](/modele/iveco-daily/laweta/)
-  DOBRZE: [lawecie Iveco Daily](/modele/iveco-daily/laweta/)
-  ŹLE: [Iveco Daily chłodnia – zabudowa, agregat, normy](/modele/iveco-daily/chlodnia/)
-  DOBRZE: [Iveco Daily chłodnia](/modele/iveco-daily/chlodnia/)
+- Linki wewnętrzne: wstaw 1-2 linki do podanych artykułów, ALE tylko gdy pasują naturalnie do kontekstu zdania. Nie wymuszaj linków na siłę.
+  ZASADY:
+  - Link musi wynikać z treści zdania, nie może być doklejony sztucznie
+  - Anchor text to 2-3 słowa, naturalnie wplecione w zdanie
+  - NIGDY nie twórz zdań tylko po to żeby wstawić link
+  - Jeśli żaden link nie pasuje naturalnie – nie wstawiaj żadnego, to OK
+  ŹLE: "Podobny problem dotyczy także mniejszych aut, gdzie ważna jest realna [ładowność Opla Combo](/modele/opel-combo/)."
+  DOBRZE: "Limity ładowności dotyczą też [mniejszych dostawczaków](/modele/opel-combo/)."
+  ŹLE: "Pisaliśmy o tym szerzej przy okazji materiału o [Iveco Daily lawecie – DMC, wymiary, homologacja](/modele/iveco-daily/laweta/)."
+  DOBRZE: "Podobne problemy z DMC mają [lawety na bazie Daily](/modele/iveco-daily/laweta/)."
 - Nie używaj shortcodów Hugo (image, table itp.) – tylko czysty markdown
 - Listy: **Termin** – opis (bez bold+dwukropek)
 - Nie upychaj słów kluczowych – pisz naturalnie\
