@@ -7,8 +7,8 @@
     {
       "@type": "ListItem",
       "position": 1,
-      "name": "Strona glowna",
-      "item": {{ .Site.BaseURL | jsonify }}
+      "name": "Strona główna",
+      "item": "{{ .Site.BaseURL | strings.TrimRight "/" }}"
     }
     {{- $pos := 1 }}
     {{- range .Ancestors.Reverse }}
@@ -17,8 +17,8 @@
     {
       "@type": "ListItem",
       "position": {{ $pos }},
-      "name": {{ .Title | jsonify }},
-      "item": {{ .Permalink | jsonify }}
+      "name": "{{ .Title | replaceRE `"` `\"` }}",
+      "item": "{{ .Permalink | strings.TrimRight "/" }}"
     }
     {{- end }}
     {{- end }}
@@ -26,8 +26,8 @@
     {
       "@type": "ListItem",
       "position": {{ $pos }},
-      "name": {{ .Title | jsonify }},
-      "item": {{ .Permalink | jsonify }}
+      "name": "{{ .Title | replaceRE `"` `\"` }}",
+      "item": "{{ .Permalink | strings.TrimRight "/" }}"
     }
   ]
 }
