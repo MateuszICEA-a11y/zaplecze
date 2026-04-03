@@ -23,9 +23,9 @@ Zasady:
 - Nazwa portalu: BusManiak.pl (camelCase)
 - Body artykułu MUSI zaczynać się od nagłówka ## H2 (lead jest w frontmatter)
 - Nie powtarzaj treści z lead w body
-- FAQ: 1-2 pytania, krótkie odpowiedzi
+- NIE dodawaj sekcji FAQ – newsy nie mają FAQ
 - Sources: podaj źródła informacji
-- Linki wewnętrzne: jeśli podano powiązane artykuły, wstaw 1-2 linki w naturalnym kontekście
+- Linki wewnętrzne: OBOWIĄZKOWO wstaw podane linki do powiązanych artykułów w naturalnym kontekście. Każdy news MUSI zawierać co najmniej 1 link wewnętrzny.
 - Nie używaj shortcodów Hugo (image, table itp.) – tylko czysty markdown
 - Listy: **Termin** – opis (bez bold+dwukropek)
 - Nie upychaj słów kluczowych – pisz naturalnie\
@@ -79,15 +79,13 @@ description: "... (max 160 znaków)"
 draft: false
 author: "Redakcja BusManiak.pl"
 h1: "..."
+toc: false
 main_keyword: "..."
 lead: "... (2-3 zdania, intrygujący wstęp)"
 categories:
   - "{topic.section}"
 tags:
   - "..."
-faq:
-  - question: "..."
-    answer: "..."
 sources:
   - "..."
 ---
@@ -161,17 +159,27 @@ def parse_llm_output(raw: str) -> tuple[dict, str]:
 def find_related_articles(
     section: str,
     content_dir: str,
+    topic_title: str = "",
 ) -> list[dict]:
-    """Find existing articles in the given section for internal linking."""
+    """Find articles across all sections, ranked by relevance to topic title."""
     from pathlib import Path
+    from difflib import SequenceMatcher
 
-    section_dir = Path(content_dir) / section
-    if not section_dir.exists():
+    content_path = Path(content_dir)
+    if not content_path.exists():
         return []
 
+    skip_sections = {"news", "autor", "narzedzia"}
     articles = []
-    for md_file in section_dir.rglob("*.md"):
+
+    for md_file in content_path.rglob("*.md"):
         if md_file.name == "_index.md":
+            continue
+
+        # Skip non-content sections
+        relative = md_file.relative_to(content_path)
+        file_section = relative.parts[0] if relative.parts else ""
+        if file_section in skip_sections:
             continue
 
         text = md_file.read_text(encoding="utf-8")
@@ -187,15 +195,32 @@ def find_related_articles(
         if fm.get("draft", False):
             continue
 
-        # Build URL from path
-        relative = md_file.relative_to(Path(content_dir))
         slug = str(relative).replace(".md", "").replace("\\", "/")
         url = f"/{slug}/"
+        title = fm.get("title", "")
+        main_kw = fm.get("main_keyword", "")
+
+        # Score relevance to topic
+        relevance = 0.0
+        topic_lower = topic_title.lower()
+        if main_kw and main_kw.lower() in topic_lower:
+            relevance = 1.0
+        elif title:
+            relevance = SequenceMatcher(None, topic_lower, title.lower()).ratio()
+
+        # Boost articles from the matched section
+        if file_section == section:
+            relevance += 0.2
 
         articles.append({
-            "title": fm.get("title", ""),
+            "title": title,
             "url": url,
-            "main_keyword": fm.get("main_keyword", ""),
+            "main_keyword": main_kw,
+            "relevance": relevance,
         })
+
+    # Sort by relevance, return top 5
+    articles.sort(key=lambda a: a["relevance"], reverse=True)
+    return articles[:5]
 
     return articles

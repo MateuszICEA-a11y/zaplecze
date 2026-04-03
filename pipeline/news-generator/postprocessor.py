@@ -105,8 +105,10 @@ def postprocess(fm: dict, body: str) -> tuple[dict, str, list[str]]:
                 for item in val
             ]
 
-    # Ensure draft is False
+    # Ensure draft is False, no TOC, no FAQ for news
     fm["draft"] = False
+    fm["toc"] = False
+    fm.pop("faq", None)
 
     # Fix body
     body = fix_typography(body)

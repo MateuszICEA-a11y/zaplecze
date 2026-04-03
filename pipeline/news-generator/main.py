@@ -147,9 +147,9 @@ def run() -> None:
         topic.section,
     )
 
-    # 6. Find related articles for internal linking
-    related = find_related_articles(topic.section, str(content_dir))
-    log.info("Found %d related articles in /%s/", len(related), topic.section)
+    # 6. Find related articles for internal linking (across all sections)
+    related = find_related_articles(topic.section, str(content_dir), topic.signal.title)
+    log.info("Found %d related articles for '%s'", len(related), topic.signal.title[:50])
 
     # 7. Generate article
     log.info("Generating article via %s...", llm_cfg.get("model", "gpt-5.4"))
