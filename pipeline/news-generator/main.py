@@ -182,11 +182,21 @@ def run() -> None:
         fm.setdefault("main_keyword", topic.signal.title.lower())
         fm.setdefault("lead", topic.signal.summary)
 
-    # 10. Write file
+    # 10. Write file (skip if already published today)
     slug = generate_slug(fm.get("title", topic.signal.title))
     date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     filename = f"{slug}.md"
-    output_path = content_dir / pipeline_cfg.get("output_section", "news") / filename
+    news_dir = content_dir / pipeline_cfg.get("output_section", "news")
+    output_path = news_dir / filename
+
+    # Guard: don't publish twice on the same day
+    today_published = [p for p in published if p.get("date") == date_str]
+    if today_published:
+        log.info("Already published today: '%s'. Skipping.", today_published[0].get("title", ""))
+        return
+    if output_path.exists():
+        log.info("File already exists: %s. Skipping.", filename)
+        return
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     markdown = build_markdown(fm, body)
