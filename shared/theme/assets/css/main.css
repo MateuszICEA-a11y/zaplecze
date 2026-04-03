@@ -98,13 +98,13 @@ a:hover { color: var(--c-orange-hover); }
 .site-nav__links {
   display: flex;
   align-items: baseline;
-  gap: 1.2rem;
+  gap: .75rem;
   flex-wrap: nowrap;
 }
 
 .site-nav__link {
   font-family: var(--f-body);
-  font-size: .9375rem;
+  font-size: .84rem;
   font-weight: 500;
   color: #fff;
   text-decoration: none;
