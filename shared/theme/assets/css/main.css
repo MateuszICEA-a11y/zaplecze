@@ -98,7 +98,7 @@ a:hover { color: var(--c-orange-hover); }
 .site-nav__links {
   display: flex;
   align-items: baseline;
-  gap: .75rem;
+  gap: .85rem;
   flex-wrap: nowrap;
 }
 
