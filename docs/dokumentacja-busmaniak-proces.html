@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BusManiak.pl – dokumentacja procesu</title>
+<style>
+@font-face {
+  font-family: 'Roobert';
+  src: url('https://fonts.grupa-icea.pl/roobert/Roobert-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roobert';
+  src: url('https://fonts.grupa-icea.pl/roobert/Roobert-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --midnight-blue: #000623;
+  --blue: #5768FF;
+  --blue-hover: #4555E0;
+  --blue-light: #EEF0FF;
+  --blue-lighter: #F5F6FF;
+  --orange: #F6704C;
+  --off-white: #F9F9F9;
+  --white: #FFFFFF;
+  --gray-100: #F4F4F5;
+  --gray-200: #E4E4E7;
+  --gray-300: #D4D4D8;
+  --gray-400: #A1A1AA;
+  --gray-500: #71717A;
+  --gray-600: #52525B;
+
+  --text-5xl: 48px;
+  --text-4xl: 36px;
+  --text-3xl: 30px;
+  --text-2xl: 24px;
+  --text-xl: 20px;
+  --text-lg: 18px;
+  --text-base: 16px;
+  --text-sm: 14px;
+  --text-xs: 12px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  --shadow-xs: 0 1px 2px rgba(0,6,35,.05);
+  --shadow-sm: 0 1px 3px rgba(0,6,35,.08), 0 1px 2px rgba(0,6,35,.04);
+  --shadow-md: 0 4px 6px rgba(0,6,35,.06), 0 2px 4px rgba(0,6,35,.04);
+  --shadow-lg: 0 10px 15px rgba(0,6,35,.06), 0 4px 6px rgba(0,6,35,.03);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Roobert', Arial, sans-serif;
+  font-weight: 400;
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--midnight-blue);
+  background: var(--off-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-10) var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .container { padding: var(--space-16) var(--space-12); }
+}
+
+/* Hero */
+.hero {
+  background: var(--midnight-blue);
+  padding: var(--space-20) var(--space-6);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .hero { padding: var(--space-24) var(--space-12); }
+}
+
+.hero__title {
+  font-size: var(--text-5xl);
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--white);
+  margin-bottom: var(--space-4);
+}
+
+.hero__title span { color: var(--orange); }
+
+.hero__subtitle {
+  font-size: var(--text-lg);
+  color: var(--gray-400);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero__meta {
+  margin-top: var(--space-6);
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero__tag {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--blue);
+  background: rgba(87,104,255,.12);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+}
+
+/* Section */
+.section {
+  margin-bottom: var(--space-16);
+}
+
+.section__number {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--blue);
+  letter-spacing: .02em;
+  margin-bottom: var(--space-2);
+}
+
+.section__title {
+  font-size: var(--text-3xl);
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: var(--space-4);
+}
+
+.section__lead {
+  font-size: var(--text-lg);
+  color: var(--gray-600);
+  max-width: 800px;
+  margin-bottom: var(--space-8);
+}
+
+/* Subsection */
+.subsection {
+  margin-bottom: var(--space-10);
+}
+
+.subsection__title {
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  line-height: 1.25;
+  margin-bottom: var(--space-3);
+}
+
+.subsection__subtitle {
+  font-size: var(--text-xl);
+  font-weight: 500;
+  line-height: 1.25;
+  margin-bottom: var(--space-3);
+  color: var(--gray-600);
+}
+
+/* Card */
+.card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  transition: box-shadow .2s;
+}
+
+.card:hover { box-shadow: var(--shadow-md); }
+
+.card__label {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--blue);
+  margin-bottom: var(--space-2);
+}
+
+.card__title {
+  font-size: var(--text-xl);
+  font-weight: 500;
+  line-height: 1.25;
+  margin-bottom: var(--space-3);
+}
+
+.card__text {
+  font-size: var(--text-sm);
+  color: var(--gray-600);
+  line-height: 1.5;
+}
+
+/* Grid */
+.grid { display: grid; gap: var(--space-4); }
+.grid--2 { grid-template-columns: 1fr; }
+.grid--3 { grid-template-columns: 1fr; }
+.grid--4 { grid-template-columns: 1fr; }
+
+@media (min-width: 768px) {
+  .grid--2 { grid-template-columns: repeat(2, 1fr); }
+  .grid--3 { grid-template-columns: repeat(3, 1fr); }
+  .grid--4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .grid--4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* Table */
+.table-wrap {
+  overflow-x: auto;
+  margin-bottom: var(--space-6);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+thead { background: var(--blue-light); }
+
+th {
+  font-weight: 500;
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  color: var(--midnight-blue);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--gray-100);
+  color: var(--gray-600);
+}
+
+tr:hover td { background: var(--blue-lighter); }
+
+/* Stat card */
+.stat {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-6);
+  text-align: center;
+}
+
+.stat__value {
+  font-size: var(--text-3xl);
+  font-weight: 500;
+  color: var(--blue);
+  line-height: 1.1;
+}
+
+.stat__label {
+  font-size: var(--text-xs);
+  color: var(--gray-500);
+  margin-top: var(--space-1);
+}
+
+/* Flow diagram */
+.flow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-6);
+}
+
+.flow__step {
+  background: var(--blue-light);
+  color: var(--midnight-blue);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+}
+
+.flow__arrow {
+  color: var(--gray-400);
+  font-size: var(--text-lg);
+}
+
+/* Checklist */
+.checklist { list-style: none; }
+
+.checklist li {
+  position: relative;
+  padding-left: var(--space-8);
+  margin-bottom: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--gray-600);
+  line-height: 1.5;
+}
+
+.checklist li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--blue);
+  font-size: var(--text-base);
+  font-weight: 500;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--blue-light);
+  border-radius: var(--radius-full);
+}
+
+/* Callout */
+.callout {
+  background: var(--blue-light);
+  border-left: 3px solid var(--blue);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--space-4) var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.callout__title {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--blue);
+  margin-bottom: var(--space-1);
+}
+
+.callout__text {
+  font-size: var(--text-sm);
+  color: var(--midnight-blue);
+}
+
+/* Pipeline step */
+.pipeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.pipeline__step {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.pipeline__number {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  background: var(--blue);
+  color: var(--white);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pipeline__content {
+  flex: 1;
+  padding-top: var(--space-1);
+}
+
+.pipeline__name {
+  font-size: var(--text-base);
+  font-weight: 500;
+  margin-bottom: var(--space-1);
+}
+
+.pipeline__desc {
+  font-size: var(--text-sm);
+  color: var(--gray-600);
+}
+
+/* Tag */
+.tag {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--blue);
+  background: var(--blue-light);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+}
+
+.tag--orange {
+  color: var(--orange);
+  background: rgba(246,112,76,.08);
+}
+
+/* Schedule */
+.schedule {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.schedule__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+}
+
+.schedule__time {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--blue);
+  white-space: nowrap;
+  min-width: 80px;
+}
+
+.schedule__desc {
+  font-size: var(--text-sm);
+  color: var(--gray-600);
+}
+
+.schedule__tag {
+  margin-left: auto;
+}
+
+/* Divider */
+.divider {
+  border: none;
+  border-top: 1px solid var(--gray-200);
+  margin: var(--space-16) 0;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: var(--space-10) var(--space-6);
+  color: var(--gray-500);
+  font-size: var(--text-xs);
+  border-top: 1px solid var(--gray-200);
+}
+
+/* Paragraph spacing */
+p { margin-bottom: var(--space-4); }
+p:last-child { margin-bottom: 0; }
+
+/* Code inline */
+code {
+  font-size: var(--text-sm);
+  background: var(--gray-100);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  color: var(--midnight-blue);
+}
+
+/* Accent */
+.accent { color: var(--blue); }
+.accent--orange { color: var(--orange); }
+
+/* Responsive text */
+@media (max-width: 767px) {
+  .hero__title { font-size: var(--text-4xl); }
+  .section__title { font-size: var(--text-2xl); }
+  .subsection__title { font-size: var(--text-xl); }
+  .stat__value { font-size: var(--text-2xl); }
+}
+
+/* Print */
+@media print {
+  body { background: white; }
+  .hero { background: var(--midnight-blue); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .card, .stat { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+  <h1 class="hero__title"><span>BusManiak.pl</span> – dokumentacja procesu</h1>
+  <p class="hero__subtitle">Kompletny opis architektury, pipeline'ow i automatyzacji portalu tematycznego o busach, vanach i kamperach.</p>
+  <div class="hero__meta">
+    <span class="hero__tag">ICEA / BWP 2.0</span>
+    <span class="hero__tag">Kwiecien 2026</span>
+    <span class="hero__tag">v1.0</span>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- Stats -->
+<section class="section">
+  <div class="grid grid--4">
+    <div class="stat">
+      <div class="stat__value">272+</div>
+      <div class="stat__label">Opublikowanych artykulow</div>
+    </div>
+    <div class="stat">
+      <div class="stat__value">12</div>
+      <div class="stat__label">Sekcji tematycznych</div>
+    </div>
+    <div class="stat">
+      <div class="stat__value">~2 PLN</div>
+      <div class="stat__label">Koszt artykulu (API)</div>
+    </div>
+    <div class="stat">
+      <div class="stat__value">0 PLN</div>
+      <div class="stat__label">Koszt hostingu</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- 1. O projekcie -->
+<section class="section">
+  <div class="section__number">01</div>
+  <h2 class="section__title">O projekcie</h2>
+  <p class="section__lead">BusManiak.pl to pierwszy portal z nowej sieci BWP 2.0, ktora zastepuje dotychczasowa spaloną siec zapleczowa SEO. Zamiast tanich zapleczowek – pelnoprawny serwis branżowy z unikalnymi narzedziami.</p>
+
+  <div class="callout">
+    <div class="callout__title">Cel projektu</div>
+    <div class="callout__text">Zbudowac autorytatywny portal generujacy ruch organiczny, ktory wspiera SEO klientow ICEA poprzez linkowanie i budowanie topical authority w niszy motoryzacji dostawczej.</div>
+  </div>
+
+  <div class="grid grid--2">
+    <div class="card">
+      <div class="card__label">Unikalna wartosc</div>
+      <div class="card__title">Interaktywne narzedzia</div>
+      <div class="card__text">4 narzedzia ktorych nie ma konkurencja: kalkulator DMC, kalkulator paliwa, kalkulator zabudowy kampera, porownywarka busow. Dane z bazy 20+ modeli.</div>
+    </div>
+    <div class="card">
+      <div class="card__label">Automatyzacja</div>
+      <div class="card__title">Codzienny dopływ tresci</div>
+      <div class="card__text">News generator publikuje 1 artykul dziennie, FB poster promuje content na Facebooku. Calość bez interwencji czlowieka.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- 2. Architektura -->
+<section class="section">
+  <div class="section__number">02</div>
+  <h2 class="section__title">Architektura techniczna</h2>
+  <p class="section__lead">Zero-cost hosting, AI-powered content pipeline, w pelni zautomatyzowany deploy.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Warstwa</th><th>Technologia</th><th>Koszt</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Generator stron</td><td>Hugo (static site generator)</td><td>darmowy</td></tr>
+        <tr><td>Hosting</td><td>Cloudflare Pages</td><td>darmowy</td></tr>
+        <tr><td>Repozytorium</td><td>GitHub (prywatne)</td><td>darmowe</td></tr>
+        <tr><td>Automatyzacja</td><td>GitHub Actions (crony)</td><td>darmowe</td></tr>
+        <tr><td>AI – drafty artykulow</td><td>Gemini Flash (OpenRouter)</td><td>~$0.075/1M tokenow</td></tr>
+        <tr><td>AI – humanizacja</td><td>Claude Sonnet (subagent)</td><td>~$3/1M tokenow</td></tr>
+        <tr><td>AI – fact-checking</td><td>Gemini Pro (OpenRouter)</td><td>~$0.08/artykul</td></tr>
+        <tr><td>AI – newsy i pillary</td><td>GPT-5.4 (OpenAI)</td><td>~$0.05/wywolanie</td></tr>
+        <tr><td>AI – obrazki</td><td>kie.ai (nano-banana-2)</td><td>darmowe</td></tr>
+        <tr><td>Research fraz</td><td>DataForSEO, SerpData, Senuto</td><td>subskrypcje firmowe</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="subsection">
+    <h3 class="subsection__subtitle">Schemat przeplywu</h3>
+    <div class="flow">
+      <span class="flow__step">Keyword research</span>
+      <span class="flow__arrow">&rarr;</span>
+      <span class="flow__step">Outline</span>
+      <span class="flow__arrow">&rarr;</span>
+      <span class="flow__step">Draft AI</span>
+      <span class="flow__arrow">&rarr;</span>
+      <span class="flow__step">Humanizacja</span>
+      <span class="flow__arrow">&rarr;</span>
+      <span class="flow__step">Post-processing</span>
+      <span class="flow__arrow">&rarr;</span>
+      <span class="flow__step">Git + deploy</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- 3. Pipeline -->
+<section class="section">
+  <div class="section__number">03</div>
+  <h2 class="section__title">Proces tworzenia tresci</h2>
+  <p class="section__lead">Kazdy artykul przechodzi przez zautomatyzowany pipeline 6 etapow. Nie piszemy tresci recznie.</p>
+
+  <div class="subsection">
+    <h3 class="subsection__title">Content writer pipeline</h3>
+    <div class="pipeline">
+      <div class="pipeline__step">
+        <div class="pipeline__number">1</div>
+        <div class="pipeline__content">
+          <div class="pipeline__name">Keyword research</div>
+          <div class="pipeline__desc">SerpData analizuje top 5 wynikow Google. Senuto VA wyciaga keywords z artykulow konkurencji. DataForSEO dostarcza long-tail frazy (min. 100 wyszukiwan/msc). Wynik: lista fraz z wolumenami + cele linkowania wewnetrznego.</div>
+        </div>
+      </div>
+      <div class="pipeline__step">
+        <div class="pipeline__number">2</div>
+        <div class="pipeline__content">
+          <div class="pipeline__name">Outline i research</div>
+          <div class="pipeline__desc">Wikipedia (obowiazkowe zrodlo), web search (3-7 zapytan), Perplexity Sonar (2-4 zapytan z konkretnymi danymi: ceny, wymiary, specyfikacje). Analiza sitemappy portalu do linkowania wewnetrznego.</div>
+        </div>
+      </div>
+      <div class="pipeline__step">
+        <div class="pipeline__number">3</div>
+        <div class="pipeline__content">
+          <div class="pipeline__name">Draft <span class="tag">Gemini Flash</span></div>
+          <div class="pipeline__desc">Szybki, tani model generuje pelny draft artykulu w markdown na podstawie outline'u, keywords i zrodel. Nastepnie Perplexity Sonar wzbogaca kazdy H2/H3 o konkretne dane.</div>
+        </div>
+      </div>
+      <div class="pipeline__step">
+        <div class="pipeline__number">4</div>
+        <div class="pipeline__content">
+          <div class="pipeline__name">Humanizacja <span class="tag">Claude Sonnet</span></div>
+          <div class="pipeline__desc">Osobny subagent (swieże spojrzenie lapie sztucznosci AI). Usuwa AI-speak, weryfikuje odmiane slow kluczowych, pilnuje naturalnego linkowania, wyrownuje styl do tonu eksperta-mechanika.</div>
+        </div>
+      </div>
+      <div class="pipeline__step">
+        <div class="pipeline__number">5</div>
+        <div class="pipeline__content">
+          <div class="pipeline__name">Post-processing</div>
+          <div class="pipeline__desc">Generowanie frontmatter (tytul, opis, FAQ, zrodla), hero image (kie.ai), walidacja YAML i shortcodow, sprawdzenie struktury pliku.</div>
+        </div>
+      </div>
+      <div class="pipeline__step">
+        <div class="pipeline__number">6</div>
+        <div class="pipeline__content">
+          <div class="pipeline__name">Output i deploy</div>
+          <div class="pipeline__desc">Gotowy plik .md trafia do repozytorium. Push na main uruchamia automatyczny deploy na Cloudflare Pages. Artykul jest live w ciagu 1-2 minut.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3 class="subsection__title">Fact-checker pipeline (2-pass)</h3>
+    <p>Weryfikacja istniejacych artykulow pod katem bledow faktycznych i brakow.</p>
+    <div class="grid grid--2" style="margin-top: var(--space-4);">
+      <div class="card">
+        <div class="card__label">Pass 1 – detekcja</div>
+        <div class="card__title">Gemini Pro (thinking)</div>
+        <div class="card__text">Model z aktualna baza wiedzy wykrywa bledy faktyczne, halucynacje, niespojnosci i braki. Dostarcza konkretne dane do uzupelnienia.</div>
+      </div>
+      <div class="card">
+        <div class="card__label">Pass 2 – enrichment</div>
+        <div class="card__title">Gemini Pro (writing)</div>
+        <div class="card__text">Aplikuje poprawki z Pass 1, dopisuje brakujace tresci na bazie dostarczonych danych. Zachowuje styl i strukture artykulu.</div>
+      </div>
+    </div>
+    <div class="callout" style="margin-top: var(--space-4);">
+      <div class="callout__title">Dotychczasowy wynik</div>
+      <div class="callout__text">272 artykuly przeszly fact-checking. 43 pillar pages rozbudowane przez GPT-5.4 do pelnej struktury referencyjnej.</div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3 class="subsection__title">Pillar page expander</h3>
+    <p>Rozbudowa artykulow filarowych (modele busow) do pelnej struktury:</p>
+    <ul class="checklist" style="margin-top: var(--space-4);">
+      <li>Historia i generacje (z latami i kluczowymi zmianami)</li>
+      <li>Dane techniczne i wymiary (tabela wariantow)</li>
+      <li>Silniki (moc, moment, norma Euro, spalanie)</li>
+      <li>Wersje nadwoziowe (van, kombi, chassis, kamper)</li>
+      <li>Typowe usterki (z kosztami napraw w PLN)</li>
+      <li>Porownanie z konkurencja (tabela min. 2 rywali)</li>
+      <li>Ceny (nowe + uzywane po rocznikach)</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- 4. Automatyzacja -->
+<section class="section">
+  <div class="section__number">04</div>
+  <h2 class="section__title">Automatyzacja</h2>
+  <p class="section__lead">Dwa procesy dzialaja codziennie bez interwencji czlowieka.</p>
+
+  <div class="subsection">
+    <h3 class="subsection__title">Harmonogram codzienny</h3>
+    <div class="schedule">
+      <div class="schedule__item">
+        <div class="schedule__time">7:00</div>
+        <div class="schedule__desc">News generator – zbiera sygnaly z RSS i Google Trends, wybiera temat, generuje artykul przez GPT-5.4, publikuje</div>
+        <span class="tag schedule__tag">automatyczny</span>
+      </div>
+      <div class="schedule__item">
+        <div class="schedule__time">11:30</div>
+        <div class="schedule__desc">FB poster – losuje artykul, generuje opis przez Gemini Flash, postuje na Facebooku</div>
+        <span class="tag schedule__tag">automatyczny</span>
+      </div>
+      <div class="schedule__item">
+        <div class="schedule__time">ciagly</div>
+        <div class="schedule__desc">Cloudflare Pages – automatyczny deploy po kazdym pushu do repozytorium</div>
+        <span class="tag schedule__tag">automatyczny</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3 class="subsection__title">News generator – szczegoly</h3>
+    <div class="flow">
+      <span class="flow__step">RSS + Trends</span>
+      <span class="flow__arrow">&rarr;</span>
+      <span class="flow__step">Scoring</span>
+      <span class="flow__arrow">&rarr;</span>
+      <span class="flow__step">GPT-5.4 judge</span>
+      <span class="flow__arrow">&rarr;</span>
+      <span class="flow__step">GPT-5.4 writer</span>
+      <span class="flow__arrow">&rarr;</span>
+      <span class="flow__step">Post-process</span>
+      <span class="flow__arrow">&rarr;</span>
+      <span class="flow__step">Publish</span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Parametr</th><th>Wartosc</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Zrodla sygnalow</td><td>RSS (Google News PL), DataForSEO Google Trends</td></tr>
+          <tr><td>Scoring</td><td>Swiezosc 30%, relevance 30%, trend 20%, unikalnosc 20%</td></tr>
+          <tr><td>Format</td><td>400-600 slow (krotki) lub 800-1200 (analiza) – pipeline decyduje</td></tr>
+          <tr><td>Deduplikacja</td><td>Fuzzy matching tytulow + historia 90 dni</td></tr>
+          <tr><td>Zabezpieczenia</td><td>Max 1 news/dzien, nie nadpisuje istniejacych plikow</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- 5. Narzedzia -->
+<section class="section">
+  <div class="section__number">05</div>
+  <h2 class="section__title">Interaktywne narzedzia</h2>
+  <p class="section__lead">Unikalna wartosc portalu – narzedzia ktorych nie ma konkurencja.</p>
+
+  <div class="grid grid--2">
+    <div class="card">
+      <div class="card__label">Kalkulator</div>
+      <div class="card__title">Kalkulator DMC</div>
+      <div class="card__text">Sprawdza czy zaladowany bus miesci sie w limicie 3.5t. Dane z bazy 20+ modeli. Wizualizacja: pasek postepu zielony/zolty/czerwony.</div>
+    </div>
+    <div class="card">
+      <div class="card__label">Kalkulator</div>
+      <div class="card__title">Kalkulator paliwa</div>
+      <div class="card__text">Oblicza koszt paliwa na podstawie trasy, modelu busa i aktualnych cen diesla.</div>
+    </div>
+    <div class="card">
+      <div class="card__label">Kalkulator</div>
+      <div class="card__title">Kalkulator zabudowy kampera</div>
+      <div class="card__text">Szacuje koszty i czas przebudowy busa na kampera. Rozbicie na kategorie: izolacja, elektryka, woda, meble.</div>
+    </div>
+    <div class="card">
+      <div class="card__label">Narzedzie</div>
+      <div class="card__title">Porownywarka busow</div>
+      <div class="card__text">Porownanie dwoch modeli side-by-side: wymiary, ladownosc, spalanie, ceny. Podswietla lepsze wartosci.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- 6. YouTube -->
+<section class="section">
+  <div class="section__number">06</div>
+  <h2 class="section__title">YouTube finder</h2>
+  <p class="section__lead">Wzbogacanie artykulow o osadzone filmy YouTube. Automatyczny scoring relevance, priorytet na polskie recenzje i testy.</p>
+
+  <div class="grid grid--3">
+    <div class="stat">
+      <div class="stat__value">246</div>
+      <div class="stat__label">Artykulow z filmem</div>
+    </div>
+    <div class="stat">
+      <div class="stat__value">322</div>
+      <div class="stat__label">Artykulow ogolnie</div>
+    </div>
+    <div class="stat">
+      <div class="stat__value">76%</div>
+      <div class="stat__label">Pokrycie video</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- 7. SEO -->
+<section class="section">
+  <div class="section__number">07</div>
+  <h2 class="section__title">SEO techniczne</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Element</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Canonical URLs</td><td><span class="tag">poprawne</span></td></tr>
+        <tr><td>FAQ schema (JSON-LD)</td><td><span class="tag">automatyczne z frontmatter</span></td></tr>
+        <tr><td>Breadcrumb schema</td><td><span class="tag">poprawne URL-e</span></td></tr>
+        <tr><td>Article schema</td><td><span class="tag">z autorem i data</span></td></tr>
+        <tr><td>Sitemap XML + RSS</td><td><span class="tag">automatyczny Hugo</span></td></tr>
+        <tr><td>PageSpeed</td><td><span class="tag">95-100</span></td></tr>
+        <tr><td>Core Web Vitals</td><td><span class="tag">wszystkie zielone</span></td></tr>
+        <tr><td>Google Search Console</td><td><span class="tag">zweryfikowany</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- 8. API -->
+<section class="section">
+  <div class="section__number">08</div>
+  <h2 class="section__title">Wykorzystywane API</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>API</th><th>Zastosowanie</th><th>Koszt</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>OpenRouter</td><td>Gemini Flash (drafty), Gemini Pro (fact-check), Sonar (research)</td><td>~$5-10/msc</td></tr>
+        <tr><td>OpenAI</td><td>GPT-5.4 (newsy, pillary, scoring)</td><td>~$5-10/msc</td></tr>
+        <tr><td>DataForSEO</td><td>Keyword research, Google Trends</td><td>subskrypcja firmowa</td></tr>
+        <tr><td>SerpData</td><td>Analiza SERP top 5</td><td>subskrypcja firmowa</td></tr>
+        <tr><td>Senuto</td><td>Visibility analysis, keyword extraction</td><td>subskrypcja firmowa</td></tr>
+        <tr><td>YouTube Data API</td><td>Wyszukiwanie filmow do osadzania</td><td>darmowe</td></tr>
+        <tr><td>Facebook Graph API</td><td>Auto-posting na fanpage</td><td>darmowe</td></tr>
+        <tr><td>kie.ai</td><td>Generowanie hero images</td><td>darmowe</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <div class="callout__title">Laczny koszt operacyjny</div>
+    <div class="callout__text">~$10-20/msc (przy 1 newsie dziennie + okazjonalne nowe artykuly). Hosting 0 PLN.</div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- 9. Skille -->
+<section class="section">
+  <div class="section__number">09</div>
+  <h2 class="section__title">Skille (komendy pipeline'u)</h2>
+
+  <div class="grid grid--3">
+    <div class="card">
+      <div class="card__label">Skill</div>
+      <div class="card__title">/write-content</div>
+      <div class="card__text">Pelny 6-etapowy pipeline tworzenia artykulu. Keyword research, draft, humanizacja, obrazek, walidacja.</div>
+    </div>
+    <div class="card">
+      <div class="card__label">Skill</div>
+      <div class="card__title">/fact-check</div>
+      <div class="card__text">2-pass weryfikacja i wzbogacanie artykulu. Detekcja bledow + enrichment konkretnymi danymi.</div>
+    </div>
+    <div class="card">
+      <div class="card__label">Skill</div>
+      <div class="card__title">/add-youtube</div>
+      <div class="card__text">Wyszukanie i osadzenie relevantnego filmu YouTube. Automatyczny scoring, priorytet PL.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- 10. Skalowanie -->
+<section class="section">
+  <div class="section__number">10</div>
+  <h2 class="section__title">Skalowanie na nowe portale</h2>
+  <p class="section__lead">Architektura jest od poczatku projektowana pod siec portali (BWP 2.0). Wspoldzielony theme, pipeline'y i narzedzia.</p>
+
+  <div class="subsection">
+    <h3 class="subsection__title">Co jest wspoldzielone</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Element</th><th>Opis</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Theme Hugo</td><td>Wspolny motyw z shortcodami, schematami JSON-LD, CSS</td></tr>
+          <tr><td>Content writer</td><td>Skill dziala z dowolnym portalem</td></tr>
+          <tr><td>Fact-checker</td><td>Uniwersalny, niezalezny od niszy</td></tr>
+          <tr><td>News generator</td><td>Config per portal (feedy RSS, seedy Trends, sekcje)</td></tr>
+          <tr><td>FB poster</td><td>Config per portal (Page ID, token)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="subsection">
+    <h3 class="subsection__title">Dodanie nowego portalu</h3>
+    <div class="pipeline">
+      <div class="pipeline__step">
+        <div class="pipeline__number">1</div>
+        <div class="pipeline__content">
+          <div class="pipeline__name">Domena + Cloudflare</div>
+          <div class="pipeline__desc">Rejestracja domeny, konfiguracja DNS, Cloudflare Pages</div>
+        </div>
+      </div>
+      <div class="pipeline__step">
+        <div class="pipeline__number">2</div>
+        <div class="pipeline__content">
+          <div class="pipeline__name">Hugo config</div>
+          <div class="pipeline__desc">Nowy katalog portals/nazwa.pl/ z hugo.toml (base URL, menu, parametry)</div>
+        </div>
+      </div>
+      <div class="pipeline__step">
+        <div class="pipeline__number">3</div>
+        <div class="pipeline__content">
+          <div class="pipeline__name">Keyword research</div>
+          <div class="pipeline__desc">Badanie fraz, budowa klastrow, plan contentu</div>
+        </div>
+      </div>
+      <div class="pipeline__step">
+        <div class="pipeline__number">4</div>
+        <div class="pipeline__content">
+          <div class="pipeline__name">Generowanie contentu</div>
+          <div class="pipeline__desc">/write-content generuje artykuly wg klastrow</div>
+        </div>
+      </div>
+      <div class="pipeline__step">
+        <div class="pipeline__number">5</div>
+        <div class="pipeline__content">
+          <div class="pipeline__name">Automatyzacja</div>
+          <div class="pipeline__desc">News generator + FB poster z osobna konfiguracja</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout__title">Szacowany czas uruchomienia nowego portalu</div>
+      <div class="callout__text">1-2 dni (konfiguracja) + czas na generowanie contentu (zalezny od liczby artykulow).</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- 11. KPI -->
+<section class="section">
+  <div class="section__number">11</div>
+  <h2 class="section__title">KPI i metryki sukcesu</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>KPI</th><th>Cel</th><th>Pomiar</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Indeksacja</td><td>&ge; 80% stron zaindeksowanych</td><td>Google Search Console</td></tr>
+        <tr><td>Ruch organiczny</td><td>MoM wzrost &ge; 15%</td><td>GSC / Analytics</td></tr>
+        <tr><td>siteFocus</td><td>&ge; 0.80</td><td>Senuto (tematyczna spojnosc)</td></tr>
+        <tr><td>siteRadius</td><td>&le; 0.25</td><td>Senuto (rozproszenie tematyczne)</td></tr>
+        <tr><td>Artykuly/msc</td><td>min. 30 newsow + X evergreen</td><td>Git commits</td></tr>
+        <tr><td>Koszt operacyjny</td><td>&lt; $20/msc</td><td>Suma API costs</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+</div>
+
+<div class="footer">
+  ICEA Group &middot; BusManiak.pl &middot; Dokumentacja procesu &middot; Kwiecien 2026
+</div>
+
+</body>
+</html>
