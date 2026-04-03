@@ -158,7 +158,7 @@ def run() -> None:
         related_articles=related,
         model=llm_cfg.get("model", "gpt-5.4"),
         temperature=llm_cfg.get("temperature_writer", 0.7),
-        max_tokens=llm_cfg.get("max_tokens_short", 2000),
+        max_completion_tokens=llm_cfg.get("max_tokens_short", 2000),
         format_config=fmt_cfg,
     )
 

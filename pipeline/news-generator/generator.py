@@ -103,21 +103,21 @@ def generate_article(
     related_articles: list[dict],
     model: str = "gpt-5.4",
     temperature: float = 0.7,
-    max_tokens: int = 2000,
+    max_completion_tokens: int = 2000,
     format_config: dict | None = None,
 ) -> str:
     """Generate a news article using GPT-5.4."""
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
     if topic.format_type == "analysis":
-        max_tokens = format_config.get("max_tokens_analysis", 4000) if format_config else 4000
+        max_completion_tokens = format_config.get("max_tokens_analysis", 4000) if format_config else 4000
 
     prompt = build_prompt(topic, related_articles, format_config)
 
     response = client.chat.completions.create(
         model=model,
         temperature=temperature,
-        max_tokens=max_tokens,
+        max_completion_tokens=max_completion_tokens,
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": prompt},

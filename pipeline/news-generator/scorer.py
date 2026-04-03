@@ -143,7 +143,7 @@ def llm_judge_and_format(
     candidates: list[Signal],
     model: str = "gpt-5.4",
     temperature: float = 0.3,
-    max_tokens: int = 500,
+    max_completion_tokens: int = 500,
 ) -> tuple[int, str]:
     """Use GPT-5.4 to pick the best topic and decide format.
 
@@ -159,7 +159,7 @@ def llm_judge_and_format(
     response = client.chat.completions.create(
         model=model,
         temperature=temperature,
-        max_tokens=max_tokens,
+        max_completion_tokens=max_completion_tokens,
         messages=[
             {
                 "role": "system",
@@ -226,7 +226,7 @@ def select_topic(
         top_candidates,
         model=llm_config.get("model", "gpt-5.4"),
         temperature=llm_config.get("temperature_judge", 0.3),
-        max_tokens=llm_config.get("max_tokens_judge", 500),
+        max_completion_tokens=llm_config.get("max_tokens_judge", 500),
     )
 
     chosen = top_candidates[chosen_idx]
