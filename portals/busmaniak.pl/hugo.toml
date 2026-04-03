@@ -86,3 +86,8 @@ enableRobotsTXT = true
   name = "Narzędzia"
   url = "/narzedzia/"
   weight = 10
+
+[[menus.main]]
+  name = "News"
+  url = "/news/"
+  weight = 11
