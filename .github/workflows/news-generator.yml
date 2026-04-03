@@ -1,0 +1,39 @@
+name: News Generator
+
+on:
+  schedule:
+    # 7:00 CET = 5:00 UTC (summer CEST: 7:00 = 5:00 UTC)
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-news:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r pipeline/news-generator/requirements.txt
+
+      - name: Run news pipeline
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python pipeline/news-generator/main.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add portals/busmaniak.pl/content/news/ pipeline/news-generator/published.json
+          git diff --cached --quiet || git commit -m "news: auto-generated daily news"
+          git push
