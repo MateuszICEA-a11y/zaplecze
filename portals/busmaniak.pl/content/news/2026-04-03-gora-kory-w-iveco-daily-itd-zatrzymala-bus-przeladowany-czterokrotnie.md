@@ -5,6 +5,7 @@ description: Inspekcja Transportu Drogowego zatrzymała IVECO Daily przewożące
 draft: false
 author: Redakcja BusManiak.pl
 h1: Góra kory w IVECO Daily. ITD zatrzymała bus przeładowany czterokrotnie
+toc: false
 main_keyword: IVECO Daily przeładowany
 lead: Z pozoru zwykły transport kory zamienił się w pokaz skrajnej nieodpowiedzialności. Inspektorzy ITD zatrzymali IVECO Daily, którego masa całkowita została przekroczona aż czterokrotnie. Taki przewóz to nie tylko ryzyko mandatu, ale przede wszystkim realne zagrożenie na drodze.
 categories:
@@ -15,11 +16,6 @@ tags:
 - przeładowany bus
 - transport
 - kontrola drogowa
-faq:
-- question: Dlaczego przeładowanie busa jest tak niebezpieczne?
-  answer: Bo znacząco pogarsza hamowanie, stabilność i prowadzenie pojazdu, a także zwiększa ryzyko awarii opon, zawieszenia i układu hamulcowego.
-- question: Jakie konsekwencje grożą za przeładowany pojazd dostawczy?
-  answer: Możliwe są mandaty, zakaz dalszej jazdy do czasu rozładunku oraz postępowanie administracyjne wobec przewoźnika lub kierowcy.
 sources:
 - Ciężarówki i Logistyka – „Góra kory w IVECO Daily! Czterokrotnie przeładowany bus zatrzymany przez ITD!”
 - Google News – https://news.google.com/rss/articles/CBMirgFBVV95cUxQeUdzU1g4ZEFkQ1FZd1hxampqalRUUU9fLUdmUy1aaXFyR3JwdHRPUDlQRER3ZHNoZTJDc0QzQXh6eVhSQ291VVF4Wmg4TENtckhRMFVIdTlNRGlOcDljYXRWVTRfdE9FM1JrWTEtclpBbHZuVWR3UG1XSVZyLUNGR1VGUzVXUlZnTzNlRVVabGhkZllCYUJad2NCZzItN3BUSEp2dUYyUEh2MHNwQmc?oc=5
