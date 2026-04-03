@@ -83,7 +83,7 @@ toc: false
 main_keyword: "..."
 lead: "... (2-3 zdania, intrygujący wstęp)"
 categories:
-  - "{topic.section}"
+  - "news"
 tags:
   - "..."
 sources:

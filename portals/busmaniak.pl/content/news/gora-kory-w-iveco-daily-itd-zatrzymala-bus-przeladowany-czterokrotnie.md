@@ -11,7 +11,7 @@ image_alt: "BusManiak.pl – Góra kory w IVECO Daily. ITD zatrzymała bus prze�
 main_keyword: IVECO Daily przeładowany
 lead: Z pozoru zwykły transport kory zamienił się w pokaz skrajnej nieodpowiedzialności. Inspektorzy ITD zatrzymali IVECO Daily, którego masa całkowita została przekroczona aż czterokrotnie. Taki przewóz to nie tylko ryzyko mandatu, ale przede wszystkim realne zagrożenie na drodze.
 categories:
-- modele
+- news
 tags:
 - IVECO Daily
 - ITD

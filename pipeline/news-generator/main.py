@@ -185,7 +185,7 @@ def run() -> None:
     # 10. Write file
     slug = generate_slug(fm.get("title", topic.signal.title))
     date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    filename = f"{date_str}-{slug}.md"
+    filename = f"{slug}.md"
     output_path = content_dir / pipeline_cfg.get("output_section", "news") / filename
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
