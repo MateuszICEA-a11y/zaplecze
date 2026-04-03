@@ -25,7 +25,12 @@ Zasady:
 - Nie powtarzaj treści z lead w body
 - NIE dodawaj sekcji FAQ – newsy nie mają FAQ
 - Sources: podaj źródła informacji
-- Linki wewnętrzne: OBOWIĄZKOWO wstaw podane linki do powiązanych artykułów w naturalnym kontekście. Każdy news MUSI zawierać co najmniej 1 link wewnętrzny.
+- Linki wewnętrzne: OBOWIĄZKOWO wstaw podane linki do powiązanych artykułów. Każdy news MUSI zawierać co najmniej 1 link wewnętrzny.
+  WAŻNE: NIGDY nie używaj pełnego tytułu artykułu jako anchor text. Linkuj z krótkiej, naturalnej frazy.
+  ŹLE: [Iveco Daily lawecie – DMC, wymiary, homologacja](/modele/iveco-daily/laweta/)
+  DOBRZE: [lawecie Iveco Daily](/modele/iveco-daily/laweta/)
+  ŹLE: [Iveco Daily chłodnia – zabudowa, agregat, normy](/modele/iveco-daily/chlodnia/)
+  DOBRZE: [Iveco Daily chłodnia](/modele/iveco-daily/chlodnia/)
 - Nie używaj shortcodów Hugo (image, table itp.) – tylko czysty markdown
 - Listy: **Termin** – opis (bez bold+dwukropek)
 - Nie upychaj słów kluczowych – pisz naturalnie\
@@ -52,9 +57,13 @@ def build_prompt(
     related_text = ""
     if related_articles:
         links = "\n".join(
-            f"- [{a['title']}]({a['url']})" for a in related_articles[:5]
+            f"- {a['url']} (keyword: {a.get('main_keyword', '') or a['title'][:30]})"
+            for a in related_articles[:5]
         )
-        related_text = f"\n\nPowiązane artykuły na BusManiak.pl (wstaw 1-2 linki w treści):\n{links}"
+        related_text = (
+            f"\n\nPowiązane artykuły na BusManiak.pl (wstaw 1-2 linki w treści, "
+            f"NIE używaj pełnych tytułów jako anchor – linkuj z krótkiej naturalnej frazy):\n{links}"
+        )
 
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 

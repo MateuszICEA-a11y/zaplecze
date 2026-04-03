@@ -19,7 +19,7 @@ tags:
 sources:
 - Ciężarówki i Logistyka – Góra kory w IVECO Daily! Czterokrotnie przeładowany bus zatrzymany przez ITD!
 - Google News
-image: /images/fiat-ducato-hero.webp
+image: /images/iveco-daily-hero.webp
 image_alt: BusManiak.pl – Góra kory w Iveco Daily. ITD zatrzymała busa przeładowanego aż czterokrotnie
 ---
 
@@ -29,13 +29,13 @@ Inspektorzy Inspekcji Transportu Drogowego zatrzymali do kontroli Iveco Daily, k
 
 Kontrola potwierdziła najgorszy scenariusz – bus był przeładowany aż czterokrotnie. To oznacza, że rzeczywista masa przewożonego ładunku znacząco przekraczała możliwości pojazdu, a kierowca poruszał się autem, które w takim stanie mogło mieć wyraźnie pogorszone właściwości jezdne. W praktyce chodzi nie tylko o ryzyko uszkodzenia zawieszenia czy ogumienia, ale też o znacznie dłuższą drogę hamowania i mniejszą stabilność podczas manewrów.
 
-W przypadku modeli takich jak Daily kluczowe znaczenie ma dobór odpowiedniej wersji do konkretnego zadania. To auto występuje w wielu odmianach zabudowy i z różnym DMC, dlatego granica między legalnym transportem a poważnym przeciążeniem może być bardzo wyraźna. Pisaliśmy o tym szerzej przy okazji materiału o [Iveco Daily lawecie – DMC, wymiary, homologacja](/modele/iveco-daily/laweta/), gdzie parametry masowe mają podstawowe znaczenie dla codziennej eksploatacji.
+W przypadku modeli takich jak Daily kluczowe znaczenie ma dobór odpowiedniej wersji do konkretnego zadania. To auto występuje w wielu odmianach zabudowy i z różnym DMC, dlatego granica między legalnym transportem a poważnym przeciążeniem może być bardzo wyraźna. Pisaliśmy o tym szerzej przy okazji materiału o [lawecie Iveco Daily](/modele/iveco-daily/laweta/), gdzie parametry masowe mają podstawowe znaczenie dla codziennej eksploatacji.
 
 ## Przeładowany bus to realne zagrożenie na drodze
 
 Tak duże przeciążenie lekkiego auta dostawczego stwarza zagrożenie nie tylko dla kierowcy, ale też dla innych uczestników ruchu. Nadmierna masa wpływa na pracę hamulców, układu kierowniczego i zawieszenia, a także zwiększa ryzyko awarii podczas jazdy. Przy wysokim, niestabilnym ładunku dochodzi jeszcze problem przesunięcia środka ciężkości, co może być szczególnie groźne na zakrętach lub przy nagłym hamowaniu.
 
-Warto pamiętać, że nawet jeśli objętościowo ładunek „mieści się” na pace czy w zabudowie, nie oznacza to jeszcze zgodności z przepisami. W autach dostawczych liczy się zarówno masa całkowita, jak i dopuszczalna ładowność konkretnej wersji. Z tego powodu użytkownicy takich pojazdów powinni dokładnie sprawdzać specyfikację wybranego wariantu. Dobrym przykładem są specjalistyczne odmiany użytkowe, jak [Iveco Daily chłodnia – zabudowa, agregat, normy](/modele/iveco-daily/chlodnia/), gdzie sama zabudowa i wyposażenie dodatkowe również mają istotny wpływ na finalną ładowność.
+Warto pamiętać, że nawet jeśli objętościowo ładunek „mieści się” na pace czy w zabudowie, nie oznacza to jeszcze zgodności z przepisami. W autach dostawczych liczy się zarówno masa całkowita, jak i dopuszczalna ładowność konkretnej wersji. Z tego powodu użytkownicy takich pojazdów powinni dokładnie sprawdzać specyfikację wybranego wariantu. Dobrym przykładem są specjalistyczne odmiany użytkowe, jak [Iveco Daily chłodnia](/modele/iveco-daily/chlodnia/), gdzie sama zabudowa i wyposażenie dodatkowe również mają istotny wpływ na finalną ładowność.
 
 ## Możliwe konsekwencje dla przewoźnika i kierowcy
 
