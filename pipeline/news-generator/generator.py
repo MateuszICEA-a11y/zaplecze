@@ -24,7 +24,7 @@ Zasady:
 - Body artykułu MUSI zaczynać się od nagłówka ## H2 (lead jest w frontmatter)
 - Nie powtarzaj treści z lead w body
 - NIE dodawaj sekcji FAQ – newsy nie mają FAQ
-- Sources: podaj źródła informacji
+- Sources: podaj źródła w frontmatter. NIGDY nie wymieniaj nazw portali źródłowych w treści artykułu – czytelnik nie wie co to jest. Pisz jakbyś był jedynym autorem informacji.
 - Linki wewnętrzne: wstaw 1-2 linki do podanych artykułów, ALE tylko gdy pasują naturalnie do kontekstu zdania. Nie wymuszaj linków na siłę.
   ZASADY:
   - Link musi wynikać z treści zdania, nie może być doklejony sztucznie
