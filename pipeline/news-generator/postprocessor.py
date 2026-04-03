@@ -88,7 +88,21 @@ def generate_slug(title: str) -> str:
     return slug[:80].rstrip("-")
 
 
-def postprocess(fm: dict, body: str) -> tuple[dict, str, list[str]]:
+def assign_placeholder_image(fm: dict, section: str, image_map: dict[str, str]) -> None:
+    """Assign a placeholder hero image based on section if none is set."""
+    if fm.get("image"):
+        return
+    fm["image"] = image_map.get(section, image_map.get("news", ""))
+    if fm["image"] and not fm.get("image_alt"):
+        fm["image_alt"] = f"BusManiak.pl – {fm.get('title', 'news')}"
+
+
+def postprocess(
+    fm: dict,
+    body: str,
+    section: str = "news",
+    image_map: dict[str, str] | None = None,
+) -> tuple[dict, str, list[str]]:
     """Run all post-processing steps. Returns (fm, body, errors)."""
     errors = validate_frontmatter(fm)
 
@@ -109,6 +123,10 @@ def postprocess(fm: dict, body: str) -> tuple[dict, str, list[str]]:
     fm["draft"] = False
     fm["toc"] = False
     fm.pop("faq", None)
+
+    # Assign placeholder image
+    if image_map:
+        assign_placeholder_image(fm, section, image_map)
 
     # Fix body
     body = fix_typography(body)

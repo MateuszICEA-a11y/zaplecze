@@ -171,7 +171,8 @@ def run() -> None:
         sys.exit(1)
 
     # 9. Post-process
-    fm, body, errors = postprocess(fm, body)
+    image_map = config.get("images", {})
+    fm, body, errors = postprocess(fm, body, section=topic.section, image_map=image_map)
     if errors:
         log.warning("Frontmatter validation warnings: %s", errors)
         fm.setdefault("title", topic.signal.title)

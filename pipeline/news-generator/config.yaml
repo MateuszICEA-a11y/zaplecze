@@ -37,6 +37,19 @@ llm:
   max_tokens_short: 2000
   max_tokens_analysis: 4000
 
+images:
+  # Placeholder hero images per section (reuse existing assets)
+  modele: "/images/fiat-ducato-hero.webp"
+  kampery: "/images/bus-kamper-z-lazienka-hero.webp"
+  przerobki: "/images/bus-przerobiony-na-kamper-hero.webp"
+  zabudowy: "/images/budowa-kampera-krok-po-kroku-hero.webp"
+  porownania: "/images/dane-techniczne-tabela-hero.webp"
+  serwis: "/images/spalanie-busow-hero.webp"
+  wynajem: "/images/camper-van-wynajem-hero.webp"
+  przepisy: "/images/dmc-pojazdu-hero.webp"
+  vanlife: "/images/featured-vanlife.webp"
+  news: "/images/hero-home.webp"
+
 format:
   short_max_words: 600
   short_min_words: 400
