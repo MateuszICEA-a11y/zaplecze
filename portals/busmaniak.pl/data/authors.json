@@ -31,5 +31,16 @@
       "web": "#",
       "mail": "tomasz@busmaniak.pl"
     }
+  },
+  "redakcja-busmaniak": {
+    "name": "Redakcja BusManiak",
+    "role": "Zespół redakcyjny",
+    "bio": "Zespół redakcyjny BusManiak.pl – najświeższe wiadomości ze świata busów, vanów, kamperów i motoryzacji dostawczej.",
+    "avatar": "",
+    "expertise": ["news"],
+    "social": {
+      "web": "https://busmaniak.pl",
+      "mail": "redakcja@busmaniak.pl"
+    }
   }
 }

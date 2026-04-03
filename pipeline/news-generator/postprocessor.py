@@ -119,10 +119,11 @@ def postprocess(
                 for item in val
             ]
 
-    # Ensure draft is False, no TOC, no FAQ for news, category always "news"
+    # Ensure news defaults
     fm["draft"] = False
     fm["toc"] = False
     fm["categories"] = ["news"]
+    fm["author"] = "redakcja-busmaniak"
     fm.pop("faq", None)
 
     # Assign placeholder image

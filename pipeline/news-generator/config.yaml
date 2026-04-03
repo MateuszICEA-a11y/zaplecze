@@ -4,7 +4,7 @@ pipeline:
   content_dir: "portals/busmaniak.pl/content"
   data_dir: "portals/busmaniak.pl/data"
   output_section: "news"
-  author: "Redakcja BusManiak.pl"
+  author: "redakcja-busmaniak"
 
 scoring:
   min_score_threshold: 0.4

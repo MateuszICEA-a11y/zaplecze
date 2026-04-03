@@ -86,7 +86,7 @@ title: "..."
 date: {today}
 description: "... (max 160 znaków)"
 draft: false
-author: "Redakcja BusManiak.pl"
+author: "redakcja-busmaniak"
 h1: "..."
 toc: false
 main_keyword: "..."
