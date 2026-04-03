@@ -2,8 +2,8 @@ name: News Generator
 
 on:
   schedule:
-    # 10:15 CEST = 8:15 UTC (testing)
-    - cron: '15 8 * * *'
+    # 11:00 CEST = 9:00 UTC (testing)
+    - cron: '0 9 * * *'
   workflow_dispatch:
 
 permissions:
