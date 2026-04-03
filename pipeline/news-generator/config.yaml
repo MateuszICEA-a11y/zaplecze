@@ -1,0 +1,46 @@
+pipeline:
+  name: "BusManiak News Generator"
+  portal: "busmaniak.pl"
+  content_dir: "portals/busmaniak.pl/content"
+  data_dir: "portals/busmaniak.pl/data"
+  output_section: "news"
+  author: "Redakcja BusManiak.pl"
+
+scoring:
+  min_score_threshold: 0.4
+  freshness_weight: 0.3
+  relevance_weight: 0.3
+  trend_weight: 0.2
+  uniqueness_weight: 0.2
+  max_age_hours: 48
+  published_history_days: 90
+  dedup_similarity_threshold: 0.7
+
+trends:
+  geo: "PL"
+  category: 47  # Vehicles & Transportation
+  seeds_static:
+    - "bus dostawczy"
+    - "van"
+    - "kamper"
+    - "furgon"
+    - "paliwo diesel"
+    - "prawo jazdy C"
+    - "regulacje transport"
+  seeds_dynamic_from: "buses.json"
+
+llm:
+  model: "gpt-5.4"
+  temperature_judge: 0.3
+  temperature_writer: 0.7
+  max_tokens_judge: 500
+  max_tokens_short: 2000
+  max_tokens_analysis: 4000
+
+format:
+  short_max_words: 600
+  short_min_words: 400
+  analysis_max_words: 1200
+  analysis_min_words: 800
+  short_h2_count: "2-3"
+  analysis_h2_count: "4-5"
