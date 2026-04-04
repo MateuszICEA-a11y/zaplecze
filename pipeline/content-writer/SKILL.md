@@ -509,10 +509,16 @@ faq:
     answer: "{Concise answer, can include internal links}"
   - question: "{FAQ question 2}"
     answer: "{Concise answer}"
+sources:
+  - "Wikipedia – {Model Name}"
+  - "{source 2}"
+  - "{source 3}"
 ---
 ```
 
-**FAQ in frontmatter:** Extract 3-5 FAQ items from the article's FAQ-style H2/H3 sections. Answers should be self-contained and concise.
+**FAQ in frontmatter ONLY:** Extract 3-5 FAQ items. Answers should be self-contained and concise. **CRITICAL: Do NOT duplicate FAQ as H2/H3 in the article body.** Hugo renders FAQ automatically from frontmatter. If Stage 3 (Gemini) generates a FAQ section in the body, **delete it entirely** in Stage 5.
+
+**Sources in frontmatter ONLY:** List all sources as a YAML array in the `sources:` field. **Do NOT put sources as italic text at the end of the article body** (e.g. `*Źródła: ...*`). Hugo renders sources automatically from frontmatter.
 
 **Schema FAQ (automatic):** The Hugo theme automatically generates `FAQPage` JSON-LD structured data from the `faq:` frontmatter field via `layouts/partials/schema/faq.html`. No manual `<script>` tags needed – just populate `faq:` correctly and schema is live. This is mandatory for every article (E-E-A-T + featured snippet eligibility).
 
@@ -577,6 +583,9 @@ File location: `portals/busmaniak.pl/content/{section}/{slug}.md`
 After saving:
 1. **Validate YAML** — parse frontmatter with Python yaml.safe_load() to catch broken quotes/escapes BEFORE committing
 2. **Check shortcodes** — grep for bare `{{% info %}}` or `{{% expert %}}` without params
+3. **Check NO FAQ in body** — grep for `## FAQ` or `## Najczęściej zadawane` in body. If found, DELETE the entire section. FAQ lives ONLY in frontmatter `faq:` field
+4. **Check NO sources in body** — grep for `*Źródła:` in body. If found, move to frontmatter `sources:` and delete from body
+5. **Check image placement** — article body MUST contain `![` (image markdown) before the 3rd or 4th H2. Use the hero image: `![{image_alt}]({image})`
 3. **Verify image exists** — confirm the referenced hero image is at the correct path
 4. **Verify H3 presence** — article must have at least 2 H3 headings
 5. Tell the user the article is ready and ask if they want to commit + push

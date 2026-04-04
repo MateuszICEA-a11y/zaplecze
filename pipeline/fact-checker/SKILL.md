@@ -2,10 +2,11 @@
 name: fact-checker
 description: >
   Two-pass fact-checking, content enrichment, and style correction for BusManiak.pl articles.
-  Pass 1: Gemini 3.1 Pro (thinking) identifies factual errors, hallucinations,
+  Pass 1: GPT-5.4 (via OpenAI API directly) identifies factual errors, hallucinations,
   prompt leaks, inconsistencies AND missing knowledge gaps – provides concrete data to fill them.
-  Pass 2: Gemini 2.5 Pro applies fixes, writes missing content using data from Pass 1, and polishes style.
-  Gemini 2.5 Pro has knowledge cutoff Dec 2025 – it MUST NOT research on its own, only use data supplied by 3.1 Pro.
+  Pass 2: GPT-5.4 (via OpenAI API directly) applies fixes, writes missing content using data from Pass 1, and polishes style.
+  Both passes use OpenAI API directly (api.openai.com), NOT OpenRouter.
+  API key from memory (reference_openai_api.md), NEVER hardcoded in committed files.
   Triggers: "sprawdź artykuł", "fact-check", "zweryfikuj treść", "korekta artykułu".
   Portal scope: delivery vans, buses, campers, vanlife, regulations, rentals.
 ---
@@ -14,7 +15,7 @@ description: >
 
 Two-pass verification pipeline for finished articles. Run AFTER the content pipeline (write-content) produces output.
 
-**Kluczowa zasada:** Gemini 3.1 Pro ma świeższą wiedzę – to on identyfikuje luki i dostarcza konkretne dane. Gemini 2.5 Pro (odcięcie wiedzy: grudzień 2025) pisze tekst na podstawie danych od 3.1, ale NIE szuka faktów samodzielnie.
+**Kluczowa zasada:** Oba passy używają GPT-5.4 via OpenAI API (`api.openai.com`). Pass 1 identyfikuje luki i dostarcza konkretne dane. Pass 2 pisze tekst na podstawie danych od Pass 1, ale NIE szuka faktów samodzielnie. Klucz API z pamięci (reference_openai_api.md) – NIGDY nie commituj kluczy do repo.
 
 ## When to Use
 
@@ -41,16 +42,16 @@ Pass 2: Enrich + style fix ─ Gemini 2.5 Pro → corrected & enriched article M
 
 ---
 
-## Pass 1: Fact-check (Gemini 3.1 Pro)
+## Pass 1: Fact-check (GPT-5.4 via OpenAI)
 
-**Load:** `../content-writer/references/api-credentials.md` (OpenRouter key)
+**Load:** OpenAI API key from memory (reference_openai_api.md). **NEVER** hardcode the key in committed files – pass via env var.
 
 ```bash
-curl -s https://openrouter.ai/api/v1/chat/completions \
-  -H "Authorization: Bearer ${OPENROUTER_KEY}" \
+curl -s https://api.openai.com/v1/chat/completions \
+  -H "Authorization: Bearer ${OPENAI_API_KEY}" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "google/gemini-3.1-pro-preview",
+    "model": "gpt-5.4",
     "max_tokens": 12000,
     "messages": [
       {"role": "system", "content": "<FACTCHECK_PROMPT>"},
@@ -60,6 +61,7 @@ curl -s https://openrouter.ai/api/v1/chat/completions \
 ```
 
 **Uwagi:**
+- Use OpenAI directly (`api.openai.com`), NOT OpenRouter
 - `max_tokens: 12000` – thinking model zużywa dużo tokenów na reasoning (~5-8k) + output (~3-5k)
 - Jeśli output ucięty → zwiększ do 16000
 - Odpowiedź może być opakowana w ```json ... ``` – strip code fence przed parsowaniem
@@ -111,14 +113,14 @@ ZASADY:
 
 ---
 
-## Pass 2: Uzupełnienie treści + korekta stylistyczna (Gemini 2.5 Pro)
+## Pass 2: Uzupełnienie treści + korekta stylistyczna (GPT-5.4 via OpenAI)
 
 ```bash
-curl -s https://openrouter.ai/api/v1/chat/completions \
-  -H "Authorization: Bearer ${OPENROUTER_KEY}" \
+curl -s https://api.openai.com/v1/chat/completions \
+  -H "Authorization: Bearer ${OPENAI_API_KEY}" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "google/gemini-2.5-pro-preview",
+    "model": "gpt-5.4",
     "max_tokens": 16000,
     "messages": [
       {"role": "system", "content": "<STYLE_PROMPT>"},
@@ -187,11 +189,11 @@ Zwróć WYŁĄCZNIE poprawiony i uzupełniony artykuł Markdown (bez komentarzy,
 
 ## Koszty i czasy
 
-| Pass | Model | Reasoning tokens | Cost | Czas |
+| Pass | Model | API | Cost | Czas |
 |---|---|---|---|---|
-| 1 (fact-check + gaps) | gemini-3.1-pro | ~5-8k | ~$0.08-0.11 | ~20-40s |
-| 2 (enrich + styl) | gemini-2.5-pro | ~4-6k | ~$0.08-0.12 | ~30-60s |
-| **Razem** | | | **~$0.16-0.23** | **~50-100s** |
+| 1 (fact-check + gaps) | gpt-5.4 | OpenAI direct | ~$0.05-0.10 | ~15-30s |
+| 2 (enrich + styl) | gpt-5.4 | OpenAI direct | ~$0.05-0.10 | ~20-40s |
+| **Razem** | | | **~$0.10-0.20** | **~35-70s** |
 
 ---
 
