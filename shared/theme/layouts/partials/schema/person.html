@@ -11,7 +11,7 @@
   "description": {{ . | truncate 250 | jsonify }}
   {{- end }}
   {{- with .Params.avatar }},
-  "image": {{ . | absURL | jsonify }}
+  "image": "{{ . | absURL }}"
   {{- end }}
   {{- with .Params.sameAs }},
   "sameAs": [{{ range $i, $v := . }}{{ if $i }},{{ end }}{{ $v | jsonify }}{{ end }}]

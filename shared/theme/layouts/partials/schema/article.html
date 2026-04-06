@@ -12,7 +12,7 @@
   {{- with .Params.image }}
   "image": {
     "@type": "ImageObject",
-    "url": {{ . | absURL | jsonify }},
+    "url": "{{ . | absURL }}",
     "width": 1376,
     "height": 768
   },
@@ -25,7 +25,7 @@
     "name": {{ $author.Title | jsonify }},
     "url": {{ $author.Permalink | jsonify }}
     {{- with $author.Params.avatar }},
-    "image": {{ . | absURL | jsonify }}
+    "image": "{{ . | absURL }}"
     {{- end }}
     {{- with $author.Params.role }},
     "jobTitle": {{ . | jsonify }}
@@ -39,7 +39,7 @@
     "url": {{ .Site.BaseURL | jsonify }},
     "logo": {
       "@type": "ImageObject",
-      "url": {{ "/images/og-default.jpg" | absURL | jsonify }}
+      "url": "{{ "/images/og-default.jpg" | absURL }}"
     }
   },
   "mainEntityOfPage": {
