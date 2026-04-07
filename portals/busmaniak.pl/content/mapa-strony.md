@@ -96,7 +96,7 @@ layout: "sitemap-html"
 - [Przeróbka busa na kampera – przepisy i homologacja](/przerobki/przerobka-busa-przepisy/)
 - [Kampery samoróbki – DIY camper van projekty](/przerobki/kampery-samorobki/)
 - [Jaki bus na kampera – który model wybrać pod przeróbkę](/przerobki/jaki-bus-na-kampera/)
-- [Zabudowa kampera – projekty i rozkłady wnętrza](/przerobki/zabudowa-kampera-projekt/)
+- [Fiat Ducato kamper – dlaczego jest numerem jeden pod przeróbkę](/przerobki/fiat-ducato-kamper/)
 - [Budowa kampera – koszty, etapy, materiały](/przerobki/budowa-kampera-koszty/)
 - [Izolacja busa – materiały i techniki](/przerobki/izolacja-busa/)
 - [Instalacja elektryczna w kamperze – poradnik](/przerobki/instalacja-elektryczna-kamper/)

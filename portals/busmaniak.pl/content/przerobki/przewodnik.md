@@ -149,7 +149,7 @@ Samodzielna przeróbka pozwala zaoszczędzić dziesiątki tysięcy złotych na r
 
 Protokół szczelności instalacji gazowej może wystawić wyłącznie fachowiec z uprawnieniami gazowymi Grupy 3 – jest to wymóg formalny. Skomplikowane instalacje elektryczne oraz montaż okien również warto powierzyć specjalistom, by uniknąć ryzyka pożaru lub kosztownych przecieków.
 
-{{< related-articles "przerobka-busa-przepisy,zabudowa-kampera-projekt,kampery-samorobki" "Przepisy, projekty i inspiracje →" >}}
+{{< related-articles "przerobka-busa-przepisy,fiat-ducato-kamper,kampery-samorobki" "Przepisy, projekty i inspiracje →" >}}
 
 ## Rejestracja i ubezpieczenie kampera
 

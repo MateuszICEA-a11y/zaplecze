@@ -156,17 +156,18 @@
 {{ else }}
 {{/* ═══ CLEAN LISTING (top-level sections) ═══ */}}
 
+{{ $allPages := .Pages }}
+{{ $paginator := .Paginate $allPages 12 }}
+
 <div class="container" style="padding-top: 2.5rem; padding-bottom: 1rem;">
-  <h1 class="section__title" style="font-size: 2rem;">{{ .Params.h1 | default .Title }}</h1>
+  <h1 class="section__title" style="font-size: 2rem;">{{ .Params.h1 | default .Title }}{{ if gt $paginator.PageNumber 1 }} – Strona {{ $paginator.PageNumber }}{{ end }}</h1>
   {{ with .Params.description }}
   <p style="color: var(--c-text-mid); max-width: 700px; margin-top: .5rem;">{{ . }}</p>
   {{ end }}
 </div>
 
-{{ $allPages := .Pages }}
 {{ if gt (len $allPages) 0 }}
 <div class="container" style="padding-top: 1rem;">
-  {{ $paginator := .Paginate $allPages 12 }}
 
   <div class="card-grid card-grid--3">
     {{ range $paginator.Pages }}

@@ -1,0 +1,37 @@
+{{ define "main" }}
+{{ partial "breadcrumbs.html" . }}
+
+<div class="container" style="padding: 2rem 0 4rem;">
+  <h1 class="section-title" style="margin-bottom: 0.5rem;">{{ .Title }}</h1>
+  {{ with .Description }}
+  <p style="color: var(--c-text-mid); max-width: 640px; margin-bottom: 2.5rem;">{{ . }}</p>
+  {{ end }}
+
+  <div class="authors-grid">
+    {{ range .Pages }}
+    {{ $authorSlug := .File.ContentBaseName }}
+    {{ $name := .Title }}
+    {{ $articles := where $.Site.RegularPages "Params.author" $authorSlug }}
+    <a href="{{ .Permalink }}" class="al-card">
+      <div class="al-card__avatar">
+        {{ with .Params.avatar }}
+        <img src="{{ . }}" alt="{{ $name }}" width="80" height="80" loading="lazy">
+        {{ else }}
+        <span>{{ substr $name 0 1 }}</span>
+        {{ end }}
+      </div>
+      <h2 class="al-card__name">{{ .Title }}</h2>
+      {{ with .Params.role }}
+      <div class="al-card__role">{{ . }}</div>
+      {{ end }}
+      {{ with .Params.bio }}
+      <p class="al-card__bio">{{ . | truncate 120 }}</p>
+      {{ end }}
+      {{ if $articles }}
+      <div class="al-card__count">{{ len $articles }} {{ if eq (len $articles) 1 }}artykuł{{ else if le (len $articles) 4 }}artykuły{{ else }}artykułów{{ end }}</div>
+      {{ end }}
+    </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
