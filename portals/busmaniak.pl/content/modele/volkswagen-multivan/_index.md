@@ -76,7 +76,7 @@ Produkcja odbywa się w Hanowerze. T7 występuje w dwóch długościach nadwozia
 
 Średnica zawracania wynosi ok. 11,9–12,1 m. Maksymalna masa przyczepy z hamulcem zależy od silnika i zwykle dochodzi do **2000–2500 kg**.
 
-Kto potrzebuje czegoś mniejszego, znajdzie [VW Caddy](/modele/vollekswagen-caddy/) o klasę niżej pod względem przestrzeni.
+Kto potrzebuje czegoś mniejszego, znajdzie [VW Caddy](/modele/volkswagen-caddy/) o klasę niżej pod względem przestrzeni.
 
 ## Silniki Multivana
 
