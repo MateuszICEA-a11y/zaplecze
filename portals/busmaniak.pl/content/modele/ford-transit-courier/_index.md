@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Ford Transit Courier – kompletny przewodnik po modelu"
 parent: "modele"
 type: "page"
-image: "/images/ford-transit-courier-hero.jpg"
+image: "/images/ford-transit-courier-hero.webp"
 image_alt: "Ford Transit Courier – kompaktowy van dostawczy nowej generacji"
 main_keyword: "ford transit courier"
 lead: "Ford Transit Courier to najmniejszy dostawczak w rodzinie Forda – kompaktowy, zwrotny i tani w eksploatacji. Sprawdz, czym roznia sie obie generacje, jakie silniki sa dostepne i ile kosztuje nowy oraz uzywany egzemplarz."
@@ -47,7 +47,7 @@ Druga generacja przyniosła rewolucję w designie i wymiarach, przenosząc produ
 Nowy model jest o 118 mm szerszy i ma o 200 mm większy rozstaw osi niż zaprezentowana w 2014 roku pierwsza generacja, co diametralnie poprawiło stabilność prowadzenia przy wysokich prędkościach.
 {{% /info %}}
 
-![Ford Transit Courier – kompaktowy van dostawczy nowej generacji](/images/ford-transit-courier-hero.jpg)
+![Ford Transit Courier – kompaktowy van dostawczy nowej generacji](/images/ford-transit-courier-hero.webp)
 
 ## Dane techniczne i wymiary Transit Courier
 

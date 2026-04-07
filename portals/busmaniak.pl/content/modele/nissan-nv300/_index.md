@@ -7,7 +7,7 @@ author: "marek-kowalczyk"
 h1: "Nissan NV300 – kompletny przewodnik po modelu"
 parent: "modele"
 type: "page"
-image: "/images/nissan-nv300-hero.jpg"
+image: "/images/nissan-nv300-hero.webp"
 image_alt: "Nissan NV300 – biały furgon dostawczy, widok z boku"
 youtube: "PtRxrGevniY"
 youtube_title: "Nissan Primastar 2.0 dci 150 TEST Nissan Trafic NV300 [4k]"
@@ -65,7 +65,7 @@ Dla osób potrzebujących maksymalnej kubatury przygotowano wariant L2H2. Podwy�
 | L2H1 | 5399 | 1971 | 3498 | 6,0 | 3050 | 1191 |
 | L2H2 | 5399 | 2498 | 3498 | 8,6 | 3050–3070 | 1000–1100 |
 
-![Nissan NV300 – biały furgon dostawczy, widok z boku](/images/nissan-nv300-hero.jpg)
+![Nissan NV300 – biały furgon dostawczy, widok z boku](/images/nissan-nv300-hero.webp)
 
 ## Silniki Nissana NV300
 
