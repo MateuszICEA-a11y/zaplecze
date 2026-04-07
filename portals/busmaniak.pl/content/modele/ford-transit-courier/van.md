@@ -101,10 +101,9 @@ Dlatego podawane 845 kg należy traktować jako wartość dla wybranych wersji s
 
 Na tle konkurencji Ford Transit Courier Van wpisuje się w segment małych vanów o objętości ładowni ok. 2,9–3,3 m³ i ładowności rzędu ok. 650–900 kg. W tym kontekście rywalizuje z modelami pokroju VW Caddy Cargo, Renault Kangoo Van, Toyota Proace City Short i Ford Transit Connect – kluczowe punkty porównania to pojemność paki, możliwość przewozu 2 europalet i długość nadwozia.
 
-#
 {{% youtube %}}
 
-# Transit Courier Van w codziennej pracy
+## Transit Courier Van w codziennej pracy
 
 W codziennej robocie najmocniejszym argumentem Couriera jest połączenie kompaktowych wymiarów z sensowną paką. II generacja daje dostęp do ładowni przez 2 asymetryczne drzwi tylne oraz 1 lub 2 drzwi przesuwne, a przegroda z klapą pozwala przewozić elementy o długości do ok. 2600 mm.
 

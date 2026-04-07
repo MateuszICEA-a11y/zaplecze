@@ -105,10 +105,9 @@ Budżet na rodzinnego kampera zależy od tego, czy celujesz w nowy pojazd z salo
 
 Kampery utrzymują wartość znacznie lepiej niż auta osobowe – spadek o **10–15%** w ciągu pierwszych trzech lat jest normą. Dlatego zakup 3- lub 4-letniego modelu to finansowo często najrozsądniejsza opcja.
 
-#
 {{% youtube %}}
 
-# Wyposażenie niezbędne dla 5 osób
+## Wyposażenie niezbędne dla 5 osób
 
 Pięcioosobowa załoga generuje znacznie większe zapotrzebowanie na wodę, prąd i przestrzeń magazynową niż standardowa para.
 

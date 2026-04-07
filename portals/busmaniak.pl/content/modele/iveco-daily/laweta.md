@@ -119,10 +119,9 @@ Najczęstszy błąd przy zakupie lawety na Daily to patrzenie wyłącznie na sam
 
 Dla wersji powyżej 3,5 t trzeba też pamiętać o obowiązkach eksploatacyjnych niezwiązanych bezpośrednio z rejestracją. W Polsce pojazdy o DMC powyżej 3,5 t podlegają systemowi e-TOLL na wybranych odcinkach dróg płatnych, co przy lawetach 5,0–7,2 t jest istotnym kosztem operacyjnym.
 
-#
 {{% youtube %}}
 
-# Koszty zabudowy Iveco Daily laweta
+## Koszty zabudowy Iveco Daily laweta
 
 Koszt Iveco Daily laweta zależy przede wszystkim od konfiguracji podwozia, rocznika, rodzaju platformy i wyposażenia. Nie da się rzetelnie podać jednej ceny bez rozbicia na elementy takie jak platforma stała lub hydraulicznie opuszczana, wyciągarka, pilot sterowania, najazdy, oświetlenie i dokumentacja do rejestracji.
 

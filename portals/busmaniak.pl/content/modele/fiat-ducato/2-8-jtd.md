@@ -104,10 +104,9 @@ Nowszy [2.3 MultiJet](/modele/fiat-ducato/2-3-multijet/) zwykle oferuje niższe 
 
 ![Fiat Ducato 2.8 JTD – dane techniczne, spalanie, opinie](/images/fiat-ducato-2-8-jtd-hero.webp)
 
-#
 {{% youtube %}}
 
-# Opinie użytkowników i typowe usterki
+## Opinie użytkowników i typowe usterki
 
 Fiat Ducato 2.8 JTD ma dobrą opinię jako silnik roboczy do cięższej eksploatacji. Właściciele cenią elastyczność, prostszą elektronikę i brak osprzętu emisyjnego charakterystycznego dla dużo nowszych diesli.
 

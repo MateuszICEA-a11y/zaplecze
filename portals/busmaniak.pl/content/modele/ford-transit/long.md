@@ -94,10 +94,9 @@ RWD częściej spotyka się w cięższych odmianach serii 350–470. Nie oznacza
 Przy wyborze silnika do Ford Transit Long warto patrzeć nie tylko na moc, ale też na DMC, rodzaj zabudowy i realną masę roboczą auta. W praktyce auto z regałami, izotermą albo zabudową specjalistyczną może ważyć wyraźnie więcej niż seryjny furgon, dlatego konfigurację napędu najlepiej dobierać pod konkretny scenariusz pracy.
 {{% /expert %}}
 
-#
 {{% youtube %}}
 
-# Zastosowania
+## Zastosowania
 
 Ford Transit Long trafia najczęściej tam, gdzie liczy się duża kubatura i elastyczność konfiguracji. W zależności od wersji może pełnić rolę klasycznego vana kurierskiego, auta budowlanego albo bazy pod zabudowę specjalistyczną.
 

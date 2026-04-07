@@ -87,10 +87,9 @@ W tym artykule nie rozpisujemy szczegółowo wyposażenia tych wersji, ponieważ
 To samo dotyczy systemów bezpieczeństwa i ADAS. Wiadomo jedynie, że w osobowej konfiguracji istotne znaczenie mają mocowania ISOFIX, natomiast pełną listę takich elementów jak AEB, ISA, Lane Keeping Aid, rozpoznawanie znaków, monitor martwego pola czy liczba poduszek powietrznych trzeba potwierdzić w oficjalnej specyfikacji producenta.
 
 
-#
 {{% youtube %}}
 
-# Kombi vs Van – kluczowe różnice
+## Kombi vs Van – kluczowe różnice
 
 Różnica między odmianą Kombi a Vanem nie sprowadza się wyłącznie do liczby siedzeń. Kluczowe są tu także kategorie homologacyjne – M1 dla auta osobowego i N1 dla pojazdu użytkowego – oraz sposób późniejszego użytkowania w firmie.
 

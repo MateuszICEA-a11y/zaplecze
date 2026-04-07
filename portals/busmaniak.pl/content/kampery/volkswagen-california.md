@@ -121,10 +121,9 @@ California T6/T6.1 to najczęściej wyszukiwany camper van na portalach ogłosze
 
 California traci na wartości wolniej niż konkurenci – spadek wartości wynosi 8–12% w ciągu pierwszych trzech lat, wobec 15–20% u [Mercedesa Marco Polo](/kampery/mercedes-marco-polo/). Egzemplarze T3 i T4 z lat 80. i 90. zyskują na wartości jako youngtimery.
 
-#
 {{% youtube %}}
 
-# Dla kogo jest VW California
+## Dla kogo jest VW California
 
 California to camper van stworzony z myślą o konkretnym stylu podróżowania – spontanicznych wyjazdach weekendowych, krótkich urlopach i codziennym użytkowaniu.
 

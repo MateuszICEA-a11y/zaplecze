@@ -90,10 +90,9 @@ Przy wyższych DMC dochodzą też inne obowiązki zależne od masy całkowitej i
 
 ![Fiat Ducato kontener – zabudowa kontenerowa, wymiary](/images/fiat-ducato-kontener-hero.webp)
 
-#
 {{% youtube %}}
 
-# Na co uważać przy zakupie?
+## Na co uważać przy zakupie?
 
 Przy zakupie zabudowanego Ducato najpierw trzeba zweryfikować dokumenty, a dopiero potem stan techniczny. W przypadku auta typu Fiat Ducato kontener błędy w papierach potrafią być większym problemem niż sama mechanika.
 

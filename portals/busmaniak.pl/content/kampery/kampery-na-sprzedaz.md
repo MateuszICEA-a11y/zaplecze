@@ -121,10 +121,9 @@ W Polsce najważniejsze imprezy odbywają się jesienią, ale warto też odwiedz
 
 Na targach zawsze warto negocjować. Dealerzy często przygotowują specjalne pakiety „targowe”, dorzucając w cenie bogate wyposażenie (np. markizę, panele solarne), co może oznaczać oszczędność rzędu **10–20 tys. zł**.
 
-#
 {{% youtube %}}
 
-# Sezonowość cen i strategia zakupowa
+## Sezonowość cen i strategia zakupowa
 
 Ceny kamperów, podobnie jak domów letniskowych, podlegają wyraźnym wahaniom sezonowym. Analizując rynek i kupując w odpowiednim momencie, można zaoszczędzić nawet kilkanaście procent budżetu. Kluczem jest cierpliwość i działanie pod prąd.
 

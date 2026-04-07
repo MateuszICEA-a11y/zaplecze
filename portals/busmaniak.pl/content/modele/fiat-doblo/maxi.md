@@ -147,10 +147,9 @@ Dostęp do tyłu zapewniają drzwi boczne przesuwne. Sam mechanizm trzeciego rz�
 Przy zakupie Doblò Maxi do celów rodzinnych lub przewozowych kluczowe jest sprawdzenie homologacji oraz faktycznej liczby miejsc wpisanej w dokumentach. W tym modelu różnice między Cargo i osobowym Doblò mają znaczenie nie tylko użytkowe, ale też formalne.
 {{% /expert %}}
 
-#
 {{% youtube %}}
 
-# Doblò Maxi na tle konkurencji
+## Doblò Maxi na tle konkurencji
 
 W segmencie długich kombivanów warto porównywać konkretne wersje L2/Long, a nie same nazwy modeli. To szczególnie ważne w przypadku obecnej generacji, gdzie część aut ma identyczne wymiary i bardzo zbliżoną technikę.
 

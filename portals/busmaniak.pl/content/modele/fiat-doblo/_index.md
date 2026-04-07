@@ -268,7 +268,6 @@ Wnioski zakupowe są dość proste:
 - Z Kangoo remisuje funkcjonalnością, bo oba auta oferują bardzo zbliżone parametry użytkowe.
 - Z ProAce City różni się głównie siecią dealerską i wyceną.
 
-#
 {{% youtube %}}
 
 ## Ceny Doblò

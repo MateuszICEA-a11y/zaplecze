@@ -84,10 +84,9 @@ Równie ostrożnie trzeba podchodzić do kosztów uzyskania przychodu. Zakres ro
 
 Homologacja ma też praktyczne skutki drogowe. W Polsce samochody ciężarowe o DMC do 3,5 t podlegają innym limitom niż osobowe na części dróg – 80 km/h poza obszarem zabudowanym na drogach jednojezdniowych oraz 100 km/h na drogach ekspresowych dwujezdniowych i autostradach. Z kolei e-TOLL dotyczy pojazdów lub zespołów pojazdów o DMC powyżej 3,5 t.
 
-#
 {{% youtube %}}
 
-# Zastosowania Transita brygadówki
+## Zastosowania Transita brygadówki
 
 Ford Transit brygadówka najczęściej trafia do firm, które muszą jednocześnie przewozić ludzi i sprzęt. To typowy wybór dla ekip budowlanych, serwisantów, instalatorów czy służb utrzymania ruchu.
 

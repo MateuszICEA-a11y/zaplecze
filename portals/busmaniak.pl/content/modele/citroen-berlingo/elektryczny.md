@@ -102,10 +102,9 @@ Na stacji DC złącze CCS pozwala ładować auto z mocą do 100 kW. W optymalnyc
 
 Przy rocznym przebiegu 20 000 km koszt energii może wynieść ok. 3500–4500 zł przy ładowaniu domowym. Dla porównania Berlingo 1.5 BlueHDi 100 KM spalające 5,5 l/100 km to wydatek ok. 7400 zł rocznie na paliwo.
 
-#
 {{% youtube %}}
 
-# Ceny i dostępność {#ceny}
+## Ceny i dostępność {#ceny}
 
 Nowy ë-Berlingo osobowy w 2025 roku startuje od ok. 150 000–170 000 zł, zależnie od wersji i wyposażenia. ë-Berlingo Van to zwykle poziom ok. 130 000–150 000 zł netto.
 

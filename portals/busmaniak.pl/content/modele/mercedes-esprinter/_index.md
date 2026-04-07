@@ -219,7 +219,6 @@ Do ceny netto trzeba doliczyć **23% VAT**. Dla firm znaczenie mają też dopła
 
 Koszty eksploatacji eSprintera są niższe niż spalinowego [Sprintera](/modele/mercedes-sprinter/), ale przy aucie elektrycznym trzeba pilnować stanu portu ładowania, akumulatora 12 V i historii pracy baterii. W przypadku rynku wtórnego kluczowy jest też stan SOH.
 
-#
 {{% youtube %}}
 
 ## Ceny używanych Mercedesów eSprinter

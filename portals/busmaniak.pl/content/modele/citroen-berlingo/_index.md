@@ -236,7 +236,6 @@ Dla używanego elektrycznego ë-Berlingo z lat 2021–2022 trzeba przyjąć zwyk
 | Nowe osobowe Berlingo | zwykle od ok. **120 000–140 000 zł brutto** |
 | Nowe osobowe ë-Berlingo | zwykle od ok. **160 000–180 000 zł brutto** |
 
-#
 {{% youtube %}}
 
 {{% info title="Ciekawostka" icon="engineering" %}}

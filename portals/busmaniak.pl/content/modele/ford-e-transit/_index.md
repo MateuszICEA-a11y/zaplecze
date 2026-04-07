@@ -207,7 +207,6 @@ Orientacyjne koszty:
 - serwis układu – **500–1500 zł**
 - pompa lub element osprzętu – **1500–4000 zł**
 
-#
 {{% youtube %}}
 
 ## Porównanie E-Transita z konkurencją

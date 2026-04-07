@@ -115,10 +115,9 @@ Roczny koszt utrzymania mini kampera (bez paliwa) to **2000–4000 zł** – oko
 
 Mini kampery na bazie popularnych modeli (Caddy, Berlingo) tracą na wartości wolniej niż duże kampery. Dzieje się tak, ponieważ kupujący traktują je przede wszystkim jako praktyczne samochody osobowe. [Używany kamper](/kampery/kampery-uzywane/) traci **15–25%** wartości w pierwszym roku, podczas gdy kompaktowy van osobowy tylko **10–15%**.
 
-#
 {{% youtube %}}
 
-# Ograniczenia mini kamperów
+## Ograniczenia mini kamperów
 
 Mimo wielu zalet, mini kamper nie jest rozwiązaniem dla każdego. Warto świadomie ocenić jego ograniczenia, by uniknąć rozczarowania w trasie i dopasować pojazd do swoich realnych potrzeb.
 

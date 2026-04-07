@@ -118,10 +118,9 @@ Berlingo Van i Berlingo osobowe wyglądają podobnie, ale w praktyce są przygot
 
 Przeróbka Vana na wersję osobową wymaga zmiany homologacji, badań i formalności w wydziale komunikacji. W praktyce oznacza to, że zakup wersji dostawczej warto od początku dopasować do docelowego sposobu użytkowania.
 
-#
 {{% youtube %}}
 
-# Berlingo Van na tle konkurencji {#konkurencja}
+## Berlingo Van na tle konkurencji {#konkurencja}
 
 Citroën Berlingo Van działa w bardzo mocnym segmencie kompaktowych aut dostawczych. Najbliżsi rywale różnią się głównie detalami zabudowy, długościami nadwozia i maksymalną objętością przestrzeni ładunkowej.
 

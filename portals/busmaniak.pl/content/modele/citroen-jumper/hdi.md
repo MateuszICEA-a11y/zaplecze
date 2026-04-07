@@ -125,10 +125,9 @@ Równie ważna jest profilaktyka. W 2.2 HDi warto skrócić interwał wymiany ol
 W 2.2 HDi najwięcej problemów bierze się z przeciąganych interwałów olejowych i zaniedbań w podstawowej obsłudze. Jeśli auto pracuje ciężko, olej co 15–20 tys. km, kontrola dolotu, podciśnienia i okolic wtrysków daje więcej niż późniejsze kosztowne naprawy.
 {{% /expert %}}
 
-#
 {{% youtube %}}
 
-# Koszty serwisu HDi
+## Koszty serwisu HDi
 
 Koszty serwisu w Jumperze zależą nie tylko od silnika, ale też od wyboru części i warsztatu. Ta sama naprawa potrafi różnić się o 30–50% między ASO a niezależnym serwisem, a części OE są zwykle droższe od zamienników aftermarket.
 

@@ -112,10 +112,9 @@ Porównanie zużycia paliwa dla każdego wariantu silnikowego zawiera artykuł o
 
 {{% expert name="Tomasz Zieliński" %}}W ocenie firmowego furgonu najważniejsze są konfiguracja przestrzeni ładunkowej, dopasowanie napędu do pracy i realne wymagania serwisowe. W Berlingo warto zwrócić uwagę na obecność AdBlue, DPF i SCR w dieslach 1.5 BlueHDi oraz na możliwości systemu Extenso przy przewozie długich elementów.{{% /expert %}}
 
-#
 {{% youtube %}}
 
-# Konkurencja w segmencie dostawczym {#konkurencja}
+## Konkurencja w segmencie dostawczym {#konkurencja}
 
 Najbliżsi rywale Berlingo dostawczego to zarówno konstrukcje z tego samego segmentu C-van, jak i mniejsze auta użytkowe. Najlepiej porównywać je na liczbach – przede wszystkim po objętości, ładowności i możliwościach przewozowych.
 

@@ -90,10 +90,9 @@ Przy wyborze napędu warto patrzeć nie tylko na moc. Równie istotne są homolo
 Jeśli auto ma jeździć głównie po mieście albo w przewozach hotelowych i lotniskowych, napędy zelektryfikowane zasługują dziś na osobną analizę. W Fordzie Transit osobowym różnice między dieslem, PHEV i BEV są na tyle duże, że najlepiej dobierać wersję pod konkretny profil trasy.
 {{% /expert %}}
 
-#
 {{% youtube %}}
 
-# Ceny Forda Transit osobowego
+## Ceny Forda Transit osobowego
 
 Bez wskazania modelu, roku modelowego i daty obowiązywania cennika nie da się podać rzetelnej ceny nowego Forda Transit osobowego. Wcześniejsze wartości były zbyt ogólne i mieszały różne auta, dlatego nie warto ich powielać.
 

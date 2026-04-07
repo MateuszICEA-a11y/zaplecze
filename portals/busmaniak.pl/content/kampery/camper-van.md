@@ -131,10 +131,9 @@ Rozpiętość cenowa na rynku camper vanów jest ogromna. Najtańsze, samodzieln
 
 Camper vany często tracą na wartości wolniej niż klasyczne kampery. To efekt dużego popytu i ograniczonej podaży, szczególnie w przypadku kultowych modeli jak VW California, na które czas oczekiwania w salonie nierzadko sięga 9–12 miesięcy.
 
-#
 {{% youtube %}}
 
-# Zalety i wady camper vana
+## Zalety i wady camper vana
 
 Decyzja o zakupie camper vana powinna być poprzedzona chłodną analizą jego plusów i minusów w kontekście własnych potrzeb.
 

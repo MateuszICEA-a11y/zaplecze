@@ -267,5 +267,4 @@ Na rynku wtórnym rozrzut cen jest duży, bo Connect występował jako van, komb
 
 W praktyce **Van** jest zwykle tańszy o **10–20%** od osobowego **Tourneo** z tego samego rocznika. Wersje **120 KM** i auta z **automatem** potrafią podbić cenę o około **5–10 tys. zł**. Egzemplarze z **VAT 1 / fakturą** są zazwyczaj droższe od aut prywatnych.
 
-#
 {{% youtube %}}

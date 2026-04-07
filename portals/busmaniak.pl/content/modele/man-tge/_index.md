@@ -203,10 +203,9 @@ Nowy TGE zwykle kosztuje więcej niż porównywalny Crafter, ale różnica wynik
 
 Podwozia i auta z gotową zabudową zwykle kosztują **o 10–25% więcej** niż goły furgon z porównywalnego rocznika. To ważne przy analizie ogłoszeń, bo sama cena bez uwzględnienia zabudowy często prowadzi do mylnych wniosków.
 
-#
 {{% youtube %}}
 
-# Porównanie TGE z Crafterem i konkurencją
+## Porównanie TGE z Crafterem i konkurencją
 
 W papierach TGE wygląda bardzo podobnie do Craftera, ale przy zakupie flotowym liczy się też zakres DMC, objętość paki i dostępność napędów. To właśnie te elementy najlepiej pokazują, komu opłaca się MAN, a komu bardziej Sprinter, Transit albo Daily.
 

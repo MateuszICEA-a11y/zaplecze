@@ -131,10 +131,9 @@ Przy autach używanych kluczowe są nie tylko ceny zakupu, ale też stan technic
 
 W nowszych dieslach trzeba dodatkowo sprawdzić filtr DPF i układ AdBlue/SCR. To właśnie te elementy należą do najważniejszych punktów kontrolnych przy zakupie osobowego Scudo z rynku wtórnego.
 
-#
 {{% youtube %}}
 
-# Porównanie Scudo osobowego z konkurencją
+## Porównanie Scudo osobowego z konkurencją
 
 Najbliższą konkurencją Scudo III są przede wszystkim bliźniacze vany osobowe z tej samej rodziny Stellantis. To one oferują najbardziej zbliżone wymiary, identyczną architekturę techniczną i tę samą gamę napędów.
 

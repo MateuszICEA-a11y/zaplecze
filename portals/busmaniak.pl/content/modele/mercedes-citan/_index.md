@@ -173,7 +173,6 @@ W elektryku odpada część typowych problemów spalinowych, ale dochodzą eleme
 - **Łożyska / zawieszenie przód** – **500–1200 zł strona**
 - **Elektronika i czujniki ADAS** – **300–1500 zł**
 
-#
 {{% youtube %}}
 
 Materiał dotyczy I generacji W415.

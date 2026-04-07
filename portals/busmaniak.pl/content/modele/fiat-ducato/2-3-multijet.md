@@ -146,10 +146,9 @@ Najczęściej powtarzające się zastrzeżenia dotyczą osprzętu emisji spalin 
 
 W kamperach częstym tematem jest masa zabudowy. Przy realnym ciężarze 3,2–3,5 t przed dodatkowym załadunkiem urlopowym wersje 140–180 KM są zwykle oceniane lepiej niż 120–130 KM, szczególnie na autostradzie i w górach.
 
-#
 {{% youtube %}}
 
-# Koszty eksploatacji i serwisu
+## Koszty eksploatacji i serwisu
 
 Koszty utrzymania Fiat Ducato 2.3 MultiJet zależą od wersji, rocznika i sposobu pracy, ale kilka pozycji powtarza się praktycznie zawsze. Najważniejsze to olej i filtry, rozrząd, sprzęgło z dwumasą oraz elementy osprzętu emisji spalin.
 

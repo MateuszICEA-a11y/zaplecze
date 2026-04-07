@@ -141,10 +141,9 @@ Do ceny zakupu musisz doliczyć cały pakiet kosztów dodatkowych. Na liście je
 
 Niemieckie kampery często kuszą pełną dokumentacją serwisową (TÜV, książka serwisowa), ale uważaj na korozję w starszych modelach – tamtejsze zimy nie oszczędzają podwozi. Z kolei we Włoszech czy Hiszpanii rdza jest mniejszym problemem, ale dokumentacja bywa niekompletna. Niezależnie od kraju, zawsze próbuj zweryfikować historię pojazdu w lokalnych bazach danych.
 
-#
 {{% youtube %}}
 
-# Homologacja importowanego kampera
+## Homologacja importowanego kampera
 
 Procedura rejestracji zależy od tego, skąd pochodzi pojazd i czy ma fabryczną zabudowę kamperową. Pamiętaj też, że od lipca 2022 roku obowiązują zaostrzone przepisy akcyzowe. Każda zmiana przeznaczenia pojazdu, np. rejestracja furgonu jako kamper, rodzi obowiązek zapłaty akcyzy według stawek jak przy imporcie.
 

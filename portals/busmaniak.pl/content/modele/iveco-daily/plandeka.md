@@ -98,10 +98,9 @@ Ponieważ artykuł nie odnosi się do konkretnej generacji, rocznika ani oficjal
 Kupując plandekę, patrz nie tylko na podwozie, ale też na samą zabudowę. Sprawdź stan poszycia PVC, narożniki, szwy, stelaż i punkty mocowania ładunku. W aucie pracującym codziennie właśnie te elementy najszybciej pokazują, czy zabudowa była eksploatowana z głową.
 {{% /expert %}}
 
-#
 {{% youtube %}}
 
-# Koszty zabudowy Iveco Daily plandeka
+## Koszty zabudowy Iveco Daily plandeka
 
 Koszt zabudowy plandekowej i samego podwozia zależy od roku, rynku, konfiguracji oraz oferty konkretnego zabudowcy lub dealera. Bez odniesienia do aktualnego cennika i dokładnej specyfikacji nie warto podawać sztywnych kwot jako punktu odniesienia.
 

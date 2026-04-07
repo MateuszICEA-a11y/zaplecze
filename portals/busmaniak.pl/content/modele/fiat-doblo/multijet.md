@@ -138,10 +138,9 @@ Podane niżej kwoty należy traktować wyłącznie jako orientacyjne ceny rynkow
 Przy Doblò 1.6 i 2.0 kluczowe są trzy pytania: kiedy był robiony rozrząd, czy była wymieniana dwumasa i jaki jest stan DPF na diagnostyce. Jeśli sprzedający nie ma potwierdzeń, trzeba założyć budżet serwisowy po zakupie.
 {{% /expert %}}
 
-#
 {{% youtube %}}
 
-# Który MultiJet wybrać
+## Który MultiJet wybrać
 
 Wybór silnika w Doblò II ma sens dopiero po zestawieniu go z nadwoziem i pracą auta. Model występował jako Cargo i Cargo Maxi, a także w wersjach osobowych 5- i 7-miejscowych, więc masa własna, DMC i ładowność realnie zmieniają odbiór każdego z tych diesli.
 

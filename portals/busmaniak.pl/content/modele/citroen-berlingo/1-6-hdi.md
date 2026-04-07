@@ -126,10 +126,9 @@ Na tle innych silników stosowanych w Berlingo 1.6 HDI wypada jako środek stawk
 
 W praktyce wybór zależy od oczekiwań. Jeśli priorytetem jest prostota, starsze diesle wypadają korzystniej konstrukcyjnie, ale przegrywają kulturą pracy i osiągami. Jeśli liczą się spalanie, dostępność części i szeroki wybór egzemplarzy na rynku wtórnym, 1.6 HDI nadal pozostaje bardzo mocną opcją.
 
-#
 {{% youtube %}}
 
-# Koszty eksploatacji i serwisu {#koszty}
+## Koszty eksploatacji i serwisu {#koszty}
 
 Koszty obsługi 1.6 HDI zależą głównie od wersji silnika, obecności FAP/DPF i historii serwisowej. W tej jednostce najbardziej opłaca się profilaktyka, bo odkładanie napraw szybko kończy się kaskadą kolejnych wydatków.
 

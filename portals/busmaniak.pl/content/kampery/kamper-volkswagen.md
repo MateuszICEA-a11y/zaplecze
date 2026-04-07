@@ -118,10 +118,9 @@ Kampery Volkswagena trzymają wartość lepiej niż jakikolwiek inny pojazd kemp
 
 Volkswagen California to jeden z niewielu samochodów, które potrafią zyskać na wartości – egzemplarze T3 i T4 Westfalia w dobrym stanie kosztują dziś więcej niż w dniu premiery.
 
-#
 {{% youtube %}}
 
-# Dla kogo kamper Volkswagen
+## Dla kogo kamper Volkswagen
 
 Kampery VW celują w dwa odmienne segmenty rynku – California to pojazd dla osób szukających kompaktowego camper vana do codziennego użytku, Grand California to pełnowymiarowy kamper dla par i małych rodzin ceniących komfort łazienki.
 

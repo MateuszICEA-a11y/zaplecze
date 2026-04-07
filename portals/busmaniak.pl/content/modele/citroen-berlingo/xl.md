@@ -97,10 +97,9 @@ W odmianie elektrycznej stosowano akumulator użyteczny 50 kWh. Zasięg WLTP wyn
 
 W III generacji stosowano też manuale 5- i 6-biegowe oraz automat EAT8 w wybranych wersjach 1.2 PureTech 130 i 1.5 BlueHDi 130. Jeśli chcesz sprawdzić zasadę działania automatu, warto zajrzeć do hasła o [automatycznej skrzyni biegów](https://pl.wikipedia.org/wiki/Automatyczna_skrzynia_bieg%C3%B3w).
 
-#
 {{% youtube %}}
 
-# XL jako auto rodzinne {#rodzinne}
+## XL jako auto rodzinne {#rodzinne}
 
 Citroën Berlingo XL to jedyny wariant, w którym dostępna jest opcja 7 miejsc. W konfiguracji 2+3+2 trzeci rząd występuje wyłącznie w dłuższej wersji nadwozia, co dla dużej rodziny jest jedną z kluczowych przewag nad Berlingo M.
 

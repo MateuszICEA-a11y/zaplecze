@@ -107,10 +107,9 @@ W praktyce należy sprawdzić stan DPF/SCR, liczbę udanych regeneracji i ogóln
 Nowy silnik 2.2 MultiJet3 to naturalny następca 2.3 w aktualnym Ducato. Przy cięższych zabudowach najwięcej znaczą poprawny dobór mocy do DMC, regularny serwis i diagnostyka układu emisji, a nie same deklaracje katalogowe.
 {{% /expert %}}
 
-#
 {{% youtube %}}
 
-# Który rocznik wybrać?
+## Który rocznik wybrać?
 
 Wybór konkretnego rocznika i silnika powinien wynikać z zastosowania. Innego Ducato potrzebuje kurier miejski do 3.5 t, innego właściciel lawety, a jeszcze innego użytkownik kampera 4.25 t lub zabudowy chłodniczej.
 

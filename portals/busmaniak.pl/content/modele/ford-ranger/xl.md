@@ -109,10 +109,9 @@ Jeśli porównujesz konkretne auta, trzeba sprawdzać nie tylko nazwę wersji, a
 
 W szerszym kontekście rynkowym warto zestawić Rangera XL z konkurencją w segmencie: Toyota Hilux Active, Isuzu D-Max L/LS i bazowym VW Amaroku. W tej klasie bazowe diesle mają zwykle około 150–205 KM, uciąg dochodzi do 3500 kg, a ładowność najczęściej mieści się w przedziale około 900–1100+ kg.
 
-#
 {{% youtube %}}
 
-# Ceny Ranger XL
+## Ceny Ranger XL
 
 Ceny Rangera XL zawsze trzeba rozdzielać na netto i brutto oraz odnosić do konkretnej konfiguracji. Na końcową kwotę mocno wpływają typ kabiny, silnik, skrzynia biegów, napęd, rok modelowy i ewentualne warunki flotowe.
 

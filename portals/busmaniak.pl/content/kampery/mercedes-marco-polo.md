@@ -128,10 +128,9 @@ Mercedes Marco Polo to pojazd segmentu premium – ceny nowych egzemplarzy zaczy
 
 Czas oczekiwania na nowego Marco Polo wynosi 6–10 miesięcy. Marco Polo trzyma wartość gorzej niż konkurencyjna VW California – spadek 15–20% w ciągu pierwszych 3 lat wobec 8–12% u Volkswagena. To efekt mniejszego rynku wtórnego i wyższych kosztów serwisowych.
 
-#
 {{% youtube %}}
 
-# Zalety i wady Marco Polo
+## Zalety i wady Marco Polo
 
 Przed podjęciem decyzji warto uczciwie zestawić mocne i słabe strony tego pojazdu.
 

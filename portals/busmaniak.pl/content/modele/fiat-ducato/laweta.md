@@ -88,10 +88,9 @@ Forma rejestracji nie jest jedna dla wszystkich. Ducato z zabudową lawetową mo
 
 Z punktu widzenia praktyki użytkowej autolaweta 3,5 t na bazie Ducato najlepiej sprawdza się przy autach lżejszych. Przy ładowności około 1100–1400 kg bezpiecznie obsłuży głównie modele segmentów A–C i część D – przykładowo Toyota Yaris waży około 950–1100 kg, VW Golf VII około 1200–1350 kg, ale BMW 5 F10 często 1600–1800 kg i może już przekroczyć możliwości zestawu po doliczeniu wyposażenia.
 
-#
 {{% youtube %}}
 
-# Koszty zakupu i eksploatacji
+## Koszty zakupu i eksploatacji
 
 Gotowa autolaweta na Ducato to inwestycja od 200 tys. zł za nową konfigurację. Na rynku wtórnym ceny zaczynają się od około 45 tys. zł za egzemplarze z 3.0 MultiJet i dużym przebiegiem, ale przy takim aucie kluczowy jest stan zabudowy, wciągarki i zawieszenia, nie tylko samego silnika.
 

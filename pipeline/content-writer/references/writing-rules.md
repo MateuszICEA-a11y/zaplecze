@@ -33,6 +33,8 @@ BusManiak.pl – portal o busach dostawczych, vanach, camper vanach, przeróbkac
 5. **NIE dodawaj podsumowania na końcu** – FAQ pełni tę rolę
 6. **2-4 nagłówki H2/H3 w formie pytań FAQ** – samowystarczalne, featured snippet potential
 
+**NIGDY nie używaj `# ` (H1) w body artykułu.** Szablon Hugo renderuje `<h1>` z frontmatter `h1:`. Każde `#` w Markdown tworzy duplikat H1. Używaj wyłącznie `##` (H2) i `###` (H3).
+
 **Artykuł NIE ma sztywnego limitu ZZS.** Ma być kompletny i pokrywać temat. Nie pompuj objętości sztucznie.
 
 ---

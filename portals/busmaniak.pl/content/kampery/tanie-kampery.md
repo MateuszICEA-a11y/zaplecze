@@ -102,10 +102,9 @@ W ostatnich latach na polskim rynku pojawiło się kilku producentów, którzy o
 
 Różnica w cenie między budżetowym a premium camper vanem sięga **40–60%**. Często wyposażenie jest niemal identyczne – płaci się głównie za markę, jakość wykończenia detali i wyższą wartość rezydualną.
 
-#
 {{% youtube %}}
 
-# Na co uważać przy zakupie taniego kampera
+## Na co uważać przy zakupie taniego kampera
 Tani kamper to niestety większe ryzyko kosztownych niespodzianek. Wiedza o tym, gdzie szukać potencjalnych problemów, to najlepsza polisa ubezpieczeniowa od nietrafionego zakupu.
 
 ### Czerwone flagi i obowiązkowe kontrole

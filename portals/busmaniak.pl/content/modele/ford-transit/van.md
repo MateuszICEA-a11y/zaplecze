@@ -110,10 +110,9 @@ Cena Forda Transit Van zależy przede wszystkim od długości nadwozia L1–L4, 
 
 Z tego powodu nie warto podawać uniwersalnych widełek bez odniesienia do konkretnego cennika i daty obowiązywania. W przypadku auta użytkowego różnice cenowe między bazowym furgonem a egzemplarzem z automatem, wyższym DMC i pakietami roboczymi są bardzo duże.
 
-#
 {{% youtube %}}
 
-# Opcje zabudów fabrycznych Transit Van
+## Opcje zabudów fabrycznych Transit Van
 
 Ford Transit Van może być doposażony w rozwiązania przygotowujące auto do pracy jeszcze na etapie zamówienia. To szczególnie ważne wtedy, gdy samochód od razu ma trafić do intensywnej eksploatacji flotowej.
 

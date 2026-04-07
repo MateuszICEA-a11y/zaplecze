@@ -102,10 +102,9 @@ Spalanie L4H3 z silnikiem 2.3 150 KM wynosi zwykle około 10–12 l/100 km w tra
 
 ![Fiat Ducato Maxi – wymiary, ładowność, zastosowania](/images/fiat-ducato-maxi-hero.webp)
 
-#
 {{% youtube %}}
 
-# Zastosowania – od kurierki po vanlife
+## Zastosowania – od kurierki po vanlife
 
 Fiat Ducato Maxi jest popularny zarówno w pracy, jak i w zabudowach rekreacyjnych, ale sens konkretnej wersji zależy od DMC, wysokości dachu i planowanej zabudowy. W furgonie L4 mówimy o przestrzeni 15–17 m³, ładowności zależnej od DMC na poziomie około 1,3–2,1 t i możliwości przewozu do 5 europalet.
 

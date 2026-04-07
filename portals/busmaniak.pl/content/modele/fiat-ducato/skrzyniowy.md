@@ -138,10 +138,9 @@ Przy zakupie używanego egzemplarza warto zrobić prostą checklistę oględzin:
 - stan instalacji elektrycznej zabudowy
 - zgodność DMC i wymiarów w dokumentach
 
-#
 {{% youtube %}}
 
-# Ceny Ducato skrzyniowego
+## Ceny Ducato skrzyniowego
 
 W przypadku Ducato skrzyniowego trzeba koniecznie rozdzielić **cenę samego podwozia z kabiną** od **ceny kompletnego auta po zabudowie**. To dwie różne wartości, a końcowa kwota zależy od typu skrzyni i zakresu wyposażenia.
 

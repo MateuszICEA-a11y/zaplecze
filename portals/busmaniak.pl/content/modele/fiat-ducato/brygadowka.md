@@ -98,10 +98,9 @@ Podstawą przy oględzinach jest checklist zamiast ogólnego „jeździ albo nie
 - **Układy emisji spalin** – w autach z odpowiednimi wersjami układów SCR/DPF/AdBlue trzeba zweryfikować obecność błędów i objawów usterek; zakres problemów zależy od rocznika i silnika
 - **Zabudowa brygadowa** – skontroluj korozję elementów zabudowy, datę montażu, komplet homologacji siedzeń i zgodność liczby miejsc z dowodem rejestracyjnym
 
-#
 {{% youtube %}}
 
-# Ceny Fiata Ducato brygadówka
+## Ceny Fiata Ducato brygadówka
 
 Przy wycenie brygadówki nie można patrzeć wyłącznie na cenę bazowego Ducato. Równie ważny jest koszt samej konwersji, bo drugi rząd siedzeń, przegroda, podsufitka, nawiew lub ogrzewanie, wykończenie ścian i podłogi oraz homologacja potrafią mocno podnieść końcową kwotę.
 

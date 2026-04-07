@@ -103,10 +103,9 @@ Przy wyborze rodzinnej wersji pod duże przebiegi najczęściej kluczowy jest di
 
 Wersja elektryczna ma akumulator 50 kWh i homologacyjny zasięg WLTP około 280 km. W praktyce na autostradzie i zimą realny zasięg jest zwykle niższy, więc przy rodzinnych trasach trzeba dobrze zaplanować ładowanie.
 
-#
 {{% youtube %}}
 
-# Berlingo Long jako auto rodzinne {#rodzinne}
+## Berlingo Long jako auto rodzinne {#rodzinne}
 
 To właśnie tu dłuższa odmiana pokazuje pełnię sensu. Berlingo XL łączy dużą kabinę, przesuwane drzwi i możliwość konfiguracji wnętrza pod dzieci, foteliki oraz bagaże.
 

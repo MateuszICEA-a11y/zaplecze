@@ -78,10 +78,9 @@ Do pełnej oceny użyteczności brakuje jeszcze danych o średnicy zawracania dl
 
 Warto pamiętać także o przepisach. Dla pojazdu 3,5 t obowiązują inne zasady niż dla cięższych aut, ale znaczenie ma również DMC zestawu – szczególnie w kontekście opłat drogowych i przewozu z przyczepą.
 
-#
 {{% youtube %}}
 
-# Koszt zakupu Daily Maxi
+## Koszt zakupu Daily Maxi
 
 Pierwotny tekst podawał ceny bez wskazania cennika, daty obowiązywania i wersji wyposażenia, dlatego nie można ich uznać za wiarygodne. W przypadku Iveco Daily Maxi sens mają wyłącznie dane z oficjalnego cennika na konkretny rynek i z konkretną datą.
 

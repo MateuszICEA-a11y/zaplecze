@@ -129,10 +129,9 @@ Do kosztów, o które warto pytać jeszcze przed zakupem, należą orientacyjnie
 
 Przy aucie 9-osobowym nie można też ignorować nośności. Jeśli wersja ma niewielką rezerwę ładowności, regularna jazda w komplecie pasażerów przyspiesza zużycie ogumienia, hamulców i elementów zawieszenia.
 
-#
 {{% youtube %}}
 
-# Ceny Fiata Ducato 9-osobowego
+## Ceny Fiata Ducato 9-osobowego
 
 Przy wycenie Ducato trzeba oddzielić rynek wtórny od aktualnej oferty. Równie ważne jest rozróżnienie między autem fabrycznie 9-osobowym a furgonem z później dołożonymi siedzeniami, bo taka różnica potrafi mocno wpływać na wartość pojazdu.
 

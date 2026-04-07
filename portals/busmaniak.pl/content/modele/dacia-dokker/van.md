@@ -124,10 +124,9 @@ W praktyce egzemplarze z lat 2016–2018 z przebiegiem 150–250 tys. km są wyr
 | 2018–2019 (po liftingu) | 1.5 dCi 90 | 28 000–38 000 zł |
 | 2020–2021 | 1.5 dCi | 35 000–48 000 zł |
 
-#
 {{% youtube %}}
 
-# Porównanie Dokkera Van z konkurencją
+## Porównanie Dokkera Van z konkurencją
 
 Na tle rywali Dokker Van kusi głównie relacją ceny do przestrzeni użytkowej. Trzeba jednak porównywać wersje homologacyjnie zbliżone, bo ładowność w każdym z tych modeli zależy od silnika, wyposażenia i konkretnej odmiany, a pojedyncze skrajne liczby łatwo wypaczają obraz.
 

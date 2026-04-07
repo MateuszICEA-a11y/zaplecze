@@ -93,10 +93,9 @@ Typowe burty aluminiowe mają około 350–400 mm wysokości, ale ten parametr z
 
 Jeśli priorytetem jest zadaszenie całej przestrzeni pasażerskiej, lepszym wyborem będzie [Ducato brygadówka](/modele/fiat-ducato/brygadowka/).
 
-#
 {{% youtube %}}
 
-# Typowe problemy i serwis
+## Typowe problemy i serwis
 
 W doki serwis trzeba oceniać jednocześnie od strony bazowego auta i od strony zabudowy. Oprócz silnika oraz osprzętu równie ważny jest stan mocowań platformy, ramy pomocniczej i elementów pracujących stale pod obciążeniem.
 

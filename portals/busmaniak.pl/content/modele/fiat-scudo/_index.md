@@ -224,7 +224,6 @@ W nadwoziu warto sprawdzić **rolki drzwi przesuwnych** za **300–800 zł**, a 
 Większość problemów mechanicznych Scudo wynika z przeładowywania auta ponad limit z dowodu rejestracyjnego. Przy zakupie używanego egzemplarza sprawdź tylną belkę i stan uszczelek w drzwiach przesuwnych – to dwa elementy, które potrafią szybko podnieść koszt doprowadzenia auta do porządku.
 {{% /expert %}}
 
-# 
 {{% youtube %}}
 
 ## Porównanie Fiata Scudo z konkurencją

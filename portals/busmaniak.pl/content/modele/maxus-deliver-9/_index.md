@@ -221,10 +221,9 @@ Rynek wtórny dopiero się buduje, ale ofert używanych egzemplarzy jest już na
 
 Dla **eDelivera 9** z roczników **2022–2024** trzeba zwykle przygotować około **140 000–220 000 zł brutto**. Dużo zależy od pojemności baterii, przebiegu i stanu akumulatora.
 
-#
 {{% youtube %}}
 
-# Deliver 9 na tle konkurencji
+## Deliver 9 na tle konkurencji
 
 Poniżej porównujemy Deliver 9 z czterema popularnymi rywalami w segmencie dużych vanów. Największe różnice dotyczą napędu, dostępnych rozmiarów nadwozia, DMC i ceny wejścia.
 

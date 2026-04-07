@@ -132,10 +132,9 @@ W praktyce to właśnie koszt zabudowy robi największą różnicę między wers
 
 Przed zakupem warto też sprawdzić koszty eksploatacji konkretnej wersji. Do najważniejszych należą interwały serwisowe, koszt kompletu opon, koszt ubezpieczenia dla 9-osobowego busa i większego minibusu oraz zużycie AdBlue – jeśli dana wersja korzysta z układu SCR.
 
-#
 {{% youtube %}}
 
-# Porównanie Maxusa Deliver 9 osobowego z konkurencją
+## Porównanie Maxusa Deliver 9 osobowego z konkurencją
 
 Jeśli mówimy o wersjach 9-, 14- i 17-miejscowych, punktem odniesienia nie powinny być wyłącznie klasyczne kombivany 9-osobowe. Realnymi rywalami w segmencie minibusów są też Mercedes Sprinter Transfer/Tourer, VW Crafter Kombi/Minibus, Ford Transit Minibus oraz Iveco Daily Minibus.
 

@@ -118,10 +118,9 @@ Dla pojazdów powyżej 3,5 t nie obowiązują standardowe winiety, lecz elektron
 
 Spalanie dużych alków rzadko spada poniżej 14–18 l/100 km – to o 40–60% więcej niż w typowych [camper vanach](/kampery/camper-van/). Na trasie z Warszawy do Chorwacji (1200 km w jedną stronę), sam koszt paliwa wyniesie **1200–1500 zł**.
 
-#
 {{% youtube %}}
 
-# Ceny kamperów 8-osobowych
+## Ceny kamperów 8-osobowych
 
 Rynek oferuje szeroki przekrój pojazdów, od kilkunastoletnich, budżetowych alków po luksusowe, fabrycznie nowe integrały.
 

@@ -117,10 +117,9 @@ Z punktu widzenia rynku Daily wyróżnia się tym, że obejmuje zakres od 3.5 t 
 Przy wyborze bazy patrz najpierw na ładowność po zabudowie, a dopiero potem na samą pojemność komory. W chłodni bardzo łatwo zamówić za dużą skrzynię do zbyt lekkiego podwozia i zostać z autem, które ma dobrą kubaturę, ale za mały zapas masy roboczej.
 {{% /expert %}}
 
-#
 {{% youtube %}}
 
-# Koszty zabudowy Iveco Daily chłodnia
+## Koszty zabudowy Iveco Daily chłodnia
 
 Koszt wykonania chłodni na Daily trzeba liczyć szerzej niż tylko cenę skrzyni i agregatu. Na finalną wycenę wpływają długość i wysokość zabudowy, wymagana klasa ATP, typ agregatu, funkcja standby, rodzaj podłogi, liczba drzwi, wyposażenie dodatkowe oraz sam montaż.
 

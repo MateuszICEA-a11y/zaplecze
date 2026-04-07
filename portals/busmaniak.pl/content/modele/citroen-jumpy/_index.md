@@ -113,7 +113,6 @@ Jumpy nie ogranicza się do jednego „blaszaka”. Na rynku występuje w kilku 
 
 Przy konfiguracji warto zwrócić uwagę na drzwi boczne przesuwne po jednej lub po dwóch stronach. Z tyłu można spotkać klapę albo klasyczne drzwi 50/50.
 
-#
 {{% youtube %}}
 
 ## Typowe usterki Citroëna Jumpy

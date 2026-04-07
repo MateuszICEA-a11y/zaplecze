@@ -94,10 +94,9 @@ W kwestii oleju nie ma jednego uniwersalnego zestawu danych dla wszystkich odmia
 
 ![Fiat Ducato 3.0 MultiJet – dane techniczne, spalanie, opinie](/images/fiat-ducato-3-0-multijet-hero.webp)
 
-#
 {{% youtube %}}
 
-# Typowe usterki i opinie użytkowników
+## Typowe usterki i opinie użytkowników
 
 Dobrze utrzymany Fiat Ducato 3.0 MultiJet uchodzi za trwały napęd do cięższej pracy, ale nie jest wolny od typowych problemów osprzętu i eksploatacji. Trwałość konkretnych podzespołów mocno zależy od obciążenia auta, jakości paliwa, serwisu i tego, czy egzemplarz pracował w trasie, czy w cyklu miejskim.
 

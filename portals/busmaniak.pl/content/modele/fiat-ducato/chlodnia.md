@@ -103,10 +103,9 @@ Bez takiego podziału nie da się uczciwie porównać, czy dana oferta dotyczy p
 
 ![Fiat Ducato chłodnia – zabudowa izotermiczna i chłodnicza](/images/fiat-ducato-chlodnia-hero.webp)
 
-#
 {{% youtube %}}
 
-# Eksploatacja i serwis – o czym pamiętać?
+## Eksploatacja i serwis – o czym pamiętać?
 
 Eksploatacja chłodni na bazie Ducato to nie tylko standardowy serwis samochodu, ale też regularna kontrola samej zabudowy i agregatu. Zakres obsługi zależy od modelu urządzenia, rodzaju napędu i warunków pracy, dlatego podstawą zawsze powinna być instrukcja producenta agregatu.
 

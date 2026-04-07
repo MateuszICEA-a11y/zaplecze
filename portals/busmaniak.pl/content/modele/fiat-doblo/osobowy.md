@@ -127,10 +127,9 @@ Jeśli zależy ci na bezproblemowym użytkowaniu rodzinnym, fabryczna Panorama l
 Przy zakupie używanego Doblò II sprawdź nie tylko wnętrze, ale też elementy typowo eksploatacyjne. Najważniejsze punkty kontroli to zużycie dwumasy i sprzęgła w 1.6 oraz 2.0 MultiJet, stan DPF i EGR w dieslach, luzy przedniego zawieszenia, korozja podwozia i drzwi przesuwnych oraz działanie elektryki szyb i zamków. Interwał rozrządu i osprzętu zależy od konkretnego silnika i rocznika, więc trzeba go weryfikować oddzielnie dla 1.3, 1.6 i 2.0 MultiJet.
 {{% /expert %}}
 
-#
 {{% youtube %}}
 
-# Koszty eksploatacji Panoramy
+## Koszty eksploatacji Panoramy
 
 Koszty użytkowania zależą przede wszystkim od silnika, rocznika, przebiegu i sposobu eksploatacji. Nie da się przyjąć jednej reguły dla ubezpieczenia – składka zależy od ubezpieczyciela, regionu, profilu kierowcy, przebiegu i sposobu użytkowania auta.
 

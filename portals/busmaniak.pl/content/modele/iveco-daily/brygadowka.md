@@ -84,10 +84,9 @@ Przy wyborze jednostki do brygadówki najważniejsze jest więc nie hasło marke
 Przy zakupie auta z rynku wtórnego sprawdź nie tylko silnik, ale też zgodność zabudowy z dokumentami. W brygadówce krytyczne są stan przegrody, mocowania siedzeń i pasów, zgodność liczby miejsc z dowodem oraz ślady przeciążeń tylnego zawieszenia.
 {{% /expert %}}
 
-#
 {{% youtube %}}
 
-# Koszty zakupu i serwisu Daily brygadówki
+## Koszty zakupu i serwisu Daily brygadówki
 
 W tym miejscu trzeba zachować ostrożność, bo bez wskazania konkretnego rocznika, rynku i wersji nie da się rzetelnie podać ceny zakupu nowego lub używanego egzemplarza. W Daily różnice między fabryczną kabiną załogową, brygadówką blaszak i wersją ze skrzynią albo plandeką są zbyt duże, by operować jedną kwotą.
 

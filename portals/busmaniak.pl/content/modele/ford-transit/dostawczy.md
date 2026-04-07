@@ -110,10 +110,9 @@ Rynek zabudów dla Transit dostawczego jest szeroki. Najpopularniejsze rozwiąza
 Przy projektowaniu zabudowy najważniejsze jest przeliczenie masy całego wyposażenia. Lekka zabudowa może ważyć ok. 80–150 kg, a rozbudowana nawet kilkaset kilogramów, co bezpośrednio zmniejsza realną ładowność auta i może zmienić opłacalność wyboru wersji 3,5 t względem cięższej odmiany.
 {{% /expert %}}
 
-#
 {{% youtube %}}
 
-# Ceny Forda Transit dostawczy
+## Ceny Forda Transit dostawczy
 
 W przypadku Ford Transit dostawczy ceny silnie zależą od długości nadwozia, wysokości dachu, napędu, DMC, skrzyni biegów i wyposażenia. Bez wskazania konkretnego rynku, rocznika modelowego i oficjalnego cennika nie warto podawać sztywnych kwot, bo łatwo o nieaktualne lub mylące dane.
 

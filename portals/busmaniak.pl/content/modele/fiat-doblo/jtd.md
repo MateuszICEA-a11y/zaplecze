@@ -130,10 +130,9 @@ Niezależnie od ceny zakupu warto zostawić budżet na oględziny w warsztacie i
 W Doblò I z silnikiem 1.9 JTD najpierw oceniamy blacharkę, podwozie i punkty mocowania zawieszenia, a dopiero potem sam motor. Zużyty osprzęt silnika zwykle da się naprawić, ale zaawansowana korozja progów, podłogi czy tylnej części nadwozia potrafi całkowicie przekreślić sens zakupu.
 {{% /expert %}}
 
-#
 {{% youtube %}}
 
-# Porównanie z nowszymi silnikami MultiJet
+## Porównanie z nowszymi silnikami MultiJet
 
 Porównanie z nowszymi dieslami ma sens tylko wtedy, gdy jasno zaznaczymy, że chodzi o wybrane warianty spotykane w Doblò. Różnice między nimi dotyczą nie tylko spalania, ale też osprzętu emisyjnego, kosztów serwisu i wieku aut dostępnych na rynku.
 

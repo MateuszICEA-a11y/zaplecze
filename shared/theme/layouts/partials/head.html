@@ -7,7 +7,9 @@
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
 {{/* Title */}}
-<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+{{ $pageNum := 0 }}
+{{ with findRE `/page/(\d+)/?$` .RelPermalink }}{{ $match := index . 0 }}{{ $pageNum = int (replaceRE `\D` "" $match) }}{{ end }}
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ if gt $pageNum 1 }} - Strona {{ $pageNum }}{{ end }} | {{ .Site.Title }}{{ end }}</title>
 
 {{/* Meta description */}}
 {{ with .Description }}

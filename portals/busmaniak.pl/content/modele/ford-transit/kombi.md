@@ -136,10 +136,9 @@ Przy oględzinach używanego egzemplarza warto przejść prostą checklistę:
 
 W kosztach eksploatacji znaczenie mają również interwały serwisowe, ceny materiałów eksploatacyjnych i różnice między wersjami FWD oraz RWD. W tym materiale nie podajemy jednak konkretnych wartości, ponieważ powinny one wynikać z oficjalnego harmonogramu obsługi i aktualnych cen części dla określonej wersji.
 
-#
 {{% youtube %}}
 
-# Zastosowania komercyjne
+## Zastosowania komercyjne
 
 Ford Transit Kombi jest pojazdem typowo zadaniowym, dlatego dobrze sprawdza się wszędzie tam, gdzie trzeba połączyć przewóz ludzi z odpornością auta dostawczego. To jeden z powodów, dla których często trafia do flot firmowych i zastosowań specjalnych.
 

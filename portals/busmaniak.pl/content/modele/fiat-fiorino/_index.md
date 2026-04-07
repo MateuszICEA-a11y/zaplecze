@@ -217,5 +217,4 @@ Produkcja zakończyła się w 2024 roku. Ostatnie egzemplarze salonowe były spr
 Przy oględzinach sprawdź działanie modułu ABS, stan łańcucha rozrządu w 1.3 MultiJet, pracę EGR i DPF oraz zużycie rolek drzwi przesuwnych. W benzynowym 1.4 kluczowe są terminowa wymiana paska rozrządu i ewentualne wycieki spod pokrywy zaworów.
 {{% /info %}}
 
-#
 {{% youtube %}}

@@ -122,10 +122,9 @@ W wydłużonym wariancie L2/XTR+ zależnie od rynku oferowano trzeci rząd siedz
 
 {{% info title="Ciekawostka" icon="engineering" %}}W odmianach rodzinnych o charakterze użytkowym to właśnie praktyczne dodatki robiły największą różnicę. W Berlingo Multispace do takich elementów należały przede wszystkim Modutop, przesuwne drzwi boczne oraz układ trzech niezależnych foteli w drugim rzędzie.{{% /info %}}
 
-#
 {{% youtube %}}
 
-# Multispace vs konkurencja {#konkurencja}
+## Multispace vs konkurencja {#konkurencja}
 
 Na rynku Citroën Berlingo Multispace konkurował z kilkoma bardzo mocnymi modelami tej samej epoki. Najważniejsze różnice najlepiej widać w wymiarach i pojemności bagażnika, a nie w ogólnikowych ocenach.
 

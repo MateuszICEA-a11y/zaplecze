@@ -306,7 +306,6 @@ Jeśli potrzebujesz auta głównie do miejskich rozwozów w klasie 3,5 t, Transi
 
 Dla firm, które chcą budować flotę od lekkiego furgonu po ciężkie podwozie w ramach jednego modelu, Iveco Daily pozostaje jednym z najmocniejszych argumentów na rynku.
 
-#
 {{% youtube %}}
 
 ## Ceny Daily

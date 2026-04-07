@@ -531,6 +531,7 @@ Gemini sometimes generates wrong shortcode syntax. Fix:
 - Expert format: `{{% expert name="Kowalczyk" %}}treść{{% /expert %}}` — name param REQUIRED, never bare `{{% expert %}}`
 - Info format: `{{% info title="Tytuł" icon="engineering" %}}treść{{% /info %}}` — title+icon params REQUIRED, never bare `{{% info %}}`
 - **CRITICAL:** Bare shortcodes without params crash Hugo build (nil map access on .Params)
+- **CRITICAL:** Remove any `# ` (H1) headings in article body. Body must use ONLY `##` (H2) and `###` (H3). The template already renders `<h1>` from frontmatter `h1:` field – any `#` in Markdown body creates a duplicate H1 (SEO error). Also remove empty `#` lines (sometimes left as markers before YouTube shortcodes).
 
 ### 5c. Hero Image Generation
 
@@ -586,9 +587,10 @@ After saving:
 3. **Check NO FAQ in body** — grep for `## FAQ` or `## Najczęściej zadawane` in body. If found, DELETE the entire section. FAQ lives ONLY in frontmatter `faq:` field
 4. **Check NO sources in body** — grep for `*Źródła:` in body. If found, move to frontmatter `sources:` and delete from body
 5. **Check image placement** — article body MUST contain `![` (image markdown) before the 3rd or 4th H2. Use the hero image: `![{image_alt}]({image})`
-3. **Verify image exists** — confirm the referenced hero image is at the correct path
-4. **Verify H3 presence** — article must have at least 2 H3 headings
-5. Tell the user the article is ready and ask if they want to commit + push
+6. **Verify image exists** — confirm the referenced hero image is at the correct path
+7. **Verify H3 presence** — article must have at least 2 H3 headings
+8. **Check NO H1 in body** — grep for `^# ` (single `#` followed by space) in body. If found, convert to `## `. Also remove empty `^#$` lines. The `<h1>` is rendered by the template from frontmatter — any `#` in body creates a duplicate H1
+9. Tell the user the article is ready and ask if they want to commit + push
 
 ---
 

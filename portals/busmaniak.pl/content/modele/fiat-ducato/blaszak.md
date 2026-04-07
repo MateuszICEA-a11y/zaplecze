@@ -80,10 +80,9 @@ Obecność AdBlue trzeba wiązać z normą emisji i konkretną wersją silnika, 
 
 ![Fiat Ducato blaszak – furgon, wymiary paki, ładowność](/images/fiat-ducato-blaszak-hero.webp)
 
-#
 {{% youtube %}}
 
-# Typowe problemy Ducato blaszaka
+## Typowe problemy Ducato blaszaka
 
 Fiat Ducato blaszak jest autem dopracowanym użytkowo, ale przy dużych przebiegach i pracy pod obciążeniem kilka punktów powtarza się regularnie. Dotyczy to zarówno mechaniki, jak i elementów nadwozia czy elektroniki związanej z emisją spalin.
 

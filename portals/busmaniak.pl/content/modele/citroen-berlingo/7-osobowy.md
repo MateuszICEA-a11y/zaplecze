@@ -99,10 +99,9 @@ W III generacji istniał także ë-Berlingo, ale dostępność konfiguracji 7-os
 
 {{% expert name="Marek Kowalczyk" %}}Jeśli planujesz regularnie wykorzystywać Citroëna Berlingo 7-osobowego z kompletem pasażerów, celowałbym w mocniejsze odmiany 130 KM. Wersje 100 KM mają sens wtedy, gdy trzeci rząd będzie używany sporadycznie.{{% /expert %}}
 
-#
 {{% youtube %}}
 
-# Berlingo 7-osobowy vs konkurencja {#konkurencja}
+## Berlingo 7-osobowy vs konkurencja {#konkurencja}
 
 W segmencie rodzinnych kombivanów Berlingo ma kilku bezpośrednich rywali. Najbliższe konstrukcyjnie są modele z tej samej grupy, ale w praktyce kluczowe znaczenie mają długość nadwozia, układ foteli i dostępność 7 miejsc.
 
