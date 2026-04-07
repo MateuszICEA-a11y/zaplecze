@@ -6,10 +6,12 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-{{/* Title */}}
-{{ $pageNum := 0 }}
-{{ with findRE `/page/(\d+)/?$` .RelPermalink }}{{ $match := index . 0 }}{{ $pageNum = int (replaceRE `\D` "" $match) }}{{ end }}
-<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ if gt $pageNum 1 }} - Strona {{ $pageNum }}{{ end }} | {{ .Site.Title }}{{ end }}</title>
+{{/* Paginator – created once, reused for title + canonical */}}
+{{ $pag := false }}
+{{ if .IsNode }}{{ $pag = .Paginate (where .Pages "Kind" "ne" "term") }}{{ end }}
+
+{{/* Title with pagination suffix */}}
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ if and $pag (gt $pag.PageNumber 1) }} - Strona {{ $pag.PageNumber }}{{ end }} | {{ .Site.Title }}{{ end }}</title>
 
 {{/* Meta description */}}
 {{ with .Description }}
@@ -21,7 +23,7 @@
 {{ end }}
 
 {{/* Canonical URL – self-referencing on paginated pages */}}
-{{ if .IsNode }}{{ $pag := .Paginate (where .Pages "Kind" "ne" "term") }}{{ if $pag.HasPrev }}
+{{ if $pag }}{{ if $pag.HasPrev }}
 <link rel="canonical" href="{{ .Paginator.URL | absURL }}">
 {{ else }}
 <link rel="canonical" href="{{ .Permalink }}">
