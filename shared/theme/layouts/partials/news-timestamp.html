@@ -1,0 +1,13 @@
+{{- $date := . -}}
+{{- $now := now -}}
+{{- $diff := $now.Sub $date -}}
+{{- $hours := int (div $diff.Hours 1) -}}
+{{- if lt $hours 24 -}}
+Dziś
+{{- else if lt $hours 48 -}}
+Wczoraj
+{{- else if lt $hours 168 -}}
+{{ div $hours 24 }} dni temu
+{{- else -}}
+{{ $date.Format "02.01.2006" }}
+{{- end -}}

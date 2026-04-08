@@ -1,0 +1,128 @@
+{{ define "main" }}
+{{- $readTime := math.Round (div (countwords .Content) 200.0) -}}
+{{- if lt $readTime 1 -}}{{- $readTime = 1 -}}{{- end }}
+
+<nav class="breadcrumbs">
+  <div class="container">
+    <a href="{{ .Site.BaseURL }}">Strona główna</a>
+    <span class="breadcrumbs__sep">/</span>
+    <a href="{{ (.Site.GetPage "/news").Permalink }}">News</a>
+    <span class="breadcrumbs__sep">/</span>
+    <span>{{ .Title | truncate 50 }}</span>
+  </div>
+</nav>
+
+{{- with .Params.image }}
+<header class="article-hero">
+  <div class="article-hero__inner">
+    <img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}" class="article-hero__img" loading="eager">
+    <div class="article-hero__body">
+      <div class="article-hero__badge">NEWS</div>
+      <h1 class="article-hero__title">{{ $.Params.h1 | default $.Title }}</h1>
+      <div class="article-hero__meta">
+        <div class="article-hero__meta-item">
+          <span class="material-symbols-outlined">calendar_today</span>
+          <span>{{ $.Date.Format "02.01.2006" }}</span>
+        </div>
+        <div class="article-hero__meta-item">
+          <span class="material-symbols-outlined">schedule</span>
+          <span>{{ $readTime }} min czytania</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+{{- else }}
+<div class="container content-narrow" style="padding-top:2rem;">
+  <div class="news-article__badge">NEWS</div>
+  <h1>{{ .Params.h1 | default .Title }}</h1>
+  <div class="news-article__meta">
+    <span class="material-symbols-outlined">calendar_today</span>
+    <span>{{ .Date.Format "02.01.2006" }}</span>
+    <span class="material-symbols-outlined" style="margin-left:.75rem;">schedule</span>
+    <span>{{ $readTime }} min czytania</span>
+  </div>
+</div>
+{{- end }}
+
+<article class="article news-article">
+  <div class="container content-narrow">
+    {{- with .Params.tags }}
+    <div class="news-article__tags">
+      {{- range . }}
+      <span class="news-tag">{{ . }}</span>
+      {{- end }}
+    </div>
+    {{- end }}
+
+    {{- with .Params.lead }}
+    <p class="article-lead">{{ . }}</p>
+    {{- end }}
+
+    <div class="article__content">
+      {{ .Content }}
+    </div>
+
+    {{- with .Params.sources }}
+    <section class="sources">
+      <div class="sources__side">Źródła</div>
+      <div class="sources__body">
+        <ul class="sources__list">
+          {{- range . }}
+          <li>{{ . | markdownify }}</li>
+          {{- end }}
+        </ul>
+      </div>
+    </section>
+    {{- end }}
+  </div>
+</article>
+
+{{- $related := where (where .Site.RegularPages "Section" "news") "Permalink" "ne" .Permalink -}}
+{{- $related = first 12 $related -}}
+{{- if gt (len $related) 0 }}
+<section class="related-section">
+  <div class="container">
+    <div class="related-section__header">
+      <div>
+        <div class="related-section__title">Więcej newsów</div>
+        <div class="related-section__bar"></div>
+      </div>
+    </div>
+    <div class="related-slider" data-slider>
+      <button class="related-slider__btn related-slider__btn--prev" data-slider-prev aria-label="Poprzednie">
+        <span class="material-symbols-outlined">chevron_left</span>
+      </button>
+      <div class="related-slider__track" data-slider-track>
+        {{- range $related -}}
+        <article class="related-card">
+          <a href="{{ .Permalink }}">
+            {{- if .Params.image }}
+            <div class="related-card__image">
+              <img src="{{ .Params.image }}" alt="{{ .Params.image_alt | default .Title }}" loading="lazy">
+              <div class="related-card__badge">News</div>
+            </div>
+            {{- else }}
+            <div class="related-card__image" style="background:linear-gradient(135deg,var(--c-dark),var(--c-navy));">
+              <div class="related-card__badge">News</div>
+            </div>
+            {{- end }}
+            <div class="related-card__body">
+              <div class="related-card__title">{{ .Params.h1 | default .Title }}</div>
+              {{- with .Description }}
+              <p class="related-card__excerpt">{{ . | truncate 100 }}</p>
+              {{- end }}
+            </div>
+          </a>
+        </article>
+        {{- end }}
+      </div>
+      <button class="related-slider__btn related-slider__btn--next" data-slider-next aria-label="Następne">
+        <span class="material-symbols-outlined">chevron_right</span>
+      </button>
+    </div>
+  </div>
+</section>
+{{- end }}
+
+{{ end }}

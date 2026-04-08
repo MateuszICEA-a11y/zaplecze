@@ -1,0 +1,26 @@
+{{- if .IsPage -}}
+{{- $schema := dict
+  "@context" "https://schema.org"
+  "@type" "NewsArticle"
+  "headline" .Title
+  "description" (.Description | default "")
+  "url" .Permalink
+  "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
+  "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+  "inLanguage" "pl"
+-}}
+{{- with .Params.image -}}
+  {{- $image := dict "@type" "ImageObject" "url" (. | absURL) "width" 1200 "height" 630 -}}
+  {{- $schema = merge $schema (dict "image" $image) -}}
+{{- end -}}
+{{- $author := dict "@type" "Organization" "name" "Redakcja BusManiak.pl" "url" (printf "%s" $.Site.BaseURL) -}}
+{{- $schema = merge $schema (dict "author" $author) -}}
+{{- $publisher := dict "@type" "Organization" "name" $.Site.Title "url" $.Site.BaseURL "logo" (dict "@type" "ImageObject" "url" ("/images/og-default.jpg" | absURL)) -}}
+{{- $schema = merge $schema (dict "publisher" $publisher) -}}
+{{- $schema = merge $schema (dict "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)) -}}
+{{- $schema = merge $schema (dict "articleSection" "News") -}}
+{{- $schema = merge $schema (dict "wordCount" (countwords .Content)) -}}
+<script type="application/ld+json">
+{{ $schema | jsonify | safeJS }}
+</script>
+{{- end -}}

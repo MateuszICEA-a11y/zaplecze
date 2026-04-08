@@ -28,7 +28,7 @@
 {{- with .Params.robots }}
 <meta name="robots" content="{{ . }}">
 {{- else }}
-<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow, max-image-preview:large">
 {{- end -}}
 {{- end }}
 <meta property="og:title" content="{{ .Title }}">
@@ -68,8 +68,12 @@
 <meta property="article:tag" content="{{ . }}">
 {{- end -}}
 {{- end -}}
-{{- if .IsPage }}
-  {{- partial "schema/article.html" . -}}
+{{- if .IsPage -}}
+  {{- if eq .Section "news" -}}
+    {{- partial "schema/news-article.html" . -}}
+  {{- else -}}
+    {{- partial "schema/article.html" . -}}
+  {{- end -}}
 {{- end -}}
 {{- with .Params.faq }}
   {{- partial "schema/faq.html" $ -}}

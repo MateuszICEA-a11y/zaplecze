@@ -1,0 +1,98 @@
+{{ define "main" }}
+{{- $allPages := .Pages -}}
+{{- $paginator := .Paginate $allPages 12 }}
+
+<div class="news-header">
+  <div class="container">
+    <h1 class="news-header__title">{{ .Params.h1 | default .Title }}{{ if gt $paginator.PageNumber 1 }} – Strona {{ $paginator.PageNumber }}{{ end }}</h1>
+    {{- with .Description }}
+    <p class="news-header__desc">{{ . }}</p>
+    {{- end }}
+  </div>
+</div>
+
+{{- if gt (len $paginator.Pages) 0 }}
+<div class="container news-container">
+
+  {{- if eq $paginator.PageNumber 1 -}}
+  {{- $hero := index $paginator.Pages 0 -}}
+  {{- $readTime := math.Round (div (countwords $hero.Content) 200.0) -}}
+  {{- if lt $readTime 1 -}}{{- $readTime = 1 -}}{{- end }}
+  <a href="{{ $hero.Permalink }}" class="news-hero-card">
+    {{- with $hero.Params.image }}
+    <div class="news-hero-card__image">
+      <img src="{{ . }}" alt="{{ $hero.Params.image_alt | default $hero.Title }}" loading="eager">
+    </div>
+    {{- else }}
+    <div class="news-hero-card__image news-hero-card__image--empty"></div>
+    {{- end }}
+    <div class="news-hero-card__body">
+      <span class="news-hero-card__badge">Najnowsze</span>
+      <h2 class="news-hero-card__title">{{ $hero.Params.h1 | default $hero.Title }}</h2>
+      {{- with $hero.Description }}
+      <p class="news-hero-card__lead">{{ . | truncate 200 }}</p>
+      {{- end }}
+      <div class="news-hero-card__meta">
+        <span>{{ partial "news-timestamp.html" $hero.Date }}</span>
+        <span>{{ $readTime }} min czytania</span>
+        {{- range first 3 $hero.Params.tags }}
+        <span class="news-tag">{{ . }}</span>
+        {{- end }}
+      </div>
+    </div>
+  </a>
+  {{- end }}
+
+  <div class="news-list">
+    {{- $skip := 0 -}}
+    {{- if eq $paginator.PageNumber 1 -}}{{- $skip = 1 -}}{{- end -}}
+    {{- range $i, $page := $paginator.Pages -}}
+    {{- if ge $i $skip -}}
+    {{- $readTime := math.Round (div (countwords $page.Content) 200.0) -}}
+    {{- if lt $readTime 1 -}}{{- $readTime = 1 -}}{{- end }}
+    <a href="{{ $page.Permalink }}" class="news-item">
+      <div class="news-item__body">
+        <h3 class="news-item__title">{{ $page.Params.h1 | default $page.Title }}</h3>
+        {{- with $page.Description }}
+        <p class="news-item__excerpt">{{ . | truncate 160 }}</p>
+        {{- end }}
+        <div class="news-item__meta">
+          <span class="news-timestamp">{{ partial "news-timestamp.html" $page.Date }}</span>
+          <span>{{ $readTime }} min</span>
+          {{- range first 2 $page.Params.tags }}
+          <span class="news-tag">{{ . }}</span>
+          {{- end }}
+        </div>
+      </div>
+      {{- with $page.Params.image }}
+      <div class="news-item__thumb">
+        <img src="{{ . }}" alt="{{ $page.Params.image_alt | default $page.Title }}" loading="lazy">
+      </div>
+      {{- end }}
+    </a>
+    {{- end -}}
+    {{- end }}
+  </div>
+
+  {{- if gt $paginator.TotalPages 1 }}
+  <nav class="pagination" aria-label="Paginacja">
+    {{- if $paginator.HasPrev }}
+    <a href="{{ $paginator.Prev.URL }}">&larr; Nowsze</a>
+    {{- end -}}
+    {{- range $paginator.Pagers -}}
+    {{- if eq . $paginator }}
+    <span class="active">{{ .PageNumber }}</span>
+    {{- else }}
+    <a href="{{ .URL }}">{{ .PageNumber }}</a>
+    {{- end -}}
+    {{- end -}}
+    {{- if $paginator.HasNext }}
+    <a href="{{ $paginator.Next.URL }}">Starsze &rarr;</a>
+    {{- end }}
+  </nav>
+  {{- end }}
+
+</div>
+{{- end }}
+
+{{ end }}
