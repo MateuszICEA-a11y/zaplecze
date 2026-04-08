@@ -1,35 +1,17 @@
 {{- if not .IsHome -}}
+{{- $items := slice -}}
+{{- $items = $items | append (dict "@type" "ListItem" "position" 1 "name" "Strona główna" "item" (.Site.BaseURL | strings.TrimRight "/")) -}}
+{{- $pos := 1 -}}
+{{- range .Ancestors.Reverse -}}
+  {{- if not .IsHome -}}
+    {{- $pos = add $pos 1 -}}
+    {{- $items = $items | append (dict "@type" "ListItem" "position" $pos "name" .Title "item" (.Permalink | strings.TrimRight "/")) -}}
+  {{- end -}}
+{{- end -}}
+{{- $pos = add $pos 1 -}}
+{{- $items = $items | append (dict "@type" "ListItem" "position" $pos "name" $.Title "item" ($.Permalink | strings.TrimRight "/")) -}}
+{{- $schema := dict "@context" "https://schema.org" "@type" "BreadcrumbList" "itemListElement" $items -}}
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Strona główna",
-      "item": "{{ .Site.BaseURL | strings.TrimRight "/" }}"
-    }
-    {{- $pos := 1 }}
-    {{- range .Ancestors.Reverse }}
-    {{- if not .IsHome }}
-    {{- $pos = add $pos 1 }},
-    {
-      "@type": "ListItem",
-      "position": {{ $pos }},
-      "name": "{{ .Title | replaceRE `"` `\"` }}",
-      "item": "{{ .Permalink | strings.TrimRight "/" }}"
-    }
-    {{- end }}
-    {{- end }}
-    {{- $pos = add $pos 1 }},
-    {
-      "@type": "ListItem",
-      "position": {{ $pos }},
-      "name": "{{ .Title | replaceRE `"` `\"` }}",
-      "item": "{{ .Permalink | strings.TrimRight "/" }}"
-    }
-  ]
-}
+{{ $schema | jsonify | safeJS }}
 </script>
 {{- end -}}

@@ -1,55 +1,39 @@
 {{- if .IsPage -}}
+{{- $schema := dict
+  "@context" "https://schema.org"
+  "@type" "Article"
+  "headline" .Title
+  "description" (.Description | default "")
+  "url" .Permalink
+  "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
+  "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+  "inLanguage" "pl"
+-}}
+{{- with .Params.image -}}
+  {{- $image := dict "@type" "ImageObject" "url" (. | absURL) "width" 1376 "height" 768 -}}
+  {{- $schema = merge $schema (dict "image" $image) -}}
+{{- end -}}
+{{- with .Params.author -}}
+  {{- $authorPage := $.Site.GetPage (printf "/autor/%s" .) -}}
+  {{- if $authorPage -}}
+    {{- $author := dict "@type" "Person" "name" $authorPage.Title "url" $authorPage.Permalink -}}
+    {{- with $authorPage.Params.avatar -}}
+      {{- $author = merge $author (dict "image" (. | absURL)) -}}
+    {{- end -}}
+    {{- with $authorPage.Params.role -}}
+      {{- $author = merge $author (dict "jobTitle" .) -}}
+    {{- end -}}
+    {{- $schema = merge $schema (dict "author" $author) -}}
+  {{- end -}}
+{{- end -}}
+{{- $publisher := dict "@type" "Organization" "name" $.Site.Title "url" $.Site.BaseURL "logo" (dict "@type" "ImageObject" "url" ("/images/og-default.jpg" | absURL)) -}}
+{{- $schema = merge $schema (dict "publisher" $publisher) -}}
+{{- $schema = merge $schema (dict "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)) -}}
+{{- with .CurrentSection -}}
+  {{- $schema = merge $schema (dict "articleSection" .Title) -}}
+{{- end -}}
+{{- $schema = merge $schema (dict "wordCount" (countwords $.Content)) -}}
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": {{ .Title | jsonify }},
-  "description": {{ .Description | default "" | jsonify }},
-  "url": {{ .Permalink | jsonify }},
-  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
-  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
-  "inLanguage": "pl",
-  {{- with .Params.image }}
-  "image": {
-    "@type": "ImageObject",
-    "url": "{{ . | absURL }}",
-    "width": 1376,
-    "height": 768
-  },
-  {{- end }}
-  {{- with .Params.author }}
-  {{- $author := $.Site.GetPage (printf "/autor/%s" .) }}
-  {{- if $author }}
-  "author": {
-    "@type": "Person",
-    "name": {{ $author.Title | jsonify }},
-    "url": {{ $author.Permalink | jsonify }}
-    {{- with $author.Params.avatar }},
-    "image": "{{ . | absURL }}"
-    {{- end }}
-    {{- with $author.Params.role }},
-    "jobTitle": {{ . | jsonify }}
-    {{- end }}
-  },
-  {{- end }}
-  {{- end }}
-  "publisher": {
-    "@type": "Organization",
-    "name": {{ .Site.Title | jsonify }},
-    "url": {{ .Site.BaseURL | jsonify }},
-    "logo": {
-      "@type": "ImageObject",
-      "url": "{{ "/images/og-default.jpg" | absURL }}"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": {{ .Permalink | jsonify }}
-  },
-  {{- with .CurrentSection }}
-  "articleSection": {{ .Title | jsonify }},
-  {{- end }}
-  "wordCount": {{ countwords .Content }}
-}
+{{ $schema | jsonify | safeJS }}
 </script>
 {{- end -}}

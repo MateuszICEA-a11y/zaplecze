@@ -9,7 +9,7 @@ layout: "sitemap-html"
 
 ### Duże busy (L2–L4, DMC 3.0–5.0t)
 - [Fiat Ducato](/modele/fiat-ducato/) – generacje, wersje, dane techniczne
-- [Fiat Ducato Maxi](/modele/fiat-ducato-maxi/) – wymiary, ładowność, zastosowania
+- [Fiat Ducato Maxi](/modele/fiat-ducato/maxi/) – wymiary, ładowność, zastosowania
 - [Mercedes Sprinter](/modele/mercedes-sprinter/) – generacje, silniki, wersje
 - [Iveco Daily](/modele/iveco-daily/) – pełna oferta, 3.5t i 7.5t
 - [Ford Transit](/modele/ford-transit/) – historia, aktualna oferta
@@ -158,10 +158,8 @@ layout: "sitemap-html"
 ## Wynajem busów i kamperów
 
 - [Wynajem kampera – poradnik i porównanie wypożyczalni 2026](/wynajem/wynajem-kampera-poradnik/)
-- [Wynajęcie kampera – ile kosztuje i na co uważać](/wynajem/wynajecie-kampera/)
 - [Wypożyczalnie kamperów w Polsce – przegląd firm](/wynajem/wypozyczalnie-kamperow/)
 - [Wynajem kampera cena – cennik na sezon 2026](/wynajem/wynajem-kampera-cena/)
-- [Ile kosztuje wynajem kampera – cennik i koszty ukryte](/wynajem/ile-kosztuje-wynajem/)
 - [Wynajem kampera Warszawa – najlepsze wypożyczalnie](/wynajem/wynajem-kampera-warszawa/)
 - [Wynajem busa 9-osobowego – oferty i ceny](/wynajem/wynajem-busa-9-osobowy/)
 - [Wypożyczalnia busów – dostawcze i osobowe](/wynajem/wypozyczalnia-busow/)

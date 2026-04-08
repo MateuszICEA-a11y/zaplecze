@@ -1,20 +1,21 @@
+{{- $schema := dict
+  "@context" "https://schema.org"
+  "@type" "Person"
+  "name" .Title
+  "url" .Permalink
+-}}
+{{- with .Params.role -}}
+  {{- $schema = merge $schema (dict "jobTitle" .) -}}
+{{- end -}}
+{{- with .Params.bio -}}
+  {{- $schema = merge $schema (dict "description" (. | truncate 250)) -}}
+{{- end -}}
+{{- with .Params.avatar -}}
+  {{- $schema = merge $schema (dict "image" (. | absURL)) -}}
+{{- end -}}
+{{- with .Params.sameAs -}}
+  {{- $schema = merge $schema (dict "sameAs" .) -}}
+{{- end -}}
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": {{ .Title | jsonify }},
-  "url": {{ .Permalink | jsonify }}
-  {{- with .Params.role }},
-  "jobTitle": {{ . | jsonify }}
-  {{- end }}
-  {{- with .Params.bio }},
-  "description": {{ . | truncate 250 | jsonify }}
-  {{- end }}
-  {{- with .Params.avatar }},
-  "image": "{{ . | absURL }}"
-  {{- end }}
-  {{- with .Params.sameAs }},
-  "sameAs": [{{ range $i, $v := . }}{{ if $i }},{{ end }}{{ $v | jsonify }}{{ end }}]
-  {{- end }}
-}
+{{ $schema | jsonify | safeJS }}
 </script>
