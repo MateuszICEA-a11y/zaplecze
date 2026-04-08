@@ -30,12 +30,13 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
           DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
+          KIE_API_KEY: ${{ secrets.KIE_API_KEY }}
         run: python pipeline/news-generator/main.py
 
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add portals/busmaniak.pl/content/news/ pipeline/news-generator/published.json
+          git add portals/busmaniak.pl/content/news/ portals/busmaniak.pl/static/images/news/ pipeline/news-generator/published.json
           git diff --cached --quiet || git commit -m "news: auto-generated daily news"
           git push
