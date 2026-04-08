@@ -18,7 +18,7 @@ tags:
 - ceny mieszkań
 sources:
 - https://news.google.com/rss/articles/CBMiakFVX3lxTE9TNFpBeTRScHY5U0Z2anNsUFNmbFVSOFhjeXVkZjk0MFpCRS1ZNGpVMzZvdnZCTi1FWjdKTDN3QnA5OEZTQXQyUEQwRmY1T0lET2xMMGgxVmxVZG5CdGJST2JDcWtRc19sTVE?oc=5
-image: /images/news/kamper-zamiast-kredytu-hipotecznego-coraz-wiecej-polakow-rozwaza-zycie-na-kolkac.jpg
+image: /images/news/kamper-zamiast-kredytu-hipotecznego-coraz-wiecej-polakow-rozwaza-zycie-na-kolkac.webp
 image_alt: BusManiak.pl – Kamper zamiast kredytu hipotecznego? Coraz więcej Polaków rozważa życie na kółkach
 ---
 
