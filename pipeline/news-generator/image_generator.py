@@ -78,13 +78,29 @@ def _poll_until_done(task_id: str) -> str:
     raise RuntimeError(f"Timeout after {MAX_ATTEMPTS} attempts")
 
 
-def _download(url: str, dest: Path) -> None:
+def _detect_ext(data: bytes) -> str:
+    """Detect image format from magic bytes."""
+    if data[:4] == b"RIFF" and data[8:12] == b"WEBP":
+        return ".webp"
+    if data[:3] == b"\xff\xd8\xff":
+        return ".jpg"
+    if data[:8] == b"\x89PNG\r\n\x1a\n":
+        return ".png"
+    return ".jpg"
+
+
+def _download(url: str, dest: Path) -> Path:
+    """Download image and return actual path (extension may change)."""
     req = urllib.request.Request(url, headers={
         "User-Agent": "Mozilla/5.0",
         "Referer": "https://api.kie.ai/",
     })
     with urllib.request.urlopen(req, timeout=30) as resp:
-        dest.write_bytes(resp.read())
+        data = resp.read()
+    ext = _detect_ext(data)
+    actual_dest = dest.with_suffix(ext)
+    actual_dest.write_bytes(data)
+    return actual_dest
 
 
 def build_prompt(title: str, section: str) -> str:
@@ -121,11 +137,13 @@ def generate_hero_image(
 
     images_dir = static_dir / "images" / "news"
     images_dir.mkdir(parents=True, exist_ok=True)
-    dest = images_dir / f"{slug}.webp"
 
-    if dest.exists():
-        log.info("Image already exists: %s", dest.name)
-        return f"/images/news/{slug}.webp"
+    # Check if image already exists with any extension
+    for ext in (".webp", ".jpg", ".png"):
+        candidate = images_dir / f"{slug}{ext}"
+        if candidate.exists():
+            log.info("Image already exists: %s", candidate.name)
+            return f"/images/news/{slug}{ext}"
 
     prompt = build_prompt(title, section)
     log.info("Generating hero image for '%s'...", title[:60])
@@ -135,9 +153,10 @@ def generate_hero_image(
         log.info("  kie.ai taskId: %s", task_id)
         image_url = _poll_until_done(task_id)
         log.info("  Image URL: %s", image_url[:80])
-        _download(image_url, dest)
-        log.info("  Saved: %s", dest)
-        return f"/images/news/{slug}.webp"
+        dest = images_dir / f"{slug}.webp"  # placeholder name, _download fixes ext
+        actual = _download(image_url, dest)
+        log.info("  Saved: %s", actual)
+        return f"/images/news/{actual.name}"
     except Exception as e:
         log.error("Image generation failed: %s", e)
         return None
