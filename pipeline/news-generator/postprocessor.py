@@ -85,7 +85,13 @@ def generate_slug(title: str) -> str:
     slug = re.sub(r"[^a-z0-9\s-]", "", slug)
     slug = re.sub(r"[\s]+", "-", slug.strip())
     slug = re.sub(r"-+", "-", slug)
-    return slug[:80].rstrip("-")
+    if len(slug) <= 80:
+        return slug
+    truncated = slug[:80]
+    last_hyphen = truncated.rfind("-")
+    if last_hyphen > 0:
+        return truncated[:last_hyphen]
+    return truncated
 
 
 def assign_placeholder_image(fm: dict, section: str, image_map: dict[str, str]) -> None:

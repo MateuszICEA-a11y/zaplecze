@@ -83,3 +83,10 @@ class TestGenerateSlug:
         long_title = "A" * 100
         slug = generate_slug(long_title)
         assert len(slug) <= 80
+
+    def test_truncates_at_word_boundary(self):
+        title = "Kamper zamiast kredytu hipotecznego Coraz więcej Polaków rozważa życie na kółkach"
+        slug = generate_slug(title)
+        assert len(slug) <= 80
+        assert not slug.endswith("-")
+        assert slug == "kamper-zamiast-kredytu-hipotecznego-coraz-wiecej-polakow-rozwaza-zycie-na"
