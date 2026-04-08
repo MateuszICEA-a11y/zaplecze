@@ -41,7 +41,6 @@ def _create_task(prompt: str) -> str:
             "prompt": prompt,
             "aspect_ratio": "16:9",
             "resolution": "1K",
-            "output_format": "webp",
         },
     })
     if res.get("code") != 200:
