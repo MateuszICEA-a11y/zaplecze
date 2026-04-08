@@ -1,24 +1,19 @@
-{{/* Brand logo partial – maps section slug to manufacturer SVG logo */}}
-{{/* Usage: {{ partial "brand-icon.html" "citroen-berlingo" }} */}}
-
-{{ $slug := . }}
-{{ $brand := "" }}
-
-{{ if hasPrefix $slug "citroen" }}{{ $brand = "citroen" }}
-{{ else if hasPrefix $slug "dacia" }}{{ $brand = "dacia" }}
-{{ else if hasPrefix $slug "fiat" }}{{ $brand = "fiat" }}
-{{ else if hasPrefix $slug "ford" }}{{ $brand = "ford" }}
-{{ else if hasPrefix $slug "hyundai" }}{{ $brand = "hyundai" }}
-{{ else if hasPrefix $slug "iveco" }}{{ $brand = "iveco" }}
-{{ else if hasPrefix $slug "man" }}{{ $brand = "man" }}
-{{ else if hasPrefix $slug "maxus" }}{{ $brand = "maxus" }}
-{{ else if hasPrefix $slug "mercedes" }}{{ $brand = "mercedes-benz" }}
-{{ else if hasPrefix $slug "nissan" }}{{ $brand = "nissan" }}
-{{ else if hasPrefix $slug "opel" }}{{ $brand = "opel" }}
-{{ else if hasPrefix $slug "peugeot" }}{{ $brand = "peugeot" }}
-{{ else if hasPrefix $slug "renault" }}{{ $brand = "renault" }}
-{{ else if hasPrefix $slug "toyota" }}{{ $brand = "toyota" }}
-{{ else if hasPrefix $slug "volkswagen" }}{{ $brand = "volkswagen" }}
-{{ end }}
-
-{{ if $brand }}<img src="/images/brands/{{ $brand }}.png" alt="{{ $brand }}" class="brand-icon" loading="lazy">{{ else }}<span class="material-symbols-outlined brand-icon-fallback">directions_bus</span>{{ end }}
+{{- $slug := . -}}
+{{- $brand := "" -}}
+{{- if hasPrefix $slug "citroen" -}}{{- $brand = "citroen" -}}
+{{- else if hasPrefix $slug "dacia" -}}{{- $brand = "dacia" -}}
+{{- else if hasPrefix $slug "fiat" -}}{{- $brand = "fiat" -}}
+{{- else if hasPrefix $slug "ford" -}}{{- $brand = "ford" -}}
+{{- else if hasPrefix $slug "hyundai" -}}{{- $brand = "hyundai" -}}
+{{- else if hasPrefix $slug "iveco" -}}{{- $brand = "iveco" -}}
+{{- else if hasPrefix $slug "man" -}}{{- $brand = "man" -}}
+{{- else if hasPrefix $slug "maxus" -}}{{- $brand = "maxus" -}}
+{{- else if hasPrefix $slug "mercedes" -}}{{- $brand = "mercedes-benz" -}}
+{{- else if hasPrefix $slug "nissan" -}}{{- $brand = "nissan" -}}
+{{- else if hasPrefix $slug "opel" -}}{{- $brand = "opel" -}}
+{{- else if hasPrefix $slug "peugeot" -}}{{- $brand = "peugeot" -}}
+{{- else if hasPrefix $slug "renault" -}}{{- $brand = "renault" -}}
+{{- else if hasPrefix $slug "toyota" -}}{{- $brand = "toyota" -}}
+{{- else if hasPrefix $slug "volkswagen" -}}{{- $brand = "volkswagen" -}}
+{{- end -}}
+{{- if $brand -}}<img src="/images/brands/{{ $brand }}.png" alt="{{ $brand }}" class="brand-icon" loading="lazy">{{- else -}}<span class="material-symbols-outlined brand-icon-fallback">directions_bus</span>{{- end -}}

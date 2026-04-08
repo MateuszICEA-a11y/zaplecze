@@ -26,65 +26,64 @@
     </label>
 
     <div class="site-nav__links">
-      {{ $currentSection := printf "/%s/" $.Section }}
-      {{ range .Site.Menus.main }}
-        {{ $isActive := eq .URL $currentSection }}
-        {{ if eq .URL "/modele/" }}
+      {{- $currentSection := printf "/%s/" $.Section -}}
+      {{- range .Site.Menus.main -}}
+        {{- $isActive := eq .URL $currentSection -}}
+        {{- if eq .URL "/modele/" }}
           <div class="dropdown">
             <a href="{{ .URL }}" class="site-nav__link{{ if $isActive }} site-nav__link--active{{ end }}">
               {{ .Name }} <span class="material-symbols-outlined dropdown__arrow">expand_more</span>
             </a>
             <div class="dropdown__panel">
               <div class="dropdown__inner">
-                {{/* Breadcrumb inside mega menu */}}
                 <div class="dropdown__breadcrumb">
                   <a href="{{ $.Site.BaseURL }}">Strona główna</a>
                   <span>/</span>
                   <a href="/modele/">Modele busów i vanów</a>
-                  {{ if and (eq $.Section "modele") (ne $.Kind "section") }}
+                  {{- if and (eq $.Section "modele") (ne $.Kind "section") }}
                     <span>/</span>
                     <span>{{ $.Params.h1 | default $.Title | truncate 50 }}</span>
-                  {{ end }}
+                  {{- end }}
                 </div>
                 <div class="dropdown__grid">
-                  {{ $modele := $.Site.GetPage "/modele" }}
-                  {{ if $modele }}
-                    {{ $brandOrder := slice "citroen" "dacia" "fiat" "ford" "hyundai" "iveco" "man" "maxus" "mercedes" "nissan" "opel" "peugeot" "renault" "toyota" "volkswagen" }}
-                    {{ range $brand := $brandOrder }}
-                      {{ $hasModels := false }}
-                      {{ $models := slice }}
-                      {{ range $modele.Sections }}
-                        {{ $dirName := .File.Dir | path.Dir | path.Base }}
-                        {{ if hasPrefix $dirName $brand }}
-                          {{ $models = $models | append . }}
-                          {{ $hasModels = true }}
-                        {{ end }}
-                      {{ end }}
-                      {{ if $hasModels }}
+                  {{- $modele := $.Site.GetPage "/modele" -}}
+                  {{- if $modele -}}
+                    {{- $brandOrder := slice "citroen" "dacia" "fiat" "ford" "hyundai" "iveco" "man" "maxus" "mercedes" "nissan" "opel" "peugeot" "renault" "toyota" "volkswagen" -}}
+                    {{- range $brand := $brandOrder -}}
+                      {{- $hasModels := false -}}
+                      {{- $models := slice -}}
+                      {{- range $modele.Sections -}}
+                        {{- $dirName := .File.Dir | path.Dir | path.Base -}}
+                        {{- if hasPrefix $dirName $brand -}}
+                          {{- $models = $models | append . -}}
+                          {{- $hasModels = true -}}
+                        {{- end -}}
+                      {{- end -}}
+                      {{- if $hasModels }}
                       <div class="dropdown__brand-group">
                         <div class="dropdown__brand-label">{{ $brand | title }}</div>
-                        {{ range $models }}
-                          {{ $h1 := .Params.h1 | default .Title }}
-                          {{ $shortName := $h1 }}
-                          {{ if findRE `\s–\s` $h1 }}
-                            {{ $shortName = index (split $h1 " – ") 0 }}
-                          {{ end }}
-                          {{ $dirName := .File.Dir | path.Dir | path.Base }}
+                        {{- range $models -}}
+                          {{- $h1 := .Params.h1 | default .Title -}}
+                          {{- $shortName := $h1 -}}
+                          {{- if findRE `\s–\s` $h1 -}}
+                            {{- $shortName = index (split $h1 " – ") 0 -}}
+                          {{- end -}}
+                          {{- $dirName := .File.Dir | path.Dir | path.Base }}
                           <a href="{{ .Permalink }}" class="dropdown__model">
-                            {{ partial "brand-icon.html" $dirName }}
+                            {{- partial "brand-icon.html" $dirName }}
                             {{ $shortName }}
                           </a>
-                        {{ end }}
+                        {{- end }}
                       </div>
-                      {{ end }}
-                    {{ end }}
-                  {{ end }}
+                      {{- end -}}
+                    {{- end -}}
+                  {{- end }}
                 </div>
                 <a href="/modele/" class="dropdown__see-all">Zobacz wszystko &rarr;</a>
               </div>
             </div>
           </div>
-        {{ else if eq .URL "/narzedzia/" }}
+        {{- else if eq .URL "/narzedzia/" }}
           <div class="dropdown dropdown--small">
             <a href="{{ .URL }}" class="site-nav__link{{ if $isActive }} site-nav__link--active{{ end }}">
               {{ .Name }} <span class="material-symbols-outlined dropdown__arrow">expand_more</span>
@@ -111,11 +110,10 @@
               </div>
             </div>
           </div>
-        {{ else }}
+        {{- else }}
           <a href="{{ .URL }}" class="site-nav__link{{ if $isActive }} site-nav__link--active{{ end }}">{{ .Name }}</a>
-        {{ end }}
-      {{ end }}
-      {{/* ═══ SEARCH ═══ */}}
+        {{- end -}}
+      {{- end }}
       <div class="site-search">
         <div class="site-search__box">
           <input type="text" id="search-input" class="site-search__input" placeholder="Szukaj busa..." autocomplete="off">

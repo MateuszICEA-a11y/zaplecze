@@ -5,109 +5,83 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
-
-{{/* Paginator – created once, reused for title + canonical */}}
-{{ $pag := false }}
-{{ if .IsNode }}{{ $pag = .Paginate (where .Pages "Kind" "ne" "term") }}{{ end }}
-
-{{/* Title with pagination suffix */}}
+{{- $pag := false -}}
+{{- if .IsNode }}{{ $pag = .Paginate (where .Pages "Kind" "ne" "term") }}{{ end -}}
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ if and $pag (gt $pag.PageNumber 1) }} - Strona {{ $pag.PageNumber }}{{ end }} | {{ .Site.Title }}{{ end }}</title>
-
-{{/* Meta description */}}
-{{ with .Description }}
+{{- with .Description }}
 <meta name="description" content="{{ . }}">
-{{ else }}
-{{ with .Site.Params.description }}
+{{- else -}}
+{{- with .Site.Params.description }}
 <meta name="description" content="{{ . }}">
-{{ end }}
-{{ end }}
-
-{{/* Canonical URL – self-referencing on paginated pages */}}
-{{ if $pag }}{{ if $pag.HasPrev }}
+{{- end -}}
+{{- end -}}
+{{- if $pag -}}{{- if $pag.HasPrev }}
 <link rel="canonical" href="{{ .Paginator.URL | absURL }}">
-{{ else }}
+{{- else }}
 <link rel="canonical" href="{{ .Permalink }}">
-{{ end }}{{ else }}
+{{- end -}}{{- else }}
 <link rel="canonical" href="{{ .Permalink }}">
-{{ end }}
-
-{{/* Robots – noindex on dev, index on production */}}
-{{ if .Site.Params.noindex }}
+{{- end -}}
+{{- if .Site.Params.noindex }}
 <meta name="robots" content="noindex, nofollow">
-{{ else }}
-{{ with .Params.robots }}
+{{- else -}}
+{{- with .Params.robots }}
 <meta name="robots" content="{{ . }}">
-{{ else }}
+{{- else }}
 <meta name="robots" content="index, follow">
-{{ end }}
-{{ end }}
-
-{{/* Open Graph */}}
+{{- end -}}
+{{- end }}
 <meta property="og:title" content="{{ .Title }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
-{{ with .Description }}
+{{- with .Description }}
 <meta property="og:description" content="{{ . }}">
-{{ end }}
-{{ with .Params.image }}
+{{- end -}}
+{{- with .Params.image }}
 <meta property="og:image" content="{{ . | absURL }}">
-{{ else }}
-{{ with .Site.Params.ogImage }}
+{{- else -}}
+{{- with .Site.Params.ogImage }}
 <meta property="og:image" content="{{ . | absURL }}">
-{{ end }}
-{{ end }}
+{{- end -}}
+{{- end }}
 <meta property="og:site_name" content="{{ .Site.Title }}">
 <meta property="og:locale" content="pl_PL">
-
-{{/* Twitter Card */}}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ .Title }}">
-{{ with .Description }}
+{{- with .Description }}
 <meta name="twitter:description" content="{{ . }}">
-{{ end }}
-{{ with .Params.image }}
+{{- end -}}
+{{- with .Params.image }}
 <meta name="twitter:image" content="{{ . | absURL }}">
-{{ end }}
-
-{{/* Article-specific OG */}}
-{{ if .IsPage }}
-{{ with .Date }}
+{{- end -}}
+{{- if .IsPage -}}
+{{- with .Date }}
 <meta property="article:published_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
-{{ end }}
-{{ with .Lastmod }}
+{{- end -}}
+{{- with .Lastmod }}
 <meta property="article:modified_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}">
-{{ end }}
-{{ with .Params.author }}
+{{- end -}}
+{{- with .Params.author }}
 <meta property="article:author" content="{{ . }}">
-{{ end }}
-{{ range .Params.tags }}
+{{- end -}}
+{{- range .Params.tags }}
 <meta property="article:tag" content="{{ . }}">
-{{ end }}
-{{ end }}
-
-{{/* Schema JSON-LD */}}
-{{ if .IsPage }}
-  {{ partial "schema/article.html" . }}
-{{ end }}
-{{ with .Params.faq }}
-  {{ partial "schema/faq.html" $ }}
-{{ end }}
-{{ if eq .Type "authors" }}
-  {{ partial "schema/person.html" . }}
-{{ end }}
-{{ partial "schema/breadcrumb.html" . }}
-
-{{/* CSS - inlined for performance */}}
-{{ $css := resources.Get "css/main.css" | minify }}
+{{- end -}}
+{{- end -}}
+{{- if .IsPage }}
+  {{- partial "schema/article.html" . -}}
+{{- end -}}
+{{- with .Params.faq }}
+  {{- partial "schema/faq.html" $ -}}
+{{- end -}}
+{{- if eq .Type "authors" }}
+  {{- partial "schema/person.html" . -}}
+{{- end -}}
+{{- partial "schema/breadcrumb.html" . -}}
+{{- $css := resources.Get "css/main.css" | minify }}
 <style>{{ $css.Content | safeCSS }}</style>
-
-{{/* Material Symbols for feature icons */}}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
-
-{{/* RSS */}}
-{{ range .AlternativeOutputFormats }}
+{{- range .AlternativeOutputFormats }}
 <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}" title="{{ $.Site.Title }}">
-{{ end }}
-
-{{/* Favicon */}}
+{{- end }}
 <link rel="icon" href="/favicon.ico" sizes="any">
