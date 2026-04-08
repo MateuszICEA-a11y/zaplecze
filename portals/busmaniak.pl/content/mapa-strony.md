@@ -101,7 +101,7 @@ layout: "sitemap-html"
 - [Izolacja busa – materiały i techniki](/przerobki/izolacja-busa/)
 - [Instalacja elektryczna w kamperze – poradnik](/przerobki/instalacja-elektryczna-kamper/)
 - [Instalacja wodna w kamperze – zbiorniki, pompy, grzanie](/przerobki/instalacja-wodna-kamper/)
-- [Busy przerobione na kampera – galeria realizacji](/przerobki/busy-przerobione-galeria/)
+- [Busy przerobione na kampera – realizacje z kosztorysami](/przerobki/busy-przerobione-galeria/)
 
 ---
 

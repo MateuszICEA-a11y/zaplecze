@@ -1,12 +1,12 @@
 ---
-title: "Busy przerobione na kampera – galeria realizacji"
+title: "Busy przerobione na kampera – realizacje z kosztorysami"
 date: 2026-03-23
-description: "Galeria busów przerobionych na kampery – zdjęcia realizacji z opisami i kosztami."
+description: "Trzy kompletne realizacje przeróbek busów na kampery – Ducato, Sprinter i Transit. Kosztorysy, specyfikacje zabudowy i porównanie projektów."
 draft: false
 image: "/images/busy-przerobione-galeria-hero.webp"
-image_alt: "Galeria przeróbek busów na kampery – różne projekty"
+image_alt: "Busy przerobione na kampery – realizacje z kosztorysami"
 author: "anna-wozniak"
-h1: "Busy przerobione na kampera – galeria realizacji z kosztorysami"
+h1: "Busy przerobione na kampera – realizacje z kosztorysami"
 main_keyword: "busy przerobione na kampera"
 lead: "Każda konwersja busa na kampera to inne wyzwanie – inny rozmiar nadwozia, budżet i oczekiwania. Przedstawiamy trzy kompletne realizacje polskich konwerterów: Fiat Ducato L3H2, Mercedes Sprinter L2H2 i Ford Transit L3H2. Przy każdym projekcie podajemy realne koszty, zastosowane materiały i czas budowy – dane, które pomagają zaplanować własną przeróbkę."
 faq:

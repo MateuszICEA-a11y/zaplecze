@@ -14,6 +14,12 @@
 
   {{- partial "footer.html" . -}}
 
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close" aria-label="Zamknij">&times;</button>
+    <img src="" alt="">
+    <div class="lightbox__caption"></div>
+  </div>
+
   <script>
   /* Related-inline shortcode slider */
   document.querySelectorAll('.related-inline').forEach(function(el) {
@@ -62,6 +68,38 @@
     window.addEventListener('resize', updateArrows);
     updateArrows();
   });
+
+  /* Lightbox */
+  (function(){
+    var lb = document.getElementById('lightbox');
+    if (!lb) return;
+    var lbImg = lb.querySelector('img');
+    var lbCap = lb.querySelector('.lightbox__caption');
+
+    document.querySelectorAll('.article__content img, .article-hero__img').forEach(function(img) {
+      img.addEventListener('click', function() {
+        lbImg.src = this.src;
+        lbImg.alt = this.alt;
+        lbCap.textContent = this.alt || '';
+        lb.classList.add('lightbox--open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLb() {
+      lb.classList.remove('lightbox--open');
+      document.body.style.overflow = '';
+      lbImg.src = '';
+    }
+
+    lb.addEventListener('click', function(e) {
+      if (e.target !== lbImg) closeLb();
+    });
+    lb.querySelector('.lightbox__close').addEventListener('click', closeLb);
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLb();
+    });
+  })();
   </script>
 </body>
 </html>
