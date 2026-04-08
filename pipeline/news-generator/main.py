@@ -19,6 +19,7 @@ from collector import collect_all_signals
 from scorer import select_topic
 from generator import generate_article, parse_llm_output, find_related_articles
 from postprocessor import postprocess, build_markdown, generate_slug
+from image_generator import generate_hero_image
 
 logging.basicConfig(
     level=logging.INFO,
@@ -182,8 +183,22 @@ def run() -> None:
         fm.setdefault("main_keyword", topic.signal.title.lower())
         fm.setdefault("lead", topic.signal.summary)
 
-    # 10. Write file (skip if already published today)
+    # 9b. Generate hero image
     slug = generate_slug(fm.get("title", topic.signal.title))
+    portal_dir = REPO_ROOT / pipeline_cfg.get("content_dir", "portals/busmaniak.pl/content").replace("/content", "")
+    static_dir = portal_dir / "static"
+    hero_url = generate_hero_image(
+        title=fm.get("title", topic.signal.title),
+        slug=slug,
+        section=topic.section,
+        static_dir=static_dir,
+    )
+    if hero_url:
+        fm["image"] = hero_url
+        fm["image_alt"] = f"BusManiak.pl – {fm.get('title', '')}"
+        log.info("Hero image set: %s", hero_url)
+
+    # 10. Write file (skip if already published today)
     date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     filename = f"{slug}.md"
     news_dir = content_dir / pipeline_cfg.get("output_section", "news")
