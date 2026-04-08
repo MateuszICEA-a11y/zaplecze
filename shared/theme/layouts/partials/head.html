@@ -24,6 +24,10 @@
 {{- end -}}
 {{- if .Site.Params.noindex }}
 <meta name="robots" content="noindex, nofollow">
+{{- else if eq .Kind "taxonomy" }}
+<meta name="robots" content="noindex, follow">
+{{- else if eq .Kind "term" }}
+<meta name="robots" content="noindex, follow">
 {{- else -}}
 {{- with .Params.robots }}
 <meta name="robots" content="{{ . }}">

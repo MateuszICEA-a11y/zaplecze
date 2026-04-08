@@ -4,6 +4,8 @@ User-agent: *
 Allow: /
 Disallow: /szukaj/
 Disallow: /cdn-cgi/
+Disallow: /tags/
+Disallow: /categories/
 
 #
 #        ______
