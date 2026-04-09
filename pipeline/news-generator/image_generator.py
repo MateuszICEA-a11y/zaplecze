@@ -221,7 +221,7 @@ def _validate_image(image_path: Path, title: str) -> tuple[bool, str]:
 
     payload = {
         "model": "gpt-5.4",
-        "max_tokens": 200,
+        "max_completion_tokens": 200,
         "messages": [
             {
                 "role": "user",
