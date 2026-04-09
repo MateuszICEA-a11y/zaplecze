@@ -31,22 +31,24 @@ MAX_VALIDATION_RETRIES = 2
 STYLE_SUFFIX = (
     "Style: photojournalistic, clean composition, natural lighting, "
     "shallow depth of field, 16:9 landscape. "
-    "ABSOLUTELY NO PEOPLE, no human figures, no hands, no silhouettes. "
+    "No people interacting with vehicles, no hands on fuel pumps, no drivers. "
+    "People may appear as distant background figures only. "
     "No text overlays, no watermarks, no logos, no impossible physics, "
-    "no floating objects, no distorted proportions."
+    "no floating objects, no distorted proportions. "
+    "Vehicles shown must be vans, buses, or campers – NOT trucks or semi-trailers."
 )
 
 CATEGORY_PROMPTS: dict[str, str] = {
     "fuel": (
-        "Wide shot of an empty modern fuel station at daytime, diesel dispensers visible, "
-        "commercial vehicles parked in the background, no people. Clean, professional atmosphere."
+        "Wide shot of a modern fuel station at daytime, diesel dispensers visible, "
+        "white delivery vans and buses parked nearby. Clean, professional atmosphere."
     ),
     "regulations": (
         "Official documents and road signs related to commercial vehicle transport. "
         "Clean desk or road scene with regulatory elements, professional tone."
     ),
     "model_specific": (
-        "Professional side-view photograph of a modern {vehicle_hint} commercial vehicle "
+        "Professional side-view photograph of a modern {vehicle_hint} van "
         "parked on a clean urban road, natural daylight."
     ),
     "camper": (
@@ -54,15 +56,15 @@ CATEGORY_PROMPTS: dict[str, str] = {
         "in the background, golden hour lighting."
     ),
     "electric": (
-        "Modern electric commercial vehicle plugged into a charging station, "
+        "Modern electric delivery van plugged into a charging station, "
         "clean urban environment, daylight."
     ),
     "market": (
-        "Wide shot of a commercial vehicle dealer lot with rows of new vans and buses, "
+        "Wide shot of a dealer lot with rows of new vans and buses, "
         "professional automotive photography."
     ),
     "default": (
-        "Professional photograph of a modern commercial van driving on a highway, "
+        "Professional photograph of a modern delivery van driving on a highway, "
         "dynamic angle, natural daylight, motion blur on background."
     ),
 }
@@ -231,13 +233,17 @@ def _validate_image(image_path: Path, title: str) -> tuple[bool, str]:
                         "text": (
                             f"This AI-generated image is a hero photo for an article titled: \"{title}\".\n"
                             "Evaluate it and respond ONLY with JSON: {\"valid\": true/false, \"reason\": \"...\"}\n"
+                            "Context: this is for BusManiak.pl – a site about vans, buses, and campers.\n"
                             "Check:\n"
-                            "1. Are there ANY people, human figures, hands, or silhouettes? If yes → INVALID.\n"
-                            "2. Is the image physically sensible? (no impossible physics, "
+                            "1. Are there people in close-up interacting with vehicles (fueling, repairing, "
+                            "driving, touching)? If yes → INVALID. Distant background figures are OK.\n"
+                            "2. Does the image contain ONLY large trucks or semi-trailers (18-wheelers)? "
+                            "If yes → INVALID. Vans, minibuses, delivery vans, and campers are CORRECT.\n"
+                            "3. Is the image physically sensible? (no impossible physics, "
                             "objects clipping through each other)\n"
-                            "3. Does it look professional? (not an obvious AI failure with artifacts)\n"
-                            "4. Is it thematically appropriate for the article topic?\n"
-                            "Be strict – if anything looks wrong, mark as invalid."
+                            "4. Does it look professional? (not an obvious AI failure with artifacts)\n"
+                            "5. Is it thematically appropriate for the article topic?\n"
+                            "Be strict on points 1 and 3-4. Vans and buses are ALWAYS welcome."
                         ),
                     },
                     {
