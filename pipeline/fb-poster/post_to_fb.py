@@ -21,7 +21,7 @@ import re
 import sys
 import urllib.parse
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timezone, date
 from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -117,6 +117,16 @@ def scan_articles() -> list[dict]:
         })
 
     return articles
+
+
+def already_posted_today(posted: dict) -> bool:
+    """Check if any article was already posted today (UTC)."""
+    today = date.today().isoformat()
+    for entry in posted.values():
+        posted_at = entry.get("posted_at", "")
+        if posted_at.startswith(today):
+            return True
+    return False
 
 
 def pick_random_article(articles: list[dict], posted: dict) -> dict | None:
@@ -223,7 +233,12 @@ def main():
     posted = load_posted()
     print(f"Already posted: {len(posted)}")
 
-    # 3. Pick random unposted article
+    # 3. Guard: max 1 post per day
+    if already_posted_today(posted):
+        print("Already posted today – skipping.")
+        return
+
+    # 4. Pick random unposted article
     article = pick_random_article(articles, posted)
     if article is None:
         print("All articles have been posted! Resetting tracking.")
