@@ -31,15 +31,15 @@ MAX_VALIDATION_RETRIES = 2
 STYLE_SUFFIX = (
     "Style: photojournalistic, clean composition, natural lighting, "
     "shallow depth of field, 16:9 landscape. "
+    "ABSOLUTELY NO PEOPLE, no human figures, no hands, no silhouettes. "
     "No text overlays, no watermarks, no logos, no impossible physics, "
-    "no anatomical errors, no people interacting with vehicles incorrectly, "
     "no floating objects, no distorted proportions."
 )
 
 CATEGORY_PROMPTS: dict[str, str] = {
     "fuel": (
-        "Wide shot of a modern fuel station at daytime, diesel dispensers visible, "
-        "commercial vehicles in the background. Clean, professional atmosphere."
+        "Wide shot of an empty modern fuel station at daytime, diesel dispensers visible, "
+        "commercial vehicles parked in the background, no people. Clean, professional atmosphere."
     ),
     "regulations": (
         "Official documents and road signs related to commercial vehicle transport. "
@@ -232,10 +232,11 @@ def _validate_image(image_path: Path, title: str) -> tuple[bool, str]:
                             f"This AI-generated image is a hero photo for an article titled: \"{title}\".\n"
                             "Evaluate it and respond ONLY with JSON: {\"valid\": true/false, \"reason\": \"...\"}\n"
                             "Check:\n"
-                            "1. Is the image physically sensible? (no anatomical absurdities, impossible physics, "
-                            "objects clipping through each other, distorted body parts)\n"
-                            "2. Does it look professional? (not an obvious AI failure with artifacts)\n"
-                            "3. Is it thematically appropriate for the article topic?\n"
+                            "1. Are there ANY people, human figures, hands, or silhouettes? If yes → INVALID.\n"
+                            "2. Is the image physically sensible? (no impossible physics, "
+                            "objects clipping through each other)\n"
+                            "3. Does it look professional? (not an obvious AI failure with artifacts)\n"
+                            "4. Is it thematically appropriate for the article topic?\n"
                             "Be strict – if anything looks wrong, mark as invalid."
                         ),
                     },
