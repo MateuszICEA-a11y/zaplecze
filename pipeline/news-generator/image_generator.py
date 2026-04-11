@@ -28,14 +28,18 @@ MAX_VALIDATION_RETRIES = 2
 # Category prompt templates
 # ---------------------------------------------------------------------------
 
-STYLE_SUFFIX = (
+STYLE_BASE = (
     "Style: photojournalistic, clean composition, natural lighting, "
     "shallow depth of field, 16:9 landscape. "
     "No people interacting with vehicles, no hands on fuel pumps, no drivers. "
     "People may appear as distant background figures only. "
     "No text overlays, no watermarks, no logos, no impossible physics, "
-    "no floating objects, no distorted proportions. "
-    "Vehicles shown must be vans, buses, or campers – NOT trucks or semi-trailers."
+    "no floating objects, no distorted proportions."
+)
+
+# Applied only for generic categories, skipped when a specific model is identified.
+VEHICLE_TYPE_CONSTRAINT = (
+    " Vehicles shown must be vans, buses, or campers – NOT trucks or semi-trailers."
 )
 
 CATEGORY_PROMPTS: dict[str, str] = {
@@ -48,7 +52,8 @@ CATEGORY_PROMPTS: dict[str, str] = {
         "Clean desk or road scene with regulatory elements, professional tone."
     ),
     "model_specific": (
-        "Professional side-view photograph of a modern {vehicle_hint} van "
+        "Professional side-view photograph of a {vehicle_hint}, "
+        "exact real-world appearance of this vehicle model, "
         "parked on a clean urban road, natural daylight."
     ),
     "camper": (
@@ -88,6 +93,56 @@ _MODEL_KEYWORDS: list[str] = [
     "jumper", "jumpy", "movano", "interstar", "e-transit", "id.buzz",
     "proace", "expert", "vivaro",
 ]
+
+
+def _extract_vehicle_from_title(title: str) -> str | None:
+    """Use GPT-5.4 to extract the specific vehicle name from an article title.
+
+    Returns 'Brand Model' (e.g. 'Leapmotor T03') or None if the article
+    is not about a specific vehicle.
+    """
+    if not OPENAI_API_KEY:
+        return None
+
+    payload = {
+        "model": "gpt-5.4",
+        "max_completion_tokens": 60,
+        "messages": [
+            {
+                "role": "system",
+                "content": (
+                    "You extract vehicle names from article titles. "
+                    "Return ONLY the vehicle brand and model (e.g. 'Leapmotor T03', "
+                    "'Mercedes Sprinter', 'Fiat Ducato L3H2'). "
+                    "If the title mentions multiple vehicles or no specific vehicle, "
+                    "return exactly: null"
+                ),
+            },
+            {"role": "user", "content": title},
+        ],
+    }
+
+    req = urllib.request.Request(
+        "https://api.openai.com/v1/chat/completions",
+        data=json.dumps(payload).encode(),
+        method="POST",
+        headers={
+            "Authorization": f"Bearer {OPENAI_API_KEY}",
+            "Content-Type": "application/json",
+        },
+    )
+
+    try:
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            result = json.loads(resp.read().decode())
+        text = result["choices"][0]["message"]["content"].strip().strip('"\'')
+        if not text or text.lower() == "null":
+            return None
+        log.info("  GPT extracted vehicle: %s", text)
+        return text
+    except Exception as e:
+        log.warning("  Vehicle extraction failed: %s – falling back to keywords", e)
+        return None
 
 
 def _kie_request(method: str, endpoint: str, body: dict | None = None) -> dict:
@@ -181,13 +236,20 @@ def _detect_category(title: str) -> tuple[str, str | None]:
     """Detect image category from article title.
 
     Returns (category, vehicle_hint). vehicle_hint is set only for model_specific.
+    Uses GPT extraction first, then falls back to keyword matching.
     """
-    title_lower = title.lower()
+    # 1. GPT extraction – catches any vehicle, not just hardcoded list
+    gpt_vehicle = _extract_vehicle_from_title(title)
+    if gpt_vehicle:
+        return "model_specific", gpt_vehicle
 
+    # 2. Keyword fallback for known models (works without API key)
+    title_lower = title.lower()
     for model in _MODEL_KEYWORDS:
         if model in title_lower:
             return "model_specific", model.capitalize()
 
+    # 3. Category keywords
     for category, keywords in _CATEGORY_KEYWORDS:
         for kw in keywords:
             if kw in title_lower:
@@ -196,20 +258,29 @@ def _detect_category(title: str) -> tuple[str, str | None]:
     return "default", None
 
 
-def build_prompt(title: str, section: str) -> str:
-    """Build a category-aware image generation prompt."""
-    category, vehicle_hint = _detect_category(title)
-    scene = CATEGORY_PROMPTS[category]
-    if vehicle_hint and "{vehicle_hint}" in scene:
-        scene = scene.replace("{vehicle_hint}", vehicle_hint)
-    log.info("  Image category: %s (hint: %s)", category, vehicle_hint or "none")
-    return f"{scene} {STYLE_SUFFIX}"
+def build_prompt(title: str, section: str, *, _category: str | None = None, _vehicle_hint: str | None = None) -> str:
+    """Build a category-aware image generation prompt.
+
+    Accepts pre-detected category/vehicle_hint to avoid duplicate GPT calls.
+    """
+    if _category is None:
+        _category, _vehicle_hint = _detect_category(title)
+    scene = CATEGORY_PROMPTS[_category]
+    if _vehicle_hint and "{vehicle_hint}" in scene:
+        scene = scene.replace("{vehicle_hint}", _vehicle_hint)
+    log.info("  Image category: %s (hint: %s)", _category, _vehicle_hint or "none")
+    # Skip vehicle type constraint when a specific model is identified –
+    # the model itself defines what the vehicle looks like.
+    suffix = STYLE_BASE if _category == "model_specific" else STYLE_BASE + VEHICLE_TYPE_CONSTRAINT
+    return f"{scene} {suffix}"
 
 
-def _validate_image(image_path: Path, title: str) -> tuple[bool, str]:
+def _validate_image(image_path: Path, title: str, vehicle_hint: str | None = None) -> tuple[bool, str]:
     """Validate generated image using GPT-5.4 Vision.
 
     Returns (is_valid, reason).
+    When vehicle_hint is set, validates that the vehicle matches the specific model
+    instead of enforcing generic van/bus constraint.
     """
     if not OPENAI_API_KEY:
         log.warning("OPENAI_API_KEY not set, skipping vision validation")
@@ -220,6 +291,18 @@ def _validate_image(image_path: Path, title: str) -> tuple[bool, str]:
 
     suffix = image_path.suffix.lstrip(".")
     media_type = "image/webp" if suffix == "webp" else f"image/{suffix}"
+
+    if vehicle_hint:
+        vehicle_check = (
+            f"2. Does the vehicle in the image reasonably resemble a {vehicle_hint}? "
+            f"It should match the general appearance of this model. "
+            f"If it shows a completely different type of vehicle → INVALID."
+        )
+    else:
+        vehicle_check = (
+            "2. Does the image contain ONLY large trucks or semi-trailers (18-wheelers)? "
+            "If yes → INVALID. Vans, minibuses, delivery vans, and campers are CORRECT."
+        )
 
     payload = {
         "model": "gpt-5.4",
@@ -237,13 +320,12 @@ def _validate_image(image_path: Path, title: str) -> tuple[bool, str]:
                             "Check:\n"
                             "1. Are there people in close-up interacting with vehicles (fueling, repairing, "
                             "driving, touching)? If yes → INVALID. Distant background figures are OK.\n"
-                            "2. Does the image contain ONLY large trucks or semi-trailers (18-wheelers)? "
-                            "If yes → INVALID. Vans, minibuses, delivery vans, and campers are CORRECT.\n"
+                            f"{vehicle_check}\n"
                             "3. Is the image physically sensible? (no impossible physics, "
                             "objects clipping through each other)\n"
                             "4. Does it look professional? (not an obvious AI failure with artifacts)\n"
                             "5. Is it thematically appropriate for the article topic?\n"
-                            "Be strict on points 1 and 3-4. Vans and buses are ALWAYS welcome."
+                            "Be strict on points 1 and 3-4."
                         ),
                     },
                     {
@@ -307,7 +389,8 @@ def generate_hero_image(
         log.info("Image already exists: %s", dest.name)
         return f"/images/news/{slug}.webp"
 
-    prompt = build_prompt(title, section)
+    category, vehicle_hint = _detect_category(title)
+    prompt = build_prompt(title, section, _category=category, _vehicle_hint=vehicle_hint)
     rejection_reasons: list[str] = []
 
     for attempt in range(1, MAX_VALIDATION_RETRIES + 2):  # 1 initial + retries
@@ -327,7 +410,7 @@ def generate_hero_image(
             log.info("  Image URL: %s", image_url[:80])
             _download_and_optimize(image_url, dest)
 
-            is_valid, reason = _validate_image(dest, title)
+            is_valid, reason = _validate_image(dest, title, vehicle_hint)
             if is_valid:
                 log.info("  Image accepted (attempt %d): %s", attempt, dest)
                 return f"/images/news/{slug}.webp"
