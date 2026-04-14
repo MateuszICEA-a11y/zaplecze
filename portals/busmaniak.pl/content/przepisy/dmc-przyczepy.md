@@ -177,6 +177,6 @@ Przyczepy lekkie (do 750 kg DMC) są najchętniej wybierane przez kierowców bus
 | Przyczepa kempingowa mini | 450–600 kg | 150–300 kg | Camping, krótkie wyjazdy |
 | Przyczepa do przewozu łódki | 120–200 kg | 550–630 kg | Transport łodzi, kajaków |
 
-Jeżeli planujesz [homologację kampera](/przepisy/homologacja-kampera) i zamierzasz holować nim przyczepę, zwróć szczególną uwagę na łączną masę zespołu. Kamper na bazie busa o DMC 3500 kg praktycznie wyklucza możliwość ciągnięcia przyczepy cięższej niż lekka.
+Jeżeli planujesz [homologację kampera](/przepisy/homologacja-kampera/) i zamierzasz holować nim przyczepę, zwróć szczególną uwagę na łączną masę zespołu. Kamper na bazie busa o DMC 3500 kg praktycznie wyklucza możliwość ciągnięcia przyczepy cięższej niż lekka.
 
 Ogólne zasady dotyczące [dopuszczalnej masy całkowitej](/przepisy/dmc-co-to/) i jej wpływu na eksploatację busa znajdziesz w naszym osobnym poradniku.
