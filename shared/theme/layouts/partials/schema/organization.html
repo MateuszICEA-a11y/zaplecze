@@ -1,0 +1,21 @@
+{{- $org := dict
+  "@type" "Organization"
+  "name" .Site.Title
+  "url" .Site.BaseURL
+  "logo" (dict "@type" "ImageObject" "url" ("/images/logo-busmaniak.webp" | absURL) "width" 300 "height" 164)
+  "description" (.Site.Params.description | default "")
+-}}
+{{- with .Site.Params.sameAs -}}
+  {{- $org = merge $org (dict "sameAs" .) -}}
+{{- end -}}
+{{- $website := dict
+  "@type" "WebSite"
+  "name" .Site.Title
+  "url" .Site.BaseURL
+  "inLanguage" "pl"
+  "publisher" (dict "@type" "Organization" "name" .Site.Title)
+-}}
+{{- $schema := dict "@context" "https://schema.org" "@graph" (slice $org $website) -}}
+<script type="application/ld+json">
+{{ $schema | jsonify | safeJS }}
+</script>
