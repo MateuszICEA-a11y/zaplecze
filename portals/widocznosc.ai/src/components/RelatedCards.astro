@@ -12,7 +12,7 @@ const entries: any[] = references.length > 0 ? await getEntries(references.slice
   <ul class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
     {entries.map((entry: any) => (
       <li class="rounded-lg border border-white/10 bg-surface-1 p-6 hover:border-blue/50 transition">
-        <a href={entry.collection === 'pillar' ? `/pozycjonowanie-ai/${entry.slug}/` : `/baza-wiedzy/${entry.data.category}/${entry.slug}/`}>
+        <a href={entry.collection === 'pillar' ? `/pozycjonowanie-ai/${entry.slug}/` : `/baza-wiedzy/${entry.slug}/`}>
           <h3 class="text-h4 font-medium text-off">{entry.data.title}</h3>
           <p class="mt-2 text-small text-off/70">{entry.data.metaDescription}</p>
         </a>
