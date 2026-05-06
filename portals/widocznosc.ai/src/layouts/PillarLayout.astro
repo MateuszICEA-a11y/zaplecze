@@ -1,0 +1,49 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumb from '@components/Breadcrumb.astro';
+import Hero from '@components/Hero.astro';
+import ServiceOfferCard from '@components/ServiceOfferCard.astro';
+import AuthorBox from '@components/AuthorBox.astro';
+import FAQ from '@components/FAQ.astro';
+import CTA from '@components/CTA.astro';
+import SchemaJsonLd from '@components/SchemaJsonLd.astro';
+import { breadcrumbListSchema, faqPageSchema } from '@lib/schema';
+
+interface Props {
+  frontmatter: any;
+  url: string;
+  authorSlugs: string[];
+}
+const { frontmatter, url, authorSlugs } = Astro.props;
+const breadcrumbs = frontmatter.schema.breadcrumbs;
+---
+<BaseLayout
+  title={frontmatter.metaTitle}
+  description={frontmatter.metaDescription}
+  canonical={url}
+>
+  <Breadcrumb items={breadcrumbs} />
+  <Hero
+    headline={frontmatter.hero.headline}
+    subheadline={frontmatter.hero.subheadline}
+    ctaPrimary={{ text: frontmatter.hero.ctaText, href: frontmatter.hero.ctaHref }}
+  />
+  <div class="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-12 lg:grid-cols-[1fr_360px]">
+    <div class="prose prose-invert max-w-none">
+      <slot />
+    </div>
+    <ServiceOfferCard {...frontmatter.serviceOffer} sticky />
+  </div>
+  {frontmatter.faq && <FAQ items={frontmatter.faq} />}
+  {authorSlugs.length > 0 && <AuthorBox authorSlug={authorSlugs[0]} />}
+  <CTA
+    heading="Chcesz audyt widoczności w AI?"
+    body="Sprawdź, czy ChatGPT, Claude i Perplexity znają Twoją markę."
+    ctaText="Zamów audyt ICEA"
+    ctaHref="/pozycjonowanie-ai/audyt-widocznosci-ai/"
+  />
+  <SchemaJsonLd data={[
+    breadcrumbListSchema(breadcrumbs),
+    ...(frontmatter.faq ? [faqPageSchema(frontmatter.faq)] : []),
+  ]} />
+</BaseLayout>
