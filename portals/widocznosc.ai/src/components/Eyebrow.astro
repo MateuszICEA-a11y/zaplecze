@@ -1,0 +1,15 @@
+---
+interface Props {
+  variant?: 'blue' | 'muted' | 'orange';
+  class?: string;
+}
+const { variant = 'blue', class: className = '' } = Astro.props;
+const colorClass = {
+  blue: 'text-blue',
+  muted: 'text-off/50',
+  orange: 'text-orange',
+}[variant];
+---
+<p class={`text-eyebrow uppercase ${colorClass} ${className}`}>
+  <slot />
+</p>

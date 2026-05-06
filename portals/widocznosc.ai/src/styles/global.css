@@ -4,17 +4,34 @@
 
 @layer base {
   :root {
+    /* Brand core */
     --color-midnight: #000623;
     --color-blue: #5768ff;
     --color-orange: #f6704c;
     --color-off: #f9f9f9;
+    --color-white: #ffffff;
+
+    /* Surface ladder (Linear DNA) */
+    --color-surface-0: #000623;
     --color-surface-1: #0a1037;
     --color-surface-2: #131c4d;
-    --color-border: rgb(249 249 249 / 0.1);
-    --color-border-strong: rgb(249 249 249 / 0.18);
-    --color-muted: rgb(249 249 249 / 0.6);
-    --color-subtle: rgb(249 249 249 / 0.4);
-    --color-ring: rgb(87 104 255 / 0.35);
+    --color-surface-3: #1b2664;
+
+    /* Borders – hairline */
+    --color-border: rgb(249 249 249 / 0.08);
+    --color-border-strong: rgb(249 249 249 / 0.16);
+    --color-border-active: rgb(87 104 255 / 0.5);
+
+    /* Text scale */
+    --color-text-primary: rgb(249 249 249 / 1);
+    --color-text-secondary: rgb(249 249 249 / 0.72);
+    --color-text-tertiary: rgb(249 249 249 / 0.52);
+    --color-text-disabled: rgb(249 249 249 / 0.32);
+
+    /* Focus + glow */
+    --color-ring: rgb(87 104 255 / 0.4);
+    --color-glow-blue: rgb(87 104 255 / 0.3);
+    --color-glow-orange: rgb(246 112 76 / 0.25);
   }
 
   html {
@@ -22,10 +39,32 @@
     color: var(--color-off);
     font-family: theme('fontFamily.sans');
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   body {
     @apply text-body antialiased;
+    font-feature-settings: 'kern' 1, 'liga' 1, 'ss01' 1;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-midnight);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-surface-2);
+    border: 3px solid var(--color-midnight);
+    border-radius: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-surface-3);
   }
 
   *:focus-visible {
@@ -46,6 +85,133 @@
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Eyebrow label – uppercase tracked, used przed h2 sections */
+  .eyebrow {
+    @apply text-eyebrow uppercase text-blue;
+    display: inline-block;
+  }
+
+  .eyebrow-muted {
+    @apply text-eyebrow uppercase text-off/50;
+    display: inline-block;
+  }
+
+  /* 3-tier button system */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.5rem;
+    transition: all 180ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .btn-lg {
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    background: var(--color-blue);
+    color: var(--color-white);
+  }
+  .btn-primary:hover {
+    background: rgb(70 86 230);
+    box-shadow: 0 0 32px -4px rgb(87 104 255 / 0.5);
+  }
+
+  .btn-secondary {
+    background: var(--color-surface-1);
+    color: var(--color-off);
+    border: 1px solid var(--color-border-strong);
+  }
+  .btn-secondary:hover {
+    background: var(--color-surface-2);
+    border-color: var(--color-border-active);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border);
+  }
+  .btn-ghost:hover {
+    color: var(--color-text-primary);
+    border-color: var(--color-border-active);
+  }
+
+  /* Card with hairline border + bg shift on hover (Linear DNA) */
+  .card {
+    background: var(--color-surface-1);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 220ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-interactive {
+    cursor: pointer;
+  }
+  .card-interactive:hover {
+    border-color: var(--color-border-active);
+    background: var(--color-surface-2);
+  }
+
+  /* Logo wordmark with pulsing AI dot */
+  .logo-wordmark {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: var(--color-off);
+  }
+
+  .logo-wordmark .logo-dot {
+    display: inline-block;
+    width: 0.42em;
+    height: 0.42em;
+    border-radius: 9999px;
+    background: var(--color-blue);
+    margin: 0 0.18em 0.04em 0.04em;
+    box-shadow: 0 0 0.6em rgb(87 104 255 / 0.6);
+    animation: logo-pulse 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .logo-wordmark .logo-ai {
+    color: var(--color-blue);
+    letter-spacing: -0.025em;
+  }
+
+  @keyframes logo-pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+      box-shadow: 0 0 0.6em rgb(87 104 255 / 0.6);
+    }
+    50% {
+      opacity: 0.55;
+      transform: scale(0.78);
+      box-shadow: 0 0 0.3em rgb(87 104 255 / 0.3);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logo-wordmark .logo-dot {
+      animation: none;
     }
   }
 }

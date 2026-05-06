@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <!-- Wariant A3: Stacked Triangles – 3 trójkąty w pionie tworzące signal stack -->
-  <path d="M16 2 L28 14 L4 14 Z" fill="#5768FF"/>
-  <path d="M16 13 L28 25 L4 25 Z" fill="#F9F9F9"/>
-  <path d="M4 24 L28 24 L28 30 L4 30 Z" fill="#F9F9F9" opacity="0.4"/>
-</svg>

@@ -9,50 +9,131 @@ const recentArticles = (
 )
   .sort((a: any, b: any) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
   .slice(0, 6);
-const authors = await getCollection('authors');
+const authors = (await getCollection('authors')).sort((a: any, b: any) =>
+  a.data.name.localeCompare(b.data.name),
+);
 ---
 <BaseLayout
   title="widocznosc.ai – Bądź widoczny tam, gdzie szukają Twoi klienci"
-  description="Kompleksowe pozycjonowanie marki w AI: ChatGPT, Claude, Gemini, Perplexity. Marka ICEA – Diament Forbesa, semKRK Awards. Sprawdź swoją widoczność w AI."
+  description="Pozycjonowanie marki w ChatGPT, Claude, Gemini, Perplexity. Marka ICEA – Diament Forbesa, semKRK Awards. Sprawdź swoją widoczność w AI."
 >
   <Hero
+    variant="homepage"
+    eyebrow="MARKA ICEA · POZYCJONOWANIE W AI"
     headline="Bądź widoczny tam, gdzie szukają Twoi klienci."
-    subheadline="Pozycjonowanie marki w ChatGPT, Claude, Gemini, Perplexity. Komplementarna wiedza o widoczności w AI."
+    subheadline="Pozycjonowanie marki w ChatGPT, Claude, Gemini i Perplexity. Komplementarna wiedza o widoczności w AI – przygotowana przez ekspertów ICEA."
     ctaPrimary={{ text: 'Zamów audyt', href: '/pozycjonowanie-ai/audyt-widocznosci-ai/' }}
     ctaSecondary={{ text: 'Sprawdź narzędzie', href: '/narzedzia/audyt-widocznosci-ai/' }}
   />
+
   <Stats items={[
-    { value: '15+', label: 'lat ICEA' },
+    { value: '15+', label: 'lat doświadczenia ICEA' },
     { value: '5', label: 'modele AI mierzone' },
     { value: '500+', label: 'klientów' },
-    { value: '#1', label: 'na semKRK Awards' },
+    { value: '#1', label: 'na semKRK Awards', accent: 'orange' },
   ]} />
-  <section class="mx-auto max-w-7xl px-6 py-16">
-    <h2 class="text-h2 font-medium">Najnowsze z bazy wiedzy</h2>
-    <ul class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+  <section class="mx-auto max-w-default px-6 py-24 md:py-32">
+    <div class="flex items-end justify-between gap-6">
+      <div>
+        <p class="eyebrow mb-4">BAZA WIEDZY</p>
+        <h2 class="text-display-lg font-semibold text-off">Najnowsze materiały o&nbsp;widoczności w&nbsp;AI</h2>
+      </div>
+      <a href="/baza-wiedzy/" class="hidden md:inline-flex text-small font-medium text-blue hover:underline underline-offset-4">
+        Wszystkie artykuły →
+      </a>
+    </div>
+    <ul class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
       {recentArticles.map((a: any) => (
-        <li class="rounded-lg border border-white/10 bg-surface-1 p-6 hover:border-blue/50 transition">
-          <a href={`/baza-wiedzy/${a.slug}/`}>
-            <h3 class="text-h4 font-medium">{a.data.title}</h3>
-            <p class="mt-2 text-small text-off/70">{a.data.metaDescription}</p>
+        <li>
+          <a href={`/baza-wiedzy/${a.slug}/`} class="card card-interactive block h-full">
+            <p class="eyebrow-muted mb-3">
+              {a.data.category === 'modele-ai' ? 'MODELE AI' : a.data.category === 'pojecia-ai' ? 'POJĘCIA AI' : 'PORADNIKI'}
+            </p>
+            <h3 class="text-h3 font-semibold text-off">{a.data.title}</h3>
+            <p class="mt-3 text-small text-off/72 line-clamp-3">{a.data.metaDescription}</p>
+            <p class="mt-5 text-caption text-off/52">{a.data.readingTimeMin} min czytania</p>
+          </a>
+        </li>
+      ))}
+    </ul>
+    <a href="/baza-wiedzy/" class="md:hidden mt-8 inline-flex text-small font-medium text-blue hover:underline underline-offset-4">
+      Wszystkie artykuły →
+    </a>
+  </section>
+
+  <section class="relative overflow-hidden border-y border-white/8 bg-gradient-card">
+    <div class="pointer-events-none absolute inset-0 bg-mesh-cta" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-default px-6 py-24 md:py-32">
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div class="max-w-2xl">
+          <p class="eyebrow mb-4">NARZĘDZIE</p>
+          <h2 class="text-display-lg font-semibold text-off">Sprawdź swoją widoczność w&nbsp;AI w&nbsp;90 sekund</h2>
+          <p class="mt-6 text-lead text-off/72">
+            Mierzymy w&nbsp;3 modelach: ChatGPT, Claude i&nbsp;Perplexity. Score w&nbsp;skali 0-100, lista źródeł cytowanych przez AI, 3 rekomendacje optymalizacji.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="/narzedzia/audyt-widocznosci-ai/" class="btn btn-lg btn-primary">
+              Uruchom narzędzie
+            </a>
+            <a href="/pozycjonowanie-ai/audyt-widocznosci-ai/" class="btn btn-lg btn-secondary">
+              Pełny audyt manualny
+            </a>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-white/16 bg-surface-2/60 p-8 backdrop-blur lg:w-[360px]">
+          <p class="eyebrow-muted mb-4">PRZYKŁADOWY WYNIK</p>
+          <div class="flex items-baseline gap-3">
+            <span class="text-display-xl font-semibold text-blue">87</span>
+            <span class="text-h4 text-off/52">/ 100</span>
+          </div>
+          <p class="mt-2 text-caption uppercase tracking-wide text-off/52">Score widoczności w AI</p>
+          <dl class="mt-6 space-y-3 text-small">
+            <div class="flex items-center justify-between border-t border-white/8 pt-3">
+              <dt class="text-off/72">ChatGPT</dt>
+              <dd class="font-medium text-off">7 / 10 zapytań</dd>
+            </div>
+            <div class="flex items-center justify-between border-t border-white/8 pt-3">
+              <dt class="text-off/72">Claude</dt>
+              <dd class="font-medium text-off">6 / 10 zapytań</dd>
+            </div>
+            <div class="flex items-center justify-between border-t border-white/8 pt-3">
+              <dt class="text-off/72">Perplexity</dt>
+              <dd class="font-medium text-off">9 / 10 zapytań</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-default px-6 py-24 md:py-32">
+    <p class="eyebrow mb-4">AUTORZY ICEA</p>
+    <h2 class="text-display-lg font-semibold text-off max-w-3xl">Nasz zespół. Eksperci, którzy podpisują każdy artykuł.</h2>
+    <ul class="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
+      {authors.map((a: any) => (
+        <li>
+          <a href={`/autor/${a.slug}/`} class="card card-interactive block h-full">
+            <img src={a.data.photo} alt={a.data.name} class="aspect-square w-full rounded-lg object-cover" />
+            <h3 class="mt-5 text-h4 font-semibold text-off">{a.data.name}</h3>
+            <p class="mt-1 text-small text-blue">{a.data.role}</p>
+            <p class="mt-3 text-small text-off/72 line-clamp-3">{a.data.shortBio}</p>
           </a>
         </li>
       ))}
     </ul>
   </section>
-  <section class="mx-auto max-w-7xl px-6 py-16">
-    <h2 class="text-h2 font-medium">Nasz zespół</h2>
-    <ul class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-      {authors.map((a: any) => (
-        <li class="rounded-lg border border-white/10 bg-surface-1 p-6">
-          <a href={`/autor/${a.slug}/`}>
-            <img src={a.data.photo} alt={a.data.name} class="aspect-square rounded-lg object-cover" />
-            <h3 class="mt-4 text-h4 font-medium">{a.data.name}</h3>
-            <p class="text-small text-blue">{a.data.role}</p>
-            <p class="mt-2 text-small text-off/70">{a.data.shortBio}</p>
-          </a>
-        </li>
-      ))}
-    </ul>
+
+  <section class="relative overflow-hidden border-t border-white/8">
+    <div class="pointer-events-none absolute inset-0 bg-mesh-cta" aria-hidden="true"></div>
+    <div class="relative mx-auto max-w-3xl px-6 py-24 text-center md:py-32">
+      <p class="eyebrow mb-4">GOTOWY?</p>
+      <h2 class="text-display-lg font-semibold text-off">Zacznij od&nbsp;audytu widoczności marki w&nbsp;AI.</h2>
+      <p class="mt-6 text-lead text-off/72">Bezpłatne narzędzie + opcjonalny pełny audyt manualny ICEA z&nbsp;90-dniowym planem optymalizacji.</p>
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+        <a href="/narzedzia/audyt-widocznosci-ai/" class="btn btn-lg btn-primary">Uruchom narzędzie</a>
+        <a href="/kontakt/" class="btn btn-lg btn-ghost">Skontaktuj się</a>
+      </div>
+    </div>
   </section>
 </BaseLayout>
