@@ -31,6 +31,28 @@ export const CATEGORY_LABELS: Record<(typeof BLOG_CATEGORIES)[number], string> =
   definicje: 'Definicje',
 };
 
+/**
+ * Authors collection – zespół ICEA piszący na widocznosc.ai.
+ * Schema oparta na plan-1 (richer profile data dla SEO + E-E-A-T).
+ */
+const authors = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/authors' }),
+  schema: z.object({
+    name: z.string(),
+    role: z.string(),
+    company: z.literal('ICEA'),
+    bio: z.string(),
+    shortBio: z.string().max(280),
+    expertise: z.array(z.string()).min(1),
+    photo: z.string(),
+    iceaProfile: z.string().url(),
+    publishedAt: z.coerce.date(),
+    linkedin: z.string().url().optional(),
+    twitter: z.string().url().optional(),
+    email: z.string().email().optional(),
+  }),
+});
+
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
   schema: ({ image }) =>
@@ -52,4 +74,4 @@ const blog = defineCollection({
     }),
 });
 
-export const collections = { blog };
+export const collections = { blog, authors };

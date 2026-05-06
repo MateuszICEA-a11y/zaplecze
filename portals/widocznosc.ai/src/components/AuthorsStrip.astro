@@ -1,46 +1,23 @@
 ---
-type Author = {
-  name: string;
-  role: string;
-  bio?: string;
-  avatar?: string;
-  href?: string;
-};
+import { getCollection } from 'astro:content';
 
 interface Props {
   eyebrow?: string;
   title?: string;
   subtitle?: string;
-  authors?: Author[];
+  limit?: number;
 }
 
 const {
   eyebrow = 'Zespół',
   title = 'Eksperci, którzy piszą i konsultują',
   subtitle = 'Zespół ICEA – kilkanaście lat w SEO, content marketingu i strategii AI. Każdy artykuł podpisany, każda rekomendacja oparta na praktyce klientów.',
-  authors = [
-    {
-      name: 'Mateusz Wiśniewski',
-      role: 'Project Coordinator · ICEA',
-      bio: 'Koordynacja projektów GEO, AI search, content strategii.',
-    },
-    {
-      name: 'Michał Ziach',
-      role: 'Head of SEO · ICEA',
-      bio: 'Strategie widoczności w wyszukiwarkach klasycznych i AI.',
-    },
-    {
-      name: 'Piotr Wicenciak',
-      role: 'Senior SEO Specialist · ICEA',
-      bio: 'Audyty techniczne, optymalizacja contentu pod LLM.',
-    },
-    {
-      name: 'Tomasz Czechowski',
-      role: 'Content Strategist · ICEA',
-      bio: 'Content GEO, fact-density, source signals.',
-    },
-  ],
+  limit = 4,
 } = Astro.props;
+
+const authors = (await getCollection('authors'))
+  .sort((a, b) => a.data.name.localeCompare(b.data.name))
+  .slice(0, limit);
 
 const initials = (name: string) =>
   name
@@ -66,16 +43,19 @@ const initials = (name: string) =>
     <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {
         authors.map((author) => {
-          const Tag = author.href ? 'a' : 'div';
+          const data = author.data;
+          const Tag = data.iceaProfile ? 'a' : 'div';
           return (
             <Tag
-              {...(author.href ? { href: author.href } : {})}
-              class={`flex flex-col items-center rounded-xl border border-rule bg-bg-card p-6 text-center transition ${author.href ? 'hover:border-accent/35 hover:bg-bg-elevated cursor-pointer' : ''}`}
+              {...(data.iceaProfile
+                ? { href: data.iceaProfile, target: '_blank', rel: 'noopener noreferrer' }
+                : {})}
+              class={`flex flex-col items-center rounded-xl border border-rule bg-bg-card p-6 text-center transition ${data.iceaProfile ? 'hover:border-accent/35 hover:bg-bg-elevated cursor-pointer' : ''}`}
             >
-              {author.avatar ? (
+              {data.photo ? (
                 <img
-                  src={author.avatar}
-                  alt={author.name}
+                  src={data.photo}
+                  alt={data.name}
                   class="mb-4 h-20 w-20 rounded-full object-cover"
                   loading="lazy"
                   decoding="async"
@@ -86,15 +66,15 @@ const initials = (name: string) =>
                   style="background: var(--accent-soft);"
                   aria-hidden="true"
                 >
-                  {initials(author.name)}
+                  {initials(data.name)}
                 </div>
               )}
-              <div class="text-ink font-semibold">{author.name}</div>
+              <div class="text-ink font-semibold">{data.name}</div>
               <div class="text-accent mt-1 font-mono text-[11px] tracking-wider uppercase">
-                {author.role}
+                {data.role} · {data.company}
               </div>
-              {author.bio && (
-                <p class="text-ink-soft mt-3 text-sm leading-relaxed">{author.bio}</p>
+              {data.shortBio && (
+                <p class="text-ink-soft mt-3 text-sm leading-relaxed">{data.shortBio}</p>
               )}
             </Tag>
           );
