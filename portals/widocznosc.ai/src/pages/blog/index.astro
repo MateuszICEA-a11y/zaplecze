@@ -4,6 +4,7 @@ import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import ScrollUpButton from '../../components/ScrollUpButton.astro';
 import { getCollection } from 'astro:content';
+import { CATEGORY_LABELS } from '../../content.config';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
@@ -47,8 +48,9 @@ const formatDate = (date: Date) =>
                 </div>
               </div>
               <div class="px-6 pt-2 pb-3 sm:px-8 sm:pt-3 sm:pb-4">
-                <div class="meta mb-2">
-                  {formatDate(featuredPost.data.date)}
+                <div class="mb-3 flex items-center gap-3">
+                  <span class="chip">{CATEGORY_LABELS[featuredPost.data.category]}</span>
+                  <span class="meta">{formatDate(featuredPost.data.date)}</span>
                 </div>
                 <h2
                   class="text-ink font-display text-2xl font-semibold tracking-tight transition group-hover:text-accent sm:text-3xl"
@@ -114,7 +116,10 @@ const formatDate = (date: Date) =>
                     </div>
                   </div>
                   <div class="flex grow flex-col px-6 pt-2 pb-8">
-                    <div class="meta mb-3">{formatDate(post.data.date)}</div>
+                    <div class="mb-3 flex items-center gap-3">
+                      <span class="chip">{CATEGORY_LABELS[post.data.category]}</span>
+                      <span class="meta">{formatDate(post.data.date)}</span>
+                    </div>
                     <h2 class="text-ink font-display mb-3 text-xl font-semibold tracking-tight transition group-hover:text-accent">
                       {post.data.title}
                     </h2>
