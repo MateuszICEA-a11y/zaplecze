@@ -1,0 +1,65 @@
+---
+const sections = [
+  {
+    heading: 'Pozycjonowanie AI',
+    links: [
+      { label: 'Audyt', href: '/pozycjonowanie-ai/audyt-widocznosci-ai/' },
+      { label: 'Optymalizacja', href: '/pozycjonowanie-ai/optymalizacja-pod-llm/' },
+      { label: 'Case studies', href: '/pozycjonowanie-ai/case-studies/' },
+      { label: 'Konsultacje', href: '/kontakt/' },
+    ],
+  },
+  {
+    heading: 'Baza wiedzy',
+    links: [
+      { label: 'Modele AI', href: '/baza-wiedzy/modele-ai/' },
+      { label: 'Pojęcia AI', href: '/baza-wiedzy/pojecia-ai/' },
+      { label: 'Poradniki', href: '/baza-wiedzy/poradniki/' },
+      { label: 'Wszystkie artykuły', href: '/baza-wiedzy/' },
+    ],
+  },
+  {
+    heading: 'Kontakt',
+    links: [
+      { label: 'm.wisniewski@grupa-icea.pl', href: 'mailto:m.wisniewski@grupa-icea.pl' },
+      { label: 'Formularz audytu', href: '/pozycjonowanie-ai/audyt-widocznosci-ai/' },
+    ],
+  },
+];
+---
+<footer class="mt-24 border-t border-white/10 bg-surface-1">
+  <div class="mx-auto max-w-7xl px-6 py-16">
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-4">
+      <div>
+        <img src="/images/logo-full.svg" alt="widocznosc.ai – marka ICEA" class="h-10 w-auto" />
+        <p class="mt-4 text-caption text-off/60">
+          Komplementarne źródło wiedzy o widoczności marki w AI.
+        </p>
+      </div>
+      {sections.map((section) => (
+        <div>
+          <h3 class="text-small font-medium text-off">{section.heading}</h3>
+          <ul class="mt-4 space-y-2">
+            {section.links.map((link) => (
+              <li>
+                <a href={link.href} class="text-small text-off/70 hover:text-off transition">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 md:flex-row md:items-center">
+      <p class="text-caption text-off/60">
+        © {new Date().getFullYear()} ICEA. widocznosc.ai jest częścią ekosystemu marki ICEA.
+      </p>
+      <ul class="flex gap-6 text-caption text-off/60">
+        <li><a href="/polityka-prywatnosci/" class="hover:text-off">Polityka prywatności</a></li>
+        <li><a href="/sitemap-index.xml" class="hover:text-off">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
