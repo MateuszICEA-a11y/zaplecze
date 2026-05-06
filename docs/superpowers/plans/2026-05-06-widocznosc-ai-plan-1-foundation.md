@@ -19,7 +19,7 @@ Ten plan wymaga rozstrzygnięcia 4 pytań przed Task 1. User powinien je potwier
 | # | Pytanie | Default zaproponowany w planie |
 |---|---|---|
 | 1 | Roobert font webfont license | **Manrope variable** (OFL, geometryczny) jako MVP. Roobert dodajemy jako swap kiedy ICEA udostępni licencję. Path `public/fonts/Roobert-*.woff2` zostawiony pusty z notatką. |
-| 2 | Email mailbox dla leadów | Placeholder `widocznosc@grupa-icea.pl` w configu. User może zmienić w `wrangler.toml` env var `LEAD_INBOX`. |
+| 2 | Email mailbox dla leadów | **`m.wisniewski@grupa-icea.pl` (testowy MVP)** – User-confirmed 2026-05-06. Wszystkie lead-y (formularz audytu, formularz kontaktu, alerty narzędzia) lecą tu na czas dev/MVP. Docelowy `hello@widocznosc.ai` skonfigurujemy w Plan 5 (Launch). |
 | 3 | Cloudflare account dla widocznosc.ai | **Ten sam co busmaniak.pl** (account-level limit nie jest jeszcze problemem). Account ID + API token z istniejących GitHub secrets. |
 | 4 | Tożsamość Administratora Danych ICEA | Plan zostawia placeholder `{{ICEA_LEGAL_NAME}}`, `{{ICEA_ADDRESS}}`, `{{ICEA_NIP}}`, `{{ICEA_RODO_EMAIL}}` w polityce prywatności – user wypełni przed publikacją (Plan 5: Launch). |
 
@@ -1059,7 +1059,7 @@ const sections = [
   {
     heading: 'Kontakt',
     links: [
-      { label: 'hello@widocznosc.ai', href: 'mailto:hello@widocznosc.ai' },
+      { label: 'm.wisniewski@grupa-icea.pl', href: 'mailto:m.wisniewski@grupa-icea.pl' },
       { label: 'Formularz audytu', href: '/pozycjonowanie-ai/audyt-widocznosci-ai/' },
     ],
   },
@@ -2607,10 +2607,10 @@ import Hero from '@components/Hero.astro';
   <Hero headline="Kontakt" subheadline="Napisz – odpowiadamy w ciągu jednego dnia roboczego." />
   <section class="mx-auto max-w-2xl px-6 py-12">
     <p class="text-body">
-      Email: <a href="mailto:hello@widocznosc.ai" class="text-blue underline">hello@widocznosc.ai</a>
+      Email: <a href="mailto:m.wisniewski@grupa-icea.pl" class="text-blue underline">m.wisniewski@grupa-icea.pl</a>
     </p>
     <p class="mt-4 text-body">
-      W sprawach RODO: <a href="mailto:rodo@grupa-icea.pl" class="text-blue underline">rodo@grupa-icea.pl</a>
+      W sprawach RODO: <a href="mailto:m.wisniewski@grupa-icea.pl" class="text-blue underline">m.wisniewski@grupa-icea.pl</a>
     </p>
   </section>
 </BaseLayout>
@@ -3013,7 +3013,8 @@ pages_build_output_dir = "dist"
 
 [vars]
 PUBLIC_SITE_URL = "https://widocznosc.ai"
-LEAD_INBOX = "widocznosc@grupa-icea.pl"
+# Testowy mailbox MVP – wymieniamy na hello@widocznosc.ai w Plan 5 (Launch)
+LEAD_INBOX = "m.wisniewski@grupa-icea.pl"
 
 # D1 binding – placeholder, faktyczna konfiguracja w Plan 4
 # [[d1_databases]]
