@@ -8,6 +8,29 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
+/**
+ * Blog categories – taxonomia widocznosc.ai bazy wiedzy.
+ * Każdy artykuł musi mieć dokładnie jedną kategorię (zapobiega duplikatom
+ * i ułatwia filtrowanie). Tagi (z = znacznik) są dowolne i wielokrotne.
+ */
+export const BLOG_CATEGORIES = [
+  'ai-search',     // Jak działają wyszukiwarki AI (ChatGPT, Claude, Perplexity etc.)
+  'geo',           // Generative Engine Optimization – metodologia, frameworki
+  'content',       // Content pod LLM – fact-density, schema, źródła
+  'narzedzia',     // Tutoriale, recenzje narzędzi GEO i AI search
+  'case-study',    // Przypadki klientów ICEA, dane, rezultaty
+  'definicje',     // Słownik pojęć (RAG, training data, chain-of-thought etc.)
+] as const;
+
+export const CATEGORY_LABELS: Record<(typeof BLOG_CATEGORIES)[number], string> = {
+  'ai-search': 'AI Search',
+  geo: 'GEO',
+  content: 'Content pod LLM',
+  narzedzia: 'Narzędzia',
+  'case-study': 'Case study',
+  definicje: 'Definicje',
+};
+
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
   schema: ({ image }) =>
@@ -25,6 +48,7 @@ const blog = defineCollection({
       }),
       readTime: z.string(),
       tags: z.array(z.string()),
+      category: z.enum(BLOG_CATEGORIES).default('ai-search'),
     }),
 });
 
