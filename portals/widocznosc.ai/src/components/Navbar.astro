@@ -1,7 +1,4 @@
 ---
-import TailcastLogo from '../assets/logos/TailcastLogo.astro';
-import GithubIcon from '../assets/icons/GithubIcon.astro';
-
 const navbarLinks = [
   { label: 'Home', href: '/#home' },
   { label: 'About', href: '/about' },
@@ -28,12 +25,11 @@ const isActive = (href: string) => {
 >
   <div class="relative flex w-11/12 items-center justify-between xl:w-10/12 2xl:w-7xl">
     <div>
-      <a href="/#home" aria-label="Home">
+      <a href="/" aria-label="widocznosc.ai – strona główna">
         <div class="flex grow basis-0 items-center justify-start">
-          <div class="mr-2 text-6xl text-white">
-            <TailcastLogo />
+          <div class="logo-wordmark font-['Inter'] text-xl font-medium">
+            <span>widocznosc</span><span class="logo-dot" aria-hidden="true"></span><span class="logo-ai">ai</span>
           </div>
-          <div class="font-['Inter'] text-xl font-bold text-white">Tailcast</div>
         </div>
       </a>
     </div>
@@ -56,18 +52,7 @@ const isActive = (href: string) => {
       </div>
     </div>
     <div>
-      <div class="hidden grow basis-0 justify-end lg:flex">
-        <a
-          class="main-border-gray bg-bgDark2 hover:bg-bgDark3 flex rounded-xl pt-2 pr-8 pb-2 pl-6 text-sm text-white"
-          href="https://github.com/matt765/Tailcast"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Source code (opens in new tab)"
-        >
-          <GithubIcon />
-          <span class="pt-px">Source code</span>
-        </a>
-      </div>
+      <div class="hidden grow basis-0 justify-end lg:flex"></div>
     </div>
     <button
       class="border-mainBorder hover:bg-bgDark2 flex cursor-pointer flex-col rounded-md border border-solid px-2 py-3 lg:hidden"
@@ -98,16 +83,6 @@ const isActive = (href: string) => {
         </a>
       ))
     }
-    <a
-      class="outlined-button flex pt-2 pr-8 pb-2 pl-6"
-      href="https://github.com/matt765/Tailcast"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Source code (opens in new tab)"
-    >
-      <GithubIcon />
-      Source code
-    </a>
   </div>
 </nav>
 

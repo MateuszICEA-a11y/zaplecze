@@ -187,3 +187,51 @@
   @apply h-4 w-4;
 }
 
+/* Logo wordmark – widocznosc•ai */
+
+.logo-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--color-primaryText);
+}
+
+.logo-wordmark .logo-dot {
+  display: inline-block;
+  width: 0.42em;
+  height: 0.42em;
+  border-radius: 9999px;
+  background: var(--color-primaryColor);
+  margin: 0 0.18em 0.04em 0.04em;
+  box-shadow: 0 0 0.6em color-mix(in srgb, var(--color-primaryColor) 60%, transparent);
+  animation: logo-pulse 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.logo-wordmark .logo-ai {
+  color: var(--color-primaryColor);
+  letter-spacing: -0.025em;
+}
+
+@keyframes logo-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0.6em color-mix(in srgb, var(--color-primaryColor) 60%, transparent);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(0.78);
+    box-shadow: 0 0 0.3em color-mix(in srgb, var(--color-primaryColor) 30%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-wordmark .logo-dot {
+    animation: none;
+  }
+}
+

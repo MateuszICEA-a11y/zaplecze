@@ -1,7 +1,6 @@
 ---
 import CheckArrowIcon from '../assets/icons/CheckArrowIcon.astro';
 import CloseIcon from '../assets/icons/CloseIcon.astro';
-import TailcastLogo from '../assets/logos/TailcastLogo.astro';
 ---
 
 <dialog id="invitation-modal" class="modal-backdrop" aria-labelledby="modal-title">
@@ -27,10 +26,9 @@ import TailcastLogo from '../assets/logos/TailcastLogo.astro';
       </div>
       <div class="flex w-full flex-col items-center justify-center pt-0 lg:w-1/2">
         <div class="mb-6 flex items-center justify-start pr-6 lg:hidden">
-          <div class="mr-2 text-8xl text-white">
-            <TailcastLogo />
+          <div class="logo-wordmark font-['Inter'] text-3xl font-medium">
+            <span>widocznosc</span><span class="logo-dot" aria-hidden="true"></span><span class="logo-ai">ai</span>
           </div>
-          <div class="font-['Inter'] text-3xl font-bold text-white">Tailcast</div>
         </div>
         <h3
           class="text-primaryText mb-5 text-center text-xl leading-snug font-bold 2xl:mb-7 2xl:text-2xl"
