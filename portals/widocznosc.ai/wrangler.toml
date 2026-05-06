@@ -1,0 +1,14 @@
+name = "widocznosc-ai"
+compatibility_date = "2026-05-06"
+pages_build_output_dir = "dist"
+
+[vars]
+PUBLIC_SITE_URL = "https://widocznosc.ai"
+# Testowy mailbox MVP – wymieniamy na hello@widocznosc.ai w Plan 5 (Launch)
+LEAD_INBOX = "m.wisniewski@grupa-icea.pl"
+
+# D1 binding – placeholder, faktyczna konfiguracja w Plan 4 (AI Visibility Checker)
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "widocznosc-leads"
+# database_id = "TBD"
