@@ -187,7 +187,9 @@
   @apply h-4 w-4;
 }
 
-/* Logo wordmark – widocznosc•ai */
+/* Logo wordmark – widocznosc•ai
+   Radar pulse motif: tematycznie pasuje do "widoczności w AI" – core dot
+   z dwoma rozchodzącymi się pierścieniami sygnalizuje detection / sweep. */
 
 .logo-wordmark {
   display: inline-flex;
@@ -200,19 +202,49 @@
 }
 
 .logo-wordmark .logo-dot {
+  position: relative;
   display: inline-block;
-  width: 0.42em;
-  height: 0.42em;
+  width: 0.4em;
+  height: 0.4em;
   border-radius: 9999px;
   background: var(--color-primaryColor);
-  margin: 0 0.18em 0.04em 0.04em;
-  box-shadow: 0 0 0.6em color-mix(in srgb, var(--color-primaryColor) 60%, transparent);
-  animation: logo-pulse 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  /* symmetric: 0.22em po obu stronach (poprzednio asymmetric 0.04 / 0.18) */
+  margin: 0 0.22em 0.06em 0.22em;
+  box-shadow: 0 0 0.5em color-mix(in srgb, var(--color-primaryColor) 55%, transparent);
+  animation: logo-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Dwa rozchodzące się pierścienie radaru (przed i z opóźnieniem after) */
+.logo-wordmark .logo-dot::before,
+.logo-wordmark .logo-dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 1px solid var(--color-primaryColor);
+  opacity: 0;
+  pointer-events: none;
+  animation: logo-radar 2.6s cubic-bezier(0, 0.4, 0.6, 1) infinite;
+}
+
+.logo-wordmark .logo-dot::after {
+  animation-delay: 1.3s;
 }
 
 .logo-wordmark .logo-ai {
-  color: var(--color-primaryColor);
+  /* Shimmer gradient: indigo → lighter indigo, animowany shift */
+  background: linear-gradient(
+    100deg,
+    var(--color-primaryColor) 0%,
+    var(--color-secondaryColor) 50%,
+    var(--color-primaryColor) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   letter-spacing: -0.025em;
+  animation: logo-shimmer 4s ease-in-out infinite;
 }
 
 @keyframes logo-pulse {
@@ -220,17 +252,43 @@
   100% {
     opacity: 1;
     transform: scale(1);
-    box-shadow: 0 0 0.6em color-mix(in srgb, var(--color-primaryColor) 60%, transparent);
   }
   50% {
-    opacity: 0.55;
-    transform: scale(0.78);
-    box-shadow: 0 0 0.3em color-mix(in srgb, var(--color-primaryColor) 30%, transparent);
+    opacity: 0.85;
+    transform: scale(0.92);
+  }
+}
+
+@keyframes logo-radar {
+  0% {
+    opacity: 0.65;
+    transform: scale(1);
+  }
+  80% {
+    opacity: 0;
+    transform: scale(3.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3.5);
+  }
+}
+
+@keyframes logo-shimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .logo-wordmark .logo-dot {
+  .logo-wordmark .logo-dot,
+  .logo-wordmark .logo-dot::before,
+  .logo-wordmark .logo-dot::after,
+  .logo-wordmark .logo-ai {
     animation: none;
   }
 }
