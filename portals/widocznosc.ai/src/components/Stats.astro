@@ -1,0 +1,14 @@
+---
+interface Props {
+  items: Array<{ value: string; label: string }>;
+}
+const { items } = Astro.props;
+---
+<dl class="my-8 grid grid-cols-2 gap-6 md:grid-cols-4">
+  {items.map(({ value, label }) => (
+    <div class="rounded-lg border border-white/10 p-6 text-center">
+      <dt class="text-caption uppercase tracking-wide text-off/60">{label}</dt>
+      <dd class="mt-2 text-h2 font-medium text-blue">{value}</dd>
+    </div>
+  ))}
+</dl>
