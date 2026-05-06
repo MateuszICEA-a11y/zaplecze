@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Wariant A4: Quadrant Eye – 4 trójkąty zbiegające do centrum, 1 akcent Blue -->
+  <path d="M2 2 L30 2 L16 14 Z" fill="#F9F9F9"/>
+  <path d="M30 2 L30 30 L18 16 Z" fill="#F9F9F9" opacity="0.5"/>
+  <path d="M30 30 L2 30 L16 18 Z" fill="#F9F9F9" opacity="0.7"/>
+  <path d="M2 30 L2 2 L14 16 Z" fill="#F9F9F9" opacity="0.5"/>
+  <circle cx="16" cy="16" r="2.5" fill="#5768FF"/>
+</svg>
