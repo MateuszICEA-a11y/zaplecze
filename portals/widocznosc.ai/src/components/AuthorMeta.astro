@@ -1,0 +1,23 @@
+---
+import { getEntry } from 'astro:content';
+interface Props {
+  authorSlug: string;
+  publishedAt: Date;
+  readingTimeMin: number;
+}
+const { authorSlug, publishedAt, readingTimeMin } = Astro.props;
+const author = await getEntry('authors', authorSlug);
+const dateFmt = new Intl.DateTimeFormat('pl-PL', { day: 'numeric', month: 'long', year: 'numeric' }).format(publishedAt);
+---
+<div class="flex items-center gap-3 text-caption text-off/60">
+  {author && <img src={author.data.photo} alt="" class="h-8 w-8 rounded-full object-cover" />}
+  {author && (
+    <a href={`/autor/${author.slug}/`} class="hover:text-off">
+      {author.data.name}
+    </a>
+  )}
+  <span aria-hidden="true">·</span>
+  <time datetime={publishedAt.toISOString()}>{dateFmt}</time>
+  <span aria-hidden="true">·</span>
+  <span>{readingTimeMin} min czytania</span>
+</div>

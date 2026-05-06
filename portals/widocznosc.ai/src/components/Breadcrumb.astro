@@ -1,0 +1,22 @@
+---
+interface Props {
+  items: Array<{ name: string; url: string }>;
+}
+const { items } = Astro.props;
+---
+<nav aria-label="Ścieżka nawigacyjna" class="mx-auto max-w-7xl px-6 py-4">
+  <ol class="flex flex-wrap items-center gap-2 text-caption text-off/60">
+    {items.map((item, i) => (
+      <li class="flex items-center gap-2">
+        {i < items.length - 1 ? (
+          <>
+            <a href={item.url} class="hover:text-off transition">{item.name}</a>
+            <span aria-hidden="true">›</span>
+          </>
+        ) : (
+          <span aria-current="page" class="text-off">{item.name}</span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>

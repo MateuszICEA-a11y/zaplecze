@@ -1,0 +1,30 @@
+---
+interface Props {
+  variant?: 'page' | 'article' | 'tool';
+  headline: string;
+  subheadline?: string;
+  ctaPrimary?: { text: string; href: string };
+  ctaSecondary?: { text: string; href: string };
+}
+const { variant = 'page', headline, subheadline, ctaPrimary, ctaSecondary } = Astro.props;
+
+const padY = variant === 'page' ? 'py-24' : variant === 'article' ? 'py-12' : 'py-16';
+---
+<section class={`mx-auto max-w-7xl px-6 ${padY}`}>
+  <h1 class="text-h1 font-medium">{headline}</h1>
+  {subheadline && <p class="mt-6 max-w-3xl text-lead text-off/80">{subheadline}</p>}
+  {(ctaPrimary || ctaSecondary) && (
+    <div class="mt-10 flex flex-wrap items-center gap-4">
+      {ctaPrimary && (
+        <a href={ctaPrimary.href} class="rounded-md bg-blue px-6 py-3 text-body font-medium text-off hover:bg-blue/90 transition">
+          {ctaPrimary.text}
+        </a>
+      )}
+      {ctaSecondary && (
+        <a href={ctaSecondary.href} class="rounded-md border border-white/20 px-6 py-3 text-body text-off hover:bg-white/5 transition">
+          {ctaSecondary.text}
+        </a>
+      )}
+    </div>
+  )}
+</section>
