@@ -1,0 +1,18 @@
+---
+import Image from './Image.astro';
+interface Props {
+  src: ImageMetadata | string;
+  alt: string;
+  caption?: string;
+}
+const { src, alt, caption } = Astro.props;
+---
+<Image
+  src={src}
+  alt={alt}
+  caption={caption}
+  width={1024}
+  height={1024}
+  loading="lazy"
+  class="my-12 mx-auto max-w-2xl rounded-lg border border-white/10"
+/>
