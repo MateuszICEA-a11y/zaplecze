@@ -14,11 +14,11 @@ const sidebarPosts = posts.slice(1, 5);
 const gridPosts = posts.slice(1);
 
 const formatDate = (date: Date) =>
-  date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  date.toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' });
 ---
 
 <Layout
-  title="Blog – widocznosc.ai"
+  title="Baza wiedzy – widocznosc.ai"
   description="Latest insights, trends, and updates from the Tailcast team."
 >
   <Navbar />
@@ -37,7 +37,7 @@ const formatDate = (date: Date) =>
                   class="bg-bgDark1Lighter flex aspect-[16/9] items-center justify-center rounded-2xl lg:aspect-auto lg:h-full"
                 >
                   <svg
-                    class="text-secondaryColor/30 h-32 w-32"
+                    class="text-accent/30 h-32 w-32"
                     fill="none"
                     stroke="currentColor"
                     stroke-width="0.5"
@@ -47,11 +47,11 @@ const formatDate = (date: Date) =>
                 </div>
               </div>
               <div class="px-6 pt-2 pb-3 sm:px-8 sm:pt-3 sm:pb-4">
-                <div class="text-secondaryText mb-1 text-sm">
+                <div class="meta mb-2">
                   {formatDate(featuredPost.data.date)}
                 </div>
                 <h2
-                  class="text-primaryText text-xl font-bold transition group-hover:text-secondaryColorLight sm:text-2xl"
+                  class="text-ink font-display text-2xl font-semibold tracking-tight transition group-hover:text-accent sm:text-3xl"
                 >
                   {featuredPost.data.title}
                 </h2>
@@ -72,7 +72,7 @@ const formatDate = (date: Date) =>
                 >
                   <div class="bg-bgDark1Lighter flex h-20 w-20 shrink-0 items-center justify-center rounded-xl">
                     <svg
-                      class="text-secondaryColor/40 h-8 w-8"
+                      class="text-accent/40 h-8 w-8"
                       fill="none"
                       stroke="currentColor"
                       stroke-width="1"
@@ -81,10 +81,10 @@ const formatDate = (date: Date) =>
                     />
                   </div>
                   <div>
-                    <h3 class="text-primaryText leading-snug font-bold transition group-hover:text-secondaryColorLight">
+                    <h3 class="text-ink font-display leading-snug font-semibold tracking-tight transition group-hover:text-accent">
                       {post.data.title}
                     </h3>
-                    <div class="text-secondaryText mt-1 text-sm">{formatDate(post.data.date)}</div>
+                    <div class="meta mt-2">{formatDate(post.data.date)}</div>
                   </div>
                 </a>
               ))
@@ -93,7 +93,9 @@ const formatDate = (date: Date) =>
         </div>
 
         <!-- All posts grid -->
-        <h2 class="text-primaryText mb-8 text-2xl font-bold">All articles</h2>
+        <h2 class="text-ink font-display mb-8 text-3xl font-semibold tracking-tight md:text-4xl">
+          Wszystkie artykuły
+        </h2>
         <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {
             gridPosts.map((post) => (
@@ -102,7 +104,7 @@ const formatDate = (date: Date) =>
                   <div class="p-4">
                     <div class="bg-bgDark1Lighter flex aspect-[3/2] items-center justify-center overflow-hidden rounded-2xl">
                       <svg
-                        class="text-secondaryColor/30 h-16 w-16"
+                        class="text-accent/30 h-16 w-16"
                         fill="none"
                         stroke="currentColor"
                         stroke-width="0.75"
@@ -112,11 +114,11 @@ const formatDate = (date: Date) =>
                     </div>
                   </div>
                   <div class="flex grow flex-col px-6 pt-2 pb-8">
-                    <div class="text-secondaryText mb-3 text-sm">{formatDate(post.data.date)}</div>
-                    <h2 class="text-primaryText mb-3 text-xl font-bold transition group-hover:text-secondaryColorLight">
+                    <div class="meta mb-3">{formatDate(post.data.date)}</div>
+                    <h2 class="text-ink font-display mb-3 text-xl font-semibold tracking-tight transition group-hover:text-accent">
                       {post.data.title}
                     </h2>
-                    <p class="text-secondaryText text-sm leading-relaxed">{post.data.subtitle}</p>
+                    <p class="text-ink-soft text-sm leading-relaxed">{post.data.subtitle}</p>
                   </div>
                 </article>
               </a>

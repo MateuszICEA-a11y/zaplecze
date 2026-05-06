@@ -24,7 +24,7 @@ const relatedPosts = allPosts
   .slice(0, 3);
 
 const formatDate = (date: Date) =>
-  date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  date.toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' });
 
 const articleData = {
   title: post.data.title,
@@ -59,7 +59,9 @@ const articleData = {
   <!-- Related posts -->
   <section class="bg-bgDark2 pb-20">
     <div class="content-container">
-      <h2 class="text-primaryText mb-8 text-2xl font-bold">See also</h2>
+      <h2 class="text-ink font-display mb-8 text-3xl font-semibold tracking-tight md:text-4xl">
+        Zobacz również
+      </h2>
       <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {
           relatedPosts.map((related) => (
@@ -68,7 +70,7 @@ const articleData = {
                 <div class="p-4">
                   <div class="bg-bgDark1Lighter flex aspect-[3/2] items-center justify-center overflow-hidden rounded-2xl">
                     <svg
-                      class="text-secondaryColor/30 h-16 w-16"
+                      class="text-accent/30 h-16 w-16"
                       fill="none"
                       stroke="currentColor"
                       stroke-width="0.75"
@@ -78,11 +80,11 @@ const articleData = {
                   </div>
                 </div>
                 <div class="flex grow flex-col px-6 pt-2 pb-8">
-                  <div class="text-secondaryText mb-3 text-sm">{formatDate(related.data.date)}</div>
-                  <h2 class="text-primaryText mb-3 text-xl font-bold transition group-hover:text-secondaryColorLight">
+                  <div class="meta mb-3">{formatDate(related.data.date)}</div>
+                  <h2 class="text-ink font-display mb-3 text-xl font-semibold tracking-tight transition group-hover:text-accent">
                     {related.data.title}
                   </h2>
-                  <p class="text-secondaryText text-sm leading-relaxed">{related.data.subtitle}</p>
+                  <p class="text-ink-soft text-sm leading-relaxed">{related.data.subtitle}</p>
                 </div>
               </article>
             </a>

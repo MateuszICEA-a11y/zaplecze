@@ -1,6 +1,63 @@
 ---
-const navbarLinks = [
-  { label: 'Pozycjonowanie AI', href: '/pozycjonowanie-ai' },
+type NavItem = {
+  label: string;
+  href: string;
+  desc?: string;
+};
+
+type NavGroup = {
+  label: string;
+  href: string;
+  items?: { heading?: string; links: NavItem[] }[];
+};
+
+const navbarLinks: NavGroup[] = [
+  {
+    label: 'Pozycjonowanie AI',
+    href: '/pozycjonowanie-ai',
+    items: [
+      {
+        heading: 'Usługi',
+        links: [
+          {
+            label: 'Audyt widoczności',
+            desc: 'Skan domeny w 5 modelach AI',
+            href: '/pozycjonowanie-ai#audyt',
+          },
+          {
+            label: 'Optymalizacja content',
+            desc: 'Pisanie pod LLM-y',
+            href: '/pozycjonowanie-ai#content',
+          },
+          {
+            label: 'Monitoring cytowań',
+            desc: 'Tracking wzmianek marki',
+            href: '/pozycjonowanie-ai#monitoring',
+          },
+        ],
+      },
+      {
+        heading: 'Doradztwo',
+        links: [
+          {
+            label: 'Strategia GEO',
+            desc: 'Plan widoczności 12 mies.',
+            href: '/pozycjonowanie-ai#strategia',
+          },
+          {
+            label: 'Konsultacje',
+            desc: '1:1 z ekspertem ICEA',
+            href: '/pozycjonowanie-ai#konsultacje',
+          },
+          {
+            label: 'Audyt + wdrożenie',
+            desc: '90 dni współpracy',
+            href: '/pozycjonowanie-ai#wdrozenie',
+          },
+        ],
+      },
+    ],
+  },
   { label: 'Baza wiedzy', href: '/blog' },
   { label: 'Narzędzia', href: '/narzedzia' },
   { label: 'O nas', href: '/about' },
@@ -36,21 +93,98 @@ const isActive = (href: string) => {
       </span>
     </div>
 
-    <!-- Nav links (desktop) -->
+    <!-- Nav links (desktop, lg+) -->
     <div class="hidden h-full lg:flex">
       {
-        navbarLinks.map(({ href, label }) => (
-          <a
-            class={`hover:text-accent relative flex h-20 cursor-pointer items-center px-4 text-base leading-6 font-medium transition duration-200 focus-visible:outline-offset-[-4px] 2xl:px-6 ${isActive(href) ? 'text-accent' : 'text-ink-soft'}`}
-            href={href}
-            {...(isActive(href) ? { 'aria-current': 'page' } : {})}
-          >
-            {label}
-            {isActive(href) && (
-              <span class="bg-accent absolute right-4 bottom-4 left-4 h-0.5 rounded-full 2xl:right-6 2xl:left-6" />
-            )}
-          </a>
-        ))
+        navbarLinks.map((group) => {
+          const active = isActive(group.href);
+          if (!group.items) {
+            return (
+              <a
+                class={`hover:text-accent relative flex h-20 cursor-pointer items-center px-4 text-base leading-6 font-medium transition duration-200 focus-visible:outline-offset-[-4px] 2xl:px-6 ${active ? 'text-accent' : 'text-ink-soft'}`}
+                href={group.href}
+                {...(active ? { 'aria-current': 'page' } : {})}
+              >
+                {group.label}
+                {active && (
+                  <span class="bg-accent absolute right-4 bottom-4 left-4 h-0.5 rounded-full 2xl:right-6 2xl:left-6" />
+                )}
+              </a>
+            );
+          }
+          return (
+            <div class="group relative h-20">
+              <a
+                href={group.href}
+                class={`hover:text-accent flex h-full cursor-pointer items-center gap-1 px-4 text-base leading-6 font-medium transition duration-200 2xl:px-6 ${active ? 'text-accent' : 'text-ink-soft'}`}
+                aria-haspopup="true"
+                aria-expanded="false"
+                {...(active ? { 'aria-current': 'page' } : {})}
+              >
+                {group.label}
+                <svg
+                  class="h-3 w-3 transition group-hover:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <polyline points="6,9 12,15 18,9" />
+                </svg>
+                {active && (
+                  <span class="bg-accent absolute right-4 bottom-4 left-4 h-0.5 rounded-full 2xl:right-6 2xl:left-6" />
+                )}
+              </a>
+              <!-- Mega dropdown -->
+              <div
+                class="bg-bg-card border-rule pointer-events-none invisible absolute top-full left-0 mt-1 w-[36rem] origin-top -translate-y-1 scale-[0.98] rounded-xl border opacity-0 shadow-2xl transition-all duration-200 group-hover:pointer-events-auto group-hover:visible group-hover:translate-y-0 group-hover:scale-100 group-hover:opacity-100 focus-within:pointer-events-auto focus-within:visible focus-within:translate-y-0 focus-within:scale-100 focus-within:opacity-100"
+                role="menu"
+              >
+                <div class="grid grid-cols-2 gap-2 p-6">
+                  {group.items.map((col) => (
+                    <div>
+                      {col.heading && (
+                        <div class="text-ink-mute mb-3 px-3 font-mono text-[11px] tracking-[0.12em] uppercase">
+                          {col.heading}
+                        </div>
+                      )}
+                      <ul class="space-y-1">
+                        {col.links.map((link) => (
+                          <li>
+                            <a
+                              href={link.href}
+                              class="hover:bg-bg-elevated focus-visible:bg-bg-elevated block rounded-md px-3 py-2 transition"
+                              role="menuitem"
+                            >
+                              <div class="text-ink group-hover:text-ink hover:text-accent text-sm font-semibold">
+                                {link.label}
+                              </div>
+                              {link.desc && (
+                                <div class="text-ink-soft mt-0.5 text-xs leading-relaxed">
+                                  {link.desc}
+                                </div>
+                              )}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+                <div class="border-rule-soft border-t px-6 py-3">
+                  <a
+                    href={group.href}
+                    class="text-accent flex items-center gap-2 font-mono text-[11px] tracking-wider uppercase transition hover:gap-3"
+                  >
+                    Zobacz wszystkie usługi
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          );
+        })
       }
     </div>
 
@@ -78,26 +212,54 @@ const isActive = (href: string) => {
   <!-- Mobile menu overlay -->
   <div class="fixed inset-0 top-20 z-40 hidden lg:hidden" id="mobile-menu-overlay"></div>
 
-  <!-- Mobile navbar -->
+  <!-- Mobile navbar – flat list, dropdowns rozwinięte jako sekcje -->
   <div
-    class="bg-bg border-rule absolute top-4 left-0 z-50 mt-16 hidden w-full flex-col items-center gap-8 border-y border-solid pt-10 pb-10 lg:hidden"
+    class="bg-bg border-rule absolute top-4 left-0 z-50 mt-16 hidden max-h-[calc(100vh-5rem)] w-full flex-col items-stretch gap-6 overflow-y-auto border-y border-solid p-6 pb-10 lg:hidden"
     id="mobile-menu"
   >
-    <span class="status" aria-label="5 modeli AI monitorowanych na żywo">
-      <span class="status-dot" aria-hidden="true"></span>
-      <span>5 modeli · live</span>
-    </span>
+    <div class="flex justify-center">
+      <span class="status" aria-label="5 modeli AI monitorowanych na żywo">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>5 modeli · live</span>
+      </span>
+    </div>
     {
-      navbarLinks.map(({ label, href }) => (
-        <a
-          class="mobile-nav-link text-ink hover:text-accent mr-4 ml-4 h-full cursor-pointer pt-2 text-xl leading-6 font-medium transition duration-300 lg:text-base 2xl:mr-6 2xl:ml-6"
-          href={href}
-        >
-          {label}
-        </a>
-      ))
+      navbarLinks.map((group) => {
+        if (!group.items) {
+          return (
+            <a
+              class="mobile-nav-link text-ink hover:text-accent block py-2 text-center text-xl leading-6 font-medium transition"
+              href={group.href}
+            >
+              {group.label}
+            </a>
+          );
+        }
+        return (
+          <div>
+            <a
+              href={group.href}
+              class="mobile-nav-link text-ink hover:text-accent block text-center text-xl leading-6 font-medium transition"
+            >
+              {group.label}
+            </a>
+            <div class="border-rule mt-3 grid grid-cols-1 gap-1 border-l border-solid pl-4">
+              {group.items.map((col) =>
+                col.links.map((link) => (
+                  <a
+                    href={link.href}
+                    class="mobile-nav-link text-ink-soft hover:text-accent block py-1 text-sm transition"
+                  >
+                    {link.label}
+                  </a>
+                ))
+              )}
+            </div>
+          </div>
+        );
+      })
     }
-    <a class="btn-primary" href="/kontakt" aria-label="Zamów audyt widoczności AI">
+    <a class="btn-primary mt-4 self-center" href="/kontakt" aria-label="Zamów audyt widoczności AI">
       Zamów audyt
     </a>
   </div>
@@ -157,7 +319,6 @@ const isActive = (href: string) => {
       link.addEventListener('click', closeMenu);
     });
 
-    // Escape closes mobile menu
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && menu?.classList.contains('flex')) {
         closeMenu();
@@ -165,7 +326,6 @@ const isActive = (href: string) => {
       }
     });
 
-    // Focus trap in mobile menu
     menu?.addEventListener('keydown', (e) => {
       if (e.key !== 'Tab') return;
       const focusable = menu.querySelectorAll<HTMLElement>('a, button');
