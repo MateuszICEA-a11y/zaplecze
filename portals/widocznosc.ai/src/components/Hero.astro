@@ -34,14 +34,14 @@ import dashboard from '../assets/images/dashboard.jpg';
     <div class="hero-fade-in" style="--delay: 0.15s">
       <div class="mt-10 mb-24 flex flex-col justify-center gap-2 sm:mb-40 sm:flex-row">
         <button
-          class="contained-button mr-0 mb-2 h-12 w-72 text-sm transition-all duration-300 hover:shadow-[0_0_30px_rgba(246,112,76,0.35)] sm:mr-2 sm:mb-0 sm:w-44 lg:mr-3"
+          class="contained-button mr-0 mb-2 h-12 w-72 text-sm transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,106,46,0.35)] sm:mr-2 sm:mb-0 sm:w-44 lg:mr-3"
           data-open-modal
           aria-label="Get started"
         >
           Get Started
         </button>
         <button
-          class="text-orange bg-bgDark2 hover:bg-bgDark3 border-orange flex h-12 w-72 cursor-pointer items-center justify-center rounded-xl border-2 border-solid text-sm font-bold transition hover:shadow-[0_0_24px_rgba(246,112,76,0.4)] sm:w-44"
+          class="text-ink bg-bg-alt hover:bg-bg-card border-rule hover:border-accent flex h-12 w-72 cursor-pointer items-center justify-center rounded-xl border border-solid text-sm font-bold transition sm:w-44"
           data-open-modal
           aria-label="Live demo"
         >
@@ -97,17 +97,17 @@ import dashboard from '../assets/images/dashboard.jpg';
     }
   }
 
-  /* Hero mesh background – Blue + Orange dual-tone.
-     Wzór z plan-1 DESIGN.md (mesh-hero), boosted opacity dla widoczności. */
+  /* Hero mesh background – orange-only (handoff B Structural).
+     Trzy radials z różną intensywnością i positioning dla głębi. */
   .hero-mesh::before {
     content: '';
     position: absolute;
     inset: 0;
     pointer-events: none;
     background:
-      radial-gradient(at 15% 20%, rgb(87 104 255 / 0.32) 0%, transparent 55%),
-      radial-gradient(at 85% 75%, rgb(246 112 76 / 0.28) 0%, transparent 55%),
-      radial-gradient(at 60% 90%, rgb(246 112 76 / 0.18) 0%, transparent 45%);
+      radial-gradient(at 15% 20%, rgb(255 106 46 / 0.22) 0%, transparent 55%),
+      radial-gradient(at 85% 75%, rgb(255 106 46 / 0.18) 0%, transparent 55%),
+      radial-gradient(at 60% 90%, rgb(255 138 79 / 0.12) 0%, transparent 45%);
     z-index: 0;
   }
 

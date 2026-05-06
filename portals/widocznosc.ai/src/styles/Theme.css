@@ -1,44 +1,133 @@
 @import 'tailwindcss';
 
+/* ============================================================
+   widocznosc.ai – Design tokens (B · Structural)
+   Source: handoff/tokens.css (kierunek B – ICEA orange jako structural accent).
+   ============================================================ */
+
+:root {
+  /* Surfaces */
+  --bg: #070810;
+  --bg-alt: #0d0f1a;
+  --bg-card: #11131f;
+  --bg-elevated: #161927;
+
+  /* Ink (text) */
+  --ink: #f4f1ea;
+  --ink-soft: #9aa0b3;
+  --ink-mute: #5d6275;
+
+  /* Rules / borders */
+  --rule: #1d2030;
+  --rule-soft: #161927;
+
+  /* Accent (ICEA orange) */
+  --accent: #ff6a2e;
+  --accent-dim: #a83d12;
+  --accent-bright: #ff8a4f;
+  --accent-glow: rgba(255, 106, 46, 0.18);
+  --accent-soft: rgba(255, 106, 46, 0.10);
+  --accent-edge: rgba(255, 106, 46, 0.35);
+
+  /* Typography */
+  --font-display: 'Inter Tight', 'Inter', -apple-system, system-ui, sans-serif;
+  --font-sans: 'Inter', -apple-system, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', ui-monospace, monospace;
+
+  /* Type scale */
+  --fs-h1: 76px;
+  --fs-h2: 48px;
+  --fs-h3: 20px;
+  --fs-body: 16px;
+  --fs-lede: 18px;
+  --fs-meta: 12px;
+  --fs-micro: 11px;
+
+  /* Spacing (base 4px) */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-14: 56px;
+  --sp-18: 72px;
+  --sp-24: 96px;
+
+  /* Radius */
+  --r-sm: 6px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-xl: 16px;
+  --r-pill: 999px;
+
+  /* Shadows */
+  --shadow-card: 0 24px 64px rgba(0, 0, 0, 0.5);
+  --shadow-cta: 0 0 0 1px var(--accent), 0 4px 20px var(--accent-glow);
+  --shadow-cta-lg: 0 0 0 1px var(--accent), 0 8px 28px var(--accent-glow);
+}
+
+/* ============================================================
+   Tailwind 4 @theme – nowy system + legacy mapping na Tailcast
+   tokeny żeby istniejące komponenty (Hero, Pricing, Footer itd.)
+   nadal się buildowały bez modyfikacji.
+   ============================================================ */
 @theme {
-  /* ICEA brand palette mapped na Tailcast tokeny.
-     Source: portals/widocznosc.ai/DESIGN.md (plan-1).
-     Brand: Midnight #000623 + Blue #5768FF + Orange #F6704C + Off #F9F9F9. */
+  /* New tokens (handoff B Structural) */
+  --color-bg: rgb(7, 8, 16);
+  --color-bg-alt: rgb(13, 15, 26);
+  --color-bg-card: rgb(17, 19, 31);
+  --color-bg-elevated: rgb(22, 25, 39);
+  --color-ink: rgb(244, 241, 234);
+  --color-ink-soft: rgb(154, 160, 179);
+  --color-ink-mute: rgb(93, 98, 117);
+  --color-rule: rgb(29, 32, 48);
+  --color-rule-soft: rgb(22, 25, 39);
+  --color-accent: rgb(255, 106, 46);
+  --color-accent-dim: rgb(168, 61, 18);
+  --color-accent-bright: rgb(255, 138, 79);
 
-  /* Primary accent (CTA, .ai logo, headlines emphasis) */
-  --color-primaryColor: rgb(87, 104, 255);          /* ICEA Blue #5768FF */
-  --color-primaryColorHover: rgb(118, 132, 255);    /* Blue lighter dla hover */
-  --color-secondaryColor: rgb(150, 162, 255);       /* Blue lighter (eyebrow, secondary accent) */
-  --color-secondaryColorLight: rgb(200, 205, 250);  /* Blue najjaśniejszy (link hover text) */
+  /* Legacy Tailcast mapping (primaryColor → accent etc.) */
+  --color-primaryColor: rgb(255, 106, 46);
+  --color-primaryColorHover: rgb(255, 138, 79);
+  --color-secondaryColor: rgb(154, 160, 179);
+  --color-secondaryColorLight: rgb(154, 160, 179);
+  --color-orange: rgb(255, 106, 46);
 
-  /* Rare accent – używać max 1-2x per page (warning, status indicator) */
-  --color-orange: rgb(246, 112, 76);                /* ICEA Orange #F6704C */
+  --color-primaryText: rgb(244, 241, 234);
+  --color-heroText: rgb(244, 241, 234);
+  --color-secondaryText: rgb(154, 160, 179);
 
-  /* Text */
-  --color-primaryText: rgb(249, 249, 249);          /* ICEA Off #F9F9F9 */
-  --color-heroText: rgb(255, 255, 255);             /* White – hero headlines */
-  --color-secondaryText: rgb(249 249 249 / 0.72);   /* Off 72% – body secondary */
+  --color-bgDark1: rgb(7, 8, 16);
+  --color-bgDark2: rgb(13, 15, 26);
+  --color-bgDark3: rgb(17, 19, 31);
+  --color-bgDark3Hover: rgb(22, 25, 39);
+  --color-bgDark3HoverLight: rgb(17, 19, 31);
+  --color-bgDarkTransparent: rgb(7 8 16 / 0.7);
+  --color-bgDarkTransparentDarker: rgb(7 8 16 / 0.85);
+  --color-bgDarkTransparentLighter: rgb(13 15 26 / 0.7);
+  --color-bgDark1Lighter: rgb(13, 15, 26);
 
-  /* Surface ladder (Linear-style) */
-  --color-bgDark1: rgb(0, 6, 35);                   /* Midnight – page canvas */
-  --color-bgDark2: rgb(10, 16, 55);                 /* Surface-1 – cards, body */
-  --color-bgDark3: rgb(19, 28, 77);                 /* Surface-2 – elevated cards */
-  --color-bgDark3Hover: rgb(27, 38, 100);           /* Surface-3 – hover, dropdown */
-  --color-bgDark3HoverLight: rgb(23, 33, 88);       /* między 2 i 3 */
-  --color-bgDarkTransparent: rgb(0 6 35 / 0.7);     /* midnight 70% */
-  --color-bgDarkTransparentDarker: rgb(0 6 35 / 0.85);  /* midnight 85% */
-  --color-bgDarkTransparentLighter: rgb(19 28 77 / 0.7);/* surface-2 70% */
-  --color-bgDark1Lighter: rgb(2, 10, 45);           /* midnight slight lift */
+  --color-mainBorder: rgb(29, 32, 48);
+  --color-mainBorderDarker: rgb(22, 25, 39);
+  --color-mainBorderSubtler: rgb(29, 32, 48);
+  --color-mainBorderFaintest: rgb(22, 25, 39);
+  --color-mainBorderSubtle: rgb(255 106 46 / 0.35);
+  --color-quoteIconColor: rgb(154, 160, 179);
 
-  /* Borders – hairline, off-white z opacity steps */
-  --color-mainBorder: rgb(249 249 249 / 0.16);
-  --color-mainBorderDarker: rgb(249 249 249 / 0.08);
-  --color-mainBorderSubtler: rgb(249 249 249 / 0.1);
-  --color-mainBorderFaintest: rgb(249 249 249 / 0.05);
-  --color-mainBorderSubtle: rgb(87 104 255 / 0.25); /* Blue accent border */
-  --color-quoteIconColor: rgb(178, 184, 205);
-
+  /* Fonts */
+  --font-display: 'Inter Tight';
+  --font-sans: 'Inter';
+  --font-mono: 'JetBrains Mono';
   --font-Inter: 'Inter';
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
 
   --breakpoint-xs: 530px;
   --breakpoint-sm: 640px;
@@ -47,6 +136,216 @@
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1536px;
 }
+
+/* ============================================================
+   Base
+   ============================================================ */
+html,
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: 1.55;
+  letter-spacing: -0.005em;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Display headings – Inter Tight z aggressive negative tracking.
+   UWAGA: nie nadpisuje istniejących Tailcast h1-h4 z arbitrary classes
+   (.text-3xl, .text-4xl), bo te mają wyższą specyficzność. To są
+   tylko defaults dla samych <h1-h4> bez klas Tailwind. */
+h1:not([class*='text-']),
+h2:not([class*='text-']),
+h3:not([class*='text-']),
+h4:not([class*='text-']) {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+h1:not([class*='text-']) {
+  font-size: var(--fs-h1);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+h2:not([class*='text-']) {
+  font-size: var(--fs-h2);
+  line-height: 1.05;
+}
+h3:not([class*='text-']) {
+  font-size: var(--fs-h3);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* ============================================================
+   New components (handoff B Structural)
+   ============================================================ */
+
+/* Mono meta – kickery, tagi, terminalowe sygnały */
+.meta {
+  font-family: var(--font-mono);
+  font-size: var(--fs-meta);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+
+/* Button – primary (orange CTA) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 14px 24px;
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--r-md);
+  cursor: pointer;
+  box-shadow: var(--shadow-cta-lg);
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s,
+    background 0.15s;
+}
+
+.btn-primary:hover {
+  background: var(--accent-bright);
+  transform: translateY(-1px);
+}
+
+/* Button – ghost */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 14px 24px;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid var(--rule);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
+}
+
+.btn-ghost:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* Chip / kicker pill */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 6px 14px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-edge);
+  border-radius: var(--r-pill);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.chip-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* Feature icon tile */
+.feat-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+/* Card – featured (gradient orange, dla planu Premium etc.) */
+.card-featured {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%);
+  color: var(--bg);
+  border: 1px solid var(--accent);
+  border-radius: var(--r-xl);
+  padding: var(--sp-8);
+  box-shadow:
+    0 0 0 1px var(--accent),
+    0 16px 48px var(--accent-glow);
+}
+
+/* Status pill – "live · 5 modeli" */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: 6px 10px;
+  border: 1px solid var(--rule);
+  border-radius: var(--r-pill);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-mute);
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+  animation: status-pulse 2s ease-in-out infinite;
+}
+
+@keyframes status-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Logo mark – kafelek 26x26 z pojedynczą literą */
+.logo-mark {
+  width: 26px;
+  height: 26px;
+  background: var(--accent);
+  color: var(--bg);
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* ============================================================
+   Tailcast legacy utility classes – zachowane dla istniejących
+   komponentów (Hero, Pricing, Footer, Blog itd.). Stopniowo
+   migrowane do nowego systemu w kolejnych etapach.
+   ============================================================ */
 
 /* Layout */
 
@@ -63,7 +362,7 @@
   @apply text-primaryText text-4xl font-bold tracking-normal xl:text-5xl;
 }
 .block-subtitle {
-  @apply text-secondaryColor text-xs font-bold tracking-wider uppercase;
+  @apply text-accent text-xs font-bold tracking-wider uppercase;
 }
 .content-title {
   @apply text-primaryText text-lg font-bold tracking-normal;
@@ -72,7 +371,7 @@
   @apply text-primaryText text-base leading-relaxed;
 }
 .content-text-gray {
-  @apply text-base text-gray-400;
+  @apply text-base text-ink-soft;
 }
 
 /* Borders */
@@ -84,28 +383,28 @@
   @apply border-mainBorderDarker border border-solid;
 }
 
-/* Buttons */
+/* Buttons (legacy – cofnięte do hover-darken bo accent jest CTA) */
 
 .contained-button {
-  @apply bg-primaryColor hover:bg-primaryColorHover text-primaryText flex cursor-pointer items-center justify-center rounded-lg font-bold transition;
+  @apply bg-accent hover:bg-accent-bright text-bg flex cursor-pointer items-center justify-center rounded-lg font-bold transition;
 }
 .outlined-button {
-  @apply text-primaryText border-mainBorder bg-bgDark2 hover:bg-bgDark3 cursor-pointer rounded-xl border border-solid text-sm;
+  @apply text-ink border-rule bg-bg-alt hover:bg-bg-card cursor-pointer rounded-xl border border-solid text-sm;
 }
 
 /* Cards */
 
 .card {
-  @apply bg-bgDark3/40 border-mainBorderFaintest hover:border-mainBorderSubtler hover:bg-bgDark3HoverLight/70 rounded-2xl border transition-all duration-500;
+  @apply bg-bg-card border-rule hover:border-accent/35 hover:bg-bg-elevated rounded-2xl border transition-all duration-500;
 }
 .card-colored-hover {
-  @apply hover:border-primaryColor/25 hover:bg-bgDark3HoverLight;
+  @apply hover:border-accent/35 hover:bg-bg-elevated;
 }
 
 /* Images */
 
 .image-border {
-  @apply border-mainBorderSubtler rounded-xl border border-solid;
+  @apply border-rule rounded-xl border border-solid;
 }
 
 .image-glow-border::before {
@@ -115,8 +414,8 @@
   border-radius: 0.75rem;
   padding: 1px;
   background:
-    radial-gradient(ellipse at 0% 0%, rgb(100, 97, 115), transparent 50%),
-    radial-gradient(ellipse at 100% 100%, rgb(100, 97, 115), transparent 50%);
+    radial-gradient(ellipse at 0% 0%, var(--rule), transparent 50%),
+    radial-gradient(ellipse at 100% 100%, var(--rule), transparent 50%);
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
@@ -134,10 +433,10 @@
   pointer-events: none;
   z-index: 1;
   background:
-    linear-gradient(to right, rgba(100, 97, 115, 0.6), transparent 50%) top / 100% 8px no-repeat,
-    linear-gradient(to bottom, rgba(100, 97, 115, 0.6), transparent 50%) left / 8px 100% no-repeat,
-    linear-gradient(to left, rgba(100, 97, 115, 0.6), transparent 50%) bottom / 100% 8px no-repeat,
-    linear-gradient(to top, rgba(100, 97, 115, 0.6), transparent 50%) right / 8px 100% no-repeat;
+    linear-gradient(to right, rgba(29, 32, 48, 0.6), transparent 50%) top / 100% 8px no-repeat,
+    linear-gradient(to bottom, rgba(29, 32, 48, 0.6), transparent 50%) left / 8px 100% no-repeat,
+    linear-gradient(to left, rgba(29, 32, 48, 0.6), transparent 50%) bottom / 100% 8px no-repeat,
+    linear-gradient(to top, rgba(29, 32, 48, 0.6), transparent 50%) right / 8px 100% no-repeat;
   filter: blur(8px);
 }
 
@@ -156,16 +455,28 @@
 /* Badges */
 
 .badge-primary {
-  @apply bg-primaryColor/15 text-secondaryColor rounded-full px-3 py-1 text-xs;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-edge);
+  color: var(--accent);
+  border-radius: var(--r-pill);
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
 }
+
 .badge-neutral {
-  @apply bg-bgDark3 text-secondaryText rounded-full px-3 py-1 text-xs;
+  @apply bg-bg-card text-ink-soft rounded-full px-3 py-1 text-xs;
 }
 
 /* Inputs */
 
 .form-input {
-  @apply border-mainBorderSubtler text-primaryText hover:border-primaryColor focus:border-primaryColor w-full rounded-xl border bg-transparent px-4 py-3 placeholder-gray-500 transition outline-none;
+  @apply border-rule text-ink hover:border-accent focus:border-accent w-full rounded-xl border bg-transparent px-4 py-3 transition outline-none;
+  color: var(--ink);
+}
+
+.form-input::placeholder {
+  color: var(--ink-mute);
 }
 
 /* Modals */
@@ -195,17 +506,24 @@
     margin: 0;
   }
 }
+
 .modal-close-button {
-  @apply absolute top-5 right-5 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full text-[rgb(255,255,255,0.7)] transition hover:text-white;
+  @apply absolute top-5 right-5 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full transition;
+  color: rgb(244 241 234 / 0.7);
+}
+
+.modal-close-button:hover {
+  color: var(--ink);
 }
 
 .modal-close-button svg {
   @apply h-4 w-4;
 }
 
-/* Logo wordmark – widocznosc•ai
-   Radar pulse motif: tematycznie pasuje do "widoczności w AI" – core dot
-   z dwoma rozchodzącymi się pierścieniami sygnalizuje detection / sweep. */
+/* ============================================================
+   Logo wordmark (legacy z poprzednich etapów – zostaje do Etapu 3
+   gdzie zastąpimy logo na .logo-mark z handoff)
+   ============================================================ */
 
 .logo-wordmark {
   display: inline-flex;
@@ -214,7 +532,7 @@
   font-weight: 500;
   letter-spacing: -0.02em;
   line-height: 1;
-  color: var(--color-primaryText);
+  color: var(--ink);
 }
 
 .logo-wordmark .logo-dot {
@@ -223,49 +541,31 @@
   width: 0.4em;
   height: 0.4em;
   border-radius: 9999px;
-  background: var(--color-primaryColor);
-  /* symmetric: 0.22em po obu stronach (poprzednio asymmetric 0.04 / 0.18) */
+  background: var(--accent);
   margin: 0 0.22em 0.06em 0.22em;
-  box-shadow: 0 0 0.5em color-mix(in srgb, var(--color-primaryColor) 55%, transparent);
+  box-shadow: 0 0 0.5em var(--accent-glow);
   animation: logo-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Dwa rozchodzące się pierścienie radaru: pierwszy Blue, drugi Orange.
-   Tematyka: Blue = AI signal sweep, Orange = brand/human signal. */
 .logo-wordmark .logo-dot::before,
 .logo-wordmark .logo-dot::after {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: 9999px;
-  border: 2px solid var(--color-primaryColor);
+  border: 2px solid var(--accent);
   opacity: 0;
   pointer-events: none;
   animation: logo-radar 2.6s cubic-bezier(0, 0.4, 0.6, 1) infinite;
 }
 
 .logo-wordmark .logo-dot::after {
-  border-color: var(--color-orange);
-  border-width: 2px;
   animation-delay: 1.3s;
-  /* Orange ring grubszy + glow dla wyrazistszego akcentu */
-  box-shadow: 0 0 0.4em color-mix(in srgb, var(--color-orange) 50%, transparent);
 }
 
 .logo-wordmark .logo-ai {
-  /* Shimmer gradient: indigo → lighter indigo, animowany shift */
-  background: linear-gradient(
-    100deg,
-    var(--color-primaryColor) 0%,
-    var(--color-secondaryColor) 50%,
-    var(--color-primaryColor) 100%
-  );
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--accent);
   letter-spacing: -0.025em;
-  animation: logo-shimmer 4s ease-in-out infinite;
 }
 
 @keyframes logo-pulse {
@@ -295,22 +595,11 @@
   }
 }
 
-@keyframes logo-shimmer {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .logo-wordmark .logo-dot,
   .logo-wordmark .logo-dot::before,
   .logo-wordmark .logo-dot::after,
-  .logo-wordmark .logo-ai {
+  .status-dot {
     animation: none;
   }
 }
-
