@@ -33,10 +33,28 @@ build/
 **/api-credentials.md
 .hugo_build.lock
 
-# Node (if ever needed)
+# Node / pnpm
 node_modules/
-*.png
+.pnpm-store/
+*.log
+
+# Block root-level screenshot PNGs only (allow portal assets in public/)
+/*.png
+
 .claude/
+
+# Astro
+**/.astro/
+**/dist/
+**/.output/
+
+# Cloudflare
+**/.wrangler/
+**/.dev.vars
+
+# Playwright
+**/test-results/
+**/playwright-report/
 
 # FB poster log
 pipeline/fb-poster/fb-poster.log
