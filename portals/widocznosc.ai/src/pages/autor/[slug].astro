@@ -1,0 +1,316 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ScrollUpButton from '../../components/ScrollUpButton.astro';
+import CTABand from '../../components/CTABand.astro';
+import { getCollection } from 'astro:content';
+import { CATEGORY_LABELS } from '../../content.config';
+
+export const getStaticPaths = async () => {
+  const authors = await getCollection('authors');
+  return authors.map((author) => ({
+    params: { slug: author.id },
+    props: { author },
+  }));
+};
+
+const { author } = Astro.props;
+const data = author.data;
+
+// Artykuły autora – jak frontmatter blog ma author.name == data.name
+const allPosts = await getCollection('blog');
+const authorPosts = allPosts
+  .filter((post) => post.data.author?.name === data.name)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const otherAuthors = (await getCollection('authors'))
+  .filter((a) => a.id !== author.id)
+  .sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const initials = (name: string) =>
+  name
+    .split(' ')
+    .map((n) => n[0])
+    .join('')
+    .slice(0, 2);
+---
+
+<Layout
+  title={`${data.name} – ${data.role} – widocznosc.ai`}
+  description={data.shortBio}
+>
+  <Navbar />
+
+  <!-- Hero -->
+  <section
+    class="relative w-full overflow-hidden pb-16 md:pb-20"
+    style="background: var(--bg);"
+  >
+    <div
+      class="pointer-events-none absolute inset-0"
+      style="background: radial-gradient(at 25% 25%, rgba(255,106,46,0.16) 0%, transparent 55%), radial-gradient(at 75% 75%, rgba(255,106,46,0.10) 0%, transparent 55%);"
+      aria-hidden="true"
+    >
+    </div>
+    <div class="content-container relative z-10 pt-32 md:pt-40 lg:pt-44">
+      <!-- Breadcrumb -->
+      <div class="mb-8 flex items-center gap-2 font-mono text-[11px] tracking-[0.12em] uppercase">
+        <a href="/o-nas" class="text-ink-soft hover:text-accent transition">O nas</a>
+        <span class="text-ink-mute" aria-hidden="true">/</span>
+        <span class="text-accent">{data.name}</span>
+      </div>
+
+      <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16 lg:items-center">
+        <!-- Photo -->
+        <div class="lg:col-span-4">
+          <div
+            class="border-rule bg-bg-card relative mx-auto aspect-square w-48 overflow-hidden rounded-2xl border sm:w-56 lg:w-full lg:max-w-sm"
+          >
+            {
+              data.photo ? (
+                <img
+                  src={data.photo}
+                  alt={data.name}
+                  class="h-full w-full object-cover"
+                  loading="eager"
+                />
+              ) : (
+                <div
+                  class="text-accent flex h-full w-full items-center justify-center font-mono text-6xl font-semibold"
+                  style="background: var(--accent-soft);"
+                  aria-hidden="true"
+                >
+                  {initials(data.name)}
+                </div>
+              )
+            }
+          </div>
+        </div>
+
+        <!-- Bio -->
+        <div class="lg:col-span-8">
+          <span class="meta mb-4 inline-block">{data.role} · {data.company}</span>
+          <h1
+            class="text-ink font-display mt-2 mb-6 text-4xl font-semibold tracking-[-0.04em] sm:text-5xl lg:text-6xl"
+          >
+            {data.name}
+          </h1>
+          <p class="text-ink-soft mb-8 text-lg leading-relaxed">{data.bio}</p>
+
+          <!-- Expertise pills -->
+          <div class="mb-8">
+            <div class="text-ink-mute mb-3 font-mono text-[11px] tracking-[0.12em] uppercase">
+              Specjalizacje
+            </div>
+            <div class="flex flex-wrap gap-2">
+              {
+                data.expertise.map((skill) => (
+                  <span class="chip">{skill}</span>
+                ))
+              }
+            </div>
+          </div>
+
+          <!-- Links -->
+          <div class="flex flex-wrap items-center gap-4">
+            {
+              data.iceaProfile && (
+                <a
+                  href={data.iceaProfile}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-ghost"
+                >
+                  Profil ICEA
+                  <span aria-hidden="true">↗</span>
+                </a>
+              )
+            }
+            {
+              data.linkedin && (
+                <a
+                  href={data.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-ink-soft hover:text-accent flex items-center gap-2 font-mono text-[11px] tracking-wider uppercase transition"
+                >
+                  LinkedIn
+                  <span aria-hidden="true">↗</span>
+                </a>
+              )
+            }
+            {
+              data.twitter && (
+                <a
+                  href={data.twitter}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-ink-soft hover:text-accent flex items-center gap-2 font-mono text-[11px] tracking-wider uppercase transition"
+                >
+                  Twitter / X
+                  <span aria-hidden="true">↗</span>
+                </a>
+              )
+            }
+            {
+              data.email && (
+                <a
+                  href={`mailto:${data.email}`}
+                  class="text-ink-soft hover:text-accent flex items-center gap-2 font-mono text-[11px] tracking-wider uppercase transition"
+                >
+                  E-mail
+                  <span aria-hidden="true">↗</span>
+                </a>
+              )
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles by author -->
+  <section
+    class="border-rule relative w-full border-y"
+    style="background: var(--bg-alt);"
+    aria-labelledby="articles-title"
+  >
+    <div class="content-container py-20 lg:py-24">
+      <div class="mb-10 flex items-end justify-between gap-6">
+        <div>
+          <span class="meta mb-3 inline-block">
+            Artykuły · {authorPosts.length}
+          </span>
+          <h2
+            id="articles-title"
+            class="text-ink font-display mt-2 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl"
+          >
+            {authorPosts.length > 0 ? `Artykuły ${data.name.split(' ')[0]}a` : 'Artykuły wkrótce'}
+          </h2>
+        </div>
+        <a
+          href="/blog"
+          class="text-accent hidden items-center gap-2 font-mono text-[11px] tracking-wider uppercase transition hover:gap-3 sm:flex"
+        >
+          Cała baza wiedzy
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      {
+        authorPosts.length === 0 ? (
+          <div class="border-rule bg-bg-card rounded-xl border p-10 text-center">
+            <p class="text-ink-soft text-lg leading-relaxed">
+              Pierwsze artykuły {data.name.split(' ')[0]}a pojawią się wkrótce.
+              <br />
+              <a class="text-accent hover:underline" href="/blog">
+                Zobacz aktualną bazę wiedzy →
+              </a>
+            </p>
+          </div>
+        ) : (
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {authorPosts.map((post) => (
+              <a
+                href={`/blog/${post.id}`}
+                class="group border-rule bg-bg-card hover:border-accent/35 hover:bg-bg-elevated flex h-full flex-col overflow-hidden rounded-2xl border transition"
+              >
+                <div class="p-4">
+                  <div class="bg-bg flex aspect-[3/2] items-center justify-center rounded-xl">
+                    <svg
+                      class="text-accent/30 h-16 w-16"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="0.75"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                      set:html={post.data.icon}
+                    />
+                  </div>
+                </div>
+                <div class="flex grow flex-col px-6 pt-2 pb-6">
+                  <div class="mb-3 flex items-center gap-3">
+                    <span class="chip">{CATEGORY_LABELS[post.data.category]}</span>
+                    <span class="meta">{formatDate(post.data.date)}</span>
+                  </div>
+                  <h3 class="text-ink font-display mb-2 text-lg font-semibold tracking-tight transition group-hover:text-accent">
+                    {post.data.title}
+                  </h3>
+                  <p class="text-ink-soft text-sm leading-relaxed">{post.data.subtitle}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  <!-- Pozostali autorzy -->
+  <section class="relative w-full" style="background: var(--bg);" aria-labelledby="other-authors-title">
+    <div class="content-container py-20 lg:py-24">
+      <div class="mb-10 text-center">
+        <span class="meta mb-3 inline-block">Zespół</span>
+        <h2
+          id="other-authors-title"
+          class="text-ink font-display mt-2 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl"
+        >
+          Pozostali eksperci ICEA
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          otherAuthors.map((other) => (
+            <a
+              href={`/autor/${other.id}`}
+              class="group border-rule bg-bg-card hover:border-accent/35 hover:bg-bg-elevated flex flex-col items-center rounded-xl border p-6 text-center transition"
+            >
+              {other.data.photo ? (
+                <img
+                  src={other.data.photo}
+                  alt={other.data.name}
+                  class="mb-4 h-20 w-20 rounded-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+              ) : (
+                <div
+                  class="text-accent border-accent/35 mb-4 flex h-20 w-20 items-center justify-center rounded-full border font-mono text-xl font-semibold"
+                  style="background: var(--accent-soft);"
+                  aria-hidden="true"
+                >
+                  {initials(other.data.name)}
+                </div>
+              )}
+              <div class="text-ink font-display group-hover:text-accent font-semibold transition">
+                {other.data.name}
+              </div>
+              <div class="text-accent mt-1 font-mono text-[11px] tracking-wider uppercase">
+                {other.data.role} · {other.data.company}
+              </div>
+              <p class="text-ink-soft mt-3 text-sm leading-relaxed">{other.data.shortBio}</p>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CTABand
+    eyebrow="Konsultacja"
+    title={`Porozmawiaj z ekspertem ICEA`}
+    subtitle={`Bezpłatna konsultacja 30 minut z ${data.name.split(' ')[0]}em lub innym specjalistą zespołu. Bez sprzedaży, bez zobowiązań.`}
+    primaryLabel="Zamów audyt AI"
+    primaryHref="/kontakt?type=audyt-ai"
+    ghostLabel="Bezpłatna konsultacja"
+    ghostHref="/kontakt?type=konsultacja"
+  />
+
+  <Footer />
+  <ScrollUpButton />
+</Layout>
