@@ -238,7 +238,7 @@
   position: absolute;
   inset: 0;
   border-radius: 9999px;
-  border: 1px solid var(--color-primaryColor);
+  border: 2px solid var(--color-primaryColor);
   opacity: 0;
   pointer-events: none;
   animation: logo-radar 2.6s cubic-bezier(0, 0.4, 0.6, 1) infinite;
@@ -246,7 +246,10 @@
 
 .logo-wordmark .logo-dot::after {
   border-color: var(--color-orange);
+  border-width: 2px;
   animation-delay: 1.3s;
+  /* Orange ring grubszy + glow dla wyrazistszego akcentu */
+  box-shadow: 0 0 0.4em color-mix(in srgb, var(--color-orange) 50%, transparent);
 }
 
 .logo-wordmark .logo-ai {
@@ -279,12 +282,12 @@
 
 @keyframes logo-radar {
   0% {
-    opacity: 0.65;
+    opacity: 0.85;
     transform: scale(1);
   }
-  80% {
-    opacity: 0;
-    transform: scale(3.2);
+  70% {
+    opacity: 0.15;
+    transform: scale(2.8);
   }
   100% {
     opacity: 0;
