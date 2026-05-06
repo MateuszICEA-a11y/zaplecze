@@ -1,13 +1,21 @@
 ---
+// Inter – body & UI (handoff B Structural)
 import '@fontsource/inter/400.css';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/600.css';
 import '@fontsource/inter/700.css';
-import '@fontsource/inter/800.css';
-import '@fontsource/inter/900.css';
+// Inter Tight – display headings (h1/h2/h3, hero, section titles)
+import '@fontsource/inter-tight/600.css';
+import '@fontsource/inter-tight/700.css';
+// JetBrains Mono – meta (kickery, status pill, CTA labels, byline)
+import '@fontsource/jetbrains-mono/500.css';
+import '@fontsource/jetbrains-mono/600.css';
+import '@fontsource/jetbrains-mono/700.css';
 import interLatin400 from '@fontsource/inter/files/inter-latin-400-normal.woff2?url';
 import interLatin500 from '@fontsource/inter/files/inter-latin-500-normal.woff2?url';
 import interLatin700 from '@fontsource/inter/files/inter-latin-700-normal.woff2?url';
+import interTight600 from '@fontsource/inter-tight/files/inter-tight-latin-600-normal.woff2?url';
+import jetbrainsMono500 from '@fontsource/jetbrains-mono/files/jetbrains-mono-latin-500-normal.woff2?url';
 import { ClientRouter } from 'astro:transitions';
 import '../styles/Theme.css';
 import '../styles/diagonals.css';
@@ -48,6 +56,8 @@ const ogImage = `${siteUrl}/og-image.png`;
     <link rel="preload" href={interLatin400} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={interLatin500} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={interLatin700} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={interTight600} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={jetbrainsMono500} as="font" type="font/woff2" crossorigin />
     <link rel="canonical" href={`${siteUrl}${Astro.url.pathname}`} />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
@@ -82,8 +92,8 @@ const ogImage = `${siteUrl}/og-image.png`;
     <InvitationModal />
     <style is:global>
       html {
-        font-family: Inter;
-        background-color: var(--color-bgDark1);
+        font-family: 'Inter', -apple-system, system-ui, sans-serif;
+        background-color: var(--bg);
         overflow-x: hidden;
         scroll-behavior: smooth !important;
       }
