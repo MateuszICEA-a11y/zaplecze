@@ -1,0 +1,24 @@
+/* Manrope – primary (OFL, free) */
+@font-face {
+  font-family: 'Manrope';
+  src: url('/fonts/Manrope-Variable.woff2') format('woff2-variations');
+  font-weight: 200 800;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* Roobert – placeholder, swap kiedy ICEA udostępni licencję webfont */
+/*
+@font-face {
+  font-family: 'Roobert';
+  src: url('/fonts/Roobert-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Roobert';
+  src: url('/fonts/Roobert-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+*/
