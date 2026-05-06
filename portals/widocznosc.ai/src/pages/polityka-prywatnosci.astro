@@ -1,0 +1,42 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+---
+<BaseLayout title="Polityka prywatności – widocznosc.ai" description="Polityka prywatności widocznosc.ai. Informacja o przetwarzaniu danych osobowych zgodna z RODO oraz lista sub-processors.">
+  <article class="prose prose-invert mx-auto max-w-3xl px-6 py-16">
+    <h1>Polityka prywatności</h1>
+    <p>Wersja: 1.0 · Data wejścia w życie: 2026-05-06</p>
+
+    <h2>1. Administrator Danych Osobowych</h2>
+    <p>
+      Administratorem Twoich danych osobowych jest <strong>{`{{ICEA_LEGAL_NAME}}`}</strong> z siedzibą w <strong>{`{{ICEA_ADDRESS}}`}</strong>, NIP <strong>{`{{ICEA_NIP}}`}</strong>. Kontakt RODO: <a href="mailto:m.wisniewski@grupa-icea.pl">m.wisniewski@grupa-icea.pl</a>.
+    </p>
+
+    <h2>2. Cele i podstawy prawne przetwarzania</h2>
+    <ul>
+      <li>Przetwarzanie zapytań kontaktowych i o audyt – podstawa: art. 6 ust. 1 lit. b RODO (umowa)</li>
+      <li>Wysyłka kopii raportu z narzędzia AI Visibility Checker – podstawa: art. 6 ust. 1 lit. a RODO (zgoda)</li>
+      <li>Marketing usług ICEA – podstawa: art. 6 ust. 1 lit. f RODO (uzasadniony interes)</li>
+    </ul>
+
+    <h2>3. Okres retencji</h2>
+    <p>Dane lead'ów (formularz audytu, kontakt): 24 miesiące od ostatniej interakcji.</p>
+
+    <h2>4. Sub-processors</h2>
+    <ul>
+      <li>Cloudflare, Inc. – hosting, CDN, D1 storage. DPA: <a href="https://www.cloudflare.com/cloudflare-customer-dpa/">cloudflare.com/cloudflare-customer-dpa</a></li>
+      <li>OpenAI, L.L.C. – LLM API. DPA: <a href="https://openai.com/policies/data-processing-addendum/">openai.com/policies/data-processing-addendum</a></li>
+      <li>Anthropic, PBC – LLM API. DPA: <a href="https://www.anthropic.com/legal/dpa">anthropic.com/legal/dpa</a></li>
+      <li>Perplexity AI, Inc. – LLM API. DPA: <a href="https://www.perplexity.ai/dpa">perplexity.ai/dpa</a></li>
+      <li>Resend, Inc. – transactional email. DPA: <a href="https://resend.com/legal/dpa">resend.com/legal/dpa</a></li>
+    </ul>
+
+    <h2>5. Prawa</h2>
+    <p>Masz prawo do dostępu, sprostowania, usunięcia, ograniczenia, przenoszenia i sprzeciwu. Skarga do Prezesa UODO.</p>
+
+    <h2>6. Cookies</h2>
+    <p>Używamy wyłącznie cookies funkcjonalnych (Cloudflare Turnstile dla bot protection). GA4 i inne pomiary podpinamy w przyszłości za zgodą użytkownika.</p>
+
+    <h2>7. Zmiany</h2>
+    <p>Aktualizacje publikujemy w tej polityce, oznaczając wersję i datę zmiany.</p>
+  </article>
+</BaseLayout>

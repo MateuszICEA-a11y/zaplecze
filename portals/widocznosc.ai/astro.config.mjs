@@ -9,6 +9,7 @@ export default defineConfig({
   output: 'static',
   adapter: cloudflare({
     platformProxy: { enabled: true },
+    imageService: 'compile',
   }),
   integrations: [
     tailwind({ applyBaseStyles: false }),

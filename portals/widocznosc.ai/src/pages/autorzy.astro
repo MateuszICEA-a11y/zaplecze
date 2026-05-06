@@ -1,0 +1,31 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Breadcrumb from '@components/Breadcrumb.astro';
+import { getCollection } from 'astro:content';
+
+const authors = (await getCollection('authors')).sort((a: any, b: any) =>
+  a.data.name.localeCompare(b.data.name),
+);
+---
+<BaseLayout title="Autorzy – widocznosc.ai" description="Eksperci widocznosc.ai i ICEA w zakresie SEO, AI, GEO i pozycjonowania w LLM-ach. Każdy artykuł ma realnego autora i recenzenta.">
+  <Breadcrumb items={[
+    { name: 'Strona główna', url: '/' },
+    { name: 'Autorzy', url: '/autorzy/' },
+  ]} />
+  <section class="mx-auto max-w-7xl px-6 py-12">
+    <h1 class="text-h1 font-medium">Autorzy</h1>
+    <p class="mt-4 max-w-3xl text-lead text-off/80">Eksperci ICEA piszący dla widocznosc.ai. Każdy artykuł ma realnego autora i recenzenta.</p>
+    <ul class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+      {authors.map((a: any) => (
+        <li class="rounded-lg border border-white/10 bg-surface-1 p-6">
+          <a href={`/autor/${a.slug}/`}>
+            <img src={a.data.photo} alt={a.data.name} class="aspect-square rounded-lg object-cover" />
+            <h2 class="mt-4 text-h4 font-medium">{a.data.name}</h2>
+            <p class="text-small text-blue">{a.data.role}</p>
+            <p class="mt-2 text-small text-off/70">{a.data.shortBio}</p>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>

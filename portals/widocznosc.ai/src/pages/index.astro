@@ -1,24 +1,58 @@
 ---
 import BaseLayout from '@layouts/BaseLayout.astro';
+import Hero from '@components/Hero.astro';
+import Stats from '@components/Stats.astro';
+import { getCollection } from 'astro:content';
+
+const recentArticles = (
+  await getCollection('articles', ({ data }: any) => !data.draft)
+)
+  .sort((a: any, b: any) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
+  .slice(0, 6);
+const authors = await getCollection('authors');
 ---
 <BaseLayout
   title="widocznosc.ai – Bądź widoczny tam, gdzie szukają Twoi klienci"
   description="Kompleksowe pozycjonowanie marki w AI: ChatGPT, Claude, Gemini, Perplexity. Marka ICEA – Diament Forbesa, semKRK Awards. Sprawdź swoją widoczność w AI."
 >
-  <section class="mx-auto max-w-7xl px-6 py-24 text-center">
-    <h1 class="text-h1 font-medium leading-none">
-      Bądź widoczny tam, gdzie szukają Twoi klienci.
-    </h1>
-    <p class="mx-auto mt-6 max-w-2xl text-lead text-off/80">
-      Pozycjonowanie marki w ChatGPT, Claude, Gemini, Perplexity. Komplementarna wiedza o widoczności w AI.
-    </p>
-    <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-      <a href="/pozycjonowanie-ai/audyt-widocznosci-ai/" class="rounded-md bg-blue px-6 py-3 text-body font-medium text-off hover:bg-blue/90 transition">
-        Zamów audyt
-      </a>
-      <a href="/narzedzia/audyt-widocznosci-ai/" class="rounded-md border border-white/20 px-6 py-3 text-body text-off hover:bg-white/5 transition">
-        Sprawdź narzędzie
-      </a>
-    </div>
+  <Hero
+    headline="Bądź widoczny tam, gdzie szukają Twoi klienci."
+    subheadline="Pozycjonowanie marki w ChatGPT, Claude, Gemini, Perplexity. Komplementarna wiedza o widoczności w AI."
+    ctaPrimary={{ text: 'Zamów audyt', href: '/pozycjonowanie-ai/audyt-widocznosci-ai/' }}
+    ctaSecondary={{ text: 'Sprawdź narzędzie', href: '/narzedzia/audyt-widocznosci-ai/' }}
+  />
+  <Stats items={[
+    { value: '15+', label: 'lat ICEA' },
+    { value: '5', label: 'modele AI mierzone' },
+    { value: '500+', label: 'klientów' },
+    { value: '#1', label: 'na semKRK Awards' },
+  ]} />
+  <section class="mx-auto max-w-7xl px-6 py-16">
+    <h2 class="text-h2 font-medium">Najnowsze z bazy wiedzy</h2>
+    <ul class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {recentArticles.map((a: any) => (
+        <li class="rounded-lg border border-white/10 bg-surface-1 p-6 hover:border-blue/50 transition">
+          <a href={`/baza-wiedzy/${a.data.category}/${a.slug}/`}>
+            <h3 class="text-h4 font-medium">{a.data.title}</h3>
+            <p class="mt-2 text-small text-off/70">{a.data.metaDescription}</p>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+  <section class="mx-auto max-w-7xl px-6 py-16">
+    <h2 class="text-h2 font-medium">Nasz zespół</h2>
+    <ul class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+      {authors.map((a: any) => (
+        <li class="rounded-lg border border-white/10 bg-surface-1 p-6">
+          <a href={`/autor/${a.slug}/`}>
+            <img src={a.data.photo} alt={a.data.name} class="aspect-square rounded-lg object-cover" />
+            <h3 class="mt-4 text-h4 font-medium">{a.data.name}</h3>
+            <p class="text-small text-blue">{a.data.role}</p>
+            <p class="mt-2 text-small text-off/70">{a.data.shortBio}</p>
+          </a>
+        </li>
+      ))}
+    </ul>
   </section>
 </BaseLayout>

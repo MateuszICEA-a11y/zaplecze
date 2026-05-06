@@ -1,0 +1,22 @@
+---
+import AuthorLayout from '@layouts/AuthorLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const authors = await getCollection('authors');
+  return authors.map((a: any) => ({
+    params: { slug: a.slug },
+    props: { author: a },
+  }));
+}
+
+const { author } = Astro.props as any;
+const articles = (
+  await getCollection('articles', ({ data }: any) =>
+    !data.draft && data.authors.some((ref: any) => ref.id === author.slug),
+  )
+).sort((a: any, b: any) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime());
+
+const url = `${Astro.site}autor/${author.slug}/`;
+---
+<AuthorLayout author={author.data} authorSlug={author.slug} articles={articles} url={url} />

@@ -1,0 +1,19 @@
+---
+import ListingLayout from '@layouts/ListingLayout.astro';
+import { getCollection } from 'astro:content';
+
+const articles = (
+  await getCollection('articles', ({ data }: any) => !data.draft)
+)
+  .sort((a: any, b: any) => b.data.publishedAt.getTime() - a.data.publishedAt.getTime())
+  .map((a: any) => ({ slug: a.slug, data: a.data, collection: 'articles' }));
+---
+<ListingLayout
+  title="Baza wiedzy"
+  description="Pełnowartościowe artykuły o modelach AI, pojęciach AI i poradniki praktyczne dla biznesu. Kompletny zasób wiedzy o widoczności marki w LLM."
+  breadcrumbs={[
+    { name: 'Strona główna', url: '/' },
+    { name: 'Baza wiedzy', url: '/baza-wiedzy/' },
+  ]}
+  items={articles}
+/>
