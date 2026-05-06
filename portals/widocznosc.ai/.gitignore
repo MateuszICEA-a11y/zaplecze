@@ -6,3 +6,6 @@ dist/
 *.log
 test-results/
 playwright-report/
+.lighthouseci/
+# Lighthouse może czasami generować Chrome user data dirs z Windows path
+C:\\*

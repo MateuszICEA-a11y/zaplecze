@@ -1,0 +1,28 @@
+{
+  "ci": {
+    "collect": {
+      "startServerCommand": "npx wrangler pages dev dist --port 8788 --ip 127.0.0.1",
+      "startServerReadyPattern": "Ready on",
+      "url": [
+        "http://127.0.0.1:8788/",
+        "http://127.0.0.1:8788/o-nas/",
+        "http://127.0.0.1:8788/baza-wiedzy/",
+        "http://127.0.0.1:8788/autorzy/",
+        "http://127.0.0.1:8788/autor/tomasz-czechowski/"
+      ],
+      "numberOfRuns": 1,
+      "settings": {
+        "preset": "desktop",
+        "skipAudits": ["uses-http2"]
+      }
+    },
+    "assert": {
+      "assertions": {
+        "categories:performance": ["warn", { "minScore": 0.9 }],
+        "categories:accessibility": ["warn", { "minScore": 0.9 }],
+        "categories:best-practices": ["warn", { "minScore": 0.9 }],
+        "categories:seo": ["warn", { "minScore": 0.95 }]
+      }
+    }
+  }
+}
