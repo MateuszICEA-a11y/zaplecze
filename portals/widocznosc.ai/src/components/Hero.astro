@@ -1,82 +1,72 @@
 ---
-import { Image } from 'astro:assets';
-import dashboard from '../assets/images/dashboard.jpg';
+const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Bing Copilot'];
 ---
 
 <section
-  class="bg-bgDark1 hero-mesh relative mb-[28vw] flex w-full items-center justify-center pb-24 sm:pb-32 md:mb-[18vw] md:pb-44 lg:mb-[10vw] lg:pb-0 xl:mb-[13vw] 2xl:mb-60"
+  class="hero-mesh relative flex w-full items-center justify-center overflow-hidden pb-32 md:pb-40 lg:pb-48"
+  style="background: var(--bg);"
   id="home"
 >
   <div
-    class="flex w-full flex-col items-center justify-center pt-16 text-center md:w-[50rem] md:pt-16 lg:pt-20 xl:w-[56.25rem]"
+    class="flex w-full flex-col items-center justify-center pt-32 text-center md:w-[58rem] md:pt-40 lg:pt-44 xl:w-[64rem]"
   >
+    <!-- Eyebrow chip – meta info na żywo -->
     <div class="hero-fade-in" style="--delay: 0s">
-      <span class="block-subtitle mt-16 mb-6 block text-[0.65rem] sm:mt-32 sm:text-xs">
-        Discover new data flow
+      <span class="chip mt-12 mb-8" aria-label="Generative Engine Optimization – pozycjonowanie w wyszukiwarkach AI">
+        <span class="chip-dot" aria-hidden="true"></span>
+        GEO · pozycjonowanie w AI
       </span>
     </div>
-    <div class="hero-fade-in mx-auto max-w-3xl px-4" style="--delay: 0.05s">
+
+    <!-- H1 – display, Inter Tight z aggressive tracking -->
+    <div class="hero-fade-in mx-auto max-w-4xl px-4" style="--delay: 0.05s">
       <h1
-        class="xs:text-4xl text-[1.7rem] leading-[1.1] font-bold tracking-tight md:text-5xl lg:text-6xl"
+        class="text-ink font-display text-[2.5rem] leading-[1] font-semibold tracking-[-0.04em] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5rem] xl:text-[5.5rem]"
       >
-        <span class="text-heroText">One platform to track</span><br />
-        <span class="text-heroText">the full picture</span>
+        Bądź widoczny tam,
+        <br />
+        gdzie pytają <span class="text-accent">AI</span>.
       </h1>
     </div>
+
+    <!-- Lede – pozycjonowanie marki w 5 wyszukiwarkach AI -->
     <div class="hero-fade-in" style="--delay: 0.1s">
       <p
-        class="text-secondaryText mx-auto mt-7 max-w-2xl px-4 text-sm leading-relaxed sm:text-base"
+        class="text-ink-soft mx-auto mt-8 max-w-2xl px-4 text-base leading-relaxed sm:text-lg"
       >
-        A complete analytics platform designed to scale with your team - from your first event to
-        billions of data points.
+        Pozycjonujemy marki w&nbsp;ChatGPT, Claude, Gemini i&nbsp;Perplexity. Mierzymy widoczność,
+        cytowania i&nbsp;pokrycie tematyczne &ndash; nie tylko ranking.
       </p>
     </div>
+
+    <!-- CTAs -->
     <div class="hero-fade-in" style="--delay: 0.15s">
-      <div class="mt-10 mb-24 flex flex-col justify-center gap-2 sm:mb-40 sm:flex-row">
-        <button
-          class="contained-button mr-0 mb-2 h-12 w-72 text-sm transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,106,46,0.35)] sm:mr-2 sm:mb-0 sm:w-44 lg:mr-3"
-          data-open-modal
-          aria-label="Get started"
-        >
-          Get Started
-        </button>
-        <button
-          class="text-ink bg-bg-alt hover:bg-bg-card border-rule hover:border-accent flex h-12 w-72 cursor-pointer items-center justify-center rounded-xl border border-solid text-sm font-bold transition sm:w-44"
-          data-open-modal
-          aria-label="Live demo"
-        >
-          Live demo
-        </button>
+      <div class="mt-10 mb-16 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a class="btn-primary" href="/kontakt" aria-label="Zamów audyt widoczności AI">
+          Zamów audyt
+        </a>
+        <a class="btn-ghost" href="/narzedzia" aria-label="Sprawdź widoczność swojej marki w 90 sekund">
+          Sprawdź widoczność &middot; 90s
+        </a>
       </div>
     </div>
-    <div class="relative z-20 flex w-screen justify-center">
+
+    <!-- Lista 5 silników AI – mono, subtle, sygnalizuje pokrycie -->
+    <div class="hero-fade-in mt-12 px-4" style="--delay: 0.2s">
+      <div class="text-ink-mute mb-4 font-mono text-[11px] tracking-[0.2em] uppercase">
+        Mierzymy w 5 wyszukiwarkach AI
+      </div>
       <div
-        class="hero-fade-in image-glow-border absolute z-10 mx-auto w-4/5 rounded-xl lg:top-6 xl:top-0 2xl:w-[75rem]"
-        style="--delay: 0.15s; opacity: 0.005"
+        class="text-ink-soft flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-mono text-sm"
       >
-        <Image
-          src={dashboard}
-          alt="Dashboard image"
-          class="main-border-gray w-full rounded-xl"
-          fetchpriority="high"
-          loading="eager"
-        />
-        <div class="pointer-events-none absolute inset-0 rounded-xl bg-black/10"></div>
-      </div>
-    </div>
-    <div class="relative flex w-screen justify-center">
-      <div class="shape-divider-bottom-1665343298 mt-4 hidden sm:mt-16 md:mt-52 lg:block">
-        <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-          class="bg-bgDark2"
-          aria-hidden="true"
-        >
-          <path d="M1200 0L0 0 598.97 114.72 1200 0z" class="shape-fill bg-bgDark1 fill-bgDark1"
-          ></path>
-        </svg>
+        {
+          aiEngines.map((engine, i) => (
+            <>
+              <span class="hover:text-accent transition">{engine}</span>
+              {i < aiEngines.length - 1 && <span class="text-ink-mute" aria-hidden="true">·</span>}
+            </>
+          ))
+        }
       </div>
     </div>
   </div>
