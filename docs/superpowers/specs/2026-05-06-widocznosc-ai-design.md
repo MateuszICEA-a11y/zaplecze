@@ -1,10 +1,14 @@
 # widocznosc.ai – Design Spec
 
-**Data:** 2026-05-06
+**Data:** 2026-05-06 (revizja po Codex review + impeccable integration)
 **Autor:** Mateusz Wiśniewski (ICEA) + Claude Code
 **Status:** zaakceptowany przez User'a, gotowy do writing-plans
 **Domena:** widocznosc.ai (zarejestrowana)
 **Repo:** monorepo `transformacja-zaplecza-seo`, projekt w `portals/widocznosc.ai/`
+
+**Changelog:**
+- `2026-05-06 v1` – pierwsza wersja po brainstorming session
+- `2026-05-06 v2` – po Codex review: zacieśnienie scope (80 → 40 artykułów na MVP), 3 LLM providers w narzędziu na start (5 jako P2), infografiki tylko dla pillar content, dodane sekcje testing/monitoring/security/RODO/content moderation, integracja impeccable jako design QA tooling, rozwiązane wewnętrzne sprzeczności
 
 ---
 
@@ -40,11 +44,12 @@ widocznosc.ai to portal flagowy ICEA – komplementarne źródło wiedzy o AI/GE
 
 ### Alternatywy rozważone i odrzucone
 
-| Opcja | Powód odrzucenia |
+| Opcja | Powód odrzucenia / decyzja |
 |---|---|
 | Next.js 15 (App Router) | Overkill dla portalu contentowego, gorszy SEO performance, lock-in na React |
 | Hugo (jak busmaniak.pl) | User explicitly wybrał Astro + narzędzie audytu wymaga server endpointów |
 | Astro + Vercel | CF Pages = brak limitu transferu, ICEA już ma CF account, spójność z busmaniak.pl |
+| **CF Workers + Queues** dla async audit | **Rozważone, MVP zostaje przy Pages Functions z timeout 30s + per-provider timeout 8s + graceful degradation. Workers + Queues włączamy w P2 jeśli p95 latency > 25s lub potrzebujemy retry/backoff per provider** |
 
 ### Struktura monorepo
 
@@ -102,7 +107,7 @@ Ostry split komercyjne ↔ edukacyjne. **Brak mieszania fraz blogowych ze sprzed
 /pozycjonowanie-ai/pozycjonowanie-w-gemini/
 /pozycjonowanie-ai/pozycjonowanie-w-perplexity/
 /pozycjonowanie-ai/pozycjonowanie-w-copilot/
-/pozycjonowanie-ai/audyt-widocznosci-ai/          Landing + osadzenie narzędzia
+/pozycjonowanie-ai/audyt-widocznosci-ai/          Landing usługowy (link + CTA do narzędzia, NIE embed)
 /pozycjonowanie-ai/optymalizacja-pod-llm/
 /pozycjonowanie-ai/case-studies/                  Listing
 /pozycjonowanie-ai/case-studies/[slug]/
@@ -133,7 +138,7 @@ Ostry split komercyjne ↔ edukacyjne. **Brak mieszania fraz blogowych ze sprzed
 - **`/pozycjonowanie-ai/` jest pillarem komercyjnym** – tylko strony pozycjonujące pod sprzedażowe intencje + case studies. Żadnych blogów tu.
 - **Frazy edukacyjne** ("co to jest RAG", "jak działa ChatGPT", "Claude vs ChatGPT") siedzą w `/baza-wiedzy/` i są oddzielone od pillara.
 - **`/baza-wiedzy/pojecia-ai/`** to **pełnowartościowe artykuły** (1500-3000+ słów), NIE krótki słownik. Każdy taki artykuł celuje w long-tail "co to jest X", ALE buduje rzeczywistą wartość.
-- **`/narzedzia/audyt-widocznosci-ai/`** to osobne pełnoprawne narzędzie z UX flow, oddzielne od `/pozycjonowanie-ai/audyt-widocznosci-ai/` (sales landing usługi audytu manualnego ICEA).
+- **`/narzedzia/audyt-widocznosci-ai/`** to osobne pełnoprawne narzędzie z UX flow. **`/pozycjonowanie-ai/audyt-widocznosci-ai/` to landing usługowy** opisujący usługę audytu manualnego ICEA (po automatycznym audycie z narzędzia) – ma sticky CTA "Wypróbuj narzędzie" linkujący do `/narzedzia/audyt-widocznosci-ai/`. Narzędzie nie jest embedowane w landingu (jasna separacja UX: landing = sprzedażowo, narzędzie = utility flow).
 - Pillar `/pozycjonowanie-ai/` = pełnoprawny **landing usługowy z treścią pod SEO** (nie tylko hub linków).
 
 ### Header navigation
@@ -198,7 +203,7 @@ src/content/
   subcategory?: string,
   intent: 'educational' | 'comparison' | 'tutorial',
   hero: { image: image(), alt, caption? },
-  infographic: { image: image(), alt, caption? },     // 2-gi obraz, brand visual
+  infographic?: { image: image(), alt, caption? },    // OPCJONALNY 2-gi obraz – tylko dla pillar i wybranych deep-dive (nie per artykuł)
   tldr: string,                                        // BLUF, 1-2 zdania
   readingTimeMin: number,
   toc: boolean,
@@ -435,29 +440,39 @@ colors: {
 
 ## 7. AI Visibility Checker (narzędzie MVP)
 
-### User flow
+### User flow (MVP)
 
 ```
-STEP 1: Form (5 pól)
+STEP 1: Form (5 pól) + Cloudflare Turnstile (bot protection)
   • Domena/nazwa marki (required)
-  • Branża (select)
-  • Email (required, lead capture)
+  • Branża (select – lista do uzupełnienia)
+  • Email (required, lead capture, walidacja format + MX check)
   • Imię (required)
-  • Zgoda RODO (checkbox)
+  • Zgoda RODO + link do polityki prywatności (checkbox required)
+  • Turnstile widget (invisible, bot protection)
   [Sprawdź widoczność →]
 
 STEP 2: Loading screen (animowany)
-  "Sprawdzamy 5 modeli AI: ChatGPT, Claude, Gemini, Perplexity, Copilot"
+  "Sprawdzamy 3 modele AI: ChatGPT, Claude, Perplexity"
   Progress bar + obrotowy status per model
+  Per-provider timeout 8s, total 30s; jeśli provider failuje → graceful degradation (wynik częściowy + nota)
 
-STEP 3: Wyniki
-  • Score widoczności AI: X/100
-  • Per-model breakdown (ChatGPT, Claude, Gemini, Perplexity, Copilot)
+STEP 3: Wyniki (renderowane od razu na ekranie)
+  • Score widoczności AI: X/100 (na podstawie 3 modeli na MVP)
+  • Per-model breakdown (ChatGPT, Claude, Perplexity)
   • Top sources (gdzie cytowany)
   • 3 wnioski / insight
   • CTA: "Chcesz pełen audyt + plan optymalizacji? → ICEA"
-  • Auto-email z kopią raportu
+  • Auto-email z kopią raportu (lead nurturing)
 ```
+
+### Decyzja: 3 LLM-y na MVP, 5 jako P2
+
+Codex review zwrócił uwagę, że 5 paralelnych providerów inline w Pages Function ma realne ryzyko timeoutów. Decyzja: **MVP startuje z 3 modelami** (ChatGPT, Claude, Perplexity – kluczowi gracze + Perplexity reprezentuje "search-grounded"). Po walidacji scoring/latency/koszt **dodajemy Gemini i Copilot w P2**. Architektura przygotowana pod 5 providerów (interfejs LLMProvider + plugin per provider).
+
+### Rozstrzygnięcie sprzeczności: "Brak email-gate" vs email required
+
+Email JEST required w kroku 1 (lead capture). Wyniki SĄ widoczne od razu po submit (brak post-submit gate'u – nie blokujemy wyników za drugim formularzem ani magic link). To jest **lead capture pre-results**, nie post-results email-wall. Doprecyzowanie kontra wcześniejszy zapis "brak email-gate".
 
 ### Architektura
 
@@ -471,14 +486,17 @@ FRONTEND (Astro Island)
 
 CLOUDFLARE PAGES FUNCTION
   functions/api/audit.ts
-  – Rate-limit: 1/IP/15min (D1)
+  – Turnstile validation (bot protection)
+  – Rate-limit: 1/IP/dzień + 5/email/dzień + global budget cap (D1)
   – Walidacja Zod
   – Lead save: D1 + email do mailbox ICEA (Resend)
-  – Orchestracja: 5 paralelnych queries
+  – Orchestracja: 3 paralelne queries z timeout 8s per provider, total 30s
+  – Graceful degradation: partial results jeśli ≥2 z 3 providerów odpowiedziało
 
       ↓ parallel
 
-[ChatGPT (OpenAI)] [Claude (Anthropic)] [Gemini (Google)] [Perplexity Sonar] [Copilot (Bing)]
+[ChatGPT (OpenAI)] [Claude (Anthropic)] [Perplexity Sonar]
+                                                    Gemini, Copilot → P2
 
       ↓ aggregate
 
@@ -510,10 +528,13 @@ what do you know about "{brand}"? If unknown say so.
 | Element | Tech |
 |---|---|
 | Frontend | Astro Island + React |
-| API | CF Pages Functions (TS) |
-| Storage | CF D1 |
-| LLM clients | OpenAI SDK, Anthropic SDK, Google Generative AI SDK, Perplexity API, Bing API |
-| Email | Resend (delivery do ICEA mailboxa) |
+| API | CF Pages Functions (TS) – timeout strategy: per-provider 8s, total 30s |
+| Storage | CF D1 (leads, rate-limit counters, audit logs) |
+| Bot protection | **Cloudflare Turnstile** (invisible widget) |
+| LLM clients (MVP) | OpenAI SDK, Anthropic SDK, Perplexity API |
+| LLM clients (P2) | + Google Generative AI SDK, Bing/Copilot API |
+| Email | Resend (delivery do ICEA mailboxa + user copy raportu) |
+| Budget guard | D1 counter z global daily cap → blokada nowych zapytań po przekroczeniu, alert do mailboxa |
 | Animacje | CSS + lekkie tweens |
 
 ### Lead flow
@@ -529,13 +550,20 @@ form submit → /api/audit →
   └─ return JSON to frontend
 ```
 
-### Brak email-gate
+### Email capture flow (NIE email-gate)
 
-Wyniki na ekranie od razu, email służy do lead capture + kopii raportu, nie blokuje wyników.
+Email jest **pre-result data capture** (krok 1 formularza). Po submit wyniki widoczne od razu na ekranie – brak drugiego formularza, magic linka czy "wprowadź email aby zobaczyć wyniki". Lead capture trafia do D1 + mailboxa, kopia raportu wysyłana do user'a (Resend).
 
-### Koszty estymacja
+### Koszty estymacja + budget guard
 
-~$0.05-0.10 per zapytanie (5 LLM calls × ~500 tokens out). Rate-limit 1/IP/15min, 100 audytów/dzień ≈ $10/dzień.
+~$0.03-0.06 per zapytanie (3 LLM calls × ~500 tokens out na MVP). Przy 50 audytach/dzień ≈ $2-3/dzień.
+
+**Wielowarstwowy rate-limit (zacieśniony po Codex review):**
+- 1 audit / IP / 24h (D1 counter, klucz: IP + day)
+- 5 audytów / email / 24h (D1 counter, klucz: email + day)
+- Global daily cap: 200 audytów/dzień → po przekroczeniu narzędzie zwraca "tymczasowo niedostępne" + alert do mailboxa
+- Cloudflare Turnstile blokuje boty pre-API
+- WAF rule (CF) na podejrzane patterny (rapid sequential requests z różnych IP)
 
 ### P2 dla narzędzia
 
@@ -559,7 +587,7 @@ Reuse framework z `pipeline/content-writer/` (6-stage flow), ale **nowy SKILL sp
 | Quality bar | "Solidnie", duża skala | "Tip top", mniejsza skala, każdy tekst peer-review |
 | Fact-checking | GPT-5.4 + Wikipedia | GPT-5.4 + **Perplexity Sonar** (web-aware) + dokumentacja modeli AI |
 | Sources | Wikipedia + producent | Papers (arXiv), oficjalna dokumentacja (OpenAI/Anthropic/Google), benchmarks (LMSys, MMLU) |
-| Hero/infografika | nano-banana-2 | **gpt-image-2** (przez kie.ai), 2 obrazy per artykuł (hero + infografika) |
+| Hero/infografika | nano-banana-2 | **gpt-image-2** (przez kie.ai). Hero per artykuł. **Infografika TYLKO dla pillarów + wybranych deep-dive** (nie per artykuł – Codex review wskazał że to scope creep) |
 | Authors | Generic redaction | **Realny autor z 4 z ICEA** + peer-reviewer (drugie nazwisko) |
 | Author assignment | Round-robin | Per specjalizacja (matching expertise → topic) |
 
@@ -592,7 +620,7 @@ Reuse framework z `pipeline/content-writer/` (6-stage flow), ale **nowy SKILL sp
    → auto-assignment autora: matching frontmatter.primaryKeyword × author.expertise
      (Czechowski/Wicenciak → SEO; Wiśniewski → AI Search; Ziach → AI/tech-deep)
    → reviewer: drugi autor z complementary specjalizacji (peer-review = E-E-A-T boost)
-   → 2 obrazy per artykuł: hero (gpt-image-2, 16:9) + infografika (gpt-image-2, 1:1)
+   → obrazy: hero (gpt-image-2, 16:9) per artykuł; infografika (gpt-image-2, 1:1) TYLKO dla pillar i deep-dive ≥3000 słów
    → vision-validation (GPT-5.4): paleta ICEA + brand consistency
    → output: ready-to-publish .mdx
 ```
@@ -600,8 +628,8 @@ Reuse framework z `pipeline/content-writer/` (6-stage flow), ale **nowy SKILL sp
 ### Stage 0 (przed launch): Topic master plan
 
 Jednorazowy job:
-- Research Senuto/DataForSEO dla 8 modeli (ChatGPT, Claude, Gemini, Perplexity, Codex, Claude Code, Copilot) + 30+ pojęć (RAG, embeddingi…) + 10+ poradników biznesowych
-- Output: `pipeline/content-writer/portals/widocznosc-ai/topic-master-plan.yaml` z 80 tematami
+- Research Senuto/DataForSEO dla 8 modeli (ChatGPT, Claude, Gemini, Perplexity, Codex, Claude Code, Copilot) + pojęć (RAG, embeddingi…) + poradników biznesowych
+- Output: `pipeline/content-writer/portals/widocznosc-ai/topic-master-plan.yaml` z 40 tematami MVP (8 landingów + 12 modele + 12 pojęcia + 8 poradniki) + 40 tematów P2 odroczonych
 - Akceptacja master planu przez User'a + Claude Code zanim ruszy produkcją
 
 ### Reuse z istniejących pipeline
@@ -623,9 +651,9 @@ Lokalizacja: `pipeline/content-writer/portals/widocznosc-ai/generate-images.py`
 |---|---|
 | Endpoint | `https://api.kie.ai/api/v1/jobs/createTask` |
 | Model | `gpt-image-2-text-to-image` |
-| Output | 2 obrazy: hero + infografika |
-| Hero | 16:9, 1K |
-| Infografika | 1:1, 1K |
+| Output | Hero (zawsze) + infografika (warunkowo, tylko pillar/deep-dive) |
+| Hero | 16:9, 1K, per każdy artykuł |
+| Infografika | 1:1, 1K, **tylko** pillar + artykuły ≥3000 słów (typowo deep-dives o modelach AI) |
 | Style guard | Brand visual ICEA, geometryczne, abstract tech, ludzie dozwoleni w kontekście |
 | Vision validation | GPT-5.4: paleta + brand consistency |
 
@@ -654,7 +682,7 @@ Każdy artykuł przed publikacją musi mieć:
 1. ✅ Zod schema validation passed
 2. ✅ Fact-checker: 0 błędów krytycznych
 3. ✅ Min 4 sources, w tym min 1 z arXiv lub oficjalnej dokumentacji
-4. ✅ Min 2 obrazy (hero 16:9 + infografika 1:1), vision check passed (paleta + brand consistency)
+4. ✅ Min 1 obraz hero (16:9). Infografika (1:1) wymagana tylko dla pillar/deep-dive ≥3000 słów. Vision check passed (paleta + brand consistency)
 5. ✅ Author + reviewer w frontmatter
 6. ✅ Min 1500 słów dla `/baza-wiedzy/`, min 2500 słów dla `/pozycjonowanie-ai/*`
 
@@ -665,7 +693,7 @@ Pipeline failujący na bramce → artykuł nie publikowany, log w `pipeline/cont
 ```
 pipeline/content-writer/portals/widocznosc-ai/
 ├── SKILL.md                       # główny dokument
-├── topic-master-plan.yaml          # 80 tematów planned
+├── topic-master-plan.yaml          # 40 tematów MVP + 40 P2
 ├── prompts/
 │   ├── outline-research.md
 │   ├── draft-pillar.md
@@ -761,29 +789,168 @@ Test: Lighthouse 95+ na każdym template.
 - Keyboard navigation pełna
 - `prefers-reduced-motion` respected
 
+### Design quality gates (impeccable integration)
+
+Spec używa skill `pbakaus/impeccable` jako systematyczny design QA tooling – uzupełnia ad-hoc inspekcję strukturalnym lintem + LLM critique w 7 domenach (typografia, kolory, kontrast, spacing, animacje, interakcje, responsive, UX writing).
+
+**Workflow per komponent / template:**
+1. `/shape <component>` przed budową – walidacja założeń designerskich
+2. Build (Claude Code lub Codex)
+3. `/critique <component>` po wstępnej implementacji – 27 deterministycznych reguł + LLM critique
+4. `/polish <component>` przed merge – finalna obróbka
+5. `/audit` na całym template po implementacji (a11y + responsive + typografia)
+
+**CI/CD integration:**
+```bash
+npx impeccable detect portals/widocznosc.ai/src/ --json
+```
+Działa bez API key (deterministyczne reguły) → tańsze niż każdorazowe LLM. Dodane jako blocking check w GitHub Actions.
+
+**Instalacja:** globalnie `~/.claude/` (nie wymaga zmian w repo widocznosc.ai).
+
+### Testing strategy
+
+Codex review wskazał, że dotychczas mieliśmy tylko "Lighthouse 95+" – uzupełniamy:
+
+| Warstwa | Narzędzie | Pokrycie |
+|---|---|---|
+| Unit (Astro components, lib utils) | Vitest | min 70% lib/, schema validators, schema.org generators, BLUF/TLDR extractor |
+| Schema fixture tests | Vitest + sample MDX | każdy content type ma test fixture (pillar, article, author, case-study) walidowany przeciw Zod |
+| Integration (`/api/audit`) | Vitest + msw | mock LLM providers, test happy path + każdy provider failure scenario, rate-limit, Turnstile |
+| E2E (krytyczne flows) | Playwright | homepage, 1 pillar, 1 article, formularz audytu (mock), nawigacja mega-menu, focus management |
+| A11y testy | axe-playwright | każdy template (5×) – 0 violations target |
+| Pipeline regression | Pytest + sample inputs | content-writer skill: outline → draft → fact-check → schema fail-fast |
+| Performance | Lighthouse CI | każdy template, regression vs baseline (LCP, INP, CLS, page weight) |
+| Visual regression (P2) | Percy / Chromatic | po launch jeśli design często iteruje |
+
+CI pipeline (GitHub Actions): lint (impeccable detect + ESLint + Prettier) → unit → schema → integration → E2E → Lighthouse → deploy preview.
+
+### Monitoring & alerting
+
+Codex review wskazał, że "GA4/GSC P2" jest niewystarczające jako observability:
+
+| Warstwa | Narzędzie | Co monitorujemy |
+|---|---|---|
+| Error tracking (frontend + functions) | Sentry (free tier) | JS errors, function exceptions, unhandled rejections |
+| Performance (real user) | CF Web Analytics (free) | CWV field data, page views, geo |
+| Provider latency dashboard | Custom (D1 + small Astro page `/admin/audit-stats/`, basic auth) | per-provider p50/p95/p99 latency, success rate, timeout rate |
+| Budget alerts | D1 trigger + Resend email | alert do mailbox jeśli daily LLM cost > $10 |
+| Rate-limit alerts | D1 trigger + Resend | alert jeśli >50 IP rate-limited / dzień (sygnał ataku) |
+| Uptime | UptimeRobot (free) | homepage, pillar, narzędzie endpoint co 5 min |
+| Search Console | wpięte od dnia 1 (sitemap submission, indexing inspection) | indexation, search analytics |
+
+**GSC submission jest dnia 1** (bo to nie pomiar tylko submission sitemapy + indeksowanie, krytyczne dla launch). GA4 jako pełen tracking podpinamy "później" zgodnie z user instructions (P2). To rozwiązuje sprzeczność z poprzedniego speca.
+
+### Backup & disaster recovery
+
+| Asset | Backup strategy | Retention |
+|---|---|---|
+| Repo (kod) | Git on GitHub | natywne git history |
+| Content collections (markdown) | w git | natywne git history |
+| Generated images | w git (`public/images/articles/`) | natywne git history |
+| D1 leads + audit logs | **Daily export** via CF Workers Cron → R2 bucket (CSV + JSON) | 90 dni rolling, P2 dłuższa archiwizacja |
+| Logi pipeline (`pipeline/content-writer/logs/`) | w git lub Workers Cron → R2 | 30 dni |
+| Brand assets (logo SVG, fonts) | w git + dump w `branding guidelines/` | natywne |
+
+DR scenariusz: utrata D1 = utrata leadów. Mitigation: daily R2 export + Resend mailbox (każdy lead generuje email do ICEA mailbox = naturalny secondary store).
+
+### RODO / GDPR compliance
+
+Codex review wskazał, że "tylko checkbox w formularzu" jest niewystarczający:
+
+**Polityka prywatności (`/polityka-prywatnosci/`)** – pełen dokument:
+- Tożsamość Administratora Danych (ICEA – pełne dane firmy + kontakt RODO)
+- Cel przetwarzania (lead processing, kontakt ws. usług, kopia raportu)
+- Podstawa prawna (zgoda + uzasadniony interes)
+- Okres retencji (lead: 24 miesiące od ostatniej interakcji)
+- Lista odbiorców / sub-processors:
+  - Cloudflare (hosting, D1, Pages Functions) – DPA: cloudflare.com/cloudflare-customer-dpa/
+  - OpenAI / Anthropic / Perplexity (LLM API) – DPA każdy provider
+  - Resend (transactional email) – DPA: resend.com/legal/dpa
+- Prawa user'a (dostęp, sprostowanie, usunięcie, eksport, sprzeciw, skarga do PUODO)
+- Cookies / tracking (na MVP minimalne: tylko functional + Turnstile, GA4 dopiero po podpięciu)
+
+**Endpoint `/api/data-deletion/` + email** – wniosek o usunięcie danych:
+- Form lub email do RODO mailboxa
+- SLA odpowiedzi: 30 dni
+- Trigger: usunięcie z D1 + powiadomienie do user'a
+
+**Endpoint `/api/data-export/`** – eksport danych (P2):
+- User wnioskuje, dostaje JSON ze wszystkimi swoimi danymi z D1
+
+**Cookie banner** – minimalny:
+- Functional cookies (tylko niezbędne) → akceptacja domyślna
+- GA4 / analytics → dopiero po opt-in (kiedy dorzucimy)
+
+**Consent log** – każdy submit formularza zapisuje do D1: timestamp, IP, hash zgody, treść polityki w wersji X (versioning polityki).
+
+### Security
+
+| Layer | Technique |
+|---|---|
+| Bot protection | Cloudflare Turnstile (invisible) + WAF managed rules |
+| Injection | Zod walidacja przy każdym endpoint, escape przy renderowaniu (Astro/MDX natywnie) |
+| Email injection | Sanitizacja header injection (newlines), email format walidacja, MX check |
+| CSP | strict CSP w `_headers`: `default-src 'self'; img-src 'self' data: https://api.kie.ai; script-src 'self' 'unsafe-inline' challenges.cloudflare.com; …` (refine podczas implementacji) |
+| HSTS | `Strict-Transport-Security: max-age=63072000; includeSubDomains; preload` |
+| CORS | `/api/*` accepts tylko origin `widocznosc.ai` (+ preview deploys) |
+| Secrets | CF Pages env vars (encrypted), nigdy w git, rotacja kwartalna (calendar reminder) |
+| Rate-limit | D1-based (sekcja 7) + WAF rate limiting na CF |
+| Dependency audit | `npm audit` w CI, Dependabot włączony |
+| Logging | brak PII w logach (email/IP zhashowane), audit trail w D1 |
+
+### Content moderation
+
+Codex zauważył brak content moderation dla generowanych draftów i obrazów:
+
+**Drafty AI-generated:**
+- Quality gate (sekcja 8): fact-checker dual-pass z 0 błędów krytycznych
+- Toxicity check: GPT-5.4 prompt "Czy ten tekst zawiera mowę nienawiści, dyskryminację, fałsze, plagiaty z konkretnych źródeł?" → flag → manual review
+- Plagiat: spot-check via simple fingerprinting przeciw `sources[]` (czy sentencja nie jest dokładnym kopiem z URL ze źródeł)
+- Manual peer-review (autorka + reviewer ICEA) – ostateczny gate dla każdego artykułu
+
+**Obrazy AI-generated:**
+- Vision validation (już w pipeline): GPT-5.4 sprawdza paletę + brand consistency
+- Bezpieczeństwo: GPT-5.4 też sprawdza "czy obraz zawiera nieodpowiednie elementy" (NSFW, przemocy, dyskryminacji)
+- Ludzie na obrazach (po user feedback dozwoleni) – check że są przedstawiani z szacunkiem, w neutralnych pozach, brak stereotypów
+
+**Lead z formularza audytu:**
+- Brand input: blocklist (rezerwujemy listę toxic queries: nazwy konkurencji ICEA, oczywiste joke inputs)
+- Email format walidacja
+- Industry: tylko z dropdown (closed list)
+
 ---
 
 ## 10. MVP scope + roadmap
 
-### MVP (dzień 1 launch)
+### MVP (dzień 1 launch) – zacieśnione po Codex review
 
 - ✅ Astro setup + Cloudflare Pages deploy + `pnpm-workspace.yaml` w monorepo
-- ✅ Brand identity: logo (kierunek A wykonany przez gpt-image-2 + dopracowanie SVG)
+- ✅ **Logo + brand tokens we wczesnej fazie** (Faza 2, nie Faza 6 jak wcześniej): finalny SVG logo, paleta CSS, OG image template – potrzebne dla image-gen QA
 - ✅ Layout system: 5 templates (homepage, pillar, article, author, tool) + komponenty
 - ✅ Content collections (pillar, articles, case-studies, authors) z Zod schema
 - ✅ Pipeline content writing skill (`pipeline/content-writer/portals/widocznosc-ai/SKILL.md`)
-- ✅ Image generation (`generate-images.py` z gpt-image-2, hero + infografika)
-- ✅ AI Visibility Checker (Astro Island + CF Pages Function + 5 LLM-ów + D1)
-- ✅ ~80 artykułów: 8 landingów `/pozycjonowanie-ai/*`, 30 modele AI, 25 pojęcia AI, 15 poradniki
+- ✅ Image generation (`generate-images.py` z gpt-image-2): hero per artykuł, infografika TYLKO dla pillar i deep-dive
+- ✅ AI Visibility Checker: Astro Island + CF Pages Function + **3 LLM-y MVP** (ChatGPT, Claude, Perplexity) + Turnstile + D1 + Resend + RODO compliance
+- ✅ **~40 artykułów MVP** (zacieśnione z 80):
+  - 8 landingów `/pozycjonowanie-ai/*` (komercyjne, wszystkie kluczowe frazy)
+  - 12 artykułów `/baza-wiedzy/modele-ai/` (każdy z 8 modeli + 4 porównania)
+  - 12 artykułów `/baza-wiedzy/pojecia-ai/` (12 najważniejszych pojęć)
+  - 8 poradników `/baza-wiedzy/poradniki/`
 - ✅ 4 profile autorów + 1-2 case studies (jeśli ICEA ma gotowe)
-- ✅ SEO + Schema.org + llms.txt + sitemap + robots
+- ✅ SEO + Schema.org + llms.txt + sitemap + robots + **GSC submission od dnia 1** (sitemap + indexing inspection)
 - ✅ Performance: CWV target met
-- ✅ Accessibility: WCAG 2.1 AA
+- ✅ Accessibility: WCAG 2.1 AA + impeccable design QA gates
+- ✅ Testing: unit + schema fixtures + integration (`/api/audit`) + E2E (Playwright) + a11y (axe) + Lighthouse CI
+- ✅ Monitoring: Sentry + CF Web Analytics + provider latency dashboard + budget alerts + UptimeRobot
+- ✅ Security: Turnstile + WAF + CSP + HSTS + Dependabot + secrets w env vars
+- ✅ RODO/GDPR: pełna polityka prywatności, consent log, endpoint usuwania danych, lista DPA sub-processors
+- ✅ Backup/DR: daily D1 → R2 export, Resend mailbox jako secondary store
 
 ### Explicit NOT in MVP (P2)
 
 - ❌ Newsletter (form sign-up + integracja)
-- ❌ GA4 + Search Console wiring (podpinamy "później" po launch)
+- ❌ GA4 pełny tracking (GSC submission JEST w MVP – to nie pomiar, tylko submission. GA4 jako pomiar dorzucamy po launch)
 - ❌ Light mode toggle (dark-only na MVP)
 - ❌ EN locale (architektura ready, content nie)
 - ❌ News feed (`/baza-wiedzy/aktualnosci/`)
@@ -792,20 +959,29 @@ Test: Lighthouse 95+ na każdym template.
 - ❌ User dashboard / monitoring widoczności w czasie
 - ❌ Drugie / kolejne narzędzia
 - ❌ ICEA case studies w pełnej skali (zaczynamy od 1-2)
+- ❌ **Gemini + Copilot** w narzędziu (P2 po walidacji 3 providerów MVP)
+- ❌ **Drugi batch artykułów** (40 → docelowe 80) – po launch jako sustained content cadence
+- ❌ Cloudflare Workers + Queues (jeśli p95 latency > 25s lub potrzebne retry/backoff)
+- ❌ Endpoint `/api/data-export/` (wniosek o eksport danych RODO)
+- ❌ Visual regression (Percy/Chromatic)
 
-### Implementation roadmap
+### Implementation roadmap (rev po Codex review)
 
 | Faza | Estymacja | Dostarczone |
 |---|---|---|
-| Faza 1: Foundation | 1 tydz. | Monorepo workspace, Astro setup, CF Pages deploy, brand tokens, layout shell, 1-2 templates działają |
-| Faza 2: Content infrastructure | 1 tydz. | Content collections + Zod, wszystkie 5 templates, MDX components, schema injection, llms.txt, sitemap |
-| Faza 3: Pipeline + skill | 1-2 tydz. | Content skill SKILL.md, topic master plan zaakceptowany, pipeline integracja, image-gen z gpt-image-2, fact-checker dual-pass + Sonar |
-| Faza 4: Content production | 2-3 tydz. | ~80 artykułów wyprodukowanych, peer-review, autorzy assignment, hero + infografiki |
-| Faza 5: AI Visibility Checker | 1-2 tydz. | Form, API, 5 LLM clients, scoring, lead capture, email flow |
-| Faza 6: Logo + polish | 0.5 tydz. | Final logo SVG, OG image template, favicon set, accessibility audit |
-| Faza 7: Launch | 0.5 tydz. | Domain wiring, GSC submission, Bing/IndexNow, social media announcement |
+| Faza 1: Foundation | 1 tydz. | Monorepo workspace, Astro setup, CF Pages deploy + Turnstile + D1, brand tokens (paleta + Roobert/Manrope decyzja), layout shell, 1-2 templates działają, impeccable installed + CI |
+| Faza 2: Content infra + brand | 1 tydz. | **Logo finalny SVG** + favicon set + OG template, content collections + Zod, wszystkie 5 templates, MDX components, schema injection, llms.txt, sitemap, RODO foundation (polityka prywatności, consent log) |
+| Faza 3: Pipeline + skill | 1-2 tydz. | Content skill SKILL.md, topic master plan (40 tematów MVP) zaakceptowany, pipeline integracja, generate-images.py z gpt-image-2, fact-checker dual-pass + Sonar, content moderation guards, testing scaffolding |
+| Faza 4: Content production | 2-3 tydz. | ~40 artykułów wyprodukowanych, peer-review, autorzy assignment, hero + warunkowo infografiki |
+| Faza 4b (równolegle z 4): AI Visibility Checker | 1-2 tydz. | Form + Turnstile + RODO consent, API z 3 LLM clients, scoring engine, lead capture + Resend, budget guard + alerts, monitoring dashboard `/admin/audit-stats/` |
+| Faza 5: Launch hardening | 0.5 tydz. | Security audit (CSP, HSTS, CORS, secrets rotation), accessibility audit (axe + impeccable /audit), Lighthouse 95+, monitoring/alerting wired, backup R2 export działa |
+| Faza 6: Launch | 0.5 tydz. | Domain wiring, GSC submission, Bing/IndexNow, llms.txt visible, social media announcement |
 
-**Total MVP:** ~7-10 tygodni real-time. Krytyczna ścieżka: Foundation → Content infrastructure → Pipeline → Content production → Launch. Niektóre fazy mogą iść równolegle (Foundation || Brand identity work, Content infrastructure || Pipeline).
+**Total MVP zacieśnione:** ~6-8 tygodni real-time (vs 7-10 wcześniej, dzięki redukcji 80→40 artykułów + 5→3 LLM-y w narzędziu).
+
+**Krytyczna ścieżka:** Foundation → Content infra + brand (logo wcześniej) → Pipeline → Content production → Launch hardening → Launch.
+
+**Faza 4b (narzędzie) idzie równolegle z Fazą 4 (content production)** – to były 2 osobne fazy w v1, teraz scalone temporally bo nie blokują się. Wymaga to early decyzji o env/provider keys (po Fazie 1).
 
 ---
 
@@ -814,14 +990,23 @@ Test: Lighthouse 95+ na każdym template.
 1. **Roobert font webfont license** – czy ICEA ma, czy używamy Manrope jako fallback od dnia 1?
 2. **LinkedIn URLs autorów** – do uzupełnienia (manual lub scrape z grupa-icea.pl)
 3. **ICEA case studies** – czy są gotowe materiały do wrzucenia (klient, wyniki), czy startujemy od zera i case studies dorzucamy w P2?
-4. **Email mailbox dla leadów** – konkretna skrzynka ICEA: jaka? (np. `widocznosc@grupa-icea.pl`)
-5. **Resend vs SendGrid** dla transactional email – preferencja ICEA?
-6. **Cloudflare account** – ten sam co dla busmaniak.pl, czy osobny?
+4. **Email mailbox dla leadów** – konkretna skrzynka ICEA: jaka? (np. `widocznosc@grupa-icea.pl`, osobna `kontakt-rodo@…` dla wniosków RODO)
+5. **Resend vs SendGrid** dla transactional email – preferencja ICEA? (DPA, deliverability PL)
+6. **Cloudflare account** – ten sam co dla busmaniak.pl (account-level limits), czy osobny dla widocznosc.ai?
 7. **Branża dropdown w narzędziu** – konkretna lista (e-commerce, B2B SaaS, lokalne usługi, finanse, healthcare, edukacja, …)?
-8. **Topic master plan** – akceptacja przed produkcją (osobny review checkpoint, prawdopodobnie Faza 3 koniec)
-9. **Rate-limit narzędzia** – 1/IP/15min OK, czy bardziej restrykcyjnie (1/IP/dzień)? Wpływ na koszty.
+8. **Topic master plan** – akceptacja przed produkcją (osobny review checkpoint, koniec Fazy 3) – 40 tematów na MVP
+9. **Rate-limit narzędzia** – zacieśniony do 1/IP/dzień + 5/email/dzień + global cap 200/dzień. Walidacja kosztów po pierwszym tygodniu działania.
+10. **Pełna lista DPA sub-processors** – do uzupełnienia w polityce prywatności (CF, OpenAI, Anthropic, Perplexity, Resend, Sentry, kie.ai)
+11. **Tożsamość Administratora Danych** – pełne dane firmy ICEA (nazwa prawna, adres, NIP, kontakt RODO, kontakt z IODO jeśli wyznaczony)
+12. **Cookies / Turnstile** – czy Turnstile wymaga consent w Polsce? (do weryfikacji prawnej, zwykle traktowany jako "strictly necessary")
+13. **Rotacja secretów** – kto ją robi (osoba/proces), kalendarz przypomnień
+14. **Admin endpoint `/admin/audit-stats/`** – Basic Auth czy CF Access? Kto ma dostęp (kto z ICEA)?
+15. **Content moderation review** – kto z ICEA ostatecznie aprobuje artykuły jako reviewer (peer-review w pipeline)?
+16. **Resolution path jeśli p95 latency > 25s** – Workers + Queues, czy reduce providers?
+17. **Co robimy jeśli budget cap przekroczony** – komunikat "tymczasowo niedostępne", czy kolejka requestów?
+18. **CSP refinement** – konkretne `connect-src` dla LLM API (kie.ai, OpenAI, Anthropic, Perplexity), Resend, Sentry, Turnstile
 
-Te pytania nie blokują startu writing-plans – mogą być rozstrzygane w trakcie wdrożenia.
+Te pytania nie blokują startu writing-plans – mogą być rozstrzygane w trakcie wdrożenia (większość trafia do Fazy 1-2 jako pierwsze kroki dyskutowane z User'em).
 
 ---
 
@@ -831,14 +1016,54 @@ Te pytania nie blokują startu writing-plans – mogą być rozstrzygane w trakc
 - **Stack referencyjny:** busmaniak.pl (Hugo) jako pipeline framework, ICEA Brand Manual 2025 jako guideline wizualny
 - **Następny krok:** writing-plans (skill `superpowers:writing-plans`) → szczegółowy plan implementacji z review checkpointami
 
-### Notatka dla writing-plans
+### Notatka dla writing-plans (rev po Codex review)
 
-Scope MVP jest duży (~7-10 tygodni). Writing-plans może / powinno podzielić go na kilka mniejszych planów wykonawczych z osobnymi review checkpointami, np.:
+Scope MVP zacieśniony do ~6-8 tygodni. Writing-plans powinno podzielić go na kilka mniejszych planów wykonawczych z osobnymi review checkpointami:
 
-- **Plan 1: Foundation + content infrastructure** (Fazy 1-2): monorepo workspace, Astro setup, CF Pages deploy, brand tokens, content collections, 5 templates, MDX components
-- **Plan 2: Pipeline + skill + topic master plan** (Faza 3): content skill SKILL.md, integracja pipeline, generate-images.py z gpt-image-2, fact-checker dual-pass + Sonar, master plan 80 tematów
-- **Plan 3: Content production** (Faza 4): ~80 artykułów + peer-review + author assignment + image-gen
-- **Plan 4: AI Visibility Checker** (Faza 5): form, API, 5 LLM clients, scoring, lead capture
-- **Plan 5: Logo + brand polish + launch** (Fazy 6-7): logo SVG, OG template, favicon, GSC submission, IndexNow, announcement
+- **Plan 1: Foundation + brand + content infra** (Fazy 1-2): monorepo workspace, Astro setup, CF Pages + Turnstile + D1, **logo finalny SVG**, brand tokens (paleta + Roobert/Manrope decyzja), OG template, content collections + Zod, 5 templates, MDX components, llms.txt, sitemap, RODO foundation (polityka prywatności), impeccable installed + CI
+- **Plan 2: Pipeline + skill + topic master plan** (Faza 3): content skill SKILL.md, integracja pipeline, generate-images.py z gpt-image-2 (hero zawsze, infografika tylko pillar), fact-checker dual-pass + Sonar, content moderation guards, testing scaffolding, **40-tematowy master plan zaakceptowany**
+- **Plan 3: Content production** (Faza 4): ~40 artykułów MVP + peer-review + author assignment + image-gen
+- **Plan 4: AI Visibility Checker** (Faza 4b, równolegle z Plan 3): form + Turnstile + RODO consent, API z 3 LLM clients (ChatGPT/Claude/Perplexity), scoring engine, lead capture + Resend, budget guard + alerts, monitoring `/admin/audit-stats/`
+- **Plan 5: Launch hardening + launch** (Fazy 5-6): security audit (CSP/HSTS/CORS), accessibility audit (axe + impeccable /audit), Lighthouse CI, monitoring/alerting wired, backup R2 export, GSC submission, IndexNow, announcement
 
-Plany 1, 2, 4 mogą iść częściowo równolegle (różne obszary).
+**Zależności:**
+- Plan 1 musi się zakończyć przed Plan 2 (pipeline potrzebuje brand tokens + paletę dla image-gen)
+- Plan 2 musi się zakończyć przed Plan 3 (content production potrzebuje skill + topic master plan)
+- Plan 4 (narzędzie) startuje równolegle z Plan 3, ale wymaga env/provider keys ustalonych w Plan 1
+- Plan 5 wymaga zakończenia 3 i 4
+
+**Review checkpointy między planami:**
+- Po Plan 1: User reviewuje brand tokens + logo + 1-2 templates działające
+- Po Plan 2: User akceptuje 40-tematowy master plan + ~3 sample artykułów wygenerowanych przez nowy skill
+- Po Plan 3: User reviewuje pełen batch 40 artykułów (peer-review)
+- Po Plan 4: User testuje narzędzie end-to-end z 3 testowymi brandami
+- Po Plan 5: Pre-launch checklist (security, a11y, performance, monitoring działają)
+
+### Codex review – addressed items
+
+| Codex feedback | Status | Gdzie |
+|---|---|---|
+| Workers + Queues alternatywa | Rozważone, MVP zostaje przy Pages Functions, Q+W jako P2 | Sekcja 2 alternatywy |
+| Rate-limit zacieśnienie | 1/IP/dzień + 5/email/dzień + global cap | Sekcja 7 koszty + budget guard |
+| Roobert font – fallback decision | Otwarte pytanie #1 (resolved early w Plan 1) | Sekcja 11 |
+| Scope creep MVP | Zacieśniono 80→40 artykułów, infografiki tylko pillar, 3 LLM-y zamiast 5 | Sekcja 10 MVP |
+| Testing strategy | Dodana sekcja: unit, schema fixtures, integration, E2E, a11y, pipeline regression, Lighthouse CI | Sekcja 9 testing |
+| Monitoring/alerting | Dodane: Sentry, CF Analytics, provider latency dashboard, budget alerts, UptimeRobot | Sekcja 9 monitoring |
+| Backup/DR | Dodane: daily D1 → R2, Resend mailbox secondary | Sekcja 9 backup |
+| RODO/GDPR | Pełna polityka, consent log, endpoint usuwania, lista DPA, sub-processors | Sekcja 9 RODO |
+| Security | CSP, HSTS, Turnstile, CORS, secrets rotation, deps audit | Sekcja 9 security |
+| Content moderation | Toxicity check, plagiat spot-check, manual peer-review, vision NSFW | Sekcja 9 content moderation |
+| Sprzeczność embed widget vs link | Rozstrzygnięta: landing linkuje, NIE embeduje | Sekcja 3 |
+| Sprzeczność "brak email-gate" | Doprecyzowana: pre-result data capture, NIE post-result gate | Sekcja 7 |
+| Sprzeczność GSC P2 vs Launch | Rozstrzygnięta: GSC submission od dnia 1, GA4 P2 | Sekcja 9 monitoring + 10 P2 |
+| 7 faz vs 5 planów mapping | Skonsolidowane: 6 faz + 5 planów z zależnościami | Sekcja 10 + notatka writing-plans |
+| Logo zaplanowane późno | Logo przeniesione do Fazy 2 (z 6) | Sekcja 10 roadmap |
+| Checker po content production | Zmienione: równolegle z content production (Faza 4b) | Sekcja 10 roadmap |
+
+### Impeccable integration – addressed items
+
+| Aspekt | Status | Gdzie |
+|---|---|---|
+| Skill jako design QA tooling | Dodane: workflow shape/critique/polish per komponent | Sekcja 9 design quality gates |
+| CLI w CI/CD | Dodane: `npx impeccable detect` jako blocking check | Sekcja 9 design quality gates |
+| Instalacja | Globalnie `~/.claude/`, brak zmian w repo | Sekcja 9 design quality gates |
