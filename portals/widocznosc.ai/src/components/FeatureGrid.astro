@@ -1,0 +1,100 @@
+---
+type Feature = {
+  symbol: string; /* mono symbol or short kicker, max 2 chars */
+  title: string;
+  desc: string;
+  href?: string;
+};
+
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  features?: Feature[];
+}
+
+const {
+  eyebrow = 'Co robimy',
+  title = 'Pełny cykl pozycjonowania w AI',
+  subtitle = 'Od audytu widoczności po stałe monitorowanie i optymalizację treści. Mierzymy cytowania, nie ranking.',
+  features = [
+    {
+      symbol: '◐',
+      title: 'Audyt widoczności AI',
+      desc: 'Sprawdzamy w jakim stopniu Twoja marka jest cytowana w ChatGPT, Claude, Gemini i Perplexity. Identyfikujemy luki i konkurentów którzy Cię wyprzedzają.',
+      href: '/pozycjonowanie-ai#audyt',
+    },
+    {
+      symbol: '✦',
+      title: 'Optymalizacja treści pod LLM',
+      desc: 'Przepisujemy istniejący content tak, żeby był cytowany przez modele językowe. Struktura, semantyka, fact-density – wszystko pod GEO.',
+      href: '/pozycjonowanie-ai#content',
+    },
+    {
+      symbol: '⊡',
+      title: 'Monitoring cytowań',
+      desc: 'Stały tracking wzmianek o marce i produkcie w 5 wyszukiwarkach AI. Alerty o pojawieniu się konkurencji w odpowiedziach LLM.',
+      href: '/pozycjonowanie-ai#monitoring',
+    },
+    {
+      symbol: '◇',
+      title: 'Strategia GEO',
+      desc: 'Plan widoczności na 6-12 miesięcy: jakie tematy pokrywać, gdzie publikować, jakie sygnały budować, żeby trafić do training data i RAG-ów.',
+      href: '/pozycjonowanie-ai#strategia',
+    },
+    {
+      symbol: '∴',
+      title: 'Konsultacje 1:1',
+      desc: 'Indywidualne sesje z ekspertami ICEA. Diagnoza, rekomendacje, sparing intelektualny dla zespołów marketingu i contentu.',
+      href: '/pozycjonowanie-ai#konsultacje',
+    },
+    {
+      symbol: '⊕',
+      title: 'Audyt + wdrożenie 90 dni',
+      desc: 'Kompleksowa współpraca: pełny audyt, mapa fraz, content plan, wdrożenie zmian, monitoring efektów. Konkretne mierniki, raport co miesiąc.',
+      href: '/pozycjonowanie-ai#wdrozenie',
+    },
+  ],
+} = Astro.props;
+---
+
+<section class="relative w-full" style="background: var(--bg);" aria-labelledby="features-title">
+  <div class="content-container py-20 lg:py-28">
+    <div class="mx-auto mb-16 max-w-3xl text-center">
+      <span class="meta mb-4 inline-block">{eyebrow}</span>
+      <h2
+        id="features-title"
+        class="text-ink font-display mt-2 mb-6 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl lg:text-5xl"
+      >
+        {title}
+      </h2>
+      <p class="text-ink-soft text-lg leading-relaxed">{subtitle}</p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
+      {
+        features.map((feat) => {
+          const Tag = feat.href ? 'a' : 'div';
+          return (
+            <Tag
+              {...(feat.href ? { href: feat.href } : {})}
+              class={`group relative flex flex-col rounded-xl border border-rule bg-bg-card p-6 transition lg:p-8 ${feat.href ? 'hover:border-accent/35 hover:bg-bg-elevated cursor-pointer' : ''}`}
+            >
+              <div class="feat-icon mb-5 font-mono">{feat.symbol}</div>
+              <h3 class="text-ink font-display mb-3 text-lg font-semibold tracking-tight">
+                {feat.title}
+              </h3>
+              <p class="text-ink-soft text-sm leading-relaxed">{feat.desc}</p>
+              {feat.href && (
+                <div class="text-accent mt-5 flex items-center gap-2 font-mono text-[11px] tracking-wider uppercase opacity-0 transition group-hover:opacity-100">
+                  Dowiedz się więcej
+                  <span aria-hidden="true">→</span>
+                </div>
+              )}
+            </Tag>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

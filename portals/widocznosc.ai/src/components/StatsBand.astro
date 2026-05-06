@@ -1,0 +1,58 @@
+---
+type Stat = {
+  value: string;
+  label: string;
+  caption?: string;
+};
+
+interface Props {
+  items?: Stat[];
+  eyebrow?: string;
+}
+
+const {
+  eyebrow,
+  items = [
+    { value: '15+', label: 'lat doświadczenia', caption: 'ICEA · agencja SEO i AI' },
+    { value: '5', label: 'modeli AI mierzonych', caption: 'ChatGPT · Claude · Gemini · Perplexity · Bing Copilot' },
+    { value: '500+', label: 'projektów SEO', caption: 'wdrożonych przez zespół' },
+    { value: '#1', label: 'SEMKRK 2024', caption: 'najwyżej oceniona prezentacja' },
+  ],
+} = Astro.props;
+---
+
+<section
+  class="border-rule relative w-full border-y"
+  style="background: var(--bg-alt);"
+  aria-label="Liczby widocznosc.ai"
+>
+  <div class="content-container py-16 lg:py-20">
+    {
+      eyebrow && (
+        <div class="mb-10 text-center">
+          <span class="meta">{eyebrow}</span>
+        </div>
+      )
+    }
+    <dl class="grid grid-cols-2 gap-y-10 gap-x-6 md:grid-cols-4 md:gap-x-8">
+      {
+        items.map((stat) => (
+          <div class="flex flex-col items-center text-center md:items-start md:text-left">
+            <dt class="sr-only">{stat.label}</dt>
+            <dd
+              class="text-accent font-display text-5xl leading-none font-semibold tracking-[-0.04em] md:text-6xl lg:text-7xl"
+            >
+              {stat.value}
+            </dd>
+            <div class="text-ink mt-3 text-sm font-semibold md:text-base">{stat.label}</div>
+            {stat.caption && (
+              <div class="text-ink-mute mt-1 font-mono text-[11px] tracking-[0.08em] uppercase">
+                {stat.caption}
+              </div>
+            )}
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+</section>

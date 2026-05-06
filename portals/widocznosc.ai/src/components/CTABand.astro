@@ -1,0 +1,49 @@
+---
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  primaryHref?: string;
+  primaryLabel?: string;
+  ghostHref?: string;
+  ghostLabel?: string;
+}
+
+const {
+  eyebrow = 'Następny krok',
+  title = 'Sprawdź, jak Twoja marka radzi sobie w AI search',
+  subtitle = 'Bezpłatna konsultacja 30 minut. Bez sprzedaży, bez zobowiązań – pokazujemy gdzie marka jest cytowana, gdzie traci do konkurencji i co realnie zmienić.',
+  primaryHref = '/kontakt',
+  primaryLabel = 'Zamów audyt AI',
+  ghostHref = '/kontakt?type=konsultacja',
+  ghostLabel = 'Bezpłatna konsultacja',
+} = Astro.props;
+---
+
+<section class="relative flex w-full justify-center overflow-hidden" style="background: var(--bg-alt);">
+  <!-- Mesh background – orange dominant -->
+  <div
+    class="pointer-events-none absolute top-1/2 left-1/2 h-[40rem] w-[80rem] -translate-x-1/2 -translate-y-1/2"
+    style="background: radial-gradient(ellipse 50% 40% at center, rgba(255,106,46,0.18) 0%, transparent 65%), radial-gradient(ellipse 35% 35% at 25% 70%, rgba(255,138,79,0.20) 0%, transparent 60%), radial-gradient(ellipse 35% 35% at 75% 30%, rgba(255,106,46,0.12) 0%, transparent 60%);"
+  >
+  </div>
+  <div class="content-container relative z-10 py-24 lg:py-32">
+    <div class="mx-auto max-w-3xl text-center">
+      <span class="meta mb-4 inline-block">{eyebrow}</span>
+      <h2
+        class="text-ink font-display mt-2 mb-6 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl lg:text-5xl"
+      >
+        {title}
+      </h2>
+      <p class="text-ink-soft mb-10 text-lg leading-relaxed">{subtitle}</p>
+      <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a class="btn-primary" href={primaryHref} aria-label={primaryLabel}>
+          {primaryLabel}
+        </a>
+        <a class="btn-ghost" href={ghostHref} aria-label={ghostLabel}>
+          {ghostLabel}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

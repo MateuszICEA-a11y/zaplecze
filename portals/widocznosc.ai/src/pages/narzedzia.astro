@@ -1,0 +1,174 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import ScrollUpButton from '../components/ScrollUpButton.astro';
+import CTABand from '../components/CTABand.astro';
+
+const tools = [
+  {
+    id: 'visibility-checker',
+    status: 'beta',
+    eyebrow: 'Bezpłatne · 90s',
+    title: 'Visibility Checker',
+    subtitle: 'Sprawdź, czy Twoja marka jest cytowana w 5 wyszukiwarkach AI',
+    desc:
+      'Wpisujesz domenę i kategorię. My pytamy ChatGPT, Claude, Gemini, Perplexity i Bing Copilot o Twoją markę w kontekście branży. Po 90 sekundach dostajesz Visibility Score 0-100, mapę cytowań i listę konkurentów wymienianych zamiast Ciebie. E-mail z raportem.',
+    cta: { label: 'Sprawdź widoczność', href: '/narzedzia/visibility-checker' },
+    bullets: [
+      'Wynik 0-100 z breakdownem per model',
+      'Lista cytowanych konkurentów',
+      'Top 10 zapytań gdzie tracisz',
+      'Raport PDF na e-mail',
+    ],
+  },
+  {
+    id: 'audyt-ai',
+    status: 'usługa',
+    eyebrow: 'Płatne · 1-2 tygodnie',
+    title: 'Kompleksowy audyt AI',
+    subtitle: 'Pełny obraz widoczności + plan działania na 12 miesięcy',
+    desc:
+      'Visibility Checker pokazuje wynik. Audyt AI pokazuje dlaczego i co dokładnie zrobić. 30-100 zapytań, 5 modeli, fact-density Twojego contentu, schema, struktura, źródła, mapa konkurencji, gap analysis. Output: 60-stronicowy raport + sesja walk-through.',
+    cta: { label: 'Zamów audyt', href: '/kontakt?type=audyt-ai' },
+    bullets: [
+      '30-100 zapytań branżowych',
+      'Analiza pokrycia tematycznego (gap analysis)',
+      'Audyt fact-density i schema',
+      'Plan widoczności 12 miesięcy',
+    ],
+  },
+  {
+    id: 'audyt-content-ai',
+    status: 'usługa',
+    eyebrow: 'Płatne · 2-3 tygodnie',
+    title: 'Audyt contentu pod AI',
+    subtitle: 'Sprawdzamy 20-50 stron pod kątem cytowalności w LLM',
+    desc:
+      'Każda strona twojego site\'u oceniona pod GEO: czy ma cytowalne fakty, czy ma definicje, czy struktura headerów pomaga RAG-om, czy schema jest poprawne, czy są źródła. Output: spreadsheet z oceną per strona + lista 100+ konkretnych poprawek z priorytetami.',
+    cta: { label: 'Zamów audyt contentu', href: '/kontakt?type=audyt-content' },
+    bullets: [
+      'Ocena per-strona (1-5 skala GEO)',
+      'Konkretne rewriting briefs',
+      'Schema.org checklist',
+      'Roadmapa wdrożenia 12 tyg.',
+    ],
+  },
+];
+
+const statusBadge = (status: string) => {
+  if (status === 'beta') return { label: '· beta · bezpłatne', color: 'var(--accent)' };
+  return { label: 'usługa płatna', color: 'var(--ink-soft)' };
+};
+---
+
+<Layout
+  title="Narzędzia – widocznosc.ai"
+  description="Narzędzia do audytu widoczności marki w AI: Visibility Checker (bezpłatny), kompleksowy audyt AI, audyt contentu pod LLM."
+>
+  <Navbar />
+
+  <!-- Hero -->
+  <section
+    class="relative flex w-full items-center justify-center overflow-hidden pb-16 md:pb-20"
+    style="background: var(--bg);"
+  >
+    <div
+      class="pointer-events-none absolute inset-0"
+      style="background: radial-gradient(at 30% 25%, rgba(255,106,46,0.18) 0%, transparent 55%), radial-gradient(at 70% 75%, rgba(255,106,46,0.12) 0%, transparent 55%);"
+      aria-hidden="true"
+    >
+    </div>
+    <div class="content-container relative z-10 pt-32 md:pt-40 lg:pt-44">
+      <div class="mx-auto max-w-4xl text-center">
+        <span class="meta mb-6 inline-block">Narzędzia · audyt widoczności AI</span>
+        <h1
+          class="text-ink font-display text-[2.5rem] leading-[1.05] font-semibold tracking-[-0.04em] sm:text-[3.5rem] lg:text-[4.5rem]"
+        >
+          Sprawdź widoczność,<br />
+          zanim sprzedasz audyt klientowi
+        </h1>
+        <p class="text-ink-soft mx-auto mt-6 max-w-2xl text-lg leading-relaxed">
+          Trzy narzędzia – jedno bezpłatne, dwa profesjonalne. Wszystkie mierzą realne cytowania
+          w pięciu wyszukiwarkach AI, nie pseudo-ranking ani score od marketingu.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools list -->
+  <section class="relative w-full" style="background: var(--bg);">
+    <div class="content-container py-16 lg:py-24">
+      <div class="space-y-12 lg:space-y-16">
+        {
+          tools.map((tool) => {
+            const badge = statusBadge(tool.status);
+            return (
+              <article
+                id={tool.id}
+                class="border-rule bg-bg-card scroll-mt-24 overflow-hidden rounded-2xl border p-8 sm:p-12 lg:p-14"
+              >
+                <div class="flex flex-wrap items-center gap-3">
+                  <span
+                    class="font-mono text-[11px] tracking-[0.12em] uppercase"
+                    style={`color: ${badge.color};`}
+                  >
+                    {tool.eyebrow}
+                  </span>
+                  <span class="text-ink-mute font-mono text-[11px] tracking-[0.12em] uppercase">
+                    {badge.label}
+                  </span>
+                </div>
+                <div class="mt-6 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
+                  <div class="lg:col-span-7">
+                    <h2
+                      class="text-ink font-display mb-4 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl lg:text-5xl"
+                    >
+                      {tool.title}
+                    </h2>
+                    <p class="text-accent mb-5 text-lg font-semibold">{tool.subtitle}</p>
+                    <p class="text-ink-soft leading-relaxed">{tool.desc}</p>
+                    <a class="btn-primary mt-8" href={tool.cta.href} aria-label={tool.cta.label}>
+                      {tool.cta.label}
+                      <span aria-hidden="true">→</span>
+                    </a>
+                  </div>
+                  <div class="lg:col-span-5">
+                    <div class="border-rule-soft border-l pl-6 lg:pl-8">
+                      <div class="text-ink-mute mb-4 font-mono text-[11px] tracking-[0.12em] uppercase">
+                        Co dostajesz
+                      </div>
+                      <ul class="space-y-3">
+                        {tool.bullets.map((bullet) => (
+                          <li class="text-ink flex items-start gap-3">
+                            <span class="text-accent mt-1.5 flex-shrink-0" aria-hidden="true">
+                              ✓
+                            </span>
+                            <span class="leading-relaxed">{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+
+  <CTABand
+    eyebrow="Konkretnie"
+    title="Nie wiesz od czego zacząć?"
+    subtitle="Bezpłatna konsultacja 30 minut z ekspertem ICEA. Pokazujemy które narzędzie ma sens dla Twojego biznesu i jakich rezultatów realnie się spodziewać."
+    primaryLabel="Zamów audyt AI"
+    primaryHref="/kontakt"
+    ghostLabel="Bezpłatna konsultacja"
+    ghostHref="/kontakt?type=konsultacja"
+  />
+
+  <Footer />
+  <ScrollUpButton />
+</Layout>

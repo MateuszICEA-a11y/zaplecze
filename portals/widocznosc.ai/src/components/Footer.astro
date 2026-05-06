@@ -5,116 +5,147 @@ import TwitterIcon from '../assets/icons/TwitterIcon.astro';
 
 const footerData = [
   {
-    title: 'Products',
-    items: ['News and Stories', 'Roadmap', 'Integrations', 'Documentation'],
-  },
-  {
-    title: 'Important Links',
+    title: 'Usługi',
     items: [
-      'Organization Team',
-      'Our Journeys',
-      'Pricing Plans',
-      'Roadmap',
-      'Terms & Conditions',
-      'Privacy Policy',
+      { label: 'Audyt widoczności AI', href: '/pozycjonowanie-ai#audyt' },
+      { label: 'Optymalizacja contentu', href: '/pozycjonowanie-ai#content' },
+      { label: 'Monitoring cytowań', href: '/pozycjonowanie-ai#monitoring' },
+      { label: 'Strategia GEO', href: '/pozycjonowanie-ai#strategia' },
+      { label: 'Konsultacje 1:1', href: '/pozycjonowanie-ai#konsultacje' },
     ],
   },
   {
-    title: 'Company',
-    items: ['Jobs', 'Press', 'Partners', 'Community'],
+    title: 'Narzędzia',
+    items: [
+      { label: 'Visibility Checker', href: '/narzedzia#visibility-checker' },
+      { label: 'Kompleksowy audyt AI', href: '/narzedzia#audyt-ai' },
+      { label: 'Audyt contentu pod AI', href: '/narzedzia#audyt-content-ai' },
+      { label: 'Baza wiedzy', href: '/blog' },
+    ],
+  },
+  {
+    title: 'Firma',
+    items: [
+      { label: 'O nas', href: '/o-nas' },
+      { label: 'Kontakt', href: '/kontakt' },
+      { label: 'ICEA', href: 'https://grupa-icea.pl', external: true },
+      { label: 'Polityka prywatności', href: '/polityka-prywatnosci' },
+    ],
   },
 ];
+
+const year = new Date().getFullYear();
 ---
 
-<footer aria-label="Site footer">
-  <div class="bg-bgDark1 radius-for-skewed pt-10 pb-16 lg:pt-16 lg:pb-20">
-    <div class="content-container">
-      <div class="flex flex-wrap">
-        <div
-          class="order-1 mb-16 flex w-full flex-nowrap justify-center gap-x-8 sm:flex-wrap sm:gap-x-16 lg:order-2 lg:mb-0 lg:w-2/3 lg:justify-end"
-        >
-          {
-            footerData.map((section, i) => (
-              <div
-                class:list={[
-                  'text-center sm:mb-16 sm:w-auto md:mb-0 lg:text-left',
-                  i === 2 ? 'hidden sm:block' : 'w-1/2 sm:w-auto',
-                ]}
-              >
-                <h3 class="text-primaryText mb-5 text-lg font-bold">{section.title}</h3>
-                <ul>
-                  {section.items.map((item) => (
-                    <li class="mb-3">
-                      <a class="cursor-pointer text-sm text-gray-400 hover:text-gray-300" href="#">
-                        {item}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))
-          }
-        </div>
-        <div class="order-2 w-full lg:order-1 lg:mb-0 lg:w-1/3">
-          <div class="flex grow basis-0 items-center justify-center lg:justify-start">
-            <a href="/" aria-label="widocznosc.ai – strona główna" class="logo-wordmark font-['Inter'] text-2xl font-medium md:text-3xl">
-              <span>widocznosc</span><span class="logo-dot" aria-hidden="true"></span><span class="logo-ai">ai</span>
-            </a>
+<footer aria-label="Stopka serwisu" class="border-rule border-t" style="background: var(--bg);">
+  <div class="content-container pt-16 pb-12 lg:pt-20 lg:pb-16">
+    <div class="grid grid-cols-1 gap-12 lg:grid-cols-12">
+      <!-- Brand + newsletter -->
+      <div class="lg:col-span-5">
+        <a href="/" aria-label="widoczność.ai – strona główna" class="flex items-center gap-3">
+          <div class="logo-mark" aria-hidden="true">w</div>
+          <div class="text-ink text-2xl font-semibold tracking-tight">
+            widoczność<span class="text-accent">.ai</span>
           </div>
-          <p
-            class="mx-auto mt-4 mb-6 text-center leading-loose text-gray-400 sm:w-[22rem] lg:mx-0 lg:w-[20rem] lg:text-left xl:w-[24rem]"
-          >
-            Dashboard images were made using free Dark Admin dashboard that you can find <a
-              href="https://bootstrapious.com/p/bootstrap-4-dark-admin"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-gray-100"
-              aria-label="Dark Admin Dashboard (opens in new tab)">here.</a
-            >
-          </p>
-          <div
-            class="mb-10 flex w-full items-center justify-center gap-3 sm:w-auto lg:justify-start"
-          >
-            <label for="footer-email" class="sr-only">Email address</label>
+        </a>
+        <p class="text-ink-soft mt-5 max-w-md leading-relaxed">
+          Pozycjonowanie marek w wyszukiwarkach AI. Audyt widoczności w&nbsp;ChatGPT, Claude,
+          Gemini i&nbsp;Perplexity. Część ICEA – agencji SEO i&nbsp;AI.
+        </p>
+
+        <div class="mt-8">
+          <div class="text-ink-mute mb-3 font-mono text-[11px] tracking-[0.12em] uppercase">
+            Newsletter · co 2 tyg.
+          </div>
+          <form class="flex w-full max-w-md gap-2" aria-label="Zapis do newslettera">
+            <label for="footer-email" class="sr-only">Adres e-mail</label>
             <input
               type="email"
               id="footer-email"
-              placeholder="Your email address"
-              class="form-input h-12 py-0 text-sm sm:!w-56 md:!w-52 xl:!w-60"
+              placeholder="twoj@email.pl"
+              class="form-input h-11 flex-1 py-0 text-sm"
+              required
             />
-            <button
-              class="text-primaryText bg-primaryColor hover:bg-primaryColorHover h-12 cursor-pointer rounded-xl px-5 text-sm font-semibold transition"
-              type="button"
-              data-open-modal
-              aria-label="Subscribe to newsletter"
-            >
-              Subscribe
+            <button class="btn-primary !py-3 !px-5 !text-sm" type="submit" aria-label="Zapisz się do newslettera">
+              Zapisz
             </button>
-          </div>
-          <div class="flex justify-center lg:justify-start">
-            <a
-              href="#"
-              class="outlined-button border-mainBorderSubtle mr-2 inline-block h-10 w-10 cursor-pointer p-2 pt-[0.55rem]"
-              aria-label="Facebook"
-            >
-              <FacebookIcon />
-            </a>
-            <a
-              href="#"
-              class="outlined-button border-mainBorderSubtle mr-2 inline-block h-10 w-10 cursor-pointer p-2 pt-[0.55rem] pl-[0.55rem]"
-              aria-label="Twitter"
-            >
-              <TwitterIcon />
-            </a>
-            <a
-              href="#"
-              class="outlined-button border-mainBorderSubtle mr-2 inline-block h-10 w-10 cursor-pointer p-2 pt-[0.55rem] pl-[0.55rem]"
-              aria-label="Instagram"
-            >
-              <InstagramIcon />
-            </a>
-          </div>
+          </form>
         </div>
+      </div>
+
+      <!-- Sitemap columns -->
+      <div class="grid grid-cols-1 gap-8 sm:grid-cols-3 lg:col-span-7">
+        {
+          footerData.map((section) => (
+            <div>
+              <h3 class="text-ink-mute mb-5 font-mono text-[11px] tracking-[0.12em] uppercase">
+                {section.title}
+              </h3>
+              <ul class="space-y-3">
+                {section.items.map((item) => (
+                  <li>
+                    <a
+                      class="text-ink-soft hover:text-accent text-sm transition"
+                      href={item.href}
+                      {...(item.external
+                        ? { target: '_blank', rel: 'noopener noreferrer' }
+                        : {})}
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div
+      class="border-rule mt-14 flex flex-col items-center justify-between gap-6 border-t pt-8 sm:flex-row"
+    >
+      <div class="text-ink-mute font-mono text-[11px] tracking-[0.12em] uppercase">
+        © {year} widoczność.ai · ICEA
+      </div>
+      <div class="flex items-center gap-2">
+        <a
+          href="https://www.linkedin.com/company/icea/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="border-rule text-ink-soft hover:text-accent hover:border-accent flex h-10 w-10 items-center justify-center rounded-lg border transition"
+          aria-label="LinkedIn ICEA"
+        >
+          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z"
+            ></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+        <a
+          href="#"
+          class="border-rule text-ink-soft hover:text-accent hover:border-accent flex h-10 w-10 items-center justify-center rounded-lg border transition"
+          aria-label="Twitter / X"
+        >
+          <TwitterIcon />
+        </a>
+        <a
+          href="#"
+          class="border-rule text-ink-soft hover:text-accent hover:border-accent flex h-10 w-10 items-center justify-center rounded-lg border transition"
+          aria-label="Facebook"
+        >
+          <FacebookIcon />
+        </a>
+        <a
+          href="#"
+          class="border-rule text-ink-soft hover:text-accent hover:border-accent flex h-10 w-10 items-center justify-center rounded-lg border transition"
+          aria-label="Instagram"
+        >
+          <InstagramIcon />
+        </a>
       </div>
     </div>
   </div>
