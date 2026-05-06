@@ -1,5 +1,5 @@
-# Hugo build output
-**/public/
+# Hugo build output (busmaniak.pl uses Hugo conventions; Astro uses public/ as source)
+portals/busmaniak.pl/public/
 **/resources/_gen/
 
 # OS files
