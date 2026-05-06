@@ -1,25 +1,41 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-primaryColor: rgb(99, 102, 241);
-  --color-secondaryColor: rgb(161, 163, 247);
-  --color-primaryText: rgb(255, 255, 255);
-  --color-heroText: rgb(230, 230, 230);
-  --color-secondaryText: rgb(174, 178, 183);
-  --color-bgDark1: rgb(23, 24, 27);
-  --color-bgDark2: rgb(30, 31, 35);
-  --color-bgDark3: rgb(40, 41, 46);
-  --color-bgDark3Hover: rgb(47, 48, 54);
-  --color-bgDark3HoverLight: rgb(43, 44, 50);
-  --color-bgDarkTransparent: rgb(23 24 27 / 0.7);
-  --color-bgDarkTransparentDarker: rgb(0 0 0 / 0.5);
-  --color-bgDarkTransparentLighter: rgb(40 41 46 / 0.7);
-  --color-bgDark1Lighter: rgb(24, 26, 29);
-  --color-mainBorder: rgb(255 255 255 / 0.15);
-  --color-mainBorderDarker: rgb(255 255 255 / 0.07);
-  --color-mainBorderSubtler: rgb(255 255 255 / 0.1);
-  --color-mainBorderFaintest: rgb(255 255 255 / 0.05);
-  --color-mainBorderSubtle: rgb(55 65 81 / 0.3);
+  /* ICEA brand palette mapped na Tailcast tokeny.
+     Source: portals/widocznosc.ai/DESIGN.md (plan-1).
+     Brand: Midnight #000623 + Blue #5768FF + Orange #F6704C + Off #F9F9F9. */
+
+  /* Primary accent (CTA, .ai logo, headlines emphasis) */
+  --color-primaryColor: rgb(87, 104, 255);          /* ICEA Blue #5768FF */
+  --color-primaryColorHover: rgb(118, 132, 255);    /* Blue lighter dla hover */
+  --color-secondaryColor: rgb(150, 162, 255);       /* Blue lighter (eyebrow, secondary accent) */
+  --color-secondaryColorLight: rgb(200, 205, 250);  /* Blue najjaśniejszy (link hover text) */
+
+  /* Rare accent – używać max 1-2x per page (warning, status indicator) */
+  --color-orange: rgb(246, 112, 76);                /* ICEA Orange #F6704C */
+
+  /* Text */
+  --color-primaryText: rgb(249, 249, 249);          /* ICEA Off #F9F9F9 */
+  --color-heroText: rgb(255, 255, 255);             /* White – hero headlines */
+  --color-secondaryText: rgb(249 249 249 / 0.72);   /* Off 72% – body secondary */
+
+  /* Surface ladder (Linear-style) */
+  --color-bgDark1: rgb(0, 6, 35);                   /* Midnight – page canvas */
+  --color-bgDark2: rgb(10, 16, 55);                 /* Surface-1 – cards, body */
+  --color-bgDark3: rgb(19, 28, 77);                 /* Surface-2 – elevated cards */
+  --color-bgDark3Hover: rgb(27, 38, 100);           /* Surface-3 – hover, dropdown */
+  --color-bgDark3HoverLight: rgb(23, 33, 88);       /* między 2 i 3 */
+  --color-bgDarkTransparent: rgb(0 6 35 / 0.7);     /* midnight 70% */
+  --color-bgDarkTransparentDarker: rgb(0 6 35 / 0.85);  /* midnight 85% */
+  --color-bgDarkTransparentLighter: rgb(19 28 77 / 0.7);/* surface-2 70% */
+  --color-bgDark1Lighter: rgb(2, 10, 45);           /* midnight slight lift */
+
+  /* Borders – hairline, off-white z opacity steps */
+  --color-mainBorder: rgb(249 249 249 / 0.16);
+  --color-mainBorderDarker: rgb(249 249 249 / 0.08);
+  --color-mainBorderSubtler: rgb(249 249 249 / 0.1);
+  --color-mainBorderFaintest: rgb(249 249 249 / 0.05);
+  --color-mainBorderSubtle: rgb(87 104 255 / 0.25); /* Blue accent border */
   --color-quoteIconColor: rgb(178, 184, 205);
 
   --font-Inter: 'Inter';
@@ -71,7 +87,7 @@
 /* Buttons */
 
 .contained-button {
-  @apply bg-primaryColor text-primaryText flex cursor-pointer items-center justify-center rounded-lg font-bold transition hover:bg-[#7274f3];
+  @apply bg-primaryColor hover:bg-primaryColorHover text-primaryText flex cursor-pointer items-center justify-center rounded-lg font-bold transition;
 }
 .outlined-button {
   @apply text-primaryText border-mainBorder bg-bgDark2 hover:bg-bgDark3 cursor-pointer rounded-xl border border-solid text-sm;

@@ -51,7 +51,7 @@ const formatDate = (date: Date) =>
                   {formatDate(featuredPost.data.date)}
                 </div>
                 <h2
-                  class="text-primaryText text-xl font-bold transition group-hover:text-[#c8c9f8] sm:text-2xl"
+                  class="text-primaryText text-xl font-bold transition group-hover:text-secondaryColorLight sm:text-2xl"
                 >
                   {featuredPost.data.title}
                 </h2>
@@ -81,7 +81,7 @@ const formatDate = (date: Date) =>
                     />
                   </div>
                   <div>
-                    <h3 class="text-primaryText leading-snug font-bold transition group-hover:text-[#c8c9f8]">
+                    <h3 class="text-primaryText leading-snug font-bold transition group-hover:text-secondaryColorLight">
                       {post.data.title}
                     </h3>
                     <div class="text-secondaryText mt-1 text-sm">{formatDate(post.data.date)}</div>
@@ -113,7 +113,7 @@ const formatDate = (date: Date) =>
                   </div>
                   <div class="flex grow flex-col px-6 pt-2 pb-8">
                     <div class="text-secondaryText mb-3 text-sm">{formatDate(post.data.date)}</div>
-                    <h2 class="text-primaryText mb-3 text-xl font-bold transition group-hover:text-[#c8c9f8]">
+                    <h2 class="text-primaryText mb-3 text-xl font-bold transition group-hover:text-secondaryColorLight">
                       {post.data.title}
                     </h2>
                     <p class="text-secondaryText text-sm leading-relaxed">{post.data.subtitle}</p>
