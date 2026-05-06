@@ -4,10 +4,9 @@ import dashboard from '../assets/images/dashboard.jpg';
 ---
 
 <section
-  class="bg-bgDark1 mb-[28vw] flex w-full items-center justify-center pb-24 sm:pb-32 md:mb-[18vw] md:pb-44 lg:mb-[10vw] lg:pb-0 xl:mb-[13vw] 2xl:mb-60"
+  class="bg-bgDark1 hero-mesh relative mb-[28vw] flex w-full items-center justify-center pb-24 sm:pb-32 md:mb-[18vw] md:pb-44 lg:mb-[10vw] lg:pb-0 xl:mb-[13vw] 2xl:mb-60"
   id="home"
 >
-  <!-- <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(99,102,241,0.08) 0%, transparent 65%)"></div> -->
   <div
     class="flex w-full flex-col items-center justify-center pt-16 text-center md:w-[50rem] md:pt-16 lg:pt-20 xl:w-[56.25rem]"
   >
@@ -35,7 +34,7 @@ import dashboard from '../assets/images/dashboard.jpg';
     <div class="hero-fade-in" style="--delay: 0.15s">
       <div class="mt-10 mb-24 flex flex-col justify-center gap-2 sm:mb-40 sm:flex-row">
         <button
-          class="contained-button mr-0 mb-2 h-12 w-72 text-sm transition-all duration-300 hover:shadow-[0_0_30px_rgba(99,102,241,0.25)] sm:mr-2 sm:mb-0 sm:w-44 lg:mr-3"
+          class="contained-button mr-0 mb-2 h-12 w-72 text-sm transition-all duration-300 hover:shadow-[0_0_30px_rgba(246,112,76,0.35)] sm:mr-2 sm:mb-0 sm:w-44 lg:mr-3"
           data-open-modal
           aria-label="Get started"
         >
@@ -96,5 +95,23 @@ import dashboard from '../assets/images/dashboard.jpg';
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  /* Hero mesh background – Blue dominuje, Orange jako sub-akcent.
+     Wzór z plan-1 DESIGN.md (mesh-hero). */
+  .hero-mesh::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(at 18% 22%, rgb(87 104 255 / 0.18) 0%, transparent 55%),
+      radial-gradient(at 82% 78%, rgb(246 112 76 / 0.1) 0%, transparent 50%);
+    z-index: 0;
+  }
+
+  .hero-mesh > * {
+    position: relative;
+    z-index: 1;
   }
 </style>

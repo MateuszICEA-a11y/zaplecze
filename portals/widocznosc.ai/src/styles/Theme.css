@@ -230,7 +230,8 @@
   animation: logo-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-/* Dwa rozchodzące się pierścienie radaru (przed i z opóźnieniem after) */
+/* Dwa rozchodzące się pierścienie radaru: pierwszy Blue, drugi Orange.
+   Tematyka: Blue = AI signal sweep, Orange = brand/human signal. */
 .logo-wordmark .logo-dot::before,
 .logo-wordmark .logo-dot::after {
   content: '';
@@ -244,6 +245,7 @@
 }
 
 .logo-wordmark .logo-dot::after {
+  border-color: var(--color-orange);
   animation-delay: 1.3s;
 }
 
