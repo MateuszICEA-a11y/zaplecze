@@ -1,0 +1,74 @@
+---
+/**
+ * Differentiators – 4 punkty czemu widocznosc.ai a nie inna agencja.
+ * Inspirowane sekcją "OUR DIFFERENCE" w Power Digital Marketing services page.
+ */
+
+interface Diff {
+  symbol: string;
+  title: string;
+  desc: string;
+}
+
+const diffs: Diff[] = [
+  {
+    symbol: '◐',
+    title: 'Pięć silników AI razem',
+    desc: 'Nie tylko ChatGPT. W&nbsp;jednym raporcie sprawdzamy Claude, Gemini, Perplexity i&nbsp;Copilot – bo Twoi klienci pytają w każdym z&nbsp;nich.',
+  },
+  {
+    symbol: '⊡',
+    title: 'Trzy dni, nie cztery tygodnie',
+    desc: 'Standard rynkowy to&nbsp;miesięczny audyt. My zamykamy się w&nbsp;3 dniach roboczych – bez kompromisów na głębokości analizy.',
+  },
+  {
+    symbol: '✦',
+    title: 'Plan, nie tylko diagnoza',
+    desc: 'Każdy audyt kończy się listą 20+ konkretnych zmian z&nbsp;priorytetem P0/P1/P2 i&nbsp;roadmapą 30/60/90 dni – nie ogólnikami.',
+  },
+  {
+    symbol: '◇',
+    title: 'Polskie marki w&nbsp;polskim AI',
+    desc: 'Wiemy, jak LLM-y widzą polskie firmy w&nbsp;porównaniu do&nbsp;zachodnich. Robimy audyty dwujęzyczne (PL+EN) i&nbsp;onboarding na&nbsp;Wikipedia/Wikidata.',
+  },
+];
+---
+
+<section class="relative w-full" style="background: var(--bg);" aria-labelledby="diffs-title">
+  <div class="content-container py-20 lg:py-28">
+
+    <!-- Section header -->
+    <div class="mx-auto mb-16 max-w-3xl text-center">
+      <span class="meta mb-4 inline-block">Co nas wyróżnia</span>
+      <h2
+        id="diffs-title"
+        class="text-ink font-display mt-2 mb-6 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl lg:text-5xl"
+      >
+        Czemu widocznosc.ai a&nbsp;nie inna agencja
+      </h2>
+      <p class="text-ink text-lg leading-relaxed">
+        Cztery rzeczy, które naprawdę robimy inaczej &ndash; nie marketingowe slogany.
+      </p>
+    </div>
+
+    <!-- 4-col grid -->
+    <div class="grid grid-cols-1 gap-x-7 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8">
+      {
+        diffs.map((d) => (
+          <article class="flex flex-col">
+            <div class="feat-icon mb-5 font-mono" aria-hidden="true">
+              {d.symbol}
+            </div>
+            <h3 class="text-ink font-display mb-3 text-lg font-semibold tracking-[-0.02em] lg:text-xl">
+              <Fragment set:html={d.title} />
+            </h3>
+            <p class="text-ink-soft text-sm leading-relaxed">
+              <Fragment set:html={d.desc} />
+            </p>
+          </article>
+        ))
+      }
+    </div>
+
+  </div>
+</section>

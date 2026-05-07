@@ -1,0 +1,96 @@
+---
+/**
+ * Industries – 6 branż, dla których audyt GEO ma największe ROI.
+ * Każda karta: symbol + nazwa branży + konkretny use case (jak AI pomaga w tej branży).
+ */
+
+interface Industry {
+  symbol: string;
+  name: string;
+  useCase: string;
+}
+
+const industries: Industry[] = [
+  {
+    symbol: '⊞',
+    name: 'B2B SaaS i Tech',
+    useCase: 'Długi research-heavy buyer journey. Decydent pyta ChatGPT "najlepsze X dla zespołu Y" – musisz tam być.',
+  },
+  {
+    symbol: '⊟',
+    name: 'Finanse i Prawo',
+    useCase: 'Wysoka wartość transakcji, AI staje się early-stage doradcą. Cytowanie w wynikach AI = lead z gotowym intentem.',
+  },
+  {
+    symbol: '⊕',
+    name: 'Medycyna i Zdrowie',
+    useCase: 'Pacjenci pytają AI o objawy, leki, kliniki. AI Overviews dominuje 14% shopping queries w pharma/health.',
+  },
+  {
+    symbol: '⊠',
+    name: 'E-commerce i DTC',
+    useCase: 'Komparatywne pytania ("X vs Y", "tańszy zamiennik dla Z"). LLM convertuje 4.4× lepiej niż klasyczne organiczne.',
+  },
+  {
+    symbol: '⊙',
+    name: 'Edukacja i Szkolenia',
+    useCase: 'Długi decision cycle z wieloma punktami kontaktu. Kursanci pytają AI o "najlepszy bootcamp w X" miesiące przed zakupem.',
+  },
+  {
+    symbol: '⊗',
+    name: 'Usługi B2B',
+    useCase: 'Konsulting, agencje, software houses. Klienci weryfikują marki w AI przed pierwszym callem – ranking mention-rate decyduje o&nbsp;shortlist.',
+  },
+];
+---
+
+<section
+  class="border-rule relative w-full border-t"
+  style="background: var(--bg-alt);"
+  aria-labelledby="industries-title"
+>
+  <div class="content-container py-20 lg:py-28">
+
+    <!-- Section header -->
+    <div class="mx-auto mb-16 max-w-3xl text-center">
+      <span class="meta mb-4 inline-block">Dla kogo</span>
+      <h2
+        id="industries-title"
+        class="text-ink font-display mt-2 mb-6 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl lg:text-5xl"
+      >
+        Branże, w&nbsp;których audyt zwraca się najszybciej
+      </h2>
+      <p class="text-ink text-lg leading-relaxed">
+        Wszędzie tam, gdzie kupujący pyta przed zakupem, a&nbsp;wartość transakcji uzasadnia
+        długi research stage. AI zmienia tu zasady gry pierwsze.
+      </p>
+    </div>
+
+    <!-- 3-col grid (2x3 na desktop) -->
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
+      {
+        industries.map((ind) => (
+          <article class="border-rule bg-bg-card hover:border-[color:var(--accent-edge)] hover:bg-bg-elevated rounded-xl border p-6 transition lg:p-7">
+            <div class="feat-icon mb-4 font-mono" aria-hidden="true">
+              {ind.symbol}
+            </div>
+            <h3 class="text-ink font-display mb-3 text-lg font-semibold tracking-[-0.02em]">
+              {ind.name}
+            </h3>
+            <p class="text-ink-soft text-sm leading-relaxed">
+              <Fragment set:html={ind.useCase} />
+            </p>
+          </article>
+        ))
+      }
+    </div>
+
+    <!-- Footer note -->
+    <div class="mt-12 text-center">
+      <p class="text-ink-mute font-mono text-[11px] tracking-[0.12em] uppercase">
+        Twoja branża nie jest na liście? <a href="/kontakt" class="text-accent hover:text-[color:var(--accent-bright)] transition">Sprawdzimy potencjał &rarr;</a>
+      </p>
+    </div>
+
+  </div>
+</section>

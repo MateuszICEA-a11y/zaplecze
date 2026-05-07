@@ -1,0 +1,124 @@
+---
+/**
+ * Authority – 4 data-points z research'u jako proof że GEO ≠ marketing buzz.
+ * Każda statystyka cytuje konkretne źródło + sample size.
+ */
+
+interface Stat {
+  value: string;
+  unit?: string;
+  source: string;
+  sample: string;
+  desc: string;
+  href?: string;
+}
+
+const stats: Stat[] = [
+  {
+    value: '+30',
+    unit: '%',
+    source: 'Princeton · KDD 2024',
+    sample: 'Aggarwal et al.',
+    desc: 'wzrost widoczności w&nbsp;LLM po&nbsp;dodaniu cytowań źródeł i&nbsp;statystyk. Keyword stuffing dawał -10% (akademicka odwrotność klasycznego SEO).',
+    href: 'https://arxiv.org/abs/2311.09735',
+  },
+  {
+    value: '44',
+    unit: '%',
+    source: 'Kevin Indig · Growth Memo',
+    sample: '1,2 mln cytowań ChatGPT',
+    desc: 'cytowań w&nbsp;ChatGPT pochodzi z&nbsp;pierwszych 30% tekstu. "Front-loading" nie jest opcją – to&nbsp;wymóg techniczny.',
+  },
+  {
+    value: '89',
+    unit: '%',
+    source: 'BrightEdge · 2025',
+    sample: 'analiza AI Overviews',
+    desc: 'cytowań w&nbsp;Google AI Overviews to&nbsp;wyniki rankingowane poniżej pozycji 100. Klasyczny ranking nie gwarantuje cytacji.',
+  },
+  {
+    value: '4,4',
+    unit: '×',
+    source: 'Semrush · 2025',
+    sample: 'analiza ruchu LLM',
+    desc: 'wyższa konwersja użytkowników przychodzących z&nbsp;LLM vs&nbsp;klasyczny organic. Lead z&nbsp;AI to&nbsp;lead z&nbsp;już zbudowaną intencją.',
+  },
+];
+---
+
+<section class="relative w-full" style="background: var(--bg);" aria-labelledby="authority-title">
+  <div class="content-container py-20 lg:py-28">
+
+    <!-- Section header -->
+    <div class="mx-auto mb-16 max-w-3xl text-center">
+      <span class="meta mb-4 inline-block">Na czym to się opiera</span>
+      <h2
+        id="authority-title"
+        class="text-ink font-display mt-2 mb-6 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl lg:text-5xl"
+      >
+        Nie wymyślamy GEO &ndash; opieramy się na&nbsp;badaniach
+      </h2>
+      <p class="text-ink text-lg leading-relaxed">
+        Każda rekomendacja w&nbsp;naszym audycie ma źródło – akademickie, branżowe albo nasze
+        własne testy. Zero marketing-buzz.
+      </p>
+    </div>
+
+    <!-- 4 stats grid -->
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7">
+      {
+        stats.map((s) => (
+          <article class="border-rule bg-bg-card flex flex-col rounded-xl border p-6 lg:p-7">
+            <!-- Big number -->
+            <div class="mb-4 flex items-baseline gap-1">
+              <span class="text-accent font-display text-5xl font-semibold leading-none tracking-[-0.04em] lg:text-6xl">
+                {s.value}
+              </span>
+              {s.unit && (
+                <span class="text-accent font-display text-3xl font-semibold tracking-[-0.02em]">
+                  {s.unit}
+                </span>
+              )}
+            </div>
+
+            <!-- Source + sample -->
+            <div class="border-rule mb-4 border-l-2 pl-3" style="border-color: var(--accent-edge);">
+              <div class="text-ink font-mono text-[11px] font-semibold tracking-[0.08em] uppercase">
+                {s.source}
+              </div>
+              <div class="text-ink-mute font-mono text-[10px] tracking-[0.08em] uppercase">
+                {s.sample}
+              </div>
+            </div>
+
+            <!-- Description -->
+            <p class="text-ink-soft grow text-sm leading-relaxed">
+              <Fragment set:html={s.desc} />
+            </p>
+
+            {s.href && (
+              <a
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-ink-soft hover:text-accent mt-5 inline-flex items-center gap-1.5 font-mono text-[10px] tracking-[0.12em] uppercase transition"
+                aria-label={`Zobacz badanie: ${s.source}`}
+              >
+                Zobacz badanie <span aria-hidden="true">↗</span>
+              </a>
+            )}
+          </article>
+        ))
+      }
+    </div>
+
+    <!-- Footer note – metoda -->
+    <div class="border-rule mx-auto mt-14 max-w-2xl border-t pt-8 text-center">
+      <p class="text-ink-soft text-base leading-relaxed">
+        Plus 15+ lat doświadczenia ICEA w&nbsp;klasycznym SEO &ndash; te same fundamenty
+        (autorytet, semantyka, struktura) działają w&nbsp;AI inaczej, ale rygor pracy zostaje ten&nbsp;sam.
+      </p>
+    </div>
+
+  </div>
+</section>

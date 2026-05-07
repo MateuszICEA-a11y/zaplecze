@@ -1,133 +1,100 @@
 ---
-const FAQData = [
+/**
+ * FAQ – 5 najczęstszych pytań klientów. Native details/summary accordion.
+ * Pierwszy item open by default żeby pokazać format odpowiedzi.
+ */
+
+interface QA {
+  q: string;
+  a: string;
+}
+
+const items: QA[] = [
   {
-    question: 'Can I upgrade or downgrade my plan at any time?',
-    answer:
-      'Yes, you can easily upgrade or downgrade your plan at any time. Simply navigate to the account settings in your dashboard and choose the desired plan. The changes will be reflected immediately, and any adjustments in pricing will be applied on your next billing cycle. Our support team is more than happy to provide guidance and recommendations.',
+    q: 'Czym GEO różni się od klasycznego SEO?',
+    a: `SEO optymalizuje pod listę 10 niebieskich linków. GEO optymalizuje pod jedną odpowiedź AI, w&nbsp;której Twoja marka pojawia się jako źródło. Inne sygnały (cytowania, structured data, llms.txt), inny pomiar (Share of Voice zamiast pozycji), inne KPI. 60% taktyk się pokrywa, ale 40% to&nbsp;nowa dyscyplina – dlatego wyceniamy GEO osobno.`,
   },
   {
-    question: 'How to claim your 25% discount offer?',
-    answer:
-      'To claim your 25% discount, simply sign up for an account and enter the promotional code at checkout. The discount will be applied automatically to your purchase.',
+    q: 'Czy darmowe testy są naprawdę darmowe?',
+    a: `Tak, bez gate'u, bez triala, bez "podaj kartę". Brand check i&nbsp;AI bots check uruchamiasz instant. URL check zostawia email tylko po&nbsp;to, żeby wysłać Ci szczegółowy raport PDF (sam score widzisz od&nbsp;razu na&nbsp;stronie). Nie obdzwaniamy po&nbsp;teście – jeśli chcesz pełny audyt, sam zostawiasz brief.`,
   },
   {
-    question: "What's your refund policy?",
-    answer:
-      "We offer a 30-day money-back guarantee on all our plans. If you're not satisfied with our product, simply contact our support team within 30 days of purchase for a full refund.",
+    q: 'Jak szybko zobaczę efekty pełnego audytu?',
+    a: `Quick-wins (schema FAQ, llms.txt, front-loading TL;DR) wdrażasz w&nbsp;tydzień i&nbsp;zaczynają działać w&nbsp;cyklach indeksacji LLM (2–4 tygodnie). Strukturalne zmiany (Wikipedia/Wikidata onboarding, content refresh, digital PR pod "best of" listicles) widać w&nbsp;6–12 tygodni. Dlatego roadmapa jest 30/60/90 – nie obiecujemy "ranking nr 1 w&nbsp;ChatGPT za 7 dni".`,
   },
   {
-    question: 'How to get support for the product?',
-    answer:
-      "Our dedicated support team is here to help. You can reach out to us through the contact form on our website, send an email, or engage with us via live chat. We'll be happy to assist you with any questions or concerns you may have",
+    q: 'Mierzycie ranking? Skoro w&nbsp;LLM odpowiedzi są losowe?',
+    a: `Nie. Badanie Randa Fishkina (SparkToro 2026) pokazało, że w&nbsp;LLM jest <1% powtarzalność tych samych wyników – ranking tracking nie ma sensu. Mierzymy <strong>Share of Voice</strong> (% cytowań Twojej marki vs&nbsp;konkurencji w&nbsp;puli zapytań) i&nbsp;<strong>Citation Rate</strong> (jak często URL Twojej strony pojawia się jako źródło). Te są stabilne probabilistycznie.`,
+  },
+  {
+    q: 'Co jeśli moja marka jest niszowa albo nowa?',
+    a: `Tym lepiej – nisze i&nbsp;młode marki mają większy lift z&nbsp;GEO niż dojrzałe brandy. Princeton/KDD 2024 pokazało, że strony z&nbsp;niskim klasycznym rankingiem (#5+) zyskiwały <strong>+115%</strong> widoczności AI od&nbsp;samych cytowań źródeł, podczas gdy top-rankowane traciły 30%. Nasz audyt zaczyna się od&nbsp;mapowania puli pytań Twoich klientów – nawet 500 wyszukiwań/m wystarczy do&nbsp;mierzalnego efektu.`,
   },
 ];
 ---
 
-<section class="relative -mt-8 pt-12 pb-16 sm:mt-0 sm:pt-16">
-  <div class="absolute -top-10" id="FAQ"></div>
-  <div class="fade-in">
-    <div class="relative z-10 container mx-auto w-11/12 px-2 sm:w-full sm:px-8 lg:px-4">
-      <div class="mx-auto md:max-w-4xl">
-        <p class="block-subtitle mb-7 text-center">Have any questions?</p>
-        <h2 class="block-big-title mb-16 text-center">Frequently Asked Questions</h2>
-        <div class="-m-1 mb-11 flex flex-wrap">
-          {
-            FAQData.map((item, index) => (
-              <div class="w-full p-1">
-                <div
-                  class="faq-box card mb-4 cursor-pointer rounded-3xl px-5 py-5 sm:px-8 sm:py-6"
-                  data-open={index === 0 ? 'true' : 'false'}
-                >
-                  <button
-                    type="button"
-                    class="flex w-full cursor-pointer items-center justify-between bg-transparent text-left"
-                    aria-expanded={index === 0 ? 'true' : 'false'}
-                    aria-controls={`faq-panel-${index}`}
-                    id={`faq-header-${index}`}
-                  >
-                    <h3 class="content-title">{item.question}</h3>
-                    <svg
-                      width="28px"
-                      height="30px"
-                      viewBox="0 0 20 20"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      class={`faq-chevron text-secondaryColor ml-4 shrink-0 transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${index === 0 ? 'rotate-[180deg]' : 'rotate-[270deg]'}`}
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M4.16732 12.5L10.0007 6.66667L15.834 12.5"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </button>
-                  <div
-                    class={`faq-answer-grid ${index === 0 ? 'faq-open' : ''}`}
-                    id={`faq-panel-${index}`}
-                    role="region"
-                    aria-labelledby={`faq-header-${index}`}
-                  >
-                    <div class="faq-answer-inner">
-                      <p class="text-secondaryText pt-4">{item.answer}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))
-          }
-        </div>
-      </div>
+<section
+  class="border-rule relative w-full border-t"
+  style="background: var(--bg-alt);"
+  aria-labelledby="faq-title"
+>
+  <div class="content-container py-20 lg:py-28">
+
+    <!-- Section header -->
+    <div class="mx-auto mb-14 max-w-3xl text-center">
+      <span class="meta mb-4 inline-block">FAQ</span>
+      <h2
+        id="faq-title"
+        class="text-ink font-display mt-2 mb-6 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl lg:text-5xl"
+      >
+        Najczęstsze pytania
+      </h2>
+      <p class="text-ink text-lg leading-relaxed">
+        Odpowiedzi, które słyszysz od&nbsp;nas zawsze &ndash; bez "skontaktuj się żeby się dowiedzieć".
+      </p>
     </div>
+
+    <!-- Accordion -->
+    <div class="mx-auto max-w-3xl">
+      {
+        items.map((item, i) => (
+          <details
+            class="faq-item border-rule group border-b last:border-b-0"
+            open={i === 0}
+          >
+            <summary class="text-ink hover:text-accent flex cursor-pointer list-none items-start justify-between gap-4 py-6 transition">
+              <span class="font-display text-lg font-semibold tracking-[-0.02em] lg:text-xl">
+                <Fragment set:html={item.q} />
+              </span>
+              <span
+                class="faq-icon text-accent mt-1 shrink-0 font-mono text-xl leading-none transition-transform duration-200"
+                aria-hidden="true"
+              >
+                +
+              </span>
+            </summary>
+            <div class="text-ink-soft pb-6 text-base leading-relaxed">
+              <Fragment set:html={item.a} />
+            </div>
+          </details>
+        ))
+      }
+    </div>
+
   </div>
 </section>
 
 <style>
-  .faq-answer-grid {
-    display: grid;
-    grid-template-rows: 0fr;
-    opacity: 0;
-    transition:
-      grid-template-rows 200ms cubic-bezier(0.4, 0, 0.2, 1),
-      opacity 150ms ease;
+  /* Hide default disclosure marker (Safari + Chrome) */
+  .faq-item summary::-webkit-details-marker {
+    display: none;
   }
-  .faq-answer-grid.faq-open {
-    grid-template-rows: 1fr;
-    opacity: 1;
+  .faq-item summary::marker {
+    display: none;
   }
-  .faq-answer-inner {
-    overflow: hidden;
-    min-height: 0;
+
+  /* Plus → minus when open */
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
   }
 </style>
-
-<script>
-  const initFaq = () => {
-    document.querySelectorAll('.faq-box').forEach((box) => {
-      const btn = box.querySelector('button');
-      box.addEventListener('click', () => {
-        const answerGrid = box.querySelector('.faq-answer-grid');
-        const chevron = box.querySelector('.faq-chevron');
-        const isOpen = box.getAttribute('data-open') === 'true';
-
-        if (isOpen) {
-          answerGrid?.classList.remove('faq-open');
-          chevron?.classList.remove('rotate-[180deg]');
-          chevron?.classList.add('rotate-[270deg]');
-          box.setAttribute('data-open', 'false');
-          btn?.setAttribute('aria-expanded', 'false');
-        } else {
-          answerGrid?.classList.add('faq-open');
-          chevron?.classList.add('rotate-[180deg]');
-          chevron?.classList.remove('rotate-[270deg]');
-          box.setAttribute('data-open', 'true');
-          btn?.setAttribute('aria-expanded', 'true');
-        }
-      });
-    });
-  };
-
-  document.addEventListener('astro:page-load', initFaq);
-</script>
