@@ -10,8 +10,8 @@
  * Pages Function – deployowane razem z Astro przez Cloudflare Pages.
  */
 
-import { AI_BOTS, CATEGORY_LABELS, type BotCategory } from '../../../src/data/ai-bots';
-import { checkBotAccess, parseRobotsTxt } from '../../../src/lib/robots-parser';
+import { AI_BOTS, CATEGORY_LABELS, type BotCategory } from '../../_lib/ai-bots';
+import { checkBotAccess } from '../../_lib/robots-parser';
 
 type CheckRequest = {
   url?: string;
