@@ -89,57 +89,66 @@ const isActive = (href: string) => {
 ---
 
 <nav
-  class={`w-full h-20 flex flex-col justify-center items-center fixed top-0 left-0 z-40 transition-all duration-300 ${!isHomepage ? 'bg-bg/80 backdrop-blur-[15px]' : ''}`}
+  class="nav-shell"
   id="main-nav"
   data-homepage={isHomepage ? 'true' : 'false'}
   aria-label="Główna nawigacja"
 >
-  <div class="relative flex w-11/12 items-center justify-between xl:w-10/12 2xl:w-7xl">
-    <!-- Logo: kafelek + wordmark "widoczność.ai" -->
-    <div class="flex items-center gap-3">
+  <div class="nav-inner">
+    <!-- Logo cluster: kafelek + wordmark + vertical rule + telemetry -->
+    <div class="nav-logo-cluster">
       <a href="/" aria-label="widoczność.ai – strona główna" class="flex items-center gap-3">
         <div class="logo-mark" aria-hidden="true">w</div>
         <div class="text-ink text-xl font-semibold tracking-tight md:text-2xl">
           widoczność<span class="text-accent">.ai</span>
         </div>
       </a>
-      <span class="status hidden md:inline-flex" aria-label="5 modeli AI monitorowanych na żywo">
-        <span class="status-dot" aria-hidden="true"></span>
-        <span>5 modeli · live</span>
-      </span>
+      <span class="nav-rule hidden md:block" aria-hidden="true"></span>
+      <div
+        class="telemetry hidden md:inline-flex"
+        aria-label="5 silników AI · status w czasie rzeczywistym: ChatGPT 99%, Claude 100%, Gemini 97%, Perplexity 100%, Bing Copilot 98%"
+      >
+        <span class="telemetry-dot" aria-hidden="true"></span>
+        <span class="telemetry-stack" aria-hidden="true">
+          <span class="telemetry-row">ChatGPT 99%</span>
+          <span class="telemetry-row">Claude 100%</span>
+          <span class="telemetry-row">Gemini 97%</span>
+          <span class="telemetry-row">Perplexity 100%</span>
+          <span class="telemetry-row">Copilot 98%</span>
+        </span>
+      </div>
     </div>
 
     <!-- Nav links (desktop, lg+) -->
-    <div class="hidden h-full lg:flex">
+    <div class="nav-links hidden h-full lg:flex">
       {
         navbarLinks.map((group) => {
           const active = isActive(group.href);
           if (!group.items) {
             return (
               <a
-                class={`hover:text-accent relative flex h-20 cursor-pointer items-center px-4 text-base leading-6 font-medium transition duration-200 focus-visible:outline-offset-[-4px] 2xl:px-6 ${active ? 'text-accent' : 'text-ink-soft'}`}
+                class={`nav-link${active ? ' nav-link--active' : ''}`}
                 href={group.href}
                 {...(active ? { 'aria-current': 'page' } : {})}
               >
-                {group.label}
-                {active && (
-                  <span class="bg-accent absolute right-4 bottom-4 left-4 h-0.5 rounded-full 2xl:right-6 2xl:left-6" />
-                )}
+                <span class="nav-link-prefix" aria-hidden="true">›</span>
+                <span class="nav-link-label">{group.label}</span>
               </a>
             );
           }
           return (
-            <div class="group relative h-20">
+            <div class="group relative h-full">
               <a
                 href={group.href}
-                class={`hover:text-accent flex h-full cursor-pointer items-center gap-1 px-4 text-base leading-6 font-medium transition duration-200 2xl:px-6 ${active ? 'text-accent' : 'text-ink-soft'}`}
+                class={`nav-link nav-link--has-menu${active ? ' nav-link--active' : ''}`}
                 aria-haspopup="true"
                 aria-expanded="false"
                 {...(active ? { 'aria-current': 'page' } : {})}
               >
-                {group.label}
+                <span class="nav-link-prefix" aria-hidden="true">›</span>
+                <span class="nav-link-label">{group.label}</span>
                 <svg
-                  class="h-3 w-3 transition group-hover:rotate-180"
+                  class="nav-link-chev h-3 w-3 transition group-hover:rotate-180"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
@@ -148,9 +157,6 @@ const isActive = (href: string) => {
                 >
                   <polyline points="6,9 12,15 18,9" />
                 </svg>
-                {active && (
-                  <span class="bg-accent absolute right-4 bottom-4 left-4 h-0.5 rounded-full 2xl:right-6 2xl:left-6" />
-                )}
               </a>
               <!-- Mega dropdown -->
               <div
@@ -204,10 +210,11 @@ const isActive = (href: string) => {
       }
     </div>
 
-    <!-- CTA "Zamów audyt" -->
+    <!-- CTA "Zamów audyt" – outline mono caps -->
     <div class="hidden lg:block">
-      <a class="btn-primary" href="/kontakt" aria-label="Zamów audyt widoczności AI">
-        Zamów audyt
+      <a class="btn-outline-cta" href="/kontakt" aria-label="Zamów audyt widoczności AI">
+        <span class="btn-outline-cta-prompt" aria-hidden="true">▶</span>
+        ZAMÓW AUDYT
       </a>
     </div>
 
@@ -224,6 +231,9 @@ const isActive = (href: string) => {
       <div class="bg-ink-soft h-0.5 w-5"></div>
     </button>
   </div>
+
+  <!-- Accent edge – orange bottom rule -->
+  <span class="nav-edge" aria-hidden="true"></span>
 
   <!-- Mobile menu overlay -->
   <div class="fixed inset-0 top-20 z-40 hidden lg:hidden" id="mobile-menu-overlay"></div>
@@ -288,21 +298,17 @@ const isActive = (href: string) => {
     const overlay = document.getElementById('mobile-menu-overlay');
     const nav = document.getElementById('main-nav');
 
-    const isHomepage = nav?.dataset.homepage === 'true';
-
     const updateNavBackground = () => {
-      if (!isHomepage) return;
-      if (window.scrollY > 50) {
-        nav?.classList.add('bg-bg/80', 'backdrop-blur-[15px]');
+      if (!nav) return;
+      if (window.scrollY > 32) {
+        nav.dataset.scrolled = 'true';
       } else {
-        nav?.classList.remove('bg-bg/80', 'backdrop-blur-[15px]');
+        nav.dataset.scrolled = 'false';
       }
     };
 
-    if (isHomepage) {
-      updateNavBackground();
-      window.addEventListener('scroll', updateNavBackground);
-    }
+    updateNavBackground();
+    window.addEventListener('scroll', updateNavBackground, { passive: true });
 
     const openMenu = () => {
       menu?.classList.remove('hidden');
@@ -360,3 +366,326 @@ const isActive = (href: string) => {
 
   document.addEventListener('astro:page-load', initNavbar);
 </script>
+
+<style is:global>
+  /* ============================================================
+     Navbar shell – fixed, h-20, accent edge, terminal-mono links
+     ============================================================ */
+
+  .nav-shell {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 40;
+    background: rgb(7 8 16 / 0.85);
+    backdrop-filter: blur(16px) saturate(120%);
+    -webkit-backdrop-filter: blur(16px) saturate(120%);
+    border-bottom: 1px solid var(--rule-soft);
+    transition:
+      background 0.25s ease,
+      border-color 0.25s ease;
+  }
+
+  /* Homepage – transparent at top, solid after scroll */
+  .nav-shell[data-homepage='true'][data-scrolled='false'] {
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom-color: transparent;
+  }
+
+  .nav-inner {
+    position: relative;
+    display: flex;
+    width: 91.6667%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 1280px) {
+    .nav-inner {
+      width: 83.3333%;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .nav-inner {
+      width: 80rem;
+      max-width: 80rem;
+    }
+  }
+
+  /* Logo cluster */
+  .nav-logo-cluster {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  /* Vertical rule separator after logo */
+  .nav-rule {
+    width: 1px;
+    height: 28px;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      var(--rule) 30%,
+      var(--rule) 70%,
+      transparent 100%
+    );
+    flex: none;
+  }
+
+  /* ============================================================
+     Telemetry rotator – live status of 5 AI engines
+     ============================================================ */
+
+  .telemetry {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 5px 12px;
+    height: 28px;
+    flex: none;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    background: rgb(17 19 31 / 0.45);
+    font-family: var(--font-mono, 'JetBrains Mono'), monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+    overflow: hidden;
+  }
+
+  .telemetry-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #34d399;
+    box-shadow: 0 0 0 3px rgb(52 211 153 / 0.18);
+    flex: none;
+    animation: telemetry-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes telemetry-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
+  }
+
+  .telemetry-stack {
+    position: relative;
+    height: 16px;
+    width: 130px;
+    overflow: hidden;
+  }
+
+  .telemetry-row {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    opacity: 0;
+    animation: telemetry-cycle 15s linear infinite;
+  }
+
+  .telemetry-row:nth-child(1) { animation-delay: 0s; }
+  .telemetry-row:nth-child(2) { animation-delay: 3s; }
+  .telemetry-row:nth-child(3) { animation-delay: 6s; }
+  .telemetry-row:nth-child(4) { animation-delay: 9s; }
+  .telemetry-row:nth-child(5) { animation-delay: 12s; }
+
+  @keyframes telemetry-cycle {
+    0%   { opacity: 0; transform: translateY(8px); }
+    2%   { opacity: 1; transform: translateY(0); }
+    18%  { opacity: 1; transform: translateY(0); }
+    20%  { opacity: 0; transform: translateY(-8px); }
+    100% { opacity: 0; transform: translateY(-8px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .telemetry-row { animation: none; }
+    .telemetry-row:not(:first-child) { display: none; }
+    .telemetry-row:first-child { opacity: 1; }
+    .telemetry-dot { animation: none; }
+  }
+
+  /* ============================================================
+     Nav links – terminal-mono prefix + active accent underline
+     ============================================================ */
+
+  .nav-links {
+    align-items: stretch;
+  }
+
+  .nav-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45em;
+    height: 100%;
+    padding: 0 0.95rem;
+    font-family: var(--font-sans, 'Inter'), system-ui, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    letter-spacing: -0.005em;
+    cursor: pointer;
+    transition: color 0.18s ease;
+    white-space: nowrap;
+  }
+
+  @media (min-width: 1536px) {
+    .nav-link {
+      padding: 0 1.25rem;
+    }
+  }
+
+  .nav-link-prefix {
+    font-family: var(--font-mono, 'JetBrains Mono'), monospace;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--ink-mute);
+    transform: translateY(-1px);
+    transition: color 0.18s ease, transform 0.18s ease;
+  }
+
+  .nav-link-label {
+    position: relative;
+  }
+
+  .nav-link-chev {
+    margin-left: 2px;
+    color: var(--ink-mute);
+    transition: color 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--ink);
+  }
+
+  .nav-link:hover .nav-link-prefix {
+    color: var(--accent);
+    transform: translateY(-1px) translateX(1px);
+  }
+
+  .nav-link:hover .nav-link-chev {
+    color: var(--ink-soft);
+  }
+
+  .nav-link--active {
+    color: var(--accent);
+  }
+
+  .nav-link--active .nav-link-prefix {
+    color: var(--accent);
+  }
+
+  .nav-link--active::after {
+    content: '';
+    position: absolute;
+    left: 0.95rem;
+    right: 0.95rem;
+    bottom: 14px;
+    height: 1.5px;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      var(--accent) 30%,
+      var(--accent) 70%,
+      transparent 100%
+    );
+    border-radius: 1px;
+  }
+
+  @media (min-width: 1536px) {
+    .nav-link--active::after {
+      left: 1.25rem;
+      right: 1.25rem;
+    }
+  }
+
+  /* ============================================================
+     CTA outline – mono caps with terminal-prompt prefix
+     ============================================================ */
+
+  .btn-outline-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    height: 38px;
+    padding: 0 18px;
+    white-space: nowrap;
+    font-family: var(--font-mono, 'JetBrains Mono'), monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: rgb(255 106 46 / 0.06);
+    border: 1px solid var(--accent-edge);
+    border-radius: var(--r-md, 8px);
+    cursor: pointer;
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease,
+      color 0.2s ease,
+      transform 0.15s ease,
+      box-shadow 0.2s ease;
+    text-decoration: none;
+  }
+
+  .btn-outline-cta-prompt {
+    font-size: 9px;
+    color: var(--accent);
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  .btn-outline-cta:hover {
+    background: var(--accent);
+    color: var(--bg);
+    border-color: var(--accent);
+    transform: translateY(-1px);
+    box-shadow:
+      0 0 0 1px var(--accent),
+      0 8px 24px var(--accent-glow);
+  }
+
+  .btn-outline-cta:hover .btn-outline-cta-prompt {
+    color: var(--bg);
+    transform: translateX(2px);
+  }
+
+  /* ============================================================
+     Accent edge – orange bottom rule
+     ============================================================ */
+
+  .nav-edge {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      var(--accent-edge) 22%,
+      var(--accent-edge) 78%,
+      transparent 100%
+    );
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav-shell[data-homepage='true'][data-scrolled='false'] .nav-edge {
+    opacity: 0;
+  }
+</style>
