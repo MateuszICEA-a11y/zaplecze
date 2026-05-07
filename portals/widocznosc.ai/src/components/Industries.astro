@@ -1,83 +1,62 @@
 ---
 /**
  * Industries – 6 branż, dla których audyt GEO ma największe ROI.
- * Każda karta: symbol + nazwa branży + konkretny use case (jak AI pomaga w tej branży).
+ * Framer DNA: 3-col grid charcoal cards (surface-1), no symbols.
  */
 
 interface Industry {
-  symbol: string;
   name: string;
   useCase: string;
 }
 
 const industries: Industry[] = [
   {
-    symbol: '⊞',
     name: 'B2B SaaS i Tech',
     useCase: 'Długi research-heavy buyer journey. Decydent pyta ChatGPT "najlepsze X dla zespołu Y" – musisz tam być.',
   },
   {
-    symbol: '⊟',
     name: 'Finanse i Prawo',
     useCase: 'Wysoka wartość transakcji, AI staje się early-stage doradcą. Cytowanie w wynikach AI = lead z gotowym intentem.',
   },
   {
-    symbol: '⊕',
     name: 'Medycyna i Zdrowie',
     useCase: 'Pacjenci pytają AI o objawy, leki, kliniki. AI Overviews dominuje 14% shopping queries w pharma/health.',
   },
   {
-    symbol: '⊠',
     name: 'E-commerce i DTC',
-    useCase: 'Komparatywne pytania ("X vs Y", "tańszy zamiennik dla Z"). LLM convertuje 4.4× lepiej niż klasyczne organiczne.',
+    useCase: 'Komparatywne pytania ("X vs Y", "tańszy zamiennik dla Z"). LLM konwertuje 4.4× lepiej niż klasyczne organiczne.',
   },
   {
-    symbol: '⊙',
     name: 'Edukacja i Szkolenia',
     useCase: 'Długi decision cycle z wieloma punktami kontaktu. Kursanci pytają AI o "najlepszy bootcamp w X" miesiące przed zakupem.',
   },
   {
-    symbol: '⊗',
     name: 'Usługi B2B',
     useCase: 'Konsulting, agencje, software houses. Klienci weryfikują marki w AI przed pierwszym callem – ranking mention-rate decyduje o&nbsp;shortlist.',
   },
 ];
 ---
 
-<section
-  class="border-rule relative w-full border-t"
-  style="background: var(--bg-alt);"
-  aria-labelledby="industries-title"
->
-  <div class="content-container py-20 lg:py-28">
+<section class="industries-section" aria-labelledby="industries-title">
+  <div class="industries-container">
 
-    <!-- Section header -->
-    <div class="mx-auto mb-16 max-w-3xl text-center">
-      <span class="meta mb-4 inline-block">Dla kogo</span>
-      <h2
-        id="industries-title"
-        class="text-ink font-display mt-2 mb-6 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl lg:text-5xl"
-      >
+    <header class="industries-header">
+      <span class="eyebrow industries-eyebrow">Dla kogo</span>
+      <h2 id="industries-title" class="display-lg industries-title">
         Branże, w&nbsp;których audyt zwraca się najszybciej
       </h2>
-      <p class="text-ink text-lg leading-relaxed">
+      <p class="industries-lead">
         Wszędzie tam, gdzie kupujący pyta przed zakupem, a&nbsp;wartość transakcji uzasadnia
         długi research stage. AI zmienia tu zasady gry pierwsze.
       </p>
-    </div>
+    </header>
 
-    <!-- 3-col grid (2x3 na desktop) -->
-    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-7">
+    <div class="industries-grid">
       {
         industries.map((ind) => (
-          <article class="border-rule bg-bg-card hover:border-[color:var(--accent-edge)] hover:bg-bg-elevated rounded-xl border p-6 transition lg:p-7">
-            <div class="feat-icon mb-4 font-mono" aria-hidden="true">
-              {ind.symbol}
-            </div>
-            <h3 class="text-ink font-display mb-3 text-lg font-semibold tracking-[-0.02em]">
-              {ind.name}
-            </h3>
-            <p class="text-ink-soft text-sm leading-relaxed">
+          <article class="industries-card">
+            <h3 class="industries-card-title">{ind.name}</h3>
+            <p class="industries-card-desc">
               <Fragment set:html={ind.useCase} />
             </p>
           </article>
@@ -85,12 +64,118 @@ const industries: Industry[] = [
       }
     </div>
 
-    <!-- Footer note -->
-    <div class="mt-12 text-center">
-      <p class="text-ink-mute font-mono text-[11px] tracking-[0.12em] uppercase">
-        Twoja branża nie jest na liście? <a href="/kontakt" class="text-accent hover:text-[color:var(--accent-bright)] transition">Sprawdzimy potencjał &rarr;</a>
-      </p>
-    </div>
+    <p class="industries-footer">
+      Twoja branża nie jest na liście? <a href="/kontakt" class="industries-footer-link">Sprawdzimy potencjał →</a>
+    </p>
 
   </div>
 </section>
+
+<style>
+  .industries-section {
+    background: var(--bg-canvas);
+    padding: 96px 0;
+    border-top: 1px solid var(--hairline-soft);
+  }
+
+  .industries-container {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding: 0 30px;
+  }
+
+  .industries-header {
+    max-width: 720px;
+    margin: 0 auto 64px auto;
+    text-align: center;
+  }
+
+  .industries-eyebrow {
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+
+  .industries-title {
+    color: var(--ink);
+    margin: 0 0 16px 0;
+    text-wrap: balance;
+  }
+
+  .industries-lead {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-lg);
+    line-height: 1.45;
+    letter-spacing: var(--ls-body-lg);
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .industries-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  @media (min-width: 640px) {
+    .industries-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .industries-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .industries-card {
+    background: var(--bg-surface-1);
+    border-radius: var(--r-xl);
+    padding: 24px;
+    transition: background 0.2s ease;
+  }
+
+  .industries-card:hover {
+    background: var(--bg-surface-2);
+  }
+
+  .industries-card-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--fs-headline);
+    line-height: 1.2;
+    letter-spacing: var(--ls-headline);
+    color: var(--ink);
+    margin: 0 0 12px 0;
+  }
+
+  .industries-card-desc {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-sm);
+    line-height: 1.5;
+    letter-spacing: var(--ls-body-sm);
+    color: var(--ink-muted);
+    margin: 0;
+  }
+
+  .industries-footer {
+    text-align: center;
+    margin-top: 48px;
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    font-weight: 500;
+    letter-spacing: var(--ls-caption);
+    color: var(--ink-muted);
+  }
+
+  .industries-footer-link {
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+  }
+
+  .industries-footer-link:hover {
+    opacity: 0.85;
+  }
+</style>

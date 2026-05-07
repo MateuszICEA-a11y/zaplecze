@@ -27,87 +27,53 @@ const initials = (name: string) =>
     .slice(0, 2);
 ---
 
-<section class="relative w-full" style="background: var(--bg);" aria-labelledby="authors-title">
-  <div class="content-container py-20 lg:py-28">
-    <div class="mx-auto mb-16 max-w-3xl text-center">
-      <span class="meta mb-4 inline-block">{eyebrow}</span>
-      <h2
-        id="authors-title"
-        class="text-ink font-display mt-2 mb-6 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl lg:text-5xl"
-      >
-        {title}
-      </h2>
-      <p class="text-ink text-lg leading-relaxed">{subtitle}</p>
-    </div>
+<section class="authors-section" aria-labelledby="authors-title">
+  <div class="authors-container">
+    <header class="authors-header">
+      <span class="eyebrow authors-eyebrow">{eyebrow}</span>
+      <h2 id="authors-title" class="display-lg authors-title">{title}</h2>
+      <p class="authors-lead">{subtitle}</p>
+    </header>
 
-    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7">
+    <div class="authors-grid">
       {
         authors.map((author, idx) => {
           const data = author.data;
           const isFeatured = idx === 0;
           return (
-            <article
-              class:list={[
-                'author-card group relative flex flex-col items-center rounded-2xl border p-7 text-center transition-all duration-300',
-                isFeatured ? 'author-card--featured' : '',
-              ]}
-            >
+            <article class:list={['author-card', isFeatured ? 'author-card--featured' : '']}>
               {data.photo ? (
-                <div
-                  class:list={[
-                    'mb-5 h-32 w-32 overflow-hidden rounded-full border-2 transition-colors',
-                    isFeatured
-                      ? 'border-[color:var(--accent-edge)]'
-                      : 'border-rule group-hover:border-[color:var(--accent-edge)]',
-                  ]}
-                >
+                <div class="author-card-avatar">
                   <img
                     src={data.photo}
                     alt={data.name}
-                    class="h-full w-full object-cover"
                     loading="lazy"
                     decoding="async"
                   />
                 </div>
               ) : (
-                <div
-                  class:list={[
-                    'text-accent mb-5 flex h-32 w-32 items-center justify-center rounded-full border-2 font-mono text-2xl font-semibold transition-colors',
-                    isFeatured
-                      ? 'border-[color:var(--accent-edge)]'
-                      : 'border-rule group-hover:border-[color:var(--accent-edge)]',
-                  ]}
-                  style="background: var(--accent-soft);"
-                  aria-hidden="true"
-                >
+                <div class="author-card-avatar author-card-avatar-initials" aria-hidden="true">
                   {initials(data.name)}
                 </div>
               )}
 
-              <h3 class="text-ink font-display mb-2 text-xl font-semibold tracking-[-0.02em] whitespace-nowrap">
+              <h3 class="author-card-name">
                 <a
                   href={`/autor/${author.id}`}
-                  class="hover:text-accent transition"
                   aria-label={`Profil: ${data.name}, ${data.role}`}
                 >
                   {data.name}
                 </a>
               </h3>
 
-              <div class="text-accent mb-5 font-mono text-[11px] tracking-[0.18em] uppercase">
-                {data.role}
-              </div>
+              <div class="author-card-role">{data.role}</div>
 
-              {data.shortBio && (
-                <p class="text-ink-soft mb-6 grow text-sm leading-relaxed">
-                  {data.shortBio}
-                </p>
-              )}
+              {data.shortBio && <p class="author-card-bio">{data.shortBio}</p>}
 
-              <div class="mt-auto flex items-center gap-5">
+              <div class="author-card-links">
                 <a
                   href={`/autor/${author.id}`}
-                  class="text-ink-soft hover:text-accent inline-flex items-center gap-1.5 font-mono text-[11px] tracking-wider uppercase transition"
+                  class="author-card-link"
                   aria-label={`Pełny profil: ${data.name}`}
                 >
                   Profil <span aria-hidden="true">→</span>
@@ -117,7 +83,7 @@ const initials = (name: string) =>
                     href={data.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="text-ink-soft hover:text-accent inline-flex items-center gap-1.5 font-mono text-[11px] tracking-wider uppercase transition"
+                    class="author-card-link"
                     aria-label={`LinkedIn: ${data.name} (otwiera się w nowym oknie)`}
                   >
                     LinkedIn <span aria-hidden="true">↗</span>
@@ -133,30 +99,171 @@ const initials = (name: string) =>
 </section>
 
 <style>
-  /* Glass-card – subtle gradient overlay, dark base, accent glow on hover */
+  .authors-section {
+    background: var(--bg-canvas);
+    padding: 96px 0;
+    border-top: 1px solid var(--hairline-soft);
+  }
+
+  .authors-container {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding: 0 30px;
+  }
+
+  .authors-header {
+    max-width: 720px;
+    margin: 0 auto 64px auto;
+    text-align: center;
+  }
+
+  .authors-eyebrow {
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+
+  .authors-title {
+    color: var(--ink);
+    margin: 0 0 16px 0;
+    text-wrap: balance;
+  }
+
+  .authors-lead {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-lg);
+    line-height: 1.45;
+    letter-spacing: var(--ls-body-lg);
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .authors-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  @media (min-width: 640px) {
+    .authors-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .authors-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  /* Author card – charcoal surface-1, NO neon-glow, NO border accent */
   .author-card {
-    background: linear-gradient(
-      135deg,
-      rgb(255 255 255 / 0.04) 0%,
-      rgb(255 255 255 / 0) 65%
-    ),
-    var(--bg-card);
-    border-color: var(--rule);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: var(--bg-surface-1);
+    border-radius: var(--r-xl);
+    padding: 28px;
+    transition: background 0.2s ease;
   }
 
   .author-card:hover {
-    border-color: var(--accent-edge);
-    box-shadow: 0 0 30px var(--accent-glow);
-    transform: translateY(-2px);
+    background: var(--bg-surface-2);
   }
 
-  /* Featured (pierwsza karta) – persistent neon glow + accent border */
+  /* Featured (pierwsza karta) = surface-2 lift jako jedyny "active" marker */
   .author-card--featured {
-    border-color: var(--accent-edge);
-    box-shadow: 0 0 30px var(--accent-glow);
+    background: var(--bg-surface-2);
   }
 
-  .author-card--featured:hover {
-    box-shadow: 0 0 40px var(--accent-glow), 0 0 0 1px var(--accent-edge);
+  .author-card-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--r-full);
+    overflow: hidden;
+    margin-bottom: 20px;
+    background: var(--bg-canvas);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .author-card-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .author-card-avatar-initials {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--ink-muted);
+    letter-spacing: -0.02em;
+  }
+
+  .author-card-name {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--fs-headline);
+    line-height: 1.2;
+    letter-spacing: var(--ls-headline);
+    color: var(--ink);
+    margin: 0 0 6px 0;
+    white-space: nowrap;
+  }
+
+  .author-card-name a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+  }
+
+  .author-card-name a:hover {
+    opacity: 0.85;
+  }
+
+  .author-card-role {
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    font-weight: 500;
+    letter-spacing: var(--ls-caption);
+    color: var(--ink-muted);
+    margin-bottom: 16px;
+  }
+
+  .author-card-bio {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-sm);
+    line-height: 1.5;
+    letter-spacing: var(--ls-body-sm);
+    color: var(--ink-muted);
+    margin: 0 0 24px 0;
+    flex-grow: 1;
+  }
+
+  .author-card-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: auto;
+  }
+
+  .author-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    font-weight: 500;
+    letter-spacing: var(--ls-caption);
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+  }
+
+  .author-card-link:hover {
+    opacity: 0.85;
   }
 </style>

@@ -1,7 +1,7 @@
 ---
 /**
  * Authority – 4 data-points z research'u jako proof że GEO ≠ marketing buzz.
- * Każda statystyka cytuje konkretne źródło + sample size.
+ * Framer DNA: 4 stat-cards charcoal, accent-blue dla source links.
  */
 
 interface Stat {
@@ -46,53 +46,35 @@ const stats: Stat[] = [
 ];
 ---
 
-<section class="relative w-full" style="background: var(--bg);" aria-labelledby="authority-title">
-  <div class="content-container py-20 lg:py-28">
+<section class="authority-section" aria-labelledby="authority-title">
+  <div class="authority-container">
 
-    <!-- Section header -->
-    <div class="mx-auto mb-16 max-w-3xl text-center">
-      <span class="meta mb-4 inline-block">Na czym to się opiera</span>
-      <h2
-        id="authority-title"
-        class="text-ink font-display mt-2 mb-6 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl lg:text-5xl"
-      >
-        Nie wymyślamy GEO &ndash; opieramy się na&nbsp;badaniach
+    <header class="authority-header">
+      <span class="eyebrow authority-eyebrow">Na czym to się opiera</span>
+      <h2 id="authority-title" class="display-lg authority-title">
+        Nie wymyślamy GEO &mdash; opieramy się na&nbsp;badaniach
       </h2>
-      <p class="text-ink text-lg leading-relaxed">
+      <p class="authority-lead">
         Każda rekomendacja w&nbsp;naszym audycie ma źródło – akademickie, branżowe albo nasze
         własne testy. Zero marketing-buzz.
       </p>
-    </div>
+    </header>
 
-    <!-- 4 stats grid -->
-    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7">
+    <div class="authority-grid">
       {
         stats.map((s) => (
-          <article class="border-rule bg-bg-card flex flex-col rounded-xl border p-6 lg:p-7">
-            <!-- Big number -->
-            <div class="mb-4 flex items-baseline gap-1">
-              <span class="text-accent font-display text-5xl font-semibold leading-none tracking-[-0.04em] lg:text-6xl">
-                {s.value}
-              </span>
-              {s.unit && (
-                <span class="text-accent font-display text-3xl font-semibold tracking-[-0.02em]">
-                  {s.unit}
-                </span>
-              )}
+          <article class="authority-card">
+            <div class="authority-card-num">
+              <span class="authority-card-value">{s.value}</span>
+              {s.unit && <span class="authority-card-unit">{s.unit}</span>}
             </div>
 
-            <!-- Source + sample -->
-            <div class="border-rule mb-4 border-l-2 pl-3" style="border-color: var(--accent-edge);">
-              <div class="text-ink font-mono text-[11px] font-semibold tracking-[0.08em] uppercase">
-                {s.source}
-              </div>
-              <div class="text-ink-mute font-mono text-[10px] tracking-[0.08em] uppercase">
-                {s.sample}
-              </div>
+            <div class="authority-card-source">
+              <div class="authority-card-source-name">{s.source}</div>
+              <div class="authority-card-source-sample">{s.sample}</div>
             </div>
 
-            <!-- Description -->
-            <p class="text-ink-soft grow text-sm leading-relaxed">
+            <p class="authority-card-desc">
               <Fragment set:html={s.desc} />
             </p>
 
@@ -101,7 +83,7 @@ const stats: Stat[] = [
                 href={s.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-ink-soft hover:text-accent mt-5 inline-flex items-center gap-1.5 font-mono text-[10px] tracking-[0.12em] uppercase transition"
+                class="authority-card-link"
                 aria-label={`Zobacz badanie: ${s.source}`}
               >
                 Zobacz badanie <span aria-hidden="true">↗</span>
@@ -112,13 +94,175 @@ const stats: Stat[] = [
       }
     </div>
 
-    <!-- Footer note – metoda -->
-    <div class="border-rule mx-auto mt-14 max-w-2xl border-t pt-8 text-center">
-      <p class="text-ink-soft text-base leading-relaxed">
-        Plus 15+ lat doświadczenia ICEA w&nbsp;klasycznym SEO &ndash; te same fundamenty
-        (autorytet, semantyka, struktura) działają w&nbsp;AI inaczej, ale rygor pracy zostaje ten&nbsp;sam.
-      </p>
-    </div>
+    <p class="authority-footer">
+      Plus 15+ lat doświadczenia ICEA w&nbsp;klasycznym SEO &mdash; te same fundamenty
+      (autorytet, semantyka, struktura) działają w&nbsp;AI inaczej, ale rygor pracy zostaje ten&nbsp;sam.
+    </p>
 
   </div>
 </section>
+
+<style>
+  .authority-section {
+    background: var(--bg-canvas);
+    padding: 96px 0;
+  }
+
+  .authority-container {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding: 0 30px;
+  }
+
+  .authority-header {
+    max-width: 720px;
+    margin: 0 auto 64px auto;
+    text-align: center;
+  }
+
+  .authority-eyebrow {
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+
+  .authority-title {
+    color: var(--ink);
+    margin: 0 0 16px 0;
+    text-wrap: balance;
+  }
+
+  .authority-lead {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-lg);
+    line-height: 1.45;
+    letter-spacing: var(--ls-body-lg);
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .authority-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  @media (min-width: 640px) {
+    .authority-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .authority-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .authority-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-surface-1);
+    border-radius: var(--r-xl);
+    padding: 24px;
+    transition: background 0.2s ease;
+  }
+
+  .authority-card:hover {
+    background: var(--bg-surface-2);
+  }
+
+  .authority-card-num {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 16px;
+  }
+
+  .authority-card-value {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--fs-display-md);
+    line-height: 1;
+    letter-spacing: var(--ls-display-md);
+    color: var(--ink);
+  }
+
+  @media (min-width: 1024px) {
+    .authority-card-value {
+      font-size: var(--fs-display-lg);
+      letter-spacing: var(--ls-display-lg);
+    }
+  }
+
+  .authority-card-unit {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--fs-headline);
+    color: var(--ink-muted);
+    letter-spacing: -0.02em;
+  }
+
+  .authority-card-source {
+    margin-bottom: 16px;
+    padding-left: 12px;
+    border-left: 1px solid var(--hairline);
+  }
+
+  .authority-card-source-name {
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    font-weight: 500;
+    letter-spacing: var(--ls-caption);
+    color: var(--ink);
+  }
+
+  .authority-card-source-sample {
+    font-family: var(--font-sans);
+    font-size: var(--fs-micro);
+    letter-spacing: -0.12px;
+    color: var(--ink-muted);
+    margin-top: 2px;
+  }
+
+  .authority-card-desc {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-sm);
+    line-height: 1.5;
+    letter-spacing: var(--ls-body-sm);
+    color: var(--ink-muted);
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  .authority-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 20px;
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    font-weight: 500;
+    letter-spacing: var(--ls-caption);
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+  }
+
+  .authority-card-link:hover {
+    opacity: 0.85;
+  }
+
+  .authority-footer {
+    max-width: 640px;
+    margin: 56px auto 0 auto;
+    padding-top: 32px;
+    border-top: 1px solid var(--hairline-soft);
+    text-align: center;
+    font-family: var(--font-sans);
+    font-size: var(--fs-body);
+    line-height: 1.5;
+    letter-spacing: var(--ls-body);
+    color: var(--ink-muted);
+  }
+</style>

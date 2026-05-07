@@ -1,7 +1,7 @@
 ---
 /**
  * Process – jak wygląda pełny audyt widoczności AI (4 kroki, 3 dni delivery).
- * Stepper z numeracją 01-04, connector lines, every step: title + duration + opis + bullets.
+ * Framer DNA: numery display-lg ink, hairline connector, monochrome stepper.
  */
 
 interface Step {
@@ -43,7 +43,7 @@ const steps: Step[] = [
     bullets: [
       'robots.txt + dostęp dla 13 botów AI',
       'Schema.org, llms.txt, markdown wersje',
-      'Front-loading, chunkable structure, cytowania źródeł',
+      'Front-loading, podzielna struktura, cytowania źródeł',
     ],
   },
   {
@@ -60,71 +60,32 @@ const steps: Step[] = [
 ];
 ---
 
-<section
-  class="border-rule relative w-full border-t"
-  style="background: var(--bg-alt);"
-  aria-labelledby="process-title"
->
-  <div class="content-container py-20 lg:py-28">
+<section class="process-section" aria-labelledby="process-title">
+  <div class="process-container">
 
-    <!-- Section header -->
-    <div class="mx-auto mb-16 max-w-3xl text-center">
-      <span class="meta mb-4 inline-block">Jak to działa</span>
-      <h2
-        id="process-title"
-        class="text-ink font-display mt-2 mb-6 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl lg:text-5xl"
-      >
+    <header class="process-header">
+      <span class="eyebrow process-eyebrow">Jak to działa</span>
+      <h2 id="process-title" class="display-lg process-title">
         Pełny audyt w&nbsp;3&nbsp;dni &ndash; krok po&nbsp;kroku
       </h2>
-      <p class="text-ink text-lg leading-relaxed">
+      <p class="process-lead">
         Bez tygodni czekania, bez "wracamy z&nbsp;raportem za miesiąc". Cztery kroki,
         konkretny deliverable na&nbsp;końcu każdego.
       </p>
-    </div>
+    </header>
 
-    <!-- Stepper grid -->
-    <ol class="relative grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-
-      <!-- Connector line – tylko desktop, biegnie horyzontalnie pod numerami -->
-      <div
-        class="pointer-events-none absolute top-[1.875rem] right-[8%] left-[8%] hidden h-px lg:block"
-        style="background: linear-gradient(to right, transparent, var(--accent-edge) 10%, var(--accent-edge) 90%, transparent);"
-        aria-hidden="true"
-      ></div>
-
+    <ol class="process-grid">
+      <div class="process-connector" aria-hidden="true"></div>
       {
         steps.map((step) => (
-          <li class="relative flex flex-col">
-            <!-- Numbered badge -->
-            <div class="relative mb-6 flex items-center gap-3">
-              <span
-                class="bg-bg text-accent border-rule font-display flex h-[3.75rem] w-[3.75rem] items-center justify-center rounded-full border-2 text-xl font-semibold tracking-[-0.02em]"
-                style="border-color: var(--accent-edge); box-shadow: 0 0 0 4px var(--bg-alt);"
-                aria-hidden="true"
-              >
-                {step.num}
-              </span>
-              <span class="text-ink-mute font-mono text-[10px] tracking-[0.18em] uppercase">
-                {step.duration}
-              </span>
-            </div>
-
-            <h3 class="text-ink font-display mb-3 text-xl font-semibold tracking-[-0.02em] lg:text-[1.375rem]">
-              {step.title}
-            </h3>
-
-            <p class="text-ink-soft mb-5 text-sm leading-relaxed">
-              {step.desc}
-            </p>
-
-            <ul class="text-ink-soft space-y-1.5 text-sm leading-relaxed">
+          <li class="process-step">
+            <div class="process-step-num">{step.num}</div>
+            <div class="process-step-duration">{step.duration}</div>
+            <h3 class="process-step-title">{step.title}</h3>
+            <p class="process-step-desc">{step.desc}</p>
+            <ul class="process-step-bullets">
               {step.bullets.map((b) => (
-                <li class="flex gap-2.5">
-                  <span class="text-accent mt-0.5 font-mono text-xs" aria-hidden="true">
-                    →
-                  </span>
-                  <span>{b}</span>
-                </li>
+                <li>{b}</li>
               ))}
             </ul>
           </li>
@@ -132,12 +93,176 @@ const steps: Step[] = [
       }
     </ol>
 
-    <!-- Footer note pod krokami -->
-    <div class="mt-16 text-center">
-      <p class="text-ink-mute font-mono text-[11px] tracking-[0.12em] uppercase">
-        Faktura, NDA i&nbsp;dane ICEA → wszystko gotowe przed startem · Bez ukrytych kosztów
-      </p>
-    </div>
+    <p class="process-footer">
+      Faktura, NDA i&nbsp;dane ICEA &mdash; wszystko gotowe przed startem · Bez ukrytych kosztów
+    </p>
 
   </div>
 </section>
+
+<style>
+  .process-section {
+    background: var(--bg-canvas);
+    padding: 96px 0;
+  }
+
+  .process-container {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding: 0 30px;
+  }
+
+  .process-header {
+    max-width: 720px;
+    margin: 0 auto 64px auto;
+    text-align: center;
+  }
+
+  .process-eyebrow {
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+
+  .process-title {
+    color: var(--ink);
+    margin: 0 0 16px 0;
+    text-wrap: balance;
+  }
+
+  .process-lead {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-lg);
+    line-height: 1.45;
+    letter-spacing: var(--ls-body-lg);
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .process-grid {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  @media (min-width: 768px) {
+    .process-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .process-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+  }
+
+  /* Connector line – hairline, tylko desktop */
+  .process-connector {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .process-connector {
+      display: block;
+      position: absolute;
+      top: 30px;
+      left: 12%;
+      right: 12%;
+      height: 1px;
+      background: var(--hairline);
+      pointer-events: none;
+    }
+  }
+
+  .process-step {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .process-step-num {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--fs-display-lg);
+    line-height: 1;
+    letter-spacing: var(--ls-display-lg);
+    color: var(--ink);
+    margin-bottom: 8px;
+    background: var(--bg-canvas);
+    padding-right: 16px;
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+  }
+
+  .process-step-duration {
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    font-weight: 500;
+    letter-spacing: var(--ls-caption);
+    color: var(--ink-muted);
+    margin-bottom: 16px;
+  }
+
+  .process-step-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--fs-headline);
+    line-height: 1.2;
+    letter-spacing: var(--ls-headline);
+    color: var(--ink);
+    margin: 0 0 12px 0;
+  }
+
+  .process-step-desc {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-sm);
+    line-height: 1.5;
+    letter-spacing: var(--ls-body-sm);
+    color: var(--ink-muted);
+    margin: 0 0 16px 0;
+  }
+
+  .process-step-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .process-step-bullets li {
+    position: relative;
+    padding-left: 16px;
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-sm);
+    line-height: 1.5;
+    letter-spacing: var(--ls-body-sm);
+    color: var(--ink-muted);
+  }
+
+  .process-step-bullets li::before {
+    content: '·';
+    position: absolute;
+    left: 4px;
+    color: var(--ink);
+  }
+
+  .process-footer {
+    text-align: center;
+    margin-top: 64px;
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    font-weight: 500;
+    letter-spacing: var(--ls-caption);
+    color: var(--ink-muted);
+  }
+</style>

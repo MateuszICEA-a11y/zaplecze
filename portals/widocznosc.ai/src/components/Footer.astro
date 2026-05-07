@@ -37,36 +37,33 @@ const footerData = [
 const year = new Date().getFullYear();
 ---
 
-<footer aria-label="Stopka serwisu" class="border-rule border-t" style="background: var(--bg);">
-  <div class="content-container pt-16 pb-12 lg:pt-20 lg:pb-16">
-    <div class="grid grid-cols-1 gap-12 lg:grid-cols-12">
+<footer class="footer-section" aria-label="Stopka serwisu">
+  <div class="footer-container">
+
+    <div class="footer-grid">
+
       <!-- Brand + newsletter -->
-      <div class="lg:col-span-5">
-        <a href="/" aria-label="widoczność.ai – strona główna" class="flex items-center gap-3">
-          <div class="logo-mark" aria-hidden="true">w</div>
-          <div class="text-ink text-2xl font-semibold tracking-tight">
-            widoczność<span class="text-accent">.ai</span>
-          </div>
+      <div class="footer-brand">
+        <a href="/" aria-label="widocznosc.ai – strona główna" class="logo-wordmark footer-logo">
+          widocznosc.ai
         </a>
-        <p class="text-ink-soft mt-5 max-w-md leading-relaxed">
+        <p class="footer-brand-desc">
           Pozycjonowanie marek w wyszukiwarkach AI. Audyt widoczności w&nbsp;ChatGPT, Claude,
           Gemini i&nbsp;Perplexity. Część ICEA – agencji SEO i&nbsp;AI.
         </p>
 
-        <div class="mt-8">
-          <div class="text-ink-mute mb-3 font-mono text-[11px] tracking-[0.12em] uppercase">
-            Newsletter · co 2 tyg.
-          </div>
-          <form class="flex w-full max-w-md gap-2" aria-label="Zapis do newslettera">
+        <div class="footer-newsletter">
+          <div class="footer-newsletter-label">Newsletter · co 2 tyg.</div>
+          <form class="footer-newsletter-form" aria-label="Zapis do newslettera">
             <label for="footer-email" class="sr-only">Adres e-mail</label>
             <input
               type="email"
               id="footer-email"
               placeholder="twoj@email.pl"
-              class="form-input h-11 flex-1 py-0 text-sm"
+              class="text-input footer-newsletter-input"
               required
             />
-            <button class="btn-primary !py-3 !px-5 !text-sm" type="submit" aria-label="Zapisz się do newslettera">
+            <button class="btn-primary footer-newsletter-btn" type="submit" aria-label="Zapisz się do newslettera">
               Zapisz
             </button>
           </form>
@@ -74,18 +71,16 @@ const year = new Date().getFullYear();
       </div>
 
       <!-- Sitemap columns -->
-      <div class="grid grid-cols-1 gap-8 sm:grid-cols-3 lg:col-span-7">
+      <div class="footer-cols">
         {
           footerData.map((section) => (
-            <div>
-              <h3 class="text-ink-mute mb-5 font-mono text-[11px] tracking-[0.12em] uppercase">
-                {section.title}
-              </h3>
-              <ul class="space-y-3">
+            <div class="footer-col">
+              <h3 class="footer-col-title">{section.title}</h3>
+              <ul class="footer-col-list">
                 {section.items.map((item) => (
                   <li>
                     <a
-                      class="text-ink-soft hover:text-accent text-sm transition"
+                      class="footer-link"
                       href={item.href}
                       {...(item.external
                         ? { target: '_blank', rel: 'noopener noreferrer' }
@@ -103,50 +98,177 @@ const year = new Date().getFullYear();
     </div>
 
     <!-- Bottom bar -->
-    <div
-      class="border-rule mt-14 flex flex-col items-center justify-between gap-6 border-t pt-8 sm:flex-row"
-    >
-      <div class="text-ink-mute font-mono text-[11px] tracking-[0.12em] uppercase">
-        © {year} widoczność.ai · ICEA
-      </div>
-      <div class="flex items-center gap-2">
+    <div class="footer-bottom">
+      <div class="footer-copy">© {year} widocznosc.ai · ICEA</div>
+      <div class="footer-social">
         <a
           href="https://www.linkedin.com/company/icea/"
           target="_blank"
           rel="noopener noreferrer"
-          class="border-rule text-ink-soft hover:text-accent hover:border-accent flex h-10 w-10 items-center justify-center rounded-lg border transition"
+          class="btn-icon-circular"
           aria-label="LinkedIn ICEA"
         >
-          <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z"
-            ></path>
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z"></path>
             <rect x="2" y="9" width="4" height="12"></rect>
             <circle cx="4" cy="4" r="2"></circle>
           </svg>
         </a>
-        <a
-          href="#"
-          class="border-rule text-ink-soft hover:text-accent hover:border-accent flex h-10 w-10 items-center justify-center rounded-lg border transition"
-          aria-label="Twitter / X"
-        >
+        <a href="#" class="btn-icon-circular" aria-label="Twitter / X">
           <TwitterIcon />
         </a>
-        <a
-          href="#"
-          class="border-rule text-ink-soft hover:text-accent hover:border-accent flex h-10 w-10 items-center justify-center rounded-lg border transition"
-          aria-label="Facebook"
-        >
+        <a href="#" class="btn-icon-circular" aria-label="Facebook">
           <FacebookIcon />
         </a>
-        <a
-          href="#"
-          class="border-rule text-ink-soft hover:text-accent hover:border-accent flex h-10 w-10 items-center justify-center rounded-lg border transition"
-          aria-label="Instagram"
-        >
+        <a href="#" class="btn-icon-circular" aria-label="Instagram">
           <InstagramIcon />
         </a>
       </div>
     </div>
   </div>
 </footer>
+
+<style>
+  .footer-section {
+    background: var(--bg-canvas);
+    border-top: 1px solid var(--hairline-soft);
+  }
+
+  .footer-container {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding: 64px 30px 48px 30px;
+  }
+
+  @media (min-width: 1024px) {
+    .footer-container {
+      padding: 80px 40px 64px 40px;
+    }
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  @media (min-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: 5fr 7fr;
+    }
+  }
+
+  .footer-logo {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .footer-brand-desc {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-sm);
+    line-height: 1.5;
+    letter-spacing: var(--ls-body-sm);
+    color: var(--ink-muted);
+    max-width: 440px;
+    margin: 0 0 32px 0;
+  }
+
+  .footer-newsletter-label {
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    font-weight: 500;
+    letter-spacing: var(--ls-caption);
+    color: var(--ink-muted);
+    margin-bottom: 12px;
+  }
+
+  .footer-newsletter-form {
+    display: flex;
+    gap: 8px;
+    max-width: 440px;
+  }
+
+  .footer-newsletter-input {
+    flex: 1;
+    height: 40px;
+  }
+
+  .footer-newsletter-btn {
+    flex-shrink: 0;
+  }
+
+  .footer-cols {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  @media (min-width: 640px) {
+    .footer-cols {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .footer-col-title {
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    font-weight: 500;
+    letter-spacing: var(--ls-caption);
+    color: var(--ink-muted);
+    margin: 0 0 20px 0;
+  }
+
+  .footer-col-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-link {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-sm);
+    letter-spacing: var(--ls-body-sm);
+    color: var(--ink-muted);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .footer-link:hover {
+    color: var(--ink);
+  }
+
+  .footer-bottom {
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid var(--hairline-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 640px) {
+    .footer-bottom {
+      flex-direction: row;
+    }
+  }
+
+  .footer-copy {
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    font-weight: 500;
+    letter-spacing: var(--ls-caption);
+    color: var(--ink-muted);
+  }
+
+  .footer-social {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+</style>
