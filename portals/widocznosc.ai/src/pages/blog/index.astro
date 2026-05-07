@@ -14,6 +14,11 @@ const posts = (await getCollection('blog')).sort(
 const featuredPost = posts[0];
 const gridPosts = posts.slice(1);
 
+// Lista kategorii faktycznie używanych przez artykuły (dla filtrów)
+const usedCategories = Array.from(
+  new Set(posts.map((p) => p.data.category))
+).sort();
+
 const formatDate = (date: Date) =>
   date.toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' });
 ---
@@ -26,8 +31,8 @@ const formatDate = (date: Date) =>
 
   <main class="flex-grow">
 
-    <!-- Cinematic Featured Hero -->
-    <section class="relative mt-28 mb-20 overflow-hidden rounded-3xl border lg:mx-12 xl:mx-auto xl:max-w-[1280px]" style="border-color: rgb(255 255 255 / 0.08); background: var(--bg-card);">
+    <!-- Cinematic Featured Hero – pt-32 zostawia miejsce na fixed navbar h-20 (80px) -->
+    <section class="relative mx-4 mt-32 mb-16 overflow-hidden rounded-3xl border md:mx-8 lg:mx-12 lg:mt-36 xl:mx-auto xl:max-w-[1280px]" style="border-color: rgb(255 255 255 / 0.08); background: var(--bg-card);">
 
       <!-- Cinematic background image -->
       <a href={`/blog/${featuredPost.id}`} class="block">
@@ -86,17 +91,44 @@ const formatDate = (date: Date) =>
     <section class="border-rule border-t" style="background: rgb(13 15 26 / 0.4);">
       <div class="content-container py-20 lg:py-24">
 
-        <h2 class="text-ink font-display mb-14 text-3xl font-semibold tracking-[-0.02em] md:text-[2rem]">
-          Wszystkie artykuły
-        </h2>
+        <div class="mb-10 flex flex-col gap-6 lg:mb-14 lg:flex-row lg:items-end lg:justify-between">
+          <h2 class="text-ink font-display text-3xl font-semibold tracking-[-0.02em] md:text-[2rem]">
+            Wszystkie artykuły
+          </h2>
 
-        <div class="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+          <!-- Category filters -->
+          <div class="flex flex-wrap gap-2" role="group" aria-label="Filtruj według kategorii">
+            <button
+              type="button"
+              class="cat-filter cat-filter--active"
+              data-category="all"
+              aria-pressed="true"
+            >
+              Wszystkie
+            </button>
+            {
+              usedCategories.map((cat) => (
+                <button
+                  type="button"
+                  class="cat-filter"
+                  data-category={cat}
+                  aria-pressed="false"
+                >
+                  {CATEGORY_LABELS[cat]}
+                </button>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3 lg:gap-8" id="posts-grid">
           {
             posts.map((post) => (
               <a
                 href={`/blog/${post.id}`}
                 class="post-card group relative flex h-full flex-col overflow-hidden rounded-2xl border transition"
                 style="background: var(--bg-card); border-color: rgb(255 255 255 / 0.06);"
+                data-category={post.data.category}
               >
                 <!-- Image with luminosity blend + hover normal -->
                 <div class="relative h-56 overflow-hidden">
@@ -157,6 +189,37 @@ const formatDate = (date: Date) =>
 </Layout>
 
 <style>
+  /* Category filter chips */
+  .cat-filter {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    border: 1px solid var(--rule);
+    background: transparent;
+    color: var(--ink-soft);
+    font-family: var(--font-mono, 'JetBrains Mono'), monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .cat-filter:hover {
+    color: var(--ink);
+    border-color: rgb(255 106 46 / 0.4);
+  }
+  .cat-filter--active {
+    background: rgb(255 106 46 / 0.1);
+    border-color: var(--accent-edge);
+    color: var(--accent);
+  }
+
+  /* Hidden card during filtering */
+  .post-card[data-hidden='true'] {
+    display: none;
+  }
+
   /* Featured hero – cinematic image effect */
   .featured-bg {
     opacity: 0.55;
@@ -195,3 +258,36 @@ const formatDate = (date: Date) =>
     transform: translateY(-2px);
   }
 </style>
+
+<script>
+  // Category filtering – client-side, no reload
+  const initFilters = () => {
+    const filters = document.querySelectorAll<HTMLButtonElement>('.cat-filter');
+    const cards = document.querySelectorAll<HTMLElement>('.post-card');
+
+    filters.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const cat = btn.dataset.category || 'all';
+
+        // Update buttons state
+        filters.forEach((b) => {
+          const isActive = b === btn;
+          b.classList.toggle('cat-filter--active', isActive);
+          b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+
+        // Update cards visibility
+        cards.forEach((card) => {
+          const cardCat = card.dataset.category;
+          const show = cat === 'all' || cardCat === cat;
+          card.dataset.hidden = show ? 'false' : 'true';
+        });
+      });
+    });
+  };
+
+  document.addEventListener('astro:page-load', initFilters);
+  // Fallback dla Astro bez view transitions
+  if (document.readyState !== 'loading') initFilters();
+  else document.addEventListener('DOMContentLoaded', initFilters);
+</script>
