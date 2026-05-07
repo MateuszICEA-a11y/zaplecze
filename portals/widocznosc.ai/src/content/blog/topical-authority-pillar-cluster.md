@@ -47,6 +47,8 @@ Architektura pillar + cluster nie jest wymysłem ery GEO. Powstała w 2017 roku 
 
 Dla LLM ta struktura czyta się jako: *„ta domena ma 10–25 artykułów silnie powiązanych tematycznie, wszystkie wskazują na centralny dokument"*. To bardzo silny sygnał autorytetu tematycznego. W zestawieniu z domeną mającą jeden samotny artykuł na ten sam temat, pillar + cluster wygrywa w 80%+ przypadków – tak pokazują testy iPullRank na wektorach osadzonych (embeddingach) tekstu.
 
+![Pillar + cluster – architektura topical authority: centralna strona pillar, 8 cluster pages dookoła w układzie hub-and-spoke, linkowanie cluster→pillar (2×) i cluster→cluster (3-5×), top 10 domen w niszy zabiera 46% cytowań AI](../../assets/images/infographic-topical-authority.png)
+
 ## Jak zaprojektować mapę tematów
 
 Pierwszy krok jest najtrudniejszy: zdefiniować, co jest pillar, a co cluster. Najczęstsze błędy polegają na zbyt szerokim albo zbyt wąskim wyborze pillar. Dwie zasady, które realnie działają w niszach komercyjnych.

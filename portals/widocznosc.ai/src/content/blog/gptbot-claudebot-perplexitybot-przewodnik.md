@@ -36,6 +36,8 @@ Na rynku jest ponad 30 botów oznaczonych jako *„AI crawlers"*, ale 13 z nich 
 | `CCBot` | Common Crawl | dataset dla wszystkich LLM | krytyczny – większość modeli używa CC |
 | `Applebot-Extended` | Apple | Apple Intelligence (iOS 18+) | rosnący |
 
+![13 botów AI w 4 kategoriach – TRENING (GPTBot, ClaudeBot, Google-Extended), WYSZUKIWANIE (OAI-SearchBot, PerplexityBot, Claude-SearchBot), NA ŻĄDANIE (ChatGPT-User, Claude-Web, Perplexity-User), COMMON CRAWL (CCBot, Applebot-Extended, GoogleOther, Google-NotebookLM). Pełne pokrycie: allow all 13 w robots.txt](../../assets/images/infographic-ai-bots.png)
+
 > **Częsty błąd:** blokowanie tylko niektórych botów OpenAI lub Anthropic. Jeśli blokujesz `GPTBot`, ale dopuszczasz `OAI-SearchBot`, sygnał jest mieszany – Twoja strona nie trafi do treningu, ale może być cytowana real-time. To może być świadoma decyzja, ale częściej wynika z niewiedzy.
 
 <aside class="callout-fact">

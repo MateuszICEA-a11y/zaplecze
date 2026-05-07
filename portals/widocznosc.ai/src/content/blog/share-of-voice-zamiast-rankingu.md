@@ -52,6 +52,8 @@ Mention Rate to procent zapytań, w których Twoja marka pojawiła się tylko w 
 
 Britney Muller spuentowała to lapidarnie: *„brand mentions are the new backlinks"*. Wzmianki budujesz przez PR, recenzje, zestawienia *„best of"* i cytowania w mediach – nie przez technical SEO.
 
+![Share of Voice – jak liczymy widoczność marki w AI: bar chart z procentami konkurencji, formuła SoV (47/222=21%), 30 zapytań × 4 platformy × 5 uruchomień = 600 testów](../../assets/images/infographic-share-of-voice.png)
+
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
   <div class="callout-body">

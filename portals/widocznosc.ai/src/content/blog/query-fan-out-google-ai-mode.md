@@ -75,6 +75,8 @@ Badania potwierdzają trzecią zmianę. Kevin Indig przeanalizował 1,2 mln cyto
 
 > **Princeton/KDD 2024 (Aggarwal et al.):** dodanie cytowań źródeł podnosi widoczność w LLM o 30–40%. Keyword stuffing obniża ją o 10% – to akademicka odwrotność klasycznego SEO.
 
+![Query fan-out – jak działa rozszczepienie zapytania: pojedyncze pytanie użytkownika rozbija się na 4 klastry intencji (komparatywne, cenowe, techniczne, opinie) i 14 konkretnych podzapytań, każde idzie osobno do indeksu](../../assets/images/infographic-query-fan-out.png)
+
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
   <div class="callout-body">
