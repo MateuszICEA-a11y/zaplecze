@@ -7,6 +7,22 @@ import CTABand from '../components/CTABand.astro';
 
 const tools = [
   {
+    id: 'ai-bots-check',
+    status: 'live',
+    eyebrow: 'Bezpłatne · 5s',
+    title: 'AI Bots Check',
+    subtitle: 'Czy 13 botów AI ma dostęp do Twojej strony – diagnoza robots.txt',
+    desc:
+      'Pobieramy publiczny plik robots.txt i sprawdzamy, czy GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot i 8 innych user-agentów AI mają dostęp do Twojej domeny. Wynik w 5 sekund: tabela 13 botów + krytyczne action items + szablon naprawy.',
+    cta: { label: 'Sprawdź dostęp botów AI', href: '/narzedzia/ai-bots-check' },
+    bullets: [
+      'Tabela 13 botów AI · allow / disallow per bot',
+      'Wykrywanie blokady Cloudflare WAF',
+      'Action items z priorytetami P0/P1/P2',
+      'Bez logowania, bez emaila, instant',
+    ],
+  },
+  {
     id: 'visibility-checker',
     status: 'beta',
     eyebrow: 'Bezpłatne · 90s',
@@ -57,6 +73,7 @@ const tools = [
 ];
 
 const statusBadge = (status: string) => {
+  if (status === 'live') return { label: '● live · darmowe', color: '#34d399' };
   if (status === 'beta') return { label: '· beta · bezpłatne', color: 'var(--accent)' };
   return { label: 'usługa płatna', color: 'var(--ink-soft)' };
 };

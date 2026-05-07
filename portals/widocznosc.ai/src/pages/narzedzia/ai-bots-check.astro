@@ -1,0 +1,588 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ScrollUpButton from '../../components/ScrollUpButton.astro';
+import { AI_BOTS, CATEGORY_LABELS, CATEGORY_DESCRIPTIONS } from '../../data/ai-bots';
+
+const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
+---
+
+<Layout
+  title="AI Bots Check – czy boty AI mają dostęp do Twojej strony?"
+  description="Sprawdź w 5 sekund, które z 13 botów AI (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot, ...) mają dostęp do Twojej strony. Diagnoza pliku robots.txt + lista konkretnych zmian. Darmowe, bez logowania."
+>
+  <Navbar />
+
+  <main class="flex-grow">
+    <div class="content-container relative z-10 pt-32 pb-20 md:pt-40 lg:pt-44">
+      <!-- Hero -->
+      <header class="mx-auto max-w-3xl text-center">
+        <span class="text-accent inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.18em] uppercase">
+          <span class="bg-accent inline-block h-2 w-2 animate-pulse rounded-full"></span>
+          Narzędzie · Darmowe · Instant
+        </span>
+        <h1 class="text-ink mt-6 font-display text-4xl leading-[1.1] font-semibold tracking-[-0.02em] sm:text-5xl">
+          Czy boty AI mają dostęp do Twojej strony?
+        </h1>
+        <p class="text-ink mt-6 text-lg leading-relaxed sm:text-xl">
+          Sprawdzamy plik <code class="text-accent font-mono text-base">robots.txt</code> pod kątem 13 najważniejszych user-agentów AI: GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot i 8 innych. Wynik w 5 sekund, bez logowania.
+        </p>
+      </header>
+
+      <!-- Form -->
+      <form id="check-form" class="mx-auto mt-12 flex max-w-2xl flex-col gap-3 sm:flex-row" novalidate>
+        <label class="sr-only" for="domain-input">Domena lub URL</label>
+        <input
+          id="domain-input"
+          name="url"
+          type="text"
+          required
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="twojadomena.pl lub https://twojadomena.pl"
+          class="check-input flex-1"
+        />
+        <button type="submit" class="btn-primary check-submit">
+          <span class="check-submit-label">Sprawdź dostęp</span>
+          <span class="check-submit-spinner" aria-hidden="true"></span>
+        </button>
+      </form>
+      <p class="text-ink-mute mx-auto mt-3 max-w-2xl text-center text-sm">
+        Pobieramy publiczny plik <code class="font-mono">robots.txt</code> – nie wykonujemy żadnych zmian, nie zapisujemy danych.
+      </p>
+
+      <!-- Results placeholder -->
+      <section id="results" class="mt-14 hidden" aria-live="polite"></section>
+
+      <!-- Default bots overview – pokazane PRZED submit -->
+      <section id="default-overview" class="mt-16">
+        <h2 class="text-ink font-display text-2xl font-semibold tracking-[-0.02em] md:text-3xl">
+          13 botów AI w 4 kategoriach funkcjonalnych
+        </h2>
+        <p class="text-ink mt-3 max-w-3xl">
+          Każdy z tych botów ma własny <code class="font-mono text-sm">User-agent</code> i własne implikacje dla widoczności marki w AI. Blokada GPTBota oznacza brak miejsca w treningu GPT-5+. Blokada PerplexityBota oznacza brak cytowań w Perplexity Pro. CCBot to dataset, którego używają WSZYSTKIE LLM-y.
+        </p>
+        <div class="mt-10 grid gap-6 lg:grid-cols-2">
+          {
+            categories.map((cat) => {
+              const botsInCat = AI_BOTS.filter((b) => b.category === cat);
+              return (
+                <div class="bot-category-card">
+                  <div class="bot-category-header">
+                    <span class="bot-category-label">{CATEGORY_LABELS[cat]}</span>
+                    <span class="bot-category-count">
+                      {botsInCat.length} {botsInCat.length === 1 ? 'bot' : 'boty'}
+                    </span>
+                  </div>
+                  <p class="bot-category-desc">{CATEGORY_DESCRIPTIONS[cat]}</p>
+                  <ul class="bot-category-list">
+                    {
+                      botsInCat.map((bot) => (
+                        <li class="bot-category-item">
+                          <span class="bot-name">{bot.name}</span>
+                          <span class="bot-owner">{bot.owner}</span>
+                        </li>
+                      ))
+                    }
+                  </ul>
+                </div>
+              );
+            })
+          }
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <Footer />
+  <ScrollUpButton />
+</Layout>
+
+<style>
+  /* Form input */
+  .check-input {
+    height: 48px;
+    padding: 0 18px;
+    font-family: var(--font-mono, 'JetBrains Mono'), monospace;
+    font-size: 14px;
+    color: var(--ink);
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: var(--r-md, 8px);
+    outline: none;
+    transition:
+      border-color 0.2s ease,
+      background 0.2s ease;
+  }
+  .check-input::placeholder {
+    color: var(--ink-mute);
+  }
+  .check-input:focus {
+    border-color: var(--accent);
+    background: rgb(255 106 46 / 0.04);
+  }
+
+  .check-submit {
+    height: 48px;
+    min-width: 168px;
+    justify-content: center;
+    position: relative;
+  }
+  .check-submit[aria-busy='true'] .check-submit-label {
+    opacity: 0;
+  }
+  .check-submit-spinner {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
+    border-radius: 50%;
+    opacity: 0;
+    animation: spin 0.7s linear infinite;
+  }
+  .check-submit[aria-busy='true'] .check-submit-spinner {
+    opacity: 1;
+  }
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Bot category cards (pre-check) */
+  .bot-category-card {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 0.875rem;
+    padding: 1.5rem 1.5rem 1.75rem;
+  }
+  .bot-category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  .bot-category-label {
+    color: var(--accent);
+    font-family: var(--font-mono, 'JetBrains Mono'), monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .bot-category-count {
+    color: var(--ink-mute);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+  }
+  .bot-category-desc {
+    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1.55;
+    margin-bottom: 1rem;
+  }
+  .bot-category-list {
+    display: grid;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .bot-category-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.65rem 0.85rem;
+    background: rgb(7 8 16 / 0.4);
+    border: 1px solid var(--rule-soft);
+    border-radius: 6px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+  }
+  .bot-name {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .bot-owner {
+    color: var(--ink-mute);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+  }
+
+  /* Results section – styled in JS via inline classes */
+  :global(.results-card) {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 0.875rem;
+    padding: 1.75rem;
+  }
+
+  :global(.results-summary) {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    margin-bottom: 1.5rem;
+  }
+
+  :global(.results-stat) {
+    background: rgb(7 8 16 / 0.5);
+    border: 1px solid var(--rule-soft);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+  }
+  :global(.results-stat-value) {
+    font-family: var(--font-display, 'Inter Tight');
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--ink);
+  }
+  :global(.results-stat-value.is-good) {
+    color: #34d399;
+  }
+  :global(.results-stat-value.is-bad) {
+    color: var(--accent);
+  }
+  :global(.results-stat-label) {
+    color: var(--ink-mute);
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 0.45rem;
+  }
+
+  :global(.results-meta) {
+    color: var(--ink-mute);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    margin-bottom: 1.25rem;
+  }
+  :global(.results-meta a) {
+    color: var(--ink-soft);
+    text-decoration: underline;
+    text-decoration-color: var(--rule);
+    text-underline-offset: 3px;
+  }
+  :global(.results-meta a:hover) {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
+  }
+
+  :global(.bot-result-grid) {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 768px) {
+    :global(.bot-result-grid) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  :global(.bot-result-row) {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 0.85rem;
+    align-items: center;
+    padding: 0.85rem 1rem;
+    background: rgb(7 8 16 / 0.4);
+    border: 1px solid var(--rule-soft);
+    border-radius: 8px;
+  }
+  :global(.bot-result-row.is-blocked) {
+    border-color: rgb(239 68 68 / 0.4);
+    background: rgb(239 68 68 / 0.05);
+  }
+  :global(.bot-result-row.is-blocked-critical) {
+    border-color: var(--accent);
+    background: rgb(255 106 46 / 0.06);
+  }
+  :global(.bot-result-status) {
+    width: 22px;
+    height: 22px;
+    flex: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  :global(.bot-result-status.is-allowed) {
+    background: rgb(52 211 153 / 0.15);
+    color: #34d399;
+  }
+  :global(.bot-result-status.is-blocked) {
+    background: rgb(239 68 68 / 0.15);
+    color: #ef4444;
+  }
+  :global(.bot-result-name) {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  :global(.bot-result-owner) {
+    color: var(--ink-mute);
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.05em;
+    margin-top: 2px;
+  }
+  :global(.bot-result-tag) {
+    color: var(--ink-soft);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+  }
+
+  :global(.action-items) {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 0.75rem;
+  }
+  :global(.action-item) {
+    border-left: 3px solid var(--rule);
+    padding: 0.85rem 1rem 0.85rem 1.25rem;
+    background: rgb(7 8 16 / 0.3);
+    border-radius: 0 8px 8px 0;
+  }
+  :global(.action-item.is-p0) {
+    border-left-color: var(--accent);
+  }
+  :global(.action-item.is-p1) {
+    border-left-color: #fbbf24;
+  }
+  :global(.action-item-priority) {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+  }
+  :global(.action-item.is-p0 .action-item-priority) {
+    background: rgb(255 106 46 / 0.15);
+    color: var(--accent);
+  }
+  :global(.action-item.is-p1 .action-item-priority) {
+    background: rgb(251 191 36 / 0.15);
+    color: #fbbf24;
+  }
+  :global(.action-item.is-p2 .action-item-priority) {
+    background: rgb(52 211 153 / 0.15);
+    color: #34d399;
+  }
+  :global(.action-item-title) {
+    color: var(--ink);
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+    font-size: 15px;
+  }
+  :global(.action-item-desc) {
+    color: var(--ink-soft);
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  :global(.results-error) {
+    background: rgb(239 68 68 / 0.08);
+    border: 1px solid rgb(239 68 68 / 0.4);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    color: #ef4444;
+    font-size: 14px;
+  }
+</style>
+
+<script>
+  type CheckResponse = {
+    domain: string;
+    robotsUrl: string;
+    fetchedAt: string;
+    status: 'ok' | 'no-robots' | 'fetch-error' | 'cloudflare-blocked';
+    statusCode?: number;
+    summary: {
+      allowed: number;
+      blocked: number;
+      criticalBlocked: number;
+      total: number;
+    };
+    bots: Array<{
+      name: string;
+      userAgent: string;
+      owner: string;
+      category: string;
+      categoryLabel: string;
+      purpose: string;
+      impact: string;
+      critical: boolean;
+      allowed: boolean;
+      matchedUserAgent: string | null;
+    }>;
+    actionItems: Array<{
+      priority: 'P0' | 'P1' | 'P2';
+      title: string;
+      description: string;
+    }>;
+  };
+
+  const escapeHtml = (s: string): string =>
+    s.replace(/[&<>"']/g, (c) => {
+      const map: Record<string, string> = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;',
+      };
+      return map[c]!;
+    });
+
+  const renderResults = (data: CheckResponse): string => {
+    const { summary, bots, actionItems, domain, robotsUrl, status, statusCode } = data;
+
+    const summaryHtml = `
+      <div class="results-summary">
+        <div class="results-stat">
+          <div class="results-stat-value ${summary.allowed === summary.total ? 'is-good' : ''}">${summary.allowed}</div>
+          <div class="results-stat-label">Dopuszczonych</div>
+        </div>
+        <div class="results-stat">
+          <div class="results-stat-value ${summary.blocked > 0 ? 'is-bad' : ''}">${summary.blocked}</div>
+          <div class="results-stat-label">Zablokowanych</div>
+        </div>
+        <div class="results-stat">
+          <div class="results-stat-value ${summary.criticalBlocked > 0 ? 'is-bad' : ''}">${summary.criticalBlocked}</div>
+          <div class="results-stat-label">Krytycznych zablok.</div>
+        </div>
+        <div class="results-stat">
+          <div class="results-stat-value">${summary.total}</div>
+          <div class="results-stat-label">Razem botów</div>
+        </div>
+      </div>
+    `;
+
+    let metaText = '';
+    if (status === 'ok') {
+      metaText = `Status: <strong>OK ${statusCode}</strong> · Sprawdzono <a href="${escapeHtml(robotsUrl)}" target="_blank" rel="noopener">robots.txt</a>`;
+    } else if (status === 'no-robots') {
+      metaText = `Status: <strong>${statusCode}</strong> – brak pliku robots.txt na <a href="${escapeHtml(robotsUrl)}" target="_blank" rel="noopener">${escapeHtml(robotsUrl)}</a>. W praktyce wszystkie boty są dopuszczone (konwencja).`;
+    } else if (status === 'cloudflare-blocked') {
+      metaText = `<strong style="color:var(--accent)">Cloudflare zablokował dostęp</strong> do robots.txt – boty AI też tego nie przejdą.`;
+    }
+
+    const botsHtml = bots
+      .map((bot) => {
+        const rowClass = !bot.allowed ? (bot.critical ? 'is-blocked-critical' : 'is-blocked') : '';
+        const statusClass = bot.allowed ? 'is-allowed' : 'is-blocked';
+        const statusSym = bot.allowed ? '✓' : '✗';
+        const matched =
+          bot.matchedUserAgent === '*'
+            ? 'reguła *'
+            : bot.matchedUserAgent
+              ? `match: ${bot.matchedUserAgent}`
+              : 'brak reguły';
+        return `
+          <div class="bot-result-row ${rowClass}">
+            <div class="bot-result-status ${statusClass}">${statusSym}</div>
+            <div>
+              <div class="bot-result-name">${escapeHtml(bot.name)}${bot.critical ? ' <span style="color:var(--accent);font-size:9px;letter-spacing:0.18em">★ KRYT.</span>' : ''}</div>
+              <div class="bot-result-owner">${escapeHtml(bot.owner)} · ${escapeHtml(matched)}</div>
+            </div>
+            <span class="bot-result-tag">${escapeHtml(bot.categoryLabel)}</span>
+          </div>
+        `;
+      })
+      .join('');
+
+    const actionsHtml = actionItems
+      .map(
+        (item) => `
+          <div class="action-item is-${item.priority.toLowerCase()}">
+            <span class="action-item-priority">${item.priority}</span>
+            <div class="action-item-title">${escapeHtml(item.title)}</div>
+            <div class="action-item-desc">${escapeHtml(item.description)}</div>
+          </div>
+        `
+      )
+      .join('');
+
+    return `
+      <div class="results-card">
+        <h2 class="text-ink font-display text-2xl font-semibold tracking-[-0.02em] mb-3">
+          Wynik dla <span class="text-accent font-mono">${escapeHtml(domain)}</span>
+        </h2>
+        <div class="results-meta">${metaText}</div>
+        ${summaryHtml}
+        <div class="bot-result-grid">${botsHtml}</div>
+        <div class="action-items">${actionsHtml}</div>
+      </div>
+    `;
+  };
+
+  const initForm = () => {
+    const form = document.getElementById('check-form') as HTMLFormElement | null;
+    const input = document.getElementById('domain-input') as HTMLInputElement | null;
+    const resultsEl = document.getElementById('results') as HTMLElement | null;
+    const submitBtn = form?.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+    const overviewEl = document.getElementById('default-overview');
+    if (!form || !input || !resultsEl || !submitBtn) return;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const value = input.value.trim();
+      if (!value) {
+        input.focus();
+        return;
+      }
+
+      submitBtn.setAttribute('aria-busy', 'true');
+      submitBtn.disabled = true;
+      resultsEl.classList.remove('hidden');
+      resultsEl.innerHTML = `<div class="results-card"><div class="results-meta">Sprawdzam ${escapeHtml(value)}…</div></div>`;
+      overviewEl?.classList.add('hidden');
+
+      try {
+        const response = await fetch('/api/tools/ai-bots-check', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ url: value }),
+        });
+
+        if (!response.ok) {
+          const errBody = await response.json().catch(() => null);
+          const msg =
+            (errBody && typeof errBody === 'object' && 'error' in errBody && errBody.error) ||
+            `Błąd ${response.status}`;
+          resultsEl.innerHTML = `<div class="results-error">${escapeHtml(String(msg))}</div>`;
+          return;
+        }
+
+        const data = (await response.json()) as CheckResponse;
+        resultsEl.innerHTML = renderResults(data);
+        resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : 'Błąd sieci';
+        resultsEl.innerHTML = `<div class="results-error">${escapeHtml(msg)}</div>`;
+      } finally {
+        submitBtn.setAttribute('aria-busy', 'false');
+        submitBtn.disabled = false;
+      }
+    });
+  };
+
+  document.addEventListener('astro:page-load', initForm);
+  if (document.readyState !== 'loading') initForm();
+  else document.addEventListener('DOMContentLoaded', initForm);
+</script>

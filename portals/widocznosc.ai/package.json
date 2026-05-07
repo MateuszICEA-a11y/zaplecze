@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.8",
+    "@cloudflare/workers-types": "^4.20260507.1",
     "@eslint/js": "^10.0.1",
     "@tailwindcss/vite": "^4.2.2",
     "eslint": "^10.2.0",
