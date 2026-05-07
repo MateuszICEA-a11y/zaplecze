@@ -57,36 +57,28 @@ const articleData = {
   </Article>
 
   <!-- Related posts -->
-  <section class="bg-bgDark2 pb-20">
-    <div class="content-container">
-      <h2 class="text-ink font-display mb-8 text-3xl font-semibold tracking-tight md:text-4xl">
-        Zobacz również
-      </h2>
-      <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+  <section class="related-section">
+    <div class="related-container">
+      <h2 class="display-md related-title">Zobacz również</h2>
+      <div class="related-grid">
         {
           relatedPosts.map((related) => (
-            <a href={`/blog/${related.id}`} class="group">
-              <article class="card flex h-full flex-col overflow-hidden rounded-3xl transition">
-                <div class="p-4">
-                  <div class="bg-bgDark1Lighter flex aspect-[3/2] items-center justify-center overflow-hidden rounded-2xl">
-                    <svg
-                      class="text-accent/30 h-16 w-16"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="0.75"
-                      viewBox="0 0 24 24"
-                      set:html={related.data.icon}
-                    />
-                  </div>
-                </div>
-                <div class="flex grow flex-col px-6 pt-2 pb-8">
-                  <div class="meta mb-3">{formatDate(related.data.date)}</div>
-                  <h2 class="text-ink font-display mb-3 text-xl font-semibold tracking-tight transition group-hover:text-accent">
-                    {related.data.title}
-                  </h2>
-                  <p class="text-ink-soft text-sm leading-relaxed">{related.data.subtitle}</p>
-                </div>
-              </article>
+            <a href={`/blog/${related.id}`} class="related-card">
+              <div class="related-card-icon-wrap">
+                <svg
+                  class="related-card-icon"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1"
+                  viewBox="0 0 24 24"
+                  set:html={related.data.icon}
+                />
+              </div>
+              <div class="related-card-body">
+                <div class="related-card-date">{formatDate(related.data.date)}</div>
+                <h3 class="related-card-title">{related.data.title}</h3>
+                <p class="related-card-desc">{related.data.subtitle}</p>
+              </div>
             </a>
           ))
         }
@@ -97,3 +89,107 @@ const articleData = {
   <Footer />
   <ScrollUpButton />
 </Layout>
+
+<style>
+  .related-section {
+    background: var(--bg-canvas);
+    padding: 0 0 96px 0;
+  }
+
+  .related-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 64px 30px 0 30px;
+    border-top: 1px solid var(--hairline-soft);
+  }
+
+  .related-title {
+    color: var(--ink);
+    margin: 0 0 32px 0;
+  }
+
+  .related-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  @media (min-width: 768px) {
+    .related-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .related-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .related-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-surface-1);
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    text-decoration: none;
+    transition: background 0.2s ease;
+    height: 100%;
+  }
+
+  .related-card:hover {
+    background: var(--bg-surface-2);
+  }
+
+  .related-card-icon-wrap {
+    aspect-ratio: 3 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-canvas);
+    margin: 12px;
+    border-radius: var(--r-md);
+  }
+
+  .related-card-icon {
+    width: 64px;
+    height: 64px;
+    color: var(--ink-muted);
+  }
+
+  .related-card-body {
+    padding: 8px 24px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+  }
+
+  .related-card-date {
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    font-weight: 500;
+    letter-spacing: var(--ls-caption);
+    color: var(--ink-muted);
+  }
+
+  .related-card-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--fs-headline);
+    line-height: 1.2;
+    letter-spacing: var(--ls-headline);
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .related-card-desc {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-sm);
+    line-height: 1.5;
+    letter-spacing: var(--ls-body-sm);
+    color: var(--ink-muted);
+    margin: 0;
+  }
+</style>
