@@ -29,7 +29,7 @@ const initials = (name: string) =>
 
 <section class="relative w-full" style="background: var(--bg);" aria-labelledby="authors-title">
   <div class="content-container py-20 lg:py-28">
-    <div class="mx-auto mb-14 max-w-3xl text-center">
+    <div class="mx-auto mb-16 max-w-3xl text-center">
       <span class="meta mb-4 inline-block">{eyebrow}</span>
       <h2
         id="authors-title"
@@ -37,44 +37,72 @@ const initials = (name: string) =>
       >
         {title}
       </h2>
-      <p class="text-ink-soft text-lg leading-relaxed">{subtitle}</p>
+      <p class="text-ink text-lg leading-relaxed">{subtitle}</p>
     </div>
 
-    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7">
       {
-        authors.map((author) => {
+        authors.map((author, idx) => {
           const data = author.data;
+          const isFeatured = idx === 0;
           return (
             <a
               href={`/autor/${author.id}`}
-              class="group flex flex-col items-center rounded-xl border border-rule bg-bg-card p-6 text-center transition hover:border-accent/35 hover:bg-bg-elevated cursor-pointer"
+              class:list={[
+                'author-card group relative flex flex-col items-center rounded-2xl border p-7 text-center transition-all duration-300',
+                isFeatured ? 'author-card--featured' : '',
+              ]}
+              aria-label={`Profil: ${data.name}, ${data.role}`}
             >
               {data.photo ? (
-                <img
-                  src={data.photo}
-                  alt={data.name}
-                  class="mb-4 h-20 w-20 rounded-full object-cover"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <div
+                  class:list={[
+                    'mb-5 h-32 w-32 overflow-hidden rounded-full border-2 transition-colors',
+                    isFeatured
+                      ? 'border-[color:var(--accent-edge)]'
+                      : 'border-rule group-hover:border-[color:var(--accent-edge)]',
+                  ]}
+                >
+                  <img
+                    src={data.photo}
+                    alt={data.name}
+                    class="h-full w-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
               ) : (
                 <div
-                  class="text-accent border-accent/35 mb-4 flex h-20 w-20 items-center justify-center rounded-full border font-mono text-xl font-semibold"
+                  class:list={[
+                    'text-accent mb-5 flex h-32 w-32 items-center justify-center rounded-full border-2 font-mono text-2xl font-semibold transition-colors',
+                    isFeatured
+                      ? 'border-[color:var(--accent-edge)]'
+                      : 'border-rule group-hover:border-[color:var(--accent-edge)]',
+                  ]}
                   style="background: var(--accent-soft);"
                   aria-hidden="true"
                 >
                   {initials(data.name)}
                 </div>
               )}
-              <div class="text-ink font-semibold transition group-hover:text-accent">
+
+              <h3 class="text-ink font-display group-hover:text-accent mb-2 text-2xl font-semibold tracking-[-0.02em] transition">
                 {data.name}
+              </h3>
+
+              <div class="text-accent mb-5 font-mono text-[11px] tracking-[0.18em] uppercase">
+                {data.role}
               </div>
-              <div class="text-accent mt-1 font-mono text-[11px] tracking-wider uppercase">
-                {data.role} · {data.company}
-              </div>
+
               {data.shortBio && (
-                <p class="text-ink-soft mt-3 text-sm leading-relaxed">{data.shortBio}</p>
+                <p class="text-ink-soft mb-6 grow text-sm leading-relaxed">
+                  {data.shortBio}
+                </p>
               )}
+
+              <span class="text-ink-soft group-hover:text-accent mt-auto inline-flex items-center gap-1.5 font-mono text-[11px] tracking-wider uppercase transition">
+                Profil <span aria-hidden="true">↗</span>
+              </span>
             </a>
           );
         })
@@ -82,3 +110,32 @@ const initials = (name: string) =>
     </div>
   </div>
 </section>
+
+<style>
+  /* Glass-card – subtle gradient overlay, dark base, accent glow on hover */
+  .author-card {
+    background: linear-gradient(
+      135deg,
+      rgb(255 255 255 / 0.04) 0%,
+      rgb(255 255 255 / 0) 65%
+    ),
+    var(--bg-card);
+    border-color: var(--rule);
+  }
+
+  .author-card:hover {
+    border-color: var(--accent-edge);
+    box-shadow: 0 0 30px var(--accent-glow);
+    transform: translateY(-2px);
+  }
+
+  /* Featured (pierwsza karta) – persistent neon glow + accent border */
+  .author-card--featured {
+    border-color: var(--accent-edge);
+    box-shadow: 0 0 30px var(--accent-glow);
+  }
+
+  .author-card--featured:hover {
+    box-shadow: 0 0 40px var(--accent-glow), 0 0 0 1px var(--accent-edge);
+  }
+</style>

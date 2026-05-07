@@ -2,7 +2,7 @@
 name: Piotr Wicenciak
 role: Team Leader SEO
 company: ICEA
-shortBio: Team Leader SEO w ICEA. Strategia SEO dla projektów enterprise.
+shortBio: Strateg specjalizujący się w optymalizacji dla generatywnych silników wyszukiwania. Architekt widoczności w erze AI.
 bio: |
   Piotr Wicenciak prowadzi zespół SEO w ICEA. Skupia się na strategicznych projektach pozycjonowania, audytach technicznych i analizie konkurencji.
 expertise:
