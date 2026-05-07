@@ -1,7 +1,7 @@
 ---
 /**
- * Trzy główne audyty – 2 darmowe self-serve + 1 płatny.
- * Naprzemienny layout (lewa-prawa-lewa), każdy z dedykowanym mock UI.
+ * Cztery audyty: 3 darmowe self-serve w grid 3-col + 1 płatny pełnoszerokie.
+ * Inspirowane kahena.com/ai-bot-tester (AI bots) + powerdigitalmarketing services.
  */
 ---
 
@@ -9,274 +9,206 @@
   <div class="content-container py-20 lg:py-28">
 
     <!-- Section header -->
-    <div class="mx-auto mb-20 max-w-3xl text-center">
+    <div class="mx-auto mb-16 max-w-3xl text-center">
       <span class="meta mb-4 inline-block">Co dostajesz</span>
       <h2
         id="audyty-title"
         class="text-ink font-display mt-2 mb-6 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl lg:text-5xl"
       >
-        Dwa darmowe testy i&nbsp;jeden pełny audyt
+        Trzy darmowe testy i&nbsp;jeden pełny audyt
       </h2>
-      <p class="text-ink-soft text-lg leading-relaxed">
-        Zacznij od sprawdzenia, jak AI widzi Twoją markę &ndash; bez logowania, bez zapłaty.
-        Gdy zobaczysz wyniki, decydujesz, czy chcesz pełny raport z planem działania.
+      <p class="text-ink text-lg leading-relaxed">
+        Zacznij od&nbsp;trzech bezpłatnych testów &ndash; bez logowania, bez zapłaty.
+        Gdy zobaczysz wyniki, decydujesz, czy chcesz pełny raport z&nbsp;planem działania.
       </p>
     </div>
 
-    <!-- AUDYT 1 – Brand check (free, instant) -->
-    <article
-      id="brand-check"
-      class="border-rule bg-bg-card relative mb-10 overflow-hidden rounded-3xl border p-8 sm:p-12 lg:p-16"
-    >
-      <div
-        class="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full"
-        style="background: radial-gradient(circle, rgba(255,106,46,0.16) 0%, transparent 70%);"
-        aria-hidden="true"
-      ></div>
+    <!-- Grid 3 darmowych testów -->
+    <div class="mb-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-7">
 
-      <div class="relative z-10 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
-
-        <!-- Copy -->
-        <div>
-          <div class="mb-5 flex flex-wrap items-center gap-2">
-            <span class="text-accent inline-flex items-center rounded-full border border-[color:var(--accent-edge)] bg-[color:var(--accent-soft)] px-2.5 py-1 font-mono text-[11px] tracking-wider uppercase">
-              Darmowe · instant
-            </span>
-            <span class="text-ink-mute font-mono text-[11px] tracking-wider uppercase">
-              01 / 03
-            </span>
-          </div>
-          <h3 class="text-ink font-display mb-4 text-2xl font-semibold tracking-[-0.02em] sm:text-3xl lg:text-[2.25rem] lg:leading-[1.1]">
-            Sprawdź, co AI wie o&nbsp;Twojej marce
-          </h3>
-          <p class="text-ink-soft mb-6 text-base leading-relaxed sm:text-lg">
-            Wpisujesz nazwę firmy. Odpytujemy ChatGPT, Claude, Gemini i&nbsp;Perplexity,
-            co wiedzą o&nbsp;Twojej marce, jakie produkty kojarzą i&nbsp;czy nie mylą Cię
-            z&nbsp;konkurencją. Wynik &ndash; w&nbsp;60&nbsp;sekund.
-          </p>
-
-          <ul class="text-ink-soft mb-8 space-y-2 text-sm leading-relaxed">
-            <li class="flex gap-3">
-              <span class="text-accent font-mono" aria-hidden="true">→</span>
-              Sentyment i&nbsp;halucynacje per model
-            </li>
-            <li class="flex gap-3">
-              <span class="text-accent font-mono" aria-hidden="true">→</span>
-              Lista konkurentów, których AI poleca zamiast Ciebie
-            </li>
-            <li class="flex gap-3">
-              <span class="text-accent font-mono" aria-hidden="true">→</span>
-              Luki w&nbsp;knowledge graph &ndash; co warto sprostować
-            </li>
-          </ul>
-
-          <a class="btn-primary" href="/narzedzia/brand-check" aria-label="Uruchom darmowy brand check">
-            Sprawdź markę &rarr;
-          </a>
+      <!-- 01 – Brand check -->
+      <article
+        id="brand-check"
+        class="border-rule bg-bg-card relative flex flex-col overflow-hidden rounded-2xl border p-6 lg:p-7"
+      >
+        <!-- Header -->
+        <div class="mb-4 flex flex-wrap items-center gap-2">
+          <span class="text-accent inline-flex items-center rounded-full border border-[color:var(--accent-edge)] bg-[color:var(--accent-soft)] px-2.5 py-1 font-mono text-[10px] tracking-wider uppercase">
+            Darmowe · instant
+          </span>
+          <span class="text-ink-mute font-mono text-[10px] tracking-wider uppercase">01 / 04</span>
         </div>
 
-        <!-- Mock UI – brand check results per LLM -->
-        <div
-          class="border-rule bg-bg relative overflow-hidden rounded-2xl border p-6 sm:p-7"
-          aria-hidden="true"
-        >
-          <div class="text-ink-mute mb-4 flex items-center justify-between font-mono text-[11px] tracking-[0.12em] uppercase">
-            <span>Brand check · podgląd</span>
+        <h3 class="text-ink font-display mb-2 text-xl font-semibold tracking-[-0.02em] lg:text-[1.375rem]">
+          Co AI wie o&nbsp;Twojej marce
+        </h3>
+        <p class="text-ink-soft mb-5 text-sm leading-relaxed">
+          Odpytujemy ChatGPT, Claude, Gemini i&nbsp;Perplexity o&nbsp;Twoją firmę.
+          Dostajesz sentyment, listę halucynacji i&nbsp;konkurentów, których AI poleca zamiast Ciebie.
+        </p>
+
+        <!-- Mock UI compact – 4 LLM x status -->
+        <div class="border-rule bg-bg mb-5 rounded-xl border p-4" aria-hidden="true">
+          <div class="text-ink-mute mb-3 flex items-center justify-between font-mono text-[10px] tracking-[0.12em] uppercase">
+            <span>acme.pl</span>
             <span class="text-accent">● live</span>
           </div>
-
-          <div class="text-ink-soft mb-3 font-mono text-xs">
-            Marka: <span class="text-ink">acme.pl</span>
-          </div>
-
-          <div class="space-y-3">
-            <!-- ChatGPT -->
-            <div class="border-rule bg-bg-card rounded-lg border p-3">
-              <div class="mb-1 flex items-center justify-between">
-                <span class="text-ink font-mono text-xs font-semibold">ChatGPT</span>
-                <span class="text-accent font-mono text-[10px] tracking-wider uppercase">Zna · myli ofertę</span>
-              </div>
-              <p class="text-ink-soft text-[11px] leading-snug">
-                "Acme to polska firma SaaS oferująca CRM…" <span class="text-ink-mute">(błąd: nie CRM)</span>
-              </p>
-            </div>
-            <!-- Claude -->
-            <div class="border-rule bg-bg-card rounded-lg border p-3">
-              <div class="mb-1 flex items-center justify-between">
-                <span class="text-ink font-mono text-xs font-semibold">Claude</span>
-                <span class="text-ink-mute font-mono text-[10px] tracking-wider uppercase">Brak danych</span>
-              </div>
-              <p class="text-ink-soft text-[11px] leading-snug">
-                "Nie mam aktualnych informacji o&nbsp;tej marce."
-              </p>
-            </div>
-            <!-- Gemini -->
-            <div class="border-rule bg-bg-card rounded-lg border p-3">
-              <div class="mb-1 flex items-center justify-between">
-                <span class="text-ink font-mono text-xs font-semibold">Gemini</span>
-                <span class="text-accent font-mono text-[10px] tracking-wider uppercase">Poleca konkurenta</span>
-              </div>
-              <p class="text-ink-soft text-[11px] leading-snug">
-                "W&nbsp;tej kategorii liderem jest <span class="text-ink">Konkurent X</span>…"
-              </p>
-            </div>
-            <!-- Perplexity -->
-            <div class="border-rule bg-bg-card rounded-lg border p-3">
-              <div class="mb-1 flex items-center justify-between">
-                <span class="text-ink font-mono text-xs font-semibold">Perplexity</span>
-                <span class="text-accent font-mono text-[10px] tracking-wider uppercase">Zna · neutralny</span>
-              </div>
-              <p class="text-ink-soft text-[11px] leading-snug">
-                "Acme to polska firma działająca od 2018 r." <span class="text-ink-mute">(źródło: wikipedia)</span>
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </article>
-
-    <!-- AUDYT 2 – URL check (free, instant) -->
-    <article
-      id="url-check"
-      class="border-rule bg-bg-card relative mb-10 overflow-hidden rounded-3xl border p-8 sm:p-12 lg:p-16"
-    >
-      <div
-        class="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full"
-        style="background: radial-gradient(circle, rgba(255,106,46,0.16) 0%, transparent 70%);"
-        aria-hidden="true"
-      ></div>
-
-      <div class="relative z-10 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
-
-        <!-- Mock UI – URL score breakdown (LEFT this time, naprzemiennie) -->
-        <div
-          class="border-rule bg-bg relative overflow-hidden rounded-2xl border p-6 sm:p-7 lg:order-1"
-          aria-hidden="true"
-        >
-          <div class="text-ink-mute mb-4 flex items-center justify-between font-mono text-[11px] tracking-[0.12em] uppercase">
-            <span>URL check · podgląd</span>
-            <span class="text-accent">● live</span>
-          </div>
-
-          <div class="text-ink-soft mb-4 truncate font-mono text-xs">
-            URL: <span class="text-ink">acme.pl/blog/jak-wybrac-saas</span>
-          </div>
-
-          <!-- Score -->
-          <div class="mb-6 flex items-baseline gap-3">
-            <div class="text-accent font-display text-6xl font-semibold tracking-[-0.04em]">
-              43
-            </div>
-            <div class="text-ink-soft text-xl font-semibold">/ 100</div>
-            <div class="text-ink-mute ml-2 font-mono text-[10px] tracking-wider uppercase">
-              Słaby wynik
-            </div>
-          </div>
-
-          <!-- Breakdown -->
-          <div class="space-y-2.5">
-            <div class="flex items-center justify-between font-mono text-xs">
-              <span class="text-ink-soft">Front-loading (TL;DR)</span>
-              <div class="flex items-center gap-3">
-                <div class="bg-bg-elevated h-1.5 w-28 rounded-full">
-                  <div class="bg-accent h-full rounded-full" style="width: 78%;"></div>
-                </div>
-                <span class="text-ink w-8 text-right">78</span>
-              </div>
-            </div>
-            <div class="flex items-center justify-between font-mono text-xs">
-              <span class="text-ink-soft">Schema / structured data</span>
-              <div class="flex items-center gap-3">
-                <div class="bg-bg-elevated h-1.5 w-28 rounded-full">
-                  <div class="bg-accent h-full rounded-full" style="width: 25%;"></div>
-                </div>
-                <span class="text-ink w-8 text-right">25</span>
-              </div>
-            </div>
-            <div class="flex items-center justify-between font-mono text-xs">
-              <span class="text-ink-soft">Cytowania źródeł</span>
-              <div class="flex items-center gap-3">
-                <div class="bg-bg-elevated h-1.5 w-28 rounded-full">
-                  <div class="bg-accent h-full rounded-full" style="width: 12%;"></div>
-                </div>
-                <span class="text-ink w-8 text-right">12</span>
-              </div>
-            </div>
-            <div class="flex items-center justify-between font-mono text-xs">
-              <span class="text-ink-soft">Statystyki / data</span>
-              <div class="flex items-center gap-3">
-                <div class="bg-bg-elevated h-1.5 w-28 rounded-full">
-                  <div class="bg-accent h-full rounded-full" style="width: 35%;"></div>
-                </div>
-                <span class="text-ink w-8 text-right">35</span>
-              </div>
-            </div>
-            <div class="flex items-center justify-between font-mono text-xs">
-              <span class="text-ink-soft">Struktura pasaży</span>
-              <div class="flex items-center gap-3">
-                <div class="bg-bg-elevated h-1.5 w-28 rounded-full">
-                  <div class="bg-accent h-full rounded-full" style="width: 65%;"></div>
-                </div>
-                <span class="text-ink w-8 text-right">65</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="border-rule mt-5 border-t pt-4">
-            <div class="text-ink-mute mb-1 font-mono text-[10px] tracking-wider uppercase">
-              Top rekomendacja
-            </div>
-            <p class="text-ink-soft text-[11px] leading-snug">
-              Dodaj 3-5 cytowań źródeł w&nbsp;pierwszych 30% tekstu &ndash; LLM 2x częściej cytują
-              treści z&nbsp;referencjami.
-            </p>
-          </div>
-        </div>
-
-        <!-- Copy (RIGHT) -->
-        <div class="lg:order-2">
-          <div class="mb-5 flex flex-wrap items-center gap-2">
-            <span class="text-accent inline-flex items-center rounded-full border border-[color:var(--accent-edge)] bg-[color:var(--accent-soft)] px-2.5 py-1 font-mono text-[11px] tracking-wider uppercase">
-              Darmowe · instant
-            </span>
-            <span class="text-ink-mute font-mono text-[11px] tracking-wider uppercase">
-              02 / 03
-            </span>
-          </div>
-          <h3 class="text-ink font-display mb-4 text-2xl font-semibold tracking-[-0.02em] sm:text-3xl lg:text-[2.25rem] lg:leading-[1.1]">
-            Sprawdź, czy Twój content jest cytowany przez AI
-          </h3>
-          <p class="text-ink-soft mb-6 text-base leading-relaxed sm:text-lg">
-            Wskazujesz jeden URL. Analizujemy go pod kątem 5&nbsp;czynników, na które patrzą modele
-            językowe: front-loading, schema, cytowania, statystyki, struktura pasaży. Score 0&ndash;100
-            i&nbsp;konkretna lista zmian.
-          </p>
-
-          <ul class="text-ink-soft mb-8 space-y-2 text-sm leading-relaxed">
-            <li class="flex gap-3">
-              <span class="text-accent font-mono" aria-hidden="true">→</span>
-              Co jest źle, dlaczego LLM tego nie cytuje
+          <ul class="space-y-1.5">
+            <li class="flex items-center justify-between font-mono text-[11px]">
+              <span class="text-ink">ChatGPT</span>
+              <span class="text-accent">Myli ofertę</span>
             </li>
-            <li class="flex gap-3">
-              <span class="text-accent font-mono" aria-hidden="true">→</span>
-              5 priorytetowych zmian z&nbsp;szacowanym efektem
+            <li class="flex items-center justify-between font-mono text-[11px]">
+              <span class="text-ink">Claude</span>
+              <span class="text-ink-mute">Brak danych</span>
             </li>
-            <li class="flex gap-3">
-              <span class="text-accent font-mono" aria-hidden="true">→</span>
-              Bazuje na badaniach Princeton (KDD&nbsp;2024) i&nbsp;Indig&nbsp;(1.2M&nbsp;cytowań ChatGPT)
+            <li class="flex items-center justify-between font-mono text-[11px]">
+              <span class="text-ink">Gemini</span>
+              <span class="text-accent">Poleca konkurenta</span>
+            </li>
+            <li class="flex items-center justify-between font-mono text-[11px]">
+              <span class="text-ink">Perplexity</span>
+              <span class="text-ink-soft">Zna · neutralny</span>
             </li>
           </ul>
-
-          <a class="btn-primary" href="/narzedzia/url-check" aria-label="Uruchom darmowy URL check">
-            Sprawdź URL &rarr;
-          </a>
         </div>
 
-      </div>
-    </article>
+        <!-- CTA pinned bottom -->
+        <a
+          class="text-accent hover:text-[color:var(--accent-bright)] mt-auto inline-flex items-center gap-2 font-mono text-[11px] tracking-wider uppercase transition"
+          href="/narzedzia/brand-check"
+          aria-label="Sprawdź, co AI wie o Twojej marce – darmowe"
+        >
+          Sprawdź markę <span aria-hidden="true">→</span>
+        </a>
+      </article>
 
-    <!-- AUDYT 3 – Pełny audyt (paid, 3 dni) – mocniejszy orange edge, ten sam dark canvas -->
+      <!-- 02 – URL check -->
+      <article
+        id="url-check"
+        class="border-rule bg-bg-card relative flex flex-col overflow-hidden rounded-2xl border p-6 lg:p-7"
+      >
+        <div class="mb-4 flex flex-wrap items-center gap-2">
+          <span class="text-accent inline-flex items-center rounded-full border border-[color:var(--accent-edge)] bg-[color:var(--accent-soft)] px-2.5 py-1 font-mono text-[10px] tracking-wider uppercase">
+            Darmowe · instant
+          </span>
+          <span class="text-ink-mute font-mono text-[10px] tracking-wider uppercase">02 / 04</span>
+        </div>
+
+        <h3 class="text-ink font-display mb-2 text-xl font-semibold tracking-[-0.02em] lg:text-[1.375rem]">
+          Czy Twój content jest cytowalny
+        </h3>
+        <p class="text-ink-soft mb-5 text-sm leading-relaxed">
+          Wskazujesz jeden URL. Score 0&ndash;100 + lista 5 priorytetowych zmian
+          według badań Princeton i&nbsp;Indig (1.2M&nbsp;cytowań ChatGPT).
+        </p>
+
+        <!-- Mock UI compact – score + 3 progress bars -->
+        <div class="border-rule bg-bg mb-5 rounded-xl border p-4" aria-hidden="true">
+          <div class="text-ink-mute mb-2 truncate font-mono text-[10px] tracking-[0.12em] uppercase">
+            /blog/jak-wybrac-saas
+          </div>
+          <div class="mb-3 flex items-baseline gap-2">
+            <span class="text-accent font-display text-[2.75rem] leading-none font-semibold tracking-[-0.04em]">43</span>
+            <span class="text-ink-soft text-base">/ 100</span>
+          </div>
+          <div class="space-y-1.5 font-mono text-[10px]">
+            <div class="flex items-center gap-2">
+              <span class="text-ink-soft w-20 truncate">Front-load</span>
+              <div class="bg-bg-elevated h-1 flex-1 rounded-full">
+                <div class="bg-accent h-full rounded-full" style="width: 78%;"></div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-ink-soft w-20 truncate">Schema</span>
+              <div class="bg-bg-elevated h-1 flex-1 rounded-full">
+                <div class="bg-accent h-full rounded-full" style="width: 25%;"></div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-ink-soft w-20 truncate">Cytowania</span>
+              <div class="bg-bg-elevated h-1 flex-1 rounded-full">
+                <div class="bg-accent h-full rounded-full" style="width: 12%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a
+          class="text-accent hover:text-[color:var(--accent-bright)] mt-auto inline-flex items-center gap-2 font-mono text-[11px] tracking-wider uppercase transition"
+          href="/narzedzia/url-check"
+          aria-label="Sprawdź content jednego URL – darmowe"
+        >
+          Sprawdź URL <span aria-hidden="true">→</span>
+        </a>
+      </article>
+
+      <!-- 03 – AI bots check (NOWY, wzór kahena) -->
+      <article
+        id="ai-bots-check"
+        class="border-rule bg-bg-card relative flex flex-col overflow-hidden rounded-2xl border p-6 lg:p-7"
+      >
+        <div class="mb-4 flex flex-wrap items-center gap-2">
+          <span class="text-accent inline-flex items-center rounded-full border border-[color:var(--accent-edge)] bg-[color:var(--accent-soft)] px-2.5 py-1 font-mono text-[10px] tracking-wider uppercase">
+            Darmowe · instant
+          </span>
+          <span class="text-ink-mute font-mono text-[10px] tracking-wider uppercase">03 / 04</span>
+        </div>
+
+        <h3 class="text-ink font-display mb-2 text-xl font-semibold tracking-[-0.02em] lg:text-[1.375rem]">
+          Czy AI ma dostęp do&nbsp;Twojej strony
+        </h3>
+        <p class="text-ink-soft mb-5 text-sm leading-relaxed">
+          Sprawdzamy <code class="text-ink font-mono text-xs">robots.txt</code>: czy GPTBot,
+          ClaudeBot, PerplexityBot, Google-Extended i&nbsp;9&nbsp;innych botów AI mają w&nbsp;ogóle wstęp
+          na&nbsp;Twoją stronę.
+        </p>
+
+        <!-- Mock UI compact – tabela botów -->
+        <div class="border-rule bg-bg mb-5 rounded-xl border p-4" aria-hidden="true">
+          <div class="mb-3 flex items-center justify-between">
+            <span class="text-ink-mute font-mono text-[10px] tracking-[0.12em] uppercase">acme.pl/robots.txt</span>
+            <span class="text-ink font-mono text-[11px] font-semibold">
+              <span class="text-accent">8</span> / 13 dopuszczonych
+            </span>
+          </div>
+          <ul class="space-y-1 font-mono text-[11px]">
+            <li class="flex items-center justify-between">
+              <span class="text-ink">GPTBot</span>
+              <span class="text-accent" aria-label="dopuszczony">✓</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span class="text-ink">ClaudeBot</span>
+              <span class="text-ink-mute" aria-label="zablokowany">✗</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span class="text-ink">PerplexityBot</span>
+              <span class="text-accent" aria-label="dopuszczony">✓</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span class="text-ink">Google-Extended</span>
+              <span class="text-ink-mute" aria-label="zablokowany">✗</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span class="text-ink">CCBot</span>
+              <span class="text-ink-mute" aria-label="zablokowany">✗</span>
+            </li>
+            <li class="text-ink-mute pt-1 text-[10px]">+&nbsp;8 innych botów</li>
+          </ul>
+        </div>
+
+        <a
+          class="text-accent hover:text-[color:var(--accent-bright)] mt-auto inline-flex items-center gap-2 font-mono text-[11px] tracking-wider uppercase transition"
+          href="/narzedzia/ai-bots-check"
+          aria-label="Sprawdź dostęp botów AI do Twojej strony – darmowe"
+        >
+          Sprawdź dostęp <span aria-hidden="true">→</span>
+        </a>
+      </article>
+
+    </div>
+
+    <!-- 04 – Pełny audyt (paid, full-width premium banner) -->
     <article
       id="pelny-audyt"
       class="bg-bg-card relative overflow-hidden rounded-3xl border p-8 sm:p-12 lg:p-16"
@@ -301,17 +233,13 @@
             <span class="text-ink inline-flex items-center rounded-full border border-rule bg-bg-elevated px-2.5 py-1 font-mono text-[11px] tracking-wider uppercase">
               Płatne · 3 dni
             </span>
-            <span class="text-accent font-mono text-[11px] tracking-wider uppercase">
-              ★ Polecane
-            </span>
-            <span class="text-ink-mute font-mono text-[11px] tracking-wider uppercase">
-              03 / 03
-            </span>
+            <span class="text-accent font-mono text-[11px] tracking-wider uppercase">★ Polecane</span>
+            <span class="text-ink-mute font-mono text-[11px] tracking-wider uppercase">04 / 04</span>
           </div>
           <h3 class="text-ink font-display mb-4 text-2xl font-semibold tracking-[-0.02em] sm:text-3xl lg:text-[2.5rem] lg:leading-[1.05]">
             Pełny audyt z&nbsp;planem działania na&nbsp;90&nbsp;dni
           </h3>
-          <p class="text-ink-soft mb-6 text-base leading-relaxed sm:text-lg">
+          <p class="text-ink mb-6 text-base leading-relaxed sm:text-lg">
             30&ndash;50 priorytetowych zapytań z&nbsp;Twojej branży × 5&nbsp;wyszukiwarek AI.
             Share of Voice vs&nbsp;konkurencja, audyt techniczny pod AI&nbsp;crawlery, mapa luk
             tematycznych i&nbsp;30/60/90-dniowa roadmapa wdrożenia.
@@ -332,7 +260,7 @@
             </li>
             <li class="flex gap-3">
               <span class="text-accent font-mono" aria-hidden="true">→</span>
-              Schema.org, llms.txt i&nbsp;quick-wins do wdrożenia od&nbsp;ręki
+              Schema.org, llms.txt i&nbsp;quick-wins do&nbsp;wdrożenia od&nbsp;ręki
             </li>
           </ul>
 
