@@ -425,6 +425,21 @@ const { title, subtitle, date, image, author, readTime, tags } = articleData;
     margin-top: 0.5rem;
   }
 
+  /* Ciekawostka – kursywa + lekko większy line-height + ink-soft (subtelniej niż główny tekst) */
+  .article-content aside.callout-fact p {
+    font-style: italic;
+    line-height: 1.7;
+    font-size: 1.0625rem;
+    color: var(--ink);
+    letter-spacing: 0.005em;
+  }
+  /* strong w italic body – non-italic + accent dla wyróżnień liczb/dat */
+  .article-content aside.callout-fact p strong {
+    font-style: normal;
+    color: var(--ink);
+    font-weight: 600;
+  }
+
   /* Blockquote – callout */
   .article-content blockquote {
     border-left: 3px solid var(--accent);

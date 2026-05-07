@@ -14,7 +14,7 @@ tags: ['GPTBot', 'ClaudeBot', 'robots.txt', 'llms.txt', 'Technical SEO']
 category: 'narzedzia'
 ---
 
-W 2026 roku internet jest indeksowany przez kilkanaście różnych botów AI, z których każdy ma własne zasady, własny user-agent i własne implikacje dla widoczności Twojej strony. **Decyzja, którego bota dopuszczać, którego blokować, a którego po prostu ignorować, ma bezpośrednie konsekwencje dla tego, czy Twoja firma pojawi się w odpowiedziach ChatGPT, Claude czy Perplexity.** Większość zespołów technicznych w ogóle nie wie, ilu botów AI ma na swojej stronie – i to jest dziś krytyczna luka informacyjna.
+W 2026 roku internet jest indeksowany przez kilkanaście różnych botów AI, z których każdy ma własne zasady, własny user-agent i własne implikacje dla widoczności Twojej strony. **Decyzja, którego bota dopuszczać, którego blokować, a którego po prostu ignorować, ma bezpośrednie konsekwencje dla tego, czy Twoja firma pojawi się w odpowiedziach ChatGPT, Claude czy Perplexity.** Większość zespołów technicznych w ogóle nie wie, ile botów AI ma na swojej stronie – i to jest dziś krytyczna luka informacyjna.
 
 ## Trzynaście botów AI, które warto znać
 
@@ -42,13 +42,13 @@ Na rynku jest ponad 30 botów oznaczonych jako *„AI crawlers"*, ale 13 z nich 
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Ciekawostka</div>
-    <p>GPTBot zaczął indeksować internet dopiero <strong>w sierpniu 2023 roku</strong>. W panice po jego ogłoszeniu duże media (NYT, BBC, CNN, Reuters) i Reddit zablokowały bota w robots.txt. Dziś – dwa lata później – większość z nich wciąż ma tę blokadę, mimo że ich treści i tak trafiają do modeli przez Common Crawl. Efekt: stracona widoczność w SearchGPT i ChatGPT-User, ale obecność w bazie treningowej GPT-4 i 5 (przez CCBot). <strong>Zasłonięcie połowy okna i otwarcie drugiej.</strong></p>
+    <p>GPTBot zaczął indeksować internet dopiero <strong>w sierpniu 2023 roku</strong>. W panice po jego ogłoszeniu duże media (NYT, BBC, CNN, Reuters) i Reddit zablokowały bota w robots.txt. Dziś – dwa lata później – większość z nich wciąż ma tę blokadę, mimo że ich treści i tak trafiają do modeli przez Common Crawl. Efekt – stracona widoczność w SearchGPT i ChatGPT-User, ale obecność w bazie treningowej GPT-4 i 5 (przez CCBot). <strong>Zasłonięcie połowy okna i otwarcie drugiej.</strong></p>
   </div>
 </aside>
 
 ## Konfiguracja robots.txt – działający szablon
 
-Standardowa praktyka to dopuszczenie wszystkich legitymnych botów AI, chyba że masz konkretny powód do blokady (ochrona własności intelektualnej, treści za paywallem). Przykład solidnego `robots.txt` dla strony chcącej być widoczną we wszystkich mainstreamowych LLM-ach:
+Standardowa praktyka to dopuszczenie wszystkich oficjalnych botów AI, chyba że masz konkretny powód do blokady (ochrona własności intelektualnej, treści za paywallem). Przykład solidnego `robots.txt` dla strony chcącej być widoczną we wszystkich mainstreamowych LLM-ach:
 
 ```
 User-agent: GPTBot
@@ -94,14 +94,14 @@ Druga pułapka: blokowanie ścieżek dynamicznych (`/search/`, `/cart/`). Boty A
 
 ## Czy llms.txt ma sens
 
-`llms.txt` to **propozycja** standardu z 2024 roku (autor: Jeremy Howard), podobna do [robots.txt](https://pl.wikipedia.org/wiki/Robots_Exclusion_Protocol), ale dedykowana stricte LLM-om. Plik leży w katalogu głównym domeny i zawiera hierarchiczną mapę najważniejszych zasobów na stronie z opisami w naturalnym języku. Idea: zamiast pozwalać LLM-owi przeczesywać całą stronę, dajesz mu kuratorską listę treści, którą chcesz, żeby model znał najlepiej.
+`llms.txt` to **propozycja** standardu z 2024 roku (autor: Jeremy Howard), podobna do [robots.txt](https://pl.wikipedia.org/wiki/Robots_Exclusion_Protocol), ale przeznaczona stricte dla LLM-ów. Plik leży w katalogu głównym domeny i zawiera hierarchiczną mapę najważniejszych zasobów na stronie z opisami w naturalnym języku. Idea: zamiast pozwalać LLM-owi przeczesywać całą stronę, dajesz mu kuratorską listę treści, którą chcesz, żeby model znał najlepiej.
 
 > **Ważne zastrzeżenie.** `llms.txt` **nie jest dziś główną wytyczną technicznego GEO**. Branża jest podzielona, a stan adopcji niejednoznaczny. Wdroż go jako uzupełnienie podstaw – nie jako pierwszy krok i nie kosztem schema.org, SSR czy `robots.txt`.
 
 Stan adopcji w 2026:
 
-- **OpenAI i Anthropic** publicznie potwierdziły, że ich crawlery zaglądają do `llms.txt`, ale nie deklarują, jak go traktują w retrievalu
-- **Google** oficjalnie odrzucił standard, twierdząc, że klasyczny crawl wystarczy – i Google ma 50%+ rynku AI search w Polsce przez AI Overviews
+- **OpenAI i Anthropic** publicznie potwierdziły, że ich crawlery zaglądają do `llms.txt`, ale nie deklarują, jak go traktują w procesie pobierania
+- **Google** nie zaimplementował standardu, twierdząc, że klasyczny crawl wystarczy – i Google ma 50%+ rynku AI search w Polsce przez AI Overviews
 - **Perplexity** nie zajęło stanowiska, ale empirycznie pliki `llms.txt` są szanowane przez ich silnik
 - **W praktyce** efekt wdrożenia jest trudny do izolowania – nikt nie widział twardego A/B testu pokazującego mierzalny lift cytowalności wyłącznie z `llms.txt`
 
@@ -134,7 +134,7 @@ Zawartość świadomie krótka, w naturalnym języku, z linkami do najważniejsz
 
 ## JavaScript-rendered content – cichy zabójca widoczności AI
 
-Najczęstsza techniczna przyczyna, dla której strony nie pojawiają się w odpowiedziach LLM, mimo poprawnego `robots.txt`, to JavaScript-rendered content. **Boty AI, w przeciwieństwie do współczesnego Googlebota, nie wykonują JavaScript. Lub wykonują go bardzo słabo, zwykle z dużym timeoutem.**
+Najczęstsza techniczna przyczyna, dla której strony nie pojawiają się w odpowiedziach LLM, mimo poprawnego `robots.txt`, to JavaScript-rendered content. **Boty AI, w przeciwieństwie do współczesnego Googlebota, nie wykonują JavaScriptu. Lub wykonują go bardzo słabo, zwykle z dużym timeoutem.**
 
 Konsekwencja: jeśli Twoja strona jest zbudowana w React/Vue/Angular bez SSR (server-side rendering), to większość treści, którą widzi użytkownik w przeglądarce, jest niewidoczna dla bota AI. Bot dostaje pusty `<div id="root">` i nic więcej.
 
@@ -152,7 +152,7 @@ Trzy standardowe rozwiązania:
 - **Static site generation (SSG)** – dla treści, które rzadko się zmieniają. Blog, dokumentacja, strony marketingowe – generujesz statyczne pliki HTML przy budowie, bot dostaje pełny tekst bez dynamiki
 - **Pre-rendering / dynamic rendering** – dla aplikacji SPA, których nie da się refaktorować. Cloudflare ma usługę *„Workers Bot Detection"* + pre-render, podobnie Vercel *„Skew Protection"*. Bot dostaje wyrenderowaną wersję, użytkownik z przeglądarką klasyczne SPA
 
-## Schema.org dla LLM – cztery typy, które dają lift
+## Schema.org dla LLM – cztery typy, które dają wzrost
 
 LLM-y czytają strukturalne dane (JSON-LD) i używają ich jako szybkiego sposobu zrozumienia kontekstu strony. Cztery typy, które dają mierzalny lift cytowalności w naszych testach:
 
@@ -161,13 +161,13 @@ LLM-y czytają strukturalne dane (JSON-LD) i używają ich jako szybkiego sposob
 | **Article** | każdy post blogowy | `headline`, `author`, `datePublished`, `dateModified`, `image` | brak schemy obniża cytowalność o 15–20% |
 | **Person** | każdy autor bloga | `name`, `jobTitle`, `worksFor`, `sameAs` | buduje autorytet osoby ("real human author") |
 | **Organization** | strona firmowa | `name`, `url`, `logo`, `sameAs`, `address`, `contactPoint` | jednoznaczna identyfikacja firmy |
-| **FAQPage** | każda sekcja FAQ | `Question`, `Answer` | gotowe fragmenty Q&A, łatwo łapane przez retrieval |
+| **FAQPage** | każda sekcja FAQ | `Question`, `Answer` | gotowe fragmenty Q&A, łatwo pobierane przez silnik |
 
 LLM-y bardzo lubią `FAQPage` – każde pytanie z parą `Question` + `Answer` to gotowy fragment Q&A, który można podzielić na czyste podzapytania.
 
 ## Plan implementacji w 30 dni
 
-Praktyczny harmonogram wdrożenia pełnej obsługi botów AI dla średniej strony korporacyjnej. Każdy tydzień ma konkretny deliverable.
+Praktyczny harmonogram wdrożenia pełnej obsługi botów AI dla średniej strony korporacyjnej. Każdy tydzień ma konkretny rezultat.
 
 1. **Tydzień 1: audyt obecnego stanu** – test `curl -A "GPTBot"` na 10–15 najważniejszych URL-i, sprawdzenie obecnego `robots.txt`, identyfikacja ścieżek z JS-rendered content
 2. **Tydzień 2: konfiguracja `robots.txt` i `llms.txt`** – dopuszczenie wszystkich legitymnych botów, stworzenie `llms.txt` z 8–15 najważniejszymi zasobami
@@ -185,7 +185,7 @@ Po 30 dniach robisz re-test: `curl -A "GPTBot"` zwraca pełny tekst, schema.org 
   </div>
 </aside>
 
-## Wnioski
+## Co warto sprawdzić w pierwszej kolejności
 
 Konfiguracja botów AI to zadanie, które najlepiej wykonać raz, dobrze. **Większość problemów technicznej widoczności w AI sprowadza się do prostych check-list: które boty dopuszczam, czy mam SSR, czy mam schemę.** Zaniedbanie tych podstaw oznacza, że nawet najlepsza strategia contentowa nie zadziała – bo LLM po prostu Twojej strony nie widzi.
 

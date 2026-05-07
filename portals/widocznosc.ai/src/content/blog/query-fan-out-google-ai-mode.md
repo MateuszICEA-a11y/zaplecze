@@ -24,7 +24,7 @@ Praktyczny przykład – ktoś pyta Google AI Mode:
 
 > *„Jaki CRM wybrać dla 5-osobowego zespołu sprzedaży B2B SaaS?"*
 
-Model nie szuka stron z tą dokładną frazą. Generuje 20–30 podzapytań w stylu *„najlepsze CRM-y dla małych zespołów"*, *„HubSpot vs Pipedrive cena"*, *„integracje CRM z Slack"*, *„koszt CRM dla startupu"*. Każde z nich ma własną listę wyników. **Twoja strona musi pasować przynajmniej do kilku z nich, żeby zostać uwzględniona w finalnej odpowiedzi.**
+Model nie szuka stron z tą dokładną frazą. Generuje 20–30 podzapytań w stylu *„najlepsze CRM-y dla małych zespołów"*, *„HubSpot vs Pipedrive cena"*, *„integracje CRM ze Slackiem"*, *„koszt CRM dla startupu"*. Każde z nich ma własną listę wyników. **Twoja strona musi pasować przynajmniej do kilku z nich, żeby zostać uwzględniona w finalnej odpowiedzi.**
 
 ## Cztery etapy mechanizmu
 
@@ -34,14 +34,14 @@ Cały proces rozkłada się w sekundach na cztery wyraźne fazy. Każda z nich m
 |---|---|---|
 | 1. Zrozumienie intencji | Model interpretuje, czego użytkownik naprawdę chce – informacja, porównanie, decyzja zakupowa | Tytuły i wstępy muszą jasno sygnalizować typ treści |
 | 2. Generacja podzapytań | Model tworzy 20–40 wariantów, synonimów, podpytań komplementarnych i porównawczych | Trzeba mapować pełen klaster intencji wokół tematu |
-| 3. Pobranie fragmentów | Każde podzapytanie idzie osobno do indeksu, system wyciąga konkretne pasaże, nie całe strony | Struktura tekstu na pasaże 3-5 zdań, nie ścianki |
+| 3. Pobranie fragmentów | Każde podzapytanie idzie osobno do indeksu, system wyciąga konkretne fragmenty, nie całe strony | Struktura tekstu na fragmenty 3-5 zdań, nie ścianki |
 | 4. Synteza i cytowanie | Model łączy fragmenty w odpowiedź, lista źródeł obok | Liczy się fragmentaryczna wartość, nie ranking strony jako całości |
 
-W praktyce: Twój blog może być na 50. miejscu w klasycznym Google na frazę główną, ale jeśli ma jeden mocny fragment na podzapytanie *„koszty napraw turbosprężarki Ford"*, ten fragment trafi do odpowiedzi AI Mode. **Optymalizacja przesuwa się z poziomu strony na poziom akapitu.**
+W praktyce – Twój blog może być na 50. miejscu w klasycznym Google na frazę główną, ale jeśli ma jeden mocny fragment na podzapytanie *„koszty napraw turbosprężarki Ford"*, ten fragment trafi do odpowiedzi AI Mode. **Optymalizacja przesuwa się z poziomu strony na poziom akapitu.**
 
 ## Konkretny przykład rozkładu
 
-Pytanie pozornie proste: *„Czy warto kupować używanego Forda Mondeo z silnikiem Diesla po 2015?"*. Model rozbija je na kilkadziesiąt podzapytań. Część z nich:
+Pytanie pozornie proste: *„Czy warto kupować używanego Forda Mondeo z silnikiem Diesla po 2015?"*. Model rozbija je na kilkadziesiąt podzapytań. Część z nich to m.in. –
 
 - najczęstsze usterki Forda Mondeo Diesel po 2015
 - żywotność silnika TDCi 2.0 Ford
@@ -60,7 +60,7 @@ I dalsze 10–15 wariantów. Strona, która chce zostać zacytowana w odpowiedzi
 
 ## Co to znaczy dla SEO i GEO
 
-Trzy fundamentalne zmiany w sposobie projektowania treści:
+Trzy fundamentalne zmiany w sposobie projektowania treści –
 
 - **Klastrowe pokrycie zamiast jednej frazy** – dla każdego głównego zapytania komercyjnego zmapuj 20–40 podzapytań, na które AI prawdopodobnie się rozszczepi, i upewnij się, że masz na każde z nich konkretny fragment z odpowiedzią
 - **Fragmentaryczna wartość zamiast rankingu strony** – Twój ogólny ranking w Google ma drugorzędne znaczenie. Liczy się to, czy konkretny akapit odpowiada na konkretne podzapytanie, najlepiej w pierwszych 30% tekstu
@@ -74,7 +74,7 @@ Badania potwierdzają trzecią zmianę. Kevin Indig przeanalizował 1,2 mln cyto
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Ciekawostka</div>
-    <p>Query fan-out nie pojawił się dopiero z AI Mode. Mechanizm rozszczepiania zapytania na podpytania był testowany w Google już w MUM (2021) i BERT (2019), ale wówczas wyniki łączono w klasyczną listę 10 niebieskich linków. Dopiero LLM jako warstwa syntezy ujawniła użytkownikowi, że <strong>retrievery od dawna pracują na poziomie pasaży, nie stron</strong>.</p>
+    <p>Query fan-out nie pojawił się dopiero z AI Mode. Mechanizm rozszczepiania zapytania na podpytania był testowany w Google już w MUM (2021) i BERT (2019), ale wówczas wyniki łączono w klasyczną listę 10 niebieskich linków. Dopiero LLM jako warstwa syntezy ujawniła użytkownikowi, że <strong>silniki pobierające od dawna pracują na poziomie fragmentów, nie stron</strong>.</p>
   </div>
 </aside>
 
@@ -90,7 +90,7 @@ Każde podzapytanie powinno mieć swój samowystarczalny fragment z odpowiedzią
 
 ### Wczesne sygnalizowanie kluczowej informacji
 
-Pierwsze 30% tekstu to strefa, w której AI najczęściej szuka cytatów. Indig wykazał, że 44% wszystkich cytowań ChatGPT pochodzi z tej strefy. Praktycznie:
+Pierwsze 30% tekstu to strefa, w której AI najczęściej szuka cytatów. Indig wykazał, że 44% wszystkich cytowań ChatGPT pochodzi z tej strefy. W praktyce –
 
 - **Zacznij artykuł od konkretu** – definicja, liczba albo wniosek w pierwszych 2-3 zdaniach
 - **Nie maskuj odpowiedzi historią branży** – akademicki wstęp odsuwa cytowalny fragment poza strefę 30%
@@ -115,17 +115,17 @@ Listy *„najlepszych X"*, porównania *„marka X vs Y"*, rankingi i FAQ to for
 
 ## Narzędzia do reverse-engineeringu
 
-Trzy darmowe lub półdarmowe narzędzia, które pokazują, co AI Mode generuje na Twoje główne frazy:
+Trzy darmowe lub półdarmowe narzędzia, które pokazują, co AI Mode generuje na Twoje główne frazy –
 
 - **Qforia** (iPullRank, darmowe) – wprost zaprojektowane do reverse-engineeringu query fan-out w Google AI Mode. Wpisujesz frazę, dostajesz listę podzapytań, które Google najprawdopodobniej generuje. Najszybsza droga do mapowania struktury artykułu przed pisaniem
 - **Google AI Mode** (jako research tool) – sam Google AI Mode jest świetnym narzędziem do testowania własnych zapytań. Wpisz pytanie, kliknij „pokaż więcej źródeł" i analizuj domeny, które AI traktuje jako autorytety w Twojej niszy
 - **Perplexity Pro w trybie research** – pokazuje pełną listę zapytań, jakie wykonał silnik wyszukiwania, zanim model językowy złożył odpowiedź. Daje wgląd w logikę rozszczepienia w innym ekosystemie LLM
 
-Logika rozszczepienia opiera się na technologii [embedingów wektorowych](https://pl.wikipedia.org/wiki/S%C5%82owo_zanurzaj%C4%85ce) – wektorowych reprezentacji tekstu, które pozwalają modelowi mierzyć semantyczne podobieństwo między pytaniem a fragmentami w indeksie. To ten sam mechanizm, którego używa systemy rekomendacyjne i wyszukiwarki semantyczne.
+Logika rozszczepienia opiera się na technologii [embedingów wektorowych](https://pl.wikipedia.org/wiki/S%C5%82owo_zanurzaj%C4%85ce) – wektorowych reprezentacji tekstu, które pozwalają modelowi mierzyć semantyczne podobieństwo między pytaniem a fragmentami w indeksie. To ten sam mechanizm, którego używają systemy rekomendacyjne i wyszukiwarki semantyczne.
 
-## Wnioski
+## Co query fan-out zmienia w pracy nad treścią
 
-Query fan-out to nie kolejna aktualizacja Google w stylu Panda czy Penguin. To zmiana modelu działania całej warstwy pobierania danych:
+Query fan-out to nie kolejna aktualizacja Google w stylu Panda czy Penguin. To zmiana modelu działania całej warstwy pobierania danych –
 
 - **Z poziomu strony na poziom fragmentu** – AI cytuje akapity, nie URL-e
 - **Z jednej frazy na klaster podzapytań** – musisz pokryć cały temat, nie pojedynczą frazę
