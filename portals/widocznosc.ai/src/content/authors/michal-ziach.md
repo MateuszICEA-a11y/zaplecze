@@ -10,7 +10,7 @@ expertise:
   - SEO i optymalizacja wyszukiwarek
   - Transformacja cyfrowa
   - Autorskie narzędzia AI dla SEO
-photo: https://www.grupa-icea.pl/wp-content/uploads/2023/11/michal-ziach.jpg
+photo: /authors/michal-ziach.avif
 iceaProfile: https://www.grupa-icea.pl/autor/michal-ziach/
 publishedAt: 2026-05-06
 ---

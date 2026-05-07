@@ -2,14 +2,17 @@
 name: Tomasz Czechowski
 role: Head of SEO
 company: ICEA
-shortBio: Head of SEO w ICEA. Specjalizuje się w pozycjonowaniu i optymalizacji pod AI Mode w Google.
+shortBio: Head of SEO w ICEA. Projektuje autorskie narzędzia i automatyzacje SEO, ekspert wyszukiwarek generatywnych.
 bio: |
-  Tomasz Czechowski pełni funkcję Head of SEO w ICEA. Specjalizuje się w pozycjonowaniu stron internetowych i optymalizacji wyszukiwarek. Jest odpowiedzialny za strategiczne kierunki SEO w agencji.
+  Head of SEO w ICEA, odpowiedzialny za strategiczne kierunki działu. Projektuje autorskie narzędzia SEO i automatyzacje procesów, dzięki którym agencja skaluje pracę dla klientów – od audytów technicznych po monitoring widoczności. Ekspert w zakresie wyszukiwarek generatywnych (Google AI Overviews, ChatGPT, Perplexity) i wykorzystania AI do optymalizacji treści, analizy konkurencji i przewidywania zmian w SERP-ach.
 expertise:
-  - Pozycjonowanie (SEO)
-  - Optymalizacja dla wyszukiwarek
-  - AI Mode w Google
-photo: https://www.grupa-icea.pl/wp-content/uploads/2025/05/Tomasz-Czechowski-scaled.jpg
+  - Strategia SEO
+  - AI Search i wyszukiwarki generatywne
+  - Google AI Overviews
+  - Autorskie narzędzia SEO
+  - Automatyzacje procesów
+  - Audyty techniczne
+photo: /authors/tomasz-czechowski.avif
 iceaProfile: https://www.grupa-icea.pl/autor/tomasz-czechowski/
 publishedAt: 2026-05-06
 ---

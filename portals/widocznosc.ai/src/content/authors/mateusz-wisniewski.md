@@ -2,16 +2,17 @@
 name: Mateusz Wiśniewski
 role: SEO Team Leader
 company: ICEA
-shortBio: SEO Team Leader w ICEA. Specjalizuje się w AI Search, query fan-out i Google AI Overviews.
+shortBio: Ekspert SEO/AI Search od 2012. Projektuje automatyzacje i optymalizuje widoczność marek w wyszukiwarkach klasycznych i generatywnych.
 bio: |
-  Mateusz Wiśniewski prowadzi zespół SEO w ICEA. Specjalista ds. AI Search i pozycjonowania w wyszukiwarkach generatywnych. Autor artykułów o zaawansowanych technikach optymalizacji, w tym query fan-out i Google AI Overviews.
+  Ekspert SEO / AI Search z wieloletnim doświadczeniem agencyjnym, w branży obecny od 2012 roku. Absolwent Zarządzania i Marketingu Akademii Ekonomicznej we Wrocławiu – łączy wiedzę biznesową z pasją do nowych technologii. Na co dzień projektuje automatyzacje i wykorzystuje AI do skalowania procesów SEO, optymalizując widoczność marek zarówno w klasycznych wyszukiwarkach, jak i w silnikach generatywnych (Google AI Overviews, ChatGPT, Perplexity).
 expertise:
   - SEO
   - AI Search
   - Query fan-out
   - Topical Authority
   - Content Optimization
-photo: https://www.grupa-icea.pl/wp-content/uploads/2025/02/mwisniewski.jpeg
+  - Automatyzacje SEO
+photo: /authors/mateusz-wisniewski.webp
 iceaProfile: https://www.grupa-icea.pl/autor/mateusz-wisniewski/
 publishedAt: 2026-05-06
 ---

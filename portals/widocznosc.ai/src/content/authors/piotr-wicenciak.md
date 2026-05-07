@@ -9,7 +9,7 @@ expertise:
   - Strategia SEO
   - Audyty techniczne
   - Analiza konkurencji
-photo: https://www.grupa-icea.pl/wp-content/uploads/2024/06/piotr-wicenciak.png
+photo: /authors/piotr-wicenciak.avif
 iceaProfile: https://www.grupa-icea.pl/autor/piotr-wicenciak/
 publishedAt: 2026-05-06
 ---
