@@ -501,15 +501,43 @@ const { title, subtitle, date, image, author, readTime, tags } = articleData;
     height: auto;
   }
   .article-content figure {
-    margin: 2rem 0;
+    margin: 2.5rem 0;
   }
   .article-content figcaption {
     margin-top: 0.75rem;
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     color: var(--ink-mute);
     text-align: center;
     font-family: var(--font-mono, 'JetBrains Mono'), monospace;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+  }
+
+  /* Infographic – SVG inline data viz, dark theme native */
+  .article-content figure.infographic {
+    background: var(--bg-card);
+    border: 1px solid var(--rule);
+    border-radius: 0.875rem;
+    padding: 1.5rem;
+    box-shadow:
+      0 1px 0 0 rgb(255 255 255 / 0.03) inset,
+      0 12px 32px -12px rgb(0 0 0 / 0.5);
+  }
+  .article-content figure.infographic svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  /* Don't apply default img border to SVG */
+  .article-content figure.infographic figcaption {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule);
+    text-transform: none;
+    letter-spacing: 0;
+    font-family: var(--font-sans, system-ui), sans-serif;
+    color: var(--ink-soft);
+    font-size: 0.875rem;
   }
 
   /* Horizontal rule */
