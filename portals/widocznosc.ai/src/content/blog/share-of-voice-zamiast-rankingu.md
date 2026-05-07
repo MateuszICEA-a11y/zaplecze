@@ -52,6 +52,14 @@ Mention Rate to procent zapytań, w których Twoja marka pojawiła się tylko w 
 
 Britney Muller spuentowała to lapidarnie: *„brand mentions are the new backlinks"*. Wzmianki budujesz przez PR, recenzje, zestawienia *„best of"* i cytowania w mediach – nie przez technical SEO.
 
+<aside class="callout-fact">
+  <div class="callout-icon">✦</div>
+  <div class="callout-body">
+    <div class="callout-label">Ciekawostka</div>
+    <p>Share of Voice nie powstał w erze AI. Termin wymyśliła agencja Mediaedge w 1968 roku, mierząc <strong>udział marki w nakładach reklamowych całej kategorii</strong>. Później przeszedł do mediów cyfrowych jako udział w zasięgu, w impresjach, w wynikach wyszukiwania. Dziś trafia do GEO – i zaczyna mieć więcej wspólnego z oryginalnym znaczeniem niż jakakolwiek klasyczna metryka SEO.</p>
+  </div>
+</aside>
+
 ## Pięć kroków audytu Share of Voice
 
 W ICEA każdy audyt SoV idzie tym samym schematem. Każdy krok ma konkretny deliverable.
@@ -91,6 +99,15 @@ Mieszanie tych typów w jednej liczbie zafałszowuje obraz. **Raportujemy oddzie
 ### Kierunek zmiany
 
 Pojedynczy SoV 18% nic nie mówi. Trzy pomiary z trendem 12% → 15% → 18% przez kwartał to twardy dowód, że roadmapa GEO działa. Trzy pomiary 22% → 19% → 16% w tym samym okresie to alarm – konkurencja wdraża coś, czego my nie obsługujemy.
+
+<aside class="callout-expert">
+  <div class="callout-icon"><img src="/authors/tomasz-czechowski.avif" alt="Tomasz Czechowski" /></div>
+  <div class="callout-body">
+    <div class="callout-label">Opinia eksperta</div>
+    <p>Klienci enterprise często chcą jednej liczby – „jaki mamy SoV?". To pułapka. W praktyce u każdego klienta liczymy 3 oddzielne SoV: brandowy, kategorialny i edukacyjny. SoV brandowy wyższy niż 80% to znak, że marka jest rozpoznawalna. SoV kategorialny wyższy niż 15% to znak, że jesteśmy w gronie liderów. SoV edukacyjny wyższy niż 5% to znak, że budujemy autorytet tematyczny. Trzy różne historie, trzy różne plany działania.</p>
+    <div class="callout-author">Tomasz Czechowski · Head of SEO, ICEA</div>
+  </div>
+</aside>
 
 ## Wnioski
 

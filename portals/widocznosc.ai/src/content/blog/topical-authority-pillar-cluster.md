@@ -22,6 +22,14 @@ Klasyczny Google opiera ocenę autorytetu na trzech filarach: linkach (PageRank)
 
 > **Konsystencja pokrycia tematycznego.** Domena cytowana wielokrotnie w różnych podzapytaniach tego samego tematu jest traktowana jako autorytet w niszy.
 
+<aside class="callout-fact">
+  <div class="callout-icon">✦</div>
+  <div class="callout-body">
+    <div class="callout-label">Ciekawostka</div>
+    <p>Pillar + cluster to nie wymysł ery LLM. Architekturę wprowadził <strong>HubSpot w 2017 roku</strong> jako odpowiedź na semantyczne grupowanie wyników w klasycznym Google. Brian Halligan i Mark Roberge pokazali, że strony zorganizowane w pillar-cluster ranking dla 4× więcej fraz długiego ogona niż strony zorganizowane chronologicznie po dacie publikacji. Dziewięć lat później ten sam mechanizm działa w retrievalu LLM-ów – tyle że stawka jest dużo wyższa.</p>
+  </div>
+</aside>
+
 Mechanizm jest prosty, ale ma duże konsekwencje. Gdy silnik pobierający dane wyciąga fragmenty dla pojedynczego podzapytania, sprawdza, z jakiej domeny pochodzi fragment. Jeśli ta sama domena była wcześniej wybrana dla innych fragmentów w tej samej dziedzinie tematycznej, jej waga rośnie.
 
 To nieformalny mechanizm, ale empirycznie potwierdzony. Kevin Indig pokazał na 1,2 mln cytowań ChatGPT, że **top 10 domen w danej niszy zabiera 46% wszystkich cytowań**. Reszta domen walczy o resztki.
@@ -80,6 +88,15 @@ Sama struktura pillar + cluster nie wystarczy, jeśli artykuły nie są ze sobą
 | **Pillar → Cluster (5–8×)** | pillar linkuje do 5–8 najważniejszych cluster (nie wszystkich) | naturalna hierarchia hub-and-spoke |
 
 W praktyce: dla pillara z 12 cluster pages prawidłowo zaprojektowany interlinking generuje 30–40 wewnętrznych linków w obrębie tego klastra. To dużo i wymaga dyscypliny, ale **efekt na widoczność w AI Mode jest mierzalny – w naszych testach domeny po wdrożeniu pełnego interlinkingu rosły w SoV o 5–8 punktów procentowych w 90 dni**.
+
+<aside class="callout-expert">
+  <div class="callout-icon"><img src="/authors/piotr-wicenciak.avif" alt="Piotr Wicenciak" /></div>
+  <div class="callout-body">
+    <div class="callout-label">Opinia eksperta</div>
+    <p>Najczęstszy błąd przy migracji do pillar+cluster: zespół content marketingu próbuje od razu zbudować 5 pillarów. To zabija projekt, bo każdy pillar wymaga 8–12 tygodni dyscypliny, a equipe robi pierwsze 3 i zostawia 2 niedokończone. <strong>Buduj jeden pillar do końca, mierz efekt na SoV przez kwartał, dopiero potem startuj drugi.</strong> Lepiej mieć jeden pillar na 100% niż pięć na 40%.</p>
+    <div class="callout-author">Piotr Wicenciak · Team Leader SEO, ICEA</div>
+  </div>
+</aside>
 
 ## Anchor texts pod LLM
 

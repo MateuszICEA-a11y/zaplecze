@@ -70,6 +70,14 @@ Badania potwierdzają trzecią zmianę. Kevin Indig przeanalizował 1,2 mln cyto
 
 > **Princeton/KDD 2024 (Aggarwal et al.):** dodanie cytowań źródeł podnosi widoczność w LLM o 30–40%. Keyword stuffing obniża ją o 10% – to akademicka odwrotność klasycznego SEO.
 
+<aside class="callout-fact">
+  <div class="callout-icon">✦</div>
+  <div class="callout-body">
+    <div class="callout-label">Ciekawostka</div>
+    <p>Query fan-out nie pojawił się dopiero z AI Mode. Mechanizm rozszczepiania zapytania na podpytania był testowany w Google już w MUM (2021) i BERT (2019), ale wówczas wyniki łączono w klasyczną listę 10 niebieskich linków. Dopiero LLM jako warstwa syntezy ujawniła użytkownikowi, że <strong>retrievery od dawna pracują na poziomie pasaży, nie stron</strong>.</p>
+  </div>
+</aside>
+
 ## Cztery taktyki pod query fan-out
 
 Konkretne działania, które realnie zwiększają szanse na cytowanie. Każda jest niezależna – możesz wdrażać po kolei.
@@ -95,6 +103,15 @@ Każdy ważny fakt umieść w samowystarczalnym akapicie z wyraźnym kontekstem.
 ### Format listy i porównań
 
 Listy *„najlepszych X"*, porównania *„marka X vs Y"*, rankingi i FAQ to formaty najlepsze pod query fan-out. Każdy element listy lub para porównawcza tworzy gotowy mini-fragment, który pasuje pod konkretne podzapytanie. Artykuł *„10 najlepszych CRM-ów dla zespołów do 10 osób"* z 10 sekcjami po 200 słów to **10 osobnych fragmentów konkurujących o miejsce w odpowiedzi AI**.
+
+<aside class="callout-expert">
+  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.webp" alt="Mateusz Wiśniewski" /></div>
+  <div class="callout-body">
+    <div class="callout-label">Opinia eksperta</div>
+    <p>Najszybszy efekt w pierwszych 30 dniach po audycie daje refresh trzech najsilniejszych artykułów na blogu klienta – dorzucenie do nich 5–8 H3 odpowiadających na konkretne podzapytania z mapy fan-out. Nie nowy content, nie linkowanie, nie schema. Po prostu dopisanie 800–1200 słów strukturalnie podzielonych na fragmenty. W dwóch projektach SaaS B2B widzieliśmy w ten sposób wzrost cytowań o 40–60% w ciągu 3 tygodni.</p>
+    <div class="callout-author">Mateusz Wiśniewski · SEO Team Leader, ICEA</div>
+  </div>
+</aside>
 
 ## Narzędzia do reverse-engineeringu
 

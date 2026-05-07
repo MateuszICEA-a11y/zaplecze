@@ -38,6 +38,14 @@ Na rynku jest ponad 30 botów oznaczonych jako *„AI crawlers"*, ale 13 z nich 
 
 > **Częsty błąd:** blokowanie tylko niektórych botów OpenAI lub Anthropic. Jeśli blokujesz `GPTBot`, ale dopuszczasz `OAI-SearchBot`, sygnał jest mieszany – Twoja strona nie trafi do treningu, ale może być cytowana real-time. To może być świadoma decyzja, ale częściej wynika z niewiedzy.
 
+<aside class="callout-fact">
+  <div class="callout-icon">✦</div>
+  <div class="callout-body">
+    <div class="callout-label">Ciekawostka</div>
+    <p>GPTBot zaczął indeksować internet dopiero <strong>w sierpniu 2023 roku</strong>. W panice po jego ogłoszeniu duże media (NYT, BBC, CNN, Reuters) i Reddit zablokowały bota w robots.txt. Dziś – dwa lata później – większość z nich wciąż ma tę blokadę, mimo że ich treści i tak trafiają do modeli przez Common Crawl. Efekt: stracona widoczność w SearchGPT i ChatGPT-User, ale obecność w bazie treningowej GPT-4 i 5 (przez CCBot). <strong>Zasłonięcie połowy okna i otwarcie drugiej.</strong></p>
+  </div>
+</aside>
+
 ## Konfiguracja robots.txt – działający szablon
 
 Standardowa praktyka to dopuszczenie wszystkich legitymnych botów AI, chyba że masz konkretny powód do blokady (ochrona własności intelektualnej, treści za paywallem). Przykład solidnego `robots.txt` dla strony chcącej być widoczną we wszystkich mainstreamowych LLM-ach:
@@ -86,15 +94,18 @@ Druga pułapka: blokowanie ścieżek dynamicznych (`/search/`, `/cart/`). Boty A
 
 ## Czy llms.txt ma sens
 
-`llms.txt` to propozycja standardu z 2024 roku, podobna do [robots.txt](https://pl.wikipedia.org/wiki/Robots_Exclusion_Protocol), ale dedykowana stricte LLM-om. Plik leży w katalogu głównym domeny i zawiera hierarchiczną mapę najważniejszych zasobów na stronie z opisami w naturalnym języku. Idea: zamiast pozwalać LLM-owi przeczesywać całą stronę, dajesz mu kuratorską listę treści, którą chcesz, żeby model znał najlepiej.
+`llms.txt` to **propozycja** standardu z 2024 roku (autor: Jeremy Howard), podobna do [robots.txt](https://pl.wikipedia.org/wiki/Robots_Exclusion_Protocol), ale dedykowana stricte LLM-om. Plik leży w katalogu głównym domeny i zawiera hierarchiczną mapę najważniejszych zasobów na stronie z opisami w naturalnym języku. Idea: zamiast pozwalać LLM-owi przeczesywać całą stronę, dajesz mu kuratorską listę treści, którą chcesz, żeby model znał najlepiej.
+
+> **Ważne zastrzeżenie.** `llms.txt` **nie jest dziś główną wytyczną technicznego GEO**. Branża jest podzielona, a stan adopcji niejednoznaczny. Wdroż go jako uzupełnienie podstaw – nie jako pierwszy krok i nie kosztem schema.org, SSR czy `robots.txt`.
 
 Stan adopcji w 2026:
 
-- **OpenAI i Anthropic** publicznie potwierdziły, że ich crawlery czytają `llms.txt`
-- **Google** oficjalnie odrzucił standard, twierdząc, że klasyczny crawl wystarczy
+- **OpenAI i Anthropic** publicznie potwierdziły, że ich crawlery zaglądają do `llms.txt`, ale nie deklarują, jak go traktują w retrievalu
+- **Google** oficjalnie odrzucił standard, twierdząc, że klasyczny crawl wystarczy – i Google ma 50%+ rynku AI search w Polsce przez AI Overviews
 - **Perplexity** nie zajęło stanowiska, ale empirycznie pliki `llms.txt` są szanowane przez ich silnik
+- **W praktyce** efekt wdrożenia jest trudny do izolowania – nikt nie widział twardego A/B testu pokazującego mierzalny lift cytowalności wyłącznie z `llms.txt`
 
-Praktyczna rekomendacja: tak, wdrażaj `llms.txt`, ale traktuj go jako dodatek, nie substytut prawidłowej struktury technicznej. Plik powinien zawierać 5–15 najważniejszych zasobów, opisanych zwięźle w naturalnym języku.
+Praktyczna rekomendacja: tak, możesz wdrożyć `llms.txt` jako dodatek, ale **nie kosztem prawidłowej struktury technicznej strony** (SSR, schema.org, sensowny `robots.txt`). Plik powinien zawierać 5–15 najważniejszych zasobów, opisanych zwięźle w naturalnym języku. Kolejność priorytetów: `robots.txt` → schema.org → SSR/SSG → dopiero potem `llms.txt`.
 
 Przykład dla agencji SEO:
 
@@ -164,6 +175,15 @@ Praktyczny harmonogram wdrożenia pełnej obsługi botów AI dla średniej stron
 4. **Tydzień 4: rozwiązanie problemu JavaScript** (jeśli istnieje) – migracja na SSR (jeśli realna) lub setup pre-renderingu
 
 Po 30 dniach robisz re-test: `curl -A "GPTBot"` zwraca pełny tekst, schema.org wszędzie waliduje, `llms.txt` cytuje 10+ URL-i. Trzy miesiące później widzisz wzrost Citation Rate w 4 silnikach AI.
+
+<aside class="callout-expert">
+  <div class="callout-icon"><img src="/authors/michal-ziach.avif" alt="Michał Ziach" /></div>
+  <div class="callout-body">
+    <div class="callout-label">Opinia eksperta</div>
+    <p>W audytach technicznych w ICEA największe zaskoczenie zawsze wywołuje pierwszy slajd: <code>curl -A "GPTBot"</code> zwraca pustkę albo szkielet aplikacji. To dotyczy mniej więcej 60% stron klientów na nowoczesnych stackach (React/Vue/Angular bez SSR). Wszystkie inne optymalizacje GEO – schema, llms.txt, content – nie mają najmniejszego znaczenia, dopóki bot fizycznie nie dostaje tekstu. <strong>Pierwszy ruch zawsze: server-side rendering.</strong></p>
+    <div class="callout-author">Michał Ziach · CTO, ICEA</div>
+  </div>
+</aside>
 
 ## Wnioski
 
