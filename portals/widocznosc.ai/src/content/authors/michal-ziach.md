@@ -12,5 +12,6 @@ expertise:
   - Autorskie narzędzia AI dla SEO
 photo: /authors/michal-ziach.avif
 iceaProfile: https://www.grupa-icea.pl/autor/michal-ziach/
+linkedin: https://www.linkedin.com/in/micha%C5%82-ziach/
 publishedAt: 2026-05-06
 ---

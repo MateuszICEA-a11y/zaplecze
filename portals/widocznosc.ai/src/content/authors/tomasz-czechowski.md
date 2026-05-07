@@ -14,5 +14,6 @@ expertise:
   - Audyty techniczne
 photo: /authors/tomasz-czechowski.avif
 iceaProfile: https://www.grupa-icea.pl/autor/tomasz-czechowski/
+linkedin: https://www.linkedin.com/in/tomasz-czechowski/
 publishedAt: 2026-05-06
 ---

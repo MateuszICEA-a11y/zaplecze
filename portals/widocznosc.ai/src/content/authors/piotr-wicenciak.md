@@ -11,5 +11,6 @@ expertise:
   - Analiza konkurencji
 photo: /authors/piotr-wicenciak.avif
 iceaProfile: https://www.grupa-icea.pl/autor/piotr-wicenciak/
+linkedin: https://www.linkedin.com/in/piotr-wicenciak/
 publishedAt: 2026-05-06
 ---

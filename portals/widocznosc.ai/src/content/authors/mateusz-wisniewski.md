@@ -14,5 +14,6 @@ expertise:
   - Automatyzacje SEO
 photo: /authors/mateusz-wisniewski.webp
 iceaProfile: https://www.grupa-icea.pl/autor/mateusz-wisniewski/
+linkedin: https://www.linkedin.com/in/mateusz-wi%C5%9Bniewski-b23338221/
 publishedAt: 2026-05-06
 ---

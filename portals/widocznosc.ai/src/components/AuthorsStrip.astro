@@ -46,13 +46,11 @@ const initials = (name: string) =>
           const data = author.data;
           const isFeatured = idx === 0;
           return (
-            <a
-              href={`/autor/${author.id}`}
+            <article
               class:list={[
                 'author-card group relative flex flex-col items-center rounded-2xl border p-7 text-center transition-all duration-300',
                 isFeatured ? 'author-card--featured' : '',
               ]}
-              aria-label={`Profil: ${data.name}, ${data.role}`}
             >
               {data.photo ? (
                 <div
@@ -86,8 +84,14 @@ const initials = (name: string) =>
                 </div>
               )}
 
-              <h3 class="text-ink font-display group-hover:text-accent mb-2 text-2xl font-semibold tracking-[-0.02em] transition">
-                {data.name}
+              <h3 class="text-ink font-display mb-2 text-xl font-semibold tracking-[-0.02em] whitespace-nowrap">
+                <a
+                  href={`/autor/${author.id}`}
+                  class="hover:text-accent transition"
+                  aria-label={`Profil: ${data.name}, ${data.role}`}
+                >
+                  {data.name}
+                </a>
               </h3>
 
               <div class="text-accent mb-5 font-mono text-[11px] tracking-[0.18em] uppercase">
@@ -100,10 +104,27 @@ const initials = (name: string) =>
                 </p>
               )}
 
-              <span class="text-ink-soft group-hover:text-accent mt-auto inline-flex items-center gap-1.5 font-mono text-[11px] tracking-wider uppercase transition">
-                Profil <span aria-hidden="true">↗</span>
-              </span>
-            </a>
+              <div class="mt-auto flex items-center gap-5">
+                <a
+                  href={`/autor/${author.id}`}
+                  class="text-ink-soft hover:text-accent inline-flex items-center gap-1.5 font-mono text-[11px] tracking-wider uppercase transition"
+                  aria-label={`Pełny profil: ${data.name}`}
+                >
+                  Profil <span aria-hidden="true">→</span>
+                </a>
+                {data.linkedin && (
+                  <a
+                    href={data.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-ink-soft hover:text-accent inline-flex items-center gap-1.5 font-mono text-[11px] tracking-wider uppercase transition"
+                    aria-label={`LinkedIn: ${data.name} (otwiera się w nowym oknie)`}
+                  >
+                    LinkedIn <span aria-hidden="true">↗</span>
+                  </a>
+                )}
+              </div>
+            </article>
           );
         })
       }
