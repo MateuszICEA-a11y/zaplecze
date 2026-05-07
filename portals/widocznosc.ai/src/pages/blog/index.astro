@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import ScrollUpButton from '../../components/ScrollUpButton.astro';
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import { CATEGORY_LABELS } from '../../content.config';
 
@@ -11,7 +12,6 @@ const posts = (await getCollection('blog')).sort(
 );
 
 const featuredPost = posts[0];
-const sidebarPosts = posts.slice(1, 5);
 const gridPosts = posts.slice(1);
 
 const formatDate = (date: Date) =>
@@ -20,119 +20,178 @@ const formatDate = (date: Date) =>
 
 <Layout
   title="Baza wiedzy – widocznosc.ai"
-  description="Latest insights, trends, and updates from the Tailcast team."
+  description="Wiedza o pozycjonowaniu marek w wyszukiwarkach AI – ChatGPT, Claude, Gemini, Perplexity. Od fundamentów GEO po techniczne deep-dive."
 >
   <Navbar />
-  <section class="bg-bgDark2 pt-32 pb-20 lg:pt-36">
-    <div class="content-container">
-      <div class="fade-in">
-        <!-- Featured + sidebar -->
-        <div class="mb-16 flex flex-col gap-8 lg:flex-row">
-          <!-- Featured post (left) -->
-          <a href={`/blog/${featuredPost.id}`} class="group lg:w-3/5">
-            <article
-              class="card flex h-full flex-col overflow-hidden rounded-3xl transition lg:min-h-full"
-            >
-              <div class="p-4 lg:flex-grow">
-                <div
-                  class="bg-bgDark1Lighter flex aspect-[16/9] items-center justify-center rounded-2xl lg:aspect-auto lg:h-full"
-                >
-                  <svg
-                    class="text-accent/30 h-32 w-32"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="0.5"
-                    viewBox="0 0 24 24"
-                    set:html={featuredPost.data.icon}
-                  />
-                </div>
-              </div>
-              <div class="px-6 pt-2 pb-3 sm:px-8 sm:pt-3 sm:pb-4">
-                <div class="mb-3 flex items-center gap-3">
-                  <span class="chip">{CATEGORY_LABELS[featuredPost.data.category]}</span>
-                  <span class="meta">{formatDate(featuredPost.data.date)}</span>
-                </div>
-                <h2
-                  class="text-ink font-display text-2xl font-semibold tracking-tight transition group-hover:text-accent sm:text-3xl"
-                >
-                  {featuredPost.data.title}
-                </h2>
-                <p class="text-secondaryText mt-2 hidden text-sm leading-relaxed sm:block">
-                  {featuredPost.data.subtitle}
-                </p>
-              </div>
-            </article>
-          </a>
 
-          <!-- Sidebar posts (right) -->
-          <div class="flex flex-col gap-4 lg:w-2/5">
-            {
-              sidebarPosts.map((post) => (
-                <a
-                  href={`/blog/${post.id}`}
-                  class="group card flex items-center gap-4 p-4 transition"
-                >
-                  <div class="bg-bgDark1Lighter flex h-20 w-20 shrink-0 items-center justify-center rounded-xl">
-                    <svg
-                      class="text-accent/40 h-8 w-8"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1"
-                      viewBox="0 0 24 24"
-                      set:html={post.data.icon}
-                    />
-                  </div>
-                  <div>
-                    <h3 class="text-ink font-display leading-snug font-semibold tracking-tight transition group-hover:text-accent">
-                      {post.data.title}
-                    </h3>
-                    <div class="meta mt-2">{formatDate(post.data.date)}</div>
-                  </div>
-                </a>
-              ))
-            }
-          </div>
+  <main class="flex-grow">
+
+    <!-- Cinematic Featured Hero -->
+    <section class="relative mt-28 mb-20 overflow-hidden rounded-3xl border lg:mx-12 xl:mx-auto xl:max-w-[1280px]" style="border-color: rgb(255 255 255 / 0.08); background: var(--bg-card);">
+
+      <!-- Cinematic background image -->
+      <a href={`/blog/${featuredPost.id}`} class="block">
+        <div class="absolute inset-0 z-0">
+          <Image
+            src={featuredPost.data.image}
+            alt={featuredPost.data.title}
+            widths={[1280, 1920]}
+            sizes="(min-width: 1280px) 1280px, 100vw"
+            class="featured-bg h-full w-full object-cover"
+            loading="eager"
+          />
+          <!-- Gradient overlays – left fade for text legibility, bottom fade -->
+          <div class="absolute inset-0" style="background: linear-gradient(to right, var(--bg) 0%, rgb(7 8 16 / 0.85) 35%, transparent 75%);"></div>
+          <div class="absolute inset-0" style="background: linear-gradient(to top, var(--bg) 0%, transparent 50%);"></div>
         </div>
 
-        <!-- All posts grid -->
-        <h2 class="text-ink font-display mb-8 text-3xl font-semibold tracking-tight md:text-4xl">
+        <!-- Content overlay -->
+        <div class="relative z-10 grid grid-cols-1 items-center gap-8 p-8 md:p-14 lg:grid-cols-2 lg:p-20 lg:min-h-[28rem]">
+          <div class="flex flex-col justify-center gap-7">
+
+            <!-- Meta row -->
+            <div class="flex flex-wrap items-center gap-4">
+              <span class="text-accent inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.18em] uppercase">
+                <span class="bg-accent inline-block h-2 w-2 animate-pulse rounded-full"></span>
+                {CATEGORY_LABELS[featuredPost.data.category]}
+              </span>
+              <span class="text-ink-mute font-mono text-[11px] tracking-[0.18em] uppercase">
+                {formatDate(featuredPost.data.date)}
+              </span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="text-ink font-display text-3xl leading-[1.1] font-semibold tracking-[-0.03em] sm:text-4xl lg:text-[2.75rem]">
+              {featuredPost.data.title}
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-ink-soft max-w-xl text-base leading-relaxed sm:text-lg">
+              {featuredPost.data.subtitle}
+            </p>
+
+            <!-- CTA -->
+            <div>
+              <span class="featured-cta inline-flex items-center gap-2 rounded-lg border px-7 py-3.5 font-mono text-[11px] tracking-[0.18em] uppercase transition" style="border-color: rgb(255 255 255 / 0.15); color: var(--ink);">
+                Czytaj więcej
+                <span class="featured-arrow text-accent transition-transform" aria-hidden="true">→</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </a>
+    </section>
+
+    <!-- Grid section -->
+    <section class="border-rule border-t" style="background: rgb(13 15 26 / 0.4);">
+      <div class="content-container py-20 lg:py-24">
+
+        <h2 class="text-ink font-display mb-14 text-3xl font-semibold tracking-[-0.02em] md:text-[2rem]">
           Wszystkie artykuły
         </h2>
-        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+        <div class="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {
-            gridPosts.map((post) => (
-              <a href={`/blog/${post.id}`} class="group">
-                <article class="card flex h-full flex-col overflow-hidden rounded-3xl transition">
-                  <div class="p-4">
-                    <div class="bg-bgDark1Lighter flex aspect-[3/2] items-center justify-center overflow-hidden rounded-2xl">
-                      <svg
-                        class="text-accent/30 h-16 w-16"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="0.75"
-                        viewBox="0 0 24 24"
-                        set:html={post.data.icon}
-                      />
-                    </div>
+            posts.map((post) => (
+              <a
+                href={`/blog/${post.id}`}
+                class="post-card group relative flex h-full flex-col overflow-hidden rounded-2xl border transition"
+                style="background: var(--bg-card); border-color: rgb(255 255 255 / 0.06);"
+              >
+                <!-- Image with luminosity blend + hover normal -->
+                <div class="relative h-56 overflow-hidden">
+                  <Image
+                    src={post.data.image}
+                    alt={post.data.title}
+                    widths={[480, 720, 960]}
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    class="post-card-img h-full w-full object-cover transition duration-700"
+                    loading="lazy"
+                  />
+                  {/* Bottom gradient fade into card body */}
+                  <div class="absolute inset-0" style="background: linear-gradient(to top, var(--bg-card) 0%, rgb(17 19 31 / 0.4) 35%, transparent 70%);"></div>
+
+                  {/* Top row: category chip + hover arrow */}
+                  <div class="absolute top-5 right-5 left-5 flex items-start justify-between">
+                    <span
+                      class="text-accent inline-flex items-center rounded-md border px-2.5 py-1 font-mono text-[10px] tracking-[0.15em] uppercase backdrop-blur-md"
+                      style="background: rgb(7 8 16 / 0.7); border-color: rgb(255 106 46 / 0.3);"
+                    >
+                      {CATEGORY_LABELS[post.data.category]}
+                    </span>
+                    <span
+                      class="post-card-arrow text-ink rounded-full p-1.5 opacity-0 backdrop-blur-md transition-all duration-300 group-hover:opacity-100"
+                      style="background: rgb(255 106 46 / 0.2);"
+                      aria-hidden="true"
+                    >
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17L17 7M17 7H8M17 7V16" />
+                      </svg>
+                    </span>
                   </div>
-                  <div class="flex grow flex-col px-6 pt-2 pb-8">
-                    <div class="mb-3 flex items-center gap-3">
-                      <span class="chip">{CATEGORY_LABELS[post.data.category]}</span>
-                      <span class="meta">{formatDate(post.data.date)}</span>
-                    </div>
-                    <h2 class="text-ink font-display mb-3 text-xl font-semibold tracking-tight transition group-hover:text-accent">
-                      {post.data.title}
-                    </h2>
-                    <p class="text-ink-soft text-sm leading-relaxed">{post.data.subtitle}</p>
+                </div>
+
+                {/* Body */}
+                <div class="flex grow flex-col gap-5 p-7">
+                  <h3 class="text-ink font-display text-lg leading-snug font-semibold tracking-tight transition group-hover:text-accent lg:text-xl">
+                    {post.data.title}
+                  </h3>
+
+                  <div class="border-rule mt-auto flex items-center justify-between border-t pt-5 font-mono text-[10px] tracking-[0.15em] uppercase">
+                    <span class="text-ink-mute">{post.data.tags?.[0] ?? CATEGORY_LABELS[post.data.category]}</span>
+                    <span class="text-ink-mute">{post.data.readTime ?? '–'} czytania</span>
                   </div>
-                </article>
+                </div>
               </a>
             ))
           }
         </div>
+
       </div>
-    </div>
-  </section>
+    </section>
+
+  </main>
+
   <Footer />
   <ScrollUpButton />
 </Layout>
+
+<style>
+  /* Featured hero – cinematic image effect */
+  .featured-bg {
+    opacity: 0.55;
+    filter: saturate(0.85);
+    transition:
+      opacity 0.6s ease,
+      filter 0.6s ease,
+      transform 0.6s ease;
+  }
+  a:hover .featured-bg {
+    opacity: 0.7;
+    filter: saturate(1);
+    transform: scale(1.02);
+  }
+  .featured-cta:hover {
+    border-color: rgb(255 106 46 / 0.5);
+    background: rgb(255 106 46 / 0.08);
+  }
+  a:hover .featured-arrow {
+    transform: translateX(4px);
+  }
+
+  /* Card hover – thermal glow + image desaturation reverse */
+  .post-card-img {
+    opacity: 0.65;
+    filter: saturate(0.7);
+  }
+  .post-card:hover .post-card-img {
+    opacity: 0.95;
+    filter: saturate(1);
+    transform: scale(1.05);
+  }
+  .post-card:hover {
+    border-color: rgb(255 106 46 / 0.3);
+    box-shadow: 0 0 30px rgb(255 106 46 / 0.12);
+    transform: translateY(-2px);
+  }
+</style>
