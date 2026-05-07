@@ -2,108 +2,71 @@
 const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Copilot'];
 ---
 
-<section
-  class="hero-mesh relative w-full overflow-hidden pb-20 md:pb-24 lg:pb-28"
-  style="background: var(--bg);"
-  id="home"
->
-  <div class="hero-container relative z-10 pt-32 md:pt-36 lg:pt-40">
+<section class="hero-section" id="home">
+  <div class="hero-container">
 
-    <!-- Hero grid – asymetryczny 2-col: copy 7 / visual 5 -->
-    <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-gutter">
+    <!-- Hero grid – 2-col: copy 7 / spotlight 5 -->
+    <div class="hero-grid">
 
-      <!-- LEFT: copy stack -->
-      <div class="flex flex-col gap-8 lg:col-span-7">
+      <!-- LEFT: copy stack – display-xxl headline + body-lg subhead + 2 pill CTAs -->
+      <div class="hero-copy">
 
-        <!-- Eyebrow chip – meta info na żywo -->
         <div class="hero-fade-in" style="--delay: 0s">
-          <span
-            class="chip w-max"
-            aria-label="Generative Engine Optimization – pozycjonowanie w wyszukiwarkach AI"
-          >
-            <span class="chip-dot" aria-hidden="true"></span>
-            GEO · pozycjonowanie w&nbsp;AI
-          </span>
+          <span class="eyebrow">Generative Engine Optimization</span>
         </div>
 
-        <!-- H1 – display, Inter Tight, text-balance, left-aligned -->
         <div class="hero-fade-in" style="--delay: 0.05s">
-          <h1
-            class="text-ink font-display text-balance text-[2rem] leading-[1.1] font-semibold tracking-[-0.035em] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.25rem] xl:text-[3.625rem]"
-          >
-            Sprawdź, co ChatGPT, Claude, Gemini i&nbsp;Perplexity mówią o&nbsp;<span class="text-accent">Twojej marce</span>.
+          <h1 class="hero-headline">
+            Sprawdź, co ChatGPT, Claude, Gemini i&nbsp;Perplexity mówią o&nbsp;Twojej marce.
           </h1>
         </div>
 
-        <!-- Lede -->
         <div class="hero-fade-in" style="--delay: 0.1s">
-          <p
-            class="text-ink max-w-2xl text-base leading-relaxed sm:text-lg sm:leading-[1.55]"
-          >
+          <p class="hero-subhead">
             Sprawdź już teraz, czy AI poleca Twoją markę, czy boty AI mają dostęp
             do&nbsp;Twojej strony i&nbsp;jak zoptymalizować swój content, aby był cytowany
             przez wyszukiwarki AI.
           </p>
         </div>
 
-        <!-- CTAs – left-aligned -->
-        <div class="hero-fade-in" style="--delay: 0.15s">
-          <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-            <a class="btn-primary" href="#audyty" aria-label="Uruchom darmowe testy widoczności AI">
-              Uruchom darmowe testy &rarr;
-            </a>
-            <a class="btn-ghost" href="/kontakt?type=full-audit" aria-label="Zamów pełny audyt widoczności AI">
-              Zamów pełny audyt
-            </a>
-          </div>
+        <div class="hero-fade-in hero-ctas" style="--delay: 0.15s">
+          <a class="btn-primary" href="#audyty" aria-label="Uruchom darmowe testy widoczności AI">
+            Uruchom darmowe testy
+          </a>
+          <a class="btn-secondary" href="/kontakt?type=full-audit" aria-label="Zamów pełny audyt widoczności AI">
+            Zamów pełny audyt
+          </a>
         </div>
 
       </div>
 
-      <!-- RIGHT: abstract visual – 3 koncentryczne pierścienie + glow center -->
-      <div class="hero-fade-in hidden justify-center lg:col-span-5 lg:flex" style="--delay: 0.2s" aria-hidden="true">
-        <div class="hero-orbit relative aspect-square w-full max-w-[26rem]">
-
-          <!-- Pierścień zewnętrzny – wolno, z 4 markerami -->
-          <div class="hero-orbit-outer absolute inset-0 rounded-full border" style="border-color: var(--rule);">
-            <span class="bg-accent absolute top-0 left-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full" style="box-shadow: 0 0 16px var(--accent-glow);"></span>
-            <span class="bg-ink-mute absolute bottom-0 left-1/2 h-1.5 w-1.5 -translate-x-1/2 translate-y-1/2 rounded-full"></span>
-            <span class="bg-ink-mute absolute top-1/2 right-0 h-1.5 w-1.5 -translate-y-1/2 translate-x-1/2 rounded-full"></span>
-            <span class="bg-ink-mute absolute top-1/2 left-0 h-1.5 w-1.5 -translate-y-1/2 -translate-x-1/2 rounded-full"></span>
+      <!-- RIGHT: violet gradient spotlight card – atmospheric tile -->
+      <div class="hero-fade-in hero-spotlight-wrap" style="--delay: 0.2s" aria-hidden="false">
+        <article class="card-spotlight card-spotlight-violet-pan">
+          <span class="hero-spotlight-eyebrow">5 silników AI</span>
+          <p class="hero-spotlight-quote">
+            "Jeden raport, pięć perspektyw. Zobacz, jak ChatGPT, Claude, Gemini, Perplexity
+            i&nbsp;Bing Copilot odpowiadają o&nbsp;Twojej marce – w&nbsp;3 dni."
+          </p>
+          <div class="hero-spotlight-meta">
+            <span>Audyt 6 900 PLN</span>
+            <span aria-hidden="true">·</span>
+            <span>3 dni delivery</span>
           </div>
-
-          <!-- Pierścień średni – w drugą stronę, accent edge -->
-          <div class="hero-orbit-mid absolute inset-[14%] rounded-full border" style="border-color: var(--accent-edge);"></div>
-
-          <!-- Pierścień wewnętrzny – statyczny, mocniejszy accent -->
-          <div class="absolute inset-[30%] rounded-full border-2" style="border-color: rgb(255 106 46 / 0.5);"></div>
-
-          <!-- Centralna poświata orange -->
-          <div
-            class="absolute inset-[42%] rounded-full"
-            style="background: radial-gradient(circle, rgb(255 106 46 / 0.65) 0%, rgb(255 106 46 / 0.18) 55%, transparent 75%); filter: blur(2px);"
-          ></div>
-
-          <!-- Centralny symbol AI -->
-          <div class="absolute inset-0 flex items-center justify-center">
-            <span class="text-ink font-mono text-xl font-semibold tracking-[0.18em]">AI</span>
-          </div>
-        </div>
+        </article>
       </div>
 
     </div>
 
-    <!-- Logo wall pod heroem – pełna szerokość, separator -->
-    <div class="hero-fade-in mt-20 border-t pt-12 lg:mt-28" style="border-color: var(--rule); --delay: 0.25s">
-      <p class="text-ink-mute mb-8 text-center font-mono text-[11px] tracking-[0.2em] uppercase">
-        Sprawdzamy w&nbsp;najpopularniejszych wyszukiwarkach AI
+    <!-- Logo wall pod heroem – pełna szerokość, hairline separator -->
+    <div class="hero-fade-in hero-logowall" style="--delay: 0.25s">
+      <p class="eyebrow hero-logowall-label">
+        Sprawdzamy w najpopularniejszych wyszukiwarkach AI
       </p>
-      <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 lg:gap-x-16">
+      <div class="hero-logowall-row">
         {
           aiEngines.map((engine) => (
-            <span class="text-ink-soft hover:text-ink font-display text-2xl font-semibold tracking-tight opacity-65 transition hover:opacity-100 sm:text-[1.75rem] lg:text-3xl">
-              {engine}
-            </span>
+            <span class="hero-logowall-engine">{engine}</span>
           ))
         }
       </div>
@@ -113,10 +76,182 @@ const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Copilot'];
 </section>
 
 <style>
+  .hero-section {
+    position: relative;
+    width: 100%;
+    background: var(--bg-canvas);
+    padding-bottom: 96px;
+  }
+
+  .hero-container {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding: 96px 30px 0 30px;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-container {
+      padding: 128px 40px 0 40px;
+    }
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: 7fr 5fr;
+      gap: 60px;
+    }
+  }
+
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  /* Display headline – Mona Sans 110px / -5.5px sygnatura Framer */
+  .hero-headline {
+    font-family: var(--font-display);
+    font-weight: 500;
+    color: var(--ink);
+    margin: 0;
+
+    /* Desktop XL = display-lg 62px (po 2-col layout, 110px tylko full-bleed) */
+    font-size: clamp(2rem, 5vw + 0.5rem, 3.875rem);
+    line-height: 1;
+    letter-spacing: -0.05em;
+    text-wrap: balance;
+  }
+
+  @media (min-width: 1280px) {
+    .hero-headline {
+      font-size: 4.25rem;
+      letter-spacing: -3.4px;
+    }
+  }
+
+  /* Subhead body-lg, biały (kluczowy tekst) */
+  .hero-subhead {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-lg);
+    font-weight: 400;
+    line-height: 1.45;
+    letter-spacing: var(--ls-body-lg);
+    color: var(--ink);
+    max-width: 540px;
+    margin: 0;
+  }
+
+  /* CTAs left-aligned, primary white pill + secondary charcoal pill */
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+
+  /* Spotlight card right column */
+  .hero-spotlight-wrap {
+    width: 100%;
+    max-width: 480px;
+    margin-inline: auto;
+  }
+
+  .card-spotlight {
+    aspect-ratio: 5 / 6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 360px;
+  }
+
+  .hero-spotlight-eyebrow {
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    font-weight: 500;
+    letter-spacing: var(--ls-caption);
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .hero-spotlight-quote {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--fs-subhead);
+    line-height: 1.3;
+    letter-spacing: var(--ls-subhead);
+    color: var(--ink);
+    margin: 24px 0 0 0;
+    text-wrap: balance;
+  }
+
+  .hero-spotlight-meta {
+    display: flex;
+    gap: 8px;
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    letter-spacing: var(--ls-caption);
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 16px;
+  }
+
+  /* Logo wall */
+  .hero-logowall {
+    margin-top: 80px;
+    padding-top: 40px;
+    border-top: 1px solid var(--hairline-soft);
+  }
+
+  .hero-logowall-label {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .hero-logowall-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 24px 48px;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-logowall-row {
+      gap: 24px 64px;
+    }
+  }
+
+  .hero-logowall-engine {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.5rem;
+    letter-spacing: -0.02em;
+    color: var(--ink-muted);
+    transition: color 0.15s ease;
+    line-height: 1;
+  }
+
+  .hero-logowall-engine:hover {
+    color: var(--ink);
+  }
+
+  @media (min-width: 1024px) {
+    .hero-logowall-engine {
+      font-size: 1.75rem;
+    }
+  }
+
+  /* Fade-in animation */
   .hero-fade-in {
     opacity: 0;
     transform: translateY(10px);
-    animation: heroFadeIn 0.5s ease forwards;
+    animation: heroFadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
     animation-delay: var(--delay);
   }
 
@@ -127,58 +262,11 @@ const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Copilot'];
     }
   }
 
-  /* Hero mesh background – subtelny accent przy abstract visual po prawej.
-     Mniej "orange flood", więcej akcentu w jednym miejscu (wzór AIVISION). */
-  .hero-mesh::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background:
-      radial-gradient(circle at 78% 32%, rgb(255 106 46 / 0.18) 0%, transparent 38%),
-      radial-gradient(circle at 12% 88%, rgb(255 106 46 / 0.06) 0%, transparent 35%);
-    z-index: 0;
-  }
-
-  .hero-mesh > * {
-    position: relative;
-    z-index: 1;
-  }
-
-  /* Wider container dla hero – więcej oddechu na 1440+ ekranach */
-  .hero-container {
-    width: 100%;
-    max-width: 1440px;
-    margin-inline: auto;
-    padding-inline: 1.25rem;
-  }
-  @media (min-width: 640px) {
-    .hero-container { padding-inline: 2rem; }
-  }
-  @media (min-width: 1024px) {
-    .hero-container { padding-inline: 3rem; }
-  }
-  @media (min-width: 1280px) {
-    .hero-container { padding-inline: 4rem; }
-  }
-
-  /* Orbit visual – 3 koncentryczne pierścienie obracające się w przeciwne strony */
-  .hero-orbit-outer {
-    animation: orbit-spin 80s linear infinite;
-  }
-  .hero-orbit-mid {
-    animation: orbit-spin 50s linear infinite reverse;
-  }
-
-  @keyframes orbit-spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-
   @media (prefers-reduced-motion: reduce) {
-    .hero-orbit-outer,
-    .hero-orbit-mid {
+    .hero-fade-in {
       animation: none;
+      opacity: 1;
+      transform: none;
     }
   }
 </style>
