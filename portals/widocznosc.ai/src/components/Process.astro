@@ -1,0 +1,143 @@
+---
+/**
+ * Process – jak wygląda pełny audyt widoczności AI (4 kroki, 3 dni delivery).
+ * Stepper z numeracją 01-04, connector lines, every step: title + duration + opis + bullets.
+ */
+
+interface Step {
+  num: string;
+  title: string;
+  duration: string;
+  desc: string;
+  bullets: string[];
+}
+
+const steps: Step[] = [
+  {
+    num: '01',
+    title: 'Mapa pytań',
+    duration: 'Dzień 1',
+    desc: 'Wybieramy 30–50 zapytań, które reprezentują rzeczywistych klientów Twojej branży – od research-stage po decyzję zakupową.',
+    bullets: [
+      'Analiza buyer persona i ścieżki zakupowej',
+      'Long-tail i komparatywne ("X vs Y", "najlepsze X dla…")',
+      'Lista zaakceptowana przez Ciebie przed startem',
+    ],
+  },
+  {
+    num: '02',
+    title: 'Test 5 silników AI',
+    duration: 'Dzień 1–2',
+    desc: 'Odpytujemy ChatGPT, Claude, Gemini, Perplexity i Copilot każdym pytaniem. Zbieramy pełne odpowiedzi, cytowane źródła, listy konkurentów.',
+    bullets: [
+      'Mention rate i Citation rate per platforma',
+      'Share of Voice vs 3–5 głównych konkurentów',
+      'Sentiment, halucynacje, błędne dane o marce',
+    ],
+  },
+  {
+    num: '03',
+    title: 'Audyt techniczny + content',
+    duration: 'Dzień 2',
+    desc: 'Sprawdzamy, czy boty AI mają dostęp do strony, jak strukturyzowany jest content i co blokuje cytowania według badań Princeton/Indig.',
+    bullets: [
+      'robots.txt + dostęp dla 13 botów AI',
+      'Schema.org, llms.txt, markdown wersje',
+      'Front-loading, chunkable structure, cytowania źródeł',
+    ],
+  },
+  {
+    num: '04',
+    title: 'Raport + plan 30/60/90',
+    duration: 'Dzień 3',
+    desc: 'Dostajesz raport PDF (40–60 stron), dashboard z danymi i 60-min sesję prezentacyjną z konkretnym planem działania na 90 dni.',
+    bullets: [
+      'Lista 20+ zmian z priorytetem P0/P1/P2',
+      'Quick-wins do wdrożenia od ręki (schema, llms.txt)',
+      '60-min sesja Q&A z ekspertem ICEA',
+    ],
+  },
+];
+---
+
+<section
+  class="border-rule relative w-full border-t"
+  style="background: var(--bg-alt);"
+  aria-labelledby="process-title"
+>
+  <div class="content-container py-20 lg:py-28">
+
+    <!-- Section header -->
+    <div class="mx-auto mb-16 max-w-3xl text-center">
+      <span class="meta mb-4 inline-block">Jak to działa</span>
+      <h2
+        id="process-title"
+        class="text-ink font-display mt-2 mb-6 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl lg:text-5xl"
+      >
+        Pełny audyt w&nbsp;3&nbsp;dni &ndash; krok po&nbsp;kroku
+      </h2>
+      <p class="text-ink text-lg leading-relaxed">
+        Bez tygodni czekania, bez "wracamy z&nbsp;raportem za miesiąc". Cztery kroki,
+        konkretny deliverable na&nbsp;końcu każdego.
+      </p>
+    </div>
+
+    <!-- Stepper grid -->
+    <ol class="relative grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+
+      <!-- Connector line – tylko desktop, biegnie horyzontalnie pod numerami -->
+      <div
+        class="pointer-events-none absolute top-[1.875rem] right-[8%] left-[8%] hidden h-px lg:block"
+        style="background: linear-gradient(to right, transparent, var(--accent-edge) 10%, var(--accent-edge) 90%, transparent);"
+        aria-hidden="true"
+      ></div>
+
+      {
+        steps.map((step) => (
+          <li class="relative flex flex-col">
+            <!-- Numbered badge -->
+            <div class="relative mb-6 flex items-center gap-3">
+              <span
+                class="bg-bg text-accent border-rule font-display flex h-[3.75rem] w-[3.75rem] items-center justify-center rounded-full border-2 text-xl font-semibold tracking-[-0.02em]"
+                style="border-color: var(--accent-edge); box-shadow: 0 0 0 4px var(--bg-alt);"
+                aria-hidden="true"
+              >
+                {step.num}
+              </span>
+              <span class="text-ink-mute font-mono text-[10px] tracking-[0.18em] uppercase">
+                {step.duration}
+              </span>
+            </div>
+
+            <h3 class="text-ink font-display mb-3 text-xl font-semibold tracking-[-0.02em] lg:text-[1.375rem]">
+              {step.title}
+            </h3>
+
+            <p class="text-ink-soft mb-5 text-sm leading-relaxed">
+              {step.desc}
+            </p>
+
+            <ul class="text-ink-soft space-y-1.5 text-sm leading-relaxed">
+              {step.bullets.map((b) => (
+                <li class="flex gap-2.5">
+                  <span class="text-accent mt-0.5 font-mono text-xs" aria-hidden="true">
+                    →
+                  </span>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+    </ol>
+
+    <!-- Footer note pod krokami -->
+    <div class="mt-16 text-center">
+      <p class="text-ink-mute font-mono text-[11px] tracking-[0.12em] uppercase">
+        Faktura, NDA i&nbsp;dane ICEA → wszystko gotowe przed startem · Bez ukrytych kosztów
+      </p>
+    </div>
+
+  </div>
+</section>
