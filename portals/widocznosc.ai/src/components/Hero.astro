@@ -1,74 +1,114 @@
 ---
-const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Bing Copilot'];
+const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Copilot'];
 ---
 
 <section
-  class="hero-mesh relative flex w-full items-center justify-center overflow-hidden pb-32 md:pb-40 lg:pb-48"
+  class="hero-mesh relative w-full overflow-hidden pb-20 md:pb-24 lg:pb-28"
   style="background: var(--bg);"
   id="home"
 >
-  <div
-    class="flex w-full flex-col items-center justify-center pt-32 text-center md:w-[58rem] md:pt-40 lg:pt-44 xl:w-[64rem]"
-  >
-    <!-- Eyebrow chip – meta info na żywo -->
-    <div class="hero-fade-in" style="--delay: 0s">
-      <span class="chip mt-12 mb-8" aria-label="Generative Engine Optimization – pozycjonowanie w wyszukiwarkach AI">
-        <span class="chip-dot" aria-hidden="true"></span>
-        GEO · pozycjonowanie w AI
-      </span>
+  <div class="content-container relative z-10 pt-32 md:pt-36 lg:pt-40">
+
+    <!-- Hero grid – asymetryczny 2-col: copy 7 / visual 5 -->
+    <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-gutter">
+
+      <!-- LEFT: copy stack -->
+      <div class="flex flex-col gap-8 lg:col-span-7">
+
+        <!-- Eyebrow chip – meta info na żywo -->
+        <div class="hero-fade-in" style="--delay: 0s">
+          <span
+            class="chip w-max"
+            aria-label="Generative Engine Optimization – pozycjonowanie w wyszukiwarkach AI"
+          >
+            <span class="chip-dot" aria-hidden="true"></span>
+            GEO · pozycjonowanie w&nbsp;AI
+          </span>
+        </div>
+
+        <!-- H1 – display, Inter Tight, text-balance, left-aligned -->
+        <div class="hero-fade-in" style="--delay: 0.05s">
+          <h1
+            class="text-ink font-display text-balance text-[2rem] leading-[1.1] font-semibold tracking-[-0.035em] sm:text-[2.5rem] md:text-[3rem] lg:text-[3.25rem] xl:text-[3.625rem]"
+          >
+            Sprawdź, co ChatGPT, Claude, Gemini i&nbsp;Perplexity mówią o&nbsp;<span class="text-accent">Twojej marce</span>.
+          </h1>
+        </div>
+
+        <!-- Lede -->
+        <div class="hero-fade-in" style="--delay: 0.1s">
+          <p
+            class="text-ink-soft max-w-2xl text-base leading-relaxed sm:text-lg sm:leading-[1.55]"
+          >
+            Sprawdź już teraz, czy AI poleca Twoją markę, czy boty AI mają dostęp do&nbsp;Twojej strony
+            i&nbsp;jak przerobić content, żeby trafiał do&nbsp;cytowań. Pełny audyt z&nbsp;planem działania
+            &ndash; w&nbsp;3&nbsp;dni.
+          </p>
+        </div>
+
+        <!-- CTAs – left-aligned -->
+        <div class="hero-fade-in" style="--delay: 0.15s">
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
+            <a class="btn-primary" href="#audyty" aria-label="Uruchom darmowe testy widoczności AI">
+              Uruchom darmowe testy &rarr;
+            </a>
+            <a class="btn-ghost" href="/kontakt?type=full-audit" aria-label="Zamów pełny audyt widoczności AI">
+              Zamów pełny audyt
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: abstract visual – 3 koncentryczne pierścienie + glow center -->
+      <div class="hero-fade-in hidden justify-center lg:col-span-5 lg:flex" style="--delay: 0.2s" aria-hidden="true">
+        <div class="hero-orbit relative aspect-square w-full max-w-[26rem]">
+
+          <!-- Pierścień zewnętrzny – wolno, z 4 markerami -->
+          <div class="hero-orbit-outer absolute inset-0 rounded-full border" style="border-color: var(--rule);">
+            <span class="bg-accent absolute top-0 left-1/2 h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full" style="box-shadow: 0 0 16px var(--accent-glow);"></span>
+            <span class="bg-ink-mute absolute bottom-0 left-1/2 h-1.5 w-1.5 -translate-x-1/2 translate-y-1/2 rounded-full"></span>
+            <span class="bg-ink-mute absolute top-1/2 right-0 h-1.5 w-1.5 -translate-y-1/2 translate-x-1/2 rounded-full"></span>
+            <span class="bg-ink-mute absolute top-1/2 left-0 h-1.5 w-1.5 -translate-y-1/2 -translate-x-1/2 rounded-full"></span>
+          </div>
+
+          <!-- Pierścień średni – w drugą stronę, accent edge -->
+          <div class="hero-orbit-mid absolute inset-[14%] rounded-full border" style="border-color: var(--accent-edge);"></div>
+
+          <!-- Pierścień wewnętrzny – statyczny, mocniejszy accent -->
+          <div class="absolute inset-[30%] rounded-full border-2" style="border-color: rgb(255 106 46 / 0.5);"></div>
+
+          <!-- Centralna poświata orange -->
+          <div
+            class="absolute inset-[42%] rounded-full"
+            style="background: radial-gradient(circle, rgb(255 106 46 / 0.65) 0%, rgb(255 106 46 / 0.18) 55%, transparent 75%); filter: blur(2px);"
+          ></div>
+
+          <!-- Centralny symbol AI -->
+          <div class="absolute inset-0 flex items-center justify-center">
+            <span class="text-ink font-mono text-xl font-semibold tracking-[0.18em]">AI</span>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <!-- H1 – display, Inter Tight z aggressive tracking -->
-    <div class="hero-fade-in mx-auto max-w-5xl px-4" style="--delay: 0.05s">
-      <h1
-        class="text-ink font-display text-[2rem] leading-[1.05] font-semibold tracking-[-0.04em] sm:text-[2.75rem] md:text-[3.5rem] lg:text-[4rem] xl:text-[4.5rem]"
-      >
-        Sprawdź, co ChatGPT, Claude, Gemini
-        <br class="hidden sm:inline" />
-        i&nbsp;Perplexity mówią o&nbsp;<span class="text-accent">Twojej marce</span>.
-      </h1>
-    </div>
-
-    <!-- Lede – 2 darmowe testy + płatny audyt -->
-    <div class="hero-fade-in" style="--delay: 0.1s">
-      <p
-        class="text-ink-soft mx-auto mt-8 max-w-2xl px-4 text-base leading-relaxed sm:text-lg"
-      >
-        Dwa darmowe testy odpowiedzą natychmiast &ndash; czy AI poleca Ciebie, czy konkurencję,
-        i&nbsp;co model wie o&nbsp;Twojej firmie. Pełny audyt z&nbsp;planem działania &ndash; w&nbsp;3 dni.
+    <!-- Logo wall pod heroem – pełna szerokość, separator -->
+    <div class="hero-fade-in mt-20 border-t pt-12 lg:mt-28" style="border-color: var(--rule); --delay: 0.25s">
+      <p class="text-ink-mute mb-8 text-center font-mono text-[11px] tracking-[0.2em] uppercase">
+        Sprawdzamy w&nbsp;najpopularniejszych wyszukiwarkach AI
       </p>
-    </div>
-
-    <!-- CTAs -->
-    <div class="hero-fade-in" style="--delay: 0.15s">
-      <div class="mt-10 mb-16 flex flex-col items-center justify-center gap-4 sm:flex-row">
-        <a class="btn-primary" href="#audyty" aria-label="Sprawdź swoją markę w 60 sekund – darmowe narzędzia">
-          Sprawdź markę w&nbsp;60 sekund &rarr;
-        </a>
-        <a class="btn-ghost" href="/kontakt?type=full-audit" aria-label="Zamów pełny audyt widoczności AI">
-          Zamów pełny audyt
-        </a>
-      </div>
-    </div>
-
-    <!-- Lista 5 silników AI – mono, subtle, sygnalizuje pokrycie -->
-    <div class="hero-fade-in mt-12 px-4" style="--delay: 0.2s">
-      <div class="text-ink-mute mb-4 font-mono text-[11px] tracking-[0.2em] uppercase">
-        Sprawdzamy w&nbsp;5 wyszukiwarkach AI
-      </div>
-      <div
-        class="text-ink-soft flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-mono text-sm"
-      >
+      <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 lg:gap-x-16">
         {
-          aiEngines.map((engine, i) => (
-            <>
-              <span class="hover:text-accent transition">{engine}</span>
-              {i < aiEngines.length - 1 && <span class="text-ink-mute" aria-hidden="true">·</span>}
-            </>
+          aiEngines.map((engine) => (
+            <span class="text-ink-soft hover:text-ink font-display text-2xl font-semibold tracking-tight opacity-65 transition hover:opacity-100 sm:text-[1.75rem] lg:text-3xl">
+              {engine}
+            </span>
           ))
         }
       </div>
     </div>
+
   </div>
 </section>
 
@@ -104,5 +144,25 @@ const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Bing Copilot'];
   .hero-mesh > * {
     position: relative;
     z-index: 1;
+  }
+
+  /* Orbit visual – 3 koncentryczne pierścienie obracające się w przeciwne strony */
+  .hero-orbit-outer {
+    animation: orbit-spin 80s linear infinite;
+  }
+  .hero-orbit-mid {
+    animation: orbit-spin 50s linear infinite reverse;
+  }
+
+  @keyframes orbit-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-orbit-outer,
+    .hero-orbit-mid {
+      animation: none;
+    }
   }
 </style>
