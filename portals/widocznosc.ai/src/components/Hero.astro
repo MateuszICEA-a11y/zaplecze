@@ -7,7 +7,7 @@ const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Copilot'];
   style="background: var(--bg);"
   id="home"
 >
-  <div class="content-container relative z-10 pt-32 md:pt-36 lg:pt-40">
+  <div class="hero-container relative z-10 pt-32 md:pt-36 lg:pt-40">
 
     <!-- Hero grid – asymetryczny 2-col: copy 7 / visual 5 -->
     <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-gutter">
@@ -38,11 +38,11 @@ const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Copilot'];
         <!-- Lede -->
         <div class="hero-fade-in" style="--delay: 0.1s">
           <p
-            class="text-ink-soft max-w-2xl text-base leading-relaxed sm:text-lg sm:leading-[1.55]"
+            class="text-ink max-w-2xl text-base leading-relaxed sm:text-lg sm:leading-[1.55]"
           >
-            Sprawdź już teraz, czy AI poleca Twoją markę, czy boty AI mają dostęp do&nbsp;Twojej strony
-            i&nbsp;jak przerobić content, żeby trafiał do&nbsp;cytowań. Pełny audyt z&nbsp;planem działania
-            &ndash; w&nbsp;3&nbsp;dni.
+            Sprawdź już teraz, czy AI poleca Twoją markę, czy boty AI mają dostęp
+            do&nbsp;Twojej strony i&nbsp;jak zoptymalizować swój content, aby był cytowany
+            przez wyszukiwarki AI.
           </p>
         </div>
 
@@ -127,23 +127,39 @@ const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Copilot'];
     }
   }
 
-  /* Hero mesh background – orange-only (handoff B Structural).
-     Trzy radials z różną intensywnością i positioning dla głębi. */
+  /* Hero mesh background – subtelny accent przy abstract visual po prawej.
+     Mniej "orange flood", więcej akcentu w jednym miejscu (wzór AIVISION). */
   .hero-mesh::before {
     content: '';
     position: absolute;
     inset: 0;
     pointer-events: none;
     background:
-      radial-gradient(at 15% 20%, rgb(255 106 46 / 0.22) 0%, transparent 55%),
-      radial-gradient(at 85% 75%, rgb(255 106 46 / 0.18) 0%, transparent 55%),
-      radial-gradient(at 60% 90%, rgb(255 138 79 / 0.12) 0%, transparent 45%);
+      radial-gradient(circle at 78% 32%, rgb(255 106 46 / 0.18) 0%, transparent 38%),
+      radial-gradient(circle at 12% 88%, rgb(255 106 46 / 0.06) 0%, transparent 35%);
     z-index: 0;
   }
 
   .hero-mesh > * {
     position: relative;
     z-index: 1;
+  }
+
+  /* Wider container dla hero – więcej oddechu na 1440+ ekranach */
+  .hero-container {
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .hero-container { padding-inline: 2rem; }
+  }
+  @media (min-width: 1024px) {
+    .hero-container { padding-inline: 3rem; }
+  }
+  @media (min-width: 1280px) {
+    .hero-container { padding-inline: 4rem; }
   }
 
   /* Orbit visual – 3 koncentryczne pierścienie obracające się w przeciwne strony */
