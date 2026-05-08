@@ -581,4 +581,19 @@ const isActive = (href: string) => {
     margin-top: 16px;
     align-self: flex-start;
   }
+
+  /* Light mode overrides */
+  :root[data-theme='light'] .nav-shell {
+    background: rgb(250 250 250 / 0.9);
+    border-bottom-color: rgba(0, 0, 0, 0.06);
+  }
+
+  :root[data-theme='light'] .nav-shell[data-scrolled='true'] {
+    background: rgb(250 250 250 / 0.95);
+    border-bottom-color: rgba(0, 0, 0, 0.10);
+  }
+
+  :root[data-theme='light'] .nav-mobile-overlay {
+    background: rgb(0 0 0 / 0.4);
+  }
 </style>
