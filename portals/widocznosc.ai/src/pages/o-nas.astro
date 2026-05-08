@@ -63,7 +63,7 @@ const differentiators = [
       <div class="mx-auto max-w-4xl text-center">
         <span class="eyebrow mb-6 inline-block">O widocznosc.ai</span>
         <h1 class="display-xl">
-          Pozycjonujemy marki<br />w&nbsp;wyszukiwarkach AI
+          Pozycjonujemy marki<br />w&nbsp;<span class="accent">wyszukiwarkach&nbsp;AI</span>
         </h1>
         <p class="text-ink mx-auto mt-8 max-w-2xl text-lg leading-relaxed">
           widocznosc.ai to flagowy projekt
@@ -82,12 +82,15 @@ const differentiators = [
   <!-- Stats band -->
   <section class="relative w-full">
     <div class="content-container py-12 md:py-16">
-      <div class="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-3" style="border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline);">
         {
-          stats.map((stat) => (
-            <div class="text-center md:text-left">
-              <div class="display-md text-ink leading-none">{stat.value}</div>
-              <div class="text-ink-muted mt-3 text-sm">{stat.label}</div>
+          stats.map((stat, i) => (
+            <div
+              class="px-2 py-10 md:py-12 md:px-8"
+              style={i > 0 ? 'border-left: 1px solid var(--hairline);' : ''}
+            >
+              <div class="display-lg accent leading-none">{stat.value}</div>
+              <div class="text-ink-muted mt-4 text-sm">{stat.label}</div>
             </div>
           ))
         }

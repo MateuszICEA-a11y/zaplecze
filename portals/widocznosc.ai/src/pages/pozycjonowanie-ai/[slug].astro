@@ -40,7 +40,7 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
 
         <div class="text-center">
           <span class="eyebrow mb-6 inline-block">{model.vendor} · model AI</span>
-          <h1 class="display-xl">Pozycjonowanie<br />w&nbsp;{model.name}</h1>
+          <h1 class="display-xl">Pozycjonowanie<br />w&nbsp;<span class="accent">{model.name}</span></h1>
           <p
             class="text-ink mx-auto mt-8 max-w-2xl text-lg leading-relaxed"
             set:html={content.heroSubtitle}
