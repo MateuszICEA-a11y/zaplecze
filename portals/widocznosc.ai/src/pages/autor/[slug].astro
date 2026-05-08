@@ -85,7 +85,7 @@ const initials = (name: string) =>
 
         <!-- Bio -->
         <div class="lg:col-span-8">
-          <span class="eyebrow mb-4 inline-block">{data.role} · {data.company}</span>
+          <span class="eyebrow mb-6 inline-flex">{data.role} · {data.company}</span>
           <h1 class="display-xl mt-2 mb-6">{data.name}</h1>
           <p class="text-ink mb-8 text-lg leading-relaxed">{data.bio}</p>
 
@@ -164,7 +164,7 @@ const initials = (name: string) =>
     <div class="content-container py-16 lg:py-20">
       <div class="mb-10 flex items-end justify-between gap-6">
         <div>
-          <span class="eyebrow mb-3 inline-block">Artykuły · {authorPosts.length}</span>
+          <span class="eyebrow mb-6 inline-flex">Artykuły · {authorPosts.length}</span>
           <h2 id="articles-title" class="display-lg mt-2">
             {authorPosts.length > 0 ? `Artykuły ${data.name.split(' ')[0]}a` : 'Artykuły wkrótce'}
           </h2>
@@ -232,8 +232,8 @@ const initials = (name: string) =>
   <!-- Pozostali autorzy -->
   <section class="relative w-full" aria-labelledby="other-authors-title">
     <div class="content-container py-16 lg:py-20">
-      <div class="mb-10 text-center">
-        <span class="eyebrow mb-3 inline-block">Zespół</span>
+      <div class="mb-10">
+        <span class="eyebrow mb-6 inline-flex">Zespół</span>
         <h2 id="other-authors-title" class="display-lg mt-2">Pozostali eksperci ICEA</h2>
       </div>
 

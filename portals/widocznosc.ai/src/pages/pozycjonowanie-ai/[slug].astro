@@ -25,35 +25,34 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
 >
   <Navbar />
 
-  <!-- Hero -->
-  <section class="relative pt-32 pb-16 md:pt-40 md:pb-20">
+  <!-- Hero – case study pattern: text-left, full container width -->
+  <section class="relative pt-32 pb-20 md:pt-40 md:pb-24">
     <div class="content-container">
-      <div class="mx-auto max-w-5xl">
-        <!-- Breadcrumb -->
-        <div class="mb-8 flex items-center gap-2 text-sm">
-          <a href="/pozycjonowanie-ai" class="text-ink-muted hover:text-ink transition">
-            Pozycjonowanie AI
-          </a>
-          <span class="text-ink-muted" aria-hidden="true">/</span>
-          <span class="text-ink">{model.name}</span>
-        </div>
+      <!-- Breadcrumb -->
+      <div class="mb-10 flex items-center gap-2 text-sm">
+        <a href="/pozycjonowanie-ai" class="text-ink-muted hover:text-ink transition">
+          Pozycjonowanie AI
+        </a>
+        <span class="text-ink-muted" aria-hidden="true">/</span>
+        <span class="text-ink">{model.name}</span>
+      </div>
 
-        <div class="text-center">
-          <span class="eyebrow mb-6 inline-block">{model.vendor} · model AI</span>
-          <h1 class="display-xl">Pozycjonowanie<br />w&nbsp;<span class="accent">{model.name}</span></h1>
-          <p
-            class="text-ink mx-auto mt-8 max-w-2xl text-lg leading-relaxed"
-            set:html={content.heroSubtitle}
-          />
-          <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a class="btn-primary" href={`/kontakt?type=audyt-ai&model=${model.slug}`}>
-              Zamów audyt pod {model.name}
-            </a>
-            <a class="btn-secondary" href="/narzedzia/visibility-checker">
-              Sprawdź widoczność · 90s
-            </a>
-          </div>
-        </div>
+      <span class="eyebrow mb-8 inline-flex">{model.vendor} · model AI</span>
+      <h1 class="display-xl mb-8" style="max-width: 1100px;">
+        Pozycjonowanie w&nbsp;<span class="accent">{model.name}</span>
+      </h1>
+      <p
+        class="text-ink text-lg leading-relaxed"
+        style="max-width: 720px;"
+        set:html={content.heroSubtitle}
+      />
+      <div class="mt-12 flex flex-col gap-3 sm:flex-row">
+        <a class="btn-primary" href={`/kontakt?type=audyt-ai&model=${model.slug}`}>
+          Zamów audyt pod {model.name}
+        </a>
+        <a class="btn-secondary" href="/narzedzia/visibility-checker">
+          Sprawdź widoczność · 90s
+        </a>
       </div>
     </div>
   </section>
@@ -61,9 +60,9 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
   <!-- Jak działa -->
   <section class="relative w-full" aria-labelledby="how-title">
     <div class="content-container py-16 lg:py-20">
-      <div class="mx-auto mb-12 max-w-3xl text-center">
-        <span class="eyebrow mb-4 inline-block">Jak działa</span>
-        <h2 id="how-title" class="display-lg mt-2 mb-6">
+      <div class="mb-12" style="max-width: 880px;">
+        <span class="eyebrow mb-6 inline-flex">Jak działa</span>
+        <h2 id="how-title" class="display-lg mt-2 mb-6" style="text-wrap: balance;">
           Jak {model.name} buduje odpowiedzi
         </h2>
       </div>
@@ -89,7 +88,7 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
     <div class="content-container py-16 lg:py-20">
       <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
         <div class="lg:col-span-5">
-          <span class="eyebrow mb-4 inline-block">Optymalizacja</span>
+          <span class="eyebrow mb-6 inline-flex">Optymalizacja</span>
           <h2 id="opt-title" class="display-lg mt-2 mb-6">
             Co konkretnie robimy,<br />żeby {model.name} cytował Twoją markę
           </h2>
@@ -124,9 +123,9 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
   <!-- Sygnały rankingowe -->
   <section class="relative w-full" aria-labelledby="signals-title">
     <div class="content-container py-16 lg:py-20">
-      <div class="mx-auto max-w-5xl">
-        <div class="mb-10 text-center">
-          <span class="eyebrow mb-4 inline-block">Sygnały rankingowe</span>
+      <div>
+        <div class="mb-10" style="max-width: 880px;">
+          <span class="eyebrow mb-6 inline-flex">Sygnały rankingowe</span>
           <h2 id="signals-title" class="display-lg mt-2">
             Top 5 sygnałów dla {model.name}
           </h2>
@@ -150,9 +149,9 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
   <!-- FAQ -->
   <section class="relative w-full" aria-labelledby="faq-title">
     <div class="content-container py-16 lg:py-20">
-      <div class="mx-auto max-w-3xl">
-        <div class="mb-10 text-center">
-          <span class="eyebrow mb-4 inline-block">FAQ</span>
+      <div style="max-width: 860px;">
+        <div class="mb-10">
+          <span class="eyebrow mb-6 inline-flex">FAQ</span>
           <h2 id="faq-title" class="display-lg mt-2">
             Najczęstsze pytania o&nbsp;{model.name}
           </h2>
@@ -182,7 +181,7 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
     <div class="content-container py-16 lg:py-20">
       <div class="mb-10 flex items-end justify-between gap-6">
         <div>
-          <span class="eyebrow mb-3 inline-block">Pozostałe modele</span>
+          <span class="eyebrow mb-6 inline-flex">Pozostałe modele</span>
           <h2 id="other-title" class="display-lg mt-2">
             Optymalizacja pod inne silniki AI
           </h2>
