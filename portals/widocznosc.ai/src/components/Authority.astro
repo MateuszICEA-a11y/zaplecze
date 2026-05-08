@@ -15,36 +15,36 @@ interface Stat {
 
 const stats: Stat[] = [
   {
-    value: '+30',
+    value: '+40',
     unit: '%',
     source: 'Princeton · KDD 2024',
-    sample: 'Aggarwal et al.',
-    desc: 'wzrost widoczności w&nbsp;LLM po&nbsp;dodaniu cytowań źródeł i&nbsp;danych liczbowych do&nbsp;tekstu. Upychanie słów kluczowych dawało odwrotny efekt (-10%) – klasyczne SEO i&nbsp;GEO premiują różne sygnały.',
+    sample: 'Aggarwal et al., GEO Paper',
+    desc: 'wzrostu widoczności w&nbsp;odpowiedziach silników AI przy zastosowaniu metodyki GEO. Pierwsze peer-reviewed badanie z&nbsp;ACM SIGKDD definiujące samą dyscyplinę – nie marketing, tylko akademicki framework.',
     href: 'https://arxiv.org/abs/2311.09735',
   },
   {
-    value: '44',
-    unit: '%',
-    source: 'Kevin Indig · Growth Memo',
-    sample: '1,2 mln cytowań ChatGPT',
-    desc: 'cytowań w&nbsp;ChatGPT pochodzi z&nbsp;pierwszych 30% tekstu. Najważniejsze informacje muszą znaleźć się na&nbsp;górze – inaczej AI nie sięga po&nbsp;dalsze fragmenty.',
-    href: 'https://www.growth-memo.com/',
-  },
-  {
-    value: '89',
-    unit: '%',
-    source: 'BrightEdge · 2025',
-    sample: 'analiza AI Overviews',
-    desc: 'cytowań w&nbsp;Google AI Overviews pochodzi z&nbsp;wyników znajdujących się poniżej pozycji 100. Wysoka pozycja w&nbsp;klasycznych wynikach nie przekłada się automatycznie na&nbsp;obecność w&nbsp;odpowiedzi AI.',
-    href: 'https://www.brightedge.com/news',
-  },
-  {
-    value: '4,4',
+    value: '8',
     unit: '×',
-    source: 'Semrush · 2025',
-    sample: 'analiza ruchu LLM',
-    desc: 'wyższa konwersja użytkowników przychodzących z&nbsp;LLM w&nbsp;porównaniu do&nbsp;klasycznego ruchu organicznego. Klient, który trafia z&nbsp;AI, najczęściej już wie, czego szuka.',
-    href: 'https://www.semrush.com/blog/',
+    source: 'Google · patent 2024',
+    sample: 'query fan-out, passage retrieval',
+    desc: 'tyle różnych podzapytań Google generuje z&nbsp;jednego pytania użytkownika. Indeksowanie odbywa się na&nbsp;poziomie pojedynczych fragmentów, nie całych stron – optymalizacja na&nbsp;poziomie strony już nie wystarcza.',
+    href: 'https://searchengineland.com/how-ai-mode-ai-overviews-work-patents-456346',
+  },
+  {
+    value: '+357',
+    unit: '%',
+    source: 'TechCrunch · Authoritas',
+    sample: 'ruch z&nbsp;LLM rok do&nbsp;roku',
+    desc: 'wzrost ruchu z&nbsp;silników AI rok do&nbsp;roku dla najpopularniejszych stron. Marki aktywnie optymalizujące pod cytowania AI notują nawet +800% wzrostu ruchu z&nbsp;LLM.',
+    href: 'https://searchengineland.com/what-13-months-of-data-reveals-about-llm-traffic-growth-and-conversions-470115',
+  },
+  {
+    value: '30–40',
+    unit: '%',
+    source: 'VentureBeat · 2026',
+    sample: 'konwersja ruchu z&nbsp;LLM',
+    desc: 'tak konwertują użytkownicy przychodzący z&nbsp;odpowiedzi LLM – kilka razy więcej niż klasyczny ruch organiczny. Klient, który trafia z&nbsp;AI, ma&nbsp;już zbudowaną decyzję zakupową.',
+    href: 'https://searchengineland.com/what-13-months-of-data-reveals-about-llm-traffic-growth-and-conversions-470115',
   },
 ];
 ---
@@ -58,8 +58,8 @@ const stats: Stat[] = [
         Nie wymyślamy GEO<br />&ndash; opieramy się na&nbsp;badaniach
       </h2>
       <p class="authority-lead">
-        Każda rekomendacja w&nbsp;naszym audycie ma źródło – akademickie, branżowe albo nasze
-        własne testy. Zero marketingowego bełkotu.
+        Każda rekomendacja w&nbsp;naszym audycie ma źródło – akademickie badania, patenty Google,
+        dane rynkowe albo nasze własne testy. Zero marketingowego bełkotu.
       </p>
     </header>
 
