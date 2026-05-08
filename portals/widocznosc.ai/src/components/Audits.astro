@@ -733,4 +733,20 @@
     font-size: var(--fs-micro);
     margin-top: 4px;
   }
+
+  /* ============================================================
+     Light mode overrides – audit-card (non-spotlight)
+     ============================================================ */
+  :root[data-theme='light'] .audit-card {
+    border-color: rgba(0, 0, 0, 0.06);
+  }
+
+  :root[data-theme='light'] .audit-card:hover {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.10);
+  }
+
+  :root[data-theme='light'] .audit-card-mock-bar .bar {
+    background: rgba(0, 0, 0, 0.08);
+  }
 </style>
