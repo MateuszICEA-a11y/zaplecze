@@ -12,7 +12,7 @@ interface Props {
 
 const {
   eyebrow = 'Centrum wiedzy',
-  title = 'Jak działają silniki odpowiedzi (AI Search)?',
+  title = 'Jak działają <span class="recent-title-accent">modele AI</span>?',
   subtitle = 'Definicje, case studies i poradniki – dowiedz się, jak modele językowe syntezują odpowiedzi i co decyduje o cytowalności Twojej marki w świecie AI.',
   limit = 3,
 } = Astro.props;
@@ -30,7 +30,7 @@ const formatDate = (date: Date) =>
     <header class="recent-header">
       <div class="recent-header-text">
         <span class="eyebrow recent-eyebrow">{eyebrow}</span>
-        <h2 class="display-lg recent-title">{title}</h2>
+        <h2 class="display-lg recent-title" set:html={title} />
         <p class="recent-lead">{subtitle}</p>
       </div>
       <a href="/blog" class="recent-all-link">
@@ -110,6 +110,10 @@ const formatDate = (date: Date) =>
     color: var(--ink);
     margin: 0 0 12px 0;
     text-wrap: balance;
+  }
+
+  .recent-title :global(.recent-title-accent) {
+    color: var(--accent-blue);
   }
 
   .recent-lead {
