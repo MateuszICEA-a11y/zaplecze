@@ -220,10 +220,19 @@
     margin-bottom: 16px;
   }
 
+  /* Większy tytuł (Claude Design 2026-05-08): 71px max zamiast display-lg 62px,
+     bardziej "headline" charakter dla key conversion section */
   .audits-title {
+    font-size: clamp(40px, 5.8vw, 78px);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
     color: var(--ink);
-    margin: 0 0 16px 0;
+    margin: 0 0 24px 0;
     text-wrap: balance;
+  }
+
+  .audits-lead {
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
   }
 
   .audits-lead {

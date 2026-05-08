@@ -10,57 +10,57 @@ interface Step {
   duration: string;
   desc: string;
   bullets: string[];
-  variant: 'violet' | 'magenta' | 'coral' | 'orange';
+  variant: 'violet' | 'cyan' | 'green' | 'blue';
 }
 
 const steps: Step[] = [
   {
     num: '01',
     title: 'Mapa pytań',
-    duration: 'Dzień 1',
-    desc: 'Wybieramy 30–50 zapytań, które reprezentują rzeczywistych klientów Twojej branży – od research-stage po decyzję zakupową.',
+    duration: 'dzień 1',
+    desc: 'Tworzymy 32–48 zapytań z trzech warstw: brand, generic, comparison. Lista wynika z Twojej kategorii, nie z generatora.',
     bullets: [
-      'Analiza buyer persona i ścieżki zakupowej',
-      'Long-tail i komparatywne ("X vs Y", "najlepsze X dla…")',
-      'Lista zaakceptowana przez Ciebie przed startem',
+      'Workshop kategoryjny',
+      'Analiza intencji kupujących',
+      'Lista benchmark’owych konkurentów',
     ],
     variant: 'violet',
   },
   {
     num: '02',
     title: 'Test 5 silników AI',
-    duration: 'Dzień 1–2',
-    desc: 'Odpytujemy ChatGPT, Claude, Gemini, Perplexity i Copilot każdym pytaniem. Zbieramy pełne odpowiedzi, cytowane źródła, listy konkurentów.',
+    duration: 'dzień 1–2',
+    desc: 'Zapytania trafiają równolegle do ChatGPT, Claude, Gemini, Perplexity i Copilot — ze świeżymi sesjami i bez personalizacji.',
     bullets: [
-      'Mention rate i Citation rate per platforma',
-      'Share of Voice vs 3–5 głównych konkurentów',
-      'Sentiment, halucynacje, błędne dane o marce',
+      'Standaryzacja promptów',
+      'Wielokrotne sesje',
+      'Pomiar wariancji odpowiedzi',
     ],
-    variant: 'magenta',
+    variant: 'cyan',
   },
   {
     num: '03',
     title: 'Audyt techniczny + content',
-    duration: 'Dzień 2',
-    desc: 'Sprawdzamy, czy boty AI mają dostęp do strony, jak strukturyzowany jest content i co blokuje cytowania według badań Princeton/Indig.',
+    duration: 'dzień 2',
+    desc: 'Analiza struktury, schema, llm.txt, danych źródłowych i autorytetów. Mapujemy luki contentu pod konwersacyjne zapytania.',
     bullets: [
-      'robots.txt + dostęp dla 13 botów AI',
-      'Schema.org, llms.txt, markdown wersje',
-      'Front-loading, podzielna struktura, cytowania źródeł',
+      'Schema & semantyka',
+      'Audyt llm.txt',
+      'Mapowanie luk treści',
     ],
-    variant: 'coral',
+    variant: 'green',
   },
   {
     num: '04',
     title: 'Raport + plan 30/60/90',
-    duration: 'Dzień 3',
-    desc: 'Dostajesz raport PDF (40–60 stron), dashboard z danymi i 60-min sesję prezentacyjną z konkretnym planem działania na 90 dni.',
+    duration: 'dzień 3',
+    desc: 'Dostarczamy spakowany raport, zalecenia ułożone w czasie i listę kontentu do wytworzenia w pierwszym sprincie.',
     bullets: [
-      'Lista 20+ zmian z priorytetem P0/P1/P2',
-      'Quick-wins do wdrożenia od ręki (schema, llms.txt)',
-      '60-min sesja Q&A z ekspertem ICEA',
+      'Live workshop wynikowy',
+      'Plan działań 30/60/90',
+      'Lista briefów contentowych',
     ],
-    variant: 'orange',
+    variant: 'blue',
   },
 ];
 ---
@@ -83,8 +83,10 @@ const steps: Step[] = [
       {
         steps.map((step) => (
           <li class:list={['process-step', `process-step--${step.variant}`]}>
-            <div class="process-step-num">{step.num}</div>
-            <div class="process-step-duration">{step.duration}</div>
+            <div class="process-step-num">
+              {step.num}
+              <small>{step.duration}</small>
+            </div>
             <h3 class="process-step-title">{step.title}</h3>
             <p class="process-step-desc">{step.desc}</p>
             <ul class="process-step-bullets">
@@ -179,45 +181,43 @@ const steps: Step[] = [
     min-height: 360px;
   }
 
+  /* Stonowana paleta (Claude Design 2026-05-08) – linear gradients,
+     mniej "krzyczące" niż radial coral/orange. */
   .process-step--violet {
-    background: var(--gradient-violet);
-    background-size: 130% 130%;
-    background-position: 25% 30%;
+    background: var(--gradient-process-violet);
   }
-  .process-step--magenta {
-    background: var(--gradient-magenta);
-    background-size: 130% 130%;
-    background-position: 30% 30%;
+  .process-step--cyan {
+    background: var(--gradient-process-cyan);
   }
-  .process-step--coral {
-    background: var(--gradient-coral);
-    background-size: 130% 130%;
-    background-position: 70% 30%;
+  .process-step--green {
+    background: var(--gradient-process-green);
   }
-  .process-step--orange {
-    background: var(--gradient-orange);
-    background-size: 130% 130%;
-    background-position: 70% 25%;
+  .process-step--blue {
+    background: var(--gradient-process-blue);
   }
 
+  /* Numer + small "dzień X" inline (Claude Design layout: 01<small>dzień 1</small>) */
   .process-step-num {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
     font-family: var(--font-display);
     font-weight: 500;
     font-size: var(--fs-display-lg);
     line-height: 1;
     letter-spacing: -0.05em;
     color: var(--ink);
-    margin-bottom: 4px;
-    width: fit-content;
+    margin-bottom: 24px;
   }
 
-  .process-step-duration {
+  .process-step-num small {
     font-family: var(--font-sans);
     font-size: var(--fs-caption);
     font-weight: 500;
-    letter-spacing: var(--ls-caption);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1;
     color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 20px;
   }
 
   .process-step-title {

@@ -61,6 +61,13 @@
      Cleaner niż radial 4-stop, dramatic z box-shadow */
   --gradient-violet-linear: linear-gradient(145deg, #7b32f2 0%, #3e1b7a 100%);
 
+  /* Claude Design iteration 2026-05-08: stonowana paleta dla Process cards
+     (mniej "alarmująca" niż coral/orange, lepsze do B2B tech) */
+  --gradient-process-violet: linear-gradient(145deg, #5b21b6 0%, #1e1b4b 100%);
+  --gradient-process-cyan: linear-gradient(145deg, #0891b2 0%, #164e63 100%);
+  --gradient-process-green: linear-gradient(145deg, #16a34a 0%, #14532d 100%);
+  --gradient-process-blue: linear-gradient(145deg, #2563eb 0%, #1e3a8a 100%);
+
   /* Typography */
   --font-display: 'Mona Sans Variable', 'Mona Sans', 'Inter', -apple-system, system-ui, sans-serif;
   --font-sans: 'Inter Variable', 'Inter', -apple-system, system-ui, sans-serif;
