@@ -107,10 +107,10 @@
           </div>
           <ul class="audit-card-mock-list">
             <li><span>GPTBot</span><span class="audit-card-mock-ok">✓</span></li>
-            <li><span>ClaudeBot</span><span class="audit-card-mock-mute">✗</span></li>
+            <li><span>ClaudeBot</span><span class="audit-card-mock-blocked">✗</span></li>
             <li><span>PerplexityBot</span><span class="audit-card-mock-ok">✓</span></li>
-            <li><span>Google-Extended</span><span class="audit-card-mock-mute">✗</span></li>
-            <li><span>CCBot</span><span class="audit-card-mock-mute">✗</span></li>
+            <li><span>Google-Extended</span><span class="audit-card-mock-blocked">✗</span></li>
+            <li><span>CCBot</span><span class="audit-card-mock-blocked">✗</span></li>
           </ul>
           <div class="audit-card-mock-more">+ 8 innych botów</div>
         </div>
@@ -214,8 +214,9 @@
     text-align: center;
   }
 
+  /* NIE inline-block – przesłaniało display: inline-flex z .eyebrow Theme.css
+     i sky dot ::before tracił flex-gap (10px → 0). Tylko margin */
   .audits-eyebrow {
-    display: inline-block;
     margin-bottom: 16px;
   }
 
@@ -254,18 +255,25 @@
     }
   }
 
-  /* Audit card – surface-1, no border accent */
+  /* Audit card – surface-2 + subtle hairline (Stitch elegant pattern):
+     bardziej "luksus" niż goły surface-1, lepszy kontrast od canvas */
   .audit-card {
     display: flex;
     flex-direction: column;
-    background: var(--bg-surface-1);
+    background: var(--bg-surface-2);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: var(--r-xl);
-    padding: 24px;
-    transition: background 0.2s ease;
+    padding: 28px;
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.2s ease;
   }
 
   .audit-card:hover {
-    background: var(--bg-surface-2);
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.10);
+    transform: translateY(-2px);
   }
 
   .audit-card-meta {
@@ -372,8 +380,15 @@
     color: var(--ink-muted);
   }
 
+  /* OK = zielony ✓, blocked = czerwony X (jasno zaznaczone status) */
   .audit-card-mock-ok {
     color: var(--success-green);
+    font-weight: 700;
+  }
+
+  .audit-card-mock-blocked {
+    color: #ef4444;
+    font-weight: 700;
   }
 
   .audit-card-mock-more {
@@ -425,14 +440,15 @@
   .audit-card-mock-bar .bar {
     flex: 1;
     height: 4px;
-    background: var(--bg-surface-1);
+    background: rgba(255, 255, 255, 0.08);
     border-radius: 2px;
     overflow: hidden;
   }
 
+  /* Niebieskie wskaźniki – accent-blue zamiast szarego ink-muted */
   .audit-card-mock-bar .bar > div {
     height: 100%;
-    background: var(--ink-muted);
+    background: var(--accent-blue);
     border-radius: 2px;
   }
 
