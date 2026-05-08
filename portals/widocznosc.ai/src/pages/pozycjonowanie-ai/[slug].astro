@@ -25,11 +25,11 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
 >
   <Navbar />
 
-  <!-- Hero – case study pattern: text-left, full container width -->
+  <!-- Hero – wyśrodkowany na pełnej szerokości containera -->
   <section class="relative pt-32 pb-20 md:pt-40 md:pb-24">
-    <div class="content-container">
-      <!-- Breadcrumb -->
-      <div class="mb-10 flex items-center gap-2 text-sm">
+    <div class="content-container text-center">
+      <!-- Breadcrumb (text-left dla nawigacji, hero copy centered) -->
+      <div class="mb-10 flex items-center justify-center gap-2 text-sm">
         <a href="/pozycjonowanie-ai" class="text-ink-muted hover:text-ink transition">
           Pozycjonowanie AI
         </a>
@@ -38,15 +38,15 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
       </div>
 
       <span class="eyebrow mb-8 inline-flex">{model.vendor} · model AI</span>
-      <h1 class="display-xl mb-8" style="max-width: 1100px;">
+      <h1 class="display-xl mx-auto mb-8" style="max-width: 1100px;">
         Pozycjonowanie w&nbsp;<span class="accent">{model.name}</span>
       </h1>
       <p
-        class="text-ink text-lg leading-relaxed"
+        class="text-ink mx-auto text-lg leading-relaxed"
         style="max-width: 720px;"
         set:html={content.heroSubtitle}
       />
-      <div class="mt-12 flex flex-col gap-3 sm:flex-row">
+      <div class="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <a class="btn-primary" href={`/kontakt?type=audyt-ai&model=${model.slug}`}>
           Zamów audyt pod {model.name}
         </a>
@@ -60,7 +60,7 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
   <!-- Jak działa -->
   <section class="relative w-full" aria-labelledby="how-title">
     <div class="content-container py-16 lg:py-20">
-      <div class="mb-12" style="max-width: 880px;">
+      <div class="mx-auto mb-12 text-center" style="max-width: 880px;">
         <span class="eyebrow mb-6 inline-flex">Jak działa</span>
         <h2 id="how-title" class="display-lg mt-2 mb-6" style="text-wrap: balance;">
           Jak {model.name} buduje odpowiedzi
@@ -124,13 +124,13 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
   <section class="relative w-full" aria-labelledby="signals-title">
     <div class="content-container py-16 lg:py-20">
       <div>
-        <div class="mb-10" style="max-width: 880px;">
+        <div class="mx-auto mb-10 text-center" style="max-width: 880px;">
           <span class="eyebrow mb-6 inline-flex">Sygnały rankingowe</span>
           <h2 id="signals-title" class="display-lg mt-2">
             Top 5 sygnałów dla {model.name}
           </h2>
         </div>
-        <ul class="rounded-[15px] divide-y" style="background: var(--bg-surface-1); border-color: var(--hairline-soft);">
+        <ul class="mx-auto rounded-[15px] divide-y" style="background: var(--bg-surface-1); border-color: var(--hairline-soft); max-width: 960px;">
           {
             content.signals.map((signal, i) => (
               <li class="flex items-start gap-5 p-6 lg:p-7" style="border-color: var(--hairline-soft);">
@@ -149,8 +149,8 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
   <!-- FAQ -->
   <section class="relative w-full" aria-labelledby="faq-title">
     <div class="content-container py-16 lg:py-20">
-      <div style="max-width: 860px;">
-        <div class="mb-10">
+      <div class="mx-auto" style="max-width: 860px;">
+        <div class="mb-10 text-center">
           <span class="eyebrow mb-6 inline-flex">FAQ</span>
           <h2 id="faq-title" class="display-lg mt-2">
             Najczęstsze pytania o&nbsp;{model.name}

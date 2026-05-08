@@ -47,19 +47,19 @@ const gradientStyle = (variant: string) => {
 >
   <Navbar />
 
-  <!-- Hero – case study pattern: text-left, full container width -->
+  <!-- Hero – wyśrodkowany na pełnej szerokości containera -->
   <section class="relative pt-32 pb-20 md:pt-40 md:pb-24">
-    <div class="content-container">
+    <div class="content-container text-center">
       <span class="eyebrow mb-10 inline-flex">Usługi · Generative Engine Optimization</span>
-      <h1 class="display-xl mb-8" style="max-width: 1100px;">
+      <h1 class="display-xl mx-auto mb-8" style="max-width: 1100px;">
         Pozycjonowanie w&nbsp;<span class="accent">AI</span>
       </h1>
-      <p class="text-ink text-lg leading-relaxed" style="max-width: 720px;">
+      <p class="text-ink mx-auto text-lg leading-relaxed" style="max-width: 720px;">
         Widoczność marki w&nbsp;ChatGPT, Claude, Gemini, Perplexity i&nbsp;Bing Copilot. Mierzymy
         cytowania, nie ranking. Każdy model wymaga innego podejścia – wybierz konkretny silnik
         poniżej, albo zacznij od kompleksowego audytu wszystkich pięciu.
       </p>
-      <div class="mt-12 flex flex-col gap-3 sm:flex-row">
+      <div class="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <a class="btn-primary" href="/kontakt?type=audyt-ai">Zamów audyt wszystkich modeli</a>
         <a class="btn-secondary" href="/narzedzia/visibility-checker">Sprawdź widoczność · 90s</a>
       </div>
@@ -69,12 +69,12 @@ const gradientStyle = (variant: string) => {
   <!-- 5 modeli AI – grid z linkami do podstron -->
   <section class="relative w-full" aria-labelledby="models-title">
     <div class="content-container py-16 lg:py-20">
-      <div class="mb-14" style="max-width: 880px;">
+      <div class="mx-auto mb-14 text-center" style="max-width: 880px;">
         <span class="eyebrow mb-6 inline-flex">5 modeli</span>
         <h2 id="models-title" class="display-lg mt-2 mb-6" style="text-wrap: balance;">
           Wybierz silnik AI, w którym chcesz być widoczny
         </h2>
-        <p class="text-ink-muted text-lg leading-relaxed" style="max-width: 720px;">
+        <p class="text-ink-muted mx-auto text-lg leading-relaxed" style="max-width: 720px;">
           Każdy model AI inaczej buduje odpowiedzi: ChatGPT preferuje training data + RAG, Gemini
           cytuje z indeksu Google, Perplexity stawia na transparentne źródła. Optymalizacja pod
           jeden model nie wystarczy.
@@ -109,10 +109,10 @@ const gradientStyle = (variant: string) => {
   <!-- Metodologia – 4 services condensed -->
   <section class="relative w-full" aria-labelledby="method-title">
     <div class="content-container py-16 lg:py-20">
-      <div class="mb-14" style="max-width: 880px;">
+      <div class="mx-auto mb-14 text-center" style="max-width: 880px;">
         <span class="eyebrow mb-6 inline-flex">Metodologia</span>
         <h2 id="method-title" class="display-lg mt-2 mb-6" style="text-wrap: balance;">Cztery filary współpracy</h2>
-        <p class="text-ink-muted text-lg leading-relaxed" style="max-width: 720px;">
+        <p class="text-ink-muted mx-auto text-lg leading-relaxed" style="max-width: 720px;">
           Niezależnie od tego który model AI ma być Twoim głównym kanałem, sposób pracy zostaje
           ten sam. Mierzymy, optymalizujemy, monitorujemy, planujemy.
         </p>
