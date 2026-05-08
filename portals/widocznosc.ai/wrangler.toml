@@ -1,0 +1,6 @@
+name = "widocznosc-ai"
+compatibility_date = "2026-05-06"
+pages_build_output_dir = "dist"
+
+[vars]
+PUBLIC_SITE_URL = "https://widocznosc.ai"

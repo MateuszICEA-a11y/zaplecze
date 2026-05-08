@@ -1,0 +1,144 @@
+---
+// ThemeToggle – sun/moon icon w nav, persistuje wybór w localStorage,
+// reaguje na zmianę system preference jeśli brak override.
+// Inline FOUC script w Layout.astro ustawia data-theme zanim ten
+// komponent się zhydrate.
+---
+
+<button
+  type="button"
+  class="theme-toggle"
+  aria-label="Zmień motyw"
+>
+  <!-- Sun icon – widoczny w dark mode, klik → light -->
+  <svg
+    class="theme-toggle__sun"
+    aria-hidden="true"
+    viewBox="0 0 20 20"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <circle cx="10" cy="10" r="3.5"></circle>
+    <line x1="10" y1="2" x2="10" y2="4"></line>
+    <line x1="10" y1="16" x2="10" y2="18"></line>
+    <line x1="2" y1="10" x2="4" y2="10"></line>
+    <line x1="16" y1="10" x2="18" y2="10"></line>
+    <line x1="4.34" y1="4.34" x2="5.76" y2="5.76"></line>
+    <line x1="14.24" y1="14.24" x2="15.66" y2="15.66"></line>
+    <line x1="4.34" y1="15.66" x2="5.76" y2="14.24"></line>
+    <line x1="14.24" y1="5.76" x2="15.66" y2="4.34"></line>
+  </svg>
+  <!-- Moon icon – widoczny w light mode, klik → dark -->
+  <svg
+    class="theme-toggle__moon"
+    aria-hidden="true"
+    viewBox="0 0 20 20"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path d="M16.5 11.5A6.5 6.5 0 0 1 8.5 3.5a6.5 6.5 0 1 0 8 8z"></path>
+  </svg>
+</button>
+
+<script>
+  const initThemeToggles = () => {
+    const buttons = document.querySelectorAll('.theme-toggle');
+    const root = document.documentElement;
+    if (buttons.length === 0) return;
+
+    const updateAria = () => {
+      const current = root.dataset.theme;
+      const label = current === 'dark' ? 'Włącz tryb jasny' : 'Włącz tryb ciemny';
+      buttons.forEach((btn) => btn.setAttribute('aria-label', label));
+    };
+    updateAria();
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        try {
+          localStorage.setItem('theme', next);
+        } catch {
+          // private mode – ignoruj, w pamięci sesji wystarczy
+        }
+        updateAria();
+      });
+    });
+
+    // Listen na zmiany system preference – tylko gdy brak override
+    const mq = matchMedia('(prefers-color-scheme: dark)');
+    mq.addEventListener('change', (e) => {
+      try {
+        if (localStorage.getItem('theme')) return;
+      } catch {
+        return;
+      }
+      root.dataset.theme = e.matches ? 'dark' : 'light';
+      updateAria();
+    });
+  };
+
+  document.addEventListener('astro:page-load', initThemeToggles);
+</script>
+
+<style is:global>
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: transparent;
+    color: var(--ink-muted);
+    border-radius: var(--r-full);
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+    flex-shrink: 0;
+  }
+
+  .theme-toggle:hover {
+    background: var(--bg-surface-1);
+    color: var(--ink);
+  }
+
+  .theme-toggle:focus-visible {
+    outline: none;
+    box-shadow: var(--shadow-l3);
+  }
+
+  .theme-toggle__sun,
+  .theme-toggle__moon {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Default :root (brak data-theme) = dark fallback. Pokaż słońce. */
+  :root .theme-toggle__sun { display: block; }
+  :root .theme-toggle__moon { display: none; }
+
+  :root[data-theme='dark'] .theme-toggle__sun { display: block; }
+  :root[data-theme='dark'] .theme-toggle__moon { display: none; }
+
+  :root[data-theme='light'] .theme-toggle__sun { display: none; }
+  :root[data-theme='light'] .theme-toggle__moon { display: block; }
+
+  @media (pointer: coarse) {
+    .theme-toggle {
+      width: 44px;
+      height: 44px;
+    }
+    .theme-toggle__sun,
+    .theme-toggle__moon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+</style>

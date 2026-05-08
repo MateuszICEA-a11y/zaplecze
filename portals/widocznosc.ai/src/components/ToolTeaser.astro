@@ -1,0 +1,112 @@
+---
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
+const {
+  eyebrow = 'Narzędzie',
+  title = 'Sprawdź widoczność swojej marki w AI w 90 sekund',
+  subtitle = 'Bezpłatne narzędzie: wpisujesz domenę, my pytamy 5 wyszukiwarek AI o Twoją markę i kategorię. Wyniki + rekomendacje na e-mail.',
+  ctaLabel = 'Sprawdź widoczność',
+  ctaHref = '/narzedzia/visibility-checker',
+} = Astro.props;
+---
+
+<section class="relative w-full" style="background: var(--bg);">
+  <div class="content-container py-20 lg:py-28">
+    <div
+      class="border-rule bg-bg-card relative overflow-hidden rounded-3xl border p-8 sm:p-12 lg:p-16"
+    >
+      <!-- subtle accent glow -->
+      <div
+        class="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full"
+        style="background: radial-gradient(circle, rgba(255,106,46,0.18) 0%, transparent 70%);"
+        aria-hidden="true"
+      >
+      </div>
+
+      <div class="relative z-10 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
+        <div>
+          <span class="meta mb-4 inline-block">{eyebrow}</span>
+          <h2
+            class="text-ink font-display mt-2 mb-6 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl lg:text-5xl"
+          >
+            {title}
+          </h2>
+          <p class="text-ink-soft mb-8 text-lg leading-relaxed">{subtitle}</p>
+          <a class="btn-primary" href={ctaHref} aria-label={ctaLabel}>
+            {ctaLabel}
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <!-- Mock visibility score (visual placeholder) -->
+        <div
+          class="border-rule bg-bg relative overflow-hidden rounded-2xl border p-6 sm:p-8"
+          aria-hidden="true"
+        >
+          <div class="text-ink-mute mb-3 font-mono text-[11px] tracking-[0.12em] uppercase">
+            Visibility Score · podgląd
+          </div>
+          <div class="flex items-baseline gap-3">
+            <div class="text-accent font-display text-7xl font-semibold tracking-[-0.04em]">
+              87
+            </div>
+            <div class="text-ink-soft text-2xl font-semibold">/ 100</div>
+          </div>
+          <div class="mt-6 space-y-3">
+            <div class="flex items-center justify-between font-mono text-xs">
+              <span class="text-ink-soft">ChatGPT</span>
+              <div class="flex items-center gap-3">
+                <div class="bg-bg-elevated h-1.5 w-32 rounded-full">
+                  <div class="bg-accent h-full rounded-full" style="width: 92%;"></div>
+                </div>
+                <span class="text-ink w-8 text-right">92</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between font-mono text-xs">
+              <span class="text-ink-soft">Claude</span>
+              <div class="flex items-center gap-3">
+                <div class="bg-bg-elevated h-1.5 w-32 rounded-full">
+                  <div class="bg-accent h-full rounded-full" style="width: 78%;"></div>
+                </div>
+                <span class="text-ink w-8 text-right">78</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between font-mono text-xs">
+              <span class="text-ink-soft">Perplexity</span>
+              <div class="flex items-center gap-3">
+                <div class="bg-bg-elevated h-1.5 w-32 rounded-full">
+                  <div class="bg-accent h-full rounded-full" style="width: 91%;"></div>
+                </div>
+                <span class="text-ink w-8 text-right">91</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between font-mono text-xs">
+              <span class="text-ink-soft">Gemini</span>
+              <div class="flex items-center gap-3">
+                <div class="bg-bg-elevated h-1.5 w-32 rounded-full">
+                  <div class="bg-accent h-full rounded-full" style="width: 84%;"></div>
+                </div>
+                <span class="text-ink w-8 text-right">84</span>
+              </div>
+            </div>
+            <div class="flex items-center justify-between font-mono text-xs">
+              <span class="text-ink-soft">Bing Copilot</span>
+              <div class="flex items-center gap-3">
+                <div class="bg-bg-elevated h-1.5 w-32 rounded-full">
+                  <div class="bg-accent h-full rounded-full" style="width: 89%;"></div>
+                </div>
+                <span class="text-ink w-8 text-right">89</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

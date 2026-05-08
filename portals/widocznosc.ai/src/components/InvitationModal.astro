@@ -1,0 +1,97 @@
+---
+import CheckArrowIcon from '../assets/icons/CheckArrowIcon.astro';
+import CloseIcon from '../assets/icons/CloseIcon.astro';
+---
+
+<dialog id="invitation-modal" class="modal-backdrop" aria-labelledby="modal-title">
+  <div
+    class="xs:w-[90vw] xs:h-auto xs:max-w-[28rem] xs:rounded-2xl xs:pt-8 bg-bgDarkTransparentLighter main-border-gray-darker xs:block relative flex h-screen w-screen flex-col justify-start overflow-hidden rounded-none px-6 pt-[11vh] pb-8 backdrop-blur-xl lg:w-[56rem] lg:max-w-none lg:px-10 lg:pt-8 xl:w-[60rem] 2xl:w-[68.75rem] 2xl:px-16 2xl:py-12"
+  >
+    <button class="modal-close-button" id="modal-close" aria-label="Zamknij okno">
+      <CloseIcon />
+    </button>
+    <div class="flex">
+      <div class="hidden w-1/2 pl-4 lg:inline 2xl:pl-0">
+        <span class="meta">Newsletter · co 2 tygodnie</span>
+        <h2
+          class="text-ink font-display mt-3 mb-2 text-4xl font-semibold tracking-[-0.03em] 2xl:text-5xl"
+        >
+          Bądź pierwszy<br />przy każdej zmianie<br />w AI search
+        </h2>
+        <p class="text-ink-soft mt-4 leading-relaxed">
+          Co 2 tygodnie dostajesz checklistę, definicję pojęcia GEO i jeden case z naszej praktyki.
+          Bez sprzedaży, bez spamu.
+        </p>
+        <ul class="text-ink mt-8 space-y-3 2xl:mt-12">
+          <li class="flex items-center gap-3">
+            <CheckArrowIcon /><span>Nowe sygnały rankingowe w LLM</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <CheckArrowIcon /><span>Praktyczne checklisty fact-density</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <CheckArrowIcon /><span>Mini case study klientów ICEA</span>
+          </li>
+        </ul>
+      </div>
+      <div class="flex w-full flex-col items-center justify-center pt-0 lg:w-1/2">
+        <div class="mb-6 flex items-center justify-center gap-3 lg:hidden">
+          <div class="logo-mark" aria-hidden="true">w</div>
+          <div class="text-ink text-2xl font-semibold tracking-tight">
+            widoczność<span class="text-accent">.ai</span>
+          </div>
+        </div>
+        <h3
+          class="text-ink font-display mb-5 text-center text-xl leading-snug font-semibold tracking-tight 2xl:mb-7 2xl:text-2xl"
+          id="modal-title"
+        >
+          Dołącz do specjalistów,<br />którzy mierzą GEO konkretnie
+        </h3>
+        <div class="-m-2 mt-4 flex flex-wrap lg:mt-0">
+          <div class="mx-auto w-full p-2 sm:w-4/5">
+            <label for="modal-email" class="sr-only">Adres e-mail</label>
+            <input
+              class="form-input py-4 text-center font-medium"
+              type="email"
+              id="modal-email"
+              placeholder="twoj@email.pl"
+              required
+            />
+          </div>
+          <div class="mx-auto mt-4 w-full p-2 sm:w-4/5">
+            <button class="btn-primary !w-full !justify-center !py-4 !text-sm" type="button">
+              Zapisz mnie
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  const initModal = () => {
+    const modal = document.getElementById('invitation-modal') as HTMLDialogElement;
+    const closeBtn = document.getElementById('modal-close');
+    let previouslyFocused: HTMLElement | null = null;
+
+    document.querySelectorAll('[data-open-modal]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        previouslyFocused = document.activeElement as HTMLElement;
+        modal.showModal();
+      });
+    });
+
+    closeBtn?.addEventListener('click', () => modal.close());
+
+    modal?.addEventListener('click', (e) => {
+      if (e.target === modal) modal.close();
+    });
+
+    modal?.addEventListener('close', () => {
+      previouslyFocused?.focus();
+    });
+  };
+
+  document.addEventListener('astro:page-load', initModal);
+</script>

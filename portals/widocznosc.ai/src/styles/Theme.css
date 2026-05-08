@@ -1,0 +1,1004 @@
+@import 'tailwindcss';
+
+/* ============================================================
+   widocznosc.ai – Pure Framer DNA
+   Spec: docs/superpowers/specs/2026-05-07-widocznosc-ai-framer-design.md
+   Branch: feat/widocznosc-framer
+   ============================================================ */
+
+:root {
+  /* Surface ladder */
+  --bg-canvas: #0a0a0b;
+  --bg-surface-1: #131316;
+  --bg-surface-2: #1c1c20;
+  --bg-inverse: #ffffff;
+
+  /* Hairlines (translucent na dark) */
+  --hairline: rgba(255, 255, 255, 0.08);
+  --hairline-soft: rgba(255, 255, 255, 0.04);
+
+  /* Ink */
+  --ink: #ffffff;
+  --ink-muted: #999999;
+
+  /* Single chromatic accent – signal only */
+  --accent-blue: #0099ff;
+  --accent-blue-soft: rgba(0, 153, 255, 0.15);
+
+  /* Semantic */
+  --success-green: #1aaa55;
+
+  /* Gradient spotlight family */
+  --gradient-violet: radial-gradient(
+    ellipse 120% 100% at 25% 30%,
+    #8b5cf6 0%,
+    #6d28d9 35%,
+    #1e1b4b 75%,
+    #0a0a0b 100%
+  );
+  --gradient-orange: radial-gradient(
+    ellipse 110% 90% at 70% 25%,
+    #ff8a3d 0%,
+    #ff5722 30%,
+    #b91c1c 65%,
+    #1a0a0a 100%
+  );
+  --gradient-magenta: radial-gradient(
+    ellipse at 30% 30%,
+    #ec4899 0%,
+    #be185d 40%,
+    #4c1d24 80%,
+    #0a0a0b 100%
+  );
+  --gradient-coral: radial-gradient(
+    ellipse at 70% 30%,
+    #fb7185 0%,
+    #e11d48 40%,
+    #4c1d24 80%,
+    #0a0a0b 100%
+  );
+  /* Stitch iteration 2026-05-08: prostszy 2-stop linear gradient dla hero spotlight.
+     Cleaner niż radial 4-stop, dramatic z box-shadow */
+  --gradient-violet-linear: linear-gradient(145deg, #7b32f2 0%, #3e1b7a 100%);
+
+  /* Claude Design iteration 2026-05-08: stonowana paleta dla Process cards
+     (mniej "alarmująca" niż coral/orange, lepsze do B2B tech) */
+  --gradient-process-violet: linear-gradient(145deg, #5b21b6 0%, #1e1b4b 100%);
+  --gradient-process-cyan: linear-gradient(145deg, #0891b2 0%, #164e63 100%);
+  --gradient-process-green: linear-gradient(145deg, #16a34a 0%, #14532d 100%);
+  --gradient-process-blue: linear-gradient(145deg, #2563eb 0%, #1e3a8a 100%);
+
+  /* Typography */
+  --font-display: 'Mona Sans Variable', 'Mona Sans', 'Inter', -apple-system, system-ui, sans-serif;
+  --font-sans: 'Inter Variable', 'Inter', -apple-system, system-ui, sans-serif;
+
+  /* Type scale (Framer poster + body) */
+  --fs-display-xxl: 110px;
+  --fs-display-xl: 85px;
+  --fs-display-lg: 62px;
+  --fs-display-md: 32px;
+  --fs-headline: 22px;
+  --fs-subhead: 24px;
+  --fs-body-lg: 18px;
+  --fs-body: 15px;
+  --fs-body-sm: 14px;
+  --fs-caption: 13px;
+  --fs-micro: 12px;
+  --fs-button: 14px;
+
+  /* Tracking */
+  --ls-display-xxl: -5.5px;
+  --ls-display-xl: -4.25px;
+  --ls-display-lg: -3.1px;
+  --ls-display-md: -1px;
+  --ls-headline: -0.8px;
+  --ls-subhead: -0.01em;
+  --ls-body-lg: -0.18px;
+  --ls-body: -0.15px;
+  --ls-body-sm: -0.14px;
+  --ls-caption: -0.13px;
+  --ls-button: -0.14px;
+
+  /* Spacing (5px base) */
+  --sp-hair: 1px;
+  --sp-xs: 8px;
+  --sp-sm: 12px;
+  --sp-md: 15px;
+  --sp-lg: 20px;
+  --sp-xl: 30px;
+  --sp-xxl: 40px;
+  --sp-section: 96px;
+
+  /* Radius */
+  --r-xs: 4px;
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 15px;
+  --r-xl: 20px;
+  --r-xxl: 30px;
+  --r-pill: 100px;
+  --r-full: 9999px;
+
+  /* Elevation L2 (light-edge floating) */
+  --shadow-l2:
+    0 0.5px 0 rgba(255, 255, 255, 0.1) inset, 0 10px 30px rgba(0, 0, 0, 0.25);
+  /* Elevation L3 (focus / selected ring) */
+  --shadow-l3: 0 0 0 1px var(--accent-blue-soft);
+}
+
+/* ============================================================
+   Light mode tokens – override przez data-theme atrybut.
+   Ustawiany przez inline FOUC script w Layout.astro przed
+   pierwszym paintem.
+   ============================================================ */
+:root[data-theme="light"] {
+  /* Surface ladder – inverted */
+  --bg-canvas: #fafafa;
+  --bg-surface-1: #f0f0f1;
+  --bg-surface-2: #e6e6e8;
+  --bg-inverse: #0a0a0b;
+
+  /* Hairlines – translucent black */
+  --hairline: rgba(0, 0, 0, 0.10);
+  --hairline-soft: rgba(0, 0, 0, 0.06);
+
+  /* Ink – near-black, kontrast 11.5:1 vs #fafafa */
+  --ink: #1a1a1a;
+  --ink-muted: #666666;
+
+  /* Accent – ściemniony do WCAG AA na białym (4.92:1) */
+  --accent-blue: #0070d6;
+  --accent-blue-soft: rgba(0, 112, 214, 0.12);
+
+  /* Semantic */
+  --success-green: #15803d;
+
+  /* Spotlight gradients zostają ciemne (signature) – brak override
+     dla --gradient-violet/orange/magenta/coral/violet-linear/process-* */
+
+  /* Elevation – soft drop shadow zamiast inset white edge */
+  --shadow-l2:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-l3: 0 0 0 2px rgba(0, 112, 214, 0.20);
+}
+
+/* ============================================================
+   Tailwind 4 @theme – Framer tokens + legacy mapping (Tailcast)
+   żeby istniejące komponenty bg-bgDark1, text-primaryText itd.
+   nadal działały bez refactoru klas Tailwind. Wartości pod
+   spodem są nowe – Framer DNA.
+   ============================================================ */
+@theme {
+  /* New Framer tokens – cytują :root vars dla theme switch */
+  --color-canvas: var(--bg-canvas);
+  --color-surface-1: var(--bg-surface-1);
+  --color-surface-2: var(--bg-surface-2);
+  --color-inverse: var(--bg-inverse);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-hairline: var(--hairline);
+  --color-hairline-soft: var(--hairline-soft);
+  --color-accent-blue: var(--accent-blue);
+  --color-success: var(--success-green);
+
+  /* Legacy Tailcast mapping → cytują te same :root vars */
+  --color-primaryColor: var(--ink);
+  --color-primaryColorHover: rgb(229, 229, 229);
+  --color-secondaryColor: var(--ink-muted);
+  --color-secondaryColorLight: rgb(204, 204, 204);
+  --color-orange: rgb(255, 87, 34); /* zachowane dla SVG infografik – nie podlega theme switch */
+  --color-accent: var(--ink);
+  --color-accent-bright: rgb(229, 229, 229);
+  --color-accent-dim: rgb(204, 204, 204);
+
+  --color-primaryText: var(--ink);
+  --color-heroText: var(--ink);
+  --color-secondaryText: var(--ink-muted);
+
+  --color-bg: var(--bg-canvas);
+  --color-bg-alt: var(--bg-surface-1);
+  --color-bg-card: var(--bg-surface-1);
+  --color-bg-elevated: var(--bg-surface-2);
+
+  --color-bgDark1: var(--bg-canvas);
+  --color-bgDark2: var(--bg-surface-1);
+  --color-bgDark3: var(--bg-surface-1);
+  --color-bgDark3Hover: var(--bg-surface-2);
+  --color-bgDark3HoverLight: var(--bg-surface-2);
+  --color-bgDarkTransparent: rgb(10 10 11 / 0.7);
+  --color-bgDarkTransparentDarker: rgb(10 10 11 / 0.85);
+  --color-bgDarkTransparentLighter: rgb(19 19 22 / 0.7);
+  --color-bgDark1Lighter: var(--bg-surface-1);
+
+  --color-rule: var(--hairline);
+  --color-rule-soft: var(--hairline-soft);
+  --color-mainBorder: var(--hairline);
+  --color-mainBorderDarker: var(--hairline-soft);
+  --color-mainBorderSubtler: var(--hairline);
+  --color-mainBorderFaintest: var(--hairline-soft);
+  --color-mainBorderSubtle: var(--hairline);
+  --color-quoteIconColor: var(--ink-muted);
+
+  /* Fonts (Tailwind utilities: font-display, font-sans) */
+  --font-display: 'Mona Sans Variable', 'Mona Sans', 'Inter', sans-serif;
+  --font-sans: 'Inter Variable', 'Inter', sans-serif;
+  --font-Inter: 'Inter Variable', 'Inter', sans-serif;
+
+  /* Radius */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 15px;
+  --radius-xl: 20px;
+  --radius-xxl: 30px;
+  --radius-pill: 100px;
+
+  --breakpoint-xs: 530px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+html,
+body {
+  background: var(--bg-canvas);
+  color: var(--ink);
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: 1.30;
+  letter-spacing: var(--ls-body);
+  -webkit-font-smoothing: antialiased;
+  /* Inter Variable z OpenType variants – brand voice */
+  font-feature-settings:
+    'cv01' 1,
+    'cv05' 1,
+    'cv09' 1,
+    'cv11' 1,
+    'ss03' 1,
+    'ss07' 1,
+    'dlig' 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Display headings – Mona Sans z aggressive negative tracking.
+   Defaults dla samych <h1-h4> bez klas Tailwind. */
+h1:not([class*='text-']),
+h2:not([class*='text-']),
+h3:not([class*='text-']),
+h4:not([class*='text-']) {
+  font-family: var(--font-display);
+  font-weight: 500;
+  margin: 0;
+  color: var(--ink);
+}
+
+h1:not([class*='text-']) {
+  font-size: var(--fs-display-xl);
+  line-height: 0.95;
+  letter-spacing: var(--ls-display-xl);
+}
+h2:not([class*='text-']) {
+  font-size: var(--fs-display-lg);
+  line-height: 1;
+  letter-spacing: var(--ls-display-lg);
+}
+h3:not([class*='text-']) {
+  font-size: var(--fs-display-md);
+  line-height: 1.13;
+  letter-spacing: var(--ls-display-md);
+}
+h4:not([class*='text-']) {
+  font-size: var(--fs-headline);
+  line-height: 1.2;
+  letter-spacing: var(--ls-headline);
+  font-weight: 700;
+}
+
+/* Display utility classes – fluid scaling z clamp() (Framer poster behavior).
+   letter-spacing w em (-5%) automatycznie skaluje z fontem. */
+.display-xxl {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(48px, 9.4vw, 124px);
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+}
+.display-xl {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(40px, 6.5vw, 88px);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+.display-lg {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(32px, 4.6vw, 62px);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+.display-md {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(22px, 2.4vw, 32px);
+  line-height: 1.13;
+  letter-spacing: -0.031em;
+}
+
+/* Inline accent (sky) dla highlightów w h1/h2 i kluczowych liczbach.
+   .accent class niezależna od font-weight – tylko kolor, działa zarówno
+   na <span> w środku display jak i na samodzielne paragrafy. */
+.accent {
+  color: var(--accent-blue);
+}
+
+/* ============================================================
+   Components – Framer DNA
+   ============================================================ */
+
+/* Eyebrow / kicker – uppercase tracking-wide + sky dot ::before.
+   Gap zwiększony do 12px + dot 8px dla lepszych proporcji wizualnych
+   z uppercase tekstem. Cap-height alignment via flex baseline. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-sans);
+  font-size: var(--fs-caption);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: var(--r-pill);
+  background: var(--accent-blue);
+  flex-shrink: 0;
+}
+
+/* Buttons */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-xs);
+  padding: 10px 15px;
+  background: var(--ink);
+  color: var(--bg-canvas);
+  font-family: var(--font-sans);
+  font-size: var(--fs-button);
+  font-weight: 500;
+  letter-spacing: var(--ls-button);
+  line-height: 1;
+  border: none;
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 40px;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  transform: scale(1.02);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-primary:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-l3);
+}
+
+/* Secondary CTA – Stitch iteration: translucent z subtle borderem, nie solid charcoal */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-xs);
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--fs-button);
+  font-weight: 500;
+  letter-spacing: var(--ls-button);
+  line-height: 1;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  transition:
+    transform 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.15s,
+    border-color 0.15s;
+  min-height: 40px;
+  white-space: nowrap;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: scale(1.02);
+}
+
+.btn-secondary:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-l3);
+}
+
+.btn-translucent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-xs);
+  padding: 8px 14px;
+  background: var(--bg-surface-2);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--fs-button);
+  font-weight: 500;
+  letter-spacing: var(--ls-button);
+  line-height: 1;
+  border: none;
+  border-radius: var(--r-xxl);
+  cursor: pointer;
+  transition:
+    transform 0.15s,
+    background 0.15s;
+}
+
+.btn-translucent:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.btn-icon-circular {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--bg-surface-1);
+  color: var(--ink);
+  border: none;
+  border-radius: var(--r-full);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-icon-circular:hover {
+  background: var(--bg-surface-2);
+}
+
+@media (pointer: coarse) {
+  .btn-icon-circular {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Inputs */
+
+.text-input {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--bg-surface-1);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  letter-spacing: var(--ls-body);
+  border: none;
+  border-radius: var(--r-md);
+  outline: none;
+  transition: box-shadow 0.15s;
+}
+
+.text-input::placeholder {
+  color: var(--ink-muted);
+}
+
+.text-input:focus {
+  box-shadow: var(--shadow-l3);
+}
+
+/* Cards */
+
+.card-pricing {
+  background: var(--bg-surface-1);
+  color: var(--ink);
+  border-radius: var(--r-xl);
+  padding: 24px;
+}
+
+.card-pricing-featured {
+  background: var(--bg-surface-2);
+}
+
+.card-template {
+  background: var(--bg-surface-1);
+  color: var(--ink);
+  border-radius: var(--r-lg);
+  padding: 12px;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.card-template:hover {
+  background: var(--bg-surface-2);
+}
+
+.card-mockup {
+  background: var(--bg-surface-1);
+  color: var(--ink);
+  border-radius: var(--r-xl);
+  padding: 16px;
+}
+
+.card-floating {
+  background: var(--bg-surface-1);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-l2);
+}
+
+.faq-row {
+  background: var(--bg-canvas);
+  color: var(--ink);
+  border-radius: var(--r-md);
+  padding: 24px;
+  border-bottom: 1px solid var(--hairline-soft);
+}
+
+/* Pricing tabs */
+
+.pricing-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  background: var(--bg-canvas);
+  color: var(--ink-muted);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body-sm);
+  font-weight: 500;
+  letter-spacing: var(--ls-body-sm);
+  line-height: 1;
+  border: none;
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    color 0.15s;
+  min-height: 40px;
+  white-space: nowrap;
+}
+
+.pricing-tab:hover {
+  color: var(--ink);
+}
+
+.pricing-tab-selected,
+.pricing-tab[aria-selected='true'],
+.pricing-tab.is-active {
+  background: var(--bg-surface-2);
+  color: var(--ink);
+}
+
+/* Gradient spotlight cards (sygnatura) */
+
+.card-spotlight {
+  position: relative;
+  background: var(--gradient-violet);
+  background-size: 130% 130%;
+  background-position: 25% 30%;
+  color: var(--ink);
+  border-radius: var(--r-xxl);
+  padding: 32px;
+  overflow: hidden;
+}
+
+.card-spotlight :where(h1, h2, h3, h4, p) {
+  color: var(--ink);
+}
+
+.card-spotlight-orange {
+  background-image: var(--gradient-orange);
+}
+
+.card-spotlight-magenta {
+  background-image: var(--gradient-magenta);
+}
+
+.card-spotlight-coral {
+  background-image: var(--gradient-coral);
+}
+
+/* Stitch linear pattern – cleaner niż radial-pan, dramatic z box-shadow */
+.card-spotlight-linear {
+  background: var(--gradient-violet-linear);
+  background-size: 100% 100%;
+  background-position: 0 0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .card-spotlight-violet-pan {
+    animation: spotlight-pan 60s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes spotlight-pan {
+  from {
+    background-position: 25% 30%;
+  }
+  to {
+    background-position: 32% 35%;
+  }
+}
+
+/* ============================================================
+   Logo wordmark – plain Mona Sans (zero pulse, zero radar)
+   ============================================================ */
+
+.logo-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.logo-wordmark:hover {
+  color: var(--ink);
+}
+
+/* ============================================================
+   Tailcast legacy aliases – mapowane na nowe komponenty.
+   Stara terminologia (.contained-button, .outlined-button, .card)
+   nadal działa, ale stylowanie pod spodem to Framer DNA.
+   ============================================================ */
+
+/* Container: 1280px standard – pure Framer szerokość żeby display poster
+   miał oddech. Modyfikatory: --narrow (880px reading), --wide (1440px). */
+.content-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 32px;
+}
+.content-container--narrow {
+  max-width: 880px;
+}
+.content-container--wide {
+  max-width: 1440px;
+}
+@media (max-width: 639px) {
+  .content-container,
+  .content-container--narrow,
+  .content-container--wide {
+    padding-inline: 20px;
+  }
+}
+
+/* Typography legacy – mapowane na ink/ink-muted */
+.block-title {
+  @apply text-primaryText text-3xl font-bold tracking-normal;
+  font-family: var(--font-display);
+}
+.block-big-title {
+  @apply text-primaryText text-4xl font-bold tracking-normal xl:text-5xl;
+  font-family: var(--font-display);
+}
+.block-subtitle {
+  /* legacy "kicker" – był uppercase orange. Teraz: caption sentence-case ink-muted */
+  font-family: var(--font-sans);
+  font-size: var(--fs-caption);
+  font-weight: 500;
+  letter-spacing: var(--ls-caption);
+  color: var(--ink-muted);
+  text-transform: none;
+}
+.content-title {
+  @apply text-primaryText text-lg font-bold tracking-normal;
+}
+.content-text-white {
+  @apply text-primaryText text-base leading-relaxed;
+  color: var(--ink);
+}
+.content-text-gray {
+  @apply text-base;
+  color: var(--ink-muted);
+}
+
+/* Borders */
+.main-border-gray {
+  border: 1px solid var(--hairline);
+}
+.main-border-gray-darker {
+  border: 1px solid var(--hairline-soft);
+}
+
+/* Buttons legacy → mapowane na Framer pill system */
+.contained-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-xs);
+  padding: 10px 15px;
+  background: var(--ink);
+  color: var(--bg-canvas);
+  font-family: var(--font-sans);
+  font-size: var(--fs-button);
+  font-weight: 500;
+  letter-spacing: var(--ls-button);
+  line-height: 1;
+  border: none;
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.contained-button:hover {
+  transform: scale(1.02);
+}
+
+.outlined-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-xs);
+  padding: 10px 15px;
+  background: var(--bg-surface-1);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--fs-button);
+  font-weight: 500;
+  letter-spacing: var(--ls-button);
+  line-height: 1;
+  border: none;
+  border-radius: var(--r-pill);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.outlined-button:hover {
+  background: var(--bg-surface-2);
+}
+
+/* Cards legacy → surface-1 lift, no border */
+.card {
+  background: var(--bg-surface-1);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-xl);
+  transition:
+    background 0.3s,
+    border-color 0.3s;
+}
+
+.card:hover {
+  background: var(--bg-surface-2);
+}
+
+.card-colored-hover {
+  transition: background 0.3s;
+}
+.card-colored-hover:hover {
+  background: var(--bg-surface-2);
+}
+
+/* Images */
+.image-border {
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-xl);
+}
+
+/* Blog sidebar (legacy compat) */
+.blog-sidebar-title {
+  font-size: 1.15rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .blog-sidebar-title {
+    font-size: 0.925rem;
+  }
+}
+
+/* Badges */
+.badge-primary {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  background: var(--bg-surface-2);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--fs-caption);
+  font-weight: 500;
+  letter-spacing: var(--ls-caption);
+  border-radius: var(--r-pill);
+}
+
+.badge-neutral {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  background: var(--bg-surface-1);
+  color: var(--ink-muted);
+  border-radius: var(--r-pill);
+  font-size: var(--fs-caption);
+}
+
+/* Inputs (legacy compat) */
+.form-input {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--bg-surface-1);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  border: none;
+  border-radius: var(--r-md);
+  outline: none;
+  transition: box-shadow 0.15s;
+}
+.form-input::placeholder {
+  color: var(--ink-muted);
+}
+.form-input:focus {
+  box-shadow: var(--shadow-l3);
+}
+
+/* Modals (legacy compat) */
+.modal-backdrop {
+  @apply m-auto bg-transparent p-0 backdrop:backdrop-blur-sm;
+  background: transparent;
+}
+.modal-backdrop::backdrop {
+  background: rgba(10, 10, 11, 0.85);
+}
+
+.modal-backdrop.modal-fullscreen-mobile {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  .modal-backdrop.modal-fullscreen-mobile {
+    max-width: unset;
+    max-height: unset;
+    margin: auto;
+  }
+}
+@media (max-width: 529px) {
+  .modal-backdrop {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+  }
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--bg-surface-1);
+  color: var(--ink);
+  border: none;
+  border-radius: var(--r-full);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.modal-close-button:hover {
+  background: var(--bg-surface-2);
+}
+
+.modal-close-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Inline links (Markdown → Astro Article body) */
+.prose-framer a,
+.article-body a {
+  color: var(--accent-blue);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-framer a:hover,
+.article-body a:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================================
+   Light mode component overrides – komponenty z hardcoded
+   białymi rgba lub wymagające explicit inwersji.
+   ============================================================ */
+
+/* btn-secondary – białe rgba znika na białym tle */
+:root[data-theme="light"] .btn-secondary {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.10);
+}
+
+:root[data-theme="light"] .btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
+/* btn-translucent – ten sam problem */
+:root[data-theme="light"] .btn-translucent:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Modal backdrop – ciemny scrim na białym tle */
+:root[data-theme="light"] .modal-backdrop::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Spotlight cards – content force biały niezależnie od motywu.
+   Cards same zostają ciemne (gradient hardcoded), ale --ink
+   w light = #1a1a1a, więc text/buttons potrzebują explicit
+   white żeby były czytelne na violet/orange/magenta gradient. */
+.card-spotlight :where(h1, h2, h3, h4, p) {
+  color: #fff;
+}
+
+.card-spotlight .btn-secondary {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.20);
+  color: #fff;
+}
+
+.card-spotlight .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.30);
+}
+
+/* Eyebrow w spotlight – też force biały muted */
+.card-spotlight .eyebrow {
+  color: rgba(255, 255, 255, 0.7);
+}

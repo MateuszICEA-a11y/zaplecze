@@ -1,0 +1,205 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import ScrollUpButton from '../components/ScrollUpButton.astro';
+---
+
+<Layout
+  title="Kontakt – widocznosc.ai"
+  description="Skontaktuj się z zespołem widocznosc.ai. Zamów audyt widoczności AI, zapytaj o doradztwo GEO. Bezpłatna konsultacja 30 minut."
+>
+  <Navbar />
+
+  <section class="relative pt-32 pb-24 md:pt-40">
+    <div class="content-container">
+      <div class="flex flex-col gap-16 lg:flex-row lg:gap-24">
+        <!-- Left – intro + contact channels -->
+        <div class="lg:w-1/2">
+          <span class="eyebrow mb-6 inline-flex">Kontakt</span>
+          <h1 class="display-xl mt-4 mb-6">
+            Porozmawiajmy o widoczności<br />Twojej marki w&nbsp;<span class="accent">AI</span>
+          </h1>
+          <p class="text-ink mb-12 max-w-xl text-lg leading-relaxed">
+            Wypełnij formularz albo zadzwoń. Odpowiadamy w&nbsp;ciągu 24 godzin
+            w&nbsp;dni robocze. Bezpłatna konsultacja 30 minut – bez sprzedaży, bez zobowiązań.
+          </p>
+
+          <div class="space-y-8">
+            <!-- Email -->
+            <div>
+              <div class="text-ink-muted mb-1 text-sm">E-mail</div>
+              <a class="text-ink hover:opacity-85 text-lg transition" href="mailto:hello@widocznosc.ai">
+                hello@widocznosc.ai
+              </a>
+            </div>
+
+            <!-- Biuro -->
+            <div>
+              <div class="text-ink-muted mb-1 text-sm">Biuro ICEA</div>
+              <p class="text-ink leading-relaxed">
+                ul. Mińska 25, 03-808 Warszawa<br />
+                część <a
+                  class="text-accent-blue hover:opacity-85 underline underline-offset-2 transition"
+                  href="https://grupa-icea.pl"
+                  target="_blank"
+                  rel="noopener noreferrer">grupa-icea.pl</a>
+              </p>
+            </div>
+
+            <!-- Czas odpowiedzi -->
+            <div>
+              <div class="text-ink-muted mb-1 text-sm">Czas odpowiedzi</div>
+              <p class="text-ink leading-relaxed">
+                pon–pt, 9:00–17:00 · do 24h roboczych
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right – form -->
+        <div class="lg:w-1/2">
+          <div
+            class="rounded-[20px] p-8 sm:p-10"
+            style="background: var(--bg-surface-1);"
+            id="contact-wrapper"
+          >
+            <form id="contact-form" aria-label="Formularz kontaktowy">
+              <div class="mb-5">
+                <label for="name" class="text-ink mb-2 block font-medium">
+                  Imię i nazwisko
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Jan Kowalski"
+                  required
+                  autocomplete="name"
+                  class="text-input"
+                  style="background: var(--bg-canvas);"
+                />
+              </div>
+              <div class="mb-5">
+                <label for="email" class="text-ink mb-2 block font-medium">Adres e-mail</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="jan@firma.pl"
+                  required
+                  autocomplete="email"
+                  class="text-input"
+                  style="background: var(--bg-canvas);"
+                />
+              </div>
+              <div class="mb-5">
+                <label for="company" class="text-ink mb-2 block font-medium">
+                  Firma <span class="text-ink-muted font-normal">(opcjonalnie)</span>
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  placeholder="Twoja Firma sp. z o.o."
+                  autocomplete="organization"
+                  class="text-input"
+                  style="background: var(--bg-canvas);"
+                />
+              </div>
+              <div class="mb-5">
+                <label for="type" class="text-ink mb-2 block font-medium">Cel kontaktu</label>
+                <select id="type" name="type" required class="text-input" style="background: var(--bg-canvas);">
+                  <option value="">Wybierz...</option>
+                  <option value="audyt-ai">Kompleksowy audyt AI</option>
+                  <option value="audyt-content">Audyt contentu pod AI</option>
+                  <option value="visibility-checker">Visibility Checker (bezpłatne)</option>
+                  <option value="konsultacja">Bezpłatna konsultacja 30 min</option>
+                  <option value="wdrozenie">Audyt + wdrożenie 90 dni</option>
+                  <option value="inne">Inne</option>
+                </select>
+              </div>
+              <div class="mb-8">
+                <label for="message" class="text-ink mb-2 block font-medium">Wiadomość</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Opisz krótko Twój kontekst – branżę, główne pytania, oczekiwany rezultat."
+                  required
+                  autocomplete="off"
+                  class="text-input resize-none"
+                  style="background: var(--bg-canvas);"></textarea>
+              </div>
+              <button type="submit" class="btn-primary !w-full !justify-center !py-4">
+                Wyślij wiadomość
+              </button>
+              <p class="text-ink-muted mt-4 text-center text-xs leading-relaxed">
+                Wysyłając formularz wyrażasz zgodę na kontakt zwrotny zgodnie z naszą
+                <a class="text-accent-blue underline underline-offset-2 hover:opacity-85" href="/polityka-prywatnosci">
+                  polityką prywatności
+                </a>.
+              </p>
+            </form>
+
+            <div
+              id="contact-success"
+              class="hidden flex-col items-center justify-center py-16 text-center opacity-0 transition-opacity duration-500"
+              aria-live="polite"
+            >
+              <div
+                class="mb-6 flex h-20 w-20 items-center justify-center rounded-full"
+                style="background: var(--bg-surface-2);"
+                aria-hidden="true"
+              >
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+                  <path d="M20 6L9 17L4 12" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3 class="display-md mb-3">Wiadomość wysłana</h3>
+              <p class="text-ink-muted max-w-sm leading-relaxed">
+                Dziękujemy za kontakt. Odpowiemy w ciągu 24 godzin roboczych.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <ScrollUpButton />
+
+  <script>
+    const form = document.getElementById('contact-form') as HTMLFormElement;
+    const success = document.getElementById('contact-success');
+    const wrapper = document.getElementById('contact-wrapper');
+    const params = new URLSearchParams(window.location.search);
+    const typeParam = params.get('type');
+    const typeSelect = document.getElementById('type') as HTMLSelectElement | null;
+
+    if (typeParam && typeSelect) {
+      const valid = Array.from(typeSelect.options).some((o) => o.value === typeParam);
+      if (valid) typeSelect.value = typeParam;
+    }
+
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const wrapperHeight = wrapper?.offsetHeight;
+      if (wrapper && wrapperHeight) {
+        wrapper.style.minHeight = `${wrapperHeight}px`;
+      }
+      form.style.transition = 'opacity 0.3s ease';
+      form.style.opacity = '0';
+      setTimeout(() => {
+        form.classList.add('hidden');
+        success?.classList.remove('hidden');
+        success?.classList.add('flex');
+        requestAnimationFrame(() => {
+          success?.classList.remove('opacity-0');
+          success?.classList.add('opacity-100');
+        });
+      }, 300);
+    });
+  </script>
+</Layout>

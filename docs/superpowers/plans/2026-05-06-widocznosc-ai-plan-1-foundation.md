@@ -138,11 +138,12 @@ transformacja-zaplecza-seo/
 - Create: `pnpm-workspace.yaml`
 - Modify: `.gitignore`
 
-- [ ] **Step 1: Install pnpm globally via corepack**
+- [ ] **Step 1: Install pnpm via official script (no sudo needed)**
 
-Run: `corepack enable && corepack prepare pnpm@9.12.0 --activate`
-Expected: `Installing pnpm@9.12.0 in the local cache`
-Verify: `pnpm --version` → `9.12.0`
+Run: `curl -fsSL https://get.pnpm.io/install.sh | SHELL=$(which bash) sh -`
+Then in every subsequent Bash call, prefix:
+`export PATH="$HOME/.local/share/pnpm:$PATH"`
+Verify: `pnpm --version` → `10.33.3` (or newer; plan tested with 10.x)
 
 - [ ] **Step 2: Create `pnpm-workspace.yaml`**
 
@@ -158,7 +159,7 @@ packages:
   "name": "transformacja-zaplecza-seo",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@9.12.0",
+  "packageManager": "pnpm@10.33.3",
   "workspaces": [
     "portals/widocznosc.ai"
   ],

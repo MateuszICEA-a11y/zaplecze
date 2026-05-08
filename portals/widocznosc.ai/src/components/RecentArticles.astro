@@ -1,0 +1,276 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import { CATEGORY_LABELS } from '../content.config';
+
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  limit?: number;
+}
+
+const {
+  eyebrow = 'Centrum wiedzy',
+  title = 'Jak działają <span class="recent-title-accent">modele AI</span>?',
+  subtitle = 'Definicje, case studies i poradniki – dowiedz się, jak modele językowe syntezują odpowiedzi i co decyduje o cytowalności Twojej marki w świecie AI.',
+  limit = 3,
+} = Astro.props;
+
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, limit);
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<section class="recent-section">
+  <div class="recent-container">
+    <header class="recent-header">
+      <div class="recent-header-text">
+        <span class="eyebrow recent-eyebrow">{eyebrow}</span>
+        <h2 class="display-lg recent-title" set:html={title} />
+        <p class="recent-lead">{subtitle}</p>
+      </div>
+      <a href="/blog" class="recent-all-link">
+        Wszystkie artykuły
+        <span aria-hidden="true">→</span>
+      </a>
+    </header>
+
+    <div class="recent-grid">
+      {
+        posts.map((post) => (
+          <a href={`/blog/${post.id}`} class="recent-card">
+            <div class="recent-card-image">
+              <Image
+                src={post.data.image}
+                alt={post.data.title}
+                widths={[400, 600, 800]}
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                loading="lazy"
+              />
+            </div>
+            <div class="recent-card-body">
+              <div class="recent-card-meta">
+                <span class="recent-card-category">{CATEGORY_LABELS[post.data.category]}</span>
+                <span class="recent-card-date">{formatDate(post.data.date)}</span>
+              </div>
+              <h3 class="recent-card-title">{post.data.title}</h3>
+              {post.data.subtitle && (
+                <p class="recent-card-desc">{post.data.subtitle}</p>
+              )}
+            </div>
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="recent-mobile-link">
+      <a href="/blog" class="recent-all-link recent-all-link--mobile">
+        Wszystkie artykuły
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .recent-section {
+    background: var(--bg-canvas);
+    padding: 96px 0;
+    border-top: 1px solid var(--hairline-soft);
+  }
+
+  .recent-container {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding: 0 30px;
+  }
+
+  .recent-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .recent-header-text {
+    max-width: 640px;
+  }
+
+  .recent-eyebrow {
+    margin-bottom: 12px;
+  }
+
+  .recent-title {
+    color: var(--ink);
+    margin: 0 0 12px 0;
+    text-wrap: balance;
+  }
+
+  .recent-title :global(.recent-title-accent) {
+    color: var(--accent-blue);
+  }
+
+  .recent-lead {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-lg);
+    line-height: 1.45;
+    letter-spacing: var(--ls-body-lg);
+    color: var(--ink-muted);
+    margin: 0;
+  }
+
+  .recent-all-link {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-sm);
+    font-weight: 500;
+    letter-spacing: var(--ls-body-sm);
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: gap 0.15s ease;
+    flex-shrink: 0;
+  }
+
+  @media (min-width: 640px) {
+    .recent-all-link {
+      display: inline-flex;
+    }
+  }
+
+  .recent-all-link:hover {
+    gap: 10px;
+  }
+
+  /* Equal 3-up grid – wszystkie karty mają tę samą hierarchię */
+  .recent-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  @media (min-width: 640px) {
+    .recent-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .recent-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .recent-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-surface-1);
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .recent-card:hover {
+    background: var(--bg-surface-2);
+  }
+
+  .recent-card-image {
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--bg-surface-2);
+  }
+
+  .recent-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .recent-card:hover .recent-card-image img {
+    transform: scale(1.04);
+  }
+
+  .recent-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px;
+    flex: 1;
+  }
+
+  .recent-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .recent-card-category {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    background: var(--bg-canvas);
+    border-radius: var(--r-pill);
+    font-family: var(--font-sans);
+    font-size: var(--fs-micro);
+    font-weight: 500;
+    letter-spacing: -0.12px;
+    color: var(--ink);
+  }
+
+  .recent-card-date {
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    font-weight: 500;
+    letter-spacing: var(--ls-caption);
+    color: var(--ink-muted);
+  }
+
+  .recent-card-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--fs-headline);
+    line-height: 1.2;
+    letter-spacing: var(--ls-headline);
+    color: var(--ink);
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .recent-card-desc {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-sm);
+    line-height: 1.5;
+    letter-spacing: var(--ls-body-sm);
+    color: var(--ink-muted);
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .recent-mobile-link {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .recent-all-link--mobile {
+    display: inline-flex;
+  }
+
+  @media (min-width: 640px) {
+    .recent-mobile-link {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,281 @@
+---
+/**
+ * Process – jak wygląda pełny audyt widoczności AI (4 kroki, 3 dni delivery).
+ * Framer DNA: numery display-lg ink, hairline connector, monochrome stepper.
+ */
+
+interface Step {
+  num: string;
+  title: string;
+  duration: string;
+  desc: string;
+  bullets: string[];
+  variant: 'violet' | 'cyan' | 'green' | 'blue';
+}
+
+const steps: Step[] = [
+  {
+    num: '01',
+    title: 'Mapa pytań',
+    duration: 'Etap 1',
+    desc: 'Tworzymy 32–48 zapytań z trzech warstw – brandowych, ogólnych i porównawczych. Lista wynika z Twojej kategorii, nie z generatora.',
+    bullets: [
+      'Spotkanie strategiczne z zespołem',
+      'Analiza intencji kupujących',
+      'Lista benchmarkowych konkurentów',
+    ],
+    variant: 'violet',
+  },
+  {
+    num: '02',
+    title: 'Test 5 silników AI',
+    duration: 'Etap 2',
+    desc: 'Zapytania trafiają równolegle do ChatGPT, Claude, Gemini, Perplexity i Copilot – ze świeżymi sesjami i bez personalizacji.',
+    bullets: [
+      'Standaryzacja promptów',
+      'Wielokrotne sesje',
+      'Pomiar wariancji odpowiedzi',
+    ],
+    variant: 'cyan',
+  },
+  {
+    num: '03',
+    title: 'Audyt techniczny + content',
+    duration: 'Etap 3',
+    desc: 'Analiza struktury, schema, llms.txt i danych źródłowych. Mapujemy luki contentu pod konwersacyjne zapytania.',
+    bullets: [
+      'Schema & semantyka',
+      'Audyt llms.txt',
+      'Mapowanie luk treści',
+    ],
+    variant: 'green',
+  },
+  {
+    num: '04',
+    title: 'Raport + kierunek dalszych działań',
+    duration: 'Etap 4',
+    desc: 'Raport z wnioskami i konkretnymi rekomendacjami. Pokazujemy, gdzie marka jest dziś, gdzie może być za pół roku i jakie kroki nas tam zaprowadzą.',
+    bullets: [
+      'Warsztat z omówieniem wyników',
+      'Strategia na budowanie widoczności',
+      'Lista briefów na treści',
+    ],
+    variant: 'blue',
+  },
+];
+---
+
+<section class="process-section" aria-labelledby="process-title">
+  <div class="process-container">
+
+    <header class="process-header">
+      <span class="eyebrow process-eyebrow">Jak działamy</span>
+      <h2 id="process-title" class="display-lg process-title">
+        Cztery etapy budowania widoczności w&nbsp;AI
+      </h2>
+      <p class="process-lead">
+        Pokazujemy, gdzie Twoja marka jest dziś w&nbsp;wyszukiwarkach AI i&nbsp;jakie
+        kroki mogą zwiększyć jej widoczność. Co dalej &ndash; decydujesz sam.
+      </p>
+    </header>
+
+    <ol class="process-grid">
+      {
+        steps.map((step) => (
+          <li class:list={['process-step', `process-step--${step.variant}`]}>
+            <div class="process-step-num">
+              {step.num}
+              <small>{step.duration}</small>
+            </div>
+            <h3 class="process-step-title">{step.title}</h3>
+            <p class="process-step-desc">{step.desc}</p>
+            <ul class="process-step-bullets">
+              {step.bullets.map((b) => (
+                <li>{b}</li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+    </ol>
+
+    <p class="process-footer">
+      Każdy etap z&nbsp;konkretnym rezultatem. Po audycie sam decydujesz,
+      jakiej formy współpracy potrzebujesz.
+    </p>
+
+  </div>
+</section>
+
+<style>
+  .process-section {
+    background: var(--bg-canvas);
+    padding: 96px 0;
+  }
+
+  .process-container {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding: 0 30px;
+  }
+
+  .process-header {
+    max-width: 720px;
+    margin: 0 auto 64px auto;
+    text-align: center;
+  }
+
+  .process-eyebrow {
+    margin-bottom: 16px;
+  }
+
+  .process-title {
+    color: var(--ink);
+    margin: 0 0 16px 0;
+    text-wrap: balance;
+  }
+
+  .process-lead {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-lg);
+    line-height: 1.45;
+    letter-spacing: var(--ls-body-lg);
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .process-grid {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  @media (min-width: 768px) {
+    .process-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .process-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+  }
+
+  /* Spotlight gradient cards – każda faza ma własny kolor (violet/magenta/coral/orange).
+     Identyczne radius i padding jak homepage Hero spotlight. */
+  .process-step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--r-xxl);
+    padding: 32px 28px;
+    overflow: hidden;
+    color: #fff;
+    min-height: 360px;
+  }
+
+  /* Stonowana paleta (Claude Design 2026-05-08) – linear gradients,
+     mniej "krzyczące" niż radial coral/orange. */
+  .process-step--violet {
+    background: var(--gradient-process-violet);
+  }
+  .process-step--cyan {
+    background: var(--gradient-process-cyan);
+  }
+  .process-step--green {
+    background: var(--gradient-process-green);
+  }
+  .process-step--blue {
+    background: var(--gradient-process-blue);
+  }
+
+  /* Numer + small "dzień X" inline (Claude Design layout: 01<small>dzień 1</small>) */
+  .process-step-num {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--fs-display-lg);
+    line-height: 1;
+    letter-spacing: -0.05em;
+    color: #fff;
+    margin-bottom: 24px;
+  }
+
+  .process-step-num small {
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .process-step-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--fs-headline);
+    line-height: 1.2;
+    letter-spacing: var(--ls-headline);
+    color: #fff;
+    margin: 0 0 12px 0;
+  }
+
+  .process-step-desc {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-sm);
+    line-height: 1.5;
+    letter-spacing: var(--ls-body-sm);
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 20px 0;
+  }
+
+  .process-step-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    padding-top: 16px;
+    margin-top: auto;
+  }
+
+  .process-step-bullets li {
+    position: relative;
+    padding-left: 16px;
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-sm);
+    line-height: 1.45;
+    letter-spacing: var(--ls-body-sm);
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .process-step-bullets li::before {
+    content: '·';
+    position: absolute;
+    left: 4px;
+    color: #fff;
+  }
+
+  .process-footer {
+    text-align: center;
+    margin-top: 64px;
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    font-weight: 500;
+    letter-spacing: var(--ls-caption);
+    color: var(--ink-muted);
+  }
+</style>

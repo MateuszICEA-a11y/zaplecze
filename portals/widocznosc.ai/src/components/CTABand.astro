@@ -1,0 +1,90 @@
+---
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  primaryHref?: string;
+  primaryLabel?: string;
+  ghostHref?: string;
+  ghostLabel?: string;
+}
+
+const {
+  eyebrow = 'Następny krok',
+  title = 'Sprawdź, jak Twoja marka radzi sobie w <span class="ctaband-title-accent">AI search</span>',
+  subtitle = 'Bezpłatna konsultacja 30 minut. Bez sprzedaży, bez zobowiązań – pokazujemy gdzie marka jest cytowana, gdzie traci do konkurencji i co realnie zmienić.',
+  primaryHref = '/kontakt',
+  primaryLabel = 'Zamów audyt AI',
+  ghostHref = '/kontakt?type=konsultacja',
+  ghostLabel = 'Bezpłatna konsultacja',
+} = Astro.props;
+---
+
+<section class="ctaband-section">
+  <div class="ctaband-container">
+    <span class="eyebrow ctaband-eyebrow">{eyebrow}</span>
+    <h2 class="display-xl ctaband-title" set:html={title} />
+    <p class="ctaband-lead">{subtitle}</p>
+    <div class="ctaband-actions">
+      <a class="btn-primary" href={primaryHref} aria-label={primaryLabel}>
+        {primaryLabel}
+      </a>
+      <a class="btn-secondary" href={ghostHref} aria-label={ghostLabel}>
+        {ghostLabel}
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ctaband-section {
+    background: var(--bg-canvas);
+    padding: 96px 0;
+    border-top: 1px solid var(--hairline-soft);
+  }
+
+  .ctaband-container {
+    width: 100%;
+    max-width: 880px;
+    margin-inline: auto;
+    padding: 0 30px;
+    text-align: center;
+  }
+
+  .ctaband-eyebrow {
+    margin-bottom: 16px;
+  }
+
+  .ctaband-title :global(.ctaband-title-accent) {
+    color: var(--accent-blue);
+  }
+
+  .ctaband-title {
+    color: var(--ink);
+    margin: 0 0 24px 0;
+    text-wrap: balance;
+  }
+
+  .ctaband-lead {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-lg);
+    line-height: 1.45;
+    letter-spacing: var(--ls-body-lg);
+    color: var(--ink-muted);
+    margin: 0 0 40px 0;
+  }
+
+  .ctaband-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  @media (min-width: 640px) {
+    .ctaband-actions {
+      flex-direction: row;
+    }
+  }
+</style>

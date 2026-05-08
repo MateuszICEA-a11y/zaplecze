@@ -1,0 +1,164 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import ScrollUpButton from '../components/ScrollUpButton.astro';
+import CTABand from '../components/CTABand.astro';
+import { AI_MODELS } from '../data/aiModels';
+
+const services = [
+  {
+    id: 'audyt',
+    title: 'Audyt widoczności AI',
+    desc: 'Sprawdzamy jak Twoja marka jest cytowana w 5 modelach AI. Mapa cytowań, gap analysis vs konkurencja.',
+    variant: 'violet',
+  },
+  {
+    id: 'content',
+    title: 'Optymalizacja contentu pod LLM',
+    desc: 'Przepisanie istniejących stron pod fact-density, schema, źródła cytowalne. Briefy dla copywriterów.',
+    variant: 'magenta',
+  },
+  {
+    id: 'monitoring',
+    title: 'Monitoring cytowań',
+    desc: 'Stałe śledzenie 50-200 zapytań co tydzień. Alerty o pojawieniu się konkurencji, dashboard z historią.',
+    variant: 'coral',
+  },
+  {
+    id: 'strategia',
+    title: 'Strategia GEO 12 miesięcy',
+    desc: 'Plan widoczności na cały rok: mapa fraz, kalendarz contentu, plan dystrybucji + linkbuilding pod GEO.',
+    variant: 'orange',
+  },
+] as const;
+
+const gradientStyle = (variant: string) => {
+  if (variant === 'violet') return 'background: var(--gradient-violet); background-size: 130% 130%; background-position: 25% 30%;';
+  if (variant === 'magenta') return 'background: var(--gradient-magenta); background-size: 130% 130%; background-position: 30% 30%;';
+  if (variant === 'coral') return 'background: var(--gradient-coral); background-size: 130% 130%; background-position: 70% 30%;';
+  return 'background: var(--gradient-orange); background-size: 130% 130%; background-position: 70% 25%;';
+};
+---
+
+<Layout
+  title="Pozycjonowanie AI – widoczność marki w ChatGPT, Gemini, Perplexity"
+  description="Pozycjonowanie marki w wyszukiwarkach AI: ChatGPT, Claude, Gemini, Perplexity, Bing Copilot. Audyt widoczności, optymalizacja contentu, monitoring cytowań, strategia GEO."
+>
+  <Navbar />
+
+  <!-- Hero – wyśrodkowany na pełnej szerokości containera -->
+  <section class="relative pt-32 pb-20 md:pt-40 md:pb-24">
+    <div class="content-container text-center">
+      <span class="eyebrow mb-10 inline-flex">Usługi · Generative Engine Optimization</span>
+      <h1 class="display-xl mx-auto mb-8" style="max-width: 1100px;">
+        Pozycjonowanie w&nbsp;<span class="accent">AI</span>
+      </h1>
+      <p class="text-ink mx-auto text-lg leading-relaxed" style="max-width: 720px;">
+        Widoczność marki w&nbsp;ChatGPT, Claude, Gemini, Perplexity i&nbsp;Bing Copilot. Mierzymy
+        cytowania, nie ranking. Każdy model wymaga innego podejścia – wybierz konkretny silnik
+        poniżej, albo zacznij od kompleksowego audytu wszystkich pięciu.
+      </p>
+      <div class="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a class="btn-primary" href="/kontakt?type=audyt-ai">Zamów audyt wszystkich modeli</a>
+        <a class="btn-secondary" href="/narzedzia/visibility-checker">Sprawdź widoczność · 90s</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 modeli AI – grid z linkami do podstron -->
+  <section class="relative w-full" aria-labelledby="models-title">
+    <div class="content-container py-16 lg:py-20">
+      <div class="mx-auto mb-14 text-center" style="max-width: 880px;">
+        <span class="eyebrow mb-6 inline-flex">5 modeli</span>
+        <h2 id="models-title" class="display-lg mt-2 mb-6" style="text-wrap: balance;">
+          Wybierz silnik AI, w którym chcesz być widoczny
+        </h2>
+        <p class="text-ink-muted mx-auto text-lg leading-relaxed" style="max-width: 720px;">
+          Każdy model AI inaczej buduje odpowiedzi: ChatGPT preferuje training data + RAG, Gemini
+          cytuje z indeksu Google, Perplexity stawia na transparentne źródła. Optymalizacja pod
+          jeden model nie wystarczy.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        {
+          AI_MODELS.map((model) => (
+            <a
+              href={model.href}
+              class="group flex flex-col rounded-[15px] p-6 transition"
+              style="background: var(--bg-surface-1);"
+              data-card-template
+            >
+              <div class="text-ink-muted text-sm">{model.vendor}</div>
+              <h3 class="mt-2 mb-3 text-2xl font-medium" style="font-family: var(--font-display); letter-spacing: -1px;">
+                {model.name}
+              </h3>
+              <p class="text-ink-muted text-sm leading-relaxed">{model.shortDesc}</p>
+              <div class="text-accent-blue mt-5 flex items-center gap-2 text-sm opacity-0 transition group-hover:opacity-100">
+                Pozycjonowanie w {model.name}
+                <span aria-hidden="true">→</span>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Metodologia – 4 services condensed -->
+  <section class="relative w-full" aria-labelledby="method-title">
+    <div class="content-container py-16 lg:py-20">
+      <div class="mx-auto mb-14 text-center" style="max-width: 880px;">
+        <span class="eyebrow mb-6 inline-flex">Metodologia</span>
+        <h2 id="method-title" class="display-lg mt-2 mb-6" style="text-wrap: balance;">Cztery filary współpracy</h2>
+        <p class="text-ink-muted mx-auto text-lg leading-relaxed" style="max-width: 720px;">
+          Niezależnie od tego który model AI ma być Twoim głównym kanałem, sposób pracy zostaje
+          ten sam. Mierzymy, optymalizujemy, monitorujemy, planujemy.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+        {
+          services.map((service, i) => (
+            <div
+              id={service.id}
+              class="scroll-mt-24 relative flex flex-col overflow-hidden rounded-[30px] p-8 lg:p-10"
+              style={gradientStyle(service.variant)}
+            >
+              <div class="display-md mb-2 leading-none" style="color: #fff;">0{i + 1}</div>
+              <div class="mb-6 text-sm" style="color: rgba(255,255,255,0.7);">
+                Filar {i + 1}
+              </div>
+              <h3 class="mb-3 text-xl font-medium" style="font-family: var(--font-display); letter-spacing: -0.5px; color: #fff;">
+                {service.title}
+              </h3>
+              <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.85);">
+                {service.desc}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <CTABand
+    eyebrow="Decyzja"
+    title="Nie wiesz od którego modelu zacząć?"
+    subtitle="Bezpłatna konsultacja 30 minut. Mówimy gdzie Twoja branża jest najczęściej pytana w&nbsp;AI i który silnik jako pierwszy daje ROI w&nbsp;Twoim przypadku."
+    primaryLabel="Zamów audyt AI"
+    primaryHref="/kontakt?type=audyt-ai"
+    ghostLabel="Bezpłatna konsultacja"
+    ghostHref="/kontakt?type=konsultacja"
+  />
+
+  <Footer />
+  <ScrollUpButton />
+</Layout>
+
+<style>
+  [data-card-template]:hover {
+    background: var(--bg-surface-2) !important;
+  }
+</style>

@@ -1,0 +1,187 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import ScrollUpButton from '../components/ScrollUpButton.astro';
+import AuthorsStrip from '../components/AuthorsStrip.astro';
+import CTABand from '../components/CTABand.astro';
+
+const principles = [
+  {
+    title: 'Mierzymy cytowania, nie ranking',
+    desc: 'Pozycja w ChatGPT czy Perplexity nie istnieje – każda odpowiedź jest generowana na żywo. Liczymy ile razy marka pojawia się w odpowiedziach na branżowe zapytania, kto jest cytowany zamiast Ciebie i które źródła AI cytuje najczęściej.',
+  },
+  {
+    title: 'Pięć modeli, nie jeden',
+    desc: 'ChatGPT, Claude, Gemini, Perplexity i Bing Copilot inaczej budują odpowiedzi. ChatGPT używa training data + RAG, Gemini cytuje z indeksu Google, Perplexity stawia na transparentne źródła. Optymalizacja pod jeden model nie wystarczy.',
+  },
+  {
+    title: 'Sygnały rankingowe per model',
+    desc: 'Każdy silnik AI ma własne sygnały – fact-density, struktura headerów, schema, gęstość źródeł, autorytet domeny w Common Crawl. Audytujemy i optymalizujemy oddzielnie pod każdy model, bo „GEO best practices" to zbyt duże uproszczenie.',
+  },
+  {
+    title: 'Tradycyjne SEO za nami, GEO przed nami',
+    desc: 'ICEA pozycjonuje strony od kilkunastu lat. Wiemy jak Google rankuje, dlatego rozumiemy gdzie kończy się klasyczne SEO i zaczyna GEO. Łączymy doświadczenie z 200+ wdrożeń SEO z metodyką dedykowaną wyszukiwarkom AI.',
+  },
+];
+
+const stats = [
+  { value: 'kilkanaście lat', label: 'doświadczenia w SEO' },
+  { value: '200+', label: 'wdrożeń SEO klientów ICEA' },
+  { value: '5', label: 'modeli AI w pełnym audycie' },
+];
+
+const differentiators = [
+  {
+    title: 'Praktyka, nie teoria',
+    desc: 'Każda rekomendacja przeszła przez wdrożenie u klienta. Mówimy co działa w polskich realiach – z polskimi źródłami, polskim contentem, polskimi konkurentami w rankingu.',
+  },
+  {
+    title: 'Transparentne metody',
+    desc: 'Pokazujemy promptu, źródła, narzędzia. Klient dostaje surowe zapytania zadawane modelom, raw odpowiedzi i metodologię scoringu. Bez czarnych skrzynek.',
+  },
+  {
+    title: 'Dane, nie marketing',
+    desc: 'Visibility Score liczony z realnych odpowiedzi pięciu modeli, nie z pseudo-rankingu od zewnętrznego dostawcy. Każda liczba w raporcie ma kontekst i powtarzalną metodologię.',
+  },
+  {
+    title: 'Zespół z nazwiskami',
+    desc: 'Każdy artykuł na blogu, każda rekomendacja w audycie – podpisany ekspert ICEA z kilkunastoletnim stażem. Wiesz z kim rozmawiasz i czyje wnioski czytasz.',
+  },
+];
+---
+
+<Layout
+  title="O nas – widocznosc.ai"
+  description="Zespół ICEA od kilkunastu lat pozycjonuje strony w Google. Teraz pomagamy markom być widocznymi w wyszukiwarkach AI: ChatGPT, Claude, Gemini, Perplexity, Bing Copilot."
+>
+  <Navbar />
+
+  <!-- Hero – wyśrodkowany na pełnej szerokości containera -->
+  <section class="relative pt-32 pb-20 md:pt-40 md:pb-24">
+    <div class="content-container text-center">
+      <span class="eyebrow mb-10 inline-flex">O widocznosc.ai</span>
+      <h1 class="display-xl mx-auto mb-8" style="max-width: 1100px;">
+        Pozycjonujemy marki w&nbsp;<span class="accent">wyszukiwarkach AI</span>
+      </h1>
+      <p class="text-ink mx-auto text-lg leading-relaxed" style="max-width: 720px;">
+        widocznosc.ai to flagowy projekt
+        <a class="text-accent-blue underline underline-offset-2 hover:opacity-85" href="https://grupa-icea.pl" target="_blank" rel="noopener noreferrer">grupa-icea.pl</a>
+        dedykowany jednej dyscyplinie: budowaniu obecności marki w odpowiedziach generowanych przez ChatGPT, Claude,
+        Gemini, Perplexity i Bing Copilot. Mierzymy cytowania, nie pseudo-ranking.
+      </p>
+      <div class="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a class="btn-primary" href="/kontakt?type=audyt-ai">Zamów audyt AI</a>
+        <a class="btn-secondary" href="/narzedzia/visibility-checker">Sprawdź widoczność · 90s</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats band -->
+  <section class="relative w-full">
+    <div class="content-container py-12 md:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-3" style="border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline);">
+        {
+          stats.map((stat, i) => (
+            <div
+              class="px-2 py-10 md:py-12 md:px-8"
+              style={i > 0 ? 'border-left: 1px solid var(--hairline);' : ''}
+            >
+              <div class="display-lg accent leading-none">{stat.value}</div>
+              <div class="text-ink-muted mt-4 text-sm">{stat.label}</div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Cztery zasady GEO -->
+  <section class="relative w-full" aria-labelledby="principles-title">
+    <div class="content-container py-16 lg:py-20">
+      <div class="mx-auto mb-14 text-center" style="max-width: 880px;">
+        <span class="eyebrow mb-6 inline-flex">Zasady, którymi się kierujemy</span>
+        <h2 id="principles-title" class="display-lg mt-2 mb-6" style="text-wrap: balance;">
+          Cztery rzeczy, w&nbsp;które wierzymy bezkompromisowo
+        </h2>
+        <p class="text-ink-muted mx-auto text-lg leading-relaxed" style="max-width: 720px;">
+          GEO (Generative Engine Optimization) to nowa dyscyplina. Buduje się ją zupełnie inaczej
+          niż klasyczne SEO. Cztery zasady poniżej tłumaczą jak my do tego podchodzimy.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+        {
+          principles.map((p, i) => (
+            <div class="flex flex-col rounded-[15px] p-8 lg:p-10" style="background: var(--bg-surface-1);">
+              <div class="display-md text-ink-muted mb-4 leading-none">0{i + 1}</div>
+              <h3 class="mb-3 text-xl font-medium" style="font-family: var(--font-display); letter-spacing: -0.5px;">
+                {p.title}
+              </h3>
+              <p class="text-ink-muted text-sm leading-relaxed">{p.desc}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ICEA + GEO – differentiators -->
+  <section class="relative w-full" aria-labelledby="differentiators-title">
+    <div class="content-container py-16 lg:py-20">
+      <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
+        <div class="lg:col-span-5">
+          <span class="eyebrow mb-6 inline-flex">ICEA + GEO</span>
+          <h2 id="differentiators-title" class="display-lg mt-2 mb-6">
+            Co odróżnia<br />nasz audyt AI
+          </h2>
+          <p class="text-ink mb-6 text-lg leading-relaxed">
+            ICEA pozycjonuje strony w Google od kilkunastu lat. Tę samą rygorystyczność – mierzalność,
+            transparentność, powtarzalną metodologię – przenosimy do GEO.
+          </p>
+          <p class="text-ink-muted leading-relaxed">
+            Nie mówimy klientom „postaw schema FAQPage i będzie OK". Pokazujemy które konkretne
+            sygnały najczęściej decydują o cytowaniu marki w danym modelu i jak je zoptymalizować
+            tak, żeby efekt był mierzalny przy następnym audycie.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="space-y-3">
+            {
+              differentiators.map((d) => (
+                <div class="rounded-[15px] p-6 lg:p-7" style="background: var(--bg-surface-1);">
+                  <h3 class="mb-2 text-lg font-medium" style="font-family: var(--font-display); letter-spacing: -0.4px;">
+                    {d.title}
+                  </h3>
+                  <p class="text-ink-muted text-sm leading-relaxed">{d.desc}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zespół (AuthorsStrip z homepage) -->
+  <AuthorsStrip
+    eyebrow="Zespół"
+    title="Cztery osoby, kilkanaście lat doświadczenia"
+    subtitle="Każdy artykuł na widocznosc.ai i każda rekomendacja w audycie podpisana imieniem i nazwiskiem. Wiesz z kim rozmawiasz, kogo cytuje schema Article i czyje doświadczenie stoi za rekomendacjami."
+    limit={4}
+  />
+
+  <CTABand
+    eyebrow="Pierwszy krok"
+    title="Sprawdźmy, gdzie jesteś dziś"
+    subtitle="Bezpłatna konsultacja 30 minut z ekspertem ICEA. Pokazujemy gdzie marka jest już cytowana, gdzie konkurencja Cię wyprzedza i jaki realny plan na pierwsze 90 dni ma sens dla Twojej branży."
+    primaryLabel="Zamów audyt AI"
+    primaryHref="/kontakt?type=audyt-ai"
+    ghostLabel="Bezpłatna konsultacja"
+    ghostHref="/kontakt?type=konsultacja"
+  />
+
+  <Footer />
+  <ScrollUpButton />
+</Layout>

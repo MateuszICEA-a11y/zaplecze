@@ -1,0 +1,181 @@
+---
+/**
+ * Industries – 6 priorytetowych branż widocznosc.ai (nie zamyka innych).
+ * Framer DNA: 3-col grid charcoal cards (surface-1), no symbols.
+ */
+
+interface Industry {
+  name: string;
+  useCase: string;
+}
+
+const industries: Industry[] = [
+  {
+    name: 'B2B SaaS i Tech',
+    useCase: 'Długa droga zakupowa oparta na researchu. Decydent pyta ChatGPT "najlepsze X dla zespołu Y" – warto, żebyście pojawili się w odpowiedzi.',
+  },
+  {
+    name: 'Finanse i Prawo',
+    useCase: 'Wysoka wartość transakcji, AI bywa pierwszym doradcą klienta. Wzmianka w odpowiedzi AI to rozmowa z osobą, która już wie, czego szuka.',
+  },
+  {
+    name: 'Medycyna i Zdrowie',
+    useCase: 'Pacjenci pytają AI o objawy, leki i miejsca leczenia. AI Overviews coraz częściej zastępują pierwszy etap szukania w klasycznej wyszukiwarce.',
+  },
+  {
+    name: 'E-commerce i DTC',
+    useCase: 'Pytania porównawcze ("X vs Y", "tańszy zamiennik dla Z"). Ruch z AI to użytkownicy w końcowej fazie wyboru produktu.',
+  },
+  {
+    name: 'Edukacja i Szkolenia',
+    useCase: 'Długi proces decyzyjny z wieloma punktami styku. Kursanci pytają AI o "najlepszy kurs X" miesiące przed zapisem.',
+  },
+  {
+    name: 'Usługi B2B',
+    useCase: 'Konsulting, agencje, software house\'y. Klienci pytają AI o&nbsp;polecanych dostawców, zanim wyślą pierwszego maila. Obecność w&nbsp;odpowiedzi AI często przesądza o&nbsp;tym, czy w&nbsp;ogóle do&nbsp;Was zadzwonią.',
+  },
+];
+---
+
+<section class="industries-section" aria-labelledby="industries-title">
+  <div class="industries-container">
+
+    <header class="industries-header">
+      <span class="eyebrow industries-eyebrow">Dla kogo</span>
+      <h2 id="industries-title" class="display-lg industries-title">
+        Sześć branż, na których koncentrujemy uwagę
+      </h2>
+      <p class="industries-lead">
+        Tam, gdzie klient zaczyna od pytania zadanego AI, a&nbsp;decyzja zakupowa wymaga rzetelnego
+        rozeznania. To branże, w&nbsp;których widzimy największy wpływ wyszukiwarek AI –
+        nie jedyne, z&nbsp;którymi pracujemy.
+      </p>
+    </header>
+
+    <div class="industries-grid">
+      {
+        industries.map((ind) => (
+          <article class="industries-card">
+            <h3 class="industries-card-title">{ind.name}</h3>
+            <p class="industries-card-desc">
+              <Fragment set:html={ind.useCase} />
+            </p>
+          </article>
+        ))
+      }
+    </div>
+
+    <p class="industries-footer">
+      Twoja branża nie jest na liście? <a href="/kontakt" class="industries-footer-link">Sprawdzimy potencjał →</a>
+    </p>
+
+  </div>
+</section>
+
+<style>
+  .industries-section {
+    background: var(--bg-canvas);
+    padding: 96px 0;
+    border-top: 1px solid var(--hairline-soft);
+  }
+
+  .industries-container {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding: 0 30px;
+  }
+
+  .industries-header {
+    max-width: 720px;
+    margin: 0 auto 64px auto;
+    text-align: center;
+  }
+
+  .industries-eyebrow {
+    margin-bottom: 16px;
+  }
+
+  .industries-title {
+    color: var(--ink);
+    margin: 0 0 16px 0;
+    text-wrap: balance;
+  }
+
+  .industries-lead {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-lg);
+    line-height: 1.45;
+    letter-spacing: var(--ls-body-lg);
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .industries-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  @media (min-width: 640px) {
+    .industries-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .industries-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .industries-card {
+    background: var(--bg-surface-1);
+    border-radius: var(--r-xl);
+    padding: 24px;
+    transition: background 0.2s ease;
+  }
+
+  .industries-card:hover {
+    background: var(--bg-surface-2);
+  }
+
+  .industries-card-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--fs-headline);
+    line-height: 1.2;
+    letter-spacing: var(--ls-headline);
+    color: var(--ink);
+    margin: 0 0 12px 0;
+  }
+
+  .industries-card-desc {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-sm);
+    line-height: 1.5;
+    letter-spacing: var(--ls-body-sm);
+    color: var(--ink-muted);
+    margin: 0;
+  }
+
+  .industries-footer {
+    text-align: center;
+    margin-top: 48px;
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    font-weight: 500;
+    letter-spacing: var(--ls-caption);
+    color: var(--ink-muted);
+  }
+
+  .industries-footer-link {
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+  }
+
+  .industries-footer-link:hover {
+    opacity: 0.85;
+  }
+</style>

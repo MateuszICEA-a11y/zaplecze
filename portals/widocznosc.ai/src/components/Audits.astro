@@ -1,0 +1,752 @@
+---
+/**
+ * Cztery audyty: 3 darmowe self-serve w grid 3-col + 1 płatny jako card-spotlight orange.
+ * Framer DNA: charcoal cards (surface-1) + 1 gradient spotlight w roli premium tile.
+ */
+---
+
+<section class="audits-section" id="audyty" aria-labelledby="audyty-title">
+  <div class="content-container audits-container">
+
+    <header class="audits-header">
+      <span class="eyebrow audits-eyebrow">Co dostajesz</span>
+      <h2 id="audyty-title" class="display-lg audits-title">
+        Trzy darmowe testy i&nbsp;pełny raport GEO
+      </h2>
+      <p class="audits-lead">
+        Zacznij od&nbsp;trzech szybkich testów &ndash; bez logowania, każdy w&nbsp;kilka sekund.
+        Gdy chcesz głębszy obraz, zamów rozbudowany raport GEO ze&nbsp;skanem 25&ndash;50 URL-i
+        Twojej domeny.
+      </p>
+    </header>
+
+    <!-- Grid 3 darmowych testów – charcoal surface-1 -->
+    <div class="audits-grid">
+
+      <!-- 01 – Brand check -->
+      <article id="brand-check" class="audit-card">
+        <div class="audit-card-meta">
+          <span class="audit-card-badge">Darmowe · instant</span>
+          <span class="audit-card-counter">01 / 04</span>
+        </div>
+
+        <h3 class="audit-card-title">Co AI wie o&nbsp;Twojej marce</h3>
+        <p class="audit-card-desc">
+          Odpytujemy ChatGPT, Claude, Gemini i&nbsp;Perplexity o&nbsp;Twoją firmę.
+          Dostajesz sentyment, listę halucynacji i&nbsp;konkurentów, których AI poleca zamiast Ciebie.
+        </p>
+
+        <!-- Mock UI – 4 LLM x status, monochrome -->
+        <div class="audit-card-mock" aria-hidden="true">
+          <div class="audit-card-mock-header">
+            <span>twojadomena.pl</span>
+            <span class="audit-card-mock-status">live</span>
+          </div>
+          <ul class="audit-card-mock-list">
+            <li><span>ChatGPT</span><span class="audit-card-mock-warn">Myli ofertę</span></li>
+            <li><span>Claude</span><span class="audit-card-mock-mute">Brak danych</span></li>
+            <li><span>Gemini</span><span class="audit-card-mock-warn">Poleca konkurenta</span></li>
+            <li><span>Perplexity</span><span class="audit-card-mock-mute">Zna · neutralny</span></li>
+          </ul>
+        </div>
+
+        <a class="audit-card-cta" href="/narzedzia/brand-check" aria-label="Sprawdź, co AI wie o Twojej marce – darmowe">
+          Sprawdź markę <span aria-hidden="true">→</span>
+        </a>
+      </article>
+
+      <!-- 02 – URL check -->
+      <article id="url-check" class="audit-card">
+        <div class="audit-card-meta">
+          <span class="audit-card-badge">Darmowe · instant</span>
+          <span class="audit-card-counter">02 / 04</span>
+        </div>
+
+        <h3 class="audit-card-title">Czy Twój content jest cytowalny</h3>
+        <p class="audit-card-desc">
+          Wskazujesz jeden URL. Wynik 0&ndash;100 + lista 5 priorytetowych zmian
+          według badań Princeton i&nbsp;Indiga (1.2M&nbsp;cytowań ChatGPT).
+        </p>
+
+        <div class="audit-card-mock" aria-hidden="true">
+          <div class="audit-card-mock-header">
+            <span>/blog/jak-wybrac-saas</span>
+          </div>
+          <div class="audit-card-mock-score">
+            <span class="audit-card-mock-score-num">43</span>
+            <span class="audit-card-mock-score-out">/ 100</span>
+          </div>
+          <div class="audit-card-mock-bars">
+            <div class="audit-card-mock-bar"><span>Front-load</span><div class="bar"><div style="width:78%"></div></div></div>
+            <div class="audit-card-mock-bar"><span>Schema</span><div class="bar"><div style="width:25%"></div></div></div>
+            <div class="audit-card-mock-bar"><span>Cytowania</span><div class="bar"><div style="width:12%"></div></div></div>
+          </div>
+        </div>
+
+        <a class="audit-card-cta" href="/narzedzia/url-check" aria-label="Sprawdź content jednego URL – darmowe">
+          Sprawdź URL <span aria-hidden="true">→</span>
+        </a>
+      </article>
+
+      <!-- 03 – AI bots check -->
+      <article id="ai-bots-check" class="audit-card">
+        <div class="audit-card-meta">
+          <span class="audit-card-badge">Darmowe · instant</span>
+          <span class="audit-card-counter">03 / 04</span>
+        </div>
+
+        <h3 class="audit-card-title">Czy AI ma dostęp do&nbsp;Twojej strony</h3>
+        <p class="audit-card-desc">
+          Sprawdzamy <code>robots.txt</code>: czy GPTBot, ClaudeBot, PerplexityBot,
+          Google-Extended i&nbsp;9&nbsp;innych botów AI mają dostęp do&nbsp;Twojej strony.
+        </p>
+
+        <div class="audit-card-mock" aria-hidden="true">
+          <div class="audit-card-mock-header">
+            <span>twojadomena.pl/robots.txt</span>
+            <span><strong>8</strong> / 13</span>
+          </div>
+          <ul class="audit-card-mock-list">
+            <li><span>GPTBot</span><span class="audit-card-mock-ok">✓</span></li>
+            <li><span>ClaudeBot</span><span class="audit-card-mock-blocked">✗</span></li>
+            <li><span>PerplexityBot</span><span class="audit-card-mock-ok">✓</span></li>
+            <li><span>Google-Extended</span><span class="audit-card-mock-blocked">✗</span></li>
+            <li><span>CCBot</span><span class="audit-card-mock-blocked">✗</span></li>
+          </ul>
+          <div class="audit-card-mock-more">+ 8 innych botów</div>
+        </div>
+
+        <a class="audit-card-cta" href="/narzedzia/ai-bots-check" aria-label="Sprawdź dostęp botów AI do Twojej strony – darmowe">
+          Sprawdź dostęp <span aria-hidden="true">→</span>
+        </a>
+      </article>
+
+    </div>
+
+    <!-- 04 – Pełny raport GEO – ORANGE GRADIENT SPOTLIGHT (jedyny gradient w sekcji) -->
+    <article id="pelny-raport" class="card-spotlight card-spotlight-orange audit-premium">
+      <div class="audit-premium-grid">
+
+        <div class="audit-premium-copy">
+          <div class="audit-premium-meta">
+            <span class="audit-premium-badge">Pełny raport · 25–50 URL-i</span>
+            <span class="audit-premium-tag">Polecane</span>
+          </div>
+          <h3 class="audit-premium-title">
+            Rozbudowany raport GEO dla Twojej domeny
+          </h3>
+          <p class="audit-premium-desc">
+            Skanujemy 25&ndash;50 URL-i z&nbsp;Twojej domeny i&nbsp;analizujemy cztery
+            obszary: spójność tematyczna, sygnały autorytetu, dostępność dla AI
+            oraz widoczność w&nbsp;wyszukiwarkach AI.
+          </p>
+
+          <ul class="audit-premium-list">
+            <li>Wynik GEO dla każdego URL-a z&nbsp;konkretnymi problemami i&nbsp;rekomendacjami</li>
+            <li>Mapa luk w&nbsp;treści pod konwersacyjne zapytania AI</li>
+            <li>Plan działań ułożony wg&nbsp;priorytetu (krytyczne / ważne / średnie)</li>
+            <li>Wnioski i&nbsp;kierunek dalszych działań w&nbsp;dłuższym horyzoncie</li>
+          </ul>
+
+          <div class="audit-premium-cta-row">
+            <a class="btn-primary" href="/kontakt?type=full-report" aria-label="Zamów pełny raport GEO">
+              Zamów pełny raport
+            </a>
+          </div>
+        </div>
+
+        <!-- Mock UI – PDF report preview, surface-1 inset na gradient -->
+        <div class="audit-premium-mock" aria-hidden="true">
+          <div class="audit-premium-mock-header">
+            <span>Raport GEO · podgląd</span>
+            <span>PDF · 47 stron</span>
+          </div>
+
+          <div class="audit-premium-mock-stat">
+            <div class="audit-premium-mock-stat-label">
+              GEO Score · twojadomena.pl
+            </div>
+            <div class="audit-premium-mock-stat-num">
+              38<span>%</span>
+              <span class="audit-premium-mock-stat-delta">13 problemów / 25 URL-i</span>
+            </div>
+          </div>
+
+          <div class="audit-premium-mock-bars">
+            <div><span>Spójność tematyczna</span><div class="bar"><div style="width:56%"></div></div><span>56%</span></div>
+            <div><span>Sygnały autorytetu</span><div class="bar"><div style="width:42%"></div></div><span>42%</span></div>
+            <div class="audit-premium-mock-bars-self"><span>Dostępność dla AI</span><div class="bar"><div style="width:68%"></div></div><span>68%</span></div>
+            <div><span>Widoczność w&nbsp;AI</span><div class="bar"><div style="width:30%"></div></div><span>30%</span></div>
+          </div>
+
+          <div class="audit-premium-mock-actions">
+            <div class="audit-premium-mock-actions-label">Plan działań · 23 zadania</div>
+            <div class="audit-premium-mock-actions-row"><span class="audit-premium-mock-pri">P0</span><span>Schema FAQ na&nbsp;12 podstronach kategorii</span></div>
+            <div class="audit-premium-mock-actions-row"><span class="audit-premium-mock-pri">P0</span><span>Pillar /porownanie-[marka]-vs-konkurencja</span></div>
+            <div class="audit-premium-mock-actions-row"><span class="audit-premium-mock-pri">P1</span><span>Spójność danych marki w&nbsp;sieci</span></div>
+            <div class="audit-premium-mock-actions-more">+ 20 więcej w&nbsp;raporcie</div>
+          </div>
+        </div>
+
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<style>
+  .audits-section {
+    background: var(--bg-canvas);
+    padding: 96px 0;
+  }
+
+  .audits-container {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding: 0 30px;
+  }
+
+  /* Header */
+  .audits-header {
+    max-width: 720px;
+    margin: 0 auto 64px auto;
+    text-align: center;
+  }
+
+  /* NIE inline-block – przesłaniało display: inline-flex z .eyebrow Theme.css
+     i sky dot ::before tracił flex-gap (10px → 0). Tylko margin */
+  .audits-eyebrow {
+    margin-bottom: 16px;
+  }
+
+  /* h2 audits-title < h1 hero (max 68px na desktop) – hierarchia.
+     Display-lg standard z subtle override line-height/spacing */
+  .audits-title {
+    font-size: clamp(36px, 4.6vw, 60px);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+    color: var(--ink);
+    margin: 0 0 24px 0;
+    text-wrap: balance;
+  }
+
+  .audits-lead {
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+  }
+
+  .audits-lead {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-lg);
+    line-height: 1.45;
+    letter-spacing: var(--ls-body-lg);
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* Grid 3 darmowych */
+  .audits-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: 768px) {
+    .audits-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .audits-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Audit card – surface-2 + subtle hairline (Stitch elegant pattern):
+     bardziej "luksus" niż goły surface-1, lepszy kontrast od canvas */
+  .audit-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-surface-2);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--r-xl);
+    padding: 28px;
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .audit-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.10);
+    transform: translateY(-2px);
+  }
+
+  .audit-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .audit-card-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    background: var(--bg-surface-2);
+    border-radius: var(--r-pill);
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    font-weight: 500;
+    letter-spacing: var(--ls-caption);
+    color: var(--ink);
+  }
+
+  .audit-card-counter {
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    font-weight: 500;
+    letter-spacing: var(--ls-caption);
+    color: var(--ink-muted);
+  }
+
+  .audit-card-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--fs-headline);
+    line-height: 1.2;
+    letter-spacing: var(--ls-headline);
+    color: var(--ink);
+    margin: 0 0 8px 0;
+  }
+
+  .audit-card-desc {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-sm);
+    line-height: 1.5;
+    letter-spacing: var(--ls-body-sm);
+    color: var(--ink-muted);
+    margin: 0 0 20px 0;
+  }
+
+  .audit-card-desc code {
+    font-family: ui-monospace, 'SF Mono', monospace;
+    font-size: 0.9em;
+    color: var(--ink);
+    background: var(--bg-canvas);
+    padding: 1px 4px;
+    border-radius: 3px;
+  }
+
+  /* Mock UI – inset surface-2 (jeden krok wyżej dla kontrastu) */
+  .audit-card-mock {
+    background: var(--bg-canvas);
+    border-radius: var(--r-md);
+    padding: 16px;
+    margin-bottom: 20px;
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    letter-spacing: var(--ls-caption);
+  }
+
+  .audit-card-mock-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--ink-muted);
+    margin-bottom: 12px;
+  }
+
+  .audit-card-mock-status {
+    color: var(--success-green);
+  }
+
+  .audit-card-mock-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .audit-card-mock-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--ink);
+  }
+
+  .audit-card-mock-warn {
+    color: var(--ink);
+  }
+
+  .audit-card-mock-mute {
+    color: var(--ink-muted);
+  }
+
+  /* OK = zielony ✓, blocked = czerwony X (jasno zaznaczone status) */
+  .audit-card-mock-ok {
+    color: var(--success-green);
+    font-weight: 700;
+  }
+
+  .audit-card-mock-blocked {
+    color: #ef4444;
+    font-weight: 700;
+  }
+
+  .audit-card-mock-more {
+    color: var(--ink-muted);
+    font-size: var(--fs-micro);
+    margin-top: 8px;
+  }
+
+  /* Score mock (URL check) */
+  .audit-card-mock-score {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .audit-card-mock-score-num {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .audit-card-mock-score-out {
+    color: var(--ink-muted);
+    font-size: var(--fs-body);
+  }
+
+  .audit-card-mock-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .audit-card-mock-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--ink-muted);
+  }
+
+  .audit-card-mock-bar > span {
+    width: 80px;
+    flex-shrink: 0;
+  }
+
+  .audit-card-mock-bar .bar {
+    flex: 1;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  /* Niebieskie wskaźniki – accent-blue zamiast szarego ink-muted */
+  .audit-card-mock-bar .bar > div {
+    height: 100%;
+    background: var(--accent-blue);
+    border-radius: 2px;
+  }
+
+  /* CTA */
+  .audit-card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: auto;
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-sm);
+    font-weight: 500;
+    letter-spacing: var(--ls-body-sm);
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: gap 0.15s ease;
+  }
+
+  .audit-card-cta:hover {
+    gap: 10px;
+  }
+
+  /* ============================================================
+     Premium audyt – ORANGE GRADIENT SPOTLIGHT
+     ============================================================ */
+
+  .audit-premium {
+    padding: 48px;
+  }
+
+  @media (min-width: 1024px) {
+    .audit-premium {
+      padding: 64px;
+    }
+  }
+
+  .audit-premium-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  @media (min-width: 1024px) {
+    .audit-premium-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+  }
+
+  .audit-premium-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .audit-premium-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: var(--r-pill);
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    font-weight: 500;
+    letter-spacing: var(--ls-caption);
+    color: var(--ink);
+  }
+
+  .audit-premium-tag {
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    font-weight: 500;
+    letter-spacing: var(--ls-caption);
+    color: var(--ink);
+  }
+
+  .audit-premium-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    margin: 0 0 16px 0;
+    text-wrap: balance;
+  }
+
+  .audit-premium-desc {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-lg);
+    line-height: 1.45;
+    letter-spacing: var(--ls-body-lg);
+    color: var(--ink);
+    margin: 0 0 24px 0;
+  }
+
+  .audit-premium-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .audit-premium-list li {
+    position: relative;
+    padding-left: 20px;
+    font-family: var(--font-sans);
+    font-size: var(--fs-body);
+    line-height: 1.5;
+    letter-spacing: var(--ls-body);
+    color: var(--ink);
+  }
+
+  .audit-premium-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--ink);
+    opacity: 0.7;
+  }
+
+  .audit-premium-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .audit-premium-price {
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    font-weight: 500;
+    letter-spacing: var(--ls-caption);
+    color: var(--ink);
+  }
+
+  /* Mock UI premium – inset surface na gradient */
+  .audit-premium-mock {
+    background: rgba(10, 10, 11, 0.55);
+    backdrop-filter: blur(8px);
+    border-radius: var(--r-xl);
+    padding: 24px;
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    letter-spacing: var(--ls-caption);
+  }
+
+  .audit-premium-mock-header {
+    display: flex;
+    justify-content: space-between;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+  }
+
+  .audit-premium-mock-stat {
+    margin-bottom: 20px;
+  }
+
+  .audit-premium-mock-stat-label {
+    font-size: var(--fs-micro);
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 4px;
+  }
+
+  .audit-premium-mock-stat-num {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .audit-premium-mock-stat-num > span {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .audit-premium-mock-stat-delta {
+    margin-left: 12px;
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    color: var(--ink);
+    opacity: 0.8;
+  }
+
+  .audit-premium-mock-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .audit-premium-mock-bars > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--fs-caption);
+  }
+
+  .audit-premium-mock-bars > div > span:first-child {
+    width: 144px;
+    flex-shrink: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .audit-premium-mock-bars .bar {
+    flex: 1;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .audit-premium-mock-bars .bar > div {
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 3px;
+  }
+
+  .audit-premium-mock-bars > div > span:last-child {
+    width: 48px;
+    text-align: right;
+  }
+
+  .audit-premium-mock-bars-self span:first-child,
+  .audit-premium-mock-bars-self span:last-child {
+    color: var(--ink) !important;
+    font-weight: 500;
+  }
+
+  .audit-premium-mock-bars-self .bar > div {
+    background: var(--ink) !important;
+  }
+
+  .audit-premium-mock-actions {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 16px;
+  }
+
+  .audit-premium-mock-actions-label {
+    font-size: var(--fs-micro);
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 8px;
+  }
+
+  .audit-premium-mock-actions-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: var(--fs-caption);
+    margin-bottom: 4px;
+  }
+
+  .audit-premium-mock-pri {
+    color: var(--ink);
+    font-weight: 500;
+    flex-shrink: 0;
+  }
+
+  .audit-premium-mock-actions-more {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: var(--fs-micro);
+    margin-top: 4px;
+  }
+
+  /* ============================================================
+     Light mode overrides – audit-card (non-spotlight)
+     ============================================================ */
+  :root[data-theme='light'] .audit-card {
+    border-color: rgba(0, 0, 0, 0.06);
+  }
+
+  :root[data-theme='light'] .audit-card:hover {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.10);
+  }
+
+  :root[data-theme='light'] .audit-card-mock-bar .bar {
+    background: rgba(0, 0, 0, 0.08);
+  }
+</style>

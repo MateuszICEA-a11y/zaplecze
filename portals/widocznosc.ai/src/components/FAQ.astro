@@ -1,0 +1,189 @@
+---
+/**
+ * FAQ – 5 najczęstszych pytań klientów. Native details/summary accordion.
+ * Framer DNA: faq-row na canvas, hairline-soft dividers.
+ */
+
+interface QA {
+  q: string;
+  a: string;
+}
+
+const items: QA[] = [
+  {
+    q: 'Czym GEO różni się od klasycznego SEO?',
+    a: `SEO uczy wyszukiwarkę, jak zaindeksować Twoją stronę. GEO uczy modele językowe (LLM), jak ją cytować. SEO pozostaje fundamentem – bez technicznego porządku i&nbsp;wysokiej jakości treści AI Cię nie znajdzie. Jednak w&nbsp;GEO nie walczymy o&nbsp;niebieski link na liście, ale o&nbsp;to, by marka stała się częścią syntetycznej odpowiedzi, którą dostaje użytkownik.`,
+  },
+  {
+    q: 'Czy darmowa analiza widoczności AI jest naprawdę bezpłatna?',
+    a: `Tak. Nie ukrywamy kosztów i&nbsp;nie wymagamy podpięcia karty. Robimy to, bo wiemy, że większość marek jest dziś całkowicie niewidoczna dla ChatGPT czy Perplexity. Pokazujemy Ci stan faktyczny, bo wierzymy, że dane z&nbsp;Twojego własnego raportu są najlepszym argumentem za podjęciem współpracy.`,
+  },
+  {
+    q: 'Kiedy AI zacznie mnie cytować? Jak szybko widać efekty GEO?',
+    a: `To zależy od&nbsp;cyklu aktualizacji wiedzy przez modele (tzw. training data) oraz szybkości działania crawlerów AI (np. GPTBot). W&nbsp;przypadku silników działających w&nbsp;czasie rzeczywistym, jak Perplexity czy SearchGPT, zmiany mogą być widoczne już po&nbsp;kilku dniach od&nbsp;reindeksacji strony. SEO buduje trwałość, GEO zapewnia natychmiastową obecność w&nbsp;kontekście zapytania.`,
+  },
+  {
+    q: 'Jak mierzycie efekty, skoro odpowiedzi AI za każdym razem mogą wyglądać inaczej?',
+    a: `Klasyczne „TOP 1" w&nbsp;AI nie istnieje. Dlatego zamiast pozycji, mierzymy <strong>Citation Rate</strong> (wskaźnik cytowań) oraz <strong>Brand Share of Voice</strong> w&nbsp;setkach wygenerowanych odpowiedzi. Sprawdzamy prawdopodobieństwo, z&nbsp;jakim AI rekomenduje Twoją markę na tle konkurencji. Używamy do&nbsp;tego zaawansowanych narzędzi monitorujących, które symulują tysiące zapytań, by wyciągnąć średnią statystyczną.`,
+  },
+  {
+    q: 'Czy nowa lub niszowa marka ma szansę przebić się w odpowiedziach AI?',
+    a: `Paradoksalnie – w&nbsp;świecie AI niszowość to&nbsp;Twoja największa przewaga. Modele językowe szukają precyzyjnych, eksperckich odpowiedzi (tzw. Information Gain). Jeśli Twoje SEO dostarczy im unikalnej wiedzy, której nie ma w&nbsp;masowych serwisach, AI chętniej zacytuje Ciebie jako autorytet w&nbsp;danej dziedzinie niż ogólnotematycznego giganta.`,
+  },
+];
+---
+
+<section class="faq-section" aria-labelledby="faq-title">
+  <div class="faq-container">
+
+    <header class="faq-header">
+      <span class="eyebrow faq-eyebrow">FAQ</span>
+      <h2 id="faq-title" class="display-lg faq-title">Najczęstsze pytania</h2>
+      <p class="faq-lead">
+        Pięć pytań, które słyszymy od&nbsp;klientów najczęściej. Konkretne odpowiedzi,
+        bez korpomowy.
+      </p>
+    </header>
+
+    <div class="faq-list">
+      {
+        items.map((item, i) => (
+          <details class="faq-item" open={i === 0}>
+            <summary class="faq-item-summary">
+              <span class="faq-item-question">
+                <Fragment set:html={item.q} />
+              </span>
+              <span class="faq-item-icon" aria-hidden="true">+</span>
+            </summary>
+            <div class="faq-item-answer">
+              <Fragment set:html={item.a} />
+            </div>
+          </details>
+        ))
+      }
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .faq-section {
+    background: var(--bg-canvas);
+    padding: 96px 0;
+    border-top: 1px solid var(--hairline-soft);
+  }
+
+  .faq-container {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding: 0 30px;
+  }
+
+  .faq-header {
+    max-width: 720px;
+    margin: 0 auto 56px auto;
+    text-align: center;
+  }
+
+  .faq-eyebrow {
+    margin-bottom: 16px;
+  }
+
+  .faq-title {
+    color: var(--ink);
+    margin: 0 0 16px 0;
+  }
+
+  .faq-lead {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-lg);
+    line-height: 1.45;
+    letter-spacing: var(--ls-body-lg);
+    color: var(--ink-muted);
+    margin: 0;
+  }
+
+  .faq-list {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+
+  .faq-item:last-child {
+    border-bottom: 0;
+  }
+
+  .faq-item-summary {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 24px 0;
+    cursor: pointer;
+    list-style: none;
+    transition: opacity 0.15s ease;
+  }
+
+  .faq-item-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item-summary::marker {
+    display: none;
+  }
+
+  .faq-item-summary:hover {
+    opacity: 0.85;
+  }
+
+  .faq-item-question {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--fs-body-lg);
+    line-height: 1.3;
+    letter-spacing: var(--ls-body-lg);
+    color: var(--ink);
+  }
+
+  @media (min-width: 1024px) {
+    .faq-item-question {
+      font-size: var(--fs-headline);
+      letter-spacing: var(--ls-headline);
+    }
+  }
+
+  .faq-item-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-muted);
+    font-size: 20px;
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
+
+  .faq-item[open] .faq-item-icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-item-answer {
+    padding: 0 0 24px 0;
+    font-family: var(--font-sans);
+    font-size: var(--fs-body);
+    line-height: 1.5;
+    letter-spacing: var(--ls-body);
+    color: var(--ink-muted);
+  }
+
+  .faq-item-answer strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+</style>

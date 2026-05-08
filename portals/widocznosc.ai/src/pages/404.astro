@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Strona nie znaleziona – widocznosc.ai" noindex>
+  <Navbar />
+  <section class="flex min-h-screen flex-col items-center justify-center px-4 text-center">
+    <div class="display-xxl mb-6" aria-hidden="true">404</div>
+    <h1 class="display-md mb-4">Strona nie znaleziona</h1>
+    <p class="text-ink-muted mb-10 max-w-md text-lg leading-relaxed">
+      Adres, którego szukasz, nie istnieje albo został przeniesiony. Wróć na stronę główną
+      lub zacznij od bezpłatnego sprawdzenia widoczności.
+    </p>
+    <div class="flex flex-col gap-3 sm:flex-row">
+      <a href="/" class="btn-primary">Strona główna</a>
+      <a href="/narzedzia" class="btn-secondary">Bezpłatne narzędzia</a>
+    </div>
+  </section>
+  <Footer />
+</Layout>
