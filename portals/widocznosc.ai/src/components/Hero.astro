@@ -40,9 +40,9 @@ const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Copilot'];
 
       </div>
 
-      <!-- RIGHT: violet gradient spotlight card – atmospheric tile -->
+      <!-- RIGHT: violet gradient spotlight – Stitch linear 2-stop + box-shadow -->
       <div class="hero-fade-in hero-spotlight-wrap" style="--delay: 0.2s" aria-hidden="false">
-        <article class="card-spotlight card-spotlight-violet-pan">
+        <article class="card-spotlight card-spotlight-linear">
           <span class="hero-spotlight-eyebrow">5 silników AI</span>
           <p class="hero-spotlight-quote">
             "Jeden raport, pięć perspektyw. Zobacz, jak ChatGPT, Claude, Gemini, Perplexity
@@ -137,15 +137,15 @@ const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Copilot'];
     }
   }
 
-  /* Subhead body-lg, biały (kluczowy tekst) */
+  /* Subhead – kluczowy tekst body, biały. Stitch iteration: 18px → 20px na lg+ */
   .hero-subhead {
     font-family: var(--font-sans);
-    font-size: var(--fs-body-lg);
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
     font-weight: 400;
-    line-height: 1.45;
-    letter-spacing: var(--ls-body-lg);
+    line-height: 1.55;
+    letter-spacing: -0.01em;
     color: var(--ink);
-    max-width: 540px;
+    max-width: 580px;
     margin: 0;
   }
 
@@ -157,19 +157,26 @@ const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Copilot'];
     align-items: center;
   }
 
-  /* Spotlight card right column */
+  /* Spotlight card right column – Stitch iteration: szerszy padding, większe min-h */
   .hero-spotlight-wrap {
     width: 100%;
-    max-width: 480px;
+    max-width: 520px;
     margin-inline: auto;
   }
 
   .card-spotlight {
-    aspect-ratio: 5 / 6;
+    aspect-ratio: 4 / 5;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 360px;
+    min-height: 420px;
+    padding: 40px 40px 36px;
+  }
+
+  @media (min-width: 768px) {
+    .card-spotlight {
+      padding: 48px 48px 44px;
+    }
   }
 
   .hero-spotlight-eyebrow {
@@ -183,9 +190,9 @@ const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Copilot'];
   .hero-spotlight-quote {
     font-family: var(--font-display);
     font-weight: 500;
-    font-size: var(--fs-subhead);
+    font-size: clamp(1.5rem, 2.4vw, 1.875rem);
     line-height: 1.3;
-    letter-spacing: var(--ls-subhead);
+    letter-spacing: -0.02em;
     color: var(--ink);
     margin: 24px 0 0 0;
     text-wrap: balance;
@@ -213,12 +220,25 @@ const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Copilot'];
     margin-bottom: 24px;
   }
 
+  /* Stitch iteration: cała grupa logos opacity 60% + grayscale,
+     hover na grupę = full color (grayscale-0). Zachowanie marketing
+     "te brandy nas testują/sprawdzamy je" implikatywne. */
   .hero-logowall-row {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 24px 48px;
+    opacity: 0.6;
+    filter: grayscale(1);
+    transition:
+      opacity 0.5s ease,
+      filter 0.5s ease;
+  }
+
+  .hero-logowall-row:hover {
+    opacity: 1;
+    filter: grayscale(0);
   }
 
   @media (min-width: 1024px) {
@@ -232,13 +252,8 @@ const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Copilot'];
     font-weight: 500;
     font-size: 1.5rem;
     letter-spacing: -0.02em;
-    color: var(--ink-muted);
-    transition: color 0.15s ease;
-    line-height: 1;
-  }
-
-  .hero-logowall-engine:hover {
     color: var(--ink);
+    line-height: 1;
   }
 
   @media (min-width: 1024px) {

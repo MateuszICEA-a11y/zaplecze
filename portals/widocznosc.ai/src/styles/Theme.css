@@ -57,6 +57,9 @@
     #4c1d24 80%,
     #0a0a0b 100%
   );
+  /* Stitch iteration 2026-05-08: prostszy 2-stop linear gradient dla hero spotlight.
+     Cleaner niż radial 4-stop, dramatic z box-shadow */
+  --gradient-violet-linear: linear-gradient(145deg, #7b32f2 0%, #3e1b7a 100%);
 
   /* Typography */
   --font-display: 'Mona Sans Variable', 'Mona Sans', 'Inter', -apple-system, system-ui, sans-serif;
@@ -299,19 +302,19 @@ h4:not([class*='text-']) {
    Components – Framer DNA
    ============================================================ */
 
-/* Eyebrow / kicker (zastępuje stary .meta mono uppercase orange).
-   Sky dot ::before to powtarzalny brand element w pure Framer DNA. */
+/* Eyebrow / kicker (Stitch iteration 2026-05-08 – uppercase tracking-wide
+   wraca jako brand pattern marketing landing). Sky dot ::before powtarzalny. */
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   font-family: var(--font-sans);
   font-size: var(--fs-caption);
   font-weight: 500;
   line-height: 1.2;
-  letter-spacing: var(--ls-caption);
+  letter-spacing: 0.06em;
   color: var(--ink-muted);
-  text-transform: none;
+  text-transform: uppercase;
 }
 
 .eyebrow::before {
@@ -360,31 +363,34 @@ h4:not([class*='text-']) {
   box-shadow: var(--shadow-l3);
 }
 
+/* Secondary CTA – Stitch iteration: translucent z subtle borderem, nie solid charcoal */
 .btn-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--sp-xs);
   padding: 10px 15px;
-  background: var(--bg-surface-1);
+  background: rgba(255, 255, 255, 0.05);
   color: var(--ink);
   font-family: var(--font-sans);
   font-size: var(--fs-button);
   font-weight: 500;
   letter-spacing: var(--ls-button);
   line-height: 1;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: var(--r-pill);
   cursor: pointer;
   transition:
     transform 0.15s cubic-bezier(0.4, 0, 0.2, 1),
-    background 0.15s;
+    background 0.15s,
+    border-color 0.15s;
   min-height: 40px;
   white-space: nowrap;
 }
 
 .btn-secondary:hover {
-  background: var(--bg-surface-2);
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.18);
   transform: scale(1.02);
 }
 
@@ -582,6 +588,14 @@ h4:not([class*='text-']) {
 
 .card-spotlight-coral {
   background-image: var(--gradient-coral);
+}
+
+/* Stitch linear pattern – cleaner niż radial-pan, dramatic z box-shadow */
+.card-spotlight-linear {
+  background: var(--gradient-violet-linear);
+  background-size: 100% 100%;
+  background-position: 0 0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 @media (prefers-reduced-motion: no-preference) {
