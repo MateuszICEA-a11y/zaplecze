@@ -1,0 +1,29 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumb from '@components/Breadcrumb.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  breadcrumbs: Array<{ name: string; url: string }>;
+  items: Array<{ slug: string; data: any; collection: string }>;
+}
+const { title, description, breadcrumbs, items } = Astro.props;
+---
+<BaseLayout title={title} description={description}>
+  <Breadcrumb items={breadcrumbs} />
+  <section class="mx-auto max-w-7xl px-6 py-12">
+    <h1 class="text-h1 font-medium">{title}</h1>
+    <p class="mt-4 max-w-3xl text-lead text-off/80">{description}</p>
+    <ul class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {items.map((item) => (
+        <li class="rounded-lg border border-white/10 bg-surface-1 p-6 hover:border-blue/50 transition">
+          <a href={item.collection === 'pillar' ? `/pozycjonowanie-ai/${item.slug}/` : `/baza-wiedzy/${item.slug}/`}>
+            <h2 class="text-h4 font-medium">{item.data.title}</h2>
+            <p class="mt-2 text-small text-off/70">{item.data.metaDescription}</p>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>

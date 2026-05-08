@@ -1,0 +1,60 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumb from '@components/Breadcrumb.astro';
+import SchemaJsonLd from '@components/SchemaJsonLd.astro';
+import { breadcrumbListSchema, personSchema } from '@lib/schema';
+
+interface Props {
+  author: any;
+  authorSlug: string;
+  articles: any[];
+  url: string;
+}
+const { author, authorSlug, articles, url } = Astro.props;
+const breadcrumbs = [
+  { name: 'Strona główna', url: '/' },
+  { name: 'Autorzy', url: '/autorzy/' },
+  { name: author.name, url: `/autor/${authorSlug}/` },
+];
+---
+<BaseLayout title={`${author.name} – ${author.role}`} description={author.shortBio} canonical={url}>
+  <Breadcrumb items={breadcrumbs} />
+  <section class="mx-auto max-w-7xl px-6 py-16">
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-[280px_1fr]">
+      <img src={author.photo} alt={author.name} class="aspect-square w-full rounded-2xl object-cover" />
+      <div>
+        <h1 class="text-h1 font-medium">{author.name}</h1>
+        <p class="mt-2 text-h4 text-blue">{author.role} · ICEA</p>
+        <p class="mt-6 text-body text-off/80">{author.bio}</p>
+        <ul class="mt-6 flex flex-wrap gap-2">
+          {author.expertise.map((tag: string) => (
+            <li class="rounded-full border border-white/20 px-3 py-1 text-caption text-off/80">{tag}</li>
+          ))}
+        </ul>
+        <div class="mt-6 flex gap-4 text-small">
+          <a href={author.iceaProfile} class="text-blue hover:underline">Profil ICEA</a>
+          {author.linkedin && <a href={author.linkedin} class="text-blue hover:underline">LinkedIn</a>}
+        </div>
+      </div>
+    </div>
+    {articles.length > 0 && (
+      <div class="mt-16">
+        <h2 class="text-h2 font-medium">Artykuły autora</h2>
+        <ul class="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {articles.map((a) => (
+            <li class="rounded-lg border border-white/10 bg-surface-1 p-6">
+              <a href={`/baza-wiedzy/${a.slug}/`}>
+                <h3 class="text-h4 font-medium">{a.data.title}</h3>
+                <p class="mt-2 text-small text-off/70">{a.data.metaDescription}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+  </section>
+  <SchemaJsonLd data={[
+    breadcrumbListSchema(breadcrumbs),
+    personSchema(author),
+  ]} />
+</BaseLayout>

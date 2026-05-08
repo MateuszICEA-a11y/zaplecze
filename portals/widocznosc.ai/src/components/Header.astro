@@ -1,0 +1,29 @@
+---
+const navLinks = [
+  { label: 'Pozycjonowanie AI', href: '/pozycjonowanie-ai/' },
+  { label: 'Baza wiedzy', href: '/baza-wiedzy/' },
+  { label: 'Narzędzia', href: '/narzedzia/' },
+  { label: 'O nas', href: '/o-nas/' },
+];
+---
+<header class="sticky top-0 z-40 border-b border-white/10 bg-midnight/80 backdrop-blur">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4" aria-label="Główna nawigacja">
+    <a href="/" class="logo-wordmark text-h4" aria-label="widocznosc.ai – strona główna">
+      <span>widocznosc</span><span class="logo-dot" aria-hidden="true"></span><span class="logo-ai">ai</span>
+    </a>
+
+    <ul class="hidden items-center gap-8 md:flex">
+      {navLinks.map(({ label, href }) => (
+        <li>
+          <a href={href} class="text-small text-off/80 hover:text-off transition">
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <a href="/pozycjonowanie-ai/audyt-widocznosci-ai/" class="rounded-md bg-blue px-4 py-2 text-small font-medium text-off hover:bg-blue/90 transition">
+      Zamów audyt
+    </a>
+  </nav>
+</header>

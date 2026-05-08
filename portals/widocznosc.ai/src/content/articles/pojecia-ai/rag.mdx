@@ -1,0 +1,44 @@
+---
+title: RAG (Retrieval-Augmented Generation) – co to jest
+metaTitle: RAG – Retrieval-Augmented Generation w 2026
+metaDescription: RAG łączy wyszukiwanie z generacją AI. Dlaczego to fundament chatbotów dla biznesu. Praktyczny przewodnik z architekturą i przykładami zastosowania.
+primaryKeyword: rag retrieval augmented generation
+secondaryKeywords:
+  - co to jest rag
+  - rag chatbot
+  - rag wektorowa baza
+category: pojecia-ai
+intent: educational
+hero:
+  image: ../../../../public/images/articles/sample-rag-hero.png
+  alt: Schemat działania RAG
+tldr: RAG to architektura, która rozszerza odpowiedzi LLM o informacje pobierane z wektorowej bazy danych. Pozwala AI odpowiadać na podstawie aktualnych, wewnętrznych danych firmy.
+readingTimeMin: 12
+toc: true
+sources:
+  - title: arXiv – RAG paper Lewis et al. 2020
+    url: https://arxiv.org/abs/2005.11401
+    accessed: 2026-05-06
+schema:
+  type: TechArticle
+  breadcrumbs:
+    - { name: Strona główna, url: / }
+    - { name: Baza wiedzy, url: /baza-wiedzy/ }
+    - { name: Pojęcia AI, url: /baza-wiedzy/pojecia-ai/ }
+    - { name: RAG, url: /baza-wiedzy/pojecia-ai/rag/ }
+publishedAt: 2026-05-06
+updatedAt: 2026-05-06
+authors: [michal-ziach]
+---
+
+## Co to jest RAG
+
+RAG (Retrieval-Augmented Generation) to architektura, w której LLM rozszerza prompt o dane pobrane z zewnętrznego źródła – najczęściej wektorowej bazy danych przechowującej embeddingi dokumentów.
+
+## Dlaczego RAG jest ważny
+
+LLM-y są wytrenowane na danych do określonej daty cutoff. RAG omija to ograniczenie, dostarczając model aktualne, kontekstowe dane przy każdym zapytaniu.
+
+## Architektura
+
+Trzy fazy: indexing (chunking + embedding + zapis do vector DB), retrieval (semantic search po user query), generation (LLM odpowiada z augmented context).

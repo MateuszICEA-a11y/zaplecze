@@ -1,0 +1,15 @@
+---
+interface Props {
+  author: string;
+  role?: string;
+}
+const { author, role } = Astro.props;
+---
+<figure class="my-8 border-l-4 border-blue pl-6">
+  <blockquote class="text-lead italic text-off/90">
+    <slot />
+  </blockquote>
+  <figcaption class="mt-3 text-caption text-off/60">
+    — {author}{role && `, ${role}`}
+  </figcaption>
+</figure>

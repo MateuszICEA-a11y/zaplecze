@@ -1,0 +1,20 @@
+---
+import PillarLayout from '@layouts/PillarLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const pillars = await getCollection('pillar', ({ data }: any) => !data.draft);
+  return pillars.map((entry: any) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props as any;
+const { Content } = await entry.render();
+const url = `${Astro.site}pozycjonowanie-ai/${entry.slug}/`;
+const authorSlugs = entry.data.authors.map((ref: any) => ref.id);
+---
+<PillarLayout frontmatter={entry.data} url={url} authorSlugs={authorSlugs}>
+  <Content />
+</PillarLayout>

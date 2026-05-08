@@ -1,0 +1,17 @@
+---
+interface Props {
+  variant?: 'audit' | 'newsletter' | 'tool';
+  heading: string;
+  body?: string;
+  ctaText: string;
+  ctaHref: string;
+}
+const { heading, body, ctaText, ctaHref } = Astro.props;
+---
+<section class="mx-auto my-16 max-w-4xl rounded-2xl bg-gradient-to-br from-surface-1 to-surface-2 p-12 text-center">
+  <h2 class="text-h2 font-medium">{heading}</h2>
+  {body && <p class="mx-auto mt-4 max-w-2xl text-body text-off/80">{body}</p>}
+  <a href={ctaHref} class="mt-8 inline-block rounded-md bg-blue px-8 py-4 text-body font-medium text-off hover:bg-blue/90 transition">
+    {ctaText}
+  </a>
+</section>

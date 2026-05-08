@@ -1,0 +1,22 @@
+---
+import { Image as AstroImage } from 'astro:assets';
+
+interface Props {
+  src: ImageMetadata | string;
+  alt: string;
+  width?: number;
+  height?: number;
+  loading?: 'lazy' | 'eager';
+  caption?: string;
+  class?: string;
+}
+const { src, alt, width = 1024, height = 576, loading = 'lazy', caption, class: className } = Astro.props;
+---
+<figure class={className}>
+  {typeof src === 'string' ? (
+    <img src={src} alt={alt} width={width} height={height} loading={loading} />
+  ) : (
+    <AstroImage src={src} alt={alt} width={width} height={height} loading={loading} />
+  )}
+  {caption && <figcaption class="mt-2 text-caption text-off/60">{caption}</figcaption>}
+</figure>

@@ -1,0 +1,57 @@
+---
+interface Props {
+  variant?: 'homepage' | 'pillar' | 'article' | 'tool';
+  eyebrow?: string;
+  headline: string;
+  subheadline?: string;
+  ctaPrimary?: { text: string; href: string };
+  ctaSecondary?: { text: string; href: string };
+}
+const { variant = 'pillar', eyebrow, headline, subheadline, ctaPrimary, ctaSecondary } = Astro.props;
+
+const isHomepage = variant === 'homepage';
+const heightClass = {
+  homepage: 'min-h-[min(100svh,920px)]',
+  pillar: 'min-h-[min(70svh,720px)]',
+  article: 'min-h-[280px]',
+  tool: 'min-h-[min(60svh,560px)]',
+}[variant];
+
+const headlineClass = {
+  homepage: 'text-display-2xl',
+  pillar: 'text-display-xl',
+  article: 'text-h1',
+  tool: 'text-display-lg',
+}[variant];
+---
+<section class={`relative ${heightClass} flex items-center overflow-hidden`}>
+  {/* Gradient mesh background */}
+  <div class="pointer-events-none absolute inset-0 bg-mesh-hero motion-safe:animate-mesh-pan" aria-hidden="true"></div>
+
+  {/* Subtle hairline grid (decorative, optional) */}
+  {isHomepage && (
+    <div class="pointer-events-none absolute inset-0 opacity-[0.04]" aria-hidden="true" style="background-image: linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px); background-size: 64px 64px;"></div>
+  )}
+
+  <div class="relative z-10 mx-auto w-full max-w-default px-6 py-20 lg:py-32">
+    <div class="max-w-4xl">
+      {eyebrow && <p class="eyebrow mb-6">{eyebrow}</p>}
+      <h1 class={`${headlineClass} font-semibold text-off`}>{headline}</h1>
+      {subheadline && <p class="mt-6 max-w-2xl text-lead text-off/72">{subheadline}</p>}
+      {(ctaPrimary || ctaSecondary) && (
+        <div class="mt-10 flex flex-wrap items-center gap-3">
+          {ctaPrimary && (
+            <a href={ctaPrimary.href} class="btn btn-lg btn-primary">
+              {ctaPrimary.text}
+            </a>
+          )}
+          {ctaSecondary && (
+            <a href={ctaSecondary.href} class="btn btn-lg btn-secondary">
+              {ctaSecondary.text}
+            </a>
+          )}
+        </div>
+      )}
+    </div>
+  </div>
+</section>

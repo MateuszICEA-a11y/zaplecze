@@ -1,0 +1,80 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumb from '@components/Breadcrumb.astro';
+import AuthorMeta from '@components/AuthorMeta.astro';
+import HeroImage from '@components/HeroImage.astro';
+import TableOfContents from '@components/TableOfContents.astro';
+import AuthorBox from '@components/AuthorBox.astro';
+import FAQ from '@components/FAQ.astro';
+import CTA from '@components/CTA.astro';
+import SchemaJsonLd from '@components/SchemaJsonLd.astro';
+import { articleSchema, breadcrumbListSchema, faqPageSchema } from '@lib/schema';
+
+interface Props {
+  frontmatter: any;
+  headings: any[];
+  url: string;
+  authorSlug: string;
+  authorData: { name: string; iceaProfile: string };
+}
+const { frontmatter, headings, url, authorSlug, authorData } = Astro.props;
+const breadcrumbs = frontmatter.schema.breadcrumbs;
+---
+<BaseLayout
+  title={frontmatter.metaTitle}
+  description={frontmatter.metaDescription}
+  canonical={url}
+>
+  <Breadcrumb items={breadcrumbs} />
+  <article class="mx-auto max-w-7xl px-6 py-8">
+    <header>
+      <h1 class="text-h1 font-medium">{frontmatter.title}</h1>
+      <div class="mt-4">
+        <AuthorMeta
+          authorSlug={authorSlug}
+          publishedAt={new Date(frontmatter.publishedAt)}
+          readingTimeMin={frontmatter.readingTimeMin}
+        />
+      </div>
+    </header>
+    <HeroImage src={frontmatter.hero.image} alt={frontmatter.hero.alt} caption={frontmatter.hero.caption} />
+    <div class="grid grid-cols-1 gap-12 lg:grid-cols-[240px_1fr]">
+      <TableOfContents headings={headings} />
+      <div class="prose prose-invert max-w-none">
+        <p class="text-lead text-off/80">{frontmatter.tldr}</p>
+        <slot />
+        {frontmatter.faq && <FAQ items={frontmatter.faq} schema={false} />}
+        {frontmatter.sources?.length > 0 && (
+          <section>
+            <h2>Źródła</h2>
+            <ol>
+              {frontmatter.sources.map((s: any) => (
+                <li><a href={s.url} rel="noopener nofollow">{s.title}</a></li>
+              ))}
+            </ol>
+          </section>
+        )}
+      </div>
+    </div>
+    <AuthorBox authorSlug={authorSlug} />
+  </article>
+  <CTA
+    heading="Potrzebujesz audytu widoczności w AI?"
+    ctaText="Sprawdź narzędzie"
+    ctaHref="/narzedzia/audyt-widocznosci-ai/"
+  />
+  <SchemaJsonLd data={[
+    breadcrumbListSchema(breadcrumbs),
+    articleSchema({
+      type: frontmatter.schema.type,
+      title: frontmatter.title,
+      description: frontmatter.metaDescription,
+      url,
+      image: typeof frontmatter.hero.image === 'string' ? frontmatter.hero.image : `${Astro.site}images/og-default.jpg`,
+      publishedAt: new Date(frontmatter.publishedAt),
+      updatedAt: new Date(frontmatter.updatedAt),
+      authors: [authorData],
+    }),
+    ...(frontmatter.faq ? [faqPageSchema(frontmatter.faq)] : []),
+  ]} />
+</BaseLayout>

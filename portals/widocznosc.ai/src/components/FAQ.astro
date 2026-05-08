@@ -1,0 +1,32 @@
+---
+interface Props {
+  items: Array<{ question: string; answer: string }>;
+  schema?: boolean;
+}
+const { items, schema = true } = Astro.props;
+---
+<section class="mx-auto my-16 max-w-4xl px-6">
+  <h2 class="text-h2 font-medium">Najczęściej zadawane pytania</h2>
+  <dl class="mt-8 divide-y divide-white/10">
+    {items.map(({ question, answer }) => (
+      <details class="group py-6">
+        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-h4 font-medium">
+          {question}
+          <span class="text-blue transition group-open:rotate-45" aria-hidden="true">+</span>
+        </summary>
+        <div class="mt-4 text-body text-off/80" set:html={answer} />
+      </details>
+    ))}
+  </dl>
+</section>
+{schema && (
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map(({ question, answer }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: { '@type': 'Answer', text: answer },
+    })),
+  })} />
+)}
