@@ -73,9 +73,15 @@ const tools = [
 ];
 
 const statusBadge = (status: string) => {
-  if (status === 'live') return { label: '● live · darmowe', color: '#34d399' };
-  if (status === 'beta') return { label: '· beta · bezpłatne', color: 'var(--accent)' };
-  return { label: 'usługa płatna', color: 'var(--ink-soft)' };
+  if (status === 'live') return { label: '● live · darmowe', tone: 'success' };
+  if (status === 'beta') return { label: '· beta · bezpłatne', tone: 'ink' };
+  return { label: 'usługa płatna', tone: 'muted' };
+};
+
+const toneColor = (tone: string) => {
+  if (tone === 'success') return 'var(--success-green)';
+  if (tone === 'ink') return 'var(--ink)';
+  return 'var(--ink-muted)';
 };
 ---
 
@@ -86,26 +92,15 @@ const statusBadge = (status: string) => {
   <Navbar />
 
   <!-- Hero -->
-  <section
-    class="relative flex w-full items-center justify-center overflow-hidden pb-16 md:pb-20"
-    style="background: var(--bg);"
-  >
-    <div
-      class="pointer-events-none absolute inset-0"
-      style="background: radial-gradient(at 30% 25%, rgba(255,106,46,0.18) 0%, transparent 55%), radial-gradient(at 70% 75%, rgba(255,106,46,0.12) 0%, transparent 55%);"
-      aria-hidden="true"
-    >
-    </div>
-    <div class="content-container relative z-10 pt-32 md:pt-40 lg:pt-44">
+  <section class="relative pt-32 pb-12 md:pt-40 md:pb-16">
+    <div class="content-container">
       <div class="mx-auto max-w-4xl text-center">
-        <span class="meta mb-6 inline-block">Narzędzia · audyt widoczności AI</span>
-        <h1
-          class="text-ink font-display text-[2.5rem] leading-[1.05] font-semibold tracking-[-0.04em] sm:text-[3.5rem] lg:text-[4.5rem]"
-        >
+        <span class="eyebrow mb-6 inline-block">Narzędzia · audyt widoczności AI</span>
+        <h1 class="display-xl">
           Sprawdź widoczność,<br />
           zanim sprzedasz audyt klientowi
         </h1>
-        <p class="text-ink-soft mx-auto mt-6 max-w-2xl text-lg leading-relaxed">
+        <p class="text-ink mx-auto mt-8 max-w-2xl text-lg leading-relaxed">
           Trzy narzędzia – jedno bezpłatne, dwa profesjonalne. Wszystkie mierzą realne cytowania
           w pięciu wyszukiwarkach AI, nie pseudo-ranking ani score od marketingu.
         </p>
@@ -114,51 +109,42 @@ const statusBadge = (status: string) => {
   </section>
 
   <!-- Tools list -->
-  <section class="relative w-full" style="background: var(--bg);">
-    <div class="content-container py-16 lg:py-24">
-      <div class="space-y-12 lg:space-y-16">
+  <section class="relative w-full">
+    <div class="content-container py-12 lg:py-16">
+      <div class="space-y-8 lg:space-y-10">
         {
           tools.map((tool) => {
             const badge = statusBadge(tool.status);
             return (
               <article
                 id={tool.id}
-                class="border-rule bg-bg-card scroll-mt-24 overflow-hidden rounded-2xl border p-8 sm:p-12 lg:p-14"
+                class="scroll-mt-24 overflow-hidden rounded-[20px] p-8 sm:p-12 lg:p-14"
+                style="background: var(--bg-surface-1);"
               >
                 <div class="flex flex-wrap items-center gap-3">
-                  <span
-                    class="font-mono text-[11px] tracking-[0.12em] uppercase"
-                    style={`color: ${badge.color};`}
-                  >
+                  <span class="text-sm font-medium" style={`color: ${toneColor(badge.tone)};`}>
                     {tool.eyebrow}
                   </span>
-                  <span class="text-ink-mute font-mono text-[11px] tracking-[0.12em] uppercase">
-                    {badge.label}
-                  </span>
+                  <span class="text-ink-muted text-sm">·</span>
+                  <span class="text-ink-muted text-sm">{badge.label}</span>
                 </div>
                 <div class="mt-6 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
                   <div class="lg:col-span-7">
-                    <h2
-                      class="text-ink font-display mb-4 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl lg:text-5xl"
-                    >
-                      {tool.title}
-                    </h2>
-                    <p class="text-accent mb-5 text-lg font-semibold">{tool.subtitle}</p>
-                    <p class="text-ink-soft leading-relaxed">{tool.desc}</p>
+                    <h2 class="display-md mb-4">{tool.title}</h2>
+                    <p class="text-ink mb-5 text-lg leading-snug font-medium">{tool.subtitle}</p>
+                    <p class="text-ink-muted leading-relaxed">{tool.desc}</p>
                     <a class="btn-primary mt-8" href={tool.cta.href} aria-label={tool.cta.label}>
                       {tool.cta.label}
                       <span aria-hidden="true">→</span>
                     </a>
                   </div>
                   <div class="lg:col-span-5">
-                    <div class="border-rule-soft border-l pl-6 lg:pl-8">
-                      <div class="text-ink-mute mb-4 font-mono text-[11px] tracking-[0.12em] uppercase">
-                        Co dostajesz
-                      </div>
+                    <div class="rounded-[15px] p-6 lg:p-8" style="background: var(--bg-canvas);">
+                      <div class="text-ink-muted mb-4 text-sm">Co dostajesz</div>
                       <ul class="space-y-3">
                         {tool.bullets.map((bullet) => (
                           <li class="text-ink flex items-start gap-3">
-                            <span class="text-accent mt-1.5 flex-shrink-0" aria-hidden="true">
+                            <span class="text-ink-muted mt-1.5 flex-shrink-0" aria-hidden="true">
                               ✓
                             </span>
                             <span class="leading-relaxed">{bullet}</span>

@@ -4,17 +4,19 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 ---
 
-<Layout title="Page not found – widocznosc.ai" noindex>
+<Layout title="Strona nie znaleziona – widocznosc.ai" noindex>
   <Navbar />
-  <section
-    class="bg-bgDark1 flex min-h-screen flex-col items-center justify-center px-4 text-center"
-  >
-    <h1 class="text-primaryColor mb-4 text-8xl font-bold sm:text-9xl">404</h1>
-    <h2 class="text-primaryText mb-4 text-2xl font-bold sm:text-3xl">Page not found</h2>
-    <p class="text-secondaryText mb-10 max-w-md">
-      The page you're looking for doesn't exist or has been moved.
+  <section class="flex min-h-screen flex-col items-center justify-center px-4 text-center">
+    <div class="display-xxl mb-6" aria-hidden="true">404</div>
+    <h1 class="display-md mb-4">Strona nie znaleziona</h1>
+    <p class="text-ink-muted mb-10 max-w-md text-lg leading-relaxed">
+      Adres, którego szukasz, nie istnieje albo został przeniesiony. Wróć na stronę główną
+      lub zacznij od bezpłatnego sprawdzenia widoczności.
     </p>
-    <a href="/" class="contained-button px-8 py-3 text-lg"> Back to Home </a>
+    <div class="flex flex-col gap-3 sm:flex-row">
+      <a href="/" class="btn-primary">Strona główna</a>
+      <a href="/narzedzia" class="btn-secondary">Bezpłatne narzędzia</a>
+    </div>
   </section>
   <Footer />
 </Layout>

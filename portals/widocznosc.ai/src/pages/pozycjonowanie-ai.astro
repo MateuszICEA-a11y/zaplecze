@@ -4,32 +4,28 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import ScrollUpButton from '../components/ScrollUpButton.astro';
 import CTABand from '../components/CTABand.astro';
-import { AI_MODELS, SERVICES } from '../data/aiModels';
+import { AI_MODELS } from '../data/aiModels';
 
 const services = [
   {
     id: 'audyt',
-    symbol: '◐',
     title: 'Audyt widoczności AI',
     desc: 'Sprawdzamy jak Twoja marka jest cytowana w 5 modelach AI. Mapa cytowań, gap analysis vs konkurencja.',
   },
   {
     id: 'content',
-    symbol: '✦',
     title: 'Optymalizacja contentu pod LLM',
     desc: 'Przepisanie istniejących stron pod fact-density, schema, źródła cytowalne. Briefy dla copywriterów.',
   },
   {
     id: 'monitoring',
-    symbol: '⊡',
     title: 'Monitoring cytowań',
-    desc: 'Stały tracking 50-200 zapytań co tydzień. Alerty o pojawieniu się konkurencji, dashboard z historią.',
+    desc: 'Stałe śledzenie 50-200 zapytań co tydzień. Alerty o pojawieniu się konkurencji, dashboard z historią.',
   },
   {
     id: 'strategia',
-    symbol: '◇',
     title: 'Strategia GEO 12 miesięcy',
-    desc: 'Plan widoczności na cały rok: mapa fraz, content calendar, plan distribution + linkbuilding pod GEO.',
+    desc: 'Plan widoczności na cały rok: mapa fraz, kalendarz contentu, plan dystrybucji + linkbuilding pod GEO.',
   },
 ];
 ---
@@ -41,75 +37,54 @@ const services = [
   <Navbar />
 
   <!-- Hero -->
-  <section
-    class="relative flex w-full items-center justify-center overflow-hidden pb-16 md:pb-20"
-    style="background: var(--bg);"
-  >
-    <div
-      class="pointer-events-none absolute inset-0"
-      style="background: radial-gradient(at 20% 25%, rgba(255,106,46,0.18) 0%, transparent 55%), radial-gradient(at 80% 75%, rgba(255,106,46,0.12) 0%, transparent 55%);"
-      aria-hidden="true"
-    >
-    </div>
-    <div class="content-container relative z-10 pt-32 md:pt-40 lg:pt-44">
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-20">
+    <div class="content-container">
       <div class="mx-auto max-w-4xl text-center">
-        <span class="meta mb-6 inline-block">Usługi · Generative Engine Optimization</span>
-        <h1
-          class="text-ink font-display text-[2.5rem] leading-[1.05] font-semibold tracking-[-0.04em] sm:text-[3.5rem] lg:text-[4.5rem]"
-        >
-          Pozycjonowanie<br />w&nbsp;<span class="text-accent">AI</span>
-        </h1>
-        <p class="text-ink-soft mx-auto mt-6 max-w-2xl text-lg leading-relaxed">
+        <span class="eyebrow mb-6 inline-block">Usługi · Generative Engine Optimization</span>
+        <h1 class="display-xl">Pozycjonowanie<br />w&nbsp;AI</h1>
+        <p class="text-ink mx-auto mt-8 max-w-2xl text-lg leading-relaxed">
           Widoczność marki w&nbsp;ChatGPT, Claude, Gemini, Perplexity i&nbsp;Bing Copilot. Mierzymy
           cytowania, nie ranking. Każdy model wymaga innego podejścia – wybierz konkretny silnik
           poniżej, albo zacznij od kompleksowego audytu wszystkich pięciu.
         </p>
-        <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a class="btn-primary" href="/kontakt?type=audyt-ai">Zamów audyt wszystkich modeli</a>
-          <a class="btn-ghost" href="/narzedzia/visibility-checker">Sprawdź widoczność · 90s</a>
+          <a class="btn-secondary" href="/narzedzia/visibility-checker">Sprawdź widoczność · 90s</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- 5 modeli AI – grid z linkami do podstron -->
-  <section
-    class="border-rule relative w-full border-y"
-    style="background: var(--bg-alt);"
-    aria-labelledby="models-title"
-  >
-    <div class="content-container py-20 lg:py-28">
+  <section class="relative w-full" aria-labelledby="models-title">
+    <div class="content-container py-16 lg:py-20">
       <div class="mx-auto mb-14 max-w-3xl text-center">
-        <span class="meta mb-4 inline-block">5 modeli</span>
-        <h2
-          id="models-title"
-          class="text-ink font-display mt-2 mb-6 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl lg:text-5xl"
-        >
+        <span class="eyebrow mb-4 inline-block">5 modeli</span>
+        <h2 id="models-title" class="display-lg mt-2 mb-6">
           Wybierz silnik AI,<br />w którym chcesz być widoczny
         </h2>
-        <p class="text-ink-soft text-lg leading-relaxed">
+        <p class="text-ink-muted text-lg leading-relaxed">
           Każdy model AI inaczej buduje odpowiedzi: ChatGPT preferuje training data + RAG, Gemini
           cytuje z indeksu Google, Perplexity stawia na transparentne źródła. Optymalizacja pod
           jeden model nie wystarczy.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
         {
           AI_MODELS.map((model) => (
             <a
               href={model.href}
-              class="group border-rule bg-bg-card hover:border-accent/35 hover:bg-bg-elevated flex flex-col rounded-xl border p-6 transition"
+              class="group flex flex-col rounded-[15px] p-6 transition"
+              style="background: var(--bg-surface-1);"
+              data-card-template
             >
-              <div class="feat-icon mb-5 font-mono">{model.symbol}</div>
-              <div class="text-ink-mute font-mono text-[10px] tracking-[0.12em] uppercase">
-                {model.vendor}
-              </div>
-              <h3 class="text-ink font-display group-hover:text-accent mt-1 mb-3 text-2xl font-semibold tracking-tight transition">
+              <div class="text-ink-muted text-sm">{model.vendor}</div>
+              <h3 class="mt-2 mb-3 text-2xl font-medium" style="font-family: var(--font-display); letter-spacing: -1px;">
                 {model.name}
               </h3>
-              <p class="text-ink-soft text-sm leading-relaxed">{model.shortDesc}</p>
-              <div class="text-accent mt-5 flex items-center gap-2 font-mono text-[11px] tracking-wider uppercase opacity-0 transition group-hover:opacity-100">
+              <p class="text-ink-muted text-sm leading-relaxed">{model.shortDesc}</p>
+              <div class="text-accent-blue mt-5 flex items-center gap-2 text-sm opacity-0 transition group-hover:opacity-100">
                 Pozycjonowanie w {model.name}
                 <span aria-hidden="true">→</span>
               </div>
@@ -121,34 +96,30 @@ const services = [
   </section>
 
   <!-- Metodologia – 4 services condensed -->
-  <section class="relative w-full" style="background: var(--bg);" aria-labelledby="method-title">
-    <div class="content-container py-20 lg:py-28">
+  <section class="relative w-full" aria-labelledby="method-title">
+    <div class="content-container py-16 lg:py-20">
       <div class="mx-auto mb-14 max-w-3xl text-center">
-        <span class="meta mb-4 inline-block">Metodologia</span>
-        <h2
-          id="method-title"
-          class="text-ink font-display mt-2 mb-6 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl lg:text-5xl"
-        >
-          Cztery filary współpracy
-        </h2>
-        <p class="text-ink-soft text-lg leading-relaxed">
+        <span class="eyebrow mb-4 inline-block">Metodologia</span>
+        <h2 id="method-title" class="display-lg mt-2 mb-6">Cztery filary współpracy</h2>
+        <p class="text-ink-muted text-lg leading-relaxed">
           Niezależnie od tego który model AI ma być Twoim głównym kanałem, sposób pracy zostaje
           ten sam. Mierzymy, optymalizujemy, monitorujemy, planujemy.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
         {
-          services.map((service) => (
+          services.map((service, i) => (
             <div
               id={service.id}
-              class="border-rule bg-bg-card scroll-mt-24 flex flex-col rounded-xl border p-6 lg:p-8"
+              class="scroll-mt-24 flex flex-col rounded-[15px] p-8 lg:p-10"
+              style="background: var(--bg-surface-1);"
             >
-              <div class="feat-icon mb-5 font-mono">{service.symbol}</div>
-              <h3 class="text-ink font-display mb-3 text-lg font-semibold tracking-tight">
+              <div class="display-md text-ink-muted mb-4 leading-none">0{i + 1}</div>
+              <h3 class="mb-3 text-xl font-medium" style="font-family: var(--font-display); letter-spacing: -0.5px;">
                 {service.title}
               </h3>
-              <p class="text-ink-soft text-sm leading-relaxed">{service.desc}</p>
+              <p class="text-ink-muted text-sm leading-relaxed">{service.desc}</p>
             </div>
           ))
         }
@@ -169,3 +140,9 @@ const services = [
   <Footer />
   <ScrollUpButton />
 </Layout>
+
+<style>
+  [data-card-template]:hover {
+    background: var(--bg-surface-2) !important;
+  }
+</style>

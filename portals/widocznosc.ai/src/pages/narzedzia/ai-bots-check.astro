@@ -15,18 +15,17 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
   <Navbar />
 
   <main class="flex-grow">
-    <div class="content-container relative z-10 pt-32 pb-20 md:pt-40 lg:pt-44">
+    <div class="content-container pt-32 pb-20 md:pt-40 lg:pt-44">
       <!-- Hero -->
       <header class="mx-auto max-w-3xl text-center">
-        <span class="text-accent inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.18em] uppercase">
-          <span class="bg-accent inline-block h-2 w-2 animate-pulse rounded-full"></span>
-          Narzędzie · Darmowe · Instant
+        <span class="eyebrow mb-6 inline-block">
+          Narzędzie · bezpłatne · instant
         </span>
-        <h1 class="text-ink mt-6 font-display text-4xl leading-[1.1] font-semibold tracking-[-0.02em] sm:text-5xl">
-          Czy boty AI mają dostęp do Twojej strony?
+        <h1 class="display-lg">
+          Czy boty AI mają dostęp<br />do Twojej strony?
         </h1>
-        <p class="text-ink mt-6 text-lg leading-relaxed sm:text-xl">
-          Sprawdzamy plik <code class="text-accent font-mono text-base">robots.txt</code> pod kątem 13 najważniejszych user-agentów AI: GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot i 8 innych. Wynik w 5 sekund, bez logowania.
+        <p class="text-ink mt-8 text-lg leading-relaxed">
+          Sprawdzamy plik <code class="font-mono text-base">robots.txt</code> pod kątem 13 najważniejszych user-agentów AI: GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot i 8 innych. Wynik w 5 sekund, bez logowania.
         </p>
       </header>
 
@@ -48,7 +47,7 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
           <span class="check-submit-spinner" aria-hidden="true"></span>
         </button>
       </form>
-      <p class="text-ink-mute mx-auto mt-3 max-w-2xl text-center text-sm">
+      <p class="text-ink-muted mx-auto mt-3 max-w-2xl text-center text-sm">
         Pobieramy publiczny plik <code class="font-mono">robots.txt</code> – nie wykonujemy żadnych zmian, nie zapisujemy danych.
       </p>
 
@@ -57,13 +56,13 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
 
       <!-- Default bots overview – pokazane PRZED submit -->
       <section id="default-overview" class="mt-16">
-        <h2 class="text-ink font-display text-2xl font-semibold tracking-[-0.02em] md:text-3xl">
+        <h2 class="display-md">
           13 botów AI w 4 kategoriach funkcjonalnych
         </h2>
-        <p class="text-ink mt-3 max-w-3xl">
+        <p class="text-ink mt-6 max-w-3xl text-lg leading-relaxed">
           Każdy z tych botów ma własny <code class="font-mono text-sm">User-agent</code> i własne implikacje dla widoczności marki w AI. Blokada GPTBota oznacza brak miejsca w treningu GPT-5+. Blokada PerplexityBota oznacza brak cytowań w Perplexity Pro. CCBot to dataset, którego używają WSZYSTKIE LLM-y.
         </p>
-        <div class="mt-10 grid gap-6 lg:grid-cols-2">
+        <div class="mt-10 grid gap-4 lg:grid-cols-2">
           {
             categories.map((cat) => {
               const botsInCat = AI_BOTS.filter((b) => b.category === cat);
@@ -104,23 +103,23 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
   .check-input {
     height: 48px;
     padding: 0 18px;
-    font-family: var(--font-mono, 'JetBrains Mono'), monospace;
+    font-family: var(--font-sans);
     font-size: 14px;
     color: var(--ink);
-    background: var(--bg-card);
-    border: 1px solid var(--rule);
-    border-radius: var(--r-md, 8px);
+    background: var(--bg-surface-1);
+    border: none;
+    border-radius: var(--r-md);
     outline: none;
     transition:
-      border-color 0.2s ease,
+      box-shadow 0.2s ease,
       background 0.2s ease;
   }
   .check-input::placeholder {
-    color: var(--ink-mute);
+    color: var(--ink-muted);
   }
   .check-input:focus {
-    border-color: var(--accent);
-    background: rgb(255 106 46 / 0.04);
+    background: var(--bg-surface-2);
+    box-shadow: var(--shadow-l3);
   }
 
   .check-submit {
@@ -153,40 +152,36 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
 
   /* Bot category cards (pre-check) */
   .bot-category-card {
-    background: var(--bg-card);
-    border: 1px solid var(--rule);
-    border-radius: 0.875rem;
-    padding: 1.5rem 1.5rem 1.75rem;
+    background: var(--bg-surface-1);
+    border-radius: var(--r-lg);
+    padding: 24px 24px 28px;
   }
   .bot-category-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
   }
   .bot-category-label {
-    color: var(--accent);
-    font-family: var(--font-mono, 'JetBrains Mono'), monospace;
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    font-weight: 600;
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: var(--ls-caption);
   }
   .bot-category-count {
-    color: var(--ink-mute);
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.05em;
+    color: var(--ink-muted);
+    font-size: 13px;
   }
   .bot-category-desc {
-    color: var(--ink-soft);
+    color: var(--ink-muted);
     font-size: 14px;
     line-height: 1.55;
-    margin-bottom: 1rem;
+    margin-bottom: 16px;
   }
   .bot-category-list {
     display: grid;
-    gap: 0.5rem;
+    gap: 8px;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -195,86 +190,78 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.65rem 0.85rem;
-    background: rgb(7 8 16 / 0.4);
-    border: 1px solid var(--rule-soft);
-    border-radius: 6px;
-    font-family: var(--font-mono);
+    padding: 10px 14px;
+    background: var(--bg-canvas);
+    border-radius: var(--r-sm);
+    font-family: var(--font-mono, ui-monospace, 'SF Mono', monospace);
     font-size: 12.5px;
   }
   .bot-name {
     color: var(--ink);
-    font-weight: 600;
+    font-weight: 500;
   }
   .bot-owner {
-    color: var(--ink-mute);
+    color: var(--ink-muted);
     font-size: 11px;
     letter-spacing: 0.04em;
   }
 
   /* Results section – styled in JS via inline classes */
   :global(.results-card) {
-    background: var(--bg-card);
-    border: 1px solid var(--rule);
-    border-radius: 0.875rem;
-    padding: 1.75rem;
+    background: var(--bg-surface-1);
+    border-radius: var(--r-lg);
+    padding: 28px;
   }
 
   :global(.results-summary) {
     display: grid;
-    gap: 1rem;
+    gap: 12px;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    margin-bottom: 1.5rem;
+    margin-bottom: 24px;
   }
 
   :global(.results-stat) {
-    background: rgb(7 8 16 / 0.5);
-    border: 1px solid var(--rule-soft);
-    border-radius: 8px;
-    padding: 1rem 1.25rem;
+    background: var(--bg-canvas);
+    border-radius: var(--r-md);
+    padding: 16px 20px;
   }
   :global(.results-stat-value) {
-    font-family: var(--font-display, 'Inter Tight');
+    font-family: var(--font-display);
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1;
+    letter-spacing: -1px;
     color: var(--ink);
   }
   :global(.results-stat-value.is-good) {
-    color: #34d399;
+    color: var(--success-green);
   }
   :global(.results-stat-value.is-bad) {
-    color: var(--accent);
+    color: #ef4444;
   }
   :global(.results-stat-label) {
-    color: var(--ink-mute);
-    font-family: var(--font-mono);
-    font-size: 10.5px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    margin-top: 0.45rem;
+    color: var(--ink-muted);
+    font-size: 12px;
+    margin-top: 6px;
   }
 
   :global(.results-meta) {
-    color: var(--ink-mute);
-    font-family: var(--font-mono);
-    font-size: 12px;
-    margin-bottom: 1.25rem;
+    color: var(--ink-muted);
+    font-size: 13px;
+    margin-bottom: 20px;
   }
   :global(.results-meta a) {
-    color: var(--ink-soft);
+    color: var(--accent-blue);
     text-decoration: underline;
-    text-decoration-color: var(--rule);
-    text-underline-offset: 3px;
+    text-underline-offset: 2px;
   }
   :global(.results-meta a:hover) {
-    color: var(--accent);
-    text-decoration-color: var(--accent);
+    opacity: 0.85;
   }
 
   :global(.bot-result-grid) {
     display: grid;
-    gap: 0.75rem;
+    gap: 8px;
     grid-template-columns: 1fr;
   }
   @media (min-width: 768px) {
@@ -286,20 +273,17 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
   :global(.bot-result-row) {
     display: grid;
     grid-template-columns: auto 1fr auto;
-    gap: 0.85rem;
+    gap: 14px;
     align-items: center;
-    padding: 0.85rem 1rem;
-    background: rgb(7 8 16 / 0.4);
-    border: 1px solid var(--rule-soft);
-    border-radius: 8px;
+    padding: 12px 16px;
+    background: var(--bg-canvas);
+    border-radius: var(--r-md);
   }
   :global(.bot-result-row.is-blocked) {
-    border-color: rgb(239 68 68 / 0.4);
-    background: rgb(239 68 68 / 0.05);
+    background: rgb(239 68 68 / 0.08);
   }
   :global(.bot-result-row.is-blocked-critical) {
-    border-color: var(--accent);
-    background: rgb(255 106 46 / 0.06);
+    background: rgb(239 68 68 / 0.14);
   }
   :global(.bot-result-status) {
     width: 22px;
@@ -313,93 +297,90 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
     font-weight: 700;
   }
   :global(.bot-result-status.is-allowed) {
-    background: rgb(52 211 153 / 0.15);
-    color: #34d399;
+    background: rgb(26 170 85 / 0.18);
+    color: var(--success-green);
   }
   :global(.bot-result-status.is-blocked) {
-    background: rgb(239 68 68 / 0.15);
+    background: rgb(239 68 68 / 0.18);
     color: #ef4444;
   }
   :global(.bot-result-name) {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--ink);
   }
   :global(.bot-result-owner) {
-    color: var(--ink-mute);
-    font-family: var(--font-mono);
-    font-size: 10.5px;
-    letter-spacing: 0.05em;
+    color: var(--ink-muted);
+    font-size: 11px;
+    letter-spacing: 0.02em;
     margin-top: 2px;
   }
   :global(.bot-result-tag) {
-    color: var(--ink-soft);
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    color: var(--ink-muted);
+    font-size: 11px;
     padding: 4px 10px;
-    border: 1px solid var(--rule);
-    border-radius: 999px;
+    background: var(--bg-surface-2);
+    border-radius: var(--r-pill);
   }
 
   :global(.action-items) {
-    margin-top: 1.5rem;
+    margin-top: 24px;
     display: grid;
-    gap: 0.75rem;
+    gap: 10px;
   }
   :global(.action-item) {
-    border-left: 3px solid var(--rule);
-    padding: 0.85rem 1rem 0.85rem 1.25rem;
-    background: rgb(7 8 16 / 0.3);
+    border-left: 3px solid var(--hairline);
+    padding: 14px 16px 14px 18px;
+    background: var(--bg-canvas);
     border-radius: 0 8px 8px 0;
   }
   :global(.action-item.is-p0) {
-    border-left-color: var(--accent);
+    border-left-color: #ef4444;
   }
   :global(.action-item.is-p1) {
     border-left-color: #fbbf24;
   }
+  :global(.action-item.is-p2) {
+    border-left-color: var(--success-green);
+  }
   :global(.action-item-priority) {
     display: inline-block;
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
     padding: 2px 8px;
     border-radius: 4px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 8px;
   }
   :global(.action-item.is-p0 .action-item-priority) {
-    background: rgb(255 106 46 / 0.15);
-    color: var(--accent);
+    background: rgb(239 68 68 / 0.15);
+    color: #ef4444;
   }
   :global(.action-item.is-p1 .action-item-priority) {
     background: rgb(251 191 36 / 0.15);
     color: #fbbf24;
   }
   :global(.action-item.is-p2 .action-item-priority) {
-    background: rgb(52 211 153 / 0.15);
-    color: #34d399;
+    background: rgb(26 170 85 / 0.15);
+    color: var(--success-green);
   }
   :global(.action-item-title) {
     color: var(--ink);
     font-weight: 600;
-    margin-bottom: 0.35rem;
+    margin-bottom: 6px;
     font-size: 15px;
   }
   :global(.action-item-desc) {
-    color: var(--ink-soft);
+    color: var(--ink-muted);
     font-size: 14px;
     line-height: 1.55;
   }
 
   :global(.results-error) {
-    background: rgb(239 68 68 / 0.08);
-    border: 1px solid rgb(239 68 68 / 0.4);
-    border-radius: 8px;
-    padding: 1rem 1.25rem;
+    background: rgb(239 68 68 / 0.1);
+    border-radius: var(--r-md);
+    padding: 16px 20px;
     color: #ef4444;
     font-size: 14px;
   }
@@ -479,7 +460,7 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
     } else if (status === 'no-robots') {
       metaText = `Status: <strong>${statusCode}</strong> – brak pliku robots.txt na <a href="${escapeHtml(robotsUrl)}" target="_blank" rel="noopener">${escapeHtml(robotsUrl)}</a>. W praktyce wszystkie boty są dopuszczone (konwencja).`;
     } else if (status === 'cloudflare-blocked') {
-      metaText = `<strong style="color:var(--accent)">Cloudflare zablokował dostęp</strong> do robots.txt – boty AI też tego nie przejdą.`;
+      metaText = `<strong style="color:#ef4444">Cloudflare zablokował dostęp</strong> do robots.txt – boty AI też tego nie przejdą.`;
     }
 
     const botsHtml = bots
@@ -497,7 +478,7 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
           <div class="bot-result-row ${rowClass}">
             <div class="bot-result-status ${statusClass}">${statusSym}</div>
             <div>
-              <div class="bot-result-name">${escapeHtml(bot.name)}${bot.critical ? ' <span style="color:var(--accent);font-size:9px;letter-spacing:0.18em">★ KRYT.</span>' : ''}</div>
+              <div class="bot-result-name">${escapeHtml(bot.name)}${bot.critical ? ' <span style="color:#ef4444;font-size:10px;font-weight:600">★ KRYT.</span>' : ''}</div>
               <div class="bot-result-owner">${escapeHtml(bot.owner)} · ${escapeHtml(matched)}</div>
             </div>
             <span class="bot-result-tag">${escapeHtml(bot.categoryLabel)}</span>
@@ -520,8 +501,8 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
 
     return `
       <div class="results-card">
-        <h2 class="text-ink font-display text-2xl font-semibold tracking-[-0.02em] mb-3">
-          Wynik dla <span class="text-accent font-mono">${escapeHtml(domain)}</span>
+        <h2 class="display-md mb-3">
+          Wynik dla <span class="font-mono text-ink-muted">${escapeHtml(domain)}</span>
         </h2>
         <div class="results-meta">${metaText}</div>
         ${summaryHtml}

@@ -26,43 +26,30 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
   <Navbar />
 
   <!-- Hero -->
-  <section
-    class="relative flex w-full items-center justify-center overflow-hidden pb-16 md:pb-20"
-    style="background: var(--bg);"
-  >
-    <div
-      class="pointer-events-none absolute inset-0"
-      style="background: radial-gradient(at 25% 25%, rgba(255,106,46,0.18) 0%, transparent 55%), radial-gradient(at 75% 75%, rgba(255,106,46,0.12) 0%, transparent 55%);"
-      aria-hidden="true"
-    >
-    </div>
-    <div class="content-container relative z-10 pt-32 md:pt-40 lg:pt-44">
+  <section class="relative pt-32 pb-16 md:pt-40 md:pb-20">
+    <div class="content-container">
       <div class="mx-auto max-w-4xl">
-        <!-- Breadcrumb-ish -->
-        <div class="mb-6 flex items-center gap-2 font-mono text-[11px] tracking-[0.12em] uppercase">
-          <a href="/pozycjonowanie-ai" class="text-ink-soft hover:text-accent transition">
+        <!-- Breadcrumb -->
+        <div class="mb-8 flex items-center gap-2 text-sm">
+          <a href="/pozycjonowanie-ai" class="text-ink-muted hover:text-ink transition">
             Pozycjonowanie AI
           </a>
-          <span class="text-ink-mute" aria-hidden="true">/</span>
-          <span class="text-accent">{model.name}</span>
+          <span class="text-ink-muted" aria-hidden="true">/</span>
+          <span class="text-ink">{model.name}</span>
         </div>
 
         <div class="text-center">
-          <span class="meta mb-6 inline-block">{model.vendor} · model AI</span>
-          <h1
-            class="text-ink font-display text-[2.5rem] leading-[1.05] font-semibold tracking-[-0.04em] sm:text-[3.5rem] lg:text-[4.5rem]"
-          >
-            Pozycjonowanie<br />w&nbsp;<span class="text-accent">{model.name}</span>
-          </h1>
+          <span class="eyebrow mb-6 inline-block">{model.vendor} · model AI</span>
+          <h1 class="display-xl">Pozycjonowanie<br />w&nbsp;{model.name}</h1>
           <p
-            class="text-ink-soft mx-auto mt-6 max-w-2xl text-lg leading-relaxed"
+            class="text-ink mx-auto mt-8 max-w-2xl text-lg leading-relaxed"
             set:html={content.heroSubtitle}
           />
-          <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a class="btn-primary" href={`/kontakt?type=audyt-ai&model=${model.slug}`}>
               Zamów audyt pod {model.name}
             </a>
-            <a class="btn-ghost" href="/narzedzia/visibility-checker">
+            <a class="btn-secondary" href="/narzedzia/visibility-checker">
               Sprawdź widoczność · 90s
             </a>
           </div>
@@ -72,33 +59,24 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
   </section>
 
   <!-- Jak działa -->
-  <section
-    class="border-rule relative w-full border-y"
-    style="background: var(--bg-alt);"
-    aria-labelledby="how-title"
-  >
-    <div class="content-container py-20 lg:py-24">
+  <section class="relative w-full" aria-labelledby="how-title">
+    <div class="content-container py-16 lg:py-20">
       <div class="mx-auto mb-12 max-w-3xl text-center">
-        <span class="meta mb-4 inline-block">Jak działa</span>
-        <h2
-          id="how-title"
-          class="text-ink font-display mt-2 mb-6 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl"
-        >
+        <span class="eyebrow mb-4 inline-block">Jak działa</span>
+        <h2 id="how-title" class="display-lg mt-2 mb-6">
           Jak {model.name} buduje odpowiedzi
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
         {
           content.howItWorks.map((item, i) => (
-            <div class="border-rule bg-bg-card flex flex-col rounded-xl border p-6 lg:p-8">
-              <div class="text-accent mb-3 font-mono text-[11px] tracking-[0.12em] uppercase">
-                0{i + 1}
-              </div>
-              <h3 class="text-ink font-display mb-3 text-lg font-semibold tracking-tight">
+            <div class="flex flex-col rounded-[15px] p-8 lg:p-10" style="background: var(--bg-surface-1);">
+              <div class="display-md text-ink-muted mb-4 leading-none">0{i + 1}</div>
+              <h3 class="mb-3 text-xl font-medium" style="font-family: var(--font-display); letter-spacing: -0.5px;">
                 {item.title}
               </h3>
-              <p class="text-ink-soft text-sm leading-relaxed" set:html={item.desc} />
+              <p class="text-ink-muted text-sm leading-relaxed" set:html={item.desc} />
             </div>
           ))
         }
@@ -107,36 +85,33 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
   </section>
 
   <!-- Optymalizacja -->
-  <section class="relative w-full" style="background: var(--bg);" aria-labelledby="opt-title">
-    <div class="content-container py-20 lg:py-24">
+  <section class="relative w-full" aria-labelledby="opt-title">
+    <div class="content-container py-16 lg:py-20">
       <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
         <div class="lg:col-span-5">
-          <span class="meta mb-4 inline-block">Optymalizacja</span>
-          <h2
-            id="opt-title"
-            class="text-ink font-display mt-2 mb-6 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl"
-          >
+          <span class="eyebrow mb-4 inline-block">Optymalizacja</span>
+          <h2 id="opt-title" class="display-lg mt-2 mb-6">
             Co konkretnie robimy,<br />żeby {model.name} cytował Twoją markę
           </h2>
-          <p class="text-ink-soft mb-6 text-lg leading-relaxed">
+          <p class="text-ink mb-8 text-lg leading-relaxed">
             Każdy model ma własne sygnały. Poniżej cztery najważniejsze techniczne i&nbsp;contentowe
             optymalizacje pod {model.name}.
           </p>
-          <a class="btn-ghost" href="/kontakt?type=audyt-ai">
+          <a class="btn-secondary" href="/kontakt?type=audyt-ai">
             Zamów audyt
             <span aria-hidden="true">→</span>
           </a>
         </div>
 
         <div class="lg:col-span-7">
-          <div class="space-y-4">
+          <div class="space-y-3">
             {
               content.optimization.map((item) => (
-                <div class="border-rule bg-bg-card rounded-xl border p-5 lg:p-6">
-                  <h3 class="text-ink font-display mb-2 text-base font-semibold tracking-tight">
+                <div class="rounded-[15px] p-6 lg:p-7" style="background: var(--bg-surface-1);">
+                  <h3 class="mb-2 text-lg font-medium" style="font-family: var(--font-display); letter-spacing: -0.4px;">
                     {item.title}
                   </h3>
-                  <p class="text-ink-soft text-sm leading-relaxed" set:html={item.desc} />
+                  <p class="text-ink-muted text-sm leading-relaxed" set:html={item.desc} />
                 </div>
               ))
             }
@@ -147,27 +122,20 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
   </section>
 
   <!-- Sygnały rankingowe -->
-  <section
-    class="border-rule relative w-full border-t"
-    style="background: var(--bg-alt);"
-    aria-labelledby="signals-title"
-  >
-    <div class="content-container py-20 lg:py-24">
+  <section class="relative w-full" aria-labelledby="signals-title">
+    <div class="content-container py-16 lg:py-20">
       <div class="mx-auto max-w-4xl">
-        <div class="mb-8 text-center">
-          <span class="meta mb-4 inline-block">Sygnały rankingowe</span>
-          <h2
-            id="signals-title"
-            class="text-ink font-display mt-2 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl"
-          >
+        <div class="mb-10 text-center">
+          <span class="eyebrow mb-4 inline-block">Sygnały rankingowe</span>
+          <h2 id="signals-title" class="display-lg mt-2">
             Top 5 sygnałów dla {model.name}
           </h2>
         </div>
-        <ul class="border-rule bg-bg-card divide-rule-soft rounded-xl border divide-y">
+        <ul class="rounded-[15px] divide-y" style="background: var(--bg-surface-1); border-color: var(--hairline-soft);">
           {
             content.signals.map((signal, i) => (
-              <li class="flex items-start gap-4 p-5 lg:p-6">
-                <div class="text-accent flex-shrink-0 font-mono text-sm font-semibold">
+              <li class="flex items-start gap-5 p-6 lg:p-7" style="border-color: var(--hairline-soft);">
+                <div class="text-ink-muted flex-shrink-0 text-base font-medium" style="font-variant-numeric: tabular-nums;">
                   0{i + 1}
                 </div>
                 <div class="text-ink leading-relaxed">{signal}</div>
@@ -180,30 +148,25 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
   </section>
 
   <!-- FAQ -->
-  <section class="relative w-full" style="background: var(--bg);" aria-labelledby="faq-title">
-    <div class="content-container py-20 lg:py-24">
+  <section class="relative w-full" aria-labelledby="faq-title">
+    <div class="content-container py-16 lg:py-20">
       <div class="mx-auto max-w-3xl">
         <div class="mb-10 text-center">
-          <span class="meta mb-4 inline-block">FAQ</span>
-          <h2
-            id="faq-title"
-            class="text-ink font-display mt-2 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl"
-          >
+          <span class="eyebrow mb-4 inline-block">FAQ</span>
+          <h2 id="faq-title" class="display-lg mt-2">
             Najczęstsze pytania o&nbsp;{model.name}
           </h2>
         </div>
         <div class="space-y-3">
           {
             content.faq.map((qa) => (
-              <details class="border-rule bg-bg-card group rounded-xl border p-5 lg:p-6">
-                <summary class="text-ink font-display flex cursor-pointer items-start justify-between gap-4 font-semibold tracking-tight">
+              <details class="faq-row group">
+                <summary class="text-ink flex cursor-pointer items-start justify-between gap-4 text-base font-medium" style="font-family: var(--font-display); letter-spacing: -0.3px;">
                   <span set:html={qa.q} />
-                  <span class="text-accent mt-1 font-mono text-xl transition group-open:rotate-45">
-                    +
-                  </span>
+                  <span class="text-ink-muted mt-1 text-xl transition group-open:rotate-45">+</span>
                 </summary>
                 <p
-                  class="text-ink-soft mt-4 leading-relaxed"
+                  class="text-ink-muted mt-4 leading-relaxed"
                   set:html={qa.a}
                 />
               </details>
@@ -215,25 +178,18 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
   </section>
 
   <!-- Pozostałe modele -->
-  <section
-    class="border-rule relative w-full border-t"
-    style="background: var(--bg-alt);"
-    aria-labelledby="other-title"
-  >
-    <div class="content-container py-20 lg:py-24">
+  <section class="relative w-full" aria-labelledby="other-title">
+    <div class="content-container py-16 lg:py-20">
       <div class="mb-10 flex items-end justify-between gap-6">
         <div>
-          <span class="meta mb-3 inline-block">Pozostałe modele</span>
-          <h2
-            id="other-title"
-            class="text-ink font-display mt-2 text-3xl font-semibold tracking-[-0.03em] sm:text-4xl"
-          >
+          <span class="eyebrow mb-3 inline-block">Pozostałe modele</span>
+          <h2 id="other-title" class="display-lg mt-2">
             Optymalizacja pod inne silniki AI
           </h2>
         </div>
         <a
           href="/pozycjonowanie-ai"
-          class="text-accent hidden items-center gap-2 font-mono text-[11px] tracking-wider uppercase transition hover:gap-3 sm:flex"
+          class="text-accent-blue hidden items-center gap-2 text-sm transition hover:gap-3 sm:flex"
         >
           Wszystkie modele
           <span aria-hidden="true">→</span>
@@ -245,16 +201,15 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
           otherModels.map((m) => (
             <a
               href={m.href}
-              class="group border-rule bg-bg-card hover:border-accent/35 hover:bg-bg-elevated flex flex-col rounded-xl border p-5 transition"
+              class="group flex flex-col rounded-[15px] p-6 transition"
+              style="background: var(--bg-surface-1);"
+              data-card-template
             >
-              <div class="feat-icon mb-4 font-mono">{m.symbol}</div>
-              <div class="text-ink-mute font-mono text-[10px] tracking-[0.12em] uppercase">
-                {m.vendor}
-              </div>
-              <h3 class="text-ink font-display group-hover:text-accent mt-1 text-lg font-semibold tracking-tight transition">
+              <div class="text-ink-muted text-sm">{m.vendor}</div>
+              <h3 class="mt-1 text-xl font-medium" style="font-family: var(--font-display); letter-spacing: -0.5px;">
                 {m.name}
               </h3>
-              <p class="text-ink-soft mt-2 text-sm leading-relaxed">{m.shortDesc}</p>
+              <p class="text-ink-muted mt-2 text-sm leading-relaxed">{m.shortDesc}</p>
             </a>
           ))
         }
@@ -275,3 +230,9 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
   <Footer />
   <ScrollUpButton />
 </Layout>
+
+<style>
+  [data-card-template]:hover {
+    background: var(--bg-surface-2) !important;
+  }
+</style>

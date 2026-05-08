@@ -11,182 +11,155 @@ import ScrollUpButton from '../components/ScrollUpButton.astro';
 >
   <Navbar />
 
-  <section class="relative pt-32 pb-20 md:pt-40" style="background: var(--bg);">
-    <div
-      class="pointer-events-none absolute top-0 left-0 right-0 h-[40rem]"
-      style="background: radial-gradient(at 30% 20%, rgba(255,106,46,0.14) 0%, transparent 55%), radial-gradient(at 70% 0%, rgba(255,106,46,0.10) 0%, transparent 50%);"
-      aria-hidden="true"
-    >
-    </div>
-    <div class="content-container relative z-10">
-      <div class="fade-in">
-        <div class="flex flex-col gap-16 lg:flex-row lg:gap-24">
-          <!-- Left – intro + contact channels -->
-          <div class="lg:w-1/2">
-            <span class="meta">Kontakt</span>
-            <h1
-              class="text-ink font-display mt-4 mb-6 text-4xl font-semibold tracking-[-0.04em] lg:text-5xl"
-            >
-              Porozmawiajmy o widoczności<br />
-              Twojej marki w&nbsp;<span class="text-accent">AI</span>
-            </h1>
-            <p class="text-ink-soft mb-12 text-lg leading-relaxed">
-              Wypełnij formularz albo zadzwoń. Odpowiadamy w&nbsp;ciągu 24 godzin
-              w&nbsp;dni robocze. Bezpłatna konsultacja 30 minut – bez sprzedaży, bez zobowiązań.
-            </p>
+  <section class="relative pt-32 pb-24 md:pt-40">
+    <div class="content-container">
+      <div class="flex flex-col gap-16 lg:flex-row lg:gap-24">
+        <!-- Left – intro + contact channels -->
+        <div class="lg:w-1/2">
+          <span class="eyebrow mb-6 inline-block">Kontakt</span>
+          <h1 class="display-xl mt-4 mb-6">
+            Porozmawiajmy o widoczności<br />Twojej marki w&nbsp;AI
+          </h1>
+          <p class="text-ink mb-12 max-w-xl text-lg leading-relaxed">
+            Wypełnij formularz albo zadzwoń. Odpowiadamy w&nbsp;ciągu 24 godzin
+            w&nbsp;dni robocze. Bezpłatna konsultacja 30 minut – bez sprzedaży, bez zobowiązań.
+          </p>
 
-            <div class="space-y-6">
-              <!-- Email -->
-              <div class="flex items-start gap-4">
-                <div class="feat-icon shrink-0 font-mono">@</div>
-                <div>
-                  <h3 class="text-ink mb-1 font-semibold">E-mail</h3>
-                  <a
-                    class="text-ink-soft hover:text-accent transition"
-                    href="mailto:hello@widocznosc.ai"
-                  >
-                    hello@widocznosc.ai
-                  </a>
-                </div>
-              </div>
+          <div class="space-y-8">
+            <!-- Email -->
+            <div>
+              <div class="text-ink-muted mb-1 text-sm">E-mail</div>
+              <a class="text-ink hover:opacity-85 text-lg transition" href="mailto:hello@widocznosc.ai">
+                hello@widocznosc.ai
+              </a>
+            </div>
 
-              <!-- Biuro -->
-              <div class="flex items-start gap-4">
-                <div class="feat-icon shrink-0 font-mono">⊡</div>
-                <div>
-                  <h3 class="text-ink mb-1 font-semibold">Biuro ICEA</h3>
-                  <p class="text-ink-soft leading-relaxed">
-                    ul. Mińska 25, 03-808 Warszawa<br />
-                    część <a class="hover:text-accent transition" href="https://grupa-icea.pl" target="_blank" rel="noopener noreferrer">grupa-icea.pl</a>
-                  </p>
-                </div>
-              </div>
+            <!-- Biuro -->
+            <div>
+              <div class="text-ink-muted mb-1 text-sm">Biuro ICEA</div>
+              <p class="text-ink leading-relaxed">
+                ul. Mińska 25, 03-808 Warszawa<br />
+                część <a
+                  class="text-accent-blue hover:opacity-85 underline underline-offset-2 transition"
+                  href="https://grupa-icea.pl"
+                  target="_blank"
+                  rel="noopener noreferrer">grupa-icea.pl</a>
+              </p>
+            </div>
 
-              <!-- Czas odpowiedzi -->
-              <div class="flex items-start gap-4">
-                <div class="feat-icon shrink-0 font-mono">◐</div>
-                <div>
-                  <h3 class="text-ink mb-1 font-semibold">Czas odpowiedzi</h3>
-                  <p class="text-ink-soft leading-relaxed">
-                    pon–pt, 9:00–17:00 · do 24h roboczych
-                  </p>
-                </div>
-              </div>
+            <!-- Czas odpowiedzi -->
+            <div>
+              <div class="text-ink-muted mb-1 text-sm">Czas odpowiedzi</div>
+              <p class="text-ink leading-relaxed">
+                pon–pt, 9:00–17:00 · do 24h roboczych
+              </p>
             </div>
           </div>
+        </div>
 
-          <!-- Right – form -->
-          <div class="lg:w-1/2">
-            <div
-              class="border-rule bg-bg-card rounded-2xl border p-8 sm:p-10"
-              id="contact-wrapper"
-            >
-              <form id="contact-form" aria-label="Formularz kontaktowy">
-                <div class="mb-5">
-                  <label for="name" class="text-ink mb-2 block font-medium">
-                    Imię i nazwisko
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Jan Kowalski"
-                    required
-                    autocomplete="name"
-                    class="form-input"
-                  />
-                </div>
-                <div class="mb-5">
-                  <label for="email" class="text-ink mb-2 block font-medium">Adres e-mail</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="jan@firma.pl"
-                    required
-                    autocomplete="email"
-                    class="form-input"
-                  />
-                </div>
-                <div class="mb-5">
-                  <label for="company" class="text-ink mb-2 block font-medium">
-                    Firma <span class="text-ink-mute font-normal">(opcjonalnie)</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    placeholder="Twoja Firma sp. z o.o."
-                    autocomplete="organization"
-                    class="form-input"
-                  />
-                </div>
-                <div class="mb-5">
-                  <label for="type" class="text-ink mb-2 block font-medium">Cel kontaktu</label>
-                  <select id="type" name="type" required class="form-input">
-                    <option value="">Wybierz...</option>
-                    <option value="audyt-ai">Kompleksowy audyt AI</option>
-                    <option value="audyt-content">Audyt contentu pod AI</option>
-                    <option value="visibility-checker">Visibility Checker (bezpłatne)</option>
-                    <option value="konsultacja">Bezpłatna konsultacja 30 min</option>
-                    <option value="wdrozenie">Audyt + wdrożenie 90 dni</option>
-                    <option value="inne">Inne</option>
-                  </select>
-                </div>
-                <div class="mb-8">
-                  <label for="message" class="text-ink mb-2 block font-medium">Wiadomość</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="5"
-                    placeholder="Opisz krótko Twój kontekst – branżę, główne pytania, oczekiwany rezultat."
-                    required
-                    autocomplete="off"
-                    class="form-input resize-none"></textarea>
-                </div>
-                <button type="submit" class="btn-primary !w-full !justify-center !py-4">
-                  Wyślij wiadomość
-                </button>
-                <p class="text-ink-mute mt-4 text-center text-xs leading-relaxed">
-                  Wysyłając formularz wyrażasz zgodę na kontakt zwrotny zgodnie z naszą
-                  <a class="text-accent hover:underline" href="/polityka-prywatnosci">
-                    polityką prywatności
-                  </a>.
-                </p>
-              </form>
-
-              <div
-                id="contact-success"
-                class="hidden flex-col items-center justify-center py-16 text-center opacity-0 transition-opacity duration-500"
-                aria-live="polite"
-              >
-                <div
-                  class="mb-6 flex h-20 w-20 items-center justify-center rounded-full"
-                  style="background: var(--accent-soft); border: 1px solid var(--accent-edge);"
-                  aria-hidden="true"
-                >
-                  <svg
-                    width="36"
-                    height="36"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M20 6L9 17L4 12"
-                      stroke="var(--accent)"
-                      stroke-width="3"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"></path>
-                  </svg>
-                </div>
-                <h3 class="text-ink font-display mb-3 text-2xl font-semibold tracking-tight">
-                  Wiadomość wysłana
-                </h3>
-                <p class="text-ink-soft max-w-sm leading-relaxed">
-                  Dziękujemy za kontakt. Odpowiemy w ciągu 24 godzin roboczych.
-                </p>
+        <!-- Right – form -->
+        <div class="lg:w-1/2">
+          <div
+            class="rounded-[20px] p-8 sm:p-10"
+            style="background: var(--bg-surface-1);"
+            id="contact-wrapper"
+          >
+            <form id="contact-form" aria-label="Formularz kontaktowy">
+              <div class="mb-5">
+                <label for="name" class="text-ink mb-2 block font-medium">
+                  Imię i nazwisko
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Jan Kowalski"
+                  required
+                  autocomplete="name"
+                  class="text-input"
+                  style="background: var(--bg-canvas);"
+                />
               </div>
+              <div class="mb-5">
+                <label for="email" class="text-ink mb-2 block font-medium">Adres e-mail</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="jan@firma.pl"
+                  required
+                  autocomplete="email"
+                  class="text-input"
+                  style="background: var(--bg-canvas);"
+                />
+              </div>
+              <div class="mb-5">
+                <label for="company" class="text-ink mb-2 block font-medium">
+                  Firma <span class="text-ink-muted font-normal">(opcjonalnie)</span>
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  placeholder="Twoja Firma sp. z o.o."
+                  autocomplete="organization"
+                  class="text-input"
+                  style="background: var(--bg-canvas);"
+                />
+              </div>
+              <div class="mb-5">
+                <label for="type" class="text-ink mb-2 block font-medium">Cel kontaktu</label>
+                <select id="type" name="type" required class="text-input" style="background: var(--bg-canvas);">
+                  <option value="">Wybierz...</option>
+                  <option value="audyt-ai">Kompleksowy audyt AI</option>
+                  <option value="audyt-content">Audyt contentu pod AI</option>
+                  <option value="visibility-checker">Visibility Checker (bezpłatne)</option>
+                  <option value="konsultacja">Bezpłatna konsultacja 30 min</option>
+                  <option value="wdrozenie">Audyt + wdrożenie 90 dni</option>
+                  <option value="inne">Inne</option>
+                </select>
+              </div>
+              <div class="mb-8">
+                <label for="message" class="text-ink mb-2 block font-medium">Wiadomość</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="Opisz krótko Twój kontekst – branżę, główne pytania, oczekiwany rezultat."
+                  required
+                  autocomplete="off"
+                  class="text-input resize-none"
+                  style="background: var(--bg-canvas);"></textarea>
+              </div>
+              <button type="submit" class="btn-primary !w-full !justify-center !py-4">
+                Wyślij wiadomość
+              </button>
+              <p class="text-ink-muted mt-4 text-center text-xs leading-relaxed">
+                Wysyłając formularz wyrażasz zgodę na kontakt zwrotny zgodnie z naszą
+                <a class="text-accent-blue underline underline-offset-2 hover:opacity-85" href="/polityka-prywatnosci">
+                  polityką prywatności
+                </a>.
+              </p>
+            </form>
+
+            <div
+              id="contact-success"
+              class="hidden flex-col items-center justify-center py-16 text-center opacity-0 transition-opacity duration-500"
+              aria-live="polite"
+            >
+              <div
+                class="mb-6 flex h-20 w-20 items-center justify-center rounded-full"
+                style="background: var(--bg-surface-2);"
+                aria-hidden="true"
+              >
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
+                  <path d="M20 6L9 17L4 12" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3 class="display-md mb-3">Wiadomość wysłana</h3>
+              <p class="text-ink-muted max-w-sm leading-relaxed">
+                Dziękujemy za kontakt. Odpowiemy w ciągu 24 godzin roboczych.
+              </p>
             </div>
           </div>
         </div>
