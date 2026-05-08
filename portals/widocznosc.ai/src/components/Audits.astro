@@ -220,12 +220,12 @@
     margin-bottom: 16px;
   }
 
-  /* Większy tytuł (Claude Design 2026-05-08): 71px max zamiast display-lg 62px,
-     bardziej "headline" charakter dla key conversion section */
+  /* h2 audits-title < h1 hero (max 68px na desktop) – hierarchia.
+     Display-lg standard z subtle override line-height/spacing */
   .audits-title {
-    font-size: clamp(40px, 5.8vw, 78px);
-    line-height: 0.95;
-    letter-spacing: -0.05em;
+    font-size: clamp(36px, 4.6vw, 60px);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
     color: var(--ink);
     margin: 0 0 24px 0;
     text-wrap: balance;

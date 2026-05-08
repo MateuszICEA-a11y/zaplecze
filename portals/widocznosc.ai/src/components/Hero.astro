@@ -53,7 +53,7 @@ const aiEngines = [
           <p class="hero-spotlight-quote">
             Wyszukiwarki AI generują odpowiedzi, nie listy linków. TOP&nbsp;1 w&nbsp;Google
             nie wystarczy – marki, których ChatGPT, Claude czy Perplexity nie cytują,
-            znikają z&nbsp;procesu zakupowego klienta.
+            są niewidoczne w&nbsp;decyzji zakupowej klienta.
           </p>
           <ul class="hero-spotlight-points">
             <li>Cytowania zamiast pozycji w&nbsp;rankingu</li>
@@ -125,15 +125,16 @@ const aiEngines = [
     gap: 30px;
   }
 
-  /* Display headline – Mona Sans 110px / -5.5px sygnatura Framer */
+  /* Display headline – Mona Sans, sygnatura Framer.
+     Hierarchia: h1 hero >> h2 sekcji (display-lg max 62px).
+     Mobile/tablet: clamp do 64px. Desktop 1280+: 80px. */
   .hero-headline {
     font-family: var(--font-display);
     font-weight: 500;
     color: var(--ink);
     margin: 0;
 
-    /* Desktop XL = display-lg 62px (po 2-col layout, 110px tylko full-bleed) */
-    font-size: clamp(2rem, 5vw + 0.5rem, 3.875rem);
+    font-size: clamp(2rem, 5.5vw + 0.5rem, 4rem);
     line-height: 1;
     letter-spacing: -0.05em;
     text-wrap: balance;
@@ -141,8 +142,8 @@ const aiEngines = [
 
   @media (min-width: 1280px) {
     .hero-headline {
-      font-size: 4.25rem;
-      letter-spacing: -3.4px;
+      font-size: 5rem;
+      letter-spacing: -0.05em;
     }
   }
 
