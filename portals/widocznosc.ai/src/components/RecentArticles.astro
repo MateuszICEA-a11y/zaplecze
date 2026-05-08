@@ -11,17 +11,15 @@ interface Props {
 }
 
 const {
-  eyebrow = 'Baza wiedzy',
-  title = 'Najnowsze z bazy wiedzy GEO',
-  subtitle = 'Definicje, case studies i poradniki o pozycjonowaniu marki w wyszukiwarkach AI.',
+  eyebrow = 'Centrum wiedzy',
+  title = 'Jak działają silniki odpowiedzi',
+  subtitle = 'Definicje, case studies i poradniki – jak modele językowe wybierają i cytują marki w odpowiedziach AI.',
   limit = 3,
 } = Astro.props;
 
 const posts = (await getCollection('blog'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, limit);
-
-const [hero, ...rest] = posts;
 
 const formatDate = (date: Date) =>
   date.toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -41,55 +39,36 @@ const formatDate = (date: Date) =>
       </a>
     </header>
 
-    {
-      hero && (
-        <div class="recent-grid">
-          <a href={`/blog/${hero.id}`} class="recent-featured">
-            <div class="recent-featured-image">
+    <div class="recent-grid">
+      {
+        posts.map((post) => (
+          <a href={`/blog/${post.id}`} class="recent-card">
+            <div class="recent-card-image">
               <Image
-                src={hero.data.image}
-                alt={hero.data.title}
-                widths={[640, 960, 1280]}
-                sizes="(min-width: 1024px) 66vw, 100vw"
+                src={post.data.image}
+                alt={post.data.title}
+                widths={[400, 600, 800]}
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                 loading="lazy"
               />
             </div>
-            <div class="recent-featured-body">
+            <div class="recent-card-body">
               <div class="recent-card-meta">
-                <span class="recent-card-category">{CATEGORY_LABELS[hero.data.category]}</span>
-                <span class="recent-card-date">{formatDate(hero.data.date)}</span>
+                <span class="recent-card-category">{CATEGORY_LABELS[post.data.category]}</span>
+                <span class="recent-card-date">{formatDate(post.data.date)}</span>
               </div>
-              <h3 class="recent-featured-title">{hero.data.title}</h3>
-              <p class="recent-featured-desc">{hero.data.subtitle}</p>
+              <h3 class="recent-card-title">{post.data.title}</h3>
+              {post.data.subtitle && (
+                <p class="recent-card-desc">{post.data.subtitle}</p>
+              )}
             </div>
           </a>
-
-          <div class="recent-rest">
-            {rest.map((post) => (
-              <a href={`/blog/${post.id}`} class="recent-thumb">
-                <div class="recent-thumb-image">
-                  <Image
-                    src={post.data.image}
-                    alt={post.data.title}
-                    widths={[192, 288]}
-                    sizes="96px"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="recent-thumb-body">
-                  <span class="recent-card-category">{CATEGORY_LABELS[post.data.category]}</span>
-                  <h3 class="recent-thumb-title">{post.data.title}</h3>
-                  <div class="recent-card-date">{formatDate(post.data.date)}</div>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      )
-    }
+        ))
+      }
+    </div>
 
     <div class="recent-mobile-link">
-      <a href="/blog" class="recent-all-link">
+      <a href="/blog" class="recent-all-link recent-all-link--mobile">
         Wszystkie artykuły
         <span aria-hidden="true">→</span>
       </a>
@@ -166,20 +145,26 @@ const formatDate = (date: Date) =>
     gap: 10px;
   }
 
+  /* Equal 3-up grid – wszystkie karty mają tę samą hierarchię */
   .recent-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 24px;
+  }
+
+  @media (min-width: 640px) {
+    .recent-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   @media (min-width: 1024px) {
     .recent-grid {
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
-  /* Featured */
-  .recent-featured {
+  .recent-card {
     display: flex;
     flex-direction: column;
     background: var(--bg-surface-1);
@@ -189,43 +174,39 @@ const formatDate = (date: Date) =>
     transition: background 0.2s ease;
   }
 
-  .recent-featured:hover {
+  .recent-card:hover {
     background: var(--bg-surface-2);
   }
 
-  .recent-featured-image {
+  .recent-card-image {
+    aspect-ratio: 16 / 10;
     overflow: hidden;
+    background: var(--bg-surface-2);
   }
 
-  .recent-featured-image img {
-    aspect-ratio: 16 / 9;
+  .recent-card-image img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
   }
 
-  .recent-featured:hover .recent-featured-image img {
-    transform: scale(1.02);
+  .recent-card:hover .recent-card-image img {
+    transform: scale(1.04);
   }
 
-  .recent-featured-body {
+  .recent-card-body {
     display: flex;
     flex-direction: column;
     gap: 12px;
     padding: 24px;
-  }
-
-  @media (min-width: 1024px) {
-    .recent-featured-body {
-      padding: 32px;
-    }
+    flex: 1;
   }
 
   .recent-card-meta {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 4px;
   }
 
   .recent-card-category {
@@ -249,88 +230,38 @@ const formatDate = (date: Date) =>
     color: var(--ink-muted);
   }
 
-  .recent-featured-title {
+  .recent-card-title {
     font-family: var(--font-display);
     font-weight: 500;
-    font-size: clamp(1.5rem, 2vw + 0.5rem, 2rem);
-    line-height: 1.13;
-    letter-spacing: var(--ls-display-md);
+    font-size: var(--fs-headline);
+    line-height: 1.2;
+    letter-spacing: var(--ls-headline);
     color: var(--ink);
     margin: 0;
+    text-wrap: balance;
   }
 
-  .recent-featured-desc {
+  .recent-card-desc {
     font-family: var(--font-sans);
-    font-size: var(--fs-body);
+    font-size: var(--fs-body-sm);
     line-height: 1.5;
-    letter-spacing: var(--ls-body);
+    letter-spacing: var(--ls-body-sm);
     color: var(--ink-muted);
     margin: 0;
-  }
-
-  /* Thumbs */
-  .recent-rest {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .recent-thumb {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    background: var(--bg-surface-1);
-    border-radius: var(--r-lg);
-    padding: 12px;
-    text-decoration: none;
-    transition: background 0.2s ease;
-    flex: 1;
-  }
-
-  .recent-thumb:hover {
-    background: var(--bg-surface-2);
-  }
-
-  .recent-thumb-image {
-    flex-shrink: 0;
-    width: 96px;
-    height: 96px;
-    border-radius: var(--r-md);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
     overflow: hidden;
-  }
-
-  .recent-thumb-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-
-  .recent-thumb:hover .recent-thumb-image img {
-    transform: scale(1.05);
-  }
-
-  .recent-thumb-body {
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .recent-thumb-title {
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: var(--fs-body-lg);
-    line-height: 1.25;
-    letter-spacing: var(--ls-body-lg);
-    color: var(--ink);
-    margin: 0;
   }
 
   .recent-mobile-link {
     margin-top: 32px;
     display: flex;
     justify-content: center;
+  }
+
+  .recent-all-link--mobile {
+    display: inline-flex;
   }
 
   @media (min-width: 640px) {
