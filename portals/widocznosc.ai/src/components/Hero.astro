@@ -1,5 +1,11 @@
 ---
-const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Copilot'];
+const aiEngines = [
+  { name: 'ChatGPT', src: '/logos/ai-engines/chatgpt.png' },
+  { name: 'Claude', src: '/logos/ai-engines/claude.png' },
+  { name: 'Gemini', src: '/logos/ai-engines/gemini.png' },
+  { name: 'Perplexity', src: '/logos/ai-engines/perplexity.png' },
+  { name: 'Copilot', src: '/logos/ai-engines/copilot.png' },
+];
 ---
 
 <section class="hero-section" id="home">
@@ -66,7 +72,13 @@ const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Copilot'];
       <div class="hero-logowall-row">
         {
           aiEngines.map((engine) => (
-            <span class="hero-logowall-engine">{engine}</span>
+            <img
+              src={engine.src}
+              alt={engine.name}
+              class="hero-logowall-engine"
+              loading="lazy"
+              decoding="async"
+            />
           ))
         }
       </div>
@@ -239,40 +251,42 @@ const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Copilot'];
     margin-bottom: 24px;
   }
 
-  /* Stitch iteration: cała grupa logos opacity 60% + grayscale,
-     hover na grupę = full color (grayscale-0). Zachowanie marketing
-     "te brandy nas testują/sprawdzamy je" implikatywne. */
+  /* Logo wall: 5 prawdziwych logotypów silników AI, monochromatic białe
+     na canvas (filter brightness(0) invert(1)). Cała grupa opacity 0.6,
+     hover = full opacity. Logo różnej szerokości – wyrównanie po height. */
   .hero-logowall-row {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 24px 48px;
+    gap: 28px 56px;
     opacity: 0.6;
-    filter: grayscale(1);
-    transition:
-      opacity 0.5s ease,
-      filter 0.5s ease;
+    transition: opacity 0.4s ease;
   }
 
   .hero-logowall-row:hover {
-    opacity: 1;
-    filter: grayscale(0);
+    opacity: 0.9;
   }
 
   @media (min-width: 1024px) {
     .hero-logowall-row {
-      gap: 24px 64px;
+      gap: 28px 72px;
     }
   }
 
   .hero-logowall-engine {
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 1.5rem;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-    line-height: 1;
+    height: 28px;
+    width: auto;
+    /* Whitemark – wszystkie logo identycznie białe na ciemnym tle */
+    filter: brightness(0) invert(1);
+    object-fit: contain;
+    transition: opacity 0.2s ease;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-logowall-engine {
+      height: 32px;
+    }
   }
 
   @media (min-width: 1024px) {
