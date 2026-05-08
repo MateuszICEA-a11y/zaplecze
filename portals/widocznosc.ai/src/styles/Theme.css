@@ -952,3 +952,53 @@ h4:not([class*='text-']) {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ============================================================
+   Light mode component overrides – komponenty z hardcoded
+   białymi rgba lub wymagające explicit inwersji.
+   ============================================================ */
+
+/* btn-secondary – białe rgba znika na białym tle */
+:root[data-theme="light"] .btn-secondary {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.10);
+}
+
+:root[data-theme="light"] .btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
+/* btn-translucent – ten sam problem */
+:root[data-theme="light"] .btn-translucent:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Modal backdrop – ciemny scrim na białym tle */
+:root[data-theme="light"] .modal-backdrop::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Spotlight cards – content force biały niezależnie od motywu.
+   Cards same zostają ciemne (gradient hardcoded), ale --ink
+   w light = #1a1a1a, więc text/buttons potrzebują explicit
+   white żeby były czytelne na violet/orange/magenta gradient. */
+.card-spotlight :where(h1, h2, h3, h4, p) {
+  color: #fff;
+}
+
+.card-spotlight .btn-secondary {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.20);
+  color: #fff;
+}
+
+.card-spotlight .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.30);
+}
+
+/* Eyebrow w spotlight – też force biały muted */
+.card-spotlight .eyebrow {
+  color: rgba(255, 255, 255, 0.7);
+}
