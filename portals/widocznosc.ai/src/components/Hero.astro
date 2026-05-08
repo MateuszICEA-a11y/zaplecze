@@ -40,19 +40,19 @@ const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Copilot'];
 
       </div>
 
-      <!-- RIGHT: violet gradient spotlight – Stitch linear 2-stop + box-shadow -->
+      <!-- RIGHT: violet gradient spotlight – edukacyjny GEO content (czym jest, dlaczego warto) -->
       <div class="hero-fade-in hero-spotlight-wrap" style="--delay: 0.2s" aria-hidden="false">
         <article class="card-spotlight card-spotlight-linear">
-          <span class="hero-spotlight-eyebrow">5 silników AI</span>
+          <span class="hero-spotlight-eyebrow">Nowa dyscyplina</span>
           <p class="hero-spotlight-quote">
-            "Jeden raport, pięć perspektyw. Zobacz, jak ChatGPT, Claude, Gemini, Perplexity
-            i&nbsp;Bing Copilot odpowiadają o&nbsp;Twojej marce – w&nbsp;3 dni."
+            Wyszukiwarki AI generują odpowiedzi, nie listy linków. TOP&nbsp;1 w&nbsp;Google
+            nie wystarczy – marki, których ChatGPT, Claude czy Perplexity nie cytują,
+            znikają z&nbsp;procesu zakupowego klienta.
           </p>
-          <div class="hero-spotlight-meta">
-            <span>Audyt 6 900 PLN</span>
-            <span aria-hidden="true">·</span>
-            <span>3 dni delivery</span>
-          </div>
+          <ul class="hero-spotlight-points">
+            <li>Cytowania zamiast pozycji w&nbsp;rankingu</li>
+            <li>Każdy model wymaga innej optymalizacji</li>
+          </ul>
         </article>
       </div>
 
@@ -198,14 +198,33 @@ const aiEngines = ['ChatGPT', 'Claude', 'Gemini', 'Perplexity', 'Copilot'];
     text-wrap: balance;
   }
 
-  .hero-spotlight-meta {
+  /* Bottom 2 punkty kluczowe – zamiast cena/dni dostawy */
+  .hero-spotlight-points {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0 0;
     display: flex;
-    gap: 8px;
+    flex-direction: column;
+    gap: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    padding-top: 16px;
+  }
+
+  .hero-spotlight-points li {
+    position: relative;
+    padding-left: 16px;
     font-family: var(--font-sans);
-    font-size: var(--fs-caption);
-    letter-spacing: var(--ls-caption);
-    color: rgba(255, 255, 255, 0.7);
-    margin-top: 16px;
+    font-size: var(--fs-body-sm);
+    line-height: 1.45;
+    letter-spacing: var(--ls-body-sm);
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .hero-spotlight-points li::before {
+    content: '·';
+    position: absolute;
+    left: 4px;
+    color: var(--ink);
   }
 
   /* Logo wall */
