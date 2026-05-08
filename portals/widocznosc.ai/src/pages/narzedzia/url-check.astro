@@ -1,0 +1,795 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ScrollUpButton from '../../components/ScrollUpButton.astro';
+import { FACTORS } from '../../../functions/_lib/url-check';
+---
+
+<Layout
+  title="URL Check – AI SEO Alignment Score 0-100"
+  description="Sprawdź w 5 sekund, czy Twoja strona jest cytowalna przez ChatGPT, Claude, Gemini, Perplexity i Copilot. AI SEO Alignment Score 0-100 + lista 5 priorytetowych zmian. Darmowe, bez logowania."
+>
+  <Navbar />
+
+  <main class="flex-grow">
+    <div class="content-container pt-32 pb-20 md:pt-40 lg:pt-44">
+      <!-- Hero -->
+      <header class="mx-auto max-w-3xl text-center">
+        <span class="eyebrow mb-6 inline-flex">
+          Narzędzie · bezpłatne · instant
+        </span>
+        <h1 class="display-lg">
+          Czy Twój content<br />jest cytowalny przez AI?
+        </h1>
+        <p class="text-ink mt-8 text-lg leading-relaxed">
+          Wskazujesz jeden URL. Wynik 0&ndash;100 + lista 5 priorytetowych zmian
+          według metodologii Princeton/KDD&nbsp;2024 i&nbsp;iPullRank AI Search Manual.
+          8 czynników, 0 logowania.
+        </p>
+      </header>
+
+      <!-- Form -->
+      <form id="check-form" class="mx-auto mt-12 flex max-w-2xl flex-col gap-3 sm:flex-row" novalidate>
+        <label class="sr-only" for="url-input">URL strony do analizy</label>
+        <input
+          id="url-input"
+          name="url"
+          type="text"
+          required
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="https://twojadomena.pl/blog/post"
+          class="check-input flex-1"
+        />
+        <button type="submit" class="btn-primary check-submit">
+          <span class="check-submit-label">Sprawdź content</span>
+          <span class="check-submit-spinner" aria-hidden="true"></span>
+        </button>
+      </form>
+      <p class="text-ink-muted mx-auto mt-3 max-w-2xl text-center text-sm">
+        Pobieramy publiczny HTML – nie wykonujemy żadnych zmian, nie zapisujemy danych. Działa
+        dla blogów, stron produktowych i&nbsp;artykułów.
+      </p>
+
+      <!-- Results placeholder -->
+      <section id="results" class="mt-14 hidden" aria-live="polite"></section>
+
+      <!-- Default overview – 8 factors before submit -->
+      <section id="default-overview" class="mt-16">
+        <h2 class="display-md">
+          8 czynników AI SEO Alignment Score
+        </h2>
+        <p class="text-ink mt-6 max-w-3xl text-lg leading-relaxed">
+          Każdy z&nbsp;tych elementów zwiększa szansę, że ChatGPT, Claude, Gemini, Perplexity
+          albo Copilot wskaże Twoją markę jako źródło. Suma wag = 100 pkt. Tradycyjny SEO Domain
+          Authority może być wysoki, ale AI Alignment niski – tu jest realna przewaga.
+        </p>
+
+        <div class="mt-10 grid gap-4 lg:grid-cols-2">
+          {
+            FACTORS.map((factor, idx) => (
+              <div class="factor-card">
+                <div class="factor-card-header">
+                  <span class="factor-card-num">{String(idx + 1).padStart(2, '0')}</span>
+                  <div class="factor-card-title-wrap">
+                    <h3 class="factor-card-title">{factor.label}</h3>
+                    <span class="factor-card-weight">{factor.weight} pkt</span>
+                  </div>
+                </div>
+                <p class="factor-card-desc">{factor.description}</p>
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="methodology-note">
+          <h3 class="methodology-title">Skąd ta metodologia?</h3>
+          <p class="methodology-text">
+            Wagi czynników opieramy na trzech źródłach: peer-reviewed badaniu
+            <a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener noreferrer">
+              Princeton/KDD&nbsp;2024 (GEO Paper, Aggarwal et al.)
+            </a>, patenty Google na query fan-out
+            (<a href="https://searchengineland.com/how-ai-mode-ai-overviews-work-patents-456346" target="_blank" rel="noopener noreferrer">
+              omówienie Mike'a Kinga
+            </a>) oraz
+            <a href="https://ipullrank.com/ai-search-manual" target="_blank" rel="noopener noreferrer">
+              iPullRank AI Search Manual
+            </a>. Sygnały sprawdzamy regex-based parsingiem na publicznym HTML – nic nie
+            zapisujemy.
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <Footer />
+  <ScrollUpButton />
+</Layout>
+
+<style>
+  /* Form input – pattern z ai-bots-check */
+  .check-input {
+    height: 48px;
+    padding: 0 18px;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: var(--ink);
+    background: var(--bg-surface-1);
+    border: none;
+    border-radius: var(--r-md);
+    outline: none;
+    transition: box-shadow 0.2s ease, background 0.2s ease;
+  }
+  .check-input::placeholder {
+    color: var(--ink-muted);
+  }
+  .check-input:focus {
+    background: var(--bg-surface-2);
+    box-shadow: var(--shadow-l3);
+  }
+
+  .check-submit {
+    height: 48px;
+    min-width: 168px;
+    justify-content: center;
+    position: relative;
+  }
+  .check-submit[aria-busy='true'] .check-submit-label {
+    opacity: 0;
+  }
+  .check-submit-spinner {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
+    border-radius: 50%;
+    opacity: 0;
+    animation: spin 0.7s linear infinite;
+  }
+  .check-submit[aria-busy='true'] .check-submit-spinner {
+    opacity: 1;
+  }
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Factor cards (pre-check overview) */
+  .factor-card {
+    background: var(--bg-surface-1);
+    border-radius: var(--r-lg);
+    padding: 24px 24px 28px;
+  }
+  .factor-card-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+  .factor-card-num {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink-muted);
+    flex-shrink: 0;
+  }
+  .factor-card-title-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+  }
+  .factor-card-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.2;
+    color: var(--ink);
+    margin: 0;
+  }
+  .factor-card-weight {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent-blue);
+  }
+  .factor-card-desc {
+    color: var(--ink-muted);
+    font-size: 14px;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .methodology-note {
+    margin-top: 48px;
+    padding: 28px 32px;
+    background: var(--bg-surface-1);
+    border-radius: var(--r-lg);
+    border-left: 2px solid var(--accent-blue);
+  }
+  .methodology-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 18px;
+    margin: 0 0 8px 0;
+    color: var(--ink);
+  }
+  .methodology-text {
+    color: var(--ink-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+  }
+  .methodology-text a {
+    color: var(--accent-blue);
+    text-decoration: none;
+  }
+  .methodology-text a:hover {
+    opacity: 0.85;
+  }
+
+  /* Results section – styled via global classes z JS rendering */
+  :global(.results-card) {
+    background: var(--bg-surface-1);
+    border-radius: var(--r-lg);
+    padding: 28px;
+    margin-bottom: 20px;
+  }
+
+  :global(.score-hero) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 32px;
+    align-items: center;
+    padding: 32px;
+    background: var(--bg-surface-1);
+    border-radius: var(--r-xl);
+    margin-bottom: 24px;
+  }
+
+  :global(.score-circle) {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    flex-shrink: 0;
+  }
+
+  :global(.score-circle-bg),
+  :global(.score-circle-fg) {
+    fill: none;
+    stroke-width: 10;
+  }
+
+  :global(.score-circle-bg) {
+    stroke: var(--bg-surface-2);
+  }
+
+  :global(.score-circle-fg) {
+    stroke: var(--accent-blue);
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.6s ease;
+  }
+
+  :global(.score-circle-text) {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  :global(.score-circle-num) {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 44px;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+  }
+
+  :global(.score-circle-out) {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+
+  :global(.score-meta) {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  :global(.score-grade) {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-blue);
+  }
+
+  :global(.score-grade-letter) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--accent-blue);
+    color: var(--bg-canvas);
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0;
+  }
+
+  :global(.score-headline) {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  :global(.score-url) {
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 13px;
+    color: var(--ink-muted);
+    word-break: break-all;
+  }
+
+  /* Factor result rows */
+  :global(.factors-list) {
+    display: grid;
+    gap: 12px;
+  }
+
+  :global(.factor-row) {
+    background: var(--bg-surface-1);
+    border-radius: var(--r-lg);
+    padding: 20px 24px;
+    display: grid;
+    grid-template-columns: 32px 1fr auto;
+    gap: 16px;
+    align-items: start;
+  }
+
+  :global(.factor-row-icon) {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  :global(.factor-row--pass .factor-row-icon) {
+    color: #4ade80;
+  }
+  :global(.factor-row--partial .factor-row-icon) {
+    color: #fbbf24;
+  }
+  :global(.factor-row--fail .factor-row-icon) {
+    color: #f87171;
+  }
+
+  :global(.factor-row-body) {
+    min-width: 0;
+  }
+
+  :global(.factor-row-title) {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--ink);
+    margin: 0 0 4px 0;
+  }
+
+  :global(.factor-row-evidence) {
+    font-family: var(--font-sans);
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--ink-muted);
+    margin: 0 0 6px 0;
+  }
+
+  :global(.factor-row-details) {
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--ink-muted);
+    margin: 6px 0 0 0;
+    opacity: 0.75;
+  }
+
+  :global(.factor-row-points) {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--ink);
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  :global(.factor-row-points-out) {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-left: 4px;
+  }
+
+  /* Action items section */
+  :global(.action-items) {
+    margin-top: 32px;
+  }
+
+  :global(.action-items-title) {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--ink);
+    margin: 0 0 16px 0;
+  }
+
+  :global(.action-list) {
+    display: grid;
+    gap: 10px;
+  }
+
+  :global(.action-item) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    padding: 16px 20px;
+    background: var(--bg-surface-1);
+    border-radius: var(--r-md);
+    align-items: start;
+  }
+
+  :global(.action-priority) {
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    padding: 4px 8px;
+    border-radius: var(--r-sm);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  :global(.action-priority--p0) {
+    background: rgba(248, 113, 113, 0.15);
+    color: #f87171;
+  }
+  :global(.action-priority--p1) {
+    background: rgba(251, 191, 36, 0.15);
+    color: #fbbf24;
+  }
+  :global(.action-priority--p2) {
+    background: rgba(74, 222, 128, 0.15);
+    color: #4ade80;
+  }
+
+  :global(.action-body) {
+    min-width: 0;
+  }
+
+  :global(.action-title) {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--ink);
+    margin: 0 0 6px 0;
+  }
+
+  :global(.action-desc) {
+    font-family: var(--font-sans);
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+
+  /* Error state */
+  :global(.results-error) {
+    background: var(--bg-surface-1);
+    border-radius: var(--r-lg);
+    padding: 28px 32px;
+    border-left: 2px solid #f87171;
+  }
+  :global(.results-error-title) {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--ink);
+    margin: 0 0 8px 0;
+  }
+  :global(.results-error-desc) {
+    color: var(--ink-muted);
+    font-size: 14px;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  /* Score color variants based on grade */
+  :global(.score-circle-fg--A) {
+    stroke: #4ade80;
+  }
+  :global(.score-grade--A .score-grade-letter) {
+    background: #4ade80;
+  }
+  :global(.score-circle-fg--B) {
+    stroke: #84cc16;
+  }
+  :global(.score-grade--B .score-grade-letter) {
+    background: #84cc16;
+  }
+  :global(.score-circle-fg--C) {
+    stroke: var(--accent-blue);
+  }
+  :global(.score-grade--C .score-grade-letter) {
+    background: var(--accent-blue);
+  }
+  :global(.score-circle-fg--D) {
+    stroke: #fbbf24;
+  }
+  :global(.score-grade--D .score-grade-letter) {
+    background: #fbbf24;
+  }
+  :global(.score-circle-fg--F) {
+    stroke: #f87171;
+  }
+  :global(.score-grade--F .score-grade-letter) {
+    background: #f87171;
+  }
+
+  @media (max-width: 640px) {
+    :global(.score-hero) {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 24px;
+    }
+    :global(.score-circle) {
+      width: 120px;
+      height: 120px;
+    }
+    :global(.factor-row) {
+      grid-template-columns: 28px 1fr;
+    }
+    :global(.factor-row-points) {
+      grid-column: 1 / -1;
+      padding-left: 44px;
+    }
+  }
+</style>
+
+<script>
+  type FactorScore = {
+    key: string;
+    label: string;
+    shortLabel: string;
+    weight: number;
+    score: 0 | 0.5 | 1;
+    earned: number;
+    evidence: string;
+    details?: string;
+  };
+
+  type ActionItem = {
+    priority: 'P0' | 'P1' | 'P2';
+    factor: string;
+    title: string;
+    description: string;
+  };
+
+  type CheckResponse = {
+    url: string;
+    finalUrl: string;
+    fetchedAt: string;
+    status: 'ok' | 'fetch-error' | 'cloudflare-blocked' | 'not-html' | 'too-small';
+    statusCode?: number;
+    htmlBytes?: number;
+    score: {
+      total: number;
+      grade: 'A' | 'B' | 'C' | 'D' | 'F';
+      factors: FactorScore[];
+    };
+    actionItems: ActionItem[];
+  };
+
+  const form = document.getElementById('check-form') as HTMLFormElement;
+  const input = document.getElementById('url-input') as HTMLInputElement;
+  const submitBtn = form.querySelector('.check-submit') as HTMLButtonElement;
+  const resultsEl = document.getElementById('results') as HTMLElement;
+  const overviewEl = document.getElementById('default-overview') as HTMLElement;
+
+  function escapeHtml(s: string): string {
+    return s.replace(/[&<>"']/g, (ch) => {
+      const map: Record<string, string> = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;',
+      };
+      return map[ch];
+    });
+  }
+
+  function scoreLabel(grade: string): string {
+    const map: Record<string, string> = {
+      A: 'Świetnie cytowalna',
+      B: 'Dobra baza, są ulepszenia',
+      C: 'Średnio – kilka brakujących sygnałów',
+      D: 'Słabo – większość sygnałów do poprawy',
+      F: 'Krytyczne braki cytowalności',
+    };
+    return map[grade] || '';
+  }
+
+  function factorRowClass(score: number): string {
+    if (score === 1) return 'factor-row--pass';
+    if (score === 0.5) return 'factor-row--partial';
+    return 'factor-row--fail';
+  }
+
+  function factorIcon(score: number): string {
+    if (score === 1) return '✓';
+    if (score === 0.5) return '◐';
+    return '✗';
+  }
+
+  function renderError(data: CheckResponse): string {
+    const item = data.actionItems[0];
+    return `
+      <div class="results-error">
+        <h3 class="results-error-title">${escapeHtml(item.title)}</h3>
+        <p class="results-error-desc">${escapeHtml(item.description)}</p>
+      </div>
+    `;
+  }
+
+  function renderResults(data: CheckResponse): string {
+    if (data.status !== 'ok') {
+      return renderError(data);
+    }
+
+    const { score, actionItems, finalUrl } = data;
+    const circumference = 2 * Math.PI * 60;
+    const offset = circumference * (1 - score.total / 100);
+
+    const factorsHtml = score.factors
+      .map(
+        (f) => `
+      <div class="factor-row ${factorRowClass(f.score)}">
+        <span class="factor-row-icon" aria-hidden="true">${factorIcon(f.score)}</span>
+        <div class="factor-row-body">
+          <h4 class="factor-row-title">${escapeHtml(f.label)}</h4>
+          <p class="factor-row-evidence">${escapeHtml(f.evidence)}</p>
+          ${f.details ? `<p class="factor-row-details">${escapeHtml(f.details)}</p>` : ''}
+        </div>
+        <div class="factor-row-points">
+          ${f.earned}<span class="factor-row-points-out">/ ${f.weight}</span>
+        </div>
+      </div>
+    `
+      )
+      .join('');
+
+    const actionHtml = actionItems
+      .map(
+        (a) => `
+      <div class="action-item">
+        <span class="action-priority action-priority--${a.priority.toLowerCase()}">${a.priority}</span>
+        <div class="action-body">
+          <h4 class="action-title">${escapeHtml(a.title)}</h4>
+          <p class="action-desc">${escapeHtml(a.description)}</p>
+        </div>
+      </div>
+    `
+      )
+      .join('');
+
+    return `
+      <div class="score-hero">
+        <div class="score-circle">
+          <svg viewBox="0 0 140 140" width="140" height="140" aria-hidden="true">
+            <circle class="score-circle-bg" cx="70" cy="70" r="60" />
+            <circle
+              class="score-circle-fg score-circle-fg--${score.grade}"
+              cx="70" cy="70" r="60"
+              stroke-dasharray="${circumference}"
+              stroke-dashoffset="${offset}"
+              transform="rotate(-90 70 70)"
+            />
+          </svg>
+          <div class="score-circle-text">
+            <span class="score-circle-num">${score.total}</span>
+            <span class="score-circle-out">/ 100</span>
+          </div>
+        </div>
+        <div class="score-meta">
+          <span class="score-grade score-grade--${score.grade}">
+            <span class="score-grade-letter">${score.grade}</span>
+            ${escapeHtml(scoreLabel(score.grade))}
+          </span>
+          <h3 class="score-headline">AI SEO Alignment Score</h3>
+          <span class="score-url">${escapeHtml(finalUrl)}</span>
+        </div>
+      </div>
+
+      <div class="factors-list">
+        ${factorsHtml}
+      </div>
+
+      <div class="action-items">
+        <h3 class="action-items-title">Plan działania – ${actionItems.length} priorytetowych zmian</h3>
+        <div class="action-list">
+          ${actionHtml}
+        </div>
+      </div>
+    `;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const url = input.value.trim();
+    if (!url) {
+      input.focus();
+      return;
+    }
+
+    submitBtn.setAttribute('aria-busy', 'true');
+    submitBtn.disabled = true;
+    resultsEl.classList.remove('hidden');
+    resultsEl.innerHTML =
+      '<div class="results-card" style="text-align:center; color: var(--ink-muted);">Pobieramy stronę i analizujemy 8 czynników…</div>';
+
+    try {
+      const res = await fetch('/api/tools/url-check', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ url }),
+      });
+
+      if (!res.ok) {
+        const errBody = await res.json().catch(() => ({ error: `HTTP ${res.status}` }));
+        resultsEl.innerHTML = `
+          <div class="results-error">
+            <h3 class="results-error-title">Nie udało się sprawdzić URL</h3>
+            <p class="results-error-desc">${escapeHtml(errBody.error || `HTTP ${res.status}`)}</p>
+          </div>
+        `;
+        return;
+      }
+
+      const data = (await res.json()) as CheckResponse;
+      resultsEl.innerHTML = renderResults(data);
+      overviewEl.classList.add('hidden');
+      resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } catch (err) {
+      resultsEl.innerHTML = `
+        <div class="results-error">
+          <h3 class="results-error-title">Błąd połączenia</h3>
+          <p class="results-error-desc">${escapeHtml((err as Error).message || 'Spróbuj ponownie za chwilę.')}</p>
+        </div>
+      `;
+    } finally {
+      submitBtn.setAttribute('aria-busy', 'false');
+      submitBtn.disabled = false;
+    }
+  });
+</script>
