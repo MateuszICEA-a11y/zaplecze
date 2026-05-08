@@ -4,12 +4,19 @@
  * Endpoint: POST /api/tools/url-check
  * Body: { url: "https://example.com/blog/post" }
  *
- * Response: pełny score z breakdown 8 czynników + 5 priorytetowych zmian.
+ * Wymaga env var OPENROUTER_API_KEY (Cloudflare Pages → Settings →
+ * Environment variables, Production + Preview).
  *
  * Pages Function – deployowane razem z Astro przez Cloudflare Pages.
  */
 
-import { analyzeContent, buildActionItems, type FullScore, type ActionItem } from '../../_lib/url-check';
+import {
+  analyzeContentWithLLM,
+  buildActionItems,
+  ANALYSIS_MODEL,
+  type FullScore,
+  type ActionItem,
+} from '../../_lib/url-check';
 
 type CheckRequest = {
   url?: string;
@@ -19,7 +26,14 @@ type CheckResponse = {
   url: string;
   finalUrl: string;
   fetchedAt: string;
-  status: 'ok' | 'fetch-error' | 'cloudflare-blocked' | 'not-html' | 'too-small';
+  status:
+    | 'ok'
+    | 'fetch-error'
+    | 'cloudflare-blocked'
+    | 'not-html'
+    | 'too-small'
+    | 'llm-error'
+    | 'config-error';
   statusCode?: number;
   htmlBytes?: number;
   score: FullScore;
@@ -29,7 +43,7 @@ type CheckResponse = {
 const FETCH_USER_AGENT =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36';
 
-const MAX_HTML_BYTES = 2_500_000; // 2.5MB – większe ścinamy
+const MAX_HTML_BYTES = 2_500_000;
 
 function normalizeUrl(input: string): string | null {
   const trimmed = input.trim();
@@ -69,7 +83,6 @@ async function fetchHtml(url: string): Promise<{
   const contentType = response.headers.get('content-type') || '';
   const finalUrl = response.url || url;
 
-  // Read maksymalnie 2.5MB – chronimy worker przed dużymi stronami
   const reader = response.body?.getReader();
   let html = '';
   let totalBytes = 0;
@@ -107,12 +120,31 @@ async function fetchHtml(url: string): Promise<{
   };
 }
 
-export const onRequestPost: PagesFunction = async (context) => {
+type Env = {
+  OPENROUTER_API_KEY?: string;
+};
+
+export const onRequestPost: PagesFunction<Env> = async (context) => {
   let body: CheckRequest;
   try {
     body = await context.request.json<CheckRequest>();
   } catch {
     return jsonError(400, 'Invalid JSON body');
+  }
+
+  const apiKey = (context.env.OPENROUTER_API_KEY || '').trim();
+  if (!apiKey) {
+    return jsonResponse(
+      buildErrorResponse(
+        body.url || '',
+        body.url || '',
+        new Date().toISOString(),
+        'config-error',
+        500,
+        0,
+        'Brak OPENROUTER_API_KEY w środowisku Cloudflare Pages. Skontaktuj się z administratorem.'
+      )
+    );
   }
 
   const url = normalizeUrl(body.url || '');
@@ -132,27 +164,81 @@ export const onRequestPost: PagesFunction = async (context) => {
 
   const { html, finalUrl, status, contentType, cloudflareBlocked } = result;
 
-  // Cloudflare WAF blok
   if (cloudflareBlocked) {
-    return jsonResponse(buildErrorResponse(url, finalUrl, fetchedAt, 'cloudflare-blocked', status, html.length, 'Cloudflare WAF zablokował dostęp – sprawdź czy strona nie wymaga JavaScript challenge.'));
+    return jsonResponse(
+      buildErrorResponse(
+        url,
+        finalUrl,
+        fetchedAt,
+        'cloudflare-blocked',
+        status,
+        html.length,
+        'Cloudflare WAF zablokował dostęp – sprawdź czy strona nie wymaga JavaScript challenge.'
+      )
+    );
   }
 
-  // Status nie-200
   if (status >= 400) {
-    return jsonResponse(buildErrorResponse(url, finalUrl, fetchedAt, 'fetch-error', status, html.length, `Strona zwróciła HTTP ${status}.`));
+    return jsonResponse(
+      buildErrorResponse(
+        url,
+        finalUrl,
+        fetchedAt,
+        'fetch-error',
+        status,
+        html.length,
+        `Strona zwróciła HTTP ${status}.`
+      )
+    );
   }
 
-  // Nie-HTML content type
   if (!/text\/html|application\/xhtml/i.test(contentType)) {
-    return jsonResponse(buildErrorResponse(url, finalUrl, fetchedAt, 'not-html', status, html.length, `Content-Type: "${contentType}" – analizujemy tylko strony HTML.`));
+    return jsonResponse(
+      buildErrorResponse(
+        url,
+        finalUrl,
+        fetchedAt,
+        'not-html',
+        status,
+        html.length,
+        `Content-Type: "${contentType}" – analizujemy tylko strony HTML.`
+      )
+    );
   }
 
-  // Za mało HTML do analizy
   if (html.length < 1000) {
-    return jsonResponse(buildErrorResponse(url, finalUrl, fetchedAt, 'too-small', status, html.length, `Strona ma tylko ${html.length} bajtów – pewnie SPA bez SSR. Sprawdź czy content jest renderowany server-side.`));
+    return jsonResponse(
+      buildErrorResponse(
+        url,
+        finalUrl,
+        fetchedAt,
+        'too-small',
+        status,
+        html.length,
+        `Strona ma tylko ${html.length} bajtów – pewnie SPA bez SSR. Sprawdź czy content jest renderowany server-side.`
+      )
+    );
   }
 
-  const score = analyzeContent(html);
+  // LLM analysis (async, ~5-15s)
+  let score: FullScore;
+  try {
+    score = await analyzeContentWithLLM(html, url, apiKey);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : 'Unknown LLM error';
+    return jsonResponse(
+      buildErrorResponse(
+        url,
+        finalUrl,
+        fetchedAt,
+        'llm-error',
+        status,
+        html.length,
+        `Model nie był w stanie przeanalizować strony: ${message.slice(0, 200)}`
+      )
+    );
+  }
+
   const actionItems = buildActionItems(score.factors);
 
   const response: CheckResponse = {
@@ -193,6 +279,7 @@ function buildErrorResponse(
       total: 0,
       grade: 'F',
       factors: [],
+      model: ANALYSIS_MODEL,
     },
     actionItems: [
       {

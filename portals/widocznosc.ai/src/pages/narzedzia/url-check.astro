@@ -23,9 +23,9 @@ import { FACTORS } from '../../../functions/_lib/url-check';
           Czy Twój content<br />jest cytowalny przez AI?
         </h1>
         <p class="text-ink mt-8 text-lg leading-relaxed">
-          Wskazujesz jeden URL. Wynik 0&ndash;100 + lista 5 priorytetowych zmian
-          według metodologii Princeton/KDD&nbsp;2024 i&nbsp;iPullRank AI Search Manual.
-          8 czynników, 0 logowania.
+          Wskazujesz jeden URL. Gemini 3.1 Flash analizuje 8 czynników cytowalności i&nbsp;zwraca
+          wynik 0&ndash;100 + listę 5 priorytetowych zmian. Analiza według metodologii
+          Princeton/KDD&nbsp;2024 + iPullRank AI Search Manual. Bez logowania.
         </p>
       </header>
 
@@ -48,8 +48,8 @@ import { FACTORS } from '../../../functions/_lib/url-check';
         </button>
       </form>
       <p class="text-ink-muted mx-auto mt-3 max-w-2xl text-center text-sm">
-        Pobieramy publiczny HTML – nie wykonujemy żadnych zmian, nie zapisujemy danych. Działa
-        dla blogów, stron produktowych i&nbsp;artykułów.
+        Pobieramy publiczny HTML i&nbsp;przekazujemy do&nbsp;analizy przez model językowy. Nie
+        zapisujemy treści ani wyników. Analiza zajmuje 10&ndash;20 sekund.
       </p>
 
       <!-- Results placeholder -->
@@ -84,19 +84,21 @@ import { FACTORS } from '../../../functions/_lib/url-check';
         </div>
 
         <div class="methodology-note">
-          <h3 class="methodology-title">Skąd ta metodologia?</h3>
+          <h3 class="methodology-title">Jak to działa?</h3>
           <p class="methodology-text">
-            Wagi czynników opieramy na trzech źródłach: peer-reviewed badaniu
+            Pobieramy publiczny HTML strony, oczyszczamy z&nbsp;binary noise (script/style)
+            i&nbsp;przekazujemy do&nbsp;modelu <strong>Gemini 3.1 Flash</strong> z&nbsp;instrukcją
+            oceny 8 czynników w&nbsp;skali 0/0.5/1. Model rozróżnia główną treść artykułu od&nbsp;nawigacji,
+            footera i&nbsp;sidebara. Wagi czynników opieramy na peer-reviewed badaniu
             <a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener noreferrer">
               Princeton/KDD&nbsp;2024 (GEO Paper, Aggarwal et al.)
-            </a>, patenty Google na query fan-out
+            </a>, patentach Google na query fan-out
             (<a href="https://searchengineland.com/how-ai-mode-ai-overviews-work-patents-456346" target="_blank" rel="noopener noreferrer">
               omówienie Mike'a Kinga
             </a>) oraz
             <a href="https://ipullrank.com/ai-search-manual" target="_blank" rel="noopener noreferrer">
               iPullRank AI Search Manual
-            </a>. Sygnały sprawdzamy regex-based parsingiem na publicznym HTML – nic nie
-            zapisujemy.
+            </a>. Nic nie zapisujemy.
           </p>
         </div>
       </section>
@@ -352,6 +354,15 @@ import { FACTORS } from '../../../functions/_lib/url-check';
     font-size: 13px;
     color: var(--ink-muted);
     word-break: break-all;
+  }
+
+  :global(.score-model) {
+    font-family: var(--font-mono, ui-monospace, monospace);
+    font-size: 11px;
+    color: var(--ink-muted);
+    opacity: 0.7;
+    margin-top: 4px;
+    letter-spacing: 0.02em;
   }
 
   /* Factor result rows */
@@ -728,6 +739,7 @@ import { FACTORS } from '../../../functions/_lib/url-check';
           </span>
           <h3 class="score-headline">AI SEO Alignment Score</h3>
           <span class="score-url">${escapeHtml(finalUrl)}</span>
+          <span class="score-model">Analiza: ${escapeHtml(score.model)}</span>
         </div>
       </div>
 
@@ -756,7 +768,7 @@ import { FACTORS } from '../../../functions/_lib/url-check';
     submitBtn.disabled = true;
     resultsEl.classList.remove('hidden');
     resultsEl.innerHTML =
-      '<div class="results-card" style="text-align:center; color: var(--ink-muted);">Pobieramy stronę i analizujemy 8 czynników…</div>';
+      '<div class="results-card" style="text-align:center; color: var(--ink-muted);">Pobieramy stronę i model językowy analizuje treść – 10–20 sekund…</div>';
 
     try {
       const res = await fetch('/api/tools/url-check', {

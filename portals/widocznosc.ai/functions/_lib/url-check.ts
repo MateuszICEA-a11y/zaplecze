@@ -1,14 +1,16 @@
 /**
  * URL Check – AI SEO Alignment Score 0-100 (8 czynników).
  *
+ * Analiza wykonywana przez Gemini 3.1 Flash przez OpenRouter (LLM rozumie
+ * jaki fragment HTML to GŁÓWNA treść – nie myli nawigacji z lead'em, łapie
+ * FAQ bez schemy, ocenia gęstość konkretnych faktów w sensowny sposób).
+ *
  * Pochodzenie metodologii: webinary-materialy.md (Robert Niechciał) + research
  * Princeton/KDD 2024 (Aggarwal et al.) + iPullRank AI Search Manual.
  *
  * Każdy z 8 czynników oceniamy w skali 0/0.5/1 i mnożymy przez wagę.
  * Suma wag = 100. Output: total score 0-100 + breakdown per kategoria
  * + 5 priorytetowych zmian (P0/P1/P2).
- *
- * Format pasuje 1:1 do api/tools/url-check.ts + pages/narzedzia/url-check.astro.
  */
 
 export type FactorKey =
@@ -27,7 +29,6 @@ export type FactorDefinition = {
   shortLabel: string;
   weight: number;
   description: string;
-  /** Co user dostaje gdy nie ma tego elementu */
   whatToFix: string;
 };
 
@@ -128,9 +129,9 @@ export type FactorScore = {
   score: 0 | 0.5 | 1;
   /** Punkty po przemnożeniu (0..weight) */
   earned: number;
-  /** Krótkie wyjaśnienie wyniku */
+  /** Krótkie wyjaśnienie wyniku (1 zdanie, na podstawie analizy LLM) */
   evidence: string;
-  /** Detal techniczny – widoczny w "rozwinięciu" karty */
+  /** Detal techniczny (cytat z treści lub konkretna liczba) */
   details?: string;
 };
 
@@ -138,6 +139,8 @@ export type FullScore = {
   total: number;
   grade: 'A' | 'B' | 'C' | 'D' | 'F';
   factors: FactorScore[];
+  /** Model użyty do analizy (debugging/transparency) */
+  model: string;
 };
 
 export type ActionItem = {
@@ -148,89 +151,41 @@ export type ActionItem = {
 };
 
 // =============================================================================
-// HELPERS – HTML parsing (regex-based, bez DOMParser w CF Workers)
+// PRE-PROCESSING – HTML cleanup + JSON-LD/meta extraction (deterministic)
 // =============================================================================
 
-/** Wyciąga visible text z HTML – bez script/style/nav/footer */
-export function extractText(html: string): string {
-  let cleaned = html
-    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
-    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
-    .replace(/<nav[\s\S]*?<\/nav>/gi, ' ')
-    .replace(/<footer[\s\S]*?<\/footer>/gi, ' ')
-    .replace(/<aside[\s\S]*?<\/aside>/gi, ' ')
-    .replace(/<noscript[\s\S]*?<\/noscript>/gi, ' ');
+const MAX_HTML_FOR_LLM = 80_000;
 
-  cleaned = cleaned.replace(/<[^>]+>/g, ' ');
-
-  // HTML entities – najczęstsze
-  cleaned = cleaned
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&ndash;/g, '–')
-    .replace(/&mdash;/g, '—');
-
-  return cleaned.replace(/\s+/g, ' ').trim();
+/** Strippuje script/style/noscript – żeby LLM nie marnował tokenów na binary noise */
+function cleanHtml(html: string): string {
+  return html
+    .replace(/<script[\s\S]*?<\/script>/gi, '')
+    .replace(/<style[\s\S]*?<\/style>/gi, '')
+    .replace(/<noscript[\s\S]*?<\/noscript>/gi, '')
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
-export function extractMatches(html: string, regex: RegExp): string[] {
-  const matches: string[] = [];
-  let m: RegExpExecArray | null;
-  // eslint-disable-next-line no-cond-assign
-  while ((m = regex.exec(html)) !== null) {
-    matches.push(m[1] || m[0]);
-  }
-  return matches;
-}
-
-export function extractH1(html: string): string {
-  const m = html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
-  return m ? extractText(m[1]) : '';
-}
-
-export function extractHeadings(html: string, levels: number[]): string[] {
-  const out: string[] = [];
-  for (const lvl of levels) {
-    const re = new RegExp(`<h${lvl}[^>]*>([\\s\\S]*?)<\\/h${lvl}>`, 'gi');
-    const all = extractMatches(html, re);
-    for (const item of all) {
-      const text = extractText(item);
-      if (text) out.push(text);
-    }
-  }
-  return out;
-}
-
-export function countTags(html: string, tag: string): number {
-  const re = new RegExp(`<${tag}\\b`, 'gi');
-  const matches = html.match(re);
-  return matches ? matches.length : 0;
-}
-
-export function extractJsonLd(html: string): unknown[] {
+/** Wyciąga JSON-LD blocks (zachowujemy bo są tanie do parsowania regexem) */
+function extractJsonLd(html: string): unknown[] {
   const re = /<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
   const blocks: unknown[] = [];
   let m: RegExpExecArray | null;
   // eslint-disable-next-line no-cond-assign
   while ((m = re.exec(html)) !== null) {
     try {
-      const parsed = JSON.parse(m[1].trim());
-      blocks.push(parsed);
+      blocks.push(JSON.parse(m[1].trim()));
     } catch {
-      // ignore malformed JSON-LD
+      /* malformed */
     }
   }
   return blocks;
 }
 
-/** Płaska lista wszystkich @type z całego JSON-LD (włącznie z @graph) */
-export function getJsonLdTypes(blocks: unknown[]): string[] {
+function getJsonLdTypes(blocks: unknown[]): string[] {
   const types: string[] = [];
-  const visit = (node: unknown) => {
+  const visit = (node: unknown): void => {
     if (!node || typeof node !== 'object') return;
     const obj = node as Record<string, unknown>;
     if (typeof obj['@type'] === 'string') types.push(obj['@type']);
@@ -246,25 +201,30 @@ export function getJsonLdTypes(blocks: unknown[]): string[] {
   return types;
 }
 
-export function findMetaContent(html: string, property: string): string | null {
-  // og:property, name=, property= – wszystkie warianty
+function getJsonLdDate(blocks: unknown[]): string | null {
+  let modified: string | null = null;
+  let published: string | null = null;
+  const visit = (node: unknown): void => {
+    if (!node || typeof node !== 'object') return;
+    const obj = node as Record<string, unknown>;
+    if (typeof obj.dateModified === 'string' && !modified) modified = obj.dateModified;
+    if (typeof obj.datePublished === 'string' && !published) published = obj.datePublished;
+    if (Array.isArray(obj['@graph'])) for (const n of obj['@graph']) visit(n);
+    for (const v of Object.values(obj)) {
+      if (Array.isArray(v)) for (const n of v) visit(n);
+      else if (typeof v === 'object') visit(v);
+    }
+  };
+  for (const b of blocks) visit(b);
+  return modified || published;
+}
+
+function findMetaContent(html: string, prop: string): string | null {
   const patterns = [
-    new RegExp(
-      `<meta[^>]+property=["']${property}["'][^>]*content=["']([^"']+)["']`,
-      'i'
-    ),
-    new RegExp(
-      `<meta[^>]+content=["']([^"']+)["'][^>]+property=["']${property}["']`,
-      'i'
-    ),
-    new RegExp(
-      `<meta[^>]+name=["']${property}["'][^>]*content=["']([^"']+)["']`,
-      'i'
-    ),
-    new RegExp(
-      `<meta[^>]+content=["']([^"']+)["'][^>]+name=["']${property}["']`,
-      'i'
-    ),
+    new RegExp(`<meta[^>]+property=["']${prop}["'][^>]*content=["']([^"']+)["']`, 'i'),
+    new RegExp(`<meta[^>]+content=["']([^"']+)["'][^>]+property=["']${prop}["']`, 'i'),
+    new RegExp(`<meta[^>]+name=["']${prop}["'][^>]*content=["']([^"']+)["']`, 'i'),
+    new RegExp(`<meta[^>]+content=["']([^"']+)["'][^>]+name=["']${prop}["']`, 'i'),
   ];
   for (const p of patterns) {
     const m = html.match(p);
@@ -273,434 +233,211 @@ export function findMetaContent(html: string, property: string): string | null {
   return null;
 }
 
-// =============================================================================
-// 8 DETECTORS
-// =============================================================================
+type PreparsedSignals = {
+  jsonLdTypes: string[];
+  jsonLdDate: string | null;
+  metaModifiedTime: string | null;
+  metaPublishedTime: string | null;
+  ogTitle: string | null;
+};
 
-/** Pierwsze N słów z głównego contentu (po H1) */
-function firstNWords(text: string, n: number): string {
-  return text.split(/\s+/).slice(0, n).join(' ');
-}
-
-function detectBluf(html: string, text: string): { score: 0 | 0.5 | 1; evidence: string; details: string } {
-  // Tnijemy tekst po pierwszym H1 (jeśli jest) – żeby brać główny content, nie nawigację
-  const h1Match = html.match(/<h1[^>]*>[\s\S]*?<\/h1>/i);
-  let body = text;
-  if (h1Match) {
-    const idx = text.indexOf(extractText(h1Match[0]));
-    if (idx >= 0) body = text.slice(idx + extractText(h1Match[0]).length);
-  }
-  body = body.trim();
-
-  const first50 = firstNWords(body, 50);
-  const wordsCount = first50.split(/\s+/).filter(Boolean).length;
-
-  if (wordsCount < 10) {
-    return {
-      score: 0,
-      evidence: 'Brak treści po H1 lub strona pusta.',
-      details: 'Nie udało się wyodrębnić pierwszych 50 słów po nagłówku H1.',
-    };
-  }
-
-  // Wskaźniki dobrego BLUF: definicja, liczba, bezpośrednia odpowiedź
-  const lower = first50.toLowerCase();
-  const isDefinition = /\b(to|jest|oznacza|polega na|nazywamy)\b/.test(lower);
-  const hasNumber = /\d/.test(first50);
-  const hasDirectAnswer = /^(tak|nie|tak,|nie,)\b/i.test(first50.trim());
-  const startsWithStory =
-    /\b(kiedyś|w latach|jeszcze niedawno|przed laty|od zarania|na początku xxi|gdy patrzymy)\b/i.test(
-      lower.slice(0, 80)
-    );
-
-  if (startsWithStory) {
-    return {
-      score: 0,
-      evidence: 'Tekst zaczyna się od narracji/wstępu zamiast bezpośredniej odpowiedzi.',
-      details: `Pierwsze słowa: "${first50.slice(0, 120)}…"`,
-    };
-  }
-
-  const positives = [isDefinition, hasNumber, hasDirectAnswer].filter(Boolean).length;
-
-  if (positives >= 2) {
-    return {
-      score: 1,
-      evidence: 'Pierwsze 50 słów zawiera bezpośrednią odpowiedź / definicję.',
-      details: `"${first50.slice(0, 140)}…"`,
-    };
-  }
-  if (positives === 1) {
-    return {
-      score: 0.5,
-      evidence: 'Pierwsze 50 słów ma częściowo cechy BLUF, ale brakuje konkretu.',
-      details: `"${first50.slice(0, 140)}…"`,
-    };
-  }
+function prepare(html: string): { cleanedHtml: string; signals: PreparsedSignals } {
+  const blocks = extractJsonLd(html);
+  const cleaned = cleanHtml(html);
+  const truncated =
+    cleaned.length > MAX_HTML_FOR_LLM
+      ? cleaned.slice(0, MAX_HTML_FOR_LLM) + '\n<!-- HTML truncated by URL-check (>80KB) -->'
+      : cleaned;
   return {
-    score: 0,
-    evidence: 'Pierwsze 50 słów to wstęp ogólny – brak definicji ani konkretnej odpowiedzi.',
-    details: `"${first50.slice(0, 140)}…"`,
-  };
-}
-
-function detectFaq(html: string, jsonLdTypes: string[]): { score: 0 | 0.5 | 1; evidence: string; details: string } {
-  const hasFaqSchema = jsonLdTypes.some((t) => /FAQPage/i.test(t));
-  const detailsCount = countTags(html, 'details');
-
-  // Heurystyki: nagłówek "FAQ" / "Najczęstsze pytania" / "Często zadawane"
-  const headings = extractHeadings(html, [2, 3]);
-  const faqHeadings = headings.filter((h) =>
-    /(faq|najczęstsze pytania|często zadawane|pytania i odpowiedzi)/i.test(h)
-  );
-
-  // Pytania w nagłówkach jako proxy dla Q&A struktury
-  const questionHeadings = headings.filter((h) => /\?$/.test(h.trim()));
-
-  if (hasFaqSchema) {
-    return {
-      score: 1,
-      evidence: 'Strona ma schema FAQPage + sekcję pytań.',
-      details: `JSON-LD FAQPage wykryty. ${detailsCount > 0 ? `${detailsCount} elementów <details>. ` : ''}${questionHeadings.length} nagłówków-pytań.`,
-    };
-  }
-
-  if (faqHeadings.length > 0 && (detailsCount >= 3 || questionHeadings.length >= 3)) {
-    return {
-      score: 0.5,
-      evidence: 'Sekcja FAQ jest, ale brakuje schema FAQPage (JSON-LD).',
-      details: `Wykryto sekcję "${faqHeadings[0]}" + ${detailsCount} <details> / ${questionHeadings.length} pytań.`,
-    };
-  }
-
-  if (questionHeadings.length >= 5) {
-    return {
-      score: 0.5,
-      evidence: 'Sporo pytań w nagłówkach, ale brak wyraźnej sekcji FAQ.',
-      details: `${questionHeadings.length} nagłówków-pytań rozsianych po treści. Bez wyraźnego FAQ + bez schema.`,
-    };
-  }
-
-  return {
-    score: 0,
-    evidence: 'Brak sekcji FAQ ani schema FAQPage.',
-    details: `${questionHeadings.length} nagłówków zakończonych "?", ${detailsCount} <details>.`,
-  };
-}
-
-function detectDensity(text: string): { score: 0 | 0.5 | 1; evidence: string; details: string } {
-  const words = text.split(/\s+/).filter(Boolean).length;
-  if (words < 200) {
-    return {
-      score: 0,
-      evidence: 'Strona ma za mało treści, żeby zmierzyć gęstość faktów.',
-      details: `Tylko ${words} słów po stripowaniu HTML.`,
-    };
-  }
-
-  // Liczby z opcjonalną jednostką: 12, 1.5, 250 mln, 30%, 4×, 800k, 2024
-  const numbers = (text.match(/\b\d+([.,]\d+)?(\s?(%|×|x|mln|tys|k|mld|zł|usd|eur|godz|dni|tyg))?\b/gi) || []).length;
-  // Daty roczne 2018-2030
-  const years = (text.match(/\b(20[12][0-9])\b/g) || []).length;
-  // Daty miesięczne PL
-  const monthDates = (text.match(/\b\d{1,2}\s+(stycznia|lutego|marca|kwietnia|maja|czerwca|lipca|sierpnia|września|października|listopada|grudnia)\b/gi) || []).length;
-
-  const totalFacts = numbers + years + monthDates;
-  const per1000 = (totalFacts / words) * 1000;
-
-  if (per1000 >= 30) {
-    return {
-      score: 1,
-      evidence: `Wysoka gęstość faktów – ${per1000.toFixed(1)} liczb/dat na 1000 słów.`,
-      details: `${numbers} liczb, ${years} dat rocznych, ${monthDates} dat dziennych w treści (${words} słów).`,
-    };
-  }
-  if (per1000 >= 12) {
-    return {
-      score: 0.5,
-      evidence: `Średnia gęstość – ${per1000.toFixed(1)} liczb/dat na 1000 słów.`,
-      details: `${numbers} liczb, ${years} dat rocznych, ${monthDates} dat dziennych w treści (${words} słów). Próg dobry: 30+.`,
-    };
-  }
-  return {
-    score: 0,
-    evidence: `Niska gęstość – tylko ${per1000.toFixed(1)} faktów na 1000 słów.`,
-    details: `${numbers} liczb, ${years} dat rocznych w treści (${words} słów). Tekst głównie ogólny, bez konkretów.`,
-  };
-}
-
-function detectSchema(jsonLdTypes: string[]): { score: 0 | 0.5 | 1; evidence: string; details: string } {
-  if (jsonLdTypes.length === 0) {
-    return {
-      score: 0,
-      evidence: 'Brak jakichkolwiek bloków JSON-LD na stronie.',
-      details: 'Nie wykryto <script type="application/ld+json">.',
-    };
-  }
-
-  const lower = jsonLdTypes.map((t) => t.toLowerCase());
-  const hasArticle = lower.some((t) =>
-    /^(article|newsarticle|blogposting|techarticle|scholarlyarticle)$/.test(t)
-  );
-  const hasFaq = lower.some((t) => t === 'faqpage');
-  const hasHowTo = lower.some((t) => t === 'howto');
-  const hasOrgOrPerson = lower.some((t) => t === 'organization' || t === 'person');
-  const hasBreadcrumb = lower.some((t) => t === 'breadcrumblist');
-
-  const points =
-    (hasArticle ? 0.4 : 0) +
-    (hasFaq ? 0.3 : 0) +
-    (hasHowTo ? 0.2 : 0) +
-    (hasOrgOrPerson ? 0.05 : 0) +
-    (hasBreadcrumb ? 0.05 : 0);
-
-  let score: 0 | 0.5 | 1;
-  if (points >= 0.7) score = 1;
-  else if (points >= 0.3) score = 0.5;
-  else score = 0;
-
-  const detected = [
-    hasArticle && 'Article',
-    hasFaq && 'FAQPage',
-    hasHowTo && 'HowTo',
-    hasOrgOrPerson && 'Organization/Person',
-    hasBreadcrumb && 'BreadcrumbList',
-  ].filter(Boolean) as string[];
-
-  return {
-    score,
-    evidence:
-      detected.length > 0
-        ? `Wykryte typy schema: ${detected.join(', ')}.`
-        : `Schema obecne, ale typy nie pasują do priorytetowych (${jsonLdTypes.slice(0, 3).join(', ')}).`,
-    details: `Wszystkie wykryte @type: ${jsonLdTypes.join(', ') || '(brak)'}.`,
-  };
-}
-
-function detectFreshness(html: string, jsonLdTypes: string[], jsonLdBlocks: unknown[]): { score: 0 | 0.5 | 1; evidence: string; details: string } {
-  // Próby wyciągnięcia daty z różnych źródeł
-  let dateStr: string | null = null;
-  let source = '';
-
-  // 1. JSON-LD dateModified > datePublished
-  const visit = (node: unknown): void => {
-    if (!node || typeof node !== 'object') return;
-    const obj = node as Record<string, unknown>;
-    if (typeof obj.dateModified === 'string' && !dateStr) {
-      dateStr = obj.dateModified;
-      source = 'JSON-LD dateModified';
-      return;
-    }
-    if (typeof obj.datePublished === 'string' && !dateStr) {
-      dateStr = obj.datePublished;
-      source = 'JSON-LD datePublished';
-    }
-    if (Array.isArray(obj['@graph']))
-      for (const n of obj['@graph']) {
-        visit(n);
-        if (dateStr && source.includes('Modified')) return;
-      }
-  };
-  for (const b of jsonLdBlocks) visit(b);
-
-  // 2. og:updated_time / article:modified_time
-  if (!dateStr) {
-    const updated =
-      findMetaContent(html, 'article:modified_time') ||
-      findMetaContent(html, 'og:updated_time') ||
-      findMetaContent(html, 'article:published_time');
-    if (updated) {
-      dateStr = updated;
-      source = 'meta article:*';
-    }
-  }
-
-  if (!dateStr) {
-    return {
-      score: 0,
-      evidence: 'Brak daty publikacji/aktualizacji w meta tagach ani JSON-LD.',
-      details: 'AI wykluczają strony bez wyraźnego sygnału świeżości – warto dodać article:modified_time.',
-    };
-  }
-
-  const date = new Date(dateStr as string);
-  if (isNaN(date.getTime())) {
-    return {
-      score: 0,
-      evidence: 'Data znaleziona, ale nie udało się jej sparsować.',
-      details: `Wartość "${dateStr}" (${source}).`,
-    };
-  }
-
-  const monthsDiff = (Date.now() - date.getTime()) / (1000 * 60 * 60 * 24 * 30);
-  const dateLocal = date.toISOString().slice(0, 10);
-
-  if (monthsDiff <= 3) {
-    return {
-      score: 1,
-      evidence: `Bardzo świeża – ${dateLocal} (${monthsDiff.toFixed(1)} mies. temu).`,
-      details: `Źródło: ${source}.`,
-    };
-  }
-  if (monthsDiff <= 12) {
-    return {
-      score: 0.5,
-      evidence: `Świeża, ale nie ostatnia – ${dateLocal} (${monthsDiff.toFixed(1)} mies. temu).`,
-      details: `Źródło: ${source}. Perplexity i AI Overviews preferują content z ostatnich 3 miesięcy.`,
-    };
-  }
-  return {
-    score: 0,
-    evidence: `Nieaktualna – ${dateLocal} (${monthsDiff.toFixed(0)} mies. temu).`,
-    details: `Źródło: ${source}. AI silnie penalizują content starszy niż rok.`,
-  };
-}
-
-function detectModular(html: string): { score: 0 | 0.5 | 1; evidence: string; details: string } {
-  const ulCount = countTags(html, 'ul');
-  const olCount = countTags(html, 'ol');
-  const tableCount = countTags(html, 'table');
-
-  // Ignorujemy listy w nawigacji – odejmujemy ~2 (nav + footer typically)
-  const contentLists = Math.max(0, ulCount + olCount - 2);
-  const score = contentLists + tableCount * 2; // tabele warte więcej
-
-  if (score >= 5) {
-    return {
-      score: 1,
-      evidence: `Treść mocno modułowa: ${contentLists} list i ${tableCount} tabel w body.`,
-      details: `UL: ${ulCount}, OL: ${olCount}, TABLE: ${tableCount}. (Nawigacja odjęta heurystycznie.)`,
-    };
-  }
-  if (score >= 2) {
-    return {
-      score: 0.5,
-      evidence: `Częściowa modułowość: ${contentLists} list, ${tableCount} tabel.`,
-      details: `UL: ${ulCount}, OL: ${olCount}, TABLE: ${tableCount}. Próg "dobry": 5+ list lub 2+ tabele.`,
-    };
-  }
-  return {
-    score: 0,
-    evidence: 'Treść głównie tekstowa – mało list i tabel.',
-    details: `UL: ${ulCount}, OL: ${olCount}, TABLE: ${tableCount}. AI trudniej wyciągnąć fragment jako odpowiedź.`,
-  };
-}
-
-function detectComparisons(text: string, html: string): { score: 0 | 0.5 | 1; evidence: string; details: string } {
-  // Słowa porównawcze
-  const comparisonPatterns = [
-    /\bvs\.?\b/gi,
-    /\bversus\b/gi,
-    /\bporównanie\b/gi,
-    /\bporównaj\b/gi,
-    /\balternatyw[aiy]\b/gi,
-    /\bzamiast\b/gi,
-    /\bw porównaniu\b/gi,
-    /\bna tle\b/gi,
-    /\bróżni się\b/gi,
-    /\bróżnice między\b/gi,
-  ];
-
-  let totalMatches = 0;
-  for (const re of comparisonPatterns) {
-    const matches = text.match(re);
-    if (matches) totalMatches += matches.length;
-  }
-
-  const tableCount = countTags(html, 'table');
-
-  if (totalMatches >= 5 || (totalMatches >= 2 && tableCount >= 1)) {
-    return {
-      score: 1,
-      evidence: `Treść porównuje produkty/podejścia (${totalMatches} sygnałów porównawczych${tableCount > 0 ? ` + ${tableCount} tabel` : ''}).`,
-      details: `Wykryte słowa: vs/versus/porównanie/alternatywa/zamiast itd. AI często cytują takie sekcje pod zapytania "X vs Y".`,
-    };
-  }
-  if (totalMatches >= 2) {
-    return {
-      score: 0.5,
-      evidence: `Pojedyncze odniesienia porównawcze (${totalMatches}), ale brakuje wyraźnej sekcji.`,
-      details: 'Próg "dobry": 5+ sygnałów porównawczych lub tabela porównawcza.',
-    };
-  }
-  return {
-    score: 0,
-    evidence: 'Brak sygnałów porównawczych.',
-    details: `Wykryto ${totalMatches} odniesień typu vs/porównanie/alternatywa. Pytania porównawcze to jedne z najczęstszych zapytań do LLM.`,
-  };
-}
-
-function detectQuestionHeadings(html: string): { score: 0 | 0.5 | 1; evidence: string; details: string } {
-  const headings = extractHeadings(html, [2, 3]);
-  if (headings.length < 3) {
-    return {
-      score: 0,
-      evidence: 'Strona ma za mało nagłówków H2/H3, żeby ocenić.',
-      details: `Wykryto ${headings.length} nagłówków H2/H3.`,
-    };
-  }
-
-  const questions = headings.filter((h) => /\?$/.test(h.trim()));
-  const ratio = questions.length / headings.length;
-  const pct = Math.round(ratio * 100);
-
-  if (ratio >= 0.5) {
-    return {
-      score: 1,
-      evidence: `${pct}% nagłówków H2/H3 to pytania (${questions.length}/${headings.length}).`,
-      details: 'AI dopasowują nagłówki-pytania bezpośrednio do podzapytań usera (query fan-out).',
-    };
-  }
-  if (ratio >= 0.2) {
-    return {
-      score: 0.5,
-      evidence: `${pct}% nagłówków to pytania (${questions.length}/${headings.length}). Próg dobry: 50%.`,
-      details: `Przykłady: ${questions.slice(0, 3).join(' / ')}`,
-    };
-  }
-  return {
-    score: 0,
-    evidence: `Tylko ${pct}% H2/H3 to pytania (${questions.length}/${headings.length}).`,
-    details: 'Przepisz przynajmniej 50% nagłówków w formę pytań – każde z konkretną odpowiedzią w 1. zdaniu.',
+    cleanedHtml: truncated,
+    signals: {
+      jsonLdTypes: getJsonLdTypes(blocks),
+      jsonLdDate: getJsonLdDate(blocks),
+      metaModifiedTime:
+        findMetaContent(html, 'article:modified_time') ||
+        findMetaContent(html, 'og:updated_time'),
+      metaPublishedTime: findMetaContent(html, 'article:published_time'),
+      ogTitle: findMetaContent(html, 'og:title'),
+    },
   };
 }
 
 // =============================================================================
-// MAIN ANALYZER
+// LLM ANALYZER (Gemini 3.1 Flash via OpenRouter)
 // =============================================================================
 
-export function analyzeContent(html: string): FullScore {
-  const text = extractText(html);
-  const jsonLdBlocks = extractJsonLd(html);
-  const jsonLdTypes = getJsonLdTypes(jsonLdBlocks);
+const OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions';
+export const ANALYSIS_MODEL = 'google/gemini-3.1-flash-preview';
 
-  const detectors: Record<FactorKey, { score: 0 | 0.5 | 1; evidence: string; details: string }> = {
-    bluf: detectBluf(html, text),
-    faq: detectFaq(html, jsonLdTypes),
-    density: detectDensity(text),
-    schema: detectSchema(jsonLdTypes),
-    freshness: detectFreshness(html, jsonLdTypes, jsonLdBlocks),
-    modular: detectModular(html),
-    comparisons: detectComparisons(text, html),
-    questionHeadings: detectQuestionHeadings(html),
+const SYSTEM_PROMPT = `Jesteś senior analitykiem GEO (Generative Engine Optimization). Oceniasz strony WWW pod kątem cytowalności w silnikach AI (ChatGPT, Claude, Gemini, Perplexity, Copilot).
+
+Otrzymujesz HTML strony oraz wstępnie sparsowane sygnały (JSON-LD, daty meta). Twoja praca to ZIDENTYFIKOWAĆ GŁÓWNĄ TREŚĆ artykułu/strony (pomijając nawigację, footer, sidebar, breadcrumbs, menu) i ocenić 8 czynników cytowalności w skali 0 / 0.5 / 1.
+
+ZASADY ZAWSZE:
+- Pomijaj nawigację, menu, breadcrumbs, footer, sidebar, banery cookie/RODO. Patrz na GŁÓWNY <main>/<article> content.
+- Bądź konkretny w "evidence" – cytuj fragmenty albo podaj liczby (1 zdanie max).
+- "details" to techniczne uzasadnienie (np. "FAQPage schema present, 6 Q&A par").
+- Output WYŁĄCZNIE valid JSON, bez \`\`\`json\`\`\` markers, bez wstępu.
+
+8 CZYNNIKÓW DO OCENY:
+
+1. **bluf** (BLUF / Bottom Line Up Front, 15 pkt)
+   - Czy pierwsze 50 słów GŁÓWNEJ treści (po H1, ignorując nawigację) zawiera bezpośrednią odpowiedź / definicję / kluczową statystykę.
+   - 1: pierwsze zdanie odpowiada na pytanie tytułowe lub definiuje temat.
+   - 0.5: jest sygnał (liczba, definicja częściowa), ale rozmywa się we wstępie.
+   - 0: tekst zaczyna się od narracji / wstępu historycznego ("Kiedyś...", "W dzisiejszych czasach...", "Wyobraź sobie...").
+
+2. **faq** (Sekcja FAQ, 12 pkt)
+   - Czy jest dedykowana sekcja Q&A (FAQPage schema LUB <details>/accordion LUB jasno wydzielony "FAQ" / "Najczęstsze pytania" / "Często zadawane pytania" z 3+ pytaniami).
+   - 1: schema FAQPage + sekcja Q&A widoczna w treści.
+   - 0.5: jest sekcja Q&A ale brak schema, ALBO są pytania w nagłówkach ale bez wyraźnej sekcji FAQ.
+   - 0: brak Q&A pairs i brak schema FAQPage.
+
+3. **density** (Information Density, 14 pkt)
+   - Gęstość konkretnych liczb / dat / statystyk / odwołań do badań w głównej treści.
+   - 1: 30+ konkretnych faktów na ~1000 słów (liczby, %, daty, badania).
+   - 0.5: 12-30/1000 słów. Średnio.
+   - 0: tekst ogólnikowy ("często", "wiele firm", "wszyscy") bez konkretów.
+
+4. **schema** (Schema Markup JSON-LD, 14 pkt)
+   - Patrzysz na sparsowane jsonLdTypes (już dostarczone). Punktacja:
+     - 1: wykryte Article/BlogPosting/NewsArticle + FAQPage (lub HowTo), opcjonalnie BreadcrumbList/Organization.
+     - 0.5: tylko Article LUB tylko FAQPage (bez Article).
+     - 0: brak Article/BlogPosting/FAQPage/HowTo (lub żadnego JSON-LD).
+
+5. **freshness** (Świeżość, 10 pkt)
+   - Patrzysz na podane jsonLdDate / metaModifiedTime / metaPublishedTime + treść (data publikacji/aktualizacji widoczna w treści).
+   - 1: <3 mies. od dziś (DZIŚ podane w prompcie).
+   - 0.5: 3-12 mies.
+   - 0: >12 mies. lub brak daty.
+
+6. **modular** (Treści modułowe, 10 pkt)
+   - Czy treść ma listy (<ul>/<ol>), tabele (<table>) i wyraźne sekcje. Sprawdzaj w GŁÓWNEJ treści, nie w nawigacji.
+   - 1: 5+ list i/lub 2+ tabele w treści głównej.
+   - 0.5: 1-4 listy LUB 1 tabela.
+   - 0: ścianka tekstu bez wydzielonych elementów.
+
+7. **comparisons** (Porównania, 13 pkt)
+   - Czy treść porównuje produkty/podejścia/marki ("X vs Y", "alternatywa dla", tabele porównawcze, "różni się od").
+   - 1: dedykowana sekcja porównawcza LUB tabela porównawcza LUB 5+ wyraźnych porównań.
+   - 0.5: pojedyncze odniesienia porównawcze, ale brak wyraźnej sekcji.
+   - 0: brak sygnałów porównawczych.
+
+8. **questionHeadings** (Nagłówki jako pytania, 12 pkt)
+   - Procent H2/H3 sformułowanych jako pytanie (kończą się "?"). Liczysz tylko nagłówki w głównej treści.
+   - 1: 50%+ nagłówków to pytania.
+   - 0.5: 20-50%.
+   - 0: <20% lub brak H2/H3 w głównej treści.
+
+OUTPUT (valid JSON only):
+{
+  "bluf": {"score": 0|0.5|1, "evidence": "...", "details": "..."},
+  "faq": {"score": ..., "evidence": "...", "details": "..."},
+  "density": {...},
+  "schema": {...},
+  "freshness": {...},
+  "modular": {...},
+  "comparisons": {...},
+  "questionHeadings": {...}
+}`;
+
+type LlmFactorOutput = {
+  score: 0 | 0.5 | 1;
+  evidence: string;
+  details?: string;
+};
+
+type LlmResponse = Record<FactorKey, LlmFactorOutput>;
+
+function buildUserPrompt(url: string, signals: PreparsedSignals, cleanedHtml: string): string {
+  const today = new Date().toISOString().slice(0, 10);
+  return `URL analizowanej strony: ${url}
+DZIŚ: ${today}
+
+WSTĘPNIE SPARSOWANE SYGNAŁY (deterministycznie z HTML):
+- JSON-LD @types: ${signals.jsonLdTypes.length > 0 ? signals.jsonLdTypes.join(', ') : '(brak)'}
+- JSON-LD dateModified/datePublished: ${signals.jsonLdDate || '(brak)'}
+- meta article:modified_time / og:updated_time: ${signals.metaModifiedTime || '(brak)'}
+- meta article:published_time: ${signals.metaPublishedTime || '(brak)'}
+- og:title: ${signals.ogTitle || '(brak)'}
+
+CZYSTY HTML (script/style/noscript/komentarze usunięte, max 80KB):
+\`\`\`html
+${cleanedHtml}
+\`\`\`
+
+Zwróć JSON z oceną 8 czynników. Tylko valid JSON.`;
+}
+
+export async function analyzeContentWithLLM(
+  html: string,
+  url: string,
+  apiKey: string
+): Promise<FullScore> {
+  const { cleanedHtml, signals } = prepare(html);
+  const userPrompt = buildUserPrompt(url, signals, cleanedHtml);
+
+  const response = await fetch(OPENROUTER_URL, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+      'HTTP-Referer': 'https://widocznosc.ai',
+      'X-Title': 'widocznosc.ai URL Check',
+    },
+    body: JSON.stringify({
+      model: ANALYSIS_MODEL,
+      messages: [
+        { role: 'system', content: SYSTEM_PROMPT },
+        { role: 'user', content: userPrompt },
+      ],
+      temperature: 0.2,
+      response_format: { type: 'json_object' },
+    }),
+  });
+
+  if (!response.ok) {
+    const text = await response.text().catch(() => '');
+    throw new Error(`OpenRouter HTTP ${response.status}: ${text.slice(0, 200)}`);
+  }
+
+  const body = (await response.json()) as {
+    choices?: { message?: { content?: string } }[];
   };
 
+  const content = body.choices?.[0]?.message?.content?.trim() || '';
+  if (!content) throw new Error('Pusty response z OpenRouter');
+
+  let cleaned = content;
+  if (cleaned.startsWith('```')) {
+    cleaned = cleaned.replace(/^```(?:json)?\s*/, '').replace(/\s*```\s*$/, '');
+  }
+
+  let parsed: LlmResponse;
+  try {
+    parsed = JSON.parse(cleaned) as LlmResponse;
+  } catch (e) {
+    throw new Error(`LLM zwrócił niepoprawny JSON: ${cleaned.slice(0, 200)}`);
+  }
+
+  // Map LLM output → FactorScore[] (zachowujemy kompatybilność z UI)
   const factors: FactorScore[] = FACTORS.map((def) => {
-    const result = detectors[def.key];
+    const out = parsed[def.key];
+    const score: 0 | 0.5 | 1 =
+      out?.score === 1 ? 1 : out?.score === 0.5 ? 0.5 : 0;
     return {
       key: def.key,
       label: def.label,
       shortLabel: def.shortLabel,
       weight: def.weight,
-      score: result.score,
-      earned: Math.round(def.weight * result.score * 10) / 10,
-      evidence: result.evidence,
-      details: result.details,
+      score,
+      earned: Math.round(def.weight * score * 10) / 10,
+      evidence: out?.evidence || '(brak oceny od modelu)',
+      details: out?.details,
     };
   });
 
   const total = Math.round(factors.reduce((acc, f) => acc + f.earned, 0));
-
   let grade: FullScore['grade'];
   if (total >= 85) grade = 'A';
   else if (total >= 70) grade = 'B';
@@ -708,18 +445,19 @@ export function analyzeContent(html: string): FullScore {
   else if (total >= 40) grade = 'D';
   else grade = 'F';
 
-  return { total, grade, factors };
+  return { total, grade, factors, model: ANALYSIS_MODEL };
 }
 
 // =============================================================================
-// ACTION ITEMS
+// ACTION ITEMS (deterministic on top of LLM scores)
 // =============================================================================
 
 export function buildActionItems(factors: FactorScore[]): ActionItem[] {
   const items: ActionItem[] = [];
 
-  // P0 – missing high-weight factors (weight >= 12, score 0)
-  const p0 = factors.filter((f) => f.score === 0 && f.weight >= 12).sort((a, b) => b.weight - a.weight);
+  const p0 = factors
+    .filter((f) => f.score === 0 && f.weight >= 12)
+    .sort((a, b) => b.weight - a.weight);
   for (const f of p0.slice(0, 3)) {
     items.push({
       priority: 'P0',
@@ -729,7 +467,6 @@ export function buildActionItems(factors: FactorScore[]): ActionItem[] {
     });
   }
 
-  // P1 – partial high-weight (score 0.5, weight >= 12) + missing medium-weight (weight 10-11)
   const p1 = factors
     .filter(
       (f) =>
@@ -746,7 +483,6 @@ export function buildActionItems(factors: FactorScore[]): ActionItem[] {
     });
   }
 
-  // P2 – wszystkie pozostałe partials
   const p2 = factors
     .filter((f) => f.score === 0.5 && f.weight < 12)
     .sort((a, b) => b.weight - a.weight);
@@ -759,7 +495,6 @@ export function buildActionItems(factors: FactorScore[]): ActionItem[] {
     });
   }
 
-  // Jeśli wszystko gra – jeden P2 "next step"
   if (items.length === 0) {
     items.push({
       priority: 'P2',
