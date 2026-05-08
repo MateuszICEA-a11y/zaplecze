@@ -19,10 +19,10 @@ import { FACTORS } from '../../../functions/_lib/url-check';
         <span class="eyebrow mb-6 inline-flex">
           Narzędzie · bezpłatne · instant
         </span>
-        <h1 class="display-lg">
-          Czy Twój content<br />jest cytowalny przez AI?
+        <h1 class="display-md tool-hero-title">
+          Czy Twój <span class="tool-hero-accent">content</span><br />jest <span class="tool-hero-accent">cytowalny przez AI</span>?
         </h1>
-        <p class="text-ink mt-8 text-lg leading-relaxed">
+        <p class="text-ink mt-8 text-base leading-relaxed">
           Wskazujesz jeden URL. Model językowy analizuje 8 czynników cytowalności i&nbsp;zwraca
           wynik 0&ndash;100 + listę priorytetowych zmian. Metodologia: Princeton/KDD&nbsp;2024
           + iPullRank AI Search Manual. Bez logowania.
@@ -60,10 +60,13 @@ import { FACTORS } from '../../../functions/_lib/url-check';
         <h2 class="display-md">
           8 czynników AI SEO Alignment Score
         </h2>
-        <p class="text-ink mt-6 max-w-3xl text-lg leading-relaxed">
+        <p class="text-ink mt-6 text-lg leading-relaxed">
           Każdy z&nbsp;tych elementów zwiększa szansę, że ChatGPT, Claude, Gemini, Perplexity
-          albo Copilot wskaże Twoją markę jako źródło. Suma wag = 100 pkt. Tradycyjny SEO Domain
-          Authority może być wysoki, ale AI Alignment niski – tu jest realna przewaga.
+          albo Copilot wskaże Twoją markę jako źródło.
+        </p>
+        <p class="text-ink-muted mt-3 text-base leading-relaxed">
+          Suma wag = 100 pkt. Tradycyjny SEO Domain Authority może być wysoki, ale AI Alignment
+          niski &ndash; tu jest realna przewaga.
         </p>
 
         <div class="mt-10 grid gap-4 lg:grid-cols-2">
@@ -110,30 +113,38 @@ import { FACTORS } from '../../../functions/_lib/url-check';
 </Layout>
 
 <style>
-  /* Form input – pattern z ai-bots-check */
+  /* Hero – accent na "content" i "cytowalny przez AI" */
+  .tool-hero-title :global(.tool-hero-accent) {
+    color: var(--accent-blue);
+  }
+
+  /* Form input – wyróżniony bardziej niż w ai-bots-check */
   .check-input {
-    height: 48px;
-    padding: 0 18px;
+    height: 56px;
+    padding: 0 22px;
     font-family: var(--font-sans);
-    font-size: 14px;
+    font-size: 15px;
     color: var(--ink);
-    background: var(--bg-surface-1);
-    border: none;
+    background: var(--bg-surface-2);
+    border: 1px solid var(--hairline);
     border-radius: var(--r-md);
     outline: none;
-    transition: box-shadow 0.2s ease, background 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   }
   .check-input::placeholder {
     color: var(--ink-muted);
   }
+  .check-input:hover {
+    border-color: var(--accent-blue);
+  }
   .check-input:focus {
-    background: var(--bg-surface-2);
-    box-shadow: var(--shadow-l3);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(56, 130, 246, 0.15);
   }
 
   .check-submit {
-    height: 48px;
-    min-width: 168px;
+    height: 56px;
+    min-width: 180px;
     justify-content: center;
     position: relative;
   }
