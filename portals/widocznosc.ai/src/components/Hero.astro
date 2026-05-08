@@ -51,10 +51,11 @@ const aiEngines = [
         <article class="card-spotlight card-spotlight-linear">
           <span class="hero-spotlight-eyebrow">Ewolucja tradycyjnego SEO</span>
           <p class="hero-spotlight-quote">
-            AI zmienia wyszukiwarki w&nbsp;silniki odpowiedzi, które eliminują konieczność
-            przeklikiwania się przez wyniki. Dziś bycie liderem w&nbsp;Google to&nbsp;za mało
-            – marki pominięte przez modele takie jak ChatGPT, Claude czy Perplexity
-            po&nbsp;prostu przestają istnieć w&nbsp;procesie decyzyjnym współczesnego konsumenta.
+            AI zmienia wyszukiwarki w&nbsp;<em>silniki odpowiedzi</em>, które eliminują
+            konieczność przeklikiwania się przez wyniki. Dziś bycie liderem w&nbsp;Google
+            to&nbsp;za mało – marki pominięte przez modele takie jak ChatGPT, Claude czy
+            Perplexity po&nbsp;prostu <em>przestają istnieć</em> w&nbsp;procesie decyzyjnym
+            współczesnego konsumenta.
           </p>
           <ul class="hero-spotlight-points">
             <li>Cytowania zamiast pozycji w&nbsp;rankingu</li>
@@ -219,6 +220,13 @@ const aiEngines = [
       'ss03' 1,
       'ss07' 1,
       'dlig' 1;
+  }
+
+  /* Em w quote: kluczowe frazy w italic (Inter Variable italic) */
+  .hero-spotlight-quote em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--ink);
   }
 
   /* Bottom 2 punkty kluczowe – zamiast cena/dni dostawy */
