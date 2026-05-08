@@ -72,13 +72,15 @@ const aiEngines = [
       <div class="hero-logowall-row">
         {
           aiEngines.map((engine) => (
-            <img
-              src={engine.src}
-              alt={engine.name}
-              class="hero-logowall-engine"
-              loading="lazy"
-              decoding="async"
-            />
+            <div class="hero-logowall-tile">
+              <img
+                src={engine.src}
+                alt={engine.name}
+                class="hero-logowall-engine"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
           ))
         }
       </div>
@@ -251,42 +253,56 @@ const aiEngines = [
     margin-bottom: 24px;
   }
 
-  /* Logo wall: 5 prawdziwych logotypów silników AI, monochromatic białe
-     na canvas (filter brightness(0) invert(1)). Cała grupa opacity 0.6,
-     hover = full opacity. Logo różnej szerokości – wyrównanie po height. */
+  /* Logo wall: 5 prawdziwych logotypów AI w białych tile'ach – jednakowe
+     rozmiary + kolorowe brand marks zachowane. Pattern "Trusted by"
+     na corporate landingach. */
   .hero-logowall-row {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 28px 56px;
-    opacity: 0.6;
-    transition: opacity 0.4s ease;
+    gap: 12px;
   }
 
-  .hero-logowall-row:hover {
-    opacity: 0.9;
+  @media (min-width: 768px) {
+    .hero-logowall-row {
+      gap: 16px;
+    }
+  }
+
+  .hero-logowall-tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 144px;
+    height: 64px;
+    padding: 12px 18px;
+    background: var(--ink);
+    border-radius: var(--r-md);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .hero-logowall-tile:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   }
 
   @media (min-width: 1024px) {
-    .hero-logowall-row {
-      gap: 28px 72px;
+    .hero-logowall-tile {
+      width: 168px;
+      height: 72px;
+      padding: 14px 22px;
     }
   }
 
   .hero-logowall-engine {
-    height: 28px;
+    max-height: 100%;
+    max-width: 100%;
     width: auto;
-    /* Whitemark – wszystkie logo identycznie białe na ciemnym tle */
-    filter: brightness(0) invert(1);
+    height: auto;
     object-fit: contain;
-    transition: opacity 0.2s ease;
-  }
-
-  @media (min-width: 1024px) {
-    .hero-logowall-engine {
-      height: 32px;
-    }
   }
 
   @media (min-width: 1024px) {
