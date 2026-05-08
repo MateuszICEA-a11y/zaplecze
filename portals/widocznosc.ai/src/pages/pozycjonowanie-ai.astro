@@ -11,23 +11,34 @@ const services = [
     id: 'audyt',
     title: 'Audyt widoczności AI',
     desc: 'Sprawdzamy jak Twoja marka jest cytowana w 5 modelach AI. Mapa cytowań, gap analysis vs konkurencja.',
+    variant: 'violet',
   },
   {
     id: 'content',
     title: 'Optymalizacja contentu pod LLM',
     desc: 'Przepisanie istniejących stron pod fact-density, schema, źródła cytowalne. Briefy dla copywriterów.',
+    variant: 'magenta',
   },
   {
     id: 'monitoring',
     title: 'Monitoring cytowań',
     desc: 'Stałe śledzenie 50-200 zapytań co tydzień. Alerty o pojawieniu się konkurencji, dashboard z historią.',
+    variant: 'coral',
   },
   {
     id: 'strategia',
     title: 'Strategia GEO 12 miesięcy',
     desc: 'Plan widoczności na cały rok: mapa fraz, kalendarz contentu, plan dystrybucji + linkbuilding pod GEO.',
+    variant: 'orange',
   },
-];
+] as const;
+
+const gradientStyle = (variant: string) => {
+  if (variant === 'violet') return 'background: var(--gradient-violet); background-size: 130% 130%; background-position: 25% 30%;';
+  if (variant === 'magenta') return 'background: var(--gradient-magenta); background-size: 130% 130%; background-position: 30% 30%;';
+  if (variant === 'coral') return 'background: var(--gradient-coral); background-size: 130% 130%; background-position: 70% 30%;';
+  return 'background: var(--gradient-orange); background-size: 130% 130%; background-position: 70% 25%;';
+};
 ---
 
 <Layout
@@ -39,7 +50,7 @@ const services = [
   <!-- Hero -->
   <section class="relative pt-32 pb-16 md:pt-40 md:pb-20">
     <div class="content-container">
-      <div class="mx-auto max-w-4xl text-center">
+      <div class="mx-auto max-w-5xl text-center">
         <span class="eyebrow mb-6 inline-block">Usługi · Generative Engine Optimization</span>
         <h1 class="display-xl">Pozycjonowanie<br />w&nbsp;<span class="accent">AI</span></h1>
         <p class="text-ink mx-auto mt-8 max-w-2xl text-lg leading-relaxed">
@@ -107,19 +118,24 @@ const services = [
         </p>
       </div>
 
-      <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
         {
           services.map((service, i) => (
             <div
               id={service.id}
-              class="scroll-mt-24 flex flex-col rounded-[15px] p-8 lg:p-10"
-              style="background: var(--bg-surface-1);"
+              class="scroll-mt-24 relative flex flex-col overflow-hidden rounded-[30px] p-8 lg:p-10"
+              style={gradientStyle(service.variant)}
             >
-              <div class="display-md text-ink-muted mb-4 leading-none">0{i + 1}</div>
-              <h3 class="mb-3 text-xl font-medium" style="font-family: var(--font-display); letter-spacing: -0.5px;">
+              <div class="display-md text-ink mb-2 leading-none">0{i + 1}</div>
+              <div class="mb-6 text-sm" style="color: rgba(255,255,255,0.7);">
+                Filar {i + 1}
+              </div>
+              <h3 class="mb-3 text-xl font-medium text-ink" style="font-family: var(--font-display); letter-spacing: -0.5px;">
                 {service.title}
               </h3>
-              <p class="text-ink-muted text-sm leading-relaxed">{service.desc}</p>
+              <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.85);">
+                {service.desc}
+              </p>
             </div>
           ))
         }

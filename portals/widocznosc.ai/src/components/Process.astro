@@ -10,6 +10,7 @@ interface Step {
   duration: string;
   desc: string;
   bullets: string[];
+  variant: 'violet' | 'magenta' | 'coral' | 'orange';
 }
 
 const steps: Step[] = [
@@ -23,6 +24,7 @@ const steps: Step[] = [
       'Long-tail i komparatywne ("X vs Y", "najlepsze X dla…")',
       'Lista zaakceptowana przez Ciebie przed startem',
     ],
+    variant: 'violet',
   },
   {
     num: '02',
@@ -34,6 +36,7 @@ const steps: Step[] = [
       'Share of Voice vs 3–5 głównych konkurentów',
       'Sentiment, halucynacje, błędne dane o marce',
     ],
+    variant: 'magenta',
   },
   {
     num: '03',
@@ -45,6 +48,7 @@ const steps: Step[] = [
       'Schema.org, llms.txt, markdown wersje',
       'Front-loading, podzielna struktura, cytowania źródeł',
     ],
+    variant: 'coral',
   },
   {
     num: '04',
@@ -56,6 +60,7 @@ const steps: Step[] = [
       'Quick-wins do wdrożenia od ręki (schema, llms.txt)',
       '60-min sesja Q&A z ekspertem ICEA',
     ],
+    variant: 'orange',
   },
 ];
 ---
@@ -75,10 +80,9 @@ const steps: Step[] = [
     </header>
 
     <ol class="process-grid">
-      <div class="process-connector" aria-hidden="true"></div>
       {
         steps.map((step) => (
-          <li class="process-step">
+          <li class:list={['process-step', `process-step--${step.variant}`]}>
             <div class="process-step-num">{step.num}</div>
             <div class="process-step-duration">{step.duration}</div>
             <h3 class="process-step-title">{step.title}</h3>
@@ -163,28 +167,38 @@ const steps: Step[] = [
     }
   }
 
-  /* Connector line – hairline, tylko desktop */
-  .process-connector {
-    display: none;
-  }
-
-  @media (min-width: 1024px) {
-    .process-connector {
-      display: block;
-      position: absolute;
-      top: 30px;
-      left: 12%;
-      right: 12%;
-      height: 1px;
-      background: var(--hairline);
-      pointer-events: none;
-    }
-  }
-
+  /* Spotlight gradient cards – każda faza ma własny kolor (violet/magenta/coral/orange).
+     Identyczne radius i padding jak homepage Hero spotlight. */
   .process-step {
+    position: relative;
     display: flex;
     flex-direction: column;
-    position: relative;
+    border-radius: var(--r-xxl);
+    padding: 32px 28px;
+    overflow: hidden;
+    color: var(--ink);
+    min-height: 360px;
+  }
+
+  .process-step--violet {
+    background: var(--gradient-violet);
+    background-size: 130% 130%;
+    background-position: 25% 30%;
+  }
+  .process-step--magenta {
+    background: var(--gradient-magenta);
+    background-size: 130% 130%;
+    background-position: 30% 30%;
+  }
+  .process-step--coral {
+    background: var(--gradient-coral);
+    background-size: 130% 130%;
+    background-position: 70% 30%;
+  }
+  .process-step--orange {
+    background: var(--gradient-orange);
+    background-size: 130% 130%;
+    background-position: 70% 25%;
   }
 
   .process-step-num {
@@ -192,14 +206,10 @@ const steps: Step[] = [
     font-weight: 500;
     font-size: var(--fs-display-lg);
     line-height: 1;
-    letter-spacing: var(--ls-display-lg);
+    letter-spacing: -0.05em;
     color: var(--ink);
-    margin-bottom: 8px;
-    background: var(--bg-canvas);
-    padding-right: 16px;
+    margin-bottom: 4px;
     width: fit-content;
-    position: relative;
-    z-index: 1;
   }
 
   .process-step-duration {
@@ -207,8 +217,8 @@ const steps: Step[] = [
     font-size: var(--fs-caption);
     font-weight: 500;
     letter-spacing: var(--ls-caption);
-    color: var(--ink-muted);
-    margin-bottom: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
   }
 
   .process-step-title {
@@ -226,8 +236,8 @@ const steps: Step[] = [
     font-size: var(--fs-body-sm);
     line-height: 1.5;
     letter-spacing: var(--ls-body-sm);
-    color: var(--ink-muted);
-    margin: 0 0 16px 0;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 20px 0;
   }
 
   .process-step-bullets {
@@ -237,6 +247,9 @@ const steps: Step[] = [
     display: flex;
     flex-direction: column;
     gap: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    padding-top: 16px;
+    margin-top: auto;
   }
 
   .process-step-bullets li {
@@ -244,9 +257,9 @@ const steps: Step[] = [
     padding-left: 16px;
     font-family: var(--font-sans);
     font-size: var(--fs-body-sm);
-    line-height: 1.5;
+    line-height: 1.45;
     letter-spacing: var(--ls-body-sm);
-    color: var(--ink-muted);
+    color: rgba(255, 255, 255, 0.85);
   }
 
   .process-step-bullets li::before {
