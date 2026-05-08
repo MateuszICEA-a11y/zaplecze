@@ -148,7 +148,7 @@ function buildActionItems(bots: BotResult[]): ActionItem[] {
       priority: 'P2',
       title: 'Wszystkie 13 botów AI ma dostęp – poprawnie skonfigurowane',
       description:
-        'Twoja konfiguracja robots.txt jest otwarta dla całego ekosystemu AI. Następny krok: schema.org (Article, Person, FAQPage) i sprawdzenie, czy strony są SSR (a nie pusty <div id="root">).',
+        'Twoja konfiguracja robots.txt jest otwarta dla całego ekosystemu AI.',
     });
   }
 

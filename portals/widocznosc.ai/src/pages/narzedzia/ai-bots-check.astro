@@ -17,15 +17,15 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
   <main class="flex-grow">
     <div class="content-container pt-32 pb-20 md:pt-40 lg:pt-44">
       <!-- Hero -->
-      <header class="mx-auto max-w-3xl text-center">
+      <header class="text-center">
         <span class="eyebrow mb-6 inline-flex">
           Narzędzie · bezpłatne · instant
         </span>
-        <h1 class="display-lg">
-          Czy boty AI mają dostęp<br />do Twojej strony?
+        <h1 class="display-md tool-hero-title">
+          Czy <span class="tool-hero-accent">boty AI</span> mają dostęp do Twojej strony?
         </h1>
-        <p class="text-ink mt-8 text-lg leading-relaxed">
-          Sprawdzamy plik <code class="font-mono text-base">robots.txt</code> pod kątem 13 najważniejszych user-agentów AI: GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot i 8 innych. Wynik w 5 sekund, bez logowania.
+        <p class="text-ink mt-8 text-base leading-relaxed mx-auto max-w-3xl">
+          Sprawdzamy plik <code class="font-mono text-sm">robots.txt</code> pod kątem 13 najważniejszych user-agentów AI: GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot i&nbsp;8 innych. Wynik w&nbsp;5 sekund, bez logowania.
         </p>
       </header>
 
@@ -99,32 +99,38 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
 </Layout>
 
 <style>
-  /* Form input */
+  /* Hero – accent na "boty AI" */
+  .tool-hero-title :global(.tool-hero-accent) {
+    color: var(--accent-blue);
+  }
+
+  /* Form input – wyróżniony, parity z url-check */
   .check-input {
-    height: 48px;
-    padding: 0 18px;
+    height: 56px;
+    padding: 0 22px;
     font-family: var(--font-sans);
-    font-size: 14px;
+    font-size: 15px;
     color: var(--ink);
-    background: var(--bg-surface-1);
-    border: none;
+    background: var(--bg-surface-2);
+    border: 1px solid var(--hairline);
     border-radius: var(--r-md);
     outline: none;
-    transition:
-      box-shadow 0.2s ease,
-      background 0.2s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   }
   .check-input::placeholder {
     color: var(--ink-muted);
   }
+  .check-input:hover {
+    border-color: var(--accent-blue);
+  }
   .check-input:focus {
-    background: var(--bg-surface-2);
-    box-shadow: var(--shadow-l3);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(56, 130, 246, 0.15);
   }
 
   .check-submit {
-    height: 48px;
-    min-width: 168px;
+    height: 56px;
+    min-width: 180px;
     justify-content: center;
     position: relative;
   }
