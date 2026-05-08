@@ -19,7 +19,7 @@ const stats: Stat[] = [
     unit: '%',
     source: 'Princeton · KDD 2024',
     sample: 'Aggarwal et al.',
-    desc: 'wzrost widoczności w&nbsp;LLM po&nbsp;dodaniu cytowań źródeł i&nbsp;statystyk. Keyword stuffing dawał -10% (akademicka odwrotność klasycznego SEO).',
+    desc: 'wzrost widoczności w&nbsp;LLM po&nbsp;dodaniu cytowań źródeł i&nbsp;danych liczbowych do&nbsp;tekstu. Upychanie słów kluczowych dawało odwrotny efekt (-10%) – klasyczne SEO i&nbsp;GEO premiują różne sygnały.',
     href: 'https://arxiv.org/abs/2311.09735',
   },
   {
@@ -27,21 +27,24 @@ const stats: Stat[] = [
     unit: '%',
     source: 'Kevin Indig · Growth Memo',
     sample: '1,2 mln cytowań ChatGPT',
-    desc: 'cytowań w&nbsp;ChatGPT pochodzi z&nbsp;pierwszych 30% tekstu. Wczesne sygnalizowanie kluczowych informacji (front-loading) nie jest opcją – to&nbsp;wymóg techniczny.',
+    desc: 'cytowań w&nbsp;ChatGPT pochodzi z&nbsp;pierwszych 30% tekstu. Najważniejsze informacje muszą znaleźć się na&nbsp;górze – inaczej AI nie sięga po&nbsp;dalsze fragmenty.',
+    href: 'https://www.growth-memo.com/',
   },
   {
     value: '89',
     unit: '%',
     source: 'BrightEdge · 2025',
     sample: 'analiza AI Overviews',
-    desc: 'cytowań w&nbsp;Google AI Overviews to&nbsp;wyniki znajdujące się poniżej pozycji 100. Klasyczna pozycja w&nbsp;wynikach nie gwarantuje cytowań.',
+    desc: 'cytowań w&nbsp;Google AI Overviews pochodzi z&nbsp;wyników znajdujących się poniżej pozycji 100. Wysoka pozycja w&nbsp;klasycznych wynikach nie przekłada się automatycznie na&nbsp;obecność w&nbsp;odpowiedzi AI.',
+    href: 'https://www.brightedge.com/news',
   },
   {
     value: '4,4',
     unit: '×',
     source: 'Semrush · 2025',
     sample: 'analiza ruchu LLM',
-    desc: 'wyższa konwersja użytkowników przychodzących z&nbsp;LLM vs&nbsp;klasyczne wyniki organiczne. Lead z&nbsp;AI to&nbsp;lead z&nbsp;już zbudowaną intencją.',
+    desc: 'wyższa konwersja użytkowników przychodzących z&nbsp;LLM w&nbsp;porównaniu do&nbsp;klasycznego ruchu organicznego. Klient, który trafia z&nbsp;AI, najczęściej już wie, czego szuka.',
+    href: 'https://www.semrush.com/blog/',
   },
 ];
 ---
@@ -50,9 +53,9 @@ const stats: Stat[] = [
   <div class="authority-container">
 
     <header class="authority-header">
-      <span class="eyebrow authority-eyebrow">Na czym to się opiera</span>
+      <span class="eyebrow authority-eyebrow">Źródła i badania</span>
       <h2 id="authority-title" class="display-lg authority-title">
-        Nie wymyślamy GEO &ndash; opieramy się na&nbsp;badaniach
+        Nie wymyślamy GEO<br />&ndash; opieramy się na&nbsp;badaniach
       </h2>
       <p class="authority-lead">
         Każda rekomendacja w&nbsp;naszym audycie ma źródło – akademickie, branżowe albo nasze
@@ -84,9 +87,9 @@ const stats: Stat[] = [
                 target="_blank"
                 rel="noopener noreferrer"
                 class="authority-card-link"
-                aria-label={`Zobacz badanie: ${s.source}`}
+                aria-label={`Zobacz źródło: ${s.source}`}
               >
-                Zobacz badanie <span aria-hidden="true">↗</span>
+                Zobacz źródło <span aria-hidden="true">↗</span>
               </a>
             )}
           </article>
