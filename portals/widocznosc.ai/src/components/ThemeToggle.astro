@@ -8,7 +8,6 @@
 <button
   type="button"
   class="theme-toggle"
-  id="theme-toggle"
   aria-label="Zmień motyw"
 >
   <!-- Sun icon – widoczny w dark mode, klik → light -->
@@ -48,29 +47,29 @@
 </button>
 
 <script>
-  const initThemeToggle = () => {
-    const btn = document.getElementById('theme-toggle');
+  const initThemeToggles = () => {
+    const buttons = document.querySelectorAll('.theme-toggle');
     const root = document.documentElement;
-    if (!btn) return;
+    if (buttons.length === 0) return;
 
     const updateAria = () => {
       const current = root.dataset.theme;
-      btn.setAttribute(
-        'aria-label',
-        current === 'dark' ? 'Włącz tryb jasny' : 'Włącz tryb ciemny'
-      );
+      const label = current === 'dark' ? 'Włącz tryb jasny' : 'Włącz tryb ciemny';
+      buttons.forEach((btn) => btn.setAttribute('aria-label', label));
     };
     updateAria();
 
-    btn.addEventListener('click', () => {
-      const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
-      root.dataset.theme = next;
-      try {
-        localStorage.setItem('theme', next);
-      } catch {
-        // private mode – ignoruj, w pamięci sesji wystarczy
-      }
-      updateAria();
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        try {
+          localStorage.setItem('theme', next);
+        } catch {
+          // private mode – ignoruj, w pamięci sesji wystarczy
+        }
+        updateAria();
+      });
     });
 
     // Listen na zmiany system preference – tylko gdy brak override
@@ -86,7 +85,7 @@
     });
   };
 
-  document.addEventListener('astro:page-load', initThemeToggle);
+  document.addEventListener('astro:page-load', initThemeToggles);
 </script>
 
 <style is:global>

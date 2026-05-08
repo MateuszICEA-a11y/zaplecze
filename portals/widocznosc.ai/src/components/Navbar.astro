@@ -1,4 +1,6 @@
 ---
+import ThemeToggle from './ThemeToggle.astro';
+
 type NavItem = {
   label: string;
   href: string;
@@ -168,8 +170,9 @@ const isActive = (href: string) => {
       }
     </div>
 
-    <!-- CTA right – primary white pill -->
+    <!-- CTA right – theme toggle + primary white pill -->
     <div class="hidden lg:flex lg:items-center lg:gap-2">
+      <ThemeToggle />
       <a class="btn-primary" href="/narzedzia" aria-label="Uruchom darmowy test widoczności AI">
         Uruchom test za darmo
       </a>
@@ -221,6 +224,10 @@ const isActive = (href: string) => {
         );
       })
     }
+    <div class="nav-mobile-theme-row">
+      <span class="nav-mobile-theme-label">Motyw</span>
+      <ThemeToggle />
+    </div>
     <a class="btn-primary nav-mobile-cta" href="/narzedzia">
       Uruchom test za darmo
     </a>
@@ -595,5 +602,22 @@ const isActive = (href: string) => {
 
   :root[data-theme='light'] .nav-mobile-overlay {
     background: rgb(0 0 0 / 0.4);
+  }
+
+  /* Mobile theme row – label + toggle */
+  .nav-mobile-theme-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    border-radius: var(--r-md);
+    margin-top: 8px;
+  }
+
+  .nav-mobile-theme-label {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body);
+    font-weight: 500;
+    color: var(--ink);
   }
 </style>
