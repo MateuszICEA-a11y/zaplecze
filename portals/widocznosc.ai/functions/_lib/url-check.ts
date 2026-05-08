@@ -276,7 +276,8 @@ Otrzymujesz HTML strony oraz wstępnie sparsowane sygnały (JSON-LD, daty meta).
 ZASADY ZAWSZE:
 - Pomijaj nawigację, menu, breadcrumbs, footer, sidebar, banery cookie/RODO. Patrz na GŁÓWNY <main>/<article> content.
 - Bądź konkretny w "evidence" – cytuj fragmenty albo podaj liczby (1 zdanie max).
-- "details" to techniczne uzasadnienie (np. "FAQPage schema present, 6 Q&A par").
+- "details" to techniczne uzasadnienie (np. "Schema FAQPage obecny, 6 par Q&A").
+- **WSZYSTKIE pola tekstowe (evidence, details) PO POLSKU.** Zero angielskiego w odpowiedzi, nawet jeśli analizujesz angielską stronę – tłumacz na polski.
 - Output WYŁĄCZNIE valid JSON, bez \`\`\`json\`\`\` markers, bez wstępu.
 
 8 CZYNNIKÓW DO OCENY:

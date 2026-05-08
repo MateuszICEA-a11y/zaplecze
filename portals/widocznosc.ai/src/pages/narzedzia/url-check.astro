@@ -23,9 +23,9 @@ import { FACTORS } from '../../../functions/_lib/url-check';
           Czy Twój content<br />jest cytowalny przez AI?
         </h1>
         <p class="text-ink mt-8 text-lg leading-relaxed">
-          Wskazujesz jeden URL. Gemini 3.1 Flash analizuje 8 czynników cytowalności i&nbsp;zwraca
-          wynik 0&ndash;100 + listę 5 priorytetowych zmian. Analiza według metodologii
-          Princeton/KDD&nbsp;2024 + iPullRank AI Search Manual. Bez logowania.
+          Wskazujesz jeden URL. Model językowy analizuje 8 czynników cytowalności i&nbsp;zwraca
+          wynik 0&ndash;100 + listę priorytetowych zmian. Metodologia: Princeton/KDD&nbsp;2024
+          + iPullRank AI Search Manual. Bez logowania.
         </p>
       </header>
 
@@ -356,15 +356,6 @@ import { FACTORS } from '../../../functions/_lib/url-check';
     word-break: break-all;
   }
 
-  :global(.score-model) {
-    font-family: var(--font-mono, ui-monospace, monospace);
-    font-size: 11px;
-    color: var(--ink-muted);
-    opacity: 0.7;
-    margin-top: 4px;
-    letter-spacing: 0.02em;
-  }
-
   /* Factor result rows */
   :global(.factors-list) {
     display: grid;
@@ -445,7 +436,9 @@ import { FACTORS } from '../../../functions/_lib/url-check';
 
   /* Action items section */
   :global(.action-items) {
-    margin-top: 32px;
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid var(--hairline-soft);
   }
 
   :global(.action-items-title) {
@@ -663,6 +656,15 @@ import { FACTORS } from '../../../functions/_lib/url-check';
     return '✗';
   }
 
+  /** Polish plural for "priorytetowa zmiana" */
+  function pluralChanges(n: number): string {
+    if (n === 1) return '1 priorytetowa zmiana';
+    const lastDigit = n % 10;
+    const lastTwo = n % 100;
+    const isFew = lastDigit >= 2 && lastDigit <= 4 && (lastTwo < 12 || lastTwo > 14);
+    return `${n} ${isFew ? 'priorytetowe zmiany' : 'priorytetowych zmian'}`;
+  }
+
   function renderError(data: CheckResponse): string {
     const item = data.actionItems[0];
     return `
@@ -739,7 +741,6 @@ import { FACTORS } from '../../../functions/_lib/url-check';
           </span>
           <h3 class="score-headline">AI SEO Alignment Score</h3>
           <span class="score-url">${escapeHtml(finalUrl)}</span>
-          <span class="score-model">Analiza: ${escapeHtml(score.model)}</span>
         </div>
       </div>
 
@@ -748,7 +749,7 @@ import { FACTORS } from '../../../functions/_lib/url-check';
       </div>
 
       <div class="action-items">
-        <h3 class="action-items-title">Plan działania – ${actionItems.length} priorytetowych zmian</h3>
+        <h3 class="action-items-title">Plan działania – ${pluralChanges(actionItems.length)}</h3>
         <div class="action-list">
           ${actionHtml}
         </div>
