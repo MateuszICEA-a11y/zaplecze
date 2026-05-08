@@ -270,5 +270,13 @@
     "section": "kampery",
     "format": "short",
     "source": "rss"
+  },
+  {
+    "title": "Tankowanie ma być tańsze. Rząd obniżył ceny maksymalne paliw",
+    "date": "2026-05-08",
+    "slug": "tankowanie-ma-byc-tansze-rzad-obnizyl-ceny-maksymalne-paliw",
+    "section": "news",
+    "format": "short",
+    "source": "rss"
   }
 ]
