@@ -7,7 +7,7 @@ image: ../../assets/images/blog-topical-authority.png
 icon: '<circle cx="12" cy="6" r="2.5"/><circle cx="6" cy="14" r="2"/><circle cx="12" cy="14" r="2"/><circle cx="18" cy="14" r="2"/><circle cx="4" cy="20" r="1.5"/><circle cx="9" cy="20" r="1.5"/><circle cx="14" cy="20" r="1.5"/><circle cx="19" cy="20" r="1.5"/><line x1="12" y1="9" x2="6" y2="12"/><line x1="12" y1="9" x2="12" y2="12"/><line x1="12" y1="9" x2="18" y2="12"/>'
 author:
   name: 'Piotr Wicenciak'
-  role: 'Team Leader SEO · ICEA'
+  role: 'SEO Operations Manager · ICEA'
   avatar: ../../assets/images/authors/piotr-wicenciak.avif
 readTime: '10 min'
 tags: ['Topical Authority', 'Pillar Page', 'Content Strategy', 'GEO']
@@ -101,7 +101,7 @@ W praktyce: dla pillara z 12 cluster pages prawidłowo zaprojektowany interlinki
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
     <p>Najczęstszy błąd przy migracji do pillar+cluster: zespół content marketingu próbuje od razu zbudować 5 pillarów. To zabija projekt, bo każdy pillar wymaga 8–12 tygodni dyscypliny, a zespół robi pierwsze 3 i zostawia 2 niedokończone. <strong>Buduj jeden pillar do końca, mierz efekt na SoV przez kwartał, dopiero potem startuj drugi.</strong> Lepiej mieć jeden pillar na 100% niż pięć na 40%.</p>
-    <div class="callout-author">Piotr Wicenciak · Team Leader SEO, ICEA</div>
+    <div class="callout-author">Piotr Wicenciak · SEO Operations Manager, ICEA</div>
   </div>
 </aside>
 

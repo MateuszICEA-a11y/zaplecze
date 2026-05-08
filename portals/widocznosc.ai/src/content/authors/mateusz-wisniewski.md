@@ -1,6 +1,6 @@
 ---
 name: Mateusz Wiśniewski
-role: SEO Team Leader
+role: Ekspert SEO/AI Search
 company: ICEA
 shortBio: Ekspert w inżynierii promptów i analizie semantycznej. Przekłada złożone dane na strategie dominacji w wynikach AI.
 bio: |

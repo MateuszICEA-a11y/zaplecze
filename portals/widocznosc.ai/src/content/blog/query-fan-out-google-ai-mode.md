@@ -7,7 +7,7 @@ image: ../../assets/images/blog-query-fan-out.png
 icon: '<circle cx="5" cy="5" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="19" cy="12" r="2.5"/><circle cx="19" cy="19" r="2.5"/><line x1="7.5" y1="5.5" x2="16.5" y2="5.5"/><line x1="6.5" y1="6.5" x2="16.5" y2="11.5"/><line x1="6.5" y1="6.5" x2="16.5" y2="18"/>'
 author:
   name: 'Mateusz Wiśniewski'
-  role: 'SEO Team Leader · ICEA'
+  role: 'Ekspert SEO/AI Search · ICEA'
   avatar: ../../assets/images/authors/mateusz-wisniewski.webp
 readTime: '11 min'
 tags: ['AI Search', 'Google AI Mode', 'Query Fan-out', 'GEO']
@@ -116,7 +116,7 @@ Listy *„najlepszych X"*, porównania *„marka X vs Y"*, rankingi i FAQ to for
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
     <p>Najszybszy efekt w pierwszych 30 dniach po audycie daje refresh trzech najsilniejszych artykułów na blogu klienta – dorzucenie do nich 5–8 H3 odpowiadających na konkretne podzapytania z mapy fan-out. Nie nowy content, nie linkowanie, nie schema. Po prostu dopisanie 800–1200 słów strukturalnie podzielonych na fragmenty. W dwóch projektach SaaS B2B widzieliśmy w ten sposób wzrost cytowań o 40–60% w ciągu 3 tygodni.</p>
-    <div class="callout-author">Mateusz Wiśniewski · SEO Team Leader, ICEA</div>
+    <div class="callout-author">Mateusz Wiśniewski · Ekspert SEO/AI Search, ICEA</div>
   </div>
 </aside>
 
