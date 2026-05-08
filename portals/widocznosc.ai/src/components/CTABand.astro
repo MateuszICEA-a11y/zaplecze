@@ -11,7 +11,7 @@ interface Props {
 
 const {
   eyebrow = 'Następny krok',
-  title = 'Sprawdź, jak Twoja marka radzi sobie w AI search',
+  title = 'Sprawdź, jak Twoja marka radzi sobie w <span class="ctaband-title-accent">AI search</span>',
   subtitle = 'Bezpłatna konsultacja 30 minut. Bez sprzedaży, bez zobowiązań – pokazujemy gdzie marka jest cytowana, gdzie traci do konkurencji i co realnie zmienić.',
   primaryHref = '/kontakt',
   primaryLabel = 'Zamów audyt AI',
@@ -23,7 +23,7 @@ const {
 <section class="ctaband-section">
   <div class="ctaband-container">
     <span class="eyebrow ctaband-eyebrow">{eyebrow}</span>
-    <h2 class="display-xl ctaband-title">{title}</h2>
+    <h2 class="display-xl ctaband-title" set:html={title} />
     <p class="ctaband-lead">{subtitle}</p>
     <div class="ctaband-actions">
       <a class="btn-primary" href={primaryHref} aria-label={primaryLabel}>
@@ -53,6 +53,10 @@ const {
 
   .ctaband-eyebrow {
     margin-bottom: 16px;
+  }
+
+  .ctaband-title :global(.ctaband-title-accent) {
+    color: var(--accent-blue);
   }
 
   .ctaband-title {
