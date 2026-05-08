@@ -267,7 +267,7 @@ function prepare(html: string): { cleanedHtml: string; signals: PreparsedSignals
 // =============================================================================
 
 const OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions';
-export const ANALYSIS_MODEL = 'google/gemini-3.1-flash-preview';
+export const ANALYSIS_MODEL = 'google/gemini-3.1-flash-lite';
 
 const SYSTEM_PROMPT = `Jesteś senior analitykiem GEO (Generative Engine Optimization). Oceniasz strony WWW pod kątem cytowalności w silnikach AI (ChatGPT, Claude, Gemini, Perplexity, Copilot).
 
