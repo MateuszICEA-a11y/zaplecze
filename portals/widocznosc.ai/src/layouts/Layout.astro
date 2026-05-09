@@ -38,17 +38,23 @@ const ogImage = `${siteUrl}/og-image.png`;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <!-- Theme init – musi być pierwszy, przed CSS, bez flash -->
+    <!-- Theme init – musi być pierwszy, przed CSS, bez flash.
+         Re-applikuje się po astro:after-swap (View Transitions / ClientRouter)
+         bo SPA swap wymienia <html> i atrybut data-theme znika. -->
     <script is:inline>
       (() => {
-        try {
-          const stored = localStorage.getItem('theme');
-          const system = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-          const resolved = stored === 'light' || stored === 'dark' ? stored : system;
-          document.documentElement.dataset.theme = resolved;
-        } catch {
-          document.documentElement.dataset.theme = 'dark';
-        }
+        const apply = () => {
+          try {
+            const stored = localStorage.getItem('theme');
+            const system = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            const resolved = stored === 'light' || stored === 'dark' ? stored : system;
+            document.documentElement.dataset.theme = resolved;
+          } catch {
+            document.documentElement.dataset.theme = 'dark';
+          }
+        };
+        apply();
+        document.addEventListener('astro:after-swap', apply);
       })();
     </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
