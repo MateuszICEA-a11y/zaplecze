@@ -10,7 +10,8 @@
   /* Surface ladder */
   --bg-canvas: #0a0a0b;
   --bg-surface-1: #131316;
-  --bg-surface-2: #1c1c20;
+  --bg-surface-2: #1d1d22;
+  --bg-surface-3: #26262d;
   --bg-inverse: #ffffff;
 
   /* Hairlines (translucent na dark) */
@@ -19,7 +20,8 @@
 
   /* Ink */
   --ink: #ffffff;
-  --ink-muted: #999999;
+  --ink-muted: #9b9aa3;
+  --ink-faint: #5f5e66;
 
   /* Single chromatic accent – signal only */
   --accent-blue: #0099ff;
@@ -27,6 +29,19 @@
 
   /* Semantic */
   --success-green: #1aaa55;
+
+  /* Pills (landing redesign 2026-05-09) */
+  --pill-translucent: rgba(255, 255, 255, 0.12);
+  --pill-translucent-hover: rgba(255, 255, 255, 0.18);
+  --pill-secondary-bg: var(--bg-surface-1);
+  --pill-secondary-bg-hover: var(--bg-surface-2);
+
+  /* Card shadow – elevation dla floating spotlight cards */
+  --shadow-card: 0 30px 60px -25px rgba(0, 0, 0, 0.55);
+
+  /* Layout (landing redesign) */
+  --container: 1200px;
+  --gutter: 30px;
 
   /* Gradient spotlight family */
   --gradient-violet: radial-gradient(
@@ -67,6 +82,20 @@
   --gradient-process-cyan: linear-gradient(145deg, #0891b2 0%, #164e63 100%);
   --gradient-process-green: linear-gradient(145deg, #16a34a 0%, #14532d 100%);
   --gradient-process-blue: linear-gradient(145deg, #2563eb 0%, #1e3a8a 100%);
+
+  /* Landing redesign 2026-05-09 – radial 3-stop atmosphere cards z handoffu.
+     Inner-light overlay przez ::before na .on-gradient (poniżej). */
+  --grad-violet: radial-gradient(120% 100% at 0% 0%, #b794ff 0%, #6d3df0 38%, #2e1a85 100%);
+  --grad-magenta: radial-gradient(120% 100% at 0% 0%, #ff6fc7 0%, #d633a0 42%, #6e1858 100%);
+  --grad-orange: radial-gradient(120% 100% at 0% 0%, #ffb46a 0%, #ff5a1a 42%, #8a1d00 100%);
+  --grad-coral: radial-gradient(120% 100% at 0% 0%, #ff8caa 0%, #ff3d6b 42%, #84112e 100%);
+  --grad-cyan: radial-gradient(120% 100% at 0% 0%, #7be7ff 0%, #06b6d4 42%, #0a4a5c 100%);
+  --grad-green: radial-gradient(120% 100% at 0% 0%, #8ee99a 0%, #22c55e 42%, #0c5128 100%);
+  --grad-blue: radial-gradient(120% 100% at 0% 0%, #8ab4ff 0%, #3b82f6 42%, #15306b 100%);
+
+  /* Tracking ratio – relative scaling dla display headlines (clamp + em).
+     Stosowane jako: letter-spacing: calc(var(--tracking-display) * 1em). */
+  --tracking-display: -0.05;
 
   /* Typography */
   --font-display: 'Mona Sans Variable', 'Mona Sans', 'Inter', -apple-system, system-ui, sans-serif;
@@ -136,24 +165,35 @@
      RGB warm shift: kanał B obniżony ~6 vs R/G dla ivory cast.
      Krok między poziomami ~7 jednostek ekspozycji. */
   --bg-canvas: #faf8f4;
-  --bg-surface-1: #f3efe8;
-  --bg-surface-2: #ebe6dd;
+  --bg-surface-1: #f1ede5;
+  --bg-surface-2: #e8e3d8;
+  --bg-surface-3: #ddd6c7;
   --bg-inverse: #0a0a0b;
 
   /* Hairlines – warm-tinted black (ciepły undertone zamiast neutralnego),
      niewidoczny przy ~10% alpha ale spójny z paletą. */
-  --hairline: rgba(60, 40, 10, 0.10);
-  --hairline-soft: rgba(60, 40, 10, 0.06);
+  --hairline: rgba(20, 16, 8, 0.10);
+  --hairline-soft: rgba(20, 16, 8, 0.06);
 
-  /* Ink – #1a1a1a zostaje neutralne (na warm tle daje wystarczający kontrast 13:1) */
-  --ink: #1a1a1a;
-  --ink-muted: #6b665d;  /* warm gray – lekki ivory undertone */
+  /* Ink – warm ivory text scale */
+  --ink: #14110b;
+  --ink-muted: #5b564b;
+  --ink-faint: #8e887a;
 
   /* Accent – mocniejszy sky (#0085ee). Kontrast ~3.0:1 vs ivory canvas:
      OK dla AA Large (highlights, display, statystyki, eyebrow dot).
      Dla linków w body podbity underline + opacity hover. */
   --accent-blue: #0085ee;
   --accent-blue-soft: rgba(0, 133, 238, 0.12);
+
+  /* Pills (landing redesign) – warm tints na ivory canvas */
+  --pill-translucent: rgba(20, 16, 8, 0.08);
+  --pill-translucent-hover: rgba(20, 16, 8, 0.14);
+  --pill-secondary-bg: var(--ink);
+  --pill-secondary-bg-hover: #2a2419;
+
+  /* Card shadow – warm-tinted dla ivory */
+  --shadow-card: 0 20px 40px -22px rgba(40, 32, 16, 0.18);
 
   /* Semantic */
   --success-green: #15803d;
@@ -679,6 +719,204 @@ h4:not([class*='text-']) {
 
 .logo-wordmark:hover {
   color: var(--ink);
+}
+
+/* ============================================================
+   Landing redesign 2026-05-09 (handoff utilities)
+   – tokeny: --container, --gutter, --pill-*, --grad-*
+   – utility classes używane przez homepage components
+   ============================================================ */
+
+/* Container 1200px – węższy niż content-container 1280px, dla landing
+   editorial feel. Padding 30px desktop / 20px mobile (handoff spec). */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+@media (max-width: 810px) {
+  .container { padding-inline: 20px; }
+}
+
+/* Section index – mono caption "S/01 · HERO" */
+.section-index {
+  font-family: ui-monospace, 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Subhead – wprowadzenie pod display headline */
+.subhead {
+  font-size: clamp(16px, 1.3vw, 19px);
+  line-height: 1.45;
+  color: var(--ink-muted);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+/* Helper colour modifiers */
+.muted { color: var(--ink-muted); }
+.faint { color: var(--ink-faint); }
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* Editorial section header – left-aligned 2-col grid (5fr/4fr) */
+.section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 4fr);
+  align-items: center;
+  gap: 48px 80px;
+  margin-bottom: 56px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--hairline-soft);
+}
+.section-head .head-left {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-width: 0;
+}
+.section-head .head-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.section-head .head-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 28px;
+}
+.section-head h2 { max-width: 14ch; }
+.section-head .subhead { max-width: 44ch; }
+@media (max-width: 810px) {
+  .section-head {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+  .section-head .head-right { padding-top: 0; }
+}
+
+/* Process footer – shared "summary line" pod grid sekcjami */
+.process-footer {
+  margin: 32px 0 0;
+  font-size: 13px;
+  color: var(--ink-muted);
+  text-align: center;
+  letter-spacing: -0.13px;
+}
+.process-footer a {
+  color: var(--ink);
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 1px;
+}
+.process-footer a:hover {
+  color: var(--accent-blue);
+  border-color: var(--accent-blue);
+  text-decoration: none;
+}
+
+/* On-gradient modifier – flip chrome dla content na atmosphere card.
+   Wewnętrzny inner-light overlay to part-of-recipe. */
+.on-gradient {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+.on-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 110% 110%, rgba(255, 255, 255, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at -10% -10%, rgba(255, 255, 255, 0.12) 0%, transparent 55%);
+  pointer-events: none;
+}
+.on-gradient > * { position: relative; z-index: 1; }
+.on-gradient :where(h1, h2, h3, h4, p, li) { color: #fff; }
+.on-gradient .btn-primary {
+  background: #fff;
+  color: #14110b;
+}
+.on-gradient .btn-translucent {
+  background: rgba(0, 0, 0, 0.22);
+  color: #fff;
+  backdrop-filter: blur(20px);
+}
+.on-gradient .btn-translucent:hover {
+  background: rgba(0, 0, 0, 0.32);
+}
+
+/* Mock UI primitives – używane w Audits cards (mock service preview).
+   Mono font, surface-canvas inset, 4px progress bars, status pills. */
+.mock-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-muted);
+  letter-spacing: 0.02em;
+}
+.mock-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+  font-size: 11px;
+}
+.mock-bar {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--bg-surface-2);
+  overflow: hidden;
+}
+.mock-bar-fill {
+  height: 100%;
+  background: var(--ink);
+  border-radius: 2px;
+}
+.mock-bar-fill.dim { background: var(--ink-faint); }
+.mock-bar-fill.accent { background: var(--accent-blue); }
+
+.mock-pill {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: var(--r-pill);
+  letter-spacing: -0.1px;
+  background: var(--bg-surface-2);
+  color: var(--ink-muted);
+  text-transform: none;
+}
+.mock-pill.ok { color: #4ade80; background: rgba(34, 197, 94, 0.12); }
+.mock-pill.warn { color: #fbbf24; background: rgba(251, 191, 36, 0.12); }
+.mock-pill.bad { color: #f87171; background: rgba(248, 113, 113, 0.12); }
+.mock-pill.faint { color: var(--ink-faint); background: var(--bg-surface-2); }
+
+/* Light mode tweaks dla mock-pill .ok/.warn/.bad – na ivory canvas
+   neonowe zielenie/żółcie/czerwienie się rozjeżdżają */
+:root[data-theme='light'] .mock-pill.ok {
+  color: #15803d;
+  background: rgba(21, 128, 61, 0.10);
+}
+:root[data-theme='light'] .mock-pill.warn {
+  color: #b45309;
+  background: rgba(180, 83, 9, 0.10);
+}
+:root[data-theme='light'] .mock-pill.bad {
+  color: #b91c1c;
+  background: rgba(185, 28, 28, 0.10);
 }
 
 /* ============================================================

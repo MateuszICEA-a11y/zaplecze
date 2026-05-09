@@ -1,17 +1,11 @@
 ---
+/**
+ * AuthorsStrip / Team – landing redesign 2026-05-09 (handoff).
+ * Section-head editorial 5fr/4fr + 4-col grid 4 team cards.
+ * Card: 140px photo placeholder (diagonal-stripe + ghost initials glyph)
+ * lub real photo gdy jest, name + role + bio + LinkedIn chip pinned bottom.
+ */
 import { getCollection } from 'astro:content';
-
-interface Props {
-  eyebrow?: string;
-  title?: string;
-  subtitle?: string;
-}
-
-const {
-  eyebrow = 'Zespół',
-  title = 'Stoi za nami zespół ICEA',
-  subtitle = 'Nasze kilkunastoletnie doświadczenie w SEO przekuwamy w skuteczne strategie widoczności w dobie AI Search. Nie teoretyzujemy – każda rekomendacja na tej stronie to wniosek wyciągnięty z realnych projektów, które realizujemy dla naszych klientów.',
-} = Astro.props;
 
 const ORDER = [
   'tomasz-czechowski',
@@ -24,69 +18,85 @@ const allAuthors = await getCollection('authors');
 const authors = ORDER
   .map((slug) => allAuthors.find((a) => a.id === slug))
   .filter((a): a is NonNullable<typeof a> => Boolean(a));
+
+const initialsOf = (name: string) =>
+  name
+    .split(' ')
+    .map((n) => n[0])
+    .join('')
+    .slice(0, 2)
+    .toUpperCase();
 ---
 
-<section class="team-section" aria-labelledby="team-title">
-  <div class="team-container">
-    <header class="team-header">
-      <span class="eyebrow team-eyebrow">{eyebrow}</span>
-      <h2 id="team-title" class="display-lg team-title">{title}</h2>
-      <p class="team-lead">{subtitle}</p>
+<section class="team-section" id="zespol" aria-labelledby="team-title">
+  <div class="container">
+
+    <header class="section-head">
+      <div class="head-left">
+        <div class="head-meta">
+          <span class="section-index">S/06 · Zespół</span>
+          <span class="eyebrow">Zespół</span>
+        </div>
+        <h2 id="team-title" class="display-xl">
+          Stoi za nami <span class="accent">zespół ICEA</span>
+        </h2>
+      </div>
+      <div class="head-right">
+        <p class="subhead">
+          Nasze kilkunastoletnie doświadczenie w&nbsp;SEO przekuwamy w&nbsp;skuteczne strategie widoczności w&nbsp;dobie AI Search.
+          Nie teoretyzujemy &ndash; każda rekomendacja na&nbsp;tej stronie to wniosek z&nbsp;realnych projektów.
+        </p>
+      </div>
     </header>
 
-    <div class="team-roster">
+    <div class="team-grid">
       {
-        authors.map((author, idx) => {
+        authors.map((author) => {
           const data = author.data;
           const slug = author.id;
+          const initials = initialsOf(data.name);
           return (
-            <article class="team-member">
-              <div class="team-portrait">
+            <article class="team-card">
+              <div class="team-photo">
                 {data.photo ? (
                   <img
                     src={data.photo}
                     alt={`${data.name} – ${data.role}`}
-                    class="team-portrait-img"
+                    class="team-photo-img"
                     loading="lazy"
                     decoding="async"
                     width="320"
                     height="320"
                   />
                 ) : (
-                  <span class="team-portrait-fallback" aria-hidden="true">
-                    {data.name.split(' ').map((n) => n[0]).join('').slice(0, 2)}
-                  </span>
+                  <>
+                    <span class="placeholder-tag">photo</span>
+                    <span class="team-avatar-glyph">{initials}</span>
+                  </>
                 )}
               </div>
-              <div class="team-meta">
-                <div class="team-meta-top">
-                  <h3 class="team-name">
-                    <a href={`/autor/${slug}`} aria-label={`Pełny profil: ${data.name}`}>
-                      {data.name}
-                    </a>
-                  </h3>
-                  <div class="team-role">{data.role}</div>
-                </div>
-                {data.shortBio && <p class="team-specialty">{data.shortBio}</p>}
+
+              <div class="team-meta-top">
+                <h3 class="team-name">
+                  <a href={`/autor/${slug}`} aria-label={`Pełny profil: ${data.name}`}>
+                    {data.name}
+                  </a>
+                </h3>
+                <div class="team-role">{data.role}</div>
+              </div>
+
+              {data.shortBio && <p class="team-bio">{data.shortBio}</p>}
+
+              <div class="team-links">
                 {data.linkedin && (
                   <a
                     href={data.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="team-linkedin"
-                    aria-label={`LinkedIn — ${data.name} (otwiera się w nowym oknie)`}
+                    class="team-chip"
+                    aria-label={`LinkedIn – ${data.name}`}
                   >
-                    <span>LinkedIn</span>
-                    <svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true">
-                      <path
-                        d="M2 9L9 2M9 2H3.5M9 2V7.5"
-                        stroke="currentColor"
-                        stroke-width="1.4"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        fill="none"
-                      />
-                    </svg>
+                    LinkedIn ↗
                   </a>
                 )}
               </div>
@@ -95,118 +105,92 @@ const authors = ORDER
         })
       }
     </div>
+
   </div>
 </section>
 
 <style>
   .team-section {
-    background: var(--bg-canvas);
     padding: 96px 0;
+    background: var(--bg-canvas);
     border-top: 1px solid var(--hairline-soft);
   }
 
-  .team-container {
-    width: 100%;
-    max-width: 1280px;
-    margin-inline: auto;
-    padding: 0 30px;
+  @media (min-width: 980px) {
+    .team-section { padding: 120px 0; }
   }
 
-  .team-header {
-    max-width: 720px;
-    margin: 0 auto 64px auto;
-    text-align: center;
-  }
-
-  .team-eyebrow {
-    margin-bottom: 16px;
-  }
-
-  .team-title {
-    color: var(--ink);
-    margin: 0 0 16px 0;
-    text-wrap: balance;
-  }
-
-  .team-lead {
-    font-family: var(--font-sans);
-    font-size: var(--fs-body-lg);
-    line-height: 1.45;
-    letter-spacing: var(--ls-body-lg);
-    color: var(--ink);
-    margin: 0;
-  }
-
-  .team-roster {
+  .team-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 16px;
   }
 
-  @media (min-width: 640px) {
-    .team-roster {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  @media (min-width: 580px) {
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
-  @media (min-width: 1024px) {
-    .team-roster {
-      grid-template-columns: repeat(4, 1fr);
-    }
+  @media (min-width: 980px) {
+    .team-grid { grid-template-columns: repeat(4, 1fr); }
   }
 
-  .team-member {
+  .team-card {
+    background: var(--bg-surface-1);
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-xl);
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    background: var(--bg-surface-1);
-    border-radius: var(--r-xl);
-    overflow: hidden;
-    transition: background 0.2s ease;
+    gap: 14px;
+    min-height: 300px;
+    transition: background 0.2s ease, border-color 0.2s ease;
   }
 
-  .team-member:hover {
+  .team-card:hover {
     background: var(--bg-surface-2);
+    border-color: var(--hairline);
   }
 
-  .team-portrait {
+  .team-photo {
+    height: 140px;
+    background:
+      repeating-linear-gradient(45deg, var(--hairline-soft) 0 8px, transparent 8px 16px),
+      var(--bg-surface-2);
+    border-radius: var(--r-md);
     position: relative;
-    aspect-ratio: 1 / 1;
-    background: var(--bg-surface-2);
     overflow: hidden;
+    border: 1px solid var(--hairline-soft);
   }
 
-  .team-portrait-img {
+  .team-photo-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.4s ease;
   }
 
-  .team-member:hover .team-portrait-img {
-    transform: scale(1.03);
+  .placeholder-tag {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-family: ui-monospace, 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-faint);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
   }
 
-  .team-portrait-fallback {
+  .team-avatar-glyph {
+    font-family: var(--font-display);
+    font-size: 64px;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+    color: color-mix(in srgb, var(--ink) 12%, transparent);
+    line-height: 1;
     position: absolute;
     inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 88px;
-    line-height: 1;
-    letter-spacing: -0.04em;
-    color: var(--ink);
-  }
-
-  .team-meta {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    flex: 1;
+    display: grid;
+    place-items: center;
   }
 
   .team-meta-top {
@@ -217,10 +201,9 @@ const authors = ORDER
 
   .team-name {
     font-family: var(--font-display);
+    font-size: 18px;
     font-weight: 500;
-    font-size: var(--fs-headline);
-    line-height: 1.2;
-    letter-spacing: var(--ls-headline);
+    letter-spacing: -0.02em;
     color: var(--ink);
     margin: 0;
   }
@@ -231,43 +214,48 @@ const authors = ORDER
     transition: opacity 0.15s ease;
   }
 
-  .team-name a:hover {
-    opacity: 0.85;
-  }
+  .team-name a:hover { opacity: 0.85; }
 
   .team-role {
     font-family: var(--font-sans);
-    font-size: var(--fs-caption);
+    font-size: 12px;
+    color: var(--accent-blue);
+    letter-spacing: -0.12px;
     font-weight: 500;
-    letter-spacing: var(--ls-caption);
-    color: var(--ink-muted);
   }
 
-  .team-specialty {
+  .team-bio {
     font-family: var(--font-sans);
-    font-size: var(--fs-body-sm);
-    line-height: 1.45;
-    letter-spacing: var(--ls-body-sm);
-    color: var(--ink);
+    font-size: 13px;
+    color: var(--ink-muted);
+    line-height: 1.5;
     margin: 0;
     flex: 1;
   }
 
-  .team-linkedin {
-    display: inline-flex;
-    align-items: center;
+  .team-links {
+    display: flex;
     gap: 6px;
     margin-top: auto;
-    font-family: var(--font-sans);
-    font-size: var(--fs-caption);
-    font-weight: 500;
-    letter-spacing: var(--ls-caption);
-    color: var(--accent-blue);
-    text-decoration: none;
-    transition: opacity 0.15s ease;
+    padding-top: 10px;
+    border-top: 1px solid var(--hairline-soft);
   }
 
-  .team-linkedin:hover {
-    opacity: 0.85;
+  .team-chip {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    color: var(--ink-muted);
+    padding: 4px 10px;
+    border-radius: var(--r-pill);
+    background: var(--bg-canvas);
+    border: 1px solid var(--hairline-soft);
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .team-chip:hover {
+    color: var(--ink);
+    border-color: var(--hairline);
   }
 </style>
