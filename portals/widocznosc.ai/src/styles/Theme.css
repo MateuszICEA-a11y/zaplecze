@@ -132,23 +132,28 @@
    pierwszym paintem.
    ============================================================ */
 :root[data-theme="light"] {
-  /* Surface ladder – inverted */
-  --bg-canvas: #fafafa;
-  --bg-surface-1: #f0f0f1;
-  --bg-surface-2: #e6e6e8;
+  /* Surface ladder – warm ivory undertone (Stripe-ish, "papierowy" feel).
+     RGB warm shift: kanał B obniżony ~6 vs R/G dla ivory cast.
+     Krok między poziomami ~7 jednostek ekspozycji. */
+  --bg-canvas: #faf8f4;
+  --bg-surface-1: #f3efe8;
+  --bg-surface-2: #ebe6dd;
   --bg-inverse: #0a0a0b;
 
-  /* Hairlines – translucent black */
-  --hairline: rgba(0, 0, 0, 0.10);
-  --hairline-soft: rgba(0, 0, 0, 0.06);
+  /* Hairlines – warm-tinted black (ciepły undertone zamiast neutralnego),
+     niewidoczny przy ~10% alpha ale spójny z paletą. */
+  --hairline: rgba(60, 40, 10, 0.10);
+  --hairline-soft: rgba(60, 40, 10, 0.06);
 
-  /* Ink – near-black, kontrast 11.5:1 vs #fafafa */
+  /* Ink – #1a1a1a zostaje neutralne (na warm tle daje wystarczający kontrast 13:1) */
   --ink: #1a1a1a;
-  --ink-muted: #666666;
+  --ink-muted: #6b665d;  /* warm gray – lekki ivory undertone */
 
-  /* Accent – ściemniony do WCAG AA na białym (4.92:1) */
-  --accent-blue: #0070d6;
-  --accent-blue-soft: rgba(0, 112, 214, 0.12);
+  /* Accent – mocniejszy sky (#0085ee). Kontrast ~3.0:1 vs ivory canvas:
+     OK dla AA Large (highlights, display, statystyki, eyebrow dot).
+     Dla linków w body podbity underline + opacity hover. */
+  --accent-blue: #0085ee;
+  --accent-blue-soft: rgba(0, 133, 238, 0.12);
 
   /* Semantic */
   --success-green: #15803d;
@@ -156,11 +161,11 @@
   /* Spotlight gradients zostają ciemne (signature) – brak override
      dla --gradient-violet/orange/magenta/coral/violet-linear/process-* */
 
-  /* Elevation – soft drop shadow zamiast inset white edge */
+  /* Elevation – warm-tinted shadows pasujące do ivory canvas */
   --shadow-l2:
-    0 1px 2px rgba(0, 0, 0, 0.04),
-    0 8px 24px rgba(0, 0, 0, 0.08);
-  --shadow-l3: 0 0 0 2px rgba(0, 112, 214, 0.20);
+    0 1px 2px rgba(60, 40, 10, 0.05),
+    0 8px 24px rgba(60, 40, 10, 0.08);
+  --shadow-l3: 0 0 0 2px rgba(0, 133, 238, 0.22);
 }
 
 /* ============================================================
