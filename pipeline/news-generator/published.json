@@ -302,5 +302,13 @@
     "section": "news",
     "format": "analysis",
     "source": "rss"
+  },
+  {
+    "title": "Wpadł na granicy kradzionym kamperem. Pojazd był wart ponad 200 tys. zł",
+    "date": "2026-05-12",
+    "slug": "wpadl-na-granicy-kradzionym-kamperem-pojazd-byl-wart-ponad-200-tys-zl",
+    "section": "kampery",
+    "format": "short",
+    "source": "rss"
   }
 ]
