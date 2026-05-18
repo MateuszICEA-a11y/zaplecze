@@ -342,5 +342,13 @@
     "section": "news",
     "format": "short",
     "source": "rss"
+  },
+  {
+    "title": "Hurtowe ceny paliw 18 maja. Po weekendzie dostawcy zmienili kurs",
+    "date": "2026-05-18",
+    "slug": "hurtowe-ceny-paliw-18-maja-po-weekendzie-dostawcy-zmienili-kurs",
+    "section": "news",
+    "format": "analysis",
+    "source": "rss"
   }
 ]
