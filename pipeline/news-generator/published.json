@@ -350,5 +350,13 @@
     "section": "news",
     "format": "analysis",
     "source": "rss"
+  },
+  {
+    "title": "Toruń: bus zderzył się z tramwajem. Torowisko było zablokowane, wyznaczono objazdy",
+    "date": "2026-05-19",
+    "slug": "torun-bus-zderzyl-sie-z-tramwajem-torowisko-bylo-zablokowane-wyznaczono-objazdy",
+    "section": "news",
+    "format": "short",
+    "source": "rss"
   }
 ]
