@@ -358,5 +358,13 @@
     "section": "news",
     "format": "short",
     "source": "rss"
+  },
+  {
+    "title": "Tragiczny wypadek z udziałem ciężarówki i busa dostawczego pod Puławami",
+    "date": "2026-05-20",
+    "slug": "tragiczny-wypadek-z-udzialem-ciezarowki-i-busa-dostawczego-pod-pulawami",
+    "section": "modele",
+    "format": "short",
+    "source": "rss"
   }
 ]
