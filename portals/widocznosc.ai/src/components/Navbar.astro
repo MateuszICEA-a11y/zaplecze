@@ -1,5 +1,7 @@
 ---
 import ThemeToggle from './ThemeToggle.astro';
+import { getCollection } from 'astro:content';
+import { BLOG_PILLARS, PILLAR_LABELS, PILLAR_GUIDE_TITLE } from '../content.config';
 
 type NavItem = {
   label: string;
@@ -12,6 +14,9 @@ type NavGroup = {
   href: string;
   items?: { heading?: string; links: NavItem[] }[];
 };
+
+const posts = await getCollection('blog');
+const activePillars = BLOG_PILLARS.filter((p) => posts.some((post) => post.data.pillar === p));
 
 const navbarLinks: NavGroup[] = [
   {
@@ -39,7 +44,20 @@ const navbarLinks: NavGroup[] = [
       },
     ],
   },
-  { label: 'Baza wiedzy', href: '/blog' },
+  {
+    label: 'Baza wiedzy',
+    href: '/blog',
+    items: [
+      {
+        heading: 'Kategorie',
+        links: activePillars.map((p) => ({
+          label: PILLAR_LABELS[p],
+          href: `/${p}/`,
+          desc: PILLAR_GUIDE_TITLE[p],
+        })),
+      },
+    ],
+  },
   { label: 'Narzędzia', href: '/narzedzia' },
   { label: 'O nas', href: '/o-nas' },
   { label: 'Kontakt', href: '/kontakt' },
@@ -102,8 +120,8 @@ const isActive = (href: string) => {
                   <polyline points="6,9 12,15 18,9"></polyline>
                 </svg>
               </a>
-              <div class="nav-dropdown" role="menu">
-                <div class="nav-dropdown-grid">
+              <div class="nav-dropdown" role="menu" style={group.items.length === 1 ? 'width: 300px;' : undefined}>
+                <div class={`nav-dropdown-grid${group.items.length === 1 ? ' nav-dropdown-grid--single' : ''}`}>
                   {group.items.map((col) => (
                     <div>
                       {col.heading && <div class="nav-dropdown-heading">{col.heading}</div>}
@@ -122,7 +140,7 @@ const isActive = (href: string) => {
                 </div>
                 <div class="nav-dropdown-footer">
                   <a href={group.href} class="nav-dropdown-footer-link">
-                    Zobacz wszystkie usługi
+                    {group.href === '/blog' ? 'Wszystkie artykuły' : 'Zobacz wszystkie usługi'}
                     <span aria-hidden="true">→</span>
                   </a>
                 </div>
@@ -394,6 +412,10 @@ const isActive = (href: string) => {
     grid-template-columns: 1fr 1fr;
     gap: 4px;
     padding: 20px;
+  }
+
+  .nav-dropdown-grid--single {
+    grid-template-columns: 1fr;
   }
 
   .nav-dropdown-heading {
