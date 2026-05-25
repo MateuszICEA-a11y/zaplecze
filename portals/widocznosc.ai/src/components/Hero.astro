@@ -10,23 +10,21 @@
 <section class="hero-section" id="home">
   <div class="container">
     <div class="hero-grid">
-
       <!-- LEFT: copy stack -->
       <div class="hero-left">
-
         <div class="hero-meta">
-          <span class="section-index">S/01 · HERO</span>
+          <span class="section-index">S/01</span>
           <span class="eyebrow">Generative Engine Optimization</span>
         </div>
 
         <h1 class="display-xxl hero-headline">
-          Sprawdź, co ChatGPT, Claude, Gemini i&nbsp;Perplexity mówią o&nbsp;<span class="accent">Twojej marce</span>.
+          Sprawdź, co ChatGPT, Claude, Gemini i<span class="hero-mobile-break" aria-hidden="true"
+          ></span>Perplexity mówią o&nbsp;<span class="accent">Twojej marce</span>.
         </h1>
 
         <p class="subhead hero-sub">
-          Sprawdź już teraz, czy AI poleca Twoją markę, czy boty AI mają dostęp
-          do&nbsp;Twojej strony i&nbsp;jak zoptymalizować swój content, aby był cytowany
-          przez wyszukiwarki AI.
+          Sprawdź już teraz, czy AI poleca Twoją markę, czy boty AI mają dostęp do&nbsp;Twojej
+          strony i&nbsp;jak zoptymalizować swój content, aby był cytowany przez wyszukiwarki AI.
         </p>
 
         <div class="hero-cta">
@@ -34,28 +32,29 @@
             Uruchom darmowe testy
             <span aria-hidden="true">→</span>
           </a>
-          <a class="btn-secondary" href="/kontakt?type=full-report" aria-label="Zamów pełny raport GEO">
+          <a
+            class="btn-secondary"
+            href="/kontakt?type=full-report"
+            aria-label="Zamów pełny raport GEO"
+          >
             Zamów pełny raport
           </a>
         </div>
-
       </div>
 
       <!-- RIGHT: violet atmosphere card -->
       <article class="hero-card on-gradient">
         <span class="hero-card-eyebrow">Ewolucja tradycyjnego SEO</span>
         <p class="hero-card-quote">
-          AI zmienia wyszukiwarki w&nbsp;<em>silniki odpowiedzi</em>, które eliminują
-          konieczność przeklikiwania się przez wyniki. Marki pominięte przez ChatGPT,
-          Claude czy Perplexity po&nbsp;prostu <em>przestają istnieć</em> w&nbsp;decyzji
-          konsumenta.
+          AI zmienia wyszukiwarki w&nbsp;<em>silniki odpowiedzi</em>, które eliminują konieczność
+          przeklikiwania się przez wyniki. Marki pominięte przez ChatGPT, Claude czy Perplexity
+          po&nbsp;prostu <em>przestają istnieć</em> w&nbsp;decyzji konsumenta.
         </p>
         <div class="hero-card-meta">
           <span>Cytowania zamiast pozycji</span>
           <span>SEO + GEO</span>
         </div>
       </article>
-
     </div>
   </div>
 </section>
@@ -100,6 +99,14 @@
     margin: 0;
   }
 
+  .hero-mobile-break {
+    white-space: normal;
+  }
+
+  .hero-mobile-break::after {
+    content: ' ';
+  }
+
   /* Inline accent (sky) na "Twojej marce" – z .accent (Theme.css) */
 
   .hero-sub {
@@ -117,12 +124,64 @@
     align-items: center;
   }
 
+  @media (max-width: 640px) {
+    .hero-section {
+      padding: 72px 0 80px;
+    }
+
+    .hero-left {
+      gap: 28px;
+    }
+
+    .hero-headline {
+      max-width: 100%;
+      font-size: clamp(50px, 13.6vw, 58px);
+      line-height: 0.92;
+      letter-spacing: -0.045em;
+      text-wrap: balance;
+    }
+
+    .hero-mobile-break {
+      display: block;
+    }
+
+    .hero-mobile-break::after {
+      content: '';
+    }
+
+    .hero-sub {
+      max-width: 100%;
+      font-size: 16px;
+    }
+
+    .hero-cta {
+      width: 100%;
+      max-width: 340px;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 10px;
+    }
+
+    .hero-cta .btn-primary,
+    .hero-cta .btn-secondary {
+      width: 100%;
+      min-width: 0;
+    }
+
+    .hero-card {
+      min-height: 320px;
+      padding: 28px;
+      border-radius: var(--r-xl);
+    }
+  }
+
   /* ============================================================
      Hero atmosphere card – violet 3-stop radial + ::before overlay
      ============================================================ */
 
   .hero-card {
-    background: var(--grad-violet);
+    background-color: #2a2678;
+    background-image: var(--grad-violet);
     border-radius: var(--r-xxl);
     padding: 36px;
     display: flex;

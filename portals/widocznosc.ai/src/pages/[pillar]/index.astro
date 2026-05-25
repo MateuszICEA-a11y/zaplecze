@@ -52,12 +52,12 @@ const formatDate = (date: Date) =>
 
 <Layout
   title={`${pillarTitle} – baza wiedzy widocznosc.ai`}
-  description={guidePost?.data.description ?? `Baza wiedzy o ${pillarLabel}: artykuły, przewodniki i case studies na widocznosc.ai.`}
+  description={guidePost?.data.description ??
+    `Baza wiedzy o ${pillarLabel}: artykuły, przewodniki i case studies na widocznosc.ai.`}
 >
   <Navbar />
 
   <main class="blog-listing-main">
-
     <!-- Hero -->
     <section class="blog-hero">
       <div class="blog-hero-container">
@@ -84,7 +84,9 @@ const formatDate = (date: Date) =>
               </div>
               <div class="blog-featured-body">
                 <div class="blog-featured-meta">
-                  <span class="blog-featured-category">{PILLAR_LABELS[featuredPost.data.pillar]}</span>
+                  <span class="blog-featured-category">
+                    {PILLAR_LABELS[featuredPost.data.pillar]}
+                  </span>
                   <span class="blog-featured-date">{formatDate(featuredPost.data.date)}</span>
                 </div>
                 <h2 class="blog-featured-title">{featuredPost.data.title}</h2>
@@ -139,7 +141,6 @@ const formatDate = (date: Date) =>
         </section>
       )
     }
-
   </main>
 
   <Footer />
@@ -338,6 +339,14 @@ const formatDate = (date: Date) =>
     max-width: 1280px;
     margin-inline: auto;
     padding: 0 30px;
+  }
+
+  @media (max-width: 639px) {
+    .blog-hero-container,
+    .blog-featured-container,
+    .blog-grid-container {
+      padding-inline: 20px;
+    }
   }
 
   .blog-grid-header {

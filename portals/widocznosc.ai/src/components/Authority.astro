@@ -9,27 +9,32 @@
 interface Stat {
   num: string;
   sup: string;
+  kind: string;
   label: string;
   sublabel: string;
   source: string;
   link: string;
   href: string;
+  featured?: boolean;
 }
 
 const stats: Stat[] = [
   {
     num: '+40',
     sup: '%',
+    kind: 'Peer-reviewed',
     label: 'Princeton · KDD 2024',
     sublabel: 'Aggarwal et al., GEO Paper',
     source:
       'Wzrost widoczności w odpowiedziach silników AI przy zastosowaniu metodyki GEO. Pierwsze peer-reviewed badanie z ACM SIGKDD definiujące samą dyscyplinę – nie marketing, tylko akademicki framework.',
     link: 'arxiv.org/abs/2311.09735',
     href: 'https://arxiv.org/abs/2311.09735',
+    featured: true,
   },
   {
     num: '8',
     sup: '×',
+    kind: 'Patent',
     label: 'Google · patent 2024',
     sublabel: 'query fan-out, passage retrieval',
     source:
@@ -40,6 +45,7 @@ const stats: Stat[] = [
   {
     num: '+357',
     sup: '%',
+    kind: 'Dane rynkowe',
     label: 'TechCrunch · Authoritas',
     sublabel: '13 miesięcy danych ruchu AI',
     source:
@@ -50,6 +56,7 @@ const stats: Stat[] = [
   {
     num: '84',
     sup: '%',
+    kind: 'Benchmark',
     label: 'Previsible · 2025',
     sublabel: '1,96 mln sesji LLM',
     source:
@@ -62,11 +69,10 @@ const stats: Stat[] = [
 
 <section class="authority-section" aria-labelledby="authority-title">
   <div class="container">
-
     <header class="section-head">
       <div class="head-left">
         <div class="head-meta">
-          <span class="section-index">S/05 · Źródła i badania</span>
+          <span class="section-index">S/05</span>
           <span class="eyebrow">Źródła i&nbsp;badania</span>
         </div>
         <h2 id="authority-title" class="display-xl">
@@ -75,8 +81,8 @@ const stats: Stat[] = [
       </div>
       <div class="head-right">
         <p class="subhead">
-          Każda rekomendacja w&nbsp;naszym audycie ma źródło &ndash; akademickie badania, patenty Google,
-          dane rynkowe albo nasze własne testy. Zero marketingowego bełkotu.
+          Każda rekomendacja w&nbsp;naszym audycie ma źródło &ndash; akademickie badania, patenty
+          Google, dane rynkowe albo nasze własne testy. Zero marketingowego bełkotu.
         </p>
       </div>
     </header>
@@ -84,12 +90,21 @@ const stats: Stat[] = [
     <div class="research-grid">
       {
         stats.map((s) => (
-          <article class="research-card">
-            <div class="research-num">
-              {s.num}<sup>{s.sup}</sup>
+          <article class={`research-card${s.featured ? ' research-card--featured' : ''}`}>
+            <div class="research-card-top">
+              <span class="research-kind">{s.kind}</span>
+              {s.featured && <span class="research-featured">Fundament GEO</span>}
             </div>
-            <div class="research-label">{s.label}</div>
-            <div class="research-sublabel">{s.sublabel}</div>
+            <div class="research-main">
+              <div class="research-num">
+                {s.num}
+                <sup>{s.sup}</sup>
+              </div>
+              <div>
+                <div class="research-label">{s.label}</div>
+                <div class="research-sublabel">{s.sublabel}</div>
+              </div>
+            </div>
             <p class="research-source">{s.source}</p>
             <a
               href={s.href}
@@ -106,10 +121,9 @@ const stats: Stat[] = [
     </div>
 
     <p class="process-footer">
-      Plus 15+ lat doświadczenia ICEA w&nbsp;klasycznym SEO &ndash; te same fundamenty
-      (autorytet, semantyka, struktura) działają w&nbsp;AI inaczej, ale rygor pracy zostaje ten sam.
+      Plus 15+ lat doświadczenia ICEA w&nbsp;klasycznym SEO &ndash; te same fundamenty (autorytet,
+      semantyka, struktura) działają w&nbsp;AI inaczej, ale rygor pracy zostaje ten sam.
     </p>
-
   </div>
 </section>
 
@@ -120,7 +134,9 @@ const stats: Stat[] = [
   }
 
   @media (min-width: 980px) {
-    .authority-section { padding: 120px 0; }
+    .authority-section {
+      padding: 120px 0;
+    }
   }
 
   .research-grid {
@@ -130,30 +146,101 @@ const stats: Stat[] = [
   }
 
   @media (min-width: 640px) {
-    .research-grid { grid-template-columns: repeat(2, 1fr); }
+    .research-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   @media (min-width: 980px) {
-    .research-grid { grid-template-columns: repeat(4, 1fr); }
+    .research-grid {
+      grid-template-columns: repeat(4, 1fr);
+      align-items: stretch;
+    }
   }
 
   .research-card {
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    background: var(--bg-surface-1);
+    gap: 16px;
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--bg-surface-2) 42%, transparent),
+        transparent 34%
+      ),
+      var(--bg-surface-1);
     border: 1px solid var(--hairline-soft);
     border-radius: var(--r-xl);
     padding: 24px;
-    min-height: 220px;
-    transition: border-color 0.2s ease, background 0.2s ease;
+    min-height: 260px;
+    box-shadow: 0 18px 50px -42px rgba(0, 0, 0, 0.45);
+    transition:
+      border-color 0.2s ease,
+      background 0.2s ease,
+      transform 0.2s ease;
   }
 
-  .research-card:hover { border-color: var(--hairline); }
+  .research-card:hover {
+    border-color: var(--hairline);
+    transform: translateY(-2px);
+  }
+
+  .research-card--featured {
+    border-color: color-mix(in srgb, var(--accent-blue) 34%, var(--hairline));
+  }
+
+  .research-card--featured::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto;
+    height: 3px;
+    background: var(--accent-blue);
+  }
+
+  .research-card-top {
+    display: flex;
+    min-height: 24px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .research-kind,
+  .research-featured {
+    display: inline-flex;
+    align-items: center;
+    border-radius: var(--r-pill);
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .research-kind {
+    padding: 6px 9px;
+    background: var(--bg-canvas);
+    color: var(--ink-muted);
+    border: 1px solid var(--hairline-soft);
+  }
+
+  .research-featured {
+    padding: 6px 9px;
+    background: var(--accent-blue-soft);
+    color: var(--accent-blue);
+  }
+
+  .research-main {
+    display: grid;
+    gap: 12px;
+  }
 
   .research-num {
     font-family: var(--font-display);
-    font-size: 56px;
+    font-size: clamp(54px, 4vw, 68px);
     font-weight: 500;
     letter-spacing: -0.045em;
     line-height: 0.95;
@@ -175,7 +262,6 @@ const stats: Stat[] = [
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--ink-faint);
-    margin-top: 4px;
   }
 
   .research-sublabel {
@@ -188,18 +274,19 @@ const stats: Stat[] = [
 
   .research-source {
     font-family: var(--font-sans);
-    font-size: 12px;
+    font-size: 13px;
     color: var(--ink-muted);
-    letter-spacing: -0.12px;
-    line-height: 1.5;
+    letter-spacing: -0.13px;
+    line-height: 1.52;
     margin: 0;
     flex-grow: 1;
   }
 
   .research-link {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     font-family: ui-monospace, 'JetBrains Mono', monospace;
-    font-size: 10px;
+    font-size: 11px;
     color: var(--ink-faint);
     margin-top: 8px;
     letter-spacing: 0.02em;
@@ -210,5 +297,19 @@ const stats: Stat[] = [
     transition: color 0.15s ease;
   }
 
-  .research-link:hover { color: var(--accent-blue); }
+  .research-link:hover {
+    color: var(--accent-blue);
+  }
+
+  @media (max-width: 639px) {
+    .research-card {
+      min-height: auto;
+      padding: 22px;
+    }
+
+    .research-card-top {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
 </style>

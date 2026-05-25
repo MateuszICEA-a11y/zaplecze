@@ -25,34 +25,26 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
 >
   <Navbar />
 
-  <!-- Hero – wyśrodkowany na pełnej szerokości containera -->
-  <section class="relative pt-32 pb-20 md:pt-40 md:pb-24">
-    <div class="content-container text-center">
+  <!-- Hero – service landing header -->
+  <section class="service-hero">
+    <div class="content-container service-hero-inner">
       <!-- Breadcrumb (text-left dla nawigacji, hero copy centered) -->
-      <div class="mb-10 flex items-center justify-center gap-2 text-sm">
-        <a href="/pozycjonowanie-ai" class="text-ink-muted hover:text-ink transition">
-          Pozycjonowanie AI
-        </a>
-        <span class="text-ink-muted" aria-hidden="true">/</span>
-        <span class="text-ink">{model.name}</span>
-      </div>
+      <nav class="service-breadcrumb" aria-label="Ścieżka nawigacji">
+        <a href="/pozycjonowanie-ai" class="service-breadcrumb-link"> Pozycjonowanie AI </a>
+        <span class="service-breadcrumb-sep" aria-hidden="true">/</span>
+        <span class="service-breadcrumb-current">{model.name}</span>
+      </nav>
 
-      <span class="eyebrow mb-8 inline-flex">{model.vendor} · model AI</span>
-      <h1 class="display-xl mx-auto mb-8" style="max-width: 1100px;">
+      <span class="eyebrow service-eyebrow">{model.vendor} · model AI</span>
+      <h1 class="service-hero-title">
         Pozycjonowanie w&nbsp;<span class="accent">{model.name}</span>
       </h1>
-      <p
-        class="text-ink mx-auto text-lg leading-relaxed"
-        style="max-width: 720px;"
-        set:html={content.heroSubtitle}
-      />
-      <div class="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
+      <p class="service-hero-subtitle" set:html={content.heroSubtitle} />
+      <div class="service-hero-actions">
         <a class="btn-primary" href={`/kontakt?type=audyt-ai&model=${model.slug}`}>
           Zamów audyt pod {model.name}
         </a>
-        <a class="btn-secondary" href="/narzedzia/visibility-checker">
-          Sprawdź widoczność · 90s
-        </a>
+        <a class="btn-secondary" href="/narzedzia/visibility-checker"> Sprawdź widoczność · 90s </a>
       </div>
     </div>
   </section>
@@ -62,7 +54,7 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
     <div class="content-container py-16 lg:py-20">
       <div class="mx-auto mb-12 text-center" style="max-width: 880px;">
         <span class="eyebrow mb-6 inline-flex">Jak działa</span>
-        <h2 id="how-title" class="display-lg mt-2 mb-6" style="text-wrap: balance;">
+        <h2 id="how-title" class="service-section-title display-lg mt-2 mb-6">
           Jak {model.name} buduje odpowiedzi
         </h2>
       </div>
@@ -70,9 +62,15 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
       <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
         {
           content.howItWorks.map((item, i) => (
-            <div class="flex flex-col rounded-[15px] p-8 lg:p-10" style="background: var(--bg-surface-1);">
+            <div
+              class="flex flex-col rounded-[15px] p-8 lg:p-10"
+              style="background: var(--bg-surface-1);"
+            >
               <div class="display-md text-ink-muted mb-4 leading-none">0{i + 1}</div>
-              <h3 class="mb-3 text-xl font-medium" style="font-family: var(--font-display); letter-spacing: -0.5px;">
+              <h3
+                class="mb-3 text-xl font-medium"
+                style="font-family: var(--font-display); letter-spacing: -0.5px;"
+              >
                 {item.title}
               </h3>
               <p class="text-ink-muted text-sm leading-relaxed" set:html={item.desc} />
@@ -89,7 +87,7 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
       <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
         <div class="lg:col-span-5">
           <span class="eyebrow mb-6 inline-flex">Optymalizacja</span>
-          <h2 id="opt-title" class="display-lg mt-2 mb-6">
+          <h2 id="opt-title" class="service-section-title display-lg mt-2 mb-6">
             Co konkretnie robimy,<br />żeby {model.name} cytował Twoją markę
           </h2>
           <p class="text-ink mb-8 text-lg leading-relaxed">
@@ -107,7 +105,10 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
             {
               content.optimization.map((item) => (
                 <div class="rounded-[15px] p-6 lg:p-7" style="background: var(--bg-surface-1);">
-                  <h3 class="mb-2 text-lg font-medium" style="font-family: var(--font-display); letter-spacing: -0.4px;">
+                  <h3
+                    class="mb-2 text-lg font-medium"
+                    style="font-family: var(--font-display); letter-spacing: -0.4px;"
+                  >
                     {item.title}
                   </h3>
                   <p class="text-ink-muted text-sm leading-relaxed" set:html={item.desc} />
@@ -126,15 +127,24 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
       <div>
         <div class="mx-auto mb-10 text-center" style="max-width: 880px;">
           <span class="eyebrow mb-6 inline-flex">Sygnały rankingowe</span>
-          <h2 id="signals-title" class="display-lg mt-2">
+          <h2 id="signals-title" class="service-section-title display-lg mt-2">
             Top 5 sygnałów dla {model.name}
           </h2>
         </div>
-        <ul class="mx-auto rounded-[15px] divide-y" style="background: var(--bg-surface-1); border-color: var(--hairline-soft); max-width: 960px;">
+        <ul
+          class="mx-auto divide-y rounded-[15px]"
+          style="background: var(--bg-surface-1); border-color: var(--hairline-soft); max-width: 960px;"
+        >
           {
             content.signals.map((signal, i) => (
-              <li class="flex items-start gap-5 p-6 lg:p-7" style="border-color: var(--hairline-soft);">
-                <div class="text-ink-muted flex-shrink-0 text-base font-medium" style="font-variant-numeric: tabular-nums;">
+              <li
+                class="flex items-start gap-5 p-6 lg:p-7"
+                style="border-color: var(--hairline-soft);"
+              >
+                <div
+                  class="text-ink-muted flex-shrink-0 text-base font-medium"
+                  style="font-variant-numeric: tabular-nums;"
+                >
                   0{i + 1}
                 </div>
                 <div class="text-ink leading-relaxed">{signal}</div>
@@ -152,7 +162,7 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
       <div class="mx-auto" style="max-width: 860px;">
         <div class="mb-10 text-center">
           <span class="eyebrow mb-6 inline-flex">FAQ</span>
-          <h2 id="faq-title" class="display-lg mt-2">
+          <h2 id="faq-title" class="service-section-title display-lg mt-2">
             Najczęstsze pytania o&nbsp;{model.name}
           </h2>
         </div>
@@ -160,14 +170,14 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
           {
             content.faq.map((qa) => (
               <details class="faq-row group">
-                <summary class="text-ink flex cursor-pointer items-start justify-between gap-4 text-base font-medium" style="font-family: var(--font-display); letter-spacing: -0.3px;">
+                <summary
+                  class="text-ink flex cursor-pointer items-start justify-between gap-4 text-base font-medium"
+                  style="font-family: var(--font-display); letter-spacing: -0.3px;"
+                >
                   <span set:html={qa.q} />
                   <span class="text-ink-muted mt-1 text-xl transition group-open:rotate-45">+</span>
                 </summary>
-                <p
-                  class="text-ink-muted mt-4 leading-relaxed"
-                  set:html={qa.a}
-                />
+                <p class="text-ink-muted mt-4 leading-relaxed" set:html={qa.a} />
               </details>
             ))
           }
@@ -182,7 +192,7 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
       <div class="mb-10 flex items-end justify-between gap-6">
         <div>
           <span class="eyebrow mb-6 inline-flex">Pozostałe modele</span>
-          <h2 id="other-title" class="display-lg mt-2">
+          <h2 id="other-title" class="service-section-title display-lg mt-2">
             Optymalizacja pod inne silniki AI
           </h2>
         </div>
@@ -205,7 +215,10 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
               data-card-template
             >
               <div class="text-ink-muted text-sm">{m.vendor}</div>
-              <h3 class="mt-1 text-xl font-medium" style="font-family: var(--font-display); letter-spacing: -0.5px;">
+              <h3
+                class="mt-1 text-xl font-medium"
+                style="font-family: var(--font-display); letter-spacing: -0.5px;"
+              >
                 {m.name}
               </h3>
               <p class="text-ink-muted mt-2 text-sm leading-relaxed">{m.shortDesc}</p>
@@ -219,7 +232,7 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
   <CTABand
     eyebrow={`Audyt pod ${model.name}`}
     title={`Sprawdź jak ${model.name} cytuje Twoją markę`}
-    subtitle="Bezpłatna konsultacja 30 minut. Pokażemy gdzie marka pojawia się w&nbsp;odpowiedziach, gdzie konkurencja Cię wyprzedza i&nbsp;co realnie zrobić w&nbsp;pierwszych 90 dniach."
+    subtitle="Bezpłatna konsultacja 30 minut. Pokażemy gdzie marka pojawia się w odpowiedziach, gdzie konkurencja Cię wyprzedza i co realnie zrobić w pierwszych 90 dniach."
     primaryLabel="Zamów audyt AI"
     primaryHref={`/kontakt?type=audyt-ai&model=${model.slug}`}
     ghostLabel="Bezpłatna konsultacja"
@@ -231,6 +244,165 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
 </Layout>
 
 <style>
+  .service-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 104px 0 88px;
+    background:
+      radial-gradient(
+        circle at 50% 12%,
+        color-mix(in srgb, var(--accent-blue) 12%, transparent) 0%,
+        transparent 34%
+      ),
+      linear-gradient(180deg, var(--bg-surface-1) 0%, var(--bg-canvas) 78%);
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+
+  .service-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(var(--hairline-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--hairline-soft) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.16), transparent 62%);
+    pointer-events: none;
+  }
+
+  .service-hero-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .service-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 36px;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-muted);
+  }
+
+  .service-breadcrumb-link {
+    color: var(--ink-muted);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .service-breadcrumb-link:hover {
+    color: var(--ink);
+  }
+
+  .service-breadcrumb-sep {
+    color: var(--ink-faint);
+  }
+
+  .service-breadcrumb-current {
+    color: var(--ink);
+  }
+
+  .service-eyebrow {
+    margin-bottom: 28px;
+  }
+
+  .service-hero-title {
+    max-width: 980px;
+    margin: 0 0 28px;
+    font-family: var(--font-display);
+    font-size: clamp(48px, 6.4vw, 86px);
+    font-weight: 500;
+    line-height: 0.96;
+    letter-spacing: -0.045em;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+
+  .service-hero-subtitle {
+    max-width: 760px;
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: clamp(17px, 1.4vw, 21px);
+    line-height: 1.55;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+  }
+
+  .service-hero-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
+
+  .service-section-title {
+    text-wrap: balance;
+  }
+
+  @media (max-width: 640px) {
+    .service-hero {
+      padding: 72px 0 64px;
+    }
+
+    .service-hero-inner {
+      text-align: left;
+      align-items: flex-start;
+    }
+
+    .service-breadcrumb {
+      justify-content: flex-start;
+      margin-bottom: 28px;
+      font-size: 13px;
+    }
+
+    .service-eyebrow {
+      margin-bottom: 22px;
+    }
+
+    .service-hero-title {
+      max-width: 100%;
+      margin-bottom: 22px;
+      font-size: clamp(42px, 12vw, 52px);
+      line-height: 0.98;
+      letter-spacing: -0.043em;
+      overflow-wrap: anywhere;
+    }
+
+    .service-hero-subtitle {
+      max-width: 100%;
+      font-size: 17px;
+      line-height: 1.48;
+    }
+
+    .service-hero-actions {
+      width: 100%;
+      margin-top: 32px;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .service-hero-actions .btn-primary,
+    .service-hero-actions .btn-secondary {
+      width: 100%;
+      white-space: normal;
+      text-align: center;
+    }
+
+    .service-section-title {
+      font-size: clamp(36px, 10.4vw, 44px);
+      line-height: 0.98;
+      letter-spacing: -0.043em;
+    }
+  }
+
   [data-card-template]:hover {
     background: var(--bg-surface-2) !important;
   }
