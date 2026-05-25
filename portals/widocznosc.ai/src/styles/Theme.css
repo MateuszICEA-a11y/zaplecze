@@ -8,10 +8,10 @@
 
 :root {
   /* Surface ladder */
-  --bg-canvas: #0a0a0b;
-  --bg-surface-1: #131316;
-  --bg-surface-2: #1d1d22;
-  --bg-surface-3: #26262d;
+  --bg-canvas: #08090c;
+  --bg-surface-1: #11141a;
+  --bg-surface-2: #1a2029;
+  --bg-surface-3: #242b36;
   --bg-inverse: #ffffff;
 
   /* Hairlines (translucent na dark) */
@@ -20,12 +20,12 @@
 
   /* Ink */
   --ink: #ffffff;
-  --ink-muted: #9b9aa3;
-  --ink-faint: #5f5e66;
+  --ink-muted: #a6abb5;
+  --ink-faint: #788294;
 
   /* Single chromatic accent – signal only */
-  --accent-blue: #0099ff;
-  --accent-blue-soft: rgba(0, 153, 255, 0.15);
+  --accent-blue: #0a9cff;
+  --accent-blue-soft: rgba(10, 156, 255, 0.16);
 
   /* Semantic */
   --success-green: #1aaa55;
@@ -35,6 +35,12 @@
   --pill-translucent-hover: rgba(255, 255, 255, 0.18);
   --pill-secondary-bg: var(--bg-surface-1);
   --pill-secondary-bg-hover: var(--bg-surface-2);
+
+  /* Interactive surfaces */
+  --button-secondary-bg: rgba(255, 255, 255, 0.055);
+  --button-secondary-bg-hover: rgba(255, 255, 255, 0.1);
+  --button-secondary-border: rgba(255, 255, 255, 0.12);
+  --button-secondary-border-hover: rgba(255, 255, 255, 0.2);
 
   /* Card shadow – elevation dla floating spotlight cards */
   --shadow-card: 0 30px 60px -25px rgba(0, 0, 0, 0.55);
@@ -85,17 +91,17 @@
 
   /* Landing redesign 2026-05-09 – radial 3-stop atmosphere cards z handoffu.
      Inner-light overlay przez ::before na .on-gradient (poniżej). */
-  --grad-violet: radial-gradient(120% 100% at 0% 0%, #b794ff 0%, #6d3df0 38%, #2e1a85 100%);
-  --grad-magenta: radial-gradient(120% 100% at 0% 0%, #ff6fc7 0%, #d633a0 42%, #6e1858 100%);
-  --grad-orange: radial-gradient(120% 100% at 0% 0%, #ffb46a 0%, #ff5a1a 42%, #8a1d00 100%);
-  --grad-coral: radial-gradient(120% 100% at 0% 0%, #ff8caa 0%, #ff3d6b 42%, #84112e 100%);
-  --grad-cyan: radial-gradient(120% 100% at 0% 0%, #7be7ff 0%, #06b6d4 42%, #0a4a5c 100%);
-  --grad-green: radial-gradient(120% 100% at 0% 0%, #8ee99a 0%, #22c55e 42%, #0c5128 100%);
-  --grad-blue: radial-gradient(120% 100% at 0% 0%, #8ab4ff 0%, #3b82f6 42%, #15306b 100%);
+  --grad-violet: radial-gradient(120% 100% at 0% 0%, #b99aff 0%, #6545f2 40%, #2a2678 100%);
+  --grad-magenta: radial-gradient(120% 100% at 0% 0%, #ff7acb 0%, #cb3299 42%, #631b58 100%);
+  --grad-orange: radial-gradient(120% 100% at 0% 0%, #ffbb72 0%, #f26722 42%, #873016 100%);
+  --grad-coral: radial-gradient(120% 100% at 0% 0%, #ff98ac 0%, #e5426b 42%, #7b1e38 100%);
+  --grad-cyan: radial-gradient(120% 100% at 0% 0%, #83e9f7 0%, #089fc1 42%, #0b465a 100%);
+  --grad-green: radial-gradient(120% 100% at 0% 0%, #95e7a1 0%, #20a957 42%, #123f27 100%);
+  --grad-blue: radial-gradient(120% 100% at 0% 0%, #91bbff 0%, #3478ea 42%, #18366e 100%);
 
   /* Tracking ratio – relative scaling dla display headlines (clamp + em).
      Stosowane jako: letter-spacing: calc(var(--tracking-display) * 1em). */
-  --tracking-display: -0.05;
+  --tracking-display: -0.042;
 
   /* Typography */
   --font-display: 'Mona Sans Variable', 'Mona Sans', 'Inter', -apple-system, system-ui, sans-serif;
@@ -116,9 +122,9 @@
   --fs-button: 14px;
 
   /* Tracking */
-  --ls-display-xxl: -5.5px;
-  --ls-display-xl: -4.25px;
-  --ls-display-lg: -3.1px;
+  --ls-display-xxl: -4.6px;
+  --ls-display-xl: -3.6px;
+  --ls-display-lg: -2.5px;
   --ls-display-md: -1px;
   --ls-headline: -0.8px;
   --ls-subhead: -0.01em;
@@ -149,8 +155,7 @@
   --r-full: 9999px;
 
   /* Elevation L2 (light-edge floating) */
-  --shadow-l2:
-    0 0.5px 0 rgba(255, 255, 255, 0.1) inset, 0 10px 30px rgba(0, 0, 0, 0.25);
+  --shadow-l2: 0 0.5px 0 rgba(255, 255, 255, 0.1) inset, 0 10px 30px rgba(0, 0, 0, 0.25);
   /* Elevation L3 (focus / selected ring) */
   --shadow-l3: 0 0 0 1px var(--accent-blue-soft);
 }
@@ -160,51 +165,50 @@
    Ustawiany przez inline FOUC script w Layout.astro przed
    pierwszym paintem.
    ============================================================ */
-:root[data-theme="light"] {
-  /* Surface ladder – warm ivory undertone (Stripe-ish, "papierowy" feel).
-     RGB warm shift: kanał B obniżony ~6 vs R/G dla ivory cast.
-     Krok między poziomami ~7 jednostek ekspozycji. */
-  --bg-canvas: #faf8f4;
-  --bg-surface-1: #f1ede5;
-  --bg-surface-2: #e8e3d8;
-  --bg-surface-3: #ddd6c7;
+:root[data-theme='light'] {
+  /* Surface ladder – chłodny, produktowy light mode zamiast kremowego ivory.
+     Subtelny blue-gray undertone lepiej pasuje do AI/SaaS i dark theme. */
+  --bg-canvas: #f7f9fc;
+  --bg-surface-1: #eef2f7;
+  --bg-surface-2: #e4eaf2;
+  --bg-surface-3: #d7dfeb;
   --bg-inverse: #0a0a0b;
 
-  /* Hairlines – warm-tinted black (ciepły undertone zamiast neutralnego),
-     niewidoczny przy ~10% alpha ale spójny z paletą. */
-  --hairline: rgba(20, 16, 8, 0.10);
-  --hairline-soft: rgba(20, 16, 8, 0.06);
+  /* Hairlines – blue-gray tinted black, czytelne na jasnym canvasie. */
+  --hairline: rgba(15, 23, 42, 0.12);
+  --hairline-soft: rgba(15, 23, 42, 0.07);
 
-  /* Ink – warm ivory text scale */
-  --ink: #14110b;
-  --ink-muted: #5b564b;
-  --ink-faint: #8e887a;
+  /* Ink – neutralny tekst z lekkim blue-gray undertone */
+  --ink: #10131a;
+  --ink-muted: #586274;
+  --ink-faint: #5f6b7a;
 
-  /* Accent – mocniejszy sky (#0085ee). Kontrast ~3.0:1 vs ivory canvas:
-     OK dla AA Large (highlights, display, statystyki, eyebrow dot).
-     Dla linków w body podbity underline + opacity hover. */
-  --accent-blue: #0085ee;
-  --accent-blue-soft: rgba(0, 133, 238, 0.12);
+  /* Accent – ciemniejszy na jasnym tle, żeby małe linki i logo spełniały kontrast AA. */
+  --accent-blue: #0068cc;
+  --accent-blue-soft: rgba(0, 104, 204, 0.14);
 
-  /* Pills (landing redesign) – warm tints na ivory canvas */
+  /* Pills (landing redesign) – tints na chłodnym jasnym canvasie */
   --pill-translucent: rgba(20, 16, 8, 0.08);
   --pill-translucent-hover: rgba(20, 16, 8, 0.14);
   --pill-secondary-bg: var(--ink);
-  --pill-secondary-bg-hover: #2a2419;
+  --pill-secondary-bg-hover: #222938;
 
-  /* Card shadow – warm-tinted dla ivory */
+  --button-secondary-bg: rgba(15, 23, 42, 0.035);
+  --button-secondary-bg-hover: rgba(15, 23, 42, 0.075);
+  --button-secondary-border: rgba(15, 23, 42, 0.13);
+  --button-secondary-border-hover: rgba(15, 23, 42, 0.22);
+
+  /* Card shadow – lekkie ocieplenie w cieniu zostaje, żeby gradient cards nie były sterylne */
   --shadow-card: 0 20px 40px -22px rgba(40, 32, 16, 0.18);
 
   /* Semantic */
-  --success-green: #15803d;
+  --success-green: #14783a;
 
   /* Spotlight gradients zostają ciemne (signature) – brak override
      dla --gradient-violet/orange/magenta/coral/violet-linear/process-* */
 
   /* Elevation – warm-tinted shadows pasujące do ivory canvas */
-  --shadow-l2:
-    0 1px 2px rgba(60, 40, 10, 0.05),
-    0 8px 24px rgba(60, 40, 10, 0.08);
+  --shadow-l2: 0 1px 2px rgba(60, 40, 10, 0.05), 0 8px 24px rgba(60, 40, 10, 0.08);
   --shadow-l3: 0 0 0 2px rgba(0, 133, 238, 0.22);
 }
 
@@ -299,7 +303,7 @@ body {
 body {
   font-family: var(--font-sans);
   font-size: var(--fs-body);
-  line-height: 1.30;
+  line-height: 1.3;
   letter-spacing: var(--ls-body);
   -webkit-font-smoothing: antialiased;
   /* Inter Variable z OpenType variants – brand voice */
@@ -353,23 +357,23 @@ h4:not([class*='text-']) {
 .display-xxl {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: clamp(48px, 9.4vw, 124px);
-  line-height: 0.85;
-  letter-spacing: -0.05em;
+  font-size: clamp(48px, 8.4vw, 112px);
+  line-height: 0.9;
+  letter-spacing: -0.042em;
 }
 .display-xl {
   font-family: var(--font-display);
   font-weight: 500;
   font-size: clamp(40px, 6.5vw, 88px);
   line-height: 0.95;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.042em;
 }
 .display-lg {
   font-family: var(--font-display);
   font-weight: 500;
   font-size: clamp(32px, 4.6vw, 62px);
   line-height: 1;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.04em;
 }
 .display-md {
   font-family: var(--font-display);
@@ -377,6 +381,47 @@ h4:not([class*='text-']) {
   font-size: clamp(22px, 2.4vw, 32px);
   line-height: 1.13;
   letter-spacing: -0.031em;
+}
+
+@media (max-width: 639px) {
+  h1:not([class*='text-']) {
+    font-size: clamp(38px, 11.5vw, 48px);
+    line-height: 0.98;
+    letter-spacing: -0.042em;
+  }
+
+  h2:not([class*='text-']) {
+    font-size: clamp(34px, 10vw, 44px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .display-xxl {
+    font-size: clamp(46px, 14.5vw, 60px);
+    line-height: 0.92;
+    letter-spacing: -0.042em;
+  }
+
+  .display-xl {
+    font-size: clamp(38px, 11vw, 44px);
+    line-height: 0.98;
+    letter-spacing: -0.042em;
+  }
+
+  .display-lg {
+    font-size: clamp(34px, 10vw, 44px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
+
+  .display-xxl,
+  .display-xl,
+  .display-lg,
+  h1:not([class*='text-']),
+  h2:not([class*='text-']) {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
 }
 
 /* Inline accent (sky) dla highlightów w h1/h2 i kluczowych liczbach.
@@ -458,14 +503,14 @@ h4:not([class*='text-']) {
   justify-content: center;
   gap: var(--sp-xs);
   padding: 10px 15px;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--button-secondary-bg);
   color: var(--ink);
   font-family: var(--font-sans);
   font-size: var(--fs-button);
   font-weight: 500;
   letter-spacing: var(--ls-button);
   line-height: 1;
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  border: 1px solid var(--button-secondary-border);
   border-radius: var(--r-pill);
   cursor: pointer;
   transition:
@@ -477,8 +522,8 @@ h4:not([class*='text-']) {
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.10);
-  border-color: rgba(255, 255, 255, 0.18);
+  background: var(--button-secondary-bg-hover);
+  border-color: var(--button-secondary-border-hover);
   transform: scale(1.02);
 }
 
@@ -736,7 +781,9 @@ h4:not([class*='text-']) {
   padding-inline: var(--gutter);
 }
 @media (max-width: 810px) {
-  .container { padding-inline: 20px; }
+  .container {
+    padding-inline: 20px;
+  }
 }
 
 /* Section index – mono caption "S/01 · HERO" */
@@ -760,9 +807,15 @@ h4:not([class*='text-']) {
 }
 
 /* Helper colour modifiers */
-.muted { color: var(--ink-muted); }
-.faint { color: var(--ink-faint); }
-.tabular { font-variant-numeric: tabular-nums; }
+.muted {
+  color: var(--ink-muted);
+}
+.faint {
+  color: var(--ink-faint);
+}
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
 
 /* Editorial section header – left-aligned 2-col grid (5fr/4fr) */
 .section-head {
@@ -794,15 +847,21 @@ h4:not([class*='text-']) {
   justify-content: center;
   padding-top: 28px;
 }
-.section-head h2 { max-width: 14ch; }
-.section-head .subhead { max-width: 44ch; }
+.section-head h2 {
+  max-width: 14ch;
+}
+.section-head .subhead {
+  max-width: 44ch;
+}
 @media (max-width: 810px) {
   .section-head {
     grid-template-columns: 1fr;
     gap: 24px;
     margin-bottom: 40px;
   }
-  .section-head .head-right { padding-top: 0; }
+  .section-head .head-right {
+    padding-top: 0;
+  }
 }
 
 /* Process footer – shared "summary line" pod grid sekcjami */
@@ -840,8 +899,13 @@ h4:not([class*='text-']) {
     radial-gradient(circle at -10% -10%, rgba(255, 255, 255, 0.12) 0%, transparent 55%);
   pointer-events: none;
 }
-.on-gradient > * { position: relative; z-index: 1; }
-.on-gradient :where(h1, h2, h3, h4, p, li) { color: #fff; }
+.on-gradient > * {
+  position: relative;
+  z-index: 1;
+}
+.on-gradient :where(h1, h2, h3, h4, p, li) {
+  color: #fff;
+}
 .on-gradient .btn-primary {
   background: #fff;
   color: #14110b;
@@ -885,8 +949,12 @@ h4:not([class*='text-']) {
   background: var(--ink);
   border-radius: 2px;
 }
-.mock-bar-fill.dim { background: var(--ink-faint); }
-.mock-bar-fill.accent { background: var(--accent-blue); }
+.mock-bar-fill.dim {
+  background: var(--ink-faint);
+}
+.mock-bar-fill.accent {
+  background: var(--accent-blue);
+}
 
 .mock-pill {
   font-family: var(--font-sans);
@@ -899,24 +967,36 @@ h4:not([class*='text-']) {
   color: var(--ink-muted);
   text-transform: none;
 }
-.mock-pill.ok { color: #4ade80; background: rgba(34, 197, 94, 0.12); }
-.mock-pill.warn { color: #fbbf24; background: rgba(251, 191, 36, 0.12); }
-.mock-pill.bad { color: #f87171; background: rgba(248, 113, 113, 0.12); }
-.mock-pill.faint { color: var(--ink-faint); background: var(--bg-surface-2); }
+.mock-pill.ok {
+  color: #4ade80;
+  background: rgba(34, 197, 94, 0.12);
+}
+.mock-pill.warn {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.12);
+}
+.mock-pill.bad {
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.12);
+}
+.mock-pill.faint {
+  color: var(--ink-faint);
+  background: var(--bg-surface-2);
+}
 
 /* Light mode tweaks dla mock-pill .ok/.warn/.bad – na ivory canvas
    neonowe zielenie/żółcie/czerwienie się rozjeżdżają */
 :root[data-theme='light'] .mock-pill.ok {
   color: #15803d;
-  background: rgba(21, 128, 61, 0.10);
+  background: rgba(21, 128, 61, 0.1);
 }
 :root[data-theme='light'] .mock-pill.warn {
   color: #b45309;
-  background: rgba(180, 83, 9, 0.10);
+  background: rgba(180, 83, 9, 0.1);
 }
 :root[data-theme='light'] .mock-pill.bad {
   color: #b91c1c;
-  background: rgba(185, 28, 28, 0.10);
+  background: rgba(185, 28, 28, 0.1);
 }
 
 /* ============================================================
@@ -1201,24 +1281,13 @@ h4:not([class*='text-']) {
    białymi rgba lub wymagające explicit inwersji.
    ============================================================ */
 
-/* btn-secondary – białe rgba znika na białym tle */
-:root[data-theme="light"] .btn-secondary {
-  background: rgba(0, 0, 0, 0.04);
-  border-color: rgba(0, 0, 0, 0.10);
-}
-
-:root[data-theme="light"] .btn-secondary:hover {
-  background: rgba(0, 0, 0, 0.08);
-  border-color: rgba(0, 0, 0, 0.18);
-}
-
 /* btn-translucent – ten sam problem */
-:root[data-theme="light"] .btn-translucent:hover {
+:root[data-theme='light'] .btn-translucent:hover {
   background: rgba(0, 0, 0, 0.08);
 }
 
 /* Modal backdrop – ciemny scrim na białym tle */
-:root[data-theme="light"] .modal-backdrop::backdrop {
+:root[data-theme='light'] .modal-backdrop::backdrop {
   background: rgba(0, 0, 0, 0.5);
 }
 
@@ -1231,14 +1300,14 @@ h4:not([class*='text-']) {
 }
 
 .card-spotlight .btn-secondary {
-  background: rgba(255, 255, 255, 0.10);
-  border-color: rgba(255, 255, 255, 0.20);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
   color: #fff;
 }
 
 .card-spotlight .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(255, 255, 255, 0.30);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Eyebrow w spotlight – też force biały muted */

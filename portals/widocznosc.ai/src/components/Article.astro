@@ -4,12 +4,22 @@ const { title, subtitle, date, image, author, readTime, tags } = articleData;
 ---
 
 <div class="article-page">
-  <article class="fade-in article-shell">
-
+  <article class="article-shell">
     <!-- Back link -->
     <a href="/blog" class="article-back-link">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19 12H5M5 12L12 19M5 12L12 5"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"></path>
       </svg>
       Wróć do bazy wiedzy
     </a>
@@ -45,7 +55,10 @@ const { title, subtitle, date, image, author, readTime, tags } = articleData;
                 />
               ) : (
                 <div class="article-author-avatar article-author-avatar-initials">
-                  {author.name.split(' ').map((n: string) => n[0]).join('')}
+                  {author.name
+                    .split(' ')
+                    .map((n: string) => n[0])
+                    .join('')}
                 </div>
               )}
               <div>
@@ -55,15 +68,19 @@ const { title, subtitle, date, image, author, readTime, tags } = articleData;
             </div>
           )
         }
-        {author && <div class="article-byline-rule"></div>}
+        {author && <div class="article-byline-rule" />}
         <div class="article-meta">
           <span>{date}</span>
-          {readTime && (
-            <>
-              <span class="article-meta-dot" aria-hidden="true">·</span>
-              <span>{readTime} czytania</span>
-            </>
-          )}
+          {
+            readTime && (
+              <>
+                <span class="article-meta-dot" aria-hidden="true">
+                  ·
+                </span>
+                <span>{readTime} czytania</span>
+              </>
+            )
+          }
         </div>
       </div>
     </header>
@@ -75,32 +92,35 @@ const { title, subtitle, date, image, author, readTime, tags } = articleData;
 
     <!-- Body grid: content + sidebar -->
     <div class="article-body-grid">
-
       <section class="article-content">
         <slot />
       </section>
 
       <aside class="article-sidebar">
         <div class="article-sidebar-sticky">
-
-          {author && (
-            <div class="article-sidebar-card">
-              <div class="article-sidebar-label">Autor</div>
-              <div class="article-sidebar-author">
-                {author.avatar ? (
-                  <img src={author.avatar} alt={author.name} loading="lazy" />
-                ) : (
-                  <div class="article-sidebar-author-initials">
-                    {author.name.split(' ').map((n: string) => n[0]).join('')}
+          {
+            author && (
+              <div class="article-sidebar-card">
+                <div class="article-sidebar-label">Autor</div>
+                <div class="article-sidebar-author">
+                  {author.avatar ? (
+                    <img src={author.avatar} alt={author.name} loading="lazy" />
+                  ) : (
+                    <div class="article-sidebar-author-initials">
+                      {author.name
+                        .split(' ')
+                        .map((n: string) => n[0])
+                        .join('')}
+                    </div>
+                  )}
+                  <div>
+                    <div class="article-sidebar-author-name">{author.name}</div>
+                    {author.role && <div class="article-sidebar-author-role">{author.role}</div>}
                   </div>
-                )}
-                <div>
-                  <div class="article-sidebar-author-name">{author.name}</div>
-                  {author.role && <div class="article-sidebar-author-role">{author.role}</div>}
                 </div>
               </div>
-            </div>
-          )}
+            )
+          }
 
           <div class="article-sidebar-card">
             <div class="article-sidebar-label">Sprawdź swoją markę</div>
@@ -119,21 +139,39 @@ const { title, subtitle, date, image, author, readTime, tags } = articleData;
             <div class="article-sidebar-label">Udostępnij</div>
             <div class="article-sidebar-share">
               <a href="#" class="btn-icon-circular" aria-label="Udostępnij na X">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2H21.5l-7.5 8.564L22.5 22h-6.94l-5.43-7.108L3.86 22H.604l8.04-9.18L0 2h7.108l4.91 6.5L18.244 2zm-1.213 17.998h1.864L7.07 4H5.06l11.97 15.998z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"
+                  ><path
+                    d="M18.244 2H21.5l-7.5 8.564L22.5 22h-6.94l-5.43-7.108L3.86 22H.604l8.04-9.18L0 2h7.108l4.91 6.5L18.244 2zm-1.213 17.998h1.864L7.07 4H5.06l11.97 15.998z"
+                  ></path></svg
+                >
               </a>
               <a href="#" class="btn-icon-circular" aria-label="Udostępnij na LinkedIn">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14M8.5 18V10H6v8h2.5M7.25 8.875a1.45 1.45 0 1 0 0-2.9 1.45 1.45 0 0 0 0 2.9M18 18v-4.74c0-2.45-1.59-3.26-3.07-3.26-1.34 0-2.27.78-2.6 1.36V10H10v8h2.34v-4.5c0-1.21.79-1.81 1.6-1.81.78 0 1.56.39 1.56 1.81V18H18Z"/></svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"
+                  ><path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14M8.5 18V10H6v8h2.5M7.25 8.875a1.45 1.45 0 1 0 0-2.9 1.45 1.45 0 0 0 0 2.9M18 18v-4.74c0-2.45-1.59-3.26-3.07-3.26-1.34 0-2.27.78-2.6 1.36V10H10v8h2.34v-4.5c0-1.21.79-1.81 1.6-1.81.78 0 1.56.39 1.56 1.81V18H18Z"
+                  ></path></svg
+                >
               </a>
               <button class="btn-icon-circular" aria-label="Skopiuj link" id="copy-link-btn">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  ><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
+                  ></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
+                  ></path></svg
+                >
               </button>
             </div>
           </div>
-
         </div>
       </aside>
     </div>
-
   </article>
 </div>
 
@@ -229,12 +267,13 @@ const { title, subtitle, date, image, author, readTime, tags } = articleData;
   .article-title {
     font-family: var(--font-display);
     font-weight: 500;
-    font-size: clamp(2rem, 4vw + 0.5rem, 3rem);
+    font-size: clamp(2rem, 4vw + 0.5rem, 3.5rem);
     line-height: 1.05;
     letter-spacing: -0.04em;
     color: var(--ink);
     margin: 0 0 24px 0;
     text-wrap: balance;
+    overflow-wrap: anywhere;
   }
 
   .article-subtitle {
@@ -841,6 +880,91 @@ const { title, subtitle, date, image, author, readTime, tags } = articleData;
   .article-content h2 + p {
     font-size: 18px;
     color: var(--ink);
+  }
+
+  @media (max-width: 640px) {
+    .article-page {
+      padding: 88px 0 64px;
+    }
+
+    .article-shell {
+      padding: 0 20px;
+    }
+
+    .article-back-link {
+      margin-bottom: 24px;
+    }
+
+    :global(.article-breadcrumb) {
+      margin-bottom: 24px;
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .article-header {
+      margin-bottom: 32px;
+    }
+
+    .article-tags {
+      margin-bottom: 18px;
+    }
+
+    .article-title {
+      font-size: clamp(34px, 10.6vw, 44px);
+      line-height: 1;
+      letter-spacing: -0.043em;
+      margin-bottom: 18px;
+    }
+
+    .article-subtitle {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+
+    .article-hero {
+      margin-bottom: 40px;
+    }
+
+    .article-hero img {
+      border-radius: var(--r-lg);
+      aspect-ratio: 4 / 3;
+    }
+
+    .article-content {
+      max-width: 100%;
+      font-size: 16px;
+      line-height: 1.62;
+    }
+
+    .article-content p,
+    .article-content li {
+      font-size: 16px;
+      line-height: 1.62;
+    }
+
+    .article-content h2 {
+      margin-top: 2.75rem;
+      font-size: 1.55rem;
+      line-height: 1.12;
+    }
+
+    .article-content h3 {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+    }
+
+    .article-content aside.callout-fact,
+    .article-content aside.callout-expert {
+      grid-template-columns: 1fr;
+      padding: 18px;
+    }
+
+    .article-content table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
   }
 </style>
 
