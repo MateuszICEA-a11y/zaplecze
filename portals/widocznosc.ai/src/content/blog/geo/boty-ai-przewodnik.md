@@ -3,15 +3,17 @@ title: 'GPTBot, ClaudeBot, PerplexityBot – co naprawdę widzą boty AI i jak i
 subtitle: 'Techniczny przewodnik po botach indeksujących AI, robots.txt, llms.txt i schema.org dla wyszukiwarek generatywnych'
 description: 'Lista 13 botów AI, które obecnie indeksują internet. Co każdy z nich robi, jak skonfigurować robots.txt, czy llms.txt ma sens, dlaczego JavaScript-rendered content jest problemem dla LLM. Przewodnik dla developerów i SEO.'
 date: 2026-05-07
-image: ../../assets/images/blog-ai-bots.png
+image: ../../../assets/images/blog-ai-bots.png
 icon: '<rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18"/><circle cx="7" cy="14" r="1"/><circle cx="12" cy="14" r="1"/><circle cx="17" cy="14" r="1"/><path d="M9 4l3-2 3 2"/>'
 author:
   name: 'Michał Ziach'
   role: 'CTO · ICEA'
-  avatar: ../../assets/images/authors/michal-ziach.avif
+  avatar: ../../../assets/images/authors/michal-ziach.avif
 readTime: '13 min'
 tags: ['GPTBot', 'ClaudeBot', 'robots.txt', 'llms.txt', 'Technical SEO']
-category: 'narzedzia'
+pillar: 'geo'
+intent: 'HOWTO'
+level: 'L3'
 ---
 
 W 2026 roku internet jest indeksowany przez kilkanaście różnych botów AI, z których każdy ma własne zasady, własny user-agent i własne implikacje dla widoczności Twojej strony. **Decyzja, którego bota dopuszczać, którego blokować, a którego po prostu ignorować, ma bezpośrednie konsekwencje dla tego, czy Twoja firma pojawi się w odpowiedziach ChatGPT, Claude czy Perplexity.** Większość zespołów technicznych w ogóle nie wie, ile botów AI ma na swojej stronie – i to jest dziś krytyczna luka informacyjna.
@@ -41,7 +43,7 @@ Na rynku jest ponad 30 botów oznaczonych jako *„AI crawlers"*, ale 13 z nich 
 | `CCBot` | Common Crawl | dataset dla wszystkich LLM | krytyczny – większość modeli używa CC |
 | `Applebot-Extended` | Apple | Apple Intelligence (iOS 18+) | rosnący |
 
-![13 botów AI w 4 kategoriach – TRENING (GPTBot, ClaudeBot, Google-Extended), WYSZUKIWANIE (OAI-SearchBot, PerplexityBot, Claude-SearchBot), NA ŻĄDANIE (ChatGPT-User, Claude-Web, Perplexity-User), COMMON CRAWL (CCBot, Applebot-Extended, GoogleOther, Google-NotebookLM). Pełne pokrycie: allow all 13 w robots.txt](../../assets/images/infographic-ai-bots.png)
+![13 botów AI w 4 kategoriach – TRENING (GPTBot, ClaudeBot, Google-Extended), WYSZUKIWANIE (OAI-SearchBot, PerplexityBot, Claude-SearchBot), NA ŻĄDANIE (ChatGPT-User, Claude-Web, Perplexity-User), COMMON CRAWL (CCBot, Applebot-Extended, GoogleOther, Google-NotebookLM). Pełne pokrycie: allow all 13 w robots.txt](../../../assets/images/infographic-ai-bots.png)
 
 > **Częsty błąd:** blokowanie tylko niektórych botów OpenAI lub Anthropic. Jeśli blokujesz `GPTBot`, ale dopuszczasz `OAI-SearchBot`, sygnał jest mieszany – Twoja strona nie trafi do treningu, ale może być cytowana real-time. To może być świadoma decyzja, ale częściej wynika z niewiedzy.
 
@@ -129,8 +131,8 @@ Przykład dla agencji SEO:
 
 ## Wiedza
 
-- [Co to jest GEO](/blog/co-to-jest-geo): definicja, różnice względem SEO
-- [Query fan-out w Google AI Mode](/blog/query-fan-out): jak działa pobieranie danych w AI Mode
+- [Co to jest GEO](/geo/czym-jest-geo): definicja, różnice względem SEO
+- [Query fan-out w Google AI Mode](/geo/query-fan-out): jak działa pobieranie danych w AI Mode
 
 ## Kontakt
 

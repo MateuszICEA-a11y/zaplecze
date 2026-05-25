@@ -5,7 +5,7 @@ import Footer from '../../components/Footer.astro';
 import ScrollUpButton from '../../components/ScrollUpButton.astro';
 import CTABand from '../../components/CTABand.astro';
 import { getCollection } from 'astro:content';
-import { CATEGORY_LABELS } from '../../content.config';
+import { PILLAR_LABELS } from '../../content.config';
 
 export const getStaticPaths = async () => {
   const authors = await getCollection('authors');
@@ -193,7 +193,7 @@ const initials = (name: string) =>
           <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {authorPosts.map((post) => (
               <a
-                href={`/blog/${post.id}`}
+                href={`/${post.id}`}
                 class="group flex h-full flex-col overflow-hidden rounded-[20px] transition"
                 style="background: var(--bg-surface-1);"
                 data-card-template
@@ -213,7 +213,7 @@ const initials = (name: string) =>
                 </div>
                 <div class="flex grow flex-col px-6 pt-2 pb-6">
                   <div class="mb-3 flex items-center gap-3">
-                    <span class="badge-neutral">{CATEGORY_LABELS[post.data.category]}</span>
+                    <span class="badge-neutral">{PILLAR_LABELS[post.data.pillar]}</span>
                     <span class="text-ink-muted text-sm">{formatDate(post.data.date)}</span>
                   </div>
                   <h3 class="text-ink mb-2 text-lg font-medium" style="font-family: var(--font-display); letter-spacing: -0.4px;">

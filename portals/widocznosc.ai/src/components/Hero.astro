@@ -1,43 +1,38 @@
 ---
-const aiEngines = [
-  { name: 'ChatGPT', color: '#10a37f' },
-  { name: 'Claude', color: '#d97757' },
-  { name: 'Gemini', color: '#4285f4' },
-  { name: 'Perplexity', color: '#20b8cd' },
-  { name: 'Copilot', color: '#0078d4' },
-];
+/**
+ * Hero – landing redesign 2026-05-09 (handoff).
+ * Layout: 1.5fr / 1fr grid, gap 48px. Lewy: section-index + eyebrow,
+ * display-xxl headline (max 12ch), subhead (max 480px), 2 CTAs.
+ * Prawy: violet atmosphere card – 3-stop radial + ::before inner-light overlay.
+ */
 ---
 
 <section class="hero-section" id="home">
-  <div class="hero-container">
-
-    <!-- Hero grid – 2-col: copy 7 / spotlight 5 -->
+  <div class="container">
     <div class="hero-grid">
 
-      <!-- LEFT: copy stack – display-xxl headline + body-lg subhead + 2 pill CTAs -->
-      <div class="hero-copy">
+      <!-- LEFT: copy stack -->
+      <div class="hero-left">
 
-        <div class="hero-fade-in" style="--delay: 0s">
+        <div class="hero-meta">
+          <span class="section-index">S/01 · HERO</span>
           <span class="eyebrow">Generative Engine Optimization</span>
         </div>
 
-        <div class="hero-fade-in" style="--delay: 0.05s">
-          <h1 class="hero-headline">
-            Sprawdź, co ChatGPT, Claude, Gemini i&nbsp;Perplexity mówią o&nbsp;<span class="accent">Twojej marce</span>.
-          </h1>
-        </div>
+        <h1 class="display-xxl hero-headline">
+          Sprawdź, co ChatGPT, Claude, Gemini i&nbsp;Perplexity mówią o&nbsp;<span class="accent">Twojej marce</span>.
+        </h1>
 
-        <div class="hero-fade-in" style="--delay: 0.1s">
-          <p class="hero-subhead">
-            Sprawdź już teraz, czy AI poleca Twoją markę, czy boty AI mają dostęp
-            do&nbsp;Twojej strony i&nbsp;jak zoptymalizować swój content, aby był cytowany
-            przez wyszukiwarki AI.
-          </p>
-        </div>
+        <p class="subhead hero-sub">
+          Sprawdź już teraz, czy AI poleca Twoją markę, czy boty AI mają dostęp
+          do&nbsp;Twojej strony i&nbsp;jak zoptymalizować swój content, aby był cytowany
+          przez wyszukiwarki AI.
+        </p>
 
-        <div class="hero-fade-in hero-ctas" style="--delay: 0.15s">
+        <div class="hero-cta">
           <a class="btn-primary" href="#audyty" aria-label="Uruchom darmowe testy widoczności AI">
             Uruchom darmowe testy
+            <span aria-hidden="true">→</span>
           </a>
           <a class="btn-secondary" href="/kontakt?type=full-report" aria-label="Zamów pełny raport GEO">
             Zamów pełny raport
@@ -46,299 +41,144 @@ const aiEngines = [
 
       </div>
 
-      <!-- RIGHT: violet gradient spotlight – edukacyjny GEO content (czym jest, dlaczego warto) -->
-      <div class="hero-fade-in hero-spotlight-wrap" style="--delay: 0.2s" aria-hidden="false">
-        <article class="card-spotlight card-spotlight-linear">
-          <span class="hero-spotlight-eyebrow">Ewolucja tradycyjnego SEO</span>
-          <p class="hero-spotlight-quote">
-            AI zmienia wyszukiwarki w&nbsp;<em>silniki odpowiedzi</em>, które eliminują
-            konieczność przeklikiwania się przez wyniki. Dziś bycie liderem w&nbsp;Google
-            to&nbsp;za mało – marki pominięte przez modele takie jak ChatGPT, Claude czy
-            Perplexity po&nbsp;prostu <em>przestają istnieć</em> w&nbsp;procesie decyzyjnym
-            współczesnego konsumenta.
-          </p>
-          <ul class="hero-spotlight-points">
-            <li>Cytowania zamiast pozycji w&nbsp;rankingu</li>
-            <li>Rozszerzamy klasyczne SEO o&nbsp;budowanie obecności w&nbsp;AI</li>
-          </ul>
-        </article>
-      </div>
+      <!-- RIGHT: violet atmosphere card -->
+      <article class="hero-card on-gradient">
+        <span class="hero-card-eyebrow">Ewolucja tradycyjnego SEO</span>
+        <p class="hero-card-quote">
+          AI zmienia wyszukiwarki w&nbsp;<em>silniki odpowiedzi</em>, które eliminują
+          konieczność przeklikiwania się przez wyniki. Marki pominięte przez ChatGPT,
+          Claude czy Perplexity po&nbsp;prostu <em>przestają istnieć</em> w&nbsp;decyzji
+          konsumenta.
+        </p>
+        <div class="hero-card-meta">
+          <span>Cytowania zamiast pozycji</span>
+          <span>SEO + GEO</span>
+        </div>
+      </article>
 
     </div>
-
-    <!-- Logo wall pod heroem – tekst + brand kropka, lekki pattern -->
-    <div class="hero-fade-in hero-logowall" style="--delay: 0.25s">
-      <p class="eyebrow hero-logowall-label">
-        Audytujemy widoczność w&nbsp;silnikach AI
-      </p>
-      <div class="hero-logowall-row">
-        {
-          aiEngines.map((engine) => (
-            <span class="hero-logowall-engine">
-              <span class="hero-logowall-dot" style={`background: ${engine.color};`} aria-hidden="true" />
-              {engine.name}
-            </span>
-          ))
-        }
-      </div>
-    </div>
-
   </div>
 </section>
 
 <style>
   .hero-section {
     position: relative;
-    width: 100%;
     background: var(--bg-canvas);
-    padding-bottom: 96px;
-  }
-
-  .hero-container {
-    width: 100%;
-    max-width: 1280px;
-    margin-inline: auto;
-    padding: 96px 30px 0 30px;
-  }
-
-  @media (min-width: 1024px) {
-    .hero-container {
-      padding: 128px 40px 0 40px;
-    }
+    padding: 80px 0 96px;
   }
 
   .hero-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 40px;
-    align-items: center;
+    gap: 48px;
+    align-items: stretch;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 980px) {
     .hero-grid {
-      grid-template-columns: 7fr 5fr;
-      gap: 60px;
+      grid-template-columns: 1.5fr 1fr;
     }
   }
 
-  .hero-copy {
+  .hero-left {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 32px;
   }
 
-  /* Display headline – Mona Sans, sygnatura Framer.
-     Hierarchia: h1 hero >> h2 sekcji (display-lg max 62px).
-     Mobile/tablet: clamp do 64px. Desktop 1280+: 80px. */
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  /* Display headline – clamp + relative tracking (handoff) */
   .hero-headline {
-    font-family: var(--font-display);
-    font-weight: 500;
-    color: var(--ink);
-    margin: 0;
-
-    font-size: clamp(2rem, 5.5vw + 0.5rem, 4rem);
-    line-height: 1;
-    letter-spacing: -0.05em;
+    max-width: 12ch;
     text-wrap: balance;
-  }
-
-  @media (min-width: 1280px) {
-    .hero-headline {
-      font-size: 5rem;
-      letter-spacing: -0.05em;
-    }
-  }
-
-  /* Subhead – kluczowy tekst body, biały. Stitch iteration: 18px → 20px na lg+ */
-  .hero-subhead {
-    font-family: var(--font-sans);
-    font-size: clamp(1rem, 1.4vw, 1.25rem);
-    font-weight: 400;
-    line-height: 1.55;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-    max-width: 580px;
     margin: 0;
   }
 
-  /* CTAs left-aligned, primary white pill + secondary charcoal pill */
-  .hero-ctas {
+  /* Inline accent (sky) na "Twojej marce" – z .accent (Theme.css) */
+
+  .hero-sub {
+    max-width: 480px;
+    margin: 0;
+    /* na hero kluczowy tekst – ink, nie ink-muted (zgodnie z feedbackiem) */
+    color: var(--ink);
+  }
+
+  .hero-cta {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
+    margin-top: 4px;
     align-items: center;
   }
 
-  /* Spotlight card right column – Framer rygor: większy padding (luksus),
-     mniejszy quote font (nie konkuruje z h1 lewym), Inter z OpenType. */
-  .hero-spotlight-wrap {
-    width: 100%;
-    max-width: 520px;
-    margin-inline: auto;
-  }
+  /* ============================================================
+     Hero atmosphere card – violet 3-stop radial + ::before overlay
+     ============================================================ */
 
-  .card-spotlight {
-    aspect-ratio: 4 / 5;
+  .hero-card {
+    background: var(--grad-violet);
+    border-radius: var(--r-xxl);
+    padding: 36px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 440px;
-    padding: 40px 36px;
+    min-height: 380px;
+    box-shadow: 0 30px 80px -28px rgba(110, 40, 240, 0.55);
   }
 
-  @media (min-width: 768px) {
-    .card-spotlight {
-      padding: 56px 48px;
-    }
-  }
-
-  .hero-spotlight-eyebrow {
+  .hero-card-eyebrow {
     font-family: var(--font-sans);
-    font-size: var(--fs-caption);
+    font-size: 11px;
     font-weight: 500;
-    letter-spacing: var(--ls-caption);
-    color: rgba(255, 255, 255, 0.7);
-  }
-
-  /* Quote: Inter (nie Mona Sans) – nie konkuruje typograficznie z h1 poster.
-     Subhead size 22px (do 24 lg+), line-height 1.30 plakatowy ciasny.
-     OpenType cv01/cv05/cv09/cv11/ss03/ss07/dlig dla cyfr i małych liter. */
-  .hero-spotlight-quote {
-    font-family: var(--font-sans);
-    font-weight: 400;
-    font-size: clamp(1.125rem, 1.7vw, 1.5rem);
-    line-height: 1.30;
-    letter-spacing: -0.01em;
-    color: var(--ink);
-    margin: 32px 0 0 0;
-    text-wrap: balance;
-    font-feature-settings:
-      'cv01' 1,
-      'cv05' 1,
-      'cv09' 1,
-      'cv11' 1,
-      'ss03' 1,
-      'ss07' 1,
-      'dlig' 1;
-  }
-
-  /* Em w quote: kluczowe frazy w italic (Inter Variable italic) */
-  .hero-spotlight-quote em {
-    font-style: italic;
-    font-weight: 500;
-    color: var(--ink);
-  }
-
-  /* Bottom 2 punkty kluczowe – zamiast cena/dni dostawy */
-  .hero-spotlight-points {
-    list-style: none;
-    padding: 0;
-    margin: 16px 0 0 0;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    border-top: 1px solid rgba(255, 255, 255, 0.18);
-    padding-top: 16px;
-  }
-
-  .hero-spotlight-points li {
-    position: relative;
-    padding-left: 16px;
-    font-family: var(--font-sans);
-    font-size: var(--fs-body-sm);
-    line-height: 1.30;
-    letter-spacing: var(--ls-body-sm);
-    color: rgba(255, 255, 255, 0.85);
-  }
-
-  .hero-spotlight-points li::before {
-    content: '·';
-    position: absolute;
-    left: 4px;
-    color: var(--ink);
-  }
-
-  /* Logo wall */
-  .hero-logowall {
-    margin-top: 80px;
-    padding-top: 40px;
-    border-top: 1px solid var(--hairline-soft);
-  }
-
-  .hero-logowall-label {
-    text-align: center;
-    margin-bottom: 24px;
-  }
-
-  /* Logo wall: lekki pattern – nazwa silnika + brand-color kropka.
-     Lżejszy niż białe tile'y z PNG, lepsza kompresja informacji,
-     łatwiej rozszerzyć o kolejne modele. */
-  .hero-logowall-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 20px 36px;
-  }
-
-  @media (min-width: 1024px) {
-    .hero-logowall-row {
-      gap: 20px 56px;
-    }
-  }
-
-  .hero-logowall-engine {
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.75);
+    text-transform: uppercase;
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 1.125rem;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-    line-height: 1;
-    transition: opacity 0.15s ease;
+    gap: 8px;
   }
 
-  @media (min-width: 1024px) {
-    .hero-logowall-engine {
-      font-size: 1.25rem;
-    }
-  }
-
-  .hero-logowall-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: var(--r-pill);
+  .hero-card-eyebrow::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
     flex-shrink: 0;
   }
 
-  @media (min-width: 1024px) {
-    .hero-logowall-engine {
-      font-size: 1.75rem;
-    }
+  .hero-card-quote {
+    font-family: var(--font-display);
+    font-size: clamp(22px, 2vw, 30px);
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    color: #fff;
+    font-weight: 500;
+    margin: 0;
+    /* OpenType variants Inter – tu używamy display, więc pomijamy */
+    text-wrap: balance;
   }
 
-  /* Fade-in animation */
-  .hero-fade-in {
-    opacity: 0;
-    transform: translateY(10px);
-    animation: heroFadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    animation-delay: var(--delay);
+  .hero-card-quote em {
+    font-style: italic;
+    font-weight: 500;
+    color: #fff;
   }
 
-  @keyframes heroFadeIn {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .hero-fade-in {
-      animation: none;
-      opacity: 1;
-      transform: none;
-    }
+  .hero-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
   }
 </style>

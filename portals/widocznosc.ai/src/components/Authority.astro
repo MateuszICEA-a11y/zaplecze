@@ -1,105 +1,113 @@
 ---
 /**
- * Authority – 4 data-points z research'u jako proof że GEO ≠ marketing buzz.
- * Framer DNA: 4 stat-cards charcoal, accent-blue dla source links.
+ * Authority – landing redesign 2026-05-09 (handoff).
+ * Section-head editorial 5fr/4fr + 4-col grid 4 research cards.
+ * Per card: display-56 number + sup unit (%, ×), label + italic sublabel,
+ * source paragraph, mono link bottom (top-bordered hairline).
  */
 
 interface Stat {
-  value: string;
-  unit?: string;
+  num: string;
+  sup: string;
+  label: string;
+  sublabel: string;
   source: string;
-  sample: string;
-  desc: string;
-  href?: string;
+  link: string;
+  href: string;
 }
 
 const stats: Stat[] = [
   {
-    value: '+40',
-    unit: '%',
-    source: 'Princeton · KDD 2024',
-    sample: 'Aggarwal et al., GEO Paper',
-    desc: 'wzrostu widoczności w&nbsp;odpowiedziach silników AI przy zastosowaniu metodyki GEO. Pierwsze peer-reviewed badanie z&nbsp;ACM SIGKDD definiujące samą dyscyplinę – nie marketing, tylko akademicki framework.',
+    num: '+40',
+    sup: '%',
+    label: 'Princeton · KDD 2024',
+    sublabel: 'Aggarwal et al., GEO Paper',
+    source:
+      'Wzrost widoczności w odpowiedziach silników AI przy zastosowaniu metodyki GEO. Pierwsze peer-reviewed badanie z ACM SIGKDD definiujące samą dyscyplinę – nie marketing, tylko akademicki framework.',
+    link: 'arxiv.org/abs/2311.09735',
     href: 'https://arxiv.org/abs/2311.09735',
   },
   {
-    value: '8',
-    unit: '×',
-    source: 'Google · patent 2024',
-    sample: 'query fan-out, passage retrieval',
-    desc: 'tyle różnych podzapytań Google generuje z&nbsp;jednego pytania użytkownika. Indeksowanie odbywa się na&nbsp;poziomie pojedynczych fragmentów, nie całych stron – optymalizacja na&nbsp;poziomie strony już nie wystarcza.',
+    num: '8',
+    sup: '×',
+    label: 'Google · patent 2024',
+    sublabel: 'query fan-out, passage retrieval',
+    source:
+      'Tyle różnych podzapytań Google generuje z jednego pytania użytkownika. Indeksowanie odbywa się na poziomie pojedynczych fragmentów, nie całych stron – optymalizacja na poziomie strony już nie wystarcza.',
+    link: 'searchengineland.com/how-ai-mode-ai-overviews-work',
     href: 'https://searchengineland.com/how-ai-mode-ai-overviews-work-patents-456346',
   },
   {
-    value: '+357',
-    unit: '%',
-    source: 'TechCrunch · Authoritas',
-    sample: '13 miesięcy danych ruchu AI',
-    desc: 'wzrost ruchu z&nbsp;silników AI rok do&nbsp;roku dla najpopularniejszych stron. Marki aktywnie optymalizujące pod cytowania AI notują nawet +800% wzrostu ruchu z&nbsp;LLM.',
+    num: '+357',
+    sup: '%',
+    label: 'TechCrunch · Authoritas',
+    sublabel: '13 miesięcy danych ruchu AI',
+    source:
+      'Wzrost ruchu z silników AI rok do roku dla najpopularniejszych stron. Marki aktywnie optymalizujące pod cytowania AI notują nawet +800% wzrostu ruchu z LLM.',
+    link: 'searchengineland.com/llm-traffic-growth-470115',
     href: 'https://searchengineland.com/what-13-months-of-data-reveals-about-llm-traffic-growth-and-conversions-470115',
   },
   {
-    value: '84',
-    unit: '%',
-    source: 'Previsible · 2025',
-    sample: '1,96 mln sesji LLM',
-    desc: 'rekomendacji w&nbsp;silnikach AI pochodzi z&nbsp;ChatGPT (rośnie 3,26× YoY). Copilot rośnie 25,2×, Claude 12,8× – każdy silnik wymaga innej taktyki cytowania, jednoznaczna optymalizacja "pod ChatGPT" nie wystarcza.',
+    num: '84',
+    sup: '%',
+    label: 'Previsible · 2025',
+    sublabel: '1,96 mln sesji LLM',
+    source:
+      'Rekomendacji w silnikach AI pochodzi z ChatGPT (rośnie 3,26× YoY). Copilot rośnie 25,2×, Claude 12,8× – każdy silnik wymaga innej taktyki cytowania.',
+    link: 'previsible.io/seo-strategy/ai-seo-study-2025',
     href: 'https://previsible.io/seo-strategy/ai-seo-study-2025/',
   },
 ];
 ---
 
 <section class="authority-section" aria-labelledby="authority-title">
-  <div class="authority-container">
+  <div class="container">
 
-    <header class="authority-header">
-      <span class="eyebrow authority-eyebrow">Źródła i badania</span>
-      <h2 id="authority-title" class="display-lg authority-title">
-        Nie wymyślamy GEO<br />&ndash; opieramy się na&nbsp;badaniach
-      </h2>
-      <p class="authority-lead">
-        Każda rekomendacja w&nbsp;naszym audycie ma źródło – akademickie badania, patenty Google,
-        dane rynkowe albo nasze własne testy. Zero marketingowego bełkotu.
-      </p>
+    <header class="section-head">
+      <div class="head-left">
+        <div class="head-meta">
+          <span class="section-index">S/05 · Źródła i badania</span>
+          <span class="eyebrow">Źródła i&nbsp;badania</span>
+        </div>
+        <h2 id="authority-title" class="display-xl">
+          Nie wymyślamy GEO &ndash; <span class="accent">opieramy się na&nbsp;badaniach</span>
+        </h2>
+      </div>
+      <div class="head-right">
+        <p class="subhead">
+          Każda rekomendacja w&nbsp;naszym audycie ma źródło &ndash; akademickie badania, patenty Google,
+          dane rynkowe albo nasze własne testy. Zero marketingowego bełkotu.
+        </p>
+      </div>
     </header>
 
-    <div class="authority-grid">
+    <div class="research-grid">
       {
         stats.map((s) => (
-          <article class="authority-card">
-            <div class="authority-card-num">
-              <span class="authority-card-value">{s.value}</span>
-              {s.unit && <span class="authority-card-unit">{s.unit}</span>}
+          <article class="research-card">
+            <div class="research-num">
+              {s.num}<sup>{s.sup}</sup>
             </div>
-
-            <div class="authority-card-source">
-              <div class="authority-card-source-name">{s.source}</div>
-              <div class="authority-card-source-sample">{s.sample}</div>
-            </div>
-
-            <p class="authority-card-desc">
-              <Fragment set:html={s.desc} />
-            </p>
-
-            {s.href && (
-              <a
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="authority-card-link"
-                aria-label={`Zobacz źródło: ${s.source}`}
-              >
-                Zobacz źródło <span aria-hidden="true">↗</span>
-              </a>
-            )}
+            <div class="research-label">{s.label}</div>
+            <div class="research-sublabel">{s.sublabel}</div>
+            <p class="research-source">{s.source}</p>
+            <a
+              href={s.href}
+              class="research-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Źródło: ${s.label}`}
+            >
+              → {s.link}
+            </a>
           </article>
         ))
       }
     </div>
 
-    <p class="authority-footer">
+    <p class="process-footer">
       Plus 15+ lat doświadczenia ICEA w&nbsp;klasycznym SEO &ndash; te same fundamenty
-      (autorytet, semantyka, struktura) działają w&nbsp;AI inaczej, ale rygor pracy zostaje ten&nbsp;sam.
+      (autorytet, semantyka, struktura) działają w&nbsp;AI inaczej, ale rygor pracy zostaje ten sam.
     </p>
 
   </div>
@@ -107,164 +115,100 @@ const stats: Stat[] = [
 
 <style>
   .authority-section {
-    background: var(--bg-canvas);
     padding: 96px 0;
+    background: var(--bg-canvas);
   }
 
-  .authority-container {
-    width: 100%;
-    max-width: 1280px;
-    margin-inline: auto;
-    padding: 0 30px;
+  @media (min-width: 980px) {
+    .authority-section { padding: 120px 0; }
   }
 
-  .authority-header {
-    max-width: 720px;
-    margin: 0 auto 64px auto;
-    text-align: center;
-  }
-
-  .authority-eyebrow {
-    margin-bottom: 16px;
-  }
-
-  .authority-title {
-    color: var(--ink);
-    margin: 0 0 16px 0;
-    text-wrap: balance;
-  }
-
-  .authority-lead {
-    font-family: var(--font-sans);
-    font-size: var(--fs-body-lg);
-    line-height: 1.45;
-    letter-spacing: var(--ls-body-lg);
-    color: var(--ink);
-    margin: 0;
-  }
-
-  .authority-grid {
+  .research-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 16px;
   }
 
   @media (min-width: 640px) {
-    .authority-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+    .research-grid { grid-template-columns: repeat(2, 1fr); }
   }
 
-  @media (min-width: 1024px) {
-    .authority-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
+  @media (min-width: 980px) {
+    .research-grid { grid-template-columns: repeat(4, 1fr); }
   }
 
-  .authority-card {
+  .research-card {
     display: flex;
     flex-direction: column;
+    gap: 8px;
     background: var(--bg-surface-1);
+    border: 1px solid var(--hairline-soft);
     border-radius: var(--r-xl);
     padding: 24px;
-    transition: background 0.2s ease;
+    min-height: 220px;
+    transition: border-color 0.2s ease, background 0.2s ease;
   }
 
-  .authority-card:hover {
-    background: var(--bg-surface-2);
-  }
+  .research-card:hover { border-color: var(--hairline); }
 
-  .authority-card-num {
-    display: flex;
-    align-items: baseline;
-    gap: 4px;
-    margin-bottom: 16px;
-  }
-
-  .authority-card-value {
+  .research-num {
     font-family: var(--font-display);
+    font-size: 56px;
     font-weight: 500;
-    font-size: var(--fs-display-md);
-    line-height: 1;
-    letter-spacing: var(--ls-display-md);
+    letter-spacing: -0.045em;
+    line-height: 0.95;
     color: var(--ink);
   }
 
-  @media (min-width: 1024px) {
-    .authority-card-value {
-      font-size: var(--fs-display-lg);
-      letter-spacing: var(--ls-display-lg);
-    }
-  }
-
-  .authority-card-unit {
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: var(--fs-headline);
+  .research-num sup {
+    font-size: 22px;
+    vertical-align: super;
     color: var(--ink-muted);
-    letter-spacing: -0.02em;
-  }
-
-  .authority-card-source {
-    margin-bottom: 16px;
-    padding-left: 12px;
-    border-left: 2px solid var(--accent-blue);
-  }
-
-  .authority-card-source-name {
-    font-family: var(--font-sans);
-    font-size: var(--fs-caption);
+    margin-left: 4px;
     font-weight: 500;
-    letter-spacing: var(--ls-caption);
-    color: var(--ink);
   }
 
-  .authority-card-source-sample {
+  .research-label {
     font-family: var(--font-sans);
-    font-size: var(--fs-micro);
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    margin-top: 4px;
+  }
+
+  .research-sublabel {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    color: var(--ink-muted);
+    letter-spacing: -0.11px;
+    font-style: italic;
+  }
+
+  .research-source {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: var(--ink-muted);
     letter-spacing: -0.12px;
-    color: var(--ink-muted);
-    margin-top: 2px;
-  }
-
-  .authority-card-desc {
-    font-family: var(--font-sans);
-    font-size: var(--fs-body-sm);
     line-height: 1.5;
-    letter-spacing: var(--ls-body-sm);
-    color: var(--ink-muted);
     margin: 0;
     flex-grow: 1;
   }
 
-  .authority-card-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    margin-top: 20px;
-    font-family: var(--font-sans);
-    font-size: var(--fs-caption);
-    font-weight: 500;
-    letter-spacing: var(--ls-caption);
-    color: var(--accent-blue);
-    text-decoration: none;
-    transition: opacity 0.15s ease;
-  }
-
-  .authority-card-link:hover {
-    opacity: 0.85;
-  }
-
-  .authority-footer {
-    max-width: 640px;
-    margin: 56px auto 0 auto;
-    padding-top: 32px;
+  .research-link {
+    display: inline-block;
+    font-family: ui-monospace, 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-faint);
+    margin-top: 8px;
+    letter-spacing: 0.02em;
+    word-break: break-all;
     border-top: 1px solid var(--hairline-soft);
-    text-align: center;
-    font-family: var(--font-sans);
-    font-size: var(--fs-body);
-    line-height: 1.5;
-    letter-spacing: var(--ls-body);
-    color: var(--ink-muted);
+    padding-top: 10px;
+    text-decoration: none;
+    transition: color 0.15s ease;
   }
+
+  .research-link:hover { color: var(--accent-blue); }
 </style>

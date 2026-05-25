@@ -1,90 +1,186 @@
 ---
-interface Props {
-  eyebrow?: string;
-  title?: string;
-  subtitle?: string;
-  primaryHref?: string;
-  primaryLabel?: string;
-  ghostHref?: string;
-  ghostLabel?: string;
-}
-
-const {
-  eyebrow = 'Następny krok',
-  title = 'Sprawdź, jak Twoja marka radzi sobie w <span class="ctaband-title-accent">AI search</span>',
-  subtitle = 'Bezpłatna konsultacja 30 minut. Bez sprzedaży, bez zobowiązań – pokazujemy gdzie marka jest cytowana, gdzie traci do konkurencji i co realnie zmienić.',
-  primaryHref = '/kontakt',
-  primaryLabel = 'Zamów audyt AI',
-  ghostHref = '/kontakt?type=konsultacja',
-  ghostLabel = 'Bezpłatna konsultacja',
-} = Astro.props;
+/**
+ * CTABand / Final CTA – landing redesign 2026-05-09 (handoff).
+ * Full-width surface-1 card, radius xxl 30, padding 80x64.
+ * Decorative violet glow orb top-right (480x480, blur 80px, opacity 0.35).
+ * 2-col grid 1.5fr/1fr: lewy CTA + meta row, prawy testimonial-style quote.
+ */
 ---
 
-<section class="ctaband-section">
-  <div class="ctaband-container">
-    <span class="eyebrow ctaband-eyebrow">{eyebrow}</span>
-    <h2 class="display-xl ctaband-title" set:html={title} />
-    <p class="ctaband-lead">{subtitle}</p>
-    <div class="ctaband-actions">
-      <a class="btn-primary" href={primaryHref} aria-label={primaryLabel}>
-        {primaryLabel}
-      </a>
-      <a class="btn-secondary" href={ghostHref} aria-label={ghostLabel}>
-        {ghostLabel}
-      </a>
+<section class="final-cta-section" id="cta" aria-labelledby="final-cta-title">
+  <div class="container">
+    <div class="final-cta-card">
+
+      <div class="final-cta-left">
+        <span class="eyebrow">Następny krok</span>
+        <h2 id="final-cta-title" class="display-xl">
+          Sprawdź, jak Twoja marka radzi sobie w&nbsp;<span class="accent">AI search</span>.
+        </h2>
+        <p class="subhead final-cta-sub">
+          Bezpłatna konsultacja 30 minut. Bez sprzedaży, bez zobowiązań &ndash;
+          pokazujemy gdzie marka jest cytowana, gdzie traci do&nbsp;konkurencji
+          i&nbsp;co realnie zmienić.
+        </p>
+        <div class="final-cta-actions">
+          <a class="btn-primary" href="/kontakt" aria-label="Zamów audyt AI">
+            Zamów audyt AI <span aria-hidden="true">→</span>
+          </a>
+          <a class="btn-secondary" href="/kontakt?type=konsultacja" aria-label="Bezpłatna konsultacja">
+            Bezpłatna konsultacja
+          </a>
+        </div>
+        <p class="final-cta-meta">
+          <span>30 minut</span>
+          <span>Bez zobowiązań</span>
+          <span>Konkretny plan</span>
+        </p>
+      </div>
+
+      <aside class="final-cta-right">
+        <span class="final-cta-label">Co dostajesz na rozmowie</span>
+        <p class="final-cta-quote">
+          „Pokazujemy, gdzie Twoja marka jest cytowana, gdzie traci
+          do&nbsp;konkurencji i&nbsp;co konkretnie zmienić w&nbsp;pierwszej kolejności."
+        </p>
+        <span class="final-cta-author">&ndash; zespół widocznosc.ai</span>
+      </aside>
+
     </div>
   </div>
 </section>
 
 <style>
-  .ctaband-section {
-    background: var(--bg-canvas);
+  .final-cta-section {
     padding: 96px 0;
+    background: var(--bg-canvas);
     border-top: 1px solid var(--hairline-soft);
   }
 
-  .ctaband-container {
-    width: 100%;
-    max-width: 880px;
-    margin-inline: auto;
-    padding: 0 30px;
-    text-align: center;
+  @media (min-width: 980px) {
+    .final-cta-section { padding: 120px 0; }
   }
 
-  .ctaband-eyebrow {
-    margin-bottom: 16px;
+  .final-cta-card {
+    background: var(--bg-surface-1);
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-xxl);
+    padding: 48px 32px;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: end;
+    gap: 48px;
+    position: relative;
+    overflow: hidden;
   }
 
-  .ctaband-title :global(.ctaband-title-accent) {
-    color: var(--accent-blue);
+  @media (min-width: 980px) {
+    .final-cta-card {
+      grid-template-columns: 1.5fr 1fr;
+      padding: 80px 64px;
+    }
   }
 
-  .ctaband-title {
+  /* Decorative violet glow orb (top-right) */
+  .final-cta-card::before {
+    content: '';
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    right: -120px;
+    top: -120px;
+    background: var(--grad-violet);
+    filter: blur(80px);
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  .final-cta-card > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Light mode – violet orb mocniej osłabiony żeby nie krzyczał na ivory */
+  :root[data-theme='light'] .final-cta-card::before {
+    opacity: 0.22;
+  }
+
+  .final-cta-left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 580px;
+  }
+
+  .final-cta-sub {
     color: var(--ink);
-    margin: 0 0 24px 0;
+    max-width: 520px;
+  }
+
+  .final-cta-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .final-cta-meta {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: var(--ink-faint);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+
+  .final-cta-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .final-cta-meta span::before {
+    content: '·';
+    color: var(--ink-faint);
+  }
+
+  .final-cta-meta span:first-child::before { display: none; }
+
+  /* Right column – testimonial */
+  .final-cta-right {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    color: var(--ink-muted);
+  }
+
+  .final-cta-label {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+  }
+
+  .final-cta-quote {
+    font-family: var(--font-display);
+    font-size: 22px;
+    letter-spacing: -0.025em;
+    line-height: 1.2;
+    color: var(--ink);
+    font-weight: 500;
+    margin: 0;
     text-wrap: balance;
   }
 
-  .ctaband-lead {
-    font-family: var(--font-sans);
-    font-size: var(--fs-body-lg);
-    line-height: 1.45;
-    letter-spacing: var(--ls-body-lg);
-    color: var(--ink-muted);
-    margin: 0 0 40px 0;
-  }
-
-  .ctaband-actions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-  }
-
-  @media (min-width: 640px) {
-    .ctaband-actions {
-      flex-direction: row;
-    }
+  .final-cta-author {
+    font-size: 12px;
+    color: var(--ink-faint);
+    margin-top: 8px;
   }
 </style>

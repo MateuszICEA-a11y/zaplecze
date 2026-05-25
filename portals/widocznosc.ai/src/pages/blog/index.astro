@@ -5,7 +5,7 @@ import Footer from '../../components/Footer.astro';
 import ScrollUpButton from '../../components/ScrollUpButton.astro';
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
-import { CATEGORY_LABELS } from '../../content.config';
+import { PILLAR_LABELS } from '../../content.config';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
@@ -13,8 +13,8 @@ const posts = (await getCollection('blog')).sort(
 
 const featuredPost = posts[0];
 
-const usedCategories = Array.from(
-  new Set(posts.map((p) => p.data.category))
+const usedPillars = Array.from(
+  new Set(posts.map((p) => p.data.pillar))
 ).sort();
 
 const formatDate = (date: Date) =>
@@ -46,7 +46,7 @@ const formatDate = (date: Date) =>
       featuredPost && (
         <section class="blog-featured-section">
           <div class="blog-featured-container">
-            <a href={`/blog/${featuredPost.id}`} class="blog-featured">
+            <a href={`/${featuredPost.id}`} class="blog-featured">
               <div class="blog-featured-image">
                 <Image
                   src={featuredPost.data.image}
@@ -58,7 +58,7 @@ const formatDate = (date: Date) =>
               </div>
               <div class="blog-featured-body">
                 <div class="blog-featured-meta">
-                  <span class="blog-featured-category">{CATEGORY_LABELS[featuredPost.data.category]}</span>
+                  <span class="blog-featured-category">{PILLAR_LABELS[featuredPost.data.pillar]}</span>
                   <span class="blog-featured-date">{formatDate(featuredPost.data.date)}</span>
                 </div>
                 <h2 class="blog-featured-title">{featuredPost.data.title}</h2>
@@ -91,14 +91,14 @@ const formatDate = (date: Date) =>
               Wszystkie
             </button>
             {
-              usedCategories.map((cat) => (
+              usedPillars.map((pillar) => (
                 <button
                   type="button"
                   class="pricing-tab"
-                  data-category={cat}
+                  data-category={pillar}
                   aria-pressed="false"
                 >
-                  {CATEGORY_LABELS[cat]}
+                  {PILLAR_LABELS[pillar]}
                 </button>
               ))
             }
@@ -109,9 +109,9 @@ const formatDate = (date: Date) =>
           {
             posts.map((post) => (
               <a
-                href={`/blog/${post.id}`}
+                href={`/${post.id}`}
                 class="post-card"
-                data-category={post.data.category}
+                data-category={post.data.pillar}
               >
                 <div class="post-card-image">
                   <Image
@@ -124,12 +124,12 @@ const formatDate = (date: Date) =>
                 </div>
                 <div class="post-card-body">
                   <div class="post-card-meta">
-                    <span class="post-card-category">{CATEGORY_LABELS[post.data.category]}</span>
+                    <span class="post-card-category">{PILLAR_LABELS[post.data.pillar]}</span>
                     <span class="post-card-date">{formatDate(post.data.date)}</span>
                   </div>
                   <h3 class="post-card-title">{post.data.title}</h3>
                   <div class="post-card-footer">
-                    <span>{post.data.tags?.[0] ?? CATEGORY_LABELS[post.data.category]}</span>
+                    <span>{post.data.tags?.[0] ?? PILLAR_LABELS[post.data.pillar]}</span>
                     <span>{post.data.readTime ?? '–'} czytania</span>
                   </div>
                 </div>

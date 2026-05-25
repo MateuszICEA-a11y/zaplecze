@@ -1,0 +1,89 @@
+---
+/**
+ * LogosBand – landing redesign 2026-05-09 (handoff).
+ * Single-row strip między top/bottom hairlines, padding 36px.
+ * Label po lewej, 5 brand chipów z 16px square dotami po prawej.
+ */
+
+const aiEngines = [
+  { name: 'ChatGPT', color: '#10a37f' },
+  { name: 'Claude', color: '#d97757' },
+  { name: 'Gemini', color: '#4285f4' },
+  { name: 'Perplexity', color: '#20b8cd' },
+  { name: 'Copilot', color: '#0078d4' },
+];
+---
+
+<section class="logos-section" aria-label="Audytujemy widoczność w silnikach AI">
+  <div class="container logos-inner">
+    <span class="logos-label">Audytujemy widoczność w&nbsp;silnikach AI</span>
+    <div class="logos-row">
+      {
+        aiEngines.map((engine) => (
+          <span class="logo-item">
+            <span class="logo-dot" style={`background: ${engine.color};`} aria-hidden="true" />
+            {engine.name}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .logos-section {
+    padding: 36px 0;
+    border-top: 1px solid var(--hairline-soft);
+    border-bottom: 1px solid var(--hairline-soft);
+    background: var(--bg-canvas);
+  }
+
+  .logos-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .logos-label {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    letter-spacing: 0.08em;
+    flex-shrink: 0;
+  }
+
+  .logos-row {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: 768px) {
+    .logos-row { gap: 36px; }
+  }
+
+  .logo-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: -0.4px;
+    color: var(--ink-muted);
+    transition: color 0.18s ease;
+  }
+
+  .logo-item:hover { color: var(--ink); }
+
+  .logo-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+</style>

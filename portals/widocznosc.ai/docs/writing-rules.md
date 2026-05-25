@@ -56,6 +56,8 @@ Boldowanie wyróżnia kluczowe informacje. Stosuj dla całych ważnych zdań, ni
 
 ## Struktura artykułu
 
+**Frontmatter (Astro content collection `blog`):** `title`, `subtitle`, `description`, `date`, `image` (wspólny placeholder `../../../assets/images/blog1.png` – 3× `../`, bo plik leży w `src/content/blog/<pillar>/`), `icon` (inline SVG), `author {name, role, avatar}`, `readTime`, `tags[]`, `pillar` (geo / modele-llm / prompty / agenci-ai / rag / ai-w-biznesie), `intent` (INFO / COMPARE / HOWTO / TOOL / COMMERCIAL), `level` (L1 / L2 / L3). NIE dodawaj pola `faq:` – schema go nie ma, wywala build. URL artykułu = `/<pillar>/<slug>` (linki wewnętrzne BEZ prefiksu `/blog/`).
+
 1. **Wstęp (1 akapit, BEZ nagłówka)** – PRZED pierwszym H2. Zasada BLUF: najważniejsza informacja na początku. Czytelnik po wstępie wie o czym jest artykuł i co z niego wyniesie. **TYLKO JEDEN AKAPIT** – krótkie wprowadzenie
 2. **Sekcje H2** z treścią merytoryczną (4-7 sekcji) – każda z min. 1-2 H3 (gdy temat tego wymaga, niekoniecznie wszędzie)
 3. **Po każdym H2** → akapit wprowadzający (min. 2-3 zdania) PRZED pierwszym H3
@@ -91,14 +93,38 @@ Przykładowe zastosowania:
 - Wskaźniki badań (źródło, sample size, wynik, link)
 - Metodyki agencji (nazwa, agencja, fokus)
 
-### Callout (blockquote)
+### Callouty (OBOWIĄZKOWE – oba w każdym artykule)
 
-W markdown używaj `> ` (blockquote). Renderuje się jako accent-bordered callout box. Stosuj dla:
-- Cytatu z badania ("**Princeton/KDD 2024:** +30% widoczności…")
-- Twardej rekomendacji ("Jeśli blokujesz GPTBot, blokujesz też SearchGPT i ChatGPT-User.")
-- Punchline'a, który chcesz wyróżnić
+Każdy artykuł MUSI zawierać **oba** callouty jako surowy HTML `<aside>` (NIE blockquote `>`):
+- **`callout-fact` („Ciekawostka", ikona ✦)** – nieoczywisty fakt z liczbą/datą lub kontekst historyczny, zakończony pogrubionym punchline'em.
+- **`callout-expert` („Opinia eksperta", avatar autora)** – pierwszoosobowa obserwacja z praktyki ICEA + pogrubione zalecenie + `callout-author` (Imię · Rola, ICEA).
 
-**Max 1-2 calloutów per artykuł.** Nie nadużywaj – traci moc.
+Wzorce do wklejenia (podmień treść, autora i slug avatara):
+
+```html
+<aside class="callout-fact">
+  <div class="callout-icon">✦</div>
+  <div class="callout-body">
+    <div class="callout-label">Ciekawostka</div>
+    <p>Fakt z liczbą/datą. <strong>Pogrubiony punchline.</strong></p>
+  </div>
+</aside>
+```
+
+```html
+<aside class="callout-expert">
+  <div class="callout-icon"><img src="/authors/<slug>.avif" alt="Imię Nazwisko" /></div>
+  <div class="callout-body">
+    <div class="callout-label">Opinia eksperta</div>
+    <p>Obserwacja z praktyki ICEA. <strong>Pogrubione zalecenie.</strong></p>
+    <div class="callout-author">Imię Nazwisko · Rola, ICEA</div>
+  </div>
+</aside>
+```
+
+⚠️ **KRYTYCZNE: wewnątrz `<aside>` używaj WYŁĄCZNIE czystego tekstu i `<strong>`.** Astro renderuje surowy HTML literalnie – markdown (linki `[..](..)`, pogrubienia `**`) NIE sparsuje się i wyświetli jako goły tekst. Źródła cytuj po nazwie (np. „badanie Princeton, KDD 2024"), nie linkiem.
+
+⚠️ Avatar autora: większość ma `.avif`, ale **Mateusz Wiśniewski używa `.webp`** (`mateusz-wisniewski.webp`). Zły slug/rozszerzenie wywala build (`ImageNotFound`).
 
 ### Code (inline + bloki)
 
@@ -348,7 +374,7 @@ LLM-y w długich passusach gubią przypadki po przyimkach, mieszają konstrukcje
 - [ ] Wstęp (1 akapit) BEZ nagłówka, PRZED H2
 - [ ] **MIN. 2 listy punktowe** w treści
 - [ ] **MIN. 1 tabela** (porównanie / metryki / lista)
-- [ ] **0-2 calloutów** (blockquote z punchline'em / cytatem badania)
+- [ ] **Oba callouty OBOWIĄZKOWE** (`<aside class="callout-fact">` Ciekawostka + `<aside class="callout-expert">` Opinia eksperta), wewnątrz tylko tekst + `<strong>` (zero markdownu)
 - [ ] Min. 1 inline `\`code\`` przy nazwach plików / user-agentów
 - [ ] Pogrubienia: całe ważne zdania (nie pojedyncze słowa)
 - [ ] Brak serii identycznych krótkich akapitów

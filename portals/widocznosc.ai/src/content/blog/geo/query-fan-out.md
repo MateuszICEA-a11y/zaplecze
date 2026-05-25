@@ -3,15 +3,17 @@ title: 'Query fan-out w Google AI Mode – jak jeden prompt rozkłada się na 30
 subtitle: 'Mechanizm, dzięki któremu Google AI Mode rozumie złożone pytania – i co to znaczy dla pozycjonowania w 2026'
 description: 'Czym jest query fan-out, jak Google AI Mode dekomponuje pojedyncze pytanie na dziesiątki podzapytań, dlaczego klasyczne SEO już tu nie wystarcza i jak optymalizować content pod nową logikę pobierania danych.'
 date: 2026-05-07
-image: ../../assets/images/blog-query-fan-out.png
+image: ../../../assets/images/blog-query-fan-out.png
 icon: '<circle cx="5" cy="5" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="19" cy="12" r="2.5"/><circle cx="19" cy="19" r="2.5"/><line x1="7.5" y1="5.5" x2="16.5" y2="5.5"/><line x1="6.5" y1="6.5" x2="16.5" y2="11.5"/><line x1="6.5" y1="6.5" x2="16.5" y2="18"/>'
 author:
   name: 'Mateusz Wiśniewski'
   role: 'Ekspert SEO/AI Search · ICEA'
-  avatar: ../../assets/images/authors/mateusz-wisniewski.webp
+  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
 readTime: '11 min'
 tags: ['AI Search', 'Google AI Mode', 'Query Fan-out', 'GEO']
-category: 'ai-search'
+pillar: 'geo'
+intent: 'INFO'
+level: 'L2'
 ---
 
 Klasyczne SEO przyzwyczaiło nas do prostego modelu: użytkownik wpisuje frazę, Google dopasowuje strony, my optymalizujemy stronę pod tę frazę. **Query fan-out (rozszczepienie zapytania) wywraca ten model do góry nogami** – pomiędzy pytaniem a odpowiedzią pojawia się warstwa, która rozbija jeden prompt na dziesiątki bardziej szczegółowych podzapytań i dopiero one trafiają do indeksu. Jeśli Twoja strona pasuje do oryginalnej frazy, ale nie odpowiada na żadne z 30 wygenerowanych podzapytań, w odpowiedzi AI po prostu Cię nie ma.
@@ -75,7 +77,7 @@ Badania potwierdzają trzecią zmianę. Kevin Indig przeanalizował 1,2 mln cyto
 
 > **Princeton/KDD 2024 (Aggarwal et al.):** dodanie cytowań źródeł podnosi widoczność w LLM o 30–40%. Keyword stuffing obniża ją o 10% – to akademicka odwrotność klasycznego SEO.
 
-![Query fan-out – jak działa rozszczepienie zapytania: pojedyncze pytanie użytkownika rozbija się na 4 klastry intencji (komparatywne, cenowe, techniczne, opinie) i 14 konkretnych podzapytań, każde idzie osobno do indeksu](../../assets/images/infographic-query-fan-out.png)
+![Query fan-out – jak działa rozszczepienie zapytania: pojedyncze pytanie użytkownika rozbija się na 4 klastry intencji (komparatywne, cenowe, techniczne, opinie) i 14 konkretnych podzapytań, każde idzie osobno do indeksu](../../../assets/images/infographic-query-fan-out.png)
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>

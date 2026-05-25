@@ -1,0 +1,469 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ScrollUpButton from '../../components/ScrollUpButton.astro';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import { PILLAR_LABELS, PILLAR_GUIDE_TITLE } from '../../content.config';
+import type { BLOG_PILLARS } from '../../content.config';
+
+export const getStaticPaths = async () => {
+  const allPosts = await getCollection('blog');
+
+  // Derive pillar set from articles that actually exist
+  const pillarMap = new Map<string, typeof allPosts>();
+  for (const post of allPosts) {
+    const pillar = post.data.pillar;
+    if (!pillarMap.has(pillar)) pillarMap.set(pillar, []);
+    pillarMap.get(pillar)!.push(post);
+  }
+
+  return Array.from(pillarMap.entries()).map(([pillar, posts]) => ({
+    params: { pillar },
+    props: {
+      pillar: pillar as (typeof BLOG_PILLARS)[number],
+      posts: posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime()),
+    },
+  }));
+};
+
+const { pillar, posts } = Astro.props as {
+  pillar: (typeof BLOG_PILLARS)[number];
+  posts: Awaited<ReturnType<typeof getCollection<'blog'>>>;
+};
+
+// Feature the "przewodnik" slug if present, otherwise the newest post
+const guidePost = posts.find((p) => p.id === `${pillar}/przewodnik`);
+const featuredPost = guidePost ?? posts[0];
+const gridPosts = posts.filter((p) => p.id !== featuredPost.id);
+
+const pillarLabel = PILLAR_LABELS[pillar];
+const pillarTitle = PILLAR_GUIDE_TITLE[pillar];
+
+// Use guide subtitle as hub lead if available
+const hubLead =
+  guidePost?.data.subtitle ??
+  `Artykuły, przewodniki i case studies o ${pillarLabel} – od podstaw po zaawansowane wdrożenia.`;
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<Layout
+  title={`${pillarTitle} – baza wiedzy widocznosc.ai`}
+  description={guidePost?.data.description ?? `Baza wiedzy o ${pillarLabel}: artykuły, przewodniki i case studies na widocznosc.ai.`}
+>
+  <Navbar />
+
+  <main class="blog-listing-main">
+
+    <!-- Hero -->
+    <section class="blog-hero">
+      <div class="blog-hero-container">
+        <span class="eyebrow blog-hero-eyebrow">{pillarLabel}</span>
+        <h1 class="display-xl blog-hero-title">{pillarTitle}</h1>
+        <p class="blog-hero-lead">{hubLead}</p>
+      </div>
+    </section>
+
+    <!-- Featured article -->
+    {
+      featuredPost && (
+        <section class="blog-featured-section">
+          <div class="blog-featured-container">
+            <a href={`/${featuredPost.id}`} class="blog-featured">
+              <div class="blog-featured-image">
+                <Image
+                  src={featuredPost.data.image}
+                  alt={featuredPost.data.title}
+                  widths={[640, 960, 1280]}
+                  sizes="(min-width: 1024px) 60vw, 100vw"
+                  loading="eager"
+                />
+              </div>
+              <div class="blog-featured-body">
+                <div class="blog-featured-meta">
+                  <span class="blog-featured-category">{PILLAR_LABELS[featuredPost.data.pillar]}</span>
+                  <span class="blog-featured-date">{formatDate(featuredPost.data.date)}</span>
+                </div>
+                <h2 class="blog-featured-title">{featuredPost.data.title}</h2>
+                <p class="blog-featured-desc">{featuredPost.data.subtitle}</p>
+                <span class="blog-featured-cta">
+                  Czytaj artykuł
+                  <span aria-hidden="true">→</span>
+                </span>
+              </div>
+            </a>
+          </div>
+        </section>
+      )
+    }
+
+    <!-- Grid: remaining posts -->
+    {
+      gridPosts.length > 0 && (
+        <section class="blog-grid-section">
+          <div class="blog-grid-container">
+            <header class="blog-grid-header">
+              <h2 class="display-lg blog-grid-title">Wszystkie artykuły</h2>
+            </header>
+
+            <div class="blog-grid">
+              {gridPosts.map((post) => (
+                <a href={`/${post.id}`} class="post-card">
+                  <div class="post-card-image">
+                    <Image
+                      src={post.data.image}
+                      alt={post.data.title}
+                      widths={[480, 720, 960]}
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="post-card-body">
+                    <div class="post-card-meta">
+                      <span class="post-card-category">{PILLAR_LABELS[post.data.pillar]}</span>
+                      <span class="post-card-date">{formatDate(post.data.date)}</span>
+                    </div>
+                    <h3 class="post-card-title">{post.data.title}</h3>
+                    <div class="post-card-footer">
+                      <span>{post.data.tags?.[0] ?? PILLAR_LABELS[post.data.pillar]}</span>
+                      <span>{post.data.readTime ?? '–'} czytania</span>
+                    </div>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      )
+    }
+
+  </main>
+
+  <Footer />
+  <ScrollUpButton />
+</Layout>
+
+<style>
+  .blog-listing-main {
+    flex-grow: 1;
+  }
+
+  /* Hero */
+  .blog-hero {
+    background: var(--bg-canvas);
+    padding: 128px 0 64px 0;
+  }
+
+  @media (min-width: 1024px) {
+    .blog-hero {
+      padding: 160px 0 80px 0;
+    }
+  }
+
+  .blog-hero-container {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding: 0 30px;
+  }
+
+  .blog-hero-eyebrow {
+    display: inline-block;
+    margin-bottom: 16px;
+  }
+
+  .blog-hero-title {
+    color: var(--ink);
+    margin: 0 0 24px 0;
+    text-wrap: balance;
+    max-width: 880px;
+  }
+
+  .blog-hero-lead {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-lg);
+    line-height: 1.45;
+    letter-spacing: var(--ls-body-lg);
+    color: var(--ink-muted);
+    margin: 0;
+    max-width: 640px;
+  }
+
+  /* Featured */
+  .blog-featured-section {
+    background: var(--bg-canvas);
+    padding: 0 0 64px 0;
+  }
+
+  .blog-featured-container {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding: 0 30px;
+  }
+
+  .blog-featured {
+    display: grid;
+    grid-template-columns: 1fr;
+    background: var(--bg-surface-1);
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .blog-featured:hover {
+    background: var(--bg-surface-2);
+  }
+
+  @media (min-width: 1024px) {
+    .blog-featured {
+      grid-template-columns: 1.4fr 1fr;
+    }
+  }
+
+  .blog-featured-image {
+    overflow: hidden;
+  }
+
+  .blog-featured-image img {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  @media (min-width: 1024px) {
+    .blog-featured-image img {
+      aspect-ratio: auto;
+      min-height: 100%;
+    }
+  }
+
+  .blog-featured:hover .blog-featured-image img {
+    transform: scale(1.02);
+  }
+
+  .blog-featured-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px;
+    justify-content: center;
+  }
+
+  @media (min-width: 1024px) {
+    .blog-featured-body {
+      padding: 48px;
+    }
+  }
+
+  .blog-featured-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .blog-featured-category {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    background: var(--bg-canvas);
+    border-radius: var(--r-pill);
+    font-family: var(--font-sans);
+    font-size: var(--fs-micro);
+    font-weight: 500;
+    letter-spacing: -0.12px;
+    color: var(--ink);
+  }
+
+  .blog-featured-date {
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    font-weight: 500;
+    letter-spacing: var(--ls-caption);
+    color: var(--ink-muted);
+  }
+
+  .blog-featured-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .blog-featured-desc {
+    font-family: var(--font-sans);
+    font-size: var(--fs-body);
+    line-height: 1.5;
+    letter-spacing: var(--ls-body);
+    color: var(--ink-muted);
+    margin: 0;
+  }
+
+  .blog-featured-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-sm);
+    font-weight: 500;
+    letter-spacing: var(--ls-body-sm);
+    color: var(--accent-blue);
+    transition: gap 0.15s ease;
+  }
+
+  .blog-featured:hover .blog-featured-cta {
+    gap: 10px;
+  }
+
+  /* Grid section */
+  .blog-grid-section {
+    background: var(--bg-canvas);
+    padding: 64px 0 96px 0;
+    border-top: 1px solid var(--hairline-soft);
+  }
+
+  .blog-grid-container {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding: 0 30px;
+  }
+
+  .blog-grid-header {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 48px;
+    padding-top: 64px;
+  }
+
+  .blog-grid-title {
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  @media (min-width: 640px) {
+    .blog-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .blog-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* Post card */
+  .post-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-surface-1);
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    text-decoration: none;
+    transition: background 0.2s ease;
+    height: 100%;
+  }
+
+  .post-card:hover {
+    background: var(--bg-surface-2);
+  }
+
+  .post-card-image {
+    overflow: hidden;
+  }
+
+  .post-card-image img {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .post-card:hover .post-card-image img {
+    transform: scale(1.03);
+  }
+
+  .post-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    flex-grow: 1;
+  }
+
+  .post-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .post-card-category {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    background: var(--bg-canvas);
+    border-radius: var(--r-pill);
+    font-family: var(--font-sans);
+    font-size: var(--fs-micro);
+    font-weight: 500;
+    letter-spacing: -0.12px;
+    color: var(--ink);
+  }
+
+  .post-card-date {
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    letter-spacing: var(--ls-caption);
+    color: var(--ink-muted);
+  }
+
+  .post-card-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--fs-body-lg);
+    line-height: 1.25;
+    letter-spacing: var(--ls-body-lg);
+    color: var(--ink);
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  @media (min-width: 1024px) {
+    .post-card-title {
+      font-size: var(--fs-headline);
+      letter-spacing: var(--ls-headline);
+    }
+  }
+
+  .post-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+    padding-top: 16px;
+    border-top: 1px solid var(--hairline-soft);
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    letter-spacing: var(--ls-caption);
+    color: var(--ink-muted);
+  }
+</style>
