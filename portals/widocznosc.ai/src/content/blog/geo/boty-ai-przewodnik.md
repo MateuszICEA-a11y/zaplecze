@@ -131,8 +131,8 @@ Przykład dla agencji SEO:
 
 ## Wiedza
 
-- [Co to jest GEO](/blog/co-to-jest-geo): definicja, różnice względem SEO
-- [Query fan-out w Google AI Mode](/blog/query-fan-out): jak działa pobieranie danych w AI Mode
+- [Co to jest GEO](/geo/czym-jest-geo): definicja, różnice względem SEO
+- [Query fan-out w Google AI Mode](/geo/query-fan-out): jak działa pobieranie danych w AI Mode
 
 ## Kontakt
 
