@@ -9,26 +9,35 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 /**
- * Blog categories – taxonomia widocznosc.ai bazy wiedzy.
- * Każdy artykuł musi mieć dokładnie jedną kategorię (zapobiega duplikatom
+ * Blog pillars – taxonomia widocznosc.ai bazy wiedzy.
+ * Każdy artykuł musi mieć dokładnie jeden pillar (zapobiega duplikatom
  * i ułatwia filtrowanie). Tagi (z = znacznik) są dowolne i wielokrotne.
  */
-export const BLOG_CATEGORIES = [
-  'ai-search',     // Jak działają wyszukiwarki AI (ChatGPT, Claude, Perplexity etc.)
-  'geo',           // Generative Engine Optimization – metodologia, frameworki
-  'content',       // Content pod LLM – fact-density, schema, źródła
-  'narzedzia',     // Tutoriale, recenzje narzędzi GEO i AI search
-  'case-study',    // Przypadki klientów ICEA, dane, rezultaty
-  'definicje',     // Słownik pojęć (RAG, training data, chain-of-thought etc.)
+export const BLOG_PILLARS = [
+  'geo',
+  'modele-llm',
+  'prompty',
+  'agenci-ai',
+  'rag',
+  'ai-w-biznesie',
 ] as const;
 
-export const CATEGORY_LABELS: Record<(typeof BLOG_CATEGORIES)[number], string> = {
-  'ai-search': 'AI Search',
+export const PILLAR_LABELS: Record<(typeof BLOG_PILLARS)[number], string> = {
   geo: 'GEO',
-  content: 'Content pod LLM',
-  narzedzia: 'Narzędzia',
-  'case-study': 'Case study',
-  definicje: 'Definicje',
+  'modele-llm': 'Modele LLM',
+  prompty: 'Prompty',
+  'agenci-ai': 'Agenci AI',
+  rag: 'RAG',
+  'ai-w-biznesie': 'AI w biznesie',
+};
+
+export const PILLAR_GUIDE_TITLE: Record<(typeof BLOG_PILLARS)[number], string> = {
+  geo: 'Generative Engine Optimization',
+  'modele-llm': 'Modele językowe (LLM)',
+  prompty: 'Prompt engineering',
+  'agenci-ai': 'Agenci AI',
+  rag: 'RAG',
+  'ai-w-biznesie': 'Wdrożenie AI w firmie',
 };
 
 /**
@@ -70,7 +79,9 @@ const blog = defineCollection({
       }),
       readTime: z.string(),
       tags: z.array(z.string()),
-      category: z.enum(BLOG_CATEGORIES).default('ai-search'),
+      pillar: z.enum(BLOG_PILLARS),
+      intent: z.enum(['INFO', 'COMPARE', 'HOWTO', 'TOOL', 'COMMERCIAL']).optional(),
+      level: z.enum(['L1', 'L2', 'L3']).optional(),
     }),
 });
 

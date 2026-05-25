@@ -7,7 +7,7 @@
  */
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
-import { CATEGORY_LABELS } from '../content.config';
+import { PILLAR_LABELS } from '../content.config';
 
 const posts = (await getCollection('blog'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
@@ -47,7 +47,7 @@ const formatDate = (date: Date) =>
       <div class="kb-grid">
 
         {featured && (
-          <a href={`/blog/${featured.id}`} class="kb-feature">
+          <a href={`/${featured.id}`} class="kb-feature">
             <div class="kb-feature-img">
               <div class="kb-feature-graph"></div>
               <Image
@@ -86,7 +86,7 @@ const formatDate = (date: Date) =>
               </svg>
             </div>
             <div class="kb-meta">
-              <span>{CATEGORY_LABELS[featured.data.category]}</span>
+              <span>{PILLAR_LABELS[featured.data.pillar]}</span>
               <span class="dot">·</span>
               <span>{featured.data.readTime}</span>
               <span class="dot">·</span>
@@ -99,9 +99,9 @@ const formatDate = (date: Date) =>
 
         <div class="kb-side">
           {sidePosts.map((post) => (
-            <a href={`/blog/${post.id}`} class="kb-item">
+            <a href={`/${post.id}`} class="kb-item">
               <div class="kb-meta">
-                <span>{CATEGORY_LABELS[post.data.category]}</span>
+                <span>{PILLAR_LABELS[post.data.pillar]}</span>
                 <span class="dot">·</span>
                 <span>{post.data.readTime}</span>
               </div>

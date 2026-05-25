@@ -3,15 +3,17 @@ title: 'Topical authority pod LLM-y – pillar + cluster w erze AI Overviews'
 subtitle: 'Jak zbudować pokrycie tematyczne, które LLM-y będą cytować częściej niż konkurencję'
 description: 'Dlaczego LLM-y faworyzują domeny z głębokim pokryciem jednej niszy. Jak zbudować architekturę pillar + cluster, która działa w erze AI Mode i AI Overviews. Konkretny szablon implementacji – od mapy tematów po interlinking.'
 date: 2026-05-07
-image: ../../assets/images/blog-topical-authority.png
+image: ../../../assets/images/blog-topical-authority.png
 icon: '<circle cx="12" cy="6" r="2.5"/><circle cx="6" cy="14" r="2"/><circle cx="12" cy="14" r="2"/><circle cx="18" cy="14" r="2"/><circle cx="4" cy="20" r="1.5"/><circle cx="9" cy="20" r="1.5"/><circle cx="14" cy="20" r="1.5"/><circle cx="19" cy="20" r="1.5"/><line x1="12" y1="9" x2="6" y2="12"/><line x1="12" y1="9" x2="12" y2="12"/><line x1="12" y1="9" x2="18" y2="12"/>'
 author:
   name: 'Piotr Wicenciak'
   role: 'SEO Operations Manager · ICEA'
-  avatar: ../../assets/images/authors/piotr-wicenciak.avif
+  avatar: ../../../assets/images/authors/piotr-wicenciak.avif
 readTime: '10 min'
 tags: ['Topical Authority', 'Pillar Page', 'Content Strategy', 'GEO']
-category: 'content'
+pillar: 'geo'
+intent: 'INFO'
+level: 'L2'
 ---
 
 Większość stron wygrywających kiedyś w klasycznym SEO dzięki silnemu profilowi linkowemu **dziś przegrywa w AI Overviews**. Powód jest niemiły dla agencji link buildingowych: LLM-y nie patrzą na linki w taki sam sposób jak klasyczny algorytm. Patrzą na to, czy domena „wie wszystko" o danej niszy – a to mierzy się głębokością pokrycia, nie liczbą backlinków. Dlatego topical authority, znana w SEO od kilku lat, w erze GEO przestaje być nice-to-have i staje się fundamentem.
@@ -47,7 +49,7 @@ Architektura pillar + cluster nie jest wymysłem ery GEO. Powstała w 2017 roku 
 
 Dla LLM ta struktura czyta się jako: *„ta domena ma 10–25 artykułów silnie powiązanych tematycznie, wszystkie wskazują na centralny dokument"*. To bardzo silny sygnał autorytetu tematycznego. W zestawieniu z domeną mającą jeden samotny artykuł na ten sam temat, pillar + cluster wygrywa w 80%+ przypadków – tak pokazują testy iPullRank na wektorach osadzonych (embeddingach) tekstu.
 
-![Pillar + cluster – architektura topical authority: centralna strona pillar, 8 cluster pages dookoła w układzie hub-and-spoke, linkowanie cluster→pillar (2×) i cluster→cluster (3-5×), top 10 domen w niszy zabiera 46% cytowań AI](../../assets/images/infographic-topical-authority.png)
+![Pillar + cluster – architektura topical authority: centralna strona pillar, 8 cluster pages dookoła w układzie hub-and-spoke, linkowanie cluster→pillar (2×) i cluster→cluster (3-5×), top 10 domen w niszy zabiera 46% cytowań AI](../../../assets/images/infographic-topical-authority.png)
 
 ## Jak zaprojektować mapę tematów
 

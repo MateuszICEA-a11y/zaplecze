@@ -8,10 +8,10 @@ import { getCollection, render } from 'astro:content';
 
 export const getStaticPaths = async () => {
   const posts = await getCollection('blog');
-  return posts.map((post) => ({
-    params: { slug: post.id },
-    props: { post },
-  }));
+  return posts.map((post) => {
+    const [pillar, slug] = post.id.split('/');
+    return { params: { pillar, slug }, props: { post } };
+  });
 };
 
 const { post } = Astro.props;
@@ -63,7 +63,7 @@ const articleData = {
       <div class="related-grid">
         {
           relatedPosts.map((related) => (
-            <a href={`/blog/${related.id}`} class="related-card">
+            <a href={`/${related.id}`} class="related-card">
               <div class="related-card-icon-wrap">
                 <svg
                   class="related-card-icon"

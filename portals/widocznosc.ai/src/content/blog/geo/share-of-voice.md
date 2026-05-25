@@ -3,15 +3,17 @@ title: 'Share of Voice zamiast rankingu – jak naprawdę mierzyć widoczność 
 subtitle: 'Dlaczego klasyczny rank tracking nie działa w ChatGPT, Claude i Perplexity – i co go zastępuje'
 description: 'Badanie SparkToro pokazało, że odpowiedzi LLM mają mniej niż 1% powtarzalności. Mierzenie pozycji w AI nie ma sensu. Co zamiast tego: Share of Voice, Citation Rate, Mention Rate – metryki, które naprawdę pokazują, jak Twoja marka radzi sobie w erze AI search.'
 date: 2026-05-07
-image: ../../assets/images/blog-share-of-voice.png
+image: ../../../assets/images/blog-share-of-voice.png
 icon: '<rect x="3" y="14" width="3" height="7" rx="1"/><rect x="9" y="9" width="3" height="12" rx="1"/><rect x="15" y="4" width="3" height="17" rx="1"/><rect x="20.5" y="11" width="2" height="10" rx="1"/>'
 author:
   name: 'Tomasz Czechowski'
   role: 'Head of SEO · ICEA'
-  avatar: ../../assets/images/authors/tomasz-czechowski.avif
+  avatar: ../../../assets/images/authors/tomasz-czechowski.avif
 readTime: '12 min'
 tags: ['Pomiar AI', 'Share of Voice', 'Citation Rate', 'GEO']
-category: 'geo'
+pillar: 'geo'
+intent: 'INFO'
+level: 'L2'
 ---
 
 Klient pyta: *„Na której pozycji jesteśmy w ChatGPT?"*. **To pytanie nie ma odpowiedzi** – i dlatego cały biznes klasycznego SEO, od narzędzi do śledzenia rankingu po raporty miesięczne, zaczyna się rozsypywać przy próbie raportowania widoczności w AI. Problem nie polega na tym, że nie potrafimy mierzyć. Problem polega na tym, że ranking jako metryka po prostu przestał istnieć w sensie, w jakim go znamy z klasycznego Google.
@@ -57,7 +59,7 @@ Mention Rate to procent zapytań, w których Twoja marka pojawiła się tylko w 
 
 Britney Muller spuentowała to lapidarnie: *„brand mentions are the new backlinks"*. Wzmianki budujesz przez PR, recenzje, zestawienia *„best of"* i cytowania w mediach – nie przez technical SEO.
 
-![Share of Voice – jak liczymy widoczność marki w AI: bar chart z procentami konkurencji, formuła SoV (47/222=21%), 30 zapytań × 4 platformy × 5 uruchomień = 600 testów](../../assets/images/infographic-share-of-voice.png)
+![Share of Voice – jak liczymy widoczność marki w AI: bar chart z procentami konkurencji, formuła SoV (47/222=21%), 30 zapytań × 4 platformy × 5 uruchomień = 600 testów](../../../assets/images/infographic-share-of-voice.png)
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>

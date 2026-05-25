@@ -31,7 +31,7 @@ const formatDate = (date: Date) =>
         <!-- Desktop layout (lg+): featured + sidebar -->
         <div class="hidden h-auto flex-row gap-8 lg:flex lg:h-[28rem] xl:h-[32rem]">
           <!-- Featured post (left) -->
-          <a href={`/blog/${featuredPost.id}`} class="group h-full lg:w-3/5">
+          <a href={`/${featuredPost.id}`} class="group h-full lg:w-3/5">
             <article class="card flex h-full flex-col overflow-hidden rounded-3xl transition">
               <div class="flex-grow p-4 pb-0">
                 <div class="bg-bgDark1Lighter flex h-full items-center justify-center rounded-2xl">
@@ -67,7 +67,7 @@ const formatDate = (date: Date) =>
             {
               sidebarPosts.map((post) => (
                 <a
-                  href={`/blog/${post.id}`}
+                  href={`/${post.id}`}
                   class="group card flex flex-1 items-center gap-4 p-4 transition"
                 >
                   <div class="bg-bgDark1Lighter flex aspect-square shrink-0 items-center justify-center self-stretch rounded-xl">
@@ -97,7 +97,7 @@ const formatDate = (date: Date) =>
         <div class="xs:grid-cols-2 grid grid-cols-1 gap-6 lg:hidden">
           {
             allPosts.map((post) => (
-              <a href={`/blog/${post.id}`} class="group">
+              <a href={`/${post.id}`} class="group">
                 <article class="card flex h-full flex-col overflow-hidden rounded-2xl transition">
                   <div class="p-3 pb-0">
                     <div class="bg-bgDark1Lighter xs:aspect-auto xs:h-40 flex aspect-[16/9] items-center justify-center rounded-xl">
