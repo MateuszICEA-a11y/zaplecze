@@ -38,6 +38,7 @@ type ActionItem = {
 
 type CheckResponse = {
   domain: string;
+  checkedPath: string;
   robotsUrl: string;
   fetchedAt: string;
   status: 'ok' | 'no-robots' | 'fetch-error' | 'cloudflare-blocked';
@@ -58,11 +59,13 @@ const FETCH_USER_AGENT =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36';
 
 /**
- * Normalizuje wejście usera (URL lub gołą domenę) do hostname.
+ * Normalizuje wejście usera (URL lub gołą domenę) do hosta i ścieżki.
  * Akceptuje: "icea.pl", "https://icea.pl", "https://www.icea.pl/blog".
  */
-function normalizeDomain(input: string): string | null {
-  const trimmed = input.trim().toLowerCase();
+function normalizeInput(
+  input: string
+): { host: string; checkedPath: string; robotsUrl: string } | null {
+  const trimmed = input.trim();
   if (!trimmed) return null;
 
   let urlString = trimmed;
@@ -74,20 +77,22 @@ function normalizeDomain(input: string): string | null {
     const url = new URL(urlString);
     // Strip leading www. by default? Nie – robots.txt jest per-host.
     // Zostawiamy host taki jaki jest, bo robots.txt może się różnić.
-    return url.hostname;
+    return {
+      host: url.host,
+      checkedPath: `${url.pathname || '/'}${url.search || ''}`,
+      robotsUrl: `${url.protocol}//${url.host}/robots.txt`,
+    };
   } catch {
     return null;
   }
 }
 
-async function fetchRobotsTxt(domain: string): Promise<{
+async function fetchRobotsTxt(robotsUrl: string): Promise<{
   text: string;
   finalUrl: string;
   status: number;
   cloudflareBlocked: boolean;
 }> {
-  const robotsUrl = `https://${domain}/robots.txt`;
-
   const response = await fetch(robotsUrl, {
     headers: {
       'User-Agent': FETCH_USER_AGENT,
@@ -126,10 +131,12 @@ function buildActionItems(bots: BotResult[]): ActionItem[] {
     items.push({
       priority: 'P0',
       title: `Krytyczne boty AI zablokowane: ${names}`,
-      description: `Twoja strona NIE TRAFI do trenowania ani cytowań w ${blockedCritical
+      description: `Dostęp przez robots.txt jest ograniczony dla ${blockedCritical
         .map((b) => b.owner)
         .filter((v, i, arr) => arr.indexOf(v) === i)
-        .join(', ')}. Edytuj robots.txt i dodaj sekcje Allow: / dla każdego z user-agentów.`,
+        .join(
+          ', '
+        )}. Sprawdź, czy to świadoma decyzja. Jeśli celem jest widoczność w wyszukiwaniu AI, dodaj Allow dla botów wyszukiwawczych i user-triggered.`,
     });
   }
 
@@ -148,11 +155,26 @@ function buildActionItems(bots: BotResult[]): ActionItem[] {
       priority: 'P2',
       title: 'Wszystkie 13 botów AI ma dostęp – poprawnie skonfigurowane',
       description:
-        'Twoja konfiguracja robots.txt jest otwarta dla całego ekosystemu AI.',
+        'Analiza robots.txt dla sprawdzanej ścieżki nie wykazała blokad. Zweryfikuj osobno WAF/CDN, jeśli strona używa dodatkowej ochrony ruchu botów.',
     });
   }
 
   return items;
+}
+
+function buildBotsWithAccess(allowed: boolean): BotResult[] {
+  return AI_BOTS.map((bot) => ({
+    name: bot.name,
+    userAgent: bot.userAgent,
+    owner: bot.owner,
+    category: bot.category,
+    categoryLabel: CATEGORY_LABELS[bot.category],
+    purpose: bot.purpose,
+    impact: bot.impact,
+    critical: bot.critical ?? false,
+    allowed,
+    matchedUserAgent: null,
+  }));
 }
 
 export const onRequestPost: PagesFunction = async (context) => {
@@ -163,16 +185,17 @@ export const onRequestPost: PagesFunction = async (context) => {
     return jsonError(400, 'Invalid JSON body');
   }
 
-  const domain = normalizeDomain(body.url || '');
-  if (!domain) {
+  const normalized = normalizeInput(body.url || '');
+  if (!normalized) {
     return jsonError(400, 'Podaj poprawny URL lub domenę (np. icea.pl)');
   }
+  const { host: domain, checkedPath, robotsUrl } = normalized;
 
   const fetchedAt = new Date().toISOString();
   let robotsResult: Awaited<ReturnType<typeof fetchRobotsTxt>>;
 
   try {
-    robotsResult = await fetchRobotsTxt(domain);
+    robotsResult = await fetchRobotsTxt(robotsUrl);
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Unknown fetch error';
     return jsonError(502, `Nie udało się pobrać robots.txt: ${message}`);
@@ -184,6 +207,7 @@ export const onRequestPost: PagesFunction = async (context) => {
   if (cloudflareBlocked) {
     const response: CheckResponse = {
       domain,
+      checkedPath,
       robotsUrl: finalUrl,
       fetchedAt,
       status: 'cloudflare-blocked',
@@ -216,24 +240,14 @@ export const onRequestPost: PagesFunction = async (context) => {
     });
   }
 
-  // Status nie-200 → brak robots.txt (404) lub błąd serwera
-  if (status >= 400) {
+  // 404/410 = brak robots.txt; zgodnie z konwencją crawler nie ma zakazu.
+  if (status === 404 || status === 410) {
     // Brak robots.txt = wszystkie boty allowed (zgodnie z konwencją)
-    const allBots: BotResult[] = AI_BOTS.map((bot) => ({
-      name: bot.name,
-      userAgent: bot.userAgent,
-      owner: bot.owner,
-      category: bot.category,
-      categoryLabel: CATEGORY_LABELS[bot.category],
-      purpose: bot.purpose,
-      impact: bot.impact,
-      critical: bot.critical ?? false,
-      allowed: true,
-      matchedUserAgent: null,
-    }));
+    const allBots = buildBotsWithAccess(true);
 
     const response: CheckResponse = {
       domain,
+      checkedPath,
       robotsUrl: finalUrl,
       fetchedAt,
       status: 'no-robots',
@@ -254,10 +268,40 @@ export const onRequestPost: PagesFunction = async (context) => {
     });
   }
 
+  // Inne błędy nie są brakiem robots.txt. Nie wolno ich raportować jako pełny dostęp.
+  if (status >= 400) {
+    const bots = buildBotsWithAccess(false);
+    const criticalBlocked = bots.filter((b) => b.critical).length;
+    const response: CheckResponse = {
+      domain,
+      checkedPath,
+      robotsUrl: finalUrl,
+      fetchedAt,
+      status: 'fetch-error',
+      statusCode: status,
+      summary: { allowed: 0, blocked: bots.length, criticalBlocked, total: bots.length },
+      bots,
+      actionItems: [
+        {
+          priority: status === 401 || status === 403 ? 'P0' : 'P1',
+          title:
+            status === 401 || status === 403
+              ? 'Serwer blokuje dostęp do robots.txt'
+              : 'Nie udało się poprawnie pobrać robots.txt',
+          description: `Serwer zwrócił HTTP ${status}. To nie jest standardowy brak robots.txt, więc nie można potwierdzić dostępu botów. Sprawdź SSL, WAF/CDN i odpowiedź dla ${robotsUrl}.`,
+        },
+      ],
+    };
+    return new Response(JSON.stringify(response), {
+      status: 200,
+      headers: jsonHeaders(),
+    });
+  }
+
   // Sprawdzamy każdy bot przez parser robots.txt
   const bots: BotResult[] = AI_BOTS.map((bot) => {
     const tokens = [bot.userAgent, ...(bot.aliases ?? [])];
-    const access = checkBotAccess(robotsText, tokens, '/');
+    const access = checkBotAccess(robotsText, tokens, checkedPath);
     return {
       name: bot.name,
       userAgent: bot.userAgent,
@@ -278,6 +322,7 @@ export const onRequestPost: PagesFunction = async (context) => {
 
   const response: CheckResponse = {
     domain,
+    checkedPath,
     robotsUrl: finalUrl,
     fetchedAt,
     status: 'ok',

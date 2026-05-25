@@ -8,63 +8,71 @@ import { FACTORS } from '../../../functions/_lib/url-check';
 
 <Layout
   title="URL Check – AI SEO Alignment Score 0-100"
-  description="Sprawdź w 5 sekund, czy Twoja strona jest cytowalna przez ChatGPT, Claude, Gemini, Perplexity i Copilot. AI SEO Alignment Score 0-100 + lista 5 priorytetowych zmian. Darmowe, bez logowania."
+  description="Sprawdź w 10-20 sekund, czy Twoja strona jest cytowalna przez ChatGPT, Claude, Gemini, Perplexity i Copilot. AI SEO Alignment Score 0-100 + lista 5 priorytetowych zmian. Darmowe, bez logowania."
 >
   <Navbar />
 
   <main class="flex-grow">
-    <div class="content-container pt-32 pb-20 md:pt-40 lg:pt-44">
-      <!-- Hero -->
-      <header class="text-center">
-        <span class="eyebrow mb-6 inline-flex">
-          Narzędzie · bezpłatne
-        </span>
-        <h1 class="display-md tool-hero-title">
-          Czy Twój <span class="tool-hero-accent">content</span> jest cytowalny przez AI?
-        </h1>
-        <p class="text-ink mt-8 text-base leading-relaxed mx-auto max-w-3xl">
-          Wskazujesz jeden URL. Model językowy analizuje 8 czynników cytowalności i&nbsp;zwraca
-          wynik 0&ndash;100 + listę priorytetowych zmian. Metodologia: Princeton/KDD&nbsp;2024
-          + iPullRank AI Search Manual. Bez logowania.
+    <section class="tool-hero">
+      <div class="content-container tool-hero-inner">
+        <!-- Hero -->
+        <nav class="tool-breadcrumb" aria-label="Ścieżka nawigacji">
+          <a href="/narzedzia" class="tool-breadcrumb-link">Narzędzia</a>
+          <span class="tool-breadcrumb-sep" aria-hidden="true">/</span>
+          <span class="tool-breadcrumb-current">URL Check</span>
+        </nav>
+        <header class="text-center">
+          <span class="eyebrow tool-eyebrow"> Narzędzie · bezpłatne </span>
+          <h1 class="tool-hero-title">
+            Czy Twój <span class="tool-hero-accent">content</span> jest cytowalny przez AI?
+          </h1>
+          <p class="tool-hero-copy">
+            Wskazujesz jeden URL. Parser i&nbsp;model językowy analizują 8 czynników cytowalności
+            i&nbsp;zwracają wynik 0&ndash;100 + listę priorytetowych zmian. Bez logowania.
+          </p>
+        </header>
+
+        <!-- Form -->
+        <form
+          id="check-form"
+          class="check-form mx-auto mt-12 flex flex-col gap-3 sm:flex-row"
+          novalidate
+        >
+          <label class="sr-only" for="url-input">URL strony do analizy</label>
+          <input
+            id="url-input"
+            name="url"
+            type="text"
+            required
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="Wpisz URL strony"
+            class="check-input flex-1"
+          />
+          <button type="submit" class="btn-primary check-submit">
+            <span class="check-submit-label">Sprawdź content</span>
+            <span class="check-submit-spinner" aria-hidden="true"></span>
+          </button>
+        </form>
+        <p class="check-note mx-auto mt-3 max-w-2xl text-center text-sm">
+          Pobieramy publiczny HTML, liczymy sygnały techniczne i&nbsp;używamy modelu tylko
+          do&nbsp;oceny semantycznej. Nie zapisujemy treści ani wyników.
         </p>
-      </header>
 
-      <!-- Form -->
-      <form id="check-form" class="mx-auto mt-12 flex max-w-2xl flex-col gap-3 sm:flex-row" novalidate>
-        <label class="sr-only" for="url-input">URL strony do analizy</label>
-        <input
-          id="url-input"
-          name="url"
-          type="text"
-          required
-          autocomplete="off"
-          spellcheck="false"
-          placeholder="https://twojadomena.pl/blog/post"
-          class="check-input flex-1"
-        />
-        <button type="submit" class="btn-primary check-submit">
-          <span class="check-submit-label">Sprawdź content</span>
-          <span class="check-submit-spinner" aria-hidden="true"></span>
-        </button>
-      </form>
-      <p class="text-ink-muted mx-auto mt-3 max-w-2xl text-center text-sm">
-        Pobieramy publiczny HTML i&nbsp;przekazujemy do&nbsp;analizy przez model językowy. Nie
-        zapisujemy treści ani wyników. Analiza zajmuje 10&ndash;20 sekund.
-      </p>
+        <!-- Results placeholder -->
+        <section id="results" class="mt-14 hidden" aria-live="polite"></section>
+      </div>
+    </section>
 
-      <!-- Results placeholder -->
-      <section id="results" class="mt-14 hidden" aria-live="polite"></section>
-
-      <!-- Default overview – 8 factors before submit -->
-      <section id="default-overview" class="mt-16">
-        <h2 class="display-md">
-          8 czynników AI SEO Alignment Score
-        </h2>
-        <p class="text-ink mt-6 text-lg leading-relaxed">
-          Każdy z&nbsp;tych elementów zwiększa szansę, że ChatGPT, Claude, Gemini, Perplexity
-          albo Copilot wskaże Twoją markę jako źródło.
+    <!-- Default overview – 8 factors before submit -->
+    <section id="default-overview" class="tool-overview">
+      <div class="content-container">
+        <h2 class="display-lg tool-overview-title">8 czynników AI SEO Alignment Score</h2>
+        <p class="text-ink tool-overview-copy mt-6 max-w-3xl text-lg leading-relaxed">
+          Każdy z&nbsp;tych elementów zwiększa szansę, że ChatGPT, Claude, Gemini, Perplexity albo
+          Copilot wskaże Twoją markę jako źródło.
         </p>
-        <p class="text-ink-muted mt-3 text-base leading-relaxed">
+        <p class="text-ink-muted mt-3 max-w-3xl text-base leading-relaxed">
           Suma wag = 100 pkt. Tradycyjny SEO Domain Authority może być wysoki, ale AI Alignment
           niski &ndash; tu jest realna przewaga.
         </p>
@@ -90,22 +98,31 @@ import { FACTORS } from '../../../functions/_lib/url-check';
           <h3 class="methodology-title">Jak to działa?</h3>
           <p class="methodology-text">
             Pobieramy publiczny HTML strony, oczyszczamy z&nbsp;binary noise (script/style)
-            i&nbsp;przekazujemy do&nbsp;modelu <strong>Gemini 3.1 Flash</strong> z&nbsp;instrukcją
-            oceny 8 czynników w&nbsp;skali 0/0.5/1. Model rozróżnia główną treść artykułu od&nbsp;nawigacji,
-            footera i&nbsp;sidebara. Wagi czynników opieramy na peer-reviewed badaniu
+            i&nbsp;wyciągamy główną treść. Sześć mierzalnych czynników liczy parser: schema,
+            świeżość, FAQ, gęstość faktów, modułowość i&nbsp;nagłówki-pytania. Model <strong
+              >Gemini 3.1 Flash Lite</strong
+            > ocenia tylko elementy semantyczne: BLUF oraz jakość porównań. Wagi czynników opieramy na
+            peer-reviewed badaniu
             <a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener noreferrer">
               Princeton/KDD&nbsp;2024 (GEO Paper, Aggarwal et al.)
-            </a>, patentach Google na query fan-out
-            (<a href="https://searchengineland.com/how-ai-mode-ai-overviews-work-patents-456346" target="_blank" rel="noopener noreferrer">
+            </a>, patentach Google na query fan-out (<a
+              href="https://searchengineland.com/how-ai-mode-ai-overviews-work-patents-456346"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               omówienie Mike'a Kinga
             </a>) oraz
-            <a href="https://ipullrank.com/ai-search-manual" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://ipullrank.com/ai-search-manual"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               iPullRank AI Search Manual
             </a>. Nic nie zapisujemy.
           </p>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   </main>
 
   <Footer />
@@ -113,23 +130,133 @@ import { FACTORS } from '../../../functions/_lib/url-check';
 </Layout>
 
 <style>
-  /* Hero – accent na "content" i "cytowalny przez AI" */
-  .tool-hero-title :global(.tool-hero-accent) {
+  .tool-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 104px 0 88px;
+    background:
+      radial-gradient(
+        circle at 50% 12%,
+        color-mix(in srgb, var(--accent-blue) 12%, transparent) 0%,
+        transparent 34%
+      ),
+      linear-gradient(180deg, var(--bg-surface-1) 0%, var(--bg-canvas) 78%);
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+
+  .tool-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(var(--hairline-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--hairline-soft) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.16), transparent 62%);
+    pointer-events: none;
+  }
+
+  .tool-hero-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .tool-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 36px;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-muted);
+  }
+
+  .tool-breadcrumb-link {
+    color: var(--ink-muted);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .tool-breadcrumb-link:hover {
+    color: var(--ink);
+  }
+
+  .tool-breadcrumb-sep {
+    color: var(--ink-faint);
+  }
+
+  .tool-breadcrumb-current {
+    color: var(--ink);
+  }
+
+  .tool-eyebrow {
+    margin-bottom: 28px;
+  }
+
+  .tool-hero-title {
+    max-width: 980px;
+    margin: 0 auto;
+    font-family: var(--font-display);
+    font-size: clamp(48px, 6.4vw, 86px);
+    font-weight: 500;
+    line-height: 0.96;
+    letter-spacing: -0.045em;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+
+  .tool-hero-accent {
     color: var(--accent-blue);
   }
 
-  /* Form input – wyróżniony bardziej niż w ai-bots-check */
+  .tool-hero-copy {
+    max-width: 780px;
+    margin: 28px auto 0;
+    font-family: var(--font-sans);
+    font-size: clamp(17px, 1.4vw, 21px);
+    line-height: 1.55;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+  }
+
+  .tool-overview {
+    padding: 72px 0 80px;
+  }
+
+  .tool-overview-title {
+    max-width: 960px;
+  }
+
+  .tool-overview-copy {
+    font-size: 17px;
+    line-height: 1.62;
+  }
+
+  .check-form {
+    width: min(100%, 840px);
+  }
+
   .check-input {
+    flex: 1 1 auto;
+    min-width: 0;
     height: 56px;
     padding: 0 22px;
     font-family: var(--font-sans);
-    font-size: 15px;
+    font-size: 16px;
     color: var(--ink);
     background: var(--bg-surface-2);
     border: 1px solid var(--hairline);
     border-radius: var(--r-md);
     outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease;
   }
   .check-input::placeholder {
     color: var(--ink-muted);
@@ -144,10 +271,15 @@ import { FACTORS } from '../../../functions/_lib/url-check';
 
   .check-submit {
     height: 56px;
-    min-width: 180px;
+    min-width: 210px;
     justify-content: center;
     position: relative;
   }
+
+  .check-note {
+    color: var(--ink-muted);
+  }
+
   .check-submit[aria-busy='true'] .check-submit-label {
     opacity: 0;
   }
@@ -173,8 +305,10 @@ import { FACTORS } from '../../../functions/_lib/url-check';
   /* Factor cards (pre-check overview) */
   .factor-card {
     background: var(--bg-surface-1);
+    border: 1px solid color-mix(in srgb, var(--hairline) 78%, var(--ink) 22%);
     border-radius: var(--r-lg);
     padding: 24px 24px 28px;
+    box-shadow: 0 16px 44px rgb(15 23 42 / 0.04);
   }
   .factor-card-header {
     display: flex;
@@ -185,10 +319,10 @@ import { FACTORS } from '../../../functions/_lib/url-check';
   .factor-card-num {
     font-family: var(--font-display);
     font-weight: 500;
-    font-size: 22px;
+    font-size: 24px;
     line-height: 1;
     letter-spacing: -0.02em;
-    color: var(--ink-muted);
+    color: var(--accent-blue);
     flex-shrink: 0;
   }
   .factor-card-title-wrap {
@@ -198,9 +332,9 @@ import { FACTORS } from '../../../functions/_lib/url-check';
     flex: 1;
   }
   .factor-card-title {
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 18px;
+    font-family: var(--font-sans);
+    font-weight: 650;
+    font-size: 16px;
     line-height: 1.2;
     color: var(--ink);
     margin: 0;
@@ -208,14 +342,18 @@ import { FACTORS } from '../../../functions/_lib/url-check';
   .factor-card-weight {
     font-family: var(--font-sans);
     font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--accent-blue);
+    font-weight: 600;
+    letter-spacing: 0;
+    color: var(--ink);
+    width: fit-content;
+    padding: 3px 8px;
+    background: var(--bg-surface-2);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-pill);
   }
   .factor-card-desc {
     color: var(--ink-muted);
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.55;
     margin: 0;
   }
@@ -572,6 +710,97 @@ import { FACTORS } from '../../../functions/_lib/url-check';
   }
 
   @media (max-width: 640px) {
+    .tool-hero {
+      padding: 72px 0 64px;
+    }
+
+    .tool-hero-inner {
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .tool-breadcrumb {
+      justify-content: flex-start;
+      margin-bottom: 28px;
+      font-size: 13px;
+    }
+
+    .tool-eyebrow {
+      margin-bottom: 22px;
+    }
+
+    .tool-hero-title {
+      max-width: 100%;
+      font-size: clamp(42px, 12vw, 52px);
+      line-height: 0.98;
+      letter-spacing: -0.043em;
+      overflow-wrap: anywhere;
+    }
+
+    .tool-hero-copy {
+      max-width: 100%;
+      margin-top: 24px;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .check-form {
+      width: 100%;
+    }
+
+    .check-input {
+      flex: none;
+      width: 100%;
+      height: 62px;
+      font-size: 15px;
+      padding-inline: 20px;
+      background: var(--bg-surface-1);
+      border-color: color-mix(in srgb, var(--hairline) 68%, var(--ink) 32%);
+      border-radius: var(--r-lg);
+      box-shadow: inset 0 0.5px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .check-input::placeholder {
+      color: var(--ink);
+      opacity: 0.72;
+    }
+
+    .check-submit {
+      height: 58px;
+      min-width: 0;
+      width: 100%;
+      margin-top: 2px;
+      font-size: 15px;
+    }
+
+    .check-note {
+      max-width: 100%;
+      margin-top: 14px;
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 1.45;
+      text-align: left;
+      opacity: 0.78;
+    }
+
+    .tool-overview {
+      padding: 56px 0 64px;
+    }
+
+    .tool-overview-title {
+      font-size: clamp(34px, 10vw, 44px);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .factor-card {
+      padding: 20px;
+    }
+
+    .methodology-note {
+      padding: 22px;
+    }
+
     :global(.score-hero) {
       grid-template-columns: 1fr;
       gap: 20px;
@@ -614,7 +843,7 @@ import { FACTORS } from '../../../functions/_lib/url-check';
     url: string;
     finalUrl: string;
     fetchedAt: string;
-    status: 'ok' | 'fetch-error' | 'cloudflare-blocked' | 'not-html' | 'too-small';
+    status: 'ok' | 'fetch-error' | 'cloudflare-blocked' | 'not-html' | 'too-small' | 'too-large';
     statusCode?: number;
     htmlBytes?: number;
     score: {
@@ -780,7 +1009,7 @@ import { FACTORS } from '../../../functions/_lib/url-check';
     submitBtn.disabled = true;
     resultsEl.classList.remove('hidden');
     resultsEl.innerHTML =
-      '<div class="results-card" style="text-align:center; color: var(--ink-muted);">Pobieramy stronę i model językowy analizuje treść – 10–20 sekund…</div>';
+      '<div class="results-card" style="text-align:center; color: var(--ink-muted);">Pobieramy stronę, liczymy sygnały techniczne i analizujemy semantykę – 10–20 sekund…</div>';
 
     try {
       const res = await fetch('/api/tools/url-check', {

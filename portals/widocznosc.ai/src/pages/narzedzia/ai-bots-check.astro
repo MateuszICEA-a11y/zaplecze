@@ -15,52 +15,67 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
   <Navbar />
 
   <main class="flex-grow">
-    <div class="content-container pt-32 pb-20 md:pt-40 lg:pt-44">
-      <!-- Hero -->
-      <header class="text-center">
-        <span class="eyebrow mb-6 inline-flex">
-          Narzędzie · bezpłatne
-        </span>
-        <h1 class="display-md tool-hero-title">
-          Czy <span class="tool-hero-accent">boty AI</span> mają dostęp do Twojej strony?
-        </h1>
-        <p class="text-ink mt-8 text-base leading-relaxed mx-auto max-w-3xl">
-          Sprawdzamy plik <code class="font-mono text-sm">robots.txt</code> pod kątem 13 najważniejszych user-agentów AI: GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot i&nbsp;8 innych. Wynik w&nbsp;5 sekund, bez logowania.
+    <section class="tool-hero">
+      <div class="content-container tool-hero-inner">
+        <!-- Hero -->
+        <nav class="tool-breadcrumb" aria-label="Ścieżka nawigacji">
+          <a href="/narzedzia" class="tool-breadcrumb-link">Narzędzia</a>
+          <span class="tool-breadcrumb-sep" aria-hidden="true">/</span>
+          <span class="tool-breadcrumb-current">AI Bots Check</span>
+        </nav>
+        <header class="text-center">
+          <span class="eyebrow tool-eyebrow"> Narzędzie · bezpłatne </span>
+          <h1 class="tool-hero-title">
+            Czy <span class="tool-hero-accent">boty AI</span> mają dostęp do Twojej strony?
+          </h1>
+          <p class="tool-hero-copy">
+            Sprawdzamy plik <code class="font-mono text-sm">robots.txt</code> pod kątem 13 najważniejszych
+            user-agentów AI: GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot i&nbsp;8 innych.
+            Wynik w&nbsp;5 sekund, bez logowania.
+          </p>
+        </header>
+
+        <!-- Form -->
+        <form
+          id="check-form"
+          class="check-form mx-auto mt-12 flex flex-col gap-3 sm:flex-row"
+          novalidate
+        >
+          <label class="sr-only" for="domain-input">Domena lub URL</label>
+          <input
+            id="domain-input"
+            name="url"
+            type="text"
+            required
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="Wpisz domenę lub URL"
+            class="check-input flex-1"
+          />
+          <button type="submit" class="btn-primary check-submit">
+            <span class="check-submit-label">Sprawdź dostęp</span>
+            <span class="check-submit-spinner" aria-hidden="true"></span>
+          </button>
+        </form>
+        <p class="check-note mx-auto mt-3 max-w-2xl text-center text-sm">
+          Pobieramy publiczny plik <code class="font-mono">robots.txt</code> – nie wykonujemy żadnych
+          zmian, nie zapisujemy danych.
         </p>
-      </header>
 
-      <!-- Form -->
-      <form id="check-form" class="mx-auto mt-12 flex max-w-2xl flex-col gap-3 sm:flex-row" novalidate>
-        <label class="sr-only" for="domain-input">Domena lub URL</label>
-        <input
-          id="domain-input"
-          name="url"
-          type="text"
-          required
-          autocomplete="off"
-          spellcheck="false"
-          placeholder="twojadomena.pl lub https://twojadomena.pl"
-          class="check-input flex-1"
-        />
-        <button type="submit" class="btn-primary check-submit">
-          <span class="check-submit-label">Sprawdź dostęp</span>
-          <span class="check-submit-spinner" aria-hidden="true"></span>
-        </button>
-      </form>
-      <p class="text-ink-muted mx-auto mt-3 max-w-2xl text-center text-sm">
-        Pobieramy publiczny plik <code class="font-mono">robots.txt</code> – nie wykonujemy żadnych zmian, nie zapisujemy danych.
-      </p>
+        <!-- Results placeholder -->
+        <section id="results" class="mt-14 hidden" aria-live="polite"></section>
+      </div>
+    </section>
 
-      <!-- Results placeholder -->
-      <section id="results" class="mt-14 hidden" aria-live="polite"></section>
-
-      <!-- Default bots overview – pokazane PRZED submit -->
-      <section id="default-overview" class="mt-16">
-        <h2 class="display-md">
-          13 botów AI w 4 kategoriach funkcjonalnych
-        </h2>
-        <p class="text-ink mt-6 max-w-3xl text-lg leading-relaxed">
-          Każdy z tych botów ma własny <code class="font-mono text-sm">User-agent</code> i własne implikacje dla widoczności marki w AI. Blokada GPTBota oznacza brak miejsca w treningu GPT-5+. Blokada PerplexityBota oznacza brak cytowań w Perplexity Pro. CCBot to dataset, którego używają WSZYSTKIE LLM-y.
+    <!-- Default bots overview – pokazane PRZED submit -->
+    <section id="default-overview" class="tool-overview">
+      <div class="content-container">
+        <h2 class="display-lg tool-overview-title">13 botów AI w 4 kategoriach funkcjonalnych</h2>
+        <p class="text-ink tool-overview-copy mt-6 max-w-3xl text-lg leading-relaxed">
+          Każdy z tych botów ma własny <code class="font-mono text-sm">User-agent</code> i własne implikacje
+          dla widoczności marki w AI. Boty wyszukiwawcze wpływają na bieżącą widoczność i cytowania, a
+          boty treningowe oraz tokeny kontroli danych decydują o tym, jak platformy mogą wykorzystywać
+          publiczne treści w modelach.
         </p>
         <div class="mt-10 grid gap-4 lg:grid-cols-2">
           {
@@ -76,22 +91,20 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
                   </div>
                   <p class="bot-category-desc">{CATEGORY_DESCRIPTIONS[cat]}</p>
                   <ul class="bot-category-list">
-                    {
-                      botsInCat.map((bot) => (
-                        <li class="bot-category-item">
-                          <span class="bot-name">{bot.name}</span>
-                          <span class="bot-owner">{bot.owner}</span>
-                        </li>
-                      ))
-                    }
+                    {botsInCat.map((bot) => (
+                      <li class="bot-category-item">
+                        <span class="bot-name">{bot.name}</span>
+                        <span class="bot-owner">{bot.owner}</span>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               );
             })
           }
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   </main>
 
   <Footer />
@@ -99,23 +112,135 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
 </Layout>
 
 <style>
+  .tool-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 104px 0 88px;
+    background:
+      radial-gradient(
+        circle at 50% 12%,
+        color-mix(in srgb, var(--accent-blue) 12%, transparent) 0%,
+        transparent 34%
+      ),
+      linear-gradient(180deg, var(--bg-surface-1) 0%, var(--bg-canvas) 78%);
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+
+  .tool-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(var(--hairline-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--hairline-soft) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.16), transparent 62%);
+    pointer-events: none;
+  }
+
+  .tool-hero-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .tool-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 36px;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-muted);
+  }
+
+  .tool-breadcrumb-link {
+    color: var(--ink-muted);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .tool-breadcrumb-link:hover {
+    color: var(--ink);
+  }
+
+  .tool-breadcrumb-sep {
+    color: var(--ink-faint);
+  }
+
+  .tool-breadcrumb-current {
+    color: var(--ink);
+  }
+
+  .tool-eyebrow {
+    margin-bottom: 28px;
+  }
+
   /* Hero – accent na "boty AI" */
-  .tool-hero-title :global(.tool-hero-accent) {
+  .tool-hero-title {
+    max-width: 980px;
+    margin: 0 auto;
+    font-family: var(--font-display);
+    font-size: clamp(48px, 6.4vw, 86px);
+    font-weight: 500;
+    line-height: 0.96;
+    letter-spacing: -0.045em;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+
+  .tool-hero-accent {
     color: var(--accent-blue);
   }
 
+  .tool-hero-copy {
+    max-width: 780px;
+    margin: 28px auto 0;
+    font-family: var(--font-sans);
+    font-size: clamp(17px, 1.4vw, 21px);
+    line-height: 1.55;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+  }
+
+  .tool-overview {
+    padding: 72px 0 80px;
+  }
+
+  .tool-overview-title {
+    max-width: 960px;
+  }
+
+  .tool-overview-copy {
+    font-size: 17px;
+    line-height: 1.62;
+  }
+
   /* Form input – wyróżniony, parity z url-check */
+  .check-form {
+    width: min(100%, 840px);
+  }
+
   .check-input {
+    flex: 1 1 auto;
+    min-width: 0;
     height: 56px;
     padding: 0 22px;
     font-family: var(--font-sans);
-    font-size: 15px;
+    font-size: 16px;
     color: var(--ink);
     background: var(--bg-surface-2);
     border: 1px solid var(--hairline);
     border-radius: var(--r-md);
     outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease;
   }
   .check-input::placeholder {
     color: var(--ink-muted);
@@ -130,10 +255,15 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
 
   .check-submit {
     height: 56px;
-    min-width: 180px;
+    min-width: 210px;
     justify-content: center;
     position: relative;
   }
+
+  .check-note {
+    color: var(--ink-muted);
+  }
+
   .check-submit[aria-busy='true'] .check-submit-label {
     opacity: 0;
   }
@@ -159,8 +289,10 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
   /* Bot category cards (pre-check) */
   .bot-category-card {
     background: var(--bg-surface-1);
+    border: 1px solid color-mix(in srgb, var(--hairline) 78%, var(--ink) 22%);
     border-radius: var(--r-lg);
     padding: 24px 24px 28px;
+    box-shadow: 0 16px 44px rgb(15 23 42 / 0.04);
   }
   .bot-category-header {
     display: flex;
@@ -171,23 +303,29 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
   .bot-category-label {
     color: var(--ink);
     font-family: var(--font-sans);
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: var(--ls-caption);
+    font-size: 15px;
+    font-weight: 650;
+    letter-spacing: 0;
   }
   .bot-category-count {
-    color: var(--ink-muted);
-    font-size: 13px;
+    color: var(--ink);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 10px;
+    background: var(--bg-surface-2);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-pill);
   }
   .bot-category-desc {
     color: var(--ink-muted);
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.55;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
+    max-width: 42rem;
   }
   .bot-category-list {
     display: grid;
-    gap: 8px;
+    gap: 10px;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -196,20 +334,41 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 14px;
-    background: var(--bg-canvas);
+    gap: 14px;
+    min-height: 46px;
+    padding: 10px 14px 10px 16px;
+    background: var(--bg-surface-2);
+    border: 1px solid var(--hairline);
     border-radius: var(--r-sm);
     font-family: var(--font-mono, ui-monospace, 'SF Mono', monospace);
-    font-size: 12.5px;
+    font-size: 13px;
+  }
+  .bot-category-item::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    flex: none;
+    border-radius: 50%;
+    background: var(--accent-blue);
+    opacity: 0.75;
   }
   .bot-name {
+    flex: 1;
+    min-width: 0;
     color: var(--ink);
-    font-weight: 500;
+    font-weight: 650;
+    overflow-wrap: anywhere;
   }
   .bot-owner {
-    color: var(--ink-muted);
-    font-size: 11px;
-    letter-spacing: 0.04em;
+    flex: none;
+    color: var(--ink);
+    background: var(--bg-canvas);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-pill);
+    padding: 3px 8px;
+    font-size: 11.5px;
+    line-height: 1.2;
+    letter-spacing: 0;
   }
 
   /* Results section – styled in JS via inline classes */
@@ -391,11 +550,97 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
     color: #ef4444;
     font-size: 14px;
   }
+
+  @media (max-width: 640px) {
+    .tool-hero {
+      padding: 72px 0 64px;
+    }
+
+    .tool-hero-inner {
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .tool-breadcrumb {
+      justify-content: flex-start;
+      margin-bottom: 28px;
+      font-size: 13px;
+    }
+
+    .tool-eyebrow {
+      margin-bottom: 22px;
+    }
+
+    .tool-hero-title {
+      max-width: 100%;
+      font-size: clamp(42px, 12vw, 52px);
+      line-height: 0.98;
+      letter-spacing: -0.043em;
+      overflow-wrap: anywhere;
+    }
+
+    .tool-hero-copy {
+      max-width: 100%;
+      margin-top: 24px;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .check-form {
+      width: 100%;
+    }
+
+    .check-input {
+      flex: none;
+      width: 100%;
+      height: 62px;
+      font-size: 15px;
+      padding-inline: 20px;
+      background: var(--bg-surface-1);
+      border-color: color-mix(in srgb, var(--hairline) 68%, var(--ink) 32%);
+      border-radius: var(--r-lg);
+      box-shadow: inset 0 0.5px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .check-input::placeholder {
+      color: var(--ink);
+      opacity: 0.72;
+    }
+
+    .check-submit {
+      height: 58px;
+      min-width: 0;
+      width: 100%;
+      margin-top: 2px;
+      font-size: 15px;
+    }
+
+    .check-note {
+      max-width: 100%;
+      margin-top: 14px;
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 1.45;
+      text-align: left;
+      opacity: 0.78;
+    }
+
+    .tool-overview {
+      padding: 56px 0 64px;
+    }
+
+    .tool-overview-title {
+      font-size: clamp(34px, 10vw, 44px);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+  }
 </style>
 
 <script>
   type CheckResponse = {
     domain: string;
+    checkedPath: string;
     robotsUrl: string;
     fetchedAt: string;
     status: 'ok' | 'no-robots' | 'fetch-error' | 'cloudflare-blocked';
@@ -438,7 +683,7 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
     });
 
   const renderResults = (data: CheckResponse): string => {
-    const { summary, bots, actionItems, domain, robotsUrl, status, statusCode } = data;
+    const { summary, bots, actionItems, domain, checkedPath, robotsUrl, status, statusCode } = data;
 
     const summaryHtml = `
       <div class="results-summary">
@@ -463,11 +708,13 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
 
     let metaText = '';
     if (status === 'ok') {
-      metaText = `Status: <strong>OK ${statusCode}</strong> · Sprawdzono <a href="${escapeHtml(robotsUrl)}" target="_blank" rel="noopener">robots.txt</a>`;
+      metaText = `Status: <strong>OK ${statusCode}</strong> · Ścieżka: <code>${escapeHtml(checkedPath)}</code> · Sprawdzono <a href="${escapeHtml(robotsUrl)}" target="_blank" rel="noopener">robots.txt</a>`;
     } else if (status === 'no-robots') {
       metaText = `Status: <strong>${statusCode}</strong> – brak pliku robots.txt na <a href="${escapeHtml(robotsUrl)}" target="_blank" rel="noopener">${escapeHtml(robotsUrl)}</a>. W praktyce wszystkie boty są dopuszczone (konwencja).`;
     } else if (status === 'cloudflare-blocked') {
       metaText = `<strong style="color:#ef4444">Cloudflare zablokował dostęp</strong> do robots.txt – boty AI też tego nie przejdą.`;
+    } else if (status === 'fetch-error') {
+      metaText = `<strong style="color:#ef4444">Nie można potwierdzić dostępu</strong> · HTTP ${statusCode} dla <a href="${escapeHtml(robotsUrl)}" target="_blank" rel="noopener">robots.txt</a>`;
     }
 
     const botsHtml = bots

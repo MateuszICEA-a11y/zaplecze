@@ -9,8 +9,7 @@
  * - fallback na blok `User-agent: *` gdy nie ma matchu
  * - brak robots.txt lub brak ograniczeń = allowed
  *
- * NIE obsługuje: wildcardów `*` w path (najczęściej dla robots.txt AI nie ma znaczenia,
- * bo blokady są zwykle `Disallow: /` całościowo).
+ * Obsługuje też najczęstsze patterny Google/RFC: wildcard `*` i końcówkę `$`.
  */
 
 export type RobotsRule = {
@@ -79,20 +78,38 @@ export function findMatchingGroup(
   userAgentTokens: string[]
 ): RobotsGroup | null {
   const tokens = userAgentTokens.map((t) => t.toLowerCase());
+  const mergeGroups = (matchedGroups: RobotsGroup[]): RobotsGroup | null => {
+    if (matchedGroups.length === 0) return null;
+    return {
+      userAgents: matchedGroups.flatMap((group) => group.userAgents),
+      rules: matchedGroups.flatMap((group) => group.rules),
+    };
+  };
 
-  // Najpierw szukamy exact matchu
-  for (const group of groups) {
-    for (const ua of group.userAgents) {
-      if (tokens.includes(ua)) return group;
-    }
-  }
+  const exactGroups = groups.filter((group) => group.userAgents.some((ua) => tokens.includes(ua)));
+  const exactMatch = mergeGroups(exactGroups);
+  if (exactMatch) return exactMatch;
 
-  // Fallback – grupa `*`
-  for (const group of groups) {
-    if (group.userAgents.includes('*')) return group;
-  }
+  const wildcardMatch = mergeGroups(groups.filter((group) => group.userAgents.includes('*')));
+  if (wildcardMatch) return wildcardMatch;
 
   return null;
+}
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function ruleMatchesPath(rulePath: string, path: string): boolean {
+  if (rulePath.includes('*') || rulePath.endsWith('$')) {
+    const anchoredEnd = rulePath.endsWith('$');
+    const pattern = anchoredEnd ? rulePath.slice(0, -1) : rulePath;
+    const source = pattern.split('*').map(escapeRegExp).join('.*');
+    const re = new RegExp(`^${source}${anchoredEnd ? '$' : ''}`);
+    return re.test(path);
+  }
+
+  return path.startsWith(rulePath);
 }
 
 /**
@@ -113,9 +130,7 @@ export function isPathAllowed(group: RobotsGroup | null, path: string): boolean 
     // Pusta wartość Disallow = brak ograniczeń (norma robots.txt)
     if (rule.path === '') continue;
 
-    // Wildcard pattern w path? Bardzo prosta heurystyka – sprawdzamy czy ścieżka
-    // zaczyna się od `rule.path` (bez wildcard supportu)
-    const matches = path.startsWith(rule.path);
+    const matches = ruleMatchesPath(rule.path, path);
     if (!matches) continue;
 
     if (

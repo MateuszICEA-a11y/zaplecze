@@ -1,9 +1,9 @@
 /**
  * URL Check – AI SEO Alignment Score 0-100 (8 czynników).
  *
- * Analiza wykonywana przez Gemini 3.1 Flash przez OpenRouter (LLM rozumie
- * jaki fragment HTML to GŁÓWNA treść – nie myli nawigacji z lead'em, łapie
- * FAQ bez schemy, ocenia gęstość konkretnych faktów w sensowny sposób).
+ * Analiza hybrydowa: mierzalne sygnały liczymy deterministycznie z HTML,
+ * a LLM ocenia wyłącznie semantyczne elementy, których reguły nie łapią dobrze
+ * (BLUF i jakość porównań) oraz dostarcza krótkie uzasadnienia.
  *
  * Pochodzenie metodologii: webinary-materialy.md (Robert Niechciał) + research
  * Princeton/KDD 2024 (Aggarwal et al.) + iPullRank AI Search Manual.
@@ -241,25 +241,233 @@ type PreparsedSignals = {
   ogTitle: string | null;
 };
 
-function prepare(html: string): { cleanedHtml: string; signals: PreparsedSignals } {
+type PreparedContent = {
+  cleanedHtml: string;
+  mainHtml: string;
+  mainText: string;
+  headings: string[];
+  signals: PreparsedSignals;
+};
+
+function prepare(html: string): PreparedContent {
   const blocks = extractJsonLd(html);
   const cleaned = cleanHtml(html);
+  const mainHtml = extractMainHtml(cleaned);
   const truncated =
-    cleaned.length > MAX_HTML_FOR_LLM
-      ? cleaned.slice(0, MAX_HTML_FOR_LLM) + '\n<!-- HTML truncated by URL-check (>80KB) -->'
-      : cleaned;
+    mainHtml.length > MAX_HTML_FOR_LLM
+      ? mainHtml.slice(0, MAX_HTML_FOR_LLM) + '\n<!-- HTML truncated by URL-check (>80KB) -->'
+      : mainHtml;
   return {
     cleanedHtml: truncated,
+    mainHtml,
+    mainText: htmlToText(mainHtml),
+    headings: extractHeadingTexts(mainHtml),
     signals: {
       jsonLdTypes: getJsonLdTypes(blocks),
       jsonLdDate: getJsonLdDate(blocks),
       metaModifiedTime:
-        findMetaContent(html, 'article:modified_time') ||
-        findMetaContent(html, 'og:updated_time'),
+        findMetaContent(html, 'article:modified_time') || findMetaContent(html, 'og:updated_time'),
       metaPublishedTime: findMetaContent(html, 'article:published_time'),
       ogTitle: findMetaContent(html, 'og:title'),
     },
   };
+}
+
+function extractMainHtml(html: string): string {
+  const candidates = [
+    ...extractTagContents(html, 'article'),
+    ...extractTagContents(html, 'main'),
+    ...extractTagContents(html, 'body'),
+  ];
+  return candidates.sort((a, b) => b.length - a.length)[0] || html;
+}
+
+function extractTagContents(html: string, tag: string): string[] {
+  const re = new RegExp(`<${tag}\\b[^>]*>([\\s\\S]*?)<\\/${tag}>`, 'gi');
+  return Array.from(html.matchAll(re), (match) => match[1]);
+}
+
+function decodeHtmlEntities(value: string): string {
+  return value
+    .replace(/&#x([0-9a-f]+);/gi, (_, hex: string) => String.fromCharCode(parseInt(hex, 16)))
+    .replace(/&#(\d+);/g, (_, dec: string) => String.fromCharCode(parseInt(dec, 10)))
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&quot;/gi, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>');
+}
+
+function htmlToText(html: string): string {
+  return decodeHtmlEntities(
+    html
+      .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+      .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+  );
+}
+
+function extractHeadingTexts(html: string): string[] {
+  const re = /<h[2-3]\b[^>]*>([\s\S]*?)<\/h[2-3]>/gi;
+  return Array.from(html.matchAll(re), (match) => htmlToText(match[1])).filter(Boolean);
+}
+
+function countMatches(value: string, re: RegExp): number {
+  return Array.from(value.matchAll(re)).length;
+}
+
+function typeSet(types: string[]): Set<string> {
+  return new Set(types.map((type) => type.toLowerCase().replace(/[^a-z]/g, '')));
+}
+
+function wordCount(text: string): number {
+  return text.split(/\s+/).filter((word) => word.length > 1).length;
+}
+
+function parseDate(value: string | null): Date | null {
+  if (!value) return null;
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
+function latestDate(values: Array<string | null>): Date | null {
+  return (
+    values
+      .map(parseDate)
+      .filter((date): date is Date => Boolean(date))
+      .sort((a, b) => b.getTime() - a.getTime())[0] || null
+  );
+}
+
+function scoreToEarned(def: FactorDefinition, score: 0 | 0.5 | 1): FactorScore {
+  return {
+    key: def.key,
+    label: def.label,
+    shortLabel: def.shortLabel,
+    weight: def.weight,
+    score,
+    earned: Math.round(def.weight * score * 10) / 10,
+    evidence: '',
+  };
+}
+
+function deterministicFactors(prepared: PreparedContent): Partial<Record<FactorKey, FactorScore>> {
+  const defs = FACTOR_BY_KEY;
+  const jsonTypes = typeSet(prepared.signals.jsonLdTypes);
+  const hasArticle = ['article', 'blogposting', 'newsarticle'].some((type) => jsonTypes.has(type));
+  const hasFaq = jsonTypes.has('faqpage');
+  const hasHowTo = jsonTypes.has('howto');
+
+  const factors: Partial<Record<FactorKey, FactorScore>> = {};
+
+  const schemaScore: 0 | 0.5 | 1 =
+    hasArticle && (hasFaq || hasHowTo) ? 1 : hasArticle || hasFaq || hasHowTo ? 0.5 : 0;
+  factors.schema = {
+    ...scoreToEarned(defs.schema, schemaScore),
+    evidence:
+      schemaScore === 1
+        ? 'Wykryto schema głównej treści oraz FAQPage lub HowTo.'
+        : schemaScore === 0.5
+          ? 'Wykryto częściowe dane strukturalne, ale brakuje pełnego zestawu Article + FAQPage/HowTo.'
+          : 'Nie wykryto JSON-LD typu Article, BlogPosting, NewsArticle, FAQPage ani HowTo.',
+    details: `JSON-LD @type: ${prepared.signals.jsonLdTypes.join(', ') || 'brak'}.`,
+  };
+
+  const contentDate = latestDate([
+    prepared.signals.metaModifiedTime,
+    prepared.signals.jsonLdDate,
+    prepared.signals.metaPublishedTime,
+  ]);
+  const ageDays = contentDate
+    ? Math.floor((Date.now() - contentDate.getTime()) / (1000 * 60 * 60 * 24))
+    : null;
+  const freshnessScore: 0 | 0.5 | 1 =
+    ageDays === null ? 0 : ageDays <= 93 ? 1 : ageDays <= 365 ? 0.5 : 0;
+  factors.freshness = {
+    ...scoreToEarned(defs.freshness, freshnessScore),
+    evidence:
+      ageDays === null
+        ? 'Nie wykryto daty publikacji ani aktualizacji w meta tagach lub JSON-LD.'
+        : `Najnowsza wykryta data ma ${ageDays} dni.`,
+    details: contentDate ? `Data: ${contentDate.toISOString().slice(0, 10)}.` : undefined,
+  };
+
+  const listCount = countMatches(prepared.mainHtml, /<(ul|ol)\b/gi);
+  const tableCount = countMatches(prepared.mainHtml, /<table\b/gi);
+  const modularScore: 0 | 0.5 | 1 =
+    listCount >= 5 || tableCount >= 2 ? 1 : listCount >= 1 || tableCount >= 1 ? 0.5 : 0;
+  factors.modular = {
+    ...scoreToEarned(defs.modular, modularScore),
+    evidence:
+      modularScore === 1
+        ? 'Treść ma dobrze wydzielone elementy modułowe.'
+        : modularScore === 0.5
+          ? 'Treść ma podstawowe elementy modułowe, ale można ją mocniej podzielić.'
+          : 'Nie wykryto list ani tabel w głównej treści.',
+    details: `Listy: ${listCount}, tabele: ${tableCount}.`,
+  };
+
+  const questionHeadingCount = prepared.headings.filter((heading) =>
+    heading.trim().endsWith('?')
+  ).length;
+  const headingRatio =
+    prepared.headings.length > 0 ? questionHeadingCount / prepared.headings.length : 0;
+  const headingScore: 0 | 0.5 | 1 = headingRatio >= 0.5 ? 1 : headingRatio >= 0.2 ? 0.5 : 0;
+  factors.questionHeadings = {
+    ...scoreToEarned(defs.questionHeadings, headingScore),
+    evidence:
+      prepared.headings.length > 0
+        ? `${questionHeadingCount} z ${prepared.headings.length} nagłówków H2/H3 ma formę pytania.`
+        : 'Nie wykryto nagłówków H2/H3 w głównej treści.',
+    details: `Udział pytań: ${Math.round(headingRatio * 100)}%.`,
+  };
+
+  const detailsCount = countMatches(prepared.mainHtml, /<details\b/gi);
+  const faqSection = /faq|najczęstsze pytania|często zadawane pytania|pytania i odpowiedzi/i.test(
+    prepared.mainText
+  );
+  const faqQuestionCount = prepared.headings.filter((heading) => heading.endsWith('?')).length;
+  const faqScore: 0 | 0.5 | 1 =
+    hasFaq && (faqSection || faqQuestionCount >= 3 || detailsCount >= 3)
+      ? 1
+      : hasFaq ||
+          (faqSection && (faqQuestionCount >= 3 || detailsCount >= 3)) ||
+          faqQuestionCount >= 4
+        ? 0.5
+        : 0;
+  factors.faq = {
+    ...scoreToEarned(defs.faq, faqScore),
+    evidence:
+      faqScore === 1
+        ? 'Wykryto FAQPage oraz widoczne sygnały sekcji pytań i odpowiedzi.'
+        : faqScore === 0.5
+          ? 'Wykryto częściowe sygnały FAQ, ale bez pełnego zestawu schema + widoczna sekcja Q&A.'
+          : 'Nie wykryto wyraźnej sekcji FAQ ani schema FAQPage.',
+    details: `FAQPage: ${hasFaq ? 'tak' : 'nie'}, nagłówki-pytania: ${faqQuestionCount}, <details>: ${detailsCount}.`,
+  };
+
+  const facts = countMatches(
+    prepared.mainText,
+    /\b\d{1,4}(?:[.,]\d+)?\s?(?:%|proc\.|zł|pln|eur|usd|tys\.|mln|mld)?\b|\b20\d{2}\b|\b19\d{2}\b/gi
+  );
+  const words = Math.max(wordCount(prepared.mainText), 1);
+  const factsPerThousand = (facts / words) * 1000;
+  const densityScore: 0 | 0.5 | 1 = factsPerThousand >= 30 ? 1 : factsPerThousand >= 12 ? 0.5 : 0;
+  factors.density = {
+    ...scoreToEarned(defs.density, densityScore),
+    evidence:
+      densityScore === 1
+        ? 'Treść ma wysoką gęstość liczb, dat i mierzalnych konkretów.'
+        : densityScore === 0.5
+          ? 'Treść zawiera część mierzalnych konkretów, ale gęstość faktów jest średnia.'
+          : 'Treść ma niską liczbę mierzalnych faktów w relacji do długości.',
+    details: `Wykryto ${facts} sygnałów liczbowych przy ${words} słowach (${Math.round(factsPerThousand)} / 1000 słów).`,
+  };
+
+  return factors;
 }
 
 // =============================================================================
@@ -268,19 +476,20 @@ function prepare(html: string): { cleanedHtml: string; signals: PreparsedSignals
 
 const OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions';
 export const ANALYSIS_MODEL = 'google/gemini-3.1-flash-lite';
+const LLM_TIMEOUT_MS = 25_000;
 
 const SYSTEM_PROMPT = `Jesteś senior analitykiem GEO (Generative Engine Optimization). Oceniasz strony WWW pod kątem cytowalności w silnikach AI (ChatGPT, Claude, Gemini, Perplexity, Copilot).
 
-Otrzymujesz HTML strony oraz wstępnie sparsowane sygnały (JSON-LD, daty meta). Twoja praca to ZIDENTYFIKOWAĆ GŁÓWNĄ TREŚĆ artykułu/strony (pomijając nawigację, footer, sidebar, breadcrumbs, menu) i ocenić 8 czynników cytowalności w skali 0 / 0.5 / 1.
+Otrzymujesz oczyszczony HTML głównej treści oraz deterministycznie policzone sygnały. Twoja praca to ocenić WYŁĄCZNIE 2 czynniki semantyczne w skali 0 / 0.5 / 1: bluf i comparisons.
 
 ZASADY ZAWSZE:
 - Pomijaj nawigację, menu, breadcrumbs, footer, sidebar, banery cookie/RODO. Patrz na GŁÓWNY <main>/<article> content.
 - Bądź konkretny w "evidence" – cytuj fragmenty albo podaj liczby (1 zdanie max).
-- "details" to techniczne uzasadnienie (np. "Schema FAQPage obecny, 6 par Q&A").
+- "details" to techniczne uzasadnienie.
 - **WSZYSTKIE pola tekstowe (evidence, details) PO POLSKU.** Zero angielskiego w odpowiedzi, nawet jeśli analizujesz angielską stronę – tłumacz na polski.
 - Output WYŁĄCZNIE valid JSON, bez \`\`\`json\`\`\` markers, bez wstępu.
 
-8 CZYNNIKÓW DO OCENY:
+2 CZYNNIKI DO OCENY:
 
 1. **bluf** (BLUF / Bottom Line Up Front, 15 pkt)
    - Czy pierwsze 50 słów GŁÓWNEJ treści (po H1, ignorując nawigację) zawiera bezpośrednią odpowiedź / definicję / kluczową statystykę.
@@ -288,58 +497,16 @@ ZASADY ZAWSZE:
    - 0.5: jest sygnał (liczba, definicja częściowa), ale rozmywa się we wstępie.
    - 0: tekst zaczyna się od narracji / wstępu historycznego ("Kiedyś...", "W dzisiejszych czasach...", "Wyobraź sobie...").
 
-2. **faq** (Sekcja FAQ, 12 pkt)
-   - Czy jest dedykowana sekcja Q&A (FAQPage schema LUB <details>/accordion LUB jasno wydzielony "FAQ" / "Najczęstsze pytania" / "Często zadawane pytania" z 3+ pytaniami).
-   - 1: schema FAQPage + sekcja Q&A widoczna w treści.
-   - 0.5: jest sekcja Q&A ale brak schema, ALBO są pytania w nagłówkach ale bez wyraźnej sekcji FAQ.
-   - 0: brak Q&A pairs i brak schema FAQPage.
-
-3. **density** (Information Density, 14 pkt)
-   - Gęstość konkretnych liczb / dat / statystyk / odwołań do badań w głównej treści.
-   - 1: 30+ konkretnych faktów na ~1000 słów (liczby, %, daty, badania).
-   - 0.5: 12-30/1000 słów. Średnio.
-   - 0: tekst ogólnikowy ("często", "wiele firm", "wszyscy") bez konkretów.
-
-4. **schema** (Schema Markup JSON-LD, 14 pkt)
-   - Patrzysz na sparsowane jsonLdTypes (już dostarczone). Punktacja:
-     - 1: wykryte Article/BlogPosting/NewsArticle + FAQPage (lub HowTo), opcjonalnie BreadcrumbList/Organization.
-     - 0.5: tylko Article LUB tylko FAQPage (bez Article).
-     - 0: brak Article/BlogPosting/FAQPage/HowTo (lub żadnego JSON-LD).
-
-5. **freshness** (Świeżość, 10 pkt)
-   - Patrzysz na podane jsonLdDate / metaModifiedTime / metaPublishedTime + treść (data publikacji/aktualizacji widoczna w treści).
-   - 1: <3 mies. od dziś (DZIŚ podane w prompcie).
-   - 0.5: 3-12 mies.
-   - 0: >12 mies. lub brak daty.
-
-6. **modular** (Treści modułowe, 10 pkt)
-   - Czy treść ma listy (<ul>/<ol>), tabele (<table>) i wyraźne sekcje. Sprawdzaj w GŁÓWNEJ treści, nie w nawigacji.
-   - 1: 5+ list i/lub 2+ tabele w treści głównej.
-   - 0.5: 1-4 listy LUB 1 tabela.
-   - 0: ścianka tekstu bez wydzielonych elementów.
-
-7. **comparisons** (Porównania, 13 pkt)
+2. **comparisons** (Porównania, 13 pkt)
    - Czy treść porównuje produkty/podejścia/marki ("X vs Y", "alternatywa dla", tabele porównawcze, "różni się od").
    - 1: dedykowana sekcja porównawcza LUB tabela porównawcza LUB 5+ wyraźnych porównań.
    - 0.5: pojedyncze odniesienia porównawcze, ale brak wyraźnej sekcji.
    - 0: brak sygnałów porównawczych.
 
-8. **questionHeadings** (Nagłówki jako pytania, 12 pkt)
-   - Procent H2/H3 sformułowanych jako pytanie (kończą się "?"). Liczysz tylko nagłówki w głównej treści.
-   - 1: 50%+ nagłówków to pytania.
-   - 0.5: 20-50%.
-   - 0: <20% lub brak H2/H3 w głównej treści.
-
 OUTPUT (valid JSON only):
 {
   "bluf": {"score": 0|0.5|1, "evidence": "...", "details": "..."},
-  "faq": {"score": ..., "evidence": "...", "details": "..."},
-  "density": {...},
-  "schema": {...},
-  "freshness": {...},
-  "modular": {...},
-  "comparisons": {...},
-  "questionHeadings": {...}
+  "comparisons": {"score": 0|0.5|1, "evidence": "...", "details": "..."}
 }`;
 
 type LlmFactorOutput = {
@@ -348,54 +515,99 @@ type LlmFactorOutput = {
   details?: string;
 };
 
-type LlmResponse = Record<FactorKey, LlmFactorOutput>;
+type SemanticFactorKey = 'bluf' | 'comparisons';
+type LlmResponse = Partial<Record<SemanticFactorKey, LlmFactorOutput>>;
 
-function buildUserPrompt(url: string, signals: PreparsedSignals, cleanedHtml: string): string {
+function normalizeScore(value: unknown): 0 | 0.5 | 1 {
+  if (value === 1 || value === '1') return 1;
+  if (value === 0.5 || value === '0.5') return 0.5;
+  return 0;
+}
+
+function sanitizeLlmText(value: unknown, fallback: string): string {
+  if (typeof value !== 'string') return fallback;
+  const cleaned = value.replace(/\s+/g, ' ').trim();
+  return cleaned ? cleaned.slice(0, 600) : fallback;
+}
+
+function buildUserPrompt(
+  url: string,
+  signals: PreparsedSignals,
+  deterministic: Partial<Record<FactorKey, FactorScore>>,
+  cleanedHtml: string
+): string {
   const today = new Date().toISOString().slice(0, 10);
+  const deterministicSummary = FACTORS.filter(
+    (factor) => factor.key !== 'bluf' && factor.key !== 'comparisons'
+  )
+    .map((factor) => {
+      const score = deterministic[factor.key];
+      return `- ${factor.key}: ${score?.score ?? 0} (${score?.evidence || 'brak oceny'})`;
+    })
+    .join('\n');
+
   return `URL analizowanej strony: ${url}
 DZIŚ: ${today}
 
-WSTĘPNIE SPARSOWANE SYGNAŁY (deterministycznie z HTML):
+DETERMINISTYCZNIE POLICZONE SYGNAŁY — NIE OCENIAJ ICH PONOWNIE:
+${deterministicSummary}
+
+WSTĘPNIE SPARSOWANE SYGNAŁY:
 - JSON-LD @types: ${signals.jsonLdTypes.length > 0 ? signals.jsonLdTypes.join(', ') : '(brak)'}
 - JSON-LD dateModified/datePublished: ${signals.jsonLdDate || '(brak)'}
 - meta article:modified_time / og:updated_time: ${signals.metaModifiedTime || '(brak)'}
 - meta article:published_time: ${signals.metaPublishedTime || '(brak)'}
 - og:title: ${signals.ogTitle || '(brak)'}
 
-CZYSTY HTML (script/style/noscript/komentarze usunięte, max 80KB):
+GŁÓWNA TREŚĆ HTML (script/style/noscript/komentarze usunięte, max 80KB):
 \`\`\`html
 ${cleanedHtml}
 \`\`\`
 
-Zwróć JSON z oceną 8 czynników. Tylko valid JSON.`;
+Zwróć JSON tylko dla "bluf" i "comparisons".`;
 }
 
-export async function analyzeContentWithLLM(
+export async function analyzeContentHybrid(
   html: string,
   url: string,
   apiKey: string
 ): Promise<FullScore> {
-  const { cleanedHtml, signals } = prepare(html);
-  const userPrompt = buildUserPrompt(url, signals, cleanedHtml);
+  const prepared = prepare(html);
+  const deterministic = deterministicFactors(prepared);
+  const userPrompt = buildUserPrompt(url, prepared.signals, deterministic, prepared.cleanedHtml);
 
-  const response = await fetch(OPENROUTER_URL, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-      'HTTP-Referer': 'https://widocznosc.ai',
-      'X-Title': 'widocznosc.ai URL Check',
-    },
-    body: JSON.stringify({
-      model: ANALYSIS_MODEL,
-      messages: [
-        { role: 'system', content: SYSTEM_PROMPT },
-        { role: 'user', content: userPrompt },
-      ],
-      temperature: 0.2,
-      response_format: { type: 'json_object' },
-    }),
-  });
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort('llm-timeout'), LLM_TIMEOUT_MS);
+
+  let response: Response;
+  try {
+    response = await fetch(OPENROUTER_URL, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+        'HTTP-Referer': 'https://widocznosc.ai',
+        'X-Title': 'widocznosc.ai URL Check',
+      },
+      signal: controller.signal,
+      body: JSON.stringify({
+        model: ANALYSIS_MODEL,
+        messages: [
+          { role: 'system', content: SYSTEM_PROMPT },
+          { role: 'user', content: userPrompt },
+        ],
+        temperature: 0.2,
+        response_format: { type: 'json_object' },
+      }),
+    });
+  } catch (error) {
+    if (error instanceof DOMException && error.name === 'AbortError') {
+      throw new Error('Przekroczono limit czasu analizy przez model.');
+    }
+    throw error;
+  } finally {
+    clearTimeout(timeout);
+  }
 
   if (!response.ok) {
     const text = await response.text().catch(() => '');
@@ -421,11 +633,15 @@ export async function analyzeContentWithLLM(
     throw new Error(`LLM zwrócił niepoprawny JSON: ${cleaned.slice(0, 200)}`);
   }
 
-  // Map LLM output → FactorScore[] (zachowujemy kompatybilność z UI)
+  // Finalny wynik: 6 czynników z parsera, 2 semantyczne z LLM.
   const factors: FactorScore[] = FACTORS.map((def) => {
-    const out = parsed[def.key];
-    const score: 0 | 0.5 | 1 =
-      out?.score === 1 ? 1 : out?.score === 0.5 ? 0.5 : 0;
+    const deterministicScore = deterministic[def.key];
+    if (deterministicScore) {
+      return deterministicScore;
+    }
+
+    const out = parsed[def.key as SemanticFactorKey];
+    const score = normalizeScore(out?.score);
     return {
       key: def.key,
       label: def.label,
@@ -433,8 +649,8 @@ export async function analyzeContentWithLLM(
       weight: def.weight,
       score,
       earned: Math.round(def.weight * score * 10) / 10,
-      evidence: out?.evidence || '(brak oceny od modelu)',
-      details: out?.details,
+      evidence: sanitizeLlmText(out?.evidence, '(brak oceny od modelu)'),
+      details: out?.details ? sanitizeLlmText(out.details, '') : undefined,
     };
   });
 
@@ -471,8 +687,7 @@ export function buildActionItems(factors: FactorScore[]): ActionItem[] {
   const p1 = factors
     .filter(
       (f) =>
-        (f.score === 0.5 && f.weight >= 12) ||
-        (f.score === 0 && f.weight >= 10 && f.weight < 12)
+        (f.score === 0.5 && f.weight >= 12) || (f.score === 0 && f.weight >= 10 && f.weight < 12)
     )
     .sort((a, b) => b.weight - a.weight);
   for (const f of p1.slice(0, 3)) {
