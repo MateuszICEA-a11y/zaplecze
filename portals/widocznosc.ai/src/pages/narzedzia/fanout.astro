@@ -566,7 +566,9 @@ const examples = [
     }
 
     form.querySelectorAll('.fanout-example').forEach((btn) => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', (event) => {
+        event.preventDefault();
+        event.stopPropagation();
         input.value = btn.getAttribute('data-query') || '';
         input.focus();
       });

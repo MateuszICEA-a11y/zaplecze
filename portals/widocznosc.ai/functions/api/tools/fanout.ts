@@ -3,7 +3,7 @@
  *
  * Endpoint: POST /api/tools/fanout   Body: { query: string }
  * Wymaga: env OPENAI_API_KEY, binding KV FANOUT_RL.
- * Opcjonalne env: FANOUT_MODEL (domyślnie gpt-5), FANOUT_DAILY_LIMIT (0 = bez limitu).
+ * Opcjonalne env: FANOUT_MODEL (domyślnie gpt-5.4), FANOUT_DAILY_LIMIT (0 = bez limitu).
  */
 import { parseResponsesOutput } from '../../_lib/fanout-parse';
 import { evaluateLimit, secondsUntilWarsawMidnight } from '../../_lib/rate-limit';
@@ -19,7 +19,7 @@ type FanoutRequest = { query?: string };
 type LimitRecord = { count: number; resetAt: number };
 
 const OPENAI_URL = 'https://api.openai.com/v1/responses';
-const DEFAULT_MODEL = 'gpt-5';
+const DEFAULT_MODEL = 'gpt-5.4';
 const DEFAULT_LIMIT = 0;
 const LLM_TIMEOUT_MS = 45_000;
 const MIN_QUERY = 3;
@@ -132,7 +132,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     });
   } catch (error) {
     clearTimeout(timeout);
-    const aborted = error instanceof DOMException && error.name === 'AbortError';
+    const aborted =
+      error instanceof DOMException && error.name === 'AbortError'
+      || error instanceof Error && /abort|timeout|timed out/i.test(error.message);
     return jsonError(
       500,
       aborted ? 'Przekroczono czas odpowiedzi. Spróbuj ponownie.' : 'Nie udało się połączyć z OpenAI. Spróbuj ponownie.'
