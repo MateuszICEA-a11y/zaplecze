@@ -5,9 +5,9 @@ import Footer from '../../components/Footer.astro';
 import ScrollUpButton from '../../components/ScrollUpButton.astro';
 
 const examples = [
-  'najlepsza agencja SEO w Polsce',
-  'jak wybrać system CRM dla firmy',
-  'najlepszy bank dla firmy 2026',
+  'najlepszy system CRM dla małej firmy',
+  'ranking kont firmowych 2026',
+  'jak wybrać platformę e-commerce B2B',
 ];
 ---
 
@@ -47,7 +47,7 @@ const examples = [
               required
               maxlength="300"
               autocomplete="off"
-              placeholder="np. najlepsza agencja SEO w Polsce"
+              placeholder="np. najlepszy system CRM dla małej firmy"
             />
           </label>
           <button type="submit" class="btn-primary fanout-submit">Pokaż fan-out</button>
@@ -568,7 +568,7 @@ const examples = [
     form.querySelectorAll('.fanout-example').forEach((btn) => {
       btn.addEventListener('click', () => {
         input.value = btn.getAttribute('data-query') || '';
-        form.requestSubmit();
+        input.focus();
       });
     });
 
