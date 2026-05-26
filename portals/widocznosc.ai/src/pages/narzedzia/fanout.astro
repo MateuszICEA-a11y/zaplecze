@@ -155,7 +155,10 @@ const examples = [
               <span class="domain-count">${escapeHtml(String(d.count))} cyt.</span>
             </div>
             <div class="domain-urls">
-              ${(d.urls || []).map((u) => `<a href="${escapeHtml(u)}" target="_blank" rel="nofollow noopener">${escapeHtml(u)}</a>`).join('')}
+              ${(d.urls || [])
+                .filter((u) => /^https?:\/\//i.test(String(u)))
+                .map((u) => `<a href="${escapeHtml(u)}" target="_blank" rel="nofollow noopener">${escapeHtml(u)}</a>`)
+                .join('')}
             </div>
           </div>`)
         .join('');

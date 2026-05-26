@@ -41,7 +41,10 @@ function jsonError(status: number, message: string, extra: Record<string, unknow
 }
 
 export const onRequestGet: PagesFunction = async () =>
-  jsonError(405, 'Użyj POST z { "query": "twoje zapytanie" }');
+  new Response(JSON.stringify({ error: 'Użyj POST z { "query": "twoje zapytanie" }' }), {
+    status: 405,
+    headers: { ...jsonHeaders(), Allow: 'POST' },
+  });
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
   const { request, env } = context;
