@@ -96,10 +96,10 @@ const LLM_TIMEOUT_MS = 45_000;
 const MAX_HTML_BYTES = 900_000;
 
 const MODEL_PROVIDERS = [
-  { id: 'chatgpt', label: 'ChatGPT', model: 'openai/gpt-5-mini' },
-  { id: 'claude', label: 'Claude', model: 'anthropic/claude-sonnet-4.5' },
-  { id: 'gemini', label: 'Gemini', model: 'google/gemini-3-flash-preview' },
-  { id: 'perplexity', label: 'Perplexity', model: 'perplexity/sonar-pro' },
+  { id: 'chatgpt', label: 'ChatGPT', model: 'openai/gpt-5-mini', useOpenRouterSearch: true },
+  { id: 'claude', label: 'Claude', model: 'anthropic/claude-haiku-4.5', useOpenRouterSearch: true },
+  { id: 'gemini', label: 'Gemini', model: 'google/gemini-3-flash-preview', useOpenRouterSearch: true },
+  { id: 'perplexity', label: 'Perplexity', model: 'perplexity/sonar-pro', useOpenRouterSearch: false },
 ] as const;
 
 const FALLBACK_RESULT = (provider: (typeof MODEL_PROVIDERS)[number], error: string): ModelResult => ({
@@ -400,15 +400,19 @@ async function callOpenRouter(
           },
           { role: 'user', content: prompt },
         ],
-        tools: [
-          {
-            type: 'openrouter:web_search',
-            parameters: {
-              max_results: 6,
-              search_context_size: 'medium',
-            },
-          },
-        ],
+        ...(provider.useOpenRouterSearch
+          ? {
+              tools: [
+                {
+                  type: 'openrouter:web_search',
+                  parameters: {
+                    max_results: 6,
+                    search_context_size: 'medium',
+                  },
+                },
+              ],
+            }
+          : {}),
         response_format: { type: 'json_object' },
         temperature: 0.2,
       }),

@@ -474,40 +474,45 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
     margin-top: 4px;
   }
 
-  :global(.panel) {
+  :global(.brand-panel) {
     background: var(--bg-surface-1);
+    border: 1px solid var(--hairline-soft);
     border-radius: var(--r-xl);
-    padding: 26px;
+    padding: clamp(20px, 3vw, 30px);
   }
 
-  :global(.panel-title) {
+  :global(.brand-panel-title) {
     font-family: var(--font-display);
-    font-size: 22px;
+    font-size: clamp(24px, 2.8vw, 34px);
+    line-height: 1.08;
     font-weight: 500;
     color: var(--ink);
-    margin: 0 0 18px;
+    margin: 0 0 20px;
+    letter-spacing: -0.025em;
   }
 
-  :global(.model-grid) {
+  :global(.brand-model-grid) {
     display: grid;
     gap: 12px;
   }
 
-  :global(.model-row) {
+  :global(.brand-model-row) {
     display: grid;
-    grid-template-columns: 112px 1fr;
-    gap: 18px;
-    padding: 18px;
+    grid-template-columns: minmax(132px, 180px) 1fr;
+    gap: 22px;
+    padding: 20px 22px;
     background: var(--bg-canvas);
     border-radius: var(--r-lg);
+    border: 1px solid color-mix(in srgb, var(--hairline) 74%, transparent);
   }
 
-  :global(.model-name) {
+  :global(.brand-model-name) {
     color: var(--ink);
     font-weight: 700;
+    font-size: 15px;
   }
 
-  :global(.model-pill) {
+  :global(.brand-model-pill) {
     display: inline-flex;
     width: fit-content;
     margin-top: 8px;
@@ -516,22 +521,24 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
     background: var(--bg-surface-2);
     color: var(--ink-muted);
     font-size: 11px;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
   }
 
-  :global(.model-summary) {
+  :global(.brand-model-summary) {
     color: var(--ink);
-    font-size: 14px;
-    line-height: 1.55;
-    margin: 0 0 10px;
+    font-size: 15px;
+    line-height: 1.58;
+    margin: 0 0 12px;
   }
 
-  :global(.model-meta) {
+  :global(.brand-model-meta) {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
   }
 
-  :global(.tag) {
+  :global(.brand-tag) {
     display: inline-flex;
     padding: 4px 9px;
     border-radius: var(--r-pill);
@@ -541,59 +548,70 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
     background: var(--bg-surface-2);
   }
 
-  :global(.tag.good) {
+  :global(.brand-tag.good) {
     color: var(--success-green);
     background: rgb(26 170 85 / 0.14);
   }
 
-  :global(.tag.warn) {
+  :global(.brand-tag.warn) {
     color: #fbbf24;
     background: rgb(251 191 36 / 0.14);
   }
 
-  :global(.tag.bad) {
+  :global(.brand-tag.bad) {
     color: #ef4444;
     background: rgb(239 68 68 / 0.14);
   }
 
-  :global(.list-grid) {
+  :global(.brand-list-grid) {
     display: grid;
-    gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
-  :global(.list-item) {
+  :global(.brand-competitor-grid) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+  }
+
+  :global(.brand-list-card) {
     background: var(--bg-canvas);
+    border: 1px solid color-mix(in srgb, var(--hairline) 74%, transparent);
     border-radius: var(--r-md);
-    padding: 14px 16px;
+    padding: 16px 18px;
     color: var(--ink-muted);
     font-size: 14px;
     line-height: 1.55;
   }
 
-  :global(.list-item strong) {
+  :global(.brand-list-card strong) {
     color: var(--ink);
   }
 
-  :global(.sources-grid) {
+  :global(.brand-sources-grid) {
     display: grid;
     gap: 8px;
   }
 
-  :global(.source-link) {
+  :global(.brand-source-link) {
     display: grid;
     gap: 4px;
     padding: 14px 16px;
     background: var(--bg-canvas);
+    border: 1px solid color-mix(in srgb, var(--hairline) 74%, transparent);
     border-radius: var(--r-md);
     color: var(--ink);
     text-decoration: none;
+    font-size: 14px;
+    line-height: 1.35;
   }
 
-  :global(.source-link:hover) {
+  :global(.brand-source-link:hover) {
     color: var(--accent-blue);
   }
 
-  :global(.source-domain) {
+  :global(.brand-source-domain) {
     color: var(--ink-muted);
     font-size: 12px;
   }
@@ -638,7 +656,7 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
     }
 
     :global(.brand-score-card),
-    :global(.model-row) {
+    :global(.brand-model-row) {
       grid-template-columns: 1fr;
     }
   }
@@ -697,8 +715,8 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
 
     function renderLoading(brand) {
       return `
-        <div class="panel">
-          <h2 class="panel-title">Odpytujemy modele o ${escapeHtml(brand)}</h2>
+        <div class="brand-panel">
+          <h2 class="brand-panel-title">Odpytujemy modele o ${escapeHtml(brand)}</h2>
           <p class="brand-score-copy">Sprawdzamy ChatGPT, Claude, Gemini i Perplexity przez OpenRouter. Wynik pojawi się po zakończeniu odpowiedzi modeli.</p>
         </div>
       `;
@@ -754,28 +772,28 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
             </div>
           </section>
 
-          <section class="panel">
-            <h2 class="panel-title">Wyniki per model</h2>
-            <div class="model-grid">${modelRows}</div>
+          <section class="brand-panel">
+            <h2 class="brand-panel-title">Wyniki per model</h2>
+            <div class="brand-model-grid">${modelRows}</div>
           </section>
 
-          <section class="panel">
-            <h2 class="panel-title">Konkurenci polecani zamiast marki</h2>
+          <section class="brand-panel">
+            <h2 class="brand-panel-title">Konkurenci polecani zamiast marki</h2>
             ${renderCompetitors(competitors)}
           </section>
 
-          <section class="panel">
-            <h2 class="panel-title">Możliwe halucynacje</h2>
+          <section class="brand-panel">
+            <h2 class="brand-panel-title">Możliwe halucynacje</h2>
             ${renderHallucinations(hallucinations)}
           </section>
 
-          <section class="panel">
-            <h2 class="panel-title">Źródła cytowane przez modele</h2>
+          <section class="brand-panel">
+            <h2 class="brand-panel-title">Źródła cytowane przez modele</h2>
             ${renderSources(sources)}
           </section>
 
-          <section class="panel">
-            <h2 class="panel-title">Priorytety działań</h2>
+          <section class="brand-panel">
+            <h2 class="brand-panel-title">Priorytety działań</h2>
             ${renderActions(report.actionItems || [])}
           </section>
         </div>
@@ -785,32 +803,32 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
     function renderModelRow(model) {
       if (model.status === 'error') {
         return `
-          <article class="model-row">
+          <article class="brand-model-row">
             <div>
-              <div class="model-name">${escapeHtml(model.label)}</div>
-              <span class="model-pill">błąd</span>
+              <div class="brand-model-name">${escapeHtml(model.label)}</div>
+              <span class="brand-model-pill">błąd</span>
             </div>
             <div>
-              <p class="model-summary">${escapeHtml(model.error || 'Model nie zwrócił odpowiedzi.')}</p>
-              <div class="model-meta"><span class="tag bad">brak wyniku</span></div>
+              <p class="brand-model-summary">${escapeHtml(model.error || 'Model nie zwrócił odpowiedzi.')}</p>
+              <div class="brand-model-meta"><span class="brand-tag bad">brak wyniku</span></div>
             </div>
           </article>
         `;
       }
 
       return `
-        <article class="model-row">
+        <article class="brand-model-row">
           <div>
-            <div class="model-name">${escapeHtml(model.label)}</div>
-            <span class="model-pill">${escapeHtml(model.model)}</span>
+            <div class="brand-model-name">${escapeHtml(model.label)}</div>
+            <span class="brand-model-pill">${escapeHtml(model.model)}</span>
           </div>
           <div>
-            <p class="model-summary">${escapeHtml(model.summary)}</p>
-            <div class="model-meta">
-              <span class="tag ${model.knowsBrand === 'yes' ? 'good' : model.knowsBrand === 'partial' ? 'warn' : 'bad'}">${escapeHtml(knowsLabel(model.knowsBrand))}</span>
-              <span class="tag">${escapeHtml(sentimentLabel(model.sentiment))}</span>
-              <span class="tag">${escapeHtml(String(model.confidence))}% pewności</span>
-              <span class="tag ${model.citedOwnDomain ? 'good' : 'warn'}">${model.citedOwnDomain ? 'cytuje domenę' : 'nie cytuje domeny'}</span>
+            <p class="brand-model-summary">${escapeHtml(model.summary)}</p>
+            <div class="brand-model-meta">
+              <span class="brand-tag ${model.knowsBrand === 'yes' ? 'good' : model.knowsBrand === 'partial' ? 'warn' : 'bad'}">${escapeHtml(knowsLabel(model.knowsBrand))}</span>
+              <span class="brand-tag">${escapeHtml(sentimentLabel(model.sentiment))}</span>
+              <span class="brand-tag">${escapeHtml(String(model.confidence))}% pewności</span>
+              <span class="brand-tag ${model.citedOwnDomain ? 'good' : 'warn'}">${model.citedOwnDomain ? 'cytuje domenę' : 'nie cytuje domeny'}</span>
             </div>
           </div>
         </article>
@@ -819,21 +837,21 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
 
     function renderCompetitors(competitors) {
       if (!competitors.length) {
-        return '<div class="list-item">Modele nie wskazały wyraźnych konkurentów.</div>';
+        return '<div class="brand-list-card">Modele nie wskazały wyraźnych konkurentów.</div>';
       }
-      return `<div class="list-grid">${competitors
-        .map((name) => `<div class="list-item"><strong>${escapeHtml(name)}</strong></div>`)
+      return `<div class="brand-competitor-grid">${competitors
+        .map((name) => `<div class="brand-list-card"><strong>${escapeHtml(name)}</strong></div>`)
         .join('')}</div>`;
     }
 
     function renderHallucinations(items) {
       if (!items.length) {
-        return '<div class="list-item">Nie wykryto oczywistych halucynacji w odpowiedziach modeli.</div>';
+        return '<div class="brand-list-card">Nie wykryto oczywistych halucynacji w odpowiedziach modeli.</div>';
       }
-      return `<div class="list-grid">${items
+      return `<div class="brand-list-grid">${items
         .map(
           (item) => `
-            <div class="list-item">
+            <div class="brand-list-card">
               <strong>${escapeHtml(item.model)} · ${escapeHtml(severityLabel(item.severity))}</strong><br />
               ${escapeHtml(item.claim)}<br />
               ${escapeHtml(item.why)}
@@ -845,14 +863,14 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
 
     function renderSources(sources) {
       if (!sources.length) {
-        return '<div class="list-item">Modele nie zwróciły cytowań w standardowym formacie OpenRouter.</div>';
+        return '<div class="brand-list-card">Modele nie zwróciły cytowań w standardowym formacie OpenRouter.</div>';
       }
-      return `<div class="sources-grid">${sources
+      return `<div class="brand-sources-grid">${sources
         .map(
           (source) => `
-            <a class="source-link" href="${escapeAttr(source.url)}" target="_blank" rel="noopener noreferrer">
+            <a class="brand-source-link" href="${escapeAttr(source.url)}" target="_blank" rel="nofollow noopener noreferrer">
               <span>${escapeHtml(source.title)}</span>
-              <span class="source-domain">${escapeHtml(source.domain)}</span>
+              <span class="brand-source-domain">${escapeHtml(source.domain)}</span>
             </a>
           `
         )
@@ -860,11 +878,11 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
     }
 
     function renderActions(actions) {
-      if (!actions.length) return '<div class="list-item">Brak rekomendacji.</div>';
-      return `<div class="list-grid">${actions
+      if (!actions.length) return '<div class="brand-list-card">Brak rekomendacji.</div>';
+      return `<div class="brand-list-grid">${actions
         .map(
           (item) => `
-            <div class="list-item">
+            <div class="brand-list-card">
               <strong>${escapeHtml(item.priority)} · ${escapeHtml(item.title)}</strong><br />
               ${escapeHtml(item.description)}
             </div>
