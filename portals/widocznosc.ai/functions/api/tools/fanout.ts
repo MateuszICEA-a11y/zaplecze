@@ -3,7 +3,7 @@
  *
  * Endpoint: POST /api/tools/fanout   Body: { query: string }
  * Wymaga: env OPENAI_API_KEY, binding KV FANOUT_RL.
- * Opcjonalne env: FANOUT_MODEL (domyślnie gpt-5-mini), FANOUT_DAILY_LIMIT (domyślnie 3).
+ * Opcjonalne env: FANOUT_MODEL (domyślnie gpt-5-mini), FANOUT_DAILY_LIMIT (0 = bez limitu).
  */
 import { parseResponsesOutput } from '../../_lib/fanout-parse';
 import { evaluateLimit, secondsUntilWarsawMidnight } from '../../_lib/rate-limit';
@@ -20,7 +20,7 @@ type LimitRecord = { count: number; resetAt: number };
 
 const OPENAI_URL = 'https://api.openai.com/v1/responses';
 const DEFAULT_MODEL = 'gpt-5-mini';
-const DEFAULT_LIMIT = 3;
+const DEFAULT_LIMIT = 0;
 const LLM_TIMEOUT_MS = 45_000;
 const MIN_QUERY = 3;
 const MAX_QUERY = 300;
@@ -72,7 +72,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     );
   }
   const model = (env.FANOUT_MODEL || DEFAULT_MODEL).trim();
-  const limit = Number.parseInt(env.FANOUT_DAILY_LIMIT || '', 10) || DEFAULT_LIMIT;
+  const configuredLimit = Number.parseInt(env.FANOUT_DAILY_LIMIT || '', 10);
+  const limit = Number.isFinite(configuredLimit) && configuredLimit > 0 ? configuredLimit : DEFAULT_LIMIT;
+  const rateLimitEnabled = limit > 0;
 
   // 3. Rate-limit (odczyt) — wymaga bindingu KV
   const kv = env.FANOUT_RL;
@@ -82,7 +84,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   const ttl = secondsUntilWarsawMidnight(now);
 
   let record: LimitRecord = { count: 0, resetAt: now.getTime() + ttl * 1000 };
-  if (kv) {
+  if (rateLimitEnabled && kv) {
     const stored = await kv.get<LimitRecord>(kvKey, 'json');
     if (stored && typeof stored.count === 'number' && typeof stored.resetAt === 'number') {
       record = stored;
@@ -91,8 +93,10 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   // Jeden, spójny resetAt (z zapisanego okna) używany i w 429, i w 200.
   const resetAt = new Date(record.resetAt).toISOString();
 
-  const decision = evaluateLimit(record.count, limit);
-  if (!decision.allowed) {
+  const decision = rateLimitEnabled
+    ? evaluateLimit(record.count, limit)
+    : { allowed: true, remaining: null };
+  if (rateLimitEnabled && !decision.allowed) {
     return jsonError(429, `Wykorzystałeś dzienny limit (${limit} zapytań). Reset o północy.`, {
       remaining: 0,
       limit,
@@ -138,7 +142,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   const parsed = parseResponsesOutput(raw);
 
   // 5. Inkrement limitu DOPIERO po udanej odpowiedzi
-  if (kv) {
+  if (rateLimitEnabled && kv) {
     const newCount = Math.max(0, record.count) + 1;
     await kv.put(kvKey, JSON.stringify({ count: newCount, resetAt: record.resetAt }), {
       expirationTtl: Math.max(60, Math.ceil((record.resetAt - now.getTime()) / 1000)),
