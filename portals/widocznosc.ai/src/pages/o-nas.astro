@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import ScrollUpButton from '../components/ScrollUpButton.astro';
 import AuthorsStrip from '../components/AuthorsStrip.astro';
 import CTABand from '../components/CTABand.astro';
+import { getCollection } from 'astro:content';
 
 const principles = [
   {
@@ -26,29 +27,37 @@ const principles = [
 ];
 
 const stats = [
-  { value: 'kilkanaście lat', label: 'doświadczenia w SEO' },
+  { value: '15+', label: 'lat doświadczenia w SEO' },
   { value: '200+', label: 'wdrożeń SEO klientów ICEA' },
   { value: '5', label: 'modeli AI w pełnym audycie' },
 ];
 
-const differentiators = [
+const antiPractices = [
   {
-    title: 'Praktyka, nie teoria',
-    desc: 'Każda rekomendacja przeszła przez wdrożenie u klienta. Mówimy co działa w polskich realiach – z polskimi źródłami, polskim contentem, polskimi konkurentami w rankingu.',
+    title: 'Nie obiecujemy pozycji w ChatGPT',
+    desc: 'W modelach generatywnych nie ma jednej stałej pozycji. Raportujemy udział w odpowiedziach, cytowania, sentyment i konkurentów pojawiających się zamiast Twojej marki.',
   },
   {
-    title: 'Transparentne metody',
-    desc: 'Pokazujemy promptu, źródła, narzędzia. Klient dostaje surowe zapytania zadawane modelom, raw odpowiedzi i metodologię scoringu. Bez czarnych skrzynek.',
+    title: 'Nie sprzedajemy pseudo-rankingu',
+    desc: 'Visibility Score liczymy z realnych odpowiedzi pięciu modeli, a nie z arbitralnej tabeli od zewnętrznego dostawcy. Każda liczba ma kontekst i powtarzalną metodologię.',
   },
   {
-    title: 'Dane, nie marketing',
-    desc: 'Visibility Score liczony z realnych odpowiedzi pięciu modeli, nie z pseudo-rankingu od zewnętrznego dostawcy. Każda liczba w raporcie ma kontekst i powtarzalną metodologię.',
+    title: 'Nie generujemy AI-spamu',
+    desc: 'Nie zalewamy serwisu masą tekstów bez źródeł. Optymalizujemy strukturę, fakty, FAQ, schema i źródła tak, żeby model miał co zacytować.',
   },
   {
-    title: 'Zespół z nazwiskami',
-    desc: 'Każdy artykuł na blogu, każda rekomendacja w audycie – podpisany ekspert ICEA z kilkunastoletnim stażem. Wiesz z kim rozmawiasz i czyje wnioski czytasz.',
+    title: 'Nie chowamy autorów za marką',
+    desc: 'Każdy artykuł i każda rekomendacja ma autora z nazwiskiem, rolą i profilem eksperta ICEA. Wiesz z kim rozmawiasz i czyje wnioski czytasz.',
   },
 ];
+
+const authorOrder = ['tomasz-czechowski', 'michal-ziach', 'piotr-wicenciak', 'mateusz-wisniewski'];
+const allAuthors = await getCollection('authors');
+const authors = authorOrder
+  .map((slug) => allAuthors.find((author) => author.id === slug))
+  .filter((author): author is NonNullable<typeof author> => Boolean(author));
+
+const siteUrl = 'https://widocznosc.ai';
 ---
 
 <Layout
@@ -57,6 +66,46 @@ const differentiators = [
 >
   <Navbar />
 
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'AboutPage',
+      name: 'O nas – widocznosc.ai',
+      url: `${siteUrl}/o-nas`,
+      about: {
+        '@type': 'Organization',
+        name: 'widocznosc.ai',
+        url: siteUrl,
+        description:
+          'Projekt ICEA skoncentrowany na widoczności marek w wyszukiwarkach AI: ChatGPT, Claude, Gemini, Perplexity i Bing Copilot.',
+        foundingDate: '2026',
+        parentOrganization: {
+          '@type': 'Organization',
+          name: 'ICEA',
+          url: 'https://grupa-icea.pl',
+        },
+        employee: authors.map((author) => ({
+          '@type': 'Person',
+          name: author.data.name,
+          jobTitle: author.data.role,
+          worksFor: {
+            '@type': 'Organization',
+            name: 'ICEA',
+          },
+          knowsAbout: [
+            'SEO',
+            'Generative Engine Optimization',
+            'AI Search',
+            ...author.data.expertise,
+          ],
+          sameAs: [author.data.linkedin, author.data.iceaProfile].filter(Boolean),
+        })),
+      },
+    })}
+  />
+
   <!-- Hero – wyśrodkowany na pełnej szerokości containera -->
   <section class="relative pt-32 pb-20 md:pt-40 md:pb-24">
     <div class="content-container text-center">
@@ -64,15 +113,25 @@ const differentiators = [
       <h1 class="display-xl mx-auto mb-8" style="max-width: 1100px;">
         Pozycjonujemy marki w&nbsp;<span class="accent">wyszukiwarkach AI</span>
       </h1>
-      <p class="text-ink mx-auto text-lg leading-relaxed" style="max-width: 720px;">
+      <p class="text-ink-muted mx-auto text-lg leading-relaxed" style="max-width: 720px;">
         widocznosc.ai to flagowy projekt
-        <a class="text-accent-blue underline underline-offset-2 hover:opacity-85" href="https://grupa-icea.pl" target="_blank" rel="noopener noreferrer">grupa-icea.pl</a>
-        dedykowany jednej dyscyplinie: budowaniu obecności marki w odpowiedziach generowanych przez ChatGPT, Claude,
-        Gemini, Perplexity i Bing Copilot. Mierzymy cytowania, nie pseudo-ranking.
+        <a
+          class="text-accent-blue underline underline-offset-2 hover:opacity-85"
+          href="https://grupa-icea.pl"
+          target="_blank"
+          rel="noopener noreferrer">grupa-icea.pl</a
+        >
+        dedykowany jednej dyscyplinie: budowaniu obecności marki w odpowiedziach generowanych przez ChatGPT,
+        Claude, Gemini, Perplexity i Bing Copilot. Mierzymy cytowania, nie pseudo-ranking.
       </p>
+      <div class="about-hero-proof" aria-label="Sygnały zaufania widocznosc.ai">
+        <div><span>4</span><p>ekspertów ICEA</p></div>
+        <div><span>200+</span><p>wdrożeń SEO</p></div>
+        <div><span>5</span><p>modeli AI w audycie</p></div>
+      </div>
       <div class="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <a class="btn-primary" href="/kontakt?type=audyt-ai">Zamów audyt AI</a>
-        <a class="btn-secondary" href="/narzedzia/visibility-checker">Sprawdź widoczność · 90s</a>
+        <a class="btn-secondary" href="/narzedzia/brand-check">Sprawdź widoczność · 60s</a>
       </div>
     </div>
   </section>
@@ -80,11 +139,14 @@ const differentiators = [
   <!-- Stats band -->
   <section class="relative w-full">
     <div class="content-container py-12 md:py-16">
-      <div class="grid grid-cols-1 md:grid-cols-3" style="border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline);">
+      <div
+        class="grid grid-cols-1 md:grid-cols-3"
+        style="border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline);"
+      >
         {
           stats.map((stat, i) => (
             <div
-              class="px-2 py-10 md:py-12 md:px-8"
+              class="px-2 py-10 md:px-8 md:py-12"
               style={i > 0 ? 'border-left: 1px solid var(--hairline);' : ''}
             >
               <div class="display-lg accent leading-none">{stat.value}</div>
@@ -100,7 +162,10 @@ const differentiators = [
   <section class="relative w-full" aria-labelledby="principles-title">
     <div class="content-container py-16 lg:py-20">
       <div class="mx-auto mb-14 text-center" style="max-width: 880px;">
-        <span class="eyebrow mb-6 inline-flex">Zasady, którymi się kierujemy</span>
+        <div class="head-meta justify-center">
+          <span class="section-index">A/01</span>
+          <span class="eyebrow">Zasady, którymi się kierujemy</span>
+        </div>
         <h2 id="principles-title" class="display-lg mt-2 mb-6" style="text-wrap: balance;">
           Cztery rzeczy, w&nbsp;które wierzymy bezkompromisowo
         </h2>
@@ -113,9 +178,15 @@ const differentiators = [
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
         {
           principles.map((p, i) => (
-            <div class="flex flex-col rounded-[15px] p-8 lg:p-10" style="background: var(--bg-surface-1);">
+            <div
+              class="flex flex-col rounded-[15px] p-8 lg:p-10"
+              style="background: var(--bg-surface-1);"
+            >
               <div class="display-md text-ink-muted mb-4 leading-none">0{i + 1}</div>
-              <h3 class="mb-3 text-xl font-medium" style="font-family: var(--font-display); letter-spacing: -0.5px;">
+              <h3
+                class="mb-3 text-xl font-medium"
+                style="font-family: var(--font-display); letter-spacing: -0.5px;"
+              >
                 {p.title}
               </h3>
               <p class="text-ink-muted text-sm leading-relaxed">{p.desc}</p>
@@ -131,27 +202,32 @@ const differentiators = [
     <div class="content-container py-16 lg:py-20">
       <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
         <div class="lg:col-span-5">
-          <span class="eyebrow mb-6 inline-flex">ICEA + GEO</span>
+          <div class="head-meta">
+            <span class="section-index">A/02</span>
+            <span class="eyebrow">ICEA + GEO</span>
+          </div>
           <h2 id="differentiators-title" class="display-lg mt-2 mb-6">
-            Co odróżnia<br />nasz audyt AI
+            Czego nie robimy<br />w audycie AI
           </h2>
           <p class="text-ink mb-6 text-lg leading-relaxed">
-            ICEA pozycjonuje strony w Google od kilkunastu lat. Tę samą rygorystyczność – mierzalność,
-            transparentność, powtarzalną metodologię – przenosimy do GEO.
+            ICEA pozycjonuje strony w Google od kilkunastu lat. Tę samą rygorystyczność –
+            mierzalność, transparentność, powtarzalną metodologię – przenosimy do GEO.
           </p>
           <p class="text-ink-muted leading-relaxed">
-            Nie mówimy klientom „postaw schema FAQPage i będzie OK". Pokazujemy które konkretne
-            sygnały najczęściej decydują o cytowaniu marki w danym modelu i jak je zoptymalizować
-            tak, żeby efekt był mierzalny przy następnym audycie.
+            Anti-lista jest ważniejsza niż lista obietnic. Pokazujemy, czego świadomie unikamy, bo
+            właśnie tam najczęściej zaczyna się marketingowy szum wokół pozycjonowania AI.
           </p>
         </div>
 
         <div class="lg:col-span-7">
           <div class="space-y-3">
             {
-              differentiators.map((d) => (
+              antiPractices.map((d) => (
                 <div class="rounded-[15px] p-6 lg:p-7" style="background: var(--bg-surface-1);">
-                  <h3 class="mb-2 text-lg font-medium" style="font-family: var(--font-display); letter-spacing: -0.4px;">
+                  <h3
+                    class="mb-2 text-lg font-medium"
+                    style="font-family: var(--font-display); letter-spacing: -0.4px;"
+                  >
                     {d.title}
                   </h3>
                   <p class="text-ink-muted text-sm leading-relaxed">{d.desc}</p>
@@ -167,7 +243,8 @@ const differentiators = [
   <!-- Zespół (AuthorsStrip z homepage) -->
   <AuthorsStrip
     eyebrow="Zespół"
-    title="Cztery osoby, kilkanaście lat doświadczenia"
+    sectionIndex="A/03"
+    title='Cztery osoby, <span class="accent">15+ lat doświadczenia</span>'
     subtitle="Każdy artykuł na widocznosc.ai i każda rekomendacja w audycie podpisana imieniem i nazwiskiem. Wiesz z kim rozmawiasz, kogo cytuje schema Article i czyje doświadczenie stoi za rekomendacjami."
     limit={4}
   />
@@ -185,3 +262,45 @@ const differentiators = [
   <Footer />
   <ScrollUpButton />
 </Layout>
+
+<style>
+  .about-hero-proof {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.55rem;
+    max-width: 640px;
+    margin: 2rem auto 0;
+    padding: 0.65rem;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-xl);
+    background: color-mix(in srgb, var(--bg-surface-1) 84%, transparent);
+  }
+
+  .about-hero-proof div {
+    padding: 0.85rem 0.9rem;
+    border-radius: var(--r-md);
+    background: var(--bg-canvas);
+  }
+
+  .about-hero-proof span {
+    display: block;
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .about-hero-proof p {
+    margin: 0.45rem 0 0;
+    color: var(--ink-muted);
+    font-size: 0.82rem;
+    line-height: 1.35;
+  }
+
+  @media (max-width: 640px) {
+    .about-hero-proof {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

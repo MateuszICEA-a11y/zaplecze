@@ -7,12 +7,29 @@
  */
 import { getCollection } from 'astro:content';
 
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  limit?: number;
+  sectionIndex?: string;
+}
+
+const {
+  eyebrow = 'Zespół',
+  title = 'Stoi za nami <span class="accent">zespół ICEA</span>',
+  subtitle = 'Nasze kilkunastoletnie doświadczenie w&nbsp;SEO przekuwamy w&nbsp;skuteczne strategie widoczności w&nbsp;dobie AI Search. Nie teoretyzujemy &ndash; każda rekomendacja na&nbsp;tej stronie to wniosek z&nbsp;realnych projektów.',
+  limit,
+  sectionIndex = 'S/06',
+} = Astro.props;
+
 const ORDER = ['tomasz-czechowski', 'michal-ziach', 'piotr-wicenciak', 'mateusz-wisniewski'];
 
 const allAuthors = await getCollection('authors');
 const authors = ORDER.map((slug) => allAuthors.find((a) => a.id === slug)).filter(
   (a): a is NonNullable<typeof a> => Boolean(a)
 );
+const visibleAuthors = typeof limit === 'number' ? authors.slice(0, limit) : authors;
 
 const initialsOf = (name: string) =>
   name
@@ -28,25 +45,19 @@ const initialsOf = (name: string) =>
     <header class="section-head">
       <div class="head-left">
         <div class="head-meta">
-          <span class="section-index">S/06</span>
-          <span class="eyebrow">Zespół</span>
+          <span class="section-index">{sectionIndex}</span>
+          <span class="eyebrow">{eyebrow}</span>
         </div>
-        <h2 id="team-title" class="display-lg">
-          Stoi za nami <span class="accent">zespół ICEA</span>
-        </h2>
+        <h2 id="team-title" class="display-lg" set:html={title} />
       </div>
       <div class="head-right">
-        <p class="subhead">
-          Nasze kilkunastoletnie doświadczenie w&nbsp;SEO przekuwamy w&nbsp;skuteczne strategie
-          widoczności w&nbsp;dobie AI Search. Nie teoretyzujemy &ndash; każda rekomendacja
-          na&nbsp;tej stronie to wniosek z&nbsp;realnych projektów.
-        </p>
+        <p class="subhead" set:html={subtitle} />
       </div>
     </header>
 
     <div class="team-grid">
       {
-        authors.map((author) => {
+        visibleAuthors.map((author) => {
           const data = author.data;
           const slug = author.id;
           const initials = initialsOf(data.name);

@@ -34,9 +34,12 @@ const services = [
 ] as const;
 
 const gradientStyle = (variant: string) => {
-  if (variant === 'violet') return 'background: var(--gradient-violet); background-size: 130% 130%; background-position: 25% 30%;';
-  if (variant === 'magenta') return 'background: var(--gradient-magenta); background-size: 130% 130%; background-position: 30% 30%;';
-  if (variant === 'coral') return 'background: var(--gradient-coral); background-size: 130% 130%; background-position: 70% 30%;';
+  if (variant === 'violet')
+    return 'background: var(--gradient-violet); background-size: 130% 130%; background-position: 25% 30%;';
+  if (variant === 'magenta')
+    return 'background: var(--gradient-magenta); background-size: 130% 130%; background-position: 30% 30%;';
+  if (variant === 'coral')
+    return 'background: var(--gradient-coral); background-size: 130% 130%; background-position: 70% 30%;';
   return 'background: var(--gradient-orange); background-size: 130% 130%; background-position: 70% 25%;';
 };
 ---
@@ -61,7 +64,7 @@ const gradientStyle = (variant: string) => {
       </p>
       <div class="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <a class="btn-primary" href="/kontakt?type=audyt-ai">Zamów audyt wszystkich modeli</a>
-        <a class="btn-secondary" href="/narzedzia/visibility-checker">Sprawdź widoczność · 90s</a>
+        <a class="btn-secondary" href="/narzedzia/brand-check">Sprawdź widoczność · 60s</a>
       </div>
     </div>
   </section>
@@ -91,7 +94,10 @@ const gradientStyle = (variant: string) => {
               data-card-template
             >
               <div class="text-ink-muted text-sm">{model.vendor}</div>
-              <h3 class="mt-2 mb-3 text-2xl font-medium" style="font-family: var(--font-display); letter-spacing: -1px;">
+              <h3
+                class="mt-2 mb-3 text-2xl font-medium"
+                style="font-family: var(--font-display); letter-spacing: -1px;"
+              >
                 {model.name}
               </h3>
               <p class="text-ink-muted text-sm leading-relaxed">{model.shortDesc}</p>
@@ -111,10 +117,12 @@ const gradientStyle = (variant: string) => {
     <div class="content-container py-16 lg:py-20">
       <div class="mx-auto mb-14 text-center" style="max-width: 880px;">
         <span class="eyebrow mb-6 inline-flex">Metodologia</span>
-        <h2 id="method-title" class="display-lg mt-2 mb-6" style="text-wrap: balance;">Cztery filary współpracy</h2>
+        <h2 id="method-title" class="display-lg mt-2 mb-6" style="text-wrap: balance;">
+          Cztery filary współpracy
+        </h2>
         <p class="text-ink-muted mx-auto text-lg leading-relaxed" style="max-width: 720px;">
-          Niezależnie od tego który model AI ma być Twoim głównym kanałem, sposób pracy zostaje
-          ten sam. Mierzymy, optymalizujemy, monitorujemy, planujemy.
+          Niezależnie od tego który model AI ma być Twoim głównym kanałem, sposób pracy zostaje ten
+          sam. Mierzymy, optymalizujemy, monitorujemy, planujemy.
         </p>
       </div>
 
@@ -123,14 +131,19 @@ const gradientStyle = (variant: string) => {
           services.map((service, i) => (
             <div
               id={service.id}
-              class="scroll-mt-24 relative flex flex-col overflow-hidden rounded-[30px] p-8 lg:p-10"
+              class="relative flex scroll-mt-24 flex-col overflow-hidden rounded-[30px] p-8 lg:p-10"
               style={gradientStyle(service.variant)}
             >
-              <div class="display-md mb-2 leading-none" style="color: #fff;">0{i + 1}</div>
+              <div class="display-md mb-2 leading-none" style="color: #fff;">
+                0{i + 1}
+              </div>
               <div class="mb-6 text-sm" style="color: rgba(255,255,255,0.7);">
                 Filar {i + 1}
               </div>
-              <h3 class="mb-3 text-xl font-medium" style="font-family: var(--font-display); letter-spacing: -0.5px; color: #fff;">
+              <h3
+                class="mb-3 text-xl font-medium"
+                style="font-family: var(--font-display); letter-spacing: -0.5px; color: #fff;"
+              >
                 {service.title}
               </h3>
               <p class="text-sm leading-relaxed" style="color: rgba(255,255,255,0.85);">
@@ -146,7 +159,7 @@ const gradientStyle = (variant: string) => {
   <CTABand
     eyebrow="Decyzja"
     title="Nie wiesz od którego modelu zacząć?"
-    subtitle="Bezpłatna konsultacja 30 minut. Mówimy gdzie Twoja branża jest najczęściej pytana w&nbsp;AI i który silnik jako pierwszy daje ROI w&nbsp;Twoim przypadku."
+    subtitle="Bezpłatna konsultacja 30 minut. Mówimy gdzie Twoja branża jest najczęściej pytana w AI i który silnik jako pierwszy daje ROI w Twoim przypadku."
     primaryLabel="Zamów audyt AI"
     primaryHref="/kontakt?type=audyt-ai"
     ghostLabel="Bezpłatna konsultacja"
