@@ -209,11 +209,13 @@ function schemaTypeFromUrl(value: string): string | null {
 
 function extractSchemaOrgTypes(html: string, jsonLdTypes: string[]): string[] {
   const types = [...jsonLdTypes];
+  const attrRanges: Array<[number, number]> = [];
 
   const attrRe = /\b(?:itemtype|typeof)=["']([^"']+)["']/gi;
   let attrMatch: RegExpExecArray | null;
   // eslint-disable-next-line no-cond-assign
   while ((attrMatch = attrRe.exec(html)) !== null) {
+    attrRanges.push([attrMatch.index, attrMatch.index + attrMatch[0].length]);
     const rawValues = attrMatch[1].split(/\s+/).filter(Boolean);
     for (const rawValue of rawValues) {
       const fromUrl = schemaTypeFromUrl(rawValue);
@@ -226,6 +228,10 @@ function extractSchemaOrgTypes(html: string, jsonLdTypes: string[]): string[] {
   let urlMatch: RegExpExecArray | null;
   // eslint-disable-next-line no-cond-assign
   while ((urlMatch = urlRe.exec(html)) !== null) {
+    const isInsideTypedAttribute = attrRanges.some(
+      ([start, end]) => urlMatch!.index >= start && urlMatch!.index < end
+    );
+    if (isInsideTypedAttribute) continue;
     types.push(urlMatch[1]);
   }
 

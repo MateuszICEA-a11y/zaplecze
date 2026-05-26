@@ -46,6 +46,9 @@ describe('url-check schema parser', () => {
     expect(factors.schema?.earned).toBe(14);
     expect(factors.faq?.score).toBe(1);
     expect(factors.faq?.earned).toBe(12);
-    expect(factors.faq?.details).toContain('FAQPage: tak');
+    expect(factors.faq?.details).toContain('FAQPage: tak, Question: 3, Answer: 3');
+    expect(factors.schema?.details).toContain('Question x3');
+    expect(factors.schema?.details).toContain('Answer x3');
+    expect(factors.schema?.details).not.toContain('Question x6');
   });
 });
