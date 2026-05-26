@@ -413,7 +413,7 @@ async function callOpenRouter(
               ],
             }
           : {}),
-        response_format: { type: 'json_object' },
+        ...(provider.id === 'perplexity' ? {} : { response_format: { type: 'json_object' } }),
         temperature: 0.2,
       }),
     });

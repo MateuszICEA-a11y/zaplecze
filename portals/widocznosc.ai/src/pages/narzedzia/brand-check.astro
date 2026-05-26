@@ -317,6 +317,119 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
     }
   }
 
+  :global(.brand-loading-card) {
+    width: min(100%, 820px);
+    margin-inline: auto;
+    background: var(--bg-surface-1);
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-xl);
+    padding: clamp(22px, 3vw, 32px);
+    box-shadow: 0 20px 56px rgb(15 23 42 / 0.06);
+  }
+
+  :global(.brand-loading-header) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 22px;
+  }
+
+  :global(.brand-loading-kicker) {
+    color: var(--accent-blue);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  :global(.brand-loading-title) {
+    font-family: var(--font-display);
+    font-size: clamp(26px, 3.2vw, 40px);
+    line-height: 1.05;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+    margin: 0;
+  }
+
+  :global(.brand-loading-copy) {
+    color: var(--ink-muted);
+    font-size: 14px;
+    line-height: 1.55;
+    margin: 10px 0 0;
+    max-width: 560px;
+  }
+
+  :global(.brand-loading-orb) {
+    width: 42px;
+    height: 42px;
+    flex: none;
+    border-radius: 50%;
+    border: 2px solid color-mix(in srgb, var(--accent-blue) 18%, transparent);
+    border-top-color: var(--accent-blue);
+    animation: spin 0.8s linear infinite;
+  }
+
+  :global(.brand-loading-track) {
+    position: relative;
+    height: 8px;
+    overflow: hidden;
+    border-radius: var(--r-pill);
+    background: var(--bg-surface-2);
+    margin: 20px 0 22px;
+  }
+
+  :global(.brand-loading-bar) {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 42%;
+    border-radius: inherit;
+    background: var(--accent-blue);
+    animation: loading-slide 1.45s ease-in-out infinite;
+  }
+
+  @keyframes loading-slide {
+    0% {
+      transform: translateX(-105%);
+    }
+    55% {
+      transform: translateX(70%);
+    }
+    100% {
+      transform: translateX(245%);
+    }
+  }
+
+  :global(.brand-loading-steps) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  :global(.brand-loading-step) {
+    min-width: 0;
+    padding: 12px 13px;
+    border-radius: var(--r-md);
+    background: var(--bg-canvas);
+    border: 1px solid color-mix(in srgb, var(--hairline) 74%, transparent);
+  }
+
+  :global(.brand-loading-step-name) {
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  :global(.brand-loading-step-status) {
+    color: var(--ink-muted);
+    font-size: 11.5px;
+    line-height: 1.25;
+    margin-top: 5px;
+  }
+
   .tool-overview {
     padding: 72px 0 80px;
   }
@@ -571,8 +684,58 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
 
   :global(.brand-competitor-grid) {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 12px;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  :global(.brand-competitor-card) {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 16px;
+    align-items: start;
+    background: var(--bg-canvas);
+    border: 1px solid color-mix(in srgb, var(--hairline) 74%, transparent);
+    border-radius: var(--r-lg);
+    padding: 16px 18px;
+  }
+
+  :global(.brand-competitor-rank) {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--bg-surface-2);
+    color: var(--accent-blue);
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  :global(.brand-competitor-name) {
+    color: var(--ink);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 5px;
+  }
+
+  :global(.brand-competitor-context) {
+    color: var(--ink-muted);
+    font-size: 13px;
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  :global(.brand-competitor-count) {
+    align-self: center;
+    white-space: nowrap;
+    padding: 5px 10px;
+    border-radius: var(--r-pill);
+    background: color-mix(in srgb, var(--accent-blue) 12%, transparent);
+    color: var(--accent-blue);
+    font-size: 11px;
+    font-weight: 700;
   }
 
   :global(.brand-list-card) {
@@ -659,6 +822,28 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
     :global(.brand-model-row) {
       grid-template-columns: 1fr;
     }
+
+    :global(.brand-loading-header) {
+      align-items: flex-start;
+    }
+
+    :global(.brand-loading-orb) {
+      width: 34px;
+      height: 34px;
+    }
+
+    :global(.brand-loading-steps) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    :global(.brand-competitor-card) {
+      grid-template-columns: auto 1fr;
+    }
+
+    :global(.brand-competitor-count) {
+      grid-column: 2;
+      justify-self: start;
+    }
   }
 </style>
 
@@ -715,9 +900,33 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
 
     function renderLoading(brand) {
       return `
-        <div class="brand-panel">
-          <h2 class="brand-panel-title">Odpytujemy modele o ${escapeHtml(brand)}</h2>
-          <p class="brand-score-copy">Sprawdzamy ChatGPT, Claude, Gemini i Perplexity przez OpenRouter. Wynik pojawi się po zakończeniu odpowiedzi modeli.</p>
+        <div class="brand-loading-card">
+          <div class="brand-loading-header">
+            <div>
+              <div class="brand-loading-kicker">Analiza w toku</div>
+              <h2 class="brand-loading-title">Sprawdzamy ${escapeHtml(brand)}</h2>
+              <p class="brand-loading-copy">
+                Odpytujemy cztery modele przez OpenRouter i zbieramy cytowania, sentyment,
+                konkurentów oraz możliwe halucynacje.
+              </p>
+            </div>
+            <div class="brand-loading-orb" aria-hidden="true"></div>
+          </div>
+          <div class="brand-loading-track" aria-hidden="true">
+            <div class="brand-loading-bar"></div>
+          </div>
+          <div class="brand-loading-steps">
+            ${['ChatGPT', 'Claude Haiku', 'Gemini', 'Perplexity']
+              .map(
+                (model) => `
+                  <div class="brand-loading-step">
+                    <div class="brand-loading-step-name">${model}</div>
+                    <div class="brand-loading-step-status">oczekiwanie na odpowiedź</div>
+                  </div>
+                `
+              )
+              .join('')}
+          </div>
         </div>
       `;
     }
@@ -730,6 +939,7 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
     function renderResults(report) {
       const score = report.summary?.score ?? 0;
       const competitors = report.summary?.competitors || [];
+      const competitorItems = collectCompetitors(report.models || [], competitors);
       const hallucinations = (report.models || []).flatMap((model) =>
         (model.hallucinations || []).map((item) => ({ ...item, model: model.label }))
       );
@@ -779,7 +989,7 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
 
           <section class="brand-panel">
             <h2 class="brand-panel-title">Konkurenci polecani zamiast marki</h2>
-            ${renderCompetitors(competitors)}
+            ${renderCompetitors(competitorItems)}
           </section>
 
           <section class="brand-panel">
@@ -835,12 +1045,23 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
       `;
     }
 
-    function renderCompetitors(competitors) {
-      if (!competitors.length) {
+    function renderCompetitors(items) {
+      if (!items.length) {
         return '<div class="brand-list-card">Modele nie wskazały wyraźnych konkurentów.</div>';
       }
-      return `<div class="brand-competitor-grid">${competitors
-        .map((name) => `<div class="brand-list-card"><strong>${escapeHtml(name)}</strong></div>`)
+      return `<div class="brand-competitor-grid">${items
+        .map(
+          (item, index) => `
+            <article class="brand-competitor-card">
+              <div class="brand-competitor-rank">${String(index + 1).padStart(2, '0')}</div>
+              <div>
+                <h3 class="brand-competitor-name">${escapeHtml(item.name)}</h3>
+                <p class="brand-competitor-context">${escapeHtml(item.context)}</p>
+              </div>
+              <div class="brand-competitor-count">${escapeHtml(String(item.count))} modele</div>
+            </article>
+          `
+        )
         .join('')}</div>`;
     }
 
@@ -899,6 +1120,37 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
         }
       }
       return Array.from(map.values()).slice(0, 16);
+    }
+
+    function collectCompetitors(models, fallbackNames) {
+      const map = new Map();
+      for (const model of models) {
+        for (const competitor of model.competitors || []) {
+          const name = String(competitor.name || '').trim();
+          if (!name) continue;
+          const key = name.toLowerCase();
+          const current = map.get(key) || { name, count: 0, contexts: [] };
+          current.count += 1;
+          if (competitor.context) current.contexts.push(String(competitor.context));
+          map.set(key, current);
+        }
+      }
+
+      for (const name of fallbackNames || []) {
+        const key = String(name).toLowerCase();
+        if (!map.has(key)) map.set(key, { name, count: 1, contexts: [] });
+      }
+
+      return Array.from(map.values())
+        .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name, 'pl'))
+        .slice(0, 8)
+        .map((item) => ({
+          name: item.name,
+          count: item.count,
+          context:
+            item.contexts[0] ||
+            'Pojawia się jako alternatywa lub punkt porównania w odpowiedziach modeli.',
+        }));
     }
 
     function knowsLabel(value) {
