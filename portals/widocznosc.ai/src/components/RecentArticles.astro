@@ -21,21 +21,21 @@ const formatDate = (date: Date) =>
 
 <section class="kb-section" id="wiedza" aria-labelledby="kb-title">
   <div class="container">
-
     <header class="section-head">
       <div class="head-left">
         <div class="head-meta">
           <span class="section-index">S/07</span>
           <span class="eyebrow">Centrum wiedzy</span>
         </div>
-        <h2 id="kb-title" class="display-xl">
+        <h2 id="kb-title" class="display-lg">
           Jak działają <span class="accent">modele AI</span>?
         </h2>
       </div>
       <div class="head-right">
         <p class="subhead">
           Definicje, case studies i&nbsp;poradniki &ndash; dowiedz się, jak modele językowe
-          syntezują odpowiedzi i&nbsp;co decyduje o&nbsp;cytowalności Twojej marki w&nbsp;świecie AI.
+          syntezują odpowiedzi i&nbsp;co decyduje o&nbsp;cytowalności Twojej marki w&nbsp;świecie
+          AI.
         </p>
         <a href="/blog" class="btn-secondary kb-all-link">
           Wszystkie artykuły <span aria-hidden="true">→</span>
@@ -43,77 +43,145 @@ const formatDate = (date: Date) =>
       </div>
     </header>
 
-    {posts.length > 0 && (
-      <div class="kb-grid">
-
-        {featured && (
-          <a href={`/${featured.id}`} class="kb-feature">
-            <div class="kb-feature-img">
-              <div class="kb-feature-graph"></div>
-              <Image
-                src={featured.data.image}
-                alt={featured.data.title}
-                widths={[400, 800, 1200]}
-                sizes="(min-width: 1024px) 60vw, 100vw"
-                loading="lazy"
-                class="kb-feature-photo"
-              />
-              <!-- Decorative SVG node-graph overlay -->
-              <svg class="kb-feature-svg" viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-                <defs>
-                  <linearGradient id="kb-line-grad" x1="0" x2="1" y1="0" y2="1">
-                    <stop offset="0%" stop-color="#ff5a1a" stop-opacity="0.9" />
-                    <stop offset="100%" stop-color="#d633a0" stop-opacity="0.7" />
-                  </linearGradient>
-                </defs>
-                <line x1="120" y1="300" x2="240" y2="180" stroke="url(#kb-line-grad)" stroke-width="1.5" opacity="0.8" />
-                <line x1="240" y1="180" x2="360" y2="260" stroke="url(#kb-line-grad)" stroke-width="1.5" opacity="0.8" />
-                <line x1="360" y1="260" x2="480" y2="140" stroke="url(#kb-line-grad)" stroke-width="1.5" opacity="0.8" />
-                <line x1="480" y1="140" x2="600" y2="220" stroke="url(#kb-line-grad)" stroke-width="1.5" opacity="0.8" />
-                <line x1="600" y1="220" x2="700" y2="160" stroke="url(#kb-line-grad)" stroke-width="1.5" opacity="0.8" />
-                <line x1="240" y1="180" x2="200" y2="90"  stroke="url(#kb-line-grad)" stroke-width="1.5" opacity="0.8" />
-                <line x1="360" y1="260" x2="400" y2="360" stroke="url(#kb-line-grad)" stroke-width="1.5" opacity="0.8" />
-                <line x1="480" y1="140" x2="540" y2="60"  stroke="url(#kb-line-grad)" stroke-width="1.5" opacity="0.8" />
-                <circle cx="120" cy="300" r="5" fill="#ff8caa" opacity="0.95" />
-                <circle cx="240" cy="180" r="7" fill="#ff8caa" opacity="0.95" />
-                <circle cx="360" cy="260" r="5" fill="#ff8caa" opacity="0.95" />
-                <circle cx="480" cy="140" r="8" fill="#ff8caa" opacity="0.95" />
-                <circle cx="600" cy="220" r="6" fill="#ff8caa" opacity="0.95" />
-                <circle cx="700" cy="160" r="5" fill="#ff8caa" opacity="0.95" />
-                <circle cx="200" cy="90"  r="4" fill="#ff8caa" opacity="0.95" />
-                <circle cx="400" cy="360" r="4" fill="#ff8caa" opacity="0.95" />
-                <circle cx="540" cy="60"  r="4" fill="#ff8caa" opacity="0.95" />
-              </svg>
-            </div>
-            <div class="kb-meta">
-              <span>{PILLAR_LABELS[featured.data.pillar]}</span>
-              <span class="dot">·</span>
-              <span>{featured.data.readTime}</span>
-              <span class="dot">·</span>
-              <span>{formatDate(featured.data.date)}</span>
-            </div>
-            <h3 class="kb-title">{featured.data.title}</h3>
-            {featured.data.subtitle && <p class="kb-excerpt">{featured.data.subtitle}</p>}
-          </a>
-        )}
-
-        <div class="kb-side">
-          {sidePosts.map((post) => (
-            <a href={`/${post.id}`} class="kb-item">
-              <div class="kb-meta">
-                <span>{PILLAR_LABELS[post.data.pillar]}</span>
-                <span class="dot">·</span>
-                <span>{post.data.readTime}</span>
+    {
+      posts.length > 0 && (
+        <div class="kb-grid">
+          {featured && (
+            <a href={`/${featured.id}`} class="kb-feature">
+              <div class="kb-feature-img">
+                <div class="kb-feature-graph" />
+                <Image
+                  src={featured.data.image}
+                  alt={featured.data.title}
+                  widths={[400, 800, 1200]}
+                  sizes="(min-width: 1024px) 60vw, 100vw"
+                  loading="lazy"
+                  class="kb-feature-photo"
+                />
+                {/* Decorative SVG node-graph overlay */}
+                <svg
+                  class="kb-feature-svg"
+                  viewBox="0 0 800 450"
+                  preserveAspectRatio="xMidYMid slice"
+                  aria-hidden="true"
+                >
+                  <defs>
+                    <linearGradient id="kb-line-grad" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0%" stop-color="#ff5a1a" stop-opacity="0.9" />
+                      <stop offset="100%" stop-color="#d633a0" stop-opacity="0.7" />
+                    </linearGradient>
+                  </defs>
+                  <line
+                    x1="120"
+                    y1="300"
+                    x2="240"
+                    y2="180"
+                    stroke="url(#kb-line-grad)"
+                    stroke-width="1.5"
+                    opacity="0.8"
+                  />
+                  <line
+                    x1="240"
+                    y1="180"
+                    x2="360"
+                    y2="260"
+                    stroke="url(#kb-line-grad)"
+                    stroke-width="1.5"
+                    opacity="0.8"
+                  />
+                  <line
+                    x1="360"
+                    y1="260"
+                    x2="480"
+                    y2="140"
+                    stroke="url(#kb-line-grad)"
+                    stroke-width="1.5"
+                    opacity="0.8"
+                  />
+                  <line
+                    x1="480"
+                    y1="140"
+                    x2="600"
+                    y2="220"
+                    stroke="url(#kb-line-grad)"
+                    stroke-width="1.5"
+                    opacity="0.8"
+                  />
+                  <line
+                    x1="600"
+                    y1="220"
+                    x2="700"
+                    y2="160"
+                    stroke="url(#kb-line-grad)"
+                    stroke-width="1.5"
+                    opacity="0.8"
+                  />
+                  <line
+                    x1="240"
+                    y1="180"
+                    x2="200"
+                    y2="90"
+                    stroke="url(#kb-line-grad)"
+                    stroke-width="1.5"
+                    opacity="0.8"
+                  />
+                  <line
+                    x1="360"
+                    y1="260"
+                    x2="400"
+                    y2="360"
+                    stroke="url(#kb-line-grad)"
+                    stroke-width="1.5"
+                    opacity="0.8"
+                  />
+                  <line
+                    x1="480"
+                    y1="140"
+                    x2="540"
+                    y2="60"
+                    stroke="url(#kb-line-grad)"
+                    stroke-width="1.5"
+                    opacity="0.8"
+                  />
+                  <circle cx="120" cy="300" r="5" fill="#ff8caa" opacity="0.95" />
+                  <circle cx="240" cy="180" r="7" fill="#ff8caa" opacity="0.95" />
+                  <circle cx="360" cy="260" r="5" fill="#ff8caa" opacity="0.95" />
+                  <circle cx="480" cy="140" r="8" fill="#ff8caa" opacity="0.95" />
+                  <circle cx="600" cy="220" r="6" fill="#ff8caa" opacity="0.95" />
+                  <circle cx="700" cy="160" r="5" fill="#ff8caa" opacity="0.95" />
+                  <circle cx="200" cy="90" r="4" fill="#ff8caa" opacity="0.95" />
+                  <circle cx="400" cy="360" r="4" fill="#ff8caa" opacity="0.95" />
+                  <circle cx="540" cy="60" r="4" fill="#ff8caa" opacity="0.95" />
+                </svg>
               </div>
-              <h3 class="kb-item-title">{post.data.title}</h3>
-              {post.data.subtitle && <p class="kb-excerpt">{post.data.subtitle}</p>}
+              <div class="kb-meta">
+                <span>{PILLAR_LABELS[featured.data.pillar]}</span>
+                <span class="dot">·</span>
+                <span>{featured.data.readTime}</span>
+                <span class="dot">·</span>
+                <span>{formatDate(featured.data.date)}</span>
+              </div>
+              <h3 class="kb-title">{featured.data.title}</h3>
+              {featured.data.subtitle && <p class="kb-excerpt">{featured.data.subtitle}</p>}
             </a>
-          ))}
+          )}
+
+          <div class="kb-side">
+            {sidePosts.map((post) => (
+              <a href={`/${post.id}`} class="kb-item">
+                <div class="kb-meta">
+                  <span>{PILLAR_LABELS[post.data.pillar]}</span>
+                  <span class="dot">·</span>
+                  <span>{post.data.readTime}</span>
+                </div>
+                <h3 class="kb-item-title">{post.data.title}</h3>
+                {post.data.subtitle && <p class="kb-excerpt">{post.data.subtitle}</p>}
+              </a>
+            ))}
+          </div>
         </div>
-
-      </div>
-    )}
-
+      )
+    }
   </div>
 </section>
 
@@ -125,7 +193,9 @@ const formatDate = (date: Date) =>
   }
 
   @media (min-width: 980px) {
-    .kb-section { padding: 120px 0; }
+    .kb-section {
+      padding: 120px 0;
+    }
   }
 
   .kb-all-link {
@@ -139,7 +209,9 @@ const formatDate = (date: Date) =>
   }
 
   @media (min-width: 980px) {
-    .kb-grid { grid-template-columns: 1.6fr 1fr; }
+    .kb-grid {
+      grid-template-columns: 1.6fr 1fr;
+    }
   }
 
   /* Featured article */
@@ -152,7 +224,9 @@ const formatDate = (date: Date) =>
     flex-direction: column;
     gap: 16px;
     text-decoration: none;
-    transition: background 0.2s ease, border-color 0.2s ease;
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease;
     position: relative;
     overflow: hidden;
   }
@@ -212,7 +286,9 @@ const formatDate = (date: Date) =>
     text-transform: uppercase;
   }
 
-  .kb-meta .dot { color: var(--ink-faint); }
+  .kb-meta .dot {
+    color: var(--ink-faint);
+  }
 
   .kb-title {
     font-family: var(--font-display);
@@ -227,7 +303,7 @@ const formatDate = (date: Date) =>
 
   .kb-excerpt {
     font-family: var(--font-sans);
-    font-size: 13px;
+    font-size: 14px;
     color: var(--ink-muted);
     line-height: 1.5;
     margin: 0;
@@ -251,7 +327,9 @@ const formatDate = (date: Date) =>
     flex: 1;
     min-height: 0;
     text-decoration: none;
-    transition: background 0.2s ease, border-color 0.2s ease;
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease;
   }
 
   .kb-item:hover {

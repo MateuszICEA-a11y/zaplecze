@@ -41,22 +41,21 @@ const industries: Industry[] = [
 
 <section class="industries-section" id="branze" aria-labelledby="industries-title">
   <div class="container">
-
     <header class="section-head">
       <div class="head-left">
         <div class="head-meta">
           <span class="section-index">S/04</span>
           <span class="eyebrow">Dla kogo</span>
         </div>
-        <h2 id="industries-title" class="display-xl">
+        <h2 id="industries-title" class="display-lg">
           Sześć branż, na których <span class="accent">koncentrujemy uwagę</span>
         </h2>
       </div>
       <div class="head-right">
         <p class="subhead">
-          Tam, gdzie klient zaczyna od pytania zadanego AI, a&nbsp;decyzja zakupowa wymaga rzetelnego
-          rozeznania. To branże, w&nbsp;których widzimy największy wpływ wyszukiwarek AI &ndash;
-          nie jedyne, z&nbsp;którymi pracujemy.
+          Tam, gdzie klient zaczyna od pytania zadanego AI, a&nbsp;decyzja zakupowa wymaga
+          rzetelnego rozeznania. To branże, w&nbsp;których widzimy największy wpływ wyszukiwarek AI
+          &ndash; nie jedyne, z&nbsp;którymi pracujemy.
         </p>
       </div>
     </header>
@@ -75,7 +74,6 @@ const industries: Industry[] = [
     <p class="process-footer">
       Twoja branża nie jest na liście? <a href="/kontakt">Sprawdzimy potencjał →</a>
     </p>
-
   </div>
 </section>
 
@@ -87,7 +85,9 @@ const industries: Industry[] = [
   }
 
   @media (min-width: 980px) {
-    .industries-section { padding: 120px 0; }
+    .industries-section {
+      padding: 120px 0;
+    }
   }
 
   .industries-grid {
@@ -97,11 +97,15 @@ const industries: Industry[] = [
   }
 
   @media (min-width: 640px) {
-    .industries-grid { grid-template-columns: repeat(2, 1fr); }
+    .industries-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   @media (min-width: 1024px) {
-    .industries-grid { grid-template-columns: repeat(3, 1fr); }
+    .industries-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   .industry-card {
@@ -113,7 +117,9 @@ const industries: Industry[] = [
     flex-direction: column;
     gap: 10px;
     min-height: 140px;
-    transition: background 0.18s ease, border-color 0.18s ease;
+    transition:
+      background 0.18s ease,
+      border-color 0.18s ease;
   }
 
   .industry-card:hover {
@@ -132,7 +138,7 @@ const industries: Industry[] = [
 
   .industry-desc {
     font-family: var(--font-sans);
-    font-size: 13px;
+    font-size: 14px;
     color: var(--ink-muted);
     line-height: 1.45;
     margin: 0;

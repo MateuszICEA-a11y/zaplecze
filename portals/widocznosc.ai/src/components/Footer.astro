@@ -47,9 +47,7 @@ const year = new Date().getFullYear();
 
 <footer class="footer-section" id="kontakt" aria-label="Stopka serwisu">
   <div class="container">
-
     <div class="footer-top">
-
       <!-- Brand + newsletter -->
       <div class="footer-brand">
         <a href="/" aria-label="widocznosc.ai – strona główna" class="nav-logo footer-logo">
@@ -65,13 +63,12 @@ const year = new Date().getFullYear();
           <span class="footer-news-label">Newsletter · co 2 tyg.</span>
           <div class="footer-news-row">
             <label for="footer-email" class="sr-only">Adres e-mail</label>
-            <input
-              type="email"
-              id="footer-email"
-              placeholder="twoj@email.pl"
-              required
-            />
-            <button type="submit" class="btn-primary footer-news-btn" aria-label="Zapisz się do newslettera">
+            <input type="email" id="footer-email" placeholder="twoj@email.pl" required />
+            <button
+              type="submit"
+              class="btn-primary footer-news-btn"
+              aria-label="Zapisz się do newslettera"
+            >
               Zapisz
             </button>
           </div>
@@ -113,7 +110,9 @@ const year = new Date().getFullYear();
           aria-label="LinkedIn ICEA"
         >
           <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z"></path>
+            <path
+              d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z"
+            ></path>
             <rect x="2" y="9" width="4" height="12"></rect>
             <circle cx="4" cy="4" r="2"></circle>
           </svg>
@@ -123,7 +122,6 @@ const year = new Date().getFullYear();
         <a href="#" class="footer-social" aria-label="Instagram"><InstagramIcon /></a>
       </div>
     </div>
-
   </div>
 </footer>
 
@@ -142,7 +140,9 @@ const year = new Date().getFullYear();
   }
 
   @media (min-width: 640px) {
-    .footer-top { grid-template-columns: 1fr 1fr; }
+    .footer-top {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   @media (min-width: 980px) {
@@ -157,11 +157,13 @@ const year = new Date().getFullYear();
     gap: 14px;
   }
 
-  .footer-logo { font-size: 16px; }
+  .footer-logo {
+    font-size: 16px;
+  }
 
   .footer-brand-tag {
     font-family: var(--font-sans);
-    font-size: 13px;
+    font-size: 14px;
     color: var(--ink-muted);
     max-width: 320px;
     line-height: 1.5;
@@ -246,7 +248,9 @@ const year = new Date().getFullYear();
     transition: color 0.15s ease;
   }
 
-  .footer-link:hover { color: var(--ink); }
+  .footer-link:hover {
+    color: var(--ink);
+  }
 
   /* Bottom bar */
   .footer-bottom {
@@ -287,7 +291,9 @@ const year = new Date().getFullYear();
     display: grid;
     place-items: center;
     color: var(--ink-muted);
-    transition: background 0.18s ease, color 0.18s ease;
+    transition:
+      background 0.18s ease,
+      color 0.18s ease;
     text-decoration: none;
   }
 

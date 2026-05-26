@@ -22,7 +22,11 @@ const steps: Step[] = [
     label: 'Etap 1',
     title: 'Mapa pytań',
     body: 'Tworzymy 32–48 zapytań z trzech warstw – brandowych, ogólnych i porównawczych. Lista wynika z Twojej kategorii, nie z generatora.',
-    list: ['Spotkanie strategiczne z zespołem', 'Analiza intencji kupujących', 'Lista benchmarkowych konkurentów'],
+    list: [
+      'Spotkanie strategiczne z zespołem',
+      'Analiza intencji kupujących',
+      'Lista benchmarkowych konkurentów',
+    ],
   },
   {
     tone: 'cyan',
@@ -46,28 +50,31 @@ const steps: Step[] = [
     label: 'Etap 4',
     title: 'Raport + kierunek dalszych działań',
     body: 'Raport z wnioskami i konkretnymi rekomendacjami. Pokazujemy, gdzie marka jest dziś, gdzie może być za pół roku i jakie kroki nas tam zaprowadzą.',
-    list: ['Warsztat z omówieniem wyników', 'Strategia na budowanie widoczności', 'Lista briefów na treści'],
+    list: [
+      'Warsztat z omówieniem wyników',
+      'Strategia na budowanie widoczności',
+      'Lista briefów na treści',
+    ],
   },
 ];
 ---
 
 <section class="process-section" id="proces" aria-labelledby="process-title">
   <div class="container">
-
     <header class="section-head">
       <div class="head-left">
         <div class="head-meta">
           <span class="section-index">S/03</span>
           <span class="eyebrow">Jak działamy</span>
         </div>
-        <h2 id="process-title" class="display-xl">
+        <h2 id="process-title" class="display-lg">
           Cztery etapy budowania widoczności <span class="accent">w&nbsp;AI</span>
         </h2>
       </div>
       <div class="head-right">
         <p class="subhead">
-          Pokazujemy, gdzie Twoja marka jest dziś w&nbsp;wyszukiwarkach AI i&nbsp;jakie
-          kroki mogą zwiększyć jej widoczność. Co dalej &ndash; decydujesz sam.
+          Pokazujemy, gdzie Twoja marka jest dziś w&nbsp;wyszukiwarkach AI i&nbsp;jakie kroki mogą
+          zwiększyć jej widoczność. Co dalej &ndash; decydujesz sam.
         </p>
       </div>
     </header>
@@ -93,10 +100,9 @@ const steps: Step[] = [
     </ol>
 
     <p class="process-footer">
-      Każdy etap z&nbsp;konkretnym rezultatem. Po audycie sam decydujesz,
-      jakiej formy współpracy potrzebujesz.
+      Każdy etap z&nbsp;konkretnym rezultatem. Po audycie sam decydujesz, jakiej formy współpracy
+      potrzebujesz.
     </p>
-
   </div>
 </section>
 
@@ -107,7 +113,9 @@ const steps: Step[] = [
   }
 
   @media (min-width: 980px) {
-    .process-section { padding: 120px 0; }
+    .process-section {
+      padding: 120px 0;
+    }
   }
 
   .process-grid {
@@ -120,11 +128,15 @@ const steps: Step[] = [
   }
 
   @media (min-width: 580px) {
-    .process-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   @media (min-width: 980px) {
-    .process-grid { grid-template-columns: repeat(4, 1fr); }
+    .process-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   /* Atmosphere cards – każdy step swój radial gradient + ::before overlay
@@ -155,7 +167,7 @@ const steps: Step[] = [
 
   .process-card--green {
     background: var(--grad-green);
-    box-shadow: 0 24px 56px -22px rgba(34, 197, 94, 0.40);
+    box-shadow: 0 24px 56px -22px rgba(34, 197, 94, 0.4);
   }
 
   .process-card--blue {
@@ -195,7 +207,7 @@ const steps: Step[] = [
 
   .process-body {
     font-family: var(--font-sans);
-    font-size: 13px;
+    font-size: 14px;
     color: rgba(255, 255, 255, 0.85);
     line-height: 1.45;
     margin: 0;
