@@ -4,3 +4,10 @@ pages_build_output_dir = "dist"
 
 [vars]
 PUBLIC_SITE_URL = "https://widocznosc.ai"
+
+# KV dla rate-limitu narzędzia fan-out (3/IP/dzień).
+# ID utworzysz komendami w Task 8 i wstawisz poniżej.
+[[kv_namespaces]]
+binding = "FANOUT_RL"
+id = "REPLACE_WITH_PROD_KV_ID"
+preview_id = "REPLACE_WITH_PREVIEW_KV_ID"
