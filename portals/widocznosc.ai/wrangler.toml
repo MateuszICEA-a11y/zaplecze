@@ -5,9 +5,8 @@ pages_build_output_dir = "dist"
 [vars]
 PUBLIC_SITE_URL = "https://widocznosc.ai"
 
-# KV dla rate-limitu narzędzia fan-out (3/IP/dzień).
-# ID utworzysz komendami w Task 8 i wstawisz poniżej.
-[[kv_namespaces]]
-binding = "FANOUT_RL"
-id = "REPLACE_WITH_PROD_KV_ID"
-preview_id = "REPLACE_WITH_PREVIEW_KV_ID"
+# Narzędzie fan-out (/narzedzia/fanout) używa:
+#  - sekretu OPENAI_API_KEY
+#  - bindingu KV o nazwie FANOUT_RL (rate-limit 3/IP/dzień)
+# Oba konfigurowane w panelu Cloudflare Pages (Settings → Variables / KV bindings),
+# tak jak OPENROUTER_API_KEY dla brand-check. Celowo NIE trzymamy tu ID KV ani sekretów.
