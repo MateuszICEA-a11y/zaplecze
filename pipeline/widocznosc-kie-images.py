@@ -54,86 +54,80 @@ INFO_STYLE = (
 )
 
 SPECS = [
-    # ── RAG / embeddingi ──────────────────────────────────────────────
+    # ── Agenci AI / przewodnik ────────────────────────────────────────
     {
-        "slug": "blog-rag-embeddingi",
+        "slug": "blog-agenci-ai-przewodnik",
         "prompt": (
             HERO_STYLE
-            + "Abstract visualization of text embeddings: on the left a few "
-            "short text fragments transforming into glowing sky-blue points, "
-            "scattered into a vast 3D vector space as a constellation of "
-            "dots; semantically similar points cluster together, joined by "
-            "faint luminous lines. Conveys 'meaning mapped as coordinates'. "
-            "Wide composition, generous negative space."
+            + "Abstract visualization of an autonomous AI agent: a glowing "
+            "sky-blue core in the center with a circular arrow loop around "
+            "it (decision loop), reaching out to several orbiting nodes "
+            "representing tools and actions. Conveys 'an agent that plans, "
+            "acts and observes in a loop'. Wide composition, negative space."
         ),
     },
     {
-        "slug": "infographic-rag-embeddingi",
+        "slug": "infographic-agenci-ai-przewodnik",
         "prompt": (
             INFO_STYLE
-            + "TITLE on top in Polish (white): 'Embeddingi – jak tekst staje "
-            "się wektorem'. Show a left-to-right flow with 4 stages, each a "
-            "rounded rectangle with a white Polish label: '1. TEKST' "
-            "(example word 'kot'), '2. MODEL OSADZAJĄCY' (sky-blue, the key "
-            "step), '3. WEKTOR' (showing a short bracket of numbers like "
-            "[0.21, -0.34, 0.88, …]), '4. PRZESTRZEŃ SEMANTYCZNA' (a small "
-            "cluster of dots where 'kot' and 'pies' are close, 'samochód' "
-            "far away). Thin sky-blue arrows connect the stages. Bottom "
-            "caption: 'BLISKOŚĆ WEKTORÓW = BLISKOŚĆ ZNACZENIA'."
+            + "TITLE on top in Polish (white): 'Jak działa agent AI – pętla "
+            "decyzyjna'. Show a circular loop diagram with 5 stages arranged "
+            "in a ring, connected by sky-blue arrows going clockwise, with "
+            "the word 'AGENT' in the center: '1. CEL', '2. PLAN', "
+            "'3. WYBÓR NARZĘDZIA' (sky-blue, key step), '4. WYKONANIE', "
+            "'5. OBSERWACJA' (arrow loops back to PLAN). Bottom caption: "
+            "'AGENT DZIAŁA W PĘTLI, AŻ OSIĄGNIE CEL'."
         ),
     },
-    # ── RAG / chunking-strategie ──────────────────────────────────────
+    # ── Agenci AI / anatomia-agenta ───────────────────────────────────
     {
-        "slug": "blog-rag-chunking-strategie",
+        "slug": "blog-agenci-ai-anatomia-agenta",
         "prompt": (
             HERO_STYLE
-            + "Abstract visualization of document chunking: a large glowing "
-            "document on the left being divided by clean luminous sky-blue "
-            "lines into neat smaller blocks that float apart and arrange "
-            "into an orderly grid on the right. Conveys 'splitting a "
-            "document into retrievable chunks'. Left-to-right flow."
+            + "Abstract visualization of an AI agent's anatomy: a central "
+            "glowing sky-blue core connected by luminous lines to four "
+            "distinct orbiting modules (geometric, abstract) representing "
+            "memory, tools, planning and a decision loop. Exploded-diagram "
+            "feel, clean and technical. Wide composition."
         ),
     },
     {
-        "slug": "infographic-rag-chunking-strategie",
+        "slug": "infographic-agenci-ai-anatomia-agenta",
         "prompt": (
             INFO_STYLE
-            + "TITLE on top in Polish (white): 'Strategie chunkingu – jak "
-            "dzielić dokumenty'. Show a 2x2 grid of four rounded cards, each "
-            "with a white Polish heading and a one-line description: "
-            "'PODZIAŁ STAŁY – szybki, ryzyko ucięcia zdania', 'REKURENCYJNY "
-            "– zachowuje akapity i zdania', 'PARENT-CHILD – małe do "
-            "wyszukiwania, duże do generacji' (sky-blue, highlighted as "
-            "best), 'SEMANTYCZNY – dzieli wg znaczenia'. Each card shows a "
-            "tiny diagram of a document split differently. Bottom caption: "
-            "'ROZMIAR FRAGMENTU DECYDUJE O PRECYZJI'."
+            + "TITLE on top in Polish (white): 'Anatomia agenta AI'. Show a "
+            "central rounded box labeled 'MODEL (LLM)' (sky-blue) with four "
+            "modules connected around it by lines, each a rounded card with "
+            "a white Polish heading and short description: 'PAMIĘĆ – kontekst "
+            "i historia rozmowy', 'NARZĘDZIA – API, wyszukiwanie, kod', "
+            "'PLANOWANIE – rozbicie celu na kroki', 'PĘTLA DECYZYJNA – "
+            "obserwuj, myśl, działaj'. Hub-and-spoke layout. Bottom caption: "
+            "'AGENT = MODEL + NARZĘDZIA + PAMIĘĆ + PĘTLA'."
         ),
     },
-    # ── RAG / reranking ───────────────────────────────────────────────
+    # ── Prompty / przewodnik ──────────────────────────────────────────
     {
-        "slug": "blog-rag-reranking",
+        "slug": "blog-prompty-przewodnik",
         "prompt": (
             HERO_STYLE
-            + "Abstract visualization of reranking: a column of retrieved "
-            "fragments on the left, passing through a glowing sky-blue "
-            "sorting/filter mechanism in the middle, emerging on the right "
-            "reordered into a new prioritized stack with the top item "
-            "brightest. Conveys 'reordering results by true relevance'. "
-            "Left-to-right flow."
+            + "Abstract visualization of prompt engineering: on the left a "
+            "structured stack of glowing sky-blue instruction blocks feeding "
+            "into a central core, emerging on the right as a clean, ordered "
+            "stream of output. Conveys 'a well-structured instruction yields "
+            "a precise answer'. Left-to-right flow, negative space."
         ),
     },
     {
-        "slug": "infographic-rag-reranking",
+        "slug": "infographic-prompty-przewodnik",
         "prompt": (
             INFO_STYLE
-            + "TITLE on top in Polish (white): 'Reranking – drugie sito "
-            "trafności'. Show a left-to-right pipeline with 3 stages: "
-            "'1. WYSZUKIWANIE' (a tall stack of ~100 small gray fragments), "
-            "'2. CROSS-ENCODER' (sky-blue, the key step, a mechanism "
-            "re-scoring fragments), '3. TOP 5 FRAGMENTÓW' (a short stack of "
-            "5 bright fragments) → arrow to a small 'LLM' box. Thin sky-blue "
-            "arrows connect the stages. Bottom caption: 'TRAFNOŚĆ "
-            "33,5% → 49,0% · +120 ms'."
+            + "TITLE on top in Polish (white): 'Anatomia skutecznego "
+            "promptu'. Show five stacked horizontal layers (building blocks), "
+            "each a rounded bar with a white Polish heading and short note: "
+            "'ROLA – kim ma być model', 'KONTEKST – tło i dane', 'ZADANIE – "
+            "co dokładnie zrobić' (sky-blue, key step), 'FORMAT – jak ma "
+            "wyglądać odpowiedź', 'PRZYKŁADY – wzorce few-shot'. Bottom "
+            "caption: 'IM PRECYZYJNIEJ, TYM LEPSZA ODPOWIEDŹ'."
         ),
     },
 ]

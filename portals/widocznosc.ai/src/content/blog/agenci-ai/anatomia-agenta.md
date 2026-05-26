@@ -3,7 +3,7 @@ title: 'Anatomia agenta AI – narzędzia, pamięć, pętla decyzyjna'
 subtitle: 'Zrozum, co napędza agenta AI, zanim powierzysz mu zadanie w swojej firmie'
 description: 'Jak działa agent AI od środka? Narzędzia, trójwarstwowa pamięć i pętla ReAct – architektura, którą musisz znać przed wdrożeniem.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-agenci-ai-anatomia-agenta.png
 icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M2 12h4M18 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>'
 author:
   name: 'Michał Ziach'
@@ -54,6 +54,8 @@ Cztery wzorce kontroli przepływu, które warto rozróżniać:
 Wzorzec Reflexion rozwiązuje inny problem: uczenie się na błędach. Gdy agent wykryje nieefektywną pętlę – np. wielokrotne wywołanie tego samego narzędzia z identycznym wynikiem – resetuje środowisko, generuje autorefleksję na podstawie historii niepowodzenia i zapisuje ją do pamięci roboczej. Kolejna próba korzysta już z tej lekcji jako kontekstu.
 
 LangGraph, jeden z najbardziej dojrzałych frameworków agentowych (wersja v0.4, 2026), modeluje przepływ agenta jako [grafy skierowane](https://pl.wikipedia.org/wiki/Graf_(matematyka)) – wierzchołki to stany, a krawędzie to przejścia warunkowe. Ta architektura pozwala na pełną kontrolę nad cyklami i punktami kontrolnymi (checkpoints), gdzie człowiek może zatwierdzić lub zablokować kolejny krok.
+
+![Anatomia agenta AI: model językowy w centrum połączony z czterema modułami – pamięcią, narzędziami, planowaniem i pętlą decyzyjną](../../../assets/images/infographic-agenci-ai-anatomia-agenta.png)
 
 ## Architektura pamięci – skąd agent wie, co już zrobił
 

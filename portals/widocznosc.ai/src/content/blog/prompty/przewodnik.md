@@ -3,7 +3,7 @@ title: 'Prompt engineering – kompletny przewodnik'
 subtitle: 'Naucz się pisać prompty, które dają przewidywalne, powtarzalne wyniki – od podstaw po zaawansowane techniki wnioskowania.'
 description: 'Kompletny przewodnik po prompt engineeringu: techniki zero-shot, few-shot, Chain-of-Thought, strukturyzacja, bezpieczeństwo i praktyczne przykłady dla marketerów i SEO.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-prompty-przewodnik.png
 icon: '<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>'
 author:
   name: 'Tomasz Czechowski'
@@ -90,6 +90,8 @@ Porównanie trzech podstawowych technik:
 | Few-shot | 2–5 | Niestandardowe formaty, zniuansowane klasyfikacje | Średni |
 | Chain-of-Thought | 0 lub 1+ | Wnioskowanie, obliczenia, wieloetapowe problemy | Średni–wysoki |
 | CoT + few-shot | 2–5 z rozpisanym rozumowaniem | Złożone zadania wymagające precyzji | Wysoki |
+
+![Anatomia skutecznego promptu: pięć warstw – rola, kontekst, zadanie, format i przykłady – im precyzyjniej, tym lepsza odpowiedź](../../../assets/images/infographic-prompty-przewodnik.png)
 
 ## Struktura promptu – jak pisać instrukcje, które działają
 

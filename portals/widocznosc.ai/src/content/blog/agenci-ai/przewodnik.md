@@ -3,7 +3,7 @@ title: 'Agenci AI – czym są, jak działają, do czego służą'
 subtitle: 'Zrozum, jak autonomiczne systemy AI planują, korzystają z narzędzi i realizują wieloetapowe zadania – zanim wdrożysz je w swojej organizacji'
 description: 'Agenci AI – definicja, architektura, typy, frameworki i zastosowania biznesowe. Kompletny przewodnik dla marketerów i liderów technologicznych.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-agenci-ai-przewodnik.png
 icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/>'
 author:
   name: 'Michał Ziach'
@@ -61,6 +61,8 @@ Samo posiadanie czterech komponentów nie wystarczy. Liczy się to, jak agent pl
 Techniki planowania w systemach agentowych dzielą się na dwie klasy. Pierwsza to planowanie wewnętrzne – model dekomponuje cel na podzadania bezpośrednio w czasie wnioskowania. Druga to planowanie wspomagane zewnętrznie – model tłumaczy problem na formalny język planowania (PDDL), przekazuje go deterministycznemu planerowi i interpretuje wynik. Ta druga metoda sprawdza się przy bardzo długich sekwencjach kroków, gdzie modele językowe gubią spójność.
 
 Mechanizm autorefleksji pozwala agentowi analizować wyniki własnych działań i korygować strategię. **Agent z autorefleksją, który popełnił błąd w kroku 3, nie powtarza go w kroku 7 – to jakościowa różnica wobec prostych pętli wykonawczych.**
+
+![Jak działa agent AI – pętla decyzyjna: cel, plan, wybór narzędzia, wykonanie i obserwacja powtarzane w pętli, aż agent osiągnie cel](../../../assets/images/infographic-agenci-ai-przewodnik.png)
 
 ## Systemy jednoagentowe i wieloagentowe – kiedy co wybrać
 
