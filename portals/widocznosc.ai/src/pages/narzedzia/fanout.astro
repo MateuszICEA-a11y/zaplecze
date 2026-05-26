@@ -202,46 +202,46 @@ const examples = [
   }
   .fanout-results.hidden { display: none; }
 
-  .fanout-panel {
+  :global(.fanout-panel) {
     border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
     border-radius: 1.15rem;
     padding: clamp(1.15rem, 2.3vw, 1.75rem);
     background: color-mix(in srgb, var(--bg-surface-1) 94%, white 6%);
   }
 
-  .fanout-panel h2 {
+  :global(.fanout-panel h2) {
     margin: 0;
     color: var(--ink);
     font-size: clamp(1.18rem, 2vw, 1.55rem);
     line-height: 1.15;
   }
 
-  .fanout-panel--empty {
+  :global(.fanout-panel--empty) {
     max-width: 780px;
     margin: 0 auto;
   }
 
-  .fanout-panel-copy {
+  :global(.fanout-panel-copy) {
     margin: 0.45rem 0 1.15rem;
     color: var(--ink-muted);
     font-size: 0.96rem;
     line-height: 1.55;
   }
 
-  .fanout-grid {
+  :global(.fanout-grid) {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.68fr);
     gap: 1rem;
   }
 
-  .fanout-answer {
+  :global(.fanout-answer) {
     color: var(--ink);
     font-size: 1rem;
     line-height: 1.65;
   }
 
-  .fanout-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.65rem; }
-  .fanout-list li {
+  :global(.fanout-list) { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.65rem; }
+  :global(.fanout-list li) {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
     gap: 0.7rem;
@@ -254,7 +254,7 @@ const examples = [
     line-height: 1.45;
   }
 
-  .fanout-index {
+  :global(.fanout-index) {
     display: inline-flex;
     width: 1.75rem;
     height: 1.75rem;
@@ -267,21 +267,21 @@ const examples = [
     font-weight: 800;
   }
 
-  .domain-list {
+  :global(.domain-list) {
     display: grid;
     gap: 0.65rem;
   }
 
-  .domain-card {
+  :global(.domain-card) {
     padding: 0.85rem 0.95rem;
     border: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
     border-radius: 0.85rem;
     background: color-mix(in srgb, var(--bg-canvas) 78%, white 22%);
   }
 
-  .domain-row { display: flex; align-items: center; gap: 0.75rem; }
-  .domain-name { font-weight: 800; color: var(--ink); }
-  .domain-count {
+  :global(.domain-row) { display: flex; align-items: center; gap: 0.75rem; }
+  :global(.domain-name) { font-weight: 800; color: var(--ink); }
+  :global(.domain-count) {
     margin-left: auto;
     flex: 0 0 auto;
     font-size: 0.78rem;
@@ -292,21 +292,21 @@ const examples = [
     color: var(--accent-blue);
   }
 
-  .domain-urls { display: grid; gap: 0.32rem; margin: 0.62rem 0 0; }
-  .domain-urls a {
+  :global(.domain-urls) { display: grid; gap: 0.32rem; margin: 0.62rem 0 0; }
+  :global(.domain-urls a) {
     color: var(--ink-muted);
     font-size: 0.82rem;
     line-height: 1.35;
     word-break: break-all;
   }
 
-  .source-grid {
+  :global(.source-grid) {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.55rem;
   }
 
-  .source-link {
+  :global(.source-link) {
     display: block;
     padding: 0.72rem 0.82rem;
     border: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
@@ -318,21 +318,75 @@ const examples = [
     word-break: break-all;
   }
 
-  .fanout-loading {
-    overflow: hidden;
+  :global(.fanout-loading-card) {
+    width: min(100%, 820px);
+    margin-inline: auto;
+    background: var(--bg-surface-1);
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-xl);
+    padding: clamp(22px, 3vw, 32px);
+    box-shadow: 0 20px 56px rgb(15 23 42 / 0.06);
   }
 
-  .fanout-loading-bar {
+  :global(.fanout-loading-header) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 22px;
+  }
+
+  :global(.fanout-loading-kicker) {
+    color: var(--accent-blue);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  :global(.fanout-loading-title) {
+    font-family: var(--font-display);
+    font-size: clamp(26px, 3.2vw, 40px);
+    line-height: 1.05;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: 0;
+    margin: 0;
+  }
+
+  :global(.fanout-loading-copy) {
+    color: var(--ink-muted);
+    font-size: 14px;
+    line-height: 1.55;
+    margin: 10px 0 0;
+    max-width: 560px;
+  }
+
+  :global(.fanout-loading-orb) {
+    width: 42px;
+    height: 42px;
+    flex: none;
+    border-radius: 50%;
+    border: 2px solid color-mix(in srgb, var(--accent-blue) 18%, transparent);
+    border-top-color: var(--accent-blue);
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  :global(.fanout-loading-track) {
     position: relative;
-    height: 0.42rem;
-    margin-top: 1.2rem;
+    height: 8px;
     overflow: hidden;
-    border-radius: 999px;
-    background: color-mix(in srgb, var(--ink) 10%, transparent);
+    border-radius: var(--r-pill);
+    background: var(--bg-surface-2);
+    margin: 20px 0 22px;
   }
 
-  .fanout-loading-bar::before {
-    content: '';
+  :global(.fanout-loading-bar) {
     position: absolute;
     inset: 0 auto 0 0;
     width: 42%;
@@ -347,8 +401,37 @@ const examples = [
     100% { transform: translateX(250%); }
   }
 
-  .fanout-error { padding: 1rem 1.25rem; border-radius: 0.75rem; background: color-mix(in srgb, #ef4444 14%, transparent); color: #b91c1c; }
-  .fanout-cta { margin-top: 0.75rem; }
+  :global(.fanout-loading-steps) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  :global(.fanout-loading-step) {
+    min-width: 0;
+    padding: 12px 13px;
+    border-radius: var(--r-md);
+    background: var(--bg-canvas);
+    border: 1px solid color-mix(in srgb, var(--hairline) 74%, transparent);
+  }
+
+  :global(.fanout-loading-step-name) {
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  :global(.fanout-loading-step-status) {
+    color: var(--ink-muted);
+    font-size: 11.5px;
+    line-height: 1.25;
+    margin-top: 5px;
+  }
+
+  :global(.fanout-error) { padding: 1rem 1.25rem; border-radius: 0.75rem; background: color-mix(in srgb, #ef4444 14%, transparent); color: #b91c1c; }
+  :global(.fanout-cta) { margin-top: 0.75rem; }
+  :global(.fanout-note),
   .fanout-note { margin-top: 1.25rem; text-align: center; font-size: 0.8rem; opacity: 0.6; }
 
   @media (max-width: 780px) {
@@ -361,14 +444,27 @@ const examples = [
     }
 
     .fanout-form,
-    .fanout-grid,
-    .source-grid {
+    :global(.fanout-grid),
+    :global(.source-grid) {
       grid-template-columns: 1fr;
     }
 
     .fanout-submit {
       width: 100%;
       justify-content: center;
+    }
+
+    :global(.fanout-loading-header) {
+      gap: 16px;
+    }
+
+    :global(.fanout-loading-orb) {
+      width: 34px;
+      height: 34px;
+    }
+
+    :global(.fanout-loading-steps) {
+      grid-template-columns: 1fr;
     }
   }
 </style>
@@ -417,13 +513,9 @@ const examples = [
 
     function renderResults(data) {
       if (data.status === 'no-search') {
-        const answer = data.answer
-          ? `<div class="fanout-answer">${escapeHtml(data.answer)}</div>`
-          : '';
         results.innerHTML = `
           <div class="fanout-panel fanout-panel--empty">
             <h2>Brak zapytań wyszukiwania</h2>
-            ${answer}
             <p class="fanout-panel-copy">W tym przebiegu model nie ujawnił osobnego wyszukiwania w sieci. Spróbuj frazy rankingowej, porównawczej albo aktualnego pytania branżowego.</p>
           </div>`;
         return;
@@ -451,31 +543,6 @@ const examples = [
           </div>`;
         })
         .join('');
-      const searchedDomains = (data.searchedDomains || [])
-        .map((d) => {
-          const count = Number(d.count) || 0;
-          return `
-          <div class="domain-card">
-            <div class="domain-row">
-              <span class="domain-name">${escapeHtml(d.domain)}</span>
-              <span class="domain-count">${escapeHtml(String(count))} ${countLabel(count, 'URL', 'URL-e', 'URL-i')}</span>
-            </div>
-          </div>`;
-        })
-        .join('');
-      const sources = (data.searchedSources || [])
-        .filter((source) => /^https?:\/\//i.test(String(source.url)))
-        .slice(0, 12)
-        .map((source) => `<a class="source-link" href="${escapeHtml(source.url)}" target="_blank" rel="nofollow noopener">${escapeHtml(cleanUrlLabel(source.url))}</a>`)
-        .join('');
-      const answer = data.answer
-        ? `<section class="fanout-panel">
-            <h2>Odpowiedź modelu</h2>
-            <p class="fanout-panel-copy">Kontekst, w którym pojawiły się cytowania i zapytania.</p>
-            <div class="fanout-answer">${escapeHtml(data.answer)}</div>
-          </section>`
-        : '';
-
       const remaining = data.usage?.remaining;
       const ctaHtml = Number.isFinite(remaining) && remaining <= 0
         ? `<p class="fanout-cta"><a class="btn-primary" href="/kontakt">Chcesz pełny audyt widoczności w AI? Napisz do nas</a></p>`
@@ -484,31 +551,16 @@ const examples = [
           : '';
 
       results.innerHTML = `
-        ${answer}
         <section class="fanout-panel">
           <h2>Zapytania wyszukiwania (${escapeHtml(String((data.fanoutQueries || []).length))})</h2>
           <p class="fanout-panel-copy">Frazy ujawnione przez model w tym przebiegu dla: „${escapeHtml(data.query)}”.</p>
           <ul class="fanout-list">${fanouts || '<li>brak</li>'}</ul>
         </section>
-        <div class="fanout-grid">
-          <section class="fanout-panel">
-            <h2>Cytowane domeny</h2>
-            <p class="fanout-panel-copy">Domeny, które trafiły do finalnej odpowiedzi modelu.</p>
-            <div class="domain-list">${domains || '<p class="fanout-panel-copy">Brak cytowań w odpowiedzi.</p>'}</div>
-          </section>
-          <section class="fanout-panel">
-            <h2>Źródła wyszukiwania</h2>
-            <p class="fanout-panel-copy">Adresy i domeny zwrócone przez warstwę wyszukiwania, jeśli API je udostępniło.</p>
-            <div class="domain-list">${searchedDomains || '<p class="fanout-panel-copy">Brak dodatkowych źródeł w odpowiedzi API.</p>'}</div>
-          </section>
-        </div>
-        ${sources ? `
-          <section class="fanout-panel">
-            <h2>Sprawdzone URL-e</h2>
-            <p class="fanout-panel-copy">Lista źródeł z wyszukiwania. Linki są oznaczone jako nofollow.</p>
-            <div class="source-grid">${sources}</div>
-          </section>
-        ` : ''}
+        <section class="fanout-panel">
+          <h2>Cytowane domeny</h2>
+          <p class="fanout-panel-copy">Domeny, które trafiły do finalnej odpowiedzi modelu.</p>
+          <div class="domain-list">${domains || '<p class="fanout-panel-copy">Brak cytowań w odpowiedzi.</p>'}</div>
+        </section>
         ${ctaHtml}
       `;
     }
@@ -528,10 +580,34 @@ const examples = [
       setLoading(true);
       results.classList.remove('hidden');
       results.innerHTML = `
-        <div class="fanout-panel fanout-loading">
-          <h2>Sprawdzamy: „${escapeHtml(query)}”</h2>
-          <p class="fanout-panel-copy">Model generuje odpowiedź, uruchamia wyszukiwanie i zwraca cytowane źródła. To zwykle trwa kilkanaście sekund.</p>
-          <div class="fanout-loading-bar" aria-hidden="true"></div>
+        <div class="fanout-loading-card">
+          <div class="fanout-loading-header">
+            <div>
+              <div class="fanout-loading-kicker">Analiza w toku</div>
+              <h2 class="fanout-loading-title">Sprawdzamy zapytanie</h2>
+              <p class="fanout-loading-copy">
+                Model przygotowuje odpowiedź, uruchamia wyszukiwanie i zwraca źródła dla: „${escapeHtml(query)}”.
+              </p>
+            </div>
+            <div class="fanout-loading-orb" aria-hidden="true"></div>
+          </div>
+          <div class="fanout-loading-track" aria-hidden="true">
+            <div class="fanout-loading-bar"></div>
+          </div>
+          <div class="fanout-loading-steps">
+            <div class="fanout-loading-step">
+              <div class="fanout-loading-step-name">Zapytania</div>
+              <div class="fanout-loading-step-status">oczekiwanie na wynik</div>
+            </div>
+            <div class="fanout-loading-step">
+              <div class="fanout-loading-step-name">Źródła</div>
+              <div class="fanout-loading-step-status">zbieranie cytowań</div>
+            </div>
+            <div class="fanout-loading-step">
+              <div class="fanout-loading-step-name">Domeny</div>
+              <div class="fanout-loading-step-status">agregacja widoczności</div>
+            </div>
+          </div>
         </div>`;
 
       try {
