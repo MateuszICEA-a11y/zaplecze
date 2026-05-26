@@ -80,6 +80,7 @@ const blog = defineCollection({
       readTime: z.string(),
       tags: z.array(z.string()),
       pillar: z.enum(BLOG_PILLARS),
+      featured: z.boolean().optional(),
       intent: z.enum(['INFO', 'COMPARE', 'HOWTO', 'TOOL', 'COMMERCIAL']).optional(),
       level: z.enum(['L1', 'L2', 'L3']).optional(),
     }),

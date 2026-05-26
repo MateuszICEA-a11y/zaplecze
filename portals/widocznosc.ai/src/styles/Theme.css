@@ -686,8 +686,9 @@ h4:not([class*='text-']) {
   border-bottom: 1px solid var(--hairline-soft);
 }
 
-/* Pricing tabs */
+/* Segmented controls / filter pills */
 
+.tab-pill,
 .pricing-tab {
   display: inline-flex;
   align-items: center;
@@ -710,10 +711,14 @@ h4:not([class*='text-']) {
   white-space: nowrap;
 }
 
+.tab-pill:hover,
 .pricing-tab:hover {
   color: var(--ink);
 }
 
+.tab-pill[aria-pressed='true'],
+.tab-pill[aria-selected='true'],
+.tab-pill.is-active,
 .pricing-tab-selected,
 .pricing-tab[aria-selected='true'],
 .pricing-tab.is-active {

@@ -12,6 +12,7 @@ author:
 readTime: '18 min'
 tags: ['GEO', 'Generative Engine Optimization', 'AI Search', 'Optymalizacja pod AI']
 pillar: 'geo'
+featured: true
 intent: 'INFO'
 level: 'L2'
 ---

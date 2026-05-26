@@ -11,9 +11,22 @@ const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
 
-const featuredPost = posts[0];
+const featuredPost = posts.find((post) => post.data.featured) ?? posts[0];
 
 const usedPillars = Array.from(new Set(posts.map((p) => p.data.pillar))).sort();
+const pillarCounts = posts.reduce(
+  (counts, post) => {
+    counts[post.data.pillar] = (counts[post.data.pillar] ?? 0) + 1;
+    return counts;
+  },
+  {} as Record<string, number>
+);
+const totalPosts = posts.length;
+const siteUrl = 'https://widocznosc.ai';
+const starterPosts = ['geo/przewodnik', 'modele-llm/chatgpt', 'geo/audyt-widocznosci-marki']
+  .map((id) => posts.find((post) => post.id === id))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
+const popularTags = ['ChatGPT', 'llms.txt', 'AI Overviews', 'Schema.org', 'RAG'];
 
 const formatDate = (date: Date) =>
   date.toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -25,7 +38,32 @@ const formatDate = (date: Date) =>
 >
   <Navbar />
 
-  <main class="blog-listing-main">
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Blog',
+      name: 'Baza wiedzy widocznosc.ai',
+      url: `${siteUrl}/blog`,
+      blogPost: posts.map((post) => ({
+        '@type': 'BlogPosting',
+        headline: post.data.title,
+        description: post.data.description || post.data.subtitle,
+        datePublished: post.data.date.toISOString(),
+        author: {
+          '@type': 'Person',
+          name: post.data.author.name,
+          jobTitle: post.data.author.role,
+        },
+        keywords: post.data.tags.join(', '),
+        url: `${siteUrl}/${post.id}`,
+        image: `${siteUrl}${post.data.image.src}`,
+      })),
+    })}
+  />
+
+  <main class="blog-listing-main" data-blog-listing>
     <!-- Hero – pure canvas, display-xl + lead -->
     <section class="blog-hero">
       <div class="blog-hero-container">
@@ -74,40 +112,95 @@ const formatDate = (date: Date) =>
       )
     }
 
+    {
+      starterPosts.length > 0 && (
+        <section class="blog-starter-section" aria-labelledby="blog-starter-title">
+          <div class="blog-grid-container">
+            <div class="blog-starter">
+              <div class="blog-starter-head">
+                <span class="eyebrow">Nowy w temacie?</span>
+                <h2 id="blog-starter-title" class="display-lg">
+                  Zacznij od trzech artykułów
+                </h2>
+              </div>
+              <div class="blog-starter-grid">
+                {starterPosts.map((post) => (
+                  <a class="blog-starter-card" href={`/${post.id}`}>
+                    <span>{PILLAR_LABELS[post.data.pillar]}</span>
+                    <strong>{post.data.title}</strong>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )
+    }
+
     <!-- Grid section – wszystkie artykuły -->
     <section class="blog-grid-section">
       <div class="blog-grid-container">
         <header class="blog-grid-header">
           <h2 class="display-lg blog-grid-title">Wszystkie artykuły</h2>
 
-          <div class="blog-grid-filters" role="group" aria-label="Filtruj według kategorii">
-            <button
-              type="button"
-              class="pricing-tab is-active"
-              data-category="all"
-              aria-pressed="true"
-            >
-              Wszystkie
-            </button>
-            {
-              usedPillars.map((pillar) => (
-                <button
-                  type="button"
-                  class="pricing-tab"
-                  data-category={pillar}
-                  aria-pressed="false"
-                >
-                  {PILLAR_LABELS[pillar]}
-                </button>
-              ))
-            }
+          <div class="blog-controls">
+            <label class="blog-search">
+              <span>Szukaj artykułu</span>
+              <input
+                type="search"
+                placeholder="np. ChatGPT, llms.txt, schema"
+                autocomplete="off"
+                data-blog-search
+              />
+            </label>
+
+            <div class="blog-popular-tags" aria-label="Polecane tematy">
+              <span>Polecane:</span>
+              {
+                popularTags.map((tag) => (
+                  <button type="button" data-tag-query={tag}>
+                    #{tag}
+                  </button>
+                ))
+              }
+            </div>
+
+            <div class="blog-grid-filters" role="group" aria-label="Filtruj według kategorii">
+              <button
+                type="button"
+                class="tab-pill is-active"
+                data-category="all"
+                aria-pressed="true"
+              >
+                <span>Wszystkie</span>
+                <span class="filter-count">{totalPosts}</span>
+              </button>
+              {
+                usedPillars.map((pillar) => (
+                  <button
+                    type="button"
+                    class="tab-pill"
+                    data-category={pillar}
+                    aria-pressed="false"
+                  >
+                    <span>{PILLAR_LABELS[pillar]}</span>
+                    <span class="filter-count">{pillarCounts[pillar] ?? 0}</span>
+                  </button>
+                ))
+              }
+            </div>
           </div>
         </header>
 
         <div class="blog-grid" id="posts-grid">
           {
             posts.map((post) => (
-              <a href={`/${post.id}`} class="post-card" data-category={post.data.pillar}>
+              <a
+                href={`/${post.id}`}
+                class="post-card"
+                data-category={post.data.pillar}
+                data-search={`${post.data.title} ${post.data.subtitle} ${post.data.tags.join(' ')} ${PILLAR_LABELS[post.data.pillar]} ${post.data.author.name}`}
+              >
                 <div class="post-card-image">
                   <Image
                     src={post.data.image}
@@ -124,13 +217,34 @@ const formatDate = (date: Date) =>
                   </div>
                   <h3 class="post-card-title">{post.data.title}</h3>
                   <div class="post-card-footer">
-                    <span>{post.data.tags?.[0] ?? PILLAR_LABELS[post.data.pillar]}</span>
+                    <span class="post-card-author">
+                      <img
+                        src={post.data.author.avatar.src}
+                        alt=""
+                        width={32}
+                        height={32}
+                        loading="lazy"
+                      />
+                      <span>{post.data.author.name}</span>
+                    </span>
                     <span>{post.data.readTime ?? '–'} czytania</span>
                   </div>
                 </div>
               </a>
             ))
           }
+        </div>
+
+        <div class="blog-empty" data-blog-empty hidden>
+          <h3>Brak artykułów dla tego filtra</h3>
+          <p>
+            Spróbuj wybrać inną kategorię, zmienić wyszukiwanie albo przejrzeć wszystkie teksty.
+          </p>
+          <button class="tab-pill" type="button" data-clear-filter>Pokaż wszystkie</button>
+        </div>
+
+        <div class="blog-load-more-wrap">
+          <button class="btn-secondary" type="button" data-load-more>Pokaż kolejne 12</button>
         </div>
       </div>
     </section>
@@ -320,6 +434,78 @@ const formatDate = (date: Date) =>
     gap: 10px;
   }
 
+  /* Starter */
+  .blog-starter-section {
+    background: var(--bg-canvas);
+    padding: 0 0 64px 0;
+  }
+
+  .blog-starter {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-xl);
+    background: var(--bg-surface-1);
+  }
+
+  @media (min-width: 1024px) {
+    .blog-starter {
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      align-items: end;
+      padding: 32px;
+    }
+  }
+
+  .blog-starter-head {
+    display: grid;
+    gap: 14px;
+  }
+
+  .blog-starter-head h2 {
+    max-width: 560px;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  .blog-starter-grid {
+    display: grid;
+    gap: 10px;
+  }
+
+  .blog-starter-card {
+    display: grid;
+    gap: 8px;
+    padding: 16px;
+    border-radius: var(--r-md);
+    background: var(--bg-canvas);
+    color: inherit;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+
+  .blog-starter-card:hover {
+    background: var(--bg-surface-2);
+  }
+
+  .blog-starter-card span {
+    color: var(--accent-blue);
+    font-size: var(--fs-micro);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .blog-starter-card strong {
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: var(--fs-body-lg);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: var(--ls-body-lg);
+  }
+
   /* Grid section */
   .blog-grid-section {
     background: var(--bg-canvas);
@@ -364,10 +550,94 @@ const formatDate = (date: Date) =>
     margin: 0;
   }
 
+  .blog-controls {
+    display: grid;
+    gap: 14px;
+    width: 100%;
+  }
+
+  @media (min-width: 1024px) {
+    .blog-controls {
+      width: min(100%, 680px);
+      justify-items: end;
+    }
+  }
+
+  .blog-search {
+    display: grid;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .blog-search span {
+    color: var(--ink-faint);
+    font-size: var(--fs-micro);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .blog-search input {
+    width: 100%;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-pill);
+    background: var(--bg-surface-1);
+    color: var(--ink);
+    font: inherit;
+    font-size: var(--fs-body-sm);
+    padding: 12px 16px;
+    outline: none;
+  }
+
+  .blog-search input:focus {
+    border-color: color-mix(in srgb, var(--accent-blue) 42%, var(--hairline-soft));
+  }
+
+  .blog-popular-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    color: var(--ink-faint);
+    font-size: var(--fs-caption);
+  }
+
+  .blog-popular-tags button {
+    border: 0;
+    background: transparent;
+    color: var(--ink-muted);
+    cursor: pointer;
+    font: inherit;
+    padding: 0;
+  }
+
+  .blog-popular-tags button:hover {
+    color: var(--ink);
+  }
+
   .blog-grid-filters {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+  }
+
+  .filter-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.45rem;
+    height: 1.45rem;
+    margin-left: 0.45rem;
+    border-radius: var(--r-pill);
+    background: var(--bg-surface-2);
+    color: var(--ink-muted);
+    font-size: var(--fs-micro);
+    line-height: 1;
+  }
+
+  .tab-pill.is-active .filter-count {
+    background: var(--bg-canvas);
+    color: var(--ink);
   }
 
   .blog-grid {
@@ -487,30 +757,176 @@ const formatDate = (date: Date) =>
     letter-spacing: var(--ls-caption);
     color: var(--ink-muted);
   }
+
+  .post-card-author {
+    display: inline-flex;
+    min-width: 0;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .post-card-author img {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .post-card-author span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .blog-empty {
+    margin-top: 24px;
+    padding: 32px;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-xl);
+    background: var(--bg-surface-1);
+    text-align: center;
+  }
+
+  .blog-empty h3 {
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: var(--fs-display-md);
+    font-weight: 500;
+    letter-spacing: var(--ls-display-md);
+  }
+
+  .blog-empty p {
+    max-width: 520px;
+    margin: 12px auto 20px;
+    color: var(--ink-muted);
+    line-height: 1.55;
+  }
+
+  .blog-load-more-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+  }
+
+  .blog-load-more-wrap[hidden],
+  .blog-empty[hidden] {
+    display: none;
+  }
 </style>
 
 <script>
   const initFilters = () => {
-    const filters = document.querySelectorAll<HTMLButtonElement>('.blog-grid-filters .pricing-tab');
-    const cards = document.querySelectorAll<HTMLElement>('.post-card');
+    const root = document.querySelector<HTMLElement>('[data-blog-listing]');
+    if (!root || root.dataset.blogListingReady === 'true') return;
+    root.dataset.blogListingReady = 'true';
+
+    const pageSize = 12;
+    let visibleLimit = pageSize;
+    let activeCategory = 'all';
+    let searchQuery = '';
+
+    const filters = root.querySelectorAll<HTMLButtonElement>('.blog-grid-filters .tab-pill');
+    const cards = Array.from(root.querySelectorAll<HTMLElement>('.post-card'));
+    const searchInput = root.querySelector<HTMLInputElement>('[data-blog-search]');
+    const emptyState = root.querySelector<HTMLElement>('[data-blog-empty]');
+    const clearButton = root.querySelector<HTMLButtonElement>('[data-clear-filter]');
+    const loadMoreButton = root.querySelector<HTMLButtonElement>('[data-load-more]');
+    const tagButtons = root.querySelectorAll<HTMLButtonElement>('[data-tag-query]');
+
+    const normalize = (value: string) =>
+      value
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+
+    const updateActiveFilter = () => {
+      filters.forEach((button) => {
+        const isActive = (button.dataset.category || 'all') === activeCategory;
+        button.classList.toggle('is-active', isActive);
+        button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+    };
+
+    const applyFilters = () => {
+      const normalizedQuery = normalize(searchQuery.trim());
+      let matched = 0;
+      let shown = 0;
+
+      cards.forEach((card) => {
+        const categoryMatch = activeCategory === 'all' || card.dataset.category === activeCategory;
+        const haystack = normalize(card.dataset.search || '');
+        const searchMatch = !normalizedQuery || haystack.includes(normalizedQuery);
+        const matches = categoryMatch && searchMatch;
+
+        if (matches) matched += 1;
+        const shouldShow = matches && shown < visibleLimit;
+        if (shouldShow) shown += 1;
+        card.dataset.hidden = shouldShow ? 'false' : 'true';
+      });
+
+      if (emptyState) emptyState.hidden = matched > 0;
+      if (loadMoreButton) {
+        const hasMore = matched > visibleLimit;
+        loadMoreButton.hidden = !hasMore;
+        loadMoreButton.textContent = hasMore
+          ? `Pokaż kolejne ${Math.min(pageSize, matched - visibleLimit)}`
+          : 'Pokaż kolejne 12';
+      }
+    };
+
+    const resetVisibleLimit = () => {
+      visibleLimit = pageSize;
+    };
+
+    const clearFilters = () => {
+      activeCategory = 'all';
+      searchQuery = '';
+      if (searchInput) searchInput.value = '';
+      resetVisibleLimit();
+      updateActiveFilter();
+      applyFilters();
+    };
+
+    let debounceTimer: number | undefined;
 
     filters.forEach((btn) => {
       btn.addEventListener('click', () => {
-        const cat = btn.dataset.category || 'all';
-
-        filters.forEach((b) => {
-          const isActive = b === btn;
-          b.classList.toggle('is-active', isActive);
-          b.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-        });
-
-        cards.forEach((card) => {
-          const cardCat = card.dataset.category;
-          const show = cat === 'all' || cardCat === cat;
-          card.dataset.hidden = show ? 'false' : 'true';
-        });
+        activeCategory = btn.dataset.category || 'all';
+        resetVisibleLimit();
+        updateActiveFilter();
+        applyFilters();
       });
     });
+
+    searchInput?.addEventListener('input', () => {
+      window.clearTimeout(debounceTimer);
+      debounceTimer = window.setTimeout(() => {
+        searchQuery = searchInput.value;
+        resetVisibleLimit();
+        applyFilters();
+      }, 150);
+    });
+
+    tagButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        searchQuery = button.dataset.tagQuery || '';
+        if (searchInput) searchInput.value = searchQuery;
+        resetVisibleLimit();
+        applyFilters();
+      });
+    });
+
+    clearButton?.addEventListener('click', clearFilters);
+
+    loadMoreButton?.addEventListener('click', () => {
+      visibleLimit += pageSize;
+      applyFilters();
+    });
+
+    updateActiveFilter();
+    applyFilters();
   };
 
   document.addEventListener('astro:page-load', initFilters);
