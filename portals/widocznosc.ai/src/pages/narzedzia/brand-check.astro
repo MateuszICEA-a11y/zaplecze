@@ -964,8 +964,8 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
 
           <section class="brand-stats">
             <div class="brand-stat">
-              <div class="brand-stat-value">${escapeHtml(String(report.summary.averageConfidence))}%</div>
-              <div class="brand-stat-label">średnia pewność modeli</div>
+              <div class="brand-stat-value">${escapeHtml(String(report.summary.ownDomainCitedBy))}/${escapeHtml(String(report.summary.totalModels))}</div>
+              <div class="brand-stat-label">modele cytujące Twoją domenę</div>
             </div>
             <div class="brand-stat">
               <div class="brand-stat-value">${escapeHtml(String(report.summary.hallucinations))}</div>
@@ -1036,7 +1036,6 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
             <div class="brand-model-meta">
               <span class="brand-tag ${model.knowsBrand === 'yes' ? 'good' : model.knowsBrand === 'partial' ? 'warn' : 'bad'}">${escapeHtml(knowsLabel(model.knowsBrand))}</span>
               <span class="brand-tag">${escapeHtml(sentimentLabel(model.sentiment))}</span>
-              <span class="brand-tag">${escapeHtml(String(model.confidence))}% pewności</span>
               <span class="brand-tag ${model.citedOwnDomain ? 'good' : 'warn'}">${model.citedOwnDomain ? 'cytuje domenę' : 'nie cytuje domeny'}</span>
             </div>
           </div>
