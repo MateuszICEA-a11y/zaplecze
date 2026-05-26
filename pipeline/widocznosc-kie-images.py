@@ -46,7 +46,112 @@ INFO_STYLE = (
 )
 
 SPECS = [
-    # ── GEO / przewodnik (pillar) ─────────────────────────────────────
+    # ── GEO wave 2: 4 specjalne (zamiana orange + inline SVG na sky-blue) ──
+    {
+        "slug": "blog-geo-boty-ai-przewodnik",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract geometric crawler visualization: stylized "
+            "spider/bot silhouettes (purely geometric, not realistic) "
+            "traversing a structured grid of website pages, with luminous "
+            "sky-blue beam paths connecting bots to grid cells. Clean vector "
+            "feel, cybersecurity/web-crawling aesthetic. Represents AI bots "
+            "(GPTBot, ClaudeBot) indexing a site."
+        ),
+    },
+    {
+        "slug": "infographic-geo-boty-ai-przewodnik",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): '13 botów AI – kto indeksuje "
+            "Twoją stronę'. Show a 4-column matrix with white Polish column "
+            "headers: 'TRENING', 'WYSZUKIWANIE', 'NA ŻĄDANIE', 'COMMON "
+            "CRAWL'. Under each header list bot names in mono font, each in a "
+            "small rounded box with a tiny sky-blue check dot: column 1 "
+            "'GPTBot', 'ClaudeBot', 'Google-Extended'; column 2 "
+            "'OAI-SearchBot', 'PerplexityBot', 'Claude-SearchBot'; column 3 "
+            "'ChatGPT-User', 'Claude-Web', 'Perplexity-User'; column 4 "
+            "'CCBot', 'Applebot-Extended', 'GoogleOther', 'Google-NotebookLM'. "
+            "Bottom caption: 'PEŁNE POKRYCIE = ZEZWÓL NA WSZYSTKIE 13 W "
+            "ROBOTS.TXT'."
+        ),
+    },
+    {
+        "slug": "blog-geo-query-fan-out",
+        "prompt": (
+            HERO_STYLE
+            + "A single glowing sky-blue node at the left branching outward "
+            "into a fractal network of many smaller sub-query nodes, "
+            "interconnected with thin luminous lines. Tree/fractal expansion "
+            "topology, technical diagram feel. Represents Google AI Mode "
+            "query fan-out decomposition. Left-to-right expansion."
+        ),
+    },
+    {
+        "slug": "infographic-geo-query-fan-out",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Query fan-out – jak jedno "
+            "pytanie rozkłada się na wiele'. Horizontal flow: on the left a "
+            "single rounded box 'PYTANIE UŻYTKOWNIKA' (sky-blue). From it 4 "
+            "branches expand right to four labeled cluster boxes: "
+            "'PORÓWNAWCZE', 'CENOWE', 'TECHNICZNE', 'OPINIE'. Under each "
+            "cluster 2-3 tiny example sub-queries in small text. Bottom "
+            "caption: '1 PROMPT → 4 GRUPY INTENCJI → 14 PODZAPYTAŃ'."
+        ),
+    },
+    {
+        "slug": "blog-geo-topical-authority",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract knowledge-graph architecture: a tall central pillar "
+            "with glowing sky-blue edges, surrounded by interconnected "
+            "cluster nodes radiating outward in a hub-and-spoke topology, "
+            "hierarchical structure. Represents pillar + cluster content "
+            "strategy for topical authority. Centered composition."
+        ),
+    },
+    {
+        "slug": "infographic-geo-topical-authority",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Pillar + cluster – "
+            "architektura topical authority'. Hub-and-spoke diagram: a "
+            "central rounded box 'STRONA PILLAR' (sky-blue, glowing) in the "
+            "middle, with 8 smaller rounded boxes labeled 'CLUSTER 1' … "
+            "'CLUSTER 8' arranged in a circle around it. Solid sky-blue lines "
+            "connect each cluster to the pillar; thinner gray dashed lines "
+            "connect adjacent clusters. Two small callouts: 'Cluster → "
+            "Pillar (2×)' and 'Cluster → Cluster (3–5×)'. Bottom caption: "
+            "'TOP 10 DOMEN W NISZY = 46% CYTOWAŃ AI'."
+        ),
+    },
+    {
+        "slug": "blog-geo-share-of-voice",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract horizontal bar-chart visualization with five stacked "
+            "horizontal bars of varying lengths; the dominant bar glows "
+            "bright sky-blue, the others are muted dark gray. Premium "
+            "analytics dashboard aesthetic. Represents brand share of voice "
+            "in AI conversations. Clean, data-driven."
+        ),
+    },
+    {
+        "slug": "infographic-geo-share-of-voice",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Share of Voice – jak liczymy "
+            "widoczność marki w AI'. Show a horizontal bar chart with 5 bars "
+            "labeled in Polish: 'Konkurent A' (32%), 'Konkurent B' (25%), "
+            "'Twoja marka' (21%, glowing sky-blue, emphasized), 'Konkurent C' "
+            "(14%), 'Pozostali' (8%). To the right a clean formula box: 'SoV "
+            "= wzmianki Twojej marki / wszystkie wzmianki × 100%' with example "
+            "'47 / 222 = 21%'. Bottom caption: '30 ZAPYTAŃ × 4 PLATFORMY × 5 "
+            "URUCHOMIEŃ = 600 TESTÓW'."
+        ),
+    },
+    # ── (wave 1 GEO – już wygenerowane, zostawione dla referencji) ────
     {
         "slug": "blog-geo-przewodnik",
         "prompt": (

@@ -3,7 +3,7 @@ title: 'Share of Voice zamiast rankingu – jak naprawdę mierzyć widoczność 
 subtitle: 'Dlaczego klasyczne śledzenie pozycji nie działa w ChatGPT, Claude i Perplexity – i co je zastępuje'
 description: 'Badanie SparkToro pokazało, że odpowiedzi LLM mają mniej niż 1% powtarzalności. Mierzenie pozycji w AI nie ma sensu. Co zamiast tego: Share of Voice, Citation Rate, Mention Rate – metryki, które naprawdę pokazują, jak Twoja marka radzi sobie w erze wyszukiwarek AI.'
 date: 2026-05-07
-image: ../../../assets/images/blog-share-of-voice.png
+image: ../../../assets/images/blog-geo-share-of-voice.png
 icon: '<rect x="3" y="14" width="3" height="7" rx="1"/><rect x="9" y="9" width="3" height="12" rx="1"/><rect x="15" y="4" width="3" height="17" rx="1"/><rect x="20.5" y="11" width="2" height="10" rx="1"/>'
 author:
   name: 'Tomasz Czechowski'
@@ -44,10 +44,6 @@ SoV to procent zapytań, w których Twoja marka pojawiła się w odpowiedzi (z U
 
 Tę liczbę można porównywać między audytami i zobaczyć trend.
 
-<figure class="infographic">
-<svg viewBox="0 0 800 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Wykres Share of Voice – Konkurent A 35,1% (78 wzm.), Konkurent B 27,9% (62 wzm.), Twoja marka 21,2% (47 wzm.), długi ogon 15,8% (35 wzm.); formuła SoV 47÷222=21,2%"><defs><linearGradient id="sov-mute" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#3a4055" stop-opacity="0.7"/><stop offset="100%" stop-color="#3a4055" stop-opacity="0.25"/></linearGradient><linearGradient id="sov-brand" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#ff6a2e" stop-opacity="0.85"/><stop offset="100%" stop-color="#ff6a2e" stop-opacity="0.3"/></linearGradient></defs><text x="20" y="32" fill="#ff6a2e" font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="0.18em" font-weight="600">SHARE OF VOICE</text><text x="20" y="50" fill="#9da4b3" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="0.08em">30 ZAPYTAŃ × 4 PLATFORMY × 5 URUCHOMIEŃ = 600 TESTÓW</text><g font-family="Inter, system-ui" font-size="13" fill="#cbd0db"><text x="20" y="103">Konkurent A</text><rect x="140" y="88" width="490" height="26" rx="4" fill="url(#sov-mute)" stroke="#3a4055" stroke-width="1"/><text x="640" y="105" fill="#9da4b3" font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="0.05em">35,1% · 78 wzm.</text><text x="20" y="143">Konkurent B</text><rect x="140" y="128" width="389" height="26" rx="4" fill="url(#sov-mute)" stroke="#3a4055" stroke-width="1"/><text x="540" y="145" fill="#9da4b3" font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="0.05em">27,9% · 62 wzm.</text><text x="20" y="183" fill="#ff6a2e" font-family="Inter Tight, system-ui" font-weight="600">Twoja marka</text><rect x="140" y="168" width="296" height="26" rx="4" fill="url(#sov-brand)" stroke="#ff6a2e" stroke-width="1.5"/><text x="446" y="185" fill="#ff6a2e" font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="0.05em" font-weight="600">21,2% · 47 wzm.</text><text x="20" y="223">Długi ogon</text><rect x="140" y="208" width="221" height="26" rx="4" fill="url(#sov-mute)" stroke="#3a4055" stroke-width="1"/><text x="372" y="225" fill="#9da4b3" font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="0.05em">15,8% · 35 wzm.</text></g><line x1="20" y1="260" x2="780" y2="260" stroke="#3a4055" stroke-opacity="0.4" stroke-width="1"/><text x="20" y="290" fill="#5d6275" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="0.18em">FORMUŁA</text><rect x="20" y="310" width="760" height="100" rx="8" fill="#11131f" stroke="#ff6a2e" stroke-opacity="0.3" stroke-width="1"/><text x="400" y="350" text-anchor="middle" fill="#e6e7ed" font-family="Inter Tight, system-ui" font-size="20" font-weight="600">SoV = wzmianki marki ÷ Σ wszystkich wzmianek</text><text x="400" y="388" text-anchor="middle" fill="#ff6a2e" font-family="JetBrains Mono, monospace" font-size="22" font-weight="600" letter-spacing="0.08em">47 ÷ 222 = 21,2%</text><text x="400" y="455" text-anchor="middle" fill="#5d6275" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="0.15em">WZMIANKA = MARKA W ODPOWIEDZI AI Z URL LUB BEZ · TREND ZAMIAST POJEDYNCZEGO POMIARU</text></svg>
-<figcaption>Pula 600 testów dla 4 marek konkurencyjnych. SoV pokazuje udział marki w widoczności w AI – nie pozycję absolutną. Pojedyncza liczba 21,2% nic nie znaczy bez kontekstu konkurencji i&nbsp;trendu kwartalnego.</figcaption>
-</figure>
 
 ### Citation Rate – mierzy techniczne SEO
 
@@ -59,7 +55,7 @@ Mention Rate to procent zapytań, w których Twoja marka pojawiła się tylko w 
 
 Britney Muller spuentowała to lapidarnie: *„brand mentions are the new backlinks"*. Wzmianki budujesz przez PR, recenzje, zestawienia *„best of"* i cytowania w mediach – nie przez techniczne SEO.
 
-![Share of Voice – jak liczymy widoczność marki w AI: bar chart z procentami konkurencji, formuła SoV (47/222=21%), 30 zapytań × 4 platformy × 5 uruchomień = 600 testów](../../../assets/images/infographic-share-of-voice.png)
+![Share of Voice – jak liczymy widoczność marki w AI: bar chart z procentami konkurencji, formuła SoV (47/222=21%), 30 zapytań × 4 platformy × 5 uruchomień = 600 testów](../../../assets/images/infographic-geo-share-of-voice.png)
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
