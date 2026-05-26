@@ -96,43 +96,58 @@ const comparisonRows = [
   <!-- Hero – service landing header -->
   <section class="service-hero">
     <div class="content-container service-hero-inner">
-      <!-- Breadcrumb (text-left dla nawigacji, hero copy centered) -->
-      <nav class="service-breadcrumb" aria-label="Ścieżka nawigacji">
-        <a href="/pozycjonowanie-ai" class="service-breadcrumb-link"> Pozycjonowanie AI </a>
-        <span class="service-breadcrumb-sep" aria-hidden="true">/</span>
-        <span class="service-breadcrumb-current">{model.name}</span>
-      </nav>
+      <div class="service-hero-copy">
+        <nav class="service-breadcrumb" aria-label="Ścieżka nawigacji">
+          <a href="/pozycjonowanie-ai" class="service-breadcrumb-link">Pozycjonowanie AI</a>
+          <span class="service-breadcrumb-sep" aria-hidden="true">/</span>
+          <span class="service-breadcrumb-current">{model.name}</span>
+        </nav>
 
-      <span class="eyebrow service-eyebrow">{model.vendor} · model AI</span>
-      <h1 class="service-hero-title">
-        Pozycjonowanie w&nbsp;<span class="accent">{model.name}</span>
-      </h1>
-      <p class="service-hero-subtitle" set:html={content.heroSubtitle} />
-      <div class="service-hero-actions">
-        <a class="btn-primary" href={`/kontakt?type=audyt-ai&model=${model.slug}`}>
-          Zamów audyt pod {model.name}
-        </a>
-        <a class="btn-secondary" href="/narzedzia/brand-check"> Sprawdź widoczność · 60s </a>
-      </div>
-      <form
-        class="quick-check"
-        action="/narzedzia/brand-check"
-        method="get"
-        aria-label={`Quick check widoczności w ${model.name}`}
-      >
-        <label for="quick-check-domain">Quick check</label>
-        <div class="quick-check-row">
-          <input
-            id="quick-check-domain"
-            name="domain"
-            type="text"
-            inputmode="url"
-            placeholder="twojadomena.pl"
-            autocomplete="url"
-          />
-          <button type="submit">Sprawdź w {model.name}</button>
+        <span class="eyebrow service-eyebrow">{model.vendor} · model AI</span>
+        <h1 class="service-hero-title">
+          Pozycjonowanie w&nbsp;<span class="accent">{model.name}</span>
+        </h1>
+        <p class="service-hero-subtitle" set:html={content.heroSubtitle} />
+        <div class="service-hero-actions">
+          <a class="btn-primary" href={`/kontakt?type=audyt-ai&model=${model.slug}`}>
+            Zamów audyt pod {model.name}
+          </a>
+          <a class="btn-secondary" href="/narzedzia/brand-check">Sprawdź widoczność · 60s</a>
         </div>
-      </form>
+      </div>
+
+      <aside class="service-hero-panel" aria-label={`Szybki test widoczności w ${model.name}`}>
+        <form
+          class="quick-check"
+          action="/narzedzia/brand-check"
+          method="get"
+          aria-label={`Quick check widoczności w ${model.name}`}
+        >
+          <label for="quick-check-domain">Quick check</label>
+          <div class="quick-check-row">
+            <input
+              id="quick-check-domain"
+              name="domain"
+              type="text"
+              inputmode="url"
+              placeholder="twojadomena.pl"
+              autocomplete="url"
+            />
+            <button type="submit">Sprawdź</button>
+          </div>
+        </form>
+
+        <div class="hero-citation-preview" aria-label={`Przykładowe cytowanie w ${model.name}`}>
+          <div class="hero-citation-query">
+            Jakie firmy specjalizują się w pozycjonowaniu pod AI?
+          </div>
+          <div class="hero-citation-answer">
+            W Polsce warto sprawdzić <strong>widocznosc.ai</strong>
+            <span>[1]</span>, zespół łączący klasyczne SEO, content i monitoring cytowań.
+          </div>
+          <div class="hero-citation-source">[1] widocznosc.ai/pozycjonowanie-ai</div>
+        </div>
+      </aside>
     </div>
   </section>
 
@@ -365,9 +380,7 @@ const comparisonRows = [
           otherModels.map((m) => (
             <a
               href={m.href}
-              class="group flex flex-col rounded-[15px] p-6 transition"
-              style="background: var(--bg-surface-1);"
-              data-card-template
+              class="card-template other-model-card group flex flex-col"
             >
               <div class="text-ink-muted text-sm">{m.vendor}</div>
               <h3
@@ -453,16 +466,19 @@ const comparisonRows = [
 
   .service-hero-inner {
     position: relative;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
     align-items: center;
-    text-align: center;
+  }
+
+  .service-hero-copy {
+    max-width: 820px;
   }
 
   .service-breadcrumb {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
     gap: 8px;
     margin-bottom: 36px;
     font-family: var(--font-sans);
@@ -506,7 +522,7 @@ const comparisonRows = [
   }
 
   .service-hero-subtitle {
-    max-width: 760px;
+    max-width: 780px;
     margin: 0;
     font-family: var(--font-sans);
     font-size: clamp(17px, 1.4vw, 21px);
@@ -518,15 +534,35 @@ const comparisonRows = [
   .service-hero-actions {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 12px;
     margin-top: 40px;
     flex-wrap: wrap;
   }
 
+  .service-hero-panel {
+    --citation-brand: #4ade80;
+    display: grid;
+    gap: 0.85rem;
+    min-width: 0;
+    padding: clamp(1rem, 2.2vw, 1.35rem);
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-xl);
+    background:
+      radial-gradient(
+        circle at 20% 0%,
+        color-mix(in srgb, var(--accent-blue) 14%, transparent) 0%,
+        transparent 34%
+      ),
+      var(--bg-surface-1);
+  }
+
+  :global(:root[data-theme='light']) .service-hero-panel,
+  :global(:root[data-theme='light']) .citation-example {
+    --citation-brand: #15803d;
+  }
+
   .quick-check {
-    width: min(100%, 620px);
-    margin-top: 28px;
+    width: 100%;
     padding: 0.75rem;
     border: 1px solid var(--hairline-soft);
     border-radius: var(--r-lg);
@@ -565,13 +601,59 @@ const comparisonRows = [
     background: var(--ink);
     color: var(--bg-canvas);
     cursor: pointer;
-    font-weight: 800;
+    font-weight: 500;
     padding: 0.8rem 1rem;
+  }
+
+  .hero-citation-preview {
+    display: grid;
+    gap: 0.65rem;
+  }
+
+  .hero-citation-query,
+  .hero-citation-answer,
+  .hero-citation-source {
+    border-radius: var(--r-md);
+    padding: 0.85rem 0.95rem;
+    line-height: 1.5;
+  }
+
+  .hero-citation-query {
+    justify-self: end;
+    max-width: 86%;
+    background: var(--bg-surface-2);
+    color: var(--ink);
+    font-size: 0.9rem;
+  }
+
+  .hero-citation-answer {
+    background: var(--bg-canvas);
+    color: var(--ink-muted);
+    font-size: 0.9rem;
+  }
+
+  .hero-citation-answer strong,
+  .citation-answer strong {
+    color: var(--citation-brand);
+  }
+
+  .hero-citation-answer span,
+  .hero-citation-source,
+  .citation-answer span,
+  .citation-source {
+    color: var(--citation-brand);
+    font-family: ui-monospace, 'JetBrains Mono', monospace;
+    font-size: 0.84rem;
+  }
+
+  .hero-citation-source {
+    border: 1px solid color-mix(in srgb, var(--citation-brand) 34%, var(--hairline-soft));
+    background: color-mix(in srgb, var(--citation-brand) 9%, var(--bg-canvas));
   }
 
   .service-toc {
     position: sticky;
-    top: 0;
+    top: 64px;
     z-index: 20;
     border-bottom: 1px solid var(--hairline-soft);
     background: color-mix(in srgb, var(--bg-canvas) 86%, transparent);
@@ -626,6 +708,7 @@ const comparisonRows = [
   }
 
   .citation-example {
+    --citation-brand: #4ade80;
     padding: clamp(3rem, 6vw, 5rem) 0;
     background: var(--bg-canvas);
   }
@@ -659,20 +742,9 @@ const comparisonRows = [
     color: var(--ink-muted);
   }
 
-  .citation-answer strong {
-    color: #4ade80;
-  }
-
-  .citation-answer span,
   .citation-source {
-    color: var(--accent-blue);
-    font-family: ui-monospace, 'JetBrains Mono', monospace;
-    font-size: 0.84rem;
-  }
-
-  .citation-source {
-    border: 1px solid color-mix(in srgb, #4ade80 34%, var(--hairline-soft));
-    background: color-mix(in srgb, #4ade80 9%, var(--bg-canvas));
+    border: 1px solid color-mix(in srgb, var(--citation-brand) 34%, var(--hairline-soft));
+    background: color-mix(in srgb, var(--citation-brand) 9%, var(--bg-canvas));
   }
 
   .model-differentiator {
@@ -685,6 +757,11 @@ const comparisonRows = [
     color: var(--accent-blue);
     font-size: 0.72rem;
     font-weight: 800;
+  }
+
+  .other-model-card {
+    border-radius: 15px;
+    padding: 24px;
   }
 
   .model-comparison {
@@ -734,6 +811,10 @@ const comparisonRows = [
   }
 
   @media (min-width: 980px) {
+    .service-hero-inner {
+      grid-template-columns: minmax(0, 1.5fr) minmax(320px, 1fr);
+    }
+
     .service-section-head,
     .citation-grid {
       grid-template-columns: 5fr 7fr;
@@ -747,8 +828,7 @@ const comparisonRows = [
     }
 
     .service-hero-inner {
-      text-align: left;
-      align-items: flex-start;
+      align-items: start;
     }
 
     .service-breadcrumb {
@@ -789,11 +869,6 @@ const comparisonRows = [
       white-space: normal;
       text-align: center;
     }
-
-    .quick-check {
-      width: 100%;
-    }
-
     .quick-check-row {
       grid-template-columns: 1fr;
     }
@@ -805,7 +880,4 @@ const comparisonRows = [
     }
   }
 
-  [data-card-template]:hover {
-    background: var(--bg-surface-2) !important;
-  }
 </style>
