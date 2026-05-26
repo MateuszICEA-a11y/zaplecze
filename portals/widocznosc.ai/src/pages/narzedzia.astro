@@ -3,204 +3,432 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import ScrollUpButton from '../components/ScrollUpButton.astro';
-import CTABand from '../components/CTABand.astro';
 
 const tools = [
   {
-    id: 'fanout',
-    status: 'live',
-    eyebrow: 'Bezpłatne · 30s',
-    title: 'Fan-out ChatGPT',
-    subtitle: 'Jakie zapytania i źródła pojawiają się w odpowiedzi ChatGPT',
+    id: 'brand-check',
+    eyebrow: 'Marka w AI',
+    time: 'ok. 60 s',
+    title: 'Co AI wie o Twojej marce',
     desc:
-      'Wpisujesz frazę, a my pokazujemy zapytania wyszukiwania ujawnione przez model, cytowane domeny oraz źródła, które pojawiły się w warstwie wyszukiwania. Zobacz, kto wygrywa widoczność w AI dla Twoich tematów.',
-    cta: { label: 'Pokaż fan-out', href: '/narzedzia/fanout' },
-    bullets: [
-      'Zapytania wyszukiwania z konkretnego przebiegu',
-      'Ranking domen cytowanych w odpowiedzi',
-      'Źródła użyte w warstwie wyszukiwania',
-      'Bez logowania, wynik w ~30 s',
-    ],
+      'Sprawdź rozpoznawalność marki, sentyment, możliwe halucynacje i konkurentów polecanych zamiast Ciebie.',
+    href: '/narzedzia/brand-check',
+    cta: 'Sprawdź markę',
+    bullets: ['ChatGPT, Claude, Gemini i Perplexity', 'Sentyment i rozpoznawalność', 'Konkurenci i źródła'],
   },
   {
-    id: 'brand-check',
-    status: 'beta',
-    eyebrow: 'Bezpłatne · 60s',
-    title: 'Brand Check',
-    subtitle: 'Co AI wie o Twojej marce – sentyment, halucynacje i konkurenci',
+    id: 'url-check',
+    eyebrow: 'Content pod AI',
+    time: 'ok. 30 s',
+    title: 'Czy Twój content jest cytowalny',
     desc:
-      'Podajesz markę, domenę i kategorię. Odpytujemy przez OpenRouter cztery rodziny modeli: ChatGPT, Claude, Gemini i Perplexity. Wynik: Brand Visibility Score 0-100, rozpoznawalność per model, cytowane źródła, możliwe halucynacje i konkurenci pojawiający się zamiast Ciebie.',
-    cta: { label: 'Sprawdź markę', href: '/narzedzia/brand-check' },
-    bullets: [
-      'ChatGPT, Claude, Gemini i Perplexity w jednym przebiegu',
-      'Sentyment i rozpoznawalność marki per model',
-      'Lista możliwych halucynacji o firmie',
-      'Konkurenci i źródła cytowane w odpowiedziach',
-    ],
+      'Przeanalizuj pojedynczy URL pod kątem BLUF, FAQ, schema, świeżości, nagłówków i sygnałów przydatnych dla modeli AI.',
+    href: '/narzedzia/url-check',
+    cta: 'Sprawdź URL',
+    bullets: ['AI SEO Alignment Score', 'Schema i FAQ', 'Priorytety zmian'],
   },
   {
     id: 'ai-bots-check',
-    status: 'live',
-    eyebrow: 'Bezpłatne · 5s',
-    title: 'AI Bots Check',
-    subtitle: 'Czy 13 botów AI ma dostęp do Twojej strony – diagnoza robots.txt',
+    eyebrow: 'Dostęp botów',
+    time: 'ok. 5 s',
+    title: 'Czy boty AI mają dostęp do strony',
     desc:
-      'Pobieramy publiczny plik robots.txt i sprawdzamy, czy GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot i 8 innych user-agentów AI mają dostęp do Twojej domeny. Wynik w 5 sekund: tabela 13 botów + krytyczne action items + szablon naprawy.',
-    cta: { label: 'Sprawdź dostęp botów AI', href: '/narzedzia/ai-bots-check' },
-    bullets: [
-      'Tabela 13 botów AI · allow / disallow per bot',
-      'Wykrywanie blokady Cloudflare WAF',
-      'Action items z priorytetami P0/P1/P2',
-      'Bez logowania, bez emaila, instant',
-    ],
+      'Sprawdź robots.txt i zobacz, czy GPTBot, ClaudeBot, PerplexityBot, Google-Extended i inne boty mogą wejść na domenę.',
+    href: '/narzedzia/ai-bots-check',
+    cta: 'Sprawdź boty',
+    bullets: ['13 user-agentów AI', 'Allow / disallow per bot', 'Gotowy szablon naprawy'],
   },
   {
-    id: 'visibility-checker',
-    status: 'beta',
-    eyebrow: 'Bezpłatne · 90s',
-    title: 'Visibility Checker',
-    subtitle: 'Sprawdź, czy Twoja marka jest cytowana w 5 wyszukiwarkach AI',
+    id: 'fanout',
+    eyebrow: 'Fan-out',
+    time: 'ok. 30 s',
+    title: 'Jak AI rozbija zapytanie',
     desc:
-      'Wpisujesz domenę i kategorię. My pytamy ChatGPT, Claude, Gemini, Perplexity i Bing Copilot o Twoją markę w kontekście branży. Po 90 sekundach dostajesz Visibility Score 0-100, mapę cytowań i listę konkurentów wymienianych zamiast Ciebie. E-mail z raportem.',
-    cta: { label: 'Sprawdź widoczność', href: '/narzedzia/visibility-checker' },
-    bullets: [
-      'Wynik 0-100 z breakdownem per model',
-      'Lista cytowanych konkurentów',
-      'Top 10 zapytań gdzie tracisz',
-      'Raport PDF na e-mail',
-    ],
-  },
-  {
-    id: 'audyt-ai',
-    status: 'usługa',
-    eyebrow: 'Płatne · 1-2 tygodnie',
-    title: 'Kompleksowy audyt AI',
-    subtitle: 'Pełny obraz widoczności + plan działania na 12 miesięcy',
-    desc:
-      'Visibility Checker pokazuje wynik. Audyt AI pokazuje dlaczego i co dokładnie zrobić. 30-100 zapytań, 5 modeli, fact-density Twojego contentu, schema, struktura, źródła, mapa konkurencji, gap analysis. Output: 60-stronicowy raport + sesja walk-through.',
-    cta: { label: 'Zamów audyt', href: '/kontakt?type=audyt-ai' },
-    bullets: [
-      '30-100 zapytań branżowych',
-      'Analiza pokrycia tematycznego (gap analysis)',
-      'Audyt fact-density i schema',
-      'Plan widoczności 12 miesięcy',
-    ],
-  },
-  {
-    id: 'audyt-content-ai',
-    status: 'usługa',
-    eyebrow: 'Płatne · 2-3 tygodnie',
-    title: 'Audyt contentu pod AI',
-    subtitle: 'Sprawdzamy 20-50 stron pod kątem cytowalności w LLM',
-    desc:
-      'Każda strona twojego site\'u oceniona pod GEO: czy ma cytowalne fakty, czy ma definicje, czy struktura headerów pomaga RAG-om, czy schema jest poprawne, czy są źródła. Output: spreadsheet z oceną per strona + lista 100+ konkretnych poprawek z priorytetami.',
-    cta: { label: 'Zamów audyt contentu', href: '/kontakt?type=audyt-content' },
-    bullets: [
-      'Ocena per-strona (1-5 skala GEO)',
-      'Konkretne rewriting briefs',
-      'Schema.org checklist',
-      'Roadmapa wdrożenia 12 tyg.',
-    ],
+      'Zobacz zapytania wyszukiwania ujawnione przez model oraz domeny, które pojawiły się jako cytowane źródła.',
+    href: '/narzedzia/fanout',
+    cta: 'Pokaż fan-out',
+    bullets: ['Zapytania wyszukiwania', 'Cytowane domeny', 'Bez automatycznego raportu'],
   },
 ];
-
-const statusBadge = (status: string) => {
-  if (status === 'live') return { label: '● live · darmowe', tone: 'success' };
-  if (status === 'beta') return { label: '· beta · bezpłatne', tone: 'ink' };
-  return { label: 'usługa płatna', tone: 'muted' };
-};
-
-const toneColor = (tone: string) => {
-  if (tone === 'success') return 'var(--success-green)';
-  if (tone === 'ink') return 'var(--ink)';
-  return 'var(--ink-muted)';
-};
 ---
 
 <Layout
-  title="Narzędzia – widocznosc.ai"
-  description="Narzędzia do audytu widoczności marki w AI: Brand Check, AI Bots Check, kompleksowy audyt AI i audyt contentu pod LLM."
+  title="Darmowe narzędzia AI SEO – widocznosc.ai"
+  description="Cztery darmowe narzędzia widocznosc.ai: Brand Check, URL Check, AI Bots Check i Fan-out ChatGPT. Sprawdź widoczność marki, content i dostęp botów AI."
 >
   <Navbar />
 
-  <!-- Hero – wyśrodkowany na pełnej szerokości containera -->
-  <section class="relative pt-32 pb-16 md:pt-40 md:pb-20">
-    <div class="content-container text-center">
-      <span class="eyebrow mb-10 inline-flex">Narzędzia · audyt widoczności AI</span>
-      <h1 class="display-xl mx-auto mb-8" style="max-width: 1100px; text-wrap: balance;">
-        Sprawdź widoczność, zanim sprzedasz audyt klientowi
-      </h1>
-      <p class="text-ink mx-auto text-lg leading-relaxed" style="max-width: 720px;">
-        Darmowe testy i profesjonalne audyty. Sprawdzasz, co modele wiedzą o marce, czy boty AI
-        mają dostęp do domeny i które działania realnie zwiększą cytowalność.
-      </p>
-    </div>
-  </section>
-
-  <!-- Tools list -->
-  <section class="relative w-full">
-    <div class="content-container py-12 lg:py-16">
-      <div class="space-y-8 lg:space-y-10">
-        {
-          tools.map((tool) => {
-            const badge = statusBadge(tool.status);
-            return (
-              <article
-                id={tool.id}
-                class="scroll-mt-24 overflow-hidden rounded-[20px] p-8 sm:p-12 lg:p-14"
-                style="background: var(--bg-surface-1);"
-              >
-                <div class="flex flex-wrap items-center gap-3">
-                  <span class="text-sm font-medium" style={`color: ${toneColor(badge.tone)};`}>
-                    {tool.eyebrow}
-                  </span>
-                  <span class="text-ink-muted text-sm">·</span>
-                  <span class="text-ink-muted text-sm">{badge.label}</span>
-                </div>
-                <div class="mt-6 grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12">
-                  <div class="lg:col-span-7">
-                    <h2 class="display-md mb-4">{tool.title}</h2>
-                    <p class="text-ink mb-5 text-lg leading-snug font-medium">{tool.subtitle}</p>
-                    <p class="text-ink-muted leading-relaxed">{tool.desc}</p>
-                    <a class="btn-primary mt-8" href={tool.cta.href} aria-label={tool.cta.label}>
-                      {tool.cta.label}
-                      <span aria-hidden="true">→</span>
-                    </a>
-                  </div>
-                  <div class="lg:col-span-5">
-                    <div class="rounded-[15px] p-6 lg:p-8" style="background: var(--bg-canvas);">
-                      <div class="text-ink-muted mb-4 text-sm">Co dostajesz</div>
-                      <ul class="space-y-3">
-                        {tool.bullets.map((bullet) => (
-                          <li class="text-ink flex items-start gap-3">
-                            <span class="text-ink-muted mt-1.5 flex-shrink-0" aria-hidden="true">
-                              ✓
-                            </span>
-                            <span class="leading-relaxed">{bullet}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            );
-          })
-        }
+  <main>
+    <section class="tools-hero">
+      <div class="content-container tools-hero-inner">
+        <div class="tools-hero-copy">
+          <span class="eyebrow tools-eyebrow">Narzędzia widocznosc.ai</span>
+          <h1>Darmowe testy widoczności w AI</h1>
+          <p>
+            Sprawdź najważniejsze sygnały przed audytem: co modele wiedzą o marce,
+            czy content nadaje się do cytowania, czy boty mają dostęp do strony i jakie źródła pojawiają się w fan-oucie.
+          </p>
+        </div>
+        <div class="tools-hero-panel" aria-label="Zakres narzędzi">
+          <div>
+            <span>4</span>
+            <p>darmowe narzędzia</p>
+          </div>
+          <div>
+            <span>0</span>
+            <p>logowania</p>
+          </div>
+          <div>
+            <span>AI</span>
+            <p>marka, content, dostęp i źródła</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <CTABand
-    eyebrow="Konkretnie"
-    title="Nie wiesz od czego zacząć?"
-    subtitle="Bezpłatna konsultacja 30 minut z ekspertem ICEA. Pokazujemy które narzędzie ma sens dla Twojego biznesu i jakich rezultatów realnie się spodziewać."
-    primaryLabel="Zamów audyt AI"
-    primaryHref="/kontakt"
-    ghostLabel="Bezpłatna konsultacja"
-    ghostHref="/kontakt?type=konsultacja"
-  />
+    <section class="tools-section" aria-labelledby="tools-title">
+      <div class="content-container">
+        <div class="section-head">
+          <span class="section-kicker">Wybierz narzędzie</span>
+          <h2 id="tools-title">Szybka diagnoza bez formularza sprzedażowego</h2>
+        </div>
+
+        <div class="tools-grid">
+          {tools.map((tool, index) => (
+            <article class="tool-card" id={tool.id}>
+              <a class="tool-card-link" href={tool.href} aria-label={tool.cta}>
+                <div class="tool-card-top">
+                  <span class="tool-number">{String(index + 1).padStart(2, '0')}</span>
+                  <span class="tool-time">{tool.time}</span>
+                </div>
+                <div class="tool-meta">{tool.eyebrow}</div>
+                <h3>{tool.title}</h3>
+                <p class="tool-desc">{tool.desc}</p>
+                <ul class="tool-bullets">
+                  {tool.bullets.map((bullet) => (
+                    <li>{bullet}</li>
+                  ))}
+                </ul>
+                <span class="tool-cta">
+                  {tool.cta}
+                  <span aria-hidden="true">→</span>
+                </span>
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="audit-cta" aria-labelledby="audit-title">
+      <div class="content-container audit-cta-inner">
+        <div>
+          <span class="section-kicker">Pełny audyt</span>
+          <h2 id="audit-title">Potrzebujesz pełnego obrazu widoczności w AI?</h2>
+          <p>
+            Darmowe narzędzia pokazują pojedyncze sygnały. W audycie łączymy wyniki dla marki,
+            contentu, źródeł, konkurencji i dostępności technicznej w konkretny plan działań.
+          </p>
+        </div>
+        <a class="btn-primary audit-button" href="/kontakt?type=audyt-ai">
+          Porozmawiajmy o audycie
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+  </main>
 
   <Footer />
   <ScrollUpButton />
 </Layout>
+
+<style>
+  .tools-hero {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(7rem, 13vw, 11rem) 0 clamp(3.5rem, 7vw, 6rem);
+    background:
+      radial-gradient(circle at 18% 18%, color-mix(in srgb, var(--accent-blue) 13%, transparent), transparent 34rem),
+      linear-gradient(180deg, var(--bg-canvas) 0%, var(--bg-surface-1) 100%);
+  }
+
+  .tools-hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.42fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: end;
+  }
+
+  .tools-eyebrow {
+    margin-bottom: 1.4rem;
+  }
+
+  .tools-hero h1 {
+    max-width: 920px;
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: clamp(3.8rem, 9vw, 8.4rem);
+    font-weight: 500;
+    line-height: 0.92;
+    letter-spacing: 0;
+    text-wrap: balance;
+  }
+
+  .tools-hero-copy p {
+    max-width: 760px;
+    margin: 1.8rem 0 0;
+    color: var(--ink-muted);
+    font-size: clamp(1.05rem, 1.5vw, 1.28rem);
+    line-height: 1.6;
+  }
+
+  .tools-hero-panel {
+    display: grid;
+    gap: 0.75rem;
+    padding: 1rem;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-xl);
+    background: color-mix(in srgb, var(--bg-surface-2) 78%, transparent);
+  }
+
+  .tools-hero-panel div {
+    padding: 1.15rem 1.2rem;
+    border-radius: var(--r-md);
+    background: var(--bg-canvas);
+  }
+
+  .tools-hero-panel span {
+    display: block;
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1;
+  }
+
+  .tools-hero-panel p {
+    margin: 0.45rem 0 0;
+    color: var(--ink-muted);
+    font-size: 0.92rem;
+    line-height: 1.35;
+  }
+
+  .tools-section {
+    padding: clamp(3.5rem, 7vw, 6.5rem) 0;
+    background: var(--bg-canvas);
+  }
+
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: end;
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  .section-kicker {
+    display: inline-flex;
+    color: var(--accent-blue);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .section-head h2,
+  .audit-cta h2 {
+    max-width: 780px;
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4.8vw, 4.7rem);
+    font-weight: 500;
+    line-height: 0.98;
+    letter-spacing: 0;
+    text-wrap: balance;
+  }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .tool-card {
+    min-height: 100%;
+  }
+
+  .tool-card-link {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    padding: clamp(1.25rem, 2.6vw, 2rem);
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-xl);
+    background: var(--bg-surface-1);
+    color: inherit;
+    text-decoration: none;
+    transition:
+      transform 180ms ease,
+      border-color 180ms ease,
+      background 180ms ease;
+  }
+
+  .tool-card-link:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--accent-blue) 40%, var(--hairline));
+    background: color-mix(in srgb, var(--bg-surface-1) 78%, var(--accent-blue) 6%);
+  }
+
+  .tool-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2.3rem;
+  }
+
+  .tool-number {
+    color: var(--accent-blue);
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+
+  .tool-time {
+    padding: 0.35rem 0.7rem;
+    border-radius: var(--r-pill);
+    background: var(--bg-surface-2);
+    color: var(--ink-muted);
+    font-size: 0.82rem;
+    font-weight: 700;
+  }
+
+  .tool-meta {
+    color: var(--accent-blue);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .tool-card h3 {
+    margin: 0.75rem 0 0;
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3.5vw, 3.1rem);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+
+  .tool-desc {
+    margin: 1rem 0 0;
+    color: var(--ink-muted);
+    line-height: 1.58;
+  }
+
+  .tool-bullets {
+    display: grid;
+    gap: 0.58rem;
+    margin: 1.4rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .tool-bullets li {
+    color: var(--ink);
+    font-size: 0.94rem;
+    line-height: 1.35;
+  }
+
+  .tool-bullets li::before {
+    content: '';
+    display: inline-block;
+    width: 0.42rem;
+    height: 0.42rem;
+    margin-right: 0.6rem;
+    border-radius: 50%;
+    background: var(--accent-blue);
+    vertical-align: 0.12rem;
+  }
+
+  .tool-cta {
+    display: inline-flex;
+    gap: 0.45rem;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 2rem;
+    color: var(--ink);
+    font-weight: 800;
+  }
+
+  .audit-cta {
+    padding: 0 0 clamp(4rem, 8vw, 7rem);
+    background: var(--bg-canvas);
+  }
+
+  .audit-cta-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 2rem;
+    align-items: center;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    border: 1px solid color-mix(in srgb, var(--accent-blue) 24%, var(--hairline));
+    border-radius: var(--r-xl);
+    background:
+      radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--accent-blue) 16%, transparent), transparent 24rem),
+      var(--bg-surface-1);
+  }
+
+  .audit-cta p {
+    max-width: 720px;
+    margin: 1rem 0 0;
+    color: var(--ink-muted);
+    font-size: 1.02rem;
+    line-height: 1.6;
+  }
+
+  .audit-button {
+    align-self: end;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 980px) {
+    .tools-hero-inner,
+    .audit-cta-inner {
+      grid-template-columns: 1fr;
+    }
+
+    .tools-hero-panel {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .audit-button {
+      justify-self: start;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .tools-hero {
+      padding-top: 6rem;
+    }
+
+    .tools-hero h1 {
+      font-size: clamp(3.1rem, 15vw, 5rem);
+    }
+
+    .tools-hero-panel,
+    .tools-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .section-head {
+      display: block;
+    }
+
+    .section-head h2 {
+      margin-top: 0.75rem;
+    }
+  }
+</style>
