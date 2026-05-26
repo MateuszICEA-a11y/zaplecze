@@ -593,14 +593,31 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
     padding: clamp(20px, 3vw, 30px);
   }
 
+  :global(.brand-panel-head) {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    padding-bottom: 24px;
+    margin-bottom: 4px;
+  }
+
   :global(.brand-panel-title) {
     font-family: var(--font-display);
-    font-size: clamp(22px, 2.1vw, 30px);
-    line-height: 1.12;
+    font-size: clamp(24px, 2.4vw, 36px);
+    line-height: 1.05;
     font-weight: 500;
     color: var(--ink);
-    margin: 0 0 24px;
+    margin: 0;
     letter-spacing: -0.025em;
+  }
+
+  :global(.brand-panel-note) {
+    max-width: 420px;
+    color: var(--ink-muted);
+    font-size: 13px;
+    line-height: 1.45;
+    margin: 0;
   }
 
   :global(.brand-model-grid) {
@@ -673,6 +690,16 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
   :global(.brand-tag.bad) {
     color: #ef4444;
     background: rgb(239 68 68 / 0.14);
+  }
+
+  :global(.brand-tag.negative) {
+    color: #ef4444;
+    background: rgb(239 68 68 / 0.14);
+  }
+
+  :global(.brand-tag.positive) {
+    color: var(--success-green);
+    background: rgb(26 170 85 / 0.14);
   }
 
   :global(.brand-list-grid) {
@@ -835,6 +862,15 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
       grid-template-columns: 1fr 1fr;
     }
 
+    :global(.brand-panel-head) {
+      display: block;
+      padding-bottom: 18px;
+    }
+
+    :global(.brand-panel-note) {
+      margin-top: 8px;
+    }
+
     :global(.brand-competitor-card) {
       grid-template-columns: auto 1fr;
     }
@@ -982,27 +1018,42 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
           </section>
 
           <section class="brand-panel">
-            <h2 class="brand-panel-title">Wyniki per model</h2>
+            <div class="brand-panel-head">
+              <h2 class="brand-panel-title">Wyniki per model</h2>
+              <p class="brand-panel-note">Każdy model oceniamy osobno, bo odpowiedzi i cytowane źródła potrafią się różnić.</p>
+            </div>
             <div class="brand-model-grid">${modelRows}</div>
           </section>
 
           <section class="brand-panel">
-            <h2 class="brand-panel-title">Konkurenci polecani zamiast marki</h2>
+            <div class="brand-panel-head">
+              <h2 class="brand-panel-title">Konkurenci polecani zamiast marki</h2>
+              <p class="brand-panel-note">Lista pokazuje marki, które pojawiają się jako alternatywy lub punkty porównania.</p>
+            </div>
             ${renderCompetitors(competitorItems)}
           </section>
 
           <section class="brand-panel">
-            <h2 class="brand-panel-title">Możliwe halucynacje</h2>
+            <div class="brand-panel-head">
+              <h2 class="brand-panel-title">Możliwe halucynacje</h2>
+              <p class="brand-panel-note">To twierdzenia, które warto sprawdzić ręcznie przed użyciem raportu w komunikacji.</p>
+            </div>
             ${renderHallucinations(hallucinations)}
           </section>
 
           <section class="brand-panel">
-            <h2 class="brand-panel-title">Źródła cytowane przez modele</h2>
+            <div class="brand-panel-head">
+              <h2 class="brand-panel-title">Źródła cytowane przez modele</h2>
+              <p class="brand-panel-note">Pokazujemy domeny, z których modele korzystały przy odpowiedziach.</p>
+            </div>
             ${renderSources(sources)}
           </section>
 
           <section class="brand-panel">
-            <h2 class="brand-panel-title">Priorytety działań</h2>
+            <div class="brand-panel-head">
+              <h2 class="brand-panel-title">Priorytety działań</h2>
+              <p class="brand-panel-note">Najkrótsza lista zmian, które mogą poprawić widoczność i spójność marki w AI.</p>
+            </div>
             ${renderActions(report.actionItems || [])}
           </section>
         </div>
@@ -1035,7 +1086,7 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
             <p class="brand-model-summary">${escapeHtml(model.summary)}</p>
             <div class="brand-model-meta">
               <span class="brand-tag ${model.knowsBrand === 'yes' ? 'good' : model.knowsBrand === 'partial' ? 'warn' : 'bad'}">${escapeHtml(knowsLabel(model.knowsBrand))}</span>
-              <span class="brand-tag">${escapeHtml(sentimentLabel(model.sentiment))}</span>
+              <span class="brand-tag ${sentimentTone(model.sentiment)}">${escapeHtml(sentimentLabel(model.sentiment))}</span>
               <span class="brand-tag ${model.citedOwnDomain ? 'good' : 'warn'}">${model.citedOwnDomain ? 'cytuje domenę' : 'nie cytuje domeny'}</span>
             </div>
           </div>
@@ -1163,6 +1214,12 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
       if (value === 'mixed') return 'mieszany';
       if (value === 'unknown') return 'nieznany';
       return 'neutralny';
+    }
+
+    function sentimentTone(value) {
+      if (value === 'positive') return 'positive';
+      if (value === 'negative') return 'negative';
+      return '';
     }
 
     function severityLabel(value) {
