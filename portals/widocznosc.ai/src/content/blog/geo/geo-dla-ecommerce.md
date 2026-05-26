@@ -3,7 +3,7 @@ title: 'GEO dla e-commerce – jak pokazać produkty w odpowiedziach AI'
 subtitle: 'Dowiedz się, jak zoptymalizować strony produktowe i kategorie sklepu, żeby ChatGPT, Perplexity i Google AI Overviews cytowały Twoją ofertę – nie konkurencji'
 description: 'GEO dla e-commerce: jak zoptymalizować opisy produktów, dane strukturalne i zewnętrzny autorytet, by ChatGPT i Perplexity polecały właśnie Twój sklep.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-geo-geo-dla-ecommerce.png
 icon: '<rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 7h2v4H7zM11 7h6M11 10h6"/>'
 author:
   name: 'Piotr Wicenciak'
@@ -66,6 +66,8 @@ Jeśli ten sam nagłówek brzmi „Które słuchawki bezprzewodowe do 400 zł ma
     <p>Marka ubezpieczeń samochodowych zoptymalizowała strony produktowe pod GEO – dodała przejrzyste tabele porównawcze, definicyjne sekcje FAQ i usunęła żargon marketingowy. Po sześciu miesiącach liczba jej cytowań w Google AI Overviews wzrosła o <strong>447%. Nie zmieniła przy tym ani jednego backlinku – efekt pochodził wyłącznie ze zmian struktury treści.</strong></p>
   </div>
 </aside>
+
+![Dane strukturalne produktu dla GEO: Product, Offer, AggregateRating, MerchantListing i FAQPage czynią ofertę czytelną dla AI](../../../assets/images/infographic-geo-geo-dla-ecommerce.png)
 
 ## Dane strukturalne – klucz do Google Shopping Graph
 

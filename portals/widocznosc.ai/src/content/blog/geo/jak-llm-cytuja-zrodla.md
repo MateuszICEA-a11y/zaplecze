@@ -3,7 +3,7 @@ title: 'Jak LLM-y wybierają i cytują źródła'
 subtitle: 'Zrozum mechanizmy wyszukiwania (retrieval) i cytowania, by Twoje treści trafiały do odpowiedzi AI'
 description: 'Jak LLM-y wybierają źródła do cytowania? Mechanizmy RAG, G-Cite vs P-Cite, paradoks głębokości wyszukiwania i co z tego wynika dla Twoich treści.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-geo-jak-llm-cytuja-zrodla.png
 icon: '<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>'
 author:
   name: 'Piotr Wicenciak'
@@ -73,6 +73,8 @@ Osobne zjawisko opisane w tej samej analizie: marka lub domena pojawia się w od
     <p>Rozszczepienie zapytania (query fan-out) odpowiada za <strong>51% wszystkich cytowań generowanych w komercyjnych silnikach odpowiedzi</strong>. Oznacza to, że ponad połowa decyzji o cytowaniu zapada nie na etapie odpowiedzi na pytanie główne, ale podczas budowania odpowiedzi na podzapytania wygenerowane automatycznie przez model. Jeśli marka pojawia się spójnie we wszystkich ścieżkach podzapytań, jej przewaga nad dobrze pozycjonowaną, ale tematycznie wąską stroną jest dramatyczna.</p>
   </div>
 </aside>
+
+![Co decyduje, że LLM zacytuje źródło: trafność semantyczna, autorytet domeny, świeżość treści, struktura i nagłówki oraz gęstość danych](../../../assets/images/infographic-geo-jak-llm-cytuja-zrodla.png)
 
 ## Jak model uczy się cytować – metody treningowe
 

@@ -3,7 +3,7 @@ title: 'GEO dla lokalnego biznesu – widoczność w wyszukiwaniu konwersacyjnym
 subtitle: 'Dowiedz się, jak sprawić, by asystenci AI polecali właśnie Twoją firmę zamiast konkurencji'
 description: 'GEO dla lokalnego biznesu: jak zoptymalizować stronę pod ChatGPT, Perplexity i Google AI Mode. Praktyczny poradnik L2 – spójność encji, schema.org, llms.txt, pomiar cytowań.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-geo-geo-dla-lokalnego-biznesu.png
 icon: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/><circle cx="12" cy="6" r="1.5"/>'
 author:
   name: 'Piotr Wicenciak'
@@ -61,6 +61,8 @@ Tu pojawia się dobra wiadomość. Badanie Princeton University (Aggarwal et al.
     <p>Badanie Princeton (KDD 2024) przetestowało 9 taktyk optymalizacji treści na zestawie 10 000 zapytań z 25 dziedzin. Tylko 5 z 9 taktyk przyniosło istotny wzrost widoczności w LLM. Keyword stuffing – klasyczny zabieg SEO – nie tylko nie pomagał, ale aktywnie obniżał wskaźnik cytowań. <strong>Strony o niskim autorytecie domenowym, które dodały cytowania i dane liczbowe, zwiększyły widoczność w modelach AI o 115,1%.</strong></p>
   </div>
 </aside>
+
+![GEO dla lokalnego biznesu – fundamenty: spójność NAP, JSON-LD LocalBusiness, recenzje jako treść i plik llms.txt](../../../assets/images/infographic-geo-geo-dla-lokalnego-biznesu.png)
 
 ## Spójność encji – fundament lokalnego GEO
 

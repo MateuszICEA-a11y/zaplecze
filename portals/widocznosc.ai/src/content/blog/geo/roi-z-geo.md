@@ -3,7 +3,7 @@ title: 'Mierzenie ROI w GEO – KPI, metryki i raportowanie'
 subtitle: 'Naucz się udowadniać wartość GEO liczbami, zanim klient sam zacznie pytać'
 description: 'Jak mierzyć ROI z działań GEO? Poznaj kluczowe KPI, metryki cytowań i sprawdzone wzorce raportowania wyników AI Search do klienta i zarządu.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-geo-roi-z-geo.png
 icon: '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>'
 author:
   name: 'Mateusz Wiśniewski'
@@ -49,6 +49,8 @@ Tu mowa o twardych liczbach, które zarząd rozumie bez dodatkowego kontekstu.
 - **AI Engagement Conversion Rate (AECR)** – współczynnik konwersji użytkowników przychodzących bezpośrednio z cytowań AI; w modelach B2B SaaS ruch z platform AI konwertuje średnio 12,8 razy lepiej niż klasyczny ruch organiczny
 - **Branded Search Lift** – procentowy wzrost liczby wyszukiwań haseł brandowych w Google Search Console, skorelowany ze wzrostem widoczności w AI; mierzy pośredni wpływ cytowań na intencję zakupową
 - **ROI<sub>GEO</sub>** – zwrot z inwestycji obliczony jako różnica przychodów przypisanych do AI i kosztów programu GEO, podzielona przez te koszty
+
+![Hierarchia KPI w GEO: od widoczności (Citation Rate, Share of Voice), przez zaangażowanie (ruch i sesje z AI), po wyniki biznesowe – leady, konwersje i ROI](../../../assets/images/infographic-geo-roi-z-geo.png)
 
 ## Tabela KPI – definicje i metodologia pomiaru
 

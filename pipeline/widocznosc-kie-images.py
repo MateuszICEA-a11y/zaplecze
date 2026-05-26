@@ -1,21 +1,13 @@
 #!/usr/bin/env python3
 """Generate widocznosc.ai blog graphics (hero + infographic) via kie.ai gpt-image-2.
 
-Zunifikowany pipeline: JEDEN model (gpt-image-2-text-to-image), JEDEN ciemny
-plik per grafika. CSS w Article.astro robi resztę:
-- hero: "stage" – wtapia się w tło na obu motywach
-- infographic: w light mode auto-inwersja (invert + hue-rotate)
-
-Styl: tło obsidian #070810 + akcent sky-blue #0a9cff.
-- hero: abstrakcyjna ilustracja edytorska, ZERO tekstu/ludzi/logo
-- infographic: BIAŁY polski tekst + sky-blue akcenty (po inwersji → ciemny tekst)
-
-Klucz API: env KIE_API_KEY lub ~/.config/widocznosc-ai/kie.key (chmod 600).
-Klucz NIGDY do repo/logów/memory.
+JEDEN ciemny plik per grafika (obsidian #070810 + sky-blue #0a9cff; infografiki
+BIAŁY polski tekst). CSS w Article.astro: hero "stage", infografika auto-invert
+w light mode. Klucz: env KIE_API_KEY lub ~/.config/widocznosc-ai/kie.key.
 
 Usage:
     python3 pipeline/widocznosc-kie-images.py
-    ONLY=blog-rag-embeddingi python3 pipeline/widocznosc-kie-images.py
+    ONLY=blog-geo-przewodnik python3 pipeline/widocznosc-kie-images.py
 """
 import json
 import os
@@ -48,86 +40,272 @@ INFO_STYLE = (
     "Modern editorial infographic. Deep obsidian black background "
     "(#070810). White (#ffffff) Polish text labels, clean sans-serif "
     "typography (Inter font style). Sky-blue (#0a9cff) accents for "
-    "highlights and the key step. Minimal, premium, technical aesthetic – "
-    "like a high-end consultancy report. Crisp lines, generous spacing, "
+    "highlights and the key element. Minimal, premium, technical aesthetic "
+    "– like a high-end consultancy report. Crisp lines, generous spacing, "
     "no decorative clutter. "
 )
 
 SPECS = [
-    # ── Agenci AI / przewodnik ────────────────────────────────────────
+    # ── GEO / przewodnik (pillar) ─────────────────────────────────────
     {
-        "slug": "blog-agenci-ai-przewodnik",
+        "slug": "blog-geo-przewodnik",
         "prompt": (
             HERO_STYLE
-            + "Abstract visualization of an autonomous AI agent: a glowing "
-            "sky-blue core in the center with a circular arrow loop around "
-            "it (decision loop), reaching out to several orbiting nodes "
-            "representing tools and actions. Conveys 'an agent that plans, "
-            "acts and observes in a loop'. Wide composition, negative space."
+            + "Abstract visualization of Generative Engine Optimization: a "
+            "glowing sky-blue brand mark at the center of concentric radar "
+            "orbits, with citation links pulling toward it from several AI "
+            "answer panels around the edges. Conveys 'brand cited across AI "
+            "engines'. Centered composition, generous negative space."
         ),
     },
     {
-        "slug": "infographic-agenci-ai-przewodnik",
+        "slug": "infographic-geo-przewodnik",
         "prompt": (
             INFO_STYLE
-            + "TITLE on top in Polish (white): 'Jak działa agent AI – pętla "
-            "decyzyjna'. Show a circular loop diagram with 5 stages arranged "
-            "in a ring, connected by sky-blue arrows going clockwise, with "
-            "the word 'AGENT' in the center: '1. CEL', '2. PLAN', "
-            "'3. WYBÓR NARZĘDZIA' (sky-blue, key step), '4. WYKONANIE', "
-            "'5. OBSERWACJA' (arrow loops back to PLAN). Bottom caption: "
-            "'AGENT DZIAŁA W PĘTLI, AŻ OSIĄGNIE CEL'."
+            + "TITLE on top in Polish (white): 'SEO vs AEO vs GEO – czym się "
+            "różnią'. Show three columns side by side, each a rounded card "
+            "with a white heading and two short lines: 'SEO – cel: pozycja w "
+            "linkach; miara: kliknięcia', 'AEO – cel: odpowiedź w snippecie; "
+            "miara: wyświetlenia', 'GEO – cel: cytowanie w odpowiedzi AI; "
+            "miara: wzmianki' (the GEO column highlighted in sky-blue). "
+            "Bottom caption: 'GEO WALCZY O CYTOWANIE, NIE O KLIKNIĘCIE'."
         ),
     },
-    # ── Agenci AI / anatomia-agenta ───────────────────────────────────
+    # ── GEO / czym-jest-geo ───────────────────────────────────────────
     {
-        "slug": "blog-agenci-ai-anatomia-agenta",
+        "slug": "blog-geo-czym-jest-geo",
         "prompt": (
             HERO_STYLE
-            + "Abstract visualization of an AI agent's anatomy: a central "
-            "glowing sky-blue core connected by luminous lines to four "
-            "distinct orbiting modules (geometric, abstract) representing "
-            "memory, tools, planning and a decision loop. Exploded-diagram "
-            "feel, clean and technical. Wide composition."
+            + "Abstract split visualization: on the left a classic list of "
+            "search-result link bars, on the right a single glowing sky-blue "
+            "AI answer panel with a citation. Conveys the shift from ranked "
+            "links to a synthesized cited answer. Balanced composition."
         ),
     },
     {
-        "slug": "infographic-agenci-ai-anatomia-agenta",
+        "slug": "infographic-geo-czym-jest-geo",
         "prompt": (
             INFO_STYLE
-            + "TITLE on top in Polish (white): 'Anatomia agenta AI'. Show a "
-            "central rounded box labeled 'MODEL (LLM)' (sky-blue) with four "
-            "modules connected around it by lines, each a rounded card with "
-            "a white Polish heading and short description: 'PAMIĘĆ – kontekst "
-            "i historia rozmowy', 'NARZĘDZIA – API, wyszukiwanie, kod', "
-            "'PLANOWANIE – rozbicie celu na kroki', 'PĘTLA DECYZYJNA – "
-            "obserwuj, myśl, działaj'. Hub-and-spoke layout. Bottom caption: "
-            "'AGENT = MODEL + NARZĘDZIA + PAMIĘĆ + PĘTLA'."
+            + "TITLE on top in Polish (white): 'Czym GEO różni się od SEO'. "
+            "Show two columns side by side: 'SEO' (icon of a list of links; "
+            "lines: 'Cel: wysoka pozycja w wynikach', 'Miara: kliknięcia i "
+            "ruch') and 'GEO' (sky-blue, icon of an AI answer bubble; lines: "
+            "'Cel: cytowanie przez modele AI', 'Miara: wzmianki i cytowania'). "
+            "Bottom caption: 'SEO WALCZY O KLIKNIĘCIE, GEO O CYTOWANIE'."
         ),
     },
-    # ── Prompty / przewodnik ──────────────────────────────────────────
+    # ── GEO / audyt-widocznosci-marki ─────────────────────────────────
     {
-        "slug": "blog-prompty-przewodnik",
+        "slug": "blog-geo-audyt-widocznosci-marki",
         "prompt": (
             HERO_STYLE
-            + "Abstract visualization of prompt engineering: on the left a "
-            "structured stack of glowing sky-blue instruction blocks feeding "
-            "into a central core, emerging on the right as a clean, ordered "
-            "stream of output. Conveys 'a well-structured instruction yields "
-            "a precise answer'. Left-to-right flow, negative space."
+            + "Abstract visualization of a brand-visibility audit across AI "
+            "engines: a glowing sky-blue brand node measured by several "
+            "gauge/meter arcs, with faint scan lines sweeping across data "
+            "points. Conveys 'measuring how AI sees a brand'. Wide "
+            "composition."
         ),
     },
     {
-        "slug": "infographic-prompty-przewodnik",
+        "slug": "infographic-geo-audyt-widocznosci-marki",
         "prompt": (
             INFO_STYLE
-            + "TITLE on top in Polish (white): 'Anatomia skutecznego "
-            "promptu'. Show five stacked horizontal layers (building blocks), "
-            "each a rounded bar with a white Polish heading and short note: "
-            "'ROLA – kim ma być model', 'KONTEKST – tło i dane', 'ZADANIE – "
-            "co dokładnie zrobić' (sky-blue, key step), 'FORMAT – jak ma "
-            "wyglądać odpowiedź', 'PRZYKŁADY – wzorce few-shot'. Bottom "
-            "caption: 'IM PRECYZYJNIEJ, TYM LEPSZA ODPOWIEDŹ'."
+            + "TITLE on top in Polish (white): 'Audyt widoczności marki w AI "
+            "– 6 kroków'. Show a left-to-right numbered flow of 6 rounded "
+            "steps with short white Polish labels: '1. BIBLIOTEKA ZAPYTAŃ', "
+            "'2. ODPYTANIE SILNIKÓW AI', '3. POMIAR (Citation, SoV, Mention)' "
+            "(sky-blue, key step), '4. AUDYT TECHNICZNY', '5. LUKI I "
+            "PRIORYTETY', '6. MONITORING'. Thin sky-blue arrows connect the "
+            "steps. Bottom caption: 'OD ZAPYTAŃ DO STAŁEGO MONITORINGU'."
+        ),
+    },
+    # ── GEO / geo-dla-ecommerce ───────────────────────────────────────
+    {
+        "slug": "blog-geo-geo-dla-ecommerce",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract visualization of e-commerce in AI answers: glowing "
+            "sky-blue product cards flowing from a catalogue grid into a "
+            "single AI answer panel that recommends them. Conveys 'products "
+            "surfaced in AI responses'. Left-to-right flow."
+        ),
+    },
+    {
+        "slug": "infographic-geo-geo-dla-ecommerce",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Dane strukturalne produktu "
+            "dla GEO'. Show five rounded cards in a row, each with a white "
+            "Polish label and a tiny icon: 'Product – nazwa, opis, marka', "
+            "'Offer – cena, dostępność', 'AggregateRating – oceny' "
+            "(sky-blue), 'MerchantListing – feed produktowy', 'FAQPage – "
+            "pytania o produkt'. Bottom caption: 'SCHEMA = PRODUKT CZYTELNY "
+            "DLA AI'."
+        ),
+    },
+    # ── GEO / geo-dla-lokalnego-biznesu ───────────────────────────────
+    {
+        "slug": "blog-geo-geo-dla-lokalnego-biznesu",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract visualization of local business in AI search: a "
+            "glowing sky-blue location pin connected to an AI answer panel, "
+            "surrounded by faint map-grid lines and review stars. Conveys "
+            "'local brand recommended by AI'. Centered composition."
+        ),
+    },
+    {
+        "slug": "infographic-geo-geo-dla-lokalnego-biznesu",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'GEO dla lokalnego biznesu – "
+            "fundamenty'. Show four rounded cards with white Polish headings "
+            "and short notes: 'SPÓJNOŚĆ NAP – nazwa, adres, telefon wszędzie "
+            "takie same', 'JSON-LD LocalBusiness – dane firmy dla AI' "
+            "(sky-blue), 'RECENZJE JAKO TREŚĆ – opinie zasilają odpowiedzi', "
+            "'llms.txt – wskazówka dla botów'. Bottom caption: 'SPÓJNE DANE "
+            "= AI POLECA TWOJĄ FIRMĘ'."
+        ),
+    },
+    # ── GEO / jak-llm-cytuja-zrodla ───────────────────────────────────
+    {
+        "slug": "blog-geo-jak-llm-cytuja-zrodla",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract visualization of how LLMs cite sources: several "
+            "document fragments on the left, a few selected and pulled by "
+            "glowing sky-blue beams into an AI answer with small citation "
+            "markers. Conveys 'a model picks and cites the best sources'. "
+            "Left-to-right flow."
+        ),
+    },
+    {
+        "slug": "infographic-geo-jak-llm-cytuja-zrodla",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Co decyduje, że LLM zacytuje "
+            "Twoje źródło'. Show five rounded chips/bars stacked, each a "
+            "white Polish factor: 'TRAFNOŚĆ SEMANTYCZNA' (sky-blue, "
+            "najważniejsze), 'AUTORYTET DOMENY', 'ŚWIEŻOŚĆ TREŚCI', "
+            "'STRUKTURA I NAGŁÓWKI', 'GĘSTOŚĆ DANYCH I FAKTÓW'. Bottom "
+            "caption: 'CYTOWANIE TO SUMA SYGNAŁÓW, NIE JEDEN TRIK'."
+        ),
+    },
+    # ── GEO / llms-txt ────────────────────────────────────────────────
+    {
+        "slug": "blog-geo-llms-txt",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract visualization of an llms.txt signal file: a single "
+            "glowing sky-blue document emitting a clear guiding beam toward "
+            "stylized geometric crawler bots approaching a website grid. "
+            "Conveys 'a file that guides AI crawlers'. Wide composition."
+        ),
+    },
+    {
+        "slug": "infographic-geo-llms-txt",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'robots.txt vs sitemap.xml vs "
+            "llms.txt'. Show three rounded cards side by side, each with a "
+            "white Polish heading and one line: 'robots.txt – co bot MOŻE "
+            "odwiedzić', 'sitemap.xml – GDZIE są strony', 'llms.txt – KTÓRE "
+            "treści są ważne dla AI' (sky-blue, highlighted). Bottom caption: "
+            "'llms.txt WSKAZUJE AI NAJWAŻNIEJSZĄ TREŚĆ'."
+        ),
+    },
+    # ── GEO / najczestsze-bledy-geo ───────────────────────────────────
+    {
+        "slug": "blog-geo-najczestsze-bledy-geo",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract visualization of GEO mistakes: a website grid where "
+            "several blocks are dimmed or blocked by faint barrier lines, "
+            "while a sky-blue scan struggles to reach them. Conveys 'content "
+            "invisible to AI'. Wide composition, restrained."
+        ),
+    },
+    {
+        "slug": "infographic-geo-najczestsze-bledy-geo",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): '6 najczęstszych błędów GEO'. "
+            "Show a 2x3 grid of six rounded cards, each with a white Polish "
+            "label and a small warning icon: 'MYLENIE SEO z GEO', 'BLOKADA "
+            "BOTÓW AI (robots.txt, firewall)', 'TREŚĆ TYLKO W JAVASCRIPT', "
+            "'TREŚĆ BEZ DANYCH I FAKTÓW', 'BRAK STRUKTURY SEMANTYCZNEJ', "
+            "'BRAK POMIARU WIDOCZNOŚCI'. Bottom caption: 'KAŻDY BŁĄD = MARKA "
+            "NIEWIDOCZNA DLA AI'."
+        ),
+    },
+    # ── GEO / narzedzia-monitoring-wzmianek ───────────────────────────
+    {
+        "slug": "blog-geo-narzedzia-monitoring-wzmianek",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract visualization of brand-mention monitoring in AI: a "
+            "glowing sky-blue radar/dashboard sweep detecting brand mention "
+            "blips scattered across AI answer panels. Conveys 'tracking "
+            "brand mentions in LLMs'. Centered composition."
+        ),
+    },
+    {
+        "slug": "infographic-geo-narzedzia-monitoring-wzmianek",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Wzmianka vs cytowanie – co "
+            "mierzą narzędzia'. Show two rounded cards: 'WZMIANKA – marka "
+            "wymieniona w odpowiedzi AI (bez linku)' and 'CYTOWANIE – marka "
+            "podana jako źródło z odnośnikiem' (sky-blue). Below, a small row "
+            "of four neutral chips labeled 'ChatGPT', 'Gemini', 'Perplexity', "
+            "'Copilot'. Bottom caption: 'NARZĘDZIA ODPYTUJĄ SILNIKI I LICZĄ "
+            "OBA SYGNAŁY'."
+        ),
+    },
+    # ── GEO / roi-z-geo ───────────────────────────────────────────────
+    {
+        "slug": "blog-geo-roi-z-geo",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract visualization of GEO ROI: a glowing sky-blue upward "
+            "trend line rising through three stacked tiers, with faint data "
+            "points and a subtle funnel shape. Conveys 'visibility turning "
+            "into business results'. Left-to-right ascending composition."
+        ),
+    },
+    {
+        "slug": "infographic-geo-roi-z-geo",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Hierarchia KPI w GEO'. Show a "
+            "three-level pyramid or three stacked tiers, bottom to top: "
+            "'WIDOCZNOŚĆ – Citation Rate, Share of Voice', 'ZAANGAŻOWANIE – "
+            "ruch i sesje z AI' (sky-blue, middle), 'BIZNES – leady, "
+            "konwersje, ROI' (top). Thin sky-blue arrows pointing upward "
+            "between tiers. Bottom caption: 'OD CYTOWAŃ DO PRZYCHODU'."
+        ),
+    },
+    # ── GEO / schema-org-dane-strukturalne ────────────────────────────
+    {
+        "slug": "blog-geo-schema-org-dane-strukturalne",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract visualization of structured data: glowing sky-blue "
+            "nested bracket/graph nodes (a knowledge graph) feeding clean "
+            "labeled data into an AI answer panel. Conveys 'schema makes "
+            "content machine-readable'. Wide composition."
+        ),
+    },
+    {
+        "slug": "infographic-geo-schema-org-dane-strukturalne",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Schema.org w erze GEO'. Show "
+            "a central rounded node '@graph' (sky-blue) connected to five "
+            "smaller nodes with white Polish labels: 'Organization', "
+            "'Article', 'FAQPage', 'HowTo', 'Product'. Plus a small side "
+            "label 'sameAs – spójność encji'. Hub-and-spoke layout. Bottom "
+            "caption: 'DANE STRUKTURALNE = TREŚĆ ZROZUMIAŁA DLA AI'."
         ),
     },
 ]
@@ -143,6 +321,18 @@ def load_api_key() -> str:
     raise SystemExit(f"ERROR: brak klucza. KIE_API_KEY lub {KEY_FILE}")
 
 
+def _urlopen_retry(req, timeout: int, attempts: int = 5):
+    """urlopen z retry na transient błędach sieci (DNS/timeout na WSL)."""
+    last = None
+    for a in range(attempts):
+        try:
+            return urllib.request.urlopen(req, timeout=timeout)
+        except (urllib.error.URLError, TimeoutError, OSError) as e:
+            last = e
+            time.sleep(min(5 * (a + 1), 30))
+    raise last
+
+
 def post_json(url: str, payload: dict, api_key: str) -> dict:
     req = urllib.request.Request(
         url,
@@ -153,7 +343,7 @@ def post_json(url: str, payload: dict, api_key: str) -> dict:
         },
         method="POST",
     )
-    with urllib.request.urlopen(req, timeout=60) as resp:
+    with _urlopen_retry(req, timeout=60) as resp:
         return json.loads(resp.read().decode("utf-8"))
 
 
@@ -163,7 +353,7 @@ def get_status(task_id: str, api_key: str) -> dict:
         headers={"Authorization": f"Bearer {api_key}"},
         method="GET",
     )
-    with urllib.request.urlopen(req, timeout=30) as resp:
+    with _urlopen_retry(req, timeout=30) as resp:
         return json.loads(resp.read().decode("utf-8"))
 
 
@@ -171,7 +361,7 @@ def download(url: str, out_path: str) -> int:
     req = urllib.request.Request(
         url, headers={"User-Agent": "Mozilla/5.0 widocznosc-ai-bot/1.0"}
     )
-    with urllib.request.urlopen(req, timeout=120) as r:
+    with _urlopen_retry(req, timeout=120) as r:
         png = r.read()
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     with open(out_path, "wb") as f:
@@ -182,7 +372,7 @@ def download(url: str, out_path: str) -> int:
 def generate_one(spec: dict, api_key: str) -> bool:
     slug = spec["slug"]
     out_path = os.path.join(ASSETS_DIR, f"{slug}.png")
-    print(f"\n→ {slug}  ({ASPECT} {RESOLUTION})")
+    print(f"\n→ {slug}  ({ASPECT} {RESOLUTION})", flush=True)
 
     create = post_json(
         f"{API_BASE}/createTask",
@@ -197,10 +387,10 @@ def generate_one(spec: dict, api_key: str) -> bool:
         api_key,
     )
     if create.get("code") != 200:
-        print(f"  ✗ createTask: {create.get('code')} {create.get('msg')}", file=sys.stderr)
+        print(f"  ✗ createTask: {create.get('code')} {create.get('msg')}", file=sys.stderr, flush=True)
         return False
     task_id = create["data"]["taskId"]
-    print(f"  taskId: {task_id}  ·  polling…")
+    print(f"  taskId: {task_id}  ·  polling…", flush=True)
 
     for i in range(MAX_POLLS):
         time.sleep(POLL_INTERVAL)
@@ -212,18 +402,16 @@ def generate_one(spec: dict, api_key: str) -> bool:
             urls = result.get("resultUrls") or [result.get("imageUrl")]
             url = next((u for u in urls if u), None)
             if not url:
-                print(f"  ✗ success bez URL: {data}", file=sys.stderr)
+                print(f"  ✗ success bez URL: {data}", file=sys.stderr, flush=True)
                 return False
             kb = download(url, out_path) // 1024
-            print(f"  ✓ {kb} KB · {data.get('creditsConsumed','?')} kredytów · {out_path}")
+            print(f"  ✓ {kb} KB · {data.get('creditsConsumed','?')} kredytów · {slug}", flush=True)
             return True
         if state in ("failed", "fail"):
-            print(f"  ✗ failed: {data.get('failMsg') or data}", file=sys.stderr)
+            print(f"  ✗ failed: {data.get('failMsg') or data}", file=sys.stderr, flush=True)
             return False
-        if (i + 1) % 5 == 0:
-            print(f"  …{state} ({(i+1)*POLL_INTERVAL}s)")
 
-    print(f"  ✗ timeout {MAX_POLLS*POLL_INTERVAL}s", file=sys.stderr)
+    print(f"  ✗ timeout {MAX_POLLS*POLL_INTERVAL}s · {slug}", file=sys.stderr, flush=True)
     return False
 
 
@@ -234,9 +422,15 @@ def main() -> int:
     if not items:
         print(f"ERROR: ONLY={only} nic nie dopasowało", file=sys.stderr)
         return 1
-    print(f"Model: {MODEL} · {len(items)} grafik(a)")
-    ok = sum(generate_one(s, api_key) for s in items)
-    print(f"\nGotowe: {ok}/{len(items)}")
+    print(f"Model: {MODEL} · {len(items)} grafik(a)", flush=True)
+    ok = 0
+    for s in items:
+        try:
+            if generate_one(s, api_key):
+                ok += 1
+        except Exception as e:
+            print(f"  ✗ wyjątek dla {s['slug']}: {e}", file=sys.stderr, flush=True)
+    print(f"\nGotowe: {ok}/{len(items)}", flush=True)
     return 0 if ok == len(items) else 2
 
 

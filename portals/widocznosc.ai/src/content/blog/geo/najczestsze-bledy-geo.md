@@ -3,7 +3,7 @@ title: 'Najczęstsze błędy w optymalizacji pod kątem LLM-ów'
 subtitle: 'Dowiedz się, które błędy uniemożliwiają cytowanie Twojej marki w ChatGPT, Perplexity i Google AI Overviews – i jak je naprawić krok po kroku'
 description: 'Najczęstsze błędy w GEO: błędna konfiguracja robots.txt, upychanie słów kluczowych, CSR, brak danych. Dowiedz się, jak je naprawić i zwiększyć wskaźnik cytowań.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-geo-najczestsze-bledy-geo.png
 icon: '<path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>'
 author:
   name: 'Piotr Wicenciak'
@@ -44,6 +44,8 @@ Zamiast tego: buduj treść wokół precyzyjnych faktów, dat, liczb i relacji p
     <p>Badanie Princeton KDD 2024 przetestowało 9 taktyk optymalizacji treści. Spośród nich tylko 5 przynosiło statystycznie istotny wzrost widoczności. Keyword stuffing – standard klasycznego SEO – był jedyną taktyką, która aktywnie <strong>obniżała wskaźnik cytowalności. Cytowania ekspertów i dane liczbowe podnosiły go natomiast o 30–41%.</strong></p>
   </div>
 </aside>
+
+![Sześć najczęstszych błędów GEO: mylenie SEO z GEO, blokada botów AI, treść tylko w JavaScript, treść bez danych, brak struktury semantycznej i brak pomiaru widoczności](../../../assets/images/infographic-geo-najczestsze-bledy-geo.png)
 
 ## Błąd 2 – błędna konfiguracja robots.txt i blokowanie botów AI
 

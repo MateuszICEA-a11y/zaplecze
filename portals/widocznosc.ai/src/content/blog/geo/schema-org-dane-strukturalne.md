@@ -3,7 +3,7 @@ title: 'Schema.org i dane strukturalne w erze GEO'
 subtitle: 'Jak poprawna implementacja JSON-LD podnosi wskaźnik cytowań w wyszukiwarkach AI o setki procent'
 description: 'Techniczny przewodnik po schema.org i JSON-LD w GEO: typy encji, atrybut sameAs, FAQPage, BlogPosting – z przykładami kodu gotowymi do wdrożenia.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-geo-schema-org-dane-strukturalne.png
 icon: '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><line x1="14" y1="17.5" x2="21" y2="17.5"/><line x1="17.5" y1="14" x2="17.5" y2="21"/>'
 author:
   name: 'Michał Ziach'
@@ -50,6 +50,8 @@ Jedna zasada krytyczna przed tabelą: nie stosuj typów „na wyrost". `FAQPage`
 | `BreadcrumbList` | Nawigacja okruszkowa | `itemListElement` z `ListItem` |
 
 Szczególną uwagę zwróć na `BlogPosting` i `Article` – to typy, którymi Google klasyfikuje treści informacyjne do AI Overviews. Brak atrybutu `author` z poprawnym `@id` wskazującym na encję `Person` to jedna z najczęstszych przyczyn, dla których strony z wartościową treścią są pomijane przez system.
+
+![Schema.org w erze GEO: węzeł @graph łączy typy encji Organization, Article, FAQPage, HowTo i Product w spójną sieć zrozumiałą dla AI](../../../assets/images/infographic-geo-schema-org-dane-strukturalne.png)
 
 ## Implementacja @graph – spójna sieć encji
 

@@ -3,7 +3,7 @@ title: 'Narzędzia do monitorowania wzmianek o marce w LLM-ach'
 subtitle: 'Wybierz właściwe narzędzie i dowiedz się, gdzie i jak modele AI opisują Twoją markę – zanim zrobi to konkurencja.'
 description: 'Przegląd i porównanie narzędzi do monitorowania wzmianek o marce w ChatGPT, Gemini, Perplexity i Claude. Tabela z kluczowymi cechami platform dla każdego budżetu.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-geo-narzedzia-monitoring-wzmianek.png
 icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>'
 author:
   name: 'Tomasz Czechowski'
@@ -52,6 +52,8 @@ Dodatkowe wyzwanie to tzw. luka atrybucyjna. Gdy ChatGPT lub Claude odsyła uży
     <p>W środowisku Microsoft Copilot zaledwie 10% najlepiej pozycjonowanych domen gromadzi <strong>17,6 raza więcej cytowań niż pozostałe 90% witryn łącznie</strong>. Koncentracja widoczności w LLM-ach jest drastycznie wyższa niż w tradycyjnym SEO – i dlatego wejście do tej górnej dziesiątki wymaga aktywnego, ciągłego monitoringu, a nie jednorazowego audytu.</p>
   </div>
 </aside>
+
+![Wzmianka vs cytowanie – co mierzą narzędzia: wzmianka to marka wymieniona bez linku, cytowanie to marka podana jako źródło z odnośnikiem; narzędzia odpytują ChatGPT, Gemini, Perplexity i Copilota](../../../assets/images/infographic-geo-narzedzia-monitoring-wzmianek.png)
 
 ## Przegląd platform – tabela porównawcza
 

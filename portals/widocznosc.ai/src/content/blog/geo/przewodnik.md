@@ -3,7 +3,7 @@ title: 'Generative Engine Optimization (GEO) – kompletny przewodnik'
 subtitle: 'Wszystko, co musisz wiedzieć o optymalizacji pod AI, by Twoja marka była cytowana – nie pomijana'
 description: 'Kompletny przewodnik po GEO (Generative Engine Optimization): czym jest, jak działają LLM-y, co mówi badanie Princeton KDD 2024 i jak wdrożyć optymalizację krok po kroku.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-geo-przewodnik.png
 icon: '<circle cx="12" cy="12" r="9"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3 Q18 7 18 12 Q18 17 12 21 Q6 17 6 12 Q6 7 12 3"/>'
 author:
   name: 'Piotr Wicenciak'
@@ -69,6 +69,8 @@ Sprawdź stan swojej witryny w [ai-bots-check](/narzedzia/ai-bots-check) – nar
     <p>Badanie Princeton (Aggarwal et al., KDD 2024) przetestowało 9 taktyk optymalizacji treści na benchmarku GEO-bench złożonym z 10 000 zapytań z 25 dziedzin. Tylko 5 z 9 taktyk przyniosło statystycznie istotny wzrost widoczności. Keyword stuffing – standard SEO sprzed dekady – nie tylko nie pomagał, ale aktywnie obniżał wskaźnik cytowalności. <strong>Strony o niskim autorytecie domeny, które zastosowały cytowania i statystyki, zwiększyły swoją widoczność w LLM o 115,1%.</strong></p>
   </div>
 </aside>
+
+![SEO vs AEO vs GEO – porównanie celów i miar: SEO walczy o pozycję w linkach, AEO o odpowiedź w snippecie, a GEO o cytowanie w odpowiedzi AI](../../../assets/images/infographic-geo-przewodnik.png)
 
 ## Co naprawdę działa – wyniki badania Princeton KDD 2024
 
