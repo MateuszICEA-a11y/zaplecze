@@ -11,13 +11,13 @@ const tools = [
     eyebrow: 'Marka w AI',
     time: 'ok. 60 s',
     title: 'Co AI wie o Twojej marce',
-    desc: 'Sprawdź rozpoznawalność marki, sentyment, możliwe halucynacje i konkurentów polecanych zamiast Ciebie.',
+    desc: 'Sprawdź rozpoznawalność swojej firmy, sentyment wypowiedzi, możliwe halucynacje (zmyślone fakty) oraz konkurentów, których modele polecają zamiast Ciebie.',
     href: '/narzedzia/brand-check',
     cta: 'Sprawdź markę',
     bullets: [
       'ChatGPT, Claude, Gemini i Perplexity',
-      'Sentyment i rozpoznawalność',
-      'Konkurenci i źródła',
+      'Sentyment i rozpoznawalność marki',
+      'Polecani konkurenci i źródła',
     ],
     preview: [
       'twojadomena.pl',
@@ -30,39 +30,51 @@ const tools = [
   },
   {
     id: 'url-check',
-    eyebrow: 'Content pod AI',
+    eyebrow: 'Treści pod AI',
     time: 'ok. 30 s',
-    title: 'Czy Twój content jest cytowalny',
-    desc: 'Przeanalizuj pojedynczy URL pod kątem BLUF, FAQ, schema, świeżości, nagłówków i sygnałów przydatnych dla modeli AI.',
+    title: 'Czy Twój tekst będzie cytowany',
+    desc: 'Przeanalizuj pojedynczy adres URL pod kątem struktury odpowiedzi, danych Schema.org, sekcji FAQ, świeżości i nagłówków przydatnych dla modeli AI.',
     href: '/narzedzia/url-check',
     cta: 'Sprawdź URL',
-    bullets: ['AI SEO Alignment Score', 'Schema i FAQ', 'Priorytety zmian'],
+    bullets: [
+      'Wskaźnik dostosowania do AI (Alignment Score)',
+      'Analiza danych strukturalnych i FAQ',
+      'Priorytety zmian na stronie',
+    ],
     preview: ['/blog/x — 43/100', 'BLUF ▪▪▪▫▫ 60%', 'FAQ ▫▫▫▫▫ 0%', 'Schema ▪▪▫▫▫ 40%'],
-    crossLabel: 'Jak tworzyć content cytowany przez AI',
+    crossLabel: 'Jak tworzyć treści cytowane przez AI',
     crossHref: '/pozycjonowanie-ai/gemini',
   },
   {
     id: 'ai-bots-check',
     eyebrow: 'Dostęp botów',
     time: 'ok. 5 s',
-    title: 'Czy boty AI mają dostęp do strony',
-    desc: 'Sprawdź robots.txt i zobacz, czy GPTBot, ClaudeBot, PerplexityBot, Google-Extended i inne boty mogą wejść na domenę.',
+    title: 'Czy AI może wejść na Twoją stronę',
+    desc: 'Sprawdź plik robots.txt i zobacz, czy GPTBot, ClaudeBot, PerplexityBot, Google-Extended i inne modele w ogóle widzą Twoją domenę.',
     href: '/narzedzia/ai-bots-check',
     cta: 'Sprawdź boty',
-    bullets: ['13 user-agentów AI', 'Allow / disallow per bot', 'Gotowy szablon naprawy'],
+    bullets: [
+      'Weryfikacja 13 botów AI',
+      'Zezwolenia i blokady dla poszczególnych systemów',
+      'Gotowy szablon naprawy pliku',
+    ],
     preview: ['GPTBot ✓ · ClaudeBot ✗', 'Google-Extended ✗', 'PerplexityBot ✓ · CCBot ✗'],
     crossLabel: 'Dlaczego dostęp botów wpływa na cytowania',
     crossHref: '/pozycjonowanie-ai',
   },
   {
     id: 'fanout',
-    eyebrow: 'Fan-out',
+    eyebrow: 'Rozbicie zapytania',
     time: 'ok. 30 s',
-    title: 'Jak AI rozbija zapytanie',
-    desc: 'Zobacz zapytania wyszukiwania ujawnione przez model oraz domeny, które pojawiły się jako cytowane źródła.',
+    title: 'Jak AI szuka informacji w tle',
+    desc: 'Zobacz pomocnicze zapytania generowane w tle przez modele językowe (tzw. Query Fan-out) oraz domeny, z których ostatecznie czerpią wiedzę.',
     href: '/narzedzia/fanout',
-    cta: 'Pokaż fan-out',
-    bullets: ['Zapytania wyszukiwania', 'Cytowane domeny', 'Bez automatycznego raportu'],
+    cta: 'Zobacz rozbicie zapytania',
+    bullets: [
+      'Zapytania pomocnicze modelu',
+      'Ostatecznie zacytowane domeny',
+      'Bezpośredni wgląd w surowe dane',
+    ],
     preview: ['„najlepsza agencja SEO"', '↳ 8 pomocniczych zapytań', '↳ 12 cytowanych domen'],
     crossLabel: 'Jak modele wybierają źródła odpowiedzi',
     crossHref: '/pozycjonowanie-ai/perplexity',
@@ -73,8 +85,8 @@ const siteUrl = 'https://widocznosc.ai';
 ---
 
 <Layout
-  title="Darmowe narzędzia AI SEO – widocznosc.ai"
-  description="Cztery darmowe narzędzia widocznosc.ai: Brand Check, URL Check, AI Bots Check i Fan-out ChatGPT. Sprawdź widoczność marki, content i dostęp botów AI."
+  title="Darmowe narzędzia widoczności AI – widocznosc.ai"
+  description="Cztery darmowe narzędzia od widocznosc.ai: Brand Check, URL Check, AI Bots Check i Analiza zapytań (Fan-out). Sprawdź widoczność marki, treści i dostęp botów AI."
 >
   <Navbar />
 
@@ -110,9 +122,9 @@ const siteUrl = 'https://widocznosc.ai';
           <span class="eyebrow tools-eyebrow">Narzędzia widocznosc.ai</span>
           <h1>Darmowe testy widoczności w AI</h1>
           <p>
-            Sprawdź najważniejsze sygnały przed audytem: co modele wiedzą o marce, czy content
-            nadaje się do cytowania, czy boty mają dostęp do strony i jakie źródła pojawiają się w
-            fan-oucie.
+            Sprawdź najważniejsze sygnały przed zamówieniem audytu: zobacz, co modele wiedzą o
+            Twojej marce, czy Twoje treści nadają się do cytowania, czy boty mają dostęp do strony
+            i jakie źródła sztuczna inteligencja pobiera w tle.
           </p>
         </div>
         <div class="tools-hero-panel" aria-label="Zakres narzędzi">
@@ -143,12 +155,12 @@ const siteUrl = 'https://widocznosc.ai';
         </div>
 
         <div class="tool-order" aria-label="Rekomendowana kolejność testów">
-          <span class="tool-order-label">Zacznij od</span>
+          <span class="tool-order-label">Rekomendowana kolejność testów: Zacznij od</span>
           <ol>
             <li><a href="/narzedzia/brand-check">Brand Check</a></li>
             <li><a href="/narzedzia/ai-bots-check">AI Bots Check</a></li>
             <li><a href="/narzedzia/url-check">URL Check</a></li>
-            <li><a href="/narzedzia/fanout">Fan-out</a></li>
+            <li><a href="/narzedzia/fanout">Rozbicie zapytania</a></li>
           </ol>
         </div>
 
@@ -193,13 +205,13 @@ const siteUrl = 'https://widocznosc.ai';
     <CTABand
       eyebrow="Pełny audyt"
       title="Potrzebujesz pełnego obrazu widoczności w AI?"
-      subtitle="Darmowe narzędzia pokazują pojedyncze sygnały. W audycie łączymy wyniki dla marki, contentu, źródeł, konkurencji i dostępności technicznej w konkretny plan działań."
+      subtitle="Darmowe narzędzia pokazują tylko wycinkowe sygnały. W pełnym audycie łączymy wyniki dla marki, treści, źródeł, działań konkurencji i dostępności technicznej w jeden konkretny plan działania."
       primaryLabel="Porozmawiajmy o audycie"
       primaryHref="/kontakt?type=audyt-ai"
-      ghostLabel="Zobacz pozycjonowanie AI"
+      ghostLabel="Zobacz pozycjonowanie w AI"
       ghostHref="/pozycjonowanie-ai"
-      rightLabel="Po narzędziach"
-      quote={`„Łączymy wynik marki, URL-i, botów i fan-outu w priorytety działań dla pierwszych 90 dni."`}
+      rightLabel="Pełny audyt"
+      quote={`„Łączymy wyniki rozpoznawalności, analizy technicznej i zachowania botów w priorytety działań dla Twojej firmy na pierwsze 90 dni."`}
       meta={['4 darmowe testy', 'Pełny audyt', 'Plan 90 dni']}
     />
   </main>

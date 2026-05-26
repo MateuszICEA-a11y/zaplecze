@@ -87,267 +87,267 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
 
   claude: {
     heroSubtitle:
-      'Anthropic Claude – preferowany model wśród inżynierów, prawników i&nbsp;konsultantów B2B. Cytuje oszczędnie, ale precyzyjnie: 63% źródeł to niszowe blogi techniczne i&nbsp;dokumentacja pisana przez praktyków, a&nbsp;zaledwie 7% to główny nurt mediów. Pozycjonowanie tu wymaga autorytetu merytorycznego, nie marketingowego.',
+      'Anthropic Claude to preferowany model sztucznej inteligencji wśród inżynierów, prawników i&nbsp;konsultantów B2B. Cytuje oszczędnie, ale niezwykle precyzyjnie: 63% źródeł to niszowe blogi techniczne i&nbsp;dokumentacja pisana przez praktyków, a&nbsp;zaledwie 7% to główny nurt mediów. Pozycjonowanie w&nbsp;tym ekosystemie wymaga budowy autorytetu merytorycznego, a&nbsp;nie typowo marketingowego.',
     metaDescription:
-      'Pozycjonowanie marki w Claude (Anthropic). Audyt cytowań, optymalizacja pod Brave Search, budowanie autorytetu eksperckiego w segmentach B2B. Widoczność AI dla osób decyzyjnych i specjalistów.',
+      'Pozycjonowanie marki w Claude (Anthropic). Audyt cytowań, optymalizacja pod Brave Search (silnik RAG Claude), budowanie autorytetu eksperckiego. Widoczność AI (GEO) dla sektora B2B.',
     howItWorks: [
       {
-        title: 'Constitutional AI i&nbsp;filtr wiarygodności',
-        desc: 'Claude działa w&nbsp;oparciu o&nbsp;zasady "helpful, harmless, honest". Wycina język perswazyjny, hiperbole i&nbsp;niespójne dane. Strona która sama cytuje badania i&nbsp;dokumentację zewnętrzną wygląda wiarygodnie – taka która pisze "najlepszy na rynku" jest ignorowana. Budujemy treści zgodne z&nbsp;tym filtrem.',
+        title: 'Konstytucyjne AI (Constitutional AI) i filtr wiarygodności',
+        desc: 'Claude działa w&nbsp;oparciu o&nbsp;zasady "pomocny, nieszkodliwy, uczciwy" (tzw. zasada 3H). Model automatycznie ignoruje język perswazyjny, typowo sprzedażowy i&nbsp;wyolbrzymione dane. Strona, która sama cytuje rzetelne badania i&nbsp;dokumentację zewnętrzną, wygląda dla algorytmu wiarygodnie – ta, która pisze o&nbsp;sobie "najlepszy na rynku", jest pomijana. Budujemy treści ściśle zgodne z&nbsp;tym filtrem.',
       },
       {
-        title: 'Brave Search jako silnik RAG',
-        desc: 'W&nbsp;trybie wyszukiwania na żywo Claude korzysta z&nbsp;indeksu Brave Search (ponad 30 mld stron) poprzez dedykowane API. Korelacja między wynikami Brave a&nbsp;cytowaniami Claude wynosi 86,7%. Brave nie używa klasycznego PageRank – premiuje strony o&nbsp;realnym zaangażowaniu użytkowników (Web Discovery Project), co daje szansę niszowym ekspertom.',
+        title: 'Brave Search jako silnik wyszukiwania',
+        desc: 'W&nbsp;trybie wyszukiwania na żywo Claude korzysta z&nbsp;indeksu wyszukiwarki Brave Search (ponad 30 mld stron) poprzez dedykowane API. Korelacja między wysoką pozycją w&nbsp;Brave a&nbsp;cytowaniem przez Claude wynosi aż 86,7%. Brave nie używa klasycznego systemu linków (PageRank) – premiuje strony o&nbsp;realnym zaangażowaniu użytkowników na podstawie zanonimizowanych danych z&nbsp;przeglądarek (Web Discovery Project). Daje to ogromną szansę niszowym ekspertom.',
       },
       {
         title: 'Trzy wyspecjalizowane boty Anthropic',
-        desc: 'ClaudeBot zbiera dane treningowe, Claude-User analizuje linki wklejone przez użytkownika, Claude-SearchBot obsługuje wyszukiwanie na żywo. Każdy wymaga osobnej konfiguracji w&nbsp;robots.txt. Zablokowanie Claude-SearchBot całkowicie usuwa stronę z&nbsp;bazy cytowań w&nbsp;czasie rzeczywistym.',
+        desc: 'Ekosystem opiera się na trzech agentach: <code>ClaudeBot</code> zbiera dane treningowe, <code>Claude-User</code> analizuje linki wklejone przez użytkowników w&nbsp;czacie, a&nbsp;<code>Claude-SearchBot</code> obsługuje wyszukiwanie na żywo. Każdy z&nbsp;nich wymaga osobnej konfiguracji w&nbsp;pliku robots.txt. Przypadkowe zablokowanie <code>Claude-SearchBot</code> całkowicie usuwa stronę z&nbsp;bazy cytowań w&nbsp;czasie rzeczywistym.',
       },
       {
-        title: 'Recency bias i&nbsp;preferencja dla treści świeżych',
-        desc: 'Strony starsze niż 3 miesiące odnotowują gwałtowny spadek cytowań w&nbsp;dynamicznie zmieniających się tematach. Tokeny świeżości w&nbsp;URL (rok, /2025/, /2026/) zwiększają udział w&nbsp;cytowaniach o&nbsp;24%. Wdrażamy kwartalny cykl aktualizacji kluczowych artykułów.',
+        title: 'Preferencja dla świeżych treści (Recency bias)',
+        desc: 'Strony starsze niż 3 miesiące odnotowują w&nbsp;Claude gwałtowny spadek cytowań w&nbsp;tematach, które dynamicznie się zmieniają. Dodanie znaczników świeżości w&nbsp;adresie URL (np. dodanie roku /2025/) zwiększa udział w&nbsp;cytowaniach średnio o&nbsp;24%. W&nbsp;ramach współpracy wdrażamy kwartalny cykl aktualizacji kluczowych artykułów.',
       },
     ],
     optimization: [
       {
-        title: 'Long-form z&nbsp;metodologią i&nbsp;danymi statystycznymi',
-        desc: 'Claude preferuje artykuły eksperckie powyżej 3000 słów z&nbsp;konkretną metodologią, precyzyjnymi danymi (Statistics Addition) i&nbsp;cytatami ekspertów (Quotation Addition). Badania Princeton wykazują, że te dwie taktyki zwiększają widoczność w&nbsp;LLM o&nbsp;30-40%. Każde 500 słów powinno zawierać co najmniej jedną tabelę, listę lub blok danych – projektujemy taką strukturę w&nbsp;audycie.',
+        title: 'Długie formaty eksperckie z danymi i metodologią',
+        desc: 'Claude preferuje obszerne artykuły (powyżej 3000 słów) z&nbsp;konkretną metodologią, precyzyjnymi danymi oraz cytatami ekspertów. Badania naukowców z&nbsp;Uniwersytetu Princeton wykazują, że taktyki wplatania statystyk i&nbsp;cytatów zwiększają widoczność w&nbsp;modelach AI o&nbsp;30-40%. Każde 500 słów tekstu powinno zawierać co najmniej jedną tabelę, listę lub blok danych – projektujemy taką strukturę podczas audytu.',
       },
       {
-        title: 'Samodzielne fragmenty odpowiedzi',
-        desc: 'Każda sekcja powinna być zrozumiała po wyrwaniu z&nbsp;kontekstu: nagłówek jako pytanie użytkownika, a&nbsp;pod nim bezpośrednia odpowiedź lub definicja. Dzięki temu Claude nie musi zgadywać, o&nbsp;czym jest akapit, i&nbsp;łatwiej wykorzystuje go w&nbsp;syntezie.',
+        title: 'Samodzielne bloki treści (SCU)',
+        desc: 'Claude analizuje tekst, dzieląc go na małe partie (40-60 słów). Taki fragment musi być zrozumiały sam w&nbsp;sobie – jeśli AI będzie musiało szukać kontekstu w&nbsp;innej części strony, algorytm go odrzuci. Wdrażamy zasadę "odpowiedź na początku": każda sekcja zaczyna się od nagłówka-pytania, a&nbsp;bezpośrednio pod nim znajduje się konkretna definicja lub odpowiedź.',
       },
       {
-        title: 'Autor, pojęcia i instrukcje w danych strukturalnych',
-        desc: 'Profil autora, opis pojęć branżowych i&nbsp;dane dla treści instruktażowych pomagają Claude zrozumieć, kto napisał tekst i&nbsp;czego on dotyczy. To zmniejsza ryzyko błędnej interpretacji oraz wzmacnia zaufanie do eksperckich treści.',
+        title: 'Schema.org: Person + DefinedTerm + HowTo',
+        desc: 'Wdrażamy znaczniki ustrukturyzowane. Profil autora (<code>Person</code>) wskazuje AI konkretny zakres specjalizacji. Znacznik <code>DefinedTerm</code> dla autorskich pojęć branżowych eliminuje ryzyko błędnej interpretacji przez model. <code>HowTo</code> idealnie sprawdza się dla procesów instruktażowych. Dzięki temu modele AI traktują Twoją stronę nie jak zwykły tekst, ale jak ustrukturyzowaną, maszynowo czytelną bazę wiedzy.',
       },
       {
-        title: 'Brave Search, IndexNow i dostęp dla botów Claude',
-        desc: 'Widoczność w&nbsp;Brave Search wspiera cytowania Claude w&nbsp;czasie rzeczywistym. IndexNow przyspiesza zauważenie zmian po aktualizacji treści, a&nbsp;poprawny robots.txt zapewnia, że boty Claude mogą pobrać strony, które mają pracować na widoczność.',
+        title: 'Brave Search + IndexNow + zezwolenie dla Claude-SearchBot',
+        desc: 'Wysoka widoczność w&nbsp;Brave Search to bezpośredni warunek cytowania przez Claude w&nbsp;czasie rzeczywistym. Wdrażamy protokół IndexNow, który błyskawicznie informuje wyszukiwarki o&nbsp;zmianach (aktualizacje widoczne w&nbsp;ciągu minut). Dbamy też o&nbsp;to, aby agenty <code>Claude-SearchBot</code> i&nbsp;<code>ClaudeBot</code> miały odpowiednie zezwolenia (allow) w&nbsp;pliku robots.txt.',
       },
     ],
     signals: [
-      'Pozycja w&nbsp;Brave Search (86,7% korelacja z&nbsp;cytowaniami Claude)',
-      'Głębokość treści – 3000+ słów na artykuł filarowy',
-      'Brak języka perswazyjnego – dane i&nbsp;cytaty ekspertów zamiast marketingu',
-      'Szybkość ładowania FCP poniżej 0,4 s (6,7 cytowań vs 2,1 dla FCP ponad 1,1 s)',
-      'Dane strukturalne autora, pojęć i instrukcji – pomagają modelowi rozpoznać eksperckość treści.',
-      'Dostęp dla botów Claude, IndexNow i aktualna data modyfikacji – wspierają szybkie zauważenie zmian.',
+      'Wysoka pozycja w&nbsp;Brave Search (86,7% korelacji z&nbsp;cytowaniami Claude)',
+      'Głębokość treści – merytoryczne artykuły powyżej 3000 słów',
+      'Brak języka sprzedażowego – twarde dane i&nbsp;cytaty ekspertów zamiast haseł marketingowych',
+      'Czas pierwszego renderowania (FCP) poniżej 0,4 sekundy',
+      'Ustrukturyzowane dane Schema.org (Person, DefinedTerm, HowTo)',
+      'Zezwolenie (allow) dla <code>Claude-SearchBot</code>, IndexNow oraz aktualna data modyfikacji (<code>updatedAt</code>)',
     ],
     faq: [
       {
         q: 'Jak pozycjonować markę w&nbsp;Claude?',
-        a: 'Priorytet to autorytet merytoryczny w&nbsp;Brave Search – bo to z&nbsp;tego indeksu Claude pobiera dane na żywo. Budujemy długie artykuły eksperckie z&nbsp;metodologią, precyzyjnymi danymi i&nbsp;cytatami, podzielone na krótkie, samodzielne fragmenty odpowiedzi. Jednocześnie dbamy o&nbsp;dostępność strony dla botów, szybkie indeksowanie i&nbsp;dane strukturalne. Audyt na starcie pokaże, ile cytowań marka już zbiera i&nbsp;gdzie są luki.',
+        a: 'Priorytetem jest budowa autorytetu merytorycznego w&nbsp;wyszukiwarce Brave Search – to stamtąd Claude pobiera dane na żywo. Tworzymy długie artykuły eksperckie z&nbsp;metodologią, statystykami i&nbsp;cytatami, podzielone na krótkie, zrozumiałe bloki tekstu. Równolegle dbamy o&nbsp;technikalia: optymalizację robots.txt, wdrożenie IndexNow i&nbsp;danych Schema.org. Audyt na starcie pokaże, ile cytowań marka już zbiera i&nbsp;gdzie są luki.',
       },
       {
         q: 'Czy Claude cytuje moją stronę z&nbsp;linkami?',
-        a: 'W&nbsp;trybie wyszukiwania na żywo – tak, z&nbsp;przypisami. W&nbsp;trybie konwersacyjnym (bez internetu) Claude wymienia marki i&nbsp;ekspertów, ale rzadko podaje URL. Ruch referencyjny z&nbsp;Claude identyfikujemy przez user-agent Claude-User w&nbsp;logach serwera. Monitorujemy oba sygnały w&nbsp;ramach usługi.',
+        a: 'W&nbsp;trybie wyszukiwania na żywo – tak, każda informacja ma przypis z&nbsp;linkiem. W&nbsp;trybie konwersacyjnym (bez dostępu do internetu) Claude wymienia marki i&nbsp;ekspertów, ale rzadko podaje adres URL. Ruch bezpośredni z&nbsp;Claude zidentyfikujemy w&nbsp;logach Twojego serwera. W&nbsp;ramach usługi monitorujemy obie te ścieżki.',
       },
       {
         q: 'Claude vs ChatGPT – który ważniejszy dla mojego B2B?',
-        a: 'Claude obsługuje przede wszystkim inżynierów, prawników, konsultantów i&nbsp;analityków poszukujących rzetelnej syntezy. ChatGPT ma szerszy zasięg, ale często niższą intencję biznesową pojedynczego użytkownika. Jeśli Twoją grupą docelową są osoby decyzyjne i&nbsp;eksperci, Claude może generować ruch o&nbsp;bardzo wysokiej intencji. Audyt widoczności w&nbsp;obu modelach jednocześnie pokaże faktyczne proporcje w&nbsp;Twojej niszy.',
+        a: 'Claude obsługuje przede wszystkim inżynierów, prawników, konsultantów i&nbsp;analityków poszukujących rzetelnej syntezy danych. ChatGPT ma szerszy zasięg, ale często niższą intencję biznesową ze strony użytkownika. Jeśli Twoją grupą docelową są osoby decyzyjne i&nbsp;specjaliści, Claude generuje ruch o&nbsp;bardzo wysokiej wartości konwersyjnej. Audyt widoczności w&nbsp;obu modelach precyzyjnie pokaże proporcje dla Twojej branży.',
       },
       {
         q: 'Jak długo trwa pojawienie się w&nbsp;wynikach Claude?',
-        a: 'Wyszukiwanie na żywo w&nbsp;Claude może zareagować szybciej, jeśli strona jest widoczna w&nbsp;Brave, dostępna dla botów i&nbsp;zgłaszana po aktualizacjach. Dane treningowe zmieniają się wolniej, dlatego skupiamy się na ścieżce, którą da się mierzyć w&nbsp;ciągu tygodni. Co miesiąc raportujemy udział marki w&nbsp;odpowiedziach i&nbsp;cytowaniach.',
+        a: 'W&nbsp;przypadku wyszukiwania na żywo (Brave Search) – od 48 do 96 godzin po wdrożeniu zmian i&nbsp;protokołu IndexNow. Aktualizacja statycznych danych treningowych zajmuje od kilku do kilkunastu miesięcy. Dlatego skupiamy się na optymalizacji wyszukiwania w&nbsp;czasie rzeczywistym, co daje klientom mierzalne efekty już w&nbsp;ciągu kilku tygodni.',
       },
     ],
   },
 
   gemini: {
     heroSubtitle:
-      'Google Gemini z&nbsp;bezpośrednim dostępem do indeksu Google Search w&nbsp;czasie rzeczywistym. Zasila AI Overviews w&nbsp;SERP, Workspace, Android i&nbsp;Chrome. Aż 44% cytowań w&nbsp;AI Overviews pochodzi spoza top 20 organicznych – merytoryczna struktura treści ważniejsza niż sama pozycja.',
+      'Google Gemini to model AI z&nbsp;bezpośrednim dostępem do wyszukiwarki Google w&nbsp;czasie rzeczywistym. Zasila on Podsumowania AI (AI Overviews) w&nbsp;wynikach wyszukiwania, a&nbsp;także usługi Workspace, Android i&nbsp;Chrome. Z&nbsp;badań wynika, że aż 44% linków pojawiających się w&nbsp;odpowiedziach AI pochodzi spoza standardowego TOP 20 wyników. Oznacza to, że merytoryczna struktura Twoich treści jest dziś ważniejsza niż sama pozycja w&nbsp;tradycyjnym rankingu.',
     metaDescription:
-      'Pozycjonowanie marki w Google Gemini i AI Overviews. Optymalizacja pod AI Mode, FAQ, gęstość informacji i autorytet tematyczny. Mierzymy widoczność marki w ekosystemie Google.',
+      'Pozycjonowanie marki w Google Gemini i AI Overviews. Optymalizacja pod intencje AI, znaczniki FAQ, autorytet tematyczny i gęstość faktów. Mierzymy widoczność w ekosystemie Google.',
     howItWorks: [
       {
-        title: 'Grounding w&nbsp;czasie rzeczywistym przez Google Search',
-        desc: 'Gemini nie polega wyłącznie na wiedzy treningowej – pobiera dane bezpośrednio z&nbsp;indeksu Google (mechanizm grounding). Kiedy zapytanie jest złożone, model generuje kilka pomocniczych mikro-zapytań (query fan-out) i&nbsp;przeszukuje je równolegle. Strony widoczne na te poboczne zapytania mają o&nbsp;161% wyższe prawdopodobieństwo cytowania w&nbsp;AI Overview.',
+        title: 'Pobieranie danych na żywo (Grounding)',
+        desc: 'Gemini nie polega wyłącznie na wiedzy, na której został wytrenowany – pobiera aktualne dane bezpośrednio z&nbsp;indeksu Google. Kiedy zapytanie użytkownika jest złożone, model rozbija je na kilka mniejszych pytań pomocniczych i&nbsp;przeszukuje sieć równolegle. Strony, które są widoczne na te poboczne, szczegółowe pytania, mają o&nbsp;161% wyższe prawdopodobieństwo zacytowania w&nbsp;gotowej odpowiedzi AI.',
       },
       {
-        title: 'AI Overviews w&nbsp;SERP',
-        desc: 'AI Overviews to blok generowany przez Gemini na górze wyników Google, aktywowany dla ~21% zapytań (59% dla pytań "dlaczego", 57% dla zapytań logicznych). W&nbsp;Polsce aktywne dla wybranych fraz informacyjnych, pełny rollout postępuje. Cytowania mają link do źródła – to realny kanał ruchu referencyjnego.',
+        title: 'Podsumowania AI (AI Overviews) w Google',
+        desc: 'AI Overviews to generowany przez Gemini blok z&nbsp;odpowiedzią na samej górze wyników wyszukiwania Google. Aktywuje się najczęściej dla zapytań informacyjnych (np. pytań "dlaczego" lub porównań). Ponieważ każde zacytowane stwierdzenie posiada link do źródła, jest to zupełnie nowy, potężny kanał ruchu na stronę. W&nbsp;Polsce funkcja ta jest sukcesywnie wdrażana.',
       },
       {
-        title: 'Wspólny obszar SEO i widoczności AI',
-        desc: 'Klasyczne SEO jest warunkiem koniecznym, ale nie zawsze wystarczającym. Gemini analizuje nie tylko pozycję strony, ale też strukturę odpowiedzi, dopasowanie do intencji, wiarygodność autora i&nbsp;spójność faktów. Dlatego treść musi być dobra zarówno dla wyszukiwarki, jak i&nbsp;dla modelu generującego odpowiedź.',
+        title: 'Część wspólna tradycyjnego SEO i widoczności AI (GEO)',
+        desc: 'Klasyczne SEO jest warunkiem koniecznym, ale nie wystarczającym do pojawienia się w&nbsp;Gemini. Badania pokazują, że choć większość Podsumowań AI zawiera przynajmniej jedno źródło z&nbsp;TOP 20, to aż 44% wszystkich linków w&nbsp;AI Overviews pochodzi z&nbsp;dalszych pozycji. Gemini szuka w&nbsp;tekstach cech ignorowanych przez klasyczne algorytmy linków: poprawności faktograficznej (35% wagi), idealnego dopasowania do intencji (25%) i&nbsp;sygnałów autorytetu (20%).',
       },
       {
-        title: 'AI Mode i&nbsp;pełna integracja konwersacyjna',
-        desc: 'Następnik AI Overviews to pełny "AI Mode" w&nbsp;Google – chat-style UI z&nbsp;cytowaniami wbudowanymi w&nbsp;odpowiedź. Gemini zasila też Workspace (Docs, Gmail, Meet) i&nbsp;wyszukiwanie w&nbsp;Chrome. Budujemy widoczność marki w&nbsp;całym ekosystemie Google jednocześnie.',
+        title: 'Pełna integracja z ekosystemem Google',
+        desc: 'Google zmierza w&nbsp;kierunku interfejsu w&nbsp;formie czatu (AI Mode), gdzie cytowania są naturalnie wbudowane w&nbsp;konwersację. Ponadto, Gemini zasila aplikacje Workspace (Docs, Gmail, Meet) oraz wyszukiwarkę w&nbsp;przeglądarce Chrome. Optymalizując stronę pod Gemini, budujemy widoczność Twojej marki w&nbsp;całym ekosystemie Google jednocześnie.',
       },
     ],
     optimization: [
       {
-        title: 'Semantyczne trójki i&nbsp;Answer-First',
-        desc: 'Gemini interpretuje świat przez grafy wiedzy. Kluczowe fakty formułujemy w&nbsp;strukturze Podmiot – Orzeczenie – Dopełnienie bezpośrednio pod nagłówkami H2/H3. Jednozdaniowa definicja lub odpowiedź w&nbsp;pierwszych 50-100 słowach sekcji (answer capsule 40-80 słów) – to format który silnik wyciąga jako snippet. Wdrożenie trójek semantycznych zwiększyło liczbę cytowań o&nbsp;642% w&nbsp;kontrolowanym badaniu HubSpot.',
+        title: 'Semantyczne trójki i zasada "Odpowiedź na początku"',
+        desc: 'Gemini "rozumie" świat poprzez grafy wiedzy. Dlatego kluczowe fakty w&nbsp;tekstach formułujemy w&nbsp;prostej strukturze (Podmiot – Orzeczenie – Dopełnienie) bezpośrednio pod nagłówkami. Tworzymy zwięzłe bloki odpowiedzi w&nbsp;pierwszych 50-100 słowach. Dzięki temu algorytm Google nie musi zgadywać, o&nbsp;czym jest tekst, i&nbsp;łatwiej umieszcza go w&nbsp;gotowej odpowiedzi. Badania HubSpot wykazały, że ten zabieg zwiększa liczbę cytowań nawet o&nbsp;600%.',
       },
       {
-        title: 'FAQPage schema + PAA pokrycie',
-        desc: 'AI Overviews chętnie wyciągają fragmenty z&nbsp;FAQ. Każdy artykuł powinien mieć 6-12 sensownych pytań w&nbsp;FAQPage schema, pokrywających frazy People Also Ask (PAA) dla danego tematu. Audytujemy PAA pokrycie i&nbsp;wdrażamy FAQ schema jako standard.',
+        title: 'Znaczniki FAQ i odpowiadanie na pytania użytkowników',
+        desc: 'AI Overviews bardzo chętnie wyciąga fragmenty stron ze zoptymalizowanych sekcji pytań i&nbsp;odpowiedzi (FAQ). Każdy artykuł ekspercki powinien zawierać 6-12 merytorycznych pytań oznaczonych kodem Schema.org, które pokrywają się z&nbsp;sekcją "Podobne pytania" (People Also Ask) z&nbsp;wyszukiwarki. W&nbsp;ramach współpracy audytujemy i&nbsp;wdrażamy ten standard na Twojej stronie.',
       },
       {
-        title: 'Topical authority cluster + E-E-A-T',
-        desc: 'Gemini premiuje strony z&nbsp;pogłębioną strukturą tematyczną. Pillar page + sieć wspierających artykułów na podfrazach zwiększa prawdopodobieństwo cytowania dla całego klastra. Sygnały E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) – autorzy z&nbsp;podpisanym portfolio, linki zewnętrzne, wzmianki w&nbsp;mediach branżowych.',
+        title: 'Autorytet tematyczny i sygnały E-E-A-T',
+        desc: 'Gemini premiuje serwisy z&nbsp;pogłębioną strukturą treści. Główny, obszerny artykuł wspierany przez sieć mniejszych tekstów szczegółowych drastycznie zwiększa szansę na cytowanie całego klastra tematycznego. Równie ważne są sygnały E-E-A-T (Doświadczenie, Ekspertyza, Autorytet, Wiarygodność) – dbamy o&nbsp;profile autorów, linki zewnętrzne i&nbsp;wzmianki o&nbsp;Twojej marce w&nbsp;mediach branżowych.',
       },
       {
-        title: 'Google-Extended a&nbsp;Googlebot – świadoma decyzja',
-        desc: 'Google-Extended blokuje dane treningowe Gemini, ale nie blokuje AI Overviews – te korzystają z&nbsp;bieżącego indeksu Googlebot. Zablokowanie samego Googlebot eliminuje stronę ze wszystkich wyników Google. Doradzamy optymalną konfigurację robots.txt zależnie od Twojej strategii ochrony treści i&nbsp;celów GEO.',
+        title: 'Google-Extended a Googlebot – świadoma konfiguracja',
+        desc: 'Zablokowanie robota <code>Google-Extended</code> sprawia, że Google nie użyje Twoich tekstów do trenowania modelu Gemini. Nie blokuje to jednak Twojej obecności w&nbsp;AI Overviews (które korzystają ze standardowego <code>Googlebota</code>). Zablokowanie głównego Googlebota usunęłoby Cię z&nbsp;całej wyszukiwarki. Pomagamy podjąć świadomą decyzję i&nbsp;optymalnie skonfigurować plik robots.txt, aby chronić Twoje treści, nie tracąc przy tym ruchu.',
       },
     ],
     signals: [
-      'Pozycja organiczna 1-20 w&nbsp;Google (94% cytowań pochodzi z&nbsp;tej puli)',
-      'FAQPage schema z&nbsp;pytaniami PAA',
-      'Semantyczne trójki Podmiot–Orzeczenie–Dopełnienie we wstępach sekcji',
-      'Topical authority – pillar + klaster artykułów wspierających',
-      'E-E-A-T: autor + linki zewnętrzne + wzmianki branżowe',
-      'Googlebot allow + Core Web Vitals w&nbsp;normie',
+      'Pozycja organiczna 1-20 w&nbsp;Google (największa szansa na wejście do puli AI)',
+      'Wdrożone znaczniki FAQPage odpowiadające na realne pytania użytkowników',
+      'Proste struktury zdań (semantyczne trójki) w&nbsp;pierwszych akapitach sekcji',
+      'Autorytet tematyczny – szerokie pokrycie danego zagadnienia w&nbsp;obrębie domeny',
+      'Sygnały E-E-A-T: weryfikowalni autorzy, silne linki z&nbsp;zewnątrz i&nbsp;wzmianki branżowe',
+      'Dopuszczenie Googlebota w&nbsp;robots.txt oraz szybka i&nbsp;stabilna strona (Core Web Vitals)',
     ],
     faq: [
       {
         q: 'Jak pozycjonować markę w&nbsp;Google Gemini?',
-        a: 'Dwa poziomy działania: (1) klasyczne SEO pod Google; (2) optymalizacja pod odpowiedzi AI: gęstość informacji, FAQ, trójki semantyczne i&nbsp;autorytet tematyczny. Zaczynamy od audytu cytowań w&nbsp;AI Overviews dla kluczowych fraz Twojej branży, żeby zobaczyć gdzie marka jest, a&nbsp;gdzie jej nie ma.',
+        a: 'Działamy na dwóch poziomach: (1) klasyczne SEO pod wyszukiwarkę Google – ponieważ wysokie pozycje organiczne znacznie ułatwiają wejście do odpowiedzi AI; (2) optymalizacja ściśle pod AI (GEO) – zwiększamy gęstość faktów, wdrażamy odpowiednią strukturę nagłówków, znaczniki FAQ i&nbsp;budujemy autorytet tematyczny. Zaczynamy od audytu Twoich najważniejszych fraz, by sprawdzić, gdzie marka już występuje w&nbsp;AI Overviews, a&nbsp;gdzie traci do konkurencji.',
       },
       {
         q: 'Czy AI Overviews są już w&nbsp;Polsce?',
-        a: 'Tak – aktywne dla wybranych zapytań informacyjnych i&nbsp;pytań bezpośrednich. Pełny rollout postępuje kwartał po kwartale. Już teraz możemy zmierzyć obecność marki dla branżowych fraz core i&nbsp;zaplanować optymalizację zanim konkurencja się zorientuje.',
+        a: 'Tak, funkcja ta jest sukcesywnie wdrażana i&nbsp;aktywuje się już dla wielu zapytań informacyjnych oraz bezpośrednich pytań użytkowników. Pełne wdrożenie postępuje z&nbsp;kwartału na kwartał. Już teraz możemy zmierzyć obecność Twojej marki w&nbsp;odpowiedziach AI i&nbsp;zaplanować optymalizację, zanim konkurencja dostosuje się do nowych realiów.',
       },
       {
         q: 'Czy AI Overviews obniżają ruch na mojej stronie?',
-        a: 'Dla stron które są cytowane – AI Overview to dodatkowy kanał ekspozycji z&nbsp;linkiem do źródła. Dla stron które nie są cytowane – AI Overview może "zjadać" kliknięcia organiczne (CTR spada do 8% wg Pew Research przy obecności AIO). Dlatego kluczowe jest znalezienie się w&nbsp;cytowanych źródłach, a&nbsp;nie bycie "za" blokiem generatywnym.',
+        a: 'Dla stron, które są cytowane w&nbsp;odpowiedziach AI, jest to potężny, dodatkowy kanał ruchu (użytkownicy klikają w&nbsp;przypisy). Jednak dla stron, które znajdują się w&nbsp;tradycyjnych wynikach, ale nie zostały wybrane przez AI, wskaźnik klikalności (CTR) może znacząco spaść – badania branżowe wskazują, że blok AI przejmuje dużą część uwagi użytkownika. Dlatego celem nie jest już tylko bycie na pierwszej stronie Google, ale bycie źródłem w&nbsp;samej odpowiedzi AI.',
       },
       {
         q: 'Jak mierzycie wyniki dla Gemini?',
-        a: 'Mierzymy udział URL w&nbsp;blokach AI Overviews, udział wzmianek marki dla zestawu zapytań testowych oraz ruch z&nbsp;kanałów AI w&nbsp;Google Analytics 4. Raport miesięczny pokazuje benchmark konkurencji i&nbsp;rekomendacje kolejnych kroków.',
+        a: 'Śledzimy wskaźnik cytowań (udział Twojej domeny w&nbsp;blokach AI Overviews), udział w&nbsp;odpowiedziach modelu (Share of Model) dla wytypowanej puli pytań testowych, a&nbsp;także monitorujemy realny ruch z&nbsp;usług AI w&nbsp;Google Analytics 4. Co miesiąc otrzymujesz czytelny raport z&nbsp;analizą konkurencji i&nbsp;rekomendacjami kolejnych kroków.',
       },
     ],
   },
 
   perplexity: {
     heroSubtitle:
-      'Perplexity AI to wyszukiwarka odpowiedzi z&nbsp;silnym naciskiem na źródła. Każda odpowiedź zawiera cytowania, więc użytkownik może szybko przejść do strony, z&nbsp;której pochodzi informacja.',
+      'Perplexity AI to model najbardziej zorientowany na wyszukiwanie spośród wszystkich dostępnych na rynku. Każda wygenerowana odpowiedź ma wbudowane widoczne cytowania (od 1 do 10 linków). Dzięki takiemu interfejsowi, to właśnie z&nbsp;Perplexity notujemy najwyższy odsetek przejść użytkowników (kliknięć) na strony docelowe.',
     metaDescription:
-      'Pozycjonowanie marki w Perplexity AI. Optymalizacja pod cytowania, audyt widoczności i ruch z odpowiedzi AI.',
+      'Pozycjonowanie marki w Perplexity AI. Optymalizacja pod cytowania (panel Źródła), audyt widoczności w trybie Pro Search. Najwyższy zwrot z inwestycji (ROI) z ruchu od sztucznej inteligencji.',
     howItWorks: [
       {
-        title: 'Odpowiedzi oparte na źródłach',
-        desc: 'Perplexity pokazuje źródła bezpośrednio przy odpowiedzi. Cytowanie nie jest tylko sygnałem wizerunkowym: może przełożyć się na wejścia na stronę, bo użytkownik od razu widzi, skąd pochodzi informacja.',
+        title: 'Architektura oparta na cytowaniach',
+        desc: 'Perplexity ZAWSZE pokazuje źródła, z&nbsp;których korzysta. Każde stwierdzenie w&nbsp;tekście ma przypis numeryczny odsyłający do konkretnego linku. Obecność w&nbsp;tych przypisach przekłada się na realny ruch, ponieważ użytkownicy chętnie klikają, aby zweryfikować podane informacje lub zgłębić temat.',
       },
       {
-        title: 'Pro Search i głębsza analiza',
-        desc: 'W&nbsp;trybach wymagających dokładniejszej analizy Perplexity porównuje więcej źródeł i&nbsp;buduje odpowiedź z&nbsp;kilku etapów. To zwiększa szansę na cytowanie stron, które mają jasne dane, aktualne informacje i&nbsp;dobrą strukturę.',
+        title: 'Tryb Pro Search i pogłębiona analiza',
+        desc: 'Płatny tryb wyszukiwania (Pro Search) wykorzystuje wieloetapowe wnioskowanie. Model wykonuje głębszy research i&nbsp;podaje zazwyczaj 5-10 źródeł na odpowiedź (zamiast standardowych 3-5). Dla zoptymalizowanych stron oznacza to znacznie więcej szans na zacytowanie w&nbsp;przypadku skomplikowanych zapytań B2B.',
       },
       {
-        title: 'Discover i tematy zyskujące uwagę',
-        desc: 'Perplexity pokazuje także popularne pytania i&nbsp;źródła, które dobrze odpowiadają na aktualne tematy. Regularnie aktualizowane treści eksperckie mają większą szansę pojawiać się tam, gdzie użytkownicy szukają szybkiej syntezy.',
+        title: 'Zakładka Discover (Odkrywaj)',
+        desc: 'Strona główna Perplexity to zestawienie najpopularniejszych, trendujących pytań wraz z&nbsp;gotowymi odpowiedziami i&nbsp;zacytowanymi źródłami. Wysoki wskaźnik cytowań w&nbsp;konkretnej niszy zwiększa szansę na pojawienie się Twojej marki w&nbsp;sekcji Discover, co może wygenerować skokowy przyrost ruchu.',
       },
     ],
     optimization: [
       {
-        title: 'Świeżość ponad wszystko',
-        desc: 'Perplexity preferuje aktualne źródła. Kluczowe artykuły warto odświeżać co kwartał i&nbsp;jasno pokazywać datę aktualizacji, żeby użytkownik oraz model widzieli, że treść nadal jest ważna.',
+        title: 'Świeżość treści ponad wszystko',
+        desc: 'Perplexity traktuje priorytetowo strony zaktualizowane w&nbsp;ciągu ostatnich 6 miesięcy. W&nbsp;ramach współpracy wdrażamy kwartalny cykl aktualizacji Twoich kluczowych artykułów oraz ustawiamy odpowiednie znaczniki Schema.org (updatedAt), aby model natychmiast widział, że treść jest aktualna.',
       },
       {
-        title: 'Strukturalna treść',
-        desc: 'Nagłówki, listy i&nbsp;tabele pomagają Perplexity wyciągać konkretne fragmenty. Model nie cytuje całego artykułu, tylko wybiera odpowiedzi, definicje i&nbsp;dane, które da się szybko zweryfikować.',
+        title: 'Ustrukturyzowana treść ułatwiająca skanowanie',
+        desc: 'Perplexity wyciąga z&nbsp;tekstów konkretne dane – nie cytuje długich, lanych akapitów. Optymalizujemy strukturę Twoich stron: wdrażamy jasne nagłówki, listy punktowane i&nbsp;tabele danych. Taki format jest dla algorytmów AI najłatwiejszy do przyswojenia i&nbsp;zacytowania.',
       },
       {
-        title: 'Dostęp dla PerplexityBot',
-        desc: 'Jeśli bot Perplexity nie może pobrać strony, model nie wykorzysta jej jako źródła. Sprawdzamy konfigurację robots.txt i&nbsp;dostępność najważniejszych URL, żeby nie blokować cytowań technicznym detalem.',
+        title: 'Dopuszczenie robotów (PerplexityBot allow)',
+        desc: 'Model korzysta z&nbsp;dwóch głównych agentów: <code>PerplexityBot</code> do regularnego skanowania internetu oraz <code>Perplexity-User</code> do pobierania danych w&nbsp;czasie rzeczywistym. Odpowiednio konfigurujemy Twój plik robots.txt. Bez tego technicznego kroku model po prostu ominie Twoją stronę.',
       },
       {
-        title: 'Autorytet domeny i specjalizacja',
-        desc: 'Perplexity lepiej traktuje wyspecjalizowane domeny niż ogólne farmy treści. Jeśli chcesz być cytowany, strona musi jasno pokazywać, w&nbsp;jakiej dziedzinie ma realną ekspertyzę.',
+        title: 'Autorytet w wąskiej niszy',
+        desc: 'Perplexity faworyzuje domeny, które specjalizują się w&nbsp;jednym, konkretnym temacie. Algorytm skutecznie odrzuca ogólnikowe "farmy treści". Budujemy Twój wizerunek jako wysoce wyspecjalizowanego eksperta, co bezpośrednio podbija szansę na cytowanie.',
       },
     ],
     signals: [
-      'Aktualność treści – świeże daty i regularne aktualizacje zwiększają zaufanie do źródła.',
-      'Strukturalna treść – nagłówki, listy i tabele ułatwiają modelowi cytowanie konkretnych fragmentów.',
-      'Dostęp dla PerplexityBot – bot musi móc pobrać stronę, żeby ją zacytować.',
-      'Specjalizacja domeny – wąska ekspertyza zwykle działa lepiej niż szeroki, ogólny portal.',
-      'Linki do badań i źródeł – pomagają potwierdzić, że treść opiera się na faktach.',
+      'Świeżość treści (data aktualizacji poniżej 6 miesięcy)',
+      'Ustrukturyzowana treść (przejrzyste nagłówki, listy punktowane, tabele)',
+      'Zezwolenie dla agentów <code>PerplexityBot</code> w&nbsp;pliku robots.txt',
+      'Autorytet w&nbsp;niszy (wąska specjalizacja jest premiowana wyżej niż szeroka tematyka)',
+      'Cytowania zewnętrzne (linkowanie do merytorycznych badań i&nbsp;raportów uwiarygadnia Twój tekst)',
     ],
     faq: [
       {
         q: 'Jak pozycjonować się w&nbsp;Perplexity?',
-        a: 'Perplexity nagradza aktualność, dobrą strukturę i&nbsp;specjalizację. Aktualizuj treści kwartalnie, używaj nagłówków, list i&nbsp;tabel, zadbaj o&nbsp;dostęp dla PerplexityBot i&nbsp;buduj wąską ekspertyzę zamiast szerokiego, ogólnego portalu.',
+        a: 'Algorytm Perplexity nagradza świeżość, strukturę danych i&nbsp;specjalizację. Należy aktualizować kluczowe treści co kwartał, używać czytelnych nagłówków i&nbsp;tabel, pozwolić robotom Perplexity na skanowanie strony oraz budować wąską, głęboką ekspertyzę zamiast szerokiego portalu ogólnotematycznego.',
       },
       {
-        q: 'Czy Perplexity daje realny ruch?',
-        a: 'Tak, ponieważ użytkownik widzi źródła bezpośrednio przy odpowiedzi i&nbsp;może przejść do strony, żeby zweryfikować szczegóły. Wartość tego ruchu zależy od branży, jakości cytowania i&nbsp;tego, czy strona odpowiada na pytanie lepiej niż konkurencja.',
+        q: 'Czy Perplexity generuje realny ruch na stronie?',
+        a: 'Tak, ze wszystkich modeli językowych to właśnie Perplexity notuje najwyższy wskaźnik klikalności (CTR). Użytkownicy chętnie klikają w&nbsp;panel "Źródła", aby zweryfikować fakty. Możesz spodziewać się, że od 2% do 5% użytkowników, którzy zobaczyli cytowanie Twojej marki, przejdzie na Twoją stronę.',
       },
       {
-        q: 'Perplexity vs Google – który priorytet?',
-        a: 'Dla niszowych B2B Perplexity bywa ważne, bo użytkownicy korzystają z&nbsp;niego przy badaniu rynku, porównywaniu dostawców i&nbsp;weryfikacji źródeł. Audyt pokaże proporcje w&nbsp;Twojej branży.',
+        q: 'Perplexity czy Google – co powinno być priorytetem?',
+        a: 'W&nbsp;przypadku niszowych firm B2B, Perplexity odpowiada już za 10-20% zapytań badawczych (researchowych) wykonywanych przez osoby decyzyjne. Nasz audyt precyzyjnie wskaże proporcje użycia obu wyszukiwarek w&nbsp;Twojej konkretnej branży, co pozwoli odpowiednio alokować budżet.',
       },
     ],
   },
 
   'bing-copilot': {
     heroSubtitle:
-      'Microsoft Copilot wbudowany w&nbsp;Edge, Windows 11 i&nbsp;Microsoft 365 – domyślny asystent AI w&nbsp;wielu środowiskach firmowych. Korzysta z&nbsp;indeksu Bing i&nbsp;modeli OpenAI przez Azure. Widoczność w&nbsp;Bing Webmaster Tools ma dedykowany panel AI Performance z&nbsp;danymi o&nbsp;cytowaniach.',
+      'Microsoft Copilot wbudowany w&nbsp;przeglądarkę Edge, Windows 11 i&nbsp;pakiet Microsoft 365 – domyślny asystent AI dla setek milionów użytkowników biznesowych. Korzysta z&nbsp;indeksu wyszukiwarki Bing oraz modelu GPT-4. W&nbsp;darmowych narzędziach dla webmasterów Microsoft udostępnił dedykowany panel AI Performance, który dostarcza twardych danych o&nbsp;tym, jak często AI cytuje Twoją stronę.',
     metaDescription:
-      'Pozycjonowanie marki w Microsoft Copilot. Audyt cytowań w Copilot dla Edge, Windows i Microsoft 365. Optymalizacja pod indeks Bing, IndexNow, dane strukturalne i panel AI Performance.',
+      'Pozycjonowanie marki w Microsoft Copilot. Audyt cytowań w Copilot dla Edge, Windows i M365. Optymalizacja pod indeks Bing, IndexNow, Schema.org i panel AI Performance. Widoczność w AI dla sektora B2B.',
     howItWorks: [
       {
-        title: 'Indeks Bing i mechanizm RAG',
-        desc: 'Copilot korzysta z&nbsp;indeksu Bing i&nbsp;mechanizmu RAG, czyli pobierania źródeł do odpowiedzi generowanej przez model. Gdy użytkownik zadaje pytanie, system szuka stron, porównuje fragmenty i&nbsp;syntetyzuje odpowiedź. <strong>Widoczność w&nbsp;Bing jest więc wejściem do puli źródeł, z&nbsp;których Copilot może zacytować markę.</strong>',
+        title: 'Indeks Bing + mechanizm RAG',
+        desc: 'Copilot działa w&nbsp;oparciu o&nbsp;architekturę RAG zasilaną indeksem wyszukiwarki Bing. Gdy użytkownik zadaje pytanie, system generuje zapytania pomocnicze (tzw. grounding queries), pobiera dokumenty z&nbsp;top 20 wyników organicznych Bing, dzieli je na mniejsze fragmenty i&nbsp;syntetyzuje odpowiedź. <strong>Korelacja między pozycją w&nbsp;Bing a&nbsp;cytowaniem w&nbsp;Copilot jest bardzo silna – widoczność w&nbsp;tradycyjnych wynikach wyszukiwania to bilet wstępu do odpowiedzi AI.</strong>',
       },
       {
-        title: 'Azure OpenAI i&nbsp;model GPT-4',
-        desc: 'Copilot korzysta z&nbsp;modeli OpenAI przez infrastrukturę Microsoft Azure. Mechanika cytowania jest zbliżona do wyszukiwania sieciowego w&nbsp;ChatGPT: użytkownik widzi syntetyczną odpowiedź oraz źródła. To oznacza, że liczy się nie tylko kliknięcie, ale też sama obecność marki w&nbsp;odpowiedzi.',
+        title: 'Azure OpenAI i model GPT-4',
+        desc: 'Pod maską Copilota działa zaawansowany model GPT-4. Mechanika cytowania jest zbliżona do wyszukiwania sieciowego ChatGPT Search – w&nbsp;standardowym trybie system podaje 3-5 linków na odpowiedź. Microsoft testuje wprowadzanie małych znaczników numerycznych przy zdaniach, co sprawia, że sama obecność Twojej marki w&nbsp;wygenerowanym tekście staje się ważniejsza niż tradycyjne kliknięcia i&nbsp;przejścia na stronę.',
       },
       {
-        title: 'Natywna integracja z&nbsp;ekosystemem Microsoft',
-        desc: 'Copilot jest dostępny jednym kliknięciem w&nbsp;Edge, wbudowany w&nbsp;Windows 11 i&nbsp;zintegrowany z&nbsp;Microsoft 365 (Teams, SharePoint, Outlook). Niska bariera wejścia zwiększa użycie w&nbsp;firmach. Zapytania pracowników organizacji często mają wysoką intencję biznesową i&nbsp;dotyczą decyzji zakupowych lub przetargów.',
+        title: 'Natywna integracja z ekosystemem Microsoft',
+        desc: 'Copilot jest dostępny na jedno kliknięcie w&nbsp;Edge, wbudowany w&nbsp;system Windows 11 i&nbsp;zintegrowany z&nbsp;Microsoft 365 (Teams, SharePoint, Outlook). Niska bariera wejścia oznacza bardzo wysokie użycie w&nbsp;środowiskach korporacyjnych. Zapytania generowane przez pracowników B2B mają konkretną intencję biznesową i&nbsp;często dotyczą ważnych decyzji zakupowych lub przetargów.',
       },
       {
-        title: 'Panel AI Performance w&nbsp;Bing Webmaster Tools',
-        desc: 'Microsoft udostępnia dane o&nbsp;widoczności AI w&nbsp;Bing Webmaster Tools. Panel AI Performance pokazuje cytowania, strony wykorzystywane w&nbsp;odpowiedziach oraz zapytania, przy których Copilot pobiera dane z&nbsp;Twojej witryny. To pozwala mierzyć nie tylko ruch, ale też obecność marki w&nbsp;syntezach AI.',
+        title: 'Panel AI Performance w Bing Webmaster Tools',
+        desc: 'Microsoft udostępnił dedykowane narzędzie analityczne dla widoczności AI: panel AI Performance agreguje dane o&nbsp;cytowaniach z&nbsp;Copilota. Pokazuje całkowitą liczbę cytowań, najczęściej wybierane podstrony i&nbsp;dokładne zapytania użytkowników (Grounding Queries). Dzięki temu wiesz dokładnie, na jakie pytania AI odpowiada, korzystając z&nbsp;Twoich tekstów.',
       },
     ],
     optimization: [
       {
-        title: 'Bing Webmaster Tools + IndexNow',
-        desc: 'Zarejestrowanie domeny, weryfikacja i&nbsp;przesłanie mapy strony (sitemap XML) pomagają Bingowi szybciej znaleźć kluczowe adresy. IndexNow to protokół natychmiastowych powiadomień o&nbsp;zmianach w&nbsp;treści – po wdrożeniu aktualizacje mogą trafić do indeksu Bing w&nbsp;ciągu minut, nie dni. Konfigurujemy oba elementy i&nbsp;ustawiamy automatyczne zgłoszenia po każdej publikacji.',
+        title: 'Bing Webmaster Tools + protokół IndexNow',
+        desc: 'Rejestrujemy domenę, przesyłamy mapę strony (sitemap XML) i&nbsp;wdrażamy IndexNow. To protokół natychmiastowych powiadomień o&nbsp;zmianach na stronie. Dzięki temu, gdy opublikujesz nowy artykuł lub ofertę, sztuczna inteligencja dowiaduje się o&nbsp;tym w&nbsp;ciągu kilku minut, a&nbsp;nie dni. Konfigurujemy ten system w&nbsp;ramach audytu technicznego.',
       },
       {
-        title: 'Zwięzłe bloki odpowiedzi pod nagłówkami',
-        desc: 'Najważniejsze sekcje powinny zaczynać się od krótkiej, konkretnej odpowiedzi pod nagłówkiem H2 lub H3. To tzw. answer capsules, czyli zwięzłe bloki odpowiedzi. Treść musi być gotowa od razu, najlepiej renderowana po stronie serwera. Jeśli tekst ładuje się z&nbsp;opóźnieniem przez skrypty JavaScript, AI może go pominąć, bo nie ma czasu na czekanie.',
+        title: 'Zwięzłe bloki odpowiedzi i błyskawiczne ładowanie',
+        desc: 'Dostosowujemy teksty do wytycznych Microsoftu, tworząc tzw. answer capsules (zwięzłe odpowiedzi na 40-80 słów) bezpośrednio pod głównymi nagłówkami. Treść musi być gotowa od razu (renderowanie po stronie serwera). Jeśli Twój tekst ładuje się z&nbsp;opóźnieniem przez skrypty JavaScript, sztuczna inteligencja go zignoruje, bo nie ma czasu na czekanie. Czas odpowiedzi serwera (TTFB) powyżej 1 sekundy drastycznie zmniejsza szanse na pobranie strony przez AI.',
       },
       {
-        title: 'Dane strukturalne dla artykułów, FAQ i produktów',
-        desc: 'Bing korzysta z&nbsp;danych strukturalnych przy rozumieniu strony i&nbsp;wyborze źródeł. Dla użytkownika biznesowego oznacza to prostą korzyść: model szybciej rozpoznaje, czy strona jest poradnikiem, FAQ, produktem czy opisem usługi, a&nbsp;to zwiększa szansę na użycie właściwego fragmentu w&nbsp;odpowiedzi.',
+        title: 'Dane strukturalne Schema.org (Article, FAQ, HowTo, Product)',
+        desc: 'Wyszukiwarka Bing mocno korzysta ze znaczników strukturalnych przy wyborze źródeł do syntezy. Wdrażamy odpowiedni kod (np. FAQPage lub Product). Dzięki temu sztuczna inteligencja od razu "rozumie", że ma do czynienia z&nbsp;ofertą sklepu, instrukcją lub odpowiedzią eksperta, co bezpośrednio zwiększa szansę na cytowanie Twojej domeny.',
       },
       {
-        title: 'Bing Places i spójność danych teleadresowych',
-        desc: 'Bing Places for Business to ważne źródło danych o&nbsp;firmie w&nbsp;środowisku Microsoft. Copilot weryfikuje istnienie Twojej firmy, krzyżowo sprawdzając dane między Bing Places, wizytówką Google i&nbsp;portalami branżowymi. Spójność danych teleadresowych (NAP – Name, Address, Phone) wzmacnia zaufanie do marki jako realnej encji.',
+        title: 'Bing Places + spójność danych teleadresowych (NAP)',
+        desc: 'Wizytówka Bing Places for Business to kluczowe źródło danych o&nbsp;Twojej firmie w&nbsp;ekosystemie Windows. Copilot weryfikuje istnienie marki, krzyżowo sprawdzając dane między Bing Places, wizytówką Google i&nbsp;portalami branżowymi. Jakakolwiek niespójność (stary adres, inna nazwa telefonu – tzw. NAP) obniża zaufanie algorytmu. Dbamy o&nbsp;ujednolicenie tych informacji.',
       },
     ],
     signals: [
-      'Widoczność w&nbsp;Bing Search – zwiększa szansę wejścia do puli źródeł Copilota.',
-      'Szybka strona i treść widoczna w&nbsp;HTML – bot musi móc szybko pobrać właściwy fragment.',
-      'IndexNow – szybsze zgłaszanie nowych i&nbsp;zaktualizowanych treści do Bing.',
-      'Dane strukturalne Article, FAQ, HowTo i Product – pomagają modelowi zrozumieć typ treści.',
-      'Dostęp dla Bingbot i panel AI Performance – pozwalają mierzyć cytowania i usuwać blokady.',
-      'Bing Places for Business i spójne dane teleadresowe – wzmacniają wiarygodność marki jako encji.',
+      'Pozycja top 20 w&nbsp;Bing Search (warunek wejścia do puli stron pobieranych przez AI)',
+      'Czas odpowiedzi serwera (TTFB) poniżej 1 sekundy oraz renderowanie po stronie serwera (SSR)',
+      'Wdrożony IndexNow – szybka indeksacja po aktualizacjach',
+      'Ustrukturyzowane dane Schema.org (Article, FAQ, HowTo, Product)',
+      'Dopuszczenie Bingbota w&nbsp;pliku robots.txt i&nbsp;skonfigurowany panel AI Performance',
+      'Bing Places for Business i&nbsp;spójne dane teleadresowe (NAP) we wszystkich katalogach',
     ],
     faq: [
       {
         q: 'Jak pozycjonować markę w&nbsp;Microsoft Copilot?',
-        a: 'Trzy filary: (1) technika – Bing Webmaster Tools, IndexNow, szybka strona i dostęp dla Bingbot; (2) struktura treści – krótkie odpowiedzi pod nagłówkami, dane strukturalne i&nbsp;precyzyjne fakty zamiast ogólników; (3) autorytet encji – Bing Places, spójne dane firmy i&nbsp;wzmianki w&nbsp;zewnętrznych źródłach B2B. Zaczynamy od audytu panelu AI Performance, który pokazuje bieżące cytowania.',
+        a: 'Opieramy się na trzech filarach: (1) technika – Bing Webmaster Tools, IndexNow, szybkie ładowanie stron, plik robots.txt z&nbsp;dopuszczeniem Bingbota; (2) struktura treści – zwięzłe odpowiedzi pod nagłówkami, precyzyjne dane zamiast ogólników; (3) autorytet marki – Bing Places, spójne dane teleadresowe, wzmianki w&nbsp;zewnętrznych źródłach B2B. Zaczynamy od audytu w&nbsp;panelu AI Performance, który pokazuje bieżące cytowania Twojej domeny.',
       },
       {
         q: 'Czy Bing Copilot ma znaczenie w&nbsp;Polsce?',
-        a: 'Udział Copilot jest mniejszy niż ChatGPT, ale w&nbsp;firmach korzystających z&nbsp;Windows i&nbsp;Microsoft 365 bywa domyślnym asystentem AI. Organizacje z&nbsp;branży IT, finansowej, prawnej i&nbsp;produkcyjnej mają wysoką ekspozycję na Copilot. Audyt pokaże realny udział Copilot w&nbsp;zapytaniach Twojej niszy.',
+        a: 'Udział Copilota w&nbsp;rynku jest mniejszy niż ChatGPT, ale w&nbsp;środowisku biznesowym (Windows + Microsoft 365) to domyślny asystent wielu organizacji. Firmy z&nbsp;branży IT, finansowej, prawnej i&nbsp;produkcyjnej mają ogromną ekspozycję na Copilota. Audyt pokaże realny udział tego asystenta w&nbsp;zapytaniach z&nbsp;Twojej niszy.',
       },
       {
         q: 'Bing SEO vs Google SEO – co jest inne?',
-        a: 'Bing mocniej zwraca uwagę na dokładne dopasowanie fraz w&nbsp;tytułach i&nbsp;nagłówkach, dane strukturalne, sygnały z&nbsp;LinkedIn oraz świeżość treści. Google częściej mocniej opiera się na profilu linków, Core Web Vitals i&nbsp;E-E-A-T. Optymalizacja pod Bing często wspiera też widoczność w&nbsp;ChatGPT Search, bo oba kanały korzystają z&nbsp;wyszukiwania sieciowego i&nbsp;źródeł dostępnych dla botów.',
+        a: 'Algorytmy Bing mocniej premiują: słowa kluczowe w&nbsp;dokładnym dopasowaniu (w&nbsp;tytułach i&nbsp;nagłówkach), dane strukturalne Schema.org oraz sygnały z&nbsp;mediów społecznościowych (np. LinkedIn w&nbsp;sektorze B2B). Z&nbsp;kolei Google bardziej skupia się na profilu linków i&nbsp;doświadczeniu użytkownika. Co ważne, optymalizacja pod Bing synergicznie wspiera widoczność w&nbsp;wyszukiwarce ChatGPT Search, która korzysta z&nbsp;tego samego indeksu.',
       },
       {
         q: 'Jak mierzycie efekty dla Copilot?',
-        a: 'Podstawą jest panel AI Performance w&nbsp;Bing Webmaster Tools: liczba cytowań, strony wykorzystywane w&nbsp;odpowiedziach i&nbsp;zapytania, przy których Copilot pobiera dane z&nbsp;witryny. Uzupełniamy to monitoringiem Bingbot w&nbsp;logach serwera oraz udziałem marki w&nbsp;odpowiedziach dla zestawu zapytań testowych.',
+        a: 'Podstawą jest panel AI Performance w&nbsp;narzędziach Bing – sprawdzamy całkowitą liczbę cytowań oraz konkretne zapytania użytkowników (Grounding Queries). Uzupełniamy to monitoringiem logów serwera i&nbsp;badaniem udziału marki w&nbsp;odpowiedziach AI (Share of Model). Co miesiąc dostarczamy raport z&nbsp;wynikami i&nbsp;planem na kolejne 30 dni.',
       },
     ],
   },

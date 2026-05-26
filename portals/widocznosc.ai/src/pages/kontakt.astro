@@ -7,7 +7,7 @@ import ScrollUpButton from '../components/ScrollUpButton.astro';
 
 <Layout
   title="Kontakt – widocznosc.ai"
-  description="Skontaktuj się z zespołem widocznosc.ai. Zamów audyt widoczności AI, zapytaj o doradztwo GEO. Bezpłatna konsultacja 30 minut."
+  description="Skontaktuj się z zespołem widocznosc.ai. Zamów audyt widoczności w AI, zapytaj o doradztwo GEO i wyprzedź konkurencję. Bezpłatna konsultacja 30 minut."
 >
   <Navbar />
 
@@ -20,12 +20,21 @@ import ScrollUpButton from '../components/ScrollUpButton.astro';
           <h1 class="display-xl mt-4 mb-6">
             Porozmawiajmy o widoczności<br />Twojej marki w&nbsp;<span class="accent">AI</span>
           </h1>
+          <p class="text-ink mb-6 max-w-xl text-lg leading-relaxed">
+            Wypełnij formularz lub napisz do nas bezpośrednio. Odpowiadamy w&nbsp;ciągu 24 godzin
+            w&nbsp;dni robocze.
+          </p>
           <p class="text-ink mb-12 max-w-xl text-lg leading-relaxed">
-            Wypełnij formularz albo zadzwoń. Odpowiadamy w&nbsp;ciągu 24 godzin
-            w&nbsp;dni robocze. Bezpłatna konsultacja 30 minut – bez sprzedaży, bez zobowiązań.
+            Zarezerwuj bezpłatną, 30-minutową konsultację – pokażemy Ci na żywo, jak modele AI
+            widzą Twoją branżę. Zdobędziesz konkretną wiedzę, bez agresywnej sprzedaży i&nbsp;bez
+            żadnych zobowiązań.
           </p>
 
           <div class="space-y-8">
+            <h2 class="text-ink text-xl font-medium" style="font-family: var(--font-display);">
+              Kanały kontaktu
+            </h2>
+
             <!-- Email -->
             <div>
               <div class="text-ink-muted mb-1 text-sm">E-mail</div>
@@ -112,8 +121,8 @@ import ScrollUpButton from '../components/ScrollUpButton.astro';
                 <select id="type" name="type" required class="text-input" style="background: var(--bg-canvas);">
                   <option value="">Wybierz...</option>
                   <option value="audyt-ai">Kompleksowy audyt AI</option>
-                  <option value="audyt-content">Audyt contentu pod AI</option>
-                  <option value="visibility-checker">Visibility Checker (bezpłatne)</option>
+                  <option value="audyt-content">Audyt treści pod AI</option>
+                  <option value="visibility-checker">Szybki test widoczności (bezpłatny)</option>
                   <option value="konsultacja">Bezpłatna konsultacja 30 min</option>
                   <option value="wdrozenie">Audyt + wdrożenie 90 dni</option>
                   <option value="inne">Inne</option>
@@ -125,7 +134,7 @@ import ScrollUpButton from '../components/ScrollUpButton.astro';
                   id="message"
                   name="message"
                   rows="5"
-                  placeholder="Opisz krótko Twój kontekst – branżę, główne pytania, oczekiwany rezultat."
+                  placeholder="Opisz krótko Twój kontekst – branżę, główne wyzwania oraz oczekiwany rezultat."
                   required
                   autocomplete="off"
                   class="text-input resize-none"
@@ -135,9 +144,10 @@ import ScrollUpButton from '../components/ScrollUpButton.astro';
                 Wyślij wiadomość
               </button>
               <p class="text-ink-muted mt-4 text-center text-xs leading-relaxed">
-                Wysyłając formularz wyrażasz zgodę na kontakt zwrotny zgodnie z naszą
+                Wysyłając formularz, wyrażasz zgodę na przetwarzanie danych w celu obsługi zapytania,
+                zgodnie z naszą
                 <a class="text-accent-blue underline underline-offset-2 hover:opacity-85" href="/polityka-prywatnosci">
-                  polityką prywatności
+                  Polityką Prywatności
                 </a>.
               </p>
             </form>

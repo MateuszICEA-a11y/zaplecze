@@ -9,26 +9,26 @@ import { AI_MODELS } from '../data/aiModels';
 const services = [
   {
     id: 'audyt',
-    title: 'Audyt widoczności AI',
-    desc: 'Sprawdzamy jak Twoja marka jest cytowana w 5 modelach AI. Mapa cytowań, gap analysis vs konkurencja.',
+    title: 'Audyt widoczności w AI',
+    desc: 'Sprawdzamy, jak Twoja marka jest obecnie cytowana w 5 głównych modelach AI. Budujemy mapę cytowań oraz przeprowadzamy analizę luk (gap analysis) i porównanie z działaniami Twojej konkurencji.',
     variant: 'violet',
   },
   {
     id: 'content',
-    title: 'Optymalizacja contentu pod LLM',
-    desc: 'Przepisanie istniejących stron pod gęstość informacji, dane strukturalne i źródła cytowalne. Briefy dla copywriterów.',
+    title: 'Optymalizacja treści pod modele językowe',
+    desc: 'Optymalizujemy istniejące teksty pod kątem gęstości faktów i danych strukturalnych (Schema), by stały się idealnym źródłem do cytowania dla sztucznej inteligencji. Tworzymy precyzyjne wytyczne (briefy) dla copywriterów.',
     variant: 'cyan',
   },
   {
     id: 'monitoring',
-    title: 'Monitoring cytowań',
-    desc: 'Stałe śledzenie 50-200 zapytań co tydzień. Alerty o pojawieniu się konkurencji, dashboard z historią.',
+    title: 'Stały monitoring cytowań',
+    desc: 'Regularnie, z tygodnia na tydzień, śledzimy od 50 do 200 najważniejszych zapytań dla Twojej firmy. Otrzymujesz alerty o działaniach konkurencji oraz dostęp do panelu analitycznego (dashboardu) z historią widoczności.',
     variant: 'green',
   },
   {
     id: 'strategia',
-    title: 'Strategia GEO 12 miesięcy',
-    desc: 'Plan widoczności na cały rok: mapa fraz, kalendarz contentu, plan dystrybucji + linkbuilding pod GEO.',
+    title: 'Strategia GEO na 12 miesięcy',
+    desc: 'Tworzymy kompleksowy plan widoczności na cały rok: mapę fraz, kalendarz publikacji treści, plan dystrybucji oraz strategię pozyskiwania linków uwiarygadniających (linkbuilding pod GEO).',
     variant: 'blue',
   },
 ] as const;
@@ -43,58 +43,10 @@ const gradientStyle = (variant: string) => {
   return 'background: var(--grad-blue); background-size: 130% 130%; background-position: 70% 25%;';
 };
 
-const heroStats = [
-  { value: '5', label: 'modeli AI', detail: 'ChatGPT · Claude · Gemini · Perplexity · Copilot' },
-  { value: '200+', label: 'wdrożeń SEO', detail: 'doświadczenie zespołu ICEA' },
-  { value: '15+', label: 'lat doświadczenia', detail: 'SEO, content, analityka' },
-  { value: '#1', label: 'SEMKRK', detail: 'najwyżej oceniona prezentacja 2024' },
-] as const;
-
-const modelHooks: Record<string, { value: string; label: string }> = {
-  chatgpt: { value: '140', label: 'wysz./mc' },
-  claude: { value: '30', label: 'wysz./mc' },
-  gemini: { value: '50', label: 'wysz./mc' },
-  perplexity: { value: '40', label: 'wysz./mc' },
-  'bing-copilot': { value: '20', label: 'wysz./mc' },
-};
-
-const decisionRows = [
-  {
-    model: 'ChatGPT',
-    icp: 'B2C, edukacja, usługi masowe',
-    usage: 'Najszerszy punkt wejścia dla zapytań poradnikowych i rekomendacyjnych.',
-    roi: 'Pierwszy wybór, gdy liczy się skala zapytań i świadomość marki.',
-  },
-  {
-    model: 'Claude',
-    icp: 'technologie B2B, SaaS, doradztwo',
-    usage: 'Dłuższe analizy, badania, porównania ofert i dokumentów.',
-    roi: 'Najlepszy przy droższych usługach i dłuższym procesie decyzyjnym.',
-  },
-  {
-    model: 'Gemini',
-    icp: 'E-commerce, lokalne usługi, marki z SEO',
-    usage: 'Odpowiedzi powiązane z indeksem Google i AI Overviews.',
-    roi: 'Dobry wybór, gdy masz już mocny content i autorytet w Google.',
-  },
-  {
-    model: 'Perplexity',
-    icp: 'Finanse, medycyna, prawo, badania B2B',
-    usage: 'Zapytania wymagające jawnych źródeł i szybkiej weryfikacji.',
-    roi: 'Wysoki, gdy masz cytowalne raporty, dane i eksperckie strony ofertowe.',
-  },
-  {
-    model: 'Bing Copilot',
-    icp: 'Enterprise, Microsoft 365, Windows',
-    usage: 'Środowiska firmowe, Edge, Bing i asystenci w pakiecie Microsoft.',
-    roi: 'Najlepszy jako kanał wspierający dla segmentu korporacyjnego.',
-  },
-] as const;
-
 const siteUrl = 'https://widocznosc.ai';
 const pageUrl = `${siteUrl}/pozycjonowanie-ai/`;
 const pageDescription =
-  'Pozycjonowanie marki w wyszukiwarkach AI: ChatGPT, Claude, Gemini, Perplexity, Bing Copilot. Audyt widoczności, optymalizacja contentu, monitoring cytowań, strategia GEO.';
+  'Pozycjonowanie marki w wyszukiwarkach AI: ChatGPT, Claude, Gemini, Perplexity, Bing Copilot. Audyt widoczności, optymalizacja treści, monitoring cytowań, strategia GEO.';
 
 const serviceSchema = {
   '@context': 'https://schema.org',
@@ -185,30 +137,15 @@ const serviceSchema = {
         Pozycjonowanie w&nbsp;<span class="accent">AI</span>
       </h1>
       <p class="text-ink mx-auto text-lg leading-relaxed" style="max-width: 720px;">
-        Widoczność marki w&nbsp;ChatGPT, Claude, Gemini, Perplexity i&nbsp;Bing Copilot. Mierzymy
-        cytowania, nie ranking. Każdy model wymaga innego podejścia – wybierz konkretny silnik
-        poniżej, albo zacznij od kompleksowego audytu wszystkich pięciu.
+        Zbuduj widoczność swojej marki w ChatGPT, Claude, Gemini, Perplexity i Bing Copilot. W
+        nowym standardzie wyszukiwania nie walczymy o pozycje w rankingu – walczymy o bycie
+        cytowanym źródłem. Ponieważ każdy model AI wymaga innego podejścia, wybierz konkretny
+        silnik poniżej lub zacznij od kompleksowego audytu wszystkich pięciu.
       </p>
       <div class="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
         <a class="btn-primary" href="/kontakt?type=audyt-ai">Zamów audyt wszystkich modeli</a>
         <a class="btn-secondary" href="/narzedzia/brand-check">Sprawdź widoczność · 60s</a>
       </div>
-    </div>
-  </section>
-
-  <section class="hero-stat-strip" aria-label="Liczby dla pozycjonowania AI">
-    <div class="content-container">
-      <dl class="hero-stat-grid">
-        {
-          heroStats.map((stat) => (
-            <div class="hero-stat-cell">
-              <dt>{stat.label}</dt>
-              <dd>{stat.value}</dd>
-              <p>{stat.detail}</p>
-            </div>
-          ))
-        }
-      </dl>
     </div>
   </section>
 
@@ -227,9 +164,10 @@ const serviceSchema = {
         </div>
         <div class="head-right">
           <p class="subhead">
-            Każdy model AI inaczej buduje odpowiedzi: ChatGPT łączy wiedzę modelu z wyszukiwaniem sieciowym,
-            Gemini cytuje z indeksu Google, Perplexity stawia na transparentne źródła.
-            Optymalizacja pod jeden model nie wystarczy.
+            Każdy model AI inaczej buduje swoje odpowiedzi: ChatGPT łączy dane treningowe z
+            wyszukiwaniem na żywo, Gemini cytuje bezpośrednio z indeksu Google, a Perplexity stawia
+            na maksymalną transparentność źródeł. Optymalizacja pod tylko jeden model to dziś za
+            mało.
           </p>
         </div>
       </header>
@@ -243,10 +181,6 @@ const serviceSchema = {
             >
               <div class="flex items-start justify-between gap-3">
                 <div class="text-ink-muted text-sm">{model.vendor}</div>
-                <div class="model-hook" aria-label={`${modelHooks[model.slug].value} ${modelHooks[model.slug].label}`}>
-                  <strong>{modelHooks[model.slug].value}</strong>
-                  <span>{modelHooks[model.slug].label}</span>
-                </div>
               </div>
               <h3
                 class="mt-2 mb-3 text-2xl font-medium"
@@ -279,8 +213,9 @@ const serviceSchema = {
         </div>
         <div class="head-right">
           <p class="subhead">
-            Niezależnie od tego który model AI ma być Twoim głównym kanałem, sposób pracy zostaje
-            ten sam. Mierzymy, optymalizujemy, monitorujemy, planujemy.
+            Niezależnie od tego, który model AI ma być Twoim głównym kanałem pozyskiwania ruchu,
+            nasz proces pracy pozostaje ten sam. Mierzymy, optymalizujemy, monitorujemy i
+            strategicznie planujemy.
           </p>
         </div>
       </header>
@@ -315,59 +250,10 @@ const serviceSchema = {
     </div>
   </section>
 
-  <section class="relative w-full" aria-labelledby="decision-title">
-    <div class="content-container py-16 lg:py-20">
-      <header class="section-head">
-        <div class="head-left">
-          <div class="head-meta">
-            <span class="section-index">P/03</span>
-            <span class="eyebrow">Decyzja</span>
-          </div>
-          <h2 id="decision-title" class="display-lg">Który model ma największy sens biznesowo?</h2>
-        </div>
-        <div class="head-right">
-          <p class="subhead">
-            Zacznij od modelu, w którym Twoi klienci już zadają pytania. Potem rozszerz monitoring
-            na pozostałe silniki, żeby porównać koszt contentu z realną szansą na cytowanie.
-          </p>
-        </div>
-      </header>
-
-      <div
-        class="decision-table"
-        role="table"
-        aria-label="Porównanie modeli AI według grupy docelowej, wykorzystania i ROI"
-      >
-        <div class="decision-row decision-head" role="row">
-          <div role="columnheader">Model</div>
-          <div role="columnheader">Grupa docelowa</div>
-          <div role="columnheader">Wykorzystanie</div>
-          <div role="columnheader">ROI</div>
-        </div>
-        {
-          decisionRows.map((row) => (
-            <div class="decision-row" role="row">
-              <div class="decision-model" role="cell">{row.model}</div>
-              <div role="cell" data-label="Grupa docelowa">
-                {row.icp}
-              </div>
-              <div role="cell" data-label="Wykorzystanie">
-                {row.usage}
-              </div>
-              <div role="cell" data-label="ROI">
-                {row.roi}
-              </div>
-            </div>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
   <CTABand
     eyebrow="Decyzja"
-    title="Nie wiesz od którego modelu zacząć?"
-    subtitle="Bezpłatna konsultacja 30 minut. Mówimy gdzie Twoja branża jest najczęściej pytana w AI i który silnik jako pierwszy daje ROI w Twoim przypadku."
+    title="Nie wiesz, od którego modelu zacząć?"
+    subtitle="Skorzystaj z bezpłatnej, 30-minutowej konsultacji. Wskażemy, o co użytkownicy AI najczęściej pytają w Twojej branży, i podpowiemy, który silnik najszybciej wygeneruje dla Ciebie zwrot z inwestycji (ROI)."
     primaryLabel="Zamów audyt AI"
     primaryHref="/kontakt?type=audyt-ai"
     ghostLabel="Bezpłatna konsultacja"
@@ -379,196 +265,8 @@ const serviceSchema = {
 </Layout>
 
 <style>
-  .hero-stat-strip {
-    border-top: 1px solid var(--hairline-soft);
-    border-bottom: 1px solid var(--hairline-soft);
-    background: var(--bg-canvas);
-  }
-
-  .hero-stat-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0;
-    margin: 0;
-    padding: 28px 0;
-  }
-
-  .hero-stat-cell {
-    border-right: 1px solid var(--hairline-soft);
-    padding: 0 18px;
-  }
-
-  .hero-stat-cell:nth-child(2n) {
-    border-right: 0;
-  }
-
-  .hero-stat-cell:nth-child(n + 3) {
-    border-top: 1px solid var(--hairline-soft);
-    padding-top: 18px;
-    margin-top: 18px;
-  }
-
-  .hero-stat-cell:first-child {
-    padding-left: 0;
-  }
-
-  .hero-stat-cell dt {
-    color: var(--ink-muted);
-    font-size: 12px;
-    line-height: 1.35;
-    margin-bottom: 8px;
-  }
-
-  .hero-stat-cell dd {
-    color: var(--ink);
-    font-family: var(--font-display);
-    font-size: clamp(36px, 5vw, 68px);
-    font-weight: 500;
-    letter-spacing: -0.04em;
-    line-height: 0.95;
-    margin: 0;
-  }
-
-  .hero-stat-cell p {
-    color: var(--ink-faint);
-    font-size: 12px;
-    line-height: 1.4;
-    margin: 10px 0 0;
-    max-width: 220px;
-  }
-
-  .model-hook {
-    align-items: flex-end;
-    display: flex;
-    flex-direction: column;
-    flex: 0 0 auto;
-    gap: 2px;
-    text-align: right;
-  }
-
-  .model-hook strong {
-    color: var(--ink);
-    font-family: var(--font-display);
-    font-size: 24px;
-    font-weight: 500;
-    letter-spacing: -0.04em;
-    line-height: 1;
-  }
-
-  .model-hook span {
-    color: var(--ink-faint);
-    font-size: 11px;
-    line-height: 1.2;
-  }
-
   .model-card {
     border-radius: 15px;
     padding: 24px;
-  }
-
-  .decision-table {
-    border: 1px solid var(--hairline-soft);
-    border-radius: 18px;
-    overflow: hidden;
-  }
-
-  .decision-row {
-    display: grid;
-    grid-template-columns: 0.75fr 1.1fr 1.45fr 1.45fr;
-  }
-
-  .decision-row + .decision-row {
-    border-top: 1px solid var(--hairline-soft);
-  }
-
-  .decision-row > div {
-    color: var(--ink-muted);
-    font-size: 13px;
-    line-height: 1.5;
-    padding: 18px;
-  }
-
-  .decision-row > div + div {
-    border-left: 1px solid var(--hairline-soft);
-  }
-
-  .decision-head {
-    background: var(--bg-surface-1);
-  }
-
-  .decision-head > div {
-    color: var(--ink-faint);
-    font-family: ui-monospace, 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-
-  .decision-model {
-    color: var(--ink) !important;
-    font-family: var(--font-display);
-    font-size: 20px !important;
-    letter-spacing: -0.03em;
-  }
-
-  @media (min-width: 768px) {
-    .hero-stat-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      padding: 36px 0;
-    }
-
-    .hero-stat-cell {
-      padding: 0 28px;
-    }
-
-    .hero-stat-cell:nth-child(2n) {
-      border-right: 1px solid var(--hairline-soft);
-    }
-
-    .hero-stat-cell:nth-child(n + 3) {
-      border-top: 0;
-      margin-top: 0;
-      padding-top: 0;
-    }
-
-    .hero-stat-cell:last-child {
-      border-right: 0;
-      padding-right: 0;
-    }
-  }
-
-  @media (max-width: 767px) {
-    .decision-table {
-      border-radius: 15px;
-    }
-
-    .decision-head {
-      display: none;
-    }
-
-    .decision-row {
-      display: block;
-      padding: 18px;
-    }
-
-    .decision-row > div {
-      padding: 0;
-    }
-
-    .decision-row > div + div {
-      border-left: 0;
-      margin-top: 14px;
-    }
-
-    .decision-row > div:not(.decision-model)::before {
-      color: var(--ink-faint);
-      content: attr(data-label);
-      display: block;
-      font-family: ui-monospace, 'JetBrains Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.04em;
-      margin-bottom: 4px;
-      text-transform: uppercase;
-    }
   }
 </style>

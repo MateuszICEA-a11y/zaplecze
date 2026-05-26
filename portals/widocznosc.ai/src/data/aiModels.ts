@@ -33,7 +33,7 @@ export const AI_MODELS: AIModel[] = [
     keyword: 'pozycjonowanie w chatgpt',
     keywordVolume: 140,
     shortDesc:
-      'Najpopularniejszy model w Polsce. ChatGPT Search łączy odpowiedzi modelu z wyszukiwaniem sieciowym i cytowanymi źródłami.',
+      'Najpopularniejszy asystent w Polsce. Wykorzystuje wyszukiwanie ChatGPT Search z dostępem do sieci, łącząc dane treningowe i pobieranie informacji na żywo (RAG).',
     symbol: '◐',
   },
   {
@@ -54,7 +54,8 @@ export const AI_MODELS: AIModel[] = [
     href: '/pozycjonowanie-ai/gemini',
     keyword: 'pozycjonowanie w gemini',
     keywordVolume: 50,
-    shortDesc: 'Integracja z Google Search, AI Overviews i Workspace. Cytowania bezpośrednio z indeksu Google.',
+    shortDesc:
+      'Integracja z wyszukiwarką Google, Podsumowaniami AI (AI Overviews) i usługami Workspace. Cytowania bezpośrednio z indeksu Google.',
     symbol: '⊡',
   },
   {
@@ -65,7 +66,7 @@ export const AI_MODELS: AIModel[] = [
     keyword: 'pozycjonowanie w perplexity',
     keywordVolume: 40,
     shortDesc:
-      'Wyszukiwarka odpowiedzi z mocnym naciskiem na cytowania. Każde stwierdzenie z linkiem do źródła.',
+      'Wyszukiwarka odpowiedzi z silnym naciskiem na cytowania. Każde wygenerowane stwierdzenie posiada przypis z linkiem do źródła.',
     symbol: '◇',
   },
   {
@@ -76,7 +77,7 @@ export const AI_MODELS: AIModel[] = [
     keyword: 'pozycjonowanie w bing copilot',
     keywordVolume: 20,
     shortDesc:
-      'Azure OpenAI + indeks Bing. Zintegrowany z przeglądarką Edge i systemem Windows, domyślny w korporacjach.',
+      'Połączenie modelu GPT-4 z indeksem Bing. Mniejszy udział w rynku, ale model jest domyślnie wbudowany w przeglądarkę Edge i system Windows.',
     symbol: '∴',
   },
 ];
