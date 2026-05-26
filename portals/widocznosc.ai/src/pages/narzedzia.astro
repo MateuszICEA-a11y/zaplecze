@@ -7,6 +7,22 @@ import CTABand from '../components/CTABand.astro';
 
 const tools = [
   {
+    id: 'brand-check',
+    status: 'beta',
+    eyebrow: 'Bezpłatne · 60s',
+    title: 'Brand Check',
+    subtitle: 'Co AI wie o Twojej marce – sentyment, halucynacje i konkurenci',
+    desc:
+      'Podajesz markę, domenę i kategorię. Odpytujemy przez OpenRouter cztery rodziny modeli: ChatGPT, Claude, Gemini i Perplexity. Wynik: Brand Visibility Score 0-100, rozpoznawalność per model, cytowane źródła, możliwe halucynacje i konkurenci pojawiający się zamiast Ciebie.',
+    cta: { label: 'Sprawdź markę', href: '/narzedzia/brand-check' },
+    bullets: [
+      'ChatGPT, Claude, Gemini i Perplexity w jednym przebiegu',
+      'Sentyment i rozpoznawalność marki per model',
+      'Lista możliwych halucynacji o firmie',
+      'Konkurenci i źródła cytowane w odpowiedziach',
+    ],
+  },
+  {
     id: 'ai-bots-check',
     status: 'live',
     eyebrow: 'Bezpłatne · 5s',
@@ -87,7 +103,7 @@ const toneColor = (tone: string) => {
 
 <Layout
   title="Narzędzia – widocznosc.ai"
-  description="Narzędzia do audytu widoczności marki w AI: Visibility Checker (bezpłatny), kompleksowy audyt AI, audyt contentu pod LLM."
+  description="Narzędzia do audytu widoczności marki w AI: Brand Check, AI Bots Check, kompleksowy audyt AI i audyt contentu pod LLM."
 >
   <Navbar />
 
@@ -99,8 +115,8 @@ const toneColor = (tone: string) => {
         Sprawdź widoczność, zanim sprzedasz audyt klientowi
       </h1>
       <p class="text-ink mx-auto text-lg leading-relaxed" style="max-width: 720px;">
-        Trzy narzędzia – jedno bezpłatne, dwa profesjonalne. Wszystkie mierzą realne cytowania
-        w pięciu wyszukiwarkach AI, nie pseudo-ranking ani score od marketingu.
+        Darmowe testy i profesjonalne audyty. Sprawdzasz, co modele wiedzą o marce, czy boty AI
+        mają dostęp do domeny i które działania realnie zwiększą cytowalność.
       </p>
     </div>
   </section>

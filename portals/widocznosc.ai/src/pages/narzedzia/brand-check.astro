@@ -1,0 +1,922 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ScrollUpButton from '../../components/ScrollUpButton.astro';
+---
+
+<Layout
+  title="Brand Check – co AI wie o Twojej marce?"
+  description="Sprawdź, jak ChatGPT, Claude, Gemini i Perplexity opisują Twoją markę. Sentyment, możliwe halucynacje, cytowane źródła i konkurenci polecani zamiast Ciebie."
+>
+  <Navbar />
+
+  <main class="flex-grow">
+    <section class="tool-hero">
+      <div class="content-container tool-hero-inner">
+        <nav class="tool-breadcrumb" aria-label="Ścieżka nawigacji">
+          <a href="/narzedzia" class="tool-breadcrumb-link">Narzędzia</a>
+          <span class="tool-breadcrumb-sep" aria-hidden="true">/</span>
+          <span class="tool-breadcrumb-current">Brand Check</span>
+        </nav>
+
+        <header class="text-center">
+          <span class="eyebrow tool-eyebrow">Narzędzie · beta</span>
+          <h1 class="tool-hero-title">
+            Co AI wie o&nbsp;<span class="tool-hero-accent">Twojej marce</span>?
+          </h1>
+          <p class="tool-hero-copy">
+            Odpytujemy przez OpenRouter cztery rodziny modeli: ChatGPT, Claude, Gemini i&nbsp;Perplexity.
+            Raport pokazuje rozpoznawalność marki, sentyment, możliwe halucynacje, źródła
+            oraz konkurentów pojawiających się w&nbsp;odpowiedziach.
+          </p>
+        </header>
+
+        <form id="brand-form" class="brand-form" novalidate>
+          <div class="field-grid">
+            <label class="field">
+              <span>Nazwa marki</span>
+              <input
+                id="brand-input"
+                name="brand"
+                type="text"
+                required
+                autocomplete="organization"
+                placeholder="np. ICEA"
+              />
+            </label>
+            <label class="field">
+              <span>Domena</span>
+              <input
+                id="domain-input"
+                name="domain"
+                type="text"
+                autocomplete="url"
+                spellcheck="false"
+                placeholder="np. grupa-icea.pl"
+              />
+            </label>
+            <label class="field">
+              <span>Kategoria</span>
+              <input
+                id="category-input"
+                name="category"
+                type="text"
+                autocomplete="off"
+                placeholder="np. agencja SEO"
+              />
+            </label>
+            <label class="field">
+              <span>Rynek</span>
+              <input id="market-input" name="market" type="text" value="Polska" />
+            </label>
+          </div>
+
+          <button type="submit" class="btn-primary check-submit">
+            <span class="check-submit-label">Sprawdź markę</span>
+            <span class="check-submit-spinner" aria-hidden="true"></span>
+          </button>
+          <p class="check-note">
+            Test trwa zwykle 30-60 sekund. Każdy model może zwrócić osobny błąd bez blokowania
+            całego raportu.
+          </p>
+        </form>
+
+        <section id="results" class="results-wrap hidden" aria-live="polite"></section>
+      </div>
+    </section>
+
+    <section id="default-overview" class="tool-overview">
+      <div class="content-container">
+        <h2 class="display-lg tool-overview-title">Co mierzy Brand Check?</h2>
+        <div class="overview-grid">
+          <article class="overview-card">
+            <span class="overview-num">01</span>
+            <h3>Rozpoznawalność</h3>
+            <p>Czy model zna markę, zna ją częściowo, czy musi zgadywać na podstawie skąpych źródeł.</p>
+          </article>
+          <article class="overview-card">
+            <span class="overview-num">02</span>
+            <h3>Sentyment</h3>
+            <p>Czy opis marki jest pozytywny, neutralny, negatywny albo niespójny między modelami.</p>
+          </article>
+          <article class="overview-card">
+            <span class="overview-num">03</span>
+            <h3>Halucynacje</h3>
+            <p>Błędne usługi, lokalizacje, specjalizacje i&nbsp;twierdzenia, których nie potwierdza profil marki.</p>
+          </article>
+          <article class="overview-card">
+            <span class="overview-num">04</span>
+            <h3>Konkurenci</h3>
+            <p>Firmy i alternatywy, które modele podają użytkownikowi zamiast analizowanej marki.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <ScrollUpButton />
+</Layout>
+
+<style>
+  .tool-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 104px 0 88px;
+    background:
+      radial-gradient(
+        circle at 50% 12%,
+        color-mix(in srgb, var(--accent-blue) 12%, transparent) 0%,
+        transparent 34%
+      ),
+      linear-gradient(180deg, var(--bg-surface-1) 0%, var(--bg-canvas) 78%);
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+
+  .tool-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(var(--hairline-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--hairline-soft) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.16), transparent 62%);
+    pointer-events: none;
+  }
+
+  .tool-hero-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .tool-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 36px;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-muted);
+  }
+
+  .tool-breadcrumb-link {
+    color: var(--ink-muted);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .tool-breadcrumb-link:hover {
+    color: var(--ink);
+  }
+
+  .tool-breadcrumb-sep {
+    color: var(--ink-faint);
+  }
+
+  .tool-breadcrumb-current {
+    color: var(--ink);
+  }
+
+  .tool-eyebrow {
+    margin-bottom: 28px;
+  }
+
+  .tool-hero-title {
+    max-width: 980px;
+    margin: 0 auto;
+    font-family: var(--font-display);
+    font-size: clamp(48px, 6.4vw, 86px);
+    font-weight: 500;
+    line-height: 0.96;
+    letter-spacing: -0.045em;
+    color: var(--ink);
+    text-wrap: balance;
+  }
+
+  .tool-hero-accent {
+    color: var(--accent-blue);
+  }
+
+  .tool-hero-copy {
+    max-width: 820px;
+    margin: 28px auto 0;
+    font-family: var(--font-sans);
+    font-size: clamp(17px, 1.4vw, 21px);
+    line-height: 1.55;
+    letter-spacing: -0.018em;
+    color: var(--ink);
+  }
+
+  .brand-form {
+    width: min(100%, 980px);
+    margin: 48px auto 0;
+    padding: 24px;
+    background: var(--bg-surface-1);
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-xl);
+    text-align: left;
+  }
+
+  .field-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  @media (min-width: 768px) {
+    .field-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .field span {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 650;
+    color: var(--ink-muted);
+  }
+
+  .field input {
+    width: 100%;
+    height: 54px;
+    padding: 0 18px;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    color: var(--ink);
+    background: var(--bg-surface-2);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-md);
+    outline: none;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease;
+  }
+
+  .field input::placeholder {
+    color: var(--ink-muted);
+  }
+
+  .field input:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(56, 130, 246, 0.15);
+  }
+
+  .check-submit {
+    position: relative;
+    width: 100%;
+    justify-content: center;
+    height: 56px;
+    margin-top: 18px;
+  }
+
+  .check-note {
+    margin: 12px 0 0;
+    color: var(--ink-muted);
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .check-submit[aria-busy='true'] .check-submit-label {
+    opacity: 0;
+  }
+
+  .check-submit-spinner {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
+    border-radius: 50%;
+    opacity: 0;
+    animation: spin 0.7s linear infinite;
+  }
+
+  .check-submit[aria-busy='true'] .check-submit-spinner {
+    opacity: 1;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .tool-overview {
+    padding: 72px 0 80px;
+  }
+
+  .tool-overview-title {
+    max-width: 960px;
+  }
+
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 36px;
+  }
+
+  @media (min-width: 768px) {
+    .overview-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1120px) {
+    .overview-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .overview-card {
+    background: var(--bg-surface-1);
+    border: 1px solid color-mix(in srgb, var(--hairline) 78%, var(--ink) 22%);
+    border-radius: var(--r-lg);
+    padding: 24px 24px 28px;
+    box-shadow: 0 16px 44px rgb(15 23 42 / 0.04);
+  }
+
+  .overview-num {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 24px;
+    line-height: 1;
+    color: var(--accent-blue);
+    margin-bottom: 18px;
+  }
+
+  .overview-card h3 {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 650;
+    color: var(--ink);
+    margin: 0 0 10px;
+  }
+
+  .overview-card p {
+    color: var(--ink-muted);
+    font-size: 15px;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .results-wrap {
+    width: min(100%, 1080px);
+    margin-top: 54px;
+    text-align: left;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  :global(.brand-results) {
+    display: grid;
+    gap: 20px;
+  }
+
+  :global(.brand-score-card) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 28px;
+    align-items: center;
+    background: var(--bg-surface-1);
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-xl);
+    padding: 30px;
+  }
+
+  :global(.brand-score-circle) {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background:
+      radial-gradient(circle at center, var(--bg-surface-1) 56%, transparent 58%),
+      conic-gradient(var(--accent-blue) calc(var(--score) * 1%), var(--bg-surface-2) 0);
+  }
+
+  :global(.brand-score-num) {
+    font-family: var(--font-display);
+    font-size: 42px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.04em;
+  }
+
+  :global(.brand-score-meta) {
+    min-width: 0;
+  }
+
+  :global(.brand-score-kicker) {
+    color: var(--accent-blue);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  :global(.brand-score-title) {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--ink);
+    margin: 0 0 10px;
+  }
+
+  :global(.brand-score-copy) {
+    color: var(--ink-muted);
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  :global(.brand-stats) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+  }
+
+  :global(.brand-stat) {
+    background: var(--bg-surface-1);
+    border-radius: var(--r-lg);
+    padding: 18px 20px;
+  }
+
+  :global(.brand-stat-value) {
+    font-family: var(--font-display);
+    font-size: 28px;
+    color: var(--ink);
+  }
+
+  :global(.brand-stat-label) {
+    color: var(--ink-muted);
+    font-size: 12px;
+    margin-top: 4px;
+  }
+
+  :global(.panel) {
+    background: var(--bg-surface-1);
+    border-radius: var(--r-xl);
+    padding: 26px;
+  }
+
+  :global(.panel-title) {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 0 0 18px;
+  }
+
+  :global(.model-grid) {
+    display: grid;
+    gap: 12px;
+  }
+
+  :global(.model-row) {
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    gap: 18px;
+    padding: 18px;
+    background: var(--bg-canvas);
+    border-radius: var(--r-lg);
+  }
+
+  :global(.model-name) {
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  :global(.model-pill) {
+    display: inline-flex;
+    width: fit-content;
+    margin-top: 8px;
+    padding: 4px 9px;
+    border-radius: var(--r-pill);
+    background: var(--bg-surface-2);
+    color: var(--ink-muted);
+    font-size: 11px;
+  }
+
+  :global(.model-summary) {
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.55;
+    margin: 0 0 10px;
+  }
+
+  :global(.model-meta) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  :global(.tag) {
+    display: inline-flex;
+    padding: 4px 9px;
+    border-radius: var(--r-pill);
+    font-size: 11px;
+    font-weight: 650;
+    color: var(--ink);
+    background: var(--bg-surface-2);
+  }
+
+  :global(.tag.good) {
+    color: var(--success-green);
+    background: rgb(26 170 85 / 0.14);
+  }
+
+  :global(.tag.warn) {
+    color: #fbbf24;
+    background: rgb(251 191 36 / 0.14);
+  }
+
+  :global(.tag.bad) {
+    color: #ef4444;
+    background: rgb(239 68 68 / 0.14);
+  }
+
+  :global(.list-grid) {
+    display: grid;
+    gap: 10px;
+  }
+
+  :global(.list-item) {
+    background: var(--bg-canvas);
+    border-radius: var(--r-md);
+    padding: 14px 16px;
+    color: var(--ink-muted);
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  :global(.list-item strong) {
+    color: var(--ink);
+  }
+
+  :global(.sources-grid) {
+    display: grid;
+    gap: 8px;
+  }
+
+  :global(.source-link) {
+    display: grid;
+    gap: 4px;
+    padding: 14px 16px;
+    background: var(--bg-canvas);
+    border-radius: var(--r-md);
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  :global(.source-link:hover) {
+    color: var(--accent-blue);
+  }
+
+  :global(.source-domain) {
+    color: var(--ink-muted);
+    font-size: 12px;
+  }
+
+  :global(.results-error) {
+    background: rgb(239 68 68 / 0.1);
+    border-radius: var(--r-md);
+    padding: 16px 20px;
+    color: #ef4444;
+    font-size: 14px;
+  }
+
+  @media (max-width: 640px) {
+    .tool-hero {
+      padding: 72px 0 64px;
+    }
+
+    .tool-hero-inner {
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .tool-breadcrumb {
+      justify-content: flex-start;
+      margin-bottom: 28px;
+      font-size: 13px;
+    }
+
+    .tool-hero-title {
+      font-size: clamp(42px, 12vw, 52px);
+      line-height: 0.98;
+      overflow-wrap: anywhere;
+    }
+
+    .tool-hero-copy {
+      font-size: 17px;
+    }
+
+    .brand-form {
+      padding: 18px;
+      border-radius: var(--r-lg);
+    }
+
+    :global(.brand-score-card),
+    :global(.model-row) {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  const initBrandCheck = () => {
+    const form = document.getElementById('brand-form');
+    const results = document.getElementById('results');
+    const overview = document.getElementById('default-overview');
+    if (!form || !results) return;
+
+    const submit = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const payload = {
+        brand: String(data.get('brand') || '').trim(),
+        domain: String(data.get('domain') || '').trim(),
+        category: String(data.get('category') || '').trim(),
+        market: String(data.get('market') || '').trim() || 'Polska',
+      };
+
+      if (!payload.brand) {
+        renderError('Podaj nazwę marki.');
+        return;
+      }
+
+      setLoading(true);
+      results.classList.remove('hidden');
+      results.innerHTML = renderLoading(payload.brand);
+      overview?.classList.add('hidden');
+
+      try {
+        const response = await fetch('/api/tools/brand-check', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const body = await response.json();
+        if (!response.ok) throw new Error(body.error || `HTTP ${response.status}`);
+        renderResults(body);
+      } catch (error) {
+        renderError(error instanceof Error ? error.message : 'Nie udało się wykonać testu.');
+      } finally {
+        setLoading(false);
+      }
+    });
+
+    function setLoading(isLoading) {
+      if (!submit) return;
+      submit.disabled = isLoading;
+      submit.setAttribute('aria-busy', isLoading ? 'true' : 'false');
+    }
+
+    function renderLoading(brand) {
+      return `
+        <div class="panel">
+          <h2 class="panel-title">Odpytujemy modele o ${escapeHtml(brand)}</h2>
+          <p class="brand-score-copy">Sprawdzamy ChatGPT, Claude, Gemini i Perplexity przez OpenRouter. Wynik pojawi się po zakończeniu odpowiedzi modeli.</p>
+        </div>
+      `;
+    }
+
+    function renderError(message) {
+      results.classList.remove('hidden');
+      results.innerHTML = `<div class="results-error">${escapeHtml(message)}</div>`;
+    }
+
+    function renderResults(report) {
+      const score = report.summary?.score ?? 0;
+      const competitors = report.summary?.competitors || [];
+      const hallucinations = (report.models || []).flatMap((model) =>
+        (model.hallucinations || []).map((item) => ({ ...item, model: model.label }))
+      );
+      const sources = collectSources(report.models || []);
+      const modelRows = (report.models || []).map(renderModelRow).join('');
+
+      results.innerHTML = `
+        <div class="brand-results">
+          <section class="brand-score-card">
+            <div class="brand-score-circle" style="--score: ${Number(score) || 0}">
+              <div class="brand-score-num">${escapeHtml(String(score))}</div>
+            </div>
+            <div class="brand-score-meta">
+              <div class="brand-score-kicker">Brand Visibility Score</div>
+              <h2 class="brand-score-title">${escapeHtml(report.brand)} w odpowiedziach AI</h2>
+              <p class="brand-score-copy">
+                ${escapeHtml(report.summary.knownBy)} z ${escapeHtml(report.summary.totalModels)} modeli zna markę bezpośrednio.
+                Własna domena pojawiła się w źródłach ${escapeHtml(report.summary.ownDomainCitedBy)} razy.
+                Sentyment: ${escapeHtml(sentimentLabel(report.summary.sentiment))}.
+              </p>
+            </div>
+          </section>
+
+          <section class="brand-stats">
+            <div class="brand-stat">
+              <div class="brand-stat-value">${escapeHtml(String(report.summary.averageConfidence))}%</div>
+              <div class="brand-stat-label">średnia pewność modeli</div>
+            </div>
+            <div class="brand-stat">
+              <div class="brand-stat-value">${escapeHtml(String(report.summary.hallucinations))}</div>
+              <div class="brand-stat-label">możliwe halucynacje</div>
+            </div>
+            <div class="brand-stat">
+              <div class="brand-stat-value">${escapeHtml(String(competitors.length))}</div>
+              <div class="brand-stat-label">konkurenci w odpowiedziach</div>
+            </div>
+            <div class="brand-stat">
+              <div class="brand-stat-value">${escapeHtml(report.status === 'ok' ? '4/4' : 'częściowo')}</div>
+              <div class="brand-stat-label">status modeli</div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <h2 class="panel-title">Wyniki per model</h2>
+            <div class="model-grid">${modelRows}</div>
+          </section>
+
+          <section class="panel">
+            <h2 class="panel-title">Konkurenci polecani zamiast marki</h2>
+            ${renderCompetitors(competitors)}
+          </section>
+
+          <section class="panel">
+            <h2 class="panel-title">Możliwe halucynacje</h2>
+            ${renderHallucinations(hallucinations)}
+          </section>
+
+          <section class="panel">
+            <h2 class="panel-title">Źródła cytowane przez modele</h2>
+            ${renderSources(sources)}
+          </section>
+
+          <section class="panel">
+            <h2 class="panel-title">Priorytety działań</h2>
+            ${renderActions(report.actionItems || [])}
+          </section>
+        </div>
+      `;
+    }
+
+    function renderModelRow(model) {
+      if (model.status === 'error') {
+        return `
+          <article class="model-row">
+            <div>
+              <div class="model-name">${escapeHtml(model.label)}</div>
+              <span class="model-pill">błąd</span>
+            </div>
+            <div>
+              <p class="model-summary">${escapeHtml(model.error || 'Model nie zwrócił odpowiedzi.')}</p>
+              <div class="model-meta"><span class="tag bad">brak wyniku</span></div>
+            </div>
+          </article>
+        `;
+      }
+
+      return `
+        <article class="model-row">
+          <div>
+            <div class="model-name">${escapeHtml(model.label)}</div>
+            <span class="model-pill">${escapeHtml(model.model)}</span>
+          </div>
+          <div>
+            <p class="model-summary">${escapeHtml(model.summary)}</p>
+            <div class="model-meta">
+              <span class="tag ${model.knowsBrand === 'yes' ? 'good' : model.knowsBrand === 'partial' ? 'warn' : 'bad'}">${escapeHtml(knowsLabel(model.knowsBrand))}</span>
+              <span class="tag">${escapeHtml(sentimentLabel(model.sentiment))}</span>
+              <span class="tag">${escapeHtml(String(model.confidence))}% pewności</span>
+              <span class="tag ${model.citedOwnDomain ? 'good' : 'warn'}">${model.citedOwnDomain ? 'cytuje domenę' : 'nie cytuje domeny'}</span>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderCompetitors(competitors) {
+      if (!competitors.length) {
+        return '<div class="list-item">Modele nie wskazały wyraźnych konkurentów.</div>';
+      }
+      return `<div class="list-grid">${competitors
+        .map((name) => `<div class="list-item"><strong>${escapeHtml(name)}</strong></div>`)
+        .join('')}</div>`;
+    }
+
+    function renderHallucinations(items) {
+      if (!items.length) {
+        return '<div class="list-item">Nie wykryto oczywistych halucynacji w odpowiedziach modeli.</div>';
+      }
+      return `<div class="list-grid">${items
+        .map(
+          (item) => `
+            <div class="list-item">
+              <strong>${escapeHtml(item.model)} · ${escapeHtml(severityLabel(item.severity))}</strong><br />
+              ${escapeHtml(item.claim)}<br />
+              ${escapeHtml(item.why)}
+            </div>
+          `
+        )
+        .join('')}</div>`;
+    }
+
+    function renderSources(sources) {
+      if (!sources.length) {
+        return '<div class="list-item">Modele nie zwróciły cytowań w standardowym formacie OpenRouter.</div>';
+      }
+      return `<div class="sources-grid">${sources
+        .map(
+          (source) => `
+            <a class="source-link" href="${escapeAttr(source.url)}" target="_blank" rel="noopener noreferrer">
+              <span>${escapeHtml(source.title)}</span>
+              <span class="source-domain">${escapeHtml(source.domain)}</span>
+            </a>
+          `
+        )
+        .join('')}</div>`;
+    }
+
+    function renderActions(actions) {
+      if (!actions.length) return '<div class="list-item">Brak rekomendacji.</div>';
+      return `<div class="list-grid">${actions
+        .map(
+          (item) => `
+            <div class="list-item">
+              <strong>${escapeHtml(item.priority)} · ${escapeHtml(item.title)}</strong><br />
+              ${escapeHtml(item.description)}
+            </div>
+          `
+        )
+        .join('')}</div>`;
+    }
+
+    function collectSources(models) {
+      const map = new Map();
+      for (const model of models) {
+        for (const citation of model.citations || []) {
+          if (!map.has(citation.url)) map.set(citation.url, citation);
+        }
+      }
+      return Array.from(map.values()).slice(0, 16);
+    }
+
+    function knowsLabel(value) {
+      if (value === 'yes') return 'zna markę';
+      if (value === 'partial') return 'zna częściowo';
+      return 'nie zna marki';
+    }
+
+    function sentimentLabel(value) {
+      if (value === 'positive') return 'pozytywny';
+      if (value === 'negative') return 'negatywny';
+      if (value === 'mixed') return 'mieszany';
+      if (value === 'unknown') return 'nieznany';
+      return 'neutralny';
+    }
+
+    function severityLabel(value) {
+      if (value === 'high') return 'wysoka waga';
+      if (value === 'low') return 'niska waga';
+      return 'średnia waga';
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+    }
+
+    function escapeAttr(value) {
+      return escapeHtml(value).replaceAll('`', '&#96;');
+    }
+  };
+
+  document.addEventListener('astro:page-load', initBrandCheck);
+  if (document.readyState !== 'loading') initBrandCheck();
+</script>
