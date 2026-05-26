@@ -16,7 +16,7 @@ const services = [
   {
     id: 'content',
     title: 'Optymalizacja contentu pod LLM',
-    desc: 'Przepisanie istniejących stron pod fact-density, schema, źródła cytowalne. Briefy dla copywriterów.',
+    desc: 'Przepisanie istniejących stron pod gęstość informacji, dane strukturalne i źródła cytowalne. Briefy dla copywriterów.',
     variant: 'cyan',
   },
   {
@@ -67,8 +67,8 @@ const decisionRows = [
   },
   {
     model: 'Claude',
-    icp: 'B2B tech, SaaS, consulting',
-    usage: 'Dłuższe analizy, research, porównania ofert i dokumentów.',
+    icp: 'technologie B2B, SaaS, doradztwo',
+    usage: 'Dłuższe analizy, badania, porównania ofert i dokumentów.',
     roi: 'Najlepszy przy droższych usługach i dłuższym procesie decyzyjnym.',
   },
   {
@@ -79,9 +79,9 @@ const decisionRows = [
   },
   {
     model: 'Perplexity',
-    icp: 'Finanse, medycyna, prawo, B2B research',
+    icp: 'Finanse, medycyna, prawo, badania B2B',
     usage: 'Zapytania wymagające jawnych źródeł i szybkiej weryfikacji.',
-    roi: 'Wysoki, gdy masz cytowalne raporty, dane i eksperckie landing pages.',
+    roi: 'Wysoki, gdy masz cytowalne raporty, dane i eksperckie strony ofertowe.',
   },
   {
     model: 'Bing Copilot',
@@ -227,7 +227,7 @@ const serviceSchema = {
         </div>
         <div class="head-right">
           <p class="subhead">
-            Każdy model AI inaczej buduje odpowiedzi: ChatGPT preferuje training data + RAG,
+            Każdy model AI inaczej buduje odpowiedzi: ChatGPT łączy wiedzę modelu z wyszukiwaniem sieciowym,
             Gemini cytuje z indeksu Google, Perplexity stawia na transparentne źródła.
             Optymalizacja pod jeden model nie wystarczy.
           </p>
@@ -336,11 +336,11 @@ const serviceSchema = {
       <div
         class="decision-table"
         role="table"
-        aria-label="Porównanie modeli AI według ICP, wykorzystania i ROI"
+        aria-label="Porównanie modeli AI według grupy docelowej, wykorzystania i ROI"
       >
         <div class="decision-row decision-head" role="row">
           <div role="columnheader">Model</div>
-          <div role="columnheader">ICP</div>
+          <div role="columnheader">Grupa docelowa</div>
           <div role="columnheader">Wykorzystanie</div>
           <div role="columnheader">ROI</div>
         </div>
@@ -348,7 +348,7 @@ const serviceSchema = {
           decisionRows.map((row) => (
             <div class="decision-row" role="row">
               <div class="decision-model" role="cell">{row.model}</div>
-              <div role="cell" data-label="ICP">
+              <div role="cell" data-label="Grupa docelowa">
                 {row.icp}
               </div>
               <div role="cell" data-label="Wykorzystanie">

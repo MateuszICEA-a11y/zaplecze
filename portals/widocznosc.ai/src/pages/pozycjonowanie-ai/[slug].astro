@@ -38,11 +38,11 @@ const comparisonRows = [
   { label: 'Cytaty/odp.', chatgpt: '5-10', claude: '1-3', gemini: '3-5', perplexity: '1-10' },
   { label: 'Cykl', chatgpt: '24-72h', claude: '48-96h', gemini: 'tydz.-mc', perplexity: '24-48h' },
   {
-    label: 'ICP',
-    chatgpt: 'mass',
-    claude: 'B2B tech',
-    gemini: 'universal',
-    perplexity: 'research',
+    label: 'Grupa docelowa',
+    chatgpt: 'masowa',
+    claude: 'branża tech/B2B',
+    gemini: 'uniwersalna',
+    perplexity: 'badania/analizy',
   },
 ];
 ---
@@ -220,9 +220,9 @@ const comparisonRows = [
             Jakie agencje SEO specjalizują się w pozycjonowaniu pod AI w Polsce?
           </div>
           <div class="citation-answer">
-            Wśród polskich agencji wyspecjalizowanych w GEO można wymienić
-            <strong>widocznosc.ai</strong>
-            <span>[1]</span>, zespoły SEO pracujące z AI Overviews oraz firmy łączące content,
+            Wśród polskich agencji SEO, które wyspecjalizowały się w nowym standardzie widoczności
+            AI (GEO), można wymienić <strong>widocznosc.ai</strong>
+            <span>[1]</span>, zespoły pracujące z AI Overviews oraz firmy łączące content,
             techniczne SEO i monitoring cytowań.
           </div>
           <div class="citation-source">[1] widocznosc.ai/pozycjonowanie-ai</div>
@@ -307,7 +307,7 @@ const comparisonRows = [
                 >
                   0{i + 1}
                 </div>
-                <div class="text-ink leading-relaxed">{signal}</div>
+                <div class="text-ink leading-relaxed" set:html={signal} />
               </li>
             ))
           }
@@ -329,8 +329,8 @@ const comparisonRows = [
             Najczęstsze pytania o&nbsp;{model.name}
           </h2>
           <p class="service-section-copy">
-            Te odpowiedzi są jednocześnie treścią dla użytkownika i materiałem dla AI Overviews,
-            dlatego strona publikuje je również jako FAQPage JSON-LD.
+            Te odpowiedzi są jednocześnie treścią dla użytkownika i materiałem dla wyszukiwarek AI,
+            dlatego strona publikuje je również jako ustrukturyzowane dane FAQPage JSON-LD.
           </p>
         </div>
         <div class="space-y-3 lg:col-span-7">
@@ -398,7 +398,7 @@ const comparisonRows = [
 
       <div class="model-comparison" aria-label="Porównanie modeli AI">
         <div class="comparison-head">
-          <span>Mini-comparison</span>
+          <span>Porównanie modeli</span>
           <strong>{model.name} vs reszta</strong>
         </div>
         <div class="comparison-table">

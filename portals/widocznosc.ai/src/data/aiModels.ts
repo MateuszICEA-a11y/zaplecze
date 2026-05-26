@@ -32,7 +32,8 @@ export const AI_MODELS: AIModel[] = [
     href: '/pozycjonowanie-ai/chatgpt',
     keyword: 'pozycjonowanie w chatgpt',
     keywordVolume: 140,
-    shortDesc: 'Najbardziej popularny model w Polsce. SearchGPT z dostępem do web, training data + RAG.',
+    shortDesc:
+      'Najpopularniejszy model w Polsce. ChatGPT Search łączy odpowiedzi modelu z wyszukiwaniem sieciowym i cytowanymi źródłami.',
     symbol: '◐',
   },
   {
@@ -42,7 +43,8 @@ export const AI_MODELS: AIModel[] = [
     href: '/pozycjonowanie-ai/claude',
     keyword: 'pozycjonowanie w claude',
     keywordVolume: 30,
-    shortDesc: 'Premium B2B użycie, Artifacts + extended thinking. Mniej traffic, więcej decision-makerów.',
+    shortDesc:
+      'Zastosowania premium w sektorze B2B, funkcja Artifacts. Mniejszy ruch, ale wyższy odsetek osób decyzyjnych.',
     symbol: '✦',
   },
   {
@@ -62,7 +64,8 @@ export const AI_MODELS: AIModel[] = [
     href: '/pozycjonowanie-ai/perplexity',
     keyword: 'pozycjonowanie w perplexity',
     keywordVolume: 40,
-    shortDesc: 'Wyszukiwarka odpowiedzi z mocnym fokusem na cytowania. Każde stwierdzenie z linkiem do źródła.',
+    shortDesc:
+      'Wyszukiwarka odpowiedzi z mocnym naciskiem na cytowania. Każde stwierdzenie z linkiem do źródła.',
     symbol: '◇',
   },
   {
@@ -72,7 +75,8 @@ export const AI_MODELS: AIModel[] = [
     href: '/pozycjonowanie-ai/bing-copilot',
     keyword: 'pozycjonowanie w bing copilot',
     keywordVolume: 20,
-    shortDesc: 'Azure OpenAI + indeks Bing. Mniejszy market share, ale wbudowany w Edge i Windows.',
+    shortDesc:
+      'Azure OpenAI + indeks Bing. Zintegrowany z przeglądarką Edge i systemem Windows, domyślny w korporacjach.',
     symbol: '∴',
   },
 ];
