@@ -1,0 +1,156 @@
+/**
+ * Fan-out Check – pokazuje fan-out queries ChatGPT i cytowane domeny.
+ *
+ * Endpoint: POST /api/tools/fanout   Body: { query: string }
+ * Wymaga: env OPENAI_API_KEY, binding KV FANOUT_RL.
+ * Opcjonalne env: FANOUT_MODEL (domyślnie gpt-5-mini), FANOUT_DAILY_LIMIT (domyślnie 3).
+ */
+import { parseResponsesOutput } from '../../_lib/fanout-parse';
+import { evaluateLimit, secondsUntilWarsawMidnight } from '../../_lib/rate-limit';
+
+type Env = {
+  OPENAI_API_KEY?: string;
+  FANOUT_MODEL?: string;
+  FANOUT_DAILY_LIMIT?: string;
+  FANOUT_RL?: KVNamespace;
+};
+
+type FanoutRequest = { query?: string };
+type LimitRecord = { count: number; resetAt: number };
+
+const OPENAI_URL = 'https://api.openai.com/v1/responses';
+const DEFAULT_MODEL = 'gpt-5-mini';
+const DEFAULT_LIMIT = 3;
+const LLM_TIMEOUT_MS = 45_000;
+const MIN_QUERY = 3;
+const MAX_QUERY = 300;
+
+function jsonHeaders(): HeadersInit {
+  return {
+    'Content-Type': 'application/json; charset=utf-8',
+    'Cache-Control': 'no-store',
+  };
+}
+
+function json(body: unknown, status = 200): Response {
+  return new Response(JSON.stringify(body), { status, headers: jsonHeaders() });
+}
+
+function jsonError(status: number, message: string, extra: Record<string, unknown> = {}): Response {
+  return json({ error: message, ...extra }, status);
+}
+
+export const onRequestGet: PagesFunction = async () =>
+  jsonError(405, 'Użyj POST z { "query": "twoje zapytanie" }');
+
+export const onRequestPost: PagesFunction<Env> = async (context) => {
+  const { request, env } = context;
+
+  // 1. Walidacja wejścia
+  let body: FanoutRequest;
+  try {
+    body = await request.json<FanoutRequest>();
+  } catch {
+    return jsonError(400, 'Nieprawidłowe body JSON.');
+  }
+  const query = String(body.query || '').replace(/\s+/g, ' ').trim();
+  if (query.length < MIN_QUERY) return jsonError(400, 'Podaj zapytanie (min. 3 znaki).');
+  if (query.length > MAX_QUERY) return jsonError(400, 'Zapytanie jest zbyt długie (max 300 znaków).');
+
+  // 2. Konfiguracja
+  const apiKey = (env.OPENAI_API_KEY || '').trim();
+  if (!apiKey) {
+    return json(
+      {
+        status: 'config-error',
+        error: 'Narzędzie jest chwilowo niedostępne (brak konfiguracji OPENAI_API_KEY).',
+      },
+      500
+    );
+  }
+  const model = (env.FANOUT_MODEL || DEFAULT_MODEL).trim();
+  const limit = Number.parseInt(env.FANOUT_DAILY_LIMIT || '', 10) || DEFAULT_LIMIT;
+
+  // 3. Rate-limit (odczyt) — wymaga bindingu KV
+  const kv = env.FANOUT_RL;
+  const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+  const kvKey = `fanout:${ip}`;
+  const now = new Date();
+  const ttl = secondsUntilWarsawMidnight(now);
+
+  let record: LimitRecord = { count: 0, resetAt: now.getTime() + ttl * 1000 };
+  if (kv) {
+    const stored = await kv.get<LimitRecord>(kvKey, 'json');
+    if (stored && typeof stored.count === 'number' && typeof stored.resetAt === 'number') {
+      record = stored;
+    }
+  }
+  // Jeden, spójny resetAt (z zapisanego okna) używany i w 429, i w 200.
+  const resetAt = new Date(record.resetAt).toISOString();
+
+  const decision = evaluateLimit(record.count, limit);
+  if (!decision.allowed) {
+    return jsonError(429, `Wykorzystałeś dzienny limit (${limit} zapytań). Reset o północy.`, {
+      remaining: 0,
+      limit,
+      resetAt,
+    });
+  }
+
+  // 4. Wywołanie OpenAI Responses API
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort('llm-timeout'), LLM_TIMEOUT_MS);
+  let openaiResponse: Response;
+  try {
+    openaiResponse = await fetch(OPENAI_URL, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      signal: controller.signal,
+      body: JSON.stringify({
+        model,
+        tools: [{ type: 'web_search' }],
+        tool_choice: 'auto',
+        input: query,
+      }),
+    });
+  } catch (error) {
+    clearTimeout(timeout);
+    const aborted = error instanceof DOMException && error.name === 'AbortError';
+    return jsonError(
+      500,
+      aborted ? 'Przekroczono czas odpowiedzi. Spróbuj ponownie.' : 'Nie udało się połączyć z OpenAI. Spróbuj ponownie.'
+    );
+  }
+  clearTimeout(timeout);
+
+  if (!openaiResponse.ok) {
+    // Nie przekazujemy surowego ciała błędu OpenAI do klienta (info-leak).
+    return jsonError(500, `Błąd OpenAI (HTTP ${openaiResponse.status}). Spróbuj ponownie.`);
+  }
+
+  const raw = await openaiResponse.json().catch(() => null);
+  const parsed = parseResponsesOutput(raw);
+
+  // 5. Inkrement limitu DOPIERO po udanej odpowiedzi
+  if (kv) {
+    const newCount = Math.max(0, record.count) + 1;
+    await kv.put(kvKey, JSON.stringify({ count: newCount, resetAt: record.resetAt }), {
+      expirationTtl: Math.max(60, Math.ceil((record.resetAt - now.getTime()) / 1000)),
+    });
+  }
+
+  // 6. Odpowiedź
+  return json({
+    query,
+    model: (raw && typeof raw === 'object' && 'model' in raw ? (raw as { model?: string }).model : model) || model,
+    status: parsed.searched ? 'ok' : 'no-search',
+    fanoutQueries: parsed.fanoutQueries,
+    citedDomains: parsed.citedDomains,
+    citations: parsed.citations,
+    usage: { remaining: decision.remaining, limit, resetAt },
+    fetchedAt: now.toISOString(),
+  });
+};
