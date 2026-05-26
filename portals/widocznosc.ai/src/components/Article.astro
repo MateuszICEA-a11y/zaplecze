@@ -1,29 +1,14 @@
 ---
 const { articleData } = Astro.props;
 const { title, subtitle, date, image, author, readTime, tags } = articleData;
+const encodedTitle = encodeURIComponent(title);
+const encodedUrl = encodeURIComponent(Astro.url.href);
+const xShareUrl = `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`;
+const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
 ---
 
 <div class="article-page">
   <article class="article-shell">
-    <!-- Back link -->
-    <a href="/blog" class="article-back-link">
-      <svg
-        width="14"
-        height="14"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M19 12H5M5 12L12 19M5 12L12 5"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"></path>
-      </svg>
-      Wróć do bazy wiedzy
-    </a>
-
     <!-- Optional breadcrumb (named slot) -->
     <slot name="breadcrumb" />
 
@@ -138,14 +123,26 @@ const { title, subtitle, date, image, author, readTime, tags } = articleData;
           <div class="article-sidebar-card">
             <div class="article-sidebar-label">Udostępnij</div>
             <div class="article-sidebar-share">
-              <a href="#" class="btn-icon-circular" aria-label="Udostępnij na X">
+              <a
+                href={xShareUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-icon-circular"
+                aria-label="Udostępnij na X"
+              >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"
                   ><path
                     d="M18.244 2H21.5l-7.5 8.564L22.5 22h-6.94l-5.43-7.108L3.86 22H.604l8.04-9.18L0 2h7.108l4.91 6.5L18.244 2zm-1.213 17.998h1.864L7.07 4H5.06l11.97 15.998z"
                   ></path></svg
                 >
               </a>
-              <a href="#" class="btn-icon-circular" aria-label="Udostępnij na LinkedIn">
+              <a
+                href={linkedinShareUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-icon-circular"
+                aria-label="Udostępnij na LinkedIn"
+              >
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"
                   ><path
                     d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14M8.5 18V10H6v8h2.5M7.25 8.875a1.45 1.45 0 1 0 0-2.9 1.45 1.45 0 0 0 0 2.9M18 18v-4.74c0-2.45-1.59-3.26-3.07-3.26-1.34 0-2.27.78-2.6 1.36V10H10v8h2.34v-4.5c0-1.21.79-1.81 1.6-1.81.78 0 1.56.39 1.56 1.81V18H18Z"
@@ -186,24 +183,6 @@ const { title, subtitle, date, image, author, readTime, tags } = articleData;
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 30px;
-  }
-
-  .article-back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 40px;
-    font-family: var(--font-sans);
-    font-size: var(--fs-caption);
-    font-weight: 500;
-    letter-spacing: var(--ls-caption);
-    color: var(--ink-muted);
-    text-decoration: none;
-    transition: color 0.15s ease;
-  }
-
-  .article-back-link:hover {
-    color: var(--ink);
   }
 
   /* Breadcrumb */
@@ -656,7 +635,7 @@ const { title, subtitle, date, image, author, readTime, tags } = articleData;
 
   /* Inline code */
   .article-content code {
-    font-family: ui-monospace, 'SF Mono', monospace;
+    font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
     font-size: 0.875em;
     color: var(--ink);
     background: var(--bg-surface-1);
@@ -703,7 +682,7 @@ const { title, subtitle, date, image, author, readTime, tags } = articleData;
     padding: 0;
     color: var(--ink);
     font-size: inherit;
-    font-family: ui-monospace, 'SF Mono', monospace;
+    font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
     line-height: inherit;
   }
   .article-content pre code .line {
@@ -873,11 +852,11 @@ const { title, subtitle, date, image, author, readTime, tags } = articleData;
     box-shadow: inset 0 0 0 1px var(--hairline);
   }
 
-  /* Infografika w treści – w light mode AUTO-INWERSJA: ciemny diagram
-     (obsidian + biały tekst) przewraca się na jasny; hue-rotate(180deg)
-     zachowuje barwy akcentów (niebieskie zostają niebieskie). Hero NIE
-     używa tego (zdjęciowa abstrakcja by się rozjechała). */
-  :root[data-theme='light'] .article-content img {
+  /* Infografika w treści – opt-in dla ciemnych diagramów. Nie odwracamy
+     zwykłych zdjęć ani screenów w treści, bo light mode zrobiłby negatyw. */
+  :root[data-theme='light'] .article-content img.invert-on-light,
+  :root[data-theme='light'] .article-content figure.infographic img,
+  :root[data-theme='light'] .article-content img[src*='infographic-'] {
     filter: invert(1) hue-rotate(180deg);
   }
   .article-content figure {
@@ -932,10 +911,6 @@ const { title, subtitle, date, image, author, readTime, tags } = articleData;
 
     .article-shell {
       padding: 0 20px;
-    }
-
-    .article-back-link {
-      margin-bottom: 24px;
     }
 
     :global(.article-breadcrumb) {
