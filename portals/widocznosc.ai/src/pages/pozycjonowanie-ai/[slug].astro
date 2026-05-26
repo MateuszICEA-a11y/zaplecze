@@ -17,6 +17,14 @@ const { model } = Astro.props;
 const content = MODEL_CONTENT[model.slug];
 
 const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
+const siteUrl = 'https://widocznosc.ai';
+const cleanStructuredText = (value: string) =>
+  value
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&ndash;/g, '–')
+    .replace(/&mdash;/g, '—')
+    .replace(/&amp;/g, '&')
+    .replace(/<[^>]*>/g, '');
 ---
 
 <Layout
@@ -24,6 +32,46 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
   description={content.metaDescription}
 >
   <Navbar />
+
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: content.faq.map((qa) => ({
+        '@type': 'Question',
+        name: cleanStructuredText(qa.q),
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: cleanStructuredText(qa.a),
+        },
+      })),
+    })}
+  />
+
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Pozycjonowanie AI',
+          item: `${siteUrl}/pozycjonowanie-ai`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: model.name,
+          item: `${siteUrl}${model.href}`,
+        },
+      ],
+    })}
+  />
 
   <!-- Hero – service landing header -->
   <section class="service-hero">
@@ -59,7 +107,7 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+      <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
         {
           content.howItWorks.map((item, i) => (
             <div
@@ -128,7 +176,7 @@ const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
         <div class="mx-auto mb-10 text-center" style="max-width: 880px;">
           <span class="eyebrow mb-6 inline-flex">Sygnały rankingowe</span>
           <h2 id="signals-title" class="service-section-title display-lg mt-2">
-            Top 5 sygnałów dla {model.name}
+            Najważniejsze sygnały dla {model.name}
           </h2>
         </div>
         <ul
