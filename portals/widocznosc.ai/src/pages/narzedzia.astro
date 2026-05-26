@@ -7,6 +7,22 @@ import CTABand from '../components/CTABand.astro';
 
 const tools = [
   {
+    id: 'fanout',
+    status: 'beta',
+    eyebrow: 'Bezpłatne · 30s',
+    title: 'Fan-out ChatGPT',
+    subtitle: 'Jak ChatGPT naprawdę szuka i kogo cytuje',
+    desc:
+      'Wpisujesz zapytanie, a my przez OpenAI Responses API pokazujemy fan-out queries – realne sub-zapytania, które ChatGPT wysyła do wyszukiwarki – oraz ranking domen cytowanych w odpowiedzi. Zobacz, kto wygrywa widoczność w AI dla Twoich fraz.',
+    cta: { label: 'Pokaż fan-out', href: '/narzedzia/fanout' },
+    bullets: [
+      'Realne fan-out queries ChatGPT (web_search)',
+      'Ranking cytowanych domen wg liczby cytowań',
+      'Bez logowania, wynik w ~30 s',
+      'Limit 3 zapytania dziennie',
+    ],
+  },
+  {
     id: 'brand-check',
     status: 'beta',
     eyebrow: 'Bezpłatne · 60s',
