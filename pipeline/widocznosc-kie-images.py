@@ -54,7 +54,100 @@ INFO_STYLE = (
     "clutter. "
 )
 
+# Wariant UNIWERSALNY (test 2026-05-26) – mid-slate neutral, działa na dark+light
+HERO_STYLE_UNI = (
+    "Premium editorial tech illustration on a balanced neutral mid-gray "
+    "background (#565e6c), evenly lit, no vignette. Vivid high-contrast "
+    "accent colors used as glowing line work and highlights: electric blue "
+    "(#3b82f6), violet (#8b5cf6), teal (#14b8a6). Clean modern accessible "
+    "aesthetic, high-end AI consultancy. No people, no text, no letters, no "
+    "logos. Abstract geometric, wide cinematic composition, airy, generous "
+    "negative space. "
+)
+INFO_STYLE_UNI = (
+    "Modern editorial infographic on a flat balanced neutral mid-gray "
+    "background (#565e6c), evenly lit. White (#ffffff) Polish text labels, "
+    "clean sans-serif typography (Inter font style). Vivid high-contrast "
+    "color-coded elements: electric blue (#3b82f6), violet (#8b5cf6), teal "
+    "(#14b8a6), amber (#f59e0b). Accessible, premium, technical, like a "
+    "modern design-system diagram. Crisp lines, generous spacing, no "
+    "clutter. "
+)
+
+# Warianty LIGHT (test 2026-05-26) – tło ivory, sky-blue + ciemny ink
+HERO_STYLE_LIGHT = (
+    "Premium editorial tech illustration. Warm off-white background "
+    "(#faf8f4). Sky-blue (#0068cc) glowing line work as the primary accent, "
+    "with soft slate-gray secondary elements. Minimalist, sophisticated, "
+    "high-end AI consultancy aesthetic. No people, no text, no letters, no "
+    "logos. Abstract geometric, wide cinematic composition, airy and light, "
+    "generous negative space. "
+)
+INFO_STYLE_LIGHT = (
+    "Modern editorial infographic. Warm off-white background (#faf8f4). "
+    "Sky-blue (#0068cc) accents for highlights and the key step. Dark ink "
+    "(#1a1a1a) Polish text labels, clean sans-serif typography (Inter font "
+    "style). Minimal, premium, technical aesthetic – like a high-end "
+    "consultancy report printed on white paper. Crisp lines, generous "
+    "spacing, no clutter. "
+)
+
 SPECS = [
+    {
+        "slug": "blog-rag-przewodnik-uni",
+        "prompt": (
+            HERO_STYLE_UNI
+            + "Abstract visualization of Retrieval-Augmented Generation: on "
+            "the left a scattered field of small document fragments (thin "
+            "rounded rectangles), drawn by luminous beams into a central "
+            "glowing core, then emerging on the right as a single coherent "
+            "stream of light. The beams shift through blue, violet and teal. "
+            "Left-to-right flow, generous negative space."
+        ),
+    },
+    {
+        "slug": "infographic-rag-przewodnik-uni",
+        "prompt": (
+            INFO_STYLE_UNI
+            + "TITLE on top in Polish (white text): 'RAG – jak działa "
+            "generowanie wspomagane wyszukiwaniem'. Show a clean "
+            "left-to-right pipeline with 5 connected stages, each a rounded "
+            "rectangle outlined in a distinct accent color with a Polish "
+            "label in white: '1. ZAPYTANIE' (blue), '2. WYSZUKIWANIE (baza "
+            "wektorowa)' (violet, filled, the key step), '3. NAJTRAFNIEJSZE "
+            "FRAGMENTY' (teal), '4. GENERACJA (LLM)' (amber), '5. ODPOWIEDŹ "
+            "ZE ŹRÓDŁAMI' (blue). Thin glowing arrows connect the stages. "
+            "Bottom caption in muted light-gray: 'MNIEJ HALUCYNACJI · "
+            "AKTUALNE DANE · BEZ FINE-TUNINGU'."
+        ),
+    },
+    {
+        "slug": "blog-rag-przewodnik-light",
+        "prompt": (
+            HERO_STYLE_LIGHT
+            + "Abstract visualization of Retrieval-Augmented Generation: on "
+            "the left a scattered field of small document fragments (thin "
+            "rounded rectangles), drawn by luminous sky-blue beams into a "
+            "central glowing core, then emerging on the right as a single "
+            "coherent stream of light. Left-to-right flow, generous negative "
+            "space."
+        ),
+    },
+    {
+        "slug": "infographic-rag-przewodnik-light",
+        "prompt": (
+            INFO_STYLE_LIGHT
+            + "TITLE on top in Polish: 'RAG – jak działa generowanie "
+            "wspomagane wyszukiwaniem'. Show a clean left-to-right pipeline "
+            "with 5 connected stages, each a rounded rectangle with a Polish "
+            "label: '1. ZAPYTANIE', '2. WYSZUKIWANIE (baza wektorowa)', "
+            "'3. NAJTRAFNIEJSZE FRAGMENTY', '4. GENERACJA (LLM)', "
+            "'5. ODPOWIEDŹ ZE ŹRÓDŁAMI'. The retrieval stage (2) highlighted "
+            "in sky-blue as the key step. Thin sky-blue arrows connect the "
+            "stages. Bottom caption: 'MNIEJ HALUCYNACJI · AKTUALNE DANE · "
+            "BEZ FINE-TUNINGU'."
+        ),
+    },
     {
         "slug": "blog-rag-przewodnik",
         "prompt": (
