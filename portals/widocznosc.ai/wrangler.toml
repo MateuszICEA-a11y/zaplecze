@@ -5,8 +5,12 @@ pages_build_output_dir = "dist"
 [vars]
 PUBLIC_SITE_URL = "https://widocznosc.ai"
 
-# Narzędzie fan-out (/narzedzia/fanout) używa:
-#  - sekretu OPENAI_API_KEY
-#  - bindingu KV o nazwie FANOUT_RL (rate-limit 3/IP/dzień)
-# Oba konfigurowane w panelu Cloudflare Pages (Settings → Variables / KV bindings),
-# tak jak OPENROUTER_API_KEY dla brand-check. Celowo NIE trzymamy tu ID KV ani sekretów.
+# Sekret OPENAI_API_KEY dla narzędzia fan-out ustawiany w panelu Cloudflare Pages
+# (Settings → Variables and Secrets), tak jak OPENROUTER_API_KEY dla brand-check.
+
+# Binding KV dla rate-limitu narzędzia fan-out (/narzedzia/fanout, 3/IP/dzień).
+# Ten projekt zarządza bindingami z wrangler.toml, więc ID musi być tutaj.
+[[kv_namespaces]]
+binding = "FANOUT_RL"
+id = "4de520904f874cca893800bd54773910"
+preview_id = "4de520904f874cca893800bd54773910"
