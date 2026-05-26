@@ -3,7 +3,7 @@ title: 'Reranking – jak zwiększyć trafność odpowiedzi RAG'
 subtitle: 'Jeden krok między wyszukiwaniem a generowaniem, który decyduje o jakości całego systemu'
 description: 'Czym jest reranking w systemach RAG, jak działa cross-encoder i kiedy go wdrożyć. Praktyczny przewodnik po architekturze dwuetapowej i ocenie jakości.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-rag-reranking.png
 icon: '<path d="M4 6h16M4 12h10M4 18h6"/><circle cx="18" cy="17" r="3"/><path d="m20.5 19.5 1.5 1.5"/>'
 author:
   name: 'Michał Ziach'
@@ -49,6 +49,8 @@ Poniżej zestawienie właściwości, które decydują o wyborze architektury w �
 | Bi-encoder | Milisekundy | Średnia | Niskie (1 wektor/fragment) | Etap pierwszy – szerokie wyszukiwanie kandydatów |
 | Cross-encoder | 50–400 ms | Wysoka | Brak indeksu (obliczenia na żywo) | Etap drugi – precyzyjny reranking |
 | ColBERT (Late Interaction) | <100 ms (PLAID) | Wysoka | Ekstremalne (wektory/token) | Wyszukiwanie bez pełnej konkatenacji sekwencji |
+
+![Reranking – drugie sito trafności: po wyszukiwaniu około 100 fragmentów cross-encoder przelicza ich trafność i wybiera 5 najtrafniejszych dla LLM, podnosząc trafność z 33,5% do 49,0%](../../../assets/images/infographic-rag-reranking.png)
 
 ## Jak zbudować potok przetwarzania z rerankingiem
 

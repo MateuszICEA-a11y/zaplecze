@@ -1,20 +1,21 @@
 #!/usr/bin/env python3
 """Generate widocznosc.ai blog graphics (hero + infographic) via kie.ai gpt-image-2.
 
-Zunifikowany pipeline: JEDEN model (gpt-image-2-text-to-image) dla obu typów.
+Zunifikowany pipeline: JEDEN model (gpt-image-2-text-to-image), JEDEN ciemny
+plik per grafika. CSS w Article.astro robi resztę:
+- hero: "stage" – wtapia się w tło na obu motywach
+- infographic: w light mode auto-inwersja (invert + hue-rotate)
+
+Styl: tło obsidian #070810 + akcent sky-blue #0a9cff.
 - hero: abstrakcyjna ilustracja edytorska, ZERO tekstu/ludzi/logo
-- infographic: polskie labelki, czytelne dane (gpt-image-2 renderuje polski tekst)
+- infographic: BIAŁY polski tekst + sky-blue akcenty (po inwersji → ciemny tekst)
 
-Styl: tło obsidian #070810 + akcent brandowy sky-blue #0a9cff (NIE pomarańcz).
-
-Klucz API:
-    1) env KIE_API_KEY, lub
-    2) ~/.config/widocznosc-ai/kie.key (chmod 600)
-Klucz NIGDY nie trafia do repo/logów/memory.
+Klucz API: env KIE_API_KEY lub ~/.config/widocznosc-ai/kie.key (chmod 600).
+Klucz NIGDY do repo/logów/memory.
 
 Usage:
-    python3 pipeline/widocznosc-kie-images.py            # wszystkie z listy SPECS
-    ONLY=blog-rag-przewodnik python3 pipeline/widocznosc-kie-images.py
+    python3 pipeline/widocznosc-kie-images.py
+    ONLY=blog-rag-embeddingi python3 pipeline/widocznosc-kie-images.py
 """
 import json
 import os
@@ -30,11 +31,10 @@ API_BASE = "https://api.kie.ai/api/v1/jobs"
 MODEL = "gpt-image-2-text-to-image"
 KEY_FILE = os.path.expanduser("~/.config/widocznosc-ai/kie.key")
 POLL_INTERVAL = 6
-MAX_POLLS = 40  # 6s × 40 = 240s max per image (2K bywa wolniejsze)
+MAX_POLLS = 40
 ASPECT = "16:9"
 RESOLUTION = "2K"
 
-# Wspólny prefiks dla HERO – sky-blue, bez tekstu
 HERO_STYLE = (
     "Premium editorial tech illustration. Deep obsidian black background "
     "(#070810). Subtle sky-blue accents (#0a9cff) used sparingly for glow "
@@ -44,136 +44,96 @@ HERO_STYLE = (
     "lighting. "
 )
 
-# Wspólny prefiks dla INFOGRAFIK – sky-blue, polski tekst
 INFO_STYLE = (
     "Modern editorial infographic. Deep obsidian black background "
-    "(#070810). Subtle sky-blue accents (#0a9cff) for highlights and key "
-    "data points. Polish text labels, clean sans-serif typography (Inter "
-    "font style). Minimal, premium, technical aesthetic – like a high-end "
-    "consultancy report. Crisp lines, generous spacing, no decorative "
-    "clutter. "
-)
-
-# Wariant UNIWERSALNY (test 2026-05-26) – mid-slate neutral, działa na dark+light
-HERO_STYLE_UNI = (
-    "Premium editorial tech illustration on a balanced neutral mid-gray "
-    "background (#565e6c), evenly lit, no vignette. Vivid high-contrast "
-    "accent colors used as glowing line work and highlights: electric blue "
-    "(#3b82f6), violet (#8b5cf6), teal (#14b8a6). Clean modern accessible "
-    "aesthetic, high-end AI consultancy. No people, no text, no letters, no "
-    "logos. Abstract geometric, wide cinematic composition, airy, generous "
-    "negative space. "
-)
-INFO_STYLE_UNI = (
-    "Modern editorial infographic on a flat balanced neutral mid-gray "
-    "background (#565e6c), evenly lit. White (#ffffff) Polish text labels, "
-    "clean sans-serif typography (Inter font style). Vivid high-contrast "
-    "color-coded elements: electric blue (#3b82f6), violet (#8b5cf6), teal "
-    "(#14b8a6), amber (#f59e0b). Accessible, premium, technical, like a "
-    "modern design-system diagram. Crisp lines, generous spacing, no "
-    "clutter. "
-)
-
-# Warianty LIGHT (test 2026-05-26) – tło ivory, sky-blue + ciemny ink
-HERO_STYLE_LIGHT = (
-    "Premium editorial tech illustration. Warm off-white background "
-    "(#faf8f4). Sky-blue (#0068cc) glowing line work as the primary accent, "
-    "with soft slate-gray secondary elements. Minimalist, sophisticated, "
-    "high-end AI consultancy aesthetic. No people, no text, no letters, no "
-    "logos. Abstract geometric, wide cinematic composition, airy and light, "
-    "generous negative space. "
-)
-INFO_STYLE_LIGHT = (
-    "Modern editorial infographic. Warm off-white background (#faf8f4). "
-    "Sky-blue (#0068cc) accents for highlights and the key step. Dark ink "
-    "(#1a1a1a) Polish text labels, clean sans-serif typography (Inter font "
-    "style). Minimal, premium, technical aesthetic – like a high-end "
-    "consultancy report printed on white paper. Crisp lines, generous "
-    "spacing, no clutter. "
+    "(#070810). White (#ffffff) Polish text labels, clean sans-serif "
+    "typography (Inter font style). Sky-blue (#0a9cff) accents for "
+    "highlights and the key step. Minimal, premium, technical aesthetic – "
+    "like a high-end consultancy report. Crisp lines, generous spacing, "
+    "no decorative clutter. "
 )
 
 SPECS = [
+    # ── RAG / embeddingi ──────────────────────────────────────────────
     {
-        "slug": "blog-rag-przewodnik-uni",
-        "prompt": (
-            HERO_STYLE_UNI
-            + "Abstract visualization of Retrieval-Augmented Generation: on "
-            "the left a scattered field of small document fragments (thin "
-            "rounded rectangles), drawn by luminous beams into a central "
-            "glowing core, then emerging on the right as a single coherent "
-            "stream of light. The beams shift through blue, violet and teal. "
-            "Left-to-right flow, generous negative space."
-        ),
-    },
-    {
-        "slug": "infographic-rag-przewodnik-uni",
-        "prompt": (
-            INFO_STYLE_UNI
-            + "TITLE on top in Polish (white text): 'RAG – jak działa "
-            "generowanie wspomagane wyszukiwaniem'. Show a clean "
-            "left-to-right pipeline with 5 connected stages, each a rounded "
-            "rectangle outlined in a distinct accent color with a Polish "
-            "label in white: '1. ZAPYTANIE' (blue), '2. WYSZUKIWANIE (baza "
-            "wektorowa)' (violet, filled, the key step), '3. NAJTRAFNIEJSZE "
-            "FRAGMENTY' (teal), '4. GENERACJA (LLM)' (amber), '5. ODPOWIEDŹ "
-            "ZE ŹRÓDŁAMI' (blue). Thin glowing arrows connect the stages. "
-            "Bottom caption in muted light-gray: 'MNIEJ HALUCYNACJI · "
-            "AKTUALNE DANE · BEZ FINE-TUNINGU'."
-        ),
-    },
-    {
-        "slug": "blog-rag-przewodnik-light",
-        "prompt": (
-            HERO_STYLE_LIGHT
-            + "Abstract visualization of Retrieval-Augmented Generation: on "
-            "the left a scattered field of small document fragments (thin "
-            "rounded rectangles), drawn by luminous sky-blue beams into a "
-            "central glowing core, then emerging on the right as a single "
-            "coherent stream of light. Left-to-right flow, generous negative "
-            "space."
-        ),
-    },
-    {
-        "slug": "infographic-rag-przewodnik-light",
-        "prompt": (
-            INFO_STYLE_LIGHT
-            + "TITLE on top in Polish: 'RAG – jak działa generowanie "
-            "wspomagane wyszukiwaniem'. Show a clean left-to-right pipeline "
-            "with 5 connected stages, each a rounded rectangle with a Polish "
-            "label: '1. ZAPYTANIE', '2. WYSZUKIWANIE (baza wektorowa)', "
-            "'3. NAJTRAFNIEJSZE FRAGMENTY', '4. GENERACJA (LLM)', "
-            "'5. ODPOWIEDŹ ZE ŹRÓDŁAMI'. The retrieval stage (2) highlighted "
-            "in sky-blue as the key step. Thin sky-blue arrows connect the "
-            "stages. Bottom caption: 'MNIEJ HALUCYNACJI · AKTUALNE DANE · "
-            "BEZ FINE-TUNINGU'."
-        ),
-    },
-    {
-        "slug": "blog-rag-przewodnik",
+        "slug": "blog-rag-embeddingi",
         "prompt": (
             HERO_STYLE
-            + "Abstract visualization of Retrieval-Augmented Generation: on "
-            "the left a scattered field of small document fragments (thin "
-            "rounded rectangles), drawn by luminous sky-blue beams into a "
-            "central glowing core, then emerging on the right as a single "
-            "coherent stream of light. Conveys 'retrieve fragments → "
-            "generate grounded answer'. Left-to-right flow, generous "
-            "negative space."
+            + "Abstract visualization of text embeddings: on the left a few "
+            "short text fragments transforming into glowing sky-blue points, "
+            "scattered into a vast 3D vector space as a constellation of "
+            "dots; semantically similar points cluster together, joined by "
+            "faint luminous lines. Conveys 'meaning mapped as coordinates'. "
+            "Wide composition, generous negative space."
         ),
     },
     {
-        "slug": "infographic-rag-przewodnik",
+        "slug": "infographic-rag-embeddingi",
         "prompt": (
             INFO_STYLE
-            + "TITLE on top in Polish: 'RAG – jak działa generowanie "
-            "wspomagane wyszukiwaniem'. Show a clean left-to-right pipeline "
-            "with 5 connected stages, each a rounded rectangle with a Polish "
-            "label: '1. ZAPYTANIE', '2. WYSZUKIWANIE (baza wektorowa)', "
-            "'3. NAJTRAFNIEJSZE FRAGMENTY', '4. GENERACJA (LLM)', "
-            "'5. ODPOWIEDŹ ZE ŹRÓDŁAMI'. The retrieval stage (2) glows "
-            "sky-blue as the key step. Thin luminous sky-blue arrows connect "
-            "the stages. Bottom caption in mono font: 'MNIEJ HALUCYNACJI · "
-            "AKTUALNE DANE · BEZ FINE-TUNINGU'."
+            + "TITLE on top in Polish (white): 'Embeddingi – jak tekst staje "
+            "się wektorem'. Show a left-to-right flow with 4 stages, each a "
+            "rounded rectangle with a white Polish label: '1. TEKST' "
+            "(example word 'kot'), '2. MODEL OSADZAJĄCY' (sky-blue, the key "
+            "step), '3. WEKTOR' (showing a short bracket of numbers like "
+            "[0.21, -0.34, 0.88, …]), '4. PRZESTRZEŃ SEMANTYCZNA' (a small "
+            "cluster of dots where 'kot' and 'pies' are close, 'samochód' "
+            "far away). Thin sky-blue arrows connect the stages. Bottom "
+            "caption: 'BLISKOŚĆ WEKTORÓW = BLISKOŚĆ ZNACZENIA'."
+        ),
+    },
+    # ── RAG / chunking-strategie ──────────────────────────────────────
+    {
+        "slug": "blog-rag-chunking-strategie",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract visualization of document chunking: a large glowing "
+            "document on the left being divided by clean luminous sky-blue "
+            "lines into neat smaller blocks that float apart and arrange "
+            "into an orderly grid on the right. Conveys 'splitting a "
+            "document into retrievable chunks'. Left-to-right flow."
+        ),
+    },
+    {
+        "slug": "infographic-rag-chunking-strategie",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Strategie chunkingu – jak "
+            "dzielić dokumenty'. Show a 2x2 grid of four rounded cards, each "
+            "with a white Polish heading and a one-line description: "
+            "'PODZIAŁ STAŁY – szybki, ryzyko ucięcia zdania', 'REKURENCYJNY "
+            "– zachowuje akapity i zdania', 'PARENT-CHILD – małe do "
+            "wyszukiwania, duże do generacji' (sky-blue, highlighted as "
+            "best), 'SEMANTYCZNY – dzieli wg znaczenia'. Each card shows a "
+            "tiny diagram of a document split differently. Bottom caption: "
+            "'ROZMIAR FRAGMENTU DECYDUJE O PRECYZJI'."
+        ),
+    },
+    # ── RAG / reranking ───────────────────────────────────────────────
+    {
+        "slug": "blog-rag-reranking",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract visualization of reranking: a column of retrieved "
+            "fragments on the left, passing through a glowing sky-blue "
+            "sorting/filter mechanism in the middle, emerging on the right "
+            "reordered into a new prioritized stack with the top item "
+            "brightest. Conveys 'reordering results by true relevance'. "
+            "Left-to-right flow."
+        ),
+    },
+    {
+        "slug": "infographic-rag-reranking",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Reranking – drugie sito "
+            "trafności'. Show a left-to-right pipeline with 3 stages: "
+            "'1. WYSZUKIWANIE' (a tall stack of ~100 small gray fragments), "
+            "'2. CROSS-ENCODER' (sky-blue, the key step, a mechanism "
+            "re-scoring fragments), '3. TOP 5 FRAGMENTÓW' (a short stack of "
+            "5 bright fragments) → arrow to a small 'LLM' box. Thin sky-blue "
+            "arrows connect the stages. Bottom caption: 'TRAFNOŚĆ "
+            "33,5% → 49,0% · +120 ms'."
         ),
     },
 ]
