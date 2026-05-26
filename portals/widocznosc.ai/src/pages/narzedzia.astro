@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import ScrollUpButton from '../components/ScrollUpButton.astro';
+import CTABand from '../components/CTABand.astro';
 
 const tools = [
   {
@@ -10,46 +11,65 @@ const tools = [
     eyebrow: 'Marka w AI',
     time: 'ok. 60 s',
     title: 'Co AI wie o Twojej marce',
-    desc:
-      'Sprawdź rozpoznawalność marki, sentyment, możliwe halucynacje i konkurentów polecanych zamiast Ciebie.',
+    desc: 'Sprawdź rozpoznawalność marki, sentyment, możliwe halucynacje i konkurentów polecanych zamiast Ciebie.',
     href: '/narzedzia/brand-check',
     cta: 'Sprawdź markę',
-    bullets: ['ChatGPT, Claude, Gemini i Perplexity', 'Sentyment i rozpoznawalność', 'Konkurenci i źródła'],
+    bullets: [
+      'ChatGPT, Claude, Gemini i Perplexity',
+      'Sentyment i rozpoznawalność',
+      'Konkurenci i źródła',
+    ],
+    preview: [
+      'twojadomena.pl',
+      'ChatGPT — Brak danych ✗',
+      'Claude — Poleca konkurenta ⚠',
+      'Perplexity — Zna · neutralny ✓',
+    ],
+    crossLabel: 'Jak pozycjonować markę w ChatGPT',
+    crossHref: '/pozycjonowanie-ai/chatgpt',
   },
   {
     id: 'url-check',
     eyebrow: 'Content pod AI',
     time: 'ok. 30 s',
     title: 'Czy Twój content jest cytowalny',
-    desc:
-      'Przeanalizuj pojedynczy URL pod kątem BLUF, FAQ, schema, świeżości, nagłówków i sygnałów przydatnych dla modeli AI.',
+    desc: 'Przeanalizuj pojedynczy URL pod kątem BLUF, FAQ, schema, świeżości, nagłówków i sygnałów przydatnych dla modeli AI.',
     href: '/narzedzia/url-check',
     cta: 'Sprawdź URL',
     bullets: ['AI SEO Alignment Score', 'Schema i FAQ', 'Priorytety zmian'],
+    preview: ['/blog/x — 43/100', 'BLUF ▪▪▪▫▫ 60%', 'FAQ ▫▫▫▫▫ 0%', 'Schema ▪▪▫▫▫ 40%'],
+    crossLabel: 'Jak tworzyć content cytowany przez AI',
+    crossHref: '/pozycjonowanie-ai/gemini',
   },
   {
     id: 'ai-bots-check',
     eyebrow: 'Dostęp botów',
     time: 'ok. 5 s',
     title: 'Czy boty AI mają dostęp do strony',
-    desc:
-      'Sprawdź robots.txt i zobacz, czy GPTBot, ClaudeBot, PerplexityBot, Google-Extended i inne boty mogą wejść na domenę.',
+    desc: 'Sprawdź robots.txt i zobacz, czy GPTBot, ClaudeBot, PerplexityBot, Google-Extended i inne boty mogą wejść na domenę.',
     href: '/narzedzia/ai-bots-check',
     cta: 'Sprawdź boty',
     bullets: ['13 user-agentów AI', 'Allow / disallow per bot', 'Gotowy szablon naprawy'],
+    preview: ['GPTBot ✓ · ClaudeBot ✗', 'Google-Extended ✗', 'PerplexityBot ✓ · CCBot ✗'],
+    crossLabel: 'Dlaczego dostęp botów wpływa na cytowania',
+    crossHref: '/pozycjonowanie-ai',
   },
   {
     id: 'fanout',
     eyebrow: 'Fan-out',
     time: 'ok. 30 s',
     title: 'Jak AI rozbija zapytanie',
-    desc:
-      'Zobacz zapytania wyszukiwania ujawnione przez model oraz domeny, które pojawiły się jako cytowane źródła.',
+    desc: 'Zobacz zapytania wyszukiwania ujawnione przez model oraz domeny, które pojawiły się jako cytowane źródła.',
     href: '/narzedzia/fanout',
     cta: 'Pokaż fan-out',
     bullets: ['Zapytania wyszukiwania', 'Cytowane domeny', 'Bez automatycznego raportu'],
+    preview: ['„najlepsza agencja SEO"', '↳ 8 pomocniczych zapytań', '↳ 12 cytowanych domen'],
+    crossLabel: 'Jak modele wybierają źródła odpowiedzi',
+    crossHref: '/pozycjonowanie-ai/perplexity',
   },
 ];
+
+const siteUrl = 'https://widocznosc.ai';
 ---
 
 <Layout
@@ -58,6 +78,31 @@ const tools = [
 >
   <Navbar />
 
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      itemListElement: tools.map((tool, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'SoftwareApplication',
+          name: tool.title,
+          applicationCategory: 'BusinessApplication',
+          description: tool.desc,
+          url: `${siteUrl}${tool.href}`,
+          offers: {
+            '@type': 'Offer',
+            price: 0,
+            priceCurrency: 'PLN',
+          },
+        },
+      })),
+    })}
+  />
+
   <main>
     <section class="tools-hero">
       <div class="content-container tools-hero-inner">
@@ -65,8 +110,9 @@ const tools = [
           <span class="eyebrow tools-eyebrow">Narzędzia widocznosc.ai</span>
           <h1>Darmowe testy widoczności w AI</h1>
           <p>
-            Sprawdź najważniejsze sygnały przed audytem: co modele wiedzą o marce,
-            czy content nadaje się do cytowania, czy boty mają dostęp do strony i jakie źródła pojawiają się w fan-oucie.
+            Sprawdź najważniejsze sygnały przed audytem: co modele wiedzą o marce, czy content
+            nadaje się do cytowania, czy boty mają dostęp do strony i jakie źródła pojawiają się w
+            fan-oucie.
           </p>
         </div>
         <div class="tools-hero-panel" aria-label="Zakres narzędzi">
@@ -79,8 +125,8 @@ const tools = [
             <p>logowania</p>
           </div>
           <div>
-            <span>AI</span>
-            <p>marka, content, dostęp i źródła</p>
+            <span>90s</span>
+            <p>najdłuższy test</p>
           </div>
         </div>
       </div>
@@ -89,53 +135,73 @@ const tools = [
     <section class="tools-section" aria-labelledby="tools-title">
       <div class="content-container">
         <div class="section-head">
-          <span class="section-kicker">Wybierz narzędzie</span>
-          <h2 id="tools-title">Szybka diagnoza bez formularza sprzedażowego</h2>
+          <div class="head-meta">
+            <span class="section-index">T/01</span>
+            <span class="eyebrow">Wybierz narzędzie</span>
+          </div>
+          <h2 id="tools-title" class="display-lg">Szybka diagnoza bez formularza sprzedażowego</h2>
+        </div>
+
+        <div class="tool-order" aria-label="Rekomendowana kolejność testów">
+          <span class="tool-order-label">Zacznij od</span>
+          <ol>
+            <li><a href="/narzedzia/brand-check">Brand Check</a></li>
+            <li><a href="/narzedzia/ai-bots-check">AI Bots Check</a></li>
+            <li><a href="/narzedzia/url-check">URL Check</a></li>
+            <li><a href="/narzedzia/fanout">Fan-out</a></li>
+          </ol>
         </div>
 
         <div class="tools-grid">
-          {tools.map((tool, index) => (
-            <article class="tool-card" id={tool.id}>
-              <a class="tool-card-link" href={tool.href} aria-label={tool.cta}>
-                <div class="tool-card-top">
-                  <span class="tool-number">{String(index + 1).padStart(2, '0')}</span>
-                  <span class="tool-time">{tool.time}</span>
-                </div>
-                <div class="tool-meta">{tool.eyebrow}</div>
-                <h3>{tool.title}</h3>
-                <p class="tool-desc">{tool.desc}</p>
-                <ul class="tool-bullets">
-                  {tool.bullets.map((bullet) => (
-                    <li>{bullet}</li>
-                  ))}
-                </ul>
-                <span class="tool-cta">
-                  {tool.cta}
+          {
+            tools.map((tool, index) => (
+              <article class="tool-card" id={tool.id}>
+                <a class="tool-card-link" href={tool.href} aria-label={tool.cta}>
+                  <div class="tool-card-top">
+                    <span class="tool-number">{String(index + 1).padStart(2, '0')}</span>
+                    <span class="tool-time">{tool.time}</span>
+                  </div>
+                  <div class="tool-meta">{tool.eyebrow}</div>
+                  <h3>{tool.title}</h3>
+                  <p class="tool-desc">{tool.desc}</p>
+                  <ul class="tool-bullets">
+                    {tool.bullets.map((bullet) => (
+                      <li>{bullet}</li>
+                    ))}
+                  </ul>
+                  <div class="tool-preview" aria-hidden="true">
+                    {tool.preview.map((line) => (
+                      <span>{line}</span>
+                    ))}
+                  </div>
+                  <span class="tool-cta">
+                    {tool.cta}
+                    <span aria-hidden="true">→</span>
+                  </span>
+                </a>
+                <a class="tool-cross-link" href={tool.crossHref}>
+                  {tool.crossLabel}
                   <span aria-hidden="true">→</span>
-                </span>
-              </a>
-            </article>
-          ))}
+                </a>
+              </article>
+            ))
+          }
         </div>
       </div>
     </section>
 
-    <section class="audit-cta" aria-labelledby="audit-title">
-      <div class="content-container audit-cta-inner">
-        <div>
-          <span class="section-kicker">Pełny audyt</span>
-          <h2 id="audit-title">Potrzebujesz pełnego obrazu widoczności w AI?</h2>
-          <p>
-            Darmowe narzędzia pokazują pojedyncze sygnały. W audycie łączymy wyniki dla marki,
-            contentu, źródeł, konkurencji i dostępności technicznej w konkretny plan działań.
-          </p>
-        </div>
-        <a class="btn-primary audit-button" href="/kontakt?type=audyt-ai">
-          Porozmawiajmy o audycie
-          <span aria-hidden="true">→</span>
-        </a>
-      </div>
-    </section>
+    <CTABand
+      eyebrow="Pełny audyt"
+      title="Potrzebujesz pełnego obrazu widoczności w AI?"
+      subtitle="Darmowe narzędzia pokazują pojedyncze sygnały. W audycie łączymy wyniki dla marki, contentu, źródeł, konkurencji i dostępności technicznej w konkretny plan działań."
+      primaryLabel="Porozmawiajmy o audycie"
+      primaryHref="/kontakt?type=audyt-ai"
+      ghostLabel="Zobacz pozycjonowanie AI"
+      ghostHref="/pozycjonowanie-ai"
+      rightLabel="Po narzędziach"
+      quote={`„Łączymy wynik marki, URL-i, botów i fan-outu w priorytety działań dla pierwszych 90 dni."`}
+      meta={['4 darmowe testy', 'Pełny audyt', 'Plan 90 dni']}
+    />
   </main>
 
   <Footer />
@@ -148,7 +214,11 @@ const tools = [
     overflow: hidden;
     padding: clamp(6rem, 9vw, 8rem) 0 clamp(2.6rem, 5vw, 4.5rem);
     background:
-      radial-gradient(circle at 18% 18%, color-mix(in srgb, var(--accent-blue) 13%, transparent), transparent 34rem),
+      radial-gradient(
+        circle at 18% 18%,
+        color-mix(in srgb, var(--accent-blue) 13%, transparent),
+        transparent 34rem
+      ),
       linear-gradient(180deg, var(--bg-canvas) 0%, var(--bg-surface-1) 100%);
   }
 
@@ -226,26 +296,59 @@ const tools = [
     margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
   }
 
-  .section-kicker {
-    display: inline-flex;
-    color: var(--accent-blue);
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .section-head h2,
-  .audit-cta h2 {
+  .section-head h2 {
     max-width: 780px;
     margin: 0;
     color: var(--ink);
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 4.8vw, 4.7rem);
-    font-weight: 500;
-    line-height: 0.98;
-    letter-spacing: 0;
     text-wrap: balance;
+  }
+
+  .tool-order {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 0 1rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-lg);
+    background: var(--bg-surface-1);
+    color: var(--ink-muted);
+    font-size: 0.9rem;
+  }
+
+  .tool-order-label {
+    color: var(--ink);
+    font-weight: 800;
+    white-space: nowrap;
+  }
+
+  .tool-order ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.8rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .tool-order li {
+    display: inline-flex;
+    gap: 0.8rem;
+    align-items: center;
+  }
+
+  .tool-order li + li::before {
+    content: '→';
+    color: var(--ink-faint);
+  }
+
+  .tool-order a {
+    color: var(--ink-muted);
+    text-decoration: none;
+  }
+
+  .tool-order a:hover {
+    color: var(--ink);
   }
 
   .tools-grid {
@@ -255,7 +358,16 @@ const tools = [
   }
 
   .tool-card {
+    display: flex;
     min-height: 100%;
+    flex-direction: column;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-xl);
+    background: var(--bg-surface-1);
+    transition:
+      transform 180ms ease,
+      border-color 180ms ease,
+      background 180ms ease;
   }
 
   .tool-card-link {
@@ -263,18 +375,12 @@ const tools = [
     min-height: 100%;
     flex-direction: column;
     padding: clamp(1.25rem, 2.6vw, 2rem);
-    border: 1px solid var(--hairline-soft);
-    border-radius: var(--r-xl);
-    background: var(--bg-surface-1);
+    border-radius: var(--r-xl) var(--r-xl) 0 0;
     color: inherit;
     text-decoration: none;
-    transition:
-      transform 180ms ease,
-      border-color 180ms ease,
-      background 180ms ease;
   }
 
-  .tool-card-link:hover {
+  .tool-card:hover {
     transform: translateY(-3px);
     border-color: color-mix(in srgb, var(--accent-blue) 40%, var(--hairline));
     background: color-mix(in srgb, var(--bg-surface-1) 78%, var(--accent-blue) 6%);
@@ -316,7 +422,7 @@ const tools = [
     margin: 0.75rem 0 0;
     color: var(--ink);
     font-family: var(--font-display);
-    font-size: clamp(1.75rem, 3.5vw, 3.1rem);
+    font-size: clamp(1.5rem, 2.2vw, 2rem);
     font-weight: 500;
     line-height: 1;
     letter-spacing: 0;
@@ -353,6 +459,28 @@ const tools = [
     vertical-align: 0.12rem;
   }
 
+  .tool-preview {
+    display: grid;
+    gap: 0.42rem;
+    margin-top: 1.35rem;
+    padding: 0.9rem;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-md);
+    background: var(--bg-canvas);
+    color: var(--ink-muted);
+    font-family: ui-monospace, 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    line-height: 1.38;
+  }
+
+  .tool-preview span {
+    overflow-wrap: anywhere;
+  }
+
+  .tool-preview span:first-child {
+    color: var(--ink);
+  }
+
   .tool-cta {
     display: inline-flex;
     gap: 0.45rem;
@@ -363,49 +491,31 @@ const tools = [
     font-weight: 800;
   }
 
-  .audit-cta {
-    padding: 0 0 clamp(4rem, 8vw, 7rem);
-    background: var(--bg-canvas);
-  }
-
-  .audit-cta-inner {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    gap: 2rem;
+  .tool-cross-link {
+    display: inline-flex;
+    gap: 0.45rem;
     align-items: center;
-    padding: clamp(1.5rem, 4vw, 3rem);
-    border: 1px solid color-mix(in srgb, var(--accent-blue) 24%, var(--hairline));
-    border-radius: var(--r-xl);
-    background:
-      radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--accent-blue) 16%, transparent), transparent 24rem),
-      var(--bg-surface-1);
-  }
-
-  .audit-cta p {
-    max-width: 720px;
-    margin: 1rem 0 0;
+    margin: auto clamp(1.25rem, 2.6vw, 2rem) clamp(1.25rem, 2.6vw, 2rem);
+    padding-top: 1rem;
+    border-top: 1px solid var(--hairline-soft);
     color: var(--ink-muted);
-    font-size: 1.02rem;
-    line-height: 1.6;
+    font-size: 0.86rem;
+    font-weight: 700;
+    line-height: 1.35;
+    text-decoration: none;
   }
 
-  .audit-button {
-    align-self: end;
-    white-space: nowrap;
+  .tool-cross-link:hover {
+    color: var(--ink);
   }
 
   @media (max-width: 980px) {
-    .tools-hero-inner,
-    .audit-cta-inner {
+    .tools-hero-inner {
       grid-template-columns: 1fr;
     }
 
     .tools-hero-panel {
       grid-template-columns: repeat(3, 1fr);
-    }
-
-    .audit-button {
-      justify-self: start;
     }
   }
 
@@ -429,6 +539,14 @@ const tools = [
 
     .section-head h2 {
       margin-top: 0.75rem;
+    }
+
+    .tool-order {
+      display: block;
+    }
+
+    .tool-order ol {
+      margin-top: 0.65rem;
     }
   }
 </style>

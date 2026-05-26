@@ -5,46 +5,66 @@
  * Decorative violet glow orb top-right (480x480, blur 80px, opacity 0.35).
  * 2-col grid 1.5fr/1fr: lewy CTA + meta row, prawy testimonial-style quote.
  */
+
+interface Props {
+  eyebrow?: string;
+  title?: string;
+  titleHtml?: string;
+  subtitle?: string;
+  primaryLabel?: string;
+  primaryHref?: string;
+  ghostLabel?: string;
+  ghostHref?: string;
+  rightLabel?: string;
+  quote?: string;
+  author?: string;
+  meta?: string[];
+}
+
+const {
+  eyebrow = 'Następny krok',
+  title,
+  titleHtml = 'Sprawdź, jak Twoja marka radzi sobie w&nbsp;<span class="accent">AI search</span>.',
+  subtitle = 'Bezpłatna konsultacja 30 minut. Bez sprzedaży, bez zobowiązań &ndash; pokazujemy gdzie marka jest cytowana, gdzie traci do&nbsp;konkurencji i&nbsp;co realnie zmienić.',
+  primaryLabel = 'Zamów audyt AI',
+  primaryHref = '/kontakt',
+  ghostLabel = 'Bezpłatna konsultacja',
+  ghostHref = '/kontakt?type=konsultacja',
+  rightLabel = 'Co dostajesz na rozmowie',
+  quote = '„Pokazujemy, gdzie Twoja marka jest cytowana, gdzie traci do&nbsp;konkurencji i&nbsp;co konkretnie zmienić w&nbsp;pierwszej kolejności."',
+  author = '&ndash; zespół widocznosc.ai',
+  meta = ['30 minut', 'Bez zobowiązań', 'Konkretny plan'],
+} = Astro.props;
 ---
 
 <section class="final-cta-section" id="cta" aria-labelledby="final-cta-title">
   <div class="container">
     <div class="final-cta-card">
-
       <div class="final-cta-left">
-        <span class="eyebrow">Następny krok</span>
+        <span class="eyebrow">{eyebrow}</span>
         <h2 id="final-cta-title" class="display-xl">
-          Sprawdź, jak Twoja marka radzi sobie w&nbsp;<span class="accent">AI search</span>.
+          {title ? title : <Fragment set:html={titleHtml} />}
         </h2>
-        <p class="subhead final-cta-sub">
-          Bezpłatna konsultacja 30 minut. Bez sprzedaży, bez zobowiązań &ndash;
-          pokazujemy gdzie marka jest cytowana, gdzie traci do&nbsp;konkurencji
-          i&nbsp;co realnie zmienić.
-        </p>
+        <p class="subhead final-cta-sub" set:html={subtitle} />
         <div class="final-cta-actions">
-          <a class="btn-primary" href="/kontakt" aria-label="Zamów audyt AI">
-            Zamów audyt AI <span aria-hidden="true">→</span>
+          <a class="btn-primary" href={primaryHref} aria-label={primaryLabel}>
+            {primaryLabel}
+            <span aria-hidden="true">→</span>
           </a>
-          <a class="btn-secondary" href="/kontakt?type=konsultacja" aria-label="Bezpłatna konsultacja">
-            Bezpłatna konsultacja
+          <a class="btn-secondary" href={ghostHref} aria-label={ghostLabel}>
+            {ghostLabel}
           </a>
         </div>
         <p class="final-cta-meta">
-          <span>30 minut</span>
-          <span>Bez zobowiązań</span>
-          <span>Konkretny plan</span>
+          {meta.map((item) => <span>{item}</span>)}
         </p>
       </div>
 
       <aside class="final-cta-right">
-        <span class="final-cta-label">Co dostajesz na rozmowie</span>
-        <p class="final-cta-quote">
-          „Pokazujemy, gdzie Twoja marka jest cytowana, gdzie traci
-          do&nbsp;konkurencji i&nbsp;co konkretnie zmienić w&nbsp;pierwszej kolejności."
-        </p>
-        <span class="final-cta-author">&ndash; zespół widocznosc.ai</span>
+        <span class="final-cta-label">{rightLabel}</span>
+        <p class="final-cta-quote" set:html={quote} />
+        <span class="final-cta-author" set:html={author} />
       </aside>
-
     </div>
   </div>
 </section>
@@ -57,7 +77,9 @@
   }
 
   @media (min-width: 980px) {
-    .final-cta-section { padding: 120px 0; }
+    .final-cta-section {
+      padding: 120px 0;
+    }
   }
 
   .final-cta-card {
@@ -146,7 +168,9 @@
     color: var(--ink-faint);
   }
 
-  .final-cta-meta span:first-child::before { display: none; }
+  .final-cta-meta span:first-child::before {
+    display: none;
+  }
 
   /* Right column – testimonial */
   .final-cta-right {

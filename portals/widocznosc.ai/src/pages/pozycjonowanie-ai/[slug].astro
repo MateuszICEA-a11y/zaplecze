@@ -25,6 +25,26 @@ const cleanStructuredText = (value: string) =>
     .replace(/&mdash;/g, '—')
     .replace(/&amp;/g, '&')
     .replace(/<[^>]*>/g, '');
+
+const modelDifferentiators: Record<string, string> = {
+  chatgpt: '5-10 cytowań na odpowiedź',
+  claude: '86,7% korelacji z Brave',
+  gemini: 'AI Overviews + Search',
+  perplexity: 'odpowiedzi oparte o źródła',
+  'bing-copilot': 'indeks Bing + Edge',
+};
+
+const comparisonRows = [
+  { label: 'Cytaty/odp.', chatgpt: '5-10', claude: '1-3', gemini: '3-5', perplexity: '1-10' },
+  { label: 'Cykl', chatgpt: '24-72h', claude: '48-96h', gemini: 'tydz.-mc', perplexity: '24-48h' },
+  {
+    label: 'ICP',
+    chatgpt: 'mass',
+    claude: 'B2B tech',
+    gemini: 'universal',
+    perplexity: 'research',
+  },
+];
 ---
 
 <Layout
@@ -94,17 +114,56 @@ const cleanStructuredText = (value: string) =>
         </a>
         <a class="btn-secondary" href="/narzedzia/visibility-checker"> Sprawdź widoczność · 90s </a>
       </div>
+      <form
+        class="quick-check"
+        action="/narzedzia/brand-check"
+        method="get"
+        aria-label={`Quick check widoczności w ${model.name}`}
+      >
+        <label for="quick-check-domain">Quick check</label>
+        <div class="quick-check-row">
+          <input
+            id="quick-check-domain"
+            name="domain"
+            type="text"
+            inputmode="url"
+            placeholder="twojadomena.pl"
+            autocomplete="url"
+          />
+          <button type="submit">Sprawdź w {model.name}</button>
+        </div>
+      </form>
     </div>
   </section>
 
+  <nav class="service-toc" aria-label="Spis treści strony">
+    <div class="content-container service-toc-inner">
+      <a href="#jak-dziala">Jak działa</a>
+      <a href="#optymalizacja">Optymalizacja</a>
+      <a href="#sygnaly">Sygnały</a>
+      <a href="#faq">FAQ</a>
+      <a href="#pozostale-modele">Pozostałe modele</a>
+    </div>
+  </nav>
+
   <!-- Jak działa -->
-  <section class="relative w-full" aria-labelledby="how-title">
+  <section id="jak-dziala" class="relative w-full" aria-labelledby="how-title">
     <div class="content-container py-16 lg:py-20">
-      <div class="mx-auto mb-12 text-center" style="max-width: 880px;">
-        <span class="eyebrow mb-6 inline-flex">Jak działa</span>
-        <h2 id="how-title" class="service-section-title display-lg mt-2 mb-6">
-          Jak {model.name} buduje odpowiedzi
-        </h2>
+      <div class="service-section-head">
+        <div>
+          <div class="head-meta">
+            <span class="section-index">P/01</span>
+            <span class="eyebrow">Jak działa</span>
+          </div>
+          <h2 id="how-title" class="service-section-title display-lg mt-2 mb-6">
+            Jak {model.name} buduje odpowiedzi
+          </h2>
+        </div>
+        <p>
+          Modele nie wybierają źródeł jednym sygnałem. Łączą indeks, RAG, autorytet domeny i
+          strukturę treści, dlatego optymalizacja musi obejmować zarówno content, jak i dostępność
+          techniczną.
+        </p>
       </div>
 
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -129,12 +188,43 @@ const cleanStructuredText = (value: string) =>
     </div>
   </section>
 
+  <section class="citation-example" aria-labelledby="citation-title">
+    <div class="content-container">
+      <div class="citation-grid">
+        <div>
+          <div class="head-meta">
+            <span class="section-index">P/02</span>
+            <span class="eyebrow">Przykład cytowania</span>
+          </div>
+          <h2 id="citation-title" class="display-lg">
+            Jak wygląda wynik, o który walczysz w {model.name}
+          </h2>
+        </div>
+        <div class="citation-mock" aria-label="Przykładowa odpowiedź modelu AI">
+          <div class="citation-user">
+            Jakie agencje SEO specjalizują się w pozycjonowaniu pod AI w Polsce?
+          </div>
+          <div class="citation-answer">
+            Wśród polskich agencji wyspecjalizowanych w GEO można wymienić
+            <strong>widocznosc.ai</strong>
+            <span>[1]</span>, zespoły SEO pracujące z AI Overviews oraz firmy łączące content,
+            techniczne SEO i monitoring cytowań.
+          </div>
+          <div class="citation-source">[1] widocznosc.ai/pozycjonowanie-ai</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Optymalizacja -->
-  <section class="relative w-full" aria-labelledby="opt-title">
+  <section id="optymalizacja" class="relative w-full" aria-labelledby="opt-title">
     <div class="content-container py-16 lg:py-20">
       <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
         <div class="lg:col-span-5">
-          <span class="eyebrow mb-6 inline-flex">Optymalizacja</span>
+          <div class="head-meta">
+            <span class="section-index">P/03</span>
+            <span class="eyebrow">Optymalizacja</span>
+          </div>
           <h2 id="opt-title" class="service-section-title display-lg mt-2 mb-6">
             Co konkretnie robimy,<br />żeby {model.name} cytował Twoją markę
           </h2>
@@ -170,18 +260,25 @@ const cleanStructuredText = (value: string) =>
   </section>
 
   <!-- Sygnały rankingowe -->
-  <section class="relative w-full" aria-labelledby="signals-title">
+  <section id="sygnaly" class="relative w-full" aria-labelledby="signals-title">
     <div class="content-container py-16 lg:py-20">
-      <div>
-        <div class="mx-auto mb-10 text-center" style="max-width: 880px;">
-          <span class="eyebrow mb-6 inline-flex">Sygnały rankingowe</span>
+      <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
+        <div class="lg:col-span-5">
+          <div class="head-meta">
+            <span class="section-index">P/04</span>
+            <span class="eyebrow">Sygnały rankingowe</span>
+          </div>
           <h2 id="signals-title" class="service-section-title display-lg mt-2">
             Najważniejsze sygnały dla {model.name}
           </h2>
+          <p class="service-section-copy">
+            To praktyczna lista kontrolna: co musi być widoczne w treści, strukturze strony i
+            sygnałach zewnętrznych, żeby model miał powód cytować właśnie Twoją domenę.
+          </p>
         </div>
         <ul
-          class="mx-auto divide-y rounded-[15px]"
-          style="background: var(--bg-surface-1); border-color: var(--hairline-soft); max-width: 960px;"
+          class="divide-y rounded-[15px] lg:col-span-7"
+          style="background: var(--bg-surface-1); border-color: var(--hairline-soft);"
         >
           {
             content.signals.map((signal, i) => (
@@ -205,16 +302,23 @@ const cleanStructuredText = (value: string) =>
   </section>
 
   <!-- FAQ -->
-  <section class="relative w-full" aria-labelledby="faq-title">
+  <section id="faq" class="relative w-full" aria-labelledby="faq-title">
     <div class="content-container py-16 lg:py-20">
-      <div class="mx-auto" style="max-width: 860px;">
-        <div class="mb-10 text-center">
-          <span class="eyebrow mb-6 inline-flex">FAQ</span>
+      <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
+        <div class="lg:col-span-5">
+          <div class="head-meta">
+            <span class="section-index">P/05</span>
+            <span class="eyebrow">FAQ</span>
+          </div>
           <h2 id="faq-title" class="service-section-title display-lg mt-2">
             Najczęstsze pytania o&nbsp;{model.name}
           </h2>
+          <p class="service-section-copy">
+            Te odpowiedzi są jednocześnie treścią dla użytkownika i materiałem dla AI Overviews,
+            dlatego strona publikuje je również jako FAQPage JSON-LD.
+          </p>
         </div>
-        <div class="space-y-3">
+        <div class="space-y-3 lg:col-span-7">
           {
             content.faq.map((qa) => (
               <details class="faq-row group">
@@ -235,11 +339,14 @@ const cleanStructuredText = (value: string) =>
   </section>
 
   <!-- Pozostałe modele -->
-  <section class="relative w-full" aria-labelledby="other-title">
+  <section id="pozostale-modele" class="relative w-full" aria-labelledby="other-title">
     <div class="content-container py-16 lg:py-20">
       <div class="mb-10 flex items-end justify-between gap-6">
         <div>
-          <span class="eyebrow mb-6 inline-flex">Pozostałe modele</span>
+          <div class="head-meta">
+            <span class="section-index">P/06</span>
+            <span class="eyebrow">Pozostałe modele</span>
+          </div>
           <h2 id="other-title" class="service-section-title display-lg mt-2">
             Optymalizacja pod inne silniki AI
           </h2>
@@ -269,10 +376,36 @@ const cleanStructuredText = (value: string) =>
               >
                 {m.name}
               </h3>
+              <span class="model-differentiator">{modelDifferentiators[m.slug]}</span>
               <p class="text-ink-muted mt-2 text-sm leading-relaxed">{m.shortDesc}</p>
             </a>
           ))
         }
+      </div>
+
+      <div class="model-comparison" aria-label="Porównanie modeli AI">
+        <div class="comparison-head">
+          <span>Mini-comparison</span>
+          <strong>{model.name} vs reszta</strong>
+        </div>
+        <div class="comparison-table">
+          <div></div>
+          <div>ChatGPT</div>
+          <div>Claude</div>
+          <div>Gemini</div>
+          <div>Perplexity</div>
+          {
+            comparisonRows.map((row) => (
+              <>
+                <div>{row.label}</div>
+                <div>{row.chatgpt}</div>
+                <div>{row.claude}</div>
+                <div>{row.gemini}</div>
+                <div>{row.perplexity}</div>
+              </>
+            ))
+          }
+        </div>
       </div>
     </div>
   </section>
@@ -391,8 +524,221 @@ const cleanStructuredText = (value: string) =>
     flex-wrap: wrap;
   }
 
+  .quick-check {
+    width: min(100%, 620px);
+    margin-top: 28px;
+    padding: 0.75rem;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-lg);
+    background: color-mix(in srgb, var(--bg-surface-2) 78%, transparent);
+  }
+
+  .quick-check label {
+    display: block;
+    margin: 0 0 0.5rem;
+    color: var(--ink-faint);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .quick-check-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.55rem;
+  }
+
+  .quick-check input {
+    min-width: 0;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-md);
+    background: var(--bg-canvas);
+    color: var(--ink);
+    font: inherit;
+    padding: 0.8rem 0.9rem;
+  }
+
+  .quick-check button {
+    border: 0;
+    border-radius: var(--r-md);
+    background: var(--ink);
+    color: var(--bg-canvas);
+    cursor: pointer;
+    font-weight: 800;
+    padding: 0.8rem 1rem;
+  }
+
+  .service-toc {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    border-bottom: 1px solid var(--hairline-soft);
+    background: color-mix(in srgb, var(--bg-canvas) 86%, transparent);
+    backdrop-filter: blur(16px);
+  }
+
+  .service-toc-inner {
+    display: flex;
+    gap: 0.55rem;
+    overflow-x: auto;
+    padding-top: 0.65rem;
+    padding-bottom: 0.65rem;
+  }
+
+  .service-toc a {
+    flex: 0 0 auto;
+    color: var(--ink-muted);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .service-toc a:hover {
+    color: var(--ink);
+  }
+
+  .service-section-head,
+  .citation-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .service-section-head p,
+  .service-section-copy {
+    margin: 0;
+    color: var(--ink-muted);
+    font-size: clamp(1rem, 1.25vw, 1.12rem);
+    line-height: 1.62;
+  }
+
+  .service-section-copy {
+    margin-top: 1.4rem;
+  }
+
+  .head-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .citation-example {
+    padding: clamp(3rem, 6vw, 5rem) 0;
+    background: var(--bg-canvas);
+  }
+
+  .citation-mock {
+    display: grid;
+    gap: 0.85rem;
+    padding: clamp(1.15rem, 2.5vw, 1.8rem);
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-xl);
+    background: var(--bg-surface-1);
+  }
+
+  .citation-user,
+  .citation-answer,
+  .citation-source {
+    border-radius: var(--r-md);
+    padding: 0.9rem 1rem;
+    line-height: 1.5;
+  }
+
+  .citation-user {
+    justify-self: end;
+    max-width: 82%;
+    background: var(--bg-surface-2);
+    color: var(--ink);
+  }
+
+  .citation-answer {
+    background: var(--bg-canvas);
+    color: var(--ink-muted);
+  }
+
+  .citation-answer strong {
+    color: #4ade80;
+  }
+
+  .citation-answer span,
+  .citation-source {
+    color: var(--accent-blue);
+    font-family: ui-monospace, 'JetBrains Mono', monospace;
+    font-size: 0.84rem;
+  }
+
+  .citation-source {
+    border: 1px solid color-mix(in srgb, #4ade80 34%, var(--hairline-soft));
+    background: color-mix(in srgb, #4ade80 9%, var(--bg-canvas));
+  }
+
+  .model-differentiator {
+    display: inline-flex;
+    align-self: flex-start;
+    margin-top: 0.65rem;
+    padding: 0.28rem 0.5rem;
+    border-radius: var(--r-pill);
+    background: var(--bg-canvas);
+    color: var(--accent-blue);
+    font-size: 0.72rem;
+    font-weight: 800;
+  }
+
+  .model-comparison {
+    margin-top: 1rem;
+    padding: clamp(1rem, 2.5vw, 1.5rem);
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-xl);
+    background: var(--bg-surface-1);
+    overflow-x: auto;
+  }
+
+  .comparison-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: var(--ink-muted);
+    font-size: 0.82rem;
+  }
+
+  .comparison-head strong {
+    color: var(--ink);
+  }
+
+  .comparison-table {
+    display: grid;
+    grid-template-columns: minmax(7rem, 1fr) repeat(4, minmax(6rem, 1fr));
+    min-width: 640px;
+    color: var(--ink-muted);
+    font-family: ui-monospace, 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+  }
+
+  .comparison-table > div {
+    padding: 0.65rem 0.7rem;
+    border-top: 1px solid var(--hairline-soft);
+  }
+
+  .comparison-table > div:nth-child(-n + 5),
+  .comparison-table > div:nth-child(5n + 1) {
+    color: var(--ink);
+    font-weight: 700;
+  }
+
   .service-section-title {
     text-wrap: balance;
+  }
+
+  @media (min-width: 980px) {
+    .service-section-head,
+    .citation-grid {
+      grid-template-columns: 5fr 7fr;
+      align-items: start;
+    }
   }
 
   @media (max-width: 640px) {
@@ -442,6 +788,14 @@ const cleanStructuredText = (value: string) =>
       width: 100%;
       white-space: normal;
       text-align: center;
+    }
+
+    .quick-check {
+      width: 100%;
+    }
+
+    .quick-check-row {
+      grid-template-columns: 1fr;
     }
 
     .service-section-title {
