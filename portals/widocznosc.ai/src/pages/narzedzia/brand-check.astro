@@ -21,14 +21,13 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
         </nav>
 
         <header class="text-center">
-          <span class="eyebrow tool-eyebrow">Narzędzie · beta</span>
+          <span class="eyebrow tool-eyebrow">Narzędzie · audyt marki</span>
           <h1 class="tool-hero-title">
             Co AI wie o&nbsp;<span class="tool-hero-accent">Twojej marce</span>?
           </h1>
           <p class="tool-hero-copy">
-            Odpytujemy przez OpenRouter cztery rodziny modeli: ChatGPT, Claude, Gemini i&nbsp;Perplexity.
-            Raport pokazuje rozpoznawalność marki, sentyment, możliwe halucynacje, źródła
-            oraz konkurentów pojawiających się w&nbsp;odpowiedziach.
+            Sprawdzamy, jak najpopularniejsze modele AI opisują Twoją firmę, czy cytują Twoją
+            domenę, jakie błędy powtarzają i&nbsp;których konkurentów podpowiadają zamiast Ciebie.
           </p>
         </header>
 
@@ -596,17 +595,17 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
 
   :global(.brand-panel-title) {
     font-family: var(--font-display);
-    font-size: clamp(24px, 2.8vw, 34px);
-    line-height: 1.08;
+    font-size: clamp(22px, 2.1vw, 30px);
+    line-height: 1.12;
     font-weight: 500;
     color: var(--ink);
-    margin: 0 0 20px;
+    margin: 0 0 24px;
     letter-spacing: -0.025em;
   }
 
   :global(.brand-model-grid) {
     display: grid;
-    gap: 12px;
+    gap: 16px;
   }
 
   :global(.brand-model-row) {
@@ -685,7 +684,7 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
   :global(.brand-competitor-grid) {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 12px;
   }
 
   :global(.brand-competitor-card) {
@@ -906,8 +905,8 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
               <div class="brand-loading-kicker">Analiza w toku</div>
               <h2 class="brand-loading-title">Sprawdzamy ${escapeHtml(brand)}</h2>
               <p class="brand-loading-copy">
-                Odpytujemy cztery modele przez OpenRouter i zbieramy cytowania, sentyment,
-                konkurentów oraz możliwe halucynacje.
+                Zbieramy cytowania, sentyment, konkurentów oraz możliwe błędy w opisach marki.
+                Wynik pojawi się po zakończeniu odpowiedzi modeli.
               </p>
             </div>
             <div class="brand-loading-orb" aria-hidden="true"></div>
@@ -1084,7 +1083,7 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
 
     function renderSources(sources) {
       if (!sources.length) {
-        return '<div class="brand-list-card">Modele nie zwróciły cytowań w standardowym formacie OpenRouter.</div>';
+        return '<div class="brand-list-card">Modele nie zwróciły źródeł w formacie możliwym do pokazania w raporcie.</div>';
       }
       return `<div class="brand-sources-grid">${sources
         .map(
@@ -1168,9 +1167,9 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
     }
 
     function severityLabel(value) {
-      if (value === 'high') return 'wysoka waga';
-      if (value === 'low') return 'niska waga';
-      return 'średnia waga';
+      if (value === 'high') return 'wysokie ryzyko błędu';
+      if (value === 'low') return 'niskie ryzyko błędu';
+      return 'średnie ryzyko błędu';
     }
 
     function escapeHtml(value) {
