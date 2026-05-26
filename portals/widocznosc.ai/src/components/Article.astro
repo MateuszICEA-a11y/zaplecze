@@ -837,6 +837,17 @@ const { title, subtitle, date, image, author, readTime, tags } = articleData;
     width: 100%;
     height: auto;
   }
+
+  /* Light mode – ciemne grafiki (obsidian) czytają się jak celowy figure:
+     wyraźne uniesienie (cień karty) + ramka, żeby nie były surową
+     czarną plamą na jasnym tle. Widoczne tylko w light. */
+  :root[data-theme='light'] .article-hero img,
+  :root[data-theme='light'] .article-content img {
+    border: 1px solid rgba(15, 23, 42, 0.18);
+    box-shadow:
+      0 2px 4px rgba(40, 32, 16, 0.08),
+      0 24px 48px -18px rgba(40, 32, 16, 0.45);
+  }
   .article-content figure {
     margin: 40px 0;
   }
