@@ -3,7 +3,7 @@ title: 'RAG (Retrieval-Augmented Generation) – przewodnik wdrożeniowy'
 subtitle: 'Zbuduj system, który odpowiada na pytania z własnych danych – bez halucynacji i bez zdezaktualizowanej wiedzy modelu'
 description: 'Kompletny przewodnik wdrożeniowy RAG: architektura, chunking, embeddingi, reranking, ewaluacja i bezpieczeństwo. Poziom L2 – z danymi i benchmarkami.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-rag-przewodnik.png
 icon: '<path d="M4 6h16M4 10h16M4 14h10M4 18h7"/><circle cx="18" cy="16" r="3"/><line x1="21" y1="19" x2="19.5" y2="17.5"/>'
 author:
   name: 'Michał Ziach'
@@ -70,6 +70,8 @@ k = round(Docelowa liczba tokenów / Średni rozmiar fragmentu w tokenach)
 ```
 
 Dla budżetu 2048 tokenów i średniego fragmentu 512 tokenów: k = 4. To prosta kalkulacja, która zapobiega przepełnieniu okna kontekstowego lub jego niedowykorzystaniu.
+
+![RAG – jak działa generowanie wspomagane wyszukiwaniem: 5-etapowy przepływ od zapytania, przez wyszukiwanie w bazie wektorowej i wybór najtrafniejszych fragmentów, po generację odpowiedzi ze źródłami](../../../assets/images/infographic-rag-przewodnik.png)
 
 ## Embeddingi – fundament warstwy wyszukiwania
 
