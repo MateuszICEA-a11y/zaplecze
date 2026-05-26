@@ -4,6 +4,7 @@ interface Props {
     name: string;
     role: string;
     company?: string;
+    shortBio?: string;
     bio: string;
     expertise?: string[];
     photo: string;
@@ -19,6 +20,7 @@ const { author, articleCount = 0, authorSlug } = Astro.props;
 const firstName = author.name.split(' ')[0] ?? author.name;
 const tags = (author.expertise ?? []).slice(0, 4);
 const authorHref = authorSlug ? `/autor/${authorSlug}/` : '/o-nas';
+const description = author.shortBio ?? author.bio;
 ---
 
 <aside class="author-box" aria-label={`O autorze: ${author.name}`}>
@@ -37,7 +39,7 @@ const authorHref = authorSlug ? `/autor/${authorSlug}/` : '/o-nas';
         </span>
       </div>
 
-      <p class="author-box-bio">{author.bio}</p>
+      <p class="author-box-bio">{description}</p>
 
       {
         tags.length > 0 && (
