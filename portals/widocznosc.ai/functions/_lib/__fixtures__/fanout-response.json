@@ -1,0 +1,30 @@
+{
+  "id": "resp_test_123",
+  "model": "gpt-5-mini-2025-08-07",
+  "output": [
+    {
+      "type": "web_search_call",
+      "status": "completed",
+      "action": { "type": "search", "query": "najlepsza agencja seo w polsce 2026 ranking" }
+    },
+    {
+      "type": "web_search_call",
+      "status": "completed",
+      "action": { "type": "search", "queries": ["agencja seo opinie ranking", "icea seo opinie"] }
+    },
+    {
+      "type": "message",
+      "content": [
+        {
+          "type": "output_text",
+          "text": "Oto kilka agencji...",
+          "annotations": [
+            { "type": "url_citation", "title": "Ranking agencji", "url": "https://www.example.com/ranking?utm=1" },
+            { "type": "url_citation", "title": "Opinie", "url": "https://example.com/opinie" },
+            { "type": "url_citation", "title": "ICEA", "url": "https://icea.pl/o-nas" }
+          ]
+        }
+      ]
+    }
+  ]
+}
