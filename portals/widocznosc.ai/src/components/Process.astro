@@ -2,12 +2,12 @@
 /**
  * Process – landing redesign 2026-05-09 (handoff).
  * 4 radial-gradient atmosphere cards z ::before inner-light overlay.
- * Tones: 01 violet → 02 cyan → 03 green → 04 blue.
+ * Tones: 01 magenta → 02 cyan → 03 green → 04 blue.
  * Section-head editorial 5fr/4fr.
  */
 
 interface Step {
-  tone: 'violet' | 'cyan' | 'green' | 'blue';
+  tone: 'magenta' | 'violet' | 'cyan' | 'green' | 'blue';
   num: string;
   label: string;
   title: string;
@@ -17,7 +17,7 @@ interface Step {
 
 const steps: Step[] = [
   {
-    tone: 'violet',
+    tone: 'magenta',
     num: '01',
     label: 'Etap 1',
     title: 'Mapa pytań',
@@ -158,6 +158,11 @@ const steps: Step[] = [
   .process-card--violet {
     background: var(--grad-violet);
     box-shadow: 0 24px 56px -22px rgba(110, 40, 240, 0.45);
+  }
+
+  .process-card--magenta {
+    background: var(--grad-magenta);
+    box-shadow: 0 24px 56px -22px rgba(217, 51, 160, 0.45);
   }
 
   .process-card--cyan {
