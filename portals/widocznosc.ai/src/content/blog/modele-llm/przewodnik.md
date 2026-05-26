@@ -3,7 +3,7 @@ title: 'Modele językowe (LLM) – przewodnik po ekosystemie'
 subtitle: 'Poznaj różnice między ChatGPT, Claude, Gemini, Copilotem a modelami open source, żeby wybrać właściwy model do swojej strategii AI'
 description: 'Przewodnik po ekosystemie dużych modeli językowych (LLM): ChatGPT, Claude, Gemini, Grok, Perplexity, Copilot i open source. Który model wybrać i dlaczego.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-modele-llm-przewodnik.png
 icon: '<circle cx="12" cy="12" r="3"/><path d="M3 12h3M18 12h3M12 3v3M12 18v3M6.34 6.34l2.12 2.12M15.54 15.54l2.12 2.12M6.34 17.66l2.12-2.12M15.54 8.46l2.12-2.12"/>'
 author:
   name: 'Tomasz Czechowski'
@@ -50,6 +50,8 @@ Poniższa tabela zestawia sześć dominujących ekosystemów w jednym miejscu. D
 | Modele open source | Meta, Mistral AI i in. | Pobieranie + API | Suwerenność danych, dostosowywalność | Brak własnego bota; używają cudzych indeksów |
 
 Każdy z tych ekosystemów ma inny mechanizm pobierania informacji o Twojej marce – i inny wzorzec tego, jakie treści trafiają do odpowiedzi. Poniższe sekcje opisują każdy z nich z perspektywy praktycznej.
+
+![Ekosystem dużych modeli językowych 2026 – ChatGPT, Claude, Gemini, Copilot, Perplexity, Grok i modele open source wraz z twórcami i mocnymi stronami](../../../assets/images/infographic-modele-llm-przewodnik.png)
 
 ## ChatGPT i ekosystem OpenAI
 

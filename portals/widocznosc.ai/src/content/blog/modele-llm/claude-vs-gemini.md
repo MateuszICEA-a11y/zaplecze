@@ -3,7 +3,7 @@ title: 'Claude vs Gemini – który model jest lepszy do pracy'
 subtitle: 'Konkretne werdykty dla pięciu scenariuszy zawodowych, żebyś przestał zgadywać i zaczął wybierać świadomie'
 description: 'Claude czy Gemini? Porównanie modeli AI dla pracy: dokumenty, kod, długi kontekst, ekosystem Google, ceny. Werdykt dla poszczególnych zastosowań.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-modele-llm-claude-vs-gemini.png
 icon: '<path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 0 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 0-2-2V9m0 0h18"/>'
 author:
   name: 'Tomasz Czechowski'
@@ -60,6 +60,8 @@ Gemini ma tu jedną konkretną przewagę: natywny dostęp do wyszukiwarki Google
     <p>Duże modele językowe (LLM – ang. <em>Large Language Models</em>) są trenowane na danych liczonych w bilionach tokenów, ale zdolność do <strong>utrzymania spójności przez długi dokument</strong> to osobna umiejętność. Badania pokazują, że modele często „tracą uwagę" w środkowej części długiego kontekstu – zjawisko znane jako <strong>lost-in-the-middle</strong>. Claude Opus 4.7 osiąga 76% trafnych odpowiedzi na teście MRCR v2 przy milionowym kontekście; Sonnet poprzedniej generacji uzyskiwał zaledwie 18,5%.</p>
   </div>
 </aside>
+
+![Werdykt Claude kontra Gemini w pięciu scenariuszach – dokumenty, kodowanie, długi kontekst, ekosystem Google oraz cena](../../../assets/images/infographic-modele-llm-claude-vs-gemini.png)
 
 ## Kodowanie – gdzie różnica sięga kilkunastu punktów procentowych
 

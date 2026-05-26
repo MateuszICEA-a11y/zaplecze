@@ -3,7 +3,7 @@ title: 'Claude od Anthropic – kompletny przewodnik'
 subtitle: 'Poznaj architekturę, możliwości i plany modelu Claude, by wybrać rozwiązanie dopasowane do realnych potrzeb biznesowych'
 description: 'Czym jest Claude od firmy Anthropic, jak działa Constitutional AI, jakie modele są dostępne i do czego używać Claude''a w praktyce – kompletny przewodnik.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-modele-llm-claude.png
 icon: '<path d="M12 2C8.5 2 6 4.5 6 7c0 1.5.6 2.8 1.5 3.8L5 21h14l-2.5-10.2C17.4 9.8 18 8.5 18 7c0-2.5-2.5-5-6-5z"/><circle cx="9" cy="7" r="1"/><circle cx="15" cy="7" r="1"/>'
 author:
   name: 'Tomasz Czechowski'
@@ -45,6 +45,8 @@ Claude rozróżnia trzy poziomy zaufania w każdej rozmowie:
 - **Użytkownik końcowy** – osoba prowadząca rozmowę; domyślnie mniej zaufany niż Operator
 
 Ma to praktyczne znaczenie dla integratorów: jeśli budujesz produkt na API Claude, możesz za pomocą promptu systemowego precyzyjnie określić, co model może robić w Twoim kontekście.
+
+![Rodzina modeli Claude – Haiku, Sonnet i Opus uszeregowane według mocy i szybkości, oparte na Constitutional AI](../../../assets/images/infographic-modele-llm-claude.png)
 
 ## Rodzina modeli Claude – Haiku, Sonnet, Opus
 

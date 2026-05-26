@@ -3,7 +3,7 @@ title: 'ChatGPT vs Claude – które AI wybrać'
 subtitle: 'Sprawdź, który model pasuje do Twojej pracy – na podstawie rzeczywistych testów, cen i mocnych stron'
 description: 'ChatGPT vs Claude – porównanie cen, możliwości, jakości pisania i kodowania. Dowiedz się, który model LLM wybrać do swojej pracy.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-modele-llm-chatgpt-vs-claude.png
 icon: '<path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 0 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 0-2-2V9m0 0h18"/>'
 author:
   name: 'Tomasz Czechowski'
@@ -58,6 +58,8 @@ Jedno ograniczenie Claude jest warte odnotowania: **model nie generuje obrazów*
     <p>W grudniu 2025 roku OpenAI wycofało DALL-E 3 i zastąpiło je modelem GPT Image 1.5 wbudowanym bezpośrednio w ChatGPT. Jednocześnie firma zamknęła Sorę – model do generowania wideo – 24 marca 2026 roku. <strong>ChatGPT Plus stracił możliwość generowania wideo, ale zyskał znacznie lepsze generowanie obrazów bez przełączania narzędzi.</strong></p>
   </div>
 </aside>
+
+![Porównanie ChatGPT i Claude według zastosowań – pisanie, programowanie, analiza dokumentów, wszechstronność i język polski](../../../assets/images/infographic-modele-llm-chatgpt-vs-claude.png)
 
 ## Programowanie – kto pisze lepszy kod
 

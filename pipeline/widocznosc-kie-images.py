@@ -42,10 +42,291 @@ INFO_STYLE = (
     "typography (Inter font style). Sky-blue (#0a9cff) accents for "
     "highlights and the key element. Minimal, premium, technical aesthetic "
     "– like a high-end consultancy report. Crisp lines, generous spacing, "
-    "no decorative clutter. "
+    "no decorative clutter. Render every Polish diacritical mark precisely "
+    "(ą ć ę ł ń ó ś ź ż), also in UPPERCASE text – never drop accents. "
 )
 
 SPECS = [
+    # ══════════════════════════════════════════════════════════════════
+    #  MODELE LLM (11 wpisów: hero + infografika)
+    # ══════════════════════════════════════════════════════════════════
+    # ── modele-llm / przewodnik (pillar) ──────────────────────────────
+    {
+        "slug": "blog-modele-llm-przewodnik",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract constellation map of distinct glowing nodes of "
+            "different sizes spread across deep space, a few brighter ones "
+            "rendered in sky-blue, connected by faint lines into a loose "
+            "ecosystem. Represents the landscape of large language models "
+            "(ChatGPT, Claude, Gemini, others). Wide cinematic composition, "
+            "generous negative space."
+        ),
+    },
+    {
+        "slug": "infographic-modele-llm-przewodnik",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Ekosystem LLM 2026 – kto jest "
+            "kto'. Show a clean table-like matrix with white Polish column "
+            "headers: 'MODEL', 'TWÓRCA', 'MOCNA STRONA'. Rows as rounded "
+            "chips: 'ChatGPT — OpenAI — uniwersalność', 'Claude — Anthropic — "
+            "pisanie i kod' (sky-blue, emphasized), 'Gemini — Google — "
+            "multimodalność i kontekst', 'Copilot — Microsoft — pakiet "
+            "biurowy', 'Perplexity — silnik RAG — cytowania', 'Grok — xAI — "
+            "dane z sieci', 'Open source — Llama/Mistral — wdrożenie własne'. "
+            "Bottom caption: 'JEDEN MODEL NIE WYGRYWA WSZĘDZIE – DOBIERZ DO "
+            "ZADANIA'."
+        ),
+    },
+    # ── modele-llm / chatgpt ──────────────────────────────────────────
+    {
+        "slug": "blog-modele-llm-chatgpt",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract stream of small geometric tokens flowing from the "
+            "left and condensing into a single luminous sky-blue neural "
+            "sphere on the right, soft particle trails. Represents the GPT "
+            "language model turning input tokens into an answer. Left-to-right "
+            "flow, wide composition."
+        ),
+    },
+    {
+        "slug": "infographic-modele-llm-chatgpt",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Jak działa GPT – od tokenu do "
+            "odpowiedzi'. Horizontal left-to-right flow of 6 rounded boxes "
+            "with white Polish labels connected by thin sky-blue arrows: "
+            "'TEKST WEJŚCIOWY', 'TOKENIZACJA', 'EMBEDDINGI (wektory)', "
+            "'TRANSFORMER – mechanizm uwagi' (sky-blue, key step), 'PREDYKCJA "
+            "KOLEJNEGO TOKENU', 'ODPOWIEDŹ'. Bottom caption: 'MODEL NIE "
+            "ROZUMIE – PRZEWIDUJE NAJBARDZIEJ PRAWDOPODOBNY TOKEN'."
+        ),
+    },
+    # ── modele-llm / claude ───────────────────────────────────────────
+    {
+        "slug": "blog-modele-llm-claude",
+        "prompt": (
+            HERO_STYLE
+            + "A glowing sky-blue core at the center surrounded by concentric "
+            "protective geometric guardrail rings and layered principle "
+            "shields, calm and balanced. Represents Constitutional AI – a "
+            "model guided by a set of principles. Centered composition, "
+            "sophisticated."
+        ),
+    },
+    {
+        "slug": "infographic-modele-llm-claude",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Rodzina modeli Claude'. Show "
+            "three vertical tiers/cards from left to right with white Polish "
+            "labels: 'HAIKU – najszybszy, najtańszy, proste zadania', 'SONNET "
+            "– równowaga jakości i kosztu, codzienna praca' (sky-blue, "
+            "emphasized), 'OPUS – najmocniejszy, złożone analizy i kod'. A "
+            "small ascending arrow above labeled 'moc →', a descending one "
+            "below labeled 'szybkość →'. Bottom caption: 'CONSTITUTIONAL AI – "
+            "MODEL PROWADZONY ZASADAMI, NIE TYLKO NAGRODĄ'."
+        ),
+    },
+    # ── modele-llm / gemini ───────────────────────────────────────────
+    {
+        "slug": "blog-modele-llm-gemini",
+        "prompt": (
+            HERO_STYLE
+            + "Several distinct geometric streams (representing text, image, "
+            "audio and video as abstract patterns) converging from different "
+            "directions into a single glowing sky-blue faceted node. "
+            "Represents Gemini's native multimodality. Converging composition."
+        ),
+    },
+    {
+        "slug": "infographic-modele-llm-gemini",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Ekosystem Google Gemini'. "
+            "Hub-and-spoke layout: central rounded node 'GEMINI' (sky-blue, "
+            "glowing) connected to six smaller rounded boxes with white Polish "
+            "labels: 'Modele Flash i Pro', 'Google Workspace', 'Gems – "
+            "asystenci', 'Deep Research', 'NotebookLM', 'Veo – wideo'. Bottom "
+            "caption: 'JEDEN MODEL WPLECIONY W CAŁY EKOSYSTEM GOOGLE'."
+        ),
+    },
+    # ── modele-llm / copilot ──────────────────────────────────────────
+    {
+        "slug": "blog-modele-llm-copilot",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract glowing sky-blue assistant thread weaving through "
+            "several translucent overlapping geometric application panes "
+            "(documents, code, system), tying them together. Represents "
+            "Microsoft Copilot embedded across applications. Layered "
+            "composition."
+        ),
+    },
+    {
+        "slug": "infographic-modele-llm-copilot",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Warianty Microsoft Copilot'. "
+            "Show a 2x2 grid of four rounded cards with white Polish headings "
+            "and one short line each: 'COPILOT FOR MICROSOFT 365 – Word, "
+            "Excel, Outlook, Teams' (sky-blue), 'WINDOWS COPILOT – asystent w "
+            "systemie', 'GITHUB COPILOT – asystent programisty', 'COPILOT "
+            "STUDIO – własne agenty AI'. Bottom caption: 'JEDNA MARKA, CZTERY "
+            "RÓŻNE PRODUKTY – WYBIERZ WG POTRZEB'."
+        ),
+    },
+    # ── modele-llm / perplexity ───────────────────────────────────────
+    {
+        "slug": "blog-modele-llm-perplexity",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract document fragments scattered across a faint web grid "
+            "on the left, pulled by glowing sky-blue beams into a single "
+            "answer panel on the right marked with small citation dots. "
+            "Represents a RAG search engine that retrieves and cites sources. "
+            "Left-to-right flow."
+        ),
+    },
+    {
+        "slug": "infographic-modele-llm-perplexity",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Jak działa Perplexity – "
+            "architektura RAG'. Horizontal left-to-right flow of 4 rounded "
+            "boxes with white Polish labels and thin sky-blue arrows: "
+            "'PYTANIE UŻYTKOWNIKA', 'WYSZUKIWANIE W SIECI W CZASIE "
+            "RZECZYWISTYM', 'POBRANIE I OCENA ŹRÓDEŁ' (sky-blue, key step), "
+            "'ODPOWIEDŹ Z CYTOWANIAMI [1][2][3]'. Bottom caption: 'PERPLEXITY "
+            "NIE ZGADUJE – ODPOWIADA NA PODSTAWIE ŹRÓDEŁ'."
+        ),
+    },
+    # ── modele-llm / chatgpt-vs-claude ────────────────────────────────
+    {
+        "slug": "blog-modele-llm-chatgpt-vs-claude",
+        "prompt": (
+            HERO_STYLE
+            + "Two abstract glowing orbs facing each other across a thin "
+            "central balance line, the right one sky-blue, the left one cool "
+            "neutral, perfectly symmetrical. Represents a head-to-head "
+            "comparison of two AI models. Balanced, centered composition."
+        ),
+    },
+    {
+        "slug": "infographic-modele-llm-chatgpt-vs-claude",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'ChatGPT vs Claude – kto "
+            "wygrywa w czym'. Two columns headed 'ChatGPT' and 'Claude' "
+            "(Claude column tinted sky-blue). Rows on the left with white "
+            "Polish labels and a sky-blue check mark placed in the winning "
+            "column: 'Pisanie i styl → Claude', 'Programowanie → Claude', "
+            "'Analiza dokumentów (200K kontekstu) → Claude', 'Wszechstronność "
+            "i wtyczki → ChatGPT', 'Język polski → ChatGPT'. Bottom caption: "
+            "'NIE WYBIERAJ JEDNEGO – PRZYPISZ MODEL DO ZADANIA'."
+        ),
+    },
+    # ── modele-llm / chatgpt-vs-gemini ────────────────────────────────
+    {
+        "slug": "blog-modele-llm-chatgpt-vs-gemini",
+        "prompt": (
+            HERO_STYLE
+            + "Two large abstract interlocking rings, one neutral and one "
+            "sky-blue, partially overlapping at the center against deep "
+            "obsidian. Represents two competing AI ecosystems (OpenAI vs "
+            "Google). Balanced, centered composition."
+        ),
+    },
+    {
+        "slug": "infographic-modele-llm-chatgpt-vs-gemini",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'ChatGPT vs Gemini 2026'. Two "
+            "columns headed 'ChatGPT (OpenAI)' and 'Gemini (Google)' (Gemini "
+            "column tinted sky-blue). Rows with white Polish labels: "
+            "'Okno kontekstowe — 1 mln dopiero w Pro 200 USD | 1 mln już od "
+            "19,99 USD', 'Ekosystem — Microsoft 365 | Google Workspace', "
+            "'Multimodalność wideo i audio — ograniczona | natywna', 'Cena "
+            "wejścia — 20 USD | 7,99–19,99 USD'. Bottom caption: 'GEMINI "
+            "WYGRYWA KONTEKST I CENĘ, CHATGPT – DOJRZAŁOŚĆ I WTYCZKI'."
+        ),
+    },
+    # ── modele-llm / claude-vs-gemini ─────────────────────────────────
+    {
+        "slug": "blog-modele-llm-claude-vs-gemini",
+        "prompt": (
+            HERO_STYLE
+            + "Two distinct abstract geometric structures side by side: on "
+            "the left a precise crystalline lattice, on the right a sprawling "
+            "sky-blue interconnected network. Represents Claude (precision) vs "
+            "Gemini (ecosystem breadth). Symmetrical wide composition."
+        ),
+    },
+    {
+        "slug": "infographic-modele-llm-claude-vs-gemini",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Claude vs Gemini – werdykt na "
+            "5 scenariuszy'. Show five rows, each a rounded bar with a white "
+            "Polish scenario label and the winner marked: 'Praca z dokumentami "
+            "→ Claude', 'Kodowanie (SWE-bench ~80% vs ~70%) → Claude', 'Długi "
+            "kontekst → Gemini' (sky-blue), 'Ekosystem Google → Gemini' "
+            "(sky-blue), 'Cena i plany → Gemini' (sky-blue). Bottom caption: "
+            "'CLAUDE = PRECYZJA, GEMINI = KONTEKST, CENA I EKOSYSTEM'."
+        ),
+    },
+    # ── modele-llm / claude-vs-chatgpt-programowanie ──────────────────
+    {
+        "slug": "blog-modele-llm-claude-vs-chatgpt-programowanie",
+        "prompt": (
+            HERO_STYLE
+            + "Two abstract streams of geometric code blocks and brackets "
+            "flowing toward a central repository node, one stream sky-blue. "
+            "Faint benchmark bar shapes glow in the background. Represents two "
+            "AI models competing on real-world coding. Wide composition."
+        ),
+    },
+    {
+        "slug": "infographic-modele-llm-claude-vs-chatgpt-programowanie",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'SWE-bench Verified – Claude "
+            "vs ChatGPT (maj 2026)'. Show a horizontal bar chart with 4 bars "
+            "labeled in Polish with their values: 'Claude Opus 4.7 — 87,6%' "
+            "(sky-blue, emphasized), 'GPT-5.5 Codex — 88,7%', 'Claude Opus 4.5 "
+            "— 80,9%', 'GPT-5.1 — 76,3%'. To the right a small box: "
+            "'SWE-bench Pro: Claude 64,3% > GPT 58,6%'. Bottom caption: "
+            "'NA REALNYCH BŁĘDACH Z GITHUBA RÓŻNICE SĄ MINIMALNE – LICZY SIĘ "
+            "NARZĘDZIE AGENTOWE'."
+        ),
+    },
+    # ── modele-llm / co-potrafi-chatgpt ───────────────────────────────
+    {
+        "slug": "blog-modele-llm-co-potrafi-chatgpt",
+        "prompt": (
+            HERO_STYLE
+            + "A central glowing sky-blue node radiating outward into many "
+            "abstract geometric task tiles (purely geometric, no icons with "
+            "text), like a fan of capabilities. Represents the many things an "
+            "AI assistant can do. Centered radial composition."
+        ),
+    },
+    {
+        "slug": "infographic-modele-llm-co-potrafi-chatgpt",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Co potrafi ChatGPT – główne "
+            "zastosowania'. Show a 2x3 grid of six rounded cards, each with a "
+            "white Polish label and a tiny matching icon: 'PISANIE I "
+            "REDAKCJA', 'TŁUMACZENIA', 'ANALIZA DANYCH I PLIKÓW', "
+            "'PROGRAMOWANIE' (sky-blue), 'NAUKA I WYJAŚNIANIE', 'BURZA MÓZGÓW "
+            "I POMYSŁY'. Bottom caption: 'JEDEN ASYSTENT – DZIESIĄTKI "
+            "CODZIENNYCH ZADAŃ'."
+        ),
+    },
+    # ══════════════════════════════════════════════════════════════════
     # ── GEO wave 2: 4 specjalne (zamiana orange + inline SVG na sky-blue) ──
     {
         "slug": "blog-geo-boty-ai-przewodnik",

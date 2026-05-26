@@ -3,7 +3,7 @@ title: 'Gemini od Google – kompletny przewodnik'
 subtitle: 'Zrozum cały ekosystem Google AI – od modeli po Workspace – żeby skutecznie budować widoczność marki tam, gdzie szukają Twoi klienci'
 description: 'Czym jest Gemini, jak działają modele Flash i Pro, co oferuje Google AI Studio, Gems, Deep Research i NotebookLM – kompletny przewodnik po ekosystemie Google AI.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-modele-llm-gemini.png
 icon: '<path d="M12 2 L14.5 9.5 L22 12 L14.5 14.5 L12 22 L9.5 14.5 L2 12 L9.5 9.5 Z" stroke-linecap="round" stroke-linejoin="round"/>'
 author:
   name: 'Tomasz Czechowski'
@@ -64,6 +64,8 @@ Modele Pro i Ultra operują na oknie kontekstowym wynoszącym 1 milion tokenów.
     <p>Firma Google ogłosiła architekturę Gemini jako pierwszą od podstaw multimodalną rodzinę modeli – tekst, obraz, audio i wideo trenowane razem, nie jako osobne komponenty. Wcześniejsze modele Google (PaLM 2, Bard) były modelami językowymi z dodanym modułem wizyjnym. <strong>Gemini Ultra w benchmarku MMLU uzyskał wynik 90,0%, jako pierwszy model AI przekraczając osiągi ludzkich ekspertów wynoszące 89,8%.</strong></p>
   </div>
 </aside>
+
+![Ekosystem Google Gemini – modele Flash i Pro, Workspace, Gems, Deep Research, NotebookLM oraz Veo wokół wspólnego modelu](../../../assets/images/infographic-modele-llm-gemini.png)
 
 ## Plany abonamentowe – Free, AI Plus, AI Pro, AI Ultra
 

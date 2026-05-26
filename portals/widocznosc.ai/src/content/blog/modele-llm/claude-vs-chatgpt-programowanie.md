@@ -3,7 +3,7 @@ title: 'Claude vs ChatGPT do programowania'
 subtitle: 'Który model wybierze doświadczony developer – i kiedy ta odpowiedź nie jest oczywista'
 description: 'Claude vs ChatGPT do programowania: SWE-bench, Claude Code vs Codex, ceny API, agentowe przepływy pracy. Techniczne porównanie dla developerów z konkretnymi werdyktami.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-modele-llm-claude-vs-chatgpt-programowanie.png
 icon: '<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="12" y1="2" x2="12" y2="22" opacity="0.4"/>'
 author:
   name: 'Tomasz Czechowski'
@@ -56,6 +56,8 @@ Różnice w praktyce:
 - **Równoległość** – Codex wyprzedza tutaj wyraźnie; Claude Code jest z natury sekwencyjny
 
 Jeśli chcesz głębiej zrozumieć, jak agentowe narzędzia do kodowania wpisują się w szerszy ekosystem automatyzacji, [przewodnik po agentach AI](/agenci-ai/przewodnik) opisuje architekturę wieloagentowych przepływów pracy.
+
+![Wyniki SWE-bench Verified dla Claude i ChatGPT (maj 2026) – Claude Opus 4.7, GPT-5.5 Codex, Claude Opus 4.5 i GPT-5.1 oraz SWE-bench Pro](../../../assets/images/infographic-modele-llm-claude-vs-chatgpt-programowanie.png)
 
 ## Tabela porównawcza – modele, narzędzia, ceny, benchmarki
 

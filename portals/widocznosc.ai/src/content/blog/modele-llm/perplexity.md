@@ -3,7 +3,7 @@ title: 'Perplexity – wyszukiwarka AI'
 subtitle: 'Dowiedz się, jak Perplexity pobiera i cytuje źródła oraz dlaczego to właśnie w niej Twoja marka musi być widoczna'
 description: 'Perplexity AI – czym jest, jak działa architektura RAG, plany Pro/Max, Spaces, Comet i dlaczego to kluczowy kanał cytowań dla GEO.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-modele-llm-perplexity.png
 icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>'
 author:
   name: 'Tomasz Czechowski'
@@ -39,6 +39,8 @@ Finansowanie rosło skokowo. We wrześniu 2022 roku zebrano 3,1 miliona dolarów
     <p>W maju 2025 roku Perplexity obsługiwało już <strong>780 milionów zapytań miesięcznie</strong>, a przeciętna sesja użytkownika trwała 7,2 minuty – niemal trzy razy dłużej niż typowa sesja w Google. Czas sesji to wskaźnik, który pokazuje, że użytkownicy traktują Perplexity jak narzędzie pracy, nie jak szybkie wyszukiwanie.</p>
   </div>
 </aside>
+
+![Architektura RAG w Perplexity – od pytania użytkownika przez wyszukiwanie w sieci i ocenę źródeł po odpowiedź z cytowaniami](../../../assets/images/infographic-modele-llm-perplexity.png)
 
 ## Jak działa architektura RAG w Perplexity
 

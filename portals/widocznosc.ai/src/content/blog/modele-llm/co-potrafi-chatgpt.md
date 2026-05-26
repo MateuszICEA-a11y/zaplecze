@@ -3,7 +3,7 @@ title: 'Co potrafi ChatGPT – przegląd funkcji dla początkujących'
 subtitle: 'Poznaj konkretne zastosowania ChatGPT, które od razu możesz wdrożyć w pracy i codziennych zadaniach'
 description: 'ChatGPT potrafi pisać, analizować, tłumaczyć i kodować. Sprawdź przegląd głównych funkcji dla początkujących z przykładami zastosowań.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-modele-llm-co-potrafi-chatgpt.png
 icon: '<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 9h8M8 12h5M8 15h6"/>'
 author:
   name: 'Tomasz Czechowski'
@@ -64,6 +64,8 @@ Jedna istotna uwaga dotycząca prywatności: w planach Free i Plus historia konw
     <p>ChatGPT osiągnął 100 milionów użytkowników w ciągu zaledwie dwóch miesięcy od premiery w listopadzie 2022 roku – był to ówcześnie najszybciej rosnący produkt konsumencki w historii (zanim jego rekord pobiła w 2023 roku aplikacja Threads). <strong>W 2025 roku aktywna baza użytkowników ChatGPT przekroczyła 700 milionów tygodniowo.</strong></p>
   </div>
 </aside>
+
+![Główne zastosowania ChatGPT – pisanie i redakcja, tłumaczenia, analiza danych, programowanie, nauka oraz burza mózgów](../../../assets/images/infographic-modele-llm-co-potrafi-chatgpt.png)
 
 ## Jak pisać skuteczne prompty
 

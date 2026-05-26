@@ -3,7 +3,7 @@ title: 'ChatGPT i ekosystem OpenAI – kompletny przewodnik'
 subtitle: 'Zrozum, jak działa ChatGPT i cały ekosystem OpenAI, żeby świadomie używać go w pracy'
 description: 'Czym jest ChatGPT, jak działa architektura GPT, co potrafi ekosystem OpenAI i jak używać go efektywnie – kompletny przewodnik po modelu i platformie.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-modele-llm-chatgpt.png
 icon: '<path d="M12 2a5 5 0 0 1 5 5c0 1.4-.6 2.7-1.5 3.6A5 5 0 0 1 17 15v1h-2v-1a3 3 0 0 0-6 0v1H7v-1a5 5 0 0 1 1.5-3.4A5 5 0 0 1 7 7a5 5 0 0 1 5-5z"/><circle cx="12" cy="7" r="2"/>'
 author:
   name: 'Tomasz Czechowski'
@@ -56,6 +56,8 @@ Sam etap wstępnego trenowania (pre-training) na terabajtach tekstu z internetu,
 Proces RLHF przebiega w trzech krokach. Po pierwsze, anotatorzy piszą przykładowe idealne odpowiedzi – model uczy się wzorca. Po drugie, ten sam model generuje kilka wariantów odpowiedzi na jedno pytanie, a anotatorzy je szeregują od najlepszej do najgorszej – na tej podstawie trenowany jest oddzielny model oceniający (reward model). Po trzecie, algorytm PPO (Proximal Policy Optimization) aktualizuje wagi modelu tak, żeby maksymalizował oceny modelu nagradzającego, jednocześnie nie odchodząc za daleko od wyjściowego rozkładu probabilistycznego.
 
 Efekt: model, który nie tylko przewiduje prawdopodobny tekst, ale robi to w sposób, który ludzie oceniają jako pomocny i bezpieczny.
+
+![Jak działa model GPT – przepływ od tekstu wejściowego przez tokenizację, embeddingi i mechanizm uwagi transformera do przewidzenia kolejnego tokenu i wygenerowania odpowiedzi](../../../assets/images/infographic-modele-llm-chatgpt.png)
 
 ## Plany i możliwości – co oferuje każda wersja
 

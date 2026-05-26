@@ -3,7 +3,7 @@ title: 'Microsoft Copilot – kompletny przewodnik'
 subtitle: 'Poznaj ekosystem Copilota i naucz się go efektywnie wdrożyć w swojej organizacji'
 description: 'Kompletny przewodnik po Microsoft Copilot: architektura, Copilot for Microsoft 365, Windows, GitHub Copilot, Copilot Studio i koszty wdrożenia w 2026 roku.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-modele-llm-copilot.png
 icon: '<rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><circle cx="17" cy="17" r="4"/><line x1="17" y1="14" x2="17" y2="20"/><line x1="14" y1="17" x2="20" y2="17"/>'
 author:
   name: 'Tomasz Czechowski'
@@ -67,6 +67,8 @@ Poniższa tabela porównuje główne zastosowania usługi Copilot w poszczególn
 Model biznesowy usługi Copilot for Microsoft 365 wymaga posiadania bazowej licencji Microsoft 365 (Business Standard, Business Premium lub Enterprise E3/E5). Sama usługa kosztuje 30 USD za użytkownika miesięcznie w wariancie Enterprise; dla mniejszych firm (do 300 użytkowników) dostępny jest plan w cenie od 18 do 25 USD przy zobowiązaniu rocznym.
 
 **Bez bazowej licencji M365 nie można dokupić usługi Copilot – jest to twarde wymaganie techniczne**, a nie wyłącznie handlowe. Indeks Semantyczny potrzebuje danych z Microsoft Graph, który jest dostępny tylko w ramach subskrypcji M365.
+
+![Cztery warianty Microsoft Copilot – dla Microsoft 365, Windows, GitHub oraz Copilot Studio do budowy własnych agentów](../../../assets/images/infographic-modele-llm-copilot.png)
 
 ## Windows 11 i Copilot jako system operacyjny oparty na agentach
 

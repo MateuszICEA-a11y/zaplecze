@@ -3,7 +3,7 @@ title: 'ChatGPT vs Gemini – porównanie funkcji i cen'
 subtitle: 'Sprawdź, który model pasuje do Twojego ekosystemu i sposobu pracy, zanim zapłacisz abonament'
 description: 'ChatGPT vs Gemini 2026: porównanie funkcji, planów, cen i zastosowań. Tabela, werdykt i praktyczne wskazówki dla zespołów Google i OpenAI.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-modele-llm-chatgpt-vs-gemini.png
 icon: '<path d="M3 6h18M3 12h18M3 18h18"/><path d="M7 6v12M17 6v12"/>'
 author:
   name: 'Tomasz Czechowski'
@@ -57,6 +57,8 @@ Gemini funkcjonuje wewnątrz produktów Google. W planie AI Pro asystent działa
 ChatGPT jest silniejszy poza środowiskiem Workspace. Ekosystem OpenAI obejmuje DALL-E (generowanie obrazów), Sorę (generowanie wideo, dostępne od planu Plus), Whisper (transkrypcja mowy) i szybko rosnącą bibliotekę GPTs – wyspecjalizowanych asystentów tworzonych przez zewnętrznych deweloperów. Integracja z Microsoft 365 Copilot i bogata sieć konektorów API sprawiają, że ChatGPT lepiej wpisuje się w środowiska oparte na rozwiązaniach Microsoftu.
 
 Przy wyborze sprawdź jeden parametr: czy Twoje pliki i e-maile są w Google Drive, czy w OneDrive / SharePoint? To zazwyczaj przesądza o wyborze.
+
+![Porównanie ChatGPT i Gemini 2026 – okno kontekstowe, ekosystem, multimodalność wideo oraz cena wejścia](../../../assets/images/infographic-modele-llm-chatgpt-vs-gemini.png)
 
 ## Głos i tryb mobilny – jak działają asystenci głosowi
 
