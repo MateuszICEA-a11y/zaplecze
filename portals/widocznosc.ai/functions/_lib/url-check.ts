@@ -66,13 +66,13 @@ export const FACTORS: FactorDefinition[] = [
   },
   {
     key: 'schema',
-    label: 'Schema Markup (JSON-LD)',
+    label: 'Schema Markup',
     shortLabel: 'Schema',
     weight: 14,
     description:
-      'Czy strona ma strukturalne oznaczenia JSON-LD (Article, FAQPage, HowTo). Schema znacząco zwiększa szansę na cytowanie w AI Overviews.',
+      'Czy strona ma strukturalne oznaczenia schema.org (JSON-LD, microdata lub RDFa). Schema znacząco zwiększa szansę na cytowanie w AI Overviews.',
     whatToFix:
-      'Wdroż JSON-LD: Article (lub BlogPosting/NewsArticle), FAQPage dla sekcji FAQ, ewentualnie HowTo dla instrukcji. Walidacja w Google Rich Results Test.',
+      'Wdroż schema.org: Article (lub BlogPosting/NewsArticle), FAQPage dla sekcji FAQ, ewentualnie HowTo dla instrukcji. Walidacja w Google Rich Results Test.',
   },
   {
     key: 'freshness',
@@ -201,6 +201,37 @@ function getJsonLdTypes(blocks: unknown[]): string[] {
   return types;
 }
 
+function schemaTypeFromUrl(value: string): string | null {
+  const decoded = decodeHtmlEntities(value);
+  const match = decoded.match(/schema\.org\/([A-Za-z][A-Za-z0-9_-]*)/i);
+  return match?.[1] || null;
+}
+
+function extractSchemaOrgTypes(html: string, jsonLdTypes: string[]): string[] {
+  const types = [...jsonLdTypes];
+
+  const attrRe = /\b(?:itemtype|typeof)=["']([^"']+)["']/gi;
+  let attrMatch: RegExpExecArray | null;
+  // eslint-disable-next-line no-cond-assign
+  while ((attrMatch = attrRe.exec(html)) !== null) {
+    const rawValues = attrMatch[1].split(/\s+/).filter(Boolean);
+    for (const rawValue of rawValues) {
+      const fromUrl = schemaTypeFromUrl(rawValue);
+      if (fromUrl) types.push(fromUrl);
+      else if (/^[A-Za-z][A-Za-z0-9_-]*$/.test(rawValue)) types.push(rawValue);
+    }
+  }
+
+  const urlRe = /schema\.org\/([A-Za-z][A-Za-z0-9_-]*)/gi;
+  let urlMatch: RegExpExecArray | null;
+  // eslint-disable-next-line no-cond-assign
+  while ((urlMatch = urlRe.exec(html)) !== null) {
+    types.push(urlMatch[1]);
+  }
+
+  return types;
+}
+
 function getJsonLdDate(blocks: unknown[]): string | null {
   let modified: string | null = null;
   let published: string | null = null;
@@ -235,6 +266,7 @@ function findMetaContent(html: string, prop: string): string | null {
 
 type PreparsedSignals = {
   jsonLdTypes: string[];
+  schemaTypes: string[];
   jsonLdDate: string | null;
   metaModifiedTime: string | null;
   metaPublishedTime: string | null;
@@ -251,6 +283,7 @@ type PreparedContent = {
 
 function prepare(html: string): PreparedContent {
   const blocks = extractJsonLd(html);
+  const jsonLdTypes = getJsonLdTypes(blocks);
   const cleaned = cleanHtml(html);
   const mainHtml = extractMainHtml(cleaned);
   const truncated =
@@ -263,7 +296,8 @@ function prepare(html: string): PreparedContent {
     mainText: htmlToText(mainHtml),
     headings: extractHeadingTexts(mainHtml),
     signals: {
-      jsonLdTypes: getJsonLdTypes(blocks),
+      jsonLdTypes,
+      schemaTypes: extractSchemaOrgTypes(html, jsonLdTypes),
       jsonLdDate: getJsonLdDate(blocks),
       metaModifiedTime:
         findMetaContent(html, 'article:modified_time') || findMetaContent(html, 'og:updated_time'),
@@ -323,6 +357,26 @@ function typeSet(types: string[]): Set<string> {
   return new Set(types.map((type) => type.toLowerCase().replace(/[^a-z]/g, '')));
 }
 
+function countTypes(types: string[], type: string): number {
+  const normalized = type.toLowerCase().replace(/[^a-z]/g, '');
+  return types.filter((value) => value.toLowerCase().replace(/[^a-z]/g, '') === normalized).length;
+}
+
+function schemaTypeSummary(types: string[]): string {
+  const counts = new Map<string, number>();
+  for (const type of types) {
+    const cleaned = type.trim();
+    if (!cleaned) continue;
+    counts.set(cleaned, (counts.get(cleaned) || 0) + 1);
+  }
+
+  const summary = Array.from(counts.entries())
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'pl'))
+    .map(([type, count]) => (count > 1 ? `${type} x${count}` : type));
+
+  return summary.length > 0 ? summary.join(', ') : 'brak';
+}
+
 function wordCount(text: string): number {
   return text.split(/\s+/).filter((word) => word.length > 1).length;
 }
@@ -356,10 +410,14 @@ function scoreToEarned(def: FactorDefinition, score: 0 | 0.5 | 1): FactorScore {
 
 function deterministicFactors(prepared: PreparedContent): Partial<Record<FactorKey, FactorScore>> {
   const defs = FACTOR_BY_KEY;
-  const jsonTypes = typeSet(prepared.signals.jsonLdTypes);
-  const hasArticle = ['article', 'blogposting', 'newsarticle'].some((type) => jsonTypes.has(type));
-  const hasFaq = jsonTypes.has('faqpage');
-  const hasHowTo = jsonTypes.has('howto');
+  const schemaTypes = typeSet(prepared.signals.schemaTypes);
+  const hasArticle = ['article', 'blogposting', 'newsarticle'].some((type) =>
+    schemaTypes.has(type)
+  );
+  const hasFaq = schemaTypes.has('faqpage');
+  const hasHowTo = schemaTypes.has('howto');
+  const questionSchemaCount = countTypes(prepared.signals.schemaTypes, 'Question');
+  const answerSchemaCount = countTypes(prepared.signals.schemaTypes, 'Answer');
 
   const factors: Partial<Record<FactorKey, FactorScore>> = {};
 
@@ -372,8 +430,8 @@ function deterministicFactors(prepared: PreparedContent): Partial<Record<FactorK
         ? 'Wykryto schema głównej treści oraz FAQPage lub HowTo.'
         : schemaScore === 0.5
           ? 'Wykryto częściowe dane strukturalne, ale brakuje pełnego zestawu Article + FAQPage/HowTo.'
-          : 'Nie wykryto JSON-LD typu Article, BlogPosting, NewsArticle, FAQPage ani HowTo.',
-    details: `JSON-LD @type: ${prepared.signals.jsonLdTypes.join(', ') || 'brak'}.`,
+          : 'Nie wykryto schema.org typu Article, BlogPosting, NewsArticle, FAQPage ani HowTo.',
+    details: `Schema.org @type/itemtype: ${schemaTypeSummary(prepared.signals.schemaTypes)}.`,
   };
 
   const contentDate = latestDate([
@@ -431,22 +489,28 @@ function deterministicFactors(prepared: PreparedContent): Partial<Record<FactorK
   );
   const faqQuestionCount = prepared.headings.filter((heading) => heading.endsWith('?')).length;
   const faqScore: 0 | 0.5 | 1 =
-    hasFaq && (faqSection || faqQuestionCount >= 3 || detailsCount >= 3)
+    hasFaq &&
+    (faqSection ||
+      faqQuestionCount >= 3 ||
+      detailsCount >= 3 ||
+      questionSchemaCount >= 3 ||
+      answerSchemaCount >= 3)
       ? 1
       : hasFaq ||
           (faqSection && (faqQuestionCount >= 3 || detailsCount >= 3)) ||
-          faqQuestionCount >= 4
+          faqQuestionCount >= 4 ||
+          (questionSchemaCount >= 3 && answerSchemaCount >= 3)
         ? 0.5
         : 0;
   factors.faq = {
     ...scoreToEarned(defs.faq, faqScore),
     evidence:
       faqScore === 1
-        ? 'Wykryto FAQPage oraz widoczne sygnały sekcji pytań i odpowiedzi.'
+        ? 'Wykryto FAQPage oraz pytania/odpowiedzi w schema lub widocznej treści.'
         : faqScore === 0.5
-          ? 'Wykryto częściowe sygnały FAQ, ale bez pełnego zestawu schema + widoczna sekcja Q&A.'
+          ? 'Wykryto częściowe sygnały FAQ, ale bez pełnego zestawu FAQPage + pytania/odpowiedzi.'
           : 'Nie wykryto wyraźnej sekcji FAQ ani schema FAQPage.',
-    details: `FAQPage: ${hasFaq ? 'tak' : 'nie'}, nagłówki-pytania: ${faqQuestionCount}, <details>: ${detailsCount}.`,
+    details: `FAQPage: ${hasFaq ? 'tak' : 'nie'}, Question: ${questionSchemaCount}, Answer: ${answerSchemaCount}, nagłówki-pytania: ${faqQuestionCount}, <details>: ${detailsCount}.`,
   };
 
   const facts = countMatches(
@@ -554,6 +618,7 @@ ${deterministicSummary}
 
 WSTĘPNIE SPARSOWANE SYGNAŁY:
 - JSON-LD @types: ${signals.jsonLdTypes.length > 0 ? signals.jsonLdTypes.join(', ') : '(brak)'}
+- schema.org typy łącznie: ${signals.schemaTypes.length > 0 ? signals.schemaTypes.join(', ') : '(brak)'}
 - JSON-LD dateModified/datePublished: ${signals.jsonLdDate || '(brak)'}
 - meta article:modified_time / og:updated_time: ${signals.metaModifiedTime || '(brak)'}
 - meta article:published_time: ${signals.metaPublishedTime || '(brak)'}
@@ -723,3 +788,8 @@ export function buildActionItems(factors: FactorScore[]): ActionItem[] {
 
   return items.slice(0, 5);
 }
+
+export const __test__ = {
+  prepare,
+  deterministicFactors,
+};
