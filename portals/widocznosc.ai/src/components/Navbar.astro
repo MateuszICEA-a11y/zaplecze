@@ -277,26 +277,12 @@ const isActive = (href: string) => {
       const trigger = wrap.querySelector<HTMLAnchorElement>('.nav-link--has-menu');
       if (!trigger) return;
 
-      trigger.addEventListener('click', (e) => {
-        if (!window.matchMedia('(min-width: 980px)').matches) return;
-        e.preventDefault();
-
-        const isOpen = wrap.classList.contains('is-open');
-        desktopMenuTriggers.forEach((item) => {
-          item.classList.remove('is-open');
-          item.querySelector('.nav-link--has-menu')?.setAttribute('aria-expanded', 'false');
-        });
-
-        if (!isOpen) {
-          wrap.classList.add('is-open');
-          trigger.setAttribute('aria-expanded', 'true');
-        }
-      });
+      // Desktop: NIE blokujemy click — link nawiguje do strony kategorii.
+      // Dropdown otwiera się na hover/focus-within (CSS).
 
       wrap.querySelectorAll('.nav-dropdown a').forEach((link) => {
         link.addEventListener('click', () => {
-          wrap.classList.remove('is-open');
-          trigger.setAttribute('aria-expanded', 'false');
+          (document.activeElement as HTMLElement)?.blur();
         });
       });
     });

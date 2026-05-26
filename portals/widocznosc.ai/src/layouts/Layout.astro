@@ -37,7 +37,7 @@ const ogImage = `${siteUrl}/og-image.png`;
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Theme init – musi być pierwszy, przed CSS, bez flash.
          Re-applikuje się po astro:after-swap (View Transitions / ClientRouter)
          bo SPA swap wymienia <html> i atrybut data-theme znika. -->
@@ -88,15 +88,41 @@ const ogImage = `${siteUrl}/og-image.png`;
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+
+    <!-- JSON-LD: Organization schema (eat-your-own-dogfood dla GEO) -->
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'widocznosc.ai',
+        url: siteUrl,
+        logo: `${siteUrl}/og-image.png`,
+        description,
+        parentOrganization: {
+          '@type': 'Organization',
+          name: 'ICEA',
+          url: 'https://grupa-icea.pl',
+        },
+        sameAs: ['https://www.linkedin.com/company/icea/'],
+      })}
+    />
   </head>
   <body class="overflow-x-hidden">
-    <main aria-label="Main content">
+    <a href="#main" class="skip-link">Przejdź do treści</a>
+    <main id="main" aria-label="Main content">
       <slot />
     </main>
     <InvitationModal />
     <style is:global>
       html {
-        font-family: 'Inter Variable', 'Inter', -apple-system, system-ui, sans-serif;
+        font-family:
+          'Inter Variable',
+          'Inter',
+          -apple-system,
+          system-ui,
+          sans-serif;
         background-color: var(--bg-canvas);
         overflow-x: hidden;
         scroll-behavior: smooth !important;

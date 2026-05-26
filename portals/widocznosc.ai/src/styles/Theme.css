@@ -181,7 +181,7 @@
   /* Ink – neutralny tekst z lekkim blue-gray undertone */
   --ink: #10131a;
   --ink-muted: #586274;
-  --ink-faint: #5f6b7a;
+  --ink-faint: #7d8694;
 
   /* Accent – ciemniejszy na jasnym tle, żeby małe linki i logo spełniały kontrast AA. */
   --accent-blue: #0068cc;
@@ -210,6 +210,33 @@
   /* Elevation – warm-tinted shadows pasujące do ivory canvas */
   --shadow-l2: 0 1px 2px rgba(60, 40, 10, 0.05), 0 8px 24px rgba(60, 40, 10, 0.08);
   --shadow-l3: 0 0 0 2px rgba(0, 133, 238, 0.22);
+}
+
+/* ============================================================
+   Skip-to-content link (a11y) – widoczny po focus przez klawiaturę
+   ============================================================ */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--ink);
+  color: var(--bg-canvas);
+  padding: 12px 18px;
+  border-radius: var(--r-pill);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  z-index: 100;
+  transition: left 0.15s ease;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  left: 16px;
+  top: 16px;
+  outline: none;
+  box-shadow: var(--shadow-l3);
 }
 
 /* ============================================================
