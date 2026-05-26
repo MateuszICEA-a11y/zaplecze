@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Article from '../../components/Article.astro';
+import AuthorBox from '../../components/AuthorBox.astro';
 import Footer from '../../components/Footer.astro';
 import ScrollUpButton from '../../components/ScrollUpButton.astro';
 import { getCollection, render } from 'astro:content';
@@ -25,6 +26,12 @@ const relatedPosts = allPosts
   .filter((p) => p.id !== post.id)
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, 3);
+
+const authors = await getCollection('authors');
+const authorEntry = authors.find((author) => author.data.name === post.data.author.name);
+const authorArticleCount = allPosts.filter(
+  (p) => p.data.author.name === post.data.author.name && p.id !== post.id,
+).length;
 
 const formatDate = (date: Date) =>
   date.toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -64,6 +71,15 @@ const articleData = {
       <span class="article-breadcrumb-current">{post.data.title}</span>
     </nav>
     <Content />
+    {
+      authorEntry && (
+        <AuthorBox
+          author={authorEntry.data}
+          articleCount={authorArticleCount}
+          authorSlug={authorEntry.id}
+        />
+      )
+    }
   </Article>
 
   <!-- Related posts -->
