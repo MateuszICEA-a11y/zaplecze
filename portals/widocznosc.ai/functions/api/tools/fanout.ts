@@ -24,6 +24,12 @@ const DEFAULT_LIMIT = 0;
 const LLM_TIMEOUT_MS = 45_000;
 const MIN_QUERY = 3;
 const MAX_QUERY = 300;
+const FANOUT_INSTRUCTIONS = [
+  'Jesteś silnikiem analitycznym narzędzia SEO/GEO. Twoim zadaniem jest wykonać wyszukiwanie w sieci dla podanej frazy i zwrócić krótką odpowiedź opartą o znalezione źródła.',
+  'Nie zadawaj pytań doprecyzowujących. Jeśli brakuje kontekstu, przyjmij najpopularniejszy kontekst dla polskiego użytkownika i jasno zaznacz założenie w odpowiedzi.',
+  'Dla fraz rankingowych, porównawczych i komercyjnych wykonaj wyszukiwanie. Uwzględnij aktualność, rankingi, opinie, ceny, porównania i wiarygodne źródła.',
+  'Odpowiedz po polsku, zwięźle, maksymalnie w 6 zdaniach.',
+].join('\n');
 
 function jsonHeaders(): HeadersInit {
   return {
@@ -120,6 +126,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         model,
         tools: [{ type: 'web_search' }],
         tool_choice: 'auto',
+        instructions: FANOUT_INSTRUCTIONS,
         input: query,
       }),
     });

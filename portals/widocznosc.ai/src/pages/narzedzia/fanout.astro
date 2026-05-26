@@ -216,6 +216,11 @@ const examples = [
     line-height: 1.15;
   }
 
+  .fanout-panel--empty {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
   .fanout-panel-copy {
     margin: 0.45rem 0 1.15rem;
     color: var(--ink-muted);
@@ -413,10 +418,10 @@ const examples = [
     function renderResults(data) {
       if (data.status === 'no-search') {
         const answer = data.answer
-          ? `<p class="fanout-panel-copy">${escapeHtml(data.answer)}</p>`
+          ? `<div class="fanout-answer">${escapeHtml(data.answer)}</div>`
           : '';
         results.innerHTML = `
-          <div class="fanout-panel">
+          <div class="fanout-panel fanout-panel--empty">
             <h2>Brak zapytań wyszukiwania</h2>
             ${answer}
             <p class="fanout-panel-copy">W tym przebiegu model nie ujawnił osobnego wyszukiwania w sieci. Spróbuj frazy rankingowej, porównawczej albo aktualnego pytania branżowego.</p>
