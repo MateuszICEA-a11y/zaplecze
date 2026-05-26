@@ -3,7 +3,7 @@ title: 'Wdrożenie AI w firmie – przewodnik dla decydenta'
 subtitle: 'Jak wybrać właściwy obszar, zbudować strukturę organizacyjną i zmierzyć zwrot z inwestycji – krok po kroku'
 description: 'Praktyczny przewodnik wdrożenia AI w firmie: wybór modelu Build/Buy/Boost, przypadki użycia, ROI, AI Act, RODO i struktura CoE dla decydenta.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-ai-w-biznesie-przewodnik.png
 icon: '<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>'
 author:
   name: 'Mateusz Wiśniewski'
@@ -73,6 +73,8 @@ McKinsey podaje, że budowa autorskiego rozwiązania zajmuje średnio 12–18 mi
     <p>Średni koszt uruchomienia jednej inicjatywy opartej na generatywnej AI wynosi dziś 1,9 miliona dolarów – bez kosztów stałego utrzymania infrastruktury. Mimo to tylko 7% dyrektorów finansowych deklaruje wysoki poziom zwrotu z inwestycji w swoim pionie. <strong>Firmy zaliczane do grupy „AI Vanguard" (12% rynku) łączy jedna cecha: CEO jest bezpośrednim sponsorem inicjatyw AI i poświęca temu co najmniej 7 godzin tygodniowo.</strong></p>
   </div>
 </aside>
+
+![Trzy drogi do wdrożenia AI – Build (własne), Buy (gotowy SaaS) i Boost (rozszerzenie istniejących narzędzi) z kompromisami kontroli, kosztu i czasu](../../../assets/images/infographic-ai-w-biznesie-przewodnik.png)
 
 ## Gdzie AI przynosi mierzalne efekty – przegląd zastosowań
 

@@ -3,7 +3,7 @@ title: 'Jak rozmawiać z zarządem o AI – argumenty i KPI'
 subtitle: 'Zamień entuzjazm technologiczny na język korzyści biznesowych, które zarząd zrozumie i zatwierdzi'
 description: 'Jak przekonać zarząd do inwestycji w AI? Poznaj framework business case, właściwe KPI, język korzyści i sposób prezentacji ryzyka oraz ROI – bez żargonu technicznego.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-ai-w-biznesie-jak-rozmawiac-z-zarzadem.png
 icon: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'
 author:
   name: 'Mateusz Wiśniewski'
@@ -59,6 +59,8 @@ Zamiana języka technicznego na język biznesowy wygląda w praktyce tak:
 **Każde zdanie techniczne musi mieć parę: skutek + liczba + horyzont czasowy.** Bez tego zarząd operuje wyobraźnią, nie faktami, i naturalnie przechodzi do trybu obrony budżetu.
 
 Konkretna struktura zdania, które działa: „Dzięki [mechanizm w jednym słowie] zmniejszymy [miernik] z [X] do [Y], co da [wartość w PLN lub %] w [horyzont]." To jest zdanie, które CFO rozumie w pierwszych dziesięciu sekundach.
+
+![Jak mówić o AI językiem zarządu – zamiana języka technologii (model LLM, fine-tuning, RAG) na język korzyści biznesowych (krótszy czas obsługi, niższe koszty, wyższa konwersja, zwrot z inwestycji)](../../../assets/images/infographic-ai-w-biznesie-jak-rozmawiac-z-zarzadem.png)
 
 ## Jak zbudować business case, który przeżyje salę zarządową
 

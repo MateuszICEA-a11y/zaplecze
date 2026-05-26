@@ -3,7 +3,7 @@ title: 'Etyka AI w firmie – polityki, zarządzanie, komitety'
 subtitle: 'Jak zbudować wewnętrzny system zarządzania sztuczną inteligencją, zanim zmusi Cię do tego regulator'
 description: 'Etyka AI w firmie: jak wdrożyć politykę AI, powołać komitet ds. AI, walczyć z biasem i spełnić wymagania AI Act. Ramy NIST RMF i ISO 42001.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-ai-w-biznesie-etyka-ai-w-firmie.png
 icon: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>'
 author:
   name: 'Mateusz Wiśniewski'
@@ -60,6 +60,8 @@ Narzędzia do pomiaru stronniczości, takie jak [wyjaśnialna sztuczna inteligen
     <p>Stanford AI Index 2025 odnotował wzrost liczby incydentów AI o 56% rok do roku – do rekordowych 233 udokumentowanych przypadków szkód. Większość z nich dotyczyła dyskryminacji algorytmicznej, prywatności lub dezinformacji. <strong>Żaden z tych incydentów nie był spowodowany awarią techniczną modelu – każdy wynikał z błędów w procesie zarządzania ryzykiem.</strong></p>
   </div>
 </aside>
+
+![System zarządzania AI w firmie – polityka AI, komitet ds. AI, standardy NIST AI RMF i ISO 42001, pomiar stronniczości oraz zgodność z AI Act](../../../assets/images/infographic-ai-w-biznesie-etyka-ai-w-firmie.png)
 
 ## Jak stworzyć politykę AI – od zasad do dokumentu operacyjnego
 

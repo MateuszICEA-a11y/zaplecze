@@ -3,7 +3,7 @@ title: 'AI w sprzedaży – od lead scoringu po asystentów handlowych'
 subtitle: 'Jak predykcyjny lead scoring i asystenci AI skracają czas reakcji o 90% i podnoszą konwersję'
 description: 'Dowiedz się, jak AI w sprzedaży – od lead scoringu po asystentów handlowych – zmienia pracę handlowców i podnosi wskaźniki konwersji.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-ai-w-biznesie-ai-w-sprzedazy.png
 icon: '<path d="M3 3h18v4H3z"/><path d="M3 10h11v4H3z"/><circle cx="17" cy="12" r="3"/><path d="M17 15v6"/><path d="M14 18h6"/>'
 author:
   name: 'Mateusz Wiśniewski'
@@ -47,6 +47,8 @@ Wybór narzędzia zależy od skali operacji i gotowości technicznej zespołu. P
 Sama technologia nie wystarczy. **Przed wdrożeniem scoringu zadbaj o higienę danych w CRM – duplikaty, puste pola i błędne przypisania branż bezpośrednio obniżają jakość i skuteczność działania modelu.** Pierwsze mierzalne korzyści pojawiają się po kilku miesiącach; pełna transformacja procesowa to horyzont 2–3 lat systematycznej pracy.
 
 Jeśli chcesz porównać, jak Twoja marka wypada w kontekście AI i sprzedaży B2B, darmowy [brand check](/narzedzia/brand-check) w kilkadziesiąt sekund pokaże, jak jesteś postrzegany przez cztery silniki AI.
+
+![Ścieżka AI w sprzedaży – od predykcyjnego lead scoringu przez priorytetyzację leadów i asystenta handlowego po analizę rozmów (Conversation Intelligence)](../../../assets/images/infographic-ai-w-biznesie-ai-w-sprzedazy.png)
 
 ## Asystenci handlowi AI – co robią zamiast handlowca
 

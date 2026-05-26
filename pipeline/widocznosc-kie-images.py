@@ -48,6 +48,307 @@ INFO_STYLE = (
 
 SPECS = [
     # ══════════════════════════════════════════════════════════════════
+    #  AI W BIZNESIE (12 wpisów: hero + infografika)
+    # ══════════════════════════════════════════════════════════════════
+    # ── ai-w-biznesie / przewodnik (pillar) ───────────────────────────
+    {
+        "slug": "blog-ai-w-biznesie-przewodnik",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract visualization of an AI implementation roadmap: a "
+            "glowing sky-blue path rising through several geometric milestone "
+            "platforms toward a summit node, faint blueprint grid in the "
+            "background. Represents a decision-maker's guide to deploying AI. "
+            "Left-to-right ascending composition."
+        ),
+    },
+    {
+        "slug": "infographic-ai-w-biznesie-przewodnik",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Build, Buy czy Boost – trzy "
+            "drogi do AI'. Show three rounded columns side by side with white "
+            "Polish headings and two short lines each: 'BUILD – buduj własne; "
+            "pełna kontrola, najwyższy koszt i czas', 'BUY – kup gotowy SaaS; "
+            "szybkie wdrożenie, ryzyko vendor lock-in' (sky-blue, "
+            "emphasized), 'BOOST – rozszerz istniejące narzędzia; szybko, "
+            "ograniczona elastyczność'. Bottom caption: 'WYBÓR ZALEŻY OD "
+            "KONTROLI, KOSZTU I CZASU WDROŻENIA'."
+        ),
+    },
+    # ── ai-w-biznesie / od-czego-zaczac ───────────────────────────────
+    {
+        "slug": "blog-ai-w-biznesie-od-czego-zaczac",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract starting-point visualization: a single glowing "
+            "sky-blue node at the left from which a clear structured path of "
+            "five connected geometric stepping stones extends to the right. "
+            "Represents the first steps of an AI roadmap. Left-to-right flow."
+        ),
+    },
+    {
+        "slug": "infographic-ai-w-biznesie-od-czego-zaczac",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Wdrożenie AI w 5 fazach – "
+            "mapa na 8 miesięcy'. Horizontal left-to-right flow of 5 rounded "
+            "boxes connected by thin sky-blue arrows, each with a white Polish "
+            "label: '1. AUDYT GOTOWOŚCI', '2. EKSPLORACJA (discovery)', "
+            "'3. PROOF OF CONCEPT', '4. PILOTAŻ' (sky-blue, key step), "
+            "'5. PRODUKCJA'. Bottom caption: 'OD AUDYTU DO DZIAŁAJĄCEGO "
+            "SYSTEMU – KROK PO KROKU'."
+        ),
+    },
+    # ── ai-w-biznesie / roi-z-ai ──────────────────────────────────────
+    {
+        "slug": "blog-ai-w-biznesie-roi-z-ai",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract financial-return visualization: a glowing sky-blue "
+            "upward trend line crossing a break-even threshold, with faint "
+            "geometric coins or bars accumulating below. Represents return on "
+            "investment from AI. Left-to-right ascending composition."
+        ),
+    },
+    {
+        "slug": "infographic-ai-w-biznesie-roi-z-ai",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Jak liczyć ROI z AI'. In the "
+            "center a clean formula box (sky-blue): 'ROI = (Korzyści − Koszty) "
+            "/ Koszty × 100%'. Below it two columns: left headed 'LICZNIK – "
+            "korzyści' with lines 'oszczędność czasu i etatów', 'wzrost "
+            "przychodów', 'mniej błędów'; right headed 'MIANOWNIK – koszty' "
+            "with lines 'wdrożenie i integracja', 'licencje i API', "
+            "'utrzymanie i szkolenia'. Bottom caption: 'LICZ PEŁNY KOSZT (TCO), "
+            "NIE TYLKO LICENCJĘ'."
+        ),
+    },
+    # ── ai-w-biznesie / ai-w-marketingu ───────────────────────────────
+    {
+        "slug": "blog-ai-w-biznesie-ai-w-marketingu",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract marketing-automation visualization: a glowing "
+            "sky-blue central hub distributing personalized content streams "
+            "to many small audience nodes, with faint targeting reticles. "
+            "Represents AI-driven marketing. Centered radial composition."
+        ),
+    },
+    {
+        "slug": "infographic-ai-w-biznesie-ai-w-marketingu",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'AI w marketingu – pięć "
+            "zastosowań'. Show a 2x3 grid (one cell can be a caption) of "
+            "rounded cards with white Polish labels and tiny icons: 'SILNIKI "
+            "REKOMENDACJI', 'WIDZENIE KOMPUTEROWE', 'ANALIZA WYDŹWIĘKU' "
+            "(sky-blue), 'PROGRAMMATIC I DYNAMICZNE CENY', 'PRZETWARZANIE "
+            "JĘZYKA (NLP)'. Bottom caption: 'AI ZAMIENIA DANE W DECYZJE "
+            "MARKETINGOWE W CZASIE RZECZYWISTYM'."
+        ),
+    },
+    # ── ai-w-biznesie / ai-w-sprzedazy ────────────────────────────────
+    {
+        "slug": "blog-ai-w-biznesie-ai-w-sprzedazy",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract sales-funnel visualization: many small geometric lead "
+            "nodes entering at the top, scored and filtered through a glowing "
+            "sky-blue funnel into a few bright qualified nodes at the bottom. "
+            "Represents AI lead scoring. Top-to-bottom composition."
+        ),
+    },
+    {
+        "slug": "infographic-ai-w-biznesie-ai-w-sprzedazy",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'AI w sprzedaży – od leada do "
+            "zamknięcia'. Horizontal left-to-right flow of 4 rounded boxes "
+            "with white Polish labels and thin sky-blue arrows: 'PREDYKCYJNY "
+            "LEAD SCORING', 'PRIORYTETYZACJA LEADÓW' (sky-blue, key step), "
+            "'ASYSTENT HANDLOWY AI', 'CONVERSATION INTELLIGENCE – analiza "
+            "rozmów'. Bottom caption: 'AI SKRACA CZAS REAKCJI I PODNOSI "
+            "KONWERSJĘ'."
+        ),
+    },
+    # ── ai-w-biznesie / ai-w-obsludze-klienta ─────────────────────────
+    {
+        "slug": "blog-ai-w-biznesie-ai-w-obsludze-klienta",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract conversational-support visualization: a glowing "
+            "sky-blue chat node connected to a knowledge base of document "
+            "fragments on one side and a human handoff node on the other. "
+            "Represents next-generation AI customer service. Balanced "
+            "composition."
+        ),
+    },
+    {
+        "slug": "infographic-ai-w-biznesie-ai-w-obsludze-klienta",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Model hybrydowy obsługi – AI "
+            "plus człowiek'. Show a flow: on the left a rounded box 'ZAPYTANIE "
+            "KLIENTA', leading to a central box 'CHATBOT AI (RAG na danych "
+            "firmy)' (sky-blue), which splits into two branches: top branch "
+            "'Sprawa prosta → ODPOWIEDŹ AUTOMATYCZNA', bottom branch 'Sprawa "
+            "złożona → ESKALACJA DO KONSULTANTA'. Bottom caption: 'AI "
+            "ODCIĄŻA, CZŁOWIEK PRZEJMUJE TRUDNE PRZYPADKI'."
+        ),
+    },
+    # ── ai-w-biznesie / ai-w-hr ───────────────────────────────────────
+    {
+        "slug": "blog-ai-w-biznesie-ai-w-hr",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract human-resources visualization: a glowing sky-blue "
+            "people-flow of stylized geometric figure silhouettes (purely "
+            "geometric, faceless) moving along a structured pipeline of "
+            "stages. Represents AI across the HR lifecycle. Left-to-right "
+            "flow, wide composition."
+        ),
+    },
+    {
+        "slug": "infographic-ai-w-biznesie-ai-w-hr",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'AI w cyklu HR'. Horizontal "
+            "left-to-right flow of 3 rounded boxes connected by thin sky-blue "
+            "arrows, each with a white Polish heading and one line: "
+            "'REKRUTACJA – selekcja CV i pozyskiwanie kandydatów', "
+            "'ONBOARDING – spersonalizowana ścieżka wdrożenia' (sky-blue), "
+            "'ANALITYKA PRACOWNICZA – przewidywanie odejść'. Bottom caption: "
+            "'AI WSPIERA HR, DECYZJĘ O LUDZIACH PODEJMUJE CZŁOWIEK'."
+        ),
+    },
+    # ── ai-w-biznesie / ai-act-rodo ───────────────────────────────────
+    {
+        "slug": "blog-ai-w-biznesie-ai-act-rodo",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract compliance visualization: a glowing sky-blue shield "
+            "or balance motif over a layered geometric pyramid of risk tiers, "
+            "faint legal-document grid in the background. Represents the AI "
+            "Act and GDPR risk framework. Centered composition, restrained."
+        ),
+    },
+    {
+        "slug": "infographic-ai-w-biznesie-ai-act-rodo",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'AI Act – cztery kategorie "
+            "ryzyka'. Show a four-level pyramid, top to bottom, each tier a "
+            "rounded band with a white Polish label: top (smallest, red-tint) "
+            "'NIEDOPUSZCZALNE – zakazane', then 'WYSOKIE RYZYKO – ścisłe "
+            "wymogi' (sky-blue, emphasized), then 'OGRANICZONE – obowiązek "
+            "informowania', bottom (largest) 'MINIMALNE – bez dodatkowych "
+            "wymogów'. Bottom caption: 'IM WYŻSZE RYZYKO, TYM WIĘCEJ "
+            "OBOWIĄZKÓW'."
+        ),
+    },
+    # ── ai-w-biznesie / bezpieczenstwo-danych-llm ─────────────────────
+    {
+        "slug": "blog-ai-w-biznesie-bezpieczenstwo-danych-llm",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract data-security visualization: a glowing sky-blue "
+            "padlock or shield formed from geometric data nodes, with faint "
+            "encrypted data streams flowing around it and one dimmed leak path "
+            "being blocked. Represents protecting company data when using "
+            "LLMs. Centered composition."
+        ),
+    },
+    {
+        "slug": "infographic-ai-w-biznesie-bezpieczenstwo-danych-llm",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Jak chronić dane firmowe w "
+            "pracy z LLM'. Show a 2x3 grid of six rounded cards with white "
+            "Polish labels and tiny icons: 'WYŁĄCZ TRENOWANIE NA DANYCH "
+            "(opt-out)', 'ŻADNYCH DANYCH WRAŻLIWYCH W PROMPCIE', 'UMOWA DPA Z "
+            "DOSTAWCĄ' (sky-blue), 'KONTROLA SHADOW AI', 'WDROŻENIE LOKALNE "
+            "DLA DANYCH WRAŻLIWYCH', 'POLITYKA I SZKOLENIA ZESPOŁU'. Bottom "
+            "caption: 'BEZPIECZEŃSTWO DANYCH TO PROCES, NIE JEDNO USTAWIENIE'."
+        ),
+    },
+    # ── ai-w-biznesie / build-vs-buy ──────────────────────────────────
+    {
+        "slug": "blog-ai-w-biznesie-build-vs-buy",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract decision visualization: a single sky-blue path "
+            "forking into two diverging geometric routes, one leading to a "
+            "hand-built modular structure, the other to a ready-made block. "
+            "Represents the build-versus-buy decision for AI. Centered fork "
+            "composition."
+        ),
+    },
+    {
+        "slug": "infographic-ai-w-biznesie-build-vs-buy",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Build vs Buy – kiedy co "
+            "wybrać'. Two columns headed 'BUDUJ WŁASNE' and 'KUP GOTOWE "
+            "(SaaS)' (Buy column tinted sky-blue). Under BUILD (white Polish): "
+            "'pełna kontrola i własność', 'brak vendor lock-in', 'wysoki koszt "
+            "i długi czas'. Under BUY: 'szybkie wdrożenie', 'niższy koszt "
+            "startu', 'ryzyko vendor lock-in'. Bottom caption: 'NAJCZĘSTSZA "
+            "ODPOWIEDŹ DLA MŚP TO HYBRYDA'."
+        ),
+    },
+    # ── ai-w-biznesie / etyka-ai-w-firmie ─────────────────────────────
+    {
+        "slug": "blog-ai-w-biznesie-etyka-ai-w-firmie",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract governance visualization: a glowing sky-blue central "
+            "governance node connected to a balanced ring of geometric "
+            "policy, committee and standard nodes, conveying oversight and "
+            "balance. Represents responsible AI governance in a company. "
+            "Centered hub composition."
+        ),
+    },
+    {
+        "slug": "infographic-ai-w-biznesie-etyka-ai-w-firmie",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'System zarządzania AI w "
+            "firmie'. Hub-and-spoke layout: central rounded node 'ŁAD AI' "
+            "(sky-blue, glowing) connected to five smaller rounded boxes with "
+            "white Polish labels: 'POLITYKA AI', 'KOMITET DS. AI', 'STANDARDY "
+            "– NIST AI RMF, ISO 42001', 'POMIAR STRONNICZOŚCI', 'ZGODNOŚĆ Z AI "
+            "ACT'. Bottom caption: 'ODPOWIEDZIALNA AI = ZASADY, LUDZIE I "
+            "POMIAR'."
+        ),
+    },
+    # ── ai-w-biznesie / jak-rozmawiac-z-zarzadem ──────────────────────
+    {
+        "slug": "blog-ai-w-biznesie-jak-rozmawiac-z-zarzadem",
+        "prompt": (
+            HERO_STYLE
+            + "Abstract boardroom-communication visualization: a glowing "
+            "sky-blue presentation panel with a clean upward chart facing a "
+            "semicircle of abstract geometric seats around a table. No people, "
+            "no text. Represents pitching AI to a board. Centered composition."
+        ),
+    },
+    {
+        "slug": "infographic-ai-w-biznesie-jak-rozmawiac-z-zarzadem",
+        "prompt": (
+            INFO_STYLE
+            + "TITLE on top in Polish (white): 'Jak mówić o AI językiem "
+            "zarządu'. Two columns: left headed 'ZAMIAST (język technologii)' "
+            "with white Polish chips 'model LLM', 'fine-tuning', 'architektura "
+            "RAG', 'liczba tokenów'; right headed 'MÓW (język korzyści)' "
+            "(sky-blue) with chips 'krótszy czas obsługi', 'niższe koszty "
+            "operacyjne', 'wyższa konwersja', 'zwrot z inwestycji'. A sky-blue "
+            "arrow points from left to right. Bottom caption: 'ZARZĄD KUPUJE "
+            "WYNIK BIZNESOWY, NIE TECHNOLOGIĘ'."
+        ),
+    },
+    # ══════════════════════════════════════════════════════════════════
     #  MODELE LLM (11 wpisów: hero + infografika)
     # ══════════════════════════════════════════════════════════════════
     # ── modele-llm / przewodnik (pillar) ──────────────────────────────

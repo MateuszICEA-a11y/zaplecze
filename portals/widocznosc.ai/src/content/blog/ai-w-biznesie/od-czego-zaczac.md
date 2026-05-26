@@ -3,7 +3,7 @@ title: 'Od czego zacząć wdrażanie AI w firmie – mapa drogowa'
 subtitle: 'Pięć faz, które przeprowadzą Twoją firmę od audytu gotowości do działającego systemu AI w osiem miesięcy'
 description: 'Roadmapa wdrożenia AI w firmie: audyt danych, selekcja use case, PoC, pilotaż, skalowanie. Praktyczne kroki dla MŚP i enterprise – bez zbędnej teorii.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-ai-w-biznesie-od-czego-zaczac.png
 icon: '<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>'
 author:
   name: 'Mateusz Wiśniewski'
@@ -50,6 +50,8 @@ Najlepsze pierwsze projekty AI mają kilka wspólnych cech:
 - **Integracja z istniejącymi systemami** – preferuj procesy, w których dane są już w CRM lub ERP; minimalizujesz w ten sposób ryzyko techniczne.
 
 Rezultat tej fazy to karta projektu MVP ze zdefiniowanymi wskaźnikami KPI – zarówno wiodącymi (np. dokładność klasyfikacji przez model), jak i wynikowymi (np. redukcja czasu cyklu procesowego).
+
+![Mapa drogowa wdrożenia AI w pięciu fazach na osiem miesięcy – audyt gotowości, eksploracja, proof of concept, pilotaż i produkcja](../../../assets/images/infographic-ai-w-biznesie-od-czego-zaczac.png)
 
 ## Trzy strategie technologiczne – budować, kupować czy integrować?
 

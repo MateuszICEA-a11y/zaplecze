@@ -3,7 +3,7 @@ title: 'Build vs buy – własna aplikacja AI czy gotowy SaaS'
 subtitle: 'Jak policzyć pełny koszt każdego z rozwiązań i podjąć decyzję, której nie będziesz żałować za dwa lata'
 description: 'Build vs buy AI: TCO, czas wdrożenia, vendor lock-in i hybryda. Porównawcza tabela kryteriów i dane z 2025–2026 dla decydentów MŚP i enterprise.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-ai-w-biznesie-build-vs-buy.png
 icon: '<path d="M3 6h18M3 12h18M3 18h18"/><path d="M7 3v3M12 3v3M17 3v3M7 18v3M12 18v3M17 18v3"/>'
 author:
   name: 'Mateusz Wiśniewski'
@@ -59,6 +59,8 @@ Poniżej znajduje się zestawienie najważniejszych wymiarów decyzji. Każde kr
 | **Bezpieczeństwo danych** | Chmura dostawcy (ryzyko: polityka dostawcy, jurysdykcja) | Pełna kontrola (on-premise lub własna chmura) | Wysoka – własna baza danych, zewnętrzny model dostępny tylko przez API |
 
 Wskaźnik sukcesu gotowych wdrożeń wynosi 67%, podczas gdy projekty budowy własnej aplikacji od podstaw kończą się sukcesem w 33% przypadków (badanie MIT, 2025). **Hybryda – czyli zakup standardowych komponentów i dobudowanie unikalnej warstwy logiki – zapewnia o 60% szybszy zwrot z inwestycji niż tworzenie systemu całkowicie od zera.**
+
+![Porównanie Build kontra Buy – budowa własnego rozwiązania (kontrola, brak vendor lock-in, wysoki koszt) wobec gotowego SaaS (szybkie wdrożenie, niższy koszt startu, ryzyko lock-in)](../../../assets/images/infographic-ai-w-biznesie-build-vs-buy.png)
 
 ## Kiedy kupić gotowe – argumenty za SaaS
 

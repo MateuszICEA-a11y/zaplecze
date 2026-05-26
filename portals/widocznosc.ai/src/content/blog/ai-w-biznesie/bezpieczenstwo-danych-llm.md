@@ -3,7 +3,7 @@ title: 'Bezpieczeństwo danych w pracy z LLM'
 subtitle: 'Jak chronić dane firmowe, gdy korzystasz z ChatGPT, Claude i podobnych narzędzi'
 description: 'Shadow AI, wycieki danych, retencja promptów, umowy DPA i wybór między chmurą a wdrożeniem lokalnym – kompletny przewodnik bezpieczeństwa LLM dla firm.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-ai-w-biznesie-bezpieczenstwo-danych-llm.png
 icon: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>'
 author:
   name: 'Mateusz Wiśniewski'
@@ -62,6 +62,8 @@ Zanim Twoja firma podpisze umowę z dostawcą LLM, podstawowa analiza due dilige
 - **Podwykonawcy (subprocesorzy)** – lista firm trzecich, którym dostawca przekazuje dane (hosting, CDN, moderacja treści).
 - **Lokalizacja przetwarzania** – czy dane opuszczają EOG (Europejski Obszar Gospodarczy)?
 - **Procedura obsługi żądań organów państwowych** – co dostawca robi, gdy otrzyma wezwanie sądowe lub nakaz od władz?
+
+![Sześć zasad ochrony danych firmowych w pracy z LLM – opt-out trenowania, brak danych wrażliwych w promptach, umowa DPA, kontrola Shadow AI, wdrożenie lokalne oraz polityka i szkolenia](../../../assets/images/infographic-ai-w-biznesie-bezpieczenstwo-danych-llm.png)
 
 ## Shadow AI – ryzyko, którego nie widać w logach
 

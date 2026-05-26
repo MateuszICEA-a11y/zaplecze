@@ -3,7 +3,7 @@ title: 'AI w obsłudze klienta – chatboty nowej generacji'
 subtitle: 'Jak nowoczesne systemy konwersacyjne redukują czas obsługi o 80% i zwiększają satysfakcję klientów'
 description: 'Chatboty AI nowej generacji – architektura RAG, autonomiczni agenci, studia przypadków Klarna i PKO BP. Praktyczny przewodnik dla firm wdrażających AI w obsłudze klienta.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-ai-w-biznesie-ai-w-obsludze-klienta.png
 icon: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="9" cy="10" r="1"/><circle cx="12" cy="10" r="1"/><circle cx="15" cy="10" r="1"/>'
 author:
   name: 'Mateusz Wiśniewski'
@@ -52,6 +52,8 @@ W praktyce przekłada się to na kilka możliwości:
 Aby zbudować taki system, dokumenty firmy dzielone są na mniejsze fragmenty, które następnie przekształcane są na wektory numeryczne – matematyczne reprezentacje znaczenia tekstu. System wyszukuje wektory semantycznie zbliżone do pytania klienta. To właśnie ta warstwa sprawia, że RAG rozumie pytanie sformułowane inaczej niż w dokumentacji, ale oznaczające to samo.
 
 Jeśli chcesz zrozumieć, jak RAG działa od strony technicznej i jak wdrożyć go dla własnej firmy, [przewodnik po architekturze RAG](/rag/przewodnik) wyjaśnia to krok po kroku – wraz z przykładami dla e-commerce i B2B SaaS.
+
+![Hybrydowy model obsługi klienta – chatbot AI oparty na RAG odpowiada na proste sprawy, a złożone przypadki eskaluje do konsultanta](../../../assets/images/infographic-ai-w-biznesie-ai-w-obsludze-klienta.png)
 
 ## Model hybrydowy – kiedy AI musi przekazać sprawę człowiekowi
 

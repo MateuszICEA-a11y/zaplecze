@@ -3,7 +3,7 @@ title: 'ROI z AI – jak policzyć zwrot z inwestycji'
 subtitle: 'Sprawdzony model finansowy, który pomoże Ci udowodnić zarządowi, że inwestycja w AI ma sens ekonomiczny'
 description: 'Jak policzyć ROI z wdrożenia AI w firmie? Wzory, składniki kosztów, realne benchmarki i 3 scenariusze kalkulacji dla polskich przedsiębiorstw.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-ai-w-biznesie-roi-z-ai.png
 icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>'
 author:
   name: 'Mateusz Wiśniewski'
@@ -53,6 +53,8 @@ Po stronie kosztów należy uwzględnić pełny [całkowity koszt posiadania](ht
 - **Utrzymanie modeli (MLOps)** – regularne ponowne trenowanie wskutek zjawiska dryfu danych, monitoring dokładności, aktualizacje
 - **Zmianę kulturową i szkolenia** – czas menedżerów, koszty onboardingu, opór wewnętrzny, który wydłuża zwrot o 40–70% przy automatyzacji zdezorganizowanych procesów
 - **Kadry specjalistyczne** – zatrudnienie specjalistów (np. analityków danych, inżynierów ML) lub koszty konsultingu zewnętrznego przez cały cykl życia systemu
+
+![Formuła ROI z AI – korzyści w liczniku (oszczędność czasu, wzrost przychodów) podzielone przez koszty w mianowniku (wdrożenie, licencje, utrzymanie)](../../../assets/images/infographic-ai-w-biznesie-roi-z-ai.png)
 
 ## Jak liczyć ROI – krok po kroku
 

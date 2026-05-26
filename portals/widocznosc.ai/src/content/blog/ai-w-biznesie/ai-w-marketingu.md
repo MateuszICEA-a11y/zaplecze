@@ -3,7 +3,7 @@ title: 'AI w marketingu – praktyczne zastosowania'
 subtitle: 'Odkryj, jak silniki rekomendacyjne, analiza sentymentu i dynamiczne ceny generują mierzalne wyniki – zanim Twoja konkurencja to wdroży'
 description: 'AI w marketingu to nie tylko generowanie tekstu. Dowiedz się, jak rekomendacje, wizja komputerowa i programmatic buying realnie podnoszą wyniki sprzedaży.'
 date: 2026-05-25
-image: ../../../assets/images/blog1.png
+image: ../../../assets/images/blog-ai-w-biznesie-ai-w-marketingu.png
 icon: '<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>'
 author:
   name: 'Mateusz Wiśniewski'
@@ -61,6 +61,8 @@ Klient wchodzi do sklepu z kartą płatniczą lub kodem z aplikacji Żappka, sys
 - **Prognozowanie popytu z uwzględnieniem pogody** – system nakazuje przygotowanie konkretnej liczby ciepłych przekąsek na kilka godzin przed zmianą temperatury
 
 **Kluczowe: architektura Privacy-by-Design wyklucza rozpoznawanie twarzy i dane biometryczne**, dzięki czemu Żabka Nano jest w pełni zgodna zarówno z RODO, jak i unijnym aktem w sprawie sztucznej inteligencji (AI Act).
+
+![Pięć zastosowań AI w marketingu – silniki rekomendacji, widzenie komputerowe, analiza wydźwięku, programmatic i dynamiczne ceny oraz przetwarzanie języka naturalnego](../../../assets/images/infographic-ai-w-biznesie-ai-w-marketingu.png)
 
 ## Analiza wydźwięku i automatyzacja obsługi klienta
 
