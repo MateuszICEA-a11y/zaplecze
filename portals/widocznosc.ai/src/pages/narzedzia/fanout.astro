@@ -1,0 +1,217 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ScrollUpButton from '../../components/ScrollUpButton.astro';
+
+const examples = [
+  'najlepsza agencja SEO w Polsce',
+  'jak wybrać system CRM dla firmy',
+  'najlepszy bank dla firmy 2026',
+];
+---
+
+<Layout
+  title="Fan-out ChatGPT – jak AI naprawdę szuka i kogo cytuje"
+  description="Zobacz fan-out queries, które ChatGPT generuje przy wyszukiwaniu, oraz ranking domen cytowanych w odpowiedzi. Bezpłatne demo widocznosc.ai."
+>
+  <Navbar />
+
+  <main class="flex-grow">
+    <section class="tool-hero">
+      <div class="content-container tool-hero-inner">
+        <nav class="tool-breadcrumb" aria-label="Ścieżka nawigacji">
+          <a href="/narzedzia" class="tool-breadcrumb-link">Narzędzia</a>
+          <span class="tool-breadcrumb-sep" aria-hidden="true">/</span>
+          <span class="tool-breadcrumb-current">Fan-out ChatGPT</span>
+        </nav>
+
+        <header class="text-center">
+          <span class="eyebrow tool-eyebrow">Narzędzie · beta</span>
+          <h1 class="tool-hero-title">
+            Jak ChatGPT&nbsp;<span class="tool-hero-accent">naprawdę szuka</span> i kogo cytuje
+          </h1>
+          <p class="tool-hero-copy">
+            Wpisujesz zapytanie, a&nbsp;my pokazujemy fan-out queries – realne sub-zapytania,
+            które ChatGPT wysyła do&nbsp;wyszukiwarki – oraz ranking domen cytowanych w&nbsp;odpowiedzi.
+          </p>
+        </header>
+
+        <form id="fanout-form" class="fanout-form" novalidate>
+          <label class="fanout-field">
+            <span>Zapytanie</span>
+            <input
+              id="fanout-input"
+              name="query"
+              type="text"
+              required
+              maxlength="300"
+              autocomplete="off"
+              placeholder="np. najlepsza agencja SEO w Polsce"
+            />
+          </label>
+          <button type="submit" class="btn-primary fanout-submit">Pokaż fan-out</button>
+          <div class="fanout-examples" aria-label="Przykładowe zapytania">
+            {examples.map((ex) => (
+              <button type="button" class="fanout-example" data-query={ex}>{ex}</button>
+            ))}
+          </div>
+        </form>
+
+        <div id="fanout-results" class="fanout-results hidden" aria-live="polite"></div>
+
+        <p class="fanout-note">
+          Wyniki odzwierciedlają warstwę wyszukiwania ChatGPT (model gpt-5-mini). Limit: 3 zapytania dziennie.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <ScrollUpButton />
+</Layout>
+
+<style>
+  .fanout-form { max-width: 720px; margin: 2.5rem auto 0; display: flex; flex-direction: column; gap: 0.75rem; }
+  .fanout-field { display: flex; flex-direction: column; gap: 0.4rem; text-align: left; font-weight: 600; }
+  .fanout-field input {
+    width: 100%; padding: 0.9rem 1rem; border-radius: 0.75rem;
+    border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+    background: color-mix(in srgb, currentColor 4%, transparent); font-size: 1rem;
+  }
+  .fanout-submit { align-self: flex-start; }
+  .fanout-examples { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.25rem; }
+  .fanout-example {
+    font-size: 0.85rem; padding: 0.35rem 0.75rem; border-radius: 999px; cursor: pointer;
+    border: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+    background: transparent; color: inherit; opacity: 0.8;
+  }
+  .fanout-example:hover { opacity: 1; }
+  .fanout-results { max-width: 820px; margin: 2.5rem auto 0; text-align: left; display: grid; gap: 1.5rem; }
+  .fanout-results.hidden { display: none; }
+  .fanout-panel {
+    border: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+    border-radius: 1rem; padding: 1.5rem;
+    background: color-mix(in srgb, currentColor 3%, transparent);
+  }
+  .fanout-panel h2 { font-size: 1.15rem; margin: 0 0 1rem; }
+  .fanout-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.5rem; }
+  .fanout-list li {
+    padding: 0.6rem 0.9rem; border-radius: 0.6rem;
+    background: color-mix(in srgb, currentColor 5%, transparent); font-family: ui-monospace, monospace; font-size: 0.9rem;
+  }
+  .domain-row { display: flex; align-items: center; gap: 0.75rem; padding: 0.55rem 0; border-bottom: 1px solid color-mix(in srgb, currentColor 10%, transparent); }
+  .domain-row:last-child { border-bottom: 0; }
+  .domain-name { font-weight: 700; }
+  .domain-count {
+    margin-left: auto; font-size: 0.8rem; font-weight: 700; padding: 0.15rem 0.6rem; border-radius: 999px;
+    background: color-mix(in srgb, currentColor 12%, transparent);
+  }
+  .domain-urls { display: grid; gap: 0.2rem; margin: 0.1rem 0 0.6rem; padding-left: 0.5rem; }
+  .domain-urls a { font-size: 0.8rem; opacity: 0.75; word-break: break-all; }
+  .fanout-error { padding: 1rem 1.25rem; border-radius: 0.75rem; background: color-mix(in srgb, #ef4444 14%, transparent); color: #b91c1c; }
+  .fanout-cta { margin-top: 0.75rem; }
+  .fanout-note { margin-top: 1.25rem; text-align: center; font-size: 0.8rem; opacity: 0.6; }
+</style>
+
+<script>
+  const initFanout = () => {
+    const form = document.getElementById('fanout-form');
+    const input = document.getElementById('fanout-input');
+    const results = document.getElementById('fanout-results');
+    if (!form || !results || !input) return;
+
+    const submit = form.querySelector('button[type="submit"]');
+
+    function escapeHtml(value) {
+      return String(value ?? '')
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+
+    function setLoading(isLoading) {
+      if (!submit) return;
+      submit.disabled = isLoading;
+      submit.setAttribute('aria-busy', isLoading ? 'true' : 'false');
+    }
+
+    function renderError(message) {
+      results.classList.remove('hidden');
+      results.innerHTML = `<div class="fanout-error">${escapeHtml(message)}</div>`;
+    }
+
+    function renderResults(data) {
+      if (data.status === 'no-search') {
+        results.innerHTML = `<div class="fanout-panel"><h2>Brak fan-outów</h2><p>Dla tego zapytania ChatGPT nie uruchomił wyszukiwania w sieci. Spróbuj bardziej „wyszukiwalnego" pytania.</p></div>`;
+        return;
+      }
+
+      const fanouts = (data.fanoutQueries || []).map((q) => `<li>${escapeHtml(q)}</li>`).join('');
+      const domains = (data.citedDomains || [])
+        .map((d) => `
+          <div>
+            <div class="domain-row">
+              <span class="domain-name">${escapeHtml(d.domain)}</span>
+              <span class="domain-count">${escapeHtml(String(d.count))} cyt.</span>
+            </div>
+            <div class="domain-urls">
+              ${(d.urls || []).map((u) => `<a href="${escapeHtml(u)}" target="_blank" rel="nofollow noopener">${escapeHtml(u)}</a>`).join('')}
+            </div>
+          </div>`)
+        .join('');
+
+      const remaining = data.usage?.remaining ?? 0;
+      const ctaHtml = remaining <= 0
+        ? `<p class="fanout-cta"><a class="btn-primary" href="/kontakt">Chcesz pełny audyt widoczności w AI? Napisz do nas</a></p>`
+        : `<p class="fanout-note">Pozostały Ci dziś ${escapeHtml(String(remaining))} zapytania.</p>`;
+
+      results.innerHTML = `
+        <section class="fanout-panel">
+          <h2>Fan-out queries (${escapeHtml(String((data.fanoutQueries || []).length))})</h2>
+          <p style="opacity:.7;margin:-0.5rem 0 1rem;font-size:.9rem">Sub-zapytania, które ChatGPT wysłał do wyszukiwarki dla: „${escapeHtml(data.query)}".</p>
+          <ul class="fanout-list">${fanouts || '<li>brak</li>'}</ul>
+        </section>
+        <section class="fanout-panel">
+          <h2>Kto jest cytowany (${escapeHtml(String((data.citedDomains || []).length))} domen)</h2>
+          <p style="opacity:.7;margin:-0.5rem 0 1rem;font-size:.9rem">Domeny, które ChatGPT zacytował, posortowane wg liczby cytowań.</p>
+          ${domains || '<p>Brak cytowań w odpowiedzi.</p>'}
+        </section>
+        ${ctaHtml}
+      `;
+    }
+
+    form.querySelectorAll('.fanout-example').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        input.value = btn.getAttribute('data-query') || '';
+        form.requestSubmit();
+      });
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const query = String(input.value || '').trim();
+      if (query.length < 3) { renderError('Podaj zapytanie (min. 3 znaki).'); return; }
+
+      setLoading(true);
+      results.classList.remove('hidden');
+      results.innerHTML = `<div class="fanout-panel"><h2>Pytamy ChatGPT o „${escapeHtml(query)}"…</h2><p style="opacity:.7">Trwa wyszukiwanie i analiza fan-outów (10-30 s).</p></div>`;
+
+      try {
+        const response = await fetch('/api/tools/fanout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query }),
+        });
+        const body = await response.json();
+        if (!response.ok) throw new Error(body.error || `HTTP ${response.status}`);
+        renderResults(body);
+      } catch (error) {
+        renderError(error instanceof Error ? error.message : 'Nie udało się wykonać zapytania.');
+      } finally {
+        setLoading(false);
+      }
+    });
+  };
+
+  document.addEventListener('astro:page-load', initFanout);
+</script>
