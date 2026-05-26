@@ -5,12 +5,16 @@
  */
 
 export type Citation = { title: string; url: string; domain: string };
+export type SearchSource = { url: string; domain: string };
 export type CitedDomain = { domain: string; count: number; urls: string[] };
 export type ParsedFanout = {
   searched: boolean;
   fanoutQueries: string[];
+  answer: string;
   citations: Citation[];
   citedDomains: CitedDomain[];
+  searchedSources: SearchSource[];
+  searchedDomains: CitedDomain[];
 };
 
 type AnyRecord = Record<string, unknown>;
@@ -33,6 +37,8 @@ export function parseResponsesOutput(data: unknown): ParsedFanout {
 
   const fanoutQueries: string[] = [];
   const citations: Citation[] = [];
+  const searchedSources: SearchSource[] = [];
+  const answerParts: string[] = [];
   let searched = false;
 
   for (const rawItem of output) {
@@ -48,6 +54,14 @@ export function parseResponsesOutput(data: unknown): ParsedFanout {
       for (const q of asArray(action.queries)) {
         if (typeof q === 'string' && q.trim()) fanoutQueries.push(q.trim());
       }
+      for (const rawSource of asArray(action.sources)) {
+        if (!rawSource || typeof rawSource !== 'object') continue;
+        const source = rawSource as AnyRecord;
+        if (typeof source.url !== 'string') continue;
+        const domain = normalizeHost(source.url);
+        if (!domain) continue;
+        searchedSources.push({ url: source.url, domain });
+      }
       continue;
     }
 
@@ -55,6 +69,9 @@ export function parseResponsesOutput(data: unknown): ParsedFanout {
       for (const rawContent of asArray(item.content)) {
         if (!rawContent || typeof rawContent !== 'object') continue;
         const content = rawContent as AnyRecord;
+        if (typeof content.text === 'string' && content.text.trim()) {
+          answerParts.push(content.text.trim());
+        }
         for (const rawAnn of asArray(content.annotations)) {
           if (!rawAnn || typeof rawAnn !== 'object') continue;
           const ann = rawAnn as AnyRecord;
@@ -71,7 +88,22 @@ export function parseResponsesOutput(data: unknown): ParsedFanout {
     }
   }
 
-  return { searched, fanoutQueries, citations, citedDomains: aggregateDomains(citations) };
+  const dedupedQueries = Array.from(new Set(fanoutQueries));
+  const dedupedSources = dedupeSources(searchedSources);
+
+  return {
+    searched,
+    fanoutQueries: dedupedQueries,
+    answer: answerParts.join('\n\n'),
+    citations,
+    citedDomains: aggregateDomains(citations),
+    searchedSources: dedupedSources,
+    searchedDomains: aggregateDomains(dedupedSources.map((source) => ({
+      title: source.domain,
+      url: source.url,
+      domain: source.domain,
+    }))),
+  };
 }
 
 function aggregateDomains(citations: Citation[]): CitedDomain[] {
@@ -88,4 +120,15 @@ function aggregateDomains(citations: Citation[]): CitedDomain[] {
   return Array.from(map.values()).sort(
     (a, b) => b.count - a.count || a.domain.localeCompare(b.domain, 'pl')
   );
+}
+
+function dedupeSources(sources: SearchSource[]): SearchSource[] {
+  const seen = new Set<string>();
+  const result: SearchSource[] = [];
+  for (const source of sources) {
+    if (seen.has(source.url)) continue;
+    seen.add(source.url);
+    result.push(source);
+  }
+  return result;
 }

@@ -5,12 +5,27 @@
     {
       "type": "web_search_call",
       "status": "completed",
-      "action": { "type": "search", "query": "najlepsza agencja seo w polsce 2026 ranking" }
+      "action": {
+        "type": "search",
+        "query": "najlepsza agencja seo w polsce 2026 ranking",
+        "sources": [
+          { "type": "url", "url": "https://www.example.com/ranking?utm=1" },
+          { "type": "url", "url": "https://rankingi.pl/seo" }
+        ]
+      }
     },
     {
       "type": "web_search_call",
       "status": "completed",
-      "action": { "type": "search", "queries": ["agencja seo opinie ranking", "icea seo opinie"] }
+      "action": {
+        "type": "search",
+        "queries": ["agencja seo opinie ranking", "icea seo opinie"],
+        "sources": [
+          { "type": "url", "url": "https://example.com/opinie" },
+          { "type": "url", "url": "https://icea.pl/o-nas" },
+          { "type": "url", "url": "https://icea.pl/o-nas" }
+        ]
+      }
     },
     {
       "type": "message",
