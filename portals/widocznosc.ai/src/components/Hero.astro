@@ -1,8 +1,8 @@
 ---
 /**
  * Hero – landing redesign 2026-05-09 (handoff).
- * Layout: 1.5fr / 1fr grid, gap 48px. Lewy: section-index + eyebrow,
- * display-xxl headline (max 12ch), subhead (max 480px), 2 CTAs.
+ * Layout: editorial 2-column grid. Lewy: section-index + eyebrow,
+ * display-xxl headline, subhead (max 520px), 2 CTAs.
  * Prawy: violet atmosphere card – 3-stop radial + ::before inner-light overlay.
  */
 ---
@@ -75,7 +75,8 @@
 
   @media (min-width: 980px) {
     .hero-grid {
-      grid-template-columns: 1.5fr 1fr;
+      grid-template-columns: minmax(0, 1.05fr) minmax(440px, 0.95fr);
+      gap: 72px;
     }
   }
 
@@ -94,8 +95,8 @@
 
   /* Display headline – clamp + relative tracking (handoff) */
   .hero-headline {
-    max-width: 12ch;
-    text-wrap: balance;
+    max-width: 14.5ch;
+    text-wrap: pretty;
     margin: 0;
   }
 
@@ -110,7 +111,7 @@
   /* Inline accent (sky) na "Twojej marce" – z .accent (Theme.css) */
 
   .hero-sub {
-    max-width: 480px;
+    max-width: 520px;
     margin: 0;
     /* na hero kluczowy tekst – ink, nie ink-muted (zgodnie z feedbackiem) */
     color: var(--ink);

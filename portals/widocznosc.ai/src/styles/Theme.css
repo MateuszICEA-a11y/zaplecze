@@ -856,9 +856,9 @@ h4:not([class*='text-']):not([class*='display-']) {
 /* Editorial section header – left-aligned 2-col grid (5fr/4fr) */
 .section-head {
   display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 4fr);
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.78fr);
   align-items: center;
-  gap: 48px 80px;
+  gap: 40px 64px;
   margin-bottom: 56px;
   padding-bottom: 24px;
   border-bottom: 1px solid var(--hairline-soft);
@@ -875,6 +875,16 @@ h4:not([class*='text-']):not([class*='display-']) {
   gap: 12px;
   flex-wrap: wrap;
 }
+.section-head .head-meta .eyebrow {
+  font-family: ui-monospace, 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+.section-head .head-meta .eyebrow::before {
+  width: 8px;
+  height: 8px;
+}
 .section-head .head-right {
   display: flex;
   flex-direction: column;
@@ -884,7 +894,7 @@ h4:not([class*='text-']):not([class*='display-']) {
   padding-top: 28px;
 }
 .section-head h2 {
-  max-width: 14ch;
+  max-width: 18ch;
 }
 .section-head .subhead {
   max-width: 44ch;
