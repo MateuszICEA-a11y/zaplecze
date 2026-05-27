@@ -1,8 +1,6 @@
 ---
 /**
  * Footer – landing redesign 2026-05-09 (handoff).
- * 5-col grid (1.4fr + 4 equal): brand+newsletter | 4 link columns.
- * Newsletter form: pill-shaped row z dark submit button.
  * Bottom bar (hairline-top): copyright + 4 social pills (32px circles).
  */
 import FacebookIcon from '../assets/icons/FacebookIcon.astro';
@@ -48,7 +46,7 @@ const year = new Date().getFullYear();
 <footer class="footer-section" id="kontakt" aria-label="Stopka serwisu">
   <div class="container">
     <div class="footer-top">
-      <!-- Brand + newsletter -->
+      <!-- Brand -->
       <div class="footer-brand">
         <a href="/" aria-label="widocznosc.ai – strona główna" class="nav-logo footer-logo">
           <span class="nav-logo-mark" aria-hidden="true">
@@ -76,21 +74,6 @@ const year = new Date().getFullYear();
           Pozycjonowanie marek w&nbsp;wyszukiwarkach AI. Audyt widoczności w&nbsp;ChatGPT, Claude,
           Gemini i&nbsp;Perplexity. Część ICEA &ndash; agencji SEO i&nbsp;AI.
         </p>
-
-        <form class="footer-newsletter" aria-label="Zapis do newslettera">
-          <span class="footer-news-label">Newsletter · co 2 tyg.</span>
-          <div class="footer-news-row">
-            <label for="footer-email" class="sr-only">Adres e-mail</label>
-            <input type="email" id="footer-email" placeholder="twoj@email.pl" required />
-            <button
-              type="submit"
-              class="btn-primary footer-news-btn"
-              aria-label="Zapisz się do newslettera"
-            >
-              Zapisz
-            </button>
-          </div>
-        </form>
       </div>
 
       <!-- Sitemap columns -->
@@ -186,55 +169,6 @@ const year = new Date().getFullYear();
     max-width: 320px;
     line-height: 1.5;
     margin: 0;
-  }
-
-  /* Newsletter pill row */
-  .footer-newsletter {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 14px;
-    max-width: 360px;
-  }
-
-  .footer-news-label {
-    font-family: var(--font-sans);
-    font-size: 11px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--ink-faint);
-  }
-
-  .footer-news-row {
-    display: flex;
-    gap: 6px;
-    background: var(--bg-surface-1);
-    border: 1px solid var(--hairline-soft);
-    border-radius: var(--r-pill);
-    padding: 4px 4px 4px 14px;
-    align-items: center;
-  }
-
-  .footer-news-row input {
-    flex: 1;
-    background: transparent;
-    border: 0;
-    color: var(--ink);
-    font-family: var(--font-sans);
-    font-size: 13px;
-    outline: none;
-    min-width: 0;
-  }
-
-  .footer-news-row input::placeholder {
-    color: var(--ink-faint);
-  }
-
-  .footer-news-btn {
-    min-height: 32px;
-    padding: 6px 14px;
-    font-size: 12px;
   }
 
   /* Footer columns */

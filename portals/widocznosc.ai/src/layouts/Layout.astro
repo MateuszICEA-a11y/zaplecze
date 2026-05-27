@@ -7,7 +7,6 @@ import monaSansLatin from '@fontsource-variable/mona-sans/files/mona-sans-latin-
 import interLatin from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 import { ClientRouter } from 'astro:transitions';
 import '../styles/Theme.css';
-import InvitationModal from '../components/InvitationModal.astro';
 
 interface Props {
   title: string;
@@ -114,7 +113,6 @@ const ogImage = `${siteUrl}/og-image.png`;
     <main id="main" aria-label="Main content">
       <slot />
     </main>
-    <InvitationModal />
     <style is:global>
       html {
         font-family:

@@ -28,7 +28,7 @@ const services = [
   {
     id: 'strategia',
     title: 'Strategia GEO na 12 miesięcy',
-    desc: 'Tworzymy kompleksowy plan widoczności na cały rok: mapę fraz, kalendarz publikacji treści, plan dystrybucji oraz strategię pozyskiwania linków uwiarygadniających (linkbuilding pod GEO).',
+    desc: 'Tworzymy kompleksowy plan widoczności na cały rok: mapę fraz, kalendarz publikacji treści, plan dystrybucji oraz strategię pozyskiwania wzmianek o Twojej firmie.',
     variant: 'blue',
   },
 ] as const;
@@ -177,22 +177,23 @@ const serviceSchema = {
   <Navbar />
   <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
 
-  <!-- Hero – wyśrodkowany na pełnej szerokości containera -->
-  <section class="relative pt-32 pb-20 md:pt-40 md:pb-24">
-    <div class="content-container text-center">
-      <span class="eyebrow mb-10 inline-flex">Usługi · Generative Engine Optimization</span>
-      <h1 class="display-xxl mx-auto mb-8" style="max-width: 1100px;">
+  <section class="pillar-hero">
+    <div class="content-container">
+      <div class="pillar-hero-inner">
+        <span class="eyebrow pillar-hero-eyebrow">Usługi · Generative Engine Optimization</span>
+        <h1 class="display-xxl pillar-hero-title">
         Pozycjonowanie w&nbsp;<span class="accent">AI</span>
-      </h1>
-      <p class="text-ink mx-auto text-lg leading-relaxed" style="max-width: 720px;">
+        </h1>
+        <p class="pillar-hero-lead">
         Zbuduj widoczność swojej marki w ChatGPT, Claude, Gemini, Perplexity i Bing Copilot. W
         nowym standardzie wyszukiwania nie walczymy o pozycje w rankingu – walczymy o bycie
         cytowanym źródłem. Ponieważ każdy model AI wymaga innego podejścia, wybierz konkretny
         silnik poniżej lub zacznij od kompleksowego audytu wszystkich pięciu.
-      </p>
-      <div class="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row">
-        <a class="btn-primary" href="/kontakt?type=audyt-ai">Zamów audyt wszystkich modeli</a>
-        <a class="btn-secondary" href="/narzedzia/brand-check">Sprawdź widoczność · 60s</a>
+        </p>
+        <div class="pillar-hero-actions">
+          <a class="btn-primary" href="/kontakt?type=audyt-ai">Zamów audyt wszystkich modeli</a>
+          <a class="btn-secondary" href="/narzedzia/brand-check">Sprawdź widoczność · 60s</a>
+        </div>
       </div>
     </div>
   </section>
@@ -382,6 +383,47 @@ const serviceSchema = {
 </Layout>
 
 <style>
+  .pillar-hero {
+    padding: 128px 0 88px;
+  }
+
+  .pillar-hero-inner {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    max-width: 1180px;
+    text-align: center;
+  }
+
+  .pillar-hero-eyebrow {
+    justify-content: center;
+    margin-bottom: 44px;
+  }
+
+  .pillar-hero-title {
+    margin: 0;
+    max-width: 1000px;
+    text-wrap: balance;
+  }
+
+  .pillar-hero-lead {
+    color: var(--ink);
+    font-size: clamp(18px, 1.7vw, 24px);
+    line-height: 1.55;
+    margin: 36px auto 0;
+    max-width: 980px;
+    text-wrap: pretty;
+  }
+
+  .pillar-hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 56px;
+  }
+
   .hero-stat-strip {
     border-top: 1px solid var(--hairline-soft);
     border-bottom: 1px solid var(--hairline-soft);
@@ -515,6 +557,18 @@ const serviceSchema = {
   }
 
   @media (min-width: 768px) {
+    .pillar-hero {
+      padding: 152px 0 104px;
+    }
+
+    .pillar-hero-title {
+      white-space: nowrap;
+    }
+
+    .pillar-hero-actions {
+      flex-direction: row;
+    }
+
     .hero-stat-grid {
       grid-template-columns: repeat(4, minmax(0, 1fr));
       padding: 36px 0;
@@ -541,6 +595,28 @@ const serviceSchema = {
   }
 
   @media (max-width: 767px) {
+    .pillar-hero {
+      padding: 112px 0 72px;
+    }
+
+    .pillar-hero-eyebrow {
+      margin-bottom: 32px;
+    }
+
+    .pillar-hero-lead {
+      margin-top: 24px;
+    }
+
+    .pillar-hero-actions {
+      align-items: stretch;
+      margin-top: 36px;
+      width: 100%;
+    }
+
+    .pillar-hero-actions a {
+      justify-content: center;
+    }
+
     .decision-table {
       border-radius: 15px;
     }
