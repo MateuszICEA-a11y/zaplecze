@@ -156,7 +156,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
 
   gemini: {
     heroSubtitle:
-      'Google Gemini to model AI z&nbsp;bezpośrednim dostępem do wyszukiwarki Google w&nbsp;czasie rzeczywistym. Zasila on Podsumowania AI (AI Overviews) w&nbsp;wynikach wyszukiwania, a&nbsp;także usługi Workspace, Android i&nbsp;Chrome. Z&nbsp;badań wynika, że aż 44% linków pojawiających się w&nbsp;odpowiedziach AI pochodzi spoza standardowego TOP 20 wyników. Oznacza to, że merytoryczna struktura Twoich treści jest dziś ważniejsza niż sama pozycja w&nbsp;tradycyjnym rankingu.',
+      'Google Gemini to model AI z&nbsp;bezpośrednim dostępem do wyszukiwarki Google w&nbsp;czasie rzeczywistym. Zasila on Podsumowania AI (AI Overviews) i&nbsp;AI Mode w&nbsp;wynikach wyszukiwania, a&nbsp;także usługi Workspace, Android i&nbsp;Chrome. Z&nbsp;badań wynika, że aż 44% linków pojawiających się w&nbsp;odpowiedziach AI pochodzi spoza standardowego TOP 20 wyników. Oznacza to, że merytoryczna struktura Twoich treści jest dziś ważniejsza niż sama pozycja w&nbsp;tradycyjnym rankingu.',
     metaDescription:
       'Pozycjonowanie marki w Google Gemini i AI Overviews. Optymalizacja pod intencje AI, znaczniki FAQ, autorytet tematyczny i gęstość faktów. Mierzymy widoczność w ekosystemie Google.',
     howItWorks: [
