@@ -18,7 +18,7 @@
         </div>
 
         <h1 class="display-xxl hero-headline">
-          Sprawdź, co ChatGPT, Claude, Gemini i<span class="hero-mobile-break" aria-hidden="true"
+          Sprawdź, co ChatGPT, Claude, Gemini i <span class="hero-mobile-break" aria-hidden="true"
           ></span>Perplexity mówią o&nbsp;<span class="accent">Twojej marce</span>.
         </h1>
 
@@ -62,11 +62,32 @@
 <style>
   .hero-section {
     position: relative;
-    background: var(--bg-canvas);
+    overflow: hidden;
+    background:
+      radial-gradient(
+        circle at 13% 12%,
+        color-mix(in srgb, var(--accent-blue) 18%, transparent) 0%,
+        transparent 30%
+      ),
+      radial-gradient(circle at 88% 20%, rgba(167, 139, 250, 0.18) 0%, transparent 32%),
+      linear-gradient(180deg, var(--bg-surface-1) 0%, var(--bg-canvas) 88%);
     padding: 80px 0 96px;
   }
 
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(var(--hairline-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--hairline-soft) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.13), transparent 66%);
+    pointer-events: none;
+  }
+
   .hero-grid {
+    position: relative;
     display: grid;
     grid-template-columns: 1fr;
     gap: 48px;

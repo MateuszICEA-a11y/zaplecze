@@ -181,17 +181,17 @@ const siteUrl = 'https://widocznosc.ai';
   </section>
 
   <!-- Cztery zasady GEO -->
-  <section class="relative w-full" aria-labelledby="principles-title">
-    <div class="content-container py-16 lg:py-20">
-      <div class="mx-auto mb-14 text-center" style="max-width: 880px;">
-        <div class="head-meta justify-center">
+  <section class="principles-section" aria-labelledby="principles-title">
+    <div class="content-container">
+      <div class="principles-head">
+        <div class="principles-meta">
           <span class="section-index">A/01</span>
           <span class="eyebrow">Zasady, którymi się kierujemy</span>
         </div>
-        <h2 id="principles-title" class="display-xl mt-2 mb-6" style="text-wrap: balance;">
+        <h2 id="principles-title" class="display-xl">
           Cztery rzeczy, w&nbsp;które wierzymy bezkompromisowo
         </h2>
-        <p class="text-ink-muted mx-auto text-lg leading-relaxed" style="max-width: 720px;">
+        <p>
           GEO (Generative Engine Optimization) to zupełnie nowa dyscyplina. Widoczność w sztucznej
           inteligencji buduje się inaczej niż w klasycznym SEO. Poniższe cztery zasady tłumaczą,
           jak podchodzimy do naszej pracy.
@@ -412,17 +412,23 @@ const siteUrl = 'https://widocznosc.ai';
   }
 
   .about-panel-stats div {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     padding: 0 0.75rem;
     border-right: 1px solid var(--hairline-soft);
+    text-align: center;
   }
 
   .about-panel-stats div:first-child {
-    padding-left: 0;
+    padding-left: 0.75rem;
   }
 
   .about-panel-stats div:last-child {
     border-right: 0;
-    padding-right: 0;
+    padding-right: 0.75rem;
   }
 
   .about-panel-stats dt {
@@ -530,6 +536,61 @@ const siteUrl = 'https://widocznosc.ai';
     color: var(--ink-muted);
     font-size: 0.95rem;
     line-height: 1.35;
+  }
+
+  .principles-section {
+    position: relative;
+    width: 100%;
+    padding: clamp(5.25rem, 8vw, 7rem) 0 clamp(4.5rem, 7vw, 6.25rem);
+  }
+
+  .principles-head {
+    max-width: 880px;
+    margin: 0 auto clamp(3.5rem, 6vw, 4.75rem);
+    text-align: center;
+  }
+
+  .principles-meta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: clamp(1.15rem, 2vw, 1.55rem);
+  }
+
+  .principles-meta .section-index,
+  .principles-meta .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 650;
+    line-height: 1;
+    letter-spacing: 0.06em;
+  }
+
+  .principles-meta .eyebrow {
+    color: var(--ink-muted);
+  }
+
+  .principles-meta .eyebrow::before {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+
+  .principles-head h2 {
+    max-width: 760px;
+    margin: 0 auto;
+    line-height: 1.04;
+    letter-spacing: 0;
+    text-wrap: balance;
+  }
+
+  .principles-head p {
+    max-width: 740px;
+    margin: clamp(1.35rem, 2.4vw, 1.8rem) auto 0;
+    color: var(--ink-muted);
+    font-size: clamp(1.05rem, 1.45vw, 1.22rem);
+    line-height: 1.72;
+    text-wrap: pretty;
   }
 
   .principle-card,
@@ -642,6 +703,32 @@ const siteUrl = 'https://widocznosc.ai';
     .about-panel-stats,
     .about-stats-grid {
       grid-template-columns: 1fr;
+    }
+
+    .principles-section {
+      padding: 4.5rem 0 4rem;
+    }
+
+    .principles-head {
+      margin-bottom: 2.5rem;
+    }
+
+    .principles-meta {
+      align-items: center;
+      flex-wrap: wrap;
+      row-gap: 0.55rem;
+      margin-bottom: 1rem;
+    }
+
+    .principles-head h2 {
+      max-width: 11.5em;
+      line-height: 1.08;
+    }
+
+    .principles-head p {
+      max-width: 34rem;
+      font-size: 1rem;
+      line-height: 1.68;
     }
 
     .about-panel-stats div {

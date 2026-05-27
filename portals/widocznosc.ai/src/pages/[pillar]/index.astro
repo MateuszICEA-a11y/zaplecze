@@ -59,7 +59,7 @@ const formatDate = (date: Date) =>
 
   <main class="blog-listing-main">
     <!-- Hero -->
-    <section class="blog-hero">
+    <section class={`blog-hero blog-hero--${pillar}`}>
       <div class="blog-hero-container">
         <span class="eyebrow blog-hero-eyebrow">{pillarLabel}</span>
         <h1 class="display-xxl blog-hero-title">{pillarTitle}</h1>
@@ -72,7 +72,7 @@ const formatDate = (date: Date) =>
       featuredPost && (
         <section class="blog-featured-section">
           <div class="blog-featured-container">
-            <a href={`/${featuredPost.id}`} class="blog-featured">
+            <a href={`/${featuredPost.id}`} class={`blog-featured blog-featured--${pillar}`}>
               <div class="blog-featured-image">
                 <Image
                   src={featuredPost.data.image}
@@ -113,7 +113,7 @@ const formatDate = (date: Date) =>
 
             <div class="blog-grid">
               {gridPosts.map((post) => (
-                <a href={`/${post.id}`} class="post-card">
+                <a href={`/${post.id}`} class="post-card" data-category={post.data.pillar}>
                   <div class="post-card-image">
                     <Image
                       src={post.data.image}
@@ -154,8 +154,58 @@ const formatDate = (date: Date) =>
 
   /* Hero */
   .blog-hero {
-    background: var(--bg-canvas);
+    --pillar-accent: var(--accent-blue);
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(
+        circle at 12% 18%,
+        color-mix(in srgb, var(--pillar-accent) 18%, transparent) 0%,
+        transparent 32%
+      ),
+      radial-gradient(circle at 86% 14%, rgba(167, 139, 250, 0.14) 0%, transparent 30%),
+      linear-gradient(180deg, var(--bg-surface-1) 0%, var(--bg-canvas) 84%);
     padding: 128px 0 64px 0;
+  }
+
+  .blog-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(var(--hairline-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--hairline-soft) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.13), transparent 66%);
+    pointer-events: none;
+  }
+
+  .blog-hero--ai-w-biznesie,
+  .blog-hero--agenci-ai {
+    --pillar-accent: #4ade80;
+  }
+
+  .blog-hero--modele-llm,
+  .blog-hero--prompty {
+    --pillar-accent: #a78bfa;
+  }
+
+  .blog-hero--rag {
+    --pillar-accent: #fbbf24;
+  }
+
+  :global(:root[data-theme='light']) .blog-hero--ai-w-biznesie,
+  :global(:root[data-theme='light']) .blog-hero--agenci-ai {
+    --pillar-accent: #16a34a;
+  }
+
+  :global(:root[data-theme='light']) .blog-hero--modele-llm,
+  :global(:root[data-theme='light']) .blog-hero--prompty {
+    --pillar-accent: #7c3aed;
+  }
+
+  :global(:root[data-theme='light']) .blog-hero--rag {
+    --pillar-accent: #d97706;
   }
 
   @media (min-width: 1024px) {
@@ -165,6 +215,7 @@ const formatDate = (date: Date) =>
   }
 
   .blog-hero-container {
+    position: relative;
     width: 100%;
     max-width: 1440px;
     margin-inline: auto;
@@ -174,6 +225,7 @@ const formatDate = (date: Date) =>
   .blog-hero-eyebrow {
     display: inline-block;
     margin-bottom: 16px;
+    color: var(--pillar-accent);
   }
 
   .blog-hero-title {
@@ -207,9 +259,17 @@ const formatDate = (date: Date) =>
   }
 
   .blog-featured {
+    --pillar-accent: var(--accent-blue);
     display: grid;
     grid-template-columns: 1fr;
-    background: var(--bg-surface-1);
+    background:
+      radial-gradient(
+        circle at 70% 0%,
+        color-mix(in srgb, var(--pillar-accent) 15%, transparent) 0%,
+        transparent 36%
+      ),
+      var(--bg-surface-1);
+    border: 1px solid var(--hairline-soft);
     border-radius: var(--r-xl);
     overflow: hidden;
     text-decoration: none;
@@ -218,6 +278,20 @@ const formatDate = (date: Date) =>
 
   .blog-featured:hover {
     background: var(--bg-surface-2);
+  }
+
+  .blog-featured--ai-w-biznesie,
+  .blog-featured--agenci-ai {
+    --pillar-accent: #4ade80;
+  }
+
+  .blog-featured--modele-llm,
+  .blog-featured--prompty {
+    --pillar-accent: #a78bfa;
+  }
+
+  .blog-featured--rag {
+    --pillar-accent: #fbbf24;
   }
 
   @media (min-width: 1024px) {
@@ -273,13 +347,13 @@ const formatDate = (date: Date) =>
     display: inline-flex;
     align-items: center;
     padding: 3px 10px;
-    background: var(--bg-canvas);
+    background: color-mix(in srgb, var(--pillar-accent) 12%, var(--bg-canvas));
     border-radius: var(--r-pill);
     font-family: var(--font-sans);
     font-size: var(--fs-micro);
     font-weight: 500;
     letter-spacing: -0.12px;
-    color: var(--ink);
+    color: var(--pillar-accent);
   }
 
   .blog-featured-date {
@@ -377,9 +451,17 @@ const formatDate = (date: Date) =>
 
   /* Post card */
   .post-card {
+    --post-accent: var(--pillar-accent, var(--accent-blue));
     display: flex;
     flex-direction: column;
-    background: var(--bg-surface-1);
+    background:
+      radial-gradient(
+        circle at 16% 0%,
+        color-mix(in srgb, var(--post-accent) 10%, transparent) 0%,
+        transparent 30%
+      ),
+      var(--bg-surface-1);
+    border: 1px solid var(--hairline-soft);
     border-radius: var(--r-xl);
     overflow: hidden;
     text-decoration: none;
@@ -389,6 +471,34 @@ const formatDate = (date: Date) =>
 
   .post-card:hover {
     background: var(--bg-surface-2);
+  }
+
+  .post-card[data-category='ai-w-biznesie'],
+  .post-card[data-category='agenci-ai'] {
+    --post-accent: #4ade80;
+  }
+
+  .post-card[data-category='modele-llm'],
+  .post-card[data-category='prompty'] {
+    --post-accent: #a78bfa;
+  }
+
+  .post-card[data-category='rag'] {
+    --post-accent: #fbbf24;
+  }
+
+  :global(:root[data-theme='light']) .post-card[data-category='ai-w-biznesie'],
+  :global(:root[data-theme='light']) .post-card[data-category='agenci-ai'] {
+    --post-accent: #16a34a;
+  }
+
+  :global(:root[data-theme='light']) .post-card[data-category='modele-llm'],
+  :global(:root[data-theme='light']) .post-card[data-category='prompty'] {
+    --post-accent: #7c3aed;
+  }
+
+  :global(:root[data-theme='light']) .post-card[data-category='rag'] {
+    --post-accent: #d97706;
   }
 
   .post-card-image {
@@ -424,13 +534,13 @@ const formatDate = (date: Date) =>
     display: inline-flex;
     align-items: center;
     padding: 3px 10px;
-    background: var(--bg-canvas);
+    background: color-mix(in srgb, var(--post-accent) 12%, var(--bg-canvas));
     border-radius: var(--r-pill);
     font-family: var(--font-sans);
     font-size: var(--fs-micro);
     font-weight: 500;
     letter-spacing: -0.12px;
-    color: var(--ink);
+    color: var(--post-accent);
   }
 
   .post-card-date {

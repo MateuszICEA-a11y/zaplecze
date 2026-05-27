@@ -110,6 +110,7 @@ const formatDate = (date: Date) =>
   }
 
   .kb-card {
+    --kb-accent: var(--accent-blue);
     background: var(--bg-surface-1);
     border: 1px solid var(--hairline-soft);
     border-radius: var(--r-xl);
@@ -125,6 +126,30 @@ const formatDate = (date: Date) =>
     min-height: 100%;
   }
 
+  .kb-card:nth-child(2) {
+    --kb-accent: #4ade80;
+  }
+
+  .kb-card:nth-child(3) {
+    --kb-accent: #fbbf24;
+  }
+
+  .kb-card:nth-child(4) {
+    --kb-accent: #a78bfa;
+  }
+
+  :global(:root[data-theme='light']) .kb-card:nth-child(2) {
+    --kb-accent: #16a34a;
+  }
+
+  :global(:root[data-theme='light']) .kb-card:nth-child(3) {
+    --kb-accent: #d97706;
+  }
+
+  :global(:root[data-theme='light']) .kb-card:nth-child(4) {
+    --kb-accent: #7c3aed;
+  }
+
   .kb-card:hover {
     transform: translateY(-2px);
     background: var(--bg-surface-2);
@@ -133,7 +158,13 @@ const formatDate = (date: Date) =>
 
   .kb-card-img {
     aspect-ratio: 4 / 3;
-    background: var(--bg-surface-2);
+    background:
+      radial-gradient(
+        circle at 18% 0%,
+        color-mix(in srgb, var(--kb-accent) 24%, transparent) 0%,
+        transparent 42%
+      ),
+      var(--bg-surface-2);
     border-bottom: 1px solid var(--hairline-soft);
     position: relative;
     overflow: hidden;
@@ -145,14 +176,14 @@ const formatDate = (date: Date) =>
     content: '';
     background:
       linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.18) 100%),
-      linear-gradient(90deg, rgba(0, 153, 255, 0.12), transparent 55%);
+      linear-gradient(90deg, color-mix(in srgb, var(--kb-accent) 16%, transparent), transparent 55%);
     pointer-events: none;
   }
 
   :root[data-theme='light'] .kb-card-img::after {
     background:
       linear-gradient(180deg, transparent 45%, rgba(5, 18, 32, 0.08) 100%),
-      linear-gradient(90deg, rgba(0, 104, 204, 0.08), transparent 55%);
+      linear-gradient(90deg, color-mix(in srgb, var(--kb-accent) 12%, transparent), transparent 55%);
   }
 
   .kb-card-photo {
@@ -184,6 +215,10 @@ const formatDate = (date: Date) =>
     color: var(--ink-faint);
     letter-spacing: 0.06em;
     text-transform: uppercase;
+  }
+
+  .kb-meta span:first-child {
+    color: var(--kb-accent);
   }
 
   .kb-meta .dot {

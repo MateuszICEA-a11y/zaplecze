@@ -285,10 +285,17 @@
   }
 
   .audit-card {
+    --audit-accent: var(--accent-blue);
     display: flex;
     flex-direction: column;
     gap: 16px;
-    background: var(--bg-surface-1);
+    background:
+      radial-gradient(
+        circle at 12% 0%,
+        color-mix(in srgb, var(--audit-accent) 14%, transparent) 0%,
+        transparent 34%
+      ),
+      var(--bg-surface-1);
     border: 1px solid var(--hairline-soft);
     border-radius: var(--r-xl);
     padding: 24px;
@@ -302,6 +309,22 @@
 
   .audit-card:hover {
     border-color: var(--hairline);
+  }
+
+  .audit-card:nth-child(2) {
+    --audit-accent: #4ade80;
+  }
+
+  .audit-card:nth-child(3) {
+    --audit-accent: #fbbf24;
+  }
+
+  :global(:root[data-theme='light']) .audit-card:nth-child(2) {
+    --audit-accent: #16a34a;
+  }
+
+  :global(:root[data-theme='light']) .audit-card:nth-child(3) {
+    --audit-accent: #d97706;
   }
 
   .service-head {
@@ -321,7 +344,7 @@
   }
 
   .card-eyebrow.accent {
-    color: var(--accent-blue);
+    color: var(--audit-accent);
   }
 
   .card-title {
@@ -368,7 +391,7 @@
   .service-link {
     font-family: var(--font-sans);
     font-size: 13px;
-    color: var(--ink-muted);
+    color: var(--audit-accent);
     margin-top: auto;
     display: inline-flex;
     align-items: center;
