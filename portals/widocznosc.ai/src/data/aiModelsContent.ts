@@ -20,15 +20,15 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
     heroSubtitle:
       'OpenAI ChatGPT z&nbsp;trybem ChatGPT Search – najczęściej używany asystent AI w&nbsp;Polsce, obsługujący ponad 250 milionów użytkowników tygodniowo. Cytuje ze statycznych danych treningowych oraz przez mechanizm RAG oparty na indeksie Bing w&nbsp;czasie rzeczywistym. Widoczność w&nbsp;obu ścieżkach wymaga osobnych działań optymalizacyjnych.',
     metaDescription:
-      'Pozycjonowanie marki w ChatGPT i ChatGPT Search. Audyt cytowań, optymalizacja treści pod odpowiedzi AI i wyszukiwanie sieciowe. Mierzymy udział marki w odpowiedziach OpenAI.',
+      'Pozycjonowanie marki w ChatGPT i ChatGPT Search. Audyt cytowań, optymalizacja treści pod odpowiedzi AI i wyszukiwanie w czasie rzeczywistym. Mierzymy udział marki w odpowiedziach OpenAI.',
     howItWorks: [
       {
         title: 'Dwoista architektura wiedzy',
-        desc: 'ChatGPT działa w&nbsp;dwóch trybach. Tryb standardowy opiera się na statycznych wagach treningowych (wiedza do określonej daty aktualizacji bazy) – marka musi istnieć w&nbsp;źródłach skanowanych przez Common Crawl i&nbsp;własne crawlery OpenAI. Tryb ChatGPT Search (sieciowy) realizuje pobieranie w&nbsp;czasie rzeczywistym przez mechanizm RAG.',
+        desc: 'ChatGPT działa w&nbsp;dwóch ścieżkach. Tryb standardowy opiera się na statycznych wagach treningowych (wiedza do określonej daty aktualizacji bazy) – marka musi istnieć w&nbsp;źródłach skanowanych przez Common Crawl i&nbsp;własne crawlery OpenAI. ChatGPT Search pobiera aktualne źródła w&nbsp;czasie rzeczywistym przez mechanizm RAG.',
       },
       {
         title: 'Mechanizm RAG i zaawansowane wnioskowanie',
-        desc: 'W&nbsp;trybie sieciowym zaawansowane modele rozbijają zapytanie na kilka pomocniczych zapytań do wyszukiwarki Bing, pobierają równolegle od 3 do 10 stron i&nbsp;dzielą je na krótkie, zwięzłe fragmenty. Strony, które nie odpowiadają w&nbsp;ciągu 2 sekund, są automatycznie pomijane – szybkość ładowania jest bezwzględnym czynnikiem eliminacyjnym.',
+        desc: 'W&nbsp;ChatGPT Search zaawansowane modele rozbijają zapytanie na kilka pomocniczych zapytań do wyszukiwarki Bing, pobierają równolegle od 3 do 10 stron i&nbsp;dzielą je na krótkie, zwięzłe fragmenty. Strony, które nie odpowiadają w&nbsp;ciągu 2 sekund, są automatycznie pomijane – szybkość ładowania jest bezwzględnym czynnikiem eliminacyjnym.',
       },
       {
         title: 'Selekcja źródeł – algorytm RRF',
@@ -46,11 +46,11 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
       },
       {
         title: 'Schema.org Article + Person + sameAs',
-        desc: 'Każdy artykuł podpisany autorem z&nbsp;wypełnionym profilem eksperta (LinkedIn, Google Scholar). Dzięki temu AI wie, że tekst napisał prawdziwy, zweryfikowany człowiek. Strony porównawcze (VS, "najlepsze X") są cytowane o&nbsp;11 punktów procentowych częściej niż ogólne artykuły blogowe – wdrażamy ten format w&nbsp;ramach optymalizacji.',
+        desc: 'Każdy artykuł podpisany autorem z&nbsp;wypełnionym profilem eksperta (LinkedIn, Google Scholar). Dzięki temu AI widzi, że tekst napisała zweryfikowana osoba z&nbsp;konkretnym dorobkiem. Strony porównawcze (VS, "najlepsze X") są cytowane o&nbsp;11 punktów procentowych częściej niż ogólne artykuły blogowe – wdrażamy ten format w&nbsp;ramach optymalizacji.',
       },
       {
         title: 'llms.txt + robots.txt (OAI-SearchBot)',
-        desc: 'Plik llms.txt w&nbsp;katalogu głównym to bezpośredni drogowskaz dla crawlerów AI, który ułatwia cytowanie Twoich treści. Krytyczne rozróżnienie: GPTBot zbiera dane treningowe, a OAI-SearchBot obsługuje wyszukiwanie na żywo (jego blokada to automatyczne wypadnięcie z&nbsp;ChatGPT Search). Konfigurujemy oba agenty zgodnie z&nbsp;Twoją strategią biznesową.',
+        desc: 'Plik llms.txt w&nbsp;katalogu głównym traktujemy jako nieinwazyjną praktykę porządkowania najważniejszych zasobów serwisu, ale obecne testy nie dowodzą, że boty AI często go odwiedzają ani że sam plik bezpośrednio zwiększa cytowania. Krytyczne pozostaje rozróżnienie botów w&nbsp;robots.txt: GPTBot zbiera dane treningowe, a OAI-SearchBot obsługuje wyszukiwanie w&nbsp;ChatGPT Search. Konfigurujemy dostęp crawlerów zgodnie z&nbsp;Twoją strategią biznesową.',
       },
       {
         title: 'Strony encji i Enhanced Entity Pages',
@@ -62,7 +62,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
       'Czas odpowiedzi serwera (TTFB) i ładowania poniżej 2 sekund (próg eliminacyjny AI)',
       'Wysoka gęstość faktograficzna w&nbsp;pierwszych 200 słowach',
       'Schema.org Article + Person z&nbsp;potwierdzonym profilem eksperta',
-      'Dopuszczenie OAI-SearchBot w&nbsp;robots.txt oraz wdrożony plik llms.txt',
+      'Dopuszczenie OAI-SearchBot w&nbsp;robots.txt oraz opcjonalny, uporządkowany plik llms.txt',
       'Linki i&nbsp;wzmianki z&nbsp;domen zaufanych (Wikipedia, .gov, .edu)',
     ],
     faq: [
@@ -72,7 +72,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
       },
       {
         q: 'Jak długo trwa pojawienie się w&nbsp;ChatGPT?',
-        a: 'ChatGPT Search (tryb sieciowy) – 24-72 godziny od publikacji, jeśli strona jest zaindeksowana w&nbsp;Bing. Statyczne dane treningowe – 6-18 miesięcy do kolejnej aktualizacji bazy wiedzy modelu. Custom GPT – natychmiast po dodaniu do bazy wiedzy. Nasze działania skupiają się przede wszystkim na wyszukiwaniu sieciowym, bo daje mierzalne efekty w&nbsp;tygodniach, nie miesiącach.',
+        a: 'ChatGPT Search – 24-72 godziny od publikacji, jeśli strona jest zaindeksowana w&nbsp;Bing. Statyczne dane treningowe – 6-18 miesięcy do kolejnej aktualizacji bazy wiedzy modelu. Custom GPT – natychmiast po dodaniu do bazy wiedzy. Nasze działania skupiają się przede wszystkim na wyszukiwaniu w&nbsp;czasie rzeczywistym, bo daje mierzalne efekty w&nbsp;tygodniach, nie miesiącach.',
       },
       {
         q: 'Czy ChatGPT cytuje konkretne strony z&nbsp;linkami?',
