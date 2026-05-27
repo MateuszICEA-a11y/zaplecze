@@ -97,7 +97,7 @@ const articleData = {
   <!-- Related posts -->
   <section class="related-section">
     <div class="related-container">
-      <h2 class="display-md related-title">Zobacz również</h2>
+      <div class="display-md related-title">Zobacz również</div>
       <div class="related-grid">
         {
           relatedPosts.map((related) => (
@@ -115,7 +115,7 @@ const articleData = {
                   <span>{PILLAR_LABELS[related.data.pillar]}</span>
                   <span>{formatDate(related.data.date)}</span>
                 </div>
-                <h3 class="related-card-title">{related.data.title}</h3>
+                <div class="related-card-title">{related.data.title}</div>
                 <p class="related-card-desc">{related.data.subtitle}</p>
               </div>
             </a>
