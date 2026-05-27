@@ -170,7 +170,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
       },
       {
         title: 'Część wspólna tradycyjnego SEO i widoczności AI (GEO)',
-        desc: 'Klasyczne SEO jest warunkiem koniecznym, ale nie wystarczającym do pojawienia się w&nbsp;Gemini. Badania pokazują, że choć większość Podsumowań AI zawiera przynajmniej jedno źródło z&nbsp;TOP 20, to aż 44% wszystkich linków w&nbsp;AI Overviews pochodzi z&nbsp;dalszych pozycji. Gemini szuka w&nbsp;tekstach cech ignorowanych przez klasyczne algorytmy linków: poprawności faktograficznej (35% wagi), idealnego dopasowania do intencji (25%) i&nbsp;sygnałów autorytetu (20%).',
+        desc: 'Klasyczne SEO jest warunkiem koniecznym, ale nie wystarczającym do pojawienia się w&nbsp;Gemini. Badania pokazują, że choć większość Podsumowań AI zawiera przynajmniej jedno źródło z&nbsp;TOP 20, to aż 44% wszystkich linków w&nbsp;AI Overviews pochodzi z&nbsp;dalszych pozycji. W&nbsp;odpowiedziach generatywnych szczególnie rośnie znaczenie sygnałów znanych również z&nbsp;SEO: poprawności faktograficznej, dopasowania do intencji, jasnej struktury odpowiedzi i&nbsp;autorytetu źródła.',
       },
       {
         title: 'Pełna integracja z ekosystemem Google',
