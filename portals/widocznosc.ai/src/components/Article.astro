@@ -356,7 +356,7 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     aspect-ratio: 16 / 9;
     background: var(--bg-canvas);
     border-radius: var(--r-xl);
-    --hero-glow: rgba(38, 103, 255, 0.40);
+    --hero-glow: rgba(38, 103, 255, 0.4);
   }
   :root[data-theme='dark'] .article-hero {
     --hero-glow: rgba(92, 139, 255, 0.55);
@@ -379,8 +379,18 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     border-radius: var(--r-xl);
     object-fit: cover;
     display: block;
-    -webkit-mask-image: radial-gradient(130% 130% at 50% 50%, #000 65%, rgba(0,0,0,0.85) 85%, rgba(0,0,0,0.4) 100%);
-    mask-image: radial-gradient(130% 130% at 50% 50%, #000 65%, rgba(0,0,0,0.85) 85%, rgba(0,0,0,0.4) 100%);
+    -webkit-mask-image: radial-gradient(
+      130% 130% at 50% 50%,
+      #000 65%,
+      rgba(0, 0, 0, 0.85) 85%,
+      rgba(0, 0, 0, 0.4) 100%
+    );
+    mask-image: radial-gradient(
+      130% 130% at 50% 50%,
+      #000 65%,
+      rgba(0, 0, 0, 0.85) 85%,
+      rgba(0, 0, 0, 0.4) 100%
+    );
   }
 
   /* Body grid */
@@ -876,6 +886,16 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     list-style: none;
   }
 
+  .article-content .article-faq-heading {
+    margin: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+  }
+
   .article-content .article-faq-question::-webkit-details-marker {
     display: none;
   }
@@ -889,12 +909,27 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     border-radius: var(--r-full);
     background: var(--bg-surface-2);
     color: var(--ink);
-    font-family: var(--font-sans);
-    font-size: 18px;
-    line-height: 1;
+    position: relative;
     transition:
       transform 0.18s ease,
       background 0.18s ease;
+  }
+
+  .article-content .article-faq-toggle::before,
+  .article-content .article-faq-toggle::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 12px;
+    height: 1.5px;
+    border-radius: var(--r-full);
+    background: currentColor;
+    transform: translate(-50%, -50%);
+  }
+
+  .article-content .article-faq-toggle::after {
+    transform: translate(-50%, -50%) rotate(90deg);
   }
 
   .article-content .article-faq-item[open] .article-faq-toggle {
@@ -1081,6 +1116,16 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
       padding: 0 16px 16px;
     }
   }
+
+  .article-page .article-body-grid .article-content .article-faq-question .article-faq-heading {
+    margin: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+  }
 </style>
 
 <script>
@@ -1096,7 +1141,11 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
 
       headings.forEach((heading) => {
         const title = heading.textContent?.trim() ?? '';
-        if (!/(^faq\b|faq\s+[–-]|faq\s+o\b|często zadawane pytania|czesto zadawane pytania|najczęstsze pytania|najczestsze pytania)/i.test(title)) {
+        if (
+          !/(^faq\b|faq\s+[–-]|faq\s+o\b|często zadawane pytania|czesto zadawane pytania|najczęstsze pytania|najczestsze pytania)/i.test(
+            title
+          )
+        ) {
           return;
         }
 
@@ -1129,15 +1178,15 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
           const summary = document.createElement('summary');
           summary.className = 'article-faq-question';
 
-          const summaryText = document.createElement('span');
-          summaryText.innerHTML = question.innerHTML;
+          const summaryHeading = document.createElement('h3');
+          summaryHeading.className = 'article-faq-heading';
+          summaryHeading.innerHTML = question.innerHTML;
 
           const toggle = document.createElement('span');
           toggle.className = 'article-faq-toggle';
           toggle.setAttribute('aria-hidden', 'true');
-          toggle.textContent = '+';
 
-          summary.append(summaryText, toggle);
+          summary.append(summaryHeading, toggle);
 
           const answer = document.createElement('div');
           answer.className = 'article-faq-answer';

@@ -5,6 +5,7 @@ import Article from '../../components/Article.astro';
 import AuthorBox from '../../components/AuthorBox.astro';
 import Footer from '../../components/Footer.astro';
 import ScrollUpButton from '../../components/ScrollUpButton.astro';
+import { Image } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
 import { PILLAR_LABELS } from '../../content.config';
 
@@ -24,13 +25,22 @@ const [pillar] = post.id.split('/');
 const allPosts = await getCollection('blog');
 const relatedPosts = allPosts
   .filter((p) => p.id !== post.id)
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, 3);
+  .sort((a, b) => {
+    const aSamePillar = a.data.pillar === pillar ? 1 : 0;
+    const bSamePillar = b.data.pillar === pillar ? 1 : 0;
+
+    if (aSamePillar !== bSamePillar) {
+      return bSamePillar - aSamePillar;
+    }
+
+    return b.data.date.getTime() - a.data.date.getTime();
+  })
+  .slice(0, 6);
 
 const authors = await getCollection('authors');
 const authorEntry = authors.find((author) => author.data.name === post.data.author.name);
 const authorArticleCount = allPosts.filter(
-  (p) => p.data.author.name === post.data.author.name && p.id !== post.id,
+  (p) => p.data.author.name === post.data.author.name && p.id !== post.id
 ).length;
 
 const formatDate = (date: Date) =>
@@ -66,7 +76,9 @@ const articleData = {
     <nav slot="breadcrumb" class="article-breadcrumb" aria-label="Ścieżka nawigacji">
       <a href="/blog" class="article-breadcrumb-link">Baza wiedzy</a>
       <span class="article-breadcrumb-sep" aria-hidden="true">›</span>
-      <a href={`/${pillar}/`} class="article-breadcrumb-link">{PILLAR_LABELS[pillar as keyof typeof PILLAR_LABELS]}</a>
+      <a href={`/${pillar}/`} class="article-breadcrumb-link"
+        >{PILLAR_LABELS[pillar as keyof typeof PILLAR_LABELS]}</a
+      >
       <span class="article-breadcrumb-sep" aria-hidden="true">›</span>
       <span class="article-breadcrumb-current">{post.data.title}</span>
     </nav>
@@ -90,18 +102,19 @@ const articleData = {
         {
           relatedPosts.map((related) => (
             <a href={`/${related.id}`} class="related-card">
-              <div class="related-card-icon-wrap">
-                <svg
-                  class="related-card-icon"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1"
-                  viewBox="0 0 24 24"
-                  set:html={related.data.icon}
+              <div class="related-card-media">
+                <Image
+                  src={related.data.image}
+                  alt={related.data.title}
+                  class="related-card-image"
+                  loading="lazy"
                 />
               </div>
               <div class="related-card-body">
-                <div class="related-card-date">{formatDate(related.data.date)}</div>
+                <div class="related-card-meta">
+                  <span>{PILLAR_LABELS[related.data.pillar]}</span>
+                  <span>{formatDate(related.data.date)}</span>
+                </div>
                 <h3 class="related-card-title">{related.data.title}</h3>
                 <p class="related-card-desc">{related.data.subtitle}</p>
               </div>
@@ -137,19 +150,38 @@ const articleData = {
 
   .related-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(280px, 82vw);
+    gap: 16px;
+    margin-inline: -30px;
+    padding-inline: 30px;
+    overflow-x: auto;
+    scroll-padding-inline: 30px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .related-grid::-webkit-scrollbar {
+    display: none;
   }
 
   @media (min-width: 768px) {
     .related-grid {
+      grid-auto-flow: initial;
+      grid-auto-columns: initial;
       grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-inline: 0;
+      padding-inline: 0;
+      overflow: visible;
+      scroll-snap-type: none;
     }
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1180px) {
     .related-grid {
       grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
   }
 
@@ -160,39 +192,53 @@ const articleData = {
     border-radius: var(--r-xl);
     overflow: hidden;
     text-decoration: none;
-    transition: background 0.2s ease;
+    scroll-snap-align: start;
+    border: 1px solid var(--hairline-soft);
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease,
+      transform 0.2s ease;
     height: 100%;
   }
 
   .related-card:hover {
     background: var(--bg-surface-2);
+    border-color: var(--hairline);
+    transform: translateY(-2px);
   }
 
-  .related-card-icon-wrap {
-    aspect-ratio: 3 / 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .related-card-media {
+    aspect-ratio: 16 / 9;
     background: var(--bg-canvas);
-    margin: 12px;
+    margin: 10px;
     border-radius: var(--r-md);
+    overflow: hidden;
   }
 
-  .related-card-icon {
-    width: 64px;
-    height: 64px;
-    color: var(--ink-muted);
+  .related-card-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+  }
+
+  .related-card:hover .related-card-image {
+    transform: scale(1.035);
   }
 
   .related-card-body {
-    padding: 8px 24px 24px 24px;
+    padding: 10px 22px 24px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     flex-grow: 1;
   }
 
-  .related-card-date {
+  .related-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
     font-family: var(--font-sans);
     font-size: var(--fs-caption);
     font-weight: 500;
@@ -203,8 +249,8 @@ const articleData = {
   .related-card-title {
     font-family: var(--font-display);
     font-weight: 500;
-    font-size: var(--fs-headline);
-    line-height: 1.2;
+    font-size: clamp(1.25rem, 1.7vw, 1.625rem);
+    line-height: 1.08;
     letter-spacing: var(--ls-headline);
     color: var(--ink);
     margin: 0;
