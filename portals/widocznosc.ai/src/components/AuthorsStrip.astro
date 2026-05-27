@@ -1,7 +1,7 @@
 ---
 /**
  * AuthorsStrip / Team – landing redesign 2026-05-09 (handoff).
- * Section-head editorial 5fr/4fr + 4-col grid 4 team cards.
+ * Section-head editorial 5fr/4fr + responsive team card grid.
  * Card: editorial photo frame (diagonal-stripe + ghost initials glyph)
  * lub real photo gdy jest, name + role + bio + LinkedIn chip pinned bottom.
  */
@@ -23,7 +23,13 @@ const {
   sectionIndex = 'S/06',
 } = Astro.props;
 
-const ORDER = ['tomasz-czechowski', 'michal-ziach', 'piotr-wicenciak', 'mateusz-wisniewski'];
+const ORDER = [
+  'tomasz-czechowski',
+  'anna-jelonek',
+  'michal-ziach',
+  'piotr-wicenciak',
+  'mateusz-wisniewski',
+];
 
 const allAuthors = await getCollection('authors');
 const authors = ORDER.map((slug) => allAuthors.find((a) => a.id === slug)).filter(
@@ -141,7 +147,7 @@ const initialsOf = (name: string) =>
 
   @media (min-width: 980px) {
     .team-grid {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     }
   }
 
@@ -205,6 +211,10 @@ const initialsOf = (name: string) =>
 
   .team-card[data-author='tomasz-czechowski'] .team-photo-img {
     object-position: center 28%;
+  }
+
+  .team-card[data-author='anna-jelonek'] .team-photo-img {
+    object-position: center 16%;
   }
 
   .team-card[data-author='michal-ziach'] .team-photo-img {
