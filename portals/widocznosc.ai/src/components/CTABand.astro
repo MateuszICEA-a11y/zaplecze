@@ -19,6 +19,7 @@ interface Props {
   quote?: string;
   author?: string;
   meta?: string[];
+  compactTop?: boolean;
 }
 
 const {
@@ -34,10 +35,15 @@ const {
   quote = '„Pokazujemy, gdzie Twoja marka jest cytowana, gdzie traci do&nbsp;konkurencji i&nbsp;co konkretnie zmienić w&nbsp;pierwszej kolejności."',
   author = '&ndash; zespół widocznosc.ai',
   meta = ['30 minut', 'Bez zobowiązań', 'Konkretny plan'],
+  compactTop = false,
 } = Astro.props;
 ---
 
-<section class="final-cta-section" id="cta" aria-labelledby="final-cta-title">
+<section
+  class:list={['final-cta-section', { 'final-cta-section--compact-top': compactTop }]}
+  id="cta"
+  aria-labelledby="final-cta-title"
+>
   <div class="container">
     <div class="final-cta-card">
       <div class="final-cta-left">
@@ -79,6 +85,16 @@ const {
   @media (min-width: 980px) {
     .final-cta-section {
       padding: 104px 0;
+    }
+  }
+
+  .final-cta-section--compact-top {
+    padding-top: 40px;
+  }
+
+  @media (min-width: 980px) {
+    .final-cta-section--compact-top {
+      padding-top: 56px;
     }
   }
 
