@@ -210,7 +210,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
       },
       {
         q: 'Czy AI Overviews są już w&nbsp;Polsce?',
-        a: 'Tak, funkcja ta jest sukcesywnie wdrażana i&nbsp;aktywuje się już dla wielu zapytań informacyjnych oraz bezpośrednich pytań użytkowników. Pełne wdrożenie postępuje z&nbsp;kwartału na kwartał. Już teraz możemy zmierzyć obecność Twojej marki w&nbsp;odpowiedziach AI i&nbsp;zaplanować optymalizację, zanim konkurencja dostosuje się do nowych realiów.',
+        a: 'Tak. Google uruchomił AI Overviews w&nbsp;Polsce 26 marca 2025 roku. Funkcja pojawia się dla wybranych zapytań, gdy system uzna, że odpowiedź generatywna będzie pomocna dla użytkownika. Równolegle Google rozwija AI Mode, czyli konwersacyjny tryb wyszukiwania dla bardziej złożonych pytań i&nbsp;dopytań. Już teraz możemy mierzyć obecność Twojej marki w&nbsp;odpowiedziach AI i&nbsp;planować optymalizację pod oba formaty.',
       },
       {
         q: 'Czy AI Overviews obniżają ruch na mojej stronie?',
