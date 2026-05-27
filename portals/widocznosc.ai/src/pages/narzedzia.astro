@@ -173,7 +173,7 @@ const siteUrl = 'https://widocznosc.ai';
                     <span class="tool-number">{String(index + 1).padStart(2, '0')}</span>
                     <span class="tool-time">{tool.time}</span>
                   </div>
-                  <div class="tool-meta">{tool.eyebrow}</div>
+                  <span class="eyebrow tool-meta">{tool.eyebrow}</span>
                   <h3>{tool.title}</h3>
                   <p class="tool-desc">{tool.desc}</p>
                   <ul class="tool-bullets">
@@ -182,6 +182,7 @@ const siteUrl = 'https://widocznosc.ai';
                     ))}
                   </ul>
                   <div class="tool-preview" aria-hidden="true">
+                    <span class="tool-preview-label">przykład</span>
                     {tool.preview.map((line) => (
                       <span>{line}</span>
                     ))}
@@ -191,14 +192,22 @@ const siteUrl = 'https://widocznosc.ai';
                     <span aria-hidden="true">→</span>
                   </span>
                 </a>
-                <a class="tool-cross-link" href={tool.crossHref}>
-                  {tool.crossLabel}
-                  <span aria-hidden="true">→</span>
-                </a>
               </article>
             ))
           }
         </div>
+
+        <p class="tools-cross-strip">
+          <span class="tools-cross-strip-label">Czytaj dalej:</span>
+          {
+            tools.map((tool) => (
+              <a href={tool.crossHref}>
+                {tool.crossLabel}
+                <span aria-hidden="true">→</span>
+              </a>
+            ))
+          }
+        </p>
       </div>
     </section>
 
@@ -253,7 +262,7 @@ const siteUrl = 'https://widocznosc.ai';
     font-size: clamp(2.9rem, 6.4vw, 5.9rem);
     font-weight: 500;
     line-height: 0.96;
-    letter-spacing: 0;
+    letter-spacing: -0.04em;
     text-wrap: balance;
   }
 
@@ -330,7 +339,7 @@ const siteUrl = 'https://widocznosc.ai';
 
   .tool-order-label {
     color: var(--ink);
-    font-weight: 800;
+    font-weight: 600;
     white-space: nowrap;
   }
 
@@ -387,7 +396,7 @@ const siteUrl = 'https://widocznosc.ai';
     min-height: 100%;
     flex-direction: column;
     padding: clamp(1.25rem, 2.6vw, 2rem);
-    border-radius: var(--r-xl) var(--r-xl) 0 0;
+    border-radius: var(--r-xl);
     color: inherit;
     text-decoration: none;
   }
@@ -419,15 +428,11 @@ const siteUrl = 'https://widocznosc.ai';
     background: var(--bg-surface-2);
     color: var(--ink-muted);
     font-size: 0.82rem;
-    font-weight: 700;
+    font-weight: 500;
   }
 
   .tool-meta {
-    color: var(--accent-blue);
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    align-self: flex-start;
   }
 
   .tool-card h3 {
@@ -436,7 +441,7 @@ const siteUrl = 'https://widocznosc.ai';
     font-family: var(--font-display);
     font-size: clamp(1.5rem, 2.2vw, 2rem);
     font-weight: 500;
-    line-height: 1;
+    line-height: 1.15;
     letter-spacing: 0;
   }
 
@@ -478,9 +483,9 @@ const siteUrl = 'https://widocznosc.ai';
     padding: 0.9rem;
     border: 1px solid var(--hairline-soft);
     border-radius: var(--r-md);
-    background: var(--bg-canvas);
+    background: var(--bg-surface-2);
     color: var(--ink-muted);
-    font-family: ui-monospace, 'JetBrains Mono', monospace;
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
     font-size: 0.72rem;
     line-height: 1.38;
   }
@@ -489,7 +494,20 @@ const siteUrl = 'https://widocznosc.ai';
     overflow-wrap: anywhere;
   }
 
-  .tool-preview span:first-child {
+  .tool-preview-label {
+    width: max-content;
+    padding: 0.16rem 0.42rem;
+    border: 1px solid color-mix(in srgb, var(--accent-blue) 28%, transparent);
+    border-radius: var(--r-pill);
+    color: var(--accent-blue);
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    line-height: 1.15;
+    text-transform: uppercase;
+  }
+
+  .tool-preview span:nth-child(2) {
     color: var(--ink);
   }
 
@@ -500,24 +518,36 @@ const siteUrl = 'https://widocznosc.ai';
     margin-top: auto;
     padding-top: 2rem;
     color: var(--ink);
-    font-weight: 800;
+    font-weight: 500;
   }
 
-  .tool-cross-link {
-    display: inline-flex;
-    gap: 0.45rem;
+  .tools-cross-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 0.9rem;
     align-items: center;
-    margin: auto clamp(1.25rem, 2.6vw, 2rem) clamp(1.25rem, 2.6vw, 2rem);
-    padding-top: 1rem;
-    border-top: 1px solid var(--hairline-soft);
+    margin: 1rem 0 0;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-lg);
+    background: var(--bg-surface-1);
     color: var(--ink-muted);
     font-size: 0.86rem;
-    font-weight: 700;
     line-height: 1.35;
+  }
+
+  .tools-cross-strip-label {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .tools-cross-strip a {
+    color: var(--ink-muted);
+    font-weight: 500;
     text-decoration: none;
   }
 
-  .tool-cross-link:hover {
+  .tools-cross-strip a:hover {
     color: var(--ink);
   }
 
