@@ -689,30 +689,30 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
   .article-content aside.callout-expert {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 16px;
-    margin: 32px 0;
-    padding: 20px 24px;
-    border-radius: var(--r-md);
+    gap: 18px;
+    margin: 34px 0;
+    padding: 24px;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-xl);
     background: var(--bg-surface-1);
   }
 
   .article-content aside.callout-fact .callout-icon {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     flex-shrink: 0;
     border-radius: var(--r-full);
     background: var(--bg-surface-2);
-    color: var(--ink);
+    color: var(--accent-blue);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .article-content aside.callout-expert {
-    border-left: 1px solid var(--hairline);
-    padding-left: 20px;
-    border-radius: 0 var(--r-md) var(--r-md) 0;
+    border-left: 3px solid var(--accent-blue);
+    border-radius: var(--r-xl);
   }
 
   .article-content aside.callout-expert .callout-icon {
@@ -737,12 +737,12 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
 
   .article-content aside .callout-label {
     font-family: var(--font-sans);
-    font-size: var(--fs-caption);
-    text-transform: none;
-    letter-spacing: var(--ls-caption);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
     color: var(--ink-muted);
-    margin-bottom: 6px;
-    font-weight: 500;
+    margin-bottom: 8px;
+    font-weight: 600;
   }
 
   .article-content aside .callout-author {
@@ -756,7 +756,7 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
   .article-content aside p {
     margin: 0;
     color: var(--ink);
-    line-height: 1.55;
+    line-height: 1.62;
     font-size: 16px;
   }
 
@@ -765,8 +765,8 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
   }
 
   .article-content aside.callout-fact p {
-    font-style: italic;
-    line-height: 1.6;
+    font-style: normal;
+    line-height: 1.62;
     color: var(--ink);
   }
 
@@ -800,9 +800,11 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
+    margin: 32px 0;
+    border: 1px solid var(--hairline);
     border-radius: var(--r-xl);
     overflow: hidden;
-    font-size: 14px;
+    font-size: 15px;
     background: var(--bg-surface-1);
   }
   .article-content thead {
@@ -810,16 +812,21 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
   }
   .article-content th,
   .article-content td {
-    padding: 12px 16px;
+    padding: 14px 18px;
     text-align: left;
     border-bottom: 1px solid var(--hairline-soft);
-    line-height: 1.5;
+    line-height: 1.55;
+    vertical-align: top;
+  }
+  .article-content th + th,
+  .article-content td + td {
+    border-left: 1px solid var(--hairline-soft);
   }
   .article-content th {
     color: var(--ink);
-    font-weight: 500;
-    font-size: var(--fs-caption);
-    letter-spacing: var(--ls-caption);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: -0.01em;
     text-transform: none;
   }
   .article-content tr:last-child td {
@@ -827,6 +834,88 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
   }
   .article-content td {
     color: var(--ink-muted);
+  }
+  .article-content td:first-child {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .article-content tbody tr {
+    transition: background 0.15s ease;
+  }
+  .article-content tbody tr:hover {
+    background: var(--bg-surface-2);
+  }
+
+  /* Article FAQ accordion */
+  .article-content .article-faq-list {
+    display: grid;
+    gap: 10px;
+    margin: 24px 0 40px;
+  }
+
+  .article-content .article-faq-item {
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-lg);
+    background: var(--bg-surface-1);
+    overflow: hidden;
+  }
+
+  .article-content .article-faq-question {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 18px;
+    align-items: center;
+    padding: 18px 20px;
+    cursor: pointer;
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    list-style: none;
+  }
+
+  .article-content .article-faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .article-content .article-faq-toggle {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--r-full);
+    background: var(--bg-surface-2);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 18px;
+    line-height: 1;
+    transition:
+      transform 0.18s ease,
+      background 0.18s ease;
+  }
+
+  .article-content .article-faq-item[open] .article-faq-toggle {
+    transform: rotate(45deg);
+    background: var(--accent-blue);
+    color: white;
+  }
+
+  .article-content .article-faq-answer {
+    padding: 0 20px 20px;
+    color: var(--ink);
+  }
+
+  .article-content .article-faq-answer > *:first-child {
+    margin-top: 0;
+  }
+
+  .article-content .article-faq-answer p,
+  .article-content .article-faq-answer li {
+    font-size: 16px;
+    line-height: 1.62;
   }
 
   /* Images */
@@ -975,12 +1064,104 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
       display: block;
       overflow-x: auto;
       white-space: nowrap;
+      font-size: 14px;
+    }
+
+    .article-content th,
+    .article-content td {
+      padding: 12px 14px;
+    }
+
+    .article-content .article-faq-question {
+      padding: 16px;
+      font-size: 16px;
+    }
+
+    .article-content .article-faq-answer {
+      padding: 0 16px 16px;
     }
   }
 </style>
 
 <script>
+  const enhanceArticleFaq = () => {
+    const isFaqBoundary = (node: Element) =>
+      node.tagName === 'H2' ||
+      node.classList.contains('author-box') ||
+      node.classList.contains('article-related') ||
+      node.classList.contains('article-cta');
+
+    document.querySelectorAll('.article-content').forEach((content) => {
+      const headings = Array.from(content.querySelectorAll('h2'));
+
+      headings.forEach((heading) => {
+        const title = heading.textContent?.trim() ?? '';
+        if (!/(^faq\b|faq\s+[–-]|faq\s+o\b|często zadawane pytania|czesto zadawane pytania|najczęstsze pytania|najczestsze pytania)/i.test(title)) {
+          return;
+        }
+
+        let current = heading.nextElementSibling;
+        let scan = current;
+        while (scan && !isFaqBoundary(scan)) {
+          if (scan.classList.contains('article-faq-list')) return;
+          scan = scan.nextElementSibling;
+        }
+
+        const faqList = document.createElement('div');
+        faqList.className = 'article-faq-list';
+        let hasQuestions = false;
+
+        while (current && !isFaqBoundary(current)) {
+          if (current.tagName !== 'H3') {
+            current = current.nextElementSibling;
+            continue;
+          }
+
+          if (!hasQuestions) {
+            current.insertAdjacentElement('beforebegin', faqList);
+            hasQuestions = true;
+          }
+
+          const question = current;
+          const details = document.createElement('details');
+          details.className = 'article-faq-item';
+
+          const summary = document.createElement('summary');
+          summary.className = 'article-faq-question';
+
+          const summaryText = document.createElement('span');
+          summaryText.innerHTML = question.innerHTML;
+
+          const toggle = document.createElement('span');
+          toggle.className = 'article-faq-toggle';
+          toggle.setAttribute('aria-hidden', 'true');
+          toggle.textContent = '+';
+
+          summary.append(summaryText, toggle);
+
+          const answer = document.createElement('div');
+          answer.className = 'article-faq-answer';
+
+          const nextAfterQuestion = question.nextElementSibling;
+          question.remove();
+          current = nextAfterQuestion;
+
+          while (current && !isFaqBoundary(current) && current.tagName !== 'H3') {
+            const next = current.nextElementSibling;
+            answer.appendChild(current);
+            current = next;
+          }
+
+          details.append(summary, answer);
+          faqList.appendChild(details);
+        }
+      });
+    });
+  };
+
   document.addEventListener('astro:page-load', () => {
+    enhanceArticleFaq();
+
     const btn = document.getElementById('copy-link-btn');
     if (!btn) return;
     btn.addEventListener('click', () => {
@@ -990,4 +1171,6 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
       });
     });
   });
+
+  enhanceArticleFaq();
 </script>
