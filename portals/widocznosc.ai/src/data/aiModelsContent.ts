@@ -285,7 +285,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
 
   'bing-copilot': {
     heroSubtitle:
-      'Microsoft Copilot wbudowany w&nbsp;przeglądarkę Edge, Windows 11 i&nbsp;pakiet Microsoft 365 – domyślny asystent AI dla setek milionów użytkowników biznesowych. Korzysta z&nbsp;indeksu wyszukiwarki Bing oraz modelu GPT-4. W&nbsp;darmowych narzędziach dla webmasterów Microsoft udostępnił dedykowany panel AI Performance, który dostarcza twardych danych o&nbsp;tym, jak często AI cytuje Twoją stronę.',
+      'Microsoft Copilot wbudowany w&nbsp;przeglądarkę Edge, Windows 11 i&nbsp;pakiet Microsoft 365 – domyślny asystent AI dla setek milionów użytkowników biznesowych. Korzysta z&nbsp;indeksu wyszukiwarki Bing oraz zaawansowanych modeli z&nbsp;rodziny GPT-5, przełączając się między szybkimi odpowiedziami a&nbsp;głębszym rozumowaniem dla złożonych zapytań. W&nbsp;Bing Webmaster Tools Microsoft udostępnił panel AI Performance, który pokazuje, jak często AI cytuje Twoją stronę.',
     metaDescription:
       'Pozycjonowanie marki w Microsoft Copilot. Audyt cytowań w Copilot dla Edge, Windows i M365. Optymalizacja pod indeks Bing, IndexNow, Schema.org i panel AI Performance. Widoczność w AI dla sektora B2B.',
     howItWorks: [
@@ -294,8 +294,8 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
         desc: 'Copilot działa w&nbsp;oparciu o&nbsp;architekturę RAG zasilaną indeksem wyszukiwarki Bing. Gdy użytkownik zadaje pytanie, system generuje zapytania pomocnicze (tzw. grounding queries), pobiera dokumenty z&nbsp;top 20 wyników organicznych Bing, dzieli je na mniejsze fragmenty i&nbsp;syntetyzuje odpowiedź. <strong>Korelacja między pozycją w&nbsp;Bing a&nbsp;cytowaniem w&nbsp;Copilot jest bardzo silna – widoczność w&nbsp;tradycyjnych wynikach wyszukiwania to bilet wstępu do odpowiedzi AI.</strong>',
       },
       {
-        title: 'Azure OpenAI i model GPT-4',
-        desc: 'Pod maską Copilota działa zaawansowany model GPT-4. Mechanika cytowania jest zbliżona do wyszukiwania sieciowego ChatGPT Search – w&nbsp;standardowym trybie system podaje 3-5 linków na odpowiedź. Microsoft testuje wprowadzanie małych znaczników numerycznych przy zdaniach, co sprawia, że sama obecność Twojej marki w&nbsp;wygenerowanym tekście staje się ważniejsza niż tradycyjne kliknięcia i&nbsp;przejścia na stronę.',
+        title: 'Modele GPT-5 i router rozumowania',
+        desc: 'Copilot działa obecnie na nowszej generacji modeli OpenAI, z&nbsp;routerem dobierającym tryb odpowiedzi do zadania: szybkie generowanie dla codziennych pytań oraz głębsze rozumowanie dla złożonych analiz. Mechanika cytowania pozostaje powiązana z&nbsp;wyszukiwaniem: Copilot korzysta z&nbsp;indeksu Bing, generuje zapytania pomocnicze i&nbsp;wybiera źródła, które najlepiej uzasadniają odpowiedź.',
       },
       {
         title: 'Natywna integracja z ekosystemem Microsoft',
@@ -303,7 +303,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
       },
       {
         title: 'Panel AI Performance w Bing Webmaster Tools',
-        desc: 'Microsoft udostępnił dedykowane narzędzie analityczne dla widoczności AI: panel AI Performance agreguje dane o&nbsp;cytowaniach z&nbsp;Copilota. Pokazuje całkowitą liczbę cytowań, najczęściej wybierane podstrony i&nbsp;dokładne zapytania użytkowników (Grounding Queries). Dzięki temu wiesz dokładnie, na jakie pytania AI odpowiada, korzystając z&nbsp;Twoich tekstów.',
+        desc: 'Microsoft udostępnił dedykowane narzędzie analityczne dla widoczności AI: panel AI Performance w&nbsp;Bing Webmaster Tools agreguje dane o&nbsp;cytowaniach z&nbsp;Microsoft Copilot, odpowiedzi generowanych przez AI w&nbsp;Bing oraz wybranych integracji partnerskich. Pokazuje całkowitą liczbę cytowań, najczęściej wybierane podstrony i&nbsp;zapytania pomocnicze (Grounding Queries). Dzięki temu wiesz, na jakie pytania AI odpowiada, korzystając z&nbsp;Twoich tekstów.',
       },
     ],
     optimization: [
