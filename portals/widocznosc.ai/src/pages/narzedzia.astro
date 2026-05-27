@@ -8,6 +8,7 @@ import CTABand from '../components/CTABand.astro';
 const tools = [
   {
     id: 'brand-check',
+    accent: 'blue',
     eyebrow: 'Marka w AI',
     time: 'ok. 60 s',
     title: 'Co AI wie o Twojej marce',
@@ -30,6 +31,7 @@ const tools = [
   },
   {
     id: 'url-check',
+    accent: 'green',
     eyebrow: 'Treści pod AI',
     time: 'ok. 30 s',
     title: 'Czy Twój tekst będzie cytowany',
@@ -47,6 +49,7 @@ const tools = [
   },
   {
     id: 'ai-bots-check',
+    accent: 'amber',
     eyebrow: 'Dostęp botów',
     time: 'ok. 5 s',
     title: 'Czy AI może wejść na Twoją stronę',
@@ -64,6 +67,7 @@ const tools = [
   },
   {
     id: 'fanout',
+    accent: 'violet',
     eyebrow: 'Rozbicie zapytania',
     time: 'ok. 30 s',
     title: 'Jak AI szuka informacji w tle',
@@ -130,21 +134,53 @@ const siteUrl = 'https://widocznosc.ai';
             Twojej marce, czy Twoje treści nadają się do cytowania, czy boty mają dostęp do strony
             i jakie źródła sztuczna inteligencja pobiera w tle.
           </p>
-        </div>
-        <div class="tools-hero-panel" aria-label="Zakres narzędzi">
-          <div>
-            <span>4</span>
-            <p>darmowe narzędzia</p>
-          </div>
-          <div>
-            <span>0</span>
-            <p>logowania</p>
-          </div>
-          <div>
-            <span>90s</span>
-            <p>najdłuższy test</p>
+          <div class="tools-hero-actions">
+            <a class="btn-primary" href="/narzedzia/brand-check">Zacznij od Brand Check</a>
+            <a class="btn-secondary" href="#tools-title">Zobacz wszystkie narzędzia</a>
           </div>
         </div>
+        <aside class="tools-hero-panel" aria-label="Rekomendowana ścieżka testów">
+          <div class="tools-panel-top">
+            <span class="tools-panel-kicker">Start bez formularza</span>
+            <strong>4 testy, które pokazują gdzie AI widzi Twoją markę</strong>
+          </div>
+          <ol class="tools-panel-flow">
+            <li>
+              <span>01</span>
+              <strong>Brand Check</strong>
+              <em>rozpoznawalność i konkurenci</em>
+            </li>
+            <li>
+              <span>02</span>
+              <strong>AI Bots Check</strong>
+              <em>dostęp botów do domeny</em>
+            </li>
+            <li>
+              <span>03</span>
+              <strong>URL Check</strong>
+              <em>cytowalność konkretnej strony</em>
+            </li>
+            <li>
+              <span>04</span>
+              <strong>Fan-out</strong>
+              <em>zapytania i źródła w tle</em>
+            </li>
+          </ol>
+          <dl class="tools-panel-stats">
+            <div>
+              <dt>narzędzia</dt>
+              <dd>4</dd>
+            </div>
+            <div>
+              <dt>logowania</dt>
+              <dd>0</dd>
+            </div>
+            <div>
+              <dt>maks. czas</dt>
+              <dd>90s</dd>
+            </div>
+          </dl>
+        </aside>
       </div>
     </section>
 
@@ -171,7 +207,7 @@ const siteUrl = 'https://widocznosc.ai';
         <div class="tools-grid">
           {
             tools.map((tool, index) => (
-              <article class="tool-card" id={tool.id}>
+              <article class={`tool-card tool-card--${tool.accent}`} id={tool.id}>
                 <a class="tool-card-link" href={tool.href} aria-label={tool.cta}>
                   <div class="tool-card-top">
                     <span class="tool-number">{String(index + 1).padStart(2, '0')}</span>
@@ -237,25 +273,43 @@ const siteUrl = 'https://widocznosc.ai';
   .tools-hero {
     position: relative;
     overflow: hidden;
-    padding: clamp(8rem, 10vw, 10rem) 0 clamp(3.5rem, 6vw, 5.5rem);
-    background: var(--bg-canvas);
+    padding: 104px 0 84px;
+    border-bottom: 1px solid var(--hairline-soft);
+    background:
+      radial-gradient(
+        circle at 28% 16%,
+        color-mix(in srgb, var(--accent-blue) 14%, transparent) 0%,
+        transparent 34%
+      ),
+      linear-gradient(180deg, var(--bg-surface-1) 0%, var(--bg-canvas) 78%);
+  }
+
+  .tools-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(var(--hairline-soft) 1px, transparent 1px),
+      linear-gradient(90deg, var(--hairline-soft) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.14), transparent 64%);
+    pointer-events: none;
   }
 
   .tools-hero-inner {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(2.5rem, 5vw, 4rem);
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.02fr) minmax(22rem, 0.72fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
     align-items: center;
-    text-align: center;
   }
 
   .tools-eyebrow {
-    margin-bottom: 1.1rem;
-    justify-content: center;
+    margin-bottom: 1.45rem;
   }
 
   .tools-hero h1 {
-    max-width: 940px;
+    max-width: 980px;
     margin: 0;
     color: var(--ink);
     letter-spacing: 0;
@@ -272,45 +326,138 @@ const siteUrl = 'https://widocznosc.ai';
   }
 
   .tools-hero-copy p {
-    max-width: 780px;
-    margin: 1.35rem auto 0;
-    color: var(--ink-muted);
-    font-size: clamp(1rem, 1.25vw, 1.12rem);
-    line-height: 1.6;
+    max-width: 720px;
+    margin: 1.55rem 0 0;
+    color: var(--ink);
+    font-size: clamp(1.05rem, 1.35vw, 1.22rem);
+    line-height: 1.58;
+  }
+
+  .tools-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    margin-top: 2.4rem;
   }
 
   .tools-hero-panel {
+    --panel-accent: #38bdf8;
     display: grid;
-    width: min(100%, 920px);
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.55rem;
-    padding: 1.25rem 0;
-    border-top: 1px solid var(--hairline-soft);
-    border-bottom: 1px solid var(--hairline-soft);
+    gap: 0.95rem;
+    min-width: 0;
+    padding: clamp(1rem, 2.4vw, 1.35rem);
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-xl);
+    background:
+      radial-gradient(
+        circle at 18% 0%,
+        color-mix(in srgb, var(--panel-accent) 18%, transparent) 0%,
+        transparent 36%
+      ),
+      var(--bg-surface-1);
+    box-shadow: 0 24px 80px color-mix(in srgb, #000 18%, transparent);
   }
 
-  .tools-hero-panel div {
-    padding: 0.25rem clamp(1rem, 3vw, 2rem);
+  .tools-panel-top {
+    display: grid;
+    gap: 0.55rem;
+    padding: 1rem;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-lg);
+    background: color-mix(in srgb, var(--bg-surface-2) 76%, transparent);
+  }
+
+  .tools-panel-kicker {
+    color: var(--panel-accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .tools-panel-top strong {
+    color: var(--ink);
+    font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+    line-height: 1.25;
+    text-wrap: balance;
+  }
+
+  .tools-panel-flow {
+    display: grid;
+    gap: 0.55rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .tools-panel-flow li {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.15rem 0.7rem;
+    align-items: center;
+    padding: 0.8rem 0.9rem;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-md);
+    background: var(--bg-canvas);
+  }
+
+  .tools-panel-flow span {
+    grid-row: span 2;
+    color: var(--panel-accent);
+    font-family: ui-monospace, 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+  }
+
+  .tools-panel-flow strong {
+    color: var(--ink);
+    font-size: 0.93rem;
+    line-height: 1.2;
+  }
+
+  .tools-panel-flow em {
+    color: var(--ink-muted);
+    font-size: 0.82rem;
+    font-style: normal;
+    line-height: 1.25;
+  }
+
+  .tools-panel-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    margin: 0;
+    padding: 0.9rem 0 0;
+    border-top: 1px solid var(--hairline-soft);
+  }
+
+  .tools-panel-stats div {
+    padding: 0 0.75rem;
     border-right: 1px solid var(--hairline-soft);
   }
 
-  .tools-hero-panel div:last-child {
-    border-right: 0;
+  .tools-panel-stats div:first-child {
+    padding-left: 0;
   }
 
-  .tools-hero-panel span {
-    display: block;
+  .tools-panel-stats div:last-child {
+    border-right: 0;
+    padding-right: 0;
+  }
+
+  .tools-panel-stats dt {
+    color: var(--ink-faint);
+    font-size: 0.72rem;
+    line-height: 1.3;
+  }
+
+  .tools-panel-stats dd {
+    margin: 0.28rem 0 0;
     color: var(--ink);
     font-family: var(--font-display);
-    font-size: clamp(1.35rem, 2.4vw, 2.15rem);
+    font-size: clamp(1.45rem, 2.6vw, 2rem);
     line-height: 1;
-  }
-
-  .tools-hero-panel p {
-    margin: 0.45rem 0 0;
-    color: var(--ink-muted);
-    font-size: 0.84rem;
-    line-height: 1.35;
   }
 
   .tools-section {
@@ -388,16 +535,55 @@ const siteUrl = 'https://widocznosc.ai';
   }
 
   .tool-card {
+    --tool-accent: var(--accent-blue);
     display: flex;
     min-height: 100%;
     flex-direction: column;
     border: 1px solid var(--hairline-soft);
     border-radius: var(--r-xl);
-    background: var(--bg-surface-1);
+    background:
+      radial-gradient(
+        circle at 18% 0%,
+        color-mix(in srgb, var(--tool-accent) 18%, transparent) 0%,
+        transparent 36%
+      ),
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--bg-surface-1) 92%, var(--tool-accent) 8%) 0%,
+        var(--bg-surface-1) 76%
+      );
     transition:
       transform 180ms ease,
       border-color 180ms ease,
       background 180ms ease;
+  }
+
+  .tool-card--blue {
+    --tool-accent: #38bdf8;
+  }
+
+  .tool-card--green {
+    --tool-accent: #4ade80;
+  }
+
+  .tool-card--amber {
+    --tool-accent: #fbbf24;
+  }
+
+  .tool-card--violet {
+    --tool-accent: #a78bfa;
+  }
+
+  :global(:root[data-theme='light']) .tool-card--green {
+    --tool-accent: #16a34a;
+  }
+
+  :global(:root[data-theme='light']) .tool-card--amber {
+    --tool-accent: #d97706;
+  }
+
+  :global(:root[data-theme='light']) .tool-card--violet {
+    --tool-accent: #7c3aed;
   }
 
   .tool-card-link {
@@ -412,8 +598,7 @@ const siteUrl = 'https://widocznosc.ai';
 
   .tool-card:hover {
     transform: translateY(-3px);
-    border-color: color-mix(in srgb, var(--accent-blue) 40%, var(--hairline));
-    background: color-mix(in srgb, var(--bg-surface-1) 78%, var(--accent-blue) 6%);
+    border-color: color-mix(in srgb, var(--tool-accent) 50%, var(--hairline));
   }
 
   .tool-card-top {
@@ -425,7 +610,7 @@ const siteUrl = 'https://widocznosc.ai';
   }
 
   .tool-number {
-    color: var(--accent-blue);
+    color: var(--tool-accent);
     font-family: var(--font-display);
     font-size: 1.8rem;
     line-height: 1;
@@ -434,8 +619,8 @@ const siteUrl = 'https://widocznosc.ai';
   .tool-time {
     padding: 0.35rem 0.7rem;
     border-radius: var(--r-pill);
-    background: var(--bg-surface-2);
-    color: var(--ink-muted);
+    background: color-mix(in srgb, var(--tool-accent) 12%, var(--bg-surface-2));
+    color: var(--ink);
     font-size: 0.82rem;
     font-weight: 500;
   }
@@ -476,7 +661,7 @@ const siteUrl = 'https://widocznosc.ai';
     height: 0.42rem;
     margin-right: 0.6rem;
     border-radius: 50%;
-    background: var(--accent-blue);
+    background: var(--tool-accent);
     vertical-align: 0.12rem;
   }
 
@@ -487,7 +672,7 @@ const siteUrl = 'https://widocznosc.ai';
     padding: 0.9rem;
     border: 1px solid var(--hairline-soft);
     border-radius: var(--r-md);
-    background: var(--bg-surface-2);
+    background: color-mix(in srgb, var(--tool-accent) 7%, var(--bg-surface-2));
     color: var(--ink-muted);
     font-family: 'JetBrains Mono', ui-monospace, monospace;
     font-size: 0.72rem;
@@ -501,9 +686,9 @@ const siteUrl = 'https://widocznosc.ai';
   .tool-preview-label {
     width: max-content;
     padding: 0.16rem 0.42rem;
-    border: 1px solid color-mix(in srgb, var(--accent-blue) 28%, transparent);
+    border: 1px solid color-mix(in srgb, var(--tool-accent) 36%, transparent);
     border-radius: var(--r-pill);
-    color: var(--accent-blue);
+    color: var(--tool-accent);
     font-size: 0.58rem;
     font-weight: 500;
     letter-spacing: 0.08em;
@@ -521,7 +706,7 @@ const siteUrl = 'https://widocznosc.ai';
     align-items: center;
     margin-top: auto;
     padding-top: 2rem;
-    color: var(--ink);
+    color: var(--tool-accent);
     font-weight: 500;
   }
 
@@ -556,14 +741,18 @@ const siteUrl = 'https://widocznosc.ai';
   }
 
   @media (max-width: 980px) {
+    .tools-hero-inner {
+      grid-template-columns: 1fr;
+    }
+
     .tools-hero-panel {
-      grid-template-columns: repeat(3, 1fr);
+      width: min(100%, 680px);
     }
   }
 
   @media (max-width: 760px) {
     .tools-hero {
-      padding-top: 5.5rem;
+      padding: 5.5rem 0 3.8rem;
     }
 
     .tools-hero h1 {
@@ -584,23 +773,40 @@ const siteUrl = 'https://widocznosc.ai';
       max-width: 34ch;
     }
 
+    .tools-hero-actions {
+      justify-content: center;
+      margin-top: 1.65rem;
+    }
+
+    .tools-hero-actions a {
+      box-sizing: border-box;
+      width: min(100%, 22rem);
+      max-width: 22rem;
+      justify-content: center;
+      white-space: normal;
+    }
+
     .tools-grid {
       grid-template-columns: 1fr;
     }
 
-    .tools-hero-panel {
+    .tools-panel-stats {
       grid-template-columns: 1fr;
-      gap: 0;
     }
 
-    .tools-hero-panel div {
+    .tools-panel-stats div {
+      padding: 0.75rem 0;
       border-right: 0;
       border-bottom: 1px solid var(--hairline-soft);
-      padding-block: 1rem;
     }
 
-    .tools-hero-panel div:last-child {
+    .tools-panel-stats div:first-child {
+      padding-top: 0;
+    }
+
+    .tools-panel-stats div:last-child {
       border-bottom: 0;
+      padding-bottom: 0;
     }
 
     .section-head {
