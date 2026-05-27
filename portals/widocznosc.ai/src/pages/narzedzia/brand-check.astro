@@ -7,7 +7,7 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
 
 <Layout
   title="Brand Check – co AI wie o Twojej marce?"
-  description="Sprawdź, jak ChatGPT, Claude, Gemini i Perplexity opisują Twoją markę. Sentyment, możliwe halucynacje, cytowane źródła i konkurenci polecani zamiast Ciebie."
+  description="Sprawdź, jak ChatGPT, Claude, Gemini i Perplexity opisują Twoją markę. Zbadaj sentyment, wykryj zmyślone fakty (halucynacje) i sprawdź, kogo AI poleca zamiast Ciebie."
 >
   <Navbar />
 
@@ -26,8 +26,8 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
             Co AI wie o&nbsp;<span class="tool-hero-accent">Twojej marce</span>?
           </h1>
           <p class="tool-hero-copy">
-            Sprawdzamy, jak najpopularniejsze modele AI opisują Twoją firmę, czy cytują Twoją
-            domenę, jakie błędy powtarzają i&nbsp;których konkurentów podpowiadają zamiast Ciebie.
+            Sprawdzamy, jak najpopularniejsze modele AI opisują Twoją firmę, czy poprawnie cytują
+            Twoją domenę, jakie błędy powtarzają i których konkurentów podpowiadają zamiast Ciebie.
           </p>
         </header>
 
@@ -76,8 +76,9 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
             <span class="check-submit-spinner" aria-hidden="true"></span>
           </button>
           <p class="check-note">
-            Test trwa zwykle 30-60 sekund. Każdy model może zwrócić osobny błąd bez blokowania
-            całego raportu.
+            Test trwa zazwyczaj od 30 do 60 sekund. Wszystkie modele AI są odpytywane niezależnie,
+            dzięki czemu raport generuje się płynnie nawet w przypadku chwilowych obciążeń
+            poszczególnych systemów.
           </p>
         </form>
 
@@ -92,22 +93,34 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
           <article class="overview-card">
             <span class="overview-num">01</span>
             <h3>Rozpoznawalność</h3>
-            <p>Czy model zna markę, zna ją częściowo, czy musi zgadywać na podstawie skąpych źródeł.</p>
+            <p>
+              Sprawdzamy, czy sztuczna inteligencja w ogóle kojarzy Twoją firmę, zna ją tylko
+              częściowo, czy musi zgadywać Twoją ofertę na podstawie szczątkowych danych w sieci.
+            </p>
           </article>
           <article class="overview-card">
             <span class="overview-num">02</span>
             <h3>Sentyment</h3>
-            <p>Czy opis marki jest pozytywny, neutralny, negatywny albo niespójny między modelami.</p>
+            <p>
+              Weryfikujemy, czy wydźwięk opisu Twojej marki jest pozytywny, neutralny, czy może
+              poszczególne modele mają na Twój temat zupełnie sprzeczne informacje.
+            </p>
           </article>
           <article class="overview-card">
             <span class="overview-num">03</span>
-            <h3>Halucynacje</h3>
-            <p>Błędne usługi, lokalizacje, specjalizacje i&nbsp;twierdzenia, których nie potwierdza profil marki.</p>
+            <h3>Halucynacje (zmyślone fakty)</h3>
+            <p>
+              Wykrywamy, czy sztuczna inteligencja nie przypisuje Ci błędnych usług, niewłaściwych
+              lokalizacji lub fałszywych twierdzeń, które mogą wprowadzać Twoich klientów w błąd.
+            </p>
           </article>
           <article class="overview-card">
             <span class="overview-num">04</span>
-            <h3>Konkurenci</h3>
-            <p>Firmy i alternatywy, które modele podają użytkownikowi zamiast analizowanej marki.</p>
+            <h3>Polecani konkurenci</h3>
+            <p>
+              Sprawdzamy, jakie inne firmy i alternatywy modele AI podsuwają użytkownikom zamiast
+              analizowanej marki (i do kogo możesz tracić potencjalnych klientów).
+            </p>
           </article>
         </div>
       </div>

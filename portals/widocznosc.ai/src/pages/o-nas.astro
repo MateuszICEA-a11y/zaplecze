@@ -9,20 +9,20 @@ import { getCollection } from 'astro:content';
 
 const principles = [
   {
-    title: 'Mierzymy cytowania, nie ranking',
-    desc: 'Pozycja w ChatGPT czy Perplexity nie istnieje – każda odpowiedź jest generowana na żywo. Liczymy ile razy marka pojawia się w odpowiedziach na branżowe zapytania, kto jest cytowany zamiast Ciebie i które źródła AI cytuje najczęściej.',
+    title: 'Mierzymy cytowania, nie wirtualne pozycje',
+    desc: 'Pozycja numer 1 w ChatGPT czy Perplexity nie istnieje – każda odpowiedź jest generowana na żywo. Dlatego liczymy twarde dane: ile razy Twoja marka pojawia się w odpowiedziach na zapytania branżowe, kto jest cytowany zamiast Ciebie i z jakich źródeł AI korzysta najczęściej.',
   },
   {
     title: 'Pięć modeli, nie jeden',
-    desc: 'ChatGPT, Claude, Gemini, Perplexity i Bing Copilot inaczej budują odpowiedzi. ChatGPT używa training data + RAG, Gemini cytuje z indeksu Google, Perplexity stawia na transparentne źródła. Optymalizacja pod jeden model nie wystarczy.',
+    desc: 'ChatGPT, Claude, Gemini, Perplexity i Bing Copilot w zupełnie inny sposób budują swoje odpowiedzi. ChatGPT łączy dane treningowe z wyszukiwaniem na żywo, Gemini bazuje na indeksie Google, a Perplexity stawia na transparentne linkowanie do źródeł. Optymalizacja pod tylko jeden model to dziś za mało.',
   },
   {
-    title: 'Sygnały rankingowe per model',
-    desc: 'Każdy silnik AI ma własne sygnały – fact-density, struktura headerów, schema, gęstość źródeł, autorytet domeny w Common Crawl. Audytujemy i optymalizujemy oddzielnie pod każdy model, bo „GEO best practices" to zbyt duże uproszczenie.',
+    title: 'Sygnały rankingowe dobierane pod konkretny silnik',
+    desc: 'Każdy asystent AI zwraca uwagę na inne elementy: gęstość faktów, precyzyjną strukturę nagłówków, wdrożone dane strukturalne (Schema) czy autorytet Twojej domeny w bazach treningowych dla sztucznej inteligencji. Audytujemy i optymalizujemy stronę oddzielnie pod każdy model, ponieważ uniwersalne "najlepsze praktyki GEO" po prostu nie istnieją.',
   },
   {
     title: 'Tradycyjne SEO za nami, GEO przed nami',
-    desc: 'ICEA pozycjonuje strony od kilkunastu lat. Wiemy jak Google rankuje, dlatego rozumiemy gdzie kończy się klasyczne SEO i zaczyna GEO. Łączymy doświadczenie z 200+ wdrożeń SEO z metodyką dedykowaną wyszukiwarkom AI.',
+    desc: 'Zespół ICEA skutecznie pozycjonuje strony od kilkunastu lat. Doskonale wiemy, jak Google ocenia witryny, dlatego świetnie rozumiemy, gdzie kończy się klasyczne SEO, a zaczyna optymalizacja pod AI. Łączymy doświadczenie z ponad 200 wdrożeń z nowoczesną metodyką dedykowaną wyszukiwarkom generatywnym.',
   },
 ];
 
@@ -34,20 +34,20 @@ const stats = [
 
 const antiPractices = [
   {
-    title: 'Nie obiecujemy pozycji w ChatGPT',
-    desc: 'W modelach generatywnych nie ma jednej stałej pozycji. Raportujemy udział w odpowiedziach, cytowania, sentyment i konkurentów pojawiających się zamiast Twojej marki.',
+    title: 'Nie obiecujemy "pierwszego miejsca" w ChatGPT',
+    desc: 'W modelach generatywnych nie ma jednej stałej pozycji. Zamiast tego raportujemy realny udział Twojej marki w odpowiedziach, liczbę cytowań, sentyment wypowiedzi AI oraz pokazujemy konkurentów, którzy pojawiają się w Twoim miejscu.',
   },
   {
-    title: 'Nie sprzedajemy pseudo-rankingu',
-    desc: 'Visibility Score liczymy z realnych odpowiedzi pięciu modeli, a nie z arbitralnej tabeli od zewnętrznego dostawcy. Każda liczba ma kontekst i powtarzalną metodologię.',
+    title: 'Nie sprzedajemy sztucznych rankingów',
+    desc: 'Nasz Wskaźnik Widoczności (Visibility Score) opiera się na analizie realnych odpowiedzi z pięciu modeli, a nie na arbitralnych, wymyślonych tabelkach. Każda liczba w naszym raporcie ma biznesowy kontekst i rzetelną metodologię.',
   },
   {
-    title: 'Nie generujemy AI-spamu',
-    desc: 'Nie zalewamy serwisu masą tekstów bez źródeł. Optymalizujemy strukturę, fakty, FAQ, schema i źródła tak, żeby model miał co zacytować.',
+    title: 'Nie generujemy spamu z użyciem AI',
+    desc: 'Nie zalewamy Twojego serwisu masą tekstów pisanych przez boty. Zamiast tego wdrażamy twarde fakty, sekcje FAQ, odpowiednią strukturę danych i konkretne źródła. Robimy to po to, aby modele AI uznały Twój tekst za wartościowy i miały co zacytować.',
   },
   {
-    title: 'Nie chowamy autorów za marką',
-    desc: 'Każdy artykuł i każda rekomendacja ma autora z nazwiskiem, rolą i profilem eksperta ICEA. Wiesz z kim rozmawiasz i czyje wnioski czytasz.',
+    title: 'Nie chowamy autorów za logiem marki',
+    desc: 'Każdy artykuł i każda rekomendacja, którą od nas otrzymasz, ma autora z nazwiskiem, określoną rolą i profilem eksperta ICEA. Wiesz, z kim rozmawiasz i czyje wnioski czytasz. Co więcej, algorytmy AI (takie jak Gemini) weryfikują autorytet twórców, więc jest to również wymóg techniczny.',
   },
 ];
 
@@ -121,8 +121,9 @@ const siteUrl = 'https://widocznosc.ai';
           target="_blank"
           rel="noopener noreferrer">grupa-icea.pl</a
         >
-        dedykowany jednej dyscyplinie: budowaniu obecności marki w odpowiedziach generowanych przez ChatGPT,
-        Claude, Gemini, Perplexity i Bing Copilot. Mierzymy cytowania, nie pseudo-ranking.
+        dedykowany jednej, konkretnej dyscyplinie: budowaniu obecności marek w odpowiedziach
+        generowanych przez ChatGPT, Claude, Gemini, Perplexity i Bing Copilot. W nowej
+        rzeczywistości mierzymy realne cytowania, a nie sztuczne rankingi.
       </p>
       <div class="about-hero-proof" aria-label="Sygnały zaufania widocznosc.ai">
         <div><span>4</span><p>ekspertów ICEA</p></div>
@@ -170,8 +171,9 @@ const siteUrl = 'https://widocznosc.ai';
           Cztery rzeczy, w&nbsp;które wierzymy bezkompromisowo
         </h2>
         <p class="text-ink-muted mx-auto text-lg leading-relaxed" style="max-width: 720px;">
-          GEO (Generative Engine Optimization) to nowa dyscyplina. Buduje się ją zupełnie inaczej
-          niż klasyczne SEO. Cztery zasady poniżej tłumaczą jak my do tego podchodzimy.
+          GEO (Generative Engine Optimization) to zupełnie nowa dyscyplina. Widoczność w sztucznej
+          inteligencji buduje się inaczej niż w klasycznym SEO. Poniższe cztery zasady tłumaczą,
+          jak podchodzimy do naszej pracy.
         </p>
       </div>
 
@@ -210,12 +212,13 @@ const siteUrl = 'https://widocznosc.ai';
             Czego nie robimy<br />w audycie AI
           </h2>
           <p class="text-ink mb-6 text-lg leading-relaxed">
-            ICEA pozycjonuje strony w Google od kilkunastu lat. Tę samą rygorystyczność –
-            mierzalność, transparentność, powtarzalną metodologię – przenosimy do GEO.
+            Od kilkunastu lat dążymy do perfekcji w SEO. Tę samą rygorystyczność – mierzalność,
+            transparentność i powtarzalną metodologię – przenosimy teraz do GEO.
           </p>
           <p class="text-ink-muted leading-relaxed">
-            Anti-lista jest ważniejsza niż lista obietnic. Pokazujemy, czego świadomie unikamy, bo
-            właśnie tam najczęściej zaczyna się marketingowy szum wokół pozycjonowania AI.
+            Lista rzeczy, których <strong>NIE robimy</strong>, jest dla nas równie ważna jak nasze
+            obietnice. Pokazujemy, czego świadomie unikamy, bo to właśnie tam najczęściej zaczyna
+            się marketingowy szum i wprowadzanie klienta w błąd.
           </p>
         </div>
 
@@ -245,14 +248,14 @@ const siteUrl = 'https://widocznosc.ai';
     eyebrow="Zespół"
     sectionIndex="A/03"
     title='Cztery osoby, <span class="accent">15+ lat doświadczenia</span>'
-    subtitle="Każdy artykuł na widocznosc.ai i każda rekomendacja w audycie podpisana imieniem i nazwiskiem. Wiesz z kim rozmawiasz, kogo cytuje schema Article i czyje doświadczenie stoi za rekomendacjami."
+    subtitle="Każdy artykuł na stronie widocznosc.ai oraz każda rekomendacja w naszych audytach są podpisane imieniem i nazwiskiem. Wiesz, z kim rozmawiasz, kogo uwiarygadniają znaczniki strukturalne na stronie i czyje wieloletnie doświadczenie stoi za proponowaną strategią."
     limit={4}
   />
 
   <CTABand
     eyebrow="Pierwszy krok"
     title="Sprawdźmy, gdzie jesteś dziś"
-    subtitle="Bezpłatna konsultacja 30 minut z ekspertem ICEA. Pokazujemy gdzie marka jest już cytowana, gdzie konkurencja Cię wyprzedza i jaki realny plan na pierwsze 90 dni ma sens dla Twojej branży."
+    subtitle="Zarezerwuj bezpłatną, 30-minutową konsultację z ekspertem ICEA. Pokażemy Ci, gdzie Twoja marka jest już cytowana, w jakich obszarach wyprzedza Cię konkurencja i jaki realny plan na pierwsze 90 dni przyniesie największy zwrot w Twojej branży."
     primaryLabel="Zamów audyt AI"
     primaryHref="/kontakt?type=audyt-ai"
     ghostLabel="Bezpłatna konsultacja"

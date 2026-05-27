@@ -7,8 +7,8 @@ import { FACTORS } from '../../../functions/_lib/url-check';
 ---
 
 <Layout
-  title="URL Check – AI SEO Alignment Score 0-100"
-  description="Sprawdź w 10-20 sekund, czy Twoja strona jest cytowalna przez ChatGPT, Claude, Gemini, Perplexity i Copilot. AI SEO Alignment Score 0-100 + lista 5 priorytetowych zmian. Darmowe, bez logowania."
+  title="URL Check – wskaźnik dostosowania do AI (0-100)"
+  description="Sprawdź w 15 sekund, czy Twoja strona będzie cytowana przez ChatGPT, Claude, Gemini, Perplexity i Copilot. Ocena od 0 do 100 i lista 5 priorytetowych zmian."
 >
   <Navbar />
 
@@ -24,11 +24,12 @@ import { FACTORS } from '../../../functions/_lib/url-check';
         <header class="text-center">
           <span class="eyebrow tool-eyebrow"> Narzędzie · bezpłatne </span>
           <h1 class="tool-hero-title">
-            Czy Twój <span class="tool-hero-accent">content</span> jest cytowalny przez AI?
+            Czy <span class="tool-hero-accent">sztuczna inteligencja</span> zacytuje Twoją stronę?
           </h1>
           <p class="tool-hero-copy">
-            Wskazujesz jeden URL. Parser i&nbsp;model językowy analizują 8 czynników cytowalności
-            i&nbsp;zwracają wynik 0&ndash;100 + listę priorytetowych zmian. Bez logowania.
+            Wskaż jeden adres URL, a nasz algorytm i model językowy przeanalizują go pod kątem 8
+            kluczowych czynników widoczności w AI. Otrzymasz wynik w skali od 0 do 100 oraz listę
+            priorytetowych zmian. Bez logowania.
           </p>
         </header>
 
@@ -50,13 +51,13 @@ import { FACTORS } from '../../../functions/_lib/url-check';
             class="check-input flex-1"
           />
           <button type="submit" class="btn-primary check-submit">
-            <span class="check-submit-label">Sprawdź content</span>
+            <span class="check-submit-label">Sprawdź stronę</span>
             <span class="check-submit-spinner" aria-hidden="true"></span>
           </button>
         </form>
         <p class="check-note mx-auto mt-3 max-w-2xl text-center text-sm">
-          Pobieramy publiczny HTML, liczymy sygnały techniczne i&nbsp;używamy modelu tylko
-          do&nbsp;oceny semantycznej. Nie zapisujemy treści ani wyników.
+          Pobieramy jedynie publiczny kod strony, analizujemy sygnały techniczne i używamy modelu
+          AI wyłącznie do oceny semantycznej. Nie zapisujemy Twoich treści ani wyników.
         </p>
 
         <!-- Results placeholder -->
@@ -67,14 +68,17 @@ import { FACTORS } from '../../../functions/_lib/url-check';
     <!-- Default overview – 8 factors before submit -->
     <section id="default-overview" class="tool-overview">
       <div class="content-container">
-        <h2 class="display-lg tool-overview-title">8 czynników AI SEO Alignment Score</h2>
+        <h2 class="display-lg tool-overview-title">
+          8 czynników dostosowania do AI (Alignment Score)
+        </h2>
         <p class="text-ink tool-overview-copy mt-6 max-w-3xl text-lg leading-relaxed">
-          Każdy z&nbsp;tych elementów zwiększa szansę, że ChatGPT, Claude, Gemini, Perplexity albo
-          Copilot wskaże Twoją markę jako źródło.
+          Każdy z poniższych elementów bezpośrednio zwiększa szansę, że ChatGPT, Claude, Gemini,
+          Perplexity lub Bing Copilot wskaże Twoją markę jako źródło.
         </p>
         <p class="text-ink-muted mt-3 max-w-3xl text-base leading-relaxed">
-          Suma wag = 100 pkt. Tradycyjny SEO Domain Authority może być wysoki, ale AI Alignment
-          niski &ndash; tu jest realna przewaga.
+          Suma wag wynosi 100 punktów. Pamiętaj: tradycyjny autorytet domeny (SEO) może być wysoki,
+          ale stopień dostosowania do AI bardzo niski – to właśnie tutaj możesz zbudować realną
+          przewagę nad konkurencją.
         </p>
 
         <div class="mt-10 grid gap-4 lg:grid-cols-2">
@@ -97,15 +101,19 @@ import { FACTORS } from '../../../functions/_lib/url-check';
         <div class="methodology-note">
           <h3 class="methodology-title">Jak to działa?</h3>
           <p class="methodology-text">
-            Pobieramy publiczny HTML strony, oczyszczamy z&nbsp;binary noise (script/style)
-            i&nbsp;wyciągamy główną treść. Sześć mierzalnych czynników liczy parser: schema,
-            świeżość, FAQ, gęstość faktów, modułowość i&nbsp;nagłówki-pytania. Model <strong
-              >Gemini 3.1 Flash Lite</strong
-            > ocenia tylko elementy semantyczne: BLUF oraz jakość porównań. Wagi czynników opieramy na
-            peer-reviewed badaniu
+            Nasz system pobiera publiczny kod HTML strony, oczyszcza go ze zbędnych skryptów
+            technicznych i wyciąga główną treść. Algorytm matematycznie oblicza sześć mierzalnych
+            czynników: wdrożenie Schema, datę aktualizacji, obecność FAQ, gęstość faktów,
+            modułowość oraz strukturę nagłówków. Następnie, model sztucznej inteligencji
+            (<strong>Gemini Flash Lite</strong>) ocenia elementy wymagające zrozumienia kontekstu:
+            umiejscowienie odpowiedzi na początku tekstu oraz jakość użytych porównań.
+          </p>
+          <p class="methodology-text">
+            Wagi poszczególnych czynników oparliśmy na twardych danych: recenzowanym badaniu
+            naukowym z Uniwersytetu Princeton
             <a href="https://arxiv.org/abs/2311.09735" target="_blank" rel="noopener noreferrer">
-              Princeton/KDD&nbsp;2024 (GEO Paper, Aggarwal et al.)
-            </a>, patentach Google na query fan-out (<a
+              (GEO Paper, Aggarwal et al.)
+            </a>, patentach Google dotyczących rozbijania zapytań (<a
               href="https://searchengineland.com/how-ai-mode-ai-overviews-work-patents-456346"
               target="_blank"
               rel="noopener noreferrer"
@@ -118,7 +126,7 @@ import { FACTORS } from '../../../functions/_lib/url-check';
               rel="noopener noreferrer"
             >
               iPullRank AI Search Manual
-            </a>. Nic nie zapisujemy.
+            </a>. Zapewniamy pełną prywatność – nie zapisujemy analizowanych danych.
           </p>
         </div>
       </div>

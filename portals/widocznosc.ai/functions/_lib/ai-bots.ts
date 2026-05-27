@@ -26,17 +26,20 @@ export type BotDefinition = {
 };
 
 export const CATEGORY_LABELS: Record<BotCategory, string> = {
-  training: 'Trening',
-  search: 'Wyszukiwanie',
+  training: 'Treningowe',
+  search: 'Wyszukiwawcze',
   'on-demand': 'Na żądanie',
   'common-crawl': 'Common Crawl',
 };
 
 export const CATEGORY_DESCRIPTIONS: Record<BotCategory, string> = {
-  training: 'Skanują content do trenowania modeli',
-  search: 'Żywy indeks dla odpowiedzi w wyszukiwarce',
-  'on-demand': 'Aktywują się gdy user zadaje konkretne pytanie',
-  'common-crawl': 'Pośrednio – przez archiwum CC dla LLM-ów',
+  training: 'Skanują i pobierają Twoje treści, by uczyć na nich sztuczną inteligencję.',
+  search:
+    'Indeksują stronę na żywo. Jeśli je zablokujesz, znikniesz z gotowych odpowiedzi wyszukiwarek AI.',
+  'on-demand':
+    'Pobierają dane w czasie rzeczywistym tylko wtedy, gdy użytkownik wpisze zapytanie zawierające link do Twojej strony.',
+  'common-crawl':
+    'Zbierają dane do potężnego, otwartego archiwum (Common Crawl), z którego korzysta większość twórców dużych modeli AI na świecie.',
 };
 
 export const AI_BOTS: BotDefinition[] = [

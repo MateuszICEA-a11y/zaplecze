@@ -10,7 +10,7 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
 
 <Layout
   title="AI Bots Check – czy boty AI mają dostęp do Twojej strony?"
-  description="Sprawdź w 5 sekund, które z 13 botów AI (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot, ...) mają dostęp do Twojej strony. Diagnoza pliku robots.txt + lista konkretnych zmian. Darmowe, bez logowania."
+  description="Sprawdź w 5 sekund, które z 13 robotów AI (m.in. GPTBot, ClaudeBot, PerplexityBot, Google-Extended) mają dostęp do Twojej strony. Diagnoza pliku robots.txt i lista konkretnych zmian. Darmowe, bez logowania."
 >
   <Navbar />
 
@@ -29,9 +29,10 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
             Czy <span class="tool-hero-accent">boty AI</span> mają dostęp do Twojej strony?
           </h1>
           <p class="tool-hero-copy">
-            Sprawdzamy plik <code class="font-mono text-sm">robots.txt</code> pod kątem 13 najważniejszych
-            user-agentów AI: GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot i&nbsp;8 innych.
-            Wynik w&nbsp;5 sekund, bez logowania.
+            Sprawdzamy Twój plik <code class="font-mono text-sm">robots.txt</code> pod kątem 13
+            najważniejszych robotów skanujących sztucznej inteligencji (m.in. GPTBot, ClaudeBot,
+            PerplexityBot, Google-Extended, CCBot). Odbierz wynik w&nbsp;5 sekund, bez konieczności
+            logowania.
           </p>
         </header>
 
@@ -58,8 +59,8 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
           </button>
         </form>
         <p class="check-note mx-auto mt-3 max-w-2xl text-center text-sm">
-          Pobieramy publiczny plik <code class="font-mono">robots.txt</code> – nie wykonujemy żadnych
-          zmian, nie zapisujemy danych.
+          Pobieramy jedynie publicznie dostępny plik <code class="font-mono">robots.txt</code> – nie
+          wykonujemy żadnych zmian na Twojej stronie i nie zapisujemy Twoich danych.
         </p>
 
         <!-- Results placeholder -->
@@ -72,10 +73,11 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
       <div class="content-container">
         <h2 class="display-lg tool-overview-title">13 botów AI w 4 kategoriach funkcjonalnych</h2>
         <p class="text-ink tool-overview-copy mt-6 max-w-3xl text-lg leading-relaxed">
-          Każdy z tych botów ma własny <code class="font-mono text-sm">User-agent</code> i własne implikacje
-          dla widoczności marki w AI. Boty wyszukiwawcze wpływają na bieżącą widoczność i cytowania, a
-          boty treningowe oraz tokeny kontroli danych decydują o tym, jak platformy mogą wykorzystywać
-          publiczne treści w modelach.
+          Każdy z robotów AI ma własny identyfikator sieciowy (tzw. <code
+            class="font-mono text-sm">User-agent</code
+          >) i zupełnie inaczej wpływa na widoczność Twojej marki. Roboty wyszukiwawcze decydują o
+          tym, czy AI zacytuje Cię w swoich odpowiedziach, natomiast roboty treningowe pobierają
+          Twoje teksty, by uczyć na nich swoje modele.
         </p>
         <div class="mt-10 grid gap-4 lg:grid-cols-2">
           {

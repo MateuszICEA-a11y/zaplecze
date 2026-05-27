@@ -12,8 +12,8 @@ const examples = [
 ---
 
 <Layout
-  title="Fan-out ChatGPT – zapytania wyszukiwania i cytowane domeny"
-  description="Sprawdź, jakie zapytania wyszukiwania i źródła pojawiają się w odpowiedzi ChatGPT dla Twojej frazy. Bezpłatne narzędzie widocznosc.ai."
+  title="Analiza zapytań (Fan-out) – jak ChatGPT szuka informacji i cytuje domeny"
+  description="Sprawdź, na jakie mniejsze pytania ChatGPT rozbija Twoją frazę i jakie źródła pobiera w tle. Bezpłatne narzędzie widocznosc.ai do analizy zapytań AI."
 >
   <Navbar />
 
@@ -23,17 +23,18 @@ const examples = [
         <nav class="tool-breadcrumb" aria-label="Ścieżka nawigacji">
           <a href="/narzedzia" class="tool-breadcrumb-link">Narzędzia</a>
           <span class="tool-breadcrumb-sep" aria-hidden="true">/</span>
-          <span class="tool-breadcrumb-current">Fan-out ChatGPT</span>
+          <span class="tool-breadcrumb-current">Analiza zapytań (Fan-out)</span>
         </nav>
 
         <header class="text-center">
           <span class="eyebrow tool-eyebrow">Narzędzie · bezpłatne</span>
           <h1 class="tool-hero-title">
-            Sprawdź zapytania i&nbsp;<span class="tool-hero-accent">źródła ChatGPT</span>
+            Sprawdź, jak ChatGPT szuka informacji w&nbsp;tle
           </h1>
           <p class="tool-hero-copy">
-            Wpisz frazę, a&nbsp;zobaczysz zapytania wyszukiwania ujawnione przez model,
-            domeny cytowane w odpowiedzi i źródła, które pojawiły się w warstwie wyszukiwania.
+            Wpisz interesującą Cię frazę, a my pokażemy, jak model rozbija ją na mniejsze pytania
+            pomocnicze (tzw. Query Fan-out) oraz z jakich domen i źródeł ostatecznie czerpie
+            wiedzę. To idealna wskazówka, pod jakie frazy optymalizować swoje teksty.
           </p>
         </header>
 
@@ -50,7 +51,7 @@ const examples = [
               placeholder="np. najlepszy system CRM dla małej firmy"
             />
           </label>
-          <button type="submit" class="btn-primary fanout-submit">Pokaż fan-out</button>
+          <button type="submit" class="btn-primary fanout-submit">Zobacz rozbicie zapytania</button>
           <div class="fanout-examples" aria-label="Przykładowe zapytania">
             {examples.map((ex) => (
               <button type="button" class="fanout-example" data-query={ex}>{ex}</button>
@@ -61,7 +62,8 @@ const examples = [
         <div id="fanout-results" class="fanout-results hidden" aria-live="polite"></div>
 
         <p class="fanout-note">
-          Wynik pokazuje dane zwrócone w konkretnym przebiegu wyszukiwania.
+          Wynik prezentuje dane dla tej konkretnej sesji wyszukiwania. Pamiętaj, że odpowiedzi
+          modeli AI są generowane dynamicznie i mogą się nieznacznie różnić w czasie.
         </p>
       </div>
     </section>

@@ -36,11 +36,11 @@ export type FactorDefinition = {
 export const FACTORS: FactorDefinition[] = [
   {
     key: 'bluf',
-    label: 'BLUF (Bottom Line Up Front)',
-    shortLabel: 'BLUF',
+    label: 'Odpowiedź na początku (BLUF)',
+    shortLabel: 'Odpowiedź na początku',
     weight: 15,
     description:
-      'Czy bezpośrednia odpowiedź na temat strony znajduje się w pierwszych 50 słowach. AI cytują głównie frontload – dłuższe wstępy zostają pominięte.',
+      'Sprawdzamy, czy bezpośrednia odpowiedź na temat strony znajduje się w pierwszych 50 słowach. Modele AI preferują konkrety na samym starcie – długie, "poetyckie" wstępy są przez nie pomijane.',
     whatToFix:
       'Przepisz pierwszy akapit – zacznij od konkretnej definicji lub odpowiedzi. Tło historyczne i wstępy przerzuć dalej w treść.',
   },
@@ -50,27 +50,27 @@ export const FACTORS: FactorDefinition[] = [
     shortLabel: 'FAQ',
     weight: 12,
     description:
-      'Czy strona ma sekcję pytań i odpowiedzi (FAQ). LLM-y chętnie cytują pojedyncze pary Q&A jako odpowiedzi na podzapytania użytkowników.',
+      'Weryfikujemy, czy strona posiada sekcję pytań i odpowiedzi (FAQ). Sztuczna inteligencja bardzo chętnie cytuje pojedyncze pary Q&A, dopasowując je do szczegółowych pytań użytkowników.',
     whatToFix:
       'Dodaj sekcję FAQ z 5-8 pytaniami w formie pełnych zdań ("Czym jest…?", "Ile kosztuje…?"). Każde Q powinno mieć 2-3 zdania odpowiedzi.',
   },
   {
     key: 'density',
-    label: 'Information Density',
+    label: 'Gęstość faktów',
     shortLabel: 'Gęstość faktów',
     weight: 14,
     description:
-      'Czy w tekście są konkretne liczby, daty, statystyki i dane źródłowe. Tekst ogólnikowy bez liczb nie buduje wiarygodności w AI.',
+      'Analizujemy, czy w tekście znajdują się konkretne liczby, daty, statystyki i dane źródłowe. Ogólnikowy tekst, pozbawiony twardych danych, nie buduje wiarygodności w oczach algorytmów.',
     whatToFix:
       'Dodaj konkretne liczby, procenty, daty i odwołania do badań. Zastąp ogólniki ("często", "wiele firm") konkretami ("57% firm w 2024 roku").',
   },
   {
     key: 'schema',
-    label: 'Schema Markup',
-    shortLabel: 'Schema',
+    label: 'Dane strukturalne (Schema)',
+    shortLabel: 'Dane strukturalne',
     weight: 14,
     description:
-      'Czy strona ma strukturalne oznaczenia schema.org (JSON-LD, microdata lub RDFa). Schema znacząco zwiększa szansę na cytowanie w AI Overviews.',
+      'Sprawdzamy wdrożenie technicznych znaczników Schema.org. Odpowiednio wdrożone dane strukturalne drastycznie zwiększają szansę na zacytowanie w Podsumowaniach AI (AI Overviews).',
     whatToFix:
       'Wdroż schema.org: Article (lub BlogPosting/NewsArticle), FAQPage dla sekcji FAQ, ewentualnie HowTo dla instrukcji. Walidacja w Google Rich Results Test.',
   },
@@ -80,37 +80,37 @@ export const FACTORS: FactorDefinition[] = [
     shortLabel: 'Świeżość',
     weight: 10,
     description:
-      'Kiedy treść była ostatnio aktualizowana. Perplexity i AI Overviews silnie preferują content z ostatnich 12 miesięcy.',
+      'Weryfikujemy datę ostatniej aktualizacji. Modele takie jak Perplexity czy Gemini silnie preferują i promują teksty zaktualizowane w ciągu ostatnich 12 miesięcy.',
     whatToFix:
       'Dodaj widoczną datę publikacji i aktualizacji w meta tagach (article:modified_time) oraz w schema (dateModified). Przejrzyj content i zaktualizuj.',
   },
   {
     key: 'modular',
-    label: 'Treści modułowe',
-    shortLabel: 'Modułowość',
+    label: 'Modułowa struktura tekstu',
+    shortLabel: 'Struktura tekstu',
     weight: 10,
     description:
-      'Czy treść ma listy, tabele i wyraźnie wydzielone sekcje. AI łatwiej "wycina" gotowy fragment jako odpowiedź gdy treść jest podzielona.',
+      'Sprawdzamy, czy treść zawiera listy, tabele i wyraźnie wydzielone sekcje. Dzięki temu sztucznej inteligencji łatwiej jest pobrać konkretny fragment i użyć go jako gotowej odpowiedzi.',
     whatToFix:
       'Przekształć ściankę tekstu w listy punktowane, tabele porównawcze i krótkie sekcje pod jasnymi nagłówkami. Każda sekcja samodzielna jako odpowiedź.',
   },
   {
     key: 'comparisons',
-    label: 'Porównania',
-    shortLabel: 'Porównania',
+    label: 'Zestawienia i porównania',
+    shortLabel: 'Zestawienia',
     weight: 13,
     description:
-      'Czy są porównania z konkurencją lub alternatywami ("X vs Y", tabele porównawcze). Pytania porównawcze to jedne z najczęstszych zapytań do LLM.',
+      'Analizujemy obecność porównań z konkurencją lub alternatywami (np. "X vs Y"). Pytania porównawcze to obecnie jedne z najczęstszych zapytań kierowanych do asystentów AI.',
     whatToFix:
       'Dodaj sekcję porównawczą lub tabelę "X vs Y" / "alternatywa dla Z". Wprost porównaj cechy, ceny, zastosowania. Nie unikaj nazwy konkurenta.',
   },
   {
     key: 'questionHeadings',
-    label: 'Nagłówki jako pytania',
-    shortLabel: 'Pytania w H2/H3',
+    label: 'Nagłówki w formie pytań',
+    shortLabel: 'Nagłówki-pytania',
     weight: 12,
     description:
-      'Jaki procent nagłówków H2/H3 jest sformułowany jako pytanie. AI dopasowują nagłówki-pytania bezpośrednio do podzapytań użytkownika (query fan-out).',
+      'Sprawdzamy, jaki procent nagłówków jest sformułowany jako pytania. Modele dopasowują je bezpośrednio do pomocniczych zapytań, które generują w tle podczas szukania informacji.',
     whatToFix:
       'Przepisz przynajmniej 50% H2/H3 na formę pytań ("Jak…?", "Czym różni się…?"). Każde pytanie powinno mieć krótką odpowiedź w pierwszym zdaniu sekcji.',
   },
