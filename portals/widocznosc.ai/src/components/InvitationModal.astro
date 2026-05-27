@@ -13,11 +13,14 @@ import CloseIcon from '../assets/icons/CloseIcon.astro';
     <div class="flex">
       <div class="hidden w-1/2 pl-4 lg:inline 2xl:pl-0">
         <span class="meta">Newsletter · co 2 tygodnie</span>
-        <h2
+        <div
           class="text-ink font-display mt-3 mb-2 text-4xl font-semibold tracking-[-0.03em] 2xl:text-5xl"
+          aria-label="Bądź pierwszy przy każdej zmianie w AI search"
         >
-          Bądź pierwszy<br />przy każdej zmianie<br />w AI search
-        </h2>
+          <span class="block">Bądź pierwszy</span>
+          <span class="block">przy każdej zmianie</span>
+          <span class="block">w AI search</span>
+        </div>
         <p class="text-ink-soft mt-4 leading-relaxed">
           Co 2 tygodnie dostajesz checklistę, definicję pojęcia GEO i jeden case z naszej praktyki.
           Bez sprzedaży, bez spamu.
@@ -41,12 +44,14 @@ import CloseIcon from '../assets/icons/CloseIcon.astro';
             widoczność<span class="text-accent">.ai</span>
           </div>
         </div>
-        <h3
+        <div
           class="text-ink font-display mb-5 text-center text-xl leading-snug font-semibold tracking-tight 2xl:mb-7 2xl:text-2xl"
           id="modal-title"
+          aria-label="Dołącz do specjalistów, którzy mierzą GEO konkretnie"
         >
-          Dołącz do specjalistów,<br />którzy mierzą GEO konkretnie
-        </h3>
+          <span class="block">Dołącz do specjalistów,</span>
+          <span class="block">którzy mierzą GEO konkretnie</span>
+        </div>
         <div class="-m-2 mt-4 flex flex-wrap lg:mt-0">
           <div class="mx-auto w-full p-2 sm:w-4/5">
             <label for="modal-email" class="sr-only">Adres e-mail</label>

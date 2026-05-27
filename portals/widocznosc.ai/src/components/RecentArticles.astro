@@ -1,9 +1,8 @@
 ---
 /**
  * RecentArticles / Knowledge Base – landing redesign 2026-05-09 (handoff).
- * Section-head editorial 5fr/4fr z right-aligned action pill.
- * 2-col grid 1.6fr/1fr: featured article (16:9 image + node-graph SVG overlay)
- * + 2 stacked side-cards. Featured + 2 most-recent z content collection blog.
+ * Compact 4-card knowledge grid. Every article gets a visual thumbnail,
+ * stable card dimensions and dense metadata for better use of the wider container.
  */
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
@@ -11,9 +10,7 @@ import { PILLAR_LABELS } from '../content.config';
 
 const posts = (await getCollection('blog'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, 3);
-
-const [featured, ...sidePosts] = posts;
+  .slice(0, 4);
 
 const formatDate = (date: Date) =>
   date.toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -46,139 +43,31 @@ const formatDate = (date: Date) =>
     {
       posts.length > 0 && (
         <div class="kb-grid">
-          {featured && (
-            <a href={`/${featured.id}`} class="kb-feature">
-              <div class="kb-feature-img">
-                <div class="kb-feature-graph" />
+          {posts.map((post) => (
+            <a href={`/${post.id}`} class="kb-card">
+              <div class="kb-card-img">
                 <Image
-                  src={featured.data.image}
-                  alt={featured.data.title}
-                  widths={[400, 800, 1200]}
-                  sizes="(min-width: 1024px) 60vw, 100vw"
+                  src={post.data.image}
+                  alt={post.data.title}
+                  widths={[320, 480, 640]}
+                  sizes="(min-width: 1180px) 23vw, (min-width: 700px) 45vw, 100vw"
                   loading="lazy"
-                  class="kb-feature-photo"
+                  class="kb-card-photo"
                 />
-                {/* Decorative SVG node-graph overlay */}
-                <svg
-                  class="kb-feature-svg"
-                  viewBox="0 0 800 450"
-                  preserveAspectRatio="xMidYMid slice"
-                  aria-hidden="true"
-                >
-                  <defs>
-                    <linearGradient id="kb-line-grad" x1="0" x2="1" y1="0" y2="1">
-                      <stop offset="0%" stop-color="#ff5a1a" stop-opacity="0.9" />
-                      <stop offset="100%" stop-color="#d633a0" stop-opacity="0.7" />
-                    </linearGradient>
-                  </defs>
-                  <line
-                    x1="120"
-                    y1="300"
-                    x2="240"
-                    y2="180"
-                    stroke="url(#kb-line-grad)"
-                    stroke-width="1.5"
-                    opacity="0.8"
-                  />
-                  <line
-                    x1="240"
-                    y1="180"
-                    x2="360"
-                    y2="260"
-                    stroke="url(#kb-line-grad)"
-                    stroke-width="1.5"
-                    opacity="0.8"
-                  />
-                  <line
-                    x1="360"
-                    y1="260"
-                    x2="480"
-                    y2="140"
-                    stroke="url(#kb-line-grad)"
-                    stroke-width="1.5"
-                    opacity="0.8"
-                  />
-                  <line
-                    x1="480"
-                    y1="140"
-                    x2="600"
-                    y2="220"
-                    stroke="url(#kb-line-grad)"
-                    stroke-width="1.5"
-                    opacity="0.8"
-                  />
-                  <line
-                    x1="600"
-                    y1="220"
-                    x2="700"
-                    y2="160"
-                    stroke="url(#kb-line-grad)"
-                    stroke-width="1.5"
-                    opacity="0.8"
-                  />
-                  <line
-                    x1="240"
-                    y1="180"
-                    x2="200"
-                    y2="90"
-                    stroke="url(#kb-line-grad)"
-                    stroke-width="1.5"
-                    opacity="0.8"
-                  />
-                  <line
-                    x1="360"
-                    y1="260"
-                    x2="400"
-                    y2="360"
-                    stroke="url(#kb-line-grad)"
-                    stroke-width="1.5"
-                    opacity="0.8"
-                  />
-                  <line
-                    x1="480"
-                    y1="140"
-                    x2="540"
-                    y2="60"
-                    stroke="url(#kb-line-grad)"
-                    stroke-width="1.5"
-                    opacity="0.8"
-                  />
-                  <circle cx="120" cy="300" r="5" fill="#ff8caa" opacity="0.95" />
-                  <circle cx="240" cy="180" r="7" fill="#ff8caa" opacity="0.95" />
-                  <circle cx="360" cy="260" r="5" fill="#ff8caa" opacity="0.95" />
-                  <circle cx="480" cy="140" r="8" fill="#ff8caa" opacity="0.95" />
-                  <circle cx="600" cy="220" r="6" fill="#ff8caa" opacity="0.95" />
-                  <circle cx="700" cy="160" r="5" fill="#ff8caa" opacity="0.95" />
-                  <circle cx="200" cy="90" r="4" fill="#ff8caa" opacity="0.95" />
-                  <circle cx="400" cy="360" r="4" fill="#ff8caa" opacity="0.95" />
-                  <circle cx="540" cy="60" r="4" fill="#ff8caa" opacity="0.95" />
-                </svg>
               </div>
-              <div class="kb-meta">
-                <span>{PILLAR_LABELS[featured.data.pillar]}</span>
-                <span class="dot">·</span>
-                <span>{featured.data.readTime}</span>
-                <span class="dot">·</span>
-                <span>{formatDate(featured.data.date)}</span>
-              </div>
-              <h3 class="kb-title">{featured.data.title}</h3>
-              {featured.data.subtitle && <p class="kb-excerpt">{featured.data.subtitle}</p>}
-            </a>
-          )}
-
-          <div class="kb-side">
-            {sidePosts.map((post) => (
-              <a href={`/${post.id}`} class="kb-item">
+              <div class="kb-card-body">
                 <div class="kb-meta">
                   <span>{PILLAR_LABELS[post.data.pillar]}</span>
                   <span class="dot">·</span>
                   <span>{post.data.readTime}</span>
+                  <span class="dot kb-date-dot">·</span>
+                  <span class="kb-date">{formatDate(post.data.date)}</span>
                 </div>
-                <h3 class="kb-item-title">{post.data.title}</h3>
+                <h3 class="kb-card-title">{post.data.title}</h3>
                 {post.data.subtitle && <p class="kb-excerpt">{post.data.subtitle}</p>}
-              </a>
-            ))}
-          </div>
+              </div>
+            </a>
+          ))}
         </div>
       )
     }
@@ -187,14 +76,14 @@ const formatDate = (date: Date) =>
 
 <style>
   .kb-section {
-    padding: 96px 0;
+    padding: 80px 0;
     background: var(--bg-canvas);
     border-top: 1px solid var(--hairline-soft);
   }
 
   @media (min-width: 980px) {
     .kb-section {
-      padding: 120px 0;
+      padding: 104px 0;
     }
   }
 
@@ -205,79 +94,90 @@ const formatDate = (date: Date) =>
   .kb-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 18px;
+  }
+
+  @media (min-width: 700px) {
+    .kb-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
   @media (min-width: 980px) {
     .kb-grid {
-      grid-template-columns: 1.6fr 1fr;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
 
-  /* Featured article */
-  .kb-feature {
+  .kb-card {
     background: var(--bg-surface-1);
     border: 1px solid var(--hairline-soft);
     border-radius: var(--r-xl);
-    padding: 24px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
     text-decoration: none;
     transition:
+      transform 0.2s ease,
       background 0.2s ease,
       border-color 0.2s ease;
     position: relative;
     overflow: hidden;
+    min-height: 100%;
   }
 
-  .kb-feature:hover {
+  .kb-card:hover {
+    transform: translateY(-2px);
     background: var(--bg-surface-2);
     border-color: var(--hairline);
   }
 
-  .kb-feature-img {
-    aspect-ratio: 16 / 9;
-    border-radius: var(--r-md);
-    background:
-      radial-gradient(circle at 30% 50%, rgba(255, 90, 26, 0.4) 0%, transparent 40%),
-      radial-gradient(circle at 70% 50%, rgba(217, 51, 160, 0.3) 0%, transparent 45%),
-      var(--bg-surface-2);
+  .kb-card-img {
+    aspect-ratio: 4 / 3;
+    background: var(--bg-surface-2);
+    border-bottom: 1px solid var(--hairline-soft);
     position: relative;
     overflow: hidden;
   }
 
-  .kb-feature-photo {
+  .kb-card-img::after {
     position: absolute;
     inset: 0;
+    content: '';
+    background:
+      linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.18) 100%),
+      linear-gradient(90deg, rgba(0, 153, 255, 0.12), transparent 55%);
+    pointer-events: none;
+  }
+
+  :root[data-theme='light'] .kb-card-img::after {
+    background:
+      linear-gradient(180deg, transparent 45%, rgba(5, 18, 32, 0.08) 100%),
+      linear-gradient(90deg, rgba(0, 104, 204, 0.08), transparent 55%);
+  }
+
+  .kb-card-photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.65;
-    mix-blend-mode: luminosity;
+    display: block;
+    transition: transform 0.35s ease;
   }
 
-  .kb-feature-graph {
-    position: absolute;
-    inset: 0;
-    background-image:
-      linear-gradient(var(--hairline-soft) 1px, transparent 1px),
-      linear-gradient(90deg, var(--hairline-soft) 1px, transparent 1px);
-    background-size: 28px 28px;
-    background-position: -1px -1px;
-    pointer-events: none;
+  .kb-card:hover .kb-card-photo {
+    transform: scale(1.035);
   }
 
-  .kb-feature-svg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
+  .kb-card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px;
   }
 
   .kb-meta {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     font-family: ui-monospace, 'JetBrains Mono', monospace;
     font-size: 11px;
@@ -290,12 +190,12 @@ const formatDate = (date: Date) =>
     color: var(--ink-faint);
   }
 
-  .kb-title {
+  .kb-card-title {
     font-family: var(--font-display);
-    font-size: clamp(20px, 2vw, 26px);
+    font-size: clamp(18px, 1.45vw, 21px);
     font-weight: 500;
-    letter-spacing: -0.03em;
-    line-height: 1.18;
+    letter-spacing: -0.025em;
+    line-height: 1.16;
     color: var(--ink);
     margin: 0;
     text-wrap: balance;
@@ -307,44 +207,22 @@ const formatDate = (date: Date) =>
     color: var(--ink-muted);
     line-height: 1.5;
     margin: 0;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
   }
 
-  /* Side stacked cards */
-  .kb-side {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  @media (max-width: 1179px) {
+    .kb-date,
+    .kb-date-dot {
+      display: none;
+    }
   }
 
-  .kb-item {
-    background: var(--bg-surface-1);
-    border: 1px solid var(--hairline-soft);
-    border-radius: var(--r-xl);
-    padding: 22px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    flex: 1;
-    min-height: 0;
-    text-decoration: none;
-    transition:
-      background 0.2s ease,
-      border-color 0.2s ease;
-  }
-
-  .kb-item:hover {
-    background: var(--bg-surface-2);
-    border-color: var(--hairline);
-  }
-
-  .kb-item-title {
-    font-family: var(--font-display);
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: -0.025em;
-    line-height: 1.2;
-    color: var(--ink);
-    margin: 0;
-    text-wrap: balance;
+  @media (max-width: 699px) {
+    .kb-card-img {
+      aspect-ratio: 16 / 9;
+    }
   }
 </style>
