@@ -1,5 +1,5 @@
 ---
-name: Anna Jelonek
+name: Anna Jelonek-Wrzesińska
 role: Head of International SEO & AI Search
 company: ICEA
 shortBio: Łączy strategię International SEO z optymalizacją widoczności w AI Search. Pomaga markom budować spójny autorytet na wielu rynkach.
