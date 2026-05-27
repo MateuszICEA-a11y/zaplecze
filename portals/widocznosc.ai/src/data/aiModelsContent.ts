@@ -285,17 +285,17 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
 
   'bing-copilot': {
     heroSubtitle:
-      'Microsoft Copilot wbudowany w&nbsp;przeglądarkę Edge, Windows 11 i&nbsp;pakiet Microsoft 365 – domyślny asystent AI dla setek milionów użytkowników biznesowych. Korzysta z&nbsp;indeksu wyszukiwarki Bing oraz zaawansowanych modeli z&nbsp;rodziny GPT-5, przełączając się między szybkimi odpowiedziami a&nbsp;głębszym rozumowaniem dla złożonych zapytań. W&nbsp;Bing Webmaster Tools Microsoft udostępnił panel AI Performance, który pokazuje, jak często AI cytuje Twoją stronę.',
+      'Microsoft Copilot wbudowany w&nbsp;przeglądarkę Edge, Windows 11 i&nbsp;pakiet Microsoft 365 – domyślny asystent dla setek milionów użytkowników biznesowych. Korzysta z&nbsp;indeksu wyszukiwarki Bing oraz modeli z&nbsp;rodziny GPT-5, dobierając szybszy lub głębszy tryb odpowiedzi do złożoności pytania. W&nbsp;Bing Webmaster Tools Microsoft udostępnił panel AI Performance, który pokazuje, jak często Copilot i&nbsp;generatywne odpowiedzi Binga cytują Twoją stronę.',
     metaDescription:
       'Pozycjonowanie marki w Microsoft Copilot. Audyt cytowań w Copilot dla Edge, Windows i M365. Optymalizacja pod indeks Bing, IndexNow, Schema.org i panel AI Performance. Widoczność w AI dla sektora B2B.',
     howItWorks: [
       {
         title: 'Indeks Bing + mechanizm RAG',
-        desc: 'Copilot działa w&nbsp;oparciu o&nbsp;architekturę RAG zasilaną indeksem wyszukiwarki Bing. Gdy użytkownik zadaje pytanie, system generuje zapytania pomocnicze (tzw. grounding queries), pobiera dokumenty z&nbsp;top 20 wyników organicznych Bing, dzieli je na mniejsze fragmenty i&nbsp;syntetyzuje odpowiedź. <strong>Korelacja między pozycją w&nbsp;Bing a&nbsp;cytowaniem w&nbsp;Copilot jest bardzo silna – widoczność w&nbsp;tradycyjnych wynikach wyszukiwania to bilet wstępu do odpowiedzi AI.</strong>',
+        desc: 'Copilot opiera odpowiedzi na architekturze RAG zasilanej indeksem wyszukiwarki Bing. Dla pytania użytkownika generuje zapytania pomocnicze (tzw. grounding queries), pobiera dokumenty z&nbsp;wyników Bing, dzieli je na krótkie fragmenty i&nbsp;dopiero z&nbsp;nich składa odpowiedź. <strong>Silna widoczność w&nbsp;Bing zwiększa szansę wejścia do puli źródeł, z&nbsp;których Copilot buduje finalną odpowiedź.</strong>',
       },
       {
         title: 'Modele GPT-5 i router rozumowania',
-        desc: 'Copilot działa obecnie na nowszej generacji modeli OpenAI, z&nbsp;routerem dobierającym tryb odpowiedzi do zadania: szybkie generowanie dla codziennych pytań oraz głębsze rozumowanie dla złożonych analiz. Mechanika cytowania pozostaje powiązana z&nbsp;wyszukiwaniem: Copilot korzysta z&nbsp;indeksu Bing, generuje zapytania pomocnicze i&nbsp;wybiera źródła, które najlepiej uzasadniają odpowiedź.',
+        desc: 'Copilot korzysta z&nbsp;nowszej generacji modeli OpenAI i&nbsp;mechanizmu routingu: prostsze pytania obsługuje szybciej, a&nbsp;złożone kieruje do głębszego rozumowania. Cytowania wynikają z&nbsp;procesu ugruntowania odpowiedzi w&nbsp;źródłach: Bing wskazuje kandydatów, a&nbsp;model wybiera fragmenty, które najlepiej podpierają finalną syntezę.',
       },
       {
         title: 'Natywna integracja z ekosystemem Microsoft',
@@ -303,21 +303,21 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
       },
       {
         title: 'Panel AI Performance w Bing Webmaster Tools',
-        desc: 'Microsoft udostępnił dedykowane narzędzie analityczne dla widoczności AI: panel AI Performance w&nbsp;Bing Webmaster Tools agreguje dane o&nbsp;cytowaniach z&nbsp;Microsoft Copilot, odpowiedzi generowanych przez AI w&nbsp;Bing oraz wybranych integracji partnerskich. Pokazuje całkowitą liczbę cytowań, najczęściej wybierane podstrony i&nbsp;zapytania pomocnicze (Grounding Queries). Dzięki temu wiesz, na jakie pytania AI odpowiada, korzystając z&nbsp;Twoich tekstów.',
+        desc: 'Microsoft udostępnił dedykowane narzędzie analityczne dla generatywnych odpowiedzi: panel AI Performance w&nbsp;Bing Webmaster Tools agreguje dane o&nbsp;cytowaniach z&nbsp;Microsoft Copilot, odpowiedzi Binga oraz wybranych integracji partnerskich. Pokazuje całkowitą liczbę cytowań, najczęściej wybierane podstrony i&nbsp;zapytania pomocnicze (Grounding Queries). Dzięki temu wiesz, przy jakich tematach Twoje teksty stają się źródłem odpowiedzi.',
       },
     ],
     optimization: [
       {
         title: 'Bing Webmaster Tools + protokół IndexNow',
-        desc: 'Rejestrujemy domenę, przesyłamy mapę strony (sitemap XML) i&nbsp;wdrażamy IndexNow. To protokół natychmiastowych powiadomień o&nbsp;zmianach na stronie. Dzięki temu, gdy opublikujesz nowy artykuł lub ofertę, sztuczna inteligencja dowiaduje się o&nbsp;tym w&nbsp;ciągu kilku minut, a&nbsp;nie dni. Konfigurujemy ten system w&nbsp;ramach audytu technicznego.',
+        desc: 'Rejestrujemy domenę, przesyłamy mapę strony (sitemap XML) i&nbsp;wdrażamy IndexNow. To protokół natychmiastowych powiadomień o&nbsp;zmianach na stronie. Dzięki temu Bing szybciej wykrywa nowy artykuł, ofertę lub aktualizację treści, a&nbsp;Copilot może szybciej uwzględnić świeże źródło w&nbsp;procesie generowania odpowiedzi. Konfigurujemy ten system w&nbsp;ramach audytu technicznego.',
       },
       {
         title: 'Zwięzłe bloki odpowiedzi i błyskawiczne ładowanie',
-        desc: 'Dostosowujemy teksty do wytycznych Microsoftu, tworząc tzw. answer capsules (zwięzłe odpowiedzi na 40-80 słów) bezpośrednio pod głównymi nagłówkami. Treść musi być gotowa od razu (renderowanie po stronie serwera). Jeśli Twój tekst ładuje się z&nbsp;opóźnieniem przez skrypty JavaScript, sztuczna inteligencja go zignoruje, bo nie ma czasu na czekanie. Czas odpowiedzi serwera (TTFB) powyżej 1 sekundy drastycznie zmniejsza szanse na pobranie strony przez AI.',
+        desc: 'Dostosowujemy teksty do wytycznych Microsoftu, tworząc tzw. answer capsules (zwięzłe odpowiedzi na 40-80 słów) bezpośrednio pod głównymi nagłówkami. Treść musi być dostępna od razu, najlepiej przez renderowanie po stronie serwera. Jeśli kluczowy fragment pojawia się dopiero po wykonaniu skryptów JavaScript, crawler może go nie pobrać. Czas odpowiedzi serwera (TTFB) powyżej 1 sekundy wyraźnie zmniejsza szanse na wykorzystanie strony jako źródła.',
       },
       {
         title: 'Dane strukturalne Schema.org (Article, FAQ, HowTo, Product)',
-        desc: 'Wyszukiwarka Bing mocno korzysta ze znaczników strukturalnych przy wyborze źródeł do syntezy. Wdrażamy odpowiedni kod (np. FAQPage lub Product). Dzięki temu sztuczna inteligencja od razu "rozumie", że ma do czynienia z&nbsp;ofertą sklepu, instrukcją lub odpowiedzią eksperta, co bezpośrednio zwiększa szansę na cytowanie Twojej domeny.',
+        desc: 'Wyszukiwarka Bing mocno korzysta ze znaczników strukturalnych przy wyborze źródeł do syntezy. Wdrażamy odpowiedni kod (np. FAQPage lub Product), aby jasno opisać typ treści: ofertę sklepu, instrukcję, artykuł ekspercki albo odpowiedź na konkretne pytanie. Im mniej niejednoznaczności w&nbsp;kodzie i&nbsp;strukturze strony, tym większa szansa na poprawne zacytowanie domeny.',
       },
       {
         title: 'Bing Places + spójność danych teleadresowych (NAP)',
@@ -325,7 +325,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
       },
     ],
     signals: [
-      'Pozycja top 20 w&nbsp;Bing Search (warunek wejścia do puli stron pobieranych przez AI)',
+      'Pozycja top 20 w&nbsp;Bing Search (warunek wejścia do puli źródeł pobieranych przez Copilota)',
       'Czas odpowiedzi serwera (TTFB) poniżej 1 sekundy oraz renderowanie po stronie serwera (SSR)',
       'Wdrożony IndexNow – szybka indeksacja po aktualizacjach',
       'Ustrukturyzowane dane Schema.org (Article, FAQ, HowTo, Product)',
@@ -343,11 +343,11 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
       },
       {
         q: 'Bing SEO vs Google SEO – co jest inne?',
-        a: 'Algorytmy Bing mocniej premiują: słowa kluczowe w&nbsp;dokładnym dopasowaniu (w&nbsp;tytułach i&nbsp;nagłówkach), dane strukturalne Schema.org oraz sygnały z&nbsp;mediów społecznościowych (np. LinkedIn w&nbsp;sektorze B2B). Z&nbsp;kolei Google bardziej skupia się na profilu linków i&nbsp;doświadczeniu użytkownika. Co ważne, optymalizacja pod Bing synergicznie wspiera widoczność w&nbsp;wyszukiwarce ChatGPT Search, która korzysta z&nbsp;tego samego indeksu.',
+        a: 'Algorytmy Bing mocniej premiują: słowa kluczowe w&nbsp;dokładnym dopasowaniu (w&nbsp;tytułach i&nbsp;nagłówkach), dane strukturalne Schema.org oraz sygnały z&nbsp;mediów społecznościowych (np. LinkedIn w&nbsp;sektorze B2B). Z&nbsp;kolei Google silniej opiera ocenę na profilu linków, sygnałach jakości i&nbsp;doświadczeniu użytkownika. Dlatego w&nbsp;audytach Copilota osobno sprawdzamy indeksację w&nbsp;Bing, strukturę treści i&nbsp;zewnętrzne potwierdzenia wiarygodności marki.',
       },
       {
         q: 'Jak mierzycie efekty dla Copilot?',
-        a: 'Podstawą jest panel AI Performance w&nbsp;narzędziach Bing – sprawdzamy całkowitą liczbę cytowań oraz konkretne zapytania użytkowników (Grounding Queries). Uzupełniamy to monitoringiem logów serwera i&nbsp;badaniem udziału marki w&nbsp;odpowiedziach AI (Share of Model). Co miesiąc dostarczamy raport z&nbsp;wynikami i&nbsp;planem na kolejne 30 dni.',
+        a: 'Podstawą jest panel AI Performance w&nbsp;narzędziach Bing – sprawdzamy całkowitą liczbę cytowań oraz konkretne zapytania użytkowników (Grounding Queries). Uzupełniamy to monitoringiem logów serwera i&nbsp;badaniem udziału marki w&nbsp;odpowiedziach Copilota (Share of Model). Co miesiąc dostarczamy raport z&nbsp;wynikami i&nbsp;planem na kolejne 30 dni.',
       },
     ],
   },
