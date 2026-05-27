@@ -8,9 +8,13 @@ import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import { PILLAR_LABELS } from '../content.config';
 
-const posts = (await getCollection('blog'))
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, 4);
+const allPosts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+const homepagePillars = ['geo', 'modele-llm', 'ai-w-biznesie', 'rag'] as const;
+const posts = homepagePillars
+  .map((pillar) => allPosts.find((post) => post.data.pillar === pillar))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
 
 const formatDate = (date: Date) =>
   date.toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -44,7 +48,7 @@ const formatDate = (date: Date) =>
       posts.length > 0 && (
         <div class="kb-grid">
           {posts.map((post) => (
-            <a href={`/${post.id}`} class="kb-card">
+            <a href={`/${post.id}`} class="kb-card" data-category={post.data.pillar}>
               <div class="kb-card-img">
                 <Image
                   src={post.data.image}
@@ -126,28 +130,44 @@ const formatDate = (date: Date) =>
     min-height: 100%;
   }
 
-  .kb-card:nth-child(2) {
+  .kb-card[data-category='agenci-ai'] {
+    --kb-accent: #22d3ee;
+  }
+
+  .kb-card[data-category='ai-w-biznesie'] {
     --kb-accent: #4ade80;
   }
 
-  .kb-card:nth-child(3) {
-    --kb-accent: #fbbf24;
-  }
-
-  .kb-card:nth-child(4) {
+  .kb-card[data-category='modele-llm'] {
     --kb-accent: #a78bfa;
   }
 
-  :global(:root[data-theme='light']) .kb-card:nth-child(2) {
+  .kb-card[data-category='prompty'] {
+    --kb-accent: #f472b6;
+  }
+
+  .kb-card[data-category='rag'] {
+    --kb-accent: #fbbf24;
+  }
+
+  :global(:root[data-theme='light']) .kb-card[data-category='agenci-ai'] {
+    --kb-accent: #0891b2;
+  }
+
+  :global(:root[data-theme='light']) .kb-card[data-category='ai-w-biznesie'] {
     --kb-accent: #16a34a;
   }
 
-  :global(:root[data-theme='light']) .kb-card:nth-child(3) {
-    --kb-accent: #d97706;
+  :global(:root[data-theme='light']) .kb-card[data-category='modele-llm'] {
+    --kb-accent: #7c3aed;
   }
 
-  :global(:root[data-theme='light']) .kb-card:nth-child(4) {
-    --kb-accent: #7c3aed;
+  :global(:root[data-theme='light']) .kb-card[data-category='prompty'] {
+    --kb-accent: #db2777;
+  }
+
+  :global(:root[data-theme='light']) .kb-card[data-category='rag'] {
+    --kb-accent: #d97706;
   }
 
   .kb-card:hover {

@@ -2,7 +2,7 @@
 title: 'Query fan-out w Google AI Mode – jak jeden prompt rozkłada się na 30 zapytań'
 subtitle: 'Mechanizm, dzięki któremu Google AI Mode rozumie złożone pytania – i co to znaczy dla pozycjonowania w 2026'
 description: 'Czym jest query fan-out, jak Google AI Mode dekomponuje pojedyncze pytanie na dziesiątki podzapytań, dlaczego klasyczne SEO już tu nie wystarcza i jak optymalizować content pod nową logikę pobierania danych.'
-date: 2026-05-07
+date: 2026-05-14
 image: ../../../assets/images/blog-geo-query-fan-out.png
 icon: '<circle cx="5" cy="5" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="19" cy="12" r="2.5"/><circle cx="19" cy="19" r="2.5"/><line x1="7.5" y1="5.5" x2="16.5" y2="5.5"/><line x1="6.5" y1="6.5" x2="16.5" y2="11.5"/><line x1="6.5" y1="6.5" x2="16.5" y2="18"/>'
 author:

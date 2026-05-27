@@ -2,7 +2,7 @@
 title: 'Claude vs Gemini – który model jest lepszy do pracy'
 subtitle: 'Konkretne werdykty dla pięciu scenariuszy zawodowych, żebyś przestał zgadywać i zaczął wybierać świadomie'
 description: 'Claude czy Gemini? Porównanie modeli AI dla pracy: dokumenty, kod, długi kontekst, ekosystem Google, ceny. Werdykt dla poszczególnych zastosowań.'
-date: 2026-05-25
+date: 2026-05-07
 image: ../../../assets/images/blog-modele-llm-claude-vs-gemini.png
 icon: '<path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 0 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 0-2-2V9m0 0h18"/>'
 author:

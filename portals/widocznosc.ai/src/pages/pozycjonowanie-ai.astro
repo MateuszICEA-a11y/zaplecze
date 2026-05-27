@@ -459,14 +459,15 @@ const serviceSchema = {
     border-top: 1px solid var(--hairline-soft);
     border-bottom: 1px solid var(--hairline-soft);
     background: var(--bg-canvas);
+    padding: 32px 0;
   }
 
   .hero-stat-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0;
+    gap: 14px;
     margin: 0;
-    padding: 28px 0;
+    padding: 0;
   }
 
   .hero-stat-cell {
@@ -478,8 +479,9 @@ const serviceSchema = {
         transparent 36%
       ),
       var(--bg-surface-1);
-    border-right: 1px solid var(--hairline-soft);
-    padding: 0 18px;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-xl);
+    padding: 22px 24px;
   }
 
   .hero-stat-cell:nth-child(2) {
@@ -504,20 +506,6 @@ const serviceSchema = {
 
   :global(:root[data-theme='light']) .hero-stat-cell:nth-child(4) {
     --stat-accent: #7c3aed;
-  }
-
-  .hero-stat-cell:nth-child(2n) {
-    border-right: 0;
-  }
-
-  .hero-stat-cell:nth-child(n + 3) {
-    border-top: 1px solid var(--hairline-soft);
-    padding-top: 18px;
-    margin-top: 18px;
-  }
-
-  .hero-stat-cell:first-child {
-    padding-left: 0;
   }
 
   .hero-stat-cell dt {
@@ -706,27 +694,14 @@ const serviceSchema = {
 
     .hero-stat-grid {
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      padding: 36px 0;
+      gap: 16px;
+      padding: 0;
     }
 
     .hero-stat-cell {
-      padding: 0 28px;
+      padding: 24px 28px;
     }
 
-    .hero-stat-cell:nth-child(2n) {
-      border-right: 1px solid var(--hairline-soft);
-    }
-
-    .hero-stat-cell:nth-child(n + 3) {
-      border-top: 0;
-      margin-top: 0;
-      padding-top: 0;
-    }
-
-    .hero-stat-cell:last-child {
-      border-right: 0;
-      padding-right: 0;
-    }
   }
 
   @media (max-width: 767px) {

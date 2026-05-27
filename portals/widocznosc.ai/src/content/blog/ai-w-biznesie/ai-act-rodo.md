@@ -2,7 +2,7 @@
 title: 'AI Act i RODO – co musisz wiedzieć przed wdrożeniem'
 subtitle: 'Zanim uruchomisz AI w firmie, poznaj dwie regulacje, które decydują o zgodności i odpowiedzialności prawnej.'
 description: 'AI Act i RODO nakładają się wzajemnie. Dowiedz się, jak działają razem, jakie role obowiązują Twoją firmę i co sprawdzić przed wdrożeniem.'
-date: 2026-05-25
+date: 2026-05-19
 image: ../../../assets/images/blog-ai-w-biznesie-ai-act-rodo.png
 icon: '<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>'
 author:

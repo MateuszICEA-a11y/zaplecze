@@ -2,7 +2,7 @@
 title: 'Mierzenie ROI w GEO – KPI, metryki i raportowanie'
 subtitle: 'Naucz się udowadniać wartość GEO liczbami, zanim klient sam zacznie pytać'
 description: 'Jak mierzyć ROI z działań GEO? Poznaj kluczowe KPI, metryki cytowań i sprawdzone wzorce raportowania wyników AI Search do klienta i zarządu.'
-date: 2026-05-25
+date: 2026-05-11
 image: ../../../assets/images/blog-geo-roi-z-geo.png
 icon: '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>'
 author:

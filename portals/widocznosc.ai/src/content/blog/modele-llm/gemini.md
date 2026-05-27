@@ -2,7 +2,7 @@
 title: 'Gemini od Google – kompletny przewodnik'
 subtitle: 'Zrozum cały ekosystem Google AI – od modeli po Workspace – żeby skutecznie budować widoczność marki tam, gdzie szukają Twoi klienci'
 description: 'Czym jest Gemini, jak działają modele Flash i Pro, co oferuje Google AI Studio, Gems, Deep Research i NotebookLM – kompletny przewodnik po ekosystemie Google AI.'
-date: 2026-05-25
+date: 2026-05-11
 image: ../../../assets/images/blog-modele-llm-gemini.png
 icon: '<path d="M12 2 L14.5 9.5 L22 12 L14.5 14.5 L12 22 L9.5 14.5 L2 12 L9.5 9.5 Z" stroke-linecap="round" stroke-linejoin="round"/>'
 author:

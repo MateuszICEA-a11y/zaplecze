@@ -2,7 +2,7 @@
 title: 'Share of Voice zamiast rankingu – jak naprawdę mierzyć widoczność marki w AI'
 subtitle: 'Dlaczego klasyczne śledzenie pozycji nie działa w ChatGPT, Claude i Perplexity – i co je zastępuje'
 description: 'Badanie SparkToro pokazało, że odpowiedzi LLM mają mniej niż 1% powtarzalności. Mierzenie pozycji w AI nie ma sensu. Co zamiast tego: Share of Voice, Citation Rate, Mention Rate – metryki, które naprawdę pokazują, jak Twoja marka radzi sobie w erze wyszukiwarek AI.'
-date: 2026-05-07
+date: 2026-05-05
 image: ../../../assets/images/blog-geo-share-of-voice.png
 icon: '<rect x="3" y="14" width="3" height="7" rx="1"/><rect x="9" y="9" width="3" height="12" rx="1"/><rect x="15" y="4" width="3" height="17" rx="1"/><rect x="20.5" y="11" width="2" height="10" rx="1"/>'
 author:

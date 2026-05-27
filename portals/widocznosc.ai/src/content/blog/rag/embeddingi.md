@@ -2,7 +2,7 @@
 title: 'Embeddingi – jak komputery rozumieją znaczenie tekstu'
 subtitle: 'Zrozum, dlaczego dwa dokumenty o tym samym temacie mogą leżeć blisko siebie w przestrzeni wektorowej – i jak to decyduje o tym, czy LLM zacytuje Twoją stronę'
 description: 'Czym są embeddingi (wektory osadzone) i jak systemy RAG wykorzystują je do wyszukiwania treści. Praktyczne wyjaśnienie dla marketerów i specjalistów SEO.'
-date: 2026-05-25
+date: 2026-05-14
 image: ../../../assets/images/blog-rag-embeddingi.png
 icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2 L12 6"/><path d="M12 18 L12 22"/><path d="M4.22 4.22 L7.05 7.05"/><path d="M16.95 16.95 L19.78 19.78"/><path d="M2 12 L6 12"/><path d="M18 12 L22 12"/><path d="M4.22 19.78 L7.05 16.95"/><path d="M16.95 7.05 L19.78 4.22"/>'
 author:

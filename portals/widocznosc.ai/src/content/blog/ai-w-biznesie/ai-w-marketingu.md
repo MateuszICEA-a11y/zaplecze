@@ -2,7 +2,7 @@
 title: 'AI w marketingu – praktyczne zastosowania'
 subtitle: 'Odkryj, jak silniki rekomendacyjne, analiza sentymentu i dynamiczne ceny generują mierzalne wyniki – zanim Twoja konkurencja to wdroży'
 description: 'AI w marketingu to nie tylko generowanie tekstu. Dowiedz się, jak rekomendacje, wizja komputerowa i programmatic buying realnie podnoszą wyniki sprzedaży.'
-date: 2026-05-25
+date: 2026-05-10
 image: ../../../assets/images/blog-ai-w-biznesie-ai-w-marketingu.png
 icon: '<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>'
 author:

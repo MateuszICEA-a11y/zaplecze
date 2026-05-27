@@ -2,7 +2,7 @@
 title: 'Czym jest GEO i czym różni się od SEO'
 subtitle: 'Zrozum, dlaczego widoczność w ChatGPT i Perplexity działa inaczej niż pozycja w Google – i co zrobić, żeby Twoja marka się tam znalazła'
 description: 'GEO (Generative Engine Optimization) to optymalizacja pod kątem wyszukiwarek AI. Sprawdź, czym różni się od SEO, co mówi badanie Princeton KDD 2024 i od czego zacząć.'
-date: 2026-05-25
+date: 2026-05-17
 image: ../../../assets/images/blog-geo-czym-jest-geo.png
 icon: '<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>'
 author:

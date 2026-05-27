@@ -2,7 +2,7 @@
 title: 'Agenci AI – czym są, jak działają, do czego służą'
 subtitle: 'Zrozum, jak autonomiczne systemy AI planują, korzystają z narzędzi i realizują wieloetapowe zadania – zanim wdrożysz je w swojej organizacji'
 description: 'Agenci AI – definicja, architektura, typy, frameworki i zastosowania biznesowe. Kompletny przewodnik dla marketerów i liderów technologicznych.'
-date: 2026-05-25
+date: 2026-05-23
 image: ../../../assets/images/blog-agenci-ai-przewodnik.png
 icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12"/>'
 author:

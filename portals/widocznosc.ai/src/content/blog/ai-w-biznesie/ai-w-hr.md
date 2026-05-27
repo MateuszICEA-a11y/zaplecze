@@ -2,7 +2,7 @@
 title: 'AI w HR – rekrutacja, onboarding, analityka pracownicza'
 subtitle: 'Skróć czas zatrudnienia o połowę i ogranicz rotację – zanim zgłosi się inspekcja pracy'
 description: 'AI w HR: screening CV, sourcing kandydatów, onboarding, analityka odejść. Obowiązki AI Act (wysokie ryzyko) i RODO. Narzędzia, dane, ryzyka 2025–2026.'
-date: 2026-05-25
+date: 2026-05-15
 image: ../../../assets/images/blog-ai-w-biznesie-ai-w-hr.png
 icon: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'
 author:

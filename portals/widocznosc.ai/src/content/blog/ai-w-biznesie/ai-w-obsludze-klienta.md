@@ -2,7 +2,7 @@
 title: 'AI w obsłudze klienta – chatboty nowej generacji'
 subtitle: 'Jak nowoczesne systemy konwersacyjne redukują czas obsługi o 80% i zwiększają satysfakcję klientów'
 description: 'Chatboty AI nowej generacji – architektura RAG, autonomiczni agenci, studia przypadków Klarna i PKO BP. Praktyczny przewodnik dla firm wdrażających AI w obsłudze klienta.'
-date: 2026-05-25
+date: 2026-05-06
 image: ../../../assets/images/blog-ai-w-biznesie-ai-w-obsludze-klienta.png
 icon: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="9" cy="10" r="1"/><circle cx="12" cy="10" r="1"/><circle cx="15" cy="10" r="1"/>'
 author:

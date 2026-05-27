@@ -2,7 +2,7 @@
 title: 'Bezpieczeństwo danych w pracy z LLM'
 subtitle: 'Jak chronić dane firmowe, gdy korzystasz z ChatGPT, Claude i podobnych narzędzi'
 description: 'Shadow AI, wycieki danych, retencja promptów, umowy DPA i wybór między chmurą a wdrożeniem lokalnym – kompletny przewodnik bezpieczeństwa LLM dla firm.'
-date: 2026-05-25
+date: 2026-05-18
 image: ../../../assets/images/blog-ai-w-biznesie-bezpieczenstwo-danych-llm.png
 icon: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>'
 author:

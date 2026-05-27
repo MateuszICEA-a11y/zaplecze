@@ -2,7 +2,7 @@
 title: 'Claude vs ChatGPT do programowania'
 subtitle: 'Który model wybierze doświadczony developer – i kiedy ta odpowiedź nie jest oczywista'
 description: 'Claude vs ChatGPT do programowania: SWE-bench, Claude Code vs Codex, ceny API, agentowe przepływy pracy. Techniczne porównanie dla developerów z konkretnymi werdyktami.'
-date: 2026-05-25
+date: 2026-05-10
 image: ../../../assets/images/blog-modele-llm-claude-vs-chatgpt-programowanie.png
 icon: '<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="12" y1="2" x2="12" y2="22" opacity="0.4"/>'
 author:

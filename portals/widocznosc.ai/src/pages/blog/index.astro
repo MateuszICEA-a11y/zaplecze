@@ -85,7 +85,11 @@ const formatDate = (date: Date) =>
       featuredPost && (
         <section class="blog-featured-section">
           <div class="blog-featured-container">
-            <a href={`/${featuredPost.id}`} class="blog-featured">
+            <a
+              href={`/${featuredPost.id}`}
+              class="blog-featured"
+              data-category={featuredPost.data.pillar}
+            >
               <div class="blog-featured-image">
                 <Image
                   src={featuredPost.data.image}
@@ -128,7 +132,7 @@ const formatDate = (date: Date) =>
               </div>
               <div class="blog-starter-grid">
                 {starterPosts.map((post) => (
-                  <a class="blog-starter-card" href={`/${post.id}`}>
+                  <a class="blog-starter-card" href={`/${post.id}`} data-category={post.data.pillar}>
                     <span class="eyebrow">{PILLAR_LABELS[post.data.pillar]}</span>
                     <strong>{post.data.title}</strong>
                   </a>
@@ -360,6 +364,46 @@ const formatDate = (date: Date) =>
     transition: background 0.2s ease;
   }
 
+  .blog-featured[data-category='agenci-ai'] {
+    --blog-accent: #22d3ee;
+  }
+
+  .blog-featured[data-category='ai-w-biznesie'] {
+    --blog-accent: #4ade80;
+  }
+
+  .blog-featured[data-category='modele-llm'] {
+    --blog-accent: #a78bfa;
+  }
+
+  .blog-featured[data-category='prompty'] {
+    --blog-accent: #f472b6;
+  }
+
+  .blog-featured[data-category='rag'] {
+    --blog-accent: #fbbf24;
+  }
+
+  :global(:root[data-theme='light']) .blog-featured[data-category='agenci-ai'] {
+    --blog-accent: #0891b2;
+  }
+
+  :global(:root[data-theme='light']) .blog-featured[data-category='ai-w-biznesie'] {
+    --blog-accent: #16a34a;
+  }
+
+  :global(:root[data-theme='light']) .blog-featured[data-category='modele-llm'] {
+    --blog-accent: #7c3aed;
+  }
+
+  :global(:root[data-theme='light']) .blog-featured[data-category='prompty'] {
+    --blog-accent: #db2777;
+  }
+
+  :global(:root[data-theme='light']) .blog-featured[data-category='rag'] {
+    --blog-accent: #d97706;
+  }
+
   .blog-featured:hover {
     background: var(--bg-surface-2);
   }
@@ -536,20 +580,44 @@ const formatDate = (date: Date) =>
     background: var(--bg-surface-2);
   }
 
-  .blog-starter-card:nth-child(2) {
+  .blog-starter-card[data-category='agenci-ai'] {
+    --starter-card-accent: #22d3ee;
+  }
+
+  .blog-starter-card[data-category='ai-w-biznesie'] {
     --starter-card-accent: #4ade80;
   }
 
-  .blog-starter-card:nth-child(3) {
+  .blog-starter-card[data-category='modele-llm'] {
     --starter-card-accent: #a78bfa;
   }
 
-  :global(:root[data-theme='light']) .blog-starter-card:nth-child(2) {
+  .blog-starter-card[data-category='prompty'] {
+    --starter-card-accent: #f472b6;
+  }
+
+  .blog-starter-card[data-category='rag'] {
+    --starter-card-accent: #fbbf24;
+  }
+
+  :global(:root[data-theme='light']) .blog-starter-card[data-category='agenci-ai'] {
+    --starter-card-accent: #0891b2;
+  }
+
+  :global(:root[data-theme='light']) .blog-starter-card[data-category='ai-w-biznesie'] {
     --starter-card-accent: #16a34a;
   }
 
-  :global(:root[data-theme='light']) .blog-starter-card:nth-child(3) {
+  :global(:root[data-theme='light']) .blog-starter-card[data-category='modele-llm'] {
     --starter-card-accent: #7c3aed;
+  }
+
+  :global(:root[data-theme='light']) .blog-starter-card[data-category='prompty'] {
+    --starter-card-accent: #db2777;
+  }
+
+  :global(:root[data-theme='light']) .blog-starter-card[data-category='rag'] {
+    --starter-card-accent: #d97706;
   }
 
   .blog-starter-card .eyebrow {
@@ -743,28 +811,40 @@ const formatDate = (date: Date) =>
     background: var(--bg-surface-2);
   }
 
-  .post-card[data-category='ai-w-biznesie'],
   .post-card[data-category='agenci-ai'] {
+    --post-accent: #22d3ee;
+  }
+
+  .post-card[data-category='ai-w-biznesie'] {
     --post-accent: #4ade80;
   }
 
-  .post-card[data-category='modele-llm'],
-  .post-card[data-category='prompty'] {
+  .post-card[data-category='modele-llm'] {
     --post-accent: #a78bfa;
+  }
+
+  .post-card[data-category='prompty'] {
+    --post-accent: #f472b6;
   }
 
   .post-card[data-category='rag'] {
     --post-accent: #fbbf24;
   }
 
-  :global(:root[data-theme='light']) .post-card[data-category='ai-w-biznesie'],
   :global(:root[data-theme='light']) .post-card[data-category='agenci-ai'] {
+    --post-accent: #0891b2;
+  }
+
+  :global(:root[data-theme='light']) .post-card[data-category='ai-w-biznesie'] {
     --post-accent: #16a34a;
   }
 
-  :global(:root[data-theme='light']) .post-card[data-category='modele-llm'],
-  :global(:root[data-theme='light']) .post-card[data-category='prompty'] {
+  :global(:root[data-theme='light']) .post-card[data-category='modele-llm'] {
     --post-accent: #7c3aed;
+  }
+
+  :global(:root[data-theme='light']) .post-card[data-category='prompty'] {
+    --post-accent: #db2777;
   }
 
   :global(:root[data-theme='light']) .post-card[data-category='rag'] {

@@ -2,7 +2,7 @@
 title: 'ChatGPT vs Claude – które AI wybrać'
 subtitle: 'Sprawdź, który model pasuje do Twojej pracy – na podstawie rzeczywistych testów, cen i mocnych stron'
 description: 'ChatGPT vs Claude – porównanie cen, możliwości, jakości pisania i kodowania. Dowiedz się, który model LLM wybrać do swojej pracy.'
-date: 2026-05-25
+date: 2026-05-16
 image: ../../../assets/images/blog-modele-llm-chatgpt-vs-claude.png
 icon: '<path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 0 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 0-2-2V9m0 0h18"/>'
 author:

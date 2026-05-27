@@ -2,7 +2,7 @@
 title: 'Reranking – jak zwiększyć trafność odpowiedzi RAG'
 subtitle: 'Jeden krok między wyszukiwaniem a generowaniem, który decyduje o jakości całego systemu'
 description: 'Czym jest reranking w systemach RAG, jak działa cross-encoder i kiedy go wdrożyć. Praktyczny przewodnik po architekturze dwuetapowej i ocenie jakości.'
-date: 2026-05-25
+date: 2026-05-09
 image: ../../../assets/images/blog-rag-reranking.png
 icon: '<path d="M4 6h16M4 12h10M4 18h6"/><circle cx="18" cy="17" r="3"/><path d="m20.5 19.5 1.5 1.5"/>'
 author:
