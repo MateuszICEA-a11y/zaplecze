@@ -52,16 +52,16 @@ const comparisonRows = [
     bingCopilot: '2-6',
   },
   {
-    label: 'Typowy cykl aktualizacji',
-    chatgpt: '24-72h',
-    claude: '48-96h',
-    gemini: 'tydz.-mc',
-    perplexity: '24-48h',
-    bingCopilot: '24-72h',
+    label: 'Dostęp do świeżych źródeł',
+    chatgpt: 'Bing / ChatGPT Search',
+    claude: 'źródła dostępne w sesji',
+    gemini: 'Google Search / AI Mode',
+    perplexity: 'własne wyszukiwanie',
+    bingCopilot: 'Bing / Copilot',
   },
   {
     label: 'Grupa docelowa',
-    chatgpt: 'masowa',
+    chatgpt: 'ogólna',
     claude: 'branża tech/B2B',
     gemini: 'uniwersalna',
     perplexity: 'badania/analizy',
@@ -265,10 +265,10 @@ const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : mode
             <span class="section-index">P/03</span>
             <span class="eyebrow">Optymalizacja</span>
           </div>
-          <h2 id="opt-title" class="service-section-title display-xl mt-2 mb-6">
+          <h2 id="opt-title" class="service-section-title display-xl mt-2">
             Co konkretnie robimy,<br />żeby {model.name} cytował Twoją markę
           </h2>
-          <p class="text-ink mb-8 text-lg leading-relaxed">
+          <p class="service-section-copy optimization-copy">
             Każdy model ma własne sygnały. Poniżej cztery najważniejsze techniczne i&nbsp;contentowe
             optymalizacje pod {model.name}.
           </p>
@@ -425,8 +425,8 @@ const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : mode
             <strong>{model.name} na tle pozostałych</strong>
           </div>
           <p>
-            Szybki skrót różnic operacyjnych: ile źródeł pojawia się w odpowiedzi, jak szybko model
-            odświeża wiedzę i dla jakich segmentów sprawdza się najlepiej.
+            Szybki skrót różnic operacyjnych: ile źródeł zwykle pojawia się w odpowiedzi, z jakiego
+            ekosystemu wyszukiwania korzysta model i dla jakich segmentów sprawdza się najlepiej.
           </p>
         </div>
         <div class="comparison-table">
@@ -736,6 +736,10 @@ const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : mode
 
   .service-section-copy {
     margin-top: 1.4rem;
+  }
+
+  .optimization-copy {
+    margin-bottom: 2rem;
   }
 
   .head-meta {
