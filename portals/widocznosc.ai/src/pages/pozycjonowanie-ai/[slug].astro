@@ -104,7 +104,7 @@ const comparisonRows = [
         </nav>
 
         <span class="eyebrow service-eyebrow">{model.vendor} · model AI</span>
-        <h1 class="service-hero-title">
+        <h1 class="service-hero-title display-xxl">
           Pozycjonowanie w&nbsp;<span class="accent">{model.name}</span>
         </h1>
         <p class="service-hero-subtitle" set:html={content.heroSubtitle} />
@@ -170,7 +170,7 @@ const comparisonRows = [
             <span class="section-index">P/01</span>
             <span class="eyebrow">Jak działa</span>
           </div>
-          <h2 id="how-title" class="service-section-title display-lg mt-2 mb-6">
+          <h2 id="how-title" class="service-section-title display-xl mt-2 mb-6">
             Jak {model.name} buduje odpowiedzi
           </h2>
         </div>
@@ -211,7 +211,7 @@ const comparisonRows = [
             <span class="section-index">P/02</span>
             <span class="eyebrow">Przykład cytowania</span>
           </div>
-          <h2 id="citation-title" class="display-lg">
+          <h2 id="citation-title" class="display-xl">
             Jak wygląda wynik, o który walczysz w {model.name}
           </h2>
         </div>
@@ -240,7 +240,7 @@ const comparisonRows = [
             <span class="section-index">P/03</span>
             <span class="eyebrow">Optymalizacja</span>
           </div>
-          <h2 id="opt-title" class="service-section-title display-lg mt-2 mb-6">
+          <h2 id="opt-title" class="service-section-title display-xl mt-2 mb-6">
             Co konkretnie robimy,<br />żeby {model.name} cytował Twoją markę
           </h2>
           <p class="text-ink mb-8 text-lg leading-relaxed">
@@ -283,7 +283,7 @@ const comparisonRows = [
             <span class="section-index">P/04</span>
             <span class="eyebrow">Sygnały rankingowe</span>
           </div>
-          <h2 id="signals-title" class="service-section-title display-lg mt-2">
+          <h2 id="signals-title" class="service-section-title display-xl mt-2">
             Najważniejsze sygnały dla {model.name}
           </h2>
           <p class="service-section-copy">
@@ -325,7 +325,7 @@ const comparisonRows = [
             <span class="section-index">P/05</span>
             <span class="eyebrow">FAQ</span>
           </div>
-          <h2 id="faq-title" class="service-section-title display-lg mt-2">
+          <h2 id="faq-title" class="service-section-title display-xl mt-2">
             Najczęstsze pytania o&nbsp;{model.name}
           </h2>
           <p class="service-section-copy">
@@ -362,7 +362,7 @@ const comparisonRows = [
             <span class="section-index">P/06</span>
             <span class="eyebrow">Pozostałe modele</span>
           </div>
-          <h2 id="other-title" class="service-section-title display-lg mt-2">
+          <h2 id="other-title" class="service-section-title display-xl mt-2">
             Optymalizacja pod inne silniki AI
           </h2>
         </div>
@@ -512,11 +512,6 @@ const comparisonRows = [
   .service-hero-title {
     max-width: 980px;
     margin: 0 0 28px;
-    font-family: var(--font-display);
-    font-size: clamp(48px, 6.4vw, 86px);
-    font-weight: 500;
-    line-height: 0.96;
-    letter-spacing: -0.045em;
     color: var(--ink);
     text-wrap: balance;
   }
@@ -844,9 +839,6 @@ const comparisonRows = [
     .service-hero-title {
       max-width: 100%;
       margin-bottom: 22px;
-      font-size: clamp(42px, 12vw, 52px);
-      line-height: 0.98;
-      letter-spacing: -0.043em;
       overflow-wrap: anywhere;
     }
 
@@ -873,11 +865,6 @@ const comparisonRows = [
       grid-template-columns: 1fr;
     }
 
-    .service-section-title {
-      font-size: clamp(36px, 10.4vw, 44px);
-      line-height: 0.98;
-      letter-spacing: -0.043em;
-    }
   }
 
 </style>

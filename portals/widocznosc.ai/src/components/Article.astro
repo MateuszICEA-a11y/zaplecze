@@ -23,7 +23,7 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
           </div>
         )
       }
-      <h1 class="article-title">{title}</h1>
+      <h1 class="article-title display-xxl">{title}</h1>
       {subtitle && <p class="article-subtitle">{subtitle}</p>}
 
       <div class="article-byline">
@@ -180,7 +180,7 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
 
   .article-shell {
     width: 100%;
-    max-width: 1280px;
+    max-width: 1360px;
     margin: 0 auto;
     padding: 0 30px;
   }
@@ -244,11 +244,6 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
   }
 
   .article-title {
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: clamp(2rem, 4vw + 0.5rem, 3.5rem);
-    line-height: 1.05;
-    letter-spacing: -0.04em;
     color: var(--ink);
     margin: 0 0 24px 0;
     text-wrap: balance;
@@ -928,9 +923,6 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     }
 
     .article-title {
-      font-size: clamp(34px, 10.6vw, 44px);
-      line-height: 1;
-      letter-spacing: -0.043em;
       margin-bottom: 18px;
     }
 

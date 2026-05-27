@@ -22,7 +22,7 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
 
         <header class="text-center">
           <span class="eyebrow tool-eyebrow">Narzędzie · audyt marki</span>
-          <h1 class="tool-hero-title">
+          <h1 class="tool-hero-title display-xxl">
             Co AI wie o&nbsp;<span class="tool-hero-accent">Twojej marce</span>?
           </h1>
           <p class="tool-hero-copy">
@@ -88,7 +88,7 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
 
     <section id="default-overview" class="tool-overview">
       <div class="content-container">
-        <h2 class="display-lg tool-overview-title">Co mierzy Brand Check?</h2>
+        <h2 class="display-xl tool-overview-title">Co mierzy Brand Check?</h2>
         <div class="overview-grid">
           <article class="overview-card">
             <span class="overview-num">01</span>
@@ -203,11 +203,6 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
   .tool-hero-title {
     max-width: 980px;
     margin: 0 auto;
-    font-family: var(--font-display);
-    font-size: clamp(48px, 6.4vw, 86px);
-    font-weight: 500;
-    line-height: 0.96;
-    letter-spacing: -0.045em;
     color: var(--ink);
     text-wrap: balance;
   }
@@ -843,8 +838,6 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
     }
 
     .tool-hero-title {
-      font-size: clamp(42px, 12vw, 52px);
-      line-height: 0.98;
       overflow-wrap: anywhere;
     }
 

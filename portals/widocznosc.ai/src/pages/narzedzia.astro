@@ -120,7 +120,7 @@ const siteUrl = 'https://widocznosc.ai';
       <div class="content-container tools-hero-inner">
         <div class="tools-hero-copy">
           <span class="eyebrow tools-eyebrow">Narzędzia widocznosc.ai</span>
-          <h1>Darmowe testy widoczności w AI</h1>
+          <h1 class="display-xxl">Darmowe testy widoczności w AI</h1>
           <p>
             Sprawdź najważniejsze sygnały przed zamówieniem audytu: zobacz, co modele wiedzą o
             Twojej marce, czy Twoje treści nadają się do cytowania, czy boty mają dostęp do strony
@@ -151,7 +151,7 @@ const siteUrl = 'https://widocznosc.ai';
             <span class="section-index">T/01</span>
             <span class="eyebrow">Wybierz narzędzie</span>
           </div>
-          <h2 id="tools-title" class="display-lg">Szybka diagnoza bez formularza sprzedażowego</h2>
+          <h2 id="tools-title" class="display-xl">Szybka diagnoza bez formularza sprzedażowego</h2>
         </div>
 
         <div class="tool-order" aria-label="Rekomendowana kolejność testów">
@@ -174,7 +174,7 @@ const siteUrl = 'https://widocznosc.ai';
                     <span class="tool-time">{tool.time}</span>
                   </div>
                   <span class="eyebrow tool-meta">{tool.eyebrow}</span>
-                  <h3>{tool.title}</h3>
+                  <h3 class="display-md">{tool.title}</h3>
                   <p class="tool-desc">{tool.desc}</p>
                   <ul class="tool-bullets">
                     {tool.bullets.map((bullet) => (
@@ -258,11 +258,6 @@ const siteUrl = 'https://widocznosc.ai';
     max-width: 780px;
     margin: 0;
     color: var(--ink);
-    font-family: var(--font-display);
-    font-size: clamp(2.9rem, 6.4vw, 5.9rem);
-    font-weight: 500;
-    line-height: 0.96;
-    letter-spacing: -0.04em;
     text-wrap: balance;
   }
 
@@ -438,11 +433,6 @@ const siteUrl = 'https://widocznosc.ai';
   .tool-card h3 {
     margin: 0.75rem 0 0;
     color: var(--ink);
-    font-family: var(--font-display);
-    font-size: clamp(1.5rem, 2.2vw, 2rem);
-    font-weight: 500;
-    line-height: 1.15;
-    letter-spacing: 0;
   }
 
   .tool-desc {
@@ -564,10 +554,6 @@ const siteUrl = 'https://widocznosc.ai';
   @media (max-width: 760px) {
     .tools-hero {
       padding-top: 5.5rem;
-    }
-
-    .tools-hero h1 {
-      font-size: clamp(2.7rem, 11vw, 4.1rem);
     }
 
     .tools-hero-panel,

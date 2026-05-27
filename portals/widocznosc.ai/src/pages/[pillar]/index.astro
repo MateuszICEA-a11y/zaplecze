@@ -62,7 +62,7 @@ const formatDate = (date: Date) =>
     <section class="blog-hero">
       <div class="blog-hero-container">
         <span class="eyebrow blog-hero-eyebrow">{pillarLabel}</span>
-        <h1 class="display-xl blog-hero-title">{pillarTitle}</h1>
+        <h1 class="display-xxl blog-hero-title">{pillarTitle}</h1>
         <p class="blog-hero-lead">{hubLead}</p>
       </div>
     </section>
@@ -89,7 +89,7 @@ const formatDate = (date: Date) =>
                   </span>
                   <span class="blog-featured-date">{formatDate(featuredPost.data.date)}</span>
                 </div>
-                <h2 class="blog-featured-title">{featuredPost.data.title}</h2>
+                <h2 class="blog-featured-title display-lg">{featuredPost.data.title}</h2>
                 <p class="blog-featured-desc">{featuredPost.data.subtitle}</p>
                 <span class="blog-featured-cta">
                   Czytaj artykuł
@@ -108,7 +108,7 @@ const formatDate = (date: Date) =>
         <section class="blog-grid-section">
           <div class="blog-grid-container">
             <header class="blog-grid-header">
-              <h2 class="display-lg blog-grid-title">Wszystkie artykuły</h2>
+              <h2 class="display-xl blog-grid-title">Wszystkie artykuły</h2>
             </header>
 
             <div class="blog-grid">
@@ -128,7 +128,7 @@ const formatDate = (date: Date) =>
                       <span class="post-card-category">{PILLAR_LABELS[post.data.pillar]}</span>
                       <span class="post-card-date">{formatDate(post.data.date)}</span>
                     </div>
-                    <h3 class="post-card-title">{post.data.title}</h3>
+                    <h3 class="post-card-title display-md">{post.data.title}</h3>
                     <div class="post-card-footer">
                       <span>{post.data.tags?.[0] ?? PILLAR_LABELS[post.data.pillar]}</span>
                       <span>{post.data.readTime ?? '–'} czytania</span>
@@ -166,7 +166,7 @@ const formatDate = (date: Date) =>
 
   .blog-hero-container {
     width: 100%;
-    max-width: 1280px;
+    max-width: 1360px;
     margin-inline: auto;
     padding: 0 30px;
   }
@@ -201,7 +201,7 @@ const formatDate = (date: Date) =>
 
   .blog-featured-container {
     width: 100%;
-    max-width: 1280px;
+    max-width: 1360px;
     margin-inline: auto;
     padding: 0 30px;
   }
@@ -291,11 +291,6 @@ const formatDate = (date: Date) =>
   }
 
   .blog-featured-title {
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
-    line-height: 1.05;
-    letter-spacing: -0.04em;
     color: var(--ink);
     margin: 0;
     text-wrap: balance;
@@ -336,7 +331,7 @@ const formatDate = (date: Date) =>
 
   .blog-grid-container {
     width: 100%;
-    max-width: 1280px;
+    max-width: 1360px;
     margin-inline: auto;
     padding: 0 30px;
   }
@@ -446,21 +441,9 @@ const formatDate = (date: Date) =>
   }
 
   .post-card-title {
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: var(--fs-body-lg);
-    line-height: 1.25;
-    letter-spacing: var(--ls-body-lg);
     color: var(--ink);
     margin: 0;
     flex-grow: 1;
-  }
-
-  @media (min-width: 1024px) {
-    .post-card-title {
-      font-size: var(--fs-headline);
-      letter-spacing: var(--ls-headline);
-    }
   }
 
   .post-card-footer {

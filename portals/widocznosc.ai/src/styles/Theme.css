@@ -48,7 +48,7 @@
   --shadow-card: 0 30px 60px -25px rgba(0, 0, 0, 0.55);
 
   /* Layout (landing redesign) */
-  --container: 1200px;
+  --container: 1360px;
   --gutter: 30px;
 
   /* Gradient spotlight family */
@@ -361,22 +361,22 @@ h4:not([class*='text-']) {
   color: var(--ink);
 }
 
-h1:not([class*='text-']) {
+h1:not([class*='text-']):not([class*='display-']) {
   font-size: var(--fs-display-xl);
   line-height: 0.95;
   letter-spacing: var(--ls-display-xl);
 }
-h2:not([class*='text-']) {
+h2:not([class*='text-']):not([class*='display-']) {
   font-size: var(--fs-display-lg);
   line-height: 1;
   letter-spacing: var(--ls-display-lg);
 }
-h3:not([class*='text-']) {
+h3:not([class*='text-']):not([class*='display-']) {
   font-size: var(--fs-display-md);
   line-height: 1.13;
   letter-spacing: var(--ls-display-md);
 }
-h4:not([class*='text-']) {
+h4:not([class*='text-']):not([class*='display-']) {
   font-size: var(--fs-headline);
   line-height: 1.2;
   letter-spacing: var(--ls-headline);
@@ -388,40 +388,40 @@ h4:not([class*='text-']) {
 .display-xxl {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: clamp(48px, 8.4vw, 112px);
+  font-size: clamp(2rem, 4.4vw, 3.75rem);
   line-height: 0.9;
   letter-spacing: -0.042em;
 }
 .display-xl {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: clamp(40px, 6.5vw, 88px);
+  font-size: clamp(1.625rem, 3.5vw, 2.75rem);
   line-height: 0.95;
   letter-spacing: -0.042em;
 }
 .display-lg {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: clamp(32px, 4.6vw, 62px);
+  font-size: clamp(1.375rem, 2.6vw, 2.125rem);
   line-height: 1;
   letter-spacing: -0.04em;
 }
 .display-md {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: clamp(22px, 2.4vw, 32px);
+  font-size: clamp(1.1875rem, 2.2vw, 1.625rem);
   line-height: 1.13;
   letter-spacing: -0.031em;
 }
 
 @media (max-width: 639px) {
-  h1:not([class*='text-']) {
+  h1:not([class*='text-']):not([class*='display-']) {
     font-size: clamp(38px, 11.5vw, 48px);
     line-height: 0.98;
     letter-spacing: -0.042em;
   }
 
-  h2:not([class*='text-']) {
+  h2:not([class*='text-']):not([class*='display-']) {
     font-size: clamp(34px, 10vw, 44px);
     line-height: 1;
     letter-spacing: -0.04em;
@@ -448,8 +448,8 @@ h4:not([class*='text-']) {
   .display-xxl,
   .display-xl,
   .display-lg,
-  h1:not([class*='text-']),
-  h2:not([class*='text-']) {
+  h1:not([class*='text-']):not([class*='display-']),
+  h2:not([class*='text-']):not([class*='display-']) {
     max-width: 100%;
     overflow-wrap: break-word;
   }
@@ -808,7 +808,7 @@ h4:not([class*='text-']) {
    – utility classes używane przez homepage components
    ============================================================ */
 
-/* Container 1200px – węższy niż content-container 1280px, dla landing
+/* Container 1360px – węższy niż content-container 1440px, dla landing
    editorial feel. Padding 30px desktop / 20px mobile (handoff spec). */
 .container {
   width: 100%;
@@ -1041,11 +1041,11 @@ h4:not([class*='text-']) {
    nadal działa, ale stylowanie pod spodem to Framer DNA.
    ============================================================ */
 
-/* Container: 1280px standard – pure Framer szerokość żeby display poster
+/* Container: 1440px standard – pure Framer szerokość żeby display poster
    miał oddech. Modyfikatory: --narrow (880px reading), --wide (1440px). */
 .content-container {
   width: 100%;
-  max-width: 1280px;
+  max-width: 1440px;
   margin-inline: auto;
   padding-inline: 32px;
 }
