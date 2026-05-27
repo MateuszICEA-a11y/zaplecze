@@ -182,13 +182,13 @@ const serviceSchema = {
       <div class="pillar-hero-inner">
         <span class="eyebrow pillar-hero-eyebrow">Usługi · Generative Engine Optimization</span>
         <h1 class="display-xxl pillar-hero-title">
-        Pozycjonowanie w&nbsp;<span class="accent">AI</span>
+          Pozycjonowanie w&nbsp;<span class="accent">AI</span>
         </h1>
         <p class="pillar-hero-lead">
-        Zbuduj widoczność swojej marki w ChatGPT, Claude, Gemini, Perplexity i Bing Copilot. W
-        nowym standardzie wyszukiwania nie walczymy o pozycje w rankingu – walczymy o bycie
-        cytowanym źródłem. Ponieważ każdy model AI wymaga innego podejścia, wybierz konkretny
-        silnik poniżej lub zacznij od kompleksowego audytu wszystkich pięciu.
+          Zbuduj widoczność swojej marki w ChatGPT, Claude, Gemini, Perplexity i Bing Copilot. W
+          nowym standardzie wyszukiwania nie walczymy o pozycje w rankingu – walczymy o bycie
+          cytowanym źródłem. Ponieważ każdy model AI wymaga innego podejścia, wybierz konkretny
+          silnik poniżej lub zacznij od kompleksowego audytu wszystkich pięciu.
         </p>
         <div class="pillar-hero-actions">
           <a class="btn-primary" href="/kontakt?type=audyt-ai">Zamów audyt wszystkich modeli</a>
@@ -215,8 +215,8 @@ const serviceSchema = {
   </section>
 
   <!-- 5 modeli AI – grid z linkami do podstron -->
-  <section class="relative w-full" aria-labelledby="models-title">
-    <div class="content-container py-16 lg:py-20">
+  <section class="pillar-section" aria-labelledby="models-title">
+    <div class="content-container">
       <header class="section-head">
         <div class="head-left">
           <div class="head-meta">
@@ -240,13 +240,13 @@ const serviceSchema = {
       <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-5">
         {
           AI_MODELS.map((model) => (
-            <a
-              href={model.href}
-              class="card-template model-card group flex flex-col"
-            >
+            <a href={model.href} class="card-template model-card group flex flex-col">
               <div class="flex items-start justify-between gap-3">
                 <div class="text-ink-muted text-sm">{model.vendor}</div>
-                <div class="model-hook" aria-label={`${modelHooks[model.slug].value} ${modelHooks[model.slug].label}`}>
+                <div
+                  class="model-hook"
+                  aria-label={`${modelHooks[model.slug].value} ${modelHooks[model.slug].label}`}
+                >
                   <strong>{modelHooks[model.slug].value}</strong>
                   <span>{modelHooks[model.slug].label}</span>
                 </div>
@@ -270,8 +270,8 @@ const serviceSchema = {
   </section>
 
   <!-- Metodologia – 4 services condensed -->
-  <section class="relative w-full" aria-labelledby="method-title">
-    <div class="content-container py-16 lg:py-20">
+  <section class="pillar-section" aria-labelledby="method-title">
+    <div class="content-container">
       <header class="section-head">
         <div class="head-left">
           <div class="head-meta">
@@ -319,8 +319,8 @@ const serviceSchema = {
     </div>
   </section>
 
-  <section class="relative w-full" aria-labelledby="decision-title">
-    <div class="content-container py-16 lg:py-20">
+  <section class="pillar-section" aria-labelledby="decision-title">
+    <div class="content-container">
       <header class="section-head">
         <div class="head-left">
           <div class="head-meta">
@@ -351,7 +351,9 @@ const serviceSchema = {
         {
           decisionRows.map((row) => (
             <div class="decision-row" role="row">
-              <div class="decision-model" role="cell">{row.model}</div>
+              <div class="decision-model" role="cell">
+                {row.model}
+              </div>
               <div role="cell" data-label="Grupa docelowa">
                 {row.icp}
               </div>
@@ -422,6 +424,11 @@ const serviceSchema = {
     gap: 12px;
     justify-content: center;
     margin-top: 56px;
+  }
+
+  .pillar-section {
+    padding: 56px 0;
+    width: 100%;
   }
 
   .hero-stat-strip {
@@ -513,7 +520,8 @@ const serviceSchema = {
 
   .decision-table {
     border: 1px solid var(--hairline-soft);
-    border-radius: 18px;
+    border-radius: 22px;
+    background: var(--bg-canvas);
     overflow: hidden;
   }
 
@@ -522,15 +530,23 @@ const serviceSchema = {
     grid-template-columns: 0.75fr 1.1fr 1.45fr 1.45fr;
   }
 
+  .decision-row:not(.decision-head) {
+    transition: background 0.18s ease;
+  }
+
+  .decision-row:not(.decision-head):hover {
+    background: var(--bg-surface-1);
+  }
+
   .decision-row + .decision-row {
     border-top: 1px solid var(--hairline-soft);
   }
 
   .decision-row > div {
     color: var(--ink-muted);
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.5;
-    padding: 18px;
+    padding: 24px 28px;
   }
 
   .decision-row > div + div {
@@ -552,7 +568,7 @@ const serviceSchema = {
   .decision-model {
     color: var(--ink) !important;
     font-family: var(--font-display);
-    font-size: 20px !important;
+    font-size: 22px !important;
     letter-spacing: -0.03em;
   }
 
@@ -567,6 +583,10 @@ const serviceSchema = {
 
     .pillar-hero-actions {
       flex-direction: row;
+    }
+
+    .pillar-section {
+      padding: 72px 0;
     }
 
     .hero-stat-grid {
@@ -596,15 +616,27 @@ const serviceSchema = {
 
   @media (max-width: 767px) {
     .pillar-hero {
-      padding: 112px 0 72px;
+      padding: 96px 0 64px;
     }
 
     .pillar-hero-eyebrow {
+      align-items: center;
       margin-bottom: 32px;
+      max-width: 30ch;
+      text-align: left;
+    }
+
+    .pillar-hero-title {
+      font-size: clamp(2.75rem, 11vw, 3.25rem);
+      line-height: 0.96;
+      max-width: 100%;
     }
 
     .pillar-hero-lead {
+      font-size: 18px;
+      line-height: 1.5;
       margin-top: 24px;
+      max-width: 33ch;
     }
 
     .pillar-hero-actions {
@@ -617,17 +649,35 @@ const serviceSchema = {
       justify-content: center;
     }
 
-    .decision-table {
-      border-radius: 15px;
+    .pillar-section {
+      padding: 52px 0;
     }
 
-    .decision-head {
-      display: none;
+    .decision-table {
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      display: grid;
+      gap: 14px;
+      overflow: visible;
     }
 
     .decision-row {
-      display: block;
-      padding: 18px;
+      background: var(--bg-surface-1);
+      border: 1px solid var(--hairline-soft);
+      border-radius: 18px;
+      display: grid;
+      gap: 14px;
+      grid-template-columns: 1fr;
+      padding: 20px;
+    }
+
+    .decision-row.decision-head {
+      display: none;
+    }
+
+    .decision-row + .decision-row {
+      border-top: 1px solid var(--hairline-soft);
     }
 
     .decision-row > div {
