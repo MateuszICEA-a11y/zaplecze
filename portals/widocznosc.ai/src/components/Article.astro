@@ -180,9 +180,9 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
 
   .article-shell {
     width: 100%;
-    max-width: 1360px;
+    max-width: 1440px;
     margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 32px;
   }
 
   /* Breadcrumb */
@@ -219,7 +219,7 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
   }
 
   .article-header {
-    max-width: 880px;
+    max-width: 1040px;
     margin: 0 auto 48px auto;
   }
 
@@ -351,7 +351,7 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
      poświata pod spodem, 1px adaptacyjna obwódka (::after niżej). */
   .article-hero {
     position: relative;
-    max-width: 1080px;
+    max-width: 1360px;
     margin: 0 auto 64px auto;
     aspect-ratio: 16 / 9;
     background: var(--bg-canvas);
@@ -388,20 +388,20 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     display: grid;
     grid-template-columns: 1fr;
     gap: 48px;
-    max-width: 1080px;
+    max-width: 1240px;
     margin: 0 auto;
   }
 
   @media (min-width: 1024px) {
     .article-body-grid {
-      grid-template-columns: 1fr 320px;
-      gap: 56px;
+      grid-template-columns: minmax(0, 820px) 340px;
+      gap: 80px;
     }
   }
 
   .article-content {
     min-width: 0;
-    max-width: 720px;
+    max-width: 820px;
     font-family: var(--font-sans);
     font-size: 17px;
     line-height: 1.65;
@@ -546,7 +546,7 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
 
 <style is:global>
   /* ============================================================
-     Article content – Framer premium long-form (720px / 17px / 1.65)
+     Article content – Framer premium long-form (820px / 17px / 1.65)
      ============================================================ */
   .article-content > * + * {
     margin-top: 1.5rem;

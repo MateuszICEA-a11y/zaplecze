@@ -48,7 +48,7 @@
   --shadow-card: 0 30px 60px -25px rgba(0, 0, 0, 0.55);
 
   /* Layout (landing redesign) */
-  --container: 1360px;
+  --container: 1440px;
   --gutter: 30px;
 
   /* Gradient spotlight family */
@@ -808,8 +808,8 @@ h4:not([class*='text-']):not([class*='display-']) {
    – utility classes używane przez homepage components
    ============================================================ */
 
-/* Container 1360px – węższy niż content-container 1440px, dla landing
-   editorial feel. Padding 30px desktop / 20px mobile (handoff spec). */
+/* Container 1440px – aligned with content-container after compact scale pass.
+   Padding 30px desktop / 20px mobile (handoff spec). */
 .container {
   width: 100%;
   max-width: var(--container);
