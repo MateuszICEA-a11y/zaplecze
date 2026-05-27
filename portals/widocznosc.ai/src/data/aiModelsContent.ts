@@ -105,7 +105,7 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
       },
       {
         title: 'Preferencja dla świeżych treści (Recency bias)',
-        desc: 'Strony starsze niż 3 miesiące odnotowują w&nbsp;Claude gwałtowny spadek cytowań w&nbsp;tematach, które dynamicznie się zmieniają. Dodanie znaczników świeżości w&nbsp;adresie URL (np. dodanie roku /2025/) zwiększa udział w&nbsp;cytowaniach średnio o&nbsp;24%. W&nbsp;ramach współpracy wdrażamy kwartalny cykl aktualizacji kluczowych artykułów.',
+        desc: 'Strony starsze niż 3 miesiące odnotowują w&nbsp;Claude gwałtowny spadek cytowań w&nbsp;tematach, które dynamicznie się zmieniają. Dodanie znaczników świeżości w&nbsp;adresie URL (np. dodanie roku /2026/) zwiększa udział w&nbsp;cytowaniach średnio o&nbsp;24%. W&nbsp;ramach współpracy wdrażamy kwartalny cykl aktualizacji kluczowych artykułów.',
       },
     ],
     optimization: [

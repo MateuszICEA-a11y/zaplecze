@@ -34,17 +34,42 @@ const modelDifferentiators: Record<string, string> = {
   'bing-copilot': 'indeks Bing + Edge',
 };
 
+const comparisonModels = [
+  { key: 'chatgpt', label: 'ChatGPT' },
+  { key: 'claude', label: 'Claude' },
+  { key: 'gemini', label: 'Gemini' },
+  { key: 'perplexity', label: 'Perplexity' },
+  { key: 'bingCopilot', label: 'Bing Copilot' },
+] as const;
+
 const comparisonRows = [
-  { label: 'Cytaty/odp.', chatgpt: '5-10', claude: '1-3', gemini: '3-5', perplexity: '1-10' },
-  { label: 'Cykl', chatgpt: '24-72h', claude: '48-96h', gemini: 'tydz.-mc', perplexity: '24-48h' },
+  {
+    label: 'Cytaty na odpowiedź',
+    chatgpt: '5-10',
+    claude: '1-3',
+    gemini: '3-5',
+    perplexity: '1-10',
+    bingCopilot: '2-6',
+  },
+  {
+    label: 'Typowy cykl aktualizacji',
+    chatgpt: '24-72h',
+    claude: '48-96h',
+    gemini: 'tydz.-mc',
+    perplexity: '24-48h',
+    bingCopilot: '24-72h',
+  },
   {
     label: 'Grupa docelowa',
     chatgpt: 'masowa',
     claude: 'branża tech/B2B',
     gemini: 'uniwersalna',
     perplexity: 'badania/analizy',
+    bingCopilot: 'Microsoft/enterprise',
   },
 ];
+
+const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : model.slug;
 ---
 
 <Layout
@@ -378,10 +403,7 @@ const comparisonRows = [
       <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {
           otherModels.map((m) => (
-            <a
-              href={m.href}
-              class="card-template other-model-card group flex flex-col"
-            >
+            <a href={m.href} class="card-template other-model-card group flex flex-col">
               <div class="text-ink-muted text-sm">{m.vendor}</div>
               <h3
                 class="mt-1 text-xl font-medium"
@@ -398,24 +420,45 @@ const comparisonRows = [
 
       <div class="model-comparison" aria-label="Porównanie modeli AI">
         <div class="comparison-head">
-          <span>Porównanie modeli</span>
-          <strong>{model.name} vs reszta</strong>
+          <div>
+            <span>Porównanie modeli</span>
+            <strong>{model.name} na tle pozostałych</strong>
+          </div>
+          <p>
+            Szybki skrót różnic operacyjnych: ile źródeł pojawia się w odpowiedzi, jak szybko model
+            odświeża wiedzę i dla jakich segmentów sprawdza się najlepiej.
+          </p>
         </div>
         <div class="comparison-table">
-          <div></div>
-          <div>ChatGPT</div>
-          <div>Claude</div>
-          <div>Gemini</div>
-          <div>Perplexity</div>
+          <div class="comparison-cell comparison-cell--empty"></div>
+          {
+            comparisonModels.map((entry) => (
+              <div
+                class:list={[
+                  'comparison-cell comparison-model',
+                  entry.key === comparisonActiveKey && 'is-active',
+                ]}
+              >
+                {entry.label}
+              </div>
+            ))
+          }
           {
             comparisonRows.map((row) => (
-              <>
-                <div>{row.label}</div>
-                <div>{row.chatgpt}</div>
-                <div>{row.claude}</div>
-                <div>{row.gemini}</div>
-                <div>{row.perplexity}</div>
-              </>
+              <div class="comparison-row">
+                <div class="comparison-cell comparison-metric">{row.label}</div>
+                {comparisonModels.map((entry) => (
+                  <div
+                    class:list={[
+                      'comparison-cell comparison-value',
+                      entry.key === comparisonActiveKey && 'is-active',
+                    ]}
+                    data-label={entry.label}
+                  >
+                    {row[entry.key]}
+                  </div>
+                ))}
+              </div>
             ))
           }
         </div>
@@ -760,45 +803,107 @@ const comparisonRows = [
   }
 
   .model-comparison {
-    margin-top: 1rem;
-    padding: clamp(1rem, 2.5vw, 1.5rem);
+    margin-top: 1.25rem;
+    padding: clamp(1.1rem, 2.5vw, 1.65rem);
     border: 1px solid var(--hairline-soft);
-    border-radius: var(--r-xl);
-    background: var(--bg-surface-1);
+    border-radius: 22px;
+    background: color-mix(in srgb, var(--bg-surface-1) 82%, var(--bg-canvas));
     overflow-x: auto;
   }
 
   .comparison-head {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(18rem, 0.75fr);
+    align-items: end;
+    gap: 1.5rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.15rem;
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+
+  .comparison-head span {
+    display: block;
     color: var(--ink-muted);
-    font-size: 0.82rem;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
   .comparison-head strong {
+    display: block;
+    margin-top: 0.35rem;
     color: var(--ink);
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2vw, 1.7rem);
+    font-weight: 500;
+    letter-spacing: -0.035em;
+    line-height: 1.05;
+  }
+
+  .comparison-head p {
+    max-width: 46rem;
+    color: var(--ink-muted);
+    font-size: 0.9rem;
+    line-height: 1.55;
   }
 
   .comparison-table {
     display: grid;
-    grid-template-columns: minmax(7rem, 1fr) repeat(4, minmax(6rem, 1fr));
-    min-width: 640px;
+    grid-template-columns: minmax(11rem, 1.05fr) repeat(5, minmax(8.5rem, 1fr));
+    min-width: 940px;
+    overflow: hidden;
+    border: 1px solid var(--hairline-soft);
+    border-radius: 18px;
     color: var(--ink-muted);
-    font-family: ui-monospace, 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
+    background: var(--bg-canvas);
   }
 
-  .comparison-table > div {
-    padding: 0.65rem 0.7rem;
+  .comparison-row {
+    display: contents;
+  }
+
+  .comparison-cell {
+    min-width: 0;
+    padding: 1rem 1.05rem;
     border-top: 1px solid var(--hairline-soft);
+    border-left: 1px solid var(--hairline-soft);
+    font-size: 0.9rem;
+    line-height: 1.4;
   }
 
-  .comparison-table > div:nth-child(-n + 5),
-  .comparison-table > div:nth-child(5n + 1) {
+  .comparison-cell--empty,
+  .comparison-model {
+    border-top: 0;
+    background: color-mix(in srgb, var(--bg-surface-1) 74%, var(--bg-canvas));
+  }
+
+  .comparison-cell--empty,
+  .comparison-metric {
+    border-left: 0;
+  }
+
+  .comparison-model {
     color: var(--ink);
-    font-weight: 700;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+  }
+
+  .comparison-metric {
+    color: var(--ink);
+    font-weight: 650;
+  }
+
+  .comparison-value {
+    font-weight: 560;
+  }
+
+  .comparison-cell.is-active {
+    color: var(--ink);
+    background: color-mix(in srgb, var(--accent-blue) 10%, transparent);
+    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent-blue) 26%, transparent);
   }
 
   .service-section-title {
@@ -865,6 +970,60 @@ const comparisonRows = [
       grid-template-columns: 1fr;
     }
 
-  }
+    .model-comparison {
+      overflow: visible;
+    }
 
+    .comparison-head {
+      grid-template-columns: 1fr;
+      gap: 0.85rem;
+    }
+
+    .comparison-table {
+      display: grid;
+      grid-template-columns: 1fr;
+      min-width: 0;
+      gap: 0.75rem;
+      overflow: visible;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+    }
+
+    .comparison-table > .comparison-cell {
+      display: none;
+    }
+
+    .comparison-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      overflow: hidden;
+      border: 1px solid var(--hairline-soft);
+      border-radius: 16px;
+      background: var(--bg-canvas);
+    }
+
+    .comparison-row .comparison-cell {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem 1rem;
+      border-left: 0;
+    }
+
+    .comparison-metric {
+      display: block;
+      background: color-mix(in srgb, var(--bg-surface-1) 78%, var(--bg-canvas));
+      font-size: 0.86rem;
+    }
+
+    .comparison-value::before {
+      content: attr(data-label);
+      color: var(--ink-muted);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+  }
 </style>
