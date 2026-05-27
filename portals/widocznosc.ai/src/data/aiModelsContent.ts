@@ -165,8 +165,8 @@ export const MODEL_CONTENT: Record<string, ModelContent> = {
         desc: 'Gemini nie polega wyłącznie na wiedzy, na której został wytrenowany – pobiera aktualne dane bezpośrednio z&nbsp;indeksu Google. Kiedy zapytanie użytkownika jest złożone, model rozbija je na kilka mniejszych pytań pomocniczych i&nbsp;przeszukuje sieć równolegle. Strony, które są widoczne na te poboczne, szczegółowe pytania, mają o&nbsp;161% wyższe prawdopodobieństwo zacytowania w&nbsp;gotowej odpowiedzi AI.',
       },
       {
-        title: 'Podsumowania AI (AI Overviews) w Google',
-        desc: 'AI Overviews to generowany przez Gemini blok z&nbsp;odpowiedzią na samej górze wyników wyszukiwania Google. Aktywuje się najczęściej dla zapytań informacyjnych (np. pytań "dlaczego" lub porównań). Ponieważ każde zacytowane stwierdzenie posiada link do źródła, jest to zupełnie nowy, potężny kanał ruchu na stronę. W&nbsp;Polsce funkcja ta jest sukcesywnie wdrażana.',
+        title: 'Podsumowania AI (AI Overviews) i AI Mode w Google',
+        desc: 'AI Overviews to generowany przez Gemini blok odpowiedzi w wynikach wyszukiwania Google, a AI Mode to osobny, konwersacyjny tryb wyszukiwania dla bardziej złożonych pytań i dopytań. Oba formaty korzystają z&nbsp;generatywnej warstwy Google Search i mogą kierować użytkownika do cytowanych źródeł. Dla marek oznacza to konieczność optymalizacji nie tylko pod klasyczne pozycje organiczne, ale też pod fragmenty, które Google może wykorzystać w odpowiedzi AI.',
       },
       {
         title: 'Część wspólna tradycyjnego SEO i widoczności AI (GEO)',
