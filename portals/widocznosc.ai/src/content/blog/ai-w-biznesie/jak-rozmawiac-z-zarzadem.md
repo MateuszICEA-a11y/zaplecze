@@ -6,9 +6,9 @@ date: 2026-05-25
 image: ../../../assets/images/blog-ai-w-biznesie-jak-rozmawiac-z-zarzadem.png
 icon: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'
 author:
-  name: 'Mateusz Wiśniewski'
-  role: 'Ekspert SEO/AI Search · ICEA'
-  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
+  name: 'Michał Ziach'
+  role: 'CTO · ICEA'
+  avatar: ../../../assets/images/authors/michal-ziach.avif
 readTime: '12 min'
 tags: ['Zarząd', 'Business case', 'KPI', 'AI w biznesie']
 pillar: 'ai-w-biznesie'

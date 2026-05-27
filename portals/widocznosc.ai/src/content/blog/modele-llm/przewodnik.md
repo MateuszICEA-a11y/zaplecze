@@ -6,9 +6,9 @@ date: 2026-05-25
 image: ../../../assets/images/blog-modele-llm-przewodnik.png
 icon: '<circle cx="12" cy="12" r="3"/><path d="M3 12h3M18 12h3M12 3v3M12 18v3M6.34 6.34l2.12 2.12M15.54 15.54l2.12 2.12M6.34 17.66l2.12-2.12M15.54 8.46l2.12-2.12"/>'
 author:
-  name: 'Tomasz Czechowski'
-  role: 'Head of SEO · ICEA'
-  avatar: ../../../assets/images/authors/tomasz-czechowski.avif
+  name: 'Mateusz Wiśniewski'
+  role: 'Ekspert SEO/AI Search · ICEA'
+  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
 readTime: '16 min'
 tags: ['LLM', 'Modele AI', 'ChatGPT', 'Claude']
 pillar: 'modele-llm'

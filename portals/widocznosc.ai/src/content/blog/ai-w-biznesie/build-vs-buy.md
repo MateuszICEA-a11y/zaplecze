@@ -6,9 +6,9 @@ date: 2026-05-25
 image: ../../../assets/images/blog-ai-w-biznesie-build-vs-buy.png
 icon: '<path d="M3 6h18M3 12h18M3 18h18"/><path d="M7 3v3M12 3v3M17 3v3M7 18v3M12 18v3M17 18v3"/>'
 author:
-  name: 'Mateusz Wiśniewski'
-  role: 'Ekspert SEO/AI Search · ICEA'
-  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
+  name: 'Michał Ziach'
+  role: 'CTO · ICEA'
+  avatar: ../../../assets/images/authors/michal-ziach.avif
 readTime: '14 min'
 tags: ['Build vs buy', 'SaaS', 'AI w biznesie', 'Strategia']
 pillar: 'ai-w-biznesie'

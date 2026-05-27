@@ -6,9 +6,9 @@ date: 2026-05-25
 image: ../../../assets/images/blog-rag-embeddingi.png
 icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2 L12 6"/><path d="M12 18 L12 22"/><path d="M4.22 4.22 L7.05 7.05"/><path d="M16.95 16.95 L19.78 19.78"/><path d="M2 12 L6 12"/><path d="M18 12 L22 12"/><path d="M4.22 19.78 L7.05 16.95"/><path d="M16.95 7.05 L19.78 4.22"/>'
 author:
-  name: 'Michał Ziach'
-  role: 'CTO · ICEA'
-  avatar: ../../../assets/images/authors/michal-ziach.avif
+  name: 'Mateusz Wiśniewski'
+  role: 'Ekspert SEO/AI Search · ICEA'
+  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
 readTime: '9 min'
 tags: ['Embeddingi', 'Wektory', 'RAG', 'NLP']
 pillar: 'rag'

@@ -6,9 +6,9 @@ date: 2026-05-07
 image: ../../../assets/images/blog-geo-share-of-voice.png
 icon: '<rect x="3" y="14" width="3" height="7" rx="1"/><rect x="9" y="9" width="3" height="12" rx="1"/><rect x="15" y="4" width="3" height="17" rx="1"/><rect x="20.5" y="11" width="2" height="10" rx="1"/>'
 author:
-  name: 'Tomasz Czechowski'
-  role: 'Head of SEO · ICEA'
-  avatar: ../../../assets/images/authors/tomasz-czechowski.avif
+  name: 'Piotr Wicenciak'
+  role: 'SEO Operations Manager · ICEA'
+  avatar: ../../../assets/images/authors/piotr-wicenciak.avif
 readTime: '12 min'
 tags: ['Pomiar AI', 'Share of Voice', 'Citation Rate', 'GEO']
 pillar: 'geo'

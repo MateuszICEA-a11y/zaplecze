@@ -6,9 +6,9 @@ date: 2026-05-07
 image: ../../../assets/images/blog-geo-boty-ai-przewodnik.png
 icon: '<rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18"/><circle cx="7" cy="14" r="1"/><circle cx="12" cy="14" r="1"/><circle cx="17" cy="14" r="1"/><path d="M9 4l3-2 3 2"/>'
 author:
-  name: 'Michał Ziach'
-  role: 'CTO · ICEA'
-  avatar: ../../../assets/images/authors/michal-ziach.avif
+  name: 'Mateusz Wiśniewski'
+  role: 'Ekspert SEO/AI Search · ICEA'
+  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
 readTime: '13 min'
 tags: ['GPTBot', 'ClaudeBot', 'robots.txt', 'llms.txt', 'Technical SEO']
 pillar: 'geo'

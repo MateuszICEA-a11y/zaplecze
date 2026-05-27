@@ -6,9 +6,9 @@ date: 2026-05-25
 image: ../../../assets/images/blog-ai-w-biznesie-roi-z-ai.png
 icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>'
 author:
-  name: 'Mateusz Wiśniewski'
-  role: 'Ekspert SEO/AI Search · ICEA'
-  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
+  name: 'Michał Ziach'
+  role: 'CTO · ICEA'
+  avatar: ../../../assets/images/authors/michal-ziach.avif
 readTime: '12 min'
 tags: ['ROI', 'AI w biznesie', 'Inwestycje', 'KPI']
 pillar: 'ai-w-biznesie'

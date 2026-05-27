@@ -6,9 +6,9 @@ date: 2026-05-25
 image: ../../../assets/images/blog-ai-w-biznesie-przewodnik.png
 icon: '<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>'
 author:
-  name: 'Mateusz Wiśniewski'
-  role: 'Ekspert SEO/AI Search · ICEA'
-  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
+  name: 'Tomasz Czechowski'
+  role: 'Head of SEO · ICEA'
+  avatar: ../../../assets/images/authors/tomasz-czechowski.avif
 readTime: '19 min'
 tags: ['AI w biznesie', 'Wdrożenie AI', 'Strategia', 'Transformacja']
 pillar: 'ai-w-biznesie'

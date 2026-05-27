@@ -6,9 +6,9 @@ date: 2026-05-25
 image: ../../../assets/images/blog-modele-llm-perplexity.png
 icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>'
 author:
-  name: 'Tomasz Czechowski'
-  role: 'Head of SEO · ICEA'
-  avatar: ../../../assets/images/authors/tomasz-czechowski.avif
+  name: 'Anna Jelonek-Wrzesińska'
+  role: 'Head of International SEO & AI Search · ICEA'
+  avatar: ../../../assets/images/authors/anna-jelonek.png
 readTime: '12 min'
 tags: ['Perplexity', 'Wyszukiwarka AI', 'Cytowania', 'Modele AI']
 pillar: 'modele-llm'

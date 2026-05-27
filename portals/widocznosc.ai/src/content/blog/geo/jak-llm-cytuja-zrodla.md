@@ -6,9 +6,9 @@ date: 2026-05-25
 image: ../../../assets/images/blog-geo-jak-llm-cytuja-zrodla.png
 icon: '<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>'
 author:
-  name: 'Piotr Wicenciak'
-  role: 'SEO Operations Manager · ICEA'
-  avatar: ../../../assets/images/authors/piotr-wicenciak.avif
+  name: 'Mateusz Wiśniewski'
+  role: 'Ekspert SEO/AI Search · ICEA'
+  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
 readTime: '10 min'
 tags: ['LLM', 'Cytowania', 'RAG', 'AI Search']
 pillar: 'geo'

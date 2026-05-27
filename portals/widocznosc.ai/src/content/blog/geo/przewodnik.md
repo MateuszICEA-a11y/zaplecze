@@ -6,9 +6,9 @@ date: 2026-05-25
 image: ../../../assets/images/blog-geo-przewodnik.png
 icon: '<circle cx="12" cy="12" r="9"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3 Q18 7 18 12 Q18 17 12 21 Q6 17 6 12 Q6 7 12 3"/>'
 author:
-  name: 'Piotr Wicenciak'
-  role: 'SEO Operations Manager · ICEA'
-  avatar: ../../../assets/images/authors/piotr-wicenciak.avif
+  name: 'Tomasz Czechowski'
+  role: 'Head of SEO · ICEA'
+  avatar: ../../../assets/images/authors/tomasz-czechowski.avif
 readTime: '18 min'
 tags: ['GEO', 'Generative Engine Optimization', 'AI Search', 'Optymalizacja pod AI']
 pillar: 'geo'

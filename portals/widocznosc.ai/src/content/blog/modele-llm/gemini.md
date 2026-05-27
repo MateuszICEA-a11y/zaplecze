@@ -6,9 +6,9 @@ date: 2026-05-25
 image: ../../../assets/images/blog-modele-llm-gemini.png
 icon: '<path d="M12 2 L14.5 9.5 L22 12 L14.5 14.5 L12 22 L9.5 14.5 L2 12 L9.5 9.5 Z" stroke-linecap="round" stroke-linejoin="round"/>'
 author:
-  name: 'Tomasz Czechowski'
-  role: 'Head of SEO · ICEA'
-  avatar: ../../../assets/images/authors/tomasz-czechowski.avif
+  name: 'Piotr Wicenciak'
+  role: 'SEO Operations Manager · ICEA'
+  avatar: ../../../assets/images/authors/piotr-wicenciak.avif
 readTime: '13 min'
 tags: ['Gemini', 'Google', 'Modele AI', 'Workspace']
 pillar: 'modele-llm'

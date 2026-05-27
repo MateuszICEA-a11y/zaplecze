@@ -6,9 +6,9 @@ date: 2026-05-25
 image: ../../../assets/images/blog-modele-llm-claude.png
 icon: '<path d="M12 2C8.5 2 6 4.5 6 7c0 1.5.6 2.8 1.5 3.8L5 21h14l-2.5-10.2C17.4 9.8 18 8.5 18 7c0-2.5-2.5-5-6-5z"/><circle cx="9" cy="7" r="1"/><circle cx="15" cy="7" r="1"/>'
 author:
-  name: 'Tomasz Czechowski'
-  role: 'Head of SEO · ICEA'
-  avatar: ../../../assets/images/authors/tomasz-czechowski.avif
+  name: 'Michał Ziach'
+  role: 'CTO · ICEA'
+  avatar: ../../../assets/images/authors/michal-ziach.avif
 readTime: '14 min'
 tags: ['Claude', 'Anthropic', 'Modele AI', 'Artifacts']
 pillar: 'modele-llm'

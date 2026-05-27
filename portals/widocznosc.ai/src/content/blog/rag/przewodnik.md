@@ -6,9 +6,9 @@ date: 2026-05-25
 image: ../../../assets/images/blog-rag-przewodnik.png
 icon: '<path d="M4 6h16M4 10h16M4 14h10M4 18h7"/><circle cx="18" cy="16" r="3"/><line x1="21" y1="19" x2="19.5" y2="17.5"/>'
 author:
-  name: 'Michał Ziach'
-  role: 'CTO · ICEA'
-  avatar: ../../../assets/images/authors/michal-ziach.avif
+  name: 'Mateusz Wiśniewski'
+  role: 'Ekspert SEO/AI Search · ICEA'
+  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
 readTime: '19 min'
 tags: ['RAG', 'Retrieval-Augmented Generation', 'Bazy wektorowe', 'AI']
 pillar: 'rag'

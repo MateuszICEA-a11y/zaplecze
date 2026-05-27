@@ -6,9 +6,9 @@ date: 2026-05-25
 image: ../../../assets/images/blog-ai-w-biznesie-ai-w-obsludze-klienta.png
 icon: '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><circle cx="9" cy="10" r="1"/><circle cx="12" cy="10" r="1"/><circle cx="15" cy="10" r="1"/>'
 author:
-  name: 'Mateusz Wiśniewski'
-  role: 'Ekspert SEO/AI Search · ICEA'
-  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
+  name: 'Piotr Wicenciak'
+  role: 'SEO Operations Manager · ICEA'
+  avatar: ../../../assets/images/authors/piotr-wicenciak.avif
 readTime: '11 min'
 tags: ['Obsługa klienta', 'Chatboty', 'AI w biznesie', 'Automatyzacja']
 pillar: 'ai-w-biznesie'

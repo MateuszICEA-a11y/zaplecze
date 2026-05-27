@@ -6,9 +6,9 @@ date: 2026-05-25
 image: ../../../assets/images/blog-geo-schema-org-dane-strukturalne.png
 icon: '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><line x1="14" y1="17.5" x2="21" y2="17.5"/><line x1="17.5" y1="14" x2="17.5" y2="21"/>'
 author:
-  name: 'Michał Ziach'
-  role: 'CTO · ICEA'
-  avatar: ../../../assets/images/authors/michal-ziach.avif
+  name: 'Piotr Wicenciak'
+  role: 'SEO Operations Manager · ICEA'
+  avatar: ../../../assets/images/authors/piotr-wicenciak.avif
 readTime: '12 min'
 tags: ['schema.org', 'JSON-LD', 'Dane strukturalne', 'GEO']
 pillar: 'geo'

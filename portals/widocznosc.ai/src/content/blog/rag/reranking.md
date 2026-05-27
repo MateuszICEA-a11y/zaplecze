@@ -6,9 +6,9 @@ date: 2026-05-25
 image: ../../../assets/images/blog-rag-reranking.png
 icon: '<path d="M4 6h16M4 12h10M4 18h6"/><circle cx="18" cy="17" r="3"/><path d="m20.5 19.5 1.5 1.5"/>'
 author:
-  name: 'Michał Ziach'
-  role: 'CTO · ICEA'
-  avatar: ../../../assets/images/authors/michal-ziach.avif
+  name: 'Mateusz Wiśniewski'
+  role: 'Ekspert SEO/AI Search · ICEA'
+  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
 readTime: '11 min'
 tags: ['Reranking', 'RAG', 'Trafność', 'Bazy wektorowe']
 pillar: 'rag'

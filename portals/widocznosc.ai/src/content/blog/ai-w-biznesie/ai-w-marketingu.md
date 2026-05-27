@@ -6,9 +6,9 @@ date: 2026-05-25
 image: ../../../assets/images/blog-ai-w-biznesie-ai-w-marketingu.png
 icon: '<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>'
 author:
-  name: 'Mateusz Wiśniewski'
-  role: 'Ekspert SEO/AI Search · ICEA'
-  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
+  name: 'Piotr Wicenciak'
+  role: 'SEO Operations Manager · ICEA'
+  avatar: ../../../assets/images/authors/piotr-wicenciak.avif
 readTime: '11 min'
 tags: ['AI w marketingu', 'Marketing', 'Automatyzacja', 'AI w biznesie']
 pillar: 'ai-w-biznesie'

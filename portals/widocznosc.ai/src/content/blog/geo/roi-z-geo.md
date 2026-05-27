@@ -6,9 +6,9 @@ date: 2026-05-25
 image: ../../../assets/images/blog-geo-roi-z-geo.png
 icon: '<polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>'
 author:
-  name: 'Mateusz Wiśniewski'
-  role: 'Ekspert SEO/AI Search · ICEA'
-  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
+  name: 'Michał Ziach'
+  role: 'CTO · ICEA'
+  avatar: ../../../assets/images/authors/michal-ziach.avif
 readTime: '12 min'
 tags: ['ROI', 'GEO', 'KPI', 'Raportowanie']
 pillar: 'geo'

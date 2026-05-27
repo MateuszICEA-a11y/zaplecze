@@ -6,9 +6,9 @@ date: 2026-05-25
 image: ../../../assets/images/blog-modele-llm-chatgpt-vs-claude.png
 icon: '<path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 0 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 0-2-2V9m0 0h18"/>'
 author:
-  name: 'Tomasz Czechowski'
-  role: 'Head of SEO · ICEA'
-  avatar: ../../../assets/images/authors/tomasz-czechowski.avif
+  name: 'Mateusz Wiśniewski'
+  role: 'Ekspert SEO/AI Search · ICEA'
+  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
 readTime: '12 min'
 tags: ['ChatGPT', 'Claude', 'Porównanie', 'Modele AI']
 pillar: 'modele-llm'

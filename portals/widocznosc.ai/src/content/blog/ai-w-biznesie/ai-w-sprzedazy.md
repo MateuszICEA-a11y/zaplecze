@@ -6,9 +6,9 @@ date: 2026-05-25
 image: ../../../assets/images/blog-ai-w-biznesie-ai-w-sprzedazy.png
 icon: '<path d="M3 3h18v4H3z"/><path d="M3 10h11v4H3z"/><circle cx="17" cy="12" r="3"/><path d="M17 15v6"/><path d="M14 18h6"/>'
 author:
-  name: 'Mateusz Wiśniewski'
-  role: 'Ekspert SEO/AI Search · ICEA'
-  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
+  name: 'Michał Ziach'
+  role: 'CTO · ICEA'
+  avatar: ../../../assets/images/authors/michal-ziach.avif
 readTime: '11 min'
 tags: ['AI w sprzedaży', 'Lead scoring', 'CRM', 'AI w biznesie']
 pillar: 'ai-w-biznesie'

@@ -6,9 +6,9 @@ date: 2026-05-25
 image: ../../../assets/images/blog-ai-w-biznesie-etyka-ai-w-firmie.png
 icon: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>'
 author:
-  name: 'Mateusz Wiśniewski'
-  role: 'Ekspert SEO/AI Search · ICEA'
-  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
+  name: 'Anna Jelonek-Wrzesińska'
+  role: 'Head of International SEO & AI Search · ICEA'
+  avatar: ../../../assets/images/authors/anna-jelonek.png
 readTime: '14 min'
 tags: ['Etyka AI', 'Governance', 'Odpowiedzialne AI', 'AI w biznesie']
 pillar: 'ai-w-biznesie'

@@ -6,9 +6,9 @@ date: 2026-05-25
 image: ../../../assets/images/blog-ai-w-biznesie-bezpieczenstwo-danych-llm.png
 icon: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>'
 author:
-  name: 'Mateusz Wiśniewski'
-  role: 'Ekspert SEO/AI Search · ICEA'
-  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
+  name: 'Tomasz Czechowski'
+  role: 'Head of SEO · ICEA'
+  avatar: ../../../assets/images/authors/tomasz-czechowski.avif
 readTime: '11 min'
 tags: ['Bezpieczeństwo danych', 'LLM', 'Prywatność', 'AI w biznesie']
 pillar: 'ai-w-biznesie'

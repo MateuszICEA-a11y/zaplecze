@@ -6,9 +6,9 @@ date: 2026-05-25
 image: ../../../assets/images/blog-modele-llm-chatgpt-vs-gemini.png
 icon: '<path d="M3 6h18M3 12h18M3 18h18"/><path d="M7 6v12M17 6v12"/>'
 author:
-  name: 'Tomasz Czechowski'
-  role: 'Head of SEO · ICEA'
-  avatar: ../../../assets/images/authors/tomasz-czechowski.avif
+  name: 'Mateusz Wiśniewski'
+  role: 'Ekspert SEO/AI Search · ICEA'
+  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
 readTime: '12 min'
 tags: ['ChatGPT', 'Gemini', 'Porównanie', 'Modele AI']
 pillar: 'modele-llm'
