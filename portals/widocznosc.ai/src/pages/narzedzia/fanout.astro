@@ -4,6 +4,7 @@ import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import ScrollUpButton from '../../components/ScrollUpButton.astro';
 
+const siteUrl = 'https://widocznosc.ai';
 const examples = [
   'najlepszy system CRM dla małej firmy',
   'ranking kont firmowych 2026',
@@ -17,6 +18,51 @@ const examples = [
 >
   <Navbar />
 
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'SoftwareApplication',
+          name: 'Analiza zapytań (Fan-out)',
+          applicationCategory: 'BusinessApplication',
+          operatingSystem: 'Web',
+          url: `${siteUrl}/narzedzia/fanout`,
+          description:
+            'Bezpłatne narzędzie widocznosc.ai pokazujące, na jakie mniejsze pytania ChatGPT rozbija frazę i jakie domeny cytuje w odpowiedzi.',
+          offers: {
+            '@type': 'Offer',
+            price: 0,
+            priceCurrency: 'PLN',
+          },
+        },
+        {
+          '@type': 'HowTo',
+          name: 'Jak sprawdzić query fan-out w ChatGPT',
+          step: [
+            {
+              '@type': 'HowToStep',
+              name: 'Wpisz zapytanie',
+              text: 'Podaj frazę rankingową, porównawczą lub komercyjną do analizy.',
+            },
+            {
+              '@type': 'HowToStep',
+              name: 'Uruchom analizę',
+              text: 'Kliknij przycisk, aby sprawdzić, jakie zapytania pomocnicze i źródła pojawią się w przebiegu wyszukiwania.',
+            },
+            {
+              '@type': 'HowToStep',
+              name: 'Przejrzyj domeny',
+              text: 'Zobacz listę cytowanych domen i użyj jej do planowania treści pod widoczność w AI.',
+            },
+          ],
+        },
+      ],
+    })}
+  />
+
   <main class="flex-grow">
     <section class="tool-hero">
       <div class="content-container tool-hero-inner">
@@ -28,7 +74,7 @@ const examples = [
 
         <header class="text-center">
           <span class="eyebrow tool-eyebrow">Narzędzie · bezpłatne</span>
-          <h1 class="tool-hero-title">
+          <h1 class="tool-hero-title display-xl">
             Sprawdź, jak ChatGPT szuka informacji w&nbsp;tle
           </h1>
           <p class="tool-hero-copy">
@@ -54,8 +100,14 @@ const examples = [
           <button type="submit" class="btn-primary fanout-submit">Zobacz rozbicie zapytania</button>
           <div class="fanout-examples" aria-label="Przykładowe zapytania">
             {examples.map((ex) => (
-              <button type="button" class="fanout-example" data-query={ex}>{ex}</button>
+              <button type="button" class="fanout-example" data-query={ex} aria-pressed="false">
+                {ex}
+              </button>
             ))}
+          </div>
+          <div class="fanout-form-meta">
+            <span>Maksymalnie 300 znaków</span>
+            <span id="fanout-counter">0/300</span>
           </div>
         </form>
 
@@ -79,8 +131,8 @@ const examples = [
     overflow: hidden;
     padding: clamp(3.5rem, 8vw, 7rem) 0 clamp(4rem, 8vw, 7.5rem);
     background:
-      radial-gradient(circle at 20% 12%, color-mix(in srgb, var(--accent-blue) 12%, transparent), transparent 34rem),
-      linear-gradient(180deg, color-mix(in srgb, var(--bg-canvas) 94%, var(--accent-blue) 6%), var(--bg-canvas));
+      radial-gradient(circle at 20% 12%, var(--accent-blue-soft), transparent 34rem),
+      linear-gradient(180deg, var(--bg-surface-1), var(--bg-canvas));
   }
 
   .tool-hero-inner {
@@ -109,7 +161,7 @@ const examples = [
 
   .tool-breadcrumb-current {
     color: var(--ink);
-    font-weight: 700;
+    font-weight: 500;
   }
 
   .tool-eyebrow {
@@ -120,9 +172,6 @@ const examples = [
     max-width: 980px;
     margin: 0 auto;
     color: var(--ink);
-    font-size: clamp(3rem, 7vw, 6.75rem);
-    line-height: 0.95;
-    letter-spacing: 0;
   }
 
   .tool-hero-accent {
@@ -144,26 +193,26 @@ const examples = [
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 0.85rem;
-    border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+    border: 1px solid var(--hairline);
     border-radius: 1.25rem;
-    background: color-mix(in srgb, var(--bg-surface-1) 92%, white 8%);
-    box-shadow: 0 24px 70px color-mix(in srgb, var(--ink) 8%, transparent);
+    background: var(--bg-surface-1);
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.08);
   }
 
-  .fanout-field { display: flex; flex-direction: column; gap: 0.45rem; text-align: left; font-weight: 700; }
+  .fanout-field { display: flex; flex-direction: column; gap: 0.45rem; text-align: left; font-weight: 500; }
   .fanout-field input {
     width: 100%;
     min-height: 3.35rem;
     padding: 0.9rem 1rem;
     border-radius: 0.85rem;
-    border: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
+    border: 1px solid var(--hairline);
     background: var(--bg-canvas);
     color: var(--ink);
     font-size: 1rem;
   }
 
   .fanout-field input:focus {
-    outline: 2px solid color-mix(in srgb, var(--accent-blue) 28%, transparent);
+    outline: 2px solid var(--accent-blue-soft);
     outline-offset: 2px;
   }
 
@@ -186,13 +235,25 @@ const examples = [
     padding: 0.42rem 0.78rem;
     border-radius: 999px;
     cursor: pointer;
-    border: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
-    background: color-mix(in srgb, var(--accent-blue) 8%, transparent);
+    border: 1px solid var(--hairline);
+    background: var(--accent-blue-soft);
     color: var(--ink);
   }
 
-  .fanout-example:hover {
-    border-color: color-mix(in srgb, var(--accent-blue) 40%, transparent);
+  .fanout-example:hover,
+  .fanout-example[aria-pressed='true'] {
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+  }
+
+  .fanout-form-meta {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--ink-faint);
+    font-size: 0.78rem;
+    line-height: 1.4;
   }
 
   .fanout-results {
@@ -205,10 +266,10 @@ const examples = [
   .fanout-results.hidden { display: none; }
 
   :global(.fanout-panel) {
-    border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+    border: 1px solid var(--hairline);
     border-radius: 1.15rem;
     padding: clamp(1.15rem, 2.3vw, 1.75rem);
-    background: color-mix(in srgb, var(--bg-surface-1) 94%, white 6%);
+    background: var(--bg-surface-1);
   }
 
   :global(.fanout-panel h2) {
@@ -216,6 +277,10 @@ const examples = [
     color: var(--ink);
     font-size: clamp(1.18rem, 2vw, 1.55rem);
     line-height: 1.15;
+  }
+
+  :global(.fanout-result-meta) {
+    margin-bottom: 0.7rem;
   }
 
   :global(.fanout-panel--empty) {
@@ -250,7 +315,7 @@ const examples = [
     align-items: start;
     padding: 0.78rem 0.9rem;
     border-radius: 0.75rem;
-    background: color-mix(in srgb, var(--accent-blue) 7%, transparent);
+    background: var(--accent-blue-soft);
     color: var(--ink);
     font-size: 0.94rem;
     line-height: 1.45;
@@ -263,10 +328,10 @@ const examples = [
     align-items: center;
     justify-content: center;
     border-radius: 999px;
-    background: color-mix(in srgb, var(--accent-blue) 16%, white 84%);
+    background: var(--bg-surface-2);
     color: var(--accent-blue);
     font-size: 0.78rem;
-    font-weight: 800;
+    font-weight: 500;
   }
 
   :global(.domain-list) {
@@ -276,21 +341,21 @@ const examples = [
 
   :global(.domain-card) {
     padding: 0.85rem 0.95rem;
-    border: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+    border: 1px solid var(--hairline-soft);
     border-radius: 0.85rem;
-    background: color-mix(in srgb, var(--bg-canvas) 78%, white 22%);
+    background: var(--bg-canvas);
   }
 
   :global(.domain-row) { display: flex; align-items: center; gap: 0.75rem; }
-  :global(.domain-name) { font-weight: 800; color: var(--ink); }
+  :global(.domain-name) { font-weight: 600; color: var(--ink); }
   :global(.domain-count) {
     margin-left: auto;
     flex: 0 0 auto;
     font-size: 0.78rem;
-    font-weight: 800;
+    font-weight: 500;
     padding: 0.2rem 0.62rem;
     border-radius: 999px;
-    background: color-mix(in srgb, var(--accent-blue) 14%, transparent);
+    background: var(--accent-blue-soft);
     color: var(--accent-blue);
   }
 
@@ -311,9 +376,9 @@ const examples = [
   :global(.source-link) {
     display: block;
     padding: 0.72rem 0.82rem;
-    border: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+    border: 1px solid var(--hairline-soft);
     border-radius: 0.75rem;
-    background: color-mix(in srgb, var(--bg-canvas) 78%, white 22%);
+    background: var(--bg-canvas);
     color: var(--ink-muted);
     font-size: 0.84rem;
     line-height: 1.35;
@@ -340,10 +405,6 @@ const examples = [
 
   :global(.fanout-loading-kicker) {
     color: var(--accent-blue);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
     margin-bottom: 8px;
   }
 
@@ -353,7 +414,7 @@ const examples = [
     line-height: 1.05;
     font-weight: 500;
     color: var(--ink);
-    letter-spacing: 0;
+    letter-spacing: -0.031em;
     margin: 0;
   }
 
@@ -370,7 +431,7 @@ const examples = [
     height: 42px;
     flex: none;
     border-radius: 50%;
-    border: 2px solid color-mix(in srgb, var(--accent-blue) 18%, transparent);
+    border: 2px solid var(--accent-blue-soft);
     border-top-color: var(--accent-blue);
     animation: spin 0.8s linear infinite;
   }
@@ -414,13 +475,13 @@ const examples = [
     padding: 12px 13px;
     border-radius: var(--r-md);
     background: var(--bg-canvas);
-    border: 1px solid color-mix(in srgb, var(--hairline) 74%, transparent);
+    border: 1px solid var(--hairline-soft);
   }
 
   :global(.fanout-loading-step-name) {
     color: var(--ink);
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.2;
   }
 
@@ -431,23 +492,63 @@ const examples = [
     margin-top: 5px;
   }
 
-  :global(.fanout-error) { padding: 1rem 1.25rem; border-radius: 0.75rem; background: color-mix(in srgb, #ef4444 14%, transparent); color: #b91c1c; }
+  :global(.fanout-error) { padding: 1rem 1.25rem; border-radius: 0.75rem; background: var(--err-bg); color: var(--err-fg); }
   :global(.fanout-cta) { margin-top: 0.75rem; }
   :global(.fanout-note),
-  .fanout-note { margin-top: 1.25rem; text-align: center; font-size: 0.8rem; opacity: 0.6; }
+  .fanout-note { margin-top: 1.25rem; color: var(--ink-faint); text-align: center; font-size: 0.8rem; }
+
+  :global(.tool-next-steps) {
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-xl);
+    padding: clamp(1.15rem, 2.3vw, 1.75rem);
+    background: var(--bg-surface-1);
+  }
+
+  :global(.tool-next-steps h2) {
+    margin: 0 0 1rem;
+    color: var(--ink);
+  }
+
+  :global(.next-grid) {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  :global(.next-card) {
+    display: block;
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-md);
+    background: var(--bg-canvas);
+    color: inherit;
+    text-decoration: none;
+  }
+
+  :global(.next-card:hover) {
+    border-color: var(--accent-blue);
+  }
+
+  :global(.next-card h3) {
+    margin: 0.65rem 0 0;
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 1.08rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
 
   @media (max-width: 780px) {
     .tool-hero {
       padding-top: 2.8rem;
     }
 
-    .tool-hero-title {
-      font-size: clamp(2.65rem, 14vw, 4.2rem);
-    }
-
     .fanout-form,
     :global(.fanout-grid),
-    :global(.source-grid) {
+    :global(.source-grid),
+    :global(.next-grid) {
       grid-template-columns: 1fr;
     }
 
@@ -479,6 +580,8 @@ const examples = [
     if (!form || !results || !input) return;
 
     const submit = form.querySelector('button[type="submit"]');
+    const counter = document.getElementById('fanout-counter');
+    const exampleButtons = Array.from(form.querySelectorAll('.fanout-example'));
 
     function escapeHtml(value) {
       return String(value ?? '')
@@ -513,13 +616,39 @@ const examples = [
       results.innerHTML = `<div class="fanout-error">${escapeHtml(message)}</div>`;
     }
 
+    function renderNextSteps() {
+      return `
+        <section class="tool-next-steps" aria-labelledby="fanout-next-title">
+          <h2 id="fanout-next-title" class="display-md">Co dalej?</h2>
+          <div class="next-grid">
+            <a class="next-card" href="/narzedzia/brand-check">
+              <span class="eyebrow">Marka w AI</span>
+              <h3>Sprawdź, co modele wiedzą o Twojej firmie</h3>
+            </a>
+            <a class="next-card" href="/geo/query-fan-out">
+              <span class="eyebrow">Czytaj</span>
+              <h3>Jak działa Query Fan-out w ChatGPT</h3>
+            </a>
+            <a class="next-card" href="/kontakt?type=audyt-ai">
+              <span class="eyebrow">Audyt AI</span>
+              <h3>Zamów pełny audyt widoczności w AI</h3>
+            </a>
+          </div>
+        </section>`;
+    }
+
     function renderResults(data) {
       if (data.status === 'no-search') {
         results.innerHTML = `
           <div class="fanout-panel fanout-panel--empty">
+            <div class="head-meta fanout-result-meta">
+              <span class="section-index">F/01</span>
+              <span class="eyebrow">Wynik</span>
+            </div>
             <h2>Brak zapytań wyszukiwania</h2>
             <p class="fanout-panel-copy">W tym przebiegu model nie ujawnił osobnego wyszukiwania w sieci. Spróbuj frazy rankingowej, porównawczej albo aktualnego pytania branżowego.</p>
-          </div>`;
+          </div>
+          ${renderNextSteps()}`;
         return;
       }
 
@@ -554,27 +683,58 @@ const examples = [
 
       results.innerHTML = `
         <section class="fanout-panel">
+          <div class="head-meta fanout-result-meta">
+            <span class="section-index">F/01</span>
+            <span class="eyebrow">Zapytania</span>
+          </div>
           <h2>Zapytania wyszukiwania (${escapeHtml(String((data.fanoutQueries || []).length))})</h2>
           <p class="fanout-panel-copy">Frazy ujawnione przez model w tym przebiegu dla: „${escapeHtml(data.query)}”.</p>
           <ul class="fanout-list">${fanouts || '<li>brak</li>'}</ul>
         </section>
         <section class="fanout-panel">
+          <div class="head-meta fanout-result-meta">
+            <span class="section-index">F/02</span>
+            <span class="eyebrow">Źródła</span>
+          </div>
           <h2>Cytowane domeny</h2>
           <p class="fanout-panel-copy">Domeny, które trafiły do finalnej odpowiedzi modelu.</p>
           <div class="domain-list">${domains || '<p class="fanout-panel-copy">Brak cytowań w odpowiedzi.</p>'}</div>
         </section>
         ${ctaHtml}
+        ${renderNextSteps()}
       `;
     }
 
-    form.querySelectorAll('.fanout-example').forEach((btn) => {
+    function updateCounter() {
+      if (counter) counter.textContent = `${String(input.value || '').length}/300`;
+    }
+
+    function updateExampleState() {
+      const value = String(input.value || '').trim();
+      exampleButtons.forEach((btn) => {
+        const active = value === btn.getAttribute('data-query');
+        btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+    }
+
+    input.addEventListener('input', () => {
+      updateCounter();
+      updateExampleState();
+    });
+
+    exampleButtons.forEach((btn) => {
       btn.addEventListener('click', (event) => {
         event.preventDefault();
         event.stopPropagation();
         input.value = btn.getAttribute('data-query') || '';
+        updateCounter();
+        updateExampleState();
         input.focus();
       });
     });
+
+    updateCounter();
+    updateExampleState();
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -587,7 +747,7 @@ const examples = [
         <div class="fanout-loading-card">
           <div class="fanout-loading-header">
             <div>
-              <div class="fanout-loading-kicker">Analiza w toku</div>
+              <div class="eyebrow fanout-loading-kicker">Analiza w toku</div>
               <h2 class="fanout-loading-title">Sprawdzamy zapytanie</h2>
               <p class="fanout-loading-copy">
                 Model przygotowuje odpowiedź, uruchamia wyszukiwanie i zwraca źródła dla: „${escapeHtml(query)}”.

@@ -29,6 +29,8 @@
 
   /* Semantic */
   --success-green: #1aaa55;
+  --err-fg: #fca5a5;
+  --err-bg: rgba(239, 68, 68, 0.14);
 
   /* Pills (landing redesign 2026-05-09) */
   --pill-translucent: rgba(255, 255, 255, 0.12);
@@ -203,6 +205,8 @@
 
   /* Semantic */
   --success-green: #14783a;
+  --err-fg: #b91c1c;
+  --err-bg: rgba(239, 68, 68, 0.1);
 
   /* Spotlight gradients zostają ciemne (signature) – brak override
      dla --gradient-violet/orange/magenta/coral/violet-linear/process-* */
