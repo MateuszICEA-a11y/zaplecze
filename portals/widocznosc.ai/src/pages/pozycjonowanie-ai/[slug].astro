@@ -267,6 +267,47 @@ const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : mode
                 </div>
                 <div class="citation-source">Dane polecanej kliniki zanonimizowane</div>
               </>
+            ) : model.slug === 'claude' ? (
+              <>
+                <div class="citation-user">znajdź mi dobry sklep z butami do biegania we Wrocławiu</div>
+                <div class="citation-answer citation-answer--claude">
+                  <span class="citation-tools">Used 2 tools</span>
+                  <div class="citation-local-pack">
+                    <div class="citation-map" aria-hidden="true">
+                      <span class="citation-road citation-road--a"></span>
+                      <span class="citation-road citation-road--b"></span>
+                      <span class="citation-road citation-road--c"></span>
+                      <span class="citation-map-label citation-map-label--top">KOZANÓW</span>
+                      <span class="citation-map-label citation-map-label--mid">GĄDÓW MAŁY</span>
+                      <span class="citation-map-label citation-map-label--low">MUCHOBÓR</span>
+                      <span class="citation-rating citation-rating--one">4.7</span>
+                      <span class="citation-rating citation-rating--two">4.5</span>
+                      <span class="citation-rating citation-rating--three">4.3</span>
+                    </div>
+                    <div class="citation-local-results">
+                      <h3>Sklepy z butami do biegania - Wrocław</h3>
+                      <button type="button">Copy</button>
+                      <div class="citation-place-card">
+                        <span class="citation-place-thumb"></span>
+                        <div>
+                          <strong>Sklep Biegacza</strong>
+                          <p>4.7 ★ (694) · sklep sportowy</p>
+                          <p>Najlepszy wybór - specjalistyczny sklep...</p>
+                        </div>
+                      </div>
+                      <div class="citation-place-card">
+                        <span class="citation-place-thumb citation-place-thumb--blue"></span>
+                        <div>
+                          <strong>Decathlon Wrocław...</strong>
+                          <p>4.5 ★ (3700) · sporting goods</p>
+                          <p>Szeroki wybór, konkurencyjne ceny...</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="citation-source">Przykład lokalnego wyniku rekomendacyjnego w Claude</div>
+              </>
             ) : (
               <>
                 <div class="citation-user">
@@ -979,6 +1020,199 @@ const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : mode
     font-size: 0.7rem;
     font-weight: 800;
     line-height: 1;
+  }
+
+  .citation-answer--claude {
+    display: grid;
+    gap: 1rem;
+    background: var(--bg-canvas);
+    color: var(--ink);
+  }
+
+  .citation-tools {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--ink-muted);
+    font-size: 0.9rem;
+  }
+
+  .citation-tools::after {
+    content: '›';
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+
+  .citation-local-pack {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(15rem, 0.78fr);
+    overflow: hidden;
+    min-height: 21rem;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-lg);
+    background: color-mix(in srgb, var(--bg-surface-2) 70%, var(--bg-canvas));
+  }
+
+  .citation-map {
+    position: relative;
+    min-height: 21rem;
+    overflow: hidden;
+    background:
+      linear-gradient(35deg, transparent 0 46%, rgba(35, 122, 255, 0.22) 46% 48%, transparent 48%),
+      linear-gradient(112deg, transparent 0 38%, rgba(35, 122, 255, 0.18) 38% 40%, transparent 40%),
+      linear-gradient(0deg, rgba(34, 197, 94, 0.13) 0 34%, transparent 34% 100%),
+      linear-gradient(90deg, rgba(56, 189, 248, 0.1) 0 28%, transparent 28% 100%),
+      var(--bg-surface-1);
+  }
+
+  .citation-road {
+    position: absolute;
+    border-radius: var(--r-pill);
+    background: color-mix(in srgb, var(--citation-brand) 40%, #9ca3af);
+    opacity: 0.72;
+  }
+
+  .citation-road--a {
+    width: 120%;
+    height: 0.7rem;
+    left: -12%;
+    top: 35%;
+    transform: rotate(17deg);
+  }
+
+  .citation-road--b {
+    width: 0.7rem;
+    height: 125%;
+    left: 52%;
+    top: -10%;
+    transform: rotate(14deg);
+  }
+
+  .citation-road--c {
+    width: 96%;
+    height: 0.55rem;
+    left: 5%;
+    top: 72%;
+    transform: rotate(-9deg);
+    opacity: 0.46;
+  }
+
+  .citation-map-label,
+  .citation-rating {
+    position: absolute;
+    z-index: 2;
+    font-weight: 800;
+  }
+
+  .citation-map-label {
+    color: var(--ink-muted);
+    font-size: 0.88rem;
+    letter-spacing: 0.08em;
+  }
+
+  .citation-map-label--top {
+    left: 54%;
+    top: 9%;
+  }
+
+  .citation-map-label--mid {
+    left: 34%;
+    top: 45%;
+  }
+
+  .citation-map-label--low {
+    left: 45%;
+    bottom: 19%;
+  }
+
+  .citation-rating {
+    display: grid;
+    place-items: center;
+    min-width: 2.7rem;
+    height: 2.25rem;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-sm);
+    background: var(--bg-canvas);
+    color: var(--ink);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  }
+
+  .citation-rating--one {
+    right: 18%;
+    top: 33%;
+  }
+
+  .citation-rating--two {
+    right: 13%;
+    top: 49%;
+  }
+
+  .citation-rating--three {
+    left: 24%;
+    bottom: 22%;
+  }
+
+  .citation-local-results {
+    display: grid;
+    align-content: start;
+    gap: 0.8rem;
+    padding: 1.35rem;
+    background: color-mix(in srgb, var(--bg-canvas) 92%, var(--bg-surface-1));
+  }
+
+  .citation-local-results h3 {
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: clamp(1.2rem, 2vw, 1.7rem);
+    line-height: 1.18;
+  }
+
+  .citation-local-results button {
+    width: fit-content;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-sm);
+    background: var(--bg-surface-1);
+    color: var(--ink);
+    padding: 0.45rem 0.75rem;
+    font: inherit;
+  }
+
+  .citation-place-card {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    border-radius: var(--r-md);
+    background: var(--bg-surface-1);
+  }
+
+  .citation-place-thumb {
+    min-height: 4rem;
+    border-radius: var(--r-sm);
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, 0.2), transparent),
+      color-mix(in srgb, var(--citation-brand) 18%, var(--bg-surface-2));
+  }
+
+  .citation-place-thumb--blue {
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, 0.22), transparent),
+      color-mix(in srgb, var(--accent-blue) 35%, var(--bg-surface-2));
+  }
+
+  .citation-place-card strong {
+    display: block;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  .citation-place-card p {
+    margin: 0.2rem 0 0;
+    color: var(--ink-muted);
+    font-size: 0.84rem;
+    line-height: 1.35;
   }
 
   .citation-source {
