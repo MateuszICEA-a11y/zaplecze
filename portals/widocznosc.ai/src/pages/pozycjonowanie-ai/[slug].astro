@@ -290,7 +290,7 @@ const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : mode
                       <div class="citation-place-card">
                         <span class="citation-place-thumb"></span>
                         <div>
-                          <strong>Sklep Biegacza</strong>
+                          <strong><span class="citation-place-name-redacted">Sklep sportowy 1</span></strong>
                           <p>4.7 ★ (694) · sklep sportowy</p>
                           <p>Najlepszy wybór - specjalistyczny sklep...</p>
                         </div>
@@ -298,7 +298,7 @@ const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : mode
                       <div class="citation-place-card">
                         <span class="citation-place-thumb citation-place-thumb--blue"></span>
                         <div>
-                          <strong>Decathlon Wrocław...</strong>
+                          <strong><span class="citation-place-name-redacted">Sklep sportowy 2</span></strong>
                           <p>4.5 ★ (3700) · sporting goods</p>
                           <p>Szeroki wybór, konkurencyjne ceny...</p>
                         </div>
@@ -306,7 +306,80 @@ const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : mode
                     </div>
                   </div>
                 </div>
-                <div class="citation-source">Przykład lokalnego wyniku rekomendacyjnego w Claude</div>
+                <div class="citation-source">Nazwy polecanych sklepów zanonimizowane</div>
+              </>
+            ) : model.slug === 'gemini' ? (
+              <>
+                <div class="citation-user">znajdź mi dobrą restaurację w Gdyni</div>
+                <div class="citation-answer citation-answer--gemini">
+                  <p>
+                    Gdynia ma świetną scenę gastronomiczną. Wybór „dobrej” restauracji zależy od
+                    tego, na co akurat masz ochotę, dlatego poniżej znajdziesz kilka sprawdzonych,
+                    wysoko ocenianych lokali w różnych stylach:
+                  </p>
+                  <div class="citation-gemini-section">
+                    <h3>1. Klasyka i tradycja (kuchnia polska i regionalna)</h3>
+                    <ul class="citation-restaurant-list">
+                      <li>
+                        <span class="citation-restaurant-name">Restauracja 1</span>
+                        <ul>
+                          <li>
+                            <strong>Klimat:</strong> wyjątkowe miejsce w centrum miasta, z przytulnym
+                            wnętrzem i elegancką atmosferą.
+                          </li>
+                          <li>
+                            <strong>Kuchnia:</strong> polskie i regionalne tradycje połączone z
+                            sezonowym menu. Dobry wybór na spokojny obiad lub spotkanie biznesowe.
+                          </li>
+                        </ul>
+                      </li>
+                      <li>
+                        <span class="citation-restaurant-name">Restauracja 2</span>
+                        <ul>
+                          <li>
+                            <strong>Klimat:</strong> przestronny, bardzo przytulny lokal poza ścisłym
+                            centrum, często wybierany również na rodzinne obiady.
+                          </li>
+                          <li>
+                            <strong>Kuchnia:</strong> comfort food w tradycyjnym wydaniu, klasyczne
+                            dania i dopracowane desery.
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="citation-source">Nazwy i adresy polecanych restauracji zanonimizowane</div>
+              </>
+            ) : model.slug === 'perplexity' ? (
+              <>
+                <div class="citation-user">szukam księgowej online, polecisz kogoś?</div>
+                <div class="citation-answer citation-answer--perplexity">
+                  <span class="citation-tools">Zakończono 2 kroki</span>
+                  <p>
+                    Jasne - jeśli szukasz <strong>księgowej online</strong>, najprościej zacząć od
+                    platform, które łączą z polecanymi księgowymi i mają opinie klientów. Dobrym
+                    punktem startowym jest <span class="citation-redacted-inline">platforma</span>,
+                    która pokazuje listę „polecanych księgowych” i pozwala dobrać osobę do swoich
+                    potrzeb.
+                  </p>
+                  <div class="citation-perplexity-section">
+                    <h3>Co warto sprawdzić</h3>
+                    <ul class="citation-perplexity-list">
+                      <li>Czy obsługuje Twoją formę działalności: JDG, spółka, pełna księgowość.</li>
+                      <li>Czy ma kontakt mailowy, telefoniczny i szybkie odpowiedzi online.</li>
+                      <li>
+                        Czy oferuje konsultację przed startem, żeby ustalić zakres i cenę.
+                        <span class="citation-reference-chip">źródło 1</span>
+                      </li>
+                      <li>
+                        Czy ma jasny model współpracy i dostęp do dokumentów przez internet.
+                        <span class="citation-reference-chip">źródło 2</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="citation-source">Nazwy platform i źródeł zanonimizowane</div>
               </>
             ) : model.slug === 'bing-copilot' ? (
               <>
@@ -317,12 +390,15 @@ const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : mode
                   <p>
                     Najlepsze sklepy internetowe z <strong>sukienkami na wesele</strong> w Polsce to
                     te, które łączą duży wybór, dobrą jakość i szybkie dostawy. Najkrócej:
-                    <strong>NA-KD</strong>, <strong>Moliera 2</strong>, <strong>Zalando</strong>,
-                    <strong>Answear</strong> i <strong>Lou</strong> to najpewniejsze kierunki - różnią
-                    się stylem i budżetem, więc łatwo dobrać coś pod swój gust.
+                    <span class="citation-redacted-inline">sklep 1</span>,
+                    <span class="citation-redacted-inline">sklep 2</span>,
+                    <span class="citation-redacted-inline">sklep 3</span>,
+                    <span class="citation-redacted-inline">sklep 4</span> i
+                    <span class="citation-redacted-inline">sklep 5</span> to najpewniejsze kierunki -
+                    różnią się stylem i budżetem, więc łatwo dobrać coś pod swój gust.
                   </p>
                 </div>
-                <div class="citation-source">Przykład rekomendacji zakupowej w Bing Copilot</div>
+                <div class="citation-source">Nazwy polecanych sklepów zanonimizowane</div>
               </>
             ) : (
               <>
@@ -1056,6 +1132,135 @@ const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : mode
     margin: 0;
   }
 
+  .citation-answer--gemini {
+    display: grid;
+    gap: 1.2rem;
+    background: var(--bg-canvas);
+    color: var(--ink);
+    font-size: clamp(0.98rem, 1.25vw, 1.1rem);
+    line-height: 1.65;
+  }
+
+  .citation-answer--gemini p {
+    margin: 0;
+  }
+
+  .citation-gemini-section {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .citation-gemini-section h3 {
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: clamp(1rem, 1.4vw, 1.16rem);
+    font-weight: 800;
+    line-height: 1.35;
+  }
+
+  .citation-restaurant-list,
+  .citation-restaurant-list ul {
+    display: grid;
+    gap: 0.7rem;
+    margin: 0;
+    padding-left: 1.2rem;
+  }
+
+  .citation-restaurant-list ul {
+    gap: 0.55rem;
+    padding-left: 1.1rem;
+    color: var(--ink-muted);
+  }
+
+  .citation-restaurant-name {
+    display: inline-flex;
+    min-width: 9rem;
+    height: 1.28em;
+    transform: translateY(0.14em);
+    border-radius: var(--r-xs);
+    background:
+      repeating-linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--citation-brand) 28%, transparent) 0 8px,
+        color-mix(in srgb, var(--citation-brand) 16%, transparent) 8px 16px
+      ),
+      color-mix(in srgb, var(--citation-brand) 10%, var(--bg-surface-2));
+    color: transparent;
+    user-select: none;
+  }
+
+  .citation-answer--perplexity {
+    display: grid;
+    gap: 1.15rem;
+    background: var(--bg-canvas);
+    color: var(--ink);
+    font-size: clamp(0.98rem, 1.28vw, 1.12rem);
+    line-height: 1.7;
+  }
+
+  .citation-answer--perplexity p {
+    margin: 0;
+  }
+
+  .citation-perplexity-section {
+    display: grid;
+    gap: 0.7rem;
+  }
+
+  .citation-perplexity-section h3 {
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: clamp(1rem, 1.35vw, 1.14rem);
+    font-weight: 800;
+    line-height: 1.3;
+  }
+
+  .citation-perplexity-list {
+    display: grid;
+    gap: 0.6rem;
+    margin: 0;
+    padding-left: 1.2rem;
+    color: var(--ink-muted);
+  }
+
+  .citation-reference-chip {
+    display: inline-flex;
+    align-items: center;
+    width: 4.2rem;
+    height: 1.25em;
+    transform: translateY(0.14em);
+    border-radius: var(--r-xs);
+    background:
+      repeating-linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--citation-brand) 24%, transparent) 0 7px,
+        color-mix(in srgb, var(--citation-brand) 13%, transparent) 7px 14px
+      ),
+      color-mix(in srgb, var(--citation-brand) 8%, var(--bg-surface-2));
+    color: transparent;
+    user-select: none;
+  }
+
+  .citation-redacted-inline {
+    display: inline-flex;
+    align-items: center;
+    min-width: 5.7rem;
+    height: 1.25em;
+    transform: translateY(0.12em);
+    border-radius: var(--r-xs);
+    background:
+      repeating-linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--citation-brand) 28%, transparent) 0 8px,
+        color-mix(in srgb, var(--citation-brand) 16%, transparent) 8px 16px
+      ),
+      color-mix(in srgb, var(--citation-brand) 10%, var(--bg-surface-2));
+    color: transparent;
+    user-select: none;
+  }
+
   .citation-tools {
     display: inline-flex;
     width: fit-content;
@@ -1073,9 +1278,9 @@ const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : mode
 
   .citation-local-pack {
     display: grid;
-    grid-template-columns: minmax(0, 1.25fr) minmax(15rem, 0.78fr);
+    grid-template-columns: minmax(0, 1.15fr) minmax(13.5rem, 0.72fr);
     overflow: hidden;
-    min-height: 21rem;
+    min-height: 17.5rem;
     border: 1px solid var(--hairline-soft);
     border-radius: var(--r-lg);
     background: color-mix(in srgb, var(--bg-surface-2) 70%, var(--bg-canvas));
@@ -1083,7 +1288,7 @@ const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : mode
 
   .citation-map {
     position: relative;
-    min-height: 21rem;
+    min-height: 17.5rem;
     overflow: hidden;
     background:
       linear-gradient(35deg, transparent 0 46%, rgba(35, 122, 255, 0.22) 46% 48%, transparent 48%),
@@ -1134,7 +1339,7 @@ const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : mode
 
   .citation-map-label {
     color: var(--ink-muted);
-    font-size: 0.88rem;
+    font-size: 0.74rem;
     letter-spacing: 0.08em;
   }
 
@@ -1156,8 +1361,8 @@ const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : mode
   .citation-rating {
     display: grid;
     place-items: center;
-    min-width: 2.7rem;
-    height: 2.25rem;
+    min-width: 2.35rem;
+    height: 2rem;
     border: 1px solid var(--hairline-soft);
     border-radius: var(--r-sm);
     background: var(--bg-canvas);
@@ -1183,8 +1388,8 @@ const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : mode
   .citation-local-results {
     display: grid;
     align-content: start;
-    gap: 0.8rem;
-    padding: 1.35rem;
+    gap: 0.65rem;
+    padding: 1rem;
     background: color-mix(in srgb, var(--bg-canvas) 92%, var(--bg-surface-1));
   }
 
@@ -1192,7 +1397,7 @@ const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : mode
     margin: 0;
     color: var(--ink);
     font-family: var(--font-sans);
-    font-size: clamp(1.2rem, 2vw, 1.7rem);
+    font-size: clamp(1.05rem, 1.55vw, 1.35rem);
     line-height: 1.18;
   }
 
@@ -1208,15 +1413,15 @@ const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : mode
 
   .citation-place-card {
     display: grid;
-    grid-template-columns: 4rem 1fr;
-    gap: 0.8rem;
-    padding: 0.8rem;
+    grid-template-columns: 3.25rem 1fr;
+    gap: 0.65rem;
+    padding: 0.65rem;
     border-radius: var(--r-md);
     background: var(--bg-surface-1);
   }
 
   .citation-place-thumb {
-    min-height: 4rem;
+    min-height: 3.25rem;
     border-radius: var(--r-sm);
     background:
       linear-gradient(145deg, rgba(255, 255, 255, 0.2), transparent),
@@ -1232,13 +1437,31 @@ const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : mode
   .citation-place-card strong {
     display: block;
     color: var(--ink);
+    font-size: 0.9rem;
     line-height: 1.2;
+  }
+
+  .citation-place-name-redacted {
+    display: inline-flex;
+    min-width: 7.25rem;
+    height: 1.15em;
+    transform: translateY(0.12em);
+    border-radius: var(--r-xs);
+    background:
+      repeating-linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--citation-brand) 28%, transparent) 0 7px,
+        color-mix(in srgb, var(--citation-brand) 15%, transparent) 7px 14px
+      ),
+      color-mix(in srgb, var(--citation-brand) 9%, var(--bg-surface-2));
+    color: transparent;
+    user-select: none;
   }
 
   .citation-place-card p {
     margin: 0.2rem 0 0;
     color: var(--ink-muted);
-    font-size: 0.84rem;
+    font-size: 0.76rem;
     line-height: 1.35;
   }
 
@@ -1470,6 +1693,78 @@ const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : mode
     }
     .quick-check-row {
       grid-template-columns: 1fr;
+    }
+
+    .citation-mock {
+      padding: 1rem;
+      gap: 0.75rem;
+    }
+
+    .citation-user {
+      max-width: 100%;
+      justify-self: stretch;
+      font-size: 0.92rem;
+    }
+
+    .citation-answer--claude {
+      padding: 0.75rem;
+      gap: 0.75rem;
+    }
+
+    .citation-local-pack {
+      grid-template-columns: 1fr;
+      min-height: 0;
+    }
+
+    .citation-map {
+      min-height: 11rem;
+    }
+
+    .citation-local-results {
+      padding: 0.8rem;
+      gap: 0.6rem;
+    }
+
+    .citation-local-results h3 {
+      font-size: 1rem;
+    }
+
+    .citation-local-results button {
+      display: none;
+    }
+
+    .citation-place-card {
+      grid-template-columns: 2.75rem 1fr;
+      gap: 0.55rem;
+      padding: 0.55rem;
+    }
+
+    .citation-place-thumb {
+      min-height: 2.75rem;
+    }
+
+    .citation-map-label {
+      font-size: 0.62rem;
+    }
+
+    .citation-rating {
+      min-width: 2.1rem;
+      height: 1.8rem;
+      font-size: 0.78rem;
+    }
+
+    .citation-answer--gemini,
+    .citation-answer--perplexity,
+    .citation-answer--copilot {
+      font-size: 0.94rem;
+      line-height: 1.58;
+    }
+
+    .citation-restaurant-list,
+    .citation-restaurant-list ul,
+    .citation-perplexity-list {
+      gap: 0.55rem;
+      padding-left: 1rem;
     }
 
     .model-comparison {
