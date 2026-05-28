@@ -4,6 +4,7 @@ import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import ScrollUpButton from '../../components/ScrollUpButton.astro';
 import CTABand from '../../components/CTABand.astro';
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import { PILLAR_LABELS } from '../../content.config';
 
@@ -202,12 +203,13 @@ const initials = (name: string) =>
                   <div class="flex aspect-[3/2] items-center justify-center rounded-[15px]" style="background: var(--bg-canvas);">
                     {
                       post.data.image ? (
-                        <img
+                        <Image
                           src={post.data.image}
                           alt={post.data.title}
+                          widths={[320, 480, 640]}
+                          sizes="(min-width: 1024px) 28vw, (min-width: 768px) 45vw, 100vw"
                           class="author-article-image"
                           loading="lazy"
-                          decoding="async"
                         />
                       ) : (
                         <svg
