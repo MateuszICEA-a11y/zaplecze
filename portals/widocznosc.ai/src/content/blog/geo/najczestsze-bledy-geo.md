@@ -58,7 +58,7 @@ Boty AI dzielą się na dwie zasadniczo różne klasy, które wymagają odmienne
 | Boty wyszukiwawcze i użytkownika | `OAI-SearchBot`, `PerplexityBot`, `ChatGPT-User` | Pobieranie treści w czasie rzeczywistym, prezentacja odpowiedzi z linkiem do Twojej strony | `Allow` – blokada = zero ruchu referencyjnego |
 | Boty treningowe | `GPTBot`, `ClaudeBot`, `Google-Extended`, `CCBot` | Masowe indeksowanie zasobów do budowy baz wiedzy modeli offline | `Disallow` – wysokie zużycie transferu, brak bezpośredniego ruchu |
 
-Zablokowanie `OAI-SearchBot` eliminuje Cię z wyników ChatGPT Search. Zablokowanie `PerplexityBot` – z Perplexity AI. Obie te pomyłki często nie są widoczne w standardowych raportach analitycznych, bo nie generują błędów 4xx na poziomie serwera. Sprawdź, czy Twoje boty mają dostęp, korzystając z narzędzia [AI Bots Check](/narzedzia/ai-bots-check) – weryfikuje ono konfigurację `robots.txt` i faktyczną dostępność dla poszczególnych agentów.
+Zablokowanie `OAI-SearchBot` eliminuje Cię z wyników ChatGPT Search. Zablokowanie `PerplexityBot` – z Perplexity AI. Obie te pomyłki często nie są widoczne w standardowych raportach analitycznych, bo nie generują błędów 4xx na poziomie serwera. Sprawdź, czy Twoje boty mają dostęp, korzystając z narzędzia [Dostęp botów AI](/narzedzia/ai-bots-check) – weryfikuje ono konfigurację `robots.txt` i faktyczną dostępność dla poszczególnych agentów.
 
 ### Cloudflare i niewidzialna blokada na brzegu sieci
 
@@ -126,7 +126,7 @@ Trzy metryki, od których warto zacząć monitoring:
 
 Praktyczny punkt startowy: wybierz 20 pytań, które Twoi klienci wpisują w ChatGPT lub Perplexity. Odpytuj je co dwa tygodnie w czystej sesji przeglądarki bez personalizacji. To Twój bazowy wskaźnik cytowań przed wdrożeniem jakichkolwiek zmian. Pełny [przewodnik po GEO](/geo/przewodnik) opisuje metodologię pomiaru i 6-miesięczny horyzont wdrożenia.
 
-Jeśli chcesz zobaczyć punkt startowy szybciej, narzędzie [URL check](/narzedzia/url-check) analizuje Twoją stronę pod kątem cytowalności i wskazuje konkretne elementy do poprawy – bez konieczności manualnego testowania.
+Jeśli chcesz zobaczyć punkt startowy szybciej, narzędzie [Ocena cytowalności strony](/narzedzia/url-check) analizuje Twoją stronę pod kątem cytowalności i wskazuje konkretne elementy do poprawy – bez konieczności manualnego testowania.
 
 ## FAQ
 

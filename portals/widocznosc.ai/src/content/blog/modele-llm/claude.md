@@ -139,7 +139,7 @@ Jeśli Twoja marka pojawia się w odpowiedziach generowanych przez Claude'a – 
 
 **Strony dobrze zoptymalizowane pod GEO (Generative Engine Optimization, czyli optymalizację pod generatywne silniki wyszukiwania) są cytowane przez Claude'a częściej niż strony z ogólnikową treścią bez twardych danych.** Mechanizm ten jest identyczny jak opisany w [przewodniku po GEO](/geo/przewodnik) – statystyki, cytowania źródeł i ustrukturyzowane fragmenty podnoszą wskaźnik cytowań o 30–115% (Aggarwal et al., KDD 2024).
 
-Jeśli chcesz sprawdzić, jak Twoja marka jest postrzegana przez Claude'a i inne modele, [audyt marki (brand check)](/narzedzia/brand-check) odpyta cztery silniki AI jednocześnie i pokaże różnice w odpowiedziach. Pełniejsza strategia widoczności marki w modelu Claude opisana jest na stronie [pozycjonowanie AI – Claude](/pozycjonowanie-ai/claude).
+Jeśli chcesz sprawdzić, jak Twoja marka jest postrzegana przez Claude'a i inne modele, [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI jednocześnie i pokaże różnice w odpowiedziach. Pełniejsza strategia widoczności marki w modelu Claude opisana jest na stronie [pozycjonowanie AI – Claude](/pozycjonowanie-ai/claude).
 
 ## Bezpieczeństwo i Responsible Scaling Policy
 

@@ -48,7 +48,6 @@ const antiPractices = [
 
 const authorOrder = [
   'tomasz-czechowski',
-  'anna-jelonek',
   'michal-ziach',
   'piotr-wicenciak',
   'mateusz-wisniewski',
@@ -139,7 +138,7 @@ const siteUrl = 'https://widocznosc.ai';
         <dl class="about-panel-stats">
           <div>
             <dt>eksperci</dt>
-            <dd>5</dd>
+            <dd>4</dd>
           </div>
           <div>
             <dt>projekty SEO</dt>
@@ -203,11 +202,11 @@ const siteUrl = 'https://widocznosc.ai';
     <div class="content-container py-16 lg:py-20">
       <div class="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-16">
         <div class="lg:col-span-5">
-          <div class="head-meta">
+          <div class="head-meta about-section-meta">
             <span class="section-index">A/02</span>
             <span class="eyebrow">ICEA + GEO</span>
           </div>
-          <h2 id="differentiators-title" class="display-xl mt-2 mb-6">
+          <h2 id="differentiators-title" class="display-xl mt-2 mb-8 lg:mb-10">
             Czego nie robimy<br />w audycie AI
           </h2>
           <p class="text-ink mb-6 text-lg leading-relaxed">
@@ -246,9 +245,9 @@ const siteUrl = 'https://widocznosc.ai';
   <AuthorsStrip
     eyebrow="Zespół"
     sectionIndex="A/03"
-    title='Pięć osób, <span class="accent">15+ lat doświadczenia</span>'
+    title='Cztery osoby, <span class="accent">15+ lat doświadczenia</span>'
     subtitle="Każdy artykuł na stronie widocznosc.ai oraz każda rekomendacja w naszych audytach są podpisane imieniem i nazwiskiem. Wiesz, z kim rozmawiasz, kogo uwiarygadniają znaczniki strukturalne na stronie i czyje wieloletnie doświadczenie stoi za proponowaną strategią."
-    limit={5}
+    limit={4}
   />
 
   <CTABand
@@ -480,16 +479,22 @@ const siteUrl = 'https://widocznosc.ai';
     text-align: left;
   }
 
-  .principles-meta {
+  .principles-meta,
+  .about-section-meta {
     display: inline-flex;
     align-items: center;
-    justify-content: flex-start;
     gap: 0.75rem;
     margin-bottom: clamp(1.15rem, 2vw, 1.55rem);
   }
 
+  .principles-meta {
+    justify-content: flex-start;
+  }
+
   .principles-meta .section-index,
-  .principles-meta .eyebrow {
+  .principles-meta .eyebrow,
+  .about-section-meta .section-index,
+  .about-section-meta .eyebrow {
     font-family: var(--font-sans);
     font-size: 0.75rem;
     font-weight: 650;
@@ -497,11 +502,13 @@ const siteUrl = 'https://widocznosc.ai';
     letter-spacing: 0.06em;
   }
 
-  .principles-meta .eyebrow {
+  .principles-meta .eyebrow,
+  .about-section-meta .eyebrow {
     color: var(--ink-muted);
   }
 
-  .principles-meta .eyebrow::before {
+  .principles-meta .eyebrow::before,
+  .about-section-meta .eyebrow::before {
     width: 0.5rem;
     height: 0.5rem;
   }

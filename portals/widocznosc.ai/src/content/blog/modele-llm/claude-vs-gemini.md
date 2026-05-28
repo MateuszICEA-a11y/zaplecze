@@ -6,9 +6,9 @@ date: 2026-05-07
 image: ../../../assets/images/blog-modele-llm-claude-vs-gemini.png
 icon: '<path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 0 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 0-2-2V9m0 0h18"/>'
 author:
-  name: 'Anna Jelonek-Wrzesińska'
-  role: 'Head of International SEO & AI Search · ICEA'
-  avatar: ../../../assets/images/authors/anna-jelonek.png
+  name: 'Piotr Wicenciak'
+  role: 'SEO Operations Manager · ICEA'
+  avatar: ../../../assets/images/authors/piotr-wicenciak.avif
 readTime: '12 min'
 tags: ['Claude', 'Gemini', 'Porównanie', 'Modele AI']
 pillar: 'modele-llm'
@@ -129,7 +129,7 @@ Na poziomie API różnica jest wyraźna:
 
 Gemini jest znacznie tańsze w przeliczeniu na token. Przy wolumenach produkcyjnych – tysiące zapytań dziennie, przetwarzanie masowych zbiorów danych – ta różnica szybko rośnie do tysięcy dolarów miesięcznie. Dla aplikacji masowych, poziom Gemini Flash (ok. $0,30 input / $2,50 output za milion tokenów) nie ma porównywalnego odpowiednika po stronie Anthropic.
 
-Jeśli chcesz sprawdzić, jak Twoja obecna widoczność w modelach AI wygląda zanim zdecydujesz o strategii contentowej, [brand check](/narzedzia/brand-check) odpyta cztery silniki AI o Twoją markę i pokaże, gdzie jesteś cytowany, a gdzie Cię nie ma.
+Jeśli chcesz sprawdzić, jak Twoja obecna widoczność w modelach AI wygląda zanim zdecydujesz o strategii contentowej, [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI o Twoją markę i pokaże, gdzie jesteś cytowany, a gdzie Cię nie ma.
 
 ## Który model wybrać – werdykty dla poszczególnych zastosowań
 

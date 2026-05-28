@@ -115,7 +115,7 @@ Każdy fragment Twojego artykułu powinien mieć „czysty" sygnał semantyczny.
 
 Gęstość faktograficzna ma znaczenie podwójne. Liczby, daty i nazwy własne to unikalne sygnały w przestrzeni wektorowej – fragmenty je zawierające precyzyjniej trafiają w zapytania z konkretnymi danymi. **Treść ogólnikowa generuje ogólnikowy wektor i przegrywa z konkretną treścią konkurencji w konkursie podobieństwa.**
 
-Jak sprawdzić, czy Twoje treści są zbudowane pod cytowalność w AI? Darmowy [URL check](/narzedzia/url-check) analizuje stronę pod kątem 8 czynników wpływających na cytowalność w systemach RAG – w tym struktury semantycznej i gęstości faktograficznej.
+Jak sprawdzić, czy Twoje treści są zbudowane pod cytowalność w AI? Darmowy [Ocena cytowalności strony](/narzedzia/url-check) analizuje stronę pod kątem 8 czynników wpływających na cytowalność w systemach RAG – w tym struktury semantycznej i gęstości faktograficznej.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/michal-ziach.avif" alt="Michał Ziach" /></div>

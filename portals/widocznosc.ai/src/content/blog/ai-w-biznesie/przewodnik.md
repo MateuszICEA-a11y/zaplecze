@@ -228,7 +228,7 @@ Praktyczny punkt startowy dla każdej organizacji niezależnie od wielkości:
 - **Uruchom pilotaż w 4 tygodnie** – z jasnym właścicielem, wyznaczonym budżetem i metryką sukcesu mierzalną po 60 dniach produkcji
 - **Decyduj na podstawie danych, nie wrażeń** – jeśli pilotaż nie pokazuje mierzalnego efektu po 8 tygodniach, przeprowadź retrospektywę, zanim zwiększysz nakłady
 
-Jeśli chcesz sprawdzić, jak Twoja marka jest postrzegana przez systemy AI, zanim uruchomisz wewnętrzne wdrożenia, [brand check](/narzedzia/brand-check) odpyta w 30 sekund cztery silniki AI i pokaże aktualny stan widoczności. Dobrym uzupełnieniem jest też lektura artykułu [od czego zacząć wdrożenie AI](/ai-w-biznesie/od-czego-zaczac) – jeśli jesteś na samym początku drogi i chcesz wyjść od konkretnej metodyki audytu gotowości.
+Jeśli chcesz sprawdzić, jak Twoja marka jest postrzegana przez systemy AI, zanim uruchomisz wewnętrzne wdrożenia, [Widoczność marki w AI](/narzedzia/brand-check) odpyta w 30 sekund cztery silniki AI i pokaże aktualny stan widoczności. Dobrym uzupełnieniem jest też lektura artykułu [od czego zacząć wdrożenie AI](/ai-w-biznesie/od-czego-zaczac) – jeśli jesteś na samym początku drogi i chcesz wyjść od konkretnej metodyki audytu gotowości.
 
 ## Często zadawane pytania o wdrożenie AI w firmie
 

@@ -118,7 +118,7 @@ Mechanizm przebiega w czterech krokach. Najpierw model tworzy plan badania i prz
 
 Deep Research Max, uruchomiony w 2026 roku na bazie modelu Gemini 3.1 Pro, dodaje również obsługę MCP (protokołu kontekstu modelu), dzięki czemu agent może sięgać nie tylko do zasobów publicznego internetu, ale też do prywatnych baz danych firmy czy wewnętrznych systemów dokumentacji. **To przekształca Deep Research z narzędzia do analizy rynku w pełnoprawny system do analizy danych wewnętrznych w skali korporacyjnej (enterprise).**
 
-Jeśli chcesz sprawdzić, jak Twoja marka pojawia się w wynikach badań generowanych przez Gemini, bezpłatny audyt marki ([brand check](/narzedzia/brand-check)) potrafi odpytać cztery silniki AI jednocześnie i wskazać różnice w odpowiedziach – bez czasochłonnego, ręcznego testowania.
+Jeśli chcesz sprawdzić, jak Twoja marka pojawia się w wynikach badań generowanych przez Gemini, bezpłatny audyt marki ([Widoczność marki w AI](/narzedzia/brand-check)) potrafi odpytać cztery silniki AI jednocześnie i wskazać różnice w odpowiedziach – bez czasochłonnego, ręcznego testowania.
 
 ## NotebookLM – praca z własnymi dokumentami
 
@@ -167,7 +167,7 @@ Strukturalna optymalizacja pod Gemini oraz samo Google AI Mode to obecnie trzon 
 
 W celu trafnego zestawienia możliwości operacyjnych oraz samej biznesowej filozofii Gemini z jej największymi rywalami, warto sięgnąć także po inne opracowania: dedykowany [artykuł o specyfice ChatGPT](/modele-llm/chatgpt) z perspektywy ekosystemu OpenAI oraz [kompleksowy przewodnik po modelu Claude](/modele-llm/claude) prezentujący unikalne podejście firmy Anthropic do rygorystycznego bezpieczeństwa oraz koncepcji tzw. Constitutional AI.
 
-Jeśli zależy Ci, aby zweryfikować realny punkt startowy widoczności cyfrowej własnej marki w gotowych odpowiedziach AI – między innymi za sprawą modelu Gemini – darmowe narzędzie audytu marki ([brand check](/narzedzia/brand-check)) błyskawicznie odpyta jednocześnie cztery wiodące silniki na rynku, pokazując czarno na białym, jak konkretnie algorytmy postrzegają Twój biznes na szerokim tle branży i konkurencji.
+Jeśli zależy Ci, aby zweryfikować realny punkt startowy widoczności cyfrowej własnej marki w gotowych odpowiedziach AI – między innymi za sprawą modelu Gemini – darmowe narzędzie audytu marki ([Widoczność marki w AI](/narzedzia/brand-check)) błyskawicznie odpyta jednocześnie cztery wiodące silniki na rynku, pokazując czarno na białym, jak konkretnie algorytmy postrzegają Twój biznes na szerokim tle branży i konkurencji.
 
 ## Często zadawane pytania o Gemini
 

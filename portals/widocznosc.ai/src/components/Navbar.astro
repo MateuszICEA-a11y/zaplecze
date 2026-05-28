@@ -369,7 +369,7 @@ const isActive = (href: string) => {
   :root[data-theme='light'] .nav-shell[data-scrolled='true'],
   :root[data-theme='light'] .nav-shell[data-menu-open='true'] {
     --nav-hairline: rgba(15, 23, 42, 0.13);
-    background: color-mix(in srgb, #f7f9fc 94%, transparent);
+    background: color-mix(in srgb, var(--nav-canvas) 94%, transparent);
   }
 
   .nav-shell + * {

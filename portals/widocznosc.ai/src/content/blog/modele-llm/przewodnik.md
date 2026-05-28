@@ -181,7 +181,7 @@ Jeśli zależy Ci na cytowaniach z widocznym linkiem – Perplexity generuje ruc
 
 Jeśli budujesz brand w kategorii, w której klienci porównują dostawców – ChatGPT z SearchGPT jest pierwszym miejscem, gdzie szukają. Treści porównawcze z danymi liczbowymi są tu najskuteczniejsze.
 
-Strategię opartą na danych zamiast na domysłach buduje [pozycjonowanie AI](/pozycjonowanie-ai) – metodyka GEO, która mierzy widoczność Twojej marki we wszystkich głównych modelach jednocześnie i wyznacza priorytety działań. Swój punkt startowy możesz sprawdzić przez [brand check](/narzedzia/brand-check), który odpyta cztery silniki AI o Twoją markę i pokaże, jak wypadasz na tle kategorii.
+Strategię opartą na danych zamiast na domysłach buduje [pozycjonowanie AI](/pozycjonowanie-ai) – metodyka GEO, która mierzy widoczność Twojej marki we wszystkich głównych modelach jednocześnie i wyznacza priorytety działań. Swój punkt startowy możesz sprawdzić przez [Widoczność marki w AI](/narzedzia/brand-check), który odpyta cztery silniki AI o Twoją markę i pokaże, jak wypadasz na tle kategorii.
 
 ## Często zadawane pytania o ekosystem LLM
 

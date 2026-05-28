@@ -145,7 +145,7 @@ Wybierz **Gemini AI Pro**, jeśli:
 
 Jak ChatGPT buduje swoją wiedzę i skąd czerpie dane o Twojej marce – opisuje [przewodnik po ChatGPT](/modele-llm/chatgpt). Szerszy kontekst tego, jak modele językowe różnią się architektonicznie, znajdziesz w [przewodniku po modelach LLM](/modele-llm/przewodnik).
 
-Jeśli interesuje Cię, jak Twoja marka jest postrzegana przez ChatGPT i Gemini jednocześnie, narzędzie [brand check](/narzedzia/brand-check) wyśle zapytania do obu silników (i dwóch innych) za jednym razem – bez ręcznego testowania. Szerszą strategię widoczności pod kątem konkretnego modelu opisują strony [pozycjonowanie w ChatGPT](/pozycjonowanie-ai/chatgpt) i [pozycjonowanie w Gemini](/pozycjonowanie-ai/gemini).
+Jeśli interesuje Cię, jak Twoja marka jest postrzegana przez ChatGPT i Gemini jednocześnie, narzędzie [Widoczność marki w AI](/narzedzia/brand-check) wyśle zapytania do obu silników (i dwóch innych) za jednym razem – bez ręcznego testowania. Szerszą strategię widoczności pod kątem konkretnego modelu opisują strony [pozycjonowanie w ChatGPT](/pozycjonowanie-ai/chatgpt) i [pozycjonowanie w Gemini](/pozycjonowanie-ai/gemini).
 
 ## Jak sprawdzić model przed zakupem planu
 

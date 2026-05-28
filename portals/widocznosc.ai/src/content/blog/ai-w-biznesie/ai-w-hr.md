@@ -6,9 +6,9 @@ date: 2026-05-15
 image: ../../../assets/images/blog-ai-w-biznesie-ai-w-hr.png
 icon: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'
 author:
-  name: 'Anna Jelonek-Wrzesińska'
-  role: 'Head of International SEO & AI Search · ICEA'
-  avatar: ../../../assets/images/authors/anna-jelonek.png
+  name: 'Piotr Wicenciak'
+  role: 'SEO Operations Manager · ICEA'
+  avatar: ../../../assets/images/authors/piotr-wicenciak.avif
 readTime: '12 min'
 tags: ['AI w HR', 'Rekrutacja', 'HR Tech', 'AI w biznesie']
 pillar: 'ai-w-biznesie'
@@ -129,6 +129,6 @@ Praktyczna lista kroków przed uruchomieniem jakiegokolwiek narzędzia AI w HR:
 - **Zaktualizuj procedury** – klauzule informacyjne, umowy powierzenia, regulamin pracy (jeśli monitorujesz pracowników przez AI).
 - **Przeszkol rekruterów** – ludzki nadzór nie działa, jeśli rekruter nie rozumie, co algorytm robi i jakie są jego ograniczenia.
 
-Jeśli Twoja firma jest na etapie oceny gotowości do wdrożeń AI – w tym w obszarze HR – [brand check](/narzedzia/brand-check) pokaże, jak Twoja organizacja jest postrzegana przez systemy AI, zanim zaczniesz je wdrażać wewnętrznie.
+Jeśli Twoja firma jest na etapie oceny gotowości do wdrożeń AI – w tym w obszarze HR – [Widoczność marki w AI](/narzedzia/brand-check) pokaże, jak Twoja organizacja jest postrzegana przez systemy AI, zanim zaczniesz je wdrażać wewnętrznie.
 
 Warto też zapoznać się z tym, jak AI zmienia obsługę klientów – mechanizmy automatyzacji decyzji opisane w artykule o [AI w obsłudze klienta](/ai-w-biznesie/ai-w-obsludze-klienta) są bliźniaczo podobne do tych w HR i podlegają tym samym ramom prawnym. A jeśli interesuje Cię techniczny fundament tych systemów – jak działają modele językowe zasilające asystentów HR – solidny punkt wyjścia to [przewodnik po dużych modelach językowych](/modele-llm/przewodnik).

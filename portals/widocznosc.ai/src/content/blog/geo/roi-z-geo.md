@@ -171,7 +171,7 @@ Share of Voice (SoV, udział głosu) to metryka, która przenosi logikę badań 
 
 Benchmark na start: jeśli Twój SoV w AI dla docelowego zestawu zapytań wynosi poniżej 10%, jesteś praktycznie niewidoczny dla użytkownika, który decyzję zakupową podejmuje w oknie chatbota. Celem pierwszego kwartału powinno być przekroczenie 20% SoV dla zapytań ze środka i dołu lejka sprzedażowego.
 
-Szczegółowy opis metodologii obliczania SoV i interpretacji wyników znajdziesz w artykule [Share of Voice w AI Search](/geo/share-of-voice). Zanim zaczniesz mierzyć, sprawdź też, jak Twoja marka jest aktualnie postrzegana przez silniki AI – darmowy [brand check](/narzedzia/brand-check) odpyta cztery główne modele i pokaże, w jakich kontekstach pojawia się Twoja firma.
+Szczegółowy opis metodologii obliczania SoV i interpretacji wyników znajdziesz w artykule [Share of Voice w AI Search](/geo/share-of-voice). Zanim zaczniesz mierzyć, sprawdź też, jak Twoja marka jest aktualnie postrzegana przez silniki AI – darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery główne modele i pokaże, w jakich kontekstach pojawia się Twoja firma.
 
 ## Jak przekonać zarząd – raportowanie bez żargonu
 

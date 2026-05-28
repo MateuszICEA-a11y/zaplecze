@@ -6,9 +6,9 @@ date: 2026-05-01
 image: ../../../assets/images/blog-geo-geo-dla-lokalnego-biznesu.png
 icon: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/><circle cx="12" cy="6" r="1.5"/>'
 author:
-  name: 'Anna Jelonek-Wrzesińska'
-  role: 'Head of International SEO & AI Search · ICEA'
-  avatar: ../../../assets/images/authors/anna-jelonek.png
+  name: 'Tomasz Czechowski'
+  role: 'Head of SEO · ICEA'
+  avatar: ../../../assets/images/authors/tomasz-czechowski.avif
 readTime: '11 min'
 tags: ['GEO', 'Lokalny biznes', 'Wyszukiwanie konwersacyjne', 'AI Search']
 pillar: 'geo'
@@ -107,7 +107,7 @@ Recenzje Google to niedoceniany zasób w kontekście GEO dla firm lokalnych. Tek
 
 Sekcja FAQ na stronie to idealne miejsce na wdrożenie logiki GEO. Pytania powinny brzmieć jak zapytania wpisywane do ChatGPT: „Ile kosztuje czyszczenie kanalizacji w Warszawie?", „Czy gabinet przyjmuje w weekend?". Odpowiedzi muszą zaczynać się od twardej deklaracji: ceny, godziny, zasady – nie od „Zależy to od…".
 
-Jeśli chcesz sprawdzić, jak Twoja strona wypada pod kątem cytowalności w modelach AI, narzędzie [brand check](/narzedzia/brand-check) odpyta cztery silniki AI o Twoją markę i pokaże aktualny obraz widoczności.
+Jeśli chcesz sprawdzić, jak Twoja strona wypada pod kątem cytowalności w modelach AI, narzędzie [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI o Twoją markę i pokaże aktualny obraz widoczności.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/piotr-wicenciak.avif" alt="Piotr Wicenciak" /></div>

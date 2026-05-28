@@ -140,4 +140,4 @@ W praktyce oznacza to, że content tworzony pod klasyczne SEO – długie wprowa
 
 W audycie widoczności AI w ICEA jednym z pierwszych kroków jest inżynieria wsteczna (reverse engineering) dla 30–50 priorytetowych pytań w Twojej branży. Jej wynik to mapa pokrycia – konkretne podzapytania, na które już udzielasz odpowiedzi, te, na które odpowiada konkurencja, oraz takie, których nie obsługuje jeszcze nikt. Te ostatnie to białe plamy, które powinieneś zająć jako pierwszy.
 
-Jeśli chcesz zobaczyć, jak Twoja strona wypada pod kątem query fan-out dla zapytań Twoich klientów, przetestuj ją darmowym [narzędziem do audytu URL](/narzedzia/url-check) – analizujemy strukturę fragmentów, wczesne sygnalizowanie kluczowych informacji i pokrycie tematyczne według tych samych zasad, których używa silnik pobierający dane Google.
+Jeśli chcesz zobaczyć, jak Twoja strona wypada pod kątem query fan-out dla zapytań Twoich klientów, przetestuj ją darmowym [Ocena cytowalności strony](/narzedzia/url-check) – analizujemy strukturę fragmentów, wczesne sygnalizowanie kluczowych informacji i pokrycie tematyczne według tych samych zasad, których używa silnik pobierający dane Google.

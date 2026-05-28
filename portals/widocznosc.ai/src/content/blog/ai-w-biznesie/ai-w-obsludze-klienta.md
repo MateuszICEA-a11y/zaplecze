@@ -141,6 +141,6 @@ Zestaw metryk, który daje pełny obraz:
 - **Wskaźnik eskalacji** – procent rozmów przekazywanych do człowieka; zbyt niski może oznaczać, że bot „odpycha" klientów zamiast eskalować do właściwego poziomu.
 - **Wskaźnik porzucenia** – ile rozmów klienci kończą bez uzyskania odpowiedzi; wysoki wynik to sygnał, że baza wiedzy ma luki.
 
-Jeśli chcesz sprawdzić, jak chatboty AI postrzegają Twoją markę i co mówią o niej w odpowiedziach na pytania klientów, darmowe narzędzie [brand check](/narzedzia/brand-check) odpyta cztery silniki AI i pokaże Twój profil widoczności w ciągu kilkudziesięciu sekund.
+Jeśli chcesz sprawdzić, jak chatboty AI postrzegają Twoją markę i co mówią o niej w odpowiedziach na pytania klientów, darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI i pokaże Twój profil widoczności w ciągu kilkudziesięciu sekund.
 
 Pełny obraz zastosowań AI w biznesie – nie tylko w obsłudze klienta, ale też w sprzedaży i marketingu – znajdziesz w [przewodniku po AI w biznesie](/ai-w-biznesie/przewodnik). Jeśli interesuje Cię konkretnie automatyzacja procesu sprzedażowego, artykuł o [AI w sprzedaży](/ai-w-biznesie/ai-w-sprzedazy) pokazuje, jak modele językowe skracają cykl zakupowy. Zastosowania w komunikacji marki opisuje natomiast artykuł o [AI w marketingu](/ai-w-biznesie/ai-w-marketingu).

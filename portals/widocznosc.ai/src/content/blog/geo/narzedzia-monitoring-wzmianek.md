@@ -119,7 +119,7 @@ Kilka wskazówek, jak dokonać wyboru między nimi:
 
 **Wspólne ograniczenie wszystkich budżetowych narzędzi to brak technicznej analizy struktury kodu i danych schema.org.** Powiedzą Ci, że Twoja marka nie jest cytowana, ale nie wskażą, dlaczego konkretna podstrona jest pomijana przez boty AI.
 
-Zanim sięgniesz po płatną platformę, przetestuj punkt startowy: darmowy [brand check](/narzedzia/brand-check) odpyta cztery silniki AI o Twoją markę i pokaże, jak jest ona opisywana na tle kategorii – bez rejestracji, w minutę. To wystarczy, żeby ocenić skalę problemu i zdecydować, który pakiet narzędzi jest uzasadniony.
+Zanim sięgniesz po płatną platformę, przetestuj punkt startowy: darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI o Twoją markę i pokaże, jak jest ona opisywana na tle kategorii – bez rejestracji, w minutę. To wystarczy, żeby ocenić skalę problemu i zdecydować, który pakiet narzędzi jest uzasadniony.
 
 ## Jak wdrożyć monitoring krok po kroku
 

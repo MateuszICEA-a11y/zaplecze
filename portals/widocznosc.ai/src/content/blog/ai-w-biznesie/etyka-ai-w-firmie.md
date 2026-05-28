@@ -6,9 +6,9 @@ date: 2026-05-12
 image: ../../../assets/images/blog-ai-w-biznesie-etyka-ai-w-firmie.png
 icon: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>'
 author:
-  name: 'Anna Jelonek-Wrzesińska'
-  role: 'Head of International SEO & AI Search · ICEA'
-  avatar: ../../../assets/images/authors/anna-jelonek.png
+  name: 'Piotr Wicenciak'
+  role: 'SEO Operations Manager · ICEA'
+  avatar: ../../../assets/images/authors/piotr-wicenciak.avif
 readTime: '14 min'
 tags: ['Etyka AI', 'Governance', 'Odpowiedzialne AI', 'AI w biznesie']
 pillar: 'ai-w-biznesie'
@@ -151,7 +151,7 @@ W Polsce nadzór nad regulacjami AI Act sprawuje Komisja Rozwoju i Bezpieczeńst
 
 Dla firm wdrażających AI w obszarach wysokiego ryzyka minimalne wymagania AI Act to de facto instrukcja zbudowania polityki AI. **Jeśli zaczniesz od wymagań AI Act jako listy kontrolnej, masz gotowy szkielet systemu zarządzania dla całej organizacji.**
 
-Zanim zlecisz wdrożenie zewnętrznemu dostawcy, sprawdź, jak Twoja marka wypada dziś w silnikach AI – [brand check](/narzedzia/brand-check) odpyta w 30 sekund cztery modele językowe i pokaże, co widzą o Twojej firmie. Zrozumienie tego, co AI mówi o Tobie, to też element transparentności i odpowiedzialnego zarządzania reputacją.
+Zanim zlecisz wdrożenie zewnętrznemu dostawcy, sprawdź, jak Twoja marka wypada dziś w silnikach AI – [Widoczność marki w AI](/narzedzia/brand-check) odpyta w 30 sekund cztery modele językowe i pokaże, co widzą o Twojej firmie. Zrozumienie tego, co AI mówi o Tobie, to też element transparentności i odpowiedzialnego zarządzania reputacją.
 
 ## Jak wdrożyć system zarządzania krok po kroku – pierwszy miesiąc
 

@@ -50,9 +50,9 @@ Poniżej znajduje się przykładowa struktura dla agencji SEO oferującej narzę
 
 ## Narzędzia
 
-- [Brand Check](https://widocznosc.ai/narzedzia/brand-check): Sprawdza, jak cztery silniki AI opisują Twoją markę na tle kategorii. Zwraca wynik procentowy i gotowe rekomendacje.
-- [AI Bots Check](https://widocznosc.ai/narzedzia/ai-bots-check): Weryfikuje, które boty AI mają dostęp do domeny i czy robots.txt nie blokuje ich przypadkowo.
-- [URL Check](https://widocznosc.ai/narzedzia/url-check): Analizuje stronę pod kątem 8 czynników cytowalności w LLM-ach w 30 sekund.
+- [Widoczność marki w AI](https://widocznosc.ai/narzedzia/brand-check): Sprawdza, jak cztery silniki AI opisują Twoją markę na tle kategorii. Zwraca wynik procentowy i gotowe rekomendacje.
+- [Dostęp botów AI](https://widocznosc.ai/narzedzia/ai-bots-check): Weryfikuje, które boty AI mają dostęp do domeny i czy robots.txt nie blokuje ich przypadkowo.
+- [Ocena cytowalności strony](https://widocznosc.ai/narzedzia/url-check): Analizuje stronę pod kątem 8 czynników cytowalności w LLM-ach w 30 sekund.
 
 ## Przewodniki
 
@@ -177,7 +177,7 @@ Bezpośrednio – nie, przynajmniej na razie. Badania i dane z logów serwerowyc
 
 **Koszt wdrożenia wynosi kilka godzin pracy.** Bezpośrednie korzyści są niszowe, ale korzyść z gotowości agentowej może się okazać decydująca w perspektywie 18–24 miesięcy. To stosunek nakładu pracy do potencjalnych korzyści, który warto ocenić samodzielnie.
 
-Jeśli chcesz sprawdzić, czy Twoja strona jest już teraz dostępna dla botów AI – `GPTBot`, `ClaudeBot`, `PerplexityBot` – narzędzie [ai-bots-check](/narzedzia/ai-bots-check) weryfikuje konfigurację `robots.txt` i dostęp botów w kilkanaście sekund. To dobry punkt startowy przed wdrożeniem `llms.txt`, bo nie ma sensu budować mapy zasobów dla botów, które i tak są zablokowane na poziomie serwera. Szerszy kontekst techniczny – dlaczego każdy z tych botów ma inny user-agent i jak nimi zarządzać – opisuje [przewodnik po botach AI](/geo/boty-ai-przewodnik). Natomiast jeśli chcesz zrozumieć, jakie czynniki faktycznie decydują o cytowaniach Twojej marki w LLM-ach, zacznij od [przewodnika GEO](/geo/przewodnik) – tam znajdziesz wyniki badania Princeton KDD 2024 i konkretne taktyki z mierzalnymi efektami.
+Jeśli chcesz sprawdzić, czy Twoja strona jest już teraz dostępna dla botów AI – `GPTBot`, `ClaudeBot`, `PerplexityBot` – narzędzie [Dostęp botów AI](/narzedzia/ai-bots-check) weryfikuje konfigurację `robots.txt` i dostęp botów w kilkanaście sekund. To dobry punkt startowy przed wdrożeniem `llms.txt`, bo nie ma sensu budować mapy zasobów dla botów, które i tak są zablokowane na poziomie serwera. Szerszy kontekst techniczny – dlaczego każdy z tych botów ma inny user-agent i jak nimi zarządzać – opisuje [przewodnik po botach AI](/geo/boty-ai-przewodnik). Natomiast jeśli chcesz zrozumieć, jakie czynniki faktycznie decydują o cytowaniach Twojej marki w LLM-ach, zacznij od [przewodnika GEO](/geo/przewodnik) – tam znajdziesz wyniki badania Princeton KDD 2024 i konkretne taktyki z mierzalnymi efektami.
 
 ## Często zadawane pytania o `llms.txt`
 

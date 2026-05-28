@@ -46,7 +46,7 @@ Wybór narzędzia zależy od skali operacji i gotowości technicznej zespołu. P
 
 Sama technologia nie wystarczy. **Przed wdrożeniem scoringu zadbaj o higienę danych w CRM – duplikaty, puste pola i błędne przypisania branż bezpośrednio obniżają jakość i skuteczność działania modelu.** Pierwsze mierzalne korzyści pojawiają się po kilku miesiącach; pełna transformacja procesowa to horyzont 2–3 lat systematycznej pracy.
 
-Jeśli chcesz porównać, jak Twoja marka wypada w kontekście AI i sprzedaży B2B, darmowy [brand check](/narzedzia/brand-check) w kilkadziesiąt sekund pokaże, jak jesteś postrzegany przez cztery silniki AI.
+Jeśli chcesz porównać, jak Twoja marka wypada w kontekście AI i sprzedaży B2B, darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) w kilkadziesiąt sekund pokaże, jak jesteś postrzegany przez cztery silniki AI.
 
 ![Ścieżka AI w sprzedaży – od predykcyjnego lead scoringu przez priorytetyzację leadów i asystenta handlowego po analizę rozmów (Conversation Intelligence)](../../../assets/images/infographic-ai-w-biznesie-ai-w-sprzedazy.png)
 

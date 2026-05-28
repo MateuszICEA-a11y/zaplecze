@@ -6,9 +6,9 @@ date: 2026-05-04
 image: ../../../assets/images/blog-modele-llm-copilot.png
 icon: '<rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><circle cx="17" cy="17" r="4"/><line x1="17" y1="14" x2="17" y2="20"/><line x1="14" y1="17" x2="20" y2="17"/>'
 author:
-  name: 'Anna Jelonek-Wrzesińska'
-  role: 'Head of International SEO & AI Search · ICEA'
-  avatar: ../../../assets/images/authors/anna-jelonek.png
+  name: 'Michał Ziach'
+  role: 'CTO · ICEA'
+  avatar: ../../../assets/images/authors/michal-ziach.avif
 readTime: '14 min'
 tags: ['Copilot', 'Microsoft', 'Microsoft 365', 'Modele AI']
 pillar: 'modele-llm'
@@ -82,7 +82,7 @@ W 2026 roku Microsoft określa Windows z Copilotem mianem Agentic OS – systemu
 
 Każda z tych funkcji wymaga jawnej zgody użytkownika (privacy opt-in). Microsoft wycofał się ze wcześniejszego podejścia, w którym powiadomienia Copilota były natrętnie umieszczane w różnych miejscach systemu – projekt o nazwie kodowej K2 porządkuje punkty styku, integrując je w scentralizowanym interfejsie.
 
-Jeśli chcesz sprawdzić, jak modele AI postrzegają Twoją markę po wdrożeniu jej w nowych kanałach, darmowy [brand check](/narzedzia/brand-check) odpyta cztery silniki AI i zaprezentuje wyniki w kilkadziesiąt sekund.
+Jeśli chcesz sprawdzić, jak modele AI postrzegają Twoją markę po wdrożeniu jej w nowych kanałach, darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI i zaprezentuje wyniki w kilkadziesiąt sekund.
 
 ## GitHub Copilot – asystent w środowisku programistycznym
 
@@ -136,7 +136,7 @@ W tym miejscu pojawia się wymiar, który interesuje specjalistów od widocznoś
 
 Szczegółowe zasady optymalizacji pod ten silnik opisuje nasz artykuł o [Bing Copilocie](/pozycjonowanie-ai/bing-copilot). Szerszy kontekst – jak działają mechanizmy cytowania we wszystkich silnikach AI – znajdziesz w [przewodniku po GEO](/geo/przewodnik).
 
-Jeśli chcesz wiedzieć, jak Twoja strona wypada pod kątem cytowalności, nasz darmowy [URL check](/narzedzia/url-check) przeanalizuje ją w 30 sekund.
+Jeśli chcesz wiedzieć, jak Twoja strona wypada pod kątem cytowalności, nasze narzędzie [Ocena cytowalności strony](/narzedzia/url-check) przeanalizuje ją w 30 sekund.
 
 ## Jak wybrać właściwy wariant Copilota dla swojej organizacji
 
