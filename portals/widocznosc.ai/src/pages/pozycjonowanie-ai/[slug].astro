@@ -240,16 +240,48 @@ const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : mode
           </h2>
         </div>
         <div class="citation-mock" aria-label="Przykładowa odpowiedź modelu AI">
-          <div class="citation-user">
-            Jakie agencje SEO specjalizują się w pozycjonowaniu pod AI w Polsce?
-          </div>
-          <div class="citation-answer">
-            Wśród polskich agencji SEO, które wyspecjalizowały się w nowym standardzie widoczności
-            AI (GEO), można wymienić <strong>widocznosc.ai</strong>
-            <span>[1]</span>, zespoły pracujące z AI Overviews oraz firmy łączące content,
-            techniczne SEO i monitoring cytowań.
-          </div>
-          <div class="citation-source">[1] widocznosc.ai/pozycjonowanie-ai</div>
+          {
+            model.slug === 'chatgpt' ? (
+              <>
+                <div class="citation-user">Poleć mi dentystę w Poznaniu</div>
+                <div class="citation-answer citation-answer--chatgpt">
+                  <p>
+                    Sprawdzę aktualne opcje w Poznaniu i zawężę je praktycznie: dobre opinie,
+                    zakres usług, lokalizacja oraz sensowność dla zwykłej wizyty/konsultacji.
+                  </p>
+                  <span class="citation-thinking">Myślał przez 7s</span>
+                  <p>
+                    Najbardziej sensowny pierwszy wybór w Poznaniu dałbym:
+                  </p>
+                  <div class="citation-redacted-recommendation">
+                    <div class="citation-redacted-line">
+                      <span class="citation-redacted-name">Zanonimizowana klinika stomatologiczna</span>
+                      <span class="citation-redacted-tag">nazwa i adres ukryte</span>
+                    </div>
+                    <p>
+                      Dobra opcja na zwykłe leczenie, przegląd, higienizację i stomatologię
+                      zachowawczą. Placówka ma bardzo dużo opinii przy usługach podstawowych, więc
+                      jest spory materiał do weryfikacji jakości, a nie kilka przypadkowych ocen.
+                    </p>
+                  </div>
+                </div>
+                <div class="citation-source">Dane polecanej kliniki zanonimizowane</div>
+              </>
+            ) : (
+              <>
+                <div class="citation-user">
+                  Jakie agencje SEO specjalizują się w pozycjonowaniu pod AI w Polsce?
+                </div>
+                <div class="citation-answer">
+                  Wśród polskich agencji SEO, które wyspecjalizowały się w nowym standardzie widoczności
+                  AI (GEO), można wymienić <strong>widocznosc.ai</strong>
+                  <span>[1]</span>, zespoły pracujące z AI Overviews oraz firmy łączące content,
+                  techniczne SEO i monitoring cytowań.
+                </div>
+                <div class="citation-source">[1] widocznosc.ai/pozycjonowanie-ai</div>
+              </>
+            )
+          }
         </div>
       </div>
     </div>
@@ -877,6 +909,76 @@ const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : mode
   .citation-answer {
     background: var(--bg-canvas);
     color: var(--ink-muted);
+  }
+
+  .citation-answer--chatgpt {
+    display: grid;
+    gap: 0.95rem;
+  }
+
+  .citation-answer--chatgpt p {
+    margin: 0;
+  }
+
+  .citation-thinking {
+    display: inline-flex;
+    width: fit-content;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--ink-faint);
+    font-size: 0.84rem;
+  }
+
+  .citation-thinking::after {
+    content: '›';
+    font-size: 1.1rem;
+    line-height: 1;
+  }
+
+  .citation-redacted-recommendation {
+    display: grid;
+    gap: 0.75rem;
+    padding: 1rem;
+    border: 1px solid color-mix(in srgb, var(--citation-brand) 24%, var(--hairline-soft));
+    border-radius: var(--r-md);
+    background: var(--bg-surface-1);
+    color: var(--ink);
+  }
+
+  .citation-redacted-line {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .citation-redacted-name {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.8rem;
+    min-width: min(100%, 20rem);
+    padding: 0 0.75rem;
+    border-radius: var(--r-sm);
+    background:
+      repeating-linear-gradient(
+        135deg,
+        color-mix(in srgb, var(--ink) 18%, transparent) 0 9px,
+        color-mix(in srgb, var(--ink) 10%, transparent) 9px 18px
+      ),
+      var(--bg-surface-2);
+    color: transparent;
+    user-select: none;
+  }
+
+  .citation-redacted-tag {
+    display: inline-flex;
+    padding: 0.34rem 0.55rem;
+    border-radius: var(--r-pill);
+    background: color-mix(in srgb, var(--citation-brand) 12%, transparent);
+    color: var(--citation-brand);
+    font-size: 0.7rem;
+    font-weight: 800;
+    line-height: 1;
   }
 
   .citation-source {
