@@ -6,9 +6,9 @@ date: 2026-05-03
 image: ../../../assets/images/blog-geo-topical-authority.png
 icon: '<circle cx="12" cy="6" r="2.5"/><circle cx="6" cy="14" r="2"/><circle cx="12" cy="14" r="2"/><circle cx="18" cy="14" r="2"/><circle cx="4" cy="20" r="1.5"/><circle cx="9" cy="20" r="1.5"/><circle cx="14" cy="20" r="1.5"/><circle cx="19" cy="20" r="1.5"/><line x1="12" y1="9" x2="6" y2="12"/><line x1="12" y1="9" x2="12" y2="12"/><line x1="12" y1="9" x2="18" y2="12"/>'
 author:
-  name: 'Anna Jelonek-Wrzesińska'
-  role: 'Head of International SEO & AI Search · ICEA'
-  avatar: ../../../assets/images/authors/anna-jelonek.png
+  name: 'Tomasz Czechowski'
+  role: 'Head of SEO · ICEA'
+  avatar: ../../../assets/images/authors/tomasz-czechowski.avif
 readTime: '10 min'
 tags: ['Topical Authority', 'Pillar Page', 'Content Strategy', 'GEO']
 pillar: 'geo'

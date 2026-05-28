@@ -6,9 +6,9 @@ date: 2026-05-15
 image: ../../../assets/images/blog-ai-w-biznesie-ai-w-hr.png
 icon: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'
 author:
-  name: 'Anna Jelonek-Wrzesińska'
-  role: 'Head of International SEO & AI Search · ICEA'
-  avatar: ../../../assets/images/authors/anna-jelonek.png
+  name: 'Piotr Wicenciak'
+  role: 'SEO Operations Manager · ICEA'
+  avatar: ../../../assets/images/authors/piotr-wicenciak.avif
 readTime: '12 min'
 tags: ['AI w HR', 'Rekrutacja', 'HR Tech', 'AI w biznesie']
 pillar: 'ai-w-biznesie'

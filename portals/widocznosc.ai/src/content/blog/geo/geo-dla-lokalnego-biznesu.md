@@ -6,9 +6,9 @@ date: 2026-05-01
 image: ../../../assets/images/blog-geo-geo-dla-lokalnego-biznesu.png
 icon: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/><circle cx="12" cy="6" r="1.5"/>'
 author:
-  name: 'Anna Jelonek-Wrzesińska'
-  role: 'Head of International SEO & AI Search · ICEA'
-  avatar: ../../../assets/images/authors/anna-jelonek.png
+  name: 'Tomasz Czechowski'
+  role: 'Head of SEO · ICEA'
+  avatar: ../../../assets/images/authors/tomasz-czechowski.avif
 readTime: '11 min'
 tags: ['GEO', 'Lokalny biznes', 'Wyszukiwanie konwersacyjne', 'AI Search']
 pillar: 'geo'

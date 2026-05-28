@@ -6,9 +6,9 @@ date: 2026-05-19
 image: ../../../assets/images/blog-ai-w-biznesie-ai-act-rodo.png
 icon: '<path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>'
 author:
-  name: 'Anna Jelonek-Wrzesińska'
-  role: 'Head of International SEO & AI Search · ICEA'
-  avatar: ../../../assets/images/authors/anna-jelonek.png
+  name: 'Tomasz Czechowski'
+  role: 'Head of SEO · ICEA'
+  avatar: ../../../assets/images/authors/tomasz-czechowski.avif
 readTime: '11 min'
 tags: ['AI Act', 'RODO', 'Compliance', 'AI w biznesie']
 pillar: 'ai-w-biznesie'
