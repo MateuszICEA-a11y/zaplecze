@@ -203,6 +203,9 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
   .tool-hero-title {
     max-width: 980px;
     margin: 0 auto;
+    font-size: clamp(36px, 4.1vw, 56px);
+    line-height: 0.96;
+    letter-spacing: -0.045em;
     color: var(--ink);
     text-wrap: balance;
   }
@@ -443,6 +446,9 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
 
   .tool-overview-title {
     max-width: 960px;
+    font-size: clamp(30px, 3.2vw, 44px);
+    line-height: 1;
+    letter-spacing: -0.04em;
   }
 
   .overview-grid {
@@ -612,8 +618,8 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
 
   :global(.brand-panel-title) {
     font-family: var(--font-display);
-    font-size: clamp(24px, 2.4vw, 36px);
-    line-height: 1.05;
+    font-size: clamp(22px, 1.9vw, 30px);
+    line-height: 1.08;
     font-weight: 500;
     color: var(--ink);
     margin: 0;
@@ -784,6 +790,73 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
 
   :global(.brand-list-card strong) {
     color: var(--ink);
+  }
+
+  :global(.brand-insight-card) {
+    display: grid;
+    gap: 9px;
+    min-width: 0;
+    padding: 14px 16px;
+    background: var(--bg-canvas);
+    border: 1px solid color-mix(in srgb, var(--hairline) 74%, transparent);
+    border-radius: var(--r-md);
+  }
+
+  :global(.brand-insight-meta) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+  }
+
+  :global(.brand-insight-chip) {
+    display: inline-flex;
+    width: fit-content;
+    padding: 4px 8px;
+    border-radius: var(--r-pill);
+    background: var(--bg-surface-2);
+    color: var(--ink-muted);
+    font-size: 11px;
+    font-weight: 650;
+    line-height: 1.1;
+  }
+
+  :global(.brand-insight-chip--risk) {
+    color: #fbbf24;
+    background: rgb(251 191 36 / 0.13);
+  }
+
+  :global(.brand-insight-claim) {
+    margin: 0;
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 650;
+    line-height: 1.42;
+  }
+
+  :global(.brand-insight-detail) {
+    margin: 0;
+    color: var(--ink-muted);
+    font-size: 13px;
+    line-height: 1.48;
+  }
+
+  :global(.brand-action-card) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+
+  :global(.brand-action-priority) {
+    display: inline-flex;
+    padding: 4px 8px;
+    border-radius: var(--r-sm);
+    background: color-mix(in srgb, var(--accent-blue) 12%, transparent);
+    color: var(--accent-blue);
+    font-size: 11px;
+    font-weight: 750;
+    line-height: 1;
   }
 
   :global(.brand-sources-grid) {
@@ -1023,7 +1096,7 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
             </div>
           </section>
 
-          <section class="brand-panel">
+          <section class="brand-panel brand-panel--models">
             <div class="brand-panel-head">
               <h2 class="brand-panel-title">Wyniki per model</h2>
               <p class="brand-panel-note">Każdy model oceniamy osobno, bo odpowiedzi i cytowane źródła potrafią się różnić.</p>
@@ -1031,7 +1104,7 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
             <div class="brand-model-grid">${modelRows}</div>
           </section>
 
-          <section class="brand-panel">
+          <section class="brand-panel brand-panel--competitors">
             <div class="brand-panel-head">
               <h2 class="brand-panel-title">Konkurenci polecani zamiast marki</h2>
               <p class="brand-panel-note">Lista pokazuje marki, które pojawiają się jako alternatywy lub punkty porównania.</p>
@@ -1039,7 +1112,7 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
             ${renderCompetitors(competitorItems)}
           </section>
 
-          <section class="brand-panel">
+          <section class="brand-panel brand-panel--hallucinations">
             <div class="brand-panel-head">
               <h2 class="brand-panel-title">Możliwe halucynacje</h2>
               <p class="brand-panel-note">To twierdzenia, które warto sprawdzić ręcznie przed użyciem raportu w komunikacji.</p>
@@ -1047,7 +1120,7 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
             ${renderHallucinations(hallucinations)}
           </section>
 
-          <section class="brand-panel">
+          <section class="brand-panel brand-panel--sources">
             <div class="brand-panel-head">
               <h2 class="brand-panel-title">Źródła cytowane przez modele</h2>
               <p class="brand-panel-note">Pokazujemy domeny, z których modele korzystały przy odpowiedziach.</p>
@@ -1055,7 +1128,7 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
             ${renderSources(sources)}
           </section>
 
-          <section class="brand-panel">
+          <section class="brand-panel brand-panel--actions">
             <div class="brand-panel-head">
               <h2 class="brand-panel-title">Priorytety działań</h2>
               <p class="brand-panel-note">Najkrótsza lista zmian, które mogą poprawić widoczność i spójność marki w AI.</p>
@@ -1127,11 +1200,14 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
       return `<div class="brand-list-grid">${items
         .map(
           (item) => `
-            <div class="brand-list-card">
-              <strong>${escapeHtml(item.model)} · ${escapeHtml(severityLabel(item.severity))}</strong><br />
-              ${escapeHtml(item.claim)}<br />
-              ${escapeHtml(item.why)}
-            </div>
+            <article class="brand-insight-card">
+              <div class="brand-insight-meta">
+                <span class="brand-insight-chip">${escapeHtml(item.model)}</span>
+                <span class="brand-insight-chip brand-insight-chip--risk">${escapeHtml(severityLabel(item.severity))}</span>
+              </div>
+              <p class="brand-insight-claim">${escapeHtml(item.claim)}</p>
+              <p class="brand-insight-detail">${escapeHtml(item.why)}</p>
+            </article>
           `
         )
         .join('')}</div>`;
@@ -1158,10 +1234,13 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
       return `<div class="brand-list-grid">${actions
         .map(
           (item) => `
-            <div class="brand-list-card">
-              <strong>${escapeHtml(item.priority)} · ${escapeHtml(item.title)}</strong><br />
-              ${escapeHtml(item.description)}
-            </div>
+            <article class="brand-list-card brand-action-card">
+              <span class="brand-action-priority">${escapeHtml(item.priority)}</span>
+              <div>
+                <strong>${escapeHtml(item.title)}</strong><br />
+                ${escapeHtml(item.description)}
+              </div>
+            </article>
           `
         )
         .join('')}</div>`;

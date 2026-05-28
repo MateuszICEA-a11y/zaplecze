@@ -209,6 +209,9 @@ import { FACTORS } from '../../../functions/_lib/url-check';
   .tool-hero-title {
     max-width: 980px;
     margin: 0 auto;
+    font-size: clamp(36px, 4.1vw, 56px);
+    line-height: 0.96;
+    letter-spacing: -0.045em;
     color: var(--ink);
     text-wrap: balance;
   }
@@ -233,6 +236,9 @@ import { FACTORS } from '../../../functions/_lib/url-check';
 
   .tool-overview-title {
     max-width: 960px;
+    font-size: clamp(30px, 3.2vw, 44px);
+    line-height: 1;
+    letter-spacing: -0.04em;
   }
 
   .tool-overview-copy {
@@ -404,8 +410,10 @@ import { FACTORS } from '../../../functions/_lib/url-check';
     align-items: center;
     padding: 32px;
     background: var(--bg-surface-1);
+    border: 1px solid var(--hairline-soft);
     border-radius: var(--r-xl);
     margin-bottom: 24px;
+    text-align: left;
   }
 
   :global(.score-circle) {
@@ -495,7 +503,7 @@ import { FACTORS } from '../../../functions/_lib/url-check';
   :global(.score-headline) {
     font-family: var(--font-display);
     font-weight: 500;
-    font-size: 24px;
+    font-size: clamp(20px, 1.8vw, 26px);
     line-height: 1.15;
     color: var(--ink);
     margin: 0;
@@ -516,12 +524,14 @@ import { FACTORS } from '../../../functions/_lib/url-check';
 
   :global(.factor-row) {
     background: var(--bg-surface-1);
+    border: 1px solid var(--hairline-soft);
     border-radius: var(--r-lg);
-    padding: 20px 24px;
+    padding: 18px 20px;
     display: grid;
     grid-template-columns: 32px 1fr auto;
     gap: 16px;
     align-items: start;
+    text-align: left;
   }
 
   :global(.factor-row-icon) {
@@ -548,7 +558,8 @@ import { FACTORS } from '../../../functions/_lib/url-check';
   :global(.factor-row-title) {
     font-family: var(--font-display);
     font-weight: 500;
-    font-size: 16px;
+    font-size: 17px;
+    line-height: 1.16;
     color: var(--ink);
     margin: 0 0 4px 0;
   }
@@ -596,7 +607,8 @@ import { FACTORS } from '../../../functions/_lib/url-check';
   :global(.action-items-title) {
     font-family: var(--font-display);
     font-weight: 500;
-    font-size: 22px;
+    font-size: clamp(20px, 1.7vw, 26px);
+    line-height: 1.12;
     color: var(--ink);
     margin: 0 0 16px 0;
   }
@@ -612,8 +624,10 @@ import { FACTORS } from '../../../functions/_lib/url-check';
     gap: 16px;
     padding: 16px 20px;
     background: var(--bg-surface-1);
+    border: 1px solid var(--hairline-soft);
     border-radius: var(--r-md);
     align-items: start;
+    text-align: left;
   }
 
   :global(.action-priority) {
