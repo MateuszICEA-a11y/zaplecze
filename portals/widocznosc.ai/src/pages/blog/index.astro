@@ -82,11 +82,10 @@ const formatDate = (date: Date) =>
           <span class="section-index">B/01</span>
           <span class="eyebrow blog-hero-eyebrow">Baza wiedzy</span>
         </div>
-        <h1 class="display-xxl blog-hero-title">Baza wiedzy o widoczności marek w AI</h1>
+        <h1 class="display-xxl blog-hero-title">Baza wiedzy o AI</h1>
         <p class="blog-hero-lead">
-          Definicje, case studies i&nbsp;poradniki o&nbsp;pozycjonowaniu marki w&nbsp;ChatGPT,
-          Claude, Gemini, Perplexity i&nbsp;Bing Copilot. Od fundamentów GEO po techniczne
-          deep-dive.
+          Poradniki, analizy i&nbsp;case studies o&nbsp;ChatGPT, Claude, Gemini, Perplexity,
+          automatyzacji, SEO i&nbsp;widoczności marek w&nbsp;wyszukiwarkach AI.
         </p>
       </div>
     </section>
@@ -366,9 +365,9 @@ const formatDate = (date: Date) =>
     color: var(--ink);
     margin: 0 0 20px 0;
     text-wrap: balance;
-    max-width: 760px;
-    font-size: clamp(44px, 6vw, 86px);
-    line-height: 0.95;
+    max-width: 720px;
+    font-size: clamp(38px, 4.2vw, 60px);
+    line-height: 0.98;
   }
 
   .blog-hero-lead {
@@ -718,16 +717,14 @@ const formatDate = (date: Date) =>
 
   .blog-grid-header {
     display: grid;
-    gap: 24px;
-    margin-bottom: 48px;
+    gap: 22px;
+    margin-bottom: 36px;
     padding-top: 40px;
   }
 
   @media (min-width: 1024px) {
     .blog-grid-header {
-      grid-template-columns: minmax(280px, 0.72fr) minmax(520px, 1fr);
-      align-items: start;
-      gap: 40px;
+      gap: 28px;
     }
   }
 
@@ -738,7 +735,7 @@ const formatDate = (date: Date) =>
 
   .blog-controls {
     display: grid;
-    gap: 14px;
+    gap: 16px;
     width: 100%;
   }
 
@@ -778,7 +775,7 @@ const formatDate = (date: Date) =>
   .blog-popular-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
     align-items: center;
     color: var(--ink-faint);
     font-size: var(--fs-caption);
@@ -805,7 +802,8 @@ const formatDate = (date: Date) =>
   .blog-grid-filters {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px;
+    width: 100%;
   }
 
   .filter-count {
