@@ -86,7 +86,7 @@ const initials = (name: string) =>
         <!-- Bio -->
         <div class="lg:col-span-8">
           <span class="eyebrow mb-6 inline-flex">{data.role} · {data.company}</span>
-          <h1 class="display-xxl mt-2 mb-6">{data.name}</h1>
+          <h1 class="display-xxl mt-2 mb-8 lg:mb-10">{data.name}</h1>
           <p class="text-ink mb-8 text-lg leading-relaxed">{data.bio}</p>
 
           <!-- Expertise pills -->
@@ -200,15 +200,27 @@ const initials = (name: string) =>
               >
                 <div class="p-4">
                   <div class="flex aspect-[3/2] items-center justify-center rounded-[15px]" style="background: var(--bg-canvas);">
-                    <svg
-                      class="text-ink-muted h-16 w-16 opacity-40"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="0.75"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                      set:html={post.data.icon}
-                    />
+                    {
+                      post.data.image ? (
+                        <img
+                          src={post.data.image}
+                          alt={post.data.title}
+                          class="author-article-image"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      ) : (
+                        <svg
+                          class="text-ink-muted h-16 w-16 opacity-40"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="0.75"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                          set:html={post.data.icon}
+                        />
+                      )
+                    }
                   </div>
                 </div>
                 <div class="flex grow flex-col px-6 pt-2 pb-6">
@@ -237,7 +249,7 @@ const initials = (name: string) =>
         <h2 id="other-authors-title" class="display-xl mt-2">Pozostali eksperci ICEA</h2>
       </div>
 
-      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {
           otherAuthors.map((other) => (
             <a
@@ -292,6 +304,19 @@ const initials = (name: string) =>
 </Layout>
 
 <style>
+  .author-article-image {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+  }
+
+  [data-card-template]:hover .author-article-image {
+    transform: scale(1.035);
+  }
+
   [data-card-template]:hover {
     background: var(--bg-surface-2) !important;
   }

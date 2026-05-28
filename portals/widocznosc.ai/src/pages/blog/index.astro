@@ -10,6 +10,10 @@ import { PILLAR_LABELS } from '../../content.config';
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
+const pageSize = 12;
+const currentPage = 1;
+const totalPages = Math.ceil(posts.length / pageSize);
+const visiblePosts = posts.slice(0, pageSize);
 
 const featuredPost = posts.find((post) => post.data.featured) ?? posts[0];
 
@@ -23,7 +27,7 @@ const pillarCounts = posts.reduce(
 );
 const totalPosts = posts.length;
 const siteUrl = 'https://widocznosc.ai';
-const starterPosts = ['geo/przewodnik', 'modele-llm/chatgpt', 'geo/audyt-widocznosci-marki']
+const starterPosts = ['modele-llm/chatgpt', 'geo/audyt-widocznosci-marki', 'rag/przewodnik']
   .map((id) => posts.find((post) => post.id === id))
   .filter((post): post is NonNullable<typeof post> => Boolean(post));
 const popularTags = ['ChatGPT', 'llms.txt', 'AI Overviews', 'Schema.org', 'RAG'];
@@ -133,6 +137,14 @@ const formatDate = (date: Date) =>
               <div class="blog-starter-grid">
                 {starterPosts.map((post) => (
                   <a class="blog-starter-card" href={`/${post.id}`} data-category={post.data.pillar}>
+                    <Image
+                      src={post.data.image}
+                      alt={post.data.title}
+                      widths={[320, 480, 640]}
+                      sizes="(min-width: 1024px) 22vw, 100vw"
+                      loading="lazy"
+                      class="blog-starter-image"
+                    />
                     <span class="eyebrow">{PILLAR_LABELS[post.data.pillar]}</span>
                     <strong>{post.data.title}</strong>
                   </a>
@@ -206,7 +218,7 @@ const formatDate = (date: Date) =>
 
         <div class="blog-grid" id="posts-grid">
           {
-            posts.map((post) => (
+            visiblePosts.map((post) => (
               <a
                 href={`/${post.id}`}
                 class="post-card"
@@ -255,9 +267,33 @@ const formatDate = (date: Date) =>
           <button class="tab-pill" type="button" data-clear-filter>Pokaż wszystkie</button>
         </div>
 
-        <div class="blog-load-more-wrap">
-          <button class="btn-secondary" type="button" data-load-more>Pokaż kolejne 12</button>
-        </div>
+        {
+          totalPages > 1 && (
+            <nav class="blog-pagination" aria-label="Paginacja artykułów">
+              <span class="blog-pagination-status">
+                Strona {currentPage} z {totalPages}
+              </span>
+              <div class="blog-pagination-links">
+                {Array.from({ length: totalPages }, (_, index) => {
+                  const page = index + 1;
+                  const href = page === 1 ? '/blog/' : `/blog/${page}/`;
+                  return (
+                    <a
+                      href={href}
+                      class:list={['blog-page-link', page === currentPage && 'is-active']}
+                      aria-current={page === currentPage ? 'page' : undefined}
+                    >
+                      {page}
+                    </a>
+                  );
+                })}
+                <a class="blog-page-next" href="/blog/2/">
+                  Następna <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </nav>
+          )
+        }
       </div>
     </section>
   </main>
@@ -314,6 +350,11 @@ const formatDate = (date: Date) =>
 
   .blog-hero-meta {
     margin-bottom: 16px;
+  }
+
+  .blog-hero-meta .blog-hero-eyebrow {
+    font-size: 11px;
+    line-height: 1.2;
   }
 
   .blog-hero-title {
@@ -535,8 +576,7 @@ const formatDate = (date: Date) =>
 
   @media (min-width: 1024px) {
     .blog-starter {
-      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-      align-items: end;
+      grid-template-columns: 1fr;
       padding: 32px;
     }
   }
@@ -554,14 +594,22 @@ const formatDate = (date: Date) =>
 
   .blog-starter-grid {
     display: grid;
-    gap: 10px;
+    gap: 14px;
+  }
+
+  @media (min-width: 900px) {
+    .blog-starter-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
   }
 
   .blog-starter-card {
     --starter-card-accent: var(--accent-blue);
     display: grid;
-    gap: 8px;
-    padding: 16px;
+    align-content: start;
+    gap: 10px;
+    overflow: hidden;
+    padding: 12px 12px 16px;
     border-radius: var(--r-md);
     border: 1px solid var(--hairline-soft);
     background:
@@ -578,6 +626,18 @@ const formatDate = (date: Date) =>
 
   .blog-starter-card:hover {
     background: var(--bg-surface-2);
+  }
+
+  .blog-starter-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: calc(var(--r-md) - 3px);
+    object-fit: cover;
+    transition: transform 0.35s ease;
+  }
+
+  .blog-starter-card:hover .blog-starter-image {
+    transform: scale(1.025);
   }
 
   .blog-starter-card[data-category='agenci-ai'] {
@@ -975,15 +1035,61 @@ const formatDate = (date: Date) =>
     line-height: 1.55;
   }
 
-  .blog-load-more-wrap {
-    display: flex;
-    justify-content: center;
-    margin-top: 32px;
-  }
-
-  .blog-load-more-wrap[hidden],
   .blog-empty[hidden] {
     display: none;
+  }
+
+  .blog-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 36px;
+  }
+
+  .blog-pagination-status {
+    color: var(--ink-muted);
+    font-size: var(--fs-caption);
+  }
+
+  .blog-pagination-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .blog-page-link,
+  .blog-page-next {
+    display: inline-flex;
+    min-height: 40px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-pill);
+    background: var(--bg-surface-1);
+    color: var(--ink);
+    font-size: var(--fs-button);
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .blog-page-link {
+    min-width: 40px;
+    padding: 0 13px;
+  }
+
+  .blog-page-next {
+    padding: 0 15px;
+    color: var(--accent-blue);
+  }
+
+  .blog-page-link:hover,
+  .blog-page-next:hover,
+  .blog-page-link.is-active {
+    border-color: color-mix(in srgb, var(--accent-blue) 44%, var(--hairline-soft));
+    background: color-mix(in srgb, var(--accent-blue) 10%, var(--bg-surface-1));
   }
 </style>
 
@@ -993,8 +1099,6 @@ const formatDate = (date: Date) =>
     if (!root || root.dataset.blogListingReady === 'true') return;
     root.dataset.blogListingReady = 'true';
 
-    const pageSize = 12;
-    let visibleLimit = pageSize;
     let activeCategory = 'all';
     let searchQuery = '';
 
@@ -1003,7 +1107,6 @@ const formatDate = (date: Date) =>
     const searchInput = root.querySelector<HTMLInputElement>('[data-blog-search]');
     const emptyState = root.querySelector<HTMLElement>('[data-blog-empty]');
     const clearButton = root.querySelector<HTMLButtonElement>('[data-clear-filter]');
-    const loadMoreButton = root.querySelector<HTMLButtonElement>('[data-load-more]');
     const tagButtons = root.querySelectorAll<HTMLButtonElement>('[data-tag-query]');
     let activeTagQuery = '';
 
@@ -1032,7 +1135,6 @@ const formatDate = (date: Date) =>
     const applyFilters = () => {
       const normalizedQuery = normalize(searchQuery.trim());
       let matched = 0;
-      let shown = 0;
 
       cards.forEach((card) => {
         const categoryMatch = activeCategory === 'all' || card.dataset.category === activeCategory;
@@ -1041,23 +1143,10 @@ const formatDate = (date: Date) =>
         const matches = categoryMatch && searchMatch;
 
         if (matches) matched += 1;
-        const shouldShow = matches && shown < visibleLimit;
-        if (shouldShow) shown += 1;
-        card.dataset.hidden = shouldShow ? 'false' : 'true';
+        card.dataset.hidden = matches ? 'false' : 'true';
       });
 
       if (emptyState) emptyState.hidden = matched > 0;
-      if (loadMoreButton) {
-        const hasMore = matched > visibleLimit;
-        loadMoreButton.hidden = !hasMore;
-        loadMoreButton.textContent = hasMore
-          ? `Pokaż kolejne ${Math.min(pageSize, matched - visibleLimit)}`
-          : 'Pokaż kolejne 12';
-      }
-    };
-
-    const resetVisibleLimit = () => {
-      visibleLimit = pageSize;
     };
 
     const clearFilters = () => {
@@ -1065,7 +1154,6 @@ const formatDate = (date: Date) =>
       searchQuery = '';
       activeTagQuery = '';
       if (searchInput) searchInput.value = '';
-      resetVisibleLimit();
       updateActiveFilter();
       updateActiveTags();
       applyFilters();
@@ -1076,7 +1164,6 @@ const formatDate = (date: Date) =>
     filters.forEach((btn) => {
       btn.addEventListener('click', () => {
         activeCategory = btn.dataset.category || 'all';
-        resetVisibleLimit();
         updateActiveFilter();
         applyFilters();
       });
@@ -1088,7 +1175,6 @@ const formatDate = (date: Date) =>
       window.clearTimeout(debounceTimer);
       debounceTimer = window.setTimeout(() => {
         searchQuery = searchInput.value;
-        resetVisibleLimit();
         applyFilters();
       }, 150);
     });
@@ -1098,18 +1184,12 @@ const formatDate = (date: Date) =>
         searchQuery = button.dataset.tagQuery || '';
         activeTagQuery = searchQuery;
         if (searchInput) searchInput.value = searchQuery;
-        resetVisibleLimit();
         updateActiveTags();
         applyFilters();
       });
     });
 
     clearButton?.addEventListener('click', clearFilters);
-
-    loadMoreButton?.addEventListener('click', () => {
-      visibleLimit += pageSize;
-      applyFilters();
-    });
 
     updateActiveFilter();
     updateActiveTags();
