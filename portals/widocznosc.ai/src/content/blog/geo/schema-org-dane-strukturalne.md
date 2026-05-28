@@ -182,7 +182,7 @@ Poprawna implementacja `FAQPage` jako część `@graph`:
 
 Odpowiedź w polu `text` powinna mieć 40–60 słów – wystarczająco szczegółowa, żeby model mógł ją zacytować wprost, ale wystarczająco zwięzła, żeby zmieścić się w boksie AI Overviews bez przycinania.
 
-Jeśli chcesz sprawdzić, jak Twoja istniejąca treść wypada pod kątem cytowalności przed wdrożeniem schematu, [narzędzie URL check](/narzedzia/url-check) w kilkanaście sekund analizuje stronę pod kątem gotowości do cytowania przez silniki AI.
+Jeśli chcesz sprawdzić, jak Twoja istniejąca treść wypada pod kątem cytowalności przed wdrożeniem schematu, [Ocena cytowalności strony](/narzedzia/url-check) w kilkanaście sekund analizuje stronę pod kątem gotowości do cytowania przez silniki AI.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/michal-ziach.avif" alt="Michał Ziach" /></div>

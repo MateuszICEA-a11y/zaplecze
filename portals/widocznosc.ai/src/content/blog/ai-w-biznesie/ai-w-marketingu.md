@@ -123,7 +123,7 @@ Praktyczny punkt startowy dla zespołów marketingowych z ograniczonymi zasobami
 
 - **Analiza danych z istniejących kanałów** – zanim kupisz nowe narzędzie, sprawdź, czy Twój CRM lub platforma e-mailowa oferuje wbudowaną segmentację opartą na zachowaniu; wiele z nich ma funkcje AI ukryte w ustawieniach zaawansowanych
 - **Jeden test A/B z dynamiczną personalizacją** – wybierz jeden element komunikacji (np. temat e-maila lub kolejność produktów na stronie głównej) i przetestuj wariant generowany przez algorytm w porównaniu ze statycznym; mierz przez 4 tygodnie
-- **Monitorowanie wydźwięku z darmowych źródeł** – recenzje Google, komentarze w mediach społecznościowych, wyniki ankiet NPS to gotowy surowiec do analizy; narzędzia takie jak darmowy [brand check](/narzedzia/brand-check) pokażą Ci, jak marka jest postrzegana przez modele AI – co jest bezpośrednio powiązane z tym, jak algorytmy rekomendacji ją kategoryzują
+- **Monitorowanie wydźwięku z darmowych źródeł** – recenzje Google, komentarze w mediach społecznościowych, wyniki ankiet NPS to gotowy surowiec do analizy; narzędzia takie jak darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) pokażą Ci, jak marka jest postrzegana przez modele AI – co jest bezpośrednio powiązane z tym, jak algorytmy rekomendacji ją kategoryzują
 - **Audyt danych przed zakupem platformy** – najczęstszy błąd to zakup zaawansowanego systemu AI bez danych historycznych; silnik rekomendacji bez minimum 6 miesięcy historii transakcji działa jak nowa wyszukiwarka bez indeksu
 
 Szczegółowy opis pierwszych kroków – od wyboru narzędzi po harmonogram wdrożenia – znajdziesz w artykule o [AI w sprzedaży](/ai-w-biznesie/ai-w-sprzedazy), który skupia się na obszarach bezpośrednio napędzających przychód.

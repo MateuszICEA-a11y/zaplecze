@@ -123,7 +123,7 @@ Wdrożenie pilotażowe (Proof of Concept) z budżetem poniżej 100 000 PLN, ogra
 
 Pamiętaj o benchmarkach branżowych. Informacja, że bezpośredni konkurent uruchomił podobny system i skrócił czas obsługi zamówień o 30%, wywiera presję decyzyjną skuteczniejszą niż najdokładniejszy model DCF.
 
-Jeśli chcesz zobaczyć, jak Twoja marka jest widoczna w odpowiedziach AI – co przekłada się na przychody w kanale AI Search – darmowy [brand check](/narzedzia/brand-check) odpyta cztery silniki AI i pokaże Twój aktualny udział głosu w kategorii.
+Jeśli chcesz zobaczyć, jak Twoja marka jest widoczna w odpowiedziach AI – co przekłada się na przychody w kanale AI Search – darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI i pokaże Twój aktualny udział głosu w kategorii.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/mateusz-wisniewski.webp" alt="Mateusz Wiśniewski" /></div>

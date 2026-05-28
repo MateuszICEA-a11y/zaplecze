@@ -61,7 +61,7 @@ Trzy właściwości fragmentu zwiększające szansę na wybranie przez silnik to
 
 Aby w ogóle brać udział w grze, musisz sprawdzić, czy boty AI mają możliwość przeczesywania Twojej strony. `GPTBot`, `ClaudeBot`, `PerplexityBot` – każdy z nich weryfikuje plik `robots.txt` przed wejściem na witrynę. Błędy w konfiguracji zapór sieciowych (np. Cloudflare) często blokują część tych botów bez wiedzy właściciela strony.
 
-Sprawdź stan swojej witryny w [ai-bots-check](/narzedzia/ai-bots-check) – narzędzie weryfikuje, które boty AI mają dostęp do Twojej domeny i czy plik `robots.txt` nie blokuje ich przypadkowo.
+Sprawdź stan swojej witryny w [Dostęp botów AI](/narzedzia/ai-bots-check) – narzędzie weryfikuje, które boty AI mają dostęp do Twojej domeny i czy plik `robots.txt` nie blokuje ich przypadkowo.
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
@@ -164,7 +164,7 @@ Trzy główne metryki stosowane w ICEA:
 
 Jak mierzyć to w praktyce? Wybierz 20–50 pytań, które Twoi klienci wpisują w ChatGPT lub Perplexity. Wprowadzaj te zapytania regularnie (np. co 2 tygodnie) w czystym środowisku przeglądarki (w trybie incognito, bez personalizacji). Notuj, ile odpowiedzi zawiera nazwę Twojej marki. To będzie Twój punkt startowy.
 
-Darmowe narzędzie [brand check](/narzedzia/brand-check) samodzielnie odpyta cztery silniki AI o Twoją markę i pokaże, jak jesteś postrzegany na tle kategorii – bez konieczności ręcznego wpisywania pytań.
+Darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) samodzielnie odpyta cztery silniki AI o Twoją markę i pokaże, jak jesteś postrzegany na tle kategorii – bez konieczności ręcznego wpisywania pytań.
 
 ### Narzędzia zewnętrzne do monitoringu
 

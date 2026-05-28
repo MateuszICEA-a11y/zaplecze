@@ -80,7 +80,7 @@ Poniższa tabela zbiera trzy podstawowe metryki stosowane w audytach GEO wraz z 
 
 **Pomiar SoV ma sens tylko w zestawieniu z konkurencją.** Odpytaj te same pytania, ale tym razem szukaj, ile razy pojawiają się 3–4 Twoich bezpośrednich konkurentów. Różnica między Twoim SoV a SoV lidera to właśnie luka widoczności, którą audyt ma zidentyfikować.
 
-Darmowy [brand check](/narzedzia/brand-check) odpyta cztery silniki AI o Twoją markę i pokaże, jak jesteś postrzegany na tle kategorii – bez konieczności ręcznego odpytywania każdego modelu osobno.
+Darmowy [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI o Twoją markę i pokaże, jak jesteś postrzegany na tle kategorii – bez konieczności ręcznego odpytywania każdego modelu osobno.
 
 ## Krok 4 – Audyt techniczny dostępności dla botów AI
 
@@ -90,7 +90,7 @@ Wyniki odpytywania modeli to obraz widoczności. Audyt techniczny wyjaśnia, dla
 
 Pierwsza i najczęstsza przyczyna niewidoczności to zablokowanie botów AI w pliku `robots.txt` – często nieintencjonalne. Sprawdź, czy żadna z reguł `Disallow` nie dotyczy botów: `GPTBot` (OpenAI), `ChatGPT-User` (OpenAI), `PerplexityBot` (Perplexity), `Google-Extended` (Google) i `ClaudeBot` (Anthropic). Błędy w konfiguracji zapory Cloudflare potrafią blokować część tych botów bez jakiegokolwiek wpisu w `robots.txt`.
 
-Narzędzie [ai-bots-check](/narzedzia/ai-bots-check) weryfikuje, które boty AI mają dostęp do Twojej domeny i sygnalizuje niezamierzone blokady.
+Narzędzie [Dostęp botów AI](/narzedzia/ai-bots-check) weryfikuje, które boty AI mają dostęp do Twojej domeny i sygnalizuje niezamierzone blokady.
 
 ### Renderowanie JavaScript i dostępność treści
 
@@ -141,7 +141,7 @@ Ustal trzyszczeblowy rytm pomiaru:
 
 Zmienność odpowiedzi to zjawisko normalne – nie reaguj na każde wahnięcie. Reaguj na trend: jeśli Citation Rate spada przez dwa kolejne miesiące, szukaj przyczyny. Jeśli rośnie – identyfikuj, która ze zmian to spowodowała, i skaluj tę taktykę.
 
-Do monitorowania SoV w sposób zautomatyzowany warto rozważyć wyspecjalizowane platformy. Nightwatch od wersji mid-tier (od 32 USD miesięcznie) śledzi jednocześnie pozycje w LLM i wyniki tradycyjne. Otterly AI (od 29 USD miesięcznie) generuje automatyczne alerty przy negatywnym sentymencie i wykrytych halucynacjach. Jeśli szukasz czegoś prostszego do oceny, zanim zaangażujesz budżet – [brand check](/narzedzia/brand-check) pozwoli Ci zobaczyć punkt startowy bez żadnych kosztów.
+Do monitorowania SoV w sposób zautomatyzowany warto rozważyć wyspecjalizowane platformy. Nightwatch od wersji mid-tier (od 32 USD miesięcznie) śledzi jednocześnie pozycje w LLM i wyniki tradycyjne. Otterly AI (od 29 USD miesięcznie) generuje automatyczne alerty przy negatywnym sentymencie i wykrytych halucynacjach. Jeśli szukasz czegoś prostszego do oceny, zanim zaangażujesz budżet – [Widoczność marki w AI](/narzedzia/brand-check) pozwoli Ci zobaczyć punkt startowy bez żadnych kosztów.
 
 ## Często zadawane pytania o audyt widoczności w AI
 
@@ -159,4 +159,4 @@ To sygnał luki merytorycznej – model cytuje Twoją markę ze starych danych t
 
 ### Czy mała firma może przeprowadzić audyt samodzielnie?
 
-Tak. Zestawy 20 pytań testowych, ręczne odpytanie ChatGPT i Perplexity, weryfikacja `robots.txt` i sprawdzenie renderowania przez źródło strony – to wszystko jest możliwe bez żadnych płatnych narzędzi. Darmowy [brand check](/narzedzia/brand-check) automatyzuje pierwsze odpytanie i daje punkt startowy w kilka minut.
+Tak. Zestawy 20 pytań testowych, ręczne odpytanie ChatGPT i Perplexity, weryfikacja `robots.txt` i sprawdzenie renderowania przez źródło strony – to wszystko jest możliwe bez żadnych płatnych narzędzi. Darmowy [Widoczność marki w AI](/narzedzia/brand-check) automatyzuje pierwsze odpytanie i daje punkt startowy w kilka minut.

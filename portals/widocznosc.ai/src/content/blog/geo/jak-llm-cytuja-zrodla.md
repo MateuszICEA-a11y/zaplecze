@@ -48,7 +48,7 @@ Co decyduje o wyborze fragmentu przez RAG? Trzy właściwości są kluczowe:
 - **Gęstość faktograficzna** – liczby, daty, nazwy własne, cytowania badań; elementy, które model może bezpiecznie wyodrębnić jako weryfikowalne fakty.
 - **Spójność z nagłówkiem** – nagłówek jako pytanie, a bezpośrednio pod nim odpowiedź; nagłówki H2/H3 pełnią rolę znaczników granic bloków danych i ułatwiają silnikowi lokalizację właściwego fragmentu.
 
-Jeśli chcesz sprawdzić, jak Twoje konkretne adresy URL wypadają pod kątem cytowalności, narzędzie [URL check](/narzedzia/url-check) analizuje stronę na podstawie tych czynników w kilkadziesiąt sekund.
+Jeśli chcesz sprawdzić, jak Twoje konkretne adresy URL wypadają pod kątem cytowalności, narzędzie [Ocena cytowalności strony](/narzedzia/url-check) analizuje stronę na podstawie tych czynników w kilkadziesiąt sekund.
 
 ## Dlaczego silne SEO nie gwarantuje cytowania
 
@@ -136,7 +136,7 @@ Zestaw reguł, które wynikają bezpośrednio z opisanych mechanizmów:
 - **Unikalne ujęcia tematyczne** – dwa artykuły o podobnym temacie rywalizują o ten sam slot w kontekście modelu; jeden wygrywa, drugi jest ignorowany lub generuje błędną atrybucję.
 - **Spójność danych w sieci** – jeśli Twoja strona i partnerski blog podają różne liczby dotyczące tej samej kwestii, model uzna tę informację za niejednoznaczną i usunie ją z syntezy.
 
-Jeśli chcesz sprawdzić, jak Twoja marka jest obecnie postrzegana przez cztery główne silniki AI – i na tle której kategorii pojawia się lub nie pojawia – darmowe [narzędzie brand check](/narzedzia/brand-check) robi to automatycznie. To dobry punkt startowy przed głębszą optymalizacją treści zgodną z zasadami omawianymi w tym artykule.
+Jeśli chcesz sprawdzić, jak Twoja marka jest obecnie postrzegana przez cztery główne silniki AI – i na tle której kategorii pojawia się lub nie pojawia – darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) robi to automatycznie. To dobry punkt startowy przed głębszą optymalizacją treści zgodną z zasadami omawianymi w tym artykule.
 
 Pełną logikę tego, czym GEO różni się od SEO i jakie działania przynoszą efekty w jakim horyzoncie czasowym, opisuje [kompletny przewodnik po GEO](/geo/przewodnik) – jeśli ten artykuł to Twój pierwszy kontakt z tą dyscypliną, zacznij od niego.
 

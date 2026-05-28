@@ -160,7 +160,7 @@ Zarządzanie rozmową:
 - **Zaproponuj pilotaż** z datą oceny wyników, jasnym budżetem i jednym konkretnym miernikiem sukcesu.
 - **Odpowiedz z góry** na pytanie „a co jeśli nie zadziała?" – bez tego pytanie pada z sali i rozkłada cały plan.
 
-Po spotkaniu z zarządem, pierwszym praktycznym krokiem jest sprawdzenie, jak Twoja marka jest już postrzegana przez systemy AI – darmowy [brand check](/narzedzia/brand-check) odpyta cztery silniki AI w 30 sekund i pokaże stan widoczności. To dane, które możesz przywołać w kolejnym raporcie jako punkt wyjścia do analizy efektów zewnętrznych.
+Po spotkaniu z zarządem, pierwszym praktycznym krokiem jest sprawdzenie, jak Twoja marka jest już postrzegana przez systemy AI – darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI w 30 sekund i pokaże stan widoczności. To dane, które możesz przywołać w kolejnym raporcie jako punkt wyjścia do analizy efektów zewnętrznych.
 
 ## Co dalej po zatwierdzeniu przez zarząd
 

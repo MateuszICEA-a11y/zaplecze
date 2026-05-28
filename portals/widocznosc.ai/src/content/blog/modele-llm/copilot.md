@@ -82,7 +82,7 @@ W 2026 roku Microsoft określa Windows z Copilotem mianem Agentic OS – systemu
 
 Każda z tych funkcji wymaga jawnej zgody użytkownika (privacy opt-in). Microsoft wycofał się ze wcześniejszego podejścia, w którym powiadomienia Copilota były natrętnie umieszczane w różnych miejscach systemu – projekt o nazwie kodowej K2 porządkuje punkty styku, integrując je w scentralizowanym interfejsie.
 
-Jeśli chcesz sprawdzić, jak modele AI postrzegają Twoją markę po wdrożeniu jej w nowych kanałach, darmowy [brand check](/narzedzia/brand-check) odpyta cztery silniki AI i zaprezentuje wyniki w kilkadziesiąt sekund.
+Jeśli chcesz sprawdzić, jak modele AI postrzegają Twoją markę po wdrożeniu jej w nowych kanałach, darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI i zaprezentuje wyniki w kilkadziesiąt sekund.
 
 ## GitHub Copilot – asystent w środowisku programistycznym
 
@@ -136,7 +136,7 @@ W tym miejscu pojawia się wymiar, który interesuje specjalistów od widocznoś
 
 Szczegółowe zasady optymalizacji pod ten silnik opisuje nasz artykuł o [Bing Copilocie](/pozycjonowanie-ai/bing-copilot). Szerszy kontekst – jak działają mechanizmy cytowania we wszystkich silnikach AI – znajdziesz w [przewodniku po GEO](/geo/przewodnik).
 
-Jeśli chcesz wiedzieć, jak Twoja strona wypada pod kątem cytowalności, nasz darmowy [URL check](/narzedzia/url-check) przeanalizuje ją w 30 sekund.
+Jeśli chcesz wiedzieć, jak Twoja strona wypada pod kątem cytowalności, nasze narzędzie [Ocena cytowalności strony](/narzedzia/url-check) przeanalizuje ją w 30 sekund.
 
 ## Jak wybrać właściwy wariant Copilota dla swojej organizacji
 

@@ -129,6 +129,6 @@ Praktyczna lista kroków przed uruchomieniem jakiegokolwiek narzędzia AI w HR:
 - **Zaktualizuj procedury** – klauzule informacyjne, umowy powierzenia, regulamin pracy (jeśli monitorujesz pracowników przez AI).
 - **Przeszkol rekruterów** – ludzki nadzór nie działa, jeśli rekruter nie rozumie, co algorytm robi i jakie są jego ograniczenia.
 
-Jeśli Twoja firma jest na etapie oceny gotowości do wdrożeń AI – w tym w obszarze HR – [brand check](/narzedzia/brand-check) pokaże, jak Twoja organizacja jest postrzegana przez systemy AI, zanim zaczniesz je wdrażać wewnętrznie.
+Jeśli Twoja firma jest na etapie oceny gotowości do wdrożeń AI – w tym w obszarze HR – [Widoczność marki w AI](/narzedzia/brand-check) pokaże, jak Twoja organizacja jest postrzegana przez systemy AI, zanim zaczniesz je wdrażać wewnętrznie.
 
 Warto też zapoznać się z tym, jak AI zmienia obsługę klientów – mechanizmy automatyzacji decyzji opisane w artykule o [AI w obsłudze klienta](/ai-w-biznesie/ai-w-obsludze-klienta) są bliźniaczo podobne do tych w HR i podlegają tym samym ramom prawnym. A jeśli interesuje Cię techniczny fundament tych systemów – jak działają modele językowe zasilające asystentów HR – solidny punkt wyjścia to [przewodnik po dużych modelach językowych](/modele-llm/przewodnik).

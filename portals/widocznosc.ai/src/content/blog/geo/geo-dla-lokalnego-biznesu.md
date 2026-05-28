@@ -107,7 +107,7 @@ Recenzje Google to niedoceniany zasób w kontekście GEO dla firm lokalnych. Tek
 
 Sekcja FAQ na stronie to idealne miejsce na wdrożenie logiki GEO. Pytania powinny brzmieć jak zapytania wpisywane do ChatGPT: „Ile kosztuje czyszczenie kanalizacji w Warszawie?", „Czy gabinet przyjmuje w weekend?". Odpowiedzi muszą zaczynać się od twardej deklaracji: ceny, godziny, zasady – nie od „Zależy to od…".
 
-Jeśli chcesz sprawdzić, jak Twoja strona wypada pod kątem cytowalności w modelach AI, narzędzie [brand check](/narzedzia/brand-check) odpyta cztery silniki AI o Twoją markę i pokaże aktualny obraz widoczności.
+Jeśli chcesz sprawdzić, jak Twoja strona wypada pod kątem cytowalności w modelach AI, narzędzie [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI o Twoją markę i pokaże aktualny obraz widoczności.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/piotr-wicenciak.avif" alt="Piotr Wicenciak" /></div>

@@ -138,6 +138,6 @@ Polityka bezpieczeństwa AI nie musi być dokumentem liczącym 80 stron. Dobry p
 
 Kwestię zgodności z regulacjami (compliance) – wymagania AI Act i RODO, w tym harmonogram obowiązków – szczegółowo omawia artykuł [AI Act i RODO](/ai-w-biznesie/ai-act-rodo). Warto go przeczytać równolegle, bo polityka bezpieczeństwa AI jest praktyczną implementacją tamtych wymogów prawnych.
 
-Jeśli planujesz wdrożenie LLM i chcesz sprawdzić, jak marka Twojej firmy wygląda w odpowiedziach modeli generatywnych zanim przejdziesz do architektury danych, darmowy [audyt marki (brand check)](/narzedzia/brand-check) odpyta cztery silniki AI o Twoją markę i pokaże aktualny stan widoczności – przydatny punkt odniesienia przed większymi inwestycjami.
+Jeśli planujesz wdrożenie LLM i chcesz sprawdzić, jak marka Twojej firmy wygląda w odpowiedziach modeli generatywnych zanim przejdziesz do architektury danych, darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI o Twoją markę i pokaże aktualny stan widoczności – przydatny punkt odniesienia przed większymi inwestycjami.
 
 Decyzje dotyczące bezpieczeństwa danych i wyboru modelu wdrożenia są nierozłącznie związane z szerszą strategią AI. Kompletny przegląd modeli dostępnych w latach 2025–2026 i ich parametrów znajdziesz w [przewodniku po modelach LLM](/modele-llm/przewodnik) – w tym omówienie różnic między modelami otwartymi a komercyjnymi, które mają bezpośrednie przełożenie na decyzje o środowisku on-premise.

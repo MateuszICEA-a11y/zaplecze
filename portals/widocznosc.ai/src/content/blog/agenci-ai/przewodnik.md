@@ -141,7 +141,7 @@ Wdrożenie systemu agentowego opartego na LangGraph u klienta przetwarzającego 
 
 Agent zakupowy analizuje wewnętrzne priorytety kosztowe, przeszukuje bazy dostawców, pobiera oferty z plików PDF, e-maili i portali, porównuje warunki płatności i generuje rekomendację w ciągu kilku minut. Wartość nie polega na eliminacji człowieka z procesu – lecz na tym, że człowiek dostaje gotową analizę porównawczą, zamiast tracić czas na jej przygotowanie.
 
-Jeśli chcesz zobaczyć, jak Twoja marka jest postrzegana przez AI w kontekście konkretnych usług, darmowy [brand check](/narzedzia/brand-check) odpyta cztery silniki AI i pokaże, gdzie jesteś cytowany – a gdzie Twoja konkurencja zajmuje Twoje miejsce.
+Jeśli chcesz zobaczyć, jak Twoja marka jest postrzegana przez AI w kontekście konkretnych usług, darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI i pokaże, gdzie jesteś cytowany – a gdzie Twoja konkurencja zajmuje Twoje miejsce.
 
 ## Bezpieczeństwo i zarządzanie ryzykiem w systemach agentowych
 

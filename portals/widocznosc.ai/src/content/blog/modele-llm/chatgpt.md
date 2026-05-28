@@ -124,7 +124,7 @@ Jeśli potencjalny klient pyta „Które agencje SEO w Polsce specjalizują się
 
 Zrozumienie tych mechanizmów opisuje [przewodnik po GEO](/geo/przewodnik) – optymalizacji pod generatywne wyszukiwarki. Jeśli interesuje Cię konkretna strona operacyjna – jak ChatGPT postrzega Twoją markę i jak to zmienić – wejdź na [pozycjonowanie w ChatGPT](/pozycjonowanie-ai/chatgpt).
 
-Zanim zaczniesz planować, sprawdź punkt startowy: darmowy [brand check](/narzedzia/brand-check) zada zapytanie o Twoją markę czterem silnikom AI i pokaże, jak jesteś postrzegany na tle kategorii – bez ręcznego testowania.
+Zanim zaczniesz planować, sprawdź punkt startowy: darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) zada zapytanie o Twoją markę czterem silnikom AI i pokaże, jak jesteś postrzegany na tle kategorii – bez ręcznego testowania.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/tomasz-czechowski.avif" alt="Tomasz Czechowski" /></div>

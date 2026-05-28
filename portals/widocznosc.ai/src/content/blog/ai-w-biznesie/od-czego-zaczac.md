@@ -133,7 +133,7 @@ Po stronie kosztów (CAPEX + OPEX) uwzględnij:
 
 Po stronie korzyści przelicz na konkretne pozycje rachunku zysków i strat. Nie „zaoszczędzimy czas" – tylko „redukcja o 2 etaty (FTE) w dziale obsługi przez automatyzację klasyfikacji zgłoszeń = 180 tys. zł rocznie". Dla produkcji: zmniejszenie odsetka odrzutów o 1,5 punktu procentowego przy wolumenie 10 000 sztuk miesięcznie. To liczby, które zarząd może ocenić.
 
-Jeśli chcesz sprawdzić, czy Twoja marka pojawia się w odpowiedziach AI, zanim zainwestujesz w content marketing oparty na AI, darmowy [audyt marki (brand check)](/narzedzia/brand-check) odpyta cztery silniki AI i pokaże Twój obecny udział głosu (Share of Voice) na tle kategorii.
+Jeśli chcesz sprawdzić, czy Twoja marka pojawia się w odpowiedziach AI, zanim zainwestujesz w content marketing oparty na AI, darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI i pokaże Twój obecny udział głosu (Share of Voice) na tle kategorii.
 
 **Nie zaczynaj od dużego projektu.** Zacznij od jednego procesu, jednej grupy użytkowników, jednej mierzalnej metryki. Sukces pierwszego wdrożenia jest jedynym dowodem, który przekona organizację do kolejnego kroku – żadne uzasadnienie biznesowe tego nie zastąpi.
 

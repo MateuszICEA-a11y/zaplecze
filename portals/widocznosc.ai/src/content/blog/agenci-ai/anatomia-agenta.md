@@ -138,4 +138,4 @@ Trzecie – ryzyko operacyjne przy narzędziach nieodwracalnych. Agent, który w
 
 Agent ma sens, gdy zadanie jest wieloetapowe, wymaga pobierania danych z wielu źródeł i adaptacji do wyników pośrednich. Dla prostego zadania jednokrokowego – lepszy, szybszy i tańszy będzie zwykły potok przetwarzania (pipeline) z modelem i predefiniowanymi narzędziami.
 
-Jeśli chcesz sprawdzić, jak Twoja obecna infrastruktura treści wypada pod kątem gotowości na systemy agentowe i RAG, [URL check](/narzedzia/url-check) analizuje strukturę strony pod kątem 8 czynników cytowalności w 30 sekund.
+Jeśli chcesz sprawdzić, jak Twoja obecna infrastruktura treści wypada pod kątem gotowości na systemy agentowe i RAG, [Ocena cytowalności strony](/narzedzia/url-check) analizuje strukturę strony pod kątem 8 czynników cytowalności w 30 sekund.

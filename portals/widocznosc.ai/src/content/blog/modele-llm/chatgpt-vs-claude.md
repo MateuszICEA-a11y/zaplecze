@@ -89,7 +89,7 @@ Kilka zastosowań, gdzie rozmiar kontekstu ma bezpośredni wpływ:
 - **Audyt treści** – przetwarzanie całej zawartości serwisu w jednej sesji
 - **Research** – zestawienie kilku raportów branżowych i zadawanie pytań o sprzeczności
 
-**[URL check](/narzedzia/url-check) – narzędzie widocznosc.ai – w 30 sekund analizuje Twoją stronę pod kątem cytowalności przez modele LLM**, co jest dobrym testem sprawdzającym, czy Twój content jest strukturalnie gotowy na pobieranie przez silniki RAG (Retrieval-Augmented Generation, czyli generowanie wspomagane wyszukiwaniem).
+**[Ocena cytowalności strony](/narzedzia/url-check) – narzędzie widocznosc.ai – w 30 sekund analizuje Twoją stronę pod kątem cytowalności przez modele LLM**, co jest dobrym testem sprawdzającym, czy Twój content jest strukturalnie gotowy na pobieranie przez silniki RAG (Retrieval-Augmented Generation, czyli generowanie wspomagane wyszukiwaniem).
 
 ## Język polski – kto mówi lepiej po polsku
 
@@ -158,6 +158,6 @@ ChatGPT Plus, jeśli ważna jest dla Ciebie wielofunkcyjność (obrazy, zaawanso
 **Do budowania produktów przez API:**
 Wybór zależy od ekosystemu. Koszty generowania tokenów we flagowych modelach obu dostawców (GPT-5.5 oraz Claude Opus) są obecnie bardzo podobne. Warto rozważyć tańsze modele obu firm (np. GPT-4.1 Nano czy Claude Haiku) przy projektach wymagających przetwarzania dużych wolumenów danych.
 
-Jeśli chcesz sprawdzić, jak Twoja marka pojawia się w odpowiedziach obu modeli, [brand check](/narzedzia/brand-check) odpyta ChatGPT, Claude i inne silniki AI jednocześnie – bez konieczności ręcznego testowania.
+Jeśli chcesz sprawdzić, jak Twoja marka pojawia się w odpowiedziach obu modeli, [Widoczność marki w AI](/narzedzia/brand-check) odpyta ChatGPT, Claude i inne silniki AI jednocześnie – bez konieczności ręcznego testowania.
 
 Szczegółowe omówienia każdego z modeli znajdziesz w artykułach o [ChatGPT](/modele-llm/chatgpt) i [Claude](/modele-llm/claude). Kontekst rynkowy – jak duże modele językowe oparte na [sieciach neuronowych](https://pl.wikipedia.org/wiki/Sie%C4%87_neuronowa) zmieniają wyszukiwanie i widoczność marki – opisuje [przewodnik po modelach LLM](/modele-llm/przewodnik).

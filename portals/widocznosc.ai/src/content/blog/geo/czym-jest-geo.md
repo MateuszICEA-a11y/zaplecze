@@ -105,9 +105,9 @@ Trzy metryki, które stosujemy w ICEA jako punkt wyjścia każdego audytu:
 
 **Jak mierzyć to w praktyce bez specjalistycznego narzędzia:** wybierz 20–30 pytań, które Twoi klienci zadają w ChatGPT lub Perplexity. Odpytuj modele regularnie – na przykład co dwa tygodnie – w czystym środowisku przeglądarki (bez historii konwersacji i personalizacji). Notuj, ile odpowiedzi zawiera nazwę Twojej firmy. To Twój punkt startowy do oceny efektów optymalizacji.
 
-Darmowe narzędzie [brand check](/narzedzia/brand-check) odpyta cztery silniki AI o Twoją markę i pokaże wynik na tle danej kategorii bez konieczności ręcznego sprawdzania każdego modelu z osobna.
+Darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI o Twoją markę i pokaże wynik na tle danej kategorii bez konieczności ręcznego sprawdzania każdego modelu z osobna.
 
-Jeśli chcesz sprawdzić, jak konkretna podstrona wypada pod kątem cytowalności, narzędzie [URL check](/narzedzia/url-check) przeanalizuje ją pod kątem kluczowych czynników GEO w kilkadziesiąt sekund.
+Jeśli chcesz sprawdzić, jak konkretna podstrona wypada pod kątem cytowalności, narzędzie [Ocena cytowalności strony](/narzedzia/url-check) przeanalizuje ją pod kątem kluczowych czynników GEO w kilkadziesiąt sekund.
 
 ## Pierwsze kroki – co zrobić, zanim zaczniesz tworzyć treść
 

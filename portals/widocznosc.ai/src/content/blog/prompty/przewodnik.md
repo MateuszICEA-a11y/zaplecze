@@ -299,7 +299,7 @@ Proces optymalizacji, który daje powtarzalne wyniki:
 
 Zmiana jednego elementu naraz to klucz. Jeśli zmienisz trzy rzeczy jednocześnie i wynik się poprawi, nie wiesz, która zmiana pomogła – i przy następnej iteracji jesteś z powrotem w ciemno.
 
-Jeśli chcesz sprawdzić, jak treści generowane z pomocą LLM wypadają pod kątem cytowalności przez wyszukiwarki AI, [URL check](/narzedzia/url-check) analizuje strukturę strony pod kątem kluczowych czynników w kilkadziesiąt sekund.
+Jeśli chcesz sprawdzić, jak treści generowane z pomocą LLM wypadają pod kątem cytowalności przez wyszukiwarki AI, [Ocena cytowalności strony](/narzedzia/url-check) analizuje strukturę strony pod kątem kluczowych czynników w kilkadziesiąt sekund.
 
 Kilka sygnałów, że prompt wymaga poprawy:
 

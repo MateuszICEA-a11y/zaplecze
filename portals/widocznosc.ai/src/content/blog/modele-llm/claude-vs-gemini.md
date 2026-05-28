@@ -129,7 +129,7 @@ Na poziomie API różnica jest wyraźna:
 
 Gemini jest znacznie tańsze w przeliczeniu na token. Przy wolumenach produkcyjnych – tysiące zapytań dziennie, przetwarzanie masowych zbiorów danych – ta różnica szybko rośnie do tysięcy dolarów miesięcznie. Dla aplikacji masowych, poziom Gemini Flash (ok. $0,30 input / $2,50 output za milion tokenów) nie ma porównywalnego odpowiednika po stronie Anthropic.
 
-Jeśli chcesz sprawdzić, jak Twoja obecna widoczność w modelach AI wygląda zanim zdecydujesz o strategii contentowej, [brand check](/narzedzia/brand-check) odpyta cztery silniki AI o Twoją markę i pokaże, gdzie jesteś cytowany, a gdzie Cię nie ma.
+Jeśli chcesz sprawdzić, jak Twoja obecna widoczność w modelach AI wygląda zanim zdecydujesz o strategii contentowej, [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI o Twoją markę i pokaże, gdzie jesteś cytowany, a gdzie Cię nie ma.
 
 ## Który model wybrać – werdykty dla poszczególnych zastosowań
 

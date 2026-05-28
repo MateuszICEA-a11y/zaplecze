@@ -140,7 +140,7 @@ Na rynku działają inne duże modele językowe (LLM – Large Language Model) o
 
 **Większość profesjonalnych zastosowań nie wymaga wyboru – możesz korzystać z kilku modeli jednocześnie, dobierając narzędzie do zadania.** Porównanie możliwości ChatGPT i Claude w praktycznych zadaniach SEO znajdziesz w artykule o [modelu Claude](/modele-llm/claude).
 
-Jeśli chcesz sprawdzić, jak ChatGPT widzi i opisuje Twoją markę lub domenę w kontekście branżowym, [brand check](/narzedzia/brand-check) przeanalizuje zapytania w czterech silnikach AI i pokaże Ci obraz Twojej widoczności bez konieczności ręcznego testowania.
+Jeśli chcesz sprawdzić, jak ChatGPT widzi i opisuje Twoją markę lub domenę w kontekście branżowym, [Widoczność marki w AI](/narzedzia/brand-check) przeanalizuje zapytania w czterech silnikach AI i pokaże Ci obraz Twojej widoczności bez konieczności ręcznego testowania.
 
 ## Często zadawane pytania o ChatGPT
 

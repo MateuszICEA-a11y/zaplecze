@@ -217,4 +217,4 @@ Po wyborze konfiguracji uruchamiaj testy regresyjne po każdej zmianie w potoku 
 
 Jeśli budujesz system RAG od podstaw, [przewodnik po RAG](/rag/przewodnik) opisuje pełną architekturę – od akwizycji danych, przez wyszukiwanie, po generację – razem z checklistą gotowości produkcyjnej. Jakość osadzeń (embeddingów), które są podstawą wyszukiwania semantycznego, omawia artykuł o [embeddingach w RAG](/rag/embeddingi).
 
-Jak Twoje treści wypadają pod kątem podzielności semantycznej? Narzędzie [URL check](/narzedzia/url-check) analizuje stronę pod kątem struktury i możliwości ekstrakcji fragmentów w 30 sekund.
+Jak Twoje treści wypadają pod kątem podzielności semantycznej? Narzędzie [Ocena cytowalności strony](/narzedzia/url-check) analizuje stronę pod kątem struktury i możliwości ekstrakcji fragmentów w 30 sekund.

@@ -66,7 +66,7 @@ Modele dzielą się na komercyjne API i rozwiązania lokalne:
 - **FlashRank** – ultralekki silnik Apache 2.0, zaprojektowany pod środowiska CPU; idealny do wdrożeń brzegowych i mikroserwisów z ograniczoną pamięcią
 - **Jina Reranker v3** – tryb listowy (jednoczesna analiza do 64 dokumentów w oknie 131 000 tokenów), wynik 61,94 nDCG@10 na zbiorze BEIR
 
-Do testów wydajnościowych warto sprawdzić [url-check](/narzedzia/url-check) – narzędzie analizuje strukturę strony pod kątem cytowalności, co pomaga ocenić, jak Twoje fragmenty będą się zachowywać w potoku RAG, zanim trafią do modelu.
+Do testów wydajnościowych warto sprawdzić [Ocena cytowalności strony](/narzedzia/url-check) – narzędzie analizuje strukturę strony pod kątem cytowalności, co pomaga ocenić, jak Twoje fragmenty będą się zachowywać w potoku RAG, zanim trafią do modelu.
 
 ### Ile fragmentów na każdym etapie
 
@@ -154,7 +154,7 @@ compression_retriever = ContextualCompressionRetriever(
 
 W obu przypadkach `top_n=5` oznacza, że do modelu generującego trafia tylko 5 najlepiej dopasowanych fragmentów. Zmiana tego parametru to najszybszy sposób na manipulowanie kompromisem między precyzją a kompletnością odpowiedzi.
 
-Jeśli chcesz zobaczyć, jak cytowania generowane przez Twój system RAG są postrzegane przez silniki AI, [brand check](/narzedzia/brand-check) pokaże aktualną obecność Twojej marki w odpowiedziach czterech głównych modeli – warto traktować to jako zewnętrzny punkt odniesienia dla jakości Twojego systemu.
+Jeśli chcesz zobaczyć, jak cytowania generowane przez Twój system RAG są postrzegane przez silniki AI, [Widoczność marki w AI](/narzedzia/brand-check) pokaże aktualną obecność Twojej marki w odpowiedziach czterech głównych modeli – warto traktować to jako zewnętrzny punkt odniesienia dla jakości Twojego systemu.
 
 ## Kiedy reranking nie jest odpowiedzią
 

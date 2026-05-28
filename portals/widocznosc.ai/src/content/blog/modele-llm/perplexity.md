@@ -122,7 +122,7 @@ Perplexity jest naturalnym mostem do GEO (Generative Engine Optimization, optyma
 
 Cztery kroki do lepszej widoczności w Perplexity:
 
-- **Dostęp techniczny** – sprawdź, czy `PerplexityBot` nie jest blokowany przez `robots.txt` ani przez reguły zapory sieciowej Cloudflare; możesz to zweryfikować w [ai-bots-check](/narzedzia/ai-bots-check) w kilka sekund
+- **Dostęp techniczny** – sprawdź, czy `PerplexityBot` nie jest blokowany przez `robots.txt` ani przez reguły zapory sieciowej Cloudflare; możesz to zweryfikować w [Dostęp botów AI](/narzedzia/ai-bots-check) w kilka sekund
 - **Struktura fragmentów** – podziel treść na samodzielne bloki 200–400 słów, każdy z nagłówkiem jako pytaniem i odpowiedzią w pierwszym zdaniu; silnik RAG ocenia każdy fragment oddzielnie
 - **Gęstość faktograficzna** – dodaj do każdej sekcji H2 co najmniej jedną liczbę z datą i źródłem; fragmenty z danymi liczbowymi mają wyższy priorytet przy selekcji wektorowej
 - **Wzajemne wzmianki** – buduj obecność w miejscach, z których Perplexity chętnie czerpie: branżowe raporty, Wikipedia, fora Reddit, media B2B; to sygnał autorytetu dla algorytmu selekcji
@@ -141,7 +141,7 @@ Tak. Algorytm przetwarza polskie zapytania i odpowiada po polsku, sięgając zar
 
 ### Jak sprawdzić, czy moja strona jest cytowana przez Perplexity?
 
-Najprostszy sposób to ręczne odpytanie 10–20 zapytań z Twojej niszy w Perplexity i weryfikacja, czy Twoja domena pojawia się wśród przypisów. Możesz też użyć darmowego [brand check](/narzedzia/brand-check), który odpyta kilka silników AI o Twoją markę i pokaże, jak jesteś postrzegany na tle kategorii.
+Najprostszy sposób to ręczne odpytanie 10–20 zapytań z Twojej niszy w Perplexity i weryfikacja, czy Twoja domena pojawia się wśród przypisów. Możesz też użyć darmowego [Widoczność marki w AI](/narzedzia/brand-check), który odpyta kilka silników AI o Twoją markę i pokaże, jak jesteś postrzegany na tle kategorii.
 
 ### Czym Spaces różnią się od zwykłych konwersacji?
 

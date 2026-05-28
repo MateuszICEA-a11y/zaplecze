@@ -151,7 +151,7 @@ W Polsce nadzór nad regulacjami AI Act sprawuje Komisja Rozwoju i Bezpieczeńst
 
 Dla firm wdrażających AI w obszarach wysokiego ryzyka minimalne wymagania AI Act to de facto instrukcja zbudowania polityki AI. **Jeśli zaczniesz od wymagań AI Act jako listy kontrolnej, masz gotowy szkielet systemu zarządzania dla całej organizacji.**
 
-Zanim zlecisz wdrożenie zewnętrznemu dostawcy, sprawdź, jak Twoja marka wypada dziś w silnikach AI – [brand check](/narzedzia/brand-check) odpyta w 30 sekund cztery modele językowe i pokaże, co widzą o Twojej firmie. Zrozumienie tego, co AI mówi o Tobie, to też element transparentności i odpowiedzialnego zarządzania reputacją.
+Zanim zlecisz wdrożenie zewnętrznemu dostawcy, sprawdź, jak Twoja marka wypada dziś w silnikach AI – [Widoczność marki w AI](/narzedzia/brand-check) odpyta w 30 sekund cztery modele językowe i pokaże, co widzą o Twojej firmie. Zrozumienie tego, co AI mówi o Tobie, to też element transparentności i odpowiedzialnego zarządzania reputacją.
 
 ## Jak wdrożyć system zarządzania krok po kroku – pierwszy miesiąc
 
