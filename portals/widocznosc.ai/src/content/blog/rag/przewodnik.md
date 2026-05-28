@@ -3,7 +3,7 @@ title: 'RAG (Retrieval-Augmented Generation) – przewodnik wdrożeniowy'
 subtitle: 'Zbuduj system, który odpowiada na pytania z własnych danych – bez halucynacji i bez zdezaktualizowanej wiedzy modelu'
 description: 'Kompletny przewodnik wdrożeniowy RAG: architektura, chunking, embeddingi, reranking, ewaluacja i bezpieczeństwo. Poziom L2 – z danymi i benchmarkami.'
 date: 2026-05-24
-image: ../../../assets/images/blog-rag-przewodnik.png
+image: ../../../assets/images/blog-rag-przewodnik.webp
 icon: '<path d="M4 6h16M4 10h16M4 14h10M4 18h7"/><circle cx="18" cy="16" r="3"/><line x1="21" y1="19" x2="19.5" y2="17.5"/>'
 author:
   name: 'Mateusz Wiśniewski'

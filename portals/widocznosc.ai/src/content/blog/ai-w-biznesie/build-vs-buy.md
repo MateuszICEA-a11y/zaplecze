@@ -3,7 +3,7 @@ title: 'Build vs buy – własna aplikacja AI czy gotowy SaaS'
 subtitle: 'Jak policzyć pełny koszt każdego z rozwiązań i podjąć decyzję, której nie będziesz żałować za dwa lata'
 description: 'Build vs buy AI: TCO, czas wdrożenia, vendor lock-in i hybryda. Porównawcza tabela kryteriów i dane z 2025–2026 dla decydentów MŚP i enterprise.'
 date: 2026-05-15
-image: ../../../assets/images/blog-ai-w-biznesie-build-vs-buy.png
+image: ../../../assets/images/blog-ai-w-biznesie-build-vs-buy.webp
 icon: '<path d="M3 6h18M3 12h18M3 18h18"/><path d="M7 3v3M12 3v3M17 3v3M7 18v3M12 18v3M17 18v3"/>'
 author:
   name: 'Michał Ziach'

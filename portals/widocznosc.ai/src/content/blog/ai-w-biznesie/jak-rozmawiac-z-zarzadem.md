@@ -3,7 +3,7 @@ title: 'Jak rozmawiać z zarządem o AI – argumenty i KPI'
 subtitle: 'Zamień entuzjazm technologiczny na język korzyści biznesowych, które zarząd zrozumie i zatwierdzi'
 description: 'Jak przekonać zarząd do inwestycji w AI? Poznaj framework business case, właściwe KPI, język korzyści i sposób prezentacji ryzyka oraz ROI – bez żargonu technicznego.'
 date: 2026-05-09
-image: ../../../assets/images/blog-ai-w-biznesie-jak-rozmawiac-z-zarzadem.png
+image: ../../../assets/images/blog-ai-w-biznesie-jak-rozmawiac-z-zarzadem.webp
 icon: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'
 author:
   name: 'Michał Ziach'

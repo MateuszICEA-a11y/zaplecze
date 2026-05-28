@@ -3,7 +3,7 @@ title: 'ChatGPT vs Gemini – porównanie funkcji i cen'
 subtitle: 'Sprawdź, który model pasuje do Twojego ekosystemu i sposobu pracy, zanim zapłacisz abonament'
 description: 'ChatGPT vs Gemini 2026: porównanie funkcji, planów, cen i zastosowań. Tabela, werdykt i praktyczne wskazówki dla zespołów Google i OpenAI.'
 date: 2026-05-13
-image: ../../../assets/images/blog-modele-llm-chatgpt-vs-gemini.png
+image: ../../../assets/images/blog-modele-llm-chatgpt-vs-gemini.webp
 icon: '<path d="M3 6h18M3 12h18M3 18h18"/><path d="M7 6v12M17 6v12"/>'
 author:
   name: 'Mateusz Wiśniewski'

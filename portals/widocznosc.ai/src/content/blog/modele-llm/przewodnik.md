@@ -3,7 +3,7 @@ title: 'Modele językowe (LLM) – przewodnik po ekosystemie'
 subtitle: 'Poznaj różnice między ChatGPT, Claude, Gemini, Copilotem a modelami open source, żeby wybrać właściwy model do swojej strategii AI'
 description: 'Przewodnik po ekosystemie dużych modeli językowych (LLM): ChatGPT, Claude, Gemini, Grok, Perplexity, Copilot i open source. Który model wybrać i dlaczego.'
 date: 2026-05-26
-image: ../../../assets/images/blog-modele-llm-przewodnik.png
+image: ../../../assets/images/blog-modele-llm-przewodnik.webp
 icon: '<circle cx="12" cy="12" r="3"/><path d="M3 12h3M18 12h3M12 3v3M12 18v3M6.34 6.34l2.12 2.12M15.54 15.54l2.12 2.12M6.34 17.66l2.12-2.12M15.54 8.46l2.12-2.12"/>'
 author:
   name: 'Mateusz Wiśniewski'

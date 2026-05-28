@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import ScrollUpButton from '../../components/ScrollUpButton.astro';
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import { PILLAR_LABELS } from '../../content.config';
 
@@ -41,6 +41,13 @@ const siteUrl = 'https://widocznosc.ai';
 
 const formatDate = (date: Date) =>
   date.toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' });
+
+// Optimized image URLs for JSON-LD (webp, 1200px) - avoids serving 2MB PNG to crawlers
+const ogImageByPostId = new Map<string, string>();
+for (const post of pagePosts) {
+  const optimized = await getImage({ src: post.data.image, format: 'webp', width: 1200 });
+  ogImageByPostId.set(post.id, optimized.src);
+}
 ---
 
 <Layout
@@ -63,7 +70,7 @@ const formatDate = (date: Date) =>
         description: post.data.description || post.data.subtitle,
         datePublished: post.data.date.toISOString(),
         url: `${siteUrl}/${post.id}/`,
-        image: `${siteUrl}${post.data.image.src}`,
+        image: `${siteUrl}${ogImageByPostId.get(post.id) ?? post.data.image.src}`,
       })),
     })}
   />

@@ -3,7 +3,7 @@ title: 'Wdrożenie AI w firmie – przewodnik dla decydenta'
 subtitle: 'Jak wybrać właściwy obszar, zbudować strukturę organizacyjną i zmierzyć zwrot z inwestycji – krok po kroku'
 description: 'Praktyczny przewodnik wdrożenia AI w firmie: wybór modelu Build/Buy/Boost, przypadki użycia, ROI, AI Act, RODO i struktura CoE dla decydenta.'
 date: 2026-05-25
-image: ../../../assets/images/blog-ai-w-biznesie-przewodnik.png
+image: ../../../assets/images/blog-ai-w-biznesie-przewodnik.webp
 icon: '<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>'
 author:
   name: 'Tomasz Czechowski'

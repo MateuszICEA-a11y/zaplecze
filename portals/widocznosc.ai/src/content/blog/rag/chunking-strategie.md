@@ -3,7 +3,7 @@ title: 'Chunking – strategie dzielenia dokumentów'
 subtitle: 'Dobierz strategię podziału dokumentów, która zwiększa precyzję wyszukiwania i ogranicza halucynacje LLM'
 description: 'Chunking w RAG: porównanie strategii o stałym rozmiarze, rekurencyjnej, semantycznej i nadrzędno-podrzędnej. Dane z badań, benchmarki, kod i wskazówki dla programistów.'
 date: 2026-05-18
-image: ../../../assets/images/blog-rag-chunking-strategie.png
+image: ../../../assets/images/blog-rag-chunking-strategie.webp
 icon: '<rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="9" x2="9" y2="21"/>'
 author:
   name: 'Tomasz Czechowski'

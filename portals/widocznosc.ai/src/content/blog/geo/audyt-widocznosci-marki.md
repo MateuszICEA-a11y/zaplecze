@@ -3,7 +3,7 @@ title: 'Audyt widoczności marki w ChatGPT, Gemini i Perplexity – krok po krok
 subtitle: 'Sprawdź, czy AI poleca Twoją markę – i dowiedz się, jak to zmienić na swoją korzyść'
 description: 'Praktyczny przewodnik po audycie widoczności marki w ChatGPT, Gemini i Perplexity. Kroki, metryki, narzędzia i plan działania na 90 dni. Dla marketerów i specjalistów SEO.'
 date: 2026-05-21
-image: ../../../assets/images/blog-geo-audyt-widocznosci-marki.png
+image: ../../../assets/images/blog-geo-audyt-widocznosci-marki.webp
 icon: '<circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/>'
 author:
   name: 'Mateusz Wiśniewski'

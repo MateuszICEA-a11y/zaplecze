@@ -3,7 +3,7 @@ title: 'Najczęstsze błędy w optymalizacji pod kątem LLM-ów'
 subtitle: 'Dowiedz się, które błędy uniemożliwiają cytowanie Twojej marki w ChatGPT, Perplexity i Google AI Overviews – i jak je naprawić krok po kroku'
 description: 'Najczęstsze błędy w GEO: błędna konfiguracja robots.txt, upychanie słów kluczowych, CSR, brak danych. Dowiedz się, jak je naprawić i zwiększyć wskaźnik cytowań.'
 date: 2026-05-02
-image: ../../../assets/images/blog-geo-najczestsze-bledy-geo.png
+image: ../../../assets/images/blog-geo-najczestsze-bledy-geo.webp
 icon: '<path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>'
 author:
   name: 'Mateusz Wiśniewski'

@@ -3,7 +3,7 @@ title: 'Etyka AI w firmie – polityki, zarządzanie, komitety'
 subtitle: 'Jak zbudować wewnętrzny system zarządzania sztuczną inteligencją, zanim zmusi Cię do tego regulator'
 description: 'Etyka AI w firmie: jak wdrożyć politykę AI, powołać komitet ds. AI, walczyć z biasem i spełnić wymagania AI Act. Ramy NIST RMF i ISO 42001.'
 date: 2026-05-12
-image: ../../../assets/images/blog-ai-w-biznesie-etyka-ai-w-firmie.png
+image: ../../../assets/images/blog-ai-w-biznesie-etyka-ai-w-firmie.webp
 icon: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>'
 author:
   name: 'Piotr Wicenciak'

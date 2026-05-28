@@ -3,7 +3,7 @@ title: 'GEO dla lokalnego biznesu – widoczność w wyszukiwaniu konwersacyjnym
 subtitle: 'Dowiedz się, jak sprawić, by asystenci AI polecali właśnie Twoją firmę zamiast konkurencji'
 description: 'GEO dla lokalnego biznesu: jak zoptymalizować stronę pod ChatGPT, Perplexity i Google AI Mode. Praktyczny poradnik L2 – spójność encji, schema.org, llms.txt, pomiar cytowań.'
 date: 2026-05-01
-image: ../../../assets/images/blog-geo-geo-dla-lokalnego-biznesu.png
+image: ../../../assets/images/blog-geo-geo-dla-lokalnego-biznesu.webp
 icon: '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/><circle cx="12" cy="6" r="1.5"/>'
 author:
   name: 'Tomasz Czechowski'

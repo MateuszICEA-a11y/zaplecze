@@ -3,7 +3,7 @@ title: 'Generative Engine Optimization (GEO) – kompletny przewodnik'
 subtitle: 'Wszystko, co musisz wiedzieć o optymalizacji pod AI, by Twoja marka była cytowana – nie pomijana'
 description: 'Kompletny przewodnik po GEO (Generative Engine Optimization): czym jest, jak działają LLM-y, co mówi badanie Princeton KDD 2024 i jak wdrożyć optymalizację krok po kroku.'
 date: 2026-05-27
-image: ../../../assets/images/blog-geo-przewodnik.png
+image: ../../../assets/images/blog-geo-przewodnik.webp
 icon: '<circle cx="12" cy="12" r="9"/><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3 Q18 7 18 12 Q18 17 12 21 Q6 17 6 12 Q6 7 12 3"/>'
 author:
   name: 'Tomasz Czechowski'

@@ -3,7 +3,7 @@ title: 'AI w sprzedaży – od lead scoringu po asystentów handlowych'
 subtitle: 'Jak predykcyjny lead scoring i asystenci AI skracają czas reakcji o 90% i podnoszą konwersję'
 description: 'Dowiedz się, jak AI w sprzedaży – od lead scoringu po asystentów handlowych – zmienia pracę handlowców i podnosi wskaźniki konwersji.'
 date: 2026-05-03
-image: ../../../assets/images/blog-ai-w-biznesie-ai-w-sprzedazy.png
+image: ../../../assets/images/blog-ai-w-biznesie-ai-w-sprzedazy.webp
 icon: '<path d="M3 3h18v4H3z"/><path d="M3 10h11v4H3z"/><circle cx="17" cy="12" r="3"/><path d="M17 15v6"/><path d="M14 18h6"/>'
 author:
   name: 'Michał Ziach'

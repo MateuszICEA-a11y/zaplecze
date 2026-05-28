@@ -3,7 +3,7 @@ title: 'Claude od Anthropic – kompletny przewodnik'
 subtitle: 'Poznaj architekturę, możliwości i plany modelu Claude, by wybrać rozwiązanie dopasowane do realnych potrzeb biznesowych'
 description: 'Czym jest Claude od firmy Anthropic, jak działa Constitutional AI, jakie modele są dostępne i do czego używać Claude''a w praktyce – kompletny przewodnik.'
 date: 2026-05-16
-image: ../../../assets/images/blog-modele-llm-claude.png
+image: ../../../assets/images/blog-modele-llm-claude.webp
 icon: '<path d="M12 2C8.5 2 6 4.5 6 7c0 1.5.6 2.8 1.5 3.8L5 21h14l-2.5-10.2C17.4 9.8 18 8.5 18 7c0-2.5-2.5-5-6-5z"/><circle cx="9" cy="7" r="1"/><circle cx="15" cy="7" r="1"/>'
 author:
   name: 'Michał Ziach'

@@ -3,7 +3,7 @@ title: 'ROI z AI – jak policzyć zwrot z inwestycji'
 subtitle: 'Sprawdzony model finansowy, który pomoże Ci udowodnić zarządowi, że inwestycja w AI ma sens ekonomiczny'
 description: 'Jak policzyć ROI z wdrożenia AI w firmie? Wzory, składniki kosztów, realne benchmarki i 3 scenariusze kalkulacji dla polskich przedsiębiorstw.'
 date: 2026-05-04
-image: ../../../assets/images/blog-ai-w-biznesie-roi-z-ai.png
+image: ../../../assets/images/blog-ai-w-biznesie-roi-z-ai.webp
 icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>'
 author:
   name: 'Michał Ziach'
