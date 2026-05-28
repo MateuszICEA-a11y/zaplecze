@@ -1,0 +1,428 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ScrollUpButton from '../../components/ScrollUpButton.astro';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import { PILLAR_LABELS } from '../../content.config';
+
+const pageSize = 12;
+
+export const getStaticPaths = async () => {
+  const pageSize = 12;
+  const allPosts = (await getCollection('blog')).sort(
+    (a, b) => b.data.date.getTime() - a.data.date.getTime()
+  );
+  const totalPages = Math.ceil(allPosts.length / pageSize);
+
+  return Array.from({ length: Math.max(totalPages - 1, 0) }, (_, index) => {
+    const page = index + 2;
+    return {
+      params: { page: String(page) },
+      props: { currentPage: page },
+    };
+  });
+};
+
+const { currentPage } = Astro.props;
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+const totalPages = Math.ceil(posts.length / pageSize);
+const pagePosts = posts.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+const siteUrl = 'https://widocznosc.ai';
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<Layout
+  title={`Baza wiedzy – strona ${currentPage} – widocznosc.ai`}
+  description={`Artykuły o pozycjonowaniu marek w wyszukiwarkach AI – strona ${currentPage}.`}
+>
+  <Navbar />
+
+  <script
+    type="application/ld+json"
+    is:inline
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      name: `Baza wiedzy widocznosc.ai – strona ${currentPage}`,
+      url: `${siteUrl}/blog/${currentPage}/`,
+      hasPart: pagePosts.map((post) => ({
+        '@type': 'BlogPosting',
+        headline: post.data.title,
+        description: post.data.description || post.data.subtitle,
+        datePublished: post.data.date.toISOString(),
+        url: `${siteUrl}/${post.id}`,
+        image: `${siteUrl}${post.data.image.src}`,
+      })),
+    })}
+  />
+
+  <main class="blog-page">
+    <section class="blog-page-hero">
+      <div class="blog-container">
+        <div class="head-meta blog-hero-meta">
+          <span class="section-index">B/{String(currentPage).padStart(2, '0')}</span>
+          <span class="eyebrow blog-hero-eyebrow">Baza wiedzy</span>
+        </div>
+        <h1 class="display-xl blog-page-title">Wszystkie artykuły</h1>
+        <p class="blog-page-lead">
+          Strona {currentPage} z {totalPages}. Przeglądaj poradniki, analizy i przewodniki o GEO,
+          modelach językowych, RAG i widoczności marek w AI.
+        </p>
+      </div>
+    </section>
+
+    <section class="blog-grid-section" aria-labelledby="page-grid-title">
+      <div class="blog-container">
+        <h2 id="page-grid-title" class="sr-only">Artykuły – strona {currentPage}</h2>
+        <div class="blog-grid">
+          {
+            pagePosts.map((post) => (
+              <a href={`/${post.id}`} class="post-card" data-category={post.data.pillar}>
+                <div class="post-card-image">
+                  <Image
+                    src={post.data.image}
+                    alt={post.data.title}
+                    widths={[480, 720, 960]}
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="post-card-body">
+                  <div class="post-card-meta">
+                    <span class="post-card-category">{PILLAR_LABELS[post.data.pillar]}</span>
+                    <span class="post-card-date">{formatDate(post.data.date)}</span>
+                  </div>
+                  <h3 class="post-card-title">{post.data.title}</h3>
+                  <div class="post-card-footer">
+                    <span class="post-card-author">
+                      <img
+                        src={post.data.author.avatar.src}
+                        alt=""
+                        width={32}
+                        height={32}
+                        loading="lazy"
+                      />
+                      <span>{post.data.author.name}</span>
+                    </span>
+                    <span>{post.data.readTime ?? '-'} czytania</span>
+                  </div>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+
+        <nav class="blog-pagination" aria-label="Paginacja artykułów">
+          <span class="blog-pagination-status">
+            Strona {currentPage} z {totalPages}
+          </span>
+          <div class="blog-pagination-links">
+            {currentPage > 1 && (
+              <a class="blog-page-next" href={currentPage === 2 ? '/blog/' : `/blog/${currentPage - 1}/`}>
+                <span aria-hidden="true">←</span> Poprzednia
+              </a>
+            )}
+            {Array.from({ length: totalPages }, (_, index) => {
+              const page = index + 1;
+              const href = page === 1 ? '/blog/' : `/blog/${page}/`;
+              return (
+                <a
+                  href={href}
+                  class:list={['blog-page-link', page === currentPage && 'is-active']}
+                  aria-current={page === currentPage ? 'page' : undefined}
+                >
+                  {page}
+                </a>
+              );
+            })}
+            {currentPage < totalPages && (
+              <a class="blog-page-next" href={`/blog/${currentPage + 1}/`}>
+                Następna <span aria-hidden="true">→</span>
+              </a>
+            )}
+          </div>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+  <ScrollUpButton />
+</Layout>
+
+<style>
+  .blog-page {
+    flex-grow: 1;
+    background: var(--bg-canvas);
+  }
+
+  .blog-container {
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding: 0 30px;
+  }
+
+  @media (max-width: 639px) {
+    .blog-container {
+      padding-inline: 20px;
+    }
+  }
+
+  .blog-page-hero {
+    padding: 144px 0 56px;
+    background:
+      radial-gradient(
+        circle at 12% 18%,
+        color-mix(in srgb, var(--accent-blue) 16%, transparent) 0%,
+        transparent 32%
+      ),
+      linear-gradient(180deg, var(--bg-surface-1) 0%, var(--bg-canvas) 84%);
+  }
+
+  .blog-hero-meta {
+    margin-bottom: 16px;
+  }
+
+  .blog-hero-meta .blog-hero-eyebrow {
+    font-size: 11px;
+    line-height: 1.2;
+  }
+
+  .blog-page-title {
+    margin: 0 0 18px;
+    color: var(--ink);
+  }
+
+  .blog-page-lead {
+    max-width: 680px;
+    margin: 0;
+    color: var(--ink-muted);
+    font-size: var(--fs-body-lg);
+    line-height: 1.5;
+  }
+
+  .blog-grid-section {
+    padding: 48px 0 96px;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  @media (min-width: 640px) {
+    .blog-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .blog-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .post-card {
+    --post-accent: var(--accent-blue);
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-xl);
+    background:
+      radial-gradient(
+        circle at 16% 0%,
+        color-mix(in srgb, var(--post-accent) 10%, transparent) 0%,
+        transparent 30%
+      ),
+      var(--bg-surface-1);
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .post-card:hover {
+    background: var(--bg-surface-2);
+  }
+
+  .post-card[data-category='agenci-ai'] {
+    --post-accent: #22d3ee;
+  }
+
+  .post-card[data-category='ai-w-biznesie'] {
+    --post-accent: #4ade80;
+  }
+
+  .post-card[data-category='modele-llm'] {
+    --post-accent: #a78bfa;
+  }
+
+  .post-card[data-category='prompty'] {
+    --post-accent: #f472b6;
+  }
+
+  .post-card[data-category='rag'] {
+    --post-accent: #fbbf24;
+  }
+
+  .post-card-image {
+    overflow: hidden;
+  }
+
+  .post-card-image img {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .post-card:hover .post-card-image img {
+    transform: scale(1.03);
+  }
+
+  .post-card-body {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .post-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .post-card-category {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: var(--r-pill);
+    background: color-mix(in srgb, var(--post-accent) 12%, var(--bg-surface-2));
+    color: var(--post-accent);
+    font-size: var(--fs-micro);
+    font-weight: 500;
+  }
+
+  .post-card-date {
+    color: var(--ink-muted);
+    font-size: var(--fs-caption);
+  }
+
+  .post-card-title {
+    flex-grow: 1;
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.22;
+  }
+
+  .post-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+    padding-top: 16px;
+    border-top: 1px solid var(--hairline-soft);
+    color: var(--ink-muted);
+    font-size: var(--fs-caption);
+  }
+
+  .post-card-author {
+    display: inline-flex;
+    min-width: 0;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .post-card-author img {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .post-card-author span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .blog-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 36px;
+  }
+
+  .blog-pagination-status {
+    color: var(--ink-muted);
+    font-size: var(--fs-caption);
+  }
+
+  .blog-pagination-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .blog-page-link,
+  .blog-page-next {
+    display: inline-flex;
+    min-height: 40px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--hairline-soft);
+    border-radius: var(--r-pill);
+    background: var(--bg-surface-1);
+    color: var(--ink);
+    font-size: var(--fs-button);
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .blog-page-link {
+    min-width: 40px;
+    padding: 0 13px;
+  }
+
+  .blog-page-next {
+    padding: 0 15px;
+    color: var(--accent-blue);
+  }
+
+  .blog-page-link:hover,
+  .blog-page-next:hover,
+  .blog-page-link.is-active {
+    border-color: color-mix(in srgb, var(--accent-blue) 44%, var(--hairline-soft));
+    background: color-mix(in srgb, var(--accent-blue) 10%, var(--bg-surface-1));
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>

@@ -473,9 +473,10 @@ const siteUrl = 'https://widocznosc.ai';
 
   .section-head {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    gap: 2rem;
-    align-items: end;
+    gap: 1rem;
+    align-items: flex-start;
     margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
   }
 
@@ -816,11 +817,11 @@ const siteUrl = 'https://widocznosc.ai';
     }
 
     .section-head {
-      display: block;
+      display: flex;
     }
 
     .section-head h2 {
-      margin-top: 0.75rem;
+      margin-top: 0;
     }
 
     .tool-order {
