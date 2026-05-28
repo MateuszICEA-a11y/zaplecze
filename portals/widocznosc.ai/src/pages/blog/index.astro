@@ -16,7 +16,7 @@ const currentPage = 1;
 const featuredPost = posts.find((post) => post.data.featured) ?? posts[0];
 const listingPosts = featuredPost ? posts.filter((post) => post.id !== featuredPost.id) : posts;
 const totalPages = Math.ceil(listingPosts.length / pageSize);
-const visiblePosts = listingPosts.slice(0, pageSize);
+const visiblePosts = listingPosts;
 
 const usedPillars = Array.from(new Set(posts.map((p) => p.data.pillar))).sort();
 const pillarCounts = posts.reduce(
@@ -275,7 +275,7 @@ const formatDate = (date: Date) =>
 
         {
           totalPages > 1 && (
-            <nav class="blog-pagination" aria-label="Paginacja artykułów">
+            <nav class="blog-pagination" aria-label="Paginacja artykułów" data-blog-pagination>
               <span class="blog-pagination-status">Strona {currentPage} z {totalPages}</span>
               <div class="blog-pagination-links">
                 {Array.from({ length: totalPages }, (_, index) => {
@@ -911,6 +911,10 @@ const formatDate = (date: Date) =>
     display: none;
   }
 
+  .post-card[data-page-hidden='true'] {
+    display: none;
+  }
+
   .post-card-image {
     overflow: hidden;
   }
@@ -1035,6 +1039,10 @@ const formatDate = (date: Date) =>
     display: none;
   }
 
+  .blog-pagination[hidden] {
+    display: none;
+  }
+
   .blog-pagination {
     display: flex;
     flex-wrap: wrap;
@@ -1104,6 +1112,7 @@ const formatDate = (date: Date) =>
     const emptyState = root.querySelector<HTMLElement>('[data-blog-empty]');
     const clearButton = root.querySelector<HTMLButtonElement>('[data-clear-filter]');
     const tagButtons = root.querySelectorAll<HTMLButtonElement>('[data-tag-query]');
+    const pagination = root.querySelector<HTMLElement>('[data-blog-pagination]');
     let activeTagQuery = '';
 
     const normalize = (value: string) =>
@@ -1130,19 +1139,27 @@ const formatDate = (date: Date) =>
 
     const applyFilters = () => {
       const normalizedQuery = normalize(searchQuery.trim());
+      const hasSearch = normalizedQuery.length > 0;
+      const hasCategoryFilter = activeCategory !== 'all';
+      const hasActiveFilter = hasSearch || hasCategoryFilter;
       let matched = 0;
+      let visibleWithoutFilters = 0;
 
-      cards.forEach((card) => {
+      cards.forEach((card, index) => {
         const categoryMatch = activeCategory === 'all' || card.dataset.category === activeCategory;
         const haystack = normalize(card.dataset.search || '');
         const searchMatch = !normalizedQuery || haystack.includes(normalizedQuery);
         const matches = categoryMatch && searchMatch;
+        const isFirstPageCard = index < 12;
 
         if (matches) matched += 1;
         card.dataset.hidden = matches ? 'false' : 'true';
+        card.dataset.pageHidden = !hasActiveFilter && !isFirstPageCard ? 'true' : 'false';
+        if (!hasActiveFilter && isFirstPageCard) visibleWithoutFilters += 1;
       });
 
-      if (emptyState) emptyState.hidden = matched > 0;
+      if (pagination) pagination.hidden = hasActiveFilter;
+      if (emptyState) emptyState.hidden = hasActiveFilter ? matched > 0 : visibleWithoutFilters > 0;
     };
 
     const clearFilters = () => {
@@ -1178,8 +1195,10 @@ const formatDate = (date: Date) =>
     tagButtons.forEach((button) => {
       button.addEventListener('click', () => {
         searchQuery = button.dataset.tagQuery || '';
+        activeCategory = 'all';
         activeTagQuery = searchQuery;
         if (searchInput) searchInput.value = searchQuery;
+        updateActiveFilter();
         updateActiveTags();
         applyFilters();
       });
