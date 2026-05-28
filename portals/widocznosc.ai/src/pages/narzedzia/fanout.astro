@@ -63,7 +63,7 @@ const examples = [
     })}
   />
 
-  <main class="flex-grow">
+  <div class="flex-grow">
     <section class="tool-hero">
       <div class="content-container tool-hero-inner">
         <nav class="tool-breadcrumb" aria-label="Ścieżka nawigacji">
@@ -72,7 +72,7 @@ const examples = [
           <span class="tool-breadcrumb-current">Analiza zapytań AI</span>
         </nav>
 
-        <header class="text-center">
+        <header class="tool-hero-header">
           <span class="eyebrow tool-eyebrow">Narzędzie · bezpłatne</span>
           <h1 class="tool-hero-title display-xxl">
             Sprawdź, jak ChatGPT szuka informacji w&nbsp;tle
@@ -119,7 +119,7 @@ const examples = [
         </p>
       </div>
     </section>
-  </main>
+  </div>
 
   <Footer />
   <ScrollUpButton />
@@ -142,7 +142,7 @@ const examples = [
 
   .tool-breadcrumb {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 2rem;
@@ -170,7 +170,7 @@ const examples = [
 
   .tool-hero-title {
     max-width: 980px;
-    margin: 0 auto;
+    margin: 0;
     font-size: clamp(36px, 4.1vw, 56px);
     line-height: 0.96;
     letter-spacing: -0.045em;
@@ -183,7 +183,7 @@ const examples = [
 
   .tool-hero-copy {
     max-width: 760px;
-    margin: 1.4rem auto 0;
+    margin: 1.4rem 0 0;
     color: var(--ink-muted);
     font-size: clamp(1.05rem, 1.6vw, 1.3rem);
     line-height: 1.55;

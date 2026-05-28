@@ -11,7 +11,7 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
 >
   <Navbar />
 
-  <main class="flex-grow">
+  <div class="flex-grow">
     <section class="tool-hero">
       <div class="content-container tool-hero-inner">
         <nav class="tool-breadcrumb" aria-label="Ścieżka nawigacji">
@@ -20,7 +20,7 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
           <span class="tool-breadcrumb-current">Widoczność marki w AI</span>
         </nav>
 
-        <header class="text-center">
+        <header class="tool-hero-header">
           <span class="eyebrow tool-eyebrow">Narzędzie · audyt marki</span>
           <h1 class="tool-hero-title display-xxl">
             Co AI wie o&nbsp;<span class="tool-hero-accent">Twojej marce</span>?
@@ -125,7 +125,7 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
         </div>
       </div>
     </section>
-  </main>
+  </div>
 
   <Footer />
   <ScrollUpButton />
@@ -162,14 +162,14 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .tool-breadcrumb {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 8px;
     margin-bottom: 36px;
     font-family: var(--font-sans);
@@ -202,7 +202,7 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
 
   .tool-hero-title {
     max-width: 980px;
-    margin: 0 auto;
+    margin: 0;
     font-size: clamp(36px, 4.1vw, 56px);
     line-height: 0.96;
     letter-spacing: -0.045em;
@@ -216,7 +216,7 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
 
   .tool-hero-copy {
     max-width: 820px;
-    margin: 28px auto 0;
+    margin: 28px 0 0;
     font-family: var(--font-sans);
     font-size: clamp(17px, 1.4vw, 21px);
     line-height: 1.55;

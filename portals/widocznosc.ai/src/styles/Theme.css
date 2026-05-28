@@ -49,7 +49,7 @@
 
   /* Layout (landing redesign) */
   --container: 1440px;
-  --gutter: 30px;
+  --gutter: 32px;
 
   /* Gradient spotlight family */
   --gradient-violet: radial-gradient(

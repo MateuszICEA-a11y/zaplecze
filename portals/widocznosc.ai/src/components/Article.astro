@@ -185,13 +185,14 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     padding: 0 32px;
   }
 
-  /* Breadcrumb */
+  /* Breadcrumb — wąska kolumna 1040px, wyrównana do szerokości .article-header */
   :global(.article-breadcrumb) {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 6px;
-    margin-bottom: 32px;
+    margin: 0 auto 32px auto;
+    max-width: 1040px;
     font-family: var(--font-sans);
     font-size: var(--fs-caption);
     font-weight: 500;

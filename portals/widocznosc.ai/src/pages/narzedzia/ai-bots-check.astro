@@ -14,7 +14,7 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
 >
   <Navbar />
 
-  <main class="flex-grow">
+  <div class="flex-grow">
     <section class="tool-hero">
       <div class="content-container tool-hero-inner">
         <!-- Hero -->
@@ -23,7 +23,7 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
           <span class="tool-breadcrumb-sep" aria-hidden="true">/</span>
           <span class="tool-breadcrumb-current">Dostęp botów AI</span>
         </nav>
-        <header class="text-center">
+        <header class="tool-hero-header">
           <span class="eyebrow tool-eyebrow"> Narzędzie · bezpłatne </span>
           <h1 class="tool-hero-title display-xxl">
             Czy <span class="tool-hero-accent">boty AI</span> mają dostęp do Twojej strony?
@@ -107,7 +107,7 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
         </div>
       </div>
     </section>
-  </main>
+  </div>
 
   <Footer />
   <ScrollUpButton />
@@ -144,14 +144,14 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .tool-breadcrumb {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 8px;
     margin-bottom: 36px;
     font-family: var(--font-sans);
@@ -185,7 +185,7 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
   /* Hero – accent na "boty AI" */
   .tool-hero-title {
     max-width: 980px;
-    margin: 0 auto;
+    margin: 0;
     font-size: clamp(36px, 4.1vw, 56px);
     line-height: 0.96;
     letter-spacing: -0.045em;
@@ -199,7 +199,7 @@ const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
 
   .tool-hero-copy {
     max-width: 780px;
-    margin: 28px auto 0;
+    margin: 28px 0 0;
     font-family: var(--font-sans);
     font-size: clamp(17px, 1.4vw, 21px);
     line-height: 1.55;
