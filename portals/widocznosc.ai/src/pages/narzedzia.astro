@@ -11,10 +11,10 @@ const tools = [
     accent: 'blue',
     eyebrow: 'Marka w AI',
     time: 'ok. 60 s',
-    title: 'Co AI wie o Twojej marce',
+    title: 'Widoczność marki w AI',
     desc: 'Sprawdź rozpoznawalność swojej firmy, sentyment wypowiedzi, możliwe halucynacje (zmyślone fakty) oraz konkurentów, których modele polecają zamiast Ciebie.',
     href: '/narzedzia/brand-check',
-    cta: 'Sprawdź markę',
+    cta: 'Sprawdź widoczność',
     bullets: [
       'ChatGPT, Claude, Gemini i Perplexity',
       'Sentyment i rozpoznawalność marki',
@@ -34,10 +34,10 @@ const tools = [
     accent: 'green',
     eyebrow: 'Treści pod AI',
     time: 'ok. 30 s',
-    title: 'Czy Twój tekst będzie cytowany',
+    title: 'Ocena cytowalności strony',
     desc: 'Przeanalizuj pojedynczy adres URL pod kątem struktury odpowiedzi, danych Schema.org, sekcji FAQ, świeżości i nagłówków przydatnych dla modeli AI.',
     href: '/narzedzia/url-check',
-    cta: 'Sprawdź URL',
+    cta: 'Oceń stronę',
     bullets: [
       'Wskaźnik dostosowania do AI (Alignment Score)',
       'Analiza danych strukturalnych i FAQ',
@@ -52,10 +52,10 @@ const tools = [
     accent: 'amber',
     eyebrow: 'Dostęp botów',
     time: 'ok. 5 s',
-    title: 'Czy AI może wejść na Twoją stronę',
+    title: 'Dostęp botów AI',
     desc: 'Sprawdź plik robots.txt i zobacz, czy GPTBot, ClaudeBot, PerplexityBot, Google-Extended i inne modele w ogóle widzą Twoją domenę.',
     href: '/narzedzia/ai-bots-check',
-    cta: 'Sprawdź boty',
+    cta: 'Sprawdź boty AI',
     bullets: [
       'Weryfikacja 13 botów AI',
       'Zezwolenia i blokady dla poszczególnych systemów',
@@ -70,10 +70,10 @@ const tools = [
     accent: 'violet',
     eyebrow: 'Rozbicie zapytania',
     time: 'ok. 30 s',
-    title: 'Jak AI szuka informacji w tle',
+    title: 'Analiza zapytań AI',
     desc: 'Zobacz pomocnicze zapytania generowane w tle przez modele językowe (tzw. Query Fan-out) oraz domeny, z których ostatecznie czerpią wiedzę.',
     href: '/narzedzia/fanout',
-    cta: 'Zobacz rozbicie zapytania',
+    cta: 'Analizuj zapytanie',
     bullets: [
       'Zapytania pomocnicze modelu',
       'Ostatecznie zacytowane domeny',
@@ -90,7 +90,7 @@ const siteUrl = 'https://widocznosc.ai';
 
 <Layout
   title="Darmowe narzędzia widoczności AI – widocznosc.ai"
-  description="Cztery darmowe narzędzia od widocznosc.ai: Brand Check, URL Check, AI Bots Check i Analiza zapytań (Fan-out). Sprawdź widoczność marki, treści i dostęp botów AI."
+  description="Cztery darmowe narzędzia od widocznosc.ai: Widoczność marki w AI, Ocena cytowalności strony, Dostęp botów AI i Analiza zapytań AI."
 >
   <Navbar />
 
@@ -135,7 +135,7 @@ const siteUrl = 'https://widocznosc.ai';
             i jakie źródła sztuczna inteligencja pobiera w tle.
           </p>
           <div class="tools-hero-actions">
-            <a class="btn-primary" href="/narzedzia/brand-check">Zacznij od Brand Check</a>
+            <a class="btn-primary" href="/narzedzia/brand-check">Sprawdź markę</a>
             <a class="btn-secondary" href="#tools-title">Zobacz wszystkie narzędzia</a>
           </div>
         </div>
@@ -147,22 +147,22 @@ const siteUrl = 'https://widocznosc.ai';
           <ol class="tools-panel-flow">
             <li>
               <span>01</span>
-              <strong>Brand Check</strong>
+              <strong>Widoczność marki w AI</strong>
               <em>rozpoznawalność i konkurenci</em>
             </li>
             <li>
               <span>02</span>
-              <strong>AI Bots Check</strong>
+              <strong>Dostęp botów AI</strong>
               <em>dostęp botów do domeny</em>
             </li>
             <li>
               <span>03</span>
-              <strong>URL Check</strong>
+              <strong>Ocena cytowalności strony</strong>
               <em>cytowalność konkretnej strony</em>
             </li>
             <li>
               <span>04</span>
-              <strong>Fan-out</strong>
+              <strong>Analiza zapytań AI</strong>
               <em>zapytania i źródła w tle</em>
             </li>
           </ol>
@@ -197,10 +197,10 @@ const siteUrl = 'https://widocznosc.ai';
         <div class="tool-order" aria-label="Rekomendowana kolejność testów">
           <span class="tool-order-label">Rekomendowana kolejność testów: Zacznij od</span>
           <ol>
-            <li><a href="/narzedzia/brand-check">Brand Check</a></li>
-            <li><a href="/narzedzia/ai-bots-check">AI Bots Check</a></li>
-            <li><a href="/narzedzia/url-check">URL Check</a></li>
-            <li><a href="/narzedzia/fanout">Rozbicie zapytania</a></li>
+            <li><a href="/narzedzia/brand-check">Widoczność marki w AI</a></li>
+            <li><a href="/narzedzia/ai-bots-check">Dostęp botów AI</a></li>
+            <li><a href="/narzedzia/url-check">Ocena cytowalności strony</a></li>
+            <li><a href="/narzedzia/fanout">Analiza zapytań AI</a></li>
           </ol>
         </div>
 
@@ -283,6 +283,11 @@ const siteUrl = 'https://widocznosc.ai';
         transparent 34%
       ),
       linear-gradient(180deg, var(--bg-surface-1) 0%, var(--bg-canvas) 78%);
+  }
+
+  .tools-hero-inner,
+  .tools-section > .content-container {
+    box-sizing: border-box;
   }
 
   .tools-hero::before {
@@ -781,8 +786,8 @@ const siteUrl = 'https://widocznosc.ai';
 
     .tools-hero-actions a {
       box-sizing: border-box;
-      width: min(100%, 22rem);
-      max-width: 22rem;
+      width: min(100%, 18rem);
+      max-width: 18rem;
       justify-content: center;
       white-space: normal;
     }

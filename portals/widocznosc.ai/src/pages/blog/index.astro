@@ -904,7 +904,13 @@ const formatDate = (date: Date) =>
     color: var(--ink-muted);
   }
 
-  .post-card-title {
+  .post-card-title,
+  .post-card-title.display-md {
+    font-family: var(--font-sans);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.22;
     color: var(--ink);
     margin: 0;
     flex-grow: 1;
