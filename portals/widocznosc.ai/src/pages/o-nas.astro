@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import ScrollUpButton from '../components/ScrollUpButton.astro';
 import AuthorsStrip from '../components/AuthorsStrip.astro';
 import CTABand from '../components/CTABand.astro';
+import StatsBand from '../components/StatsBand.astro';
 import { getCollection } from 'astro:content';
 
 const principles = [
@@ -24,12 +25,6 @@ const principles = [
     title: 'Tradycyjne SEO za nami, GEO przed nami',
     desc: 'Zespół ICEA skutecznie pozycjonuje strony od kilkunastu lat. Doskonale wiemy, jak Google ocenia witryny, dlatego świetnie rozumiemy, gdzie kończy się klasyczne SEO, a zaczyna optymalizacja pod AI. Łączymy doświadczenie z ponad 200 wdrożeń z nowoczesną metodyką dedykowaną wyszukiwarkom generatywnym.',
   },
-];
-
-const stats = [
-  { value: '15+', label: 'lat doświadczenia w SEO' },
-  { value: '200+', label: 'wdrożeń SEO klientów ICEA' },
-  { value: '5', label: 'modeli AI w pełnym audycie' },
 ];
 
 const antiPractices = [
@@ -164,21 +159,7 @@ const siteUrl = 'https://widocznosc.ai';
     </div>
   </section>
 
-  <section class="about-stats-band" aria-label="Doświadczenie widocznosc.ai">
-    <div class="content-container">
-      <div class="about-stats-grid">
-        {
-          stats.map((stat, i) => (
-            <div class={`about-stat about-stat--${i + 1}`}>
-              <span>{String(i + 1).padStart(2, '0')}</span>
-              <strong>{stat.value}</strong>
-              <p>{stat.label}</p>
-            </div>
-          ))
-        }
-      </div>
-    </div>
-  </section>
+  <StatsBand />
 
   <!-- Cztery zasady GEO -->
   <section class="principles-section" aria-labelledby="principles-title">
@@ -359,6 +340,20 @@ const siteUrl = 'https://widocznosc.ai';
     margin-top: 2.4rem;
   }
 
+  .about-hero-copy .about-hero-actions a.btn-primary,
+  .about-hero-copy .about-hero-actions a.btn-secondary {
+    text-decoration: none;
+    text-underline-offset: 0;
+  }
+
+  .about-hero-copy .about-hero-actions a.btn-primary {
+    color: var(--bg-canvas);
+  }
+
+  .about-hero-copy .about-hero-actions a.btn-secondary {
+    color: var(--ink);
+  }
+
   .about-hero-panel {
     --panel-accent: #38bdf8;
     display: grid;
@@ -471,71 +466,6 @@ const siteUrl = 'https://widocznosc.ai';
     color: var(--panel-accent);
     font-family: ui-monospace, 'JetBrains Mono', monospace;
     font-size: 0.78rem;
-  }
-
-  .about-stats-band {
-    padding: 2rem 0 0;
-    background: var(--bg-canvas);
-  }
-
-  .about-stats-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-  }
-
-  .about-stat {
-    --stat-accent: var(--accent-blue);
-    min-height: 12rem;
-    padding: clamp(1.35rem, 2.5vw, 1.8rem);
-    border: 1px solid var(--hairline-soft);
-    border-radius: var(--r-xl);
-    background:
-      radial-gradient(
-        circle at 14% 0%,
-        color-mix(in srgb, var(--stat-accent) 18%, transparent) 0%,
-        transparent 36%
-      ),
-      var(--bg-surface-1);
-  }
-
-  .about-stat--2 {
-    --stat-accent: #4ade80;
-  }
-
-  .about-stat--3 {
-    --stat-accent: #a78bfa;
-  }
-
-  :global(:root[data-theme='light']) .about-stat--2 {
-    --stat-accent: #16a34a;
-  }
-
-  :global(:root[data-theme='light']) .about-stat--3 {
-    --stat-accent: #7c3aed;
-  }
-
-  .about-stat span {
-    color: var(--stat-accent);
-    font-family: ui-monospace, 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-  }
-
-  .about-stat strong {
-    display: block;
-    margin-top: 2.1rem;
-    color: var(--stat-accent);
-    font-family: var(--font-display);
-    font-size: clamp(2.4rem, 5vw, 4.4rem);
-    font-weight: 500;
-    line-height: 1;
-  }
-
-  .about-stat p {
-    margin: 0.45rem 0 0;
-    color: var(--ink-muted);
-    font-size: 0.95rem;
-    line-height: 1.35;
   }
 
   .principles-section {
@@ -700,8 +630,7 @@ const siteUrl = 'https://widocznosc.ai';
       white-space: normal;
     }
 
-    .about-panel-stats,
-    .about-stats-grid {
+    .about-panel-stats {
       grid-template-columns: 1fr;
     }
 
