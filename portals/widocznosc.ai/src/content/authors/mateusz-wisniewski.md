@@ -12,7 +12,7 @@ expertise:
   - Topical Authority
   - Content Optimization
   - Automatyzacje SEO
-photo: /authors/mateusz-wisniewski.webp
+photo: /authors/mateusz-wisniewski.avif
 iceaProfile: https://www.grupa-icea.pl/autor/mateusz-wisniewski/
 linkedin: https://www.linkedin.com/in/mateusz-wi%C5%9Bniewski-b23338221/
 publishedAt: 2026-05-06
