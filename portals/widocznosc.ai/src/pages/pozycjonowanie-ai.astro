@@ -352,7 +352,8 @@ const serviceSchema = {
           decisionRows.map((row) => (
             <div class="decision-row" role="row">
               <div class="decision-model" role="cell">
-                {row.model}
+                <span class="decision-model-dot" aria-hidden="true"></span>
+                <span>{row.model}</span>
               </div>
               <div role="cell" data-label="Grupa docelowa">
                 {row.icp}
@@ -606,19 +607,24 @@ const serviceSchema = {
 
   .decision-table {
     border: 1px solid var(--hairline-soft);
-    border-radius: 22px;
-    background: var(--bg-canvas);
+    border-radius: var(--r-xl);
+    background:
+      linear-gradient(180deg, color-mix(in srgb, var(--bg-surface-1) 72%, transparent), transparent 68%),
+      var(--bg-canvas);
+    box-shadow: var(--shadow-l2);
     overflow: hidden;
   }
 
   .decision-row {
     display: grid;
-    grid-template-columns: 0.75fr 1.1fr 1.45fr 1.45fr;
+    grid-template-columns: minmax(170px, 0.72fr) minmax(220px, 1fr) minmax(280px, 1.42fr) minmax(280px, 1.36fr);
   }
 
   .decision-row:not(.decision-head) {
     --decision-accent: var(--accent-blue);
-    transition: background 0.18s ease;
+    position: relative;
+    background: color-mix(in srgb, var(--bg-surface-1) 54%, transparent);
+    transition: background 0.18s ease, box-shadow 0.18s ease;
   }
 
   .decision-row:not(.decision-head):nth-child(3) {
@@ -638,7 +644,8 @@ const serviceSchema = {
   }
 
   .decision-row:not(.decision-head):hover {
-    background: color-mix(in srgb, var(--decision-accent) 8%, var(--bg-surface-1));
+    background: color-mix(in srgb, var(--decision-accent) 7%, var(--bg-surface-1));
+    box-shadow: inset 3px 0 0 color-mix(in srgb, var(--decision-accent) 82%, transparent);
   }
 
   .decision-row + .decision-row {
@@ -647,9 +654,11 @@ const serviceSchema = {
 
   .decision-row > div {
     color: var(--ink-muted);
-    font-size: 14px;
-    line-height: 1.5;
-    padding: 24px 28px;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    letter-spacing: -0.012em;
+    line-height: 1.45;
+    padding: 20px 24px;
   }
 
   .decision-row > div + div {
@@ -657,22 +666,69 @@ const serviceSchema = {
   }
 
   .decision-head {
-    background: var(--bg-surface-1);
+    background: color-mix(in srgb, var(--bg-surface-2) 62%, var(--bg-canvas));
   }
 
   .decision-head > div {
     color: var(--ink-faint);
     font-family: ui-monospace, 'JetBrains Mono', monospace;
     font-size: 11px;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.055em;
+    line-height: 1;
+    padding-bottom: 18px;
+    padding-top: 18px;
     text-transform: uppercase;
   }
 
   .decision-model {
-    color: var(--decision-accent) !important;
-    font-family: var(--font-display);
-    font-size: 22px !important;
-    letter-spacing: -0.03em;
+    align-items: center;
+    color: var(--ink) !important;
+    display: inline-flex;
+    font-size: 15px !important;
+    font-weight: 700;
+    gap: 10px;
+    letter-spacing: -0.018em;
+  }
+
+  .decision-model span:last-child {
+    border: 1px solid color-mix(in srgb, var(--decision-accent) 24%, var(--hairline-soft));
+    border-radius: var(--r-pill);
+    background: color-mix(in srgb, var(--decision-accent) 10%, transparent);
+    padding: 7px 11px;
+  }
+
+  .decision-model-dot {
+    background: var(--decision-accent);
+    border-radius: var(--r-full);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--decision-accent) 14%, transparent);
+    flex: 0 0 auto;
+    height: 8px;
+    width: 8px;
+  }
+
+  :global(:root[data-theme='light']) .decision-table {
+    background:
+      linear-gradient(180deg, color-mix(in srgb, var(--bg-surface-1) 58%, #ffffff), transparent 72%),
+      #ffffff;
+    border-color: rgba(15, 23, 42, 0.08);
+    box-shadow: 0 18px 44px -34px rgba(15, 23, 42, 0.32);
+  }
+
+  :global(:root[data-theme='light']) .decision-row:not(.decision-head) {
+    background: color-mix(in srgb, #ffffff 86%, var(--bg-surface-1));
+  }
+
+  :global(:root[data-theme='light']) .decision-row:not(.decision-head):hover {
+    background: color-mix(in srgb, var(--decision-accent) 8%, #ffffff);
+  }
+
+  :global(:root[data-theme='light']) .decision-head {
+    background: color-mix(in srgb, var(--bg-surface-1) 82%, #ffffff);
+  }
+
+  :global(:root[data-theme='light']) .decision-model span:last-child {
+    background: color-mix(in srgb, var(--decision-accent) 8%, #ffffff);
+    border-color: color-mix(in srgb, var(--decision-accent) 22%, rgba(15, 23, 42, 0.1));
   }
 
   @media (min-width: 768px) {
@@ -753,13 +809,15 @@ const serviceSchema = {
     }
 
     .decision-row {
-      background: var(--bg-surface-1);
+      background:
+        radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--decision-accent) 10%, transparent), transparent 46%),
+        var(--bg-surface-1);
       border: 1px solid var(--hairline-soft);
-      border-radius: 18px;
+      border-radius: var(--r-lg);
       display: grid;
       gap: 14px;
       grid-template-columns: 1fr;
-      padding: 20px;
+      padding: 18px;
     }
 
     .decision-row.decision-head {
@@ -771,6 +829,7 @@ const serviceSchema = {
     }
 
     .decision-row > div {
+      font-size: 14px;
       padding: 0;
     }
 
@@ -788,6 +847,14 @@ const serviceSchema = {
       letter-spacing: 0.04em;
       margin-bottom: 4px;
       text-transform: uppercase;
+    }
+
+    .decision-model {
+      font-size: 14px !important;
+    }
+
+    .decision-model span:last-child {
+      padding: 6px 10px;
     }
   }
 </style>
