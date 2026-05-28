@@ -308,6 +308,22 @@ const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : mode
                 </div>
                 <div class="citation-source">Przykład lokalnego wyniku rekomendacyjnego w Claude</div>
               </>
+            ) : model.slug === 'bing-copilot' ? (
+              <>
+                <div class="citation-user">
+                  chcę kupić sukienkę na wesele, podaj mi polecane sklepy internetowe
+                </div>
+                <div class="citation-answer citation-answer--copilot">
+                  <p>
+                    Najlepsze sklepy internetowe z <strong>sukienkami na wesele</strong> w Polsce to
+                    te, które łączą duży wybór, dobrą jakość i szybkie dostawy. Najkrócej:
+                    <strong>NA-KD</strong>, <strong>Moliera 2</strong>, <strong>Zalando</strong>,
+                    <strong>Answear</strong> i <strong>Lou</strong> to najpewniejsze kierunki - różnią
+                    się stylem i budżetem, więc łatwo dobrać coś pod swój gust.
+                  </p>
+                </div>
+                <div class="citation-source">Przykład rekomendacji zakupowej w Bing Copilot</div>
+              </>
             ) : (
               <>
                 <div class="citation-user">
@@ -1027,6 +1043,17 @@ const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : mode
     gap: 1rem;
     background: var(--bg-canvas);
     color: var(--ink);
+  }
+
+  .citation-answer--copilot {
+    background: var(--bg-canvas);
+    color: var(--ink);
+    font-size: clamp(1rem, 1.35vw, 1.18rem);
+    line-height: 1.78;
+  }
+
+  .citation-answer--copilot p {
+    margin: 0;
   }
 
   .citation-tools {
