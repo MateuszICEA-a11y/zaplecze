@@ -168,30 +168,30 @@
    pierwszym paintem.
    ============================================================ */
 :root[data-theme='light'] {
-  /* Surface ladder – chłodny, produktowy light mode zamiast kremowego ivory.
-     Subtelny blue-gray undertone lepiej pasuje do AI/SaaS i dark theme. */
-  --bg-canvas: #f7f9fc;
-  --bg-surface-1: #eef2f7;
-  --bg-surface-2: #e4eaf2;
-  --bg-surface-3: #d7dfeb;
+  /* Surface ladder – lekko przygaszony light mode.
+     Duże płaszczyzny nie świecą jak czysta biel, a karty mają czytelniejszą separację. */
+  --bg-canvas: #f2f5f9;
+  --bg-surface-1: #e8eef5;
+  --bg-surface-2: #dce5ef;
+  --bg-surface-3: #ccd8e6;
   --bg-inverse: #0a0a0b;
 
-  /* Hairlines – blue-gray tinted black, czytelne na jasnym canvasie. */
-  --hairline: rgba(15, 23, 42, 0.12);
-  --hairline-soft: rgba(15, 23, 42, 0.07);
+  /* Hairlines – minimalnie mocniejsze, żeby jasny UI nie był płaski. */
+  --hairline: rgba(15, 23, 42, 0.15);
+  --hairline-soft: rgba(15, 23, 42, 0.09);
 
-  /* Ink – neutralny tekst z lekkim blue-gray undertone */
-  --ink: #10131a;
-  --ink-muted: #586274;
-  --ink-faint: #7d8694;
+  /* Ink – nadal mocny, ale bez ostrego pure-black kontrastu. */
+  --ink: #111827;
+  --ink-muted: #526176;
+  --ink-faint: #758195;
 
   /* Accent – ciemniejszy na jasnym tle, żeby małe linki i logo spełniały kontrast AA. */
   --accent-blue: #0068cc;
   --accent-blue-soft: rgba(0, 104, 204, 0.14);
 
-  /* Pills (landing redesign) – tints na chłodnym jasnym canvasie */
-  --pill-translucent: rgba(20, 16, 8, 0.08);
-  --pill-translucent-hover: rgba(20, 16, 8, 0.14);
+  /* Pills (landing redesign) – chłodne slate tints zamiast ciepłego brązu. */
+  --pill-translucent: rgba(15, 23, 42, 0.075);
+  --pill-translucent-hover: rgba(15, 23, 42, 0.13);
   --pill-secondary-bg: var(--ink);
   --pill-secondary-bg-hover: #222938;
 
@@ -200,8 +200,8 @@
   --button-secondary-border: rgba(15, 23, 42, 0.13);
   --button-secondary-border-hover: rgba(15, 23, 42, 0.22);
 
-  /* Card shadow – lekkie ocieplenie w cieniu zostaje, żeby gradient cards nie były sterylne */
-  --shadow-card: 0 20px 40px -22px rgba(40, 32, 16, 0.18);
+  /* Card shadow – neutralne, chłodne cienie pasujące do blue-gray surface ladder. */
+  --shadow-card: 0 20px 40px -24px rgba(15, 23, 42, 0.18);
 
   /* Semantic */
   --success-green: #14783a;
@@ -211,8 +211,8 @@
   /* Spotlight gradients zostają ciemne (signature) – brak override
      dla --gradient-violet/orange/magenta/coral/violet-linear/process-* */
 
-  /* Elevation – warm-tinted shadows pasujące do ivory canvas */
-  --shadow-l2: 0 1px 2px rgba(60, 40, 10, 0.05), 0 8px 24px rgba(60, 40, 10, 0.08);
+  /* Elevation – delikatne cienie bez ciepłego zafarbu. */
+  --shadow-l2: 0 1px 2px rgba(15, 23, 42, 0.06), 0 10px 26px rgba(15, 23, 42, 0.09);
   --shadow-l3: 0 0 0 2px var(--accent-blue);
 }
 
