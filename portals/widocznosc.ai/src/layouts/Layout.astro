@@ -25,7 +25,7 @@ const {
   description = 'widocznosc.ai – pozycjonowanie marek w wyszukiwarkach AI (ChatGPT, Claude, Perplexity, Google AI Overviews). Audyty widoczności, content, doradztwo GEO.',
   ogType = 'website',
   articleMeta,
-  noindex = false,
+  noindex = true,
 } = Astro.props;
 
 const siteUrl = 'https://widocznosc.ai';
@@ -63,7 +63,7 @@ const ogImage = `${siteUrl}/og-image.png`;
     <link rel="canonical" href={`${siteUrl}${Astro.url.pathname}`} />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
-    {noindex && <meta name="robots" content="noindex" />}
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <title>{title}</title>
     <ClientRouter />
 
