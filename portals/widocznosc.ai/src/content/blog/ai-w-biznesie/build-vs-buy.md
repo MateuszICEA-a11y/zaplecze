@@ -87,10 +87,10 @@ Własna aplikacja AI ma sens w czterech przypadkach. Przed podjęciem decyzji sp
 
 Zanim zlecisz projekt, odpowiedz na trzy pytania diagnostyczne. Czy masz gotowe, ustrukturyzowane dane – ponieważ budowanie bez danych to budowanie na piasku? Czy masz lidera projektu (opiekuna biznesowego) z uprawnieniami decyzyjnymi – ponieważ bez niego każdy projekt AI kończy się wiecznym pilotażem? I wreszcie: czy znasz miernik sukcesu, który można zweryfikować po 90 dniach od wdrożenia na produkcję?
 
-Jeśli odpowiedź na którekolwiek z tych pytań brzmi „nie" – nie zaczynaj. Zacznij od gotowego SaaS-a i wróć do pomysłu budowy własnego systemu, gdy organizacja będzie na to gotowa. Sprawdź też, jak poprawnie liczyć [ROI z AI](/ai-w-biznesie/roi-z-ai) – wiele firm myli zyski z oszczędnościami i zaniża kalkulacje nawet trzykrotnie.
+Jeśli odpowiedź na którekolwiek z tych pytań brzmi „nie" – nie zaczynaj. Zacznij od gotowego SaaS-a i wróć do pomysłu budowy własnego systemu, gdy organizacja będzie na to gotowa. Sprawdź też, jak poprawnie liczyć [ROI z AI](/ai-w-biznesie/roi-z-ai/) – wiele firm myli zyski z oszczędnościami i zaniża kalkulacje nawet trzykrotnie.
 
 <aside class="callout-expert">
-  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.webp" alt="Mateusz Wiśniewski" /></div>
+  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.avif" alt="Mateusz Wiśniewski" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
     <p>W projektach, które analizujemy w ICEA, najczęstszy błąd to decyzja o budowie własnej aplikacji podjęta zbyt wcześnie – zanim firma wie, co właściwie chce zautomatyzować. Widać to w harmonogramach: faza „odkrywania wymagań" przeciąga się z planowanych 4 tygodni do 6 miesięcy, ponieważ nikt wcześniej nie zmierzył, jak faktycznie działa dany proces. <strong>Zasada, którą polecam: najpierw kup najtańszy SaaS, który robi 70% tego, czego potrzebujesz. Gdy natrafisz na ograniczenia tego narzędzia – to jest właśnie moment, w którym wiesz, co powinieneś zbudować.</strong></p>
@@ -102,7 +102,7 @@ Jeśli odpowiedź na którekolwiek z tych pytań brzmi „nie" – nie zaczynaj.
 
 Czyste opcje „kup" albo „buduj" to krańce spektrum. **57% firm wybiera dziś podejście hybrydowe – kupuje standardowe komponenty i buduje własną warstwę logiki** (dane KPMG, 2026). To nie jest zgniły kompromis – to przemyślana architektura.
 
-Hybryda opiera się na tym, że zewnętrzny model bazowy (OpenAI GPT-4o, Anthropic Claude, Google Gemini) dostarcza rozumienie języka, a Twoja firma dostarcza kontekst: produkty, procedury, historię transakcji, zasady cenowe. Integracja następuje przez architekturę [RAG](/rag/przewodnik) (generowanie wspomagane wyszukiwaniem – Retrieval-Augmented Generation), która pozwala modelowi korzystać z Twoich danych bez konieczności wysyłania ich na zewnątrz w surowej formie.
+Hybryda opiera się na tym, że zewnętrzny model bazowy (OpenAI GPT-4o, Anthropic Claude, Google Gemini) dostarcza rozumienie języka, a Twoja firma dostarcza kontekst: produkty, procedury, historię transakcji, zasady cenowe. Integracja następuje przez architekturę [RAG](/rag/przewodnik/) (generowanie wspomagane wyszukiwaniem – Retrieval-Augmented Generation), która pozwala modelowi korzystać z Twoich danych bez konieczności wysyłania ich na zewnątrz w surowej formie.
 
 ### Jak działa hybryda w praktyce
 
@@ -129,7 +129,7 @@ Cztery mechanizmy ograniczające ryzyko uzależnienia:
 - **Własna baza wektorowa jako bufor** – jeśli osadzenia wektorowe (ang. embeddings) generowane przez model trzymasz we własnej infrastrukturze, zmiana zewnętrznego modelu nie wymaga przebudowy całej bazy wiedzy.
 - **Klauzule przenoszalności danych w umowie** – zadbaj o zapis o eksporcie danych i kontekstu modelu w standardowym formacie; jeśli dostawca odmawia – potraktuj to jako sygnał ostrzegawczy.
 
-Więcej o tym, jak [agenci AI](/agenci-ai/przewodnik) wpływają na architekturę hybrydową i kwestię kontroli nad logiką decyzyjną, omawia osobny przewodnik.
+Więcej o tym, jak [agenci AI](/agenci-ai/przewodnik/) wpływają na architekturę hybrydową i kwestię kontroli nad logiką decyzyjną, omawia osobny przewodnik.
 
 ## Od czego zacząć – plan działania w trzech krokach
 
@@ -141,6 +141,6 @@ Praktyczny sposób na pierwsze trzy kroki, niezależnie od wielkości organizacj
 - **Kup najtańsze gotowe narzędzie, które rozwiązuje 70% problemu** – uruchom je w 2–4 tygodnie, zmierz efekt po 60 dniach; jeśli narzędzie przynosi wartość, rozbuduj je o własne warstwy; jeśli nie – wyłącz je i przeanalizuj dlaczego.
 - **Zdefiniuj granicę, po przekroczeniu której decydujesz się na budowę własnego rozwiązania** – określ konkretną miarę: „gdy koszt subskrypcji przekroczy X PLN miesięcznie" albo „gdy nie będziemy mogli spersonalizować funkcji Y, która jest kluczowa dla naszych klientów"; bez tej granicy optymalny moment na decyzję nigdy nie nadejdzie.
 
-Dobry punkt wejścia dla firm, które dopiero zaczynają, to artykuł [od czego zacząć wdrożenie AI](/ai-w-biznesie/od-czego-zaczac) – z metodologią audytu gotowości i mapą procesów do automatyzacji. Jeśli chcesz sprawdzić, jak Twoja marka jest postrzegana przez systemy AI, zanim uruchomisz wewnętrzne narzędzia, darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) pozwoli odpytać cztery silniki AI o Twoją firmę w zaledwie 30 sekund.
+Dobry punkt wejścia dla firm, które dopiero zaczynają, to artykuł [od czego zacząć wdrożenie AI](/ai-w-biznesie/od-czego-zaczac/) – z metodologią audytu gotowości i mapą procesów do automatyzacji. Jeśli chcesz sprawdzić, jak Twoja marka jest postrzegana przez systemy AI, zanim uruchomisz wewnętrzne narzędzia, darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) pozwoli odpytać cztery silniki AI o Twoją firmę w zaledwie 30 sekund.
 
 **Najdroższa decyzja to ta podjęta bez danych i bez zmierzonego punktu wyjścia.** Drugie miejsce zajmuje decyzja o budowie własnego systemu przez organizację, która nie ma jeszcze ustrukturyzowanych danych, dedykowanego lidera projektu ani jasnego miernika sukcesu.

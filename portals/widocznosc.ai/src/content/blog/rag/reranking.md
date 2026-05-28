@@ -8,7 +8,7 @@ icon: '<path d="M4 6h16M4 12h10M4 18h6"/><circle cx="18" cy="17" r="3"/><path d=
 author:
   name: 'Mateusz Wiśniewski'
   role: 'Ekspert SEO/AI Search · ICEA'
-  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
+  avatar: ../../../assets/images/authors/mateusz-wisniewski.avif
 readTime: '11 min'
 tags: ['Reranking', 'RAG', 'Trafność', 'Bazy wektorowe']
 pillar: 'rag'
@@ -20,7 +20,7 @@ Jeśli Twój system [generowania wspomaganego wyszukiwaniem](https://pl.wikipedi
 
 ## Dlaczego samo wyszukiwanie wektorowe nie wystarczy
 
-Klasyczne [RAG](/rag/przewodnik) opiera wyszukiwanie na bi-encoderach: każdy fragment tekstu jest wstępnie zamieniany na jeden wektor liczbowy (embedding), a w momencie zapytania system szuka wektorów najbardziej zbliżonych do wektora zapytania. To podejście jest szybkie i skalowalne – miliony fragmentów można przeszukać w milisekundy.
+Klasyczne [RAG](/rag/przewodnik/) opiera wyszukiwanie na bi-encoderach: każdy fragment tekstu jest wstępnie zamieniany na jeden wektor liczbowy (embedding), a w momencie zapytania system szuka wektorów najbardziej zbliżonych do wektora zapytania. To podejście jest szybkie i skalowalne – miliony fragmentów można przeszukać w milisekundy.
 
 Problem polega na tym, że bi-encoder kompresuje cały fragment do jednego wektora o stałej długości. W tej kompresji zatraca się relacja między konkretnymi słowami w zapytaniu a konkretnymi słowami w dokumencie. Przykład z praktyki: zapytanie „tani nocleg" może dostać wysoki wynik podobieństwa dla fragmentu opisującego hotel luksusowy, bo oba teksty mówią o noclegach – a różnica leży w niuansie, którego bi-encoder nie widzi.
 
@@ -66,7 +66,7 @@ Modele dzielą się na komercyjne API i rozwiązania lokalne:
 - **FlashRank** – ultralekki silnik Apache 2.0, zaprojektowany pod środowiska CPU; idealny do wdrożeń brzegowych i mikroserwisów z ograniczoną pamięcią
 - **Jina Reranker v3** – tryb listowy (jednoczesna analiza do 64 dokumentów w oknie 131 000 tokenów), wynik 61,94 nDCG@10 na zbiorze BEIR
 
-Do testów wydajnościowych warto sprawdzić [Ocena cytowalności strony](/narzedzia/url-check) – narzędzie analizuje strukturę strony pod kątem cytowalności, co pomaga ocenić, jak Twoje fragmenty będą się zachowywać w potoku RAG, zanim trafią do modelu.
+Do testów wydajnościowych warto sprawdzić [Ocena cytowalności strony](/narzedzia/url-check/) – narzędzie analizuje strukturę strony pod kątem cytowalności, co pomaga ocenić, jak Twoje fragmenty będą się zachowywać w potoku RAG, zanim trafią do modelu.
 
 ### Ile fragmentów na każdym etapie
 
@@ -119,7 +119,7 @@ Wdrożenie rerankera bez pomiaru efektów to działanie w ciemno. Trzy metryki, 
 
 Praktyczny protokół ewaluacji: przygotuj zestaw 50–100 przykładowych zapytań z oczekiwanymi odpowiedziami wzorcowymi. Zmierz MRR i NDCG@10 bez rerankera (baseline), dodaj reranker i zmierz ponownie. Jeśli MRR wzrósł o mniej niż 5 punktów procentowych, sprawdź strategię podziału dokumentów na fragmenty – problem może leżeć wyżej w potoku.
 
-O tym, jak optymalizować sam podział tekstu, przeczytasz w artykule o [strategiach podziału na fragmenty (chunkingu)](/rag/chunking-strategie). Jeśli natomiast Twoje embeddingi generują zbyt wiele fałszywych trafień jeszcze przed rerankingiem, warto wrócić do podstaw w artykule o [embeddingach](/rag/embeddingi).
+O tym, jak optymalizować sam podział tekstu, przeczytasz w artykule o [strategiach podziału na fragmenty (chunkingu)](/rag/chunking-strategie/). Jeśli natomiast Twoje embeddingi generują zbyt wiele fałszywych trafień jeszcze przed rerankingiem, warto wrócić do podstaw w artykule o [embeddingach](/rag/embeddingi/).
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/michal-ziach.avif" alt="Michał Ziach" /></div>
@@ -154,7 +154,7 @@ compression_retriever = ContextualCompressionRetriever(
 
 W obu przypadkach `top_n=5` oznacza, że do modelu generującego trafia tylko 5 najlepiej dopasowanych fragmentów. Zmiana tego parametru to najszybszy sposób na manipulowanie kompromisem między precyzją a kompletnością odpowiedzi.
 
-Jeśli chcesz zobaczyć, jak cytowania generowane przez Twój system RAG są postrzegane przez silniki AI, [Widoczność marki w AI](/narzedzia/brand-check) pokaże aktualną obecność Twojej marki w odpowiedziach czterech głównych modeli – warto traktować to jako zewnętrzny punkt odniesienia dla jakości Twojego systemu.
+Jeśli chcesz zobaczyć, jak cytowania generowane przez Twój system RAG są postrzegane przez silniki AI, [Widoczność marki w AI](/narzedzia/brand-check/) pokaże aktualną obecność Twojej marki w odpowiedziach czterech głównych modeli – warto traktować to jako zewnętrzny punkt odniesienia dla jakości Twojego systemu.
 
 ## Kiedy reranking nie jest odpowiedzią
 
@@ -162,8 +162,8 @@ Reranker poprawia kolejność kandydatów, ale nie może stworzyć trafnego frag
 
 Trzy sytuacje, w których problem leży gdzie indziej:
 
-- Niski wskaźnik kompletności (Recall@20 poniżej 60%) – wróć do [strategii podziału na fragmenty](/rag/chunking-strategie) i długości fragmentów
+- Niski wskaźnik kompletności (Recall@20 poniżej 60%) – wróć do [strategii podziału na fragmenty](/rag/chunking-strategie/) i długości fragmentów
 - Fragmenty trafne, ale odpowiedź wciąż słaba – problem w prompcie lub w modelach generujących, nie w rerankingu
 - Reranker poprawia precyzję, ale rosną koszty ponad akceptowalny próg – rozważ lżejszy model w kaskadzie lub model lokalny zamiast API
 
-Jak LLM-y korzystają ze źródeł i jak to wpływa na jakość cytowań, wyjaśnia artykuł o [tym, jak LLM-y cytują źródła](/geo/jak-llm-cytuja-zrodla) – uzupełniająca perspektywa na całą warstwę między Twoją bazą wiedzy a finalną odpowiedzią.
+Jak LLM-y korzystają ze źródeł i jak to wpływa na jakość cytowań, wyjaśnia artykuł o [tym, jak LLM-y cytują źródła](/geo/jak-llm-cytuja-zrodla/) – uzupełniająca perspektywa na całą warstwę między Twoją bazą wiedzy a finalną odpowiedzią.

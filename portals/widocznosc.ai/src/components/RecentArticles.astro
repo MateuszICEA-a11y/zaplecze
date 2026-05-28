@@ -38,7 +38,7 @@ const formatDate = (date: Date) =>
           syntezują odpowiedzi i&nbsp;co decyduje o&nbsp;cytowalności Twojej marki w&nbsp;świecie
           AI.
         </p>
-        <a href="/blog" class="btn-secondary kb-all-link">
+        <a href="/blog/" class="btn-secondary kb-all-link">
           Wszystkie artykuły <span aria-hidden="true">→</span>
         </a>
       </div>
@@ -48,7 +48,7 @@ const formatDate = (date: Date) =>
       posts.length > 0 && (
         <div class="kb-grid">
           {posts.map((post) => (
-            <a href={`/${post.id}`} class="kb-card" data-category={post.data.pillar}>
+            <a href={`/${post.id}/`} class="kb-card" data-category={post.data.pillar}>
               <div class="kb-card-img">
                 <Image
                   src={post.data.image}

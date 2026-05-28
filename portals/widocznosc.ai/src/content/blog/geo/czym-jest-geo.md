@@ -105,23 +105,23 @@ Trzy metryki, które stosujemy w ICEA jako punkt wyjścia każdego audytu:
 
 **Jak mierzyć to w praktyce bez specjalistycznego narzędzia:** wybierz 20–30 pytań, które Twoi klienci zadają w ChatGPT lub Perplexity. Odpytuj modele regularnie – na przykład co dwa tygodnie – w czystym środowisku przeglądarki (bez historii konwersacji i personalizacji). Notuj, ile odpowiedzi zawiera nazwę Twojej firmy. To Twój punkt startowy do oceny efektów optymalizacji.
 
-Darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI o Twoją markę i pokaże wynik na tle danej kategorii bez konieczności ręcznego sprawdzania każdego modelu z osobna.
+Darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) odpyta cztery silniki AI o Twoją markę i pokaże wynik na tle danej kategorii bez konieczności ręcznego sprawdzania każdego modelu z osobna.
 
-Jeśli chcesz sprawdzić, jak konkretna podstrona wypada pod kątem cytowalności, narzędzie [Ocena cytowalności strony](/narzedzia/url-check) przeanalizuje ją pod kątem kluczowych czynników GEO w kilkadziesiąt sekund.
+Jeśli chcesz sprawdzić, jak konkretna podstrona wypada pod kątem cytowalności, narzędzie [Ocena cytowalności strony](/narzedzia/url-check/) przeanalizuje ją pod kątem kluczowych czynników GEO w kilkadziesiąt sekund.
 
 ## Pierwsze kroki – co zrobić, zanim zaczniesz tworzyć treść
 
 Wdrażanie GEO to proces wieloetapowy. Zacznij od podstaw technicznych – bez nich nawet najlepsza treść nie dotrze do modelu.
 
-Trzy działania, od których zaczyna się każdy [audyt widoczności marki](/geo/audyt-widocznosci-marki) w ICEA:
+Trzy działania, od których zaczyna się każdy [audyt widoczności marki](/geo/audyt-widocznosci-marki/) w ICEA:
 
 1. **Sprawdź dostęp dla botów AI** – przejrzyj plik `robots.txt` i upewnij się, że `GPTBot`, `ClaudeBot` oraz `PerplexityBot` nie są blokowane; błędy w tym miejscu całkowicie wykluczają Cię z systemów RAG.
-2. **Dodaj lub zaktualizuj `llms.txt`** – ten plik tekstowy w katalogu głównym podpowiada botom AI, co na Twojej stronie jest najważniejsze, bez konieczności indeksowania setek podstron; szczegóły implementacji opisuje nasz artykuł o [llms.txt](/geo/llms-txt).
+2. **Dodaj lub zaktualizuj `llms.txt`** – ten plik tekstowy w katalogu głównym podpowiada botom AI, co na Twojej stronie jest najważniejsze, bez konieczności indeksowania setek podstron; szczegóły implementacji opisuje nasz artykuł o [llms.txt](/geo/llms-txt/).
 3. **Przebuduj jedną kluczową stronę** – wybierz podstronę generującą największy ruch lub mającą kluczowe znaczenie biznesowe i zoptymalizuj ją: sformułuj nagłówki jako pytania, dodaj statystyki z datą i źródłem, podziel tekst na bloki po 200–400 słów i uwzględnij cytowania ekspertów.
 
 Po stronie technicznej efekty odblokowania botów widać zazwyczaj w ciągu 2–4 tygodni. Pierwsze mierzalne wzrosty wskaźnika *Citation Rate* po przebudowie treści pojawiają się zwykle po 6–8 tygodniach. To znacznie szybszy cykl niż w tradycyjnym SEO, gdzie na efekty pozycjonowania czeka się często miesiącami.
 
-Jeśli chcesz uniknąć najczęstszych pułapek, które spowalniają efekty – i przede wszystkim tych, które aktywnie szkodzą witrynie – przeczytaj artykuł o [najczęstszych błędach w GEO](/geo/najczestsze-bledy-geo).
+Jeśli chcesz uniknąć najczęstszych pułapek, które spowalniają efekty – i przede wszystkim tych, które aktywnie szkodzą witrynie – przeczytaj artykuł o [najczęstszych błędach w GEO](/geo/najczestsze-bledy-geo/).
 
 ## FAQ – najczęstsze pytania o GEO
 
@@ -139,4 +139,4 @@ AEO (*Answer Engine Optimization*) ma na celu wyświetlenie krótkiej odpowiedzi
 
 ### Od czego zacząć, jeśli mam ograniczone zasoby?
 
-Od trzech kroków: sprawdź dostęp dla botów AI (w `robots.txt`), dodaj plik `llms.txt` i przebuduj jedną – generującą największy ruch – podstronę według zasad GEO. Zmierz *Citation Rate* przed zmianami i po nich. To wystarczy, aby zobaczyć pierwsze efekty i uzasadnić kolejne inwestycje. Pełną metodologię, którą stosujemy od audytu po optymalizację, opisuje nasz [przewodnik po GEO](/geo/przewodnik).
+Od trzech kroków: sprawdź dostęp dla botów AI (w `robots.txt`), dodaj plik `llms.txt` i przebuduj jedną – generującą największy ruch – podstronę według zasad GEO. Zmierz *Citation Rate* przed zmianami i po nich. To wystarczy, aby zobaczyć pierwsze efekty i uzasadnić kolejne inwestycje. Pełną metodologię, którą stosujemy od audytu po optymalizację, opisuje nasz [przewodnik po GEO](/geo/przewodnik/).

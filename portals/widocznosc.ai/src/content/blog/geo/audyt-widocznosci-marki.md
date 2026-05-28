@@ -8,7 +8,7 @@ icon: '<circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/><path d="M12 3v2M
 author:
   name: 'Mateusz Wiśniewski'
   role: 'Ekspert SEO/AI Search · ICEA'
-  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
+  avatar: ../../../assets/images/authors/mateusz-wisniewski.avif
 readTime: '14 min'
 tags: ['Audyt', 'Widoczność marki', 'GEO', 'AI Search']
 pillar: 'geo'
@@ -80,7 +80,7 @@ Poniższa tabela zbiera trzy podstawowe metryki stosowane w audytach GEO wraz z 
 
 **Pomiar SoV ma sens tylko w zestawieniu z konkurencją.** Odpytaj te same pytania, ale tym razem szukaj, ile razy pojawiają się 3–4 Twoich bezpośrednich konkurentów. Różnica między Twoim SoV a SoV lidera to właśnie luka widoczności, którą audyt ma zidentyfikować.
 
-Darmowy [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI o Twoją markę i pokaże, jak jesteś postrzegany na tle kategorii – bez konieczności ręcznego odpytywania każdego modelu osobno.
+Darmowy [Widoczność marki w AI](/narzedzia/brand-check/) odpyta cztery silniki AI o Twoją markę i pokaże, jak jesteś postrzegany na tle kategorii – bez konieczności ręcznego odpytywania każdego modelu osobno.
 
 ## Krok 4 – Audyt techniczny dostępności dla botów AI
 
@@ -90,7 +90,7 @@ Wyniki odpytywania modeli to obraz widoczności. Audyt techniczny wyjaśnia, dla
 
 Pierwsza i najczęstsza przyczyna niewidoczności to zablokowanie botów AI w pliku `robots.txt` – często nieintencjonalne. Sprawdź, czy żadna z reguł `Disallow` nie dotyczy botów: `GPTBot` (OpenAI), `ChatGPT-User` (OpenAI), `PerplexityBot` (Perplexity), `Google-Extended` (Google) i `ClaudeBot` (Anthropic). Błędy w konfiguracji zapory Cloudflare potrafią blokować część tych botów bez jakiegokolwiek wpisu w `robots.txt`.
 
-Narzędzie [Dostęp botów AI](/narzedzia/ai-bots-check) weryfikuje, które boty AI mają dostęp do Twojej domeny i sygnalizuje niezamierzone blokady.
+Narzędzie [Dostęp botów AI](/narzedzia/ai-bots-check/) weryfikuje, które boty AI mają dostęp do Twojej domeny i sygnalizuje niezamierzone blokady.
 
 ### Renderowanie JavaScript i dostępność treści
 
@@ -127,7 +127,7 @@ Priorytety ustal według stosunku efektu do nakładu pracy:
 4. Przepisz 3–5 priorytetowych stron: statystyki z datą i źródłem, nagłówki jako pytania, bloki 200–400 słów
 5. Zbuduj sygnały zewnętrzne: wzmianki w mediach branżowych, forach, raportach
 
-Pełne omówienie strategii GEO znajdziesz w [przewodniku po Generative Engine Optimization](/geo/przewodnik), a jeśli chcesz zrozumieć, skąd modele czerpią wiedzę o cytowaniu – wyjaśnia to artykuł o [tym, jak LLM-y cytują źródła](/geo/jak-llm-cytuja-zrodla).
+Pełne omówienie strategii GEO znajdziesz w [przewodniku po Generative Engine Optimization](/geo/przewodnik/), a jeśli chcesz zrozumieć, skąd modele czerpią wiedzę o cytowaniu – wyjaśnia to artykuł o [tym, jak LLM-y cytują źródła](/geo/jak-llm-cytuja-zrodla/).
 
 ## Krok 6 – Stały monitoring i harmonogram re-audytu
 
@@ -141,13 +141,13 @@ Ustal trzyszczeblowy rytm pomiaru:
 
 Zmienność odpowiedzi to zjawisko normalne – nie reaguj na każde wahnięcie. Reaguj na trend: jeśli Citation Rate spada przez dwa kolejne miesiące, szukaj przyczyny. Jeśli rośnie – identyfikuj, która ze zmian to spowodowała, i skaluj tę taktykę.
 
-Do monitorowania SoV w sposób zautomatyzowany warto rozważyć wyspecjalizowane platformy. Nightwatch od wersji mid-tier (od 32 USD miesięcznie) śledzi jednocześnie pozycje w LLM i wyniki tradycyjne. Otterly AI (od 29 USD miesięcznie) generuje automatyczne alerty przy negatywnym sentymencie i wykrytych halucynacjach. Jeśli szukasz czegoś prostszego do oceny, zanim zaangażujesz budżet – [Widoczność marki w AI](/narzedzia/brand-check) pozwoli Ci zobaczyć punkt startowy bez żadnych kosztów.
+Do monitorowania SoV w sposób zautomatyzowany warto rozważyć wyspecjalizowane platformy. Nightwatch od wersji mid-tier (od 32 USD miesięcznie) śledzi jednocześnie pozycje w LLM i wyniki tradycyjne. Otterly AI (od 29 USD miesięcznie) generuje automatyczne alerty przy negatywnym sentymencie i wykrytych halucynacjach. Jeśli szukasz czegoś prostszego do oceny, zanim zaangażujesz budżet – [Widoczność marki w AI](/narzedzia/brand-check/) pozwoli Ci zobaczyć punkt startowy bez żadnych kosztów.
 
 ## Często zadawane pytania o audyt widoczności w AI
 
 ### Ile czasu zajmuje przeprowadzenie audytu?
 
-Podstawowy audyt – zestaw 20 zapytań, odpytanie trzech silników, ocena techniczna – to 4–6 godzin pracy. Pełny audyt z analizą konkurencji, przeglądem logów serwera i dokumentacją wyników to 2–3 dni robocze. Agencyjny audyt GEO z rekomendacjami i planem 90-dniowym, jaki wykonuje ICEA, zamyka się zwykle w tygodniu – skontaktuj się przez [formularz audytu](/pozycjonowanie-ai), żeby omówić zakres.
+Podstawowy audyt – zestaw 20 zapytań, odpytanie trzech silników, ocena techniczna – to 4–6 godzin pracy. Pełny audyt z analizą konkurencji, przeglądem logów serwera i dokumentacją wyników to 2–3 dni robocze. Agencyjny audyt GEO z rekomendacjami i planem 90-dniowym, jaki wykonuje ICEA, zamyka się zwykle w tygodniu – skontaktuj się przez [formularz audytu](/pozycjonowanie-ai/), żeby omówić zakres.
 
 ### Czy audyt trzeba powtarzać, czy wystarczy zrobić raz?
 
@@ -159,4 +159,4 @@ To sygnał luki merytorycznej – model cytuje Twoją markę ze starych danych t
 
 ### Czy mała firma może przeprowadzić audyt samodzielnie?
 
-Tak. Zestawy 20 pytań testowych, ręczne odpytanie ChatGPT i Perplexity, weryfikacja `robots.txt` i sprawdzenie renderowania przez źródło strony – to wszystko jest możliwe bez żadnych płatnych narzędzi. Darmowy [Widoczność marki w AI](/narzedzia/brand-check) automatyzuje pierwsze odpytanie i daje punkt startowy w kilka minut.
+Tak. Zestawy 20 pytań testowych, ręczne odpytanie ChatGPT i Perplexity, weryfikacja `robots.txt` i sprawdzenie renderowania przez źródło strony – to wszystko jest możliwe bez żadnych płatnych narzędzi. Darmowy [Widoczność marki w AI](/narzedzia/brand-check/) automatyzuje pierwsze odpytanie i daje punkt startowy w kilka minut.

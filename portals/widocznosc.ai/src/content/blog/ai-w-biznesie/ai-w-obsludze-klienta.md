@@ -51,7 +51,7 @@ W praktyce przekłada się to na kilka możliwości:
 
 Aby zbudować taki system, dokumenty firmy dzielone są na mniejsze fragmenty, które następnie przekształcane są na wektory numeryczne – matematyczne reprezentacje znaczenia tekstu. System wyszukuje wektory semantycznie zbliżone do pytania klienta. To właśnie ta warstwa sprawia, że RAG rozumie pytanie sformułowane inaczej niż w dokumentacji, ale oznaczające to samo.
 
-Jeśli chcesz zrozumieć, jak RAG działa od strony technicznej i jak wdrożyć go dla własnej firmy, [przewodnik po architekturze RAG](/rag/przewodnik) wyjaśnia to krok po kroku – wraz z przykładami dla e-commerce i B2B SaaS.
+Jeśli chcesz zrozumieć, jak RAG działa od strony technicznej i jak wdrożyć go dla własnej firmy, [przewodnik po architekturze RAG](/rag/przewodnik/) wyjaśnia to krok po kroku – wraz z przykładami dla e-commerce i B2B SaaS.
 
 ![Hybrydowy model obsługi klienta – chatbot AI oparty na RAG odpowiada na proste sprawy, a złożone przypadki eskaluje do konsultanta](../../../assets/images/infographic-ai-w-biznesie-ai-w-obsludze-klienta.png)
 
@@ -93,7 +93,7 @@ Praktyczne zastosowania w obsłudze klienta:
 
 Kluczowy warunek skuteczności agenta to integracja z systemami firmy przez API. Agent bez dostępu do CRM, systemu zamówień i kalendarza jest agentem bezsilnym – może tylko pytać klienta o to, co firma i tak już wie.
 
-Więcej o tym, jak modele LLM napędzają agentów AI i jakie architektury sprawdzają się w praktyce, znajdziesz w [przewodniku po LLM-ach](/modele-llm/przewodnik).
+Więcej o tym, jak modele LLM napędzają agentów AI i jakie architektury sprawdzają się w praktyce, znajdziesz w [przewodniku po LLM-ach](/modele-llm/przewodnik/).
 
 ## Wdrożenie krok po kroku – cztery etapy
 
@@ -121,7 +121,7 @@ Trzy zasady, których przestrzeganie jest obowiązkowe:
 Szczególne wymogi nakłada art. 22 RODO dla systemów podejmujących zautomatyzowane decyzje z konsekwencjami prawnymi – np. automatyczna odmowa kredytu lub blokada konta. W tych przypadkach klient musi mieć zapewnioną możliwość ingerencji człowieka i odwołania się od decyzji algorytmu.
 
 <aside class="callout-expert">
-  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.webp" alt="Mateusz Wiśniewski" /></div>
+  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.avif" alt="Mateusz Wiśniewski" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
     <p>Wdrożenia, które kończą się dobrze, mają jedną wspólną cechę: firma traktuje chatbota jako produkt, a nie projekt. Produkt ma właściciela, roadmapę i regularne aktualizacje. Projekt ma termin zakończenia i budżet zamknięty po wdrożeniu. <strong>Chatbot bez osoby odpowiedzialnej za jego jakość degraduje się w ciągu kilku miesięcy – baza wiedzy staje się nieaktualna, a klienci zaczynają omijać bota i dzwonią prosto do konsultanta.</strong> Zanim wdrożysz system AI, wyznacz wewnętrznego product ownera. To ważniejsze niż wybór platformy.</p>
@@ -141,6 +141,6 @@ Zestaw metryk, który daje pełny obraz:
 - **Wskaźnik eskalacji** – procent rozmów przekazywanych do człowieka; zbyt niski może oznaczać, że bot „odpycha" klientów zamiast eskalować do właściwego poziomu.
 - **Wskaźnik porzucenia** – ile rozmów klienci kończą bez uzyskania odpowiedzi; wysoki wynik to sygnał, że baza wiedzy ma luki.
 
-Jeśli chcesz sprawdzić, jak chatboty AI postrzegają Twoją markę i co mówią o niej w odpowiedziach na pytania klientów, darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI i pokaże Twój profil widoczności w ciągu kilkudziesięciu sekund.
+Jeśli chcesz sprawdzić, jak chatboty AI postrzegają Twoją markę i co mówią o niej w odpowiedziach na pytania klientów, darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) odpyta cztery silniki AI i pokaże Twój profil widoczności w ciągu kilkudziesięciu sekund.
 
-Pełny obraz zastosowań AI w biznesie – nie tylko w obsłudze klienta, ale też w sprzedaży i marketingu – znajdziesz w [przewodniku po AI w biznesie](/ai-w-biznesie/przewodnik). Jeśli interesuje Cię konkretnie automatyzacja procesu sprzedażowego, artykuł o [AI w sprzedaży](/ai-w-biznesie/ai-w-sprzedazy) pokazuje, jak modele językowe skracają cykl zakupowy. Zastosowania w komunikacji marki opisuje natomiast artykuł o [AI w marketingu](/ai-w-biznesie/ai-w-marketingu).
+Pełny obraz zastosowań AI w biznesie – nie tylko w obsłudze klienta, ale też w sprzedaży i marketingu – znajdziesz w [przewodniku po AI w biznesie](/ai-w-biznesie/przewodnik/). Jeśli interesuje Cię konkretnie automatyzacja procesu sprzedażowego, artykuł o [AI w sprzedaży](/ai-w-biznesie/ai-w-sprzedazy/) pokazuje, jak modele językowe skracają cykl zakupowy. Zastosowania w komunikacji marki opisuje natomiast artykuł o [AI w marketingu](/ai-w-biznesie/ai-w-marketingu/).

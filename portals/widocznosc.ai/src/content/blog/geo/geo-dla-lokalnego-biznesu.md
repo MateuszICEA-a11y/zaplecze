@@ -76,7 +76,7 @@ Trzy kroki do spójności encji, które wdrożysz w ciągu jednego dnia roboczeg
 
 ### Dane strukturalne – JSON-LD dla lokalnego biznesu
 
-Implementacja schematu `LocalBusiness` w formacie JSON-LD to najszybsza dźwignia w GEO dla firm lokalnych. Dobre wdrożenie eliminuje dwuznaczność i pozwala modelowi na bezpośrednią ekstrakcję kluczowych właściwości bez konieczności parsowania HTML. Szczegółowy przewodnik po implementacji, z przykładami dla różnych typów działalności, znajdziesz w artykule o [schema.org i danych strukturalnych](/geo/schema-org-dane-strukturalne).
+Implementacja schematu `LocalBusiness` w formacie JSON-LD to najszybsza dźwignia w GEO dla firm lokalnych. Dobre wdrożenie eliminuje dwuznaczność i pozwala modelowi na bezpośrednią ekstrakcję kluczowych właściwości bez konieczności parsowania HTML. Szczegółowy przewodnik po implementacji, z przykładami dla różnych typów działalności, znajdziesz w artykule o [schema.org i danych strukturalnych](/geo/schema-org-dane-strukturalne/).
 
 Najważniejsze właściwości, które musisz wypełnić:
 
@@ -107,7 +107,7 @@ Recenzje Google to niedoceniany zasób w kontekście GEO dla firm lokalnych. Tek
 
 Sekcja FAQ na stronie to idealne miejsce na wdrożenie logiki GEO. Pytania powinny brzmieć jak zapytania wpisywane do ChatGPT: „Ile kosztuje czyszczenie kanalizacji w Warszawie?", „Czy gabinet przyjmuje w weekend?". Odpowiedzi muszą zaczynać się od twardej deklaracji: ceny, godziny, zasady – nie od „Zależy to od…".
 
-Jeśli chcesz sprawdzić, jak Twoja strona wypada pod kątem cytowalności w modelach AI, narzędzie [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI o Twoją markę i pokaże aktualny obraz widoczności.
+Jeśli chcesz sprawdzić, jak Twoja strona wypada pod kątem cytowalności w modelach AI, narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) odpyta cztery silniki AI o Twoją markę i pokaże aktualny obraz widoczności.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/piotr-wicenciak.avif" alt="Piotr Wicenciak" /></div>
@@ -140,7 +140,7 @@ Porównanie ekosystemu plików konfiguracyjnych pokazuje, że `llms.txt` wypełn
 
 Analiza logów serwerowych pokazuje, że wdrożenie `llms.txt` nie podnosi natychmiast pozycji w klasycznych wyszukiwarkach, ale zmniejsza opóźnienie odpytywania przez systemy AI i eliminuje błędy atrybucji – model, który przeczytał Twój plik `llms.txt`, wie, że jesteś hydraulikiem z Pragi, a nie fryzjerem z Woli.
 
-Pełny [przewodnik po GEO](/geo/przewodnik) opisuje szerszy kontekst techniczny i strategię 6-miesięczną.
+Pełny [przewodnik po GEO](/geo/przewodnik/) opisuje szerszy kontekst techniczny i strategię 6-miesięczną.
 
 ## Jak mierzyć widoczność w wyszukiwaniu konwersacyjnym
 
@@ -163,7 +163,7 @@ Nie potrzebujesz 150 zapytań na start. Wystarczy 20–30 pytań sformułowanych
 
 Odpytuj regularnie – co dwa tygodnie, w trybie prywatnym bez personalizacji. Sprawdź, ile odpowiedzi zawiera Twoją markę. To jest Twój punkt startowy i Twój KPI.
 
-Jeśli chcesz zobaczyć, jak Twoja strona jest aktualnie oceniana pod kątem struktury i gotowości do cytowania, [audyt widoczności marki](/geo/audyt-widocznosci-marki) opisuje metodologię, którą stosujemy w ICEA przy pierwszym badaniu klientów.
+Jeśli chcesz zobaczyć, jak Twoja strona jest aktualnie oceniana pod kątem struktury i gotowości do cytowania, [audyt widoczności marki](/geo/audyt-widocznosci-marki/) opisuje metodologię, którą stosujemy w ICEA przy pierwszym badaniu klientów.
 
 ## Kolejność wdrożenia – 4 tygodnie do pierwszych efektów
 
@@ -177,7 +177,7 @@ GEO dla małego biznesu lokalnego nie wymaga wielomiesięcznego projektu. **Pier
 
 **Tydzień 4 – pomiar i korekta.** Odpytaj 20–30 zapytań testowych w ChatGPT i Perplexity. Oceń Citation Rate. Sprawdź, czy schemat JSON-LD jest poprawnie parsowany (Google Rich Results Test). Wdróż korekty. Zaplanuj kolejny cykl za dwa tygodnie.
 
-Więcej o tym, jak optymalizacja GEO przekłada się na sklepy i serwisy internetowe, opisuje artykuł o [GEO dla e-commerce](/geo/geo-dla-ecommerce).
+Więcej o tym, jak optymalizacja GEO przekłada się na sklepy i serwisy internetowe, opisuje artykuł o [GEO dla e-commerce](/geo/geo-dla-ecommerce/).
 
 ## Często zadawane pytania
 

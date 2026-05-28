@@ -22,9 +22,9 @@ Perplexity to nie kolejny chatbot – to wyszukiwarka zbudowana wokół cytowań
 
 Perplexity to silnik odpowiedzi (answer engine) – kategoria narzędzi, która stoi między klasyczną wyszukiwarką a asystentem AI. **Zamiast zwracać listę linków, Perplexity syntetyzuje informacje z kilku lub kilkunastu aktualnych źródeł i prezentuje jedną spójną odpowiedź z numerowanymi przypisami.**
 
-Różnica w stosunku do [ChatGPT](/modele-llm/chatgpt) i [Claude](/modele-llm/claude) polega na architekturze. Tamte modele w trybie offline opierają się na wiedzy zamkniętej w parametrach sieci neuronowej – wiedzy ograniczonej datą zakończenia trenowania, która może mieć kilkanaście miesięcy opóźnienia. Perplexity za każdym razem uruchamia pobieranie danych z sieci, zanim wygeneruje odpowiedź. Każde zapytanie to żywy proces: szukaj → pobierz → zsyntetyzuj → zacytuj.
+Różnica w stosunku do [ChatGPT](/modele-llm/chatgpt/) i [Claude](/modele-llm/claude/) polega na architekturze. Tamte modele w trybie offline opierają się na wiedzy zamkniętej w parametrach sieci neuronowej – wiedzy ograniczonej datą zakończenia trenowania, która może mieć kilkanaście miesięcy opóźnienia. Perplexity za każdym razem uruchamia pobieranie danych z sieci, zanim wygeneruje odpowiedź. Każde zapytanie to żywy proces: szukaj → pobierz → zsyntetyzuj → zacytuj.
 
-To właśnie ta architektura sprawia, że Perplexity jest kluczowe w kontekście [pozycjonowania w AI](/pozycjonowanie-ai/perplexity). Twoja strona musi być technicznie dostępna dla `PerplexityBot` i zawierać treść, którą silnik może wyekstrahować jako odpowiedź – nie tylko jako tło.
+To właśnie ta architektura sprawia, że Perplexity jest kluczowe w kontekście [pozycjonowania w AI](/pozycjonowanie-ai/perplexity/). Twoja strona musi być technicznie dostępna dla `PerplexityBot` i zawierać treść, którą silnik może wyekstrahować jako odpowiedź – nie tylko jako tło.
 
 ### Krótka historia – od bota na Twitterze do 20 miliardów dolarów
 
@@ -122,12 +122,12 @@ Perplexity jest naturalnym mostem do GEO (Generative Engine Optimization, optyma
 
 Cztery kroki do lepszej widoczności w Perplexity:
 
-- **Dostęp techniczny** – sprawdź, czy `PerplexityBot` nie jest blokowany przez `robots.txt` ani przez reguły zapory sieciowej Cloudflare; możesz to zweryfikować w [Dostęp botów AI](/narzedzia/ai-bots-check) w kilka sekund
+- **Dostęp techniczny** – sprawdź, czy `PerplexityBot` nie jest blokowany przez `robots.txt` ani przez reguły zapory sieciowej Cloudflare; możesz to zweryfikować w [Dostęp botów AI](/narzedzia/ai-bots-check/) w kilka sekund
 - **Struktura fragmentów** – podziel treść na samodzielne bloki 200–400 słów, każdy z nagłówkiem jako pytaniem i odpowiedzią w pierwszym zdaniu; silnik RAG ocenia każdy fragment oddzielnie
 - **Gęstość faktograficzna** – dodaj do każdej sekcji H2 co najmniej jedną liczbę z datą i źródłem; fragmenty z danymi liczbowymi mają wyższy priorytet przy selekcji wektorowej
 - **Wzajemne wzmianki** – buduj obecność w miejscach, z których Perplexity chętnie czerpie: branżowe raporty, Wikipedia, fora Reddit, media B2B; to sygnał autorytetu dla algorytmu selekcji
 
-Szczegółowe wskazówki dotyczące zwiększania wskaźnika cytowań znajdziesz w przewodniku po [tym, jak LLM-y cytują źródła](/geo/jak-llm-cytuja-zrodla), a szeroką perspektywę na całą dyscyplinę GEO – w [kompletnym przewodniku GEO](/geo/przewodnik).
+Szczegółowe wskazówki dotyczące zwiększania wskaźnika cytowań znajdziesz w przewodniku po [tym, jak LLM-y cytują źródła](/geo/jak-llm-cytuja-zrodla/), a szeroką perspektywę na całą dyscyplinę GEO – w [kompletnym przewodniku GEO](/geo/przewodnik/).
 
 ## Często zadawane pytania o Perplexity
 
@@ -141,7 +141,7 @@ Tak. Algorytm przetwarza polskie zapytania i odpowiada po polsku, sięgając zar
 
 ### Jak sprawdzić, czy moja strona jest cytowana przez Perplexity?
 
-Najprostszy sposób to ręczne odpytanie 10–20 zapytań z Twojej niszy w Perplexity i weryfikacja, czy Twoja domena pojawia się wśród przypisów. Możesz też użyć darmowego [Widoczność marki w AI](/narzedzia/brand-check), który odpyta kilka silników AI o Twoją markę i pokaże, jak jesteś postrzegany na tle kategorii.
+Najprostszy sposób to ręczne odpytanie 10–20 zapytań z Twojej niszy w Perplexity i weryfikacja, czy Twoja domena pojawia się wśród przypisów. Możesz też użyć darmowego [Widoczność marki w AI](/narzedzia/brand-check/), który odpyta kilka silników AI o Twoją markę i pokaże, jak jesteś postrzegany na tle kategorii.
 
 ### Czym Spaces różnią się od zwykłych konwersacji?
 

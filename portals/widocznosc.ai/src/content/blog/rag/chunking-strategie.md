@@ -158,7 +158,7 @@ Trzy zasady, których łamanie najdrożej kosztuje:
 - **Ciągłość wielostronicowa** – tabela lub lista przechodząca między stronami PDF musi być scalona przez parser przed podziałem (chunkowaniem)
 - **Czyść powtarzalne elementy** – nagłówki stron, stopki i numery stron generują szum wektorowy; usuń je na etapie parsowania
 
-Jak to wygląda w potoku przetwarzania (ang. *pipeline*)? Mechanizm wyszukiwania w systemach RAG, który decyduje, co ostatecznie trafia do LLM, jest bezpośrednio zależny od jakości fragmentów – o tym, jak LLM-y następnie selekcjonują fragmenty do cytowania, piszemy w artykule o [cytowaniu źródeł przez LLM](/geo/jak-llm-cytuja-zrodla).
+Jak to wygląda w potoku przetwarzania (ang. *pipeline*)? Mechanizm wyszukiwania w systemach RAG, który decyduje, co ostatecznie trafia do LLM, jest bezpośrednio zależny od jakości fragmentów – o tym, jak LLM-y następnie selekcjonują fragmenty do cytowania, piszemy w artykule o [cytowaniu źródeł przez LLM](/geo/jak-llm-cytuja-zrodla/).
 
 ## Architektura potoku i diagnostyka błędów
 
@@ -178,7 +178,7 @@ Dwa sygnały diagnostyczne wskazujące na zbyt agresywne dzielenie:
 - **Skalowanie niszczy precyzję** – system działa poprawnie na 5 GB, ale precyzja gwałtownie spada po rozbudowie do 50 GB; granice fragmentów rozbijają powiązane pojęcia, generując szum przy dużej skali
 - **Reranker drastycznie poprawia retriever** – gdy model rerankujący mocno koryguje wyniki wyszukiwania wektorowego (retrievera), a sam retriever zwraca fragmenty tematycznie zbieżne, ale lokalnie puste; to symptom fragmentów za małych lub źle wyznaczonych granic
 
-Szczegółowo mechanizm rerankowania jako drugi stopień filtrowania opisujemy w artykule o [rerankingu w RAG](/rag/reranking).
+Szczegółowo mechanizm rerankowania jako drugi stopień filtrowania opisujemy w artykule o [rerankingu w RAG](/rag/reranking/).
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/michal-ziach.avif" alt="Michał Ziach" /></div>
@@ -215,6 +215,6 @@ param_grid = {
 
 Po wyborze konfiguracji uruchamiaj testy regresyjne po każdej zmianie w potoku (parsery, modele osadzające, schemat metadanych). Każda z tych zmian może przesunąć granice fragmentów na tyle, by wpłynąć na wyniki wyszukiwania.
 
-Jeśli budujesz system RAG od podstaw, [przewodnik po RAG](/rag/przewodnik) opisuje pełną architekturę – od akwizycji danych, przez wyszukiwanie, po generację – razem z checklistą gotowości produkcyjnej. Jakość osadzeń (embeddingów), które są podstawą wyszukiwania semantycznego, omawia artykuł o [embeddingach w RAG](/rag/embeddingi).
+Jeśli budujesz system RAG od podstaw, [przewodnik po RAG](/rag/przewodnik/) opisuje pełną architekturę – od akwizycji danych, przez wyszukiwanie, po generację – razem z checklistą gotowości produkcyjnej. Jakość osadzeń (embeddingów), które są podstawą wyszukiwania semantycznego, omawia artykuł o [embeddingach w RAG](/rag/embeddingi/).
 
-Jak Twoje treści wypadają pod kątem podzielności semantycznej? Narzędzie [Ocena cytowalności strony](/narzedzia/url-check) analizuje stronę pod kątem struktury i możliwości ekstrakcji fragmentów w 30 sekund.
+Jak Twoje treści wypadają pod kątem podzielności semantycznej? Narzędzie [Ocena cytowalności strony](/narzedzia/url-check/) analizuje stronę pod kątem struktury i możliwości ekstrakcji fragmentów w 30 sekund.

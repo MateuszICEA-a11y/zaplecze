@@ -29,7 +29,7 @@ const examples = [
           name: 'Analiza zapytań AI',
           applicationCategory: 'BusinessApplication',
           operatingSystem: 'Web',
-          url: `${siteUrl}/narzedzia/fanout`,
+          url: `${siteUrl}/narzedzia/fanout/`,
           description:
             'Bezpłatne narzędzie widocznosc.ai pokazujące, na jakie mniejsze pytania ChatGPT rozbija frazę i jakie domeny cytuje w odpowiedzi.',
           offers: {
@@ -67,7 +67,7 @@ const examples = [
     <section class="tool-hero">
       <div class="content-container tool-hero-inner">
         <nav class="tool-breadcrumb" aria-label="Ścieżka nawigacji">
-          <a href="/narzedzia" class="tool-breadcrumb-link">Narzędzia</a>
+          <a href="/narzedzia/" class="tool-breadcrumb-link">Narzędzia</a>
           <span class="tool-breadcrumb-sep" aria-hidden="true">/</span>
           <span class="tool-breadcrumb-current">Analiza zapytań AI</span>
         </nav>
@@ -630,15 +630,15 @@ const examples = [
         <section class="tool-next-steps" aria-labelledby="fanout-next-title">
           <h2 id="fanout-next-title" class="display-md">Co dalej?</h2>
           <div class="next-grid">
-            <a class="next-card" href="/narzedzia/brand-check">
+            <a class="next-card" href="/narzedzia/brand-check/">
               <span class="eyebrow">Marka w AI</span>
               <h3>Sprawdź, co modele wiedzą o Twojej firmie</h3>
             </a>
-            <a class="next-card" href="/geo/query-fan-out">
+            <a class="next-card" href="/geo/query-fan-out/">
               <span class="eyebrow">Czytaj</span>
               <h3>Jak działa Query Fan-out w ChatGPT</h3>
             </a>
-            <a class="next-card" href="/kontakt?type=audyt-ai">
+            <a class="next-card" href="/kontakt/?type=audyt-ai">
               <span class="eyebrow">Audyt AI</span>
               <h3>Zamów pełny audyt widoczności w AI</h3>
             </a>
@@ -685,7 +685,7 @@ const examples = [
         .join('');
       const remaining = data.usage?.remaining;
       const ctaHtml = Number.isFinite(remaining) && remaining <= 0
-        ? `<p class="fanout-cta"><a class="btn-primary" href="/kontakt">Chcesz pełny audyt widoczności w AI? Napisz do nas</a></p>`
+        ? `<p class="fanout-cta"><a class="btn-primary" href="/kontakt/">Chcesz pełny audyt widoczności w AI? Napisz do nas</a></p>`
         : Number.isFinite(remaining)
           ? `<p class="fanout-note">Pozostały Ci dziś ${escapeHtml(String(remaining))} zapytania.</p>`
           : '';

@@ -40,7 +40,7 @@ Poniższa tabela zestawia wybrane wdrożenia z mierzalnymi efektami:
 | Zalando | Silnik personalizacji i asystent stylizacji | +13% produktów w koszyku |
 | Spotify | AI DJ – spersonalizowane playlisty z komentarzem | 50 mln użytkowników w rok |
 
-Jeśli chcesz ocenić, czy Twoja marka jest gotowa do budowania takiej infrastruktury danych, [przewodnik po AI w biznesie](/ai-w-biznesie/przewodnik) opisuje kolejne kroki od audytu po wdrożenie.
+Jeśli chcesz ocenić, czy Twoja marka jest gotowa do budowania takiej infrastruktury danych, [przewodnik po AI w biznesie](/ai-w-biznesie/przewodnik/) opisuje kolejne kroki od audytu po wdrożenie.
 
 ## Widzenie komputerowe w sprzedaży – od wirtualnego przymierzania do autonomicznych sklepów
 
@@ -80,7 +80,7 @@ Nowoczesne systemy klasy Voice Analytics wychodzą poza prostą transkrypcję. B
   </div>
 </aside>
 
-W kontekście GEO warto zauważyć, że treści budujące autorytet marki w AI Search muszą być spójne z tym, co klienci mówią o niej w kanałach obsługi. Jeśli Twoja marka zbiera negatywne opinie w recenzjach i transkryptach, modele językowe wychwytują też te sygnały. Jak to zmierzyć, opisuje [pozycjonowanie AI](/pozycjonowanie-ai) – dyscyplina, która łączy klasyczne GEO z zarządzaniem percepcją marki w LLM-ach.
+W kontekście GEO warto zauważyć, że treści budujące autorytet marki w AI Search muszą być spójne z tym, co klienci mówią o niej w kanałach obsługi. Jeśli Twoja marka zbiera negatywne opinie w recenzjach i transkryptach, modele językowe wychwytują też te sygnały. Jak to zmierzyć, opisuje [pozycjonowanie AI](/pozycjonowanie-ai/) – dyscyplina, która łączy klasyczne GEO z zarządzaniem percepcją marki w LLM-ach.
 
 ## Programmatic buying i dynamiczne ceny – AI zarządza budżetem mediowym
 
@@ -98,7 +98,7 @@ Trzy zasady bezpiecznego wdrożenia dynamicznych cen:
 - **Komunikacja jako rabat, nie podwyżka** – klienci akceptują wahania cen, jeśli widzą promocję w godzinach niskiego popytu, a nie dopłatę w godzinach szczytu
 - **Ceny bezwzględne zamiast mnożników** – Uber potwierdził empirycznie, że zastąpienie mnożnika (np. „opłata x2,2") konkretną kwotą w złotych znacząco redukuje frustrację użytkowników
 
-Więcej o liczeniu zwrotu z inwestycji w te narzędzia znajdziesz w artykule o [ROI z AI](/ai-w-biznesie/roi-z-ai) – z metodologią wyliczania efektów dla różnych typów wdrożeń.
+Więcej o liczeniu zwrotu z inwestycji w te narzędzia znajdziesz w artykule o [ROI z AI](/ai-w-biznesie/roi-z-ai/) – z metodologią wyliczania efektów dla różnych typów wdrożeń.
 
 ## AI w marketingu a przetwarzanie języka naturalnego – granica jest cieńsza, niż myślisz
 
@@ -107,7 +107,7 @@ Większość narzędzi opisanych w tym artykule – analiza wydźwięku, chatbot
 Praktyczna konsekwencja: wdrożenia są bardziej modułowe, niż się wydaje. Jeśli masz już chatbota na stronie zbierającego dane z rozmów, masz też surowy materiał do analizy opinii i identyfikacji najczęstszych pytań klientów – co bezpośrednio przekłada się na tematy, które Twoja marka powinna poruszać.
 
 <aside class="callout-expert">
-  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.webp" alt="Mateusz Wiśniewski" /></div>
+  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.avif" alt="Mateusz Wiśniewski" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
     <p>W projektach, które prowadzę w ICEA, najczęstszy błąd to traktowanie AI w marketingu jako zestawu osobnych narzędzi – jedno do reklam, drugie do treści, trzecie do obsługi klienta. W praktyce dane z każdego z tych kanałów powinny zasilać jeden model decyzyjny. Firma, która połączy dane z contact center z danymi reklamowymi i historią zakupów, ma realną przewagę nad tą, która optymalizuje każdy kanał w izolacji. <strong>Zacznij od jednego źródła danych, które masz już dziś, i zapytaj: co AI może zrobić z tym, co już zebrałem?</strong></p>
@@ -123,7 +123,7 @@ Praktyczny punkt startowy dla zespołów marketingowych z ograniczonymi zasobami
 
 - **Analiza danych z istniejących kanałów** – zanim kupisz nowe narzędzie, sprawdź, czy Twój CRM lub platforma e-mailowa oferuje wbudowaną segmentację opartą na zachowaniu; wiele z nich ma funkcje AI ukryte w ustawieniach zaawansowanych
 - **Jeden test A/B z dynamiczną personalizacją** – wybierz jeden element komunikacji (np. temat e-maila lub kolejność produktów na stronie głównej) i przetestuj wariant generowany przez algorytm w porównaniu ze statycznym; mierz przez 4 tygodnie
-- **Monitorowanie wydźwięku z darmowych źródeł** – recenzje Google, komentarze w mediach społecznościowych, wyniki ankiet NPS to gotowy surowiec do analizy; narzędzia takie jak darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) pokażą Ci, jak marka jest postrzegana przez modele AI – co jest bezpośrednio powiązane z tym, jak algorytmy rekomendacji ją kategoryzują
+- **Monitorowanie wydźwięku z darmowych źródeł** – recenzje Google, komentarze w mediach społecznościowych, wyniki ankiet NPS to gotowy surowiec do analizy; narzędzia takie jak darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) pokażą Ci, jak marka jest postrzegana przez modele AI – co jest bezpośrednio powiązane z tym, jak algorytmy rekomendacji ją kategoryzują
 - **Audyt danych przed zakupem platformy** – najczęstszy błąd to zakup zaawansowanego systemu AI bez danych historycznych; silnik rekomendacji bez minimum 6 miesięcy historii transakcji działa jak nowa wyszukiwarka bez indeksu
 
-Szczegółowy opis pierwszych kroków – od wyboru narzędzi po harmonogram wdrożenia – znajdziesz w artykule o [AI w sprzedaży](/ai-w-biznesie/ai-w-sprzedazy), który skupia się na obszarach bezpośrednio napędzających przychód.
+Szczegółowy opis pierwszych kroków – od wyboru narzędzi po harmonogram wdrożenia – znajdziesz w artykule o [AI w sprzedaży](/ai-w-biznesie/ai-w-sprzedazy/), który skupia się na obszarach bezpośrednio napędzających przychód.

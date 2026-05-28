@@ -8,7 +8,7 @@ icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.
 author:
   name: 'Mateusz Wiśniewski'
   role: 'Ekspert SEO/AI Search · ICEA'
-  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
+  avatar: ../../../assets/images/authors/mateusz-wisniewski.avif
 readTime: '16 min'
 tags: ['Agenci AI', 'AI Agents', 'Automatyzacja', 'LLM']
 pillar: 'agenci-ai'
@@ -97,7 +97,7 @@ Architektura MCP składa się z trzech komponentów:
 
 Warto wiedzieć o jednym ograniczeniu. Wdrożenia MCP w 2026 roku ujawniły podatność na tzw. *tool poisoning* – złośliwy serwer MCP może po autoryzacji zmodyfikować definicję narzędzia. To wymaga weryfikacji wszystkich zewnętrznych serwerów MCP przed podłączeniem do systemu produkcyjnego.
 
-Więcej o architekturze agentów i budowaniu systemów wieloagentowych znajdziesz w artykule o [anatomii agenta](/agenci-ai/anatomia-agenta).
+Więcej o architekturze agentów i budowaniu systemów wieloagentowych znajdziesz w artykule o [anatomii agenta](/agenci-ai/anatomia-agenta/).
 
 ## Frameworki programistyczne – przegląd ekosystemu 2026
 
@@ -141,7 +141,7 @@ Wdrożenie systemu agentowego opartego na LangGraph u klienta przetwarzającego 
 
 Agent zakupowy analizuje wewnętrzne priorytety kosztowe, przeszukuje bazy dostawców, pobiera oferty z plików PDF, e-maili i portali, porównuje warunki płatności i generuje rekomendację w ciągu kilku minut. Wartość nie polega na eliminacji człowieka z procesu – lecz na tym, że człowiek dostaje gotową analizę porównawczą, zamiast tracić czas na jej przygotowanie.
 
-Jeśli chcesz zobaczyć, jak Twoja marka jest postrzegana przez AI w kontekście konkretnych usług, darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI i pokaże, gdzie jesteś cytowany – a gdzie Twoja konkurencja zajmuje Twoje miejsce.
+Jeśli chcesz zobaczyć, jak Twoja marka jest postrzegana przez AI w kontekście konkretnych usług, darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) odpyta cztery silniki AI i pokaże, gdzie jesteś cytowany – a gdzie Twoja konkurencja zajmuje Twoje miejsce.
 
 ## Bezpieczeństwo i zarządzanie ryzykiem w systemach agentowych
 
@@ -171,11 +171,11 @@ Systemy agentowe nie działają w izolacji. Zrozumienie, jak agent współpracuj
 
 **Agenci AI najczęściej łączą się z systemami RAG (Retrieval-Augmented Generation, czyli generowania wspomaganego wyszukiwaniem), aby mieć dostęp do aktualnej i wyspecjalizowanej wiedzy bez konieczności ponownego trenowania modelu.** Agent odpytuje bazę wiedzy przez warstwę RAG, pobiera odpowiednie fragmenty i wbudowuje je w kontekst przed podjęciem decyzji. To standardowy wzorzec przy wdrożeniach enterprise, gdzie wiedza firmowa zmienia się zbyt szybko, żeby nadążać regularnym fine-tuningiem.
 
-Modele bazowe mają kluczowe znaczenie przy wyborze agenta. Mocniejszy model wnioskujący – lepsze planowanie, mniej błędów przy rozgałęzieniach logicznych. Ale też wyższy koszt tokenów przy każdym wywołaniu. W praktyce systemy wieloagentowe łączą mocny model w roli orkiestratora z tańszymi, wyspecjalizowanymi modelami dla powtarzalnych podzadań. Przegląd modeli bazowych i ich parametrów znajdziesz w przewodniku po [modelach LLM](/modele-llm/przewodnik).
+Modele bazowe mają kluczowe znaczenie przy wyborze agenta. Mocniejszy model wnioskujący – lepsze planowanie, mniej błędów przy rozgałęzieniach logicznych. Ale też wyższy koszt tokenów przy każdym wywołaniu. W praktyce systemy wieloagentowe łączą mocny model w roli orkiestratora z tańszymi, wyspecjalizowanymi modelami dla powtarzalnych podzadań. Przegląd modeli bazowych i ich parametrów znajdziesz w przewodniku po [modelach LLM](/modele-llm/przewodnik/).
 
-Jakość danych, z których korzysta agent, bezpośrednio determinuje jakość wyników. Słabo ustrukturyzowana baza wiedzy, niespójne metadane, zduplikowane dokumenty – agent nie naprawia tych problemów, tylko je eksponuje. Przed wdrożeniem systemu agentowego warto przejrzeć fundamenty warstwy RAG. Szczegółowo opisuje je [przewodnik po RAG](/rag/przewodnik).
+Jakość danych, z których korzysta agent, bezpośrednio determinuje jakość wyników. Słabo ustrukturyzowana baza wiedzy, niespójne metadane, zduplikowane dokumenty – agent nie naprawia tych problemów, tylko je eksponuje. Przed wdrożeniem systemu agentowego warto przejrzeć fundamenty warstwy RAG. Szczegółowo opisuje je [przewodnik po RAG](/rag/przewodnik/).
 
-Wreszcie: tworzenie systemów agentowych zaczyna się od dobrze zaprojektowanego promptu systemowego. Słaby prompt systemowy to słaby agent – model nie wie, jaką pełni rolę, jakie ma uprawnienia i kiedy prosić człowieka o potwierdzenie. Zasady inżynierii promptów dla systemów agentowych omawia [przewodnik po promptach](/prompty/przewodnik).
+Wreszcie: tworzenie systemów agentowych zaczyna się od dobrze zaprojektowanego promptu systemowego. Słaby prompt systemowy to słaby agent – model nie wie, jaką pełni rolę, jakie ma uprawnienia i kiedy prosić człowieka o potwierdzenie. Zasady inżynierii promptów dla systemów agentowych omawia [przewodnik po promptach](/prompty/przewodnik/).
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/michal-ziach.avif" alt="Michał Ziach" /></div>

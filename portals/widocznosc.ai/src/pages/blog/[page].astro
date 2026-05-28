@@ -62,7 +62,7 @@ const formatDate = (date: Date) =>
         headline: post.data.title,
         description: post.data.description || post.data.subtitle,
         datePublished: post.data.date.toISOString(),
-        url: `${siteUrl}/${post.id}`,
+        url: `${siteUrl}/${post.id}/`,
         image: `${siteUrl}${post.data.image.src}`,
       })),
     })}
@@ -89,7 +89,7 @@ const formatDate = (date: Date) =>
         <div class="blog-grid">
           {
             pagePosts.map((post) => (
-              <a href={`/${post.id}`} class="post-card" data-category={post.data.pillar}>
+              <a href={`/${post.id}/`} class="post-card" data-category={post.data.pillar}>
                 <div class="post-card-image">
                   <Image
                     src={post.data.image}

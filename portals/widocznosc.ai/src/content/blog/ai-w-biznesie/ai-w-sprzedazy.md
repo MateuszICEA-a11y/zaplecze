@@ -46,7 +46,7 @@ Wybór narzędzia zależy od skali operacji i gotowości technicznej zespołu. P
 
 Sama technologia nie wystarczy. **Przed wdrożeniem scoringu zadbaj o higienę danych w CRM – duplikaty, puste pola i błędne przypisania branż bezpośrednio obniżają jakość i skuteczność działania modelu.** Pierwsze mierzalne korzyści pojawiają się po kilku miesiącach; pełna transformacja procesowa to horyzont 2–3 lat systematycznej pracy.
 
-Jeśli chcesz porównać, jak Twoja marka wypada w kontekście AI i sprzedaży B2B, darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) w kilkadziesiąt sekund pokaże, jak jesteś postrzegany przez cztery silniki AI.
+Jeśli chcesz porównać, jak Twoja marka wypada w kontekście AI i sprzedaży B2B, darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) w kilkadziesiąt sekund pokaże, jak jesteś postrzegany przez cztery silniki AI.
 
 ![Ścieżka AI w sprzedaży – od predykcyjnego lead scoringu przez priorytetyzację leadów i asystenta handlowego po analizę rozmów (Conversation Intelligence)](../../../assets/images/infographic-ai-w-biznesie-ai-w-sprzedazy.png)
 
@@ -84,7 +84,7 @@ Trzy scenariusze, w których analityka konwersacyjna zwraca się najszybciej:
 - **Powtarzalne obiekcje** – system identyfikuje, że w 40% rozmów pojawia się ten sam zarzut dotyczący ceny; to wyraźny sygnał do przebudowy prezentacji sprzedażowej (tzw. pitch decka)
 - **Onboarding nowych handlowców** – nowi pracownicy uczą się na transkrypcjach najlepszych rozmów, znacznie skracając czas własnego wdrożenia (ramp-up)
 
-Więcej o tym, jak AI przetwarza dane klientów i gdzie kończy się automatyzacja, a zaczyna rola człowieka, znajdziesz w przewodniku po [AI w obsłudze klienta](/ai-w-biznesie/ai-w-obsludze-klienta).
+Więcej o tym, jak AI przetwarza dane klientów i gdzie kończy się automatyzacja, a zaczyna rola człowieka, znajdziesz w przewodniku po [AI w obsłudze klienta](/ai-w-biznesie/ai-w-obsludze-klienta/).
 
 ## Polskie wdrożenia – co działa na lokalnym rynku
 
@@ -101,7 +101,7 @@ Studia przypadków z polskiego rynku potwierdzają, że efekty są wymierne:
 To nie są wyniki z pilotażowych środowisk testowych. To wdrożenia produkcyjne.
 
 <aside class="callout-expert">
-  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.webp" alt="Mateusz Wiśniewski" /></div>
+  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.avif" alt="Mateusz Wiśniewski" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
     <p>W projektach, które realizuję w ICEA, najczęstszy błąd to wdrażanie scoringu AI na brudnych danych CRM. Firmy spędzają tygodnie na konfiguracji modelu, a on i tak zwraca bezwartościowe dane, bo połowa rekordów ma puste pole „branża" albo trzy różne wersje nazwy tej samej firmy. <strong>Zanim zaczniesz rozmawiać z dostawcą platformy AI, zleć audyt danych CRM – to właśnie on decyduje o tym, czy wdrożenie zwróci się po 6 miesiącach, czy po 3 latach.</strong></p>
@@ -121,4 +121,4 @@ Trzy rzeczy, o które musisz zadbać przed startem produkcyjnym:
 
 Kary mogą się kumulować: do 7% obrotu za naruszenia AI Act plus do 4% za naruszenia RODO. Ignorowanie compliance to nie ryzyko abstrakcyjne – to konkretna ekspozycja finansowa.
 
-Szerszy kontekst o tym, jak AI wpływa na strategie marketingowe i widoczność marek, opisuje przewodnik po [AI w marketingu](/ai-w-biznesie/ai-w-marketingu). Jeśli chcesz zrozumieć techniczne podstawy modeli, które napędzają te systemy, warto zacząć od [przewodnika po modelach LLM](/modele-llm/przewodnik) – to fundament, na którym stoi cała warstwa aplikacji sprzedażowych.
+Szerszy kontekst o tym, jak AI wpływa na strategie marketingowe i widoczność marek, opisuje przewodnik po [AI w marketingu](/ai-w-biznesie/ai-w-marketingu/). Jeśli chcesz zrozumieć techniczne podstawy modeli, które napędzają te systemy, warto zacząć od [przewodnika po modelach LLM](/modele-llm/przewodnik/) – to fundament, na którym stoi cała warstwa aplikacji sprzedażowych.

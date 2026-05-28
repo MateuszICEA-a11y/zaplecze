@@ -79,7 +79,7 @@ Semrush AIO i Profound operują w zupełnie innej lidze niż reszta tabeli – i
 
 Profound koncentruje się na innym problemie – weryfikacji źródeł. Jego silnik Citation Provenance Engine identyfikuje ze 100-procentową dokładnością, które konkretne adresy URL posłużyły modelowi jako podstawa do opisu Twojej marki. W sektorach takich jak finanse, ubezpieczenia czy ochrona zdrowia, gdzie nieprecyzyjna odpowiedź AI może naruszać przepisy, ta funkcja ma wymierną wartość prawną.
 
-Przed wyborem platformy enterprise warto najpierw zrozumieć aktualny stan widoczności marki – [audyt widoczności marki](/geo/audyt-widocznosci-marki) pokazuje, od czego zacząć i jakie dane są potrzebne, by uzasadnić zakup droższego narzędzia.
+Przed wyborem platformy enterprise warto najpierw zrozumieć aktualny stan widoczności marki – [audyt widoczności marki](/geo/audyt-widocznosci-marki/) pokazuje, od czego zacząć i jakie dane są potrzebne, by uzasadnić zakup droższego narzędzia.
 
 ## Narzędzia do e-commerce – Hall AI i jego warstwa crawlerów
 
@@ -95,7 +95,7 @@ Brand24 rozwiązuje inny problem niż pozostałe narzędzia: bada nie tylko to, 
 
 To podejście ma logiczne uzasadnienie: wątki na Reddicie, recenzje na G2 czy artykuły eksperckie na Forbesie to bezpośrednie źródła, z których Perplexity czerpie informacje przy udzielaniu odpowiedzi. Jeśli Brand24 wskazuje, że konkretny wątek na Reddicie jest cytowany przez AI, to sygnał, że warto zainwestować w budowanie obecności właśnie tam.
 
-**Mechanizm Influential Creator Discovery identyfikuje konkretnych autorów i wątki, na które bezpośrednio powołują się modele AI.** To narzędzie do precyzyjnego docierania do liderów opinii kształtujących bazy wiedzy LLM, a nie do masowych kampanii influencer marketingowych. Zrozumienie, jak modele AI decydują o cytowaniu źródeł, jest kluczowe – szczegółowo opisuje to artykuł o tym, [jak LLM cytują źródła](/geo/jak-llm-cytuja-zrodla).
+**Mechanizm Influential Creator Discovery identyfikuje konkretnych autorów i wątki, na które bezpośrednio powołują się modele AI.** To narzędzie do precyzyjnego docierania do liderów opinii kształtujących bazy wiedzy LLM, a nie do masowych kampanii influencer marketingowych. Zrozumienie, jak modele AI decydują o cytowaniu źródeł, jest kluczowe – szczegółowo opisuje to artykuł o tym, [jak LLM cytują źródła](/geo/jak-llm-cytuja-zrodla/).
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/tomasz-czechowski.avif" alt="Tomasz Czechowski" /></div>
@@ -119,7 +119,7 @@ Kilka wskazówek, jak dokonać wyboru między nimi:
 
 **Wspólne ograniczenie wszystkich budżetowych narzędzi to brak technicznej analizy struktury kodu i danych schema.org.** Powiedzą Ci, że Twoja marka nie jest cytowana, ale nie wskażą, dlaczego konkretna podstrona jest pomijana przez boty AI.
 
-Zanim sięgniesz po płatną platformę, przetestuj punkt startowy: darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI o Twoją markę i pokaże, jak jest ona opisywana na tle kategorii – bez rejestracji, w minutę. To wystarczy, żeby ocenić skalę problemu i zdecydować, który pakiet narzędzi jest uzasadniony.
+Zanim sięgniesz po płatną platformę, przetestuj punkt startowy: darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) odpyta cztery silniki AI o Twoją markę i pokaże, jak jest ona opisywana na tle kategorii – bez rejestracji, w minutę. To wystarczy, żeby ocenić skalę problemu i zdecydować, który pakiet narzędzi jest uzasadniony.
 
 ## Jak wdrożyć monitoring krok po kroku
 
@@ -131,6 +131,6 @@ Trzy kategorie zapytań, które warto zdefiniować na start:
 - **Zapytania porównawcze** – bezpośrednie zestawienia z konkurentami (np. „[Twoja marka] vs [konkurent] – co wybrać?"); tu najczęściej pojawiają się błędy merytoryczne.
 - **Zapytania brandowe** – pytania wprost o markę lub produkt (np. „co to jest [Twoja marka]?", „ile kosztuje [produkt X]?"); bazowy test tego, co modele wiedzą.
 
-Uruchamiaj każdy prompt minimum dwa razy przy jednorazowym audycie, a w monitoringu ciągłym – raz w tygodniu na tym samym zestawie. Wyniki zapisuj z datą, żebyś po 6 tygodniach mógł ocenić trend. Pełny kontekst strategiczny, w jakim monitoring wzmianek wpisuje się w GEO, opisuje artykuł o [zwrocie z inwestycji w GEO](/geo/roi-z-geo) – z metodologią mierzenia efektów w czasie.
+Uruchamiaj każdy prompt minimum dwa razy przy jednorazowym audycie, a w monitoringu ciągłym – raz w tygodniu na tym samym zestawie. Wyniki zapisuj z datą, żebyś po 6 tygodniach mógł ocenić trend. Pełny kontekst strategiczny, w jakim monitoring wzmianek wpisuje się w GEO, opisuje artykuł o [zwrocie z inwestycji w GEO](/geo/roi-z-geo/) – z metodologią mierzenia efektów w czasie.
 
-Jeśli monitoring wykaże niską widoczność, następnym krokiem jest zrozumienie, skąd model czerpie informacje o Twojej kategorii. Punkt wyjścia to [przewodnik GEO](/geo/przewodnik) – pełna mapa dyscypliny z sześciomiesięcznym planem wdrożenia.
+Jeśli monitoring wykaże niską widoczność, następnym krokiem jest zrozumienie, skąd model czerpie informacje o Twojej kategorii. Punkt wyjścia to [przewodnik GEO](/geo/przewodnik/) – pełna mapa dyscypliny z sześciomiesięcznym planem wdrożenia.

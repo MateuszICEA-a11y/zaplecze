@@ -72,7 +72,7 @@ const formatDate = (date: Date) =>
       featuredPost && (
         <section class="blog-featured-section">
           <div class="blog-featured-container">
-            <a href={`/${featuredPost.id}`} class={`blog-featured blog-featured--${pillar}`}>
+            <a href={`/${featuredPost.id}/`} class={`blog-featured blog-featured--${pillar}`}>
               <div class="blog-featured-image">
                 <Image
                   src={featuredPost.data.image}
@@ -113,7 +113,7 @@ const formatDate = (date: Date) =>
 
             <div class="blog-grid">
               {gridPosts.map((post) => (
-                <a href={`/${post.id}`} class="post-card" data-category={post.data.pillar}>
+                <a href={`/${post.id}/`} class="post-card" data-category={post.data.pillar}>
                   <div class="post-card-image">
                     <Image
                       src={post.data.image}

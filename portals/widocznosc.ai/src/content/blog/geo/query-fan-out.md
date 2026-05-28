@@ -8,7 +8,7 @@ icon: '<circle cx="5" cy="5" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx
 author:
   name: 'Mateusz Wiśniewski'
   role: 'Ekspert SEO/AI Search · ICEA'
-  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
+  avatar: ../../../assets/images/authors/mateusz-wisniewski.avif
 readTime: '11 min'
 tags: ['AI Search', 'Google AI Mode', 'Query Fan-out', 'GEO']
 pillar: 'geo'
@@ -110,7 +110,7 @@ Każdy ważny fakt umieść w samodzielnym akapicie z wyraźnym kontekstem. AI n
 Listy *„najlepszych X"*, porównania *„marka X vs Y"*, rankingi i sekcje FAQ to formaty optymalne pod query fan-out. Każdy element listy lub para porównawcza tworzy gotowy mini-fragment, który pasuje pod konkretne podzapytanie. Artykuł *„10 najlepszych CRM-ów dla zespołów do 10 osób"* z 10 sekcjami po 200 słów to **10 osobnych fragmentów konkurujących o miejsce w odpowiedzi AI**.
 
 <aside class="callout-expert">
-  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.webp" alt="Mateusz Wiśniewski" /></div>
+  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.avif" alt="Mateusz Wiśniewski" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
     <p>Najszybszy efekt w pierwszych 30 dniach po audycie daje odświeżenie trzech najsilniejszych artykułów na blogu klienta – dodanie do nich 5–8 nagłówków H3 odpowiadających na konkretne podzapytania z mapy fan-out. Nie nowy content, nie linkowanie, nie dane strukturalne (schema). Po prostu dopisanie 800–1200 słów ustrukturyzowanych i podzielonych na fragmenty. W dwóch projektach SaaS B2B zaobserwowaliśmy w ten sposób wzrost cytowań o 40–60% w ciągu 3 tygodni.</p>
@@ -140,4 +140,4 @@ W praktyce oznacza to, że content tworzony pod klasyczne SEO – długie wprowa
 
 W audycie widoczności AI w ICEA jednym z pierwszych kroków jest inżynieria wsteczna (reverse engineering) dla 30–50 priorytetowych pytań w Twojej branży. Jej wynik to mapa pokrycia – konkretne podzapytania, na które już udzielasz odpowiedzi, te, na które odpowiada konkurencja, oraz takie, których nie obsługuje jeszcze nikt. Te ostatnie to białe plamy, które powinieneś zająć jako pierwszy.
 
-Jeśli chcesz zobaczyć, jak Twoja strona wypada pod kątem query fan-out dla zapytań Twoich klientów, przetestuj ją darmowym [Ocena cytowalności strony](/narzedzia/url-check) – analizujemy strukturę fragmentów, wczesne sygnalizowanie kluczowych informacji i pokrycie tematyczne według tych samych zasad, których używa silnik pobierający dane Google.
+Jeśli chcesz zobaczyć, jak Twoja strona wypada pod kątem query fan-out dla zapytań Twoich klientów, przetestuj ją darmowym [Ocena cytowalności strony](/narzedzia/url-check/) – analizujemy strukturę fragmentów, wczesne sygnalizowanie kluczowych informacji i pokrycie tematyczne według tych samych zasad, których używa silnik pobierający dane Google.

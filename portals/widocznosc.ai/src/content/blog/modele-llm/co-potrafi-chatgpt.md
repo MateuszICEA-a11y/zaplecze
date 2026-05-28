@@ -80,7 +80,7 @@ Cztery elementy dobrego promptu:
 
 Prompty bez kontekstu generują odpowiedzi ogólne i często bezużyteczne. Jeśli napiszesz „napisz mi post o marketingu” – dostaniesz szablon. Jeśli napiszesz „jesteś dyrektorem marketingu w firmie SaaS B2B, napisz post na LinkedIn skierowany do dyrektorów sprzedaży o tym, jak AI skraca cykl sprzedaży; maksymalnie 150 słów, ton ekspercki, ale nie akademicki” – dostaniesz gotowy materiał.
 
-**Szczegółowy przewodnik po technikach promptowania – z przykładami łańcucha myśli (chain-of-thought) i uczenia na kilku przykładach (few-shot prompting) – znajdziesz w naszym [przewodniku po promptach](/prompty/przewodnik).**
+**Szczegółowy przewodnik po technikach promptowania – z przykładami łańcucha myśli (chain-of-thought) i uczenia na kilku przykładach (few-shot prompting) – znajdziesz w naszym [przewodniku po promptach](/prompty/przewodnik/).**
 
 ### Iteracja i kontynuacja rozmowy
 
@@ -125,7 +125,7 @@ Trzy obszary, w których błędy pojawiają się najczęściej:
 - **Matematyka i wieloetapowe wnioskowanie** – podstawowe obliczenia model wykonuje sprawnie, ale złożone wywody matematyczne mogą zawierać błędy; dla pewności używaj Code Interpretera
 - **Cytowania i źródła** – model może podać tytuł artykułu lub autora, który nie istnieje; jeśli potrzebujesz przypisów bibliograficznych, zawsze weryfikuj każde źródło ręcznie
 
-Jeśli pamiętasz o tych ograniczeniach, ChatGPT pozostaje potężnym narzędziem – pod warunkiem, że traktujesz jego wyniki jako punkt wyjścia, a nie jako pewnik. W kontekście pracy SEO i budowania widoczności marki w wyszukiwarkach AI warto zrozumieć, jak modele takie jak ChatGPT selekcjonują i cytują treści – szczegółowo opisuje to nasz [przewodnik po modelu ChatGPT](/modele-llm/chatgpt) od strony technicznej.
+Jeśli pamiętasz o tych ograniczeniach, ChatGPT pozostaje potężnym narzędziem – pod warunkiem, że traktujesz jego wyniki jako punkt wyjścia, a nie jako pewnik. W kontekście pracy SEO i budowania widoczności marki w wyszukiwarkach AI warto zrozumieć, jak modele takie jak ChatGPT selekcjonują i cytują treści – szczegółowo opisuje to nasz [przewodnik po modelu ChatGPT](/modele-llm/chatgpt/) od strony technicznej.
 
 ## ChatGPT a inne modele – krótkie porównanie
 
@@ -138,9 +138,9 @@ Na rynku działają inne duże modele językowe (LLM – Large Language Model) o
 | Gemini | Google | Integracja z Google Workspace, wyszukiwanie w czasie rzeczywistym | Analiza danych z arkuszy, research |
 | Copilot | Microsoft | Wbudowany w Microsoft 365 i Edge | Praca w środowisku MS |
 
-**Większość profesjonalnych zastosowań nie wymaga wyboru – możesz korzystać z kilku modeli jednocześnie, dobierając narzędzie do zadania.** Porównanie możliwości ChatGPT i Claude w praktycznych zadaniach SEO znajdziesz w artykule o [modelu Claude](/modele-llm/claude).
+**Większość profesjonalnych zastosowań nie wymaga wyboru – możesz korzystać z kilku modeli jednocześnie, dobierając narzędzie do zadania.** Porównanie możliwości ChatGPT i Claude w praktycznych zadaniach SEO znajdziesz w artykule o [modelu Claude](/modele-llm/claude/).
 
-Jeśli chcesz sprawdzić, jak ChatGPT widzi i opisuje Twoją markę lub domenę w kontekście branżowym, [Widoczność marki w AI](/narzedzia/brand-check) przeanalizuje zapytania w czterech silnikach AI i pokaże Ci obraz Twojej widoczności bez konieczności ręcznego testowania.
+Jeśli chcesz sprawdzić, jak ChatGPT widzi i opisuje Twoją markę lub domenę w kontekście branżowym, [Widoczność marki w AI](/narzedzia/brand-check/) przeanalizuje zapytania w czterech silnikach AI i pokaże Ci obraz Twojej widoczności bez konieczności ręcznego testowania.
 
 ## Często zadawane pytania o ChatGPT
 

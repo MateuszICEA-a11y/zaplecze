@@ -29,7 +29,7 @@ export const AI_MODELS: AIModel[] = [
     slug: 'chatgpt',
     name: 'ChatGPT',
     vendor: 'OpenAI',
-    href: '/pozycjonowanie-ai/chatgpt',
+    href: '/pozycjonowanie-ai/chatgpt/',
     keyword: 'pozycjonowanie w chatgpt',
     keywordVolume: 140,
     shortDesc:
@@ -40,7 +40,7 @@ export const AI_MODELS: AIModel[] = [
     slug: 'claude',
     name: 'Claude',
     vendor: 'Anthropic',
-    href: '/pozycjonowanie-ai/claude',
+    href: '/pozycjonowanie-ai/claude/',
     keyword: 'pozycjonowanie w claude',
     keywordVolume: 30,
     shortDesc:
@@ -51,7 +51,7 @@ export const AI_MODELS: AIModel[] = [
     slug: 'gemini',
     name: 'Gemini',
     vendor: 'Google',
-    href: '/pozycjonowanie-ai/gemini',
+    href: '/pozycjonowanie-ai/gemini/',
     keyword: 'pozycjonowanie w gemini',
     keywordVolume: 50,
     shortDesc:
@@ -62,7 +62,7 @@ export const AI_MODELS: AIModel[] = [
     slug: 'perplexity',
     name: 'Perplexity',
     vendor: 'Perplexity AI',
-    href: '/pozycjonowanie-ai/perplexity',
+    href: '/pozycjonowanie-ai/perplexity/',
     keyword: 'pozycjonowanie w perplexity',
     keywordVolume: 40,
     shortDesc:
@@ -73,7 +73,7 @@ export const AI_MODELS: AIModel[] = [
     slug: 'bing-copilot',
     name: 'Bing Copilot',
     vendor: 'Microsoft',
-    href: '/pozycjonowanie-ai/bing-copilot',
+    href: '/pozycjonowanie-ai/bing-copilot/',
     keyword: 'pozycjonowanie w bing copilot',
     keywordVolume: 20,
     shortDesc:
@@ -87,24 +87,24 @@ export const SERVICES = [
     slug: 'audyt',
     label: 'Audyt widoczności',
     desc: 'Skan w 5 modelach AI',
-    href: '/pozycjonowanie-ai#audyt',
+    href: '/pozycjonowanie-ai/#audyt',
   },
   {
     slug: 'content',
     label: 'Optymalizacja contentu',
     desc: 'Pisanie pod LLM',
-    href: '/pozycjonowanie-ai#content',
+    href: '/pozycjonowanie-ai/#content',
   },
   {
     slug: 'monitoring',
     label: 'Monitoring cytowań',
     desc: 'Tracking wzmianek marki',
-    href: '/pozycjonowanie-ai#monitoring',
+    href: '/pozycjonowanie-ai/#monitoring',
   },
   {
     slug: 'strategia',
     label: 'Strategia GEO',
     desc: 'Plan widoczności 12 mies.',
-    href: '/pozycjonowanie-ai#strategia',
+    href: '/pozycjonowanie-ai/#strategia',
   },
 ];

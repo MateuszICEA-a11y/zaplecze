@@ -155,7 +155,7 @@ To podejście szczególnie dobrze sprawdza się przy ocenie strategii, gdzie ist
 
 ReAct (od „Reason and Act", czyli wnioskuj i działaj) to paradygmat, w którym model na przemian rozumuje i wykonuje akcje (wywołuje narzędzia, przeszukuje bazy danych, odpytuje API). Każdy krok wygląda tak: model analizuje stan, decyduje o akcji, wykonuje ją, odbiera wynik i planuje kolejny krok.
 
-W praktyce marketerskiej ReAct to agent AI, który na Twoje polecenie „przeanalizuj widoczność marki w LLM" samodzielnie: odpytuje narzędzie do monitoringu, pobiera dane, przetwarza je i generuje raport – bez Twojego udziału na każdym etapie. Wzorzec do budowania takich agentów opisuje osobny artykuł o [agentach AI](/agenci-ai/przewodnik).
+W praktyce marketerskiej ReAct to agent AI, który na Twoje polecenie „przeanalizuj widoczność marki w LLM" samodzielnie: odpytuje narzędzie do monitoringu, pobiera dane, przetwarza je i generuje raport – bez Twojego udziału na każdym etapie. Wzorzec do budowania takich agentów opisuje osobny artykuł o [agentach AI](/agenci-ai/przewodnik/).
 
 ### Meta-prompting – model projektuje swój własny prompt
 
@@ -277,7 +277,7 @@ Zestawienie kluczowych różnic między popularnymi modelami:
 | Gemini Pro | Dane multimodalne, kod | Analityczny, struktura Markdown | Dane kontekstowe umieszczaj przed instrukcją |
 | Llama 3 (open source) | Koszt, prywatność danych | Wymaga precyzyjnych szablonów | Few-shot obowiązkowy dla niestandardowych formatów |
 
-Szczegółowe porównanie możliwości tych modeli, w tym parametry techniczne i okna kontekstowe, zawiera artykuł o [modelach LLM](/modele-llm/przewodnik). Dla codziennej pracy z ChatGPT konkretny poradnik znajdziesz w artykule o [ChatGPT dla SEO](/modele-llm/chatgpt).
+Szczegółowe porównanie możliwości tych modeli, w tym parametry techniczne i okna kontekstowe, zawiera artykuł o [modelach LLM](/modele-llm/przewodnik/). Dla codziennej pracy z ChatGPT konkretny poradnik znajdziesz w artykule o [ChatGPT dla SEO](/modele-llm/chatgpt/).
 
 ### Modele z rozszerzonym wnioskowaniem
 
@@ -299,7 +299,7 @@ Proces optymalizacji, który daje powtarzalne wyniki:
 
 Zmiana jednego elementu naraz to klucz. Jeśli zmienisz trzy rzeczy jednocześnie i wynik się poprawi, nie wiesz, która zmiana pomogła – i przy następnej iteracji jesteś z powrotem w ciemno.
 
-Jeśli chcesz sprawdzić, jak treści generowane z pomocą LLM wypadają pod kątem cytowalności przez wyszukiwarki AI, [Ocena cytowalności strony](/narzedzia/url-check) analizuje strukturę strony pod kątem kluczowych czynników w kilkadziesiąt sekund.
+Jeśli chcesz sprawdzić, jak treści generowane z pomocą LLM wypadają pod kątem cytowalności przez wyszukiwarki AI, [Ocena cytowalności strony](/narzedzia/url-check/) analizuje strukturę strony pod kątem kluczowych czynników w kilkadziesiąt sekund.
 
 Kilka sygnałów, że prompt wymaga poprawy:
 

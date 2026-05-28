@@ -16,7 +16,7 @@ intent: 'INFO'
 level: 'L1'
 ---
 
-Microsoft Copilot nie jest prostym chatbotem doklejonym do pakietu biurowego. To wielowarstwowa platforma oparta na [dużych modelach językowych](https://pl.wikipedia.org/wiki/Du%C5%BCy_model_j%C4%99zykowy) (LLM – Large Language Model), która integruje wnioskowanie AI z danymi korporacyjnymi, systemem operacyjnym Windows i środowiskiem programistycznym GitHub. W 2026 roku ekosystem Copilota obejmuje co najmniej cztery odrębne produkty – Copilot for Microsoft 365, Copilot w Windows 11, GitHub Copilot i Copilot Studio – a każdy z nich działa według nieco innej logiki. Jeśli szukasz szerszego kontekstu rynkowego, [przewodnik po modelach LLM](/modele-llm/przewodnik) zestawia usługę Copilot z innymi platformami AI dostępnymi dla firm. Poniższy artykuł wyjaśnia, jak działa każde z tych rozwiązań, czym się od siebie różnią i kiedy ich wdrożenie ma uzasadnienie finansowe.
+Microsoft Copilot nie jest prostym chatbotem doklejonym do pakietu biurowego. To wielowarstwowa platforma oparta na [dużych modelach językowych](https://pl.wikipedia.org/wiki/Du%C5%BCy_model_j%C4%99zykowy) (LLM – Large Language Model), która integruje wnioskowanie AI z danymi korporacyjnymi, systemem operacyjnym Windows i środowiskiem programistycznym GitHub. W 2026 roku ekosystem Copilota obejmuje co najmniej cztery odrębne produkty – Copilot for Microsoft 365, Copilot w Windows 11, GitHub Copilot i Copilot Studio – a każdy z nich działa według nieco innej logiki. Jeśli szukasz szerszego kontekstu rynkowego, [przewodnik po modelach LLM](/modele-llm/przewodnik/) zestawia usługę Copilot z innymi platformami AI dostępnymi dla firm. Poniższy artykuł wyjaśnia, jak działa każde z tych rozwiązań, czym się od siebie różnią i kiedy ich wdrożenie ma uzasadnienie finansowe.
 
 ## Czym jest Microsoft Copilot i jak działa jego architektura
 
@@ -82,7 +82,7 @@ W 2026 roku Microsoft określa Windows z Copilotem mianem Agentic OS – systemu
 
 Każda z tych funkcji wymaga jawnej zgody użytkownika (privacy opt-in). Microsoft wycofał się ze wcześniejszego podejścia, w którym powiadomienia Copilota były natrętnie umieszczane w różnych miejscach systemu – projekt o nazwie kodowej K2 porządkuje punkty styku, integrując je w scentralizowanym interfejsie.
 
-Jeśli chcesz sprawdzić, jak modele AI postrzegają Twoją markę po wdrożeniu jej w nowych kanałach, darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI i zaprezentuje wyniki w kilkadziesiąt sekund.
+Jeśli chcesz sprawdzić, jak modele AI postrzegają Twoją markę po wdrożeniu jej w nowych kanałach, darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) odpyta cztery silniki AI i zaprezentuje wyniki w kilkadziesiąt sekund.
 
 ## GitHub Copilot – asystent w środowisku programistycznym
 
@@ -126,7 +126,7 @@ Kilka praktycznych aspektów wdrożenia Copilot Studio:
 
 Dostęp do Copilot Studio jest wliczony w licencję Microsoft 365 Copilot (Enterprise), ale tworzenie agentów na dużą skalę może generować dodatkowe koszty w modelu pay-per-message w połączeniu z Power Platform.
 
-Warto spojrzeć na Copilot Studio w szerszym kontekście: to odpowiedź Microsoftu na rosnący rynek narzędzi low-code do budowania agentów AI. Szczegółowe porównanie z innymi platformami znajdziesz w [artykule o modelu Claude](/modele-llm/claude).
+Warto spojrzeć na Copilot Studio w szerszym kontekście: to odpowiedź Microsoftu na rosnący rynek narzędzi low-code do budowania agentów AI. Szczegółowe porównanie z innymi platformami znajdziesz w [artykule o modelu Claude](/modele-llm/claude/).
 
 ## Usługa Copilot a pozycjonowanie marki w wynikach AI – co to zmienia dla SEO
 
@@ -134,9 +134,9 @@ W tym miejscu pojawia się wymiar, który interesuje specjalistów od widocznoś
 
 **Dla marek oznacza to, że widoczność w narzędziu Bing Copilot zależy od tych samych czynników, co widoczność w Google AI Overviews** – od gęstości faktograficznej treści, struktury semantycznej i dostępności strony dla botów AI. Strony blokowane w pliku `robots.txt` dla bota `Bingbot` nie zostaną w żadnych okolicznościach zacytowane przez Copilota.
 
-Szczegółowe zasady optymalizacji pod ten silnik opisuje nasz artykuł o [Bing Copilocie](/pozycjonowanie-ai/bing-copilot). Szerszy kontekst – jak działają mechanizmy cytowania we wszystkich silnikach AI – znajdziesz w [przewodniku po GEO](/geo/przewodnik).
+Szczegółowe zasady optymalizacji pod ten silnik opisuje nasz artykuł o [Bing Copilocie](/pozycjonowanie-ai/bing-copilot/). Szerszy kontekst – jak działają mechanizmy cytowania we wszystkich silnikach AI – znajdziesz w [przewodniku po GEO](/geo/przewodnik/).
 
-Jeśli chcesz wiedzieć, jak Twoja strona wypada pod kątem cytowalności, nasze narzędzie [Ocena cytowalności strony](/narzedzia/url-check) przeanalizuje ją w 30 sekund.
+Jeśli chcesz wiedzieć, jak Twoja strona wypada pod kątem cytowalności, nasze narzędzie [Ocena cytowalności strony](/narzedzia/url-check/) przeanalizuje ją w 30 sekund.
 
 ## Jak wybrać właściwy wariant Copilota dla swojej organizacji
 

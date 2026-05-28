@@ -8,7 +8,7 @@ icon: '<circle cx="12" cy="12" r="3"/><path d="M3 12h3M18 12h3M12 3v3M12 18v3M6.
 author:
   name: 'Mateusz Wiśniewski'
   role: 'Ekspert SEO/AI Search · ICEA'
-  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
+  avatar: ../../../assets/images/authors/mateusz-wisniewski.avif
 readTime: '16 min'
 tags: ['LLM', 'Modele AI', 'ChatGPT', 'Claude']
 pillar: 'modele-llm'
@@ -66,7 +66,7 @@ Kluczowe aspekty dla strategii widoczności:
 - **Kontekst 400 000 tokenów** – w GPT-5.5 pozwala na przetworzenie długich dokumentów, choć dla B2B ważniejsza jest jakość fragmentów niż sama objętość.
 - **API OpenAI** – najpopularniejsze narzędzie do budowy własnych aplikacji AI; koszt modelu GPT-5.5 to ok. 2,00 USD za milion tokenów wejściowych.
 
-Szczegółowe omówienie możliwości i ograniczeń znajdziesz w artykule o [ChatGPT](/modele-llm/chatgpt) oraz o tym, [co potrafi ChatGPT](/modele-llm/co-potrafi-chatgpt) w kontekście codziennej pracy marketera.
+Szczegółowe omówienie możliwości i ograniczeń znajdziesz w artykule o [ChatGPT](/modele-llm/chatgpt/) oraz o tym, [co potrafi ChatGPT](/modele-llm/co-potrafi-chatgpt/) w kontekście codziennej pracy marketera.
 
 ## Claude – model Anthropic
 
@@ -80,7 +80,7 @@ Wyróżniki architektury Anthropic:
 
 **Claude szczególnie dobrze sprawdza się przy analizie treści specjalistycznych** – dokumentacji technicznej, raportów finansowych, umów. Dla agencji i firm B2B SaaS, które tworzą takie materiały, budowanie widoczności w Claude oznacza przede wszystkim jakość i gęstość faktograficzną treści.
 
-Pełny przegląd modeli Anthropic i ich zastosowań znajdziesz w artykule o [Claude](/modele-llm/claude).
+Pełny przegląd modeli Anthropic i ich zastosowań znajdziesz w artykule o [Claude](/modele-llm/claude/).
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
@@ -102,7 +102,7 @@ Dla widoczności marki kluczowe są trzy mechanizmy Gemini:
 - **Gemini.com** – osobny asystent z RAG w czasie rzeczywistym; szuka aktualnych danych przez Google Search API.
 - **Vertex AI** – platforma dla deweloperów; firmy budują na niej własne aplikacje korzystające z modeli Gemini za pośrednictwem infrastruktury Google Cloud.
 
-Jeśli Twoja strategia treści skupia się na [pozycjonowaniu AI](/pozycjonowanie-ai), Gemini jest modelem, którego nie możesz ignorować – bo to Google decyduje, co trafi do AI Overviews dla Twoich potencjalnych klientów.
+Jeśli Twoja strategia treści skupia się na [pozycjonowaniu AI](/pozycjonowanie-ai/), Gemini jest modelem, którego nie możesz ignorować – bo to Google decyduje, co trafi do AI Overviews dla Twoich potencjalnych klientów.
 
 ## Microsoft Copilot i Bing
 
@@ -115,7 +115,7 @@ Dwa segmenty Copilot istotne strategicznie:
 - **Copilot w Edge / Windows** – odpyta Bing przy każdym zapytaniu wymagającym aktualnych danych; cytuje adresy URL z indeksu Bing.
 - **Microsoft 365 Copilot** – wersja enterprise przeszukująca wewnętrzne dokumenty firmy (SharePoint, OneDrive, Outlook) i zestawiająca je z danymi z internetu; tu liczy się przede wszystkim treść wewnętrzna, nie Twoja strona.
 
-Szczegółowe omówienie strategii widoczności w Copilot znajdziesz w artykule o [Copilot](/modele-llm/copilot).
+Szczegółowe omówienie strategii widoczności w Copilot znajdziesz w artykule o [Copilot](/modele-llm/copilot/).
 
 ## Perplexity AI – silnik RAG z cytowaniami
 
@@ -123,7 +123,7 @@ Perplexity jest modelem, który ze wszystkich omawianych tutaj najagresywniej cy
 
 **Perplexity obsługuje miliony zapytań dziennie – i każde z nich kończy się widocznymi linkami do konkretnych stron.** `PerplexityBot` indeksuje sieć agresywnie i w czasie rzeczywistym. Strony blokujące tego bota w `robots.txt` tracą jeden z niewielu kanałów AI, który faktycznie generuje kliknięcia.
 
-Perplexity różni się od pozostałych modeli podejściem do pobierania danych – zamiast pytać swój własny model treningowy, każdorazowo uruchamia pełny cykl: wyszukiwanie, pobranie fragmentów, synteza. To architektura opisana w artykule o [Perplexity](/modele-llm/perplexity) i o tym, [jak LLM-y cytują źródła](/geo/jak-llm-cytuja-zrodla).
+Perplexity różni się od pozostałych modeli podejściem do pobierania danych – zamiast pytać swój własny model treningowy, każdorazowo uruchamia pełny cykl: wyszukiwanie, pobranie fragmentów, synteza. To architektura opisana w artykule o [Perplexity](/modele-llm/perplexity/) i o tym, [jak LLM-y cytują źródła](/geo/jak-llm-cytuja-zrodla/).
 
 Strategicznie: jeśli chcesz, żeby Twoja marka pojawiała się z linkiem w odpowiedziach AI – Perplexity jest miejscem, gdzie efekty widać najszybciej i najwyraźniej.
 
@@ -181,7 +181,7 @@ Jeśli zależy Ci na cytowaniach z widocznym linkiem – Perplexity generuje ruc
 
 Jeśli budujesz brand w kategorii, w której klienci porównują dostawców – ChatGPT z SearchGPT jest pierwszym miejscem, gdzie szukają. Treści porównawcze z danymi liczbowymi są tu najskuteczniejsze.
 
-Strategię opartą na danych zamiast na domysłach buduje [pozycjonowanie AI](/pozycjonowanie-ai) – metodyka GEO, która mierzy widoczność Twojej marki we wszystkich głównych modelach jednocześnie i wyznacza priorytety działań. Swój punkt startowy możesz sprawdzić przez [Widoczność marki w AI](/narzedzia/brand-check), który odpyta cztery silniki AI o Twoją markę i pokaże, jak wypadasz na tle kategorii.
+Strategię opartą na danych zamiast na domysłach buduje [pozycjonowanie AI](/pozycjonowanie-ai/) – metodyka GEO, która mierzy widoczność Twojej marki we wszystkich głównych modelach jednocześnie i wyznacza priorytety działań. Swój punkt startowy możesz sprawdzić przez [Widoczność marki w AI](/narzedzia/brand-check/), który odpyta cztery silniki AI o Twoją markę i pokaże, jak wypadasz na tle kategorii.
 
 ## Często zadawane pytania o ekosystem LLM
 

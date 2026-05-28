@@ -103,7 +103,7 @@ Najczęstszy błąd, który niszczy wiarygodność przed zarządem: budżet uwzg
 Uwzględnij wszystko w prezentacji. Zarząd, który odkryje ukryte koszty po zatwierdzeniu projektu, nie zatwierdzi kolejnego.
 
 <aside class="callout-expert">
-  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.webp" alt="Mateusz Wiśniewski" /></div>
+  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.avif" alt="Mateusz Wiśniewski" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
     <p>W projektach prowadzonych w ICEA widzę jeden powtarzający się wzorzec: osoba odpowiedzialna za AI przychodzi na spotkanie zarządu z prezentacją narzędzia, a nie z prezentacją problemu. Zarząd pyta wtedy „a ile to kosztuje?" i rozmowa kończy się na liczbie licencji. Prawidłowa kolejność to: ból biznesowy, zmierzony koszt tego bólu, propozycja mechanizmu, scenariusze finansowe – i dopiero na końcu, jako odpowiedź na pytanie CFO, koszty wdrożenia. <strong>Jeśli zaczniesz od ceny, zarząd ocenia cenę. Jeśli zaczniesz od problemu wartego 800 tys. zł rocznie, zarząd ocenia proporcję – i projekt ma szansę.</strong></p>
@@ -123,7 +123,7 @@ Praktyczny zestaw KPI dla poszczególnych poziomów:
 
 **Kluczowa zasada: każdy KPI musi mieć zmierzony punkt bazowy z okresu PRZED wdrożeniem.** Zarząd, który nie widzi pomiaru „przed", nie może ocenić efektu „po". Jeśli nie masz tych danych – pierwszym krokiem wdrożenia jest ich zebranie, a nie uruchamianie modelu.
 
-Informacje o tym, jak szczegółowo kalkulować zwrot i budować szablony finansowe dla poszczególnych obszarów, znajdziesz w artykule o [ROI z AI](/ai-w-biznesie/roi-z-ai) – z gotowymi wzorami dla obsługi klienta, marketingu i produkcji.
+Informacje o tym, jak szczegółowo kalkulować zwrot i budować szablony finansowe dla poszczególnych obszarów, znajdziesz w artykule o [ROI z AI](/ai-w-biznesie/roi-z-ai/) – z gotowymi wzorami dla obsługi klienta, marketingu i produkcji.
 
 ## Jak prezentować ryzyko bez straszenia
 
@@ -137,7 +137,7 @@ Pięć kategorii ryzyka, które zarząd zawsze analizuje, i sposób ich przedsta
 - **Ryzyko techniczne** – integracja z przestarzałymi systemami (tzw. *legacy*) może potrwać dłużej; mitygacja: faza audytu API przed złożeniem oferty budżetowej.
 - **Ryzyko dostawcy** – zmiana warunków licencjonowania lub wycofanie modelu; mitygacja: klauzule umowne, testowanie alternatyw w fazie pilotażu.
 
-Szczegółowe omówienie obowiązków z AI Act i RODO w kontekście polskich firm zawiera artykuł [AI Act i RODO](/ai-w-biznesie/ai-act-rodo) – warto dołączyć go do pakietu materiałów przed spotkaniem z zarządem.
+Szczegółowe omówienie obowiązków z AI Act i RODO w kontekście polskich firm zawiera artykuł [AI Act i RODO](/ai-w-biznesie/ai-act-rodo/) – warto dołączyć go do pakietu materiałów przed spotkaniem z zarządem.
 
 Ważne: ryzyko „niewdrożenia" też musi paść wprost. Jeśli konkurenci inwestują w AI, a firma stoi w miejscu – to jest to decyzja strategiczna z konsekwencjami, a nie jej brak. **Zarząd powinien aktywnie decydować o tempie wdrażania, a nie unikać decyzji przez odkładanie tematu.**
 
@@ -160,7 +160,7 @@ Zarządzanie rozmową:
 - **Zaproponuj pilotaż** z datą oceny wyników, jasnym budżetem i jednym konkretnym miernikiem sukcesu.
 - **Odpowiedz z góry** na pytanie „a co jeśli nie zadziała?" – bez tego pytanie pada z sali i rozkłada cały plan.
 
-Po spotkaniu z zarządem, pierwszym praktycznym krokiem jest sprawdzenie, jak Twoja marka jest już postrzegana przez systemy AI – darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI w 30 sekund i pokaże stan widoczności. To dane, które możesz przywołać w kolejnym raporcie jako punkt wyjścia do analizy efektów zewnętrznych.
+Po spotkaniu z zarządem, pierwszym praktycznym krokiem jest sprawdzenie, jak Twoja marka jest już postrzegana przez systemy AI – darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) odpyta cztery silniki AI w 30 sekund i pokaże stan widoczności. To dane, które możesz przywołać w kolejnym raporcie jako punkt wyjścia do analizy efektów zewnętrznych.
 
 ## Co dalej po zatwierdzeniu przez zarząd
 
@@ -172,6 +172,6 @@ Trzy natychmiastowe kroki po zatwierdzeniu:
 - **Zmierz punkt bazowy** – jeśli tego nie zrobiłeś przed spotkaniem z zarządem, zrób to teraz; bez twardej liczby „przed" nie udowodnisz efektu „po".
 - **Uruchom pilotaż w 4 tygodnie** – mały zakres, jeden wybrany zespół, jedna metryka; lepiej pokazać szybki dowód wartości niż prowadzić wielomiesięczne przygotowania, które tracą dynamikę i niosą za sobą ryzyko odwołania budżetu przez zmianę priorytetów.
 
-Artykuł [od czego zacząć wdrożenie AI](/ai-w-biznesie/od-czego-zaczac) opisuje metodykę audytu gotowości organizacyjnej – to dobry materiał uzupełniający po zatwierdzeniu inicjatywy przez zarząd.
+Artykuł [od czego zacząć wdrożenie AI](/ai-w-biznesie/od-czego-zaczac/) opisuje metodykę audytu gotowości organizacyjnej – to dobry materiał uzupełniający po zatwierdzeniu inicjatywy przez zarząd.
 
-Jeśli Twój projekt dotyczy widoczności marki lub marketingu cyfrowego, sprawdź też, jak [pozycjonowanie AI](/pozycjonowanie-ai) wpływa na percepcję marki przez systemy LLM – bo każda zmiana w firmie zostawia ślad w tym, jak algorytmy ją opisują.
+Jeśli Twój projekt dotyczy widoczności marki lub marketingu cyfrowego, sprawdź też, jak [pozycjonowanie AI](/pozycjonowanie-ai/) wpływa na percepcję marki przez systemy LLM – bo każda zmiana w firmie zostawia ślad w tym, jak algorytmy ją opisują.

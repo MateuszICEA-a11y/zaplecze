@@ -136,7 +136,7 @@ Branded Search Lift to najważniejsza metryka dla kampanii GEO działających w 
 
 Metodologia pomiaru: porównaj tygodniową liczbę zapytań brandowych w Google Search Console (filtr: brand + wariacje) z wynikami sprzed uruchomienia kampanii GEO. Skoreluj dynamikę jego wzrostu ze wzrostem SoV w AI – jeśli oba wskaźniki rosną równocześnie, masz silną przesłankę do atrybucji. **W projektach obserwujemy 15–25% wzrost Branded Search Lift w ciągu pierwszych 3 miesięcy po podniesieniu Citation Rate o 20 punktów procentowych.**
 
-Pełną metodologię audytu widoczności – wraz ze sposobem ustalenia punktu startowego przed pomiarem – opisuje [audyt widoczności marki](/geo/audyt-widocznosci-marki).
+Pełną metodologię audytu widoczności – wraz ze sposobem ustalenia punktu startowego przed pomiarem – opisuje [audyt widoczności marki](/geo/audyt-widocznosci-marki/).
 
 ## Struktura raportu miesięcznego GEO dla klienta
 
@@ -152,10 +152,10 @@ Cztery sekcje, które warto stosować w raportach:
 
 **Sekcja 4 – luki tematyczne i rekomendacje.** Lista zapytań, w których modele AI rekomendują wyłącznie konkurentów, bez wzmianki o marce klienta. To gotowy backlog tematyczny na kolejny miesiąc. **Każda luka tematyczna to potencjał do przejęcia cytowań** – wystarczy stworzyć treść lepiej odpowiadającą na dane zapytanie niż materiały konkurencji, które model aktualnie preferuje.
 
-Jeśli chcesz zobaczyć, w jaki sposób monitorować wzmianki i zbierać dane do sekcji 3, [narzędzia do monitoringu wzmianek](/geo/narzedzia-monitoring-wzmianek) omawiają dostępne platformy z porównaniem funkcji i cen.
+Jeśli chcesz zobaczyć, w jaki sposób monitorować wzmianki i zbierać dane do sekcji 3, [narzędzia do monitoringu wzmianek](/geo/narzedzia-monitoring-wzmianek/) omawiają dostępne platformy z porównaniem funkcji i cen.
 
 <aside class="callout-expert">
-  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.webp" alt="Mateusz Wiśniewski" /></div>
+  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.avif" alt="Mateusz Wiśniewski" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
     <p>W raportach GEO, które przygotowuję dla klientów ICEA, największy problem to nie brak danych – to brak narracji łączącej dane z decyzjami biznesowymi. Klient dostaje wykres rosnącego Citation Rate i pyta: „i co z tego?". Dlatego każdy raport musi zawierać jedną liczbę przełożoną na przychód lub oszczędność – nawet jeśli jest to szacunek oparty na modelu. <strong>Zarząd nie zatwierdza budżetów na metryki. Zatwierdza je na ROI – i to jest jedyna liczba, którą musisz mieć gotową na spotkanie.</strong></p>
@@ -171,7 +171,7 @@ Share of Voice (SoV, udział głosu) to metryka, która przenosi logikę badań 
 
 Benchmark na start: jeśli Twój SoV w AI dla docelowego zestawu zapytań wynosi poniżej 10%, jesteś praktycznie niewidoczny dla użytkownika, który decyzję zakupową podejmuje w oknie chatbota. Celem pierwszego kwartału powinno być przekroczenie 20% SoV dla zapytań ze środka i dołu lejka sprzedażowego.
 
-Szczegółowy opis metodologii obliczania SoV i interpretacji wyników znajdziesz w artykule [Share of Voice w AI Search](/geo/share-of-voice). Zanim zaczniesz mierzyć, sprawdź też, jak Twoja marka jest aktualnie postrzegana przez silniki AI – darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery główne modele i pokaże, w jakich kontekstach pojawia się Twoja firma.
+Szczegółowy opis metodologii obliczania SoV i interpretacji wyników znajdziesz w artykule [Share of Voice w AI Search](/geo/share-of-voice/). Zanim zaczniesz mierzyć, sprawdź też, jak Twoja marka jest aktualnie postrzegana przez silniki AI – darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) odpyta cztery główne modele i pokaże, w jakich kontekstach pojawia się Twoja firma.
 
 ## Jak przekonać zarząd – raportowanie bez żargonu
 
@@ -183,7 +183,7 @@ Trzy zasady komunikacji wyników GEO do zarządu:
 - **Zawsze przelicz na pieniądze** – Citation Rate nie ma wartości bez przełożenia na liczbę leadów × wartość kontraktu; nawet przybliżona kalkulacja jest lepsza niż brak kalkulacji
 - **Pokaż luki konkurencji** – zapytania, w których konkurent jest cytowany, a Twoja marka nie, mają natychmiastową siłę perswazji; zarząd rozumie ryzyko utraty pola bez dodatkowego tłumaczenia
 
-Jeśli organizacja wdraża GEO w ramach szerszej strategii pozycjonowania w wyszukiwarkach AI, warto rozważyć pełny audyt zakresu i priorytetu działań – [zapytaj o audyt](/kontakt?type=full-audit), żeby ustalić realny punkt startowy przed pierwszym raportem do zarządu.
+Jeśli organizacja wdraża GEO w ramach szerszej strategii pozycjonowania w wyszukiwarkach AI, warto rozważyć pełny audyt zakresu i priorytetu działań – [zapytaj o audyt](/kontakt/?type=full-audit), żeby ustalić realny punkt startowy przed pierwszym raportem do zarządu.
 
 ## FAQ o mierzeniu ROI w GEO
 

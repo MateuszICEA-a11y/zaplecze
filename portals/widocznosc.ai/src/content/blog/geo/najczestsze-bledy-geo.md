@@ -8,7 +8,7 @@ icon: '<path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 
 author:
   name: 'Mateusz Wiśniewski'
   role: 'Ekspert SEO/AI Search · ICEA'
-  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
+  avatar: ../../../assets/images/authors/mateusz-wisniewski.avif
 readTime: '11 min'
 tags: ['GEO', 'Błędy', 'Optymalizacja', 'AI Search']
 pillar: 'geo'
@@ -58,7 +58,7 @@ Boty AI dzielą się na dwie zasadniczo różne klasy, które wymagają odmienne
 | Boty wyszukiwawcze i użytkownika | `OAI-SearchBot`, `PerplexityBot`, `ChatGPT-User` | Pobieranie treści w czasie rzeczywistym, prezentacja odpowiedzi z linkiem do Twojej strony | `Allow` – blokada = zero ruchu referencyjnego |
 | Boty treningowe | `GPTBot`, `ClaudeBot`, `Google-Extended`, `CCBot` | Masowe indeksowanie zasobów do budowy baz wiedzy modeli offline | `Disallow` – wysokie zużycie transferu, brak bezpośredniego ruchu |
 
-Zablokowanie `OAI-SearchBot` eliminuje Cię z wyników ChatGPT Search. Zablokowanie `PerplexityBot` – z Perplexity AI. Obie te pomyłki często nie są widoczne w standardowych raportach analitycznych, bo nie generują błędów 4xx na poziomie serwera. Sprawdź, czy Twoje boty mają dostęp, korzystając z narzędzia [Dostęp botów AI](/narzedzia/ai-bots-check) – weryfikuje ono konfigurację `robots.txt` i faktyczną dostępność dla poszczególnych agentów.
+Zablokowanie `OAI-SearchBot` eliminuje Cię z wyników ChatGPT Search. Zablokowanie `PerplexityBot` – z Perplexity AI. Obie te pomyłki często nie są widoczne w standardowych raportach analitycznych, bo nie generują błędów 4xx na poziomie serwera. Sprawdź, czy Twoje boty mają dostęp, korzystając z narzędzia [Dostęp botów AI](/narzedzia/ai-bots-check/) – weryfikuje ono konfigurację `robots.txt` i faktyczną dostępność dla poszczególnych agentów.
 
 ### Cloudflare i niewidzialna blokada na brzegu sieci
 
@@ -86,7 +86,7 @@ Trzy praktyczne działania, które możesz wdrożyć w ciągu jednego dnia roboc
 - **Cytowania ekspertów lub badań** – każda sekcja H2 powinna zawierać przynajmniej jedno twierdzenie z nazwanym źródłem; nie musisz linkować do każdego – wystarczy wymienić nazwę badania i rok.
 - **Unikanie dwuznaczności encji** – zamiast „ostatniej aktualizacji algorytmu" napisz „Google March 2024 Core Update"; precyzyjne nazwy własne umożliwiają modelowi poprawne odwzorowanie pojęcia w grafach wiedzy.
 
-Artykuł [Jak LLM-y cytują źródła](/geo/jak-llm-cytuja-zrodla) tłumaczy mechanizm selekcji fragmentów do cytowania – warto przeczytać go przed przepisywaniem priorytetowych podstron.
+Artykuł [Jak LLM-y cytują źródła](/geo/jak-llm-cytuja-zrodla/) tłumaczy mechanizm selekcji fragmentów do cytowania – warto przeczytać go przed przepisywaniem priorytetowych podstron.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/piotr-wicenciak.avif" alt="Piotr Wicenciak" /></div>
@@ -112,7 +112,7 @@ Dobre wzorce strukturyzacji treści pod GEO:
 
 Publikowanie ważnych danych wyłącznie w plikach PDF lub jako grafiki bez tekstu alternatywnego to kolejna techniczna bariera. PDF nie ma czytelnej struktury semantycznej HTML (hierarchii nagłówków, tagów sekcji), co drastycznie obniża precyzję wyekstrahowanych danych. Dane w obrazach bez atrybutu `alt` są dla botów AI niewidoczne – model nie potrafi ich odczytać.
 
-Standardem minimum jest czysta hierarchia HTML: tagi `<article>`, `<section>`, nagłówki od H1 do H3, dane strukturalne JSON-LD. Szczegółowy przewodnik po implementacji danych strukturalnych obejmuje artykuł o [schema.org i danych strukturalnych](/geo/schema-org-dane-strukturalne) – z przykładami dla różnych typów stron.
+Standardem minimum jest czysta hierarchia HTML: tagi `<article>`, `<section>`, nagłówki od H1 do H3, dane strukturalne JSON-LD. Szczegółowy przewodnik po implementacji danych strukturalnych obejmuje artykuł o [schema.org i danych strukturalnych](/geo/schema-org-dane-strukturalne/) – z przykładami dla różnych typów stron.
 
 ## Błąd 6 – brak pomiaru i niewidzialny ślepy punkt
 
@@ -124,9 +124,9 @@ Trzy metryki, od których warto zacząć monitoring:
 - **Share of Voice (SoV, udział w dyskusji)** – jaki procent cytowań w danej niszy trafia do Twojej marki, a jaki do konkurentów; wymagana regularna analiza zestawu 20–50 zapytań.
 - **Mention Rate (wskaźnik wzmianek)** – ile razy marka pojawia się w odpowiedziach bez linka; ważny dla budowania rozpoznawalności w LLM-ach.
 
-Praktyczny punkt startowy: wybierz 20 pytań, które Twoi klienci wpisują w ChatGPT lub Perplexity. Odpytuj je co dwa tygodnie w czystej sesji przeglądarki bez personalizacji. To Twój bazowy wskaźnik cytowań przed wdrożeniem jakichkolwiek zmian. Pełny [przewodnik po GEO](/geo/przewodnik) opisuje metodologię pomiaru i 6-miesięczny horyzont wdrożenia.
+Praktyczny punkt startowy: wybierz 20 pytań, które Twoi klienci wpisują w ChatGPT lub Perplexity. Odpytuj je co dwa tygodnie w czystej sesji przeglądarki bez personalizacji. To Twój bazowy wskaźnik cytowań przed wdrożeniem jakichkolwiek zmian. Pełny [przewodnik po GEO](/geo/przewodnik/) opisuje metodologię pomiaru i 6-miesięczny horyzont wdrożenia.
 
-Jeśli chcesz zobaczyć punkt startowy szybciej, narzędzie [Ocena cytowalności strony](/narzedzia/url-check) analizuje Twoją stronę pod kątem cytowalności i wskazuje konkretne elementy do poprawy – bez konieczności manualnego testowania.
+Jeśli chcesz zobaczyć punkt startowy szybciej, narzędzie [Ocena cytowalności strony](/narzedzia/url-check/) analizuje Twoją stronę pod kątem cytowalności i wskazuje konkretne elementy do poprawy – bez konieczności manualnego testowania.
 
 ## FAQ
 
@@ -144,4 +144,4 @@ Oba są niezbędne, ale mają różne priorytety. Jeśli Twój `robots.txt` blok
 
 ### Czy GEO ma sens dla małych firm z niskim autorytetem domeny (DA)?
 
-Tak – i badanie Princeton pokazuje, że małe marki z niskim autorytetem domenowym, które wdrożyły statystyki i cytowania, zyskują proporcjonalnie więcej niż liderzy rynku. Więcej o tym mechanizmie opisuje artykuł [czym jest GEO](/geo/czym-jest-geo) – wraz z przykładami z małych nisz B2B.
+Tak – i badanie Princeton pokazuje, że małe marki z niskim autorytetem domenowym, które wdrożyły statystyki i cytowania, zyskują proporcjonalnie więcej niż liderzy rynku. Więcej o tym mechanizmie opisuje artykuł [czym jest GEO](/geo/czym-jest-geo/) – wraz z przykładami z małych nisz B2B.

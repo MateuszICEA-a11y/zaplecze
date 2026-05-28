@@ -123,10 +123,10 @@ Wdrożenie pilotażowe (Proof of Concept) z budżetem poniżej 100 000 PLN, ogra
 
 Pamiętaj o benchmarkach branżowych. Informacja, że bezpośredni konkurent uruchomił podobny system i skrócił czas obsługi zamówień o 30%, wywiera presję decyzyjną skuteczniejszą niż najdokładniejszy model DCF.
 
-Jeśli chcesz zobaczyć, jak Twoja marka jest widoczna w odpowiedziach AI – co przekłada się na przychody w kanale AI Search – darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI i pokaże Twój aktualny udział głosu w kategorii.
+Jeśli chcesz zobaczyć, jak Twoja marka jest widoczna w odpowiedziach AI – co przekłada się na przychody w kanale AI Search – darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) odpyta cztery silniki AI i pokaże Twój aktualny udział głosu w kategorii.
 
 <aside class="callout-expert">
-  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.webp" alt="Mateusz Wiśniewski" /></div>
+  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.avif" alt="Mateusz Wiśniewski" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
     <p>W projektach, które prowadzimy w ICEA, widzę jeden wzorzec: firmy, które potrafią udowodnić ROI z AI, zaczęły mierzyć procesy, zanim rozpoczęły wdrożenie. Nie po to, żeby zbierać dane – po to, żeby mieć punkt odniesienia (ang. baseline). Bez niego każda prezentacja wyników dla zarządu to słowo przeciwko słowu. <strong>Pierwsze dwie godziny projektu warto poświęcić na jedno pytanie: jak dziś mierzymy proces, który AI ma poprawić? Jeśli nie znamy odpowiedzi, przed jakimkolwiek wdrożeniem powinniśmy zacząć właśnie od tego.</strong></p>
@@ -144,6 +144,6 @@ Preferencja IP Box umożliwia opodatkowanie dochodu z kwalifikowanego prawa wła
 
 **W praktyce oba instrumenty mogą obniżyć efektywny koszt wdrożenia o kilkanaście do kilkudziesięciu procent, skracając okres zwrotu nawet o kilka miesięcy.**
 
-Pełne pozycjonowanie marki w kanale AI Search – z mierzalnym wpływem na przychody – to usługa, która wychodzi poza samą kalkulację ROI. Więcej o tym, co obejmuje, przeczytasz w opisie [pozycjonowania AI](/pozycjonowanie-ai) oraz w artykule o [ROI z GEO](/geo/roi-z-geo), gdzie omawiamy zwrot z optymalizacji widoczności marki w silnikach AI.
+Pełne pozycjonowanie marki w kanale AI Search – z mierzalnym wpływem na przychody – to usługa, która wychodzi poza samą kalkulację ROI. Więcej o tym, co obejmuje, przeczytasz w opisie [pozycjonowania AI](/pozycjonowanie-ai/) oraz w artykule o [ROI z GEO](/geo/roi-z-geo/), gdzie omawiamy zwrot z optymalizacji widoczności marki w silnikach AI.
 
-Jeśli dopiero zaczynasz przygodę z AI w firmie i szukasz pierwszych kroków przed kalkulacją ROI, [przewodnik wskazujący, od czego zacząć](/ai-w-biznesie/od-czego-zaczac), opisuje kolejność decyzji i zasobów, które są niezbędne przed uruchomieniem pierwszego projektu. Szerszy kontekst – w tym to, jak AI zmienia marketing i generowanie leadów – znajdziesz w artykule o [AI w marketingu](/ai-w-biznesie/ai-w-marketingu).
+Jeśli dopiero zaczynasz przygodę z AI w firmie i szukasz pierwszych kroków przed kalkulacją ROI, [przewodnik wskazujący, od czego zacząć](/ai-w-biznesie/od-czego-zaczac/), opisuje kolejność decyzji i zasobów, które są niezbędne przed uruchomieniem pierwszego projektu. Szerszy kontekst – w tym to, jak AI zmienia marketing i generowanie leadów – znajdziesz w artykule o [AI w marketingu](/ai-w-biznesie/ai-w-marketingu/).

@@ -61,7 +61,7 @@ Trzy właściwości fragmentu zwiększające szansę na wybranie przez silnik to
 
 Aby w ogóle brać udział w grze, musisz sprawdzić, czy boty AI mają możliwość przeczesywania Twojej strony. `GPTBot`, `ClaudeBot`, `PerplexityBot` – każdy z nich weryfikuje plik `robots.txt` przed wejściem na witrynę. Błędy w konfiguracji zapór sieciowych (np. Cloudflare) często blokują część tych botów bez wiedzy właściciela strony.
 
-Sprawdź stan swojej witryny w [Dostęp botów AI](/narzedzia/ai-bots-check) – narzędzie weryfikuje, które boty AI mają dostęp do Twojej domeny i czy plik `robots.txt` nie blokuje ich przypadkowo.
+Sprawdź stan swojej witryny w [Dostęp botów AI](/narzedzia/ai-bots-check/) – narzędzie weryfikuje, które boty AI mają dostęp do Twojej domeny i czy plik `robots.txt` nie blokuje ich przypadkowo.
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
@@ -101,13 +101,13 @@ Modele AI nie renderują kodu JavaScript w taki sam sposób jak przeglądarka in
 
 Plik `llms.txt` w katalogu głównym witryny to kolejny obowiązkowy element. Jest to prosty plik tekstowy w formacie Markdown, który modele AI mogą przeczytać, aby zrozumieć strukturę Twojej strony i główne fakty o ofercie – bez konieczności indeksowania setek podstron. Standard ten wzorowany jest na `robots.txt`, ale zamiast mówić, czego nie indeksować, wskazuje to, co jest najważniejsze.
 
-Więcej o implementacji znajdziesz w artykule o [llms.txt](/geo/llms-txt) – wraz z przykładową strukturą pliku dla serwisów B2B.
+Więcej o implementacji znajdziesz w artykule o [llms.txt](/geo/llms-txt/) – wraz z przykładową strukturą pliku dla serwisów B2B.
 
 ### Schema.org i dane strukturalne
 
 Format JSON-LD (schemat danych strukturalnych) bezpośrednio wpływa na to, jak model interpretuje obiekty (encje) na Twojej stronie. Typy `Organization`, `Product`, `FAQPage`, `HowTo` – każdy z nich pozwala modelowi precyzyjnie sklasyfikować, co Twoja strona opisuje i jaką funkcję pełni.
 
-Szczegółowy przewodnik po implementacji obejmuje artykuł o [schema.org i danych strukturalnych](/geo/schema-org-dane-strukturalne) – z przykładami JSON-LD dla różnych typów stron.
+Szczegółowy przewodnik po implementacji obejmuje artykuł o [schema.org i danych strukturalnych](/geo/schema-org-dane-strukturalne/) – z przykładami JSON-LD dla różnych typów stron.
 
 ### Spójność danych w sieci
 
@@ -125,7 +125,7 @@ Front-loading (wczesne sygnalizowanie kluczowych informacji) to jeden z najważn
 
 W praktyce: każdy nagłówek H2 i H3 powinien brzmieć jak pytanie, na które odpowiadasz bezpośrednio pod nim. Silniki RAG rozszczepiają zapytanie użytkownika na wiele podzapytań (ang. *query fan-out*) i szukają fragmentów odpowiadających każdemu z nich osobno.
 
-Dokładny opis mechanizmu rozszczepienia zapytania znajdziesz w artykule o [query fan-out](/geo/query-fan-out) – z przykładem, jak jedno zapytanie w sektorze B2B rozkłada się na 20+ podzapytań.
+Dokładny opis mechanizmu rozszczepienia zapytania znajdziesz w artykule o [query fan-out](/geo/query-fan-out/) – z przykładem, jak jedno zapytanie w sektorze B2B rozkłada się na 20+ podzapytań.
 
 ### Struktury bloków semantycznych
 
@@ -164,7 +164,7 @@ Trzy główne metryki stosowane w ICEA:
 
 Jak mierzyć to w praktyce? Wybierz 20–50 pytań, które Twoi klienci wpisują w ChatGPT lub Perplexity. Wprowadzaj te zapytania regularnie (np. co 2 tygodnie) w czystym środowisku przeglądarki (w trybie incognito, bez personalizacji). Notuj, ile odpowiedzi zawiera nazwę Twojej marki. To będzie Twój punkt startowy.
 
-Darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) samodzielnie odpyta cztery silniki AI o Twoją markę i pokaże, jak jesteś postrzegany na tle kategorii – bez konieczności ręcznego wpisywania pytań.
+Darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) samodzielnie odpyta cztery silniki AI o Twoją markę i pokaże, jak jesteś postrzegany na tle kategorii – bez konieczności ręcznego wpisywania pytań.
 
 ### Narzędzia zewnętrzne do monitoringu
 
@@ -180,7 +180,7 @@ GEO nie jest jednorazową akcją. To ciągła dyscyplina, podobna do klasycznego
 
 Zacznij od audytu gotowości: sprawdź dostęp botów AI, konfigurację pliku `robots.txt`, obecność `llms.txt` oraz poprawność kodu JSON-LD. Zidentyfikuj główne obiekty (encje) powiązane z Twoją marką – produkty, usługi i kluczowe twierdzenia, które chcesz, żeby LLM-y powtarzały.
 
-Wdrożenie poprawek technicznych to działanie przynoszące najszybsze efekty. Jeśli `GPTBot` był dotąd blokowany, odblokowanie go przynosi rezultaty w ciągu 2–4 tygodni (tyle zazwyczaj zajmuje nowy obieg indeksowania). Pełny [audyt widoczności marki](/geo/audyt-widocznosci-marki) – wraz z metodologią, którą stosujemy – opisuje osobny artykuł.
+Wdrożenie poprawek technicznych to działanie przynoszące najszybsze efekty. Jeśli `GPTBot` był dotąd blokowany, odblokowanie go przynosi rezultaty w ciągu 2–4 tygodni (tyle zazwyczaj zajmuje nowy obieg indeksowania). Pełny [audyt widoczności marki](/geo/audyt-widocznosci-marki/) – wraz z metodologią, którą stosujemy – opisuje osobny artykuł.
 
 ### Miesiąc 3–4 – optymalizacja treści
 

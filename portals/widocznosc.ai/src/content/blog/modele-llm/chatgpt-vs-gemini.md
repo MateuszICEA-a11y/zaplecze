@@ -8,7 +8,7 @@ icon: '<path d="M3 6h18M3 12h18M3 18h18"/><path d="M7 6v12M17 6v12"/>'
 author:
   name: 'Mateusz Wiśniewski'
   role: 'Ekspert SEO/AI Search · ICEA'
-  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
+  avatar: ../../../assets/images/authors/mateusz-wisniewski.avif
 readTime: '12 min'
 tags: ['ChatGPT', 'Gemini', 'Porównanie', 'Modele AI']
 pillar: 'modele-llm'
@@ -143,9 +143,9 @@ Wybierz **Gemini AI Pro**, jeśli:
 
 **Jeśli używasz obu ekosystemów naprzemiennie – warto rozważyć oba plany bazowe.** Łączny koszt Plus + AI Pro to ok. 40 USD/mies., co dla profesjonalnej pracy jest uzasadnioną inwestycją.
 
-Jak ChatGPT buduje swoją wiedzę i skąd czerpie dane o Twojej marce – opisuje [przewodnik po ChatGPT](/modele-llm/chatgpt). Szerszy kontekst tego, jak modele językowe różnią się architektonicznie, znajdziesz w [przewodniku po modelach LLM](/modele-llm/przewodnik).
+Jak ChatGPT buduje swoją wiedzę i skąd czerpie dane o Twojej marce – opisuje [przewodnik po ChatGPT](/modele-llm/chatgpt/). Szerszy kontekst tego, jak modele językowe różnią się architektonicznie, znajdziesz w [przewodniku po modelach LLM](/modele-llm/przewodnik/).
 
-Jeśli interesuje Cię, jak Twoja marka jest postrzegana przez ChatGPT i Gemini jednocześnie, narzędzie [Widoczność marki w AI](/narzedzia/brand-check) wyśle zapytania do obu silników (i dwóch innych) za jednym razem – bez ręcznego testowania. Szerszą strategię widoczności pod kątem konkretnego modelu opisują strony [pozycjonowanie w ChatGPT](/pozycjonowanie-ai/chatgpt) i [pozycjonowanie w Gemini](/pozycjonowanie-ai/gemini).
+Jeśli interesuje Cię, jak Twoja marka jest postrzegana przez ChatGPT i Gemini jednocześnie, narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) wyśle zapytania do obu silników (i dwóch innych) za jednym razem – bez ręcznego testowania. Szerszą strategię widoczności pod kątem konkretnego modelu opisują strony [pozycjonowanie w ChatGPT](/pozycjonowanie-ai/chatgpt/) i [pozycjonowanie w Gemini](/pozycjonowanie-ai/gemini/).
 
 ## Jak sprawdzić model przed zakupem planu
 

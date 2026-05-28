@@ -8,7 +8,7 @@ icon: '<rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18"/><cir
 author:
   name: 'Mateusz Wiśniewski'
   role: 'Ekspert SEO/AI Search · ICEA'
-  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
+  avatar: ../../../assets/images/authors/mateusz-wisniewski.avif
 readTime: '13 min'
 tags: ['GPTBot', 'ClaudeBot', 'robots.txt', 'llms.txt', 'Technical SEO']
 pillar: 'geo'
@@ -121,18 +121,18 @@ Przykład dla agencji SEO:
 
 ## Główne usługi
 
-- [Audyt widoczności AI](/audyt-ai): pełny raport widoczności marki w ChatGPT, Claude, Gemini, Perplexity, plan działania na 90 dni
-- [Pozycjonowanie](/seo): klasyczne SEO dla branży e-commerce i SaaS
-- [Content marketing](/content): produkcja treści zoptymalizowanych pod GEO
+- [Audyt widoczności AI](/audyt-ai/): pełny raport widoczności marki w ChatGPT, Claude, Gemini, Perplexity, plan działania na 90 dni
+- [Pozycjonowanie](/seo/): klasyczne SEO dla branży e-commerce i SaaS
+- [Content marketing](/content/): produkcja treści zoptymalizowanych pod GEO
 
 ## Wiedza
 
-- [Co to jest GEO](/geo/czym-jest-geo): definicja, różnice względem SEO
-- [Query fan-out w trybie Google AI](/geo/query-fan-out): jak działa pobieranie danych w AI Mode
+- [Co to jest GEO](/geo/czym-jest-geo/): definicja, różnice względem SEO
+- [Query fan-out w trybie Google AI](/geo/query-fan-out/): jak działa pobieranie danych w AI Mode
 
 ## Kontakt
 
-- [Bezpłatna konsultacja](/kontakt): 30-minutowa rozmowa, bez zobowiązań
+- [Bezpłatna konsultacja](/kontakt/): 30-minutowa rozmowa, bez zobowiązań
 ```
 
 Zawartość świadomie krótka, w naturalnym języku, z linkami do najważniejszych zasobów. Model LLM, który czyta ten plik, dostaje kompletną mapę firmy w 30 sekund.
@@ -194,4 +194,4 @@ Po 30 dniach robisz re-test: `curl -A "GPTBot"` zwraca pełny tekst, schema.org 
 
 Konfiguracja botów AI to zadanie, które najlepiej wykonać raz a dobrze. **Większość problemów technicznej widoczności w AI sprowadza się do prostych list kontrolnych: które boty dopuszczam, czy mam SSR, czy mam wdrożone dane strukturalne.** Zaniedbanie tych podstaw oznacza, że nawet najlepsza strategia contentowa nie zadziała – bo model LLM po prostu Twojej strony nie widzi.
 
-W audycie technicznym widoczności AI w ICEA pierwsza godzina to weryfikacja, czy boty AI fizycznie dostają tekst. Jeśli nie, cała reszta jest budowaniem na piasku. Jeśli chcesz sprawdzić, czy boty AI mają dostęp do Twojej strony, [Dostęp botów AI](/narzedzia/ai-bots-check) odpyta robots.txt o 13 botów AI i da Ci tabelę allowed/disallowed plus listę najważniejszych zmian do wdrożenia – w 30 sekund, bez logowania.
+W audycie technicznym widoczności AI w ICEA pierwsza godzina to weryfikacja, czy boty AI fizycznie dostają tekst. Jeśli nie, cała reszta jest budowaniem na piasku. Jeśli chcesz sprawdzić, czy boty AI mają dostęp do Twojej strony, [Dostęp botów AI](/narzedzia/ai-bots-check/) odpyta robots.txt o 13 botów AI i da Ci tabelę allowed/disallowed plus listę najważniejszych zmian do wdrożenia – w 30 sekund, bez logowania.

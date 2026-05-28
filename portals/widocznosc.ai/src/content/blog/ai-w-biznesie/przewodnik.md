@@ -118,7 +118,7 @@ Kluczowy wniosek z etapów 4–6: **nie wdrażaj AI na nieuporządkowanych proce
 
 Do właściwego przeprowadzenia takiego projektu potrzebny jest sponsor na poziomie zarządu oraz wyznaczony właściciel wewnętrzny – niekoniecznie techniczny, ale decyzyjny. To jest minimum organizacyjne, bez którego każdy pilotaż staje się wiecznym pilotażem.
 
-Zanim zlecisz wdrożenie zewnętrznemu dostawcy, sprawdź, jak Twoja marka jest widoczna dzięki [pozycjonowaniu w AI](/pozycjonowanie-ai) – bo każde wdrożenie AI w firmie zmienia też to, jak algorytmy LLM postrzegają markę na zewnątrz.
+Zanim zlecisz wdrożenie zewnętrznemu dostawcy, sprawdź, jak Twoja marka jest widoczna dzięki [pozycjonowaniu w AI](/pozycjonowanie-ai/) – bo każde wdrożenie AI w firmie zmienia też to, jak algorytmy LLM postrzegają markę na zewnątrz.
 
 ## Jak zbudować AI Center of Excellence (CoE)
 
@@ -146,10 +146,10 @@ Budowa CoE nie musi trwać lat. Realistyczny harmonogram dla organizacji zatrudn
 | 5 | Skalowanie pilotażu do produkcji, dashboardy monitoringu, procedury przeciwdziałające dryfowi modeli |
 | 6 | Przegląd efektów finansowych, plan na kolejne 12 miesięcy, rozszerzenie o 2 nowe obszary |
 
-Gdy organizacja osiągnie wysoką skalę wdrożeń, model scentralizowany CoE staje się wąskim gardłem. Wówczas zaleca się przejście do modelu doradczego – zadania inżynieryjne trafiają do interdyscyplinarnych zespołów produktowych, a CoE koncentruje się wyłącznie na standardach bezpieczeństwa, szablonach i strategii. Więcej o tym, jak [duże modele językowe](/modele-llm/przewodnik) wpływają na architekturę takich decyzji, omawia osobny przewodnik po LLM.
+Gdy organizacja osiągnie wysoką skalę wdrożeń, model scentralizowany CoE staje się wąskim gardłem. Wówczas zaleca się przejście do modelu doradczego – zadania inżynieryjne trafiają do interdyscyplinarnych zespołów produktowych, a CoE koncentruje się wyłącznie na standardach bezpieczeństwa, szablonach i strategii. Więcej o tym, jak [duże modele językowe](/modele-llm/przewodnik/) wpływają na architekturę takich decyzji, omawia osobny przewodnik po LLM.
 
 <aside class="callout-expert">
-  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.webp" alt="Mateusz Wiśniewski" /></div>
+  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.avif" alt="Mateusz Wiśniewski" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
     <p>W projektach, które prowadzimy w ICEA, najczęstszy błąd nie jest techniczny – jest organizacyjny. Firmy powołują "AI Championa" na poziomie specjalisty, bez uprawnień decyzyjnych i budżetu. Pierwsze trzy tygodnie mijają na oczekiwaniu na zgody. Potem projekt grzęźnie. <strong>Jeśli projekt AI nie ma właściciela z uprawnieniami do powiedzenia "robimy to" bez konsultacji z pięcioma działami, nie uruchamiaj go – strata czasu i kapitału jest gwarantowana.</strong></p>
@@ -175,7 +175,7 @@ BCG i McKinsey zgodnie wskazują na rozkład zasobów charakterystyczny dla lide
 
 Ten rozkład jest kontrintuicyjny. Decydenci chcą wydawać na modele, bo modele są widoczne. Tymczasem największą dźwignią jest zdolność organizacji do wchłonięcia zmiany.
 
-W kontekście mierzenia zwrotu z AI warto sprawdzić nasz artykuł o [ROI z AI](/ai-w-biznesie/roi-z-ai) – z gotowymi szablonami kalkulacji dla projektów obsługi klienta, marketingu i produkcji.
+W kontekście mierzenia zwrotu z AI warto sprawdzić nasz artykuł o [ROI z AI](/ai-w-biznesie/roi-z-ai/) – z gotowymi szablonami kalkulacji dla projektów obsługi klienta, marketingu i produkcji.
 
 ## Regulacje, które musisz znać – AI Act i RODO
 
@@ -207,7 +207,7 @@ Przetwarzanie danych osobowych przez systemy AI wymaga osobnej analizy prawnej. 
 5. Bezpieczeństwo danych – uwierzytelnianie wieloskładnikowe (MFA), logi systemowe, odrębne konta administracyjne
 6. Ocena skutków (DPIA) – obowiązkowa przy systematycznym monitoringu pracowników, automatycznym podejmowaniu decyzji lub zastosowaniu nowych technologii; wynik trafia do Rejestru Czynności Przetwarzania
 
-Szczegółowe omówienie obowiązków compliance, w tym jak zbudować wewnętrzną Politykę AI, zawiera artykuł [AI Act i RODO](/ai-w-biznesie/ai-act-rodo).
+Szczegółowe omówienie obowiązków compliance, w tym jak zbudować wewnętrzną Politykę AI, zawiera artykuł [AI Act i RODO](/ai-w-biznesie/ai-act-rodo/).
 
 ## Od czego zacząć jutro rano
 
@@ -228,7 +228,7 @@ Praktyczny punkt startowy dla każdej organizacji niezależnie od wielkości:
 - **Uruchom pilotaż w 4 tygodnie** – z jasnym właścicielem, wyznaczonym budżetem i metryką sukcesu mierzalną po 60 dniach produkcji
 - **Decyduj na podstawie danych, nie wrażeń** – jeśli pilotaż nie pokazuje mierzalnego efektu po 8 tygodniach, przeprowadź retrospektywę, zanim zwiększysz nakłady
 
-Jeśli chcesz sprawdzić, jak Twoja marka jest postrzegana przez systemy AI, zanim uruchomisz wewnętrzne wdrożenia, [Widoczność marki w AI](/narzedzia/brand-check) odpyta w 30 sekund cztery silniki AI i pokaże aktualny stan widoczności. Dobrym uzupełnieniem jest też lektura artykułu [od czego zacząć wdrożenie AI](/ai-w-biznesie/od-czego-zaczac) – jeśli jesteś na samym początku drogi i chcesz wyjść od konkretnej metodyki audytu gotowości.
+Jeśli chcesz sprawdzić, jak Twoja marka jest postrzegana przez systemy AI, zanim uruchomisz wewnętrzne wdrożenia, [Widoczność marki w AI](/narzedzia/brand-check/) odpyta w 30 sekund cztery silniki AI i pokaże aktualny stan widoczności. Dobrym uzupełnieniem jest też lektura artykułu [od czego zacząć wdrożenie AI](/ai-w-biznesie/od-czego-zaczac/) – jeśli jesteś na samym początku drogi i chcesz wyjść od konkretnej metodyki audytu gotowości.
 
 ## Często zadawane pytania o wdrożenie AI w firmie
 

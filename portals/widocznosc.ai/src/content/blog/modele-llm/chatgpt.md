@@ -33,7 +33,7 @@ Aby uporządkować te pojęcia na wstępie:
 
 ChatGPT jest dostępny w wersji przeglądarkowej i mobilnej, a od 2023 roku również jako wtyczka i element Microsoft 365 Copilot. **OpenAI udostępnia swoje modele przez API, co pozwala firmom zewnętrznym wbudowywać je we własne produkty** – dlatego ChatGPT pojawia się pośrednio w Bingu, w narzędziach do pisania, w obsłudze klienta i w dziesiątkach innych miejsc.
 
-W kontekście widoczności marki w wyszukiwarkach AI: pełny obraz tego, co GPT „wie" o Twojej firmie i skąd czerpie tę wiedzę, opisuje [przewodnik po modelach LLM](/modele-llm/przewodnik) – to dobry punkt wyjścia, zanim zaczniesz działania optymalizacyjne.
+W kontekście widoczności marki w wyszukiwarkach AI: pełny obraz tego, co GPT „wie" o Twojej firmie i skąd czerpie tę wiedzę, opisuje [przewodnik po modelach LLM](/modele-llm/przewodnik/) – to dobry punkt wyjścia, zanim zaczniesz działania optymalizacyjne.
 
 ## Jak działa model GPT – mechanizm działania: od tokenów po odpowiedź
 
@@ -91,7 +91,7 @@ Obszary, w których należy zachować ostrożność:
 - **Porady prawne, medyczne, finansowe** – użyteczne jako wstępny zarys, nie jako substytut specjalisty
 - **Cytowania naukowe** – model może wygenerować bibliografię, która wygląda wiarygodnie, ale nie istnieje
 
-Co ChatGPT potrafi, a co leży już poza nim – opisuje artykuł [co potrafi ChatGPT](/modele-llm/co-potrafi-chatgpt), z praktycznymi testami przypadków brzegowych.
+Co ChatGPT potrafi, a co leży już poza nim – opisuje artykuł [co potrafi ChatGPT](/modele-llm/co-potrafi-chatgpt/), z praktycznymi testami przypadków brzegowych.
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
@@ -122,9 +122,9 @@ Jeśli potencjalny klient pyta „Które agencje SEO w Polsce specjalizują się
 
 **To nie jest SEO. To oddzielna dyscyplina z własnymi metrykami – Citation Rate, Share of Voice i Mention Rate.**
 
-Zrozumienie tych mechanizmów opisuje [przewodnik po GEO](/geo/przewodnik) – optymalizacji pod generatywne wyszukiwarki. Jeśli interesuje Cię konkretna strona operacyjna – jak ChatGPT postrzega Twoją markę i jak to zmienić – wejdź na [pozycjonowanie w ChatGPT](/pozycjonowanie-ai/chatgpt).
+Zrozumienie tych mechanizmów opisuje [przewodnik po GEO](/geo/przewodnik/) – optymalizacji pod generatywne wyszukiwarki. Jeśli interesuje Cię konkretna strona operacyjna – jak ChatGPT postrzega Twoją markę i jak to zmienić – wejdź na [pozycjonowanie w ChatGPT](/pozycjonowanie-ai/chatgpt/).
 
-Zanim zaczniesz planować, sprawdź punkt startowy: darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) zada zapytanie o Twoją markę czterem silnikom AI i pokaże, jak jesteś postrzegany na tle kategorii – bez ręcznego testowania.
+Zanim zaczniesz planować, sprawdź punkt startowy: darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) zada zapytanie o Twoją markę czterem silnikom AI i pokaże, jak jesteś postrzegany na tle kategorii – bez ręcznego testowania.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/tomasz-czechowski.avif" alt="Tomasz Czechowski" /></div>
@@ -151,4 +151,4 @@ W planach Free i Plus – domyślnie tak, jeśli użytkownik nie wyłączy tej o
 
 ### Jak ChatGPT wypada w porównaniu do Claude?
 
-Oba modele są silne w różnych obszarach. ChatGPT (GPT-4o) ma szerszy ekosystem integracji i silniejsze możliwości generowania kodu. Claude ma dłuższe okno kontekstowe w wersjach bazowych i preferuje bardziej powściągliwy, precyzyjny styl odpowiedzi. Szczegółowe zestawienie znajdziesz w artykule o [Claude](/modele-llm/claude), który opisuje różnice z perspektywy zastosowań marketingowych i SEO.
+Oba modele są silne w różnych obszarach. ChatGPT (GPT-4o) ma szerszy ekosystem integracji i silniejsze możliwości generowania kodu. Claude ma dłuższe okno kontekstowe w wersjach bazowych i preferuje bardziej powściągliwy, precyzyjny styl odpowiedzi. Szczegółowe zestawienie znajdziesz w artykule o [Claude](/modele-llm/claude/), który opisuje różnice z perspektywy zastosowań marketingowych i SEO.

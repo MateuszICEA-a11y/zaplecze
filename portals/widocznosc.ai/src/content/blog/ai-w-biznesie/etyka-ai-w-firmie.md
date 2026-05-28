@@ -77,7 +77,7 @@ Struktura skutecznej polityki AI obejmuje pięć sekcji:
 
 Warto zacząć od prostego, dwustronicowego dokumentu i rozbudowywać go przy okazji każdego nowego wdrożenia. **Polityka, która nigdy nie zostaje przeczytana, bo ma 80 stron, jest bezużyteczna.** Lepszy krótki dokument z procedurami egzekwowanymi przy każdym nowym projekcie.
 
-Jeśli chcesz wiedzieć, jak polityka AI łączy się z obowiązkami wynikającymi z RODO, artykuł [AI Act i RODO](/ai-w-biznesie/ai-act-rodo) omawia te dwa reżimy prawne wraz z listą kontrolną zgodności.
+Jeśli chcesz wiedzieć, jak polityka AI łączy się z obowiązkami wynikającymi z RODO, artykuł [AI Act i RODO](/ai-w-biznesie/ai-act-rodo/) omawia te dwa reżimy prawne wraz z listą kontrolną zgodności.
 
 ## Komitet ds. AI – kto powinien w nim zasiadać
 
@@ -94,10 +94,10 @@ Prawidłowo zorganizowany komitet powinien:
 
 Dla firm bez zasobów na osobny komitet alternatywą jest rozszerzenie mandatu istniejącego komitetu audytu lub ryzyka o specyficzną agendę AI. Deloitte i Harvard Business Review rekomendują jednak, by w ciągu 12–18 miesięcy docelowo wyodrębnić nadzór AI jako osobną agendę – bo zakres decyzji jest zbyt szeroki i zbyt szybko się zmienia, żeby doczepić go do już przeciążonego organu.
 
-Warto też zajrzeć do pełnego omówienia struktury AI Center of Excellence w [przewodniku wdrożenia AI](/ai-w-biznesie/przewodnik) – komitet ds. AI to jeden element szerszej architektury organizacyjnej.
+Warto też zajrzeć do pełnego omówienia struktury AI Center of Excellence w [przewodniku wdrożenia AI](/ai-w-biznesie/przewodnik/) – komitet ds. AI to jeden element szerszej architektury organizacyjnej.
 
 <aside class="callout-expert">
-  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.webp" alt="Mateusz Wiśniewski" /></div>
+  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.avif" alt="Mateusz Wiśniewski" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
     <p>W projektach, które prowadzimy w ICEA, firmy najczęściej pytają: czy komitet ds. AI to nie przerost formy nad treścią dla organizacji 50-osobowej? Odpowiedź jest jedna: powołaj chociaż trójosobową grupę roboczą – prawnik, osoba techniczna, decydent z biznesu – i zapisz jej mandat w polityce AI. To wystarczy na start. <strong>Brak formalnego nadzoru nie redukuje ryzyka – przesuwa odpowiedzialność na przypadkowe osoby, które nie wiedziały, że ją ponoszą.</strong></p>
@@ -151,7 +151,7 @@ W Polsce nadzór nad regulacjami AI Act sprawuje Komisja Rozwoju i Bezpieczeńst
 
 Dla firm wdrażających AI w obszarach wysokiego ryzyka minimalne wymagania AI Act to de facto instrukcja zbudowania polityki AI. **Jeśli zaczniesz od wymagań AI Act jako listy kontrolnej, masz gotowy szkielet systemu zarządzania dla całej organizacji.**
 
-Zanim zlecisz wdrożenie zewnętrznemu dostawcy, sprawdź, jak Twoja marka wypada dziś w silnikach AI – [Widoczność marki w AI](/narzedzia/brand-check) odpyta w 30 sekund cztery modele językowe i pokaże, co widzą o Twojej firmie. Zrozumienie tego, co AI mówi o Tobie, to też element transparentności i odpowiedzialnego zarządzania reputacją.
+Zanim zlecisz wdrożenie zewnętrznemu dostawcy, sprawdź, jak Twoja marka wypada dziś w silnikach AI – [Widoczność marki w AI](/narzedzia/brand-check/) odpyta w 30 sekund cztery modele językowe i pokaże, co widzą o Twojej firmie. Zrozumienie tego, co AI mówi o Tobie, to też element transparentności i odpowiedzialnego zarządzania reputacją.
 
 ## Jak wdrożyć system zarządzania krok po kroku – pierwszy miesiąc
 
@@ -166,6 +166,6 @@ Praktyczny plan na pierwsze cztery tygodnie:
 
 To minimum. Nie rozwiązuje wszystkich problemów, ale tworzy widoczną strukturę odpowiedzialności. Bez tej struktury każde wdrożenie AI generuje niewidoczne ryzyko, które staje się widoczne dopiero w chwili incydentu.
 
-Osobny artykuł o tym, jak [bezpieczeństwo danych LLM](/ai-w-biznesie/bezpieczenstwo-danych-llm) łączy się z polityką AI, omawia kwestię ochrony danych firmowych przekazywanych do zewnętrznych modeli językowych. Warto go przeczytać przed podpisaniem umowy z jakimkolwiek dostawcą.
+Osobny artykuł o tym, jak [bezpieczeństwo danych LLM](/ai-w-biznesie/bezpieczenstwo-danych-llm/) łączy się z polityką AI, omawia kwestię ochrony danych firmowych przekazywanych do zewnętrznych modeli językowych. Warto go przeczytać przed podpisaniem umowy z jakimkolwiek dostawcą.
 
-Jeśli chcesz zrozumieć, jak duże modele językowe działają od środka, zanim zdecydujesz, które z nich wprowadzisz do firmy, dobry punkt startowy to [przewodnik po modelach LLM](/modele-llm/przewodnik) – z porównaniem architektur i możliwości najważniejszych modeli dostępnych na rynku.
+Jeśli chcesz zrozumieć, jak duże modele językowe działają od środka, zanim zdecydujesz, które z nich wprowadzisz do firmy, dobry punkt startowy to [przewodnik po modelach LLM](/modele-llm/przewodnik/) – z porównaniem architektur i możliwości najważniejszych modeli dostępnych na rynku.

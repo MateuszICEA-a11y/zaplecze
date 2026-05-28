@@ -51,7 +51,7 @@ const initials = (name: string) =>
     <div class="content-container">
       <!-- Breadcrumb -->
       <div class="mb-8 flex items-center gap-2 text-sm">
-        <a href="/o-nas" class="text-ink-muted hover:text-ink transition">O nas</a>
+        <a href="/o-nas/" class="text-ink-muted hover:text-ink transition">O nas</a>
         <span class="text-ink-muted" aria-hidden="true">/</span>
         <span class="text-ink">{data.name}</span>
       </div>
@@ -171,7 +171,7 @@ const initials = (name: string) =>
           </h2>
         </div>
         <a
-          href="/blog"
+          href="/blog/"
           class="text-accent-blue hidden items-center gap-2 text-sm transition hover:gap-3 sm:flex"
         >
           Cała baza wiedzy
@@ -185,7 +185,7 @@ const initials = (name: string) =>
             <p class="text-ink-muted text-lg leading-relaxed">
               Pierwsze artykuły tej osoby pojawią się wkrótce.
               <br />
-              <a class="text-accent-blue underline underline-offset-2 hover:opacity-85" href="/blog">
+              <a class="text-accent-blue underline underline-offset-2 hover:opacity-85" href="/blog/">
                 Zobacz aktualną bazę wiedzy →
               </a>
             </p>
@@ -194,7 +194,7 @@ const initials = (name: string) =>
           <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
             {authorPosts.map((post) => (
               <a
-                href={`/${post.id}`}
+                href={`/${post.id}/`}
                 class="group flex h-full flex-col overflow-hidden rounded-[20px] transition"
                 style="background: var(--bg-surface-1);"
                 data-card-template
@@ -255,7 +255,7 @@ const initials = (name: string) =>
         {
           otherAuthors.map((other) => (
             <a
-              href={`/autor/${other.id}`}
+              href={`/autor/${other.id}/`}
               class="group flex flex-col items-center rounded-[15px] p-8 text-center transition"
               style="background: var(--bg-surface-1);"
               data-card-template
@@ -296,9 +296,9 @@ const initials = (name: string) =>
     title={`Porozmawiaj z ekspertem ICEA`}
     subtitle={`Bezpłatna konsultacja 30 minut z ${data.name.split(' ')[0]}em lub innym specjalistą zespołu. Bez sprzedaży, bez zobowiązań.`}
     primaryLabel="Zamów audyt AI"
-    primaryHref="/kontakt?type=audyt-ai"
+    primaryHref="/kontakt/?type=audyt-ai"
     ghostLabel="Bezpłatna konsultacja"
-    ghostHref="/kontakt?type=konsultacja"
+    ghostHref="/kontakt/?type=konsultacja"
   />
 
   <Footer />

@@ -20,23 +20,23 @@ const activePillars = BLOG_PILLARS.filter((p) => posts.some((post) => post.data.
 const navbarLinks: NavGroup[] = [
   {
     label: 'Pozycjonowanie AI',
-    href: '/pozycjonowanie-ai',
+    href: '/pozycjonowanie-ai/',
     items: [
       {
         heading: 'Modele',
         links: [
-          { label: 'Pozycjonowanie ChatGPT', href: '/pozycjonowanie-ai/chatgpt' },
-          { label: 'Pozycjonowanie Claude', href: '/pozycjonowanie-ai/claude' },
-          { label: 'Pozycjonowanie Gemini', href: '/pozycjonowanie-ai/gemini' },
-          { label: 'Pozycjonowanie Perplexity', href: '/pozycjonowanie-ai/perplexity' },
-          { label: 'Pozycjonowanie Bing Copilot', href: '/pozycjonowanie-ai/bing-copilot' },
+          { label: 'Pozycjonowanie ChatGPT', href: '/pozycjonowanie-ai/chatgpt/' },
+          { label: 'Pozycjonowanie Claude', href: '/pozycjonowanie-ai/claude/' },
+          { label: 'Pozycjonowanie Gemini', href: '/pozycjonowanie-ai/gemini/' },
+          { label: 'Pozycjonowanie Perplexity', href: '/pozycjonowanie-ai/perplexity/' },
+          { label: 'Pozycjonowanie Bing Copilot', href: '/pozycjonowanie-ai/bing-copilot/' },
         ],
       },
     ],
   },
   {
     label: 'Baza wiedzy',
-    href: '/blog',
+    href: '/blog/',
     items: [
       {
         heading: 'Kategorie',
@@ -47,9 +47,9 @@ const navbarLinks: NavGroup[] = [
       },
     ],
   },
-  { label: 'Narzędzia', href: '/narzedzia' },
-  { label: 'O nas', href: '/o-nas' },
-  { label: 'Kontakt', href: '/kontakt' },
+  { label: 'Narzędzia', href: '/narzedzia/' },
+  { label: 'O nas', href: '/o-nas/' },
+  { label: 'Kontakt', href: '/kontakt/' },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -124,7 +124,7 @@ const isActive = (href: string) => {
               <div
                 class="nav-dropdown"
                 role="menu"
-                style={group.href === '/pozycjonowanie-ai' ? 'width: 320px;' : 'width: 280px;'}
+                style={group.href === '/pozycjonowanie-ai/' ? 'width: 320px;' : 'width: 280px;'}
               >
                 <div
                   class={`nav-dropdown-grid${group.items.length === 1 ? ' nav-dropdown-grid--single' : ''}`}
@@ -146,7 +146,7 @@ const isActive = (href: string) => {
                 </div>
                 <div class="nav-dropdown-footer">
                   <a href={group.href} class="nav-dropdown-footer-link">
-                    {group.href === '/blog' ? 'Wszystkie artykuły' : 'Zobacz wszystkie usługi'}
+                    {group.href === '/blog/' ? 'Wszystkie artykuły' : 'Zobacz wszystkie usługi'}
                     <span aria-hidden="true">→</span>
                   </a>
                 </div>
@@ -162,7 +162,7 @@ const isActive = (href: string) => {
       <ThemeToggle />
       <a
         class="btn-primary nav-cta-btn"
-        href="/narzedzia"
+        href="/narzedzia/"
         aria-label="Uruchom darmowy test widoczności AI"
       >
         Uruchom test za darmo
@@ -208,7 +208,7 @@ const isActive = (href: string) => {
                 href={group.href}
                 class="nav-mobile-link nav-mobile-link--sub nav-mobile-link--overview"
               >
-                {group.href === '/blog' ? 'Wszystkie artykuły' : 'Przegląd'}
+                {group.href === '/blog/' ? 'Wszystkie artykuły' : 'Przegląd'}
               </a>
               {group.items.map((col) => (
                 <div class="nav-mobile-subgroup">
@@ -229,7 +229,7 @@ const isActive = (href: string) => {
       <span class="nav-mobile-theme-label">Motyw</span>
       <ThemeToggle />
     </div>
-    <a class="btn-primary nav-mobile-cta" href="/narzedzia"> Uruchom test za darmo </a>
+    <a class="btn-primary nav-mobile-cta" href="/narzedzia/"> Uruchom test za darmo </a>
   </div>
 </nav>
 

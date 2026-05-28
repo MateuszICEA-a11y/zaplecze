@@ -182,7 +182,7 @@ Poprawna implementacja `FAQPage` jako część `@graph`:
 
 Odpowiedź w polu `text` powinna mieć 40–60 słów – wystarczająco szczegółowa, żeby model mógł ją zacytować wprost, ale wystarczająco zwięzła, żeby zmieścić się w boksie AI Overviews bez przycinania.
 
-Jeśli chcesz sprawdzić, jak Twoja istniejąca treść wypada pod kątem cytowalności przed wdrożeniem schematu, [Ocena cytowalności strony](/narzedzia/url-check) w kilkanaście sekund analizuje stronę pod kątem gotowości do cytowania przez silniki AI.
+Jeśli chcesz sprawdzić, jak Twoja istniejąca treść wypada pod kątem cytowalności przed wdrożeniem schematu, [Ocena cytowalności strony](/narzedzia/url-check/) w kilkanaście sekund analizuje stronę pod kątem gotowości do cytowania przez silniki AI.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/michal-ziach.avif" alt="Michał Ziach" /></div>
@@ -212,7 +212,7 @@ Narzędzia diagnostyczne warte uwagi w codziennej pracy:
 - **Screaming Frog SEO Spider** – masowe skanowanie i ekstrakcja wszystkich bloków JSON-LD z całej witryny do CSV
 - **GSC API** – automatyczny eksport błędów schema do monitoringu ciągłego
 
-Szczegółowe zasady konfiguracji pliku `robots.txt` i zarządzania dostępem botów AI do Twojej witryny opisuje [artykuł o botach AI](/geo/boty-ai-przewodnik) – warto zacząć od niego, zanim zainwestujesz czas w schema.org, bo blokada bota na poziomie `robots.txt` uniemożliwia indeksowanie i czyni schemat bezużytecznym.
+Szczegółowe zasady konfiguracji pliku `robots.txt` i zarządzania dostępem botów AI do Twojej witryny opisuje [artykuł o botach AI](/geo/boty-ai-przewodnik/) – warto zacząć od niego, zanim zainwestujesz czas w schema.org, bo blokada bota na poziomie `robots.txt` uniemożliwia indeksowanie i czyni schemat bezużytecznym.
 
 ## HowTo – struktura pod zapytania instrukcyjne
 
@@ -258,7 +258,7 @@ Schemat `HowTo` wymaga listy kroków jako obiektów `HowToStep` z atrybutami `na
 
 Atrybut `totalTime` w formacie ISO 8601 (np. `PT4H` dla czterech godzin) pojawia się bezpośrednio w rozszerzonych wynikach Google i silnie zwiększa CTR dla zapytań z intencją instrukcyjną. To jeden z prostych elementów, które większość implementacji pomija.
 
-Jeśli budujesz spójną strategię GEO wykraczającą poza dane strukturalne, kompleksowy [przewodnik GEO](/geo/przewodnik) opisuje pełną metodykę – od audytu technicznego przez optymalizację treści po monitoring Share of Voice. Warto też zapoznać się z [artykułem o llms.txt](/geo/llms-txt), który uzupełnia schema.org o bezpośredni kanał komunikacji z modelami AI odpytującymi Twoją domenę.
+Jeśli budujesz spójną strategię GEO wykraczającą poza dane strukturalne, kompleksowy [przewodnik GEO](/geo/przewodnik/) opisuje pełną metodykę – od audytu technicznego przez optymalizację treści po monitoring Share of Voice. Warto też zapoznać się z [artykułem o llms.txt](/geo/llms-txt/), który uzupełnia schema.org o bezpośredni kanał komunikacji z modelami AI odpytującymi Twoją domenę.
 
 ## Jak LLM-y różnie interpretują schema.org
 
@@ -270,6 +270,6 @@ Poniższa lista porządkuje zachowanie głównych platform – na podstawie eksp
 - **ChatGPT Search (OAI-SearchBot)** – odpytuje indeks Bing; schema.org wpływa na klasyfikację w Bing, co przekłada się na widoczność w ChatGPT pośrednio. Wysoka waga `Article` i `BlogPosting` z kompletnym `author`.
 - **Perplexity (PerplexityBot)** – indeksuje w czasie zbliżonym do rzeczywistego; `dateModified` w `BlogPosting` jest aktywnie weryfikowany – artykuły aktualizowane w ciągu ostatnich 30 dni mają trzykrotnie wyższy wskaźnik cytowań.
 - **Microsoft Copilot** – oparty na silniku Bing; analogiczne priorytety jak w ChatGPT Search, ale silniejszy nacisk na `BreadcrumbList` jako sygnał struktury witryny.
-- **Claude (Claude-SearchBot)** – w trybie wyszukiwania odpytuje zewnętrzne źródła; schema.org wpływa przez jakość klasyfikacji w indeksach wejściowych. Więcej o tym, jak cytowania trafiają do odpowiedzi modeli, opisuje [artykuł o tym, jak LLM-y cytują źródła](/geo/jak-llm-cytuja-zrodla).
+- **Claude (Claude-SearchBot)** – w trybie wyszukiwania odpytuje zewnętrzne źródła; schema.org wpływa przez jakość klasyfikacji w indeksach wejściowych. Więcej o tym, jak cytowania trafiają do odpowiedzi modeli, opisuje [artykuł o tym, jak LLM-y cytują źródła](/geo/jak-llm-cytuja-zrodla/).
 
 **Priorytet jest jasny: wdrożenie `Organization` z `sameAs` do Wikidata, `BlogPosting` z kompletnym `author` i `FAQPage` tam, gdzie masz sekcję FAQ.** To trzy typy, które przynoszą największy zwrot dla większości witryn B2B i contentowych – i właśnie od nich warto zacząć.

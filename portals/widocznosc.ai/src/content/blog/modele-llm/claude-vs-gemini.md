@@ -129,7 +129,7 @@ Na poziomie API różnica jest wyraźna:
 
 Gemini jest znacznie tańsze w przeliczeniu na token. Przy wolumenach produkcyjnych – tysiące zapytań dziennie, przetwarzanie masowych zbiorów danych – ta różnica szybko rośnie do tysięcy dolarów miesięcznie. Dla aplikacji masowych, poziom Gemini Flash (ok. $0,30 input / $2,50 output za milion tokenów) nie ma porównywalnego odpowiednika po stronie Anthropic.
 
-Jeśli chcesz sprawdzić, jak Twoja obecna widoczność w modelach AI wygląda zanim zdecydujesz o strategii contentowej, [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI o Twoją markę i pokaże, gdzie jesteś cytowany, a gdzie Cię nie ma.
+Jeśli chcesz sprawdzić, jak Twoja obecna widoczność w modelach AI wygląda zanim zdecydujesz o strategii contentowej, [Widoczność marki w AI](/narzedzia/brand-check/) odpyta cztery silniki AI o Twoją markę i pokaże, gdzie jesteś cytowany, a gdzie Cię nie ma.
 
 ## Który model wybrać – werdykty dla poszczególnych zastosowań
 
@@ -149,6 +149,6 @@ Zamiast jednego ogólnego werdyktu, przygotowaliśmy kilka konkretnych:
 - **Budujesz aplikacje webowe lub UI** – ranking WebDev Arena Leaderboard jest tu wymowny
 - **Masz duże wolumeny w API** – koszt tokenów Gemini 2.5 Pro jest ok. 2,5x niższy niż w przypadku Claude Sonnet; przy dużej skali robi to ogromną różnicę
 
-Pełniejszy przegląd możliwości każdego modelu znajdziesz w artykułach o [Claude](/modele-llm/claude) i [Gemini](/modele-llm/gemini), a szerszy kontekst rynku LLM opisuje [przewodnik po modelach językowych](/modele-llm/przewodnik). Jeśli zastanawiasz się, jak pozycjonowanie w Gemini wpływa na widoczność marki, przydatna będzie strona [pozycjonowanie AI – Gemini](/pozycjonowanie-ai/gemini).
+Pełniejszy przegląd możliwości każdego modelu znajdziesz w artykułach o [Claude](/modele-llm/claude/) i [Gemini](/modele-llm/gemini/), a szerszy kontekst rynku LLM opisuje [przewodnik po modelach językowych](/modele-llm/przewodnik/). Jeśli zastanawiasz się, jak pozycjonowanie w Gemini wpływa na widoczność marki, przydatna będzie strona [pozycjonowanie AI – Gemini](/pozycjonowanie-ai/gemini/).
 
 **Nie musisz wybierać raz na zawsze.** Wielu profesjonalistów używa obu rozwiązań – Gemini do pracy w Workspace i researchu z dostępem do sieci, a Claude'a do pisania i kodowania tam, gdzie liczy się najwyższa jakość końcowa. Koszt obu planów Pro łącznie to $40 miesięcznie – to zazwyczaj mniej niż godzina pracy konsultanta.

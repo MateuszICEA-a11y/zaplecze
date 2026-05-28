@@ -8,7 +8,7 @@ icon: '<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><l
 author:
   name: 'Mateusz Wiśniewski'
   role: 'Ekspert SEO/AI Search · ICEA'
-  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
+  avatar: ../../../assets/images/authors/mateusz-wisniewski.avif
 readTime: '13 min'
 tags: ['Claude', 'ChatGPT', 'Programowanie', 'Porównanie']
 pillar: 'modele-llm'
@@ -38,7 +38,7 @@ Co te liczby znaczą w praktyce? SWE-bench wymaga analizy wielu plików jednocze
 
 Na HumanEval (generowanie funkcji Pythona z opisu w języku naturalnym) Claude 3.5 Sonnet i GPT-4o osiągają odpowiednio 92% i 90,2%. Przy takich wynikach różnica jest statystycznie nieistotna w codziennym użyciu. **Dla prostych zadań generowania kodu oba modele są praktycznie równoważne – wybór zależy wtedy od ekosystemu, a nie od zdolności modelu.**
 
-Nasycenie HumanEval przez wiodące modele sprawiło, że środowisko przeniosło się na trudniejsze punkty odniesienia. Na SWE-bench Pro – zestawie bardziej złożonych, wieloplikowych problemów – rozstrzał między modelami rośnie i to tu widać rzeczywistą przewagę Claude'a w złożonym rozumowaniu nad kodem. Pełny profil możliwości modelu i jego historię opisuje [artykuł o Claude](/modele-llm/claude), a odpowiednik po stronie OpenAI – [artykuł o ChatGPT](/modele-llm/chatgpt).
+Nasycenie HumanEval przez wiodące modele sprawiło, że środowisko przeniosło się na trudniejsze punkty odniesienia. Na SWE-bench Pro – zestawie bardziej złożonych, wieloplikowych problemów – rozstrzał między modelami rośnie i to tu widać rzeczywistą przewagę Claude'a w złożonym rozumowaniu nad kodem. Pełny profil możliwości modelu i jego historię opisuje [artykuł o Claude](/modele-llm/claude/), a odpowiednik po stronie OpenAI – [artykuł o ChatGPT](/modele-llm/chatgpt/).
 
 ## Claude Code vs Codex – dwa różne modele pracy agentowej
 
@@ -55,7 +55,7 @@ Różnice w praktyce:
 - **Bezpieczeństwo kodu** – Codex nie widzi lokalnych kluczy API ani haseł w `.env`; Claude Code widzi wszystko w systemie plików
 - **Równoległość** – Codex wyprzedza tutaj wyraźnie; Claude Code jest z natury sekwencyjny
 
-Jeśli chcesz głębiej zrozumieć, jak agentowe narzędzia do kodowania wpisują się w szerszy ekosystem automatyzacji, [przewodnik po agentach AI](/agenci-ai/przewodnik) opisuje architekturę wieloagentowych przepływów pracy.
+Jeśli chcesz głębiej zrozumieć, jak agentowe narzędzia do kodowania wpisują się w szerszy ekosystem automatyzacji, [przewodnik po agentach AI](/agenci-ai/przewodnik/) opisuje architekturę wieloagentowych przepływów pracy.
 
 ![Wyniki SWE-bench Verified dla Claude i ChatGPT (maj 2026) – Claude Opus 4.7, GPT-5.5 Codex, Claude Opus 4.5 i GPT-5.1 oraz SWE-bench Pro](../../../assets/images/infographic-modele-llm-claude-vs-chatgpt-programowanie.png)
 
@@ -109,7 +109,7 @@ OpenAI idzie drogą Function Calling i Responses API – bardziej dojrzałej tec
 
 **Kluczowa różnica dla zespołów budujących własne narzędzia:** MCP jest otwarty i przenośny między dostawcami, podczas gdy Function Calling jest de facto standardem branżowym z lepszym wsparciem w bibliotekach open source (LangChain, LlamaIndex, AutoGen). Jeśli Twój stos technologiczny (stack) opiera się na frameworkach agentowych, Function Calling będzie miał gotowe konektory – MCP jest nowszy i jego wsparcie rośnie, ale wciąż musi doganiać konkurencję.
 
-Architekturę wieloagentowego przepływu pracy z użyciem obu ekosystemów opisuje szerzej [przewodnik po modelach LLM](/modele-llm/przewodnik) – z omówieniem tego, kiedy warto mieszać modele zamiast polegać na jednym.
+Architekturę wieloagentowego przepływu pracy z użyciem obu ekosystemów opisuje szerzej [przewodnik po modelach LLM](/modele-llm/przewodnik/) – z omówieniem tego, kiedy warto mieszać modele zamiast polegać na jednym.
 
 ## Ceny API i koszt w agentowych sesjach
 

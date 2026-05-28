@@ -76,7 +76,7 @@ Poniższa tabela porównuje tradycyjne i AI-wspierane podejście do pomiaru kluc
 Poza prognozowaniem odejść, people analytics obejmuje planowanie zatrudnienia (ang. *workforce planning*), analizę luk kompetencyjnych i optymalizację struktury zespołów. Platformy takie jak Visier czy SAP SuccessFactors People Analytics agregują dane z wielu systemów i wizualizują je w formie kokpitów menedżerskich (dashboardów) dla dyrektora HR i zarządu.
 
 <aside class="callout-expert">
-  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.webp" alt="Mateusz Wiśniewski" /></div>
+  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.avif" alt="Mateusz Wiśniewski" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
     <p>W rozmowach z klientami ICEA najczęściej spotykam się z tym samym błędem: firma kupuje narzędzie people analytics, wprowadza do niego dane z systemu HRMS i oczekuje gotowych rekomendacji. Po kwartale okazuje się, że dane są niespójne – różne działy kodowały stanowiska inaczej, część rekrutacji była prowadzona poza ATS, a urlopy wpisywano ręcznie w Excelu. Model generuje wyniki, ale nikt im nie ufa. <strong>Przed zakupem jakiegokolwiek narzędzia analitycznego zrób tygodniowy audyt jakości danych – to najszybszy sposób, aby ocenić, czy w ogóle masz czym zasilić algorytm.</strong></p>
@@ -100,7 +100,7 @@ Obowiązki operacyjne dla każdego wdrożenia AI w HR obejmują:
 - **Weryfikację danych treningowych** – pracodawca ponosi odpowiedzialność za dyskryminację algorytmiczną, nawet jeśli pochodzi ona od zewnętrznego dostawcy narzędzia.
 - **Zawarcie umowy powierzenia** – jeśli dostawca narzędzia przetwarza dane kandydatów, wymagana jest umowa powierzenia przetwarzania danych spełniająca wymogi art. 28 RODO.
 
-Szczegółowe omówienie ram prawnych – w tym tego, jak zbudować wewnętrzną Politykę AI i jakie klauzule wprowadzić do umów z dostawcami – zawiera artykuł o [AI Act i RODO](/ai-w-biznesie/ai-act-rodo).
+Szczegółowe omówienie ram prawnych – w tym tego, jak zbudować wewnętrzną Politykę AI i jakie klauzule wprowadzić do umów z dostawcami – zawiera artykuł o [AI Act i RODO](/ai-w-biznesie/ai-act-rodo/).
 
 ## AI Act i HR – co zmienia się od sierpnia 2026
 
@@ -115,7 +115,7 @@ Pełne stosowanie przepisów dla systemów wysokiego ryzyka zaczyna się 2 sierp
 
 Od 2 lutego 2025 roku obowiązuje już zakaz rozpoznawania emocji kandydatów podczas rozmów kwalifikacyjnych – platformy takie jak HireVue musiały usunąć tę funkcjonalność lub zmodyfikować sposób działania modeli. Naruszenia przepisów mogą skutkować karami do 15 milionów euro lub 3% globalnego obrotu za niespełnienie wymogów dla systemów wysokiego ryzyka, a w przypadku stosowania zakazanych praktyk – nawet do 35 milionów euro lub 7% obrotu.
 
-Szerszy kontekst regulacyjny, w tym harmonogram wdrożenia AI Act dla różnych kategorii systemów, opisuje [przewodnik po wdrożeniu AI](/ai-w-biznesie/przewodnik) – punkt wyjścia dla każdego decydenta stawiającego pierwsze kroki z AI w firmie.
+Szerszy kontekst regulacyjny, w tym harmonogram wdrożenia AI Act dla różnych kategorii systemów, opisuje [przewodnik po wdrożeniu AI](/ai-w-biznesie/przewodnik/) – punkt wyjścia dla każdego decydenta stawiającego pierwsze kroki z AI w firmie.
 
 ## Jak wdrożyć AI w HR bez wpadki regulacyjnej
 
@@ -129,6 +129,6 @@ Praktyczna lista kroków przed uruchomieniem jakiegokolwiek narzędzia AI w HR:
 - **Zaktualizuj procedury** – klauzule informacyjne, umowy powierzenia, regulamin pracy (jeśli monitorujesz pracowników przez AI).
 - **Przeszkol rekruterów** – ludzki nadzór nie działa, jeśli rekruter nie rozumie, co algorytm robi i jakie są jego ograniczenia.
 
-Jeśli Twoja firma jest na etapie oceny gotowości do wdrożeń AI – w tym w obszarze HR – [Widoczność marki w AI](/narzedzia/brand-check) pokaże, jak Twoja organizacja jest postrzegana przez systemy AI, zanim zaczniesz je wdrażać wewnętrznie.
+Jeśli Twoja firma jest na etapie oceny gotowości do wdrożeń AI – w tym w obszarze HR – [Widoczność marki w AI](/narzedzia/brand-check/) pokaże, jak Twoja organizacja jest postrzegana przez systemy AI, zanim zaczniesz je wdrażać wewnętrznie.
 
-Warto też zapoznać się z tym, jak AI zmienia obsługę klientów – mechanizmy automatyzacji decyzji opisane w artykule o [AI w obsłudze klienta](/ai-w-biznesie/ai-w-obsludze-klienta) są bliźniaczo podobne do tych w HR i podlegają tym samym ramom prawnym. A jeśli interesuje Cię techniczny fundament tych systemów – jak działają modele językowe zasilające asystentów HR – solidny punkt wyjścia to [przewodnik po dużych modelach językowych](/modele-llm/przewodnik).
+Warto też zapoznać się z tym, jak AI zmienia obsługę klientów – mechanizmy automatyzacji decyzji opisane w artykule o [AI w obsłudze klienta](/ai-w-biznesie/ai-w-obsludze-klienta/) są bliźniaczo podobne do tych w HR i podlegają tym samym ramom prawnym. A jeśli interesuje Cię techniczny fundament tych systemów – jak działają modele językowe zasilające asystentów HR – solidny punkt wyjścia to [przewodnik po dużych modelach językowych](/modele-llm/przewodnik/).

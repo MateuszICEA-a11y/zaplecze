@@ -19,7 +19,7 @@ const { author, articleCount = 0, authorSlug } = Astro.props;
 
 const firstName = author.name.split(' ')[0] ?? author.name;
 const tags = (author.expertise ?? []).slice(0, 4);
-const authorHref = authorSlug ? `/autor/${authorSlug}/` : '/o-nas';
+const authorHref = authorSlug ? `/autor/${authorSlug}/` : '/o-nas/';
 const description = author.shortBio ?? author.bio;
 ---
 

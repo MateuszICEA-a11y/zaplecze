@@ -8,7 +8,7 @@ icon: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><po
 author:
   name: 'Mateusz Wiśniewski'
   role: 'Ekspert SEO/AI Search · ICEA'
-  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
+  avatar: ../../../assets/images/authors/mateusz-wisniewski.avif
 readTime: '9 min'
 tags: ['llms.txt', 'GEO', 'Boty AI', 'Techniczne SEO']
 pillar: 'geo'
@@ -171,13 +171,13 @@ Dla projektów z dużą częstotliwością aktualizacji – dokumentacje technic
 
 ## Czy `llms.txt` wpływa na cytowania w AI?
 
-Bezpośrednio – nie, przynajmniej na razie. Badania i dane z logów serwerowych są jednoznaczne: tradycyjne wyszukiwarki i systemy generujące AI Overviews nie pobierają tego pliku przy konstruowaniu odpowiedzi. Jeśli Twoim jedynym celem jest poprawa wskaźnika cytowań (*Citation Rate*) w ChatGPT czy Gemini, tutaj największe znaczenie mają [inne czynniki cytowalności](/geo/jak-llm-cytuja-zrodla) – gęstość faktograficzna treści, dane strukturalne schema.org, spójność informacji w sieci.
+Bezpośrednio – nie, przynajmniej na razie. Badania i dane z logów serwerowych są jednoznaczne: tradycyjne wyszukiwarki i systemy generujące AI Overviews nie pobierają tego pliku przy konstruowaniu odpowiedzi. Jeśli Twoim jedynym celem jest poprawa wskaźnika cytowań (*Citation Rate*) w ChatGPT czy Gemini, tutaj największe znaczenie mają [inne czynniki cytowalności](/geo/jak-llm-cytuja-zrodla/) – gęstość faktograficzna treści, dane strukturalne schema.org, spójność informacji w sieci.
 
 `llms.txt` gra natomiast wyraźną rolę pośrednią. Po pierwsze, asystenci kodowania – Cursor, Copilot, Claude – pobierają ten plik natywnie przy mapowaniu Twojej biblioteki lub API, co zwiększa jakość kodu generowanego przez użytkowników Twojego produktu. Po drugie, pozytywny wynik audytu Agentic Browsing w Lighthouse 13.3 zabezpiecza widoczność witryny w przeglądarkach, które w kolejnych latach będą realizowały zakupy i wyszukiwały oferty w imieniu użytkowników.
 
 **Koszt wdrożenia wynosi kilka godzin pracy.** Bezpośrednie korzyści są niszowe, ale korzyść z gotowości agentowej może się okazać decydująca w perspektywie 18–24 miesięcy. To stosunek nakładu pracy do potencjalnych korzyści, który warto ocenić samodzielnie.
 
-Jeśli chcesz sprawdzić, czy Twoja strona jest już teraz dostępna dla botów AI – `GPTBot`, `ClaudeBot`, `PerplexityBot` – narzędzie [Dostęp botów AI](/narzedzia/ai-bots-check) weryfikuje konfigurację `robots.txt` i dostęp botów w kilkanaście sekund. To dobry punkt startowy przed wdrożeniem `llms.txt`, bo nie ma sensu budować mapy zasobów dla botów, które i tak są zablokowane na poziomie serwera. Szerszy kontekst techniczny – dlaczego każdy z tych botów ma inny user-agent i jak nimi zarządzać – opisuje [przewodnik po botach AI](/geo/boty-ai-przewodnik). Natomiast jeśli chcesz zrozumieć, jakie czynniki faktycznie decydują o cytowaniach Twojej marki w LLM-ach, zacznij od [przewodnika GEO](/geo/przewodnik) – tam znajdziesz wyniki badania Princeton KDD 2024 i konkretne taktyki z mierzalnymi efektami.
+Jeśli chcesz sprawdzić, czy Twoja strona jest już teraz dostępna dla botów AI – `GPTBot`, `ClaudeBot`, `PerplexityBot` – narzędzie [Dostęp botów AI](/narzedzia/ai-bots-check/) weryfikuje konfigurację `robots.txt` i dostęp botów w kilkanaście sekund. To dobry punkt startowy przed wdrożeniem `llms.txt`, bo nie ma sensu budować mapy zasobów dla botów, które i tak są zablokowane na poziomie serwera. Szerszy kontekst techniczny – dlaczego każdy z tych botów ma inny user-agent i jak nimi zarządzać – opisuje [przewodnik po botach AI](/geo/boty-ai-przewodnik/). Natomiast jeśli chcesz zrozumieć, jakie czynniki faktycznie decydują o cytowaniach Twojej marki w LLM-ach, zacznij od [przewodnika GEO](/geo/przewodnik/) – tam znajdziesz wyniki badania Princeton KDD 2024 i konkretne taktyki z mierzalnymi efektami.
 
 ## Często zadawane pytania o `llms.txt`
 

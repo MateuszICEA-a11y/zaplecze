@@ -133,7 +133,7 @@ Po stronie kosztów (CAPEX + OPEX) uwzględnij:
 
 Po stronie korzyści przelicz na konkretne pozycje rachunku zysków i strat. Nie „zaoszczędzimy czas" – tylko „redukcja o 2 etaty (FTE) w dziale obsługi przez automatyzację klasyfikacji zgłoszeń = 180 tys. zł rocznie". Dla produkcji: zmniejszenie odsetka odrzutów o 1,5 punktu procentowego przy wolumenie 10 000 sztuk miesięcznie. To liczby, które zarząd może ocenić.
 
-Jeśli chcesz sprawdzić, czy Twoja marka pojawia się w odpowiedziach AI, zanim zainwestujesz w content marketing oparty na AI, darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI i pokaże Twój obecny udział głosu (Share of Voice) na tle kategorii.
+Jeśli chcesz sprawdzić, czy Twoja marka pojawia się w odpowiedziach AI, zanim zainwestujesz w content marketing oparty na AI, darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) odpyta cztery silniki AI i pokaże Twój obecny udział głosu (Share of Voice) na tle kategorii.
 
 **Nie zaczynaj od dużego projektu.** Zacznij od jednego procesu, jednej grupy użytkowników, jednej mierzalnej metryki. Sukces pierwszego wdrożenia jest jedynym dowodem, który przekona organizację do kolejnego kroku – żadne uzasadnienie biznesowe tego nie zastąpi.
 
@@ -148,10 +148,10 @@ AI Act to nie tylko kary za naruszenia. To także ramy prawne, które wymuszają
 
 Polska przygotowuje przepisy wdrażające AI Act za pośrednictwem Ministerstwa Cyfryzacji. W toku konsultacji 110 podmiotów zgłosiło ponad 2000 uwag – rynek oczekuje powołania niezależnej Komisji Rozwoju i Bezpieczeństwa Sztucznej Inteligencji jako głównego organu kontrolnego. Śledzenie tego procesu jest ważne, jeśli budujesz systemy w kategorii wysokiego ryzyka.
 
-Jeśli budujesz lub optymalizujesz content marketing z elementami AI, warto równolegle zadbać o widoczność marki w odpowiedziach modeli językowych (LLM). Szczegółową metodologię opisuje [przewodnik po pozycjonowaniu w AI (AIO)](/pozycjonowanie-ai) – to naturalne rozszerzenie każdej strategii biznesowej.
+Jeśli budujesz lub optymalizujesz content marketing z elementami AI, warto równolegle zadbać o widoczność marki w odpowiedziach modeli językowych (LLM). Szczegółową metodologię opisuje [przewodnik po pozycjonowaniu w AI (AIO)](/pozycjonowanie-ai/) – to naturalne rozszerzenie każdej strategii biznesowej.
 
 <aside class="callout-expert">
-  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.webp" alt="Mateusz Wiśniewski" /></div>
+  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.avif" alt="Mateusz Wiśniewski" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
     <p>W projektach, przy których pracuję w ICEA, największy problem nie leży w technologii – leży w braku właściciela procesu po stronie klienta. Ktoś musi wiedzieć, jak działa ten jeden konkretny proces lepiej niż ktokolwiek inny w firmie. Bez tej osoby każdy audyt w fazie eksploracji zamienia się w zabawę w głuchy telefon. <strong>Pierwsza rekomendacja przed jakimkolwiek wdrożeniem AI jest zawsze ta sama: wyznacz właściciela procesu z mandatem do podejmowania decyzji, a nie tylko do uczestniczenia w spotkaniach.</strong></p>
@@ -167,6 +167,6 @@ Na polskim rynku ta rola nazywa się „tłumaczem AI" (AI translator) i należy
 
 Własny zespół wewnętrzny ma sens od momentu skalowania w środowisku produkcyjnym, gdy system wymaga ciągłego douczania, monitoringu i integracji z codziennymi operacjami. MLOps Engineer odpowiedzialny za automatyzację procesów wdrażania modeli, wersjonowanie i optymalizację kosztów infrastruktury obliczeniowej – to rola, która zwraca się wtedy, gdy masz co najmniej dwa działające systemy AI na produkcji.
 
-Strategię i zwrot z inwestycji w AI dla firmy omawia szczegółowo artykuł o [ROI z AI](/ai-w-biznesie/roi-z-ai) – warto przeczytać go przed rozmową z zarządem o budżecie. Jeśli na Twojej liście jest też zgodność z regulacjami RODO i AI Act w ramach jednego procesu, sprawdź osobny artykuł o [AI Act i RODO](/ai-w-biznesie/ai-act-rodo).
+Strategię i zwrot z inwestycji w AI dla firmy omawia szczegółowo artykuł o [ROI z AI](/ai-w-biznesie/roi-z-ai/) – warto przeczytać go przed rozmową z zarządem o budżecie. Jeśli na Twojej liście jest też zgodność z regulacjami RODO i AI Act w ramach jednego procesu, sprawdź osobny artykuł o [AI Act i RODO](/ai-w-biznesie/ai-act-rodo/).
 
 Wdrożenie AI w firmie to projekt organizacyjny z komponentem technologicznym – nie odwrotnie. Zacznij od procesu, a nie od narzędzia. Zacznij od jednej warstwy, a nie od transformacji całego działu. I zmierz efekt, zanim pójdziesz dalej. Wszystko inne to szczegóły.

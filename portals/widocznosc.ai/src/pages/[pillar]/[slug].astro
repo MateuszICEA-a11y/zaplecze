@@ -74,7 +74,7 @@ const articleData = {
   <Navbar />
   <Article articleData={articleData}>
     <nav slot="breadcrumb" class="article-breadcrumb" aria-label="Ścieżka nawigacji">
-      <a href="/blog" class="article-breadcrumb-link">Baza wiedzy</a>
+      <a href="/blog/" class="article-breadcrumb-link">Baza wiedzy</a>
       <span class="article-breadcrumb-sep" aria-hidden="true">›</span>
       <a href={`/${pillar}/`} class="article-breadcrumb-link"
         >{PILLAR_LABELS[pillar as keyof typeof PILLAR_LABELS]}</a
@@ -101,7 +101,7 @@ const articleData = {
       <div class="related-grid">
         {
           relatedPosts.map((related) => (
-            <a href={`/${related.id}`} class="related-card">
+            <a href={`/${related.id}/`} class="related-card">
               <div class="related-card-media">
                 <Image
                   src={related.data.image}

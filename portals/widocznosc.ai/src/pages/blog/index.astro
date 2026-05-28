@@ -56,7 +56,7 @@ const formatDate = (date: Date) =>
       '@context': 'https://schema.org',
       '@type': 'Blog',
       name: 'Baza wiedzy widocznosc.ai',
-      url: `${siteUrl}/blog`,
+      url: `${siteUrl}/blog/`,
       blogPost: posts.map((post) => ({
         '@type': 'BlogPosting',
         headline: post.data.title,
@@ -68,7 +68,7 @@ const formatDate = (date: Date) =>
           jobTitle: post.data.author.role,
         },
         keywords: post.data.tags.join(', '),
-        url: `${siteUrl}/${post.id}`,
+        url: `${siteUrl}/${post.id}/`,
         image: `${siteUrl}${post.data.image.src}`,
       })),
     })}
@@ -96,7 +96,7 @@ const formatDate = (date: Date) =>
         <section class="blog-featured-section">
           <div class="blog-featured-container">
             <a
-              href={`/${featuredPost.id}`}
+              href={`/${featuredPost.id}/`}
               class="blog-featured"
               data-category={featuredPost.data.pillar}
             >
@@ -226,7 +226,7 @@ const formatDate = (date: Date) =>
           {
             visiblePosts.map((post) => (
               <a
-                href={`/${post.id}`}
+                href={`/${post.id}/`}
                 class="post-card"
                 data-category={post.data.pillar}
                 data-search={`${post.data.title} ${post.data.subtitle} ${post.data.tags.join(' ')} ${PILLAR_LABELS[post.data.pillar]} ${post.data.author.name}`}

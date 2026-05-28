@@ -8,7 +8,7 @@ icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.22 4.22l2.83 2.
 author:
   name: 'Mateusz Wiśniewski'
   role: 'Ekspert SEO/AI Search · ICEA'
-  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
+  avatar: ../../../assets/images/authors/mateusz-wisniewski.avif
 readTime: '9 min'
 tags: ['Agenci AI', 'Architektura', 'Pamięć', 'Narzędzia AI']
 pillar: 'agenci-ai'
@@ -16,7 +16,7 @@ intent: 'INFO'
 level: 'L2'
 ---
 
-Agent AI to nie chatbot z lepszym promptem. To system, który **planuje**, **wywołuje narzędzia** i **zapamiętuje wyniki** – powtarzając ten cykl tak długo, aż osiągnie cel. Żeby ocenić, czy agent nadaje się do konkretnego zadania w Twojej organizacji, musisz rozumieć trzy składniki jego architektury: narzędzia (czyli „ręce"), pamięć (czyli „kontekst operacyjny") i pętlę decyzyjną (czyli „mózg"). Zanim powierzysz agentowi dostęp do CRM-u, bazy danych lub skrzynki mailowej, sprawdź, jak każdy z tych elementów działa pod spodem. Szerszy kontekst – czym agenci AI różnią się od klasycznych automatyzacji i kiedy warto po nie sięgać – znajdziesz w [przewodniku po agentach AI](/agenci-ai/przewodnik).
+Agent AI to nie chatbot z lepszym promptem. To system, który **planuje**, **wywołuje narzędzia** i **zapamiętuje wyniki** – powtarzając ten cykl tak długo, aż osiągnie cel. Żeby ocenić, czy agent nadaje się do konkretnego zadania w Twojej organizacji, musisz rozumieć trzy składniki jego architektury: narzędzia (czyli „ręce"), pamięć (czyli „kontekst operacyjny") i pętlę decyzyjną (czyli „mózg"). Zanim powierzysz agentowi dostęp do CRM-u, bazy danych lub skrzynki mailowej, sprawdź, jak każdy z tych elementów działa pod spodem. Szerszy kontekst – czym agenci AI różnią się od klasycznych automatyzacji i kiedy warto po nie sięgać – znajdziesz w [przewodniku po agentach AI](/agenci-ai/przewodnik/).
 
 ## Narzędzia – jak agent działa w świecie zewnętrznym
 
@@ -32,7 +32,7 @@ Trzy główne kategorie narzędzi w produkcyjnych systemach agentowych:
 
 **Pionierski system MRKL (Modular Reasoning, Knowledge and Language) z 2022 roku pokazał, że modele o małej skali mają duże trudności z poprawną ekstrakcją argumentów do wywołań narzędzi.** Późniejszy Toolformer (Schick et al. 2023) rozwiązał ten problem przez samonadzorowane uczenie się korzystania z interfejsów programistycznych – na podstawie minimalnej liczby przykładów ludzkich. Współczesne GPT-4o czy Claude 3.5 radzą sobie z tym znacznie lepiej, ale błędy w argumentach narzędziowych wciąż są częstą przyczyną awarii agentów produkcyjnych.
 
-Zanim wybierzesz framework agentowy, [przewodnik po modelach LLM](/modele-llm/przewodnik) pokazuje, które modele najlepiej radzą sobie z precyzją wywołań narzędziowych – to kryterium często ważniejsze niż ogólne parametry w benchmarkach.
+Zanim wybierzesz framework agentowy, [przewodnik po modelach LLM](/modele-llm/przewodnik/) pokazuje, które modele najlepiej radzą sobie z precyzją wywołań narzędziowych – to kryterium często ważniejsze niż ogólne parametry w benchmarkach.
 
 ## Pętla decyzyjna ReAct – myśl, działaj, obserwuj
 
@@ -88,7 +88,7 @@ Cykl życia wpisu w pamięci to trzy procesy: **konsolidacja** (usuwanie sprzecz
   </div>
 </aside>
 
-Jeśli budujesz system oparty na dokumentach firmowych, [przewodnik po RAG](/rag/przewodnik) wyjaśnia, jak zaprojektować warstwę pobierania danych, żeby agent dostawał trafne fragmenty zamiast szumu.
+Jeśli budujesz system oparty na dokumentach firmowych, [przewodnik po RAG](/rag/przewodnik/) wyjaśnia, jak zaprojektować warstwę pobierania danych, żeby agent dostawał trafne fragmenty zamiast szumu.
 
 ## Bezpieczeństwo pętli wykonawczej
 
@@ -124,7 +124,7 @@ Rynek frameworków agentowych w 2026 roku konsoliduje się wokół pięciu głó
 
 CrewAI ma znacznie wyższe zużycie tokenów, ponieważ generuje rozbudowane konteksty fabularne dla każdego agenta. W środowisku z ograniczonym budżetem na API może to być zaskoczeniem przy pierwszym rachunku.
 
-Decyzja o architekturze agentowej zawsze zaczyna się od zrozumienia, jaką intencję użytkownika agent ma obsługiwać. [Przewodnik po promptach](/prompty/przewodnik) wyjaśnia, jak projektować instrukcje systemowe, które kierują agentem precyzyjnie – bez zbędnych nawrotów pętli.
+Decyzja o architekturze agentowej zawsze zaczyna się od zrozumienia, jaką intencję użytkownika agent ma obsługiwać. [Przewodnik po promptach](/prompty/przewodnik/) wyjaśnia, jak projektować instrukcje systemowe, które kierują agentem precyzyjnie – bez zbędnych nawrotów pętli.
 
 ## Kiedy agent naprawdę ma sens
 
@@ -138,4 +138,4 @@ Trzecie – ryzyko operacyjne przy narzędziach nieodwracalnych. Agent, który w
 
 Agent ma sens, gdy zadanie jest wieloetapowe, wymaga pobierania danych z wielu źródeł i adaptacji do wyników pośrednich. Dla prostego zadania jednokrokowego – lepszy, szybszy i tańszy będzie zwykły potok przetwarzania (pipeline) z modelem i predefiniowanymi narzędziami.
 
-Jeśli chcesz sprawdzić, jak Twoja obecna infrastruktura treści wypada pod kątem gotowości na systemy agentowe i RAG, [Ocena cytowalności strony](/narzedzia/url-check) analizuje strukturę strony pod kątem 8 czynników cytowalności w 30 sekund.
+Jeśli chcesz sprawdzić, jak Twoja obecna infrastruktura treści wypada pod kątem gotowości na systemy agentowe i RAG, [Ocena cytowalności strony](/narzedzia/url-check/) analizuje strukturę strony pod kątem 8 czynników cytowalności w 30 sekund.

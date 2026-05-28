@@ -30,7 +30,7 @@ Trzy poziomy ekosystemu Gemini:
 
 Google DeepMind, dział badawczy stojący za modelami, jest wynikiem połączenia Google Brain i DeepMind w 2023 roku. **To właśnie DeepMind odpowiada za architekturę Gemini – multimodalną od podstaw, a nie jak wcześniejsze modele: tekstową z dodanym modułem wizyjnym.**
 
-W kontekście widoczności marki w AI: cały ekosystem – od Google AI Mode po odpowiedzi Gemini w aplikacji – czerpie z tych samych modeli bazowych. Mechanizmy cytowania i wyszukiwania informacji (RAG) opisuje [przewodnik po modelach LLM](/modele-llm/przewodnik) – to dobry punkt wyjścia, zanim zaczniesz optymalizować treści pod ten kanał.
+W kontekście widoczności marki w AI: cały ekosystem – od Google AI Mode po odpowiedzi Gemini w aplikacji – czerpie z tych samych modeli bazowych. Mechanizmy cytowania i wyszukiwania informacji (RAG) opisuje [przewodnik po modelach LLM](/modele-llm/przewodnik/) – to dobry punkt wyjścia, zanim zaczniesz optymalizować treści pod ten kanał.
 
 ## Jak działa model Gemini – multimodalność jako fundament
 
@@ -118,7 +118,7 @@ Mechanizm przebiega w czterech krokach. Najpierw model tworzy plan badania i prz
 
 Deep Research Max, uruchomiony w 2026 roku na bazie modelu Gemini 3.1 Pro, dodaje również obsługę MCP (protokołu kontekstu modelu), dzięki czemu agent może sięgać nie tylko do zasobów publicznego internetu, ale też do prywatnych baz danych firmy czy wewnętrznych systemów dokumentacji. **To przekształca Deep Research z narzędzia do analizy rynku w pełnoprawny system do analizy danych wewnętrznych w skali korporacyjnej (enterprise).**
 
-Jeśli chcesz sprawdzić, jak Twoja marka pojawia się w wynikach badań generowanych przez Gemini, bezpłatny audyt marki ([Widoczność marki w AI](/narzedzia/brand-check)) potrafi odpytać cztery silniki AI jednocześnie i wskazać różnice w odpowiedziach – bez czasochłonnego, ręcznego testowania.
+Jeśli chcesz sprawdzić, jak Twoja marka pojawia się w wynikach badań generowanych przez Gemini, bezpłatny audyt marki ([Widoczność marki w AI](/narzedzia/brand-check/)) potrafi odpytać cztery silniki AI jednocześnie i wskazać różnice w odpowiedziach – bez czasochłonnego, ręcznego testowania.
 
 ## NotebookLM – praca z własnymi dokumentami
 
@@ -163,11 +163,11 @@ Rosnący globalny udział Google AI Mode – czyli mechanizmu odpowiedzi generat
 
 Co warte podkreślenia, cytowania wyświetlane w sekcji AI Overviews od Google mocno koncentrują się wokół bardzo wąskiej grupy najsilniejszych domen: zaledwie 20 czołowych serwisów odpowiada średnio za aż 66,18% wszystkich pojawiających się tam cytowań. Badania wykazują, że o wiele większą siłę predykcyjną dla widoczności w AI ma wcale nie gigantyczny profil linków zwrotnych, lecz gęsta i autorytatywna liczba wzmianek o marce (co-citations) – silna korelacja wzmiankowania z ostateczną widocznością w wynikach AI wynosi 0,334 (według zeszłorocznego raportu AI Visibility Report 2025).
 
-Strukturalna optymalizacja pod Gemini oraz samo Google AI Mode to obecnie trzon szerszej dziedziny marketingu o nazwie GEO (Generative Engine Optimization – czyli organiczna optymalizacja bezpośrednio pod generatywne silniki wyszukiwania). Mechanizmy oceny cytowania, twarde wymagania co do technicznej struktury treści i realne taktyki skutecznie podnoszące wskaźnik uwzględnień w takich panelach szczegółowo opisuje [przewodnik po strategiach GEO](/geo/przewodnik). Skuteczna strategia pozycjonowania dla konkretnego modelu, w tym przypadku rodziny Gemini, dostępna jest z kolei na dedykowanej stronie [pozycjonowanie AI – Gemini](/pozycjonowanie-ai/gemini).
+Strukturalna optymalizacja pod Gemini oraz samo Google AI Mode to obecnie trzon szerszej dziedziny marketingu o nazwie GEO (Generative Engine Optimization – czyli organiczna optymalizacja bezpośrednio pod generatywne silniki wyszukiwania). Mechanizmy oceny cytowania, twarde wymagania co do technicznej struktury treści i realne taktyki skutecznie podnoszące wskaźnik uwzględnień w takich panelach szczegółowo opisuje [przewodnik po strategiach GEO](/geo/przewodnik/). Skuteczna strategia pozycjonowania dla konkretnego modelu, w tym przypadku rodziny Gemini, dostępna jest z kolei na dedykowanej stronie [pozycjonowanie AI – Gemini](/pozycjonowanie-ai/gemini/).
 
-W celu trafnego zestawienia możliwości operacyjnych oraz samej biznesowej filozofii Gemini z jej największymi rywalami, warto sięgnąć także po inne opracowania: dedykowany [artykuł o specyfice ChatGPT](/modele-llm/chatgpt) z perspektywy ekosystemu OpenAI oraz [kompleksowy przewodnik po modelu Claude](/modele-llm/claude) prezentujący unikalne podejście firmy Anthropic do rygorystycznego bezpieczeństwa oraz koncepcji tzw. Constitutional AI.
+W celu trafnego zestawienia możliwości operacyjnych oraz samej biznesowej filozofii Gemini z jej największymi rywalami, warto sięgnąć także po inne opracowania: dedykowany [artykuł o specyfice ChatGPT](/modele-llm/chatgpt/) z perspektywy ekosystemu OpenAI oraz [kompleksowy przewodnik po modelu Claude](/modele-llm/claude/) prezentujący unikalne podejście firmy Anthropic do rygorystycznego bezpieczeństwa oraz koncepcji tzw. Constitutional AI.
 
-Jeśli zależy Ci, aby zweryfikować realny punkt startowy widoczności cyfrowej własnej marki w gotowych odpowiedziach AI – między innymi za sprawą modelu Gemini – darmowe narzędzie audytu marki ([Widoczność marki w AI](/narzedzia/brand-check)) błyskawicznie odpyta jednocześnie cztery wiodące silniki na rynku, pokazując czarno na białym, jak konkretnie algorytmy postrzegają Twój biznes na szerokim tle branży i konkurencji.
+Jeśli zależy Ci, aby zweryfikować realny punkt startowy widoczności cyfrowej własnej marki w gotowych odpowiedziach AI – między innymi za sprawą modelu Gemini – darmowe narzędzie audytu marki ([Widoczność marki w AI](/narzedzia/brand-check/)) błyskawicznie odpyta jednocześnie cztery wiodące silniki na rynku, pokazując czarno na białym, jak konkretnie algorytmy postrzegają Twój biznes na szerokim tle branży i konkurencji.
 
 ## Często zadawane pytania o Gemini
 

@@ -8,7 +8,7 @@ icon: '<circle cx="12" cy="12" r="3"/><path d="M12 2 L12 6"/><path d="M12 18 L12
 author:
   name: 'Mateusz Wiśniewski'
   role: 'Ekspert SEO/AI Search · ICEA'
-  avatar: ../../../assets/images/authors/mateusz-wisniewski.webp
+  avatar: ../../../assets/images/authors/mateusz-wisniewski.avif
 readTime: '9 min'
 tags: ['Embeddingi', 'Wektory', 'RAG', 'NLP']
 pillar: 'rag'
@@ -48,7 +48,7 @@ Architektura Transformer, wprowadzona przez zespół Google w 2017 roku, rozwią
 
 Systemy RAG nie operują na poziomie pojedynczych słów. Potrzebują wektorów dla całych fragmentów tekstu – paragrafów o długości 200–400 słów. Model embeddingowy zamienia cały taki fragment na jeden punkt w przestrzeni, który reprezentuje jego zbiorowe znaczenie.
 
-Tu pojawia się praktyczna pułapka. Jeśli fragment obejmuje zbyt wiele tematów naraz, jego wektor jest „uśredniony" i nie reprezentuje żadnego tematu wystarczająco mocno. Dlatego dobra strategia segmentacji tekstu (ang. chunking, czyli dzielenie dokumentu na fragmenty) jest tak ważna – o czym szczegółowo traktuje artykuł o [strategiach podziału dokumentów](/rag/chunking-strategie).
+Tu pojawia się praktyczna pułapka. Jeśli fragment obejmuje zbyt wiele tematów naraz, jego wektor jest „uśredniony" i nie reprezentuje żadnego tematu wystarczająco mocno. Dlatego dobra strategia segmentacji tekstu (ang. chunking, czyli dzielenie dokumentu na fragmenty) jest tak ważna – o czym szczegółowo traktuje artykuł o [strategiach podziału dokumentów](/rag/chunking-strategie/).
 
 ![Embeddingi – jak tekst staje się wektorem: tekst przechodzi przez model osadzający, zamienia się w wektor liczb i trafia do przestrzeni semantycznej, gdzie bliskość wektorów odpowiada bliskości znaczenia](../../../assets/images/infographic-rag-embeddingi.png)
 
@@ -63,7 +63,7 @@ Kiedy użytkownik wpisuje pytanie w ChatGPT lub Perplexity, system RAG wykonuje 
 
 **Twoja strona pojawia się w odpowiedzi AI tylko wtedy, gdy jej fragmenty wygrają ten konkurs podobieństwa wektorowego.** Nie wystarczy dobry ranking w Google – musi być też semantyczna bliskość między Twoją treścią a pytaniami, które użytkownicy faktycznie zadają.
 
-Pełny obraz tego, jak silniki RAG pobierają i cytują treść, znajdziesz w [przewodniku po systemach RAG](/rag/przewodnik).
+Pełny obraz tego, jak silniki RAG pobierają i cytują treść, znajdziesz w [przewodniku po systemach RAG](/rag/przewodnik/).
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
@@ -103,7 +103,7 @@ Ważniejsza dla praktyki SEO/GEO jest trzecia słabość:
 - **Odwrócenie relacji logicznej** – „wartość pieniądza w czasie" i „pieniężna wartość czasu" mają bardzo podobne embeddingi (podobieństwo ~0,73), choć to zupełnie różne pojęcia ekonomiczne. Modele oparte wyłącznie na embeddingach mogą mylić je w wynikach.
 - **Słownictwo specjalistyczne** – teksty z dziedzin, które są słabo reprezentowane w danych treningowych, mogą być embedowane mniej precyzyjnie niż treści z popularnych nisz.
 
-Dlatego zaawansowane systemy łączą wyszukiwanie wektorowe z klasycznym dopasowaniem słów kluczowych (np. BM25). Takie podejście – wyszukiwanie hybrydowe – daje lepsze wyniki niż sama semantyka, szczególnie dla zapytań z unikalnymi nazwami własnymi. Mechanizm ponownego rangowania (reranking) po wstępnym wyszukiwaniu wektorowym omówimy osobno w artykule o [rerankingu w systemach RAG](/rag/reranking).
+Dlatego zaawansowane systemy łączą wyszukiwanie wektorowe z klasycznym dopasowaniem słów kluczowych (np. BM25). Takie podejście – wyszukiwanie hybrydowe – daje lepsze wyniki niż sama semantyka, szczególnie dla zapytań z unikalnymi nazwami własnymi. Mechanizm ponownego rangowania (reranking) po wstępnym wyszukiwaniu wektorowym omówimy osobno w artykule o [rerankingu w systemach RAG](/rag/reranking/).
 
 ## Co to znaczy dla treści tworzonych pod AI
 
@@ -115,7 +115,7 @@ Każdy fragment Twojego artykułu powinien mieć „czysty" sygnał semantyczny.
 
 Gęstość faktograficzna ma znaczenie podwójne. Liczby, daty i nazwy własne to unikalne sygnały w przestrzeni wektorowej – fragmenty je zawierające precyzyjniej trafiają w zapytania z konkretnymi danymi. **Treść ogólnikowa generuje ogólnikowy wektor i przegrywa z konkretną treścią konkurencji w konkursie podobieństwa.**
 
-Jak sprawdzić, czy Twoje treści są zbudowane pod cytowalność w AI? Darmowy [Ocena cytowalności strony](/narzedzia/url-check) analizuje stronę pod kątem 8 czynników wpływających na cytowalność w systemach RAG – w tym struktury semantycznej i gęstości faktograficznej.
+Jak sprawdzić, czy Twoje treści są zbudowane pod cytowalność w AI? Darmowy [Ocena cytowalności strony](/narzedzia/url-check/) analizuje stronę pod kątem 8 czynników wpływających na cytowalność w systemach RAG – w tym struktury semantycznej i gęstości faktograficznej.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/michal-ziach.avif" alt="Michał Ziach" /></div>
@@ -134,4 +134,4 @@ Kiedy GPT-4 lub Claude przetwarza tekst, na wejściu każdy token (fragment sło
 
 To oznacza, że embeddingi to nie tylko narzędzie do wyszukiwania podobnych dokumentów. To język, którym modele językowe myślą. **Kiedy piszesz tekst zrozumiały dla LLM-a, piszesz tekst, który generuje przejrzyste, jednoznaczne wektory na każdym poziomie przetwarzania.**
 
-Szerszy kontekst tego, jak LLM-y decydują, co zacytować i skąd pobierają dane, znajdziesz w artykule o [tym, jak LLM-y cytują źródła](/geo/jak-llm-cytuja-zrodla). A jeśli chcesz zrozumieć architekturę samych modeli i to, jakich embeddingów używa każdy z nich, [przewodnik po modelach LLM](/modele-llm/przewodnik) daje porównawcze zestawienie.
+Szerszy kontekst tego, jak LLM-y decydują, co zacytować i skąd pobierają dane, znajdziesz w artykule o [tym, jak LLM-y cytują źródła](/geo/jak-llm-cytuja-zrodla/). A jeśli chcesz zrozumieć architekturę samych modeli i to, jakich embeddingów używa każdy z nich, [przewodnik po modelach LLM](/modele-llm/przewodnik/) daje porównawcze zestawienie.

@@ -98,7 +98,7 @@ Umowa DPA z dostawcą LLM powinna zawierać co najmniej:
 [Pseudonimizacja](https://pl.wikipedia.org/wiki/Pseudonimizacja) danych przed przekazaniem ich do LLM to dodatkowa warstwa ochrony: zamiast podawać imię i nazwisko klienta, podajesz kod „Klient_A". Model wykonuje zadanie, a Ty zachowujesz kontrolę nad kluczem do rzeczywistych danych.
 
 <aside class="callout-expert">
-  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.webp" alt="Mateusz Wiśniewski" /></div>
+  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.avif" alt="Mateusz Wiśniewski" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
     <p>W projektach AI, które wdrażamy w ICEA, pierwsza weryfikacja zawsze dotyczy tego, co w ogóle trafia do promptu. Zaskakująco dużo firm wkleja do modelu dane klientów, takie jak imię, nazwisko i numer zamówienia – bo tak jest najszybciej. Tymczasem wystarczą dwa kroki: mapowanie identyfikatorów przed wysłaniem i odwrotne mapowanie po odpowiedzi. Model działa równie dobrze na Kliencie_001, jak i na Janie Kowalskim. <strong>Pseudonimizacja to najtańsza inwestycja w zgodność z przepisami (compliance), jaką możesz zrobić przy pracy z LLM – i jednocześnie ta, o której zapomina 90% firm.</strong></p>
@@ -122,7 +122,7 @@ Porównanie najważniejszych wymiarów:
 
 **Znaczna część infrastruktury AI w ściśle regulowanym sektorze finansowym działa już poza chmurą publiczną.** To nie ideologia, to kalkulacja: bank, który przetwarza miliony zapytań dziennie, musi kontrolować zarówno koszty, jak i lokalizację danych klientów.
 
-Podejście hybrydowe coraz częściej jest odpowiedzią dla firm ze środkowej półki: wrażliwe dane i produkcja – on-premise, zadania o niskim ryzyku i eksperymenty – API w chmurze. Dobra architektura [RAG (generowania wspomaganego wyszukiwaniem)](/rag/przewodnik) pozwala połączyć oba światy: baza wektorowa z dokumentami firmowymi działa lokalnie, a model odpytuje ją bez konieczności wysyłania surowych danych.
+Podejście hybrydowe coraz częściej jest odpowiedzią dla firm ze środkowej półki: wrażliwe dane i produkcja – on-premise, zadania o niskim ryzyku i eksperymenty – API w chmurze. Dobra architektura [RAG (generowania wspomaganego wyszukiwaniem)](/rag/przewodnik/) pozwala połączyć oba światy: baza wektorowa z dokumentami firmowymi działa lokalnie, a model odpytuje ją bez konieczności wysyłania surowych danych.
 
 ## Jak zbudować politykę bezpieczeństwa AI w organizacji
 
@@ -136,8 +136,8 @@ Polityka bezpieczeństwa AI nie musi być dokumentem liczącym 80 stron. Dobry p
 - **Centralne środowisko (tenant) AI** – zamiast kont prywatnych, organizacja wykupuje licencję enterprise i zarządza dostępem przez SSO (Single Sign-On).
 - **Regularne audyty** – kwartalny przegląd narzędzi faktycznie używanych przez pracowników i porównanie z białą listą.
 
-Kwestię zgodności z regulacjami (compliance) – wymagania AI Act i RODO, w tym harmonogram obowiązków – szczegółowo omawia artykuł [AI Act i RODO](/ai-w-biznesie/ai-act-rodo). Warto go przeczytać równolegle, bo polityka bezpieczeństwa AI jest praktyczną implementacją tamtych wymogów prawnych.
+Kwestię zgodności z regulacjami (compliance) – wymagania AI Act i RODO, w tym harmonogram obowiązków – szczegółowo omawia artykuł [AI Act i RODO](/ai-w-biznesie/ai-act-rodo/). Warto go przeczytać równolegle, bo polityka bezpieczeństwa AI jest praktyczną implementacją tamtych wymogów prawnych.
 
-Jeśli planujesz wdrożenie LLM i chcesz sprawdzić, jak marka Twojej firmy wygląda w odpowiedziach modeli generatywnych zanim przejdziesz do architektury danych, darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check) odpyta cztery silniki AI o Twoją markę i pokaże aktualny stan widoczności – przydatny punkt odniesienia przed większymi inwestycjami.
+Jeśli planujesz wdrożenie LLM i chcesz sprawdzić, jak marka Twojej firmy wygląda w odpowiedziach modeli generatywnych zanim przejdziesz do architektury danych, darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) odpyta cztery silniki AI o Twoją markę i pokaże aktualny stan widoczności – przydatny punkt odniesienia przed większymi inwestycjami.
 
-Decyzje dotyczące bezpieczeństwa danych i wyboru modelu wdrożenia są nierozłącznie związane z szerszą strategią AI. Kompletny przegląd modeli dostępnych w latach 2025–2026 i ich parametrów znajdziesz w [przewodniku po modelach LLM](/modele-llm/przewodnik) – w tym omówienie różnic między modelami otwartymi a komercyjnymi, które mają bezpośrednie przełożenie na decyzje o środowisku on-premise.
+Decyzje dotyczące bezpieczeństwa danych i wyboru modelu wdrożenia są nierozłącznie związane z szerszą strategią AI. Kompletny przegląd modeli dostępnych w latach 2025–2026 i ich parametrów znajdziesz w [przewodniku po modelach LLM](/modele-llm/przewodnik/) – w tym omówienie różnic między modelami otwartymi a komercyjnymi, które mają bezpośrednie przełożenie na decyzje o środowisku on-premise.
