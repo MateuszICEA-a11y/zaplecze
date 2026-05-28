@@ -14,7 +14,11 @@ export const getStaticPaths = async () => {
   const allPosts = (await getCollection('blog')).sort(
     (a, b) => b.data.date.getTime() - a.data.date.getTime()
   );
-  const totalPages = Math.ceil(allPosts.length / pageSize);
+  const featuredPost = allPosts.find((post) => post.data.featured) ?? allPosts[0];
+  const listingPosts = featuredPost
+    ? allPosts.filter((post) => post.id !== featuredPost.id)
+    : allPosts;
+  const totalPages = Math.ceil(listingPosts.length / pageSize);
 
   return Array.from({ length: Math.max(totalPages - 1, 0) }, (_, index) => {
     const page = index + 2;
@@ -29,8 +33,10 @@ const { currentPage } = Astro.props;
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
-const totalPages = Math.ceil(posts.length / pageSize);
-const pagePosts = posts.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+const featuredPost = posts.find((post) => post.data.featured) ?? posts[0];
+const listingPosts = featuredPost ? posts.filter((post) => post.id !== featuredPost.id) : posts;
+const totalPages = Math.ceil(listingPosts.length / pageSize);
+const pagePosts = listingPosts.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 const siteUrl = 'https://widocznosc.ai';
 
 const formatDate = (date: Date) =>
@@ -98,7 +104,7 @@ const formatDate = (date: Date) =>
                     <span class="post-card-category">{PILLAR_LABELS[post.data.pillar]}</span>
                     <span class="post-card-date">{formatDate(post.data.date)}</span>
                   </div>
-                  <h3 class="post-card-title">{post.data.title}</h3>
+                  <h3 class="post-card-title display-md">{post.data.title}</h3>
                   <div class="post-card-footer">
                     <span class="post-card-author">
                       <img
@@ -176,7 +182,7 @@ const formatDate = (date: Date) =>
   }
 
   .blog-page-hero {
-    padding: 144px 0 56px;
+    padding: 128px 0 48px;
     background:
       radial-gradient(
         circle at 12% 18%,
@@ -198,6 +204,8 @@ const formatDate = (date: Date) =>
   .blog-page-title {
     margin: 0 0 18px;
     color: var(--ink);
+    font-size: clamp(42px, 5vw, 72px);
+    line-height: 0.98;
   }
 
   .blog-page-lead {
@@ -209,7 +217,7 @@ const formatDate = (date: Date) =>
   }
 
   .blog-grid-section {
-    padding: 48px 0 96px;
+    padding: 44px 0 96px;
   }
 
   .blog-grid {
@@ -273,6 +281,26 @@ const formatDate = (date: Date) =>
     --post-accent: #fbbf24;
   }
 
+  :global(:root[data-theme='light']) .post-card[data-category='agenci-ai'] {
+    --post-accent: #0891b2;
+  }
+
+  :global(:root[data-theme='light']) .post-card[data-category='ai-w-biznesie'] {
+    --post-accent: #16a34a;
+  }
+
+  :global(:root[data-theme='light']) .post-card[data-category='modele-llm'] {
+    --post-accent: #7c3aed;
+  }
+
+  :global(:root[data-theme='light']) .post-card[data-category='prompty'] {
+    --post-accent: #db2777;
+  }
+
+  :global(:root[data-theme='light']) .post-card[data-category='rag'] {
+    --post-accent: #d97706;
+  }
+
   .post-card-image {
     overflow: hidden;
   }
@@ -318,7 +346,8 @@ const formatDate = (date: Date) =>
     font-size: var(--fs-caption);
   }
 
-  .post-card-title {
+  .post-card-title,
+  .post-card-title.display-md {
     flex-grow: 1;
     margin: 0;
     color: var(--ink);

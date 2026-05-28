@@ -12,10 +12,11 @@ const posts = (await getCollection('blog')).sort(
 );
 const pageSize = 12;
 const currentPage = 1;
-const totalPages = Math.ceil(posts.length / pageSize);
-const visiblePosts = posts.slice(0, pageSize);
 
 const featuredPost = posts.find((post) => post.data.featured) ?? posts[0];
+const listingPosts = featuredPost ? posts.filter((post) => post.id !== featuredPost.id) : posts;
+const totalPages = Math.ceil(listingPosts.length / pageSize);
+const visiblePosts = listingPosts.slice(0, pageSize);
 
 const usedPillars = Array.from(new Set(posts.map((p) => p.data.pillar))).sort();
 const pillarCounts = posts.reduce(
@@ -81,7 +82,7 @@ const formatDate = (date: Date) =>
           <span class="section-index">B/01</span>
           <span class="eyebrow blog-hero-eyebrow">Baza wiedzy</span>
         </div>
-        <h1 class="display-xxl blog-hero-title">Pozycjonowanie marek w wyszukiwarkach AI</h1>
+        <h1 class="display-xxl blog-hero-title">Baza wiedzy o widoczności marek w AI</h1>
         <p class="blog-hero-lead">
           Definicje, case studies i&nbsp;poradniki o&nbsp;pozycjonowaniu marki w&nbsp;ChatGPT,
           Claude, Gemini, Perplexity i&nbsp;Bing Copilot. Od fundamentów GEO po techniczne
@@ -276,9 +277,7 @@ const formatDate = (date: Date) =>
         {
           totalPages > 1 && (
             <nav class="blog-pagination" aria-label="Paginacja artykułów">
-              <span class="blog-pagination-status">
-                Strona {currentPage} z {totalPages}
-              </span>
+              <span class="blog-pagination-status">Strona {currentPage} z {totalPages}</span>
               <div class="blog-pagination-links">
                 {Array.from({ length: totalPages }, (_, index) => {
                   const page = index + 1;
@@ -325,7 +324,7 @@ const formatDate = (date: Date) =>
       ),
       radial-gradient(circle at 86% 14%, rgba(167, 139, 250, 0.18) 0%, transparent 30%),
       linear-gradient(180deg, var(--bg-surface-1) 0%, var(--bg-canvas) 84%);
-    padding: 128px 0 64px 0;
+    padding: 116px 0 48px 0;
   }
 
   .blog-hero::before {
@@ -342,7 +341,7 @@ const formatDate = (date: Date) =>
 
   @media (min-width: 1024px) {
     .blog-hero {
-      padding: 160px 0 80px 0;
+      padding: 136px 0 56px 0;
     }
   }
 
@@ -365,9 +364,11 @@ const formatDate = (date: Date) =>
 
   .blog-hero-title {
     color: var(--ink);
-    margin: 0 0 24px 0;
+    margin: 0 0 20px 0;
     text-wrap: balance;
-    max-width: 880px;
+    max-width: 760px;
+    font-size: clamp(44px, 6vw, 86px);
+    line-height: 0.95;
   }
 
   .blog-hero-lead {
@@ -383,7 +384,7 @@ const formatDate = (date: Date) =>
   /* Featured */
   .blog-featured-section {
     background: var(--bg-canvas);
-    padding: 0 0 64px 0;
+    padding: 0 0 52px 0;
   }
 
   .blog-featured-container {
@@ -488,13 +489,13 @@ const formatDate = (date: Date) =>
     display: flex;
     flex-direction: column;
     gap: 16px;
-    padding: 32px;
+    padding: 28px;
     justify-content: center;
   }
 
   @media (min-width: 1024px) {
     .blog-featured-body {
-      padding: 48px;
+      padding: 40px;
     }
   }
 
@@ -529,6 +530,9 @@ const formatDate = (date: Date) =>
     color: var(--ink);
     margin: 0;
     text-wrap: balance;
+    font-size: clamp(24px, 2.35vw, 36px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
   }
 
   .blog-featured-desc {
@@ -693,7 +697,7 @@ const formatDate = (date: Date) =>
   /* Grid section */
   .blog-grid-section {
     background: var(--bg-canvas);
-    padding: 64px 0 96px 0;
+    padding: 52px 0 96px 0;
     border-top: 1px solid var(--hairline-soft);
   }
 
@@ -713,19 +717,17 @@ const formatDate = (date: Date) =>
   }
 
   .blog-grid-header {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 24px;
     margin-bottom: 48px;
-    padding-top: 64px;
+    padding-top: 40px;
   }
 
   @media (min-width: 1024px) {
     .blog-grid-header {
-      flex-direction: row;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 32px;
+      grid-template-columns: minmax(280px, 0.72fr) minmax(520px, 1fr);
+      align-items: start;
+      gap: 40px;
     }
   }
 
@@ -742,8 +744,8 @@ const formatDate = (date: Date) =>
 
   @media (min-width: 1024px) {
     .blog-controls {
-      width: min(100%, 680px);
-      justify-items: end;
+      width: 100%;
+      justify-items: stretch;
     }
   }
 
