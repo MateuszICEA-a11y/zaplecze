@@ -72,17 +72,6 @@
       });
     });
 
-    // Listen na zmiany system preference – tylko gdy brak override
-    const mq = matchMedia('(prefers-color-scheme: dark)');
-    mq.addEventListener('change', (e) => {
-      try {
-        if (localStorage.getItem('theme')) return;
-      } catch {
-        return;
-      }
-      root.dataset.theme = e.matches ? 'dark' : 'light';
-      updateAria();
-    });
   };
 
   document.addEventListener('astro:page-load', initThemeToggles);

@@ -27,9 +27,15 @@ const pillarCounts = posts.reduce(
 );
 const totalPosts = posts.length;
 const siteUrl = 'https://widocznosc.ai';
-const starterPosts = ['modele-llm/chatgpt', 'geo/audyt-widocznosci-marki', 'rag/przewodnik']
-  .map((id) => posts.find((post) => post.id === id))
-  .filter((post): post is NonNullable<typeof post> => Boolean(post));
+type BlogPost = (typeof posts)[number];
+const starterLinks = [
+  { id: 'modele-llm/przewodnik', href: '/modele-llm/przewodnik/' },
+  { id: 'prompty/przewodnik', href: '/prompty/' },
+  { id: 'geo/jak-llm-cytuja-zrodla', href: '/geo/jak-llm-cytuja-zrodla/' },
+] as const;
+const starterItems = starterLinks
+  .map((item) => ({ ...item, post: posts.find((post) => post.id === item.id) }))
+  .filter((item): item is { id: string; href: string; post: BlogPost } => Boolean(item.post));
 const popularTags = ['ChatGPT', 'llms.txt', 'AI Overviews', 'Schema.org', 'RAG'];
 
 const formatDate = (date: Date) =>
@@ -124,7 +130,7 @@ const formatDate = (date: Date) =>
     }
 
     {
-      starterPosts.length > 0 && (
+      starterItems.length > 0 && (
         <section class="blog-starter-section" aria-labelledby="blog-starter-title">
           <div class="blog-grid-container">
             <div class="blog-starter">
@@ -135,8 +141,8 @@ const formatDate = (date: Date) =>
                 </h2>
               </div>
               <div class="blog-starter-grid">
-                {starterPosts.map((post) => (
-                  <a class="blog-starter-card" href={`/${post.id}`} data-category={post.data.pillar}>
+                {starterItems.map(({ post, href }) => (
+                  <a class="blog-starter-card" href={href} data-category={post.data.pillar}>
                     <Image
                       src={post.data.image}
                       alt={post.data.title}
@@ -562,22 +568,12 @@ const formatDate = (date: Date) =>
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
-    padding: 24px;
-    border: 1px solid var(--hairline-soft);
-    border-radius: var(--r-xl);
-    background:
-      radial-gradient(
-        circle at 16% 0%,
-        color-mix(in srgb, var(--starter-accent) 13%, transparent) 0%,
-        transparent 34%
-      ),
-      var(--bg-surface-1);
+    padding: 0;
   }
 
   @media (min-width: 1024px) {
     .blog-starter {
       grid-template-columns: 1fr;
-      padding: 32px;
     }
   }
 
