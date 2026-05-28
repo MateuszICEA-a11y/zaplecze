@@ -45,8 +45,7 @@ const ogImage = `${siteUrl}/og-image.png`;
         const apply = () => {
           try {
             const stored = localStorage.getItem('theme');
-            const system = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-            const resolved = stored === 'light' || stored === 'dark' ? stored : system;
+            const resolved = stored === 'light' || stored === 'dark' ? stored : 'dark';
             document.documentElement.dataset.theme = resolved;
           } catch {
             document.documentElement.dataset.theme = 'dark';
