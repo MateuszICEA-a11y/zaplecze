@@ -1,6 +1,5 @@
 ---
 import ThemeToggle from './ThemeToggle.astro';
-import BrandMark from './BrandMark.astro';
 import { getCollection } from 'astro:content';
 import { BLOG_PILLARS, PILLAR_LABELS } from '../content.config';
 
@@ -64,11 +63,8 @@ const isActive = (href: string) => {
 
 <nav class="nav-shell" id="main-nav" aria-label="Główna nawigacja">
   <div class="nav-inner container">
-    <!-- Logo: ICEA C mark + wordmark "widocznosc.ai" (accent na .ai) -->
+    <!-- Logo: clean wordmark -->
     <a href="/" aria-label="widocznosc.ai – strona główna" class="nav-logo">
-      <span class="nav-logo-mark" aria-hidden="true">
-        <BrandMark />
-      </span>
       <span class="nav-logo-text">widocznosc<span class="accent">.ai</span></span>
     </a>
 
@@ -311,7 +307,7 @@ const isActive = (href: string) => {
 <style is:global>
   /* ============================================================
      Navbar – landing redesign 2026-05-09 (handoff)
-     64px height, blurred canvas, ICEA C logo mark
+     64px height, blurred canvas, wordmark logo
      ============================================================ */
 
   .nav-shell {
@@ -347,34 +343,17 @@ const isActive = (href: string) => {
     gap: 24px;
   }
 
-  /* Logo – ICEA C mark + wordmark */
+  /* Logo – wordmark */
   .nav-logo {
     display: inline-flex;
     align-items: center;
-    gap: 11px;
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: 17px;
+    font-size: 20px;
     letter-spacing: -0.02em;
     line-height: 1;
     color: var(--ink);
     text-decoration: none;
-  }
-
-  .nav-logo-mark {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 38px;
-    height: 27px;
-    color: var(--ink);
-    flex-shrink: 0;
-  }
-
-  .nav-logo-mark svg {
-    width: 100%;
-    height: 100%;
-    display: block;
   }
 
   .nav-logo-text {
