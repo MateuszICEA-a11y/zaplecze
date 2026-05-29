@@ -122,11 +122,13 @@ Przełóżmy to na konkretne decyzje. Jeśli prowadzisz firmę i zastanawiasz si
 - **Mierz, nie zgaduj.** Jedyny sposób, by wiedzieć, gdzie naprawdę jesteś widoczny, to sprawdzić to w kilku modelach naraz, na realnych pytaniach Twoich klientów.
 
 <aside class="callout-expert">
-  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.avif" alt="Mateusz Wiśniewski" /></div>
+  <div class="callout-icon"><img src="/authors/tomasz-czechowski.avif" alt="Tomasz Czechowski" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
-    <p>Najczęstszy błąd, który widzę po publikacji tego typu przewodników, to potraktowanie ich jako instrukcji obsługi całego wyszukiwania AI. Klient czyta „zapomnij o llms.txt i GEO", odhacza temat i wraca do klasycznego SEO – a trzy miesiące później dziwi się, że konkurencja jest cytowana w ChatGPT, a on nie. Google daje dobre rady dla Google. Naszym zadaniem jest dopowiedzieć resztę zdania: „…a dla pozostałych 4–5 silników, w których pytają Twoi klienci, gra wygląda inaczej". Pierwszy krok to zawsze pomiar widoczności w wielu modelach naraz – dopiero on pokazuje, czy rady Google w Twoim przypadku wystarczają, czy są tylko połową odpowiedzi.</p>
-    <div class="callout-author">Mateusz Wiśniewski · Ekspert SEO/AI Search, ICEA</div>
+    <p>Większym problemem niż sam dokument Google jest utarty już skrót myślowy: „nie mówmy o SEO, bo klienci chcą słuchać o GEO". Przez lata SEO zlało się w głowach z klasycznym pozycjonowaniem w Google – frazy, linki, TOP 10. W takim rozumieniu łatwo uznać, że SEO traci sens, skoro użytkownicy szukają też przez AI Overviews, AI Mode, ChatGPT czy Perplexity. Ale narracja „GEO zamiast SEO" bywa odpychająca – klient słusznie wyczuwa w niej próbę sprzedania starej usługi w nowym opakowaniu.</p>
+    <p>Sensowniej ująć rzecz szerzej: jako oddziaływanie na widoczność marki w Google, AI Overviews, AI Mode i modelach językowych. Wtedy SEO pozostaje fundamentem, a GEO jest jego rozszerzeniem o nowy segment działań i sygnałów – nie „GEO zamiast SEO" ani „GEO to po prostu SEO", lecz GEO jako warstwa wpływająca na widoczność generatywną.</p>
+    <p>Dlatego do sekcji o „mitach" podchodziłbym ostrożnie. Część „GEO-hacków" to faktycznie sprzedaż powietrza, ale ten dokument mówi wyłącznie o Google. GEO obejmuje też ChatGPT, Perplexity, Claude czy Gemini – z których część nie korzysta z indeksu Google w czasie rzeczywistym (własny crawl, Bing, dane treningowe). Na tych powierzchniach świeżość, obecność w autorytatywnych źródłach i gęstość konkretów realnie wpływają na to, czy model wskaże Twoją markę. „Mythbusting" Google to wskazówka dla Google Search – nie zamknięcie tematu dla całego rynku.</p>
+    <div class="callout-author">Tomasz Czechowski · Head of SEO, ICEA</div>
   </div>
 </aside>
 
