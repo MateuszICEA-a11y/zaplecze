@@ -49,7 +49,7 @@ faq:
 
 Mierzenie [zwrotu z inwestycji](https://pl.wikipedia.org/wiki/ROI) (ROI – *Return on Investment*) z działań GEO (*Generative Engine Optimization*, czyli optymalizacji dla generatywnych silników wyszukiwania) to dziś jeden z najtwardszych orzechów do zgryzienia w marketingu B2B. Klasyczne narzędzia SEO – Google Search Console, Ahrefs – są ślepe na cytowania w modelach LLM (ang. *Large Language Models*, czyli dużych modelach językowych). Klienci widzą rosnący ruch z domen takich jak `chatgpt.com` czy `perplexity.ai`, ale nie wiedzą, co z tym zrobić. Ten artykuł porządkuje hierarchię kluczowych wskaźników efektywności (KPI), pokazuje, jak skonfigurować atrybucję w Google Analytics 4, i przedstawia gotowy schemat raportu miesięcznego, który zarząd zrozumie bez tłumaczenia.
 
-## Dlaczego stare KPI nie pasują do GEO
+## Dlaczego stare KPI nie pasują do GEO?
 
 Tradycyjne metryki SEO mierzą widoczność w świecie niebieskich linków. GEO operuje w środowisku, w którym użytkownik często nie klika żadnego linku – otrzymuje syntetyczną odpowiedź i kończy interakcję. **Mierzenie GEO wyłącznie przez pryzmat ruchu organicznego to jak ocenianie kampanii radiowej po liczbie wejść do sklepu.**
 
@@ -100,7 +100,7 @@ Każda metryka z kolumny „jak mierzyć" wymaga konkretnego narzędzia lub proc
 | Branded Search Lift | Wzrost % zapytań brandowych w GSC po wzroście SoV | Google Search Console – zestawienie tygodniowe |
 | ROI<sub>GEO</sub> | (Przychód z AI – koszt GEO) / koszt GEO × 100% | Obliczenie finansowe na podstawie GA4 + CRM |
 
-## Jak skonfigurować atrybucję AI w Google Analytics 4
+## Jak skonfigurować atrybucję AI w Google Analytics 4?
 
 **Domyślnie GA4 nie rozróżnia ruchu z ChatGPT od zwykłego ruchu odsyłającego.** Wejście z `chatgpt.com` ląduje w segmencie *Referral* obok każdego innego zewnętrznego linku – bez możliwości porównania z tradycyjnym ruchem organicznym. Naprawienie tego wymaga trzech kroków.
 
@@ -204,7 +204,7 @@ Benchmark na start: jeśli Twój SoV w AI dla docelowego zestawu zapytań wynosi
 
 Szczegółowy opis metodologii obliczania SoV i interpretacji wyników znajdziesz w artykule [Share of Voice w AI Search](/geo/share-of-voice/). Zanim zaczniesz mierzyć, sprawdź też, jak Twoja marka jest aktualnie postrzegana przez silniki AI – darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) odpyta cztery główne modele i pokaże, w jakich kontekstach pojawia się Twoja firma.
 
-## Jak przekonać zarząd – raportowanie bez żargonu
+## Jak przekonać zarząd raportowaniem bez żargonu?
 
 Zarząd zatwierdzający budżet na GEO nie potrzebuje wiedzy o mechanizmie RAG ani o różnicy między Citation Rate a Mention Rate. Potrzebuje odpowiedzi na trzy pytania: ile wydajemy, ile zarabiamy i kiedy wrócimy z zyskiem.
 

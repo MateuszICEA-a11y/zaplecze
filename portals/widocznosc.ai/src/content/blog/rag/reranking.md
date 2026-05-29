@@ -18,7 +18,7 @@ level: 'L3'
 
 Jeśli Twój system [generowania wspomaganego wyszukiwaniem](https://pl.wikipedia.org/wiki/Retrieval-augmented_generation) (RAG – Retrieval-Augmented Generation) zwraca fragmenty tekstu, które wyglądają sensownie, ale odpowiedzi modelu nadal mijają się z intencją zapytania – problem leży niemal zawsze w tym samym miejscu: brakuje etapu rerankingu (ponownego pozycjonowania wyników). **Testy wdrożeniowe na zbiorach rzędu 3 750 zapytań wykazały, że dodanie cross-encodera jako rerankera stanowiło jeden, najbardziej znaczący krok podnoszący dokładność systemu – wzrost aż o 7,6 punktu procentowego.** Ten artykuł pokazuje, jak architektura dwuetapowa działa w praktyce, czym różnią się bi-encodery od cross-encoderów, kiedy sięgnąć po gotowe API, a kiedy po model lokalny, i jak zmierzyć, czy reranker naprawdę pomaga.
 
-## Dlaczego samo wyszukiwanie wektorowe nie wystarczy
+## Dlaczego samo wyszukiwanie wektorowe nie wystarczy?
 
 Klasyczne [RAG](/rag/przewodnik/) opiera wyszukiwanie na bi-encoderach: każdy fragment tekstu jest wstępnie zamieniany na jeden wektor liczbowy (embedding), a w momencie zapytania system szuka wektorów najbardziej zbliżonych do wektora zapytania. To podejście jest szybkie i skalowalne – miliony fragmentów można przeszukać w milisekundy.
 
@@ -52,7 +52,7 @@ Poniżej zestawienie właściwości, które decydują o wyborze architektury w �
 
 ![Reranking – drugie sito trafności: po wyszukiwaniu około 100 fragmentów cross-encoder przelicza ich trafność i wybiera 5 najtrafniejszych dla LLM, podnosząc trafność z 33,5% do 49,0%](../../../assets/images/infographic-rag-reranking.png)
 
-## Jak zbudować potok przetwarzania z rerankingiem
+## Jak zbudować potok przetwarzania z rerankingiem?
 
 Praktyczna implementacja systemu dwuetapowego wymaga decyzji w trzech obszarach: który model rerankujący wybrać, ile fragmentów przekazać na każdym etapie i jak zintegrować całość z frameworkiem.
 
@@ -68,7 +68,7 @@ Modele dzielą się na komercyjne API i rozwiązania lokalne:
 
 Do testów wydajnościowych warto sprawdzić [Ocena cytowalności strony](/narzedzia/url-check/) – narzędzie analizuje strukturę strony pod kątem cytowalności, co pomaga ocenić, jak Twoje fragmenty będą się zachowywać w potoku RAG, zanim trafią do modelu.
 
-### Ile fragmentów na każdym etapie
+### Ile fragmentów na każdym etapie?
 
 Sprawdzony wzorzec produkcyjny wygląda następująco: bi-encoder pobiera 30 fragmentów (priorytet: kompletność wyników, nie precyzja), cross-encoder ponownie je porządkuje i zwraca top-5 jako kontekst główny oraz 2–3 kolejne jako rezerwowy. Pozostałe 22–23 fragmenty są odrzucane.
 
@@ -107,7 +107,7 @@ Schemat przepływu danych w potoku hybrydowym:
 - **Cross-encoder reranker** – precyzyjne przeszeregowanie według interakcji token po tokenie
 - **Selekcja top-5** – kontekst finalny przekazywany do modelu generującego
 
-## Jak mierzyć, czy reranker naprawdę pomaga
+## Jak mierzyć, czy reranker naprawdę pomaga?
 
 Wdrożenie rerankera bez pomiaru efektów to działanie w ciemno. Trzy metryki, które warto monitorować od pierwszego dnia:
 
@@ -156,7 +156,7 @@ W obu przypadkach `top_n=5` oznacza, że do modelu generującego trafia tylko 5 
 
 Jeśli chcesz zobaczyć, jak cytowania generowane przez Twój system RAG są postrzegane przez silniki AI, [Widoczność marki w AI](/narzedzia/brand-check/) pokaże aktualną obecność Twojej marki w odpowiedziach czterech głównych modeli – warto traktować to jako zewnętrzny punkt odniesienia dla jakości Twojego systemu.
 
-## Kiedy reranking nie jest odpowiedzią
+## Kiedy reranking nie jest odpowiedzią?
 
 Reranker poprawia kolejność kandydatów, ale nie może stworzyć trafnego fragmentu, który nie istnieje w indeksie. Jeśli żaden z 30 pobranych fragmentów nie zawiera odpowiedzi na pytanie – cross-encoder tylko poszereguje złe wyniki w innej kolejności.
 

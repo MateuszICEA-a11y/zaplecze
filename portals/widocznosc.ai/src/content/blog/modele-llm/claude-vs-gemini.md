@@ -131,7 +131,7 @@ Gemini jest znacznie tańsze w przeliczeniu na token. Przy wolumenach produkcyjn
 
 Jeśli chcesz sprawdzić, jak Twoja obecna widoczność w modelach AI wygląda zanim zdecydujesz o strategii contentowej, [Widoczność marki w AI](/narzedzia/brand-check/) odpyta cztery silniki AI o Twoją markę i pokaże, gdzie jesteś cytowany, a gdzie Cię nie ma.
 
-## Który model wybrać – werdykty dla poszczególnych zastosowań
+## Który model wybrać do poszczególnych zastosowań?
 
 Zamiast jednego ogólnego werdyktu, przygotowaliśmy kilka konkretnych:
 

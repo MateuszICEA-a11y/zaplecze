@@ -18,7 +18,7 @@ level: 'L2'
 
 Kalkulacja ROI (Return on Investment, czyli wskaźnika zwrotu z inwestycji) z wdrożenia AI to jedno z trudniejszych wyzwań, z jakimi przychodzą do nas firmy – i jednocześnie jedno z najważniejszych. Według analiz rynkowych ok. 65% organizacji notuje dodatni zwrot z generatywnej sztucznej inteligencji, ale aż 95% projektów AI bywa błędnie klasyfikowanych jako porażki z powodu złego doboru metody pomiaru. Problem nie leży w technologii. Leży w tym, jak firmy liczą koszty i korzyści. Ten artykuł pokazuje konkretne ramy analityczne: od wzoru na ROI, przez strukturę kosztów całkowitych (TCO), po trzy realistyczne scenariusze kalkulacji z polskiego rynku.
 
-## Dlaczego klasyczna formuła ROI nie wystarcza
+## Dlaczego klasyczna formuła ROI nie wystarcza?
 
 Tradycyjne podejście do oceny inwestycji IT opiera się na prostym równaniu: korzyści netto minus koszty całkowite, podzielone przez koszty całkowite i pomnożone przez 100%. W przypadku AI ta formuła jest punktem wyjścia, a nie gotową odpowiedzią.
 
@@ -56,7 +56,7 @@ Po stronie kosztów należy uwzględnić pełny [całkowity koszt posiadania](ht
 
 ![Formuła ROI z AI – korzyści w liczniku (oszczędność czasu, wzrost przychodów) podzielone przez koszty w mianowniku (wdrożenie, licencje, utrzymanie)](../../../assets/images/infographic-ai-w-biznesie-roi-z-ai.png)
 
-## Jak liczyć ROI – krok po kroku
+## Jak krok po kroku liczyć ROI?
 
 Zanim uruchomisz model finansowy, zrób jedno: zmierz stan wyjściowy. Bez punktu odniesienia (ang. baseline) nie udowodnisz korzyści. Zmierz czas trwania procesu, liczbę błędów, koszt obsługi transakcji – zanim wdrożysz AI.
 
@@ -113,7 +113,7 @@ Znając ramy analityczne i przykłady, łatwo wpaść w pułapki metodologiczne.
 
 **Najsilniejszy argument w prezentacji dla CFO to koszt braku działania – ile firma traci miesięcznie, zostając przy obecnym procesie.**
 
-## Jak prezentować ROI zarządowi
+## Jak prezentować ROI zarządowi?
 
 Nawet najlepszy model finansowy może nie przejść zatwierdzenia, jeśli jest źle zaprezentowany. Kilka zasad, które działają w praktyce.
 

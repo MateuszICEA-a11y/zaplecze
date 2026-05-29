@@ -48,7 +48,7 @@ faq:
 
 ChatGPT to interfejs konwersacyjny zbudowany na modelach z rodziny GPT (Generative Pre-trained Transformer) – dużych modelach językowych (LLM, Large Language Model) opracowanych przez OpenAI. Od swojego publicznego debiutu w listopadzie 2022 roku zgromadził milion użytkowników w pięć dni, a sto milionów w dwa miesiące – szybciej niż jakakolwiek inna aplikacja w historii. Jeśli dopiero zaczynasz pracę z AI lub chcesz wreszcie zrozumieć, co kryje się za tym interfejsem tekstowym, ten przewodnik wyjaśnia mechanizm, możliwości i realne ograniczenia – bez skrótów i bez żargonu, który więcej ukrywa, niż tłumaczy.
 
-## Czym jest ChatGPT i jak wpisuje się w ekosystem OpenAI
+## Czym jest ChatGPT i jak wpisuje się w ekosystem OpenAI?
 
 OpenAI to laboratorium badań nad sztuczną inteligencją założone w 2015 roku z misją rozwoju AI dla dobra ogółu. ChatGPT nie jest jedynym produktem firmy – to raczej najbardziej widoczna warstwa ekosystemu, który obejmuje modele, interfejsy programistyczne i wyspecjalizowane narzędzia.
 
@@ -65,7 +65,7 @@ ChatGPT jest dostępny w wersji przeglądarkowej i mobilnej, a od 2023 roku rów
 
 W kontekście widoczności marki w wyszukiwarkach AI: pełny obraz tego, co GPT „wie" o Twojej firmie i skąd czerpie tę wiedzę, opisuje [przewodnik po modelach LLM](/modele-llm/przewodnik/) – to dobry punkt wyjścia, zanim zaczniesz działania optymalizacyjne.
 
-## Jak działa model GPT – mechanizm działania: od tokenów po odpowiedź
+## Jak działa model GPT, od tokenów po odpowiedź?
 
 **ChatGPT nie „szuka" odpowiedzi w bazie danych ani nie „pamięta" faktów jak encyklopedia.** Generuje tekst token po tokenie, przewidując za każdym razem, jaka sekwencja znaków jest najbardziej prawdopodobna w danym kontekście. To subtelna, ale fundamentalna różnica.
 

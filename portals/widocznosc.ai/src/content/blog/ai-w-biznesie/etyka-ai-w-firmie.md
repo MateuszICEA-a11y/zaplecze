@@ -18,7 +18,7 @@ level: 'L2'
 
 99% organizacji uczestniczących w badaniu EY z 2025 roku odnotowało straty finansowe wynikające z ryzyk związanych ze sztuczną inteligencją – prawie dwie trzecie z nich przekroczyły milion dolarów. Jednocześnie 77% firm deklaruje, że aktywnie buduje programy zarządzania AI, ale tylko 36% wdrożyło sformalizowane ramy postępowania. Luka między deklaracjami a działaniem jest ogromna. Ten artykuł pokazuje, czym jest odpowiedzialna sztuczna inteligencja (ang. *responsible AI*) w praktyce firmowej – jakie polityki trzeba napisać, kto powinien za nie odpowiadać i jak AI Act wyznacza ramy, których nie można zignorować.
 
-## Czym jest odpowiedzialna sztuczna inteligencja i dlaczego nie jest to kwestia PR
+## Czym jest odpowiedzialna sztuczna inteligencja i dlaczego nie jest to kwestia PR?
 
 Odpowiedzialna AI to zestaw zasad, procesów i mechanizmów kontrolnych, które zapewniają, że systemy sztucznej inteligencji działają zgodnie z wartościami firmy, przepisami prawa i oczekiwaniami interesariuszy. To nie slogan. To konkretna lista decyzji – kto może wdrożyć model, jakie dane wolno mu przetwarzać, kto weryfikuje wyniki i co się dzieje, gdy system popełni błąd.
 
@@ -63,7 +63,7 @@ Narzędzia do pomiaru stronniczości, takie jak [wyjaśnialna sztuczna inteligen
 
 ![System zarządzania AI w firmie – polityka AI, komitet ds. AI, standardy NIST AI RMF i ISO 42001, pomiar stronniczości oraz zgodność z AI Act](../../../assets/images/infographic-ai-w-biznesie-etyka-ai-w-firmie.png)
 
-## Jak stworzyć politykę AI – od zasad do dokumentu operacyjnego
+## Jak stworzyć politykę AI od zasad po dokument operacyjny?
 
 Polityka AI (ang. *AI policy*) to wewnętrzny dokument firmowy, który określa reguły korzystania, wdrażania i nadzorowania systemów sztucznej inteligencji. Nie myl jej z ogólnymi wartościami korporacyjnymi. Polityka AI musi być operacyjna – musi odpowiadać na pytania, które zadają pracownicy w poniedziałek rano.
 
@@ -153,7 +153,7 @@ Dla firm wdrażających AI w obszarach wysokiego ryzyka minimalne wymagania AI A
 
 Zanim zlecisz wdrożenie zewnętrznemu dostawcy, sprawdź, jak Twoja marka wypada dziś w silnikach AI – [Widoczność marki w AI](/narzedzia/brand-check/) odpyta w 30 sekund cztery modele językowe i pokaże, co widzą o Twojej firmie. Zrozumienie tego, co AI mówi o Tobie, to też element transparentności i odpowiedzialnego zarządzania reputacją.
 
-## Jak wdrożyć system zarządzania krok po kroku – pierwszy miesiąc
+## Jak wdrożyć system zarządzania krok po kroku w pierwszym miesiącu?
 
 Zarządzanie AI nie musi startować od razu jako projekt wielomiesięczny. Firmy, które skutecznie budują ład wokół AI, zwykle zaczynają od jednego tygodnia intensywnej pracy, a potem wdrażają procesy stopniowo.
 

@@ -112,7 +112,7 @@ A rynek odpowiadania na pytania użytkowników przestał być jednolity. Owszem,
 
 Nie twierdzimy, że Google działa w złej wierze. Twierdzimy, że pisze szczerze ze swojej perspektywy – a jego perspektywą jest świat, w którym wyszukiwanie zaczyna się i kończy na Google. Przez dwie dekady było to wystarczająco bliskie prawdy, by traktować rady Google jako uniwersalne. Dziś już nie jest.
 
-## Co to znaczy dla Twojej firmy
+## Co to znaczy dla Twojej firmy?
 
 Przełóżmy to na konkretne decyzje. Jeśli prowadzisz firmę i zastanawiasz się, co z tego wynika praktycznie:
 

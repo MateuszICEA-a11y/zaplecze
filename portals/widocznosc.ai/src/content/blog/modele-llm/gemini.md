@@ -32,7 +32,7 @@ faq:
 
 Gemini to rodzina dużych modeli językowych (LLM – Large Language Model) opracowana przez Google DeepMind, napędzająca zarówno asystenta w aplikacji gemini.google.com, jak i setki funkcji AI wbudowanych w aplikacje Gmail, Dokumenty, Arkusze, Prezentacje, Dysk i Meet. Google zadebiutowało z Gemini w grudniu 2023 roku, zastępując nim poprzednią linię PaLM 2, i od tamtej pory ekosystem rozrósł się do kilkunastu wariantów modeli, czterech planów abonamentowych dla konsumentów oraz głębokiej integracji z całym środowiskiem Workspace. Jeśli Twoja marka działa w przestrzeni, gdzie klienci coraz częściej zadają pytania w Google AI Mode, zamiast wpisywać frazy w tradycyjną wyszukiwarkę, ten przewodnik wyjaśnia mechanizm, możliwości i praktyczne implikacje – bez pomijania kontekstu biznesowego.
 
-## Czym jest Gemini i jak wpisuje się w ekosystem Google
+## Czym jest Gemini i jak wpisuje się w ekosystem Google?
 
 Gemini to równocześnie nazwa rodziny modeli, aplikacji konsumenckiej i zestawu funkcji w Google Workspace. Żeby nie gubić się w terminologii, warto rozdzielić te trzy warstwy od samego początku.
 
@@ -46,7 +46,7 @@ Google DeepMind, dział badawczy stojący za modelami, jest wynikiem połączeni
 
 W kontekście widoczności marki w AI: cały ekosystem – od Google AI Mode po odpowiedzi Gemini w aplikacji – czerpie z tych samych modeli bazowych. Mechanizmy cytowania i wyszukiwania informacji (RAG) opisuje [przewodnik po modelach LLM](/modele-llm/przewodnik/) – to dobry punkt wyjścia, zanim zaczniesz optymalizować treści pod ten kanał.
 
-## Jak działa model Gemini – multimodalność jako fundament
+## Jak działa model Gemini oparty na multimodalności?
 
 Gemini od pierwszej wersji zaprojektowano jako model [przetwarzania języka naturalnego](https://pl.wikipedia.org/wiki/Przetwarzanie_j%C4%99zyka_naturalnego), który rozumie tekst, obraz, audio i wideo w ramach jednej architektury – nie przez łączenie osobnych modeli, lecz przez wspólny trening na danych różnych modalności.
 

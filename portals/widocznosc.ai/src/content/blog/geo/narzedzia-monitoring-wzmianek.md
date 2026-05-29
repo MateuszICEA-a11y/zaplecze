@@ -34,7 +34,7 @@ Kilka pojęć, których będziesz używać na co dzień:
 - **Citation Rate (wskaźnik cytowań)** – odsetek odpowiedzi AI na zadany zestaw zapytań, w których Twoja marka pojawia się z linkiem zwrotnym.
 - **Mention Rate (wskaźnik wzmianek)** – łączna częstotliwość pojawiania się nazwy marki, bez rozróżnienia na cytowanie i wzmiankę.
 
-## Jak działają silniki monitorujące
+## Jak działają silniki monitorujące?
 
 Technicznie nie jest to proste zadanie. [Duże modele językowe](https://pl.wikipedia.org/wiki/Du%C5%BCy_model_j%C4%99zykowy) generują odpowiedzi probabilistycznie – każde wywołanie tego samego zapytania może przynieść nieco inny wynik. **Dlatego jednorazowy audyt „co ChatGPT mówi o mojej marce" ma zerową wartość statystyczną.** Liczą się uśrednione wyniki z dziesiątek powtórzeń w czasie.
 
@@ -121,7 +121,7 @@ Kilka wskazówek, jak dokonać wyboru między nimi:
 
 Zanim sięgniesz po płatną platformę, przetestuj punkt startowy: darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) odpyta cztery silniki AI o Twoją markę i pokaże, jak jest ona opisywana na tle kategorii – bez rejestracji, w minutę. To wystarczy, żeby ocenić skalę problemu i zdecydować, który pakiet narzędzi jest uzasadniony.
 
-## Jak wdrożyć monitoring krok po kroku
+## Jak wdrożyć monitoring krok po kroku?
 
 Samo uruchomienie narzędzia to nie koniec procesu – to jego początek. Wyniki mają sens tylko wtedy, gdy masz stały zestaw zapytań próbnych i metodologię ich oceny.
 

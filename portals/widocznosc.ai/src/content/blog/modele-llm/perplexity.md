@@ -46,7 +46,7 @@ faq:
 
 Perplexity to nie kolejny chatbot – to wyszukiwarka zbudowana wokół cytowań, która w czasie rzeczywistym przeczesuje internet, syntetyzuje dziesiątki źródeł i odpowiada z przypisami. Od założenia w sierpniu 2022 roku platforma urosła do ponad 100 milionów aktywnych użytkowników miesięcznie i wyceny 20 miliardów dolarów (stan na początek 2026 roku). Dla specjalistów SEO i marketerów B2B Perplexity to dziś jeden z najważniejszych kanałów cytowań: jeśli Twoja marka nie pojawia się w jego odpowiedziach, tracisz widoczność u osób, które aktywnie szukają rozwiązań w Twojej niszy. Ten artykuł wyjaśnia, jak Perplexity naprawdę działa, skąd czerpie źródła i co zrobić, żeby Twoja strona była przez niego cytowana.
 
-## Czym jest Perplexity i czym różni się od ChatGPT
+## Czym jest Perplexity i czym różni się od ChatGPT?
 
 Perplexity to silnik odpowiedzi (answer engine) – kategoria narzędzi, która stoi między klasyczną wyszukiwarką a asystentem AI. **Zamiast zwracać listę linków, Perplexity syntetyzuje informacje z kilku lub kilkunastu aktualnych źródeł i prezentuje jedną spójną odpowiedź z numerowanymi przypisami.**
 
@@ -70,7 +70,7 @@ Finansowanie rosło skokowo. We wrześniu 2022 roku zebrano 3,1 miliona dolarów
 
 ![Architektura RAG w Perplexity – od pytania użytkownika przez wyszukiwanie w sieci i ocenę źródeł po odpowiedź z cytowaniami](../../../assets/images/infographic-modele-llm-perplexity.png)
 
-## Jak działa architektura RAG w Perplexity
+## Jak działa architektura RAG w Perplexity?
 
 Perplexity opiera się na architekturze [RAG – generowania wspomaganego wyszukiwaniem](https://pl.wikipedia.org/wiki/Retrieval-augmented_generation) (Retrieval-Augmented Generation). To podejście łączy klasyczny silnik wyszukiwania z modelem językowym: najpierw pobiera aktualne dane z sieci, potem generuje na ich podstawie odpowiedź.
 
@@ -126,7 +126,7 @@ Dla specjalistów SEO ten kierunek oznacza jedno: Perplexity przestaje być tylk
   </div>
 </aside>
 
-## Jak Perplexity dobiera źródła – co wiemy o algorytmie selekcji
+## Jak Perplexity dobiera źródła i co wiemy o jego algorytmie selekcji?
 
 Perplexity nie ujawnia pełnego algorytmu selekcji źródeł, ale z obserwacji praktycznych i dokumentacji technicznej wyłania się kilka reguł, które warto znać.
 

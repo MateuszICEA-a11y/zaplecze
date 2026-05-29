@@ -36,7 +36,7 @@ Różnice między pokoleniami systemów pokazuje ta tabela:
 | **Obsługa zapytań** | 10–20% typowych | 40–60% | 70–85% bez interwencji człowieka |
 | **Eskalacja do człowieka** | Manualna, bez kontekstu | Częściowo automatyczna | Automatyczna z pełnym podsumowaniem rozmowy |
 
-## Jak działa RAG – chatbot na własnych danych firmy
+## Jak działa RAG w chatbocie na własnych danych firmy?
 
 Największym ograniczeniem czystych LLM-ów jest statyczna wiedza. Model wie to, czego nauczył się podczas treningu – i nic więcej. **Jeśli Twoja oferta zmieniła się wczoraj, model tego nie wie.** Rozwiązaniem jest architektura RAG (Retrieval-Augmented Generation), czyli generowanie wspomagane wyszukiwaniem.
 
@@ -129,7 +129,7 @@ Szczególne wymogi nakłada art. 22 RODO dla systemów podejmujących zautomatyz
   </div>
 </aside>
 
-## Jak mierzyć skuteczność chatbota AI
+## Jak mierzyć skuteczność chatbota AI?
 
 Błędem jest ocenianie chatbota wyłącznie przez pryzmat redukcji kosztów. Koszt operacyjny to jeden wskaźnik – ale firma, która obniżyła koszty ze szkodą dla satysfakcji klientów, dowiaduje się o tym ze wzrostu wskaźnika rezygnacji (churn) dopiero po kilku kwartałach.
 

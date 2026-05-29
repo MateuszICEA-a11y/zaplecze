@@ -18,7 +18,7 @@ level: 'L1'
 
 Prompt engineering (inżynieria podpowiedzi) to dyscyplina, która decyduje o tym, czy LLM (Large Language Model, czyli duży model językowy) da Ci użyteczną odpowiedź, czy bezużyteczny szum. Nie chodzi o magiczne słowa – chodzi o zrozumienie, jak model przetwarza instrukcje, i o zaprojektowanie promptu tak, żeby model dostał dokładnie to, czego potrzebuje. Ten przewodnik przeprowadzi Cię od podstawowych technik przez zaawansowane architektury wnioskowania, aż po bezpieczeństwo systemów opartych na LLM – z konkretnymi przykładami gotowymi do wdrożenia.
 
-## Czym jest inżynieria podpowiedzi i dlaczego ma znaczenie
+## Czym jest inżynieria podpowiedzi i dlaczego ma znaczenie?
 
 Prompt to każda instrukcja, pytanie lub kontekst, które przekazujesz modelowi AI. Brzmi banalnie. Ale jakość promptu bezpośrednio determinuje jakość odpowiedzi – i to w sposób, który da się zmierzyć i zoptymalizować.
 

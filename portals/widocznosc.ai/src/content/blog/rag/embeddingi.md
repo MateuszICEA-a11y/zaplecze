@@ -34,7 +34,7 @@ Najważniejsze pojęcia, które pojawiają się w rozmowach o embeddingach:
 - **Przestrzeń wektorowa** – matematyczny świat, w którym żyją wszystkie embeddingi danego modelu
 - **Model embeddingowy** – sieć neuronowa, która zamienia tekst na wektory; popularne przykłady to `text-embedding-3-large` od OpenAI czy modele z rodziny E5
 
-## Skąd model wie, co znaczy słowo
+## Skąd model wie, co znaczy słowo?
 
 Modele embeddingowe nie są programowane ręcznie przez inżynierów, którzy przypisywaliby każdemu słowu listę liczb. Uczą się znaczeń z danych – z miliardów zdań pobranych z internetu, książek i artykułów.
 
@@ -52,7 +52,7 @@ Tu pojawia się praktyczna pułapka. Jeśli fragment obejmuje zbyt wiele temató
 
 ![Embeddingi – jak tekst staje się wektorem: tekst przechodzi przez model osadzający, zamienia się w wektor liczb i trafia do przestrzeni semantycznej, gdzie bliskość wektorów odpowiada bliskości znaczenia](../../../assets/images/infographic-rag-embeddingi.png)
 
-## Jak RAG używa embeddingów do wyszukiwania
+## Jak RAG używa embeddingów do wyszukiwania?
 
 Kiedy użytkownik wpisuje pytanie w ChatGPT lub Perplexity, system RAG wykonuje następującą sekwencję:
 
@@ -73,7 +73,7 @@ Pełny obraz tego, jak silniki RAG pobierają i cytują treść, znajdziesz w [p
   </div>
 </aside>
 
-## Jak mierzyć bliskość – podobieństwo kosinusowe i inne metryki
+## Jak mierzyć bliskość: podobieństwo kosinusowe i inne metryki?
 
 System, mając dwa wektory – zapytanie i fragment dokumentu – musi obliczyć, jak bardzo są do siebie podobne. Najpopularniejsza miara to podobieństwo kosinusowe: zamiast mierzyć odległość między punktami w przestrzeni, mierzy kosinus kąta między ich wektorami. Wartość 1,0 oznacza identyczny kierunek (pełna semantyczna zbieżność), 0,0 – prostopadłe ustawienie (brak związku), -1,0 – przeciwne kierunki.
 
@@ -105,7 +105,7 @@ Ważniejsza dla praktyki SEO/GEO jest trzecia słabość:
 
 Dlatego zaawansowane systemy łączą wyszukiwanie wektorowe z klasycznym dopasowaniem słów kluczowych (np. BM25). Takie podejście – wyszukiwanie hybrydowe – daje lepsze wyniki niż sama semantyka, szczególnie dla zapytań z unikalnymi nazwami własnymi. Mechanizm ponownego rangowania (reranking) po wstępnym wyszukiwaniu wektorowym omówimy osobno w artykule o [rerankingu w systemach RAG](/rag/reranking/).
 
-## Co to znaczy dla treści tworzonych pod AI
+## Co to znaczy dla treści tworzonych pod AI?
 
 Skoro LLM-y cytują fragmenty, których wektory są najbliżej wektora zapytania, ma to konkretne implikacje dla pisania treści.
 
@@ -126,7 +126,7 @@ Jak sprawdzić, czy Twoje treści są zbudowane pod cytowalność w AI? Darmowy 
   </div>
 </aside>
 
-## Jak LLM-y korzystają z embeddingów wewnętrznie
+## Jak LLM-y korzystają z embeddingów wewnętrznie?
 
 Embeddingi w systemach RAG to jedno zastosowanie. Ale warto wiedzieć, że duże modele językowe używają wektorów osadzonych również wewnętrznie – to właśnie wektory są reprezentacją, na której operuje każda warstwa Transformera.
 

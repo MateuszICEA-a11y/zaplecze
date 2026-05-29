@@ -48,7 +48,7 @@ faq:
 
 Kiedy klient zadaje w ChatGPT pytanie: „jakie słuchawki bezprzewodowe do 400 zł są najlepsze?", model nie przegląda rankingów Google – pobiera fragmenty stron, które techniczne boty uznały za wiarygodne, wyciąga z nich dane i skleja odpowiedź w kilka sekund. Jeśli Twój sklep nie zostanie uwzględniony w tym zestawieniu, nie istniejesz dla tego klienta. **GEO (Generative Engine Optimization, czyli optymalizacja pod generatywne silniki wyszukiwania) to właśnie zestaw taktyk, które sprawiają, że produkty i kategorie Twojego sklepu trafiają do odpowiedzi AI – a nie tylko do tradycyjnych rankingów.** Ten artykuł tłumaczy, co konkretnie zmienić w strukturze strony, opisach produktów i warstwie danych, żeby wskaźnik cytowań (Citation Rate) ruszył w górę.
 
-## Dlaczego e-commerce musi myśleć inaczej niż klasyczne SEO
+## Dlaczego e-commerce musi myśleć inaczej niż klasyczne SEO?
 
 Sklepy internetowe mają specyficzny problem z GEO, z którym nie borykają się serwisy contentowe. Strona produktowa musi jednocześnie sprzedawać (przekonujący opis, zdjęcia, CTA), spełniać wymogi SEO (frazy kluczowe, linkowanie wewnętrzne) i być czytelna dla bota AI (ustrukturyzowane fakty, dane liczbowe, jednoznaczne encje). Te trzy zadania często stoją ze sobą w sprzeczności.
 
@@ -155,7 +155,7 @@ Strony produktowe to nie jedyny obszar działań GEO w e-commerce. Strony katego
 
 Zapytanie „które słuchawki bezprzewodowe poleca ChatGPT?" rzadko prowadzi do konkretnej strony produktowej. Prowadzi do treści, która odpowiada na to pytanie w szerokim kontekście i zawiera: porównanie kilku modeli, tabelę z parametrami oraz wyraźne wskazanie, dla kogo który model jest odpowiedni. **Sklep, który ma taką stronę poradnikową z konkretnymi danymi i strukturą pytanie-odpowiedź, wygrywa ten typ zapytania nawet wtedy, gdy jego SEO jest słabsze od konkurenta.**
 
-### Co powinna zawierać strona kategorii pod GEO
+### Co powinna zawierać strona kategorii pod GEO?
 
 Dobre wdrożenie to strona kategorii, która nie tylko listuje produkty, ale odpowiada na pytania zakupowe przez:
 
@@ -165,7 +165,7 @@ Dobre wdrożenie to strona kategorii, która nie tylko listuje produkty, ale odp
 
 Więcej o tym, jak budować taką strukturę treści na poziomie całego sklepu, opisuje [przewodnik GEO](/geo/przewodnik/) – z omówieniem mechanizmu rozszczepienia zapytania i strategii budowania autorytetu tematycznego.
 
-## Jak mierzyć efekty GEO w sklepie
+## Jak mierzyć efekty GEO w sklepie?
 
 Klasyczne narzędzia analityczne nie pokażą Ci, ile razy ChatGPT polecił Twój produkt. Do GEO potrzebne są inne metryki i inne narzędzia.
 

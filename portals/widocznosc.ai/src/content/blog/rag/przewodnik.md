@@ -39,7 +39,7 @@ Poniższa tabela porównuje cztery poziomy dojrzałości w wymiarach kluczowych 
 | Pętle korekcyjne | Brak | Ocena i korekta zapytań | Aktywne uczenie | Autorefleksja (Self-RAG) |
 | Opóźnienie | Minimalne | +ok. 120 ms | Zmienne | Dynamicznie optymalizowane |
 
-### Kiedy sięgać po Naive, a kiedy po Advanced
+### Kiedy sięgać po Naive, a kiedy po Advanced?
 
 Naive RAG wystarcza, gdy dokumenty są jednorodne, pytania proste i nie trzeba odpowiadać na złożone zapytania wieloetapowe. Chatbot wsparcia oparty na dokumentacji produktu to dobry przykład. Gdy baza wiedzy rośnie powyżej kilkudziesięciu tysięcy fragmentów, a zapytania stają się złożone – Advanced RAG z rerankingiem i wyszukiwaniem hybrydowym staje się koniecznością.
 
@@ -184,7 +184,7 @@ Przejście od działającego demo do systemu produkcyjnego klasy enterprise to k
 | Parent-Child + Qdrant + Cohere Embed v4 | Wielojęzyczne bazy, dokumenty PDF | Precyzja + kontekst, multimodalność | Wyższy koszt operacyjny |
 | Adaptive RAG + pgvectorscale + Qwen3-Embedding-8B | Enterprise, wysokie wymagania jakości | Najwyższa jakość, open-source | Wymaga GPU on-premise |
 
-## Jak RAG wpływa na widoczność marki w AI Search
+## Jak RAG wpływa na widoczność marki w AI Search?
 
 To pytanie zadają coraz częściej CMO i SEO Managerowie, którzy obserwują, jak ChatGPT, Perplexity i Google AI Overviews odpowiadają na pytania o produkty ich firm. Silniki te w trybie RAG dynamicznie pobierają treści ze stron – i cytują te fragmenty, które najlepiej pasują semantycznie do zapytania.
 

@@ -18,7 +18,7 @@ level: 'L3'
 
 Dane strukturalne w formacie JSON-LD (JavaScript Object Notation for Linked Data) przestały być technicznym dodatkiem poprawiającym gwiazdki w wynikach wyszukiwania. W erze GEO (Generative Engine Optimization, czyli optymalizacji pod generatywne silniki wyszukiwania) to fundament, na którym LLM-y (Large Language Models, czyli duże modele językowe) budują zrozumienie encji – marek, autorów, produktów – i decydują, czy cytować Twoją stronę w syntezie odpowiedzi. Badanie Otterly.ai z okresu grudzień 2025–marzec 2026 wykazało, że witryny z poprawnym schema.org notują wzrost obecności w boksach Google AI Overviews o 1500% w ciągu zaledwie trzech miesięcy. Ten artykuł pokazuje, jak to wdrożyć krok po kroku.
 
-## Dlaczego silniki RAG potrzebują danych strukturalnych
+## Dlaczego silniki RAG potrzebują danych strukturalnych?
 
 Systemy takie jak Google AI Overviews czy Perplexity nie czytają stron jak człowiek. Działają na zasadzie RAG (Retrieval-Augmented Generation, czyli generowania wspomaganego wyszukiwaniem) – dynamicznie pobierają fragmenty tekstu, zamieniają je w wektory liczbowe i wyszukują te, które semantycznie odpowiadają zapytaniu użytkownika.
 
@@ -26,7 +26,7 @@ Surowy HTML to dla parserów AI bariera. Bot musi poświęcić zasoby obliczenio
 
 Istotna jest tu też architektura [Resource Description Framework](https://pl.wikipedia.org/wiki/Resource_Description_Framework) (RDF), na której opiera się standard schema.org. RDF definiuje dane jako trójki podmiot–predykat–obiekt, co pozwala modelom AI mapować encje na globalne identyfikatory zamiast interpretować je za każdym razem od nowa z kontekstu.
 
-### Jak schema.org trafia do systemów RAG
+### Jak schema.org trafia do systemów RAG?
 
 Bezpośrednia odpowiedź jest nieintuicyjna: większość platform AI (z wyjątkiem Gemini) nie odczytuje JSON-LD na żywo podczas generowania odpowiedzi. Eksperyment Otterly.ai – siedem platform testowanych przez 90 dni – wykazał, że 6 z 7 silników nie potrafi bezpośrednio zinterpretować kodu JSON-LD w oknie czatu. Jedynie Gemini ekstrahuje atrybuty schematu w czasie rzeczywistym.
 
@@ -260,7 +260,7 @@ Atrybut `totalTime` w formacie ISO 8601 (np. `PT4H` dla czterech godzin) pojawia
 
 Jeśli budujesz spójną strategię GEO wykraczającą poza dane strukturalne, kompleksowy [przewodnik GEO](/geo/przewodnik/) opisuje pełną metodykę – od audytu technicznego przez optymalizację treści po monitoring Share of Voice. Warto też zapoznać się z [artykułem o llms.txt](/geo/llms-txt/), który uzupełnia schema.org o bezpośredni kanał komunikacji z modelami AI odpytującymi Twoją domenę.
 
-## Jak LLM-y różnie interpretują schema.org
+## Jak LLM-y różnie interpretują schema.org?
 
 Nie istnieje jedna „poprawna" implementacja schema.org – różne silniki AI inaczej walidują i wykorzystują dane strukturalne. Rozumienie tych różnic pozwala ustalić priorytety wdrożenia.
 

@@ -147,7 +147,7 @@ Jak ChatGPT buduje swoją wiedzę i skąd czerpie dane o Twojej marce – opisuj
 
 Jeśli interesuje Cię, jak Twoja marka jest postrzegana przez ChatGPT i Gemini jednocześnie, narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) wyśle zapytania do obu silników (i dwóch innych) za jednym razem – bez ręcznego testowania. Szerszą strategię widoczności pod kątem konkretnego modelu opisują strony [pozycjonowanie w ChatGPT](/pozycjonowanie-ai/chatgpt/) i [pozycjonowanie w Gemini](/pozycjonowanie-ai/gemini/).
 
-## Jak sprawdzić model przed zakupem planu
+## Jak sprawdzić model przed zakupem planu?
 
 Zanim zapłacisz abonament, wykonaj kilka kroków, które pozwolą Ci uniknąć rozczarowania:
 

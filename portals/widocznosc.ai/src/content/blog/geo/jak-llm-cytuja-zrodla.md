@@ -64,7 +64,7 @@ Poniższa tabela zestawia oba podejścia pod kątem kluczowych wymiarów technic
 | **Przykłady metod** | CoT Citation, LongCite | CiteBART, CEG (Citation-Enhanced Generation) |
 | **Ryzyko główne** | Degradacja płynności tekstu | Błędna atrybucja w długich odpowiedziach |
 
-### Jak model szuka fragmentów – warstwa RAG
+### Jak model szuka fragmentów w warstwie RAG?
 
 Zanim model zdecyduje, co zacytować, musi w ogóle pobrać kandydatów do cytowania. W tym miejscu wkracza [generowanie wspomagane wyszukiwaniem](https://pl.wikipedia.org/wiki/Retrieval-augmented_generation) (RAG, ang. *Retrieval-Augmented Generation*) – architektura, w której silnik odpowiedzi dynamicznie przeczesuje zewnętrzne źródła i dostarcza wybrane fragmenty jako kontekst do generowania tekstu.
 
@@ -78,7 +78,7 @@ Co decyduje o wyborze fragmentu przez RAG? Trzy właściwości są kluczowe:
 
 Jeśli chcesz sprawdzić, jak Twoje konkretne adresy URL wypadają pod kątem cytowalności, narzędzie [Ocena cytowalności strony](/narzedzia/url-check/) analizuje stronę na podstawie tych czynników w kilkadziesiąt sekund.
 
-## Dlaczego silne SEO nie gwarantuje cytowania
+## Dlaczego silne SEO nie gwarantuje cytowania?
 
 To jeden z najtrudniejszych do zaakceptowania faktów dla osób, które latami inwestowały w budowanie autorytetu domeny. **Analizy porównawcze wykazują, że jedynie 12% adresów URL cytowanych przez modele językowe pokrywa się z czołową dziesiątką organicznych wyników Google dla tego samego zapytania.** Modele nie pytają, ile linków zwrotnych (backlinków) ma strona – pytają, czy fragment jest jednoznaczny i nasycony danymi.
 
@@ -104,7 +104,7 @@ Osobne zjawisko opisane w tej samej analizie: marka lub domena pojawia się w od
 
 ![Co decyduje, że LLM zacytuje źródło: trafność semantyczna, autorytet domeny, świeżość treści, struktura i nagłówki oraz gęstość danych](../../../assets/images/infographic-geo-jak-llm-cytuja-zrodla.png)
 
-## Jak model uczy się cytować – metody treningowe
+## Jakimi metodami treningowymi model uczy się cytować?
 
 Precyzyjne cytowanie nie jest naturalną cechą bazowego modelu językowego. **Podczas wstępnego trenowania (pre-training) jedynym celem optymalizacyjnym modelu jest przewidywanie kolejnego słowa – i ten proces nie uczy modelu, skąd pochodzi dana informacja.** Zdolność cytowania wymaga dodatkowego, ukierunkowanego strojenia.
 
@@ -140,7 +140,7 @@ Co z tego wynika w praktyce? Dla Twojej strategii GEO oznacza to, że **Twój fr
   </div>
 </aside>
 
-## Jak oceniać jakość cytowań – pułapki ewaluacji
+## Jak oceniać jakość cytowań i unikać pułapek ewaluacji?
 
 Skoro już wiesz, jak modele cytują, warto wiedzieć, jak mierzyć jakość tych cytowań. Standardowe metody mają istotne ograniczenia, które mogą prowadzić do błędnych wniosków o własnej widoczności.
 
@@ -152,7 +152,7 @@ Dla praktyka GEO ma to jedno konkretne przełożenie: jeśli monitorujesz widocz
 
 Warto też pamiętać, że wyniki ewaluacji zależą od struktury danych weryfikacyjnych. Analiza błędów automatycznej ewaluacji pokazuje, że **ponad 66% pomyłek klasyfikacyjnych wynika z braku wrażliwości modeli ewaluacyjnych na drobnoziarniste informacje faktograficzne.** Innymi słowy: narzędzia pomiarowe często nie wykrywają błędów, które dla ludzkiego oceniającego byłyby oczywiste.
 
-## Co to oznacza dla Twoich treści
+## Co to oznacza dla Twoich treści?
 
 Mechanizmy opisane powyżej przekładają się na konkretne decyzje redakcyjne. **Nie optymalizujesz „artykułu" – optymalizujesz każdy fragment z osobna**, bo RAG ocenia fragmenty, nie całe strony.
 

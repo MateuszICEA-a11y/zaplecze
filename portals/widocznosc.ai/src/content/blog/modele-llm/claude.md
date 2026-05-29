@@ -48,7 +48,7 @@ Geneza firmy Anthropic wynika wprost z konfliktu wartości. W 2021 roku Dario Am
 
 Pierwszy model Claude wszedł do publicznego użytku w marcu 2023 roku. Wcześniej firma przez blisko rok prowadziła wewnętrzne testy bezpieczeństwa, zamiast – jak to bywa w branży – publikować model i reagować na problemy post factum. Wycena firmy osiągnęła w lutym 2026 roku ok. 380 miliardów dolarów.
 
-## Jak działa Claude – Constitutional AI zamiast zwykłego RLHF
+## Jak działa Claude, czyli Constitutional AI zamiast zwykłego RLHF?
 
 Większość modeli językowych jest dostrajana metodą uczenia ze wzmocnieniem na podstawie opinii ludzi (RLHF – *Reinforcement Learning from Human Feedback*). Tysiące ewaluatorów przegląda odpowiedzi modelu i ocenia je; model uczy się na tych ocenach. Przy wystarczająco złożonych zagadnieniach – takich jak specjalistyczny kod czy niuansowane dylematy etyczne – ludzka ocena staje się wąskim gardłem.
 
@@ -155,7 +155,7 @@ Gdzie Claude wypada gorzej na tle konkurentów:
 - **Bieżące informacje** – Claude bez funkcji Computer Use posiada datę odcięcia wiedzy; Perplexity i Google AI Mode pobierają dane na żywo
 - **Koszt modelu Opus** – najtańszym rozwiązaniem do masowego przetwarzania dużych wolumenów danych pozostaje Gemini Flash
 
-## Jak Claude wpływa na widoczność marki w wynikach wyszukiwania AI
+## Jak Claude wpływa na widoczność marki w wynikach wyszukiwania AI?
 
 Jeśli Twoja marka pojawia się w odpowiedziach generowanych przez Claude'a – albo powinna, ale się nie pojawia – nie jest to kwestia przypadku. Claude, jak każdy model z dostępem RAG, pobiera treści ze stron internetowych i ocenia je pod kątem wiarygodności, spójności i gęstości informacji.
 

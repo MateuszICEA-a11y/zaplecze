@@ -18,7 +18,7 @@ level: 'L2'
 
 Każdy prompt, który Twój pracownik wkleja do ChatGPT, wędruje na serwery OpenAI – i domyślnie może tam zostać przez 30 dni. Badanie LayerX z 2025 roku wykazało, że 77% pracowników korzystających z AI w przedsiębiorstwach wklejało do chatbotów dane firmowe, a w 22% przypadków były to informacje poufne lub finansowe. Do tego dochodzi tzw. shadow AI (nieautoryzowane narzędzia AI, po polsku: ukryta sztuczna inteligencja), które według Menlo Security w 2025 roku wzrosło o 68% w ciągu roku. Ten artykuł wyjaśnia, gdzie naprawdę leżą ryzyka, jak działają polityki retencji danych u głównych dostawców, kiedy wybrać wdrożenie lokalne zamiast chmury i co powinna zawierać umowa DPA (Data Processing Agreement, czyli umowa o powierzeniu przetwarzania danych).
 
-## Dlaczego LLM-y są nowym wektorem wycieku danych
+## Dlaczego LLM-y są nowym wektorem wycieku danych?
 
 Klasyczne narzędzia bezpieczeństwa – firewalle, DLP (systemy zapobiegania utracie danych), monitoring poczty – zostały zaprojektowane z myślą o innym środowisku. Dla nich ChatGPT lub Claude wygląda jak przeglądarka internetowa. Ruch wychodzi przez port 443 i jest szyfrowany protokołem TLS. Tradycyjne narzędzia widzą bezpieczne połączenie HTTPS, nie widzą natomiast, że wewnątrz przesyłany jest schemat bazy danych, kod źródłowy albo projekt umowy.
 
@@ -53,7 +53,7 @@ Kluczowy wniosek: **domyślne ustawienia rzadko oferują maksymalną ochronę.**
 
 Istnieje ważna różnica między retencją a treningiem. Większość dostawców już dawno przestała domyślnie trenować modele na danych klientów biznesowych. Problem polega na tym, że dane mimo to mogą być przechowywane przez 7–30 dni w celu monitorowania nadużyć – i właśnie w tym oknie może dojść do ich nieuprawnionego dostępu lub naruszenia.
 
-### Co sprawdzić przed podpisaniem umowy
+### Co sprawdzić przed podpisaniem umowy?
 
 Zanim Twoja firma podpisze umowę z dostawcą LLM, podstawowa analiza due diligence obejmuje kilka obszarów:
 
@@ -124,7 +124,7 @@ Porównanie najważniejszych wymiarów:
 
 Podejście hybrydowe coraz częściej jest odpowiedzią dla firm ze środkowej półki: wrażliwe dane i produkcja – on-premise, zadania o niskim ryzyku i eksperymenty – API w chmurze. Dobra architektura [RAG (generowania wspomaganego wyszukiwaniem)](/rag/przewodnik/) pozwala połączyć oba światy: baza wektorowa z dokumentami firmowymi działa lokalnie, a model odpytuje ją bez konieczności wysyłania surowych danych.
 
-## Jak zbudować politykę bezpieczeństwa AI w organizacji
+## Jak zbudować politykę bezpieczeństwa AI w organizacji?
 
 Firmy, które nie mają formalnej polityki użycia AI, tworzą środowisko, w którym pracownicy działają według własnego wyczucia. Zaledwie połowa przedsiębiorstw ma jakiekolwiek formalne zasady regulujące użycie narzędzi AI.
 

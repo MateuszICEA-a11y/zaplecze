@@ -41,7 +41,7 @@ faq:
 
 Jeśli Twoja marka nie pojawia się w odpowiedziach ChatGPT, Gemini czy Perplexity na pytania z Twojej branży, tracisz klientów bez żadnego sygnału w Google Analytics. Szacuje się, że już 37% zapytań zakupowych zaczyna się od konwersacji z modelem językowym, a tradycyjna analityka tych interakcji w ogóle nie rejestruje. Audyt widoczności marki w silnikach generatywnych – czyli GEO (Generative Engine Optimization) – to dziś tak samo obowiązkowy punkt kontrolny jak klasyczny audyt SEO. Ten przewodnik przeprowadza Cię przez cały proces krok po kroku: od przygotowania zestawu zapytań testowych, przez ocenę wyników, po pierwsze konkretne działania optymalizacyjne.
 
-## Dlaczego standardowe SEO nie pokazuje problemu
+## Dlaczego standardowe SEO nie pokazuje problemu?
 
 Klasyczne narzędzia monitoringu – Google Search Console, Ahrefs, Semrush – mierzą kliknięcia z listy wyników. Problem polega na tym, że użytkownik pytający ChatGPT o najlepsze oprogramowanie CRM dla agencji marketingowej nigdy nie trafi do Search Console. Nie kliknie żadnego linku, jeśli odpowiedź AI wyda mu się wystarczająca.
 

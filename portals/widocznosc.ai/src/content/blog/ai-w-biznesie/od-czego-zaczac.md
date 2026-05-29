@@ -122,7 +122,7 @@ Przejście na pełną skalę produkcyjną, automatyzacja douczania modeli (MLOps
   </div>
 </aside>
 
-## Jak liczyć zwrot z inwestycji w AI
+## Jak liczyć zwrot z inwestycji w AI?
 
 Większość projektów AI nie upada dlatego, że technologia nie działa. Upada, bo nikt nie zmierzył, co miało działać. Zanim uruchomisz pilotaż, zmapuj dwa zestawy liczb.
 

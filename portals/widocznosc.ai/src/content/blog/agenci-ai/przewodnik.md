@@ -18,7 +18,7 @@ level: 'L1'
 
 Agent AI to nie chatbot z lepszą pamięcią. To system, który samodzielnie planuje działania, wywołuje zewnętrzne narzędzia, weryfikuje wyniki i iteruje – aż zrealizuje postawiony cel. LLM (Large Language Model, czyli duży model językowy) pełni tu rolę centralnego kontrolera, a nie tylko generatora tekstu. **Ta zmiana – od modelu, który odpowiada, do systemu, który działa – to największy przełom w AI od momentu upowszechnienia się ChatGPT.** W tym artykule wyjaśniam, czym dokładnie jest agent AI, jak zbudowana jest jego architektura, jakie frameworki dominują w 2026 roku i do jakich zastosowań biznesowych warto go użyć – a do jakich jeszcze nie.
 
-## Czym agent AI różni się od chatbota i zautomatyzowanego przepływu pracy
+## Czym agent AI różni się od chatbota i zautomatyzowanego przepływu pracy?
 
 Trzy pojęcia – chatbot, zautomatyzowany przepływ pracy (ang. *workflow*) i agent AI – są nagminnie mylone w materiałach marketingowych. Różnice między nimi mają jednak znaczenie praktyczne dla każdego, kto decyduje o wdrożeniu.
 
@@ -165,7 +165,7 @@ Odpowiedź na te zagrożenia to trzystopniowa strategia, którą praktycy bezpie
   </div>
 </aside>
 
-## Jak [inteligentny agent](https://pl.wikipedia.org/wiki/Inteligentny_agent) wpisuje się w szerszy ekosystem AI
+## Jak [inteligentny agent](https://pl.wikipedia.org/wiki/Inteligentny_agent) wpisuje się w szerszy ekosystem AI?
 
 Systemy agentowe nie działają w izolacji. Zrozumienie, jak agent współpracuje z innymi komponentami architektury AI, pozwala zaplanować wdrożenie bez ślepych zaułków.
 

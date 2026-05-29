@@ -18,7 +18,7 @@ level: 'L2'
 
 Klient pyta: *„Na której pozycji jesteśmy w ChatGPT?"*. **To pytanie nie ma odpowiedzi** – i dlatego cały biznes klasycznego SEO, od narzędzi do śledzenia rankingu po raporty miesięczne, zaczyna się rozsypywać przy próbie raportowania widoczności w AI. Problem nie polega na tym, że nie potrafimy mierzyć. Problem polega na tym, że ranking jako metryka po prostu przestał istnieć w sensie, w jakim go znamy z klasycznego Google.
 
-## Dlaczego ranking w LLM-ach nie ma sensu
+## Dlaczego ranking w LLM-ach nie ma sensu?
 
 Rand Fishkin (SparkToro) opublikował na początku 2026 roku [badanie](https://sparktoro.com/) na 600 ochotnikach, które powinno być punktem wyjścia każdej rozmowy o pomiarze widoczności w AI. Próba: 2961 testów, 12 zapytań × 3 platformy AI. Wynik:
 
@@ -83,7 +83,7 @@ Trzy najczęstsze pułapki, w które wpadają agencje próbujące „dorobić" G
 - **Mieszanie SoV z wyświetleniami** – Search Console pokazuje wyświetlenia w klasycznym Google. Niektórzy próbują tę metrykę przekładać na AI: *„mamy 10 000 wyświetleń miesięcznie z AI Overviews"*. To liczba, która nie ma znaczenia, dopóki nie zestawisz jej z wyświetleniami konkurencji. SoV to relacja, wyświetlenia to liczba absolutna – tylko relacja mówi coś o pozycji konkurencyjnej.
 - **Ignorowanie Mention Rate** – większość agencji GEO skupia się tylko na Citation Rate, bo to mierzalne za pomocą scrapera. Mention Rate wymaga analizy NLP, więc zostaje pomijany. Tymczasem dla marek B2C i ugruntowanych marek B2B Mention Rate jest często 3–5× wyższy niż Citation Rate – pomijanie go zafałszowuje obraz.
 
-## Jak interpretować wyniki
+## Jak interpretować wyniki?
 
 Pojedynczy SoV 18% nic nie mówi. Interpretacja zależy od trzech zmiennych: branży, charakteru zapytań i kierunku zmiany.
 

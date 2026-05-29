@@ -18,7 +18,7 @@ level: 'L1'
 
 Badanie McKinsey State of AI (listopad 2025) ujawniło niepokojący podział: 88% organizacji używa już AI w co najmniej jednym obszarze, ale tylko 5,5% firm można nazwać prawdziwymi liderami czerpiącymi z niej wartość – to te organizacje, które odnotowują ponadpięcioprocentowy wpływ AI na wynik operacyjny (EBIT). Reszta gdzieś utknęła. Najczęściej nie z powodu złej technologii, lecz dlatego, że inicjatywa nigdy nie uzyskała pełnego poparcia zarządu. Jeśli masz przekonanie, że AI może coś zmienić w Twojej firmie, ale nie wiesz, jak przeprowadzić tę rozmowę z decydentami – ten artykuł pokazuje, od czego zacząć, jakim językiem mówić i jakie liczby przygotować.
 
-## Dlaczego zarząd blokuje projekty AI
+## Dlaczego zarząd blokuje projekty AI?
 
 Zarząd nie odrzuca AI, bo nie lubi technologii. Odrzuca projekty ze względu na ich słabe uzasadnienie finansowe, nieokreślone ryzyko i plany pozbawione mierzalnych wyników.
 
@@ -62,7 +62,7 @@ Konkretna struktura zdania, które działa: „Dzięki [mechanizm w jednym słow
 
 ![Jak mówić o AI językiem zarządu – zamiana języka technologii (model LLM, fine-tuning, RAG) na język korzyści biznesowych (krótszy czas obsługi, niższe koszty, wyższa konwersja, zwrot z inwestycji)](../../../assets/images/infographic-ai-w-biznesie-jak-rozmawiac-z-zarzadem.png)
 
-## Jak zbudować business case, który przeżyje salę zarządową
+## Jak zbudować business case, który przeżyje salę zarządową?
 
 Uzasadnienie biznesowe (ang. *business case*) dla projektu AI nie różni się strukturą od uzasadnienia dla każdej innej inwestycji – różni się tylko tym, że wymaga dodatkowej warstwy: analizy ryzyka specyficznego dla AI. Vantage Point i Deloitte zgodnie wskazują, że zarządy zatwierdzają projekty AI przede wszystkim wtedy, gdy widzą trzy rzeczy: wiarygodność założeń finansowych, jasność odpowiedzialności i zdefiniowane punkty decyzyjne.
 
@@ -125,7 +125,7 @@ Praktyczny zestaw KPI dla poszczególnych poziomów:
 
 Informacje o tym, jak szczegółowo kalkulować zwrot i budować szablony finansowe dla poszczególnych obszarów, znajdziesz w artykule o [ROI z AI](/ai-w-biznesie/roi-z-ai/) – z gotowymi wzorami dla obsługi klienta, marketingu i produkcji.
 
-## Jak prezentować ryzyko bez straszenia
+## Jak prezentować ryzyko bez straszenia?
 
 Zarząd, który nie widzi ryzyk w prezentacji, sam je sobie wyobraża – i zwykle wyobraża je sobie bardziej katastrofalnie niż rzeczywistość. Pokazanie ryzyk wraz ze sposobami ich ograniczania (mitygacji) jest lepszym rozwiązaniem niż ich ukrycie.
 
@@ -141,7 +141,7 @@ Szczegółowe omówienie obowiązków z AI Act i RODO w kontekście polskich fir
 
 Ważne: ryzyko „niewdrożenia" też musi paść wprost. Jeśli konkurenci inwestują w AI, a firma stoi w miejscu – to jest to decyzja strategiczna z konsekwencjami, a nie jej brak. **Zarząd powinien aktywnie decydować o tempie wdrażania, a nie unikać decyzji przez odkładanie tematu.**
 
-## Jak przeprowadzić pierwszą rozmowę z zarządem – lista kontrolna
+## Jak przeprowadzić pierwszą rozmowę z zarządem?
 
 Zanim wejdziesz na salę, odpowiedz pisemnie na te pytania. Jeśli nie możesz odpowiedzieć na którekolwiek z nich – masz lukę, którą zarząd z pewnością odkryje.
 
@@ -162,7 +162,7 @@ Zarządzanie rozmową:
 
 Po spotkaniu z zarządem, pierwszym praktycznym krokiem jest sprawdzenie, jak Twoja marka jest już postrzegana przez systemy AI – darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) odpyta cztery silniki AI w 30 sekund i pokaże stan widoczności. To dane, które możesz przywołać w kolejnym raporcie jako punkt wyjścia do analizy efektów zewnętrznych.
 
-## Co dalej po zatwierdzeniu przez zarząd
+## Co dalej po zatwierdzeniu przez zarząd?
 
 Zatwierdzenie projektu to dopiero początek. Pierwsze 30 dni po decyzji zarządu są krytyczne – tu decyduje się, czy projekt wejdzie w fazę pilotażu z odpowiednim rozpędem, czy ugrzęźnie w wewnętrznych uzgodnieniach.
 

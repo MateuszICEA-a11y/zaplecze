@@ -126,7 +126,7 @@ CrewAI ma znacznie wyższe zużycie tokenów, ponieważ generuje rozbudowane kon
 
 Decyzja o architekturze agentowej zawsze zaczyna się od zrozumienia, jaką intencję użytkownika agent ma obsługiwać. [Przewodnik po promptach](/prompty/przewodnik/) wyjaśnia, jak projektować instrukcje systemowe, które kierują agentem precyzyjnie – bez zbędnych nawrotów pętli.
 
-## Kiedy agent naprawdę ma sens
+## Kiedy agent naprawdę ma sens?
 
 Agenty nie nadają się do wszystkich zadań. Mają trzy twarde ograniczenia, które w 2026 roku nadal pozostają otwarte.
 

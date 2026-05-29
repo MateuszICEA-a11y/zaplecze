@@ -97,7 +97,7 @@ Sitemap: https://twojadomena.pl/sitemap.xml
 
 Druga pułapka: blokowanie ścieżek dynamicznych (`/search/`, `/cart/`). Boty AI, podobnie jak Googlebot, nie powinny indeksować adresów URL z parametrami koszyka, sesji, filtrowania. Standardowe wyłączenia `/api/`, `/admin/`, `/cart/`, `/checkout/`, `/search/?q=` nadal działają.
 
-## Czy llms.txt ma sens
+## Czy llms.txt ma sens?
 
 `llms.txt` to **propozycja** standardu z 2024 roku (autor: Jeremy Howard), podobna do [robots.txt](https://pl.wikipedia.org/wiki/Robots_Exclusion_Protocol), ale przeznaczona stricte dla modeli LLM. Plik leży w katalogu głównym domeny i zawiera hierarchiczną mapę najważniejszych zasobów na stronie z opisami w naturalnym języku. Idea: zamiast pozwalać modelowi LLM przeczesywać całą stronę, dajesz mu kuratorską listę treści, którą chcesz, żeby model znał najlepiej.
 
@@ -190,7 +190,7 @@ Po 30 dniach robisz re-test: `curl -A "GPTBot"` zwraca pełny tekst, schema.org 
   </div>
 </aside>
 
-## Co warto sprawdzić w pierwszej kolejności
+## Co warto sprawdzić w pierwszej kolejności?
 
 Konfiguracja botów AI to zadanie, które najlepiej wykonać raz a dobrze. **Większość problemów technicznej widoczności w AI sprowadza się do prostych list kontrolnych: które boty dopuszczam, czy mam SSR, czy mam wdrożone dane strukturalne.** Zaniedbanie tych podstaw oznacza, że nawet najlepsza strategia contentowa nie zadziała – bo model LLM po prostu Twojej strony nie widzi.
 

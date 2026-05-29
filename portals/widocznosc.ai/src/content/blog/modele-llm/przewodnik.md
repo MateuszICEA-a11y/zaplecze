@@ -35,7 +35,7 @@ faq:
 
 LLM (Large Language Model, czyli duży model językowy) to nie jeden produkt – to cały ekosystem kilkudziesięciu systemów, które różnią się architekturą, mocnymi stronami, ceną i tym, jak traktują Twoją markę jako potencjalne źródło cytowań. **Dziś 88% firm deklaruje wdrożenie generatywnej AI, a użytkownicy zadają pytania o produkty i usługi bezpośrednio w ChatGPT, Perplexity czy w Gemini – zamiast wpisywać je w wyszukiwarkę.** Ten przewodnik pokazuje, jak działa każdy z głównych modeli, czym się od siebie różnią i co to oznacza dla widoczności Twojej marki w odpowiedziach AI.
 
-## Jak działa duży model językowy
+## Jak działa duży model językowy?
 
 Zanim przejdziesz do porównania konkretnych produktów, warto zrozumieć jeden wspólny mechanizm. Wszystkie modele omówione w tym przewodniku to [duże modele językowe](https://pl.wikipedia.org/wiki/Du%C5%BCy_model_j%C4%99zykowy) – systemy trenowane na miliardach dokumentów, które nauczyły się przewidywać kolejny token (fragment tekstu) na podstawie kontekstu. To fundamentalnie odróżnia je od klasycznych wyszukiwarek, które indeksują i tworzą ranking stron.
 
@@ -49,7 +49,7 @@ Kluczowe pojęcia, których będziesz używać w każdej rozmowie o LLM-ach:
 
 **Modele AI nie czytają stron internetowych jak ludzie.** Dzielą tekst na fragmenty po 200–400 słów, zamieniają je na wektory i wybierają te, które semantycznie najlepiej odpowiadają zapytaniu. To znaczy, że Twoja strona musi być napisana tak, by każdy fragment samodzielnie odpowiadał na jedno pytanie.
 
-### Co odróżnia modele podstawowe od asystentów AI
+### Co odróżnia modele podstawowe od asystentów AI?
 
 W rozmowach o LLM-ach regularnie myli się dwie warstwy produktowe. Model podstawowy (np. GPT-5.5, Claude Sonnet, Gemini Pro) to sama warstwa językowa – przetwarza tekst i generuje odpowiedź. Asystent AI (ChatGPT, Claude.ai, Gemini.com, Copilot w przeglądarce) to produkt konsumencki zbudowany na modelu, z interfejsem, historią rozmów, integracjami narzędziowymi i własną polityką dotyczącą cytowań. **Dla widoczności marki w AI ważniejszy jest asystent, bo to z nim rozmawiają Twoi klienci – ale to model decyduje, co zostanie zacytowane.**
 
@@ -186,7 +186,7 @@ Najpopularniejsze otwarte modele na 2026 rok to:
 
 Ważne zastrzeżenie: modele open source nie mają własnych botów indeksujących. Ich wiedza pochodzi z danych treningowych, a nie z indeksowania na żywo. Widoczność marki w modelach open source wdrożonych przez klientów zależy od tego, czy Twoje treści trafiły do zbiorów treningowych (np. Common Crawl). To inny mechanizm niż w SearchGPT czy Perplexity.
 
-## Jak wybrać model do strategii widoczności marki
+## Jak wybrać model do strategii widoczności marki?
 
 Nie istnieje jeden model, który wygrywa we wszystkich kategoriach. **Wybór zależy od tego, gdzie są Twoi klienci i jakie pytania zadają.** Poniższe kryteria pomagają zawęzić decyzję.
 

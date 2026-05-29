@@ -43,7 +43,7 @@ faq:
 
 Plik `llms.txt` to lekki dokument w formacie [Markdown](https://pl.wikipedia.org/wiki/Markdown) umieszczany w katalogu głównym serwera, który wskazuje botom AI i autonomicznym agentom, co na Twojej stronie jest najważniejsze – bez konieczności przeczesywania setek podstron i renderowania kodu JavaScript. Standard zaproponował we wrześniu 2024 roku Jeremy Howard, współtwórca fast.ai i Answer.AI, a jego szerokie przyjęcie na rynku nastąpiło w listopadzie 2024 roku, gdy platforma Mintlify automatycznie wygenerowała te pliki dla tysięcy klientów – w tym dla firm takich jak Anthropic, Cursor i ElevenLabs. **Jeśli Twoja strona obsługuje programistów, oferuje API lub chce być gotowa na nadchodzący ekosystem autonomicznych agentów zakupowych, `llms.txt` to jeden z najtańszych kroków, jakie możesz dziś zrobić.**
 
-## Czym jest `llms.txt` i dlaczego nie jest to kolejny `robots.txt`
+## Czym jest `llms.txt` i dlaczego nie jest to kolejny `robots.txt`?
 
 Standard `robots.txt` liczy sobie trzy dekady. Informuje boty indeksujące, jakich ścieżek nie odwiedzać. Plik `sitemap.xml` wskazuje z kolei, które adresy URL istnieją. `llms.txt` robi coś zupełnie innego – zamiast kontrolować dostęp, dostarcza kontekst semantyczny. To mapa kluczowych zasobów witryny opisana ludzkim językiem, którą duży model językowy (LLM – *Large Language Model*) może przetworzyć błyskawicznie, zamiast pobierać i analizować kod HTML dziesiątek podstron.
 
@@ -62,7 +62,7 @@ Poniższa tabela porównuje trzy standardy – warto je traktować jako uzupełn
 
 ![robots.txt vs sitemap.xml vs llms.txt – robots.txt mówi co bot może odwiedzić, sitemap.xml gdzie są strony, a llms.txt które treści są najważniejsze dla AI](../../../assets/images/infographic-geo-llms-txt.png)
 
-## Jak wygląda poprawna struktura pliku
+## Jak wygląda poprawna struktura pliku?
 
 Specyfikacja opiera się na hierarchii składni Markdown z kilkoma bezwzględnymi wymogami. Dokument musi być zapisany w kodowaniu UTF-8. W pierwszej linii musi znajdować się nagłówek pierwszego stopnia – jedyny element bezwzględnie wymagany przez specyfikację. Bezpośrednio pod nim umieszcza się blok cytatu z precyzyjnym opisem działalności, bez języka marketingowego i wyolbrzymień.
 
@@ -107,7 +107,7 @@ Kilka reguł technicznych, które decydują o poprawności analizy składniowej:
   </div>
 </aside>
 
-## Kiedy `llms.txt` ma sens, a kiedy nie
+## Kiedy `llms.txt` ma sens, a kiedy nie?
 
 To jest pytanie, które dzieli rynek – i odpowiedź zależy od tego, kto jest Twoim faktycznym odbiorcą.
 
@@ -124,7 +124,7 @@ Trzy scenariusze, w których wdrożenie jest opłacalne – i jeden, w którym m
 - **Tak, wdrożyć** – każda witryna, która chce pozytywnie przejść audyt Agentic Browsing w Lighthouse 13.3.
 - **Można pominąć** – landing page bez komponentu deweloperskiego lub technicznego, gdzie celem jest wyłącznie widoczność w tradycyjnym SEO i AI Overviews Google.
 
-## Jak wdrożyć krok po kroku
+## Jak wdrożyć krok po kroku?
 
 Samo napisanie pliku to mniej niż połowa pracy. Serwer musi go poprawnie serwować – z właściwym typem MIME i nagłówkami ułatwiającymi wykrywanie zasobów.
 

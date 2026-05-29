@@ -98,7 +98,7 @@ Jedna istotna uwaga dotycząca prywatności: w planach Free i Plus historia konw
 
 ![Główne zastosowania ChatGPT – pisanie i redakcja, tłumaczenia, analiza danych, programowanie, nauka oraz burza mózgów](../../../assets/images/infographic-modele-llm-co-potrafi-chatgpt.png)
 
-## Jak pisać skuteczne prompty
+## Jak pisać skuteczne prompty?
 
 Prompt (zapytanie lub instrukcja) to jedyne narzędzie, które pozwala Ci wpływać na jakość odpowiedzi. Im precyzyjniejsza instrukcja, tym bliższy oczekiwaniom wynik.
 

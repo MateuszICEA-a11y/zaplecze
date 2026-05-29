@@ -53,7 +53,7 @@ faq:
 
 GEO, czyli *Generative Engine Optimization* (optymalizacja pod kątem generatywnych silników wyszukiwania), to odpowiedź na jedno z ważniejszych pytań współczesnego marketingu: dlaczego Twoja marka znika z odpowiedzi ChatGPT, Perplexity czy Google AI Overviews, mimo że świetnie radzi sobie w tradycyjnym Google? Badanie [Aggarwala i in. (KDD 2024)](https://arxiv.org/abs/2311.09735) z Princeton University jako pierwsze zmierzyło empirycznie, które cechy treści zwiększają szansę na cytowanie przez duże modele językowe. Odpowiedź zaskoczyła wielu specjalistów SEO: klasyczne zabiegi pozycjonowania nie działają, a część z nich – jak nasycanie tekstów słowami kluczowymi – wyraźnie obniża widoczność w modelach LLM.
 
-## Czym GEO różni się od SEO i AEO
+## Czym GEO różni się od SEO i AEO?
 
 Przez ponad dwie dekady optymalizacja dla wyszukiwarek oznaczała w praktyce jedno: walkę o pozycję na liście linków. Wpisujesz frazę, Google renderuje ranking z dziesięcioma wynikami, Ty optymalizujesz stronę, żeby wspiąć się wyżej. AEO (*Answer Engine Optimization*, optymalizacja pod silniki odpowiedzi) poszło o krok dalej – celem stała się pozycja zero, czyli bezpośrednia odpowiedź wyświetlana nad wynikami organicznymi.
 
@@ -71,7 +71,7 @@ Trzy dyscypliny i ich kluczowe cechy porządkuje poniższa tabela. Warto traktow
 
 **GEO nie zastępuje SEO – nadbudowuje się na nim.** Modele AI chętniej cytują strony, które mają silną pozycję organiczną, ponieważ wysoka pozycja w Google koreluje z tym, że bot z systemem RAG w ogóle trafi na Twoją witrynę podczas pobierania danych. Jednak sama dobra pozycja w Google nie gwarantuje obecności w odpowiedzi AI.
 
-## Jak LLM-y pobierają i cytują treść
+## Jak LLM-y pobierają i cytują treść?
 
 Zanim zaczniesz optymalizować pod kątem GEO, musisz zrozumieć mechanizm, który decyduje o tym, czyja treść trafia do odpowiedzi modelu.
 
@@ -79,7 +79,7 @@ Większość nowoczesnych silników AI – Perplexity, Google AI Overviews, Micr
 
 Drugi mechanizm to dane treningowe. ChatGPT bez dostępu do wyszukiwarki (w trybie bazowym) oraz Claude opierają wiedzę na tym, co model przyswoił przed datą graniczną wiedzy (ang. *cutoff date*) – i co uznał za wiarygodne źródło. Tutaj obecność w odpowiedziach zależy od tego, czy Twoja marka była cytowana, linkowana i wzmiankowana w treściach, które trafiły do korpusu treningowego.
 
-### Jak model wybiera fragment do zacytowania
+### Jak model wybiera fragment do zacytowania?
 
 Silniki RAG nie czytają strony jak człowiek – od nagłówka do stopki. Dzielą tekst na fragmenty o długości 200–400 słów, zamieniają je na reprezentacje wektorowe (ang. *embeddings*) i wyszukują te partie, które semantycznie najlepiej odpowiadają zapytaniu. Ma to poważną konsekwencję praktyczną: **nie wystarczy mieć „dobry artykuł" – każdy jego fragment musi samodzielnie odpowiadać na jedno konkretne pytanie**.
 
@@ -103,7 +103,7 @@ Aby w ogóle mieć szansę na widoczność, musisz sprawdzić, czy boty AI mają
 
 ![Czym GEO różni się od SEO: SEO optymalizuje pozycję w wynikach i kliknięcia, a GEO cytowanie przez modele AI i wzmianki o marce](../../../assets/images/infographic-geo-czym-jest-geo.png)
 
-## Co empirycznie działa – wyniki badania Princeton KDD 2024
+## Co empirycznie działa według badania Princeton KDD 2024?
 
 Badanie Aggarwala i współautorów z Princeton University oraz IIT Delhi to pierwszy duży akademicki test zjawiska GEO. W jego ramach stworzono GEO-bench – zestaw 10 000 zapytań z 25 dziedzin, testowanych na systemach symulujących wyszukiwarki wspomagane AI (takie jak Microsoft Copilot i Perplexity AI).
 
@@ -128,7 +128,7 @@ Wyniki testowania wybranych taktyk:
   </div>
 </aside>
 
-## Jak mierzyć widoczność w AI – podstawowe metryki
+## Jakimi metrykami mierzyć widoczność w AI?
 
 Klasyczne narzędzia SEO – Google Search Console, Ahrefs, Semrush – nie mierzą widoczności w LLM-ach. Do GEO potrzebne są inne dane i zupełnie inne podejście do analityki.
 

@@ -18,7 +18,7 @@ level: 'L2'
 
 Klasyczne SEO przyzwyczaiło nas do prostego modelu: użytkownik wpisuje frazę, Google dopasowuje strony, my optymalizujemy stronę pod tę frazę. **Query fan-out (rozszczepienie zapytania) wywraca ten model do góry nogami** – pomiędzy pytaniem a odpowiedzią pojawia się warstwa, która rozbija jeden prompt na dziesiątki bardziej szczegółowych podzapytań i dopiero one trafiają do indeksu. Jeśli Twoja strona pasuje do oryginalnej frazy, ale nie odpowiada na żadne z 30 wygenerowanych podzapytań, w odpowiedzi AI po prostu Cię nie ma.
 
-## Czym jest query fan-out
+## Czym jest query fan-out?
 
 Query fan-out (po polsku: rozszczepienie zapytania) to proces, w którym pojedyncze pytanie użytkownika jest automatycznie rozbijane przez model językowy na wiele bardziej konkretnych podzapytań. Każde z nich trafia osobno do silnika pobierającego dane (klasycznego indeksu Google), który zwraca dla nich pasujące fragmenty. Na końcu model językowy łączy wszystkie wycinki w jedną spójną odpowiedź.
 
@@ -61,7 +61,7 @@ Pytanie pozornie proste: *„Czy warto kupować używanego Forda Mondeo z silnik
 I dalsze 10–15 wariantów. Strona, która chce zostać zacytowana w odpowiedzi, nie musi być na pierwszym miejscu w żadnym z tych podzapytań. Wystarczy, że ma kilka fragmentów trafiających do top 5 wyników w 5–8 z nich – wtedy AI uzna ją za źródło wartościowe i prawdopodobnie zacytuje.
 
 
-## Co to znaczy dla SEO i GEO
+## Co to znaczy dla SEO i GEO?
 
 Trzy fundamentalne zmiany w sposobie projektowania treści:
 
@@ -128,7 +128,7 @@ Trzy darmowe lub działające w modelu freemium narzędzia, które pokazują, co
 
 Logika rozszczepienia opiera się na technologii [osadzeń wektorowych (ang. word embeddings)](https://pl.wikipedia.org/wiki/S%C5%82owo_zanurzaj%C4%85ce) – matematycznych reprezentacji tekstu, które pozwalają modelowi mierzyć semantyczne podobieństwo między pytaniem a fragmentami w indeksie. To ten sam mechanizm, którego używają systemy rekomendacyjne i wyszukiwarki semantyczne.
 
-## Co query fan-out zmienia w pracy nad treścią
+## Co query fan-out zmienia w pracy nad treścią?
 
 Query fan-out to nie kolejna aktualizacja Google w stylu Panda czy Penguin. To zmiana modelu działania całej warstwy pobierania danych:
 

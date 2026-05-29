@@ -18,7 +18,7 @@ level: 'L1'
 
 Sztuczna inteligencja zmieniła sprzedaż w sposób zauważalny i mierzalny: firmy, które wdrożyły predykcyjny lead scoring (automatyczną ocenę potencjału klientów przez algorytmy), skracają czas reakcji na zapytanie z przeciętnych 47 godzin do kilku minut, a wskaźnik wygranych transakcji rośnie średnio o 30%. Jeśli Twój zespół handlowy nadal ręcznie sortuje leady i pisze kolejne wiadomości (tzw. follow-upy) z szablonu – ten artykuł pokazuje, od czego zacząć, co wdrożyć i czego realnie oczekiwać.
 
-## Czym jest lead scoring i dlaczego klasyczny model zawodzi
+## Czym jest lead scoring i dlaczego klasyczny model zawodzi?
 
 Lead scoring to system oceny punktowej, który decyduje, które kontakty zasługują na natychmiastowy telefon handlowca, a które wymagają dalszego „podgrzewania". Tradycyjna wersja – reguły statyczne, ręcznie ustalane progi – daje każdemu otwarciu e-maila te same 5 punktów, niezależnie od kontekstu. Efekt: handlowcy dzwonią do zimnych leadów i przepuszczają gorące.
 

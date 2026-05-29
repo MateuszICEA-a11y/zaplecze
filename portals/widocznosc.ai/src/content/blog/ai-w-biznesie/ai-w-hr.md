@@ -117,7 +117,7 @@ Od 2 lutego 2025 roku obowiązuje już zakaz rozpoznawania emocji kandydatów po
 
 Szerszy kontekst regulacyjny, w tym harmonogram wdrożenia AI Act dla różnych kategorii systemów, opisuje [przewodnik po wdrożeniu AI](/ai-w-biznesie/przewodnik/) – punkt wyjścia dla każdego decydenta stawiającego pierwsze kroki z AI w firmie.
 
-## Jak wdrożyć AI w HR bez wpadki regulacyjnej
+## Jak wdrożyć AI w HR bez wpadki regulacyjnej?
 
 Większość firm, które napotkały problemy z AI w HR, zrobiła to samo: kupiła narzędzie, włączyła je i założyła, że compliance to sprawa dostawcy. To błąd. Pracodawca pozostaje administratorem danych i odpowiada za skutki działania systemu niezależnie od tego, kto go zbudował.
 
