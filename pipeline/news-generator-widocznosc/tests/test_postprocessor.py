@@ -23,11 +23,10 @@ class TestValidateFrontmatter:
     def test_passes_with_all_required_fields(self):
         fm = {
             "title": "Test",
-            "date": "2026-04-03",
-            "description": "Desc",
-            "draft": False,
-            "main_keyword": "test",
             "lead": "Lead text.",
+            "date": "2026-04-03",
+            "sourceName": "Search Engine Land",
+            "sourceUrl": "https://example.com/x",
         }
         errors = validate_frontmatter(fm)
         assert errors == []

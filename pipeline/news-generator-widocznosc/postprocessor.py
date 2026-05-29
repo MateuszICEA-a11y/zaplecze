@@ -8,7 +8,7 @@ from datetime import datetime
 import yaml
 
 
-REQUIRED_FIELDS = ["title", "date", "description", "draft", "main_keyword", "lead"]
+REQUIRED_FIELDS = ["title", "lead", "date", "sourceName", "sourceUrl"]
 
 # Shortcodes that Hugo actually supports in this project
 ALLOWED_SHORTCODES = {"youtube"}
@@ -94,51 +94,31 @@ def generate_slug(title: str) -> str:
     return truncated
 
 
-def assign_placeholder_image(fm: dict, section: str, image_map: dict[str, str]) -> None:
-    """Assign a placeholder hero image based on section if none is set."""
-    if fm.get("image"):
-        return
-    fm["image"] = image_map.get(section, image_map.get("news", ""))
-    if fm["image"] and not fm.get("image_alt"):
-        fm["image_alt"] = f"BusManiak.pl – {fm.get('title', 'news')}"
-
-
 def postprocess(
     fm: dict,
     body: str,
-    section: str = "news",
-    image_map: dict[str, str] | None = None,
+    image_path: str | None = None,
+    author: str = "Redakcja widocznosc.ai",
 ) -> tuple[dict, str, list[str]]:
-    """Run all post-processing steps. Returns (fm, body, errors)."""
+    """Astro frontmatter post-processing. Returns (fm, body, errors)."""
     errors = validate_frontmatter(fm)
 
-    # Fix typography in all string fields
-    for key, val in fm.items():
+    for key, val in list(fm.items()):
         if isinstance(val, str):
             fm[key] = fix_typography(val)
         elif isinstance(val, list):
-            fm[key] = [
-                fix_typography(item) if isinstance(item, str) else (
-                    {k: fix_typography(v) if isinstance(v, str) else v for k, v in item.items()}
-                    if isinstance(item, dict) else item
-                )
-                for item in val
-            ]
+            fm[key] = [fix_typography(v) if isinstance(v, str) else v for v in val]
 
-    # Ensure news defaults
-    fm["draft"] = False
-    fm["toc"] = False
-    fm["categories"] = ["news"]
-    fm["author"] = "redakcja-busmaniak"
-    fm.pop("faq", None)
+    fm["author"] = author
+    if "tags" not in fm or fm["tags"] is None:
+        fm["tags"] = []
+    if image_path:
+        fm["image"] = image_path
+    # Astro: usuń pola Hugo-specific
+    for k in ("draft", "categories", "toc", "faq", "image_alt", "main_keyword", "description"):
+        fm.pop(k, None)
 
-    # Assign placeholder image
-    if image_map:
-        assign_placeholder_image(fm, section, image_map)
-
-    # Fix body
     body = fix_typography(body)
     body = clean_body(body)
     body = ensure_body_starts_with_h2(body)
-
     return fm, body, errors
