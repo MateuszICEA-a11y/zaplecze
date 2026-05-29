@@ -139,7 +139,7 @@ const news = defineCollection({
     z.object({
       title: z.string(),
       lead: z.string(),
-      date: z.date(),
+      date: z.coerce.date(),
       image: image(),
       sourceName: z.string(),
       sourceUrl: z.string().url(),
