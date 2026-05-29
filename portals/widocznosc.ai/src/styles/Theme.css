@@ -428,9 +428,9 @@ h4:not([class*='text-']):not([class*='display-']) {
   }
 
   .display-xxl {
-    font-size: clamp(46px, 14.5vw, 60px);
-    line-height: 0.92;
-    letter-spacing: -0.042em;
+    font-size: clamp(32px, 8.5vw, 42px);
+    line-height: 0.98;
+    letter-spacing: -0.038em;
   }
 
   .display-xl {

@@ -175,7 +175,10 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
 <style>
   .article-page {
     background: var(--bg-canvas);
-    padding: 144px 0 80px 0;
+    /* Responsywny padding – mobile ~88px (mniejsza przerwa pod menu),
+       desktop 144px. Jedna reguła w scoped bloku, by uniknąć konfliktu
+       specyficzności z regułą w is:global (która nie dostaje cid). */
+    padding: clamp(88px, 12vw, 144px) 0 clamp(64px, 8vw, 80px);
   }
 
   .article-shell {
@@ -1063,10 +1066,7 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
   }
 
   @media (max-width: 640px) {
-    .article-page {
-      padding: 88px 0 64px;
-    }
-
+    /* .article-page padding jest responsywny przez clamp() w scoped bloku. */
     .article-shell {
       padding: 0 20px;
     }
