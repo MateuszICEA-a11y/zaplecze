@@ -14,9 +14,68 @@ import AuthorsStrip from '../components/AuthorsStrip.astro';
 import CTABand from '../components/CTABand.astro';
 import Footer from '../components/Footer.astro';
 import ScrollUpButton from '../components/ScrollUpButton.astro';
+import { getCollection } from 'astro:content';
+import { homepageFaq } from '../data/homepageFaq';
+import {
+  buildGraph,
+  faqPageNode,
+  personNode,
+  SITE_URL,
+  ORG_ID,
+  WEBSITE_ID,
+  personIdFor,
+} from '../lib/schema';
+
+// Wszyscy autorzy do ItemList + Person nodes na homepage – buduje topical
+// authority widocznosc.ai i pozwala LLM-om cross-ref'ować autora cytowanego
+// artykułu ze stroną główną.
+const authors = await getCollection('authors');
+const homepagePeople = authors.map((a) => personNode(a.id, a.data));
+
+const authorsItemList = {
+  '@type': 'ItemList',
+  '@id': `${SITE_URL}/#authors`,
+  name: 'Zespół ekspertów widocznosc.ai',
+  description:
+    'Eksperci SEO i AI Search publikujący w bazie wiedzy widocznosc.ai – zespół ICEA.',
+  numberOfItems: authors.length,
+  itemListElement: authors.map((a, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: { '@id': personIdFor(a.id) },
+  })),
+};
+
+// WebPage dla samej strony głównej – łączy FAQ i WebSite/Organization z Layout.
+const homeWebPage = {
+  '@type': 'WebPage',
+  '@id': `${SITE_URL}/#webpage`,
+  url: `${SITE_URL}/`,
+  name: 'widocznosc.ai – pozycjonowanie marek w AI',
+  description:
+    'Pozycjonowanie marek w wyszukiwarkach AI: ChatGPT, Claude, Gemini, Perplexity, Bing Copilot. Audyty widoczności, content i doradztwo GEO.',
+  isPartOf: { '@id': WEBSITE_ID },
+  about: { '@id': ORG_ID },
+  inLanguage: 'pl-PL',
+  primaryImageOfPage: {
+    '@type': 'ImageObject',
+    url: `${SITE_URL}/og-image.png`,
+    width: 1200,
+    height: 630,
+  },
+};
+
+const homepageSchema = buildGraph(
+  homeWebPage,
+  faqPageNode(homepageFaq, `${SITE_URL}/`),
+  ...homepagePeople,
+  authorsItemList,
+);
 ---
 
 <Layout title="widocznosc.ai – pozycjonowanie marek w AI">
+  <script type="application/ld+json" is:inline set:html={homepageSchema} />
+
   <Navbar />
   <Hero />
   <LogosBand />
