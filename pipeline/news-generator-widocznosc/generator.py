@@ -13,100 +13,36 @@ from collector import Signal
 from scorer import ScoredSignal
 
 
-SYSTEM_PROMPT = """\
-Jesteś dziennikarzem portalu BusManiak.pl – polskiego serwisu o busach, vanach, \
-kamperach i motoryzacji dostawczej. Piszesz profesjonalne, rzeczowe newsy w języku polskim.
+SYSTEM_PROMPT = (
+    "Jesteś redaktorem widocznosc.ai – polskiego portalu o widoczności marek "
+    "w wyszukiwarkach AI (ChatGPT, Claude, Gemini, Perplexity), GEO i modelach "
+    "językowych. Piszesz po polsku, rzeczowo, bez marketingowego bełkotu. "
+    "NIGDY nie kopiujesz oryginału – streszczasz fakty własnymi słowami i dodajesz "
+    "ekspercki komentarz. Używasz wyłącznie en-dash (–), nigdy em-dash."
+)
 
-Zasady:
-- Pisz po polsku, naturalnym językiem
-- Używaj en-dash (–), nigdy em-dash (—)
-- Nazwa portalu: BusManiak.pl (camelCase)
-- Body artykułu MUSI zaczynać się od nagłówka ## H2 (lead jest w frontmatter)
-- Nie powtarzaj treści z lead w body
-- NIE dodawaj sekcji FAQ – newsy nie mają FAQ
-- Sources: podaj źródła w frontmatter. NIGDY nie wymieniaj nazw portali źródłowych w treści artykułu – czytelnik nie wie co to jest. Pisz jakbyś był jedynym autorem informacji.
-- Linki wewnętrzne: wstaw 1-2 linki do podanych artykułów, ALE tylko gdy pasują naturalnie do kontekstu zdania. Nie wymuszaj linków na siłę.
-  ZASADY:
-  - Link musi wynikać z treści zdania, nie może być doklejony sztucznie
-  - Anchor text to 2-3 słowa, naturalnie wplecione w zdanie
-  - NIGDY nie twórz zdań tylko po to żeby wstawić link
-  - Jeśli żaden link nie pasuje naturalnie – nie wstawiaj żadnego, to OK
-  ŹLE: "Podobny problem dotyczy także mniejszych aut, gdzie ważna jest realna [ładowność Opla Combo](/modele/opel-combo/)."
-  DOBRZE: "Limity ładowności dotyczą też [mniejszych dostawczaków](/modele/opel-combo/)."
-  ŹLE: "Pisaliśmy o tym szerzej przy okazji materiału o [Iveco Daily lawecie – DMC, wymiary, homologacja](/modele/iveco-daily/laweta/)."
-  DOBRZE: "Podobne problemy z DMC mają [lawety na bazie Daily](/modele/iveco-daily/laweta/)."
-- Nie używaj shortcodów Hugo (image, table itp.) – tylko czysty markdown
-- Listy: **Termin** – opis (bez bold+dwukropek)
-- Nie upychaj słów kluczowych – pisz naturalnie\
+
+def build_prompt(topic, related_articles, format_config) -> str:
+    src_title = topic.signal.title
+    src_url = getattr(topic.signal, "url", "")
+    src_name = getattr(topic.signal, "source", "źródło")
+    src_summary = getattr(topic.signal, "summary", "") or getattr(topic.signal, "description", "")
+    lo = format_config.get("short_min_words", 400)
+    hi = format_config.get("short_max_words", 600)
+    return f"""Na podstawie poniższego anglojęzycznego newsa napisz polski wpis dla sekcji News portalu widocznosc.ai.
+
+ŹRÓDŁO: {src_name}
+TYTUŁ ORYGINAŁU: {src_title}
+URL: {src_url}
+STRESZCZENIE/FRAGMENT: {src_summary}
+
+Wymagania:
+- Długość całości: {lo}–{hi} słów.
+- Zacznij od frontmatteru YAML między --- z polami: title (polski, zwięzły), lead (1–2 zdania), date (RRRR-MM-DD, dzisiejsza data), sourceName ("{src_name}"), sourceUrl ("{src_url}"), tags (2–4 polskie tagi).
+- Po frontmatterze body w markdown, zaczynające się od `## Co się wydarzyło` (streszczenie faktów własnymi słowami), następnie `## Co to oznacza dla widoczności w AI` (ekspercki komentarz ICEA: praktyczne wnioski dla marek).
+- NIE kopiuj zdań z oryginału. NIE wymyślaj faktów spoza źródła.
+- Nie dodawaj sekcji FAQ ani CTA – zostaną dołożone automatycznie.
 """
-
-
-def build_prompt(
-    topic: ScoredSignal,
-    related_articles: list[dict],
-    format_config: dict | None = None,
-) -> str:
-    """Build the user prompt for GPT-5.4."""
-    cfg = format_config or {}
-
-    if topic.format_type == "analysis":
-        word_range = f"{cfg.get('analysis_min_words', 800)}-{cfg.get('analysis_max_words', 1200)} słów"
-        h2_range = cfg.get("analysis_h2_count", "4-5")
-        extra = "Dodaj minimum 1 tabelę lub listę. Pogłębiona analiza tematu."
-    else:
-        word_range = f"{cfg.get('short_min_words', 400)}-{cfg.get('short_max_words', 600)} słów"
-        h2_range = cfg.get("short_h2_count", "2-3")
-        extra = "Zwięzły news, najważniejsze fakty."
-
-    related_text = ""
-    if related_articles:
-        links = "\n".join(
-            f"- {a['url']} (keyword: {a.get('main_keyword', '') or a['title'][:30]})"
-            for a in related_articles[:5]
-        )
-        related_text = (
-            f"\n\nPowiązane artykuły na BusManiak.pl (wstaw 1-2 linki w treści, "
-            f"NIE używaj pełnych tytułów jako anchor – linkuj z krótkiej naturalnej frazy):\n{links}"
-        )
-
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-
-    return f"""Napisz news dla BusManiak.pl na podstawie tematu:
-
-**Temat:** {topic.signal.title}
-**Opis źródłowy:** {topic.signal.summary}
-**Źródło:** {topic.signal.url}
-**Sekcja:** {topic.section}
-**Format:** {word_range}, {h2_range} sekcji H2
-**Data:** {today}
-
-{extra}{related_text}
-
-Zwróć kompletny plik markdown z frontmatter YAML. Struktura:
-
-```
----
-title: "..."
-date: {today}
-description: "... (max 160 znaków)"
-draft: false
-author: "redakcja-busmaniak"
-h1: "..."
-toc: false
-main_keyword: "..."
-lead: "... (2-3 zdania, intrygujący wstęp)"
-categories:
-  - "news"
-tags:
-  - "..."
-sources:
-  - "..."
----
-
-## Pierwszy H2
-
-Treść...
-```"""
 
 
 def generate_article(
@@ -123,7 +59,7 @@ def generate_article(
     if topic.format_type == "analysis":
         max_completion_tokens = format_config.get("max_tokens_analysis", 4000) if format_config else 4000
 
-    prompt = build_prompt(topic, related_articles, format_config)
+    prompt = build_prompt(topic, related_articles, format_config or {})
 
     response = client.chat.completions.create(
         model=model,
