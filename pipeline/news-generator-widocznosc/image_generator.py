@@ -1,6 +1,7 @@
-"""Hero image generator for news articles via kie.ai (nano-banana-2).
+"""Hero image generator for news articles via kie.ai.
 
-Includes category-specific prompts and GPT-5.4 Vision validation gate.
+Generates abstract portal-style hero illustrations (obsidian + sky-blue)
+with GPT-5.4 Vision validation gate.
 """
 
 from __future__ import annotations
@@ -25,124 +26,17 @@ MAX_ATTEMPTS = 15
 MAX_VALIDATION_RETRIES = 2
 
 # ---------------------------------------------------------------------------
-# Category prompt templates
+# Portal hero style
 # ---------------------------------------------------------------------------
 
-STYLE_BASE = (
-    "Style: photojournalistic, clean composition, natural lighting, "
-    "shallow depth of field, 16:9 landscape. "
-    "No people interacting with vehicles, no hands on fuel pumps, no drivers. "
-    "People may appear as distant background figures only. "
-    "No text overlays, no watermarks, no logos, no impossible physics, "
-    "no floating objects, no distorted proportions."
+HERO_STYLE = (
+    "Premium editorial tech illustration. Deep obsidian black background "
+    "(#070810). Subtle sky-blue accents (#0a9cff) used sparingly for glow "
+    "and key elements. Minimalist, sophisticated, high-end AI consultancy "
+    "aesthetic. No people, no text, no letters, no logos, no UI mockups. "
+    "Abstract geometric, wide cinematic composition. Soft volumetric lighting. "
 )
-
-# Applied only for generic categories, skipped when a specific model is identified.
-VEHICLE_TYPE_CONSTRAINT = (
-    " Vehicles shown must be vans, buses, or campers – NOT trucks or semi-trailers."
-)
-
-CATEGORY_PROMPTS: dict[str, str] = {
-    "fuel": (
-        "Wide shot of a modern fuel station at daytime, diesel dispensers visible, "
-        "white delivery vans and buses parked nearby. Clean, professional atmosphere."
-    ),
-    "regulations": (
-        "Official documents and road signs related to commercial vehicle transport. "
-        "Clean desk or road scene with regulatory elements, professional tone."
-    ),
-    "model_specific": (
-        "Professional side-view photograph of a {vehicle_hint}, "
-        "exact real-world appearance of this vehicle model, "
-        "parked on a clean urban road, natural daylight."
-    ),
-    "camper": (
-        "A modern campervan parked in scenic travel scenery, mountains or lake "
-        "in the background, golden hour lighting."
-    ),
-    "electric": (
-        "Modern electric delivery van plugged into a charging station, "
-        "clean urban environment, daylight."
-    ),
-    "market": (
-        "Wide shot of a dealer lot with rows of new vans and buses, "
-        "professional automotive photography."
-    ),
-    "default": (
-        "Professional photograph of a modern delivery van driving on a highway, "
-        "dynamic angle, natural daylight, motion blur on background."
-    ),
-}
-
-# Order matters – checked top to bottom; more specific categories first.
-_CATEGORY_KEYWORDS: list[tuple[str, list[str]]] = [
-    ("fuel", ["paliwo", "diesel", "benzyna", "lpg", "ceny paliw", "tankowanie",
-              "ropa", "stacja benzynowa"]),
-    ("camper", ["kamper", "campervan", "vanlife", "zabudowa kampera",
-                "kampervan", "dom na kółkach"]),
-    ("electric", ["elektryczn", "ev ", "ładowani", "bateria", "zeroemisyjn"]),
-    ("market", ["sprzedaż", "rynek", "producent", "wyniki sprzedaży",
-                "ranking", "udział w rynku"]),
-    ("regulations", ["prawo", "regulacje", "mandat", "przepisy", "rejestracja",
-                     "homologacja", "ubezpieczenie", "przegląd", "kodeks"]),
-]
-
-_MODEL_KEYWORDS: list[str] = [
-    "ducato", "sprinter", "transit", "crafter", "boxer", "master",
-    "daily", "transporter", "vito", "berlingo", "combo", "trafic",
-    "jumper", "jumpy", "movano", "interstar", "e-transit", "id.buzz",
-    "proace", "expert", "vivaro",
-]
-
-
-def _extract_vehicle_from_title(title: str) -> str | None:
-    """Use GPT-5.4 to extract the specific vehicle name from an article title.
-
-    Returns 'Brand Model' (e.g. 'Leapmotor T03') or None if the article
-    is not about a specific vehicle.
-    """
-    if not OPENAI_API_KEY:
-        return None
-
-    payload = {
-        "model": "gpt-5.4",
-        "max_completion_tokens": 60,
-        "messages": [
-            {
-                "role": "system",
-                "content": (
-                    "You extract vehicle names from article titles. "
-                    "Return ONLY the vehicle brand and model (e.g. 'Leapmotor T03', "
-                    "'Mercedes Sprinter', 'Fiat Ducato L3H2'). "
-                    "If the title mentions multiple vehicles or no specific vehicle, "
-                    "return exactly: null"
-                ),
-            },
-            {"role": "user", "content": title},
-        ],
-    }
-
-    req = urllib.request.Request(
-        "https://api.openai.com/v1/chat/completions",
-        data=json.dumps(payload).encode(),
-        method="POST",
-        headers={
-            "Authorization": f"Bearer {OPENAI_API_KEY}",
-            "Content-Type": "application/json",
-        },
-    )
-
-    try:
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            result = json.loads(resp.read().decode())
-        text = result["choices"][0]["message"]["content"].strip().strip('"\'')
-        if not text or text.lower() == "null":
-            return None
-        log.info("  GPT extracted vehicle: %s", text)
-        return text
-    except Exception as e:
-        log.warning("  Vehicle extraction failed: %s – falling back to keywords", e)
-        return None
+MODEL = "gpt-image-2-text-to-image"
 
 
 def _kie_request(method: str, endpoint: str, body: dict | None = None) -> dict:
@@ -163,7 +57,7 @@ def _kie_request(method: str, endpoint: str, body: dict | None = None) -> dict:
 
 def _create_task(prompt: str) -> str:
     res = _kie_request("POST", "/createTask", {
-        "model": "nano-banana-2",
+        "model": MODEL,
         "input": {
             "prompt": prompt,
             "aspect_ratio": "16:9",
@@ -232,55 +126,20 @@ def _download_and_optimize(url: str, dest: Path, max_width: int = 1200, quality:
     return webp_dest
 
 
-def _detect_category(title: str) -> tuple[str, str | None]:
-    """Detect image category from article title.
-
-    Returns (category, vehicle_hint). vehicle_hint is set only for model_specific.
-    Uses GPT extraction first, then falls back to keyword matching.
-    """
-    # 1. GPT extraction – catches any vehicle, not just hardcoded list
-    gpt_vehicle = _extract_vehicle_from_title(title)
-    if gpt_vehicle:
-        return "model_specific", gpt_vehicle
-
-    # 2. Keyword fallback for known models (works without API key)
-    title_lower = title.lower()
-    for model in _MODEL_KEYWORDS:
-        if model in title_lower:
-            return "model_specific", model.capitalize()
-
-    # 3. Category keywords
-    for category, keywords in _CATEGORY_KEYWORDS:
-        for kw in keywords:
-            if kw in title_lower:
-                return category, None
-
-    return "default", None
+def build_prompt(title: str, section: str = "news", *, _category=None, _vehicle_hint=None) -> str:
+    return (
+        HERO_STYLE
+        + f"Abstract visual metaphor for an AI/search-industry news headline: \"{title}\". "
+        "Translate the concept into geometric forms, nodes, light beams or data flows. "
+        "No readable text."
+    )
 
 
-def build_prompt(title: str, section: str, *, _category: str | None = None, _vehicle_hint: str | None = None) -> str:
-    """Build a category-aware image generation prompt.
-
-    Accepts pre-detected category/vehicle_hint to avoid duplicate GPT calls.
-    """
-    if _category is None:
-        _category, _vehicle_hint = _detect_category(title)
-    scene = CATEGORY_PROMPTS[_category]
-    if _vehicle_hint and "{vehicle_hint}" in scene:
-        scene = scene.replace("{vehicle_hint}", _vehicle_hint)
-    log.info("  Image category: %s (hint: %s)", _category, _vehicle_hint or "none")
-    # Skip vehicle type constraint when a specific model is identified –
-    # the model itself defines what the vehicle looks like.
-    suffix = STYLE_BASE if _category == "model_specific" else STYLE_BASE + VEHICLE_TYPE_CONSTRAINT
-    return f"{scene} {suffix}"
-
-
-def _validate_image(image_path: Path, title: str, vehicle_hint: str | None = None) -> tuple[bool, str]:
+def _validate_image(image_path: Path, title: str) -> tuple[bool, str]:
     """Validate generated image using GPT-5.4 Vision.
 
-    Returns (is_valid, reason).
-    When vehicle_hint is set, validates that the vehicle matches the specific model
-    instead of enforcing generic van/bus constraint.
+    Returns (is_valid, reason). Confirms the image was produced and is a
+    professional, thematically appropriate abstract hero illustration.
     """
     if not OPENAI_API_KEY:
         log.warning("OPENAI_API_KEY not set, skipping vision validation")
@@ -292,18 +151,6 @@ def _validate_image(image_path: Path, title: str, vehicle_hint: str | None = Non
     suffix = image_path.suffix.lstrip(".")
     media_type = "image/webp" if suffix == "webp" else f"image/{suffix}"
 
-    if vehicle_hint:
-        vehicle_check = (
-            f"2. Does the vehicle in the image reasonably resemble a {vehicle_hint}? "
-            f"It should match the general appearance of this model. "
-            f"If it shows a completely different type of vehicle → INVALID."
-        )
-    else:
-        vehicle_check = (
-            "2. Does the image contain ONLY large trucks or semi-trailers (18-wheelers)? "
-            "If yes → INVALID. Vans, minibuses, delivery vans, and campers are CORRECT."
-        )
-
     payload = {
         "model": "gpt-5.4",
         "max_completion_tokens": 200,
@@ -314,18 +161,16 @@ def _validate_image(image_path: Path, title: str, vehicle_hint: str | None = Non
                     {
                         "type": "text",
                         "text": (
-                            f"This AI-generated image is a hero photo for an article titled: \"{title}\".\n"
+                            f"This AI-generated image is a hero illustration for an article titled: \"{title}\".\n"
                             "Evaluate it and respond ONLY with JSON: {\"valid\": true/false, \"reason\": \"...\"}\n"
-                            "Context: this is for BusManiak.pl – a site about vans, buses, and campers.\n"
+                            "Context: this is for widocznosc.ai – a portal about brand visibility in AI search.\n"
                             "Check:\n"
-                            "1. Are there people in close-up interacting with vehicles (fueling, repairing, "
-                            "driving, touching)? If yes → INVALID. Distant background figures are OK.\n"
-                            f"{vehicle_check}\n"
-                            "3. Is the image physically sensible? (no impossible physics, "
+                            "1. Is there any readable text, letters, or logos? If yes → INVALID.\n"
+                            "2. Is the image physically sensible? (no impossible physics, "
                             "objects clipping through each other)\n"
-                            "4. Does it look professional? (not an obvious AI failure with artifacts)\n"
-                            "5. Is it thematically appropriate for the article topic?\n"
-                            "Be strict on points 1 and 3-4."
+                            "3. Does it look professional? (not an obvious AI failure with artifacts)\n"
+                            "4. Is it an abstract, geometric, dark editorial composition fitting the brand?\n"
+                            "Be strict on points 1 and 3."
                         ),
                     },
                     {
@@ -368,29 +213,27 @@ def _validate_image(image_path: Path, title: str, vehicle_hint: str | None = Non
 
 def generate_hero_image(
     title: str,
-    slug: str,
     section: str,
-    static_dir: Path,
-) -> str | None:
-    """Generate a hero image and return its Hugo URL, or None on failure.
+    dest: Path,
+) -> Path | None:
+    """Generate a portal-style hero image and save it to ``dest`` (webp).
 
-    Includes vision validation – retries up to MAX_VALIDATION_RETRIES times
-    if the image fails quality checks, then falls back to None (placeholder).
+    Returns the written Path, or None on failure. Includes vision validation –
+    retries up to MAX_VALIDATION_RETRIES times if the image fails quality checks,
+    then falls back to None (placeholder).
     """
     if not KIE_API_KEY:
         log.warning("KIE_API_KEY not set, skipping image generation")
         return None
 
-    images_dir = static_dir / "images" / "news"
-    images_dir.mkdir(parents=True, exist_ok=True)
+    dest = Path(dest).with_suffix(".webp")
+    dest.parent.mkdir(parents=True, exist_ok=True)
 
-    dest = images_dir / f"{slug}.webp"
     if dest.exists():
         log.info("Image already exists: %s", dest.name)
-        return f"/images/news/{slug}.webp"
+        return dest
 
-    category, vehicle_hint = _detect_category(title)
-    prompt = build_prompt(title, section, _category=category, _vehicle_hint=vehicle_hint)
+    prompt = build_prompt(title, section)
     rejection_reasons: list[str] = []
 
     for attempt in range(1, MAX_VALIDATION_RETRIES + 2):  # 1 initial + retries
@@ -408,16 +251,16 @@ def generate_hero_image(
             log.info("  kie.ai taskId: %s", task_id)
             image_url = _poll_until_done(task_id)
             log.info("  Image URL: %s", image_url[:80])
-            _download_and_optimize(image_url, dest)
+            written = _download_and_optimize(image_url, dest)
 
-            is_valid, reason = _validate_image(dest, title, vehicle_hint)
+            is_valid, reason = _validate_image(written, title)
             if is_valid:
-                log.info("  Image accepted (attempt %d): %s", attempt, dest)
-                return f"/images/news/{slug}.webp"
+                log.info("  Image accepted (attempt %d): %s", attempt, written)
+                return written
 
             log.warning("  Image rejected (attempt %d): %s", attempt, reason)
             rejection_reasons.append(reason)
-            dest.unlink(missing_ok=True)
+            written.unlink(missing_ok=True)
 
         except Exception as e:
             log.error("Image generation failed (attempt %d): %s", attempt, e)
