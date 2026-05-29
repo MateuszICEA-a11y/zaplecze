@@ -7,6 +7,14 @@ import CTABand from '../../components/CTABand.astro';
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import { PILLAR_LABELS } from '../../content.config';
+import {
+  buildGraph,
+  personNode,
+  profilePageNode,
+  breadcrumbNode,
+  SITE_URL,
+  personIdFor,
+} from '../../lib/schema';
 
 export const getStaticPaths = async () => {
   const authors = await getCollection('authors');
@@ -38,12 +46,50 @@ const initials = (name: string) =>
     .map((n) => n[0])
     .join('')
     .slice(0, 2);
+
+// Schema – ProfilePage + Person (z alumniOf, hasCredential, knowsAbout, sameAs)
+// + ItemList artykułów autora + BreadcrumbList. Person cross-ref przez @id.
+const authorArticlesItemList = {
+  '@type': 'ItemList',
+  '@id': `${SITE_URL}/autor/${author.id}/#articles`,
+  name: `Artykuły autora ${data.name}`,
+  numberOfItems: authorPosts.length,
+  itemListOrder: 'https://schema.org/ItemListOrderDescending',
+  itemListElement: authorPosts.map((post, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    url: `${SITE_URL}/${post.id}/`,
+    item: {
+      '@type': 'BlogPosting',
+      '@id': `${SITE_URL}/${post.id}/#article`,
+      headline: post.data.title,
+      url: `${SITE_URL}/${post.id}/`,
+      datePublished: post.data.date.toISOString(),
+      author: { '@id': personIdFor(author.id) },
+      inLanguage: 'pl-PL',
+    },
+  })),
+};
+
+const profileSchema = buildGraph(
+  personNode(author.id, data),
+  profilePageNode(author.id, data, authorPosts.length),
+  authorArticlesItemList,
+  breadcrumbNode([
+    { name: 'Strona główna', path: '/' },
+    { name: 'O nas', path: '/o-nas/' },
+    { name: data.name, path: `/autor/${author.id}/` },
+  ]),
+);
 ---
 
 <Layout
   title={`${data.name} – ${data.role} – widocznosc.ai`}
   description={data.shortBio}
+  ogType="article"
 >
+  <script type="application/ld+json" is:inline set:html={profileSchema} />
+
   <Navbar />
 
   <!-- Hero -->
