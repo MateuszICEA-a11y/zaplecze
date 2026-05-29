@@ -514,6 +514,69 @@ export const faqPageNode = (faqs: Array<{ q: string; a: string }>, pageUrl: stri
   })),
 });
 
+export type NewsArticleInput = {
+  slug: string;
+  title: string;
+  lead: string;
+  imageUrl: string;
+  datePublished: string;
+  sourceName: string;
+  sourceUrl: string;
+  tags: string[];
+  author: string;
+};
+
+/** NewsArticle – wpis sekcji News. Autor zbiorczy (Redakcja). */
+export const newsArticleNode = (input: NewsArticleInput) => {
+  const url = `${SITE_URL}/news/${input.slug}/`;
+  return {
+    '@type': 'NewsArticle',
+    '@id': `${url}#article`,
+    headline: input.title,
+    description: input.lead,
+    url,
+    image: input.imageUrl,
+    datePublished: input.datePublished,
+    inLanguage: 'pl-PL',
+    author: { '@type': 'Organization', name: input.author, '@id': ORG_ID },
+    publisher: { '@id': ORG_ID },
+    isPartOf: { '@id': WEBSITE_ID },
+    keywords: input.tags.join(', '),
+    isBasedOn: input.sourceUrl,
+    citation: { '@type': 'CreativeWork', name: input.sourceName, url: input.sourceUrl },
+  };
+};
+
+export type NewsListItem = { slug: string; title: string; datePublished: string };
+
+/** CollectionPage + ItemList dla /news/ (listing chronologiczny). */
+export const newsListingNode = (items: NewsListItem[]) => {
+  const url = `${SITE_URL}/news/`;
+  return {
+    '@type': 'CollectionPage',
+    '@id': `${url}#collection`,
+    url,
+    name: 'News – widoczność marek w AI',
+    isPartOf: { '@id': WEBSITE_ID },
+    inLanguage: 'pl-PL',
+    hasPart: {
+      '@type': 'ItemList',
+      numberOfItems: items.length,
+      itemListOrder: 'https://schema.org/ItemListOrderDescending',
+      itemListElement: items.map((it, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'NewsArticle',
+          '@id': `${SITE_URL}/news/${it.slug}/#article`,
+          headline: it.title,
+          datePublished: it.datePublished,
+        },
+      })),
+    },
+  };
+};
+
 /**
  * Złóż wszystkie nody w jeden @graph i opakuj w stringa do `set:html`.
  * Filtruje undefined żeby nie wypluwać pustych pól.
