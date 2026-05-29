@@ -6,6 +6,13 @@ import ScrollUpButton from '../../components/ScrollUpButton.astro';
 import CTABand from '../../components/CTABand.astro';
 import { AI_MODELS } from '../../data/aiModels';
 import { MODEL_CONTENT } from '../../data/aiModelsContent';
+import {
+  buildGraph,
+  faqPageNode,
+  serviceNode,
+  breadcrumbNode,
+  SITE_URL,
+} from '../../lib/schema';
 
 export const getStaticPaths = () =>
   AI_MODELS.map((model) => ({
@@ -17,14 +24,6 @@ const { model } = Astro.props;
 const content = MODEL_CONTENT[model.slug];
 
 const otherModels = AI_MODELS.filter((m) => m.slug !== model.slug);
-const siteUrl = 'https://widocznosc.ai';
-const cleanStructuredText = (value: string) =>
-  value
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&ndash;/g, '–')
-    .replace(/&mdash;/g, '—')
-    .replace(/&amp;/g, '&')
-    .replace(/<[^>]*>/g, '');
 
 const modelDifferentiators: Record<string, string> = {
   chatgpt: '5-10 cytowań na odpowiedź',
@@ -70,6 +69,31 @@ const comparisonRows = [
 ];
 
 const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : model.slug;
+
+// Schema – Service (per model) + FAQPage + BreadcrumbList.
+// FAQPage od 08.2023 nie generuje rich results poza gov/healthcare, ale
+// LLM-y nadal używają jej do wyboru cytatów; zostaje.
+const modelServiceSchema = buildGraph(
+  serviceNode({
+    slug: model.href,
+    name: `Pozycjonowanie w ${model.name}`,
+    description: content.metaDescription,
+    serviceType: `Generative Engine Optimization for ${model.name}`,
+    parentServicePath: '/pozycjonowanie-ai/',
+    features: [
+      `Audyt widoczności marki w ${model.name}`,
+      `Analiza cytowań i źródeł w ${model.name}`,
+      `Optymalizacja treści pod ${model.vendor} ${model.name}`,
+      `Monitoring Citation Rate i Brand Share of Voice w ${model.name}`,
+    ],
+  }),
+  faqPageNode(content.faq, `${SITE_URL}${model.href}`),
+  breadcrumbNode([
+    { name: 'Strona główna', path: '/' },
+    { name: 'Pozycjonowanie AI', path: '/pozycjonowanie-ai/' },
+    { name: model.name, path: model.href },
+  ]),
+);
 ---
 
 <Layout
@@ -78,45 +102,7 @@ const comparisonActiveKey = model.slug === 'bing-copilot' ? 'bingCopilot' : mode
 >
   <Navbar />
 
-  <script
-    type="application/ld+json"
-    is:inline
-    set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'FAQPage',
-      mainEntity: content.faq.map((qa) => ({
-        '@type': 'Question',
-        name: cleanStructuredText(qa.q),
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: cleanStructuredText(qa.a),
-        },
-      })),
-    })}
-  />
-
-  <script
-    type="application/ld+json"
-    is:inline
-    set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'Pozycjonowanie AI',
-          item: `${siteUrl}/pozycjonowanie-ai/`,
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: model.name,
-          item: `${siteUrl}${model.href}`,
-        },
-      ],
-    })}
-  />
+  <script type="application/ld+json" is:inline set:html={modelServiceSchema} />
 
   <!-- Hero – service landing header -->
   <section class={`service-hero service-hero--${model.slug}`}>
