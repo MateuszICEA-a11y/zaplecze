@@ -18,21 +18,22 @@ faqHeading: 'Często zadawane pytania o przewodniku Google i widoczności w AI'
 faq:
   - q: 'Czy <code>llms.txt</code> jest potrzebny, żeby być widocznym w AI?'
     a: >-
-      Do pojawienia się w samej wyszukiwarce Google – nie, bo Google ma własnego crawlera i indeks całego
-      internetu. Ale ChatGPT, Perplexity czy Copilot nie mają indeksu Google i pobierają treść w czasie
+      Do pojawienia się w samej wyszukiwarce Google – nie, bo Google ma własnego crawlera i własny, rozległy
+      indeks sieci. Ale ChatGPT, Perplexity czy Copilot nie mają tak rozwiniętej infrastruktury jak Google i pobierają treść w czasie
       rzeczywistym. Wdrożenie <code>llms.txt</code> przez główne modele jest dziś jeszcze słabe i nie ma dowodu,
       że gwarantuje lepszą widoczność – to wciąż otwarta debata, dlatego warto poznać oba stanowiska, zanim
       przyjmiesz werdykt Google za ostateczny.
   - q: 'Czy przewodnik Google wystarczy do optymalizacji pod sztuczną inteligencję?'
     a: >-
       Wystarczy, jeśli Twoim jedynym celem są funkcje generatywne w wyszukiwarce Google (AI Overviews).
-      Nie pokrywa jednak ChatGPT, Perplexity, Microsoft Copilota, Gemini ani Claude – każdy z nich ma własne
+      Nie pokrywa jednak ChatGPT, Perplexity, Microsoft Copilota ani Claude – każdy z nich ma własne
       crawlery, źródła i logikę cytowania. Przewodnik opisuje wycinek rynku tak, jakby był całym rynkiem.
   - q: 'Czy dane strukturalne (schema.org) mają znaczenie dla modeli AI?'
     a: >-
-      Google twierdzi, że nie są wymagane – i dla jego systemów to prawda. Ale schema to najtańszy sposób, by
-      jednoznacznie przekazać encje innym silnikom i agentom AI, które nie mają systemów Google. To rada
-      poprawna dla Google, niekoniecznie dla całego ekosystemu.
+      Nie są technicznie wymagane – ale to tylko częściowo prawda. Schema nie jest elementem krytycznym, za to
+      buduje przewagę również w klasycznym SEO i jest najtańszym sposobem, by jednoznacznie przekazać encje
+      silnikom oraz agentom AI bez systemów Google. Rada Google jest więc poprawna połowicznie, nie dla całego
+      ekosystemu.
   - q: 'Czy wzmianki o marce poza moją stroną wpływają na odpowiedzi AI?'
     a: >-
       Tak. Modele językowe są trenowane i osadzane w faktach m.in. na treści z Reddita, forów, recenzji
@@ -45,26 +46,26 @@ Google opublikowało oficjalny przewodnik <strong><a href="https://developers.go
 
 Przeanalizowaliśmy ten przewodnik akapit po akapicie. Poniżej rozkładamy go na trzy części: co Google mówi słusznie (i warto to przyjąć), czego nie dopowiada, oraz dlaczego pisze właśnie w takim tonie i właśnie teraz.
 
-## Zacznijmy od uczciwości: w czym Google ma rację
+## W czym Google ma rację
 
 Krytyka, która ignoruje fakty, jest bezwartościowa, więc zaczynamy od tego, co w przewodniku jest po prostu prawdą – i co powinieneś potraktować poważnie niezależnie od tego, gdzie chcesz być widoczny.
 
 - **Fundamenty SEO nadal działają.** Funkcje generatywne Google rzeczywiście korzystają z jego podstawowych systemów rankingowych. Strona, która nie jest zaindeksowana i nie spełnia wymagań technicznych, nie pojawi się w odpowiedzi AI. Indeksowalność, czytelność, szybkość, brak duplikatów – to baza, nie folklor.
 - **RAG i query fan-out są realne.** Google poprawnie opisuje mechanizm pobierania danych: model rozbija zapytanie na podpytania, sięga do indeksu po fragmenty i składa z nich odpowiedź z linkami źródłowymi. To dokładnie ta logika, którą opisaliśmy w artykule o [query fan-out](/geo/query-fan-out/).
-- **Unikalna treść z pierwszej ręki wygrywa.** Recenzja oparta na doświadczeniu bije podsumowanie cudzych treści. Materiał ekspercki, którego nie da się wygenerować jednym promptem, to najlepsza długoterminowa inwestycja w widoczność. Pełna zgoda.
+- **Unikalna treść wygrywa.** Recenzja oparta na doświadczeniu bije podsumowanie cudzych treści. Materiał ekspercki, którego nie da się wygenerować jednym promptem, to najlepsza długoterminowa inwestycja w widoczność. Pełna zgoda.
 - **Ostrzeżenie przed masową produkcją treści jest trafne** – generowanie tysięcy podstron pod każdą możliwą odmianę zapytania to nie strategia, to proszenie się o filtr antyspamowy. Liczba stron nie podnosi jakości domeny.
 
 Gdyby przewodnik kończył się w tym miejscu, podpisalibyśmy się pod nim bez zastrzeżeń. Ale dalej zaczynają się przemilczenia.
 
-## Czego Google nie dopowiada: pięć zręcznych uproszczeń
+## Czego Google nie dopowiada – pięć zręcznych uproszczeń
 
 Najciekawsza jest sekcja „Obalanie mitów", w której Google mówi, czego **nie musisz** robić. Każdy z tych punktów jest technicznie prawdziwy w odniesieniu do wyszukiwarki Google – i jednocześnie wprowadza w błąd, jeśli zależy Ci na widoczności w całym ekosystemie AI. Oto pięć miejsc, gdzie rada jest poprawna dla Google, a nie dla Ciebie.
 
 | Co mówi Google | Czego nie dopowiada |
 |---|---|
-| „Pliki llms.txt i specjalne znaczniki są zbędne" | Google ma własnego crawlera i indeks całego internetu – nie potrzebuje, żebyś mu cokolwiek ułatwiał. OpenAI, Anthropic czy Perplexity **nie mają indeksu Google**. To rada optymalna dla podmiotu, który już ma przewagę. |
+| „Pliki llms.txt i specjalne znaczniki są zbędne" | Google ma własnego crawlera i własny, rozległy indeks sieci – nie potrzebuje, żebyś mu cokolwiek ułatwiał. OpenAI, Anthropic czy Perplexity **nie mają tak rozwiniętej infrastruktury jak Google**. To rada optymalna dla podmiotu, który już ma przewagę. |
 | „Nie musisz dzielić treści na fragmenty" | Google samo opisuje, że RAG i fan-out pobierają **fragmenty, nie całe strony**. Struktura akapitów to nie sztuczka, to dopasowanie do mechanizmu pobierania. |
-| „Dane strukturalne nie są wymagane" | Prawda dla Google. Ale schema to najtańszy sposób na jednoznaczne przekazanie encji innym silnikom i agentom AI, które nie mają systemów Google. |
+| „Dane strukturalne nie są wymagane" | Tylko **częściowo** prawda. Schema nie jest elementem krytycznym, ale to najtańszy sposób na jednoznaczne przekazanie encji silnikom i agentom AI bez systemów Google – a w klasycznym SEO również buduje przewagę. |
 | „Nie goń za sztucznymi wzmiankami" | Słuszne wobec spamu – ale rozmywa fakt, że **autentyczne** wzmianki poza Twoją domeną są kluczowym sygnałem dla modeli trenowanych na Reddit, forach i recenzjach. |
 | „GEO/AEO to w większości nieskuteczne sztuczki" | Google deprecjonuje dyscyplinę, której nie kontroluje. Część taktyk to faktycznie ślepe naśladownictwo (cargo cult), ale fundament – optymalizuj pod wiele silników – jest jak najbardziej realny. |
 
@@ -72,9 +73,9 @@ Rozwińmy trzy, które mają największe konsekwencje finansowe.
 
 ### „Zapomnij o llms.txt" – rada gracza, który już ma wszystko
 
-To najczęściej cytowany fragment przewodnika i jednocześnie najlepszy przykład perspektywy. Google mówi prawdę: do pojawienia się **w wyszukiwarce Google** plik llms.txt nie jest potrzebny. Google ma crawlera, który widzi cały web, i indeks, który ten web przechowuje. Po co miałoby czytać uproszczoną mapę treści, skoro ma oryginał?
+To najczęściej cytowany fragment przewodnika i jednocześnie najlepszy przykład perspektywy. Google mówi prawdę: do pojawienia się **w wyszukiwarce Google** plik llms.txt nie jest potrzebny. Google ma crawlera, który widzi ogromną część sieci, i własny indeks, w którym ją przechowuje. Po co miałoby czytać uproszczoną mapę treści, skoro ma oryginał?
 
-Ale Twoi klienci coraz częściej zadają pytania nie w Google, tylko w ChatGPT, Perplexity czy Copilocie. A te systemy **nie mają indeksu Google**. Sięgają po treść w czasie rzeczywistym, często przez wyszukiwarki trzecie, i pracują na tym, co uda im się pobrać i sparsować w danym momencie.
+Ale Twoi klienci coraz częściej zadają pytania nie w Google, tylko w ChatGPT, Perplexity czy Copilocie. A te systemy **nie mają tak rozwiniętej infrastruktury jak Google**. Sięgają po treść w czasie rzeczywistym, często przez wyszukiwarki trzecie, i pracują na tym, co uda im się pobrać i sparsować w danym momencie.
 
 Bądźmy uczciwi do końca: stopień wdrożenia pliku llms.txt przez główne modele wciąż jest słaby i nie ma dziś dowodu, że gwarantuje on lepszą widoczność. To jest debata otwarta. I właśnie dlatego sposób, w jaki Google ją zamyka – jednym zdaniem, z pozycji, na której akurat zyskuje – jest tak wymowny. Rozłożyliśmy argumenty za i przeciw w osobnym tekście o [pliku llms.txt](/geo/llms-txt/); warto zobaczyć obie strony, zanim przyjmiesz werdykt Google jako ostateczny.
 
@@ -88,7 +89,7 @@ Obie rzeczy są częściowo prawdziwe – i właśnie to czyni przekaz mylącym.
 
 Google słusznie mówi, że kupowanie sztucznych wzmianek nie działa. Ale przeskakuje z „spam nie działa" do „wzmianki nie mają znaczenia", a to nie to samo. Modele językowe są trenowane i osadzane w faktach na podstawie treści z Reddita, forów, recenzji i serwisów branżowych. To, co internet mówi o Twojej marce **poza Twoją stroną**, realnie wpływa na to, co model odpowie pytany o Ciebie. Nazywa się to share of voice w AI i jest mierzalne – opisaliśmy to w tekście o [udziale marki w odpowiedziach AI](/geo/share-of-voice/). Google rozmywa ten sygnał, bo autentyczna obecność off-site to obszar, którego nie kontroluje przez ranking.
 
-## Perspektywa monopolisty: dlaczego ten dokument powstał właśnie teraz
+## Perspektywa monopolisty – dlaczego ten dokument powstał właśnie teraz
 
 Tu dochodzimy do sedna. Każdy akapit przewodnika mówi o „wyszukiwarce Google" i „funkcjach opartych na generatywnej AI w wyszukiwarce Google". To nie przypadek ani niezręczność stylistyczna – to precyzyjne zawężenie pola. Google opisuje swój wycinek rynku tak, jakby był całym rynkiem.
 
@@ -97,7 +98,7 @@ A rynek odpowiadania na pytania użytkowników przestał być jednolity. Owszem,
 - **ChatGPT** z wyszukiwaniem w sieci – setki milionów użytkowników tygodniowo (OpenAI oficjalnie informuje o takich liczbach), dla których to pierwszy punkt kontaktu z pytaniem;
 - **Perplexity** – wyszukiwarka odpowiedzi zbudowana od zera wokół cytowań źródeł;
 - **Microsoft Copilot** – wbudowany w Windows, Edge i Microsoft 365, czyli w narzędzia, których ludzie używają w pracy codziennie;
-- **Google Gemini** oraz **Claude** z dostępem do sieci – kolejne kanały, w których zapada decyzja, czy Twoja marka zostanie wymieniona.
+- **Google** oraz **Claude** z dostępem do sieci – kolejne kanały, w których zapada decyzja, czy Twoja marka zostanie wymieniona.
 
 Żaden z tych systemów nie działa na „podstawowych systemach rankingowych Google", do których przewodnik sprowadza całe wyszukiwanie AI. Mają własne crawlery, własne źródła, własną logikę cytowania. Optymalizacja wyłącznie pod reguły Google oznacza, że jesteś niewidoczny dokładnie tam, gdzie Twoi klienci coraz częściej pytają.
 
