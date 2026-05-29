@@ -1,0 +1,41 @@
+name: Widocznosc News Generator
+
+on:
+  schedule:
+    # 6:00 UTC = 8:00 CEST (po BusManiak 5:00 UTC)
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-news:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r pipeline/news-generator-widocznosc/requirements.txt
+
+      - name: Run news pipeline
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
+          DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
+          KIE_API_KEY: ${{ secrets.KIE_API_KEY }}
+        run: python pipeline/news-generator-widocznosc/main.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add portals/widocznosc.ai/src/content/news/ portals/widocznosc.ai/src/assets/images/news-* pipeline/news-generator-widocznosc/published.json
+          git diff --cached --quiet || git commit -m "news: auto-generated daily news (widocznosc)"
+          git push
