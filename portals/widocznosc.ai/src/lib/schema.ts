@@ -431,7 +431,9 @@ export const serviceNode = (input: ServiceInput) => {
     },
     ...(input.parentServicePath
       ? {
-          isPartOf: {
+          // Service nie ma isPartOf (to property CreativeWork). Relacja
+          // "specjalizacja usługi nadrzędnej" przez isRelatedTo (valid na Service).
+          isRelatedTo: {
             '@type': 'Service',
             '@id': `${SITE_URL}${input.parentServicePath}#service`,
             name: 'Pozycjonowanie AI',
@@ -444,9 +446,10 @@ export const serviceNode = (input: ServiceInput) => {
           hasOfferCatalog: {
             '@type': 'OfferCatalog',
             name: input.name,
-            itemListElement: input.features.map((feature, index) => ({
+            // Offer nie ma property position (to ListItem). Kolejność wynika
+            // z porządku w tablicy itemListElement.
+            itemListElement: input.features.map((feature) => ({
               '@type': 'Offer',
-              position: index + 1,
               itemOffered: {
                 '@type': 'Service',
                 name: feature,
