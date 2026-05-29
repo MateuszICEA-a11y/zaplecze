@@ -3,12 +3,37 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import ScrollUpButton from '../../components/ScrollUpButton.astro';
+import { buildGraph, softwareApplicationNode, breadcrumbNode } from '../../lib/schema';
+
+const brandCheckSchema = buildGraph(
+  softwareApplicationNode({
+    slug: 'brand-check',
+    name: 'Widoczność marki w AI – widocznosc.ai',
+    description:
+      'Bezpłatne narzędzie widocznosc.ai badające, jak ChatGPT, Claude, Gemini i Perplexity opisują Twoją markę: sentyment wypowiedzi, halucynacje (zmyślone fakty), polecanych konkurentów i cytowane źródła.',
+    featureList: [
+      'Analiza 4 modeli: ChatGPT, Claude, Gemini, Perplexity',
+      'Sentyment i rozpoznawalność marki',
+      'Wykrywanie halucynacji (zmyślonych faktów)',
+      'Lista konkurentów polecanych przez AI',
+      'Cytowane źródła w odpowiedziach',
+      'Bezpłatny raport bez rejestracji',
+    ],
+  }),
+  breadcrumbNode([
+    { name: 'Strona główna', path: '/' },
+    { name: 'Narzędzia', path: '/narzedzia/' },
+    { name: 'Widoczność marki w AI', path: '/narzedzia/brand-check/' },
+  ]),
+);
 ---
 
 <Layout
   title="Widoczność marki w AI – co modele wiedzą o Twojej marce?"
   description="Sprawdź, jak ChatGPT, Claude, Gemini i Perplexity opisują Twoją markę. Zbadaj sentyment, wykryj zmyślone fakty (halucynacje) i sprawdź, kogo AI poleca zamiast Ciebie."
 >
+  <script type="application/ld+json" is:inline set:html={brandCheckSchema} />
+
   <Navbar />
 
   <div class="flex-grow">

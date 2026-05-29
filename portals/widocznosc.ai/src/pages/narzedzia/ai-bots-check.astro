@@ -4,14 +4,39 @@ import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import ScrollUpButton from '../../components/ScrollUpButton.astro';
 import { AI_BOTS, CATEGORY_LABELS, CATEGORY_DESCRIPTIONS } from '../../../functions/_lib/ai-bots';
+import { buildGraph, softwareApplicationNode, breadcrumbNode } from '../../lib/schema';
 
 const categories = ['training', 'search', 'on-demand', 'common-crawl'] as const;
+
+const aiBotsSchema = buildGraph(
+  softwareApplicationNode({
+    slug: 'ai-bots-check',
+    name: 'Dostęp botów AI – widocznosc.ai',
+    description:
+      'Bezpłatne narzędzie widocznosc.ai sprawdzające w 5 sekund, które z 13 robotów AI (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, OAI-SearchBot i inne) mają dostęp do strony. Diagnoza pliku robots.txt i lista zmian.',
+    featureList: [
+      `Weryfikacja ${AI_BOTS.length} botów AI`,
+      'Boty trenujące modele (GPTBot, ClaudeBot, Google-Extended)',
+      'Boty wyszukiwarek AI (OAI-SearchBot, PerplexityBot, Claude-SearchBot)',
+      'Boty on-demand (ChatGPT-User, Claude-User, Perplexity-User)',
+      'Common Crawl + inne crawlery (CCBot, Applebot-Extended, GoogleOther)',
+      'Gotowy szablon naprawy robots.txt',
+    ],
+  }),
+  breadcrumbNode([
+    { name: 'Strona główna', path: '/' },
+    { name: 'Narzędzia', path: '/narzedzia/' },
+    { name: 'Dostęp botów AI', path: '/narzedzia/ai-bots-check/' },
+  ]),
+);
 ---
 
 <Layout
   title="Dostęp botów AI – czy robots.txt pozwala wejść na stronę?"
   description="Sprawdź w 5 sekund, które z 13 robotów AI (m.in. GPTBot, ClaudeBot, PerplexityBot, Google-Extended) mają dostęp do Twojej strony. Diagnoza pliku robots.txt i lista konkretnych zmian. Darmowe, bez logowania."
 >
+  <script type="application/ld+json" is:inline set:html={aiBotsSchema} />
+
   <Navbar />
 
   <div class="flex-grow">

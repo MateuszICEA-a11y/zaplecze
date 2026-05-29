@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import ScrollUpButton from '../components/ScrollUpButton.astro';
 import CTABand from '../components/CTABand.astro';
+import { buildGraph, breadcrumbNode, SITE_URL, ORG_ID } from '../lib/schema';
 
 const tools = [
   {
@@ -85,7 +86,55 @@ const tools = [
   },
 ];
 
-const siteUrl = 'https://widocznosc.ai';
+const siteUrl = SITE_URL;
+
+const toolsListSchema = buildGraph(
+  {
+    '@type': 'CollectionPage',
+    '@id': `${siteUrl}/narzedzia/#collection`,
+    url: `${siteUrl}/narzedzia/`,
+    name: 'Darmowe narzędzia widoczności AI',
+    description:
+      'Cztery darmowe narzędzia widocznosc.ai do testowania marki, treści, dostępu botów i query fan-out w wyszukiwarkach AI.',
+    inLanguage: 'pl-PL',
+    isPartOf: { '@id': `${siteUrl}/#website` },
+    publisher: { '@id': ORG_ID },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: tools.length,
+      itemListElement: tools.map((tool, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        url: `${siteUrl}${tool.href}`,
+        item: {
+          '@type': 'SoftwareApplication',
+          '@id': `${siteUrl}${tool.href}#tool`,
+          name: tool.title,
+          description: tool.desc,
+          url: `${siteUrl}${tool.href}`,
+          applicationCategory: 'BusinessApplication',
+          applicationSubCategory: 'SEO',
+          operatingSystem: 'Web',
+          inLanguage: 'pl-PL',
+          isAccessibleForFree: true,
+          provider: { '@id': ORG_ID },
+          publisher: { '@id': ORG_ID },
+          featureList: tool.bullets,
+          offers: {
+            '@type': 'Offer',
+            price: 0,
+            priceCurrency: 'PLN',
+            availability: 'https://schema.org/InStock',
+          },
+        },
+      })),
+    },
+  },
+  breadcrumbNode([
+    { name: 'Strona główna', path: '/' },
+    { name: 'Narzędzia', path: '/narzedzia/' },
+  ]),
+);
 ---
 
 <Layout
@@ -94,30 +143,7 @@ const siteUrl = 'https://widocznosc.ai';
 >
   <Navbar />
 
-  <script
-    type="application/ld+json"
-    is:inline
-    set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'ItemList',
-      itemListElement: tools.map((tool, index) => ({
-        '@type': 'ListItem',
-        position: index + 1,
-        item: {
-          '@type': 'SoftwareApplication',
-          name: tool.title,
-          applicationCategory: 'BusinessApplication',
-          description: tool.desc,
-          url: `${siteUrl}${tool.href}`,
-          offers: {
-            '@type': 'Offer',
-            price: 0,
-            priceCurrency: 'PLN',
-          },
-        },
-      })),
-    })}
-  />
+  <script type="application/ld+json" is:inline set:html={toolsListSchema} />
 
   <div>
     <section class="tools-hero">

@@ -4,12 +4,30 @@ import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import ScrollUpButton from '../../components/ScrollUpButton.astro';
 import { FACTORS } from '../../../functions/_lib/url-check';
+import { buildGraph, softwareApplicationNode, breadcrumbNode } from '../../lib/schema';
+
+const urlCheckSchema = buildGraph(
+  softwareApplicationNode({
+    slug: 'url-check',
+    name: 'Ocena cytowalności strony – widocznosc.ai',
+    description:
+      'Bezpłatne narzędzie widocznosc.ai oceniające w 15 sekund dostosowanie strony do cytowania przez wyszukiwarki AI (ChatGPT, Claude, Gemini, Perplexity, Bing Copilot). Wynik 0-100 i lista priorytetowych zmian.',
+    featureList: FACTORS.map((f) => f.label),
+  }),
+  breadcrumbNode([
+    { name: 'Strona główna', path: '/' },
+    { name: 'Narzędzia', path: '/narzedzia/' },
+    { name: 'Ocena cytowalności strony', path: '/narzedzia/url-check/' },
+  ]),
+);
 ---
 
 <Layout
   title="Ocena cytowalności strony – wynik dostosowania do AI (0-100)"
   description="Sprawdź w 15 sekund, czy Twoja strona będzie cytowana przez ChatGPT, Claude, Gemini, Perplexity i Copilot. Ocena od 0 do 100 i lista 5 priorytetowych zmian."
 >
+  <script type="application/ld+json" is:inline set:html={urlCheckSchema} />
+
   <Navbar />
 
   <div class="flex-grow">

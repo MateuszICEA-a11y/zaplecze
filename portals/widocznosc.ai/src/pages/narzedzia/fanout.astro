@@ -3,13 +3,35 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import ScrollUpButton from '../../components/ScrollUpButton.astro';
+import { buildGraph, softwareApplicationNode, breadcrumbNode } from '../../lib/schema';
 
-const siteUrl = 'https://widocznosc.ai';
 const examples = [
   'najlepszy system CRM dla małej firmy',
   'ranking kont firmowych 2026',
   'jak wybrać platformę e-commerce B2B',
 ];
+
+// HowTo rich result został wycofany przez Google we wrześniu 2023 –
+// emitujemy tylko SoftwareApplication + BreadcrumbList.
+const fanoutSchema = buildGraph(
+  softwareApplicationNode({
+    slug: 'fanout',
+    name: 'Analiza zapytań AI (query fan-out) – widocznosc.ai',
+    description:
+      'Bezpłatne narzędzie widocznosc.ai pokazujące, na jakie mniejsze pytania ChatGPT i inne modele AI rozbijają frazę (query fan-out) oraz z jakich domen czerpią finalną odpowiedź.',
+    featureList: [
+      'Generowanie zapytań pomocniczych w stylu modeli LLM',
+      'Lista cytowanych domen i źródeł',
+      'Wgląd w surowe dane wyszukiwania',
+      'Bezpłatne, bez rejestracji',
+    ],
+  }),
+  breadcrumbNode([
+    { name: 'Strona główna', path: '/' },
+    { name: 'Narzędzia', path: '/narzedzia/' },
+    { name: 'Analiza zapytań AI', path: '/narzedzia/fanout/' },
+  ]),
+);
 ---
 
 <Layout
@@ -18,50 +40,7 @@ const examples = [
 >
   <Navbar />
 
-  <script
-    type="application/ld+json"
-    is:inline
-    set:html={JSON.stringify({
-      '@context': 'https://schema.org',
-      '@graph': [
-        {
-          '@type': 'SoftwareApplication',
-          name: 'Analiza zapytań AI',
-          applicationCategory: 'BusinessApplication',
-          operatingSystem: 'Web',
-          url: `${siteUrl}/narzedzia/fanout/`,
-          description:
-            'Bezpłatne narzędzie widocznosc.ai pokazujące, na jakie mniejsze pytania ChatGPT rozbija frazę i jakie domeny cytuje w odpowiedzi.',
-          offers: {
-            '@type': 'Offer',
-            price: 0,
-            priceCurrency: 'PLN',
-          },
-        },
-        {
-          '@type': 'HowTo',
-          name: 'Jak sprawdzić query fan-out w ChatGPT',
-          step: [
-            {
-              '@type': 'HowToStep',
-              name: 'Wpisz zapytanie',
-              text: 'Podaj frazę rankingową, porównawczą lub komercyjną do analizy.',
-            },
-            {
-              '@type': 'HowToStep',
-              name: 'Uruchom analizę',
-              text: 'Kliknij przycisk, aby sprawdzić, jakie zapytania pomocnicze i źródła pojawią się w przebiegu wyszukiwania.',
-            },
-            {
-              '@type': 'HowToStep',
-              name: 'Przejrzyj domeny',
-              text: 'Zobacz listę cytowanych domen i użyj jej do planowania treści pod widoczność w AI.',
-            },
-          ],
-        },
-      ],
-    })}
-  />
+  <script type="application/ld+json" is:inline set:html={fanoutSchema} />
 
   <div class="flex-grow">
     <section class="tool-hero">
