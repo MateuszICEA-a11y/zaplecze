@@ -1,0 +1,100 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ScrollUpButton from '../../components/ScrollUpButton.astro';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import { buildGraph, newsListingNode, breadcrumbNode } from '../../lib/schema';
+
+const items = (await getCollection('news')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const schema = buildGraph(
+  newsListingNode(
+    items.map((it) => ({ slug: it.id, title: it.data.title, datePublished: it.data.date.toISOString() })),
+  ),
+  breadcrumbNode([
+    { name: 'Strona główna', path: '/' },
+    { name: 'News', path: '/news/' },
+  ]),
+);
+---
+
+<Layout
+  title="News – widoczność marek w AI – widocznosc.ai"
+  description="Codzienne newsy ze świata AI search, GEO i modeli językowych z eksperckim komentarzem ICEA."
+>
+  <script type="application/ld+json" is:inline set:html={schema} />
+  <Navbar />
+  <main class="news-listing">
+    <header class="news-listing-head">
+      <p class="news-listing-eyebrow">News</p>
+      <h1 class="news-listing-title">Widoczność marek w AI – na bieżąco</h1>
+      <p class="news-listing-sub">
+        Najważniejsze wydarzenia ze świata AI search, GEO i modeli językowych – z komentarzem,
+        co oznaczają dla widoczności Twojej marki.
+      </p>
+    </header>
+
+    <div class="news-grid">
+      {
+        items.map((it) => (
+          <a href={`/news/${it.id}/`} class="news-card">
+            <div class="news-card-media">
+              <Image src={it.data.image} alt={it.data.title} class="news-card-image" loading="lazy" width={600} />
+            </div>
+            <div class="news-card-body">
+              <div class="news-card-meta">{formatDate(it.data.date)}</div>
+              <div class="news-card-title">{it.data.title}</div>
+              <p class="news-card-lead">{it.data.lead}</p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </main>
+  <Footer />
+  <ScrollUpButton />
+</Layout>
+
+<style>
+  .news-listing { max-width: 1100px; margin: 0 auto; padding: 48px 24px 80px; }
+  .news-listing-eyebrow {
+    font-size: var(--fs-caption); letter-spacing: var(--ls-caption);
+    text-transform: uppercase; color: var(--ink-muted); margin: 0 0 8px;
+  }
+  .news-listing-title {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; color: var(--ink); margin: 0 0 16px;
+  }
+  .news-listing-sub {
+    font-family: var(--font-sans); font-size: 1.1rem; line-height: 1.5;
+    color: var(--ink-muted); max-width: 65ch; margin: 0 0 48px;
+  }
+  .news-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  @media (min-width: 700px) { .news-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1000px) { .news-grid { grid-template-columns: repeat(3, 1fr); } }
+  .news-card {
+    display: flex; flex-direction: column; background: var(--bg-surface-1);
+    border: 1px solid var(--hairline-soft); border-radius: var(--r-xl);
+    overflow: hidden; text-decoration: none; transition: border-color 0.2s ease, transform 0.2s ease;
+  }
+  .news-card:hover { border-color: var(--hairline); transform: translateY(-2px); }
+  .news-card-media { aspect-ratio: 16 / 9; overflow: hidden; }
+  .news-card-image { width: 100%; height: 100%; object-fit: cover; }
+  .news-card-body { padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 8px; }
+  .news-card-meta { font-size: var(--fs-caption); color: var(--ink-muted); }
+  .news-card-title {
+    font-family: var(--font-display); font-weight: 500; font-size: 1.2rem;
+    line-height: 1.2; color: var(--ink);
+  }
+  .news-card-lead {
+    font-family: var(--font-sans); font-size: var(--fs-body-sm);
+    line-height: 1.5; color: var(--ink-muted); margin: 0;
+  }
+</style>
