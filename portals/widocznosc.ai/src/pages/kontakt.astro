@@ -3,12 +3,71 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import ScrollUpButton from '../components/ScrollUpButton.astro';
+import { buildGraph, breadcrumbNode, SITE_URL, ORG_ID, WEBSITE_ID } from '../lib/schema';
+
+// ContactPage + ContactPoints (hello@widocznosc.ai + biuro ICEA).
+// PostalAddress dla biura ICEA Poznań – ten sam co w Organization.parentOrganization.
+const contactPageNode = {
+  '@type': 'ContactPage',
+  '@id': `${SITE_URL}/kontakt/#contactpage`,
+  url: `${SITE_URL}/kontakt/`,
+  name: 'Kontakt – widocznosc.ai',
+  description:
+    'Skontaktuj się z zespołem widocznosc.ai. Zamów audyt widoczności w AI, zapytaj o doradztwo GEO. Bezpłatna konsultacja 30 minut.',
+  isPartOf: { '@id': WEBSITE_ID },
+  about: { '@id': ORG_ID },
+  inLanguage: 'pl-PL',
+  mainEntity: {
+    '@type': 'Organization',
+    '@id': ORG_ID,
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        contactType: 'customer service',
+        email: 'hello@widocznosc.ai',
+        availableLanguage: ['Polish', 'English'],
+        areaServed: 'PL',
+        hoursAvailable: {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+          opens: '09:00',
+          closes: '17:00',
+        },
+      },
+      {
+        '@type': 'ContactPoint',
+        contactType: 'sales',
+        email: 'biuro@grupa-icea.pl',
+        telephone: '+48667000333',
+        availableLanguage: ['Polish'],
+        areaServed: 'PL',
+      },
+    ],
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'ul. Szyperska 14',
+      postalCode: '61-754',
+      addressLocality: 'Poznań',
+      addressCountry: 'PL',
+    },
+  },
+};
+
+const contactSchema = buildGraph(
+  contactPageNode,
+  breadcrumbNode([
+    { name: 'Strona główna', path: '/' },
+    { name: 'Kontakt', path: '/kontakt/' },
+  ]),
+);
 ---
 
 <Layout
   title="Kontakt – widocznosc.ai"
   description="Skontaktuj się z zespołem widocznosc.ai. Zamów audyt widoczności w AI, zapytaj o doradztwo GEO i wyprzedź konkurencję. Bezpłatna konsultacja 30 minut."
 >
+  <script type="application/ld+json" is:inline set:html={contactSchema} />
+
   <Navbar />
 
   <section class="relative pt-32 pb-24 md:pt-40">
