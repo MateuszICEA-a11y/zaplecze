@@ -25,6 +25,7 @@ class Signal:
     published: datetime
     url: str
     trend_score: float = 0.0
+    source_name: str | None = None  # real publisher name from feeds.yaml (RSS only)
 
     def to_dict(self) -> dict:
         d = asdict(self)
@@ -58,6 +59,7 @@ def parse_rss_feeds(
                     category=feed_cfg.get("category", "general"),
                     published=published,
                     url=entry.get("link", ""),
+                    source_name=feed_cfg.get("name"),
                 ))
         except Exception:
             continue

@@ -11,48 +11,52 @@ from scorer import ScoredSignal
 from generator import build_prompt, parse_llm_output
 
 
+FORMAT_CFG = {"short_min_words": 400, "short_max_words": 600}
+
+
 class TestBuildPrompt:
-    def test_includes_topic_and_format(self):
+    def test_includes_topic_and_word_count(self):
         signal = Signal(
-            title="Nowy Fiat Ducato 2027",
-            summary="Fiat zaprezentował nową generację...",
+            title="ChatGPT zmienia ranking źródeł",
+            summary="OpenAI ogłosił zmianę sposobu cytowania...",
             source="rss",
-            category="modele",
+            category="ai-search",
             published=datetime.now(timezone.utc),
-            url="https://example.com/ducato",
+            url="https://example.com/chatgpt",
+            source_name="Search Engine Land – AI",
         )
-        scored = ScoredSignal(signal=signal, score=0.8, section="modele", format_type="short")
-        prompt = build_prompt(scored, related_articles=[])
-        assert "Fiat Ducato 2027" in prompt
-        assert "400-600 słów" in prompt
-        assert "modele" in prompt
+        scored = ScoredSignal(signal=signal, score=0.8, section="news", format_type="short")
+        prompt = build_prompt(scored, related_articles=[], format_config=FORMAT_CFG)
+        assert "ChatGPT zmienia ranking źródeł" in prompt
+        assert "400–600 słów" in prompt
 
-    def test_analysis_format_uses_longer_word_count(self):
+    def test_uses_publisher_source_name(self):
         signal = Signal(
-            title="Nowe regulacje EU",
+            title="Perplexity uruchamia nowy indeks",
             summary="...",
             source="rss",
-            category="przepisy",
+            category="ai-search",
             published=datetime.now(timezone.utc),
-            url="https://example.com/eu",
+            url="https://example.com/perplexity",
+            source_name="Search Engine Land – AI",
         )
-        scored = ScoredSignal(signal=signal, score=0.8, section="przepisy", format_type="analysis")
-        prompt = build_prompt(scored, related_articles=[])
-        assert "800-1200 słów" in prompt
+        scored = ScoredSignal(signal=signal, score=0.8, section="news", format_type="short")
+        prompt = build_prompt(scored, related_articles=[], format_config=FORMAT_CFG)
+        # Real publisher name, not the feed type ("rss")
+        assert "Search Engine Land – AI" in prompt
 
-    def test_includes_related_articles(self):
+    def test_falls_back_to_source_type_when_no_name(self):
         signal = Signal(
-            title="Test",
+            title="Trend: GEO",
             summary="...",
-            source="rss",
-            category="modele",
+            source="trends",
+            category="general",
             published=datetime.now(timezone.utc),
-            url="https://example.com/test",
+            url="",
         )
-        scored = ScoredSignal(signal=signal, score=0.8, section="modele", format_type="short")
-        related = [{"title": "Fiat Ducato – test", "url": "/modele/fiat-ducato/"}]
-        prompt = build_prompt(scored, related_articles=related)
-        assert "/modele/fiat-ducato/" in prompt
+        scored = ScoredSignal(signal=signal, score=0.8, section="news", format_type="short")
+        prompt = build_prompt(scored, related_articles=[], format_config=FORMAT_CFG)
+        assert "ŹRÓDŁO: trends" in prompt
 
 
 class TestParseLlmOutput:

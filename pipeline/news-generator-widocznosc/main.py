@@ -59,36 +59,9 @@ def save_published(history: list[dict]) -> None:
         json.dump(history, f, ensure_ascii=False, indent=2)
 
 
-def load_clusters(data_dir: Path) -> list[dict]:
-    """Load keyword clusters from data directory."""
-    path = data_dir / "clusters.json"
-    if not path.exists():
-        return []
-    with open(path, encoding="utf-8") as f:
-        data = json.load(f)
-    return data.get("clusters", [])
-
-
-def load_model_names(data_dir: Path) -> list[str]:
-    """Load bus model names for Trends seeds."""
-    path = data_dir / "buses.json"
-    if not path.exists():
-        return []
-    with open(path, encoding="utf-8") as f:
-        buses = json.load(f)
-    names = set()
-    for bus in buses:
-        name = bus.get("name", "")
-        # "Fiat Ducato L2H2" → "Fiat Ducato"
-        parts = name.split()
-        if len(parts) >= 2:
-            names.add(" ".join(parts[:2]))
-    return list(names)
-
-
 def run() -> None:
     """Run the full news pipeline."""
-    log.info("=== BusManiak News Pipeline ===")
+    log.info("=== widocznosc.ai News Pipeline ===")
 
     # 1. Load config
     config = load_config()
@@ -100,23 +73,16 @@ def run() -> None:
     trends_cfg = config.get("trends", {})
     pipeline_cfg = config.get("pipeline", {})
 
-    content_dir = REPO_ROOT / pipeline_cfg.get("content_dir", "portals/busmaniak.pl/content")
-    data_dir = REPO_ROOT / pipeline_cfg.get("data_dir", "portals/busmaniak.pl/data")
+    content_dir = REPO_ROOT / pipeline_cfg["content_dir"]
+    assets_dir = REPO_ROOT / pipeline_cfg["assets_dir"]
+    news_dir = content_dir / pipeline_cfg.get("output_section", "news")
 
-    # 2. Build Trends seeds (static + dynamic from buses.json)
+    # 2. Build Trends seeds (static only)
     trends_seeds = list(trends_cfg.get("seeds_static", []))
-    model_names = load_model_names(data_dir)
-    trends_seeds.extend(model_names)
-    log.info(
-        "Trends seeds: %d static + %d models = %d total",
-        len(trends_cfg.get("seeds_static", [])),
-        len(model_names),
-        len(trends_seeds),
-    )
+    log.info("Trends seeds: %d static", len(trends_seeds))
 
-    # 3. Load clusters
-    clusters = load_clusters(data_dir)
-    log.info("Loaded %d clusters", len(clusters))
+    # 3. No keyword clusters for widocznosc.ai (Astro news section)
+    clusters: list[dict] = []
 
     # 4. Collect signals
     log.info("Collecting signals...")
@@ -148,8 +114,12 @@ def run() -> None:
         topic.section,
     )
 
-    # 6. Find related articles for internal linking (across all sections)
-    related = find_related_articles(topic.section, str(content_dir), topic.signal.title)
+    # 6. Find related articles for internal linking (best-effort; Astro news may be empty)
+    try:
+        related = find_related_articles(topic.section, str(content_dir), topic.signal.title)
+    except Exception as e:
+        log.warning("find_related_articles failed (%s). Using empty list.", e)
+        related = []
     log.info("Found %d related articles for '%s'", len(related), topic.signal.title[:50])
 
     # 7. Generate article
@@ -171,60 +141,52 @@ def run() -> None:
         log.error("Raw output:\n%s", raw_output[:500])
         sys.exit(1)
 
-    # 9. Post-process
-    image_map = config.get("images", {})
-    fm, body, errors = postprocess(fm, body, section=topic.section, image_map=image_map)
-    if errors:
-        log.warning("Frontmatter validation warnings: %s", errors)
-        fm.setdefault("title", topic.signal.title)
-        fm.setdefault("date", datetime.now(timezone.utc).strftime("%Y-%m-%d"))
-        fm.setdefault("description", topic.signal.summary[:160])
-        fm.setdefault("draft", False)
-        fm.setdefault("main_keyword", topic.signal.title.lower())
-        fm.setdefault("lead", topic.signal.summary)
-
-    # 9b. Generate hero image
-    slug = generate_slug(fm.get("title", topic.signal.title))
-    portal_dir = REPO_ROOT / pipeline_cfg.get("content_dir", "portals/busmaniak.pl/content").replace("/content", "")
-    static_dir = portal_dir / "static"
-    hero_url = generate_hero_image(
-        title=fm.get("title", topic.signal.title),
-        slug=slug,
-        section=topic.section,
-        static_dir=static_dir,
-    )
-    if hero_url:
-        fm["image"] = hero_url
-        fm["image_alt"] = f"BusManiak.pl – {fm.get('title', '')}"
-        log.info("Hero image set: %s", hero_url)
-
-    # 10. Write file (skip if already published today)
+    # 9. Ensure a title is present, then derive date + slug + paths
+    fm.setdefault("title", topic.signal.title)
     date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    filename = f"{slug}.md"
-    news_dir = content_dir / pipeline_cfg.get("output_section", "news")
-    output_path = news_dir / filename
+    slug = generate_slug(fm["title"])
+    filename = f"{date_str}-{slug}.md"
 
     # Guard: don't publish twice on the same day
     today_published = [p for p in published if p.get("date") == date_str]
     if today_published:
         log.info("Already published today: '%s'. Skipping.", today_published[0].get("title", ""))
         return
+    output_path = news_dir / filename
     if output_path.exists():
         log.info("File already exists: %s. Skipping.", filename)
         return
 
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    markdown = build_markdown(fm, body)
-    output_path.write_text(markdown, encoding="utf-8")
+    # 9b. Generate hero image BEFORE post-process (with fallback)
+    image_rel = f"../../assets/images/news-{date_str}-{slug}.webp"
+    image_dest = assets_dir / f"news-{date_str}-{slug}.webp"
+    try:
+        generate_hero_image(title=fm["title"], section="news", dest=image_dest)
+    except Exception as e:
+        log.warning("Image generation failed (%s). Using fallback.", e)
+        image_rel = "../../assets/images/blog-geo-przewodnik.webp"
+
+    # 10. Post-process (Astro frontmatter)
+    fm, body, errors = postprocess(
+        fm,
+        body,
+        image_path=image_rel,
+        author=pipeline_cfg.get("author", "Redakcja widocznosc.ai"),
+    )
+    if errors:
+        log.error("Frontmatter validation errors, not writing: %s", errors)
+        return
+
+    # 11. Write file
+    news_dir.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(build_markdown(fm, body), encoding="utf-8")
     log.info("Written: %s", output_path.relative_to(REPO_ROOT))
 
-    # 11. Update published history
+    # 12. Update published history
     published.append({
         "title": fm.get("title", topic.signal.title),
         "date": date_str,
         "slug": slug,
-        "section": topic.section,
-        "format": topic.format_type,
         "source": topic.signal.source,
     })
 

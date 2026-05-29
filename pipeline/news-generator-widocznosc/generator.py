@@ -25,7 +25,7 @@ SYSTEM_PROMPT = (
 def build_prompt(topic, related_articles, format_config) -> str:
     src_title = topic.signal.title
     src_url = getattr(topic.signal, "url", "")
-    src_name = getattr(topic.signal, "source", "źródło")
+    src_name = getattr(topic.signal, "source_name", None) or getattr(topic.signal, "source", "źródło")
     src_summary = getattr(topic.signal, "summary", "") or getattr(topic.signal, "description", "")
     lo = format_config.get("short_min_words", 400)
     hi = format_config.get("short_max_words", 600)
