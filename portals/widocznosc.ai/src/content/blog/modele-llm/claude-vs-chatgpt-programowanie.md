@@ -22,7 +22,7 @@ Jeśli piszesz kod produkcyjny z pomocą dużego modelu językowego (LLM – Lar
 
 SWE-bench Verified to dziś najtrudniejsza publicznie dostępna miara zdolności kodowania modeli AI. Zamiast pisać nową funkcję od zera, model musi przeanalizować istniejące repozytorium Pythona, zlokalizować przyczynę błędu opisaną w zgłoszeniu (tickecie) z GitHuba i wygenerować łatkę, która przejdzie testy automatyczne. Z 500 zweryfikowanych przez człowieka problemów korzysta wiele niezależnych laboratoriów – wyniki są więc porównywalne między firmami.
 
-Aktualne wyniki na maj 2026 roku pokazują silną przewagę Anthropic w tej kategorii. **Claude Opus 4.5 był pierwszym modelem, który przekroczył próg 80%, osiągając 80,9% – przy GPT-5.1 na poziomie 76,3%.** Nowszy Claude Opus 4.7 uzyskał 87,6%, a wciąż eksperymentalny Claude Mythos Preview – 93,9% (dane: [BenchLM.ai](https://benchlm.ai/benchmarks/sweVerified)). Po stronie OpenAI GPT-5.5 w konfiguracji Codex osiągnął ~88,7% według zewnętrznych trackerów, z wynikiem 58,6% na trudniejszym SWE-bench Pro (gdzie Claude Opus 4.7 prowadzi z wynikiem 64,3%).
+Aktualne wyniki na maj 2026 roku pokazują silną przewagę Anthropic w tej kategorii. **Claude Opus 4.5 był pierwszym modelem, który przekroczył próg 80%, osiągając 80,9% – przy GPT-5.1 na poziomie 76,3%.** Najnowszy Claude Opus 4.8, wydany 28 maja 2026 roku, uzyskał 88,6% (poprzedni Opus 4.7 – 87,6%), a wciąż eksperymentalny Claude Mythos Preview – 93,9% (dane: [BenchLM.ai](https://benchlm.ai/benchmarks/sweVerified)). Po stronie OpenAI GPT-5.5 w konfiguracji Codex osiągnął ~88,7% według zewnętrznych trackerów, z wynikiem 58,6% na trudniejszym SWE-bench Pro (gdzie Claude Opus 4.8 prowadzi z wynikiem 69,2%, wobec 64,3% dla Opus 4.7).
 
 Co te liczby znaczą w praktyce? SWE-bench wymaga analizy wielu plików jednocześnie – model musi śledzić zależności między modułami, zrozumieć historię zmian i napisać łatkę, która nie spowoduje błędów w innych testach. To dokładnie ten typ pracy, który zajmuje godziny w codziennym developmencie.
 
@@ -65,20 +65,20 @@ Poniższa tabela zestawia najważniejsze parametry obu ekosystemów na maj 2026 
 
 | Parametr | Claude (Anthropic) | ChatGPT / Codex (OpenAI) |
 |---|---|---|
-| **SWE-bench Verified (flagship)** | 87,6% (Opus 4.7) | ~88,7% (GPT-5.5 + Codex) |
-| **SWE-bench Pro (flagship)** | 64,3% (Opus 4.7) | 58,6% (GPT-5.5) |
+| **SWE-bench Verified (flagship)** | 88,6% (Opus 4.8) | ~88,7% (GPT-5.5 + Codex) |
+| **SWE-bench Pro (flagship)** | 69,2% (Opus 4.8) | 58,6% (GPT-5.5) |
 | **HumanEval (mid-tier)** | 92% (Sonnet 3.5) | 90,2% (GPT-4o) |
-| **Cena API – balans (in/out)** | $3/$15 za 1M tokenów (Sonnet 4.6) | $2,50/$10 za 1M tokenów (GPT-4o) |
-| **Cena API – flagship (in/out)** | $5/$25 za 1M tokenów (Opus 4.7) | $5/$30 za 1M tokenów (GPT-5.5) |
-| **Cena API – ekonomiczny** | $1/$5 za 1M tokenów (Haiku 4.5) | brak bezpośredniego odpowiednika w tej cenie |
+| **Cena API – balans (in/out)** | $3/$15 za 1M tokenów (Sonnet 4.6) | $2,50/$15 za 1M tokenów (GPT-5.4) |
+| **Cena API – flagship (in/out)** | $5/$25 za 1M tokenów (Opus 4.8) | $5/$30 za 1M tokenów (GPT-5.5) |
+| **Cena API – ekonomiczny** | $1/$5 za 1M tokenów (Haiku 4.5) | $0,75/$4,50 za 1M tokenów (GPT-5.4 Mini) |
 | **Okno kontekstowe** | 1 000 000 tokenów | 1 050 000 tokenów (GPT-5.5) |
 | **Agent CLI** | Claude Code (lokalny) | Codex CLI (lokalny) + Codex web (chmura) |
 | **Tryb wykonania agenta** | lokalny (filesystem) | hybrydowy (lokalny CLI + chmurowy kontener) |
 | **Dostęp do narzędzi** | MCP (otwarty standard) | Function Calling, Responses API |
 | **Plan subskrypcji z agentem** | Pro ($20/mies.) lub Max ($100–200/mies.) | ChatGPT Plus ($20/mies.) lub Pro ($200/mies.) |
-| **Prompt caching** | tak – $0,30/1M tokenów (Sonnet 4.6) | tak – $1,25/1M tokenów (GPT-4o) |
+| **Prompt caching** | tak – $0,30/1M tokenów (Sonnet 4.6) | tak – $0,50/1M tokenów (GPT-5.5, cached input) |
 
-Kilka uwag do tabeli. Choć starszy model GPT-4o kosztuje nominalnie mniej na tokenach wejściowych, Claude oferuje bardziej efektywne buforowanie zapytań (prompt caching) – przy długich sesjach agentowych, gdzie ten sam kontekst projektu jest wielokrotnie przesyłany, koszt pojedynczego żądania może być zbliżony do tańszych modeli lub przemawiać na korzyść Claude'a. Z kolei koszt najnowszego GPT-5.5 to wydatek rzędu $5/$30. **Dla intensywnych agentowych przepływów pracy szacowany rzeczywisty koszt miesięczny w Anthropic wynosi $10–80 na programistę, co jest wynikiem porównywalnym lub korzystniejszym w zestawieniu z ekwiwalentem w OpenAI przy zbliżonym wykorzystaniu.**
+Kilka uwag do tabeli. Choć balansowy GPT-5.4 kosztuje nominalnie mniej na tokenach wejściowych niż Sonnet 4.6, Claude oferuje bardziej efektywne buforowanie zapytań (prompt caching) – przy długich sesjach agentowych, gdzie ten sam kontekst projektu jest wielokrotnie przesyłany, koszt pojedynczego żądania może być zbliżony do tańszych modeli lub przemawiać na korzyść Claude'a. Z kolei koszt flagowego GPT-5.5 to wydatek rzędu $5/$30. **Dla intensywnych agentowych przepływów pracy szacowany rzeczywisty koszt miesięczny w Anthropic wynosi $10–80 na programistę, co jest wynikiem porównywalnym lub korzystniejszym w zestawieniu z ekwiwalentem w OpenAI przy zbliżonym wykorzystaniu.**
 
 ## Jakość kodu w praktyce – gdzie naprawdę widać różnicę
 
@@ -117,12 +117,12 @@ Surowe ceny tokenów to tylko część rachunku. Przy agentowych przepływach pr
 
 Anthropic oferuje prompt caching dla Sonnet 4.6 za $0,30/1M tokenów wejściowych (przy oryginalnej cenie $3). To 10-krotna redukcja kosztów dla tych samych tokenów kontekstowych. **W typowej sesji Claude Code, gdzie systemowy kontekst projektu (pliki konfiguracyjne, główne moduły) jest wielokrotnie przesyłany, oszczędność na promptach może wynosić 60–75% względem ceny nominalnej.**
 
-Dla OpenAI caching GPT-4o kosztuje $1,25/1M tokenów – nadal jest tańszy niż Claude bez cachingu, ale po przeliczeniu rzeczywistego kosztu na sesję modele wychodzą blisko siebie.
+Dla OpenAI cached input GPT-5.5 kosztuje $0,50/1M tokenów (10% ceny standardowej, naliczane automatycznie) – to wciąż nieco drożej niż buforowany Sonnet, ale po przeliczeniu rzeczywistego kosztu na sesję modele wychodzą blisko siebie.
 
 Przykładowe szacunki miesięczne na programistę:
 
-- **Lekkie użycie** (skrypty, eksperymenty) – Claude Sonnet: ~$5–15, GPT-4o: ~$4–12
-- **Regularna praca** (daily coding assistant) – Claude Sonnet: ~$15–35, GPT-4o: ~$12–30
+- **Lekkie użycie** (skrypty, eksperymenty) – Claude Sonnet: ~$5–15, GPT-5.4 Mini: ~$4–12
+- **Regularna praca** (daily coding assistant) – Claude Sonnet: ~$15–35, GPT-5.4: ~$12–30
 - **Intensywna praca z agentami** (Claude Code / Codex, cały dzień roboczy) – Claude Opus: ~$50–120, Codex w planie Pro: wliczone w $200/mies.
 
 Subskrypcja ChatGPT Pro ($200/mies.) obejmuje dostęp do Codex i modeli GPT-5 bez dodatkowych opłat za token – co dla zaawansowanych użytkowników narzędzi agentowych może być korzystniejsze niż model płatności za zużycie (pay-as-you-go) w Anthropic. Claude oferuje analogicznie plan Max ($100–200/mies.) z wyższymi limitami, ale rozliczenia tokenowe nadal obowiązują przy przekroczeniu puli.

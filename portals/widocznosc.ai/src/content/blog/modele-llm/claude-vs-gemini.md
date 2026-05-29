@@ -22,11 +22,11 @@ Claude i Gemini to dziś dwie najpoważniejsze alternatywy dla ChatGPT w codzien
 
 Zanim przejdziesz do szczegółów, ta tabela daje przekrój przez obie platformy. Dane aktualne na maj 2026 r. według oficjalnych cenników Anthropic i Google.
 
-| Kryterium | Claude (Sonnet 4.6 / Opus 4.7) | Gemini (2.5 Pro) |
+| Kryterium | Claude (Sonnet 4.6 / Opus 4.8) | Gemini (2.5 Pro) |
 |---|---|---|
 | Producent | Anthropic | Google DeepMind |
 | Okno kontekstowe | 200K (Sonnet) / 1M (Opus) | 1M tokenów |
-| SWE-bench Verified | ~79–82% | ~63–78% |
+| SWE-bench Verified | ~80–89% | ~63–78% |
 | Cena API (input/output) | $3/$15 (Sonnet), $5/$25 (Opus) | $1,25/$10 (Pro) |
 | Plan dla osób prywatnych | Claude.ai Pro – $20/mies. | Google AI Pro – $19,99/mies. |
 | Plan premium | Claude.ai Max – $100–200/mies. | Google AI Ultra – $200/mies. |
@@ -67,7 +67,7 @@ Gemini ma tu jedną konkretną przewagę: natywny dostęp do wyszukiwarki Google
 
 To obszar, w którym dane są najbardziej jednoznaczne. SWE-bench Verified to branżowy punkt odniesienia do pomiaru zdolności modeli w rozwiązywaniu rzeczywistych zgłoszeń błędów (bugów) w repozytoriach GitHub – nie zadań syntetycznych, ale prawdziwego kodu produkcyjnego.
 
-**Claude Sonnet 4.6 uzyskuje 79,6% na SWE-bench Verified. Gemini 2.5 Pro – ok. 63–78% w zależności od konfiguracji agenta.** Flagowy Claude Opus 4.7 zbliża się do 82%, a najnowsze pomiary z LM Council (maj 2026) pokazują Claude'a jako model klasy zbliżonej do GPT-5 w tym wymiarze.
+**Claude Sonnet 4.6 uzyskuje 79,6% na SWE-bench Verified. Gemini 2.5 Pro – ok. 63–78% w zależności od konfiguracji agenta.** Flagowy Claude Opus 4.8 (wydany 28 maja 2026) osiąga 88,6%, a najnowsze pomiary z LM Council (maj 2026) pokazują Claude'a jako model klasy zbliżonej do GPT-5 w tym wymiarze.
 
 W praktyce ta różnica oznacza mniej iteracji przy debugowaniu i większą szansę na poprawne działanie kodu za pierwszym razem. Przy stawce programisty seniorskiego czas to pieniądz – jeden zaoszczędzony cykl poprawek może uzasadnić wyższy koszt tokenów.
 
@@ -77,7 +77,7 @@ Narzędzie Claude Code (interfejs wiersza poleceń, czyli CLI) idzie krok dalej 
 
 ## Długi kontekst – kiedy masz 200 stron do przejrzenia
 
-Okno kontekstowe decyduje o tym, ile danych możesz podać modelowi w jednym zapytaniu. Claude Sonnet 4.6 obsługuje 200 tysięcy tokenów – to ok. 150 000 słów, czyli kilka obszernych raportów naraz. Claude Opus 4.7 rozciąga ten limit do 1 miliona tokenów.
+Okno kontekstowe decyduje o tym, ile danych możesz podać modelowi w jednym zapytaniu. Claude Sonnet 4.6 obsługuje 200 tysięcy tokenów – to ok. 150 000 słów, czyli kilka obszernych raportów naraz. Claude Opus 4.8 rozciąga ten limit do 1 miliona tokenów.
 
 Gemini 2.5 Pro oferuje 1 milion tokenów jako standard w każdym planie, bez konieczności sięgania po najdroższą wersję modelu.
 
@@ -124,7 +124,7 @@ Claude.ai Max zaczyna się od $100 i sięga $200 miesięcznie, w zależności od
 Na poziomie API różnica jest wyraźna:
 
 - **Claude Sonnet 4.6** – $3 za milion tokenów wejściowych / $15 za milion tokenów wyjściowych
-- **Claude Opus 4.7** – $5 / $25 za milion tokenów
+- **Claude Opus 4.8** – $5 / $25 za milion tokenów
 - **Gemini 2.5 Pro** – $1,25 / $10 za milion tokenów
 
 Gemini jest znacznie tańsze w przeliczeniu na token. Przy wolumenach produkcyjnych – tysiące zapytań dziennie, przetwarzanie masowych zbiorów danych – ta różnica szybko rośnie do tysięcy dolarów miesięcznie. Dla aplikacji masowych, poziom Gemini Flash (ok. $0,30 input / $2,50 output za milion tokenów) nie ma porównywalnego odpowiednika po stronie Anthropic.
