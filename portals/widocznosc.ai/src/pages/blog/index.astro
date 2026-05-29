@@ -89,7 +89,7 @@ for (const post of posts) {
           <span class="section-index">B/01</span>
           <span class="eyebrow blog-hero-eyebrow">Baza wiedzy</span>
         </div>
-        <h1 class="display-xxl blog-hero-title">Baza wiedzy o AI</h1>
+        <h1 class="display-xxl blog-hero-title">Baza wiedzy o <span class="blog-hero-accent">AI</span></h1>
         <p class="blog-hero-lead">
           Poradniki, analizy i&nbsp;case studies o&nbsp;ChatGPT, Claude, Gemini, Perplexity,
           automatyzacji, SEO i&nbsp;widoczności marek w&nbsp;wyszukiwarkach AI.
@@ -375,6 +375,10 @@ for (const post of posts) {
     max-width: 720px;
     font-size: clamp(38px, 4.2vw, 60px);
     line-height: 0.98;
+  }
+
+  .blog-hero-accent {
+    color: var(--accent-blue);
   }
 
   .blog-hero-lead {
