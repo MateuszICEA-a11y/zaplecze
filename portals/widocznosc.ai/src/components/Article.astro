@@ -1,5 +1,5 @@
 ---
-const { articleData } = Astro.props;
+const { articleData, variant } = Astro.props;
 const { title, subtitle, date, image, author, readTime, tags } = articleData;
 const encodedTitle = encodeURIComponent(title);
 const encodedUrl = encodeURIComponent(Astro.url.href);
@@ -77,7 +77,7 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
 
     <!-- Body grid: content + sidebar -->
     <div class="article-body-grid">
-      <section class="article-content">
+      <section class:list={['article-content', variant && `article-content--${variant}`]}>
         <slot />
       </section>
 
@@ -1031,6 +1031,45 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     color: var(--ink);
   }
 
+  /* ============================================================
+     News – warianty zawężone do sekcji /news/
+     ============================================================ */
+
+  /* Ujednolicony rozmiar akapitów – krótkie sekcje newsa wyglądają
+     niespójnie, gdy pierwszy akapit po H2 jest większy. Równamy do body. */
+  .article-content--news h2 + p {
+    font-size: 17px;
+  }
+
+  /* „Nasz komentarz" – callout w stylu terminala (mono label + akcent
+     mint), zamiast niebieskiego cytatu. Pipeline generuje w newsie tylko
+     ten jeden blockquote, więc styl bezpiecznie celuje w blockquote. */
+  .article-content--news blockquote {
+    --c-tech: #0d8a6a;
+    border: 1px solid var(--hairline);
+    border-left: 3px solid var(--c-tech);
+    background: var(--bg-surface-2);
+    border-radius: var(--r-md);
+    padding: 20px 22px;
+  }
+  :root[data-theme='dark'] .article-content--news blockquote {
+    --c-tech: #3ddc97;
+  }
+  .article-content--news blockquote strong {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--c-tech);
+    font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .article-content--news blockquote strong::before {
+    content: '// ';
+    opacity: 0.6;
+  }
+
   @media (max-width: 640px) {
     .article-page {
       padding: 88px 0 64px;
@@ -1084,6 +1123,10 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     .article-content li {
       font-size: 16px;
       line-height: 1.62;
+    }
+
+    .article-content--news h2 + p {
+      font-size: 16px;
     }
 
     .article-page .article-body-grid .article-content h2 {

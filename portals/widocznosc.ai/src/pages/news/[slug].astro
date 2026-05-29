@@ -80,7 +80,7 @@ const schema = buildGraph(
   <script type="application/ld+json" is:inline set:html={schema} />
 
   <Navbar />
-  <Article articleData={articleData}>
+  <Article articleData={articleData} variant="news">
     <nav slot="breadcrumb" class="article-breadcrumb" aria-label="Ścieżka nawigacji">
       <a href="/news/" class="article-breadcrumb-link">News</a>
       <span class="article-breadcrumb-sep" aria-hidden="true">›</span>
