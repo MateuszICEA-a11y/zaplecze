@@ -92,7 +92,7 @@ const decisionRows = [
 ] as const;
 
 const siteUrl = 'https://widocznosc.ai';
-const pageUrl = `${siteUrl}/pozycjonowanie-ai//`;
+const pageUrl = `${siteUrl}/pozycjonowanie-ai/`;
 const pageDescription =
   'Pozycjonowanie marki w wyszukiwarkach AI: ChatGPT, Claude, Gemini, Perplexity, Bing Copilot. Audyt widoczności, optymalizacja treści, monitoring cytowań, strategia GEO.';
 
@@ -155,9 +155,8 @@ const serviceSchema = {
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
         name: 'Pozycjonowanie w wyszukiwarkach AI',
-        itemListElement: services.map((service, index) => ({
+        itemListElement: services.map((service) => ({
           '@type': 'Offer',
-          position: index + 1,
           itemOffered: {
             '@type': 'Service',
             name: service.title,
