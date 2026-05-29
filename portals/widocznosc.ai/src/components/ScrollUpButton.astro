@@ -23,14 +23,34 @@
 <script>
   const initScrollUpButton = () => {
     const btn = document.getElementById('scroll-up-btn');
+    const footer = document.querySelector('footer');
 
-    window.addEventListener('scroll', () => {
-      if (document.documentElement.scrollTop > 300) {
+    // Stan: przycisk widoczny tylko gdy przewinięto > 300px ORAZ stopka
+    // nie jest w widoku (inaczej nakłada się na ikony social w stopce).
+    let pastThreshold = false;
+    let footerVisible = false;
+    const update = () => {
+      if (pastThreshold && !footerVisible) {
         btn?.classList.remove('hidden');
       } else {
         btn?.classList.add('hidden');
       }
+    };
+
+    window.addEventListener('scroll', () => {
+      pastThreshold = document.documentElement.scrollTop > 300;
+      update();
     });
+
+    if (footer && 'IntersectionObserver' in window) {
+      new IntersectionObserver(
+        ([entry]) => {
+          footerVisible = entry.isIntersecting;
+          update();
+        },
+        { rootMargin: '0px 0px -40px 0px' }
+      ).observe(footer);
+    }
 
     btn?.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
