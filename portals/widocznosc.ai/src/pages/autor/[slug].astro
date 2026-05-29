@@ -296,7 +296,7 @@ const profileSchema = buildGraph(
         <h2 id="other-authors-title" class="display-xl mt-2">Pozostali eksperci ICEA</h2>
       </div>
 
-      <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <div class="other-authors-grid">
         {
           otherAuthors.map((other) => (
             <a
@@ -371,5 +371,26 @@ const profileSchema = buildGraph(
 
   [data-card-template]:hover {
     background: var(--bg-surface-2) !important;
+  }
+
+  /* Siatka „Pozostali eksperci ICEA" – symetryczna niezależnie od liczby
+     autorów (auto-fit wypełnia równo, pusty slot się zwija). Wyśrodkowana,
+     by 3 karty nie zostawiały pustej kolumny jak w sztywnym grid-cols-4. */
+  .other-authors-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  @media (min-width: 640px) {
+    .other-authors-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (min-width: 1024px) {
+    .other-authors-grid {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      max-width: 1120px;
+      margin-inline: auto;
+    }
   }
 </style>
