@@ -24,11 +24,11 @@ faq:
       kiedy z niego korzysta.
   - q: 'Jaka jest data odcięcia modelu?'
     a: >-
-      Modele GPT-4o mają datę odcięcia danych treningowych ustawioną początkowo na październik
-      2023 roku, a w późniejszych iteracjach zaktualizowaną do połowy 2024 roku. Oznacza to, że
-      „z pamięci" model nie zna wydarzeń późniejszych. Przy włączonym wyszukiwaniu to
-      ograniczenie nie ma znaczenia dla bieżących informacji, ale model nadal może prezentować
-      starsze dane jako aktualne.
+      Data odcięcia różni się między wersjami z rodziny GPT-5. GPT-5.4 ma datę odcięcia danych
+      treningowych ustawioną na sierpień 2025 roku, a flagowy GPT-5.5 (wydany w kwietniu 2026)
+      na grudzień 2025 roku. Oznacza to, że „z pamięci" model nie zna wydarzeń późniejszych.
+      Przy włączonym wyszukiwaniu to ograniczenie nie ma znaczenia dla bieżących informacji,
+      ale model nadal może prezentować starsze dane jako aktualne.
   - q: 'Czy rozmowy z ChatGPT są używane do trenowania modelu?'
     a: >-
       W planach Free i Plus – domyślnie tak, jeśli użytkownik nie wyłączy tej opcji w
@@ -39,7 +39,7 @@ faq:
       informacje o przetwarzaniu danych.
   - q: 'Jak ChatGPT wypada w porównaniu do Claude?'
     a: >-
-      Oba modele są silne w różnych obszarach. ChatGPT (GPT-4o) ma szerszy ekosystem integracji
+      Oba modele są silne w różnych obszarach. ChatGPT (GPT-5.5) ma szerszy ekosystem integracji
       i silniejsze możliwości generowania kodu. Claude ma dłuższe okno kontekstowe w wersjach
       bazowych i preferuje bardziej powściągliwy, precyzyjny styl odpowiedzi. Szczegółowe
       zestawienie znajdziesz w artykule o <a href="/modele-llm/claude/">Claude</a>, który opisuje
@@ -54,11 +54,10 @@ OpenAI to laboratorium badań nad sztuczną inteligencją założone w 2015 roku
 
 Aby uporządkować te pojęcia na wstępie:
 
-- **GPT** – seria modeli językowych (GPT-3, GPT-4 i kolejne); sam model to „silnik", który przetwarza tekst
+- **GPT** – seria modeli językowych (GPT-3, GPT-4, a obecnie rodzina GPT-5); sam model to „silnik", który przetwarza tekst
 - **ChatGPT** – produkt konsumencki, interfejs czatu dostępny pod adresem chat.openai.com, napędzany aktualnym modelem GPT
-- **OpenAI API** – programistyczny dostęp do modeli GPT, DALL-E i innych, używany przez deweloperów do budowy własnych aplikacji
-- **DALL-E** – model do generowania obrazów z opisu tekstowego
-- **Sora** – model do generowania wideo (udostępniany stopniowo od 2024 roku)
+- **OpenAI API** – programistyczny dostęp do modeli GPT, GPT Image i innych, używany przez deweloperów do budowy własnych aplikacji
+- **GPT Image** – model do generowania obrazów z opisu tekstowego, wbudowany w ChatGPT (zastąpił DALL-E pod koniec 2025 roku)
 - **Whisper** – model do transkrypcji i tłumaczenia mowy
 
 ChatGPT jest dostępny w wersji przeglądarkowej i mobilnej, a od 2023 roku również jako wtyczka i element Microsoft 365 Copilot. **OpenAI udostępnia swoje modele przez API, co pozwala firmom zewnętrznym wbudowywać je we własne produkty** – dlatego ChatGPT pojawia się pośrednio w Bingu, w narzędziach do pisania, w obsłudze klienta i w dziesiątkach innych miejsc.
@@ -73,7 +72,7 @@ Model oparty jest na architekturze typu Transformer – typie [sieci neuronowej]
 
 ### Tokenizacja i kontekst
 
-Zanim model przetworzy zdanie, dzieli je na tokeny – podjednostki leksykalne mniejsze niż słowo (np. „pozycjonowanie" może być jednym lub kilkoma tokenami, zależnie od tokenizera). Modele GPT-4 i nowsze operują na oknie kontekstowym wielkości 128 000 tokenów, co odpowiada mniej więcej 100 000 słów – całej powieści. To oznacza, że model „widzi" całą bieżącą rozmowę naraz, bez konieczności „przypominania sobie" z poprzednich kroków.
+Zanim model przetworzy zdanie, dzieli je na tokeny – podjednostki leksykalne mniejsze niż słowo (np. „pozycjonowanie" może być jednym lub kilkoma tokenami, zależnie od tokenizera). Flagowe modele z rodziny GPT-5 operują na oknie kontekstowym przekraczającym milion tokenów (wcześniejsze generacje GPT-4 były ograniczone do 128 000 tokenów). Milion tokenów to z grubsza obszerne repozytorium kodu albo kilka książek naraz. To oznacza, że model „widzi" całą bieżącą rozmowę naraz, bez konieczności „przypominania sobie" z poprzednich kroków.
 
 Każdy token jest zamieniany na wektor liczbowy w wielowymiarowej przestrzeni. Mechanizm uwagi (ang. attention mechanism) oblicza dla każdej pary tokenów stopień ich semantycznej zależności. **Wynik to nie lista faktów, lecz matematyczna reprezentacja relacji między pojęciami** – dlatego model potrafi odpowiadać na pytania, których nigdy dosłownie nie widział w danych treningowych.
 
@@ -95,13 +94,14 @@ ChatGPT dostępny jest w kilku planach. Poniższa tabela zestawia kluczowe róż
 
 | Plan | Cena | Dostęp do modeli | Kluczowe funkcje |
 |---|---|---|---|
-| Free | 0 USD/mies. | GPT-4o (z limitem) | Czat, podstawowe generowanie obrazów, tryb głosowy |
-| Plus | 20 USD/mies. | GPT-4o, o1, DALL-E | Wyższe limity, dostęp do GPT-4o mini, priorytet w godzinach szczytu |
-| Pro | 200 USD/mies. | Wszystkie modele, nieograniczony dostęp | o1 Pro Mode (model z rozszerzonym czasem wnioskowania), priorytet dostępu |
-| Team | 25 USD/os./mies. | Jak Plus + workspace | Zarządzanie zespołem, izolacja danych od trenowania |
+| Free | 0 USD/mies. | GPT-5.3 Instant (z limitem) | Czat, podstawowe generowanie obrazów, tryb głosowy; w niektórych krajach z reklamami |
+| Go | 8 USD/mies. | Nielimitowany GPT-5.3 Instant | Plan dla codziennych użytkowników, wyższe limity niż Free |
+| Plus | 20 USD/mies. | GPT-5.5, GPT-5.4 Thinking, GPT Image | Wyższe limity, Deep Research, Codex, priorytet w godzinach szczytu |
+| Business | 25 USD/os./mies. | Jak Plus + priorytet dostępu | Przestrzeń zespołowa, izolacja danych od trenowania |
+| Pro | 100–200 USD/mies. | GPT-5.5 Pro, Codex, brak limitów | Okno kontekstowe do 1 mln tokenów, rozszerzone limity Deep Research |
 | Enterprise | Negocjowane | Jak Pro + opcje prywatne | SOC 2 Type II, SSO, niestandardowe retencje danych, wyższy limit kontekstu |
 
-**Plan Free wystarczy do testowania i zadań sporadycznych.** Dla regularnej pracy – szczególnie gdy liczy się jakość i brak ograniczeń w dostępie do asystentów AI (tzw. copilotów) – Plus jest standardowym wyborem. Pro (model o1 Pro) jest wyspecjalizowany pod złożone wnioskowanie matematyczne, naukowe i wieloetapowe problemy analityczne.
+**Plan Free wystarczy do testowania i zadań sporadycznych.** Dla regularnej pracy – szczególnie gdy liczy się jakość i brak ograniczeń w dostępie do asystentów AI (tzw. copilotów) – Plus jest standardowym wyborem; daje dostęp do flagowego GPT-5.5, wydanego 23 kwietnia 2026 roku. Plany Pro (warianty 100 i 200 USD) celują w zaawansowanych profesjonalistów i programistów – rozszerzają okno kontekstowe do miliona tokenów i odblokowują GPT-5.5 Pro z najwyższym budżetem wnioskowania.
 
 ## Do czego używać ChatGPT – zastosowania w praktyce
 
