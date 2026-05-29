@@ -3,12 +3,39 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import ScrollUpButton from '../components/ScrollUpButton.astro';
+import { buildGraph, breadcrumbNode, SITE_URL, ORG_ID, WEBSITE_ID } from '../lib/schema';
+
+const privacySchema = buildGraph(
+  {
+    '@type': 'WebPage',
+    '@id': `${SITE_URL}/polityka-prywatnosci/#webpage`,
+    url: `${SITE_URL}/polityka-prywatnosci/`,
+    name: 'Polityka prywatności – widocznosc.ai',
+    description:
+      'Polityka prywatności serwisu widocznosc.ai. Zasady przetwarzania danych osobowych, plików cookies, uprawnień użytkownika i kontaktu z administratorem.',
+    isPartOf: { '@id': WEBSITE_ID },
+    inLanguage: 'pl-PL',
+    publisher: { '@id': ORG_ID },
+    datePublished: '2026-05-28',
+    dateModified: '2026-05-28',
+    about: {
+      '@type': 'Thing',
+      name: 'Polityka prywatności i ochrona danych osobowych',
+    },
+  },
+  breadcrumbNode([
+    { name: 'Strona główna', path: '/' },
+    { name: 'Polityka prywatności', path: '/polityka-prywatnosci/' },
+  ]),
+);
 ---
 
 <Layout
   title="Polityka prywatności – widocznosc.ai"
   description="Polityka prywatności serwisu widocznosc.ai. Zasady przetwarzania danych osobowych, plików cookies, uprawnień użytkownika i kontaktu z administratorem."
 >
+  <script type="application/ld+json" is:inline set:html={privacySchema} />
+
   <Navbar />
 
   <article class="legal-page">
