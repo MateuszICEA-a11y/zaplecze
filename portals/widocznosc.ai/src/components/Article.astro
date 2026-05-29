@@ -1025,21 +1025,13 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     margin: 40px 0;
   }
 
-  /* Lead paragraph after H2 */
-  .article-content h2 + p {
-    font-size: 18px;
-    color: var(--ink);
-  }
+  /* Akapity w treści mają jednolity rozmiar (17px z reguły .article-content p).
+     Świadomie NIE powiększamy pierwszego akapitu po H2 – dawało to niespójne
+     rozmiary w obrębie sekcji (blog, baza wiedzy i news). */
 
   /* ============================================================
      News – warianty zawężone do sekcji /news/
      ============================================================ */
-
-  /* Ujednolicony rozmiar akapitów – krótkie sekcje newsa wyglądają
-     niespójnie, gdy pierwszy akapit po H2 jest większy. Równamy do body. */
-  .article-content--news h2 + p {
-    font-size: 17px;
-  }
 
   /* „Nasz komentarz" – callout w stylu terminala (mono label + akcent
      mint), zamiast niebieskiego cytatu. Pipeline generuje w newsie tylko
@@ -1123,10 +1115,6 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     .article-content li {
       font-size: 16px;
       line-height: 1.62;
-    }
-
-    .article-content--news h2 + p {
-      font-size: 16px;
     }
 
     .article-page .article-body-grid .article-content h2 {
