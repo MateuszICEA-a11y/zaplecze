@@ -58,7 +58,6 @@ const authorArticlesItemList = {
   itemListElement: authorPosts.map((post, index) => ({
     '@type': 'ListItem',
     position: index + 1,
-    url: `${SITE_URL}/${post.id}/`,
     item: {
       '@type': 'BlogPosting',
       '@id': `${SITE_URL}/${post.id}/#article`,

@@ -105,7 +105,6 @@ const toolsListSchema = buildGraph(
       itemListElement: tools.map((tool, index) => ({
         '@type': 'ListItem',
         position: index + 1,
-        url: `${siteUrl}${tool.href}`,
         item: {
           '@type': 'SoftwareApplication',
           '@id': `${siteUrl}${tool.href}#tool`,

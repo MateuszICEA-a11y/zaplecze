@@ -335,7 +335,6 @@ export const collectionPageNode = (input: PillarHubInput) => {
       itemListElement: input.posts.map((post, index) => ({
         '@type': 'ListItem',
         position: index + 1,
-        url: `${SITE_URL}/${post.pillar}/${post.slug}/`,
         item: {
           '@type': 'BlogPosting',
           '@id': `${SITE_URL}/${post.pillar}/${post.slug}/#article`,
