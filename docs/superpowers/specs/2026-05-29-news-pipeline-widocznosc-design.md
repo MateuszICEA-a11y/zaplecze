@@ -58,7 +58,10 @@ Spinają je: ścieżki zapisu (pipeline pisze do `portals/widocznosc.ai/src/cont
 - **`src/pages/news/index.astro`** – listing chronologiczny (najnowsze u góry), karty: data, tytuł, lead, źródło. CollectionPage + ItemList w schema.
 - **`src/pages/news/[slug].astro`** – pojedynczy news: lead, treść, nota „opracowanie redakcyjne na podstawie [sourceName]" z dofollow linkiem do `sourceUrl`, hero. Emituje `newsArticleNode`.
 - **`src/lib/schema.ts`** – nowy `newsArticleNode` (`@type: NewsArticle`: headline, datePublished, image, author Organization/Person redakcja, publisher Organization, isPartOf, `mentions`/cytowanie źródła) + breadcrumb.
+- **`src/components/NewsCTA.astro`** – box CTA wyświetlany w każdym `/news/[slug]`. Statyczny (na teraz, bez formularza inline – backend leadów odłożony). Treść: „Zamów audyt widoczności w AI" → link `/kontakt/?type=audyt-ai`. Reużywalny, łatwy do późniejszej podmiany na formularz e-mail, gdy powstanie backend leadów.
 - **Nawigacja** (`Navbar`) – pozycja „News" w dropdownie „Baza wiedzy", link `/news/`.
+
+> **Zależność:** box CTA kieruje do `/kontakt/?type=audyt-ai`, a formularz `/kontakt/` jest obecnie atrapą (nie wysyła danych – por. `project-widocznosc-leadgen`). Aby CTA z News miał wartość biznesową, naprawa formularza kontaktu powinna nastąpić przed/wraz z uruchomieniem News. To osobne zadanie, ale tu odnotowane jako warunek sensu CTA.
 
 ## Data flow (jedno uruchomienie)
 
@@ -93,7 +96,8 @@ Każdy wpis: nie kopiuje oryginału (streszczenie + własny komentarz). W treśc
 
 ## Poza zakresem (YAGNI)
 
-- Brak lead capture / newslettera (osobny, odłożony temat – `project-widocznosc-leadgen`).
+- Box CTA w News **jest** w zakresie (statyczny link do `/kontakt/?type=audyt-ai`). Poza zakresem zostaje **inline formularz e-mail / capture w boxie** – czeka na decyzję o backendzie leadów (`project-widocznosc-leadgen`).
+- Brak newslettera.
 - Brak infografiki dla News (tylko hero).
 - Brak human-gate / progu hybrydowego (user wybrał pełny automat).
 - Brak generalizacji wspólnego pipeline multi-portal (user wybrał klon).
