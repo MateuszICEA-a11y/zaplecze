@@ -3,10 +3,15 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import ScrollUpButton from '../../components/ScrollUpButton.astro';
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import { PILLAR_LABELS, PILLAR_GUIDE_TITLE } from '../../content.config';
 import type { BLOG_PILLARS } from '../../content.config';
+import {
+  buildGraph,
+  collectionPageNode,
+  breadcrumbNode,
+} from '../../lib/schema';
 
 export const getStaticPaths = async () => {
   const allPosts = await getCollection('blog');
@@ -48,6 +53,49 @@ const hubLead =
 
 const formatDate = (date: Date) =>
   date.toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' });
+
+// Schema – CollectionPage + ItemList + BreadcrumbList. Mapa author.name → slug
+// z kolekcji authors, żeby Person @id linkował się z artykułów.
+const authors = await getCollection('authors');
+const slugByAuthorName = new Map(authors.map((a) => [a.data.name, a.id]));
+
+// Optymalizujemy obraz każdej karty do webp 800px – mniejszy payload dla crawlerów.
+const optimizedImageByPostId = new Map<string, string>();
+for (const post of posts) {
+  const opt = await getImage({ src: post.data.image, format: 'webp', width: 800 });
+  optimizedImageByPostId.set(post.id, opt.src);
+}
+
+const siteUrl = 'https://widocznosc.ai';
+const hubDescription =
+  guidePost?.data.description ??
+  `Baza wiedzy o ${pillarLabel}: artykuły, przewodniki i case studies na widocznosc.ai.`;
+
+const collectionSchema = buildGraph(
+  collectionPageNode({
+    pillar,
+    pillarLabel,
+    pillarTitle,
+    description: hubDescription,
+    posts: posts.map((post) => ({
+      pillar,
+      slug: post.id.split('/')[1],
+      title: post.data.title,
+      description: post.data.description || post.data.subtitle,
+      imageUrl: `${siteUrl}${optimizedImageByPostId.get(post.id) ?? post.data.image.src}`,
+      datePublished: post.data.date.toISOString(),
+      authorSlug:
+        slugByAuthorName.get(post.data.author.name) ??
+        post.data.author.name.toLowerCase().replace(/\s+/g, '-'),
+      authorName: post.data.author.name,
+    })),
+  }),
+  breadcrumbNode([
+    { name: 'Strona główna', path: '/' },
+    { name: 'Baza wiedzy', path: '/blog/' },
+    { name: pillarLabel, path: `/${pillar}/` },
+  ]),
+);
 ---
 
 <Layout
@@ -55,6 +103,8 @@ const formatDate = (date: Date) =>
   description={guidePost?.data.description ??
     `Baza wiedzy o ${pillarLabel}: artykuły, przewodniki i case studies na widocznosc.ai.`}
 >
+  <script type="application/ld+json" is:inline set:html={collectionSchema} />
+
   <Navbar />
 
   <div class="blog-listing-main">
