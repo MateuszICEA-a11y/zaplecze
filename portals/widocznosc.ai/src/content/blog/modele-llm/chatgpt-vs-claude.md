@@ -79,7 +79,7 @@ Claude Code – narzędzie CLI pozwalające modelowi czytać i pisać pliki bezp
 
 To jeden z obszarów, gdzie Claude ma techniczną przewagę – i jest to przewaga wyraźna.
 
-Okno kontekstowe Claude w planie płatnym wynosi **200 000 tokenów** (ok. 150 000 słów, czyli kilkaset stron A4). W planie Enterprise – 500 000 tokenów. Z kolei ChatGPT Plus operuje domyślnie na 32 000 tokenów dla modelu Instant (lub 256 000 tokenów przy ręcznym wyborze modelu Thinking), a okno 400 000 tokenów dostępne jest dopiero w planie Pro za 200 USD miesięcznie.
+Okno kontekstowe Claude w czacie na planach płatnych (Pro, Max, Team, Enterprise) wynosi **500 000 tokenów** (ok. 375 000 słów, czyli kilkaset stron A4), a w Claude Code i przez API dostępne jest pełne okno **1 miliona tokenów** dla modeli Opus 4.8 i Sonnet 4.6. Z kolei ChatGPT Plus operuje domyślnie na 32 000 tokenów dla modelu Instant (lub 256 000 tokenów przy ręcznym wyborze modelu Thinking), a okno 400 000 tokenów dostępne jest dopiero w planie Pro za 200 USD miesięcznie.
 
 W praktyce: jeśli wczytujesz obszerne umowy, raporty finansowe, wielostronicowe specyfikacje techniczne lub chcesz jednocześnie porównać kilka dokumentów – Claude w planie Pro za 20 USD wystarczy do zadań, które w ChatGPT wymagałyby znacznie droższej subskrypcji.
 
@@ -122,8 +122,8 @@ Oto syntetyczne zestawienie kluczowych kryteriów. Gwiazdką ✦ oznaczam przewa
 |---|---|---|
 | **Cena Free** | 0 USD, reklamy (USA) | 0 USD, bez reklam ✦ |
 | **Plan Standard** | Plus – 20 USD/mies. | Pro – 20 USD/mies. |
-| **Okno kontekstowe (Standard)** | 32 K (Instant) / 256 K (Thinking) | 200 000 tokenów ✦ |
-| **Okno kontekstowe (Premium)** | 400 K tokenów (Pro, 200 USD) | 500 K tokenów (Enterprise) ✦ |
+| **Okno kontekstowe (Standard)** | 32 K (Instant) / 256 K (Thinking) | 500 000 tokenów (czat) ✦ |
+| **Okno kontekstowe (Premium)** | 400 K tokenów (Pro, 200 USD) | 1 mln tokenów (Claude Code / API) ✦ |
 | **Generowanie obrazów** | GPT Image 1.5, wbudowane ✦ | Brak |
 | **Generowanie wideo** | Brak (Sora zamknięta w marcu 2026) | Brak |
 | **Tryb głosowy** | Tak, pełnofunkcyjny ✦ | Ograniczony |
