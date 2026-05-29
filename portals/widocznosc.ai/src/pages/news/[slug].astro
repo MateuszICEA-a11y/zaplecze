@@ -1,0 +1,149 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import ScrollUpButton from '../../components/ScrollUpButton.astro';
+import NewsCTA from '../../components/NewsCTA.astro';
+import { Image, getImage } from 'astro:assets';
+import { getCollection, render } from 'astro:content';
+import { buildGraph, newsArticleNode, breadcrumbNode } from '../../lib/schema';
+
+export const getStaticPaths = async () => {
+  const items = await getCollection('news');
+  return items.map((item) => ({ params: { slug: item.id }, props: { item } }));
+};
+
+const { item } = Astro.props;
+const { Content } = await render(item);
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' });
+
+const optimizedOg = await getImage({ src: item.data.image, format: 'webp', width: 1200 });
+const ogImageUrl = `https://widocznosc.ai${optimizedOg.src}`;
+
+const schema = buildGraph(
+  newsArticleNode({
+    slug: item.id,
+    title: item.data.title,
+    lead: item.data.lead,
+    imageUrl: ogImageUrl,
+    datePublished: item.data.date.toISOString(),
+    sourceName: item.data.sourceName,
+    sourceUrl: item.data.sourceUrl,
+    tags: item.data.tags,
+    author: item.data.author,
+  }),
+  breadcrumbNode([
+    { name: 'Strona główna', path: '/' },
+    { name: 'News', path: '/news/' },
+    { name: item.data.title, path: `/news/${item.id}/` },
+  ]),
+);
+---
+
+<Layout
+  title={`${item.data.title} – News – widocznosc.ai`}
+  description={item.data.lead}
+  ogType="article"
+  articleMeta={{ publishedTime: item.data.date.toISOString(), author: item.data.author, tags: item.data.tags }}
+>
+  <script type="application/ld+json" is:inline set:html={schema} />
+  <Navbar />
+  <main class="news-article">
+    <nav class="news-breadcrumb" aria-label="Ścieżka nawigacji">
+      <a href="/news/" class="news-breadcrumb-link">News</a>
+      <span class="news-breadcrumb-sep" aria-hidden="true">›</span>
+      <span class="news-breadcrumb-current">{item.data.title}</span>
+    </nav>
+
+    <header class="news-head">
+      <div class="news-meta">
+        <time datetime={item.data.date.toISOString()}>{formatDate(item.data.date)}</time>
+        <span aria-hidden="true">·</span>
+        <span>{item.data.author}</span>
+      </div>
+      <h1 class="news-title">{item.data.title}</h1>
+      <p class="news-lead">{item.data.lead}</p>
+    </header>
+
+    <Image src={item.data.image} alt={item.data.title} class="news-hero" loading="eager" width={1200} />
+
+    <div class="news-body">
+      <Content />
+    </div>
+
+    <p class="news-source">
+      Opracowanie redakcyjne na podstawie:{' '}
+      <a href={item.data.sourceUrl} rel="noopener" target="_blank">{item.data.sourceName}</a>
+    </p>
+
+    <NewsCTA />
+  </main>
+  <Footer />
+  <ScrollUpButton />
+</Layout>
+
+<style>
+  .news-article {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+  .news-breadcrumb {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: var(--fs-caption);
+    color: var(--ink-muted);
+    margin-bottom: 28px;
+  }
+  .news-breadcrumb-link { color: var(--ink-muted); text-decoration: none; }
+  .news-breadcrumb-link:hover { color: var(--ink); }
+  .news-meta {
+    display: flex;
+    gap: 8px;
+    font-size: var(--fs-caption);
+    color: var(--ink-muted);
+    margin-bottom: 14px;
+  }
+  .news-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    line-height: 1.1;
+    color: var(--ink);
+    margin: 0 0 16px;
+  }
+  .news-lead {
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: var(--ink-muted);
+    margin: 0 0 28px;
+  }
+  .news-hero {
+    width: 100%;
+    height: auto;
+    border-radius: var(--r-xl);
+    margin-bottom: 32px;
+  }
+  .news-body :global(h2) {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    margin: 32px 0 12px;
+    color: var(--ink);
+  }
+  .news-body :global(p) {
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    color: var(--ink);
+    margin: 0 0 16px;
+  }
+  .news-source {
+    margin-top: 32px;
+    font-size: var(--fs-body-sm);
+    color: var(--ink-muted);
+  }
+  .news-source a { color: var(--ink); text-decoration: underline; }
+</style>
