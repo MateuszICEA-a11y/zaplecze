@@ -1,6 +1,6 @@
 ---
 title: 'Google mówi: rób SEO po staremu. Czego nie dopowiada o wyszukiwaniu AI'
-subtitle: 'Oficjalny przewodnik Google po optymalizacji pod generatywną AI brzmi uspokajająco. Rozbieramy go na czynniki pierwsze – co jest prawdą, gdzie Google przemilcza i dlaczego pisze z perspektywy gracza, który przestał być jedyny'
+subtitle: 'Google wydało uspokajający przewodnik po optymalizacji pod AI. Haczyk? To perspektywa giganta, który po raz pierwszy czuje na plecach oddech konkurencji. Rozkładamy dokument na czynniki pierwsze: wskazujemy, gdzie Google ma rację, a co celowo przemilcza.'
 description: 'Analiza przewodnika Google o optymalizacji pod generatywną AI okiem specjalistów AI Search. Co jest prawdą, gdzie Google nie mówi wszystkiego o llms.txt, GEO i wzmiankach, i dlaczego jego rady są optymalne dla Google, a niekoniecznie dla Ciebie.'
 date: 2026-05-29
 image: ../../../assets/images/blog-geo-co-google-przemilcza.webp
