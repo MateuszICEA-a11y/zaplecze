@@ -133,4 +133,19 @@ const blog = defineCollection({
     }),
 });
 
-export const collections = { blog, authors };
+const news = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/news' }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      lead: z.string(),
+      date: z.date(),
+      image: image(),
+      sourceName: z.string(),
+      sourceUrl: z.string().url(),
+      tags: z.array(z.string()).default([]),
+      author: z.string().default('Redakcja widocznosc.ai'),
+    }),
+});
+
+export const collections = { blog, authors, news };
