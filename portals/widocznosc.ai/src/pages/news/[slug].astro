@@ -87,9 +87,7 @@ const schema = buildGraph(
       <span class="article-breadcrumb-current">{item.data.title}</span>
     </nav>
 
-    <div class="news-content">
-      <Content />
-    </div>
+    <Content />
 
     <p class="news-source">
       Opracowanie redakcyjne na podstawie:{' '}
@@ -185,20 +183,4 @@ const schema = buildGraph(
     flex-shrink: 0;
   }
 
-  /* Wyróżnik nagłówków sekcji w treści newsa – lewy niebieski akcent
-     + wyraźniejszy odstęp pod nagłówkiem (treść nie zlewa się z h2).
-     Selektor z .news-content pobija specyficzność Article (0,5,1 > 0,4,1). */
-  :global(.article-page .article-body-grid .article-content .news-content h2) {
-    padding-left: 18px;
-    border-left: 3px solid var(--accent-blue);
-    margin-top: 3.25rem;
-    margin-bottom: 1.25rem;
-  }
-  :global(.article-page .article-body-grid .article-content .news-content h2:first-child) {
-    margin-top: 0;
-  }
-  :global(.article-page .article-body-grid .article-content .news-content h3) {
-    margin-top: 2.25rem;
-    margin-bottom: 0.75rem;
-  }
 </style>

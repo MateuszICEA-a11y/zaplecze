@@ -112,6 +112,15 @@ const heading = title ?? 'Często zadawane pytania';
     margin: 0;
   }
 
+  /* Reset marginu pytania FAQ – pytanie to h3, a w kontekście artykułu
+     reguła Article `.article-content h3` (0,4,1) wstrzykiwała margin-top
+     ~36px i rozpychała wiersze FAQ. Ten selektor (0,5,0) ją pobija. */
+  :global(.article-page .article-body-grid .article-content .article-faq-row .article-faq-q) {
+    margin: 0;
+    padding-left: 0;
+    border-left: none;
+  }
+
   @media (min-width: 980px) {
     .article-faq-q {
       font-size: 19px;
