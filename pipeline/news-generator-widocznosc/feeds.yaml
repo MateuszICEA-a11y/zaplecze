@@ -1,20 +1,17 @@
 feeds:
-  - url: "https://news.google.com/rss/search?q=bus+OR+van+OR+kamper+OR+dostawczy&hl=pl&gl=PL&ceid=PL:pl"
-    category: "general"
-    name: "Google News PL"
-
-  - url: "https://news.google.com/rss/search?q=fiat+ducato+OR+mercedes+sprinter+OR+ford+transit&hl=pl&gl=PL&ceid=PL:pl"
-    category: "modele"
-    name: "Google News modele"
-
-  - url: "https://news.google.com/rss/search?q=kamper+OR+campervan+OR+vanlife&hl=pl&gl=PL&ceid=PL:pl"
-    category: "kampery"
-    name: "Google News kampery"
-
-  - url: "https://news.google.com/rss/search?q=paliwo+diesel+OR+ceny+paliw+polska&hl=pl&gl=PL&ceid=PL:pl"
-    category: "serwis"
-    name: "Google News paliwo"
-
-  - url: "https://news.google.com/rss/search?q=prawo+drogowe+OR+regulacje+transport&hl=pl&gl=PL&ceid=PL:pl"
-    category: "przepisy"
-    name: "Google News przepisy"
+  # UWAGA: zwraca 403 (blokada bota przez curl/Cloudflare, URL poprawny), do weryfikacji
+  - url: "https://searchengineland.com/category/ai/feed"
+    category: "ai-search"
+    name: "Search Engine Land – AI"
+  - url: "https://www.searchenginejournal.com/category/news/feed/"
+    category: "ai-search"
+    name: "Search Engine Journal – News"
+  - url: "https://techcrunch.com/category/artificial-intelligence/feed/"
+    category: "general-ai"
+    name: "TechCrunch AI"
+  - url: "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"
+    category: "general-ai"
+    name: "The Verge AI"
+  - url: "https://venturebeat.com/category/ai/feed/"
+    category: "llm"
+    name: "VentureBeat AI"
