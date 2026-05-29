@@ -46,6 +46,7 @@ const articleData = {
   author: {
     name: 'Redakcja widocznosc.ai',
     role: `Opracowanie na podstawie: ${item.data.sourceName}`,
+    avatar: '/favicon.svg',
   },
   tags: item.data.tags,
 };
@@ -86,11 +87,13 @@ const schema = buildGraph(
       <span class="news-breadcrumb-current">{item.data.title}</span>
     </nav>
 
-    <Content />
+    <div class="news-content">
+      <Content />
+    </div>
 
     <p class="news-source">
       Opracowanie redakcyjne na podstawie:{' '}
-      <a href={item.data.sourceUrl} rel="noopener noreferrer" target="_blank">
+      <a href={item.data.sourceUrl} rel="nofollow noopener noreferrer" target="_blank">
         {item.data.sourceName}
       </a>
     </p>
@@ -198,5 +201,22 @@ const schema = buildGraph(
   .news-related-arrow {
     color: var(--accent-blue);
     flex-shrink: 0;
+  }
+
+  /* Wyróżnik nagłówków sekcji w treści newsa – lewy niebieski akcent
+     + wyraźniejszy odstęp pod nagłówkiem (treść nie zlewa się z h2).
+     Selektor z .news-content pobija specyficzność Article (0,5,1 > 0,4,1). */
+  :global(.article-page .article-body-grid .article-content .news-content h2) {
+    padding-left: 18px;
+    border-left: 3px solid var(--accent-blue);
+    margin-top: 3.25rem;
+    margin-bottom: 1.25rem;
+  }
+  :global(.article-page .article-body-grid .article-content .news-content h2:first-child) {
+    margin-top: 0;
+  }
+  :global(.article-page .article-body-grid .article-content .news-content h3) {
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
   }
 </style>
