@@ -145,7 +145,9 @@ def run() -> None:
     fm.setdefault("title", topic.signal.title)
     date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     slug = generate_slug(fm["title"])
-    filename = f"{date_str}-{slug}.md"
+    # Slug newsa bez daty – data publikacji zostaje w frontmatterze (date),
+    # po niej sortuje listing. Data nadal prefiksuje nazwę pliku hero-obrazu.
+    filename = f"{slug}.md"
 
     # Guard: don't publish twice on the same day
     today_published = [p for p in published if p.get("date") == date_str]

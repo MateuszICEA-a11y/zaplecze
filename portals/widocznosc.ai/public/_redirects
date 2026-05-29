@@ -2,3 +2,6 @@
 /blog/query-fan-out-google-ai-mode          /geo/query-fan-out          301
 /blog/share-of-voice-zamiast-rankingu       /geo/share-of-voice         301
 /blog/gptbot-claudebot-perplexitybot-przewodnik  /geo/boty-ai-przewodnik  301
+
+# News – slugi bez prefiksu daty
+/news/2026-05-29-internet-coraz-bardziej-pod-maszyny/  /news/internet-coraz-bardziej-pod-maszyny/  301
