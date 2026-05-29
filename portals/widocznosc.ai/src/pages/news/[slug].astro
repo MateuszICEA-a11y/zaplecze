@@ -81,10 +81,10 @@ const schema = buildGraph(
 
   <Navbar />
   <Article articleData={articleData}>
-    <nav slot="breadcrumb" class="news-breadcrumb" aria-label="Ścieżka nawigacji">
-      <a href="/news/" class="news-breadcrumb-link">News</a>
-      <span class="news-breadcrumb-sep" aria-hidden="true">›</span>
-      <span class="news-breadcrumb-current">{item.data.title}</span>
+    <nav slot="breadcrumb" class="article-breadcrumb" aria-label="Ścieżka nawigacji">
+      <a href="/news/" class="article-breadcrumb-link">News</a>
+      <span class="article-breadcrumb-sep" aria-hidden="true">›</span>
+      <span class="article-breadcrumb-current">{item.data.title}</span>
     </nav>
 
     <div class="news-content">
@@ -126,24 +126,6 @@ const schema = buildGraph(
 </Layout>
 
 <style>
-  .news-breadcrumb {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    font-size: var(--fs-caption);
-    color: var(--ink-muted);
-  }
-  .news-breadcrumb-link {
-    color: var(--ink-muted);
-    text-decoration: none;
-  }
-  .news-breadcrumb-link:hover {
-    color: var(--ink);
-  }
-  .news-breadcrumb-current {
-    color: var(--ink);
-  }
-
   /* Atrybucja źródła – wyróżniona nota pod treścią */
   .news-source {
     margin: 36px 0 0;
