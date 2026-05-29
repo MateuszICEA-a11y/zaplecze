@@ -358,7 +358,9 @@ const urlCheckSchema = buildGraph(
     gap: 2px;
     flex: 1;
   }
-  .factor-card-title {
+  /* .factor-card prefix podbija specyficzność (0,3,0) ponad globalną
+     regułę h3:not(...) z Theme.css (0,2,1), która inaczej wymusza 32px. */
+  .factor-card .factor-card-title {
     font-family: var(--font-sans);
     font-weight: 650;
     font-size: 20px;
