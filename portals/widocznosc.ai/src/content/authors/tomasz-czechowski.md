@@ -16,4 +16,10 @@ photo: /authors/tomasz-czechowski.avif
 iceaProfile: https://www.grupa-icea.pl/autor/tomasz-czechowski/
 linkedin: https://www.linkedin.com/in/tomasz-czechowski/
 publishedAt: 2026-05-06
+education:
+  - name: Wyższa Szkoła Komunikacji i Zarządzania w Poznaniu
+    degree: Inżynier (Inż.)
+    fieldOfStudy: Computer Science
+    startYear: 2015
+    endYear: 2019
 ---

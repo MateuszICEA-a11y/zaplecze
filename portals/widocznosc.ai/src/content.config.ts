@@ -59,6 +59,35 @@ const authors = defineCollection({
     linkedin: z.string().url().optional(),
     twitter: z.string().url().optional(),
     email: z.string().email().optional(),
+    /**
+     * Wykształcenie autora – używane do Person.alumniOf w schema.org.
+     * Każdy wpis powinien zawierać przynajmniej nazwę uczelni.
+     */
+    education: z
+      .array(
+        z.object({
+          name: z.string(),
+          degree: z.string().optional(),
+          fieldOfStudy: z.string().optional(),
+          startYear: z.number().int().optional(),
+          endYear: z.number().int().optional(),
+        })
+      )
+      .optional(),
+    /**
+     * Certyfikaty zawodowe – używane do Person.hasCredential.
+     * Pomaga LLM-om i Google ocenić ekspertyzę autora (E-E-A-T).
+     */
+    credentials: z
+      .array(
+        z.object({
+          name: z.string(),
+          issuer: z.string(),
+          dateIssued: z.string().optional(),
+          credentialId: z.string().optional(),
+        })
+      )
+      .optional(),
   }),
 });
 

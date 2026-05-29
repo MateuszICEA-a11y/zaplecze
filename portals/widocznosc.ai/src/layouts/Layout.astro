@@ -7,6 +7,7 @@ import monaSansLatin from '@fontsource-variable/mona-sans/files/mona-sans-latin-
 import interLatin from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 import { ClientRouter } from 'astro:transitions';
 import '../styles/Theme.css';
+import { buildGraph, organizationNode, websiteNode, SITE_URL } from '../lib/schema';
 
 interface Props {
   title: string;
@@ -28,8 +29,14 @@ const {
   noindex = true,
 } = Astro.props;
 
-const siteUrl = 'https://widocznosc.ai';
+const siteUrl = SITE_URL;
 const ogImage = `${siteUrl}/og-image.png`;
+
+// Bazowy @graph emitowany na KAŻDEJ stronie – Organization + WebSite.
+// Strony customowe (artykuły, profile, taxonomy, kontakt) dodają własne
+// JSON-LD <script> z page-specific nodami; Google traktuje wszystkie skrypty
+// na stronie jako jeden graf (cross-ref przez @id działa).
+const baseGraph = buildGraph(organizationNode(), websiteNode());
 ---
 
 <!doctype html>
@@ -87,25 +94,8 @@ const ogImage = `${siteUrl}/og-image.png`;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    <!-- JSON-LD: Organization schema (eat-your-own-dogfood dla GEO) -->
-    <script
-      type="application/ld+json"
-      is:inline
-      set:html={JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'Organization',
-        name: 'widocznosc.ai',
-        url: siteUrl,
-        logo: `${siteUrl}/og-image.png`,
-        description,
-        parentOrganization: {
-          '@type': 'Organization',
-          name: 'ICEA',
-          url: 'https://grupa-icea.pl',
-        },
-        sameAs: ['https://www.linkedin.com/company/icea/'],
-      })}
-    />
+    <!-- JSON-LD: base graph (Organization + WebSite) – eat-your-own-dogfood dla GEO -->
+    <script type="application/ld+json" is:inline set:html={baseGraph} />
   </head>
   <body class="overflow-x-hidden">
     <a href="#main" class="skip-link">Przejdź do treści</a>
