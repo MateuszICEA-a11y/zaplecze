@@ -1,0 +1,175 @@
+---
+/**
+ * ArticleFAQ – sekcja FAQ wewnątrz artykułu bazy wiedzy.
+ * Źródło: frontmatter `faq` wpisu (to samo zasila JSON-LD FAQPage w [slug].astro).
+ * Accordion single-row-open, spójny z FAQ.astro na homepage, ale w szerokości artykułu.
+ */
+type FAQItem = { q: string; a: string };
+const { items, title } = Astro.props as { items: FAQItem[]; title?: string };
+const heading = title ?? 'Często zadawane pytania';
+---
+
+{
+  items && items.length > 0 && (
+    <section class="article-faq" aria-labelledby="article-faq-title">
+      <h2 id="article-faq-title" class="article-faq-title">
+        {heading}
+      </h2>
+      <div class="article-faq-list">
+        {items.map((item, i) => (
+          <details class="article-faq-row" open={i === 0}>
+            <summary class="article-faq-row-head">
+              <h3 class="article-faq-q">
+                <Fragment set:html={item.q} />
+              </h3>
+              <span class="article-faq-toggle" aria-hidden="true">
+                +
+              </span>
+            </summary>
+            <div class="article-faq-a">
+              <Fragment set:html={item.a} />
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+<script>
+  // Single-row-open: otwarcie jednego pytania zamyka pozostałe
+  const initArticleFaq = () => {
+    const rows = document.querySelectorAll<HTMLDetailsElement>('.article-faq-row');
+    rows.forEach((row) => {
+      row.addEventListener('toggle', () => {
+        if (row.open) {
+          rows.forEach((other) => {
+            if (other !== row) other.open = false;
+          });
+        }
+      });
+    });
+  };
+  document.addEventListener('astro:page-load', initArticleFaq);
+</script>
+
+<style>
+  .article-faq {
+    margin: 56px 0 0;
+    padding-top: 40px;
+    border-top: 1px solid var(--hairline-soft);
+  }
+
+  .article-faq-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: var(--ls-headline);
+    color: var(--ink);
+    margin: 0 0 24px;
+  }
+
+  .article-faq-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .article-faq-row {
+    border-top: 1px solid var(--hairline-soft);
+    padding: 20px 0;
+  }
+
+  .article-faq-row:last-child {
+    border-bottom: 1px solid var(--hairline-soft);
+  }
+
+  .article-faq-row-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    list-style: none;
+    transition: opacity 0.15s ease;
+  }
+
+  .article-faq-row-head::-webkit-details-marker {
+    display: none;
+  }
+  .article-faq-row-head::marker {
+    content: '';
+  }
+  .article-faq-row-head:hover {
+    opacity: 0.85;
+  }
+
+  .article-faq-q {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  @media (min-width: 980px) {
+    .article-faq-q {
+      font-size: 19px;
+    }
+  }
+
+  .article-faq-toggle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--bg-surface-1);
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--ink-muted);
+    transition:
+      transform 0.2s ease,
+      background 0.18s ease,
+      color 0.18s ease;
+  }
+
+  .article-faq-row[open] .article-faq-toggle {
+    transform: rotate(45deg);
+    background: var(--bg-surface-2);
+    color: var(--ink);
+  }
+
+  .article-faq-a {
+    padding-top: 14px;
+    font-family: var(--font-sans);
+    font-size: var(--fs-body, 16px);
+    color: var(--ink-muted);
+    line-height: 1.65;
+  }
+
+  .article-faq-a :global(p) {
+    margin: 0 0 12px;
+  }
+  .article-faq-a :global(p:last-child) {
+    margin-bottom: 0;
+  }
+  .article-faq-a :global(strong) {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .article-faq-a :global(a) {
+    color: var(--ink);
+    text-decoration: underline;
+  }
+  .article-faq-a :global(ul),
+  .article-faq-a :global(ol) {
+    margin: 8px 0 12px;
+    padding-left: 20px;
+  }
+  .article-faq-a :global(li) {
+    margin: 4px 0;
+  }
+</style>

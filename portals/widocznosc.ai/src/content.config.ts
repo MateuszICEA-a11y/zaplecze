@@ -112,6 +112,24 @@ const blog = defineCollection({
       featured: z.boolean().optional(),
       intent: z.enum(['INFO', 'COMPARE', 'HOWTO', 'TOOL', 'COMMERCIAL']).optional(),
       level: z.enum(['L1', 'L2', 'L3']).optional(),
+      /**
+       * Nagłówek sekcji FAQ – zachowuje oryginalny wariant tematyczny
+       * (np. „Często zadawane pytania o GEO"). Fallback w ArticleFAQ.astro.
+       */
+      faqHeading: z.string().optional(),
+      /**
+       * FAQ artykułu – źródło prawdy dla widocznej sekcji (ArticleFAQ.astro)
+       * oraz JSON-LD FAQPage. Trzymane w frontmatter, nie w body (reguła CLAUDE.md).
+       * Pole `a` może zawierać inline HTML (&ndash;, &nbsp;, <strong>).
+       */
+      faq: z
+        .array(
+          z.object({
+            q: z.string(),
+            a: z.string(),
+          })
+        )
+        .optional(),
     }),
 });
 

@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Article from '../../components/Article.astro';
+import ArticleFAQ from '../../components/ArticleFAQ.astro';
 import AuthorBox from '../../components/AuthorBox.astro';
 import Footer from '../../components/Footer.astro';
 import ScrollUpButton from '../../components/ScrollUpButton.astro';
@@ -13,6 +14,7 @@ import {
   personNode,
   blogPostingNode,
   breadcrumbNode,
+  faqPageNode,
 } from '../../lib/schema';
 
 export const getStaticPaths = async () => {
@@ -109,6 +111,9 @@ const articleSchema = buildGraph(
     { name: PILLAR_LABELS[pillar as keyof typeof PILLAR_LABELS], path: `/${pillar}/` },
     { name: post.data.title, path: `/${post.id}/` },
   ]),
+  post.data.faq?.length
+    ? faqPageNode(post.data.faq, `https://widocznosc.ai/${post.id}/`)
+    : null,
 );
 ---
 
@@ -136,6 +141,11 @@ const articleSchema = buildGraph(
       <span class="article-breadcrumb-current">{post.data.title}</span>
     </nav>
     <Content />
+    {
+      post.data.faq && post.data.faq.length > 0 && (
+        <ArticleFAQ items={post.data.faq} title={post.data.faqHeading} />
+      )
+    }
     {
       authorEntry && (
         <AuthorBox
