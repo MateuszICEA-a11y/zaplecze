@@ -5,9 +5,15 @@ import Article from '../../components/Article.astro';
 import AuthorBox from '../../components/AuthorBox.astro';
 import Footer from '../../components/Footer.astro';
 import ScrollUpButton from '../../components/ScrollUpButton.astro';
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
 import { PILLAR_LABELS } from '../../content.config';
+import {
+  buildGraph,
+  personNode,
+  blogPostingNode,
+  breadcrumbNode,
+} from '../../lib/schema';
 
 export const getStaticPaths = async () => {
   const posts = await getCollection('blog');
@@ -59,6 +65,51 @@ const articleData = {
   readTime: post.data.readTime,
   tags: post.data.tags,
 };
+
+// Schema.org JSON-LD – optymalizowany obraz, wordCount z body markdownu
+const optimizedOg = await getImage({ src: post.data.image, format: 'webp', width: 1200 });
+const ogImageUrl = `https://widocznosc.ai${optimizedOg.src}`;
+const wordCount = (post.body ?? '').trim().split(/\s+/).filter(Boolean).length;
+
+const authorSlug = authorEntry?.id ?? post.data.author.name.toLowerCase().replace(/\s+/g, '-');
+const authorDataForSchema = authorEntry
+  ? authorEntry.data
+  : {
+      name: post.data.author.name,
+      role: post.data.author.role,
+      shortBio: undefined,
+      expertise: undefined,
+      photo: undefined,
+      iceaProfile: undefined,
+      linkedin: undefined,
+    };
+
+const articleSchema = buildGraph(
+  personNode(authorSlug, authorDataForSchema),
+  blogPostingNode({
+    pillar,
+    slug: post.id.split('/')[1],
+    title: post.data.title,
+    description: post.data.description,
+    subtitle: post.data.subtitle,
+    imageUrl: ogImageUrl,
+    imageWidth: 1200,
+    datePublished: post.data.date.toISOString(),
+    tags: post.data.tags,
+    pillarLabel: PILLAR_LABELS[pillar as keyof typeof PILLAR_LABELS],
+    authorSlug,
+    authorName: post.data.author.name,
+    authorRole: post.data.author.role,
+    readTime: post.data.readTime,
+    wordCount,
+  }),
+  breadcrumbNode([
+    { name: 'Strona główna', path: '/' },
+    { name: 'Baza wiedzy', path: '/blog/' },
+    { name: PILLAR_LABELS[pillar as keyof typeof PILLAR_LABELS], path: `/${pillar}/` },
+    { name: post.data.title, path: `/${post.id}/` },
+  ]),
+);
 ---
 
 <Layout
@@ -71,6 +122,8 @@ const articleData = {
     tags: post.data.tags,
   }}
 >
+  <script type="application/ld+json" is:inline set:html={articleSchema} />
+
   <Navbar />
   <Article articleData={articleData}>
     <nav slot="breadcrumb" class="article-breadcrumb" aria-label="Ścieżka nawigacji">
