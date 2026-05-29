@@ -1,8 +1,11 @@
 ---
 /**
  * Footer – landing redesign 2026-05-09 (handoff).
- * Bottom bar (hairline-top): copyright + social pill (LinkedIn; 32px circle).
+ * Bottom bar (hairline-top): copyright + 4 social pills (32px circles).
  */
+import FacebookIcon from '../assets/icons/FacebookIcon.astro';
+import InstagramIcon from '../assets/icons/InstagramIcon.astro';
+import YouTubeIcon from '../assets/icons/YouTubeIcon.astro';
 
 const footerData = [
   {
@@ -100,9 +103,9 @@ const year = new Date().getFullYear();
       <span class="footer-copy">© {year} widocznosc.ai · ICEA</span>
       <div class="footer-socials">
         <a
-          href="https://www.linkedin.com/company/icea/"
+          href="https://www.linkedin.com/company/iceagroup/"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="me noopener noreferrer"
           class="footer-social"
           aria-label="LinkedIn ICEA"
         >
@@ -114,6 +117,24 @@ const year = new Date().getFullYear();
             <circle cx="4" cy="4" r="2"></circle>
           </svg>
         </a>
+        <a
+          href="https://www.facebook.com/iCEAGroup/"
+          target="_blank"
+          rel="me noopener noreferrer"
+          class="footer-social"
+          aria-label="Facebook ICEA"><FacebookIcon /></a>
+        <a
+          href="https://www.instagram.com/icea.pl/"
+          target="_blank"
+          rel="me noopener noreferrer"
+          class="footer-social"
+          aria-label="Instagram ICEA"><InstagramIcon /></a>
+        <a
+          href="https://www.youtube.com/@GRUPA_ICEA"
+          target="_blank"
+          rel="me noopener noreferrer"
+          class="footer-social"
+          aria-label="YouTube ICEA"><YouTubeIcon /></a>
       </div>
     </div>
   </div>

@@ -14,6 +14,14 @@ export const ORG_ID = `${SITE_URL}/#organization`;
 export const PARENT_ORG_ID = 'https://grupa-icea.pl/#organization';
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 
+// Oficjalne profile social ICEA – sameAs dla Organization (sygnał encji dla AI/Google).
+export const ICEA_SOCIAL = [
+  'https://www.linkedin.com/company/iceagroup/',
+  'https://www.facebook.com/iCEAGroup/',
+  'https://www.instagram.com/icea.pl/',
+  'https://www.youtube.com/@GRUPA_ICEA',
+];
+
 const cleanUrl = (path: string) => `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`;
 
 const ensureTrailingSlash = (path: string) => (path.endsWith('/') ? path : `${path}/`);
@@ -89,9 +97,9 @@ export const organizationNode = () => ({
       { '@type': 'PropertyValue', propertyID: 'REGON', value: '382883680' },
     ],
     vatID: 'PL7811993323',
-    sameAs: ['https://www.linkedin.com/company/icea/'],
+    sameAs: ICEA_SOCIAL,
   },
-  sameAs: ['https://www.linkedin.com/company/icea/'],
+  sameAs: ICEA_SOCIAL,
 });
 
 /**
