@@ -36,6 +36,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add portals/widocznosc.ai/src/content/news/ portals/widocznosc.ai/src/assets/images/news-* pipeline/news-generator-widocznosc/published.json
+          git add portals/widocznosc.ai/src/content/news/ pipeline/news-generator-widocznosc/published.json
+          # Hero news-* dodaj tylko jeśli powstał (przy fallbacku obrazu glob jest pusty – nie wywalaj kroku)
+          git add portals/widocznosc.ai/src/assets/images/news-* 2>/dev/null || true
           git diff --cached --quiet || git commit -m "news: auto-generated daily news (widocznosc)"
           git push
