@@ -1,0 +1,20 @@
+feeds:
+  - url: "https://news.google.com/rss/search?q=bus+OR+van+OR+kamper+OR+dostawczy&hl=pl&gl=PL&ceid=PL:pl"
+    category: "general"
+    name: "Google News PL"
+
+  - url: "https://news.google.com/rss/search?q=fiat+ducato+OR+mercedes+sprinter+OR+ford+transit&hl=pl&gl=PL&ceid=PL:pl"
+    category: "modele"
+    name: "Google News modele"
+
+  - url: "https://news.google.com/rss/search?q=kamper+OR+campervan+OR+vanlife&hl=pl&gl=PL&ceid=PL:pl"
+    category: "kampery"
+    name: "Google News kampery"
+
+  - url: "https://news.google.com/rss/search?q=paliwo+diesel+OR+ceny+paliw+polska&hl=pl&gl=PL&ceid=PL:pl"
+    category: "serwis"
+    name: "Google News paliwo"
+
+  - url: "https://news.google.com/rss/search?q=prawo+drogowe+OR+regulacje+transport&hl=pl&gl=PL&ceid=PL:pl"
+    category: "przepisy"
+    name: "Google News przepisy"
