@@ -48,7 +48,7 @@ Wymagania:
   1. `## Co się wydarzyło` – streszczenie faktów własnymi słowami.
   2. Zaraz po tej sekcji wstaw jednozdaniowy wyróżnik jako cytat blockquote:
      `> **Nasz komentarz:** [jedno mocne, konkretne zdanie – nasza opinia/wniosek z perspektywy redakcji].`
-  3. `## Co to oznacza dla Twojej marki` – ekspercki komentarz naszej redakcji: praktyczne wnioski, zaimki dzierżawcze („naszym zdaniem”, „w naszej ocenie”), bezpośrednie zwroty do czytelnika. Zaangażuj – pokaż, co czytelnik powinien z tym zrobić.
+  3. `## Co to oznacza dla Twojej marki` – ekspercki komentarz naszej redakcji: praktyczne wnioski, zaimki dzierżawcze („naszym zdaniem”, „w naszej ocenie”), bezpośrednie zwroty do czytelnika. Zaangażuj – pokaż, co czytelnik powinien z tym zrobić. Akapit wprowadzający, a następnie kluczowe wnioski przedstaw jako wypunktowaną listę (markdown z myślnikami `-`) w formacie `**Pogrubiony wniosek** – rozwinięcie`. NIE numeruj wniosków słownie („Pierwszy wniosek”, „Drugi wniosek”) – używaj listy. Po liście możesz dodać jedno akapitowe podsumowanie.
   4. `## W skrócie` na samym końcu – lista 3 punktów (myślniki) z najważniejszymi wnioskami do zapamiętania (TL;DR).
 - ZAKAZ frazy „Z perspektywy widocznosc.ai” i pisania o sobie w 3. osobie. Pisz „naszym zdaniem”, „w naszej ocenie”, „uważamy”.
 - NIE kopiuj zdań z oryginału. NIE wymyślaj faktów spoza źródła.
