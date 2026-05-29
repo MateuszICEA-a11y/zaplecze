@@ -149,23 +149,32 @@ export const profilePageIdFor = (slug: string) => `${SITE_URL}/autor/${slug}/#pr
 export const personNode = (slug: string, data: AuthorData) => {
   const sameAs = [data.linkedin, data.iceaProfile, data.twitter].filter(Boolean) as string[];
 
-  const alumniOf = data.education?.map((edu) => {
-    const educationalCredential = [edu.degree, edu.fieldOfStudy].filter(Boolean).join(' · ');
-    const hasOccupationalCredential = educationalCredential
-      ? {
-          '@type': 'EducationalOccupationalCredential',
-          credentialCategory: educationalCredential,
-          ...(edu.endYear ? { dateCreated: String(edu.endYear) } : {}),
-        }
-      : undefined;
-    return {
-      '@type': 'EducationalOrganization',
-      name: edu.name,
-      ...(hasOccupationalCredential ? { hasOccupationalCredential } : {}),
-    };
-  });
+  // alumniOf: czyste EducationalOrganization (sama uczelnia).
+  const alumniOf = data.education?.map((edu) => ({
+    '@type': 'EducationalOrganization',
+    name: edu.name,
+  }));
 
-  const hasCredential = data.credentials?.map((cred) => ({
+  // Dyplomy z education -> EducationalOccupationalCredential na poziomie Person
+  // (hasCredential), z recognizedBy wskazujacym uczelnie. hasOccupationalCredential
+  // nie jest property schema.org; hasCredential jest poprawne na Person.
+  const degreeCredentials = data.education
+    ?.map((edu) => {
+      const category = [edu.degree, edu.fieldOfStudy].filter(Boolean).join(' · ');
+      if (!category) return null;
+      return {
+        '@type': 'EducationalOccupationalCredential',
+        credentialCategory: category,
+        recognizedBy: {
+          '@type': 'EducationalOrganization',
+          name: edu.name,
+        },
+        ...(edu.endYear ? { dateCreated: String(edu.endYear) } : {}),
+      };
+    })
+    .filter(Boolean);
+
+  const certCredentials = data.credentials?.map((cred) => ({
     '@type': 'EducationalOccupationalCredential',
     name: cred.name,
     credentialCategory: 'certification',
@@ -176,6 +185,8 @@ export const personNode = (slug: string, data: AuthorData) => {
     ...(cred.dateIssued ? { dateCreated: cred.dateIssued } : {}),
     ...(cred.credentialId ? { identifier: cred.credentialId } : {}),
   }));
+
+  const hasCredential = [...(certCredentials ?? []), ...(degreeCredentials ?? [])];
 
   return {
     '@type': 'Person',
