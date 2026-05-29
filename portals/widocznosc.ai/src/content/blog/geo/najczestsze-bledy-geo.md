@@ -14,6 +14,36 @@ tags: ['GEO', 'Błędy', 'Optymalizacja', 'AI Search']
 pillar: 'geo'
 intent: 'INFO'
 level: 'L2'
+faqHeading: 'FAQ'
+faq:
+  - q: 'Czy blokowanie GPTBot wyklucza mnie z wyników ChatGPT?'
+    a: >-
+      Nie całkowicie – ale blokowanie <code>GPTBot</code> (bota treningowego) to co innego niż
+      blokowanie <code>OAI-SearchBot</code> (bota wyszukiwawczego). <code>GPTBot</code> zbiera dane
+      do trenowania modeli offline. <code>OAI-SearchBot</code> pobiera treści w czasie rzeczywistym,
+      żeby ChatGPT Search mógł cytować Twoją stronę użytkownikom. Możesz bezpiecznie blokować
+      <code>GPTBot</code>, jednocześnie zezwalając na <code>OAI-SearchBot</code> – i to jest
+      zalecana konfiguracja dla większości wydawców.
+  - q: 'Jak szybko widać efekty po poprawieniu treści?'
+    a: >-
+      Pierwsze mierzalne wzrosty Citation Rate pojawiają się zwykle po 3–6 tygodniach od
+      opublikowania przepisanych stron. Boty wyszukiwawcze (np. <code>PerplexityBot</code>) mają
+      krótsze cykle indeksowania niż Googlebot – tygodniowe lub nawet codzienne. Efekty związane
+      z danymi treningowymi (modele offline) pojawiają się dopiero po aktualizacji modeli, co może
+      zająć kilka miesięcy.
+  - q: 'Co ważniejsze – techniczne fundamenty czy treść?'
+    a: >-
+      Oba są niezbędne, ale mają różne priorytety. Jeśli Twój <code>robots.txt</code> blokuje boty
+      wyszukiwawcze, najlepsza treść i tak nie zostanie zacytowana – napraw technikę najpierw.
+      Jeśli strona jest technicznie dostępna, ale treść to ogólnikowe opisy bez danych, bot wejdzie,
+      pobierze fragmenty i nie wybierze ich przy generowaniu odpowiedzi. Obie warstwy muszą działać
+      jednocześnie.
+  - q: 'Czy GEO ma sens dla małych firm z niskim autorytetem domeny (DA)?'
+    a: >-
+      Tak – i badanie Princeton pokazuje, że małe marki z niskim autorytetem domenowym, które
+      wdrożyły statystyki i cytowania, zyskują proporcjonalnie więcej niż liderzy rynku. Więcej
+      o tym mechanizmie opisuje artykuł <a href="/geo/czym-jest-geo/">czym jest GEO</a> – wraz
+      z przykładami z małych nisz B2B.
 ---
 
 Aż 73% firm nie dysponuje żadnym narzędziem do mierzenia widoczności swojej marki w odpowiedziach AI – a mimo to ich zespoły aktywnie „optymalizują pod kątem LLM-ów", kopiując reguły klasycznego SEO do zupełnie innego systemu. To prosta droga do niewidzialności. GEO (Generative Engine Optimization, czyli optymalizacja pod generatywne silniki wyszukiwania) rządzi się własną logiką: liczy się nie pozycja rankingowa, lecz to, czy Twoja treść trafia do syntezy, którą model buduje w czasie rzeczywistym. Poniżej opisuję błędy, które widzę najczęściej w audytach, wraz z konkretnymi krokami naprawczymi.
@@ -127,21 +157,3 @@ Trzy metryki, od których warto zacząć monitoring:
 Praktyczny punkt startowy: wybierz 20 pytań, które Twoi klienci wpisują w ChatGPT lub Perplexity. Odpytuj je co dwa tygodnie w czystej sesji przeglądarki bez personalizacji. To Twój bazowy wskaźnik cytowań przed wdrożeniem jakichkolwiek zmian. Pełny [przewodnik po GEO](/geo/przewodnik/) opisuje metodologię pomiaru i 6-miesięczny horyzont wdrożenia.
 
 Jeśli chcesz zobaczyć punkt startowy szybciej, narzędzie [Ocena cytowalności strony](/narzedzia/url-check/) analizuje Twoją stronę pod kątem cytowalności i wskazuje konkretne elementy do poprawy – bez konieczności manualnego testowania.
-
-## FAQ
-
-### Czy blokowanie GPTBot wyklucza mnie z wyników ChatGPT?
-
-Nie całkowicie – ale blokowanie `GPTBot` (bota treningowego) to co innego niż blokowanie `OAI-SearchBot` (bota wyszukiwawczego). `GPTBot` zbiera dane do trenowania modeli offline. `OAI-SearchBot` pobiera treści w czasie rzeczywistym, żeby ChatGPT Search mógł cytować Twoją stronę użytkownikom. Możesz bezpiecznie blokować `GPTBot`, jednocześnie zezwalając na `OAI-SearchBot` – i to jest zalecana konfiguracja dla większości wydawców.
-
-### Jak szybko widać efekty po poprawieniu treści?
-
-Pierwsze mierzalne wzrosty Citation Rate pojawiają się zwykle po 3–6 tygodniach od opublikowania przepisanych stron. Boty wyszukiwawcze (np. `PerplexityBot`) mają krótsze cykle indeksowania niż Googlebot – tygodniowe lub nawet codzienne. Efekty związane z danymi treningowymi (modele offline) pojawiają się dopiero po aktualizacji modeli, co może zająć kilka miesięcy.
-
-### Co ważniejsze – techniczne fundamenty czy treść?
-
-Oba są niezbędne, ale mają różne priorytety. Jeśli Twój `robots.txt` blokuje boty wyszukiwawcze, najlepsza treść i tak nie zostanie zacytowana – napraw technikę najpierw. Jeśli strona jest technicznie dostępna, ale treść to ogólnikowe opisy bez danych, bot wejdzie, pobierze fragmenty i nie wybierze ich przy generowaniu odpowiedzi. Obie warstwy muszą działać jednocześnie.
-
-### Czy GEO ma sens dla małych firm z niskim autorytetem domeny (DA)?
-
-Tak – i badanie Princeton pokazuje, że małe marki z niskim autorytetem domenowym, które wdrożyły statystyki i cytowania, zyskują proporcjonalnie więcej niż liderzy rynku. Więcej o tym mechanizmie opisuje artykuł [czym jest GEO](/geo/czym-jest-geo/) – wraz z przykładami z małych nisz B2B.

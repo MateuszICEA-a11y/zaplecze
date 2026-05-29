@@ -15,6 +15,46 @@ pillar: 'geo'
 featured: true
 intent: 'INFO'
 level: 'L2'
+faqHeading: 'Często zadawane pytania o GEO'
+faq:
+  - q: 'Czy GEO zastępuje SEO?'
+    a: >-
+      Nie. GEO działa na innej warstwie niż SEO, a obie te dyscypliny wzajemnie się
+      wzmacniają. Silna pozycja organiczna zwiększa prawdopodobieństwo, że Twoja strona
+      zostanie pobrana przez silnik RAG – wysoka pozycja w Google koreluje z tym, że bot
+      wybierze Twoją stronę spośród wielu innych. Z drugiej strony: sama wysoka pozycja
+      SEO nie gwarantuje cytowania. Treść dobrze zoptymalizowana pod kątem GEO może
+      generować cytowania w AI nawet ze stron znajdujących się na pozycjach 5–10 w
+      wynikach wyszukiwania.
+  - q: 'Ile czasu zajmuje wdrożenie GEO?'
+    a: >-
+      Pierwsze efekty techniczne (odblokowanie botów, wdrożenie pliku
+      <code>llms.txt</code>) pojawiają się w ciągu 2–4 tygodni. Pierwsze mierzalne wzrosty
+      wskaźnika Citation Rate widać po około 6–8 tygodniach od przepisania kluczowych
+      stron. Pełne efekty strategii (np. wzrost SoV o 40–80%) to horyzont 4–6 miesięcy
+      systematycznej pracy.
+  - q: 'Jakie branże zyskują na GEO najbardziej?'
+    a: >-
+      Przede wszystkim B2B SaaS, usługi profesjonalne, e-commerce z porównywalnymi
+      produktami oraz branża edukacyjna. We wszystkich tych przypadkach użytkownicy
+      aktywnie proszą ChatGPT lub Perplexity o rekomendacje, zestawienia i rankingi – to
+      typowe zapytania, w których Twoja marka ma szansę (lub jej brak) pojawić się w
+      odpowiedzi.
+  - q: 'Czy mała firma może skutecznie wdrożyć GEO?'
+    a: >-
+      Tak – badanie Princeton udowadnia, że mniejsze marki z niskim autorytetem domeny,
+      które wdrożyły statystyki i eksperckie cytowania, zyskują proporcjonalnie znacznie
+      więcej niż liderzy rynku. <strong>GEO to obecnie jedna z niewielu taktyk
+      marketingowych, która realnie wyrównuje szanse między dużymi i małymi
+      graczami.</strong>
+  - q: 'Od czego zacząć, jeśli mam ograniczone zasoby?'
+    a: >-
+      Od trzech prostych kroków: sprawdź dostęp botów AI w pliku
+      <code>robots.txt</code>, dodaj plik <code>llms.txt</code> i przepisz jedną stronę o
+      największym ruchu według zasad GEO (nagłówki jako pytania, statystyki z datą i
+      źródłem, bloki tekstu po 200–400 słów). Zmierz swój wskaźnik Citation Rate przed
+      optymalizacją i po niej. To w zupełności wystarczy, aby zobaczyć pierwsze efekty i
+      uzasadnić biznesowo kolejne kroki.
 ---
 
 GEO, czyli Generative Engine Optimization (optymalizacja pod generatywne silniki wyszukiwania), to dyscyplina, która mierzy i poprawia obecność Twojej marki w odpowiedziach ChatGPT, Perplexity, Google AI Overviews i podobnych narzędzi. To nie jest „SEO dla AI" – to osobna logika, odrębne metryki i inne taktyki. Badanie [Aggarwal et al. (KDD 2024)](https://arxiv.org/abs/2311.09735) z Princeton University udokumentowało po raz pierwszy, że konkretne elementy treści – statystyki, cytowania ekspertów, autorytatywny ton – podnoszą widoczność w LLM o 30–115%, podczas gdy klasyczne zabiegi SEO nie przynoszą żadnego efektu albo wręcz szkodzą. Jeśli Twoja marka dziś nie pojawia się w odpowiedziach AI, ten przewodnik pokazuje, dlaczego tak jest i co z tym zrobić.
@@ -206,25 +246,3 @@ Harmonogram z oczekiwanymi efektami:
 | Miesiąc 3–4 | Przepisanie 10–15 stron według standardu GEO | Pierwsze wzrosty Citation Rate (+10–20%) |
 | Miesiąc 5 | Sygnały zewnętrzne, budowanie wzmianek | Cytowania w niszowych odpowiedziach AI |
 | Miesiąc 6 | Dojrzałość procesu, automatyzacja pomiaru SoV | Wzrost cytowań o 75–85% w stosunku do punktu startowego |
-
-## Często zadawane pytania o GEO
-
-### Czy GEO zastępuje SEO?
-
-Nie. GEO działa na innej warstwie niż SEO, a obie te dyscypliny wzajemnie się wzmacniają. Silna pozycja organiczna zwiększa prawdopodobieństwo, że Twoja strona zostanie pobrana przez silnik RAG – wysoka pozycja w Google koreluje z tym, że bot wybierze Twoją stronę spośród wielu innych. Z drugiej strony: sama wysoka pozycja SEO nie gwarantuje cytowania. Treść dobrze zoptymalizowana pod kątem GEO może generować cytowania w AI nawet ze stron znajdujących się na pozycjach 5–10 w wynikach wyszukiwania.
-
-### Ile czasu zajmuje wdrożenie GEO?
-
-Pierwsze efekty techniczne (odblokowanie botów, wdrożenie pliku `llms.txt`) pojawiają się w ciągu 2–4 tygodni. Pierwsze mierzalne wzrosty wskaźnika Citation Rate widać po około 6–8 tygodniach od przepisania kluczowych stron. Pełne efekty strategii (np. wzrost SoV o 40–80%) to horyzont 4–6 miesięcy systematycznej pracy.
-
-### Jakie branże zyskują na GEO najbardziej?
-
-Przede wszystkim B2B SaaS, usługi profesjonalne, e-commerce z porównywalnymi produktami oraz branża edukacyjna. We wszystkich tych przypadkach użytkownicy aktywnie proszą ChatGPT lub Perplexity o rekomendacje, zestawienia i rankingi – to typowe zapytania, w których Twoja marka ma szansę (lub jej brak) pojawić się w odpowiedzi.
-
-### Czy mała firma może skutecznie wdrożyć GEO?
-
-Tak – badanie Princeton udowadnia, że mniejsze marki z niskim autorytetem domeny, które wdrożyły statystyki i eksperckie cytowania, zyskują proporcjonalnie znacznie więcej niż liderzy rynku. **GEO to obecnie jedna z niewielu taktyk marketingowych, która realnie wyrównuje szanse między dużymi i małymi graczami.**
-
-### Od czego zacząć, jeśli mam ograniczone zasoby?
-
-Od trzech prostych kroków: sprawdź dostęp botów AI w pliku `robots.txt`, dodaj plik `llms.txt` i przepisz jedną stronę o największym ruchu według zasad GEO (nagłówki jako pytania, statystyki z datą i źródłem, bloki tekstu po 200–400 słów). Zmierz swój wskaźnik Citation Rate przed optymalizacją i po niej. To w zupełności wystarczy, aby zobaczyć pierwsze efekty i uzasadnić biznesowo kolejne kroki.

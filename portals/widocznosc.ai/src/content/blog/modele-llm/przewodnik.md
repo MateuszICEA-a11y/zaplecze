@@ -14,6 +14,23 @@ tags: ['LLM', 'Modele AI', 'ChatGPT', 'Claude']
 pillar: 'modele-llm'
 intent: 'INFO'
 level: 'L1'
+faqHeading: 'Często zadawane pytania o ekosystem LLM'
+faq:
+  - q: 'Który model AI jest najlepszy dla małej firmy?'
+    a: >-
+      To zależy od przypadku użycia. Do pisania treści i analizy dokumentów – Claude Sonnet 4.6 lub GPT-5.5 (oba dostępne w planie freemium). Do wyszukiwania z aktualnymi danymi i cytowaniami – Perplexity. Do zadań wymagających pełnej kontroli nad danymi – model open source jak Mistral lub Bielik uruchomiony lokalnie.
+  - q: 'Czy blokowanie botów AI w robots.txt zaszkodzi mojej stronie?'
+    a: >-
+      Tak, jeśli zależy Ci na widoczności w AI. Zablokowanie <code>GPTBot</code> wyłącza stronę z SearchGPT. Zablokowanie <code>PerplexityBot</code> eliminuje ją z cytowań Perplexity. Zablokowanie <code>ClaudeBot</code> oznacza, że Claude nie pobierze aktualnych danych o Twojej marce. Każdy z tych botów blokujesz oddzielną dyrektywą w <code>robots.txt</code>.
+  - q: 'Czym różni się LLM od tradycyjnej wyszukiwarki?'
+    a: >-
+      Tradycyjna wyszukiwarka tworzy ranking stron i pokazuje listę linków. LLM generuje syntetyczną odpowiedź, która może – ale nie musi – zawierać link do Twojej strony. Użytkownik dostaje gotową odpowiedź, nie listę stron do kliknięcia. <strong>Dla marketerów oznacza to, że samo bycie na pierwszej stronie Google nie gwarantuje już obecności w odpowiedzi, którą zobaczy użytkownik.</strong>
+  - q: 'Co to jest okno kontekstowe i dlaczego ma znaczenie?'
+    a: >-
+      Okno kontekstowe to ilość tekstu, którą model może przetworzyć naraz. Im większe, tym dłuższe dokumenty możesz analizować w jednej sesji. Dla użytkownika końcowego: GPT-5.5 przetworzy kilka raportów rocznych (400 000 tokenów), a Claude Sonnet 4.6 i Gemini 3.1 Pro – nawet kilkadziesiąt (dzięki oknom o wielkości 1 miliona tokenów). Dla widoczności marki: model z małym oknem może nie „zobaczyć" Twojej marki, jeśli pojawia się tylko w dalszej części długiego dokumentu.
+  - q: 'Czy modele AI mają datę graniczną wiedzy?'
+    a: >-
+      Tak. Modele trenowane są na danych z określonego przedziału czasowego (do tzw. daty odcięcia, ang. <em>cutoff date</em>) – po tej dacie nowe informacje o Twojej firmie nie trafiają automatycznie do wiedzy modelu. Modele z aktywnym RAG (SearchGPT, Perplexity, Copilot, Gemini z Searchem) uzupełniają wiedzę treningową danymi pobranymi w chwili zapytania. Dlatego aktualne treści na stronie mają znaczenie – bot może je pobrać i dołączyć do odpowiedzi.
 ---
 
 LLM (Large Language Model, czyli duży model językowy) to nie jeden produkt – to cały ekosystem kilkudziesięciu systemów, które różnią się architekturą, mocnymi stronami, ceną i tym, jak traktują Twoją markę jako potencjalne źródło cytowań. **Dziś 88% firm deklaruje wdrożenie generatywnej AI, a użytkownicy zadają pytania o produkty i usługi bezpośrednio w ChatGPT, Perplexity czy w Gemini – zamiast wpisywać je w wyszukiwarkę.** Ten przewodnik pokazuje, jak działa każdy z głównych modeli, czym się od siebie różnią i co to oznacza dla widoczności Twojej marki w odpowiedziach AI.
@@ -182,25 +199,3 @@ Jeśli zależy Ci na cytowaniach z widocznym linkiem – Perplexity generuje ruc
 Jeśli budujesz brand w kategorii, w której klienci porównują dostawców – ChatGPT z SearchGPT jest pierwszym miejscem, gdzie szukają. Treści porównawcze z danymi liczbowymi są tu najskuteczniejsze.
 
 Strategię opartą na danych zamiast na domysłach buduje [pozycjonowanie AI](/pozycjonowanie-ai/) – metodyka GEO, która mierzy widoczność Twojej marki we wszystkich głównych modelach jednocześnie i wyznacza priorytety działań. Swój punkt startowy możesz sprawdzić przez [Widoczność marki w AI](/narzedzia/brand-check/), który odpyta cztery silniki AI o Twoją markę i pokaże, jak wypadasz na tle kategorii.
-
-## Często zadawane pytania o ekosystem LLM
-
-### Który model AI jest najlepszy dla małej firmy?
-
-To zależy od przypadku użycia. Do pisania treści i analizy dokumentów – Claude Sonnet 4.6 lub GPT-5.5 (oba dostępne w planie freemium). Do wyszukiwania z aktualnymi danymi i cytowaniami – Perplexity. Do zadań wymagających pełnej kontroli nad danymi – model open source jak Mistral lub Bielik uruchomiony lokalnie.
-
-### Czy blokowanie botów AI w robots.txt zaszkodzi mojej stronie?
-
-Tak, jeśli zależy Ci na widoczności w AI. Zablokowanie `GPTBot` wyłącza stronę z SearchGPT. Zablokowanie `PerplexityBot` eliminuje ją z cytowań Perplexity. Zablokowanie `ClaudeBot` oznacza, że Claude nie pobierze aktualnych danych o Twojej marce. Każdy z tych botów blokujesz oddzielną dyrektywą w `robots.txt`.
-
-### Czym różni się LLM od tradycyjnej wyszukiwarki?
-
-Tradycyjna wyszukiwarka tworzy ranking stron i pokazuje listę linków. LLM generuje syntetyczną odpowiedź, która może – ale nie musi – zawierać link do Twojej strony. Użytkownik dostaje gotową odpowiedź, nie listę stron do kliknięcia. **Dla marketerów oznacza to, że samo bycie na pierwszej stronie Google nie gwarantuje już obecności w odpowiedzi, którą zobaczy użytkownik.**
-
-### Co to jest okno kontekstowe i dlaczego ma znaczenie?
-
-Okno kontekstowe to ilość tekstu, którą model może przetworzyć naraz. Im większe, tym dłuższe dokumenty możesz analizować w jednej sesji. Dla użytkownika końcowego: GPT-5.5 przetworzy kilka raportów rocznych (400 000 tokenów), a Claude Sonnet 4.6 i Gemini 3.1 Pro – nawet kilkadziesiąt (dzięki oknom o wielkości 1 miliona tokenów). Dla widoczności marki: model z małym oknem może nie „zobaczyć" Twojej marki, jeśli pojawia się tylko w dalszej części długiego dokumentu.
-
-### Czy modele AI mają datę graniczną wiedzy?
-
-Tak. Modele trenowane są na danych z określonego przedziału czasowego (do tzw. daty odcięcia, ang. *cutoff date*) – po tej dacie nowe informacje o Twojej firmie nie trafiają automatycznie do wiedzy modelu. Modele z aktywnym RAG (SearchGPT, Perplexity, Copilot, Gemini z Searchem) uzupełniają wiedzę treningową danymi pobranymi w chwili zapytania. Dlatego aktualne treści na stronie mają znaczenie – bot może je pobrać i dołączyć do odpowiedzi.

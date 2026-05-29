@@ -14,6 +14,37 @@ tags: ['ChatGPT', 'Funkcje', 'Poradnik', 'OpenAI']
 pillar: 'modele-llm'
 intent: 'INFO'
 level: 'L1'
+faqHeading: 'Często zadawane pytania o ChatGPT'
+faq:
+  - q: 'Czy ChatGPT jest bezpłatny?'
+    a: >-
+      Plan Free jest dostępny bez opłat, ale posiada limity liczby wiadomości. Do regularnej
+      pracy zawodowej plan Plus (20 USD/miesiąc) znosi praktyczne ograniczenia w codziennym
+      użytkowaniu.
+  - q: 'Czy ChatGPT zapamiętuje poprzednie rozmowy?'
+    a: >-
+      Tak – od wiosny 2024 roku ChatGPT ma funkcję pamięci (Memory), która zachowuje kluczowe
+      informacje między sesjami. Możesz tę funkcję wyłączyć lub ręcznie zarządzać tym, co model
+      ma pamiętać. W ramach jednej konwersacji model zawsze pamięta cały wcześniejszy kontekst.
+  - q: 'Czy można używać ChatGPT w firmie bez naruszania RODO?'
+    a: >-
+      W planach Free i Plus dane mogą być używane do trenowania modeli, co czyni je
+      nieodpowiednimi do pracy z danymi osobowymi lub tajemnicami handlowymi. Do zastosowań
+      firmowych z danymi wrażliwymi wymagany jest plan Business lub Enterprise, który zawiera
+      umowę powierzenia przetwarzania danych (DPA) zgodną z RODO i gwarancję, że dane nie służą
+      do trenowania.
+  - q: 'Jak ChatGPT radzi sobie z polskim językiem?'
+    a: >-
+      Bardzo dobrze – polszczyzna należy do grupy języków, na których model był intensywnie
+      trenowany. Wyniki w języku polskim są nieznacznie gorsze niż w angielskim tylko przy
+      bardzo specjalistycznych pytaniach, ale dla zdecydowanej większości zastosowań biznesowych
+      różnica ta jest nieistotna.
+  - q: 'Czym ChatGPT różni się od wyszukiwarki?'
+    a: >-
+      Wyszukiwarka podaje listę linków do istniejących stron. ChatGPT generuje odpowiedź na
+      podstawie modelu statystycznego i (jeśli włączono wyszukiwanie) bieżących danych z sieci.
+      Wyszukiwarka jest lepsza do znajdowania konkretnych zasobów; ChatGPT – do syntezy, analizy,
+      pisania i wyjaśniania.
 ---
 
 ChatGPT to narzędzie stworzone przez OpenAI, które opiera się na architekturze GPT (Generative Pre-trained Transformer) – jednej z najważniejszych innowacji w dziedzinie [przetwarzania języka naturalnego](https://pl.wikipedia.org/wiki/Przetwarzanie_j%C4%99zyka_naturalnego). Model nie „myśli” w ludzkim tego słowa znaczeniu: analizuje statystyczne wzorce w miliardach zdań i na tej podstawie generuje odpowiedzi dopasowane do kontekstu zapytania. Jeśli dopiero zaczynasz, ten artykuł pokaże Ci, do czego ChatGPT realnie się nadaje, jakich planów możesz używać i gdzie leżą jego granice – bez lania wody i technicznego żargonu.
@@ -141,25 +172,3 @@ Na rynku działają inne duże modele językowe (LLM – Large Language Model) o
 **Większość profesjonalnych zastosowań nie wymaga wyboru – możesz korzystać z kilku modeli jednocześnie, dobierając narzędzie do zadania.** Porównanie możliwości ChatGPT i Claude w praktycznych zadaniach SEO znajdziesz w artykule o [modelu Claude](/modele-llm/claude/).
 
 Jeśli chcesz sprawdzić, jak ChatGPT widzi i opisuje Twoją markę lub domenę w kontekście branżowym, [Widoczność marki w AI](/narzedzia/brand-check/) przeanalizuje zapytania w czterech silnikach AI i pokaże Ci obraz Twojej widoczności bez konieczności ręcznego testowania.
-
-## Często zadawane pytania o ChatGPT
-
-### Czy ChatGPT jest bezpłatny?
-
-Plan Free jest dostępny bez opłat, ale posiada limity liczby wiadomości. Do regularnej pracy zawodowej plan Plus (20 USD/miesiąc) znosi praktyczne ograniczenia w codziennym użytkowaniu.
-
-### Czy ChatGPT zapamiętuje poprzednie rozmowy?
-
-Tak – od wiosny 2024 roku ChatGPT ma funkcję pamięci (Memory), która zachowuje kluczowe informacje między sesjami. Możesz tę funkcję wyłączyć lub ręcznie zarządzać tym, co model ma pamiętać. W ramach jednej konwersacji model zawsze pamięta cały wcześniejszy kontekst.
-
-### Czy można używać ChatGPT w firmie bez naruszania RODO?
-
-W planach Free i Plus dane mogą być używane do trenowania modeli, co czyni je nieodpowiednimi do pracy z danymi osobowymi lub tajemnicami handlowymi. Do zastosowań firmowych z danymi wrażliwymi wymagany jest plan Business lub Enterprise, który zawiera umowę powierzenia przetwarzania danych (DPA) zgodną z RODO i gwarancję, że dane nie służą do trenowania.
-
-### Jak ChatGPT radzi sobie z polskim językiem?
-
-Bardzo dobrze – polszczyzna należy do grupy języków, na których model był intensywnie trenowany. Wyniki w języku polskim są nieznacznie gorsze niż w angielskim tylko przy bardzo specjalistycznych pytaniach, ale dla zdecydowanej większości zastosowań biznesowych różnica ta jest nieistotna.
-
-### Czym ChatGPT różni się od wyszukiwarki?
-
-Wyszukiwarka podaje listę linków do istniejących stron. ChatGPT generuje odpowiedź na podstawie modelu statystycznego i (jeśli włączono wyszukiwanie) bieżących danych z sieci. Wyszukiwarka jest lepsza do znajdowania konkretnych zasobów; ChatGPT – do syntezy, analizy, pisania i wyjaśniania.

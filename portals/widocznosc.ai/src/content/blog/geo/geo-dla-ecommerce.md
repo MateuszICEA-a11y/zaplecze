@@ -14,6 +14,36 @@ tags: ['GEO', 'E-commerce', 'AI Search', 'Produkty']
 pillar: 'geo'
 intent: 'HOWTO'
 level: 'L2'
+faqHeading: 'Często zadawane pytania o GEO dla e-commerce'
+faq:
+  - q: 'Czy GEO zastępuje SEO w sklepie internetowym?'
+    a: >-
+      Nie. SEO i GEO współdziałają: wysoka pozycja organiczna zwiększa szansę, że bot RAG wybierze
+      Twoją stronę spośród wielu kandydatów. Jednocześnie sama dobra pozycja w Google nie gwarantuje
+      cytowania – treść musi spełniać wymogi gęstości faktów. Traktuj GEO jako drugą warstwę
+      optymalizacji, a nie jej zamiennik.
+  - q: 'Czy małe sklepy mogą skutecznie konkurować z dużymi w wynikach AI?'
+    a: >-
+      Tak – i to jest jedna z niewielu przewag GEO nad tradycyjnym SEO. Badanie Princeton KDD 2024
+      pokazało, że strony z niskim autorytetem domenowym, które wdrożyły statystyki i cytowania,
+      zyskiwały proporcjonalnie więcej niż liderzy rynku. Specjalizacja w niszy z bardzo konkretnym
+      opisem produktu i pełnymi danymi technicznymi wygrywa z ogólnikowymi opisami dużych platform.
+  - q: 'Co z Amazon i innymi marketplace''ami?'
+    a: >-
+      Platformy marketplace mają własne silniki AI – Amazon Rufus działa w oparciu o algorytm COSMO,
+      który analizuje relacje semantyczne między produktem a intencjami zakupowymi. Optymalizacja
+      listingów na Amazon pod GEO to osobna dyscyplina: kluczowe to tytuł w schemacie „typ +
+      przeznaczenie + cechy", bullet points odpowiadające na pytania Rufusa i uzupełnienie wszystkich
+      atrybutów w panelu sprzedawcy.
+  - q: 'Od czego zacząć przy ograniczonym budżecie?'
+    a: >-
+      Trzy kroki, które kosztują tylko czas: sprawdź dostęp botów AI (<code>robots.txt</code>),
+      przepisz opisy pięciu najlepiej sprzedających się produktów na model z parametrami w pierwszym
+      akapicie i nagłówkami-pytaniami, dodaj <code>Product</code> + <code>MerchantListing</code> w
+      JSON-LD. Zmierz Citation Rate przed i po. To wystarczy, żeby zobaczyć efekt i uzasadnić kolejne
+      inwestycje. Jeśli chcesz ocenić obecny stan widoczności swojego sklepu w AI, zacznij od
+      <a href="/geo/audyt-widocznosci-marki/">audytu widoczności marki</a> – pokazuje, gdzie jesteś
+      względem konkurencji.
 ---
 
 Kiedy klient zadaje w ChatGPT pytanie: „jakie słuchawki bezprzewodowe do 400 zł są najlepsze?", model nie przegląda rankingów Google – pobiera fragmenty stron, które techniczne boty uznały za wiarygodne, wyciąga z nich dane i skleja odpowiedź w kilka sekund. Jeśli Twój sklep nie zostanie uwzględniony w tym zestawieniu, nie istniejesz dla tego klienta. **GEO (Generative Engine Optimization, czyli optymalizacja pod generatywne silniki wyszukiwania) to właśnie zestaw taktyk, które sprawiają, że produkty i kategorie Twojego sklepu trafiają do odpowiedzi AI – a nie tylko do tradycyjnych rankingów.** Ten artykuł tłumaczy, co konkretnie zmienić w strukturze strony, opisach produktów i warstwie danych, żeby wskaźnik cytowań (Citation Rate) ruszył w górę.
@@ -164,21 +194,3 @@ GEO dla e-commerce można wdrażać etapami, bez przebudowy całego sklepu. Poni
 Pierwsze efekty techniczne – po odblokowaniu botów i wdrożeniu JSON-LD – pojawiają się w ciągu 2–4 tygodni. Mierzalne wzrosty Citation Rate po przepisaniu opisów to horyzont 6–8 tygodni. Pełne korzyści ze strategii zewnętrznej wymagają 3–4 miesięcy systematycznej pracy.
 
 Żeby skrócić czas diagnozy, sprawdź widoczność swojej marki w modelu AI już teraz – darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) odpyta cztery silniki AI i pokaże aktualne cytowania bez konieczności manualnego testowania każdego silnika z osobna.
-
-## Często zadawane pytania o GEO dla e-commerce
-
-### Czy GEO zastępuje SEO w sklepie internetowym?
-
-Nie. SEO i GEO współdziałają: wysoka pozycja organiczna zwiększa szansę, że bot RAG wybierze Twoją stronę spośród wielu kandydatów. Jednocześnie sama dobra pozycja w Google nie gwarantuje cytowania – treść musi spełniać wymogi gęstości faktów. Traktuj GEO jako drugą warstwę optymalizacji, a nie jej zamiennik.
-
-### Czy małe sklepy mogą skutecznie konkurować z dużymi w wynikach AI?
-
-Tak – i to jest jedna z niewielu przewag GEO nad tradycyjnym SEO. Badanie Princeton KDD 2024 pokazało, że strony z niskim autorytetem domenowym, które wdrożyły statystyki i cytowania, zyskiwały proporcjonalnie więcej niż liderzy rynku. Specjalizacja w niszy z bardzo konkretnym opisem produktu i pełnymi danymi technicznymi wygrywa z ogólnikowymi opisami dużych platform.
-
-### Co z Amazon i innymi marketplace'ami?
-
-Platformy marketplace mają własne silniki AI – Amazon Rufus działa w oparciu o algorytm COSMO, który analizuje relacje semantyczne między produktem a intencjami zakupowymi. Optymalizacja listingów na Amazon pod GEO to osobna dyscyplina: kluczowe to tytuł w schemacie „typ + przeznaczenie + cechy", bullet points odpowiadające na pytania Rufusa i uzupełnienie wszystkich atrybutów w panelu sprzedawcy.
-
-### Od czego zacząć przy ograniczonym budżecie?
-
-Trzy kroki, które kosztują tylko czas: sprawdź dostęp botów AI (`robots.txt`), przepisz opisy pięciu najlepiej sprzedających się produktów na model z parametrami w pierwszym akapicie i nagłówkami-pytaniami, dodaj `Product` + `MerchantListing` w JSON-LD. Zmierz Citation Rate przed i po. To wystarczy, żeby zobaczyć efekt i uzasadnić kolejne inwestycje. Jeśli chcesz ocenić obecny stan widoczności swojego sklepu w AI, zacznij od [audytu widoczności marki](/geo/audyt-widocznosci-marki/) – pokazuje, gdzie jesteś względem konkurencji.

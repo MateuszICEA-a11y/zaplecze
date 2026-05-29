@@ -14,6 +14,32 @@ tags: ['Copilot', 'Microsoft', 'Microsoft 365', 'Modele AI']
 pillar: 'modele-llm'
 intent: 'INFO'
 level: 'L1'
+faqHeading: 'Często zadawane pytania o Microsoft Copilot'
+faq:
+  - q: 'Czy Copilot wymaga połączenia z internetem?'
+    a: >-
+      Tak, Copilot for Microsoft 365 wymaga połączenia z chmurą Microsoft – przetwarzanie odbywa się po stronie serwerów.
+      Część funkcji w programie Excel może działać lokalnie, ale Indeks Semantyczny i wnioskowanie na danych korporacyjnych
+      bezwzględnie wymagają łączności sieciowej.
+  - q: 'Czy moje dane trafiają do trenowania modeli OpenAI?'
+    a: >-
+      Nie. Microsoft w ramach Enterprise Data Protection (EDP) gwarantuje, że prompty, odpowiedzi i dane z Microsoft Graph
+      nie są używane do uczenia modeli. Firma Microsoft działa jako podmiot przetwarzający dane w rozumieniu RODO.
+  - q: 'Jakie są różnice między wersjami Copilot Free i Copilot Pro?'
+    a: >-
+      Wersja Copilot Free oferuje do 15 doładowań dziennie dla generowania obrazów i dostęp do modeli poza godzinami szczytu.
+      Wersja Copilot Pro (20 USD miesięcznie) zapewnia priorytetowy dostęp do mocy obliczeniowej, 100 doładowań dziennie
+      i głęboki interfejs w aplikacjach pakietu Office – wymaga jednak osobnej licencji M365 Personal lub Family.
+  - q: 'Czy GitHub Copilot współpracuje z edytorami innymi niż VS Code?'
+    a: >-
+      Tak – GitHub Copilot współpracuje z edytorami takimi jak VS Code, z rozwiązaniami JetBrains (IntelliJ, PyCharm, Rider),
+      środowiskiem Xcode, edytorem Neovim i terminalem. Zakres dostępnych funkcji (zwłaszcza w przypadku trybu agentowego)
+      może się jednak różnić w zależności od środowiska.
+  - q: 'Czym narzędzie Copilot Studio różni się od Power Virtual Agents?'
+    a: >-
+      Copilot Studio to nowa nazwa i znacznie rozszerzona wersja Power Virtual Agents. Główną różnicą jest głębsza integracja
+      z modelami GPT, natywna obsługa protokołu MCP i możliwość budowania agentów wieloetapowych (multi-turn) w miejsce
+      prostych drzew decyzyjnych.
 ---
 
 Microsoft Copilot nie jest prostym chatbotem doklejonym do pakietu biurowego. To wielowarstwowa platforma oparta na [dużych modelach językowych](https://pl.wikipedia.org/wiki/Du%C5%BCy_model_j%C4%99zykowy) (LLM – Large Language Model), która integruje wnioskowanie AI z danymi korporacyjnymi, systemem operacyjnym Windows i środowiskiem programistycznym GitHub. W 2026 roku ekosystem Copilota obejmuje co najmniej cztery odrębne produkty – Copilot for Microsoft 365, Copilot w Windows 11, GitHub Copilot i Copilot Studio – a każdy z nich działa według nieco innej logiki. Jeśli szukasz szerszego kontekstu rynkowego, [przewodnik po modelach LLM](/modele-llm/przewodnik/) zestawia usługę Copilot z innymi platformami AI dostępnymi dla firm. Poniższy artykuł wyjaśnia, jak działa każde z tych rozwiązań, czym się od siebie różnią i kiedy ich wdrożenie ma uzasadnienie finansowe.
@@ -149,25 +175,3 @@ GitHub Copilot warto rozważyć niezależnie, nawet jeśli firma nie posiada lic
 Copilot Studio ma sens od momentu, gdy organizacja identyfikuje powtarzalny proces obsługi zapytań – wewnętrznych (HR, IT helpdesk) lub zewnętrznych (obsługa klienta). Budowa prostego agenta FAQ zajmuje kilka godzin i obywa się bez pisania kodu.
 
 **Jeśli organizacja dopiero zaczyna przygodę z AI w pracy, najlepszą decyzją jest uruchomienie pilotażu z 20–50 użytkownikami przez trzy miesiące przed zakupem licencji dla całej firmy.** Microsoft oferuje okresy próbne – warto je wykorzystać, zanim podejmiesz roczne zobowiązanie finansowe.
-
-## Często zadawane pytania o Microsoft Copilot
-
-### Czy Copilot wymaga połączenia z internetem?
-
-Tak, Copilot for Microsoft 365 wymaga połączenia z chmurą Microsoft – przetwarzanie odbywa się po stronie serwerów. Część funkcji w programie Excel może działać lokalnie, ale Indeks Semantyczny i wnioskowanie na danych korporacyjnych bezwzględnie wymagają łączności sieciowej.
-
-### Czy moje dane trafiają do trenowania modeli OpenAI?
-
-Nie. Microsoft w ramach Enterprise Data Protection (EDP) gwarantuje, że prompty, odpowiedzi i dane z Microsoft Graph nie są używane do uczenia modeli. Firma Microsoft działa jako podmiot przetwarzający dane w rozumieniu RODO.
-
-### Jakie są różnice między wersjami Copilot Free i Copilot Pro?
-
-Wersja Copilot Free oferuje do 15 doładowań dziennie dla generowania obrazów i dostęp do modeli poza godzinami szczytu. Wersja Copilot Pro (20 USD miesięcznie) zapewnia priorytetowy dostęp do mocy obliczeniowej, 100 doładowań dziennie i głęboki interfejs w aplikacjach pakietu Office – wymaga jednak osobnej licencji M365 Personal lub Family.
-
-### Czy GitHub Copilot współpracuje z edytorami innymi niż VS Code?
-
-Tak – GitHub Copilot współpracuje z edytorami takimi jak VS Code, z rozwiązaniami JetBrains (IntelliJ, PyCharm, Rider), środowiskiem Xcode, edytorem Neovim i terminalem. Zakres dostępnych funkcji (zwłaszcza w przypadku trybu agentowego) może się jednak różnić w zależności od środowiska.
-
-### Czym narzędzie Copilot Studio różni się od Power Virtual Agents?
-
-Copilot Studio to nowa nazwa i znacznie rozszerzona wersja Power Virtual Agents. Główną różnicą jest głębsza integracja z modelami GPT, natywna obsługa protokołu MCP i możliwość budowania agentów wieloetapowych (multi-turn) w miejsce prostych drzew decyzyjnych.

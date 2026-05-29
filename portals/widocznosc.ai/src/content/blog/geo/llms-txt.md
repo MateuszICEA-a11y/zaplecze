@@ -14,6 +14,31 @@ tags: ['llms.txt', 'GEO', 'Boty AI', 'Techniczne SEO']
 pillar: 'geo'
 intent: 'HOWTO'
 level: 'L2'
+faqHeading: 'Często zadawane pytania o llms.txt'
+faq:
+  - q: 'Czy <code>llms.txt</code> zastępuje <code>robots.txt</code>?'
+    a: >-
+      Nie. To zupełnie różne mechanizmy z różnymi odbiorcami. <code>robots.txt</code> kontroluje dostęp botów
+      indeksujących do zasobów serwera – jest standardem oficjalnym od 1994 roku, ratyfikowanym przez IETF
+      w RFC 9309. <code>llms.txt</code> dostarcza semantyczny kontekst modelom językowym i agentom AI. Oba pliki
+      powinny istnieć równolegle; jeden nie wyklucza drugiego.
+  - q: 'Co powinno znaleźć się w sekcji <code>## Opcjonalne</code>?'
+    a: >-
+      Linki do zasobów drugorzędnych – polityka prywatności, regulamin, changelogi, archiwa, strony czysto
+      pomocnicze. Modele operujące w trybie ograniczonego okna kontekstowego (np. podczas szybkiej analizy
+      w czasie rzeczywistym) są instruowane, żeby całkowicie pominąć linki z tej sekcji. Dzięki temu bot może
+      przetworzyć sedno oferty bez tracenia tokenów na treści nieistotne dla zadania.
+  - q: 'Czy subdomeny potrzebują osobnych plików?'
+    a: >-
+      Tak. Plik <code>llms.txt</code> obowiązuje wyłącznie dla domeny, na której jest umieszczony, zgodnie
+      z RFC 3986 (Host-Scoping). Plik pod <code>example.com/llms.txt</code> nie obejmuje <code>shop.example.com</code>
+      ani <code>docs.example.com</code>. Każda subdomena reprezentująca odrębny produkt powinna serwować własny plik.
+  - q: 'Czy mogę wdrożyć <code>llms.txt</code> na Shopify?'
+    a: >-
+      Tak, ale przez przekierowanie CDN. Prześlij plik jako zasób statyczny w panelu administracyjnym
+      (Zawartość → Pliki), skopiuj wygenerowany adres URL CDN, a następnie w Nawigacji utwórz przekierowanie
+      <code>/llms.txt</code> → ten adres URL. Agenty AI odpytujące domenę główną zostaną prawidłowo przekierowane
+      do zasobu.
 ---
 
 Plik `llms.txt` to lekki dokument w formacie [Markdown](https://pl.wikipedia.org/wiki/Markdown) umieszczany w katalogu głównym serwera, który wskazuje botom AI i autonomicznym agentom, co na Twojej stronie jest najważniejsze – bez konieczności przeczesywania setek podstron i renderowania kodu JavaScript. Standard zaproponował we wrześniu 2024 roku Jeremy Howard, współtwórca fast.ai i Answer.AI, a jego szerokie przyjęcie na rynku nastąpiło w listopadzie 2024 roku, gdy platforma Mintlify automatycznie wygenerowała te pliki dla tysięcy klientów – w tym dla firm takich jak Anthropic, Cursor i ElevenLabs. **Jeśli Twoja strona obsługuje programistów, oferuje API lub chce być gotowa na nadchodzący ekosystem autonomicznych agentów zakupowych, `llms.txt` to jeden z najtańszych kroków, jakie możesz dziś zrobić.**
@@ -178,21 +203,3 @@ Bezpośrednio – nie, przynajmniej na razie. Badania i dane z logów serwerowyc
 **Koszt wdrożenia wynosi kilka godzin pracy.** Bezpośrednie korzyści są niszowe, ale korzyść z gotowości agentowej może się okazać decydująca w perspektywie 18–24 miesięcy. To stosunek nakładu pracy do potencjalnych korzyści, który warto ocenić samodzielnie.
 
 Jeśli chcesz sprawdzić, czy Twoja strona jest już teraz dostępna dla botów AI – `GPTBot`, `ClaudeBot`, `PerplexityBot` – narzędzie [Dostęp botów AI](/narzedzia/ai-bots-check/) weryfikuje konfigurację `robots.txt` i dostęp botów w kilkanaście sekund. To dobry punkt startowy przed wdrożeniem `llms.txt`, bo nie ma sensu budować mapy zasobów dla botów, które i tak są zablokowane na poziomie serwera. Szerszy kontekst techniczny – dlaczego każdy z tych botów ma inny user-agent i jak nimi zarządzać – opisuje [przewodnik po botach AI](/geo/boty-ai-przewodnik/). Natomiast jeśli chcesz zrozumieć, jakie czynniki faktycznie decydują o cytowaniach Twojej marki w LLM-ach, zacznij od [przewodnika GEO](/geo/przewodnik/) – tam znajdziesz wyniki badania Princeton KDD 2024 i konkretne taktyki z mierzalnymi efektami.
-
-## Często zadawane pytania o `llms.txt`
-
-### Czy `llms.txt` zastępuje `robots.txt`?
-
-Nie. To zupełnie różne mechanizmy z różnymi odbiorcami. `robots.txt` kontroluje dostęp botów indeksujących do zasobów serwera – jest standardem oficjalnym od 1994 roku, ratyfikowanym przez IETF w RFC 9309. `llms.txt` dostarcza semantyczny kontekst modelom językowym i agentom AI. Oba pliki powinny istnieć równolegle; jeden nie wyklucza drugiego.
-
-### Co powinno znaleźć się w sekcji `## Opcjonalne`?
-
-Linki do zasobów drugorzędnych – polityka prywatności, regulamin, changelogi, archiwa, strony czysto pomocnicze. Modele operujące w trybie ograniczonego okna kontekstowego (np. podczas szybkiej analizy w czasie rzeczywistym) są instruowane, żeby całkowicie pominąć linki z tej sekcji. Dzięki temu bot może przetworzyć sedno oferty bez tracenia tokenów na treści nieistotne dla zadania.
-
-### Czy subdomeny potrzebują osobnych plików?
-
-Tak. Plik `llms.txt` obowiązuje wyłącznie dla domeny, na której jest umieszczony, zgodnie z RFC 3986 (Host-Scoping). Plik pod `example.com/llms.txt` nie obejmuje `shop.example.com` ani `docs.example.com`. Każda subdomena reprezentująca odrębny produkt powinna serwować własny plik.
-
-### Czy mogę wdrożyć `llms.txt` na Shopify?
-
-Tak, ale przez przekierowanie CDN. Prześlij plik jako zasób statyczny w panelu administracyjnym (Zawartość → Pliki), skopiuj wygenerowany adres URL CDN, a następnie w Nawigacji utwórz przekierowanie `/llms.txt` → ten adres URL. Agenty AI odpytujące domenę główną zostaną prawidłowo przekierowane do zasobu.

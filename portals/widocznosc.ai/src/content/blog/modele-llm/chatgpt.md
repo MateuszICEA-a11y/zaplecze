@@ -14,6 +14,36 @@ tags: ['ChatGPT', 'OpenAI', 'Modele AI', 'GPT']
 pillar: 'modele-llm'
 intent: 'INFO'
 level: 'L1'
+faqHeading: 'Często zadawane pytania o ChatGPT'
+faq:
+  - q: 'Czy ChatGPT ma dostęp do internetu?'
+    a: >-
+      W planie Free i Plus – tak, opcjonalnie. Użytkownik może włączyć wyszukiwanie w sieci
+      lub wyłączyć je na rzecz czystej generacji z danych treningowych. Domyślnie nowsze
+      wersje ChatGPT mają dostęp do internetu włączony podczas sesji, choć model sam decyduje,
+      kiedy z niego korzysta.
+  - q: 'Jaka jest data odcięcia modelu?'
+    a: >-
+      Modele GPT-4o mają datę odcięcia danych treningowych ustawioną początkowo na październik
+      2023 roku, a w późniejszych iteracjach zaktualizowaną do połowy 2024 roku. Oznacza to, że
+      „z pamięci" model nie zna wydarzeń późniejszych. Przy włączonym wyszukiwaniu to
+      ograniczenie nie ma znaczenia dla bieżących informacji, ale model nadal może prezentować
+      starsze dane jako aktualne.
+  - q: 'Czy rozmowy z ChatGPT są używane do trenowania modelu?'
+    a: >-
+      W planach Free i Plus – domyślnie tak, jeśli użytkownik nie wyłączy tej opcji w
+      ustawieniach prywatności. Plan Team i Enterprise domyślnie izoluje dane od trenowania.
+      Po aferze z naruszeniem danych w marcu 2023 roku i karze 15 milionów euro nałożonej
+      (choć ostatecznie anulowanej przez sąd w 2026 r.) przez włoski organ nadzorczy (Garante)
+      w grudniu 2024 roku, OpenAI wdrożyło wyraźniejsze opcje opt-out i bardziej czytelne
+      informacje o przetwarzaniu danych.
+  - q: 'Jak ChatGPT wypada w porównaniu do Claude?'
+    a: >-
+      Oba modele są silne w różnych obszarach. ChatGPT (GPT-4o) ma szerszy ekosystem integracji
+      i silniejsze możliwości generowania kodu. Claude ma dłuższe okno kontekstowe w wersjach
+      bazowych i preferuje bardziej powściągliwy, precyzyjny styl odpowiedzi. Szczegółowe
+      zestawienie znajdziesz w artykule o <a href="/modele-llm/claude/">Claude</a>, który opisuje
+      różnice z perspektywy zastosowań marketingowych i SEO.
 ---
 
 ChatGPT to interfejs konwersacyjny zbudowany na modelach z rodziny GPT (Generative Pre-trained Transformer) – dużych modelach językowych (LLM, Large Language Model) opracowanych przez OpenAI. Od swojego publicznego debiutu w listopadzie 2022 roku zgromadził milion użytkowników w pięć dni, a sto milionów w dwa miesiące – szybciej niż jakakolwiek inna aplikacja w historii. Jeśli dopiero zaczynasz pracę z AI lub chcesz wreszcie zrozumieć, co kryje się za tym interfejsem tekstowym, ten przewodnik wyjaśnia mechanizm, możliwości i realne ograniczenia – bez skrótów i bez żargonu, który więcej ukrywa, niż tłumaczy.
@@ -134,21 +164,3 @@ Zanim zaczniesz planować, sprawdź punkt startowy: darmowe narzędzie [Widoczno
     <div class="callout-author">Tomasz Czechowski · Head of SEO, ICEA</div>
   </div>
 </aside>
-
-## Często zadawane pytania o ChatGPT
-
-### Czy ChatGPT ma dostęp do internetu?
-
-W planie Free i Plus – tak, opcjonalnie. Użytkownik może włączyć wyszukiwanie w sieci lub wyłączyć je na rzecz czystej generacji z danych treningowych. Domyślnie nowsze wersje ChatGPT mają dostęp do internetu włączony podczas sesji, choć model sam decyduje, kiedy z niego korzysta.
-
-### Jaka jest data odcięcia modelu?
-
-Modele GPT-4o mają datę odcięcia danych treningowych ustawioną początkowo na październik 2023 roku, a w późniejszych iteracjach zaktualizowaną do połowy 2024 roku. Oznacza to, że „z pamięci" model nie zna wydarzeń późniejszych. Przy włączonym wyszukiwaniu to ograniczenie nie ma znaczenia dla bieżących informacji, ale model nadal może prezentować starsze dane jako aktualne.
-
-### Czy rozmowy z ChatGPT są używane do trenowania modelu?
-
-W planach Free i Plus – domyślnie tak, jeśli użytkownik nie wyłączy tej opcji w ustawieniach prywatności. Plan Team i Enterprise domyślnie izoluje dane od trenowania. Po aferze z naruszeniem danych w marcu 2023 roku i karze 15 milionów euro nałożonej (choć ostatecznie anulowanej przez sąd w 2026 r.) przez włoski organ nadzorczy (Garante) w grudniu 2024 roku, OpenAI wdrożyło wyraźniejsze opcje opt-out i bardziej czytelne informacje o przetwarzaniu danych.
-
-### Jak ChatGPT wypada w porównaniu do Claude?
-
-Oba modele są silne w różnych obszarach. ChatGPT (GPT-4o) ma szerszy ekosystem integracji i silniejsze możliwości generowania kodu. Claude ma dłuższe okno kontekstowe w wersjach bazowych i preferuje bardziej powściągliwy, precyzyjny styl odpowiedzi. Szczegółowe zestawienie znajdziesz w artykule o [Claude](/modele-llm/claude/), który opisuje różnice z perspektywy zastosowań marketingowych i SEO.

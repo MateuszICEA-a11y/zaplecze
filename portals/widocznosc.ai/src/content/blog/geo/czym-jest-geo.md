@@ -14,6 +14,41 @@ tags: ['GEO', 'SEO', 'AI Search', 'Optymalizacja treści']
 pillar: 'geo'
 intent: 'INFO'
 level: 'L1'
+faqHeading: 'FAQ – najczęstsze pytania o GEO'
+faq:
+  - q: 'Czy GEO zastępuje SEO?'
+    a: >-
+      Nie – i to bardzo ważne rozróżnienie. GEO działa w innej płaszczyźnie niż
+      SEO, ale obie dyscypliny wzajemnie się wzmacniają. Silna pozycja organiczna
+      zwiększa szanse, że bot RAG w ogóle trafi na Twoją stronę podczas pobierania
+      danych. Z drugiej strony: sama dobra pozycja w Google nie gwarantuje
+      cytowania w AI. Dobrze zoptymalizowana pod GEO treść może generować
+      cytowania nawet z pozycji 5–10 w wyszukiwarce, co potwierdza badanie z
+      Princeton.
+  - q: 'Jak szybko widać efekty GEO?'
+    a: >-
+      Pierwsze efekty techniczne (odblokowanie botów, plik <code>llms.txt</code>)
+      pojawiają się w ciągu 2–4 tygodni. Pierwsze mierzalne wzrosty <em>Citation
+      Rate</em> po zoptymalizowaniu kluczowych stron widać po 6–8 tygodniach.
+      Pełne efekty strategii GEO to zazwyczaj horyzont 4–6 miesięcy
+      systematycznej pracy.
+  - q: 'Czym różni się GEO od AEO?'
+    a: >-
+      AEO (<em>Answer Engine Optimization</em>) ma na celu wyświetlenie krótkiej
+      odpowiedzi bezpośrednio w oknie wyszukiwarki (pozycja zero, <em>Featured
+      Snippet</em>). Celem GEO jest natomiast cytowanie wewnątrz syntetyzowanej
+      odpowiedzi AI – znacznie dłuższej, złożonej i łączącej wiedzę z kilkunastu
+      źródeł. GEO świetnie obsługuje zapytania konwersacyjne i złożone, podczas
+      gdy AEO skupia się na krótkich i jednoznacznych.
+  - q: 'Od czego zacząć, jeśli mam ograniczone zasoby?'
+    a: >-
+      Od trzech kroków: sprawdź dostęp dla botów AI (w <code>robots.txt</code>),
+      dodaj plik <code>llms.txt</code> i przebuduj jedną – generującą największy
+      ruch – podstronę według zasad GEO. Zmierz <em>Citation Rate</em> przed
+      zmianami i po nich. To wystarczy, aby zobaczyć pierwsze efekty i uzasadnić
+      kolejne inwestycje. Pełną metodologię, którą stosujemy od audytu po
+      optymalizację, opisuje nasz <a href="/geo/przewodnik/">przewodnik po
+      GEO</a>.
 ---
 
 GEO, czyli *Generative Engine Optimization* (optymalizacja pod kątem generatywnych silników wyszukiwania), to odpowiedź na jedno z ważniejszych pytań współczesnego marketingu: dlaczego Twoja marka znika z odpowiedzi ChatGPT, Perplexity czy Google AI Overviews, mimo że świetnie radzi sobie w tradycyjnym Google? Badanie [Aggarwala i in. (KDD 2024)](https://arxiv.org/abs/2311.09735) z Princeton University jako pierwsze zmierzyło empirycznie, które cechy treści zwiększają szansę na cytowanie przez duże modele językowe. Odpowiedź zaskoczyła wielu specjalistów SEO: klasyczne zabiegi pozycjonowania nie działają, a część z nich – jak nasycanie tekstów słowami kluczowymi – wyraźnie obniża widoczność w modelach LLM.
@@ -122,21 +157,3 @@ Trzy działania, od których zaczyna się każdy [audyt widoczności marki](/geo
 Po stronie technicznej efekty odblokowania botów widać zazwyczaj w ciągu 2–4 tygodni. Pierwsze mierzalne wzrosty wskaźnika *Citation Rate* po przebudowie treści pojawiają się zwykle po 6–8 tygodniach. To znacznie szybszy cykl niż w tradycyjnym SEO, gdzie na efekty pozycjonowania czeka się często miesiącami.
 
 Jeśli chcesz uniknąć najczęstszych pułapek, które spowalniają efekty – i przede wszystkim tych, które aktywnie szkodzą witrynie – przeczytaj artykuł o [najczęstszych błędach w GEO](/geo/najczestsze-bledy-geo/).
-
-## FAQ – najczęstsze pytania o GEO
-
-### Czy GEO zastępuje SEO?
-
-Nie – i to bardzo ważne rozróżnienie. GEO działa w innej płaszczyźnie niż SEO, ale obie dyscypliny wzajemnie się wzmacniają. Silna pozycja organiczna zwiększa szanse, że bot RAG w ogóle trafi na Twoją stronę podczas pobierania danych. Z drugiej strony: sama dobra pozycja w Google nie gwarantuje cytowania w AI. Dobrze zoptymalizowana pod GEO treść może generować cytowania nawet z pozycji 5–10 w wyszukiwarce, co potwierdza badanie z Princeton.
-
-### Jak szybko widać efekty GEO?
-
-Pierwsze efekty techniczne (odblokowanie botów, plik `llms.txt`) pojawiają się w ciągu 2–4 tygodni. Pierwsze mierzalne wzrosty *Citation Rate* po zoptymalizowaniu kluczowych stron widać po 6–8 tygodniach. Pełne efekty strategii GEO to zazwyczaj horyzont 4–6 miesięcy systematycznej pracy.
-
-### Czym różni się GEO od AEO?
-
-AEO (*Answer Engine Optimization*) ma na celu wyświetlenie krótkiej odpowiedzi bezpośrednio w oknie wyszukiwarki (pozycja zero, *Featured Snippet*). Celem GEO jest natomiast cytowanie wewnątrz syntetyzowanej odpowiedzi AI – znacznie dłuższej, złożonej i łączącej wiedzę z kilkunastu źródeł. GEO świetnie obsługuje zapytania konwersacyjne i złożone, podczas gdy AEO skupia się na krótkich i jednoznacznych.
-
-### Od czego zacząć, jeśli mam ograniczone zasoby?
-
-Od trzech kroków: sprawdź dostęp dla botów AI (w `robots.txt`), dodaj plik `llms.txt` i przebuduj jedną – generującą największy ruch – podstronę według zasad GEO. Zmierz *Citation Rate* przed zmianami i po nich. To wystarczy, aby zobaczyć pierwsze efekty i uzasadnić kolejne inwestycje. Pełną metodologię, którą stosujemy od audytu po optymalizację, opisuje nasz [przewodnik po GEO](/geo/przewodnik/).

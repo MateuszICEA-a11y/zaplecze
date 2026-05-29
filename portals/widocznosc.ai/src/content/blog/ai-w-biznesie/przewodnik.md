@@ -14,6 +14,33 @@ tags: ['AI w biznesie', 'Wdrożenie AI', 'Strategia', 'Transformacja']
 pillar: 'ai-w-biznesie'
 intent: 'HOWTO'
 level: 'L1'
+faqHeading: 'Często zadawane pytania o wdrożenie AI w firmie'
+faq:
+  - q: 'Jaki budżet potrzebny jest na pierwsze wdrożenie AI?'
+    a: >-
+      Zakres jest bardzo szeroki. Proste wdrożenie oparte na gotowych narzędziach SaaS (model Buy)
+      kosztuje od kilkuset złotych miesięcznie w abonamencie. Projekt z własną integracją systemową
+      i bazą wiedzy RAG (model Boost) dla firmy 5–30 osób to wydatek rzędu 4000–15 000 PLN
+      jednorazowo plus koszt tokenów API. Wdrożenia korporacyjne z głębokimi integracjami ERP/CRM
+      i własnym CoE – od 50 000 PLN w górę.
+  - q: 'Czy firma bez działu IT może wdrożyć AI?'
+    a: >-
+      Tak – i to jest jeden z powodów, dla których model Buy i Boost są popularne w MŚP. Nowoczesne
+      platformy AI nie wymagają programistów do obsługi. Wymagają jednak kogoś, kto zna dobrze
+      procesy firmy i potrafi ocenić, czy wyniki modelu są poprawne. Wiedza dziedzinowa jest
+      ważniejsza niż kompetencja techniczna.
+  - q: 'Jak długo trwa typowe wdrożenie?'
+    a: >-
+      Proste wdrożenie narzędzia SaaS (np. asystent do obsługi maili) – 1–3 tygodnie. Projekt
+      z integracją CRM i bazą wiedzy RAG – 5–10 tygodni. Wdrożenie obejmujące pełne szkolenia,
+      iterację produkcyjną i monitoring – 12–16 tygodni. Wbudowanie AI do procesów strategicznych
+      z wynikami transformacyjnymi – 6–18 miesięcy.
+  - q: 'Kiedy warto nie wdrażać AI?'
+    a: >-
+      Gdy proces jest nieudokumentowany i zależy od nieformalnej wiedzy kilku osób. Gdy brakuje
+      danych – lub dane są niespójne i nieoznaczone. Gdy w organizacji nie ma wyznaczonego
+      właściciela z uprawnieniami do podejmowania decyzji o zmianie procesu. W tych warunkach
+      wdrożenie AI nie przyniesie efektów i wygeneruje frustrację po obu stronach.
 ---
 
 Globalne wydatki na sztuczną inteligencję przekroczą w 2026 roku 2,52 biliona dolarów – a mimo to 56% dyrektorów generalnych przyznaje, że wdrożenia AI nie przyniosły ani wzrostu przychodów, ani redukcji kosztów (PwC Global CEO Survey, Davos 2026). Ten rozdźwięk nie bierze się z braku ambicji. Wynika z braku planu. Ten przewodnik pokazuje, od czego zacząć, jak wybrać właściwy model pozyskania technologii, gdzie AI przynosi mierzalny zwrot i jak uniknąć prawnych pułapek – zanim podpiszesz pierwszą umowę z dostawcą.
@@ -229,21 +256,3 @@ Praktyczny punkt startowy dla każdej organizacji niezależnie od wielkości:
 - **Decyduj na podstawie danych, nie wrażeń** – jeśli pilotaż nie pokazuje mierzalnego efektu po 8 tygodniach, przeprowadź retrospektywę, zanim zwiększysz nakłady
 
 Jeśli chcesz sprawdzić, jak Twoja marka jest postrzegana przez systemy AI, zanim uruchomisz wewnętrzne wdrożenia, [Widoczność marki w AI](/narzedzia/brand-check/) odpyta w 30 sekund cztery silniki AI i pokaże aktualny stan widoczności. Dobrym uzupełnieniem jest też lektura artykułu [od czego zacząć wdrożenie AI](/ai-w-biznesie/od-czego-zaczac/) – jeśli jesteś na samym początku drogi i chcesz wyjść od konkretnej metodyki audytu gotowości.
-
-## Często zadawane pytania o wdrożenie AI w firmie
-
-### Jaki budżet potrzebny jest na pierwsze wdrożenie AI?
-
-Zakres jest bardzo szeroki. Proste wdrożenie oparte na gotowych narzędziach SaaS (model Buy) kosztuje od kilkuset złotych miesięcznie w abonamencie. Projekt z własną integracją systemową i bazą wiedzy RAG (model Boost) dla firmy 5–30 osób to wydatek rzędu 4000–15 000 PLN jednorazowo plus koszt tokenów API. Wdrożenia korporacyjne z głębokimi integracjami ERP/CRM i własnym CoE – od 50 000 PLN w górę.
-
-### Czy firma bez działu IT może wdrożyć AI?
-
-Tak – i to jest jeden z powodów, dla których model Buy i Boost są popularne w MŚP. Nowoczesne platformy AI nie wymagają programistów do obsługi. Wymagają jednak kogoś, kto zna dobrze procesy firmy i potrafi ocenić, czy wyniki modelu są poprawne. Wiedza dziedzinowa jest ważniejsza niż kompetencja techniczna.
-
-### Jak długo trwa typowe wdrożenie?
-
-Proste wdrożenie narzędzia SaaS (np. asystent do obsługi maili) – 1–3 tygodnie. Projekt z integracją CRM i bazą wiedzy RAG – 5–10 tygodni. Wdrożenie obejmujące pełne szkolenia, iterację produkcyjną i monitoring – 12–16 tygodni. Wbudowanie AI do procesów strategicznych z wynikami transformacyjnymi – 6–18 miesięcy.
-
-### Kiedy warto nie wdrażać AI?
-
-Gdy proces jest nieudokumentowany i zależy od nieformalnej wiedzy kilku osób. Gdy brakuje danych – lub dane są niespójne i nieoznaczone. Gdy w organizacji nie ma wyznaczonego właściciela z uprawnieniami do podejmowania decyzji o zmianie procesu. W tych warunkach wdrożenie AI nie przyniesie efektów i wygeneruje frustrację po obu stronach.

@@ -14,6 +14,29 @@ tags: ['Audyt', 'Widoczność marki', 'GEO', 'AI Search']
 pillar: 'geo'
 intent: 'HOWTO'
 level: 'L2'
+faqHeading: 'Często zadawane pytania o audyt widoczności w AI'
+faq:
+  - q: 'Ile czasu zajmuje przeprowadzenie audytu?'
+    a: >-
+      Podstawowy audyt – zestaw 20 zapytań, odpytanie trzech silników, ocena techniczna – to 4–6 godzin pracy.
+      Pełny audyt z analizą konkurencji, przeglądem logów serwera i dokumentacją wyników to 2–3 dni robocze.
+      Agencyjny audyt GEO z rekomendacjami i planem 90-dniowym, jaki wykonuje ICEA, zamyka się zwykle w tygodniu –
+      skontaktuj się przez <a href="/pozycjonowanie-ai/">formularz audytu</a>, żeby omówić zakres.
+  - q: 'Czy audyt trzeba powtarzać, czy wystarczy zrobić raz?'
+    a: >-
+      Koniecznie powtarzaj. Modele językowe są regularnie aktualizowane, a nowe treści konkurentów stale wchodzą
+      do indeksów RAG. Rekomendowany rytm to pełny pomiar Citation Rate i SoV co miesiąc, re-audyt techniczny co kwartał.
+  - q: 'Jak interpretować wynik „marka pojawia się, ale opis jest nieaktualny"?'
+    a: >-
+      To sygnał luki merytorycznej – model cytuje Twoją markę ze starych danych treningowych, nie z aktualnego indeksu.
+      Działania naprawcze: zaktualizuj kluczowe strony i zadbaj o świeże wzmianki w zewnętrznych źródłach, które modele
+      RAG chętnie indeksują – media branżowe, portale opinii, raporty sektorowe.
+  - q: 'Czy mała firma może przeprowadzić audyt samodzielnie?'
+    a: >-
+      Tak. Zestawy 20 pytań testowych, ręczne odpytanie ChatGPT i Perplexity, weryfikacja <code>robots.txt</code>
+      i sprawdzenie renderowania przez źródło strony – to wszystko jest możliwe bez żadnych płatnych narzędzi.
+      Darmowy <a href="/narzedzia/brand-check/">Widoczność marki w AI</a> automatyzuje pierwsze odpytanie i daje
+      punkt startowy w kilka minut.
 ---
 
 Jeśli Twoja marka nie pojawia się w odpowiedziach ChatGPT, Gemini czy Perplexity na pytania z Twojej branży, tracisz klientów bez żadnego sygnału w Google Analytics. Szacuje się, że już 37% zapytań zakupowych zaczyna się od konwersacji z modelem językowym, a tradycyjna analityka tych interakcji w ogóle nie rejestruje. Audyt widoczności marki w silnikach generatywnych – czyli GEO (Generative Engine Optimization) – to dziś tak samo obowiązkowy punkt kontrolny jak klasyczny audyt SEO. Ten przewodnik przeprowadza Cię przez cały proces krok po kroku: od przygotowania zestawu zapytań testowych, przez ocenę wyników, po pierwsze konkretne działania optymalizacyjne.
@@ -142,21 +165,3 @@ Ustal trzyszczeblowy rytm pomiaru:
 Zmienność odpowiedzi to zjawisko normalne – nie reaguj na każde wahnięcie. Reaguj na trend: jeśli Citation Rate spada przez dwa kolejne miesiące, szukaj przyczyny. Jeśli rośnie – identyfikuj, która ze zmian to spowodowała, i skaluj tę taktykę.
 
 Do monitorowania SoV w sposób zautomatyzowany warto rozważyć wyspecjalizowane platformy. Nightwatch od wersji mid-tier (od 32 USD miesięcznie) śledzi jednocześnie pozycje w LLM i wyniki tradycyjne. Otterly AI (od 29 USD miesięcznie) generuje automatyczne alerty przy negatywnym sentymencie i wykrytych halucynacjach. Jeśli szukasz czegoś prostszego do oceny, zanim zaangażujesz budżet – [Widoczność marki w AI](/narzedzia/brand-check/) pozwoli Ci zobaczyć punkt startowy bez żadnych kosztów.
-
-## Często zadawane pytania o audyt widoczności w AI
-
-### Ile czasu zajmuje przeprowadzenie audytu?
-
-Podstawowy audyt – zestaw 20 zapytań, odpytanie trzech silników, ocena techniczna – to 4–6 godzin pracy. Pełny audyt z analizą konkurencji, przeglądem logów serwera i dokumentacją wyników to 2–3 dni robocze. Agencyjny audyt GEO z rekomendacjami i planem 90-dniowym, jaki wykonuje ICEA, zamyka się zwykle w tygodniu – skontaktuj się przez [formularz audytu](/pozycjonowanie-ai/), żeby omówić zakres.
-
-### Czy audyt trzeba powtarzać, czy wystarczy zrobić raz?
-
-Koniecznie powtarzaj. Modele językowe są regularnie aktualizowane, a nowe treści konkurentów stale wchodzą do indeksów RAG. Rekomendowany rytm to pełny pomiar Citation Rate i SoV co miesiąc, re-audyt techniczny co kwartał.
-
-### Jak interpretować wynik „marka pojawia się, ale opis jest nieaktualny"?
-
-To sygnał luki merytorycznej – model cytuje Twoją markę ze starych danych treningowych, nie z aktualnego indeksu. Działania naprawcze: zaktualizuj kluczowe strony i zadbaj o świeże wzmianki w zewnętrznych źródłach, które modele RAG chętnie indeksują – media branżowe, portale opinii, raporty sektorowe.
-
-### Czy mała firma może przeprowadzić audyt samodzielnie?
-
-Tak. Zestawy 20 pytań testowych, ręczne odpytanie ChatGPT i Perplexity, weryfikacja `robots.txt` i sprawdzenie renderowania przez źródło strony – to wszystko jest możliwe bez żadnych płatnych narzędzi. Darmowy [Widoczność marki w AI](/narzedzia/brand-check/) automatyzuje pierwsze odpytanie i daje punkt startowy w kilka minut.

@@ -14,6 +14,34 @@ tags: ['Perplexity', 'Wyszukiwarka AI', 'Cytowania', 'Modele AI']
 pillar: 'modele-llm'
 intent: 'INFO'
 level: 'L1'
+faqHeading: 'Często zadawane pytania o Perplexity'
+faq:
+  - q: 'Czy Perplexity jest bezpłatne?'
+    a: >-
+      Tak – plan Free daje dostęp do podstawowego wyszukiwania z przypisami bez limitu.
+      Limitem jest liczba zapytań w trybie Pro (zaawansowane modele, wgrywanie plików),
+      która w planie darmowym wynosi ok. 5 dziennie. Plan Pro kosztuje 20 USD miesięcznie
+      i znosi ten limit.
+  - q: 'Czy Perplexity cytuje strony po polsku?'
+    a: >-
+      Tak. Algorytm przetwarza polskie zapytania i odpowiada po polsku, sięgając zarówno
+      do polskojęzycznych, jak i anglojęzycznych źródeł. Ograniczeniem jest mniejsza pula
+      polskojęzycznych materiałów akademickich i specjalistycznych w porównaniu
+      z anglojęzycznym internetem – co oznacza, że polskie serwisy z dobrze
+      ustrukturyzowanymi treściami mają mniejszą konkurencję o cytowania niż serwisy
+      anglojęzyczne.
+  - q: 'Jak sprawdzić, czy moja strona jest cytowana przez Perplexity?'
+    a: >-
+      Najprostszy sposób to ręczne odpytanie 10–20 zapytań z Twojej niszy w Perplexity
+      i weryfikacja, czy Twoja domena pojawia się wśród przypisów. Możesz też użyć
+      darmowego <a href="/narzedzia/brand-check/">Widoczność marki w AI</a>, który odpyta
+      kilka silników AI o Twoją markę i pokaże, jak jesteś postrzegany na tle kategorii.
+  - q: 'Czym Spaces różnią się od zwykłych konwersacji?'
+    a: >-
+      Spaces to trwałe obszary robocze z własnym kontekstem, niestandardowymi instrukcjami
+      i możliwością przesyłania dokumentów. Konwersacja standardowa jest jednorazowa –
+      model nie pamięta poprzednich sesji. Space pozwala skonfigurować stałe zachowanie
+      asystenta dla konkretnego projektu lub dziedziny i udostępnić ten kontekst zespołowi.
 ---
 
 Perplexity to nie kolejny chatbot – to wyszukiwarka zbudowana wokół cytowań, która w czasie rzeczywistym przeczesuje internet, syntetyzuje dziesiątki źródeł i odpowiada z przypisami. Od założenia w sierpniu 2022 roku platforma urosła do ponad 100 milionów aktywnych użytkowników miesięcznie i wyceny 20 miliardów dolarów (stan na początek 2026 roku). Dla specjalistów SEO i marketerów B2B Perplexity to dziś jeden z najważniejszych kanałów cytowań: jeśli Twoja marka nie pojawia się w jego odpowiedziach, tracisz widoczność u osób, które aktywnie szukają rozwiązań w Twojej niszy. Ten artykuł wyjaśnia, jak Perplexity naprawdę działa, skąd czerpie źródła i co zrobić, żeby Twoja strona była przez niego cytowana.
@@ -128,21 +156,3 @@ Cztery kroki do lepszej widoczności w Perplexity:
 - **Wzajemne wzmianki** – buduj obecność w miejscach, z których Perplexity chętnie czerpie: branżowe raporty, Wikipedia, fora Reddit, media B2B; to sygnał autorytetu dla algorytmu selekcji
 
 Szczegółowe wskazówki dotyczące zwiększania wskaźnika cytowań znajdziesz w przewodniku po [tym, jak LLM-y cytują źródła](/geo/jak-llm-cytuja-zrodla/), a szeroką perspektywę na całą dyscyplinę GEO – w [kompletnym przewodniku GEO](/geo/przewodnik/).
-
-## Często zadawane pytania o Perplexity
-
-### Czy Perplexity jest bezpłatne?
-
-Tak – plan Free daje dostęp do podstawowego wyszukiwania z przypisami bez limitu. Limitem jest liczba zapytań w trybie Pro (zaawansowane modele, wgrywanie plików), która w planie darmowym wynosi ok. 5 dziennie. Plan Pro kosztuje 20 USD miesięcznie i znosi ten limit.
-
-### Czy Perplexity cytuje strony po polsku?
-
-Tak. Algorytm przetwarza polskie zapytania i odpowiada po polsku, sięgając zarówno do polskojęzycznych, jak i anglojęzycznych źródeł. Ograniczeniem jest mniejsza pula polskojęzycznych materiałów akademickich i specjalistycznych w porównaniu z anglojęzycznym internetem – co oznacza, że polskie serwisy z dobrze ustrukturyzowanymi treściami mają mniejszą konkurencję o cytowania niż serwisy anglojęzyczne.
-
-### Jak sprawdzić, czy moja strona jest cytowana przez Perplexity?
-
-Najprostszy sposób to ręczne odpytanie 10–20 zapytań z Twojej niszy w Perplexity i weryfikacja, czy Twoja domena pojawia się wśród przypisów. Możesz też użyć darmowego [Widoczność marki w AI](/narzedzia/brand-check/), który odpyta kilka silników AI o Twoją markę i pokaże, jak jesteś postrzegany na tle kategorii.
-
-### Czym Spaces różnią się od zwykłych konwersacji?
-
-Spaces to trwałe obszary robocze z własnym kontekstem, niestandardowymi instrukcjami i możliwością przesyłania dokumentów. Konwersacja standardowa jest jednorazowa – model nie pamięta poprzednich sesji. Space pozwala skonfigurować stałe zachowanie asystenta dla konkretnego projektu lub dziedziny i udostępnić ten kontekst zespołowi.

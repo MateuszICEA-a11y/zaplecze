@@ -14,6 +14,28 @@ tags: ['Claude', 'Anthropic', 'Modele AI', 'Artifacts']
 pillar: 'modele-llm'
 intent: 'INFO'
 level: 'L1'
+faqHeading: 'Często zadawane pytania dotyczące Claude''a'
+faq:
+  - q: 'Czy Claude ma dostęp do internetu?'
+    a: >-
+      Standardowy Claude bez rozszerzeń bazuje na wiedzy z danych treningowych (z określoną datą odcięcia).
+      Funkcja Computer Use pozwala mu przeglądać strony, a integracje przez standard MCP mogą podłączyć go
+      do zewnętrznych źródeł danych – wymaga to jednak konfiguracji po stronie Operatora lub użytkownika.
+  - q: 'Czym różni się Claude od ChatGPT?'
+    a: >-
+      Oba to duże modele językowe, ale różnią się architekturą dostrajania, filozofią bezpieczeństwa
+      i mocnymi stronami. Claude wyróżnia się długim kontekstem i precyzją w złożonych zadaniach
+      analitycznych. ChatGPT ma z kolei szerszy ekosystem wtyczek i przewagę w szerokiej obsłudze wielu języków.
+  - q: 'Czy Claude nadaje się do pracy z danymi wrażliwymi?'
+    a: >-
+      Plan Enterprise z brakiem retencji danych (Zero Data Retention) spełnia wymagania HIPAA i GDPR.
+      W planach niższych dane mogą być używane do treningu – co dla większości zastosowań biznesowych
+      wymaga weryfikacji pod kątem zgodności z przepisami (compliance).
+  - q: 'Jak zacząć bez płacenia?'
+    a: >-
+      Plan Free na platformie claude.ai daje dostęp do podstawowych modeli z dziennym limitowanym oknem
+      wiadomości. Do testowania API firma Anthropic oferuje kredyty startowe dla nowych kont. Używanie
+      Claude Code wymaga aktywnego planu płatnego.
 ---
 
 Claude to duży model językowy (LLM – *Large Language Model*) tworzony przez firmę Anthropic – założoną w 2021 roku przez byłych badaczy OpenAI, z Dario i Danielą Amodei na czele. W odróżnieniu od konkurentów, firma Anthropic zbudowała model Claude wokół koncepcji bezpieczeństwa jako fundamentu architektury, a nie jako warstwy nakładanej na gotowy produkt. Jeśli zastanawiasz się, czy Claude to coś więcej niż kolejny chatbot AI – odpowiedź brzmi: tak, i ten przewodnik wyjaśnia dokładnie, co i dlaczego.
@@ -152,21 +174,3 @@ System opiera się na poziomach ASL (AI Safety Level):
 - **ASL-4 i wyżej** – próg dla systemów, których niekontrolowany rozwój zagrażałby stabilności na skalę makroekonomiczną
 
 **Raz na kwartał Anthropic publikuje raport o ryzykach wszystkich aktywnych modeli.** To bezprecedensowy poziom transparentności w branży, gdzie większość graczy traktuje testy bezpieczeństwa jako wewnętrzną tajemnicę. Firma wyznaczyła też osobę na stanowisko Responsible Scaling Officer, by koordynowała ten proces.
-
-## Często zadawane pytania dotyczące Claude'a
-
-### Czy Claude ma dostęp do internetu?
-
-Standardowy Claude bez rozszerzeń bazuje na wiedzy z danych treningowych (z określoną datą odcięcia). Funkcja Computer Use pozwala mu przeglądać strony, a integracje przez standard MCP mogą podłączyć go do zewnętrznych źródeł danych – wymaga to jednak konfiguracji po stronie Operatora lub użytkownika.
-
-### Czym różni się Claude od ChatGPT?
-
-Oba to duże modele językowe, ale różnią się architekturą dostrajania, filozofią bezpieczeństwa i mocnymi stronami. Claude wyróżnia się długim kontekstem i precyzją w złożonych zadaniach analitycznych. ChatGPT ma z kolei szerszy ekosystem wtyczek i przewagę w szerokiej obsłudze wielu języków.
-
-### Czy Claude nadaje się do pracy z danymi wrażliwymi?
-
-Plan Enterprise z brakiem retencji danych (Zero Data Retention) spełnia wymagania HIPAA i GDPR. W planach niższych dane mogą być używane do treningu – co dla większości zastosowań biznesowych wymaga weryfikacji pod kątem zgodności z przepisami (compliance).
-
-### Jak zacząć bez płacenia?
-
-Plan Free na platformie claude.ai daje dostęp do podstawowych modeli z dziennym limitowanym oknem wiadomości. Do testowania API firma Anthropic oferuje kredyty startowe dla nowych kont. Używanie Claude Code wymaga aktywnego planu płatnego.
