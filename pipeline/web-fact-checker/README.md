@@ -82,3 +82,12 @@ pipeline/web-fact-checker/
 {"claim_id":"chatgpt.md:98","action":"apply","value":"GPT-5.5","reason":"...","sources":["https://..."]}
 ```
 `action` ∈ `apply|flag|leave`
+
+## Acceptance (zweryfikowane 2026-05-29)
+
+End-to-end na reprezentatywnych twierdzeniach (tryb single-engine, brak klucza):
+- **Przestarzałe-jako-bieżące** (chatgpt.md „Free = GPT-4o") → `apply` „GPT-5.3 Instant" ✅
+- **Historyczne** (programowanie.md „HumanEval 90,2% GPT-4o", `classification=historical`) → `leave` (reguła nr 1: historyczne nietknięte) ✅
+- Degradacja bez `OPENAI_API_KEY` → ostrzeżenie + nadal poprawne decyzje ✅
+
+Logika dwusilnikowa (A vs B) pokryta 18 testami jednostkowymi `reconcile()`. Silnik B live wymaga ustawienia `OPENAI_API_KEY`.
