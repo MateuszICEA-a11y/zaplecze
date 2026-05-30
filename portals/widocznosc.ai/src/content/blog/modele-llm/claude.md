@@ -102,7 +102,7 @@ Artifacts (artefakty) to funkcja pozwalająca Claude'owi generować interaktywn�
 
 ### Pojemne okno kontekstowe
 
-Claude obsługuje okno kontekstowe rzędu 1 miliona tokenów. W praktyce oznacza to możliwość wczytania całej dokumentacji technicznej projektu, kilkudziesięciu stron umowy lub obszernego zbioru danych i prowadzenia z nimi spójnej rozmowy analitycznej. **To jeden z największych praktycznych kontekstów wśród komercyjnych modeli językowych na rynku.**
+Claude obsługuje okno kontekstowe rzędu 1 miliona tokenów (500 000 w interfejsie czatu, pełny milion przez API i Claude Code). W praktyce oznacza to możliwość wczytania całej dokumentacji technicznej projektu, kilkudziesięciu stron umowy lub obszernego zbioru danych i prowadzenia z nimi spójnej rozmowy analitycznej. **To jeden z największych praktycznych kontekstów wśród komercyjnych modeli językowych na rynku.**
 
 ### Computer Use – sterowanie komputerem
 
