@@ -256,11 +256,11 @@ Najskuteczniejsza obrona nie polega na dodawaniu kolejnych filtrów – polega n
 Uprzywilejowany model dostaje tylko wynik ekstrakcji od izolowanego modelu – strukturę JSON, nie surowy tekst. Złośliwa instrukcja ukryta w zewnętrznym dokumencie jest nieaktywna, bo trafia wyłącznie do modelu bez uprawnień.
 
 <aside class="callout-expert">
-  <div class="callout-icon"><img src="/authors/tomasz-czechowski.avif" alt="Tomasz Czechowski" /></div>
+  <div class="callout-icon"><img src="/authors/michal-ziach.avif" alt="Michał Ziach" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
     <p>W praktyce klientów ICEA największy problem z promptami nie jest techniczny – to brak definicji „dobrej odpowiedzi". Kiedy pytam, skąd wiedzą, że prompt działa, zazwyczaj słyszę „bo odpowiedź brzmi sensownie". To za mało. Przed wdrożeniem jakiegokolwiek promptu produkcyjnego zbuduj 10–20 przykładów oczekiwanych odpowiedzi i testuj nowe wersje promptu na tym zbiorze. <strong>Bez zestawu testowego każda zmiana promptu to strzał w ciemno – możesz poprawić jeden wymiar i zepsuć trzy inne.</strong></p>
-    <div class="callout-author">Tomasz Czechowski · Head of SEO, ICEA</div>
+    <div class="callout-author">Michał Ziach · CTO, ICEA</div>
   </div>
 </aside>
 

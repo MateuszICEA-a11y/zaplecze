@@ -98,11 +98,11 @@ To podejście ma logiczne uzasadnienie: wątki na Reddicie, recenzje na G2 czy a
 **Mechanizm Influential Creator Discovery identyfikuje konkretnych autorów i wątki, na które bezpośrednio powołują się modele AI.** To narzędzie do precyzyjnego docierania do liderów opinii kształtujących bazy wiedzy LLM, a nie do masowych kampanii influencer marketingowych. Zrozumienie, jak modele AI decydują o cytowaniu źródeł, jest kluczowe – szczegółowo opisuje to artykuł o tym, [jak LLM cytują źródła](/geo/jak-llm-cytuja-zrodla/).
 
 <aside class="callout-expert">
-  <div class="callout-icon"><img src="/authors/tomasz-czechowski.avif" alt="Tomasz Czechowski" /></div>
+  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.avif" alt="Mateusz Wiśniewski" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
     <p>W projektach, które prowadzimy w ICEA, często widzimy marki zaskoczone tym, że ich flagowy produkt jest opisywany przez ChatGPT z błędną ceną lub przestarzałą specyfikacją. Powód jest prosty: model nauczył się tego z artykułu sprzed dwóch lat, który wciąż indeksuje. Żadne narzędzie monitorujące tego nie naprawi – ale każde pozwoli Ci ten błąd wykryć. <strong>Pierwszym krokiem po wdrożeniu monitoringu nie jest optymalizacja widoczności, ale audyt błędów merytorycznych: co modele AI mówią o Twojej marce nieprawdziwego i skąd to pochodzi.</strong></p>
-    <div class="callout-author">Tomasz Czechowski · Head of SEO, ICEA</div>
+    <div class="callout-author">Mateusz Wiśniewski · Ekspert SEO/AI Search, ICEA</div>
   </div>
 </aside>
 

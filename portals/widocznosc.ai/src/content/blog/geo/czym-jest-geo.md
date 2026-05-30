@@ -120,11 +120,11 @@ Wyniki testowania wybranych taktyk:
 **Najważniejsze odkrycie badania dotyczy mniejszych stron: witryny z pozycji 5–10 w Google, które zastosowały statystyki i cytowania, zwiększały swoją widoczność w LLM-ach nawet o 115%.** To wynik wyższy niż w przypadku liderów rankingu organicznego, którzy z tych taktyk nie skorzystali. Słabsza pozycja SEO nie wyklucza silnej pozycji GEO.
 
 <aside class="callout-expert">
-  <div class="callout-icon"><img src="/authors/piotr-wicenciak.avif" alt="Piotr Wicenciak" /></div>
+  <div class="callout-icon"><img src="/authors/tomasz-czechowski.avif" alt="Tomasz Czechowski" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
     <p>W audytach GEO przeprowadzanych w ICEA najczęstszy problem to strony z doskonałym SEO – silnym profilem linków, wysokimi pozycjami – ale treścią pisaną pod algorytm Google sprzed 2020 roku: ogólnikowe opisy, zero liczb, zero cytowań. Dla modelu językowego taka strona jest bezużyteczna jako źródło, bo nie ma z niej co wyciągnąć bez ryzyka halucynacji. <strong>Pierwsza rekomendacja po audycie jest zawsze ta sama: zanim przepiszesz stronę od zera, dodaj trzy liczby z datą i jedno zdanie z nazwą badania do każdej sekcji H2 – wpływ na wskaźnik Citation Rate widać w ciągu 3–4 tygodni.</strong></p>
-    <div class="callout-author">Piotr Wicenciak · SEO Operations Manager, ICEA</div>
+    <div class="callout-author">Tomasz Czechowski · Head of SEO, ICEA</div>
   </div>
 </aside>
 

@@ -110,11 +110,11 @@ Każdy ważny fakt umieść w samodzielnym akapicie z wyraźnym kontekstem. AI n
 Listy *„najlepszych X"*, porównania *„marka X vs Y"*, rankingi i sekcje FAQ to formaty optymalne pod query fan-out. Każdy element listy lub para porównawcza tworzy gotowy mini-fragment, który pasuje pod konkretne podzapytanie. Artykuł *„10 najlepszych CRM-ów dla zespołów do 10 osób"* z 10 sekcjami po 200 słów to **10 osobnych fragmentów konkurujących o miejsce w odpowiedzi AI**.
 
 <aside class="callout-expert">
-  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.avif" alt="Mateusz Wiśniewski" /></div>
+  <div class="callout-icon"><img src="/authors/tomasz-czechowski.avif" alt="Tomasz Czechowski" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
     <p>Najszybszy efekt w pierwszych 30 dniach po audycie daje odświeżenie trzech najsilniejszych artykułów na blogu klienta – dodanie do nich 5–8 nagłówków H3 odpowiadających na konkretne podzapytania z mapy fan-out. Nie nowy content, nie linkowanie, nie dane strukturalne (schema). Po prostu dopisanie 800–1200 słów ustrukturyzowanych i podzielonych na fragmenty. W dwóch projektach SaaS B2B zaobserwowaliśmy w ten sposób wzrost cytowań o 40–60% w ciągu 3 tygodni.</p>
-    <div class="callout-author">Mateusz Wiśniewski · Ekspert SEO/AI Search, ICEA</div>
+    <div class="callout-author">Tomasz Czechowski · Head of SEO, ICEA</div>
   </div>
 </aside>
 

@@ -138,11 +138,11 @@ ChatGPT działa nie tylko przez przeglądarkę i aplikację mobilną. OpenAI udo
 Na rynku dostępne są też dziesiątki narzędzi no-code integrujących ChatGPT z popularnymi platformami: Notion, Slack, Google Docs, Zapier. Jeśli chcesz zautomatyzować konkretny proces bez pisania kodu – sprawdź najpierw gotowe integracje.
 
 <aside class="callout-expert">
-  <div class="callout-icon"><img src="/authors/tomasz-czechowski.avif" alt="Tomasz Czechowski" /></div>
+  <div class="callout-icon"><img src="/authors/piotr-wicenciak.avif" alt="Piotr Wicenciak" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
     <p>W ICEA obserwujemy, że największa bariera dla nowych użytkowników to nie narzędzie – to brak nawyku precyzyjnego formułowania instrukcji. ChatGPT działa jak bardzo zdolny junior: wykona zadanie dokładnie tak, jak mu powiesz, a nie tak, jak myślisz. Daj mu rolę, kontekst i format wyjścia, a wyniki cię zaskoczą. <strong>Rekomendacja: przez pierwszy tydzień pisz każdy prompt w co najmniej trzech zdaniach – to wystarczy, żeby wyrobić dobry nawyk i natychmiast zobaczyć poprawę jakości odpowiedzi.</strong></p>
-    <div class="callout-author">Tomasz Czechowski · Head of SEO, ICEA</div>
+    <div class="callout-author">Piotr Wicenciak · SEO Operations Manager, ICEA</div>
   </div>
 </aside>
 

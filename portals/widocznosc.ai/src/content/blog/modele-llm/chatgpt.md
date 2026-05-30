@@ -157,10 +157,10 @@ Zrozumienie tych mechanizmów opisuje [przewodnik po GEO](/geo/przewodnik/) – 
 Zanim zaczniesz planować, sprawdź punkt startowy: darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) zada zapytanie o Twoją markę czterem silnikom AI i pokaże, jak jesteś postrzegany na tle kategorii – bez ręcznego testowania.
 
 <aside class="callout-expert">
-  <div class="callout-icon"><img src="/authors/tomasz-czechowski.avif" alt="Tomasz Czechowski" /></div>
+  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.avif" alt="Mateusz Wiśniewski" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
     <p>W projektach, które prowadzimy w ICEA, widzimy powtarzający się schemat: firmy dobrze zoptymalizowane pod Google nie pojawiają się w ChatGPT, bo ich treści są pisane pod słowa kluczowe, nie pod fakty. Model języka szuka gęstych, cytowalnych zdań z liczbami i nazwami badań – nie opisów ogólnych. <strong>Pierwsza rzecz, którą robię podczas audytu: szukam zdań, które mogłyby być zacytowane bez żadnego kontekstu. Jeśli ich nie ma, to problem numer jeden do naprawienia.</strong></p>
-    <div class="callout-author">Tomasz Czechowski · Head of SEO, ICEA</div>
+    <div class="callout-author">Mateusz Wiśniewski · Ekspert SEO/AI Search, ICEA</div>
   </div>
 </aside>

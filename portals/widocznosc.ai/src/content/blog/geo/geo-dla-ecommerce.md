@@ -124,11 +124,11 @@ Silniki generatywne nie cytują stron, którym nie ufają – a zaufanie budują
 Modele AI podczas syntezy odpowiedzi weryfikują, czy informacja pojawia się w wielu niezależnych miejscach. Niepodlinkowane wzmianki o marce na forach takich jak Reddit, w recenzjach na niezależnych portalach czy w artykułach prasowych budują mapę semantyczną, którą model interpretuje jako sygnał wiarygodności. To odpowiednik tradycyjnych backlinków – tyle że ważne jest samo pojawienie się nazwy w odpowiednim kontekście, niekoniecznie sam link.
 
 <aside class="callout-expert">
-  <div class="callout-icon"><img src="/authors/piotr-wicenciak.avif" alt="Piotr Wicenciak" /></div>
+  <div class="callout-icon"><img src="/authors/mateusz-wisniewski.avif" alt="Mateusz Wiśniewski" /></div>
   <div class="callout-body">
     <div class="callout-label">Opinia eksperta</div>
     <p>W audytach sklepów internetowych, które przeprowadzamy w ICEA, najczęściej wykrywamy ten sam problem: sklep ma silne SEO i dobrą pozycję organiczną, ale strony produktowe zawierają wyłącznie opisowy tekst sprzedażowy – zero liczb, zero specyfikacji w ustrukturyzowanej formie, zero zewnętrznych cytowań. Dla silnika RAG taka strona to czarna skrzynka. <strong>Pierwsza rekomendacja po audycie jest zawsze ta sama: dodaj konkretne parametry techniczne do pierwszego akapitu każdej strony produktowej i uzupełnij JSON-LD – efekty w Citation Rate pojawiają się już po 4–6 tygodniach.</strong></p>
-    <div class="callout-author">Piotr Wicenciak · SEO Operations Manager, ICEA</div>
+    <div class="callout-author">Mateusz Wiśniewski · Ekspert SEO/AI Search, ICEA</div>
   </div>
 </aside>
 
