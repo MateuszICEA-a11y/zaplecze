@@ -8,6 +8,14 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [sitemap()],
   markdown: {
+    // Dual-theme Shiki – kod dostaje zmienne --shiki-light / --shiki-dark,
+    // a wybór motywu robi nasz selektor [data-theme] w CSS (Article.astro).
+    // Bez tego Shiki wkleja sztywny github-dark inline i kod jest nieczytelny
+    // w przeciwnym motywie.
+    shikiConfig: {
+      themes: { light: 'github-light', dark: 'github-dark' },
+      defaultColor: false,
+    },
     rehypePlugins: [
       [
         rehypeExternalLinks,

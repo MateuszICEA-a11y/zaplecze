@@ -197,8 +197,27 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
       )
     }
 
-    <!-- Body grid: content + sidebar -->
-    <div class="article-body-grid">
+    <!-- Body: spis treści (lewo, gdy ≥3 H2) + treść + sidebar (prawo) -->
+    <div class:list={['article-body-grid', showToc && 'article-body-grid--with-toc']}>
+      {
+        showToc && (
+          <aside class="article-toc-rail">
+            <nav class="article-toc-sticky" aria-label="Spis treści">
+              <div class="article-toc-rail-label">Spis treści</div>
+              <ul class="article-toc-list">
+                {toc.map((item: { slug: string; text: string }) => (
+                  <li>
+                    <a class="article-toc-link" href={`#${item.slug}`} data-toc-link={item.slug}>
+                      {item.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </aside>
+        )
+      }
+
       <section class:list={['article-content', variant && `article-content--${variant}`]}>
         {
           showToc && (
@@ -224,22 +243,6 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
 
       <aside class="article-sidebar">
         <div class="article-sidebar-sticky">
-          {
-            showToc && (
-              <nav class="article-sidebar-card article-toc" aria-label="Spis treści">
-                <div class="article-sidebar-label">Spis treści</div>
-                <ul class="article-toc-list">
-                  {toc.map((item: { slug: string; text: string }) => (
-                    <li>
-                      <a class="article-toc-link" href={`#${item.slug}`} data-toc-link={item.slug}>
-                        {item.text}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-            )
-          }
           {
             author && (
               <div class="article-sidebar-card">
@@ -462,7 +465,7 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     flex-wrap: wrap;
     gap: 6px;
     margin: 0 auto 32px auto;
-    max-width: 1040px;
+    max-width: 1360px;
     font-family: var(--font-sans);
     font-size: var(--fs-caption);
     font-weight: 500;
@@ -796,9 +799,22 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     height: 100%;
     object-fit: cover;
     display: block;
-    /* Lewa krawędź obrazu wtapia się w gradient panelu (efekt Moz). */
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 26%);
-    mask-image: linear-gradient(to right, transparent 0%, #000 26%);
+    /* Lewa krawędź obrazu wtapia się w gradient panelu (efekt Moz).
+       Długi, łagodzony fade – brak ostrej linii styku w light mode. */
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.3) 24%,
+      rgba(0, 0, 0, 0.82) 42%,
+      #000 54%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.3) 24%,
+      rgba(0, 0, 0, 0.82) 42%,
+      #000 54%
+    );
   }
 
   @media (max-width: 860px) {
@@ -832,20 +848,57 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     }
   }
 
-  /* Body grid */
+  /* Body grid – wyrównany do szerokości banera (1360) */
   .article-body-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 48px;
-    max-width: 1240px;
+    max-width: 1360px;
     margin: 0 auto;
   }
 
   @media (min-width: 1024px) {
+    /* 2 kolumny (news / wpisy bez spisu): treść równo z lewą krawędzią,
+       sidebar równo z prawą – wolną przestrzeń rozdziela space-between. */
     .article-body-grid {
-      grid-template-columns: minmax(0, 820px) 340px;
+      grid-template-columns: minmax(0, 820px) 320px;
+      justify-content: space-between;
       gap: 80px;
     }
+
+    /* 3 kolumny (blog ze spisem): spis lewo | treść | sidebar prawo. */
+    .article-body-grid--with-toc {
+      grid-template-columns: 232px minmax(0, 1fr) 300px;
+      justify-content: initial;
+      column-gap: 56px;
+    }
+  }
+
+  /* Lewy rail spisu treści (układ 3-kolumnowy, ≥1024px) */
+  .article-toc-rail {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .article-toc-rail {
+      display: block;
+      align-self: stretch;
+    }
+  }
+
+  .article-toc-sticky {
+    position: sticky;
+    top: 96px;
+  }
+
+  .article-toc-rail-label {
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    font-weight: 600;
+    letter-spacing: var(--ls-caption);
+    color: var(--ink-muted);
+    margin-bottom: 14px;
+    padding-left: 12px;
   }
 
   .article-content {
@@ -1138,6 +1191,18 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
   }
   .article-content pre code .line {
     display: block;
+  }
+
+  /* Dual-theme Shiki – kolory składni z [data-theme] (tło zostaje nasze,
+     terminalowe z .article-content pre). github-light w jasnym, github-dark
+     w ciemnym → czytelny, kolorowy kod na obu motywach. */
+  .article-content .astro-code,
+  .article-content .astro-code span {
+    color: var(--shiki-light);
+  }
+  :root[data-theme='dark'] .article-content .astro-code,
+  :root[data-theme='dark'] .article-content .astro-code span {
+    color: var(--shiki-dark);
   }
 
   /* Callouts */
