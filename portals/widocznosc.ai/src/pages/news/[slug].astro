@@ -92,16 +92,7 @@ const schema = buildGraph(
     <Content />
 
     <p class="news-source">
-      Opracowanie redakcyjne na podstawie artykułu{' '}
-      <a
-        href={item.data.sourceUrl}
-        target="_blank"
-        rel="noopener noreferrer nofollow"
-        class="news-source-link"
-      >
-        {item.data.sourceName}
-        <span class="news-source-arrow" aria-hidden="true">↗</span>
-      </a>
+      Opracowanie redakcyjne na podstawie artykułu {item.data.sourceName}:
       <span class="news-source-url">{item.data.sourceUrl}</span>
     </p>
 
@@ -143,26 +134,14 @@ const schema = buildGraph(
     font-size: var(--fs-body-sm);
     color: var(--ink-muted);
   }
-  .news-source-link {
-    color: var(--ink);
-    font-weight: 600;
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    white-space: nowrap;
-  }
-  .news-source-link:hover {
-    color: var(--accent-blue);
-  }
-  .news-source-arrow {
-    margin-left: 2px;
-    font-size: 0.85em;
-  }
   .news-source-url {
     display: block;
     margin-top: 4px;
+    font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
     font-size: var(--fs-caption);
-    color: var(--ink-faint);
+    color: var(--ink-muted);
     overflow-wrap: anywhere;
+    user-select: all;
   }
 
   /* Box „pogłębione w bazie wiedzy" – wewnętrzny anchor newsowy */
