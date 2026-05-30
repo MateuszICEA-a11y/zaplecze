@@ -67,7 +67,7 @@ BCG AI Radar 2026 wyodrębnił trzy archetypy organizacji wdrażających AI, kt�
 |---|---|---|
 | Naśladowcy (Followers) | 15% | Ograniczone pilotaże, oczekiwanie na ruchy konkurencji, niskie poczucie własnych kompetencji |
 | Pragmatycy (Pragmatists) | 70% | Aktywne inwestycje w ludzi i technologię; CEO poświęca średnio 7 godzin tygodniowo na naukę AI |
-| Pionierzy (Trailblazers) | 15% | Głęboka transformacja operacyjna całej organizacji; ponad 75% personelu objętych szkoleniami AI |
+| Pionierzy (Trailblazers) | 15% | Głęboka transformacja operacyjna całej organizacji; blisko trzy czwarte personelu objętego szkoleniami AI |
 
 Większość organizacji startuje jako Pragmatycy. Kluczowe pytanie to nie „czy wdrożyć AI", lecz „od którego procesu zacząć, żeby wynik był mierzalny w 90 dni".
 
@@ -214,14 +214,14 @@ AI Act wszedł w życie 1 sierpnia 2024 roku i wprowadza stopniowy harmonogram o
 
 - **2 lutego 2025** – zakaz systemów o nieakceptowalnym ryzyku (manipulacja podprogowa, scoring społeczny, rozpoznawanie emocji w miejscach pracy); obowiązek budowania kompetencji pracowników w zakresie AI
 - **2 sierpnia 2025** – obowiązki dla dostawców modeli ogólnego przeznaczenia (GPAI): dokumentacja techniczna, przestrzeganie prawa autorskiego, publikowanie podsumowań danych treningowych
-- **2 sierpnia 2026** – pełne stosowanie większości przepisów systemowych, w tym sankcji finansowych i powołania organów nadzoru
+- **2 sierpnia 2026** – pełne stosowanie większości przepisów systemowych (sankcje finansowe, organy nadzoru); obowiązki dla systemów wysokiego ryzyka z Annexu III przesunięto jednak do **2 grudnia 2027** (porozumienie Digital Omnibus, maj 2026)
 
 AI Act kategoryzuje systemy AI w czterech poziomach ryzyka. Dwa z nich są krytyczne dla polskich firm:
 
 - **Wysokie ryzyko** – systemy w rekrutacji (selekcja CV), ocenie zdolności kredytowej, diagnostyce medycznej; wymagają oceny skutków dla praw podstawowych (FRIA), audytu danych treningowych i nadzoru człowieka nad każdą decyzją
 - **Ryzyko ograniczone** – chatboty obsługi klienta; obowiązek poinformowania użytkownika, że rozmawia z AI, i maszynowego oznaczenia generowanych treści
 
-W Polsce nadzór nad rynkiem AI będzie sprawować **Komisja Rozwoju i Bezpieczeństwa Sztucznej Inteligencji (KRiBSI)**, powołana zgodnie z projektem ustawy przyjętym przez Radę Ministrów 31 marca 2026 roku. Komisja zyska uprawnienia do prowadzenia postępowań, wydawania decyzji o natychmiastowym wycofaniu systemów z rynku i nakładania sankcji finansowych.
+W Polsce nadzór nad rynkiem AI będzie sprawować **Komisja Rozwoju i Bezpieczeństwa Sztucznej Inteligencji (KRiBSI)**, przewidziana w projekcie ustawy przyjętym przez Radę Ministrów 31 marca 2026 roku (projekt jest w toku prac legislacyjnych). Komisja zyska uprawnienia do prowadzenia postępowań, wydawania decyzji o natychmiastowym wycofaniu systemów z rynku i nakładania sankcji finansowych.
 
 ### RODO a wdrożenia AI
 

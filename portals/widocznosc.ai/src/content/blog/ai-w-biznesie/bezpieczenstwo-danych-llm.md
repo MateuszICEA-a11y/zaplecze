@@ -26,7 +26,7 @@ Incydent w firmie Samsung z marca 2023 roku pokazał mechanizm w działaniu. W c
 
 **Dane z 2026 roku są równie niepokojące.** Raport Netskope wskazuje, że 47% pracowników używa narzędzi AI w pracy przez prywatne konta – poza jakimkolwiek nadzorem korporacyjnym. W przeciętnej organizacji liczba naruszeń polityki danych związanych z generatywną AI podwoiła się w ciągu roku i wynosi średnio 223 incydenty miesięcznie, za które odpowiada zaledwie 3% użytkowników.
 
-Skutki finansowe są wymierne. Według badań Reco AI, 20% organizacji doświadczyło naruszenia bezpieczeństwa z powodu shadow AI, a przeciętny dodatkowy koszt takiego incydentu wyniósł 670 000 dolarów – oprócz podstawowych kosztów standardowego wycieku danych.
+Skutki finansowe są wymierne. Według danych Reco AI 20% organizacji doświadczyło naruszenia bezpieczeństwa z powodu shadow AI, a – jak wynika z raportu IBM Cost of a Data Breach 2025 – przeciętny dodatkowy koszt takiego incydentu wyniósł 670 000 dolarów oprócz podstawowych kosztów standardowego wycieku danych.
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
@@ -116,7 +116,7 @@ Porównanie najważniejszych wymiarów:
 
 - **Suwerenność danych** – modele lokalne (np. Llama 3, Mistral, Qwen) przetwarzają dane wyłącznie w infrastrukturze firmy; żaden prompt nie opuszcza sieci wewnętrznej.
 - **Koszt tokenów** – uruchomienie modelu z otwartymi wagami (open-weight) lokalnie może być nawet 18-krotnie tańsze per milion tokenów niż API komercyjne przy dużej skali.
-- **Jakość modelu** – modele open-source nadal ustępują GPT-4o czy Claude 3.5 Sonnet w zadaniach wymagających złożonego wnioskowania; luka maleje, ale istnieje.
+- **Jakość modelu** – modele open-source nadal ustępują flagowcom pokroju GPT-5.5 czy Claude Opus 4.8 w zadaniach wymagających złożonego wnioskowania; luka maleje, ale istnieje.
 - **Infrastruktura** – wdrożenie on-premise wymaga znaczących nakładów: serwery GPU (np. NVIDIA A100 lub H100), MLOps, zarządzanie aktualizacjami modeli.
 - **Zgodność z przepisami (compliance)** – rozwiązanie on-premise naturalnie spełnia wymogi art. 25 RODO (privacy by design); zgodność z RODO obejmuje przede wszystkim lokalizację przetwarzania i dostęp do danych.
 

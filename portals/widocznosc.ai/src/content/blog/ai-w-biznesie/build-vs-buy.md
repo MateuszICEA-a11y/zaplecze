@@ -102,7 +102,7 @@ Jeśli odpowiedź na którekolwiek z tych pytań brzmi „nie" – nie zaczynaj.
 
 Czyste opcje „kup" albo „buduj" to krańce spektrum. **57% firm wybiera dziś podejście hybrydowe – kupuje standardowe komponenty i buduje własną warstwę logiki** (dane KPMG, 2026). To nie jest zgniły kompromis – to przemyślana architektura.
 
-Hybryda opiera się na tym, że zewnętrzny model bazowy (OpenAI GPT-4o, Anthropic Claude, Google Gemini) dostarcza rozumienie języka, a Twoja firma dostarcza kontekst: produkty, procedury, historię transakcji, zasady cenowe. Integracja następuje przez architekturę [RAG](/rag/przewodnik/) (generowanie wspomagane wyszukiwaniem – Retrieval-Augmented Generation), która pozwala modelowi korzystać z Twoich danych bez konieczności wysyłania ich na zewnątrz w surowej formie.
+Hybryda opiera się na tym, że zewnętrzny model bazowy (OpenAI GPT-5.5, Anthropic Claude, Google Gemini) dostarcza rozumienie języka, a Twoja firma dostarcza kontekst: produkty, procedury, historię transakcji, zasady cenowe. Integracja następuje przez architekturę [RAG](/rag/przewodnik/) (generowanie wspomagane wyszukiwaniem – Retrieval-Augmented Generation), która pozwala modelowi korzystać z Twoich danych bez konieczności wysyłania ich na zewnątrz w surowej formie.
 
 ### Jak działa hybryda w praktyce?
 

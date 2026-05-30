@@ -20,7 +20,7 @@ Zanim wdrożysz chatbota w swojej firmie, system rekrutacyjny oparty na algorytm
 
 ## Dwie regulacje, jeden obowiązek
 
-Większość firm wdrażających AI w Polsce popełnia ten sam błąd: traktuje RODO jako „stary temat" zamknięty lata temu, a AI Act jako przyszłościową regulację, która „jeszcze nie obowiązuje w całości". To prawda – AI Act wchodzi etapami (zakazy od lutego 2025 r., wymogi dla systemów wysokiego ryzyka od sierpnia 2026 r., docelowo pełna struktura nadzoru). Ale oba reżimy obowiązują jednocześnie i art. 2 ust. 7 AI Act wprost potwierdza, że nowe przepisy nie zastępują RODO ani go nie ograniczają.
+Większość firm wdrażających AI w Polsce popełnia ten sam błąd: traktuje RODO jako „stary temat" zamknięty lata temu, a AI Act jako przyszłościową regulację, która „jeszcze nie obowiązuje w całości". To prawda – AI Act wchodzi etapami (zakazy od lutego 2025 r., wymogi dla systemów wysokiego ryzyka z Annexu III pierwotnie od sierpnia 2026 r., przesunięte do 2 grudnia 2027 r. na mocy porozumienia Digital Omnibus z maja 2026 r., docelowo pełna struktura nadzoru). Ale oba reżimy obowiązują jednocześnie i art. 2 ust. 7 AI Act wprost potwierdza, że nowe przepisy nie zastępują RODO ani go nie ograniczają.
 
 **Organizacja wdrażająca AI musi realizować obowiązki wynikające z obu rozporządzeń jednocześnie.** Ich wspólnym mianownikiem jest zasada ochrony danych już w fazie projektowania (Data Protection by Design and by Default), zapisana w art. 25 RODO. W praktyce oznacza to, że zanim uruchomisz system, musisz zadać sobie dwa pytania: jakie ryzyko dla danych stwarza to narzędzie (RODO) i w jakiej kategorii ryzyka AI mieści się jego zastosowanie (AI Act).
 
