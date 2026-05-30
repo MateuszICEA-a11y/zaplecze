@@ -18,97 +18,184 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     <!-- Optional breadcrumb (named slot) -->
     <slot name="breadcrumb" />
 
-    <!-- Header. heroOverlay: tytuł + byline nałożone na obrazek (blog).
-         Domyślnie: tytuł nad obrazkiem (news). Byline renderowany raz,
-         bez duplikacji – wariant steruje tylko opakowaniem i pozycją. -->
-    <header class:list={['article-header', heroOverlay && 'article-header--overlay']}>
-      {
-        heroOverlay && (
-          <div class="article-hero article-hero--overlay">
-            <img src={image} alt={title} />
-            <div class="article-hero-scrim" aria-hidden="true" />
-          </div>
-        )
-      }
-      <div class="article-header-text">
-        {
-          tags && (
-            <div class="article-tags">
-              {tags.map((tag: string) => (
-                <span class="article-tag">{tag}</span>
-              ))}
-            </div>
-          )
-        }
-        <h1 class="article-title display-xxl">{title}</h1>
-        {!heroOverlay && subtitle && <p class="article-subtitle">{subtitle}</p>}
-
-        <div class="article-byline">
-          {
-            author && (
-              <div class="article-author">
-                {author.avatar ? (
-                  <img
-                    src={author.avatar}
-                    alt={author.name}
-                    class="article-author-avatar"
-                    loading="eager"
-                    decoding="sync"
-                  />
-                ) : (
-                  <div class="article-author-avatar article-author-avatar-initials">
-                    {author.name
-                      .split(' ')
-                      .map((n: string) => n[0])
-                      .join('')}
-                  </div>
-                )}
-                <div>
-                  <div class="article-author-name">{author.name}</div>
-                  {author.role && <div class="article-author-role">{author.role}</div>}
-                </div>
-              </div>
-            )
-          }
-          {author && <div class="article-byline-rule" />}
-          <div class="article-meta">
-            <span>{date}</span>
-            {
-              updated && (
-                <>
-                  <span class="article-meta-dot" aria-hidden="true">
-                    ·
-                  </span>
-                  <span class="article-meta-updated">Aktualizacja: {updated}</span>
-                </>
-              )
-            }
-            {
-              readTime && (
-                <>
-                  <span class="article-meta-dot" aria-hidden="true">
-                    ·
-                  </span>
-                  <span>{readTime} czytania</span>
-                </>
-              )
-            }
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- Hero pod nagłówkiem – tylko wariant domyślny (news) -->
+    <!-- Header. heroOverlay (blog): banner w stylu Moz – tekst na firmowym
+         gradiencie po lewej, obraz wtopiony maską po prawej. Domyślnie
+         (news): tytuł nad obrazkiem. -->
     {
-      !heroOverlay && (
-        <div class="article-hero">
-          <img src={image} alt={title} />
-        </div>
+      heroOverlay ? (
+        <header class="article-header article-header--banner">
+          <div class="article-banner">
+            <div class="article-banner-text">
+              {tags && (
+                <div class="article-banner-eyebrow">
+                  {tags.map((tag: string, i: number) => (
+                    <>
+                      {i > 0 && (
+                        <span class="article-banner-eyebrow-sep" aria-hidden="true">
+                          |
+                        </span>
+                      )}
+                      <span>{tag}</span>
+                    </>
+                  ))}
+                </div>
+              )}
+              <h1 class="article-title display-xxl">{title}</h1>
+              {subtitle && <p class="article-banner-deck">{subtitle}</p>}
+              <div class="article-banner-rule" />
+              <div class="article-meta">
+                <span class="article-meta-item">
+                  <svg
+                    class="article-meta-icon"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect x="3" y="4" width="18" height="18" rx="2" />
+                    <path d="M16 2v4M8 2v4M3 10h18" />
+                  </svg>
+                  {date}
+                </span>
+                {updated && (
+                  <>
+                    <span class="article-meta-dot" aria-hidden="true">
+                      ·
+                    </span>
+                    <span class="article-meta-updated">Aktualizacja: {updated}</span>
+                  </>
+                )}
+                {readTime && (
+                  <>
+                    <span class="article-meta-dot" aria-hidden="true">
+                      ·
+                    </span>
+                    <span class="article-meta-item">
+                      <svg
+                        class="article-meta-icon"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M12 7v5l3 2" />
+                      </svg>
+                      {readTime} czytania
+                    </span>
+                  </>
+                )}
+              </div>
+              {author && (
+                <>
+                  <div class="article-banner-rule" />
+                  <div class="article-author">
+                    {author.avatar ? (
+                      <img
+                        src={author.avatar}
+                        alt={author.name}
+                        class="article-author-avatar"
+                        loading="eager"
+                        decoding="sync"
+                      />
+                    ) : (
+                      <div class="article-author-avatar article-author-avatar-initials">
+                        {author.name
+                          .split(' ')
+                          .map((n: string) => n[0])
+                          .join('')}
+                      </div>
+                    )}
+                    <div>
+                      <div class="article-author-name">{author.name}</div>
+                      {author.role && <div class="article-author-role">{author.role}</div>}
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
+            <div class="article-banner-media">
+              <img src={image} alt={title} />
+            </div>
+          </div>
+        </header>
+      ) : (
+        <>
+          <header class="article-header">
+            {tags && (
+              <div class="article-tags">
+                {tags.map((tag: string) => (
+                  <span class="article-tag">{tag}</span>
+                ))}
+              </div>
+            )}
+            <h1 class="article-title display-xxl">{title}</h1>
+            {subtitle && <p class="article-subtitle">{subtitle}</p>}
+
+            <div class="article-byline">
+              {author && (
+                <div class="article-author">
+                  {author.avatar ? (
+                    <img
+                      src={author.avatar}
+                      alt={author.name}
+                      class="article-author-avatar"
+                      loading="eager"
+                      decoding="sync"
+                    />
+                  ) : (
+                    <div class="article-author-avatar article-author-avatar-initials">
+                      {author.name
+                        .split(' ')
+                        .map((n: string) => n[0])
+                        .join('')}
+                    </div>
+                  )}
+                  <div>
+                    <div class="article-author-name">{author.name}</div>
+                    {author.role && <div class="article-author-role">{author.role}</div>}
+                  </div>
+                </div>
+              )}
+              {author && <div class="article-byline-rule" />}
+              <div class="article-meta">
+                <span>{date}</span>
+                {updated && (
+                  <>
+                    <span class="article-meta-dot" aria-hidden="true">
+                      ·
+                    </span>
+                    <span class="article-meta-updated">Aktualizacja: {updated}</span>
+                  </>
+                )}
+                {readTime && (
+                  <>
+                    <span class="article-meta-dot" aria-hidden="true">
+                      ·
+                    </span>
+                    <span>{readTime} czytania</span>
+                  </>
+                )}
+              </div>
+            </div>
+          </header>
+
+          <div class="article-hero">
+            <img src={image} alt={title} />
+          </div>
+        </>
       )
     }
-
-    <!-- Subtitle jako lead pod hero – wariant overlay (blog) -->
-    {heroOverlay && subtitle && <p class="article-subtitle article-subtitle--lead">{subtitle}</p>}
 
     <!-- Body grid: content + sidebar -->
     <div class="article-body-grid">
@@ -581,110 +668,167 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     );
   }
 
-  /* ── Hero overlay (tytuł + byline na obrazku, blog) ────────── */
-  .article-header--overlay {
-    position: relative;
+  /* ── Hero banner (styl Moz w naszym motywie, blog) ─────────── */
+  .article-header--banner {
     max-width: 1360px;
-    margin: 0 auto 28px auto;
+    margin: 0 auto 56px auto;
   }
 
-  .article-hero--overlay {
-    margin: 0;
-    overflow: hidden;
-    --hero-glow: transparent;
-  }
-
-  .article-hero--overlay::before {
-    display: none; /* poświata zbędna pod pełnym kadrem */
-  }
-
-  /* Pełny kadr – brak radialnej maski wygaszającej krawędzie */
-  .article-hero--overlay img {
-    z-index: 0;
-    -webkit-mask-image: none;
-    mask-image: none;
-  }
-
-  .article-hero-scrim {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
+  .article-banner {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: stretch;
+    min-height: clamp(320px, 30vw, 440px);
     border-radius: var(--r-xl);
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.82) 0%,
-      rgba(0, 0, 0, 0.55) 26%,
-      rgba(0, 0, 0, 0.12) 58%,
-      transparent 84%
-    );
-    pointer-events: none;
+    overflow: hidden;
+    border: 1px solid var(--hairline);
+    /* Firmowy gradient – jasny akcent w light, głęboki w dark. Tekst
+       to var(--ink), więc czytelność trzyma się na obu motywach. */
+    background:
+      radial-gradient(
+        120% 120% at 0% 0%,
+        color-mix(in srgb, var(--accent-blue) 24%, var(--bg-surface-1)) 0%,
+        transparent 60%
+      ),
+      linear-gradient(
+        110deg,
+        color-mix(in srgb, var(--accent-blue) 16%, var(--bg-surface-1)) 0%,
+        var(--bg-surface-1) 58%
+      );
   }
 
-  .article-header--overlay .article-header-text {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
+  :root[data-theme='dark'] .article-banner {
+    background:
+      radial-gradient(
+        120% 120% at 0% 0%,
+        color-mix(in srgb, var(--accent-blue) 38%, var(--bg-surface-1)) 0%,
+        transparent 62%
+      ),
+      linear-gradient(
+        110deg,
+        color-mix(in srgb, var(--accent-blue) 26%, var(--bg-surface-1)) 0%,
+        var(--bg-surface-1) 60%
+      );
+  }
+
+  .article-banner-text {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    padding: clamp(22px, 3.5vw, 48px);
+    align-items: flex-start;
+    justify-content: center;
+    padding: clamp(28px, 3vw, 56px);
+    min-width: 0;
   }
 
-  .article-header--overlay .article-title {
-    color: #fff;
-    margin: 0 0 18px 0;
-    text-shadow:
-      0 1px 24px rgba(0, 0, 0, 0.45),
-      0 1px 3px rgba(0, 0, 0, 0.5);
+  .article-banner-eyebrow {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+    font-family: var(--font-sans);
+    font-size: var(--fs-caption);
+    font-weight: 600;
+    letter-spacing: var(--ls-caption);
+    color: var(--accent-blue);
   }
 
-  .article-header--overlay .article-tag {
-    background: rgba(255, 255, 255, 0.16);
-    color: #fff;
-    -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
+  .article-banner-eyebrow-sep {
+    color: var(--ink-faint);
+    font-weight: 400;
   }
 
-  .article-header--overlay .article-author-name,
-  .article-header--overlay .article-meta-updated {
-    color: #fff;
+  .article-header--banner .article-title {
+    margin: 0;
+    color: var(--ink);
+    font-size: clamp(1.75rem, 3vw, 2.75rem);
+    line-height: 1.1;
   }
 
-  .article-header--overlay .article-author-role,
-  .article-header--overlay .article-meta {
-    color: rgba(255, 255, 255, 0.82);
+  .article-banner-deck {
+    margin: 16px 0 0 0;
+    max-width: 48ch;
+    font-family: var(--font-sans);
+    font-size: clamp(15px, 1.1vw, 17px);
+    line-height: 1.5;
+    letter-spacing: var(--ls-body);
+    color: var(--ink-muted);
   }
 
-  .article-header--overlay .article-meta-dot {
-    color: rgba(255, 255, 255, 0.6);
+  .article-banner-rule {
+    width: min(320px, 100%);
+    height: 1px;
+    margin: 22px 0;
+    background: linear-gradient(
+      to right,
+      var(--hairline) 0%,
+      var(--hairline-soft) 70%,
+      transparent 100%
+    );
   }
 
-  .article-header--overlay .article-byline-rule {
-    background: rgba(255, 255, 255, 0.3);
+  .article-header--banner .article-meta {
+    gap: 12px;
   }
 
-  /* Subtitle jako lead pod hero overlay */
-  .article-subtitle--lead {
-    max-width: 1040px;
-    margin: 0 auto 12px auto;
+  .article-meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
   }
 
-  @media (max-width: 640px) {
-    .article-hero--overlay {
-      aspect-ratio: 4 / 5;
+  .article-meta-icon {
+    color: var(--ink-faint);
+    flex-shrink: 0;
+  }
+
+  .article-banner-media {
+    position: relative;
+    min-height: 100%;
+    background: transparent;
+  }
+
+  .article-banner-media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* Lewa krawędź obrazu wtapia się w gradient panelu (efekt Moz). */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 26%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 26%);
+  }
+
+  @media (max-width: 860px) {
+    .article-header--banner {
+      margin-bottom: 40px;
     }
 
-    .article-header--overlay .article-header-text {
-      padding: 20px;
+    .article-banner {
+      grid-template-columns: 1fr;
+      min-height: 0;
     }
 
-    .article-header--overlay .article-title {
-      font-size: clamp(1.6rem, 7.5vw, 2.1rem);
-      margin-bottom: 14px;
+    .article-banner-media {
+      order: -1;
+      aspect-ratio: 16 / 9;
+      min-height: 0;
     }
 
-    .article-header--overlay .article-byline {
-      gap: 10px;
+    .article-banner-media img {
+      position: relative;
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+
+    .article-banner-text {
+      padding: 24px 20px 28px;
+    }
+
+    .article-banner-rule {
+      margin: 18px 0;
     }
   }
 
