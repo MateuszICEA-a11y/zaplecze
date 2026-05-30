@@ -22,12 +22,12 @@ Claude i Gemini to dziś dwie najpoważniejsze alternatywy dla ChatGPT w codzien
 
 Zanim przejdziesz do szczegółów, ta tabela daje przekrój przez obie platformy. Dane aktualne na maj 2026 r. według oficjalnych cenników Anthropic i Google.
 
-| Kryterium | Claude (Sonnet 4.6 / Opus 4.8) | Gemini (2.5 Pro) |
+| Kryterium | Claude (Sonnet 4.6 / Opus 4.8) | Gemini (3.1 Pro) |
 |---|---|---|
 | Producent | Anthropic | Google DeepMind |
 | Okno kontekstowe | do 1M (Sonnet i Opus) | 1M tokenów |
-| SWE-bench Verified | ~80–89% | ~63–78% |
-| Cena API (input/output) | $3/$15 (Sonnet), $5/$25 (Opus) | $1,25/$10 (Pro) |
+| SWE-bench Verified | ~80–89% | ~80,6% (3.1 Pro) |
+| Cena API (input/output) | $3/$15 (Sonnet), $5/$25 (Opus) | $2/$12 (3.1 Pro, ≤200K) |
 | Plan dla osób prywatnych | Claude.ai Pro – $20/mies. | Google AI Pro – $19,99/mies. |
 | Plan premium | Claude.ai Max – $100–200/mies. | Google AI Ultra – $100–200/mies. |
 | Integracja z Google Workspace | Brak natywnej | Natywna (Gmail, Docs, Drive) |
@@ -35,7 +35,7 @@ Zanim przejdziesz do szczegółów, ta tabela daje przekrój przez obie platform
 | Język interfejsu | Angielski + wielojęzyczny | Wielojęzyczny, PL dostępny |
 | Mocna strona | Analiza, pisanie, kod, kontekst | Ekosystem Google, multimedia, cena |
 
-**Claude Sonnet 4.6 osiąga wynik 79,6% na SWE-bench Verified – to punkt odniesienia dla modeli klasy średniej w kodowaniu.** Gemini 2.5 Pro uzyskuje ok. 63–78% w zależności od benchmarku i daty pomiaru. Różnica jest wyraźna i przekłada się na praktykę.
+**Flagowy Claude Opus 4.8 osiąga 88,6% na SWE-bench Verified – wyraźnie przed Gemini 3.1 Pro (80,6%).** W klasie średniej Claude Sonnet 4.6 (79,6%) i Gemini 3.1 Pro wypadają niemal równo, więc decydująca przewaga Claude w kodowaniu ujawnia się dopiero na poziomie modelu flagowego.
 
 ## Praca z dokumentami – kto głębiej analizuje
 
@@ -63,11 +63,11 @@ Gemini ma tu jedną konkretną przewagę: natywny dostęp do wyszukiwarki Google
 
 ![Werdykt Claude kontra Gemini w pięciu scenariuszach – dokumenty, kodowanie, długi kontekst, ekosystem Google oraz cena](../../../assets/images/infographic-modele-llm-claude-vs-gemini.png)
 
-## Kodowanie – gdzie różnica sięga kilkunastu punktów procentowych
+## Kodowanie – gdzie przewaga Claude rośnie wraz z klasą modelu
 
 To obszar, w którym dane są najbardziej jednoznaczne. SWE-bench Verified to branżowy punkt odniesienia do pomiaru zdolności modeli w rozwiązywaniu rzeczywistych zgłoszeń błędów (bugów) w repozytoriach GitHub – nie zadań syntetycznych, ale prawdziwego kodu produkcyjnego.
 
-**Claude Sonnet 4.6 uzyskuje 79,6% na SWE-bench Verified. Gemini 2.5 Pro – ok. 63–78% w zależności od konfiguracji agenta.** Flagowy Claude Opus 4.8 (wydany 28 maja 2026) osiąga 88,6%, a najnowsze pomiary z LM Council (maj 2026) pokazują Claude'a jako model klasy zbliżonej do GPT-5 w tym wymiarze.
+**Flagowy Claude Opus 4.8 (wydany 28 maja 2026) uzyskuje 88,6% na SWE-bench Verified, wyprzedzając Gemini 3.1 Pro (80,6%) o ok. 8 punktów.** W klasie średniej Claude Sonnet 4.6 (79,6%) wypada niemal równo z Gemini 3.1 Pro – decydująca przewaga Claude leży więc w modelu flagowym, co potwierdzają też pomiary z LM Council (maj 2026).
 
 W praktyce ta różnica oznacza mniej iteracji przy debugowaniu i większą szansę na poprawne działanie kodu za pierwszym razem. Przy stawce programisty seniorskiego czas to pieniądz – jeden zaoszczędzony cykl poprawek może uzasadnić wyższy koszt tokenów.
 
@@ -79,17 +79,17 @@ Narzędzie Claude Code (interfejs wiersza poleceń, czyli CLI) idzie krok dalej 
 
 Okno kontekstowe decyduje o tym, ile danych możesz podać modelowi w jednym zapytaniu. Claude Sonnet 4.6 obsługuje 500 tysięcy tokenów w interfejsie czatu (ok. 375 000 słów, czyli kilka obszernych raportów naraz), a przez API i Claude Code – pełny milion. Claude Opus 4.8 również oferuje okno 1 miliona tokenów.
 
-Gemini 2.5 Pro oferuje 1 milion tokenów jako standard w każdym planie, bez konieczności sięgania po najdroższą wersję modelu.
+Gemini 3.1 Pro oferuje 1 milion tokenów jako standard w każdym planie, bez konieczności sięgania po najdroższą wersję modelu.
 
 Co to oznacza w praktyce? Kilka scenariuszy:
 
-- **Analiza całej bazy kodu** – przy projekcie liczącym 50 000+ linii kodu Gemini 2.5 Pro może wczytać całość za jednym razem; Claude Sonnet wymaga podziału na sesje
+- **Analiza całej bazy kodu** – przy projekcie liczącym 50 000+ linii kodu Gemini 3.1 Pro może wczytać całość za jednym razem; Claude Sonnet wymaga podziału na sesje
 - **Przegląd dokumentacji technicznej** – specyfikacja produktu licząca 800+ stron mieści się w kontekście obu modeli flagowych
 - **Transkrypty spotkań i notatki z całego kwartału** – tu wystarczy Sonnet z 200K tokenów dla większości firm
 
 Warto pamiętać o jednym: duże okno kontekstowe to nie gwarancja dobrej jakości wnioskowania na całym materiale. Claude Opus uzyskuje 76% dokładności przy teście MRCR v2 (wydobywanie informacji z milionowego kontekstu), co jest wynikiem znacząco wyższym niż w przypadku wcześniejszych generacji modeli. Dla AI, które nie zostało zoptymalizowane pod tym kątem, szeroki kontekst bywa jedynie iluzją możliwości.
 
-**Jeśli Twoja praca wymaga regularnego przetwarzania bardzo dużych zbiorów danych w jednym prompcie, Gemini 2.5 Pro daje ten sam rozmiar okna za niższą cenę tokenu.** Jeśli priorytetem jest jakość wnioskowania na długim dokumencie, Claude Opus jest bezpieczniejszym wyborem.
+**Jeśli Twoja praca wymaga regularnego przetwarzania bardzo dużych zbiorów danych w jednym prompcie, Gemini 3.1 Pro daje ten sam rozmiar okna za niższą cenę tokenu.** Jeśli priorytetem jest jakość wnioskowania na długim dokumencie, Claude Opus jest bezpieczniejszym wyborem.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/tomasz-czechowski.avif" alt="Tomasz Czechowski" /></div>
@@ -125,9 +125,9 @@ Na poziomie API różnica jest wyraźna:
 
 - **Claude Sonnet 4.6** – $3 za milion tokenów wejściowych / $15 za milion tokenów wyjściowych
 - **Claude Opus 4.8** – $5 / $25 za milion tokenów
-- **Gemini 2.5 Pro** – $1,25 / $10 za milion tokenów
+- **Gemini 3.1 Pro** – $2 / $12 za milion tokenów (dla kontekstu do 200K; powyżej $4 / $18)
 
-Gemini jest znacznie tańsze w przeliczeniu na token. Przy wolumenach produkcyjnych – tysiące zapytań dziennie, przetwarzanie masowych zbiorów danych – ta różnica szybko rośnie do tysięcy dolarów miesięcznie. Dla aplikacji masowych, poziom Gemini Flash (ok. $0,30 input / $2,50 output za milion tokenów) nie ma porównywalnego odpowiednika po stronie Anthropic.
+Gemini jest znacznie tańsze w przeliczeniu na token. Przy wolumenach produkcyjnych – tysiące zapytań dziennie, przetwarzanie masowych zbiorów danych – ta różnica szybko rośnie do tysięcy dolarów miesięcznie. Dla aplikacji masowych najtańsze warianty Gemini Flash nie mają porównywalnego odpowiednika cenowego po stronie Anthropic.
 
 Jeśli chcesz sprawdzić, jak Twoja obecna widoczność w modelach AI wygląda zanim zdecydujesz o strategii contentowej, [Widoczność marki w AI](/narzedzia/brand-check/) odpyta cztery silniki AI o Twoją markę i pokaże, gdzie jesteś cytowany, a gdzie Cię nie ma.
 
@@ -147,7 +147,7 @@ Zamiast jednego ogólnego werdyktu, przygotowaliśmy kilka konkretnych:
 - **Cały Twój workflow toczy się w Google Workspace** – Gmail, Docs, Sheets, Drive; integracja natywna jest w tym przypadku niezastąpiona
 - **Potrzebujesz aktualnych danych** – natywna weryfikacja danych w wynikach Google Search (grounding) w czasie rzeczywistym; Claude bez Computer Use ma datę odcięcia wiedzy
 - **Budujesz aplikacje webowe lub UI** – ranking WebDev Arena Leaderboard jest tu wymowny
-- **Masz duże wolumeny w API** – koszt tokenów Gemini 2.5 Pro jest ok. 2,5x niższy niż w przypadku Claude Sonnet; przy dużej skali robi to ogromną różnicę
+- **Masz duże wolumeny w API** – koszt tokenów Gemini 3.1 Pro jest ok. 1,5x niższy niż w przypadku Claude Sonnet; przy dużej skali robi to dużą różnicę
 
 Pełniejszy przegląd możliwości każdego modelu znajdziesz w artykułach o [Claude](/modele-llm/claude/) i [Gemini](/modele-llm/gemini/), a szerszy kontekst rynku LLM opisuje [przewodnik po modelach językowych](/modele-llm/przewodnik/). Jeśli zastanawiasz się, jak pozycjonowanie w Gemini wpływa na widoczność marki, przydatna będzie strona [pozycjonowanie AI – Gemini](/pozycjonowanie-ai/gemini/).
 
