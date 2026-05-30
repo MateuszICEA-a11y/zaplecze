@@ -63,7 +63,7 @@ Cztery pary pojęć, które pomagają odróżnić obie dyscypliny:
 
 ### Upychanie słów kluczowych – efekt odwrotny do zamierzonego
 
-Upychanie słów kluczowych (keyword stuffing) to jedno z najcenniejszych „osiągnięć" starego SEO, które w GEO aktywnie szkodzi. Kiedy tekst wielokrotnie powtarza tę samą frazę bez budowania głębokich relacji pojęciowych, wektor (embedding) reprezentujący dany fragment kurczy się semantycznie – model traktuje go jak zduplikowany, bezużyteczny rekord. Benchmark Princeton potwierdził to empirycznie: keyword stuffing był jedyną taktyką, która obniżała wskaźnik cytowalności.
+Upychanie słów kluczowych (keyword stuffing) to jedno z najcenniejszych „osiągnięć" starego SEO, które w GEO aktywnie szkodzi. Kiedy tekst wielokrotnie powtarza tę samą frazę bez budowania głębokich relacji pojęciowych, wektor (embedding) reprezentujący dany fragment kurczy się semantycznie – model traktuje go jak zduplikowany, bezużyteczny rekord. Benchmark Princeton potwierdził to empirycznie: keyword stuffing był jedną z kilku nieskutecznych taktyk obniżających wskaźnik cytowalności (obok m.in. nadmiernego rozbudowywania treści i przesadnie perswazyjnego języka).
 
 Zamiast tego: buduj treść wokół precyzyjnych faktów, dat, liczb i relacji przyczynowo-skutkowych. Każdy fragment po 200–400 słów powinien samodzielnie odpowiadać na jedno konkretne pytanie – bez konieczności czytania reszty artykułu.
 

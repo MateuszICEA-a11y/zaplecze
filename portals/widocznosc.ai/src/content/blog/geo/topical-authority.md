@@ -34,7 +34,7 @@ Klasyczna wyszukiwarka Google opiera ocenę autorytetu na trzech filarach: linka
 
 Mechanizm jest prosty, ale ma duże konsekwencje. Gdy silnik pobierający dane wyciąga fragmenty dla pojedynczego podzapytania, sprawdza, z jakiej domeny one pochodzą. Jeśli ta sama domena była wcześniej wybrana dla innych fragmentów w tej samej dziedzinie tematycznej, jej waga rośnie.
 
-To nieformalny mechanizm, ale empirycznie potwierdzony. Kevin Indig pokazał na 1,2 mln cytowań ChatGPT, że **top 10 domen w danej niszy zabiera 46% wszystkich cytowań**. Reszta domen walczy o resztki.
+To nieformalny mechanizm, ale empirycznie potwierdzony. Kevin Indig pokazał na bazie ~1,2 mln odpowiedzi ChatGPT, że **w kategoriach porównań produktów top 10 domen zabiera 46% wszystkich cytowań** (w innych branżach koncentracja jest niższa). Reszta domen walczy o resztki.
 
 LLM-y wykazują też tendencję do zaufania przez asocjację (ang. *domain trust by association*) – domena wielokrotnie cytowana razem z autorytatywnymi źródłami (Wikipedia, encyklopedie branżowe, publikacje akademickie) zaczyna być traktowana jako część tego samego klastra zaufania. To wzmacnia pozycję ugruntowanych graczy i utrudnia wejście nowym.
 
@@ -129,7 +129,7 @@ Kolejność działań w takiej sytuacji (sprawdzona w ponad 7 projektach klient�
 
 ## Jak mierzyć efekty wdrożenia?
 
-Topical authority w erze LLM-ów nie jest wyborem – jest minimalnym wymogiem dla każdej domeny chcącej być cytowaną w AI Overviews, ChatGPT i Perplexity. **Bez 8–15 powiązanych artykułów wokół jednego pillara statystycznie nie wchodzisz do top 10 domen w danej niszy, a top 10 zabiera 46% cytowań.**
+Topical authority w erze LLM-ów nie jest wyborem – jest minimalnym wymogiem dla każdej domeny chcącej być cytowaną w AI Overviews, ChatGPT i Perplexity. **Bez 8–15 powiązanych artykułów wokół jednego pillara statystycznie nie wchodzisz do top 10 domen w swojej kategorii, a w kategoriach porównań produktów top 10 zabiera aż 46% cytowań.**
 
 Pillar + cluster to najczystsza, najprostsza i najlepiej udokumentowana metodyka budowania autorytetu tematycznego. Wdrożenie zajmuje 8–12 tygodni dla jednego klastra i wymaga dyscypliny w linkowaniu wewnętrznym, ale efekt – mierzony przez udział w głosie (Share of Voice) i wskaźnik cytowań (Citation Rate) – jest powtarzalny.
 

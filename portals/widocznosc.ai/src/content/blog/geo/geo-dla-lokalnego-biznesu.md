@@ -46,7 +46,7 @@ Drugi mechanizm to dane treningowe. Modele oparte na parametrach zgromadzonych p
 
 ### Co sprawia, że model porzuca Twój wpis na rzecz konkurencji?
 
-Modele językowe redukują niepewność. Jeśli dane kontaktowe Twojej firmy różnią się między stroną a profilem Google a katalogiem branżowym, model rozpoznaje sprzeczność i wycofuje się. **Badania projektu Google AGREE (NAACL 2024) pokazały, że nawet drobne rozbieżności – różny zapis ulicy, różny numer telefonu – eliminują firmę z syntetyzowanej odpowiedzi jako potencjalne źródło błędu.**
+Modele językowe redukują niepewność. Jeśli dane kontaktowe Twojej firmy różnią się między stroną a profilem Google a katalogiem branżowym, model rozpoznaje sprzeczność i wycofuje się. **Nawet drobne rozbieżności – różny zapis ulicy, inny numer telefonu – mogą wyeliminować firmę z syntetyzowanej odpowiedzi jako potencjalne źródło błędu.**
 
 Wolne strony to kolejny problem. Strona ładująca się powyżej 5 sekund może zostać porzucona przez bota RAG, zanim zdąży pobrać treść – model wtedy rozszerza poszukiwania na inne źródła i tam natrafia na konkurencję.
 

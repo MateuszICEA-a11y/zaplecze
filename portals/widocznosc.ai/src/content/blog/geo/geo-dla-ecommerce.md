@@ -134,7 +134,7 @@ Modele AI podczas syntezy odpowiedzi weryfikują, czy informacja pojawia się w 
 
 ### Spójność danych jako sygnał GEO
 
-Badania Google AGREE (NAACL 2024) wykazały, że modele językowe aktywnie weryfikują spójność informacji między źródłami. Jeśli cena produktu na stronie różni się od ceny w artykule porównawczym na portalu branżowym, model traktuje tę informację jako niespójną i eliminuje ją z syntezy.
+Modele językowe korzystające z wielu źródeł wychwytują rozbieżności między nimi. Jeśli cena produktu na stronie różni się od ceny w artykule porównawczym na portalu branżowym, model może potraktować tę informację jako niespójną i pominąć ją w syntezie.
 
 **Najczęstsze źródła niespójności w e-commerce to: stary cennik na portalach afiliacyjnych, różne nazwy modeli w różnych opisach, rozbieżne dane gwarancyjne.** Zanim zaczniesz budować nową treść pod GEO, przeprowadź audyt spójności danych w sieci – to szybsza dźwignia niż pisanie nowych artykułów.
 
