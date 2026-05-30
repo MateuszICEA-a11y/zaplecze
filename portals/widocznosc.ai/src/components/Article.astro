@@ -1,5 +1,5 @@
 ---
-const { articleData, variant, toc } = Astro.props;
+const { articleData, variant, toc, heroOverlay } = Astro.props;
 const { title, subtitle, date, updated, image, author, readTime, tags } = articleData;
 const showToc = Array.isArray(toc) && toc.length >= 3;
 const encodedTitle = encodeURIComponent(title);
@@ -18,78 +18,97 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     <!-- Optional breadcrumb (named slot) -->
     <slot name="breadcrumb" />
 
-    <!-- Header -->
-    <header class="article-header">
+    <!-- Header. heroOverlay: tytuł + byline nałożone na obrazek (blog).
+         Domyślnie: tytuł nad obrazkiem (news). Byline renderowany raz,
+         bez duplikacji – wariant steruje tylko opakowaniem i pozycją. -->
+    <header class:list={['article-header', heroOverlay && 'article-header--overlay']}>
       {
-        tags && (
-          <div class="article-tags">
-            {tags.map((tag: string) => (
-              <span class="article-tag">{tag}</span>
-            ))}
+        heroOverlay && (
+          <div class="article-hero article-hero--overlay">
+            <img src={image} alt={title} />
+            <div class="article-hero-scrim" aria-hidden="true" />
           </div>
         )
       }
-      <h1 class="article-title display-xxl">{title}</h1>
-      {subtitle && <p class="article-subtitle">{subtitle}</p>}
-
-      <div class="article-byline">
+      <div class="article-header-text">
         {
-          author && (
-            <div class="article-author">
-              {author.avatar ? (
-                <img
-                  src={author.avatar}
-                  alt={author.name}
-                  class="article-author-avatar"
-                  loading="eager"
-                  decoding="sync"
-                />
-              ) : (
-                <div class="article-author-avatar article-author-avatar-initials">
-                  {author.name
-                    .split(' ')
-                    .map((n: string) => n[0])
-                    .join('')}
-                </div>
-              )}
-              <div>
-                <div class="article-author-name">{author.name}</div>
-                {author.role && <div class="article-author-role">{author.role}</div>}
-              </div>
+          tags && (
+            <div class="article-tags">
+              {tags.map((tag: string) => (
+                <span class="article-tag">{tag}</span>
+              ))}
             </div>
           )
         }
-        {author && <div class="article-byline-rule" />}
-        <div class="article-meta">
-          <span>{date}</span>
+        <h1 class="article-title display-xxl">{title}</h1>
+        {!heroOverlay && subtitle && <p class="article-subtitle">{subtitle}</p>}
+
+        <div class="article-byline">
           {
-            updated && (
-              <>
-                <span class="article-meta-dot" aria-hidden="true">
-                  ·
-                </span>
-                <span class="article-meta-updated">Aktualizacja: {updated}</span>
-              </>
+            author && (
+              <div class="article-author">
+                {author.avatar ? (
+                  <img
+                    src={author.avatar}
+                    alt={author.name}
+                    class="article-author-avatar"
+                    loading="eager"
+                    decoding="sync"
+                  />
+                ) : (
+                  <div class="article-author-avatar article-author-avatar-initials">
+                    {author.name
+                      .split(' ')
+                      .map((n: string) => n[0])
+                      .join('')}
+                  </div>
+                )}
+                <div>
+                  <div class="article-author-name">{author.name}</div>
+                  {author.role && <div class="article-author-role">{author.role}</div>}
+                </div>
+              </div>
             )
           }
-          {
-            readTime && (
-              <>
-                <span class="article-meta-dot" aria-hidden="true">
-                  ·
-                </span>
-                <span>{readTime} czytania</span>
-              </>
-            )
-          }
+          {author && <div class="article-byline-rule" />}
+          <div class="article-meta">
+            <span>{date}</span>
+            {
+              updated && (
+                <>
+                  <span class="article-meta-dot" aria-hidden="true">
+                    ·
+                  </span>
+                  <span class="article-meta-updated">Aktualizacja: {updated}</span>
+                </>
+              )
+            }
+            {
+              readTime && (
+                <>
+                  <span class="article-meta-dot" aria-hidden="true">
+                    ·
+                  </span>
+                  <span>{readTime} czytania</span>
+                </>
+              )
+            }
+          </div>
         </div>
       </div>
     </header>
 
-    <!-- Hero image -->
-    <div class="article-hero">
-      <img src={image} alt={title} />
-    </div>
+    <!-- Hero pod nagłówkiem – tylko wariant domyślny (news) -->
+    {
+      !heroOverlay && (
+        <div class="article-hero">
+          <img src={image} alt={title} />
+        </div>
+      )
+    }
+
+    <!-- Subtitle jako lead pod hero – wariant overlay (blog) -->
+    {heroOverlay && subtitle && <p class="article-subtitle article-subtitle--lead">{subtitle}</p>}
 
     <!-- Body grid: content + sidebar -->
     <div class="article-body-grid">
@@ -560,6 +579,113 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
       rgba(0, 0, 0, 0.85) 85%,
       rgba(0, 0, 0, 0.4) 100%
     );
+  }
+
+  /* ── Hero overlay (tytuł + byline na obrazku, blog) ────────── */
+  .article-header--overlay {
+    position: relative;
+    max-width: 1360px;
+    margin: 0 auto 28px auto;
+  }
+
+  .article-hero--overlay {
+    margin: 0;
+    overflow: hidden;
+    --hero-glow: transparent;
+  }
+
+  .article-hero--overlay::before {
+    display: none; /* poświata zbędna pod pełnym kadrem */
+  }
+
+  /* Pełny kadr – brak radialnej maski wygaszającej krawędzie */
+  .article-hero--overlay img {
+    z-index: 0;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .article-hero-scrim {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: var(--r-xl);
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(0, 0, 0, 0.55) 26%,
+      rgba(0, 0, 0, 0.12) 58%,
+      transparent 84%
+    );
+    pointer-events: none;
+  }
+
+  .article-header--overlay .article-header-text {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: clamp(22px, 3.5vw, 48px);
+  }
+
+  .article-header--overlay .article-title {
+    color: #fff;
+    margin: 0 0 18px 0;
+    text-shadow:
+      0 1px 24px rgba(0, 0, 0, 0.45),
+      0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  .article-header--overlay .article-tag {
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+
+  .article-header--overlay .article-author-name,
+  .article-header--overlay .article-meta-updated {
+    color: #fff;
+  }
+
+  .article-header--overlay .article-author-role,
+  .article-header--overlay .article-meta {
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  .article-header--overlay .article-meta-dot {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .article-header--overlay .article-byline-rule {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  /* Subtitle jako lead pod hero overlay */
+  .article-subtitle--lead {
+    max-width: 1040px;
+    margin: 0 auto 12px auto;
+  }
+
+  @media (max-width: 640px) {
+    .article-hero--overlay {
+      aspect-ratio: 4 / 5;
+    }
+
+    .article-header--overlay .article-header-text {
+      padding: 20px;
+    }
+
+    .article-header--overlay .article-title {
+      font-size: clamp(1.6rem, 7.5vw, 2.1rem);
+      margin-bottom: 14px;
+    }
+
+    .article-header--overlay .article-byline {
+      gap: 10px;
+    }
   }
 
   /* Body grid */
