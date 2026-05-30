@@ -62,3 +62,4 @@ pipeline/fb-poster/fb-poster.log
 
 # web-fact-checker venv
 pipeline/web-fact-checker/.venv/
+pipeline/web-fact-checker/.env
