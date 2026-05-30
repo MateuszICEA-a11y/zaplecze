@@ -1,7 +1,7 @@
 import json
 import pathlib
 
-from scripts.web_verify import normalize_value, reconcile, build_gpt5_request, parse_gpt5_response
+from scripts.web_verify import normalize_value, reconcile, build_gpt5_request, parse_gpt5_response, format_report
 
 FIX = pathlib.Path(__file__).parent / "fixtures" / "gpt5_response_sample.json"
 
@@ -83,3 +83,17 @@ def test_parse_extracts_verdicts_and_strips_fence():
 def test_parse_handles_empty_or_malformed():
     assert parse_gpt5_response({"output": []}) == []
     assert parse_gpt5_response({"output": [{"type": "message", "content": [{"type": "output_text", "text": "nie-json"}]}]}) == []
+
+
+# --- format_report() tests ---
+
+def test_report_groups_apply_and_flag():
+    claims = {"f.md:1": {"line": 98, "quote": "GPT-4o", "type": "price"},
+              "f.md:2": {"line": 70, "quote": "90,2% (GPT-4o)", "type": "benchmark"}}
+    decisions = [
+        {"claim_id": "f.md:1", "action": "apply", "value": "GPT-5.5", "reason": "A i B zgodne", "sources": ["https://openai.com/pricing"]},
+        {"claim_id": "f.md:2", "action": "flag", "value": None, "reason": "rozbieżna klasyfikacja", "sources": []},
+    ]
+    out = format_report("chatgpt.md", claims, decisions)
+    assert "Poprawiono 1" in out and "Do decyzji 1" in out
+    assert "L98" in out and "GPT-5.5" in out and "L70" in out and "openai.com/pricing" in out

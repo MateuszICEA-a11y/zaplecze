@@ -94,3 +94,19 @@ def parse_gpt5_response(resp: dict) -> list[dict]:
     except json.JSONDecodeError:
         return []
     return data if isinstance(data, list) else []
+
+
+def format_report(filename: str, claims: dict, decisions: list[dict]) -> str:
+    applied = [d for d in decisions if d["action"] == "apply"]
+    flagged = [d for d in decisions if d["action"] == "flag"]
+    lines = [f"📄 {filename}  · {len(claims)} twierdzeń · {len(decisions)} werdyktów"]
+    lines.append(f"🔧 Poprawiono {len(applied)}:")
+    for d in applied:
+        c = claims.get(d["claim_id"], {})
+        src = f"  [{'; '.join(d['sources'])}]" if d["sources"] else ""
+        lines.append(f"  L{c.get('line', '?')} {c.get('quote', '')} -> {d['value']}{src}")
+    lines.append(f"🚩 Do decyzji {len(flagged)}:")
+    for d in flagged:
+        c = claims.get(d["claim_id"], {})
+        lines.append(f"  L{c.get('line', '?')} {c.get('quote', '')} – {d['reason']}")
+    return "\n".join(lines)
