@@ -88,7 +88,7 @@ Aplikacja Gemini dostępna jest w czterech planach konsumenckich. Poniżej zesta
 | Plan | Cena | Modele | Kluczowe funkcje |
 |---|---|---|---|
 | **Free** | 0 USD/mies. | Gemini Flash | Czat, tryb głosowy Gemini Live (z limitami), 5 raportów Deep Research/mies. |
-| **AI Plus** | 7,99 USD/mies. | Flash + limity Pro | Wyższe limity, dostęp do funkcji Workspace AI |
+| **AI Plus** | 7,99 USD/mies. | Gemini 3.5 Flash | Wyższe limity, dostęp do funkcji Workspace AI |
 | **AI Pro** | 19,99 USD/mies. | Pro (100 zapytań/dzień z trybem Thinking) | 20 raportów Deep Research/dzień, okno 1M tokenów, Gems, NotebookLM Plus |
 | **AI Ultra** | 99,99–200 USD/mies. | Ultra (500 zapytań/dzień) | 200 raportów Deep Research/dzień, Veo do generowania wideo, priorytetowy dostęp, 20 TB przestrzeni |
 
@@ -169,7 +169,7 @@ Google AI Studio (aistudio.google.com) to oficjalna, bezpłatna platforma do pro
 
 AI Studio obsługuje tryb wielomodalny bezpośrednio z poziomu interfejsu graficznego: możesz wgrać tam zdjęcie, plik audio lub krótkie wideo i natychmiast przetestować, jak dokładnie model zinterpretuje przekazaną treść. Dla specjalistów z branży SEO i content marketerów to bardzo praktyczny sposób na błyskawiczne sprawdzenie, w jaki sposób Gemini analizuje docelową stronę produktową lub artykuł – zanim marketerzy zainwestują krwawicę i roboczogodziny w optymalizację takich zasobów.
 
-Samo Gemini API wycenione jest klasycznie w oparciu o model pay-per-token. Gemini Flash kosztuje obecnie około 0,15 USD za milion tokenów wejściowych i zaledwie 0,60 USD za milion tokenów wyjściowych. W przypadku znacznie potężniejszego Gemini Pro – ceny wynoszą odpowiednio 1,25 i 5,00 USD. Dla zespołów deweloperskich projektujących dedykowane, własne integracje z Workspace lub firmowym systemem CRM daje to w pełni otwartą ścieżkę skalowania bez przymusu korzystania ze standardowych planów konsumenckich.
+Samo Gemini API wycenione jest klasycznie w oparciu o model pay-per-token. Gemini 3.5 Flash kosztuje obecnie około 1,50 USD za milion tokenów wejściowych i 9,00 USD za milion tokenów wyjściowych. W przypadku znacznie potężniejszego Gemini 3.1 Pro – ceny wynoszą 2,00 i 12,00 USD dla promptów do 200 000 tokenów (powyżej tego progu odpowiednio 4,00 i 18,00 USD). Dla zespołów deweloperskich projektujących dedykowane, własne integracje z Workspace lub firmowym systemem CRM daje to w pełni otwartą ścieżkę skalowania bez przymusu korzystania ze standardowych planów konsumenckich.
 
 ## Gemini a widoczność marki w Google AI Mode
 

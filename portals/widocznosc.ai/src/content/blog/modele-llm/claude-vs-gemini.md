@@ -71,7 +71,7 @@ To obszar, w którym dane są najbardziej jednoznaczne. SWE-bench Verified to br
 
 W praktyce ta różnica oznacza mniej iteracji przy debugowaniu i większą szansę na poprawne działanie kodu za pierwszym razem. Przy stawce programisty seniorskiego czas to pieniądz – jeden zaoszczędzony cykl poprawek może uzasadnić wyższy koszt tokenów.
 
-Gemini 2.5 Pro ma za to mocną pozycję w jednym konkretnym zastosowaniu: tworzeniu front-endu i interfejsów webowych. Zajmuje pierwsze miejsce w rankingu WebDev Arena Leaderboard, mierzącym preferencje ludzkich oceniających przy budowaniu aplikacji internetowych. Jeśli tworzysz prototypy UI lub piszesz CSS/HTML, Gemini może być szybszą ścieżką do estetycznego wyniku.
+Gemini ma za to mocną pozycję w tworzeniu front-endu i interfejsów webowych, plasując się w czołówce rankingu WebDev Arena Leaderboard, mierzącego preferencje ludzkich oceniających przy budowaniu aplikacji internetowych (o szczyt tego zestawienia rywalizuje obecnie z modelami Claude). Jeśli tworzysz prototypy UI lub piszesz CSS/HTML, Gemini może być szybszą ścieżką do estetycznego wyniku.
 
 Narzędzie Claude Code (interfejs wiersza poleceń, czyli CLI) idzie krok dalej niż samo generowanie kodu – obsługuje pełny cykl: odczyt repozytorium, uruchamianie testów, tworzenie gałęzi i Pull Requestów. Gemini nie ma odpowiednika tej głębokości integracji z terminalem poza ekosystemem Google Colab.
 
