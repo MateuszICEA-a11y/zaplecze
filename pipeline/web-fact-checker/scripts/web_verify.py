@@ -110,3 +110,37 @@ def format_report(filename: str, claims: dict, decisions: list[dict]) -> str:
         c = claims.get(d["claim_id"], {})
         lines.append(f"  L{c.get('line', '?')} {c.get('quote', '')} – {d['reason']}")
     return "\n".join(lines)
+
+
+def call_gpt5(claims: list[dict]) -> list[dict]:
+    """Wywołuje OpenAI Responses API z web_search. Zwraca [] przy braku klucza/błędzie (degradacja do single-engine)."""
+    key = os.environ.get("OPENAI_API_KEY")
+    if not key:
+        sys.stderr.write("⚠️ OPENAI_API_KEY brak – silnik B pominięty (single-engine)\n")
+        return []
+    body = json.dumps(build_gpt5_request(claims)).encode()
+    req = urllib.request.Request(
+        "https://api.openai.com/v1/responses", data=body,
+        headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(req, timeout=120) as r:
+            return parse_gpt5_response(json.loads(r.read()))
+    except Exception as e:  # noqa: BLE001 – degradacja, nie wywalaj skilla
+        sys.stderr.write(f"⚠️ GPT-5.5 błąd: {e} – silnik B pominięty\n")
+        return []
+
+
+def main():
+    """stdin: {'claims':[...], 'verdicts_a':[...]} → stdout: {'decisions':[...], 'verdicts_b':[...]}"""
+    payload = json.load(sys.stdin)
+    claims = payload["claims"]
+    verdicts_a = {v["claim_id"]: v for v in payload["verdicts_a"]}
+    verdicts_b = {v["claim_id"]: v for v in call_gpt5(claims)}
+    decisions = [reconcile(verdicts_a[c["id"]], verdicts_b.get(c["id"]))
+                 for c in claims if c["id"] in verdicts_a]
+    json.dump({"decisions": decisions, "verdicts_b": list(verdicts_b.values())},
+              sys.stdout, ensure_ascii=False)
+
+
+if __name__ == "__main__":
+    main()
