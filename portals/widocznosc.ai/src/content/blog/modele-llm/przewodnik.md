@@ -60,8 +60,8 @@ Poniższa tabela zestawia sześć dominujących ekosystemów w jednym miejscu. D
 | Model / ekosystem | Twórca | Dostęp dla użytkownika | Mocna strona | Klucz dla widoczności marki |
 |---|---|---|---|---|
 | ChatGPT (GPT-5.5) | OpenAI | Freemium + API | Szeroki korpus treningowy, SearchGPT | Indeksowanie przez GPTBot; SearchGPT cytuje na żywo |
-| Claude (Sonnet 4.6) | Anthropic | Freemium + API | Długi kontekst, analiza dokumentów | ClaudeBot; silna w analizie B2B |
-| Gemini (3.1 Pro) | Google | Freemium + API | Integracja z Google Search, AI Overviews | Bezpośrednie powiązanie z indeksem Google |
+| Claude (Opus 4.8 / Sonnet 4.6) | Anthropic | Freemium + API | Długi kontekst, analiza dokumentów | ClaudeBot; silna w analizie B2B |
+| Gemini (3.1 Pro / 3.5 Flash) | Google | Freemium + API | Integracja z Google Search, AI Overviews | Bezpośrednie powiązanie z indeksem Google |
 | Copilot | Microsoft | Wbudowany w Windows/Edge + API | Integracja z Bing, Microsoft 365 | BingBot + Bing Search jako źródło |
 | Perplexity AI | Perplexity | Freemium + API | RAG w czasie rzeczywistym z linkami źródłowymi | PerplexityBot; cytuje URL bezpośrednio |
 | Modele open source | Meta, Mistral AI i in. | Pobieranie + API | Suwerenność danych, dostosowywalność | Brak własnego bota; używają cudzych indeksów |
@@ -87,7 +87,7 @@ Szczegółowe omówienie możliwości i ograniczeń znajdziesz w artykule o [Cha
 
 ## Claude – model Anthropic
 
-Claude to bezpośredni rywal ChatGPT, projektowany z naciskiem na bezpieczeństwo, interpretację długich dokumentów i precyzję w analizach B2B. Flagowy model generacji Claude Sonnet 4.6 to wybór większości firm, które potrzebują modelu do automatyzacji procesów – przy koszcie ok. 3 USD za milion tokenów wejściowych oferuje doskonały stosunek jakości do ceny.
+Claude to bezpośredni rywal ChatGPT, projektowany z naciskiem na bezpieczeństwo, interpretację długich dokumentów i precyzję w analizach B2B. Flagowym modelem Anthropic jest obecnie Claude Opus 4.8, ale to Claude Sonnet 4.6 pozostaje wyborem większości firm, które potrzebują modelu do automatyzacji procesów – przy koszcie ok. 3 USD za milion tokenów wejściowych oferuje doskonały stosunek jakości do ceny.
 
 Wyróżniki architektury Anthropic:
 
