@@ -97,3 +97,23 @@ def test_report_groups_apply_and_flag():
     out = format_report("chatgpt.md", claims, decisions)
     assert "Poprawiono 1" in out and "Do decyzji 1" in out
     assert "L98" in out and "GPT-5.5" in out and "L70" in out and "openai.com/pricing" in out
+
+
+def test_stale_plus_wrong_same_value_apply():
+    assert reconcile(_a("stale", "GPT-5.5"), _a("wrong", "GPT-5.5"))["action"] == "apply"
+
+
+def test_stale_plus_wrong_diff_value_flag():
+    assert reconcile(_a("stale", "GPT-5.5"), _a("wrong", "GPT-4o"))["action"] == "flag"
+
+
+def test_apply_requires_explicit_classification_current():
+    # brak pola classification -> nie wolno zrobić apply (konserwatywnie flag)
+    av = {"claim_id": "f.md:1", "status": "stale", "correct_value": "X", "source_url": "https://x"}
+    assert reconcile(av, dict(av))["action"] == "flag"
+
+
+def test_parse_drops_items_missing_required_fields():
+    resp = {"output": [{"type": "message", "content": [
+        {"type": "output_text", "text": "[{\"claim_id\":\"f.md:1\"}]"}]}]}
+    assert parse_gpt5_response(resp) == []

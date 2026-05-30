@@ -7,6 +7,7 @@ import sys
 import urllib.request
 
 GPT_MODEL = "gpt-5.5"
+REQUIRED_VERDICT_FIELDS = ("claim_id", "status")
 
 
 def normalize_value(value: str | None) -> str:
@@ -17,7 +18,8 @@ def normalize_value(value: str | None) -> str:
     s = s.replace(",", ".")
     diac = str.maketrans("ąćęłńóśźż", "acelnoszz")
     s = s.translate(diac)
-    s = re.sub(r"[\s$%]", "", s)
+    s = re.sub(r"(?<![a-z])(usd|eur|pln|zl)(?![a-z])", "", s)  # waluty słowne
+    s = re.sub(r"[\s$€£¥%]", "", s)
     return s
 
 
@@ -49,7 +51,7 @@ def reconcile(a: dict, b: dict | None) -> dict:
         if normalize_value(a.get("correct_value")) == normalize_value(b.get("correct_value")) and a.get("correct_value") \
            and a.get("classification") == "current" and b.get("classification") == "current":
             return _decision(cid, "apply", a["correct_value"],
-                             f"A i B zgodne: {a['status']} -> {a['correct_value']}", [a.get("source_url"), b.get("source_url")])
+                             f"A i B zgodne: A={a['status']} B={b['status']} -> {a['correct_value']}", [a.get("source_url"), b.get("source_url")])
         return _decision(cid, "flag", None, "A i B: różne wartości poprawne", [a.get("source_url"), b.get("source_url")])
     return _decision(cid, "flag", None, "A i B: rozbieżny status (current vs stale)", [a.get("source_url"), b.get("source_url")])
 
@@ -93,21 +95,26 @@ def parse_gpt5_response(resp: dict) -> list[dict]:
         data = json.loads(payload.strip())
     except json.JSONDecodeError:
         return []
-    return data if isinstance(data, list) else []
+    if not isinstance(data, list):
+        return []
+    return [it for it in data
+            if isinstance(it, dict) and all(f in it for f in REQUIRED_VERDICT_FIELDS)]
 
 
-def format_report(filename: str, claims: dict, decisions: list[dict]) -> str:
+def format_report(filename: str, claims_by_id: dict, decisions: list[dict]) -> str:
+    """claims_by_id: dict {claim_id: {line, quote, type}}. Raport per plik (apply/flag pogrupowane)."""
     applied = [d for d in decisions if d["action"] == "apply"]
     flagged = [d for d in decisions if d["action"] == "flag"]
-    lines = [f"📄 {filename}  · {len(claims)} twierdzeń · {len(decisions)} werdyktów"]
+    left = len([d for d in decisions if d["action"] == "leave"])
+    lines = [f"📄 {filename}  · {len(claims_by_id)} twierdzeń · {len(decisions)} werdyktów · {left} bez zmian"]
     lines.append(f"🔧 Poprawiono {len(applied)}:")
     for d in applied:
-        c = claims.get(d["claim_id"], {})
+        c = claims_by_id.get(d["claim_id"], {})
         src = f"  [{'; '.join(d['sources'])}]" if d["sources"] else ""
         lines.append(f"  L{c.get('line', '?')} {c.get('quote', '')} -> {d['value']}{src}")
     lines.append(f"🚩 Do decyzji {len(flagged)}:")
     for d in flagged:
-        c = claims.get(d["claim_id"], {})
+        c = claims_by_id.get(d["claim_id"], {})
         lines.append(f"  L{c.get('line', '?')} {c.get('quote', '')} – {d['reason']}")
     return "\n".join(lines)
 
@@ -136,8 +143,14 @@ def main():
     claims = payload["claims"]
     verdicts_a = {v["claim_id"]: v for v in payload["verdicts_a"]}
     verdicts_b = {v["claim_id"]: v for v in call_gpt5(claims)}
-    decisions = [reconcile(verdicts_a[c["id"]], verdicts_b.get(c["id"]))
-                 for c in claims if c["id"] in verdicts_a]
+    decisions = []
+    for c in claims:
+        cid = c["id"]
+        if cid in verdicts_a:
+            decisions.append(reconcile(verdicts_a[cid], verdicts_b.get(cid)))
+        else:
+            decisions.append({"claim_id": cid, "action": "flag", "value": None,
+                              "reason": "silnik A nie zwrócił werdyktu", "sources": []})
     json.dump({"decisions": decisions, "verdicts_b": list(verdicts_b.values())},
               sys.stdout, ensure_ascii=False)
 
