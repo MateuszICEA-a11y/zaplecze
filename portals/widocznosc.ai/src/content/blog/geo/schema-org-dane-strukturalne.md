@@ -266,7 +266,7 @@ Nie istnieje jedna „poprawna" implementacja schema.org – różne silniki AI 
 
 Poniższa lista porządkuje zachowanie głównych platform – na podstawie eksperymentu Otterly.ai oraz obserwacji z audytów ICEA:
 
-- **Google Gemini i AI Overviews** – jedyne platformy, które odczytują JSON-LD bezpośrednio w czasie rzeczywistym. Bez poprawnego `sameAs` do Wikidata marka nie zostanie połączona z Knowledge Graph i jej cytowania są przypadkowe, a nie systematyczne.
+- **Google Gemini** – jedyna platforma, która odczytuje JSON-LD bezpośrednio w czasie rzeczywistym (AI Overviews korzysta ze schematu pośrednio, przez indeks Google). Bez poprawnego `sameAs` do Wikidata marka nie zostanie połączona z Knowledge Graph i jej cytowania są przypadkowe, a nie systematyczne.
 - **ChatGPT Search (OAI-SearchBot)** – odpytuje indeks Bing; schema.org wpływa na klasyfikację w Bing, co przekłada się na widoczność w ChatGPT pośrednio. Wysoka waga `Article` i `BlogPosting` z kompletnym `author`.
 - **Perplexity (PerplexityBot)** – indeksuje w czasie zbliżonym do rzeczywistego; `dateModified` w `BlogPosting` jest aktywnie weryfikowany – artykuły aktualizowane w ciągu ostatnich 30 dni mają trzykrotnie wyższy wskaźnik cytowań.
 - **Microsoft Copilot** – oparty na silniku Bing; analogiczne priorytety jak w ChatGPT Search, ale silniejszy nacisk na `BreadcrumbList` jako sygnał struktury witryny.

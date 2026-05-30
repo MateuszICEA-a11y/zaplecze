@@ -69,7 +69,7 @@ Trzy fundamentalne zmiany w sposobie projektowania treści:
 - **Fragmentaryczna wartość zamiast rankingu strony** – Twoja ogólna pozycja w rankingu Google ma drugorzędne znaczenie. Liczy się to, czy konkretny akapit odpowiada na konkretne podzapytanie, najlepiej w pierwszych 30% tekstu
 - **Pokrycie tematyczne ważniejsze od linków** – domena z 30 artykułami w jednej niszy będzie cytowana częściej niż domena z 3 artykułami i 200 backlinkami. AI ufa źródłom, które „wiedzą wszystko" o danym temacie
 
-Badania potwierdzają trzecią zmianę. Kevin Indig przeanalizował 1,2 mln cytowań ChatGPT i wykazał, że [top 10 domen w danej niszy zabiera 46% wszystkich cytowań](https://www.kevin-indig.com/). Reszta domen walczy o resztki.
+Badania potwierdzają trzecią zmianę. Kevin Indig przeanalizował 1,2 mln cytowań ChatGPT i wykazał, że [w kategorii porównań produktów top 10 domen zabiera 46% wszystkich cytowań](https://www.kevin-indig.com/). Reszta domen walczy o resztki.
 
 > **Princeton/KDD 2024 (Aggarwal et al.):** dodanie cytowań źródeł podnosi widoczność w LLM o 30–40%. Keyword stuffing obniża ją o 10% – to akademicka odwrotność klasycznego SEO.
 

@@ -95,7 +95,7 @@ Tu dochodzimy do sedna. Każdy akapit przewodnika mówi o „wyszukiwarce Google
 
 A rynek odpowiadania na pytania użytkowników przestał być jednolity. Owszem, w klasycznym wyszukiwaniu Google wciąż ma około 90% udziału. Ale generatywne odpowiedzi to dziś również:
 
-- **ChatGPT** z wyszukiwaniem w sieci – setki milionów użytkowników tygodniowo (OpenAI oficjalnie informuje o takich liczbach), dla których to pierwszy punkt kontaktu z pytaniem;
+- **ChatGPT** z wyszukiwaniem w sieci – prawie miliard użytkowników tygodniowo (900 mln, dane OpenAI z lutego 2026), dla których to pierwszy punkt kontaktu z pytaniem;
 - **Perplexity** – wyszukiwarka odpowiedzi zbudowana od zera wokół cytowań źródeł;
 - **Microsoft Copilot** – wbudowany w Windows, Edge i Microsoft 365, czyli w narzędzia, których ludzie używają w pracy codziennie;
 - **Google** oraz **Claude** z dostępem do sieci – kolejne kanały, w których zapada decyzja, czy Twoja marka zostanie wymieniona.
