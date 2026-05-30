@@ -81,7 +81,7 @@ Kluczowe aspekty dla strategii widoczności:
 - **`GPTBot`** – bot indeksujący OpenAI; jego dostęp do Twojej strony warunkuje pojawienie się w SearchGPT. Sprawdź plik `robots.txt` i upewnij się, że nie jest blokowany.
 - **Tryb offline** – zapytania bez SearchGPT korzystają wyłącznie z danych treningowych (do tzw. daty odcięcia, ang. *cutoff*); marka, która nie była wzmiankowana przed tą datą, może nie istnieć dla modelu.
 - **Kontekst 400 000 tokenów** – w GPT-5.5 pozwala na przetworzenie długich dokumentów, choć dla B2B ważniejsza jest jakość fragmentów niż sama objętość.
-- **API OpenAI** – najpopularniejsze narzędzie do budowy własnych aplikacji AI; koszt modelu GPT-5.5 to ok. 2,00 USD za milion tokenów wejściowych.
+- **API OpenAI** – najpopularniejsze narzędzie do budowy własnych aplikacji AI; koszt modelu GPT-5.5 to ok. 5,00 USD za milion tokenów wejściowych.
 
 Szczegółowe omówienie możliwości i ograniczeń znajdziesz w artykule o [ChatGPT](/modele-llm/chatgpt/) oraz o tym, [co potrafi ChatGPT](/modele-llm/co-potrafi-chatgpt/) w kontekście codziennej pracy marketera.
 
@@ -111,7 +111,7 @@ Pełny przegląd modeli Anthropic i ich zastosowań znajdziesz w artykule o [Cla
 
 Gemini to ekosystem, który jako jedyny jest bezpośrednio powiązany z algorytmem wyszukiwania Google. Oznacza to jedno: strony z silną pozycją organiczną mają naturalną przewagę w pojawianiu się w Google AI Overviews i odpowiedziach Gemini. Jednak sama pozycja SEO nie gwarantuje cytowania – treść musi spełniać warunki cytowalności.
 
-Gemini 3.1 Pro obsługuje okno kontekstowe do 1 miliona tokenów. W praktyce pozwala to na przetworzenie całej dokumentacji produktowej, archiwum newsletterów lub historii rozmów z klientami w jednym prompcie. **W benchmarku wnioskowania logicznego (GPQA Diamond) Gemini 3.1 Pro osiąga 84,2%, plasując się tuż za modelem OpenAI o3.**
+Gemini 3.1 Pro obsługuje okno kontekstowe do 1 miliona tokenów. W praktyce pozwala to na przetworzenie całej dokumentacji produktowej, archiwum newsletterów lub historii rozmów z klientami w jednym prompcie. **W benchmarku wnioskowania logicznego (GPQA Diamond) Gemini 3.1 Pro osiąga 94,3%, plasując się w ścisłej czołówce modeli wnioskujących.**
 
 Dla widoczności marki kluczowe są trzy mechanizmy Gemini:
 

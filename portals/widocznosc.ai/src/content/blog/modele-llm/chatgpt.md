@@ -94,8 +94,8 @@ ChatGPT dostępny jest w kilku planach. Poniższa tabela zestawia kluczowe róż
 
 | Plan | Cena | Dostęp do modeli | Kluczowe funkcje |
 |---|---|---|---|
-| Free | 0 USD/mies. | GPT-5.3 Instant (z limitem) | Czat, podstawowe generowanie obrazów, tryb głosowy; w niektórych krajach z reklamami |
-| Go | 8 USD/mies. | Nielimitowany GPT-5.3 Instant | Plan dla codziennych użytkowników, wyższe limity niż Free |
+| Free | 0 USD/mies. | GPT-5.5 Instant (z limitem) | Czat, podstawowe generowanie obrazów, tryb głosowy; w niektórych krajach z reklamami |
+| Go | 8 USD/mies. | Nielimitowany GPT-5.5 Instant | Plan dla codziennych użytkowników, wyższe limity niż Free |
 | Plus | 20 USD/mies. | GPT-5.5, GPT-5.4 Thinking, GPT Image | Wyższe limity, Deep Research, Codex, priorytet w godzinach szczytu |
 | Business | 25 USD/os./mies. | Jak Plus + priorytet dostępu | Przestrzeń zespołowa, izolacja danych od trenowania |
 | Pro | 100–200 USD/mies. | GPT-5.5 Pro, Codex, brak limitów | Okno kontekstowe do 1 mln tokenów, rozszerzone limity Deep Research |

@@ -132,7 +132,7 @@ Model Claude dostępny jest bezpośrednio przez interfejs claude.ai w kilku plan
 | Plan | Dostęp do modeli | Charakterystyka |
 |---|---|---|
 | **Free** | Modele podstawowe (z limitami) | Bezpłatny; ograniczony dzienny limit wiadomości; bez Artifacts i Computer Use |
-| **Pro** ($20/mies.)| Sonnet i starsze wersje Opus | Wyższe limity, priorytet w kolejce, dostęp do Artifacts |
+| **Pro** ($20/mies.)| Sonnet i Opus | Wyższe limity, priorytet w kolejce, dostęp do Artifacts |
 | **Max** ($100–200/mies.) | Pełny dostęp, w tym Computer Use | Najwyższe limity, Computer Use, rozszerzone myślenie (extended thinking), kredyty API |
 | **Team** | Modele Pro/Max | Współdzielone przestrzenie robocze, zarządzanie dostępem, udostępnianie projektów |
 | **Enterprise** | Negocjowane | SSO, brak retencji danych (Zero Data Retention), SLA, dedykowane wdrożenia, zgodność z HIPAA/GDPR |

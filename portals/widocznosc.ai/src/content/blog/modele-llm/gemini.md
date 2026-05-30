@@ -157,7 +157,7 @@ NotebookLM ma doskonałe zastosowanie bezpośrednio w content marketingu i proce
 
 ## Veo i generowanie wideo w ekosystemie Gemini
 
-Veo to rodzina modeli dedykowanych do generowania wideo wysokiej jakości z opisu tekstowego lub zestawu obrazów. Veo jest dostępna w planach AI Ultra oraz z poziomu API dla zewnętrznych deweloperów. Nowsze modele Veo 3.1 i Veo 3.1 Fast (wydane w połowie 2026 roku) dają m.in. możliwość rozszerzenia raz wygenerowanego klipu oraz użycia aż trzech obrazów referencyjnych jako wizualnych punktów odniesienia dla AI.
+Veo to rodzina modeli dedykowanych do generowania wideo wysokiej jakości z opisu tekstowego lub zestawu obrazów. Veo jest dostępna w planach AI Ultra oraz z poziomu API dla zewnętrznych deweloperów. Nowsze modele Veo 3.1 i Veo 3.1 Fast (wydane pod koniec 2025 roku) dają m.in. możliwość rozszerzenia raz wygenerowanego klipu oraz użycia aż trzech obrazów referencyjnych jako wizualnych punktów odniesienia dla AI.
 
 W kontekście marketingowym Veo ma potężne zastosowanie przede wszystkim w produkcji krótkich formatów wizualnych do mediów społecznościowych, animacji produktowych i zajawek kampanii – a wszystko to bez konieczności angażowania pełnego studia produkcyjnego przy niskich wolumenach treści.
 

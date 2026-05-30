@@ -165,7 +165,7 @@ Na rynku działają inne duże modele językowe (LLM – Large Language Model) o
 | Model | Producent | Mocne strony | Typowe zastosowanie |
 |---|---|---|---|
 | ChatGPT (GPT-5.x) | OpenAI | Ekosystem narzędzi, generowanie obrazów, Code Interpreter | Wszechstronne; copywriting, analiza, kod |
-| Claude 4.x (Sonnet/Opus) | Anthropic | Długie dokumenty (do 200K tokenów), precyzyjna instrukcja | Analiza obszernych raportów, pisanie złożone |
+| Claude 4.x (Sonnet/Opus) | Anthropic | Długie dokumenty (do 1M tokenów), precyzyjna instrukcja | Analiza obszernych raportów, pisanie złożone |
 | Gemini | Google | Integracja z Google Workspace, wyszukiwanie w czasie rzeczywistym | Analiza danych z arkuszy, research |
 | Copilot | Microsoft | Wbudowany w Microsoft 365 i Edge | Praca w środowisku MS |
 
