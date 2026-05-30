@@ -48,6 +48,13 @@ def score_signals(
 
     scored: list[tuple[float, Signal]] = []
     published_titles = [p.get("title", "").lower() for p in published_history[-30:]]
+    # Nazwy wydawców z ostatnich publikacji (od najstarszej do najnowszej),
+    # do premiowania różnorodności źródeł – nie chcemy serii z jednego portalu.
+    recent_sources = [
+        (p.get("source_name") or "").lower()
+        for p in published_history[-6:]
+        if (p.get("source_name") or "").strip()
+    ]
 
     for signal in signals:
         # Freshness: 1.0 for just now, 0.0 for max_age_hours old
@@ -63,11 +70,19 @@ def score_signals(
         # Uniqueness: distance from recently published
         uniqueness = _compute_uniqueness(signal.title, published_titles)
 
+        # Source diversity: penalizuj wydawcę użytego ostatnio (im świeższe
+        # powtórzenie, tym większa kara) – wymusza rotację źródeł.
+        source_name = (
+            getattr(signal, "source_name", None) or getattr(signal, "source", "")
+        )
+        diversity = _compute_source_diversity(source_name, recent_sources)
+
         total = (
             weights.get("freshness", 0.3) * freshness
             + weights.get("relevance", 0.3) * relevance
             + weights.get("trend", 0.2) * trend
             + weights.get("uniqueness", 0.2) * uniqueness
+            + weights.get("source_diversity", 0.2) * diversity
         )
 
         scored.append((total, signal))
@@ -109,6 +124,24 @@ def _compute_uniqueness(title: str, published_titles: list[str]) -> float:
         max_sim = max(max_sim, sim)
 
     return 1.0 - max_sim
+
+
+def _compute_source_diversity(source_name: str, recent_sources: list[str]) -> float:
+    """Reward signals from publishers we haven't used recently.
+
+    `recent_sources` is oldest→newest. A repeat of the most recent source is
+    penalised hardest; older repeats less. 1.0 = source unused recently.
+    """
+    name = (source_name or "").lower()
+    if not name or not recent_sources:
+        return 1.0
+
+    n = len(recent_sources)
+    penalty = 0.0
+    for i, src in enumerate(recent_sources):
+        if src == name:
+            penalty += (i + 1) / n  # recency weight: newest ≈ 1.0
+    return max(0.0, 1.0 - penalty)
 
 
 def match_section(title: str, clusters: list[dict]) -> str:

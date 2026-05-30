@@ -44,12 +44,12 @@ STRESZCZENIE/FRAGMENT: {src_summary}
 Wymagania:
 - Długość całości: {lo}–{hi} słów.
 - Zacznij od frontmatteru YAML między --- z polami: title (polski, zwięzły), lead (1–2 zdania), date (RRRR-MM-DD, dzisiejsza data), sourceName ("{src_name}"), sourceUrl ("{src_url}"), tags (2–4 polskie tagi).
-- Po frontmatterze body w markdown w następującej strukturze:
-  1. `## Co się wydarzyło?` – streszczenie faktów własnymi słowami.
+- Po frontmatterze body w markdown w następującej strukturze (zachowaj kolejność i funkcję sekcji, ale NAGŁÓWKI H2 sekcji 1 i 3 formułuj ZA KAŻDYM RAZEM INDYWIDUALNIE pod konkretny temat – NIE używaj szablonowych, powtarzalnych nagłówków):
+  1. Sekcja faktów – streszczenie wydarzenia własnymi słowami. Nagłówek H2 napisz pod temat newsa, tak by oddawał jego sedno (np. nawiązanie do konkretu, liczby, firmy lub napięcia w historii). NIE używaj dosłownie „Co się wydarzyło?” – to zbyt szablonowe i powtarza się między newsami. Może mieć formę pytania albo zwięzłego stwierdzenia.
   2. Zaraz po tej sekcji wstaw jednozdaniowy wyróżnik jako cytat blockquote:
      `> **Nasz komentarz:** [jedno mocne, konkretne zdanie – nasza opinia/wniosek z perspektywy redakcji].`
-  3. `## Co to oznacza dla Twojej marki?` – ekspercki komentarz naszej redakcji: praktyczne wnioski, zaimki dzierżawcze („naszym zdaniem”, „w naszej ocenie”), bezpośrednie zwroty do czytelnika. Zaangażuj – pokaż, co czytelnik powinien z tym zrobić. Akapit wprowadzający, a następnie kluczowe wnioski przedstaw jako wypunktowaną listę (markdown z myślnikami `-`) w formacie `**Pogrubiony wniosek** – rozwinięcie`. NIE numeruj wniosków słownie („Pierwszy wniosek”, „Drugi wniosek”) – używaj listy. Po liście możesz dodać jedno akapitowe podsumowanie.
-  4. `## W skrócie` na samym końcu – lista 3 punktów (myślniki) z najważniejszymi wnioskami do zapamiętania (TL;DR).
+  3. Sekcja wniosków dla czytelnika – ekspercki komentarz naszej redakcji: praktyczne wnioski, zaimki dzierżawcze („naszym zdaniem”, „w naszej ocenie”), bezpośrednie zwroty do czytelnika. Zaangażuj – pokaż, co czytelnik powinien z tym zrobić. Nagłówek H2 też napisz INDYWIDUALNIE pod temat – ma zapowiadać konsekwencje dla marki / SEO / widoczności w AI w kontekście tego konkretnego newsa. NIE używaj dosłownie „Co to oznacza dla Twojej marki?”. Akapit wprowadzający, a następnie kluczowe wnioski przedstaw jako wypunktowaną listę (markdown z myślnikami `-`) w formacie `**Pogrubiony wniosek** – rozwinięcie`. NIE numeruj wniosków słownie („Pierwszy wniosek”, „Drugi wniosek”) – używaj listy. Po liście możesz dodać jedno akapitowe podsumowanie.
+  4. `## W skrócie` na samym końcu – ten jeden nagłówek zostaw DOSŁOWNIE „W skrócie”; pod nim lista 3 punktów (myślniki) z najważniejszymi wnioskami do zapamiętania (TL;DR).
 - ZAKAZ frazy „Z perspektywy widocznosc.ai” i pisania o sobie w 3. osobie. Pisz „naszym zdaniem”, „w naszej ocenie”, „uważamy”.
 - NIE kopiuj zdań z oryginału. NIE wymyślaj faktów spoza źródła.
 - Nie dodawaj sekcji FAQ ani CTA – zostaną dołożone automatycznie.

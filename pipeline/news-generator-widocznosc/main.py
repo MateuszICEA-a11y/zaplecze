@@ -190,6 +190,10 @@ def run() -> None:
         "date": date_str,
         "slug": slug,
         "source": topic.signal.source,
+        # Nazwa wydawcy (np. „TechCrunch AI") – używana do premiowania
+        # różnorodności źródeł przy kolejnych selekcjach (scorer).
+        "source_name": getattr(topic.signal, "source_name", None)
+        or fm.get("sourceName"),
     })
 
     # Keep last N entries
