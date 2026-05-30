@@ -59,3 +59,6 @@ node_modules/
 
 # FB poster log
 pipeline/fb-poster/fb-poster.log
+
+# web-fact-checker venv
+pipeline/web-fact-checker/.venv/
