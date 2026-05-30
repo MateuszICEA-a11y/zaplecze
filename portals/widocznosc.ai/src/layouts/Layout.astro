@@ -97,7 +97,7 @@ const baseGraph = buildGraph(organizationNode(), websiteNode());
     <!-- JSON-LD: base graph (Organization + WebSite) – eat-your-own-dogfood dla GEO -->
     <script type="application/ld+json" is:inline set:html={baseGraph} />
   </head>
-  <body class="overflow-x-hidden">
+  <body>
     <a href="#main" class="skip-link">Przejdź do treści</a>
     <main id="main" aria-label="Main content">
       <slot />
@@ -111,12 +111,16 @@ const baseGraph = buildGraph(organizationNode(), websiteNode());
           system-ui,
           sans-serif;
         background-color: var(--bg-canvas);
-        overflow-x: hidden;
+        /* clip (zamiast hidden) przycina poziomy nadmiar BEZ tworzenia
+           kontekstu przewijania – inaczej psuje position:sticky potomków
+           (np. sticky sidebar / spis treści na wpisach). */
+        overflow-x: clip;
         scroll-behavior: smooth !important;
       }
 
       body {
         background-color: var(--bg-canvas);
+        overflow-x: clip;
       }
 
       .fade-in {

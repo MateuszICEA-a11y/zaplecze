@@ -1,6 +1,7 @@
 ---
-const { articleData, variant } = Astro.props;
-const { title, subtitle, date, image, author, readTime, tags } = articleData;
+const { articleData, variant, toc } = Astro.props;
+const { title, subtitle, date, updated, image, author, readTime, tags } = articleData;
+const showToc = Array.isArray(toc) && toc.length >= 3;
 const encodedTitle = encodeURIComponent(title);
 const encodedUrl = encodeURIComponent(Astro.url.href);
 const xShareUrl = `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`;
@@ -8,6 +9,11 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
 ---
 
 <div class="article-page">
+  <!-- Pasek postępu czytania – wypełnia się względem zakresu artykułu -->
+  <div class="reading-progress" aria-hidden="true">
+    <span class="reading-progress-bar" data-reading-progress></span>
+  </div>
+
   <article class="article-shell">
     <!-- Optional breadcrumb (named slot) -->
     <slot name="breadcrumb" />
@@ -57,6 +63,16 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
         <div class="article-meta">
           <span>{date}</span>
           {
+            updated && (
+              <>
+                <span class="article-meta-dot" aria-hidden="true">
+                  ·
+                </span>
+                <span class="article-meta-updated">Aktualizacja: {updated}</span>
+              </>
+            )
+          }
+          {
             readTime && (
               <>
                 <span class="article-meta-dot" aria-hidden="true">
@@ -78,11 +94,46 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     <!-- Body grid: content + sidebar -->
     <div class="article-body-grid">
       <section class:list={['article-content', variant && `article-content--${variant}`]}>
+        {
+          showToc && (
+            <details class="article-toc-mobile">
+              <summary class="article-toc-mobile-summary">
+                <span>Spis treści</span>
+                <span class="article-toc-mobile-chevron" aria-hidden="true" />
+              </summary>
+              <ul class="article-toc-list">
+                {toc.map((item: { slug: string; text: string }) => (
+                  <li>
+                    <a class="article-toc-link" href={`#${item.slug}`} data-toc-link={item.slug}>
+                      {item.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          )
+        }
         <slot />
       </section>
 
       <aside class="article-sidebar">
         <div class="article-sidebar-sticky">
+          {
+            showToc && (
+              <nav class="article-sidebar-card article-toc" aria-label="Spis treści">
+                <div class="article-sidebar-label">Spis treści</div>
+                <ul class="article-toc-list">
+                  {toc.map((item: { slug: string; text: string }) => (
+                    <li>
+                      <a class="article-toc-link" href={`#${item.slug}`} data-toc-link={item.slug}>
+                        {item.text}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            )
+          }
           {
             author && (
               <div class="article-sidebar-card">
@@ -179,6 +230,116 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
        desktop 144px. Jedna reguła w scoped bloku, by uniknąć konfliktu
        specyficzności z regułą w is:global (która nie dostaje cid). */
     padding: clamp(88px, 12vw, 144px) 0 clamp(64px, 8vw, 80px);
+  }
+
+  /* ── Pasek postępu czytania ───────────────────────────────── */
+  .reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    z-index: 60;
+    background: transparent;
+    pointer-events: none;
+  }
+
+  .reading-progress-bar {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: var(--accent-blue);
+    transform-origin: left center;
+    transition: width 0.1s linear;
+  }
+
+  /* ── Spis treści (TOC) ─────────────────────────────────────── */
+  .article-toc-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .article-toc-link {
+    display: block;
+    padding: 7px 12px;
+    border-radius: var(--r-md);
+    font-family: var(--font-sans);
+    font-size: var(--fs-body-sm);
+    line-height: 1.4;
+    letter-spacing: var(--ls-body-sm);
+    color: var(--ink-muted);
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    transition:
+      color 0.15s ease,
+      background 0.15s ease,
+      border-color 0.15s ease;
+  }
+
+  .article-toc-link:hover {
+    color: var(--ink);
+    background: var(--bg-surface-2);
+  }
+
+  .article-toc-link.is-active {
+    color: var(--accent-blue);
+    font-weight: 600;
+    background: color-mix(in srgb, var(--accent-blue) 10%, transparent);
+    border-left-color: var(--accent-blue);
+  }
+
+  /* TOC mobilny – zwijany, tylko < 1024px (sidebar ukryty) */
+  .article-toc-mobile {
+    display: block;
+    margin: 0 0 28px 0;
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-lg);
+    background: var(--bg-surface-1);
+    overflow: hidden;
+  }
+
+  .article-toc-mobile-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .article-toc-mobile-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .article-toc-mobile-chevron {
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid var(--ink-muted);
+    border-bottom: 2px solid var(--ink-muted);
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+  }
+
+  .article-toc-mobile[open] .article-toc-mobile-chevron {
+    transform: rotate(-135deg);
+  }
+
+  .article-toc-mobile .article-toc-list {
+    padding: 4px 10px 12px;
+  }
+
+  @media (min-width: 1024px) {
+    .article-toc-mobile {
+      display: none;
+    }
   }
 
   .article-shell {
@@ -350,6 +511,10 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     color: var(--ink-muted);
   }
 
+  .article-meta-updated {
+    color: var(--ink);
+  }
+
   /* Hero image – „scena": tło = tło strony, obraz z radialną maską
      wygaszającą krawędzie (wtapia się w stronę na obu motywach),
      poświata pod spodem, 1px adaptacyjna obwódka (::after niżej). */
@@ -431,7 +596,10 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
   @media (min-width: 1024px) {
     .article-sidebar {
       display: block;
-      align-self: start;
+      /* stretch (nie start) – aside rozciąga się na pełną wysokość wiersza
+         gridu, dzięki czemu wewnętrzny sticky ma „tor" na całą długość
+         artykułu (spis treści zostaje widoczny podczas czytania). */
+      align-self: stretch;
     }
   }
 
@@ -1267,4 +1435,100 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
   });
 
   enhanceArticleFaq();
+</script>
+
+<script>
+  // Scroll-spy spisu treści – podświetla aktywną sekcję (H2) wg pozycji scrolla.
+  let tocScrollHandler: (() => void) | null = null;
+
+  const setupTocSpy = () => {
+    if (tocScrollHandler) {
+      window.removeEventListener('scroll', tocScrollHandler);
+      tocScrollHandler = null;
+    }
+
+    const links = Array.from(
+      document.querySelectorAll<HTMLAnchorElement>('[data-toc-link]')
+    );
+    const headings = Array.from(
+      document.querySelectorAll<HTMLElement>('.article-content h2[id]')
+    );
+    if (!links.length || !headings.length) return;
+
+    let current = '';
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
+      const threshold = 140;
+      let activeId = headings[0].id;
+      for (const h of headings) {
+        if (h.getBoundingClientRect().top <= threshold) activeId = h.id;
+        else break;
+      }
+      if (activeId === current) return;
+      current = activeId;
+      links.forEach((l) =>
+        l.classList.toggle('is-active', l.getAttribute('data-toc-link') === activeId)
+      );
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
+
+    tocScrollHandler = onScroll;
+    window.addEventListener('scroll', onScroll, { passive: true });
+    update();
+  };
+
+  document.addEventListener('astro:page-load', setupTocSpy);
+  setupTocSpy();
+</script>
+
+<script>
+  // Pasek postępu czytania – wypełnia się względem zakresu artykułu.
+  let progressScrollHandler: (() => void) | null = null;
+
+  const setupReadingProgress = () => {
+    if (progressScrollHandler) {
+      window.removeEventListener('scroll', progressScrollHandler);
+      window.removeEventListener('resize', progressScrollHandler);
+      progressScrollHandler = null;
+    }
+
+    const bar = document.querySelector<HTMLElement>('[data-reading-progress]');
+    const article = document.querySelector<HTMLElement>('.article-content');
+    if (!bar || !article) return;
+
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
+      const rect = article.getBoundingClientRect();
+      const start = rect.top + window.scrollY;
+      const total = article.offsetHeight;
+      const scrolled = window.scrollY + window.innerHeight - start;
+      const p = Math.min(Math.max(scrolled / total, 0), 1);
+      bar.style.width = `${(p * 100).toFixed(2)}%`;
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
+
+    progressScrollHandler = onScroll;
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    update();
+  };
+
+  document.addEventListener('astro:page-load', setupReadingProgress);
+  setupReadingProgress();
 </script>

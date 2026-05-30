@@ -26,7 +26,12 @@ export const getStaticPaths = async () => {
 };
 
 const { post } = Astro.props;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
+
+// Spis treści – tylko H2 (Astro nadaje im id automatycznie → kotwice #slug).
+const toc = headings
+  .filter((h) => h.depth === 2)
+  .map((h) => ({ slug: h.slug, text: h.text }));
 
 const [pillar] = post.id.split('/');
 
@@ -58,6 +63,7 @@ const articleData = {
   title: post.data.title,
   subtitle: post.data.subtitle,
   date: formatDate(post.data.date),
+  updated: post.data.updated ? formatDate(post.data.updated) : undefined,
   image: post.data.image.src,
   author: {
     name: post.data.author.name,
@@ -97,6 +103,7 @@ const articleSchema = buildGraph(
     imageUrl: ogImageUrl,
     imageWidth: 1200,
     datePublished: post.data.date.toISOString(),
+    dateModified: post.data.updated?.toISOString(),
     tags: post.data.tags,
     pillarLabel: PILLAR_LABELS[pillar as keyof typeof PILLAR_LABELS],
     authorSlug,
@@ -130,7 +137,7 @@ const articleSchema = buildGraph(
   <script type="application/ld+json" is:inline set:html={articleSchema} />
 
   <Navbar />
-  <Article articleData={articleData}>
+  <Article articleData={articleData} toc={toc}>
     <nav slot="breadcrumb" class="article-breadcrumb" aria-label="Ścieżka nawigacji">
       <a href="/blog/" class="article-breadcrumb-link">Baza wiedzy</a>
       <span class="article-breadcrumb-sep" aria-hidden="true">›</span>

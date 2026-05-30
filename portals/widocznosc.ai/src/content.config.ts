@@ -99,6 +99,12 @@ const blog = defineCollection({
       subtitle: z.string(),
       description: z.string(),
       date: z.date(),
+      /**
+       * Data ostatniej aktualizacji wpisu. Opcjonalna – gdy ustawiona,
+       * pokazuje się w byline („Aktualizacja: …") i zasila dateModified
+       * w JSON-LD BlogPosting. Gdy brak – nic się nie renderuje.
+       */
+      updated: z.coerce.date().optional(),
       image: image(),
       icon: z.string(),
       author: z.object({
