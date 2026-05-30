@@ -45,7 +45,9 @@ const articleData = {
   image: item.data.image.src,
   author: {
     name: 'Redakcja widocznosc.ai',
-    role: `Opracowanie na podstawie: ${item.data.sourceName}`,
+    // Źródło pokazujemy jako pełny link pod treścią (news-source),
+    // więc w bylinie/karcie autora zostaje sama redakcja.
+    role: undefined,
     avatar: '/favicon.svg',
   },
   tags: item.data.tags,
@@ -80,7 +82,7 @@ const schema = buildGraph(
   <script type="application/ld+json" is:inline set:html={schema} />
 
   <Navbar />
-  <Article articleData={articleData} variant="news">
+  <Article articleData={articleData} variant="news" heroOverlay>
     <nav slot="breadcrumb" class="article-breadcrumb" aria-label="Ścieżka nawigacji">
       <a href="/news/" class="article-breadcrumb-link">News</a>
       <span class="article-breadcrumb-sep" aria-hidden="true">›</span>
@@ -90,13 +92,23 @@ const schema = buildGraph(
     <Content />
 
     <p class="news-source">
-      Opracowanie redakcyjne na podstawie: {item.data.sourceName}
+      Opracowanie redakcyjne na podstawie artykułu{' '}
+      <a
+        href={item.data.sourceUrl}
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        class="news-source-link"
+      >
+        {item.data.sourceName}
+        <span class="news-source-arrow" aria-hidden="true">↗</span>
+      </a>
+      <span class="news-source-url">{item.data.sourceUrl}</span>
     </p>
 
     {
       related.length > 0 && (
         <aside class="news-related" aria-label="Powiązane w bazie wiedzy">
-          <div class="news-related-label">Pogłębione w bazie wiedzy</div>
+          <div class="news-related-label">Więcej w bazie wiedzy</div>
           <ul class="news-related-list">
             {related.map((r) => (
               <li>
@@ -131,10 +143,26 @@ const schema = buildGraph(
     font-size: var(--fs-body-sm);
     color: var(--ink-muted);
   }
-  .news-source a {
+  .news-source-link {
     color: var(--ink);
+    font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 2px;
+    white-space: nowrap;
+  }
+  .news-source-link:hover {
+    color: var(--accent-blue);
+  }
+  .news-source-arrow {
+    margin-left: 2px;
+    font-size: 0.85em;
+  }
+  .news-source-url {
+    display: block;
+    margin-top: 4px;
+    font-size: var(--fs-caption);
+    color: var(--ink-faint);
+    overflow-wrap: anywhere;
   }
 
   /* Box „pogłębione w bazie wiedzy" – wewnętrzny anchor newsowy */
