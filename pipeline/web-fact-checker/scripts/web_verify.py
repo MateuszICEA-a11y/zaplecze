@@ -64,7 +64,9 @@ _SYS_PROMPT_B = (
     "classification: 'current' jeśli twierdzenie jest podane jako stan bieżący; "
     "'historical' jeśli świadomie opisuje przeszłość (np. nasycony benchmark, 'poprzedni model'). "
     "Jeśli twierdzenie jest historyczne i poprawne w swoim kontekście -> status=current, classification=historical. "
-    "correct_value tylko gdy stale/wrong; zawsze podawaj source_url z wyszukiwania. Bez komentarzy poza JSON."
+    "correct_value tylko gdy stale/wrong i MUSI być zwięzłą wartością zastępczą w tym samym formacie co twierdzenie "
+    "(np. 'GPT-5.5', '$5/$25', '500 000 tokenów', 'grudzień 2025') – sama wartość do podstawienia, BEZ zdań, "
+    "wyjaśnień czy uzasadnień. Uzasadnienie pomiń. Zawsze podawaj source_url z wyszukiwania. Bez komentarzy poza JSON."
 )
 
 
