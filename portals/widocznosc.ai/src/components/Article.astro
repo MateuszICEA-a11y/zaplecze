@@ -1076,6 +1076,8 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     font-weight: 500;
     letter-spacing: -0.5px;
     color: var(--ink);
+    /* Kotwica ze spisu treści ląduje pod navbarem (sticky top:96). */
+    scroll-margin-top: 100px;
   }
   .article-page .article-body-grid .article-content h2:first-child {
     margin-top: 0;
@@ -1092,6 +1094,7 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     font-weight: 500;
     letter-spacing: -0.4px;
     color: var(--ink);
+    scroll-margin-top: 100px;
   }
 
   /* Strong */
@@ -1795,7 +1798,9 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
 
     const update = () => {
       ticking = false;
-      const threshold = 140;
+      // Zgrane z scroll-margin-top nagłówków (100) – sekcja staje się
+      // aktywna, gdy jej nagłówek dochodzi tuż pod navbar.
+      const threshold = 112;
       let activeId = headings[0].id;
       for (const h of headings) {
         if (h.getBoundingClientRect().top <= threshold) activeId = h.id;
