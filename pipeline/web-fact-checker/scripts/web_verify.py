@@ -52,3 +52,26 @@ def reconcile(a: dict, b: dict | None) -> dict:
                              f"A i B zgodne: {a['status']} -> {a['correct_value']}", [a.get("source_url"), b.get("source_url")])
         return _decision(cid, "flag", None, "A i B: różne wartości poprawne", [a.get("source_url"), b.get("source_url")])
     return _decision(cid, "flag", None, "A i B: rozbieżny status (current vs stale)", [a.get("source_url"), b.get("source_url")])
+
+
+_SYS_PROMPT_B = (
+    "Jesteś niezależnym fact-checkerem treści o modelach AI. Dla KAŻDEGO podanego twierdzenia "
+    "użyj narzędzia web_search i ustal, czy jest AKTUALNE na dziś. Zwróć WYŁĄCZNIE JSON: tablicę "
+    "obiektów {claim_id, status, correct_value, source_url, as_of, classification}. "
+    "status: current|stale|wrong|ambiguous. "
+    "classification: 'current' jeśli twierdzenie jest podane jako stan bieżący; "
+    "'historical' jeśli świadomie opisuje przeszłość (np. nasycony benchmark, 'poprzedni model'). "
+    "Jeśli twierdzenie jest historyczne i poprawne w swoim kontekście -> status=current, classification=historical. "
+    "correct_value tylko gdy stale/wrong; zawsze podawaj source_url z wyszukiwania. Bez komentarzy poza JSON."
+)
+
+
+def build_gpt5_request(claims: list[dict]) -> dict:
+    return {
+        "model": GPT_MODEL,
+        "tools": [{"type": "web_search"}],
+        "input": [
+            {"role": "system", "content": _SYS_PROMPT_B},
+            {"role": "user", "content": "TWIERDZENIA DO WERYFIKACJI:\n" + json.dumps(claims, ensure_ascii=False)},
+        ],
+    }

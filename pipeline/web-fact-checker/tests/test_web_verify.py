@@ -1,4 +1,4 @@
-from scripts.web_verify import normalize_value, reconcile
+from scripts.web_verify import normalize_value, reconcile, build_gpt5_request
 
 
 def test_normalize_strips_currency_percent_and_case():
@@ -53,3 +53,16 @@ def test_single_engine_flag_when_no_source():
 
 def test_apply_requires_both_classification_current():
     assert reconcile(_a("stale", "X", cls="current"), _a("stale", "X", cls="historical"))["action"] == "flag"
+
+
+# --- build_gpt5_request() tests ---
+
+def test_build_request_has_model_tool_and_claims():
+    claims = [{"id": "f.md:1", "type": "price", "quote": "GPT-4o", "current_value": "GPT-4o"}]
+    req = build_gpt5_request(claims)
+    assert req["model"] == "gpt-5.5"
+    assert {"type": "web_search"} in req["tools"]
+    user_msg = req["input"][-1]["content"]
+    assert "f.md:1" in user_msg and "GPT-4o" in user_msg
+    sys_msg = req["input"][0]["content"]
+    assert "JSON" in sys_msg and "historical" in sys_msg
