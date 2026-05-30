@@ -1,4 +1,9 @@
-from scripts.web_verify import normalize_value, reconcile, build_gpt5_request
+import json
+import pathlib
+
+from scripts.web_verify import normalize_value, reconcile, build_gpt5_request, parse_gpt5_response
+
+FIX = pathlib.Path(__file__).parent / "fixtures" / "gpt5_response_sample.json"
 
 
 def test_normalize_strips_currency_percent_and_case():
@@ -66,3 +71,15 @@ def test_build_request_has_model_tool_and_claims():
     assert "f.md:1" in user_msg and "GPT-4o" in user_msg
     sys_msg = req["input"][0]["content"]
     assert "JSON" in sys_msg and "historical" in sys_msg
+
+
+# --- parse_gpt5_response() tests ---
+
+def test_parse_extracts_verdicts_and_strips_fence():
+    v = parse_gpt5_response(json.loads(FIX.read_text()))
+    assert len(v) == 1 and v[0]["claim_id"] == "f.md:1" and v[0]["status"] == "stale" and v[0]["correct_value"] == "GPT-5.5"
+
+
+def test_parse_handles_empty_or_malformed():
+    assert parse_gpt5_response({"output": []}) == []
+    assert parse_gpt5_response({"output": [{"type": "message", "content": [{"type": "output_text", "text": "nie-json"}]}]}) == []

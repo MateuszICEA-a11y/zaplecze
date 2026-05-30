@@ -75,3 +75,22 @@ def build_gpt5_request(claims: list[dict]) -> dict:
             {"role": "user", "content": "TWIERDZENIA DO WERYFIKACJI:\n" + json.dumps(claims, ensure_ascii=False)},
         ],
     }
+
+
+def parse_gpt5_response(resp: dict) -> list[dict]:
+    """Wyciąga tablicę werdyktów z output_text odpowiedzi Responses API. Tolerancyjny na ```json fence i śmieci."""
+    text = ""
+    for item in resp.get("output", []):
+        if item.get("type") == "message":
+            for part in item.get("content", []):
+                if part.get("type") == "output_text":
+                    text += part.get("text", "")
+    if not text.strip():
+        return []
+    m = re.search(r"```(?:json)?\s*(.*?)```", text, re.DOTALL)
+    payload = m.group(1) if m else text
+    try:
+        data = json.loads(payload.strip())
+    except json.JSONDecodeError:
+        return []
+    return data if isinstance(data, list) else []

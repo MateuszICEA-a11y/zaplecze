@@ -1,0 +1,8 @@
+{
+  "output": [
+    {"type": "web_search_call", "id": "ws_1", "status": "completed"},
+    {"type": "message", "role": "assistant",
+     "content": [{"type": "output_text",
+       "text": "```json\n[{\"claim_id\":\"f.md:1\",\"status\":\"stale\",\"correct_value\":\"GPT-5.5\",\"source_url\":\"https://openai.com/pricing\",\"as_of\":\"2026-05\",\"classification\":\"current\"}]\n```"}]}
+  ]
+}
