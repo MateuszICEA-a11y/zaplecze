@@ -75,7 +75,7 @@ Poniższa tabela zestawia najważniejsze parametry obu ekosystemów na maj 2026 
 | **Agent CLI** | Claude Code (lokalny) | Codex CLI (lokalny) + Codex web (chmura) |
 | **Tryb wykonania agenta** | lokalny (filesystem) | hybrydowy (lokalny CLI + chmurowy kontener) |
 | **Dostęp do narzędzi** | MCP (otwarty standard) | Function Calling, Responses API |
-| **Plan subskrypcji z agentem** | Pro ($20/mies.) lub Max ($100–200/mies.) | ChatGPT Plus ($20/mies.) lub Pro ($200/mies.) |
+| **Plan subskrypcji z agentem** | Pro ($20/mies.) lub Max ($100–200/mies.) | ChatGPT Plus ($20/mies.) lub Pro ($100–200/mies.) |
 | **Prompt caching** | tak – $0,30/1M tokenów (Sonnet 4.6) | tak – $0,50/1M tokenów (GPT-5.5, cached input) |
 
 Kilka uwag do tabeli. Choć balansowy GPT-5.4 kosztuje nominalnie mniej na tokenach wejściowych niż Sonnet 4.6, Claude oferuje bardziej efektywne buforowanie zapytań (prompt caching) – przy długich sesjach agentowych, gdzie ten sam kontekst projektu jest wielokrotnie przesyłany, koszt pojedynczego żądania może być zbliżony do tańszych modeli lub przemawiać na korzyść Claude'a. Z kolei koszt flagowego GPT-5.5 to wydatek rzędu $5/$30. **Dla intensywnych agentowych przepływów pracy szacowany rzeczywisty koszt miesięczny w Anthropic wynosi $10–80 na programistę, co jest wynikiem porównywalnym lub korzystniejszym w zestawieniu z ekwiwalentem w OpenAI przy zbliżonym wykorzystaniu.**
@@ -125,7 +125,7 @@ Przykładowe szacunki miesięczne na programistę:
 - **Regularna praca** (daily coding assistant) – Claude Sonnet: ~$15–35, GPT-5.4: ~$12–30
 - **Intensywna praca z agentami** (Claude Code / Codex, cały dzień roboczy) – Claude Opus: ~$50–120, Codex w planie Pro: wliczone w $200/mies.
 
-Subskrypcja ChatGPT Pro ($200/mies.) obejmuje dostęp do Codex i modeli GPT-5 bez dodatkowych opłat za token – co dla zaawansowanych użytkowników narzędzi agentowych może być korzystniejsze niż model płatności za zużycie (pay-as-you-go) w Anthropic. Claude oferuje analogicznie plan Max ($100–200/mies.) z wyższymi limitami, ale rozliczenia tokenowe nadal obowiązują przy przekroczeniu puli.
+Subskrypcja ChatGPT Pro ($100–200/mies.) obejmuje dostęp do Codex i modeli GPT-5 bez dodatkowych opłat za token – co dla zaawansowanych użytkowników narzędzi agentowych może być korzystniejsze niż model płatności za zużycie (pay-as-you-go) w Anthropic. Claude oferuje analogicznie plan Max ($100–200/mies.) z wyższymi limitami, ale rozliczenia tokenowe nadal obowiązują przy przekroczeniu puli.
 
 Pełny przegląd modeli i ich pozycjonowania cenowego – razem z alternatywami ekonomicznymi dla różnych wolumenów użycia – zestawia przewodnik po modelach LLM dostępny w sekcji powyżej.
 

@@ -25,11 +25,11 @@ Zanim przejdziesz do szczegółów, ta tabela daje przekrój przez obie platform
 | Kryterium | Claude (Sonnet 4.6 / Opus 4.8) | Gemini (2.5 Pro) |
 |---|---|---|
 | Producent | Anthropic | Google DeepMind |
-| Okno kontekstowe | 200K (Sonnet) / 1M (Opus) | 1M tokenów |
+| Okno kontekstowe | do 1M (Sonnet i Opus) | 1M tokenów |
 | SWE-bench Verified | ~80–89% | ~63–78% |
 | Cena API (input/output) | $3/$15 (Sonnet), $5/$25 (Opus) | $1,25/$10 (Pro) |
 | Plan dla osób prywatnych | Claude.ai Pro – $20/mies. | Google AI Pro – $19,99/mies. |
-| Plan premium | Claude.ai Max – $100–200/mies. | Google AI Ultra – $200/mies. |
+| Plan premium | Claude.ai Max – $100–200/mies. | Google AI Ultra – $100–200/mies. |
 | Integracja z Google Workspace | Brak natywnej | Natywna (Gmail, Docs, Drive) |
 | Dostęp do sieci | Przez Computer Use / projekty | Natywny Google Search |
 | Język interfejsu | Angielski + wielojęzyczny | Wielojęzyczny, PL dostępny |
@@ -77,7 +77,7 @@ Narzędzie Claude Code (interfejs wiersza poleceń, czyli CLI) idzie krok dalej 
 
 ## Długi kontekst – kiedy masz 200 stron do przejrzenia
 
-Okno kontekstowe decyduje o tym, ile danych możesz podać modelowi w jednym zapytaniu. Claude Sonnet 4.6 obsługuje 200 tysięcy tokenów – to ok. 150 000 słów, czyli kilka obszernych raportów naraz. Claude Opus 4.8 rozciąga ten limit do 1 miliona tokenów.
+Okno kontekstowe decyduje o tym, ile danych możesz podać modelowi w jednym zapytaniu. Claude Sonnet 4.6 obsługuje 500 tysięcy tokenów w interfejsie czatu (ok. 375 000 słów, czyli kilka obszernych raportów naraz), a przez API i Claude Code – pełny milion. Claude Opus 4.8 również oferuje okno 1 miliona tokenów.
 
 Gemini 2.5 Pro oferuje 1 milion tokenów jako standard w każdym planie, bez konieczności sięgania po najdroższą wersję modelu.
 

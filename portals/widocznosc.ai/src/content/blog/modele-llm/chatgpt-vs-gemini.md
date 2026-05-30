@@ -108,7 +108,7 @@ Poniżej zestawienie kluczowych parametrów dla obu platform. Dane odpowiadają 
 | **Generowanie obrazów** | DALL-E (od planu Plus) | Imagen (wbudowany) |
 | **Tryb głosowy** | Advanced Voice Mode, desktop + mobile | Gemini Live; asystent Spark |
 | **Integracja biurowa** | Przez Microsoft 365 Copilot | Natywna (Workspace: Gmail, Docs, Drive, Sheets) |
-| **Deep Research** | Tak (np. 10 sesji/mies. w Plus, do 250 w Pro) | Tak (integracja z Drive/Gmail) |
+| **Deep Research** | Tak (np. 25 sesji/mies. w Plus, do 250 w Pro) | Tak (integracja z Drive/Gmail) |
 | **Przeszukiwanie sieci** | Tak | Tak (natywne Google Search) |
 | **Ochrona danych treningowych** | Od planu Business | Od planu Workspace Enterprise |
 | **API (dostępność)** | OpenAI API | Google AI Studio / Vertex AI |
