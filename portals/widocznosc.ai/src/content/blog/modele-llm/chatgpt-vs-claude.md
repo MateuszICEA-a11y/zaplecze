@@ -55,7 +55,7 @@ Jedno ograniczenie Claude jest warte odnotowania: **model nie generuje obrazów*
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Ciekawostka</div>
-    <p>W grudniu 2025 roku OpenAI wycofało DALL-E 3 i zastąpiło je modelem GPT Image 1.5 wbudowanym bezpośrednio w ChatGPT. Jednocześnie firma zamknęła Sorę – model do generowania wideo – 24 marca 2026 roku. <strong>ChatGPT Plus stracił możliwość generowania wideo, ale zyskał znacznie lepsze generowanie obrazów bez przełączania narzędzi.</strong></p>
+    <p>W grudniu 2025 roku OpenAI wycofało DALL-E 3 i zastąpiło je modelem GPT Image 1.5 wbudowanym bezpośrednio w ChatGPT. Jednocześnie firma zamknęła Sorę – model do generowania wideo – 26 kwietnia 2026 roku. <strong>ChatGPT Plus stracił możliwość generowania wideo, ale zyskał znacznie lepsze generowanie obrazów bez przełączania narzędzi.</strong></p>
   </div>
 </aside>
 
@@ -127,7 +127,7 @@ Oto syntetyczne zestawienie kluczowych kryteriów. Gwiazdką ✦ oznaczam przewa
 | **Generowanie obrazów** | GPT Image 1.5, wbudowane ✦ | Brak |
 | **Generowanie wideo** | Brak (Sora zamknięta w marcu 2026) | Brak |
 | **Tryb głosowy** | Tak, pełnofunkcyjny ✦ | Ograniczony |
-| **Jakość kodowania (SWE-bench)** | ~80% | ~80,8% ✦ |
+| **Jakość kodowania (SWE-bench Verified)** | ~88,7% | ~88,6% |
 | **Jakość stylistyki (niezależne testy)** | Poprawna, schematyczna | Bardziej zróżnicowana ✦ |
 | **Język polski** | Silniejszy ✦ | Dobry, drobne błędy fleksyjne |
 | **Analiza długich dokumentów** | Limitowana (Standard) | Lepiej dopasowana ✦ |

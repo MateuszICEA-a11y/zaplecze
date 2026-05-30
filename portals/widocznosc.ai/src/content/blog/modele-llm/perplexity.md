@@ -91,7 +91,7 @@ Perplexity oferuje trzy główne poziomy dostępu. Poniżej zestawienie kluczowy
 | Plan | Cena (mies.) | Główne możliwości | Limit zapytań Pro |
 |---|---|---|---|
 | Free | 0 USD | Standardowe wyszukiwanie z przypisami, wybrane modele | ~5 zapytań Pro dziennie |
-| Pro | 20 USD | Nieograniczone zapytania, GPT-4o / Claude 3.5, wgrywanie plików PDF | Bez limitu |
+| Pro | 20 USD | Nieograniczone zapytania, GPT-5 / Claude Opus 4, wgrywanie plików PDF | Bez limitu |
 | Max | 200 USD | Model Council, Deep Research bez limitu, priorytetowy dostęp | Bez limitu + kredyty compute |
 | Enterprise | Kontakt | RAG na prywatnych danych firmowych, prywatność danych, SSO | Indywidualny |
 

@@ -57,7 +57,7 @@ Architektura przetwarzania zapytania wygląda następująco:
 - **Weryfikacja uprawnień** – każda odpowiedź jest filtrowana przez reguły RBAC (Role-Based Access Control); model nie może udostępnić danych, do których pytający nie ma dostępu
 - **Szyfrowanie typu end-to-end** – dane klientów nie są wykorzystywane do trenowania modeli bazowych; firma Microsoft działa w tym przypadku jako podmiot przetwarzający dane, zgodnie z przepisami RODO
 
-To odróżnia usługę Copilot for Microsoft 365 od publicznie dostępnego ChatGPT. Model GPT-4 w wariancie konsumenckim nie wie, co znajduje się na Twoim dysku OneDrive ani kto uczestniczył we wczorajszym spotkaniu. Copilot ma do tego dostęp – i potrafi połączyć tę wiedzę z zadanym pytaniem.
+To odróżnia usługę Copilot for Microsoft 365 od publicznie dostępnego ChatGPT. Model GPT-5 w wariancie konsumenckim nie wie, co znajduje się na Twoim dysku OneDrive ani kto uczestniczył we wczorajszym spotkaniu. Copilot ma do tego dostęp – i potrafi połączyć tę wiedzę z zadanym pytaniem.
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
