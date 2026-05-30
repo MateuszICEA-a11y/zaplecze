@@ -30,7 +30,7 @@ Trzy główne kategorie narzędzi w produkcyjnych systemach agentowych:
 - **Zapis i modyfikacja stanu** – pisanie do baz danych, wysyłanie e-maili, tworzenie zgłoszeń (ticketów) w Jirze, aktualizacja CRM; to narzędzia nieodwracalne, wymagające szczególnej ostrożności
 - **Wykonanie kodu** – uruchamianie skryptów Python, poleceń powłoki, transformacji danych; najsilniejsze i zarazem najbardziej ryzykowne
 
-**Pionierski system MRKL (Modular Reasoning, Knowledge and Language) z 2022 roku pokazał, że modele o małej skali mają duże trudności z poprawną ekstrakcją argumentów do wywołań narzędzi.** Późniejszy Toolformer (Schick et al. 2023) rozwiązał ten problem przez samonadzorowane uczenie się korzystania z interfejsów programistycznych – na podstawie minimalnej liczby przykładów ludzkich. Współczesne GPT-4o czy Claude 3.5 radzą sobie z tym znacznie lepiej, ale błędy w argumentach narzędziowych wciąż są częstą przyczyną awarii agentów produkcyjnych.
+**Pionierski system MRKL (Modular Reasoning, Knowledge and Language) z 2022 roku pokazał, że modele o małej skali mają duże trudności z poprawną ekstrakcją argumentów do wywołań narzędzi.** Późniejszy Toolformer (Schick et al. 2023) rozwiązał ten problem przez samonadzorowane uczenie się korzystania z interfejsów programistycznych – na podstawie minimalnej liczby przykładów ludzkich. Współczesne GPT-5 czy Claude Opus 4.8 radzą sobie z tym znacznie lepiej, ale błędy w argumentach narzędziowych wciąż są częstą przyczyną awarii agentów produkcyjnych.
 
 Zanim wybierzesz framework agentowy, [przewodnik po modelach LLM](/modele-llm/przewodnik/) pokazuje, które modele najlepiej radzą sobie z precyzją wywołań narzędziowych – to kryterium często ważniejsze niż ogólne parametry w benchmarkach.
 

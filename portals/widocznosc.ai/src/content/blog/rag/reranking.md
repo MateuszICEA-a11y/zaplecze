@@ -61,7 +61,7 @@ Praktyczna implementacja systemu dwuetapowego wymaga decyzji w trzech obszarach:
 Modele dzielą się na komercyjne API i rozwiązania lokalne:
 
 - **Cohere Rerank v4.0-pro** – komercyjne API, 32 000 tokenów kontekstu, natywne wsparcie dla JSON i ponad 100 języków; dobry punkt startowy dla prototypów, gdzie czas wdrożenia jest ważniejszy niż koszt jednostkowy
-- **BGE-reranker-v2-m3** – model lokalny (568 mln parametrów, Apache 2.0), 512 tokenów, powszechny standard bazowy dla wdrożeń on-premise; wolny i lekki, działa bez GPU
+- **BGE-reranker-v2-m3** – model lokalny (568 mln parametrów, Apache 2.0), okno do 8 192 tokenów (BAAI rekomenduje 1 024), powszechny standard bazowy dla wdrożeń on-premise; wolny i lekki, działa bez GPU
 - **Qwen3-Reranker-4B** – wyniki 69,76 na MTEB-R i 81,20 na MTEB-Code; świetna opcja, jeśli indeksujesz dokumentację techniczną lub kod
 - **FlashRank** – ultralekki silnik Apache 2.0, zaprojektowany pod środowiska CPU; idealny do wdrożeń brzegowych i mikroserwisów z ograniczoną pamięcią
 - **Jina Reranker v3** – tryb listowy (jednoczesna analiza do 64 dokumentów w oknie 131 000 tokenów), wynik 61,94 nDCG@10 na zbiorze BEIR

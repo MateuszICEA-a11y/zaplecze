@@ -44,7 +44,7 @@ Każda strategia odpowiada innym właściwościom dokumentów i wymaganiom syste
 Podział o stałym rozmiarze (ang. *fixed-size chunking*) dzieli sekwencję tokenów na równe przedziały bez uwzględniania struktury tekstu. Dla modelu `text-embedding-3-small` typowy rozmiar to 512 tokenów; dla `all-MiniLM-L6-v2` – 256 tokenów.
 
 ```python
-from langchain.text_splitter import TokenTextSplitter
+from langchain_text_splitters import TokenTextSplitter
 
 splitter = TokenTextSplitter(
     chunk_size=512,
@@ -61,7 +61,7 @@ Nakładka (ang. *overlap*) wielkości 50 tokenów zmniejsza ryzyko ucięcia zdan
 Rekurencyjny podział znakowy (ang. *recursive character splitting*) stosuje hierarchiczną listę separatorów: najpierw próbuje ciąć po podwójnych znakach nowej linii (akapity), następnie po pojedynczych, a potem po spacjach. Dzieli tekst na mniejsze fragmenty dopiero po wyczerpaniu separatorów wyższego rzędu.
 
 ```python
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 splitter = RecursiveCharacterTextSplitter(
     chunk_size=600,

@@ -244,7 +244,7 @@ Dwa główne typy ataków, które musisz znać:
 - **Wstrzykiwanie bezpośrednie** – użytkownik wpisuje w oknie czatu „zignoruj wszystkie poprzednie instrukcje i [złośliwe polecenie]"; stosunkowo łatwe do wykrycia przez filtry wejściowe
 - **Wstrzykiwanie pośrednie** – złośliwe instrukcje ukryte w dokumentach, e-mailach lub stronach internetowych przetwarzanych automatycznie przez agenta; trudniejsze do wykrycia, bo atak pochodzi z zewnętrznego źródła, nie od użytkownika
 
-**Wstrzykiwanie pośrednie to aktywne zagrożenie produkcyjne, nie akademiczna hipoteza.** W 2026 roku jednostka Palo Alto Networks Unit 42 udokumentowała ataki na systemy agentowe przez spreparowane strony internetowe, wykorzystujące podatność CVE-2026-25253 w popularnym frameworku agentowym.
+**Wstrzykiwanie pośrednie to aktywne zagrożenie produkcyjne, nie akademiczna hipoteza.** W 2026 roku jednostka Palo Alto Networks Unit 42 udokumentowała ataki na systemy agentowe przez spreparowane strony internetowe (tzw. pośrednie wstrzykiwanie promptu).
 
 ### Wzorzec Dual-LLM jako obrona architekturalna
 
@@ -272,10 +272,10 @@ Zestawienie kluczowych różnic między popularnymi modelami:
 
 | Model | Mocna strona | Zachowanie domyślne | Kluczowa wskazówka |
 |---|---|---|---|
-| GPT-4o / GPT-5 | Instrukcje złożone, formatowanie | Bezpośredni, zorientowany na zadanie | Definiuj osobowość i styl wprost |
+| GPT-5 / GPT-5.5 | Instrukcje złożone, formatowanie | Bezpośredni, zorientowany na zadanie | Definiuj osobowość i styl wprost |
 | Claude Sonnet/Opus | Długie dokumenty, wnioskowanie | Ostrożny, zadaje pytania przy niejednoznaczności | Podawaj kontekst celu, nie tylko treści |
-| Gemini Pro | Dane multimodalne, kod | Analityczny, struktura Markdown | Dane kontekstowe umieszczaj przed instrukcją |
-| Llama 3 (open source) | Koszt, prywatność danych | Wymaga precyzyjnych szablonów | Few-shot obowiązkowy dla niestandardowych formatów |
+| Gemini 3.1 Pro | Dane multimodalne, kod | Analityczny, struktura Markdown | Dane kontekstowe umieszczaj przed instrukcją |
+| Llama 4 (open source) | Koszt, prywatność danych | Wymaga precyzyjnych szablonów | Few-shot obowiązkowy dla niestandardowych formatów |
 
 Szczegółowe porównanie możliwości tych modeli, w tym parametry techniczne i okna kontekstowe, zawiera artykuł o [modelach LLM](/modele-llm/przewodnik/). Dla codziennej pracy z ChatGPT konkretny poradnik znajdziesz w artykule o [ChatGPT dla SEO](/modele-llm/chatgpt/).
 

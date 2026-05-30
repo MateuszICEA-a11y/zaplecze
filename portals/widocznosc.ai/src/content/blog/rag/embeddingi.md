@@ -130,7 +130,7 @@ Jak sprawdzić, czy Twoje treści są zbudowane pod cytowalność w AI? Darmowy 
 
 Embeddingi w systemach RAG to jedno zastosowanie. Ale warto wiedzieć, że duże modele językowe używają wektorów osadzonych również wewnętrznie – to właśnie wektory są reprezentacją, na której operuje każda warstwa Transformera.
 
-Kiedy GPT-4 lub Claude przetwarza tekst, na wejściu każdy token (fragment słowa lub znak interpunkcyjny) jest zamieniany na wektor. Mechanizm samouwagi przekształca te wektory przez kolejne warstwy sieci, wzbogacając je o kontekst całego zdania i dokumentu. Na wyjściu każdej warstwy pojawiają się nowe wektory – coraz bardziej „przetworzone" semantycznie. Ostateczna decyzja o kolejnym tokenie wynika właśnie z tych wewnętrznych reprezentacji wektorowych.
+Kiedy GPT-5 lub Claude przetwarza tekst, na wejściu każdy token (fragment słowa lub znak interpunkcyjny) jest zamieniany na wektor. Mechanizm samouwagi przekształca te wektory przez kolejne warstwy sieci, wzbogacając je o kontekst całego zdania i dokumentu. Na wyjściu każdej warstwy pojawiają się nowe wektory – coraz bardziej „przetworzone" semantycznie. Ostateczna decyzja o kolejnym tokenie wynika właśnie z tych wewnętrznych reprezentacji wektorowych.
 
 To oznacza, że embeddingi to nie tylko narzędzie do wyszukiwania podobnych dokumentów. To język, którym modele językowe myślą. **Kiedy piszesz tekst zrozumiały dla LLM-a, piszesz tekst, który generuje przejrzyste, jednoznaczne wektory na każdym poziomie przetwarzania.**
 
