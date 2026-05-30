@@ -208,7 +208,7 @@ Darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) samodzieln
 
 ### Narzędzia zewnętrzne do monitoringu
 
-Wyspecjalizowane platformy potrafią automatyzować ten proces na dużą skalę. Profound monitoruje modele Claude, GPT-4 i Bing Search, kładąc nacisk na bezpieczeństwo danych klasy enterprise. Evertune testuje tysiące wariantów zapytań i analizuje różnice geograficzne. Writesonic łączy monitoring z gotowymi rekomendacjami poprawek on-page.
+Wyspecjalizowane platformy potrafią automatyzować ten proces na dużą skalę. Profound monitoruje główne silniki AI – m.in. ChatGPT, Gemini, Claude i Perplexity – kładąc nacisk na bezpieczeństwo danych klasy enterprise. Evertune testuje tysiące wariantów zapytań i analizuje różnice geograficzne. Writesonic łączy monitoring z gotowymi rekomendacjami poprawek on-page.
 
 Przy wyborze platformy zwróć uwagę na jedno kluczowe kryterium: czy narzędzie odróżnia cytowania (aktywny link do Twojej strony) od wzmianek (nazwa marki bez linka)? To fundamentalna różnica, niezbędna do prawidłowej interpretacji wyników.
 

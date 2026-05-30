@@ -28,8 +28,8 @@ Na rynku jest ponad 30 botów oznaczonych jako *„AI crawlers"*, ale 13 z nich 
 | `GPTBot` | OpenAI | trening modeli (GPT-5+) | długoterminowy – nowe wersje GPT |
 | `OAI-SearchBot` | OpenAI | crawling dla SearchGPT | bieżący – cytowania w odpowiedziach |
 | `ChatGPT-User` | OpenAI | pobieranie na żądanie (browse with web) | bieżący – per zapytanie użytkownika |
-| `ClaudeBot` / `anthropic-ai` | Anthropic | trening Claude | długoterminowy |
-| `Claude-Web` | Anthropic | pobieranie na żądanie | bieżący |
+| `ClaudeBot` | Anthropic | trening Claude | długoterminowy |
+| `Claude-User` | Anthropic | pobieranie na żądanie | bieżący |
 | `Claude-SearchBot` | Anthropic | wyszukiwanie w czasie rzeczywistym w Claude | bieżący |
 | `Google-Extended` | Google | trening modeli Gemini | długoterminowy |
 | `Google-NotebookLM` | Google | NotebookLM research tool | niszowy |
@@ -68,10 +68,10 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: anthropic-ai
+User-agent: Claude-User
 Allow: /
 
-User-agent: Claude-Web
+User-agent: Claude-SearchBot
 Allow: /
 
 User-agent: PerplexityBot
