@@ -13,7 +13,7 @@ author: Redakcja widocznosc.ai
 image: ../../assets/images/news-2026-05-30-gdy-firmy-przesadzaja-z-ai.webp
 ---
 
-## Co się wydarzyło?
+## Aaron Levie ostrzega przed „psychozą AI" w firmach
 
 TechCrunch AI zwraca uwagę na rosnący problem bezkrytycznego zachwytu sztuczną inteligencją w firmach. Punktem wyjścia są słowa Aarona Leviego, założyciela Boxa, który sugeruje, że osoby decydujące o tym, że AI może przejąć czyjąś pracę, często same nie rozumieją, na czym ta praca naprawdę polega. Levie określa takie podejście mianem swoistej „AI psychozy” – sytuacji, w której technologia staje się nie narzędziem, ale ideologicznym uzasadnieniem dla radykalnych decyzji.
 
@@ -21,7 +21,7 @@ W materiale przywołano też konkretny przykład ClickUp, które niedawno zreduk
 
 > **Nasz komentarz:** Największym ryzykiem nie jest dziś samo AI, ale decyzje liderów, którzy próbują nim zastąpić pracę, której nigdy naprawdę nie rozłożyli na czynniki pierwsze.
 
-## Co to oznacza dla Twojej marki?
+## Czego ta fala zwolnień uczy marki budujące widoczność w AI
 
 Naszym zdaniem ten news warto czytać szerzej niż tylko jako historię o zwolnieniach w techu. To sygnał dla każdej marki, która wdraża AI w marketingu, obsłudze klienta, sprzedaży czy tworzeniu treści. Jeśli prowadzisz firmę, łatwo wpaść w pułapkę myślenia, że skoro model potrafi wygenerować tekst, odpowiedź albo analizę, to człowiek przestaje być potrzebny. W naszej ocenie to skrót, który może szybko odbić się na jakości, spójności marki i zaufaniu odbiorców.
 
