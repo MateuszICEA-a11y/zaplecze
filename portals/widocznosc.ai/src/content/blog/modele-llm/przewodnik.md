@@ -33,7 +33,7 @@ faq:
       Tak. Modele trenowane są na danych z określonego przedziału czasowego (do tzw. daty odcięcia, ang. <em>cutoff date</em>) – po tej dacie nowe informacje o Twojej firmie nie trafiają automatycznie do wiedzy modelu. Modele z aktywnym RAG (SearchGPT, Perplexity, Copilot, Gemini z Searchem) uzupełniają wiedzę treningową danymi pobranymi w chwili zapytania. Dlatego aktualne treści na stronie mają znaczenie – bot może je pobrać i dołączyć do odpowiedzi.
 ---
 
-LLM (Large Language Model, czyli duży model językowy) to nie jeden produkt – to cały ekosystem kilkudziesięciu systemów, które różnią się architekturą, mocnymi stronami, ceną i tym, jak traktują Twoją markę jako potencjalne źródło cytowań. **Dziś 88% firm deklaruje wdrożenie generatywnej AI, a użytkownicy zadają pytania o produkty i usługi bezpośrednio w ChatGPT, Perplexity czy w Gemini – zamiast wpisywać je w wyszukiwarkę.** Ten przewodnik pokazuje, jak działa każdy z głównych modeli, czym się od siebie różnią i co to oznacza dla widoczności Twojej marki w odpowiedziach AI.
+LLM (Large Language Model, czyli duży model językowy) to nie jeden produkt – to cały ekosystem kilkudziesięciu systemów, które różnią się architekturą, mocnymi stronami, ceną i tym, jak traktują Twoją markę jako potencjalne źródło cytowań. **Dziś niemal 80% firm korzysta z AI, a większość wdrożyła już generatywną AI w co najmniej jednym obszarze; użytkownicy coraz częściej zadają pytania o produkty i usługi bezpośrednio w ChatGPT, Perplexity czy w Gemini – zamiast wpisywać je w wyszukiwarkę.** Ten przewodnik pokazuje, jak działa każdy z głównych modeli, czym się od siebie różnią i co to oznacza dla widoczności Twojej marki w odpowiedziach AI.
 
 ## Jak działa duży model językowy?
 
@@ -165,7 +165,7 @@ Kilka ekosystemów specjalistycznych warto znać z nazwy:
 
 - **DeepSeek R1** – chiński model wnioskujący, licencja MIT, koszt wnioskowania niższy o ok. 96% od OpenAI o3 przy zbliżonej precyzji logicznej; używany głównie przez deweloperów.
 - **Mistral AI** – europejski lider modeli open source, z siedzibą we Francji; flagowy model Mistral Large 2512 kosztuje 0,50 USD za milion tokenów wejściowych przy oknie 262 000 tokenów; istotny dla firm wymagających suwerenności danych na terenie UE.
-- **PLLuM / Bielik** – polskie modele językowe rozwijane przez konsorcjum NASK i społeczność SpeakLeash; optymalizowane pod język polski i specyfikę administracyjną; model Bielik-2.1 osiąga w testach kompetencji języka polskiego wynik zbliżony do GPT-4.
+- **PLLuM / Bielik** – polskie modele językowe rozwijane przez konsorcjum NASK i społeczność SpeakLeash; optymalizowane pod język polski i specyfikę administracyjną; modele z rodziny Bielik (11B v2/v3) należą do najlepszych open source w testach kompetencji języka polskiego, choć wciąż ustępują czołowym modelom komercyjnym.
 
 ## Modele open source – kiedy warto odejść od chmury
 

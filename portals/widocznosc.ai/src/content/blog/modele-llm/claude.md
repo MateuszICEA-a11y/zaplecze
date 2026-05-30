@@ -88,7 +88,7 @@ Poniższa tabela pokazuje aktualne klasy modeli (bez numerów wersji, które zmi
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Ciekawostka</div>
-    <p>W testach środowiskowych OSWorld – oceniających zdolność autonomicznego sterowania komputerem – Claude osiągnął wynik 14,9% poprawnie wykonanych zadań. <strong>Drugi w zestawieniu model miał wynik 7,7%. Człowiek osiąga ok. 75%.</strong> Przewaga dwukrotna przy jednoczesnej dużej luce do człowieka dokładnie opisuje, gdzie agenci AI są dziś użyteczni, a gdzie ich stosowanie nadal niesie ze sobą ryzyko.</p>
+    <p>W testach środowiskowych OSWorld z końca 2024 roku – oceniających zdolność autonomicznego sterowania komputerem – Claude (wówczas wersja 3.5) osiągnął 14,9% poprawnie wykonanych zadań, dwukrotnie wyprzedzając drugi model (7,7%). <strong>Od tego czasu wyniki gwałtownie wzrosły – najnowsze modele agentowe przekraczają już 80% w nowszych wariantach tego benchmarku.</strong> To pokazuje, jak szybko dojrzewa dziedzina, w której jeszcze niedawno autonomiczni agenci AI byli głównie eksperymentalni.</p>
   </div>
 </aside>
 

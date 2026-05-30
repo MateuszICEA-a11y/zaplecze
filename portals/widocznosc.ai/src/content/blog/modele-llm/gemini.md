@@ -87,10 +87,10 @@ Aplikacja Gemini dostępna jest w czterech planach konsumenckich. Poniżej zesta
 
 | Plan | Cena | Modele | Kluczowe funkcje |
 |---|---|---|---|
-| **Free** | 0 USD/mies. | Gemini Flash | Czat, tryb głosowy Gemini Live (z limitami), 5 raportów Deep Research/mies. |
+| **Free** | 0 USD/mies. | Gemini 3.5 Flash | Czat, tryb głosowy Gemini Live (z limitami), 5 raportów Deep Research/mies. |
 | **AI Plus** | 7,99 USD/mies. | Gemini 3.5 Flash | Wyższe limity, dostęp do funkcji Workspace AI |
-| **AI Pro** | 19,99 USD/mies. | Pro (100 zapytań/dzień z trybem Thinking) | 20 raportów Deep Research/dzień, okno 1M tokenów, Gems, NotebookLM Plus |
-| **AI Ultra** | 99,99–200 USD/mies. | Ultra (500 zapytań/dzień) | 200 raportów Deep Research/dzień, Veo do generowania wideo, priorytetowy dostęp, 20 TB przestrzeni |
+| **AI Pro** | 19,99 USD/mies. | Gemini 3.1 Pro (limity oparte na zużyciu) | 20 raportów Deep Research/dzień, okno 1M tokenów, Gems, NotebookLM Plus |
+| **AI Ultra** | 99,99–200 USD/mies. | Gemini Ultra (limity oparte na zużyciu) | 200 raportów Deep Research/dzień, Veo do generowania wideo, priorytetowy dostęp, 30 TB przestrzeni |
 
 **Plan AI Pro za 19,99 USD miesięcznie to standard dla osób pracujących z AI na co dzień.** Dostęp do 20 raportów Deep Research dziennie i okno kontekstowe 1 miliona tokenów pokrywają większość zastosowań analitycznych i badawczych bez konieczności przechodzenia na dużo droższy plan AI Ultra.
 

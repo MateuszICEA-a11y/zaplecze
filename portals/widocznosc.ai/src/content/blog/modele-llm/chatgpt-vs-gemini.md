@@ -104,7 +104,7 @@ Poniżej zestawienie kluczowych parametrów dla obu platform. Dane odpowiadają 
 | **Flagowy model (maj 2026)** | GPT-5.5 | Gemini 3.1 Pro / Gemini 3.5 Flash |
 | **Okno kontekstowe (Plus/Pro)** | 128 tys. tokenów (Plus); 1 mln (Pro 200 USD) | 1 mln tokenów (AI Pro i wyżej) |
 | **Multimodalność** | Tekst + obraz; wideo przez Sorę | Tekst + obraz + audio + wideo (natywnie) |
-| **Generowanie wideo** | Sora (od planu Plus) | Veo 3.1 (od planu AI Pro) |
+| **Generowanie wideo** | Brak (Sora zamknięta w kwietniu 2026) | Veo 3.1 Lite (od planu AI Pro) |
 | **Generowanie obrazów** | DALL-E (od planu Plus) | Imagen (wbudowany) |
 | **Tryb głosowy** | Advanced Voice Mode, desktop + mobile | Gemini Live; asystent Spark |
 | **Integracja biurowa** | Przez Microsoft 365 Copilot | Natywna (Workspace: Gmail, Docs, Drive, Sheets) |

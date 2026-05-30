@@ -79,7 +79,7 @@ OpenAI oferuje kilka poziomów dostępu, a różnice są istotne w codziennej pr
 | Plan | Koszt/miesiąc | Dostęp do modeli | Kluczowe cechy i limity |
 |---|---|---|---|
 | Free | 0 USD | GPT-5.5 Instant (z limitami) | Podstawowy dostęp, limity liczby wiadomości |
-| Go | 8 USD | Nielimitowany GPT-5.5 Instant | Dla codziennych użytkowników, w niektórych krajach zawiera reklamy |
+| Go | 8 USD | GPT-5.5 Instant (wyższe limity) | Dla codziennych użytkowników, w niektórych krajach zawiera reklamy |
 | Plus | 20 USD | GPT-5.5 | Zaawansowane funkcje (Deep Research, Codex), wyższe limity |
 | Business | 25 USD/stanowisko | GPT-5.5 z priorytetem dostępu | Przestrzeń zespołowa, dane nie służą do trenowania modeli |
 | Pro | 100–200 USD | GPT-5.5 Pro, Codex, brak limitów | Najwyższa wydajność dla zaawansowanych profesjonalistów i programistów |
