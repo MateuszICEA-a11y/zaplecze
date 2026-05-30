@@ -74,7 +74,7 @@ Dobrze zaprojektowana ścieżka eskalacji powinna spełniać kilka warunków:
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Dane rynkowe</div>
-    <p>Prognozy Gartnera wskazują, że do 2029 roku systemy konwersacyjne AI będą autonomicznie rozwiązywać do 80% typowych zgłoszeń obsługi klienta. Liderzy polskiego sektora bankowego już dziś skutecznie automatyzują dziesiątki milionów interakcji z wykorzystaniem asystentów AI. <strong>Firmy, które wdrożą model hybrydowy jako pierwsze w swojej niszy, zbudują przewagę operacyjną trudną do nadrobienia przez konkurencję.</strong></p>
+    <p>Prognozy Gartnera wskazują, że do 2029 roku systemy agentyczne AI (agentic AI) będą autonomicznie rozwiązywać do 80% typowych zgłoszeń obsługi klienta. Liderzy polskiego sektora bankowego już dziś skutecznie automatyzują dziesiątki milionów interakcji z wykorzystaniem asystentów AI. <strong>Firmy, które wdrożą model hybrydowy jako pierwsze w swojej niszy, zbudują przewagę operacyjną trudną do nadrobienia przez konkurencję.</strong></p>
   </div>
 </aside>
 

@@ -16,7 +16,7 @@ intent: 'HOWTO'
 level: 'L1'
 ---
 
-Według badań McKinsey z 2025 roku 78% firm eksperymentuje z AI, ale mniej niż jedna piąta mierzy rzeczywiste efekty tych działań. Aż 42% organizacji porzuciło większość inicjatyw AI właśnie dlatego, że nie miały procesu – tylko narzędzia. Dobra wiadomość: porażka nie jest wpisana w technologię. Wynika z braku struktury. Ta mapa drogowa pokazuje pięć faz, które przeprowadzą Cię od „nie wiem, od czego zacząć" do działającego systemu – niezależnie od tego, czy prowadzisz 50-osobową firmę produkcyjną, czy 500-osobowy dział marketingu.
+Według badań McKinsey z 2025 roku już 88% firm korzysta z AI w co najmniej jednym obszarze, ale mniej niż jedna piąta mierzy rzeczywiste efekty tych działań. Aż 42% organizacji porzuciło większość inicjatyw AI właśnie dlatego, że nie miały procesu – tylko narzędzia. Dobra wiadomość: porażka nie jest wpisana w technologię. Wynika z braku struktury. Ta mapa drogowa pokazuje pięć faz, które przeprowadzą Cię od „nie wiem, od czego zacząć" do działającego systemu – niezależnie od tego, czy prowadzisz 50-osobową firmę produkcyjną, czy 500-osobowy dział marketingu.
 
 ## Zanim cokolwiek kupisz – audyt gotowości
 
@@ -110,7 +110,7 @@ Zintegruj model z CRM/ERP przez API lub platformę PaaS. Udostępnij narzędzie 
 
 ### Faza 5 – Skalowanie w środowisku produkcyjnym (miesiąc 8+)
 
-Przejście na pełną skalę produkcyjną, automatyzacja douczania modeli (MLOps), ciągła optymalizacja kosztów infrastruktury. Systemy wysokiego ryzyka (np. AI w rekrutacji, ocenie zdolności kredytowej) muszą spełnić pełne wymogi AI Act przed 2 sierpnia 2026 roku: nadzór człowieka, dokumentacja techniczna, rejestracja w unijnej bazie danych. Kary za naruszenia wymogów dla systemów wysokiego ryzyka sięgają 15 mln euro lub 3% globalnego rocznego obrotu (wyższe kary, rzędu 35 mln euro lub 7%, dotyczą wprost praktyk zakazanych).
+Przejście na pełną skalę produkcyjną, automatyzacja douczania modeli (MLOps), ciągła optymalizacja kosztów infrastruktury. Systemy wysokiego ryzyka (np. AI w rekrutacji, ocenie zdolności kredytowej) muszą spełnić pełne wymogi AI Act przed 2 grudnia 2027 roku (termin przesunięty z sierpnia 2026 przez Digital Omnibus z maja 2026): nadzór człowieka, dokumentacja techniczna, rejestracja w unijnej bazie danych. Kary za naruszenia wymogów dla systemów wysokiego ryzyka sięgają 15 mln euro lub 3% globalnego rocznego obrotu (wyższe kary, rzędu 35 mln euro lub 7%, dotyczą wprost praktyk zakazanych).
 
 **Rezultat:** Stabilny ekosystem AI generujący mierzalny wpływ na rachunek zysków i strat (P&L) przy zerowym poziomie naruszeń regulacyjnych.
 
@@ -118,7 +118,7 @@ Przejście na pełną skalę produkcyjną, automatyzacja douczania modeli (MLOps
   <div class="callout-icon">✦</div>
   <div class="callout-body">
     <div class="callout-label">Dane z badań</div>
-    <p>Analizy MIT wskazują, że niepowodzenia projektów AI wynikają z traktowania wdrożenia jako prostego zakupu technologii. Organizacje, które odnoszą sukces, stosują metodykę 10-20-70: <strong>zaledwie 10% sukcesu pochodzi z technologii, 20% z architektury danych, a 70% z zarządzania zmianą i gotowości ludzi.</strong> Technologia to najmniejsza część równania.</p>
+    <p>Badania pokazują, że niepowodzenia projektów AI wynikają z traktowania wdrożenia jako prostego zakupu technologii. Organizacje, które odnoszą sukces, stosują metodykę 10-20-70 (spopularyzowaną przez BCG): <strong>zaledwie 10% sukcesu pochodzi z technologii, 20% z architektury danych, a 70% z zarządzania zmianą i gotowości ludzi.</strong> Technologia to najmniejsza część równania.</p>
   </div>
 </aside>
 
@@ -142,7 +142,7 @@ Jeśli chcesz sprawdzić, czy Twoja marka pojawia się w odpowiedziach AI, zanim
 AI Act to nie tylko kary za naruszenia. To także ramy prawne, które wymuszają dobry projekt od samego początku. Klasyfikacja ryzyka jest prosta:
 
 - **Ryzyko nieakceptowalne** – systemy zakazane bezwzględnie (social scoring, biometryczna klasyfikacja osób w przestrzeni publicznej). Zakaz obowiązuje od 2 lutego 2025 roku.
-- **Wysokie ryzyko** – AI w rekrutacji, medycynie, infrastrukturze krytycznej, edukacji, ocenie zdolności kredytowej. Pełne obowiązki compliance od 2 sierpnia 2026 roku.
+- **Wysokie ryzyko** – AI w rekrutacji, medycynie, infrastrukturze krytycznej, edukacji, ocenie zdolności kredytowej. Pełne obowiązki compliance przesunięte do 2 grudnia 2027 roku (Digital Omnibus, maj 2026).
 - **Ryzyko ograniczone** – chatboty, generatory treści, systemy rekomendacji. Obowiązek informacyjny: użytkownik musi wiedzieć, że rozmawia z maszyną.
 - **Ryzyko minimalne** – filtry spamu, proste automatyzacje. Brak dodatkowych obostrzeń.
 

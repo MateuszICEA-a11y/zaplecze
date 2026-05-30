@@ -140,14 +140,14 @@ AI Act (Rozporządzenie UE 2024/1689) wszedł w życie 1 sierpnia 2024 roku i je
 
 - **2 lutego 2025** – zakaz systemów o nieakceptowalnym ryzyku (systemy manipulacji podprogowej, scoring społeczny obywateli, systemy rozpoznawania emocji pracowników w miejscach pracy); obowiązek zapewnienia kompetencji AI pracownikom obsługującym systemy AI.
 - **2 sierpnia 2025** – obowiązki dla dostawców modeli ogólnego przeznaczenia (GPAI – General Purpose AI): dokumentacja techniczna, przestrzeganie prawa autorskiego, publikowanie informacji o danych treningowych; firmy używające zewnętrznych modeli LLM jako bazy swoich produktów weszły w zakres regulacji.
-- **2 sierpnia 2026** – pełne stosowanie przepisów dla systemów wysokiego ryzyka (rekrutacja, ocena kredytowa, diagnostyka medyczna, edukacja); kary finansowe do 35 mln EUR lub 7% globalnego obrotu zaczynają być egzekwowane.
+- **2 sierpnia 2026** – pierwotny termin pełnego stosowania przepisów dla systemów wysokiego ryzyka (rekrutacja, ocena kredytowa, diagnostyka medyczna, edukacja), przesunięty do **2 grudnia 2027** (Digital Omnibus, maj 2026); za naruszenia wymogów dla tych systemów grożą kary do 15 mln EUR lub 3% globalnego obrotu (35 mln EUR lub 7% dotyczy praktyk zakazanych).
 
 AI Act klasyfikuje systemy AI w czterech poziomach ryzyka. Dla typowej firmy B2B kluczowe są dwa:
 
 - **Wysokie ryzyko** – systemy w HR (automatyczna preselekcja kandydatów), ocena zdolności kredytowej, systemy decyzyjne w ubezpieczeniach; wymagają oceny skutków dla praw podstawowych (FRIA – Fundamental Rights Impact Assessment), rejestracji w bazie UE, nadzoru człowieka nad każdą decyzją.
 - **Ryzyko ograniczone** – chatboty i asystenci; obowiązek informowania użytkownika o kontakcie z AI oraz znakowania generowanych treści.
 
-W Polsce nadzór nad regulacjami AI Act sprawuje Komisja Rozwoju i Bezpieczeństwa Sztucznej Inteligencji (KRiBSI). Komisja ma uprawnienia do prowadzenia postępowań, wydawania nakazów wycofania systemów z rynku i nakładania sankcji finansowych.
+W Polsce nadzór nad regulacjami AI Act ma sprawować Komisja Rozwoju i Bezpieczeństwa Sztucznej Inteligencji (KRiBSI), której powołanie przewiduje projekt ustawy przyjęty przez Radę Ministrów w marcu 2026 roku (projekt jest w toku prac legislacyjnych). Komisja ma uzyskać uprawnienia do prowadzenia postępowań, wydawania nakazów wycofania systemów z rynku i nakładania sankcji finansowych.
 
 Dla firm wdrażających AI w obszarach wysokiego ryzyka minimalne wymagania AI Act to de facto instrukcja zbudowania polityki AI. **Jeśli zaczniesz od wymagań AI Act jako listy kontrolnej, masz gotowy szkielet systemu zarządzania dla całej organizacji.**
 

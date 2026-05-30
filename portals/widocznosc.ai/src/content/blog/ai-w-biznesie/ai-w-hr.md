@@ -24,7 +24,7 @@ Najbardziej widoczny obszar zastosowań AI w HR to preselekcja aplikacji. Przy d
 
 **Narzędzia do wstępnej selekcji CV** działają na zasadzie [uczenia maszynowego](https://pl.wikipedia.org/wiki/Uczenie_maszynowe) – model trenowany na historycznych danych rekrutacyjnych uczy się, które cechy kandydatów korelowały z sukcesem na danym stanowisku. Workday, SAP SuccessFactors i Greenhouse oferują wbudowane moduły tej klasy. HireVue łączy analizę CV z oceną nagranych rozmów wideo – algorytm analizuje treść wypowiedzi i wybrane sygnały behawioralne, a finalną ocenę zatwierdza rekruter.
 
-Aktywne pozyskiwanie kandydatów (ang. *sourcing*) poza serwisami z ogłoszeniami to drugi obszar transformacji. Platformy takie jak Beamery, Eightfold AI czy SeekOut przeszukują LinkedIn, GitHub i inne źródła publiczne, budując profile kandydatów pasywnych. **Beamery łączy funkcje CRM z zarządzaniem talentami i analizą umiejętności**, co pozwala firmie utrzymywać relacje z kandydatem przez wiele miesięcy przed otwarciem rekrutacji. LinkedIn Recruiter Copilot 2026 generuje spersonalizowane wiadomości do kandydatów na podstawie ich profilu bez konieczności ręcznego pisania.
+Aktywne pozyskiwanie kandydatów (ang. *sourcing*) poza serwisami z ogłoszeniami to drugi obszar transformacji. Platformy takie jak Beamery, Eightfold AI czy SeekOut przeszukują LinkedIn, GitHub i inne źródła publiczne, budując profile kandydatów pasywnych. **Beamery łączy funkcje CRM z zarządzaniem talentami i analizą umiejętności**, co pozwala firmie utrzymywać relacje z kandydatem przez wiele miesięcy przed otwarciem rekrutacji. LinkedIn Recruiter Hiring Assistant generuje spersonalizowane wiadomości do kandydatów na podstawie ich profilu bez konieczności ręcznego pisania.
 
 ### Mierzalne efekty i realne ograniczenia
 
@@ -102,11 +102,11 @@ Obowiązki operacyjne dla każdego wdrożenia AI w HR obejmują:
 
 Szczegółowe omówienie ram prawnych – w tym tego, jak zbudować wewnętrzną Politykę AI i jakie klauzule wprowadzić do umów z dostawcami – zawiera artykuł o [AI Act i RODO](/ai-w-biznesie/ai-act-rodo/).
 
-## AI Act i HR – co zmienia się od sierpnia 2026
+## AI Act i HR – co zmienia się od grudnia 2027
 
 Unijny AI Act klasyfikuje systemy AI stosowane w procesach rekrutacyjnych i zarządzaniu pracownikami jako **systemy wysokiego ryzyka** (Załącznik III, pkt 4). Obejmuje to narzędzia do selekcji CV, szeregowania kandydatów, analizy rozmów wideo, oceny pracowniczej i prognozowania rotacji.
 
-Pełne stosowanie przepisów dla systemów wysokiego ryzyka zaczyna się 2 sierpnia 2026 roku. Do tej daty każda firma używająca takich narzędzi musi:
+Pełne stosowanie przepisów dla systemów wysokiego ryzyka z Annexu III (w tym AI w rekrutacji) przesunięto do 2 grudnia 2027 roku (porozumienie Digital Omnibus z maja 2026). Do tej daty każda firma używająca takich narzędzi musi:
 
 - przeprowadzić **ocenę skutków dla praw podstawowych** (ang. *Fundamental Rights Impact Assessment*, FRIA) przed wdrożeniem lub kontynuowaniem użytkowania systemu.
 - zapewnić **ludzki nadzór** nad każdą decyzją kadrową podejmowaną z udziałem AI – nadzorca musi mieć rzeczywiste kompetencje do podważenia rekomendacji algorytmu.
