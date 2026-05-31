@@ -438,5 +438,13 @@
     "section": "news",
     "format": "analysis",
     "source": "rss"
+  },
+  {
+    "title": "Ceny paliw 30 maja 2026 – ile kosztują benzyna i diesel?",
+    "date": "2026-05-31",
+    "slug": "ceny-paliw-30-maja-2026-ile-kosztuja-benzyna-i-diesel",
+    "section": "news",
+    "format": "short",
+    "source": "rss"
   }
 ]
