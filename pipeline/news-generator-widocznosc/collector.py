@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import time
 import urllib.request
 import urllib.error
@@ -33,6 +34,21 @@ class Signal:
         return d
 
 
+# Filtr AI dla feedów ogólnotechnicznych (np. CNBC Tech) – wpuszcza tylko
+# wpisy realnie dotyczące AI. „AI" z granicami słów, by nie łapać „said" itp.
+_AI_TERMS = [
+    r"\bAI\b", "artificial intelligence", "sztuczn", "chatgpt", "openai",
+    "anthropic", "claude", "gemini", r"\bLLM", "generative", "generatyw",
+    "perplexity", "copilot", "machine learning", "deep learning", "neural net",
+    "nvidia", "agentic", "data cent", "language model", "model językow",
+]
+_AI_RE = re.compile("|".join(_AI_TERMS), re.IGNORECASE)
+
+
+def _is_ai_relevant(text: str) -> bool:
+    return bool(_AI_RE.search(text or ""))
+
+
 def parse_rss_feeds(
     feeds_config: list[dict],
     max_age_hours: int = 48,
@@ -47,14 +63,20 @@ def parse_rss_feeds(
             if feed.bozo and not feed.entries:
                 continue
 
+            ai_only = feed_cfg.get("ai_filter", False)
             for entry in feed.entries:
                 published = _parse_entry_date(entry)
                 if published is None or published < cutoff:
                     continue
 
+                title = entry.get("title", "").strip()
+                summary = entry.get("summary", "").strip()
+                if ai_only and not _is_ai_relevant(f"{title} {summary}"):
+                    continue
+
                 signals.append(Signal(
-                    title=entry.get("title", "").strip(),
-                    summary=entry.get("summary", "").strip(),
+                    title=title,
+                    summary=summary,
                     source="rss",
                     category=feed_cfg.get("category", "general"),
                     published=published,

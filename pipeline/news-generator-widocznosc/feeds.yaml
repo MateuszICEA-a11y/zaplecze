@@ -15,3 +15,8 @@ feeds:
   - url: "https://venturebeat.com/category/ai/feed/"
     category: "llm"
     name: "VentureBeat AI"
+  # CNBC Technology – ogólny feed techowy, dlatego ai_filter wpuszcza tylko wpisy o AI
+  - url: "https://www.cnbc.com/id/19854910/device/rss/rss.html"
+    category: "general-ai"
+    name: "CNBC"
+    ai_filter: true

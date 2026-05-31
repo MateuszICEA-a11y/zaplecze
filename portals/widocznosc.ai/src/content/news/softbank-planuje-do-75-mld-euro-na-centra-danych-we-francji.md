@@ -1,9 +1,9 @@
 ---
 title: SoftBank planuje do 75 mld euro na centra danych we Francji
-lead: SoftBank zapowiada inwestycję sięgającą 75 mld euro w rozwój francuskich centrów danych. Celem ma być uruchomienie nawet 5 gigawatów dodatkowej mocy obliczeniowej.
+lead: SoftBank zacznie od 45 mld euro w ciągu pięciu lat – to pierwsza faza programu wartego docelowo 75 mld euro, który ma dać Francji 5 GW mocy obliczeniowej pod AI.
 date: '2026-05-31'
-sourceName: TechCrunch AI
-sourceUrl: https://techcrunch.com/2026/05/30/softbank-says-it-will-invest-up-to-e75-billion-to-build-french-data-centers/
+sourceName: CNBC
+sourceUrl: https://www.cnbc.com/2026/05/31/softbank-to-build-up-ai-data-centers-in-france-with-major-investment.html
 tags:
 - centra danych
 - SoftBank
@@ -13,34 +13,25 @@ author: Redakcja widocznosc.ai
 image: ../../assets/images/news-2026-05-31-softbank-planuje-do-75-mld-euro-na-centra-danych-we-francji.webp
 ---
 
-## SoftBank stawia na Francję i skalę do 5 GW
+## 45 mld euro na start, docelowo do 75 mld i 5 GW mocy
 
-SoftBank poinformował, że chce zainwestować do 75 mld euro w budowę centrów danych we Francji. Z przekazanych informacji wynika, że celem jest rozwój i operowanie infrastrukturą o łącznej dodatkowej mocy do 5 gigawatów.
+SoftBank zapowiedział inwestycję 45 mld euro (ok. 53 mld dolarów) w ciągu najbliższych pięciu lat w budowę infrastruktury AI we Francji. To pierwsza faza szerszego programu, którego łączna wartość ma sięgnąć 75 mld euro (ok. 87 mld dolarów), a docelowa moc – 5 GW mocy obliczeniowej dedykowanej sztucznej inteligencji.
 
-To ruch, który warto czytać nie tylko jako deklarację finansową, ale też jako sygnał kierunku dla całego rynku AI. Skala planu jest bardzo duża – mówimy nie o pojedynczym obiekcie, lecz o ambitnym zwiększaniu zaplecza obliczeniowego potrzebnego do trenowania modeli, obsługi generatywnej AI i rozwijania usług opartych na dużych modelach językowych. Francja pojawia się tu jako miejsce, w którym taka infrastruktura ma powstawać i działać.
+Początkowy etap zakłada budowę 3,1 GW centrów danych do 2031 roku w regionie Hauts-de-France na północy kraju – m.in. w Dunkierce, Bosquel i Bouchain. SoftBank określił to jako swoją największą inwestycję w infrastrukturę AI w Europie. Przy budowie spółka ma współpracować z francuskim Schneider Electric, tworząc w Dunkierce wielkoskalowy klaster produkcji przemysłowej. Formalne ogłoszenie planu zaplanowano na poniedziałek.
 
-Na tym etapie najważniejsze są dwa konkrety: maksymalna wartość inwestycji oraz zakładana moc nowych centrów danych. Reszta obrazu dopiero będzie się doprecyzowywać, ale już sama skala zapowiedzi pokazuje, że wyścig o infrastrukturę AI w Europie przyspiesza.
+> „AI wchodzi w nową erę, a kraje, które zbudują infrastrukturę tej transformacji, ukształtują przyszłość technologii, przemysłu i społeczeństwa" – powiedział prezes SoftBanku Masayoshi Son, wskazując, że Francja jest „wyjątkowo dobrze pozycjonowana, by stać się wiodącym hubem infrastruktury AI w Europie".
 
-> **Nasz komentarz:** Kto dziś buduje moc obliczeniową w Europie, ten jutro może realnie wpływać na tempo rozwoju usług AI i ich dostępność dla firm.
+## Kontekst: energia jako bariera dla europejskiego AI
 
-## Więcej mocy w Europie to ważny sygnał dla marek obecnych w AI
+Inwestycja wpisuje się w wyścig Europy o nadrobienie dystansu do USA i Chin w rozwoju AI. Głównym hamulcem pozostają tu ceny energii – centra danych są wyjątkowo wrażliwe na koszt prądu, a europejskie taryfy rosną m.in. w cieniu wojny amerykańsko-irańskiej. Zdaniem ekspertów cytowanych przez CNBC projekty data center będą migrować do tych części kontynentu, gdzie energia jest tańsza, co wykreuje wygranych i przegranych.
 
-Jeśli prowadzisz markę, która myśli o widoczności w wyszukiwarkach AI i ekosystemie generatywnej sztucznej inteligencji, ten news nie jest odległą historią o serwerowniach. W naszej ocenie to kolejny dowód na to, że infrastruktura staje się strategicznym fundamentem rynku – równie ważnym jak same modele, aplikacje i interfejsy.
+Sam SoftBank coraz mocniej wiąże swoją przyszłość z boomem na AI. Akcje spółki wzrosły w 2026 roku o ponad 70%, napędzane oczekiwaniami wobec jej inwestycji w infrastrukturę. Grupa ma udziały w Arm Holdings (projekty układów wykorzystywane w serwerach AI) oraz zainwestowała ponad 30 mld dolarów w OpenAI – same zyski z tej inwestycji wyniosły 45 mld dolarów w roku zakończonym w marcu.
 
-- **AI potrzebuje fizycznego zaplecza** – modele językowe, wyszukiwarki odpowiedzi i narzędzia generatywne nie działają w próżni. Im większa dostępność mocy obliczeniowej, tym szybciej mogą rozwijać się usługi, z których korzystają Twoi odbiorcy.
-
-- **Europa chce mieć większą rolę w łańcuchu AI** – inwestycja tej skali we Francji sugeruje, że kontynent nie chce być wyłącznie odbiorcą technologii. Naszym zdaniem to ważne dla firm działających lokalnie, bo może wzmacniać europejski ekosystem dostawców i usług.
-
-- **Widoczność marki w AI będzie zależeć od dojrzewania całego rynku** – więcej infrastruktury oznacza potencjalnie większą skalę wdrożeń, więcej produktów opartych na modelach i więcej punktów styku między użytkownikiem a odpowiedzią generowaną przez AI. To dobry moment, by uporządkować treści, dane o marce i źródła, z których modele mogą czerpać informacje.
-
-- **Warto obserwować nie tylko modele, ale też zaplecze** – wiele firm śledzi premiery ChatGPT, Claude czy Gemini, a pomija inwestycje w centra danych. Tymczasem to właśnie one często pokazują, gdzie rynek będzie rósł najszybciej i które regiony zyskają znaczenie.
-
-- **To sygnał dla długoterminowej strategii** – jeśli Twoja marka buduje obecność w SEO, GEO i kanałach AI, nie traktuj tego jako krótkiej mody. Uważamy, że tak duże nakłady kapitałowe wzmacniają tezę, że generatywna AI staje się trwałą warstwą infrastruktury cyfrowej.
-
-Naszym zdaniem z tego newsa płynie prosty wniosek: warto patrzeć szerzej niż na same aplikacje AI. O przewadze konkurencyjnej coraz częściej będzie decydować to, kto ma dostęp do mocy, danych i stabilnego środowiska do rozwijania usług opartych na modelach.
+> **Nasz komentarz:** Najciekawsze w tej zapowiedzi nie są same miliardy, lecz to, że wąskim gardłem europejskiego AI staje się dziś moc i energia, a nie modele. Lokalizacja takich inwestycji – tam, gdzie prąd jest tańszy – będzie realnie decydować, które regiony Europy zyskają na rozwoju sztucznej inteligencji.
 
 ## W skrócie
 
-- SoftBank zapowiada inwestycję do 75 mld euro w centra danych we Francji.
-- Celem jest uruchomienie nawet 5 GW dodatkowej mocy obliczeniowej.
-- Dla marek to sygnał, że infrastruktura AI w Europie rośnie, a wraz z nią znaczenie widoczności w ekosystemie AI.
+- SoftBank inwestuje 45 mld euro (ok. 53 mld dolarów) w pierwszej fazie, w ciągu pięciu lat.
+- To część programu o łącznej wartości do 75 mld euro (ok. 87 mld dolarów) i docelowej mocy 5 GW.
+- Pierwszy etap: 3,1 GW do 2031 roku w regionie Hauts-de-France (Dunkierka, Bosquel, Bouchain), z udziałem Schneider Electric.
+- To największa inwestycja SoftBanku w infrastrukturę AI w Europie; barierą dla całego regionu pozostają wysokie ceny energii.
