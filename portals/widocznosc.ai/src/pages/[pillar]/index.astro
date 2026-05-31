@@ -299,10 +299,10 @@ const collectionSchema = buildGraph(
 
   .blog-hero-lead {
     font-family: var(--font-sans);
-    font-size: var(--fs-body-lg);
+    font-size: clamp(16px, 1.3vw, 19px);
     line-height: 1.45;
-    letter-spacing: var(--ls-body-lg);
-    color: var(--ink-muted);
+    letter-spacing: -0.01em;
+    color: var(--ink);
     margin: 0;
     max-width: 640px;
   }

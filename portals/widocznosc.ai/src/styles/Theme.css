@@ -854,6 +854,20 @@ h4:not([class*='text-']):not([class*='display-']) {
   text-wrap: pretty;
 }
 
+/* Hero lead – ujednolicony „subhead hero" pod h1 na wszystkich podstronach.
+   Ta sama skala co subhead hero na stronie głównej (.hero-sub): 16–19px,
+   16px na mobile (min clamp), line-height 1.45, kolor ink. Nie narzuca
+   max-width ani marginesów – te zostają per strona. */
+.hero-lead {
+  font-size: clamp(16px, 1.3vw, 19px);
+  line-height: 1.45;
+  color: var(--ink);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  text-wrap: pretty;
+  margin: 0;
+}
+
 /* Helper colour modifiers */
 .muted {
   color: var(--ink-muted);

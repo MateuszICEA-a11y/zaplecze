@@ -432,10 +432,11 @@ const serviceSchema = {
 
   .pillar-hero-lead {
     color: var(--ink);
-    font-size: clamp(18px, 1.7vw, 24px);
-    line-height: 1.55;
-    margin: 36px auto 0;
-    max-width: 980px;
+    font-size: clamp(16px, 1.3vw, 19px);
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+    margin: 32px auto 0;
+    max-width: 720px;
     text-wrap: pretty;
   }
 
@@ -733,7 +734,7 @@ const serviceSchema = {
     }
 
     .pillar-hero-title {
-      white-space: nowrap;
+      max-width: 16ch;
     }
 
     .pillar-hero-actions {
@@ -769,16 +770,14 @@ const serviceSchema = {
     }
 
     .pillar-hero-title {
-      font-size: clamp(2.75rem, 11vw, 3.25rem);
-      line-height: 0.96;
       max-width: 100%;
     }
 
     .pillar-hero-lead {
-      font-size: 18px;
-      line-height: 1.5;
+      font-size: 16px;
+      line-height: 1.45;
       margin-top: 24px;
-      max-width: 33ch;
+      max-width: 38ch;
     }
 
     .pillar-hero-actions {

@@ -75,8 +75,9 @@ const schema = buildGraph(
   .news-listing-title { color: var(--ink); margin: 0 0 16px; }
   .news-listing-accent { color: var(--accent-blue); }
   .news-listing-sub {
-    font-family: var(--font-sans); font-size: 1.1rem; line-height: 1.5;
-    color: var(--ink-muted); max-width: 65ch; margin: 0 0 48px;
+    font-family: var(--font-sans); font-size: clamp(16px, 1.3vw, 19px); line-height: 1.45;
+    letter-spacing: -0.01em;
+    color: var(--ink); max-width: 60ch; margin: 0 0 48px;
   }
   .news-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
   @media (min-width: 700px) { .news-grid { grid-template-columns: repeat(2, 1fr); } }
