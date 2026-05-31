@@ -29,7 +29,7 @@ const description = author.shortBio ?? author.bio;
       <img src={author.photo} alt={author.name} width="110" height="110" loading="lazy" />
     </a>
 
-    <div class="author-box-content">
+    <div class="author-box-head">
       <span class="author-box-eyebrow">Autor</span>
       <div class="author-box-name-row">
         <a class="author-box-name" href={authorHref}>{author.name}</a>
@@ -38,7 +38,9 @@ const description = author.shortBio ?? author.bio;
           {author.role}{author.company ? ` · ${author.company}` : ''}
         </span>
       </div>
+    </div>
 
+    <div class="author-box-body">
       <p class="author-box-bio">{description}</p>
 
       {
@@ -121,8 +123,26 @@ const description = author.shortBio ?? author.bio;
   .author-box-main {
     display: grid;
     grid-template-columns: 110px 1fr;
-    gap: 24px;
+    grid-template-areas:
+      'avatar head'
+      'avatar body';
+    align-items: start;
+    gap: 0 24px;
     padding: 28px;
+  }
+
+  .author-box-avatar {
+    grid-area: avatar;
+  }
+
+  .author-box-head {
+    grid-area: head;
+    min-width: 0;
+  }
+
+  .author-box-body {
+    grid-area: body;
+    min-width: 0;
   }
 
   .author-box-avatar {
@@ -142,10 +162,6 @@ const description = author.shortBio ?? author.bio;
     display: block;
     object-fit: cover;
     border-radius: inherit;
-  }
-
-  .author-box-content {
-    min-width: 0;
   }
 
   .author-box-eyebrow {
@@ -306,7 +322,11 @@ const description = author.shortBio ?? author.bio;
 
     .author-box-main {
       grid-template-columns: 72px 1fr;
-      gap: 16px;
+      grid-template-areas:
+        'avatar head'
+        'body body';
+      column-gap: 16px;
+      row-gap: 16px;
       padding: 22px;
     }
 
@@ -316,8 +336,19 @@ const description = author.shortBio ?? author.bio;
       border-radius: 14px;
     }
 
+    .author-box-head {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
     .author-box-name {
       font-size: 1.2rem;
+    }
+
+    /* Rola w osobnej linii – wiszący „·" zbędny */
+    .author-box-divider {
+      display: none;
     }
 
     .author-box-role {
@@ -325,13 +356,11 @@ const description = author.shortBio ?? author.bio;
     }
 
     .author-box-bio {
-      grid-column: 1 / -1;
       font-size: 14px;
       line-height: 1.6;
     }
 
     .author-box-tags {
-      grid-column: 1 / -1;
       margin-top: 14px;
     }
 

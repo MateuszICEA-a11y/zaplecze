@@ -75,11 +75,27 @@ const year = new Date().getFullYear();
         </p>
       </div>
 
-      <!-- Sitemap columns -->
+      <!-- Sitemap columns – na mobile rozwijane (accordion), na desktopie zawsze otwarte -->
       {
         footerData.map((section) => (
-          <div class="footer-col">
-            <span class="footer-col-title">{section.title}</span>
+          <details class="footer-col" data-footer-accordion>
+            <summary class="footer-col-title">
+              <span>{section.title}</span>
+              <svg
+                class="footer-col-chevron"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </summary>
             <ul class="footer-col-list">
               {section.items.map((item) => (
                 <li>
@@ -93,7 +109,7 @@ const year = new Date().getFullYear();
                 </li>
               ))}
             </ul>
-          </div>
+          </details>
         ))
       }
     </div>
@@ -150,13 +166,22 @@ const year = new Date().getFullYear();
   .footer-top {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 0;
     padding-bottom: 48px;
+  }
+
+  .footer-brand {
+    padding-bottom: 8px;
   }
 
   @media (min-width: 640px) {
     .footer-top {
       grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .footer-brand {
+      padding-bottom: 0;
     }
   }
 
@@ -185,25 +210,70 @@ const year = new Date().getFullYear();
     margin: 0;
   }
 
-  /* Footer columns */
+  /* Footer columns – mobile: accordion (<details>); desktop: zawsze otwarte */
+  .footer-col {
+    border-top: 1px solid var(--hairline-soft);
+  }
+
   .footer-col-title {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
     font-family: var(--font-sans);
     font-size: 11px;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--ink-faint);
-    margin: 0 0 14px;
+    margin: 0;
+    padding: 16px 0;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .footer-col-title::-webkit-details-marker {
+    display: none;
+  }
+
+  .footer-col-chevron {
+    flex-shrink: 0;
+    color: var(--ink-faint);
+    transition: transform 0.2s ease;
+  }
+
+  .footer-col[open] .footer-col-chevron {
+    transform: rotate(180deg);
   }
 
   .footer-col-list {
     list-style: none;
-    padding: 0;
+    padding: 0 0 18px;
     margin: 0;
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }
+
+  @media (min-width: 640px) {
+    .footer-col {
+      border-top: 0;
+    }
+
+    .footer-col-title {
+      margin: 0 0 14px;
+      padding: 0;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .footer-col-chevron {
+      display: none;
+    }
+
+    .footer-col-list {
+      padding: 0;
+    }
   }
 
   .footer-link {
@@ -286,3 +356,16 @@ const year = new Date().getFullYear();
     border: 0;
   }
 </style>
+
+<script>
+  // Footer columns: rozwinięte na desktopie, zwijane (accordion) na mobile.
+  const syncFooterAccordion = () => {
+    const isDesktop = window.matchMedia('(min-width: 640px)').matches;
+    document
+      .querySelectorAll('[data-footer-accordion]')
+      .forEach((el) => ((el as HTMLDetailsElement).open = isDesktop));
+  };
+  syncFooterAccordion();
+  window.matchMedia('(min-width: 640px)').addEventListener('change', syncFooterAccordion);
+  document.addEventListener('astro:page-load', syncFooterAccordion);
+</script>

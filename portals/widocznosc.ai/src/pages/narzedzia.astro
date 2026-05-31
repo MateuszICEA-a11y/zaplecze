@@ -152,7 +152,7 @@ const toolsListSchema = buildGraph(
           <h1 class="display-xxl">
             <span class="tools-title-line">Darmowe testy</span>
             <span class="tools-title-line">widoczności</span>
-            <span class="tools-title-line">w AI</span>
+            <span class="tools-title-line">w <span class="accent">AI</span></span>
           </h1>
           <p>
             Sprawdź najważniejsze sygnały przed zamówieniem audytu: zobacz, co modele wiedzą o
@@ -834,6 +834,10 @@ const toolsListSchema = buildGraph(
     }
 
     .tools-panel-stats div {
+      flex-direction: row;
+      align-items: baseline;
+      justify-content: space-between;
+      text-align: left;
       padding: 0.75rem 0;
       border-right: 0;
       border-bottom: 1px solid var(--hairline-soft);
@@ -846,6 +850,10 @@ const toolsListSchema = buildGraph(
     .tools-panel-stats div:last-child {
       border-bottom: 0;
       padding-bottom: 0;
+    }
+
+    .tools-panel-stats dd {
+      margin: 0;
     }
 
     .section-head {
