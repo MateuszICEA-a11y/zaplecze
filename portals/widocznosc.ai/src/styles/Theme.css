@@ -428,21 +428,33 @@ h4:not([class*='text-']):not([class*='display-']) {
   }
 
   .display-xxl {
-    font-size: clamp(32px, 8.5vw, 42px);
-    line-height: 0.98;
+    font-size: clamp(34px, 9vw, 40px);
+    line-height: 1;
     letter-spacing: -0.038em;
   }
 
   .display-xl {
-    font-size: clamp(38px, 11vw, 44px);
-    line-height: 0.98;
-    letter-spacing: -0.042em;
+    font-size: clamp(27px, 7vw, 32px);
+    line-height: 1.08;
+    letter-spacing: -0.038em;
   }
 
   .display-lg {
-    font-size: clamp(34px, 10vw, 44px);
-    line-height: 1;
-    letter-spacing: -0.04em;
+    font-size: clamp(22px, 5.5vw, 27px);
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+  }
+
+  /* Mobilne karty/itemy h3 (card-title, process-title, industry-name,
+     cta-headline). Globalna reguła h3:not(...) (--fs-display-md = 32px)
+     bije scoped style komponentów – wyrównujemy specyficzność (0,2,1)
+     i przywracamy mniejszy rozmiar, żeby h3 < h2 < h1 na mobile. */
+  h3.card-title:not([class*='display-']),
+  h3.cta-headline:not([class*='display-']),
+  h3.process-title:not([class*='display-']),
+  h3.industry-name:not([class*='display-']) {
+    font-size: 22px;
+    line-height: 1.18;
   }
 
   .display-xxl,
