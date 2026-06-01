@@ -2,16 +2,25 @@
 // Karta lead-gen pod wynikiem narzędzia: „wyślij raport na e-mail" + opcjonalna
 // zgoda na kontakt + kontekstowe CTA. Ukryta do czasu eventu `tool:result`.
 // POST-uje już policzony wynik do /api/tools/send-report (Plan B1).
+// Style oparte o zmienne motywu z Theme.css (dark/light przełączają się same).
 interface Props {
   tool: 'brand-check' | 'fanout' | 'url-check' | 'ai-bots-check';
   ctaLead: string; // zdanie kontekstowe nad przyciskiem CTA
   ctaButton: string; // etykieta przycisku CTA
   ctaHref?: string;
+  maxWidth?: string; // szerokość kolumny, by dopasować do bloku wyniku danej strony (domyślnie 1080px)
 }
-const { tool, ctaLead, ctaButton, ctaHref = '/kontakt/' } = Astro.props;
+const { tool, ctaLead, ctaButton, ctaHref = '/kontakt/', maxWidth } = Astro.props;
 ---
 
-<section class="report-lead" data-report-lead data-tool={tool} hidden aria-live="polite">
+<section
+  class="report-lead"
+  data-report-lead
+  data-tool={tool}
+  hidden
+  aria-live="polite"
+  style={maxWidth ? `--rl-max:${maxWidth}` : undefined}
+>
   <div class="report-lead__card">
     <h3 class="report-lead__title">Wyślij sobie ten raport na e-mail</h3>
     <p class="report-lead__sub">Dostaniesz pełny wynik w czytelnej formie. Bez zobowiązań.</p>
@@ -50,43 +59,50 @@ const { tool, ctaLead, ctaButton, ctaHref = '/kontakt/' } = Astro.props;
 </section>
 
 <style>
-  .report-lead { margin-top: 1.5rem; }
-  .report-lead__card {
-    background: var(--surface, #fff);
-    border: 1px solid var(--line, #e2e8f0);
-    border-radius: 14px;
-    padding: 1.5rem;
+  .report-lead {
+    width: 100%;
+    max-width: var(--rl-max, 1080px);
+    margin: 1.5rem auto 0;
+    text-align: left;
   }
-  .report-lead__title { margin: 0; font-size: 1.15rem; color: var(--ink, #0f172a); }
-  .report-lead__sub { margin: 0.25rem 0 1rem; font-size: 0.95rem; color: var(--ink-muted, #64748b); }
+  .report-lead__card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-hairline);
+    border-radius: 14px;
+    padding: 1.75rem;
+  }
+  .report-lead__title { margin: 0; font-size: var(--fs-headline, 22px); color: var(--color-ink); }
+  .report-lead__sub { margin: 0.35rem 0 1.15rem; font-size: var(--fs-body, 15px); color: var(--color-ink-muted); }
   .report-lead__row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
   .report-lead__input {
-    flex: 1 1 220px; min-width: 0; padding: 0.7rem 0.9rem;
-    border: 1px solid var(--line, #e2e8f0); border-radius: 8px;
-    font-size: 1rem; background: var(--bg, #fff); color: var(--ink, #0f172a);
+    flex: 1 1 240px; min-width: 0; padding: 0.75rem 0.95rem;
+    border: 1px solid var(--color-hairline); border-radius: 10px;
+    font-size: 1rem; background: var(--color-bg); color: var(--color-ink);
   }
+  .report-lead__input::placeholder { color: var(--color-ink-muted); }
   .report-lead__btn {
-    padding: 0.7rem 1.4rem; border: 0; border-radius: 8px; cursor: pointer;
-    background: var(--accent, #0a9cff); color: #fff; font-weight: 600; font-size: 1rem;
+    padding: 0.75rem 1.5rem; border: 0; border-radius: 10px; cursor: pointer;
+    background: var(--accent-blue); color: #fff; font-weight: 600; font-size: 1rem;
   }
   .report-lead__btn[disabled] { opacity: 0.6; cursor: progress; }
   .report-lead__hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
   .report-lead__consent {
-    display: flex; gap: 0.5rem; align-items: flex-start; margin-top: 0.9rem;
-    font-size: 0.85rem; line-height: 1.5; color: var(--ink-muted, #64748b);
+    display: flex; gap: 0.55rem; align-items: flex-start; margin-top: 1rem;
+    font-size: 0.85rem; line-height: 1.5; color: var(--color-ink-muted);
   }
-  .report-lead__consent input { margin-top: 0.2rem; flex: 0 0 auto; }
-  .report-lead__note { margin: 0.5rem 0 0; font-size: 0.75rem; color: var(--ink-muted, #64748b); }
-  .report-lead__note a { color: var(--accent-dark, #0068cc); }
+  .report-lead__consent input { margin-top: 0.2rem; flex: 0 0 auto; accent-color: var(--accent-blue); }
+  .report-lead__note { margin: 0.5rem 0 0; font-size: 0.75rem; color: var(--color-ink-muted); }
+  .report-lead__note a { color: var(--accent-blue); }
   .report-lead__status:empty { display: none; }
-  .report-lead__status { margin: 0.75rem 0 0; font-size: 0.9rem; color: var(--ink, #0f172a); }
+  .report-lead__status { margin: 0.85rem 0 0; font-size: 0.9rem; color: var(--color-ink); }
   .report-lead__cta {
-    margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--line, #e2e8f0);
+    margin-top: 1.35rem; padding-top: 1.35rem; border-top: 1px solid var(--color-hairline);
   }
-  .report-lead__cta-lead { margin: 0 0 0.75rem; font-size: 0.95rem; color: var(--ink, #0f172a); }
+  .report-lead__cta-lead { margin: 0 0 0.85rem; font-size: 0.95rem; color: var(--color-ink); }
   .report-lead__cta-btn {
-    display: inline-block; padding: 0.65rem 1.3rem; border-radius: 8px;
-    background: var(--ink, #0f172a); color: #fff; text-decoration: none; font-weight: 600; font-size: 0.95rem;
+    display: inline-block; padding: 0.7rem 1.4rem; border-radius: 10px;
+    background: var(--accent-blue-soft); color: var(--accent-blue);
+    border: 1px solid var(--accent-blue); text-decoration: none; font-weight: 600; font-size: 0.95rem;
   }
 </style>
 
