@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import ScrollUpButton from '../components/ScrollUpButton.astro';
 import { buildGraph, breadcrumbNode, SITE_URL, ORG_ID, WEBSITE_ID } from '../lib/schema';
 
-// ContactPage + ContactPoints (hello@widocznosc.ai + biuro ICEA).
+// ContactPage + ContactPoint (biuro@grupa-icea.pl, biuro ICEA Poznań).
 // PostalAddress dla biura ICEA Poznań – ten sam co w Organization.parentOrganization.
 const contactPageNode = {
   '@type': 'ContactPage',
@@ -24,8 +24,9 @@ const contactPageNode = {
       {
         '@type': 'ContactPoint',
         contactType: 'customer service',
-        email: 'hello@widocznosc.ai',
-        availableLanguage: ['Polish', 'English'],
+        email: 'biuro@grupa-icea.pl',
+        telephone: '+48667000333',
+        availableLanguage: ['Polish'],
         areaServed: 'PL',
         hoursAvailable: {
           '@type': 'OpeningHoursSpecification',
@@ -33,14 +34,6 @@ const contactPageNode = {
           opens: '09:00',
           closes: '17:00',
         },
-      },
-      {
-        '@type': 'ContactPoint',
-        contactType: 'sales',
-        email: 'biuro@grupa-icea.pl',
-        telephone: '+48667000333',
-        availableLanguage: ['Polish'],
-        areaServed: 'PL',
       },
     ],
     address: {
@@ -93,14 +86,6 @@ const contactSchema = buildGraph(
             <h2 class="text-ink text-xl font-medium" style="font-family: var(--font-display);">
               Kanały kontaktu
             </h2>
-
-            <!-- Email -->
-            <div>
-              <div class="text-ink-muted mb-1 text-sm">E-mail</div>
-              <a class="text-ink hover:opacity-85 text-lg transition" href="mailto:hello@widocznosc.ai">
-                hello@widocznosc.ai
-              </a>
-            </div>
 
             <!-- Mail biuro -->
             <div>

@@ -72,9 +72,10 @@ export const organizationNode = () => ({
     {
       '@type': 'ContactPoint',
       contactType: 'customer service',
-      email: 'hello@widocznosc.ai',
+      email: 'biuro@grupa-icea.pl',
+      telephone: '+48667000333',
       areaServed: 'PL',
-      availableLanguage: ['Polish', 'English'],
+      availableLanguage: ['Polish'],
     },
   ],
   parentOrganization: {
