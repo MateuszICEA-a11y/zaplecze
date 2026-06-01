@@ -74,3 +74,40 @@ describe('typeLabel', () => {
     ]);
   });
 });
+
+import { buildEmails } from './contact';
+
+describe('buildEmails', () => {
+  const cfg = { from: 'widocznosc.ai <formularz@widocznosc.ai>', leadTo: 'lead.icea@gmail.com' };
+
+  it('mail wewnętrzny: to=lead, reply_to=email leada, label typu w temacie', () => {
+    const { internal } = buildEmails(valid, cfg);
+    expect(internal.to).toEqual(['lead.icea@gmail.com']);
+    expect(internal.from).toBe('widocznosc.ai <formularz@widocznosc.ai>');
+    expect(internal.reply_to).toBe('jan@firma.pl');
+    expect(internal.subject).toContain('Kompleksowy audyt AI');
+    expect(internal.subject).toContain('Jan Kowalski');
+  });
+
+  it('mail wewnętrzny: body zawiera wszystkie pola', () => {
+    const { internal } = buildEmails(valid, cfg);
+    for (const v of ['Jan Kowalski', 'jan@firma.pl', 'Firma sp. z o.o.', 'Kompleksowy audyt AI']) {
+      expect(internal.text).toContain(v);
+      expect(internal.html).toContain(v);
+    }
+  });
+
+  it('autoresponder: to=email leada, from=nasz', () => {
+    const { autoresponder } = buildEmails(valid, cfg);
+    expect(autoresponder.to).toEqual(['jan@firma.pl']);
+    expect(autoresponder.from).toBe('widocznosc.ai <formularz@widocznosc.ai>');
+    expect(autoresponder.subject.toLowerCase()).toContain('dziękujemy');
+  });
+
+  it('escapuje HTML w polach (anty-injection)', () => {
+    const { internal } = buildEmails({ ...valid, message: '<script>x</script>' }, cfg);
+    expect(internal.html).not.toContain('<script>x</script>');
+    expect(internal.html).toContain('&lt;script&gt;');
+    expect(internal.text).toContain('<script>x</script>'); // plain-text bez escape
+  });
+});

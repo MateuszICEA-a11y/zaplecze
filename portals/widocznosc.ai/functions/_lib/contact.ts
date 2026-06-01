@@ -71,3 +71,75 @@ export function validate(p: ContactPayload): ValidationResult {
 
   return { ok: errors.length === 0, errors };
 }
+
+export type EmailConfig = { from: string; leadTo: string };
+
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function fieldRows(p: ContactPayload): Array<[string, string]> {
+  return [
+    ['Imię i nazwisko', String(p.name ?? '').trim()],
+    ['E-mail', String(p.email ?? '').trim()],
+    ['Firma', String(p.company ?? '').trim() || '—'],
+    ['Cel kontaktu', typeLabel(String(p.type ?? '').trim())],
+    ['Wiadomość', String(p.message ?? '').trim()],
+  ];
+}
+
+export function buildEmails(p: ContactPayload, cfg: EmailConfig): {
+  internal: ResendEmail;
+  autoresponder: ResendEmail;
+} {
+  const name = String(p.name ?? '').trim();
+  const email = String(p.email ?? '').trim();
+  const rows = fieldRows(p);
+
+  const internalText = rows.map(([k, v]) => `${k}: ${v}`).join('\n');
+  const internalHtml =
+    `<h2>Nowy lead z widocznosc.ai</h2><table cellpadding="6" style="border-collapse:collapse">` +
+    rows
+      .map(
+        ([k, v]) =>
+          `<tr><td style="vertical-align:top;font-weight:600">${escapeHtml(k)}</td>` +
+          `<td style="white-space:pre-wrap">${escapeHtml(v)}</td></tr>`,
+      )
+      .join('') +
+    `</table>`;
+
+  const internal: ResendEmail = {
+    from: cfg.from,
+    to: [cfg.leadTo],
+    reply_to: email,
+    subject: `[widocznosc.ai] Nowy lead: ${typeLabel(String(p.type ?? '').trim())} – ${name}`,
+    text: internalText,
+    html: internalHtml,
+  };
+
+  const autoText =
+    `Cześć ${name},\n\n` +
+    `dziękujemy za kontakt z widocznosc.ai. Odebraliśmy Twoje zgłoszenie i odpowiemy w ciągu 24 godzin roboczych (pon–pt, 9:00–17:00).\n\n` +
+    `W pilnych sprawach: biuro@grupa-icea.pl\n\n` +
+    `Pozdrawiamy,\nZespół widocznosc.ai\nICEA S.A., ul. Szyperska 14, 61-754 Poznań`;
+  const autoHtml =
+    `<p>Cześć ${escapeHtml(name)},</p>` +
+    `<p>dziękujemy za kontakt z <strong>widocznosc.ai</strong>. Odebraliśmy Twoje zgłoszenie i odpowiemy w ciągu 24 godzin roboczych (pon–pt, 9:00–17:00).</p>` +
+    `<p>W pilnych sprawach: <a href="mailto:biuro@grupa-icea.pl">biuro@grupa-icea.pl</a></p>` +
+    `<p>Pozdrawiamy,<br>Zespół widocznosc.ai<br>ICEA S.A., ul. Szyperska 14, 61-754 Poznań</p>`;
+
+  const autoresponder: ResendEmail = {
+    from: cfg.from,
+    to: [email],
+    subject: 'Dziękujemy za kontakt – widocznosc.ai',
+    text: autoText,
+    html: autoHtml,
+  };
+
+  return { internal, autoresponder };
+}
