@@ -34,13 +34,15 @@ class Signal:
         return d
 
 
-# Filtr AI dla feedów ogólnotechnicznych (np. CNBC Tech) – wpuszcza tylko
-# wpisy realnie dotyczące AI. „AI" z granicami słów, by nie łapać „said" itp.
+# Filtr AI dla feedów ogólnotechnicznych – wpuszcza tylko wpisy realnie
+# dotyczące modeli/AI-software. CELOWO bez terminów sprzętowo-infrastrukturalnych
+# (nvidia, data center) – to one przepuszczały „pierdoły" sprzętowe jako „AI".
+# „AI" z granicami słów, by nie łapać „said" itp.
 _AI_TERMS = [
     r"\bAI\b", "artificial intelligence", "sztuczn", "chatgpt", "openai",
     "anthropic", "claude", "gemini", r"\bLLM", "generative", "generatyw",
     "perplexity", "copilot", "machine learning", "deep learning", "neural net",
-    "nvidia", "agentic", "data cent", "language model", "model językow",
+    "agentic", "language model", "model językow",
 ]
 _AI_RE = re.compile("|".join(_AI_TERMS), re.IGNORECASE)
 

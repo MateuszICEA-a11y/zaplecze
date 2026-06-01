@@ -1,22 +1,29 @@
 feeds:
-  # UWAGA: zwraca 403 (blokada bota przez curl/Cloudflare, URL poprawny), do weryfikacji
-  - url: "https://searchengineland.com/category/ai/feed"
-    category: "ai-search"
-    name: "Search Engine Land – AI"
-  - url: "https://www.searchenginejournal.com/category/news/feed/"
-    category: "ai-search"
-    name: "Search Engine Journal – News"
-  - url: "https://techcrunch.com/category/artificial-intelligence/feed/"
-    category: "general-ai"
-    name: "TechCrunch AI"
-  - url: "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"
-    category: "general-ai"
-    name: "The Verge AI"
+  # Priorytet: realne newsy o modelach językowych i świecie AI (nie sprzęt/ogólny tech).
+  # Źródła dedykowane modelom/LLM:
+  - url: "https://the-decoder.com/feed/"
+    category: "llm"
+    name: "The Decoder"
+  - url: "https://openai.com/news/rss.xml"
+    category: "llm"
+    name: "OpenAI"
+  - url: "https://deepmind.google/blog/rss.xml"
+    category: "llm"
+    name: "Google DeepMind"
   - url: "https://venturebeat.com/category/ai/feed/"
     category: "llm"
     name: "VentureBeat AI"
-  # CNBC Technology – ogólny feed techowy, dlatego ai_filter wpuszcza tylko wpisy o AI
-  - url: "https://www.cnbc.com/id/19854910/device/rss/rss.html"
+  # Szersze, ale wiarygodne źródła AI (redakcyjne):
+  - url: "https://arstechnica.com/ai/feed/"
     category: "general-ai"
-    name: "CNBC"
-    ai_filter: true
+    name: "Ars Technica AI"
+  - url: "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"
+    category: "general-ai"
+    name: "The Verge AI"
+  - url: "https://techcrunch.com/category/artificial-intelligence/feed/"
+    category: "general-ai"
+    name: "TechCrunch AI"
+  # AI-search / GEO – wprost o wyszukiwarkach AI (AI Overviews, ChatGPT Search):
+  - url: "https://www.searchenginejournal.com/category/news/feed/"
+    category: "ai-search"
+    name: "Search Engine Journal"
