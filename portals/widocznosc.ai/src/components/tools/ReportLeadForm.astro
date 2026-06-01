@@ -71,7 +71,8 @@ const { tool, ctaLead, ctaButton, ctaHref = '/kontakt/', maxWidth } = Astro.prop
     border-radius: 14px;
     padding: 1.75rem;
   }
-  .report-lead__title { margin: 0; font-size: var(--fs-headline, 22px); color: var(--color-ink); }
+  /* !important bije globalną regułę Theme.css h3:not(...) = 32px (jak .brand-panel-title) */
+  .report-lead__title { margin: 0; font-size: 21px !important; color: var(--color-ink); }
   .report-lead__sub { margin: 0.35rem 0 1.15rem; font-size: var(--fs-body, 15px); color: var(--color-ink-muted); }
   .report-lead__row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
   .report-lead__input {
