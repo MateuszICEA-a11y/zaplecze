@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import ScrollUpButton from '../../components/ScrollUpButton.astro';
+import ReportLeadForm from '../../components/tools/ReportLeadForm.astro';
 import { buildGraph, softwareApplicationNode, breadcrumbNode } from '../../lib/schema';
 
 const examples = [
@@ -91,6 +92,11 @@ const fanoutSchema = buildGraph(
         </form>
 
         <div id="fanout-results" class="fanout-results hidden" aria-live="polite"></div>
+        <ReportLeadForm
+          tool="fanout"
+          ctaLead="Chcesz, żeby AI cytowało Twoje treści w odpowiedziach? Porozmawiaj z ekspertem ICEA o strategii GEO."
+          ctaButton="Porozmawiaj o GEO"
+        />
 
         <p class="fanout-note">
           Wynik prezentuje dane dla tej konkretnej sesji wyszukiwania. Pamiętaj, że odpowiedzi
@@ -771,6 +777,7 @@ const fanoutSchema = buildGraph(
         const body = await response.json();
         if (!response.ok) throw new Error(body.error || `HTTP ${response.status}`);
         renderResults(body);
+        document.dispatchEvent(new CustomEvent('tool:result', { detail: { query, result: body } }));
       } catch (error) {
         renderError(error instanceof Error ? error.message : 'Nie udało się wykonać zapytania.');
       } finally {

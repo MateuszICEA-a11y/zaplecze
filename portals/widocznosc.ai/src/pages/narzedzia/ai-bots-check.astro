@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import ScrollUpButton from '../../components/ScrollUpButton.astro';
+import ReportLeadForm from '../../components/tools/ReportLeadForm.astro';
 import { AI_BOTS, CATEGORY_LABELS, CATEGORY_DESCRIPTIONS } from '../../../functions/_lib/ai-bots';
 import { buildGraph, softwareApplicationNode, breadcrumbNode } from '../../lib/schema';
 
@@ -90,6 +91,11 @@ const aiBotsSchema = buildGraph(
 
         <!-- Results placeholder -->
         <section id="results" class="mt-14 hidden" aria-live="polite"></section>
+        <ReportLeadForm
+          tool="ai-bots-check"
+          ctaLead="Boty AI nie widzą Twojej strony? Pomożemy to naprawić – umów konsultację z ICEA."
+          ctaButton="Umów konsultację"
+        />
       </div>
     </section>
 
@@ -841,6 +847,7 @@ const aiBotsSchema = buildGraph(
 
         const data = (await response.json()) as CheckResponse;
         resultsEl.innerHTML = renderResults(data);
+        document.dispatchEvent(new CustomEvent('tool:result', { detail: { query: value, result: data } }));
         resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
       } catch (err) {
         const msg = err instanceof Error ? err.message : 'Błąd sieci';

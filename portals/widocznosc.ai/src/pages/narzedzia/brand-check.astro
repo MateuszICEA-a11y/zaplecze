@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import ScrollUpButton from '../../components/ScrollUpButton.astro';
+import ReportLeadForm from '../../components/tools/ReportLeadForm.astro';
 import { buildGraph, softwareApplicationNode, breadcrumbNode } from '../../lib/schema';
 
 const brandCheckSchema = buildGraph(
@@ -108,6 +109,11 @@ const brandCheckSchema = buildGraph(
         </form>
 
         <section id="results" class="results-wrap hidden" aria-live="polite"></section>
+        <ReportLeadForm
+          tool="brand-check"
+          ctaLead="Twoja marka zasługuje na lepszą widoczność w AI. Umów bezpłatną konsultację z ekspertem ICEA."
+          ctaButton="Umów konsultację"
+        />
       </div>
     </section>
 
@@ -1042,6 +1048,7 @@ const brandCheckSchema = buildGraph(
         const body = await response.json();
         if (!response.ok) throw new Error(body.error || `HTTP ${response.status}`);
         renderResults(body);
+        document.dispatchEvent(new CustomEvent('tool:result', { detail: { query: payload.brand, result: body } }));
       } catch (error) {
         renderError(error instanceof Error ? error.message : 'Nie udało się wykonać testu.');
       } finally {
