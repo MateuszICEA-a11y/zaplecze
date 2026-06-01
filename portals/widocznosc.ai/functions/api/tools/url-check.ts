@@ -17,6 +17,7 @@ import {
   type FullScore,
   type ActionItem,
 } from '../../_lib/url-check';
+import { resolveLimit, checkToolLimit } from '../../_lib/tool-rate-limit';
 
 type CheckRequest = {
   url?: string;
@@ -182,7 +183,11 @@ async function fetchHtml(url: string): Promise<{
 
 type Env = {
   OPENROUTER_API_KEY?: string;
+  URL_CHECK_DAILY_LIMIT?: string;
+  FANOUT_RL?: KVNamespace;
 };
+
+const URL_CHECK_DEFAULT_LIMIT = 10;
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
   let body: CheckRequest;
@@ -210,6 +215,17 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   const url = normalizeUrl(body.url || '');
   if (!url) {
     return jsonError(400, 'Podaj poprawny publiczny URL (http/https).');
+  }
+
+  const ip = context.request.headers.get('CF-Connecting-IP') || 'unknown';
+  const limit = resolveLimit(context.env.URL_CHECK_DAILY_LIMIT, URL_CHECK_DEFAULT_LIMIT);
+  const gate = await checkToolLimit(context.env.FANOUT_RL, 'url-check', ip, limit, new Date());
+  if (!gate.allowed) {
+    return jsonError(429, `Wykorzystałeś dzienny limit (${limit} sprawdzeń). Reset o północy.`, {
+      remaining: 0,
+      limit,
+      resetAt: gate.resetAt,
+    });
   }
 
   const fetchedAt = new Date().toISOString();
@@ -322,6 +338,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   }
 
   const actionItems = buildActionItems(score.factors);
+  await gate.commit();
 
   const response: CheckResponse = {
     url,
@@ -389,8 +406,8 @@ function jsonResponse(body: CheckResponse): Response {
   });
 }
 
-function jsonError(status: number, message: string): Response {
-  return new Response(JSON.stringify({ error: message }), {
+function jsonError(status: number, message: string, extra: Record<string, unknown> = {}): Response {
+  return new Response(JSON.stringify({ error: message, ...extra }), {
     status,
     headers: jsonHeaders(),
   });
