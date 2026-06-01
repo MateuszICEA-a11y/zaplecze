@@ -8,6 +8,11 @@ PUBLIC_SITE_URL = "https://widocznosc.ai"
 # Sekret OPENAI_API_KEY dla narzędzia fan-out ustawiany w panelu Cloudflare Pages
 # (Settings → Variables and Secrets), tak jak OPENROUTER_API_KEY dla brand-check.
 
+# Limity narzędzi per IP/dzień (0 = wyłączony; default w kodzie):
+#   FANOUT_DAILY_LIMIT=5  BRAND_CHECK_DAILY_LIMIT=3  URL_CHECK_DAILY_LIMIT=10
+# Ustawiane w panelu Cloudflare Pages → Settings → Variables (Production + Preview).
+# Stan KV w bindingu FANOUT_RL pod kluczem tool:<nazwa>:<ip>.
+
 # Sekret RESEND_API_KEY dla formularza kontaktu (/api/contact) ustawiany w panelu
 # Cloudflare Pages (Settings → Variables and Secrets). Wymaga zweryfikowanej w Resend
 # domeny nadawcy widocznosc.ai (rekordy DKIM/SPF na subdomenie wysyłkowej).
