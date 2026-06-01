@@ -44,6 +44,13 @@ const baseGraph = buildGraph(organizationNode(), websiteNode());
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Google Tag Manager -->
+    <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-58684HSJ');</script>
+    <!-- End Google Tag Manager -->
     <!-- Theme init – musi być pierwszy, przed CSS, bez flash.
          Re-applikuje się po astro:after-swap (View Transitions / ClientRouter)
          bo SPA swap wymienia <html> i atrybut data-theme znika. -->
@@ -98,6 +105,10 @@ const baseGraph = buildGraph(organizationNode(), websiteNode());
     <script type="application/ld+json" is:inline set:html={baseGraph} />
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-58684HSJ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <a href="#main" class="skip-link">Przejdź do treści</a>
     <main id="main" aria-label="Main content">
       <slot />
