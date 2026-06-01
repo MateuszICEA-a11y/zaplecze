@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 import ScrollUpButton from '../../components/ScrollUpButton.astro';
+import ReportLeadForm from '../../components/tools/ReportLeadForm.astro';
 import { FACTORS } from '../../../functions/_lib/url-check';
 import { buildGraph, softwareApplicationNode, breadcrumbNode } from '../../lib/schema';
 
@@ -80,6 +81,11 @@ const urlCheckSchema = buildGraph(
 
         <!-- Results placeholder -->
         <section id="results" class="mt-14 hidden" aria-live="polite"></section>
+        <ReportLeadForm
+          tool="url-check"
+          ctaLead="Chcesz podnieść ocenę AI-readiness swojej strony? Umów audyt z ekspertem ICEA."
+          ctaButton="Umów audyt"
+        />
       </div>
     </section>
 
@@ -1067,6 +1073,7 @@ const urlCheckSchema = buildGraph(
 
       const data = (await res.json()) as CheckResponse;
       resultsEl.innerHTML = renderResults(data);
+      document.dispatchEvent(new CustomEvent('tool:result', { detail: { query: url, result: data } }));
       overviewEl.classList.add('hidden');
       resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } catch (err) {
