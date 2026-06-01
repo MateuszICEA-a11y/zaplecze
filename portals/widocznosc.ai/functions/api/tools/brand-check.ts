@@ -6,6 +6,7 @@
  *
  * Wymaga env var OPENROUTER_API_KEY.
  */
+import { resolveLimit, checkToolLimit } from '../../_lib/tool-rate-limit';
 
 type BrandCheckRequest = {
   brand?: string;
@@ -88,7 +89,11 @@ type BrandCheckResponse = {
 
 type Env = {
   OPENROUTER_API_KEY?: string;
+  BRAND_CHECK_DAILY_LIMIT?: string;
+  FANOUT_RL?: KVNamespace;
 };
+
+const BRAND_CHECK_DEFAULT_LIMIT = 3;
 
 const OPENROUTER_URL = 'https://openrouter.ai/api/v1/chat/completions';
 const FETCH_TIMEOUT_MS = 10_000;
@@ -780,6 +785,17 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     return jsonError(400, 'Podaj nazwę marki.');
   }
 
+  const ip = context.request.headers.get('CF-Connecting-IP') || 'unknown';
+  const limit = resolveLimit(context.env.BRAND_CHECK_DAILY_LIMIT, BRAND_CHECK_DEFAULT_LIMIT);
+  const gate = await checkToolLimit(context.env.FANOUT_RL, 'brand-check', ip, limit, new Date());
+  if (!gate.allowed) {
+    return jsonError(429, `Wykorzystałeś dzienny limit (${limit} sprawdzeń). Reset o północy.`, {
+      remaining: 0,
+      limit,
+      resetAt: gate.resetAt,
+    });
+  }
+
   const domain = normalizeLoose(body.domain, 200);
   const category = normalizeLoose(body.category, 120);
   const market = normalizeLoose(body.market, 80) || 'Polska';
@@ -798,6 +814,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     })
   );
 
+  await gate.commit();
   return jsonResponse(aggregate(brand, domain, category, market, profile, modelResponses));
 };
 
@@ -820,8 +837,8 @@ function jsonResponse(body: BrandCheckResponse, status = 200): Response {
   });
 }
 
-function jsonError(status: number, message: string): Response {
-  return new Response(JSON.stringify({ error: message }), {
+function jsonError(status: number, message: string, extra: Record<string, unknown> = {}): Response {
+  return new Response(JSON.stringify({ error: message, ...extra }), {
     status,
     headers: jsonHeaders(),
   });
