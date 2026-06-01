@@ -1,0 +1,147 @@
+---
+// Karta lead-gen pod wynikiem narzędzia: „wyślij raport na e-mail" + opcjonalna
+// zgoda na kontakt + kontekstowe CTA. Ukryta do czasu eventu `tool:result`.
+// POST-uje już policzony wynik do /api/tools/send-report (Plan B1).
+interface Props {
+  tool: 'brand-check' | 'fanout' | 'url-check' | 'ai-bots-check';
+  ctaLead: string; // zdanie kontekstowe nad przyciskiem CTA
+  ctaButton: string; // etykieta przycisku CTA
+  ctaHref?: string;
+}
+const { tool, ctaLead, ctaButton, ctaHref = '/kontakt/' } = Astro.props;
+---
+
+<section class="report-lead" data-report-lead data-tool={tool} hidden aria-live="polite">
+  <div class="report-lead__card">
+    <h3 class="report-lead__title">Wyślij sobie ten raport na e-mail</h3>
+    <p class="report-lead__sub">Dostaniesz pełny wynik w czytelnej formie. Bez zobowiązań.</p>
+
+    <form data-report-lead-form class="report-lead__form" novalidate>
+      <div class="report-lead__row">
+        <input
+          type="email"
+          name="email"
+          required
+          autocomplete="email"
+          placeholder="twoj@email.pl"
+          class="report-lead__input"
+          aria-label="Adres e-mail"
+        />
+        <button type="submit" class="report-lead__btn">Wyślij raport</button>
+      </div>
+
+      <!-- honeypot: prawdziwy użytkownik zostawia puste -->
+      <input type="text" name="website" tabindex="-1" autocomplete="off" class="report-lead__hp" aria-hidden="true" />
+
+      <label class="report-lead__consent">
+        <input type="checkbox" name="consent" />
+        <span>Chcę porozmawiać z ekspertem ICEA o widoczności mojej marki w AI – zgadzam się na kontakt e-mailem lub telefonicznie. Zgodę mogę wycofać w każdej chwili.</span>
+      </label>
+      <p class="report-lead__note">Administratorem danych jest ICEA S.A. Szczegóły w <a href="/polityka-prywatnosci/">polityce prywatności</a>.</p>
+
+      <p class="report-lead__status" data-status role="status"></p>
+    </form>
+
+    <div class="report-lead__cta">
+      <p class="report-lead__cta-lead">{ctaLead}</p>
+      <a class="report-lead__cta-btn" href={ctaHref}>{ctaButton}</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .report-lead { margin-top: 1.5rem; }
+  .report-lead__card {
+    background: var(--surface, #fff);
+    border: 1px solid var(--line, #e2e8f0);
+    border-radius: 14px;
+    padding: 1.5rem;
+  }
+  .report-lead__title { margin: 0; font-size: 1.15rem; color: var(--ink, #0f172a); }
+  .report-lead__sub { margin: 0.25rem 0 1rem; font-size: 0.95rem; color: var(--ink-muted, #64748b); }
+  .report-lead__row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .report-lead__input {
+    flex: 1 1 220px; min-width: 0; padding: 0.7rem 0.9rem;
+    border: 1px solid var(--line, #e2e8f0); border-radius: 8px;
+    font-size: 1rem; background: var(--bg, #fff); color: var(--ink, #0f172a);
+  }
+  .report-lead__btn {
+    padding: 0.7rem 1.4rem; border: 0; border-radius: 8px; cursor: pointer;
+    background: var(--accent, #0a9cff); color: #fff; font-weight: 600; font-size: 1rem;
+  }
+  .report-lead__btn[disabled] { opacity: 0.6; cursor: progress; }
+  .report-lead__hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+  .report-lead__consent {
+    display: flex; gap: 0.5rem; align-items: flex-start; margin-top: 0.9rem;
+    font-size: 0.85rem; line-height: 1.5; color: var(--ink-muted, #64748b);
+  }
+  .report-lead__consent input { margin-top: 0.2rem; flex: 0 0 auto; }
+  .report-lead__note { margin: 0.5rem 0 0; font-size: 0.75rem; color: var(--ink-muted, #64748b); }
+  .report-lead__note a { color: var(--accent-dark, #0068cc); }
+  .report-lead__status:empty { display: none; }
+  .report-lead__status { margin: 0.75rem 0 0; font-size: 0.9rem; color: var(--ink, #0f172a); }
+  .report-lead__cta {
+    margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--line, #e2e8f0);
+  }
+  .report-lead__cta-lead { margin: 0 0 0.75rem; font-size: 0.95rem; color: var(--ink, #0f172a); }
+  .report-lead__cta-btn {
+    display: inline-block; padding: 0.65rem 1.3rem; border-radius: 8px;
+    background: var(--ink, #0f172a); color: #fff; text-decoration: none; font-weight: 600; font-size: 0.95rem;
+  }
+</style>
+
+<script>
+  // Delegacja na document → odporne na wymianę DOM przez ClientRouter; bindowane raz.
+  (() => {
+    const w = window as unknown as { __reportLeadInit?: boolean };
+    if (w.__reportLeadInit) return;
+    w.__reportLeadInit = true;
+
+    let latest: { query: string; result: unknown } = { query: '', result: null };
+
+    document.addEventListener('tool:result', (e) => {
+      const detail = (e as CustomEvent).detail || {};
+      latest = { query: String(detail.query || ''), result: detail.result ?? null };
+      const section = document.querySelector<HTMLElement>('[data-report-lead]');
+      if (section) section.hidden = false;
+    });
+
+    document.addEventListener('submit', async (e) => {
+      const form = e.target as HTMLElement;
+      if (!(form instanceof HTMLFormElement) || !('reportLeadForm' in form.dataset)) return;
+      e.preventDefault();
+
+      const section = form.closest<HTMLElement>('[data-report-lead]');
+      const status = section?.querySelector<HTMLElement>('[data-status]');
+      const btn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+      const fd = new FormData(form);
+      const email = String(fd.get('email') || '').trim();
+      if (!email) { if (status) status.textContent = 'Podaj adres e-mail.'; return; }
+
+      if (btn) btn.disabled = true;
+      if (status) status.textContent = 'Wysyłam raport…';
+      try {
+        const res = await fetch('/api/tools/send-report', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            tool: section?.getAttribute('data-tool') || '',
+            email,
+            consent: fd.get('consent') === 'on',
+            query: latest.query,
+            result: latest.result,
+            website: String(fd.get('website') || ''),
+          }),
+        });
+        const body = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(body.error || `HTTP ${res.status}`);
+        if (status) status.textContent = `Raport wysłany na ${email}. Sprawdź skrzynkę (i spam).`;
+        form.reset();
+      } catch (err) {
+        if (status) status.textContent = err instanceof Error ? err.message : 'Nie udało się wysłać raportu.';
+      } finally {
+        if (btn) btn.disabled = false;
+      }
+    });
+  })();
+</script>
