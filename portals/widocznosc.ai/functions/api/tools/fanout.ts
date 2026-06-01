@@ -6,7 +6,7 @@
  * Opcjonalne env: FANOUT_MODEL (domyślnie gpt-5.4), FANOUT_DAILY_LIMIT (0 = bez limitu).
  */
 import { parseResponsesOutput } from '../../_lib/fanout-parse';
-import { evaluateLimit, secondsUntilWarsawMidnight } from '../../_lib/rate-limit';
+import { resolveLimit, checkToolLimit } from '../../_lib/tool-rate-limit';
 
 type Env = {
   OPENAI_API_KEY?: string;
@@ -16,11 +16,10 @@ type Env = {
 };
 
 type FanoutRequest = { query?: string };
-type LimitRecord = { count: number; resetAt: number };
 
 const OPENAI_URL = 'https://api.openai.com/v1/responses';
 const DEFAULT_MODEL = 'gpt-5.4';
-const DEFAULT_LIMIT = 0;
+const DEFAULT_LIMIT = 5;
 const LLM_TIMEOUT_MS = 45_000;
 const MIN_QUERY = 3;
 const MAX_QUERY = 300;
@@ -78,35 +77,18 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     );
   }
   const model = (env.FANOUT_MODEL || DEFAULT_MODEL).trim();
-  const configuredLimit = Number.parseInt(env.FANOUT_DAILY_LIMIT || '', 10);
-  const limit = Number.isFinite(configuredLimit) && configuredLimit > 0 ? configuredLimit : DEFAULT_LIMIT;
-  const rateLimitEnabled = limit > 0;
+  const limit = resolveLimit(env.FANOUT_DAILY_LIMIT, DEFAULT_LIMIT);
 
-  // 3. Rate-limit (odczyt) — wymaga bindingu KV
+  // 3. Rate-limit (odczyt) — KV współdzielone, klucz tool:fanout:<ip>
   const kv = env.FANOUT_RL;
   const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
-  const kvKey = `fanout:${ip}`;
   const now = new Date();
-  const ttl = secondsUntilWarsawMidnight(now);
-
-  let record: LimitRecord = { count: 0, resetAt: now.getTime() + ttl * 1000 };
-  if (rateLimitEnabled && kv) {
-    const stored = await kv.get<LimitRecord>(kvKey, 'json');
-    if (stored && typeof stored.count === 'number' && typeof stored.resetAt === 'number') {
-      record = stored;
-    }
-  }
-  // Jeden, spójny resetAt (z zapisanego okna) używany i w 429, i w 200.
-  const resetAt = new Date(record.resetAt).toISOString();
-
-  const decision = rateLimitEnabled
-    ? evaluateLimit(record.count, limit)
-    : { allowed: true, remaining: null };
-  if (rateLimitEnabled && !decision.allowed) {
+  const gate = await checkToolLimit(kv, 'fanout', ip, limit, now);
+  if (!gate.allowed) {
     return jsonError(429, `Wykorzystałeś dzienny limit (${limit} zapytań). Reset o północy.`, {
       remaining: 0,
       limit,
-      resetAt,
+      resetAt: gate.resetAt,
     });
   }
 
@@ -150,13 +132,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   const raw = await openaiResponse.json().catch(() => null);
   const parsed = parseResponsesOutput(raw);
 
-  // 5. Inkrement limitu DOPIERO po udanej odpowiedzi
-  if (rateLimitEnabled && kv) {
-    const newCount = Math.max(0, record.count) + 1;
-    await kv.put(kvKey, JSON.stringify({ count: newCount, resetAt: record.resetAt }), {
-      expirationTtl: Math.max(60, Math.ceil((record.resetAt - now.getTime()) / 1000)),
-    });
-  }
+  // 5. Zliczenie limitu DOPIERO po udanej odpowiedzi
+  await gate.commit();
 
   // 6. Odpowiedź
   return json({
@@ -169,7 +146,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     searchedDomains: parsed.searchedDomains,
     searchedSources: parsed.searchedSources,
     citations: parsed.citations,
-    usage: { remaining: decision.remaining, limit, resetAt },
+    usage: { remaining: gate.remaining, limit, resetAt: gate.resetAt },
     fetchedAt: now.toISOString(),
   });
 };
