@@ -114,7 +114,54 @@ W GA4 → Admin → *Key events* (Kluczowe zdarzenia) oznacz `generate_lead` jak
 
 ---
 
-## 7. Uwagi
+## 7. Consent Mode v2 (EOG / RODO)
+
+Dla ruchu z EOG wymagany jest **Consent Mode v2**. GTM nie ma wdrożonego CMP – trzeba go dodać. Schemat:
+
+**7.1 Domyślny stan zgody (przed załadowaniem GTM/tagów).** Ustawiany jak najwcześniej, zwykle przez baner CMP (np. Cookiebot, Iubenda, Complianz, Usercentrics) lub ręczny snippet w `<head>` *przed* kontenerem GTM:
+```js
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  wait_for_update: 500
+});
+```
+> Jeśli używacie CMP z natywną integracją Consent Mode – nie pisz tego ręcznie, baner zrobi to sam. Ważne: **stan domyślny = denied** dla EOG, aktualizacja (`consent update`) po wyborze użytkownika w banerze.
+
+**7.2 GTM – Consent Settings na tagach.** W GTM włącz *Admin → Container Settings → Enable consent overview*. Dla tagów:
+- `GA4 - *` wymagają `analytics_storage`.
+- tagi Google Ads (sekcja 8) wymagają `ad_storage` + `ad_user_data` + `ad_personalization`.
+
+GTM nie odpali tagu, dopóki odpowiednia zgoda nie jest `granted`. Consent Mode v2 pozwala na **modelowanie konwersji** dla użytkowników bez zgody (basic/advanced) – zależnie od konfiguracji CMP.
+
+**7.3 Test.** W GTM Preview sprawdź zakładkę **Consent** – każdy tag pokazuje, jakich zgód wymaga i czy zostały spełnione. Przetestuj oba scenariusze (przed i po akceptacji banera).
+
+---
+
+## 8. Google Ads – konwersja lead
+
+Dwie metody (wybierz jedną):
+
+**8.1 Import z GA4 (zalecane, najprostsze).**
+1. Oznacz `generate_lead` jako kluczowe zdarzenie w GA4 (sekcja 4.3).
+2. Google Ads → Goals → Conversions → New → *Import → Google Analytics 4* → wybierz `generate_lead`.
+3. Zaleta: jedno źródło prawdy, brak dodatkowych tagów w GTM.
+
+**8.2 Dedykowany tag Google Ads Conversion (większa kontrola / szybsze liczenie).**
+1. W Google Ads utwórz akcję konwersji „Lead – formularz kontaktowy", pobierz **Conversion ID** (`AW-XXXXXXXXX`) i **Conversion Label**.
+2. GTM → Tag → *Google Ads Conversion Tracking*:
+   - Conversion ID / Label = jak wyżej
+   - Triggering: `CE - generate_lead` (ten sam trigger co GA4)
+3. (Zalecane) Dodaj tag **Conversion Linker** na triggerze *All Pages*, jeśli go jeszcze nie ma.
+
+**8.3 Enhanced Conversions (opcjonalnie).**
+Enhanced Conversions dla leadów wymagają przekazania **zahashowanego e-maila** użytkownika. Obecnie kod **celowo nie wysyła PII** do dataLayer, więc enhanced conversions **nie zadziałają bez zmiany w kodzie** (dorzucenie do pushu `generate_lead` np. zahashowanego SHA-256 e-maila lub w trybie automatycznym z formularza). To decyzja prawna/produktowa (RODO) – jeśli będzie potrzebna, zgłoś deweloperowi, dopisze pole; nie konfiguruj enhanced conversions „na sucho", bo nie będzie miało danych.
+
+---
+
+## 9. Uwagi
 - Honeypot i odrzucenia walidacji nie generują `generate_lead` (zliczasz wyłącznie realne leady).
 - `lead_type` pozwala segmentować konwersje wg intencji (np. ile „audyt-ai" vs „konsultacja").
-- Brak PII w dataLayer – zgodne z zasadą minimalizacji danych.
+- Brak PII w dataLayer – zgodne z zasadą minimalizacji danych (patrz też 8.3 nt. enhanced conversions).
