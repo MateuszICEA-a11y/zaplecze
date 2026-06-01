@@ -8,6 +8,11 @@ PUBLIC_SITE_URL = "https://widocznosc.ai"
 # Sekret OPENAI_API_KEY dla narzędzia fan-out ustawiany w panelu Cloudflare Pages
 # (Settings → Variables and Secrets), tak jak OPENROUTER_API_KEY dla brand-check.
 
+# Sekret RESEND_API_KEY dla formularza kontaktu (/api/contact) ustawiany w panelu
+# Cloudflare Pages (Settings → Variables and Secrets). Wymaga zweryfikowanej w Resend
+# domeny nadawcy widocznosc.ai (rekordy DKIM/SPF na subdomenie wysyłkowej).
+# Endpoint reużywa bindingu KV FANOUT_RL (poniżej) z prefiksem klucza contact:.
+
 # Binding KV dla rate-limitu narzędzia fan-out (/narzedzia/fanout, 3/IP/dzień).
 # Ten projekt zarządza bindingami z wrangler.toml, więc ID musi być tutaj.
 [[kv_namespaces]]
