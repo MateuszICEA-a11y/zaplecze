@@ -93,52 +93,124 @@ function fieldRows(p: ContactPayload): Array<[string, string]> {
   ];
 }
 
+// ── Paleta brandu (email-safe, wartości z Theme.css) ──
+const C = {
+  dark: '#0b1020', // nagłówek
+  accent: '#0a9cff', // akcent widocznosc.ai
+  accentDark: '#0068cc', // akcent na jasnym tle (linki/przyciski)
+  accentSoft: '#e6f4ff', // tło badge
+  page: '#eef2f7', // tło strony maila
+  card: '#ffffff',
+  ink: '#0f172a',
+  inkMuted: '#64748b',
+  line: '#e2e8f0',
+  msgBg: '#f1f5f9',
+};
+
+/** Wspólny szkielet maila (table-layout, inline CSS – kompatybilny z Gmail/Outlook). */
+function emailShell(bodyInner: string, preheader = ''): string {
+  return (
+    `<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8">` +
+    `<meta name="viewport" content="width=device-width,initial-scale=1"></head>` +
+    `<body style="margin:0;padding:0;background:${C.page};">` +
+    (preheader
+      ? `<div style="display:none;max-height:0;overflow:hidden;opacity:0;">${escapeHtml(preheader)}</div>`
+      : '') +
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${C.page};padding:24px 12px;">` +
+    `<tr><td align="center">` +
+    `<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:${C.card};border-radius:14px;overflow:hidden;font-family:Arial,Helvetica,sans-serif;box-shadow:0 1px 3px rgba(15,23,42,.08);">` +
+    // nagłówek
+    `<tr><td style="background:${C.dark};padding:22px 32px;">` +
+    `<span style="font-size:20px;font-weight:700;letter-spacing:-.4px;color:#fff;">widocznosc<span style="color:${C.accent};">.ai</span></span>` +
+    `</td></tr>` +
+    bodyInner +
+    // stopka
+    `<tr><td style="padding:22px 32px;border-top:1px solid ${C.line};">` +
+    `<p style="margin:0;font-size:12px;line-height:1.6;color:${C.inkMuted};">` +
+    `ICEA S.A. · ul. Szyperska 14 · 61-754 Poznań<br>` +
+    `Flagowy projekt <a href="https://grupa-icea.pl" style="color:${C.accentDark};text-decoration:none;">grupa-icea.pl</a> · pozycjonowanie marek w wyszukiwarkach AI` +
+    `</p></td></tr>` +
+    `</table></td></tr></table></body></html>`
+  );
+}
+
 export function buildEmails(p: ContactPayload, cfg: EmailConfig): {
   internal: ResendEmail;
   autoresponder: ResendEmail;
 } {
   const name = String(p.name ?? '').trim();
   const email = String(p.email ?? '').trim();
+  const label = typeLabel(String(p.type ?? '').trim());
   const rows = fieldRows(p);
 
+  // ── Mail wewnętrzny (lead) ──
   const internalText = rows.map(([k, v]) => `${k}: ${v}`).join('\n');
-  const internalHtml =
-    `<h2>Nowy lead z widocznosc.ai</h2><table cellpadding="6" style="border-collapse:collapse">` +
-    rows
-      .map(
-        ([k, v]) =>
-          `<tr><td style="vertical-align:top;font-weight:600">${escapeHtml(k)}</td>` +
-          `<td style="white-space:pre-wrap">${escapeHtml(v)}</td></tr>`,
-      )
-      .join('') +
-    `</table>`;
+
+  const rowsHtml = rows
+    .map(([k, v], i) => {
+      const isMessage = k === 'Wiadomość';
+      const border = i === 0 ? '' : `border-top:1px solid ${C.line};`;
+      const valueCell = isMessage
+        ? `<div style="background:${C.msgBg};border-left:3px solid ${C.accent};border-radius:6px;padding:12px 14px;font-size:15px;line-height:1.6;color:${C.ink};white-space:pre-wrap;">${escapeHtml(v)}</div>`
+        : `<span style="font-size:15px;color:${C.ink};">${escapeHtml(v)}</span>`;
+      return (
+        `<tr><td style="padding:14px 0 4px;${border}">` +
+        `<div style="font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:${C.inkMuted};margin-bottom:${isMessage ? '8' : '2'}px;">${escapeHtml(k)}</div>` +
+        valueCell +
+        `</td></tr>`
+      );
+    })
+    .join('');
+
+  const internalBody =
+    `<tr><td style="padding:32px 32px 8px;">` +
+    `<span style="display:inline-block;background:${C.accentSoft};color:${C.accentDark};font-size:12px;font-weight:600;padding:5px 12px;border-radius:999px;">${escapeHtml(label)}</span>` +
+    `<h1 style="margin:14px 0 0;font-size:22px;line-height:1.3;color:${C.ink};">Nowy lead z formularza kontaktowego</h1>` +
+    `</td></tr>` +
+    `<tr><td style="padding:8px 32px 4px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0">${rowsHtml}</table></td></tr>` +
+    `<tr><td style="padding:20px 32px 32px;">` +
+    `<a href="mailto:${escapeHtml(email)}?subject=${encodeURIComponent('Re: ' + label + ' – widocznosc.ai')}" style="display:inline-block;background:${C.accentDark};color:#fff;font-size:15px;font-weight:600;text-decoration:none;padding:12px 24px;border-radius:8px;">Odpowiedz na zapytanie</a>` +
+    `<p style="margin:12px 0 0;font-size:12px;color:${C.inkMuted};">Odpowiedź trafi bezpośrednio na adres osoby zgłaszającej (Reply-To).</p>` +
+    `</td></tr>`;
 
   const internal: ResendEmail = {
     from: cfg.from,
     to: [cfg.leadTo],
     reply_to: email,
-    subject: `[widocznosc.ai] Nowy lead: ${typeLabel(String(p.type ?? '').trim())} – ${name}`,
+    subject: `[widocznosc.ai] Nowy lead: ${label} – ${name}`,
     text: internalText,
-    html: internalHtml,
+    html: emailShell(internalBody, `Nowy lead: ${label} – ${name}`),
   };
 
+  // ── Autoresponder ──
   const autoText =
     `Cześć ${name},\n\n` +
     `dziękujemy za kontakt z widocznosc.ai. Odebraliśmy Twoje zgłoszenie i odpowiemy w ciągu 24 godzin roboczych (pon–pt, 9:00–17:00).\n\n` +
     `W pilnych sprawach: biuro@grupa-icea.pl\n\n` +
     `Pozdrawiamy,\nZespół widocznosc.ai\nICEA S.A., ul. Szyperska 14, 61-754 Poznań`;
-  const autoHtml =
-    `<p>Cześć ${escapeHtml(name)},</p>` +
-    `<p>dziękujemy za kontakt z <strong>widocznosc.ai</strong>. Odebraliśmy Twoje zgłoszenie i odpowiemy w ciągu 24 godzin roboczych (pon–pt, 9:00–17:00).</p>` +
-    `<p>W pilnych sprawach: <a href="mailto:biuro@grupa-icea.pl">biuro@grupa-icea.pl</a></p>` +
-    `<p>Pozdrawiamy,<br>Zespół widocznosc.ai<br>ICEA S.A., ul. Szyperska 14, 61-754 Poznań</p>`;
+
+  const autoBody =
+    `<tr><td style="padding:32px 32px 8px;">` +
+    `<h1 style="margin:0;font-size:22px;line-height:1.3;color:${C.ink};">Dziękujemy za kontakt 👋</h1>` +
+    `</td></tr>` +
+    `<tr><td style="padding:8px 32px;">` +
+    `<p style="margin:0 0 16px;font-size:15px;line-height:1.7;color:${C.ink};">Cześć ${escapeHtml(name)},</p>` +
+    `<p style="margin:0 0 16px;font-size:15px;line-height:1.7;color:${C.ink};">odebraliśmy Twoje zgłoszenie w <strong>widocznosc.ai</strong>. Odezwiemy się z odpowiedzią najpóźniej w ciągu <strong>24 godzin roboczych</strong>.</p>` +
+    `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:8px 0 4px;background:${C.msgBg};border-radius:10px;">` +
+    `<tr><td style="padding:16px 18px;">` +
+    `<div style="font-size:11px;letter-spacing:.6px;text-transform:uppercase;color:${C.inkMuted};margin-bottom:4px;">Godziny pracy</div>` +
+    `<div style="font-size:15px;color:${C.ink};">pon–pt, 9:00–17:00</div>` +
+    `</td></tr></table>` +
+    `<p style="margin:18px 0 0;font-size:14px;line-height:1.7;color:${C.inkMuted};">W pilnej sprawie napisz na <a href="mailto:biuro@grupa-icea.pl" style="color:${C.accentDark};text-decoration:none;">biuro@grupa-icea.pl</a>.</p>` +
+    `<p style="margin:20px 0 0;font-size:15px;line-height:1.6;color:${C.ink};">Pozdrawiamy,<br><strong>Zespół widocznosc.ai</strong></p>` +
+    `</td></tr>`;
 
   const autoresponder: ResendEmail = {
     from: cfg.from,
     to: [email],
     subject: 'Dziękujemy za kontakt – widocznosc.ai',
     text: autoText,
-    html: autoHtml,
+    html: emailShell(autoBody, 'Odebraliśmy Twoje zgłoszenie – odpowiemy w ciągu 24h roboczych.'),
   };
 
   return { internal, autoresponder };
