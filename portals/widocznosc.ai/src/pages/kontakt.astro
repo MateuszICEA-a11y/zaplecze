@@ -312,6 +312,13 @@ const contactSchema = buildGraph(
         });
 
         if (res.ok) {
+          const w = window as any;
+          w.dataLayer = w.dataLayer || [];
+          w.dataLayer.push({
+            event: 'generate_lead',
+            form_id: 'kontakt',
+            lead_type: String(data.type || 'inne'),
+          });
           showSuccess();
           return;
         }

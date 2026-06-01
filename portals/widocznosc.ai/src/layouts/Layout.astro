@@ -143,6 +143,19 @@ const baseGraph = buildGraph(organizationNode(), websiteNode());
         opacity: 1;
       }
     </style>
+    <!-- SPA pageview → dataLayer. astro:after-swap odpala się tylko przy nawigacji
+         ClientRouter (nie przy pierwszym wejściu), więc nie dublujemy initial pageview
+         wysyłanego przez gtm.js. Listener na document przeżywa swapy, dodajemy go raz. -->
+    <script is:inline>
+      document.addEventListener('astro:after-swap', function () {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'page_view',
+          page_path: location.pathname + location.search,
+          page_title: document.title,
+        });
+      });
+    </script>
     <script is:inline data-astro-rerun>
       (function () {
         const obs = new IntersectionObserver(
