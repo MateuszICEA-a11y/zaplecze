@@ -143,6 +143,11 @@ const contactSchema = buildGraph(
             id="contact-wrapper"
           >
             <form id="contact-form" aria-label="Formularz kontaktowy">
+              <!-- Honeypot: ukryte pole-pułapka. Prawdziwy użytkownik go nie widzi. -->
+              <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;width:0;overflow:hidden;">
+                <label for="website">Nie wypełniaj tego pola</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+              </div>
               <div class="mb-5">
                 <label for="name" class="text-ink mb-2 block font-medium">
                   Imię i nazwisko
@@ -260,6 +265,7 @@ const contactSchema = buildGraph(
     const form = document.getElementById('contact-form') as HTMLFormElement;
     const success = document.getElementById('contact-success');
     const wrapper = document.getElementById('contact-wrapper');
+    const submitBtn = form?.querySelector('button[type="submit"]') as HTMLButtonElement | null;
     const params = new URLSearchParams(window.location.search);
     const typeParam = params.get('type');
     const typeSelect = document.getElementById('type') as HTMLSelectElement | null;
@@ -269,12 +275,25 @@ const contactSchema = buildGraph(
       if (valid) typeSelect.value = typeParam;
     }
 
-    form?.addEventListener('submit', (e) => {
-      e.preventDefault();
+    let errorBox = document.getElementById('contact-error');
+    if (!errorBox && form) {
+      errorBox = document.createElement('p');
+      errorBox.id = 'contact-error';
+      errorBox.className = 'mt-4 text-center text-sm';
+      errorBox.style.color = '#e5484d';
+      errorBox.hidden = true;
+      form.appendChild(errorBox);
+    }
+
+    function showError(msg: string) {
+      if (!errorBox) return;
+      errorBox.textContent = msg;
+      errorBox.hidden = false;
+    }
+
+    function showSuccess() {
       const wrapperHeight = wrapper?.offsetHeight;
-      if (wrapper && wrapperHeight) {
-        wrapper.style.minHeight = `${wrapperHeight}px`;
-      }
+      if (wrapper && wrapperHeight) wrapper.style.minHeight = `${wrapperHeight}px`;
       form.style.transition = 'opacity 0.3s ease';
       form.style.opacity = '0';
       setTimeout(() => {
@@ -286,6 +305,44 @@ const contactSchema = buildGraph(
           success?.classList.add('opacity-100');
         });
       }, 300);
+    }
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (errorBox) errorBox.hidden = true;
+
+      const data = Object.fromEntries(new FormData(form).entries());
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.dataset.label = submitBtn.textContent || '';
+        submitBtn.textContent = 'Wysyłanie…';
+      }
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+
+        if (res.ok) {
+          showSuccess();
+          return;
+        }
+        if (res.status === 429) {
+          showError('Wysłano już kilka zgłoszeń z tego adresu. Napisz bezpośrednio na biuro@grupa-icea.pl.');
+        } else {
+          showError('Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz na biuro@grupa-icea.pl.');
+        }
+      } catch {
+        showError('Brak połączenia. Sprawdź internet i spróbuj ponownie.');
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = submitBtn.dataset.label || 'Wyślij wiadomość';
+        }
+      }
     });
   </script>
 </Layout>
