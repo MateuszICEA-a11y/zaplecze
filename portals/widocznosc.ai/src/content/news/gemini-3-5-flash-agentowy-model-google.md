@@ -10,7 +10,7 @@ tags:
 - agenty AI
 - AI Search
 author: Redakcja widocznosc.ai
-image: ../../assets/images/blog-geo-przewodnik.webp
+image: ../../assets/images/news-2026-06-02-gemini-3-5-flash-agentowy-model-google.webp
 ---
 
 ## Flash, który dogania model Pro
