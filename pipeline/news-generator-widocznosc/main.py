@@ -163,9 +163,15 @@ def run() -> None:
     image_rel = f"../../assets/images/news-{date_str}-{slug}.webp"
     image_dest = assets_dir / f"news-{date_str}-{slug}.webp"
     try:
-        generate_hero_image(title=fm["title"], section="news", dest=image_dest)
+        written = generate_hero_image(title=fm["title"], section="news", dest=image_dest)
     except Exception as e:
         log.warning("Image generation failed (%s). Using fallback.", e)
+        written = None
+    # generate_hero_image sygnalizuje porażkę zwracając None (nie wyjątkiem),
+    # więc fallback musi reagować na None – inaczej frontmatter wskazuje na
+    # nigdy nie powstały plik i build Astro (image()) wywala cały deploy.
+    if written is None:
+        log.warning("Hero image not generated. Using fallback image.")
         image_rel = "../../assets/images/blog-geo-przewodnik.webp"
 
     # 10. Post-process (Astro frontmatter)
