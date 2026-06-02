@@ -19,13 +19,13 @@ MiniMax, chińska firma AI, pokazała M3 – model z otwartymi wagami, który ma
 
 Najmocniej przemawiają wyniki. Na SWE-Bench Pro M3 osiąga 59 proc., a w teście autonomicznego przeszukiwania sieci BrowseComp – 83,5 punktu. Na PostTrainBench plasuje się tuż za Opus 4.7 i GPT-5.5, a w porównaniach pojawiają się też Opus 4.8 i Gemini 3.1 Pro. Osobno MiniMax raportuje testy długiej autonomii: 12-godzinną reprodukcję pracy naukowej z wynikiem 0,650 oraz 24-godzinną optymalizację kerneli GPU, w której model dobił do 71,3 proc. wykorzystania sprzętu.
 
-> **Nasz komentarz:** Najciekawsze w M3 nie jest samo okno miliona tokenów, lecz to, że model otwarty dogania zamkniętą czołówkę w zadaniach ciągnących się godzinami, a nie w pojedynczym prompcie.
+> **Nasz komentarz:** Najciekawsze w M3 nie jest samo okno miliona tokenów, lecz to, że model otwarty dogania zamkniętą czołówkę w zadaniach trwających godzinami, a nie w pojedynczym prompcie.
 
-## Dlaczego długa autonomia waży więcej niż rozmiar okna
+## Dlaczego długa autonomia liczy się bardziej niż rozmiar okna
 
-Naszym zdaniem M3 dobrze pokazuje, gdzie naprawdę przesuwa się rywalizacja modeli. Liczba tokenów w oknie robi wrażenie, ale prawdziwą różnicę robi mechanizm rzadkiej uwagi – bez niego milion tokenów byłby kosztowny i wolny. To inżynierska odpowiedź na problem, z którym mierzą się wszyscy dostawcy: jak utrzymać sensowną cenę i szybkość, gdy kontekst rośnie.
+Naszym zdaniem M3 dobrze pokazuje, gdzie naprawdę przesuwa się rywalizacja modeli. Liczba tokenów w oknie robi wrażenie, ale o realnej różnicy decyduje mechanizm rzadkiej uwagi – bez niego milion tokenów byłby kosztowny i wolny. To inżynierska odpowiedź na problem, z którym mierzą się wszyscy dostawcy: jak utrzymać sensowną cenę i szybkość, gdy kontekst rośnie.
 
-Drugi sygnał jest jeszcze ważniejszy. Benchmarki 12- i 24-godzinne mierzą coś innego niż klasyczne testy wiedzy – sprawdzają, czy model potrafi prowadzić wielogodzinne, wieloetapowe zadanie bez rozsypania się po drodze. W naszej ocenie to właśnie ten wymiar – długa autonomia agentowa – staje się nowym polem, na którym modele będą się różnicować.
+Drugi sygnał jest jeszcze ważniejszy. Benchmarki 12- i 24-godzinne mierzą coś innego niż klasyczne testy wiedzy – sprawdzają, czy model potrafi prowadzić wielogodzinne, wieloetapowe zadanie bez utraty spójności po drodze. W naszej ocenie to właśnie ten wymiar – długa autonomia agentowa – staje się nowym polem, na którym modele będą się różnicować.
 
 - **Otwarte wagi blisko czołówki** – jeśli wyniki potwierdzą się po publikacji raportu, przewaga zamkniętych modeli na części zadań kurczy się do kilku punktów.
 - **Architektura, nie tylko skala** – sparse attention pokazuje, że dalszy postęp to nie wyłącznie „więcej parametrów", lecz sprytniejsze przetwarzanie kontekstu.

@@ -15,7 +15,7 @@ image: ../../assets/images/news-2026-05-30-gdy-firmy-przesadzaja-z-ai.webp
 
 ## Aaron Levie ostrzega przed „psychozą AI" w firmach
 
-TechCrunch AI zwraca uwagę na rosnący problem bezkrytycznego zachwytu sztuczną inteligencją w firmach. Punktem wyjścia są słowa Aarona Leviego, założyciela Boxa, który sugeruje, że osoby decydujące o tym, że AI może przejąć czyjąś pracę, często same nie rozumieją, na czym ta praca naprawdę polega. Levie określa takie podejście mianem swoistej „AI psychozy” – sytuacji, w której technologia staje się nie narzędziem, ale ideologicznym uzasadnieniem dla radykalnych decyzji.
+TechCrunch AI zwraca uwagę na rosnący problem bezkrytycznego zachwytu sztuczną inteligencją w firmach. Punktem wyjścia są słowa Aarona Leviego, założyciela Boxa, który sugeruje, że osoby decydujące o tym, że AI może przejąć czyjąś pracę, często same nie rozumieją, na czym ta praca naprawdę polega. Levie określa takie podejście mianem swoistej „psychozy AI” – sytuacji, w której technologia staje się nie narzędziem, ale ideologicznym uzasadnieniem dla radykalnych decyzji.
 
 W materiale przywołano też konkretny przykład ClickUp, które niedawno zredukowało 22% zatrudnienia, stawiając na agentów AI. Jednocześnie skala zwolnień w branży technologicznej w 2026 roku ma już zbliżać się do poziomu z całego 2025 roku. Przekaz jest czytelny: część firm nie tylko testuje AI, ale zaczyna traktować ją jako pełnoprawny zamiennik ludzi – i robi to szybciej, niż jest w stanie ocenić skutki operacyjne, jakościowe i organizacyjne.
 
@@ -23,10 +23,10 @@ W materiale przywołano też konkretny przykład ClickUp, które niedawno zreduk
 
 ## Czego ta fala zwolnień uczy marki budujące widoczność w AI
 
-Naszym zdaniem ten news warto czytać szerzej niż tylko jako historię o zwolnieniach w techu. To sygnał dla każdej marki, która wdraża AI w marketingu, obsłudze klienta, sprzedaży czy tworzeniu treści. Jeśli prowadzisz firmę, łatwo wpaść w pułapkę myślenia, że skoro model potrafi wygenerować tekst, odpowiedź albo analizę, to człowiek przestaje być potrzebny. W naszej ocenie to skrót, który może szybko odbić się na jakości, spójności marki i zaufaniu odbiorców.
+Naszym zdaniem ten news warto czytać szerzej niż tylko jako historię o zwolnieniach w techu. To sygnał dla każdej marki, która wdraża AI w marketingu, obsłudze klienta, sprzedaży czy tworzeniu treści. Jeśli prowadzisz firmę, łatwo wpaść w pułapkę myślenia, że skoro model potrafi wygenerować tekst, odpowiedź albo analizę, to człowiek przestaje być potrzebny. To skrót, który może szybko odbić się na jakości, spójności marki i zaufaniu odbiorców.
 
 - **Nie każda praca daje się sprowadzić do promptu** – wiele ról obejmuje kontekst, priorytetyzację, ocenę ryzyka i wyczucie sytuacji. To właśnie te elementy najczęściej znikają z pola widzenia, gdy zarząd patrzy na AI wyłącznie przez pryzmat oszczędności.
-- **Automatyzacja bez rozpoznania procesu kończy się stratą jakości** – zanim zastąpisz zadania agentem AI, sprawdź, które elementy są powtarzalne, a które wymagają doświadczenia i odpowiedzialności. Naszym zdaniem to podstawowy warunek sensownego wdrożenia.
+- **Automatyzacja bez rozpoznania procesu kończy się stratą jakości** – zanim oddelegujesz zadania agentowi AI, sprawdź, które elementy są powtarzalne, a które wymagają doświadczenia i odpowiedzialności. Naszym zdaniem to podstawowy warunek sensownego wdrożenia.
 - **Widoczność marki w wyszukiwarkach AI zależy od jakości, nie tylko skali** – jeśli Twoje treści, support czy komunikacja staną się masowo generowane, ale mniej precyzyjne i mniej użyteczne, modele mogą przestać traktować Twoją markę jako wiarygodne źródło.
 - **Liderzy powinni rozumieć pracę, którą chcą automatyzować** – w naszej ocenie decyzje o wdrożeniu AI powinny wychodzić z analizy realnych zadań, a nie z mody czy presji rynku. Inaczej łatwo zautomatyzować nie to, co trzeba.
 - **AI najlepiej działa jako warstwa wzmacniająca zespół** – zamiast pytać, kogo zwolnić dzięki AI, lepiej zapytać, gdzie technologia skróci czas, odciąży ludzi i poprawi wynik bez psucia doświadczenia klienta.
