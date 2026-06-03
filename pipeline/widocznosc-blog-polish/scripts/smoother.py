@@ -6,7 +6,7 @@ Frontmatter, kod, linki, shortcode'y i nagłówki NIE są wysyłane do modelu.
 Jeśli model ruszy jakąkolwiek liczbę lub nazwę modelu w prozie -> plik odrzucony.
 
 Usage:
-    OPENROUTER_API="sk-or-..." python3 .../smoother.py PATH.md [--dry-run]
+    OPENROUTER_API_KEY="sk-or-..." python3 .../smoother.py PATH.md [--dry-run]
 """
 from __future__ import annotations
 import re
@@ -98,9 +98,9 @@ def diff_guard(before: str, after: str, store: dict) -> list[str]:
     bn, bm = extract_facts(before)
     an, am = extract_facts(after)
     if bn != an:
-        violations.append(f"liczby zmienione: -{bn - an} +{an - bn}")
+        violations.append(f"liczby zmienione: usunięte={sorted(bn - an)} dodane={sorted(an - bn)}")
     if bm != am:
-        violations.append(f"nazwy modeli zmienione: -{bm - am} +{am - bm}")
+        violations.append(f"nazwy modeli zmienione: usunięte={sorted(bm - am)} dodane={sorted(am - bm)}")
     return violations
 
 

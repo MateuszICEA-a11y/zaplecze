@@ -6,6 +6,9 @@ from collections import Counter
 
 import smoother
 
+RULES = ""
+SCRIPT = os.path.join(os.path.dirname(__file__), "..", "scripts", "smoother.py")
+
 
 def test_rules_path_points_to_existing_file():
     assert smoother.RULES_PATH.endswith("portals/widocznosc.ai/docs/writing-rules.md")
@@ -61,7 +64,11 @@ def test_protect_tokens_are_unique():
     assert len(store) == len(set(store.keys()))
 
 
-from collections import Counter
+def test_protect_adjacent_code_blocks_are_independent():
+    body = "```\nblock one\n```\n\nProse.\n\n```\nblock two\n```\n"
+    protected, store = smoother.protect(body)
+    assert protected.count("§CODEBLOCK_") == 2
+    assert smoother.restore(protected, store) == body
 
 
 def test_extract_facts_collects_numbers_as_multiset():
@@ -134,16 +141,13 @@ def test_clean_model_output_strips_preamble_before_fence():
 
 def test_build_payload_uses_gemini_and_low_temperature():
     payload = smoother.build_payload("Proza §HEADING_0§.", rules="REGUŁY")
-    assert payload["model"] == "google/gemini-3.1-pro-preview"
+    assert payload["model"] == smoother.MODEL
     assert payload["temperature"] <= 0.4
     msgs = payload["messages"]
     assert msgs[0]["role"] == "system"
     assert "NIE zmieniaj" in msgs[0]["content"]  # twarde zakazy w systemce
     assert "Proza §HEADING_0§." in msgs[1]["content"]
     assert "REGUŁY" in msgs[1]["content"]
-
-
-RULES = ""
 
 
 def test_process_text_smoothes_body_and_keeps_frontmatter():
@@ -186,14 +190,6 @@ def test_process_text_error_when_call_raises():
     out = smoother.process_text(text, RULES, boom)
     assert out["status"] == "error"
     assert out["text"] == text
-
-
-import json
-import os
-import subprocess
-import sys
-
-SCRIPT = os.path.join(os.path.dirname(__file__), "..", "scripts", "smoother.py")
 
 
 def test_cli_errors_without_api_key(tmp_path):
