@@ -96,3 +96,12 @@ def test_diff_guard_rejects_lost_placeholder_token():
     store = {"§HEADING_0§": "## Tytuł"}
     viol = smoother.diff_guard(before, after, store)
     assert any("token" in v.lower() for v in viol)
+
+
+def test_clean_model_output_strips_markdown_fence():
+    raw = "```markdown\nTreść wygładzona.\n```"
+    assert smoother.clean_model_output(raw) == "Treść wygładzona."
+
+
+def test_clean_model_output_passes_clean_text():
+    assert smoother.clean_model_output("Czysta treść.") == "Czysta treść."

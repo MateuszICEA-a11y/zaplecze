@@ -70,6 +70,15 @@ def extract_facts(text: str) -> tuple[Counter, Counter]:
     return numbers, models
 
 
+def clean_model_output(text: str) -> str:
+    """Zdejmuje opakowanie ```fence``` i białe znaki brzegowe."""
+    t = text.strip()
+    if t.startswith("```"):
+        t = re.sub(r"^```(?:\w+)?\s*", "", t)
+        t = re.sub(r"\s*```$", "", t)
+    return t.strip()
+
+
 def diff_guard(before: str, after: str, store: dict) -> list[str]:
     """Lista naruszeń (pusta = OK). Sprawdza: (1) każdy token obecny dokładnie raz,
     (2) niezmienione multizbiory liczb i nazw modeli w prozie."""
