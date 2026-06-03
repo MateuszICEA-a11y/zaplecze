@@ -18,7 +18,9 @@ Wyjście: JSON `{file, status, detail}`. `status`:
 
 ## Gwarancje (diff-guard)
 
-Frontmatter, kod, linki, shortcode'y i nagłówki są zamrażane (placeholder) – model ich nie widzi.
+Frontmatter, kod, linki, shortcode'y, nagłówki, callouty `<aside>`, tabele, obrazy (z alt-tekstem)
+i pozostałe tagi HTML są zamrażane (placeholder) – model ich nie widzi (proza wewnątrz calloutów
+i komórek tabel nie jest więc wygładzana).
 Liczby i nazwy modeli w prozie są porównywane przed/po; każda zmiana → `rejected`.
 
 ## Testy

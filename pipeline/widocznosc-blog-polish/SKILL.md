@@ -21,7 +21,7 @@ widocznosc.ai. NIE dla newsów (inny frontmatter i reguły).
 - Wygładzanie (Gemini 3.1 Pro) → `OPENROUTER_API_KEY`, OpenRouter.
 - Fact-check Silnik B (GPT-5.5) → `OPENAI_API_KEY`, bezpośrednio OpenAI (patrz web-fact-checker).
 - Klucze WYŁĄCZNIE przez env przy wywołaniu skryptu. Nigdy do pliku/payloadu.
-- `OPENROUTER_API_KEY` w `api-credentials.md` bywa nieaktualny → poproś usera o świeży.
+- `OPENROUTER_API_KEY` w `api-credentials.md` bywa nieaktualny → poproś usera o świeży. Jeśli nie poda od ręki – przerwij przejazd; manifest pozwala wznowić później bez powtarzania zrobionych plików.
 
 ## 3. Kolejność paczek (per kategoria, od najmniejszej)
 
@@ -44,10 +44,12 @@ OPENROUTER_API_KEY="$OPENROUTER_API_KEY" \
 python3 pipeline/widocznosc-blog-polish/scripts/smoother.py <ścieżka.md>
 ```
 
+Przy pierwszym pliku kategorii dorzuć `--dry-run` (plik nie jest nadpisywany, tylko raportuje wynik) – sanity-check zanim puścisz realny zapis.
+
 Odczytaj JSON ze stdout (`status`: smoothed/unchanged/rejected/error). Skrypt zwraca kod wyjścia `2` przy `error`, `0` w pozostałych przypadkach.
 - `smoothed` → plik nadpisany, wejdzie do commita paczki.
 - `rejected`/`error` → oryginał nietknięty; dopisz do listy **needs-manual** z polem `detail`.
-- Po każdym pliku zaktualizuj manifest (`state`).
+- Po każdym pliku zaktualizuj manifest. Wpis MUSI mieć strukturę `{"<ścieżka>": {"hash": state.content_hash(<treść pliku>), "status": <status>}}` – `should_skip` sprawdza klucz `hash`, więc inny kształt zepsuje wznawianie. Zapis: `st = state.load_state(PATH); st[plik] = {...}; state.save_state(PATH, st)`, gdzie `PATH = "pipeline/.widocznosc-blog-polish-state.json"`.
 
 Po przejściu paczki:
 1. Pokaż `git diff --stat <ścieżki paczki>`.
@@ -86,4 +88,4 @@ Dopisz do `portals/widocznosc.ai/podstrony-review/blog-polish-factcheck-2026-06-
 - Nie rusza newsów ani buildu Astro.
 - Nie commituje `git add -A`.
 - Nie nanosi faktów inaczej niż przez logikę `reconcile()` web-fact-checkera.
-- Nie wygładza nagłówków, kodu, linków, shortcode'ów (są zamrożone w smootherze).
+- Nie wygładza nagłówków, kodu, linków, shortcode'ów, **calloutów `<aside>`, tabel, obrazów (z alt-tekstem) ani innych tagów HTML** – wszystkie są zamrożone w smootherze (model ich nie widzi). Proza wewnątrz calloutów/komórek tabel NIE jest więc wygładzana; jeśli tego potrzebujesz, zrób to ręcznie osobno.
