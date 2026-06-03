@@ -38,5 +38,12 @@
     "slug": "gemini-3-5-flash-agentowy-model-google",
     "source": "manual",
     "source_name": "Google (blog)"
+  },
+  {
+    "title": "Android dostaje wykrywanie podszywania się w połączeniach",
+    "date": "2026-06-03",
+    "slug": "android-dostaje-wykrywanie-podszywania-sie-w-polaczeniach",
+    "source": "rss",
+    "source_name": "Ars Technica AI"
   }
 ]
