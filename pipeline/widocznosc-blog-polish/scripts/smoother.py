@@ -10,6 +10,7 @@ Usage:
 """
 from __future__ import annotations
 import re
+from collections import Counter
 
 FRONTMATTER_RE = re.compile(r"^---\n.*?\n---\n", re.DOTALL)
 
@@ -53,3 +54,17 @@ def restore(text: str, store: dict) -> str:
     for token, original in store.items():
         text = text.replace(token, original)
     return text
+
+
+NUMBER_RE = re.compile(r"\d[\d.,]*")
+MODEL_MENTION_RE = re.compile(
+    r"(?:GPT|Gemini|Claude|Grok|Llama|Mistral|DeepSeek|Qwen|Bard|Copilot)"
+    r"[\w.\- ]*?\d[\d.]*"
+)
+
+
+def extract_facts(text: str) -> tuple[Counter, Counter]:
+    """Multizbiory faktów do diff-guardu: (liczby, wzmianki o modelach)."""
+    numbers = Counter(NUMBER_RE.findall(text))
+    models = Counter(m.strip().rstrip(".,;:!?") for m in MODEL_MENTION_RE.findall(text))
+    return numbers, models

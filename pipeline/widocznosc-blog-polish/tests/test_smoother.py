@@ -48,3 +48,24 @@ def test_protect_tokens_are_unique():
     body = "## A\n\n## B\n\nProza.\n"
     protected, store = smoother.protect(body)
     assert len(store) == len(set(store.keys()))
+
+
+from collections import Counter
+
+
+def test_extract_facts_collects_numbers_as_multiset():
+    nums, _ = smoother.extract_facts("Cena $1,50 za 1M tokenów, wynik 87,6%.")
+    assert nums == Counter(["1,50", "1", "87,6"])
+
+
+def test_extract_facts_collects_model_mentions():
+    _, models = smoother.extract_facts(
+        "Porównujemy GPT-5.5, Gemini 3.5 oraz Claude Opus 4.7."
+    )
+    assert models == Counter(["GPT-5.5", "Gemini 3.5", "Claude Opus 4.7"])
+
+
+def test_extract_facts_ignores_plain_prose():
+    nums, models = smoother.extract_facts("To jest zwykłe zdanie bez danych.")
+    assert nums == Counter()
+    assert models == Counter()
