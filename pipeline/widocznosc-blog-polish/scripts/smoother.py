@@ -30,11 +30,16 @@ def split_frontmatter(text: str) -> tuple[str, str]:
     return m.group(0), text[m.end():]
 
 
-# (kind, regex) – stosowane w tej kolejności
+# (kind, regex) – stosowane w tej kolejności. Kolejność jest istotna:
+# najpierw bloki (kod, callout), potem wiersze tabel, potem konstrukcje inline.
 PROTECT_PATTERNS = [
     ("CODEBLOCK", re.compile(r"```.*?```", re.DOTALL)),
+    ("CALLOUT", re.compile(r"<aside\b[^>]*>.*?</aside>", re.DOTALL | re.IGNORECASE)),
     ("HEADING", re.compile(r"^#{1,6}[^\n]*$", re.MULTILINE)),
+    ("TABLEROW", re.compile(r"^[ \t]*\|.*\|[ \t]*$", re.MULTILINE)),
     ("SHORTCODE", re.compile(r"\{\{[<%].*?[%>]\}\}", re.DOTALL)),
+    ("IMAGE", re.compile(r"!\[[^\]]*\]\([^)]+\)")),
+    ("HTMLTAG", re.compile(r"</?[a-zA-Z][^>]*>")),
     ("INLINECODE", re.compile(r"`[^`\n]+`")),
     ("MDLINK", re.compile(r"\]\([^)]+\)")),
     ("URL", re.compile(r"https?://\S+")),

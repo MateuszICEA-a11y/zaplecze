@@ -191,6 +191,39 @@ def test_process_text_error_when_call_raises():
     assert out["text"] == text
 
 
+def test_protect_freezes_html_callout_block():
+    body = '<aside class="callout-fact">\n<p>Model 3.5 jest szybki.</p>\n</aside>\n\nProza.\n'
+    protected, store = smoother.protect(body)
+    assert "callout-fact" not in protected
+    assert "<aside" not in protected
+    assert smoother.restore(protected, store) == body
+
+
+def test_protect_freezes_table_rows():
+    body = "| Model | Cena |\n|-------|------|\n| GPT-5.5 | $9 |\n\nProza tekstowa.\n"
+    protected, store = smoother.protect(body)
+    assert "GPT-5.5" not in protected         # cały wiersz tabeli zamrożony
+    assert "Proza tekstowa." in protected     # proza poza tabelą nietknięta
+    assert smoother.restore(protected, store) == body
+
+
+def test_protect_freezes_full_image_including_alt():
+    body = "Patrz ![Wykres GPT-5.5 na MMLU](../img/x.webp) tutaj.\n"
+    protected, store = smoother.protect(body)
+    assert "GPT-5.5" not in protected          # alt zamrożony
+    assert "../img/x.webp" not in protected
+    assert smoother.restore(protected, store) == body
+
+
+def test_protect_freezes_stray_html_tags():
+    body = "To jest <strong>ważne</strong> zdanie.\n"
+    protected, store = smoother.protect(body)
+    assert "<strong>" not in protected
+    assert "</strong>" not in protected
+    assert "ważne" in protected               # treść między tagami zostaje (proza)
+    assert smoother.restore(protected, store) == body
+
+
 def test_cli_errors_without_api_key(tmp_path):
     f = tmp_path / "a.md"
     f.write_text("---\ntitle: 'X'\n---\nProza.\n", encoding="utf-8")
