@@ -20,3 +20,36 @@ def split_frontmatter(text: str) -> tuple[str, str]:
     if not m:
         return "", text
     return m.group(0), text[m.end():]
+
+
+# (kind, regex) – stosowane w tej kolejności
+PROTECT_PATTERNS = [
+    ("CODEBLOCK", re.compile(r"```.*?```", re.DOTALL)),
+    ("HEADING", re.compile(r"^#{1,6}[^\n]*$", re.MULTILINE)),
+    ("SHORTCODE", re.compile(r"\{\{[<%].*?[%>]\}\}", re.DOTALL)),
+    ("INLINECODE", re.compile(r"`[^`\n]+`")),
+    ("MDLINK", re.compile(r"\]\([^)]+\)")),
+    ("URL", re.compile(r"https?://\S+")),
+]
+
+
+def protect(body: str) -> tuple[str, dict]:
+    """Podmienia zamrożone konstrukcje na unikalne tokeny §KIND_N§. Zwraca (tekst, store)."""
+    store: dict[str, str] = {}
+    counter = [0]
+    text = body
+    for kind, pat in PROTECT_PATTERNS:
+        def repl(m: re.Match) -> str:
+            token = f"§{kind}_{counter[0]}§"
+            store[token] = m.group(0)
+            counter[0] += 1
+            return token
+        text = pat.sub(repl, text)
+    return text, store
+
+
+def restore(text: str, store: dict) -> str:
+    """Przywraca oryginały w miejsce tokenów."""
+    for token, original in store.items():
+        text = text.replace(token, original)
+    return text
