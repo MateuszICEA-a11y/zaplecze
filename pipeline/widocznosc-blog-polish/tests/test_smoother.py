@@ -224,6 +224,26 @@ def test_protect_freezes_stray_html_tags():
     assert smoother.restore(protected, store) == body
 
 
+def test_protect_freezes_ordered_list_markers():
+    body = "1. Pierwszy punkt.\n2. Drugi punkt.\n\nProza.\n"
+    protected, store = smoother.protect(body)
+    assert "1. " not in protected
+    assert "2. " not in protected
+    assert any(v == "1. " for v in store.values())
+    assert smoother.restore(protected, store) == body
+
+
+def test_diff_guard_ignores_trailing_punctuation_around_numbers():
+    # "222" vs "222," to różnica interpunkcji, nie faktu
+    assert smoother.diff_guard("Liczba 222 rośnie", "Liczba 222, rośnie", {}) == []
+
+
+def test_extract_facts_model_mention_does_not_span_clause():
+    # gołe „GPT" (bez wersji) nie może złapać odległej liczby przez cudzysłów/przecinek
+    _, models = smoother.extract_facts('To jak „GPT" kontra raport „było 14 wizyt".')
+    assert models == Counter()
+
+
 def test_cli_errors_without_api_key(tmp_path):
     f = tmp_path / "a.md"
     f.write_text("---\ntitle: 'X'\n---\nProza.\n", encoding="utf-8")

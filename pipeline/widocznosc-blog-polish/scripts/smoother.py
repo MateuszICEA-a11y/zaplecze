@@ -36,6 +36,7 @@ PROTECT_PATTERNS = [
     ("CODEBLOCK", re.compile(r"```.*?```", re.DOTALL)),
     ("CALLOUT", re.compile(r"<aside\b[^>]*>.*?</aside>", re.DOTALL | re.IGNORECASE)),
     ("HEADING", re.compile(r"^#{1,6}[^\n]*$", re.MULTILINE)),
+    ("LISTNUM", re.compile(r"^[ \t]*\d+[.)]\s", re.MULTILINE)),
     ("TABLEROW", re.compile(r"^[ \t]*\|.*\|[ \t]*$", re.MULTILINE)),
     ("SHORTCODE", re.compile(r"\{\{[<%].*?[%>]\}\}", re.DOTALL)),
     ("IMAGE", re.compile(r"!\[[^\]]*\]\([^)]+\)")),
@@ -71,13 +72,16 @@ def restore(text: str, store: dict) -> str:
 NUMBER_RE = re.compile(r"\d[\d.,]*[%KkMBG]?")
 MODEL_MENTION_RE = re.compile(
     r"(?:GPT|Gemini|Claude|Grok|Llama|Mistral|DeepSeek|Qwen|Bard|Copilot)"
-    r"[^\n.!?]*?\d[\d.]*"
+    # wersja modelu stoi tuż przy nazwie – ograniczony odstęp (słowo/spacja/myślnik),
+    # żeby gołe „GPT" nie złapało odległej liczby w tym samym zdaniu (cudzysłowy, przecinki łamią dopasowanie)
+    r"[\w \-]{0,20}?\d[\d.]*"
 )
 
 
 def extract_facts(text: str) -> tuple[Counter, Counter]:
-    """Multizbiory faktów do diff-guardu: (liczby, wzmianki o modelach)."""
-    numbers = Counter(NUMBER_RE.findall(text))
+    """Multizbiory faktów do diff-guardu: (liczby, wzmianki o modelach).
+    Liczby normalizujemy przez ucięcie końcowej interpunkcji (".," → szum, nie zmiana faktu)."""
+    numbers = Counter(n.rstrip(".,") for n in NUMBER_RE.findall(text))
     models = Counter(m.strip().rstrip(".,;:!?") for m in MODEL_MENTION_RE.findall(text))
     return numbers, models
 
@@ -111,6 +115,8 @@ def diff_guard(before: str, after: str, store: dict) -> list[str]:
 
 API_URL = "https://openrouter.ai/api/v1/chat/completions"
 MODEL = os.environ.get("SMOOTHER_MODEL", "google/gemini-3.1-pro-preview")
+# Pełny rewrite długich wpisów (np. 19-min przewodnik) bywa wolny – 180 s to za mało.
+TIMEOUT = int(os.environ.get("SMOOTHER_TIMEOUT", "600"))
 
 SYSTEM_PROMPT = """Jesteś senior redaktorem polskojęzycznego portalu widocznosc.ai (GEO, AI Search, SEO). Dostajesz treść artykułu (proza + tokeny §...§). Zadanie: WYGŁADŹ polszczyznę i usuń kalki, zachowując sens.
 
@@ -158,7 +164,7 @@ def call_openrouter(protected_body: str, rules: str, api_key: str) -> str:
         },
         method="POST",
     )
-    with urllib.request.urlopen(req, timeout=180) as resp:
+    with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
         body = json.loads(resp.read().decode("utf-8"))
     content = body["choices"][0]["message"].get("content")
     if not content:
