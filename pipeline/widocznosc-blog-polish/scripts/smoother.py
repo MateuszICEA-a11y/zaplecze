@@ -68,3 +68,19 @@ def extract_facts(text: str) -> tuple[Counter, Counter]:
     numbers = Counter(NUMBER_RE.findall(text))
     models = Counter(m.strip().rstrip(".,;:!?") for m in MODEL_MENTION_RE.findall(text))
     return numbers, models
+
+
+def diff_guard(before: str, after: str, store: dict) -> list[str]:
+    """Lista naruszeń (pusta = OK). Sprawdza: (1) każdy token obecny dokładnie raz,
+    (2) niezmienione multizbiory liczb i nazw modeli w prozie."""
+    violations = []
+    for token in store:
+        if after.count(token) != 1:
+            violations.append(f"token zgubiony/zduplikowany: {token} ({after.count(token)}x)")
+    bn, bm = extract_facts(before)
+    an, am = extract_facts(after)
+    if bn != an:
+        violations.append(f"liczby zmienione: -{bn - an} +{an - bn}")
+    if bm != am:
+        violations.append(f"nazwy modeli zmienione: -{bm - am} +{am - bm}")
+    return violations

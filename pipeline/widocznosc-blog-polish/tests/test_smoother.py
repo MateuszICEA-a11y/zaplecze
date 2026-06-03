@@ -69,3 +69,30 @@ def test_extract_facts_ignores_plain_prose():
     nums, models = smoother.extract_facts("To jest zwykłe zdanie bez danych.")
     assert nums == Counter()
     assert models == Counter()
+
+
+def test_diff_guard_passes_when_only_prose_changed():
+    before = "Model §HEADING_0§ kosztuje 1,50 za 1M. GPT-5.5 jest szybki."
+    after = "Model §HEADING_0§ kosztuje 1,50 za 1M. GPT-5.5 działa błyskawicznie."
+    store = {"§HEADING_0§": "## X"}
+    assert smoother.diff_guard(before, after, store) == []
+
+
+def test_diff_guard_rejects_changed_number():
+    before = "Okno 65k tokenów."
+    after = "Okno 8k tokenów."
+    assert smoother.diff_guard(before, after, {}) != []
+
+
+def test_diff_guard_rejects_changed_model_version():
+    before = "To Gemini 3.5."
+    after = "To Gemini 1.5."
+    assert smoother.diff_guard(before, after, {}) != []
+
+
+def test_diff_guard_rejects_lost_placeholder_token():
+    before = "Sekcja §HEADING_0§ i proza."
+    after = "Sekcja i proza."  # token zniknął
+    store = {"§HEADING_0§": "## Tytuł"}
+    viol = smoother.diff_guard(before, after, store)
+    assert any("token" in v.lower() for v in viol)
