@@ -63,3 +63,6 @@ pipeline/fb-poster/fb-poster.log
 # web-fact-checker venv
 pipeline/web-fact-checker/.venv/
 pipeline/web-fact-checker/.env
+
+# widocznosc-blog-polish – manifest przejazdu (runtime, nie wersjonujemy)
+pipeline/.widocznosc-blog-polish-state.json
