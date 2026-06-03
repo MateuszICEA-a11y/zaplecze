@@ -12,6 +12,9 @@ from __future__ import annotations
 import re
 import json
 import os
+import os.path
+import sys
+import argparse
 import urllib.request
 import urllib.error
 from collections import Counter
@@ -177,3 +180,50 @@ def process_text(text: str, rules: str, call_fn) -> dict:
     if new_text == text:
         return {"status": "unchanged", "text": text, "detail": ""}
     return {"status": "smoothed", "text": new_text, "detail": ""}
+
+
+RULES_PATH = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
+    "portals", "widocznosc.ai", "docs", "writing-rules.md",
+)
+
+
+def load_rules() -> str:
+    if not os.path.exists(RULES_PATH):
+        return ""
+    with open(RULES_PATH, "r", encoding="utf-8") as f:
+        return f.read()
+
+
+def main() -> int:
+    p = argparse.ArgumentParser(description="widocznosc-blog-polish smoother")
+    p.add_argument("path", help="Ścieżka do wpisu .md")
+    p.add_argument("--dry-run", action="store_true",
+                   help="Nie zapisuje pliku, tylko raportuje wynik")
+    args = p.parse_args()
+
+    api_key = os.environ.get("OPENROUTER_API_KEY", "").strip()
+    if not api_key:
+        print("ERROR: ustaw OPENROUTER_API_KEY", file=sys.stderr)
+        return 1
+    if not os.path.exists(args.path):
+        print(f"ERROR: pliku nie znaleziono: {args.path}", file=sys.stderr)
+        return 1
+
+    with open(args.path, "r", encoding="utf-8") as f:
+        text = f.read()
+    rules = load_rules()
+
+    result = process_text(text, rules, lambda b, r: call_openrouter(b, r, api_key))
+
+    if result["status"] == "smoothed" and not args.dry_run:
+        with open(args.path, "w", encoding="utf-8") as f:
+            f.write(result["text"])
+
+    print(json.dumps({"file": args.path, "status": result["status"],
+                      "detail": result["detail"]}, ensure_ascii=False))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

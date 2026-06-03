@@ -161,3 +161,29 @@ def test_process_text_error_when_call_raises():
     out = smoother.process_text(text, RULES, boom)
     assert out["status"] == "error"
     assert out["text"] == text
+
+
+import json
+import os
+import subprocess
+import sys
+
+SCRIPT = os.path.join(os.path.dirname(__file__), "..", "scripts", "smoother.py")
+
+
+def test_cli_errors_without_api_key(tmp_path):
+    f = tmp_path / "a.md"
+    f.write_text("---\ntitle: 'X'\n---\nProza.\n", encoding="utf-8")
+    env = {k: v for k, v in os.environ.items() if k != "OPENROUTER_API_KEY"}
+    r = subprocess.run([sys.executable, SCRIPT, str(f)],
+                       capture_output=True, text=True, env=env)
+    assert r.returncode == 1
+    assert "OPENROUTER_API_KEY" in r.stderr
+
+
+def test_cli_missing_file_returns_error(tmp_path):
+    env = {**os.environ, "OPENROUTER_API_KEY": "x"}
+    r = subprocess.run([sys.executable, SCRIPT, str(tmp_path / "nope.md")],
+                       capture_output=True, text=True, env=env)
+    assert r.returncode == 1
+    assert "nie znaleziono" in r.stderr.lower()
