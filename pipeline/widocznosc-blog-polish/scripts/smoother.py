@@ -10,6 +10,10 @@ Usage:
 """
 from __future__ import annotations
 import re
+import json
+import os
+import urllib.request
+import urllib.error
 from collections import Counter
 
 FRONTMATTER_RE = re.compile(r"^---\n.*?\n---\n", re.DOTALL)
@@ -93,3 +97,60 @@ def diff_guard(before: str, after: str, store: dict) -> list[str]:
     if bm != am:
         violations.append(f"nazwy modeli zmienione: -{bm - am} +{am - bm}")
     return violations
+
+
+API_URL = "https://openrouter.ai/api/v1/chat/completions"
+MODEL = os.environ.get("SMOOTHER_MODEL", "google/gemini-3.1-pro-preview")
+
+SYSTEM_PROMPT = """Jesteś senior redaktorem polskojęzycznego portalu widocznosc.ai (GEO, AI Search, SEO). Dostajesz treść artykułu (proza + tokeny §...§). Zadanie: WYGŁADŹ polszczyznę i usuń kalki, zachowując sens.
+
+ROBISZ:
+- usuwasz anglicyzmy i kalki leksykalne, poprawiasz nienaturalne kolokacje (słownik w regułach poniżej),
+- poprawiasz fleksję, szyk, interpunkcję, rytm zdań (burstiness),
+- usuwasz AI-fingerprinty z blacklisty w regułach.
+
+CZEGO BEZWZGLĘDNIE NIE WOLNO:
+- NIE zmieniaj ŻADNYCH liczb, dat, cen, procentów, okien kontekstu (np. 1M, 65k, $1,50, 87,6%),
+- NIE zmieniaj nazw modeli ani wersji (GPT-5.5, Gemini 3.5, Claude Opus 4.7),
+- NIE ruszaj tokenów §...§ – przepisz je DOKŁADNIE i w tym samym miejscu (to kod, linki, nagłówki, shortcode'y),
+- NIE dodawaj, nie usuwaj ani nie przestawiaj treści; nie dopisuj wstępów ani podsumowań,
+- NIE zmieniaj sensu zdań zawierających dane liczbowe lub faktyczne.
+
+ZWRÓĆ WYŁĄCZNIE przepisaną treść – bez komentarza, bez ```fence```, bez nagłówka typu „Oto poprawiona wersja"."""
+
+
+def build_payload(protected_body: str, rules: str) -> dict:
+    user_msg = (
+        f"# Reguły redakcyjne (kontekst)\n\n{rules[:8000]}\n\n"
+        f"# Treść do wygładzenia\n\n{protected_body}\n\n"
+        "Zwróć WYŁĄCZNIE wygładzoną treść."
+    )
+    return {
+        "model": MODEL,
+        "messages": [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": user_msg},
+        ],
+        "temperature": 0.3,
+    }
+
+
+def call_openrouter(protected_body: str, rules: str, api_key: str) -> str:
+    """Zwraca surową treść z modelu (przed clean_model_output)."""
+    req = urllib.request.Request(
+        API_URL,
+        data=json.dumps(build_payload(protected_body, rules)).encode("utf-8"),
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+            "HTTP-Referer": "https://widocznosc.ai",
+            "X-Title": "widocznosc.ai blog polish",
+        },
+        method="POST",
+    )
+    with urllib.request.urlopen(req, timeout=180) as resp:
+        body = json.loads(resp.read().decode("utf-8"))
+    content = body["choices"][0]["message"].get("content")
+    if not content:
+        raise RuntimeError(f"Pusta odpowiedź modelu: {json.dumps(body)[:300]}")
+    return content

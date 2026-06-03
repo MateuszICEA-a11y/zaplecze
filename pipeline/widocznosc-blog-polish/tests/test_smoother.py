@@ -105,3 +105,14 @@ def test_clean_model_output_strips_markdown_fence():
 
 def test_clean_model_output_passes_clean_text():
     assert smoother.clean_model_output("Czysta treść.") == "Czysta treść."
+
+
+def test_build_payload_uses_gemini_and_low_temperature():
+    payload = smoother.build_payload("Proza §HEADING_0§.", rules="REGUŁY")
+    assert payload["model"] == "google/gemini-3.1-pro-preview"
+    assert payload["temperature"] <= 0.4
+    msgs = payload["messages"]
+    assert msgs[0]["role"] == "system"
+    assert "NIE zmieniaj" in msgs[0]["content"]  # twarde zakazy w systemce
+    assert "Proza §HEADING_0§." in msgs[1]["content"]
+    assert "REGUŁY" in msgs[1]["content"]
