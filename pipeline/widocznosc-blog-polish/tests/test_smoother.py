@@ -1,4 +1,15 @@
+import json
+import os
+import subprocess
+import sys
+from collections import Counter
+
 import smoother
+
+
+def test_rules_path_points_to_existing_file():
+    assert smoother.RULES_PATH.endswith("portals/widocznosc.ai/docs/writing-rules.md")
+    assert os.path.exists(smoother.RULES_PATH)
 
 
 def test_split_frontmatter_separates_block_and_body():
@@ -55,7 +66,7 @@ from collections import Counter
 
 def test_extract_facts_collects_numbers_as_multiset():
     nums, _ = smoother.extract_facts("Cena $1,50 za 1M tokenów, wynik 87,6%.")
-    assert nums == Counter(["1,50", "1", "87,6"])
+    assert nums == Counter(["1,50", "1M", "87,6%"])
 
 
 def test_extract_facts_collects_model_mentions():
@@ -63,6 +74,11 @@ def test_extract_facts_collects_model_mentions():
         "Porównujemy GPT-5.5, Gemini 3.5 oraz Claude Opus 4.7."
     )
     assert models == Counter(["GPT-5.5", "Gemini 3.5", "Claude Opus 4.7"])
+
+
+def test_extract_facts_model_mention_does_not_bridge_sentences():
+    _, models = smoother.extract_facts("Gemini jest szybki. Gemini 3.5 też.")
+    assert models == Counter(["Gemini 3.5"])
 
 
 def test_extract_facts_ignores_plain_prose():
@@ -82,6 +98,10 @@ def test_diff_guard_rejects_changed_number():
     before = "Okno 65k tokenów."
     after = "Okno 8k tokenów."
     assert smoother.diff_guard(before, after, {}) != []
+
+
+def test_diff_guard_rejects_changed_unit_number():
+    assert smoother.diff_guard("Okno 1M tokenów.", "Okno 1K tokenów.", {}) != []
 
 
 def test_diff_guard_rejects_changed_model_version():
@@ -105,6 +125,11 @@ def test_clean_model_output_strips_markdown_fence():
 
 def test_clean_model_output_passes_clean_text():
     assert smoother.clean_model_output("Czysta treść.") == "Czysta treść."
+
+
+def test_clean_model_output_strips_preamble_before_fence():
+    raw = "Oto poprawiona wersja:\n```\nTreść.\n```"
+    assert smoother.clean_model_output(raw) == "Treść."
 
 
 def test_build_payload_uses_gemini_and_low_temperature():

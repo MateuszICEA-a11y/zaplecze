@@ -16,7 +16,7 @@ import os.path
 import sys
 import argparse
 import urllib.request
-import urllib.error
+from pathlib import Path
 from collections import Counter
 
 FRONTMATTER_RE = re.compile(r"^---\n.*?\n---\n", re.DOTALL)
@@ -63,10 +63,10 @@ def restore(text: str, store: dict) -> str:
     return text
 
 
-NUMBER_RE = re.compile(r"\d[\d.,]*")
+NUMBER_RE = re.compile(r"\d[\d.,]*[%KkMBG]?")
 MODEL_MENTION_RE = re.compile(
     r"(?:GPT|Gemini|Claude|Grok|Llama|Mistral|DeepSeek|Qwen|Bard|Copilot)"
-    r"[\w.\- ]*?\d[\d.]*"
+    r"[^\n.!?]*?\d[\d.]*"
 )
 
 
@@ -78,9 +78,11 @@ def extract_facts(text: str) -> tuple[Counter, Counter]:
 
 
 def clean_model_output(text: str) -> str:
-    """Zdejmuje opakowanie ```fence``` i białe znaki brzegowe."""
+    """Zdejmuje ewentualną preambułę przed ```fence```, samo opakowanie i białe znaki brzegowe.
+    (Realny kod artykułu jest placeholderowany, więc każde ``` w odpowiedzi to wrapper modelu.)"""
     t = text.strip()
-    if t.startswith("```"):
+    if "```" in t:
+        t = t[t.index("```"):]
         t = re.sub(r"^```(?:\w+)?\s*", "", t)
         t = re.sub(r"\s*```$", "", t)
     return t.strip()
@@ -182,9 +184,9 @@ def process_text(text: str, rules: str, call_fn) -> dict:
     return {"status": "smoothed", "text": new_text, "detail": ""}
 
 
-RULES_PATH = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
-    "portals", "widocznosc.ai", "docs", "writing-rules.md",
+RULES_PATH = str(
+    Path(__file__).resolve().parents[3]
+    / "portals" / "widocznosc.ai" / "docs" / "writing-rules.md"
 )
 
 
@@ -222,7 +224,7 @@ def main() -> int:
 
     print(json.dumps({"file": args.path, "status": result["status"],
                       "detail": result["detail"]}, ensure_ascii=False))
-    return 0
+    return 2 if result["status"] == "error" else 0
 
 
 if __name__ == "__main__":
