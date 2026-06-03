@@ -116,3 +116,48 @@ def test_build_payload_uses_gemini_and_low_temperature():
     assert "NIE zmieniaj" in msgs[0]["content"]  # twarde zakazy w systemce
     assert "Proza §HEADING_0§." in msgs[1]["content"]
     assert "REGUŁY" in msgs[1]["content"]
+
+
+RULES = ""
+
+
+def test_process_text_smoothes_body_and_keeps_frontmatter():
+    text = "---\ntitle: 'X'\n---\nTen tekst jest dedykowany dla 65k tokenów.\n"
+
+    def fake_call(protected_body, rules):
+        # model wygładza prozę, zostawia tokeny i liczby
+        return protected_body.replace("dedykowany dla", "przeznaczony dla")
+
+    out = smoother.process_text(text, RULES, fake_call)
+    assert out["status"] == "smoothed"
+    assert out["text"].startswith("---\ntitle: 'X'\n---\n")
+    assert "przeznaczony dla 65k tokenów" in out["text"]
+
+
+def test_process_text_rejects_when_model_changes_number():
+    text = "---\ntitle: 'X'\n---\nOkno 65k tokenów.\n"
+
+    def bad_call(protected_body, rules):
+        return protected_body.replace("65k", "8k")
+
+    out = smoother.process_text(text, RULES, bad_call)
+    assert out["status"] == "rejected"
+    assert "liczby" in out["detail"]
+    assert out["text"] == text  # oryginał nietknięty
+
+
+def test_process_text_unchanged_when_model_returns_same():
+    text = "---\ntitle: 'X'\n---\nProza bez zmian.\n"
+    out = smoother.process_text(text, RULES, lambda b, r: b)
+    assert out["status"] == "unchanged"
+
+
+def test_process_text_error_when_call_raises():
+    text = "---\ntitle: 'X'\n---\nProza.\n"
+
+    def boom(b, r):
+        raise RuntimeError("timeout")
+
+    out = smoother.process_text(text, RULES, boom)
+    assert out["status"] == "error"
+    assert out["text"] == text

@@ -154,3 +154,26 @@ def call_openrouter(protected_body: str, rules: str, api_key: str) -> str:
     if not content:
         raise RuntimeError(f"Pusta odpowiedź modelu: {json.dumps(body)[:300]}")
     return content
+
+
+def process_text(text: str, rules: str, call_fn) -> dict:
+    """Pełny potok jednego pliku. call_fn(protected_body, rules) -> surowy tekst modelu.
+    Zwraca {status, text, detail}. Przy rejected/error zwraca oryginał w 'text'."""
+    fm, body = split_frontmatter(text)
+    protected, store = protect(body)
+    try:
+        raw = call_fn(protected, rules)
+    except Exception as e:  # noqa: BLE001 – nie wywalaj całej paczki
+        return {"status": "error", "text": text, "detail": str(e)}
+    cleaned = clean_model_output(raw)
+    # Przywróć końcowy newline usunięty przez clean_model_output (tekst pliku zawsze go ma)
+    if cleaned and not cleaned.endswith("\n"):
+        cleaned += "\n"
+    violations = diff_guard(protected, cleaned, store)
+    if violations:
+        return {"status": "rejected", "text": text, "detail": "; ".join(violations)}
+    new_body = restore(cleaned, store)
+    new_text = fm + new_body
+    if new_text == text:
+        return {"status": "unchanged", "text": text, "detail": ""}
+    return {"status": "smoothed", "text": new_text, "detail": ""}
