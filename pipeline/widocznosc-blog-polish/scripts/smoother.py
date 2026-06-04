@@ -142,6 +142,11 @@ ZACHOWANIE STRUKTURY (twardo):
 CYTATY (twardo):
 - Tekst w cudzysłowie to CYTAT. Zostaw go DOSŁOWNIE: w oryginalnym języku (również angielskim, np. „brand mentions are the new backlinks"), w cudzysłowie, słowo w słowo. NIE tłumacz, NIE parafrazuj, NIE zdejmuj cudzysłowu. Możesz poprawić wyłącznie polską prozę WOKÓŁ cytatu.
 
+TERMINOLOGIA I GLOSY (twardo):
+- ZACHOWAJ KAŻDY nawias z objaśnieniem, tłumaczeniem, skrótem lub przykładem DOSŁOWNIE – nie usuwaj go. Dotyczy to m.in. polskich tłumaczeń terminów („few-shot (tryb kilku przykładów)"), angielskich oryginałów („wyrównywanie (alignment)"), skrótów („drzewo myśli (ToT)") i przykładów w nawiasie („dane z zewnątrz (e-maile, dokumenty, strony)"). Te glosy są celowe (treść dydaktyczna) – usunięcie ich to BŁĄD.
+- NIE polszcz ani nie podmieniaj ustalonych terminów technicznych i fraz kluczowych. Zostaw w oryginalnej formie m.in.: „prompt engineering", „few-shot", „zero-shot", „Chain-of-Thought", „query fan-out", „Share of Voice", „RAG", „embedding". Usuwanie anglicyzmów dotyczy POTOCZNYCH kalk w prozie (np. „dedykowany", „aplikować"), a NIE nazw technik, metryk i pojęć branżowych.
+- Wygładzasz prozę WOKÓŁ terminów, nawiasów i glos – ich zawartości nie ruszasz.
+
 ZWRÓĆ WYŁĄCZNIE przepisaną treść – bez komentarza, bez ```fence```, bez nagłówka typu „Oto poprawiona wersja"."""
 
 
