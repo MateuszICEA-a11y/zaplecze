@@ -15,55 +15,54 @@ pillar: 'rag'
 intent: 'INFO'
 level: 'L2'
 ---
-
-Kiedy system RAG (Retrieval-Augmented Generation, czyli generowanie wspomagane wyszukiwaniem) odpowiada na zapytanie użytkownika, nie przeszukuje tekstu jak wyszukiwarka szukająca słów kluczowych. Zamienia zarówno zapytanie, jak i każdy fragment dokumentu na ciąg liczb – wektor osadzony (embedding) – i szuka tych wektorów, które leżą najbliżej siebie w matematycznej przestrzeni. To właśnie w tym kroku decyduje się o tym, czy Twoja strona trafi do odpowiedzi LLM-a, czy zostanie pominięta. **Zrozumienie embeddingów nie jest wyłącznie sprawą inżynierów – każdy, kto tworzy treści pod AI Search, powinien wiedzieć, jak komputery mierzą znaczenie.**
+Kiedy system RAG (Retrieval-Augmented Generation, czyli generowanie wspomagane wyszukiwaniem) odpowiada na zapytanie użytkownika, nie przeszukuje tekstu jak klasyczna wyszukiwarka. Zamienia zapytanie oraz każdy fragment dokumentu na ciąg liczb – wektor osadzony (embedding). Następnie szuka wektorów leżących najbliżej siebie w matematycznej przestrzeni. To właśnie ten moment decyduje o być albo nie być Twojej strony w odpowiedzi LLM-a. **Zrozumienie embeddingów nie jest wyłącznie sprawą inżynierów – każdy, kto tworzy treści pod AI Search, powinien wiedzieć, jak komputery mierzą znaczenie.**
 
 ## Słowa jako punkty w przestrzeni – czym jest embedding
 
-Tradycyjne podejście do przetwarzania tekstu traktowało każde słowo jako niezależny symbol. „Samochód" i „auto" były dla komputera równie odległe, co „samochód" i „ziemniak". Nie było żadnej geometrii znaczeń – tylko lista niezwiązanych ze sobą identyfikatorów.
+Tradycyjne przetwarzanie tekstu traktowało każde słowo jako niezależny symbol. „Samochód" i „auto" były dla maszyny równie odległe, co „samochód" i „ziemniak". Brakowało geometrii znaczeń – istniała tylko płaska lista niezwiązanych ze sobą identyfikatorów.
 
-Embeddingi zmieniają tę logikę fundamentalnie. Każde słowo, zdanie lub cały fragment dokumentu jest reprezentowane jako punkt w przestrzeni o setkach lub tysiącach wymiarów. **Słowa o podobnym znaczeniu lądują blisko siebie – odległość geometryczna odpowiada bliskości semantycznej.** „Samochód", „auto" i „pojazd" tworzą sąsiedni klaster. „Ziemniak" jest geometrycznie daleko.
+Embeddingi zmieniają tę logikę fundamentalnie. Każde słowo, zdanie lub fragment dokumentu staje się punktem w przestrzeni o setkach lub tysiącach wymiarów. **Słowa o podobnym znaczeniu lądują blisko siebie – odległość geometryczna odpowiada bliskości semantycznej.** „Samochód", „auto" i „pojazd" tworzą sąsiedni klaster. „Ziemniak" leży geometrycznie daleko.
 
-Technicznie rzecz biorąc, embedding to po prostu lista liczb zmiennoprzecinkowych – np. `[0.23, -0.87, 0.11, ...]` o długości 768 lub 1536 wartości, zależnie od modelu. Technika ta, znana w literaturze jako [osadzanie słów](https://pl.wikipedia.org/wiki/Word_embedding), stała się fundamentem współczesnego przetwarzania języka naturalnego (NLP).
+W praktyce embedding to po prostu lista liczb zmiennoprzecinkowych – na przykład `[0.23, -0.87, 0.11, ...]` o długości 768 lub 1536 wartości, zależnie od modelu. Ta technika, znana w literaturze jako [osadzanie słów](https://pl.wikipedia.org/wiki/Word_embedding), stanowi dziś absolutny fundament współczesnego przetwarzania języka naturalnego (NLP).
 
-Najważniejsze pojęcia, które pojawiają się w rozmowach o embeddingach:
+Najważniejsze pojęcia w kontekście embeddingów to
 
 - **Wektor osadzony (embedding)** – numeryczna reprezentacja tekstu jako punkt w przestrzeni wielowymiarowej
-- **Wymiarowość** – liczba współrzędnych wektora; typowe modele produkcyjne używają 768–3072 wymiarów
-- **Podobieństwo kosinusowe** – miara bliskości dwóch wektorów; wartość 1,0 oznacza identyczne kierunki, 0,0 – brak związku
+- **Wymiarowość** – liczba współrzędnych wektora, gdzie typowe modele produkcyjne używają 768–3072 wymiarów
+- **Podobieństwo kosinusowe** – miara bliskości dwóch wektorów, w której wartość 1,0 oznacza identyczne kierunki, a 0,0 brak związku
 - **Przestrzeń wektorowa** – matematyczny świat, w którym żyją wszystkie embeddingi danego modelu
-- **Model embeddingowy** – sieć neuronowa, która zamienia tekst na wektory; popularne przykłady to `text-embedding-3-large` od OpenAI czy modele z rodziny E5
+- **Model embeddingowy** – sieć neuronowa zamieniająca tekst na wektory, której popularne przykłady to `text-embedding-3-large` od OpenAI czy modele z rodziny E5
 
 ## Skąd model wie, co znaczy słowo?
 
-Modele embeddingowe nie są programowane ręcznie przez inżynierów, którzy przypisywaliby każdemu słowu listę liczb. Uczą się znaczeń z danych – z miliardów zdań pobranych z internetu, książek i artykułów.
+Inżynierowie nie programują modeli embeddingowych ręcznie. Nikt nie przypisuje każdemu słowu gotowej listy liczb. Systemy te uczą się znaczeń z danych – z miliardów zdań pobranych z internetu, książek i artykułów.
 
-Zasada leżąca u podstaw to hipoteza dystrybucyjna: **wyrazy, które regularnie pojawiają się w podobnych kontekstach, mają podobne znaczenie.** „Premier" i „prezydent" rzadko stoją obok siebie, ale oba często występują w sąsiedztwie słów „rząd", „wybory", „decyzja". Model wychwytuje te wzorce i umieszcza oba słowa blisko siebie w przestrzeni wektorowej.
+U podstaw tego procesu leży hipoteza dystrybucyjna. **Wyrazy, które regularnie pojawiają się w podobnych kontekstach, mają podobne znaczenie.** „Premier" i „prezydent" rzadko stoją obok siebie, ale oba często występują w sąsiedztwie słów „rząd", „wybory", „decyzja". Model wychwytuje te wzorce i umieszcza oba pojęcia blisko siebie w przestrzeni wektorowej.
 
-Wczesne modele, takie jak Word2Vec z 2013 roku, przypisywały każdemu słowu jeden, stały wektor niezależnie od kontekstu. To rodziło problem polisemii: słowo „zamek" dostawało jeden punkt w przestrzeni, który musiał jednocześnie reprezentować twierdzę, zamek błyskawiczny i blokadę w drzwiach. Semantyczny sygnał rozmywał się.
+Wczesne modele, takie jak Word2Vec z 2013 roku, przypisywały każdemu słowu jeden stały wektor niezależnie od kontekstu. Rodziło to problem polisemii. Słowo „zamek" dostawało jeden punkt w przestrzeni, który musiał jednocześnie reprezentować twierdzę, zamek błyskawiczny i blokadę w drzwiach. Semantyczny sygnał po prostu się rozmywał.
 
-Architektura Transformer, wprowadzona przez zespół Google w 2017 roku, rozwiązała ten problem. Mechanizm samouwagi (self-attention) pozwala modelowi generować inny wektor dla tego samego słowa w zależności od całego otaczającego zdania. „Zamek" w zdaniu o średniowieczu dostaje inny embedding niż „zamek" w zdaniu o kurtce. To kontekstowe osadzanie jest fundamentem modeli takich jak BERT i GPT – i właśnie dlatego nowoczesne systemy RAG są w stanie rozumieć pytania sformułowane naturalnym językiem, a nie tylko dopasowywać słowa kluczowe.
+Architektura Transformer, wprowadzona przez zespół Google w 2017 roku, skutecznie rozwiązała ten problem. Mechanizm samouwagi (self-attention) pozwala modelowi generować inny wektor dla tego samego słowa w zależności od całego otaczającego zdania. „Zamek" w tekście o średniowieczu dostaje inny embedding niż „zamek" w opisie kurtki. **To kontekstowe osadzanie stanowi fundament modeli takich jak BERT i GPT.** Właśnie dlatego nowoczesne systemy RAG potrafią rozumieć pytania sformułowane naturalnym językiem, a nie tylko dopasowywać słowa kluczowe.
 
 ### Zdania i dokumenty – embedding nie tylko dla słów
 
-Systemy RAG nie operują na poziomie pojedynczych słów. Potrzebują wektorów dla całych fragmentów tekstu – paragrafów o długości 200–400 słów. Model embeddingowy zamienia cały taki fragment na jeden punkt w przestrzeni, który reprezentuje jego zbiorowe znaczenie.
+Systemy RAG nie operują na poziomie pojedynczych słów. Potrzebują wektorów dla całych fragmentów tekstu – zazwyczaj paragrafów o długości 200–400 słów. Model embeddingowy zamienia cały taki blok na jeden punkt w przestrzeni reprezentujący jego zbiorowe znaczenie.
 
-Tu pojawia się praktyczna pułapka. Jeśli fragment obejmuje zbyt wiele tematów naraz, jego wektor jest „uśredniony" i nie reprezentuje żadnego tematu wystarczająco mocno. Dlatego dobra strategia segmentacji tekstu (ang. chunking, czyli dzielenie dokumentu na fragmenty) jest tak ważna – o czym szczegółowo traktuje artykuł o [strategiach podziału dokumentów](/rag/chunking-strategie/).
+Tu pojawia się praktyczna pułapka. Jeśli fragment obejmuje zbyt wiele tematów naraz, jego wektor ulega uśrednieniu i nie reprezentuje żadnego zagadnienia wystarczająco mocno. Dlatego przemyślana strategia segmentacji tekstu (ang. chunking, czyli dzielenie dokumentu na fragmenty) odgrywa tak kluczową rolę – o czym szczegółowo traktuje artykuł o [strategiach podziału dokumentów](/rag/chunking-strategie/).
 
 ![Embeddingi – jak tekst staje się wektorem: tekst przechodzi przez model osadzający, zamienia się w wektor liczb i trafia do przestrzeni semantycznej, gdzie bliskość wektorów odpowiada bliskości znaczenia](../../../assets/images/infographic-rag-embeddingi.png)
 
 ## Jak RAG używa embeddingów do wyszukiwania?
 
-Kiedy użytkownik wpisuje pytanie w ChatGPT lub Perplexity, system RAG wykonuje następującą sekwencję:
+Kiedy użytkownik wpisuje pytanie w ChatGPT lub Perplexity, system RAG uruchamia określoną sekwencję kroków
 
-1. Zapytanie użytkownika jest zamieniane na wektor za pomocą tego samego modelu embeddingowego, który był użyty do indeksowania dokumentów.
-2. Baza wektorowa (np. Pinecone, Weaviate lub pgvector) przeszukuje swój indeks i zwraca kilkanaście fragmentów, których wektory są geometrycznie najbliższe wektorowi zapytania.
-3. Te fragmenty – jako surowy tekst – są przekazywane do dużego modelu językowego (LLM) razem z pytaniem.
-4. LLM generuje odpowiedź, bazując na dostarczonych fragmentach.
+1. Model embeddingowy zamienia zapytanie użytkownika na wektor, używając tego samego algorytmu co przy indeksowaniu dokumentów.
+2. Baza wektorowa (np. Pinecone, Weaviate lub pgvector) przeszukuje swój indeks i zwraca kilkanaście fragmentów o wektorach geometrycznie najbliższych wektorowi zapytania.
+3. System przekazuje te fragmenty – jako surowy tekst – do dużego modelu językowego (LLM) razem z oryginalnym pytaniem.
+4. LLM generuje ostateczną odpowiedź na bazie dostarczonych materiałów.
 
-**Twoja strona pojawia się w odpowiedzi AI tylko wtedy, gdy jej fragmenty wygrają ten konkurs podobieństwa wektorowego.** Nie wystarczy dobry ranking w Google – musi być też semantyczna bliskość między Twoją treścią a pytaniami, które użytkownicy faktycznie zadają.
+**Twoja strona pojawia się w odpowiedzi AI tylko wtedy, gdy jej fragmenty wygrają ten konkurs podobieństwa wektorowego.** Dobry ranking w tradycyjnym Google już nie wystarczy. Musi istnieć ścisła semantyczna bliskość między Twoją treścią a pytaniami faktycznie zadawanymi przez użytkowników.
 
-Pełny obraz tego, jak silniki RAG pobierają i cytują treść, znajdziesz w [przewodniku po systemach RAG](/rag/przewodnik/).
+Pełny obraz mechanizmów pobierania i cytowania treści przez silniki RAG znajdziesz w [przewodniku po systemach RAG](/rag/przewodnik/).
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
@@ -75,11 +74,11 @@ Pełny obraz tego, jak silniki RAG pobierają i cytują treść, znajdziesz w [p
 
 ## Jak mierzyć bliskość: podobieństwo kosinusowe i inne metryki?
 
-System, mając dwa wektory – zapytanie i fragment dokumentu – musi obliczyć, jak bardzo są do siebie podobne. Najpopularniejsza miara to podobieństwo kosinusowe: zamiast mierzyć odległość między punktami w przestrzeni, mierzy kosinus kąta między ich wektorami. Wartość 1,0 oznacza identyczny kierunek (pełna semantyczna zbieżność), 0,0 – prostopadłe ustawienie (brak związku), -1,0 – przeciwne kierunki.
+System dysponujący dwoma wektorami – zapytaniem i fragmentem dokumentu – musi obliczyć poziom ich podobieństwa. Najpopularniejszą miarą pozostaje podobieństwo kosinusowe. Zamiast mierzyć odległość między punktami w przestrzeni, algorytm bada kosinus kąta między ich wektorami. Wartość 1,0 oznacza identyczny kierunek (pełna semantyczna zbieżność), 0,0 wskazuje na prostopadłe ustawienie (brak związku), a -1,0 to kierunki przeciwne.
 
-Dlaczego kąt, a nie odległość? Dlatego, że krótki fragment „ChatGPT to model OpenAI" i długi artykuł o ChatGPT mogą wyznaczać ten sam kierunek w przestrzeni, ale leżeć w różnych odległościach od punktu zerowego – ponieważ dłuższy tekst generuje wektor o większej „długości". Miara kosinusowa ignoruje tę długość i porównuje tylko kierunki, co daje lepsze wyniki przy tekstach o różnej objętości.
+Dlaczego kąt, a nie odległość? Krótki fragment „ChatGPT to model OpenAI" i długi artykuł o ChatGPT mogą wyznaczać ten sam kierunek w przestrzeni, ale leżeć w różnych odległościach od punktu zerowego. Dzieje się tak, ponieważ dłuższy tekst generuje wektor o większej długości. Miara kosinusowa ignoruje ten parametr i porównuje wyłącznie kierunki. Daje to znacznie lepsze wyniki przy tekstach o różnej objętości.
 
-Poniższa tabela porównuje trzy metryki używane w bazach wektorowych:
+Zestawienie trzech głównych metryk używanych w bazach wektorowych prezentuje się następująco
 
 | Metryka | Co mierzy | Kiedy stosować |
 |---|---|---|
@@ -87,35 +86,35 @@ Poniższa tabela porównuje trzy metryki używane w bazach wektorowych:
 | Iloczyn skalarny | Kąt + długość wektora | Systemy rekomendacji; wymaga znormalizowanych wektorów dla identycznych wyników co podobieństwo kosinusowe |
 | Odległość euklidesowa (L2) | Bezwzględna odległość w przestrzeni | Grupowanie (klasteryzacja), detekcja anomalii; wrażliwa na długość wektora |
 
-W praktyce większość systemów RAG używa podobieństwa kosinusowego lub iloczynu skalarnego na wektorach znormalizowanych – matematycznie dają one wtedy identyczne uszeregowanie wyników, ale iloczyn skalarny jest szybszy obliczeniowo.
+W praktyce większość systemów RAG używa podobieństwa kosinusowego lub iloczynu skalarnego na wektorach znormalizowanych. Matematycznie dają one wtedy identyczne uszeregowanie wyników, jednak iloczyn skalarny działa szybciej pod kątem obliczeniowym.
 
 ## Ograniczenia embeddingów – gdzie semantyka zawodzi
 
-Embeddingi są potężne, ale nie nieomylne. Kilka systemowych słabości bezpośrednio wpływa na to, jak systemy RAG obsługują Twoje treści.
+Embeddingi są potężne, ale zdecydowanie nie nieomylne. Kilka systemowych słabości bezpośrednio wpływa na sposób obsługi Twoich treści przez systemy RAG.
 
-**Problem polisemii jest częściowo rozwiązany przez kontekst, ale nie całkowicie.** Zdanie zbyt krótkie albo zbyt ogólne może generować wektor „uśredniony" między kilkoma znaczeniami słowa. Wynik – fragment trafia do wyników wyszukiwania dla tematów, z którymi nie ma wiele wspólnego.
+**Kontekst rozwiązuje problem polisemii jedynie częściowo.** Zbyt krótkie lub ogólne zdanie może wygenerować wektor uśredniony między kilkoma znaczeniami danego słowa. W efekcie fragment trafia do wyników wyszukiwania dla tematów, z którymi nie ma absolutnie nic wspólnego.
 
-Sarkazm i ironia to kolejna pułapka. „Uwielbiam stać w korkach" i „Korki są okropne" wyrażają to samo, ale model embeddingowy wygeneruje dla nich odmienne wektory – podobieństwo kosinusowe będzie niskie, mimo że intencja jest identyczna. Dla treści marketingowych rzadko jest to problem, ale warto wiedzieć o tym ograniczeniu.
+Kolejną pułapką pozostaje sarkazm i ironia. „Uwielbiam stać w korkach" i „Korki są okropne" wyrażają dokładnie to samo, ale model embeddingowy wygeneruje dla nich odmienne wektory. Podobieństwo kosinusowe okaże się niskie mimo identycznej intencji. W treściach marketingowych rzadko stanowi to problem, jednak warto pamiętać o tym ograniczeniu.
 
-Ważniejsza dla praktyki SEO/GEO jest trzecia słabość:
+Z perspektywy praktyki SEO/GEO znacznie ważniejsza jest trzecia słabość
 
-- **Terminologia wewnętrzna i skróty** – nazwy własne produktów, wewnętrzne kody projektów, branżowe skróty bez rozwinięcia nie mają ugruntowanej reprezentacji w modelach trenowanych na ogólnym korpusie. Wektor skrótu „WCAG 2.2" może leżeć daleko od wektora frazy „dostępność cyfrowa", mimo że to ten sam temat.
-- **Odwrócenie relacji logicznej** – „wartość pieniądza w czasie" i „pieniężna wartość czasu" mają bardzo podobne embeddingi (podobieństwo ~0,73), choć to zupełnie różne pojęcia ekonomiczne. Modele oparte wyłącznie na embeddingach mogą mylić je w wynikach.
-- **Słownictwo specjalistyczne** – teksty z dziedzin, które są słabo reprezentowane w danych treningowych, mogą być embedowane mniej precyzyjnie niż treści z popularnych nisz.
+- **Terminologia wewnętrzna i skróty** – nazwy własne produktów, wewnętrzne kody projektów czy branżowe skróty bez rozwinięcia nie mają ugruntowanej reprezentacji w modelach trenowanych na ogólnym korpusie, przez co wektor skrótu „WCAG 2.2" może leżeć daleko od wektora frazy „dostępność cyfrowa"
+- **Odwrócenie relacji logicznej** – „wartość pieniądza w czasie" i „pieniężna wartość czasu" mają bardzo podobne embeddingi (podobieństwo ~0,73), choć to zupełnie różne pojęcia ekonomiczne, a modele oparte wyłącznie na wektorach często mylą je w wynikach
+- **Słownictwo specjalistyczne** – teksty z dziedzin słabo reprezentowanych w danych treningowych są embedowane znacznie mniej precyzyjnie niż treści z popularnych nisz
 
-Dlatego zaawansowane systemy łączą wyszukiwanie wektorowe z klasycznym dopasowaniem słów kluczowych (np. BM25). Takie podejście – wyszukiwanie hybrydowe – daje lepsze wyniki niż sama semantyka, szczególnie dla zapytań z unikalnymi nazwami własnymi. Mechanizm ponownego rangowania (reranking) po wstępnym wyszukiwaniu wektorowym omówimy osobno w artykule o [rerankingu w systemach RAG](/rag/reranking/).
+Właśnie dlatego zaawansowane systemy łączą wyszukiwanie wektorowe z klasycznym dopasowaniem słów kluczowych (np. BM25). Takie podejście – znane jako wyszukiwanie hybrydowe – daje o wiele lepsze wyniki niż sama semantyka. Sprawdza się to szczególnie przy zapytaniach z unikalnymi nazwami własnymi. Mechanizm ponownego rangowania (reranking) po wstępnym wyszukiwaniu wektorowym omówimy osobno w artykule o [rerankingu w systemach RAG](/rag/reranking/).
 
 ## Co to znaczy dla treści tworzonych pod AI?
 
-Skoro LLM-y cytują fragmenty, których wektory są najbliżej wektora zapytania, ma to konkretne implikacje dla pisania treści.
+Skoro LLM-y cytują fragmenty o wektorach najbliższych wektorowi zapytania, niesie to za sobą bardzo konkretne implikacje dla procesu tworzenia treści.
 
-Każdy fragment Twojego artykułu powinien mieć „czysty" sygnał semantyczny. Akapit, który porusza trzy niezwiązane ze sobą tematy, generuje rozmyty wektor – słabo pasuje do każdego z tych tematów z osobna. Jeden akapit, jeden temat: to zasada, która ma matematyczne uzasadnienie.
+Każdy fragment Twojego artykułu musi emitować czysty sygnał semantyczny. Akapit poruszający trzy niezwiązane ze sobą tematy wygeneruje rozmyty wektor. W efekcie słabo dopasuje się do każdego z tych zagadnień z osobna. Jeden akapit to jeden temat – ta zasada ma twarde matematyczne uzasadnienie.
 
-**Terminologia musi być rozwijana.** Jeśli używasz skrótu bez wyjaśnienia, embedding tego fragmentu może nie wylądować blisko zapytań sformułowanych pełnymi słowami. Napisz raz „GEO (Generative Engine Optimization, czyli optymalizacja pod kątem generatywnych silników wyszukiwania)" – a model embeddingowy powiąże Twój fragment zarówno z zapytaniami używającymi skrótu, jak i z zapytaniami o pełną frazę.
+**Zawsze rozwijaj specjalistyczną terminologię.** Jeśli użyjesz skrótu bez wyjaśnienia, embedding tego fragmentu prawdopodobnie minie się z zapytaniami sformułowanymi pełnymi słowami. Napisz raz „GEO (Generative Engine Optimization, czyli optymalizacja pod kątem generatywnych silników wyszukiwania)". Dzięki temu model embeddingowy powiąże Twój tekst zarówno z zapytaniami o skrót, jak i o pełną frazę.
 
-Gęstość faktograficzna ma znaczenie podwójne. Liczby, daty i nazwy własne to unikalne sygnały w przestrzeni wektorowej – fragmenty je zawierające precyzyjniej trafiają w zapytania z konkretnymi danymi. **Treść ogólnikowa generuje ogólnikowy wektor i przegrywa z konkretną treścią konkurencji w konkursie podobieństwa.**
+Gęstość faktograficzna ma podwójne znaczenie. Liczby, daty i nazwy własne działają jak unikalne sygnały w przestrzeni wektorowej. Fragmenty nasycone takimi informacjami znacznie precyzyjniej trafiają w zapytania o konkretne dane. **Treść ogólnikowa generuje ogólnikowy wektor i błyskawicznie przegrywa z konkretami konkurencji w konkursie podobieństwa.**
 
-Jak sprawdzić, czy Twoje treści są zbudowane pod cytowalność w AI? Darmowy [Ocena cytowalności strony](/narzedzia/url-check/) analizuje stronę pod kątem 8 czynników wpływających na cytowalność w systemach RAG – w tym struktury semantycznej i gęstości faktograficznej.
+Jak sprawdzić gotowość własnych tekstów pod kątem cytowalności w AI? Darmowy [Ocena cytowalności strony](/narzedzia/url-check/) analizuje stronę pod kątem 8 czynników wpływających na widoczność w systemach RAG – w tym struktury semantycznej oraz gęstości faktograficznej.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/michal-ziach.avif" alt="Michał Ziach" /></div>
@@ -128,10 +127,10 @@ Jak sprawdzić, czy Twoje treści są zbudowane pod cytowalność w AI? Darmowy 
 
 ## Jak LLM-y korzystają z embeddingów wewnętrznie?
 
-Embeddingi w systemach RAG to jedno zastosowanie. Ale warto wiedzieć, że duże modele językowe używają wektorów osadzonych również wewnętrznie – to właśnie wektory są reprezentacją, na której operuje każda warstwa Transformera.
+Embeddingi w systemach RAG to tylko jedno z zastosowań. Warto wiedzieć, że duże modele językowe używają wektorów osadzonych również wewnętrznie. To właśnie one stanowią bazową reprezentację, na której operuje każda warstwa Transformera.
 
-Kiedy GPT-5 lub Claude przetwarza tekst, na wejściu każdy token (fragment słowa lub znak interpunkcyjny) jest zamieniany na wektor. Mechanizm samouwagi przekształca te wektory przez kolejne warstwy sieci, wzbogacając je o kontekst całego zdania i dokumentu. Na wyjściu każdej warstwy pojawiają się nowe wektory – coraz bardziej „przetworzone" semantycznie. Ostateczna decyzja o kolejnym tokenie wynika właśnie z tych wewnętrznych reprezentacji wektorowych.
+Kiedy GPT-5 lub Claude przetwarza tekst, na wejściu każdy token (fragment słowa lub znak interpunkcyjny) zamienia się w wektor. Mechanizm samouwagi przekształca te dane przez kolejne warstwy sieci, wzbogacając je o kontekst całego zdania i dokumentu. Na wyjściu każdej warstwy pojawiają się nowe wektory – coraz silniej przetworzone semantycznie. Ostateczna decyzja o wygenerowaniu kolejnego tokena wynika bezpośrednio z tych wewnętrznych reprezentacji.
 
-To oznacza, że embeddingi to nie tylko narzędzie do wyszukiwania podobnych dokumentów. To język, którym modele językowe myślą. **Kiedy piszesz tekst zrozumiały dla LLM-a, piszesz tekst, który generuje przejrzyste, jednoznaczne wektory na każdym poziomie przetwarzania.**
+Oznacza to, że embeddingi służą nie tylko do wyszukiwania podobnych dokumentów. To dosłownie język, w którym modele językowe myślą. **Kiedy tworzysz tekst zrozumiały dla LLM-a, piszesz materiał generujący przejrzyste, jednoznaczne wektory na każdym poziomie przetwarzania.**
 
-Szerszy kontekst tego, jak LLM-y decydują, co zacytować i skąd pobierają dane, znajdziesz w artykule o [tym, jak LLM-y cytują źródła](/geo/jak-llm-cytuja-zrodla/). A jeśli chcesz zrozumieć architekturę samych modeli i to, jakich embeddingów używa każdy z nich, [przewodnik po modelach LLM](/modele-llm/przewodnik/) daje porównawcze zestawienie.
+Szerszy kontekst decyzyjności LLM-ów w zakresie cytowania i pobierania danych znajdziesz w artykule o [tym, jak LLM-y cytują źródła](/geo/jak-llm-cytuja-zrodla/). Jeśli natomiast chcesz zrozumieć architekturę samych modeli oraz rodzaje wykorzystywanych przez nie embeddingów, [przewodnik po modelach LLM](/modele-llm/przewodnik/) dostarcza kompleksowe zestawienie porównawcze.
