@@ -124,7 +124,7 @@ Poniżej znajdziesz syntetyczne zestawienie kluczowych kryteriów. Gwiazdką ✦
 | **Okno kontekstowe (Standard)** | 32 K (Instant) / 256 K (Thinking) | 500 000 tokenów (czat) ✦ |
 | **Okno kontekstowe (Premium)** | 400 K tokenów (Pro, 200 USD) | 1 mln tokenów (Claude Code / API) ✦ |
 | **Generowanie obrazów** | GPT Image 1.5, wbudowane ✦ | Brak |
-| **Generowanie wideo** | Brak (Sora zamknięta w marcu 2026) | Brak |
+| **Generowanie wideo** | Brak (Sora zamknięta w kwietniu 2026) | Brak |
 | **Tryb głosowy** | Tak, pełnofunkcyjny ✦ | Ograniczony |
 | **Jakość kodowania (SWE-bench Verified)** | ~88,7% | ~88,6% |
 | **Jakość stylistyki (niezależne testy)** | Poprawna, schematyczna | Bardziej zróżnicowana ✦ |
