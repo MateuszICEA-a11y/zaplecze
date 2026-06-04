@@ -40,16 +40,15 @@ faq:
       <code>/llms.txt</code> → ten adres URL. Agenty AI odpytujące domenę główną zostaną prawidłowo przekierowane
       do zasobu.
 ---
-
-Plik `llms.txt` to lekki dokument w formacie [Markdown](https://pl.wikipedia.org/wiki/Markdown) umieszczany w katalogu głównym serwera, który wskazuje botom AI i autonomicznym agentom, co na Twojej stronie jest najważniejsze – bez konieczności przeczesywania setek podstron i renderowania kodu JavaScript. Standard zaproponował we wrześniu 2024 roku Jeremy Howard, współtwórca fast.ai i Answer.AI, a jego szerokie przyjęcie na rynku nastąpiło w listopadzie 2024 roku, gdy platforma Mintlify automatycznie wygenerowała te pliki dla tysięcy klientów – w tym dla firm takich jak Anthropic, Cursor i ElevenLabs. **Jeśli Twoja strona obsługuje programistów, oferuje API lub chce być gotowa na nadchodzący ekosystem autonomicznych agentów zakupowych, `llms.txt` to jeden z najtańszych kroków, jakie możesz dziś zrobić.**
+Plik `llms.txt` to lekki dokument w formacie [Markdown](https://pl.wikipedia.org/wiki/Markdown) umieszczany w katalogu głównym serwera. Wskazuje on botom AI i autonomicznym agentom, co na Twojej stronie jest najważniejsze – bez konieczności przeczesywania setek podstron i renderowania kodu JavaScript. Standard ten zaproponował we wrześniu 2024 roku Jeremy Howard, współtwórca fast.ai i Answer.AI. Prawdziwy przełom nastąpił jednak w listopadzie 2024 roku. Wtedy platforma Mintlify automatycznie wygenerowała te pliki dla tysięcy klientów, w tym dla firm takich jak Anthropic, Cursor i ElevenLabs. **Jeśli Twoja strona obsługuje programistów, oferuje API lub chce być gotowa na nadchodzący ekosystem autonomicznych agentów zakupowych, `llms.txt` to jeden z najtańszych kroków, jakie możesz dziś zrobić.**
 
 ## Czym jest `llms.txt` i dlaczego nie jest to kolejny `robots.txt`?
 
-Standard `robots.txt` liczy sobie trzy dekady. Informuje boty indeksujące, jakich ścieżek nie odwiedzać. Plik `sitemap.xml` wskazuje z kolei, które adresy URL istnieją. `llms.txt` robi coś zupełnie innego – zamiast kontrolować dostęp, dostarcza kontekst semantyczny. To mapa kluczowych zasobów witryny opisana ludzkim językiem, którą duży model językowy (LLM – *Large Language Model*) może przetworzyć błyskawicznie, zamiast pobierać i analizować kod HTML dziesiątek podstron.
+Standard `robots.txt` liczy sobie trzy dekady i informuje boty indeksujące, jakich ścieżek nie odwiedzać. Plik `sitemap.xml` wskazuje z kolei, które adresy URL w ogóle istnieją. `llms.txt` robi coś zupełnie innego. Zamiast kontrolować dostęp, dostarcza kontekst semantyczny. **To mapa kluczowych zasobów witryny opisana ludzkim językiem, którą duży model językowy (LLM – *Large Language Model*) przetwarza błyskawicznie, zamiast analizować kod HTML dziesiątek podstron.**
 
-Obok pliku głównego `/llms.txt` specyfikacja przewiduje uzupełniający plik `/llms-full.txt` – skonsolidowane repozytorium wiedzy łączące całe strony dokumentacyjne lub ofertowe w jeden liniowy dokument pozbawiony menu, CSS i reklam. Systemy RAG (*Retrieval-Augmented Generation*, czyli generowanie wspomagane wyszukiwaniem) mogą przetworzyć takie repozytorium jednym zapytaniem HTTP zamiast kilkudziesięciu.
+Obok pliku głównego `/llms.txt` specyfikacja przewiduje uzupełniający plik `/llms-full.txt`. To skonsolidowane repozytorium wiedzy. Łączy ono całe strony dokumentacyjne lub ofertowe w jeden liniowy dokument pozbawiony menu, CSS i reklam. **Systemy RAG (*Retrieval-Augmented Generation*, czyli generowanie wspomagane wyszukiwaniem) mogą przetworzyć takie repozytorium jednym zapytaniem HTTP zamiast kilkudziesięciu.**
 
-Poniższa tabela porównuje trzy standardy – warto je traktować jako uzupełniające się warstwy, a nie standardy konkurencyjne:
+Zestawienie trzech standardów pokazuje ich odmienne role – warto je traktować jako uzupełniające się warstwy, a nie konkurencyjne rozwiązania.
 
 | Atrybut | `robots.txt` | `sitemap.xml` | `llms.txt` |
 |---|---|---|---|
@@ -58,15 +57,15 @@ Poniższa tabela porównuje trzy standardy – warto je traktować jako uzupełn
 | **Cel** | Kontrola dostępu, zapobieganie przeciążeniu serwera | Kompletna lista adresów URL | Skondensowany kontekst, eliminacja szumu HTML |
 | **Status** | Standard IETF (RFC 9309) | Powszechnie akceptowany | Nieoficjalny standard społeczności |
 
-**`llms.txt` nie zastępuje żadnego ze starszych standardów** – nakłada na nie warstwę semantyczną przydatną dla maszyn wnioskujących, nie dla tradycyjnych botów indeksujących.
+**`llms.txt` nie zastępuje żadnego ze starszych standardów.** Nakłada na nie warstwę semantyczną przydatną dla maszyn wnioskujących, a nie dla tradycyjnych botów indeksujących.
 
 ![robots.txt vs sitemap.xml vs llms.txt – robots.txt mówi co bot może odwiedzić, sitemap.xml gdzie są strony, a llms.txt które treści są najważniejsze dla AI](../../../assets/images/infographic-geo-llms-txt.png)
 
 ## Jak wygląda poprawna struktura pliku?
 
-Specyfikacja opiera się na hierarchii składni Markdown z kilkoma bezwzględnymi wymogami. Dokument musi być zapisany w kodowaniu UTF-8. W pierwszej linii musi znajdować się nagłówek pierwszego stopnia – jedyny element bezwzględnie wymagany przez specyfikację. Bezpośrednio pod nim umieszcza się blok cytatu z precyzyjnym opisem działalności, bez języka marketingowego i wyolbrzymień.
+Specyfikacja opiera się na hierarchii składni Markdown i wprowadza kilka twardych wymogów. Dokument musi być zapisany w kodowaniu UTF-8. W pierwszej linii zawsze znajduje się nagłówek pierwszego stopnia – to jedyny element absolutnie wymagany przez standard. Bezpośrednio pod nim umieszczasz blok cytatu z precyzyjnym opisem działalności. **Zrezygnuj tu z języka marketingowego i wyolbrzymień.**
 
-Poniżej znajduje się przykładowa struktura dla agencji SEO oferującej narzędzia SaaS:
+Przykładowa struktura dla agencji SEO oferującej narzędzia SaaS wygląda następująco.
 
 ```markdown
 # widocznosc.ai
@@ -91,13 +90,13 @@ Poniżej znajduje się przykładowa struktura dla agencji SEO oferującej narzę
 - [Changelog narzędzi](https://widocznosc.ai/changelog): Historia aktualizacji platformy.
 ```
 
-Kilka reguł technicznych, które decydują o poprawności analizy składniowej:
+Poznaj kilka reguł technicznych, które decydują o poprawności analizy składniowej.
 
-- **Nagłówek H1** – tylko jeden, pierwsza linia pliku, to nazwa marki lub projektu.
-- **Blok cytatu (`>`)** – bezpośrednio pod H1, syntetyczny opis bez przymiotników wartościujących.
-- **Sekcje H2** – grupują linki tematycznie; każda pozycja zawiera absolutny adres HTTPS i mikrostreszczenie.
-- **Sekcja `## Opcjonalne`** – modele operujące w trybie ograniczonego okna kontekstowego pomijają linki z tej sekcji; trafiają tu polityki prywatności, changelogi, archiwa.
-- **Host-scoping** – plik umieszczony pod `example.com/llms.txt` obejmuje wyłącznie tę domenę; subdomeny wymagają osobnych plików.
+- **Nagłówek H1** – tylko jeden, w pierwszej linii pliku, określa nazwę marki lub projektu
+- **Blok cytatu (`>`)** – bezpośrednio pod H1, syntetyczny opis bez przymiotników wartościujących
+- **Sekcje H2** – grupują linki tematycznie, a każda pozycja zawiera absolutny adres HTTPS i mikrostreszczenie
+- **Sekcja `## Opcjonalne`** – modele operujące w trybie ograniczonego okna kontekstowego pomijają linki z tej sekcji, więc trafiają tu polityki prywatności, changelogi i archiwa
+- **Host-scoping** – plik umieszczony pod `example.com/llms.txt` obejmuje wyłącznie tę domenę, dlatego subdomeny wymagają osobnych plików
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
@@ -109,20 +108,20 @@ Kilka reguł technicznych, które decydują o poprawności analizy składniowej:
 
 ## Kiedy `llms.txt` ma sens, a kiedy nie?
 
-To jest pytanie, które dzieli rynek – i odpowiedź zależy od tego, kto jest Twoim faktycznym odbiorcą.
+To pytanie mocno dzieli rynek. Odpowiedź zależy od tego, kto jest Twoim faktycznym odbiorcą.
 
-**Google Search oficjalnie odrzucił ten standard.** Reprezentujący firmę John Mueller wskazał ryzyko tzw. *AI cloakingu* – sytuacji, w której boty otrzymują idealnie zoptymalizowany plik tekstowy, a użytkownicy końcowi widzą inną treść. Badania SE Ranking potwierdzają brak korelacji między obecnością `llms.txt` a cytowaniami w ChatGPT czy Gemini. Jeśli Twój cel to wyłącznie widoczność w AI Overviews od Google lub w odpowiedziach ChatGPT w trybie przeglądarkowym – ten plik nie zmieni Twoich statystyk GEO.
+**Google Search oficjalnie odrzucił ten standard.** John Mueller z Google wskazał na ryzyko tak zwanego *AI cloakingu* – sytuacji, w której boty otrzymują idealnie zoptymalizowany plik tekstowy, a użytkownicy końcowi widzą inną treść. Badania SE Ranking potwierdzają brak korelacji między obecnością `llms.txt` a cytowaniami w ChatGPT czy Gemini. Jeśli Twoim celem jest wyłącznie widoczność w AI Overviews od Google lub w odpowiedziach ChatGPT w trybie przeglądarkowym, ten plik nie zmieni Twoich statystyk GEO.
 
-Zupełnie inaczej sytuacja wygląda w ekosystemie deweloperskim. Środowiska takie jak Cursor, Windsurf czy Bolt.new natywnie pobierają `llms.txt` przy mapowaniu zewnętrznych bibliotek. Brak tego pliku zmusza asystentów AI do chaotycznego pobierania kodu HTML, co drastycznie zwiększa zużycie tokenów i pogarsza jakość generowanego kodu. Jeśli Twój produkt jest biblioteką, API lub platformą dokumentacji – ten plik jest praktycznie obowiązkowy.
+Zupełnie inaczej sytuacja wygląda w ekosystemie deweloperskim. Środowiska takie jak Cursor, Windsurf czy Bolt.new natywnie pobierają `llms.txt` przy mapowaniu zewnętrznych bibliotek. Brak tego pliku zmusza asystentów AI do chaotycznego pobierania kodu HTML. To drastycznie zwiększa zużycie tokenów i pogarsza jakość generowanego kodu. **Jeśli Twój produkt jest biblioteką, API lub platformą dokumentacji, ten plik jest praktycznie obowiązkowy.**
 
-Najsilniejszy argument za wdrożeniem to Google Lighthouse 13.3. Wersja ta wprowadziła eksperymentalną kategorię audytów **Agentic Browsing**, oceniającą gotowość witryny do obsługi autonomicznych agentów realizujących zadania bezpośrednio na stronach. Obecność poprawnego `llms.txt` jest jednym z czynników oceny dojrzałości agentowej serwisu.
+Najsilniejszy argument za wdrożeniem to Google Lighthouse 13.3. Ta wersja wprowadziła eksperymentalną kategorię audytów **Agentic Browsing**, która ocenia gotowość witryny do obsługi autonomicznych agentów realizujących zadania bezpośrednio na stronach. **Obecność poprawnego `llms.txt` to jeden z kluczowych czynników oceny dojrzałości agentowej serwisu.**
 
-Trzy scenariusze, w których wdrożenie jest opłacalne – i jeden, w którym możesz je pominąć:
+Zobacz trzy scenariusze, w których wdrożenie jest opłacalne, oraz jeden, w którym możesz je pominąć.
 
-- **Tak, wdrożyć** – firma technologiczna lub dostawca API: kosztem zbliżonym do zera drastycznie poprawiasz komfort programistów korzystających z Twojej dokumentacji w asystentach AI.
-- **Tak, wdrożyć** – platforma e-commerce z myślą o przyszłości: autonomiczne agenty zakupowe (*shopping agents*) działające w przeglądarkach będą pobierać `llms.txt`, zanim wykonają akcję na stronie.
-- **Tak, wdrożyć** – każda witryna, która chce pozytywnie przejść audyt Agentic Browsing w Lighthouse 13.3.
-- **Można pominąć** – landing page bez komponentu deweloperskiego lub technicznego, gdzie celem jest wyłącznie widoczność w tradycyjnym SEO i AI Overviews Google.
+- **Firma technologiczna lub dostawca API** – kosztem zbliżonym do zera drastycznie poprawiasz komfort programistów korzystających z Twojej dokumentacji w asystentach AI
+- **Platforma e-commerce z myślą o przyszłości** – autonomiczne agenty zakupowe (*shopping agents*) działające w przeglądarkach będą pobierać `llms.txt`, zanim wykonają akcję na stronie
+- **Witryna celująca w audyt Lighthouse** – każda strona, która chce pozytywnie przejść test Agentic Browsing w wersji 13.3
+- **Landing page bez komponentu technicznego** – tu możesz pominąć wdrożenie, jeśli Twoim celem jest wyłącznie widoczność w tradycyjnym SEO i AI Overviews Google
 
 ## Jak wdrożyć krok po kroku?
 
@@ -130,13 +129,13 @@ Samo napisanie pliku to mniej niż połowa pracy. Serwer musi go poprawnie serwo
 
 ### Krok 1 – napisz plik zgodny ze specyfikacją
 
-Zacznij od sekcji, które faktycznie odwiedzają boty: strony produktowe, dokumentacja API, kluczowe przewodniki. Opisy po myślniku mają być mikrostreszczeniami – odpowiedzią na pytanie, jakie konkretne problemy użytkownika rozwiązuje dany zasób. Unikaj przymiotników marketingowych; modele wykazują wyższą precyzję wnioskowania przy twardych danych liczbowych i konkretnych parametrach technicznych.
+Zacznij od sekcji, które faktycznie odwiedzają boty. Skup się na stronach produktowych, dokumentacji API i kluczowych przewodnikach. Opisy po myślniku mają być mikrostreszczeniami – konkretną odpowiedzią na pytanie, jakie problemy użytkownika rozwiązuje dany zasób. Unikaj przymiotników marketingowych. **Modele wykazują wyższą precyzję wnioskowania przy twardych danych liczbowych i konkretnych parametrach technicznych.**
 
 Gotowy plik umieść jako `public/llms.txt` (Astro, Next.js, Nuxt) lub w katalogu głównym serwera plików statycznych.
 
 ### Krok 2 – skonfiguruj nagłówki HTTP dla wykrywania zasobów
 
-Boty AI mogą wykryć dostępność pliku bez odpytywania domeny „na ślepo", jeśli serwer dołącza odpowiednie nagłówki HTTP. Konfiguracja dla Nginx:
+Boty AI mogą wykryć dostępność pliku bez odpytywania domeny w ciemno, jeśli serwer dołącza odpowiednie nagłówki HTTP. Konfiguracja dla Nginx wygląda następująco.
 
 ```nginx
 server {
@@ -150,7 +149,7 @@ server {
 }
 ```
 
-Na Cloudflare Pages nagłówki konfigurujesz w pliku `_headers` w katalogu głównym:
+Na Cloudflare Pages nagłówki konfigurujesz w pliku `_headers` w katalogu głównym.
 
 ```
 /*
@@ -160,7 +159,7 @@ Na Cloudflare Pages nagłówki konfigurujesz w pliku `_headers` w katalogu głó
 
 ### Krok 3 – zadbaj o negocjację zawartości (opcjonalnie, ale warte rozważenia)
 
-Zaawansowane podejście polega na tym, że boty mogą żądać wersji Markdown dowolnego adresu URL przez nagłówek `Accept: text/markdown`. Serwer odpowiednio kieruje żądanie i zamiast kodu HTML zwraca czysty plik `.md`. W przypadku żądań nieobsługiwanych typów dokumentów serwer zwraca kod HTTP 406 (*Not Acceptable*). To znacznie wykracza poza podstawowe wdrożenie, ale warto znać ten mechanizm, jeśli budujesz architekturę pod kątem pełnej kompatybilności agentowej.
+Zaawansowane podejście polega na tym, że boty mogą żądać wersji Markdown dowolnego adresu URL przez nagłówek `Accept: text/markdown`. Serwer odpowiednio kieruje żądanie i zamiast kodu HTML zwraca czysty plik `.md`. W przypadku żądań nieobsługiwanych typów dokumentów serwer zwraca kod HTTP 406 (*Not Acceptable*). To znacznie wykracza poza podstawowe wdrożenie. **Warto jednak znać ten mechanizm, jeśli budujesz architekturę pod kątem pełnej kompatybilności agentowej.**
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/michal-ziach.avif" alt="Michał Ziach" /></div>
@@ -173,33 +172,33 @@ Zaawansowane podejście polega na tym, że boty mogą żądać wersji Markdown d
 
 ## Wzorce organizacyjne – jak duże firmy strukturyzują swoje pliki
 
-Firmy, które wdrożyły ten standard, wypracowały kilka podejść architektonicznych. Wybór zależy od skomplikowania ekosystemu informacyjnego:
+Firmy, które wdrożyły ten standard, wypracowały kilka podejść architektonicznych. Wybór zależy od skomplikowania Twojego ekosystemu informacyjnego.
 
-- **Index + Full Export** – lekki indeks `/llms.txt` odsyłający do skonsolidowanego `/llms-full.txt`; optymalny podział dla asystentów czatowych (pobierają indeks) i systemów RAG (pobierają pełny eksport); stosowany przez Anthropic, Perplexity, LangGraph.
-- **Product-First** – struktura zorganizowana wokół linii produktowych i kluczowych scenariuszy wdrożeniowych; intuicyjna nawigacja dla modeli próbujących dopasować produkt do zapytania; stosowana przez platformy Vercel i Mintlify.
-- **API-Centric Catalog** – kategoryzacja oparta na zasobach API, metodach autoryzacji i schematach danych; pozwala modelom konstruować zapytania do API bez pobierania setek podstron; stosowana przez Stripe i ElevenLabs.
-- **Workflow-First** – układ zorientowany na cykl życia dewelopera: konfiguracja, wdrożenie, rozwiązywanie problemów; stosowany przez Cursor, Windsurf, Bolt.new.
-- **Orientation-Focused** – architektura głęboko segmentowana pionowo lub podzielona na osobne pliki dla różnych technologii; rozwiązuje problem orientacji w ogromnych ekosystemach; stosowana przez Cloudflare i Supabase.
+- **Index + Full Export** – lekki indeks `/llms.txt` odsyłający do skonsolidowanego `/llms-full.txt`, co stanowi optymalny podział dla asystentów czatowych (pobierają indeks) i systemów RAG (pobierają pełny eksport); stosowany przez Anthropic, Perplexity i LangGraph
+- **Product-First** – struktura zorganizowana wokół linii produktowych i kluczowych scenariuszy wdrożeniowych, zapewniająca intuicyjną nawigację dla modeli próbujących dopasować produkt do zapytania; stosowana przez platformy Vercel i Mintlify
+- **API-Centric Catalog** – kategoryzacja oparta na zasobach API, metodach autoryzacji i schematach danych, która pozwala modelom konstruować zapytania do API bez pobierania setek podstron; stosowana przez Stripe i ElevenLabs
+- **Workflow-First** – układ zorientowany na cykl życia dewelopera, obejmujący konfigurację, wdrożenie i rozwiązywanie problemów; stosowany przez Cursor, Windsurf oraz Bolt.new
+- **Orientation-Focused** – architektura głęboko segmentowana pionowo lub podzielona na osobne pliki dla różnych technologii, rozwiązująca problem orientacji w ogromnych ekosystemach; stosowana przez Cloudflare i Supabase
 
-Dla prostych witryn firmowych optymalny jest wzorzec *Product-First*. Dla rozbudowanych serwisów deweloperskich standardem staje się podejście *Index + Full Export*.
+Dla prostych witryn firmowych optymalny jest wzorzec *Product-First*. Z kolei dla rozbudowanych serwisów deweloperskich standardem staje się podejście *Index + Full Export*.
 
 ## Narzędzia, które generują `llms.txt` automatycznie
 
-Ręczne utrzymywanie spójności pliku przy dynamicznie zmieniającej się strukturze serwisu jest kosztowne. Dlatego warto znać narzędzia, które automatyzują ten etap:
+Ręczne utrzymywanie spójności pliku przy dynamicznie zmieniającej się strukturze serwisu pochłania czas i zasoby. Dlatego warto znać narzędzia, które automatyzują ten etap.
 
-- **llmstxt by Firecrawl** – pobiera `sitemap.xml` i generuje plik na podstawie głębokiego przeszukiwania stron; dobry punkt startowy dla serwisów bez dokumentacji w repozytorium.
-- **aircodelabs/llms-txt-generator** – generuje pliki dokumentacyjne kodu źródłowego i uruchamia lokalny serwer MCP (*Model Context Protocol*), umożliwiający integrację z Cursorem i Claude Desktop.
-- **llmrefs.com Generator** – platforma SaaS przeprowadzająca automatyczny audyt domeny; używa modelu generatywnego do napisania mikrostreszczenia dla każdego linku.
-- **llm-docs-builder** – optymalizuje surowe pliki Markdown pod systemy RAG i automatycznie kompiluje plik indeksowy; przydatny w projektach opartych na statycznych generatorach stron.
+- **llmstxt by Firecrawl** – pobiera `sitemap.xml` i generuje plik na podstawie głębokiego przeszukiwania stron, co stanowi dobry punkt startowy dla serwisów bez dokumentacji w repozytorium
+- **aircodelabs/llms-txt-generator** – generuje pliki dokumentacyjne kodu źródłowego i uruchamia lokalny serwer MCP (*Model Context Protocol*), umożliwiający integrację z Cursorem i Claude Desktop
+- **llmrefs.com Generator** – platforma SaaS przeprowadzająca automatyczny audyt domeny, która używa modelu generatywnego do napisania mikrostreszczenia dla każdego linku
+- **llm-docs-builder** – optymalizuje surowe pliki Markdown pod systemy RAG i automatycznie kompiluje plik indeksowy, co przydaje się w projektach opartych na statycznych generatorach stron
 
-Dla projektów z dużą częstotliwością aktualizacji – dokumentacje techniczne, platformy SaaS z regularnie zmienianą ofertą – zaleca się integrację generatora CLI bezpośrednio do potoku CI/CD. Dzięki temu plik serwowany maszynom nigdy nie prezentuje nieaktualnego stanu wiedzy o systemie.
+Dla projektów z dużą częstotliwością aktualizacji – takich jak dokumentacje techniczne czy platformy SaaS z regularnie zmienianą ofertą – zaleca się integrację generatora CLI bezpośrednio do potoku CI/CD. **Dzięki temu plik serwowany maszynom nigdy nie prezentuje nieaktualnego stanu wiedzy o systemie.**
 
 ## Czy `llms.txt` wpływa na cytowania w AI?
 
-Bezpośrednio – nie, przynajmniej na razie. Badania i dane z logów serwerowych są jednoznaczne: tradycyjne wyszukiwarki i systemy generujące AI Overviews nie pobierają tego pliku przy konstruowaniu odpowiedzi. Jeśli Twoim jedynym celem jest poprawa wskaźnika cytowań (*Citation Rate*) w ChatGPT czy Gemini, tutaj największe znaczenie mają [inne czynniki cytowalności](/geo/jak-llm-cytuja-zrodla/) – gęstość faktograficzna treści, dane strukturalne schema.org, spójność informacji w sieci.
+Bezpośrednio – nie, przynajmniej na razie. Badania i dane z logów serwerowych są jednoznaczne. Tradycyjne wyszukiwarki i systemy generujące AI Overviews nie pobierają tego pliku przy konstruowaniu odpowiedzi. Jeśli Twoim jedynym celem jest poprawa wskaźnika cytowań (*Citation Rate*) w ChatGPT czy Gemini, tutaj największe znaczenie mają [inne czynniki cytowalności](/geo/jak-llm-cytuja-zrodla/) – gęstość faktograficzna treści, dane strukturalne schema.org oraz spójność informacji w sieci.
 
-`llms.txt` gra natomiast wyraźną rolę pośrednią. Po pierwsze, asystenci kodowania – Cursor, Copilot, Claude – mogą korzystać z tego pliku przez integracje MCP lub po ręcznym wskazaniu adresu URL przy mapowaniu Twojej biblioteki lub API, co zwiększa jakość kodu generowanego przez użytkowników Twojego produktu. Po drugie, pozytywny wynik audytu Agentic Browsing w Lighthouse 13.3 zabezpiecza widoczność witryny w przeglądarkach, które w kolejnych latach będą realizowały zakupy i wyszukiwały oferty w imieniu użytkowników.
+`llms.txt` odgrywa natomiast wyraźną rolę pośrednią. Po pierwsze, asystenci kodowania – Cursor, Copilot, Claude – mogą korzystać z tego pliku przez integracje MCP lub po ręcznym wskazaniu adresu URL przy mapowaniu Twojej biblioteki lub API. To bezpośrednio zwiększa jakość kodu generowanego przez użytkowników Twojego produktu. Po drugie, pozytywny wynik audytu Agentic Browsing w Lighthouse 13.3 zabezpiecza widoczność witryny w przeglądarkach, które w kolejnych latach będą realizowały zakupy i wyszukiwały oferty w imieniu użytkowników.
 
-**Koszt wdrożenia wynosi kilka godzin pracy.** Bezpośrednie korzyści są niszowe, ale korzyść z gotowości agentowej może się okazać decydująca w perspektywie 18–24 miesięcy. To stosunek nakładu pracy do potencjalnych korzyści, który warto ocenić samodzielnie.
+**Koszt wdrożenia wynosi zaledwie kilka godzin pracy.** Bezpośrednie korzyści są na razie niszowe, ale gotowość agentowa może okazać się decydująca w perspektywie 18–24 miesięcy. To stosunek nakładu pracy do potencjalnych zysków, który warto ocenić samodzielnie.
 
-Jeśli chcesz sprawdzić, czy Twoja strona jest już teraz dostępna dla botów AI – `GPTBot`, `ClaudeBot`, `PerplexityBot` – narzędzie [Dostęp botów AI](/narzedzia/ai-bots-check/) weryfikuje konfigurację `robots.txt` i dostęp botów w kilkanaście sekund. To dobry punkt startowy przed wdrożeniem `llms.txt`, bo nie ma sensu budować mapy zasobów dla botów, które i tak są zablokowane na poziomie serwera. Szerszy kontekst techniczny – dlaczego każdy z tych botów ma inny user-agent i jak nimi zarządzać – opisuje [przewodnik po botach AI](/geo/boty-ai-przewodnik/). Natomiast jeśli chcesz zrozumieć, jakie czynniki faktycznie decydują o cytowaniach Twojej marki w LLM-ach, zacznij od [przewodnika GEO](/geo/przewodnik/) – tam znajdziesz wyniki badania Princeton KDD 2024 i konkretne taktyki z mierzalnymi efektami.
+Jeśli chcesz sprawdzić, czy Twoja strona jest już teraz dostępna dla botów AI – takich jak `GPTBot`, `ClaudeBot` czy `PerplexityBot` – narzędzie [Dostęp botów AI](/narzedzia/ai-bots-check/) weryfikuje konfigurację `robots.txt` i dostęp botów w kilkanaście sekund. To świetny punkt startowy przed wdrożeniem `llms.txt`. Nie ma przecież sensu budować mapy zasobów dla botów, które i tak są zablokowane na poziomie serwera. Szerszy kontekst techniczny – dlaczego każdy z tych botów ma inny user-agent i jak nimi zarządzać – opisuje [przewodnik po botach AI](/geo/boty-ai-przewodnik/). Natomiast jeśli chcesz zrozumieć, jakie czynniki faktycznie decydują o cytowaniach Twojej marki w LLM-ach, zacznij od [przewodnika GEO](/geo/przewodnik/). Znajdziesz tam wyniki badania Princeton KDD 2024 i konkretne taktyki z mierzalnymi efektami.

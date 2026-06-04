@@ -41,25 +41,24 @@ faq:
       modelu. Kupowanie sztucznych wzmianek nie działa, ale autentyczna obecność off-site jest mierzalnym
       sygnałem (tzw. share of voice w AI).
 ---
+Google opublikowało oficjalny przewodnik <strong><a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide?hl=pl" target="_blank" rel="noopener noreferrer">„Optymalizacja witryny pod kątem funkcji opartych na generatywnej AI w wyszukiwarce Google"</a></strong>. Przekaz jest uspokajający: rób dobre SEO po staremu, nie daj się nabrać na „sztuczki" GEO, nie potrzebujesz llms.txt ani specjalnych zabiegów. Po lekturze przedsiębiorca ma poczuć, że nic się nie zmieniło i wszystko jest pod kontrolą. **Problem w tym, że ten dokument nie opisuje wyszukiwania AI – opisuje wyszukiwanie AI w produktach Google.** A to dziś dwie różne rzeczy, i właśnie na tej różnicy zarabia się albo traci widoczność.
 
-Google opublikowało oficjalny przewodnik <strong><a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide?hl=pl" target="_blank" rel="noopener noreferrer">„Optymalizacja witryny pod kątem funkcji opartych na generatywnej AI w wyszukiwarce Google"</a></strong>. Przekaz jest uspokajający: rób dobre SEO po staremu, nie daj się nabrać na „sztuczki" GEO, nie potrzebujesz llms.txt ani specjalnych zabiegów. Po lekturze właściciel firmy ma poczuć, że nic się nie zmieniło i wszystko jest pod kontrolą. **Problem w tym, że ten dokument nie opisuje wyszukiwania AI – opisuje wyszukiwanie AI w produktach Google.** A to dziś dwie różne rzeczy, i właśnie na tej różnicy zarabia się albo traci widoczność.
-
-Przeanalizowaliśmy ten przewodnik akapit po akapicie. Poniżej rozkładamy go na trzy części: co Google mówi słusznie (i warto to przyjąć), czego nie dopowiada, oraz dlaczego pisze właśnie w takim tonie i właśnie teraz.
+Przeanalizowaliśmy ten przewodnik akapit po akapicie. Rozkładamy go na trzy części: co Google mówi słusznie (i warto to przyjąć), czego nie dopowiada, oraz dlaczego pisze właśnie w takim tonie i właśnie teraz.
 
 ## W czym Google ma rację
 
 Krytyka, która ignoruje fakty, jest bezwartościowa, więc zaczynamy od tego, co w przewodniku jest po prostu prawdą – i co powinieneś potraktować poważnie niezależnie od tego, gdzie chcesz być widoczny.
 
-- **Fundamenty SEO nadal działają.** Funkcje generatywne Google rzeczywiście korzystają z jego podstawowych systemów rankingowych. Strona, która nie jest zaindeksowana i nie spełnia wymagań technicznych, nie pojawi się w odpowiedzi AI. Indeksowalność, czytelność, szybkość, brak duplikatów – to baza, nie folklor.
-- **RAG i query fan-out są realne.** Google poprawnie opisuje mechanizm pobierania danych: model rozbija zapytanie na podpytania, sięga do indeksu po fragmenty i składa z nich odpowiedź z linkami źródłowymi. To dokładnie ta logika, którą opisaliśmy w artykule o [query fan-out](/geo/query-fan-out/).
-- **Unikalna treść wygrywa.** Recenzja oparta na doświadczeniu bije podsumowanie cudzych treści. Materiał ekspercki, którego nie da się wygenerować jednym promptem, to najlepsza długoterminowa inwestycja w widoczność. Pełna zgoda.
+- **Fundamenty SEO nadal działają** – funkcje generatywne Google rzeczywiście korzystają z jego podstawowych systemów rankingowych. Strona, która nie jest zaindeksowana i nie spełnia wymagań technicznych, nie pojawi się w odpowiedzi AI. Indeksowalność, czytelność, szybkość, brak duplikatów – to baza, nie folklor.
+- **RAG i query fan-out są realne** – Google poprawnie opisuje mechanizm pobierania danych: model rozbija zapytanie na podpytania, sięga do indeksu po fragmenty i składa z nich odpowiedź z linkami źródłowymi. To dokładnie ta logika, którą opisaliśmy w artykule o [query fan-out](/geo/query-fan-out/).
+- **Unikalna treść wygrywa** – recenzja oparta na doświadczeniu bije podsumowanie cudzych treści. Materiał ekspercki, którego nie da się wygenerować jednym promptem, to najlepsza długoterminowa inwestycja w widoczność. Pełna zgoda.
 - **Ostrzeżenie przed masową produkcją treści jest trafne** – generowanie tysięcy podstron pod każdą możliwą odmianę zapytania to nie strategia, to proszenie się o filtr antyspamowy. Liczba stron nie podnosi jakości domeny.
 
 Gdyby przewodnik kończył się w tym miejscu, podpisalibyśmy się pod nim bez zastrzeżeń. Ale dalej zaczynają się przemilczenia.
 
 ## Czego Google nie dopowiada – pięć zręcznych uproszczeń
 
-Najciekawsza jest sekcja „Obalanie mitów", w której Google mówi, czego **nie musisz** robić. Każdy z tych punktów jest technicznie prawdziwy w odniesieniu do wyszukiwarki Google – i jednocześnie wprowadza w błąd, jeśli zależy Ci na widoczności w całym ekosystemie AI. Oto pięć miejsc, gdzie rada jest poprawna dla Google, a nie dla Ciebie.
+Najciekawsza jest sekcja „Obalanie mitów", w której Google mówi, czego **nie musisz** robić. Każdy z tych punktów jest technicznie prawdziwy w odniesieniu do wyszukiwarki Google – i jednocześnie wprowadza w błąd, jeśli zależy Ci na widoczności w całym ekosystemie AI. Te rady są poprawne dla Google, ale niekoniecznie dla Ciebie.
 
 | Co mówi Google | Czego nie dopowiada |
 |---|---|
@@ -87,7 +86,7 @@ Obie rzeczy są częściowo prawdziwe – i właśnie to czyni przekaz mylącym.
 
 ### „Nie szukaj wzmianek" – pomylenie spamu z obecnością
 
-Google słusznie mówi, że kupowanie sztucznych wzmianek nie działa. Ale przeskakuje z „spam nie działa" do „wzmianki nie mają znaczenia", a to nie to samo. Modele językowe są trenowane i osadzane w faktach na podstawie treści z Reddita, forów, recenzji i serwisów branżowych. To, co internet mówi o Twojej marce **poza Twoją stroną**, realnie wpływa na to, co model odpowie pytany o Ciebie. Nazywa się to share of voice w AI i jest mierzalne – opisaliśmy to w tekście o [udziale marki w odpowiedziach AI](/geo/share-of-voice/). Google rozmywa ten sygnał, bo autentyczna obecność off-site to obszar, którego nie kontroluje przez ranking.
+Google słusznie mówi, że kupowanie sztucznych wzmianek nie działa. Ale przeskakuje z „spam nie działa" do „wzmianki nie mają znaczenia", a to nie to samo. Modele językowe są trenowane i osadzane w faktach na podstawie treści z Reddita, forów, recenzji i serwisów branżowych. To, co internet mówi o Twojej marce **poza Twoją stroną**, realnie wpływa na to, co model odpowie pytany o Ciebie. Nazywa się to Share of Voice w AI i jest mierzalne – opisaliśmy to w tekście o [udziale marki w odpowiedziach AI](/geo/share-of-voice/). Google rozmywa ten sygnał, bo autentyczna obecność off-site to obszar, którego nie kontroluje przez ranking.
 
 ## Perspektywa monopolisty – dlaczego ten dokument powstał właśnie teraz
 
@@ -95,10 +94,10 @@ Tu dochodzimy do sedna. Każdy akapit przewodnika mówi o „wyszukiwarce Google
 
 A rynek odpowiadania na pytania użytkowników przestał być jednolity. Owszem, w klasycznym wyszukiwaniu Google wciąż ma około 90% udziału. Ale generatywne odpowiedzi to dziś również:
 
-- **ChatGPT** z wyszukiwaniem w sieci – prawie miliard użytkowników tygodniowo (900 mln, dane OpenAI z lutego 2026), dla których to pierwszy punkt kontaktu z pytaniem;
-- **Perplexity** – wyszukiwarka odpowiedzi zbudowana od zera wokół cytowań źródeł;
-- **Microsoft Copilot** – wbudowany w Windows, Edge i Microsoft 365, czyli w narzędzia, których ludzie używają w pracy codziennie;
-- **Google** oraz **Claude** z dostępem do sieci – kolejne kanały, w których zapada decyzja, czy Twoja marka zostanie wymieniona.
+- **ChatGPT z wyszukiwaniem w sieci** – prawie miliard użytkowników tygodniowo (900 mln, dane OpenAI z lutego 2026), dla których to pierwszy punkt kontaktu z pytaniem.
+- **Perplexity** – wyszukiwarka odpowiedzi zbudowana od zera wokół cytowań źródeł.
+- **Microsoft Copilot** – wbudowany w Windows, Edge i Microsoft 365, czyli w narzędzia, których ludzie używają w pracy codziennie.
+- **Google oraz Claude z dostępem do sieci** – kolejne kanały, w których zapada decyzja, czy Twoja marka zostanie wymieniona.
 
 Żaden z tych systemów nie działa na „podstawowych systemach rankingowych Google", do których przewodnik sprowadza całe wyszukiwanie AI. Mają własne crawlery, własne źródła, własną logikę cytowania. Optymalizacja wyłącznie pod reguły Google oznacza, że jesteś niewidoczny dokładnie tam, gdzie Twoi klienci coraz częściej pytają.
 
@@ -116,10 +115,10 @@ Nie twierdzimy, że Google działa w złej wierze. Twierdzimy, że pisze szczerz
 
 Przełóżmy to na konkretne decyzje. Jeśli prowadzisz firmę i zastanawiasz się, co z tego wynika praktycznie:
 
-- **Przyjmij fundamenty SEO – Google ma tu rację.** Indeksowalność, jakość techniczna, unikalna treść z pierwszej ręki. To działa w Google i jest warunkiem wstępnym wszędzie indziej. Nie odpuszczaj tego.
-- **Ale nie zamykaj strategii w jednym silniku.** „Optymalizacja pod AI" to nie synonim „optymalizacji pod Google AI Overviews". To widoczność w ChatGPT, Perplexity, Copilocie, Gemini i Claude – z których każdy ma inne źródła i inną logikę cytowania.
-- **Traktuj rady „czego nie musisz robić" jako informację o Google, nie o rynku.** Fragmentaryczna struktura treści, dane strukturalne, autentyczna obecność off-site – w innych silnikach mogą realnie działać na Twoją korzyść, nawet jeśli Google mówi, że są zbędne.
-- **Mierz, nie zgaduj.** Jedyny sposób, by wiedzieć, gdzie naprawdę jesteś widoczny, to sprawdzić to w kilku modelach naraz, na realnych pytaniach Twoich klientów.
+- **Przyjmij fundamenty SEO** – Google ma tu rację. Indeksowalność, jakość techniczna, unikalna treść z pierwszej ręki. To działa w Google i jest warunkiem wstępnym wszędzie indziej. Nie odpuszczaj tego.
+- **Nie zamykaj strategii w jednym silniku** – „optymalizacja pod AI" to nie synonim „optymalizacji pod Google AI Overviews". To widoczność w ChatGPT, Perplexity, Copilocie, Gemini i Claude – z których każdy ma inne źródła i inną logikę cytowania.
+- **Traktuj rady „czego nie musisz robić" jako informację o Google, nie o rynku** – fragmentaryczna struktura treści, dane strukturalne, autentyczna obecność off-site w innych silnikach mogą realnie działać na Twoją korzyść, nawet jeśli Google mówi, że są zbędne.
+- **Mierz, nie zgaduj** – jedyny sposób, by wiedzieć, gdzie naprawdę jesteś widoczny, to sprawdzić to w kilku modelach naraz, na realnych pytaniach Twoich klientów.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/tomasz-czechowski.avif" alt="Tomasz Czechowski" /></div>
