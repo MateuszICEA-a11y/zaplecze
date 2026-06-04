@@ -42,22 +42,21 @@ faq:
       właściciela z uprawnieniami do podejmowania decyzji o zmianie procesu. W tych warunkach
       wdrożenie AI nie przyniesie efektów i wygeneruje frustrację po obu stronach.
 ---
-
-Globalne wydatki na sztuczną inteligencję przekroczą w 2026 roku 2,52 biliona dolarów – a mimo to 56% dyrektorów generalnych przyznaje, że wdrożenia AI nie przyniosły ani wzrostu przychodów, ani redukcji kosztów (PwC Global CEO Survey, Davos 2026). Ten rozdźwięk nie bierze się z braku ambicji. Wynika z braku planu. Ten przewodnik pokazuje, od czego zacząć, jak wybrać właściwy model pozyskania technologii, gdzie AI przynosi mierzalny zwrot i jak uniknąć prawnych pułapek – zanim podpiszesz pierwszą umowę z dostawcą.
+**Globalne wydatki na sztuczną inteligencję przekroczą w 2026 roku 2,52 biliona dolarów – a mimo to 56% dyrektorów generalnych przyznaje, że wdrożenia AI nie przyniosły ani wzrostu przychodów, ani redukcji kosztów (PwC Global CEO Survey, Davos 2026).** Ten rozdźwięk nie bierze się z braku ambicji. Wynika z braku planu. Zobacz, od czego zacząć, jak wybrać właściwy model pozyskania technologii, gdzie AI przynosi mierzalny zwrot i jak uniknąć prawnych pułapek – zanim podpiszesz pierwszą umowę z dostawcą.
 
 ## Dlaczego większość wdrożeń AI utknęła w pół drogi?
 
-Tylko co piąta inicjatywa AI (20%) osiąga mierzalny zwrot z inwestycji. Jedna na pięćdziesiąt (2%) przynosi wartość o charakterze naprawdę transformacyjnym. Dane IDC są jeszcze ostrzejsze: na każde 33 zbudowane prototypy zaledwie 4 trafiają do środowiska produkcyjnego – to 88-procentowy wskaźnik porażki na etapie skalowania.
+Tylko co piąta inicjatywa AI (20%) osiąga mierzalny zwrot z inwestycji. Jedna na pięćdziesiąt (2%) przynosi wartość o charakterze naprawdę transformacyjnym. **Dane IDC są jeszcze ostrzejsze: na każde 33 zbudowane prototypy zaledwie 4 trafiają do środowiska produkcyjnego – to 88-procentowy wskaźnik porażki na etapie skalowania.**
 
-Gartner określa ten problem jako „dolinę rozczarowania". Firmy budują pilotaż, pilotaż działa w kontrolowanych warunkach, a potem projekt napotyka barierę organizacyjną – brakuje właściciela, procesów, danych lub zgody zarządu na kolejne nakłady. **McKinsey szacuje, że tylko 30% projektów AI przekracza fazę pilotażową.**
+Gartner określa ten problem jako „dolinę rozczarowania". Firmy budują pilotaż. Działa on świetnie w kontrolowanych warunkach. Potem projekt napotyka barierę organizacyjną – brakuje właściciela, procesów, danych lub zgody zarządu na kolejne nakłady. **McKinsey szacuje, że tylko 30% projektów AI przekracza fazę pilotażową.**
 
 Przyczyny są trzy i powtarzają się niezależnie od branży:
 
-- **Brak osadzenia w procesach** – system AI wdrożony obok istniejącego procesu, nie zamiast jego wadliwej części; ludzie wracają do starych nawyków po kilku tygodniach
+- **Brak osadzenia w procesach** – system AI wdrożony obok istniejącego procesu, a nie zamiast jego wadliwej części; ludzie wracają do starych nawyków po kilku tygodniach
 - **Nierealistyczny harmonogram ROI** – kierownictwo oczekuje efektów w 3 miesiące; rzeczywisty cykl od pilotażu do produkcji to 6–18 miesięcy
 - **Chaos danych** – firmy próbują wdrożyć AI na nieustrukturyzowanych, niespójnych danych; działa zasada *garbage in, garbage out* w każdym modelu
 
-Tę trzecią przyczynę Gartner nazywa „human mess" – nieformalnym, nieudokumentowanym środowiskiem operacyjnym, gdzie wiedza tkwi w głowach pojedynczych pracowników, a procesy działają tylko dlatego, że konkretna osoba pamięta, jak to zawsze robiono. Próba automatyzacji takiego środowiska kończy się wdrożeniem, które przyspiesza chaos zamiast go eliminować.
+Tę trzecią przyczynę Gartner nazywa „human mess" – nieformalnym, nieudokumentowanym środowiskiem operacyjnym. Wiedza tkwi tu w głowach pojedynczych pracowników. Procesy działają tylko dlatego, że konkretna osoba pamięta, jak to zawsze robiono. **Próba automatyzacji takiego środowiska kończy się wdrożeniem, które przyspiesza chaos zamiast go eliminować.**
 
 ### Profil lidera a tempo transformacji
 
@@ -69,11 +68,11 @@ BCG AI Radar 2026 wyodrębnił trzy archetypy organizacji wdrażających AI, kt�
 | Pragmatycy (Pragmatists) | 70% | Aktywne inwestycje w ludzi i technologię; CEO poświęca średnio 7 godzin tygodniowo na naukę AI |
 | Pionierzy (Trailblazers) | 15% | Głęboka transformacja operacyjna całej organizacji; blisko trzy czwarte personelu objętego szkoleniami AI |
 
-Większość organizacji startuje jako Pragmatycy. Kluczowe pytanie to nie „czy wdrożyć AI", lecz „od którego procesu zacząć, żeby wynik był mierzalny w 90 dni".
+Większość organizacji startuje jako Pragmatycy. **Kluczowe pytanie to nie „czy wdrożyć AI", lecz „od którego procesu zacząć, żeby wynik był mierzalny w 90 dni".**
 
 ## Jak wybrać model pozyskania technologii: Build, Buy czy Boost?
 
-Tradycyjny podział na „kupuję gotowe" albo „buduję od zera" w realiach AI jest niewystarczający. Współczesne systemy AI składają się z warstw: modelu bazowego, bazy wektorowej, warstwy orkiestracji agentów i interfejsów integracyjnych. **Decyzja o modelu pozyskania technologii determinuje strukturę kosztów i elastyczność operacyjną firmy na wiele lat.**
+Tradycyjny podział na „kupuję gotowe" albo „buduję od zera" w realiach AI jest niewystarczający. Współczesne systemy AI składają się z warstw. Mamy tu model bazowy, bazę wektorową, warstwę orkiestracji agentów i interfejsy integracyjne. **Decyzja o modelu pozyskania technologii determinuje strukturę kosztów i elastyczność operacyjną firmy na wiele lat.**
 
 Trzy ścieżki w skrócie:
 
@@ -91,7 +90,7 @@ Tabela decyzyjna ułatwia wybór ścieżki:
 | Struktura kosztów | Niski CapEx, stały OpEx | Średni CapEx, zmienny OpEx API | Bardzo wysoki CapEx |
 | Ryzyko uzależnienia (lock-in) | Wysokie (polityka dostawcy) | Umiarkowane | Brak zewnętrznego |
 
-McKinsey podaje, że budowa autorskiego rozwiązania zajmuje średnio 12–18 miesięcy – i niemal zawsze kończy się tym, że gotowy system jest już technologicznie przestarzały w chwili uruchomienia. Dla zdecydowanej większości polskich firm z sektora MŚP i średnich przedsiębiorstw (mid-market) wariant **Boost** daje najlepszy kompromis między unikalną wartością a czasem wdrożenia.
+McKinsey podaje, że budowa autorskiego rozwiązania zajmuje średnio 12–18 miesięcy. Niemal zawsze kończy się to tym, że gotowy system jest już technologicznie przestarzały w chwili uruchomienia. **Dla zdecydowanej większości polskich firm z sektora MŚP i średnich przedsiębiorstw (mid-market) wariant Boost daje najlepszy kompromis między unikalną wartością a czasem wdrożenia.**
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
@@ -105,9 +104,9 @@ McKinsey podaje, że budowa autorskiego rozwiązania zajmuje średnio 12–18 mi
 
 ## Gdzie AI przynosi mierzalne efekty?
 
-Wdrożenie AI w dowolnym obszarze to nie projekt IT – to zmiana procesu. Dlatego punktem wyjścia nie jest „jaki model wybrać", lecz „który proces boli najbardziej i ma wystarczającą powtarzalność, żeby AI miała co optymalizować".
+Wdrożenie AI w dowolnym obszarze to nie projekt IT – to zmiana procesu. **Dlatego punktem wyjścia nie jest „jaki model wybrać", lecz „który proces boli najbardziej i ma wystarczającą powtarzalność, żeby AI miała co optymalizować".**
 
-Badanie Capgemini z czerwca 2025 roku (1607 menedżerów, organizacje o przychodach powyżej 1 mld dolarów) pokazuje wyraźnie, że najwyższy zwrot osiągają obszary z dużą powtarzalnością zadań i ustrukturyzowanymi danymi. Zestawienie mierzalnych efektów per obszar:
+Badanie Capgemini z czerwca 2025 roku (1607 menedżerów, organizacje o przychodach powyżej 1 mld dolarów) pokazuje to wyraźnie. Najwyższy zwrot osiągają obszary z dużą powtarzalnością zadań i ustrukturyzowanymi danymi. Zestawienie mierzalnych efektów per obszar:
 
 | Obszar | Zastosowanie AI | Kluczowa metryka |
 |---|---|---|
@@ -119,15 +118,15 @@ Badanie Capgemini z czerwca 2025 roku (1607 menedżerów, organizacje o przychod
 
 ### Obsługa klienta – najszybszy ROI
 
-Wdrożenie zintegrowanych z systemami SAP lub Oracle asystentów konwersacyjnych w contact center pozwala na natychmiastowe pobieranie danych transakcyjnych. Automatyczna transkrypcja i analiza tonu rozmów kategoryzuje zgłoszenia pod kątem pilności, eliminując błędy przy ręcznym przekazywaniu między działami. **To właśnie obsługa klienta daje najkrótszy cykl zwrotu – pierwsze mierzalne efekty widać w 6–10 tygodni od wdrożenia.**
+Wdrożenie zintegrowanych z systemami SAP lub Oracle asystentów konwersacyjnych w contact center pozwala na natychmiastowe pobieranie danych transakcyjnych. Automatyczna transkrypcja i analiza tonu rozmów kategoryzuje zgłoszenia pod kątem pilności. Eliminuje to błędy przy ręcznym przekazywaniu spraw między działami. **To właśnie obsługa klienta daje najkrótszy cykl zwrotu – pierwsze mierzalne efekty widać w 6–10 tygodni od wdrożenia.**
 
 ### Produkcja – największa dźwignia
 
-Dane Światowego Forum Ekonomicznego potwierdzają: predykcyjne utrzymanie ruchu ogranicza nieplanowane przestoje produkcyjne nawet o 50%. Wdrożenie systemów AI przy produkcji modelu Airbus A350 zaowocowało 33-procentowym wzrostem wydajności linii i 70-procentową skutecznością automatycznego dopasowania usterek do sprawdzonych historycznie rozwiązań.
+**Dane Światowego Forum Ekonomicznego potwierdzają: predykcyjne utrzymanie ruchu ogranicza nieplanowane przestoje produkcyjne nawet o 50%.** Wdrożenie systemów AI przy produkcji modelu Airbus A350 zaowocowało 33-procentowym wzrostem wydajności linii i 70-procentową skutecznością automatycznego dopasowania usterek do sprawdzonych historycznie rozwiązań.
 
 ### Logistyka i zwroty
 
-Koszty obsługi zwrotów pochłaniają w branży detalicznej do 7% przychodów brutto. Agenci AI wyposażeni w moduły komputerowej analizy obrazu weryfikują stan towaru na podstawie zdjęć przesłanych przez aplikację klienta – eliminując żmudną ręczną weryfikację i wychwytując nadużycia przy zwrotach (return fraud).
+**Koszty obsługi zwrotów pochłaniają w branży detalicznej do 7% przychodów brutto.** Agenci AI wyposażeni w moduły komputerowej analizy obrazu weryfikują stan towaru na podstawie zdjęć przesłanych przez aplikację klienta. Eliminuje to żmudną ręczną weryfikację i wychwytuje nadużycia przy zwrotach (return fraud).
 
 ## Od pilotażu do produkcji – plan wdrożenia krok po kroku
 
@@ -141,15 +140,15 @@ Przejście od eksperymentu do systemu produkcyjnego to najsłabsze ogniwo więks
 6. **Iteracja produkcyjna (2–4 tygodnie)** – dostrajanie systemu na podstawie rzeczywistych danych i uwag użytkowników końcowych
 7. **Wsparcie powdrożeniowe (opcjonalnie retainer)** – abonamentowa opieka, aktualizacje modeli, monitoring dryfu modeli (model drift)
 
-Kluczowy wniosek z etapów 4–6: **nie wdrażaj AI na nieuporządkowanych procesach**. Przed uruchomieniem kodu zmierz i wyeliminuj „ludzki chaos" – nieformalne ścieżki decyzyjne, wiedzę plemienną uwięzioną w mailach, ręczne weryfikacje bez logiki. AI przyspiesza to, co już istnieje. Jeśli proces jest zepsuty, skutkuje to szybszym powielaniem błędów.
+Kluczowy wniosek z etapów 4–6: nie wdrażaj AI na nieuporządkowanych procesach. Przed uruchomieniem kodu zmierz i wyeliminuj „ludzki chaos" – nieformalne ścieżki decyzyjne, wiedzę plemienną uwięzioną w mailach, ręczne weryfikacje bez logiki. AI przyspiesza to, co już istnieje. **Jeśli proces jest zepsuty, wdrożenie skutkuje szybszym powielaniem błędów.**
 
-Do właściwego przeprowadzenia takiego projektu potrzebny jest sponsor na poziomie zarządu oraz wyznaczony właściciel wewnętrzny – niekoniecznie techniczny, ale decyzyjny. To jest minimum organizacyjne, bez którego każdy pilotaż staje się wiecznym pilotażem.
+Do właściwego przeprowadzenia takiego projektu potrzebny jest sponsor na poziomie zarządu oraz wyznaczony właściciel wewnętrzny – niekoniecznie techniczny, ale decyzyjny. **To jest minimum organizacyjne, bez którego każdy pilotaż staje się wiecznym pilotażem.**
 
 Zanim zlecisz wdrożenie zewnętrznemu dostawcy, sprawdź, jak Twoja marka jest widoczna dzięki [pozycjonowaniu w AI](/pozycjonowanie-ai/) – bo każde wdrożenie AI w firmie zmienia też to, jak algorytmy LLM postrzegają markę na zewnątrz.
 
 ## Jak zbudować AI Center of Excellence (CoE)?
 
-Gdy AI przestaje być eksperymentem i staje się narzędziem operacyjnym w kilku pionach jednocześnie, firmy napotykają nowy problem: brak koordynacji standardów, duplikowanie integracji i nieskoordynowane budżety. Odpowiedzią jest **AI Center of Excellence (CoE)**, czyli Centrum Doskonałości AI – wyspecjalizowana jednostka, która instytucjonalizuje sztuczną inteligencję jako trwałą zdolność organizacji, na wzór istniejących komórek ds. cyberbezpieczeństwa lub architektury chmurowej.
+Gdy AI przestaje być eksperymentem i staje się narzędziem operacyjnym w kilku pionach jednocześnie, firmy napotykają nowy problem. Pojawia się brak koordynacji standardów, duplikowanie integracji i nieskoordynowane budżety. **Odpowiedzią jest AI Center of Excellence (CoE), czyli Centrum Doskonałości AI – wyspecjalizowana jednostka, która instytucjonalizuje sztuczną inteligencję jako trwałą zdolność organizacji.** Działa to na wzór istniejących komórek ds. cyberbezpieczeństwa lub architektury chmurowej.
 
 Prawidłowe CoE opiera się na sześciu warstwach:
 
@@ -173,7 +172,7 @@ Budowa CoE nie musi trwać lat. Realistyczny harmonogram dla organizacji zatrudn
 | 5 | Skalowanie pilotażu do produkcji, dashboardy monitoringu, procedury przeciwdziałające dryfowi modeli |
 | 6 | Przegląd efektów finansowych, plan na kolejne 12 miesięcy, rozszerzenie o 2 nowe obszary |
 
-Gdy organizacja osiągnie wysoką skalę wdrożeń, model scentralizowany CoE staje się wąskim gardłem. Wówczas zaleca się przejście do modelu doradczego – zadania inżynieryjne trafiają do interdyscyplinarnych zespołów produktowych, a CoE koncentruje się wyłącznie na standardach bezpieczeństwa, szablonach i strategii. Więcej o tym, jak [duże modele językowe](/modele-llm/przewodnik/) wpływają na architekturę takich decyzji, omawia osobny przewodnik po LLM.
+Gdy organizacja osiągnie wysoką skalę wdrożeń, model scentralizowany CoE staje się wąskim gardłem. Wówczas zaleca się przejście do modelu doradczego. Zadania inżynieryjne trafiają do interdyscyplinarnych zespołów produktowych. **CoE koncentruje się wtedy wyłącznie na standardach bezpieczeństwa, szablonach i strategii.** Więcej o tym, jak [duże modele językowe](/modele-llm/przewodnik/) wpływają na architekturę takich decyzji, omawia osobny przewodnik po LLM.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/mateusz-wisniewski.avif" alt="Mateusz Wiśniewski" /></div>
@@ -186,7 +185,7 @@ Gdy organizacja osiągnie wysoką skalę wdrożeń, model scentralizowany CoE st
 
 ## Jak liczyć zwrot z inwestycji (ROI i TCO) w projektach AI?
 
-Każda decyzja o finansowaniu projektu AI powinna opierać się na twardej kalkulacji pełnego kosztu posiadania (TCO – Total Cost of Ownership). Częsty błąd: budżet uwzględnia licencję i koszt tokenów API, ale pomija czyszczenie danych, integrację systemów, szkolenia i ciągły monitoring modeli pod kątem dryfu.
+**Każda decyzja o finansowaniu projektu AI powinna opierać się na twardej kalkulacji pełnego kosztu posiadania (TCO – Total Cost of Ownership).** Częsty błąd to budżet uwzględniający licencję i koszt tokenów API, ale pomijający czyszczenie danych, integrację systemów, szkolenia i ciągły monitoring modeli pod kątem dryfu.
 
 Formuła ROI dla projektów AI powinna sumować trzy filary korzyści:
 
@@ -194,13 +193,13 @@ Formuła ROI dla projektów AI powinna sumować trzy filary korzyści:
 - **Wzrost przychodów** – przyspieszona konwersja leadów, mniejszy wskaźnik odpływu klientów (churn), lepsza personalizacja oferty
 - **Mitygacja ryzyka** – ograniczenie kar z tytułu błędów regulacyjnych, mniejsze koszty zwrotów i reklamacji, szybsza reakcja na awarie maszyn
 
-Dane Capgemini wskazują na systematyczne różnice w ROI zależnie od obszaru. Zarządzanie personelem osiąga 2,1x zwrot, obsługa klienta – 1,7x, łańcuch dostaw i finanse – po 1,5x. To nie są przypadkowe liczby: wszystkie te obszary mają wspólną cechę – wysoki stopień powtarzalności zadań i dobrze ustrukturyzowane dane wejściowe.
+Dane Capgemini wskazują na systematyczne różnice w ROI zależnie od obszaru. Zarządzanie personelem osiąga 2,1x zwrot, obsługa klienta – 1,7x, łańcuch dostaw i finanse – po 1,5x. To nie są przypadkowe liczby. **Wszystkie te obszary mają wspólną cechę – wysoki stopień powtarzalności zadań i dobrze ustrukturyzowane dane wejściowe.**
 
 ### Zasada 70-20-10
 
-BCG i McKinsey zgodnie wskazują na rozkład zasobów charakterystyczny dla liderów wdrożeń AI. **70% nakładów powinno trafiać na ludzi i procesy** – szkolenia z zakresu kompetencji AI (AI literacy), optymalizację struktur organizacyjnych i zarządzanie zmianą. Infrastruktura techniczna pochłania 20% budżetu. Same algorytmy i modele – zaledwie 10%.
+BCG i McKinsey zgodnie wskazują na rozkład zasobów charakterystyczny dla liderów wdrożeń AI. **Aż 70% nakładów powinno trafiać na ludzi i procesy – szkolenia z zakresu kompetencji AI (AI literacy), optymalizację struktur organizacyjnych i zarządzanie zmianą.** Infrastruktura techniczna pochłania 20% budżetu. Same algorytmy i modele – zaledwie 10%.
 
-Ten rozkład jest kontrintuicyjny. Decydenci chcą wydawać na modele, bo modele są widoczne. Tymczasem największą dźwignią jest zdolność organizacji do wchłonięcia zmiany.
+Ten rozkład jest kontrintuicyjny. Decydenci chcą wydawać na modele, bo modele są widoczne. **Tymczasem największą dźwignią jest zdolność organizacji do wchłonięcia zmiany.**
 
 W kontekście mierzenia zwrotu z AI warto sprawdzić nasz artykuł o [ROI z AI](/ai-w-biznesie/roi-z-ai/) – z gotowymi szablonami kalkulacji dla projektów obsługi klienta, marketingu i produkcji.
 
@@ -214,14 +213,14 @@ AI Act wszedł w życie 1 sierpnia 2024 roku i wprowadza stopniowy harmonogram o
 
 - **2 lutego 2025** – zakaz systemów o nieakceptowalnym ryzyku (manipulacja podprogowa, scoring społeczny, rozpoznawanie emocji w miejscach pracy); obowiązek budowania kompetencji pracowników w zakresie AI
 - **2 sierpnia 2025** – obowiązki dla dostawców modeli ogólnego przeznaczenia (GPAI): dokumentacja techniczna, przestrzeganie prawa autorskiego, publikowanie podsumowań danych treningowych
-- **2 sierpnia 2026** – pełne stosowanie większości przepisów systemowych (sankcje finansowe, organy nadzoru); obowiązki dla systemów wysokiego ryzyka z Annexu III przesunięto jednak do **2 grudnia 2027** (porozumienie Digital Omnibus, maj 2026)
+- **2 sierpnia 2026** – pełne stosowanie większości przepisów systemowych (sankcje finansowe, organy nadzoru); obowiązki dla systemów wysokiego ryzyka z Annexu III przesunięto jednak do 2 grudnia 2027 (porozumienie Digital Omnibus, maj 2026)
 
 AI Act kategoryzuje systemy AI w czterech poziomach ryzyka. Dwa z nich są krytyczne dla polskich firm:
 
 - **Wysokie ryzyko** – systemy w rekrutacji (selekcja CV), ocenie zdolności kredytowej, diagnostyce medycznej; wymagają oceny skutków dla praw podstawowych (FRIA), audytu danych treningowych i nadzoru człowieka nad każdą decyzją
 - **Ryzyko ograniczone** – chatboty obsługi klienta; obowiązek poinformowania użytkownika, że rozmawia z AI, i maszynowego oznaczenia generowanych treści
 
-W Polsce nadzór nad rynkiem AI będzie sprawować **Komisja Rozwoju i Bezpieczeństwa Sztucznej Inteligencji (KRiBSI)**, przewidziana w projekcie ustawy przyjętym przez Radę Ministrów 31 marca 2026 roku (projekt jest w toku prac legislacyjnych). Komisja zyska uprawnienia do prowadzenia postępowań, wydawania decyzji o natychmiastowym wycofaniu systemów z rynku i nakładania sankcji finansowych.
+W Polsce nadzór nad rynkiem AI będzie sprawować Komisja Rozwoju i Bezpieczeństwa Sztucznej Inteligencji (KRiBSI), przewidziana w projekcie ustawy przyjętym przez Radę Ministrów 31 marca 2026 roku (projekt jest w toku prac legislacyjnych). **Komisja zyska uprawnienia do prowadzenia postępowań, wydawania decyzji o natychmiastowym wycofaniu systemów z rynku i nakładania sankcji finansowych.**
 
 ### RODO a wdrożenia AI
 
@@ -246,11 +245,11 @@ Firmy, które skutecznie wdrożyły AI (12% rynku określanych jako „AI Vangua
 - **Compliance od pierwszego dnia** – Inspektor Ochrony Danych jest stałym członkiem zespołu wdrożeniowego od etapu projektowania, nie od etapu audytu po wdrożeniu
 - **Eliminacja chaosu przed kodem** – organizacja mapuje i porządkuje procesy, zanim uruchomi model; AI wzmacnia to, co zastaje, nie naprawia dezorganizacji
 
-Narzędzie [generowania wspomaganego wyszukiwaniem](https://pl.wikipedia.org/wiki/Retrieval-augmented_generation) (RAG – Retrieval-Augmented Generation), które jest sercem modelu Boost, działa tylko tak dobrze, jak dobrze są ustrukturyzowane firmowe zasoby wiedzy. Jeśli dokumentacja procesów, cenniki i procedury są chaotyczne, model będzie generował chaotyczne odpowiedzi.
+Narzędzie [generowania wspomaganego wyszukiwaniem](https://pl.wikipedia.org/wiki/Retrieval-augmented_generation) (RAG – Retrieval-Augmented Generation), które jest sercem modelu Boost, działa tylko tak dobrze, jak dobrze są ustrukturyzowane firmowe zasoby wiedzy. **Jeśli dokumentacja procesów, cenniki i procedury są chaotyczne, model będzie generował chaotyczne odpowiedzi.**
 
 Praktyczny punkt startowy dla każdej organizacji niezależnie od wielkości:
 
-- **Wybierz jeden powtarzalny proces** z wysoką częstotliwością wykonania i niskim ryzykiem regulacyjnym (obsługa klienta, preselekcja dokumentów, kategoryzacja danych)
+- **Wybierz jeden powtarzalny proces** – szukaj wysokiej częstotliwości wykonania i niskiego ryzyka regulacyjnego (obsługa klienta, preselekcja dokumentów, kategoryzacja danych)
 - **Zmierz punkt bazowy** – ile czasu zajmuje ręcznie, ile kosztuje błąd, jaki jest aktualny wskaźnik satysfakcji lub dokładności
 - **Uruchom pilotaż w 4 tygodnie** – z jasnym właścicielem, wyznaczonym budżetem i metryką sukcesu mierzalną po 60 dniach produkcji
 - **Decyduj na podstawie danych, nie wrażeń** – jeśli pilotaż nie pokazuje mierzalnego efektu po 8 tygodniach, przeprowadź retrospektywę, zanim zwiększysz nakłady
