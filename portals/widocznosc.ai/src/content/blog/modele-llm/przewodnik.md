@@ -32,26 +32,25 @@ faq:
     a: >-
       Tak. Modele trenowane są na danych z określonego przedziału czasowego (do tzw. daty odcięcia, ang. <em>cutoff date</em>) – po tej dacie nowe informacje o Twojej firmie nie trafiają automatycznie do wiedzy modelu. Modele z aktywnym RAG (SearchGPT, Perplexity, Copilot, Gemini z Searchem) uzupełniają wiedzę treningową danymi pobranymi w chwili zapytania. Dlatego aktualne treści na stronie mają znaczenie – bot może je pobrać i dołączyć do odpowiedzi.
 ---
-
-LLM (Large Language Model, czyli duży model językowy) to nie jeden produkt – to cały ekosystem kilkudziesięciu systemów, które różnią się architekturą, mocnymi stronami, ceną i tym, jak traktują Twoją markę jako potencjalne źródło cytowań. **Dziś niemal 80% firm korzysta z AI, a większość wdrożyła już generatywną AI w co najmniej jednym obszarze; użytkownicy coraz częściej zadają pytania o produkty i usługi bezpośrednio w ChatGPT, Perplexity czy w Gemini – zamiast wpisywać je w wyszukiwarkę.** Ten przewodnik pokazuje, jak działa każdy z głównych modeli, czym się od siebie różnią i co to oznacza dla widoczności Twojej marki w odpowiedziach AI.
+LLM (Large Language Model, czyli duży model językowy) to nie jeden produkt, lecz cały ekosystem kilkudziesięciu systemów. Różnią się architekturą, mocnymi stronami, ceną i podejściem do Twojej marki jako potencjalnego źródła cytowań. **Dziś niemal 80% firm korzysta z AI, a większość wdrożyła już generatywną AI w co najmniej jednym obszarze; użytkownicy coraz częściej zadają pytania o produkty i usługi bezpośrednio w ChatGPT, Perplexity czy w Gemini – zamiast wpisywać je w wyszukiwarkę.** Ten przewodnik pokazuje, jak działa każdy z głównych modeli. Dowiesz się, czym się od siebie różnią i co to oznacza dla widoczności Twojej firmy w odpowiedziach AI.
 
 ## Jak działa duży model językowy?
 
-Zanim przejdziesz do porównania konkretnych produktów, warto zrozumieć jeden wspólny mechanizm. Wszystkie modele omówione w tym przewodniku to [duże modele językowe](https://pl.wikipedia.org/wiki/Du%C5%BCy_model_j%C4%99zykowy) – systemy trenowane na miliardach dokumentów, które nauczyły się przewidywać kolejny token (fragment tekstu) na podstawie kontekstu. To fundamentalnie odróżnia je od klasycznych wyszukiwarek, które indeksują i tworzą ranking stron.
+Zanim przejdziesz do porównania konkretnych produktów, musisz zrozumieć jeden wspólny mechanizm. Wszystkie modele omówione w tym przewodniku to [duże modele językowe](https://pl.wikipedia.org/wiki/Du%C5%BCy_model_j%C4%99zykowy) – systemy trenowane na miliardach dokumentów, które nauczyły się przewidywać kolejny token (fragment tekstu) na podstawie kontekstu. To fundamentalnie odróżnia je od klasycznych wyszukiwarek. Te drugie po prostu indeksują sieć i tworzą ranking stron.
 
 Kluczowe pojęcia, których będziesz używać w każdej rozmowie o LLM-ach:
 
-- **Okno kontekstowe** – maksymalna ilość tekstu, którą model przetwarza w jednej sesji; wyrażana w tokenach (1 token ≈ 0,75 słowa angielskiego). Modele z oknem 1 000 000 tokenów mogą przetworzyć kilka książek naraz.
-- **Wnioskowanie** (z ang. *reasoning*) – zdolność modelu do wieloetapowego rozwiązywania problemów: stawiania hipotez, weryfikacji spójności i cofania się przy błędnym kroku.
-- **RAG** (Retrieval-Augmented Generation, generowanie wspomagane wyszukiwaniem) – architektura, w której model w chwili zapytania dynamicznie pobiera fragmenty z internetu lub bazy wiedzy i dopiero na ich podstawie generuje odpowiedź; stosowana w Perplexity, Bing Copilot i Google AI Overviews.
-- **Temperatura modelu** – parametr sterujący losowością generowania; niska temperatura = bardziej przewidywalne, precyzyjne odpowiedzi; wysoka = bardziej kreatywne, zmienne.
-- **Zanurzenia wektorowe** (reprezentacje wektorowe, ang. *embeddings*) – numeryczne reprezentacje tekstu, które model tworzy wewnętrznie; pozwalają mierzyć semantyczne podobieństwo między fragmentami.
+- **Okno kontekstowe** – maksymalna ilość tekstu, którą model przetwarza w jednej sesji. Wyraża się ją w tokenach (1 token ≈ 0,75 słowa angielskiego). Modele z oknem 1 000 000 tokenów mogą przetworzyć kilka książek naraz.
+- **Wnioskowanie** (z ang. *reasoning*) – zdolność modelu do wieloetapowego rozwiązywania problemów. Obejmuje stawianie hipotez, weryfikację spójności i cofanie się przy błędnym kroku.
+- **RAG** (Retrieval-Augmented Generation, generowanie wspomagane wyszukiwaniem) – architektura, w której model w chwili zapytania dynamicznie pobiera fragmenty z internetu lub bazy wiedzy i dopiero na ich podstawie generuje odpowiedź. Stosuje się ją w Perplexity, Bing Copilot i Google AI Overviews.
+- **Temperatura modelu** – parametr sterujący losowością generowania. Niska temperatura oznacza bardziej przewidywalne, precyzyjne odpowiedzi, a wysoka – bardziej kreatywne i zmienne.
+- **Zanurzenia wektorowe** (reprezentacje wektorowe, ang. *embeddings*) – numeryczne reprezentacje tekstu, które model tworzy wewnętrznie. Pozwalają mierzyć semantyczne podobieństwo między fragmentami.
 
-**Modele AI nie czytają stron internetowych jak ludzie.** Dzielą tekst na fragmenty po 200–400 słów, zamieniają je na wektory i wybierają te, które semantycznie najlepiej odpowiadają zapytaniu. To znaczy, że Twoja strona musi być napisana tak, by każdy fragment samodzielnie odpowiadał na jedno pytanie.
+**Modele AI nie czytają stron internetowych jak ludzie.** Dzielą tekst na fragmenty po 200–400 słów, zamieniają je na wektory i wybierają te, które semantycznie najlepiej odpowiadają zapytaniu. To oznacza, że Twoja strona musi być napisana tak, by każdy akapit samodzielnie odpowiadał na jedno konkretne pytanie.
 
 ### Co odróżnia modele podstawowe od asystentów AI?
 
-W rozmowach o LLM-ach regularnie myli się dwie warstwy produktowe. Model podstawowy (np. GPT-5.5, Claude Sonnet, Gemini Pro) to sama warstwa językowa – przetwarza tekst i generuje odpowiedź. Asystent AI (ChatGPT, Claude.ai, Gemini.com, Copilot w przeglądarce) to produkt konsumencki zbudowany na modelu, z interfejsem, historią rozmów, integracjami narzędziowymi i własną polityką dotyczącą cytowań. **Dla widoczności marki w AI ważniejszy jest asystent, bo to z nim rozmawiają Twoi klienci – ale to model decyduje, co zostanie zacytowane.**
+W rozmowach o LLM-ach regularnie myli się dwie warstwy produktowe. Model podstawowy (np. GPT-5.5, Claude Sonnet, Gemini Pro) to sama warstwa językowa. Przetwarza tekst i generuje odpowiedź. Z kolei asystent AI (ChatGPT, Claude.ai, Gemini.com, Copilot w przeglądarce) to produkt konsumencki zbudowany na modelu. Posiada interfejs, historię rozmów, integracje narzędziowe i własną politykę dotyczącą cytowań. **Dla widoczności marki w AI ważniejszy jest asystent, bo to z nim rozmawiają Twoi klienci – ale to model decyduje, co zostanie zacytowane.**
 
 ## Przegląd głównych modeli – tabela porównawcza
 
@@ -74,28 +73,28 @@ Każdy z tych ekosystemów ma inny mechanizm pobierania informacji o Twojej marc
 
 ChatGPT jest punktem startowym dla zdecydowanej większości firm wchodzących w temat AI. To z nim rozmawiają Twoi klienci, kiedy pytają „który dostawca X jest najlepszy" albo „porównaj Y i Z". **Według danych OpenAI z początku 2026 roku z ChatGPT Enterprise korzysta dziewięciokrotnie więcej firm niż rok wcześniej.**
 
-Model dostępny obecnie jako główny flagowiec w ChatGPT to GPT-5.5 – multimodalny system przetwarzający tekst, obraz i dźwięk. W wariancie z włączonym SearchGPT model w chwili zapytania przeszukuje internet, pobiera aktualne fragmenty i generuje odpowiedź z przypisami. To oznacza, że strony, do których ma dostęp `GPTBot`, mogą być cytowane w czasie rzeczywistym.
+Główny flagowiec dostępny obecnie w ChatGPT to GPT-5.5 – multimodalny system przetwarzający tekst, obraz i dźwięk. W wariancie z włączonym SearchGPT model w chwili zapytania przeszukuje internet. Pobiera aktualne fragmenty i generuje odpowiedź z przypisami. To oznacza, że strony, do których ma dostęp `GPTBot`, mogą być cytowane w czasie rzeczywistym.
 
 Kluczowe aspekty dla strategii widoczności:
 
-- **`GPTBot`** – bot indeksujący OpenAI; jego dostęp do Twojej strony warunkuje pojawienie się w SearchGPT. Sprawdź plik `robots.txt` i upewnij się, że nie jest blokowany.
-- **Tryb offline** – zapytania bez SearchGPT korzystają wyłącznie z danych treningowych (do tzw. daty odcięcia, ang. *cutoff*); marka, która nie była wzmiankowana przed tą datą, może nie istnieć dla modelu.
-- **Kontekst 400 000 tokenów** – w GPT-5.5 pozwala na przetworzenie długich dokumentów, choć dla B2B ważniejsza jest jakość fragmentów niż sama objętość.
-- **API OpenAI** – najpopularniejsze narzędzie do budowy własnych aplikacji AI; koszt modelu GPT-5.5 to ok. 5,00 USD za milion tokenów wejściowych.
+- **`GPTBot`** – bot indeksujący OpenAI. Jego dostęp do Twojej strony warunkuje pojawienie się w SearchGPT. Sprawdź plik `robots.txt` i upewnij się, że nie jest blokowany.
+- **Tryb offline** – zapytania bez SearchGPT korzystają wyłącznie z danych treningowych (do tzw. daty odcięcia, ang. *cutoff*). Marka, która nie była wzmiankowana przed tą datą, może w ogóle nie istnieć dla modelu.
+- **Kontekst 400 000 tokenów** – w GPT-5.5 pozwala na przetworzenie długich dokumentów. Pamiętaj jednak, że dla B2B ważniejsza jest jakość fragmentów niż sama ich objętość.
+- **API OpenAI** – najpopularniejsze narzędzie do budowy własnych aplikacji AI. Koszt modelu GPT-5.5 to ok. 5,00 USD za milion tokenów wejściowych.
 
 Szczegółowe omówienie możliwości i ograniczeń znajdziesz w artykule o [ChatGPT](/modele-llm/chatgpt/) oraz o tym, [co potrafi ChatGPT](/modele-llm/co-potrafi-chatgpt/) w kontekście codziennej pracy marketera.
 
 ## Claude – model Anthropic
 
-Claude to bezpośredni rywal ChatGPT, projektowany z naciskiem na bezpieczeństwo, interpretację długich dokumentów i precyzję w analizach B2B. Flagowym modelem Anthropic jest obecnie Claude Opus 4.8, ale to Claude Sonnet 4.6 pozostaje wyborem większości firm, które potrzebują modelu do automatyzacji procesów – przy koszcie ok. 3 USD za milion tokenów wejściowych oferuje doskonały stosunek jakości do ceny.
+Claude to bezpośredni rywal ChatGPT. Projektowano go z naciskiem na bezpieczeństwo, interpretację długich dokumentów i precyzję w analizach B2B. Flagowym modelem Anthropic jest obecnie Claude Opus 4.8. Jednak to Claude Sonnet 4.6 pozostaje wyborem większości firm potrzebujących modelu do automatyzacji procesów. Przy koszcie ok. 3 USD za milion tokenów wejściowych oferuje doskonały stosunek jakości do ceny.
 
 Wyróżniki architektury Anthropic:
 
 - **Okno kontekstowe 1 000 000 tokenów** – Claude bez problemu przetworzy cały regulamin, kilkadziesiąt raportów PDF lub transkrypcję wielogodzinnego spotkania w jednej sesji.
-- **Constitutional AI** – wewnętrzny protokół bezpieczeństwa; modele Opus potrafią autonomicznie zerwać rozmowę, jeśli wykryją złośliwe instrukcje.
-- **`ClaudeBot`** – bot indeksujący Anthropic; jeśli Twoja strona go blokuje, dane o Twojej marce nie trafiają do systemu.
+- **Constitutional AI** – wewnętrzny protokół bezpieczeństwa. Modele Opus potrafią autonomicznie zerwać rozmowę, jeśli wykryją złośliwe instrukcje.
+- **`ClaudeBot`** – bot indeksujący Anthropic. Jeśli Twoja strona go blokuje, dane o marce nie trafiają do systemu.
 
-**Claude szczególnie dobrze sprawdza się przy analizie treści specjalistycznych** – dokumentacji technicznej, raportów finansowych, umów. Dla agencji i firm B2B SaaS, które tworzą takie materiały, budowanie widoczności w Claude oznacza przede wszystkim jakość i gęstość faktograficzną treści.
+**Claude szczególnie dobrze sprawdza się przy analizie treści specjalistycznych** – dokumentacji technicznej, raportów finansowych, umów. Dla agencji i firm B2B SaaS tworzących takie materiały, budowanie widoczności w Claude oznacza przede wszystkim dbanie o jakość i gęstość faktograficzną tekstów.
 
 Pełny przegląd modeli Anthropic i ich zastosowań znajdziesz w artykule o [Claude](/modele-llm/claude/).
 
@@ -109,38 +108,38 @@ Pełny przegląd modeli Anthropic i ich zastosowań znajdziesz w artykule o [Cla
 
 ## Gemini i sieć Google
 
-Gemini to ekosystem, który jako jedyny jest bezpośrednio powiązany z algorytmem wyszukiwania Google. Oznacza to jedno: strony z silną pozycją organiczną mają naturalną przewagę w pojawianiu się w Google AI Overviews i odpowiedziach Gemini. Jednak sama pozycja SEO nie gwarantuje cytowania – treść musi spełniać warunki cytowalności.
+Gemini to ekosystem, który jako jedyny jest bezpośrednio powiązany z algorytmem wyszukiwania Google. Oznacza to jedno. Strony z silną pozycją organiczną mają naturalną przewagę w pojawianiu się w Google AI Overviews i odpowiedziach Gemini. Jednak sama pozycja SEO nie gwarantuje cytowania – treść musi spełniać warunki cytowalności.
 
 Gemini 3.1 Pro obsługuje okno kontekstowe do 1 miliona tokenów. W praktyce pozwala to na przetworzenie całej dokumentacji produktowej, archiwum newsletterów lub historii rozmów z klientami w jednym prompcie. **W benchmarku wnioskowania logicznego (GPQA Diamond) Gemini 3.1 Pro osiąga 94,3%, plasując się w ścisłej czołówce modeli wnioskujących.**
 
 Dla widoczności marki kluczowe są trzy mechanizmy Gemini:
 
-- **AI Overviews w Google Search** – odpowiedź generowana przez Gemini bezpośrednio w wynikach wyszukiwania; cytuje strony z indeksu Google. Twoja strona nie musi robić nic specjalnego poza byciem dostępną dla bota Google.
-- **Gemini.com** – osobny asystent z RAG w czasie rzeczywistym; szuka aktualnych danych przez Google Search API.
-- **Vertex AI** – platforma dla deweloperów; firmy budują na niej własne aplikacje korzystające z modeli Gemini za pośrednictwem infrastruktury Google Cloud.
+- **AI Overviews w Google Search** – odpowiedź generowana przez Gemini bezpośrednio w wynikach wyszukiwania. Cytuje strony z indeksu Google. Twoja strona nie musi robić nic specjalnego poza byciem dostępną dla bota Google.
+- **Gemini.com** – osobny asystent z RAG w czasie rzeczywistym. Szuka aktualnych danych przez Google Search API.
+- **Vertex AI** – platforma dla deweloperów. Firmy budują na niej własne aplikacje korzystające z modeli Gemini za pośrednictwem infrastruktury Google Cloud.
 
-Jeśli Twoja strategia treści skupia się na [pozycjonowaniu AI](/pozycjonowanie-ai/), Gemini jest modelem, którego nie możesz ignorować – bo to Google decyduje, co trafi do AI Overviews dla Twoich potencjalnych klientów.
+Jeśli Twoja strategia treści skupia się na [pozycjonowaniu AI](/pozycjonowanie-ai/), Gemini jest modelem, którego nie możesz ignorować. To Google decyduje, co trafi do AI Overviews dla Twoich potencjalnych klientów.
 
 ## Microsoft Copilot i Bing
 
-Copilot to produkt Microsoftu zbudowany na modelach OpenAI, zintegrowany z wyszukiwarką Bing. Jest wbudowany w Windows, Edge, pakiet Microsoft 365 i Teams. Dla B2B to ważny ekosystem, bo użytkownicy korporacyjni spotykają się z nim codziennie – bez aktywnego wyboru, po prostu jako część środowiska pracy.
+Copilot to produkt Microsoftu zbudowany na modelach OpenAI, zintegrowany z wyszukiwarką Bing. Jest wbudowany w Windows, Edge, pakiet Microsoft 365 i Teams. Dla B2B to ważny ekosystem. Użytkownicy korporacyjni spotykają się z nim codziennie – bez aktywnego wyboru, po prostu jako część środowiska pracy.
 
-Architektura Copilot różni się od ChatGPT jednym kluczowym elementem: każda odpowiedź generowana przez Copilot z włączoną funkcją wyszukiwania korzysta z indeksu Bing. To oznacza, że `BingBot` musi mieć dostęp do Twojej strony. Firmy, które blokują Binga w `robots.txt`, nieświadomie wycinają się z odpowiedzi Copilot dla milionów użytkowników korporacyjnych.
+Architektura Copilot różni się od ChatGPT jednym kluczowym elementem. Każda odpowiedź generowana przez Copilot z włączoną funkcją wyszukiwania korzysta z indeksu Bing. To oznacza, że `BingBot` musi mieć dostęp do Twojej strony. Firmy, które blokują Binga w `robots.txt`, nieświadomie wycinają się z odpowiedzi Copilot dla milionów użytkowników korporacyjnych.
 
 Dwa segmenty Copilot istotne strategicznie:
 
-- **Copilot w Edge / Windows** – odpyta Bing przy każdym zapytaniu wymagającym aktualnych danych; cytuje adresy URL z indeksu Bing.
-- **Microsoft 365 Copilot** – wersja enterprise przeszukująca wewnętrzne dokumenty firmy (SharePoint, OneDrive, Outlook) i zestawiająca je z danymi z internetu; tu liczy się przede wszystkim treść wewnętrzna, nie Twoja strona.
+- **Copilot w Edge / Windows** – odpyta Bing przy każdym zapytaniu wymagającym aktualnych danych. Cytuje adresy URL z indeksu Bing.
+- **Microsoft 365 Copilot** – wersja enterprise przeszukująca wewnętrzne dokumenty firmy (SharePoint, OneDrive, Outlook) i zestawiająca je z danymi z internetu. Tutaj liczy się przede wszystkim treść wewnętrzna, a nie Twoja strona.
 
 Szczegółowe omówienie strategii widoczności w Copilot znajdziesz w artykule o [Copilot](/modele-llm/copilot/).
 
 ## Perplexity AI – silnik RAG z cytowaniami
 
-Perplexity jest modelem, który ze wszystkich omawianych tutaj najagresywniej cytuje źródła. Każda odpowiedź zawiera numerowane przypisy do adresów URL, z których pochodzi informacja. Użytkownicy widzą, skąd wzięła się dana teza – i klikają w linki. To czyni Perplexity szczególnie wartościowym dla budowania ruchu bezpośredniego z AI.
+Perplexity jest modelem, który ze wszystkich omawianych tutaj najagresywniej cytuje źródła. Każda odpowiedź zawiera numerowane przypisy do adresów URL, z których pochodzi informacja. Użytkownicy widzą, skąd wzięła się dana teza – i klikają w linki. To czyni Perplexity szczególnie wartościowym narzędziem do budowania ruchu bezpośredniego z AI.
 
 **Perplexity obsługuje miliony zapytań dziennie – i każde z nich kończy się widocznymi linkami do konkretnych stron.** `PerplexityBot` indeksuje sieć agresywnie i w czasie rzeczywistym. Strony blokujące tego bota w `robots.txt` tracą jeden z niewielu kanałów AI, który faktycznie generuje kliknięcia.
 
-Perplexity różni się od pozostałych modeli podejściem do pobierania danych – zamiast pytać swój własny model treningowy, każdorazowo uruchamia pełny cykl: wyszukiwanie, pobranie fragmentów, synteza. To architektura opisana w artykule o [Perplexity](/modele-llm/perplexity/) i o tym, [jak LLM-y cytują źródła](/geo/jak-llm-cytuja-zrodla/).
+Perplexity różni się od pozostałych modeli podejściem do pobierania danych. Zamiast pytać swój własny model treningowy, każdorazowo uruchamia pełny cykl: wyszukiwanie, pobranie fragmentów, synteza. To architektura opisana w artykule o [Perplexity](/modele-llm/perplexity/) i o tym, [jak LLM-y cytują źródła](/geo/jak-llm-cytuja-zrodla/).
 
 Strategicznie: jeśli chcesz, żeby Twoja marka pojawiała się z linkiem w odpowiedziach AI – Perplexity jest miejscem, gdzie efekty widać najszybciej i najwyraźniej.
 
@@ -157,15 +156,15 @@ Strategicznie: jeśli chcesz, żeby Twoja marka pojawiała się z linkiem w odpo
 
 Obok pięciu dominujących graczy rośnie kilka ekosystemów, których nie sposób pominąć przy pełnym przeglądzie.
 
-**Grok** (xAI, Elon Musk) to model zintegrowany z platformą X (dawniej Twitter). Jego unikalna cecha to dostęp do strumienia w czasie rzeczywistym – Grok czyta tweety, posty i trendy na X w momencie zadawania pytania. Dla marek aktywnych na X i tematów, które „dzieją się teraz" – to niszowy, ale istotny kanał.
+**Grok** (xAI, Elon Musk) to model zintegrowany z platformą X (dawniej Twitter). Jego unikalna cecha to dostęp do strumienia w czasie rzeczywistym. Grok czyta tweety, posty i trendy na X w momencie zadawania pytania. Dla marek aktywnych na X i tematów, które „dzieją się teraz" – to niszowy, ale istotny kanał.
 
-**Meta AI / Llama** to ekosystem open source opublikowany przez Meta. Modele z rodziny Llama 4 są dostępne do pobrania i uruchomienia lokalnie lub przez API. Meta AI jako asystent jest wbudowany w Instagram, WhatsApp i Messenger. Dla firm kierujących marketing do konsumentów przez te platformy – istotne. Dla B2B – marginalne.
+**Meta AI / Llama** to ekosystem open source opublikowany przez Meta. Modele z rodziny Llama 4 są dostępne do pobrania i uruchomienia lokalnie lub przez API. Meta AI jako asystent jest wbudowany w Instagram, WhatsApp i Messenger. Dla firm kierujących marketing do konsumentów przez te platformy to istotne środowisko. Z perspektywy B2B – jego znaczenie jest marginalne.
 
 Kilka ekosystemów specjalistycznych warto znać z nazwy:
 
-- **DeepSeek R1** – chiński model wnioskujący, licencja MIT, koszt wnioskowania niższy o ok. 96% od OpenAI o3 przy zbliżonej precyzji logicznej; używany głównie przez deweloperów.
-- **Mistral AI** – europejski lider modeli open source, z siedzibą we Francji; flagowy model Mistral Large 2512 kosztuje 0,50 USD za milion tokenów wejściowych przy oknie 262 000 tokenów; istotny dla firm wymagających suwerenności danych na terenie UE.
-- **PLLuM / Bielik** – polskie modele językowe rozwijane przez konsorcjum NASK i społeczność SpeakLeash; optymalizowane pod język polski i specyfikę administracyjną; modele z rodziny Bielik (11B v2/v3) należą do najlepszych open source w testach kompetencji języka polskiego, choć wciąż ustępują czołowym modelom komercyjnym.
+- **DeepSeek R1** – chiński model wnioskujący, licencja MIT. Koszt wnioskowania jest niższy o ok. 96% od OpenAI o3 przy zbliżonej precyzji logicznej. Używają go głównie deweloperzy.
+- **Mistral AI** – europejski lider modeli open source z siedzibą we Francji. Flagowy model Mistral Large 2512 kosztuje 0,50 USD za milion tokenów wejściowych przy oknie 262 000 tokenów. To istotny gracz dla firm wymagających suwerenności danych na terenie UE.
+- **PLLuM / Bielik** – polskie modele językowe rozwijane przez konsorcjum NASK i społeczność SpeakLeash. Optymalizuje się je pod język polski i specyfikę administracyjną. Modele z rodziny Bielik (11B v2/v3) należą do najlepszych open source w testach kompetencji języka polskiego, choć wciąż ustępują czołowym modelom komercyjnym.
 
 ## Modele open source – kiedy warto odejść od chmury
 
@@ -173,18 +172,18 @@ Modele open source to nie alternatywa dla „małych firm bez budżetu". To świ
 
 Kiedy wybór modelu open source ma sens:
 
-- **Przetwarzanie danych wrażliwych** – dokumentacja medyczna, dane osobowe klientów, umowy; dane nie mogą opuścić infrastruktury.
+- **Przetwarzanie danych wrażliwych** – dokumentacja medyczna, dane osobowe klientów, umowy. Dane nie mogą opuścić infrastruktury.
 - **Dostrajanie (fine-tuning) na danych branżowych** – model dostrojony na danych z konkretnej niszy (np. prawo, finanse, produkcja) działa lepiej w tej niszy niż ogólny model komercyjny.
-- **Koszt przy skali** – przy milionach zapytań miesięcznie własna infrastruktura może być tańsza niż API; przy małej skali – drożej.
+- **Koszt przy skali** – przy milionach zapytań miesięcznie własna infrastruktura może być tańsza niż API. Przy małej skali wychodzi to jednak drożej.
 
 Najpopularniejsze otwarte modele na 2026 rok to:
 
-- **Meta Llama 4 (Scout i Maverick)** – najchętniej pobierane modele open source; rewolucyjne okno kontekstowe i świetne wyniki w wielu językach.
+- **Meta Llama 4 (Scout i Maverick)** – najchętniej pobierane modele open source. Oferują rewolucyjne okno kontekstowe i świetne wyniki w wielu językach.
 - **Mistral Large 2512** – europejski standard, świetna wielojęzyczność, okno 262 000 tokenów.
-- **Bielik-2.1** – najlepszy otwarty model dla języka polskiego; wyniki w testach językowych porównywalne z GPT-4.
-- **Phi-4-mini (Microsoft)** – działa na urządzeniach brzegowych; dobry do prostych zadań bez połączenia z chmurą.
+- **Bielik-2.1** – najlepszy otwarty model dla języka polskiego. Osiąga wyniki w testach językowych porównywalne z GPT-4.
+- **Phi-4-mini (Microsoft)** – działa na urządzeniach brzegowych. To dobry wybór do prostych zadań bez połączenia z chmurą.
 
-Ważne zastrzeżenie: modele open source nie mają własnych botów indeksujących. Ich wiedza pochodzi z danych treningowych, a nie z indeksowania na żywo. Widoczność marki w modelach open source wdrożonych przez klientów zależy od tego, czy Twoje treści trafiły do zbiorów treningowych (np. Common Crawl). To inny mechanizm niż w SearchGPT czy Perplexity.
+Ważne zastrzeżenie: modele open source nie mają własnych botów indeksujących. Ich wiedza pochodzi z danych treningowych, a nie z indeksowania na żywo. Widoczność marki w modelach open source wdrożonych przez klientów zależy od tego, czy Twoje treści trafiły do zbiorów treningowych (np. Common Crawl). To zupełnie inny mechanizm niż w SearchGPT czy Perplexity.
 
 ## Jak wybrać model do strategii widoczności marki?
 
