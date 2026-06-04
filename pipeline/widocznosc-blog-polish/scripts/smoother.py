@@ -40,9 +40,12 @@ PROTECT_PATTERNS = [
     ("TABLEROW", re.compile(r"^[ \t]*\|.*\|[ \t]*$", re.MULTILINE)),
     ("SHORTCODE", re.compile(r"\{\{[<%].*?[%>]\}\}", re.DOTALL)),
     ("IMAGE", re.compile(r"!\[[^\]]*\]\([^)]+\)")),
+    # Cały link [anchor](url), włącznie z anchorem – inaczej model gubi otwierający „[" w prozie
+    # i rozwala link na goły „anchor](url)" (re-pilot share-of-voice 2026-06-04). Po IMAGE, by nie ciąć „![…]".
+    ("LINK", re.compile(r"\[[^\]]*\]\([^)]+\)")),
     ("HTMLTAG", re.compile(r"</?[a-zA-Z][^>]*>")),
     ("INLINECODE", re.compile(r"`[^`\n]+`")),
-    ("MDLINK", re.compile(r"\]\([^)]+\)")),
+    ("MDLINK", re.compile(r"\]\([^)]+\)")),  # fallback: resztkowe „](url)" bez pary „["
     ("URL", re.compile(r"https?://\S+")),
 ]
 
@@ -131,6 +134,13 @@ CZEGO BEZWZGLĘDNIE NIE WOLNO:
 - NIE ruszaj tokenów §...§ – przepisz je DOKŁADNIE i w tym samym miejscu (to kod, linki, nagłówki, shortcode'y),
 - NIE dodawaj, nie usuwaj ani nie przestawiaj treści; nie dopisuj wstępów ani podsumowań,
 - NIE zmieniaj sensu zdań zawierających dane liczbowe lub faktyczne.
+
+ZACHOWANIE STRUKTURY (twardo):
+- Zachowaj liczbę akapitów 1:1 – jeden akapit wejściowy = jeden akapit wyjściowy. Nie scalaj i nie rozbijaj akapitów.
+- NIE dodawaj zdań wprowadzających ani podsumowujących wokół tokenów §...§ (zwłaszcza tabel, list i obrazów). Zakazane są m.in. „Poniższa tabela pokazuje…", „Jak widać powyżej…", „W tym miejscu warto dodać…". Token zostaje dokładnie tam, gdzie był, bez nowej prozy przed nim ani po nim.
+
+CYTATY (twardo):
+- Tekst w cudzysłowie to CYTAT. Zostaw go DOSŁOWNIE: w oryginalnym języku (również angielskim, np. „brand mentions are the new backlinks"), w cudzysłowie, słowo w słowo. NIE tłumacz, NIE parafrazuj, NIE zdejmuj cudzysłowu. Możesz poprawić wyłącznie polską prozę WOKÓŁ cytatu.
 
 ZWRÓĆ WYŁĄCZNIE przepisaną treść – bez komentarza, bez ```fence```, bez nagłówka typu „Oto poprawiona wersja"."""
 

@@ -215,6 +215,17 @@ def test_protect_freezes_full_image_including_alt():
     assert smoother.restore(protected, store) == body
 
 
+def test_protect_freezes_full_markdown_link_including_anchor():
+    # Anchor MUSI być zamrożony razem z [](): inaczej model gubi otwierający '['
+    # i rozwala link na goły tekst "anchor](url)" (re-pilot share-of-voice 2026-06-04).
+    body = "Zobacz [badanie Fishkina](https://x.pl/a) tutaj.\n"
+    protected, store = smoother.protect(body)
+    assert "badanie Fishkina" not in protected   # anchor zamrożony, nie tylko cel linku
+    assert "[" not in protected                   # żaden goły nawias kotwicy do zgubienia
+    assert "https://x.pl/a" not in protected
+    assert smoother.restore(protected, store) == body
+
+
 def test_protect_freezes_stray_html_tags():
     body = "To jest <strong>ważne</strong> zdanie.\n"
     protected, store = smoother.protect(body)
