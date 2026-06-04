@@ -45,14 +45,13 @@ faq:
       zestawienie znajdziesz w artykule o <a href="/modele-llm/claude/">Claude</a>, który opisuje
       różnice z perspektywy zastosowań marketingowych i SEO.
 ---
-
-ChatGPT to interfejs konwersacyjny zbudowany na modelach z rodziny GPT (Generative Pre-trained Transformer) – dużych modelach językowych (LLM, Large Language Model) opracowanych przez OpenAI. Od swojego publicznego debiutu w listopadzie 2022 roku zgromadził milion użytkowników w pięć dni, a sto milionów w dwa miesiące – szybciej niż jakakolwiek inna aplikacja w historii. Jeśli dopiero zaczynasz pracę z AI lub chcesz wreszcie zrozumieć, co kryje się za tym interfejsem tekstowym, ten przewodnik wyjaśnia mechanizm, możliwości i realne ograniczenia – bez skrótów i bez żargonu, który więcej ukrywa, niż tłumaczy.
+**ChatGPT to interfejs konwersacyjny zbudowany na modelach z rodziny GPT (Generative Pre-trained Transformer) – dużych modelach językowych (LLM, Large Language Model) opracowanych przez OpenAI.** Od publicznego debiutu w listopadzie 2022 roku zgromadził milion użytkowników w pięć dni. Sto milionów osiągnął w dwa miesiące. Zrobił to szybciej niż jakakolwiek inna aplikacja w historii. Jeśli dopiero zaczynasz pracę z AI lub chcesz wreszcie zrozumieć, co kryje się za tym oknem czatu, ten przewodnik wyjaśnia mechanizm, możliwości i realne ograniczenia. Bez skrótów. Bez żargonu, który więcej ukrywa, niż tłumaczy.
 
 ## Czym jest ChatGPT i jak wpisuje się w ekosystem OpenAI?
 
-OpenAI to laboratorium badań nad sztuczną inteligencją założone w 2015 roku z misją rozwoju AI dla dobra ogółu. ChatGPT nie jest jedynym produktem firmy – to raczej najbardziej widoczna warstwa ekosystemu, który obejmuje modele, interfejsy programistyczne i wyspecjalizowane narzędzia.
+OpenAI to laboratorium badań nad sztuczną inteligencją założone w 2015 roku z misją rozwoju AI dla dobra ogółu. **ChatGPT nie jest jedynym produktem firmy – to raczej najbardziej widoczna warstwa potężnego ekosystemu.** Obejmuje on modele, interfejsy programistyczne i wyspecjalizowane narzędzia.
 
-Aby uporządkować te pojęcia na wstępie:
+Uporządkujmy te pojęcia na samym wstępie:
 
 - **GPT** – seria modeli językowych (GPT-3, GPT-4, a obecnie rodzina GPT-5); sam model to „silnik", który przetwarza tekst
 - **ChatGPT** – produkt konsumencki, interfejs czatu dostępny pod adresem chat.openai.com, napędzany aktualnym modelem GPT
@@ -60,37 +59,37 @@ Aby uporządkować te pojęcia na wstępie:
 - **GPT Image** – model do generowania obrazów z opisu tekstowego, wbudowany w ChatGPT (zastąpił DALL-E pod koniec 2025 roku)
 - **Whisper** – model do transkrypcji i tłumaczenia mowy
 
-ChatGPT jest dostępny w wersji przeglądarkowej i mobilnej, a od 2023 roku również jako wtyczka i element Microsoft 365 Copilot. **OpenAI udostępnia swoje modele przez API, co pozwala firmom zewnętrznym wbudowywać je we własne produkty** – dlatego ChatGPT pojawia się pośrednio w Bingu, w narzędziach do pisania, w obsłudze klienta i w dziesiątkach innych miejsc.
+ChatGPT działa w przeglądarce i aplikacji mobilnej, a od 2023 roku również jako wtyczka i element Microsoft 365 Copilot. **OpenAI udostępnia swoje modele przez API, co pozwala firmom zewnętrznym wbudowywać je we własne produkty.** Właśnie dlatego technologia ta pojawia się pośrednio w Bingu, narzędziach do pisania, systemach obsługi klienta i dziesiątkach innych miejsc.
 
-W kontekście widoczności marki w wyszukiwarkach AI: pełny obraz tego, co GPT „wie" o Twojej firmie i skąd czerpie tę wiedzę, opisuje [przewodnik po modelach LLM](/modele-llm/przewodnik/) – to dobry punkt wyjścia, zanim zaczniesz działania optymalizacyjne.
+W kontekście widoczności marki w wyszukiwarkach AI: pełny obraz tego, co GPT „wie" o Twojej firmie i skąd czerpie tę wiedzę, opisuje [przewodnik po modelach LLM](/modele-llm/przewodnik/). To doskonały punkt wyjścia przed startem optymalizacji.
 
 ## Jak działa model GPT, od tokenów po odpowiedź?
 
-**ChatGPT nie „szuka" odpowiedzi w bazie danych ani nie „pamięta" faktów jak encyklopedia.** Generuje tekst token po tokenie, przewidując za każdym razem, jaka sekwencja znaków jest najbardziej prawdopodobna w danym kontekście. To subtelna, ale fundamentalna różnica.
+**ChatGPT nie „szuka" odpowiedzi w bazie danych ani nie „pamięta" faktów jak encyklopedia.** Generuje tekst token po tokenie. Za każdym razem przewiduje, jaka sekwencja znaków jest najbardziej prawdopodobna w danym kontekście. To subtelna, ale fundamentalna różnica.
 
-Model oparty jest na architekturze typu Transformer – typie [sieci neuronowej](https://pl.wikipedia.org/wiki/Sie%C4%87_neuronowa) zaprezentowanym w pracy „Attention is All You Need" (Vaswani et al., 2017). Wcześniejsze systemy przetwarzały tekst sekwencyjnie – słowo po słowie. Transformer przetwarza wszystkie tokeny wejścia równolegle, obliczając dla każdego z nich wagi mechanizmu uwagi względem pozostałych tokenów. Dzięki temu model potrafi śledzić relacje między słowami oddalonymi o setki pozycji w tekście.
+Model opiera się na architekturze typu Transformer – typie [sieci neuronowej](https://pl.wikipedia.org/wiki/Sie%C4%87_neuronowa) zaprezentowanym w pracy „Attention is All You Need" (Vaswani et al., 2017). Wcześniejsze systemy przetwarzały tekst sekwencyjnie, czyli słowo po słowie. Transformer analizuje wszystkie tokeny wejścia równolegle. Oblicza dla każdego z nich wagi mechanizmu uwagi względem pozostałych elementów. Dzięki temu potrafi śledzić relacje między słowami oddalonymi o setki pozycji w tekście.
 
 ### Tokenizacja i kontekst
 
-Zanim model przetworzy zdanie, dzieli je na tokeny – podjednostki leksykalne mniejsze niż słowo (np. „pozycjonowanie" może być jednym lub kilkoma tokenami, zależnie od tokenizera). Flagowe modele z rodziny GPT-5 operują na oknie kontekstowym przekraczającym milion tokenów (wcześniejsze generacje GPT-4 były ograniczone do 128 000 tokenów). Milion tokenów to z grubsza obszerne repozytorium kodu albo kilka książek naraz. To oznacza, że model „widzi" całą bieżącą rozmowę naraz, bez konieczności „przypominania sobie" z poprzednich kroków.
+Zanim model przetworzy zdanie, dzieli je na tokeny – podjednostki leksykalne mniejsze niż słowo (np. „pozycjonowanie" może być jednym lub kilkoma tokenami, zależnie od tokenizera). Flagowe modele z rodziny GPT-5 operują na oknie kontekstowym przekraczającym milion tokenów (wcześniejsze generacje GPT-4 były ograniczone do 128 000 tokenów). Milion tokenów to z grubsza obszerne repozytorium kodu albo kilka książek naraz. **Oznacza to, że model „widzi" całą bieżącą rozmowę jednocześnie, bez konieczności „przypominania sobie" poprzednich kroków.**
 
-Każdy token jest zamieniany na wektor liczbowy w wielowymiarowej przestrzeni. Mechanizm uwagi (ang. attention mechanism) oblicza dla każdej pary tokenów stopień ich semantycznej zależności. **Wynik to nie lista faktów, lecz matematyczna reprezentacja relacji między pojęciami** – dlatego model potrafi odpowiadać na pytania, których nigdy dosłownie nie widział w danych treningowych.
+Każdy token jest zamieniany na wektor liczbowy w wielowymiarowej przestrzeni. Mechanizm uwagi (ang. attention mechanism) oblicza dla każdej pary tokenów stopień ich semantycznej zależności. **Wynik to nie lista faktów, lecz matematyczna reprezentacja relacji między pojęciami.** Właśnie dlatego model potrafi odpowiadać na pytania, których nigdy dosłownie nie widział w danych treningowych.
 
-W uproszczeniu: kiedy piszesz „Jakie są zalety pracy zdalnej?", model nie sięga po gotową odpowiedź. Rozkłada zapytanie na tokeny, oblicza ich relacje ze wszystkimi kontekstami, jakie widział podczas treningu, i generuje odpowiedź jako ciąg tokenów o najwyższym łącznym prawdopodobieństwie w tym konkretnym kontekście. Każde słowo odpowiedzi wpływa na prawdopodobieństwo kolejnego. To dlatego modele są nieprzewidywalne przy powtórzeniu tego samego pytania – losowość jest wbudowana w mechanizm (parametr temperatury, ang. temperature, kontroluje, jak bardzo model „eksperymentuje" z rzadszymi tokenami).
+W uproszczeniu: kiedy piszesz „Jakie są zalety pracy zdalnej?", model nie sięga po gotową odpowiedź. Rozkłada zapytanie na tokeny. Oblicza ich relacje ze wszystkimi kontekstami, jakie widział podczas treningu, a następnie generuje odpowiedź jako ciąg znaków o najwyższym łącznym prawdopodobieństwie. Każde słowo wpływa na prawdopodobieństwo kolejnego. To dlatego modele są nieprzewidywalne przy powtórzeniu tego samego pytania. Losowość jest wbudowana w sam mechanizm (parametr temperatury, ang. temperature, kontroluje, jak bardzo model „eksperymentuje" z rzadszymi tokenami).
 
 ### Trening i dostosowanie do rozmowy
 
-Sam etap wstępnego trenowania (pre-training) na terabajtach tekstu z internetu, książek i kodu tworzy potężny silnik predykcyjny, który równie sprawnie generuje treści pomocne, co szkodliwe. OpenAI stosuje metodę RLHF (Reinforcement Learning from Human Feedback, czyli uczenie ze wzmocnieniem na podstawie ludzkich ocen), żeby ukierunkować model na generowanie użytecznych, bezpiecznych odpowiedzi.
+**Sam etap wstępnego trenowania (pre-training) na terabajtach tekstu z internetu, książek i kodu tworzy potężny silnik predykcyjny.** Generuje on równie sprawnie treści pomocne, co szkodliwe. OpenAI stosuje metodę RLHF (Reinforcement Learning from Human Feedback, czyli uczenie ze wzmocnieniem na podstawie ludzkich ocen), żeby ukierunkować model na dostarczanie użytecznych i bezpiecznych odpowiedzi.
 
-Proces RLHF przebiega w trzech krokach. Po pierwsze, anotatorzy piszą przykładowe idealne odpowiedzi – model uczy się wzorca. Po drugie, ten sam model generuje kilka wariantów odpowiedzi na jedno pytanie, a anotatorzy je szeregują od najlepszej do najgorszej – na tej podstawie trenowany jest oddzielny model oceniający (reward model). Po trzecie, algorytm PPO (Proximal Policy Optimization) aktualizuje wagi modelu tak, żeby maksymalizował oceny modelu nagradzającego, jednocześnie nie odchodząc za daleko od wyjściowego rozkładu probabilistycznego.
+Proces RLHF przebiega w trzech krokach. Po pierwsze, anotatorzy piszą przykładowe idealne odpowiedzi – model uczy się wzorca. Po drugie, ten sam model generuje kilka wariantów odpowiedzi na jedno pytanie, a ludzie szeregują je od najlepszej do najgorszej. Na tej podstawie trenowany jest oddzielny model oceniający (reward model). Po trzecie, algorytm PPO (Proximal Policy Optimization) aktualizuje wagi modelu tak, żeby maksymalizował oceny modelu nagradzającego, jednocześnie nie odchodząc za daleko od wyjściowego rozkładu probabilistycznego.
 
-Efekt: model, który nie tylko przewiduje prawdopodobny tekst, ale robi to w sposób, który ludzie oceniają jako pomocny i bezpieczny.
+Efekt? Model nie tylko przewiduje prawdopodobny tekst, ale robi to w sposób, który ludzie oceniają jako pomocny i bezpieczny.
 
 ![Jak działa model GPT – przepływ od tekstu wejściowego przez tokenizację, embeddingi i mechanizm uwagi transformera do przewidzenia kolejnego tokenu i wygenerowania odpowiedzi](../../../assets/images/infographic-modele-llm-chatgpt.png)
 
 ## Plany i możliwości – co oferuje każda wersja
 
-ChatGPT dostępny jest w kilku planach. Poniższa tabela zestawia kluczowe różnice – stan na maj 2026:
+ChatGPT jest dostępny w kilku planach subskrypcyjnych. Zestawienie kluczowych różnic i limitów (stan na maj 2026) ułatwia wybór odpowiedniej wersji:
 
 | Plan | Cena | Dostęp do modeli | Kluczowe funkcje |
 |---|---|---|---|
@@ -101,11 +100,11 @@ ChatGPT dostępny jest w kilku planach. Poniższa tabela zestawia kluczowe róż
 | Pro | 100–200 USD/mies. | GPT-5.5 Pro, Codex, brak limitów | Okno kontekstowe do 1 mln tokenów, rozszerzone limity Deep Research |
 | Enterprise | Negocjowane | Jak Pro + opcje prywatne | SOC 2 Type II, SSO, niestandardowe retencje danych, wyższy limit kontekstu |
 
-**Plan Free wystarczy do testowania i zadań sporadycznych.** Dla regularnej pracy – szczególnie gdy liczy się jakość i brak ograniczeń w dostępie do asystentów AI (tzw. copilotów) – Plus jest standardowym wyborem; daje dostęp do flagowego GPT-5.5, wydanego 23 kwietnia 2026 roku. Plany Pro (warianty 100 i 200 USD) celują w zaawansowanych profesjonalistów i programistów – rozszerzają okno kontekstowe do miliona tokenów i odblokowują GPT-5.5 Pro z najwyższym budżetem wnioskowania.
+**Plan Free wystarczy do testowania i zadań sporadycznych.** Do regularnej pracy – szczególnie gdy liczy się jakość i brak ograniczeń w dostępie do asystentów AI (tzw. copilotów) – Plus pozostaje standardowym wyborem. Daje dostęp do flagowego GPT-5.5, wydanego 23 kwietnia 2026 roku. Plany Pro (warianty 100 i 200 USD) celują w zaawansowanych profesjonalistów i programistów. Rozszerzają okno kontekstowe do miliona tokenów i odblokowują GPT-5.5 Pro z najwyższym budżetem wnioskowania.
 
 ## Do czego używać ChatGPT – zastosowania w praktyce
 
-Użytkownicy nierzadko traktują ChatGPT jako wyszukiwarkę. To błąd, który prowadzi do rozczarowań i ryzykownych decyzji. **ChatGPT sprawdza się tam, gdzie zadanie wymaga przetwarzania i transformacji tekstu, nie tam, gdzie potrzebne są sprawdzone, bieżące fakty.**
+Użytkownicy nierzadko traktują ChatGPT jako klasyczną wyszukiwarkę. To błąd. Prowadzi do rozczarowań i ryzykownych decyzji biznesowych. **ChatGPT sprawdza się tam, gdzie zadanie wymaga przetwarzania i transformacji tekstu, a nie tam, gdzie potrzebne są sprawdzone, bieżące fakty.**
 
 Obszary, w których model działa niezawodnie:
 
@@ -119,9 +118,9 @@ Obszary, w których należy zachować ostrożność:
 
 - **Fakty i aktualne dane** – model ma datę odcięcia (cutoff date) i nie zna wydarzeń po niej; nawet przed datą odcięcia może „halucynować", czyli generować w przekonujący sposób informacje nieprawdziwe
 - **Porady prawne, medyczne, finansowe** – użyteczne jako wstępny zarys, nie jako substytut specjalisty
-- **Cytowania naukowe** – model może wygenerować bibliografię, która wygląda wiarygodnie, ale nie istnieje
+- **Cytowania naukowe** – model może wygenerować bibliografię, która wygląda wiarygodnie, ale w rzeczywistości nie istnieje
 
-Co ChatGPT potrafi, a co leży już poza nim – opisuje artykuł [co potrafi ChatGPT](/modele-llm/co-potrafi-chatgpt/), z praktycznymi testami przypadków brzegowych.
+Granice możliwości tego narzędzia opisuje szczegółowo artykuł [co potrafi ChatGPT](/modele-llm/co-potrafi-chatgpt/), w którym znajdziesz praktyczne testy przypadków brzegowych.
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
@@ -133,28 +132,28 @@ Co ChatGPT potrafi, a co leży już poza nim – opisuje artykuł [co potrafi Ch
 
 ## Halucynacje – największe ograniczenie modelu
 
-Halucynacja to sytuacja, w której model generuje odpowiedź syntaktycznie poprawną i sformułowaną w przekonujący sposób, ale merytorycznie błędną lub całkowicie wymyśloną. Termin wywodzi się z charakteru generowania: model nie szuka faktów – przewiduje prawdopodobny ciąg tokenów. Jeśli kontekst kieruje go w stronę rzadkiego obszaru przestrzeni wag, wygeneruje coś, co brzmi jak fakt, choć nim nie jest.
+**Halucynacja to sytuacja, w której model generuje odpowiedź syntaktycznie poprawną i sformułowaną w przekonujący sposób, ale merytorycznie błędną lub całkowicie wymyśloną.** Termin ten wywodzi się z samej natury generowania. Model nie szuka faktów – przewiduje prawdopodobny ciąg tokenów. Jeśli kontekst skieruje go w stronę rzadkiego obszaru przestrzeni wag, wygeneruje coś, co brzmi jak fakt, choć wcale nim nie jest.
 
-Halucynacje są szczególnie niebezpieczne, kiedy model podaje konkretne daty, nazwiska, tytuły publikacji lub ceny z pozorną pewnością. Kilka praktycznych reguł zmniejszających ryzyko:
+Halucynacje są szczególnie niebezpieczne, kiedy model podaje konkretne daty, nazwiska, tytuły publikacji lub ceny z absolutną pewnością. Oto kilka praktycznych reguł zmniejszających to ryzyko:
 
 - **Zawsze podawaj kontekst w pytaniu** – im bardziej precyzyjne zapytanie, tym mniejsza swoboda modelu
 - **Weryfikuj liczby i cytowania zewnętrznie** – każde twierdzenie z liczbą sprawdź w niezależnym źródle przed użyciem
 - **Wgrywaj dokumenty zamiast prosić o wiedzę z pamięci** – model operujący na wgranym pliku halucynuje znacznie rzadziej niż odpowiadający z danych treningowych
 - **Stosuj technikę chain-of-thought** – poproś model, żeby „myślał głośno" krok po kroku; przekierowanie uwagi na rozumowanie redukuje błędy faktyczne
 
-Generowanie wspomagane wyszukiwaniem (RAG – Retrieval-Augmented Generation) to architektoniczne rozwiązanie tego problemu stosowane przez Perplexity i Google AI Overviews: zamiast polegać wyłącznie na danych treningowych, model dynamicznie pobiera fragmenty stron i generuje na ich podstawie odpowiedź. ChatGPT z włączoną opcją wyszukiwania działa podobnie, choć mechanizm jest wewnętrznie inny.
+Generowanie wspomagane wyszukiwaniem (RAG – Retrieval-Augmented Generation) to architektoniczne rozwiązanie tego problemu stosowane przez Perplexity i Google AI Overviews. Zamiast polegać wyłącznie na danych treningowych, model dynamicznie pobiera fragmenty stron i dopiero na ich podstawie generuje odpowiedź. ChatGPT z włączoną opcją wyszukiwania działa podobnie, choć sam mechanizm jest wewnętrznie inny.
 
 ## ChatGPT a pozycjonowanie Twojej marki w AI
 
-Rosnąca liczba użytkowników, którzy zamiast Google wpisują pytania bezpośrednio w ChatGPT, tworzy nową kategorię widoczności. Dane Wall Street Journal z połowy 2025 roku pokazują, że 5,6% wszystkich zapytań w USA trafia już do LLM jako podstawowego narzędzia, a Gartner prognozuje, że do 2026 roku tradycyjne wyszukiwarki stracą 25% ruchu na rzecz interfejsów konwersacyjnych.
+**Rosnąca liczba użytkowników, którzy zamiast Google wpisują pytania bezpośrednio w ChatGPT, tworzy zupełnie nową kategorię widoczności.** Dane Wall Street Journal z połowy 2025 roku pokazują, że 5,6% wszystkich zapytań w USA trafia już do LLM jako podstawowego narzędzia. Z kolei Gartner prognozuje, że do 2026 roku tradycyjne wyszukiwarki stracą 25% ruchu na rzecz interfejsów konwersacyjnych.
 
-Jeśli potencjalny klient pyta „Które agencje SEO w Polsce specjalizują się w AI Search?" – to, czy Twoja marka pojawi się w odpowiedzi, zależy od kilku czynników: czy Twoje treści były w korpusie treningowym modelu, czy pojawiasz się w kontekście cytowań w wiarygodnych źródłach i czy inne modele (z dostępem do internetu) Cię „widzą". To zupełnie inne zmienne niż profil linków i zagęszczenie słów kluczowych, którymi rządzi się klasyczne SEO.
+Jeśli potencjalny klient pyta „Które agencje SEO w Polsce specjalizują się w AI Search?", to obecność Twojej marki w odpowiedzi zależy od kilku czynników. Czy Twoje treści były w korpusie treningowym modelu? Czy pojawiasz się w kontekście cytowań w wiarygodnych źródłach? Czy inne modele (z dostępem do internetu) Cię „widzą"? To zupełnie inne zmienne niż profil linków i zagęszczenie słów kluczowych, którymi rządzi się klasyczne SEO.
 
 **To nie jest SEO. To oddzielna dyscyplina z własnymi metrykami – Citation Rate, Share of Voice i Mention Rate.**
 
-Zrozumienie tych mechanizmów opisuje [przewodnik po GEO](/geo/przewodnik/) – optymalizacji pod generatywne wyszukiwarki. Jeśli interesuje Cię konkretna strona operacyjna – jak ChatGPT postrzega Twoją markę i jak to zmienić – wejdź na [pozycjonowanie w ChatGPT](/pozycjonowanie-ai/chatgpt/).
+Zrozumienie tych mechanizmów ułatwia [przewodnik po GEO](/geo/przewodnik/) – optymalizacji pod generatywne wyszukiwarki. Jeśli interesuje Cię konkretna strona operacyjna, czyli jak ChatGPT postrzega Twoją markę i jak to zmienić, wejdź na [pozycjonowanie w ChatGPT](/pozycjonowanie-ai/chatgpt/).
 
-Zanim zaczniesz planować, sprawdź punkt startowy: darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) zada zapytanie o Twoją markę czterem silnikom AI i pokaże, jak jesteś postrzegany na tle kategorii – bez ręcznego testowania.
+Zanim zaczniesz planować, sprawdź swój punkt startowy. Darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) zada zapytanie o Twoją markę czterem silnikom AI. Pokaże Ci, jak jesteś postrzegany na tle kategorii – całkowicie bez ręcznego testowania.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/mateusz-wisniewski.avif" alt="Mateusz Wiśniewski" /></div>

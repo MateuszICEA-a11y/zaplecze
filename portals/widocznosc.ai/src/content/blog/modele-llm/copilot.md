@@ -41,23 +41,22 @@ faq:
       z modelami GPT, natywna obsługa protokołu MCP i możliwość budowania agentów wieloetapowych (multi-turn) w miejsce
       prostych drzew decyzyjnych.
 ---
-
-Microsoft Copilot nie jest prostym chatbotem doklejonym do pakietu biurowego. To wielowarstwowa platforma oparta na [dużych modelach językowych](https://pl.wikipedia.org/wiki/Du%C5%BCy_model_j%C4%99zykowy) (LLM – Large Language Model), która integruje wnioskowanie AI z danymi korporacyjnymi, systemem operacyjnym Windows i środowiskiem programistycznym GitHub. W 2026 roku ekosystem Copilota obejmuje co najmniej cztery odrębne produkty – Copilot for Microsoft 365, Copilot w Windows 11, GitHub Copilot i Copilot Studio – a każdy z nich działa według nieco innej logiki. Jeśli szukasz szerszego kontekstu rynkowego, [przewodnik po modelach LLM](/modele-llm/przewodnik/) zestawia usługę Copilot z innymi platformami AI dostępnymi dla firm. Poniższy artykuł wyjaśnia, jak działa każde z tych rozwiązań, czym się od siebie różnią i kiedy ich wdrożenie ma uzasadnienie finansowe.
+Microsoft Copilot nie jest prostym chatbotem doklejonym do pakietu biurowego. To wielowarstwowa platforma oparta na [dużych modelach językowych](https://pl.wikipedia.org/wiki/Du%C5%BCy_model_j%C4%99zykowy) (LLM – Large Language Model), która integruje wnioskowanie AI z danymi korporacyjnymi, systemem operacyjnym Windows i środowiskiem programistycznym GitHub. W 2026 roku ekosystem Copilota obejmuje co najmniej cztery odrębne produkty – Copilot for Microsoft 365, Copilot w Windows 11, GitHub Copilot i Copilot Studio. Każdy z nich działa według innej logiki. Jeśli szukasz szerszego kontekstu rynkowego, [przewodnik po modelach LLM](/modele-llm/przewodnik/) zestawia usługę Copilot z innymi platformami AI dostępnymi dla firm. Poniższy artykuł wyjaśnia, jak działa każde z tych rozwiązań, czym się od siebie różnią i kiedy ich wdrożenie ma uzasadnienie finansowe.
 
 ## Czym jest Microsoft Copilot i jak działa jego architektura?
 
-Copilot to marka parasolowa, pod którą firma Microsoft zebrała kilka powiązanych, ale odrębnych produktów opartych na sztucznej inteligencji. Wspólnym mianownikiem są modele z rodziny GPT firmy OpenAI (Microsoft jest ich największym inwestorem), choć w 2026 roku organizacje mogą w niektórych aplikacjach wybierać między modelami OpenAI a modelami Claude firmy Anthropic.
+Copilot to marka parasolowa, pod którą Microsoft zebrał kilka powiązanych, ale odrębnych produktów opartych na sztucznej inteligencji. Wspólnym mianownikiem są modele z rodziny GPT od OpenAI (Microsoft jest ich największym inwestorem). Co ciekawe, w 2026 roku organizacje mogą w niektórych aplikacjach wybierać między modelami OpenAI a modelami Claude firmy Anthropic.
 
-**Kluczowym elementem architektury jest Indeks Semantyczny (Semantic Index for Copilot) – wektorowa reprezentacja wiedzy korporacyjnej budowana na bazie usługi Microsoft Graph.** Zamiast klasycznego wyszukiwania za pomocą słów kluczowych, system generuje wielowymiarowe osadzenia wektorowe (ang. *embeddings*) dla dokumentów, wiadomości e-mail i spotkań. Obiekty o zbliżonym znaczeniu trafiają do sąsiadujących klastrów wektorowych – dzięki temu model rozumie intencję pytania, nawet jeśli użytkownik nie zna dokładnej nazwy pliku.
+**Kluczowym elementem architektury jest Indeks Semantyczny (Semantic Index for Copilot) – wektorowa reprezentacja wiedzy korporacyjnej budowana na bazie usługi Microsoft Graph.** Zamiast klasycznego wyszukiwania po słowach kluczowych, system generuje wielowymiarowe osadzenia wektorowe (ang. *embeddings*) dla dokumentów, wiadomości e-mail i spotkań. Obiekty o zbliżonym znaczeniu trafiają do sąsiadujących klastrów wektorowych. Dzięki temu model rozumie intencję pytania, nawet jeśli nie znasz dokładnej nazwy pliku.
 
 Architektura przetwarzania zapytania wygląda następująco:
 
 - **Wstępne wzbogacenie kontekstu** – zanim prompt trafi do modelu, system odpytuje Microsoft Graph i Indeks Semantyczny, dołączając dziesiątki stron kontekstu z wiadomości e-mail, dysków i kalendarza
-- **Ugruntowanie odpowiedzi** – model generuje treść ściśle osadzoną w danych organizacji, a nie wyłącznie na wiedzy ogólnej
-- **Weryfikacja uprawnień** – każda odpowiedź jest filtrowana przez reguły RBAC (Role-Based Access Control); model nie może udostępnić danych, do których pytający nie ma dostępu
-- **Szyfrowanie typu end-to-end** – dane klientów nie są wykorzystywane do trenowania modeli bazowych; firma Microsoft działa w tym przypadku jako podmiot przetwarzający dane, zgodnie z przepisami RODO
+- **Ugruntowanie odpowiedzi** – model generuje treść ściśle osadzoną w danych organizacji, a nie wyłącznie w wiedzy ogólnej
+- **Weryfikacja uprawnień** – każda odpowiedź przechodzi przez filtry RBAC (Role-Based Access Control); model nie udostępni danych, do których pytający nie ma dostępu
+- **Szyfrowanie typu end-to-end** – dane klientów nie służą do trenowania modeli bazowych; Microsoft działa tu jako podmiot przetwarzający dane, zgodnie z przepisami RODO
 
-To odróżnia usługę Copilot for Microsoft 365 od publicznie dostępnego ChatGPT. Model GPT-5 w wariancie konsumenckim nie wie, co znajduje się na Twoim dysku OneDrive ani kto uczestniczył we wczorajszym spotkaniu. Copilot ma do tego dostęp – i potrafi połączyć tę wiedzę z zadanym pytaniem.
+To odróżnia usługę Copilot for Microsoft 365 od publicznie dostępnego ChatGPT. Model GPT-5 w wariancie konsumenckim nie wie, co znajduje się na Twoim dysku OneDrive ani kto uczestniczył we wczorajszym spotkaniu. Copilot ma do tego dostęp. Co więcej, potrafi połączyć tę wiedzę z zadanym pytaniem.
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
@@ -69,13 +68,13 @@ To odróżnia usługę Copilot for Microsoft 365 od publicznie dostępnego ChatG
 
 ## Copilot for Microsoft 365 – asystent w aplikacjach biurowych
 
-To flagowy produkt z perspektywy organizacji. Copilot for Microsoft 365 osadza asystenta AI bezpośrednio w programach Word, Excel, PowerPoint, Outlook i Teams. Nie jest to jedynie okno czatu obok aplikacji – sztuczna inteligencja ma wgląd w aktualnie otwarty plik i może na nim operować.
+To flagowy produkt z perspektywy organizacji. Copilot for Microsoft 365 osadza asystenta AI bezpośrednio w programach Word, Excel, PowerPoint, Outlook i Teams. Nie jest to jedynie okno czatu obok aplikacji. Sztuczna inteligencja ma wgląd w aktualnie otwarty plik i może na nim operować.
 
-W programie Word Copilot potrafi napisać pierwszy szkic na podstawie briefu, podsumować długi raport do dwóch stron albo zaproponować korekty stylistyczne z uwzględnieniem firmowego szablonu. **W programie Excel zadebiutowała natywna funkcja `=COPILOT()`, która pozwala osadzać żądania AI bezpośrednio w komórkach arkusza i przetwarzać całe kolumny tekstowe jednym promptem.** Dla działów analitycznych to realna zmiana – zamiast ręcznego kategoryzowania setek rekordów, wystarczy opisać pożądaną kategorię w języku naturalnym.
+W Wordzie Copilot potrafi napisać pierwszy szkic na podstawie briefu, podsumować długi raport do dwóch stron albo zaproponować korekty stylistyczne z uwzględnieniem firmowego szablonu. **W programie Excel zadebiutowała natywna funkcja `=COPILOT()`, która pozwala osadzać żądania AI bezpośrednio w komórkach arkusza i przetwarzać całe kolumny tekstowe jednym promptem.** Dla działów analitycznych to realna zmiana. Zamiast ręcznego kategoryzowania setek rekordów, wystarczy opisać pożądaną kategorię w języku naturalnym.
 
-W programie PowerPoint Copilot potrafi wygenerować całą prezentację z pliku Word (do 24 MB), automatycznie dobierając zaaprobowane zdjęcia z firmowego zestawu identyfikacji wizualnej i dodając poprawne teksty alternatywne dla czytników ekranu.
+W programie PowerPoint Copilot potrafi wygenerować całą prezentację z pliku Word (do 24 MB). Automatycznie dobiera przy tym zaaprobowane zdjęcia z firmowego zestawu identyfikacji wizualnej i dodaje poprawne teksty alternatywne dla czytników ekranu.
 
-Outlook i Teams to osobny rozdział. Copilot w programie Outlook potrafi samodzielnie identyfikować nakładające się spotkania i sugerować priorytety bez otwierania kalendarza. W komunikatorze Teams analizuje wcześniejsze wątki wiadomości podczas trwającej rozmowy wideo, by w czasie rzeczywistym uzupełnić kontekst negocjacyjny.
+Outlook i Teams to osobny rozdział. Copilot w poczcie potrafi samodzielnie identyfikować nakładające się spotkania i sugerować priorytety bez otwierania kalendarza. Z kolei w komunikatorze Teams analizuje wcześniejsze wątki wiadomości podczas trwającej rozmowy wideo, by w czasie rzeczywistym uzupełnić kontekst negocjacyjny.
 
 Poniższa tabela porównuje główne zastosowania usługi Copilot w poszczególnych aplikacjach pakietu:
 
@@ -90,7 +89,7 @@ Poniższa tabela porównuje główne zastosowania usługi Copilot w poszczególn
 
 ### Cennik i wymagania licencyjne
 
-Model biznesowy usługi Copilot for Microsoft 365 wymaga posiadania bazowej licencji Microsoft 365 (Business Standard, Business Premium lub Enterprise E3/E5). Sama usługa kosztuje 30 USD za użytkownika miesięcznie w wariancie Enterprise; dla mniejszych firm (do 300 użytkowników) dostępny jest plan w cenie od 18 do 25 USD przy zobowiązaniu rocznym.
+Model biznesowy usługi Copilot for Microsoft 365 wymaga posiadania bazowej licencji Microsoft 365 (Business Standard, Business Premium lub Enterprise E3/E5). Sama usługa kosztuje 30 USD za użytkownika miesięcznie w wariancie Enterprise. Dla mniejszych firm (do 300 użytkowników) dostępny jest plan w cenie od 18 do 25 USD przy zobowiązaniu rocznym.
 
 **Bez bazowej licencji M365 nie można dokupić usługi Copilot – jest to twarde wymaganie techniczne**, a nie wyłącznie handlowe. Indeks Semantyczny potrzebuje danych z Microsoft Graph, który jest dostępny tylko w ramach subskrypcji M365.
 
@@ -98,7 +97,7 @@ Model biznesowy usługi Copilot for Microsoft 365 wymaga posiadania bazowej lice
 
 ## Windows 11 i Copilot jako system operacyjny oparty na agentach
 
-Copilot wbudowany w Windows 11 to inny produkt niż ten w pakiecie biurowym. W tym przypadku celem jest integracja z samym systemem operacyjnym, a nie z konkretnymi plikami.
+Copilot wbudowany w Windows 11 to zupełnie inny produkt niż ten w pakiecie biurowym. W tym przypadku celem jest integracja z samym systemem operacyjnym, a nie z konkretnymi plikami.
 
 W 2026 roku Microsoft określa Windows z Copilotem mianem Agentic OS – systemu zdolnego do autonomicznego wykonywania wieloetapowych zadań. Kilka funkcji jest wartych wyodrębnienia:
 
@@ -106,15 +105,15 @@ W 2026 roku Microsoft określa Windows z Copilotem mianem Agentic OS – systemu
 - **Pamięć długoterminowa** – trwały zapis historii operacji na plikach i powiadomień systemowych, który pozwala modelowi personalizować zachowanie asystenta przez wiele sesji
 - **Agentic Actions** – asystent może asynchronicznie wypełnić formularz w tle lub zrealizować wieloetapowe zadanie bez przerywania bieżącej pracy użytkownika
 
-Każda z tych funkcji wymaga jawnej zgody użytkownika (privacy opt-in). Microsoft wycofał się ze wcześniejszego podejścia, w którym powiadomienia Copilota były natrętnie umieszczane w różnych miejscach systemu – projekt o nazwie kodowej K2 porządkuje punkty styku, integrując je w scentralizowanym interfejsie.
+Każda z tych funkcji wymaga jawnej zgody użytkownika (privacy opt-in). Microsoft wycofał się ze wcześniejszego podejścia, w którym powiadomienia Copilota były natrętnie umieszczane w różnych miejscach systemu. Projekt o nazwie kodowej K2 porządkuje punkty styku, integrując je w scentralizowanym interfejsie.
 
 Jeśli chcesz sprawdzić, jak modele AI postrzegają Twoją markę po wdrożeniu jej w nowych kanałach, darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) odpyta cztery silniki AI i zaprezentuje wyniki w kilkadziesiąt sekund.
 
 ## GitHub Copilot – asystent w środowisku programistycznym
 
-GitHub Copilot to najstarszy produkt z rodziny – działał jako narzędzie do autouzupełniania kodu w IDE już w 2021 roku. W 2026 roku to coś znacznie więcej niż autouzupełnianie: to rozproszony agent zdolny do samodzielnego przeglądu kodu, pisania testów, generowania opisów commitów i zarządzania żądaniami Pull Request bez opuszczania terminala.
+GitHub Copilot to najstarszy produkt z rodziny. Działał jako narzędzie do autouzupełniania kodu w IDE już w 2021 roku. W 2026 roku to coś znacznie więcej niż autouzupełnianie. To rozproszony agent zdolny do samodzielnego przeglądu kodu, pisania testów, generowania opisów commitów i zarządzania żądaniami Pull Request bez opuszczania terminala.
 
-**Kluczową zmianą architektoniczną jest integracja z protokołem MCP (Model Context Protocol), który pozwala agentowi czytać dokumentację projektową z pliku Word na SharePoincie podczas pisania kodu** – bez konieczności ręcznego kopiowania i wklejania kontekstu.
+**Kluczową zmianą architektoniczną jest integracja z protokołem MCP (Model Context Protocol), który pozwala agentowi czytać dokumentację projektową z pliku Word na SharePoincie podczas pisania kodu.** Dzieje się to bez konieczności ręcznego kopiowania i wklejania kontekstu.
 
 ### Nowy model rozliczeń AI Credits
 
@@ -126,7 +125,7 @@ Od czerwca 2026 roku GitHub przechodzi od stałych opłat na model rozliczeń op
 - **Plan Business (19 USD/os.)** – możliwość łączenia niewykorzystanych kredytów między pracownikami (pooling)
 - **Plan Enterprise (39 USD/os.)** – pełna pula z twardymi limitami budżetowymi narzucanymi przez dział IT
 
-Zmiana modelu rozliczeń to reakcja na realne wydarzenia rynkowe: programiści z firmy Uber wyczerpali swój budżet na narzędzia AI w ciągu zaledwie czterech miesięcy (warto zaznaczyć, że całkowity budżet R&D firmy wynosił 3,4 mld USD, a wydatki na AI stanowiły jego istotną część). Microsoft wyciągnął z tego wnioski i wymusił na organizacjach wdrożenie praktyk kontroli kosztów – w literaturze branżowej określa się to terminem FinOps (Financial Operations) dla AI.
+Zmiana modelu rozliczeń to reakcja na realne wydarzenia rynkowe. Programiści z firmy Uber wyczerpali swój budżet na narzędzia AI w ciągu zaledwie czterech miesięcy (warto zaznaczyć, że całkowity budżet R&D firmy wynosił 3,4 mld USD, a wydatki na AI stanowiły jego istotną część). Microsoft wyciągnął z tego wnioski i wymusił na organizacjach wdrożenie praktyk kontroli kosztów. W literaturze branżowej określa się to terminem FinOps (Financial Operations) dla AI.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/tomasz-czechowski.avif" alt="Tomasz Czechowski" /></div>
@@ -139,9 +138,9 @@ Zmiana modelu rozliczeń to reakcja na realne wydarzenia rynkowe: programiści z
 
 ## Copilot Studio – tworzenie własnych agentów AI
 
-Copilot Studio to narzędzie, które wykracza poza tworzenie gotowych asystentów. Pozwala organizacjom tworzyć własnych agentów AI bez pisania kodu – za pomocą interfejsu low-code opartego na rozwiązaniach Power Platform.
+Copilot Studio to narzędzie, które wykracza poza tworzenie gotowych asystentów. Pozwala organizacjom budować własnych agentów AI bez pisania kodu – za pomocą interfejsu low-code opartego na rozwiązaniach Power Platform.
 
-Agent zdefiniowany w narzędziu Copilot Studio potrafi odpowiadać na pytania dotyczące firmowych procedur HR, automatycznie tworzyć zgłoszenia w systemie serwisowym po wykryciu problemu w aplikacji Teams lub obsługiwać klientów zewnętrznych za pośrednictwem wbudowanego widżetu na stronie internetowej.
+Agent zdefiniowany w narzędziu Copilot Studio potrafi odpowiadać na pytania dotyczące firmowych procedur HR. Może też automatycznie tworzyć zgłoszenia w systemie serwisowym po wykryciu problemu w aplikacji Teams lub obsługiwać klientów zewnętrznych za pośrednictwem wbudowanego widżetu na stronie internetowej.
 
 Kilka praktycznych aspektów wdrożenia Copilot Studio:
 
@@ -150,15 +149,15 @@ Kilka praktycznych aspektów wdrożenia Copilot Studio:
 - **App Builder** – moduł do generowania lekkich mikroaplikacji bazodanowych z poziomu czatu; nie wymaga interwencji działu IT, ale działa bez dostępu do zewnętrznych API (celowe ograniczenie bezpieczeństwa)
 - **Bezpieczeństwo** – etykiety wrażliwości z systemu Microsoft Purview są dziedziczone przez agentów; jeśli dokument jest oznaczony jako „Poufne", podsumowanie wygenerowane przez agenta automatycznie otrzymuje tę samą etykietę
 
-Dostęp do Copilot Studio jest wliczony w licencję Microsoft 365 Copilot (Enterprise), ale tworzenie agentów na dużą skalę może generować dodatkowe koszty w modelu pay-per-message w połączeniu z Power Platform.
+Dostęp do Copilot Studio jest wliczony w licencję Microsoft 365 Copilot (Enterprise). Jednak tworzenie agentów na dużą skalę może generować dodatkowe koszty w modelu pay-per-message w połączeniu z Power Platform.
 
-Warto spojrzeć na Copilot Studio w szerszym kontekście: to odpowiedź Microsoftu na rosnący rynek narzędzi low-code do budowania agentów AI. Szczegółowe porównanie z innymi platformami znajdziesz w [artykule o modelu Claude](/modele-llm/claude/).
+Warto spojrzeć na Copilot Studio w szerszym kontekście. To odpowiedź Microsoftu na rosnący rynek narzędzi low-code do budowania agentów AI. Szczegółowe porównanie z innymi platformami znajdziesz w [artykule o modelu Claude](/modele-llm/claude/).
 
 ## Usługa Copilot a pozycjonowanie marki w wynikach AI – co to zmienia dla SEO
 
 W tym miejscu pojawia się wymiar, który interesuje specjalistów od widoczności w erze sztucznej inteligencji. Wariant Copilota w wyszukiwarce Bing – czyli darmowa edycja publiczna, dostępna bez licencji – jest silnikiem RAG (Retrieval-Augmented Generation, czyli generowania wspomaganego wyszukiwaniem) zbudowanym na danych Bing Search. Gdy użytkownik zadaje pytanie w przeglądarce Edge lub na stronie bing.com, model pobiera fragmenty stron i syntetyzuje odpowiedź.
 
-**Dla marek oznacza to, że widoczność w narzędziu Bing Copilot zależy od tych samych czynników, co widoczność w Google AI Overviews** – od gęstości faktograficznej treści, struktury semantycznej i dostępności strony dla botów AI. Strony blokowane w pliku `robots.txt` dla bota `Bingbot` nie zostaną w żadnych okolicznościach zacytowane przez Copilota.
+**Dla marek oznacza to, że widoczność w narzędziu Bing Copilot zależy od tych samych czynników, co widoczność w Google AI Overviews.** Kluczowa jest gęstość faktograficzna treści, struktura semantyczna i dostępność strony dla botów AI. Strony blokowane w pliku `robots.txt` dla bota `Bingbot` nie zostaną w żadnych okolicznościach zacytowane przez Copilota.
 
 Szczegółowe zasady optymalizacji pod ten silnik opisuje nasz artykuł o [Bing Copilocie](/pozycjonowanie-ai/bing-copilot/). Szerszy kontekst – jak działają mechanizmy cytowania we wszystkich silnikach AI – znajdziesz w [przewodniku po GEO](/geo/przewodnik/).
 
@@ -168,10 +167,10 @@ Jeśli chcesz wiedzieć, jak Twoja strona wypada pod kątem cytowalności, nasze
 
 Wybór wariantu zależy od trzech czynników: rodzaju pracy dominującej w organizacji, istniejącej infrastruktury firmy Microsoft oraz dostępnego budżetu na użytkownika.
 
-Punktem startowym dla większości firm jest Copilot for Microsoft 365. Jeśli organizacja już płaci za M365 Business Standard lub Enterprise, próg wejścia to dokupienie licencji Copilot – bez wdrażania nowej infrastruktury. Wartość jest najszybciej odczuwalna w programach Outlook i Teams, ponieważ tam ROI jest mierzalny przez oszczędność czasu na spotkaniach i redakcji wiadomości.
+Punktem startowym dla większości firm jest Copilot for Microsoft 365. Jeśli organizacja już płaci za M365 Business Standard lub Enterprise, próg wejścia to dokupienie licencji Copilot – bez wdrażania nowej infrastruktury. Wartość jest najszybciej odczuwalna w programach Outlook i Teams. Tam ROI jest mierzalny przez oszczędność czasu na spotkaniach i redakcji wiadomości.
 
 GitHub Copilot warto rozważyć niezależnie, nawet jeśli firma nie posiada licencji M365. Dla zespołów deweloperskich plan Pro (10 USD miesięcznie) zwraca się przy zaledwie kilku godzinach zaoszczędzonych tygodniowo.
 
 Copilot Studio ma sens od momentu, gdy organizacja identyfikuje powtarzalny proces obsługi zapytań – wewnętrznych (HR, IT helpdesk) lub zewnętrznych (obsługa klienta). Budowa prostego agenta FAQ zajmuje kilka godzin i obywa się bez pisania kodu.
 
-**Jeśli organizacja dopiero zaczyna przygodę z AI w pracy, najlepszą decyzją jest uruchomienie pilotażu z 20–50 użytkownikami przez trzy miesiące przed zakupem licencji dla całej firmy.** Microsoft oferuje okresy próbne – warto je wykorzystać, zanim podejmiesz roczne zobowiązanie finansowe.
+**Jeśli organizacja dopiero zaczyna przygodę z AI w pracy, najlepszą decyzją jest uruchomienie pilotażu z 20–50 użytkownikami przez trzy miesiące przed zakupem licencji dla całej firmy.** Microsoft oferuje okresy próbne. Warto je wykorzystać, zanim podejmiesz roczne zobowiązanie finansowe.
