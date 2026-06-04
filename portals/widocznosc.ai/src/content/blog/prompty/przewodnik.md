@@ -15,47 +15,46 @@ pillar: 'prompty'
 intent: 'HOWTO'
 level: 'L1'
 ---
-
-Prompt engineering (inżynieria podpowiedzi) to dyscyplina, która decyduje o tym, czy LLM (Large Language Model, czyli duży model językowy) da Ci użyteczną odpowiedź, czy bezużyteczny szum. Nie chodzi o magiczne słowa – chodzi o zrozumienie, jak model przetwarza instrukcje, i o zaprojektowanie promptu tak, żeby model dostał dokładnie to, czego potrzebuje. Ten przewodnik przeprowadzi Cię od podstawowych technik przez zaawansowane architektury wnioskowania, aż po bezpieczeństwo systemów opartych na LLM – z konkretnymi przykładami gotowymi do wdrożenia.
+Prompt engineering (inżynieria podpowiedzi) to dyscyplina, która decyduje o tym, czy LLM (Large Language Model, czyli duży model językowy) wygeneruje użyteczną odpowiedź, czy bezwartościowy szum. Tu nie ma magicznych słów. Liczy się zrozumienie mechanizmów przetwarzania instrukcji i takie zaprojektowanie promptu, by model otrzymał precyzyjne wytyczne. Ten przewodnik przeprowadzi Cię od podstawowych technik, przez zaawansowane architektury wnioskowania, aż po bezpieczeństwo systemów opartych na LLM – z konkretnymi przykładami gotowymi do wdrożenia.
 
 ## Czym jest inżynieria podpowiedzi i dlaczego ma znaczenie?
 
-Prompt to każda instrukcja, pytanie lub kontekst, które przekazujesz modelowi AI. Brzmi banalnie. Ale jakość promptu bezpośrednio determinuje jakość odpowiedzi – i to w sposób, który da się zmierzyć i zoptymalizować.
+Prompt to każda instrukcja, pytanie lub kontekst, które przekazujesz modelowi AI. Brzmi banalnie. **Jakość promptu bezpośrednio determinuje jednak jakość odpowiedzi – i to w sposób, który da się zmierzyć oraz zoptymalizować.**
 
-[Inżynieria podpowiedzi](https://pl.wikipedia.org/wiki/In%C5%BCynieria_podpowiedzi) wyrosła z obserwacji, że te same modele generują diametralnie różne odpowiedzi w zależności od sformułowania zapytania. GPT-4 poproszony o „napisz artykuł o SEO" i poproszony o „napisz artykuł o SEO dla dyrektora marketingu B2B SaaS, który zna podstawy pozycjonowania, ale nie zna GEO; artykuł ma zawierać 3 konkretne taktyki z wynikami badań" – to dwa różne zadania, które dają dwa różne jakościowo wyniki.
+[Inżynieria podpowiedzi](https://pl.wikipedia.org/wiki/In%C5%BCynieria_podpowiedzi) wyrosła z obserwacji, że te same modele generują diametralnie różne odpowiedzi w zależności od sformułowania zapytania. GPT-4 poproszony o „napisz artykuł o SEO" oraz poproszony o „napisz artykuł o SEO dla dyrektora marketingu B2B SaaS, który zna podstawy pozycjonowania, ale nie zna GEO; artykuł ma zawierać 3 konkretne taktyki z wynikami badań" – to dwa zupełnie inne zadania. Dają one skrajnie różne jakościowo wyniki.
 
-**To nie jest problem modeli, to problem komunikacji.** Modele językowe są ekstremalnie dosłowne i nie domyślają się intencji. Twój prompt to jedyna specyfikacja, jaką mają.
+**To nie jest problem modeli, lecz problem komunikacji.** Modele językowe są ekstremalnie dosłowne. Nie domyślają się intencji. Twój prompt to jedyna specyfikacja, jaką dysponują.
 
-Dla marketerów, specjalistów SEO i właścicieli firm, AI staje się codziennym narzędziem pracy – generowanie treści, analiza danych, automatyzacja raportów, badanie słów kluczowych. Bez solidnych podstaw inżynierii podpowiedzi każde z tych zastosowań da wyniki przypadkowe. Z nimi – powtarzalne i skalowalne.
+Dla marketerów, specjalistów SEO i właścicieli firm AI staje się codziennym narzędziem pracy przy generowaniu treści, analizie danych, automatyzacji raportów czy badaniu słów kluczowych. Bez solidnych podstaw inżynierii podpowiedzi każde z tych zastosowań wygeneruje przypadkowe wyniki. Z nimi zyskasz powtarzalność i skalowalność.
 
 ### Architektura instrukcji – co trafia do modelu
 
-Nowoczesny model widzi trzy rodzaje wiadomości: systemową (`system`), użytkownika (`user`) i asystenta (`assistant`). Wiadomość systemowa ustawia rolę i reguły zachowania – jest najsilniejsza hierarchicznie. Wiadomość użytkownika to Twoje zapytanie. Odpowiedź asystenta to treść wygenerowana przez model.
+Nowoczesny model widzi trzy rodzaje wiadomości: systemową (`system`), użytkownika (`user`) i asystenta (`assistant`). Wiadomość systemowa ustawia rolę oraz reguły zachowania. Jest najsilniejsza hierarchicznie. Wiadomość użytkownika to Twoje zapytanie, a odpowiedź asystenta to treść wygenerowana przez model.
 
 Trzy składniki dobrego promptu, które warto znać od początku:
 
-- **Rola** – kim ma być model w tej interakcji; „Jesteś starszym analitykiem SEO" działa lepiej niż brak roli, bo zawęża przestrzeń możliwych odpowiedzi
-- **Zadanie** – co dokładnie ma zrobić; konkretne, mierzalne, bez opisów w stylu „napisz coś dobrego"
-- **Format wyjściowy** – jak ma wyglądać odpowiedź; lista, tabela, JSON, akapit o dokładnej długości
+- **Rola** – kim ma być model w tej interakcji; „Jesteś starszym analitykiem SEO" działa lepiej niż brak przypisanej funkcji, ponieważ zawęża przestrzeń możliwych odpowiedzi
+- **Zadanie** – co dokładnie ma zrobić; musi być konkretne, mierzalne i pozbawione ogólników w stylu „napisz coś dobrego"
+- **Format wyjściowy** – jak ma wyglądać odpowiedź; może to być lista, tabela, JSON lub akapit o dokładnej długości
 
 ## Podstawowe techniki promptowania
 
-Zanim przejdziesz do zaawansowanych metod, musisz opanować trzy podstawowe tryby interakcji z modelem. Różnią się ilością przykładów dostarczonych w prompcie i odpowiadają różnym sytuacjom.
+Zanim przejdziesz do zaawansowanych metod, musisz opanować trzy podstawowe tryby interakcji z modelem. Różnią się one liczbą przykładów dostarczonych w prompcie i odpowiadają różnym sytuacjom.
 
 ### Zero-shot – bez przykładów
 
-Zero-shot (tryb bez przykładów) polega na zadaniu pytania lub zleceniu zadania bez podawania żadnego wzorca odpowiedzi. Działa dobrze dla prostych, jednoznacznych zadań.
+Zero-shot (tryb bez przykładów) polega na zadaniu pytania lub zleceniu zadania bez podawania żadnego wzorca odpowiedzi. Działa świetnie w przypadku prostych, jednoznacznych poleceń.
 
 ```
 Zidentyfikuj intencję wyszukiwania dla frazy "kurs prompt engineering".
 Podaj jedną z czterech kategorii: Informacyjna, Nawigacyjna, Transakcyjna, Komercyjna.
 ```
 
-Model odpowie „Informacyjna" lub „Komercyjna" i ewentualnie uzasadni wybór. Nie potrzebujesz przykładów, bo zadanie jest wystarczająco proste. **Zero-shot sprawdza się dla klasyfikacji, tłumaczeń i prostych przekształceń tekstu.**
+Model odpowie „Informacyjna" lub „Komercyjna" i ewentualnie uzasadni swój wybór. Nie potrzebujesz przykładów. Zadanie jest wystarczająco proste. **Zero-shot sprawdza się przy klasyfikacji, tłumaczeniach i prostych przekształceniach tekstu.**
 
 ### Few-shot – uczenie na przykładach
 
-Few-shot (tryb kilku przykładów) to technika, w której przed właściwym pytaniem podajesz modelowi 2–5 par pytań i odpowiedzi. Model uczy się wzorca z przykładów i aplikuje go do nowego przypadku.
+Few-shot (tryb kilku przykładów) to technika, w której przed właściwym pytaniem podajesz modelowi 2–5 par pytań i odpowiedzi. Model uczy się wzorca z przykładów, a następnie aplikuje go do nowego przypadku.
 
 ```
 Przeklasyfikuj frazy do kategorii intencji wyszukiwania.
@@ -67,11 +66,11 @@ Fraza: "kup kurs SEO online" → Intencja: Transakcyjna
 Fraza: "jak poprawić widoczność w ChatGPT" → Intencja:
 ```
 
-Few-shot działa szczególnie dobrze dla zadań, gdzie trudno jest słowami opisać reguły klasyfikacji – łatwiej pokazać wzorzec, niż go opisać. Wadą jest zużycie tokenów na przykłady, co przy dłuższych promptach podnosi koszty.
+Few-shot działa szczególnie dobrze w zadaniach, gdzie trudno słowami opisać reguły klasyfikacji. Łatwiej pokazać wzorzec, niż go tłumaczyć. Wadą pozostaje zużycie tokenów na przykłady, co przy dłuższych promptach podnosi koszty operacyjne.
 
 ### Chain-of-Thought – wnioskowanie krok po kroku
 
-Chain-of-Thought (łańcuch myślenia, w skrócie CoT) to technika, w której prosisz model o rozpisanie kroków wnioskowania przed podaniem odpowiedzi końcowej. Znacząco poprawia jakość odpowiedzi przy zadaniach wymagających logiki, obliczeń lub wieloetapowego rozumowania.
+Chain-of-Thought (łańcuch myślenia, w skrócie CoT) to technika, w której prosisz model o rozpisanie kroków wnioskowania przed podaniem odpowiedzi końcowej. **Znacząco poprawia ona jakość wyników przy zadaniach wymagających logiki, obliczeń lub wieloetapowego rozumowania.**
 
 ```
 Oceń, czy strona firmowa B2B SaaS spełnia kryteria cytowalności przez LLM.
@@ -80,7 +79,7 @@ potem oceń gęstość faktograficzną treści, na końcu oceń strukturę nagł
 Dopiero po tym sformułuj ocenę końcową.
 ```
 
-Badania pokazują, że samo dołączenie frazy „przemyśl to krok po kroku" może podnieść dokładność modelu w zadaniach logicznych o 20–40%. To jedna z najlepiej udokumentowanych technik w literaturze.
+Badania pokazują, że samo dołączenie frazy „przemyśl to krok po kroku" może podnieść dokładność modelu w zadaniach logicznych o 20–40%. To jedna z najlepiej udokumentowanych technik w literaturze branżowej.
 
 Porównanie trzech podstawowych technik:
 
@@ -95,13 +94,13 @@ Porównanie trzech podstawowych technik:
 
 ## Struktura promptu – jak pisać instrukcje, które działają
 
-Dobra struktura promptu to nie format dla samego formatu – to sposób na ograniczenie przestrzeni decyzyjnej modelu. Im precyzyjniej zdefiniujesz, czego chcesz, tym mniej pozostaje modelowi do „domyślenia się".
+Dobra struktura promptu to nie format dla samego formatu. To sposób na ograniczenie przestrzeni decyzyjnej modelu. Im precyzyjniej zdefiniujesz swoje oczekiwania, tym mniej pozostawisz systemowi do „domyślenia się".
 
-Najważniejsza zasada: **mów modelowi, co ma robić, a nie czego ma unikać.** Zamiast „nie pisz ogólnikowo" użyj „każda sekcja musi zawierać co najmniej jedną liczbę z rokiem i źródłem". Instrukcje pozytywne działają lepiej niż negacje – model nie ma dobrego mechanizmu do ignorowania zabronionych wzorców, ale świetnie radzi sobie z replikowaniem wzorców pozytywnych.
+Najważniejsza zasada: **mów modelowi, co ma robić, a nie czego ma unikać.** Zamiast „nie pisz ogólnikowo" użyj „każda sekcja musi zawierać co najmniej jedną liczbę z rokiem i źródłem". Instrukcje pozytywne działają lepiej niż negacje. Model nie ma dobrego mechanizmu do ignorowania zabronionych wzorców, ale świetnie radzi sobie z replikowaniem tych pożądanych.
 
 ### Precyzja zamiast opisów
 
-Frazy opisowe, jak „krótka odpowiedź" czy „bardziej szczegółowo", są dla modelu niejasne. Ktoś może uważać, że 200 słów to krótko, ktoś inny, że 50. Model nie wie, która konwencja obowiązuje w Twoim kontekście.
+Frazy opisowe, jak „krótka odpowiedź" czy „bardziej szczegółowo", są dla modelu niejasne. Ktoś może uważać, że 200 słów to krótko, a ktoś inny, że zaledwie 50. Model nie wie, która konwencja obowiązuje w Twoim kontekście.
 
 Zamień:
 
@@ -114,7 +113,7 @@ Zamień:
 
 ### Znaczniki XML jako separatory
 
-Przy długich promptach zawierających dane, instrukcje i kontekst – wszystko zaczyna się zlewać. Modele mogą traktować fragment analizowanego dokumentu jako nową instrukcję. Rozwiązaniem są znaczniki XML jako separatory:
+Przy długich promptach zawierających dane, instrukcje i kontekst wszystko zaczyna się zlewać. Modele mogą potraktować fragment analizowanego dokumentu jako nową instrukcję. Rozwiązaniem są znaczniki XML pełniące funkcję separatorów:
 
 ```xml
 <instrukcje>
@@ -128,15 +127,15 @@ Przy długich promptach zawierających dane, instrukcje i kontekst – wszystko 
 </artykul>
 ```
 
-Separacja instrukcji od danych zmniejsza ryzyko błędów interpretacji i poprawia spójność odpowiedzi przy powtarzalnych zadaniach.
+**Separacja instrukcji od danych zmniejsza ryzyko błędów interpretacji i poprawia spójność odpowiedzi przy powtarzalnych zadaniach.**
 
 ## Zaawansowane architektury wnioskowania
 
-Podstawowe techniki wystarczają do codziennych zadań. Ale przy złożonych problemach – analizie wieloetapowej, ocenie strategicznej, generowaniu treści wymagającym eksperckich decyzji – potrzebujesz bardziej wyrafinowanych architektur.
+Podstawowe techniki wystarczają do codziennych zadań. Przy złożonych problemach – analizie wieloetapowej, ocenie strategicznej czy generowaniu treści wymagającym eksperckich decyzji – potrzebujesz jednak bardziej wyrafinowanych architektur.
 
 ### Tree of Thoughts – drzewo myśli
 
-Tree of Thoughts (drzewo myśli, ToT) to technika, w której model generuje wiele alternatywnych ścieżek wnioskowania jednocześnie, ocenia je i wybiera najlepszą. Zamiast jednego łańcucha myślenia, dostaje wiele rozgałęzionych opcji.
+Tree of Thoughts (drzewo myśli, ToT) to technika, w której model generuje wiele alternatywnych ścieżek wnioskowania jednocześnie, ocenia je i wybiera najlepszą. Zamiast jednego łańcucha myślenia otrzymuje wiele rozgałęzionych opcji.
 
 Uproszczony wariant możesz uruchomić jednym promptem:
 
@@ -149,17 +148,17 @@ Kontynuuj, aż zostanie jedna spójna rekomendacja.
 [tu opis strategii]
 ```
 
-To podejście szczególnie dobrze sprawdza się przy ocenie strategii, gdzie istnieje kilka równoprawnych perspektyw, a ryzyko przeoczenia ważnego czynnika jest wysokie. Badania na benchmarku Game of 24 pokazały, że ToT poprawia skuteczność modelu z 4% (dla standardowego CoT) do 74%.
+To podejście świetnie sprawdza się przy ocenie strategii, gdzie istnieje kilka równoprawnych perspektyw, a ryzyko przeoczenia ważnego czynnika jest wysokie. Badania na benchmarku Game of 24 pokazały, że ToT poprawia skuteczność modelu z 4% (dla standardowego CoT) do 74%.
 
 ### ReAct – wnioskowanie ze środowiskiem
 
-ReAct (od „Reason and Act", czyli wnioskuj i działaj) to paradygmat, w którym model na przemian rozumuje i wykonuje akcje (wywołuje narzędzia, przeszukuje bazy danych, odpytuje API). Każdy krok wygląda tak: model analizuje stan, decyduje o akcji, wykonuje ją, odbiera wynik i planuje kolejny krok.
+ReAct (od „Reason and Act", czyli wnioskuj i działaj) to paradygmat, w którym model na przemian rozumuje i wykonuje akcje (wywołuje narzędzia, przeszukuje bazy danych, odpytuje API). Każdy krok wygląda następująco: model analizuje stan, decyduje o akcji, wykonuje ją, odbiera wynik i planuje kolejny etap.
 
-W praktyce marketerskiej ReAct to agent AI, który na Twoje polecenie „przeanalizuj widoczność marki w LLM" samodzielnie: odpytuje narzędzie do monitoringu, pobiera dane, przetwarza je i generuje raport – bez Twojego udziału na każdym etapie. Wzorzec do budowania takich agentów opisuje osobny artykuł o [agentach AI](/agenci-ai/przewodnik/).
+W praktyce marketerskiej ReAct to agent AI, który na Twoje polecenie „przeanalizuj widoczność marki w LLM" działa samodzielnie. Odpytuje narzędzie do monitoringu, pobiera dane, przetwarza je i generuje raport – bez Twojego udziału na każdym etapie. Wzorzec do budowania takich agentów opisuje osobny artykuł o [agentach AI](/agenci-ai/przewodnik/).
 
 ### Meta-prompting – model projektuje swój własny prompt
 
-Meta-prompting polega na tym, że prosisz model, żeby najpierw zaprojektował optymalny prompt dla zadanego problemu, a dopiero potem wykonał to zadanie, korzystając z tego promptu. To rekurencja z konkretnym zastosowaniem.
+Meta-prompting polega na tym, że prosisz model, aby najpierw zaprojektował optymalny prompt dla zadanego problemu, a dopiero potem wykonał zadanie na jego podstawie. To rekurencja z konkretnym zastosowaniem.
 
 ```
 Twoim zadaniem jest analiza strony pod kątem GEO.
@@ -167,7 +166,7 @@ Najpierw napisz prompt, który optymalnie poprowadziłby model LLM
 przez taką analizę. Potem wykonaj tę analizę korzystając z zaprojektowanego promptu.
 ```
 
-Meta-prompting sprawdza się szczególnie dobrze, gdy sam nie wiesz dokładnie, jak sformułować zadanie, albo gdy chcesz poprawić istniejący prompt bez ręcznego testowania wielu wariantów.
+**Meta-prompting sprawdza się szczególnie dobrze, gdy sam nie wiesz dokładnie, jak sformułować zadanie, albo chcesz poprawić istniejący prompt bez ręcznego testowania wielu wariantów.**
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
@@ -179,11 +178,11 @@ Meta-prompting sprawdza się szczególnie dobrze, gdy sam nie wiesz dokładnie, 
 
 ## Techniki specjalistyczne dla treści i SEO
 
-Inżynieria podpowiedzi ma bezpośrednie zastosowania w codziennej pracy SEO i contentowej. Tu liczy się nie tyle znajomość zaawansowanych architektur, ile precyzja w definiowaniu kontekstu, odbiorcy i formatu.
+Inżynieria podpowiedzi ma bezpośrednie zastosowanie w codziennej pracy SEO i contentowej. Tu liczy się nie tyle znajomość zaawansowanych architektur, ile precyzja w definiowaniu kontekstu, odbiorcy oraz formatu.
 
 ### Prompty do tworzenia treści
 
-Najczęstszy błąd przy zlecaniu treści modelowi to zbyt mało kontekstu o odbiorcy. Wynik jest generyczny, bo model nie wie, dla kogo pisze.
+Najczęstszy błąd przy zlecaniu treści modelowi to zbyt mało kontekstu o odbiorcy. Wynik staje się generyczny. Model po prostu nie wie, dla kogo pisze.
 
 Wzorzec promptu contentowego, który działa:
 
@@ -202,7 +201,7 @@ Im bardziej konkretna specyfikacja formatu i odbiorcy, tym mniej iteracji potrze
 
 ### Prompty do analizy i badań słów kluczowych
 
-Modele językowe dobrze radzą sobie z grupowaniem i klasyfikacją słów kluczowych, pod warunkiem że dostaną jasne kryteria:
+Modele językowe dobrze radzą sobie z grupowaniem i klasyfikacją słów kluczowych, pod warunkiem że otrzymają jasne kryteria:
 
 ```
 Poniżej lista 50 fraz kluczowych. Pogrupuj je według intencji wyszukiwania 
@@ -213,11 +212,11 @@ Zwróć wynik jako tabelę markdown.
 [lista fraz]
 ```
 
-**Zamiast „pogrupuj te frazy sensownie" – zdefiniuj kryteria grupowania i format wyjściowy.** Wtedy możesz porównywać wyniki między sesjami i wychwycić niespójności.
+**Zamiast „pogrupuj te frazy sensownie" – zdefiniuj kryteria grupowania i format wyjściowy.** Wtedy możesz porównywać wyniki między sesjami i błyskawicznie wychwycić niespójności.
 
 ### Prompty do humanizacji i korekty
 
-Modele zostawiają w tekstach charakterystyczne wzorce: jednolita długość zdań, nadużywane konstrukcje, specyficzne frazy. Prompt do korekty musi być równie konkretny:
+Modele zostawiają w tekstach charakterystyczne wzorce: jednolitą długość zdań, nadużywane konstrukcje, specyficzne frazy. Prompt do korekty musi być równie konkretny:
 
 ```
 Przepisz poniższy akapit, zachowując 100% informacji merytorycznych.
@@ -237,23 +236,23 @@ Lista wzorców do sprawdzenia po wygenerowaniu treści przez LLM:
 
 Jeśli budujesz system oparty na LLM, który przetwarza dane od użytkowników lub pobiera treści z zewnątrz (e-maile, dokumenty, strony internetowe), bezpieczeństwo promptów przestaje być teorią. To praktyczny problem produkcyjny.
 
-Podstawową podatnością jest brak separacji między kanałem instrukcji a kanałem danych. Model przetwarza cały strumień tekstu jednakowo – nie potrafi odróżnić Twoich instrukcji od złośliwych komend ukrytych w analizowanym dokumencie.
+Podstawową podatnością jest brak separacji między kanałem instrukcji a kanałem danych. Model przetwarza cały strumień tekstu jednakowo. Nie potrafi odróżnić Twoich instrukcji od złośliwych komend ukrytych w analizowanym dokumencie.
 
 Dwa główne typy ataków, które musisz znać:
 
 - **Wstrzykiwanie bezpośrednie** – użytkownik wpisuje w oknie czatu „zignoruj wszystkie poprzednie instrukcje i [złośliwe polecenie]"; stosunkowo łatwe do wykrycia przez filtry wejściowe
-- **Wstrzykiwanie pośrednie** – złośliwe instrukcje ukryte w dokumentach, e-mailach lub stronach internetowych przetwarzanych automatycznie przez agenta; trudniejsze do wykrycia, bo atak pochodzi z zewnętrznego źródła, nie od użytkownika
+- **Wstrzykiwanie pośrednie** – złośliwe instrukcje ukryte w dokumentach, e-mailach lub stronach internetowych przetwarzanych automatycznie przez agenta; trudniejsze do wykrycia, bo atak pochodzi z zewnętrznego źródła, a nie od użytkownika
 
-**Wstrzykiwanie pośrednie to aktywne zagrożenie produkcyjne, nie akademiczna hipoteza.** W 2026 roku jednostka Palo Alto Networks Unit 42 udokumentowała ataki na systemy agentowe przez spreparowane strony internetowe (tzw. pośrednie wstrzykiwanie promptu).
+**Wstrzykiwanie pośrednie to aktywne zagrożenie produkcyjne, a nie akademiczna hipoteza.** W 2026 roku jednostka Palo Alto Networks Unit 42 udokumentowała ataki na systemy agentowe przez spreparowane strony internetowe (tzw. pośrednie wstrzykiwanie promptu).
 
 ### Wzorzec Dual-LLM jako obrona architekturalna
 
-Najskuteczniejsza obrona nie polega na dodawaniu kolejnych filtrów – polega na separacji architektury. Wzorzec Dual-LLM fizycznie rozdziela dwa modele:
+Najskuteczniejsza obrona nie polega na dodawaniu kolejnych filtrów, lecz na separacji architektury. Wzorzec Dual-LLM fizycznie rozdziela dwa modele:
 
 - **Model uprzywilejowany** – ma dostęp do narzędzi i API, ale nigdy nie przetwarza surowych danych z niezaufanych źródeł
 - **Model w kwarantannie (izolowany)** – przetwarza zewnętrzne dane i ekstrahuje z nich ustrukturyzowane informacje w formacie JSON, ale nie ma dostępu do żadnych narzędzi
 
-Uprzywilejowany model dostaje tylko wynik ekstrakcji od izolowanego modelu – strukturę JSON, nie surowy tekst. Złośliwa instrukcja ukryta w zewnętrznym dokumencie jest nieaktywna, bo trafia wyłącznie do modelu bez uprawnień.
+Uprzywilejowany model dostaje tylko wynik ekstrakcji od izolowanego modelu – strukturę JSON, a nie surowy tekst. Złośliwa instrukcja ukryta w zewnętrznym dokumencie pozostaje nieaktywna, ponieważ trafia wyłącznie do modelu bez uprawnień.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/michal-ziach.avif" alt="Michał Ziach" /></div>
@@ -266,7 +265,7 @@ Uprzywilejowany model dostaje tylko wynik ekstrakcji od izolowanego modelu – s
 
 ## Modele i ich osobowości promptowe
 
-Różne modele reagują inaczej na te same prompty. To nie jest niedoróbka – to wynik różnych danych treningowych, różnych procedur wyrównywania (alignment) i różnych domyślnych zachowań. Znając te różnice, możesz pisać prompty, które działają przewidywalnie na konkretnym modelu.
+Różne modele reagują inaczej na te same prompty. To nie jest niedoróbka. To wynik różnych danych treningowych, odmiennych procedur wyrównywania (alignment) i specyficznych zachowań domyślnych. Znając te różnice, możesz pisać prompty działające przewidywalnie w konkretnym systemie.
 
 Zestawienie kluczowych różnic między popularnymi modelami:
 
@@ -281,13 +280,13 @@ Szczegółowe porównanie możliwości tych modeli, w tym parametry techniczne i
 
 ### Modele z rozszerzonym wnioskowaniem
 
-Modele z natywnym rozszerzonym wnioskowaniem (extended thinking – mechanizm, w którym model przed odpowiedzią prowadzi wewnętrzne obliczenia niewidoczne dla użytkownika) mają inną charakterystykę niż standardowe modele.
+Modele z natywnym rozszerzonym wnioskowaniem (extended thinking – mechanizm, w którym model przed odpowiedzią prowadzi wewnętrzne obliczenia niewidoczne dla użytkownika) mają inną charakterystykę niż standardowe rozwiązania.
 
-Przy takich modelach szczegółowe rozpisywanie kroków CoT w prompcie może być redundantne – model i tak prowadzi wewnętrzne wnioskowanie. Co więcej, zbyt szczegółowe narzucanie procesu może zawęzić przestrzeń rozwiązań i obniżyć jakość odpowiedzi. **Dla modeli z rozszerzonym wnioskowaniem lepiej działa definicja celu końcowego niż szczegółowa specyfikacja procesu.**
+Przy takich modelach szczegółowe rozpisywanie kroków CoT w prompcie bywa redundantne. Model i tak prowadzi wewnętrzne wnioskowanie. Co więcej, zbyt szczegółowe narzucanie procesu może zawęzić przestrzeń rozwiązań i obniżyć jakość odpowiedzi. **Dla modeli z rozszerzonym wnioskowaniem lepiej działa definicja celu końcowego niż szczegółowa specyfikacja procesu.**
 
 ## Mierzenie i iterowanie promptów
 
-Dobry prompt rzadko powstaje za pierwszym razem. Rzemiosło prompt engineeringu polega na systematycznym iterowaniu – nie na intuicyjnym majstrowaniu.
+Dobry prompt rzadko powstaje za pierwszym razem. Rzemiosło prompt engineeringu polega na systematycznym iterowaniu, a nie na intuicyjnym majstrowaniu.
 
 Proces optymalizacji, który daje powtarzalne wyniki:
 
@@ -297,7 +296,7 @@ Proces optymalizacji, który daje powtarzalne wyniki:
 4. Ponownie oceń na całym zbiorze testowym
 5. Zatwierdź zmianę tylko jeśli wynik na całym zbiorze wzrósł
 
-Zmiana jednego elementu naraz to klucz. Jeśli zmienisz trzy rzeczy jednocześnie i wynik się poprawi, nie wiesz, która zmiana pomogła – i przy następnej iteracji jesteś z powrotem w ciemno.
+**Zmiana jednego elementu naraz to klucz.** Jeśli zmienisz trzy rzeczy jednocześnie i wynik się poprawi, nie wiesz, która modyfikacja pomogła. Przy następnej iteracji znów działasz w ciemno.
 
 Jeśli chcesz sprawdzić, jak treści generowane z pomocą LLM wypadają pod kątem cytowalności przez wyszukiwarki AI, [Ocena cytowalności strony](/narzedzia/url-check/) analizuje strukturę strony pod kątem kluczowych czynników w kilkadziesiąt sekund.
 
