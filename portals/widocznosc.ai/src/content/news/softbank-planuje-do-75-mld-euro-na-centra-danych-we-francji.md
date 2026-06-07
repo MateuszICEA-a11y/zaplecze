@@ -12,26 +12,25 @@ tags:
 author: Redakcja widocznosc.ai
 image: ../../assets/images/news-2026-05-31-softbank-planuje-do-75-mld-euro-na-centra-danych-we-francji.webp
 ---
-
 ## 45 mld euro na start, docelowo do 75 mld i 5 GW mocy
 
-SoftBank zapowiedział inwestycję 45 mld euro (ok. 53 mld dolarów) w ciągu najbliższych pięciu lat w budowę infrastruktury AI we Francji. To pierwsza faza szerszego programu, którego łączna wartość ma sięgnąć 75 mld euro (ok. 87 mld dolarów), a docelowa moc – 5 GW mocy obliczeniowej przeznaczonej dla sztucznej inteligencji.
+SoftBank zapowiedział potężną inwestycję we francuską infrastrukturę AI. **W ciągu najbliższych pięciu lat firma przeznaczy na ten cel 45 mld euro (ok. 53 mld dolarów).** To zaledwie pierwsza faza znacznie szerszego programu. Jego łączna wartość ma docelowo sięgnąć 75 mld euro (ok. 87 mld dolarów), zapewniając aż 5 GW mocy obliczeniowej dla sztucznej inteligencji.
 
-Początkowy etap zakłada budowę centrów danych o mocy 3,1 GW do 2031 roku w regionie Hauts-de-France na północy kraju – m.in. w Dunkierce, Bosquel i Bouchain. SoftBank określił to jako swoją największą inwestycję w infrastrukturę AI w Europie. Przy budowie spółka ma współpracować z francuskim Schneider Electric, tworząc w Dunkierce wielkoskalowy klaster produkcji przemysłowej. Formalne ogłoszenie planu zaplanowano na poniedziałek.
+Początkowy etap zakłada budowę centrów danych o łącznej mocy 3,1 GW do 2031 roku. Obiekty powstaną w regionie Hauts-de-France na północy kraju – między innymi w Dunkierce, Bosquel i Bouchain. **SoftBank wprost nazywa ten projekt swoją największą europejską inwestycją w infrastrukturę AI.** Przy budowie japoński gigant połączy siły z francuskim Schneider Electric. Wspólnie stworzą w Dunkierce wielkoskalowy klaster przemysłowy, a formalne ogłoszenie tych planów zaplanowano na poniedziałek.
 
 > „AI wchodzi w nową erę, a kraje, które zbudują infrastrukturę tej transformacji, ukształtują przyszłość technologii, przemysłu i społeczeństwa" – powiedział prezes SoftBanku Masayoshi Son, wskazując, że Francja „ma wyjątkowo dobrą pozycję, by stać się wiodącym hubem infrastruktury AI w Europie".
 
 ## Kontekst: energia jako bariera dla europejskiego AI
 
-Inwestycja wpisuje się w wyścig Europy o nadrobienie dystansu do USA i Chin w rozwoju AI. Głównym hamulcem pozostają tu ceny energii – centra danych są wyjątkowo wrażliwe na koszt prądu, a europejskie taryfy rosną m.in. w cieniu wojny amerykańsko-irańskiej. Zdaniem ekspertów cytowanych przez CNBC projekty data center będą migrować do tych części kontynentu, gdzie energia jest tańsza, co wyłoni wygranych i przegranych.
+Projekt idealnie wpisuje się w europejski wyścig o nadrobienie technologicznego dystansu do USA i Chin. Głównym hamulcem rozwoju AI na Starym Kontynencie pozostają jednak ceny energii. Centra danych są niezwykle wrażliwe na koszty prądu, a europejskie taryfy wciąż rosną – między innymi w cieniu wojny amerykańsko-irańskiej. Eksperci cytowani przez CNBC nie mają złudzeń. **Projekty data center będą masowo migrować do regionów z tańszą energią, co brutalnie podzieli rynek na wygranych i przegranych.**
 
-Sam SoftBank coraz mocniej wiąże swoją przyszłość z boomem na AI. Akcje spółki wzrosły w 2026 roku o ponad 70%, napędzane oczekiwaniami wobec jej inwestycji w infrastrukturę. Grupa ma udziały w Arm Holdings, której projekty układów są wykorzystywane w serwerach AI, oraz zainwestowała ponad 30 mld dolarów w OpenAI – same zyski z tej inwestycji wyniosły 45 mld dolarów w roku zakończonym w marcu.
+Sam SoftBank coraz mocniej wiąże swoją przyszłość z rynkowym boomem na sztuczną inteligencję. W 2026 roku akcje spółki wzrosły o ponad 70%. Ten skok napędzały głównie ogromne oczekiwania wobec inwestycji infrastrukturalnych. Grupa posiada udziały w Arm Holdings, której układy zasilają serwery AI, a także zainwestowała ponad 30 mld dolarów w OpenAI. **Tylko w roku finansowym zakończonym w marcu zyski z tego ostatniego przedsięwzięcia wyniosły aż 45 mld dolarów.**
 
 > **Nasz komentarz:** Najciekawsze w tej zapowiedzi nie są same miliardy, lecz to, że wąskim gardłem europejskiego AI staje się dziś moc i energia, a nie modele. Lokalizacja takich inwestycji – tam, gdzie prąd jest tańszy – będzie realnie decydować, które regiony Europy zyskają na rozwoju sztucznej inteligencji.
 
 ## W skrócie
 
-- SoftBank inwestuje 45 mld euro (ok. 53 mld dolarów) w pierwszej fazie, w ciągu pięciu lat.
-- To część programu o łącznej wartości do 75 mld euro (ok. 87 mld dolarów) i docelowej mocy 5 GW.
-- Pierwszy etap: 3,1 GW do 2031 roku w regionie Hauts-de-France (Dunkierka, Bosquel, Bouchain), z udziałem Schneider Electric.
-- To największa inwestycja SoftBanku w infrastrukturę AI w Europie; barierą dla całego regionu pozostają wysokie ceny energii.
+- **Pierwsza faza** – SoftBank inwestuje 45 mld euro (ok. 53 mld dolarów) w ciągu najbliższych pięciu lat.
+- **Docelowa skala** – projekt jest częścią programu o łącznej wartości do 75 mld euro (ok. 87 mld dolarów) i docelowej mocy 5 GW.
+- **Początkowy etap** – budowa infrastruktury o mocy 3,1 GW do 2031 roku w regionie Hauts-de-France (Dunkierka, Bosquel, Bouchain) przy udziale Schneider Electric.
+- **Kluczowe wyzwanie** – to największa inwestycja SoftBanku w infrastrukturę AI w Europie, jednak barierą dla całego regionu wciąż pozostają wysokie ceny energii.

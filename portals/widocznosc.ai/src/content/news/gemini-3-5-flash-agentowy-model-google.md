@@ -12,25 +12,24 @@ tags:
 author: Redakcja widocznosc.ai
 image: ../../assets/images/news-2026-06-02-gemini-3-5-flash-agentowy-model-google.webp
 ---
-
 ## Flash, który dogania model Pro
 
-Google przedstawił Gemini 3.5 Flash jako swój najmocniejszy jak dotąd model do kodowania i zadań agentowych. Co istotne, na części wymagających benchmarków przewyższa większy model Gemini 3.1 Pro – osiąga 76,2 proc. na Terminal-Bench 2.1, 83,6 proc. na MCP Atlas oraz 84,2 proc. na teście rozumienia multimodalnego CharXiv Reasoning. W teście GDPval-AA notuje wynik 1656 Elo.
+Google przedstawił Gemini 3.5 Flash jako swój najpotężniejszy dotąd model do kodowania i zadań agentowych. **Co istotne, w części wymagających benchmarków przewyższa większy model Gemini 3.1 Pro.** Osiąga 76,2 proc. na Terminal-Bench 2.1, 83,6 proc. na MCP Atlas oraz 84,2 proc. w teście rozumienia multimodalnego CharXiv Reasoning. W zestawieniu GDPval-AA notuje z kolei wynik 1656 Elo.
 
-Najmocniejszym argumentem nie jest jednak sama jakość, lecz tempo. Według Google model generuje tokeny około cztery razy szybciej niż inne modele z czołówki, a w indeksie Artificial Analysis trafia do prawego górnego rogu – tam, gdzie spotykają się wysoka inteligencja i wysoka prędkość. Do tego dochodzi okno kontekstu liczące ponad milion tokenów wejściowych i 65 tysięcy tokenów wyjściowych oraz obsługa danych multimodalnych: tekst, obraz, audio, wideo i pliki PDF.
+Najmocniejszym argumentem nie jest jednak sama jakość. Liczy się tempo. Według Google model generuje tokeny około cztery razy szybciej niż rynkowa czołówka. W indeksie Artificial Analysis trafia prosto do prawego górnego rogu – tam, gdzie wysoka inteligencja spotyka się z ekstremalną prędkością. **Do tego dochodzi okno kontekstu liczące ponad milion tokenów wejściowych i 65 tysięcy tokenów wyjściowych oraz pełna obsługa danych multimodalnych: tekstu, obrazu, audio, wideo i plików PDF.**
 
 > **Nasz komentarz:** Najciekawsze w 3.5 Flash jest to, że szybki i tani model przestaje być kompromisem – dogania większego brata akurat w zadaniach agentowych, które ciągną się przez wiele kroków.
 
 ## Cena, która zmienia opłacalność agentów
 
-Cennik startuje od 1,5 dolara za milion tokenów wejścia i 9 dolarów za milion tokenów wyjścia, a buforowanie kontekstu kosztuje 15 centów. Google zaznacza, że długie zadania agentowe potrafią kosztować ponad połowę mniej niż w przypadku innych modeli z czołówki. Przy zadaniach, które wcześniej zajmowały programiście dni, a audytorowi tygodnie, taka różnica w koszcie i czasie przekłada się wprost na to, ile takich procesów opłaca się w ogóle uruchamiać.
+Cennik startuje od 1,5 dolara za milion tokenów wejścia i 9 dolarów za milion tokenów wyjścia. Z kolei buforowanie kontekstu kosztuje zaledwie 15 centów. Google wprost zaznacza, że długie zadania agentowe potrafią tu kosztować ponad połowę mniej niż u bezpośredniej konkurencji. **Przy procesach, które wcześniej zajmowały programiście dni, a audytorowi całe tygodnie, taka różnica w cenie decyduje o opłacalności wdrożenia.**
 
-Z perspektywy widoczności w wyszukiwaniu liczy się jeszcze jedno: Gemini 3.5 Flash jest powszechnie dostępny nie tylko przez API w Google AI Studio i Android Studio czy platformę Google Antigravity, ale też w aplikacji Gemini i w trybie AI Mode w wyszukiwarce Google. To właśnie tam model decyduje, które treści zacytować i streścić użytkownikowi.
+Z perspektywy widoczności w wyszukiwaniu liczy się jednak coś zupełnie innego. Gemini 3.5 Flash jest powszechnie dostępny nie tylko przez API w Google AI Studio, Android Studio czy platformę Google Antigravity. Trafił również do aplikacji Gemini oraz trybu AI Mode w samej wyszukiwarce Google. **To właśnie tam model decyduje, które treści zacytować i ostatecznie streścić użytkownikowi.**
 
-Naszym zdaniem szybszy i tańszy model w warstwie wyszukiwania oznacza, że odpowiedzi generowane przez AI będą obejmować coraz więcej zapytań – także tych długich i złożonych. Dla marek to przesuwa punkt ciężkości z klasycznego rankingu w stronę tego, czy ich treść jest dla modelu zrozumiała i godna zacytowania.
+Szybszy i tańszy model w warstwie wyszukiwania oznacza jedno. Odpowiedzi generowane przez AI będą obejmować coraz więcej zapytań – w tym tych długich i wysoce złożonych. **Dla marek przesuwa to punkt ciężkości z klasycznego rankingu w stronę optymalizacji pod kątem tego, czy treść jest dla modelu w ogóle zrozumiała i godna zacytowania.**
 
 ## W skrócie
 
-- Gemini 3.5 Flash zadebiutował na Google I/O 2026 i na części testów kodowania oraz zadań agentowych wyprzedza Gemini 3.1 Pro.
-- Atutem jest połączenie prędkości (około czterokrotnie szybsze generowanie tokenów) z niskim cennikiem – 1,5 dolara za milion tokenów wejścia i 9 dolarów za milion wyjścia.
-- Model trafił również do trybu AI Mode w wyszukiwarce Google, więc realnie wpływa na to, jak treści są streszczane i cytowane w odpowiedziach AI.
+- **Gemini 3.5 Flash** – zadebiutował na Google I/O 2026 i w części testów kodowania oraz zadań agentowych wyprzedza Gemini 3.1 Pro.
+- **Atutem jest połączenie prędkości** – około czterokrotnie szybsze generowanie tokenów idzie w parze z niskim cennikiem (1,5 dolara za milion tokenów wejścia i 9 dolarów za milion wyjścia).
+- **Obecność w trybie AI Mode** – model trafił do wyszukiwarki Google, więc realnie wpływa na to, jak treści są streszczane i cytowane w odpowiedziach AI.

@@ -12,30 +12,29 @@ tags:
 author: Redakcja widocznosc.ai
 image: ../../assets/images/news-2026-05-30-gdy-firmy-przesadzaja-z-ai.webp
 ---
-
 ## Aaron Levie ostrzega przed „psychozą AI" w firmach
 
-TechCrunch AI zwraca uwagę na rosnący problem bezkrytycznego zachwytu sztuczną inteligencją w firmach. Punktem wyjścia są słowa Aarona Leviego, założyciela Boxa, który sugeruje, że osoby decydujące o tym, że AI może przejąć czyjąś pracę, często same nie rozumieją, na czym ta praca naprawdę polega. Levie określa takie podejście mianem swoistej „psychozy AI” – sytuacji, w której technologia staje się nie narzędziem, ale ideologicznym uzasadnieniem dla radykalnych decyzji.
+TechCrunch AI punktuje rosnący problem bezkrytycznego zachwytu sztuczną inteligencją w biznesie. Punktem wyjścia są słowa Aarona Leviego. Założyciel Boxa wprost sugeruje, że decydenci zastępujący ludzi algorytmami często w ogóle nie rozumieją, na czym polegała ich praca. Levie określa takie podejście mianem swoistej „psychozy AI” – sytuacji, w której technologia staje się nie narzędziem, ale ideologicznym uzasadnieniem dla radykalnych decyzji.
 
-W materiale przywołano też konkretny przykład ClickUp, które niedawno zredukowało 22% zatrudnienia, stawiając na agentów AI. Jednocześnie skala zwolnień w branży technologicznej w 2026 roku ma już zbliżać się do poziomu z całego 2025 roku. Przekaz jest czytelny: część firm nie tylko testuje AI, ale zaczyna traktować ją jako pełnoprawny zamiennik ludzi – i robi to szybciej, niż jest w stanie ocenić skutki operacyjne, jakościowe i organizacyjne.
+Artykuł przywołuje konkretny przypadek ClickUp. Firma zredukowała niedawno 22% zatrudnienia, stawiając na agentów AI. Jednocześnie skala zwolnień w branży technologicznej w 2026 roku ma już zbliżać się do poziomu z całego 2025 roku. Przekaz jest czytelny. **Część firm nie tylko testuje AI, ale traktuje ją jako pełnoprawny zamiennik ludzi – i robi to szybciej, niż potrafi ocenić skutki operacyjne.**
 
 > **Nasz komentarz:** Największym ryzykiem nie jest dziś samo AI, ale decyzje liderów, którzy próbują nim zastąpić pracę, której nigdy naprawdę nie rozłożyli na czynniki pierwsze.
 
 ## Czego ta fala zwolnień uczy marki budujące widoczność w AI
 
-Naszym zdaniem ten news warto czytać szerzej niż tylko jako historię o zwolnieniach w techu. To sygnał dla każdej marki, która wdraża AI w marketingu, obsłudze klienta, sprzedaży czy tworzeniu treści. Jeśli prowadzisz firmę, łatwo wpaść w pułapkę myślenia, że skoro model potrafi wygenerować tekst, odpowiedź albo analizę, to człowiek przestaje być potrzebny. To skrót, który może szybko odbić się na jakości, spójności marki i zaufaniu odbiorców.
+Ten news warto czytać szerzej niż tylko jako kolejną historię o zwolnieniach w techu. To sygnał ostrzegawczy dla każdej marki, która wdraża AI w marketingu, obsłudze klienta czy tworzeniu treści. Jeśli prowadzisz firmę, łatwo wpaść w pułapkę. Skoro model potrafi wygenerować tekst lub analizę, człowiek wydaje się zbędny. **To myślowy skrót, który błyskawicznie niszczy jakość, spójność marki i zaufanie odbiorców.**
 
-- **Nie każda praca daje się sprowadzić do promptu** – wiele ról obejmuje kontekst, priorytetyzację, ocenę ryzyka i wyczucie sytuacji. To właśnie te elementy najczęściej znikają z pola widzenia, gdy zarząd patrzy na AI wyłącznie przez pryzmat oszczędności.
-- **Automatyzacja bez rozpoznania procesu kończy się stratą jakości** – zanim oddelegujesz zadania agentowi AI, sprawdź, które elementy są powtarzalne, a które wymagają doświadczenia i odpowiedzialności. Naszym zdaniem to podstawowy warunek sensownego wdrożenia.
-- **Widoczność marki w wyszukiwarkach AI zależy od jakości, nie tylko skali** – jeśli Twoje treści, support czy komunikacja staną się masowo generowane, ale mniej precyzyjne i mniej użyteczne, modele mogą przestać traktować Twoją markę jako wiarygodne źródło.
-- **Liderzy powinni rozumieć pracę, którą chcą automatyzować** – w naszej ocenie decyzje o wdrożeniu AI powinny wychodzić z analizy realnych zadań, a nie z mody czy presji rynku. Inaczej łatwo zautomatyzować nie to, co trzeba.
-- **AI najlepiej działa jako warstwa wzmacniająca zespół** – zamiast pytać, kogo zwolnić dzięki AI, lepiej zapytać, gdzie technologia skróci czas, odciąży ludzi i poprawi wynik bez psucia doświadczenia klienta.
-- **Zbyt agresywne cięcia mogą osłabić markę długofalowo** – krótkoterminowo firma może pokazać efektywność, ale jeśli spadnie jakość produktu, obsługi lub komunikacji, koszt reputacyjny wróci szybciej, niż zakładają arkusze kalkulacyjne.
+- **Nie każda praca daje się sprowadzić do promptu** – wiele ról wymaga kontekstu, priorytetyzacji, oceny ryzyka i wyczucia sytuacji, a te elementy znikają z pola widzenia, gdy zarząd patrzy na AI wyłącznie przez pryzmat oszczędności.
+- **Automatyzacja bez rozpoznania procesu kończy się stratą jakości** – zanim oddelegujesz zadania agentowi AI, sprawdź, które etapy są powtarzalne, a które bezwzględnie wymagają ludzkiego doświadczenia.
+- **Widoczność marki w wyszukiwarkach AI zależy od jakości, nie tylko skali** – masowo generowane, wtórne treści niszczą autorytet, przez co modele LLM szybko przestaną traktować Twoją markę jako wiarygodne źródło cytowań.
+- **Liderzy muszą rozumieć pracę, którą automatyzują** – decyzje o wdrożeniu AI powinny wynikać z analizy realnych zadań, a nie z rynkowej mody. 
+- **AI najlepiej działa jako warstwa wzmacniająca zespół** – zamiast pytać, kogo zwolnić, zapytaj, gdzie technologia skróci czas i odciąży specjalistów bez psucia doświadczenia klienta.
+- **Zbyt agresywne cięcia osłabiają markę długofalowo** – krótkoterminowo pokażesz w Excelu efektywność, ale jeśli spadnie jakość obsługi, koszt reputacyjny uderzy w firmę szybciej, niż zakładasz.
 
-Uważamy, że dla marek budujących obecność w ekosystemie AI to ważna lekcja: modele językowe premiują użyteczność, spójność i wiarygodność. Jeśli Twoja organizacja potraktuje AI jak pretekst do pochopnego demontażu kompetencji, możesz oszczędzić na etatach, ale stracić to, co najtrudniej odbudować – wiedzę operacyjną i zaufanie do marki.
+Dla marek budujących obecność w ekosystemie AI płynie stąd twarda lekcja. Modele językowe bezwzględnie premiują użyteczność, spójność i wiarygodność. **Jeśli potraktujesz AI jak pretekst do pochopnego demontażu kompetencji, oszczędzisz na etatach, ale stracisz to, co najtrudniej odbudować – wiedzę operacyjną i zaufanie do marki.**
 
 ## W skrócie
 
-- Coraz więcej firm traktuje AI jako uzasadnienie dla redukcji etatów, choć często nie rozumie pełnego zakresu pracy ludzi.
-- Przykład ClickUp i skala zwolnień w techu pokazują, że trend przyspiesza i wykracza poza eksperymenty.
-- Jeśli rozwijasz markę, wdrażaj AI jako wsparcie procesów, a nie ślepy zamiennik kompetencji, od których zależy jakość i wiarygodność.
+- **Redukcje w ciemno** – coraz więcej firm traktuje AI jako uzasadnienie dla cięć etatów, zupełnie nie rozumiejąc specyfiki zwalnianych ról.
+- **Koniec eksperymentów** – przykład ClickUp i skala zwolnień w techu udowadniają, że trend drastycznie przyspiesza i wykracza poza fazę testów.
+- **Wsparcie, nie zamiennik** – wdrażaj AI jako dopalacz procesów, a nie ślepe zastępstwo dla kompetencji budujących jakość i wiarygodność Twojej marki.
