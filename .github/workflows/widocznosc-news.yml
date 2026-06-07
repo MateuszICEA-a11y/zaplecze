@@ -30,6 +30,7 @@ jobs:
           DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
           DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
           KIE_API_KEY: ${{ secrets.KIE_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: python pipeline/news-generator-widocznosc/main.py
 
       - name: Commit and push
