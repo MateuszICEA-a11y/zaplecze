@@ -20,6 +20,7 @@ from scorer import select_topic
 from generator import generate_article, parse_llm_output, find_related_articles
 from postprocessor import postprocess, build_markdown, generate_slug
 from image_generator import generate_hero_image
+from smoother_bridge import smooth_news
 
 logging.basicConfig(
     level=logging.INFO,
@@ -185,9 +186,13 @@ def run() -> None:
         log.error("Frontmatter validation errors, not writing: %s", errors)
         return
 
+    # 10b. Wygładzanie polszczyzny (Gemini 3.1 Pro) – fail-safe:
+    # brak OPENROUTER_API_KEY / rejected (diff-guard) / błąd API -> oryginał + log.warning.
+    final_md = smooth_news(build_markdown(fm, body))
+
     # 11. Write file
     news_dir.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(build_markdown(fm, body), encoding="utf-8")
+    output_path.write_text(final_md, encoding="utf-8")
     log.info("Written: %s", output_path.relative_to(REPO_ROOT))
 
     # 12. Update published history
