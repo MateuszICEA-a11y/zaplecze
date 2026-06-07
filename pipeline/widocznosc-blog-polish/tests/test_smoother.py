@@ -271,3 +271,30 @@ def test_cli_missing_file_returns_error(tmp_path):
                        capture_output=True, text=True, env=env)
     assert r.returncode == 1
     assert "nie znaleziono" in r.stderr.lower()
+
+
+def test_blockquote_protected_and_restored():
+    body = (
+        "Akapit wstępny.\n\n"
+        "> **Nasz komentarz:** AI staje się systemowym filtrem zaufania.\n\n"
+        "Akapit końcowy.\n"
+    )
+    protected, store = smoother.protect(body)
+    # cały cytat zamrożony jako jeden token, nie trafia do modelu
+    assert "Nasz komentarz" not in protected
+    assert any(tok.startswith("§BLOCKQUOTE_") for tok in store)
+    # restore odtwarza 1:1
+    assert smoother.restore(protected, store) == body
+
+
+def test_blockquote_multiline_is_single_frozen_block():
+    body = (
+        "> Pierwsza linia cytatu.\n"
+        "> Druga linia cytatu.\n\n"
+        "Proza po cytacie.\n"
+    )
+    protected, store = smoother.protect(body)
+    blockquote_tokens = [t for t in store if t.startswith("§BLOCKQUOTE_")]
+    assert len(blockquote_tokens) == 1  # ciąg linii > = jeden blok
+    assert "Druga linia cytatu" not in protected
+    assert smoother.restore(protected, store) == body

@@ -35,6 +35,9 @@ def split_frontmatter(text: str) -> tuple[str, str]:
 PROTECT_PATTERNS = [
     ("CODEBLOCK", re.compile(r"```.*?```", re.DOTALL)),
     ("CALLOUT", re.compile(r"<aside\b[^>]*>.*?</aside>", re.DOTALL | re.IGNORECASE)),
+    # Markdownowy cytat (głos redakcji w newsach: „> **Nasz komentarz:**") – zamrażany jako
+    # jeden blok kolejnych linii „>", analogicznie do <aside>. Cytat = dosłowny, model go nie tyka.
+    ("BLOCKQUOTE", re.compile(r"(?:^[ \t]*>[^\n]*\n?)+", re.MULTILINE)),
     ("HEADING", re.compile(r"^#{1,6}[^\n]*$", re.MULTILINE)),
     ("LISTNUM", re.compile(r"^[ \t]*\d+[.)]\s", re.MULTILINE)),
     ("TABLEROW", re.compile(r"^[ \t]*\|.*\|[ \t]*$", re.MULTILINE)),
