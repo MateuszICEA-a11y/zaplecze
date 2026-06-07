@@ -45,5 +45,33 @@
     "slug": "android-dostaje-wykrywanie-podszywania-sie-w-polaczeniach",
     "source": "rss",
     "source_name": "Ars Technica AI"
+  },
+  {
+    "title": "Amazon rozwija magazynowego robota Proteus",
+    "date": "2026-06-04",
+    "slug": "amazon-rozwija-magazynowego-robota-proteus",
+    "source": "rss",
+    "source_name": "The Verge AI"
+  },
+  {
+    "title": "Claude pisze już większość kodu Anthropic",
+    "date": "2026-06-05",
+    "slug": "claude-pisze-juz-wiekszosc-kodu-anthropic",
+    "source": "rss",
+    "source_name": "The Decoder"
+  },
+  {
+    "title": "Google sięga po zewnętrzną moc obliczeniową",
+    "date": "2026-06-06",
+    "slug": "google-siega-po-zewnetrzna-moc-obliczeniowa",
+    "source": "rss",
+    "source_name": "TechCrunch AI"
+  },
+  {
+    "title": "Spór o centrum danych zaostrzył lokalny konflikt",
+    "date": "2026-06-07",
+    "slug": "spor-o-centrum-danych-zaostrzyl-lokalny-konflikt",
+    "source": "rss",
+    "source_name": "The Verge AI"
   }
 ]
