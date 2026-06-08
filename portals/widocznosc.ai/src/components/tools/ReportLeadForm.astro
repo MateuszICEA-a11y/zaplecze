@@ -152,6 +152,13 @@ const { tool, ctaLead, ctaButton, ctaHref = '/kontakt/', maxWidth } = Astro.prop
         });
         const body = await res.json().catch(() => ({}));
         if (!res.ok) throw new Error(body.error || `HTTP ${res.status}`);
+        const w = window as any;
+        w.dataLayer = w.dataLayer || [];
+        w.dataLayer.push({
+          event: 'generate_lead',
+          form_id: 'narzedzia',
+          lead_type: 'raport',
+        });
         if (status) status.textContent = `Raport wysłany na ${email}. Sprawdź skrzynkę (i spam).`;
         form.reset();
       } catch (err) {
