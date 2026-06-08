@@ -1,0 +1,322 @@
+---
+// Baner zgody RODO + Consent Mode v2. Renderowany raz globalnie w Layout (body).
+// Logika sygnałów: ../lib/consent.ts. Skrypt `consent default` (head, przed GTM)
+// jest w Layout.astro. Skrypt poniżej obsługuje interakcję i zapis cookie.
+// Odporność na ClientRouter: delegacja klików na `document` + re-init na astro:page-load.
+---
+
+<div id="cookie-consent" class="cc" data-cc hidden>
+  <!-- Pasek -->
+  <div class="cc__bar" role="region" aria-label="Zgoda na pliki cookie">
+    <p class="cc__text">
+      Używamy plików cookie do analityki i&nbsp;marketingu. Możesz zaakceptować wszystkie,
+      odrzucić albo wybrać szczegóły. Więcej w&nbsp;<a href="/polityka-prywatnosci/" class="cc__link"
+        >polityce prywatności</a
+      >.
+    </p>
+    <div class="cc__actions">
+      <button type="button" class="cc__btn cc__btn--ghost" data-consent-action="settings">Ustawienia</button>
+      <button type="button" class="cc__btn cc__btn--solid" data-consent-action="reject">Odrzuć wszystko</button>
+      <button type="button" class="cc__btn cc__btn--primary" data-consent-action="accept">Zaakceptuj wszystko</button>
+    </div>
+  </div>
+
+  <!-- Panel kategorii -->
+  <div class="cc__panel" data-cc-panel hidden role="dialog" aria-modal="false" aria-label="Ustawienia plików cookie">
+    <fieldset class="cc__cat">
+      <legend class="cc__legend">Kategorie plików cookie</legend>
+      <label class="cc__cat-row">
+        <input type="checkbox" checked disabled />
+        <span><strong>Niezbędne</strong> – wymagane do działania strony. Zawsze aktywne.</span>
+      </label>
+      <label class="cc__cat-row">
+        <input type="checkbox" data-consent-cat="analytics" />
+        <span><strong>Analityka</strong> – anonimowe statystyki ruchu (GA4).</span>
+      </label>
+      <label class="cc__cat-row">
+        <input type="checkbox" data-consent-cat="marketing" />
+        <span><strong>Marketing</strong> – pomiar i&nbsp;personalizacja reklam.</span>
+      </label>
+    </fieldset>
+    <div class="cc__actions">
+      <button type="button" class="cc__btn cc__btn--solid" data-consent-action="reject">Odrzuć wszystko</button>
+      <button type="button" class="cc__btn cc__btn--primary" data-consent-action="save">Zapisz wybór</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cc {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    pointer-events: none;
+  }
+  .cc[hidden] {
+    display: none;
+  }
+
+  .cc__bar,
+  .cc__panel {
+    pointer-events: auto;
+    width: 100%;
+    max-width: 920px;
+    background: var(--bg-surface-1);
+    border: 1px solid var(--hairline-soft);
+    border-radius: 14px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+    padding: 16px 18px;
+  }
+
+  .cc__bar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  @media (min-width: 760px) {
+    .cc__bar {
+      flex-direction: row;
+      align-items: center;
+      gap: 18px;
+    }
+  }
+
+  .cc__text {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--ink-muted);
+    flex: 1;
+  }
+
+  .cc__link {
+    color: var(--accent-blue);
+    text-decoration: underline;
+  }
+
+  .cc__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .cc__btn {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 9px;
+    padding: 9px 16px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    transition:
+      background 0.15s ease,
+      color 0.15s ease,
+      border-color 0.15s ease;
+  }
+
+  /* Accept i Reject = równorzędna waga wizualna (wymóg RODO) */
+  .cc__btn--primary {
+    background: var(--accent-blue);
+    color: #fff;
+  }
+  .cc__btn--primary:hover {
+    filter: brightness(1.08);
+  }
+
+  .cc__btn--solid {
+    background: var(--bg-surface-2);
+    color: var(--ink);
+    border-color: var(--hairline-soft);
+  }
+  .cc__btn--solid:hover {
+    background: var(--bg-surface-1);
+  }
+
+  .cc__btn--ghost {
+    background: transparent;
+    color: var(--ink-muted);
+  }
+  .cc__btn--ghost:hover {
+    color: var(--ink);
+  }
+
+  .cc__btn:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 2px;
+  }
+
+  .cc__panel[hidden] {
+    display: none;
+  }
+
+  .cc__legend {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .cc__cat {
+    border: 0;
+    margin: 0 0 14px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cc__cat-row {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--ink-muted);
+    cursor: pointer;
+  }
+
+  .cc__cat-row input {
+    margin-top: 2px;
+    flex: 0 0 auto;
+    accent-color: var(--accent-blue);
+  }
+
+  .cc__cat-row strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+</style>
+
+<script>
+  // CONSENT_VERSION musi pozostać zsynchronizowane z `s.v === 1` w inline head-skrypcie Layout.astro.
+  import {
+    CONSENT_COOKIE,
+    CONSENT_VERSION,
+    parseConsentCookie,
+    serializeConsent,
+    toConsentSignals,
+    type ConsentState,
+  } from '../lib/consent';
+
+  type Gtag = (...args: unknown[]) => void;
+  const w = window as unknown as { dataLayer?: unknown[]; gtag?: Gtag };
+  let lastFocus: HTMLElement | null = null;
+
+  function gtagUpdate(analytics: boolean, marketing: boolean) {
+    w.dataLayer = w.dataLayer || [];
+    const gtag: Gtag =
+      w.gtag ||
+      function () {
+        // GTM rozpoznaje komendy gtag po obiekcie `arguments`, nie po zwykłej tablicy.
+        // eslint-disable-next-line prefer-rest-params
+        w.dataLayer!.push(arguments);
+      };
+    gtag('consent', 'update', toConsentSignals({ analytics, marketing }));
+  }
+
+  function writeCookie(state: ConsentState) {
+    const maxAge = 60 * 60 * 24 * 365; // 12 miesięcy
+    const secure = location.protocol === 'https:' ? '; Secure' : '';
+    document.cookie =
+      CONSENT_COOKIE +
+      '=' +
+      serializeConsent(state) +
+      '; Max-Age=' +
+      maxAge +
+      '; Path=/; SameSite=Lax' +
+      secure;
+  }
+
+  function persist(analytics: boolean, marketing: boolean) {
+    writeCookie({ v: CONSENT_VERSION, analytics, marketing, ts: Date.now() });
+    gtagUpdate(analytics, marketing);
+  }
+
+  const root = () => document.querySelector<HTMLElement>('[data-cc]');
+  const panel = () => document.querySelector<HTMLElement>('[data-cc-panel]');
+
+  function showBar() {
+    const r = root();
+    if (r) r.hidden = false;
+  }
+  function hideAll() {
+    const r = root();
+    if (r) r.hidden = true;
+    const p = panel();
+    if (p) p.hidden = true;
+  }
+  function openPanel() {
+    lastFocus = (document.activeElement as HTMLElement) ?? null;
+    showBar();
+    const p = panel();
+    if (!p) return;
+    const cur = parseConsentCookie(document.cookie);
+    const a = p.querySelector<HTMLInputElement>('[data-consent-cat="analytics"]');
+    const m = p.querySelector<HTMLInputElement>('[data-consent-cat="marketing"]');
+    if (a) a.checked = cur?.analytics ?? false;
+    if (m) m.checked = cur?.marketing ?? false;
+    p.hidden = false;
+    p.querySelector<HTMLInputElement>('input:not([disabled])')?.focus();
+  }
+
+  // Widoczność: uruchamiane na każdym wejściu/nawigacji (DOM re-render przy ClientRouter).
+  function initVisibility() {
+    if (parseConsentCookie(document.cookie)) hideAll();
+    else showBar();
+  }
+
+  // Delegacja klików na document – przeżywa swapy ClientRouter.
+  document.addEventListener('click', (e) => {
+    const t = (e.target as HTMLElement)?.closest<HTMLElement>('[data-consent-action]');
+    if (!t) return;
+    const action = t.dataset.consentAction;
+    if (action === 'accept') {
+      persist(true, true);
+      hideAll();
+    } else if (action === 'reject') {
+      persist(false, false);
+      hideAll();
+    } else if (action === 'settings') {
+      openPanel();
+    } else if (action === 'save') {
+      const p = panel();
+      const a = p?.querySelector<HTMLInputElement>('[data-consent-cat="analytics"]')?.checked ?? false;
+      const m = p?.querySelector<HTMLInputElement>('[data-consent-cat="marketing"]')?.checked ?? false;
+      persist(a, m);
+      hideAll();
+    }
+  });
+
+  // Re-open ze stopki.
+  window.addEventListener('open-cookie-settings', openPanel);
+
+  // ESC zamyka panel.
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    const p = panel();
+    if (p && !p.hidden) {
+      p.hidden = true;
+      lastFocus?.focus();
+    }
+  });
+
+  document.addEventListener('astro:page-load', initVisibility);
+  initVisibility(); // pokrycie wypadku, gdy astro:page-load już padł
+</script>
