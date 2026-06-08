@@ -122,7 +122,10 @@ Cookie `wai_consent`:
 
 ## 6. Dostępność
 
-- Panel: `role="dialog"`, `aria-label`, focus-trap, ESC zamyka.
+- Panel: `role="dialog"` (niemodalny, `aria-modal="false"`), `aria-label`, fokus na
+  pierwszym polu przy otwarciu, ESC zamyka i przywraca fokus do elementu wyzwalającego.
+  Świadomie BEZ focus-trapu – pasek nie przykrywa treści, a trap na regionie
+  niemodalnym byłby anty-wzorcem WCAG.
 - Pełna obsługa klawiatury, `:focus-visible`.
 - Brak flash przy starcie (skrypt `is:inline` + tokeny motywu już ustawione
   wcześniejszym inline theme-initem).
