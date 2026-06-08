@@ -11,7 +11,7 @@ export const SITE_URL = 'https://widocznosc.ai';
 
 // Stabilne identyfikatory globalne
 export const ORG_ID = `${SITE_URL}/#organization`;
-export const PARENT_ORG_ID = 'https://grupa-icea.pl/#organization';
+export const PARENT_ORG_ID = 'https://www.grupa-icea.pl/#organization';
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 
 // Oficjalne profile social ICEA – sameAs dla Organization (sygnał encji dla AI/Google).
@@ -81,8 +81,10 @@ export const organizationNode = () => ({
   parentOrganization: {
     '@type': 'Organization',
     '@id': PARENT_ORG_ID,
-    name: 'ICEA S.A.',
-    url: 'https://grupa-icea.pl',
+    name: 'ICEA',
+    legalName: 'ICEA S.A.',
+    url: 'https://www.grupa-icea.pl/',
+    logo: 'https://grupa-icea.pl/wp-content/themes/knight-theme/svg/icea-tm-logo.svg',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'ul. Szyperska 14',
