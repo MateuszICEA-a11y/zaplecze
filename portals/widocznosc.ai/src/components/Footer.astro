@@ -117,6 +117,9 @@ const year = new Date().getFullYear();
     <!-- Bottom bar -->
     <div class="footer-bottom">
       <span class="footer-copy">© {year} widocznosc.ai · ICEA</span>
+      <button type="button" class="footer-cookie-btn" data-open-cookie-settings>
+        Ustawienia cookies
+      </button>
       <div class="footer-socials">
         <a
           href="https://www.linkedin.com/company/iceagroup/"
@@ -315,6 +318,28 @@ const year = new Date().getFullYear();
     text-transform: uppercase;
   }
 
+  .footer-cookie-btn {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    transition: color 0.15s ease;
+  }
+
+  .footer-cookie-btn:hover {
+    color: var(--ink);
+  }
+
+  .footer-cookie-btn:focus-visible {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 2px;
+  }
+
   .footer-socials {
     display: flex;
     gap: 6px;
@@ -368,4 +393,11 @@ const year = new Date().getFullYear();
   syncFooterAccordion();
   window.matchMedia('(min-width: 640px)').addEventListener('change', syncFooterAccordion);
   document.addEventListener('astro:page-load', syncFooterAccordion);
+
+  // „Ustawienia cookies" – delegacja na document (przeżywa swapy ClientRouter).
+  document.addEventListener('click', (e) => {
+    if ((e.target as HTMLElement)?.closest('[data-open-cookie-settings]')) {
+      window.dispatchEvent(new Event('open-cookie-settings'));
+    }
+  });
 </script>
