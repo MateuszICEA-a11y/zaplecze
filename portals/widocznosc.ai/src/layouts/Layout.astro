@@ -8,6 +8,7 @@ import interLatin from '@fontsource-variable/inter/files/inter-latin-wght-normal
 import { ClientRouter } from 'astro:transitions';
 import '../styles/Theme.css';
 import { buildGraph, organizationNode, websiteNode, SITE_URL } from '../lib/schema';
+import CookieConsent from '../components/CookieConsent.astro';
 
 interface Props {
   title: string;
@@ -44,6 +45,45 @@ const baseGraph = buildGraph(organizationNode(), websiteNode());
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Consent Mode v2 default – MUSI być przed GTM. Domyślnie denied;
+         powracający użytkownik → natychmiastowy update z cookie wai_consent.
+         Wersja `s.v === 1` zsynchronizowana z CONSENT_VERSION w src/lib/consent.ts. -->
+    <script is:inline>
+      (function () {
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        window.gtag = gtag;
+        gtag('consent', 'default', {
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          // pinned 'denied': brak osadzeń YouTube/personalizacji na stronie.
+          // Gdy dojdzie YouTube, zmapuj do zgody marketingowej (default + update).
+          personalization_storage: 'denied',
+          analytics_storage: 'denied',
+          functionality_storage: 'granted',
+          security_storage: 'granted',
+          wait_for_update: 500,
+        });
+        gtag('set', 'ads_data_redaction', true);
+        try {
+          var m = /(?:^|; )wai_consent=([^;]+)/.exec(document.cookie);
+          if (m) {
+            var s = JSON.parse(decodeURIComponent(m[1]));
+            if (s && s.v === 1) {
+              gtag('consent', 'update', {
+                analytics_storage: s.analytics ? 'granted' : 'denied',
+                ad_storage: s.marketing ? 'granted' : 'denied',
+                ad_user_data: s.marketing ? 'granted' : 'denied',
+                ad_personalization: s.marketing ? 'granted' : 'denied',
+              });
+            }
+          }
+        } catch (e) {}
+      })();
+    </script>
     <!-- Google Tag Manager -->
     <script is:inline>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -113,6 +153,7 @@ const baseGraph = buildGraph(organizationNode(), websiteNode());
     <main id="main" aria-label="Main content">
       <slot />
     </main>
+    <CookieConsent />
     <style is:global>
       html {
         font-family:
