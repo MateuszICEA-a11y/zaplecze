@@ -14,13 +14,15 @@ image: ../../assets/images/news-2026-06-09-claude-fable-5-model-klasy-mythos.web
 ---
 ## Najmocniejszy model Anthropic trafia do wszystkich
 
-Anthropic wprowadził Claude Fable 5. To pierwszy model nowej klasy Mythos – tej, którą firma stawia o szczebel wyżej niż dotychczasową klasę Opus. Według producenta Fable 5 osiąga najwyższe wyniki w niemal wszystkich testach możliwości AI: od inżynierii oprogramowania, przez analitykę i przetwarzanie obrazu, po badania naukowe. Reguła jest prosta. **Im dłuższe i bardziej złożone zadanie, tym wyraźniejsza przewaga modelu nad pozostałymi modelami firmy.** A cena? Startuje od 10 dolarów za milion tokenów wejścia i 50 dolarów za milion wyjścia – mniej niż połowa stawki za wcześniejszy Mythos Preview.
+Anthropic udostępnił Claude Fable 5. To pierwszy model nowej klasy Mythos, którą firma pozycjonuje o szczebel wyżej niż dotychczasową linię Opus. Według producenta Fable 5 osiąga najwyższe wyniki w niemal wszystkich testach możliwości AI: od inżynierii oprogramowania, przez analitykę i przetwarzanie obrazu, po badania naukowe. Reguła jest prosta. **Im dłuższe i bardziej złożone zadanie, tym wyraźniejsza przewaga modelu nad pozostałymi rozwiązaniami firmy.** Cena startuje od 10 dolarów za milion tokenów wejścia i 50 dolarów za milion wyjścia – to ponad dwukrotnie mniej niż stawka za wcześniejszy Mythos Preview.
 
-Najciekawsza jest tu jednak nie wydajność, lecz sposób udostępnienia tak zdolnego modelu. Zamiast odmawiać, Fable 5 przekierowuje. Nowy zestaw klasyfikatorów wyłapuje ryzykowne zapytania – z obszaru cyberbezpieczeństwa, biologii i chemii oraz tak zwanej dystylacji – i wtedy **odpowiedź generuje nie Fable, lecz słabszy Claude Opus 4.8**. Użytkownik dostaje o tym informację. Filtry nastawiono ostrożnie, więc czasem łapią też pytania nieszkodliwe. Mimo to, jak podaje Anthropic, uruchamiają się średnio w niespełna 5 proc. sesji. Pozostałe ponad 95 proc. działa na pełnym Fable.
+Najciekawsza jest tu jednak nie sama wydajność, lecz sposób udostępnienia tak potężnego modelu. Zamiast odmawiać odpowiedzi, Fable 5 przekierowuje ruch. Nowy zestaw klasyfikatorów wyłapuje ryzykowne zapytania – z obszaru cyberbezpieczeństwa, biologii i chemii oraz tzw. dystylacji – i w takich przypadkach **odpowiedź generuje nie Fable, lecz słabszy Claude Opus 4.8**. Użytkownik otrzymuje stosowną informację. Filtry skonfigurowano ostrożnie, dlatego czasem reagują także na nieszkodliwe pytania. Mimo to, jak podaje Anthropic, uruchamiają się średnio w niespełna 5 proc. sesji. Pozostałe ponad 95 proc. zapytań obsługuje pełny Fable.
 
-Tego samego dnia zadebiutował także Claude Mythos 5. Pod spodem to dokładnie ten sam model, tyle że z zabezpieczeniami zdjętymi w wybranych obszarach. Dostają go nieliczni: zespoły cyberobrony i dostawcy kluczowej infrastruktury, na początek w ramach programu Project Glasswing prowadzonego we współpracy z rządem USA. Anthropic nazywa go modelem o najsilniejszych zdolnościach z zakresu cyberbezpieczeństwa na świecie.
+Tego samego dnia zadebiutował także Claude Mythos 5. Technologicznie to dokładnie ten sam model, tyle że ze zniesionymi zabezpieczeniami w wybranych obszarach. Dostęp do niego mają nieliczni: zespoły cyberobrony i dostawcy kluczowej infrastruktury, początkowo w ramach programu Project Glasswing prowadzonego we współpracy z rządem USA. Anthropic określa go mianem modelu o najsilniejszych zdolnościach z zakresu cyberbezpieczeństwa na świecie.
 
 Jak Fable 5 – i bliźniaczy Mythos 5 – wypada na tle innych czołowych modeli, pokazują benchmarki Anthropic:
+
+<div class="bench-table">
 
 | Benchmark | Mythos 5 / Fable 5 | Mythos Preview | Opus 4.8 | GPT 5.5 | Gemini 3.1 Pro |
 | --- | --- | --- | --- | --- | --- |
@@ -40,27 +42,29 @@ Jak Fable 5 – i bliźniaczy Mythos 5 – wypada na tle innych czołowych model
 | Cyberbezpieczeństwo – ExploitBench (Cap%) | **78,0%\*** | 69,0% | 40,0% | 34,0% | – |
 | Zdrowie – HealthBench Professional | **66,0%\*** | 64,7% | 56,9% | 51,8% | – |
 
-**Metodologia:** kolumna Mythos 5 / Fable 5 podaje wyższy z bardzo zbliżonych wyników obu modeli (różnica zwykle 1–3 pkt proc.). Gwiazdką (\*) oznaczono benchmarki, na których Fable 5 wypada bliżej Opusa 4.8 – to efekt blokujących zabezpieczeń dla pytań o cyberbezpieczeństwo i biologię, kierujących część zapytań do słabszego modelu. ¹ GPT 5.5 mierzony przez Codex CLI, Gemini 3.1 Pro przez Gemini CLI.
+</div>
+
+**Metodologia:** kolumna Mythos 5 / Fable 5 podaje wyższy z bardzo zbliżonych wyników obu modeli (różnica wynosi zwykle 1–3 pkt proc.). Gwiazdką (\*) oznaczono benchmarki, w których Fable 5 wypada bliżej Opusa 4.8 – to efekt zabezpieczeń blokujących pytania o cyberbezpieczeństwo i biologię, które przekierowują część zapytań do słabszego modelu. ¹ GPT 5.5 mierzony przez Codex CLI, Gemini 3.1 Pro przez Gemini CLI.
 
 > **Nasz komentarz:** Najważniejsza nie jest tu sama liczba pobitych benchmarków, ale konstrukcja wdrożenia. Anthropic rozdziela „surowy” model od tego, co bezpiecznie podać publicznie, i zamiast twardej odmowy stosuje ciche przełączenie na słabszy Opus. To inny wzorzec bezpieczeństwa niż dotąd – kontrolą staje się architektura dostępu, a nie pojedyncza odpowiedź modelu.
 
 ## Zdolności rosną, więc rośnie też warstwa kontroli
 
-Skok możliwości najlepiej widać na liczbach. Podczas wczesnych testów firma Stripe sprawdziła Fable 5 na własnym kodzie – i model skrócił miesiące pracy inżynierskiej do kilku dni. Migrację bazy kodu w Ruby, liczącej 50 milionów linii, ogarnął w jeden dzień. Ręcznie zajęłaby ona zespołowi ponad dwa miesiące. W teście jakości kodu Cognition FrontierCode Fable uzyskał najwyższy wynik w stawce czołowych modeli. Osobny rekord padł w zadaniach wizyjnych: model przeszedł grę *Pokémon FireRed* wyłącznie na podstawie zrzutów ekranu, bez żadnych dodatkowych narzędzi.
+Skok możliwości najlepiej widać na liczbach. Podczas wczesnych testów firma Stripe sprawdziła Fable 5 na własnym kodzie – model skrócił miesiące pracy inżynierskiej do kilku dni. Migrację bazy kodu w Ruby, liczącej 50 milionów linii, zrealizował w jeden dzień. Ręcznie zajęłaby ona zespołowi ponad dwa miesiące. W teście jakości kodu Cognition FrontierCode Fable uzyskał najwyższy wynik wśród czołowych modeli. Osobny rekord padł w zadaniach wizyjnych: model przeszedł grę *Pokémon FireRed* wyłącznie na podstawie zrzutów ekranu, bez żadnych dodatkowych narzędzi.
 
 <figure class="yt-embed">
   <iframe src="https://www.youtube-nocookie.com/embed/Ty_50J84fMY" title="Claude Fable 5 przechodzi Pokémon FireRed wyłącznie na podstawie zrzutów ekranu" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
   <figcaption>Timelapse: Claude Fable 5 przechodzi <em>Pokémon FireRed</em> od początku do końca, korzystając wyłącznie ze zrzutów ekranu – bez map, podpowiedzi nawigacyjnych i dodatkowych danych o stanie gry.</figcaption>
 </figure>
 
-Pamięć też zrobiła swoje. W zadaniach długoterminowych dostęp do trwałych notatek podniósł skuteczność Fable trzykrotnie mocniej niż w przypadku Opusa 4.8.
+Pamięć również odegrała kluczową rolę. W zadaniach długoterminowych dostęp do trwałych notatek podniósł skuteczność Fable trzykrotnie mocniej niż w przypadku Opusa 4.8.
 
-Jeszcze mocniej wypada Mythos 5 w nauce. Projektowanie leków przyspieszył mniej więcej dziesięciokrotnie. W ślepych porównaniach naukowcy wybierali jego hipotezy z biologii molekularnej w około 80 proc. przypadków. A genomika? Tu przez ponad tydzień pracował niemal samodzielnie i wytrenował własny model uczenia maszynowego – sto razy mniejszy od rozwiązania opublikowanego niedawno w „Science”, a mimo to skuteczniejszy.
+Mythos 5 jeszcze lepiej radzi sobie w badaniach naukowych. Model przyspieszył projektowanie leków mniej więcej dziesięciokrotnie. W ślepych testach naukowcy wybierali jego hipotezy z biologii molekularnej w około 80 proc. przypadków. Z kolei w dziedzinie genomiki przez ponad tydzień pracował niemal samodzielnie i wytrenował własny model uczenia maszynowego – sto razy mniejszy od rozwiązania opublikowanego niedawno w „Science”, a mimo to skuteczniejszy.
 
-Im większe możliwości, tym grubsza warstwa kontroli. Najmocniejsze z nich – pełne cyberbezpieczeństwo i biologię – Anthropic zostawia na razie za dostępem warunkowym w Mythos 5. Publiczny Fable 5 to wariant z domkniętymi bezpiecznikami. Dochodzi do tego nowa polityka danych: cały ruch na modelach klasy Mythos podlega 30-dniowej retencji, ale **nie trafia do trenowania kolejnych modeli** – ma służyć wyłapywaniu nadużyć i ograniczaniu fałszywych alarmów. Firma sama przyznaje, że filtry są dziś celowo zbyt czułe, i zapowiada ich zawężanie. To czytelny sygnał: na tym poziomie zdolności tempo udostępniania świadomie ustępuje kontroli nad ryzykiem.
+Im większe możliwości, tym bardziej rygorystyczna kontrola. Najbardziej zaawansowane funkcje – pełne cyberbezpieczeństwo i biologię – Anthropic ogranicza na razie dostępem warunkowym w Mythos 5. Publiczny Fable 5 to wariant z aktywnymi zabezpieczeniami. Dochodzi do tego nowa polityka danych: cały ruch na modelach klasy Mythos podlega 30-dniowej retencji, ale **nie trafia do trenowania kolejnych modeli** – ma służyć wyłącznie wyłapywaniu nadużyć i ograniczaniu fałszywych alarmów. Firma przyznaje, że filtry są dziś celowo zbyt czułe, i zapowiada ich precyzyjniejsze strojenie. To czytelny sygnał: na tym poziomie zdolności tempo udostępniania nowości świadomie ustępuje miejsca kontroli nad ryzykiem.
 
 ## W skrócie
 
-- **Nowa klasa modeli** – Claude Fable 5 to pierwszy publicznie dostępny model klasy Mythos, którą Anthropic stawia ponad Opusem. Najwyższe wyniki w niemal wszystkich testach możliwości AI.
-- **Bezpiecznik zamiast odmowy** – przy ryzykownych zapytaniach (cyberbezpieczeństwo, biologia i chemia, dystylacja) odpowiedź przejmuje Opus 4.8. Dotyczy średnio mniej niż 5 proc. sesji.
-- **Mythos 5 z ograniczonym dostępem** – ten sam model z poluzowanymi zabezpieczeniami trafia na razie tylko do cyberobrońców w Project Glasswing. Cena obu: 10 i 50 dolarów za milion tokenów wejścia i wyjścia.
+- **Nowa klasa modeli** – Claude Fable 5 to pierwszy publicznie dostępny model klasy Mythos, którą Anthropic pozycjonuje ponad linią Opus. Osiąga najwyższe wyniki w niemal wszystkich testach możliwości AI.
+- **Bezpiecznik zamiast odmowy** – przy ryzykownych zapytaniach (cyberbezpieczeństwo, biologia i chemia, dystylacja) generowanie odpowiedzi przejmuje Opus 4.8. Dotyczy to średnio mniej niż 5 proc. sesji.
+- **Mythos 5 z ograniczonym dostępem** – ten sam model ze zniesionymi zabezpieczeniami trafia na razie wyłącznie do zespołów cyberobrony w ramach Project Glasswing. Cena obu modeli wynosi 10 i 50 dolarów za milion tokenów wejścia i wyjścia.

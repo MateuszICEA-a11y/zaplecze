@@ -1597,6 +1597,21 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     border-radius: var(--r-lg);
   }
 
+  /* Tabela benchmarków – wyróżniona kolumna flagowa (Mythos 5 / Fable 5) */
+  .article-content .bench-table th:nth-child(2),
+  .article-content .bench-table td:nth-child(2) {
+    background: rgba(10, 156, 255, 0.1);
+  }
+  .article-content .bench-table th:nth-child(2) {
+    border-top-left-radius: var(--r-md);
+    border-top-right-radius: var(--r-md);
+    color: var(--accent-blue);
+  }
+  .article-content .bench-table tr:last-child td:nth-child(2) {
+    border-bottom-left-radius: var(--r-md);
+    border-bottom-right-radius: var(--r-md);
+  }
+
   /* Infographic */
   .article-content figure.infographic {
     background: var(--bg-surface-1);
