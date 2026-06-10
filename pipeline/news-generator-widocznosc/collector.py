@@ -12,6 +12,7 @@ from base64 import b64encode
 from dataclasses import dataclass, asdict
 from datetime import datetime, timezone, timedelta
 from difflib import SequenceMatcher
+from html import unescape
 from time import mktime
 
 import feedparser
@@ -60,6 +61,9 @@ def parse_rss_feeds(
     signals: list[Signal] = []
 
     for feed_cfg in feeds_config:
+        # Non-RSS sources (e.g. type: sitemap) are handled by their own collector.
+        if feed_cfg.get("type", "rss") != "rss":
+            continue
         try:
             feed = feedparser.parse(feed_cfg["url"])
             if feed.bozo and not feed.entries:
@@ -100,6 +104,127 @@ def _parse_entry_date(entry: dict) -> datetime | None:
         except (ValueError, OverflowError):
             return None
     return None
+
+
+# ---------------------------------------------------------------------------
+# Sitemap source – for publishers without an RSS feed (e.g. Anthropic).
+# Reads <loc>/<lastmod> from an XML sitemap, keeps recent entries under
+# ``path_filter``, then scrapes og:title/og:description from each page.
+# ---------------------------------------------------------------------------
+
+_UA = "Mozilla/5.0 (compatible; widocznosc-news/1.0; +https://widocznosc.ai)"
+
+
+def _http_get(url: str, timeout: int = 15) -> str:
+    """Fetch a URL and return its decoded text body (browser-like UA)."""
+    req = urllib.request.Request(url, headers={"User-Agent": _UA})
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        charset = resp.headers.get_content_charset() or "utf-8"
+        return resp.read().decode(charset, errors="replace")
+
+
+def _meta_content(html: str, prop: str, attr: str = "property") -> str:
+    """Extract a <meta> content value, tolerant of attribute order."""
+    p = re.escape(prop)
+    m = re.search(
+        rf'<meta[^>]+{attr}=["\']{p}["\'][^>]*?content=["\']([^"\']*)["\']',
+        html, re.IGNORECASE,
+    )
+    if m:
+        return m.group(1)
+    m = re.search(
+        rf'<meta[^>]+content=["\']([^"\']*)["\'][^>]+{attr}=["\']{p}["\']',
+        html, re.IGNORECASE,
+    )
+    return m.group(1) if m else ""
+
+
+def _extract_meta(html: str) -> tuple[str, str]:
+    """Return (title, summary) from a page's social/meta tags.
+
+    Prefers Open Graph tags; falls back to <title> (stripped of a trailing
+    " \\ Anthropic"/"| Site" suffix) and the standard meta description.
+    """
+    title = _meta_content(html, "og:title")
+    if not title:
+        m = re.search(r"<title>(.*?)</title>", html, re.IGNORECASE | re.DOTALL)
+        if m:
+            title = re.split(r"\s*[\\|]\s*\w", m.group(1))[0].strip()
+    summary = _meta_content(html, "og:description") or _meta_content(
+        html, "description", attr="name"
+    )
+    return unescape((title or "").strip()), unescape((summary or "").strip())
+
+
+def _parse_lastmod(value: str) -> datetime | None:
+    """Parse an ISO-8601 sitemap <lastmod> into an aware UTC datetime."""
+    s = value.strip().replace("Z", "+00:00")
+    try:
+        dt = datetime.fromisoformat(s)
+    except ValueError:
+        return None
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt.astimezone(timezone.utc)
+
+
+def parse_sitemap_feeds(
+    feeds_config: list[dict],
+    max_age_hours: int = 48,
+) -> list[Signal]:
+    """Collect signals from feeds declared with ``type: sitemap``.
+
+    For each such feed: fetch its XML sitemap, keep <url> entries whose <loc>
+    contains ``path_filter`` and whose <lastmod> is within ``max_age_hours``,
+    take the newest ``max_items``, and scrape each page for title/summary.
+    """
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=max_age_hours)
+    signals: list[Signal] = []
+
+    for cfg in feeds_config:
+        if cfg.get("type") != "sitemap":
+            continue
+        try:
+            xml = _http_get(cfg["url"])
+        except Exception:
+            continue
+
+        path_filter = cfg.get("path_filter", "/")
+        max_items = cfg.get("max_items", 6)
+
+        candidates: list[tuple[datetime, str]] = []
+        for block in re.finditer(r"<url\b[^>]*>(.*?)</url>", xml, re.DOTALL | re.IGNORECASE):
+            chunk = block.group(1)
+            loc_m = re.search(r"<loc>\s*([^<]+?)\s*</loc>", chunk, re.IGNORECASE)
+            if not loc_m or path_filter not in loc_m.group(1):
+                continue
+            lm_m = re.search(r"<lastmod>\s*([^<]+?)\s*</lastmod>", chunk, re.IGNORECASE)
+            published = _parse_lastmod(lm_m.group(1)) if lm_m else None
+            if published is None or published < cutoff:
+                continue
+            candidates.append((published, loc_m.group(1).strip()))
+
+        candidates.sort(key=lambda c: c[0], reverse=True)
+
+        for published, loc in candidates[:max_items]:
+            try:
+                html = _http_get(loc)
+            except Exception:
+                continue
+            title, summary = _extract_meta(html)
+            if not title:
+                continue
+            signals.append(Signal(
+                title=title,
+                summary=summary,
+                source="rss",
+                category=cfg.get("category", "general"),
+                published=published,
+                url=loc,
+                source_name=cfg.get("name"),
+            ))
+
+    return signals
 
 
 def fetch_google_trends(
@@ -247,6 +372,10 @@ def collect_all_signals(
     # 1. RSS feeds
     rss_signals = parse_rss_feeds(feeds_config, max_age_hours=max_age_hours)
     signals.extend(rss_signals)
+
+    # 1b. Sitemap sources (publishers without RSS, e.g. Anthropic)
+    sitemap_signals = parse_sitemap_feeds(feeds_config, max_age_hours=max_age_hours)
+    signals.extend(sitemap_signals)
 
     # 2. Google Trends (DataForSEO)
     trends_signals = fetch_google_trends(seeds=trends_seeds)

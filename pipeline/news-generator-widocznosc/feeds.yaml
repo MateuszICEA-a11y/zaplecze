@@ -13,6 +13,14 @@ feeds:
   - url: "https://venturebeat.com/category/ai/feed/"
     category: "llm"
     name: "VentureBeat AI"
+  # Anthropic – brak RSS, więc kolektor sitemap (czyta /news/ z sitemap.xml,
+  # sortuje po lastmod, dociąga max_items najnowszych; źródło pierwotne):
+  - url: "https://www.anthropic.com/sitemap.xml"
+    category: "llm"
+    name: "Anthropic"
+    type: "sitemap"
+    path_filter: "/news/"
+    max_items: 6
   # Szersze, ale wiarygodne źródła AI (redakcyjne):
   - url: "https://arstechnica.com/ai/feed/"
     category: "general-ai"
