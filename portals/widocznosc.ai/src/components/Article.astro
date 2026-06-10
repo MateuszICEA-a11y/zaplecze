@@ -1587,6 +1587,16 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     line-height: 1.4;
   }
 
+  /* Osadzony film (YouTube) – responsywny kadr 16:9 */
+  .article-content figure.yt-embed iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: 0;
+    border-radius: var(--r-lg);
+  }
+
   /* Infographic */
   .article-content figure.infographic {
     background: var(--bg-surface-1);
