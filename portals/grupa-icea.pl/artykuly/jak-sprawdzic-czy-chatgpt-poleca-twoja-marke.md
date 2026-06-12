@@ -6,6 +6,8 @@ slug: jak-sprawdzic-czy-chatgpt-poleca-twoja-marke
 author: 'Mateusz Wiśniewski'
 kategorie: ['AI', 'SEO']
 data: 2026-06-12
+featuredImage: images/hero-widocznosc-marki-w-ai.png
+featuredImageAlt: 'Widoczność marki w AI – dymek czatu z sygnałem marki na tle geometrycznej rozety'
 ---
 
 Z ChatGPT korzysta już ponad 10 milionów Polaków – tak wynika z badania Mediapanel Gemius/PBI z października 2025 roku. Według analizy OpenAI i NBER niemal co czwarta rozmowa z czatbotem dotyczy poszukiwania informacji: o produktach, usługach, firmach. Twoi klienci pytają więc sztuczną inteligencję, co kupić i komu zaufać – a Ty najprawdopodobniej nie wiesz, co słyszą w odpowiedzi. Tych rozmów nie zobaczysz w Google Analytics ani w Search Console. W tym przewodniku pokazujemy, jak w kwadrans samodzielnie sprawdzić, czy ChatGPT, Gemini i Perplexity polecają Twoją markę – i co zrobić, jeśli okaże się, że milczą albo mijają się z faktami.
@@ -42,6 +44,8 @@ Przy każdej odpowiedzi zanotuj cztery rzeczy:
 | Źródła | Skąd model czerpie wiedzę – czy cytuje Twoją stronę, czy może katalog firm sprzed lat |
 
 Dwa praktyczne nawyki podnoszą wiarygodność testu. Po pierwsze – testuj na wylogowanym koncie albo w trybie incognito, bo personalizacja i pamięć rozmów zafałszują wynik (model, który zna Cię z wcześniejszych rozmów, chętniej wspomni Twoją markę). Po drugie – każde pytanie zadaj dwa, trzy razy w osobnych sesjach. Odpowiedzi modeli potrafią się różnić między uruchomieniami i dopiero powtórzenia pokazują, co jest regułą, a co przypadkiem.
+
+![Jak sprawdzić, czy AI poleca Twoją markę – 4 kroki ręcznego testu: otwórz 3 silniki, zadaj 5 typów pytań, notuj 4 rzeczy, powtórz 2–3 razy](images/infografika-test-widocznosci-marki-w-ai.png)
 
 ## Jakie pułapki czyhają na ręczne testowanie?
 
