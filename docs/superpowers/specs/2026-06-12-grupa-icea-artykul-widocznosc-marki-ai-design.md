@@ -1,4 +1,7 @@
-# Artykuł-most grupa-icea.pl → widocznosc.ai: „Jak sprawdzić, czy ChatGPT poleca Twoją markę?"
+# Artykuł-most grupa-icea.pl → widocznosc.ai: „Jak sprawdzić, czy AI poleca Twoją markę?"
+
+> Aktualizacja 2026-06-12: tytuł i slug uogólnione z „ChatGPT" na „AI" (decyzja Mateusza –
+> artykuł traktuje 3 silniki równorzędnie); silniki wymienione w podtytule.
 
 Data: 2026-06-12 · Status: zaakceptowany przez Mateusza (sesja 2026-06-12)
 
@@ -42,5 +45,5 @@ Autor: Mateusz Wiśniewski. Fact-check przez /web-fact-check przed oddaniem.
 
 ## Deliverables
 
-- `portals/grupa-icea.pl/artykuly/jak-sprawdzic-czy-chatgpt-poleca-twoja-marke.md` (+ meta title/description, slug)
+- `portals/grupa-icea.pl/artykuly/jak-sprawdzic-czy-ai-poleca-twoja-marke.md` (+ meta title/description, slug)
 - wersja `.html` do wklejenia w WordPress

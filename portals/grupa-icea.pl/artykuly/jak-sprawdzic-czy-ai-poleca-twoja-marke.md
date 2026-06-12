@@ -1,8 +1,8 @@
 ---
-title: 'Jak sprawdzić, czy ChatGPT poleca Twoją markę? Praktyczny przewodnik po widoczności w AI'
-metaTitle: 'Jak sprawdzić widoczność marki w ChatGPT i AI? | Grupa ICEA'
+title: 'Jak sprawdzić, czy AI poleca Twoją markę? Praktyczny przewodnik po widoczności w ChatGPT, Gemini i Perplexity'
+metaTitle: 'Jak sprawdzić widoczność marki w AI? | Grupa ICEA'
 metaDescription: 'Coraz więcej klientów pyta ChatGPT, zanim kupi. Sprawdź w 15 minut, czy AI poleca Twoją markę – gotowe prompty, darmowe narzędzia i plan działania.'
-slug: jak-sprawdzic-czy-chatgpt-poleca-twoja-marke
+slug: jak-sprawdzic-czy-ai-poleca-twoja-marke
 author: 'Mateusz Wiśniewski'
 kategorie: ['AI', 'SEO']
 data: 2026-06-12
