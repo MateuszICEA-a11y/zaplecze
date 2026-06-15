@@ -550,5 +550,13 @@
     "section": "news",
     "format": "analysis",
     "source": "rss"
+  },
+  {
+    "title": "Benzyna poniżej 6 zł. Od wtorku kierowcy zobaczą niższe ceny na stacjach",
+    "date": "2026-06-15",
+    "slug": "benzyna-ponizej-6-zl-od-wtorku-kierowcy-zobacza-nizsze-ceny-na-stacjach",
+    "section": "news",
+    "format": "short",
+    "source": "rss"
   }
 ]
