@@ -558,5 +558,13 @@
     "section": "news",
     "format": "short",
     "source": "rss"
+  },
+  {
+    "title": "Rząd wygasza pakiet CPN. Co to oznacza dla cen paliw i kosztów flot?",
+    "date": "2026-06-16",
+    "slug": "rzad-wygasza-pakiet-cpn-co-to-oznacza-dla-cen-paliw-i-kosztow-flot",
+    "section": "news",
+    "format": "analysis",
+    "source": "rss"
   }
 ]
