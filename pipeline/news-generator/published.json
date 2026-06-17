@@ -566,5 +566,13 @@
     "section": "news",
     "format": "analysis",
     "source": "rss"
+  },
+  {
+    "title": "Hanoi zamknie część ulicy Van Cao. Utrudnienia od 18 czerwca przez budowę stacji S1",
+    "date": "2026-06-17",
+    "slug": "hanoi-zamknie-czesc-ulicy-van-cao-utrudnienia-od-18-czerwca-przez-budowe-stacji",
+    "section": "news",
+    "format": "short",
+    "source": "rss"
   }
 ]
