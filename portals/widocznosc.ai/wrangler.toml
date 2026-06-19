@@ -18,6 +18,17 @@ PUBLIC_SITE_URL = "https://widocznosc.ai"
 # domeny nadawcy widocznosc.ai (rekordy DKIM/SPF na subdomenie wysyłkowej).
 # Endpoint reużywa bindingu KV FANOUT_RL (poniżej) z prefiksem klucza contact:.
 
+# Weryfikacja SMS (OTP) dla narzędzi (/api/sms/send-code, /api/sms/verify-code).
+# Sekrety ustawiane w panelu Cloudflare Pages → Settings → Variables and Secrets:
+#   SMSAPI_TOKEN   – token OAuth z panelu SMSAPI.pl
+#   SMSAPI_SENDER  – zarejestrowane pole nadawcy (np. "ICEA")
+#   OTP_SALT       – losowy sekret do hashowania kodów
+#   SMSAPI_TEST=1  – (opcjonalnie) SMSAPI nie wysyła realnie, nie zużywa kredytów
+# Limity (0 = wyłączony; default w kodzie): SMS_HOURLY_PER_PHONE=3
+#   SMS_SENDCODE_IP_LIMIT=10  SMS_DAILY_GLOBAL_LIMIT=30 (start; kill-switch kosztowy)
+# Stan OTP w bindingu FANOUT_RL pod kluczami otp:<id>, otp-cd/-h/-ip/-g.
+# Lokalnie: skopiuj sekrety do gitignored .dev.vars i uruchom `npx wrangler pages dev dist`.
+
 # Binding KV dla rate-limitu narzędzia fan-out (/narzedzia/fanout, 3/IP/dzień).
 # Ten projekt zarządza bindingami z wrangler.toml, więc ID musi być tutaj.
 [[kv_namespaces]]
