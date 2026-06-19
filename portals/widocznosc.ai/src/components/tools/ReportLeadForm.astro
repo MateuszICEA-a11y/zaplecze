@@ -5,25 +5,33 @@
 // Style oparte o zmienne motywu z Theme.css (dark/light przełączają się same).
 interface Props {
   tool: 'brand-check' | 'fanout' | 'url-check' | 'ai-bots-check';
+  mode?: 'report' | 'gate';
   ctaLead: string; // zdanie kontekstowe nad przyciskiem CTA
   ctaButton: string; // etykieta przycisku CTA
   ctaHref?: string;
   maxWidth?: string; // szerokość kolumny, by dopasować do bloku wyniku danej strony (domyślnie 1080px)
 }
-const { tool, ctaLead, ctaButton, ctaHref = '/kontakt/', maxWidth } = Astro.props;
+const { tool, mode = 'report', ctaLead, ctaButton, ctaHref = '/kontakt/', maxWidth } = Astro.props;
+const isGate = mode === 'gate';
+const title = isGate ? 'Zostaw dane, by zobaczyć wynik' : 'Wyślij sobie ten raport na e-mail';
+const sub = isGate
+  ? 'Wynik audytu pokażemy od razu po weryfikacji numeru. Bez zobowiązań.'
+  : 'Dostaniesz pełny wynik w czytelnej formie. Bez zobowiązań.';
+const confirmLabel = isGate ? 'Pokaż wynik' : 'Wyślij audyt';
 ---
 
 <section
   class="report-lead"
   data-report-lead
   data-tool={tool}
+  data-mode={mode}
   hidden
   aria-live="polite"
   style={maxWidth ? `--rl-max:${maxWidth}` : undefined}
 >
   <div class="report-lead__card">
-    <h3 class="report-lead__title">Wyślij sobie ten raport na e-mail</h3>
-    <p class="report-lead__sub">Dostaniesz pełny wynik w czytelnej formie. Bez zobowiązań.</p>
+    <h3 class="report-lead__title">{title}</h3>
+    <p class="report-lead__sub">{sub}</p>
 
     <form data-report-lead-form class="report-lead__form" novalidate>
       <!-- Krok 1: dane -->
@@ -57,7 +65,7 @@ const { tool, ctaLead, ctaButton, ctaHref = '/kontakt/', maxWidth } = Astro.prop
         <div class="report-lead__grid">
           <input type="text" name="code" inputmode="numeric" pattern="[0-9]*" maxlength="6"
             placeholder="______" class="report-lead__input" aria-label="Kod z SMS" autocomplete="one-time-code" />
-          <button type="submit" class="report-lead__btn" disabled data-role="confirm">Wyślij audyt</button>
+          <button type="submit" class="report-lead__btn" disabled data-role="confirm">{confirmLabel}</button>
         </div>
         <button type="button" data-action="resend" class="report-lead__link" disabled>Wyślij kod ponownie (60 s)</button>
       </div>
@@ -139,11 +147,23 @@ const { tool, ctaLead, ctaButton, ctaHref = '/kontakt/', maxWidth } = Astro.prop
     let challengeId = '';
     let cooldownTimer: number | undefined;
 
+    // Tryb 'report' (domyślny): bramka pod gotowym wynikiem.
     document.addEventListener('tool:result', (e) => {
       const detail = (e as CustomEvent).detail || {};
       latest = { query: String(detail.query || ''), result: detail.result ?? null };
       const section = document.querySelector<HTMLElement>('[data-report-lead]');
-      if (section) section.hidden = false;
+      if (!section || section.getAttribute('data-mode') === 'gate') return;
+      section.hidden = false;
+    });
+
+    // Tryb 'gate': bramka odsłaniana PRZED wynikiem (strona narzędzia steruje liczeniem).
+    document.addEventListener('lead:gate:show', (e) => {
+      const detail = (e as CustomEvent).detail || {};
+      latest = { query: String(detail.query || ''), result: null };
+      const section = document.querySelector<HTMLElement>('[data-report-lead]');
+      if (!section || section.getAttribute('data-mode') !== 'gate') return;
+      section.hidden = false;
+      section.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
 
     function startCooldown(form: HTMLFormElement) {
@@ -208,6 +228,12 @@ const { tool, ctaLead, ctaButton, ctaHref = '/kontakt/', maxWidth } = Astro.prop
       }
     }
 
+    function fireGenerateLead() {
+      const wAny = window as any;
+      wAny.dataLayer = wAny.dataLayer || [];
+      wAny.dataLayer.push({ event: 'generate_lead', form_id: 'narzedzia', lead_type: 'raport', phone_verified: true });
+    }
+
     async function verifyAndSend(form: HTMLFormElement, section: HTMLElement) {
       const fd = new FormData(form);
       const code = String(fd.get('code') || '').trim();
@@ -224,34 +250,33 @@ const { tool, ctaLead, ctaButton, ctaHref = '/kontakt/', maxWidth } = Astro.prop
         const vb = await vr.json().catch(() => ({}));
         if (!vr.ok) throw new Error(vb.error || 'Nieprawidłowy kod.');
 
-        setStatus(form, 'Wysyłam audyt…');
-        const fdAll = new FormData(form);
+        fireGenerateLead();
+        form.querySelector<HTMLElement>('[data-step="code"]')!.hidden = true;
+
+        if (section.getAttribute('data-mode') === 'gate') {
+          // Bramka: oddaj sterowanie stronie – ona liczy, renderuje i woła send-report.
+          setStatus(form, 'Numer potwierdzony – generuję wynik…');
+          document.dispatchEvent(new CustomEvent('lead:verified', { detail: { challengeId } }));
+          return;
+        }
+
+        // Tryb 'report': wynik już jest na ekranie – wyślij kopię mailem + powiadom ICEA.
+        setStatus(form, 'Wysyłam raport…');
         const res = await fetch('/api/tools/send-report', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             tool: section.getAttribute('data-tool') || '',
-            firstName: String(fdAll.get('firstName') || '').trim(),
-            lastName: String(fdAll.get('lastName') || '').trim(),
-            email: String(fdAll.get('email') || '').trim(),
-            phone: String(fdAll.get('phone') || '').trim(),
-            consent: fdAll.get('consent') === 'on',
             challengeId,
             query: latest.query,
             result: latest.result,
-            website: String(fdAll.get('website') || ''),
           }),
         });
         const body = await res.json().catch(() => ({}));
         if (!res.ok) throw new Error(body.error || `HTTP ${res.status}`);
-        const wAny = window as any;
-        wAny.dataLayer = wAny.dataLayer || [];
-        wAny.dataLayer.push({ event: 'generate_lead', form_id: 'narzedzia', lead_type: 'raport', phone_verified: true });
-        setStatus(form, 'Gotowe! Audyt wysłany na podany e-mail. Sprawdź skrzynkę (i spam).');
-        form.querySelector<HTMLElement>('[data-step="code"]')!.hidden = true;
+        setStatus(form, 'Gotowe! Kopia raportu poszła na podany e-mail. Sprawdź skrzynkę (i spam).');
       } catch (err) {
-        setStatus(form, err instanceof Error ? err.message : 'Nie udało się wysłać audytu.');
-      } finally {
+        setStatus(form, err instanceof Error ? err.message : 'Nie udało się dokończyć.');
         if (confirm) confirm.disabled = false;
       }
     }
