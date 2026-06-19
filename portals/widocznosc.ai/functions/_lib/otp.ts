@@ -2,7 +2,7 @@
  * Prymitywy OTP (generacja/hash kodu) + logika challenge w KV + limity wysyłki SMS.
  * Funkcje IO-aware przyjmują KVNamespace, więc są testowalne z fake KV (jak tool-rate-limit).
  */
-import { secondsUntilWarsawMidnight } from './rate-limit';
+import { secondsUntilWarsawMidnight, evaluateLimit } from './rate-limit';
 
 export const MAX_ATTEMPTS = 5;
 
@@ -84,13 +84,13 @@ export async function checkSendAllowed(
   if (await kv.get(`otp-cd:${phone}`)) return { allowed: false, reason: 'cooldown', commit: noop };
 
   const hRec = await kv.get<LimitRecord>(`otp-h:${phone}`, 'json');
-  if ((hRec?.count ?? 0) >= limits.hourlyPerPhone) return { allowed: false, reason: 'hourly', commit: noop };
+  if (!evaluateLimit(hRec?.count ?? 0, limits.hourlyPerPhone).allowed) return { allowed: false, reason: 'hourly', commit: noop };
 
   const ipRec = await kv.get<LimitRecord>(`otp-ip:${ip}`, 'json');
-  if ((ipRec?.count ?? 0) >= limits.dailyPerIp) return { allowed: false, reason: 'ip', commit: noop };
+  if (!evaluateLimit(ipRec?.count ?? 0, limits.dailyPerIp).allowed) return { allowed: false, reason: 'ip', commit: noop };
 
   const gRec = await kv.get<LimitRecord>('otp-g:global', 'json');
-  if ((gRec?.count ?? 0) >= limits.dailyGlobal) return { allowed: false, reason: 'global', commit: noop };
+  if (!evaluateLimit(gRec?.count ?? 0, limits.dailyGlobal).allowed) return { allowed: false, reason: 'global', commit: noop };
 
   const commit = async () => {
     const dayMs = now.getTime() + secondsUntilWarsawMidnight(now) * 1000;

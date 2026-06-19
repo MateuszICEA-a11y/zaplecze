@@ -75,6 +75,12 @@ describe('checkSendAllowed', () => {
     expect(gate.allowed).toBe(false);
     expect(gate.reason).toBe('hourly');
   });
+  it('blokuje po wyczerpaniu limitu IP', async () => {
+    const kv = fakeKv({ 'otp-ip:1.2.3.4': { count: 10, resetAt: NOW.getTime() + 1000_000 } });
+    const gate = await checkSendAllowed(kv as any, '+48512345678', '1.2.3.4', NOW, LIMITS);
+    expect(gate.allowed).toBe(false);
+    expect(gate.reason).toBe('ip');
+  });
   it('blokuje po wyczerpaniu globalnego limitu dziennego', async () => {
     const kv = fakeKv({ 'otp-g:global': { count: 30, resetAt: NOW.getTime() + 1000_000 } });
     const gate = await checkSendAllowed(kv as any, '+48512345678', '1.2.3.4', NOW, LIMITS);
