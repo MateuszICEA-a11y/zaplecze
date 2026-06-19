@@ -37,16 +37,28 @@ const confirmLabel = isGate ? 'Pokaż wynik' : 'Wyślij audyt';
       <!-- Krok 1: dane -->
       <div data-step="data">
         <div class="report-lead__grid">
-          <input type="text" name="firstName" required autocomplete="given-name"
-            placeholder="Imię" class="report-lead__input" aria-label="Imię" />
-          <input type="text" name="lastName" required autocomplete="family-name"
-            placeholder="Nazwisko" class="report-lead__input" aria-label="Nazwisko" />
+          <label class="report-lead__field">
+            <span class="report-lead__label">Imię</span>
+            <input type="text" name="firstName" required autocomplete="given-name"
+              placeholder="np. Jan" class="report-lead__input" />
+          </label>
+          <label class="report-lead__field">
+            <span class="report-lead__label">Nazwisko</span>
+            <input type="text" name="lastName" required autocomplete="family-name"
+              placeholder="np. Kowalski" class="report-lead__input" />
+          </label>
         </div>
         <div class="report-lead__grid">
-          <input type="email" name="email" required autocomplete="email"
-            placeholder="twoj@email.pl" class="report-lead__input" aria-label="Adres e-mail" />
-          <input type="tel" name="phone" required autocomplete="tel"
-            placeholder="np. 512 345 678" class="report-lead__input" aria-label="Telefon komórkowy" />
+          <label class="report-lead__field">
+            <span class="report-lead__label">Adres e-mail</span>
+            <input type="email" name="email" required autocomplete="email"
+              placeholder="np. jan@firma.pl" class="report-lead__input" />
+          </label>
+          <label class="report-lead__field">
+            <span class="report-lead__label">Telefon komórkowy</span>
+            <input type="tel" name="phone" required autocomplete="tel"
+              placeholder="np. 512 345 678" class="report-lead__input" />
+          </label>
         </div>
 
         <!-- honeypot: prawdziwy użytkownik zostawia puste -->
@@ -129,6 +141,9 @@ const confirmLabel = isGate ? 'Pokaż wynik' : 'Wyślij audyt';
     border: 1px solid var(--accent-blue); text-decoration: none; font-weight: 600; font-size: 0.95rem;
   }
   .report-lead__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.5rem; }
+  .report-lead__field { display: flex; flex-direction: column; gap: 0.3rem; min-width: 0; }
+  .report-lead__label { font-size: 0.8rem; font-weight: 500; color: var(--color-ink-muted); }
+  .report-lead__field .report-lead__input { flex: none; width: 100%; box-sizing: border-box; }
   @media (max-width: 480px) { .report-lead__grid { grid-template-columns: 1fr; } }
   .report-lead__link {
     margin-top: 0.6rem; background: none; border: 0; padding: 0; cursor: pointer;
