@@ -107,28 +107,29 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     });
   }
 
-  // 6. Render raportu + maile.
-  const tool = body.tool as Tool;
+  // 6. Tożsamość leada z challenge (zaufana). result jest opcjonalny.
+  const lead = verified.lead!;
+  const tool = lead.tool as Tool;
   const query = String(body.query ?? '').trim();
-  const report = renderToolReport(tool, body.result, query);
-  const userMail: ResendEmail = {
-    from: FROM,
-    to: [String(body.email).trim()],
-    subject: report.subject,
-    html: report.html,
-    text: 'Twój raport widocznosc.ai jest dostępny w wersji HTML tej wiadomości.',
-  };
+  const hasResult = body.result != null && typeof body.result === 'object';
 
-  // Raport do usera jest krytyczny (to zamówiona usługa).
-  const userOk = await sendViaResend(apiKey, userMail);
-  if (!userOk) {
-    return jsonError(502, 'Nie udało się wysłać raportu. Spróbuj ponownie.');
+  // 6a. Kopia raportu do usera – best-effort (na ekranie i tak widzi wynik).
+  if (hasResult) {
+    const report = renderToolReport(tool, body.result, query);
+    const userMail: ResendEmail = {
+      from: FROM,
+      to: [lead.email],
+      subject: report.subject,
+      html: report.html,
+      text: 'Twój raport widocznosc.ai jest dostępny w wersji HTML tej wiadomości.',
+    };
+    await sendViaResend(apiKey, userMail);
   }
 
-  // Powiadomienie leadowe — best-effort, nie wywraca odpowiedzi.
-  await sendViaResend(apiKey, buildLeadNotification(body, { from: FROM, leadTo: LEAD_TO }));
+  // 6b. Powiadomienie leadowe do ICEA – zawsze (lead nie ginie nawet gdy liczenie padło).
+  await sendViaResend(apiKey, buildLeadNotification(lead, query, { from: FROM, leadTo: LEAD_TO }));
 
-  // 7. Zlicz limit dopiero po udanej wysyłce raportu.
+  // 7. Zlicz limit po obsłudze leada.
   await gate.commit();
 
   return json({ ok: true });
