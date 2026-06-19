@@ -133,20 +133,17 @@ const contactSchema = buildGraph(
                 <label for="website">Nie wypełniaj tego pola</label>
                 <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
               </div>
-              <div class="mb-5">
-                <label for="name" class="text-ink mb-2 block font-medium">
-                  Imię i nazwisko
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Jan Kowalski"
-                  required
-                  autocomplete="name"
-                  class="text-input"
-                  style="background: var(--bg-canvas);"
-                />
+              <div class="mb-5 grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label for="firstName" class="text-ink mb-2 block font-medium">Imię</label>
+                  <input type="text" id="firstName" name="firstName" placeholder="Jan" required
+                    autocomplete="given-name" class="text-input" style="background: var(--bg-canvas);" />
+                </div>
+                <div>
+                  <label for="lastName" class="text-ink mb-2 block font-medium">Nazwisko</label>
+                  <input type="text" id="lastName" name="lastName" placeholder="Kowalski" required
+                    autocomplete="family-name" class="text-input" style="background: var(--bg-canvas);" />
+                </div>
               </div>
               <div class="mb-5">
                 <label for="email" class="text-ink mb-2 block font-medium">Adres e-mail</label>
@@ -160,6 +157,11 @@ const contactSchema = buildGraph(
                   class="text-input"
                   style="background: var(--bg-canvas);"
                 />
+              </div>
+              <div class="mb-5">
+                <label for="phone" class="text-ink mb-2 block font-medium">Telefon</label>
+                <input type="tel" id="phone" name="phone" placeholder="np. 512 345 678" required
+                  autocomplete="tel" class="text-input" style="background: var(--bg-canvas);" />
               </div>
               <div class="mb-5">
                 <label for="company" class="text-ink mb-2 block font-medium">
@@ -318,6 +320,7 @@ const contactSchema = buildGraph(
             event: 'generate_lead',
             form_id: 'kontakt',
             lead_type: String(data.type || 'inne'),
+            phone_provided: true,
           });
           showSuccess();
           return;
