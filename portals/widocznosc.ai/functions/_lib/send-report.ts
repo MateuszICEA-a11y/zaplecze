@@ -9,6 +9,10 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export type ReportPayload = {
   tool?: string;
   email?: string;
+  firstName?: string;
+  lastName?: string;
+  phone?: string;
+  challengeId?: string;
   consent?: boolean;
   query?: string;
   result?: unknown;
@@ -26,23 +30,31 @@ export function validateReportPayload(p: ReportPayload): { ok: boolean; errors: 
   if (!isTool(p.tool)) errors.push('tool');
   const email = String(p.email ?? '').trim();
   if (email.length < 1 || email.length > 254 || !EMAIL_RE.test(email)) errors.push('email');
+  if (String(p.firstName ?? '').trim().length < 1) errors.push('firstName');
+  if (String(p.lastName ?? '').trim().length < 1) errors.push('lastName');
+  if (String(p.challengeId ?? '').trim().length < 1) errors.push('challengeId');
   if (p.result === null || typeof p.result !== 'object') errors.push('result');
   else if (JSON.stringify(p.result).length > MAX_PAYLOAD_BYTES) errors.push('size');
   return { ok: errors.length === 0, errors };
 }
 
-/** Mail wewnętrzny (lead) do ICEA – z flagą zgody. */
+/** Mail wewnętrzny (lead) do ICEA – numer zweryfikowany SMS, pełne dane leada. */
 export function buildLeadNotification(p: ReportPayload, cfg: EmailConfig): ResendEmail {
   const tool = p.tool as Tool;
   const email = String(p.email ?? '').trim();
+  const fullName = `${String(p.firstName ?? '').trim()} ${String(p.lastName ?? '').trim()}`.trim() || '—';
+  const phone = String(p.phone ?? '').trim() || '—';
   const query = String(p.query ?? '').trim() || '—';
   const consentYes = p.consent === true;
   const consent = consentYes ? 'TAK' : 'NIE';
 
   const rows: Array<[string, string]> = [
     ['Narzędzie', toolLabel(tool)],
-    ['Zapytanie', query],
+    ['Imię i nazwisko', fullName],
     ['E-mail', email],
+    ['Telefon', phone],
+    ['Numer zweryfikowany SMS', 'TAK'],
+    ['Zapytanie', query],
     ['Zgoda na kontakt', consent],
   ];
   const rowsHtml = rows
@@ -66,8 +78,8 @@ export function buildLeadNotification(p: ReportPayload, cfg: EmailConfig): Resen
     from: cfg.from,
     to: [cfg.leadTo],
     reply_to: email,
-    subject: `[widocznosc.ai] Lead z narzędzia ${tool}: ${email} (zgoda: ${consent})`,
+    subject: `[widocznosc.ai] Lead (zweryfikowany SMS) z ${tool}: ${fullName}`,
     text: rows.map(([k, v]) => `${k}: ${v}`).join('\n'),
-    html: emailShell(body, `Lead z ${toolLabel(tool)} – zgoda: ${consent}`),
+    html: emailShell(body, `Lead z ${toolLabel(tool)} – numer zweryfikowany SMS`),
   };
 }
