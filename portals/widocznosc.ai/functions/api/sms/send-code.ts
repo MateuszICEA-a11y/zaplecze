@@ -80,7 +80,17 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   const salt = (env.OTP_SALT || '').trim();
   const kv = env.FANOUT_RL;
   if (!token || !sender || !salt || !kv) {
-    return json({ status: 'config-error', error: 'Weryfikacja SMS chwilowo niedostępna.' }, 500);
+    // DIAG (tymczasowe): nazwij brakujące zmienne, by odróżnić binding-not-loaded od pustej wartości.
+    const missing = [
+      !token && 'SMSAPI_TOKEN',
+      !sender && 'SMSAPI_SENDER',
+      !salt && 'OTP_SALT',
+      !kv && 'FANOUT_RL',
+    ].filter(Boolean);
+    return json(
+      { status: 'config-error', error: `Weryfikacja SMS chwilowo niedostępna. (diag brak: ${missing.join(', ')})`, missing },
+      500,
+    );
   }
 
   // Limity wysyłki (anty-abuse + kill-switch kosztowy).
