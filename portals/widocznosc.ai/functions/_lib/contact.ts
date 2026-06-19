@@ -1,18 +1,21 @@
 /**
  * Logika formularza kontaktowego /kontakt/.
- * Czyste funkcje (bez sieci/IO) — walidacja, honeypot, budowa maili.
+ * Czyste funkcje (bez sieci/IO) – walidacja, honeypot, budowa maili.
  * Stan (rate-limit) i wysyłka żyją w functions/api/contact.ts.
  */
 
 import { escapeHtml, emailShell, C } from './email-shell';
+import { normalizePhonePL } from './phone';
 
 export type ContactPayload = {
-  name?: string;
+  firstName?: string;
+  lastName?: string;
   email?: string;
+  phone?: string;
   company?: string;
   type?: string;
   message?: string;
-  website?: string; // honeypot — prawdziwy użytkownik zostawia puste
+  website?: string; // honeypot – prawdziwy użytkownik zostawia puste
 };
 
 export type ValidationResult = { ok: boolean; errors: string[] };
@@ -47,7 +50,7 @@ const TYPE_LABELS: Record<string, string> = {
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-const LIMITS = { name: 120, email: 254, company: 160, message: 5000 };
+const LIMITS = { name: 80, email: 254, company: 160, message: 5000 };
 
 export function typeLabel(type: string): string {
   return TYPE_LABELS[type] ?? type;
@@ -59,14 +62,18 @@ export function isHoneypotTriggered(p: ContactPayload): boolean {
 
 export function validate(p: ContactPayload): ValidationResult {
   const errors: string[] = [];
-  const name = String(p.name ?? '').trim();
+  const firstName = String(p.firstName ?? '').trim();
+  const lastName = String(p.lastName ?? '').trim();
   const email = String(p.email ?? '').trim();
+  const phone = String(p.phone ?? '').trim();
   const company = String(p.company ?? '').trim();
   const type = String(p.type ?? '').trim();
   const message = String(p.message ?? '').trim();
 
-  if (name.length < 1 || name.length > LIMITS.name) errors.push('name');
+  if (firstName.length < 1 || firstName.length > LIMITS.name) errors.push('firstName');
+  if (lastName.length < 1 || lastName.length > LIMITS.name) errors.push('lastName');
   if (email.length < 1 || email.length > LIMITS.email || !EMAIL_RE.test(email)) errors.push('email');
+  if (!normalizePhonePL(phone).ok) errors.push('phone');
   if (!CONTACT_TYPES.includes(type as (typeof CONTACT_TYPES)[number])) errors.push('type');
   if (message.length < 1 || message.length > LIMITS.message) errors.push('message');
   if (company.length > LIMITS.company) errors.push('company');
@@ -77,9 +84,12 @@ export function validate(p: ContactPayload): ValidationResult {
 export type EmailConfig = { from: string; leadTo: string };
 
 function fieldRows(p: ContactPayload): Array<[string, string]> {
+  const fullName = `${String(p.firstName ?? '').trim()} ${String(p.lastName ?? '').trim()}`.trim();
+  const phone = normalizePhonePL(String(p.phone ?? '').trim());
   return [
-    ['Imię i nazwisko', String(p.name ?? '').trim()],
+    ['Imię i nazwisko', fullName],
     ['E-mail', String(p.email ?? '').trim()],
+    ['Telefon', phone.e164 ?? String(p.phone ?? '').trim()],
     ['Firma', String(p.company ?? '').trim() || '—'],
     ['Cel kontaktu', typeLabel(String(p.type ?? '').trim())],
     ['Wiadomość', String(p.message ?? '').trim()],
@@ -90,7 +100,8 @@ export function buildEmails(p: ContactPayload, cfg: EmailConfig): {
   internal: ResendEmail;
   autoresponder: ResendEmail;
 } {
-  const name = String(p.name ?? '').trim();
+  const firstName = String(p.firstName ?? '').trim();
+  const fullName = `${firstName} ${String(p.lastName ?? '').trim()}`.trim();
   const email = String(p.email ?? '').trim();
   const label = typeLabel(String(p.type ?? '').trim());
   const rows = fieldRows(p);
@@ -129,14 +140,14 @@ export function buildEmails(p: ContactPayload, cfg: EmailConfig): {
     from: cfg.from,
     to: [cfg.leadTo],
     reply_to: email,
-    subject: `[widocznosc.ai] Nowy lead: ${label} – ${name}`,
+    subject: `[widocznosc.ai] Nowy lead: ${label} – ${fullName}`,
     text: internalText,
-    html: emailShell(internalBody, `Nowy lead: ${label} – ${name}`),
+    html: emailShell(internalBody, `Nowy lead: ${label} – ${fullName}`),
   };
 
   // ── Autoresponder ──
   const autoText =
-    `Cześć ${name},\n\n` +
+    `Cześć ${firstName},\n\n` +
     `dziękujemy za kontakt z widocznosc.ai. Odebraliśmy Twoje zgłoszenie i odpowiemy w ciągu 24 godzin roboczych (pon–pt, 9:00–17:00).\n\n` +
     `W pilnych sprawach: biuro@grupa-icea.pl\n\n` +
     `Pozdrawiamy,\nZespół widocznosc.ai\nICEA S.A., ul. Szyperska 14, 61-754 Poznań`;
@@ -146,7 +157,7 @@ export function buildEmails(p: ContactPayload, cfg: EmailConfig): {
     `<h1 style="margin:0;font-size:22px;line-height:1.3;color:${C.ink};">Dziękujemy za kontakt 👋</h1>` +
     `</td></tr>` +
     `<tr><td style="padding:8px 32px;">` +
-    `<p style="margin:0 0 16px;font-size:15px;line-height:1.7;color:${C.ink};">Cześć ${escapeHtml(name)},</p>` +
+    `<p style="margin:0 0 16px;font-size:15px;line-height:1.7;color:${C.ink};">Cześć ${escapeHtml(firstName)},</p>` +
     `<p style="margin:0 0 16px;font-size:15px;line-height:1.7;color:${C.ink};">odebraliśmy Twoje zgłoszenie w <strong>widocznosc.ai</strong>. Odezwiemy się z odpowiedzią najpóźniej w ciągu <strong>24 godzin roboczych</strong>.</p>` +
     `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:8px 0 4px;background:${C.msgBg};border-radius:10px;">` +
     `<tr><td style="padding:16px 18px;">` +

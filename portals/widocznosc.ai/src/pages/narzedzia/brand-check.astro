@@ -111,6 +111,7 @@ const brandCheckSchema = buildGraph(
         <section id="results" class="results-wrap hidden" aria-live="polite"></section>
         <ReportLeadForm
           tool="brand-check"
+          mode="gate"
           ctaLead="Twoja marka zasługuje na lepszą widoczność w AI. Umów bezpłatną konsultację z ekspertem ICEA."
           ctaButton="Umów konsultację"
         />
@@ -1011,6 +1012,18 @@ const brandCheckSchema = buildGraph(
 </style>
 
 <script>
+  // Referencja do bieżącego runBrandCheck – aktualizowana przy każdym initBrandCheck
+  // (Astro View Transitions re-runs initBrandCheck; listener rejestrujemy raz na poziomie modułu).
+  let _currentRunBrandCheck: ((challengeId: string) => Promise<void>) | null = null;
+
+  // Listener lead:verified rejestrowany raz – deleguje do aktualnej instancji.
+  document.addEventListener('lead:verified', (e) => {
+    const detail = (e as CustomEvent).detail || {};
+    if (detail.tool && detail.tool !== 'brand-check') return;
+    const challengeId = String(detail.challengeId || '');
+    void _currentRunBrandCheck?.(challengeId);
+  });
+
   const initBrandCheck = () => {
     const form = document.getElementById('brand-form');
     const results = document.getElementById('results');
@@ -1019,7 +1032,9 @@ const brandCheckSchema = buildGraph(
 
     const submit = form.querySelector('button[type="submit"]');
 
-    form.addEventListener('submit', async (e) => {
+    let pendingBrand: { brand: string; domain: string; category: string; market: string } | null = null;
+
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
       const data = new FormData(form);
       const payload = {
@@ -1028,17 +1043,22 @@ const brandCheckSchema = buildGraph(
         category: String(data.get('category') || '').trim(),
         market: String(data.get('market') || '').trim() || 'Polska',
       };
+      if (!payload.brand) { renderError('Podaj nazwę marki.'); return; }
+      // Bramka: nie liczymy, dopóki user nie zostawi danych i nie potwierdzi numeru.
+      pendingBrand = payload;
+      document.dispatchEvent(new CustomEvent('lead:gate:show', { detail: { tool: 'brand-check', query: payload.brand } }));
+    });
 
-      if (!payload.brand) {
-        renderError('Podaj nazwę marki.');
-        return;
-      }
-
+    async function runBrandCheck(challengeId: string) {
+      if (!pendingBrand) return;
+      const payload = pendingBrand;
       setLoading(true);
       results.classList.remove('hidden');
       results.innerHTML = renderLoading(payload.brand);
       overview?.classList.add('hidden');
-
+      // Bramka jest pod #results – przewiń do wyniku, by user widział loading i rezultat/błąd.
+      results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      let result: unknown = null;
       try {
         const response = await fetch('/api/tools/brand-check', {
           method: 'POST',
@@ -1047,14 +1067,25 @@ const brandCheckSchema = buildGraph(
         });
         const body = await response.json();
         if (!response.ok) throw new Error(body.error || `HTTP ${response.status}`);
+        result = body;
         renderResults(body);
-        document.dispatchEvent(new CustomEvent('tool:result', { detail: { query: payload.brand, result: body } }));
       } catch (error) {
         renderError(error instanceof Error ? error.message : 'Nie udało się wykonać testu.');
       } finally {
         setLoading(false);
       }
-    });
+      // Rejestracja leada + kopia mailem (result=null gdy liczenie padło – ICEA i tak dostaje lead).
+      try {
+        await fetch('/api/tools/send-report', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ tool: 'brand-check', challengeId, query: payload.brand, result }),
+        });
+      } catch { /* best-effort */ }
+    }
+
+    // Aktualizacja referencji – listener na poziomie modułu wywoła tę instancję.
+    _currentRunBrandCheck = runBrandCheck;
 
     function setLoading(isLoading) {
       if (!submit) return;

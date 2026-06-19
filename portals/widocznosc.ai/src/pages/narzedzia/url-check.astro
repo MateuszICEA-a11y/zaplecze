@@ -83,6 +83,7 @@ const urlCheckSchema = buildGraph(
         <section id="results" class="mt-14 hidden" aria-live="polite"></section>
         <ReportLeadForm
           tool="url-check"
+          mode="gate"
           ctaLead="Chcesz podnieść ocenę AI-readiness swojej strony? Umów audyt z ekspertem ICEA."
           ctaButton="Umów audyt"
           maxWidth="100%"
@@ -1040,27 +1041,46 @@ const urlCheckSchema = buildGraph(
     `;
   }
 
-  form.addEventListener('submit', async (e) => {
+  // Referencja do bieżącego runUrlCheck – aktualizowana przy każdym initUrlCheck
+  // (Astro View Transitions może ponownie uruchomić skrypt; listener rejestrujemy raz).
+  let _currentRunUrlCheck: ((challengeId: string) => Promise<void>) | null = null;
+
+  // Listener lead:verified rejestrowany raz na poziomie modułu – filtr per-tool anti cross-talk.
+  document.addEventListener('lead:verified', (e) => {
+    const detail = (e as CustomEvent).detail || {};
+    if (detail.tool && detail.tool !== 'url-check') return;
+    const challengeId = String(detail.challengeId || '');
+    void _currentRunUrlCheck?.(challengeId);
+  });
+
+  let pendingUrl: string | null = null;
+
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
     const url = input.value.trim();
-    if (!url) {
-      input.focus();
-      return;
-    }
+    if (!url) { input.focus(); return; }
+    // Bramka: nie liczymy, dopóki user nie zostawi danych i nie potwierdzi numeru.
+    pendingUrl = url;
+    document.dispatchEvent(new CustomEvent('lead:gate:show', { detail: { tool: 'url-check', query: url } }));
+  });
 
+  async function runUrlCheck(challengeId: string) {
+    if (!pendingUrl) return;
+    const url = pendingUrl;
     submitBtn.setAttribute('aria-busy', 'true');
     submitBtn.disabled = true;
     resultsEl.classList.remove('hidden');
     resultsEl.innerHTML =
       '<div class="results-card" style="text-align:center; color: var(--ink-muted);">Pobieramy stronę, liczymy sygnały techniczne i analizujemy semantykę – 10–20 sekund…</div>';
-
+    // Bramka jest pod #results – przewiń do wyniku, by user widział loading i rezultat/błąd.
+    resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    let result: unknown = null;
     try {
       const res = await fetch('/api/tools/url-check', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url }),
       });
-
       if (!res.ok) {
         const errBody = await res.json().catch(() => ({ error: `HTTP ${res.status}` }));
         resultsEl.innerHTML = `
@@ -1069,14 +1089,13 @@ const urlCheckSchema = buildGraph(
             <p class="results-error-desc">${escapeHtml(errBody.error || `HTTP ${res.status}`)}</p>
           </div>
         `;
-        return;
+      } else {
+        const data = (await res.json()) as CheckResponse;
+        result = data;
+        resultsEl.innerHTML = renderResults(data);
+        overviewEl.classList.add('hidden');
+        resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-
-      const data = (await res.json()) as CheckResponse;
-      resultsEl.innerHTML = renderResults(data);
-      document.dispatchEvent(new CustomEvent('tool:result', { detail: { query: url, result: data } }));
-      overviewEl.classList.add('hidden');
-      resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     } catch (err) {
       resultsEl.innerHTML = `
         <div class="results-error">
@@ -1088,5 +1107,16 @@ const urlCheckSchema = buildGraph(
       submitBtn.setAttribute('aria-busy', 'false');
       submitBtn.disabled = false;
     }
-  });
+    // Rejestracja leada + kopia mailem (result=null gdy liczenie padło – ICEA i tak dostaje lead).
+    try {
+      await fetch('/api/tools/send-report', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ tool: 'url-check', challengeId, query: url, result }),
+      });
+    } catch { /* best-effort */ }
+  }
+
+  // Aktualizacja referencji – listener na poziomie modułu wywoła tę instancję.
+  _currentRunUrlCheck = runUrlCheck;
 </script>

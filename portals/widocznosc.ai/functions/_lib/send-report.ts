@@ -2,13 +2,17 @@
 import { emailShell, escapeHtml, C } from './email-shell';
 import { isTool, toolLabel, type Tool } from './reports';
 import type { ResendEmail } from './contact';
+import type { ChallengeLead } from './otp';
 
 export const MAX_PAYLOAD_BYTES = 32_000;
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export type ReportPayload = {
   tool?: string;
   email?: string;
+  firstName?: string;
+  lastName?: string;
+  phone?: string;
+  challengeId?: string;
   consent?: boolean;
   query?: string;
   result?: unknown;
@@ -24,25 +28,32 @@ export function isHoneypotTriggered(p: ReportPayload): boolean {
 export function validateReportPayload(p: ReportPayload): { ok: boolean; errors: string[] } {
   const errors: string[] = [];
   if (!isTool(p.tool)) errors.push('tool');
-  const email = String(p.email ?? '').trim();
-  if (email.length < 1 || email.length > 254 || !EMAIL_RE.test(email)) errors.push('email');
-  if (p.result === null || typeof p.result !== 'object') errors.push('result');
-  else if (JSON.stringify(p.result).length > MAX_PAYLOAD_BYTES) errors.push('size');
+  if (String(p.challengeId ?? '').trim().length < 1) errors.push('challengeId');
+  // result opcjonalny: brak = OK (np. liczenie padło po weryfikacji – i tak rejestrujemy lead).
+  if (p.result != null) {
+    if (typeof p.result !== 'object') errors.push('result');
+    else if (JSON.stringify(p.result).length > MAX_PAYLOAD_BYTES) errors.push('size');
+  }
   return { ok: errors.length === 0, errors };
 }
 
-/** Mail wewnętrzny (lead) do ICEA – z flagą zgody. */
-export function buildLeadNotification(p: ReportPayload, cfg: EmailConfig): ResendEmail {
-  const tool = p.tool as Tool;
-  const email = String(p.email ?? '').trim();
-  const query = String(p.query ?? '').trim() || '—';
-  const consentYes = p.consent === true;
+/** Mail wewnętrzny (lead) do ICEA – tożsamość ze zweryfikowanego challenge. */
+export function buildLeadNotification(lead: ChallengeLead, query: string, cfg: EmailConfig): ResendEmail {
+  const tool = lead.tool as Tool;
+  const email = String(lead.email ?? '').trim();
+  const fullName = `${String(lead.firstName ?? '').trim()} ${String(lead.lastName ?? '').trim()}`.trim() || '—';
+  const phone = String(lead.phone ?? '').trim() || '—';
+  const q = String(query ?? '').trim() || '—';
+  const consentYes = lead.consent === true;
   const consent = consentYes ? 'TAK' : 'NIE';
 
   const rows: Array<[string, string]> = [
     ['Narzędzie', toolLabel(tool)],
-    ['Zapytanie', query],
+    ['Imię i nazwisko', fullName],
     ['E-mail', email],
+    ['Telefon', phone],
+    ['Numer zweryfikowany SMS', 'TAK'],
+    ['Zapytanie', q],
     ['Zgoda na kontakt', consent],
   ];
   const rowsHtml = rows
@@ -66,8 +77,8 @@ export function buildLeadNotification(p: ReportPayload, cfg: EmailConfig): Resen
     from: cfg.from,
     to: [cfg.leadTo],
     reply_to: email,
-    subject: `[widocznosc.ai] Lead z narzędzia ${tool}: ${email} (zgoda: ${consent})`,
+    subject: `[widocznosc.ai] Lead (zweryfikowany SMS) z ${tool}: ${fullName}`,
     text: rows.map(([k, v]) => `${k}: ${v}`).join('\n'),
-    html: emailShell(body, `Lead z ${toolLabel(tool)} – zgoda: ${consent}`),
+    html: emailShell(body, `Lead z ${toolLabel(tool)} – numer zweryfikowany SMS`),
   };
 }

@@ -6,6 +6,7 @@
  * Wymaga: env RESEND_API_KEY. Reużywa KV FANOUT_RL (klucz tool:send-report:<ip>).
  */
 import { resolveLimit, checkToolLimit } from '../../_lib/tool-rate-limit';
+import { consumeVerifiedChallenge } from '../../_lib/otp';
 import {
   validateReportPayload, isHoneypotTriggered, buildLeadNotification,
   type ReportPayload, MAX_PAYLOAD_BYTES,
@@ -81,6 +82,15 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   const v = validateReportPayload(body);
   if (!v.ok) return jsonError(400, 'Nieprawidłowe dane.', { fields: v.errors });
 
+  // 3b. Bramka OTP – raport leci tylko po potwierdzeniu numeru kodem SMS.
+  const challengeId = String(body.challengeId ?? '').trim();
+  const kv = env.FANOUT_RL;
+  if (!kv) return jsonError(503, 'Weryfikacja SMS niedostępna. Spróbuj później.');
+  const verified = await consumeVerifiedChallenge(kv, challengeId, new Date());
+  if (!verified.ok) {
+    return jsonError(403, 'Potwierdź najpierw numer telefonu kodem SMS.', { reason: 'unverified' });
+  }
+
   // 4. Konfiguracja.
   const apiKey = (env.RESEND_API_KEY || '').trim();
   if (!apiKey) {
@@ -97,28 +107,29 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     });
   }
 
-  // 6. Render raportu + maile.
-  const tool = body.tool as Tool;
+  // 6. Tożsamość leada z challenge (zaufana). result jest opcjonalny.
+  const lead = verified.lead!;
+  const tool = lead.tool as Tool;
   const query = String(body.query ?? '').trim();
-  const report = renderToolReport(tool, body.result, query);
-  const userMail: ResendEmail = {
-    from: FROM,
-    to: [String(body.email).trim()],
-    subject: report.subject,
-    html: report.html,
-    text: 'Twój raport widocznosc.ai jest dostępny w wersji HTML tej wiadomości.',
-  };
+  const hasResult = body.result != null && typeof body.result === 'object';
 
-  // Raport do usera jest krytyczny (to zamówiona usługa).
-  const userOk = await sendViaResend(apiKey, userMail);
-  if (!userOk) {
-    return jsonError(502, 'Nie udało się wysłać raportu. Spróbuj ponownie.');
+  // 6a. Kopia raportu do usera – best-effort (na ekranie i tak widzi wynik).
+  if (hasResult) {
+    const report = renderToolReport(tool, body.result, query);
+    const userMail: ResendEmail = {
+      from: FROM,
+      to: [lead.email],
+      subject: report.subject,
+      html: report.html,
+      text: 'Twój raport widocznosc.ai jest dostępny w wersji HTML tej wiadomości.',
+    };
+    await sendViaResend(apiKey, userMail);
   }
 
-  // Powiadomienie leadowe — best-effort, nie wywraca odpowiedzi.
-  await sendViaResend(apiKey, buildLeadNotification(body, { from: FROM, leadTo: LEAD_TO }));
+  // 6b. Powiadomienie leadowe do ICEA – zawsze (lead nie ginie nawet gdy liczenie padło).
+  await sendViaResend(apiKey, buildLeadNotification(lead, query, { from: FROM, leadTo: LEAD_TO }));
 
-  // 7. Zlicz limit dopiero po udanej wysyłce raportu.
+  // 7. Zlicz limit po obsłudze leada.
   await gate.commit();
 
   return json({ ok: true });
