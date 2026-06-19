@@ -80,24 +80,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   const salt = (env.OTP_SALT || '').trim();
   const kv = env.FANOUT_RL;
   if (!token || !sender || !salt || !kv) {
-    // DIAG3 (tymczasowe): brakujące nazwy + RZECZYWISTE klucze env (otp/salt/smsapi) – wykrywa
-    // sekret zapisany pod inną nazwą (ukryta spacja/znak) vs całkiem nieobecny vs pusta wartość.
-    const missing = [
-      !token && 'SMSAPI_TOKEN',
-      !sender && 'SMSAPI_SENDER',
-      !salt && 'OTP_SALT',
-      !kv && 'FANOUT_RL',
-    ].filter(Boolean);
-    const envKeys = Object.keys(env as Record<string, unknown>).filter((k) => /otp|salt|smsapi/i.test(k));
-    return json(
-      {
-        status: 'config-error',
-        error: `Weryfikacja SMS chwilowo niedostępna. (diag4 brak: ${missing.join(', ')}; klucze: ${JSON.stringify(envKeys)})`,
-        missing,
-        envKeys,
-      },
-      500,
-    );
+    return json({ status: 'config-error', error: 'Weryfikacja SMS chwilowo niedostępna.' }, 500);
   }
 
   // Limity wysyłki (anty-abuse + kill-switch kosztowy).
