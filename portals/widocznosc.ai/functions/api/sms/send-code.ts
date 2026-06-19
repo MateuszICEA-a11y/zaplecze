@@ -92,7 +92,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     return json(
       {
         status: 'config-error',
-        error: `Weryfikacja SMS chwilowo niedostępna. (diag3 brak: ${missing.join(', ')}; klucze: ${JSON.stringify(envKeys)})`,
+        error: `Weryfikacja SMS chwilowo niedostępna. (diag4 brak: ${missing.join(', ')}; klucze: ${JSON.stringify(envKeys)})`,
         missing,
         envKeys,
       },
