@@ -1072,6 +1072,8 @@ const urlCheckSchema = buildGraph(
     resultsEl.classList.remove('hidden');
     resultsEl.innerHTML =
       '<div class="results-card" style="text-align:center; color: var(--ink-muted);">Pobieramy stronę, liczymy sygnały techniczne i analizujemy semantykę – 10–20 sekund…</div>';
+    // Bramka jest pod #results – przewiń do wyniku, by user widział loading i rezultat/błąd.
+    resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
     let result: unknown = null;
     try {
       const res = await fetch('/api/tools/url-check', {
