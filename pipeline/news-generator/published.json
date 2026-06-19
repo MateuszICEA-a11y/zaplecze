@@ -510,5 +510,77 @@
     "section": "news",
     "format": "short",
     "source": "rss"
+  },
+  {
+    "title": "Wypadek na A2. Bus uderzył w ciężarówkę, są ranni",
+    "date": "2026-06-10",
+    "slug": "wypadek-na-a2-bus-uderzyl-w-ciezarowke-sa-ranni",
+    "section": "news",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Bus wypadł z DK19 i dachował w Babicy. Groźna kolizja na krajówce",
+    "date": "2026-06-11",
+    "slug": "bus-wypadl-z-dk19-i-dachowal-w-babicy-grozna-kolizja-na-krajowce",
+    "section": "news",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Orlen podniósł hurtowe ceny paliw. Na stacjach wciąż bez gwałtownych zmian",
+    "date": "2026-06-12",
+    "slug": "orlen-podniosl-hurtowe-ceny-paliw-na-stacjach-wciaz-bez-gwaltownych-zmian",
+    "section": "news",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Pożar auta dostawczego w Bierutowie. Ogień zagroził pobliskim zabudowaniom",
+    "date": "2026-06-13",
+    "slug": "pozar-auta-dostawczego-w-bierutowie-ogien-zagrozil-pobliskim-zabudowaniom",
+    "section": "modele",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Koniec programu CPN. Tanie paliwo ma zniknąć, a kierowcy i firmy odczują to przy dystrybutorach",
+    "date": "2026-06-14",
+    "slug": "koniec-programu-cpn-tanie-paliwo-ma-zniknac-a-kierowcy-i-firmy-odczuja-to-przy",
+    "section": "news",
+    "format": "analysis",
+    "source": "rss"
+  },
+  {
+    "title": "Benzyna poniżej 6 zł. Od wtorku kierowcy zobaczą niższe ceny na stacjach",
+    "date": "2026-06-15",
+    "slug": "benzyna-ponizej-6-zl-od-wtorku-kierowcy-zobacza-nizsze-ceny-na-stacjach",
+    "section": "news",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Rząd wygasza pakiet CPN. Co to oznacza dla cen paliw i kosztów flot?",
+    "date": "2026-06-16",
+    "slug": "rzad-wygasza-pakiet-cpn-co-to-oznacza-dla-cen-paliw-i-kosztow-flot",
+    "section": "news",
+    "format": "analysis",
+    "source": "rss"
+  },
+  {
+    "title": "Hanoi zamknie część ulicy Van Cao. Utrudnienia od 18 czerwca przez budowę stacji S1",
+    "date": "2026-06-17",
+    "slug": "hanoi-zamknie-czesc-ulicy-van-cao-utrudnienia-od-18-czerwca-przez-budowe-stacji",
+    "section": "news",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "„Na sygnale” odc. 909 – „Kamper” już w TVP VOD",
+    "date": "2026-06-19",
+    "slug": "na-sygnale-odc-909-kamper-juz-w-tvp-vod",
+    "section": "kampery",
+    "format": "short",
+    "source": "rss"
   }
 ]

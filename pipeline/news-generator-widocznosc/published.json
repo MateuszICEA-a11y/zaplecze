@@ -87,5 +87,75 @@
     "slug": "openai-rusza-w-strone-gieldy-ale-bez-daty",
     "source": "rss",
     "source_name": "The Decoder"
+  },
+  {
+    "title": "Serwisy newsowe mocniej odcinają boty AI",
+    "date": "2026-06-10",
+    "slug": "serwisy-newsowe-mocniej-odcinaja-boty-ai",
+    "source": "rss",
+    "source_name": "Search Engine Journal"
+  },
+  {
+    "title": "Wyjście Opendoor z Indii uruchamia debatę o AI i outsourcingu",
+    "date": "2026-06-11",
+    "slug": "wyjscie-opendoor-z-indii-uruchamia-debate-o-ai-i-outsourcingu",
+    "source": "rss",
+    "source_name": "TechCrunch AI"
+  },
+  {
+    "title": "Amazon ujawnia zużycie wody w centrach danych",
+    "date": "2026-06-12",
+    "slug": "amazon-ujawnia-zuzycie-wody-w-centrach-danych",
+    "source": "rss",
+    "source_name": "The Verge AI"
+  },
+  {
+    "title": "Anthropic wyłącza Fable i Mythos po decyzji administracji",
+    "date": "2026-06-13",
+    "slug": "anthropic-wylacza-fable-i-mythos-po-decyzji-administracji",
+    "source": "rss",
+    "source_name": "Ars Technica AI"
+  },
+  {
+    "title": "Fałszywe studia przypadków w raporcie o AI",
+    "date": "2026-06-14",
+    "slug": "falszywe-studia-przypadkow-w-raporcie-o-ai",
+    "source": "rss",
+    "source_name": "The Decoder"
+  },
+  {
+    "title": "AI, zwolnienia i rosnące napięcie",
+    "date": "2026-06-15",
+    "slug": "ai-zwolnienia-i-rosnace-napiecie",
+    "source": "rss",
+    "source_name": "TechCrunch AI"
+  },
+  {
+    "title": "Anthropic porządkuje swoje podejście do bezpieczeństwa AI",
+    "date": "2026-06-16",
+    "slug": "anthropic-porzadkuje-swoje-podejscie-do-bezpieczenstwa-ai",
+    "source": "rss",
+    "source_name": "Anthropic"
+  },
+  {
+    "title": "TikTok z większym udziałem AI slop niż YouTube",
+    "date": "2026-06-17",
+    "slug": "tiktok-z-wiekszym-udzialem-ai-slop-niz-youtube",
+    "source": "rss",
+    "source_name": "Search Engine Journal"
+  },
+  {
+    "title": "Amerykanie używają chatbotów, ale obawiają się tempa rozwoju AI",
+    "date": "2026-06-18",
+    "slug": "amerykanie-uzywaja-chatbotow-ale-obawiaja-sie-tempa-rozwoju-ai",
+    "source": "rss",
+    "source_name": "The Verge AI"
+  },
+  {
+    "title": "Spór o obecność topowego narzędzia ASML w Chinach",
+    "date": "2026-06-19",
+    "slug": "spor-o-obecnosc-topowego-narzedzia-asml-w-chinach",
+    "source": "rss",
+    "source_name": "TechCrunch AI"
   }
 ]
