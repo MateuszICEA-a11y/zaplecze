@@ -315,12 +315,16 @@ const confirmLabel = isGate ? 'Pokaż wynik' : 'Wyślij audyt';
       if (action === 'send-code' || action === 'resend') { e.preventDefault(); void sendCode(form, section); }
     });
 
+    // Faza capture + stopImmediatePropagation: ubiegamy listener `submit` Astro ClientRouter
+    // (zarejestrowany wcześniej w head), który inaczej robi SPA-nawigację do GET-owego adresu
+    // formularza (pola lądują w URL, bramka się resetuje) zanim nasz preventDefault zadziała.
     document.addEventListener('submit', (e) => {
       const form = e.target as HTMLElement;
       if (!(form instanceof HTMLFormElement) || !('reportLeadForm' in form.dataset)) return;
       e.preventDefault();
+      e.stopImmediatePropagation();
       const section = form.closest<HTMLElement>('[data-report-lead]');
       if (section) void verifyAndSend(form, section);
-    });
+    }, true);
   })();
 </script>
