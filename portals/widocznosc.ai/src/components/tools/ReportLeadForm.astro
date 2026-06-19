@@ -256,7 +256,7 @@ const confirmLabel = isGate ? 'Pokaż wynik' : 'Wyślij audyt';
         if (section.getAttribute('data-mode') === 'gate') {
           // Bramka: oddaj sterowanie stronie – ona liczy, renderuje i woła send-report.
           setStatus(form, 'Numer potwierdzony – generuję wynik…');
-          document.dispatchEvent(new CustomEvent('lead:verified', { detail: { challengeId } }));
+          document.dispatchEvent(new CustomEvent('lead:verified', { detail: { challengeId, tool: section.getAttribute('data-tool') || '' } }));
           return;
         }
 

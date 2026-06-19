@@ -1018,7 +1018,9 @@ const brandCheckSchema = buildGraph(
 
   // Listener lead:verified rejestrowany raz – deleguje do aktualnej instancji.
   document.addEventListener('lead:verified', (e) => {
-    const challengeId = String((e as CustomEvent).detail?.challengeId || '');
+    const detail = (e as CustomEvent).detail || {};
+    if (detail.tool && detail.tool !== 'brand-check') return;
+    const challengeId = String(detail.challengeId || '');
     void _currentRunBrandCheck?.(challengeId);
   });
 
