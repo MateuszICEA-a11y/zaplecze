@@ -26,28 +26,43 @@ const { tool, ctaLead, ctaButton, ctaHref = '/kontakt/', maxWidth } = Astro.prop
     <p class="report-lead__sub">Dostaniesz pełny wynik w czytelnej formie. Bez zobowiązań.</p>
 
     <form data-report-lead-form class="report-lead__form" novalidate>
-      <div class="report-lead__row">
-        <input
-          type="email"
-          name="email"
-          required
-          autocomplete="email"
-          placeholder="twoj@email.pl"
-          class="report-lead__input"
-          aria-label="Adres e-mail"
-        />
-        <button type="submit" class="report-lead__btn">Wyślij raport</button>
+      <!-- Krok 1: dane -->
+      <div data-step="data">
+        <div class="report-lead__grid">
+          <input type="text" name="firstName" required autocomplete="given-name"
+            placeholder="Imię" class="report-lead__input" aria-label="Imię" />
+          <input type="text" name="lastName" required autocomplete="family-name"
+            placeholder="Nazwisko" class="report-lead__input" aria-label="Nazwisko" />
+        </div>
+        <div class="report-lead__grid">
+          <input type="email" name="email" required autocomplete="email"
+            placeholder="twoj@email.pl" class="report-lead__input" aria-label="Adres e-mail" />
+          <input type="tel" name="phone" required autocomplete="tel"
+            placeholder="np. 512 345 678" class="report-lead__input" aria-label="Telefon komórkowy" />
+        </div>
+
+        <!-- honeypot: prawdziwy użytkownik zostawia puste -->
+        <input type="text" name="website" tabindex="-1" autocomplete="off" class="report-lead__hp" aria-hidden="true" />
+
+        <label class="report-lead__consent">
+          <input type="checkbox" name="consent" />
+          <span>Chcę porozmawiać z ekspertem ICEA o widoczności mojej marki w AI – zgadzam się na kontakt e-mailem lub telefonicznie. Zgodę mogę wycofać w każdej chwili.</span>
+        </label>
+        <button type="button" data-action="send-code" class="report-lead__btn">Wyślij kod SMS</button>
       </div>
 
-      <!-- honeypot: prawdziwy użytkownik zostawia puste -->
-      <input type="text" name="website" tabindex="-1" autocomplete="off" class="report-lead__hp" aria-hidden="true" />
+      <!-- Krok 2: kod -->
+      <div data-step="code" hidden>
+        <p class="report-lead__sub">Wpisz 6-cyfrowy kod, który wysłaliśmy SMS-em na podany numer.</p>
+        <div class="report-lead__grid">
+          <input type="text" name="code" inputmode="numeric" pattern="[0-9]*" maxlength="6"
+            placeholder="______" class="report-lead__input" aria-label="Kod z SMS" autocomplete="one-time-code" />
+          <button type="submit" class="report-lead__btn" disabled data-role="confirm">Wyślij audyt</button>
+        </div>
+        <button type="button" data-action="resend" class="report-lead__link" disabled>Wyślij kod ponownie (60 s)</button>
+      </div>
 
-      <label class="report-lead__consent">
-        <input type="checkbox" name="consent" />
-        <span>Chcę porozmawiać z ekspertem ICEA o widoczności mojej marki w AI – zgadzam się na kontakt e-mailem lub telefonicznie. Zgodę mogę wycofać w każdej chwili.</span>
-      </label>
-      <p class="report-lead__note">Administratorem danych jest ICEA S.A. Szczegóły w <a href="/polityka-prywatnosci/">polityce prywatności</a>.</p>
-
+      <p class="report-lead__note">Administratorem danych jest ICEA S.A. Numer telefonu wykorzystujemy do weryfikacji i kontaktu. Szczegóły w <a href="/polityka-prywatnosci/">polityce prywatności</a>.</p>
       <p class="report-lead__status" data-status role="status"></p>
     </form>
 
@@ -105,16 +120,24 @@ const { tool, ctaLead, ctaButton, ctaHref = '/kontakt/', maxWidth } = Astro.prop
     background: var(--accent-blue-soft); color: var(--accent-blue);
     border: 1px solid var(--accent-blue); text-decoration: none; font-weight: 600; font-size: 0.95rem;
   }
+  .report-lead__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-bottom: 0.5rem; }
+  @media (max-width: 480px) { .report-lead__grid { grid-template-columns: 1fr; } }
+  .report-lead__link {
+    margin-top: 0.6rem; background: none; border: 0; padding: 0; cursor: pointer;
+    color: var(--accent-blue); font-size: 0.85rem; text-decoration: underline;
+  }
+  .report-lead__link[disabled] { color: var(--color-ink-muted); cursor: default; text-decoration: none; }
 </style>
 
 <script>
-  // Delegacja na document → odporne na wymianę DOM przez ClientRouter; bindowane raz.
   (() => {
     const w = window as unknown as { __reportLeadInit?: boolean };
     if (w.__reportLeadInit) return;
     w.__reportLeadInit = true;
 
     let latest: { query: string; result: unknown } = { query: '', result: null };
+    let challengeId = '';
+    let cooldownTimer: number | undefined;
 
     document.addEventListener('tool:result', (e) => {
       const detail = (e as CustomEvent).detail || {};
@@ -123,49 +146,141 @@ const { tool, ctaLead, ctaButton, ctaHref = '/kontakt/', maxWidth } = Astro.prop
       if (section) section.hidden = false;
     });
 
-    document.addEventListener('submit', async (e) => {
-      const form = e.target as HTMLElement;
-      if (!(form instanceof HTMLFormElement) || !('reportLeadForm' in form.dataset)) return;
-      e.preventDefault();
+    function startCooldown(form: HTMLFormElement) {
+      const resend = form.querySelector<HTMLButtonElement>('[data-action="resend"]');
+      if (!resend) return;
+      let left = 60;
+      resend.disabled = true;
+      resend.textContent = `Wyślij kod ponownie (${left} s)`;
+      clearInterval(cooldownTimer);
+      cooldownTimer = window.setInterval(() => {
+        left -= 1;
+        if (left <= 0) {
+          clearInterval(cooldownTimer);
+          resend.disabled = false;
+          resend.textContent = 'Wyślij kod ponownie';
+        } else {
+          resend.textContent = `Wyślij kod ponownie (${left} s)`;
+        }
+      }, 1000);
+    }
 
-      const section = form.closest<HTMLElement>('[data-report-lead]');
-      const status = section?.querySelector<HTMLElement>('[data-status]');
-      const btn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    function setStatus(form: HTMLFormElement, msg: string) {
+      const s = form.querySelector<HTMLElement>('[data-status]');
+      if (s) s.textContent = msg;
+    }
+
+    async function sendCode(form: HTMLFormElement, section: HTMLElement) {
       const fd = new FormData(form);
+      const firstName = String(fd.get('firstName') || '').trim();
+      const lastName = String(fd.get('lastName') || '').trim();
       const email = String(fd.get('email') || '').trim();
-      if (!email) { if (status) status.textContent = 'Podaj adres e-mail.'; return; }
-
+      const phone = String(fd.get('phone') || '').trim();
+      if (!firstName || !lastName || !email || !phone) {
+        setStatus(form, 'Uzupełnij imię, nazwisko, e-mail i telefon.');
+        return;
+      }
+      const btn = form.querySelector<HTMLButtonElement>('[data-action="send-code"]');
       if (btn) btn.disabled = true;
-      if (status) status.textContent = 'Wysyłam raport…';
+      setStatus(form, 'Wysyłam kod SMS…');
       try {
-        const res = await fetch('/api/tools/send-report', {
+        const res = await fetch('/api/sms/send-code', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
-            tool: section?.getAttribute('data-tool') || '',
-            email,
+            tool: section.getAttribute('data-tool') || '',
+            firstName, lastName, email, phone,
             consent: fd.get('consent') === 'on',
-            query: latest.query,
-            result: latest.result,
             website: String(fd.get('website') || ''),
           }),
         });
         const body = await res.json().catch(() => ({}));
         if (!res.ok) throw new Error(body.error || `HTTP ${res.status}`);
-        const w = window as any;
-        w.dataLayer = w.dataLayer || [];
-        w.dataLayer.push({
-          event: 'generate_lead',
-          form_id: 'narzedzia',
-          lead_type: 'raport',
-        });
-        if (status) status.textContent = `Raport wysłany na ${email}. Sprawdź skrzynkę (i spam).`;
-        form.reset();
+        challengeId = String(body.challengeId || '');
+        form.querySelector<HTMLElement>('[data-step="data"]')!.hidden = true;
+        form.querySelector<HTMLElement>('[data-step="code"]')!.hidden = false;
+        setStatus(form, `Kod wysłany na ${phone}.`);
+        startCooldown(form);
       } catch (err) {
-        if (status) status.textContent = err instanceof Error ? err.message : 'Nie udało się wysłać raportu.';
+        setStatus(form, err instanceof Error ? err.message : 'Nie udało się wysłać kodu.');
       } finally {
         if (btn) btn.disabled = false;
       }
+    }
+
+    async function verifyAndSend(form: HTMLFormElement, section: HTMLElement) {
+      const fd = new FormData(form);
+      const code = String(fd.get('code') || '').trim();
+      if (!/^\d{6}$/.test(code)) { setStatus(form, 'Wpisz 6-cyfrowy kod.'); return; }
+      const confirm = form.querySelector<HTMLButtonElement>('[data-role="confirm"]');
+      if (confirm) confirm.disabled = true;
+      setStatus(form, 'Weryfikuję kod…');
+      try {
+        const vr = await fetch('/api/sms/verify-code', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ challengeId, code }),
+        });
+        const vb = await vr.json().catch(() => ({}));
+        if (!vr.ok) throw new Error(vb.error || 'Nieprawidłowy kod.');
+
+        setStatus(form, 'Wysyłam audyt…');
+        const fdAll = new FormData(form);
+        const res = await fetch('/api/tools/send-report', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            tool: section.getAttribute('data-tool') || '',
+            firstName: String(fdAll.get('firstName') || '').trim(),
+            lastName: String(fdAll.get('lastName') || '').trim(),
+            email: String(fdAll.get('email') || '').trim(),
+            phone: String(fdAll.get('phone') || '').trim(),
+            consent: fdAll.get('consent') === 'on',
+            challengeId,
+            query: latest.query,
+            result: latest.result,
+            website: String(fdAll.get('website') || ''),
+          }),
+        });
+        const body = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(body.error || `HTTP ${res.status}`);
+        const wAny = window as any;
+        wAny.dataLayer = wAny.dataLayer || [];
+        wAny.dataLayer.push({ event: 'generate_lead', form_id: 'narzedzia', lead_type: 'raport', phone_verified: true });
+        setStatus(form, 'Gotowe! Audyt wysłany na podany e-mail. Sprawdź skrzynkę (i spam).');
+        form.querySelector<HTMLElement>('[data-step="code"]')!.hidden = true;
+      } catch (err) {
+        setStatus(form, err instanceof Error ? err.message : 'Nie udało się wysłać audytu.');
+      } finally {
+        if (confirm) confirm.disabled = false;
+      }
+    }
+
+    // Aktywuj „Wyślij audyt" dopiero gdy w polu kodu jest 6 cyfr.
+    document.addEventListener('input', (e) => {
+      const t = e.target as HTMLInputElement;
+      if (t?.name !== 'code') return;
+      const form = t.closest<HTMLFormElement>('[data-report-lead-form]');
+      const confirm = form?.querySelector<HTMLButtonElement>('[data-role="confirm"]');
+      if (confirm) confirm.disabled = !/^\d{6}$/.test(t.value.trim());
+    });
+
+    document.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('[data-action]');
+      if (!btn) return;
+      const form = btn.closest<HTMLFormElement>('[data-report-lead-form]');
+      const section = form?.closest<HTMLElement>('[data-report-lead]');
+      if (!form || !section) return;
+      const action = btn.getAttribute('data-action');
+      if (action === 'send-code' || action === 'resend') { e.preventDefault(); void sendCode(form, section); }
+    });
+
+    document.addEventListener('submit', (e) => {
+      const form = e.target as HTMLElement;
+      if (!(form instanceof HTMLFormElement) || !('reportLeadForm' in form.dataset)) return;
+      e.preventDefault();
+      const section = form.closest<HTMLElement>('[data-report-lead]');
+      if (section) void verifyAndSend(form, section);
     });
   })();
 </script>
