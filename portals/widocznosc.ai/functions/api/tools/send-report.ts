@@ -6,6 +6,7 @@
  * Wymaga: env RESEND_API_KEY. Reużywa KV FANOUT_RL (klucz tool:send-report:<ip>).
  */
 import { resolveLimit, checkToolLimit } from '../../_lib/tool-rate-limit';
+import { consumeVerifiedChallenge } from '../../_lib/otp';
 import {
   validateReportPayload, isHoneypotTriggered, buildLeadNotification,
   type ReportPayload, MAX_PAYLOAD_BYTES,
@@ -80,6 +81,15 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   // 3. Walidacja.
   const v = validateReportPayload(body);
   if (!v.ok) return jsonError(400, 'Nieprawidłowe dane.', { fields: v.errors });
+
+  // 3b. Bramka OTP – raport leci tylko po potwierdzeniu numeru kodem SMS.
+  const challengeId = String(body.challengeId ?? '').trim();
+  const kv = env.FANOUT_RL;
+  if (!kv) return jsonError(503, 'Weryfikacja SMS niedostępna. Spróbuj później.');
+  const verified = await consumeVerifiedChallenge(kv, challengeId, new Date());
+  if (!verified.ok) {
+    return jsonError(403, 'Potwierdź najpierw numer telefonu kodem SMS.', { reason: 'unverified' });
+  }
 
   // 4. Konfiguracja.
   const apiKey = (env.RESEND_API_KEY || '').trim();
