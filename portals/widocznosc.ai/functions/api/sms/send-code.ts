@@ -105,7 +105,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   const bytes = new Uint8Array(4);
   crypto.getRandomValues(bytes);
   const code = generateOtpCode(bytes);
-  const message = `widocznosc.ai – Twój kod weryfikacyjny: ${code}. Ważny 10 minut.`;
+  // Bez URL-a w treści: SMSAPI blokuje wiadomości z linkiem (błąd 94). ASCII = tańszy GSM-7.
+  const message = `Kod weryfikacyjny ICEA: ${code}. Wazny 10 minut.`;
   const sent = await sendSms({ token, from: sender, to: phone, message, test: env.SMSAPI_TEST === '1' });
   if (!sent.ok) {
     return jsonError(502, 'Nie udało się wysłać SMS-a. Sprawdź numer i spróbuj ponownie.');
