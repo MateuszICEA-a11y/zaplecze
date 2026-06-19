@@ -74,11 +74,12 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   if (errors.length) return jsonError(400, 'Uzupełnij poprawnie dane.', { fields: errors });
   const phone = norm.e164!;
 
-  // Konfiguracja.
+  // Konfiguracja – brak któregokolwiek z wymaganych bindingów to błąd przed wysyłką.
   const token = (env.SMSAPI_TOKEN || '').trim();
   const sender = (env.SMSAPI_SENDER || '').trim();
   const salt = (env.OTP_SALT || '').trim();
-  if (!token || !sender || !salt) {
+  const kv = env.FANOUT_RL;
+  if (!token || !sender || !salt || !kv) {
     return json({ status: 'config-error', error: 'Weryfikacja SMS chwilowo niedostępna.' }, 500);
   }
 
@@ -91,7 +92,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   };
   const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
   const now = new Date();
-  const gate = await checkSendAllowed(env.FANOUT_RL, phone, ip, now, limits);
+  const gate = await checkSendAllowed(kv, phone, ip, now, limits);
   if (!gate.allowed) {
     const msg =
       gate.reason === 'cooldown'
@@ -110,16 +111,14 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     return jsonError(502, 'Nie udało się wysłać SMS-a. Sprawdź numer i spróbuj ponownie.');
   }
 
-  // Challenge w KV.
+  // Challenge w KV – zapis bezwarunkowy (kv gwarantowane przez guard wyżej).
   const challengeId = crypto.randomUUID();
   const hash = await hashOtp(code, salt);
   const lead: ChallengeLead = { firstName, lastName, email, phone, consent: body.consent === true, tool };
   const record = buildChallengeRecord({ phone, hash, lead, now: now.getTime(), ttlMs: CHALLENGE_TTL_MS });
-  if (env.FANOUT_RL) {
-    await env.FANOUT_RL.put(`otp:${challengeId}`, JSON.stringify(record), {
-      expirationTtl: Math.ceil(CHALLENGE_TTL_MS / 1000),
-    });
-  }
+  await kv.put(`otp:${challengeId}`, JSON.stringify(record), {
+    expirationTtl: Math.ceil(CHALLENGE_TTL_MS / 1000),
+  });
   await gate.commit();
 
   return json({ ok: true, challengeId });
