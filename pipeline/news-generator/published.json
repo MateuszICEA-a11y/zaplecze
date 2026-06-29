@@ -654,5 +654,13 @@
     "section": "news",
     "format": "analysis",
     "source": "rss"
+  },
+  {
+    "title": "Kamper spłonął na posesji w Boszkowie. Wstępnie wskazano zwarcie instalacji fotowoltaicznej",
+    "date": "2026-06-29",
+    "slug": "kamper-splonal-na-posesji-w-boszkowie-wstepnie-wskazano-zwarcie-instalacji",
+    "section": "kampery",
+    "format": "short",
+    "source": "rss"
   }
 ]
