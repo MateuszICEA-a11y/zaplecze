@@ -234,5 +234,12 @@
     "slug": "raport-openai-o-zmianach-na-rynku-pracy-w-ue",
     "source": "rss",
     "source_name": "OpenAI"
+  },
+  {
+    "title": "Prosty komunikat, poważny problem AI browserów",
+    "date": "2026-07-01",
+    "slug": "prosty-komunikat-powazny-problem-ai-browserow",
+    "source": "rss",
+    "source_name": "Ars Technica AI"
   }
 ]
