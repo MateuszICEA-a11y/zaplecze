@@ -54,7 +54,7 @@ W rozmowach o LLM-ach regularnie myli się dwie warstwy produktowe. Model podsta
 
 ## Przegląd głównych modeli – tabela porównawcza
 
-Poniższa tabela zestawia sześć dominujących ekosystemów w jednym miejscu. Dane dotyczą flagowych, publicznie dostępnych wariantów na maj 2026.
+Poniższa tabela zestawia osiem najważniejszych ekosystemów w jednym miejscu. Dane dotyczą flagowych, publicznie dostępnych wariantów na połowę 2026 roku.
 
 | Model / ekosystem | Twórca | Dostęp dla użytkownika | Mocna strona | Klucz dla widoczności marki |
 |---|---|---|---|---|
@@ -63,6 +63,8 @@ Poniższa tabela zestawia sześć dominujących ekosystemów w jednym miejscu. D
 | Gemini (3.1 Pro / 3.5 Flash) | Google | Freemium + API | Integracja z Google Search, AI Overviews | Bezpośrednie powiązanie z indeksem Google |
 | Copilot | Microsoft | Wbudowany w Windows/Edge + API | Integracja z Bing, Microsoft 365 | BingBot + Bing Search jako źródło |
 | Perplexity AI | Perplexity | Freemium + API | RAG w czasie rzeczywistym z linkami źródłowymi | PerplexityBot; cytuje URL bezpośrednio |
+| [Grok](/modele-llm/grok/) (4.x) | xAI (Elon Musk) | X Premium + API | Dostęp do X w czasie rzeczywistym | Wzmianki i dyskusje na X zasilają odpowiedzi |
+| [DeepSeek](/modele-llm/deepseek/) (V4) | High-Flyer (Chiny) | Freemium + API + otwarte wagi (MIT) | Bardzo niski koszt, model open source | Brak własnego bota; wiedza z danych treningowych |
 | Modele open source | Meta, Mistral AI i in. | Pobieranie + API | Suwerenność danych, dostosowywalność | Brak własnego bota; używają cudzych indeksów |
 
 Każdy z tych ekosystemów ma inny mechanizm pobierania informacji o Twojej marce – i inny wzorzec tego, jakie treści trafiają do odpowiedzi. Poniższe sekcje opisują każdy z nich z perspektywy praktycznej.
