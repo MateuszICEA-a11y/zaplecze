@@ -80,7 +80,7 @@ xAI rozwija Groka w bardzo szybkim, choć nieoczywistym schemacie nazewnictwa. P
 | Grok 4 | lipiec 2025 | Wariant „Heavy", skok jakości |
 | Grok 4.1 | listopad 2025 | Lepsza inteligencja emocjonalna |
 | Grok 4.20 | początek 2026 | Warianty reasoning / multi-agent |
-| Grok 4.5 | czerwiec 2026 | Baza ok. 1,5 biliona parametrów |
+| Grok 4.5 (beta) | czerwiec 2026 | Baza ok. 1,5 biliona parametrów |
 
 Obecna generacja to rodzina **Grok 4.x**, która ustabilizowała pozycję modelu w ścisłej czołówce. xAI deklaruje, że w benchmarkach matematycznych i naukowych (jak AIME czy GPQA) Grok wyprzedza wcześniejsze flagowce konkurencji, a w zadaniach programistycznych plasuje się na poziomie najlepszych modeli. Ze względu na nietypowe nazewnictwo (np. „Grok 4.20") przy wdrożeniu API zawsze warto zweryfikować aktualny identyfikator modelu w dokumentacji xAI.
 
@@ -88,15 +88,13 @@ Obecna generacja to rodzina **Grok 4.x**, która ustabilizowała pozycję modelu
 
 Poza czatem Grok oferuje generowanie obrazów oraz krótkich filmów (funkcja Grok Imagine), a xAI zbudowała wokół modelu szerszy ekosystem – w tym Grokipedię, generowaną przez AI alternatywę dla encyklopedii. Modele w API obsługują duże okna kontekstu, sięgające w najwyższych wariantach nawet 1–2 milionów tokenów, co pozwala analizować obszerne repozytoria kodu czy długie dokumenty.
 
-Cennik API (za 1 milion tokenów) jest konkurencyjny wobec zachodnich flagowców:
+Cennik API (za 1 milion tokenów) jest konkurencyjny wobec zachodnich flagowców. Flagowym modelem w API jest Grok 4.3:
 
 | Model | Wejście | Wyjście | Okno kontekstu |
 |---|---|---|---|
 | Grok 4.3 | 1,25 USD | 2,50 USD | 1 mln |
-| Grok 4.20 (reasoning) | 1,25 USD | 2,50 USD | 1 mln |
-| Grok 4.1 Fast | 0,20 USD | 0,50 USD | – |
 
-Dodatkowo xAI kusi deweloperów pulą darmowych kredytów API (do ok. 175 USD miesięcznie) w ramach programu dzielenia się danymi – warto pamiętać, że wiąże się to z wykorzystaniem zapytań do dalszego rozwoju modeli.
+xAI utrzymuje też tańsze i wyspecjalizowane warianty (m.in. reasoning oraz szybkie modele niskokosztowe), ale przy bardzo szybkim tempie zmian – starsze modele, jak Grok 4.1 Fast, zostały wygaszone i przekierowane na nowsze – aktualne stawki i identyfikatory zawsze warto zweryfikować w dokumentacji xAI. Dodatkowo firma kusi deweloperów pulą darmowych kredytów API (do ok. 175 USD miesięcznie) w ramach programu dzielenia się danymi, co wiąże się z wykorzystaniem zapytań do dalszego rozwoju modeli.
 
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
