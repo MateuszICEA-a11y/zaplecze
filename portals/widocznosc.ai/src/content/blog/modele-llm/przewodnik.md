@@ -156,13 +156,13 @@ Strategicznie: jeśli chcesz, żeby Twoja marka pojawiała się z linkiem w odpo
 
 Obok pięciu dominujących graczy rośnie kilka ekosystemów, których nie sposób pominąć przy pełnym przeglądzie.
 
-**Grok** (xAI, Elon Musk) to model zintegrowany z platformą X (dawniej Twitter). Jego unikalna cecha to dostęp do strumienia w czasie rzeczywistym. Grok czyta tweety, posty i trendy na X w momencie zadawania pytania. Dla marek aktywnych na X i tematów, które „dzieją się teraz" – to niszowy, ale istotny kanał.
+**[Grok](/modele-llm/grok/)** (xAI, Elon Musk) to model zintegrowany z platformą X (dawniej Twitter). Jego unikalna cecha to dostęp do strumienia w czasie rzeczywistym. Grok czyta tweety, posty i trendy na X w momencie zadawania pytania. Dla marek aktywnych na X i tematów, które „dzieją się teraz" – to niszowy, ale istotny kanał. Pełny obraz jego możliwości i ryzyk znajdziesz w przewodniku o [Groku](/modele-llm/grok/).
 
 **Meta AI / Llama** to ekosystem open source opublikowany przez Meta. Modele z rodziny Llama 4 są dostępne do pobrania i uruchomienia lokalnie lub przez API. Meta AI jako asystent jest wbudowany w Instagram, WhatsApp i Messenger. Dla firm kierujących marketing do konsumentów przez te platformy to istotne środowisko. Z perspektywy B2B – jego znaczenie jest marginalne.
 
 Kilka ekosystemów specjalistycznych warto znać z nazwy:
 
-- **DeepSeek R1** – chiński model wnioskujący, licencja MIT. Koszt wnioskowania jest niższy o ok. 96% od OpenAI o3 przy zbliżonej precyzji logicznej. Używają go głównie deweloperzy.
+- **[DeepSeek](/modele-llm/deepseek/)** – chiński model open source na licencji MIT, który dorównuje zachodnim flagowcom przy ułamku ich kosztów. Używają go głównie deweloperzy i firmy stawiające na samodzielny hosting. Szczegóły architektury MoE, cennika i kwestii bezpieczeństwa danych opisujemy w przewodniku o [DeepSeeku](/modele-llm/deepseek/).
 - **Mistral AI** – europejski lider modeli open source z siedzibą we Francji. Flagowy model Mistral Large 2512 kosztuje 0,50 USD za milion tokenów wejściowych przy oknie 262 000 tokenów. To istotny gracz dla firm wymagających suwerenności danych na terenie UE.
 - **PLLuM / Bielik** – polskie modele językowe rozwijane przez konsorcjum NASK i społeczność SpeakLeash. Optymalizuje się je pod język polski i specyfikę administracyjną. Modele z rodziny Bielik (11B v2/v3) należą do najlepszych open source w testach kompetencji języka polskiego, choć wciąż ustępują czołowym modelom komercyjnym.
 
