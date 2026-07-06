@@ -702,5 +702,13 @@
     "section": "news",
     "format": "analysis",
     "source": "rss"
+  },
+  {
+    "title": "Akcja WITD w Szczecinie. Najcięższy bus ważył prawie 9 ton",
+    "date": "2026-07-06",
+    "slug": "akcja-witd-w-szczecinie-najciezszy-bus-wazyl-prawie-9-ton",
+    "section": "porownania",
+    "format": "short",
+    "source": "rss"
   }
 ]
