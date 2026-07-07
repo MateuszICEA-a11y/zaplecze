@@ -137,4 +137,4 @@ Po trzecie – ryzyko operacyjne przy narzędziach nieodwracalnych. Agent wysył
 
 Wdrożenie agenta ma sens tylko wtedy, gdy zadanie jest wieloetapowe, wymaga pobierania danych z wielu źródeł i adaptacji do wyników pośrednich. W przypadku prostych operacji jednokrokowych znacznie lepszy, szybszy i tańszy będzie zwykły potok przetwarzania (pipeline) z modelem i predefiniowanymi narzędziami.
 
-Jeśli chcesz sprawdzić, jak Twoja obecna infrastruktura treści wypada pod kątem gotowości na systemy agentowe i RAG, wykorzystaj [Ocena cytowalności strony](/narzedzia/url-check/) analizujący strukturę strony pod kątem 8 czynników cytowalności w zaledwie 30 sekund.
+Jeśli chcesz sprawdzić, jak Twoja obecna infrastruktura treści wypada pod kątem gotowości na systemy agentowe i RAG, wykorzystaj narzędzie [Ocena cytowalności strony](/narzedzia/url-check/) analizujące strukturę strony pod kątem 8 czynników cytowalności w zaledwie 30 sekund.

@@ -65,7 +65,7 @@ Modele dzielą się na komercyjne API i rozwiązania lokalne.
 - **FlashRank** – ultralekki silnik Apache 2.0, zaprojektowany pod środowiska CPU. Idealny do wdrożeń brzegowych i mikroserwisów z ograniczoną pamięcią.
 - **Jina Reranker v3** – oferuje tryb listowy (jednoczesna analiza do 64 dokumentów w oknie 131 000 tokenów) i wynik 61,94 nDCG@10 na zbiorze BEIR.
 
-Do testów wydajnościowych warto sprawdzić [Ocena cytowalności strony](/narzedzia/url-check/). Narzędzie analizuje strukturę strony pod kątem cytowalności, co pomaga ocenić, jak Twoje fragmenty zachowają się w potoku RAG, zanim w ogóle trafią do modelu.
+Do testów wydajnościowych przyda się [Ocena cytowalności strony](/narzedzia/url-check/). Narzędzie analizuje strukturę strony pod kątem cytowalności, co pomaga ocenić, jak Twoje fragmenty zachowają się w potoku RAG, zanim w ogóle trafią do modelu.
 
 ### Ile fragmentów na każdym etapie?
 

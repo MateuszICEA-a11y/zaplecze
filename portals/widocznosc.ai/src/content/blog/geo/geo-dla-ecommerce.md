@@ -57,12 +57,12 @@ Gartner prognozuje, że do końca 2026 roku 25% tradycyjnego ruchu z wyszukiware
 
 ### Dwie bariery, przez które musi przejść Twój produkt
 
-Modele językowe weryfikują każde źródło dwuetapowo, zanim włączą je do odpowiedzi –
+Modele językowe weryfikują każde źródło dwuetapowo, zanim włączą je do odpowiedzi:
 
 - **Etap pobierania danych** – bot AI (GPTBot, ClaudeBot, PerplexityBot) musi technicznie dostać się do strony, pobrać treść i uznać ją za indeksowalną. Witryny oparte wyłącznie na dynamicznym JavaScripcie są dla tych crawlerów całkowicie niewidoczne.
 - **Etap syntezy** – model decyduje, czy strona jest wystarczająco wiarygodna, żeby zacytować jej fragment. Kluczową rolę odgrywa tu gęstość faktów, spójność danych i zewnętrzny autorytet encji.
 
-Pokonanie obu barier wymaga zupełnie innych działań. Wiele sklepów odpada już na starcie. Sprawdź, czy Twoje strony produktowe są poprawnie indeksowane przez boty AI, wykorzystując [Ocena cytowalności strony](/narzedzia/url-check/). Narzędzie to w 30 sekund ocenia cytowalność pod kątem najważniejszych czynników technicznych.
+Pokonanie obu barier wymaga zupełnie innych działań. Wiele sklepów odpada już na starcie. Sprawdź, czy Twoje strony produktowe są poprawnie indeksowane przez boty AI, wykorzystując narzędzie [Ocena cytowalności strony](/narzedzia/url-check/). Narzędzie to w 30 sekund ocenia cytowalność pod kątem najważniejszych czynników technicznych.
 
 ## Strona produktowa zoptymalizowana pod cytowanie
 
@@ -76,7 +76,7 @@ Zamiast pisać „doskonałe słuchawki dla wymagających", użyj konkretu. „C
 
 Każde z tych zdań niesie ładunek informacyjny, który model powtórzy w odpowiedzi na pytania: „ile godzin działa na baterii?" czy „czy nadają się do filmów?". **Zasada BLUF (kluczowa informacja na początku) jest bezwzględna – pierwsze 100–150 słów sekcji to strefa, z której AI najchętniej wyciąga cytaty.** Nie buduj napięcia przed puentą. Od razu uderzaj najważniejszymi parametrami.
 
-Zawsze stosuj strukturę odwróconej piramidy –
+Zawsze stosuj strukturę odwróconej piramidy:
 
 - **Specyfikacja techniczna w pierwszym akapicie** – wymiary, waga, moc, kompatybilność oraz jednoznaczne jednostki miar.
 - **Zastosowanie praktyczne** – dla kogo sprzęt jest przeznaczony, w jakim kontekście się sprawdzi i jakie ma ograniczenia.
@@ -139,7 +139,7 @@ Modele językowe czerpiące z wielu źródeł błyskawicznie wychwytują wszelki
 
 ### Budowanie zewnętrznego zaplecza źródłowego
 
-W słowniku GEO termin „zaplecze źródłowe" (ang. *source stack*) oznacza zbiór zewnętrznych miejsc, w których marka występuje jako wiarygodne źródło. W branży e-commerce skup się na kilku kluczowych obszarach –
+W słowniku GEO termin „zaplecze źródłowe" (ang. *source stack*) oznacza zbiór zewnętrznych miejsc, w których marka występuje jako wiarygodne źródło. W branży e-commerce skup się na kilku kluczowych obszarach:
 
 - **Niezależne recenzje produktów** – portale branżowe i agregatory opinii (Ceneo, Allegro Opinie, Trusted Shops). Model AI traktuje oceny użytkowników jako twardy sygnał walidacji jakości.
 - **Odpowiedzi na forach i w społecznościach** – komentarze eksperckie na platformach Reddit, Quora czy w grupach na Facebooku, gdzie marka pojawia się w odpowiedzi na konkretne pytanie zakupowe.
@@ -156,7 +156,7 @@ Zapytanie „które słuchawki bezprzewodowe poleca ChatGPT?" rzadko prowadzi do
 
 ### Co powinna zawierać strona kategorii pod GEO?
 
-Wzorcowe wdrożenie to strona kategorii, która nie tylko listuje asortyment, ale proaktywnie odpowiada na dylematy kupującego poprzez –
+Wzorcowe wdrożenie to strona kategorii, która nie tylko listuje asortyment, ale proaktywnie odpowiada na dylematy kupującego poprzez:
 
 - **Tabelę porównawczą** – minimum 3 modele z kolumnami określającymi cenę, kluczowy parametr i grupę docelową. W komórkach umieszczaj twarde dane, a nie marketingowe hasła.
 - **Sekcję FAQ** – 4–5 pytań w formie nagłówków H3 z bezpośrednią odpowiedzią w pierwszym zdaniu (zasada BLUF). Format `FAQPage` w JSON-LD pozwala na ekstrakcję tych odpowiedzi wprost do wyników AI.
@@ -168,7 +168,7 @@ Więcej o budowaniu takiej struktury treści na poziomie całego sklepu dowiesz 
 
 Klasyczne narzędzia analityczne nie pokażą Ci, ile razy ChatGPT polecił Twój produkt. GEO wymaga zupełnie innych metryk i dedykowanego oprogramowania.
 
-Zacznij od śledzenia trzech podstawowych wskaźników –
+Zacznij od śledzenia trzech podstawowych wskaźników:
 
 - **Citation Rate (wskaźnik cytowań)** – procent zapytań testowych, w których odpowiedź AI zawiera nazwę sklepu lub URL. Mierz go regularnie (co dwa tygodnie) na zestawie 20–30 zapytań zakupowych z Twojej niszy.
 - **Share of Voice (udział w widoczności)** – odsetek wszystkich cytowań AI w kategorii produktowej, który trafia do Ciebie w porównaniu do konkurencji. To bezpośredni wskaźnik pozycji marki w ekosystemie AI.

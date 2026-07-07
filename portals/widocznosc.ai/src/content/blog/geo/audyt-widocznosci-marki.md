@@ -102,7 +102,7 @@ W audytach GEO stosuje się trzy podstawowe metryki, które pozwalają precyzyjn
 
 **Pomiar SoV ma sens tylko w zestawieniu z konkurencją.** Odpytaj modele o te same kwestie, ale tym razem sprawdź, ile razy pojawiają się 3–4 Twoi bezpośredni konkurenci. Różnica między Twoim SoV a wynikiem lidera to właśnie luka widoczności, którą audyt ma zidentyfikować.
 
-Darmowy [Widoczność marki w AI](/narzedzia/brand-check/) odpyta cztery silniki AI o Twoją markę i pokaże, jak jesteś postrzegany na tle kategorii. Zrobisz to bez konieczności ręcznego odpytywania każdego modelu z osobna.
+Darmowe narzędzie [Widoczność marki w AI](/narzedzia/brand-check/) odpyta cztery silniki AI o Twoją markę i pokaże, jak jesteś postrzegany na tle kategorii. Zrobisz to bez konieczności ręcznego odpytywania każdego modelu z osobna.
 
 ## Krok 4 – Audyt techniczny dostępności dla botów AI
 

@@ -42,7 +42,7 @@ W praktyce Twój blog może zajmować 50. miejsce w klasycznym Google na frazę 
 
 ## Konkretny przykład rozkładu
 
-Weźmy pozornie proste pytanie: *"Czy warto kupować używanego Forda Mondeo z silnikiem Diesla po 2015?"*. Model błyskawicznie rozbija je na kilkadziesiąt podzapytań. Należą do nich między innymi –
+Weźmy pozornie proste pytanie: *"Czy warto kupować używanego Forda Mondeo z silnikiem Diesla po 2015?"*. Model błyskawicznie rozbija je na kilkadziesiąt podzapytań. Należą do nich między innymi:
 
 - najczęstsze usterki Forda Mondeo Diesel po 2015
 - żywotność silnika TDCi 2.0 Ford
@@ -61,7 +61,7 @@ Do tego dochodzi kolejne 10–15 wariantów. Strona walcząca o cytowanie wcale 
 
 ## Co to znaczy dla SEO i GEO?
 
-Z tego mechanizmu wynikają trzy fundamentalne zmiany w sposobie projektowania treści –
+Z tego mechanizmu wynikają trzy fundamentalne zmiany w sposobie projektowania treści:
 
 - **Pokrycie tematyczne zamiast jednej frazy** – dla każdego głównego zapytania komercyjnego opracuj mapę 20–40 podzapytań, na które sztuczna inteligencja prawdopodobnie rozszczepi zapytanie, i upewnij się, że na każde z nich masz przygotowany konkretny fragment z odpowiedzią
 - **Fragmentaryczna wartość zamiast rankingu strony** – twoja ogólna pozycja w wynikach wyszukiwania ma drugorzędne znaczenie, bo liczy się wyłącznie to, czy konkretny akapit odpowiada na konkretne podzapytanie, najlepiej w pierwszych 30% tekstu
@@ -93,7 +93,7 @@ Każde podzapytanie musi otrzymać swój samodzielny fragment z odpowiedzią. **
 
 ### Wczesne sygnalizowanie kluczowej informacji
 
-**Pierwsze 30% tekstu to strefa, w której AI najczęściej szuka cytatów.** Indig wykazał, że aż 44% wszystkich cytowań ChatGPT pochodzi właśnie z tego obszaru. W praktyce oznacza to kilka zasad –
+**Pierwsze 30% tekstu to strefa, w której AI najczęściej szuka cytatów.** Indig wykazał, że aż 44% wszystkich cytowań ChatGPT pochodzi właśnie z tego obszaru. W praktyce oznacza to kilka zasad:
 
 - **Zacznij artykuł od konkretu** – umieść definicję, liczbę albo kluczowy wniosek już w pierwszych 2-3 zdaniach
 - **Nie maskuj odpowiedzi historią branży** – długi, akademicki wstęp bezpowrotnie odsuwa cytowalny fragment poza strefę 30%
@@ -118,7 +118,7 @@ Listy *"najlepszych X"*, porównania *"marka X vs Y"*, rankingi i sekcje FAQ to 
 
 ## Narzędzia do inżynierii wstecznej
 
-Sprawdź trzy darmowe lub działające w modelu freemium narzędzia, które precyzyjnie pokazują, co AI Mode generuje na Twoje główne frazy –
+Sprawdź trzy darmowe lub działające w modelu freemium narzędzia, które precyzyjnie pokazują, co AI Mode generuje na Twoje główne frazy:
 
 - **Qforia** (iPullRank, darmowe) – narzędzie zaprojektowane wprost do inżynierii wstecznej query fan-out w Google AI Mode, gdzie wpisujesz frazę i dostajesz listę podzapytań, co stanowi najszybszą drogę do stworzenia struktury artykułu przed pisaniem
 - **Google AI Mode** (jako narzędzie badawcze) – natywny interfejs świetnie sprawdza się do testowania własnych zapytań, wystarczy wpisać pytanie, kliknąć „pokaż więcej źródeł" i analizować domeny traktowane przez AI jako autorytety
@@ -128,7 +128,7 @@ Logika rozszczepienia opiera się na technologii [osadzeń wektorowych (ang. wor
 
 ## Co query fan-out zmienia w pracy nad treścią?
 
-Query fan-out to nie kolejna prosta aktualizacja w stylu Panda czy Penguin. To całkowita zmiana modelu działania warstwy pobierania danych –
+Query fan-out to nie kolejna prosta aktualizacja w stylu Panda czy Penguin. To całkowita zmiana modelu działania warstwy pobierania danych:
 
 - **Z poziomu strony na poziom fragmentu** – modele AI cytują konkretne akapity, a nie całe adresy URL
 - **Z jednej frazy na grupę podzapytań** – musisz kompleksowo pokryć cały temat, a nie tylko pojedynczą frazę kluczową
@@ -138,4 +138,4 @@ W praktyce oznacza to jedno. Content tworzony pod klasyczne SEO – długie wpro
 
 W audycie widoczności AI w ICEA jednym z pierwszych kroków jest inżynieria wsteczna (reverse engineering) dla 30–50 priorytetowych pytań w Twojej branży. Jej wynik to precyzyjna mapa pokrycia. Pokazuje ona konkretne podzapytania, na które już udzielasz odpowiedzi, te zagospodarowane przez konkurencję oraz takie, których nie obsługuje jeszcze nikt. **Te ostatnie to białe plamy, które powinieneś zająć jako pierwszy.**
 
-Jeśli chcesz zobaczyć, jak Twoja strona wypada pod kątem query fan-out dla zapytań Twoich klientów, przetestuj ją darmowym [Ocena cytowalności strony](/narzedzia/url-check/). Analizujemy tam strukturę fragmentów, wczesne sygnalizowanie kluczowych informacji i pokrycie tematyczne. Robimy to dokładnie według tych samych zasad, których używa silnik pobierający dane Google.
+Jeśli chcesz zobaczyć, jak Twoja strona wypada pod kątem query fan-out dla zapytań Twoich klientów, przetestuj ją darmowym narzędziem [Ocena cytowalności strony](/narzedzia/url-check/). Analizujemy tam strukturę fragmentów, wczesne sygnalizowanie kluczowych informacji i pokrycie tematyczne – czyli sygnały, które według badań cytowań najmocniej wpływają na to, co warstwa pobierania danych wybiera do odpowiedzi.
