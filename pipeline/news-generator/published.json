@@ -1,13 +1,5 @@
 [
   {
-    "title": "Limit na zakup paliwa coraz bliżej. Stacje przy granicy przeżywają oblężenie",
-    "date": "2026-04-06",
-    "slug": "limit-na-zakup-paliwa-coraz-blizej-stacje-przy-granicy-przezywaja-oblezenie",
-    "section": "news",
-    "format": "analysis",
-    "source": "rss"
-  },
-  {
     "title": "Ceny paliw we wtorek – kierowcy dostawczaków zapłacą mniej za diesla",
     "date": "2026-04-07",
     "slug": "ceny-paliw-we-wtorek-kierowcy-dostawczakow-zaplaca-mniej-za-diesla",
@@ -717,6 +709,14 @@
     "slug": "ceny-paliw-w-polsce-gdzie-tankowac-najtaniej-nowe-dane-z-regionow",
     "section": "news",
     "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Dostawczaki Stellantis wrzucają wyższy bieg. Citroën, Fiat, Opel i Peugeot celują w firmy",
+    "date": "2026-07-10",
+    "slug": "dostawczaki-stellantis-wrzucaja-wyzszy-bieg-citron-fiat-opel-i-peugeot-celuja-w",
+    "section": "news",
+    "format": "analysis",
     "source": "rss"
   }
 ]
