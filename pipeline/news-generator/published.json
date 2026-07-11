@@ -1,13 +1,5 @@
 [
   {
-    "title": "Ceny paliw we wtorek – kierowcy dostawczaków zapłacą mniej za diesla",
-    "date": "2026-04-07",
-    "slug": "ceny-paliw-we-wtorek-kierowcy-dostawczakow-zaplaca-mniej-za-diesla",
-    "section": "news",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Kamper zamiast kredytu hipotecznego? Coraz więcej Polaków rozważa życie na kółkach",
     "date": "2026-04-08",
     "slug": "kamper-zamiast-kredytu-hipotecznego",
@@ -717,6 +709,14 @@
     "slug": "dostawczaki-stellantis-wrzucaja-wyzszy-bieg-citron-fiat-opel-i-peugeot-celuja-w",
     "section": "news",
     "format": "analysis",
+    "source": "rss"
+  },
+  {
+    "title": "Szczecin: po awanturze podpalił kamper. 23-latek usłyszał zarzut usiłowania zabójstwa",
+    "date": "2026-07-11",
+    "slug": "szczecin-po-awanturze-podpalil-kamper-23-latek-uslyszal-zarzut-usilowania",
+    "section": "kampery",
+    "format": "short",
     "source": "rss"
   }
 ]
