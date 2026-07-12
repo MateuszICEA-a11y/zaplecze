@@ -1,13 +1,5 @@
 [
   {
-    "title": "Kamper zamiast kredytu hipotecznego? Coraz więcej Polaków rozważa życie na kółkach",
-    "date": "2026-04-08",
-    "slug": "kamper-zamiast-kredytu-hipotecznego",
-    "section": "kampery",
-    "format": "analysis",
-    "source": "rss"
-  },
-  {
     "title": "Paliwo chwilowo tańsze po zawieszeniu broni w Iranie. Rynek wciąż pozostaje nerwowy",
     "date": "2026-04-09",
     "slug": "paliwo-chwilowo-tansze-po-zawieszeniu-broni-w-iranie-rynek-wciaz-pozostaje",
@@ -715,6 +707,14 @@
     "title": "Szczecin: po awanturze podpalił kamper. 23-latek usłyszał zarzut usiłowania zabójstwa",
     "date": "2026-07-11",
     "slug": "szczecin-po-awanturze-podpalil-kamper-23-latek-uslyszal-zarzut-usilowania",
+    "section": "kampery",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Po awanturze podpalił kampera. 23-latek usłyszał zarzut usiłowania zabójstwa",
+    "date": "2026-07-12",
+    "slug": "po-awanturze-podpalil-kampera-23-latek-uslyszal-zarzut-usilowania-zabojstwa",
     "section": "kampery",
     "format": "short",
     "source": "rss"
