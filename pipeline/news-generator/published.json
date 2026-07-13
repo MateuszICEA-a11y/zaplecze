@@ -1,13 +1,5 @@
 [
   {
-    "title": "Paliwo chwilowo tańsze po zawieszeniu broni w Iranie. Rynek wciąż pozostaje nerwowy",
-    "date": "2026-04-09",
-    "slug": "paliwo-chwilowo-tansze-po-zawieszeniu-broni-w-iranie-rynek-wciaz-pozostaje",
-    "section": "news",
-    "format": "analysis",
-    "source": "rss"
-  },
-  {
     "title": "Leapmotor T03 Van – miejski elektryk dla małych firm",
     "date": "2026-04-10",
     "slug": "leapmotor-t03-van-miejski-elektryk-dla-malych-firm",
@@ -717,6 +709,14 @@
     "slug": "po-awanturze-podpalil-kampera-23-latek-uslyszal-zarzut-usilowania-zabojstwa",
     "section": "kampery",
     "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Rodzinne kombi z polskiej fabryki wciąż ma przewagę nad SUV-ami. Chodzi o jeden praktyczny detal",
+    "date": "2026-07-13",
+    "slug": "rodzinne-kombi-z-polskiej-fabryki-wciaz-ma-przewage-nad-suv-ami-chodzi-o-jeden",
+    "section": "news",
+    "format": "analysis",
     "source": "rss"
   }
 ]
