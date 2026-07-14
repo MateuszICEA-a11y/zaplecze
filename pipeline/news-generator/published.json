@@ -1,13 +1,5 @@
 [
   {
-    "title": "Leapmotor T03 Van – miejski elektryk dla małych firm",
-    "date": "2026-04-10",
-    "slug": "leapmotor-t03-van-miejski-elektryk-dla-malych-firm",
-    "section": "porownania",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Koniec limitu cen paliw na stacjach. Kierowcy busów i kamperów muszą przygotować się na podwyżki",
     "date": "2026-04-11",
     "slug": "koniec-limitu-cen-paliw-na-stacjach-kierowcy-busow-i-kamperow-musza-przygotowac",
@@ -717,6 +709,14 @@
     "slug": "rodzinne-kombi-z-polskiej-fabryki-wciaz-ma-przewage-nad-suv-ami-chodzi-o-jeden",
     "section": "news",
     "format": "analysis",
+    "source": "rss"
+  },
+  {
+    "title": "Stellantis Pro One pokazuje Smart Compact Van – nowy kierunek dla miejskich dostaw",
+    "date": "2026-07-14",
+    "slug": "stellantis-pro-one-pokazuje-smart-compact-van-nowy-kierunek-dla-miejskich-dostaw",
+    "section": "news",
+    "format": "short",
     "source": "rss"
   }
 ]
