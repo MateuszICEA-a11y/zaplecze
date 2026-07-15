@@ -1,13 +1,5 @@
 [
   {
-    "title": "Koniec limitu cen paliw na stacjach. Kierowcy busów i kamperów muszą przygotować się na podwyżki",
-    "date": "2026-04-11",
-    "slug": "koniec-limitu-cen-paliw-na-stacjach-kierowcy-busow-i-kamperow-musza-przygotowac",
-    "section": "news",
-    "format": "analysis",
-    "source": "rss"
-  },
-  {
     "title": "Ograniczenia sprzedaży paliwa dla obcokrajowców? Branża widzi więcej problemów niż korzyści",
     "date": "2026-04-12",
     "slug": "ograniczenia-sprzedazy-paliwa-dla-obcokrajowcow-branza-widzi-wiecej-problemow",
@@ -715,6 +707,14 @@
     "title": "Stellantis Pro One pokazuje Smart Compact Van – nowy kierunek dla miejskich dostaw",
     "date": "2026-07-14",
     "slug": "stellantis-pro-one-pokazuje-smart-compact-van-nowy-kierunek-dla-miejskich-dostaw",
+    "section": "news",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Bus przewrócił się po zderzeniu. Utrudnienia na A2 w kierunku Poznania",
+    "date": "2026-07-15",
+    "slug": "bus-przewrocil-sie-po-zderzeniu-utrudnienia-na-a2-w-kierunku-poznania",
     "section": "news",
     "format": "short",
     "source": "rss"
