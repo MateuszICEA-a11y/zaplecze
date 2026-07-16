@@ -76,6 +76,7 @@ const brandCheckSchema = buildGraph(
                 id="domain-input"
                 name="domain"
                 type="text"
+                required
                 autocomplete="url"
                 spellcheck="false"
                 placeholder="np. grupa-icea.pl"
@@ -1044,6 +1045,7 @@ const brandCheckSchema = buildGraph(
         market: String(data.get('market') || '').trim() || 'Polska',
       };
       if (!payload.brand) { renderError('Podaj nazwę marki.'); return; }
+      if (!payload.domain) { renderError('Podaj domenę marki – bez niej nie sprawdzimy cytowań Twojej strony.'); return; }
       // Bramka: nie liczymy, dopóki user nie zostawi danych i nie potwierdzi numeru.
       pendingBrand = payload;
       document.dispatchEvent(new CustomEvent('lead:gate:show', { detail: { tool: 'brand-check', query: payload.brand } }));
@@ -1079,7 +1081,15 @@ const brandCheckSchema = buildGraph(
         await fetch('/api/tools/send-report', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ tool: 'brand-check', challengeId, query: payload.brand, result }),
+          body: JSON.stringify({
+            tool: 'brand-check',
+            challengeId,
+            query: payload.brand,
+            domain: payload.domain,
+            category: payload.category,
+            market: payload.market,
+            result,
+          }),
         });
       } catch { /* best-effort */ }
     }
