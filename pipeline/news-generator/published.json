@@ -1,13 +1,5 @@
 [
   {
-    "title": "Ograniczenia sprzedaży paliwa dla obcokrajowców? Branża widzi więcej problemów niż korzyści",
-    "date": "2026-04-12",
-    "slug": "ograniczenia-sprzedazy-paliwa-dla-obcokrajowcow-branza-widzi-wiecej-problemow",
-    "section": "news",
-    "format": "analysis",
-    "source": "rss"
-  },
-  {
     "title": "Renault Trafic Wavecamper – kamper z polskim rodowodem trafia na radar rynku",
     "date": "2026-04-13",
     "slug": "renault-trafic-wavecamper-kamper-z-polskim-rodowodem-trafia-na-radar-rynku",
@@ -716,6 +708,14 @@
     "date": "2026-07-15",
     "slug": "bus-przewrocil-sie-po-zderzeniu-utrudnienia-na-a2-w-kierunku-poznania",
     "section": "news",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Niemcy: policja zatrzymała kampera w skrajnym stanie. Pojazd nie nadawał się do dalszej jazdy",
+    "date": "2026-07-16",
+    "slug": "niemcy-policja-zatrzymala-kampera-w-skrajnym-stanie-pojazd-nie-nadawal-sie-do",
+    "section": "kampery",
     "format": "short",
     "source": "rss"
   }
