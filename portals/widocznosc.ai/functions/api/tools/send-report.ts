@@ -127,7 +127,14 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   }
 
   // 6b. Powiadomienie leadowe do ICEA – zawsze (lead nie ginie nawet gdy liczenie padło).
-  await sendViaResend(apiKey, buildLeadNotification(lead, query, { from: FROM, leadTo: LEAD_TO }));
+  await sendViaResend(
+    apiKey,
+    buildLeadNotification(lead, query, { from: FROM, leadTo: LEAD_TO }, {
+      domain: typeof body.domain === 'string' ? body.domain : undefined,
+      category: typeof body.category === 'string' ? body.category : undefined,
+      market: typeof body.market === 'string' ? body.market : undefined,
+    }),
+  );
 
   // 7. Zlicz limit po obsłudze leada.
   await gate.commit();

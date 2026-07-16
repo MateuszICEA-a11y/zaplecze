@@ -45,3 +45,65 @@ describe('buildLeadNotification – tożsamość z challenge lead', () => {
     expect(mail.text).toContain('Zgoda na kontakt: NIE');
   });
 });
+
+describe('buildLeadNotification – kontekst narzędzia (domena/kategoria/rynek)', () => {
+  const lead = {
+    firstName: 'Jan', lastName: 'Kowalski', email: 'jan@firma.pl',
+    phone: '+48512345678', consent: true, tool: 'brand-check',
+  };
+  const cfg = { from: 'f@x', leadTo: 'lead@x' };
+
+  it('renderuje wiersze Domena/Kategoria/Rynek gdy podane (text i html)', () => {
+    const mail = buildLeadNotification(lead as any, 'Marka X', cfg, {
+      domain: 'jsps.com.pl', category: 'usługi księgowe', market: 'Polska',
+    });
+    expect(mail.text).toContain('Domena: jsps.com.pl');
+    expect(mail.text).toContain('Kategoria: usługi księgowe');
+    expect(mail.text).toContain('Rynek: Polska');
+    expect(mail.html).toContain('jsps.com.pl');
+    expect(mail.html).toContain('usługi księgowe');
+  });
+
+  it('normalizuje pełny URL do czystego hostname bez www', () => {
+    const mail = buildLeadNotification(lead as any, 'Marka X', cfg, {
+      domain: 'https://www.jsps.com.pl/kontakt?x=1',
+    });
+    expect(mail.text).toContain('Domena: jsps.com.pl');
+    expect(mail.text).not.toContain('https://');
+  });
+
+  it('wartość nienormalizowalna → pokazana surowa po trim', () => {
+    const mail = buildLeadNotification(lead as any, 'Marka X', cfg, { domain: '  nie url ...  ' });
+    expect(mail.text).toContain('Domena: nie url ...');
+  });
+
+  it('bez kontekstu brak wierszy – kompatybilność z url-check', () => {
+    const mail = buildLeadNotification(lead as any, 'https://x.pl', cfg);
+    expect(mail.text).not.toContain('Domena:');
+    expect(mail.text).not.toContain('Kategoria:');
+    expect(mail.text).not.toContain('Rynek:');
+  });
+
+  it('puste/spacjowe wartości pomijane', () => {
+    const mail = buildLeadNotification(lead as any, 'X', cfg, { domain: '   ', category: '' });
+    expect(mail.text).not.toContain('Domena:');
+    expect(mail.text).not.toContain('Kategoria:');
+  });
+
+  it('domena trafia do tematu; bez domeny temat kończy się nazwiskiem', () => {
+    const withDomain = buildLeadNotification(lead as any, 'X', cfg, { domain: 'jsps.com.pl' });
+    expect(withDomain.subject).toContain('(jsps.com.pl)');
+    const noDomain = buildLeadNotification(lead as any, 'X', cfg);
+    expect(noDomain.subject.endsWith('Jan Kowalski')).toBe(true);
+  });
+
+  it('tnie długie wartości do 200 znaków i escapuje HTML', () => {
+    const long = 'a'.repeat(300);
+    const mail = buildLeadNotification(lead as any, 'X', cfg, {
+      category: long, market: '<b>PL</b>',
+    });
+    expect(mail.text).toContain(`Kategoria: ${'a'.repeat(200)}`);
+    expect(mail.text).not.toContain('a'.repeat(201));
+    expect(mail.html).toContain('&lt;b&gt;PL&lt;/b&gt;');
+  });
+});

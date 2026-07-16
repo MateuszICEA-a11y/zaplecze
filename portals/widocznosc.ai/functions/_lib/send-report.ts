@@ -3,6 +3,7 @@ import { emailShell, escapeHtml, C } from './email-shell';
 import { isTool, toolLabel, type Tool } from './reports';
 import type { ResendEmail } from './contact';
 import type { ChallengeLead } from './otp';
+import { getHost } from './url-host';
 
 export const MAX_PAYLOAD_BYTES = 32_000;
 
@@ -17,6 +18,9 @@ export type ReportPayload = {
   query?: string;
   result?: unknown;
   website?: string; // honeypot
+  domain?: string;
+  category?: string;
+  market?: string;
 };
 
 export type EmailConfig = { from: string; leadTo: string };
@@ -37,8 +41,21 @@ export function validateReportPayload(p: ReportPayload): { ok: boolean; errors: 
   return { ok: errors.length === 0, errors };
 }
 
+export type LeadContext = { domain?: string; category?: string; market?: string };
+
+/** Kontekst jest pomocniczy: przycinamy zamiast odrzucać, puste pomijamy. */
+function cleanCtxValue(value: string | undefined): string | undefined {
+  const v = String(value ?? '').trim().slice(0, 200);
+  return v || undefined;
+}
+
 /** Mail wewnętrzny (lead) do ICEA – tożsamość ze zweryfikowanego challenge. */
-export function buildLeadNotification(lead: ChallengeLead, query: string, cfg: EmailConfig): ResendEmail {
+export function buildLeadNotification(
+  lead: ChallengeLead,
+  query: string,
+  cfg: EmailConfig,
+  ctx?: LeadContext,
+): ResendEmail {
   const tool = lead.tool as Tool;
   const email = String(lead.email ?? '').trim();
   const fullName = `${String(lead.firstName ?? '').trim()} ${String(lead.lastName ?? '').trim()}`.trim() || '—';
@@ -47,6 +64,11 @@ export function buildLeadNotification(lead: ChallengeLead, query: string, cfg: E
   const consentYes = lead.consent === true;
   const consent = consentYes ? 'TAK' : 'NIE';
 
+  const rawDomain = cleanCtxValue(ctx?.domain);
+  const domain = rawDomain ? (getHost(rawDomain) ?? rawDomain) : undefined;
+  const category = cleanCtxValue(ctx?.category);
+  const market = cleanCtxValue(ctx?.market);
+
   const rows: Array<[string, string]> = [
     ['Narzędzie', toolLabel(tool)],
     ['Imię i nazwisko', fullName],
@@ -54,8 +76,12 @@ export function buildLeadNotification(lead: ChallengeLead, query: string, cfg: E
     ['Telefon', phone],
     ['Numer zweryfikowany SMS', 'TAK'],
     ['Zapytanie', q],
-    ['Zgoda na kontakt', consent],
   ];
+  if (domain) rows.push(['Domena', domain]);
+  if (category) rows.push(['Kategoria', category]);
+  if (market) rows.push(['Rynek', market]);
+  rows.push(['Zgoda na kontakt', consent]);
+
   const rowsHtml = rows
     .map(
       ([k, v]) =>
@@ -77,7 +103,7 @@ export function buildLeadNotification(lead: ChallengeLead, query: string, cfg: E
     from: cfg.from,
     to: [cfg.leadTo],
     reply_to: email,
-    subject: `[widocznosc.ai] Lead (zweryfikowany SMS) z ${tool}: ${fullName}`,
+    subject: `[widocznosc.ai] Lead (zweryfikowany SMS) z ${tool}: ${fullName}${domain ? ` (${domain})` : ''}`,
     text: rows.map(([k, v]) => `${k}: ${v}`).join('\n'),
     html: emailShell(body, `Lead z ${toolLabel(tool)} – numer zweryfikowany SMS`),
   };
