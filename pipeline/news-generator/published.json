@@ -1,13 +1,5 @@
 [
   {
-    "title": "Renault Trafic Wavecamper – kamper z polskim rodowodem trafia na radar rynku",
-    "date": "2026-04-13",
-    "slug": "renault-trafic-wavecamper-kamper-z-polskim-rodowodem-trafia-na-radar-rynku",
-    "section": "kampery",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Zderzenie na S61 pod Łomżą. Bus uderzył w tył hondy",
     "date": "2026-04-14",
     "slug": "zderzenie-na-s61-pod-lomza-bus-uderzyl-w-tyl-hondy",
@@ -716,6 +708,14 @@
     "date": "2026-07-16",
     "slug": "niemcy-policja-zatrzymala-kampera-w-skrajnym-stanie-pojazd-nie-nadawal-sie-do",
     "section": "kampery",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Tragiczny wypadek w Peru. Bus spadł w półkilometrową przepaść, są ofiary",
+    "date": "2026-07-17",
+    "slug": "tragiczny-wypadek-w-peru-bus-spadl-w-polkilometrowa-przepasc-sa-ofiary",
+    "section": "porownania",
     "format": "short",
     "source": "rss"
   }
