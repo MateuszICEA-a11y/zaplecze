@@ -19,7 +19,7 @@ faq:
   - q: 'Czym Topic Insights różni się od funkcji Citations?'
     a: 'Citations pokazuje, <strong>gdzie</strong> Twoja domena pojawia się jako źródło w odpowiedziach AI. Topic Insights idzie krok dalej: agreguje te dane na poziomie tematu i przekłada je na <strong>rekomendacje</strong> – gdzie masz luki, kto Cię wyprzedza i co napisać w następnej kolejności. Krótko: Citations to pomiar, Topic Insights to plan działania.'
   - q: 'Czy Topic Insights jest naprawdę darmowe?'
-    a: 'Tak. Funkcja jest dostępna bez opłat wewnątrz panelu Microsoft Clarity, który sam w sobie jest darmowy. Warunkiem jest utworzenie i zweryfikowanie projektu oraz włączenie Citations. Obowiązuje limit 10 raportów tygodniowo na projekt.'
+    a: 'Tak. Funkcja jest dostępna bez opłat wewnątrz panelu Microsoft Clarity, który sam w sobie jest darmowy. Warunkiem jest utworzenie projektu w Clarity i zweryfikowanie własności domeny (kod śledzenia, Google Search Console albo Bing Webmaster Tools). Obowiązuje limit 10 raportów tygodniowo na projekt.'
   - q: 'Czy Topic Insights pokazuje, co odpowiada ChatGPT i Google?'
     a: 'Nie wprost. Topic Insights ocenia odpowiedzi generowane przez model GPT-5.3 osadzony w wiedzy dzięki warstwie Web IQ od Microsoftu. To wiarygodne <em>przybliżenie</em> tego, jak silniki AI korzystają z Twoich treści, ale nie jest to pomiar 1:1 tego, co w danym momencie zwróci konkretnie ChatGPT, Gemini, Google AI Overviews czy Perplexity.'
   - q: 'Ile raportów Topic Insights mogę wygenerować?'
@@ -40,6 +40,16 @@ Raport opisuje każdy temat w czterech wymiarach:
 - **Competition (konkurencja)** – które domeny są cytowane obok Ciebie, jak często i gdzie mają nad Tobą przewagę.
 - **Opportunities (szanse)** – konkretne, uszeregowane według priorytetów luki: tematy i pytania, przy których tracisz na rzecz konkurencji, wraz z sugestią kierunku działania.
 
+### AI Visibility ma trzy obszary
+
+Topic Insights to najnowszy, ale nie jedyny lokator rozwijanego menu **AI Visibility**. Docelowo znajdziesz tam trzy raporty, które razem pokazują pełny cykl obecności strony w ekosystemie AI:
+
+- **Bot Activity** – pokazuje, jak boty AI fizycznie odwiedzają Twoją stronę. Dane pochodzą z logów serwera, więc wymagają podłączenia obsługiwanego CDN-a: Cloudflare, Amazon CloudFront, Fastly, Azure Front Door albo Akamai. Na WordPressie najnowsza wtyczka Clarity włącza to automatycznie, bez ręcznego łączenia CDN-a. Sama wizyta bota nie oznacza jeszcze cytowania – to warstwa „czy w ogóle mnie odwiedzają".
+- **Citations** – opisany wyżej pomiar realnych cytowań w odpowiedziach AI. Warstwa „czy mnie już cytują".
+- **Topic Insights** – tematyczna analiza z rekomendacjami, opisana w tym poradniku. Warstwa „co z tym zrobić".
+
+Do samego Topic Insights nie potrzebujesz żadnej integracji CDN – to zastrzeżone wyłącznie dla Bot Activity. Warto jednak wiedzieć, że podłączenie CDN-a może generować koszty po stronie dostawcy w zależności od ruchu i planu, z jednym wyjątkiem: Akamai, jak zastrzega Microsoft, nie dolicza nic ponad Twój obecny plan usługowy.
+
 <aside class="callout-fact">
   <div class="callout-icon">✦</div>
   <div class="callout-body">
@@ -48,15 +58,18 @@ Raport opisuje każdy temat w czterech wymiarach:
   </div>
 </aside>
 
-## Zanim zaczniesz: czego potrzebujesz
+## Zanim zaczniesz – czego potrzebujesz
 
 Topic Insights nie działa „od zera po zalogowaniu". To nadbudowa nad Citations, więc najpierw musisz uruchomić fundament. Zajmuje to kilkanaście minut, ale bez tych kroków nie zobaczysz żadnych danych.
 
-Do startu potrzebujesz trzech rzeczy:
+![Ekran powitalny przy pierwszym wejściu w Citations w Microsoft Clarity: „Reveal the patterns behind AI citations" z komunikatem „Checking your setup..."](../../../assets/images/blog-geo-clarity-topic-insights-real-checking-setup.png)
 
-- **Projektu w Microsoft Clarity** – założonego dla domeny, którą chcesz badać. Konto Clarity jest darmowe i nie wymaga karty.
-- **Zweryfikowanej własności strony** – przez wklejenie kodu śledzenia Clarity na stronie albo integrację z popularnym CMS-em. Bez potwierdzenia własności funkcje AI Visibility pozostają zablokowane.
-- **Włączonej funkcji Citations** – to przełącznik w sekcji AI Visibility. Po jego aktywacji Clarity zaczyna zbierać dane o cytowaniach, na których Topic Insights buduje swoje raporty.
+Do startu potrzebujesz dwóch rzeczy:
+
+- **Projektu w Microsoft Clarity** – założonego dla domeny, którą chcesz badać. Konto Clarity jest darmowe i nie wymaga podania danych karty płatniczej lub kredytowej.
+- **Zweryfikowanej własności domeny** – na jeden z trzech sposobów: przez wklejenie kodu śledzenia Clarity na stronie, połączenie z Google Search Console (GSC) albo z Bing Webmaster Tools (BWT). To jedyny warunek – żadnego osobnego przełącznika do kliknięcia nie ma. Po potwierdzeniu własności panel Citation, a wraz z nim Topic Insights, odblokowuje się automatycznie.
+
+![Ekran potwierdzenia domeny w Microsoft Clarity dla widocznosc.ai: panel informuje, że domena projektu zostanie użyta do śledzenia cytowań i nie będzie później możliwa do zmiany](../../../assets/images/blog-geo-clarity-topic-insights-real-domain-confirm.png)
 
 Ten krok warto zapamiętać: domenę wskazujesz raz i **nie da się jej później zmienić**. Jeśli pod jednym projektem Clarity masz podpiętych kilka domen, upewnij się, że zaznaczasz właściwą, zanim potwierdzisz wybór.
 
@@ -64,21 +77,37 @@ Dane nie pojawiają się jednak natychmiast. Clarity potrzebuje czasu, żeby odp
 
 ## Krok po kroku: jak uruchomić pierwszy raport
 
-Gdy funkcja Citations jest włączona, przejdź do rozwijanego menu **AI Visibility** w panelu Clarity – to stąd uruchamiasz Topic Insights. Cały proces sprowadza się do zdefiniowania trzech rzeczy: tematu, zapytań (promptów) i konkurencji.
+Gdy domena jest zweryfikowana, przejdź do rozwijanego menu **AI Visibility** w panelu Clarity. Na start zobaczysz tam prawdopodobnie tylko dwie pozycje:
 
-![Rozwijane menu AI Visibility w Microsoft Clarity oznaczone tagiem BETA, z widocznymi pozycjami Citation i Bot Activity](../../../assets/images/blog-geo-clarity-topic-insights-ms-ai-visibility-menu.png)
+![Wczesny stan rozwijanego menu AI Visibility w Microsoft Clarity: tylko pozycje Citation i Bot activity, bez Topic insights](../../../assets/images/blog-geo-clarity-topic-insights-real-menu-before.png)
 
-*Źródło: [Microsoft Learn – dokumentacja Clarity](https://learn.microsoft.com/en-us/clarity/ai-visibility/ai-citations).*
+Przetestowaliśmy to na żywo na potrzeby tego poradnika – menu w naszym własnym projekcie faktycznie pokazywało wyłącznie **Citation** i **Bot activity**, mimo zweryfikowanej domeny. Pozycja **Topic insights** z tagiem **BETA** pojawiła się dopiero po wejściu w raport Citation i kliknięciu przycisku „Get started". To nie kwestia czekania na stopniowy rollout kontowy, tylko jednorazowego, ręcznego uruchomienia funkcji:
 
-Zwróć uwagę na tag **BETA** obok „AI Visibility" – to nieprzypadkowe. Uczciwie: w chwili pisania tego poradnika menu w naszym własnym projekcie (grupa-icea.pl) pokazywało wyłącznie **Citation** i **Bot activity** – bez pozycji Topic Insights, mimo włączonych Citations. Microsoft wdraża dostęp do świeżo ogłoszonej (9 lipca 2026 roku) funkcji stopniowo, więc u Ciebie ta pozycja może pojawić się później niż na innych kontach. Kroki poniżej opieramy na oficjalnej dokumentacji Microsoftu – gdy funkcja odblokuje się w Twoim projekcie, interfejs powinien wyglądać dokładnie tak.
+![Rozwijane menu AI Visibility w Microsoft Clarity po uruchomieniu funkcji: pozycje Citation, Bot activity i Topic insights z tagiem BETA](../../../assets/images/blog-geo-clarity-topic-insights-real-menu-full.png)
 
-Zacznij od **tematu**. To nie jest pojedyncze słowo kluczowe, lecz obszar, wokół którego chcesz mierzyć swoją pozycję – na przykład „buty do biegania na długie dystanse" albo „systemy ERP dla produkcji". Dobrze dobrany temat jest na tyle wąski, żeby odpowiedzi AI były porównywalne, ale na tyle szeroki, żeby obejmował cały wachlarz pytań klientów.
+Kliknij **Topic insights**. Trafisz na ekran powitalny z kilkoma gotowymi szablonami tematów albo opcją stworzenia własnego od zera:
 
-Następnie definiujesz **reprezentatywne prompty (zapytania)**. To sedno całej metody. Topic Insights nie zgaduje, jak ludzie pytają AI o Twoją kategorię – to Ty mu to mówisz. Wpisujesz pytania sformułowane tak, jak zadałby je Twój klient: „które buty do biegania są najtrwalsze", „co wybrać przy problemach z kolanami", „najlepsze systemy ERP dla średniej firmy". Im wierniej odwzorujesz prawdziwy język klientów, tym trafniejszy będzie raport. To dobry moment, żeby sięgnąć do historii zapytań, rozmów z działem obsługi albo mechanizmu [query fan-out](/geo/query-fan-out/), który pokazuje, jak jedno pytanie rozgałęzia się w wiele podpytań.
+![Ekran powitalny Topic insights w Microsoft Clarity: „Introducing topic insight" z trzema sugerowanymi tematami (E-commerce SEO strategies, Digital visibility services, Content marketing growth) oraz przyciskiem Create topic from scratch](../../../assets/images/blog-geo-clarity-topic-insights-real-getstarted.png)
 
-Na koniec wskazujesz **konkurencję** – domeny, z którymi chcesz się porównywać. Możesz podać oczywistych rywali rynkowych, ale realną wartość daje dopisanie tych, którzy wygrywają w wynikach AI, choć w klasycznym SEO w ogóle ich nie widzisz. To często wydawcy, portale poradnikowe i serwisy branżowe, a nie Twoi bezpośredni konkurenci sprzedażowi.
+Wybranie gotowego szablonu – na przykład „E-commerce SEO strategies" – od razu wypełnia formularz angielskimi promptami wygenerowanymi przez AI:
 
-Po zatwierdzeniu Clarity odpytuje model językowy, ocenia wygenerowane odpowiedzi, wychwytuje w nich cytowane domeny i strony, a następnie mierzy, ile każde źródło wnosi do finalnej odpowiedzi. Wyniki agreguje na poziomie tematu – i dopiero ta agregacja ujawnia wzorce, których nie zobaczysz, patrząc na pojedyncze odpowiedzi.
+![Ekran Edit topic insight z sugerowanym tematem „E-commerce SEO strategies" i 12 z 15 promptów wygenerowanych automatycznie w języku angielskim](../../../assets/images/blog-geo-clarity-topic-insights-real-suggested-topic.png)
+
+To wygodny punkt startowy, ale realną wartość dostajesz dopiero po kliknięciu **Create topic from scratch** i wpisaniu własnych, polskich zapytań – dokładnie tak, jak zrobiliśmy to dla widocznosc.ai:
+
+![Ekran Edit topic insight z własnym tematem „Pozycjonowanie AI" i 10 z 15 polskich promptów, gotowy do kliknięcia Generate report](../../../assets/images/blog-geo-clarity-topic-insights-real-custom-topic.png)
+
+Formularz sprowadza się do dwóch pól: **Title** (nazwa tematu – u nas „Pozycjonowanie AI") oraz **User prompts** – od 10 do 15 pytań sformułowanych tak, jak zadałby je Twój klient: „jak budować widoczność w AI Overviews", „jak być cytowanym przez ChatGPT", „jak sprawić, by ChatGPT polecał mój sklep". Im wierniej odwzorujesz prawdziwy język klientów, tym trafniejszy będzie raport. To dobry moment, żeby sięgnąć do historii zapytań, rozmów z działem obsługi albo mechanizmu [query fan-out](/geo/query-fan-out/), który pokazuje, jak jedno pytanie rozgałęzia się w wiele podpytań.
+
+Po kliknięciu **Generate report** Clarity zaczyna odpytywać model językowy, oceniać wygenerowane odpowiedzi i wychwytywać w nich cytowane domeny i strony. Licznik u dołu formularza („0 / 10 weekly reports used") przypomina o cotygodniowym limicie.
+
+![Ekran ładowania Topic Insights: „We're preparing your insight… Generating 0%. This might take a few minutes"](../../../assets/images/blog-geo-clarity-topic-insights-real-generating.png)
+
+Osobno, niezależnie od tworzenia tematu, warto uzupełnić listę konkurencji w panelu **Edit competitors** – to on decyduje, czy zobaczysz swój „Competitive share", czy tylko N/A. Konkurencję warto rozumieć szeroko: nie tylko oczywistych rywali sprzedażowych, ale też wydawców, portale poradnikowe i serwisy branżowe, które wygrywają w wynikach AI, choć w klasycznym SEO w ogóle ich nie widzisz.
+
+![Ekran Edit competitors w Microsoft Clarity z listą domen konkurencji (nazwy zamazane) i informacją, że zmiany obejmują zarówno przyszłe, jak i już wygenerowane raporty](../../../assets/images/blog-geo-clarity-topic-insights-real-competitors.png)
+
+Microsoft zastrzega, że bez zdefiniowanej konkurencji „Competitive share" pokaże po prostu N/A, a każda aktualizacja tej listy przelicza też raporty już wygenerowane – nie musisz więc zgadywać konkurentów za pierwszym razem.
 
 ## Jak czytać cztery wymiary raportu
 
@@ -86,9 +115,9 @@ Gotowy raport to nie jeden wskaźnik, lecz cztery powiązane perspektywy, a kluc
 
 **Visibility** czytaj jako swój udział w rynku cytowań danego tematu. Wysoka widoczność oznacza, że modele regularnie sięgają po Twoją domenę, gdy odpowiadają w tej kategorii. Niska – że w praktyce nie istniejesz w tej rozmowie, nawet jeśli w Google zajmujesz wysokie pozycje. Ta rozbieżność jest jednym z najczęstszych zaskoczeń, jakie widzimy w projektach.
 
-![Przykładowy raport Topic Insights w Microsoft Clarity dla tematu „Electric bicycles": karty Competitive share, Citation rate i Avg. answer contribution, wykresy Share of authority według domeny i kategorii oraz sekcje Top content opportunities i Your top content to AI responses](../../../assets/images/blog-geo-clarity-topic-insights-ms-report-example.png)
+![Nasz pierwszy raport Topic Insights dla tematu „Pozycjonowanie AI": karty Competitive share, Citation rate i Avg. answer contribution na poziomie 0%, wykresy Share of authority według domeny i kategorii oraz sekcje Top content opportunities i Your top content to AI responses](../../../assets/images/blog-geo-clarity-topic-insights-real-report.png)
 
-*Źródło: [Microsoft Clarity Blog](https://clarity.microsoft.com/blog/topic-insights-announcement/) – zrzut promocyjny z danymi demonstracyjnymi fikcyjnej marki „Tailwind Traders", nie dane rzeczywistego klienta.*
+To nasz własny, pierwszy raport wygenerowany dla widocznosc.ai – i celowo pokazujemy go bez podkoloryzowania. Wszystkie trzy górne wskaźniki świecą zerem, bo temat dopiero co powstał i Clarity nie zdążyła jeszcze zebrać historii cytowań. Sekcja Share of authority i tak działa – widać w niej realny rozkład autorytetu w kategorii (m.in. google.com, hubspot.com oznaczony jako konkurent), a „Your top content to AI responses" szczerze informuje: „No top content available". Dokładnie tego możesz się spodziewać przy pierwszym uruchomieniu – wartość przychodzi po kilku cyklach zbierania danych, nie od razu.
 
 **Influence** dopowiada to, czego Visibility nie ujmuje. Możesz być cytowany często, ale zawsze jako jedno z pięciu źródeł w tle. Wysoki wpływ oznacza, że to właśnie Twoja treść stanowi trzon odpowiedzi – że model buduje wywód na Twoich zdaniach, a nie tylko dorzuca Cię do listy. Markom, które budują [autorytet tematyczny](/geo/topical-authority/), zależy właśnie na tym wymiarze.
 
@@ -102,11 +131,9 @@ Pod warstwą raportu kryje się detal, który łatwo przeoczyć, a który dużo 
 
 Dla praktyka GEO to złoto. Jeśli widzisz, że model rozbija pytanie o „najlepsze buty do biegania" na zapytania o amortyzację, wagę i opinie po przebiegnięciu maratonu, wiesz dokładnie, jakie sekcje i jakie dane musi zawierać Twoja strona, żeby w ogóle wejść w pole widzenia. To domyka pętlę między tym, [jak LLM-y cytują źródła](/geo/jak-llm-cytuja-zrodla/), a tym, co konkretnie masz na stronie umieścić.
 
-![Panel Citation dashboard w Microsoft Clarity dla domeny demonstracyjnej tailwind-traders.com: 375,73 tys. cytowań, 23,38% Share of authority oraz tabela zapytań wraz z listą najczęściej cytowanych stron](../../../assets/images/blog-geo-clarity-topic-insights-ms-citation-dashboard.png)
+![Panel Citation dashboard w Microsoft Clarity: 114 cytowań, 17,61% Share of authority oraz tabela Grounding queries z realnymi zapytaniami, które modele AI wysyłają przed zbudowaniem odpowiedzi](../../../assets/images/blog-geo-clarity-topic-insights-real-grounding-queries.png)
 
-*Źródło: [Microsoft Clarity Blog](https://clarity.microsoft.com/blog/understanding-your-influence-ai-citations/) – zrzut oficjalnej dokumentacji, dane demonstracyjne „Tailwind Traders".*
-
-Ten sam mechanizm grounding queries, na którym opiera się Topic Insights, działa już dziś w warstwie Citations – to właśnie stąd Twoje dane trafiają później do raportów tematycznych.
+To realny zrzut z naszego projektu – ten sam mechanizm grounding queries, na którym opiera się Topic Insights, działa już dziś w warstwie Citations. Widać na nim zarówno spodziewane zapytania („sprawdzenie widoczności marki w chatgpt"), jak i szum niezwiązany wprost z marką – to normalne przy niewielkiej próbce cytowań i warto to uwzględniać, czytając własne dane.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/tomasz-czechowski.avif" alt="Tomasz Czechowski" /></div>
