@@ -64,12 +64,16 @@ Topic Insights nie zadziała od razu po zalogowaniu. Ponieważ jest to funkcja o
 
 ![Ekran powitalny przy pierwszym wejściu w Citations w Microsoft Clarity: „Reveal the patterns behind AI citations" z komunikatem „Checking your setup..."](../../../assets/images/blog-geo-clarity-topic-insights-real-checking-setup.png)
 
+<span class="img-caption">Ekran startowy przy pierwszej weryfikacji Citations w Microsoft Clarity.</span>
+
 Na start potrzebujesz dwóch rzeczy:
 
 - **Projektu w Microsoft Clarity** – utworzonego dla domeny, którą chcesz analizować. Konto jest darmowe i nie wymaga podpinania karty płatniczej.
 - **Zweryfikowanej własności domeny** – możesz to zrobić na trzy sposoby: wklejając kod śledzenia Clarity na stronie, łącząc konto z Google Search Console (GSC) lub korzystając z Bing Webmaster Tools (BWT).
 
 ![Ekran potwierdzenia domeny w Microsoft Clarity dla widocznosc.ai: panel informuje, że domena projektu zostanie użyta do śledzenia cytowań i nie będzie później możliwa do zmiany](../../../assets/images/blog-geo-clarity-topic-insights-real-domain-confirm.png)
+
+<span class="img-caption">Potwierdzenie domeny projektu w Microsoft Clarity.</span>
 
 Ekran weryfikacji pojawi się przy pierwszym wejściu w panel AI Visibility. Clarity automatycznie wykryje domenę projektu, a Twoim zadaniem będzie jedynie potwierdzenie jej przyciskiem „Continue”. Kliknięcie przycisku „Continue” wymaga uprawnień administratora. Jeśli ich nie posiadasz, przycisk będzie nieaktywny.
 
@@ -81,25 +85,37 @@ Po pomyślnej weryfikacji domeny rozwiń menu **AI Visibility** w panelu Clarity
 
 ![Wczesny stan rozwijanego menu AI Visibility w Microsoft Clarity: tylko pozycje Citation i Bot activity, bez Topic insights](../../../assets/images/blog-geo-clarity-topic-insights-real-menu-before.png)
 
+<span class="img-caption">Menu AI Visibility przed uruchomieniem Topic Insights.</span>
+
 Przetestowałem ten proces na żywo podczas pisania tego poradnika. Mimo zweryfikowanej domeny, menu w naszym projekcie wyświetlało wyłącznie **Citation** oraz **Bot activity**. Opcja **Topic insights** (oznaczona tagiem BETA) pojawiła się dopiero po kliknięciu w raport Citation – system wyświetlił tam baner z przyciskiem „Explore topic insights”. Nie musisz więc czekać na globalną aktualizację kont, wystarczy jedno kliknięcie:
 
 ![Baner „Introducing topic insights" wyświetlony wewnątrz raportu Citation w Microsoft Clarity, z przyciskiem Explore topic insights](../../../assets/images/blog-geo-clarity-topic-insights-real-explore-banner.png)
+
+<span class="img-caption">Baner „Explore topic insights” w raporcie Citation.</span>
 
 Po jego kliknięciu menu **AI Visibility** wzbogaci się o trzecią pozycję:
 
 ![Rozwijane menu AI Visibility w Microsoft Clarity po uruchomieniu funkcji: pozycje Citation, Bot activity i Topic insights z tagiem BETA](../../../assets/images/blog-geo-clarity-topic-insights-real-menu-full.png)
 
+<span class="img-caption">Menu AI Visibility po aktywacji Topic Insights.</span>
+
 Wybierz **Topic insights** (lub kliknij bezpośrednio w przycisk na banerze). Zobaczysz ekran powitalny, na którym możesz skorzystać z gotowych szablonów lub stworzyć własny zestaw promptów od podstaw:
 
 ![Ekran powitalny Topic insights w Microsoft Clarity: „Introducing topic insight" z trzema sugerowanymi tematami (E-commerce SEO strategies, Digital visibility services, Content marketing growth) oraz przyciskiem Create topic from scratch](../../../assets/images/blog-geo-clarity-topic-insights-real-getstarted.png)
+
+<span class="img-caption">Ekran startowy Topic Insights z gotowymi szablonami tematów.</span>
 
 Wybór gotowego szablonu (np. „E-commerce SEO strategies”) automatycznie wypełnia formularz anglojęzycznymi promptami wygenerowanymi przez AI:
 
 ![Ekran Edit topic insight z sugerowanym tematem „E-commerce SEO strategies" i 12 z 15 promptów wygenerowanych automatycznie w języku angielskim](../../../assets/images/blog-geo-clarity-topic-insights-real-suggested-topic.png)
 
+<span class="img-caption">Automatycznie wygenerowane prompty dla szablonu „E-commerce SEO strategies”.</span>
+
 To wygodne rozwiązanie na start. Największą wartość uzyskasz jednak, klikając **Create topic from scratch** i wprowadzając własne, polskie zapytania. Dokładnie tak postąpiliśmy w przypadku witryny widocznosc.ai:
 
 ![Ekran Edit topic insight z własnym tematem „Pozycjonowanie AI" i 10 z 15 polskich promptów, gotowy do kliknięcia Generate report](../../../assets/images/blog-geo-clarity-topic-insights-real-custom-topic.png)
+
+<span class="img-caption">Własny temat „Pozycjonowanie AI” z polskimi promptami.</span>
 
 Konfiguracja sprowadza się do wypełnienia dwóch pól: **Title** (nazwa tematu – w naszym przypadku „Pozycjonowanie AI”) oraz **User prompts** (od 10 do 15 pytań sformułowanych z perspektywy klienta, np. „jak budować widoczność w AI Overviews” czy „jak sprawić, by ChatGPT polecał mój sklep”). Im wierniej odwzorujesz naturalny język swoich odbiorców, tym trafniejszy będzie raport. Warto w tym miejscu przeanalizować historię zapytań, wnioski z rozmów z działem obsługi klienta lub skorzystać z mechanizmu [query fan-out](/geo/query-fan-out/), który obrazuje, jak jedno ogólne zapytanie rozgałęzia się na szereg bardziej szczegółowych.
 
@@ -107,11 +123,17 @@ Po kliknięciu **Generate report** system zaczyna odpytywać model językowy, an
 
 ![Ekran ładowania Topic Insights: „We're preparing your insight… Generating 0%. This might take a few minutes"](../../../assets/images/blog-geo-clarity-topic-insights-real-generating.png)
 
+<span class="img-caption">Generowanie pierwszego raportu Topic Insights.</span>
+
 Niezależnie od tworzenia tematu, pamiętaj o zweryfikowaniu listy konkurentów w zakładce **Edit competitors**. To od niej zależy, czy w raporcie pojawi się wskaźnik „Competitive share”, czy jedynie wartość N/A. **Podejdź do definiowania konkurencji szeroko.** Uwzględnij nie tylko bezpośrednich rywali biznesowych, ale również portale branżowe, wydawców i serwisy poradnikowe, które często dominują w wynikach AI, nawet jeśli w klasycznym wyszukiwaniu SEO ustępują Ci miejsca.
 
 ![Ekran Edit competitors w Microsoft Clarity z listą domen konkurencji (nazwy zamazane) i informacją, że zmiany obejmują zarówno przyszłe, jak i już wygenerowane raporty](../../../assets/images/blog-geo-clarity-topic-insights-real-competitors.png)
 
+<span class="img-caption">Panel Edit competitors w Microsoft Clarity.</span>
+
 Microsoft zaznacza, że bez zdefiniowania rywali wskaźnik „Competitive share” pozostanie pusty. Co istotne, każda aktualizacja tej listy skutkuje ponownym przeliczeniem już wygenerowanych raportów, więc nie musisz od razu wpisywać wszystkich konkurentów.
+
+Warto też wiedzieć, że raz skonfigurowany temat nie jest jednorazowy. Clarity automatycznie generuje kolejny raport co tydzień, licząc od daty poprzedniego uruchomienia – w panelu widać to jako datę bieżącego raportu i etykietę „Next run” obok przycisku „Generate new report”. Każdy taki raport trafia do historii razem z datą, użytym modelem AI i odnośnikiem do zestawu promptów, na którym się opierał.
 
 ## Jak czytać cztery wymiary raportu
 
@@ -121,7 +143,17 @@ Wygenerowany raport składa się z czterech powiązanych ze sobą perspektyw. Kl
 
 ![Nasz pierwszy raport Topic Insights dla tematu „Pozycjonowanie AI": karty Competitive share, Citation rate i Avg. answer contribution na poziomie 0%, wykresy Share of authority według domeny i kategorii oraz sekcje Top content opportunities i Your top content to AI responses](../../../assets/images/blog-geo-clarity-topic-insights-real-report.png)
 
+<span class="img-caption">Pierwszy raport Topic Insights dla widocznosc.ai – dane jeszcze zerowe.</span>
+
 Powyżej widzisz nasz pierwszy raport wygenerowany dla widocznosc.ai – celowo prezentujemy go bez upiększania. Główne wskaźniki pokazują zera, ponieważ temat został dopiero utworzony i Clarity nie zdążyło jeszcze zebrać historii cytowań. Mimo to, sekcja *Share of authority* już działa, pokazując realny rozkład sił w kategorii (widać tu m.in. domeny google.com i hubspot.com). Z kolei sekcja *Your top content to AI responses* uczciwie informuje o braku danych („No top content available”). Dokładnie takiego widoku powinieneś się spodziewać przy pierwszym uruchomieniu. Prawdziwa wartość narzędzia ujawnia się dopiero po kilku cyklach zbierania danych.
+
+Żeby dać Ci pełniejszy obraz tego, jak wygląda raport po zebraniu danych, poniżej znajdziesz oficjalny przykład z bloga Microsoft Clarity – konto demonstracyjne „Tailwind Traders” i temat „Electric bicycles”:
+
+![Przykładowy, w pełni rozwinięty raport Topic Insights z oficjalnego bloga Microsoft Clarity: konto demonstracyjne Tailwind Traders, temat „Electric bicycles" z danymi Competitive share 7,1%, Citation rate 20%, Avg. answer contribution 3,2% oraz sekcjami Top content opportunities i Your top content to AI responses](../../../assets/images/blog-geo-clarity-topic-insights-official-example.png)
+
+<span class="img-caption">Przykładowy, dojrzały raport z oficjalnego bloga Microsoft Clarity (konto demo).</span>
+
+Ten zrzut dobrze pokazuje różnicę w szczegółowości między dwiema dolnymi sekcjami raportu. „Top content opportunities” – czyli luki, które wypełnia konkurencja – wskazuje tylko domenę rywala (np. „Covered by: Zava Bikes, Contoso”), bez linku do konkretnej strony. Za to „Your top content to AI responses” pokazuje już dokładny adres Twojej własnej podstrony (np. „/guides/electric-bicycles”), która trafiła do odpowiedzi AI. Atrybucja na poziomie URL-a działa więc tylko w jedną stronę – dla Twoich treści tak, dla treści konkurencji nie. Data raportu i etykieta „Next run” w rogu ekranu to wspomniany wcześniej, cotygodniowy rytm automatycznego odświeżania.
 
 **Influence** uzupełnia to, czego nie oddaje sama widoczność. Możesz być często cytowany, ale pełnić jedynie rolę tła dla innych źródeł. **Wysoki wpływ oznacza, że Twoje treści stanowią fundament odpowiedzi AI – model opiera na nich swój wywód, a nie tylko wymienia Cię w przypisach.** Dla marek budujących [autorytet tematyczny (topical authority)](/geo/topical-authority/), jest to absolutnie kluczowa metryka.
 
@@ -137,7 +169,11 @@ Dla specjalisty GEO to bezcenna wiedza. **Jeśli zauważysz, że model rozbija o
 
 ![Panel Citation dashboard w Microsoft Clarity: 114 cytowań, 17,61% Share of authority oraz tabela Grounding queries z realnymi zapytaniami, które modele AI wysyłają przed zbudowaniem odpowiedzi](../../../assets/images/blog-geo-clarity-topic-insights-real-grounding-queries.png)
 
+<span class="img-caption">Grounding queries w panelu Citation dla widocznosc.ai.</span>
+
 Powyżej znajduje się zrzut ekranu z naszego projektu. Mechanizm *grounding queries*, na którym bazuje Topic Insights, działa już teraz w module Citations. Widać tu zarówno trafne zapytania (np. „sprawdzenie widoczności marki w chatgpt”), jak i pewien szum informacyjny, niezwiązany bezpośrednio z naszą marką. To całkowicie normalne zjawisko przy małej próbce danych, o którym warto pamiętać podczas analizy własnych raportów.
+
+W samym raporcie możesz też otworzyć okno **View User Prompt**, które rozbija wszystkie zdefiniowane przez Ciebie prompty na dwie grupy: cytowane i niecytowane. To szybki sposób, by zobaczyć, które konkretnie pytania w ogóle przebiły się do odpowiedzi AI – narzędzie wciąż jednak nie pokazuje, na jakiej stronie akurat wtedy zostałeś zacytowany.
 
 <aside class="callout-expert">
   <div class="callout-icon"><img src="/authors/tomasz-czechowski.avif" alt="Tomasz Czechowski" /></div>
@@ -154,11 +190,14 @@ Udostępnienie tak zaawansowanego narzędzia analitycznego za darmo to bez wątp
 
 Zacznijmy od podstaw – skąd w ogóle biorą się „odpowiedzi AI” analizowane w raporcie? Topic Insights nie odpytuje w czasie rzeczywistym ChatGPT, Gemini czy Google AI Overviews. Narzędzie opiera się na odpowiedziach generowanych przez model **GPT-5.3**, zintegrowany z technologią **Web IQ**. Jest to zestaw interfejsów wyszukiwania, zaprezentowany przez Microsoft w czerwcu 2026 roku, który dostarcza modelom nie całe dokumenty, a jedynie wyselekcjonowane fragmenty (pasaże) i ustrukturyzowane „dowody”. **W praktyce oznacza to, że analizujesz spójną, powtarzalną symulację stworzoną w „ekosystemie Microsoftu”, a nie dokładny zapis tego, co w danej sekundzie wygeneruje użytkownikowi inny silnik AI.** To bardzo wartościowe, ale wciąż tylko przybliżenie.
 
-Do tego dochodzą trzy przyziemne ograniczenia:
+Do tego dochodzi sześć przyziemnych ograniczeń:
 
 - **Status beta** – Microsoft otwarcie przyznaje, że jest to narzędzie do monitoringu trendów, a jego rekomendacje nie gwarantują stuprocentowej dokładności ani natychmiastowych wyników biznesowych. Traktuj te dane jako drogowskaz, a nie wyrocznię.
 - **Limit 10 raportów tygodniowo na projekt** – pula ta wystarcza do monitorowania najważniejszych obszarów, ale wymaga dyscypliny. Rozdrabnianie limitu na dziesiątki bardzo wąskich zapytań sprawi, że szybko go wyczerpiesz.
 - **Zależność od jakości promptów** – wartość raportu jest wprost proporcjonalna do jakości pytań, które zdefiniujesz. Nietrafione i niereprezentatywne zapytania wygenerują zafałszowany obraz całej kategorii.
+- **Lista konkurentów wspólna dla całego projektu, nie dla pojedynczego tematu** – konkurenci zdefiniowani przy jednym temacie są widoczni też we wszystkich pozostałych tematach w tym samym projekcie. To problem, jeśli różne linie produktowe albo tematy realnie rywalizują z innymi firmami – i tak trzeba pogodzić się z jedną, wspólną listą.
+- **Historia raportów bez wykresu trendu** – każdy kolejny raport w historii to osobna karta z datą, wskaźnikami i modelem AI, ale narzędzie nie rysuje linii łączącej je w czasie. Porównanie tygodnia do tygodnia oznacza więc ręczne przeklikiwanie się między kartami, a nie rzut oka na wykres.
+- **Brak wglądu w treść samej odpowiedzi AI** – widzisz metryki i podsumowanie powodu cytowania, ale nie faktyczne zdanie czy kontekst, w jakim model Cię przywołał. Utrudnia to precyzyjne dostrojenie treści wyłącznie na podstawie raportu.
 
 Te ograniczenia nie powinny zniechęcać Cię do korzystania z Topic Insights – mają jedynie uczyć krytycznego podejścia do danych. Do bardziej zaawansowanych zadań i tak będziesz musiał wykorzystać płatne platformy (np. gdy zależy Ci na emulacji realnych sesji w wielu silnikach jednocześnie, analizie źródeł na poziomie pojedynczego URL-a czy generowaniu zaawansowanych raportów dla zarządu). Zestawienie rozwiązań dopasowanych do różnej skali biznesu znajdziesz w moim [przeglądzie narzędzi do monitorowania wzmianek w LLM-ach](/geo/narzedzia-monitoring-wzmianek/).
 

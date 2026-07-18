@@ -1630,6 +1630,20 @@ const linkedinShareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${
     line-height: 1.4;
   }
 
+  /* Podpis pod obrazem osadzonym markdownem (![]() zostaje niezoptymalizowany
+     bez figure/figcaption, więc podpis dokładamy jako osobny akapit tuż pod
+     obrazem – ujemny margines ściąga go bliżej, zamiast zwykłego odstępu 1.5rem). */
+  .article-content .img-caption {
+    display: block;
+    margin-top: -1rem;
+    font-size: var(--fs-caption);
+    color: var(--ink-muted);
+    text-align: center;
+    font-family: var(--font-sans);
+    letter-spacing: var(--ls-caption);
+    line-height: 1.4;
+  }
+
   /* Osadzony film (YouTube) – responsywny kadr 16:9 */
   .article-content figure.yt-embed iframe {
     display: block;
