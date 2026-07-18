@@ -1,13 +1,5 @@
 [
   {
-    "title": "Zderzenie na S61 pod Łomżą. Bus uderzył w tył hondy",
-    "date": "2026-04-14",
-    "slug": "zderzenie-na-s61-pod-lomza-bus-uderzyl-w-tyl-hondy",
-    "section": "news",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Pakiet CPN a ceny paliw – co naprawdę może się zmienić dla kierowców i firm",
     "date": "2026-04-15",
     "slug": "pakiet-cpn-a-ceny-paliw-co-naprawde-moze-sie-zmienic-dla-kierowcow-i-firm",
@@ -717,6 +709,14 @@
     "slug": "tragiczny-wypadek-w-peru-bus-spadl-w-polkilometrowa-przepasc-sa-ofiary",
     "section": "porownania",
     "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Ceny paliw znów rosną. Droższy diesel uderzy w busy, vany i kampery",
+    "date": "2026-07-18",
+    "slug": "ceny-paliw-znow-rosna-drozszy-diesel-uderzy-w-busy-vany-i-kampery",
+    "section": "news",
+    "format": "analysis",
     "source": "rss"
   }
 ]
