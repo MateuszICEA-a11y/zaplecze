@@ -1,13 +1,5 @@
 [
   {
-    "title": "Pakiet CPN a ceny paliw – co naprawdę może się zmienić dla kierowców i firm",
-    "date": "2026-04-15",
-    "slug": "pakiet-cpn-a-ceny-paliw-co-naprawde-moze-sie-zmienic-dla-kierowcow-i-firm",
-    "section": "porownania",
-    "format": "analysis",
-    "source": "rss"
-  },
-  {
     "title": "Mercedes VLE od 93 250 euro. Luksusowy e-van wchodzi do gry",
     "date": "2026-04-16",
     "slug": "mercedes-vle-od-93-250-euro-luksusowy-e-van-wchodzi-do-gry",
@@ -717,6 +709,14 @@
     "slug": "ceny-paliw-znow-rosna-drozszy-diesel-uderzy-w-busy-vany-i-kampery",
     "section": "news",
     "format": "analysis",
+    "source": "rss"
+  },
+  {
+    "title": "Troje dzieci, kamper i świat bez wymówek – Andrea Skupień-Kapsia o rodzinnych podróżach",
+    "date": "2026-07-19",
+    "slug": "troje-dzieci-kamper-i-swiat-bez-wymowek-andrea-skupien-kapsia-o-rodzinnych",
+    "section": "kampery",
+    "format": "short",
     "source": "rss"
   }
 ]
