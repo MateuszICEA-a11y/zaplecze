@@ -26,3 +26,5 @@ global:
     cost_fallback: 0.16 # zł/SMS gdy wycena test=1 nie zadziała
   openrouter:
     enabled: true
+
+# run: weryfikacja OPENROUTER_PROJECT_KEY 2026-07-20
