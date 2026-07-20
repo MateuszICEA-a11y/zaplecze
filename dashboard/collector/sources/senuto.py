@@ -19,7 +19,9 @@ def fetch(cfg: dict, env: dict) -> dict:
 
     params = urllib.parse.urlencode({
         "domain": cfg.get("domain"),
-        "fetch_mode": "domain",
+        # Jedyne akceptowane wartości: topLevelDomain | subdomain
+        # (inne = HTTP 418 invalid_data, mylnie wyglądające na WAF)
+        "fetch_mode": cfg.get("fetch_mode", "topLevelDomain"),
         "country_id": str(cfg.get("country_id", "1")),
     })
     try:
