@@ -1,0 +1,20 @@
+# Konfiguracja dashboardu analitycznego.
+# Nowa domena = nowy wpis w `domains` – collector i frontend podejmą ją automatycznie.
+domains:
+  - id: widocznosc.ai
+    name: widocznosc.ai
+    senuto:
+      enabled: true
+      country_id: "1" # Polska
+    backlinks:
+      enabled: true
+      target: widocznosc.ai
+    clarity:
+      enabled: false # czeka na token Data Export API (CLARITY_API_TOKEN)
+
+# Źródła per konto (nie per domena) – salda kredytów.
+global:
+  smsapi:
+    enabled: true
+  openrouter:
+    enabled: true

@@ -1,0 +1,1 @@
+{"date": "2026-07-20", "collected_at": "2026-07-20T10:38:36Z", "sources": {"senuto": {"status": "token_expired", "error": "senuto: HTTP 404 – JWT prawdopodobnie wygasł (rotacja ~31 dni), odśwież SENUTO_API_KEY"}, "backlinks": {"status": "ok", "data": {"backlinks": 0, "referring_domains": 0, "referring_ips": 0, "broken_backlinks": 0, "rank": 0, "indexed": false}}}}

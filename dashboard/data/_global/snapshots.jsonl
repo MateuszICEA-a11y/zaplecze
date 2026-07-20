@@ -1,0 +1,1 @@
+{"date": "2026-07-20", "collected_at": "2026-07-20T10:38:36Z", "sources": {"smsapi": {"status": "not_configured", "error": "smsapi: brak SMSAPI_TOKEN w env"}, "openrouter": {"status": "ok", "data": {"total_credits": 1012, "total_usage": 524.507315901, "remaining": 487.4927}}}}
