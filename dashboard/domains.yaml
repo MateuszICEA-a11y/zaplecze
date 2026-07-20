@@ -8,7 +8,7 @@ domains:
       country_id: "1" # Polska
     gsc:
       enabled: true
-      site: sc-domain:widocznosc.ai # property domenowa w Search Console
+      site: "https://widocznosc.ai/" # property typu prefiks URL (nie domenowa)
     ahrefs:
       enabled: true
       target: widocznosc.ai

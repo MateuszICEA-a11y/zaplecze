@@ -43,7 +43,8 @@ jobs:
           DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
           DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
           SMSAPI_TOKEN: ${{ secrets.SMSAPI_TOKEN }}
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          # Fallback na OPENROUTER_KEY – pod tą nazwą sekret istnieje w repo (fb-poster)
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || secrets.OPENROUTER_KEY }}
           OPENROUTER_PROJECT_KEY: ${{ secrets.OPENROUTER_PROJECT_KEY }}
           GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
         run: python dashboard/collector/main.py
