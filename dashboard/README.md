@@ -2,7 +2,7 @@
 
 Publiczny dashboard postępów domen: SEO (Senuto), linki (Ahrefs, fallback DataForSEO), kredyty SMSAPI i OpenRouter, docelowo Microsoft Clarity.
 
-**URL produkcyjny:** https://zaplecze-dashboard.<subdomena-konta>.workers.dev (Workers Builds)
+**URL produkcyjny:** https://zaplecze-dashboard.m-wisniewski.workers.dev
 
 ## Architektura
 
