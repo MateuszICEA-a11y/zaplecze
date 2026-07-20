@@ -5,6 +5,14 @@ on:
     # 4:30 UTC = 6:30 CEST – po nocnym przeliczeniu Senuto, przed news-cronami (5:00/6:00 UTC)
     - cron: '30 4 * * *'
   workflow_dispatch:
+  push:
+    branches: [main]
+    # Zmiana collectora/konfigu = od razu przebieg testowy. Commity danych robi bot
+    # z GITHUB_TOKEN, więc nie triggerują workflowu (brak pętli).
+    paths:
+      - '.github/workflows/dashboard-collector.yml'
+      - 'dashboard/collector/**'
+      - 'dashboard/domains.yaml'
 
 permissions:
   contents: write
