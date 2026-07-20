@@ -1,0 +1,38 @@
+{
+ "date": "2026-07-20",
+ "collected_at": "2026-07-20T21:00:07Z",
+ "sources": {
+  "senuto": {
+   "keywords": [
+    {
+     "keyword": "brockman",
+     "position": 29,
+     "previous": 29,
+     "diff": 0,
+     "searches": 70,
+     "url": "widocznosc.ai/news/brockman-przyszlosc-ai-to-niemal-brak-interfejsu/",
+     "cpc": 0,
+     "difficulty": 38,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "a. wiśniewski marketing",
+     "position": 41,
+     "previous": 41,
+     "diff": 0,
+     "searches": 10,
+     "url": "widocznosc.ai/autor/mateusz-wisniewski/",
+     "cpc": 0,
+     "difficulty": 27,
+     "snippets": [
+      "wiki_right"
+     ]
+    }
+   ]
+  }
+ }
+}
