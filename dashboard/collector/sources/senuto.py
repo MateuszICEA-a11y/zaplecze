@@ -10,6 +10,44 @@ from . import SourceError
 from ._http import classify_http_error, request_json
 
 ENDPOINT = "https://api.senuto.com/api/visibility_analysis/reports/dashboard/getDomainStatistics"
+POSITIONS_ENDPOINT = "https://api.senuto.com/api/visibility_analysis/reports/positions/getData"
+KEYWORDS_LIMIT = 200  # ile fraz trzymamy w details.json
+
+
+def _fetch_keywords(cfg: dict, token: str) -> list[dict]:
+    """Lista rankujących fraz (positions/getData) – best-effort, pusta lista przy błędzie."""
+    import json as _json
+    body = _json.dumps({
+        "domain": cfg.get("domain"),
+        "fetch_mode": cfg.get("fetch_mode", "topLevelDomain"),
+        "country_id": int(cfg.get("country_id", 1)),
+        "limit": KEYWORDS_LIMIT,
+    }).encode()
+    resp = request_json(POSITIONS_ENDPOINT, data=body, headers={
+        "Authorization": f"Bearer {token}",
+        "Content-Type": "application/json",
+    })
+    if not resp.get("success"):
+        return []
+    rows = []
+    for row in resp.get("data") or []:
+        stats = row.get("statistics") or {}
+        pos = stats.get("position") or {}
+        rows.append({
+            "keyword": row.get("keyword"),
+            "position": pos.get("current"),
+            "previous": pos.get("previous"),
+            "diff": pos.get("diff"),
+            "searches": (stats.get("searches") or {}).get("current"),
+            "url": (stats.get("url") or {}).get("current"),
+            "cpc": (stats.get("cpc") or {}).get("current"),
+            "difficulty": (stats.get("difficulty") or {}).get("current"),
+            "snippets": (stats.get("snippets") or {}).get("current") or [],
+        })
+    # Najpierw najlepsze pozycje, w ramach pozycji – większy wolumen.
+    rows.sort(key=lambda r: (r["position"] if isinstance(r["position"], int) else 999,
+                             -(r["searches"] or 0)))
+    return rows
 
 
 def fetch(cfg: dict, env: dict) -> dict:
@@ -46,10 +84,17 @@ def fetch(cfg: dict, env: dict) -> dict:
         value = (stats.get(key) or {}).get("recent_value")
         return round(value, 2) if isinstance(value, float) else value
 
-    return {
+    summary = {
         "top3": recent("top3"),
         "top10": recent("top10"),
         "top50": recent("top50"),
         "visibility": recent("visibility"),
         "domain_rank": recent("domain_rank"),
     }
+
+    try:
+        keywords = _fetch_keywords(cfg, token)
+    except Exception:  # noqa: BLE001 – lista fraz jest dodatkiem, nie wywala podsumowania
+        keywords = []
+
+    return {"summary": summary, "details": {"keywords": keywords}}

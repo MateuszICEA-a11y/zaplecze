@@ -40,9 +40,16 @@ def load_local_env() -> None:
             os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
 
 
-def run_sources(registry: dict, enabled_cfg: dict, extra_cfg: dict) -> dict:
-    """Uruchamia źródła z rejestru wg konfiguracji, zwraca sekcję `sources` snapshotu."""
+def run_sources(registry: dict, enabled_cfg: dict, extra_cfg: dict) -> tuple[dict, dict]:
+    """Uruchamia źródła z rejestru wg konfiguracji.
+
+    Zwraca (sources, details): sources = sekcja snapshotu (podsumowania, szczupły
+    JSONL), details = sekcja details.json (listy: frazy, domeny linkujące itd.).
+    Źródło zwracające {"summary": ..., "details": ...} jest rozdzielane; płaski
+    dict trafia w całości do snapshotu (kompatybilność wstecz).
+    """
     results = {}
+    details = {}
     for name, fetch in registry.items():
         cfg = dict(enabled_cfg.get(name) or {})
         if not cfg.pop("enabled", False):
@@ -50,6 +57,10 @@ def run_sources(registry: dict, enabled_cfg: dict, extra_cfg: dict) -> dict:
         cfg.update(extra_cfg)
         try:
             data = fetch(cfg, os.environ)
+            if isinstance(data, dict) and "summary" in data:
+                if data.get("details") is not None:
+                    details[name] = data["details"]
+                data = data["summary"]
             results[name] = {"status": "ok", "data": data}
             print(f"  [{name}] ok")
         except SourceError as err:
@@ -59,7 +70,7 @@ def run_sources(registry: dict, enabled_cfg: dict, extra_cfg: dict) -> dict:
             results[name] = {"status": "error", "error": f"{name}: {err}"}
             print(f"  [{name}] error: {err}", file=sys.stderr)
         time.sleep(REQUEST_GAP_S)
-    return results
+    return results, details
 
 
 def write_snapshot(target_dir: Path, snapshot: dict) -> None:
@@ -78,6 +89,26 @@ def write_snapshot(target_dir: Path, snapshot: dict) -> None:
     path.write_text("\n".join(lines) + "\n")
 
 
+def write_details(target_dir: Path, stamp: dict, details: dict) -> None:
+    """details.json: najświeższe listy (frazy, domeny, leady) – nadpisywane w całości.
+
+    Źródło, które dziś padło, zachowuje wczorajsze listy (merge po kluczu źródła),
+    żeby chwilowy błąd API nie czyścił tabel na dashboardzie.
+    """
+    target_dir.mkdir(parents=True, exist_ok=True)
+    path = target_dir / "details.json"
+    previous = {}
+    if path.is_file():
+        try:
+            previous = json.loads(path.read_text()).get("sources") or {}
+        except json.JSONDecodeError:
+            pass
+    merged = {**previous, **details}
+    if not merged:
+        return
+    path.write_text(json.dumps({**stamp, "sources": merged}, ensure_ascii=False, indent=1) + "\n")
+
+
 def main() -> int:
     load_local_env()
     config = yaml.safe_load(CONFIG_PATH.read_text())
@@ -88,13 +119,14 @@ def main() -> int:
     for domain in config.get("domains") or []:
         domain_id = domain["id"]
         print(f"[{domain_id}]")
-        sources = run_sources(DOMAIN_SOURCES, domain, {"domain": domain_id})
+        sources, details = run_sources(DOMAIN_SOURCES, domain, {"domain": domain_id})
         write_snapshot(DATA_DIR / domain_id, {**stamp, "sources": sources})
+        write_details(DATA_DIR / domain_id, stamp, details)
 
     global_cfg = config.get("global") or {}
     if global_cfg:
         print("[_global]")
-        sources = run_sources(GLOBAL_SOURCES, global_cfg, {})
+        sources, _ = run_sources(GLOBAL_SOURCES, global_cfg, {})
         write_snapshot(DATA_DIR / "_global", {**stamp, "sources": sources})
 
     return 0

@@ -1,11 +1,86 @@
-"""Microsoft Clarity – placeholder do czasu podpięcia Data Export API.
+"""Microsoft Clarity – Data Export API (project-live-insights).
 
-Docelowo: GET https://www.clarity.ms/export-data/api/v1/project-live-insights
-(Bearer CLARITY_API_TOKEN z panelu Clarity). Po dostarczeniu tokenu:
-zaimplementować fetch + ustawić clarity.enabled: true w domains.yaml.
+Auth: Bearer CLARITY_API_TOKEN (panel Clarity → Settings → Data Export → Generate token).
+API zwraca metryki z ostatnich 1-3 dni (numOfDays); limit 10 wywołań dziennie na projekt.
+Summary: sesje/użytkownicy/boty/engagement; details: strony, referrery, urządzenia
+(po 1 wywołaniu bazowym + po 1 na wymiar = 4 z 10 dziennego limitu).
 """
+import urllib.parse
+
 from . import SourceError
+from ._http import classify_http_error, request_json
+
+ENDPOINT = "https://www.clarity.ms/export-data/api/v1/project-live-insights"
+NUM_OF_DAYS = "3"
+# Wymiary do details – każde wywołanie zużywa 1 z 10 dziennych requestów.
+DIMENSIONS = ["URL", "Referrer", "Device"]
+TOP_ROWS = 50
+
+
+def _call(token: str, params: dict) -> list:
+    query = urllib.parse.urlencode({"numOfDays": NUM_OF_DAYS, **params})
+    try:
+        resp = request_json(f"{ENDPOINT}?{query}",
+                            headers={"Authorization": f"Bearer {token}"})
+    except Exception as err:  # noqa: BLE001
+        raise classify_http_error(err, "clarity") from err
+    if not isinstance(resp, list):
+        raise SourceError("error", "clarity: nieoczekiwany format odpowiedzi")
+    return resp
+
+
+def _metric(payload: list, name: str) -> list[dict]:
+    for entry in payload:
+        if entry.get("metricName") == name:
+            return entry.get("information") or []
+    return []
+
+
+def _to_int(value) -> int | None:
+    try:
+        return int(float(value))
+    except (TypeError, ValueError):
+        return None
 
 
 def fetch(cfg: dict, env: dict) -> dict:
-    raise SourceError("not_configured", "clarity: integracja czeka na CLARITY_API_TOKEN")
+    token = env.get("CLARITY_API_TOKEN", "").strip()
+    if not token:
+        raise SourceError("not_configured", "clarity: brak CLARITY_API_TOKEN w env")
+
+    base = _call(token, {})
+    traffic = (_metric(base, "Traffic") or [{}])[0]
+    engagement = (_metric(base, "EngagementTime") or [{}])[0]
+    scroll = (_metric(base, "ScrollDepth") or [{}])[0]
+
+    summary = {
+        "window_days": int(NUM_OF_DAYS),
+        "sessions": _to_int(traffic.get("totalSessionCount")),
+        "bot_sessions": _to_int(traffic.get("totalBotSessionCount")),
+        "users": _to_int(traffic.get("distinctUserCount")),
+        "pages_per_session": traffic.get("pagesPerSessionPercentage"),
+        "engagement_total_s": _to_int(engagement.get("totalTime")),
+        "engagement_active_s": _to_int(engagement.get("activeTime")),
+        "scroll_depth_avg": scroll.get("averageScrollDepth"),
+    }
+
+    details = {
+        "dead_clicks": (_metric(base, "DeadClickCount") or [{}])[0].get("subTotal"),
+        "rage_clicks": (_metric(base, "RageClickCount") or [{}])[0].get("subTotal"),
+        "quickback_clicks": (_metric(base, "QuickbackClick") or [{}])[0].get("subTotal"),
+        "script_errors": (_metric(base, "ScriptErrorCount") or [{}])[0].get("subTotal"),
+    }
+    for dimension in DIMENSIONS:
+        try:
+            payload = _call(token, {"dimension1": dimension})
+            rows = _metric(payload, "Traffic")
+            rows.sort(key=lambda r: -(_to_int(r.get("totalSessionCount")) or 0))
+            details[dimension.lower()] = [{
+                "name": row.get(dimension) or row.get(dimension.lower()) or "?",
+                "sessions": _to_int(row.get("totalSessionCount")),
+                "users": _to_int(row.get("distinctUserCount")),
+            } for row in rows[:TOP_ROWS]]
+        except SourceError:
+            details[dimension.lower()] = []
+
+    return {"summary": summary, "details": details}

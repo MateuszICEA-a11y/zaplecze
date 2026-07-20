@@ -15,6 +15,23 @@ API_BASE = "https://searchconsole.googleapis.com/webmasters/v3/sites"
 SCOPE = "https://www.googleapis.com/auth/webmasters.readonly"
 DATA_LAG_DAYS = 3
 QUERY_ROW_LIMIT = 25000
+DETAILS_WINDOW_DAYS = 28  # okno dla list fraz/stron w details.json
+DETAILS_ROW_LIMIT = 200
+
+
+def _rows_to_details(rows: list[dict]) -> list[dict]:
+    out = []
+    for row in rows:
+        ctr = row.get("ctr")
+        position = row.get("position")
+        out.append({
+            "key": (row.get("keys") or [""])[0],
+            "clicks": row.get("clicks", 0),
+            "impressions": row.get("impressions", 0),
+            "ctr": round(ctr * 100, 2) if isinstance(ctr, (int, float)) else None,
+            "position": round(position, 1) if isinstance(position, (int, float)) else None,
+        })
+    return out
 
 
 def _access_token(sa_json: str) -> str:
@@ -61,7 +78,7 @@ def fetch(cfg: dict, env: dict) -> dict:
 
     position = row.get("position")
     ctr = row.get("ctr")
-    return {
+    summary = {
         "data_date": day,  # dzień, którego dotyczą metryki (lag GSC)
         "clicks": row.get("clicks", 0),
         "impressions": row.get("impressions", 0),
@@ -69,3 +86,22 @@ def fetch(cfg: dict, env: dict) -> dict:
         "position": round(position, 1) if isinstance(position, (int, float)) else None,
         "queries": queries_count,
     }
+
+    # Listy do details.json: top frazy i strony z okna 28 dni (dzienne listy
+    # na małym serwisie są zbyt rzadkie, żeby coś pokazać).
+    window_start = (datetime.now(timezone.utc)
+                    - timedelta(days=DATA_LAG_DAYS + DETAILS_WINDOW_DAYS)).strftime("%Y-%m-%d")
+    details = {"window": {"start": window_start, "end": day}}
+    for dimension, key in (("query", "queries"), ("page", "pages")):
+        try:
+            resp = query({
+                "startDate": window_start,
+                "endDate": day,
+                "dimensions": [dimension],
+                "rowLimit": DETAILS_ROW_LIMIT,
+            })
+            details[key] = _rows_to_details(resp.get("rows") or [])
+        except SourceError:
+            details[key] = []
+
+    return {"summary": summary, "details": details}

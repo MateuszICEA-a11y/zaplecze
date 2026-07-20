@@ -17,7 +17,7 @@ class SourceError(Exception):
         self.message = message
 
 
-from . import senuto, dataforseo_backlinks, ahrefs, gsc, smsapi, openrouter, clarity  # noqa: E402
+from . import senuto, dataforseo_backlinks, ahrefs, gsc, smsapi, openrouter, clarity, leads  # noqa: E402
 
 # Źródła per domena (klucz = sekcja w domains.yaml i w snapshotcie)
 DOMAIN_SOURCES = {
@@ -26,6 +26,7 @@ DOMAIN_SOURCES = {
     "ahrefs": ahrefs.fetch,
     "backlinks": dataforseo_backlinks.fetch,
     "clarity": clarity.fetch,
+    "leads": leads.fetch,
 }
 
 # Źródła per konto (sekcja `global` w domains.yaml, zapis do data/_global/)
