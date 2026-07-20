@@ -229,6 +229,9 @@
         w.dataLayer!.push(arguments);
       };
     gtag('consent', 'update', toConsentSignals({ analytics, marketing }));
+    // Microsoft Clarity – zgoda na ciasteczka podąża za zgodą analityczną.
+    const clarity = (window as unknown as { clarity?: (...args: unknown[]) => void }).clarity;
+    if (clarity) clarity('consent', analytics);
   }
 
   function writeCookie(state: ConsentState) {
