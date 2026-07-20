@@ -15,9 +15,12 @@ const smsRemaining = latestWithDelta(globalSnapshots, 'smsapi', 'sms_remaining',
 const smsCost = latestWithDelta(globalSnapshots, 'smsapi', 'sms_cost', 7);
 const orRemaining = latestWithDelta(globalSnapshots, 'openrouter', 'remaining', 7);
 const orUsage = latestWithDelta(globalSnapshots, 'openrouter', 'total_usage', 7);
+const orProjectUsage = latestWithDelta(globalSnapshots, 'openrouter', 'project_usage', 7);
+const orProjectLabel = latestSnapshot('_global')?.sources.openrouter?.data?.project_label ?? null;
 
 const smsSeries = metricSeries(globalSnapshots, 'smsapi', 'points');
 const orSeries = metricSeries(globalSnapshots, 'openrouter', 'remaining');
+const orProjectSeries = metricSeries(globalSnapshots, 'openrouter', 'project_usage');
 ---
 
 <Layout title="Dashboard zaplecza – domeny">
@@ -62,6 +65,13 @@ const orSeries = metricSeries(globalSnapshots, 'openrouter', 'remaining');
         unit="$"
         precision={2}
       />
+      <StatCard
+        label={`OpenRouter – klucz projektu${orProjectLabel ? ` (${orProjectLabel})` : ''}`}
+        value={orProjectUsage.value}
+        delta={orProjectUsage.delta}
+        unit="$"
+        precision={2}
+      />
     </div>
     <div class="chart-grid">
       <TimeSeriesChart
@@ -74,6 +84,13 @@ const orSeries = metricSeries(globalSnapshots, 'openrouter', 'remaining');
         title="OpenRouter – pozostałe kredyty ($)"
         timestamps={orSeries.timestamps}
         series={[{ label: 'Pozostało', values: orSeries.values }]}
+        unit="$"
+        precision={2}
+      />
+      <TimeSeriesChart
+        title="OpenRouter – zużycie klucza projektu ($)"
+        timestamps={orProjectSeries.timestamps}
+        series={[{ label: 'Zużycie', values: orProjectSeries.values }]}
         unit="$"
         precision={2}
       />

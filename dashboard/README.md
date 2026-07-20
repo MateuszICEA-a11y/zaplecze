@@ -1,6 +1,6 @@
 # Dashboard analityczny zaplecza
 
-Publiczny dashboard postępów domen: SEO (Senuto), linki (Ahrefs, fallback DataForSEO), kredyty SMSAPI i OpenRouter, docelowo Microsoft Clarity.
+Publiczny dashboard postępów domen: SEO (Senuto), Google Search Console (kliknięcia/wyświetlenia/CTR/pozycja/frazy), linki (Ahrefs, fallback DataForSEO), kredyty SMSAPI i OpenRouter (konto + klucz projektu), docelowo Microsoft Clarity.
 
 **URL produkcyjny:** https://zaplecze-dashboard.m-wisniewski.workers.dev
 
@@ -35,6 +35,8 @@ pnpm --filter dashboard build    # → dashboard/app/dist
    - `SENUTO_API_KEY` – JWT z Senuto (⚠️ rotacja ~31 dni; wygasły token = banner „token wygasł" na dashboardzie, cron się nie wywala)
    - `SMSAPI_TOKEN` – ten sam co w Cloudflare Pages widocznosc.ai
    - `AHREFS_API_KEY` – klucz API v3 (linki: backlinki, referring domains, Domain Rating)
+   - `OPENROUTER_PROJECT_KEY` – klucz OpenRouter zdefiniowany dla projektu (np. ten z CF Pages widocznosc.ai); `GET /api/v1/key` zwraca jego zużycie
+   - `GSC_SERVICE_ACCOUNT_JSON` – pełny JSON klucza konta serwisowego GCP z włączonym Search Console API; e-mail konta serwisowego musi być dodany jako użytkownik property w GSC (wystarczy „Ograniczony")
    - (już istnieją: `DATAFORSEO_LOGIN`, `DATAFORSEO_PASSWORD`, `OPENROUTER_API_KEY`)
 2. **Cloudflare Workers Builds**: Workers & Pages → Create → Import a repository → repo `zaplecze`:
    - Project name: `zaplecze-dashboard`

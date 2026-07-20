@@ -13,7 +13,7 @@ export type SourceStatus = 'ok' | 'error' | 'token_expired' | 'not_configured';
 
 export interface SourceResult {
   status: SourceStatus;
-  data?: Record<string, number | boolean | null>;
+  data?: Record<string, number | string | boolean | null>;
   error?: string;
 }
 

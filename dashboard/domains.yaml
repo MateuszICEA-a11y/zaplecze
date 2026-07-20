@@ -6,6 +6,9 @@ domains:
     senuto:
       enabled: true
       country_id: "1" # Polska
+    gsc:
+      enabled: true
+      site: sc-domain:widocznosc.ai # property domenowa w Search Console
     ahrefs:
       enabled: true
       target: widocznosc.ai
