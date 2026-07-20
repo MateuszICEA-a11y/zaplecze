@@ -1,13 +1,5 @@
 [
   {
-    "title": "Mercedes VLE od 93 250 euro. Luksusowy e-van wchodzi do gry",
-    "date": "2026-04-16",
-    "slug": "mercedes-vle-od-93-250-euro-luksusowy-e-van-wchodzi-do-gry",
-    "section": "porownania",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Nowe maksymalne ceny paliw od dziś. Kierowcy zapłacą mniej?",
     "date": "2026-04-17",
     "slug": "nowe-maksymalne-ceny-paliw-od-dzis-kierowcy-zaplaca-mniej",
@@ -715,6 +707,14 @@
     "title": "Troje dzieci, kamper i świat bez wymówek – Andrea Skupień-Kapsia o rodzinnych podróżach",
     "date": "2026-07-19",
     "slug": "troje-dzieci-kamper-i-swiat-bez-wymowek-andrea-skupien-kapsia-o-rodzinnych",
+    "section": "kampery",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Kamper uderzył w bariery na S7 pod Grójcem. Były utrudnienia w ruchu",
+    "date": "2026-07-20",
+    "slug": "kamper-uderzyl-w-bariery-na-s7-pod-grojcem-byly-utrudnienia-w-ruchu",
     "section": "kampery",
     "format": "short",
     "source": "rss"
