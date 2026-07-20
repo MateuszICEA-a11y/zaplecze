@@ -14,6 +14,7 @@ import {
 } from '../../_lib/otp';
 import { sendSms } from '../../_lib/smsapi';
 import { resolveLimit } from '../../_lib/tool-rate-limit';
+import { logEvent } from '../../_lib/lead-log';
 
 type Env = {
   SMSAPI_TOKEN?: string;
@@ -121,6 +122,11 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     expirationTtl: Math.ceil(CHALLENGE_TTL_MS / 1000),
   });
   await gate.commit();
+
+  // Log częściowego leada (numer zostawiony w formularzu narzędzia) – best-effort.
+  context.waitUntil(logEvent(kv, 'usage', 'sms-code', {
+    tool, firstName, lastName, email, phone, consent: body.consent === true,
+  }));
 
   return json({ ok: true, challengeId });
 };

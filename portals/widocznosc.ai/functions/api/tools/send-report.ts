@@ -6,6 +6,7 @@
  * Wymaga: env RESEND_API_KEY. Reużywa KV FANOUT_RL (klucz tool:send-report:<ip>).
  */
 import { resolveLimit, checkToolLimit } from '../../_lib/tool-rate-limit';
+import { logEvent } from '../../_lib/lead-log';
 import { consumeVerifiedChallenge } from '../../_lib/otp';
 import {
   validateReportPayload, isHoneypotTriggered, buildLeadNotification,
@@ -135,6 +136,21 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       market: typeof body.market === 'string' ? body.market : undefined,
     }),
   );
+
+  // 6c. Trwały zapis leada do KV (dashboard zaplecza) – best-effort.
+  context.waitUntil(logEvent(kv, 'lead', 'raport-narzedzia', {
+    tool,
+    firstName: lead.firstName,
+    lastName: lead.lastName,
+    email: lead.email,
+    phone: lead.phone,
+    consent: lead.consent === true,
+    smsVerified: true,
+    query,
+    domain: typeof body.domain === 'string' ? body.domain : undefined,
+    category: typeof body.category === 'string' ? body.category : undefined,
+    market: typeof body.market === 'string' ? body.market : undefined,
+  }));
 
   // 7. Zlicz limit po obsłudze leada.
   await gate.commit();

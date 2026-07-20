@@ -7,6 +7,7 @@
  */
 import { validate, isHoneypotTriggered, buildEmails, type ContactPayload, type ResendEmail } from '../_lib/contact';
 import { evaluateLimit, secondsUntilWarsawMidnight } from '../_lib/rate-limit';
+import { logEvent } from '../_lib/lead-log';
 
 type Env = {
   RESEND_API_KEY?: string;
@@ -108,6 +109,17 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   if (!internalOk) {
     return jsonError(502, 'Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz na biuro@grupa-icea.pl.');
   }
+
+  // 6b. Trwały zapis leada do KV (dashboard zaplecza) – best-effort.
+  context.waitUntil(logEvent(kv, 'lead', 'kontakt', {
+    firstName: body.firstName,
+    lastName: body.lastName,
+    email: body.email,
+    phone: body.phone,
+    company: body.company,
+    type: body.type,
+    message: body.message,
+  }));
 
   // 7. Autoresponder — best-effort, błąd nie wywraca zgłoszenia.
   await sendViaResend(apiKey, autoresponder);

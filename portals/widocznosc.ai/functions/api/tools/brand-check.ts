@@ -7,6 +7,7 @@
  * Wymaga env var OPENROUTER_API_KEY.
  */
 import { resolveLimit, checkToolLimit } from '../../_lib/tool-rate-limit';
+import { logEvent } from '../../_lib/lead-log';
 import { normalizeUrl, getHost } from '../../_lib/url-host';
 
 type BrandCheckRequest = {
@@ -730,6 +731,10 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   const domain = normalizeLoose(body.domain, 200);
   const category = normalizeLoose(body.category, 120);
   const market = normalizeLoose(body.market, 80) || 'Polska';
+  // Log użycia narzędzia (dashboard zaplecza) – best-effort.
+  context.waitUntil(
+    logEvent(context.env.FANOUT_RL, 'usage', 'brand-check', { query: brand, domain, category, market }),
+  );
   const ownDomain = getHost(domain);
   const profile = await fetchBrandProfile(domain);
   const prompt = buildPrompt({ brand, domain, category, market, profile });

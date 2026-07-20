@@ -12,6 +12,7 @@
 
 import { AI_BOTS, CATEGORY_LABELS, type BotCategory } from '../../_lib/ai-bots';
 import { checkBotAccess } from '../../_lib/robots-parser';
+import { logEvent } from '../../_lib/lead-log';
 
 type CheckRequest = {
   url?: string;
@@ -190,6 +191,14 @@ export const onRequestPost: PagesFunction = async (context) => {
     return jsonError(400, 'Podaj poprawny URL lub domenę (np. icea.pl)');
   }
   const { host: domain, checkedPath, robotsUrl } = normalized;
+
+  // Log użycia narzędzia (dashboard zaplecza) – best-effort.
+  context.waitUntil(
+    logEvent((context.env as { FANOUT_RL?: KVNamespace }).FANOUT_RL, 'usage', 'ai-bots-check', {
+      url: `${domain}${checkedPath}`,
+      domain,
+    }),
+  );
 
   const fetchedAt = new Date().toISOString();
   let robotsResult: Awaited<ReturnType<typeof fetchRobotsTxt>>;

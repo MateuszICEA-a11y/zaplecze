@@ -7,6 +7,7 @@
  */
 import { parseResponsesOutput } from '../../_lib/fanout-parse';
 import { resolveLimit, checkToolLimit } from '../../_lib/tool-rate-limit';
+import { logEvent } from '../../_lib/lead-log';
 
 type Env = {
   OPENAI_API_KEY?: string;
@@ -91,6 +92,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       resetAt: gate.resetAt,
     });
   }
+
+  // 3b. Log użycia narzędzia (dashboard zaplecza) – best-effort, poza ścieżką krytyczną.
+  context.waitUntil(logEvent(kv, 'usage', 'fanout', { query }));
 
   // 4. Wywołanie OpenAI Responses API
   const controller = new AbortController();

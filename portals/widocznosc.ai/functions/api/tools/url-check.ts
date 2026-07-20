@@ -18,6 +18,7 @@ import {
   type ActionItem,
 } from '../../_lib/url-check';
 import { resolveLimit, checkToolLimit } from '../../_lib/tool-rate-limit';
+import { logEvent } from '../../_lib/lead-log';
 
 type CheckRequest = {
   url?: string;
@@ -227,6 +228,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       resetAt: gate.resetAt,
     });
   }
+
+  // Log użycia narzędzia (dashboard zaplecza) – best-effort.
+  context.waitUntil(logEvent(context.env.FANOUT_RL, 'usage', 'url-check', { url }));
 
   const fetchedAt = new Date().toISOString();
   let result: Awaited<ReturnType<typeof fetchHtml>>;
