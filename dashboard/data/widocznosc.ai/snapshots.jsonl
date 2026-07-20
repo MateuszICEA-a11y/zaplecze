@@ -1,1 +1,1 @@
-{"date": "2026-07-20", "collected_at": "2026-07-20T15:33:28Z", "sources": {"senuto": {"status": "error", "error": "senuto: HTTP 418"}, "ahrefs": {"status": "ok", "data": {"backlinks": 9, "referring_domains": 2, "domain_rating": 29.0, "ahrefs_rank": 4059086}}}}
+{"date": "2026-07-20", "collected_at": "2026-07-20T15:37:06Z", "sources": {"senuto": {"status": "ok", "data": {"top3": 0, "top10": 0, "top50": 2, "visibility": 0, "domain_rank": 6892107}}, "ahrefs": {"status": "ok", "data": {"backlinks": 9, "referring_domains": 2, "domain_rating": 29.0, "ahrefs_rank": 4059086}}}}
