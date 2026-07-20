@@ -1,5 +1,8 @@
-# Cloudflare Pages – projekt "zaplecze-dashboard" (git integration, root dir: dashboard/app).
-# Podgląd lokalny: pnpm build && npx wrangler pages dev dist
+# Cloudflare Workers (static assets) – projekt "zaplecze-dashboard".
+# Deploy przez Workers Builds (git integration): build `pnpm install && pnpm build`,
+# deploy command: `npx wrangler deploy`. Podgląd lokalny: pnpm build && npx wrangler dev
 name = "zaplecze-dashboard"
 compatibility_date = "2026-05-06"
-pages_build_output_dir = "dist"
+
+[assets]
+directory = "./dist"

@@ -2,14 +2,14 @@
 
 Publiczny dashboard postępów domen: SEO (Senuto), linki (Ahrefs, fallback DataForSEO), kredyty SMSAPI i OpenRouter, docelowo Microsoft Clarity.
 
-**URL produkcyjny:** https://zaplecze-dashboard.pages.dev
+**URL produkcyjny:** https://zaplecze-dashboard.<subdomena-konta>.workers.dev (Workers Builds)
 
 ## Architektura
 
 ```
 GH Actions cron (04:30 UTC) → collector (Python) → commit JSONL do dashboard/data/
                                                         ↓ push na main
-                              Cloudflare Pages (git integration) → build Astro → *.pages.dev
+                              Cloudflare Workers Builds (git) → build Astro → *.workers.dev
 ```
 
 - `domains.yaml` – konfiguracja domen i źródeł
@@ -36,12 +36,13 @@ pnpm --filter dashboard build    # → dashboard/app/dist
    - `SMSAPI_TOKEN` – ten sam co w Cloudflare Pages widocznosc.ai
    - `AHREFS_API_KEY` – klucz API v3 (linki: backlinki, referring domains, Domain Rating)
    - (już istnieją: `DATAFORSEO_LOGIN`, `DATAFORSEO_PASSWORD`, `OPENROUTER_API_KEY`)
-2. **Cloudflare Pages**: Workers & Pages → Create → Pages → Connect to Git → repo `zaplecze`:
+2. **Cloudflare Workers Builds**: Workers & Pages → Create → Import a repository → repo `zaplecze`:
    - Project name: `zaplecze-dashboard`
    - Root directory: `dashboard/app`
    - Build command: `pnpm install --frozen-lockfile && pnpm build`
-   - Build output: `dist`
-3. (Opcjonalnie) Pages → Settings → Builds → Build watch paths: include `dashboard/**` – commity portali nie będą triggerować buildów dashboardu.
+   - Deploy command: `npx wrangler deploy`
+   (Konfiguracja assets w `app/wrangler.toml` – statyczne pliki z `dist/`, bez kodu Workera.)
+3. (Opcjonalnie) Settings → Build → Watch paths: include `dashboard/**` – commity portali nie będą triggerować buildów dashboardu.
 4. Pierwszy przebieg: Actions → „Dashboard Collector" → Run workflow.
 
 ## Jak dodać domenę
