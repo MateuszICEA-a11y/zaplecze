@@ -1,0 +1,50 @@
+---
+/* Karta tabeli: nagłówek + licznik + opcjonalny filtr tekstowy (progressive
+   enhancement, filtruje wiersze po textContent) + poziomy scroll dla wąskich
+   ekranów. Tabelę renderuje strona przez <slot /> (klasy .data-table z theme.css). */
+interface Props {
+  title: string;
+  meta?: string;
+  count?: number;
+  filter?: boolean;
+  empty?: string;
+}
+const { title, meta, count, filter = false, empty = 'Brak danych.' } = Astro.props;
+const isEmpty = count === 0;
+---
+
+<section class="table-card">
+  <div class="table-head">
+    <h3>
+      {title}
+      {typeof count === 'number' && <span class="table-meta"> · {count.toLocaleString('pl-PL')}</span>}
+    </h3>
+    {meta && <span class="table-meta">{meta}</span>}
+    {!isEmpty && filter && (
+      <input class="table-filter" type="search" placeholder="Filtruj…" data-table-filter aria-label={`Filtruj: ${title}`} />
+    )}
+  </div>
+  {
+    isEmpty ? (
+      <div class="table-empty">{empty}</div>
+    ) : (
+      <div class="table-scroll">
+        <slot />
+      </div>
+    )
+  }
+</section>
+
+<script>
+  document.querySelectorAll<HTMLInputElement>('[data-table-filter]').forEach((input) => {
+    const card = input.closest('.table-card');
+    const rows = card?.querySelectorAll<HTMLTableRowElement>('tbody tr');
+    if (!rows?.length) return;
+    input.addEventListener('input', () => {
+      const needle = input.value.trim().toLowerCase();
+      rows.forEach((row) => {
+        row.hidden = needle !== '' && !(row.textContent ?? '').toLowerCase().includes(needle);
+      });
+    });
+  });
+</script>

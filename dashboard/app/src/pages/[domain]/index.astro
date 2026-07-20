@@ -1,11 +1,12 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import DomainHeader from '../../components/DomainHeader.astro';
 import StatCard from '../../components/StatCard.astro';
 import TimeSeriesChart from '../../components/TimeSeriesChart.astro';
-import SourceStatus from '../../components/SourceStatus.astro';
 import {
   loadConfig,
   loadSnapshots,
+  loadDetails,
   latestSnapshot,
   latestWithDelta,
   latestWithDeltaFrom,
@@ -14,10 +15,7 @@ import {
 } from '../../lib/data';
 
 export function getStaticPaths() {
-  return loadConfig().domains.map((d) => ({
-    params: { domain: d.id },
-    props: { name: d.name },
-  }));
+  return loadConfig().domains.map((d) => ({ params: { domain: d.id }, props: { name: d.name } }));
 }
 
 const { domain } = Astro.params;
@@ -25,37 +23,32 @@ const { name } = Astro.props;
 
 const snapshots = loadSnapshots(domain!);
 const latest = latestSnapshot(domain!);
+const details = loadDetails(domain!);
 
 const top3 = metricSeries(snapshots, 'senuto', 'top3');
 const top10 = metricSeries(snapshots, 'senuto', 'top10');
 const top50 = metricSeries(snapshots, 'senuto', 'top50');
-const visibility = metricSeries(snapshots, 'senuto', 'visibility');
-// Linki: Ahrefs jest źródłem pierwszego wyboru, DataForSEO fallbackiem
-// (starsze snapshoty / wyłączony klucz).
-const LINK_SOURCES = ['ahrefs', 'backlinks'] as const;
-const linkSpec = (field: string): [string, string][] => LINK_SOURCES.map((s) => [s, field]);
+const linkSpec = (field: string): [string, string][] => [
+  ['ahrefs', field],
+  ['backlinks', field],
+];
 const backlinks = metricSeriesFrom(snapshots, linkSpec('backlinks'));
 const refDomains = metricSeriesFrom(snapshots, linkSpec('referring_domains'));
-const domainRating = metricSeries(snapshots, 'ahrefs', 'domain_rating');
-
 const gscClicks = metricSeries(snapshots, 'gsc', 'clicks');
 const gscImpressions = metricSeries(snapshots, 'gsc', 'impressions');
-const gscQueries = metricSeries(snapshots, 'gsc', 'queries');
-const gscPosition = metricSeries(snapshots, 'gsc', 'position');
-
-const statGscClicks = latestWithDelta(snapshots, 'gsc', 'clicks');
-const statGscImpressions = latestWithDelta(snapshots, 'gsc', 'impressions');
-const statGscCtr = latestWithDelta(snapshots, 'gsc', 'ctr');
-const statGscPosition = latestWithDelta(snapshots, 'gsc', 'position');
-const statGscQueries = latestWithDelta(snapshots, 'gsc', 'queries');
-const gscDataDate = latest?.sources.gsc?.data?.data_date ?? null;
 
 const statTop10 = latestWithDelta(snapshots, 'senuto', 'top10');
-const statTop3 = latestWithDelta(snapshots, 'senuto', 'top3');
-const statVisibility = latestWithDelta(snapshots, 'senuto', 'visibility');
-const statBacklinks = latestWithDeltaFrom(snapshots, linkSpec('backlinks'));
+const statClicks = latestWithDelta(snapshots, 'gsc', 'clicks');
+const statImpressions = latestWithDelta(snapshots, 'gsc', 'impressions');
+const statDR = latestWithDelta(snapshots, 'ahrefs', 'domain_rating', 30);
 const statRefDomains = latestWithDeltaFrom(snapshots, linkSpec('referring_domains'));
-const statDomainRating = latestWithDelta(snapshots, 'ahrefs', 'domain_rating', 30);
+const statSessions = latestWithDelta(snapshots, 'clarity', 'sessions');
+
+const leads = details.sources.leads?.leads ?? [];
+const weekAgo = Date.now() - 7 * 86400_000;
+const leadsRecent = leads.filter((l) => new Date(l.ts).getTime() >= weekAgo).length;
+const leadsConfigured = latest?.sources.leads != null && latest.sources.leads.status !== 'not_configured';
+const clarityConfigured = latest?.sources.clarity != null && latest.sources.clarity.status !== 'not_configured';
 
 // Bannery problemów: token_expired/error z ostatniego snapshotu.
 const problems = Object.entries(latest?.sources ?? {}).filter(([, r]) =>
@@ -64,18 +57,7 @@ const problems = Object.entries(latest?.sources ?? {}).filter(([, r]) =>
 ---
 
 <Layout title={`${name} – dashboard`}>
-  <nav class="crumbs"><a href="/">← wszystkie domeny</a></nav>
-  <div class="page-head">
-    <h1>{name}</h1>
-    <div class="badges">
-      {
-        Object.entries(latest?.sources ?? {}).map(([source, result]) => (
-          <SourceStatus name={source} result={result} />
-        ))
-      }
-    </div>
-  </div>
-  <p class="meta">Ostatni pomiar: {latest?.date ?? 'brak'}</p>
+  <DomainHeader domain={domain!} name={name} active="" latest={latest} />
 
   {
     problems.map(([source, result]) => (
@@ -85,199 +67,51 @@ const problems = Object.entries(latest?.sources ?? {}).filter(([, r]) =>
     ))
   }
 
-  <section>
-    <h2>SEO – widoczność (Senuto)</h2>
-    <div class="stat-grid">
-      <StatCard label="Frazy w TOP 3" value={statTop3.value} delta={statTop3.delta} />
-      <StatCard label="Frazy w TOP 10" value={statTop10.value} delta={statTop10.delta} />
-      <StatCard
-        label="Indeks widoczności"
-        value={statVisibility.value}
-        delta={statVisibility.delta}
-        precision={2}
-      />
-    </div>
-    <div class="chart-grid">
-      <TimeSeriesChart
-        title="Frazy w TOP 3 / 10 / 50"
-        timestamps={top10.timestamps}
-        series={[
-          { label: 'TOP 3', values: top3.values },
-          { label: 'TOP 10', values: top10.values },
-          { label: 'TOP 50', values: top50.values },
-        ]}
-      />
-      <TimeSeriesChart
-        title="Indeks widoczności"
-        timestamps={visibility.timestamps}
-        series={[{ label: 'Widoczność', values: visibility.values }]}
-        precision={2}
-      />
-    </div>
-  </section>
+  <div class="section-head"><h2>Najważniejsze wskaźniki</h2></div>
+  <div class="stat-grid">
+    <StatCard label="Frazy w TOP 10" value={statTop10.value} delta={statTop10.delta} trend={top10.values} />
+    <StatCard label="Kliknięcia / dzień" value={statClicks.value} delta={statClicks.delta} trend={gscClicks.values} />
+    <StatCard
+      label="Wyświetlenia / dzień"
+      value={statImpressions.value}
+      delta={statImpressions.delta}
+      trend={gscImpressions.values}
+    />
+    <StatCard label="Domain Rating" value={statDR.value} delta={statDR.delta} deltaLabel="30 dni" precision={1} />
+    <StatCard label="Domeny linkujące" value={statRefDomains.value} delta={statRefDomains.delta} trend={refDomains.values} />
+    {clarityConfigured && <StatCard label="Sesje (3 dni)" value={statSessions.value} delta={statSessions.delta} />}
+    {leadsConfigured && <StatCard label="Leady · 7 dni" value={leadsRecent} />}
+  </div>
 
-  <section>
-    <h2>
-      Google Search Console{gscDataDate && <span class="h2-meta">dane z {gscDataDate}</span>}
-    </h2>
-    <div class="stat-grid">
-      <StatCard label="Kliknięcia / dzień" value={statGscClicks.value} delta={statGscClicks.delta} />
-      <StatCard
-        label="Wyświetlenia / dzień"
-        value={statGscImpressions.value}
-        delta={statGscImpressions.delta}
-      />
-      <StatCard label="CTR" value={statGscCtr.value} delta={statGscCtr.delta} unit="%" precision={2} />
-      <StatCard
-        label="Średnia pozycja"
-        value={statGscPosition.value}
-        delta={statGscPosition.delta}
-        precision={1}
-      />
-      <StatCard
-        label="Frazy z wyświetleniami"
-        value={statGscQueries.value}
-        delta={statGscQueries.delta}
-      />
-    </div>
-    <div class="chart-grid">
-      <TimeSeriesChart
-        title="Kliknięcia (dziennie)"
-        timestamps={gscClicks.timestamps}
-        series={[{ label: 'Kliknięcia', values: gscClicks.values }]}
-      />
-      <TimeSeriesChart
-        title="Wyświetlenia (dziennie)"
-        timestamps={gscImpressions.timestamps}
-        series={[{ label: 'Wyświetlenia', values: gscImpressions.values }]}
-      />
-      <TimeSeriesChart
-        title="Frazy z wyświetleniami"
-        timestamps={gscQueries.timestamps}
-        series={[{ label: 'Frazy', values: gscQueries.values }]}
-      />
-      <TimeSeriesChart
-        title="Średnia pozycja (niżej = lepiej)"
-        timestamps={gscPosition.timestamps}
-        series={[{ label: 'Pozycja', values: gscPosition.values }]}
-        precision={1}
-      />
-    </div>
-  </section>
-
-  <section>
-    <h2>Linki (Ahrefs)</h2>
-    <div class="stat-grid">
-      <StatCard
-        label="Domain Rating"
-        value={statDomainRating.value}
-        delta={statDomainRating.delta}
-        deltaLabel="30 dni"
-        precision={1}
-      />
-      <StatCard label="Backlinki" value={statBacklinks.value} delta={statBacklinks.delta} />
-      <StatCard
-        label="Domeny linkujące"
-        value={statRefDomains.value}
-        delta={statRefDomains.delta}
-      />
-    </div>
-    <div class="chart-grid">
-      <TimeSeriesChart
-        title="Backlinki"
-        timestamps={backlinks.timestamps}
-        series={[{ label: 'Backlinki', values: backlinks.values }]}
-      />
-      <TimeSeriesChart
-        title="Domeny linkujące"
-        timestamps={refDomains.timestamps}
-        series={[{ label: 'Domeny', values: refDomains.values }]}
-      />
-      <TimeSeriesChart
-        title="Domain Rating"
-        timestamps={domainRating.timestamps}
-        series={[{ label: 'DR', values: domainRating.values }]}
-        precision={1}
-      />
-    </div>
-  </section>
-
-  <section>
-    <h2>Microsoft Clarity</h2>
-    <div class="placeholder">
-      Integracja z Clarity Data Export API czeka na token (<code>CLARITY_API_TOKEN</code>). Po
-      podpięciu pojawią się tu sesje, scroll depth i AI-boty.
-    </div>
-  </section>
+  <div class="section-head">
+    <h2>Trendy</h2>
+    <span class="section-meta">szczegóły i pełne listy w zakładkach sekcji</span>
+  </div>
+  <div class="chart-grid">
+    <TimeSeriesChart
+      title="Frazy w TOP 3 / 10 / 50 (Senuto)"
+      timestamps={top10.timestamps}
+      series={[
+        { label: 'TOP 3', values: top3.values },
+        { label: 'TOP 10', values: top10.values },
+        { label: 'TOP 50', values: top50.values },
+      ]}
+    />
+    <TimeSeriesChart
+      title="Kliknięcia i wyświetlenia (GSC)"
+      timestamps={gscClicks.timestamps}
+      series={[
+        { label: 'Kliknięcia', values: gscClicks.values },
+        { label: 'Wyświetlenia', values: gscImpressions.values },
+      ]}
+    />
+    <TimeSeriesChart
+      title="Backlinki i domeny linkujące (Ahrefs)"
+      timestamps={backlinks.timestamps}
+      series={[
+        { label: 'Backlinki', values: backlinks.values },
+        { label: 'Domeny', values: refDomains.values },
+      ]}
+    />
+  </div>
 </Layout>
-
-<style>
-  .crumbs {
-    margin-bottom: 8px;
-    font-size: 0.88rem;
-  }
-  .page-head {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-  h1 {
-    font-size: 1.6rem;
-    letter-spacing: -0.02em;
-    margin: 0;
-  }
-  h2 {
-    font-size: 1.15rem;
-    margin: 34px 0 14px;
-  }
-  .h2-meta {
-    color: var(--ink-faint);
-    font-size: 0.78rem;
-    font-weight: 400;
-    margin-left: 10px;
-  }
-  .meta {
-    color: var(--ink-faint);
-    font-size: 0.85rem;
-    margin: 6px 0 0;
-  }
-  .badges {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .banner {
-    margin-top: 16px;
-    border-radius: 10px;
-    padding: 12px 16px;
-    font-size: 0.9rem;
-  }
-  .banner.warn {
-    background: var(--status-warn-bg);
-    color: var(--status-warn-fg);
-  }
-  .banner.err {
-    background: var(--status-err-bg);
-    color: var(--status-err-fg);
-  }
-  .stat-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 14px;
-    margin-bottom: 18px;
-  }
-  .chart-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 16px;
-  }
-  .placeholder {
-    background: var(--bg-surface-1);
-    border: 1px dashed var(--hairline);
-    border-radius: 12px;
-    color: var(--ink-muted);
-    padding: 24px;
-    font-size: 0.92rem;
-  }
-</style>

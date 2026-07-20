@@ -1,0 +1,201 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DomainHeader from '../../components/DomainHeader.astro';
+import StatCard from '../../components/StatCard.astro';
+import TableCard from '../../components/TableCard.astro';
+import TimeSeriesChart from '../../components/TimeSeriesChart.astro';
+import {
+  loadConfig,
+  loadSnapshots,
+  loadDetails,
+  latestSnapshot,
+  latestWithDelta,
+  metricSeries,
+} from '../../lib/data';
+import { fmtInt, fmtPct, fmtNum, posClass, barWidth } from '../../lib/format';
+
+export function getStaticPaths() {
+  return loadConfig().domains.map((d) => ({ params: { domain: d.id }, props: { name: d.name } }));
+}
+
+const { domain } = Astro.params;
+const { name } = Astro.props;
+
+const snapshots = loadSnapshots(domain!);
+const latest = latestSnapshot(domain!);
+const details = loadDetails(domain!);
+const gscDetails = details.sources.gsc;
+const queries = gscDetails?.queries ?? [];
+const pages = gscDetails?.pages ?? [];
+const windowMeta = gscDetails?.window
+  ? `okno ${gscDetails.window.start} → ${gscDetails.window.end}`
+  : undefined;
+
+const clicks = metricSeries(snapshots, 'gsc', 'clicks');
+const impressions = metricSeries(snapshots, 'gsc', 'impressions');
+const position = metricSeries(snapshots, 'gsc', 'position');
+const queriesSeries = metricSeries(snapshots, 'gsc', 'queries');
+
+const statClicks = latestWithDelta(snapshots, 'gsc', 'clicks');
+const statImpressions = latestWithDelta(snapshots, 'gsc', 'impressions');
+const statCtr = latestWithDelta(snapshots, 'gsc', 'ctr');
+const statPosition = latestWithDelta(snapshots, 'gsc', 'position');
+const statQueries = latestWithDelta(snapshots, 'gsc', 'queries');
+const dataDate = latest?.sources.gsc?.data?.data_date ?? null;
+const gsc = latest?.sources.gsc;
+
+const maxQueryImpressions = Math.max(...queries.map((q) => q.impressions ?? 0), 0);
+const maxPageImpressions = Math.max(...pages.map((p) => p.impressions ?? 0), 0);
+const stripOrigin = (url: string) => url.replace(/^https?:\/\/[^/]+/, '') || '/';
+---
+
+<Layout title={`${name} – Google Search Console`}>
+  <DomainHeader domain={domain!} name={name} active="gsc" latest={latest} />
+
+  {
+    gsc && gsc.status !== 'ok' && (
+      <div class={`banner ${gsc.status === 'token_expired' ? 'warn' : 'err'}`}>
+        <strong>GSC</strong>: {gsc.error ?? 'błąd źródła'}
+      </div>
+    )
+  }
+
+  <div class="section-head">
+    <h2>Ruch z wyszukiwarki</h2>
+    {dataDate && <span class="section-meta">dzienne metryki z {dataDate} (opóźnienie GSC ~3 dni)</span>}
+  </div>
+  <div class="stat-grid">
+    <StatCard label="Kliknięcia / dzień" value={statClicks.value} delta={statClicks.delta} trend={clicks.values} />
+    <StatCard
+      label="Wyświetlenia / dzień"
+      value={statImpressions.value}
+      delta={statImpressions.delta}
+      trend={impressions.values}
+    />
+    <StatCard label="CTR" value={statCtr.value} delta={statCtr.delta} unit="%" precision={2} />
+    <StatCard
+      label="Średnia pozycja"
+      value={statPosition.value}
+      delta={statPosition.delta}
+      precision={1}
+      goodWhen="down"
+      trend={position.values}
+    />
+    <StatCard
+      label="Frazy z wyświetleniami"
+      value={statQueries.value}
+      delta={statQueries.delta}
+      trend={queriesSeries.values}
+    />
+  </div>
+
+  <div class="chart-grid">
+    <TimeSeriesChart
+      title="Kliknięcia i wyświetlenia (dziennie)"
+      timestamps={clicks.timestamps}
+      series={[
+        { label: 'Kliknięcia', values: clicks.values },
+        { label: 'Wyświetlenia', values: impressions.values },
+      ]}
+    />
+    <TimeSeriesChart
+      title="Średnia pozycja (niżej = lepiej)"
+      timestamps={position.timestamps}
+      series={[{ label: 'Pozycja', values: position.values }]}
+      precision={1}
+    />
+    <TimeSeriesChart
+      title="Frazy z wyświetleniami"
+      timestamps={queriesSeries.timestamps}
+      series={[{ label: 'Frazy', values: queriesSeries.values }]}
+    />
+  </div>
+
+  <TableCard
+    title="Frazy w Google"
+    meta={windowMeta}
+    count={queries.length}
+    filter
+    empty="Lista fraz pojawi się po najbliższym przebiegu collectora (codziennie 6:30)."
+  >
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Fraza</th>
+          <th class="num">Kliknięcia</th>
+          <th class="num">Wyświetlenia</th>
+          <th class="num">CTR</th>
+          <th class="num">Pozycja</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          queries.map((q) => (
+            <tr>
+              <td class="grow">{q.key}</td>
+              <td class="num">{fmtInt(q.clicks)}</td>
+              <td class="num">
+                <span class="cell-bar">
+                  {fmtInt(q.impressions)}
+                  <span class="bar">
+                    <i style={`width:${barWidth(q.impressions, maxQueryImpressions)}%`} />
+                  </span>
+                </span>
+              </td>
+              <td class="num">{fmtPct(q.ctr)}</td>
+              <td class="num">
+                <span class={`pos-badge ${posClass(q.position)}`}>{fmtNum(q.position, 1)}</span>
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </TableCard>
+
+  <TableCard
+    title="Strony w Google"
+    meta={windowMeta}
+    count={pages.length}
+    filter
+    empty="Lista stron pojawi się po najbliższym przebiegu collectora."
+  >
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Strona</th>
+          <th class="num">Kliknięcia</th>
+          <th class="num">Wyświetlenia</th>
+          <th class="num">CTR</th>
+          <th class="num">Pozycja</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          pages.map((p) => (
+            <tr>
+              <td class="grow">
+                <a class="cell-url" href={p.key} rel="noopener" target="_blank">
+                  {stripOrigin(p.key)}
+                </a>
+              </td>
+              <td class="num">{fmtInt(p.clicks)}</td>
+              <td class="num">
+                <span class="cell-bar">
+                  {fmtInt(p.impressions)}
+                  <span class="bar">
+                    <i style={`width:${barWidth(p.impressions, maxPageImpressions)}%`} />
+                  </span>
+                </span>
+              </td>
+              <td class="num">{fmtPct(p.ctr)}</td>
+              <td class="num">
+                <span class={`pos-badge ${posClass(p.position)}`}>{fmtNum(p.position, 1)}</span>
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </TableCard>
+</Layout>

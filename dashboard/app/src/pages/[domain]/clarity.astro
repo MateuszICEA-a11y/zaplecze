@@ -1,0 +1,172 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DomainHeader from '../../components/DomainHeader.astro';
+import StatCard from '../../components/StatCard.astro';
+import TableCard from '../../components/TableCard.astro';
+import TimeSeriesChart from '../../components/TimeSeriesChart.astro';
+import {
+  loadConfig,
+  loadSnapshots,
+  loadDetails,
+  latestSnapshot,
+  latestWithDelta,
+  metricSeries,
+} from '../../lib/data';
+import { fmtInt, fmtNum, fmtDuration, barWidth } from '../../lib/format';
+
+export function getStaticPaths() {
+  return loadConfig().domains.map((d) => ({ params: { domain: d.id }, props: { name: d.name } }));
+}
+
+const { domain } = Astro.params;
+const { name } = Astro.props;
+
+const snapshots = loadSnapshots(domain!);
+const latest = latestSnapshot(domain!);
+const details = loadDetails(domain!);
+const clarity = latest?.sources.clarity;
+const clarityDetails = details.sources.clarity;
+const configured = clarity != null && clarity.status !== 'not_configured';
+
+const sessions = metricSeries(snapshots, 'clarity', 'sessions');
+const users = metricSeries(snapshots, 'clarity', 'users');
+const statSessions = latestWithDelta(snapshots, 'clarity', 'sessions');
+const statUsers = latestWithDelta(snapshots, 'clarity', 'users');
+const statBots = latestWithDelta(snapshots, 'clarity', 'bot_sessions');
+const statScroll = latestWithDelta(snapshots, 'clarity', 'scroll_depth_avg');
+const engagementActive = latest?.sources.clarity?.data?.engagement_active_s;
+const pagesPerSession = latest?.sources.clarity?.data?.pages_per_session;
+
+const frictionChips = [
+  { label: 'Dead clicks', value: clarityDetails?.dead_clicks },
+  { label: 'Rage clicks', value: clarityDetails?.rage_clicks },
+  { label: 'Quickback', value: clarityDetails?.quickback_clicks },
+  { label: 'Błędy JS', value: clarityDetails?.script_errors },
+].filter((c) => c.value != null);
+
+const dimTables = [
+  { key: 'url', title: 'Najczęściej oglądane strony', rows: clarityDetails?.url ?? [] },
+  { key: 'referrer', title: 'Źródła ruchu (referrer)', rows: clarityDetails?.referrer ?? [] },
+  { key: 'device', title: 'Urządzenia', rows: clarityDetails?.device ?? [] },
+];
+---
+
+<Layout title={`${name} – Microsoft Clarity`}>
+  <DomainHeader domain={domain!} name={name} active="clarity" latest={latest} />
+
+  {
+    !configured ? (
+      <div class="placeholder-card" style="margin-top:20px">
+        <strong>Clarity czeka na token Data Export API.</strong>
+        <br />
+        Wygeneruj token w panelu Clarity (projekt widocznosc.ai → Settings → Data Export →
+        „Generate new API token") i dodaj go jako sekret <code>CLARITY_API_TOKEN</code> w GitHub →
+        Settings → Secrets → Actions. Sekcja zapełni się po najbliższym przebiegu collectora –
+        sesje, użytkownicy, boty, scroll depth, frustracje (rage/dead clicks) i top strony z
+        ostatnich 3 dni.
+      </div>
+    ) : (
+      <>
+        {clarity && clarity.status !== 'ok' && (
+          <div class={`banner ${clarity.status === 'token_expired' ? 'warn' : 'err'}`}>
+            <strong>Clarity</strong>: {clarity.error ?? 'błąd źródła'}
+          </div>
+        )}
+
+        <div class="section-head">
+          <h2>Zachowania użytkowników</h2>
+          <span class="section-meta">okno: ostatnie 3 dni (limit Data Export API)</span>
+        </div>
+        <div class="stat-grid">
+          <StatCard label="Sesje (3 dni)" value={statSessions.value} delta={statSessions.delta} trend={sessions.values} hero />
+          <StatCard label="Użytkownicy" value={statUsers.value} delta={statUsers.delta} trend={users.values} />
+          <StatCard label="Sesje botów" value={statBots.value} delta={statBots.delta} goodWhen="down" />
+          <StatCard label="Śr. scroll depth" value={statScroll.value} delta={statScroll.delta} unit="%" precision={1} />
+          <StatCard
+            label="Aktywny czas / sesja"
+            value={typeof engagementActive === 'number' && statSessions.value ? fmtDuration(engagementActive / statSessions.value) : null}
+          />
+          <StatCard
+            label="Strony / sesja"
+            value={typeof pagesPerSession === 'number' ? fmtNum(pagesPerSession, 1) : null}
+          />
+        </div>
+
+        {frictionChips.length > 0 && (
+          <div class="friction-row">
+            <span class="friction-label">Sygnały frustracji:</span>
+            {frictionChips.map((c) => (
+              <span class="chip">
+                {c.label}: <strong>{fmtInt(c.value as number)}</strong>
+              </span>
+            ))}
+          </div>
+        )}
+
+        <div class="chart-grid">
+          <TimeSeriesChart
+            title="Sesje i użytkownicy (okno 3-dniowe)"
+            timestamps={sessions.timestamps}
+            series={[
+              { label: 'Sesje', values: sessions.values },
+              { label: 'Użytkownicy', values: users.values },
+            ]}
+          />
+        </div>
+
+        {dimTables.map((t) => {
+          const maxSessions = Math.max(...t.rows.map((r) => r.sessions ?? 0), 0);
+          return (
+            <TableCard title={t.title} count={t.rows.length} filter={t.rows.length > 10} empty="Brak danych w tym oknie.">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Nazwa</th>
+                    <th class="num">Sesje</th>
+                    <th class="num">Użytkownicy</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {t.rows.map((row) => (
+                    <tr>
+                      <td class="grow">
+                        <span class="cell-url">{row.name}</span>
+                      </td>
+                      <td class="num">
+                        <span class="cell-bar">
+                          {fmtInt(row.sessions)}
+                          <span class="bar">
+                            <i style={`width:${barWidth(row.sessions, maxSessions)}%`} />
+                          </span>
+                        </span>
+                      </td>
+                      <td class="num">{fmtInt(row.users)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </TableCard>
+          );
+        })}
+      </>
+    )
+  }
+</Layout>
+
+<style>
+  .friction-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+  .friction-label {
+    color: var(--ink-faint);
+    font-size: 0.8rem;
+  }
+  .friction-row .chip strong {
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+</style>

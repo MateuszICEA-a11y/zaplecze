@@ -124,3 +124,85 @@ export function latestWithDeltaFrom(
 export function sourceStatuses(snapshot: Snapshot | null): Record<string, SourceResult> {
   return snapshot?.sources ?? {};
 }
+
+/* ---------- details.json – listy (frazy, domeny linkujące, leady) ---------- */
+
+export interface SenutoKeyword {
+  keyword: string;
+  position: number | null;
+  previous: number | null;
+  diff: number | null;
+  searches: number | null;
+  url: string | null;
+  cpc: number | null;
+  difficulty: number | null;
+  snippets: string[];
+}
+
+export interface GscRow {
+  key: string;
+  clicks: number;
+  impressions: number;
+  ctr: number | null;
+  position: number | null;
+}
+
+export interface RefDomain {
+  domain: string;
+  domain_rating: number | null;
+  links: number | null;
+  first_seen: string | null;
+}
+
+export interface ClarityDimensionRow {
+  name: string;
+  sessions: number | null;
+  users: number | null;
+}
+
+export interface LeadRecord {
+  id: string;
+  kind: 'lead' | 'usage';
+  source: string;
+  ts: string;
+  [field: string]: unknown;
+}
+
+export interface DomainDetails {
+  date?: string;
+  sources: {
+    senuto?: { keywords: SenutoKeyword[] };
+    gsc?: { window?: { start: string; end: string }; queries: GscRow[]; pages: GscRow[] };
+    ahrefs?: { ref_domains: RefDomain[]; ref_domains_source?: 'ahrefs' | 'dataforseo' };
+    clarity?: {
+      dead_clicks?: number | null;
+      rage_clicks?: number | null;
+      quickback_clicks?: number | null;
+      script_errors?: number | null;
+      url?: ClarityDimensionRow[];
+      referrer?: ClarityDimensionRow[];
+      device?: ClarityDimensionRow[];
+    };
+    leads?: { leads: LeadRecord[]; usage: LeadRecord[] };
+  };
+}
+
+export function loadDetails(dirId: string): DomainDetails {
+  const path = resolve(DATA_DIR, dirId, 'details.json');
+  if (!existsSync(path)) return { sources: {} };
+  try {
+    return JSON.parse(readFileSync(path, 'utf8')) as DomainDetails;
+  } catch {
+    return { sources: {} };
+  }
+}
+
+/** Sekcje dashboardu domeny – jedno źródło prawdy dla nawigacji. */
+export const DOMAIN_SECTIONS = [
+  { slug: '', label: 'Przegląd', source: null },
+  { slug: 'senuto', label: 'Senuto', source: 'senuto' },
+  { slug: 'gsc', label: 'GSC', source: 'gsc' },
+  { slug: 'ahrefs', label: 'Ahrefs', source: 'ahrefs' },
+  { slug: 'clarity', label: 'Clarity', source: 'clarity' },
+  { slug: 'leady', label: 'Leady', source: 'leads' },
+] as const;

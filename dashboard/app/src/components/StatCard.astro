@@ -1,4 +1,7 @@
 ---
+/* Stat tile wg kontraktu dataviz: label · value · delta (kierunek × czy wzrost
+   jest dobry) · opcjonalny 12-punktowy sparkline liczony w build time (SVG,
+   zero JS). `goodWhen="down"` odwraca kolor delty (np. średnia pozycja). */
 interface Props {
   label: string;
   value: number | string | null;
@@ -6,8 +9,21 @@ interface Props {
   deltaLabel?: string;
   unit?: string;
   precision?: number;
+  goodWhen?: 'up' | 'down';
+  trend?: (number | null)[];
+  hero?: boolean;
 }
-const { label, value, delta = null, deltaLabel = '7 dni', unit = '', precision = 0 } = Astro.props;
+const {
+  label,
+  value,
+  delta = null,
+  deltaLabel = '7 dni',
+  unit = '',
+  precision = 0,
+  goodWhen = 'up',
+  trend,
+  hero = false,
+} = Astro.props;
 
 const formatted =
   value === null
@@ -18,17 +34,52 @@ const formatted =
 const deltaText =
   delta === null
     ? null
-    : `${delta > 0 ? '+' : ''}${delta.toLocaleString('pl-PL', { maximumFractionDigits: precision })}`;
-const deltaDir = delta === null ? 'flat' : delta > 0 ? 'up' : delta < 0 ? 'down' : 'flat';
+    : `${delta > 0 ? '+' : ''}${delta.toLocaleString('pl-PL', { maximumFractionDigits: Math.max(precision, 0) })}`;
+const direction = delta === null ? 'flat' : delta > 0 ? 'up' : delta < 0 ? 'down' : 'flat';
+const sentiment =
+  direction === 'flat' ? 'flat' : (direction === 'up') === (goodWhen === 'up') ? 'good' : 'bad';
+
+/* Sparkline: ostatnie 12 niepustych punktów, 100×28 viewBox. */
+const points = (trend ?? []).filter((v): v is number => typeof v === 'number').slice(-12);
+let path = '';
+if (points.length >= 2) {
+  const min = Math.min(...points);
+  const max = Math.max(...points);
+  const span = max - min || 1;
+  path = points
+    .map((v, i) => {
+      const x = (i / (points.length - 1)) * 100;
+      const y = 26 - ((v - min) / span) * 24;
+      return `${i === 0 ? 'M' : 'L'}${x.toFixed(1)},${y.toFixed(1)}`;
+    })
+    .join(' ');
+}
 ---
 
-<div class="stat-card">
+<div class:list={['stat-card', { hero }]}>
   <div class="stat-label">{label}</div>
-  <div class="stat-value">{formatted}{value !== null && unit ? ` ${unit}` : ''}</div>
+  <div class="stat-row">
+    <div class="stat-value">{formatted}{value !== null && unit ? ` ${unit}` : ''}</div>
+    {
+      path && (
+        <svg class="spark" viewBox="0 0 100 28" preserveAspectRatio="none" aria-hidden="true">
+          <path
+            d={path}
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            vector-effect="non-scaling-stroke"
+          />
+        </svg>
+      )
+    }
+  </div>
   {
     deltaText !== null && (
-      <div class={`stat-delta ${deltaDir}`}>
-        {deltaDir === 'up' ? '▲' : deltaDir === 'down' ? '▼' : '•'} {deltaText} · {deltaLabel}
+      <div class={`stat-delta ${sentiment}`}>
+        {direction === 'up' ? '▲' : direction === 'down' ? '▼' : '•'} {deltaText} · {deltaLabel}
       </div>
     )
   }
@@ -38,33 +89,49 @@ const deltaDir = delta === null ? 'flat' : delta > 0 ? 'up' : delta < 0 ? 'down'
   .stat-card {
     background: var(--bg-surface-1);
     border: 1px solid var(--hairline);
-    border-radius: 12px;
+    border-radius: 14px;
     padding: 16px 18px;
     min-width: 0;
   }
   .stat-label {
     color: var(--ink-muted);
-    font-size: 0.8rem;
+    font-size: 0.76rem;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-    margin-bottom: 6px;
+    letter-spacing: 0.05em;
+    margin-bottom: 7px;
+  }
+  .stat-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 12px;
   }
   .stat-value {
     font-size: 1.7rem;
     font-weight: 700;
     letter-spacing: -0.02em;
-    font-variant-numeric: tabular-nums;
+    line-height: 1.05;
+  }
+  .hero .stat-value {
+    font-size: 2.6rem;
+  }
+  .spark {
+    width: 88px;
+    height: 28px;
+    color: var(--accent-blue);
+    opacity: 0.9;
+    flex: none;
   }
   .stat-delta {
-    margin-top: 4px;
-    font-size: 0.82rem;
+    margin-top: 6px;
+    font-size: 0.8rem;
     color: var(--ink-faint);
     font-variant-numeric: tabular-nums;
   }
-  .stat-delta.up {
+  .stat-delta.good {
     color: var(--status-ok);
   }
-  .stat-delta.down {
+  .stat-delta.bad {
     color: var(--status-err-fg);
   }
 </style>

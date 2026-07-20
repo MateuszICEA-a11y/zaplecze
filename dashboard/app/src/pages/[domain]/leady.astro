@@ -1,0 +1,203 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DomainHeader from '../../components/DomainHeader.astro';
+import StatCard from '../../components/StatCard.astro';
+import TableCard from '../../components/TableCard.astro';
+import { loadConfig, loadSnapshots, loadDetails, latestSnapshot, type LeadRecord } from '../../lib/data';
+import { fmtDateTime } from '../../lib/format';
+
+export function getStaticPaths() {
+  return loadConfig().domains.map((d) => ({ params: { domain: d.id }, props: { name: d.name } }));
+}
+
+const { domain } = Astro.params;
+const { name } = Astro.props;
+
+const snapshots = loadSnapshots(domain!);
+const latest = latestSnapshot(domain!);
+const details = loadDetails(domain!);
+const leadsSource = latest?.sources.leads;
+const configured = leadsSource != null && leadsSource.status !== 'not_configured';
+
+const leads = [...(details.sources.leads?.leads ?? [])].reverse(); // najnowsze pierwsze
+const usage = [...(details.sources.leads?.usage ?? [])].reverse();
+
+const str = (r: LeadRecord, key: string): string => {
+  const v = r[key];
+  return typeof v === 'string' ? v : '';
+};
+const fullName = (r: LeadRecord) => [str(r, 'firstName'), str(r, 'lastName')].filter(Boolean).join(' ');
+const weekAgo = Date.now() - 7 * 86400_000;
+const isRecent = (r: LeadRecord) => new Date(r.ts).getTime() >= weekAgo;
+
+const SOURCE_LABELS: Record<string, string> = {
+  kontakt: 'Formularz kontaktowy',
+  'raport-narzedzia': 'Raport narzędzia',
+  'sms-code': 'SMS (niedokończony)',
+  fanout: 'Fan-out',
+  'brand-check': 'Brand check',
+  'url-check': 'Ocena URL',
+  'ai-bots-check': 'AI-boty',
+};
+const sourceLabel = (s: string) => SOURCE_LABELS[s] ?? s;
+
+/** Wejście użytkownika w zależności od narzędzia. */
+const usageInput = (r: LeadRecord) => str(r, 'query') || str(r, 'url') || str(r, 'domain') || '–';
+const usageExtras = (r: LeadRecord) =>
+  [str(r, 'domain') && str(r, 'query') ? `domena: ${str(r, 'domain')}` : '', str(r, 'category'), str(r, 'market')]
+    .filter(Boolean)
+    .join(' · ');
+---
+
+<Layout title={`${name} – Leady`}>
+  <DomainHeader domain={domain!} name={name} active="leady" latest={latest} />
+
+  {
+    !configured ? (
+      <div class="placeholder-card" style="margin-top:20px">
+        <strong>Zbieranie leadów czeka na konfigurację sekretu.</strong>
+        <br />
+        Wygeneruj losowy token (np. <code>openssl rand -hex 24</code>) i dodaj go w dwóch miejscach:
+        jako sekret <code>LEADS_EXPORT_TOKEN</code> w Cloudflare Pages widocznosc.ai (Settings →
+        Variables and Secrets) oraz w GitHub → Secrets → Actions. Od momentu wdrożenia każdy lead z
+        formularzy (kontakt, raporty narzędzi, weryfikacje SMS) i każde użycie narzędzi zapisuje się
+        w KV i trafia tu przy codziennym przebiegu collectora. Wpisy sprzed wdrożenia nie są
+        odtwarzalne – istnieją tylko w mailach leadowych.
+      </div>
+    ) : (
+      <>
+        {leadsSource && leadsSource.status !== 'ok' && (
+          <div class="banner err">
+            <strong>Leady</strong>: {leadsSource.error ?? 'błąd eksportu'}
+          </div>
+        )}
+
+        <div class="section-head">
+          <h2>Leady i użycia narzędzi</h2>
+          <span class="section-meta">
+            KV przechowuje wpisy 90 dni; archiwum w repo trzyma je bezterminowo
+          </span>
+        </div>
+        <div class="stat-grid">
+          <StatCard label="Leady łącznie" value={leads.length} hero />
+          <StatCard label="Leady · 7 dni" value={leads.filter(isRecent).length} />
+          <StatCard label="Użycia narzędzi łącznie" value={usage.length} />
+          <StatCard label="Użycia · 7 dni" value={usage.filter(isRecent).length} />
+        </div>
+
+        <TableCard
+          title="Leady"
+          count={leads.length}
+          filter
+          empty="Jeszcze żadnego leada od wdrożenia zapisu – wpisy pojawią się po pierwszym wysłanym formularzu."
+        >
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Źródło</th>
+                <th>Kto</th>
+                <th>Kontakt</th>
+                <th>Szczegóły</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {leads.map((r) => (
+                <tr>
+                  <td class="num">{fmtDateTime(r.ts)}</td>
+                  <td>
+                    <span class="chip lead">{sourceLabel(r.source)}</span>
+                  </td>
+                  <td>
+                    <strong>{fullName(r) || '–'}</strong>
+                    {str(r, 'company') && <span class="sub">{str(r, 'company')}</span>}
+                  </td>
+                  <td>
+                    {str(r, 'email') && (
+                      <a href={`mailto:${str(r, 'email')}`}>{str(r, 'email')}</a>
+                    )}
+                    {str(r, 'phone') && <span class="sub">{str(r, 'phone')}</span>}
+                  </td>
+                  <td class="grow">
+                    {str(r, 'tool') && <span class="chip accent">{sourceLabel(str(r, 'tool'))}</span>}
+                    {str(r, 'type') && <span class="chip">{str(r, 'type')}</span>}
+                    {str(r, 'domain') && <span class="sub">domena: {str(r, 'domain')}</span>}
+                    {str(r, 'query') && <span class="sub">zapytanie: {str(r, 'query')}</span>}
+                    {str(r, 'message') && <span class="sub msg">{str(r, 'message')}</span>}
+                  </td>
+                  <td>
+                    {r.smsVerified === true && <span class="chip lead">SMS ✓</span>}
+                    {r.consent === true ? (
+                      <span class="chip lead">zgoda ✓</span>
+                    ) : r.consent === false ? (
+                      <span class="chip">bez zgody</span>
+                    ) : null}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </TableCard>
+
+        <TableCard
+          title="Użycia narzędzi"
+          count={usage.length}
+          filter
+          empty="Jeszcze żadnego użycia narzędzi od wdrożenia zapisu."
+        >
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Narzędzie</th>
+                <th>Wejście</th>
+                <th>Dane z formularza</th>
+              </tr>
+            </thead>
+            <tbody>
+              {usage.map((r) => (
+                <tr>
+                  <td class="num">{fmtDateTime(r.ts)}</td>
+                  <td>
+                    <span class="chip accent">{sourceLabel(r.source)}</span>
+                    {str(r, 'tool') && r.source === 'sms-code' && (
+                      <span class="sub">{sourceLabel(str(r, 'tool'))}</span>
+                    )}
+                  </td>
+                  <td class="grow">
+                    {usageInput(r)}
+                    {usageExtras(r) && <span class="sub">{usageExtras(r)}</span>}
+                  </td>
+                  <td>
+                    {fullName(r) && <strong>{fullName(r)}</strong>}
+                    {str(r, 'phone') && <span class="sub">{str(r, 'phone')}</span>}
+                    {str(r, 'email') && <span class="sub">{str(r, 'email')}</span>}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </TableCard>
+      </>
+    )
+  }
+</Layout>
+
+<style>
+  .sub {
+    display: block;
+    color: var(--ink-faint);
+    font-size: 0.78rem;
+    margin-top: 2px;
+  }
+  .sub.msg {
+    max-width: 420px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  td .chip + .chip {
+    margin-left: 4px;
+  }
+</style>

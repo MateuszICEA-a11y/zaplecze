@@ -1,0 +1,141 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DomainHeader from '../../components/DomainHeader.astro';
+import StatCard from '../../components/StatCard.astro';
+import TableCard from '../../components/TableCard.astro';
+import TimeSeriesChart from '../../components/TimeSeriesChart.astro';
+import {
+  loadConfig,
+  loadSnapshots,
+  loadDetails,
+  latestSnapshot,
+  latestWithDelta,
+  latestWithDeltaFrom,
+  metricSeries,
+  metricSeriesFrom,
+} from '../../lib/data';
+import { fmtInt, fmtNum } from '../../lib/format';
+
+export function getStaticPaths() {
+  return loadConfig().domains.map((d) => ({ params: { domain: d.id }, props: { name: d.name } }));
+}
+
+const { domain } = Astro.params;
+const { name } = Astro.props;
+
+const snapshots = loadSnapshots(domain!);
+const latest = latestSnapshot(domain!);
+const details = loadDetails(domain!);
+const refDomainsList = details.sources.ahrefs?.ref_domains ?? [];
+const refSource = details.sources.ahrefs?.ref_domains_source ?? 'ahrefs';
+const drLabel = refSource === 'dataforseo' ? 'Rank (DataForSEO)' : 'DR';
+
+// Ahrefs pierwszego wyboru, DataForSEO fallback (starsze snapshoty).
+const linkSpec = (field: string): [string, string][] => [
+  ['ahrefs', field],
+  ['backlinks', field],
+];
+const backlinks = metricSeriesFrom(snapshots, linkSpec('backlinks'));
+const refDomains = metricSeriesFrom(snapshots, linkSpec('referring_domains'));
+const domainRating = metricSeries(snapshots, 'ahrefs', 'domain_rating');
+
+const statBacklinks = latestWithDeltaFrom(snapshots, linkSpec('backlinks'));
+const statRefDomains = latestWithDeltaFrom(snapshots, linkSpec('referring_domains'));
+const statDomainRating = latestWithDelta(snapshots, 'ahrefs', 'domain_rating', 30);
+const statRank = latestWithDelta(snapshots, 'ahrefs', 'ahrefs_rank', 30);
+
+const ahrefs = latest?.sources.ahrefs;
+---
+
+<Layout title={`${name} – Ahrefs`}>
+  <DomainHeader domain={domain!} name={name} active="ahrefs" latest={latest} />
+
+  {
+    ahrefs && ahrefs.status !== 'ok' && (
+      <div class={`banner ${ahrefs.status === 'token_expired' ? 'warn' : 'err'}`}>
+        <strong>Ahrefs</strong>: {ahrefs.error ?? 'błąd źródła'}
+      </div>
+    )
+  }
+
+  <div class="section-head"><h2>Profil linków</h2></div>
+  <div class="stat-grid">
+    <StatCard
+      label="Domain Rating"
+      value={statDomainRating.value}
+      delta={statDomainRating.delta}
+      deltaLabel="30 dni"
+      precision={1}
+      trend={domainRating.values}
+      hero
+    />
+    <StatCard label="Backlinki" value={statBacklinks.value} delta={statBacklinks.delta} trend={backlinks.values} />
+    <StatCard
+      label="Domeny linkujące"
+      value={statRefDomains.value}
+      delta={statRefDomains.delta}
+      trend={refDomains.values}
+    />
+    <StatCard
+      label="Ahrefs Rank"
+      value={statRank.value}
+      delta={statRank.delta}
+      deltaLabel="30 dni"
+      goodWhen="down"
+    />
+  </div>
+
+  <div class="chart-grid">
+    <TimeSeriesChart
+      title="Backlinki i domeny linkujące"
+      timestamps={backlinks.timestamps}
+      series={[
+        { label: 'Backlinki', values: backlinks.values },
+        { label: 'Domeny', values: refDomains.values },
+      ]}
+    />
+    <TimeSeriesChart
+      title="Domain Rating"
+      timestamps={domainRating.timestamps}
+      series={[{ label: 'DR', values: domainRating.values }]}
+      precision={1}
+    />
+  </div>
+
+  <TableCard
+    title="Domeny linkujące"
+    meta={details.date ? `stan z ${details.date} · żywe linki, sort wg DR` : undefined}
+    count={refDomainsList.length}
+    filter
+    empty="Lista domen pojawi się po najbliższym przebiegu collectora (codziennie 6:30)."
+  >
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Domena</th>
+          <th class="num">{drLabel}</th>
+          <th class="num">Linki do celu</th>
+          <th class="num">Pierwszy link</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          refDomainsList.map((d) => (
+            <tr>
+              <td class="grow">
+                <a class="cell-url" href={`https://${d.domain}`} rel="noopener nofollow" target="_blank">
+                  {d.domain}
+                </a>
+              </td>
+              <td class="num">
+                <span class="pos-badge">{fmtNum(d.domain_rating, 1)}</span>
+              </td>
+              <td class="num">{fmtInt(d.links)}</td>
+              <td class="num">{d.first_seen ?? '–'}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </TableCard>
+</Layout>

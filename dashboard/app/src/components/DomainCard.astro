@@ -17,9 +17,16 @@ const refDomains = latestWithDeltaFrom(snapshots, [
   ['backlinks', 'referring_domains'],
 ]);
 const fmt = (v: number | null) => (v === null ? '–' : v.toLocaleString('pl-PL'));
+const SECTION_LINKS = [
+  ['senuto', 'Senuto'],
+  ['gsc', 'GSC'],
+  ['ahrefs', 'Ahrefs'],
+  ['clarity', 'Clarity'],
+  ['leady', 'Leady'],
+] as const;
 ---
 
-<a class="domain-card" href={`/${id}/`}>
+<div class="domain-card">
   <h2>{name}</h2>
   <div class="mini-stats">
     <div>
@@ -42,7 +49,11 @@ const fmt = (v: number | null) => (v === null ? '–' : v.toLocaleString('pl-PL'
       ))
     }
   </div>
-</a>
+  <div class="section-links">
+    <a class="primary" href={`/${id}/`}>Przegląd →</a>
+    {SECTION_LINKS.map(([slug, label]) => <a href={`/${id}/${slug}/`}>{label}</a>)}
+  </div>
+</div>
 
 <style>
   .domain-card {
@@ -86,5 +97,24 @@ const fmt = (v: number | null) => (v === null ? '–' : v.toLocaleString('pl-PL'
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
+  }
+  .section-links {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--hairline-soft);
+    font-size: 0.85rem;
+  }
+  .section-links a {
+    color: var(--ink-muted);
+  }
+  .section-links a:hover {
+    color: var(--accent-blue);
+  }
+  .section-links a.primary {
+    color: var(--accent-blue);
+    font-weight: 600;
   }
 </style>
