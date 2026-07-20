@@ -31,6 +31,7 @@ jobs:
       - name: Run collector
         env:
           SENUTO_API_KEY: ${{ secrets.SENUTO_API_KEY }}
+          AHREFS_API_KEY: ${{ secrets.AHREFS_API_KEY }}
           DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
           DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}
           SMSAPI_TOKEN: ${{ secrets.SMSAPI_TOKEN }}

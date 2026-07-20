@@ -1,7 +1,7 @@
 ---
 import SourceStatus from './SourceStatus.astro';
 import type { Snapshot } from '../lib/data';
-import { loadSnapshots, latestWithDelta } from '../lib/data';
+import { loadSnapshots, latestWithDelta, latestWithDeltaFrom } from '../lib/data';
 
 interface Props {
   id: string;
@@ -12,7 +12,10 @@ const { id, name, latest } = Astro.props;
 
 const snapshots = loadSnapshots(id);
 const top10 = latestWithDelta(snapshots, 'senuto', 'top10');
-const refDomains = latestWithDelta(snapshots, 'backlinks', 'referring_domains');
+const refDomains = latestWithDeltaFrom(snapshots, [
+  ['ahrefs', 'referring_domains'],
+  ['backlinks', 'referring_domains'],
+]);
 const fmt = (v: number | null) => (v === null ? '–' : v.toLocaleString('pl-PL'));
 ---
 

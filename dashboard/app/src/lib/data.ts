@@ -54,15 +54,7 @@ export function metricSeries(
   source: string,
   field: string,
 ): { timestamps: number[]; values: (number | null)[] } {
-  const timestamps: number[] = [];
-  const values: (number | null)[] = [];
-  for (const snap of snapshots) {
-    timestamps.push(Math.floor(new Date(snap.date + 'T00:00:00Z').getTime() / 1000));
-    const src = snap.sources[source];
-    const value = src?.status === 'ok' ? src.data?.[field] : null;
-    values.push(typeof value === 'number' ? value : null);
-  }
-  return { timestamps, values };
+  return metricSeriesFrom(snapshots, [[source, field]]);
 }
 
 /** Ostatnia liczbowa wartość metryki + delta vs `days` dni wstecz (po datach snapshotów). */
@@ -72,7 +64,40 @@ export function latestWithDelta(
   field: string,
   days = 7,
 ): { value: number | null; delta: number | null } {
-  const { timestamps, values } = metricSeries(snapshots, source, field);
+  return latestWithDeltaFrom(snapshots, [[source, field]], days);
+}
+
+/** Jak metricSeries, ale z listą [źródło, pole] – bierze pierwsze źródło ze
+    statusem ok i liczbową wartością w danym snapshotcie (np. ahrefs → dataforseo). */
+export function metricSeriesFrom(
+  snapshots: Snapshot[],
+  specs: [source: string, field: string][],
+): { timestamps: number[]; values: (number | null)[] } {
+  const timestamps: number[] = [];
+  const values: (number | null)[] = [];
+  for (const snap of snapshots) {
+    timestamps.push(Math.floor(new Date(snap.date + 'T00:00:00Z').getTime() / 1000));
+    let picked: number | null = null;
+    for (const [source, field] of specs) {
+      const src = snap.sources[source];
+      const value = src?.status === 'ok' ? src.data?.[field] : null;
+      if (typeof value === 'number') {
+        picked = value;
+        break;
+      }
+    }
+    values.push(picked);
+  }
+  return { timestamps, values };
+}
+
+/** latestWithDelta na serii z koalescencją źródeł (metricSeriesFrom). */
+export function latestWithDeltaFrom(
+  snapshots: Snapshot[],
+  specs: [source: string, field: string][],
+  days = 7,
+): { value: number | null; delta: number | null } {
+  const { timestamps, values } = metricSeriesFrom(snapshots, specs);
   let lastIdx = -1;
   for (let i = values.length - 1; i >= 0; i--) {
     if (values[i] !== null) {

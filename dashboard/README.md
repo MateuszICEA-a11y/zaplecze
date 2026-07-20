@@ -1,6 +1,6 @@
 # Dashboard analityczny zaplecza
 
-Publiczny dashboard postępów domen: SEO (Senuto), linki (DataForSEO), kredyty SMSAPI i OpenRouter, docelowo Microsoft Clarity.
+Publiczny dashboard postępów domen: SEO (Senuto), linki (Ahrefs, fallback DataForSEO), kredyty SMSAPI i OpenRouter, docelowo Microsoft Clarity.
 
 **URL produkcyjny:** https://zaplecze-dashboard.pages.dev
 
@@ -34,6 +34,7 @@ pnpm --filter dashboard build    # → dashboard/app/dist
 1. **GitHub Secrets** (repo → Settings → Secrets and variables → Actions):
    - `SENUTO_API_KEY` – JWT z Senuto (⚠️ rotacja ~31 dni; wygasły token = banner „token wygasł" na dashboardzie, cron się nie wywala)
    - `SMSAPI_TOKEN` – ten sam co w Cloudflare Pages widocznosc.ai
+   - `AHREFS_API_KEY` – klucz API v3 (linki: backlinki, referring domains, Domain Rating)
    - (już istnieją: `DATAFORSEO_LOGIN`, `DATAFORSEO_PASSWORD`, `OPENROUTER_API_KEY`)
 2. **Cloudflare Pages**: Workers & Pages → Create → Pages → Connect to Git → repo `zaplecze`:
    - Project name: `zaplecze-dashboard`

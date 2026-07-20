@@ -3,7 +3,15 @@ import Layout from '../../layouts/Layout.astro';
 import StatCard from '../../components/StatCard.astro';
 import TimeSeriesChart from '../../components/TimeSeriesChart.astro';
 import SourceStatus from '../../components/SourceStatus.astro';
-import { loadConfig, loadSnapshots, latestSnapshot, latestWithDelta, metricSeries } from '../../lib/data';
+import {
+  loadConfig,
+  loadSnapshots,
+  latestSnapshot,
+  latestWithDelta,
+  latestWithDeltaFrom,
+  metricSeries,
+  metricSeriesFrom,
+} from '../../lib/data';
 
 export function getStaticPaths() {
   return loadConfig().domains.map((d) => ({
@@ -22,14 +30,20 @@ const top3 = metricSeries(snapshots, 'senuto', 'top3');
 const top10 = metricSeries(snapshots, 'senuto', 'top10');
 const top50 = metricSeries(snapshots, 'senuto', 'top50');
 const visibility = metricSeries(snapshots, 'senuto', 'visibility');
-const backlinks = metricSeries(snapshots, 'backlinks', 'backlinks');
-const refDomains = metricSeries(snapshots, 'backlinks', 'referring_domains');
+// Linki: Ahrefs jest źródłem pierwszego wyboru, DataForSEO fallbackiem
+// (starsze snapshoty / wyłączony klucz).
+const LINK_SOURCES = ['ahrefs', 'backlinks'] as const;
+const linkSpec = (field: string): [string, string][] => LINK_SOURCES.map((s) => [s, field]);
+const backlinks = metricSeriesFrom(snapshots, linkSpec('backlinks'));
+const refDomains = metricSeriesFrom(snapshots, linkSpec('referring_domains'));
+const domainRating = metricSeries(snapshots, 'ahrefs', 'domain_rating');
 
 const statTop10 = latestWithDelta(snapshots, 'senuto', 'top10');
 const statTop3 = latestWithDelta(snapshots, 'senuto', 'top3');
 const statVisibility = latestWithDelta(snapshots, 'senuto', 'visibility');
-const statBacklinks = latestWithDelta(snapshots, 'backlinks', 'backlinks');
-const statRefDomains = latestWithDelta(snapshots, 'backlinks', 'referring_domains');
+const statBacklinks = latestWithDeltaFrom(snapshots, linkSpec('backlinks'));
+const statRefDomains = latestWithDeltaFrom(snapshots, linkSpec('referring_domains'));
+const statDomainRating = latestWithDelta(snapshots, 'ahrefs', 'domain_rating', 30);
 
 // Bannery problemów: token_expired/error z ostatniego snapshotu.
 const problems = Object.entries(latest?.sources ?? {}).filter(([, r]) =>
@@ -91,8 +105,15 @@ const problems = Object.entries(latest?.sources ?? {}).filter(([, r]) =>
   </section>
 
   <section>
-    <h2>Linki (DataForSEO)</h2>
+    <h2>Linki (Ahrefs)</h2>
     <div class="stat-grid">
+      <StatCard
+        label="Domain Rating"
+        value={statDomainRating.value}
+        delta={statDomainRating.delta}
+        deltaLabel="30 dni"
+        precision={1}
+      />
       <StatCard label="Backlinki" value={statBacklinks.value} delta={statBacklinks.delta} />
       <StatCard
         label="Domeny linkujące"
@@ -110,6 +131,12 @@ const problems = Object.entries(latest?.sources ?? {}).filter(([, r]) =>
         title="Domeny linkujące"
         timestamps={refDomains.timestamps}
         series={[{ label: 'Domeny', values: refDomains.values }]}
+      />
+      <TimeSeriesChart
+        title="Domain Rating"
+        timestamps={domainRating.timestamps}
+        series={[{ label: 'DR', values: domainRating.values }]}
+        precision={1}
       />
     </div>
   </section>

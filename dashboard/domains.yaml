@@ -6,9 +6,12 @@ domains:
     senuto:
       enabled: true
       country_id: "1" # Polska
-    backlinks:
+    ahrefs:
       enabled: true
       target: widocznosc.ai
+      mode: subdomains
+    backlinks:
+      enabled: false # DataForSEO – fallback, wyłączony na rzecz Ahrefs
     clarity:
       enabled: false # czeka na token Data Export API (CLARITY_API_TOKEN)
 
