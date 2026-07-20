@@ -11,6 +11,8 @@ const globalSnapshots = loadSnapshots('_global');
 const globalLatest = latestSnapshot('_global');
 
 const smsPoints = latestWithDelta(globalSnapshots, 'smsapi', 'points', 7);
+const smsRemaining = latestWithDelta(globalSnapshots, 'smsapi', 'sms_remaining', 7);
+const smsCost = latestWithDelta(globalSnapshots, 'smsapi', 'sms_cost', 7);
 const orRemaining = latestWithDelta(globalSnapshots, 'openrouter', 'remaining', 7);
 const orUsage = latestWithDelta(globalSnapshots, 'openrouter', 'total_usage', 7);
 
@@ -39,6 +41,11 @@ const orSeries = metricSeries(globalSnapshots, 'openrouter', 'remaining');
         value={smsPoints.value}
         delta={smsPoints.delta}
         precision={2}
+      />
+      <StatCard
+        label={`SMSAPI – ≈ SMS-ów zostało${smsCost.value ? ` (${smsCost.value.toLocaleString('pl-PL')} zł/szt.)` : ''}`}
+        value={smsRemaining.value}
+        delta={smsRemaining.delta}
       />
       <StatCard
         label="OpenRouter – pozostało"

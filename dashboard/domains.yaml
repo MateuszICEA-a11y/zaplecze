@@ -19,5 +19,7 @@ domains:
 global:
   smsapi:
     enabled: true
+    sender: ICEA # nadawca jak w OTP widocznosc.ai – od niego zależy cena
+    cost_fallback: 0.16 # zł/SMS gdy wycena test=1 nie zadziała
   openrouter:
     enabled: true
