@@ -1,0 +1,104 @@
+---
+import Layout from '../layouts/Layout.astro';
+import DomainCard from '../components/DomainCard.astro';
+import StatCard from '../components/StatCard.astro';
+import TimeSeriesChart from '../components/TimeSeriesChart.astro';
+import SourceStatus from '../components/SourceStatus.astro';
+import { loadConfig, loadSnapshots, latestSnapshot, latestWithDelta, metricSeries } from '../lib/data';
+
+const { domains } = loadConfig();
+const globalSnapshots = loadSnapshots('_global');
+const globalLatest = latestSnapshot('_global');
+
+const smsPoints = latestWithDelta(globalSnapshots, 'smsapi', 'points', 7);
+const orRemaining = latestWithDelta(globalSnapshots, 'openrouter', 'remaining', 7);
+const orUsage = latestWithDelta(globalSnapshots, 'openrouter', 'total_usage', 7);
+
+const smsSeries = metricSeries(globalSnapshots, 'smsapi', 'points');
+const orSeries = metricSeries(globalSnapshots, 'openrouter', 'remaining');
+---
+
+<Layout title="Dashboard zaplecza – domeny">
+  <h1>Domeny</h1>
+  <div class="domain-grid">
+    {domains.map((d) => <DomainCard id={d.id} name={d.name} latest={latestSnapshot(d.id)} />)}
+  </div>
+
+  <section>
+    <h1>Kredyty (konto)</h1>
+    <div class="badges">
+      {
+        Object.entries(globalLatest?.sources ?? {}).map(([source, result]) => (
+          <SourceStatus name={source} result={result} />
+        ))
+      }
+    </div>
+    <div class="stat-grid">
+      <StatCard
+        label="SMSAPI – punkty"
+        value={smsPoints.value}
+        delta={smsPoints.delta}
+        precision={2}
+      />
+      <StatCard
+        label="OpenRouter – pozostało"
+        value={orRemaining.value}
+        delta={orRemaining.delta}
+        unit="$"
+        precision={2}
+      />
+      <StatCard
+        label="OpenRouter – zużycie łącznie"
+        value={orUsage.value}
+        delta={orUsage.delta}
+        deltaLabel="7 dni"
+        unit="$"
+        precision={2}
+      />
+    </div>
+    <div class="chart-grid">
+      <TimeSeriesChart
+        title="SMSAPI – saldo punktów"
+        timestamps={smsSeries.timestamps}
+        series={[{ label: 'Punkty', values: smsSeries.values }]}
+        precision={2}
+      />
+      <TimeSeriesChart
+        title="OpenRouter – pozostałe kredyty ($)"
+        timestamps={orSeries.timestamps}
+        series={[{ label: 'Pozostało', values: orSeries.values }]}
+        unit="$"
+        precision={2}
+      />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  h1 {
+    font-size: 1.35rem;
+    letter-spacing: -0.01em;
+    margin: 28px 0 16px;
+  }
+  .domain-grid {
+    display: grid;
+    gap: 16px;
+  }
+  .badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  .chart-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 16px;
+  }
+</style>

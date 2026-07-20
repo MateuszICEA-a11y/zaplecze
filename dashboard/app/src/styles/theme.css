@@ -1,0 +1,105 @@
+/* ============================================================
+   Dashboard zaplecza – tokeny skopiowane z
+   portals/widocznosc.ai/src/styles/Theme.css (surface ladder,
+   ink, accent). Kopia zamiast importu cross-package: osobny
+   deploy CF Pages. Dark = default, light przez [data-theme].
+   ============================================================ */
+
+:root {
+  /* Surface ladder */
+  --bg-canvas: #08090c;
+  --bg-surface-1: #11141a;
+  --bg-surface-2: #1a2029;
+  --bg-surface-3: #242b36;
+
+  /* Hairlines */
+  --hairline: rgba(255, 255, 255, 0.08);
+  --hairline-soft: rgba(255, 255, 255, 0.04);
+
+  /* Ink */
+  --ink: #ffffff;
+  --ink-muted: #a6abb5;
+  --ink-faint: #788294;
+
+  /* Accent */
+  --accent-blue: #0a9cff;
+  --accent-blue-soft: rgba(10, 156, 255, 0.16);
+
+  /* Statusy źródeł */
+  --status-ok: #1aaa55;
+  --status-warn-fg: #fbbf24;
+  --status-warn-bg: rgba(251, 191, 36, 0.12);
+  --status-err-fg: #fca5a5;
+  --status-err-bg: rgba(239, 68, 68, 0.14);
+
+  /* Paleta serii wykresów – zwalidowana (dataviz) na dark #08090c i light #f2f5f9:
+     lightness band, chroma, kontrast PASS; CVD 7.5 w paśmie 6–8 → wtórne kodowanie
+     przez dash pattern serii + stałą legendę. */
+  --series-1: #2b8fd0;
+  --series-2: #c07518;
+  --series-3: #1f9c58;
+
+  --shadow-card: 0 30px 60px -25px rgba(0, 0, 0, 0.55);
+  --container: 1180px;
+  --gutter: 24px;
+}
+
+:root[data-theme='light'] {
+  --bg-canvas: #f2f5f9;
+  --bg-surface-1: #e8eef5;
+  --bg-surface-2: #dce5ef;
+  --bg-surface-3: #ccd8e6;
+
+  --hairline: rgba(15, 23, 42, 0.15);
+  --hairline-soft: rgba(15, 23, 42, 0.09);
+
+  --ink: #111827;
+  --ink-muted: #526176;
+  --ink-faint: #758195;
+
+  --accent-blue: #0068cc;
+  --accent-blue-soft: rgba(0, 104, 204, 0.14);
+
+  --status-ok: #15803d;
+  --status-warn-fg: #b45309;
+  --status-warn-bg: rgba(180, 83, 9, 0.1);
+  --status-err-fg: #b91c1c;
+  --status-err-bg: rgba(185, 28, 28, 0.1);
+
+  --shadow-card: 0 20px 40px -20px rgba(15, 23, 42, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg-canvas);
+  color: var(--ink);
+  font-family:
+    'Inter Variable',
+    system-ui,
+    -apple-system,
+    sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--accent-blue);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}

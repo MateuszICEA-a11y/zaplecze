@@ -8,6 +8,22 @@ importers:
 
   .: {}
 
+  dashboard/app:
+    dependencies:
+      astro:
+        specifier: ^6.1.4
+        version: 6.2.2(@types/node@24.12.2)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.60.3)(yaml@2.8.4)
+      uplot:
+        specifier: ^1.6.32
+        version: 1.6.32
+      yaml:
+        specifier: ^2.6.0
+        version: 2.8.4
+    devDependencies:
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   portals/widocznosc.ai:
     dependencies:
       '@astrojs/sitemap':
@@ -2405,6 +2421,9 @@ packages:
         optional: true
       uploadthing:
         optional: true
+
+  uplot@1.6.32:
+    resolution: {integrity: sha512-KIMVnG68zvu5XXUbC4LQEPnhwOxBuLyW1AHtpm6IKTXImkbLgkMy+jabjLgSLMasNuGGzQm/ep3tOkyTxpiQIw==}
 
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
@@ -5200,6 +5219,8 @@ snapshots:
       node-fetch-native: 1.6.7
       ofetch: 1.5.1
       ufo: 1.6.4
+
+  uplot@1.6.32: {}
 
   uri-js@4.4.1:
     dependencies:

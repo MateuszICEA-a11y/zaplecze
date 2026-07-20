@@ -1,0 +1,87 @@
+---
+import SourceStatus from './SourceStatus.astro';
+import type { Snapshot } from '../lib/data';
+import { loadSnapshots, latestWithDelta } from '../lib/data';
+
+interface Props {
+  id: string;
+  name: string;
+  latest: Snapshot | null;
+}
+const { id, name, latest } = Astro.props;
+
+const snapshots = loadSnapshots(id);
+const top10 = latestWithDelta(snapshots, 'senuto', 'top10');
+const refDomains = latestWithDelta(snapshots, 'backlinks', 'referring_domains');
+const fmt = (v: number | null) => (v === null ? '–' : v.toLocaleString('pl-PL'));
+---
+
+<a class="domain-card" href={`/${id}/`}>
+  <h2>{name}</h2>
+  <div class="mini-stats">
+    <div>
+      <span class="mini-label">TOP 10</span>
+      <span class="mini-value">{fmt(top10.value)}</span>
+    </div>
+    <div>
+      <span class="mini-label">Domeny linkujące</span>
+      <span class="mini-value">{fmt(refDomains.value)}</span>
+    </div>
+    <div>
+      <span class="mini-label">Ostatni pomiar</span>
+      <span class="mini-value">{latest?.date ?? '–'}</span>
+    </div>
+  </div>
+  <div class="badges">
+    {
+      Object.entries(latest?.sources ?? {}).map(([source, result]) => (
+        <SourceStatus name={source} result={result} />
+      ))
+    }
+  </div>
+</a>
+
+<style>
+  .domain-card {
+    display: block;
+    background: var(--bg-surface-1);
+    border: 1px solid var(--hairline);
+    border-radius: 14px;
+    padding: 20px 22px;
+    color: var(--ink);
+    box-shadow: var(--shadow-card);
+    transition: border-color 0.15s ease;
+  }
+  .domain-card:hover {
+    border-color: var(--accent-blue);
+    text-decoration: none;
+  }
+  h2 {
+    margin: 0 0 14px;
+    font-size: 1.2rem;
+    letter-spacing: -0.01em;
+  }
+  .mini-stats {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  .mini-label {
+    display: block;
+    color: var(--ink-faint);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  .mini-value {
+    font-size: 1.15rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+  .badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+</style>

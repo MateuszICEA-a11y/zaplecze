@@ -1,0 +1,24 @@
+{
+  "name": "dashboard",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Dashboard analityczny zaplecza – SEO/linki/kredyty per domena",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^6.1.4",
+    "uplot": "^1.6.32",
+    "yaml": "^2.6.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

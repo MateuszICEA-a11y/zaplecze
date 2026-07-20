@@ -1,0 +1,5 @@
+# Cloudflare Pages – projekt "zaplecze-dashboard" (git integration, root dir: dashboard/app).
+# Podgląd lokalny: pnpm build && npx wrangler pages dev dist
+name = "zaplecze-dashboard"
+compatibility_date = "2026-05-06"
+pages_build_output_dir = "dist"

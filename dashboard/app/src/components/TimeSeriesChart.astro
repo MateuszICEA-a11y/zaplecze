@@ -1,0 +1,159 @@
+---
+/* Wykres serii czasowych na uPlot. Dane wstrzykiwane w build jako JSON
+   (data-chart); jeden hoisted script inicjalizuje wszystkie instancje.
+   Serie rozróżniane kolorem (--series-1..3) ORAZ wzorem kreski
+   (solid/dash/dot) – wtórne kodowanie wymagane przez paletę (CVD ΔE 7.5). */
+interface Series {
+  label: string;
+  values: (number | null)[];
+}
+interface Props {
+  title: string;
+  timestamps: number[];
+  series: Series[];
+  unit?: string;
+  precision?: number;
+}
+const { title, timestamps, series, unit = '', precision = 0 } = Astro.props;
+const payload = JSON.stringify({ timestamps, series, unit, precision });
+const hasData = timestamps.length > 0 && series.some((s) => s.values.some((v) => v !== null));
+---
+
+<figure class="chart-card">
+  <figcaption>{title}</figcaption>
+  {
+    hasData ? (
+      <div class="ts-chart" data-chart={payload} />
+    ) : (
+      <div class="chart-empty">Brak danych – poczekaj na pierwsze przebiegi collectora.</div>
+    )
+  }
+</figure>
+
+<script>
+  import uPlot from 'uplot';
+  import 'uplot/dist/uPlot.min.css';
+
+  const DASHES: (number[] | undefined)[] = [undefined, [8, 5], [2, 4]];
+
+  function cssVar(name: string): string {
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  }
+
+  function buildChart(el: HTMLElement) {
+    const cfg = JSON.parse(el.dataset.chart!) as {
+      timestamps: number[];
+      series: { label: string; values: (number | null)[] }[];
+      unit: string;
+      precision: number;
+    };
+    const fmt = (v: number | null) =>
+      v == null
+        ? '–'
+        : v.toLocaleString('pl-PL', { maximumFractionDigits: cfg.precision }) +
+          (cfg.unit ? ` ${cfg.unit}` : '');
+
+    let plot: uPlot | null = null;
+
+    const render = () => {
+      plot?.destroy();
+      const ink = cssVar('--ink-muted');
+      const grid = cssVar('--hairline-soft');
+      const colors = [cssVar('--series-1'), cssVar('--series-2'), cssVar('--series-3')];
+      const axis = {
+        stroke: ink,
+        grid: { stroke: grid, width: 1 },
+        ticks: { stroke: grid, width: 1 },
+        font: '12px Inter, system-ui, sans-serif',
+      };
+      // Mało próbek (start zbierania) = linia niewidoczna – wtedy rysuj punkty
+      // i zepnij oś X wokół danych zamiast auto-zakresu na lata.
+      const sparse = cfg.timestamps.length < 15;
+      const scales = sparse
+        ? {
+            x: {
+              time: true,
+              range: [
+                cfg.timestamps[0]! - 3 * 86400,
+                cfg.timestamps[cfg.timestamps.length - 1]! + 3 * 86400,
+              ] as [number, number],
+            },
+          }
+        : undefined;
+      plot = new uPlot(
+        {
+          width: el.clientWidth,
+          height: 260,
+          padding: [12, 8, 0, 0],
+          cursor: { points: { size: 7 } },
+          scales,
+          series: [
+            {
+              label: 'Data',
+              value: (_u: uPlot, ts: number | null) =>
+                ts == null ? '–' : new Date(ts * 1000).toLocaleDateString('pl-PL'),
+            },
+            ...cfg.series.map((s, i) => ({
+              label: s.label,
+              stroke: colors[i % colors.length],
+              width: 2,
+              dash: DASHES[i % DASHES.length],
+              points: { show: sparse, size: 8 },
+              value: (_u: uPlot, v: number | null) => fmt(v),
+              spanGaps: true,
+            })),
+          ],
+          axes: [axis, { ...axis, size: 56, values: (_u: uPlot, ticks: number[]) =>
+            ticks.map((t) => t.toLocaleString('pl-PL', { maximumFractionDigits: cfg.precision })) }],
+        },
+        [cfg.timestamps, ...cfg.series.map((s) => s.values)] as uPlot.AlignedData,
+        el,
+      );
+    };
+
+    render();
+    new ResizeObserver(() => plot && plot.setSize({ width: el.clientWidth, height: 260 })).observe(
+      el,
+    );
+    window.addEventListener('themechange', render);
+  }
+
+  document.querySelectorAll<HTMLElement>('.ts-chart').forEach(buildChart);
+</script>
+
+<style>
+  .chart-card {
+    background: var(--bg-surface-1);
+    border: 1px solid var(--hairline);
+    border-radius: 12px;
+    padding: 16px 18px 10px;
+    margin: 0;
+    min-width: 0;
+  }
+  figcaption {
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+  .chart-empty {
+    color: var(--ink-faint);
+    font-size: 0.88rem;
+    padding: 32px 0 40px;
+    text-align: center;
+  }
+  /* Legenda uPlot w tokenach – zawsze widoczna, wartości przy hoverze */
+  .chart-card :global(.u-legend) {
+    font: 12px Inter, system-ui, sans-serif;
+    color: var(--ink-muted);
+    text-align: left;
+    padding-top: 6px;
+  }
+  .chart-card :global(.u-legend .u-value) {
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+  }
+  .chart-card :global(.u-select) {
+    background: var(--accent-blue-soft);
+  }
+</style>

@@ -1,0 +1,70 @@
+---
+interface Props {
+  label: string;
+  value: number | string | null;
+  delta?: number | null;
+  deltaLabel?: string;
+  unit?: string;
+  precision?: number;
+}
+const { label, value, delta = null, deltaLabel = '7 dni', unit = '', precision = 0 } = Astro.props;
+
+const formatted =
+  value === null
+    ? '–'
+    : typeof value === 'number'
+      ? value.toLocaleString('pl-PL', { maximumFractionDigits: precision })
+      : value;
+const deltaText =
+  delta === null
+    ? null
+    : `${delta > 0 ? '+' : ''}${delta.toLocaleString('pl-PL', { maximumFractionDigits: precision })}`;
+const deltaDir = delta === null ? 'flat' : delta > 0 ? 'up' : delta < 0 ? 'down' : 'flat';
+---
+
+<div class="stat-card">
+  <div class="stat-label">{label}</div>
+  <div class="stat-value">{formatted}{value !== null && unit ? ` ${unit}` : ''}</div>
+  {
+    deltaText !== null && (
+      <div class={`stat-delta ${deltaDir}`}>
+        {deltaDir === 'up' ? '▲' : deltaDir === 'down' ? '▼' : '•'} {deltaText} · {deltaLabel}
+      </div>
+    )
+  }
+</div>
+
+<style>
+  .stat-card {
+    background: var(--bg-surface-1);
+    border: 1px solid var(--hairline);
+    border-radius: 12px;
+    padding: 16px 18px;
+    min-width: 0;
+  }
+  .stat-label {
+    color: var(--ink-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 6px;
+  }
+  .stat-value {
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+  .stat-delta {
+    margin-top: 4px;
+    font-size: 0.82rem;
+    color: var(--ink-faint);
+    font-variant-numeric: tabular-nums;
+  }
+  .stat-delta.up {
+    color: var(--status-ok);
+  }
+  .stat-delta.down {
+    color: var(--status-err-fg);
+  }
+</style>

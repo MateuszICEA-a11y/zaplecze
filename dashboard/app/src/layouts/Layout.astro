@@ -1,0 +1,106 @@
+---
+import '../styles/theme.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = 'Dashboard analityczny zaplecza SEO' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <meta name="description" content={description} />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>"
+    />
+    <title>{title}</title>
+    <script is:inline>
+      // Motyw przed renderem – zero FOUC. Dark = default (jak widocznosc.ai).
+      const saved = localStorage.getItem('dash-theme');
+      if (saved === 'light') document.documentElement.dataset.theme = 'light';
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-row">
+        <a href="/" class="brand">zaplecze<span>/dashboard</span></a>
+        <button id="theme-toggle" type="button" aria-label="Przełącz motyw">◐</button>
+      </div>
+    </header>
+    <main class="container">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        Dane odświeżane raz dziennie przez GitHub Actions · <a
+          href="https://github.com/MateuszICEA-a11y/zaplecze">repo</a
+        >
+      </div>
+    </footer>
+    <script>
+      document.getElementById('theme-toggle')?.addEventListener('click', () => {
+        const root = document.documentElement;
+        const next = root.dataset.theme === 'light' ? 'dark' : 'light';
+        if (next === 'light') root.dataset.theme = 'light';
+        else delete root.dataset.theme;
+        localStorage.setItem('dash-theme', next);
+        // Wykresy przerysowują się na ten sygnał (kolory czytane z CSS vars).
+        window.dispatchEvent(new CustomEvent('themechange'));
+      });
+    </script>
+    <style>
+      .site-header {
+        border-bottom: 1px solid var(--hairline);
+        background: var(--bg-surface-1);
+      }
+      .header-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 14px;
+        padding-bottom: 14px;
+      }
+      .brand {
+        font-weight: 700;
+        font-size: 1.05rem;
+        color: var(--ink);
+        letter-spacing: -0.01em;
+      }
+      .brand span {
+        color: var(--accent-blue);
+      }
+      .brand:hover {
+        text-decoration: none;
+      }
+      #theme-toggle {
+        background: none;
+        border: 1px solid var(--hairline);
+        border-radius: 8px;
+        color: var(--ink-muted);
+        font-size: 1rem;
+        padding: 4px 10px;
+        cursor: pointer;
+      }
+      #theme-toggle:hover {
+        color: var(--ink);
+        border-color: var(--ink-faint);
+      }
+      main {
+        padding-top: 32px;
+        padding-bottom: 64px;
+      }
+      .site-footer {
+        border-top: 1px solid var(--hairline);
+        color: var(--ink-faint);
+        font-size: 0.85rem;
+        padding: 20px 0;
+      }
+    </style>
+  </body>
+</html>
