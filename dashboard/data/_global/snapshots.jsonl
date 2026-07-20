@@ -1,1 +1,1 @@
-{"date": "2026-07-20", "collected_at": "2026-07-20T15:50:01Z", "sources": {"smsapi": {"status": "ok", "data": {"points": 55.44, "sms_cost": 0.17, "sms_remaining": 326}}, "openrouter": {"status": "not_configured", "error": "openrouter: brak OPENROUTER_API_KEY w env"}}}
+{"date": "2026-07-20", "collected_at": "2026-07-20T16:07:05Z", "sources": {"smsapi": {"status": "ok", "data": {"points": 55.44, "sms_cost": 0.17, "sms_remaining": 326}}, "openrouter": {"status": "not_configured", "error": "openrouter: brak OPENROUTER_API_KEY w env"}}}
