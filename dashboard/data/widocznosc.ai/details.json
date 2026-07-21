@@ -1,6 +1,6 @@
 {
  "date": "2026-07-21",
- "collected_at": "2026-07-21T11:30:49Z",
+ "collected_at": "2026-07-21T11:46:39Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -3895,7 +3895,8 @@
      "first_seen": "2026-06-07"
     }
    ],
-   "ref_domains_source": "ahrefs"
+   "ref_domains_source": "ahrefs",
+   "anchors": []
   },
   "clarity": {
    "dead_clicks": "0",
@@ -4035,6 +4036,67 @@
   "bing": {
    "traffic": [],
    "queries": []
+  },
+  "ga4": {
+   "channels": [
+    {
+     "channel": "Unassigned",
+     "sessions": 3,
+     "users": 2,
+     "pageviews": 1
+    },
+    {
+     "channel": "Organic Search",
+     "sessions": 2,
+     "users": 1,
+     "pageviews": 2
+    },
+    {
+     "channel": "Direct",
+     "sessions": 1,
+     "users": 0,
+     "pageviews": 0
+    }
+   ],
+   "sources": [
+    {
+     "source": "(not set)",
+     "sessions": 3,
+     "users": 2
+    },
+    {
+     "source": "google",
+     "sessions": 2,
+     "users": 1
+    },
+    {
+     "source": "(direct)",
+     "sessions": 1,
+     "users": 0
+    }
+   ],
+   "pages": [
+    {
+     "path": "/geo/microsoft-clarity-topic-insights/",
+     "pageviews": 2,
+     "users": 1
+    },
+    {
+     "path": "/geo/llms-txt/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/geo/co-google-przemilcza/",
+     "pageviews": 0,
+     "users": 1
+    },
+    {
+     "path": "/geo/jak-llm-cytuja-zrodla/",
+     "pageviews": 0,
+     "users": 1
+    }
+   ]
   }
  }
 }
