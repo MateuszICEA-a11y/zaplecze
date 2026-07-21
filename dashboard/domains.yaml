@@ -29,4 +29,4 @@ global:
   openrouter:
     enabled: true
 
-# run: weryfikacja sekretów LEADS_EXPORT_TOKEN + CLARITY_API_TOKEN 2026-07-21
+# run: re-test LEADS_EXPORT_TOKEN po poprawce w GH Secrets 2026-07-21
