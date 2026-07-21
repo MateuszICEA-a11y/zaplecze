@@ -12,6 +12,7 @@ from ._http import classify_http_error, request_json
 ENDPOINT = "https://api.senuto.com/api/visibility_analysis/reports/dashboard/getDomainStatistics"
 POSITIONS_ENDPOINT = "https://api.senuto.com/api/visibility_analysis/reports/positions/getData"
 KEYWORDS_LIMIT = 200  # ile fraz trzymamy w details.json
+URLS_LIMIT = 1000  # agregacja per URL (Matrix) – górna granica wpisów
 # API nie wspiera sortowania ani filtrów (sonda 2026-07-21: order/sort/filter
 # ignorowane, limit ucinany do 100/stronę) – żeby tabela pokazywała realne
 # najlepsze pozycje, trzeba przewertować wszystkie strony i posortować lokalnie.
@@ -68,7 +69,31 @@ def _fetch_keywords(cfg: dict, token: str) -> list[dict]:
     # Najpierw najlepsze pozycje, w ramach pozycji – większy wolumen.
     rows.sort(key=lambda r: (r["position"] if isinstance(r["position"], int) else 999,
                              -(r["searches"] or 0)))
-    return rows[:KEYWORDS_LIMIT]
+    return rows
+
+
+def _aggregate_urls(rows: list[dict]) -> list[dict]:
+    """Frazy → agregacja per URL (panel Matrix: pozycje z Senuto per adres).
+
+    rows są posortowane po pozycji, więc pierwsza fraza danego URL-a jest
+    jego najlepszą (best_position/best_keyword).
+    """
+    by_url: dict[str, dict] = {}
+    for row in rows:
+        url = row.get("url")
+        pos = row.get("position")
+        if not url or not isinstance(pos, int):
+            continue
+        agg = by_url.setdefault(url, {
+            "url": url, "keywords": 0, "top3": 0, "top10": 0, "top50": 0,
+            "best_position": pos, "best_keyword": row.get("keyword"),
+        })
+        agg["keywords"] += 1
+        agg["top3"] += 1 if pos <= 3 else 0
+        agg["top10"] += 1 if pos <= 10 else 0
+        agg["top50"] += 1 if pos <= 50 else 0
+    result = sorted(by_url.values(), key=lambda u: (-u["top10"], -u["keywords"]))
+    return result[:URLS_LIMIT]
 
 
 def fetch(cfg: dict, env: dict) -> dict:
@@ -117,5 +142,9 @@ def fetch(cfg: dict, env: dict) -> dict:
         keywords = _fetch_keywords(cfg, token)
     except Exception:  # noqa: BLE001 – lista fraz jest dodatkiem, nie wywala podsumowania
         keywords = []
+    # Agregacja per URL z PEŁNEJ listy fraz (przed ucięciem do KEYWORDS_LIMIT),
+    # żeby pozycje w Matrix pokrywały cały serwis, nie tylko top frazy.
+    urls = _aggregate_urls(keywords)
 
-    return {"summary": summary, "details": {"keywords": keywords}}
+    return {"summary": summary,
+            "details": {"keywords": keywords[:KEYWORDS_LIMIT], "urls": urls}}

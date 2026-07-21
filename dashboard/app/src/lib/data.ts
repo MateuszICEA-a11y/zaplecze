@@ -194,7 +194,19 @@ export interface GscCompare {
 export interface DomainDetails {
   date?: string;
   sources: {
-    senuto?: { keywords: SenutoKeyword[] };
+    senuto?: {
+      keywords: SenutoKeyword[];
+      /** Agregacja fraz per URL (panel Matrix): pozycje z Senuto per adres. */
+      urls?: {
+        url: string;
+        keywords: number;
+        top3: number;
+        top10: number;
+        top50: number;
+        best_position: number;
+        best_keyword: string | null;
+      }[];
+    };
     gsc?: {
       window?: { start: string; end: string };
       queries: GscRow[];

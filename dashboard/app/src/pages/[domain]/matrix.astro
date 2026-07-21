@@ -44,10 +44,53 @@ for (const r of details.sources.ga4?.landing_pages?.rows ?? []) {
 }
 const stripOrigin = (url: string) => url.replace(/^https?:\/\/[^/]+/, '') || '/';
 
+// Senuto: pozycje per URL (agregacja fraz z kolektora). Adresy Senuto są bez
+// schematu i www („grupa-icea.pl/blog/x") – join po samej ścieżce.
+const senutoByPath = new Map(
+  (details.sources.senuto?.urls ?? []).map((u) => [
+    normPath(u.url.replace(/^(https?:\/\/)?(www\.)?[^/]+/, '') || '/'),
+    u,
+  ]),
+);
+
 const joined = rows.map((r) => {
-  const ga4Row = ga4Landing.get(normPath(stripOrigin(r.url)));
-  return { ...r, ga4_sessions: ga4Row?.sessions ?? null, engagement_rate: ga4Row?.engagement_rate ?? null };
+  const path = normPath(stripOrigin(r.url));
+  const ga4Row = ga4Landing.get(path);
+  const sen = senutoByPath.get(path);
+  return {
+    ...r,
+    ga4_sessions: ga4Row?.sessions ?? null,
+    engagement_rate: ga4Row?.engagement_rate ?? null,
+    senuto_position: sen?.best_position ?? null,
+    senuto_keyword: sen?.best_keyword ?? null,
+    senuto_keywords: sen?.keywords ?? null,
+    senuto_top10: sen?.top10 ?? null,
+  };
 });
+
+// Priorytety optymalizacji: strony tracące kliknięcia wg porównań GSC
+// (3 mies. vs poprzednie 3 mies. i vs rok temu), największe straty najpierw.
+const compare = details.sources.gsc?.compare;
+const declining = (mode: 'qoq' | 'yoy') =>
+  (compare?.[mode]?.pages ?? [])
+    .map((p) => ({
+      ...p,
+      clicks_delta: p.clicks - p.prev_clicks,
+      impressions_delta: p.impressions - p.prev_impressions,
+      position_delta:
+        typeof p.position === 'number' && typeof p.prev_position === 'number'
+          ? Math.round((p.position - p.prev_position) * 10) / 10
+          : null,
+      engagement_rate: ga4Landing.get(normPath(stripOrigin(p.key)))?.engagement_rate ?? null,
+    }))
+    .filter((p) => p.clicks_delta < 0 || (p.position_delta ?? 0) > 1)
+    .sort((a, b) => a.clicks_delta - b.clicks_delta || (b.position_delta ?? 0) - (a.position_delta ?? 0))
+    .slice(0, 50);
+const priorities = { qoq: declining('qoq'), yoy: declining('yoy') };
+const prioLabel = {
+  qoq: compare?.qoq ? `${compare.cur.start} → ${compare.cur.end} vs ${compare.qoq.prev.start} → ${compare.qoq.prev.end}` : '',
+  yoy: compare?.yoy ? `${compare.cur.start} → ${compare.cur.end} vs ${compare.yoy.prev.start} → ${compare.yoy.prev.end}` : '',
+};
 
 const indexed = indexing?.data?.indexed ?? joined.filter((r) => r.indexed).length;
 const checked = indexing?.data?.pages_checked ?? joined.length;
@@ -72,7 +115,8 @@ const engClass = (rate: number | null) =>
   <div class="section-head">
     <h2>Kondycja stron z sitemapy</h2>
     <span class="section-meta">
-      {window ? `metryki GSC: okno ${window.start} → ${window.end} · ` : ''}
+      pozycja: Senuto ·
+      {window ? ` wyświetlenia/kliknięcia: GSC ${window.start} → ${window.end} · ` : ' '}
       indeksacja: GSC URL Inspection · sesje i zaangażowanie: GA4 (28 dni)
     </span>
   </div>
@@ -94,7 +138,7 @@ const engClass = (rate: number | null) =>
         <tr>
           <th>Strona</th>
           <th>Indeks</th>
-          <th class="num">Pozycja</th>
+          <th class="num" title="Najlepsza pozycja frazy rankującej na ten adres (Senuto)">Pozycja (Senuto)</th>
           <th class="num">Wyświetlenia</th>
           <th class="num">Kliknięcia</th>
           <th class="num">CTR</th>
@@ -118,7 +162,16 @@ const engClass = (rate: number | null) =>
                 </span>
               </td>
               <td class="num">
-                <span class={`pos-badge ${posClass(r.position)}`}>{fmtNum(r.position, 1)}</span>
+                <span
+                  class={`pos-badge ${posClass(r.senuto_position)}`}
+                  title={
+                    r.senuto_keyword
+                      ? `„${r.senuto_keyword}" · fraz: ${r.senuto_keywords}, w TOP10: ${r.senuto_top10}`
+                      : undefined
+                  }
+                >
+                  {fmtNum(r.senuto_position, 0)}
+                </span>
               </td>
               <td class="num">
                 <span class="cell-bar">
@@ -141,4 +194,96 @@ const engClass = (rate: number | null) =>
       </tbody>
     </table>
   </TableCard>
+
+  {
+    (priorities.qoq.length > 0 || priorities.yoy.length > 0) && (
+      <>
+        <div class="section-head" style="margin-bottom:6px;">
+          <h2>Priorytety optymalizacji – co spada</h2>
+          <div class="seg" data-prio-seg>
+            <button type="button" class="active" data-mode="qoq">
+              kw/kw (3 mies.)
+            </button>
+            <button type="button" data-mode="yoy">
+              r/r
+            </button>
+          </div>
+        </div>
+        {(['qoq', 'yoy'] as const).map((mode) => (
+          <div data-prio-view={mode} hidden={mode !== 'qoq'}>
+            <TableCard
+              title="Strony tracące ruch"
+              meta={`GSC: ${prioLabel[mode]} · engagement: GA4 (28 dni)`}
+              count={priorities[mode].length}
+              filter
+              empty="Brak spadków w tym porównaniu."
+            >
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Strona</th>
+                    <th class="num">Kliknięcia</th>
+                    <th class="num">Δ kliknięć</th>
+                    <th class="num">Wyświetlenia</th>
+                    <th class="num">Δ wyświetleń</th>
+                    <th class="num">Pozycja (GSC)</th>
+                    <th class="num">Δ pozycji</th>
+                    <th class="num">Engagement</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {priorities[mode].map((p) => (
+                    <tr>
+                      <td class="grow">
+                        <a class="cell-url" href={p.key} rel="noopener" target="_blank">
+                          {stripOrigin(p.key)}
+                        </a>
+                      </td>
+                      <td class="num">{fmtInt(p.clicks)}</td>
+                      <td class="num">
+                        <span class={p.clicks_delta < 0 ? 'drop-delta down' : 'drop-delta up'}>
+                          {p.clicks_delta > 0 ? '+' : ''}
+                          {fmtInt(p.clicks_delta)}
+                        </span>
+                      </td>
+                      <td class="num">{fmtInt(p.impressions)}</td>
+                      <td class="num">
+                        <span class={p.impressions_delta < 0 ? 'drop-delta down' : 'drop-delta up'}>
+                          {p.impressions_delta > 0 ? '+' : ''}
+                          {fmtInt(p.impressions_delta)}
+                        </span>
+                      </td>
+                      <td class="num">
+                        <span class={`pos-badge ${posClass(p.position)}`}>{fmtNum(p.position, 1)}</span>
+                      </td>
+                      <td class="num">
+                        <span class={(p.position_delta ?? 0) > 0 ? 'drop-delta down' : 'drop-delta up'}>
+                          {p.position_delta === null ? '–' : (p.position_delta > 0 ? '+' : '') + fmtNum(p.position_delta, 1)}
+                        </span>
+                      </td>
+                      <td class="num">
+                        <span class={`pos-badge ${engClass(p.engagement_rate)}`}>{fmtPct(p.engagement_rate)}</span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </TableCard>
+          </div>
+        ))}
+        <script>
+          document.querySelector('[data-prio-seg]')?.addEventListener('click', (e) => {
+            const btn = (e.target as HTMLElement).closest('button[data-mode]') as HTMLButtonElement | null;
+            if (!btn) return;
+            document
+              .querySelectorAll('[data-prio-seg] button')
+              .forEach((b) => b.classList.toggle('active', b === btn));
+            document.querySelectorAll<HTMLElement>('[data-prio-view]').forEach((view) => {
+              view.hidden = view.dataset.prioView !== btn.dataset.mode;
+            });
+          });
+        </script>
+      </>
+    )
+  }
 </Layout>
