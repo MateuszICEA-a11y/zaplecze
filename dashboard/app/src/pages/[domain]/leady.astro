@@ -35,7 +35,7 @@ const isRecent = (r: LeadRecord) => new Date(r.ts).getTime() >= weekAgo;
 const SOURCE_LABELS: Record<string, string> = {
   kontakt: 'Formularz kontaktowy',
   'raport-narzedzia': 'Raport narzędzia',
-  'sms-code': 'SMS (niedokończony)',
+  'sms-code': 'SMS – kod wysłany',
   fanout: 'Fan-out',
   'brand-check': 'Brand check',
   'url-check': 'Ocena URL',
