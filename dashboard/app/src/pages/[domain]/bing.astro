@@ -1,0 +1,121 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DomainHeader from '../../components/DomainHeader.astro';
+import StatCard from '../../components/StatCard.astro';
+import TableCard from '../../components/TableCard.astro';
+import TimeSeriesChart from '../../components/TimeSeriesChart.astro';
+import {
+  loadConfig,
+  loadSnapshots,
+  loadDetails,
+  latestSnapshot,
+  latestWithDelta,
+  metricSeries,
+  sectionEnabled,
+} from '../../lib/data';
+import { fmtInt, fmtNum, posClass, barWidth } from '../../lib/format';
+
+export function getStaticPaths() {
+  return loadConfig()
+    .domains.filter((d) => sectionEnabled(d, 'bing'))
+    .map((d) => ({ params: { domain: d.id }, props: { name: d.name } }));
+}
+
+const { domain } = Astro.params;
+const { name } = Astro.props;
+
+const snapshots = loadSnapshots(domain!);
+const latest = latestSnapshot(domain!);
+const details = loadDetails(domain!);
+const bing = latest?.sources.bing;
+const traffic = details.sources.bing?.traffic ?? [];
+const queries = details.sources.bing?.queries ?? [];
+
+const clicks = metricSeries(snapshots, 'bing', 'clicks');
+const impressions = metricSeries(snapshots, 'bing', 'impressions');
+const statClicks = latestWithDelta(snapshots, 'bing', 'clicks');
+const statImpressions = latestWithDelta(snapshots, 'bing', 'impressions');
+const statQueries = latestWithDelta(snapshots, 'bing', 'queries');
+const dataDate = bing?.data?.data_date ?? null;
+
+// Historia z details (BWT oddaje ~ostatnie tygodnie) – bogatsza niż snapshoty
+// na starcie; gdy snapshotów przybędzie, oba wykresy się zejdą.
+const histTs = traffic.map((t) => Math.floor(new Date(t.date).getTime() / 1000));
+const histClicks = traffic.map((t) => t.clicks);
+const histImpressions = traffic.map((t) => t.impressions);
+
+const maxQueryImpr = Math.max(...queries.map((q) => q.impressions), 0);
+---
+
+<Layout title={`${name} – Bing Webmaster Tools`}>
+  <DomainHeader domain={domain!} name={name} active="bing" latest={latest} />
+
+  {
+    bing && bing.status !== 'ok' && (
+      <div class={`banner ${bing.status === 'error' ? 'err' : 'warn'}`}>
+        <strong>Bing</strong>: {bing.error ?? 'błąd źródła'}
+      </div>
+    )
+  }
+
+  <div class="section-head">
+    <h2>Ruch z Binga</h2>
+    {dataDate && <span class="section-meta">ostatni pełny dzień: {dataDate}</span>}
+  </div>
+  <div class="stat-grid">
+    <StatCard label="Kliknięcia / dzień" value={statClicks.value} delta={statClicks.delta} trend={clicks.values} />
+    <StatCard label="Wyświetlenia / dzień" value={statImpressions.value} delta={statImpressions.delta} trend={impressions.values} />
+    <StatCard label="Frazy w Bing" value={statQueries.value} delta={statQueries.delta} />
+  </div>
+
+  <div class="chart-grid">
+    <TimeSeriesChart
+      title="Kliknięcia i wyświetlenia"
+      meta="dziennie (historia BWT)"
+      timestamps={histTs}
+      series={[
+        { label: 'Kliknięcia', values: histClicks },
+        { label: 'Wyświetlenia', values: histImpressions, fill: true },
+      ]}
+    />
+  </div>
+
+  <TableCard
+    title="Frazy w Bing"
+    count={queries.length}
+    filter
+    empty="Dane pojawią się po najbliższym przebiegu collectora (wymaga BING_WEBMASTER_API_KEY i zweryfikowanej witryny w BWT)."
+  >
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Fraza</th>
+          <th class="num">Kliknięcia</th>
+          <th class="num">Wyświetlenia</th>
+          <th class="num">Śr. pozycja klikn.</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          queries.map((q) => (
+            <tr>
+              <td class="grow">{q.query}</td>
+              <td class="num">{fmtInt(q.clicks)}</td>
+              <td class="num">
+                <span class="cell-bar">
+                  {fmtInt(q.impressions)}
+                  <span class="bar">
+                    <i style={`width:${barWidth(q.impressions, maxQueryImpr)}%`} />
+                  </span>
+                </span>
+              </td>
+              <td class="num">
+                <span class={`pos-badge ${posClass(q.position)}`}>{fmtNum(q.position, 1)}</span>
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </TableCard>
+</Layout>

@@ -1,0 +1,173 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DomainHeader from '../../components/DomainHeader.astro';
+import StatCard from '../../components/StatCard.astro';
+import TableCard from '../../components/TableCard.astro';
+import TimeSeriesChart from '../../components/TimeSeriesChart.astro';
+import {
+  loadConfig,
+  loadSnapshots,
+  loadDetails,
+  latestSnapshot,
+  latestWithDelta,
+  metricSeries,
+  sectionEnabled,
+} from '../../lib/data';
+import { fmtInt, barWidth } from '../../lib/format';
+
+export function getStaticPaths() {
+  return loadConfig()
+    .domains.filter((d) => sectionEnabled(d, 'ga4'))
+    .map((d) => ({ params: { domain: d.id }, props: { name: d.name } }));
+}
+
+const { domain } = Astro.params;
+const { name } = Astro.props;
+
+const snapshots = loadSnapshots(domain!);
+const latest = latestSnapshot(domain!);
+const details = loadDetails(domain!);
+const ga4 = latest?.sources.ga4;
+const channels = details.sources.ga4?.channels ?? [];
+const trafficSources = details.sources.ga4?.sources ?? [];
+const pages = details.sources.ga4?.pages ?? [];
+
+const sessions = metricSeries(snapshots, 'ga4', 'sessions');
+const organic = metricSeries(snapshots, 'ga4', 'organic_sessions');
+const statSessions = latestWithDelta(snapshots, 'ga4', 'sessions');
+const statUsers = latestWithDelta(snapshots, 'ga4', 'active_users');
+const statPageviews = latestWithDelta(snapshots, 'ga4', 'pageviews');
+const statOrganic = latestWithDelta(snapshots, 'ga4', 'organic_sessions');
+const dataDate = ga4?.data?.data_date ?? null;
+
+const maxChannel = Math.max(...channels.map((c) => c.sessions), 0);
+const maxSource = Math.max(...trafficSources.map((s) => s.sessions), 0);
+const maxPage = Math.max(...pages.map((p) => p.pageviews), 0);
+---
+
+<Layout title={`${name} – GA4`}>
+  <DomainHeader domain={domain!} name={name} active="ga4" latest={latest} />
+
+  {
+    ga4 && ga4.status !== 'ok' && (
+      <div class={`banner ${ga4.status === 'error' ? 'err' : 'warn'}`}>
+        <strong>GA4</strong>: {ga4.error ?? 'błąd źródła'}
+      </div>
+    )
+  }
+
+  <div class="section-head">
+    <h2>Ruch w witrynie</h2>
+    {dataDate && <span class="section-meta">pełna doba {dataDate}</span>}
+  </div>
+  <div class="stat-grid">
+    <StatCard label="Sesje / dzień" value={statSessions.value} delta={statSessions.delta} trend={sessions.values} />
+    <StatCard label="Aktywni użytkownicy" value={statUsers.value} delta={statUsers.delta} />
+    <StatCard label="Odsłony" value={statPageviews.value} delta={statPageviews.delta} />
+    <StatCard label="Sesje organiczne" value={statOrganic.value} delta={statOrganic.delta} trend={organic.values} />
+  </div>
+
+  <div class="chart-grid">
+    <TimeSeriesChart
+      title="Sesje i sesje organiczne"
+      meta="dziennie"
+      timestamps={sessions.timestamps}
+      series={[
+        { label: 'Sesje', values: sessions.values, fill: true },
+        { label: 'Organiczne', values: organic.values },
+      ]}
+    />
+  </div>
+
+  <TableCard title="Kanały" count={channels.length} empty="Dane pojawią się po najbliższym przebiegu collectora (wymaga property_id + dostępu service accounta).">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Kanał</th>
+          <th class="num">Sesje</th>
+          <th class="num">Użytkownicy</th>
+          <th class="num">Odsłony</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          channels.map((c) => (
+            <tr>
+              <td class="grow">{c.channel}</td>
+              <td class="num">
+                <span class="cell-bar">
+                  {fmtInt(c.sessions)}
+                  <span class="bar">
+                    <i style={`width:${barWidth(c.sessions, maxChannel)}%`} />
+                  </span>
+                </span>
+              </td>
+              <td class="num">{fmtInt(c.users)}</td>
+              <td class="num">{fmtInt(c.pageviews)}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </TableCard>
+
+  <TableCard title="Źródła sesji" count={trafficSources.length} filter empty="Brak danych.">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Źródło</th>
+          <th class="num">Sesje</th>
+          <th class="num">Użytkownicy</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          trafficSources.map((s) => (
+            <tr>
+              <td class="grow">{s.source}</td>
+              <td class="num">
+                <span class="cell-bar">
+                  {fmtInt(s.sessions)}
+                  <span class="bar">
+                    <i style={`width:${barWidth(s.sessions, maxSource)}%`} />
+                  </span>
+                </span>
+              </td>
+              <td class="num">{fmtInt(s.users)}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </TableCard>
+
+  <TableCard title="Najpopularniejsze strony" count={pages.length} filter empty="Brak danych.">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Strona</th>
+          <th class="num">Odsłony</th>
+          <th class="num">Użytkownicy</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          pages.map((p) => (
+            <tr>
+              <td class="grow"><span class="cell-url">{p.path}</span></td>
+              <td class="num">
+                <span class="cell-bar">
+                  {fmtInt(p.pageviews)}
+                  <span class="bar">
+                    <i style={`width:${barWidth(p.pageviews, maxPage)}%`} />
+                  </span>
+                </span>
+              </td>
+              <td class="num">{fmtInt(p.users)}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </TableCard>
+</Layout>

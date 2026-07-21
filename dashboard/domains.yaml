@@ -9,6 +9,15 @@ domains:
     gsc:
       enabled: true
       site: "https://widocznosc.ai/" # property typu prefiks URL (nie domenowa)
+    ga4:
+      enabled: true
+      # TODO(Mateusz): wpisz property_id (GA4 → Administracja → Szczegóły usługi)
+      # i dodaj e-mail service accounta GSC jako przeglądającego w GA4.
+      property_id: ""
+    bing:
+      enabled: true
+      site: "https://widocznosc.ai/" # witryna musi być zweryfikowana w BWT
+      # wymaga sekretu BING_WEBMASTER_API_KEY (BWT → Settings → API access)
     ahrefs:
       enabled: true
       target: widocznosc.ai
@@ -35,6 +44,13 @@ domains:
       enabled: true
       # Property typu prefiks URL z www (jedyna widoczna dla service accounta,
       # siteFullUser od 2026-07-21) – sc-domain nie istnieje dla tej domeny.
+      site: "https://www.grupa-icea.pl/"
+    ga4:
+      enabled: true
+      # TODO(Mateusz): property_id GA4 dla grupa-icea.pl + dostęp dla service accounta
+      property_id: ""
+    bing:
+      enabled: true
       site: "https://www.grupa-icea.pl/"
     ahrefs:
       enabled: true

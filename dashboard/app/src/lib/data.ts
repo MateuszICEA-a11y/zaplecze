@@ -211,6 +211,15 @@ export interface DomainDetails {
       referrer?: ClarityDimensionRow[];
       device?: ClarityDimensionRow[];
     };
+    ga4?: {
+      channels: { channel: string; sessions: number; users: number; pageviews: number }[];
+      sources: { source: string; sessions: number; users: number }[];
+      pages: { path: string; pageviews: number; users: number }[];
+    };
+    bing?: {
+      traffic: { date: string; clicks: number; impressions: number }[];
+      queries: { query: string; clicks: number; impressions: number; position: number | null }[];
+    };
     cloudflare_ai?: {
       bots: { bot: string; requests: number }[];
       paths: { path: string; requests: number }[];
@@ -234,6 +243,8 @@ export const DOMAIN_SECTIONS = [
   { slug: '', label: 'Przegląd', source: null },
   { slug: 'senuto', label: 'Senuto', source: 'senuto' },
   { slug: 'gsc', label: 'GSC', source: 'gsc' },
+  { slug: 'ga4', label: 'GA4', source: 'ga4' },
+  { slug: 'bing', label: 'Bing', source: 'bing' },
   { slug: 'ahrefs', label: 'Ahrefs', source: 'ahrefs' },
   { slug: 'clarity', label: 'Clarity', source: 'clarity' },
   { slug: 'boty-ai', label: 'Boty AI', source: 'cloudflare_ai' },
