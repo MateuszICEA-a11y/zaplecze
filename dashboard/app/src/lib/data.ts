@@ -234,3 +234,18 @@ export const DOMAIN_SECTIONS = [
   { slug: 'clarity', label: 'Clarity', source: 'clarity' },
   { slug: 'leady', label: 'Leady', source: 'leads' },
 ] as const;
+
+/** Sekcje widoczne dla domeny – źródło wyłączone w domains.yaml (enabled: false)
+    znika z nawigacji, kart i buildu (np. Leady dla grupa-icea.pl). */
+export function sectionsFor(domain: DomainConfig): typeof DOMAIN_SECTIONS[number][] {
+  return DOMAIN_SECTIONS.filter((s) => {
+    if (!s.source) return true;
+    const cfg = domain[s.source] as { enabled?: boolean } | undefined;
+    return cfg?.enabled !== false;
+  });
+}
+
+export function sectionEnabled(domain: DomainConfig, source: string): boolean {
+  const cfg = domain[source] as { enabled?: boolean } | undefined;
+  return cfg?.enabled !== false;
+}

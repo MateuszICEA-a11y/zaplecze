@@ -3,11 +3,13 @@ import Layout from '../../layouts/Layout.astro';
 import DomainHeader from '../../components/DomainHeader.astro';
 import StatCard from '../../components/StatCard.astro';
 import TableCard from '../../components/TableCard.astro';
-import { loadConfig, loadSnapshots, loadDetails, latestSnapshot, type LeadRecord } from '../../lib/data';
+import { loadConfig, loadSnapshots, loadDetails, latestSnapshot, sectionEnabled, type LeadRecord } from '../../lib/data';
 import { fmtDateTime } from '../../lib/format';
 
 export function getStaticPaths() {
-  return loadConfig().domains.map((d) => ({ params: { domain: d.id }, props: { name: d.name } }));
+  return loadConfig()
+    .domains.filter((d) => sectionEnabled(d, 'leads'))
+    .map((d) => ({ params: { domain: d.id }, props: { name: d.name } }));
 }
 
 const { domain } = Astro.params;

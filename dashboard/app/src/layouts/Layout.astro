@@ -5,7 +5,7 @@
 import '@fontsource-variable/inter';
 import '@fontsource-variable/space-grotesk';
 import '../styles/theme.css';
-import { loadConfig, latestSnapshot, DOMAIN_SECTIONS } from '../lib/data';
+import { loadConfig, latestSnapshot, sectionsFor } from '../lib/data';
 
 interface Props {
   title: string;
@@ -78,7 +78,7 @@ const SECTION_ICONS: Record<string, string> = {
             <nav class="side-nav" aria-label="Sekcje domeny">
               <a class="back-link" href="/">← wszystkie domeny</a>
               <div class="nav-label">{currentDomain.name}</div>
-              {DOMAIN_SECTIONS.map((s) => (
+              {sectionsFor(currentDomain).map((s) => (
                 <a
                   href={`/${currentDomain.id}/${s.slug ? s.slug + '/' : ''}`}
                   class:list={['nav-item', { active: activeSection === s.slug }]}

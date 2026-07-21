@@ -1,7 +1,7 @@
 ---
 import SourceStatus from './SourceStatus.astro';
 import type { Snapshot } from '../lib/data';
-import { loadSnapshots, latestWithDelta, latestWithDeltaFrom } from '../lib/data';
+import { loadConfig, loadSnapshots, latestWithDelta, latestWithDeltaFrom, sectionEnabled } from '../lib/data';
 
 interface Props {
   id: string;
@@ -18,13 +18,16 @@ const refDomains = latestWithDeltaFrom(snapshots, [
   ['backlinks', 'referring_domains'],
 ]);
 const fmt = (v: number | null) => (v === null ? '–' : v.toLocaleString('pl-PL'));
-const SECTION_LINKS = [
-  ['senuto', 'Senuto'],
-  ['gsc', 'GSC'],
-  ['ahrefs', 'Ahrefs'],
-  ['clarity', 'Clarity'],
-  ['leady', 'Leady'],
-] as const;
+const domainCfg = loadConfig().domains.find((d) => d.id === id);
+const SECTION_LINKS = (
+  [
+    ['senuto', 'Senuto', 'senuto'],
+    ['gsc', 'GSC', 'gsc'],
+    ['ahrefs', 'Ahrefs', 'ahrefs'],
+    ['clarity', 'Clarity', 'clarity'],
+    ['leady', 'Leady', 'leads'],
+  ] as const
+).filter(([, , source]) => !domainCfg || sectionEnabled(domainCfg, source));
 ---
 
 <div class="domain-card">
