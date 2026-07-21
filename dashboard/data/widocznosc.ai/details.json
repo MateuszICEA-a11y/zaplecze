@@ -1,6 +1,6 @@
 {
  "date": "2026-07-21",
- "collected_at": "2026-07-21T11:51:38Z",
+ "collected_at": "2026-07-21T11:55:37Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -3895,8 +3895,7 @@
      "first_seen": "2026-06-07"
     }
    ],
-   "ref_domains_source": "ahrefs",
-   "anchors": []
+   "ref_domains_source": "ahrefs"
   },
   "clarity": {
    "dead_clicks": "0",
