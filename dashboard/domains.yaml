@@ -17,8 +17,8 @@ domains:
       enabled: false # DataForSEO – fallback, wyłączony na rzecz Ahrefs
     clarity:
       enabled: true
-      # Token Clarity jest per projekt. Obecny CLARITY_API_TOKEN to projekt
-      # grupa-icea.pl – widocznosc.ai czeka na własny token pod tym sekretem:
+      # Token Clarity jest per projekt (CLARITY_API_TOKEN = grupa-icea.pl).
+      # Własny token widocznosc.ai dodany do GH Secrets 2026-07-21.
       token_env: CLARITY_API_TOKEN_WIDOCZNOSC
     leads:
       enabled: true # eksport leadów/użyć narzędzi z KV; wymaga LEADS_EXPORT_TOKEN
