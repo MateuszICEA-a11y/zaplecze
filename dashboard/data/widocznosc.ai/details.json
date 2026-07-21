@@ -1,6 +1,6 @@
 {
  "date": "2026-07-21",
- "collected_at": "2026-07-21T10:58:43Z",
+ "collected_at": "2026-07-21T11:09:46Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -4029,6 +4029,266 @@
     {
      "path": "/geo/microsoft-clarity-topic-insights/",
      "requests": 1
+    }
+   ]
+  },
+  "ga4": {
+   "channels": [
+    {
+     "channel": "Unassigned",
+     "sessions": 62,
+     "users": 50,
+     "pageviews": 36
+    },
+    {
+     "channel": "Organic Search",
+     "sessions": 27,
+     "users": 16,
+     "pageviews": 28
+    },
+    {
+     "channel": "Cross-network",
+     "sessions": 21,
+     "users": 20,
+     "pageviews": 27
+    },
+    {
+     "channel": "Direct",
+     "sessions": 19,
+     "users": 13,
+     "pageviews": 24
+    },
+    {
+     "channel": "Referral",
+     "sessions": 2,
+     "users": 1,
+     "pageviews": 2
+    },
+    {
+     "channel": "AI Assistant",
+     "sessions": 1,
+     "users": 1,
+     "pageviews": 1
+    },
+    {
+     "channel": "Organic Social",
+     "sessions": 1,
+     "users": 1,
+     "pageviews": 1
+    }
+   ],
+   "sources": [
+    {
+     "source": "(not set)",
+     "sessions": 62,
+     "users": 50
+    },
+    {
+     "source": "google",
+     "sessions": 29,
+     "users": 17
+    },
+    {
+     "source": "(data not available)",
+     "sessions": 19,
+     "users": 19
+    },
+    {
+     "source": "(direct)",
+     "sessions": 19,
+     "users": 13
+    },
+    {
+     "source": "chatgpt.com",
+     "sessions": 1,
+     "users": 1
+    },
+    {
+     "source": "forum.optymalizacja.com",
+     "sessions": 1,
+     "users": 1
+    },
+    {
+     "source": "l.facebook.com",
+     "sessions": 1,
+     "users": 1
+    },
+    {
+     "source": "surveys.yourcx.io",
+     "sessions": 1,
+     "users": 0
+    }
+   ],
+   "pages": [
+    {
+     "path": "/",
+     "pageviews": 41,
+     "users": 32
+    },
+    {
+     "path": "/o-nas/",
+     "pageviews": 12,
+     "users": 11
+    },
+    {
+     "path": "/kariera/",
+     "pageviews": 9,
+     "users": 8
+    },
+    {
+     "path": "/kontakt/",
+     "pageviews": 8,
+     "users": 5
+    },
+    {
+     "path": "/case-study/",
+     "pageviews": 7,
+     "users": 5
+    },
+    {
+     "path": "/kariera/social-media-specialist/",
+     "pageviews": 4,
+     "users": 2
+    },
+    {
+     "path": "/oferta/ai-search/",
+     "pageviews": 4,
+     "users": 4
+    },
+    {
+     "path": "/oferta/cro/",
+     "pageviews": 4,
+     "users": 2
+    },
+    {
+     "path": "/blog/jak-sprawdzic-czy-ai-poleca-twoja-marke/",
+     "pageviews": 3,
+     "users": 4
+    },
+    {
+     "path": "/program-partnerski/",
+     "pageviews": 3,
+     "users": 3
+    },
+    {
+     "path": "/kariera/senior-growth-analyst/",
+     "pageviews": 2,
+     "users": 1
+    },
+    {
+     "path": "/oferta/audyt-seo/",
+     "pageviews": 2,
+     "users": 2
+    },
+    {
+     "path": "/oferta/pozycjonowanie/sklepow/",
+     "pageviews": 2,
+     "users": 2
+    },
+    {
+     "path": "/one-stop-shop/",
+     "pageviews": 2,
+     "users": 2
+    },
+    {
+     "path": "/ai-asset-report/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/baza-wiedzy/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/blog/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/blog/co-to-jest-wspolczynnik-zaangazowania-engagement-rate/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/blog/czym-jest-google-analytics-4-dlaczego-warto-skorzystac-z-nowego-analyticsa/",
+     "pageviews": 1,
+     "users": 0
+    },
+    {
+     "path": "/blog/czym-jest-kanibalizacja-slow-kluczowych-jak-jej-uniknac/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/blog/icea-wzmacnia-zarzadzanie-sprzedaza-i-marketingiem-do-firmy-dolaczaja-artur-osak-i-dawid-fabis-wspierajac-realizacje-strategii-rozwoju-i-budowe-nowej-generacji-uslug-search/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/blog/konkurs-performance-marketing-diamonds-eu-2023-rozstrzygniety-wsrod-laureatow-icea-group/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/blog/reklama-na-stronie-internetowej-jak-ja-dodac/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/blog/seo-co-to-jest/",
+     "pageviews": 1,
+     "users": 0
+    },
+    {
+     "path": "/branze/zdrowie-i-uroda/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/kariera/customer-success-specialist/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/kariera/marketplace-specialist/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/kariera/partnership-specialist/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/oferta/ads/google/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/polityka-prywatnosci/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/blog/atl-vs-btl-czym-sie-roznia/",
+     "pageviews": 0,
+     "users": 1
+    },
+    {
+     "path": "/blog/klastry-tematyczne-i-ich-wplyw-na-content-marketing/",
+     "pageviews": 0,
+     "users": 1
+    },
+    {
+     "path": "/instrukcje-i-poradniki/",
+     "pageviews": 0,
+     "users": 1
+    },
+    {
+     "path": "/konsultacja/maxsote/",
+     "pageviews": 0,
+     "users": 1
     }
    ]
   }
