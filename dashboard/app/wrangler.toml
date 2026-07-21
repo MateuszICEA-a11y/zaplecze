@@ -3,12 +3,11 @@
 # deploy command: `npx wrangler deploy`. Podgląd lokalny: pnpm build && npx wrangler dev
 name = "zaplecze-dashboard"
 compatibility_date = "2026-05-06"
-# Worker (worker.js) robi Basic Auth na /:domena/leady/ – sekret DASH_PASSWORD
-# ustawiany w Workers → Settings → Variables and Secrets. Reszta ścieżek idzie
-# prosto z assets (run_worker_first tylko dla chronionych tras).
+# Worker (worker.js) robi Basic Auth na CAŁEJ aplikacji – sekret DASH_PASSWORD
+# ustawiany w Workers → Settings → Variables and Secrets (login dowolny).
 main = "worker.js"
 
 [assets]
 directory = "./dist"
 binding = "ASSETS"
-run_worker_first = ["/*/leady", "/*/leady/*"]
+run_worker_first = true
