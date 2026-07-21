@@ -11,9 +11,9 @@ domains:
       site: "https://widocznosc.ai/" # property typu prefiks URL (nie domenowa)
     ga4:
       enabled: true
-      # Collector rozwiązuje property_id po measurement_id przez Admin API;
-      # wymaga dostępu service accounta GSC (przeglądający) w GA4.
-      measurement_id: "G-54BW5YREWS"
+      # TODO(Mateusz): measurement_id (G-…) usługi GA4 widocznosc.ai;
+      # collector rozwiąże property_id przez Admin API.
+      measurement_id: ""
     bing:
       enabled: true
       site: "https://widocznosc.ai/" # witryna musi być zweryfikowana w BWT
@@ -47,8 +47,9 @@ domains:
       site: "https://www.grupa-icea.pl/"
     ga4:
       enabled: true
-      # TODO(Mateusz): property_id GA4 dla grupa-icea.pl + dostęp dla service accounta
-      property_id: ""
+      # Strumień „G-54BW5YREWS" (id strumienia 2136357439) = grupa-icea.pl;
+      # property_id rozwiązywane przez Admin API po measurement_id.
+      measurement_id: "G-54BW5YREWS"
     bing:
       enabled: true
       site: "https://www.grupa-icea.pl/"
