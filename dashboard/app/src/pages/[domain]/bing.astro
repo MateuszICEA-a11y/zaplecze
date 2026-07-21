@@ -8,6 +8,7 @@ import {
   loadConfig,
   loadSnapshots,
   loadDetails,
+  loadBingAiQueries,
   latestSnapshot,
   latestWithDelta,
   metricSeries,
@@ -45,6 +46,11 @@ const histClicks = traffic.map((t) => t.clicks);
 const histImpressions = traffic.map((t) => t.impressions);
 
 const maxQueryImpr = Math.max(...queries.map((q) => q.impressions), 0);
+
+// AI Performance (Copilot/Bing AI) – brak API, dane z ręcznego eksportu CSV
+// wrzucanego do dashboard/imports/bing-ai/<domena>/.
+const aiPerf = loadBingAiQueries(domain!);
+const maxCitations = Math.max(...(aiPerf?.rows ?? []).map((r) => r.citations), 0);
 ---
 
 <Layout title={`${name} – Bing Webmaster Tools`}>
@@ -79,6 +85,50 @@ const maxQueryImpr = Math.max(...queries.map((q) => q.impressions), 0);
       ]}
     />
   </div>
+
+  {
+    aiPerf && aiPerf.rows.length > 0 && (
+      <>
+        <div class="section-head">
+          <h2>AI Performance – cytowania w Copilot / Bing AI</h2>
+          <span class="section-meta">
+            import CSV z BWT · stan z {aiPerf.date} · grounding queries = frazy, którymi AI sięgało po treść
+          </span>
+        </div>
+        <TableCard title="Grounding queries" count={aiPerf.rows.length} filter>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Grounding query</th>
+                <th>Intencja</th>
+                <th>Temat</th>
+                <th class="num">Cytowania</th>
+                <th class="num">Udział cytowań</th>
+              </tr>
+            </thead>
+            <tbody>
+              {aiPerf.rows.map((r) => (
+                <tr>
+                  <td class="grow">{r.query}</td>
+                  <td>{r.intent}</td>
+                  <td>{r.topic}</td>
+                  <td class="num">
+                    <span class="cell-bar">
+                      {fmtInt(r.citations)}
+                      <span class="bar">
+                        <i style={`width:${barWidth(r.citations, maxCitations)}%`} />
+                      </span>
+                    </span>
+                  </td>
+                  <td class="num">{r.citation_share === null ? '–' : `${fmtNum(r.citation_share, 2)}%`}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </TableCard>
+      </>
+    )
+  }
 
   <TableCard
     title="Frazy w Bing"
