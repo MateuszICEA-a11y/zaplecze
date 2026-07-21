@@ -1,6 +1,6 @@
 {
  "date": "2026-07-21",
- "collected_at": "2026-07-21T11:27:36Z",
+ "collected_at": "2026-07-21T11:30:49Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -4031,6 +4031,10 @@
      "requests": 1
     }
    ]
+  },
+  "bing": {
+   "traffic": [],
+   "queries": []
   }
  }
 }
