@@ -5,7 +5,7 @@ domains:
     name: widocznosc.ai
     senuto:
       enabled: true
-      country_id: "1" # Polska
+      country_id: "200" # Poland (database 2.0) – ta sama baza co app.senuto.com; "1" = legacy 1.0
     gsc:
       enabled: true
       site: "https://widocznosc.ai/" # property typu prefiks URL (nie domenowa)
