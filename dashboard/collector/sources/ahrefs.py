@@ -81,8 +81,9 @@ def fetch(cfg: dict, env: dict) -> dict:
     anchors = []
     try:
         anchors = _dataforseo_anchors(target, env)
-    except Exception:  # noqa: BLE001
-        anchors = []
+    except Exception as err:  # noqa: BLE001
+        import sys
+        print(f"  [ahrefs] anchory (DataForSEO) nie pobrane: {err}", file=sys.stderr)
 
     return {"summary": summary,
             "details": {"ref_domains": ref_list, "ref_domains_source": ref_source,
@@ -115,7 +116,8 @@ def _dataforseo_anchors(target: str, env: dict) -> list[dict]:
                         })
     tasks = resp.get("tasks") or []
     if not tasks or tasks[0].get("status_code", 0) >= 40000:
-        return []
+        message = tasks[0].get("status_message", "brak taska") if tasks else "brak taska"
+        raise RuntimeError(f"DataForSEO anchors: {message}")
     result = (tasks[0].get("result") or [None])[0] or {}
     return [{
         "anchor": item.get("anchor") or "(pusty)",
