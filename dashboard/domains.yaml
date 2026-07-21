@@ -74,4 +74,4 @@ global:
     enabled: true
 
 # run: re-test LEADS_EXPORT_TOKEN po poprawce w GH Secrets 2026-07-21
-# run: test BING_WEBMASTER_API_KEY 2026-07-21 (po przeniesieniu do GH Secrets)
+# run: pełny test GA4 obu domen 2026-07-21
