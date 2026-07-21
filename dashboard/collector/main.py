@@ -74,7 +74,12 @@ def run_sources(registry: dict, enabled_cfg: dict, extra_cfg: dict) -> tuple[dic
 
 
 def write_snapshot(target_dir: Path, snapshot: dict) -> None:
-    """Append do snapshots.jsonl; linia z tą samą datą jest nadpisywana."""
+    """Append do snapshots.jsonl; linia z tą samą datą jest nadpisywana.
+
+    Per źródło: błąd z późniejszego przebiegu tego samego dnia nie nadpisuje
+    wcześniejszego wyniku ok (np. Clarity 429 po wyczerpaniu limitu 10 req/dzień
+    przez dodatkowe przebiegi push-triggered nie kasuje danych z crona 6:30).
+    """
     target_dir.mkdir(parents=True, exist_ok=True)
     path = target_dir / "snapshots.jsonl"
     lines = path.read_text().splitlines() if path.is_file() else []
@@ -83,6 +88,11 @@ def write_snapshot(target_dir: Path, snapshot: dict) -> None:
             last = json.loads(lines[-1])
             if last.get("date") == snapshot["date"]:
                 lines = lines[:-1]
+                for source, previous in (last.get("sources") or {}).items():
+                    current = snapshot["sources"].get(source)
+                    if (previous.get("status") == "ok"
+                            and (current is None or current.get("status") != "ok")):
+                        snapshot["sources"][source] = previous
         except json.JSONDecodeError:
             pass
     lines.append(json.dumps(snapshot, ensure_ascii=False))
