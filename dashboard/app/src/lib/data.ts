@@ -168,11 +168,39 @@ export interface LeadRecord {
   [field: string]: unknown;
 }
 
+export interface GscCompareRow {
+  key: string;
+  clicks: number;
+  prev_clicks: number;
+  impressions: number;
+  prev_impressions: number;
+  position: number | null;
+  prev_position: number | null;
+}
+
+export interface GscComparePeriod {
+  prev: { start: string; end: string };
+  queries: GscCompareRow[];
+  pages: GscCompareRow[];
+}
+
+export interface GscCompare {
+  window_days: number;
+  cur: { start: string; end: string };
+  qoq?: GscComparePeriod;
+  yoy?: GscComparePeriod;
+}
+
 export interface DomainDetails {
   date?: string;
   sources: {
     senuto?: { keywords: SenutoKeyword[] };
-    gsc?: { window?: { start: string; end: string }; queries: GscRow[]; pages: GscRow[] };
+    gsc?: {
+      window?: { start: string; end: string };
+      queries: GscRow[];
+      pages: GscRow[];
+      compare?: GscCompare;
+    };
     ahrefs?: { ref_domains: RefDomain[]; ref_domains_source?: 'ahrefs' | 'dataforseo' };
     clarity?: {
       dead_clicks?: number | null;

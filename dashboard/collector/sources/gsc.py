@@ -17,6 +17,9 @@ DATA_LAG_DAYS = 3
 QUERY_ROW_LIMIT = 25000
 DETAILS_WINDOW_DAYS = 28  # okno dla list fraz/stron w details.json
 DETAILS_ROW_LIMIT = 200
+COMPARE_WINDOW_DAYS = 90   # okno porównań qoq/yoy (plansza „Co spadło")
+COMPARE_ROW_LIMIT = 250
+COMPARE_KEEP_ROWS = 300    # ile złączonych wierszy per lista trzymamy w details
 
 
 def _rows_to_details(rows: list[dict]) -> list[dict]:
@@ -32,6 +35,37 @@ def _rows_to_details(rows: list[dict]) -> list[dict]:
             "position": round(position, 1) if isinstance(position, (int, float)) else None,
         })
     return out
+
+
+def _join_compare(cur_rows: list[dict], prev_rows: list[dict]) -> list[dict]:
+    """Złączenie okna bieżącego i poprzedniego po kluczu (fraza/URL).
+
+    Trzyma metryki obu okien; delty liczy widok. Wiersze sortowane malejąco po
+    max(impressions) z obu okien i przycięte do COMPARE_KEEP_ROWS.
+    """
+    prev_by_key = {r["key"]: r for r in prev_rows}
+    joined = []
+    seen = set()
+    for cur in cur_rows:
+        prev = prev_by_key.get(cur["key"], {})
+        seen.add(cur["key"])
+        joined.append({
+            "key": cur["key"],
+            "clicks": cur["clicks"], "prev_clicks": prev.get("clicks", 0),
+            "impressions": cur["impressions"], "prev_impressions": prev.get("impressions", 0),
+            "position": cur["position"], "prev_position": prev.get("position"),
+        })
+    for prev in prev_rows:
+        if prev["key"] in seen:
+            continue
+        joined.append({
+            "key": prev["key"],
+            "clicks": 0, "prev_clicks": prev["clicks"],
+            "impressions": 0, "prev_impressions": prev["impressions"],
+            "position": None, "prev_position": prev["position"],
+        })
+    joined.sort(key=lambda r: max(r["impressions"], r["prev_impressions"]), reverse=True)
+    return joined[:COMPARE_KEEP_ROWS]
 
 
 def _access_token(sa_json: str) -> str:
@@ -103,5 +137,41 @@ def fetch(cfg: dict, env: dict) -> dict:
             details[key] = _rows_to_details(resp.get("rows") or [])
         except SourceError:
             details[key] = []
+
+    # Porównania okres-do-okresu (plansza „Co spadło"): ostatnie 3 mies. vs
+    # poprzednie 3 mies. (qoq) i vs ten sam okres rok temu (yoy).
+    end = datetime.now(timezone.utc) - timedelta(days=DATA_LAG_DAYS)
+    cur_start = end - timedelta(days=COMPARE_WINDOW_DAYS - 1)
+    windows = {
+        "cur": (cur_start, end),
+        "qoq": (cur_start - timedelta(days=COMPARE_WINDOW_DAYS), cur_start - timedelta(days=1)),
+        "yoy": (cur_start - timedelta(days=365), end - timedelta(days=365)),
+    }
+
+    def compare_rows(start: datetime, stop: datetime, dimension: str) -> list[dict]:
+        resp = query({
+            "startDate": start.strftime("%Y-%m-%d"),
+            "endDate": stop.strftime("%Y-%m-%d"),
+            "dimensions": [dimension],
+            "rowLimit": COMPARE_ROW_LIMIT,
+        })
+        return _rows_to_details(resp.get("rows") or [])
+
+    try:
+        compare: dict = {
+            "window_days": COMPARE_WINDOW_DAYS,
+            "cur": {"start": windows["cur"][0].strftime("%Y-%m-%d"), "end": windows["cur"][1].strftime("%Y-%m-%d")},
+        }
+        for dimension, key in (("query", "queries"), ("page", "pages")):
+            cur_rows = compare_rows(*windows["cur"], dimension)
+            for mode in ("qoq", "yoy"):
+                start, stop = windows[mode]
+                block = compare.setdefault(mode, {
+                    "prev": {"start": start.strftime("%Y-%m-%d"), "end": stop.strftime("%Y-%m-%d")},
+                })
+                block[key] = _join_compare(cur_rows, compare_rows(start, stop, dimension))
+        details["compare"] = compare
+    except SourceError:
+        pass  # porównania są opcjonalne – frontend chowa planszę, gdy ich brak
 
     return {"summary": summary, "details": details}

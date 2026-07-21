@@ -47,6 +47,40 @@ const gsc = latest?.sources.gsc;
 const maxQueryImpressions = Math.max(...queries.map((q) => q.impressions ?? 0), 0);
 const maxPageImpressions = Math.max(...pages.map((p) => p.impressions ?? 0), 0);
 const stripOrigin = (url: string) => url.replace(/^https?:\/\/[^/]+/, '') || '/';
+
+// Plansza „Co spadło" – porównania okres-do-okresu z details (collector, §compare).
+import type { GscCompareRow } from '../../lib/data';
+const compare = gscDetails?.compare;
+
+const dropPanel = (rows: GscCompareRow[], isPage: boolean) => {
+  const withDelta = rows.map((r) => ({ ...r, dImpr: r.impressions - r.prev_impressions }));
+  const drops = withDelta.filter((r) => r.dImpr < 0).sort((a, b) => a.dImpr - b.dImpr);
+  return {
+    dropCount: drops.length,
+    gainCount: withDelta.filter((r) => r.dImpr > 0).length,
+    rows: drops.slice(0, 6).map((r, i) => ({
+      rank: i + 1,
+      name: isPage ? stripOrigin(r.key) : r.key,
+      delta: `▼ ${fmtInt(Math.abs(r.dImpr))} wyśw.`,
+      flow: `${fmtInt(r.prev_impressions)} → ${fmtInt(r.impressions)} · poz. ${fmtNum(r.prev_position, 1)}→${fmtNum(r.position, 1)}`,
+    })),
+  };
+};
+
+const compareModes = (
+  [
+    { id: 'qoq', short: '3 mies. vs 3 mies.', label: 'Ostatnie 3 mies. vs poprzednie 3 mies.', data: compare?.qoq },
+    { id: 'yoy', short: '3 mies. vs rok temu', label: 'Ostatnie 3 mies. vs ten sam okres rok temu', data: compare?.yoy },
+  ] as const
+)
+  .filter((m) => m.data)
+  .map((m) => ({
+    id: m.id,
+    short: m.short,
+    meta: `${m.label} · ${m.data!.prev.start} → ${m.data!.prev.end} vs ${compare!.cur.start} → ${compare!.cur.end} · sortowane wg największego spadku wyświetleń`,
+    queries: dropPanel(m.data!.queries ?? [], false),
+    pages: dropPanel(m.data!.pages ?? [], true),
+  }));
 ---
 
 <Layout title={`${name} – Google Search Console`}>
@@ -113,6 +147,73 @@ const stripOrigin = (url: string) => url.replace(/^https?:\/\/[^/]+/, '') || '/'
       series={[{ label: 'Frazy', values: queriesSeries.values }]}
     />
   </div>
+
+  {
+    compareModes.length > 0 && (
+      <div class="drops-board">
+        <div class="section-head" style="margin-bottom:6px;">
+          <h2>Co spadło – szybki podgląd</h2>
+          {compareModes.length > 1 && (
+            <div class="seg" data-drops-seg>
+              {compareModes.map((m, i) => (
+                <button type="button" class={i === 0 ? 'active' : ''} data-mode={m.id}>
+                  {m.short}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+        {compareModes.map((m, i) => (
+          <div class="drops-view" data-drops-view={m.id} hidden={i !== 0}>
+            <div class="drops-meta">{m.meta}</div>
+            <div class="drops-grid">
+              {(
+                [
+                  ['Frazy, które spadły', m.queries],
+                  ['Strony, które spadły', m.pages],
+                ] as const
+              ).map(([title, panel]) => (
+                <div class="drop-panel">
+                  <header>
+                    <h4>{title}</h4>
+                    <div class="drop-summary">
+                      <span class="chip bad">▼ <b>{fmtInt(panel.dropCount)}</b></span>
+                      <span class="chip good">▲ <b>{fmtInt(panel.gainCount)}</b></span>
+                    </div>
+                  </header>
+                  {panel.rows.length === 0 && <div class="drop-empty">Brak spadków wyświetleń w tym oknie.</div>}
+                  {panel.rows.map((r) => (
+                    <div class="drop-row">
+                      <span class="drop-rank">{r.rank}</span>
+                      <span class="drop-name" title={r.name}>
+                        {r.name}
+                      </span>
+                      <div class="drop-metric">
+                        <span class="drop-delta down">{r.delta}</span>
+                        <span class="drop-flow">{r.flow}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    )
+  }
+  <script>
+    document.querySelectorAll('[data-drops-seg]').forEach((seg) => {
+      seg.addEventListener('click', (e) => {
+        const btn = (e.target as HTMLElement).closest('button[data-mode]') as HTMLButtonElement | null;
+        if (!btn) return;
+        seg.querySelectorAll('button').forEach((b) => b.classList.toggle('active', b === btn));
+        document.querySelectorAll<HTMLElement>('[data-drops-view]').forEach((view) => {
+          view.hidden = view.dataset.dropsView !== btn.dataset.mode;
+        });
+      });
+    });
+  </script>
 
   <TableCard
     title="Frazy w Google"

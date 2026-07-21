@@ -456,3 +456,29 @@ table.data-table {
   background: var(--status-err-bg);
   color: var(--status-err-fg);
 }
+
+/* Plansza „Co spadło" (GSC, porównania okres-do-okresu) */
+.seg { display: inline-flex; background: var(--bg-surface-2); border: 1px solid var(--hairline); border-radius: 10px; padding: 3px; gap: 2px; }
+.seg button { appearance: none; border: none; background: none; color: var(--ink-muted); font: inherit; font-size: 0.82rem; font-weight: 600; padding: 6px 14px; border-radius: 7px; cursor: pointer; white-space: nowrap; }
+.seg button:hover { color: var(--ink); }
+.seg button.active { background: var(--bg-surface-1); color: var(--ink); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.28); }
+.drops-board { margin-bottom: 22px; }
+.drops-meta { color: var(--ink-faint); font-size: 0.78rem; margin: 4px 0 12px; }
+.drops-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 6px; }
+.drop-panel { background: var(--bg-surface-1); border: 1px solid var(--hairline); border-radius: 14px; overflow: hidden; }
+.drop-panel > header { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 13px 16px 11px; border-bottom: 1px solid var(--hairline-soft); }
+.drop-panel > header h4 { margin: 0; font-family: var(--font-display); font-size: 0.92rem; }
+.drop-summary { display: flex; gap: 8px; }
+.drop-row { display: flex; align-items: center; gap: 12px; padding: 9px 16px; border-bottom: 1px solid var(--hairline-soft); }
+.drop-row:last-child { border-bottom: none; }
+.drop-rank { width: 18px; flex: none; color: var(--ink-faint); font-size: 0.78rem; font-variant-numeric: tabular-nums; }
+.drop-name { flex: 1; min-width: 0; font-size: 0.85rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.drop-metric { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; flex: none; }
+.drop-flow { font-variant-numeric: tabular-nums; font-size: 0.76rem; color: var(--ink-faint); white-space: nowrap; }
+.drop-delta { font-variant-numeric: tabular-nums; font-size: 0.84rem; font-weight: 700; white-space: nowrap; }
+.drop-delta.down { color: var(--status-err-fg); }
+.drop-delta.up { color: var(--status-ok); }
+.drop-empty { padding: 26px 16px; color: var(--ink-faint); font-size: 0.85rem; text-align: center; }
+@media (max-width: 860px) {
+  .drops-grid { grid-template-columns: 1fr; }
+}
