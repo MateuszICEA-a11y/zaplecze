@@ -164,6 +164,14 @@ const engClass = (rate: number | null) =>
       </div>
     )
   }
+  {
+    indexing?.data?.aborted && (
+      <div class="banner warn">
+        <strong>Indeksacja</strong>: przejazd częściowy ({checked} z {sitemapUrls} adresów) –{' '}
+        {indexing.data.aborted}; reszta dogra się kolejnym przebiegiem collectora (cron 6:30).
+      </div>
+    )
+  }
 
   <div class="section-head">
     <h2>Kondycja stron z sitemapy</h2>
