@@ -22,13 +22,30 @@ const rows = details.sources.indexing?.rows ?? [];
 const window = details.sources.indexing?.window;
 
 // GA4: sesje per landing page (okno 28 dni) do zestawienia z GSC.
-const ga4Landing = new Map(
-  (details.sources.ga4?.landing_pages?.rows ?? []).map((r) => [r.path, r]),
-);
+// GA4 oddaje ścieżki bez końcowego slasha (`/kariera`), sitemap z (`/kariera/`)
+// – normalizujemy obie strony joinu; duplikaty po normalizacji scalamy
+// (suma sesji, engagement ważony sesjami).
+const normPath = (p: string) => p.replace(/\/+$/, '') || '/';
+const ga4Landing = new Map<string, { sessions: number; engagement_rate: number | null }>();
+for (const r of details.sources.ga4?.landing_pages?.rows ?? []) {
+  const key = normPath(r.path);
+  const prev = ga4Landing.get(key);
+  if (!prev) {
+    ga4Landing.set(key, { sessions: r.sessions, engagement_rate: r.engagement_rate ?? null });
+  } else {
+    const sessions = prev.sessions + r.sessions;
+    const weighted =
+      prev.engagement_rate === null && r.engagement_rate == null
+        ? null
+        : ((prev.engagement_rate ?? 0) * prev.sessions + (r.engagement_rate ?? 0) * r.sessions) /
+          (sessions || 1);
+    ga4Landing.set(key, { sessions, engagement_rate: weighted });
+  }
+}
 const stripOrigin = (url: string) => url.replace(/^https?:\/\/[^/]+/, '') || '/';
 
 const joined = rows.map((r) => {
-  const ga4Row = ga4Landing.get(stripOrigin(r.url));
+  const ga4Row = ga4Landing.get(normPath(stripOrigin(r.url)));
   return { ...r, ga4_sessions: ga4Row?.sessions ?? null, engagement_rate: ga4Row?.engagement_rate ?? null };
 });
 
