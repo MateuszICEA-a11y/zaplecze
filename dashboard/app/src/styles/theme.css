@@ -512,3 +512,21 @@ table.data-table {
   font-size: 0.76rem;
   margin-left: 10px;
 }
+
+/* Przycisk eksportu CSV w nagłówku karty tabeli */
+.table-export {
+  appearance: none;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  color: var(--ink-muted);
+  font: inherit;
+  font-size: 0.78rem;
+  padding: 6px 10px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.table-export:hover {
+  color: var(--ink);
+  border-color: var(--ink-faint);
+}

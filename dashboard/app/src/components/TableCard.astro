@@ -27,6 +27,11 @@ const paged = !isEmpty && pageSize > 0;
     {!isEmpty && filter && (
       <input class="table-filter" type="search" placeholder="Filtruj…" data-table-filter aria-label={`Filtruj: ${title}`} />
     )}
+    {!isEmpty && (
+      <button type="button" class="table-export" data-table-export title="Pobierz widoczne wiersze jako CSV">
+        CSV ⤓
+      </button>
+    )}
   </div>
   {
     isEmpty ? (
@@ -128,6 +133,41 @@ const paged = !isEmpty && pageSize > 0;
         pager.hidden = matched.length <= pageSize;
       }
     };
+
+    /* Eksport CSV: aktualny widok (filtr tekstowy + predykat + sortowanie),
+       wszystkie strony pagera. Separator ';' + BOM = przyjazne polskiemu Excelowi. */
+    const exportBtn = card.querySelector<HTMLButtonElement>('[data-table-export]');
+    exportBtn?.addEventListener('click', () => {
+      const needle = (input?.value ?? '').trim().toLowerCase();
+      const matched = Array.from(body.rows).filter(
+        (r) =>
+          (needle === '' || (r.textContent ?? '').toLowerCase().includes(needle)) &&
+          (!rowPredicate || rowPredicate(r)),
+      );
+      const cell = (text: string) => {
+        const t = text.replace(/\s+/g, ' ').trim();
+        return /[";\n]/.test(t) ? `"${t.replace(/"/g, '""')}"` : t;
+      };
+      const header = Array.from(table.querySelectorAll<HTMLTableCellElement>('thead th'))
+        .map((th) => cell((th.textContent ?? '').replace(/[↓↑]\s*$/, '')))
+        .join(';');
+      const lines = matched.map((r) =>
+        Array.from(r.cells)
+          .map((c) => cell(c.textContent ?? ''))
+          .join(';'),
+      );
+      const title = card.querySelector('.table-head h3')?.childNodes[0]?.textContent?.trim() ?? 'tabela';
+      const slug = title.toLowerCase().replace(/[^a-z0-9ąćęłńóśźż]+/gi, '-').replace(/^-|-$/g, '');
+      const date = new Date().toISOString().slice(0, 10);
+      const blob = new Blob(['﻿' + header + '\n' + lines.join('\n')], {
+        type: 'text/csv;charset=utf-8',
+      });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `${slug}-${date}.csv`;
+      a.click();
+      URL.revokeObjectURL(a.href);
+    });
 
     input?.addEventListener('input', () => {
       page = 0;
