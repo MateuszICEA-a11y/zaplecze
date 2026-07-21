@@ -6,8 +6,13 @@
    ============================================================ */
 
 :root {
+  /* Typografia: Inter (tekst) + Space Grotesk (display/liczby) – self-hosted fontsource */
+  --font-body: 'Inter Variable', system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk Variable', 'Inter Variable', system-ui, sans-serif;
+
   /* Surface ladder */
   --bg-canvas: #08090c;
+  --bg-rail: #0b0d12;
   --bg-surface-1: #11141a;
   --bg-surface-2: #1a2029;
   --bg-surface-3: #242b36;
@@ -46,9 +51,10 @@
 
 :root[data-theme='light'] {
   --bg-canvas: #f2f5f9;
-  --bg-surface-1: #e8eef5;
-  --bg-surface-2: #dce5ef;
-  --bg-surface-3: #ccd8e6;
+  --bg-rail: #eaeff6;
+  --bg-surface-1: #ffffff;
+  --bg-surface-2: #edf2f8;
+  --bg-surface-3: #dde6f0;
 
   --hairline: rgba(15, 23, 42, 0.15);
   --hairline-soft: rgba(15, 23, 42, 0.09);
@@ -76,11 +82,7 @@
 html {
   background: var(--bg-canvas);
   color: var(--ink);
-  font-family:
-    'Inter Variable',
-    system-ui,
-    -apple-system,
-    sans-serif;
+  font-family: var(--font-body);
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
 }
@@ -88,6 +90,17 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+  /* Sygnatura: cicha poświata akcentu u góry – konsola, nie strona-wizytówka. */
+  background:
+    radial-gradient(900px 420px at 68% -140px, var(--accent-blue-soft), transparent 70%),
+    var(--bg-canvas);
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
 }
 
 a {
@@ -107,13 +120,13 @@ a:hover {
 /* ---------- wspólne siatki sekcji ---------- */
 .stat-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr));
   gap: 14px;
   margin-bottom: 18px;
 }
 .chart-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
   gap: 16px;
   margin-bottom: 18px;
 }
@@ -163,6 +176,14 @@ a:hover {
 }
 .table-scroll {
   overflow-x: auto;
+  max-height: 640px;
+  overflow-y: auto;
+}
+table.data-table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--bg-surface-1);
+  z-index: 1;
 }
 table.data-table {
   width: 100%;

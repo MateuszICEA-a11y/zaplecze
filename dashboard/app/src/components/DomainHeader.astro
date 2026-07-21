@@ -1,7 +1,6 @@
 ---
-/* Nagłówek strony domeny: tytuł + nawigacja sekcji ze status-dotami źródeł.
-   Sygnatura dashboardu – każda zakładka nosi kropkę stanu swojego źródła,
-   więc zdrowie integracji widać bez wchodzenia w sekcję. */
+/* Nagłówek strony sekcji: eyebrow z domeną, duży tytuł sekcji (display font),
+   chip z datą pomiaru. Nawigacja sekcji żyje w sidebarze (Layout). */
 import type { Snapshot } from '../lib/data';
 import { DOMAIN_SECTIONS } from '../lib/data';
 
@@ -11,110 +10,72 @@ interface Props {
   active: string; // slug aktywnej sekcji ('' = przegląd)
   latest: Snapshot | null;
 }
-const { domain, name, active, latest } = Astro.props;
+const { name, active, latest } = Astro.props;
 
-const dotClass = (source: string | null): string => {
-  if (!source) return 'none';
-  const status = latest?.sources[source]?.status;
-  if (status === 'ok') return 'ok';
-  if (status === 'token_expired') return 'warn';
-  if (status === 'error') return 'err';
-  return 'off';
+const TITLES: Record<string, string> = {
+  '': 'Przegląd',
+  senuto: 'Widoczność · Senuto',
+  gsc: 'Google Search Console',
+  ahrefs: 'Profil linków · Ahrefs',
+  clarity: 'Zachowania · Clarity',
+  leady: 'Leady i użycia narzędzi',
 };
+const title = TITLES[active] ?? DOMAIN_SECTIONS.find((s) => s.slug === active)?.label ?? '';
 ---
 
-<header class="domain-header">
-  <nav class="crumbs"><a href="/">← wszystkie domeny</a></nav>
+<header class="page-header">
+  <div class="eyebrow">{name}</div>
   <div class="title-row">
-    <h1>{name}</h1>
-    <span class="measured">ostatni pomiar: {latest?.date ?? 'brak'}</span>
+    <h1>{title}</h1>
+    <span class="measured" title="Data ostatniego przebiegu collectora">
+      <i aria-hidden="true"></i>
+      {latest?.date ?? 'brak pomiaru'}
+    </span>
   </div>
-  <nav class="section-nav" aria-label="Sekcje dashboardu">
-    {
-      DOMAIN_SECTIONS.map((s) => (
-        <a
-          href={`/${domain}/${s.slug ? s.slug + '/' : ''}`}
-          class:list={['tab', { active: active === s.slug }]}
-          aria-current={active === s.slug ? 'page' : undefined}
-        >
-          {s.source && <i class={`dot ${dotClass(s.source)}`} aria-hidden="true" />}
-          {s.label}
-        </a>
-      ))
-    }
-  </nav>
 </header>
 
 <style>
-  .crumbs {
-    font-size: 0.85rem;
-    margin-bottom: 10px;
+  .page-header {
+    margin-bottom: 6px;
+  }
+  .eyebrow {
+    color: var(--accent-blue);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
   }
   .title-row {
     display: flex;
-    align-items: baseline;
+    align-items: center;
+    justify-content: space-between;
     gap: 16px;
     flex-wrap: wrap;
   }
   h1 {
-    font-size: 1.65rem;
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    font-weight: 600;
     letter-spacing: -0.02em;
     margin: 0;
   }
   .measured {
-    color: var(--ink-faint);
-    font-size: 0.82rem;
-  }
-  .section-nav {
-    display: flex;
-    gap: 4px;
-    margin-top: 18px;
-    border-bottom: 1px solid var(--hairline);
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-  .section-nav::-webkit-scrollbar {
-    display: none;
-  }
-  .tab {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
+    gap: 8px;
     color: var(--ink-muted);
-    font-size: 0.92rem;
-    font-weight: 500;
-    padding: 9px 14px 11px;
-    border-bottom: 2px solid transparent;
-    margin-bottom: -1px;
-    white-space: nowrap;
+    font-size: 0.8rem;
+    font-variant-numeric: tabular-nums;
+    background: var(--bg-surface-1);
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+    padding: 5px 13px;
   }
-  .tab:hover {
-    color: var(--ink);
-    text-decoration: none;
-  }
-  .tab.active {
-    color: var(--ink);
-    font-weight: 600;
-    border-bottom-color: var(--accent-blue);
-  }
-  .dot {
-    width: 7px;
-    height: 7px;
+  .measured i {
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
-    background: var(--ink-faint);
-    flex: none;
-  }
-  .dot.ok {
     background: var(--status-ok);
-  }
-  .dot.warn {
-    background: var(--status-warn-fg);
-  }
-  .dot.err {
-    background: var(--status-err-fg);
-  }
-  .dot.off {
-    background: var(--bg-surface-3);
-    outline: 1px solid var(--hairline);
+    box-shadow: 0 0 6px color-mix(in srgb, var(--status-ok) 60%, transparent);
   }
 </style>

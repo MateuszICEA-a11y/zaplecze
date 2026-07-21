@@ -1,11 +1,41 @@
 ---
+/* App-shell: stały lewy sidebar (desktop) / górny pasek (mobile).
+   Sidebar sam wykrywa kontekst z Astro.url.pathname (build time):
+   strona domeny → sekcje ze status-dotami; strona główna → lista domen. */
+import '@fontsource-variable/inter';
+import '@fontsource-variable/space-grotesk';
 import '../styles/theme.css';
+import { loadConfig, latestSnapshot, DOMAIN_SECTIONS } from '../lib/data';
 
 interface Props {
   title: string;
   description?: string;
 }
 const { title, description = 'Dashboard analityczny zaplecza SEO' } = Astro.props;
+
+const { domains } = loadConfig();
+const segments = Astro.url.pathname.split('/').filter(Boolean);
+const currentDomain = domains.find((d) => d.id === segments[0]) ?? null;
+const activeSection = currentDomain ? (segments[1] ?? '') : null;
+const latest = currentDomain ? latestSnapshot(currentDomain.id) : null;
+
+const dotClass = (source: string | null): string => {
+  if (!source) return 'none';
+  const status = latest?.sources[source]?.status;
+  if (status === 'ok') return 'ok';
+  if (status === 'token_expired') return 'warn';
+  if (status === 'error') return 'err';
+  return 'off';
+};
+
+const SECTION_ICONS: Record<string, string> = {
+  '': 'M3 13h4v8H3zM10 7h4v14h-4zM17 3h4v18h-4z', // słupki – przegląd
+  senuto: 'M3 17l6-6 4 4 8-8M15 7h6v6', // trend – widoczność
+  gsc: 'M11 4a7 7 0 105.2 11.7l4 4 1.4-1.4-4-4A7 7 0 0011 4zm0 2a5 5 0 110 10 5 5 0 010-10z', // lupa
+  ahrefs: 'M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.6l-1.2 1.2M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.6l1.2-1.2', // link
+  clarity: 'M12 5c-5 0-8.5 4.4-9.6 6.4a1.2 1.2 0 000 1.2C3.5 14.6 7 19 12 19s8.5-4.4 9.6-6.4a1.2 1.2 0 000-1.2C20.5 9.4 17 5 12 5zm0 10.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7z', // oko
+  leady: 'M12 12a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0z', // osoba
+};
 ---
 
 <!doctype html>
@@ -27,22 +57,71 @@ const { title, description = 'Dashboard analityczny zaplecza SEO' } = Astro.prop
     </script>
   </head>
   <body>
-    <header class="site-header">
-      <div class="container header-row">
-        <a href="/" class="brand">zaplecze<span>/dashboard</span></a>
-        <button id="theme-toggle" type="button" aria-label="Przełącz motyw">◐</button>
+    <div class="shell">
+      <aside class="sidebar">
+        <a href="/" class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          zaplecze<span class="brand-accent">/dash</span>
+        </a>
+
+        {
+          currentDomain ? (
+            <nav class="side-nav" aria-label="Sekcje domeny">
+              <a class="back-link" href="/">← wszystkie domeny</a>
+              <div class="nav-label">{currentDomain.name}</div>
+              {DOMAIN_SECTIONS.map((s) => (
+                <a
+                  href={`/${currentDomain.id}/${s.slug ? s.slug + '/' : ''}`}
+                  class:list={['nav-item', { active: activeSection === s.slug }]}
+                  aria-current={activeSection === s.slug ? 'page' : undefined}
+                >
+                  <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d={SECTION_ICONS[s.slug] ?? SECTION_ICONS['']} />
+                  </svg>
+                  <span class="nav-text">{s.label}</span>
+                  {s.source && <i class={`dot ${dotClass(s.source)}`} aria-hidden="true" />}
+                </a>
+              ))}
+            </nav>
+          ) : (
+            <nav class="side-nav" aria-label="Domeny">
+              <div class="nav-label">Domeny</div>
+              {domains.map((d) => (
+                <a href={`/${d.id}/`} class="nav-item">
+                  <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M3.5 12h17M12 3a14 14 0 010 18M12 3a14 14 0 000 18" />
+                  </svg>
+                  <span class="nav-text">{d.name}</span>
+                </a>
+              ))}
+            </nav>
+          )
+        }
+
+        <div class="side-footer">
+          <button id="theme-toggle" type="button" aria-label="Przełącz motyw">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+              <path d="M21 13A8.5 8.5 0 1111 3a7 7 0 0010 10z" />
+            </svg>
+            <span>Motyw</span>
+          </button>
+          <span class="side-meta">cron 6:30</span>
+        </div>
+      </aside>
+
+      <div class="content">
+        <main>
+          <slot />
+        </main>
+        <footer class="site-footer">
+          Dane odświeżane raz dziennie przez GitHub Actions · <a
+            href="https://github.com/MateuszICEA-a11y/zaplecze">repo</a
+          >
+        </footer>
       </div>
-    </header>
-    <main class="container">
-      <slot />
-    </main>
-    <footer class="site-footer">
-      <div class="container">
-        Dane odświeżane raz dziennie przez GitHub Actions · <a
-          href="https://github.com/MateuszICEA-a11y/zaplecze">repo</a
-        >
-      </div>
-    </footer>
+    </div>
+
     <script>
       document.getElementById('theme-toggle')?.addEventListener('click', () => {
         const root = document.documentElement;
@@ -54,52 +133,239 @@ const { title, description = 'Dashboard analityczny zaplecza SEO' } = Astro.prop
         window.dispatchEvent(new CustomEvent('themechange'));
       });
     </script>
+
     <style>
-      .site-header {
-        border-bottom: 1px solid var(--hairline);
-        background: var(--bg-surface-1);
+      .shell {
+        display: grid;
+        grid-template-columns: 232px minmax(0, 1fr);
+        min-height: 100vh;
       }
-      .header-row {
+      .sidebar {
+        position: sticky;
+        top: 0;
+        height: 100vh;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-top: 14px;
-        padding-bottom: 14px;
+        flex-direction: column;
+        gap: 8px;
+        padding: 20px 14px;
+        background: var(--bg-rail);
+        border-right: 1px solid var(--hairline);
       }
       .brand {
-        font-weight: 700;
-        font-size: 1.05rem;
-        color: var(--ink);
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        font-family: var(--font-display);
+        font-weight: 600;
+        font-size: 1.02rem;
         letter-spacing: -0.01em;
-      }
-      .brand span {
-        color: var(--accent-blue);
+        color: var(--ink);
+        padding: 4px 10px 16px;
       }
       .brand:hover {
         text-decoration: none;
       }
+      .brand-accent {
+        color: var(--accent-blue);
+      }
+      .brand-mark {
+        width: 10px;
+        height: 10px;
+        border-radius: 3px;
+        background: linear-gradient(135deg, var(--accent-blue), #7dd3fc);
+        box-shadow: 0 0 12px var(--accent-blue-soft);
+        flex: none;
+      }
+      .side-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        min-width: 0;
+      }
+      .back-link {
+        color: var(--ink-faint);
+        font-size: 0.78rem;
+        padding: 2px 10px 10px;
+      }
+      .nav-label {
+        color: var(--ink-faint);
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.09em;
+        padding: 4px 10px 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .nav-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--ink-muted);
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 8px 10px;
+        border-radius: 9px;
+        border: 1px solid transparent;
+        white-space: nowrap;
+      }
+      .nav-item:hover {
+        color: var(--ink);
+        background: var(--bg-surface-2);
+        text-decoration: none;
+      }
+      .nav-item.active {
+        color: var(--ink);
+        background: var(--bg-surface-2);
+        border-color: var(--hairline);
+        font-weight: 600;
+        box-shadow: inset 2px 0 0 var(--accent-blue);
+      }
+      .nav-icon {
+        width: 17px;
+        height: 17px;
+        flex: none;
+        opacity: 0.85;
+      }
+      .nav-item.active .nav-icon {
+        color: var(--accent-blue);
+        opacity: 1;
+      }
+      .nav-text {
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--ink-faint);
+        flex: none;
+      }
+      .dot.ok {
+        background: var(--status-ok);
+        box-shadow: 0 0 6px color-mix(in srgb, var(--status-ok) 60%, transparent);
+      }
+      .dot.warn {
+        background: var(--status-warn-fg);
+      }
+      .dot.err {
+        background: var(--status-err-fg);
+      }
+      .dot.off {
+        background: transparent;
+        outline: 1px solid var(--hairline);
+      }
+      .side-footer {
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 10px 6px 0;
+        border-top: 1px solid var(--hairline-soft);
+      }
       #theme-toggle {
+        display: flex;
+        align-items: center;
+        gap: 7px;
         background: none;
         border: 1px solid var(--hairline);
         border-radius: 8px;
         color: var(--ink-muted);
-        font-size: 1rem;
-        padding: 4px 10px;
+        font: inherit;
+        font-size: 0.8rem;
+        padding: 6px 10px;
         cursor: pointer;
       }
       #theme-toggle:hover {
         color: var(--ink);
         border-color: var(--ink-faint);
       }
+      #theme-toggle svg {
+        width: 14px;
+        height: 14px;
+      }
+      .side-meta {
+        color: var(--ink-faint);
+        font-size: 0.72rem;
+      }
+      .content {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+      }
       main {
-        padding-top: 32px;
-        padding-bottom: 64px;
+        flex: 1;
+        width: 100%;
+        max-width: 1240px;
+        padding: 30px clamp(18px, 3.5vw, 44px) 64px;
       }
       .site-footer {
         border-top: 1px solid var(--hairline);
         color: var(--ink-faint);
-        font-size: 0.85rem;
-        padding: 20px 0;
+        font-size: 0.82rem;
+        padding: 18px clamp(18px, 3.5vw, 44px);
+      }
+
+      /* Mobile: sidebar staje się górnym pasem, nav przewijalny poziomo. */
+      @media (max-width: 900px) {
+        .shell {
+          grid-template-columns: 1fr;
+        }
+        .sidebar {
+          position: static;
+          height: auto;
+          flex-direction: row;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 4px 10px;
+          padding: 12px 14px;
+          border-right: none;
+          border-bottom: 1px solid var(--hairline);
+        }
+        .brand {
+          padding: 0 4px;
+        }
+        .side-nav {
+          flex-direction: row;
+          align-items: center;
+          gap: 2px;
+          overflow-x: auto;
+          scrollbar-width: none;
+          width: 100%;
+          order: 3;
+        }
+        .side-nav::-webkit-scrollbar {
+          display: none;
+        }
+        .back-link,
+        .nav-label {
+          display: none;
+        }
+        .nav-item {
+          padding: 7px 10px;
+        }
+        .nav-item.active {
+          box-shadow: inset 0 -2px 0 var(--accent-blue);
+        }
+        .side-footer {
+          margin-top: 0;
+          margin-left: auto;
+          border-top: none;
+          padding: 0;
+        }
+        .side-meta {
+          display: none;
+        }
+        #theme-toggle span {
+          display: none;
+        }
+        main {
+          padding-top: 20px;
+        }
       }
     </style>
   </body>

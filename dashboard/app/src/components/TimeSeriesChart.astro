@@ -83,7 +83,7 @@ const hasData = timestamps.length > 0 && series.some((s) => s.values.some((v) =>
       plot = new uPlot(
         {
           width: el.clientWidth,
-          height: 260,
+          height: 280,
           padding: [12, 8, 0, 0],
           cursor: { points: { size: 7 } },
           scales,
@@ -96,6 +96,7 @@ const hasData = timestamps.length > 0 && series.some((s) => s.values.some((v) =>
             ...cfg.series.map((s, i) => ({
               label: s.label,
               stroke: colors[i % colors.length],
+              fill: i === 0 ? colors[0] + '1f' : undefined,
               width: 2,
               dash: DASHES[i % DASHES.length],
               points: { show: sparse, size: 8 },
@@ -112,7 +113,7 @@ const hasData = timestamps.length > 0 && series.some((s) => s.values.some((v) =>
     };
 
     render();
-    new ResizeObserver(() => plot && plot.setSize({ width: el.clientWidth, height: 260 })).observe(
+    new ResizeObserver(() => plot && plot.setSize({ width: el.clientWidth, height: 280 })).observe(
       el,
     );
     window.addEventListener('themechange', render);
@@ -123,15 +124,20 @@ const hasData = timestamps.length > 0 && series.some((s) => s.values.some((v) =>
 
 <style>
   .chart-card {
-    background: var(--bg-surface-1);
+    background: linear-gradient(180deg, color-mix(in srgb, var(--ink) 3%, var(--bg-surface-1)), var(--bg-surface-1) 55%);
     border: 1px solid var(--hairline);
-    border-radius: 12px;
+    border-radius: 14px;
     padding: 16px 18px 10px;
     margin: 0;
     min-width: 0;
+    transition: border-color 0.15s ease;
+  }
+  .chart-card:hover {
+    border-color: color-mix(in srgb, var(--accent-blue) 30%, var(--hairline));
   }
   figcaption {
     color: var(--ink);
+    font-family: var(--font-display);
     font-weight: 600;
     font-size: 0.95rem;
     margin-bottom: 10px;
