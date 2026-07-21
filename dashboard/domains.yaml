@@ -88,3 +88,4 @@ global:
 
 # run: re-test LEADS_EXPORT_TOKEN po poprawce w GH Secrets 2026-07-21
 # run: retry GA4 widocznosc.ai 2026-07-21
+# run: retry pełnej sitemapy w Matrix po konflikcie rebase 2026-07-21
