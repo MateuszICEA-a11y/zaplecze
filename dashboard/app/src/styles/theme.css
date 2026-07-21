@@ -259,40 +259,59 @@ table.data-table {
   padding: 28px 18px 34px;
   text-align: center;
 }
-/* paginacja karty tabeli */
-.table-pager {
+/* paginacja karty tabeli (1:1 z mockupu) */
+.pager {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   gap: 12px;
-  padding: 10px 18px 12px;
-  border-top: 1px solid var(--hairline-soft);
+  padding: 11px 16px;
+  border-top: 1px solid var(--hairline);
+  flex-wrap: wrap;
 }
-.table-pager button {
+.pager .pinfo {
+  color: var(--ink-faint);
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+.pager .pnav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.pager button {
+  appearance: none;
   background: var(--bg-surface-2);
   border: 1px solid var(--hairline);
   border-radius: 8px;
   color: var(--ink-muted);
   font: inherit;
-  font-size: 0.85rem;
-  line-height: 1;
-  padding: 6px 12px;
+  font-size: 0.82rem;
+  padding: 6px 11px;
   cursor: pointer;
 }
-.table-pager button:hover:not(:disabled) {
+.pager button:hover:not(:disabled) {
   color: var(--ink);
   border-color: var(--ink-faint);
 }
-.table-pager button:disabled {
-  opacity: 0.35;
+.pager button:disabled {
+  opacity: 0.38;
   cursor: default;
 }
-.pager-label {
-  color: var(--ink-faint);
-  font-size: 0.78rem;
-  font-variant-numeric: tabular-nums;
-  min-width: 90px;
+.pager .pages {
+  display: flex;
+  gap: 4px;
+}
+.pager .pages button {
+  min-width: 34px;
   text-align: center;
+}
+.pager .pages button.active {
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+  color: #05121f;
+  font-weight: 700;
 }
 /* pasek wielkości w komórce (magnituda vs max kolumny) */
 .cell-bar {

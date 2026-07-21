@@ -8,13 +8,13 @@ interface Props {
   meta?: string;
   count?: number;
   filter?: boolean;
-  /* Liczba wierszy na stronę; brak = bez paginacji. */
+  /* Liczba wierszy na stronę (domyślnie 10 – paginacja wszędzie); 0 = wyłączona. */
   pageSize?: number;
   empty?: string;
 }
-const { title, meta, count, filter = false, pageSize, empty = 'Brak danych.' } = Astro.props;
+const { title, meta, count, filter = false, pageSize = 10, empty = 'Brak danych.' } = Astro.props;
 const isEmpty = count === 0;
-const paged = !isEmpty && typeof pageSize === 'number' && (count ?? 0) > pageSize;
+const paged = !isEmpty && pageSize > 0;
 ---
 
 <section class="table-card">
@@ -38,10 +38,13 @@ const paged = !isEmpty && typeof pageSize === 'number' && (count ?? 0) > pageSiz
     )
   }
   {paged && (
-    <div class="table-pager" data-page-size={pageSize}>
-      <button type="button" data-pager-prev aria-label="Poprzednia strona">←</button>
-      <span class="pager-label" data-pager-label></span>
-      <button type="button" data-pager-next aria-label="Następna strona">→</button>
+    <div class="pager" data-page-size={pageSize}>
+      <span class="pinfo" data-pager-info></span>
+      <div class="pnav">
+        <button type="button" data-pager-prev>‹ Poprzednia</button>
+        <div class="pages" data-pager-pages></div>
+        <button type="button" data-pager-next>Następna ›</button>
+      </div>
     </div>
   )}
 </section>
@@ -61,11 +64,12 @@ const paged = !isEmpty && typeof pageSize === 'number' && (count ?? 0) > pageSiz
     if (!table || !body || body.rows.length === 0) return;
 
     const input = card.querySelector<HTMLInputElement>('[data-table-filter]');
-    const pager = card.querySelector<HTMLElement>('.table-pager');
+    const pager = card.querySelector<HTMLElement>('.pager');
     const pageSize = pager ? parseInt(pager.dataset.pageSize ?? '0', 10) : 0;
     const prevBtn = pager?.querySelector<HTMLButtonElement>('[data-pager-prev]');
     const nextBtn = pager?.querySelector<HTMLButtonElement>('[data-pager-next]');
-    const label = pager?.querySelector<HTMLElement>('[data-pager-label]');
+    const info = pager?.querySelector<HTMLElement>('[data-pager-info]');
+    const pagesBox = pager?.querySelector<HTMLElement>('[data-pager-pages]');
     let page = 0;
 
     const update = () => {
@@ -80,12 +84,36 @@ const paged = !isEmpty && typeof pageSize === 'number' && (count ?? 0) > pageSiz
       if (page < 0) page = 0;
       const shown = pageSize ? matched.slice(page * pageSize, (page + 1) * pageSize) : matched;
       shown.forEach((r) => (r.hidden = false));
-      if (pager && label && prevBtn && nextBtn) {
+      if (pager && info && prevBtn && nextBtn && pagesBox) {
         const from = matched.length === 0 ? 0 : page * pageSize + 1;
         const to = Math.min((page + 1) * pageSize, matched.length);
-        label.textContent = `${from.toLocaleString('pl-PL')}–${to.toLocaleString('pl-PL')} z ${matched.length.toLocaleString('pl-PL')}`;
+        info.textContent = matched.length
+          ? `${from.toLocaleString('pl-PL')}–${to.toLocaleString('pl-PL')} z ${matched.length.toLocaleString('pl-PL')}`
+          : '0 z 0';
         prevBtn.disabled = page === 0;
         nextBtn.disabled = page >= pages - 1;
+        /* Okno numerów stron jak w mockupie: max 5 przycisków wokół bieżącej. */
+        let s = 0;
+        let e = pages;
+        if (pages > 7) {
+          s = Math.max(0, page - 2);
+          e = Math.min(pages, s + 5);
+          s = Math.max(0, e - 5);
+        }
+        pagesBox.replaceChildren(
+          ...Array.from({ length: e - s }, (_, i) => {
+            const idx = s + i;
+            const b = document.createElement('button');
+            b.type = 'button';
+            b.textContent = String(idx + 1);
+            if (idx === page) b.classList.add('active');
+            b.addEventListener('click', () => {
+              page = idx;
+              update();
+            });
+            return b;
+          }),
+        );
         pager.hidden = matched.length <= pageSize;
       }
     };
