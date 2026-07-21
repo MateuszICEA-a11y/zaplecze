@@ -1,6 +1,6 @@
 {
  "date": "2026-07-21",
- "collected_at": "2026-07-21T09:15:39Z",
+ "collected_at": "2026-07-21T10:14:43Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -3905,13 +3905,13 @@
    "url": [
     {
      "name": "?",
-     "sessions": 1,
+     "sessions": 3,
      "users": 3
     },
     {
      "name": "?",
      "sessions": 1,
-     "users": 1
+     "users": 3
     },
     {
      "name": "?",
@@ -3934,30 +3934,8 @@
      "users": 1
     }
    ],
-   "referrer": [
-    {
-     "name": "?",
-     "sessions": 5,
-     "users": 9
-    }
-   ],
-   "device": [
-    {
-     "name": "PC",
-     "sessions": 5,
-     "users": 7
-    },
-    {
-     "name": "Mobile",
-     "sessions": 0,
-     "users": 1
-    },
-    {
-     "name": "Other",
-     "sessions": 0,
-     "users": 1
-    }
-   ]
+   "referrer": [],
+   "device": []
   },
   "leads": {
    "leads": [

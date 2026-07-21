@@ -1,9 +1,203 @@
 {
  "date": "2026-07-21",
- "collected_at": "2026-07-21T09:15:39Z",
+ "collected_at": "2026-07-21T10:14:43Z",
  "sources": {
   "senuto": {
    "keywords": [
+    {
+     "keyword": "grupa icea",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 590,
+     "url": "grupa-icea.pl/",
+     "cpc": 11.24,
+     "difficulty": 48,
+     "snippets": [
+      "image_thumbs"
+     ]
+    },
+    {
+     "keyword": "seo a site",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 590,
+     "url": "grupa-icea.pl/blog/seo-co-to-jest/",
+     "cpc": 6.89,
+     "difficulty": 58,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "icea group",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 170,
+     "url": "grupa-icea.pl/",
+     "cpc": 0,
+     "difficulty": 24,
+     "snippets": [
+      "image_thumbs"
+     ]
+    },
+    {
+     "keyword": "adsright",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 110,
+     "url": "grupa-icea.pl/",
+     "cpc": 0,
+     "difficulty": 36,
+     "snippets": [
+      "image_thumbs"
+     ]
+    },
+    {
+     "keyword": "komunikat reklamowy",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 70,
+     "url": "grupa-icea.pl/blog/co-to-jest-przekaz-reklamowy-i-jakie-elementy-powinien-zawierac/",
+     "cpc": 0,
+     "difficulty": 34,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "nienaturalne linki przychodzące",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/slownik/nienaturalne-linki-przychodzace/",
+     "cpc": 0,
+     "difficulty": 18,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "katalogowanie stron",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/blog/na-czym-polega-katalogowanie-stron/",
+     "cpc": 9.1,
+     "difficulty": 51,
+     "snippets": [
+      "people_also_ask",
+      "wiki_right"
+     ]
+    },
+    {
+     "keyword": "optymalizacja bloga",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/blog/jak-pozycjonowac-blog-optymalizacja-seo-bloga/",
+     "cpc": 0,
+     "difficulty": 39,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "optymalizacja strony pod urządzenia mobilne",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/blog/optymalizacja-strony-pod-urzadzenia-mobilne/",
+     "cpc": 0,
+     "difficulty": 16,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "oczekiwania klienta",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/blog/czego-potrzebuje-klient-dowiedz-sie-jak-spelnic-jego-oczekiwania/",
+     "cpc": 0,
+     "difficulty": 39,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "icea praca",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/kariera/",
+     "cpc": 0,
+     "difficulty": 22,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "zlecę pozycjonowanie",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 40,
+     "url": "grupa-icea.pl/blog/zlece-pozycjonowanie-o-czym-nalezy-pamietac/",
+     "cpc": 0,
+     "difficulty": 49,
+     "snippets": [
+      "image_thumbs"
+     ]
+    },
+    {
+     "keyword": "marketplace e commerce",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 40,
+     "url": "grupa-icea.pl/blog/e-commerce-vs-marketplace-co-wybrac/",
+     "cpc": 7.48,
+     "difficulty": 52,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "rodzaje linków",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 40,
+     "url": "grupa-icea.pl/blog/jakie-sa-rodzaje-linkow/",
+     "cpc": 0,
+     "difficulty": 45,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
     {
      "keyword": "mieszarka seo",
      "position": 1,
@@ -18,6 +212,530 @@
      ]
     },
     {
+     "keyword": "icea poznań",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/",
+     "cpc": 0,
+     "difficulty": 36,
+     "snippets": [
+      "image_thumbs"
+     ]
+    },
+    {
+     "keyword": "jak otworzyć kod strony",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/kod-zrodlowy-witryny-jak-go-odczytac/",
+     "cpc": 0,
+     "difficulty": 34,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "ux researcher co robi",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/co-robi-ux-researcher/",
+     "cpc": 0,
+     "difficulty": 33,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "search console instrukcja",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/google-search-console-poradnik-krok-po-kroku/",
+     "cpc": 0,
+     "difficulty": 25,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "aplikacje progresywne",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/czym-sa-progresywne-aplikacje-webowe-pwa-i-jak-wplywaja-na-pozycjonowanie/",
+     "cpc": 0,
+     "difficulty": 29,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "zalety badań jakościowych",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/badania-jakosciowe-vs-badania-ilosciowe/",
+     "cpc": 0,
+     "difficulty": 30,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "geotagi",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/co-powinienes-wiedziec-o-geotaggingu/",
+     "cpc": 0,
+     "difficulty": 37,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask",
+      "wiki_right"
+     ]
+    },
+    {
+     "keyword": "icea sp z oo",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/",
+     "cpc": 0,
+     "difficulty": 13,
+     "snippets": []
+    },
+    {
+     "keyword": "grupa icea praca",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/kariera/",
+     "cpc": 0,
+     "difficulty": 17,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "branding media",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/branding-w-mediach-spolecznosciowych-czyli-promowanie-marki-na-szeroka-skale/",
+     "cpc": 0,
+     "difficulty": 40,
+     "snippets": [
+      "image_thumbs"
+     ]
+    },
+    {
+     "keyword": "google kopie stron",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/jak-znalezc-kopie-strony-w-google/",
+     "cpc": 0,
+     "difficulty": 41,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jak sprawdzić page rank strony",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/czym-jest-page-rank-strony-jak-mozemy-go-sprawdzic/",
+     "cpc": 2.3,
+     "difficulty": 18,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "co to jest marketing rekomendacyjny",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/na-czym-polega-marketing-rekomendacyjny/",
+     "cpc": 0,
+     "difficulty": 12,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask",
+      "wiki_right"
+     ]
+    },
+    {
+     "keyword": "badania ilościowe wady i zalety",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/badania-jakosciowe-vs-badania-ilosciowe/",
+     "cpc": 0,
+     "difficulty": 19,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "progresywne aplikacje webowe",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/czym-sa-progresywne-aplikacje-webowe-pwa-i-jak-wplywaja-na-pozycjonowanie/",
+     "cpc": 3.6,
+     "difficulty": 29,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jak znaleźć kopię strony w google",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/jak-znalezc-kopie-strony-w-google/",
+     "cpc": 0,
+     "difficulty": 30,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "sprzedaż komplementarna co to jest",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/sprzedaz-komplementarna-co-to-jest-i-na-czym-polega/",
+     "cpc": 0,
+     "difficulty": 18,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "pagerank jak sprawdzić",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/czym-jest-page-rank-strony-jak-mozemy-go-sprawdzic/",
+     "cpc": 0,
+     "difficulty": 21,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jak włączyć kod strony",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/kod-zrodlowy-witryny-jak-go-odczytac/",
+     "cpc": 0,
+     "difficulty": 37,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "ctr strony",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/czym-jest-ctr-i-jaki-mozna-uznac-za-dobry/",
+     "cpc": 0,
+     "difficulty": 33,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jak wejść w kod źródłowy strony",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/kod-zrodlowy-witryny-jak-go-odczytac/",
+     "cpc": 0,
+     "difficulty": 15,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "wady i zalety badań jakościowych",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/badania-jakosciowe-vs-badania-ilosciowe/",
+     "cpc": 0,
+     "difficulty": 19,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "host seo",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 720,
+     "url": "grupa-icea.pl/blog/hosting-seo-co-to-jest-i-jak-wybrac-najlepszy/",
+     "cpc": 5.45,
+     "difficulty": 40,
+     "snippets": [
+      "people_also_ask",
+      "spell",
+      "wiki_right"
+     ]
+    },
+    {
+     "keyword": "funkcje cen",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 320,
+     "url": "grupa-icea.pl/blog/jakie-sa-funkcje-ceny-w-marketingu/",
+     "cpc": 0,
+     "difficulty": 43,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "reklama na stronie internetowej",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 140,
+     "url": "grupa-icea.pl/blog/reklama-na-stronie-internetowej-jak-ja-dodac/",
+     "cpc": 5.15,
+     "difficulty": 59,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "pozycjonowanie gmf",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 110,
+     "url": "grupa-icea.pl/blog/pozycjonowanie-wizytowki-google/",
+     "cpc": 0,
+     "difficulty": 24,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "ctr co to znaczy",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 90,
+     "url": "grupa-icea.pl/blog/czym-jest-ctr-i-jaki-mozna-uznac-za-dobry/",
+     "cpc": 0,
+     "difficulty": 48,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "cltv",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 90,
+     "url": "grupa-icea.pl/blog/dlugookresowa-wartosc-klienta-cltv-co-to-jest-i-jak-ja-obliczyc/",
+     "cpc": 0,
+     "difficulty": 38,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask",
+      "wiki_right"
+     ]
+    },
+    {
+     "keyword": "przekaz reklamowy",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 90,
+     "url": "grupa-icea.pl/blog/co-to-jest-przekaz-reklamowy-i-jakie-elementy-powinien-zawierac/",
+     "cpc": 0,
+     "difficulty": 35,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "reklama na stronie",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 70,
+     "url": "grupa-icea.pl/blog/reklama-na-stronie-internetowej-jak-ja-dodac/",
+     "cpc": 1.47,
+     "difficulty": 50,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "optymalizacja strony mobilnej",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 70,
+     "url": "grupa-icea.pl/blog/optymalizacja-strony-pod-urzadzenia-mobilne/",
+     "cpc": 0,
+     "difficulty": 29,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "zlecę pozycjonowanie strony",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 70,
+     "url": "grupa-icea.pl/blog/zlece-pozycjonowanie-o-czym-nalezy-pamietac/",
+     "cpc": 0,
+     "difficulty": 38,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jak skutecznie sprzedawać na allegro",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 70,
+     "url": "grupa-icea.pl/blog/jak-skutecznie-zaczac-sprzedawac-na-allegro/",
+     "cpc": 4.64,
+     "difficulty": 43,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "vanity url",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 70,
+     "url": "grupa-icea.pl/blog/vanity-url-czym-jest-i-jak-wykorzystac-go-w-strategii-seo/",
+     "cpc": 0,
+     "difficulty": 39,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask",
+      "wiki_right"
+     ]
+    },
+    {
+     "keyword": "reklamy remarketingowe",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 70,
+     "url": "grupa-icea.pl/blog/remarketing-czym-jest-i-na-czym-polega/",
+     "cpc": 10.78,
+     "difficulty": 44,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "grupa icea opinie",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 70,
+     "url": "grupa-icea.pl/",
+     "cpc": 0,
+     "difficulty": 26,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "makiety hi fi",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 70,
+     "url": "grupa-icea.pl/blog/czym-sa-makiety-low-fi-i-high-fi/",
+     "cpc": 0,
+     "difficulty": 0,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
      "keyword": "dobre słowa kluczowe",
      "position": 2,
      "previous": 2,
@@ -26,6 +744,457 @@
      "url": "grupa-icea.pl/blog/slowa-kluczowe-jak-je-dobrze-wybrac-narzedzia-i-sposoby-na-dobor-fraz-do-pozycjonowania/",
      "cpc": 0,
      "difficulty": 38,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "kod strony",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/blog/kod-zrodlowy-witryny-jak-go-odczytac/",
+     "cpc": 0,
+     "difficulty": 52,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "wędrówka poznawcza",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/blog/badanie-metoda-wedrowki-poznawczej-na-czym-polega/",
+     "cpc": 0,
+     "difficulty": 28,
+     "snippets": [
+      "image_thumbs"
+     ]
+    },
+    {
+     "keyword": "jak zobaczyć kod strony html",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/blog/kod-zrodlowy-witryny-jak-go-odczytac/",
+     "cpc": 0,
+     "difficulty": 38,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "pozycjonowanie globalne",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 40,
+     "url": "grupa-icea.pl/blog/globalizacja-a-seo-pozycjonowanie-globalne/",
+     "cpc": 0,
+     "difficulty": 25,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "typy kampanii reklamowych",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 40,
+     "url": "grupa-icea.pl/blog/jakie-typy-kampanii-reklamowych-mozemy-wyroznic-w-google-ads/",
+     "cpc": 0,
+     "difficulty": 45,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "marketplace in e commerce",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 40,
+     "url": "grupa-icea.pl/blog/e-commerce-vs-marketplace-co-wybrac/",
+     "cpc": 3.5,
+     "difficulty": 43,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask",
+      "spell"
+     ]
+    },
+    {
+     "keyword": "sprawdzanie pagerank",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 40,
+     "url": "grupa-icea.pl/blog/czym-jest-page-rank-strony-jak-mozemy-go-sprawdzic/",
+     "cpc": 0,
+     "difficulty": 28,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "nienaturalne linki",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/slownik/nienaturalne-linki-przychodzace/",
+     "cpc": 0,
+     "difficulty": 23,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "badania konsumenckie definicja",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/slownik/badania-konsumenckie/",
+     "cpc": 0,
+     "difficulty": 30,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "badania jakościowe ux",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/badania-jakosciowe-ux/",
+     "cpc": 0,
+     "difficulty": 23,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "ranking seo strony internetowej",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/czym-jest-page-rank-strony-jak-mozemy-go-sprawdzic/",
+     "cpc": 0,
+     "difficulty": 35,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jak zobaczyć kod strony",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/kod-zrodlowy-witryny-jak-go-odczytac/",
+     "cpc": 0,
+     "difficulty": 39,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jak sprawdzić kod źródłowy strony",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/kod-zrodlowy-witryny-jak-go-odczytac/",
+     "cpc": 0,
+     "difficulty": 27,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "co oznacza skrót seo",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/seo-co-to-jest/",
+     "cpc": 0,
+     "difficulty": 29,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "plik htaccess jak powinien wyglądać",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/do-czego-sluzy-plik-htaccess-sprawdz-mozliwosci-tego-pliku/",
+     "cpc": 0,
+     "difficulty": 14,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "metawyszukiwarki",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/slownik/metawyszukiwarki/",
+     "cpc": 0,
+     "difficulty": 26,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "infografika prezentacja",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/co-to-jest-infografika-i-jak-ja-stworzyc/",
+     "cpc": 0,
+     "difficulty": 35,
+     "snippets": [
+      "image_thumbs"
+     ]
+    },
+    {
+     "keyword": "jak nazwać kanał na yt",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/najlepsza-nazwa-kanalu-youtube-jaka-wybrac-i-dlaczego-jest-tak-wazna/",
+     "cpc": 0,
+     "difficulty": 25,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jaką nazwe na yt",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/najlepsza-nazwa-kanalu-youtube-jaka-wybrac-i-dlaczego-jest-tak-wazna/",
+     "cpc": 0,
+     "difficulty": 28,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "kod źródłowy strony internetowej",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/kod-zrodlowy-witryny-jak-go-odczytac/",
+     "cpc": 0,
+     "difficulty": 28,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jak sprawdzić kod html strony",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/kod-zrodlowy-witryny-jak-go-odczytac/",
+     "cpc": 0,
+     "difficulty": 36,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "google search console poradnik",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/google-search-console-poradnik-krok-po-kroku/",
+     "cpc": 3.02,
+     "difficulty": 22,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "zalety badań ilościowych",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/badania-jakosciowe-vs-badania-ilosciowe/",
+     "cpc": 0,
+     "difficulty": 28,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jak dodać reklamy na strone",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/reklama-na-stronie-internetowej-jak-ja-dodac/",
+     "cpc": 9.36,
+     "difficulty": 57,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "goshop opinie",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/sklep-internetowy-goshop-czy-warto/",
+     "cpc": 0,
+     "difficulty": 17,
+     "snippets": [
+      "image_thumbs"
+     ]
+    },
+    {
+     "keyword": "prestashop konfiguracja email",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/jak-prawidlowo-przeprowadzic-konfiguracje-poczty-dla-prestashop/",
+     "cpc": 0,
+     "difficulty": 15,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "badania fokusowe definicja",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/slownik/badania-fokusowe/",
+     "cpc": 0,
+     "difficulty": 23,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "wady badań jakościowych",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/badania-jakosciowe-vs-badania-ilosciowe/",
+     "cpc": 0,
+     "difficulty": 27,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "seo onsite offsite",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/jakie-sa-roznice-pomiedzy-pozycjonowaniem-on-site-a-off-site/",
+     "cpc": 0,
+     "difficulty": 25,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "analyticsa",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 22200,
+     "url": "grupa-icea.pl/blog/czym-jest-google-analytics-4-dlaczego-warto-skorzystac-z-nowego-analyticsa/",
+     "cpc": 4.24,
+     "difficulty": 70,
+     "snippets": [
+      "people_also_ask",
+      "spell"
+     ]
+    },
+    {
+     "keyword": "kod źródłowy",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 1000,
+     "url": "grupa-icea.pl/blog/kod-zrodlowy-witryny-jak-go-odczytac/",
+     "cpc": 0,
+     "difficulty": 43,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask",
+      "wiki_right"
+     ]
+    },
+    {
+     "keyword": "jak zacząć sprzedawać na allegro",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 390,
+     "url": "grupa-icea.pl/blog/jak-skutecznie-zaczac-sprzedawac-na-allegro/",
+     "cpc": 4.38,
+     "difficulty": 42,
      "snippets": [
       "ai_overview",
       "people_also_ask"
@@ -46,6 +1215,476 @@
      ]
     },
     {
+     "keyword": "witryna bliska informatykowi",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 260,
+     "url": "grupa-icea.pl/blog/co-to-jest-witryna-internetowa/",
+     "cpc": 0,
+     "difficulty": 21,
+     "snippets": []
+    },
+    {
+     "keyword": "brand marketing",
+     "position": 3,
+     "previous": 10,
+     "diff": -7,
+     "searches": 210,
+     "url": "grupa-icea.pl/slownik/brand-marketing/",
+     "cpc": 6.09,
+     "difficulty": 56,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "ppc co to",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 210,
+     "url": "grupa-icea.pl/blog/co-to-jest-reklama-ppc/",
+     "cpc": 2.16,
+     "difficulty": 42,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask",
+      "wiki_right"
+     ]
+    },
+    {
+     "keyword": "sprzedaż komplementarna",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 210,
+     "url": "grupa-icea.pl/blog/sprzedaz-komplementarna-co-to-jest-i-na-czym-polega/",
+     "cpc": 2.36,
+     "difficulty": 32,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "seo skrót",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 170,
+     "url": "grupa-icea.pl/blog/seo-co-to-jest/",
+     "cpc": 3.19,
+     "difficulty": 58,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "makiety lo fi",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 140,
+     "url": "grupa-icea.pl/blog/czym-sa-makiety-low-fi-i-high-fi/",
+     "cpc": 0,
+     "difficulty": 0,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "katalogowanie",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 110,
+     "url": "grupa-icea.pl/blog/na-czym-polega-katalogowanie-stron/",
+     "cpc": 0,
+     "difficulty": 56,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "kod 404",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 110,
+     "url": "grupa-icea.pl/blog/na-czym-polega-blad-410-oraz-404-na-stronie/",
+     "cpc": 0.55,
+     "difficulty": 52,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "pozycjonowanie sklepów rzeszów",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 90,
+     "url": "grupa-icea.pl/oferta/pozycjonowanie/lokalne/rzeszow/",
+     "cpc": 0,
+     "difficulty": 24,
+     "snippets": [
+      "map",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "marketing rekomendacyjny zarobki",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 70,
+     "url": "grupa-icea.pl/blog/na-czym-polega-marketing-rekomendacyjny/",
+     "cpc": 0,
+     "difficulty": 19,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "presell pages",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 70,
+     "url": "grupa-icea.pl/slownik/presell-pages/",
+     "cpc": 0,
+     "difficulty": 42,
+     "snippets": [
+      "image_thumbs"
+     ]
+    },
+    {
+     "keyword": "kod strony internetowej",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 70,
+     "url": "grupa-icea.pl/blog/kod-zrodlowy-witryny-jak-go-odczytac/",
+     "cpc": 0.44,
+     "difficulty": 52,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "makiety low fi",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 70,
+     "url": "grupa-icea.pl/blog/czym-sa-makiety-low-fi-i-high-fi/",
+     "cpc": 0,
+     "difficulty": 25,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "artykuły seo co to",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/blog/jak-tworzyc-dobre-artykuly-pod-seo/",
+     "cpc": 3.36,
+     "difficulty": 32,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "kopia strony google",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/blog/jak-znalezc-kopie-strony-w-google/",
+     "cpc": 0,
+     "difficulty": 41,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "prestashop przeniesienie na inny serwer",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 40,
+     "url": "grupa-icea.pl/blog/migracja-prestashop/",
+     "cpc": 0,
+     "difficulty": 30,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs"
+     ]
+    },
+    {
+     "keyword": "eat seo",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 40,
+     "url": "grupa-icea.pl/blog/czym-jest-google-e-e-a-t-i-jak-je-wykorzystac-w-seo/",
+     "cpc": 0,
+     "difficulty": 0,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "sprawdź pagerank",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 40,
+     "url": "grupa-icea.pl/blog/czym-jest-page-rank-strony-jak-mozemy-go-sprawdzic/",
+     "cpc": 0,
+     "difficulty": 27,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "pozycjonowanie bing",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/bing-vs-google-roznice-w-pozycjonowaniu/",
+     "cpc": 6.82,
+     "difficulty": 34,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "elementy przekazu reklamowego",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/co-to-jest-przekaz-reklamowy-i-jakie-elementy-powinien-zawierac/",
+     "cpc": 0,
+     "difficulty": 29,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jak sprawdzić ranking strony",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/czym-jest-page-rank-strony-jak-mozemy-go-sprawdzic/",
+     "cpc": 0,
+     "difficulty": 53,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "progresywna aplikacja internetowa",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/czym-sa-progresywne-aplikacje-webowe-pwa-i-jak-wplywaja-na-pozycjonowanie/",
+     "cpc": 0,
+     "difficulty": 22,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "prototypowanie co to",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/slownik/prototypowanie/",
+     "cpc": 0,
+     "difficulty": 22,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask",
+      "wiki_right"
+     ]
+    },
+    {
+     "keyword": "jak sprawdzić kod strony",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/kod-zrodlowy-witryny-jak-go-odczytac/",
+     "cpc": 0,
+     "difficulty": 39,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "katalogowanie seo",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/na-czym-polega-katalogowanie-stron/",
+     "cpc": 11.26,
+     "difficulty": 34,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "funkcja redystrybucyjna ceny",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/jakie-sa-funkcje-ceny-w-marketingu/",
+     "cpc": 0,
+     "difficulty": 24,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "pokaż źródło strony",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/kod-zrodlowy-witryny-jak-go-odczytac/",
+     "cpc": 0,
+     "difficulty": 43,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "adres ip co oznaczają cyfry",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/co-to-jest-adres-ip/",
+     "cpc": 0,
+     "difficulty": 30,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "seo robots txt",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/czym-jest-plik-robots-txt-jaki-ma-wplyw-na-seo-i-jak-prawidlowo-go-skonfigurowac/",
+     "cpc": 0,
+     "difficulty": 36,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "przekaz reklamowy definicja",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/co-to-jest-przekaz-reklamowy-i-jakie-elementy-powinien-zawierac/",
+     "cpc": 0,
+     "difficulty": 28,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "badanie fokusowe definicja",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/slownik/badania-fokusowe/",
+     "cpc": 0,
+     "difficulty": 26,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "co to jest przekaz reklamowy",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/co-to-jest-przekaz-reklamowy-i-jakie-elementy-powinien-zawierac/",
+     "cpc": 0,
+     "difficulty": 29,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jak postawić bloga na wordpressie",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/jak-zalozyc-bloga-na-wordpress/",
+     "cpc": 0,
+     "difficulty": 21,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs"
+     ]
+    },
+    {
      "keyword": "lokowanie produktu definicja",
      "position": 3,
      "previous": 3,
@@ -61,13 +1700,129 @@
      ]
     },
     {
-     "keyword": "kod źródłowy strony",
-     "position": 5,
-     "previous": 5,
+     "keyword": "kody remarketingowe",
+     "position": 3,
+     "previous": 3,
      "diff": 0,
-     "searches": 70,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/remarketing-czym-jest-i-na-czym-polega/",
+     "cpc": 0,
+     "difficulty": 28,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "wyświetl źródło strony",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 10,
      "url": "grupa-icea.pl/blog/kod-zrodlowy-witryny-jak-go-odczytac/",
      "cpc": 0,
+     "difficulty": 41,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "brief dla agencji",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/brief-dla-agencji-marketingowej-jak-wyglada-jak-go-napisac/",
+     "cpc": 0,
+     "difficulty": 32,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "marketing wirusowy a szeptany",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/marketing-wirusowy-co-to-jest-viral-marketing/",
+     "cpc": 0,
+     "difficulty": 20,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "marketing narracyjny definicja",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/slownik/marketing-narracyjny/",
+     "cpc": 0,
+     "difficulty": 20,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "google adwords opinie",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/opinie-w-google-ads-jak-zwiekszyc-ich-efektywnosc/",
+     "cpc": 0,
+     "difficulty": 32,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "marketing rekomendacyjny na czym polega",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/na-czym-polega-marketing-rekomendacyjny/",
+     "cpc": 0,
+     "difficulty": 10,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "przejęcie wizytówki google",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/sposoby-na-weryfikacje-i-przejecie-wizytowki-google/",
+     "cpc": 0,
+     "difficulty": 24,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jak zrobić bloga na wordpressie",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/jak-zalozyc-bloga-na-wordpress/",
+     "cpc": 1.92,
      "difficulty": 36,
      "snippets": [
       "ai_overview",
@@ -76,12 +1831,12 @@
      ]
     },
     {
-     "keyword": "dostosowanie strony do urządzeń mobilnych",
-     "position": 5,
-     "previous": 5,
+     "keyword": "product placement definicja",
+     "position": 3,
+     "previous": 3,
      "diff": 0,
-     "searches": 30,
-     "url": "grupa-icea.pl/blog/optymalizacja-strony-pod-urzadzenia-mobilne/",
+     "searches": 10,
+     "url": "grupa-icea.pl/slownik/lokowanie-produktu/",
      "cpc": 0,
      "difficulty": 27,
      "snippets": [
@@ -91,92 +1846,29 @@
      ]
     },
     {
-     "keyword": "katalogi stron pozycjonowanie",
-     "position": 5,
-     "previous": 5,
+     "keyword": "e marketplace",
+     "position": 3,
+     "previous": 3,
      "diff": 0,
      "searches": 10,
-     "url": "grupa-icea.pl/blog/na-czym-polega-katalogowanie-stron/",
-     "cpc": 0,
-     "difficulty": 33,
-     "snippets": [
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "cele taktyczne",
-     "position": 6,
-     "previous": 6,
-     "diff": 0,
-     "searches": 50,
-     "url": "grupa-icea.pl/blog/jak-okreslac-cele-marketingowe-przedsiebiorstwa/",
-     "cpc": 0,
-     "difficulty": 43,
-     "snippets": [
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "strategia sem",
-     "position": 6,
-     "previous": 6,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/czym-charakteryzuje-sie-strategia-sem/",
-     "cpc": 0,
-     "difficulty": 36,
-     "snippets": [
-      "ai_overview",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "google analytics",
-     "position": 7,
-     "previous": 7,
-     "diff": 0,
-     "searches": 60500,
-     "url": "grupa-icea.pl/blog/czym-jest-google-analytics-4-dlaczego-warto-skorzystac-z-nowego-analyticsa/",
-     "cpc": 3.28,
-     "difficulty": 45,
-     "snippets": []
-    },
-    {
-     "keyword": "ssl seo",
-     "position": 7,
-     "previous": 7,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/czym-jest-certyfikat-ssl-czy-ma-wplyw-na-seo/",
+     "url": "grupa-icea.pl/blog/e-commerce-vs-marketplace-co-wybrac/",
      "cpc": 0,
      "difficulty": 38,
      "snippets": [
       "ai_overview",
+      "image_thumbs",
       "people_also_ask"
      ]
     },
     {
-     "keyword": "katalogi do pozycjonowania",
-     "position": 8,
-     "previous": 8,
+     "keyword": "zasady nielsena",
+     "position": 3,
+     "previous": 3,
      "diff": 0,
      "searches": 10,
-     "url": "grupa-icea.pl/blog/na-czym-polega-katalogowanie-stron/",
+     "url": "grupa-icea.pl/blog/czym-sa-heurystyki-nielsena/",
      "cpc": 0,
-     "difficulty": 35,
-     "snippets": [
-      "image_thumbs"
-     ]
-    },
-    {
-     "keyword": "pinterest czy warto",
-     "position": 8,
-     "previous": 8,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/czy-warto-reklamowac-sie-na-pinterescie/",
-     "cpc": 0,
-     "difficulty": 34,
+     "difficulty": 28,
      "snippets": [
       "ai_overview",
       "image_thumbs",
@@ -184,82 +1876,275 @@
      ]
     },
     {
-     "keyword": "ui experience",
-     "position": 8,
-     "previous": 8,
+     "keyword": "jak sprzedawać na allegro",
+     "position": 4,
+     "previous": 4,
      "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/czym-jest-ui-design/",
-     "cpc": 0,
-     "difficulty": 42,
+     "searches": 1900,
+     "url": "grupa-icea.pl/blog/jak-skutecznie-zaczac-sprzedawac-na-allegro/",
+     "cpc": 4.89,
+     "difficulty": 57,
      "snippets": [
-      "image_thumbs",
+      "ai_overview",
       "people_also_ask"
      ]
     },
     {
-     "keyword": "paginacja co to",
-     "position": 9,
-     "previous": 9,
+     "keyword": "pozycjonowanie poznań",
+     "position": 4,
+     "previous": 4,
      "diff": 0,
      "searches": 720,
-     "url": "grupa-icea.pl/blog/co-to-jest-paginacja-stron-i-czy-warto-ja-stosowac/",
-     "cpc": 0,
-     "difficulty": 29,
+     "url": "grupa-icea.pl/oferta/pozycjonowanie/lokalne/poznan/",
+     "cpc": 20.18,
+     "difficulty": 59,
      "snippets": [
-      "ai_overview",
-      "people_also_ask",
-      "wiki_right"
+      "map"
      ]
     },
     {
-     "keyword": "platforma dropshipping",
-     "position": 9,
-     "previous": 9,
+     "keyword": "hosting seo",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 590,
+     "url": "grupa-icea.pl/blog/hosting-seo-co-to-jest-i-jak-wybrac-najlepszy/",
+     "cpc": 3.92,
+     "difficulty": 68,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "icea opinie",
+     "position": 4,
+     "previous": 4,
      "diff": 0,
      "searches": 260,
-     "url": "grupa-icea.pl/blog/jaka-platforma-do-dropshippingu/",
-     "cpc": 8.18,
+     "url": "grupa-icea.pl/blog/jak-i-jakie-opinie-konsumenckie-wplywaja-na-seo-sklepu-internetowego/",
+     "cpc": 0,
+     "difficulty": 28,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "wycena domeny",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 260,
+     "url": "grupa-icea.pl/blog/jak-wycenic-domene/",
+     "cpc": 3.04,
+     "difficulty": 46,
+     "snippets": []
+    },
+    {
+     "keyword": "wix strona internetowa",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 210,
+     "url": "grupa-icea.pl/blog/czy-tworzenie-strony-internetowej-za-pomoca-wix-sie-oplaca/",
+     "cpc": 13.23,
      "difficulty": 50,
      "snippets": [
       "people_also_ask"
      ]
     },
     {
-     "keyword": "wszystko o html",
-     "position": 9,
-     "previous": 9,
+     "keyword": "artykuły seo",
+     "position": 4,
+     "previous": 5,
+     "diff": -1,
+     "searches": 110,
+     "url": "grupa-icea.pl/blog/jak-tworzyc-dobre-artykuly-pod-seo/",
+     "cpc": 5.69,
+     "difficulty": 53,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "i co to jest",
+     "position": 4,
+     "previous": 4,
      "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/co-to-jest-html/",
+     "searches": 110,
+     "url": "grupa-icea.pl/blog/co-to-jest-google-lens/",
      "cpc": 0,
-     "difficulty": 44,
+     "difficulty": 54,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "co to jest witryna",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 110,
+     "url": "grupa-icea.pl/blog/co-to-jest-witryna-internetowa/",
+     "cpc": 0,
+     "difficulty": 39,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask",
+      "wiki_right"
+     ]
+    },
+    {
+     "keyword": "jak założyć bloga na wordpressie",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 110,
+     "url": "grupa-icea.pl/blog/jak-zalozyc-bloga-na-wordpress/",
+     "cpc": 0.55,
+     "difficulty": 28,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "trust flow",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 90,
+     "url": "grupa-icea.pl/blog/jak-sprawdzic-trust-flow-o-czym-informuje-nas-parametr-tf/",
+     "cpc": 0,
+     "difficulty": 62,
+     "snippets": [
+      "image_thumbs"
+     ]
+    },
+    {
+     "keyword": "depozycjonowanie",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 90,
+     "url": "grupa-icea.pl/blog/na-czym-polega-depozycjonowanie/",
+     "cpc": 19.17,
+     "difficulty": 45,
      "snippets": [
       "people_also_ask"
      ]
     },
     {
-     "keyword": "pozycjonowanie zielona góra",
-     "position": 10,
-     "previous": 10,
+     "keyword": "jak pozycjonować bloga",
+     "position": 4,
+     "previous": 4,
      "diff": 0,
-     "searches": 210,
-     "url": "grupa-icea.pl/oferta/pozycjonowanie/lokalne/zielona-gora/",
-     "cpc": 0,
-     "difficulty": 46,
+     "searches": 70,
+     "url": "grupa-icea.pl/blog/jak-pozycjonowac-blog-optymalizacja-seo-bloga/",
+     "cpc": 5.7,
+     "difficulty": 34,
      "snippets": [
-      "map",
+      "ai_overview",
       "people_also_ask"
      ]
     },
     {
-     "keyword": "marketing w handlu",
-     "position": 10,
-     "previous": 10,
+     "keyword": "pozycjonowanie sklepów szczecin",
+     "position": 4,
+     "previous": 4,
      "diff": 0,
-     "searches": 20,
-     "url": "grupa-icea.pl/blog/reklama-dzwignia-handlu-jak-powinny-sie-reklamowac-male-firmy-w-sieci/",
+     "searches": 70,
+     "url": "grupa-icea.pl/oferta/pozycjonowanie/lokalne/szczecin/",
      "cpc": 0,
+     "difficulty": 23,
+     "snippets": [
+      "map"
+     ]
+    },
+    {
+     "keyword": "kod http 500",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 70,
+     "url": "grupa-icea.pl/blog/co-to-jest-kod-bledu-500/",
+     "cpc": 0,
+     "difficulty": 49,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "ile trwa indeksowanie strony w google",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/blog/jak-indeksuja-sie-strony-w-google-i-ile-to-trwa-sprawdz-jaki-wplyw-na-seo-ma-indeksowanie/",
+     "cpc": 0,
+     "difficulty": 27,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jak sprawdzić historię domeny",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/blog/sposoby-na-weryfikacje-historii-domeny-internetowej/",
+     "cpc": 5.61,
+     "difficulty": 30,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "usunięcie firmy z google",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/blog/jak-usunac-wizytowke-google/",
+     "cpc": 0,
+     "difficulty": 39,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "swl co to znaczy",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/slownik/swl/",
+     "cpc": 0,
+     "difficulty": 20,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "przycisk call to action",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/blog/co-to-jest-cta/",
+     "cpc": 0.36,
      "difficulty": 33,
      "snippets": [
       "ai_overview",
@@ -268,184 +2153,12 @@
      ]
     },
     {
-     "keyword": "słowa kluczowe html",
-     "position": 11,
-     "previous": 11,
+     "keyword": "do czego służy google tag manager",
+     "position": 4,
+     "previous": 4,
      "diff": 0,
-     "searches": 20,
-     "url": "grupa-icea.pl/blog/slowa-kluczowe-jak-je-dobrze-wybrac-narzedzia-i-sposoby-na-dobor-fraz-do-pozycjonowania/",
-     "cpc": 0,
-     "difficulty": 41,
-     "snippets": [
-      "ai_overview",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "jak stworzyć mapę strony",
-     "position": 11,
-     "previous": 11,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/mapa-strony-co-to-jest-jak-stworzyc-mape-witryny-oraz-jaki-wplyw-na-seo-ma-sitemapa/",
-     "cpc": 0,
-     "difficulty": 37,
-     "snippets": [
-      "ai_overview",
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "fb market",
-     "position": 12,
-     "previous": 12,
-     "diff": 0,
-     "searches": 320,
-     "url": "grupa-icea.pl/blog/co-to-jest-facebook-marketplace-i-czy-warto-sie-nim-zainteresowac/",
-     "cpc": 2.89,
-     "difficulty": 37,
-     "snippets": [
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "google goggles",
-     "position": 12,
-     "previous": 12,
-     "diff": 0,
-     "searches": 90,
-     "url": "grupa-icea.pl/blog/co-to-jest-google-lens/",
-     "cpc": 0,
-     "difficulty": 51,
-     "snippets": [
-      "people_also_ask",
-      "wiki_right"
-     ]
-    },
-    {
-     "keyword": "pagerank co to",
-     "position": 12,
-     "previous": 12,
-     "diff": 0,
-     "searches": 20,
-     "url": "grupa-icea.pl/blog/czym-jest-page-rank-strony-jak-mozemy-go-sprawdzic/",
-     "cpc": 0,
-     "difficulty": 29,
-     "snippets": [
-      "ai_overview",
-      "people_also_ask",
-      "wiki_right"
-     ]
-    },
-    {
-     "keyword": "oprogramowanie sklepu internetowego cena",
-     "position": 12,
-     "previous": 12,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/ile-kosztuje-zalozenie-sklepu-internetowego/",
-     "cpc": 0,
-     "difficulty": 43,
-     "snippets": [
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "dobra reklama dźwignią handlu",
-     "position": 12,
-     "previous": 12,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/reklama-dzwignia-handlu-jak-powinny-sie-reklamowac-male-firmy-w-sieci/",
-     "cpc": 0,
-     "difficulty": 18,
-     "snippets": [
-      "ai_overview",
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "real time marketing definicja",
-     "position": 12,
-     "previous": 12,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/real-time-marketing-czym-jest-rtm-w-2023-roku/",
-     "cpc": 0,
-     "difficulty": 25,
-     "snippets": [
-      "ai_overview",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "tf cf",
-     "position": 12,
-     "previous": 12,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/jak-sprawdzic-trust-flow-o-czym-informuje-nas-parametr-tf/",
-     "cpc": 0,
-     "difficulty": 17,
-     "snippets": [
-      "ai_overview",
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "geotagowanie zdjęć",
-     "position": 13,
-     "previous": 13,
-     "diff": 0,
-     "searches": 110,
-     "url": "grupa-icea.pl/blog/co-powinienes-wiedziec-o-geotaggingu/",
-     "cpc": 0.34,
-     "difficulty": 32,
-     "snippets": [
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "wynik jakości",
-     "position": 13,
-     "previous": 13,
-     "diff": 0,
-     "searches": 40,
-     "url": "grupa-icea.pl/slownik/wynik-jakosci/",
-     "cpc": 0,
-     "difficulty": 41,
-     "snippets": [
-      "ai_overview",
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "kanały sprzedaży internetowej",
-     "position": 13,
-     "previous": 13,
-     "diff": 0,
-     "searches": 30,
-     "url": "grupa-icea.pl/blog/jakie-wyrozniamy-kanaly-sprzedazy-internetowej/",
-     "cpc": 0,
-     "difficulty": 38,
-     "snippets": [
-      "ai_overview",
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "myślnik w nazwie domeny",
-     "position": 13,
-     "previous": 13,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/jakie-znaczenie-ma-myslnik-w-domenie-i-czy-warto-sie-na-niego-decydowac/",
+     "searches": 50,
+     "url": "grupa-icea.pl/blog/czym-jest-google-tag-manager-i-jak-z-niego-korzystac/",
      "cpc": 0,
      "difficulty": 14,
      "snippets": [
@@ -454,69 +2167,120 @@
      ]
     },
     {
-     "keyword": "sprzedaż krzyżowa",
-     "position": 14,
-     "previous": 14,
+     "keyword": "jak wycenić domenę",
+     "position": 4,
+     "previous": 4,
      "diff": 0,
-     "searches": 170,
-     "url": "grupa-icea.pl/slownik/cross-selling/",
+     "searches": 40,
+     "url": "grupa-icea.pl/blog/jak-wycenic-domene/",
+     "cpc": 7.44,
+     "difficulty": 25,
+     "snippets": [
+      "ai_overview"
+     ]
+    },
+    {
+     "keyword": "katalog stron seo",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 40,
+     "url": "grupa-icea.pl/blog/na-czym-polega-katalogowanie-stron/",
+     "cpc": 6.16,
+     "difficulty": 46,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "renderowanie strony",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 40,
+     "url": "grupa-icea.pl/blog/renderowanie-witryny/",
      "cpc": 0,
      "difficulty": 32,
      "snippets": [
       "ai_overview",
-      "people_also_ask",
-      "wiki_right"
+      "people_also_ask"
      ]
     },
     {
-     "keyword": "neuromarketing przykłady",
-     "position": 14,
-     "previous": 14,
+     "keyword": "strona a witryna",
+     "position": 4,
+     "previous": 4,
      "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/neuromarketing-co-to/",
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/co-to-jest-witryna-internetowa/",
      "cpc": 0,
-     "difficulty": 25,
+     "difficulty": 40,
      "snippets": [
-      "image_thumbs",
+      "ai_overview",
       "people_also_ask"
      ]
     },
     {
-     "keyword": "ui ux co to",
-     "position": 15,
-     "previous": 15,
+     "keyword": "jak stworzyć bloga na wordpress",
+     "position": 4,
+     "previous": 4,
      "diff": 0,
-     "searches": 210,
-     "url": "grupa-icea.pl/blog/czym-jest-ui-design/",
-     "cpc": 1.91,
-     "difficulty": 56,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/jak-zalozyc-bloga-na-wordpress/",
+     "cpc": 0,
+     "difficulty": 24,
      "snippets": [
-      "people_also_ask",
-      "wiki_right"
-     ]
-    },
-    {
-     "keyword": "ocena strony",
-     "position": 15,
-     "previous": 15,
-     "diff": 0,
-     "searches": 50,
-     "url": "grupa-icea.pl/blog/czym-jest-page-rank-strony-jak-mozemy-go-sprawdzic/",
-     "cpc": 2.74,
-     "difficulty": 49,
-     "snippets": [
-      "image_thumbs",
+      "ai_overview",
       "people_also_ask"
      ]
     },
     {
-     "keyword": "jak rozpoznać potrzeby klienta",
-     "position": 15,
-     "previous": 15,
+     "keyword": "google ads opinie",
+     "position": 4,
+     "previous": 4,
      "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/czego-potrzebuje-klient-dowiedz-sie-jak-spelnic-jego-oczekiwania/",
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/opinie-w-google-ads-jak-zwiekszyc-ich-efektywnosc/",
+     "cpc": 10.88,
+     "difficulty": 39,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "witryna a strona internetowa",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/co-to-jest-witryna-internetowa/",
+     "cpc": 0,
+     "difficulty": 36,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "kampania reklamowa cena",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/ile-kosztuja-kampanie-reklamowe/",
+     "cpc": 0,
+     "difficulty": 48,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "kierowanie kontekstowe",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/targetowanie-kontekstowe-co-to-jest/",
      "cpc": 0,
      "difficulty": 26,
      "snippets": [
@@ -526,683 +2290,26 @@
      ]
     },
     {
-     "keyword": "umowa o pozycjonowanie strony internetowej",
-     "position": 15,
-     "previous": 15,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/co-powinna-zawierac-umowa-o-pozycjonowanie/",
-     "cpc": 6.98,
-     "difficulty": 30,
-     "snippets": [
-      "ai_overview",
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "jak zrobić mapę witryny",
-     "position": 15,
-     "previous": 15,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/mapa-strony-co-to-jest-jak-stworzyc-mape-witryny-oraz-jaki-wplyw-na-seo-ma-sitemapa/",
-     "cpc": 0.6,
-     "difficulty": 31,
-     "snippets": [
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "części strony internetowej",
-     "position": 15,
-     "previous": 15,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/czym-jest-struktura-strony-internetowej/",
-     "cpc": 0,
-     "difficulty": 42,
-     "snippets": [
-      "ai_overview",
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "cele marketingowe przykłady",
-     "position": 17,
-     "previous": 17,
+     "keyword": "pozycjonowanie landing page",
+     "position": 4,
+     "previous": 4,
      "diff": 0,
      "searches": 30,
-     "url": "grupa-icea.pl/blog/jak-okreslac-cele-marketingowe-przedsiebiorstwa/",
-     "cpc": 0,
-     "difficulty": 34,
-     "snippets": [
-      "ai_overview",
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "przekierowanie podstron 301 htaccess",
-     "position": 17,
-     "previous": 17,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/czym-jest-przekierowanie-301-kiedy-warto-z-niego-korzystac/",
-     "cpc": 0,
-     "difficulty": 16,
-     "snippets": [
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "lista remarketingowa",
-     "position": 18,
-     "previous": 18,
-     "diff": 0,
-     "searches": 30,
-     "url": "grupa-icea.pl/blog/remarketing-czym-jest-i-na-czym-polega/",
-     "cpc": 0,
-     "difficulty": 27,
-     "snippets": [
-      "ai_overview"
-     ]
-    },
-    {
-     "keyword": "organizacja biura obsługi klienta",
-     "position": 18,
-     "previous": 18,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/jak-organizowac-prace-w-zespole-obslugi-klienta/",
-     "cpc": 0,
-     "difficulty": 32,
-     "snippets": [
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "komplementarne",
-     "position": 19,
-     "previous": 19,
-     "diff": 0,
-     "searches": 1900,
-     "url": "grupa-icea.pl/blog/sprzedaz-komplementarna-co-to-jest-i-na-czym-polega/",
-     "cpc": 0,
-     "difficulty": 46,
-     "snippets": [
-      "ai_overview",
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "marketing rekomendacyjny praca",
-     "position": 19,
-     "previous": 19,
-     "diff": 0,
-     "searches": 260,
-     "url": "grupa-icea.pl/blog/na-czym-polega-marketing-rekomendacyjny/",
-     "cpc": 1.83,
-     "difficulty": 21,
-     "snippets": [
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "jak wpisać słowa kluczowe do strony",
-     "position": 19,
-     "previous": 19,
-     "diff": 0,
-     "searches": 50,
-     "url": "grupa-icea.pl/blog/slowa-kluczowe-jak-je-dobrze-wybrac-narzedzia-i-sposoby-na-dobor-fraz-do-pozycjonowania/",
-     "cpc": 0,
-     "difficulty": 23,
-     "snippets": [
-      "ai_overview",
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "pl utm",
-     "position": 19,
-     "previous": 19,
-     "diff": 0,
-     "searches": 30,
-     "url": "grupa-icea.pl/blog/co-to-jest-parametr-utm/",
-     "cpc": 0,
-     "difficulty": 40,
-     "snippets": [
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "remarketingu",
-     "position": 20,
-     "previous": 20,
-     "diff": 0,
-     "searches": 880,
-     "url": "grupa-icea.pl/blog/remarketing-czym-jest-i-na-czym-polega/",
-     "cpc": 6.14,
-     "difficulty": 65,
-     "snippets": [
-      "ai_overview",
-      "people_also_ask",
-      "wiki_right"
-     ]
-    },
-    {
-     "keyword": "błąd 403",
-     "position": 20,
-     "previous": 20,
-     "diff": 0,
-     "searches": 720,
-     "url": "grupa-icea.pl/blog/blad-403-jak-naprawic-co-oznacza/",
-     "cpc": 0.67,
-     "difficulty": 59,
-     "snippets": [
-      "ai_overview",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "słowo kluczowe definicja",
-     "position": 20,
-     "previous": 20,
-     "diff": 0,
-     "searches": 50,
-     "url": "grupa-icea.pl/slownik/slowo-kluczowe/",
-     "cpc": 0,
-     "difficulty": 36,
-     "snippets": [
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "jak korzystać z google analytics",
-     "position": 20,
-     "previous": 20,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/czym-jest-google-analytics-4-dlaczego-warto-skorzystac-z-nowego-analyticsa/",
-     "cpc": 3.17,
-     "difficulty": 29,
-     "snippets": [
-      "ai_overview",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "znajomość branży fmcg",
-     "position": 21,
-     "previous": 21,
-     "diff": 0,
-     "searches": 20,
-     "url": "grupa-icea.pl/branze/fmcg/",
-     "cpc": 0,
-     "difficulty": 28,
-     "snippets": [
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "google tag manager poradnik",
-     "position": 22,
-     "previous": 22,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/czym-jest-google-tag-manager-i-jak-z-niego-korzystac/",
-     "cpc": 0,
-     "difficulty": 20,
-     "snippets": [
-      "ai_overview",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "rel noindex",
-     "position": 22,
-     "previous": 22,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/metatag-noindex-czym-jest-i-jak-z-niego-korzystac/",
-     "cpc": 0,
-     "difficulty": 25,
-     "snippets": [
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "darmowy katalog stron internetowych",
-     "position": 23,
-     "previous": 23,
-     "diff": 0,
-     "searches": 140,
-     "url": "grupa-icea.pl/blog/na-czym-polega-katalogowanie-stron/",
-     "cpc": 3.92,
-     "difficulty": 42,
-     "snippets": []
-    },
-    {
-     "keyword": "pingowanie seo",
-     "position": 23,
-     "previous": 23,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/slownik/pingowanie/",
-     "cpc": 0,
-     "difficulty": 35,
-     "snippets": [
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "błąd 500 wewnętrzny błąd serwera",
-     "position": 23,
-     "previous": 23,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/co-to-jest-kod-bledu-500/",
-     "cpc": 0,
-     "difficulty": 27,
-     "snippets": [
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "słowa kluczowe na stronie internetowej",
-     "position": 24,
-     "previous": 24,
-     "diff": 0,
-     "searches": 40,
-     "url": "grupa-icea.pl/blog/slowa-kluczowe-jak-je-dobrze-wybrac-narzedzia-i-sposoby-na-dobor-fraz-do-pozycjonowania/",
-     "cpc": 7.32,
-     "difficulty": 31,
-     "snippets": [
-      "ai_overview",
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "agile czy scrum",
-     "position": 24,
-     "previous": 24,
-     "diff": 0,
-     "searches": 20,
-     "url": "grupa-icea.pl/blog/czym-jest-agile-scrum/",
-     "cpc": 2.49,
-     "difficulty": 47,
-     "snippets": [
-      "ai_overview",
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "słowa kluczowe na stronie",
-     "position": 25,
-     "previous": 25,
-     "diff": 0,
-     "searches": 30,
-     "url": "grupa-icea.pl/blog/slowa-kluczowe-jak-je-dobrze-wybrac-narzedzia-i-sposoby-na-dobor-fraz-do-pozycjonowania/",
-     "cpc": 0,
-     "difficulty": 46,
-     "snippets": [
-      "ai_overview",
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "koszt sklepu internetowego",
-     "position": 26,
-     "previous": 26,
-     "diff": 0,
-     "searches": 170,
-     "url": "grupa-icea.pl/blog/ile-kosztuje-zalozenie-sklepu-internetowego/",
-     "cpc": 5.5,
-     "difficulty": 60,
-     "snippets": [
-      "ai_overview",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "statystyki allegro darmowe",
-     "position": 26,
-     "previous": 26,
-     "diff": 0,
-     "searches": 40,
-     "url": "grupa-icea.pl/blog/jak-skutecznie-zaczac-sprzedawac-na-allegro/",
-     "cpc": 1.64,
-     "difficulty": 39,
-     "snippets": [
-      "ai_overview",
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "rag co to znaczy",
-     "position": 26,
-     "previous": 26,
-     "diff": 0,
-     "searches": 30,
-     "url": "grupa-icea.pl/blog/czym-jest-rag-i-jak-wplywa-na-rozwoj-ai/",
-     "cpc": 0,
-     "difficulty": 14,
-     "snippets": [
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "kampanie influencerskie",
-     "position": 26,
-     "previous": 26,
-     "diff": 0,
-     "searches": 30,
-     "url": "grupa-icea.pl/blog/kampania-influencer-marketing-wszystko-co-musisz-wiedziec/",
-     "cpc": 3.59,
-     "difficulty": 36,
-     "snippets": [
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "jak wyjść z filtra",
-     "position": 26,
-     "previous": 26,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/filtry-i-bany-google/",
-     "cpc": 0,
-     "difficulty": 25,
-     "snippets": [
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "pozycjonowanie amazon",
-     "position": 28,
-     "previous": 28,
-     "diff": 0,
-     "searches": 50,
-     "url": "grupa-icea.pl/oferta/ads/amazon/",
-     "cpc": 15.52,
-     "difficulty": 46,
-     "snippets": [
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "301 seo",
-     "position": 28,
-     "previous": 28,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/czym-jest-przekierowanie-301-kiedy-warto-z-niego-korzystac/",
-     "cpc": 0,
-     "difficulty": 37,
-     "snippets": [
-      "ai_overview",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "pwa",
-     "position": 29,
-     "previous": 29,
-     "diff": 0,
-     "searches": 1900,
-     "url": "grupa-icea.pl/blog/czym-sa-progresywne-aplikacje-webowe-pwa-i-jak-wplywaja-na-pozycjonowanie/",
-     "cpc": 6.69,
-     "difficulty": 63,
-     "snippets": [
-      "ai_overview",
-      "people_also_ask",
-      "wiki_right"
-     ]
-    },
-    {
-     "keyword": "wycena fraz",
-     "position": 29,
-     "previous": 29,
-     "diff": 0,
-     "searches": 40,
-     "url": "grupa-icea.pl/blog/slowa-kluczowe-jak-je-dobrze-wybrac-narzedzia-i-sposoby-na-dobor-fraz-do-pozycjonowania/",
-     "cpc": 0,
-     "difficulty": 25,
-     "snippets": [
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "co to jest komplementarność",
-     "position": 29,
-     "previous": 29,
-     "diff": 0,
-     "searches": 30,
-     "url": "grupa-icea.pl/blog/sprzedaz-komplementarna-co-to-jest-i-na-czym-polega/",
-     "cpc": 0,
-     "difficulty": 27,
-     "snippets": [
-      "ai_overview",
-      "people_also_ask",
-      "wiki_right"
-     ]
-    },
-    {
-     "keyword": "promowanie filmu na youtube",
-     "position": 30,
-     "previous": 30,
-     "diff": 0,
-     "searches": 50,
-     "url": "grupa-icea.pl/blog/jak-zalozyc-i-promowac-kanal-na-youtube/",
-     "cpc": 39.72,
-     "difficulty": 64,
-     "snippets": [
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "struktura strony internetowej html",
-     "position": 30,
-     "previous": 30,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/czym-jest-struktura-strony-internetowej/",
-     "cpc": 3.07,
-     "difficulty": 36,
-     "snippets": [
-      "ai_overview",
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "ux skrót",
-     "position": 31,
-     "previous": 31,
-     "diff": 0,
-     "searches": 20,
-     "url": "grupa-icea.pl/blog/czym-jest-ui-design/",
-     "cpc": 0,
-     "difficulty": 38,
-     "snippets": [
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "remarketing w wyszukiwarce",
-     "position": 31,
-     "previous": 31,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/remarketing-czym-jest-i-na-czym-polega/",
-     "cpc": 0,
-     "difficulty": 25,
-     "snippets": [
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "html definicja",
-     "position": 32,
-     "previous": 32,
-     "diff": 0,
-     "searches": 50,
-     "url": "grupa-icea.pl/blog/co-to-jest-html/",
-     "cpc": 0,
-     "difficulty": 46,
-     "snippets": [
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "promocja filmu na youtube",
-     "position": 32,
-     "previous": 32,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/jak-zalozyc-i-promowac-kanal-na-youtube/",
-     "cpc": 338.36,
-     "difficulty": 60,
-     "snippets": [
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "badania fokusowe pdf",
-     "position": 32,
-     "previous": 32,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/slownik/badania-fokusowe/",
+     "url": "grupa-icea.pl/blog/czym-jest-landing-page-jakie-ma-znaczenie-w-procesie-pozycjonowania/",
      "cpc": 0,
      "difficulty": 22,
      "snippets": [
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "ppc pompy",
-     "position": 33,
-     "previous": 33,
-     "diff": 0,
-     "searches": 70,
-     "url": "grupa-icea.pl/blog/co-to-jest-reklama-ppc/",
-     "cpc": 3.35,
-     "difficulty": 18,
-     "snippets": [
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "sem definicja",
-     "position": 33,
-     "previous": 33,
-     "diff": 0,
-     "searches": 50,
-     "url": "grupa-icea.pl/slownik/sem/",
-     "cpc": 0,
-     "difficulty": 30,
-     "snippets": [
       "ai_overview",
       "people_also_ask"
      ]
     },
     {
-     "keyword": "google tag manager seo",
-     "position": 33,
-     "previous": 33,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/czym-jest-google-tag-manager-i-jak-z-niego-korzystac/",
-     "cpc": 0,
-     "difficulty": 29,
-     "snippets": [
-      "ai_overview",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "artykuły blogowe",
-     "position": 37,
-     "previous": 37,
-     "diff": 0,
-     "searches": 70,
-     "url": "grupa-icea.pl/blog/jak-tworzyc-dobre-artykuly-pod-seo/",
-     "cpc": 3.52,
-     "difficulty": 39,
-     "snippets": [
-      "ai_overview",
-      "image_thumbs"
-     ]
-    },
-    {
-     "keyword": "wady reklamy radiowej",
-     "position": 37,
-     "previous": 37,
+     "keyword": "engagement rate jak obliczyć",
+     "position": 4,
+     "previous": 4,
      "diff": 0,
      "searches": 30,
-     "url": "grupa-icea.pl/blog/wady-i-zalety-reklamy-internetowej-i-reklamy-telewizyjnej/",
-     "cpc": 0,
-     "difficulty": 24,
-     "snippets": [
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "informatyka html",
-     "position": 37,
-     "previous": 37,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/co-to-jest-html/",
-     "cpc": 1.7,
-     "difficulty": 53,
-     "snippets": [
-      "ai_overview",
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "sesja http",
-     "position": 38,
-     "previous": 38,
-     "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/blog/protokol-http-i-protokol-https-czym-sie-roznia/",
-     "cpc": 0,
-     "difficulty": 34,
-     "snippets": [
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "dlaczego reklamy przynoszą więcej szkód niż pożytku",
-     "position": 39,
-     "previous": 39,
-     "diff": 0,
-     "searches": 210,
-     "url": "grupa-icea.pl/blog/wady-i-zalety-reklamy-internetowej-i-reklamy-telewizyjnej/",
+     "url": "grupa-icea.pl/blog/co-to-jest-wspolczynnik-zaangazowania-engagement-rate/",
      "cpc": 0,
      "difficulty": 17,
      "snippets": [
@@ -1212,14 +2319,14 @@
      ]
     },
     {
-     "keyword": "reklamy pla",
-     "position": 39,
-     "previous": 39,
+     "keyword": "infografika porównawcza",
+     "position": 4,
+     "previous": 4,
      "diff": 0,
-     "searches": 10,
-     "url": "grupa-icea.pl/slownik/kampania-pla/",
-     "cpc": 6.34,
-     "difficulty": 48,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/co-to-jest-infografika-i-jak-ja-stworzyc/",
+     "cpc": 0,
+     "difficulty": 18,
      "snippets": [
       "ai_overview",
       "image_thumbs",
@@ -1227,14 +2334,28 @@
      ]
     },
     {
-     "keyword": "badania ilościowe",
-     "position": 41,
-     "previous": 41,
+     "keyword": "idealny interfejs użytkownika rysunek",
+     "position": 4,
+     "previous": 4,
      "diff": 0,
-     "searches": 590,
-     "url": "grupa-icea.pl/blog/badania-jakosciowe-vs-badania-ilosciowe/",
-     "cpc": 9.18,
-     "difficulty": 50,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/jak-powinien-wygladac-przyjazny-interfejs-uzytkownika/",
+     "cpc": 0,
+     "difficulty": 18,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "brand marketing co to",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/slownik/brand-marketing/",
+     "cpc": 0,
+     "difficulty": 34,
      "snippets": [
       "ai_overview",
       "people_also_ask",
@@ -1242,172 +2363,464 @@
      ]
     },
     {
-     "keyword": "reklama kontekstowa",
-     "position": 42,
-     "previous": 42,
+     "keyword": "katarzyna żołna",
+     "position": 4,
+     "previous": 4,
      "diff": 0,
-     "searches": 110,
-     "url": "grupa-icea.pl/slownik/reklama-kontekstowa/",
-     "cpc": 15.95,
-     "difficulty": 41,
+     "searches": 20,
+     "url": "grupa-icea.pl/autor/katarzyna-zolna/",
+     "cpc": 0,
+     "difficulty": 19,
      "snippets": [
-      "people_also_ask",
-      "wiki_right"
+      "image_thumbs"
      ]
     },
     {
-     "keyword": "poprawa wizerunku firmy",
-     "position": 42,
-     "previous": 42,
+     "keyword": "jak napisać tekst reklamowy",
+     "position": 4,
+     "previous": 4,
      "diff": 0,
-     "searches": 50,
-     "url": "grupa-icea.pl/blog/budowanie-wizerunku-firmy-w-internecie/",
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/jak-napisac-tekst-reklamowy/",
      "cpc": 0,
-     "difficulty": 50,
+     "difficulty": 29,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "czym są tagi",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/co-to-jest-tag/",
+     "cpc": 0,
+     "difficulty": 38,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "pingowanie strony",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/slownik/pingowanie/",
+     "cpc": 0,
+     "difficulty": 38,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "youtube nazwa kanału",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/najlepsza-nazwa-kanalu-youtube-jaka-wybrac-i-dlaczego-jest-tak-wazna/",
+     "cpc": 0,
+     "difficulty": 43,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "brief marketingowy pdf",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/brief-dla-agencji-marketingowej-jak-wyglada-jak-go-napisac/",
+     "cpc": 0,
+     "difficulty": 30,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jak ustawić nick na yt",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/najlepsza-nazwa-kanalu-youtube-jaka-wybrac-i-dlaczego-jest-tak-wazna/",
+     "cpc": 0,
+     "difficulty": 24,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "handel społecznościowy",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/handel-spolecznosciowy-i-jego-wplyw-na-e-commerce/",
+     "cpc": 2.08,
+     "difficulty": 41,
      "snippets": [
       "ai_overview",
       "people_also_ask"
      ]
     },
     {
-     "keyword": "webpozycja opinie",
-     "position": 42,
-     "previous": 42,
+     "keyword": "jak wyświetlić kod html na stronie",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/kod-zrodlowy-witryny-jak-go-odczytac/",
+     "cpc": 0,
+     "difficulty": 31,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "alt seo",
+     "position": 4,
+     "previous": 4,
      "diff": 0,
      "searches": 10,
-     "url": "grupa-icea.pl/blog/co-wplywa-na-widocznosc-w-wyszukiwarce-przeglad-algorytmow-i-czynnikow-rankingowych-google/",
+     "url": "grupa-icea.pl/blog/atrybut-alt-i-title-jak-prawidlowo-je-wykorzystac-poznaj-dobre-praktyki-seo/",
      "cpc": 0,
-     "difficulty": 25,
-     "snippets": [
-      "ai_overview"
-     ]
-    },
-    {
-     "keyword": "model aida",
-     "position": 43,
-     "previous": 43,
-     "diff": 0,
-     "searches": 590,
-     "url": "grupa-icea.pl/slownik/model-aida/",
-     "cpc": 0.56,
-     "difficulty": 61,
-     "snippets": [
-      "people_also_ask",
-      "wiki_right"
-     ]
-    },
-    {
-     "keyword": "branża fmcg co to",
-     "position": 43,
-     "previous": 43,
-     "diff": 0,
-     "searches": 390,
-     "url": "grupa-icea.pl/branze/fmcg/",
-     "cpc": 0.62,
      "difficulty": 38,
      "snippets": [
       "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "usunięcie firmy z google maps",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/jak-usunac-wizytowke-google/",
+     "cpc": 0,
+     "difficulty": 32,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jak otworzyć źródło strony",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/kod-zrodlowy-witryny-jak-go-odczytac/",
+     "cpc": 0,
+     "difficulty": 39,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "nazwa dla youtubera",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/najlepsza-nazwa-kanalu-youtube-jaka-wybrac-i-dlaczego-jest-tak-wazna/",
+     "cpc": 0,
+     "difficulty": 32,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "prototypowanie ux",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/slownik/prototypowanie/",
+     "cpc": 0,
+     "difficulty": 34,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "funkcje ceny w marketingu",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/jakie-sa-funkcje-ceny-w-marketingu/",
+     "cpc": 0,
+     "difficulty": 29,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jak zorganizować event krok po kroku",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/jak-zorganizowac-event-ktory-sie-oplaca/",
+     "cpc": 1.52,
+     "difficulty": 21,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "brief reklamowy pdf",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/brief-dla-agencji-marketingowej-jak-wyglada-jak-go-napisac/",
+     "cpc": 0,
+     "difficulty": 25,
+     "snippets": [
+      "image_thumbs"
+     ]
+    },
+    {
+     "keyword": "apel reklamowy",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/co-to-jest-przekaz-reklamowy-i-jakie-elementy-powinien-zawierac/",
+     "cpc": 0,
+     "difficulty": 32,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "skuteczna kampania reklamowa",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/jak-sprawdzic-czy-kampania-reklamowa-jest-skuteczna/",
+     "cpc": 0,
+     "difficulty": 44,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "co to jest witryna w internecie",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/co-to-jest-witryna-internetowa/",
+     "cpc": 0,
+     "difficulty": 32,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "analiza facebook",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/jak-analizowac-statystyki-na-facebooku/",
+     "cpc": 0,
+     "difficulty": 39,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "przekierowanie strony wordpress",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/kompendium-wiedzy-o-przekierowaniach-na-wordpressie/",
+     "cpc": 0,
+     "difficulty": 21,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "katalogowanie książek w domu",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/na-czym-polega-katalogowanie-stron/",
+     "cpc": 0,
+     "difficulty": 20,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "historia domeny internetowej",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/sposoby-na-weryfikacje-historii-domeny-internetowej/",
+     "cpc": 0,
+     "difficulty": 36,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "sezonowość statystyka",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/czym-jest-sezonowosc-i-jak-ma-sie-do-sklepow-internetowych/",
+     "cpc": 0,
+     "difficulty": 29,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "fajne nazwy na kanał na youtube",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/najlepsza-nazwa-kanalu-youtube-jaka-wybrac-i-dlaczego-jest-tak-wazna/",
+     "cpc": 0,
+     "difficulty": 31,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "hreflang seo",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/na-czym-polegaja-tagi-hreflang/",
+     "cpc": 0,
+     "difficulty": 27,
+     "snippets": [
       "people_also_ask",
       "wiki_right"
      ]
     },
     {
-     "keyword": "digital marketing po polsku",
-     "position": 43,
-     "previous": 43,
-     "diff": 0,
-     "searches": 20,
-     "url": "grupa-icea.pl/blog/co-to-jest-digital-marketing/",
-     "cpc": 0,
-     "difficulty": 34,
-     "snippets": [
-      "ai_overview",
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "koncept marketingowy",
-     "position": 45,
-     "previous": 45,
-     "diff": 0,
-     "searches": 30,
-     "url": "grupa-icea.pl/slownik/marketing/",
-     "cpc": 0,
-     "difficulty": 33,
-     "snippets": [
-      "ai_overview",
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "co to jest bing",
-     "position": 46,
-     "previous": 46,
-     "diff": 0,
-     "searches": 110,
-     "url": "grupa-icea.pl/blog/google-bing-yahoo-i-inne-czym-sa-wyszukiwarki-internetowe-i-co-musisz-o-nich-wiedziec/",
-     "cpc": 0,
-     "difficulty": 34,
-     "snippets": [
-      "ai_overview",
-      "image_thumbs",
-      "people_also_ask"
-     ]
-    },
-    {
-     "keyword": "dane jakościowe przykłady",
-     "position": 46,
-     "previous": 46,
+     "keyword": "ppc reklama co to je",
+     "position": 4,
+     "previous": 4,
      "diff": 0,
      "searches": 10,
-     "url": "grupa-icea.pl/blog/badania-jakosciowe-vs-badania-ilosciowe/",
+     "url": "grupa-icea.pl/blog/co-to-jest-reklama-ppc/",
      "cpc": 0,
-     "difficulty": 34,
+     "difficulty": 19,
      "snippets": [
+      "ai_overview",
       "image_thumbs",
       "people_also_ask"
      ]
     },
     {
-     "keyword": "jak napisać reklamę produktu",
-     "position": 46,
-     "previous": 46,
+     "keyword": "jak efektywnie sprzedawać na allegro",
+     "position": 4,
+     "previous": 4,
      "diff": 0,
      "searches": 10,
-     "url": "grupa-icea.pl/blog/jak-napisac-tekst-reklamowy/",
+     "url": "grupa-icea.pl/blog/jak-skutecznie-zaczac-sprzedawac-na-allegro/",
+     "cpc": 3.26,
+     "difficulty": 30,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jak się nazwać na yt",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/najlepsza-nazwa-kanalu-youtube-jaka-wybrac-i-dlaczego-jest-tak-wazna/",
      "cpc": 0,
-     "difficulty": 37,
+     "difficulty": 32,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jetpack co to",
+     "position": 4,
+     "previous": 4,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/wtyczka-jetpack-do-wordpressa-do-czego-sluzy/",
+     "cpc": 0,
+     "difficulty": 32,
      "snippets": [
       "ai_overview",
-      "people_also_ask"
+      "people_also_ask",
+      "wiki_right"
      ]
     },
     {
-     "keyword": "chrome plugins wtyczki",
-     "position": 47,
-     "previous": 47,
+     "keyword": "reklama pay per click",
+     "position": 4,
+     "previous": 4,
      "diff": 0,
-     "searches": 30,
-     "url": "grupa-icea.pl/blog/8-najlepszych-darmowych-rozszerzen-chrome-dla-seo/",
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/co-to-jest-reklama-ppc/",
      "cpc": 0,
-     "difficulty": 40,
+     "difficulty": 47,
      "snippets": [
       "people_also_ask"
      ]
     },
     {
-     "keyword": "historia strony",
-     "position": 48,
-     "previous": 48,
+     "keyword": "udział w wyświetleniach",
+     "position": 4,
+     "previous": 4,
      "diff": 0,
-     "searches": 880,
-     "url": "grupa-icea.pl/blog/krotka-historia-internetu-od-zimnej-wojny-do-zakupow-online/",
+     "searches": 10,
+     "url": "grupa-icea.pl/slownik/udzial-w-wyswietleniach/",
      "cpc": 0,
-     "difficulty": 55,
+     "difficulty": 31,
      "snippets": [
-      "image_thumbs"
+      "image_thumbs",
+      "people_also_ask"
      ]
     }
    ]
