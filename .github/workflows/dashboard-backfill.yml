@@ -10,6 +10,7 @@ on:
     paths:
       - '.github/workflows/dashboard-backfill.yml'
       - 'dashboard/collector/backfill.py'
+      - 'dashboard/domains.yaml'
 
 permissions:
   contents: write

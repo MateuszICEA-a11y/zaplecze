@@ -30,9 +30,9 @@ domains:
       country_id: "200" # Poland (database 2.0)
     gsc:
       enabled: true
-      # Property sc-domain:grupa-icea.pl (fallback kolektora). Jeśli w GSC jest
-      # tylko prefiks URL, podmień na site: "https://www.grupa-icea.pl/".
-      # Service account z GSC_SERVICE_ACCOUNT_JSON musi dostać dostęp do property.
+      # Property typu prefiks URL z www (jedyna widoczna dla service accounta,
+      # siteFullUser od 2026-07-21) – sc-domain nie istnieje dla tej domeny.
+      site: "https://www.grupa-icea.pl/"
     ahrefs:
       enabled: true
       target: grupa-icea.pl
