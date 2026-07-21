@@ -1,0 +1,48 @@
+name: Dashboard Backfill
+
+# Backfill historii (Senuto + GSC) do snapshots.jsonl. Idempotentny – dopisuje
+# tylko brakujące daty/źródła, prawdziwych snapshotów collectora nie dotyka.
+# Trigger: zmiana tego pliku lub backfill.py (dispatch wymaga admina – brak).
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/dashboard-backfill.yml'
+      - 'dashboard/collector/backfill.py'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dashboard-collector # wspólna grupa z collectorem – bez wyścigu na data/
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r dashboard/collector/requirements.txt
+
+      - name: Run backfill
+        env:
+          SENUTO_API_KEY: ${{ secrets.SENUTO_API_KEY }}
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: python dashboard/collector/backfill.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dashboard/data/
+          git diff --cached --quiet && exit 0
+          git commit -m "dashboard: backfill historii (Senuto + GSC)"
+          git pull --rebase origin main
+          git push

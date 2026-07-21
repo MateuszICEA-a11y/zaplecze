@@ -1,6 +1,6 @@
 {
  "date": "2026-07-21",
- "collected_at": "2026-07-21T08:20:15Z",
+ "collected_at": "2026-07-21T08:02:47Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -1073,30 +1073,7 @@
   },
   "leads": {
    "leads": [],
-   "usage": [
-    {
-     "id": "usage:2026-07-21T08:19:43.709Z:6c5ab8f6",
-     "kind": "usage",
-     "source": "sms-code",
-     "ts": "2026-07-21T08:19:43.709Z",
-     "tool": "brand-check",
-     "firstName": "Mateusz",
-     "lastName": "Wiśniewski",
-     "email": "m.wisniewski@grupa-icea.pl",
-     "phone": "+48693677665",
-     "consent": true
-    },
-    {
-     "id": "usage:2026-07-21T08:19:58.931Z:7ef4480a",
-     "kind": "usage",
-     "source": "brand-check",
-     "ts": "2026-07-21T08:19:58.931Z",
-     "query": "ICEA",
-     "domain": "grupa-icea.pl",
-     "category": "agencja GEO",
-     "market": "Polska"
-    }
-   ]
+   "usage": []
   }
  }
 }
