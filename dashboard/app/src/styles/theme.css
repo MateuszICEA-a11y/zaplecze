@@ -530,3 +530,10 @@ table.data-table {
   color: var(--ink);
   border-color: var(--ink-faint);
 }
+
+/* Notka zamiast pustych wykresów (Ahrefs: brak historii w API) */
+.charts-pending {
+  color: var(--ink-faint);
+  font-size: 0.85rem;
+  margin: 0 0 18px;
+}

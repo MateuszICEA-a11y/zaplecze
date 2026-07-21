@@ -45,6 +45,13 @@ const statDomainRating = latestWithDelta(snapshots, 'ahrefs', 'domain_rating', 3
 const statRank = latestWithDelta(snapshots, 'ahrefs', 'ahrefs_rank', 30);
 
 const ahrefs = latest?.sources.ahrefs;
+const anchors = details.sources.ahrefs?.anchors ?? [];
+const maxAnchorRefs = Math.max(...anchors.map((a) => a.referring_domains ?? 0), 0);
+
+// Historia Ahrefs w API = „Insufficient plan”, więc szeregi rosną tylko z dziennych
+// snapshotów – wykresy pokazujemy dopiero, gdy jest co rysować (≥3 punkty).
+const chartPoints = backlinks.values.filter((v) => typeof v === 'number').length;
+const showCharts = chartPoints >= 3;
 ---
 
 <Layout title={`${name} – Ahrefs`}>
@@ -85,24 +92,33 @@ const ahrefs = latest?.sources.ahrefs;
     />
   </div>
 
-  <div class="chart-grid">
-    <TimeSeriesChart
-      title="Backlinki i domeny linkujące"
-      meta="dziennie"
-      timestamps={backlinks.timestamps}
-      series={[
-        { label: 'Backlinki', values: backlinks.values, fill: true },
-        { label: 'Domeny', values: refDomains.values },
-      ]}
-    />
-    <TimeSeriesChart
-      title="Domain Rating"
-      meta="dziennie"
-      timestamps={domainRating.timestamps}
-      series={[{ label: 'DR', values: domainRating.values }]}
-      precision={1}
-    />
-  </div>
+  {
+    showCharts ? (
+      <div class="chart-grid">
+        <TimeSeriesChart
+          title="Backlinki i domeny linkujące"
+          meta="dziennie"
+          timestamps={backlinks.timestamps}
+          series={[
+            { label: 'Backlinki', values: backlinks.values, fill: true },
+            { label: 'Domeny', values: refDomains.values },
+          ]}
+        />
+        <TimeSeriesChart
+          title="Domain Rating"
+          meta="dziennie"
+          timestamps={domainRating.timestamps}
+          series={[{ label: 'DR', values: domainRating.values }]}
+          precision={1}
+        />
+      </div>
+    ) : (
+      <p class="charts-pending">
+        Wykresy trendów pojawią się po kilku dniach zbierania snapshotów – API Ahrefs nie udostępnia
+        historii na obecnym planie, więc szeregi rosną z dziennych pomiarów (od 2026-07-20).
+      </p>
+    )
+  }
 
   <TableCard
     title="Domeny linkujące"
@@ -139,6 +155,42 @@ const ahrefs = latest?.sources.ahrefs;
               </td>
               <td class="num">{fmtInt(d.links)}</td>
               <td class="num">{d.first_seen ?? '–'}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </TableCard>
+
+  <TableCard
+    title="Najpopularniejsze anchory"
+    meta={details.date ? `stan z ${details.date} · źródło: DataForSEO` : undefined}
+    count={anchors.length}
+    filter
+    empty="Anchory pojawią się po najbliższym przebiegu collectora."
+  >
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Anchor</th>
+          <th class="num">Domeny linkujące</th>
+          <th class="num">Backlinki</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          anchors.map((a) => (
+            <tr>
+              <td class="grow">{a.anchor}</td>
+              <td class="num">
+                <span class="cell-bar">
+                  {fmtInt(a.referring_domains)}
+                  <span class="bar">
+                    <i style={`width:${barWidth(a.referring_domains, maxAnchorRefs)}%`} />
+                  </span>
+                </span>
+              </td>
+              <td class="num">{fmtInt(a.backlinks)}</td>
             </tr>
           ))
         }

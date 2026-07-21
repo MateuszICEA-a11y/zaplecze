@@ -201,7 +201,11 @@ export interface DomainDetails {
       pages: GscRow[];
       compare?: GscCompare;
     };
-    ahrefs?: { ref_domains: RefDomain[]; ref_domains_source?: 'ahrefs' | 'dataforseo' };
+    ahrefs?: {
+      ref_domains: RefDomain[];
+      ref_domains_source?: 'ahrefs' | 'dataforseo';
+      anchors?: { anchor: string; referring_domains: number | null; backlinks: number | null }[];
+    };
     clarity?: {
       dead_clicks?: number | null;
       rage_clicks?: number | null;
