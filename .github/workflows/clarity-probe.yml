@@ -4,6 +4,10 @@ name: Clarity API Probe (one-off)
 # (AI Visibility / Citations / Topic Insights). Do usunięcia po weryfikacji.
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/clarity-probe.yml'
 
 permissions:
   contents: read
