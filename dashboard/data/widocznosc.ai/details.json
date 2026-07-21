@@ -1,6 +1,6 @@
 {
  "date": "2026-07-21",
- "collected_at": "2026-07-21T11:49:35Z",
+ "collected_at": "2026-07-21T11:51:38Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -4040,39 +4040,28 @@
   "ga4": {
    "channels": [
     {
-     "channel": "Unassigned",
-     "sessions": 3,
-     "users": 2,
-     "pageviews": 1
+     "channel": "Direct",
+     "sessions": 2,
+     "users": 1,
+     "pageviews": 3
     },
     {
      "channel": "Organic Search",
      "sessions": 2,
      "users": 1,
      "pageviews": 2
-    },
-    {
-     "channel": "Direct",
-     "sessions": 1,
-     "users": 0,
-     "pageviews": 0
     }
    ],
    "sources": [
     {
-     "source": "(not set)",
-     "sessions": 3,
-     "users": 2
+     "source": "(direct)",
+     "sessions": 2,
+     "users": 1
     },
     {
      "source": "google",
      "sessions": 2,
      "users": 1
-    },
-    {
-     "source": "(direct)",
-     "sessions": 1,
-     "users": 0
     }
    ],
    "pages": [
@@ -4082,18 +4071,18 @@
      "users": 1
     },
     {
-     "path": "/geo/llms-txt/",
+     "path": "/geo/co-google-przemilcza/",
      "pageviews": 1,
      "users": 1
     },
     {
-     "path": "/geo/co-google-przemilcza/",
-     "pageviews": 0,
+     "path": "/geo/jak-llm-cytuja-zrodla/",
+     "pageviews": 1,
      "users": 1
     },
     {
-     "path": "/geo/jak-llm-cytuja-zrodla/",
-     "pageviews": 0,
+     "path": "/geo/llms-txt/",
+     "pageviews": 1,
      "users": 1
     }
    ]
