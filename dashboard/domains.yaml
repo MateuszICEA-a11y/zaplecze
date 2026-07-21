@@ -11,9 +11,9 @@ domains:
       site: "https://widocznosc.ai/" # property typu prefiks URL (nie domenowa)
     ga4:
       enabled: true
-      # TODO(Mateusz): measurement_id (G-…) usługi GA4 widocznosc.ai;
-      # collector rozwiąże property_id przez Admin API.
-      measurement_id: ""
+      # Strumień „G-BQM8BZEL38" (id strumienia 14832977902) = widocznosc.ai;
+      # property_id rozwiązywane przez Admin API po measurement_id.
+      measurement_id: "G-BQM8BZEL38"
     bing:
       enabled: true
       site: "https://widocznosc.ai/" # witryna musi być zweryfikowana w BWT
