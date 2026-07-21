@@ -72,18 +72,21 @@ const problems = Object.entries(latest?.sources ?? {}).filter(([, r]) =>
     <span class="section-meta">porównanie 7-dniowe · pełne listy w zakładkach</span>
   </div>
   <div class="stat-grid">
-    <StatCard label="Frazy w TOP 10" value={statTop10.value} delta={statTop10.delta} trend={top10.values} />
-    <StatCard label="Kliknięcia / dzień" value={statClicks.value} delta={statClicks.delta} trend={gscClicks.values} />
+    <StatCard label="Frazy w TOP 10" value={statTop10.value} delta={statTop10.delta} trend={top10.values} href={`/${domain}/senuto/`} />
+    <StatCard label="Kliknięcia / dzień" value={statClicks.value} delta={statClicks.delta} trend={gscClicks.values} href={`/${domain}/gsc/`} />
     <StatCard
       label="Wyświetlenia / dzień"
       value={statImpressions.value}
       delta={statImpressions.delta}
       trend={gscImpressions.values}
+      href={`/${domain}/gsc/`}
     />
-    <StatCard label="Domain Rating" value={statDR.value} delta={statDR.delta} deltaLabel="30 dni" precision={1} />
-    <StatCard label="Domeny linkujące" value={statRefDomains.value} delta={statRefDomains.delta} trend={refDomains.values} />
-    {clarityConfigured && <StatCard label="Sesje (3 dni)" value={statSessions.value} delta={statSessions.delta} />}
-    {leadsConfigured && <StatCard label="Leady · 7 dni" value={leadsRecent} />}
+    <StatCard label="Domain Rating" value={statDR.value} delta={statDR.delta} deltaLabel="30 dni" precision={1} href={`/${domain}/ahrefs/`} />
+    <StatCard label="Domeny linkujące" value={statRefDomains.value} delta={statRefDomains.delta} trend={refDomains.values} href={`/${domain}/ahrefs/`} />
+    {clarityConfigured && (
+      <StatCard label="Sesje · Clarity (3 dni)" value={statSessions.value} delta={statSessions.delta} href={`/${domain}/clarity/`} />
+    )}
+    {leadsConfigured && <StatCard label="Leady · 7 dni" value={leadsRecent} href={`/${domain}/leady/`} />}
   </div>
 
   <div class="section-head"><h2>Trendy</h2></div>

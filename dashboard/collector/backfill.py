@@ -1,7 +1,8 @@
-"""Backfill historii do snapshots.jsonl (Senuto + GSC).
+"""Backfill historii do snapshots.jsonl (Senuto + GSC + Cloudflare AI).
 
 Dokłada linie za brakujące daty wstecz (do BACKFILL_DAYS); istniejących
 snapshotów collectora nie dotyka. Linie backfillu mają "backfilled": true.
+Cloudflare AI (boty): Free plan trzyma tylko ~8 dni, backfill dzień po dniu.
 Źródła bez historii w API (Ahrefs history = Insufficient plan, Clarity 1-3 dni,
 salda kont, leady) zaczynają się od daty zbierania.
 
@@ -93,6 +94,45 @@ def gsc_history(cfg: dict, sa_json: str, date_min: str, date_max: str) -> dict[s
     return out
 
 
+def cloudflare_ai_history(cfg: dict, env: dict, days: int = 7) -> dict[str, dict]:
+    """dzień → summary botów AI; GraphQL Free plan pozwala pytać o 1 dzień naraz
+    i trzyma ~8 dni wstecz (błąd „older than 1w1d")."""
+    import time
+
+    from sources.cloudflare_ai import AI_BOTS, _bot_name, _graphql, _zone_id
+
+    token = env["CLOUDFLARE_ANALYTICS_TOKEN"].strip()
+    zone_id = _zone_id(token, cfg.get("zone") or cfg.get("domain"))
+    ua_filter = ", ".join(f'{{userAgent_like: "%{bot}%"}}' for bot in AI_BOTS)
+    today = datetime.now(timezone.utc).date()
+
+    out: dict[str, dict] = {}
+    for offset in range(2, days + 2):  # wczoraj robi collector; zaczynamy 2 dni wstecz
+        day = today - timedelta(days=offset)
+        try:
+            data = _graphql(token, f"""{{ viewer {{ zones(filter: {{zoneTag: "{zone_id}"}}) {{
+              httpRequestsAdaptiveGroups(limit: 100, filter: {{
+                datetime_geq: "{day}T00:00:00Z", datetime_lt: "{day + timedelta(days=1)}T00:00:00Z",
+                requestSource: "eyeball", OR: [{ua_filter}]}}) {{
+                count dimensions {{ userAgent }} }} }} }} }}""")
+        except Exception:  # noqa: BLE001 – poza retencją / chwilowy błąd: kończymy
+            break
+        zones = (data.get("viewer") or {}).get("zones") or []
+        by_bot: dict[str, int] = {}
+        for group in (zones[0].get("httpRequestsAdaptiveGroups") if zones else []) or []:
+            name = _bot_name(group["dimensions"]["userAgent"])
+            by_bot[name] = by_bot.get(name, 0) + group["count"]
+        top = max(by_bot.items(), key=lambda kv: kv[1])[0] if by_bot else None
+        out[day.isoformat()] = {
+            "data_date": day.isoformat(),
+            "requests": sum(by_bot.values()),
+            "bots": len(by_bot),
+            "top_bot": top,
+        }
+        time.sleep(0.3)
+    return out
+
+
 def merge(domain_id: str, per_source: dict[str, dict[str, dict]]) -> tuple[int, str, str]:
     """Dopisz linie backfillu za daty bez snapshotu; zwróć (ile, od, do)."""
     path = DATA_DIR / domain_id / "snapshots.jsonl"
@@ -179,6 +219,15 @@ def main() -> None:
                     print(f"  properties widoczne dla service accounta: {listing}")
                 except Exception as diag_err:  # noqa: BLE001
                     print(f"  (diagnostyka listy properties nie powiodła się: {diag_err})")
+
+        cf_cfg = domain_cfg.get("cloudflare_ai") or {}
+        if cf_cfg.get("enabled") and env.get("CLOUDFLARE_ANALYTICS_TOKEN"):
+            cfg = {"domain": domain_id, **cf_cfg}
+            try:
+                per_source["cloudflare_ai"] = cloudflare_ai_history(cfg, env)
+                print(f"{domain_id} cloudflare_ai: {len(per_source['cloudflare_ai'])} dni historii")
+            except Exception as err:  # noqa: BLE001
+                print(f"{domain_id} cloudflare_ai: BŁĄD {err}")
 
         if per_source:
             added, d_from, d_to = merge(domain_id, per_source)

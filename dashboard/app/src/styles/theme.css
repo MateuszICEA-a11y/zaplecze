@@ -123,7 +123,9 @@ a:hover {
 /* ---------- wspólne siatki sekcji ---------- */
 .stat-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr));
+  /* auto-fill (nie auto-fit): przy kilku kartach na szerokim ekranie puste
+     tory zostają i karty nie rozciągają się na pół monitora. */
+  grid-template-columns: repeat(auto-fill, minmax(min(230px, 100%), 1fr));
   gap: 14px;
   margin-bottom: 18px;
 }
