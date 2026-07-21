@@ -29,14 +29,33 @@ MAX_INSPECTIONS = 1900  # bezpiecznik pod dzienną kwotę 2000/property
 SLEEP_S = 0.1  # kwota 600/min = 10/s; latencja requestu i tak dominuje
 
 
-def _access_token(sa_json: str) -> str:
-    from google.auth.transport.requests import Request
-    from google.oauth2 import service_account
+TOKEN_REFRESH_S = 45 * 60  # token SA żyje ~1 h; przy 834 URL-ach pętla trwa dłużej
 
-    info = json.loads(sa_json)
-    creds = service_account.Credentials.from_service_account_info(info, scopes=[SCOPE])
-    creds.refresh(Request())
-    return creds.token
+
+class _TokenProvider:
+    """Token service account odświeżany w trakcie długiej pętli inspekcji.
+
+    Jednorazowy token wygasał w środku przejazdu grupa-icea.pl (~834 URL ×
+    kilka sekund latencji URL Inspection > 1 h) → HTTP 401 i utrata całego
+    źródła. Odświeżamy proaktywnie co TOKEN_REFRESH_S.
+    """
+
+    def __init__(self, sa_json: str):
+        from google.oauth2 import service_account
+
+        info = json.loads(sa_json)
+        self._creds = service_account.Credentials.from_service_account_info(
+            info, scopes=[SCOPE])
+        self._refreshed_at = 0.0
+
+    def headers(self) -> dict:
+        if time.monotonic() - self._refreshed_at > TOKEN_REFRESH_S:
+            from google.auth.transport.requests import Request
+
+            self._creds.refresh(Request())
+            self._refreshed_at = time.monotonic()
+        return {"Authorization": f"Bearer {self._creds.token}",
+                "Content-Type": "application/json"}
 
 
 def _sitemap_urls(sitemap_url: str) -> list[str]:
@@ -70,11 +89,11 @@ def fetch(cfg: dict, env: dict) -> dict:
         raise SourceError("not_configured", "indexing: brak site/sitemap w domains.yaml")
 
     try:
-        token = _access_token(sa_json)
+        tokens = _TokenProvider(sa_json)
+        headers = tokens.headers()
     except Exception as err:  # noqa: BLE001
         raise SourceError("token_expired",
                           f"indexing: autoryzacja service account nie powiodła się ({err})") from err
-    headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
 
     try:
         urls = _sitemap_urls(sitemap)
@@ -113,14 +132,25 @@ def fetch(cfg: dict, env: dict) -> dict:
 
     rows = []
     indexed = 0
+    errors = 0
+    aborted: str | None = None
     for url in urls[:MAX_INSPECTIONS]:
         try:
             result = request_json(INSPECT_API, data=json.dumps({
                 "inspectionUrl": url,
                 "siteUrl": site,
-            }).encode(), headers=headers, timeout=30)
+            }).encode(), headers=tokens.headers(), timeout=30)
+            errors = 0
         except Exception as err:  # noqa: BLE001
-            raise classify_http_error(err, "indexing") from err
+            # Pojedynczy błąd (timeout, 5xx) nie może zabić całego przejazdu –
+            # pomiń URL; dopiero seria błędów (np. 429 po kwocie) przerywa.
+            errors += 1
+            if errors >= 5:
+                if len(rows) >= 50:  # częściowy przejazd > brak danych
+                    aborted = str(classify_http_error(err, "indexing"))
+                    break
+                raise classify_http_error(err, "indexing") from err
+            continue
         status = ((result.get("inspectionResult") or {}).get("indexStatusResult") or {})
         verdict = status.get("verdict")
         is_indexed = verdict == "PASS"
@@ -146,4 +176,6 @@ def fetch(cfg: dict, env: dict) -> dict:
         "indexed": indexed,
         "not_indexed": len(rows) - indexed,
     }
+    if aborted:
+        summary["aborted"] = aborted  # przejazd częściowy (np. kwota) – reszta jutro
     return {"summary": summary, "details": {"window": {"start": start, "end": end}, "rows": rows}}
