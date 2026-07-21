@@ -1,6 +1,6 @@
 {
  "date": "2026-07-21",
- "collected_at": "2026-07-21T11:21:23Z",
+ "collected_at": "2026-07-21T11:27:36Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -2826,1208 +2826,7 @@
    ]
   },
   "ahrefs": {
-   "ref_domains": [
-    {
-     "domain": "plesk.com",
-     "domain_rating": 93.0,
-     "links": 1,
-     "first_seen": "2022-07-29"
-    },
-    {
-     "domain": "yandex.com",
-     "domain_rating": 92.0,
-     "links": 1,
-     "first_seen": "2026-06-15"
-    },
-    {
-     "domain": "anchor.fm",
-     "domain_rating": 91.0,
-     "links": 1,
-     "first_seen": "2025-04-23"
-    },
-    {
-     "domain": "debian.org",
-     "domain_rating": 91.0,
-     "links": 1,
-     "first_seen": "2022-12-17"
-    },
-    {
-     "domain": "provenexpert.com",
-     "domain_rating": 91.0,
-     "links": 9,
-     "first_seen": "2025-03-14"
-    },
-    {
-     "domain": "crunchbase.com",
-     "domain_rating": 91.0,
-     "links": 2,
-     "first_seen": "2023-10-31"
-    },
-    {
-     "domain": "aftermarket.pl",
-     "domain_rating": 90.0,
-     "links": 5,
-     "first_seen": "2022-07-15"
-    },
-    {
-     "domain": "zimbra.com",
-     "domain_rating": 90.0,
-     "links": 1,
-     "first_seen": "2020-03-03"
-    },
-    {
-     "domain": "screamingfrog.co.uk",
-     "domain_rating": 87.0,
-     "links": 4,
-     "first_seen": "2025-03-13"
-    },
-    {
-     "domain": "cyberfolks.pl",
-     "domain_rating": 87.0,
-     "links": 4,
-     "first_seen": "2020-05-12"
-    },
-    {
-     "domain": "sky-shop.pl",
-     "domain_rating": 83.0,
-     "links": 3,
-     "first_seen": "2021-12-09"
-    },
-    {
-     "domain": "uw.edu.pl",
-     "domain_rating": 82.0,
-     "links": 1,
-     "first_seen": "2025-01-09"
-    },
-    {
-     "domain": "pap.pl",
-     "domain_rating": 81.0,
-     "links": 9,
-     "first_seen": "2022-06-28"
-    },
-    {
-     "domain": "podimo.com",
-     "domain_rating": 79.0,
-     "links": 4,
-     "first_seen": "2026-06-30"
-    },
-    {
-     "domain": "trojmiasto.pl",
-     "domain_rating": 78.0,
-     "links": 12,
-     "first_seen": "2022-03-01"
-    },
-    {
-     "domain": "sitechecker.pro",
-     "domain_rating": 78.0,
-     "links": 2,
-     "first_seen": "2022-06-03"
-    },
-    {
-     "domain": "targeo.pl",
-     "domain_rating": 78.0,
-     "links": 1,
-     "first_seen": "2025-10-11"
-    },
-    {
-     "domain": "datanyze.com",
-     "domain_rating": 77.0,
-     "links": 1,
-     "first_seen": "2026-06-12"
-    },
-    {
-     "domain": "wprost.pl",
-     "domain_rating": 77.0,
-     "links": 6,
-     "first_seen": "2019-12-06"
-    },
-    {
-     "domain": "comarch.pl",
-     "domain_rating": 77.0,
-     "links": 3,
-     "first_seen": "2023-04-24"
-    },
-    {
-     "domain": "autopay.pl",
-     "domain_rating": 77.0,
-     "links": 1,
-     "first_seen": "2023-09-08"
-    },
-    {
-     "domain": "techbehemoths.com",
-     "domain_rating": 77.0,
-     "links": 1,
-     "first_seen": "2023-01-14"
-    },
-    {
-     "domain": "everybodywiki.com",
-     "domain_rating": 76.0,
-     "links": 1,
-     "first_seen": "2021-12-03"
-    },
-    {
-     "domain": "wirtualnemedia.pl",
-     "domain_rating": 76.0,
-     "links": 1,
-     "first_seen": "2025-09-01"
-    },
-    {
-     "domain": "example3.com",
-     "domain_rating": 75.0,
-     "links": 1,
-     "first_seen": "2024-01-27"
-    },
-    {
-     "domain": "verseo.pl",
-     "domain_rating": 75.0,
-     "links": 1,
-     "first_seen": "2024-12-16"
-    },
-    {
-     "domain": "fanimani.pl",
-     "domain_rating": 75.0,
-     "links": 52184,
-     "first_seen": "2022-05-20"
-    },
-    {
-     "domain": "plerdy.com",
-     "domain_rating": 75.0,
-     "links": 1,
-     "first_seen": "2022-05-20"
-    },
-    {
-     "domain": "trustedshops.pl",
-     "domain_rating": 75.0,
-     "links": 1,
-     "first_seen": "2026-03-17"
-    },
-    {
-     "domain": "whitepress.com",
-     "domain_rating": 75.0,
-     "links": 1,
-     "first_seen": "2023-07-29"
-    },
-    {
-     "domain": "rankyour.website",
-     "domain_rating": 74.0,
-     "links": 5,
-     "first_seen": "2026-01-05"
-    },
-    {
-     "domain": "contactout.com",
-     "domain_rating": 74.0,
-     "links": 2,
-     "first_seen": "2026-07-02"
-    },
-    {
-     "domain": "ifanr.com",
-     "domain_rating": 74.0,
-     "links": 1,
-     "first_seen": "2026-06-08"
-    },
-    {
-     "domain": "factmags.com",
-     "domain_rating": 74.0,
-     "links": 10,
-     "first_seen": "2026-05-07"
-    },
-    {
-     "domain": "user.com",
-     "domain_rating": 73.0,
-     "links": 4,
-     "first_seen": "2025-09-14"
-    },
-    {
-     "domain": "gowork.pl",
-     "domain_rating": 73.0,
-     "links": 24,
-     "first_seen": "2019-08-28"
-    },
-    {
-     "domain": "softwareworld.co",
-     "domain_rating": 73.0,
-     "links": 4,
-     "first_seen": "2026-04-15"
-    },
-    {
-     "domain": "trustmate.io",
-     "domain_rating": 73.0,
-     "links": 4,
-     "first_seen": "2023-08-14"
-    },
-    {
-     "domain": "zaufane.pl",
-     "domain_rating": 73.0,
-     "links": 3,
-     "first_seen": "2021-09-24"
-    },
-    {
-     "domain": "nowymarketing.pl",
-     "domain_rating": 73.0,
-     "links": 16,
-     "first_seen": "2024-01-20"
-    },
-    {
-     "domain": "niebezpiecznik.pl",
-     "domain_rating": 72.0,
-     "links": 1,
-     "first_seen": "2021-11-19"
-    },
-    {
-     "domain": "selesto.pl",
-     "domain_rating": 72.0,
-     "links": 3,
-     "first_seen": "2022-08-26"
-    },
-    {
-     "domain": "eizba.pl",
-     "domain_rating": 72.0,
-     "links": 1,
-     "first_seen": "2026-04-23"
-    },
-    {
-     "domain": "useme.com",
-     "domain_rating": 72.0,
-     "links": 1,
-     "first_seen": "2025-12-23"
-    },
-    {
-     "domain": "monsterspost.com",
-     "domain_rating": 72.0,
-     "links": 6,
-     "first_seen": "2022-05-14"
-    },
-    {
-     "domain": "craft.co",
-     "domain_rating": 72.0,
-     "links": 1,
-     "first_seen": "2024-01-24"
-    },
-    {
-     "domain": "ct8.pl",
-     "domain_rating": 72.0,
-     "links": 10,
-     "first_seen": "2022-01-23"
-    },
-    {
-     "domain": "siteprice.org",
-     "domain_rating": 71.0,
-     "links": 85,
-     "first_seen": "2025-07-03"
-    },
-    {
-     "domain": "smsapi.pl",
-     "domain_rating": 71.0,
-     "links": 4,
-     "first_seen": "2022-11-25"
-    },
-    {
-     "domain": "mamstartup.pl",
-     "domain_rating": 71.0,
-     "links": 5,
-     "first_seen": "2021-08-07"
-    },
-    {
-     "domain": "buybacklinks.agency",
-     "domain_rating": 71.0,
-     "links": 5,
-     "first_seen": "2026-03-18"
-    },
-    {
-     "domain": "studiokreacja.pl",
-     "domain_rating": 71.0,
-     "links": 8,
-     "first_seen": "2022-11-18"
-    },
-    {
-     "domain": "prospeo.io",
-     "domain_rating": 71.0,
-     "links": 2,
-     "first_seen": "2026-02-26"
-    },
-    {
-     "domain": "ecommercegermany.com",
-     "domain_rating": 71.0,
-     "links": 1,
-     "first_seen": "2026-01-03"
-    },
-    {
-     "domain": "marketplanet.pl",
-     "domain_rating": 71.0,
-     "links": 5,
-     "first_seen": "2025-08-06"
-    },
-    {
-     "domain": "developmentmi.com",
-     "domain_rating": 71.0,
-     "links": 2,
-     "first_seen": "2024-11-27"
-    },
-    {
-     "domain": "leadiq.com",
-     "domain_rating": 71.0,
-     "links": 4,
-     "first_seen": "2026-06-11"
-    },
-    {
-     "domain": "topbilliondirectory.com",
-     "domain_rating": 70.0,
-     "links": 4,
-     "first_seen": "2025-10-19"
-    },
-    {
-     "domain": "luigisbox.com",
-     "domain_rating": 70.0,
-     "links": 1,
-     "first_seen": "2024-10-13"
-    },
-    {
-     "domain": "kingranks.com",
-     "domain_rating": 70.0,
-     "links": 12,
-     "first_seen": "2024-07-24"
-    },
-    {
-     "domain": "pkt.pl",
-     "domain_rating": 70.0,
-     "links": 4,
-     "first_seen": "2024-04-08"
-    },
-    {
-     "domain": "krs-online.com.pl",
-     "domain_rating": 70.0,
-     "links": 2,
-     "first_seen": "2025-07-02"
-    },
-    {
-     "domain": "afterweb.pl",
-     "domain_rating": 70.0,
-     "links": 5,
-     "first_seen": "2022-06-02"
-    },
-    {
-     "domain": "dziennikwschodni.pl",
-     "domain_rating": 70.0,
-     "links": 1,
-     "first_seen": "2026-04-20"
-    },
-    {
-     "domain": "articlement.com",
-     "domain_rating": 70.0,
-     "links": 8,
-     "first_seen": "2025-02-25"
-    },
-    {
-     "domain": "fancybox.pl",
-     "domain_rating": 69.0,
-     "links": 2,
-     "first_seen": "2025-09-28"
-    },
-    {
-     "domain": "radiopik.pl",
-     "domain_rating": 68.0,
-     "links": 2,
-     "first_seen": "2025-01-31"
-    },
-    {
-     "domain": "devagroup.pl",
-     "domain_rating": 68.0,
-     "links": 2,
-     "first_seen": "2022-07-12"
-    },
-    {
-     "domain": "marketerplus.pl",
-     "domain_rating": 68.0,
-     "links": 1,
-     "first_seen": "2023-01-08"
-    },
-    {
-     "domain": "rocketjobs.pl",
-     "domain_rating": 68.0,
-     "links": 1,
-     "first_seen": "2025-09-06"
-    },
-    {
-     "domain": "instalki.pl",
-     "domain_rating": 67.0,
-     "links": 1,
-     "first_seen": "2025-04-30"
-    },
-    {
-     "domain": "konigle.com",
-     "domain_rating": 67.0,
-     "links": 1,
-     "first_seen": "2024-02-28"
-    },
-    {
-     "domain": "ringostat.com",
-     "domain_rating": 67.0,
-     "links": 2,
-     "first_seen": "2022-10-07"
-    },
-    {
-     "domain": "olsztyn.eu",
-     "domain_rating": 67.0,
-     "links": 1,
-     "first_seen": "2025-10-18"
-    },
-    {
-     "domain": "emaillabs.io",
-     "domain_rating": 66.0,
-     "links": 2,
-     "first_seen": "2022-06-16"
-    },
-    {
-     "domain": "sitelike.org",
-     "domain_rating": 66.0,
-     "links": 1,
-     "first_seen": "2021-05-21"
-    },
-    {
-     "domain": "brief.pl",
-     "domain_rating": 66.0,
-     "links": 5,
-     "first_seen": "2022-08-31"
-    },
-    {
-     "domain": "opiniak.com",
-     "domain_rating": 66.0,
-     "links": 2,
-     "first_seen": "2023-02-14"
-    },
-    {
-     "domain": "radiolodz.pl",
-     "domain_rating": 65.0,
-     "links": 2,
-     "first_seen": "2023-05-15"
-    },
-    {
-     "domain": "semstorm.com",
-     "domain_rating": 65.0,
-     "links": 90,
-     "first_seen": "2020-05-23"
-    },
-    {
-     "domain": "ssru.ac.th",
-     "domain_rating": 64.0,
-     "links": 1,
-     "first_seen": "2024-08-04"
-    },
-    {
-     "domain": "grwebsite.eu",
-     "domain_rating": 64.0,
-     "links": 1,
-     "first_seen": "2025-07-22"
-    },
-    {
-     "domain": "clodura.ai",
-     "domain_rating": 64.0,
-     "links": 1,
-     "first_seen": "2025-06-06"
-    },
-    {
-     "domain": "globkurier.pl",
-     "domain_rating": 64.0,
-     "links": 10,
-     "first_seen": "2021-10-14"
-    },
-    {
-     "domain": "budujemydom.pl",
-     "domain_rating": 64.0,
-     "links": 6,
-     "first_seen": "2022-02-20"
-    },
-    {
-     "domain": "emis.com",
-     "domain_rating": 64.0,
-     "links": 10,
-     "first_seen": "2022-06-26"
-    },
-    {
-     "domain": "microlinksite.com",
-     "domain_rating": 64.0,
-     "links": 2,
-     "first_seen": "2025-07-08"
-    },
-    {
-     "domain": "dealavo.com",
-     "domain_rating": 63.0,
-     "links": 4,
-     "first_seen": "2026-04-25"
-    },
-    {
-     "domain": "boo.pl",
-     "domain_rating": 63.0,
-     "links": 23,
-     "first_seen": "2023-02-13"
-    },
-    {
-     "domain": "joomlack.fr",
-     "domain_rating": 63.0,
-     "links": 1,
-     "first_seen": "2026-01-28"
-    },
-    {
-     "domain": "fotopolis.pl",
-     "domain_rating": 63.0,
-     "links": 3,
-     "first_seen": "2023-01-27"
-    },
-    {
-     "domain": "comarchesklep.pl",
-     "domain_rating": 62.0,
-     "links": 3,
-     "first_seen": "2023-06-01"
-    },
-    {
-     "domain": "pushpushgo.com",
-     "domain_rating": 62.0,
-     "links": 2,
-     "first_seen": "2023-09-28"
-    },
-    {
-     "domain": "fronda.pl",
-     "domain_rating": 62.0,
-     "links": 1,
-     "first_seen": "2026-04-29"
-    },
-    {
-     "domain": "superbcompanies.com",
-     "domain_rating": 62.0,
-     "links": 1,
-     "first_seen": "2025-03-01"
-    },
-    {
-     "domain": "cozadzien.pl",
-     "domain_rating": 61.0,
-     "links": 3,
-     "first_seen": "2025-07-16"
-    },
-    {
-     "domain": "linkodirectory.com",
-     "domain_rating": 61.0,
-     "links": 2,
-     "first_seen": "2025-08-07"
-    },
-    {
-     "domain": "proseoarticles.com",
-     "domain_rating": 61.0,
-     "links": 2,
-     "first_seen": "2025-10-01"
-    },
-    {
-     "domain": "lovekrakow.pl",
-     "domain_rating": 61.0,
-     "links": 4,
-     "first_seen": "2025-12-11"
-    },
-    {
-     "domain": "comparic.pl",
-     "domain_rating": 61.0,
-     "links": 2,
-     "first_seen": "2025-01-18"
-    },
-    {
-     "domain": "charaktery.eu",
-     "domain_rating": 61.0,
-     "links": 4,
-     "first_seen": "2018-06-10"
-    },
-    {
-     "domain": "rank-top.click",
-     "domain_rating": 60.0,
-     "links": 5,
-     "first_seen": "2026-04-22"
-    },
-    {
-     "domain": "wayranks.com",
-     "domain_rating": 60.0,
-     "links": 6,
-     "first_seen": "2023-01-04"
-    },
-    {
-     "domain": "lm.pl",
-     "domain_rating": 60.0,
-     "links": 6,
-     "first_seen": "2022-08-07"
-    },
-    {
-     "domain": "olsztyn.com.pl",
-     "domain_rating": 60.0,
-     "links": 6,
-     "first_seen": "2022-08-11"
-    },
-    {
-     "domain": "wszczecinie.pl",
-     "domain_rating": 59.0,
-     "links": 7,
-     "first_seen": "2023-04-05"
-    },
-    {
-     "domain": "imoli.dev",
-     "domain_rating": 59.0,
-     "links": 2,
-     "first_seen": "2022-10-08"
-    },
-    {
-     "domain": "czasnawnetrze.pl",
-     "domain_rating": 58.0,
-     "links": 3,
-     "first_seen": "2022-11-08"
-    },
-    {
-     "domain": "tuwroclaw.com",
-     "domain_rating": 58.0,
-     "links": 2,
-     "first_seen": "2025-01-22"
-    },
-    {
-     "domain": "kruczek-webhouse.pl",
-     "domain_rating": 57.0,
-     "links": 2,
-     "first_seen": "2025-08-22"
-    },
-    {
-     "domain": "responso.com",
-     "domain_rating": 57.0,
-     "links": 1,
-     "first_seen": "2023-07-26"
-    },
-    {
-     "domain": "5v.pl",
-     "domain_rating": 57.0,
-     "links": 2,
-     "first_seen": "2022-02-13"
-    },
-    {
-     "domain": "neografix.pl",
-     "domain_rating": 57.0,
-     "links": 2,
-     "first_seen": "2024-12-25"
-    },
-    {
-     "domain": "historia.org.pl",
-     "domain_rating": 57.0,
-     "links": 5,
-     "first_seen": "2022-06-30"
-    },
-    {
-     "domain": "expertsender.com",
-     "domain_rating": 57.0,
-     "links": 3,
-     "first_seen": "2025-01-30"
-    },
-    {
-     "domain": "300gospodarka.pl",
-     "domain_rating": 57.0,
-     "links": 1,
-     "first_seen": "2026-05-13"
-    },
-    {
-     "domain": "miastokobiet.pl",
-     "domain_rating": 57.0,
-     "links": 2,
-     "first_seen": "2022-08-05"
-    },
-    {
-     "domain": "zielonyogrodek.pl",
-     "domain_rating": 57.0,
-     "links": 2,
-     "first_seen": "2022-12-08"
-    },
-    {
-     "domain": "mobiletrends.pl",
-     "domain_rating": 56.0,
-     "links": 11,
-     "first_seen": "2022-08-05"
-    },
-    {
-     "domain": "toptohigh.com",
-     "domain_rating": 56.0,
-     "links": 3,
-     "first_seen": "2024-07-25"
-    },
-    {
-     "domain": "lawschoolnumbers.com",
-     "domain_rating": 56.0,
-     "links": 7,
-     "first_seen": "2024-10-05"
-    },
-    {
-     "domain": "cdv.pl",
-     "domain_rating": 56.0,
-     "links": 9,
-     "first_seen": "2024-02-08"
-    },
-    {
-     "domain": "startupill.com",
-     "domain_rating": 56.0,
-     "links": 2,
-     "first_seen": "2022-06-27"
-    },
-    {
-     "domain": "kontactr.com",
-     "domain_rating": 56.0,
-     "links": 81,
-     "first_seen": "2020-04-06"
-    },
-    {
-     "domain": "tygodnikprzeglad.pl",
-     "domain_rating": 56.0,
-     "links": 6,
-     "first_seen": "2022-07-18"
-    },
-    {
-     "domain": "sellasist.pl",
-     "domain_rating": 56.0,
-     "links": 4,
-     "first_seen": "2022-01-20"
-    },
-    {
-     "domain": "nadmorski24.pl",
-     "domain_rating": 56.0,
-     "links": 5,
-     "first_seen": "2024-10-14"
-    },
-    {
-     "domain": "mmponline.pl",
-     "domain_rating": 56.0,
-     "links": 6,
-     "first_seen": "2024-04-21"
-    },
-    {
-     "domain": "olicom.com.pl",
-     "domain_rating": 56.0,
-     "links": 2,
-     "first_seen": "2019-07-01"
-    },
-    {
-     "domain": "sbp.pl",
-     "domain_rating": 55.0,
-     "links": 2,
-     "first_seen": "2023-03-11"
-    },
-    {
-     "domain": "viva.org.pl",
-     "domain_rating": 55.0,
-     "links": 1,
-     "first_seen": "2023-05-25"
-    },
-    {
-     "domain": "shockstudio.pl",
-     "domain_rating": 55.0,
-     "links": 1,
-     "first_seen": "2024-01-24"
-    },
-    {
-     "domain": "lublin112.pl",
-     "domain_rating": 55.0,
-     "links": 18,
-     "first_seen": "2022-06-28"
-    },
-    {
-     "domain": "zleca.pl",
-     "domain_rating": 55.0,
-     "links": 1,
-     "first_seen": "2023-01-17"
-    },
-    {
-     "domain": "linkrankpro.shop",
-     "domain_rating": 54.0,
-     "links": 5,
-     "first_seen": "2026-05-04"
-    },
-    {
-     "domain": "rankxlinks.shop",
-     "domain_rating": 54.0,
-     "links": 5,
-     "first_seen": "2026-05-04"
-    },
-    {
-     "domain": "ranklinkerpro.shop",
-     "domain_rating": 54.0,
-     "links": 5,
-     "first_seen": "2026-05-15"
-    },
-    {
-     "domain": "seorankflow.shop",
-     "domain_rating": 54.0,
-     "links": 5,
-     "first_seen": "2026-05-24"
-    },
-    {
-     "domain": "apifonica.com",
-     "domain_rating": 54.0,
-     "links": 1,
-     "first_seen": "2023-10-01"
-    },
-    {
-     "domain": "buyseobacklinks.shop",
-     "domain_rating": 54.0,
-     "links": 4,
-     "first_seen": "2026-05-31"
-    },
-    {
-     "domain": "luigisbox.cz",
-     "domain_rating": 54.0,
-     "links": 1,
-     "first_seen": "2024-10-21"
-    },
-    {
-     "domain": "authoritybacklinks.shop",
-     "domain_rating": 54.0,
-     "links": 5,
-     "first_seen": "2026-05-09"
-    },
-    {
-     "domain": "exio.pl",
-     "domain_rating": 54.0,
-     "links": 3,
-     "first_seen": "2022-01-06"
-    },
-    {
-     "domain": "nettg.pl",
-     "domain_rating": 54.0,
-     "links": 4,
-     "first_seen": "2026-03-28"
-    },
-    {
-     "domain": "topposition.eu",
-     "domain_rating": 54.0,
-     "links": 1,
-     "first_seen": "2022-01-02"
-    },
-    {
-     "domain": "bryk.pl",
-     "domain_rating": 54.0,
-     "links": 13,
-     "first_seen": "2022-07-10"
-    },
-    {
-     "domain": "thearticletime.com",
-     "domain_rating": 54.0,
-     "links": 2,
-     "first_seen": "2025-01-01"
-    },
-    {
-     "domain": "backlinker.shop",
-     "domain_rating": 53.0,
-     "links": 3,
-     "first_seen": "2025-09-21"
-    },
-    {
-     "domain": "pbnseolinks.shop",
-     "domain_rating": 53.0,
-     "links": 5,
-     "first_seen": "2026-05-08"
-    },
-    {
-     "domain": "podkasty.info",
-     "domain_rating": 53.0,
-     "links": 3,
-     "first_seen": "2023-07-31"
-    },
-    {
-     "domain": "linkrankboost.shop",
-     "domain_rating": 53.0,
-     "links": 5,
-     "first_seen": "2026-05-12"
-    },
-    {
-     "domain": "wadowice24.pl",
-     "domain_rating": 53.0,
-     "links": 1,
-     "first_seen": "2025-12-11"
-    },
-    {
-     "domain": "linkseopro.shop",
-     "domain_rating": 53.0,
-     "links": 5,
-     "first_seen": "2026-05-06"
-    },
-    {
-     "domain": "audio.com.pl",
-     "domain_rating": 53.0,
-     "links": 2,
-     "first_seen": "2024-01-06"
-    },
-    {
-     "domain": "ranklinkpro.shop",
-     "domain_rating": 53.0,
-     "links": 5,
-     "first_seen": "2026-05-10"
-    },
-    {
-     "domain": "seolinkpro.shop",
-     "domain_rating": 53.0,
-     "links": 5,
-     "first_seen": "2026-05-07"
-    },
-    {
-     "domain": "ranklinkx.shop",
-     "domain_rating": 53.0,
-     "links": 4,
-     "first_seen": "2026-05-09"
-    },
-    {
-     "domain": "premiumseolinks.shop",
-     "domain_rating": 53.0,
-     "links": 5,
-     "first_seen": "2026-05-07"
-    },
-    {
-     "domain": "toplinkranker.shop",
-     "domain_rating": 53.0,
-     "links": 5,
-     "first_seen": "2026-05-10"
-    },
-    {
-     "domain": "linkrankseo.shop",
-     "domain_rating": 53.0,
-     "links": 4,
-     "first_seen": "2026-05-07"
-    },
-    {
-     "domain": "stronaw24.pl",
-     "domain_rating": 53.0,
-     "links": 1,
-     "first_seen": "2024-02-13"
-    },
-    {
-     "domain": "itreseller.pl",
-     "domain_rating": 52.0,
-     "links": 2,
-     "first_seen": "2024-10-25"
-    },
-    {
-     "domain": "artelis.pl",
-     "domain_rating": 52.0,
-     "links": 1,
-     "first_seen": "2023-02-15"
-    },
-    {
-     "domain": "emkielce.pl",
-     "domain_rating": 52.0,
-     "links": 4,
-     "first_seen": "2023-03-11"
-    },
-    {
-     "domain": "pless.pl",
-     "domain_rating": 52.0,
-     "links": 9,
-     "first_seen": "2024-09-29"
-    },
-    {
-     "domain": "webfalcon.pl",
-     "domain_rating": 52.0,
-     "links": 16,
-     "first_seen": "2022-02-09"
-    },
-    {
-     "domain": "ccifp.pl",
-     "domain_rating": 52.0,
-     "links": 2,
-     "first_seen": "2026-04-23"
-    },
-    {
-     "domain": "expandeco.com",
-     "domain_rating": 52.0,
-     "links": 4,
-     "first_seen": "2026-07-08"
-    },
-    {
-     "domain": "beskidzka24.pl",
-     "domain_rating": 52.0,
-     "links": 6,
-     "first_seen": "2025-05-14"
-    },
-    {
-     "domain": "bizhorizone.com",
-     "domain_rating": 52.0,
-     "links": 1,
-     "first_seen": "2026-05-12"
-    },
-    {
-     "domain": "websitehubs.com",
-     "domain_rating": 52.0,
-     "links": 2,
-     "first_seen": "2024-11-27"
-    },
-    {
-     "domain": "linkpitcherdirectory.com",
-     "domain_rating": 51.0,
-     "links": 3,
-     "first_seen": "2025-09-29"
-    },
-    {
-     "domain": "pirdu.com",
-     "domain_rating": 51.0,
-     "links": 3,
-     "first_seen": "2023-01-06"
-    },
-    {
-     "domain": "sellintegro.pl",
-     "domain_rating": 51.0,
-     "links": 1,
-     "first_seen": "2024-09-05"
-    },
-    {
-     "domain": "swidnica24.pl",
-     "domain_rating": 51.0,
-     "links": 6,
-     "first_seen": "2022-08-08"
-    },
-    {
-     "domain": "speedway-world.pl",
-     "domain_rating": 51.0,
-     "links": 12,
-     "first_seen": "2023-06-28"
-    },
-    {
-     "domain": "smartwaydirectory.com",
-     "domain_rating": 51.0,
-     "links": 3,
-     "first_seen": "2025-09-30"
-    },
-    {
-     "domain": "socialzonedirectory.com",
-     "domain_rating": 51.0,
-     "links": 3,
-     "first_seen": "2025-09-15"
-    },
-    {
-     "domain": "kolayihracat.gov.tr",
-     "domain_rating": 51.0,
-     "links": 6,
-     "first_seen": "2025-09-13"
-    },
-    {
-     "domain": "superbhubdirectory.com",
-     "domain_rating": 51.0,
-     "links": 3,
-     "first_seen": "2026-01-02"
-    },
-    {
-     "domain": "callback24.pl",
-     "domain_rating": 51.0,
-     "links": 3,
-     "first_seen": "2026-01-13"
-    },
-    {
-     "domain": "radio5.com.pl",
-     "domain_rating": 50.0,
-     "links": 6,
-     "first_seen": "2022-08-16"
-    },
-    {
-     "domain": "sbyme.com",
-     "domain_rating": 50.0,
-     "links": 2,
-     "first_seen": "2024-11-27"
-    },
-    {
-     "domain": "99bestsite.com",
-     "domain_rating": 50.0,
-     "links": 2,
-     "first_seen": "2024-11-27"
-    },
-    {
-     "domain": "seoarticletime.com",
-     "domain_rating": 50.0,
-     "links": 2,
-     "first_seen": "2024-11-27"
-    },
-    {
-     "domain": "webguestpostsdirectory.com",
-     "domain_rating": 50.0,
-     "links": 3,
-     "first_seen": "2025-08-20"
-    },
-    {
-     "domain": "ranksdirectory.com",
-     "domain_rating": 50.0,
-     "links": 6,
-     "first_seen": "2024-07-31"
-    },
-    {
-     "domain": "postsdirectory.com",
-     "domain_rating": 50.0,
-     "links": 3,
-     "first_seen": "2025-09-05"
-    },
-    {
-     "domain": "topupdirectory.com",
-     "domain_rating": 49.0,
-     "links": 2,
-     "first_seen": "2024-12-31"
-    },
-    {
-     "domain": "virtualsdirectory.com",
-     "domain_rating": 49.0,
-     "links": 2,
-     "first_seen": "2024-12-31"
-    },
-    {
-     "domain": "rankfastdirectory.com",
-     "domain_rating": 49.0,
-     "links": 3,
-     "first_seen": "2025-10-19"
-    },
-    {
-     "domain": "hicron.com",
-     "domain_rating": 49.0,
-     "links": 4,
-     "first_seen": "2025-02-17"
-    },
-    {
-     "domain": "sucha24.pl",
-     "domain_rating": 49.0,
-     "links": 5,
-     "first_seen": "2024-07-24"
-    },
-    {
-     "domain": "toplinksites.com",
-     "domain_rating": 49.0,
-     "links": 2,
-     "first_seen": "2024-12-31"
-    },
-    {
-     "domain": "prepostlink.com",
-     "domain_rating": 49.0,
-     "links": 2,
-     "first_seen": "2024-12-31"
-    },
-    {
-     "domain": "c99.nl",
-     "domain_rating": 49.0,
-     "links": 17,
-     "first_seen": "2026-07-19"
-    },
-    {
-     "domain": "bye.fyi",
-     "domain_rating": 49.0,
-     "links": 1,
-     "first_seen": "2026-04-03"
-    },
-    {
-     "domain": "oczymlekarze.pl",
-     "domain_rating": 49.0,
-     "links": 2,
-     "first_seen": "2025-02-26"
-    },
-    {
-     "domain": "m40.pl",
-     "domain_rating": 49.0,
-     "links": 8,
-     "first_seen": "2025-05-18"
-    },
-    {
-     "domain": "ewarszawa.com.pl",
-     "domain_rating": 49.0,
-     "links": 2,
-     "first_seen": "2022-03-29"
-    }
-   ],
+   "ref_domains": [],
    "ref_domains_source": "ahrefs"
   },
   "gsc": {
@@ -20168,13 +18967,13 @@
      "position": -1
     },
     {
-     "query": "firma icea",
+     "query": "icea sa",
      "clicks": 1,
      "impressions": 4,
      "position": -1
     },
     {
-     "query": "icea sa",
+     "query": "firma icea",
      "clicks": 1,
      "impressions": 4,
      "position": -1
@@ -20198,7 +18997,7 @@
      "position": -1
     },
     {
-     "query": "icea spółka akcyjn",
+     "query": "icea poland",
      "clicks": 1,
      "impressions": 3,
      "position": -1
@@ -20216,7 +19015,7 @@
      "position": -1
     },
     {
-     "query": "icea poland",
+     "query": "icea spółka akcyjn",
      "clicks": 1,
      "impressions": 3,
      "position": -1
@@ -20252,18 +19051,6 @@
      "position": -1
     },
     {
-     "query": "jak policzyć zaangażowanie w mediach",
-     "clicks": 1,
-     "impressions": 2,
-     "position": -1
-    },
-    {
-     "query": "cechy strony dynamicznej",
-     "clicks": 1,
-     "impressions": 2,
-     "position": -1
-    },
-    {
      "query": "wywiad kontekstowy konstrukcja",
      "clicks": 1,
      "impressions": 2,
@@ -20276,7 +19063,25 @@
      "position": -1
     },
     {
+     "query": "jak policzyć zaangażowanie w mediach",
+     "clicks": 1,
+     "impressions": 2,
+     "position": -1
+    },
+    {
+     "query": "cechy strony dynamicznej",
+     "clicks": 1,
+     "impressions": 2,
+     "position": -1
+    },
+    {
      "query": "podatek od reklamy",
+     "clicks": 1,
+     "impressions": 2,
+     "position": -1
+    },
+    {
+     "query": "wskaźnik zaangażowania w mediach",
      "clicks": 1,
      "impressions": 2,
      "position": -1
@@ -20294,12 +19099,6 @@
      "position": -1
     },
     {
-     "query": "wskaźnik zaangażowania w mediach",
-     "clicks": 1,
-     "impressions": 2,
-     "position": -1
-    },
-    {
      "query": "mapa strony www w ea",
      "clicks": 1,
      "impressions": 2,
@@ -20312,7 +19111,7 @@
      "position": -1
     },
     {
-     "query": "intanet nowy link",
+     "query": "nmap strony www",
      "clicks": 1,
      "impressions": 1,
      "position": -1
@@ -20324,25 +19123,13 @@
      "position": -1
     },
     {
-     "query": "nmap strony www",
-     "clicks": 1,
-     "impressions": 1,
-     "position": -1
-    },
-    {
      "query": "wedel kampanie reklamowe koszty",
      "clicks": 1,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "vanity url",
-     "clicks": 1,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "gdzie sprawdzic grupe odbiorców",
+     "query": "intanet nowy link",
      "clicks": 1,
      "impressions": 1,
      "position": -1
@@ -20360,13 +19147,37 @@
      "position": -1
     },
     {
+     "query": "słownik pojęć customer experience",
+     "clicks": 1,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "gdzie sprawdzic grupe odbiorców",
+     "clicks": 1,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "vanity url",
+     "clicks": 1,
+     "impressions": 1,
+     "position": -1
+    },
+    {
      "query": "digital now! holding",
      "clicks": 1,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "słownik pojęć customer experience",
+     "query": "jaki ctr jest dobry",
+     "clicks": 1,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "jak odczytać zrzut ekanu html",
      "clicks": 1,
      "impressions": 1,
      "position": -1
@@ -20384,25 +19195,7 @@
      "position": -1
     },
     {
-     "query": "jak odczytać zrzut ekanu html",
-     "clicks": 1,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "jaki ctr jest dobry",
-     "clicks": 1,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "jak zamieścić google ads na stronie",
-     "clicks": 1,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "na co zwrócić uwagę przy zkładaniu strony internetowej",
+     "query": "jaki nick może mieć na youtube",
      "clicks": 1,
      "impressions": 1,
      "position": -1
@@ -20414,43 +19207,25 @@
      "position": -1
     },
     {
-     "query": "ruch organiczny",
-     "clicks": 1,
-     "impressions": 1,
-     "position": -1
-    },
-    {
      "query": "progresywne aplikacje webowe",
      "clicks": 1,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "jaki nick może mieć na youtube",
+     "query": "jak zamieścić google ads na stronie",
      "clicks": 1,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "ga4 modyfikacja kluczowych zdarzeń",
+     "query": "ruch organiczny",
      "clicks": 1,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "ctr jaki powinien być yśmy mogli mówić że kampania działa",
-     "clicks": 1,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "ux researcher co robi",
-     "clicks": 1,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "przerabianie linka zeby wygladal jak co innego",
+     "query": "na co zwrócić uwagę przy zkładaniu strony internetowej",
      "clicks": 1,
      "impressions": 1,
      "position": -1
@@ -20462,7 +19237,31 @@
      "position": -1
     },
     {
+     "query": "ctr jaki powinien być yśmy mogli mówić że kampania działa",
+     "clicks": 1,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "przerabianie linka zeby wygladal jak co innego",
+     "clicks": 1,
+     "impressions": 1,
+     "position": -1
+    },
+    {
      "query": "co zawiera mapa srony",
+     "clicks": 1,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "ux researcher co robi",
+     "clicks": 1,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "ga4 modyfikacja kluczowych zdarzeń",
      "clicks": 1,
      "impressions": 1,
      "position": -1
@@ -20480,7 +19279,7 @@
      "position": -1
     },
     {
-     "query": "ctr cena",
+     "query": "cltv means",
      "clicks": 1,
      "impressions": 1,
      "position": -1
@@ -20492,7 +19291,7 @@
      "position": -1
     },
     {
-     "query": "cltv means",
+     "query": "ctr cena",
      "clicks": 1,
      "impressions": 1,
      "position": -1
@@ -20588,13 +19387,13 @@
      "position": -1
     },
     {
-     "query": "open page rank",
+     "query": "grupa icea",
      "clicks": 0,
      "impressions": 4,
      "position": -1
     },
     {
-     "query": "grupa icea",
+     "query": "open page rank",
      "clicks": 0,
      "impressions": 4,
      "position": -1
@@ -20618,7 +19417,7 @@
      "position": -1
     },
     {
-     "query": "the wayback machine",
+     "query": "gsc",
      "clicks": 0,
      "impressions": 3,
      "position": -1
@@ -20630,7 +19429,13 @@
      "position": -1
     },
     {
-     "query": "gsc",
+     "query": "the wayback machine",
+     "clicks": 0,
+     "impressions": 3,
+     "position": -1
+    },
+    {
+     "query": "brandly360",
      "clicks": 0,
      "impressions": 3,
      "position": -1
@@ -20648,7 +19453,7 @@
      "position": -1
     },
     {
-     "query": "brandly360",
+     "query": "google analytics demo",
      "clicks": 0,
      "impressions": 3,
      "position": -1
@@ -20666,7 +19471,7 @@
      "position": -1
     },
     {
-     "query": "google analytics demo",
+     "query": "icea_public_search.jsp?link= site:pl",
      "clicks": 0,
      "impressions": 3,
      "position": -1
@@ -20678,13 +19483,7 @@
      "position": -1
     },
     {
-     "query": "icea_public_search.jsp?link= site:pl",
-     "clicks": 0,
-     "impressions": 3,
-     "position": -1
-    },
-    {
-     "query": "page rank server ip site details alexa",
+     "query": "macie nowy link https://trackzonas.com/index.php/redirect/index/6787ceb532cd3?clickid=174617529009990tpltv4952287684v6b431&subid1=7066388-1560383409-4269441498&subid2=7066388&subid3=chrome",
      "clicks": 0,
      "impressions": 3,
      "position": -1
@@ -20696,7 +19495,7 @@
      "position": -1
     },
     {
-     "query": "macie nowy link https://trackzonas.com/index.php/redirect/index/6787ceb532cd3?clickid=174617529009990tpltv4952287684v6b431&subid1=7066388-1560383409-4269441498&subid2=7066388&subid3=chrome",
+     "query": "page rank server ip site details alexa",
      "clicks": 0,
      "impressions": 3,
      "position": -1
@@ -20726,18 +19525,6 @@
      "position": -1
     },
     {
-     "query": "410",
-     "clicks": 0,
-     "impressions": 2,
-     "position": -1
-    },
-    {
-     "query": "obiektvw google",
-     "clicks": 0,
-     "impressions": 2,
-     "position": -1
-    },
-    {
      "query": "budzet bd and marketing",
      "clicks": 0,
      "impressions": 2,
@@ -20750,25 +19537,31 @@
      "position": -1
     },
     {
+     "query": "obiektvw google",
+     "clicks": 0,
+     "impressions": 2,
+     "position": -1
+    },
+    {
      "query": "icea marketing digital",
      "clicks": 0,
      "impressions": 2,
      "position": -1
     },
     {
-     "query": "bingujemy",
-     "clicks": 0,
-     "impressions": 2,
-     "position": -1
-    },
-    {
-     "query": "warto wiedzieć strony w katalogu dodaj serwis dodaj artykuł zaloguj",
+     "query": "410",
      "clicks": 0,
      "impressions": 2,
      "position": -1
     },
     {
      "query": "?utm_term=autor_numer",
+     "clicks": 0,
+     "impressions": 2,
+     "position": -1
+    },
+    {
+     "query": "offers.42{46.org/?offer=174&uid=01942b0a-0f13-776a-8148-c964382bb26b&subid=79stq&utm_source=source",
      "clicks": 0,
      "impressions": 2,
      "position": -1
@@ -20786,13 +19579,13 @@
      "position": -1
     },
     {
-     "query": "offers.42{46.org/?offer=174&uid=01942b0a-0f13-776a-8148-c964382bb26b&subid=79stq&utm_source=source",
+     "query": "warto wiedzieć strony w katalogu dodaj serwis dodaj artykuł zaloguj",
      "clicks": 0,
      "impressions": 2,
      "position": -1
     },
     {
-     "query": "wayback",
+     "query": "bingujemy",
      "clicks": 0,
      "impressions": 2,
      "position": -1
@@ -20804,7 +19597,7 @@
      "position": -1
     },
     {
-     "query": "zamknięcie wizytówi google",
+     "query": "wayback",
      "clicks": 0,
      "impressions": 2,
      "position": -1
@@ -20816,15 +19609,9 @@
      "position": -1
     },
     {
-     "query": "dzumae08itnotehfnrm,btln;y/mym,y.y/m/y/my",
+     "query": "zamknięcie wizytówi google",
      "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "ctr co a firma",
-     "clicks": 0,
-     "impressions": 1,
+     "impressions": 2,
      "position": -1
     },
     {
@@ -20834,37 +19621,7 @@
      "position": -1
     },
     {
-     "query": "czy waro reklamowac sie w pinterest",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "czym jest survival strony eioba.plus",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "czy warto reklamowac się w pinterest",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "domain rating dr 90+ price",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "zespól obsługi klienta",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "apamowniw",
+     "query": "dzumae08itnotehfnrm,btln;y/mym,y.y/m/y/my",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -20876,31 +19633,55 @@
      "position": -1
     },
     {
+     "query": "czym jest survival strony eioba.plus",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "domain rating dr 90+ price",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "ctr co a firma",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "czy waro reklamowac sie w pinterest",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "zespól obsługi klienta",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "czy warto reklamowac się w pinterest",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "apamowniw",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
      "query": "what is a marki event",
      "clicks": 0,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "ctr-b znaczenie",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "poland cta co oznacza skrot?",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "a znaleźć źródło strony",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "filary biznesu",
+     "query": "bingujemy",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -20918,25 +19699,13 @@
      "position": -1
     },
     {
-     "query": "jakie zaimki wpisac na yutub",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "domena podrzedna",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "scenariusz grupy fokusowej",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
      "query": "pagerank",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "kanibalizacja słów",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -20960,13 +19729,37 @@
      "position": -1
     },
     {
-     "query": "kanibalizacja słów",
+     "query": "jakie zaimki wpisac na yutub",
      "clicks": 0,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "źródło strony",
+     "query": "a znaleźć źródło strony",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "domena podrzedna",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "scenariusz grupy fokusowej",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "poland cta co oznacza skrot?",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "ctr-b znaczenie",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -20978,91 +19771,13 @@
      "position": -1
     },
     {
-     "query": "bingujemy",
+     "query": "źródło strony",
      "clicks": 0,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "bi xcx5gjd l cb8jiuushbv",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "witryna internetowa",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "klienci wymagania",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "icea marketing",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "co jest potrzebne do przeniesienia strony wordpress",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "witryna internetowa wikipedia",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "emulatorgames error 403",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "pokazać uproszczoną stronę",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "pingować",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "wyszukwarka glosowa stron web",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "graficznie tytuł prezentuje się solidnie, ale optymalizacja na niektórych platformach pozostawia sporo do życzenia – zdarzają się spadki płynności i błędy techniczne. sztuczna inteligencja przeciwników nie imponuje, co obniża poziom wyzwania. brakuje także systemu moralności, co ogranicza konsekwencje wyborów gracza. mimo tych niedociągnięć hogwarts legacy to rozbudowana gra akcji z elementami rpg, która spełnia oczekiwania wielu graczy. nie jest to rewolucja gatunkowa, ale daje szansę na przeżycie własnej historii w znanym świecie. dla fanów magii i eksploracji to propozycja godna uwagi, choć niepozbawiona wad. dobrze wykorzystuje licencję, ale opiera się bardziej na atmosferze niż na świeżych pomysłach.",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "info grafika zamow",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "jak kopiwoac wizytkwoe z google",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "dynamiczna strona internetowa definicja",
+     "query": "filary biznesu",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -21074,7 +19789,49 @@
      "position": -1
     },
     {
+     "query": "witryna internetowa",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
      "query": "icea group",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "icea marketing",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "bi xcx5gjd l cb8jiuushbv",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "pokazać uproszczoną stronę",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "wyszukwarka glosowa stron web",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "jakie mają potrzeby i w jaki sposób produkty/usługi firmy odpowiadają na to zapotrzebowanie?",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "graficznie tytuł prezentuje się solidnie, ale optymalizacja na niektórych platformach pozostawia sporo do życzenia – zdarzają się spadki płynności i błędy techniczne. sztuczna inteligencja przeciwników nie imponuje, co obniża poziom wyzwania. brakuje także systemu moralności, co ogranicza konsekwencje wyborów gracza. mimo tych niedociągnięć hogwarts legacy to rozbudowana gra akcji z elementami rpg, która spełnia oczekiwania wielu graczy. nie jest to rewolucja gatunkowa, ale daje szansę na przeżycie własnej historii w znanym świecie. dla fanów magii i eksploracji to propozycja godna uwagi, choć niepozbawiona wad. dobrze wykorzystuje licencję, ale opiera się bardziej na atmosferze niż na świeżych pomysłach.",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -21086,7 +19843,31 @@
      "position": -1
     },
     {
-     "query": "jakie mają potrzeby i w jaki sposób produkty/usługi firmy odpowiadają na to zapotrzebowanie?",
+     "query": "jak kopiwoac wizytkwoe z google",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "info grafika zamow",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "klienci wymagania",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "witryna internetowa wikipedia",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "czesc,  prosba o skorzystanie z produktu cmp: https://marketplace.citigroup.net/product/49711_657854_global translate",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -21104,31 +19885,31 @@
      "position": -1
     },
     {
-     "query": "czesc,  prosba o skorzystanie z produktu cmp: https://marketplace.citigroup.net/product/49711_657854_global translate",
+     "query": "co jest potrzebne do przeniesienia strony wordpress",
      "clicks": 0,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "serwis internetowy",
+     "query": "emulatorgames error 403",
      "clicks": 0,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "witryna internetowa",
+     "query": "pingować",
      "clicks": 0,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "user agent",
+     "query": "dynamiczna strona internetowa definicja",
      "clicks": 0,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "ropo skrot",
+     "query": "możesz zmienić adres, korzystając z tego linku:",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -21146,6 +19927,30 @@
      "position": -1
     },
     {
+     "query": "witryna internetowa",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "serwis internetowy",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "user agent",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "ropo skrot",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
      "query": "pingowane",
      "clicks": 0,
      "impressions": 1,
@@ -21158,19 +19963,13 @@
      "position": -1
     },
     {
-     "query": "klik bite",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
      "query": "saasa",
      "clicks": 0,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "możesz zmienić adres, korzystając z tego linku:",
+     "query": "klik bite",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -21194,19 +19993,7 @@
      "position": -1
     },
     {
-     "query": "google wyszukiwarka internetowa",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
      "query": "pozycjonowanie h1",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "dobry przekaz idzie",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -21224,13 +20011,13 @@
      "position": -1
     },
     {
-     "query": "jak zronic jutup",
+     "query": "dlaczego firmas wykonuje marketing mix",
      "clicks": 0,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "dlaczego firmas wykonuje marketing mix",
+     "query": "applewebkit/537.36",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -21248,13 +20035,19 @@
      "position": -1
     },
     {
-     "query": "applewebkit/537.36",
+     "query": "google wyszukiwarka internetowa",
      "clicks": 0,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "branża komplementarna to uzupełniająca się",
+     "query": "dobry przekaz idzie",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "jak zronic jutup",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -21266,19 +20059,19 @@
      "position": -1
     },
     {
-     "query": "poszukiwawczyalert czym jest",
+     "query": "schema.org co daje",
      "clicks": 0,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "wwyback machinr",
+     "query": "co oznaczaja czesci ip",
      "clicks": 0,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "co to jest ropo",
+     "query": "co to jest skalowalność w kontekście produkcji",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -21296,10 +20089,276 @@
      "position": -1
     },
     {
-     "query": "com.vo.icea",
+     "query": "poszukiwawczyalert czym jest",
      "clicks": 0,
      "impressions": 1,
      "position": -1
+    },
+    {
+     "query": "co to jest ropo",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    }
+   ]
+  },
+  "ga4": {
+   "channels": [
+    {
+     "channel": "Unassigned",
+     "sessions": 62,
+     "users": 50,
+     "pageviews": 36
+    },
+    {
+     "channel": "Organic Search",
+     "sessions": 27,
+     "users": 16,
+     "pageviews": 28
+    },
+    {
+     "channel": "Cross-network",
+     "sessions": 21,
+     "users": 20,
+     "pageviews": 27
+    },
+    {
+     "channel": "Direct",
+     "sessions": 19,
+     "users": 13,
+     "pageviews": 24
+    },
+    {
+     "channel": "Referral",
+     "sessions": 2,
+     "users": 1,
+     "pageviews": 2
+    },
+    {
+     "channel": "AI Assistant",
+     "sessions": 1,
+     "users": 1,
+     "pageviews": 1
+    },
+    {
+     "channel": "Organic Social",
+     "sessions": 1,
+     "users": 1,
+     "pageviews": 1
+    }
+   ],
+   "sources": [
+    {
+     "source": "(not set)",
+     "sessions": 62,
+     "users": 50
+    },
+    {
+     "source": "google",
+     "sessions": 29,
+     "users": 17
+    },
+    {
+     "source": "(data not available)",
+     "sessions": 19,
+     "users": 19
+    },
+    {
+     "source": "(direct)",
+     "sessions": 19,
+     "users": 13
+    },
+    {
+     "source": "chatgpt.com",
+     "sessions": 1,
+     "users": 1
+    },
+    {
+     "source": "forum.optymalizacja.com",
+     "sessions": 1,
+     "users": 1
+    },
+    {
+     "source": "l.facebook.com",
+     "sessions": 1,
+     "users": 1
+    },
+    {
+     "source": "surveys.yourcx.io",
+     "sessions": 1,
+     "users": 0
+    }
+   ],
+   "pages": [
+    {
+     "path": "/",
+     "pageviews": 41,
+     "users": 32
+    },
+    {
+     "path": "/o-nas/",
+     "pageviews": 12,
+     "users": 11
+    },
+    {
+     "path": "/kariera/",
+     "pageviews": 9,
+     "users": 8
+    },
+    {
+     "path": "/kontakt/",
+     "pageviews": 8,
+     "users": 5
+    },
+    {
+     "path": "/case-study/",
+     "pageviews": 7,
+     "users": 5
+    },
+    {
+     "path": "/kariera/social-media-specialist/",
+     "pageviews": 4,
+     "users": 2
+    },
+    {
+     "path": "/oferta/ai-search/",
+     "pageviews": 4,
+     "users": 4
+    },
+    {
+     "path": "/oferta/cro/",
+     "pageviews": 4,
+     "users": 2
+    },
+    {
+     "path": "/blog/jak-sprawdzic-czy-ai-poleca-twoja-marke/",
+     "pageviews": 3,
+     "users": 4
+    },
+    {
+     "path": "/program-partnerski/",
+     "pageviews": 3,
+     "users": 3
+    },
+    {
+     "path": "/kariera/senior-growth-analyst/",
+     "pageviews": 2,
+     "users": 1
+    },
+    {
+     "path": "/oferta/audyt-seo/",
+     "pageviews": 2,
+     "users": 2
+    },
+    {
+     "path": "/oferta/pozycjonowanie/sklepow/",
+     "pageviews": 2,
+     "users": 2
+    },
+    {
+     "path": "/one-stop-shop/",
+     "pageviews": 2,
+     "users": 2
+    },
+    {
+     "path": "/ai-asset-report/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/baza-wiedzy/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/blog/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/blog/co-to-jest-wspolczynnik-zaangazowania-engagement-rate/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/blog/czym-jest-google-analytics-4-dlaczego-warto-skorzystac-z-nowego-analyticsa/",
+     "pageviews": 1,
+     "users": 0
+    },
+    {
+     "path": "/blog/czym-jest-kanibalizacja-slow-kluczowych-jak-jej-uniknac/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/blog/icea-wzmacnia-zarzadzanie-sprzedaza-i-marketingiem-do-firmy-dolaczaja-artur-osak-i-dawid-fabis-wspierajac-realizacje-strategii-rozwoju-i-budowe-nowej-generacji-uslug-search/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/blog/konkurs-performance-marketing-diamonds-eu-2023-rozstrzygniety-wsrod-laureatow-icea-group/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/blog/reklama-na-stronie-internetowej-jak-ja-dodac/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/blog/seo-co-to-jest/",
+     "pageviews": 1,
+     "users": 0
+    },
+    {
+     "path": "/branze/zdrowie-i-uroda/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/kariera/customer-success-specialist/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/kariera/marketplace-specialist/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/kariera/partnership-specialist/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/oferta/ads/google/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/polityka-prywatnosci/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/blog/atl-vs-btl-czym-sie-roznia/",
+     "pageviews": 0,
+     "users": 1
+    },
+    {
+     "path": "/blog/klastry-tematyczne-i-ich-wplyw-na-content-marketing/",
+     "pageviews": 0,
+     "users": 1
+    },
+    {
+     "path": "/instrukcje-i-poradniki/",
+     "pageviews": 0,
+     "users": 1
+    },
+    {
+     "path": "/konsultacja/maxsote/",
+     "pageviews": 0,
+     "users": 1
     }
    ]
   }
