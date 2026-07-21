@@ -1,0 +1,2621 @@
+{
+ "date": "2026-07-21",
+ "collected_at": "2026-07-21T08:20:15Z",
+ "sources": {
+  "senuto": {
+   "keywords": [
+    {
+     "keyword": "mieszarka seo",
+     "position": 1,
+     "previous": 1,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/mieszarki-tekstow-pod-seo-czy-korzystanie-z-nich-ma-jeszcze-sens/",
+     "cpc": 0,
+     "difficulty": 22,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "dobre słowa kluczowe",
+     "position": 2,
+     "previous": 2,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/blog/slowa-kluczowe-jak-je-dobrze-wybrac-narzedzia-i-sposoby-na-dobor-fraz-do-pozycjonowania/",
+     "cpc": 0,
+     "difficulty": 38,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "prototypowanie",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 260,
+     "url": "grupa-icea.pl/slownik/prototypowanie/",
+     "cpc": 7.55,
+     "difficulty": 50,
+     "snippets": [
+      "people_also_ask",
+      "wiki_right"
+     ]
+    },
+    {
+     "keyword": "lokowanie produktu definicja",
+     "position": 3,
+     "previous": 3,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/slownik/lokowanie-produktu/",
+     "cpc": 0,
+     "difficulty": 26,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "kod źródłowy strony",
+     "position": 5,
+     "previous": 5,
+     "diff": 0,
+     "searches": 70,
+     "url": "grupa-icea.pl/blog/kod-zrodlowy-witryny-jak-go-odczytac/",
+     "cpc": 0,
+     "difficulty": 36,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "dostosowanie strony do urządzeń mobilnych",
+     "position": 5,
+     "previous": 5,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/optymalizacja-strony-pod-urzadzenia-mobilne/",
+     "cpc": 0,
+     "difficulty": 27,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "katalogi stron pozycjonowanie",
+     "position": 5,
+     "previous": 5,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/na-czym-polega-katalogowanie-stron/",
+     "cpc": 0,
+     "difficulty": 33,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "cele taktyczne",
+     "position": 6,
+     "previous": 6,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/blog/jak-okreslac-cele-marketingowe-przedsiebiorstwa/",
+     "cpc": 0,
+     "difficulty": 43,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "strategia sem",
+     "position": 6,
+     "previous": 6,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/czym-charakteryzuje-sie-strategia-sem/",
+     "cpc": 0,
+     "difficulty": 36,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "google analytics",
+     "position": 7,
+     "previous": 7,
+     "diff": 0,
+     "searches": 60500,
+     "url": "grupa-icea.pl/blog/czym-jest-google-analytics-4-dlaczego-warto-skorzystac-z-nowego-analyticsa/",
+     "cpc": 3.28,
+     "difficulty": 45,
+     "snippets": []
+    },
+    {
+     "keyword": "ssl seo",
+     "position": 7,
+     "previous": 7,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/czym-jest-certyfikat-ssl-czy-ma-wplyw-na-seo/",
+     "cpc": 0,
+     "difficulty": 38,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "katalogi do pozycjonowania",
+     "position": 8,
+     "previous": 8,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/na-czym-polega-katalogowanie-stron/",
+     "cpc": 0,
+     "difficulty": 35,
+     "snippets": [
+      "image_thumbs"
+     ]
+    },
+    {
+     "keyword": "pinterest czy warto",
+     "position": 8,
+     "previous": 8,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/czy-warto-reklamowac-sie-na-pinterescie/",
+     "cpc": 0,
+     "difficulty": 34,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "ui experience",
+     "position": 8,
+     "previous": 8,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/czym-jest-ui-design/",
+     "cpc": 0,
+     "difficulty": 42,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "paginacja co to",
+     "position": 9,
+     "previous": 9,
+     "diff": 0,
+     "searches": 720,
+     "url": "grupa-icea.pl/blog/co-to-jest-paginacja-stron-i-czy-warto-ja-stosowac/",
+     "cpc": 0,
+     "difficulty": 29,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask",
+      "wiki_right"
+     ]
+    },
+    {
+     "keyword": "platforma dropshipping",
+     "position": 9,
+     "previous": 9,
+     "diff": 0,
+     "searches": 260,
+     "url": "grupa-icea.pl/blog/jaka-platforma-do-dropshippingu/",
+     "cpc": 8.18,
+     "difficulty": 50,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "wszystko o html",
+     "position": 9,
+     "previous": 9,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/co-to-jest-html/",
+     "cpc": 0,
+     "difficulty": 44,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "pozycjonowanie zielona góra",
+     "position": 10,
+     "previous": 10,
+     "diff": 0,
+     "searches": 210,
+     "url": "grupa-icea.pl/oferta/pozycjonowanie/lokalne/zielona-gora/",
+     "cpc": 0,
+     "difficulty": 46,
+     "snippets": [
+      "map",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "marketing w handlu",
+     "position": 10,
+     "previous": 10,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/reklama-dzwignia-handlu-jak-powinny-sie-reklamowac-male-firmy-w-sieci/",
+     "cpc": 0,
+     "difficulty": 33,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "słowa kluczowe html",
+     "position": 11,
+     "previous": 11,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/slowa-kluczowe-jak-je-dobrze-wybrac-narzedzia-i-sposoby-na-dobor-fraz-do-pozycjonowania/",
+     "cpc": 0,
+     "difficulty": 41,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jak stworzyć mapę strony",
+     "position": 11,
+     "previous": 11,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/mapa-strony-co-to-jest-jak-stworzyc-mape-witryny-oraz-jaki-wplyw-na-seo-ma-sitemapa/",
+     "cpc": 0,
+     "difficulty": 37,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "fb market",
+     "position": 12,
+     "previous": 12,
+     "diff": 0,
+     "searches": 320,
+     "url": "grupa-icea.pl/blog/co-to-jest-facebook-marketplace-i-czy-warto-sie-nim-zainteresowac/",
+     "cpc": 2.89,
+     "difficulty": 37,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "google goggles",
+     "position": 12,
+     "previous": 12,
+     "diff": 0,
+     "searches": 90,
+     "url": "grupa-icea.pl/blog/co-to-jest-google-lens/",
+     "cpc": 0,
+     "difficulty": 51,
+     "snippets": [
+      "people_also_ask",
+      "wiki_right"
+     ]
+    },
+    {
+     "keyword": "pagerank co to",
+     "position": 12,
+     "previous": 12,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/czym-jest-page-rank-strony-jak-mozemy-go-sprawdzic/",
+     "cpc": 0,
+     "difficulty": 29,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask",
+      "wiki_right"
+     ]
+    },
+    {
+     "keyword": "oprogramowanie sklepu internetowego cena",
+     "position": 12,
+     "previous": 12,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/ile-kosztuje-zalozenie-sklepu-internetowego/",
+     "cpc": 0,
+     "difficulty": 43,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "dobra reklama dźwignią handlu",
+     "position": 12,
+     "previous": 12,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/reklama-dzwignia-handlu-jak-powinny-sie-reklamowac-male-firmy-w-sieci/",
+     "cpc": 0,
+     "difficulty": 18,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "real time marketing definicja",
+     "position": 12,
+     "previous": 12,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/real-time-marketing-czym-jest-rtm-w-2023-roku/",
+     "cpc": 0,
+     "difficulty": 25,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "tf cf",
+     "position": 12,
+     "previous": 12,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/jak-sprawdzic-trust-flow-o-czym-informuje-nas-parametr-tf/",
+     "cpc": 0,
+     "difficulty": 17,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "geotagowanie zdjęć",
+     "position": 13,
+     "previous": 13,
+     "diff": 0,
+     "searches": 110,
+     "url": "grupa-icea.pl/blog/co-powinienes-wiedziec-o-geotaggingu/",
+     "cpc": 0.34,
+     "difficulty": 32,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "wynik jakości",
+     "position": 13,
+     "previous": 13,
+     "diff": 0,
+     "searches": 40,
+     "url": "grupa-icea.pl/slownik/wynik-jakosci/",
+     "cpc": 0,
+     "difficulty": 41,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "kanały sprzedaży internetowej",
+     "position": 13,
+     "previous": 13,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/jakie-wyrozniamy-kanaly-sprzedazy-internetowej/",
+     "cpc": 0,
+     "difficulty": 38,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "myślnik w nazwie domeny",
+     "position": 13,
+     "previous": 13,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/jakie-znaczenie-ma-myslnik-w-domenie-i-czy-warto-sie-na-niego-decydowac/",
+     "cpc": 0,
+     "difficulty": 14,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "sprzedaż krzyżowa",
+     "position": 14,
+     "previous": 14,
+     "diff": 0,
+     "searches": 170,
+     "url": "grupa-icea.pl/slownik/cross-selling/",
+     "cpc": 0,
+     "difficulty": 32,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask",
+      "wiki_right"
+     ]
+    },
+    {
+     "keyword": "neuromarketing przykłady",
+     "position": 14,
+     "previous": 14,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/neuromarketing-co-to/",
+     "cpc": 0,
+     "difficulty": 25,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "ui ux co to",
+     "position": 15,
+     "previous": 15,
+     "diff": 0,
+     "searches": 210,
+     "url": "grupa-icea.pl/blog/czym-jest-ui-design/",
+     "cpc": 1.91,
+     "difficulty": 56,
+     "snippets": [
+      "people_also_ask",
+      "wiki_right"
+     ]
+    },
+    {
+     "keyword": "ocena strony",
+     "position": 15,
+     "previous": 15,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/blog/czym-jest-page-rank-strony-jak-mozemy-go-sprawdzic/",
+     "cpc": 2.74,
+     "difficulty": 49,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jak rozpoznać potrzeby klienta",
+     "position": 15,
+     "previous": 15,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/czego-potrzebuje-klient-dowiedz-sie-jak-spelnic-jego-oczekiwania/",
+     "cpc": 0,
+     "difficulty": 26,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "umowa o pozycjonowanie strony internetowej",
+     "position": 15,
+     "previous": 15,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/co-powinna-zawierac-umowa-o-pozycjonowanie/",
+     "cpc": 6.98,
+     "difficulty": 30,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jak zrobić mapę witryny",
+     "position": 15,
+     "previous": 15,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/mapa-strony-co-to-jest-jak-stworzyc-mape-witryny-oraz-jaki-wplyw-na-seo-ma-sitemapa/",
+     "cpc": 0.6,
+     "difficulty": 31,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "części strony internetowej",
+     "position": 15,
+     "previous": 15,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/czym-jest-struktura-strony-internetowej/",
+     "cpc": 0,
+     "difficulty": 42,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "cele marketingowe przykłady",
+     "position": 17,
+     "previous": 17,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/jak-okreslac-cele-marketingowe-przedsiebiorstwa/",
+     "cpc": 0,
+     "difficulty": 34,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "przekierowanie podstron 301 htaccess",
+     "position": 17,
+     "previous": 17,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/czym-jest-przekierowanie-301-kiedy-warto-z-niego-korzystac/",
+     "cpc": 0,
+     "difficulty": 16,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "lista remarketingowa",
+     "position": 18,
+     "previous": 18,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/remarketing-czym-jest-i-na-czym-polega/",
+     "cpc": 0,
+     "difficulty": 27,
+     "snippets": [
+      "ai_overview"
+     ]
+    },
+    {
+     "keyword": "organizacja biura obsługi klienta",
+     "position": 18,
+     "previous": 18,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/jak-organizowac-prace-w-zespole-obslugi-klienta/",
+     "cpc": 0,
+     "difficulty": 32,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "komplementarne",
+     "position": 19,
+     "previous": 19,
+     "diff": 0,
+     "searches": 1900,
+     "url": "grupa-icea.pl/blog/sprzedaz-komplementarna-co-to-jest-i-na-czym-polega/",
+     "cpc": 0,
+     "difficulty": 46,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "marketing rekomendacyjny praca",
+     "position": 19,
+     "previous": 19,
+     "diff": 0,
+     "searches": 260,
+     "url": "grupa-icea.pl/blog/na-czym-polega-marketing-rekomendacyjny/",
+     "cpc": 1.83,
+     "difficulty": 21,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jak wpisać słowa kluczowe do strony",
+     "position": 19,
+     "previous": 19,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/blog/slowa-kluczowe-jak-je-dobrze-wybrac-narzedzia-i-sposoby-na-dobor-fraz-do-pozycjonowania/",
+     "cpc": 0,
+     "difficulty": 23,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "pl utm",
+     "position": 19,
+     "previous": 19,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/co-to-jest-parametr-utm/",
+     "cpc": 0,
+     "difficulty": 40,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "remarketingu",
+     "position": 20,
+     "previous": 20,
+     "diff": 0,
+     "searches": 880,
+     "url": "grupa-icea.pl/blog/remarketing-czym-jest-i-na-czym-polega/",
+     "cpc": 6.14,
+     "difficulty": 65,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask",
+      "wiki_right"
+     ]
+    },
+    {
+     "keyword": "błąd 403",
+     "position": 20,
+     "previous": 20,
+     "diff": 0,
+     "searches": 720,
+     "url": "grupa-icea.pl/blog/blad-403-jak-naprawic-co-oznacza/",
+     "cpc": 0.67,
+     "difficulty": 59,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "słowo kluczowe definicja",
+     "position": 20,
+     "previous": 20,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/slownik/slowo-kluczowe/",
+     "cpc": 0,
+     "difficulty": 36,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jak korzystać z google analytics",
+     "position": 20,
+     "previous": 20,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/czym-jest-google-analytics-4-dlaczego-warto-skorzystac-z-nowego-analyticsa/",
+     "cpc": 3.17,
+     "difficulty": 29,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "znajomość branży fmcg",
+     "position": 21,
+     "previous": 21,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/branze/fmcg/",
+     "cpc": 0,
+     "difficulty": 28,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "google tag manager poradnik",
+     "position": 22,
+     "previous": 22,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/czym-jest-google-tag-manager-i-jak-z-niego-korzystac/",
+     "cpc": 0,
+     "difficulty": 20,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "rel noindex",
+     "position": 22,
+     "previous": 22,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/metatag-noindex-czym-jest-i-jak-z-niego-korzystac/",
+     "cpc": 0,
+     "difficulty": 25,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "darmowy katalog stron internetowych",
+     "position": 23,
+     "previous": 23,
+     "diff": 0,
+     "searches": 140,
+     "url": "grupa-icea.pl/blog/na-czym-polega-katalogowanie-stron/",
+     "cpc": 3.92,
+     "difficulty": 42,
+     "snippets": []
+    },
+    {
+     "keyword": "pingowanie seo",
+     "position": 23,
+     "previous": 23,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/slownik/pingowanie/",
+     "cpc": 0,
+     "difficulty": 35,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "błąd 500 wewnętrzny błąd serwera",
+     "position": 23,
+     "previous": 23,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/co-to-jest-kod-bledu-500/",
+     "cpc": 0,
+     "difficulty": 27,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "słowa kluczowe na stronie internetowej",
+     "position": 24,
+     "previous": 24,
+     "diff": 0,
+     "searches": 40,
+     "url": "grupa-icea.pl/blog/slowa-kluczowe-jak-je-dobrze-wybrac-narzedzia-i-sposoby-na-dobor-fraz-do-pozycjonowania/",
+     "cpc": 7.32,
+     "difficulty": 31,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "agile czy scrum",
+     "position": 24,
+     "previous": 24,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/czym-jest-agile-scrum/",
+     "cpc": 2.49,
+     "difficulty": 47,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "słowa kluczowe na stronie",
+     "position": 25,
+     "previous": 25,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/slowa-kluczowe-jak-je-dobrze-wybrac-narzedzia-i-sposoby-na-dobor-fraz-do-pozycjonowania/",
+     "cpc": 0,
+     "difficulty": 46,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "koszt sklepu internetowego",
+     "position": 26,
+     "previous": 26,
+     "diff": 0,
+     "searches": 170,
+     "url": "grupa-icea.pl/blog/ile-kosztuje-zalozenie-sklepu-internetowego/",
+     "cpc": 5.5,
+     "difficulty": 60,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "statystyki allegro darmowe",
+     "position": 26,
+     "previous": 26,
+     "diff": 0,
+     "searches": 40,
+     "url": "grupa-icea.pl/blog/jak-skutecznie-zaczac-sprzedawac-na-allegro/",
+     "cpc": 1.64,
+     "difficulty": 39,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "rag co to znaczy",
+     "position": 26,
+     "previous": 26,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/czym-jest-rag-i-jak-wplywa-na-rozwoj-ai/",
+     "cpc": 0,
+     "difficulty": 14,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "kampanie influencerskie",
+     "position": 26,
+     "previous": 26,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/kampania-influencer-marketing-wszystko-co-musisz-wiedziec/",
+     "cpc": 3.59,
+     "difficulty": 36,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jak wyjść z filtra",
+     "position": 26,
+     "previous": 26,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/filtry-i-bany-google/",
+     "cpc": 0,
+     "difficulty": 25,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "pozycjonowanie amazon",
+     "position": 28,
+     "previous": 28,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/oferta/ads/amazon/",
+     "cpc": 15.52,
+     "difficulty": 46,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "301 seo",
+     "position": 28,
+     "previous": 28,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/czym-jest-przekierowanie-301-kiedy-warto-z-niego-korzystac/",
+     "cpc": 0,
+     "difficulty": 37,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "pwa",
+     "position": 29,
+     "previous": 29,
+     "diff": 0,
+     "searches": 1900,
+     "url": "grupa-icea.pl/blog/czym-sa-progresywne-aplikacje-webowe-pwa-i-jak-wplywaja-na-pozycjonowanie/",
+     "cpc": 6.69,
+     "difficulty": 63,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask",
+      "wiki_right"
+     ]
+    },
+    {
+     "keyword": "wycena fraz",
+     "position": 29,
+     "previous": 29,
+     "diff": 0,
+     "searches": 40,
+     "url": "grupa-icea.pl/blog/slowa-kluczowe-jak-je-dobrze-wybrac-narzedzia-i-sposoby-na-dobor-fraz-do-pozycjonowania/",
+     "cpc": 0,
+     "difficulty": 25,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "co to jest komplementarność",
+     "position": 29,
+     "previous": 29,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/sprzedaz-komplementarna-co-to-jest-i-na-czym-polega/",
+     "cpc": 0,
+     "difficulty": 27,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask",
+      "wiki_right"
+     ]
+    },
+    {
+     "keyword": "promowanie filmu na youtube",
+     "position": 30,
+     "previous": 30,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/blog/jak-zalozyc-i-promowac-kanal-na-youtube/",
+     "cpc": 39.72,
+     "difficulty": 64,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "struktura strony internetowej html",
+     "position": 30,
+     "previous": 30,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/czym-jest-struktura-strony-internetowej/",
+     "cpc": 3.07,
+     "difficulty": 36,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "ux skrót",
+     "position": 31,
+     "previous": 31,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/czym-jest-ui-design/",
+     "cpc": 0,
+     "difficulty": 38,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "remarketing w wyszukiwarce",
+     "position": 31,
+     "previous": 31,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/remarketing-czym-jest-i-na-czym-polega/",
+     "cpc": 0,
+     "difficulty": 25,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "html definicja",
+     "position": 32,
+     "previous": 32,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/blog/co-to-jest-html/",
+     "cpc": 0,
+     "difficulty": 46,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "promocja filmu na youtube",
+     "position": 32,
+     "previous": 32,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/jak-zalozyc-i-promowac-kanal-na-youtube/",
+     "cpc": 338.36,
+     "difficulty": 60,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "badania fokusowe pdf",
+     "position": 32,
+     "previous": 32,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/slownik/badania-fokusowe/",
+     "cpc": 0,
+     "difficulty": 22,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "ppc pompy",
+     "position": 33,
+     "previous": 33,
+     "diff": 0,
+     "searches": 70,
+     "url": "grupa-icea.pl/blog/co-to-jest-reklama-ppc/",
+     "cpc": 3.35,
+     "difficulty": 18,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "sem definicja",
+     "position": 33,
+     "previous": 33,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/slownik/sem/",
+     "cpc": 0,
+     "difficulty": 30,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "google tag manager seo",
+     "position": 33,
+     "previous": 33,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/czym-jest-google-tag-manager-i-jak-z-niego-korzystac/",
+     "cpc": 0,
+     "difficulty": 29,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "artykuły blogowe",
+     "position": 37,
+     "previous": 37,
+     "diff": 0,
+     "searches": 70,
+     "url": "grupa-icea.pl/blog/jak-tworzyc-dobre-artykuly-pod-seo/",
+     "cpc": 3.52,
+     "difficulty": 39,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs"
+     ]
+    },
+    {
+     "keyword": "wady reklamy radiowej",
+     "position": 37,
+     "previous": 37,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/wady-i-zalety-reklamy-internetowej-i-reklamy-telewizyjnej/",
+     "cpc": 0,
+     "difficulty": 24,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "informatyka html",
+     "position": 37,
+     "previous": 37,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/co-to-jest-html/",
+     "cpc": 1.7,
+     "difficulty": 53,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "sesja http",
+     "position": 38,
+     "previous": 38,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/protokol-http-i-protokol-https-czym-sie-roznia/",
+     "cpc": 0,
+     "difficulty": 34,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "dlaczego reklamy przynoszą więcej szkód niż pożytku",
+     "position": 39,
+     "previous": 39,
+     "diff": 0,
+     "searches": 210,
+     "url": "grupa-icea.pl/blog/wady-i-zalety-reklamy-internetowej-i-reklamy-telewizyjnej/",
+     "cpc": 0,
+     "difficulty": 17,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "reklamy pla",
+     "position": 39,
+     "previous": 39,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/slownik/kampania-pla/",
+     "cpc": 6.34,
+     "difficulty": 48,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "badania ilościowe",
+     "position": 41,
+     "previous": 41,
+     "diff": 0,
+     "searches": 590,
+     "url": "grupa-icea.pl/blog/badania-jakosciowe-vs-badania-ilosciowe/",
+     "cpc": 9.18,
+     "difficulty": 50,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask",
+      "wiki_right"
+     ]
+    },
+    {
+     "keyword": "reklama kontekstowa",
+     "position": 42,
+     "previous": 42,
+     "diff": 0,
+     "searches": 110,
+     "url": "grupa-icea.pl/slownik/reklama-kontekstowa/",
+     "cpc": 15.95,
+     "difficulty": 41,
+     "snippets": [
+      "people_also_ask",
+      "wiki_right"
+     ]
+    },
+    {
+     "keyword": "poprawa wizerunku firmy",
+     "position": 42,
+     "previous": 42,
+     "diff": 0,
+     "searches": 50,
+     "url": "grupa-icea.pl/blog/budowanie-wizerunku-firmy-w-internecie/",
+     "cpc": 0,
+     "difficulty": 50,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "webpozycja opinie",
+     "position": 42,
+     "previous": 42,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/co-wplywa-na-widocznosc-w-wyszukiwarce-przeglad-algorytmow-i-czynnikow-rankingowych-google/",
+     "cpc": 0,
+     "difficulty": 25,
+     "snippets": [
+      "ai_overview"
+     ]
+    },
+    {
+     "keyword": "model aida",
+     "position": 43,
+     "previous": 43,
+     "diff": 0,
+     "searches": 590,
+     "url": "grupa-icea.pl/slownik/model-aida/",
+     "cpc": 0.56,
+     "difficulty": 61,
+     "snippets": [
+      "people_also_ask",
+      "wiki_right"
+     ]
+    },
+    {
+     "keyword": "branża fmcg co to",
+     "position": 43,
+     "previous": 43,
+     "diff": 0,
+     "searches": 390,
+     "url": "grupa-icea.pl/branze/fmcg/",
+     "cpc": 0.62,
+     "difficulty": 38,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask",
+      "wiki_right"
+     ]
+    },
+    {
+     "keyword": "digital marketing po polsku",
+     "position": 43,
+     "previous": 43,
+     "diff": 0,
+     "searches": 20,
+     "url": "grupa-icea.pl/blog/co-to-jest-digital-marketing/",
+     "cpc": 0,
+     "difficulty": 34,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "koncept marketingowy",
+     "position": 45,
+     "previous": 45,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/slownik/marketing/",
+     "cpc": 0,
+     "difficulty": 33,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "co to jest bing",
+     "position": 46,
+     "previous": 46,
+     "diff": 0,
+     "searches": 110,
+     "url": "grupa-icea.pl/blog/google-bing-yahoo-i-inne-czym-sa-wyszukiwarki-internetowe-i-co-musisz-o-nich-wiedziec/",
+     "cpc": 0,
+     "difficulty": 34,
+     "snippets": [
+      "ai_overview",
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "dane jakościowe przykłady",
+     "position": 46,
+     "previous": 46,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/badania-jakosciowe-vs-badania-ilosciowe/",
+     "cpc": 0,
+     "difficulty": 34,
+     "snippets": [
+      "image_thumbs",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "jak napisać reklamę produktu",
+     "position": 46,
+     "previous": 46,
+     "diff": 0,
+     "searches": 10,
+     "url": "grupa-icea.pl/blog/jak-napisac-tekst-reklamowy/",
+     "cpc": 0,
+     "difficulty": 37,
+     "snippets": [
+      "ai_overview",
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "chrome plugins wtyczki",
+     "position": 47,
+     "previous": 47,
+     "diff": 0,
+     "searches": 30,
+     "url": "grupa-icea.pl/blog/8-najlepszych-darmowych-rozszerzen-chrome-dla-seo/",
+     "cpc": 0,
+     "difficulty": 40,
+     "snippets": [
+      "people_also_ask"
+     ]
+    },
+    {
+     "keyword": "historia strony",
+     "position": 48,
+     "previous": 48,
+     "diff": 0,
+     "searches": 880,
+     "url": "grupa-icea.pl/blog/krotka-historia-internetu-od-zimnej-wojny-do-zakupow-online/",
+     "cpc": 0,
+     "difficulty": 55,
+     "snippets": [
+      "image_thumbs"
+     ]
+    }
+   ]
+  },
+  "ahrefs": {
+   "ref_domains": [
+    {
+     "domain": "plesk.com",
+     "domain_rating": 93.0,
+     "links": 1,
+     "first_seen": "2022-07-29"
+    },
+    {
+     "domain": "yandex.com",
+     "domain_rating": 92.0,
+     "links": 1,
+     "first_seen": "2026-06-15"
+    },
+    {
+     "domain": "anchor.fm",
+     "domain_rating": 91.0,
+     "links": 1,
+     "first_seen": "2025-04-23"
+    },
+    {
+     "domain": "debian.org",
+     "domain_rating": 91.0,
+     "links": 1,
+     "first_seen": "2022-12-17"
+    },
+    {
+     "domain": "provenexpert.com",
+     "domain_rating": 91.0,
+     "links": 9,
+     "first_seen": "2025-03-14"
+    },
+    {
+     "domain": "crunchbase.com",
+     "domain_rating": 91.0,
+     "links": 2,
+     "first_seen": "2023-10-31"
+    },
+    {
+     "domain": "aftermarket.pl",
+     "domain_rating": 90.0,
+     "links": 5,
+     "first_seen": "2022-07-15"
+    },
+    {
+     "domain": "zimbra.com",
+     "domain_rating": 90.0,
+     "links": 1,
+     "first_seen": "2020-03-03"
+    },
+    {
+     "domain": "screamingfrog.co.uk",
+     "domain_rating": 87.0,
+     "links": 4,
+     "first_seen": "2025-03-13"
+    },
+    {
+     "domain": "cyberfolks.pl",
+     "domain_rating": 87.0,
+     "links": 4,
+     "first_seen": "2020-05-12"
+    },
+    {
+     "domain": "sky-shop.pl",
+     "domain_rating": 83.0,
+     "links": 3,
+     "first_seen": "2021-12-09"
+    },
+    {
+     "domain": "uw.edu.pl",
+     "domain_rating": 82.0,
+     "links": 1,
+     "first_seen": "2025-01-09"
+    },
+    {
+     "domain": "pap.pl",
+     "domain_rating": 81.0,
+     "links": 9,
+     "first_seen": "2022-06-28"
+    },
+    {
+     "domain": "podimo.com",
+     "domain_rating": 79.0,
+     "links": 4,
+     "first_seen": "2026-06-30"
+    },
+    {
+     "domain": "trojmiasto.pl",
+     "domain_rating": 78.0,
+     "links": 12,
+     "first_seen": "2022-03-01"
+    },
+    {
+     "domain": "sitechecker.pro",
+     "domain_rating": 78.0,
+     "links": 2,
+     "first_seen": "2022-06-03"
+    },
+    {
+     "domain": "targeo.pl",
+     "domain_rating": 78.0,
+     "links": 1,
+     "first_seen": "2025-10-11"
+    },
+    {
+     "domain": "datanyze.com",
+     "domain_rating": 77.0,
+     "links": 1,
+     "first_seen": "2026-06-12"
+    },
+    {
+     "domain": "wprost.pl",
+     "domain_rating": 77.0,
+     "links": 6,
+     "first_seen": "2019-12-06"
+    },
+    {
+     "domain": "comarch.pl",
+     "domain_rating": 77.0,
+     "links": 3,
+     "first_seen": "2023-04-24"
+    },
+    {
+     "domain": "autopay.pl",
+     "domain_rating": 77.0,
+     "links": 1,
+     "first_seen": "2023-09-08"
+    },
+    {
+     "domain": "techbehemoths.com",
+     "domain_rating": 77.0,
+     "links": 1,
+     "first_seen": "2023-01-14"
+    },
+    {
+     "domain": "everybodywiki.com",
+     "domain_rating": 76.0,
+     "links": 1,
+     "first_seen": "2021-12-03"
+    },
+    {
+     "domain": "wirtualnemedia.pl",
+     "domain_rating": 76.0,
+     "links": 1,
+     "first_seen": "2025-09-01"
+    },
+    {
+     "domain": "example3.com",
+     "domain_rating": 75.0,
+     "links": 1,
+     "first_seen": "2024-01-27"
+    },
+    {
+     "domain": "verseo.pl",
+     "domain_rating": 75.0,
+     "links": 1,
+     "first_seen": "2024-12-16"
+    },
+    {
+     "domain": "fanimani.pl",
+     "domain_rating": 75.0,
+     "links": 52188,
+     "first_seen": "2022-05-20"
+    },
+    {
+     "domain": "plerdy.com",
+     "domain_rating": 75.0,
+     "links": 1,
+     "first_seen": "2022-05-20"
+    },
+    {
+     "domain": "trustedshops.pl",
+     "domain_rating": 75.0,
+     "links": 1,
+     "first_seen": "2026-03-17"
+    },
+    {
+     "domain": "whitepress.com",
+     "domain_rating": 75.0,
+     "links": 1,
+     "first_seen": "2023-07-29"
+    },
+    {
+     "domain": "rankyour.website",
+     "domain_rating": 74.0,
+     "links": 5,
+     "first_seen": "2026-01-05"
+    },
+    {
+     "domain": "contactout.com",
+     "domain_rating": 74.0,
+     "links": 2,
+     "first_seen": "2026-07-02"
+    },
+    {
+     "domain": "ifanr.com",
+     "domain_rating": 74.0,
+     "links": 1,
+     "first_seen": "2026-06-08"
+    },
+    {
+     "domain": "factmags.com",
+     "domain_rating": 74.0,
+     "links": 10,
+     "first_seen": "2026-05-07"
+    },
+    {
+     "domain": "user.com",
+     "domain_rating": 73.0,
+     "links": 4,
+     "first_seen": "2025-09-14"
+    },
+    {
+     "domain": "gowork.pl",
+     "domain_rating": 73.0,
+     "links": 24,
+     "first_seen": "2019-08-28"
+    },
+    {
+     "domain": "softwareworld.co",
+     "domain_rating": 73.0,
+     "links": 4,
+     "first_seen": "2026-04-15"
+    },
+    {
+     "domain": "trustmate.io",
+     "domain_rating": 73.0,
+     "links": 4,
+     "first_seen": "2023-08-14"
+    },
+    {
+     "domain": "zaufane.pl",
+     "domain_rating": 73.0,
+     "links": 3,
+     "first_seen": "2021-09-24"
+    },
+    {
+     "domain": "nowymarketing.pl",
+     "domain_rating": 73.0,
+     "links": 16,
+     "first_seen": "2024-01-20"
+    },
+    {
+     "domain": "niebezpiecznik.pl",
+     "domain_rating": 72.0,
+     "links": 1,
+     "first_seen": "2021-11-19"
+    },
+    {
+     "domain": "selesto.pl",
+     "domain_rating": 72.0,
+     "links": 3,
+     "first_seen": "2022-08-26"
+    },
+    {
+     "domain": "eizba.pl",
+     "domain_rating": 72.0,
+     "links": 1,
+     "first_seen": "2026-04-23"
+    },
+    {
+     "domain": "useme.com",
+     "domain_rating": 72.0,
+     "links": 1,
+     "first_seen": "2025-12-23"
+    },
+    {
+     "domain": "monsterspost.com",
+     "domain_rating": 72.0,
+     "links": 6,
+     "first_seen": "2022-05-14"
+    },
+    {
+     "domain": "craft.co",
+     "domain_rating": 72.0,
+     "links": 1,
+     "first_seen": "2024-01-24"
+    },
+    {
+     "domain": "ct8.pl",
+     "domain_rating": 72.0,
+     "links": 10,
+     "first_seen": "2022-01-23"
+    },
+    {
+     "domain": "siteprice.org",
+     "domain_rating": 71.0,
+     "links": 85,
+     "first_seen": "2025-07-03"
+    },
+    {
+     "domain": "smsapi.pl",
+     "domain_rating": 71.0,
+     "links": 4,
+     "first_seen": "2022-11-25"
+    },
+    {
+     "domain": "mamstartup.pl",
+     "domain_rating": 71.0,
+     "links": 5,
+     "first_seen": "2021-08-07"
+    },
+    {
+     "domain": "buybacklinks.agency",
+     "domain_rating": 71.0,
+     "links": 5,
+     "first_seen": "2026-03-18"
+    },
+    {
+     "domain": "studiokreacja.pl",
+     "domain_rating": 71.0,
+     "links": 8,
+     "first_seen": "2022-11-18"
+    },
+    {
+     "domain": "prospeo.io",
+     "domain_rating": 71.0,
+     "links": 2,
+     "first_seen": "2026-02-26"
+    },
+    {
+     "domain": "ecommercegermany.com",
+     "domain_rating": 71.0,
+     "links": 1,
+     "first_seen": "2026-01-03"
+    },
+    {
+     "domain": "marketplanet.pl",
+     "domain_rating": 71.0,
+     "links": 5,
+     "first_seen": "2025-08-06"
+    },
+    {
+     "domain": "developmentmi.com",
+     "domain_rating": 71.0,
+     "links": 2,
+     "first_seen": "2024-11-27"
+    },
+    {
+     "domain": "leadiq.com",
+     "domain_rating": 71.0,
+     "links": 4,
+     "first_seen": "2026-06-11"
+    },
+    {
+     "domain": "topbilliondirectory.com",
+     "domain_rating": 70.0,
+     "links": 4,
+     "first_seen": "2025-10-19"
+    },
+    {
+     "domain": "luigisbox.com",
+     "domain_rating": 70.0,
+     "links": 1,
+     "first_seen": "2024-10-13"
+    },
+    {
+     "domain": "kingranks.com",
+     "domain_rating": 70.0,
+     "links": 12,
+     "first_seen": "2024-07-24"
+    },
+    {
+     "domain": "pkt.pl",
+     "domain_rating": 70.0,
+     "links": 4,
+     "first_seen": "2024-04-08"
+    },
+    {
+     "domain": "krs-online.com.pl",
+     "domain_rating": 70.0,
+     "links": 2,
+     "first_seen": "2025-07-02"
+    },
+    {
+     "domain": "afterweb.pl",
+     "domain_rating": 70.0,
+     "links": 5,
+     "first_seen": "2022-06-02"
+    },
+    {
+     "domain": "dziennikwschodni.pl",
+     "domain_rating": 70.0,
+     "links": 1,
+     "first_seen": "2026-04-20"
+    },
+    {
+     "domain": "articlement.com",
+     "domain_rating": 70.0,
+     "links": 8,
+     "first_seen": "2025-02-25"
+    },
+    {
+     "domain": "fancybox.pl",
+     "domain_rating": 69.0,
+     "links": 2,
+     "first_seen": "2025-09-28"
+    },
+    {
+     "domain": "radiopik.pl",
+     "domain_rating": 68.0,
+     "links": 2,
+     "first_seen": "2025-01-31"
+    },
+    {
+     "domain": "devagroup.pl",
+     "domain_rating": 68.0,
+     "links": 2,
+     "first_seen": "2022-07-12"
+    },
+    {
+     "domain": "marketerplus.pl",
+     "domain_rating": 68.0,
+     "links": 1,
+     "first_seen": "2023-01-08"
+    },
+    {
+     "domain": "rocketjobs.pl",
+     "domain_rating": 68.0,
+     "links": 1,
+     "first_seen": "2025-09-06"
+    },
+    {
+     "domain": "instalki.pl",
+     "domain_rating": 67.0,
+     "links": 1,
+     "first_seen": "2025-04-30"
+    },
+    {
+     "domain": "konigle.com",
+     "domain_rating": 67.0,
+     "links": 1,
+     "first_seen": "2024-02-28"
+    },
+    {
+     "domain": "ringostat.com",
+     "domain_rating": 67.0,
+     "links": 2,
+     "first_seen": "2022-10-07"
+    },
+    {
+     "domain": "olsztyn.eu",
+     "domain_rating": 67.0,
+     "links": 1,
+     "first_seen": "2025-10-18"
+    },
+    {
+     "domain": "emaillabs.io",
+     "domain_rating": 66.0,
+     "links": 2,
+     "first_seen": "2022-06-16"
+    },
+    {
+     "domain": "sitelike.org",
+     "domain_rating": 66.0,
+     "links": 1,
+     "first_seen": "2021-05-21"
+    },
+    {
+     "domain": "brief.pl",
+     "domain_rating": 66.0,
+     "links": 5,
+     "first_seen": "2022-08-31"
+    },
+    {
+     "domain": "opiniak.com",
+     "domain_rating": 66.0,
+     "links": 2,
+     "first_seen": "2023-02-14"
+    },
+    {
+     "domain": "radiolodz.pl",
+     "domain_rating": 65.0,
+     "links": 2,
+     "first_seen": "2023-05-15"
+    },
+    {
+     "domain": "semstorm.com",
+     "domain_rating": 65.0,
+     "links": 90,
+     "first_seen": "2020-05-23"
+    },
+    {
+     "domain": "ssru.ac.th",
+     "domain_rating": 64.0,
+     "links": 1,
+     "first_seen": "2024-08-04"
+    },
+    {
+     "domain": "grwebsite.eu",
+     "domain_rating": 64.0,
+     "links": 1,
+     "first_seen": "2025-07-22"
+    },
+    {
+     "domain": "clodura.ai",
+     "domain_rating": 64.0,
+     "links": 1,
+     "first_seen": "2025-06-06"
+    },
+    {
+     "domain": "globkurier.pl",
+     "domain_rating": 64.0,
+     "links": 10,
+     "first_seen": "2021-10-14"
+    },
+    {
+     "domain": "budujemydom.pl",
+     "domain_rating": 64.0,
+     "links": 6,
+     "first_seen": "2022-02-20"
+    },
+    {
+     "domain": "emis.com",
+     "domain_rating": 64.0,
+     "links": 10,
+     "first_seen": "2022-06-26"
+    },
+    {
+     "domain": "microlinksite.com",
+     "domain_rating": 64.0,
+     "links": 2,
+     "first_seen": "2025-07-08"
+    },
+    {
+     "domain": "dealavo.com",
+     "domain_rating": 63.0,
+     "links": 4,
+     "first_seen": "2026-04-25"
+    },
+    {
+     "domain": "radioolsztyn.pl",
+     "domain_rating": 63.0,
+     "links": 2,
+     "first_seen": "2022-09-10"
+    },
+    {
+     "domain": "boo.pl",
+     "domain_rating": 63.0,
+     "links": 23,
+     "first_seen": "2023-02-13"
+    },
+    {
+     "domain": "joomlack.fr",
+     "domain_rating": 63.0,
+     "links": 1,
+     "first_seen": "2026-01-28"
+    },
+    {
+     "domain": "fotopolis.pl",
+     "domain_rating": 63.0,
+     "links": 3,
+     "first_seen": "2023-01-27"
+    },
+    {
+     "domain": "comarchesklep.pl",
+     "domain_rating": 62.0,
+     "links": 3,
+     "first_seen": "2023-06-01"
+    },
+    {
+     "domain": "pushpushgo.com",
+     "domain_rating": 62.0,
+     "links": 2,
+     "first_seen": "2023-09-28"
+    },
+    {
+     "domain": "fronda.pl",
+     "domain_rating": 62.0,
+     "links": 1,
+     "first_seen": "2026-04-29"
+    },
+    {
+     "domain": "superbcompanies.com",
+     "domain_rating": 62.0,
+     "links": 1,
+     "first_seen": "2025-03-01"
+    },
+    {
+     "domain": "cozadzien.pl",
+     "domain_rating": 61.0,
+     "links": 3,
+     "first_seen": "2025-07-16"
+    },
+    {
+     "domain": "ceo.com.pl",
+     "domain_rating": 61.0,
+     "links": 4,
+     "first_seen": "2022-02-21"
+    },
+    {
+     "domain": "linkodirectory.com",
+     "domain_rating": 61.0,
+     "links": 2,
+     "first_seen": "2025-08-07"
+    },
+    {
+     "domain": "proseoarticles.com",
+     "domain_rating": 61.0,
+     "links": 2,
+     "first_seen": "2025-10-01"
+    },
+    {
+     "domain": "lovekrakow.pl",
+     "domain_rating": 61.0,
+     "links": 4,
+     "first_seen": "2025-12-11"
+    },
+    {
+     "domain": "comparic.pl",
+     "domain_rating": 61.0,
+     "links": 2,
+     "first_seen": "2025-01-18"
+    },
+    {
+     "domain": "charaktery.eu",
+     "domain_rating": 61.0,
+     "links": 4,
+     "first_seen": "2018-06-10"
+    },
+    {
+     "domain": "rank-top.click",
+     "domain_rating": 60.0,
+     "links": 5,
+     "first_seen": "2026-04-22"
+    },
+    {
+     "domain": "wayranks.com",
+     "domain_rating": 60.0,
+     "links": 6,
+     "first_seen": "2023-01-04"
+    },
+    {
+     "domain": "lm.pl",
+     "domain_rating": 60.0,
+     "links": 6,
+     "first_seen": "2022-08-07"
+    },
+    {
+     "domain": "olsztyn.com.pl",
+     "domain_rating": 60.0,
+     "links": 6,
+     "first_seen": "2022-08-11"
+    },
+    {
+     "domain": "wszczecinie.pl",
+     "domain_rating": 59.0,
+     "links": 7,
+     "first_seen": "2023-04-05"
+    },
+    {
+     "domain": "imoli.dev",
+     "domain_rating": 59.0,
+     "links": 2,
+     "first_seen": "2022-10-08"
+    },
+    {
+     "domain": "czasnawnetrze.pl",
+     "domain_rating": 58.0,
+     "links": 3,
+     "first_seen": "2022-11-08"
+    },
+    {
+     "domain": "tuwroclaw.com",
+     "domain_rating": 58.0,
+     "links": 2,
+     "first_seen": "2025-01-22"
+    },
+    {
+     "domain": "kruczek-webhouse.pl",
+     "domain_rating": 57.0,
+     "links": 2,
+     "first_seen": "2025-08-22"
+    },
+    {
+     "domain": "responso.com",
+     "domain_rating": 57.0,
+     "links": 1,
+     "first_seen": "2023-07-26"
+    },
+    {
+     "domain": "5v.pl",
+     "domain_rating": 57.0,
+     "links": 2,
+     "first_seen": "2022-02-13"
+    },
+    {
+     "domain": "neografix.pl",
+     "domain_rating": 57.0,
+     "links": 2,
+     "first_seen": "2024-12-25"
+    },
+    {
+     "domain": "historia.org.pl",
+     "domain_rating": 57.0,
+     "links": 5,
+     "first_seen": "2022-06-30"
+    },
+    {
+     "domain": "expertsender.com",
+     "domain_rating": 57.0,
+     "links": 3,
+     "first_seen": "2025-01-30"
+    },
+    {
+     "domain": "300gospodarka.pl",
+     "domain_rating": 57.0,
+     "links": 1,
+     "first_seen": "2026-05-13"
+    },
+    {
+     "domain": "miastokobiet.pl",
+     "domain_rating": 57.0,
+     "links": 2,
+     "first_seen": "2022-08-05"
+    },
+    {
+     "domain": "zielonyogrodek.pl",
+     "domain_rating": 57.0,
+     "links": 2,
+     "first_seen": "2022-12-08"
+    },
+    {
+     "domain": "mobiletrends.pl",
+     "domain_rating": 56.0,
+     "links": 11,
+     "first_seen": "2022-08-05"
+    },
+    {
+     "domain": "toptohigh.com",
+     "domain_rating": 56.0,
+     "links": 3,
+     "first_seen": "2024-07-25"
+    },
+    {
+     "domain": "lawschoolnumbers.com",
+     "domain_rating": 56.0,
+     "links": 7,
+     "first_seen": "2024-10-05"
+    },
+    {
+     "domain": "cdv.pl",
+     "domain_rating": 56.0,
+     "links": 9,
+     "first_seen": "2024-02-08"
+    },
+    {
+     "domain": "startupill.com",
+     "domain_rating": 56.0,
+     "links": 2,
+     "first_seen": "2022-06-27"
+    },
+    {
+     "domain": "kontactr.com",
+     "domain_rating": 56.0,
+     "links": 81,
+     "first_seen": "2020-04-06"
+    },
+    {
+     "domain": "tygodnikprzeglad.pl",
+     "domain_rating": 56.0,
+     "links": 6,
+     "first_seen": "2022-07-18"
+    },
+    {
+     "domain": "sellasist.pl",
+     "domain_rating": 56.0,
+     "links": 4,
+     "first_seen": "2022-01-20"
+    },
+    {
+     "domain": "nadmorski24.pl",
+     "domain_rating": 56.0,
+     "links": 5,
+     "first_seen": "2024-10-14"
+    },
+    {
+     "domain": "mmponline.pl",
+     "domain_rating": 56.0,
+     "links": 6,
+     "first_seen": "2024-04-21"
+    },
+    {
+     "domain": "olicom.com.pl",
+     "domain_rating": 56.0,
+     "links": 2,
+     "first_seen": "2019-07-01"
+    },
+    {
+     "domain": "sbp.pl",
+     "domain_rating": 55.0,
+     "links": 2,
+     "first_seen": "2023-03-11"
+    },
+    {
+     "domain": "viva.org.pl",
+     "domain_rating": 55.0,
+     "links": 1,
+     "first_seen": "2023-05-25"
+    },
+    {
+     "domain": "shockstudio.pl",
+     "domain_rating": 55.0,
+     "links": 1,
+     "first_seen": "2024-01-24"
+    },
+    {
+     "domain": "lublin112.pl",
+     "domain_rating": 55.0,
+     "links": 18,
+     "first_seen": "2022-06-28"
+    },
+    {
+     "domain": "zleca.pl",
+     "domain_rating": 55.0,
+     "links": 1,
+     "first_seen": "2023-01-17"
+    },
+    {
+     "domain": "linkrankpro.shop",
+     "domain_rating": 54.0,
+     "links": 5,
+     "first_seen": "2026-05-04"
+    },
+    {
+     "domain": "rankxlinks.shop",
+     "domain_rating": 54.0,
+     "links": 5,
+     "first_seen": "2026-05-04"
+    },
+    {
+     "domain": "ranklinkerpro.shop",
+     "domain_rating": 54.0,
+     "links": 5,
+     "first_seen": "2026-05-15"
+    },
+    {
+     "domain": "seorankflow.shop",
+     "domain_rating": 54.0,
+     "links": 5,
+     "first_seen": "2026-05-24"
+    },
+    {
+     "domain": "apifonica.com",
+     "domain_rating": 54.0,
+     "links": 1,
+     "first_seen": "2023-10-01"
+    },
+    {
+     "domain": "buyseobacklinks.shop",
+     "domain_rating": 54.0,
+     "links": 4,
+     "first_seen": "2026-05-31"
+    },
+    {
+     "domain": "luigisbox.cz",
+     "domain_rating": 54.0,
+     "links": 1,
+     "first_seen": "2024-10-21"
+    },
+    {
+     "domain": "authoritybacklinks.shop",
+     "domain_rating": 54.0,
+     "links": 5,
+     "first_seen": "2026-05-09"
+    },
+    {
+     "domain": "exio.pl",
+     "domain_rating": 54.0,
+     "links": 3,
+     "first_seen": "2022-01-06"
+    },
+    {
+     "domain": "nettg.pl",
+     "domain_rating": 54.0,
+     "links": 4,
+     "first_seen": "2026-03-28"
+    },
+    {
+     "domain": "topposition.eu",
+     "domain_rating": 54.0,
+     "links": 1,
+     "first_seen": "2022-01-02"
+    },
+    {
+     "domain": "bryk.pl",
+     "domain_rating": 54.0,
+     "links": 13,
+     "first_seen": "2022-07-10"
+    },
+    {
+     "domain": "thearticletime.com",
+     "domain_rating": 54.0,
+     "links": 2,
+     "first_seen": "2025-01-01"
+    },
+    {
+     "domain": "backlinker.shop",
+     "domain_rating": 53.0,
+     "links": 3,
+     "first_seen": "2025-09-21"
+    },
+    {
+     "domain": "pbnseolinks.shop",
+     "domain_rating": 53.0,
+     "links": 5,
+     "first_seen": "2026-05-08"
+    },
+    {
+     "domain": "podkasty.info",
+     "domain_rating": 53.0,
+     "links": 3,
+     "first_seen": "2023-07-31"
+    },
+    {
+     "domain": "linkrankboost.shop",
+     "domain_rating": 53.0,
+     "links": 5,
+     "first_seen": "2026-05-12"
+    },
+    {
+     "domain": "wadowice24.pl",
+     "domain_rating": 53.0,
+     "links": 1,
+     "first_seen": "2025-12-11"
+    },
+    {
+     "domain": "linkseopro.shop",
+     "domain_rating": 53.0,
+     "links": 5,
+     "first_seen": "2026-05-06"
+    },
+    {
+     "domain": "audio.com.pl",
+     "domain_rating": 53.0,
+     "links": 2,
+     "first_seen": "2024-01-06"
+    },
+    {
+     "domain": "ranklinkpro.shop",
+     "domain_rating": 53.0,
+     "links": 5,
+     "first_seen": "2026-05-10"
+    },
+    {
+     "domain": "seolinkpro.shop",
+     "domain_rating": 53.0,
+     "links": 5,
+     "first_seen": "2026-05-07"
+    },
+    {
+     "domain": "ranklinkx.shop",
+     "domain_rating": 53.0,
+     "links": 4,
+     "first_seen": "2026-05-09"
+    },
+    {
+     "domain": "premiumseolinks.shop",
+     "domain_rating": 53.0,
+     "links": 5,
+     "first_seen": "2026-05-07"
+    },
+    {
+     "domain": "toplinkranker.shop",
+     "domain_rating": 53.0,
+     "links": 5,
+     "first_seen": "2026-05-10"
+    },
+    {
+     "domain": "linkrankseo.shop",
+     "domain_rating": 53.0,
+     "links": 4,
+     "first_seen": "2026-05-07"
+    },
+    {
+     "domain": "stronaw24.pl",
+     "domain_rating": 53.0,
+     "links": 1,
+     "first_seen": "2024-02-13"
+    },
+    {
+     "domain": "itreseller.pl",
+     "domain_rating": 52.0,
+     "links": 2,
+     "first_seen": "2024-10-25"
+    },
+    {
+     "domain": "artelis.pl",
+     "domain_rating": 52.0,
+     "links": 1,
+     "first_seen": "2023-02-15"
+    },
+    {
+     "domain": "emkielce.pl",
+     "domain_rating": 52.0,
+     "links": 4,
+     "first_seen": "2023-03-11"
+    },
+    {
+     "domain": "pless.pl",
+     "domain_rating": 52.0,
+     "links": 9,
+     "first_seen": "2024-09-29"
+    },
+    {
+     "domain": "webfalcon.pl",
+     "domain_rating": 52.0,
+     "links": 16,
+     "first_seen": "2022-02-09"
+    },
+    {
+     "domain": "ccifp.pl",
+     "domain_rating": 52.0,
+     "links": 2,
+     "first_seen": "2026-04-23"
+    },
+    {
+     "domain": "expandeco.com",
+     "domain_rating": 52.0,
+     "links": 4,
+     "first_seen": "2026-07-08"
+    },
+    {
+     "domain": "beskidzka24.pl",
+     "domain_rating": 52.0,
+     "links": 6,
+     "first_seen": "2025-05-14"
+    },
+    {
+     "domain": "bizhorizone.com",
+     "domain_rating": 52.0,
+     "links": 1,
+     "first_seen": "2026-05-12"
+    },
+    {
+     "domain": "websitehubs.com",
+     "domain_rating": 52.0,
+     "links": 2,
+     "first_seen": "2024-11-27"
+    },
+    {
+     "domain": "linkpitcherdirectory.com",
+     "domain_rating": 51.0,
+     "links": 3,
+     "first_seen": "2025-09-29"
+    },
+    {
+     "domain": "pirdu.com",
+     "domain_rating": 51.0,
+     "links": 3,
+     "first_seen": "2023-01-06"
+    },
+    {
+     "domain": "sellintegro.pl",
+     "domain_rating": 51.0,
+     "links": 1,
+     "first_seen": "2024-09-05"
+    },
+    {
+     "domain": "swidnica24.pl",
+     "domain_rating": 51.0,
+     "links": 6,
+     "first_seen": "2022-08-08"
+    },
+    {
+     "domain": "speedway-world.pl",
+     "domain_rating": 51.0,
+     "links": 12,
+     "first_seen": "2023-06-28"
+    },
+    {
+     "domain": "smartwaydirectory.com",
+     "domain_rating": 51.0,
+     "links": 3,
+     "first_seen": "2025-09-30"
+    },
+    {
+     "domain": "socialzonedirectory.com",
+     "domain_rating": 51.0,
+     "links": 3,
+     "first_seen": "2025-09-15"
+    },
+    {
+     "domain": "kolayihracat.gov.tr",
+     "domain_rating": 51.0,
+     "links": 6,
+     "first_seen": "2025-09-13"
+    },
+    {
+     "domain": "superbhubdirectory.com",
+     "domain_rating": 51.0,
+     "links": 3,
+     "first_seen": "2026-01-02"
+    },
+    {
+     "domain": "callback24.pl",
+     "domain_rating": 51.0,
+     "links": 3,
+     "first_seen": "2026-01-13"
+    },
+    {
+     "domain": "radio5.com.pl",
+     "domain_rating": 50.0,
+     "links": 6,
+     "first_seen": "2022-08-16"
+    },
+    {
+     "domain": "sbyme.com",
+     "domain_rating": 50.0,
+     "links": 2,
+     "first_seen": "2024-11-27"
+    },
+    {
+     "domain": "99bestsite.com",
+     "domain_rating": 50.0,
+     "links": 2,
+     "first_seen": "2024-11-27"
+    },
+    {
+     "domain": "seoarticletime.com",
+     "domain_rating": 50.0,
+     "links": 2,
+     "first_seen": "2024-11-27"
+    },
+    {
+     "domain": "webguestpostsdirectory.com",
+     "domain_rating": 50.0,
+     "links": 3,
+     "first_seen": "2025-08-20"
+    },
+    {
+     "domain": "ranksdirectory.com",
+     "domain_rating": 50.0,
+     "links": 6,
+     "first_seen": "2024-07-31"
+    },
+    {
+     "domain": "postsdirectory.com",
+     "domain_rating": 50.0,
+     "links": 3,
+     "first_seen": "2025-09-05"
+    },
+    {
+     "domain": "topupdirectory.com",
+     "domain_rating": 49.0,
+     "links": 2,
+     "first_seen": "2024-12-31"
+    },
+    {
+     "domain": "virtualsdirectory.com",
+     "domain_rating": 49.0,
+     "links": 2,
+     "first_seen": "2024-12-31"
+    },
+    {
+     "domain": "rankfastdirectory.com",
+     "domain_rating": 49.0,
+     "links": 3,
+     "first_seen": "2025-10-19"
+    },
+    {
+     "domain": "hicron.com",
+     "domain_rating": 49.0,
+     "links": 4,
+     "first_seen": "2025-02-17"
+    },
+    {
+     "domain": "sucha24.pl",
+     "domain_rating": 49.0,
+     "links": 5,
+     "first_seen": "2024-07-24"
+    },
+    {
+     "domain": "toplinksites.com",
+     "domain_rating": 49.0,
+     "links": 2,
+     "first_seen": "2024-12-31"
+    },
+    {
+     "domain": "prepostlink.com",
+     "domain_rating": 49.0,
+     "links": 2,
+     "first_seen": "2024-12-31"
+    },
+    {
+     "domain": "c99.nl",
+     "domain_rating": 49.0,
+     "links": 17,
+     "first_seen": "2026-07-19"
+    },
+    {
+     "domain": "bye.fyi",
+     "domain_rating": 49.0,
+     "links": 1,
+     "first_seen": "2026-04-03"
+    },
+    {
+     "domain": "oczymlekarze.pl",
+     "domain_rating": 49.0,
+     "links": 2,
+     "first_seen": "2025-02-26"
+    }
+   ],
+   "ref_domains_source": "ahrefs"
+  }
+ }
+}
