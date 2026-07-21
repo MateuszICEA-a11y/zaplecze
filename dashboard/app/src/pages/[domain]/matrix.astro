@@ -35,7 +35,10 @@ const joined = rows.map((r) => {
 const indexed = indexing?.data?.indexed ?? joined.filter((r) => r.indexed).length;
 const checked = indexing?.data?.pages_checked ?? joined.length;
 const notIndexed = indexing?.data?.not_indexed ?? checked - indexed;
+const sitemapUrls = indexing?.data?.sitemap_urls ?? checked;
 const maxImpressions = Math.max(...joined.map((r) => r.impressions ?? 0), 0);
+const engClass = (rate: number | null) =>
+  typeof rate !== 'number' ? '' : rate >= 60 ? 'top3' : rate >= 40 ? 'top10' : rate >= 25 ? 'mid' : 'low';
 ---
 
 <Layout title={`${name} – Matrix`}>
@@ -50,14 +53,15 @@ const maxImpressions = Math.max(...joined.map((r) => r.impressions ?? 0), 0);
   }
 
   <div class="section-head">
-    <h2>Kondycja top stron</h2>
+    <h2>Kondycja stron z sitemapy</h2>
     <span class="section-meta">
-      {window ? `top ${checked} stron wg kliknięć · okno ${window.start} → ${window.end} · ` : ''}
-      indeksacja: GSC URL Inspection · sesje: GA4 (28 dni)
+      {window ? `metryki GSC: okno ${window.start} → ${window.end} · ` : ''}
+      indeksacja: GSC URL Inspection · sesje i zaangażowanie: GA4 (28 dni)
     </span>
   </div>
   <div class="stat-grid">
-    <StatCard label="Sprawdzone strony" value={checked} />
+    <StatCard label="Adresy w sitemapie" value={sitemapUrls} />
+    <StatCard label="Sprawdzone" value={checked} />
     <StatCard label="Zaindeksowane" value={indexed} />
     <StatCard label="Niezaindeksowane" value={notIndexed} goodWhen="down" />
   </div>
@@ -78,6 +82,7 @@ const maxImpressions = Math.max(...joined.map((r) => r.impressions ?? 0), 0);
           <th class="num">Kliknięcia</th>
           <th class="num">CTR</th>
           <th class="num">Sesje GA4</th>
+          <th class="num">Engagement</th>
           <th class="num">Ostatni crawl</th>
         </tr>
       </thead>
@@ -109,6 +114,9 @@ const maxImpressions = Math.max(...joined.map((r) => r.impressions ?? 0), 0);
               <td class="num">{fmtInt(r.clicks)}</td>
               <td class="num">{fmtPct(r.ctr)}</td>
               <td class="num">{fmtInt(r.ga4_sessions)}</td>
+              <td class="num">
+                <span class={`pos-badge ${engClass(r.engagement_rate)}`}>{fmtPct(r.engagement_rate)}</span>
+              </td>
               <td class="num">{r.last_crawl ?? '–'}</td>
             </tr>
           ))

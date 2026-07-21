@@ -10,8 +10,9 @@ domains:
       enabled: true
       site: "https://widocznosc.ai/" # property typu prefiks URL (nie domenowa)
     indexing:
-      enabled: true # panel Matrix – URL Inspection top 50 stron (kwota 2000/d)
+      enabled: true # panel Matrix – URL Inspection całej sitemapy (kwota 2000/d)
       site: "https://widocznosc.ai/"
+      sitemap: "https://widocznosc.ai/sitemap-index.xml" # ~135 URL-i
     ga4:
       enabled: true
       # Strumień „G-BQM8BZEL38" (id strumienia 14832977902) = widocznosc.ai;
@@ -49,8 +50,9 @@ domains:
       # siteFullUser od 2026-07-21) – sc-domain nie istnieje dla tej domeny.
       site: "https://www.grupa-icea.pl/"
     indexing:
-      enabled: true # panel Matrix – URL Inspection top 50 stron
+      enabled: true # panel Matrix – URL Inspection całej sitemapy
       site: "https://www.grupa-icea.pl/"
+      sitemap: "https://www.grupa-icea.pl/sitemap.xml" # ~834 URL-e (9 podmap)
     ga4:
       enabled: true
       # Strumień „G-54BW5YREWS" (id strumienia 2136357439) = grupa-icea.pl;

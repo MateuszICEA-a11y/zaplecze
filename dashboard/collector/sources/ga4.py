@@ -175,7 +175,7 @@ def fetch(cfg: dict, env: dict) -> dict:
         "dimensions": [{"name": "landingPage"}],
         "metrics": [{"name": m} for m in (
             "sessions", "engagementRate", "userEngagementDuration", "screenPageViews")],
-        "limit": TOP_ROWS,
+        "limit": 1000,  # szeroko – Matrix łączy sesje/zaangażowanie z całą sitemapą
         "orderBys": [{"metric": {"metricName": "sessions"}, "desc": True}],
     })
     landing = []

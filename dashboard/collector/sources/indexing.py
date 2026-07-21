@@ -1,16 +1,20 @@
-"""Indeksacja top stron – GSC URL Inspection API (panel „Matrix").
+"""Indeksacja stron z sitemapy – GSC URL Inspection API (panel „Matrix").
 
 Auth: service account jak GSC (scope webmasters). Pełny raport Index Coverage
-nie ma API, więc sprawdzamy per URL: bierzemy top TOP_PAGES stron wg kliknięć
-z ostatnich 30 dni (searchanalytics) i odpytujemy urlInspection/index:inspect.
-Kwoty: 2000 inspekcji/dzień/property, 600/min – top 50 dziennie to margines.
+nie ma API, więc odpytujemy per URL: wszystkie adresy z sitemapy (index + podmapy)
+przez urlInspection/index:inspect + metryki searchanalytics (30 dni) dla całości.
+Kwoty: 2000 inspekcji/dzień/property (widocznosc.ai ~135, grupa-icea.pl ~834 URL
+– mieści się z zapasem), 600/min. Czas: ~0,5-0,7 s/URL, dla większej domeny ~10 min.
 
-Summary: liczba sprawdzonych / zaindeksowanych / niezaindeksowanych.
-Details: per URL – werdykt, coverage state, ostatni crawl + metryki GSC 30 dni.
+Summary: liczba stron w sitemapie / sprawdzonych / zaindeksowanych / nie.
+Details: per URL – werdykt, coverage state, ostatni crawl + kliknięcia/wyświetlenia/
+CTR/pozycja z GSC (okno 30 dni).
 """
 import json
+import re
 import time
 import urllib.parse
+import urllib.request
 from datetime import datetime, timedelta, timezone
 
 from . import SourceError
@@ -21,7 +25,8 @@ INSPECT_API = "https://searchconsole.googleapis.com/v1/urlInspection/index:inspe
 SCOPE = "https://www.googleapis.com/auth/webmasters"
 DATA_LAG_DAYS = 3
 WINDOW_DAYS = 30
-TOP_PAGES = 50
+MAX_INSPECTIONS = 1900  # bezpiecznik pod dzienną kwotę 2000/property
+SLEEP_S = 0.1  # kwota 600/min = 10/s; latencja requestu i tak dominuje
 
 
 def _access_token(sa_json: str) -> str:
@@ -34,13 +39,35 @@ def _access_token(sa_json: str) -> str:
     return creds.token
 
 
+def _sitemap_urls(sitemap_url: str) -> list[str]:
+    """Wszystkie adresy stron z sitemapy (rekurencyjnie przez podmapy)."""
+    def fetch(url: str) -> list[str]:
+        req = urllib.request.Request(url, headers={"User-Agent": "zaplecze-dashboard/1.0"})
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            return re.findall(r"<loc>\s*([^<\s]+)", resp.read().decode("utf-8", "replace"))
+
+    urls: list[str] = []
+    seen: set[str] = set()
+    for loc in fetch(sitemap_url):
+        if loc.endswith(".xml"):
+            for sub in fetch(loc):
+                if not sub.endswith(".xml") and sub not in seen:
+                    seen.add(sub)
+                    urls.append(sub)
+        elif loc not in seen:
+            seen.add(loc)
+            urls.append(loc)
+    return urls
+
+
 def fetch(cfg: dict, env: dict) -> dict:
     sa_json = env.get("GSC_SERVICE_ACCOUNT_JSON", "").strip()
     if not sa_json:
         raise SourceError("not_configured", "indexing: brak GSC_SERVICE_ACCOUNT_JSON w env")
     site = cfg.get("site")
-    if not site:
-        raise SourceError("not_configured", "indexing: brak site w domains.yaml (sekcja indexing)")
+    sitemap = cfg.get("sitemap")
+    if not site or not sitemap:
+        raise SourceError("not_configured", "indexing: brak site/sitemap w domains.yaml")
 
     try:
         token = _access_token(sa_json)
@@ -49,61 +76,72 @@ def fetch(cfg: dict, env: dict) -> dict:
                           f"indexing: autoryzacja service account nie powiodła się ({err})") from err
     headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
 
-    # Top strony wg kliknięć z 30 dni (te same okno co tabela GSC „30 dni").
+    try:
+        urls = _sitemap_urls(sitemap)
+    except Exception as err:  # noqa: BLE001
+        raise SourceError("error", f"indexing: nie udało się pobrać sitemapy ({err})") from err
+    if not urls:
+        raise SourceError("error", f"indexing: sitemapa {sitemap} bez adresów")
+
+    # Metryki GSC (30 dni) dla wszystkich stron – jeden request, mapowanie po URL.
     end = (datetime.now(timezone.utc) - timedelta(days=DATA_LAG_DAYS)).strftime("%Y-%m-%d")
     start = (datetime.now(timezone.utc)
              - timedelta(days=DATA_LAG_DAYS + WINDOW_DAYS - 1)).strftime("%Y-%m-%d")
     endpoint = f"{SEARCH_API}/{urllib.parse.quote(site, safe='')}/searchAnalytics/query"
+    metrics: dict[str, dict] = {}
     try:
         resp = request_json(endpoint, data=json.dumps({
             "startDate": start,
             "endDate": end,
             "dimensions": ["page"],
-            "rowLimit": TOP_PAGES,
+            "rowLimit": 25000,
         }).encode(), headers=headers)
+        for row in resp.get("rows") or []:
+            url = (row.get("keys") or [None])[0]
+            if not url:
+                continue
+            ctr = row.get("ctr")
+            position = row.get("position")
+            metrics[url] = {
+                "clicks": row.get("clicks", 0),
+                "impressions": row.get("impressions", 0),
+                "ctr": round(ctr * 100, 2) if isinstance(ctr, (int, float)) else None,
+                "position": round(position, 1) if isinstance(position, (int, float)) else None,
+            }
     except Exception as err:  # noqa: BLE001
         raise classify_http_error(err, "indexing") from err
 
-    pages = []
-    for row in resp.get("rows") or []:
-        url = (row.get("keys") or [None])[0]
-        if not url:
-            continue
-        ctr = row.get("ctr")
-        position = row.get("position")
-        pages.append({
-            "url": url,
-            "clicks": row.get("clicks", 0),
-            "impressions": row.get("impressions", 0),
-            "ctr": round(ctr * 100, 2) if isinstance(ctr, (int, float)) else None,
-            "position": round(position, 1) if isinstance(position, (int, float)) else None,
-        })
-
     rows = []
     indexed = 0
-    for page in pages:
+    for url in urls[:MAX_INSPECTIONS]:
         try:
             result = request_json(INSPECT_API, data=json.dumps({
-                "inspectionUrl": page["url"],
+                "inspectionUrl": url,
                 "siteUrl": site,
-            }).encode(), headers=headers)
+            }).encode(), headers=headers, timeout=30)
         except Exception as err:  # noqa: BLE001
             raise classify_http_error(err, "indexing") from err
         status = ((result.get("inspectionResult") or {}).get("indexStatusResult") or {})
         verdict = status.get("verdict")
         is_indexed = verdict == "PASS"
         indexed += 1 if is_indexed else 0
+        m = metrics.get(url) or {}
         rows.append({
-            **page,
+            "url": url,
+            "clicks": m.get("clicks", 0),
+            "impressions": m.get("impressions", 0),
+            "ctr": m.get("ctr"),
+            "position": m.get("position"),
             "indexed": is_indexed,
             "verdict": verdict,
             "coverage_state": status.get("coverageState"),
             "last_crawl": (status.get("lastCrawlTime") or "")[:10] or None,
         })
-        time.sleep(0.15)  # kwoty: 600/min – zostawiamy zapas
+        time.sleep(SLEEP_S)
 
     summary = {
         "window": {"start": start, "end": end},
+        "sitemap_urls": len(urls),
         "pages_checked": len(rows),
         "indexed": indexed,
         "not_indexed": len(rows) - indexed,
