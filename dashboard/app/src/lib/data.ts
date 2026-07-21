@@ -247,6 +247,14 @@ export interface DomainDetails {
     bing?: {
       traffic: { date: string; clicks: number; impressions: number }[];
       queries: { query: string; clicks: number; impressions: number; position: number | null }[];
+      queries_windows?: Record<
+        string,
+        {
+          start: string | null;
+          end: string | null;
+          queries: { query: string; clicks: number; impressions: number; position: number | null }[];
+        }
+      >;
     };
     cloudflare_ai?: {
       bots: { bot: string; requests: number }[];

@@ -30,7 +30,27 @@ const latest = latestSnapshot(domain!);
 const details = loadDetails(domain!);
 const bing = latest?.sources.bing;
 const traffic = details.sources.bing?.traffic ?? [];
-const queries = details.sources.bing?.queries ?? [];
+
+// Frazy per okno (7d/30d/…, jak w BWT). Fallback: płaska lista `queries`
+// ze starych snapshotów (bez informacji o oknie).
+const WINDOW_LABELS: [string, string][] = [
+  ['7d', '7 dni'],
+  ['30d', '30 dni'],
+  ['3m', '3 mies.'],
+  ['6m', '6 mies.'],
+  ['12m', '12 mies.'],
+  ['18m', '18 mies.'],
+  ['24m', '24 mies.'],
+];
+const queryWindows = details.sources.bing?.queries_windows;
+const windowOptions = queryWindows ? WINDOW_LABELS.filter(([k]) => queryWindows[k]) : [];
+const defaultKey = queryWindows?.['30d'] ? '30d' : (windowOptions[0]?.[0] ?? null);
+const defaultWindow = defaultKey ? queryWindows?.[defaultKey] : null;
+const queries = defaultWindow?.queries ?? details.sources.bing?.queries ?? [];
+const queriesMeta =
+  defaultWindow?.start && defaultWindow?.end
+    ? `okno ${defaultWindow.start} → ${defaultWindow.end}`
+    : 'okres wg BWT (brak dat w API)';
 
 const clicks = metricSeries(snapshots, 'bing', 'clicks');
 const impressions = metricSeries(snapshots, 'bing', 'impressions');
@@ -71,18 +91,23 @@ const maxCitations = Math.max(...(aiPerf?.rows ?? []).map((r) => r.citations), 0
   <div class="stat-grid">
     <StatCard label="Kliknięcia / dzień" value={statClicks.value} delta={statClicks.delta} trend={clicks.values} />
     <StatCard label="Wyświetlenia / dzień" value={statImpressions.value} delta={statImpressions.delta} trend={impressions.values} />
-    <StatCard label="Frazy w Bing" value={statQueries.value} delta={statQueries.delta} />
+    <StatCard
+      label={defaultKey ? `Frazy w Bing (${WINDOW_LABELS.find(([k]) => k === defaultKey)?.[1]})` : 'Frazy w Bing'}
+      value={statQueries.value}
+      delta={statQueries.delta}
+    />
   </div>
 
   <div class="chart-grid">
     <TimeSeriesChart
       title="Kliknięcia i wyświetlenia"
-      meta="dziennie (historia BWT)"
+      meta="dziennie"
       timestamps={histTs}
       series={[
         { label: 'Kliknięcia', values: histClicks },
         { label: 'Wyświetlenia', values: histImpressions, fill: true },
       ]}
+      ranges
     />
   </div>
 
@@ -130,8 +155,31 @@ const maxCitations = Math.max(...(aiPerf?.rows ?? []).map((r) => r.citations), 0
     )
   }
 
+  {
+    windowOptions.length > 1 && (
+      <div class="section-head" style="margin-bottom:6px;">
+        <h2>Frazy w Bing</h2>
+        <div class="seg" data-bing-window-seg>
+          {windowOptions.map(([k, label]) => (
+            <button type="button" class={k === defaultKey ? 'active' : ''} data-window={k}>
+              {label}
+            </button>
+          ))}
+        </div>
+      </div>
+    )
+  }
+  {queryWindows && (
+    <script
+      type="application/json"
+      id="bing-windows-data"
+      set:html={JSON.stringify(queryWindows).replace(/</g, '\\u003c')}
+    />
+  )}
+
   <TableCard
     title="Frazy w Bing"
+    meta={queriesMeta}
     count={queries.length}
     filter
     empty="Dane pojawią się po najbliższym przebiegu collectora (wymaga BING_WEBMASTER_API_KEY i zweryfikowanej witryny w BWT)."
@@ -168,4 +216,64 @@ const maxCitations = Math.max(...(aiPerf?.rows ?? []).map((r) => r.citations), 0
       </tbody>
     </table>
   </TableCard>
+
+  <script>
+    /* Przełącznik okresu tabeli „Frazy w Bing" (jak w BWT): przepina wiersze
+       na dane wybranego okna z osadzonego JSON-a, resetuje sort i pager. */
+    const dataEl = document.getElementById('bing-windows-data');
+    const winSeg = document.querySelector<HTMLElement>('[data-bing-window-seg]');
+    if (dataEl && winSeg) {
+      type Row = { query: string; clicks: number; impressions: number; position: number | null };
+      type Win = { start: string | null; end: string | null; queries: Row[] };
+      const windows: Record<string, Win> = JSON.parse(dataEl.textContent ?? '{}');
+      const card = Array.from(document.querySelectorAll<HTMLElement>('.table-card')).find((c) =>
+        c.querySelector('.table-head h3')?.textContent?.includes('Frazy w Bing'),
+      );
+      const esc = (s: string) =>
+        s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+      const fi = (n: number | null | undefined) =>
+        typeof n === 'number' ? n.toLocaleString('pl-PL') : '–';
+      const f1 = (v: number | null) =>
+        typeof v === 'number' ? v.toLocaleString('pl-PL', { maximumFractionDigits: 1 }) : '–';
+      const posCls = (p: number | null) =>
+        typeof p !== 'number' ? '' : p <= 3 ? 'top3' : p <= 10 ? 'top10' : p <= 30 ? 'mid' : 'low';
+      const bar = (v: number, max: number) => (max > 0 ? Math.max(2, Math.round((v / max) * 100)) : 0);
+
+      const rowHtml = (r: Row, max: number) => `
+        <tr>
+          <td class="grow">${esc(r.query)}</td>
+          <td class="num">${fi(r.clicks)}</td>
+          <td class="num"><span class="cell-bar">${fi(r.impressions)}<span class="bar"><i style="width:${bar(
+            r.impressions,
+            max,
+          )}%"></i></span></span></td>
+          <td class="num"><span class="pos-badge ${posCls(r.position)}">${f1(r.position)}</span></td>
+        </tr>`;
+
+      winSeg.addEventListener('click', (e) => {
+        const btn = (e.target as HTMLElement).closest('button[data-window]') as HTMLButtonElement | null;
+        if (!btn || !card) return;
+        const win = windows[btn.dataset.window!];
+        if (!win) return;
+        winSeg.querySelectorAll('button').forEach((b) => b.classList.toggle('active', b === btn));
+        const body = card.querySelector('table.data-table tbody');
+        if (!body) return;
+        const max = Math.max(...win.queries.map((r) => r.impressions ?? 0), 0);
+        body.innerHTML = win.queries.map((r) => rowHtml(r, max)).join('');
+        const countEl = card.querySelector('.table-head h3 .table-meta');
+        if (countEl) countEl.textContent = ` · ${win.queries.length.toLocaleString('pl-PL')}`;
+        const metaEl = card.querySelector('.table-head > .table-meta');
+        if (metaEl)
+          metaEl.textContent =
+            win.start && win.end ? `okno ${win.start} → ${win.end}` : 'okres wg BWT';
+        card.querySelectorAll<HTMLTableCellElement>('thead th').forEach((th) => {
+          th.classList.remove('active');
+          delete th.dataset.dir;
+          const caret = th.querySelector('.sort-caret');
+          if (caret) caret.textContent = '';
+        });
+        card.dispatchEvent(new CustomEvent('tablecard:refilter', { detail: null }));
+      });
+    }
+  </script>
 </Layout>

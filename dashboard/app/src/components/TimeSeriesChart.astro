@@ -17,14 +17,50 @@ interface Props {
   series: Series[];
   unit?: string;
   precision?: number;
+  /* Przełącznik zakresu osi X (7d/30d/3m/… jak w BWT); przyciski ograniczone
+     do zakresu danych, podpis pokazuje wybrane okno dat. */
+  ranges?: boolean;
 }
-const { title, meta, timestamps, series, unit = '', precision = 0 } = Astro.props;
+const { title, meta, timestamps, series, unit = '', precision = 0, ranges = false } = Astro.props;
 const payload = JSON.stringify({ timestamps, series, unit, precision });
 const hasData = timestamps.length > 0 && series.some((s) => s.values.some((v) => v !== null));
+
+const RANGE_OPTIONS: [string, number, string][] = [
+  ['7d', 7, '7 dni'],
+  ['30d', 30, '30 dni'],
+  ['3m', 91, '3 mies.'],
+  ['6m', 183, '6 mies.'],
+  ['12m', 365, '12 mies.'],
+  ['18m', 548, '18 mies.'],
+  ['24m', 730, '24 mies.'],
+];
+const spanDays =
+  timestamps.length > 1 ? (timestamps[timestamps.length - 1]! - timestamps[0]!) / 86400 : 0;
+const rangeOptions = ranges && hasData ? RANGE_OPTIONS.filter(([, d]) => d <= spanDays + 7) : [];
+const defaultRange = rangeOptions.some(([k]) => k === '30d') ? '30d' : (rangeOptions[0]?.[0] ?? 'all');
 ---
 
 <figure class="chart-card">
-  <figcaption>{title}{meta && <span class="cap-meta">{meta}</span>}</figcaption>
+  <figcaption>
+    {title}
+    <span class="cap-side">
+      {
+        rangeOptions.length > 0 && (
+          <span class="seg seg-mini" data-chart-ranges>
+            {rangeOptions.map(([k, d, label]) => (
+              <button type="button" class={k === defaultRange ? 'active' : ''} data-days={d}>
+                {label}
+              </button>
+            ))}
+            <button type="button" class={defaultRange === 'all' ? 'active' : ''} data-days="all">
+              całość
+            </button>
+          </span>
+        )
+      }
+      {meta && <span class="cap-meta" data-chart-meta data-base-meta={meta}>{meta}</span>}
+    </span>
+  </figcaption>
   {
     hasData ? (
       <div class="ts-chart" data-chart={payload} />
@@ -131,10 +167,48 @@ const hasData = timestamps.length > 0 && series.some((s) => s.values.some((v) =>
     };
 
     render();
+
+    /* Przełącznik zakresu osi X (opcjonalny – [data-chart-ranges] w nagłówku). */
+    const figure = el.closest('figure');
+    const rangeSeg = figure?.querySelector<HTMLElement>('[data-chart-ranges]');
+    const metaEl = figure?.querySelector<HTMLElement>('[data-chart-meta]');
+    let currentDays: number | 'all' = 'all';
+
+    const applyRange = () => {
+      if (!plot || cfg.timestamps.length === 0) return;
+      const last = cfg.timestamps[cfg.timestamps.length - 1]!;
+      const first = cfg.timestamps[0]!;
+      const min = currentDays === 'all' ? first : Math.max(first, last - currentDays * 86400);
+      plot.setScale('x', { min, max: last });
+      if (metaEl) {
+        const d = (ts: number) => new Date(ts * 1000).toLocaleDateString('pl-PL');
+        const base = metaEl.dataset.baseMeta ?? '';
+        metaEl.textContent = `${base ? base + ' · ' : ''}${d(min)} → ${d(last)}`;
+      }
+    };
+
+    const renderWithRange = () => {
+      render();
+      applyRange();
+    };
+
+    if (rangeSeg) {
+      const active = rangeSeg.querySelector<HTMLButtonElement>('button.active');
+      currentDays = active?.dataset.days === 'all' || !active ? 'all' : Number(active.dataset.days);
+      rangeSeg.addEventListener('click', (e) => {
+        const btn = (e.target as HTMLElement).closest('button[data-days]') as HTMLButtonElement | null;
+        if (!btn) return;
+        rangeSeg.querySelectorAll('button').forEach((b) => b.classList.toggle('active', b === btn));
+        currentDays = btn.dataset.days === 'all' ? 'all' : Number(btn.dataset.days);
+        applyRange();
+      });
+      applyRange();
+    }
+
     new ResizeObserver(() => plot && plot.setSize({ width: el.clientWidth, height: 280 })).observe(
       el,
     );
-    window.addEventListener('themechange', render);
+    window.addEventListener('themechange', renderWithRange);
   }
 
   document.querySelectorAll<HTMLElement>('.ts-chart').forEach(buildChart);
@@ -169,6 +243,22 @@ const hasData = timestamps.length > 0 && series.some((s) => s.values.some((v) =>
     font-size: 0.76rem;
     font-weight: 500;
     font-family: var(--font-body);
+  }
+  .cap-side {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    font-family: var(--font-body);
+    font-weight: 500;
+  }
+  .cap-side :global(.seg-mini) {
+    padding: 2px;
+  }
+  .cap-side :global(.seg-mini button) {
+    font-size: 0.74rem;
+    padding: 4px 9px;
   }
   .chart-empty {
     color: var(--ink-faint);
