@@ -68,6 +68,59 @@ const joined = rows.map((r) => {
   };
 });
 
+// Segmenty serwisu: agregacja po pierwszym poziomie ścieżki (/oferta/…,
+// /blog/…). Segmenty jednostronicowe (kontakt, o-nas) trafiają do „pozostałe",
+// strona główna ma własny wiersz.
+type JoinedRow = (typeof joined)[number];
+const segmentOf = (path: string) => {
+  if (path === '/' || path === '') return 'strona główna';
+  const first = path.split('/').filter(Boolean)[0]!;
+  return `/${first}/`;
+};
+const segGroups = new Map<string, JoinedRow[]>();
+for (const r of joined) {
+  const seg = segmentOf(normPath(stripOrigin(r.url)));
+  (segGroups.get(seg) ?? segGroups.set(seg, []).get(seg)!).push(r);
+}
+// Progi: segment z ≥2 stronami = własny wiersz; reszta → „pozostałe".
+const segRows: { segment: string; rows: JoinedRow[] }[] = [];
+const leftovers: JoinedRow[] = [];
+for (const [seg, rs] of segGroups) {
+  if (seg === 'strona główna' || rs.length >= 2) segRows.push({ segment: seg, rows: rs });
+  else leftovers.push(...rs);
+}
+if (leftovers.length) segRows.push({ segment: 'pozostałe', rows: leftovers });
+
+const segments = segRows
+  .map(({ segment, rows: rs }) => {
+    const clicks = rs.reduce((s, r) => s + (r.clicks ?? 0), 0);
+    const impressions = rs.reduce((s, r) => s + (r.impressions ?? 0), 0);
+    const sessions = rs.reduce((s, r) => s + (r.ga4_sessions ?? 0), 0);
+    const engWeight = rs.reduce((s, r) => s + (r.engagement_rate !== null ? (r.ga4_sessions ?? 0) : 0), 0);
+    const engSum = rs.reduce(
+      (s, r) => s + (r.engagement_rate !== null ? r.engagement_rate * (r.ga4_sessions ?? 0) : 0),
+      0,
+    );
+    const senutoTop10 = rs.reduce((s, r) => s + (r.senuto_top10 ?? 0), 0);
+    const senutoKeywords = rs.reduce((s, r) => s + (r.senuto_keywords ?? 0), 0);
+    const bestPositions = rs.map((r) => r.senuto_position).filter((p): p is number => p !== null);
+    return {
+      segment,
+      pages: rs.length,
+      indexed: rs.filter((r) => r.indexed).length,
+      clicks,
+      impressions,
+      ctr: impressions > 0 ? Math.round((clicks / impressions) * 10000) / 100 : null,
+      sessions,
+      engagement_rate: engWeight > 0 ? engSum / engWeight : null,
+      senuto_keywords: senutoKeywords,
+      senuto_top10: senutoTop10,
+      senuto_best: bestPositions.length ? Math.min(...bestPositions) : null,
+    };
+  })
+  .sort((a, b) => b.clicks - a.clicks || b.impressions - a.impressions);
+const maxSegImpressions = Math.max(...segments.map((s) => s.impressions), 0);
+
 // Priorytety optymalizacji: strony tracące kliknięcia wg porównań GSC
 // (3 mies. vs poprzednie 3 mies. i vs rok temu), największe straty najpierw.
 const compare = details.sources.gsc?.compare;
@@ -126,6 +179,65 @@ const engClass = (rate: number | null) =>
     <StatCard label="Zaindeksowane" value={indexed} />
     <StatCard label="Niezaindeksowane" value={notIndexed} goodWhen="down" />
   </div>
+
+  {
+    segments.length > 1 && (
+      <TableCard
+        title="Segmenty serwisu"
+        meta="agregacja stron z sitemapy po pierwszym poziomie ścieżki"
+        count={segments.length}
+        pageSize={0}
+      >
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Segment</th>
+              <th class="num">Strony</th>
+              <th class="num">W indeksie</th>
+              <th class="num">Kliknięcia</th>
+              <th class="num">Wyświetlenia</th>
+              <th class="num">CTR</th>
+              <th class="num">Sesje GA4</th>
+              <th class="num">Engagement</th>
+              <th class="num" title="Suma fraz w TOP10 Senuto na stronach segmentu">Frazy TOP10</th>
+              <th class="num" title="Najlepsza pozycja Senuto w segmencie">Najl. pozycja</th>
+            </tr>
+          </thead>
+          <tbody>
+            {segments.map((s) => (
+              <tr>
+                <td class="grow">{s.segment}</td>
+                <td class="num">{fmtInt(s.pages)}</td>
+                <td class="num">
+                  <span class={s.indexed === s.pages ? 'ctr-pos' : ''}>
+                    {fmtInt(s.indexed)}/{fmtInt(s.pages)}
+                  </span>
+                </td>
+                <td class="num">{fmtInt(s.clicks)}</td>
+                <td class="num">
+                  <span class="cell-bar">
+                    {fmtInt(s.impressions)}
+                    <span class="bar">
+                      <i style={`width:${barWidth(s.impressions, maxSegImpressions)}%`} />
+                    </span>
+                  </span>
+                </td>
+                <td class="num">{fmtPct(s.ctr)}</td>
+                <td class="num">{fmtInt(s.sessions)}</td>
+                <td class="num">
+                  <span class={`pos-badge ${engClass(s.engagement_rate)}`}>{fmtPct(s.engagement_rate)}</span>
+                </td>
+                <td class="num">{fmtInt(s.senuto_top10)}</td>
+                <td class="num">
+                  <span class={`pos-badge ${posClass(s.senuto_best)}`}>{fmtNum(s.senuto_best, 0)}</span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </TableCard>
+    )
+  }
 
   <TableCard
     title="Strony"
