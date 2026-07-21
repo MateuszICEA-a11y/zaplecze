@@ -14,6 +14,7 @@ from . import SourceError
 from ._http import classify_http_error, request_json
 
 API = "https://analyticsdata.googleapis.com/v1beta/properties"
+ADMIN_API = "https://analyticsadmin.googleapis.com/v1beta"
 SCOPE = "https://www.googleapis.com/auth/analytics.readonly"
 TOP_ROWS = 50
 
@@ -38,6 +39,26 @@ def _run_report(token: str, property_id: str, body: dict) -> dict:
         raise classify_http_error(err, "ga4") from err
 
 
+def _resolve_property(token: str, measurement_id: str) -> str:
+    """measurement_id (G-XXXX) → property_id przez Admin API (accountSummaries
+    + dataStreams). Wymaga dostępu service accounta do usługi GA4."""
+    headers = {"Authorization": f"Bearer {token}"}
+    try:
+        summaries = request_json(f"{ADMIN_API}/accountSummaries?pageSize=200", headers=headers)
+        for account in summaries.get("accountSummaries") or []:
+            for prop in account.get("propertySummaries") or []:
+                pid = (prop.get("property") or "").split("/")[-1]
+                streams = request_json(f"{ADMIN_API}/properties/{pid}/dataStreams", headers=headers)
+                for stream in streams.get("dataStreams") or []:
+                    if (stream.get("webStreamData") or {}).get("measurementId") == measurement_id:
+                        return pid
+    except Exception as err:  # noqa: BLE001
+        raise classify_http_error(err, "ga4") from err
+    raise SourceError("not_configured",
+                      f"ga4: service account nie widzi usługi ze strumieniem {measurement_id} "
+                      "– dodaj go jako przeglądającego w GA4 (Zarządzanie dostępem do usługi)")
+
+
 def _rows(resp: dict, dim_count: int = 1) -> list[tuple]:
     out = []
     for row in resp.get("rows") or []:
@@ -59,14 +80,18 @@ def fetch(cfg: dict, env: dict) -> dict:
     if not sa_json:
         raise SourceError("not_configured", "ga4: brak GSC_SERVICE_ACCOUNT_JSON w env")
     property_id = str(cfg.get("property_id") or "").strip()
-    if not property_id:
+    measurement_id = str(cfg.get("measurement_id") or "").strip()
+    if not property_id and not measurement_id:
         raise SourceError("not_configured",
-                          "ga4: brak property_id w domains.yaml (GA4 → Administracja → Szczegóły usługi)")
+                          "ga4: brak property_id lub measurement_id w domains.yaml")
 
     try:
         token = _access_token(sa_json)
     except Exception as err:  # noqa: BLE001
         raise SourceError("token_expired", f"ga4: autoryzacja service account nie powiodła się ({err})") from err
+
+    if not property_id:
+        property_id = _resolve_property(token, measurement_id)
 
     day = (datetime.now(timezone.utc) - timedelta(days=1)).strftime("%Y-%m-%d")
     date_range = [{"startDate": day, "endDate": day}]

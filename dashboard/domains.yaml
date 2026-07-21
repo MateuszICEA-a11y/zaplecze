@@ -11,9 +11,9 @@ domains:
       site: "https://widocznosc.ai/" # property typu prefiks URL (nie domenowa)
     ga4:
       enabled: true
-      # TODO(Mateusz): wpisz property_id (GA4 → Administracja → Szczegóły usługi)
-      # i dodaj e-mail service accounta GSC jako przeglądającego w GA4.
-      property_id: ""
+      # Collector rozwiązuje property_id po measurement_id przez Admin API;
+      # wymaga dostępu service accounta GSC (przeglądający) w GA4.
+      measurement_id: "G-54BW5YREWS"
     bing:
       enabled: true
       site: "https://widocznosc.ai/" # witryna musi być zweryfikowana w BWT
