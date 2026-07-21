@@ -1,6 +1,6 @@
 {
  "date": "2026-07-21",
- "collected_at": "2026-07-21T12:42:46Z",
+ "collected_at": "2026-07-21T18:17:51Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -10111,7 +10111,12 @@
   },
   "bing": {
    "traffic": [],
-   "queries": []
+   "queries_windows": {},
+   "queries": [],
+   "queries_window": {
+    "start": null,
+    "end": null
+   }
   },
   "ga4": {
    "channels": [
