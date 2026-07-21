@@ -1,6 +1,6 @@
 {
  "date": "2026-07-21",
- "collected_at": "2026-07-21T10:14:43Z",
+ "collected_at": "2026-07-21T10:33:33Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -3979,6 +3979,56 @@
      "domain": "grupa-icea.pl",
      "category": "agencja GEO",
      "market": "Polska"
+    }
+   ]
+  },
+  "cloudflare_ai": {
+   "bots": [
+    {
+     "bot": "ClaudeBot",
+     "requests": 19
+    },
+    {
+     "bot": "PerplexityBot",
+     "requests": 4
+    },
+    {
+     "bot": "ChatGPT-User",
+     "requests": 3
+    },
+    {
+     "bot": "OAI-SearchBot",
+     "requests": 2
+    },
+    {
+     "bot": "GPTBot",
+     "requests": 1
+    }
+   ],
+   "paths": [
+    {
+     "path": "/robots.txt",
+     "requests": 13
+    },
+    {
+     "path": "/sitemap-index.xml",
+     "requests": 11
+    },
+    {
+     "path": "/",
+     "requests": 2
+    },
+    {
+     "path": "/autor/mateusz-wisniewski/",
+     "requests": 1
+    },
+    {
+     "path": "/kontakt/",
+     "requests": 1
+    },
+    {
+     "path": "/geo/microsoft-clarity-topic-insights/",
+     "requests": 1
     }
    ]
   }
