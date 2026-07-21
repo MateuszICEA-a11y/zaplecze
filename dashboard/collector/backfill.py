@@ -170,6 +170,8 @@ def main() -> None:
                 # 403 to zwykle zły identyfikator property (sc-domain vs prefiks URL)
                 # – wypisz, co service account faktycznie widzi.
                 try:
+                    sa_email = json.loads(env["GSC_SERVICE_ACCOUNT_JSON"]).get("client_email")
+                    print(f"  service account: {sa_email}")
                     token = _access_token(env["GSC_SERVICE_ACCOUNT_JSON"].strip())
                     sites = request_json(GSC_API, headers={"Authorization": f"Bearer {token}"})
                     listing = [(s.get("siteUrl"), s.get("permissionLevel"))
