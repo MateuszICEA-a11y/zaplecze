@@ -62,9 +62,10 @@ const dimTables = [
       <div class="placeholder-card" style="margin-top:20px">
         <strong>Clarity czeka na token Data Export API.</strong>
         <br />
-        Wygeneruj token w panelu Clarity (projekt widocznosc.ai → Settings → Data Export →
-        „Generate new API token") i dodaj go jako sekret <code>CLARITY_API_TOKEN</code> w GitHub →
-        Settings → Secrets → Actions. Sekcja zapełni się po najbliższym przebiegu collectora –
+        Wygeneruj token w panelu Clarity (projekt tej domeny → Settings → Data Export →
+        „Generate new API token") i dodaj go w GitHub → Settings → Secrets → Actions pod nazwą
+        z <code>token_env</code> w domains.yaml (domyślnie <code>CLARITY_API_TOKEN</code>).
+        Sekcja zapełni się po najbliższym przebiegu collectora –
         sesje, użytkownicy, boty, scroll depth, frustracje (rage/dead clicks) i top strony z
         ostatnich 3 dni.
       </div>

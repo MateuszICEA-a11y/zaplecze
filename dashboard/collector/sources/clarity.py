@@ -44,9 +44,12 @@ def _to_int(value) -> int | None:
 
 
 def fetch(cfg: dict, env: dict) -> dict:
-    token = env.get("CLARITY_API_TOKEN", "").strip()
+    # Token Clarity jest per projekt (= per domena); domena może wskazać własny
+    # sekret przez `token_env` w domains.yaml.
+    token_env = cfg.get("token_env", "CLARITY_API_TOKEN")
+    token = env.get(token_env, "").strip()
     if not token:
-        raise SourceError("not_configured", "clarity: brak CLARITY_API_TOKEN w env")
+        raise SourceError("not_configured", f"clarity: brak {token_env} w env")
 
     base = _call(token, {})
     traffic = (_metric(base, "Traffic") or [{}])[0]

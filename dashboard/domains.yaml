@@ -16,9 +16,31 @@ domains:
     backlinks:
       enabled: false # DataForSEO – fallback, wyłączony na rzecz Ahrefs
     clarity:
-      enabled: true # wymaga sekretu CLARITY_API_TOKEN (panel Clarity → Data Export)
+      enabled: true
+      # Token Clarity jest per projekt. Obecny CLARITY_API_TOKEN to projekt
+      # grupa-icea.pl – widocznosc.ai czeka na własny token pod tym sekretem:
+      token_env: CLARITY_API_TOKEN_WIDOCZNOSC
     leads:
       enabled: true # eksport leadów/użyć narzędzi z KV; wymaga LEADS_EXPORT_TOKEN
+
+  - id: grupa-icea.pl
+    name: grupa-icea.pl
+    senuto:
+      enabled: true
+      country_id: "200" # Poland (database 2.0)
+    gsc:
+      enabled: true
+      # Property sc-domain:grupa-icea.pl (fallback kolektora). Jeśli w GSC jest
+      # tylko prefiks URL, podmień na site: "https://www.grupa-icea.pl/".
+      # Service account z GSC_SERVICE_ACCOUNT_JSON musi dostać dostęp do property.
+    ahrefs:
+      enabled: true
+      target: grupa-icea.pl
+      mode: subdomains
+    clarity:
+      enabled: true # CLARITY_API_TOKEN = projekt grupa-icea.pl (potwierdzone sondą 2026-07-21)
+    leads:
+      enabled: false # brak endpointu leadów na grupa-icea.pl
 
 # Źródła per konto (nie per domena) – salda kredytów.
 global:

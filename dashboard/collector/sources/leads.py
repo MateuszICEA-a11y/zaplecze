@@ -32,9 +32,12 @@ def _load_archive(path: Path) -> dict[str, dict]:
 
 
 def fetch(cfg: dict, env: dict) -> dict:
-    token = env.get("LEADS_EXPORT_TOKEN", "").strip()
+    # Token eksportu jest per aplikacja (= per domena); `token_env` w domains.yaml
+    # pozwala domenie wskazać własny sekret.
+    token_env = cfg.get("token_env", "LEADS_EXPORT_TOKEN")
+    token = env.get(token_env, "").strip()
     if not token:
-        raise SourceError("not_configured", "leads: brak LEADS_EXPORT_TOKEN w env")
+        raise SourceError("not_configured", f"leads: brak {token_env} w env")
 
     endpoint = cfg.get("endpoint") or f"https://{cfg.get('domain')}/api/admin/leads-export"
     try:
