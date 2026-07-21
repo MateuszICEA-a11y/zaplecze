@@ -1,13 +1,5 @@
 [
   {
-    "title": "Nowe maksymalne ceny paliw od dziś. Kierowcy zapłacą mniej?",
-    "date": "2026-04-17",
-    "slug": "nowe-maksymalne-ceny-paliw-od-dzis-kierowcy-zaplaca-mniej",
-    "section": "news",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Braki paliwa lotniczego w Europie. Polska może odegrać ważną rolę w kryzysie dostaw",
     "date": "2026-04-18",
     "slug": "braki-paliwa-lotniczego-w-europie-polska-moze-odegrac-wazna-role-w-kryzysie",
@@ -717,6 +709,14 @@
     "slug": "kamper-uderzyl-w-bariery-na-s7-pod-grojcem-byly-utrudnienia-w-ruchu",
     "section": "kampery",
     "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Da Nang modernizuje obwodnicę Nam Hai Van za blisko 2 000 mld VND",
+    "date": "2026-07-21",
+    "slug": "da-nang-modernizuje-obwodnice-nam-hai-van-za-blisko-2-000-mld-vnd",
+    "section": "news",
+    "format": "analysis",
     "source": "rss"
   }
 ]
