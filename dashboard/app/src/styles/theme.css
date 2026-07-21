@@ -37,12 +37,11 @@
   --status-err-fg: #fca5a5;
   --status-err-bg: rgba(239, 68, 68, 0.14);
 
-  /* Paleta serii wykresów – zwalidowana (dataviz) na dark #08090c i light #f2f5f9:
-     lightness band, chroma, kontrast PASS; CVD 7.5 w paśmie 6–8 → wtórne kodowanie
-     przez dash pattern serii + stałą legendę. */
-  --series-1: #2b8fd0;
-  --series-2: #c07518;
-  --series-3: #1f9c58;
+  /* Paleta serii wykresów – wersja z mockupu designu (2026-07-21); wtórne
+     kodowanie przez dash pattern serii + stałą legendę zostaje. */
+  --series-1: #0a9cff;
+  --series-2: #f0883e;
+  --series-3: #23c483;
 
   --shadow-card: 0 30px 60px -25px rgba(0, 0, 0, 0.55);
   --container: 1280px;
@@ -71,6 +70,10 @@
   --status-warn-bg: rgba(180, 83, 9, 0.1);
   --status-err-fg: #b91c1c;
   --status-err-bg: rgba(185, 28, 28, 0.1);
+
+  --series-1: #0068cc;
+  --series-2: #c2620e;
+  --series-3: #0f9d58;
 
   --shadow-card: 0 20px 40px -20px rgba(15, 23, 42, 0.25);
 }
@@ -120,15 +123,18 @@ a:hover {
 /* ---------- wspólne siatki sekcji ---------- */
 .stat-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr));
   gap: 14px;
   margin-bottom: 18px;
 }
 .chart-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
   gap: 16px;
   margin-bottom: 18px;
+}
+.chart-grid.wide {
+  grid-template-columns: 1fr;
 }
 @media (max-width: 480px) {
   .chart-grid {
@@ -201,6 +207,23 @@ table.data-table {
   border-bottom: 1px solid var(--hairline);
   white-space: nowrap;
 }
+.data-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.12s ease;
+}
+.data-table th.sortable:hover {
+  color: var(--ink);
+}
+.data-table th.active {
+  color: var(--accent-blue);
+}
+.sort-caret {
+  display: inline-block;
+  width: 10px;
+  margin-left: 4px;
+  font-size: 0.85em;
+}
 .data-table td {
   padding: 9px 12px;
   border-bottom: 1px solid var(--hairline-soft);
@@ -255,7 +278,7 @@ table.data-table {
   display: block;
   height: 100%;
   border-radius: 4px;
-  background: var(--series-1);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--accent-blue) 55%, var(--series-3)), var(--accent-blue));
 }
 
 /* ---------- badge pozycji / delty ---------- */
@@ -279,6 +302,18 @@ table.data-table {
   background: var(--accent-blue-soft);
   color: var(--accent-blue);
 }
+.pos-badge.mid {
+  background: var(--status-warn-bg);
+  color: var(--status-warn-fg);
+}
+.pos-badge.low {
+  background: var(--status-err-bg);
+  color: var(--status-err-fg);
+}
+.ctr-pos {
+  color: var(--status-ok);
+  font-weight: 600;
+}
 .delta {
   font-variant-numeric: tabular-nums;
   font-size: 0.8rem;
@@ -294,13 +329,41 @@ table.data-table {
 
 /* ---------- chips / etykiety ---------- */
 .chip {
-  display: inline-block;
-  font-size: 0.72rem;
-  padding: 2px 9px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  padding: 4px 11px;
   border-radius: 999px;
   background: var(--bg-surface-3);
   color: var(--ink-muted);
   white-space: nowrap;
+}
+.chip b,
+.chip strong {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.chip.warn {
+  background: var(--status-warn-bg);
+}
+.chip.warn b,
+.chip.warn strong {
+  color: var(--status-warn-fg);
+}
+.chip.bad {
+  background: var(--status-err-bg);
+}
+.chip.bad b,
+.chip.bad strong {
+  color: var(--status-err-fg);
+}
+.chip.good {
+  background: color-mix(in srgb, var(--status-ok) 14%, transparent);
+}
+.chip.good b,
+.chip.good strong {
+  color: var(--status-ok);
 }
 .chip.lead {
   background: color-mix(in srgb, var(--status-ok) 16%, transparent);

@@ -47,4 +47,43 @@ const isEmpty = count === 0;
       });
     });
   });
+
+  /* Sortowanie klikiem w nagłówek (progressive enhancement). Kolumny .num
+     sortowane numerycznie (parsowanie pl-PL z komórki), reszta leksykalnie. */
+  const numFrom = (cell: HTMLTableCellElement | undefined): number => {
+    const t = (cell?.textContent ?? '').replace(/[\s  ]/g, '').replace(',', '.');
+    const m = t.match(/-?\d+(?:\.\d+)?/);
+    return m ? parseFloat(m[0]) : -Infinity;
+  };
+  document.querySelectorAll<HTMLTableElement>('.table-card table.data-table').forEach((table) => {
+    const body = table.tBodies[0];
+    const ths = table.querySelectorAll<HTMLTableCellElement>('thead th');
+    if (!body || body.rows.length < 2) return;
+    ths.forEach((th, idx) => {
+      th.classList.add('sortable');
+      const caret = document.createElement('span');
+      caret.className = 'sort-caret';
+      th.appendChild(caret);
+      th.addEventListener('click', () => {
+        const numeric = th.classList.contains('num');
+        const dir = th.dataset.dir === 'asc' ? 'desc' : th.dataset.dir === 'desc' ? 'asc' : numeric ? 'desc' : 'asc';
+        ths.forEach((other) => {
+          other.classList.remove('active');
+          delete other.dataset.dir;
+          const c = other.querySelector('.sort-caret');
+          if (c) c.textContent = '';
+        });
+        th.classList.add('active');
+        th.dataset.dir = dir;
+        caret.textContent = dir === 'desc' ? '↓' : '↑';
+        const sign = dir === 'desc' ? -1 : 1;
+        Array.from(body.rows)
+          .sort((a, b) => {
+            if (numeric) return sign * (numFrom(a.cells[idx]) - numFrom(b.cells[idx]));
+            return sign * (a.cells[idx]?.textContent ?? '').localeCompare(b.cells[idx]?.textContent ?? '', 'pl');
+          })
+          .forEach((row) => body.appendChild(row));
+      });
+    });
+  });
 </script>

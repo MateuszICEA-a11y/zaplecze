@@ -79,7 +79,7 @@ const maxSearches = Math.max(...keywords.map((k) => k.searches ?? 0), 0);
       series={[
         { label: 'TOP 3', values: top3.values },
         { label: 'TOP 10', values: top10.values },
-        { label: 'TOP 50', values: top50.values },
+        { label: 'TOP 50', values: top50.values, fill: true },
       ]}
     />
     <TimeSeriesChart

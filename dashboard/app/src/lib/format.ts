@@ -32,11 +32,20 @@ export const fmtDuration = (seconds: number | null | undefined): string => {
   return m > 0 ? `${m} min ${s} s` : `${s} s`;
 };
 
-/** Klasa badge'a pozycji: top3 / top10 / dalsze. */
+/** Klasa badge'a pozycji w tierach: top3 / top10 / mid (≤30) / low. */
 export const posClass = (position: number | null | undefined): string => {
   if (typeof position !== 'number') return '';
   if (position <= 3) return 'top3';
   if (position <= 10) return 'top10';
+  if (position <= 30) return 'mid';
+  return 'low';
+};
+
+/** Klasa badge'a Domain Rating: ≥50 zielony, ≥20 niebieski, reszta neutralna. */
+export const drClass = (dr: number | null | undefined): string => {
+  if (typeof dr !== 'number') return '';
+  if (dr >= 50) return 'top3';
+  if (dr >= 20) return 'top10';
   return '';
 };
 

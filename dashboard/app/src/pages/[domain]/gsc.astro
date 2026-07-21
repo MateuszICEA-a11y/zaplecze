@@ -95,7 +95,7 @@ const stripOrigin = (url: string) => url.replace(/^https?:\/\/[^/]+/, '') || '/'
       timestamps={clicks.timestamps}
       series={[
         { label: 'Kliknięcia', values: clicks.values },
-        { label: 'Wyświetlenia', values: impressions.values },
+        { label: 'Wyświetlenia', values: impressions.values, fill: true },
       ]}
     />
     <TimeSeriesChart
@@ -142,7 +142,9 @@ const stripOrigin = (url: string) => url.replace(/^https?:\/\/[^/]+/, '') || '/'
                   </span>
                 </span>
               </td>
-              <td class="num">{fmtPct(q.ctr)}</td>
+              <td class="num">
+                <span class={typeof q.ctr === 'number' && q.ctr > 0 ? 'ctr-pos' : ''}>{fmtPct(q.ctr)}</span>
+              </td>
               <td class="num">
                 <span class={`pos-badge ${posClass(q.position)}`}>{fmtNum(q.position, 1)}</span>
               </td>
@@ -188,7 +190,9 @@ const stripOrigin = (url: string) => url.replace(/^https?:\/\/[^/]+/, '') || '/'
                   </span>
                 </span>
               </td>
-              <td class="num">{fmtPct(p.ctr)}</td>
+              <td class="num">
+                <span class={typeof p.ctr === 'number' && p.ctr > 0 ? 'ctr-pos' : ''}>{fmtPct(p.ctr)}</span>
+              </td>
               <td class="num">
                 <span class={`pos-badge ${posClass(p.position)}`}>{fmtNum(p.position, 1)}</span>
               </td>

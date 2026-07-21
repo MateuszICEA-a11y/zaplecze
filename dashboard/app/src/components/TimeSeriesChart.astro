@@ -6,6 +6,8 @@
 interface Series {
   label: string;
   values: (number | null)[];
+  /* Wypełnienie obszaru pod serią (mockup: jedna seria-obszar per wykres). */
+  fill?: boolean;
 }
 interface Props {
   title: string;
@@ -34,7 +36,7 @@ const hasData = timestamps.length > 0 && series.some((s) => s.values.some((v) =>
   import uPlot from 'uplot';
   import 'uplot/dist/uPlot.min.css';
 
-  const DASHES: (number[] | undefined)[] = [undefined, [8, 5], [2, 4]];
+  const DASHES: (number[] | undefined)[] = [undefined, [6, 4], [2, 4]];
 
   function cssVar(name: string): string {
     return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
@@ -43,10 +45,12 @@ const hasData = timestamps.length > 0 && series.some((s) => s.values.some((v) =>
   function buildChart(el: HTMLElement) {
     const cfg = JSON.parse(el.dataset.chart!) as {
       timestamps: number[];
-      series: { label: string; values: (number | null)[] }[];
+      series: { label: string; values: (number | null)[]; fill?: boolean }[];
       unit: string;
       precision: number;
     };
+    /* Alpha 0.14 dla obszaru pod serią (kolor z CSS var jest hexem). */
+    const areaFill = (hex: string) => (/^#[0-9a-f]{6}$/i.test(hex) ? hex + '24' : hex);
     const fmt = (v: number | null) =>
       v == null
         ? '–'
@@ -69,6 +73,7 @@ const hasData = timestamps.length > 0 && series.some((s) => s.values.some((v) =>
       // Mało próbek (start zbierania) = linia niewidoczna – wtedy rysuj punkty
       // i zepnij oś X wokół danych zamiast auto-zakresu na lata.
       const sparse = cfg.timestamps.length < 15;
+      const showPoints = cfg.timestamps.length <= 8;
       const scales = sparse
         ? {
             x: {
@@ -93,19 +98,30 @@ const hasData = timestamps.length > 0 && series.some((s) => s.values.some((v) =>
               value: (_u: uPlot, ts: number | null) =>
                 ts == null ? '–' : new Date(ts * 1000).toLocaleDateString('pl-PL'),
             },
-            ...cfg.series.map((s, i) => ({
-              label: s.label,
-              stroke: colors[i % colors.length],
-              fill: i === 0 ? colors[0] + '1f' : undefined,
-              width: 2,
-              dash: DASHES[i % DASHES.length],
-              points: { show: sparse, size: 8 },
-              value: (_u: uPlot, v: number | null) => fmt(v),
-              spanGaps: true,
-            })),
+            ...cfg.series.map((s, i) => {
+              const color = colors[i % colors.length]!;
+              const fill = s.fill ?? (cfg.series.length === 1 && i === 0);
+              return {
+                label: s.label,
+                stroke: color,
+                fill: fill ? areaFill(color) : undefined,
+                width: 2.4,
+                dash: DASHES[i % DASHES.length],
+                points: { show: showPoints, size: 6, stroke: color, fill: color },
+                value: (_u: uPlot, v: number | null) => fmt(v),
+                spanGaps: true,
+              };
+            }),
           ],
-          axes: [axis, { ...axis, size: 56, values: (_u: uPlot, ticks: number[]) =>
-            ticks.map((t) => t.toLocaleString('pl-PL', { maximumFractionDigits: cfg.precision })) }],
+          axes: [
+            { ...axis, space: 54, values: (_u: uPlot, ticks: number[]) =>
+              ticks.map((t) => {
+                const d = new Date(t * 1000);
+                return `${d.getUTCDate()}.${String(d.getUTCMonth() + 1).padStart(2, '0')}`;
+              }) },
+            { ...axis, size: 56, values: (_u: uPlot, ticks: number[]) =>
+              ticks.map((t) => t.toLocaleString('pl-PL', { maximumFractionDigits: cfg.precision })) },
+          ],
         },
         [cfg.timestamps, ...cfg.series.map((s) => s.values)] as uPlot.AlignedData,
         el,

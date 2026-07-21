@@ -37,12 +37,15 @@ const statScroll = latestWithDelta(snapshots, 'clarity', 'scroll_depth_avg');
 const engagementActive = latest?.sources.clarity?.data?.engagement_active_s;
 const pagesPerSession = latest?.sources.clarity?.data?.pages_per_session;
 
+/* severity: warn = tarcie, bad = realny problem; 0 = good (zielony). */
 const frictionChips = [
-  { label: 'Dead clicks', value: clarityDetails?.dead_clicks },
-  { label: 'Rage clicks', value: clarityDetails?.rage_clicks },
-  { label: 'Quickback', value: clarityDetails?.quickback_clicks },
-  { label: 'Błędy JS', value: clarityDetails?.script_errors },
-].filter((c) => c.value != null);
+  { label: 'Dead clicks', value: clarityDetails?.dead_clicks, severity: 'warn' },
+  { label: 'Rage clicks', value: clarityDetails?.rage_clicks, severity: 'bad' },
+  { label: 'Quickback', value: clarityDetails?.quickback_clicks, severity: 'warn' },
+  { label: 'Błędy JS', value: clarityDetails?.script_errors, severity: 'bad' },
+]
+  .filter((c) => c.value != null)
+  .map((c) => ({ ...c, cls: (c.value as number) > 0 ? c.severity : 'good' }));
 
 const dimTables = [
   { key: 'url', title: 'Najczęściej oglądane strony', rows: clarityDetails?.url ?? [] },
@@ -96,8 +99,8 @@ const dimTables = [
           <div class="friction-row">
             <span class="friction-label">Sygnały frustracji:</span>
             {frictionChips.map((c) => (
-              <span class="chip">
-                {c.label}: <strong>{fmtInt(c.value as number)}</strong>
+              <span class={`chip ${c.cls}`}>
+                {c.label} <strong>{fmtInt(c.value as number)}</strong>
               </span>
             ))}
           </div>
@@ -108,7 +111,7 @@ const dimTables = [
             title="Sesje i użytkownicy (okno 3-dniowe)"
             timestamps={sessions.timestamps}
             series={[
-              { label: 'Sesje', values: sessions.values },
+              { label: 'Sesje', values: sessions.values, fill: true },
               { label: 'Użytkownicy', values: users.values },
             ]}
           />
@@ -164,9 +167,5 @@ const dimTables = [
   .friction-label {
     color: var(--ink-faint);
     font-size: 0.8rem;
-  }
-  .friction-row .chip strong {
-    color: var(--ink);
-    font-variant-numeric: tabular-nums;
   }
 </style>

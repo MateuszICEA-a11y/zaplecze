@@ -14,7 +14,7 @@ import {
   metricSeries,
   metricSeriesFrom,
 } from '../../lib/data';
-import { fmtInt, fmtNum } from '../../lib/format';
+import { fmtInt, fmtNum, drClass, barWidth } from '../../lib/format';
 
 export function getStaticPaths() {
   return loadConfig().domains.map((d) => ({ params: { domain: d.id }, props: { name: d.name } }));
@@ -90,7 +90,7 @@ const ahrefs = latest?.sources.ahrefs;
       title="Backlinki i domeny linkujące"
       timestamps={backlinks.timestamps}
       series={[
-        { label: 'Backlinki', values: backlinks.values },
+        { label: 'Backlinki', values: backlinks.values, fill: true },
         { label: 'Domeny', values: refDomains.values },
       ]}
     />
@@ -128,7 +128,12 @@ const ahrefs = latest?.sources.ahrefs;
                 </a>
               </td>
               <td class="num">
-                <span class="pos-badge">{fmtNum(d.domain_rating, 1)}</span>
+                <div class="cell-bar">
+                  <div class="bar" aria-hidden="true">
+                    <i style={`width:${barWidth(d.domain_rating, 100)}%`} />
+                  </div>
+                  <span class={`pos-badge ${drClass(d.domain_rating)}`}>{fmtNum(d.domain_rating, 1)}</span>
+                </div>
               </td>
               <td class="num">{fmtInt(d.links)}</td>
               <td class="num">{d.first_seen ?? '–'}</td>

@@ -51,18 +51,25 @@ const SECTION_ICONS: Record<string, string> = {
     />
     <title>{title}</title>
     <script is:inline>
-      // Motyw przed renderem – zero FOUC. Dark = default (jak widocznosc.ai).
+      // Motyw i collapse przed renderem – zero FOUC. Dark = default (jak widocznosc.ai).
       const saved = localStorage.getItem('dash-theme');
       if (saved === 'light') document.documentElement.dataset.theme = 'light';
+      if (localStorage.getItem('icea-collapsed') === '1')
+        document.documentElement.classList.add('collapsed');
     </script>
   </head>
   <body>
     <div class="shell">
       <aside class="sidebar">
-        <a href="/" class="brand">
-          <span class="brand-mark" aria-hidden="true"></span>
-          zaplecze<span class="brand-accent">/dash</span>
-        </a>
+        <div class="side-top">
+          <a href="/" class="brand">
+            <span class="brand-mark" aria-hidden="true">ICEA</span>
+            <span class="brand-text"><b>Panel analityczny</b><span>ICEA</span></span>
+          </a>
+          <button id="collapse-btn" class="collapse-btn" type="button" title="Zwiń / rozwiń panel" aria-label="Zwiń / rozwiń panel">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M15 6l-6 6 6 6" /></svg>
+          </button>
+        </div>
 
         {
           currentDomain ? (
@@ -74,6 +81,7 @@ const SECTION_ICONS: Record<string, string> = {
                   href={`/${currentDomain.id}/${s.slug ? s.slug + '/' : ''}`}
                   class:list={['nav-item', { active: activeSection === s.slug }]}
                   aria-current={activeSection === s.slug ? 'page' : undefined}
+                  title={s.label}
                 >
                   <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d={SECTION_ICONS[s.slug] ?? SECTION_ICONS['']} />
@@ -87,7 +95,7 @@ const SECTION_ICONS: Record<string, string> = {
             <nav class="side-nav" aria-label="Domeny">
               <div class="nav-label">Domeny</div>
               {domains.map((d) => (
-                <a href={`/${d.id}/`} class="nav-item">
+                <a href={`/${d.id}/`} class="nav-item" title={d.name}>
                   <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <circle cx="12" cy="12" r="9" />
                     <path d="M3.5 12h17M12 3a14 14 0 010 18M12 3a14 14 0 000 18" />
@@ -115,7 +123,7 @@ const SECTION_ICONS: Record<string, string> = {
           <slot />
         </main>
         <footer class="site-footer">
-          Dane odświeżane raz dziennie przez GitHub Actions · <a
+          Panel analityczny ICEA · dane odświeżane raz dziennie przez GitHub Actions · <a
             href="https://github.com/MateuszICEA-a11y/zaplecze">repo</a
           >
         </footer>
@@ -123,6 +131,10 @@ const SECTION_ICONS: Record<string, string> = {
     </div>
 
     <script>
+      document.getElementById('collapse-btn')?.addEventListener('click', () => {
+        const collapsed = document.documentElement.classList.toggle('collapsed');
+        localStorage.setItem('icea-collapsed', collapsed ? '1' : '0');
+      });
       document.getElementById('theme-toggle')?.addEventListener('click', () => {
         const root = document.documentElement;
         const next = root.dataset.theme === 'light' ? 'dark' : 'light';
@@ -137,8 +149,12 @@ const SECTION_ICONS: Record<string, string> = {
     <style>
       .shell {
         display: grid;
-        grid-template-columns: 232px minmax(0, 1fr);
+        grid-template-columns: 244px minmax(0, 1fr);
         min-height: 100vh;
+        transition: grid-template-columns 0.18s ease;
+      }
+      :global(html.collapsed) .shell {
+        grid-template-columns: 68px minmax(0, 1fr);
       }
       .sidebar {
         position: sticky;
@@ -147,34 +163,112 @@ const SECTION_ICONS: Record<string, string> = {
         display: flex;
         flex-direction: column;
         gap: 8px;
-        padding: 20px 14px;
+        padding: 18px 14px;
         background: var(--bg-rail);
         border-right: 1px solid var(--hairline);
+        overflow: hidden;
+      }
+      .side-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 4px 4px 14px;
       }
       .brand {
         display: flex;
         align-items: center;
-        gap: 9px;
+        gap: 10px;
         font-family: var(--font-display);
         font-weight: 600;
-        font-size: 1.02rem;
-        letter-spacing: -0.01em;
         color: var(--ink);
-        padding: 4px 10px 16px;
+        min-width: 0;
       }
       .brand:hover {
         text-decoration: none;
       }
-      .brand-accent {
-        color: var(--accent-blue);
-      }
       .brand-mark {
-        width: 10px;
-        height: 10px;
-        border-radius: 3px;
-        background: linear-gradient(135deg, var(--accent-blue), #7dd3fc);
-        box-shadow: 0 0 12px var(--accent-blue-soft);
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 0.82rem;
+        letter-spacing: -0.02em;
+        color: #05121f;
+        background: linear-gradient(150deg, var(--accent-blue), #23c483);
+        box-shadow: 0 0 18px var(--accent-blue-soft);
         flex: none;
+      }
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.12;
+        min-width: 0;
+        white-space: nowrap;
+      }
+      .brand-text b {
+        font-size: 0.98rem;
+        letter-spacing: -0.01em;
+      }
+      .brand-text span {
+        font-size: 0.68rem;
+        font-weight: 500;
+        color: var(--ink-faint);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      .collapse-btn {
+        flex: none;
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: 1px solid var(--hairline);
+        border-radius: 8px;
+        color: var(--ink-muted);
+        cursor: pointer;
+        padding: 0;
+      }
+      .collapse-btn:hover {
+        color: var(--ink);
+        border-color: var(--ink-faint);
+      }
+      .collapse-btn svg {
+        width: 15px;
+        height: 15px;
+        transition: transform 0.18s ease;
+      }
+      :global(html.collapsed) .collapse-btn svg {
+        transform: rotate(180deg);
+      }
+      :global(html.collapsed) .brand-text,
+      :global(html.collapsed) .nav-text,
+      :global(html.collapsed) .nav-label,
+      :global(html.collapsed) .back-link,
+      :global(html.collapsed) #theme-toggle span,
+      :global(html.collapsed) .side-meta,
+      :global(html.collapsed) .nav-item .dot {
+        display: none;
+      }
+      :global(html.collapsed) .side-top {
+        flex-direction: column;
+        justify-content: center;
+      }
+      :global(html.collapsed) .nav-item {
+        justify-content: center;
+        padding: 9px 0;
+      }
+      :global(html.collapsed) .side-footer {
+        justify-content: center;
+      }
+      :global(html.collapsed) #theme-toggle {
+        padding: 7px;
       }
       .side-nav {
         display: flex;
@@ -312,8 +406,24 @@ const SECTION_ICONS: Record<string, string> = {
 
       /* Mobile: sidebar staje się górnym pasem, nav przewijalny poziomo. */
       @media (max-width: 900px) {
-        .shell {
+        .shell,
+        :global(html.collapsed) .shell {
           grid-template-columns: 1fr;
+        }
+        .collapse-btn {
+          display: none;
+        }
+        :global(html.collapsed) .brand-text,
+        :global(html.collapsed) .nav-text,
+        :global(html.collapsed) .side-footer #theme-toggle {
+          display: revert;
+        }
+        :global(html.collapsed) .nav-item {
+          justify-content: flex-start;
+          padding: 7px 10px;
+        }
+        .side-top {
+          padding: 0 4px 0 0;
         }
         .sidebar {
           position: static;

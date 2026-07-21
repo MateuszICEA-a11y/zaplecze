@@ -12,6 +12,7 @@ const { id, name, latest } = Astro.props;
 
 const snapshots = loadSnapshots(id);
 const top10 = latestWithDelta(snapshots, 'senuto', 'top10');
+const impressions = latestWithDelta(snapshots, 'gsc', 'impressions');
 const refDomains = latestWithDeltaFrom(snapshots, [
   ['ahrefs', 'referring_domains'],
   ['backlinks', 'referring_domains'],
@@ -27,15 +28,25 @@ const SECTION_LINKS = [
 ---
 
 <div class="domain-card">
-  <h2>{name}</h2>
+  <h2>
+    <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" />
+    </svg>
+    {name}
+  </h2>
   <div class="mini-stats">
     <div>
-      <span class="mini-label">TOP 10</span>
+      <span class="mini-label">Frazy w TOP 10</span>
       <span class="mini-value">{fmt(top10.value)}</span>
     </div>
     <div>
       <span class="mini-label">Domeny linkujące</span>
       <span class="mini-value">{fmt(refDomains.value)}</span>
+    </div>
+    <div>
+      <span class="mini-label">Wyświetlenia / dzień</span>
+      <span class="mini-value">{fmt(impressions.value)}</span>
     </div>
     <div>
       <span class="mini-label">Ostatni pomiar</span>
@@ -60,20 +71,30 @@ const SECTION_LINKS = [
     display: block;
     background: var(--bg-surface-1);
     border: 1px solid var(--hairline);
-    border-radius: 14px;
-    padding: 20px 22px;
+    border-radius: 16px;
+    padding: 22px 24px;
     color: var(--ink);
     box-shadow: var(--shadow-card);
-    transition: border-color 0.15s ease;
+    transition: border-color 0.15s ease, transform 0.15s ease;
   }
   .domain-card:hover {
     border-color: var(--accent-blue);
     text-decoration: none;
+    transform: translateY(-2px);
   }
   h2 {
     margin: 0 0 14px;
-    font-size: 1.2rem;
+    font-size: 1.22rem;
     letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .globe {
+    width: 20px;
+    height: 20px;
+    color: var(--accent-blue);
+    flex: none;
   }
   .mini-stats {
     display: flex;

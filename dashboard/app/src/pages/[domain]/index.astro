@@ -94,7 +94,7 @@ const problems = Object.entries(latest?.sources ?? {}).filter(([, r]) =>
       series={[
         { label: 'TOP 3', values: top3.values },
         { label: 'TOP 10', values: top10.values },
-        { label: 'TOP 50', values: top50.values },
+        { label: 'TOP 50', values: top50.values, fill: true },
       ]}
     />
     <TimeSeriesChart
@@ -102,14 +102,14 @@ const problems = Object.entries(latest?.sources ?? {}).filter(([, r]) =>
       timestamps={gscClicks.timestamps}
       series={[
         { label: 'Kliknięcia', values: gscClicks.values },
-        { label: 'Wyświetlenia', values: gscImpressions.values },
+        { label: 'Wyświetlenia', values: gscImpressions.values, fill: true },
       ]}
     />
     <TimeSeriesChart
       title="Backlinki i domeny linkujące (Ahrefs)"
       timestamps={backlinks.timestamps}
       series={[
-        { label: 'Backlinki', values: backlinks.values },
+        { label: 'Backlinki', values: backlinks.values, fill: true },
         { label: 'Domeny', values: refDomains.values },
       ]}
     />
