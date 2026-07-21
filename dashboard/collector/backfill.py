@@ -1,4 +1,4 @@
-"""Jednorazowy backfill historii do snapshots.jsonl (Senuto + GSC).
+"""Backfill historii do snapshots.jsonl (Senuto + GSC).
 
 Dokłada linie za brakujące daty wstecz (do BACKFILL_DAYS); istniejących
 snapshotów collectora nie dotyka. Linie backfillu mają "backfilled": true.
