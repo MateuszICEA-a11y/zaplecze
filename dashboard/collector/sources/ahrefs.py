@@ -76,54 +76,10 @@ def fetch(cfg: dict, env: dict) -> dict:
         except Exception:  # noqa: BLE001 – fallback też jest best-effort
             ref_list = []
 
-    # Anchory: Ahrefs anchors/all-backlinks = „Insufficient plan" (sonda 2026-07-21),
-    # więc bierzemy z DataForSEO – best-effort.
-    anchors = []
-    try:
-        anchors = _dataforseo_anchors(target, env)
-    except Exception as err:  # noqa: BLE001
-        import sys
-        print(f"  [ahrefs] anchory (DataForSEO) nie pobrane: {err}", file=sys.stderr)
-
+    # Anchory świadomie pominięte: Ahrefs anchors/all-backlinks = „Insufficient plan"
+    # (sonda 2026-07-21), a mieszania źródeł (DataForSEO) nie chcemy – decyzja Mateusza.
     return {"summary": summary,
-            "details": {"ref_domains": ref_list, "ref_domains_source": ref_source,
-                        "anchors": anchors}}
-
-
-ANCHORS_LIMIT = 100
-
-
-def _dataforseo_anchors(target: str, env: dict) -> list[dict]:
-    """Najpopularniejsze anchory linków: DataForSEO backlinks/anchors/live."""
-    import json as _json
-    from base64 import b64encode
-
-    login = env.get("DATAFORSEO_LOGIN", "").strip()
-    password = env.get("DATAFORSEO_PASSWORD", "").strip()
-    if not login or not password:
-        return []
-    auth = b64encode(f"{login}:{password}".encode()).decode()
-    payload = _json.dumps([{
-        "target": target,
-        "backlinks_status_type": "live",
-        "limit": ANCHORS_LIMIT,
-        "order_by": ["referring_domains,desc"],
-    }]).encode()
-    resp = request_json("https://api.dataforseo.com/v3/backlinks/anchors/live",
-                        data=payload, headers={
-                            "Authorization": f"Basic {auth}",
-                            "Content-Type": "application/json",
-                        })
-    tasks = resp.get("tasks") or []
-    if not tasks or tasks[0].get("status_code", 0) >= 40000:
-        message = tasks[0].get("status_message", "brak taska") if tasks else "brak taska"
-        raise RuntimeError(f"DataForSEO anchors: {message}")
-    result = (tasks[0].get("result") or [None])[0] or {}
-    return [{
-        "anchor": item.get("anchor") or "(pusty)",
-        "referring_domains": item.get("referring_domains"),
-        "backlinks": item.get("backlinks"),
-    } for item in result.get("items") or []]
+            "details": {"ref_domains": ref_list, "ref_domains_source": ref_source}}
 
 
 def _dataforseo_refdomains(target: str, env: dict) -> list[dict]:
