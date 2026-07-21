@@ -259,6 +259,41 @@ table.data-table {
   padding: 28px 18px 34px;
   text-align: center;
 }
+/* paginacja karty tabeli */
+.table-pager {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 10px 18px 12px;
+  border-top: 1px solid var(--hairline-soft);
+}
+.table-pager button {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  color: var(--ink-muted);
+  font: inherit;
+  font-size: 0.85rem;
+  line-height: 1;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.table-pager button:hover:not(:disabled) {
+  color: var(--ink);
+  border-color: var(--ink-faint);
+}
+.table-pager button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.pager-label {
+  color: var(--ink-faint);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+  min-width: 90px;
+  text-align: center;
+}
 /* pasek wielkości w komórce (magnituda vs max kolumny) */
 .cell-bar {
   display: flex;

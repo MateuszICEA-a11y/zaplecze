@@ -1,16 +1,20 @@
 ---
-/* Karta tabeli: nagłówek + licznik + opcjonalny filtr tekstowy (progressive
-   enhancement, filtruje wiersze po textContent) + poziomy scroll dla wąskich
-   ekranów. Tabelę renderuje strona przez <slot /> (klasy .data-table z theme.css). */
+/* Karta tabeli: nagłówek + licznik + opcjonalny filtr tekstowy + sortowanie
+   klikiem w nagłówek + opcjonalna paginacja (pageSize). Wszystko client-side
+   jako progressive enhancement na wierszach wyrenderowanych w build time.
+   Tabelę renderuje strona przez <slot /> (klasy .data-table z theme.css). */
 interface Props {
   title: string;
   meta?: string;
   count?: number;
   filter?: boolean;
+  /* Liczba wierszy na stronę; brak = bez paginacji. */
+  pageSize?: number;
   empty?: string;
 }
-const { title, meta, count, filter = false, empty = 'Brak danych.' } = Astro.props;
+const { title, meta, count, filter = false, pageSize, empty = 'Brak danych.' } = Astro.props;
 const isEmpty = count === 0;
+const paged = !isEmpty && typeof pageSize === 'number' && (count ?? 0) > pageSize;
 ---
 
 <section class="table-card">
@@ -33,57 +37,109 @@ const isEmpty = count === 0;
       </div>
     )
   }
+  {paged && (
+    <div class="table-pager" data-page-size={pageSize}>
+      <button type="button" data-pager-prev aria-label="Poprzednia strona">←</button>
+      <span class="pager-label" data-pager-label></span>
+      <button type="button" data-pager-next aria-label="Następna strona">→</button>
+    </div>
+  )}
 </section>
 
 <script>
-  document.querySelectorAll<HTMLInputElement>('[data-table-filter]').forEach((input) => {
-    const card = input.closest('.table-card');
-    const rows = card?.querySelectorAll<HTMLTableRowElement>('tbody tr');
-    if (!rows?.length) return;
-    input.addEventListener('input', () => {
-      const needle = input.value.trim().toLowerCase();
-      rows.forEach((row) => {
-        row.hidden = needle !== '' && !(row.textContent ?? '').toLowerCase().includes(needle);
-      });
-    });
-  });
-
-  /* Sortowanie klikiem w nagłówek (progressive enhancement). Kolumny .num
-     sortowane numerycznie (parsowanie pl-PL z komórki), reszta leksykalnie. */
+  /* Jeden kontroler per karta: filtr, sort i paginacja muszą działać razem
+     (sort przestawia DOM, filtr zawęża zbiór, pager tnie wynik na strony). */
   const numFrom = (cell: HTMLTableCellElement | undefined): number => {
-    const t = (cell?.textContent ?? '').replace(/[\s  ]/g, '').replace(',', '.');
+    const t = (cell?.textContent ?? '').replace(/[\s  ]/g, '').replace(',', '.');
     const m = t.match(/-?\d+(?:\.\d+)?/);
     return m ? parseFloat(m[0]) : -Infinity;
   };
-  document.querySelectorAll<HTMLTableElement>('.table-card table.data-table').forEach((table) => {
-    const body = table.tBodies[0];
-    const ths = table.querySelectorAll<HTMLTableCellElement>('thead th');
-    if (!body || body.rows.length < 2) return;
-    ths.forEach((th, idx) => {
-      th.classList.add('sortable');
-      const caret = document.createElement('span');
-      caret.className = 'sort-caret';
-      th.appendChild(caret);
-      th.addEventListener('click', () => {
-        const numeric = th.classList.contains('num');
-        const dir = th.dataset.dir === 'asc' ? 'desc' : th.dataset.dir === 'desc' ? 'asc' : numeric ? 'desc' : 'asc';
-        ths.forEach((other) => {
-          other.classList.remove('active');
-          delete other.dataset.dir;
-          const c = other.querySelector('.sort-caret');
-          if (c) c.textContent = '';
-        });
-        th.classList.add('active');
-        th.dataset.dir = dir;
-        caret.textContent = dir === 'desc' ? '↓' : '↑';
-        const sign = dir === 'desc' ? -1 : 1;
-        Array.from(body.rows)
-          .sort((a, b) => {
-            if (numeric) return sign * (numFrom(a.cells[idx]) - numFrom(b.cells[idx]));
-            return sign * (a.cells[idx]?.textContent ?? '').localeCompare(b.cells[idx]?.textContent ?? '', 'pl');
-          })
-          .forEach((row) => body.appendChild(row));
-      });
+
+  document.querySelectorAll<HTMLElement>('.table-card').forEach((card) => {
+    const table = card.querySelector<HTMLTableElement>('table.data-table');
+    const body = table?.tBodies[0];
+    if (!table || !body || body.rows.length === 0) return;
+
+    const input = card.querySelector<HTMLInputElement>('[data-table-filter]');
+    const pager = card.querySelector<HTMLElement>('.table-pager');
+    const pageSize = pager ? parseInt(pager.dataset.pageSize ?? '0', 10) : 0;
+    const prevBtn = pager?.querySelector<HTMLButtonElement>('[data-pager-prev]');
+    const nextBtn = pager?.querySelector<HTMLButtonElement>('[data-pager-next]');
+    const label = pager?.querySelector<HTMLElement>('[data-pager-label]');
+    let page = 0;
+
+    const update = () => {
+      const needle = (input?.value ?? '').trim().toLowerCase();
+      const rows = Array.from(body.rows);
+      const matched = rows.filter(
+        (r) => needle === '' || (r.textContent ?? '').toLowerCase().includes(needle),
+      );
+      rows.forEach((r) => (r.hidden = true));
+      const pages = pageSize ? Math.max(1, Math.ceil(matched.length / pageSize)) : 1;
+      if (page > pages - 1) page = pages - 1;
+      if (page < 0) page = 0;
+      const shown = pageSize ? matched.slice(page * pageSize, (page + 1) * pageSize) : matched;
+      shown.forEach((r) => (r.hidden = false));
+      if (pager && label && prevBtn && nextBtn) {
+        const from = matched.length === 0 ? 0 : page * pageSize + 1;
+        const to = Math.min((page + 1) * pageSize, matched.length);
+        label.textContent = `${from.toLocaleString('pl-PL')}–${to.toLocaleString('pl-PL')} z ${matched.length.toLocaleString('pl-PL')}`;
+        prevBtn.disabled = page === 0;
+        nextBtn.disabled = page >= pages - 1;
+        pager.hidden = matched.length <= pageSize;
+      }
+    };
+
+    input?.addEventListener('input', () => {
+      page = 0;
+      update();
     });
+    prevBtn?.addEventListener('click', () => {
+      page -= 1;
+      update();
+    });
+    nextBtn?.addEventListener('click', () => {
+      page += 1;
+      update();
+    });
+
+    /* Sortowanie: kolumny .num numerycznie (parsowanie pl-PL), reszta leksykalnie. */
+    const ths = table.querySelectorAll<HTMLTableCellElement>('thead th');
+    if (body.rows.length >= 2) {
+      ths.forEach((th, idx) => {
+        th.classList.add('sortable');
+        const caret = document.createElement('span');
+        caret.className = 'sort-caret';
+        th.appendChild(caret);
+        th.addEventListener('click', () => {
+          const numeric = th.classList.contains('num');
+          const dir =
+            th.dataset.dir === 'asc' ? 'desc' : th.dataset.dir === 'desc' ? 'asc' : numeric ? 'desc' : 'asc';
+          ths.forEach((other) => {
+            other.classList.remove('active');
+            delete other.dataset.dir;
+            const c = other.querySelector('.sort-caret');
+            if (c) c.textContent = '';
+          });
+          th.classList.add('active');
+          th.dataset.dir = dir;
+          caret.textContent = dir === 'desc' ? '↓' : '↑';
+          const sign = dir === 'desc' ? -1 : 1;
+          Array.from(body.rows)
+            .sort((a, b) => {
+              if (numeric) return sign * (numFrom(a.cells[idx]) - numFrom(b.cells[idx]));
+              return (
+                sign *
+                (a.cells[idx]?.textContent ?? '').localeCompare(b.cells[idx]?.textContent ?? '', 'pl')
+              );
+            })
+            .forEach((row) => body.appendChild(row));
+          page = 0;
+          update();
+        });
+      });
+    }
+
+    if (pageSize) update();
   });
 </script>
