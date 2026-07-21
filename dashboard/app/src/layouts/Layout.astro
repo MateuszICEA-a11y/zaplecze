@@ -66,7 +66,7 @@ const SECTION_ICONS: Record<string, string> = {
       <aside class="sidebar">
         <div class="side-top">
           <a href="/" class="brand">
-            <span class="brand-mark" aria-hidden="true">ICEA</span>
+            <img class="brand-mark" src="/favicon.svg" alt="" width="30" height="30" aria-hidden="true" />
             <span class="brand-text">
               <img class="brand-logo" src="/icea-logo.svg" alt="ICEA" width="112" height="24" />
               <span class="brand-sub">Panel analityczny</span>
@@ -201,15 +201,6 @@ const SECTION_ICONS: Record<string, string> = {
         width: 30px;
         height: 30px;
         border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: var(--font-display);
-        font-weight: 700;
-        font-size: 0.82rem;
-        letter-spacing: -0.02em;
-        color: #05121f;
-        background: linear-gradient(150deg, var(--accent-blue), #23c483);
         box-shadow: 0 0 18px var(--accent-blue-soft);
         flex: none;
       }
@@ -232,6 +223,7 @@ const SECTION_ICONS: Record<string, string> = {
         filter: invert(1);
       }
       .brand-sub {
+        margin-top: 2px;
         font-size: 0.68rem;
         font-weight: 500;
         color: var(--ink-faint);
