@@ -167,6 +167,16 @@ def main() -> None:
                 print(f"{domain_id} gsc: {len(per_source['gsc'])} dni historii")
             except Exception as err:  # noqa: BLE001
                 print(f"{domain_id} gsc: BŁĄD {err}")
+                # 403 to zwykle zły identyfikator property (sc-domain vs prefiks URL)
+                # – wypisz, co service account faktycznie widzi.
+                try:
+                    token = _access_token(env["GSC_SERVICE_ACCOUNT_JSON"].strip())
+                    sites = request_json(GSC_API, headers={"Authorization": f"Bearer {token}"})
+                    listing = [(s.get("siteUrl"), s.get("permissionLevel"))
+                               for s in sites.get("siteEntry") or []]
+                    print(f"  properties widoczne dla service accounta: {listing}")
+                except Exception as diag_err:  # noqa: BLE001
+                    print(f"  (diagnostyka listy properties nie powiodła się: {diag_err})")
 
         if per_source:
             added, d_from, d_to = merge(domain_id, per_source)
