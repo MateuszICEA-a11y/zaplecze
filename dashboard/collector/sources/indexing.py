@@ -46,10 +46,12 @@ class _TokenProvider:
         info = json.loads(sa_json)
         self._creds = service_account.Credentials.from_service_account_info(
             info, scopes=[SCOPE])
-        self._refreshed_at = 0.0
+        # None = jeszcze nie odświeżony; NIE 0.0 – monotonic() to czas od bootu
+        # i na świeżym runnerze CI bywa mniejszy niż próg (token nigdy by nie powstał).
+        self._refreshed_at: float | None = None
 
     def headers(self) -> dict:
-        if time.monotonic() - self._refreshed_at > TOKEN_REFRESH_S:
+        if self._refreshed_at is None or time.monotonic() - self._refreshed_at > TOKEN_REFRESH_S:
             from google.auth.transport.requests import Request
 
             self._creds.refresh(Request())
