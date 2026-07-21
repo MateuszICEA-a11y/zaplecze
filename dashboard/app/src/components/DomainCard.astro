@@ -28,6 +28,7 @@ const SECTION_LINKS = (
     ['ahrefs', 'Ahrefs', 'ahrefs'],
     ['clarity', 'Clarity', 'clarity'],
     ['boty-ai', 'Boty AI', 'cloudflare_ai'],
+    ['matrix', 'Matrix', 'indexing'],
     ['leady', 'Leady', 'leads'],
   ] as const
 ).filter(([, , source]) => !domainCfg || sectionEnabled(domainCfg, source));

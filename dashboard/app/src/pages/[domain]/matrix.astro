@@ -1,0 +1,119 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DomainHeader from '../../components/DomainHeader.astro';
+import StatCard from '../../components/StatCard.astro';
+import TableCard from '../../components/TableCard.astro';
+import { loadConfig, loadDetails, latestSnapshot, sectionEnabled } from '../../lib/data';
+import { fmtInt, fmtPct, fmtNum, posClass, barWidth } from '../../lib/format';
+
+export function getStaticPaths() {
+  return loadConfig()
+    .domains.filter((d) => sectionEnabled(d, 'indexing'))
+    .map((d) => ({ params: { domain: d.id }, props: { name: d.name } }));
+}
+
+const { domain } = Astro.params;
+const { name } = Astro.props;
+
+const latest = latestSnapshot(domain!);
+const details = loadDetails(domain!);
+const indexing = latest?.sources.indexing;
+const rows = details.sources.indexing?.rows ?? [];
+const window = details.sources.indexing?.window;
+
+// GA4: sesje per landing page (okno 28 dni) do zestawienia z GSC.
+const ga4Landing = new Map(
+  (details.sources.ga4?.landing_pages?.rows ?? []).map((r) => [r.path, r]),
+);
+const stripOrigin = (url: string) => url.replace(/^https?:\/\/[^/]+/, '') || '/';
+
+const joined = rows.map((r) => {
+  const ga4Row = ga4Landing.get(stripOrigin(r.url));
+  return { ...r, ga4_sessions: ga4Row?.sessions ?? null, engagement_rate: ga4Row?.engagement_rate ?? null };
+});
+
+const indexed = indexing?.data?.indexed ?? joined.filter((r) => r.indexed).length;
+const checked = indexing?.data?.pages_checked ?? joined.length;
+const notIndexed = indexing?.data?.not_indexed ?? checked - indexed;
+const maxImpressions = Math.max(...joined.map((r) => r.impressions ?? 0), 0);
+---
+
+<Layout title={`${name} – Matrix`}>
+  <DomainHeader domain={domain!} name={name} active="matrix" latest={latest} />
+
+  {
+    indexing && indexing.status !== 'ok' && (
+      <div class={`banner ${indexing.status === 'token_expired' ? 'warn' : 'err'}`}>
+        <strong>Indeksacja</strong>: {indexing.error ?? 'błąd źródła'}
+      </div>
+    )
+  }
+
+  <div class="section-head">
+    <h2>Kondycja top stron</h2>
+    <span class="section-meta">
+      {window ? `top ${checked} stron wg kliknięć · okno ${window.start} → ${window.end} · ` : ''}
+      indeksacja: GSC URL Inspection · sesje: GA4 (28 dni)
+    </span>
+  </div>
+  <div class="stat-grid">
+    <StatCard label="Sprawdzone strony" value={checked} />
+    <StatCard label="Zaindeksowane" value={indexed} />
+    <StatCard label="Niezaindeksowane" value={notIndexed} goodWhen="down" />
+  </div>
+
+  <TableCard
+    title="Strony"
+    count={joined.length}
+    filter
+    empty="Dane pojawią się po najbliższym przebiegu collectora (codziennie 6:30)."
+  >
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Strona</th>
+          <th>Indeks</th>
+          <th class="num">Pozycja</th>
+          <th class="num">Wyświetlenia</th>
+          <th class="num">Kliknięcia</th>
+          <th class="num">CTR</th>
+          <th class="num">Sesje GA4</th>
+          <th class="num">Ostatni crawl</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          joined.map((r) => (
+            <tr>
+              <td class="grow">
+                <a class="cell-url" href={r.url} rel="noopener" target="_blank">
+                  {stripOrigin(r.url)}
+                </a>
+              </td>
+              <td>
+                <span class={`chip ${r.indexed ? 'good' : 'bad'}`} title={r.coverage_state ?? ''}>
+                  {r.indexed ? 'w indeksie' : (r.coverage_state ?? 'poza indeksem')}
+                </span>
+              </td>
+              <td class="num">
+                <span class={`pos-badge ${posClass(r.position)}`}>{fmtNum(r.position, 1)}</span>
+              </td>
+              <td class="num">
+                <span class="cell-bar">
+                  {fmtInt(r.impressions)}
+                  <span class="bar">
+                    <i style={`width:${barWidth(r.impressions, maxImpressions)}%`} />
+                  </span>
+                </span>
+              </td>
+              <td class="num">{fmtInt(r.clicks)}</td>
+              <td class="num">{fmtPct(r.ctr)}</td>
+              <td class="num">{fmtInt(r.ga4_sessions)}</td>
+              <td class="num">{r.last_crawl ?? '–'}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </TableCard>
+</Layout>

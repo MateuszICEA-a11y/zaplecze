@@ -13,7 +13,7 @@ import {
   metricSeries,
   sectionEnabled,
 } from '../../lib/data';
-import { fmtInt, barWidth } from '../../lib/format';
+import { fmtInt, fmtPct, fmtNum, fmtDuration, barWidth } from '../../lib/format';
 
 export function getStaticPaths() {
   return loadConfig()
@@ -31,18 +31,55 @@ const ga4 = latest?.sources.ga4;
 const channels = details.sources.ga4?.channels ?? [];
 const trafficSources = details.sources.ga4?.sources ?? [];
 const pages = details.sources.ga4?.pages ?? [];
+const landing = details.sources.ga4?.landing_pages?.rows ?? [];
+const landingWindow = details.sources.ga4?.landing_pages?.window;
+const monthly = details.sources.ga4?.monthly ?? [];
+const channelsMonthly = details.sources.ga4?.channels_monthly ?? [];
 
+// Dzienne szeregi ze snapshotów.
 const sessions = metricSeries(snapshots, 'ga4', 'sessions');
-const organic = metricSeries(snapshots, 'ga4', 'organic_sessions');
+const organicDaily = metricSeries(snapshots, 'ga4', 'organic_sessions');
 const statSessions = latestWithDelta(snapshots, 'ga4', 'sessions');
 const statUsers = latestWithDelta(snapshots, 'ga4', 'active_users');
-const statPageviews = latestWithDelta(snapshots, 'ga4', 'pageviews');
+const statNewUsers = latestWithDelta(snapshots, 'ga4', 'new_users');
+const statReturning = latestWithDelta(snapshots, 'ga4', 'returning_users');
 const statOrganic = latestWithDelta(snapshots, 'ga4', 'organic_sessions');
+const statEngRate = latestWithDelta(snapshots, 'ga4', 'engagement_rate');
+const statEngTime = latestWithDelta(snapshots, 'ga4', 'avg_engagement_s');
+const statEngPerUser = latestWithDelta(snapshots, 'ga4', 'engaged_per_user');
+const statPagesPerSession = latestWithDelta(snapshots, 'ga4', 'pages_per_session');
 const dataDate = ga4?.data?.data_date ?? null;
+
+// Trend miesięczny (25 mies. z Data API) + delta r/r na ostatnim pełnym miesiącu.
+const monthTs = (m: string) => Math.floor(Date.UTC(+m.slice(0, 4), +m.slice(4, 6) - 1, 1) / 1000);
+const monthlyTs = monthly.map((m) => monthTs(m.month));
+const lastFull = monthly.length >= 2 ? monthly[monthly.length - 2] : null;
+const lastFullYoY = lastFull ? monthly.find((m) => +m.month === +lastFull.month - 100) : null;
+const yoyDelta = (field: 'sessions' | 'users') =>
+  lastFull && lastFullYoY ? lastFull[field] - lastFullYoY[field] : null;
+const monthLabel = lastFull ? `${lastFull.month.slice(0, 4)}-${lastFull.month.slice(4, 6)}` : null;
+
+// Kanały miesięcznie → serie per kanał (pozostałe zsumowane w „Inne").
+const MAIN_CHANNELS = ['Organic Search', 'Direct', 'Referral', 'Paid Search', 'Organic Social'];
+const channelSeries = MAIN_CHANNELS.map((channel) => ({
+  label: channel === 'Organic Search' ? 'Organic' : channel === 'Organic Social' ? 'Social' : channel,
+  values: monthly.map(
+    (m) => channelsMonthly.find((c) => c.month === m.month && c.channel === channel)?.sessions ?? 0,
+  ),
+}));
+const otherSeries = monthly.map((m) =>
+  channelsMonthly
+    .filter((c) => c.month === m.month && !MAIN_CHANNELS.includes(c.channel))
+    .reduce((sum, c) => sum + c.sessions, 0),
+);
+const organicMonthly = channelSeries[0]?.values ?? [];
 
 const maxChannel = Math.max(...channels.map((c) => c.sessions), 0);
 const maxSource = Math.max(...trafficSources.map((s) => s.sessions), 0);
 const maxPage = Math.max(...pages.map((p) => p.pageviews), 0);
+const maxLanding = Math.max(...landing.map((l) => l.sessions), 0);
+const engClass = (rate: number | null) =>
+  typeof rate !== 'number' ? '' : rate >= 60 ? 'top3' : rate >= 40 ? 'top10' : rate >= 25 ? 'mid' : 'low';
 ---
 
 <Layout title={`${name} – GA4`}>
@@ -58,14 +95,66 @@ const maxPage = Math.max(...pages.map((p) => p.pageviews), 0);
 
   <div class="section-head">
     <h2>Ruch w witrynie</h2>
-    {dataDate && <span class="section-meta">pełna doba {dataDate}</span>}
+    {dataDate && <span class="section-meta">pełna doba {dataDate} · delty 7-dniowe</span>}
   </div>
   <div class="stat-grid">
-    <StatCard label="Sesje / dzień" value={statSessions.value} delta={statSessions.delta} trend={sessions.values} />
-    <StatCard label="Aktywni użytkownicy" value={statUsers.value} delta={statUsers.delta} />
-    <StatCard label="Odsłony" value={statPageviews.value} delta={statPageviews.delta} />
-    <StatCard label="Sesje organiczne" value={statOrganic.value} delta={statOrganic.delta} trend={organic.values} />
+    <StatCard label="Sesje / dzień" value={statSessions.value} delta={statSessions.delta} trend={sessions.values} hero />
+    <StatCard label="Użytkownicy" value={statUsers.value} delta={statUsers.delta} />
+    <StatCard label="Nowi użytkownicy" value={statNewUsers.value} delta={statNewUsers.delta} />
+    <StatCard label="Powracający" value={statReturning.value} delta={statReturning.delta} />
+    <StatCard label="Sesje organiczne" value={statOrganic.value} delta={statOrganic.delta} trend={organicDaily.values} />
   </div>
+
+  <div class="section-head"><h2>Zaangażowanie</h2></div>
+  <div class="stat-grid">
+    <StatCard label="Engagement rate" value={statEngRate.value} delta={statEngRate.delta} unit="%" precision={1} />
+    <StatCard label="Śr. czas zaangażowania / sesję" value={statEngTime.value} delta={statEngTime.delta} unit="s" precision={0} />
+    <StatCard label="Engaged sessions / użytkownika" value={statEngPerUser.value} delta={statEngPerUser.delta} precision={2} />
+    <StatCard label="Strony / sesję" value={statPagesPerSession.value} delta={statPagesPerSession.delta} precision={2} />
+  </div>
+
+  {
+    monthly.length > 1 && (
+      <>
+        <div class="section-head">
+          <h2>Trend miesięczny</h2>
+          <span class="section-meta">
+            {monthLabel && `ostatni pełny miesiąc: ${monthLabel}`}
+            {yoyDelta('sessions') !== null &&
+              ` · sesje r/r: ${yoyDelta('sessions')! > 0 ? '+' : ''}${fmtInt(yoyDelta('sessions'))}`}
+            {yoyDelta('users') !== null &&
+              ` · użytkownicy r/r: ${yoyDelta('users')! > 0 ? '+' : ''}${fmtInt(yoyDelta('users'))}`}
+          </span>
+        </div>
+        <div class="chart-grid">
+          <TimeSeriesChart
+            title="Użytkownicy: nowi vs powracający"
+            meta="miesięcznie"
+            timestamps={monthlyTs}
+            series={[
+              { label: 'Użytkownicy', values: monthly.map((m) => m.users), fill: true },
+              { label: 'Nowi', values: monthly.map((m) => m.new_users) },
+              { label: 'Powracający', values: monthly.map((m) => Math.max(0, m.users - m.new_users)) },
+            ]}
+          />
+          <TimeSeriesChart
+            title="Sesje per kanał"
+            meta="miesięcznie"
+            timestamps={monthlyTs}
+            series={[...channelSeries, { label: 'Inne', values: otherSeries }].filter((s) =>
+              s.values.some((v) => v > 0),
+            )}
+          />
+          <TimeSeriesChart
+            title="Ruch organiczny"
+            meta="miesięcznie · sezonowość"
+            timestamps={monthlyTs}
+            series={[{ label: 'Sesje organiczne', values: organicMonthly, fill: true }]}
+          />
+        </div>
+      </>
+    )
+  }
 
   <div class="chart-grid">
     <TimeSeriesChart
@@ -74,12 +163,54 @@ const maxPage = Math.max(...pages.map((p) => p.pageviews), 0);
       timestamps={sessions.timestamps}
       series={[
         { label: 'Sesje', values: sessions.values, fill: true },
-        { label: 'Organiczne', values: organic.values },
+        { label: 'Organiczne', values: organicDaily.values },
       ]}
     />
   </div>
 
-  <TableCard title="Kanały" count={channels.length} empty="Dane pojawią się po najbliższym przebiegu collectora (wymaga property_id + dostępu service accounta).">
+  <TableCard
+    title="Landing pages – zaangażowanie"
+    meta={landingWindow ? `okno ${landingWindow.start} → ${landingWindow.end}` : undefined}
+    count={landing.length}
+    filter
+    empty="Dane pojawią się po najbliższym przebiegu collectora."
+  >
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Landing page</th>
+          <th class="num">Sesje</th>
+          <th class="num">Engagement rate</th>
+          <th class="num">Śr. czas zaangaż.</th>
+          <th class="num">Strony / sesję</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          landing.map((l) => (
+            <tr>
+              <td class="grow"><span class="cell-url">{l.path}</span></td>
+              <td class="num">
+                <span class="cell-bar">
+                  {fmtInt(l.sessions)}
+                  <span class="bar">
+                    <i style={`width:${barWidth(l.sessions, maxLanding)}%`} />
+                  </span>
+                </span>
+              </td>
+              <td class="num">
+                <span class={`pos-badge ${engClass(l.engagement_rate)}`}>{fmtPct(l.engagement_rate)}</span>
+              </td>
+              <td class="num">{fmtDuration(l.avg_engagement_s)}</td>
+              <td class="num">{fmtNum(l.pages_per_session, 2)}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </TableCard>
+
+  <TableCard title="Kanały (wczoraj)" count={channels.length} empty="Brak danych.">
     <table class="data-table">
       <thead>
         <tr>
@@ -111,7 +242,7 @@ const maxPage = Math.max(...pages.map((p) => p.pageviews), 0);
     </table>
   </TableCard>
 
-  <TableCard title="Źródła sesji" count={trafficSources.length} filter empty="Brak danych.">
+  <TableCard title="Źródła sesji (wczoraj)" count={trafficSources.length} filter empty="Brak danych.">
     <table class="data-table">
       <thead>
         <tr>
@@ -141,7 +272,7 @@ const maxPage = Math.max(...pages.map((p) => p.pageviews), 0);
     </table>
   </TableCard>
 
-  <TableCard title="Najpopularniejsze strony" count={pages.length} filter empty="Brak danych.">
+  <TableCard title="Najpopularniejsze strony (wczoraj)" count={pages.length} filter empty="Brak danych.">
     <table class="data-table">
       <thead>
         <tr>

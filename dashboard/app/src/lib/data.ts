@@ -217,6 +217,32 @@ export interface DomainDetails {
       channels: { channel: string; sessions: number; users: number; pageviews: number }[];
       sources: { source: string; sessions: number; users: number }[];
       pages: { path: string; pageviews: number; users: number }[];
+      landing_pages?: {
+        window: { start: string; end: string };
+        rows: {
+          path: string;
+          sessions: number;
+          engagement_rate: number;
+          avg_engagement_s: number;
+          pages_per_session: number;
+        }[];
+      };
+      monthly?: { month: string; sessions: number; users: number; new_users: number }[];
+      channels_monthly?: { month: string; channel: string; sessions: number }[];
+    };
+    indexing?: {
+      window?: { start: string; end: string };
+      rows: {
+        url: string;
+        clicks: number;
+        impressions: number;
+        ctr: number | null;
+        position: number | null;
+        indexed: boolean;
+        verdict: string | null;
+        coverage_state: string | null;
+        last_crawl: string | null;
+      }[];
     };
     bing?: {
       traffic: { date: string; clicks: number; impressions: number }[];
@@ -336,6 +362,7 @@ export const DOMAIN_SECTIONS = [
   { slug: 'ahrefs', label: 'Ahrefs', source: 'ahrefs' },
   { slug: 'clarity', label: 'Clarity', source: 'clarity' },
   { slug: 'boty-ai', label: 'Boty AI', source: 'cloudflare_ai' },
+  { slug: 'matrix', label: 'Matrix', source: 'indexing' },
   { slug: 'leady', label: 'Leady', source: 'leads' },
 ] as const;
 

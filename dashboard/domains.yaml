@@ -9,6 +9,9 @@ domains:
     gsc:
       enabled: true
       site: "https://widocznosc.ai/" # property typu prefiks URL (nie domenowa)
+    indexing:
+      enabled: true # panel Matrix – URL Inspection top 50 stron (kwota 2000/d)
+      site: "https://widocznosc.ai/"
     ga4:
       enabled: true
       # Strumień „G-BQM8BZEL38" (id strumienia 14832977902) = widocznosc.ai;
@@ -44,6 +47,9 @@ domains:
       enabled: true
       # Property typu prefiks URL z www (jedyna widoczna dla service accounta,
       # siteFullUser od 2026-07-21) – sc-domain nie istnieje dla tej domeny.
+      site: "https://www.grupa-icea.pl/"
+    indexing:
+      enabled: true # panel Matrix – URL Inspection top 50 stron
       site: "https://www.grupa-icea.pl/"
     ga4:
       enabled: true
