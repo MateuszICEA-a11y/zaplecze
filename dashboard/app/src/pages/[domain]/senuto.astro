@@ -75,6 +75,7 @@ const maxSearches = Math.max(...keywords.map((k) => k.searches ?? 0), 0);
   <div class="chart-grid">
     <TimeSeriesChart
       title="Frazy w TOP 3 / 10 / 50"
+      meta="dziennie"
       timestamps={top10.timestamps}
       series={[
         { label: 'TOP 3', values: top3.values },
@@ -84,6 +85,7 @@ const maxSearches = Math.max(...keywords.map((k) => k.searches ?? 0), 0);
     />
     <TimeSeriesChart
       title="Indeks widoczności"
+      meta="dziennie"
       timestamps={visibility.timestamps}
       series={[{ label: 'Widoczność', values: visibility.values }]}
       precision={2}

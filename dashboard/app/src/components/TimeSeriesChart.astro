@@ -11,18 +11,20 @@ interface Series {
 }
 interface Props {
   title: string;
+  /* Podpis po prawej w nagłówku wykresu (źródło / okno danych). */
+  meta?: string;
   timestamps: number[];
   series: Series[];
   unit?: string;
   precision?: number;
 }
-const { title, timestamps, series, unit = '', precision = 0 } = Astro.props;
+const { title, meta, timestamps, series, unit = '', precision = 0 } = Astro.props;
 const payload = JSON.stringify({ timestamps, series, unit, precision });
 const hasData = timestamps.length > 0 && series.some((s) => s.values.some((v) => v !== null));
 ---
 
 <figure class="chart-card">
-  <figcaption>{title}</figcaption>
+  <figcaption>{title}{meta && <span class="cap-meta">{meta}</span>}</figcaption>
   {
     hasData ? (
       <div class="ts-chart" data-chart={payload} />
@@ -157,6 +159,16 @@ const hasData = timestamps.length > 0 && series.some((s) => s.values.some((v) =>
     font-weight: 600;
     font-size: 0.95rem;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .cap-meta {
+    color: var(--ink-faint);
+    font-size: 0.76rem;
+    font-weight: 500;
+    font-family: var(--font-body);
   }
   .chart-empty {
     color: var(--ink-faint);
@@ -174,6 +186,11 @@ const hasData = timestamps.length > 0 && series.some((s) => s.values.some((v) =>
   .chart-card :global(.u-legend .u-value) {
     font-variant-numeric: tabular-nums;
     color: var(--ink);
+  }
+  .chart-card :global(.u-legend .u-marker) {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
   }
   .chart-card :global(.u-select) {
     background: var(--accent-blue-soft);

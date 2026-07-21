@@ -76,19 +76,22 @@ const orProjectSeries = metricSeries(globalSnapshots, 'openrouter', 'project_usa
     <div class="chart-grid">
       <TimeSeriesChart
         title="SMSAPI – saldo punktów"
+        meta="dziennie"
         timestamps={smsSeries.timestamps}
         series={[{ label: 'Punkty', values: smsSeries.values }]}
         precision={2}
       />
       <TimeSeriesChart
-        title="OpenRouter – pozostałe kredyty ($)"
+        title="OpenRouter – pozostałe kredyty"
+        meta="$ · dziennie"
         timestamps={orSeries.timestamps}
         series={[{ label: 'Pozostało', values: orSeries.values }]}
         unit="$"
         precision={2}
       />
       <TimeSeriesChart
-        title="OpenRouter – zużycie klucza projektu ($)"
+        title="OpenRouter – zużycie klucza"
+        meta="$ · dziennie"
         timestamps={orProjectSeries.timestamps}
         series={[{ label: 'Zużycie', values: orProjectSeries.values }]}
         unit="$"

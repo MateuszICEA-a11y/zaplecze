@@ -77,10 +77,12 @@ if (points.length >= 2) {
     }
   </div>
   {
-    deltaText !== null && (
+    deltaText !== null ? (
       <div class={`stat-delta ${sentiment}`}>
-        {direction === 'up' ? '▲' : direction === 'down' ? '▼' : '•'} {deltaText} · {deltaLabel}
+        {direction === 'up' ? '▲' : direction === 'down' ? '▼' : '•'} {deltaText} / {deltaLabel}
       </div>
+    ) : (
+      trend && trend.length > 0 && <div class="stat-delta flat">• – / {deltaLabel}</div>
     )
   }
 </div>
@@ -132,8 +134,8 @@ if (points.length >= 2) {
     font-size: 2.7rem;
   }
   .spark {
-    width: 88px;
-    height: 28px;
+    width: 96px;
+    height: 30px;
     color: var(--accent-blue);
     opacity: 0.9;
     flex: none;

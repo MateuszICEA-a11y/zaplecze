@@ -88,6 +88,7 @@ const ahrefs = latest?.sources.ahrefs;
   <div class="chart-grid">
     <TimeSeriesChart
       title="Backlinki i domeny linkujące"
+      meta="dziennie"
       timestamps={backlinks.timestamps}
       series={[
         { label: 'Backlinki', values: backlinks.values, fill: true },
@@ -96,6 +97,7 @@ const ahrefs = latest?.sources.ahrefs;
     />
     <TimeSeriesChart
       title="Domain Rating"
+      meta="dziennie"
       timestamps={domainRating.timestamps}
       series={[{ label: 'DR', values: domainRating.values }]}
       precision={1}

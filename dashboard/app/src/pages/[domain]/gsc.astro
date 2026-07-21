@@ -91,7 +91,8 @@ const stripOrigin = (url: string) => url.replace(/^https?:\/\/[^/]+/, '') || '/'
 
   <div class="chart-grid">
     <TimeSeriesChart
-      title="Kliknięcia i wyświetlenia (dziennie)"
+      title="Kliknięcia i wyświetlenia"
+      meta="dziennie"
       timestamps={clicks.timestamps}
       series={[
         { label: 'Kliknięcia', values: clicks.values },
@@ -99,13 +100,15 @@ const stripOrigin = (url: string) => url.replace(/^https?:\/\/[^/]+/, '') || '/'
       ]}
     />
     <TimeSeriesChart
-      title="Średnia pozycja (niżej = lepiej)"
+      title="Średnia pozycja"
+      meta="niżej = lepiej"
       timestamps={position.timestamps}
       series={[{ label: 'Pozycja', values: position.values }]}
       precision={1}
     />
     <TimeSeriesChart
       title="Frazy z wyświetleniami"
+      meta="dziennie"
       timestamps={queriesSeries.timestamps}
       series={[{ label: 'Frazy', values: queriesSeries.values }]}
     />

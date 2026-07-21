@@ -28,13 +28,15 @@ const dotClass = (source: string | null): string => {
   return 'off';
 };
 
+/* Ikony 1:1 z mockupu designu (stroke 2.0). */
 const SECTION_ICONS: Record<string, string> = {
-  '': 'M3 13h4v8H3zM10 7h4v14h-4zM17 3h4v18h-4z', // słupki – przegląd
-  senuto: 'M3 17l6-6 4 4 8-8M15 7h6v6', // trend – widoczność
-  gsc: 'M11 4a7 7 0 105.2 11.7l4 4 1.4-1.4-4-4A7 7 0 0011 4zm0 2a5 5 0 110 10 5 5 0 010-10z', // lupa
-  ahrefs: 'M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.6l-1.2 1.2M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.6l1.2-1.2', // link
-  clarity: 'M12 5c-5 0-8.5 4.4-9.6 6.4a1.2 1.2 0 000 1.2C3.5 14.6 7 19 12 19s8.5-4.4 9.6-6.4a1.2 1.2 0 000-1.2C20.5 9.4 17 5 12 5zm0 10.5a3.5 3.5 0 110-7 3.5 3.5 0 010 7z', // oko
-  leady: 'M12 12a4 4 0 100-8 4 4 0 000 8zm-7 8a7 7 0 0114 0z', // osoba
+  '': 'M3 3v18h18M7 11h3v6H7zM12 7h3v10h-3zM17 13h3v4h-3z', // wykres słupkowy – przegląd
+  senuto: 'M3 17l6-6 4 4 8-8M21 7v5h-5', // trend – widoczność
+  gsc: 'M11 4a7 7 0 1 1 0 14 7 7 0 0 1 0-14zM21 21l-4.3-4.3', // lupa
+  ahrefs:
+    'M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1', // link
+  clarity: 'M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7ZM12 9a3 3 0 1 1 0 6 3 3 0 0 1 0-6z', // oko
+  leady: 'M12 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8zM4 21a8 8 0 0 1 16 0', // osoba
 };
 ---
 
@@ -83,7 +85,7 @@ const SECTION_ICONS: Record<string, string> = {
                   aria-current={activeSection === s.slug ? 'page' : undefined}
                   title={s.label}
                 >
-                  <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <path d={SECTION_ICONS[s.slug] ?? SECTION_ICONS['']} />
                   </svg>
                   <span class="nav-text">{s.label}</span>
@@ -96,7 +98,7 @@ const SECTION_ICONS: Record<string, string> = {
               <div class="nav-label">Domeny</div>
               {domains.map((d) => (
                 <a href={`/${d.id}/`} class="nav-item" title={d.name}>
-                  <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <circle cx="12" cy="12" r="9" />
                     <path d="M3.5 12h17M12 3a14 14 0 010 18M12 3a14 14 0 000 18" />
                   </svg>
@@ -109,7 +111,7 @@ const SECTION_ICONS: Record<string, string> = {
 
         <div class="side-footer">
           <button id="theme-toggle" type="button" aria-label="Przełącz motyw">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
               <path d="M21 13A8.5 8.5 0 1111 3a7 7 0 0010 10z" />
             </svg>
             <span>Motyw</span>
@@ -394,7 +396,8 @@ const SECTION_ICONS: Record<string, string> = {
       main {
         flex: 1;
         width: 100%;
-        max-width: 1240px;
+        /* Pełna szerokość – siatki auto-fit wypełniają duże monitory. */
+        max-width: none;
         padding: 30px clamp(18px, 3.5vw, 44px) 64px;
       }
       .site-footer {

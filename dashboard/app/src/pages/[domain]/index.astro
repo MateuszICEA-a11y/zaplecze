@@ -67,7 +67,10 @@ const problems = Object.entries(latest?.sources ?? {}).filter(([, r]) =>
     ))
   }
 
-  <div class="section-head"><h2>Najważniejsze wskaźniki</h2></div>
+  <div class="section-head">
+    <h2>Najważniejsze wskaźniki</h2>
+    <span class="section-meta">porównanie 7-dniowe · pełne listy w zakładkach</span>
+  </div>
   <div class="stat-grid">
     <StatCard label="Frazy w TOP 10" value={statTop10.value} delta={statTop10.delta} trend={top10.values} />
     <StatCard label="Kliknięcia / dzień" value={statClicks.value} delta={statClicks.delta} trend={gscClicks.values} />
@@ -83,13 +86,11 @@ const problems = Object.entries(latest?.sources ?? {}).filter(([, r]) =>
     {leadsConfigured && <StatCard label="Leady · 7 dni" value={leadsRecent} />}
   </div>
 
-  <div class="section-head">
-    <h2>Trendy</h2>
-    <span class="section-meta">szczegóły i pełne listy w zakładkach sekcji</span>
-  </div>
+  <div class="section-head"><h2>Trendy</h2></div>
   <div class="chart-grid">
     <TimeSeriesChart
-      title="Frazy w TOP 3 / 10 / 50 (Senuto)"
+      title="Frazy w TOP 3 / 10 / 50"
+      meta="Senuto"
       timestamps={top10.timestamps}
       series={[
         { label: 'TOP 3', values: top3.values },
@@ -98,7 +99,8 @@ const problems = Object.entries(latest?.sources ?? {}).filter(([, r]) =>
       ]}
     />
     <TimeSeriesChart
-      title="Kliknięcia i wyświetlenia (GSC)"
+      title="Kliknięcia i wyświetlenia"
+      meta="GSC"
       timestamps={gscClicks.timestamps}
       series={[
         { label: 'Kliknięcia', values: gscClicks.values },
@@ -106,7 +108,8 @@ const problems = Object.entries(latest?.sources ?? {}).filter(([, r]) =>
       ]}
     />
     <TimeSeriesChart
-      title="Backlinki i domeny linkujące (Ahrefs)"
+      title="Backlinki i domeny linkujące"
+      meta="Ahrefs"
       timestamps={backlinks.timestamps}
       series={[
         { label: 'Backlinki', values: backlinks.values, fill: true },
