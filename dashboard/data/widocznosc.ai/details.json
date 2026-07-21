@@ -1,6 +1,6 @@
 {
  "date": "2026-07-21",
- "collected_at": "2026-07-21T05:36:57Z",
+ "collected_at": "2026-07-21T05:39:37Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -1266,17 +1266,17 @@
     {
      "name": "?",
      "sessions": 1,
+     "users": 1
+    },
+    {
+     "name": "?",
+     "sessions": 1,
+     "users": 1
+    },
+    {
+     "name": "?",
+     "sessions": 1,
      "users": 2
-    },
-    {
-     "name": "?",
-     "sessions": 1,
-     "users": 1
-    },
-    {
-     "name": "?",
-     "sessions": 1,
-     "users": 1
     },
     {
      "name": "?",
@@ -1348,6 +1348,10 @@
      "users": 30
     }
    ]
+  },
+  "leads": {
+   "leads": [],
+   "usage": []
   }
  }
 }
