@@ -25,6 +25,7 @@ const SECTION_LINKS = (
     ['gsc', 'GSC', 'gsc'],
     ['ahrefs', 'Ahrefs', 'ahrefs'],
     ['clarity', 'Clarity', 'clarity'],
+    ['boty-ai', 'Boty AI', 'cloudflare_ai'],
     ['leady', 'Leady', 'leads'],
   ] as const
 ).filter(([, , source]) => !domainCfg || sectionEnabled(domainCfg, source));
@@ -32,10 +33,14 @@ const SECTION_LINKS = (
 
 <div class="domain-card">
   <h2>
-    <svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-      <circle cx="12" cy="12" r="9" />
-      <path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" />
-    </svg>
+    <img
+      class="globe favicon"
+      src={`https://www.google.com/s2/favicons?domain=${id}&sz=64`}
+      alt=""
+      width="20"
+      height="20"
+      loading="lazy"
+    />
     {name}
   </h2>
   <div class="mini-stats">
@@ -96,8 +101,9 @@ const SECTION_LINKS = (
   .globe {
     width: 20px;
     height: 20px;
-    color: var(--accent-blue);
     flex: none;
+    border-radius: 5px;
+    object-fit: contain;
   }
   .mini-stats {
     display: flex;
