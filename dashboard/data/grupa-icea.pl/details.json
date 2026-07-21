@@ -1,6 +1,6 @@
 {
  "date": "2026-07-21",
- "collected_at": "2026-07-21T12:02:58Z",
+ "collected_at": "2026-07-21T12:10:39Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -37048,25 +37048,25 @@
      "position": -1
     },
     {
-     "query": "icea poland",
-     "clicks": 1,
-     "impressions": 3,
-     "position": -1
-    },
-    {
      "query": "icea spółka akcyjn",
      "clicks": 1,
      "impressions": 3,
      "position": -1
     },
     {
-     "query": "jak przejąć kontrolę nad wizytówką google",
+     "query": "icea s.a monika witkowska",
      "clicks": 1,
      "impressions": 3,
      "position": -1
     },
     {
-     "query": "icea s.a monika witkowska",
+     "query": "icea poland",
+     "clicks": 1,
+     "impressions": 3,
+     "position": -1
+    },
+    {
+     "query": "jak przejąć kontrolę nad wizytówką google",
      "clicks": 1,
      "impressions": 3,
      "position": -1
@@ -37102,13 +37102,13 @@
      "position": -1
     },
     {
-     "query": "jak policzyć zaangażowanie w mediach",
+     "query": "wywiad kontekstowy konstrukcja",
      "clicks": 1,
      "impressions": 2,
      "position": -1
     },
     {
-     "query": "cechy strony dynamicznej",
+     "query": "jak policzyć zaangażowanie w mediach",
      "clicks": 1,
      "impressions": 2,
      "position": -1
@@ -37120,7 +37120,7 @@
      "position": -1
     },
     {
-     "query": "wywiad kontekstowy konstrukcja",
+     "query": "cechy strony dynamicznej",
      "clicks": 1,
      "impressions": 2,
      "position": -1
@@ -37138,13 +37138,13 @@
      "position": -1
     },
     {
-     "query": "wskaźnik zaangażowania w mediach",
+     "query": "czego oczekuje klient wybierając produkt",
      "clicks": 1,
      "impressions": 2,
      "position": -1
     },
     {
-     "query": "czego oczekuje klient wybierając produkt",
+     "query": "wskaźnik zaangażowania w mediach",
      "clicks": 1,
      "impressions": 2,
      "position": -1
@@ -37162,19 +37162,13 @@
      "position": -1
     },
     {
-     "query": "nmap strony www",
-     "clicks": 1,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "komunikacja dynnammicznai i statycznaw internecie",
-     "clicks": 1,
-     "impressions": 1,
-     "position": -1
-    },
-    {
      "query": "wedel kampanie reklamowe koszty",
+     "clicks": 1,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "nmap strony www",
      "clicks": 1,
      "impressions": 1,
      "position": -1
@@ -37186,19 +37180,19 @@
      "position": -1
     },
     {
-     "query": "vanity url",
-     "clicks": 1,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "słownik pojęć customer experience",
+     "query": "komunikacja dynnammicznai i statycznaw internecie",
      "clicks": 1,
      "impressions": 1,
      "position": -1
     },
     {
      "query": "gdzie sprawdzic grupe odbiorców",
+     "clicks": 1,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "vanity url",
      "clicks": 1,
      "impressions": 1,
      "position": -1
@@ -37222,7 +37216,7 @@
      "position": -1
     },
     {
-     "query": "co to jest infogafika",
+     "query": "słownik pojęć customer experience",
      "clicks": 1,
      "impressions": 1,
      "position": -1
@@ -37234,7 +37228,7 @@
      "position": -1
     },
     {
-     "query": "jaki ctr jest dobry",
+     "query": "co to jest infogafika",
      "clicks": 1,
      "impressions": 1,
      "position": -1
@@ -37246,7 +37240,7 @@
      "position": -1
     },
     {
-     "query": "jaki nick może mieć na youtube",
+     "query": "jaki ctr jest dobry",
      "clicks": 1,
      "impressions": 1,
      "position": -1
@@ -37258,19 +37252,13 @@
      "position": -1
     },
     {
-     "query": "progresywne aplikacje webowe",
-     "clicks": 1,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "ruch organiczny",
-     "clicks": 1,
-     "impressions": 1,
-     "position": -1
-    },
-    {
      "query": "jak zamieścić google ads na stronie",
+     "clicks": 1,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "jaki nick może mieć na youtube",
      "clicks": 1,
      "impressions": 1,
      "position": -1
@@ -37282,7 +37270,13 @@
      "position": -1
     },
     {
-     "query": "co zawiera mapa srony",
+     "query": "ruch organiczny",
+     "clicks": 1,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "progresywne aplikacje webowe",
      "clicks": 1,
      "impressions": 1,
      "position": -1
@@ -37306,25 +37300,19 @@
      "position": -1
     },
     {
-     "query": "ia i marketing czy to warto",
-     "clicks": 1,
-     "impressions": 1,
-     "position": -1
-    },
-    {
      "query": "ga4 modyfikacja kluczowych zdarzeń",
      "clicks": 1,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "ctor powyżej 100%",
+     "query": "ia i marketing czy to warto",
      "clicks": 1,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "ruh na stronach internetowych jak badać",
+     "query": "co zawiera mapa srony",
      "clicks": 1,
      "impressions": 1,
      "position": -1
@@ -37336,7 +37324,19 @@
      "position": -1
     },
     {
-     "query": "ctr cena",
+     "query": "ruh na stronach internetowych jak badać",
+     "clicks": 1,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "ctor powyżej 100%",
+     "clicks": 1,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "jak dodac reklame strone do google chrome",
      "clicks": 1,
      "impressions": 1,
      "position": -1
@@ -37348,7 +37348,7 @@
      "position": -1
     },
     {
-     "query": "jak dodac reklame strone do google chrome",
+     "query": "ctr cena",
      "clicks": 1,
      "impressions": 1,
      "position": -1
@@ -37438,13 +37438,13 @@
      "position": -1
     },
     {
-     "query": "grupa icea",
+     "query": "open page rank",
      "clicks": 0,
      "impressions": 4,
      "position": -1
     },
     {
-     "query": "open page rank",
+     "query": "grupa icea",
      "clicks": 0,
      "impressions": 4,
      "position": -1
@@ -37468,13 +37468,13 @@
      "position": -1
     },
     {
-     "query": "gsc",
+     "query": "the wayback machine",
      "clicks": 0,
      "impressions": 3,
      "position": -1
     },
     {
-     "query": "the wayback machine",
+     "query": "gsc",
      "clicks": 0,
      "impressions": 3,
      "position": -1
@@ -37486,13 +37486,13 @@
      "position": -1
     },
     {
-     "query": "brandly360",
+     "query": "schemat działania agencji reklamowych",
      "clicks": 0,
      "impressions": 3,
      "position": -1
     },
     {
-     "query": "schemat działania agencji reklamowych",
+     "query": "brandly360",
      "clicks": 0,
      "impressions": 3,
      "position": -1
@@ -37522,13 +37522,19 @@
      "position": -1
     },
     {
+     "query": "icea//aca",
+     "clicks": 0,
+     "impressions": 3,
+     "position": -1
+    },
+    {
      "query": "icea_public_search.jsp?link= site:pl",
      "clicks": 0,
      "impressions": 3,
      "position": -1
     },
     {
-     "query": "icea//aca",
+     "query": "page rank server ip site details alexa",
      "clicks": 0,
      "impressions": 3,
      "position": -1
@@ -37541,12 +37547,6 @@
     },
     {
      "query": "macie nowy link https://trackzonas.com/index.php/redirect/index/6787ceb532cd3?clickid=174617529009990tpltv4952287684v6b431&subid1=7066388-1560383409-4269441498&subid2=7066388&subid3=chrome",
-     "clicks": 0,
-     "impressions": 3,
-     "position": -1
-    },
-    {
-     "query": "page rank server ip site details alexa",
      "clicks": 0,
      "impressions": 3,
      "position": -1
@@ -37570,13 +37570,13 @@
      "position": -1
     },
     {
-     "query": "obiektvw google",
+     "query": "page ranking",
      "clicks": 0,
      "impressions": 2,
      "position": -1
     },
     {
-     "query": "jednego dnia strona działa a drugiego już nie podobne wyszukiwania",
+     "query": "obiektvw google",
      "clicks": 0,
      "impressions": 2,
      "position": -1
@@ -37588,7 +37588,7 @@
      "position": -1
     },
     {
-     "query": "page ranking",
+     "query": "410",
      "clicks": 0,
      "impressions": 2,
      "position": -1
@@ -37600,25 +37600,7 @@
      "position": -1
     },
     {
-     "query": "410",
-     "clicks": 0,
-     "impressions": 2,
-     "position": -1
-    },
-    {
-     "query": "warto wiedzieć strony w katalogu dodaj serwis dodaj artykuł zaloguj",
-     "clicks": 0,
-     "impressions": 2,
-     "position": -1
-    },
-    {
-     "query": "?utm_term=autor_numer",
-     "clicks": 0,
-     "impressions": 2,
-     "position": -1
-    },
-    {
-     "query": "dusikowski władysław",
+     "query": "jednego dnia strona działa a drugiego już nie podobne wyszukiwania",
      "clicks": 0,
      "impressions": 2,
      "position": -1
@@ -37636,19 +37618,37 @@
      "position": -1
     },
     {
+     "query": "warto wiedzieć strony w katalogu dodaj serwis dodaj artykuł zaloguj",
+     "clicks": 0,
+     "impressions": 2,
+     "position": -1
+    },
+    {
+     "query": "?utm_term=autor_numer",
+     "clicks": 0,
+     "impressions": 2,
+     "position": -1
+    },
+    {
      "query": "offers.42{46.org/?offer=174&uid=01942b0a-0f13-776a-8148-c964382bb26b&subid=79stq&utm_source=source",
      "clicks": 0,
      "impressions": 2,
      "position": -1
     },
     {
-     "query": "moz",
+     "query": "dusikowski władysław",
      "clicks": 0,
      "impressions": 2,
      "position": -1
     },
     {
      "query": "wayback",
+     "clicks": 0,
+     "impressions": 2,
+     "position": -1
+    },
+    {
+     "query": "moz",
      "clicks": 0,
      "impressions": 2,
      "position": -1
@@ -37666,7 +37666,7 @@
      "position": -1
     },
     {
-     "query": "serwis internetowy",
+     "query": "dzumae08itnotehfnrm,btln;y/mym,y.y/m/y/my",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -37678,19 +37678,25 @@
      "position": -1
     },
     {
-     "query": "apamowniw",
+     "query": "domain rating dr 90+ price",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "what is a marki event",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "ctr co a firma",
      "clicks": 0,
      "impressions": 1,
      "position": -1
     },
     {
      "query": "allegro tag h1 co to",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "dzumae08itnotehfnrm,btln;y/mym,y.y/m/y/my",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -37714,91 +37720,13 @@
      "position": -1
     },
     {
-     "query": "ctr co a firma",
+     "query": "serwis internetowy",
      "clicks": 0,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "what is a marki event",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "domain rating dr 90+ price",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "pagerank",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "bingujemy",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "google wyszukiwarka internetowa",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "bing czy google",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "źródło strony",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "ctr-b znaczenie",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "czy nazwa nowo utworzonego kanału na youtbue jest od razu widoczna publicznie",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "kanibalizacja słów",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "scenariusz grupy fokusowej",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "a znaleźć źródło strony",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "czy jetback istnieje",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "poland cta co oznacza skrot?",
+     "query": "apamowniw",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -37816,6 +37744,66 @@
      "position": -1
     },
     {
+     "query": "poland cta co oznacza skrot?",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "a znaleźć źródło strony",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "czy nazwa nowo utworzonego kanału na youtbue jest od razu widoczna publicznie",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "kanibalizacja słów",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "czy jetback istnieje",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "bingujemy",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "filary biznesu",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "google wyszukiwarka internetowa",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "źródło strony",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "ctr-b znaczenie",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
      "query": "pl sitemapa",
      "clicks": 0,
      "impressions": 1,
@@ -37828,55 +37816,19 @@
      "position": -1
     },
     {
-     "query": "filary biznesu",
+     "query": "scenariusz grupy fokusowej",
      "clicks": 0,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "graficznie tytuł prezentuje się solidnie, ale optymalizacja na niektórych platformach pozostawia sporo do życzenia – zdarzają się spadki płynności i błędy techniczne. sztuczna inteligencja przeciwników nie imponuje, co obniża poziom wyzwania. brakuje także systemu moralności, co ogranicza konsekwencje wyborów gracza. mimo tych niedociągnięć hogwarts legacy to rozbudowana gra akcji z elementami rpg, która spełnia oczekiwania wielu graczy. nie jest to rewolucja gatunkowa, ale daje szansę na przeżycie własnej historii w znanym świecie. dla fanów magii i eksploracji to propozycja godna uwagi, choć niepozbawiona wad. dobrze wykorzystuje licencję, ale opiera się bardziej na atmosferze niż na świeżych pomysłach.",
+     "query": "pagerank",
      "clicks": 0,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "jak kopiwoac wizytkwoe z google",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "info grafika zamow",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "wwvcltvja",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "klienci wymagania",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "witryna internetowa wikipedia",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "pokazać uproszczoną stronę",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "wyszukwarka glosowa stron web",
+     "query": "bing czy google",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -37894,7 +37846,7 @@
      "position": -1
     },
     {
-     "query": "icea group",
+     "query": "wwvcltvja",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -37906,25 +37858,13 @@
      "position": -1
     },
     {
+     "query": "graficznie tytuł prezentuje się solidnie, ale optymalizacja na niektórych platformach pozostawia sporo do życzenia – zdarzają się spadki płynności i błędy techniczne. sztuczna inteligencja przeciwników nie imponuje, co obniża poziom wyzwania. brakuje także systemu moralności, co ogranicza konsekwencje wyborów gracza. mimo tych niedociągnięć hogwarts legacy to rozbudowana gra akcji z elementami rpg, która spełnia oczekiwania wielu graczy. nie jest to rewolucja gatunkowa, ale daje szansę na przeżycie własnej historii w znanym świecie. dla fanów magii i eksploracji to propozycja godna uwagi, choć niepozbawiona wad. dobrze wykorzystuje licencję, ale opiera się bardziej na atmosferze niż na świeżych pomysłach.",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
      "query": "czesc,  prosba o skorzystanie z produktu cmp: https://marketplace.citigroup.net/product/49711_657854_global translate",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "zmiana linka podstrony wix",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "tagi informujące",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "jakie mają potrzeby i w jaki sposób produkty/usługi firmy odpowiadają na to zapotrzebowanie?",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -37942,7 +37882,19 @@
      "position": -1
     },
     {
+     "query": "witryna internetowa wikipedia",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
      "query": "emulatorgames error 403",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "pokazać uproszczoną stronę",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -37954,13 +37906,55 @@
      "position": -1
     },
     {
+     "query": "wyszukwarka glosowa stron web",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "klienci wymagania",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "info grafika zamow",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
      "query": "dynamiczna strona internetowa definicja",
      "clicks": 0,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "witryna internetowa",
+     "query": "tagi informujące",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "jak kopiwoac wizytkwoe z google",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "jakie mają potrzeby i w jaki sposób produkty/usługi firmy odpowiadają na to zapotrzebowanie?",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "icea group",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "zmiana linka podstrony wix",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -37972,19 +37966,7 @@
      "position": -1
     },
     {
-     "query": "user agent",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "możesz zmienić adres, korzystając z tego linku:",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "elementy reklamiacyjne",
+     "query": "witryna internetowa",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -38008,13 +37990,7 @@
      "position": -1
     },
     {
-     "query": "rel alternate polish",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "pozycjonowanie h1",
+     "query": "elementy reklamiacyjne",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -38026,7 +38002,7 @@
      "position": -1
     },
     {
-     "query": "saasa",
+     "query": "user agent",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -38044,19 +38020,25 @@
      "position": -1
     },
     {
+     "query": "rel alternate polish",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
      "query": "pozycjonowanie h1",
      "clicks": 0,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "zmiana nazwy linku free",
+     "query": "saasa",
      "clicks": 0,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "konto nadzorowane a dodawanie filmów i nagrań na kanał",
+     "query": "możesz zmienić adres, korzystając z tego linku:",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -38068,7 +38050,7 @@
      "position": -1
     },
     {
-     "query": "dobry przekaz idzie",
+     "query": "pozycjonowanie h1",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -38080,7 +38062,7 @@
      "position": -1
     },
     {
-     "query": "dolacz do mojego kanalu na youtube",
+     "query": "dobry przekaz idzie",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -38104,37 +38086,19 @@
      "position": -1
     },
     {
-     "query": "struktura treści architektura informacji",
+     "query": "zmiana nazwy linku free",
      "clicks": 0,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "jetpock",
+     "query": "konto nadzorowane a dodawanie filmów i nagrań na kanał",
      "clicks": 0,
      "impressions": 1,
      "position": -1
     },
     {
-     "query": "firefox telefon czy jest szukanie głosem",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "co oznaczaja czesci ip",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "com.vo.icea",
-     "clicks": 0,
-     "impressions": 1,
-     "position": -1
-    },
-    {
-     "query": "co to jest ropo",
+     "query": "dolacz do mojego kanalu na youtube",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -38146,7 +38110,43 @@
      "position": -1
     },
     {
+     "query": "struktura treści architektura informacji",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "wierzymy, że wyszukiwarka powinna zapewniać:",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "ustawienia analitics",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "branża komplementarna to uzupełniająca się",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
      "query": "poszukiwawczyalert czym jest",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "co oznaczaja czesci ip",
+     "clicks": 0,
+     "impressions": 1,
+     "position": -1
+    },
+    {
+     "query": "wwyback machinr",
      "clicks": 0,
      "impressions": 1,
      "position": -1
@@ -38410,6 +38410,2322 @@
      "path": "/konsultacja/maxsote/",
      "pageviews": 0,
      "users": 1
+    }
+   ],
+   "landing_pages": {
+    "window": {
+     "start": "2026-06-23",
+     "end": "2026-07-20"
+    },
+    "rows": [
+     {
+      "path": "/",
+      "sessions": 2142,
+      "engagement_rate": 63.35,
+      "avg_engagement_s": 44.9,
+      "pages_per_session": 1.69
+     },
+     {
+      "path": "(not set)",
+      "sessions": 269,
+      "engagement_rate": 10.41,
+      "avg_engagement_s": 14.8,
+      "pages_per_session": 0.0
+     },
+     {
+      "path": "/konsultacja/autopay",
+      "sessions": 126,
+      "engagement_rate": 63.49,
+      "avg_engagement_s": 23.5,
+      "pages_per_session": 1.31
+     },
+     {
+      "path": "/kariera",
+      "sessions": 105,
+      "engagement_rate": 84.76,
+      "avg_engagement_s": 65.2,
+      "pages_per_session": 1.86
+     },
+     {
+      "path": "/o-nas",
+      "sessions": 74,
+      "engagement_rate": 75.68,
+      "avg_engagement_s": 57.4,
+      "pages_per_session": 1.72
+     },
+     {
+      "path": "",
+      "sessions": 67,
+      "engagement_rate": 0.0,
+      "avg_engagement_s": 27.1,
+      "pages_per_session": 0.0
+     },
+     {
+      "path": "/oferta/ai-search",
+      "sessions": 59,
+      "engagement_rate": 57.63,
+      "avg_engagement_s": 31.6,
+      "pages_per_session": 1.51
+     },
+     {
+      "path": "/kontakt",
+      "sessions": 34,
+      "engagement_rate": 94.12,
+      "avg_engagement_s": 21.3,
+      "pages_per_session": 1.26
+     },
+     {
+      "path": "/blog/jak-sprawdzic-czy-ai-poleca-twoja-marke",
+      "sessions": 19,
+      "engagement_rate": 73.68,
+      "avg_engagement_s": 33.2,
+      "pages_per_session": 1.32
+     },
+     {
+      "path": "/program-partnerski",
+      "sessions": 19,
+      "engagement_rate": 73.68,
+      "avg_engagement_s": 40.7,
+      "pages_per_session": 1.32
+     },
+     {
+      "path": "/oferta/audyt-seo",
+      "sessions": 18,
+      "engagement_rate": 55.56,
+      "avg_engagement_s": 37.6,
+      "pages_per_session": 2.39
+     },
+     {
+      "path": "/case-study",
+      "sessions": 17,
+      "engagement_rate": 76.47,
+      "avg_engagement_s": 17.5,
+      "pages_per_session": 2.35
+     },
+     {
+      "path": "/blog/co-robi-ux-researcher",
+      "sessions": 16,
+      "engagement_rate": 93.75,
+      "avg_engagement_s": 53.5,
+      "pages_per_session": 1.06
+     },
+     {
+      "path": "/blog/seo-co-to-jest",
+      "sessions": 16,
+      "engagement_rate": 87.5,
+      "avg_engagement_s": 7.2,
+      "pages_per_session": 1.0
+     },
+     {
+      "path": "/konsultacja/dealavo",
+      "sessions": 15,
+      "engagement_rate": 73.33,
+      "avg_engagement_s": 26.5,
+      "pages_per_session": 2.4
+     },
+     {
+      "path": "/blog/czym-jest-google-analytics-4-dlaczego-warto-skorzystac-z-nowego-analyticsa",
+      "sessions": 13,
+      "engagement_rate": 69.23,
+      "avg_engagement_s": 25.8,
+      "pages_per_session": 1.0
+     },
+     {
+      "path": "/oferta/pozycjonowanie",
+      "sessions": 13,
+      "engagement_rate": 84.62,
+      "avg_engagement_s": 33.4,
+      "pages_per_session": 1.62
+     },
+     {
+      "path": "/one-stop-shop",
+      "sessions": 13,
+      "engagement_rate": 69.23,
+      "avg_engagement_s": 93.8,
+      "pages_per_session": 2.31
+     },
+     {
+      "path": "/instrukcje-i-poradniki",
+      "sessions": 12,
+      "engagement_rate": 91.67,
+      "avg_engagement_s": 11.8,
+      "pages_per_session": 1.67
+     },
+     {
+      "path": "/blog/co-to-jest-wspolczynnik-zaangazowania-engagement-rate",
+      "sessions": 11,
+      "engagement_rate": 81.82,
+      "avg_engagement_s": 31.5,
+      "pages_per_session": 1.09
+     },
+     {
+      "path": "/blog/klastry-tematyczne-i-ich-wplyw-na-content-marketing",
+      "sessions": 11,
+      "engagement_rate": 100.0,
+      "avg_engagement_s": 75.1,
+      "pages_per_session": 3.09
+     },
+     {
+      "path": "/blog/jak-wycenic-domene",
+      "sessions": 10,
+      "engagement_rate": 70.0,
+      "avg_engagement_s": 254.1,
+      "pages_per_session": 1.1
+     },
+     {
+      "path": "/blog/czym-jest-google-e-e-a-t-i-jak-je-wykorzystac-w-seo",
+      "sessions": 9,
+      "engagement_rate": 100.0,
+      "avg_engagement_s": 48.8,
+      "pages_per_session": 1.22
+     },
+     {
+      "path": "/blog/icea-przejmuje-gonito-i-wchodzi-w-marketplace-commerce",
+      "sessions": 9,
+      "engagement_rate": 77.78,
+      "avg_engagement_s": 73.8,
+      "pages_per_session": 1.22
+     },
+     {
+      "path": "/ai-asset-report",
+      "sessions": 8,
+      "engagement_rate": 87.5,
+      "avg_engagement_s": 93.0,
+      "pages_per_session": 3.62
+     },
+     {
+      "path": "/baza-wiedzy",
+      "sessions": 8,
+      "engagement_rate": 100.0,
+      "avg_engagement_s": 50.8,
+      "pages_per_session": 3.62
+     },
+     {
+      "path": "/blog/ai-mode-co-to-jest",
+      "sessions": 8,
+      "engagement_rate": 37.5,
+      "avg_engagement_s": 10.1,
+      "pages_per_session": 1.0
+     },
+     {
+      "path": "/oferta/pozycjonowanie/sklepow",
+      "sessions": 8,
+      "engagement_rate": 75.0,
+      "avg_engagement_s": 75.6,
+      "pages_per_session": 2.88
+     },
+     {
+      "path": "/blog/badania-jakosciowe-vs-badania-ilosciowe",
+      "sessions": 7,
+      "engagement_rate": 100.0,
+      "avg_engagement_s": 67.0,
+      "pages_per_session": 1.57
+     },
+     {
+      "path": "/blog/jak-polaczyc-llm-z-e-mail-marketingiem-przez-mcp-praktyczne-zastosowania-ai-w-ecomailu",
+      "sessions": 6,
+      "engagement_rate": 83.33,
+      "avg_engagement_s": 9.7,
+      "pages_per_session": 1.0
+     },
+     {
+      "path": "/blog/jak-znalezc-kopie-strony-w-google",
+      "sessions": 6,
+      "engagement_rate": 83.33,
+      "avg_engagement_s": 19.2,
+      "pages_per_session": 1.0
+     },
+     {
+      "path": "/blog/kod-zrodlowy-witryny-jak-go-odczytac",
+      "sessions": 6,
+      "engagement_rate": 66.67,
+      "avg_engagement_s": 21.7,
+      "pages_per_session": 1.0
+     },
+     {
+      "path": "/kariera/lider-sprzedazy-sales-director",
+      "sessions": 6,
+      "engagement_rate": 66.67,
+      "avg_engagement_s": 22.3,
+      "pages_per_session": 1.67
+     },
+     {
+      "path": "/oferta/pozycjonowanie/sklepow/selly",
+      "sessions": 6,
+      "engagement_rate": 100.0,
+      "avg_engagement_s": 25.5,
+      "pages_per_session": 1.17
+     },
+     {
+      "path": "/blog/brief-dla-agencji-marketingowej-jak-wyglada-jak-go-napisac",
+      "sessions": 5,
+      "engagement_rate": 80.0,
+      "avg_engagement_s": 7.8,
+      "pages_per_session": 1.0
+     },
+     {
+      "path": "/blog/czym-jest-outreach-i-jaki-ma-wplywa-na-seo",
+      "sessions": 5,
+      "engagement_rate": 40.0,
+      "avg_engagement_s": 33.4,
+      "pages_per_session": 2.2
+     },
+     {
+      "path": "/blog/czym-jest-rag-i-jak-wplywa-na-rozwoj-ai",
+      "sessions": 5,
+      "engagement_rate": 100.0,
+      "avg_engagement_s": 41.6,
+      "pages_per_session": 1.2
+     },
+     {
+      "path": "/blog/najlepsza-nazwa-kanalu-youtube-jaka-wybrac-i-dlaczego-jest-tak-wazna",
+      "sessions": 5,
+      "engagement_rate": 40.0,
+      "avg_engagement_s": 5.0,
+      "pages_per_session": 1.0
+     },
+     {
+      "path": "/blog/sklep-internetowy-goshop-czy-warto",
+      "sessions": 5,
+      "engagement_rate": 80.0,
+      "avg_engagement_s": 28.8,
+      "pages_per_session": 1.0
+     },
+     {
+      "path": "/kariera/customer-success-specialist",
+      "sessions": 5,
+      "engagement_rate": 80.0,
+      "avg_engagement_s": 12.8,
+      "pages_per_session": 1.4
+     },
+     {
+      "path": "/oferta/cro",
+      "sessions": 5,
+      "engagement_rate": 60.0,
+      "avg_engagement_s": 36.4,
+      "pages_per_session": 2.0
+     },
+     {
+      "path": "/slownik/marketing",
+      "sessions": 5,
+      "engagement_rate": 80.0,
+      "avg_engagement_s": 15.6,
+      "pages_per_session": 1.0
+     },
+     {
+      "path": "/blog",
+      "sessions": 4,
+      "engagement_rate": 50.0,
+      "avg_engagement_s": 12.5,
+      "pages_per_session": 2.0
+     },
+     {
+      "path": "/blog/co-to-jest-witryna-internetowa",
+      "sessions": 4,
+      "engagement_rate": 50.0,
+      "avg_engagement_s": 23.2,
+      "pages_per_session": 1.0
+     },
+     {
+      "path": "/blog/czym-jest-page-rank-strony-jak-mozemy-go-sprawdzic",
+      "sessions": 4,
+      "engagement_rate": 50.0,
+      "avg_engagement_s": 96.5,
+      "pages_per_session": 1.0
+     },
+     {
+      "path": "/blog/czym-zajmuje-sie-agencja-marketingowa",
+      "sessions": 4,
+      "engagement_rate": 50.0,
+      "avg_engagement_s": 5.5,
+      "pages_per_session": 1.5
+     },
+     {
+      "path": "/blog/icea-holiday-znamy-zwyciezcow-konkursu",
+      "sessions": 4,
+      "engagement_rate": 100.0,
+      "avg_engagement_s": 8.5,
+      "pages_per_session": 1.5
+     },
+     {
+      "path": "/blog/icea-wzmacnia-zarzadzanie-sprzedaza-i-marketingiem-do-firmy-dolaczaja-artur-osak-i-dawid-fabis-wspierajac-realizacje-strategii-rozwoju-i-budowe-nowej-generacji-uslug-search",
+      "sessions": 4,
+      "engagement_rate": 75.0,
+      "avg_engagement_s": 56.5,
+      "pages_per_session": 2.0
+     },
+     {
+      "path": "/blog/nazwa-konkurencji-w-reklamach-google-ads-czy-jest-to-dozwolone",
+      "sessions": 4,
+      "engagement_rate": 100.0,
+      "avg_engagement_s": 84.5,
+      "pages_per_session": 1.0
+     },
+     {
+      "path": "/blog/podobienstwo-cosinusowe-w-seo-jak-dziala-i-dlaczego-ma-znaczenie",
+      "sessions": 4,
+      "engagement_rate": 100.0,
+      "avg_engagement_s": 83.0,
+      "pages_per_session": 1.0
+     }
+    ]
+   },
+   "monthly": [
+    {
+     "month": "202406",
+     "sessions": 5619,
+     "users": 4459,
+     "new_users": 4115
+    },
+    {
+     "month": "202407",
+     "sessions": 5261,
+     "users": 4003,
+     "new_users": 3679
+    },
+    {
+     "month": "202408",
+     "sessions": 4387,
+     "users": 4094,
+     "new_users": 3977
+    },
+    {
+     "month": "202409",
+     "sessions": 4298,
+     "users": 3172,
+     "new_users": 2924
+    },
+    {
+     "month": "202410",
+     "sessions": 4187,
+     "users": 3064,
+     "new_users": 2760
+    },
+    {
+     "month": "202411",
+     "sessions": 4437,
+     "users": 3535,
+     "new_users": 3255
+    },
+    {
+     "month": "202412",
+     "sessions": 4017,
+     "users": 3048,
+     "new_users": 2771
+    },
+    {
+     "month": "202501",
+     "sessions": 5240,
+     "users": 4646,
+     "new_users": 4473
+    },
+    {
+     "month": "202502",
+     "sessions": 5123,
+     "users": 3998,
+     "new_users": 3680
+    },
+    {
+     "month": "202503",
+     "sessions": 6108,
+     "users": 4471,
+     "new_users": 4150
+    },
+    {
+     "month": "202504",
+     "sessions": 4928,
+     "users": 3335,
+     "new_users": 3001
+    },
+    {
+     "month": "202505",
+     "sessions": 5215,
+     "users": 3375,
+     "new_users": 2992
+    },
+    {
+     "month": "202506",
+     "sessions": 5943,
+     "users": 4119,
+     "new_users": 3651
+    },
+    {
+     "month": "202507",
+     "sessions": 6431,
+     "users": 4108,
+     "new_users": 3466
+    },
+    {
+     "month": "202508",
+     "sessions": 6773,
+     "users": 3925,
+     "new_users": 3224
+    },
+    {
+     "month": "202509",
+     "sessions": 5293,
+     "users": 3208,
+     "new_users": 2314
+    },
+    {
+     "month": "202510",
+     "sessions": 5457,
+     "users": 3322,
+     "new_users": 2566
+    },
+    {
+     "month": "202511",
+     "sessions": 4515,
+     "users": 2825,
+     "new_users": 2200
+    },
+    {
+     "month": "202512",
+     "sessions": 3779,
+     "users": 2155,
+     "new_users": 1797
+    },
+    {
+     "month": "202601",
+     "sessions": 4622,
+     "users": 2551,
+     "new_users": 2164
+    },
+    {
+     "month": "202602",
+     "sessions": 4184,
+     "users": 2443,
+     "new_users": 2006
+    },
+    {
+     "month": "202603",
+     "sessions": 4379,
+     "users": 2503,
+     "new_users": 2081
+    },
+    {
+     "month": "202604",
+     "sessions": 4090,
+     "users": 2466,
+     "new_users": 2085
+    },
+    {
+     "month": "202605",
+     "sessions": 4276,
+     "users": 2489,
+     "new_users": 2114
+    },
+    {
+     "month": "202606",
+     "sessions": 3582,
+     "users": 2235,
+     "new_users": 1868
+    },
+    {
+     "month": "202607",
+     "sessions": 2489,
+     "users": 1422,
+     "new_users": 1132
+    }
+   ],
+   "channels_monthly": [
+    {
+     "month": "202406",
+     "channel": "Organic Search",
+     "sessions": 3541
+    },
+    {
+     "month": "202406",
+     "channel": "Direct",
+     "sessions": 1432
+    },
+    {
+     "month": "202406",
+     "channel": "Referral",
+     "sessions": 246
+    },
+    {
+     "month": "202406",
+     "channel": "Paid Search",
+     "sessions": 168
+    },
+    {
+     "month": "202406",
+     "channel": "Display",
+     "sessions": 99
+    },
+    {
+     "month": "202406",
+     "channel": "Organic Social",
+     "sessions": 75
+    },
+    {
+     "month": "202406",
+     "channel": "Email",
+     "sessions": 20
+    },
+    {
+     "month": "202406",
+     "channel": "Unassigned",
+     "sessions": 19
+    },
+    {
+     "month": "202406",
+     "channel": "Paid Social",
+     "sessions": 12
+    },
+    {
+     "month": "202406",
+     "channel": "Paid Video",
+     "sessions": 8
+    },
+    {
+     "month": "202406",
+     "channel": "Organic Video",
+     "sessions": 5
+    },
+    {
+     "month": "202406",
+     "channel": "Organic Shopping",
+     "sessions": 1
+    },
+    {
+     "month": "202407",
+     "channel": "Organic Search",
+     "sessions": 3061
+    },
+    {
+     "month": "202407",
+     "channel": "Direct",
+     "sessions": 1421
+    },
+    {
+     "month": "202407",
+     "channel": "Referral",
+     "sessions": 285
+    },
+    {
+     "month": "202407",
+     "channel": "Paid Search",
+     "sessions": 263
+    },
+    {
+     "month": "202407",
+     "channel": "Display",
+     "sessions": 105
+    },
+    {
+     "month": "202407",
+     "channel": "Organic Social",
+     "sessions": 81
+    },
+    {
+     "month": "202407",
+     "channel": "Paid Video",
+     "sessions": 17
+    },
+    {
+     "month": "202407",
+     "channel": "Unassigned",
+     "sessions": 17
+    },
+    {
+     "month": "202407",
+     "channel": "Email",
+     "sessions": 7
+    },
+    {
+     "month": "202407",
+     "channel": "Organic Video",
+     "sessions": 5
+    },
+    {
+     "month": "202407",
+     "channel": "Paid Social",
+     "sessions": 3
+    },
+    {
+     "month": "202408",
+     "channel": "Organic Search",
+     "sessions": 2354
+    },
+    {
+     "month": "202408",
+     "channel": "Direct",
+     "sessions": 1287
+    },
+    {
+     "month": "202408",
+     "channel": "Referral",
+     "sessions": 273
+    },
+    {
+     "month": "202408",
+     "channel": "Paid Search",
+     "sessions": 231
+    },
+    {
+     "month": "202408",
+     "channel": "Organic Social",
+     "sessions": 144
+    },
+    {
+     "month": "202408",
+     "channel": "Display",
+     "sessions": 34
+    },
+    {
+     "month": "202408",
+     "channel": "Cross-network",
+     "sessions": 31
+    },
+    {
+     "month": "202408",
+     "channel": "Unassigned",
+     "sessions": 24
+    },
+    {
+     "month": "202408",
+     "channel": "Email",
+     "sessions": 4
+    },
+    {
+     "month": "202408",
+     "channel": "Organic Video",
+     "sessions": 2
+    },
+    {
+     "month": "202408",
+     "channel": "Paid Video",
+     "sessions": 1
+    },
+    {
+     "month": "202409",
+     "channel": "Organic Search",
+     "sessions": 2243
+    },
+    {
+     "month": "202409",
+     "channel": "Direct",
+     "sessions": 1252
+    },
+    {
+     "month": "202409",
+     "channel": "Referral",
+     "sessions": 286
+    },
+    {
+     "month": "202409",
+     "channel": "Paid Search",
+     "sessions": 213
+    },
+    {
+     "month": "202409",
+     "channel": "Organic Social",
+     "sessions": 111
+    },
+    {
+     "month": "202409",
+     "channel": "Display",
+     "sessions": 54
+    },
+    {
+     "month": "202409",
+     "channel": "Unassigned",
+     "sessions": 19
+    },
+    {
+     "month": "202409",
+     "channel": "Cross-network",
+     "sessions": 4
+    },
+    {
+     "month": "202409",
+     "channel": "Email",
+     "sessions": 4
+    },
+    {
+     "month": "202409",
+     "channel": "Paid Social",
+     "sessions": 2
+    },
+    {
+     "month": "202410",
+     "channel": "Organic Search",
+     "sessions": 2369
+    },
+    {
+     "month": "202410",
+     "channel": "Direct",
+     "sessions": 1172
+    },
+    {
+     "month": "202410",
+     "channel": "Referral",
+     "sessions": 328
+    },
+    {
+     "month": "202410",
+     "channel": "Organic Social",
+     "sessions": 124
+    },
+    {
+     "month": "202410",
+     "channel": "Display",
+     "sessions": 23
+    },
+    {
+     "month": "202410",
+     "channel": "Paid Search",
+     "sessions": 14
+    },
+    {
+     "month": "202410",
+     "channel": "Unassigned",
+     "sessions": 14
+    },
+    {
+     "month": "202410",
+     "channel": "Organic Video",
+     "sessions": 2
+    },
+    {
+     "month": "202411",
+     "channel": "Organic Search",
+     "sessions": 2481
+    },
+    {
+     "month": "202411",
+     "channel": "Direct",
+     "sessions": 1293
+    },
+    {
+     "month": "202411",
+     "channel": "Referral",
+     "sessions": 337
+    },
+    {
+     "month": "202411",
+     "channel": "Paid Search",
+     "sessions": 218
+    },
+    {
+     "month": "202411",
+     "channel": "Organic Social",
+     "sessions": 79
+    },
+    {
+     "month": "202411",
+     "channel": "Cross-network",
+     "sessions": 39
+    },
+    {
+     "month": "202411",
+     "channel": "Display",
+     "sessions": 27
+    },
+    {
+     "month": "202411",
+     "channel": "Unassigned",
+     "sessions": 27
+    },
+    {
+     "month": "202411",
+     "channel": "Email",
+     "sessions": 2
+    },
+    {
+     "month": "202411",
+     "channel": "Organic Video",
+     "sessions": 2
+    },
+    {
+     "month": "202412",
+     "channel": "Organic Search",
+     "sessions": 2263
+    },
+    {
+     "month": "202412",
+     "channel": "Direct",
+     "sessions": 936
+    },
+    {
+     "month": "202412",
+     "channel": "Paid Search",
+     "sessions": 429
+    },
+    {
+     "month": "202412",
+     "channel": "Referral",
+     "sessions": 253
+    },
+    {
+     "month": "202412",
+     "channel": "Organic Social",
+     "sessions": 52
+    },
+    {
+     "month": "202412",
+     "channel": "Display",
+     "sessions": 43
+    },
+    {
+     "month": "202412",
+     "channel": "Cross-network",
+     "sessions": 26
+    },
+    {
+     "month": "202412",
+     "channel": "Unassigned",
+     "sessions": 18
+    },
+    {
+     "month": "202412",
+     "channel": "Organic Video",
+     "sessions": 1
+    },
+    {
+     "month": "202501",
+     "channel": "Organic Search",
+     "sessions": 2674
+    },
+    {
+     "month": "202501",
+     "channel": "Direct",
+     "sessions": 1389
+    },
+    {
+     "month": "202501",
+     "channel": "Paid Search",
+     "sessions": 534
+    },
+    {
+     "month": "202501",
+     "channel": "Referral",
+     "sessions": 298
+    },
+    {
+     "month": "202501",
+     "channel": "Cross-network",
+     "sessions": 171
+    },
+    {
+     "month": "202501",
+     "channel": "Display",
+     "sessions": 84
+    },
+    {
+     "month": "202501",
+     "channel": "Organic Social",
+     "sessions": 54
+    },
+    {
+     "month": "202501",
+     "channel": "Unassigned",
+     "sessions": 22
+    },
+    {
+     "month": "202501",
+     "channel": "Email",
+     "sessions": 21
+    },
+    {
+     "month": "202501",
+     "channel": "Paid Video",
+     "sessions": 1
+    },
+    {
+     "month": "202502",
+     "channel": "Organic Search",
+     "sessions": 2072
+    },
+    {
+     "month": "202502",
+     "channel": "Direct",
+     "sessions": 1020
+    },
+    {
+     "month": "202502",
+     "channel": "Cross-network",
+     "sessions": 981
+    },
+    {
+     "month": "202502",
+     "channel": "Referral",
+     "sessions": 478
+    },
+    {
+     "month": "202502",
+     "channel": "Paid Search",
+     "sessions": 444
+    },
+    {
+     "month": "202502",
+     "channel": "Organic Social",
+     "sessions": 60
+    },
+    {
+     "month": "202502",
+     "channel": "Email",
+     "sessions": 25
+    },
+    {
+     "month": "202502",
+     "channel": "Unassigned",
+     "sessions": 21
+    },
+    {
+     "month": "202502",
+     "channel": "Paid Social",
+     "sessions": 4
+    },
+    {
+     "month": "202502",
+     "channel": "Organic Video",
+     "sessions": 3
+    },
+    {
+     "month": "202503",
+     "channel": "Cross-network",
+     "sessions": 2519
+    },
+    {
+     "month": "202503",
+     "channel": "Organic Search",
+     "sessions": 2207
+    },
+    {
+     "month": "202503",
+     "channel": "Direct",
+     "sessions": 576
+    },
+    {
+     "month": "202503",
+     "channel": "Referral",
+     "sessions": 322
+    },
+    {
+     "month": "202503",
+     "channel": "Paid Search",
+     "sessions": 268
+    },
+    {
+     "month": "202503",
+     "channel": "Organic Social",
+     "sessions": 116
+    },
+    {
+     "month": "202503",
+     "channel": "Unassigned",
+     "sessions": 40
+    },
+    {
+     "month": "202503",
+     "channel": "Paid Social",
+     "sessions": 16
+    },
+    {
+     "month": "202504",
+     "channel": "Organic Search",
+     "sessions": 2090
+    },
+    {
+     "month": "202504",
+     "channel": "Cross-network",
+     "sessions": 1323
+    },
+    {
+     "month": "202504",
+     "channel": "Paid Search",
+     "sessions": 526
+    },
+    {
+     "month": "202504",
+     "channel": "Direct",
+     "sessions": 511
+    },
+    {
+     "month": "202504",
+     "channel": "Referral",
+     "sessions": 315
+    },
+    {
+     "month": "202504",
+     "channel": "Organic Social",
+     "sessions": 59
+    },
+    {
+     "month": "202504",
+     "channel": "Unassigned",
+     "sessions": 33
+    },
+    {
+     "month": "202504",
+     "channel": "Paid Social",
+     "sessions": 27
+    },
+    {
+     "month": "202505",
+     "channel": "Organic Search",
+     "sessions": 1846
+    },
+    {
+     "month": "202505",
+     "channel": "Cross-network",
+     "sessions": 1606
+    },
+    {
+     "month": "202505",
+     "channel": "Paid Search",
+     "sessions": 803
+    },
+    {
+     "month": "202505",
+     "channel": "Direct",
+     "sessions": 530
+    },
+    {
+     "month": "202505",
+     "channel": "Referral",
+     "sessions": 244
+    },
+    {
+     "month": "202505",
+     "channel": "Organic Social",
+     "sessions": 42
+    },
+    {
+     "month": "202505",
+     "channel": "Paid Social",
+     "sessions": 32
+    },
+    {
+     "month": "202505",
+     "channel": "Unassigned",
+     "sessions": 24
+    },
+    {
+     "month": "202505",
+     "channel": "Email",
+     "sessions": 2
+    },
+    {
+     "month": "202505",
+     "channel": "Organic Shopping",
+     "sessions": 2
+    },
+    {
+     "month": "202505",
+     "channel": "Organic Video",
+     "sessions": 1
+    },
+    {
+     "month": "202506",
+     "channel": "Cross-network",
+     "sessions": 2627
+    },
+    {
+     "month": "202506",
+     "channel": "Organic Search",
+     "sessions": 1729
+    },
+    {
+     "month": "202506",
+     "channel": "Paid Search",
+     "sessions": 842
+    },
+    {
+     "month": "202506",
+     "channel": "Direct",
+     "sessions": 514
+    },
+    {
+     "month": "202506",
+     "channel": "Referral",
+     "sessions": 229
+    },
+    {
+     "month": "202506",
+     "channel": "Organic Social",
+     "sessions": 71
+    },
+    {
+     "month": "202506",
+     "channel": "Paid Social",
+     "sessions": 62
+    },
+    {
+     "month": "202506",
+     "channel": "Unassigned",
+     "sessions": 24
+    },
+    {
+     "month": "202506",
+     "channel": "Paid Other",
+     "sessions": 10
+    },
+    {
+     "month": "202506",
+     "channel": "Email",
+     "sessions": 6
+    },
+    {
+     "month": "202506",
+     "channel": "Organic Video",
+     "sessions": 1
+    },
+    {
+     "month": "202507",
+     "channel": "Cross-network",
+     "sessions": 2957
+    },
+    {
+     "month": "202507",
+     "channel": "Organic Search",
+     "sessions": 1673
+    },
+    {
+     "month": "202507",
+     "channel": "Paid Search",
+     "sessions": 761
+    },
+    {
+     "month": "202507",
+     "channel": "Direct",
+     "sessions": 616
+    },
+    {
+     "month": "202507",
+     "channel": "Referral",
+     "sessions": 221
+    },
+    {
+     "month": "202507",
+     "channel": "Organic Social",
+     "sessions": 90
+    },
+    {
+     "month": "202507",
+     "channel": "Paid Social",
+     "sessions": 55
+    },
+    {
+     "month": "202507",
+     "channel": "Unassigned",
+     "sessions": 50
+    },
+    {
+     "month": "202507",
+     "channel": "Email",
+     "sessions": 6
+    },
+    {
+     "month": "202508",
+     "channel": "Cross-network",
+     "sessions": 4137
+    },
+    {
+     "month": "202508",
+     "channel": "Organic Search",
+     "sessions": 1386
+    },
+    {
+     "month": "202508",
+     "channel": "Direct",
+     "sessions": 601
+    },
+    {
+     "month": "202508",
+     "channel": "Referral",
+     "sessions": 269
+    },
+    {
+     "month": "202508",
+     "channel": "Paid Search",
+     "sessions": 222
+    },
+    {
+     "month": "202508",
+     "channel": "Organic Social",
+     "sessions": 65
+    },
+    {
+     "month": "202508",
+     "channel": "Paid Social",
+     "sessions": 55
+    },
+    {
+     "month": "202508",
+     "channel": "Unassigned",
+     "sessions": 43
+    },
+    {
+     "month": "202508",
+     "channel": "Email",
+     "sessions": 9
+    },
+    {
+     "month": "202508",
+     "channel": "Organic Video",
+     "sessions": 3
+    },
+    {
+     "month": "202509",
+     "channel": "Cross-network",
+     "sessions": 2186
+    },
+    {
+     "month": "202509",
+     "channel": "Organic Search",
+     "sessions": 1580
+    },
+    {
+     "month": "202509",
+     "channel": "Direct",
+     "sessions": 671
+    },
+    {
+     "month": "202509",
+     "channel": "Referral",
+     "sessions": 346
+    },
+    {
+     "month": "202509",
+     "channel": "Paid Search",
+     "sessions": 305
+    },
+    {
+     "month": "202509",
+     "channel": "Unassigned",
+     "sessions": 230
+    },
+    {
+     "month": "202509",
+     "channel": "Organic Social",
+     "sessions": 48
+    },
+    {
+     "month": "202509",
+     "channel": "Paid Social",
+     "sessions": 28
+    },
+    {
+     "month": "202509",
+     "channel": "Email",
+     "sessions": 5
+    },
+    {
+     "month": "202509",
+     "channel": "Organic Video",
+     "sessions": 1
+    },
+    {
+     "month": "202510",
+     "channel": "Organic Search",
+     "sessions": 2376
+    },
+    {
+     "month": "202510",
+     "channel": "Cross-network",
+     "sessions": 1396
+    },
+    {
+     "month": "202510",
+     "channel": "Direct",
+     "sessions": 813
+    },
+    {
+     "month": "202510",
+     "channel": "Referral",
+     "sessions": 317
+    },
+    {
+     "month": "202510",
+     "channel": "Paid Search",
+     "sessions": 246
+    },
+    {
+     "month": "202510",
+     "channel": "Unassigned",
+     "sessions": 207
+    },
+    {
+     "month": "202510",
+     "channel": "Organic Social",
+     "sessions": 72
+    },
+    {
+     "month": "202510",
+     "channel": "Paid Social",
+     "sessions": 27
+    },
+    {
+     "month": "202510",
+     "channel": "Email",
+     "sessions": 23
+    },
+    {
+     "month": "202510",
+     "channel": "Paid Other",
+     "sessions": 4
+    },
+    {
+     "month": "202511",
+     "channel": "Organic Search",
+     "sessions": 1680
+    },
+    {
+     "month": "202511",
+     "channel": "Cross-network",
+     "sessions": 1358
+    },
+    {
+     "month": "202511",
+     "channel": "Direct",
+     "sessions": 619
+    },
+    {
+     "month": "202511",
+     "channel": "Paid Search",
+     "sessions": 331
+    },
+    {
+     "month": "202511",
+     "channel": "Unassigned",
+     "sessions": 264
+    },
+    {
+     "month": "202511",
+     "channel": "Referral",
+     "sessions": 217
+    },
+    {
+     "month": "202511",
+     "channel": "Organic Social",
+     "sessions": 78
+    },
+    {
+     "month": "202511",
+     "channel": "Paid Social",
+     "sessions": 28
+    },
+    {
+     "month": "202511",
+     "channel": "Paid Other",
+     "sessions": 16
+    },
+    {
+     "month": "202512",
+     "channel": "Cross-network",
+     "sessions": 1539
+    },
+    {
+     "month": "202512",
+     "channel": "Organic Search",
+     "sessions": 1267
+    },
+    {
+     "month": "202512",
+     "channel": "Direct",
+     "sessions": 436
+    },
+    {
+     "month": "202512",
+     "channel": "Referral",
+     "sessions": 231
+    },
+    {
+     "month": "202512",
+     "channel": "Paid Search",
+     "sessions": 159
+    },
+    {
+     "month": "202512",
+     "channel": "Organic Social",
+     "sessions": 40
+    },
+    {
+     "month": "202512",
+     "channel": "Unassigned",
+     "sessions": 35
+    },
+    {
+     "month": "202512",
+     "channel": "Paid Social",
+     "sessions": 17
+    },
+    {
+     "month": "202601",
+     "channel": "Cross-network",
+     "sessions": 2193
+    },
+    {
+     "month": "202601",
+     "channel": "Organic Search",
+     "sessions": 1518
+    },
+    {
+     "month": "202601",
+     "channel": "Direct",
+     "sessions": 525
+    },
+    {
+     "month": "202601",
+     "channel": "Referral",
+     "sessions": 227
+    },
+    {
+     "month": "202601",
+     "channel": "Paid Search",
+     "sessions": 86
+    },
+    {
+     "month": "202601",
+     "channel": "Organic Social",
+     "sessions": 55
+    },
+    {
+     "month": "202601",
+     "channel": "Unassigned",
+     "sessions": 34
+    },
+    {
+     "month": "202601",
+     "channel": "Paid Social",
+     "sessions": 31
+    },
+    {
+     "month": "202601",
+     "channel": "Organic Video",
+     "sessions": 2
+    },
+    {
+     "month": "202602",
+     "channel": "Cross-network",
+     "sessions": 1991
+    },
+    {
+     "month": "202602",
+     "channel": "Organic Search",
+     "sessions": 1246
+    },
+    {
+     "month": "202602",
+     "channel": "Direct",
+     "sessions": 564
+    },
+    {
+     "month": "202602",
+     "channel": "Referral",
+     "sessions": 259
+    },
+    {
+     "month": "202602",
+     "channel": "Paid Search",
+     "sessions": 91
+    },
+    {
+     "month": "202602",
+     "channel": "Organic Social",
+     "sessions": 42
+    },
+    {
+     "month": "202602",
+     "channel": "Paid Social",
+     "sessions": 33
+    },
+    {
+     "month": "202602",
+     "channel": "Unassigned",
+     "sessions": 25
+    },
+    {
+     "month": "202603",
+     "channel": "Cross-network",
+     "sessions": 1851
+    },
+    {
+     "month": "202603",
+     "channel": "Organic Search",
+     "sessions": 1387
+    },
+    {
+     "month": "202603",
+     "channel": "Direct",
+     "sessions": 603
+    },
+    {
+     "month": "202603",
+     "channel": "Referral",
+     "sessions": 238
+    },
+    {
+     "month": "202603",
+     "channel": "Organic Social",
+     "sessions": 149
+    },
+    {
+     "month": "202603",
+     "channel": "Paid Search",
+     "sessions": 100
+    },
+    {
+     "month": "202603",
+     "channel": "Unassigned",
+     "sessions": 24
+    },
+    {
+     "month": "202603",
+     "channel": "Paid Social",
+     "sessions": 16
+    },
+    {
+     "month": "202603",
+     "channel": "Organic Video",
+     "sessions": 3
+    },
+    {
+     "month": "202604",
+     "channel": "Cross-network",
+     "sessions": 1904
+    },
+    {
+     "month": "202604",
+     "channel": "Organic Search",
+     "sessions": 1381
+    },
+    {
+     "month": "202604",
+     "channel": "Direct",
+     "sessions": 541
+    },
+    {
+     "month": "202604",
+     "channel": "Referral",
+     "sessions": 182
+    },
+    {
+     "month": "202604",
+     "channel": "Paid Search",
+     "sessions": 61
+    },
+    {
+     "month": "202604",
+     "channel": "Organic Social",
+     "sessions": 45
+    },
+    {
+     "month": "202604",
+     "channel": "Unassigned",
+     "sessions": 21
+    },
+    {
+     "month": "202604",
+     "channel": "Paid Social",
+     "sessions": 13
+    },
+    {
+     "month": "202604",
+     "channel": "Email",
+     "sessions": 4
+    },
+    {
+     "month": "202605",
+     "channel": "Cross-network",
+     "sessions": 1892
+    },
+    {
+     "month": "202605",
+     "channel": "Organic Search",
+     "sessions": 1482
+    },
+    {
+     "month": "202605",
+     "channel": "Direct",
+     "sessions": 501
+    },
+    {
+     "month": "202605",
+     "channel": "Referral",
+     "sessions": 195
+    },
+    {
+     "month": "202605",
+     "channel": "Paid Search",
+     "sessions": 88
+    },
+    {
+     "month": "202605",
+     "channel": "Organic Social",
+     "sessions": 37
+    },
+    {
+     "month": "202605",
+     "channel": "Unassigned",
+     "sessions": 21
+    },
+    {
+     "month": "202605",
+     "channel": "Paid Social",
+     "sessions": 18
+    },
+    {
+     "month": "202606",
+     "channel": "Cross-network",
+     "sessions": 1589
+    },
+    {
+     "month": "202606",
+     "channel": "Organic Search",
+     "sessions": 1210
+    },
+    {
+     "month": "202606",
+     "channel": "Direct",
+     "sessions": 519
+    },
+    {
+     "month": "202606",
+     "channel": "Referral",
+     "sessions": 216
+    },
+    {
+     "month": "202606",
+     "channel": "Paid Search",
+     "sessions": 64
+    },
+    {
+     "month": "202606",
+     "channel": "Organic Social",
+     "sessions": 23
+    },
+    {
+     "month": "202606",
+     "channel": "Unassigned",
+     "sessions": 16
+    },
+    {
+     "month": "202606",
+     "channel": "Paid Social",
+     "sessions": 11
+    },
+    {
+     "month": "202606",
+     "channel": "AI Assistant",
+     "sessions": 10
+    },
+    {
+     "month": "202606",
+     "channel": "Email",
+     "sessions": 1
+    },
+    {
+     "month": "202607",
+     "channel": "Cross-network",
+     "sessions": 1137
+    },
+    {
+     "month": "202607",
+     "channel": "Organic Search",
+     "sessions": 766
+    },
+    {
+     "month": "202607",
+     "channel": "Direct",
+     "sessions": 354
+    },
+    {
+     "month": "202607",
+     "channel": "Referral",
+     "sessions": 112
+    },
+    {
+     "month": "202607",
+     "channel": "Unassigned",
+     "sessions": 77
+    },
+    {
+     "month": "202607",
+     "channel": "Paid Search",
+     "sessions": 44
+    },
+    {
+     "month": "202607",
+     "channel": "Organic Social",
+     "sessions": 28
+    },
+    {
+     "month": "202607",
+     "channel": "AI Assistant",
+     "sessions": 14
+    },
+    {
+     "month": "202607",
+     "channel": "Paid Social",
+     "sessions": 8
+    },
+    {
+     "month": "202607",
+     "channel": "Organic Video",
+     "sessions": 1
+    }
+   ]
+  },
+  "indexing": {
+   "window": {
+    "start": "2026-06-19",
+    "end": "2026-07-18"
+   },
+   "rows": [
+    {
+     "url": "https://www.grupa-icea.pl/",
+     "clicks": 370,
+     "impressions": 8407,
+     "ctr": 4.4,
+     "position": 17.8,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-21"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/kariera/",
+     "clicks": 82,
+     "impressions": 1676,
+     "ctr": 4.89,
+     "position": 4.0,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-19"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/o-nas/",
+     "clicks": 58,
+     "impressions": 2083,
+     "ctr": 2.78,
+     "position": 3.0,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-20"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/co-to-jest-wspolczynnik-zaangazowania-engagement-rate/",
+     "clicks": 16,
+     "impressions": 1002,
+     "ctr": 1.6,
+     "position": 15.0,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-20"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/kontakt/",
+     "clicks": 16,
+     "impressions": 1643,
+     "ctr": 0.97,
+     "position": 2.3,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-16"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/jak-wycenic-domene/",
+     "clicks": 15,
+     "impressions": 2050,
+     "ctr": 0.73,
+     "position": 11.3,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-19"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/ai-mode-co-to-jest/",
+     "clicks": 14,
+     "impressions": 14200,
+     "ctr": 0.1,
+     "position": 8.0,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-15"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/icea-przejmuje-gonito-i-wchodzi-w-marketplace-commerce/",
+     "clicks": 14,
+     "impressions": 287,
+     "ctr": 4.88,
+     "position": 7.7,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-13"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/program-partnerski/",
+     "clicks": 14,
+     "impressions": 1165,
+     "ctr": 1.2,
+     "position": 2.3,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-13"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/kod-zrodlowy-witryny-jak-go-odczytac/",
+     "clicks": 13,
+     "impressions": 3156,
+     "ctr": 0.41,
+     "position": 4.2,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-19"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/badania-jakosciowe-vs-badania-ilosciowe/",
+     "clicks": 12,
+     "impressions": 2573,
+     "ctr": 0.47,
+     "position": 28.4,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-13"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/co-robi-ux-researcher/",
+     "clicks": 10,
+     "impressions": 1291,
+     "ctr": 0.77,
+     "position": 13.5,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-20"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/czym-jest-google-analytics-4-dlaczego-warto-skorzystac-z-nowego-analyticsa/",
+     "clicks": 10,
+     "impressions": 8284,
+     "ctr": 0.12,
+     "position": 13.8,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-17"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/czym-jest-ui-design/",
+     "clicks": 10,
+     "impressions": 10262,
+     "ctr": 0.1,
+     "position": 13.8,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-09"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/czym-zajmuje-sie-agencja-marketingowa/",
+     "clicks": 8,
+     "impressions": 937,
+     "ctr": 0.85,
+     "position": 18.0,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-13"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/najlepsza-nazwa-kanalu-youtube-jaka-wybrac-i-dlaczego-jest-tak-wazna/",
+     "clicks": 8,
+     "impressions": 2081,
+     "ctr": 0.38,
+     "position": 5.5,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-20"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/co-to-jest-witryna-internetowa/",
+     "clicks": 7,
+     "impressions": 2181,
+     "ctr": 0.32,
+     "position": 11.5,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-13"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/czym-jest-google-e-e-a-t-i-jak-je-wykorzystac-w-seo/",
+     "clicks": 7,
+     "impressions": 1437,
+     "ctr": 0.49,
+     "position": 7.3,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-12"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/diamenty-forbes-rozdane-w-poznaniu-wsrod-laureatow-znalazla-sie-icea-group/",
+     "clicks": 7,
+     "impressions": 237,
+     "ctr": 2.95,
+     "position": 9.6,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-20"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/czym-jest-rag-i-jak-wplywa-na-rozwoj-ai/",
+     "clicks": 6,
+     "impressions": 2475,
+     "ctr": 0.24,
+     "position": 7.6,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-13"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/jak-sprawdzic-czy-ai-poleca-twoja-marke/",
+     "clicks": 6,
+     "impressions": 1659,
+     "ctr": 0.36,
+     "position": 5.4,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-14"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/podobienstwo-cosinusowe-w-seo-jak-dziala-i-dlaczego-ma-znaczenie/",
+     "clicks": 6,
+     "impressions": 295,
+     "ctr": 2.03,
+     "position": 3.3,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-20"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/slownik/marketing/",
+     "clicks": 6,
+     "impressions": 1759,
+     "ctr": 0.34,
+     "position": 23.4,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-13"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/brief-dla-agencji-marketingowej-jak-wyglada-jak-go-napisac/",
+     "clicks": 5,
+     "impressions": 718,
+     "ctr": 0.7,
+     "position": 30.0,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-14"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/czym-jest-page-rank-strony-jak-mozemy-go-sprawdzic/",
+     "clicks": 5,
+     "impressions": 3797,
+     "ctr": 0.13,
+     "position": 15.2,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-13"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/czym-sa-makiety-low-fi-i-high-fi/",
+     "clicks": 5,
+     "impressions": 510,
+     "ctr": 0.98,
+     "position": 7.3,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-20"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/sposoby-na-weryfikacje-i-przejecie-wizytowki-google/",
+     "clicks": 5,
+     "impressions": 358,
+     "ctr": 1.4,
+     "position": 12.6,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-14"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/case-study/wzrost-zaangazowania-i-207-fraz-w-top-3-strategia-seo-dla-sklepu-z-materacami-dzieciecymi/",
+     "clicks": 5,
+     "impressions": 29,
+     "ctr": 17.24,
+     "position": 5.2,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-14"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/oferta/pozycjonowanie/",
+     "clicks": 5,
+     "impressions": 1685,
+     "ctr": 0.3,
+     "position": 12.9,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-20"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/jak-indeksuja-sie-strony-w-google-i-ile-to-trwa-sprawdz-jaki-wplyw-na-seo-ma-indeksowanie/",
+     "clicks": 4,
+     "impressions": 5840,
+     "ctr": 0.07,
+     "position": 12.5,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-14"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/jak-znalezc-kopie-strony-w-google/",
+     "clicks": 4,
+     "impressions": 474,
+     "ctr": 0.84,
+     "position": 10.6,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-14"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/na-czym-polega-blad-410-oraz-404-na-stronie/",
+     "clicks": 4,
+     "impressions": 818,
+     "ctr": 0.49,
+     "position": 10.3,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-20"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/na-czym-polegaja-tagi-hreflang/",
+     "clicks": 4,
+     "impressions": 593,
+     "ctr": 0.67,
+     "position": 8.6,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-06"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/nazwa-konkurencji-w-reklamach-google-ads-czy-jest-to-dozwolone/",
+     "clicks": 4,
+     "impressions": 182,
+     "ctr": 2.2,
+     "position": 14.6,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-12"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/porownanie-platform-e-commerce/",
+     "clicks": 4,
+     "impressions": 917,
+     "ctr": 0.44,
+     "position": 12.6,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-18"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/sklep-internetowy-goshop-czy-warto/",
+     "clicks": 4,
+     "impressions": 167,
+     "ctr": 2.4,
+     "position": 5.2,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-06-22"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/oferta/ads/",
+     "clicks": 4,
+     "impressions": 75,
+     "ctr": 5.33,
+     "position": 7.8,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-20"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/wp-content/uploads/2023/07/Plan-Polaczenia-DNH.pdf",
+     "clicks": 4,
+     "impressions": 24,
+     "ctr": 16.67,
+     "position": 9.5,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-09"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/bing-vs-google-roznice-w-pozycjonowaniu/",
+     "clicks": 3,
+     "impressions": 914,
+     "ctr": 0.33,
+     "position": 11.3,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-19"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/co-to-jest-facebook-marketplace-i-czy-warto-sie-nim-zainteresowac/",
+     "clicks": 3,
+     "impressions": 7525,
+     "ctr": 0.04,
+     "position": 8.9,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-15"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/co-to-jest-infografika-i-jak-ja-stworzyc/",
+     "clicks": 3,
+     "impressions": 3299,
+     "ctr": 0.09,
+     "position": 13.0,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-19"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/co-to-jest-social-media-marketing/",
+     "clicks": 3,
+     "impressions": 2529,
+     "ctr": 0.12,
+     "position": 24.3,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-01"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/czas-na-icea-futsal-poznan/",
+     "clicks": 3,
+     "impressions": 10,
+     "ctr": 30.0,
+     "position": 3.2,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-20"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/czy-oprogramowania-open-source-sa-naprawde-bezplatne/",
+     "clicks": 3,
+     "impressions": 167,
+     "ctr": 1.8,
+     "position": 9.5,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-03"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/czym-jest-przekierowanie-301-kiedy-warto-z-niego-korzystac/",
+     "clicks": 3,
+     "impressions": 533,
+     "ctr": 0.56,
+     "position": 23.0,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-06-30"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/dlugookresowa-wartosc-klienta-cltv-co-to-jest-i-jak-ja-obliczyc/",
+     "clicks": 3,
+     "impressions": 114,
+     "ctr": 2.63,
+     "position": 7.1,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-19"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/handel-spolecznosciowy-i-jego-wplyw-na-e-commerce/",
+     "clicks": 3,
+     "impressions": 10,
+     "ctr": 30.0,
+     "position": 5.7,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-13"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/hosting-seo-co-to-jest-i-jak-wybrac-najlepszy/",
+     "clicks": 3,
+     "impressions": 878,
+     "ctr": 0.34,
+     "position": 8.8,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-08"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/icea-holiday-znamy-zwyciezcow-konkursu/",
+     "clicks": 3,
+     "impressions": 30,
+     "ctr": 10.0,
+     "position": 9.3,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-07-20"
+    },
+    {
+     "url": "https://www.grupa-icea.pl/blog/jak-i-jakie-opinie-konsumenckie-wplywaja-na-seo-sklepu-internetowego/",
+     "clicks": 3,
+     "impressions": 224,
+     "ctr": 1.34,
+     "position": 6.2,
+     "indexed": true,
+     "verdict": "PASS",
+     "coverage_state": "Submitted and indexed",
+     "last_crawl": "2026-06-24"
     }
    ]
   }
