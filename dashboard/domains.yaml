@@ -72,6 +72,11 @@ global:
     cost_fallback: 0.16 # zł/SMS gdy wycena test=1 nie zadziała
   openrouter:
     enabled: true
+  # Alerty progowe po przebiegu collectora (mail przez Resend, sekret RESEND_API_KEY).
+  alerts:
+    email: m.wisniewski@grupa-icea.pl
+    sms_min: 20
+    openrouter_min_usd: 20
 
 # run: re-test LEADS_EXPORT_TOKEN po poprawce w GH Secrets 2026-07-21
 # run: retry GA4 widocznosc.ai 2026-07-21

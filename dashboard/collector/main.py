@@ -139,6 +139,9 @@ def main() -> int:
         sources, _ = run_sources(GLOBAL_SOURCES, global_cfg, {})
         write_snapshot(DATA_DIR / "_global", {**stamp, "sources": sources})
 
+        from alerts import check_credit_alerts
+        check_credit_alerts(sources, global_cfg.get("alerts") or {}, os.environ)
+
     return 0
 
 
