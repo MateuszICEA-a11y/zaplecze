@@ -1,6 +1,6 @@
 {
  "date": "2026-07-21",
- "collected_at": "2026-07-21T08:44:22Z",
+ "collected_at": "2026-07-21T08:50:59Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -1063,13 +1063,51 @@
    "ref_domains_source": "ahrefs"
   },
   "clarity": {
-   "dead_clicks": "25",
+   "dead_clicks": "0",
    "rage_clicks": "0",
-   "quickback_clicks": "14",
-   "script_errors": "1",
-   "url": [],
-   "referrer": [],
-   "device": []
+   "quickback_clicks": "0",
+   "script_errors": "0",
+   "url": [
+    {
+     "name": "?",
+     "sessions": 1,
+     "users": 3
+    },
+    {
+     "name": "?",
+     "sessions": 1,
+     "users": 1
+    },
+    {
+     "name": "?",
+     "sessions": 1,
+     "users": 1
+    },
+    {
+     "name": "?",
+     "sessions": 1,
+     "users": 2
+    }
+   ],
+   "referrer": [
+    {
+     "name": "?",
+     "sessions": 4,
+     "users": 7
+    }
+   ],
+   "device": [
+    {
+     "name": "PC",
+     "sessions": 4,
+     "users": 6
+    },
+    {
+     "name": "Mobile",
+     "sessions": 0,
+     "users": 1
+    }
+   ]
   },
   "leads": {
    "leads": [
