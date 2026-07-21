@@ -54,9 +54,9 @@ const maxSearches = Math.max(...keywords.map((k) => k.searches ?? 0), 0);
 
   <div class="section-head"><h2>Widoczność organiczna</h2></div>
   <div class="stat-grid">
-    <StatCard label="Frazy w TOP 3" value={statTop3.value} delta={statTop3.delta} trend={top3.values} />
-    <StatCard label="Frazy w TOP 10" value={statTop10.value} delta={statTop10.delta} trend={top10.values} />
-    <StatCard label="Frazy w TOP 50" value={statTop50.value} delta={statTop50.delta} trend={top50.values} />
+    <StatCard label="Frazy w TOP 3" value={statTop3.value} delta={statTop3.delta} trend={top3.values} href="#top-3" />
+    <StatCard label="Frazy w TOP 10" value={statTop10.value} delta={statTop10.delta} trend={top10.values} href="#top-10" />
+    <StatCard label="Frazy w TOP 50" value={statTop50.value} delta={statTop50.delta} trend={top50.values} href="#top-50" />
     <StatCard
       label="Indeks widoczności"
       value={statVisibility.value}
@@ -151,4 +151,44 @@ const maxSearches = Math.max(...keywords.map((k) => k.searches ?? 0), 0);
       </tbody>
     </table>
   </TableCard>
+
+  <script>
+    /* Karty TOP 3/10/50 filtrują tabelę fraz po kolumnie Pozycja (toggle).
+       Filtr idzie przez CustomEvent do kontrolera TableCard (spójny z filtrem
+       tekstowym, sortowaniem i pagerem). */
+    const card = document.querySelector<HTMLElement>('.table-card');
+    const head = card?.querySelector<HTMLElement>('.table-head h3');
+    if (card && head) {
+      const chip = document.createElement('button');
+      chip.type = 'button';
+      chip.className = 'chip pos-filter-chip';
+      chip.hidden = true;
+      head.after(chip);
+
+      const posOf = (row: HTMLTableRowElement) =>
+        parseFloat((row.cells[1]?.textContent ?? '').replace(/[\s  ]/g, '').replace(',', '.'));
+
+      let active: number | null = null;
+      const apply = (max: number | null) => {
+        active = max;
+        card.dispatchEvent(
+          new CustomEvent('tablecard:refilter', {
+            detail: max === null ? null : (row: HTMLTableRowElement) => posOf(row) <= max,
+          }),
+        );
+        chip.hidden = max === null;
+        chip.textContent = `tylko TOP ${max} ✕`;
+      };
+      chip.addEventListener('click', () => apply(null));
+
+      document.querySelectorAll<HTMLAnchorElement>('a.stat-card[href^="#top-"]').forEach((a) => {
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          const max = parseInt(a.getAttribute('href')!.slice(5), 10);
+          apply(active === max ? null : max);
+          card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+    }
+  </script>
 </Layout>

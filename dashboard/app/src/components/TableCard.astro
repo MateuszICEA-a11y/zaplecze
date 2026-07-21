@@ -72,11 +72,22 @@ const paged = !isEmpty && pageSize > 0;
     const pagesBox = pager?.querySelector<HTMLElement>('[data-pager-pages]');
     let page = 0;
 
+    /* Zewnętrzny predykat wierszy (np. filtr pozycji z kart TOP 3/10/50):
+       strona dispatchuje CustomEvent('tablecard:refilter', {detail: fn|null}). */
+    let rowPredicate: ((row: HTMLTableRowElement) => boolean) | null = null;
+    card.addEventListener('tablecard:refilter', (e) => {
+      rowPredicate = (e as CustomEvent).detail ?? null;
+      page = 0;
+      update();
+    });
+
     const update = () => {
       const needle = (input?.value ?? '').trim().toLowerCase();
       const rows = Array.from(body.rows);
       const matched = rows.filter(
-        (r) => needle === '' || (r.textContent ?? '').toLowerCase().includes(needle),
+        (r) =>
+          (needle === '' || (r.textContent ?? '').toLowerCase().includes(needle)) &&
+          (!rowPredicate || rowPredicate(r)),
       );
       rows.forEach((r) => (r.hidden = true));
       const pages = pageSize ? Math.max(1, Math.ceil(matched.length / pageSize)) : 1;
