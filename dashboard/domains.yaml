@@ -20,6 +20,9 @@ domains:
       # Token Clarity jest per projekt (CLARITY_API_TOKEN = grupa-icea.pl).
       # Własny token widocznosc.ai dodany do GH Secrets 2026-07-21.
       token_env: CLARITY_API_TOKEN_WIDOCZNOSC
+    cloudflare_ai:
+      enabled: true # boty AI z GraphQL Analytics (token = były token Clarity↔CF, read-only)
+      token_env: CLOUDFLARE_ANALYTICS_TOKEN
     leads:
       enabled: true # eksport leadów/użyć narzędzi z KV; wymaga LEADS_EXPORT_TOKEN
 
@@ -39,6 +42,8 @@ domains:
       mode: subdomains
     clarity:
       enabled: true # CLARITY_API_TOKEN = projekt grupa-icea.pl (potwierdzone sondą 2026-07-21)
+    cloudflare_ai:
+      enabled: false # zona grupa-icea.pl nie jest na tym koncie Cloudflare
     leads:
       enabled: false # brak endpointu leadów na grupa-icea.pl
 

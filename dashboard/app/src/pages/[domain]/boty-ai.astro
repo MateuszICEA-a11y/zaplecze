@@ -1,0 +1,137 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DomainHeader from '../../components/DomainHeader.astro';
+import StatCard from '../../components/StatCard.astro';
+import TableCard from '../../components/TableCard.astro';
+import TimeSeriesChart from '../../components/TimeSeriesChart.astro';
+import {
+  loadConfig,
+  loadSnapshots,
+  loadDetails,
+  latestSnapshot,
+  latestWithDelta,
+  metricSeries,
+  sectionEnabled,
+} from '../../lib/data';
+import { fmtInt, barWidth } from '../../lib/format';
+
+export function getStaticPaths() {
+  return loadConfig()
+    .domains.filter((d) => sectionEnabled(d, 'cloudflare_ai'))
+    .map((d) => ({ params: { domain: d.id }, props: { name: d.name } }));
+}
+
+const { domain } = Astro.params;
+const { name } = Astro.props;
+
+const snapshots = loadSnapshots(domain!);
+const latest = latestSnapshot(domain!);
+const details = loadDetails(domain!);
+const ai = latest?.sources.cloudflare_ai;
+const bots = details.sources.cloudflare_ai?.bots ?? [];
+const paths = details.sources.cloudflare_ai?.paths ?? [];
+
+const requests = metricSeries(snapshots, 'cloudflare_ai', 'requests');
+const statRequests = latestWithDelta(snapshots, 'cloudflare_ai', 'requests');
+const statBots = latestWithDelta(snapshots, 'cloudflare_ai', 'bots');
+const dataDate = ai?.data?.data_date ?? null;
+const topBot = ai?.data?.top_bot ?? null;
+
+const maxBotRequests = Math.max(...bots.map((b) => b.requests), 0);
+const maxPathRequests = Math.max(...paths.map((p) => p.requests), 0);
+---
+
+<Layout title={`${name} – Crawlery AI`}>
+  <DomainHeader domain={domain!} name={name} active="boty-ai" latest={latest} />
+
+  {
+    ai && ai.status !== 'ok' && (
+      <div class={`banner ${ai.status === 'token_expired' ? 'warn' : 'err'}`}>
+        <strong>Cloudflare</strong>: {ai.error ?? 'błąd źródła'}
+      </div>
+    )
+  }
+
+  <div class="section-head">
+    <h2>Ruch crawlerów AI</h2>
+    {dataDate && <span class="section-meta">pełna doba {dataDate} (logi CDN Cloudflare, wg user-agenta)</span>}
+  </div>
+  <div class="stat-grid">
+    <StatCard label="Requesty botów AI / dzień" value={statRequests.value} delta={statRequests.delta} trend={requests.values} />
+    <StatCard label="Aktywne boty" value={statBots.value} delta={statBots.delta} />
+    <StatCard label="Najaktywniejszy bot" value={topBot} />
+  </div>
+
+  <div class="chart-grid">
+    <TimeSeriesChart
+      title="Requesty crawlerów AI"
+      meta="dziennie"
+      timestamps={requests.timestamps}
+      series={[{ label: 'Requesty', values: requests.values, fill: true }]}
+    />
+  </div>
+
+  <TableCard
+    title="Boty"
+    count={bots.length}
+    empty="Dane pojawią się po najbliższym przebiegu collectora (codziennie 6:30)."
+  >
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Bot</th>
+          <th class="num">Requesty</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          bots.map((b) => (
+            <tr>
+              <td class="grow">{b.bot}</td>
+              <td class="num">
+                <span class="cell-bar">
+                  {fmtInt(b.requests)}
+                  <span class="bar">
+                    <i style={`width:${barWidth(b.requests, maxBotRequests)}%`} />
+                  </span>
+                </span>
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </TableCard>
+
+  <TableCard
+    title="Najczęściej crawlowane ścieżki"
+    count={paths.length}
+    empty="Dane pojawią się po najbliższym przebiegu collectora."
+  >
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Ścieżka</th>
+          <th class="num">Requesty</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          paths.map((p) => (
+            <tr>
+              <td class="grow"><span class="cell-url">{p.path}</span></td>
+              <td class="num">
+                <span class="cell-bar">
+                  {fmtInt(p.requests)}
+                  <span class="bar">
+                    <i style={`width:${barWidth(p.requests, maxPathRequests)}%`} />
+                  </span>
+                </span>
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </TableCard>
+</Layout>

@@ -49,6 +49,7 @@ jobs:
           GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
           CLARITY_API_TOKEN: ${{ secrets.CLARITY_API_TOKEN }}
           CLARITY_API_TOKEN_WIDOCZNOSC: ${{ secrets.CLARITY_API_TOKEN_WIDOCZNOSC }}
+          CLOUDFLARE_ANALYTICS_TOKEN: ${{ secrets.CLOUDFLARE_ANALYTICS_TOKEN }}
           LEADS_EXPORT_TOKEN: ${{ secrets.LEADS_EXPORT_TOKEN }}
         run: python dashboard/collector/main.py
 

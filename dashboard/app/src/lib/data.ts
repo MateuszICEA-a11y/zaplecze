@@ -211,6 +211,10 @@ export interface DomainDetails {
       referrer?: ClarityDimensionRow[];
       device?: ClarityDimensionRow[];
     };
+    cloudflare_ai?: {
+      bots: { bot: string; requests: number }[];
+      paths: { path: string; requests: number }[];
+    };
     leads?: { leads: LeadRecord[]; usage: LeadRecord[] };
   };
 }
@@ -232,6 +236,7 @@ export const DOMAIN_SECTIONS = [
   { slug: 'gsc', label: 'GSC', source: 'gsc' },
   { slug: 'ahrefs', label: 'Ahrefs', source: 'ahrefs' },
   { slug: 'clarity', label: 'Clarity', source: 'clarity' },
+  { slug: 'boty-ai', label: 'Boty AI', source: 'cloudflare_ai' },
   { slug: 'leady', label: 'Leady', source: 'leads' },
 ] as const;
 
