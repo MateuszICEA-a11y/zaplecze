@@ -1,6 +1,6 @@
 {
  "date": "2026-07-21",
- "collected_at": "2026-07-21T18:21:40Z",
+ "collected_at": "2026-07-21T20:09:22Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -31,6 +31,17 @@
       "image_thumbs",
       "people_also_ask"
      ]
+    }
+   ],
+   "urls": [
+    {
+     "url": "widocznosc.ai/autor/tomasz-czechowski/",
+     "keywords": 2,
+     "top3": 0,
+     "top10": 0,
+     "top50": 2,
+     "best_position": 30,
+     "best_keyword": "tomasz czechowski"
     }
    ]
   },
@@ -11063,7 +11074,7 @@
      "position": null,
      "indexed": false,
      "verdict": "NEUTRAL",
-     "coverage_state": "URL is unknown to Google",
+     "coverage_state": "Discovered - currently not indexed",
      "last_crawl": null
     },
     {
@@ -11151,7 +11162,7 @@
      "position": null,
      "indexed": false,
      "verdict": "NEUTRAL",
-     "coverage_state": "Discovered - currently not indexed",
+     "coverage_state": "URL is unknown to Google",
      "last_crawl": null
     },
     {
@@ -11393,7 +11404,7 @@
      "position": null,
      "indexed": false,
      "verdict": "NEUTRAL",
-     "coverage_state": "Discovered - currently not indexed",
+     "coverage_state": "URL is unknown to Google",
      "last_crawl": null
     },
     {
@@ -11600,9 +11611,9 @@
      "impressions": 3,
      "ctr": 0,
      "position": 5.3,
-     "indexed": true,
-     "verdict": "PASS",
-     "coverage_state": "Submitted and indexed",
+     "indexed": false,
+     "verdict": "NEUTRAL",
+     "coverage_state": "Crawled - currently not indexed",
      "last_crawl": "2026-07-13"
     },
     {
@@ -11756,7 +11767,7 @@
      "position": null,
      "indexed": false,
      "verdict": "NEUTRAL",
-     "coverage_state": "URL is unknown to Google",
+     "coverage_state": "Discovered - currently not indexed",
      "last_crawl": null
     },
     {
