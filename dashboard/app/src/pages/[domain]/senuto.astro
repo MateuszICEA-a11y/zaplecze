@@ -94,7 +94,7 @@ const maxSearches = Math.max(...keywords.map((k) => k.searches ?? 0), 0);
 
   <TableCard
     title="Rankujące frazy"
-    meta={details.date ? `stan z ${details.date} · TOP 100 wg pozycji` : undefined}
+    meta={details.date ? `stan z ${details.date} · ${keywords.length} najlepszych pozycji z pełnej bazy fraz` : undefined}
     count={keywords.length}
     filter
     empty="Lista fraz pojawi się po najbliższym przebiegu collectora (codziennie 6:30)."

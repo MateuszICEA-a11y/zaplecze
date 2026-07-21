@@ -12,25 +12,46 @@ from ._http import classify_http_error, request_json
 ENDPOINT = "https://api.senuto.com/api/visibility_analysis/reports/dashboard/getDomainStatistics"
 POSITIONS_ENDPOINT = "https://api.senuto.com/api/visibility_analysis/reports/positions/getData"
 KEYWORDS_LIMIT = 200  # ile fraz trzymamy w details.json
+# API nie wspiera sortowania ani filtrów (sonda 2026-07-21: order/sort/filter
+# ignorowane, limit ucinany do 100/stronę) – żeby tabela pokazywała realne
+# najlepsze pozycje, trzeba przewertować wszystkie strony i posortować lokalnie.
+PAGE_LIMIT = 100
+MAX_PAGES = 60  # bezpiecznik (60×100 = 6000 fraz; grupa-icea.pl ma ~31 stron)
 
 
 def _fetch_keywords(cfg: dict, token: str) -> list[dict]:
-    """Lista rankujących fraz (positions/getData) – best-effort, pusta lista przy błędzie."""
+    """Lista rankujących fraz (positions/getData) – best-effort, pusta lista przy błędzie.
+
+    Wertuje pełną paginację (API zwraca frazy we własnym porządku, bez sortu),
+    sortuje po pozycji i zatrzymuje KEYWORDS_LIMIT najlepszych.
+    """
     import json as _json
-    body = _json.dumps({
-        "domain": cfg.get("domain"),
-        "fetch_mode": cfg.get("fetch_mode", "topLevelDomain"),
-        "country_id": int(cfg.get("country_id", 1)),
-        "limit": KEYWORDS_LIMIT,
-    }).encode()
-    resp = request_json(POSITIONS_ENDPOINT, data=body, headers={
-        "Authorization": f"Bearer {token}",
-        "Content-Type": "application/json",
-    })
-    if not resp.get("success"):
-        return []
+    import time as _time
+
+    raw_rows: list[dict] = []
+    page = 1
+    while page <= MAX_PAGES:
+        body = _json.dumps({
+            "domain": cfg.get("domain"),
+            "fetch_mode": cfg.get("fetch_mode", "topLevelDomain"),
+            "country_id": int(cfg.get("country_id", 1)),
+            "limit": PAGE_LIMIT,
+            "page": page,
+        }).encode()
+        resp = request_json(POSITIONS_ENDPOINT, data=body, headers={
+            "Authorization": f"Bearer {token}",
+            "Content-Type": "application/json",
+        })
+        if not resp.get("success"):
+            break
+        raw_rows.extend(resp.get("data") or [])
+        if not (resp.get("pagination") or {}).get("has_next_page"):
+            break
+        page += 1
+        _time.sleep(0.25)  # grzecznościowa przerwa między stronami
+
     rows = []
-    for row in resp.get("data") or []:
+    for row in raw_rows:
         stats = row.get("statistics") or {}
         pos = stats.get("position") or {}
         rows.append({
@@ -47,7 +68,7 @@ def _fetch_keywords(cfg: dict, token: str) -> list[dict]:
     # Najpierw najlepsze pozycje, w ramach pozycji – większy wolumen.
     rows.sort(key=lambda r: (r["position"] if isinstance(r["position"], int) else 999,
                              -(r["searches"] or 0)))
-    return rows
+    return rows[:KEYWORDS_LIMIT]
 
 
 def fetch(cfg: dict, env: dict) -> dict:
