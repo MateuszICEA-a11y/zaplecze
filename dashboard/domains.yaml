@@ -29,4 +29,4 @@ global:
   openrouter:
     enabled: true
 
-# run: weryfikacja OPENROUTER_PROJECT_KEY 2026-07-20
+# run: weryfikacja sekretów LEADS_EXPORT_TOKEN + CLARITY_API_TOKEN 2026-07-21
