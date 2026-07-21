@@ -199,6 +199,8 @@ export interface DomainDetails {
       window?: { start: string; end: string };
       queries: GscRow[];
       pages: GscRow[];
+      /** Okna okresów dla przełącznika (7d/30d/3m/6m/12m/16m). */
+      windows?: Record<string, { start: string; end: string; queries: GscRow[]; pages: GscRow[] }>;
       compare?: GscCompare;
     };
     ahrefs?: { ref_domains: RefDomain[]; ref_domains_source?: 'ahrefs' | 'dataforseo' };

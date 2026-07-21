@@ -15,8 +15,11 @@ API_BASE = "https://searchconsole.googleapis.com/webmasters/v3/sites"
 SCOPE = "https://www.googleapis.com/auth/webmasters.readonly"
 DATA_LAG_DAYS = 3
 QUERY_ROW_LIMIT = 25000
-DETAILS_WINDOW_DAYS = 28  # okno dla list fraz/stron w details.json
 DETAILS_ROW_LIMIT = 200
+# Okna list fraz/stron (przełącznik okresu na froncie). GSC trzyma ~16 miesięcy,
+# więc dłuższych zakresów (18/24 mies. jak w Bingu) nie da się zaoferować.
+DETAILS_WINDOWS = [("7d", 7), ("30d", 30), ("3m", 90), ("6m", 180),
+                   ("12m", 365), ("16m", 480)]
 COMPARE_WINDOW_DAYS = 90   # okno porównań qoq/yoy (plansza „Co spadło")
 COMPARE_ROW_LIMIT = 250
 COMPARE_KEEP_ROWS = 300    # ile złączonych wierszy per lista trzymamy w details
@@ -121,22 +124,31 @@ def fetch(cfg: dict, env: dict) -> dict:
         "queries": queries_count,
     }
 
-    # Listy do details.json: top frazy i strony z okna 28 dni (dzienne listy
-    # na małym serwisie są zbyt rzadkie, żeby coś pokazać).
-    window_start = (datetime.now(timezone.utc)
-                    - timedelta(days=DATA_LAG_DAYS + DETAILS_WINDOW_DAYS)).strftime("%Y-%m-%d")
-    details = {"window": {"start": window_start, "end": day}}
-    for dimension, key in (("query", "queries"), ("page", "pages")):
-        try:
-            resp = query({
-                "startDate": window_start,
-                "endDate": day,
-                "dimensions": [dimension],
-                "rowLimit": DETAILS_ROW_LIMIT,
-            })
-            details[key] = _rows_to_details(resp.get("rows") or [])
-        except SourceError:
-            details[key] = []
+    # Listy do details.json: top frazy i strony per okno (przełącznik okresu na
+    # froncie; dzienne listy na małym serwisie są zbyt rzadkie, żeby coś pokazać).
+    details: dict = {"windows": {}}
+    for win_key, days in DETAILS_WINDOWS:
+        start = (datetime.now(timezone.utc)
+                 - timedelta(days=DATA_LAG_DAYS + days - 1)).strftime("%Y-%m-%d")
+        block: dict = {"start": start, "end": day}
+        for dimension, key in (("query", "queries"), ("page", "pages")):
+            try:
+                resp = query({
+                    "startDate": start,
+                    "endDate": day,
+                    "dimensions": [dimension],
+                    "rowLimit": DETAILS_ROW_LIMIT,
+                })
+                block[key] = _rows_to_details(resp.get("rows") or [])
+            except SourceError:
+                block[key] = []
+        details["windows"][win_key] = block
+
+    # Kompatybilność wstecz: stare pola = okno 30 dni (frontend sprzed przełącznika).
+    legacy = details["windows"].get("30d") or {}
+    details["window"] = {"start": legacy.get("start"), "end": legacy.get("end")}
+    details["queries"] = legacy.get("queries") or []
+    details["pages"] = legacy.get("pages") or []
 
     # Porównania okres-do-okresu (plansza „Co spadło"): ostatnie 3 mies. vs
     # poprzednie 3 mies. (qoq) i vs ten sam okres rok temu (yoy).

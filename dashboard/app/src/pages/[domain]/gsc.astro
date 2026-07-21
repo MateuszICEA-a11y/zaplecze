@@ -25,11 +25,24 @@ const snapshots = loadSnapshots(domain!);
 const latest = latestSnapshot(domain!);
 const details = loadDetails(domain!);
 const gscDetails = details.sources.gsc;
-const queries = gscDetails?.queries ?? [];
-const pages = gscDetails?.pages ?? [];
-const windowMeta = gscDetails?.window
-  ? `okno ${gscDetails.window.start} → ${gscDetails.window.end}`
-  : undefined;
+
+// Okna okresów (przełącznik jak w BWT). Fallback na stare pojedyncze okno,
+// dopóki collector nie dogra details z `windows`.
+const WINDOW_LABELS: [string, string][] = [
+  ['7d', '7 dni'],
+  ['30d', '30 dni'],
+  ['3m', '3 mies.'],
+  ['6m', '6 mies.'],
+  ['12m', '12 mies.'],
+  ['16m', '16 mies. (max GSC)'],
+];
+const windows = gscDetails?.windows;
+const windowOptions = windows ? WINDOW_LABELS.filter(([k]) => windows[k]) : [];
+const defaultWindow = windows?.['30d'] ?? windows?.[windowOptions[0]?.[0] ?? ''] ?? null;
+const queries = defaultWindow?.queries ?? gscDetails?.queries ?? [];
+const pages = defaultWindow?.pages ?? gscDetails?.pages ?? [];
+const activeWindow = defaultWindow ?? gscDetails?.window ?? null;
+const windowMeta = activeWindow ? `okno ${activeWindow.start} → ${activeWindow.end}` : undefined;
 
 const clicks = metricSeries(snapshots, 'gsc', 'clicks');
 const impressions = metricSeries(snapshots, 'gsc', 'impressions');
@@ -203,6 +216,83 @@ const compareModes = (
     )
   }
   <script>
+    /* Przełącznik okresu tabel GSC (jak w BWT): przepina wiersze obu tabel na
+       dane wybranego okna z osadzonego JSON-a, resetuje sort i pager. */
+    const dataEl = document.getElementById('gsc-windows-data');
+    const winSeg = document.querySelector<HTMLElement>('[data-gsc-window-seg]');
+    if (dataEl && winSeg) {
+      type Row = {
+        key: string;
+        clicks: number;
+        impressions: number;
+        ctr: number | null;
+        position: number | null;
+      };
+      type Win = { start: string; end: string; queries: Row[]; pages: Row[] };
+      const windows: Record<string, Win> = JSON.parse(dataEl.textContent ?? '{}');
+      const cards = document.querySelectorAll<HTMLElement>('.table-card');
+      const esc = (s: string) =>
+        s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+      const fi = (n: number | null | undefined) => (typeof n === 'number' ? n.toLocaleString('pl-PL') : '–');
+      const fp = (v: number | null) =>
+        typeof v === 'number' ? `${v.toLocaleString('pl-PL', { maximumFractionDigits: 2 })}%` : '–';
+      const f1 = (v: number | null) =>
+        typeof v === 'number' ? v.toLocaleString('pl-PL', { maximumFractionDigits: 1 }) : '–';
+      const posCls = (p: number | null) =>
+        typeof p !== 'number' ? '' : p <= 3 ? 'top3' : p <= 10 ? 'top10' : p <= 30 ? 'mid' : 'low';
+      const bar = (v: number, max: number) => (max > 0 ? Math.max(2, Math.round((v / max) * 100)) : 0);
+      const stripOrigin = (url: string) => url.replace(/^https?:\/\/[^/]+/, '') || '/';
+
+      const rowHtml = (r: Row, max: number, isPage: boolean) => `
+        <tr>
+          <td class="grow">${
+            isPage
+              ? `<a class="cell-url" href="${esc(r.key)}" rel="noopener" target="_blank">${esc(stripOrigin(r.key))}</a>`
+              : esc(r.key)
+          }</td>
+          <td class="num">${fi(r.clicks)}</td>
+          <td class="num"><span class="cell-bar">${fi(r.impressions)}<span class="bar"><i style="width:${bar(
+            r.impressions,
+            max,
+          )}%"></i></span></span></td>
+          <td class="num"><span class="${typeof r.ctr === 'number' && r.ctr > 0 ? 'ctr-pos' : ''}">${fp(r.ctr)}</span></td>
+          <td class="num"><span class="pos-badge ${posCls(r.position)}">${f1(r.position)}</span></td>
+        </tr>`;
+
+      const applyWindow = (key: string) => {
+        const win = windows[key];
+        if (!win) return;
+        ([
+          [cards[0], win.queries, false],
+          [cards[1], win.pages, true],
+        ] as const).forEach(([card, rows, isPage]) => {
+          if (!card) return;
+          const body = card.querySelector('table.data-table tbody');
+          if (!body) return;
+          const max = Math.max(...rows.map((r) => r.impressions ?? 0), 0);
+          body.innerHTML = rows.map((r) => rowHtml(r, max, isPage)).join('');
+          const countEl = card.querySelector('.table-head h3 .table-meta');
+          if (countEl) countEl.textContent = ` · ${rows.length.toLocaleString('pl-PL')}`;
+          const metaEl = card.querySelector('.table-head > .table-meta');
+          if (metaEl) metaEl.textContent = `okno ${win.start} → ${win.end}`;
+          card.querySelectorAll<HTMLTableCellElement>('thead th').forEach((th) => {
+            th.classList.remove('active');
+            delete th.dataset.dir;
+            const caret = th.querySelector('.sort-caret');
+            if (caret) caret.textContent = '';
+          });
+          card.dispatchEvent(new CustomEvent('tablecard:refilter', { detail: null }));
+        });
+      };
+
+      winSeg.addEventListener('click', (e) => {
+        const btn = (e.target as HTMLElement).closest('button[data-window]') as HTMLButtonElement | null;
+        if (!btn) return;
+        winSeg.querySelectorAll('button').forEach((b) => b.classList.toggle('active', b === btn));
+        applyWindow(btn.dataset.window!);
+      });
+    }
+
     document.querySelectorAll('[data-drops-seg]').forEach((seg) => {
       seg.addEventListener('click', (e) => {
         const btn = (e.target as HTMLElement).closest('button[data-mode]') as HTMLButtonElement | null;
@@ -214,6 +304,28 @@ const compareModes = (
       });
     });
   </script>
+
+  {
+    windowOptions.length > 1 && (
+      <div class="section-head" style="margin-bottom:6px;">
+        <h2>Frazy i strony</h2>
+        <div class="seg" data-gsc-window-seg>
+          {windowOptions.map(([k, label]) => (
+            <button type="button" class={k === '30d' ? 'active' : ''} data-window={k}>
+              {label}
+            </button>
+          ))}
+        </div>
+      </div>
+    )
+  }
+  {windows && (
+    <script
+      type="application/json"
+      id="gsc-windows-data"
+      set:html={JSON.stringify(windows).replace(/</g, '\\u003c')}
+    />
+  )}
 
   <TableCard
     title="Frazy w Google"
