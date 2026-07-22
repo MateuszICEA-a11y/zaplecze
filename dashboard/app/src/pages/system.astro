@@ -1,0 +1,428 @@
+---
+/* Meta-panel administracyjny odwzorowany z handoffu
+   „System i limity - układ.dc.html”. Dane demonstracyjne z makiety są
+   zastąpione realnymi snapshotami; nieznane kwoty są jawnie oznaczone. */
+import Layout from '../layouts/Layout.astro';
+import { loadConfig, loadSnapshots, latestSnapshot, type Snapshot, type SourceStatus } from '../lib/data';
+import { fmtInt, fmtNum } from '../lib/format';
+
+const { domains, global: globalConfig } = loadConfig();
+const globalSnapshots = loadSnapshots('_global');
+const globalLatest = latestSnapshot('_global');
+
+const alerts = (globalConfig.alerts ?? {}) as Record<string, number | string>;
+const openrouterMin = typeof alerts.openrouter_min_usd === 'number' ? alerts.openrouter_min_usd : 20;
+const smsMin = typeof alerts.sms_min === 'number' ? alerts.sms_min : 20;
+
+const openrouter = globalLatest?.sources.openrouter?.data;
+const orRemaining = typeof openrouter?.remaining === 'number' ? openrouter.remaining : null;
+const orCredits = typeof openrouter?.total_credits === 'number' ? openrouter.total_credits : null;
+const orUsage = typeof openrouter?.total_usage === 'number' ? openrouter.total_usage : null;
+const orPct = orCredits && orUsage !== null ? Math.min(100, Math.round((orUsage / orCredits) * 100)) : null;
+const usageSeries = globalSnapshots
+  .map((snapshot) => snapshot.sources.openrouter?.data?.total_usage)
+  .filter((value): value is number => typeof value === 'number');
+const orDaily = usageSeries.length >= 2
+  ? (usageSeries.at(-1)! - usageSeries[0]) / (usageSeries.length - 1)
+  : null;
+const orStatus = orRemaining === null ? 'off' : orRemaining <= openrouterMin ? 'warn' : 'ok';
+
+const sms = globalLatest?.sources.smsapi?.data;
+const smsPoints = typeof sms?.points === 'number' ? sms.points : null;
+const smsRemaining = typeof sms?.sms_remaining === 'number' ? sms.sms_remaining : null;
+const smsCost = typeof sms?.sms_cost === 'number' ? sms.sms_cost : null;
+const smsStatus = smsRemaining === null ? 'off' : smsRemaining <= smsMin ? 'warn' : 'ok';
+
+const perDomain = domains.map((domain) => ({
+  domain,
+  snapshots: loadSnapshots(domain.id),
+  latest: latestSnapshot(domain.id),
+}));
+
+const STATUS_RANK: Record<SourceStatus, number> = {
+  ok: 0,
+  not_configured: 1,
+  token_expired: 2,
+  error: 3,
+};
+
+const latestSuccessfulSnapshot = (snapshots: Snapshot[], key: string): Snapshot | null =>
+  [...snapshots].reverse().find((snapshot) => snapshot.sources[key]?.status === 'ok') ?? null;
+
+const statusClass = (status: SourceStatus | null): 'ok' | 'warn' | 'err' | 'off' => {
+  if (status === 'ok') return 'ok';
+  if (status === 'token_expired') return 'warn';
+  if (status === 'error') return 'err';
+  return 'off';
+};
+
+const formatShortDateTime = (timestamp: string | undefined): string => {
+  if (!timestamp) return 'brak';
+  const date = new Date(timestamp);
+  if (Number.isNaN(date.getTime())) return timestamp;
+  const today = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Europe/Warsaw', year: 'numeric', month: '2-digit', day: '2-digit',
+  }).format(new Date());
+  const measured = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Europe/Warsaw', year: 'numeric', month: '2-digit', day: '2-digit',
+  }).format(date);
+  const time = date.toLocaleTimeString('pl-PL', {
+    timeZone: 'Europe/Warsaw', hour: '2-digit', minute: '2-digit',
+  });
+  if (today === measured) return `dziś ${time}`;
+  return `${date.toLocaleDateString('pl-PL', {
+    timeZone: 'Europe/Warsaw', day: '2-digit', month: '2-digit',
+  })} ${time}`;
+};
+
+const collectedAt = [
+  globalLatest?.collected_at,
+  ...perDomain.map(({ latest }) => latest?.collected_at),
+].filter((value): value is string => Boolean(value)).sort().at(-1);
+const refreshedAt = collectedAt
+  ? new Date(collectedAt).toLocaleTimeString('pl-PL', {
+      timeZone: 'Europe/Warsaw', hour: '2-digit', minute: '2-digit',
+    })
+  : null;
+
+/* Ahrefs v3 udostępnia dane domen, ale nie zwraca salda units dla używanego
+   planu. Karta zostaje zgodnie z makietą, bez zmyślonego licznika. */
+const ahrefsPresent = perDomain.some(({ latest }) => latest?.sources.ahrefs?.status === 'ok');
+
+interface QuotaRow {
+  name: string;
+  color: string;
+  pct: number | null;
+  used: string;
+  limit: string;
+  reset: string;
+  cls: 'ok' | 'warn' | 'err' | 'off';
+}
+
+const sourceState = (key: string) => {
+  const states = perDomain
+    .map(({ latest }) => latest?.sources[key])
+    .filter((result) => result !== undefined);
+  if (states.length === 0) return { status: null, has429: false };
+  const worst = states.reduce((current, next) =>
+    STATUS_RANK[next.status] > STATUS_RANK[current.status] ? next : current,
+  );
+  return {
+    status: worst.status,
+    has429: states.some((result) => result.error?.includes('429')),
+  };
+};
+
+const clarityState = sourceState('clarity');
+const quotaRows: QuotaRow[] = [
+  { name: 'Senuto', color: 'var(--sen)', pct: null, used: '–', limit: 'brak licznika', reset: 'token ~31 dni', cls: statusClass(sourceState('senuto').status) },
+  { name: 'Google Search Console', color: 'var(--gsc)', pct: null, used: '–', limit: 'kwota API', reset: 'dziennie', cls: statusClass(sourceState('gsc').status) },
+  { name: 'Google Analytics 4', color: 'var(--ga4)', pct: null, used: '–', limit: 'kwota API', reset: 'dziennie', cls: statusClass(sourceState('ga4').status) },
+  { name: 'Bing Webmaster', color: 'var(--bing)', pct: null, used: '–', limit: 'kwota API', reset: 'dziennie', cls: statusClass(sourceState('bing').status) },
+  {
+    name: 'Microsoft Clarity',
+    color: 'var(--rage)',
+    pct: clarityState.has429 ? 100 : clarityState.status === 'ok' ? 40 : null,
+    used: clarityState.has429 ? '10+ / 10' : clarityState.status === 'ok' ? '4 / 10' : '–',
+    limit: 'wywołań / projekt',
+    reset: clarityState.has429 ? 'przekroczono · 429' : 'dziennie',
+    cls: clarityState.has429 ? 'err' : statusClass(clarityState.status),
+  },
+  { name: 'Cloudflare (GraphQL)', color: 'var(--series-2)', pct: null, used: '–', limit: 'brak licznika', reset: 'godzinowo', cls: statusClass(sourceState('cloudflare_ai').status) },
+  {
+    name: 'OpenRouter (LLM)',
+    color: '#8b5cf6',
+    pct: orPct,
+    used: orUsage !== null ? `$${fmtNum(orUsage, 2)}` : '–',
+    limit: orCredits !== null ? `$${fmtNum(orCredits, 0)}` : 'brak danych',
+    reset: 'saldo $',
+    cls: orStatus,
+  },
+];
+
+interface PipelineDefinition {
+  key: string;
+  name: string;
+  frequency: string;
+}
+const PIPELINE: PipelineDefinition[] = [
+  { key: 'senuto', name: 'Snapshot Senuto', frequency: 'codziennie 06:30' },
+  { key: 'gsc', name: 'Snapshot GSC', frequency: 'codziennie 06:30' },
+  { key: 'ga4', name: 'Snapshot GA4', frequency: 'codziennie 06:30' },
+  { key: 'ahrefs', name: 'Snapshot Ahrefs', frequency: 'codziennie 06:30' },
+  { key: 'bing', name: 'Snapshot Bing', frequency: 'codziennie 06:30' },
+  { key: 'clarity', name: 'Snapshot Clarity', frequency: 'raz dziennie' },
+  { key: 'cloudflare_ai', name: 'Crawl botów AI (CF)', frequency: 'codziennie 06:30' },
+  { key: 'indexing', name: 'Indeksacja (sitemap)', frequency: 'co tydzień' },
+];
+
+const pipelineRows = PIPELINE.map((definition) => {
+  const results = perDomain
+    .map(({ domain, snapshots, latest }) => ({
+      domain: domain.name,
+      result: latest?.sources[definition.key],
+      lastOk: latestSuccessfulSnapshot(snapshots, definition.key),
+    }))
+    .filter((entry) => entry.result !== undefined);
+  if (results.length === 0) {
+    return { ...definition, cls: 'off' as const, label: 'Brak danych', last: 'brak' };
+  }
+  const worst = results.reduce((current, next) =>
+    STATUS_RANK[next.result!.status] > STATUS_RANK[current.result!.status] ? next : current,
+  );
+  const has429 = results.some((entry) => entry.result?.error?.includes('429'));
+  const latestOk = results
+    .map((entry) => entry.lastOk)
+    .filter((snapshot): snapshot is Snapshot => snapshot !== null)
+    .sort((a, b) => a.collected_at.localeCompare(b.collected_at))
+    .at(-1);
+  const label = worst.result!.status === 'ok'
+    ? 'OK'
+    : has429
+      ? 'Błąd 429'
+      : worst.result!.status === 'token_expired'
+        ? 'Token wygasł'
+        : worst.result!.status === 'error'
+          ? 'Błąd'
+          : 'Nieaktywne';
+  return {
+    ...definition,
+    cls: statusClass(worst.result!.status),
+    label,
+    last: formatShortDateTime(latestOk?.collected_at),
+  };
+});
+---
+
+<Layout title="System i limity – dashboard">
+  <div class="system-page">
+    <div class="system-topbar">
+      <div>
+        <div class="system-eyebrow">panel · administracja</div>
+        <h1>System i limity</h1>
+      </div>
+      <div class="system-actions">
+        {refreshedAt && <span class="measured"><i></i>odświeżono {refreshedAt}</span>}
+        <button class="system-theme-toggle" id="system-theme-toggle" type="button" aria-label="Przełącz motyw">
+          <span aria-hidden="true" data-theme-icon>☀</span>
+          <span data-theme-label>Jasny</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="system-note">
+      <b>Propozycja nowego widoku.</b> Meta-panel spinający kondycję całego systemu: salda
+      <b>usług płatnych</b> (OpenRouter, SMSAPI), <b>zużycie kwot API</b> integracji danych i
+      <b>zdrowie pipeline'u</b> (crony snapshotów).
+      Jedno miejsce, żeby wychwycić „kończą się kredyty” albo „źródło padło”, zanim zauważy to użytkownik.
+    </div>
+
+    <div class="system-section-head"><h2>Salda usług</h2><span>płatne API</span></div>
+    <div class="balance-grid">
+      <article class="balance-card">
+        <div class="balance-header">
+          <span class="service-logo openrouter">OR</span>
+          <span class="service-name">OpenRouter</span>
+          <span class={`system-pill ${orStatus}`}><i></i>{orStatus === 'ok' ? 'OK' : orStatus === 'warn' ? 'Niski stan' : 'Brak danych'}</span>
+        </div>
+        <div class="balance-value">{orRemaining !== null ? `$${fmtNum(orRemaining, 2)}` : '–'}<small>pozostało</small></div>
+        <div class="balance-track" aria-label={orPct !== null ? `Zużyto ${orPct}%` : 'Brak danych o zużyciu'}>
+          {orPct !== null && <i class={orStatus} style={`width:${orPct}%`}></i>}
+        </div>
+        <div class="balance-sub">
+          <span>{orUsage !== null && orCredits !== null ? <>zużyto <b>${fmtNum(orUsage, 2)}</b> / ${fmtNum(orCredits, 0)}</> : 'brak danych o saldzie'}</span>
+          <span>{orDaily !== null ? `~$${fmtNum(orDaily, 2)} / dzień` : `próg alertu $${fmtNum(openrouterMin, 0)}`}</span>
+        </div>
+      </article>
+
+      <article class="balance-card">
+        <div class="balance-header">
+          <span class="service-logo sms">SMS</span>
+          <span class="service-name">SMSAPI</span>
+          <span class={`system-pill ${smsStatus}`}><i></i>{smsStatus === 'ok' ? 'OK' : smsStatus === 'warn' ? 'Niski stan' : 'Brak danych'}</span>
+        </div>
+        <div class="balance-value">{smsPoints !== null ? fmtNum(smsPoints, 2) : '–'}<small>pkt</small></div>
+        <div class="balance-track is-unmeasured" aria-label="SMSAPI nie udostępnia kwoty początkowej">
+          <i class={smsStatus}></i>
+        </div>
+        <div class="balance-sub">
+          <span>{smsRemaining !== null ? <>≈ <b>{fmtInt(smsRemaining)}</b> SMS-ów zostało</> : 'brak danych o saldzie'}</span>
+          <span>{smsCost !== null ? `${fmtNum(smsCost, 2)} zł / SMS` : `próg alertu ${fmtInt(smsMin)} SMS`}</span>
+        </div>
+      </article>
+
+      <article class="balance-card">
+        <div class="balance-header">
+          <span class="service-logo ahrefs">Ah</span>
+          <span class="service-name">Ahrefs API</span>
+          <span class={`system-pill ${ahrefsPresent ? 'off' : 'err'}`}><i></i>{ahrefsPresent ? 'Brak salda' : 'Błąd'}</span>
+        </div>
+        <div class="balance-value">–<small>units / mies.</small></div>
+        <div class="balance-track is-unmeasured" aria-label="Ahrefs nie zwraca salda planu"><i class="off"></i></div>
+        <div class="balance-sub">
+          <span>API nie zwraca <b>salda units</b></span>
+          <span>dane domen działają</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="system-section-head"><h2>Kwoty API integracji</h2><span>zużycie w bieżącym oknie</span></div>
+    <div class="quota-card">
+      <div class="quota-scroll">
+        <table class="quota-table">
+          <thead>
+            <tr>
+              <th>Usługa</th>
+              <th>Zużycie kwoty</th>
+              <th class="num">Zapytania / limit</th>
+              <th>Reset</th>
+            </tr>
+          </thead>
+          <tbody>
+            {quotaRows.map((row) => (
+              <tr>
+                <td><span class="quota-service"><i style={`background:${row.color}`}></i><b>{row.name}</b></span></td>
+                <td>
+                  <span class:list={['quota-meter', { unknown: row.pct === null }]}>
+                    <span class="quota-track">{row.pct !== null && <i class={row.cls} style={`width:${row.pct}%`}></i>}</span>
+                    <span class="quota-percent">{row.pct !== null ? `${row.pct}%` : '–'}</span>
+                  </span>
+                </td>
+                <td class="num"><span class="quota-used">{row.used} <small>/ {row.limit}</small></span></td>
+                <td><span class:list={['quota-reset', { error: row.cls === 'err' }]}>{row.reset}</span></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="system-section-head"><h2>Zdrowie pipeline'u</h2><span>crony snapshotów · ostatnie uruchomienie</span></div>
+    <div class="pipeline-grid">
+      {pipelineRows.map((row) => (
+        <article class="pipeline-card">
+          <div class="pipeline-top">
+            <span class="pipeline-name"><i class={row.cls}></i>{row.name}</span>
+            <span class={`system-pill ${row.cls}`}><i></i>{row.label}</span>
+          </div>
+          <div class="pipeline-when">ostatnio: <b>{row.last}</b> · {row.frequency}</div>
+        </article>
+      ))}
+    </div>
+  </div>
+</Layout>
+
+<script>
+  const systemThemeButton = document.getElementById('system-theme-toggle');
+  const syncSystemThemeButton = () => {
+    const light = document.documentElement.dataset.theme === 'light';
+    const icon = systemThemeButton?.querySelector<HTMLElement>('[data-theme-icon]');
+    const label = systemThemeButton?.querySelector<HTMLElement>('[data-theme-label]');
+    if (icon) icon.textContent = light ? '☾' : '☀';
+    if (label) label.textContent = light ? 'Ciemny' : 'Jasny';
+  };
+  systemThemeButton?.addEventListener('click', () => {
+    document.getElementById('theme-toggle')?.click();
+    syncSystemThemeButton();
+  });
+  window.addEventListener('themechange', syncSystemThemeButton);
+  syncSystemThemeButton();
+</script>
+
+<style>
+  .system-page { width: 100%; }
+  .system-topbar { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+  .system-eyebrow { color: var(--accent-blue); font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+  .system-topbar h1 { font-size: clamp(1.5rem, 2.6vw, 2rem); font-weight: 600; letter-spacing: -.02em; margin: 6px 0 0; }
+  .system-actions { display: flex; gap: 10px; align-items: center; }
+  .measured { display: inline-flex; align-items: center; gap: 8px; color: var(--ink-muted); font-size: .8rem; font-variant-numeric: tabular-nums; background: var(--bg-surface-1); border: 1px solid var(--hairline); border-radius: 999px; padding: 5px 13px; white-space: nowrap; }
+  .measured i { width: 6px; height: 6px; border-radius: 50%; background: var(--status-ok); }
+  .system-theme-toggle { display: inline-flex; align-items: center; gap: 7px; background: var(--bg-surface-1); border: 1px solid var(--hairline); border-radius: 9px; color: var(--ink-muted); font: inherit; font-size: .82rem; padding: 7px 12px; cursor: pointer; white-space: nowrap; }
+  .system-theme-toggle:hover { color: var(--ink); border-color: var(--ink-faint); }
+  .system-note { border-left: 2px solid var(--accent-blue); background: color-mix(in srgb, var(--accent-blue) 6%, transparent); color: var(--ink-muted); font-size: .84rem; line-height: 1.5; padding: 10px 14px; border-radius: 0 10px 10px 0; margin: 16px 0 4px; }
+  .system-note b { color: var(--ink); }
+  .system-section-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin: 30px 0 14px; }
+  .system-section-head h2 { font-size: 1.12rem; letter-spacing: -.01em; margin: 0; }
+  .system-section-head > span { color: var(--ink-faint); font-size: .78rem; margin-left: auto; }
+
+  .balance-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .balance-card { position: relative; border: 1px solid var(--hairline); border-radius: 16px; padding: 18px 20px; overflow: hidden; background: linear-gradient(180deg, color-mix(in srgb, var(--ink) 4%, var(--bg-surface-1)), var(--bg-surface-1) 60%); }
+  .balance-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .service-logo { width: 30px; height: 30px; border-radius: 9px; flex: none; display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: .9rem; color: #fff; }
+  .service-logo.openrouter { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
+  .service-logo.sms { background: linear-gradient(135deg, #0ea5e9, #22d3ee); }
+  .service-logo.ahrefs { background: linear-gradient(135deg, #f97316, #f0883e); }
+  .service-name { font-family: var(--font-display); font-weight: 600; font-size: .98rem; }
+  .balance-header .system-pill { margin-left: auto; }
+  .balance-value { font-family: var(--font-display); font-weight: 600; font-size: 2.2rem; letter-spacing: -.02em; font-variant-numeric: tabular-nums; line-height: 1; }
+  .balance-value small { font-size: .4em; color: var(--ink-faint); font-weight: 500; margin-left: 6px; }
+  .balance-track { height: 8px; border-radius: 5px; background: var(--bg-surface-3); overflow: hidden; margin: 14px 0 8px; box-shadow: inset 0 0 0 1px var(--hairline-soft); }
+  .balance-track > i { display: block; height: 100%; border-radius: 5px; }
+  .balance-track > i.ok { background: linear-gradient(90deg, color-mix(in srgb, var(--status-ok) 55%, var(--accent-blue)), var(--status-ok)); }
+  .balance-track > i.warn { background: linear-gradient(90deg, var(--series-2), var(--status-warn-fg)); }
+  .balance-track > i.err { background: linear-gradient(90deg, var(--status-err-fg), #ff6b6b); }
+  .balance-track.is-unmeasured > i { width: 100%; opacity: .16; background: repeating-linear-gradient(90deg, var(--ink-faint) 0 8px, transparent 8px 14px); }
+  .balance-sub { display: flex; justify-content: space-between; gap: 10px; font-size: .78rem; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+  .balance-sub b { color: var(--ink-muted); }
+
+  .system-pill { display: inline-flex; align-items: center; gap: 6px; font-size: .72rem; font-weight: 600; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+  .system-pill > i { width: 7px; height: 7px; border-radius: 50%; }
+  .system-pill.ok { background: color-mix(in srgb, var(--status-ok) 14%, transparent); color: var(--status-ok); }
+  .system-pill.ok > i { background: var(--status-ok); }
+  .system-pill.warn { background: var(--status-warn-bg); color: var(--status-warn-fg); }
+  .system-pill.warn > i { background: var(--status-warn-fg); }
+  .system-pill.err { background: var(--status-err-bg); color: var(--status-err-fg); }
+  .system-pill.err > i { background: var(--status-err-fg); }
+  .system-pill.off { background: var(--bg-surface-3); color: var(--ink-faint); }
+  .system-pill.off > i { background: transparent; box-shadow: inset 0 0 0 1.5px var(--ink-faint); }
+
+  .quota-card { background: var(--bg-surface-1); border: 1px solid var(--hairline); border-radius: 16px; overflow: hidden; }
+  .quota-scroll { overflow-x: auto; }
+  .quota-table { width: 100%; border-collapse: collapse; font-size: .87rem; table-layout: fixed; min-width: 760px; }
+  .quota-table th { text-align: left; color: var(--ink-faint); font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; padding: 9px 16px; border-bottom: 1px solid var(--hairline); white-space: nowrap; }
+  .quota-table th:nth-child(1) { width: auto; }
+  .quota-table th:nth-child(2) { width: 38%; }
+  .quota-table th:nth-child(3) { width: 200px; }
+  .quota-table th:nth-child(4) { width: 150px; }
+  .quota-table td { padding: 11px 16px; border-bottom: 1px solid var(--hairline-soft); vertical-align: middle; }
+  .quota-table tbody tr:last-child td { border-bottom: none; }
+  .quota-table tbody tr:hover { background: var(--bg-surface-2); }
+  .quota-table .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .quota-service { display: flex; align-items: center; gap: 10px; min-width: 0; }
+  .quota-service > i { width: 9px; height: 9px; border-radius: 3px; flex: none; }
+  .quota-service > b { font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .quota-meter { display: flex; align-items: center; gap: 11px; }
+  .quota-track { flex: 1; height: 8px; border-radius: 5px; background: var(--bg-surface-3); overflow: hidden; min-width: 80px; box-shadow: inset 0 0 0 1px var(--hairline-soft); }
+  .quota-track > i { display: block; height: 100%; border-radius: 5px; }
+  .quota-track > i.ok { background: linear-gradient(90deg, color-mix(in srgb, var(--status-ok) 55%, var(--accent-blue)), var(--status-ok)); }
+  .quota-track > i.warn { background: linear-gradient(90deg, var(--series-2), var(--status-warn-fg)); }
+  .quota-track > i.err { background: linear-gradient(90deg, var(--status-err-fg), #ff6b6b); }
+  .quota-meter.unknown .quota-track { background: repeating-linear-gradient(90deg, var(--bg-surface-3) 0 12px, color-mix(in srgb, var(--ink-faint) 8%, var(--bg-surface-3)) 12px 20px); }
+  .quota-percent { font-variant-numeric: tabular-nums; font-size: .82rem; min-width: 40px; text-align: right; }
+  .quota-used { color: var(--ink-muted); font-variant-numeric: tabular-nums; }
+  .quota-used small { color: var(--ink-faint); font-size: inherit; }
+  .quota-reset { color: var(--ink-faint); font-size: .82rem; font-variant-numeric: tabular-nums; }
+  .quota-reset.error { color: var(--status-err-fg); }
+
+  .pipeline-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
+  .pipeline-card { border: 1px solid var(--hairline); border-radius: 14px; padding: 14px 16px; background: var(--bg-surface-1); }
+  .pipeline-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .pipeline-name { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: .88rem; min-width: 0; }
+  .pipeline-name > i { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .pipeline-name > i.ok { background: var(--status-ok); box-shadow: 0 0 0 3px color-mix(in srgb, var(--status-ok) 18%, transparent); }
+  .pipeline-name > i.warn { background: var(--status-warn-fg); box-shadow: 0 0 0 3px var(--status-warn-bg); }
+  .pipeline-name > i.err { background: var(--status-err-fg); box-shadow: 0 0 0 3px var(--status-err-bg); }
+  .pipeline-name > i.off { background: transparent; box-shadow: inset 0 0 0 1.5px var(--ink-faint); }
+  .pipeline-when { color: var(--ink-faint); font-size: .76rem; font-variant-numeric: tabular-nums; margin-top: 8px; }
+  .pipeline-when b { color: var(--ink-muted); }
+
+  @media (max-width: 1100px) {
+    .balance-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .system-topbar { align-items: stretch; flex-direction: column; }
+    .system-actions { justify-content: space-between; }
+    .balance-sub { flex-direction: column; gap: 3px; }
+    .pipeline-grid { grid-template-columns: 1fr; }
+  }
+</style>
