@@ -53,6 +53,9 @@ jobs:
           BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           ALERT_WEBHOOK_URL: ${{ secrets.ALERT_WEBHOOK_URL }}
+          # Push kodu ma szybko odświeżyć źródła. URL Inspection (Matrix) jest
+          # kosztowne i działa osobno w harmonogramie tygodniowym.
+          COLLECTOR_SKIP_INDEXING: ${{ github.event_name == 'push' && '1' || '0' }}
           LEADS_EXPORT_TOKEN: ${{ secrets.LEADS_EXPORT_TOKEN }}
         run: python dashboard/collector/main.py
 
