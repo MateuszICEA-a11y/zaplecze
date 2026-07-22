@@ -3,16 +3,17 @@ import Layout from '../../layouts/Layout.astro';
 import DomainHeader from '../../components/DomainHeader.astro';
 import StatCard from '../../components/StatCard.astro';
 import TableCard from '../../components/TableCard.astro';
-import TimeSeriesChart from '../../components/TimeSeriesChart.astro';
+import SourceState from '../../components/SourceState.astro';
 import {
   loadConfig,
   loadSnapshots,
   loadDetails,
   latestSnapshot,
   latestWithDelta,
-  metricSeries,
+  sourceStatuses,
+  isTemporarySourceFailure,
 } from '../../lib/data';
-import { fmtInt, fmtNum, fmtDuration, barWidth } from '../../lib/format';
+import { fmtInt, fmtNum, fmtDuration, fmtDate, barWidth } from '../../lib/format';
 
 export function getStaticPaths() {
   return loadConfig().domains.map((d) => ({ params: { domain: d.id }, props: { name: d.name } }));
@@ -24,19 +25,24 @@ const { name } = Astro.props;
 const snapshots = loadSnapshots(domain!);
 const latest = latestSnapshot(domain!);
 const details = loadDetails(domain!);
-const clarity = latest?.sources.clarity;
+const clarity = sourceStatuses(latest).clarity;
 const clarityDetails = details.sources.clarity;
 const configured = clarity != null && clarity.status !== 'not_configured';
 
 /* Clarity leży (np. HTTP 429)? Pokazujemy ostatni udany pomiar zamiast zwijać
    sekcję (handoff „Clarity – układ"): baner + przygaszone karty z datą danych. */
 const lastOk = [...snapshots].reverse().find((s) => s.sources.clarity?.status === 'ok');
-const isDown = configured && clarity?.status !== 'ok';
-const staleDate = isDown && lastOk ? lastOk.date.slice(5).split('-').reverse().join('.') : null;
+const isDown = configured && isTemporarySourceFailure(clarity);
+const staleDate = isDown && lastOk ? fmtDate(lastOk.date) : null;
+const measurementDate = lastOk ? fmtDate(lastOk.date) : null;
+const measurementTag = measurementDate ? `pomiar ${measurementDate}` : 'brak historii porównawczej';
+const lastOkWhen = lastOk
+  ? new Date(lastOk.collected_at).toLocaleString('pl-PL', {
+      day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Warsaw',
+    })
+  : null;
 const okData = (lastOk?.sources.clarity?.data ?? {}) as Record<string, number>;
 
-const sessions = metricSeries(snapshots, 'clarity', 'sessions');
-const users = metricSeries(snapshots, 'clarity', 'users');
 const statSessions = latestWithDelta(snapshots, 'clarity', 'sessions');
 const statUsers = latestWithDelta(snapshots, 'clarity', 'users');
 const statScroll = latestWithDelta(snapshots, 'clarity', 'scroll_depth_avg');
@@ -82,8 +88,14 @@ const frustration = [
 ].filter((f) => f.value != null);
 const scriptErrors = num(clarityDetails?.script_errors);
 
-const urlRows = clarityDetails?.url ?? [];
-const refRows = clarityDetails?.referrer ?? [];
+const hasName = (row: { name: string }) => Boolean(row.name && row.name.trim() !== '?');
+/* Stare dane mogły zawierać „?”: collector pytał o nieobsługiwany wymiar
+   Referrer, a etykiety URL pochodziły ze starszego parsera. Nie pokazujemy
+   kilkudziesięciu identycznych, nieweryfikowalnych wierszy. */
+const urlRows = (clarityDetails?.url ?? []).filter(hasName);
+const refRows = (clarityDetails?.referrer ?? []).filter(hasName);
+const urlLabelsMissing = (clarityDetails?.url?.length ?? 0) > 0 && urlRows.length === 0;
+const refLabelsMissing = (clarityDetails?.referrer?.length ?? 0) > 0 && refRows.length === 0;
 const maxUrl = Math.max(...urlRows.map((r) => r.sessions ?? 0), 0);
 const maxRef = Math.max(...refRows.map((r) => r.sessions ?? 0), 0);
 
@@ -111,7 +123,21 @@ const metaSuffix = staleDate ? ` · dane z ${staleDate}` : '';
 ---
 
 <Layout title={`${name} – Microsoft Clarity`}>
-  <DomainHeader domain={domain!} name={name} active="clarity" latest={latest} />
+  <DomainHeader
+    domain={domain!}
+    name={name}
+    active="clarity"
+    latest={latest}
+    themeToggle
+    measurementStatus={isDown ? 'warn' : 'ok'}
+    measurementLabel={isDown && staleDate ? `ostatnio: ${staleDate}` : undefined}
+  />
+
+  <div class="clarity-note">
+    Clarity pokazuje, jak użytkownicy zachowują się na stronie: średnią głębokość scrolla, czas aktywny,
+    strony na sesję oraz sygnały frustracji. Gdy API zwraca limit HTTP 429, widok zachowuje ostatni udany
+    pomiar i automatycznie oznacza wszystkie wartości jego datą.
+  </div>
 
   {
     !configured ? (
@@ -127,35 +153,48 @@ const metaSuffix = staleDate ? ` · dane z ${staleDate}` : '';
       </div>
     ) : (
       <>
-        {isDown && (
-          <div class="down-bar">
+        {isDown ? (
+          <div class="clarity-down" role="status">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" />
             </svg>
             <span>
-              Clarity: {(clarity?.error ?? 'błąd źródła').replace(/^clarity:\s*/, '')} — pokazujemy ostatni udany pomiar.
-              Odświeżymy automatycznie po zwolnieniu limitu.
+              Clarity: <strong>{clarity?.error ?? 'źródło chwilowo niedostępne'}</strong> — pokazujemy ostatni udany pomiar.
+              Odświeżymy dane automatycznie po zwolnieniu limitu.
             </span>
-            {lastOk && <span class="when">ostatni pomiar: {lastOk.date}</span>}
+            {lastOkWhen && <span class="when">ostatni pomiar: {lastOkWhen}</span>}
           </div>
+        ) : (
+          <SourceState
+            name="Clarity"
+            result={clarity}
+            lastDate={lastOk?.date}
+            metrics={[
+              { label: 'Sesje', value: statSessions.value },
+              { label: 'Użytkownicy', value: statUsers.value },
+              { label: 'Średni scroll', value: statScroll.value, unit: '%' },
+            ]}
+          />
         )}
 
         <div class="section-head">
           <h2>Zachowania użytkowników</h2>
           <span class="section-meta">okno: ostatnie 3 dni{metaSuffix}</span>
         </div>
-        <div class:list={['stat-grid', ghost]}>
-          <StatCard label="Sesje" value={statSessions.value} delta={isDown ? null : statSessions.delta} trend={sessions.values} staleDate={staleDate} hero />
-          <StatCard label="Użytkownicy" value={statUsers.value} delta={isDown ? null : statUsers.delta} trend={users.values} staleDate={staleDate} />
-          <StatCard label="Śr. scroll depth" value={statScroll.value} delta={isDown ? null : statScroll.delta} unit="%" precision={1} staleDate={staleDate} />
+        <div class:list={['stat-grid', 'rgrid', 'clarity-kpis', ghost]}>
+          <StatCard label="Sesje" value={statSessions.value} delta={isDown ? null : statSessions.delta} emptyDeltaLabel={measurementTag} staleDate={staleDate} />
+          <StatCard label="Użytkownicy" value={statUsers.value} delta={isDown ? null : statUsers.delta} emptyDeltaLabel={measurementTag} staleDate={staleDate} />
+          <StatCard label="Śr. scroll depth" value={statScroll.value} delta={isDown ? null : statScroll.delta} emptyDeltaLabel={measurementTag} unit="%" precision={1} staleDate={staleDate} />
           <StatCard
             label="Aktywny czas / sesja"
             value={typeof engagementActive === 'number' ? fmtDuration(engagementActive) : null}
+            emptyDeltaLabel={measurementTag}
             staleDate={staleDate}
           />
           <StatCard
             label="Strony / sesja"
             value={typeof pagesPerSession === 'number' ? fmtNum(pagesPerSession, 1) : null}
+            emptyDeltaLabel={measurementTag}
             staleDate={staleDate}
           />
         </div>
@@ -164,7 +203,7 @@ const metaSuffix = staleDate ? ` · dane z ${staleDate}` : '';
         <div class:list={['beh-grid', ghost]}>
           <div class="beh-card">
             <h4>Głębokość scrolla</h4>
-            <div class="sub">jaki % strony realnie widzą użytkownicy</div>
+            <div class="sub">średnia głębokość dostępna w Data Export API</div>
             <div class="scroll-meter">
               <span class="big">{scrollAvg !== null ? fmtNum(scrollAvg, 0) + '%' : '–'}</span>
               <span class="t"><i style={`width:${Math.min(100, Math.max(0, scrollAvg ?? 0))}%`} /></span>
@@ -227,20 +266,8 @@ const metaSuffix = staleDate ? ` · dane z ${staleDate}` : '';
           </>
         )}
 
-        <div class="chart-grid">
-          <TimeSeriesChart
-            title="Sesje i użytkownicy"
-            meta="okno 3-dniowe"
-            timestamps={sessions.timestamps}
-            series={[
-              { label: 'Sesje', values: sessions.values, fill: true },
-              { label: 'Użytkownicy', values: users.values },
-            ]}
-          />
-        </div>
-
         <div class:list={['two-col', ghost]}>
-          <TableCard title="Najczęściej oglądane strony" meta={staleDate ? `dane z ${staleDate}` : undefined} count={urlRows.length} filter={urlRows.length > 10} empty="Brak danych w tym oknie.">
+          <TableCard title="Najczęściej oglądane strony" meta={staleDate ? `dane z ${staleDate}` : undefined} count={urlRows.length} filter={urlRows.length > 10} empty={urlLabelsMissing ? 'Poprzedni odczyt nie zawierał etykiet URL. Poprawiony collector uzupełni je przy następnym pomiarze.' : 'Brak danych w tym oknie.'}>
             <table class="data-table">
               <thead>
                 <tr>
@@ -256,7 +283,7 @@ const metaSuffix = staleDate ? ` · dane z ${staleDate}` : '';
                       <span class="cell-url" title={row.name}>{row.name}</span>
                     </td>
                     <td class="num">
-                      <span class="cell-bar">
+                      <span class="cell-bar rbar">
                         {fmtInt(row.sessions)}
                         <span class="bar">
                           <i style={`width:${barWidth(row.sessions, maxUrl)}%`} />
@@ -269,11 +296,11 @@ const metaSuffix = staleDate ? ` · dane z ${staleDate}` : '';
               </tbody>
             </table>
           </TableCard>
-          <TableCard title="Źródła ruchu" meta="referrer" count={refRows.length} filter={refRows.length > 10} empty="Brak danych w tym oknie.">
+          <TableCard title="Źródła ruchu" meta="wymiar Source" count={refRows.length} filter={refRows.length > 10} empty={refLabelsMissing ? 'Poprzednio użyto nieobsługiwanego wymiaru Referrer. Przy następnym pomiarze pojawią się wartości Source.' : 'Brak danych w tym oknie.'}>
             <table class="data-table">
               <thead>
                 <tr>
-                  <th>Referrer</th>
+                  <th>Źródło</th>
                   <th class="num">Sesje</th>
                 </tr>
               </thead>
@@ -284,7 +311,7 @@ const metaSuffix = staleDate ? ` · dane z ${staleDate}` : '';
                       <span class="cell-url" title={row.name}>{row.name}</span>
                     </td>
                     <td class="num">
-                      <span class="cell-bar">
+                      <span class="cell-bar rbar">
                         {fmtInt(row.sessions)}
                         <span class="bar">
                           <i style={`width:${barWidth(row.sessions, maxRef)}%`} />
@@ -326,3 +353,63 @@ const metaSuffix = staleDate ? ` · dane z ${staleDate}` : '';
     )
   }
 </Layout>
+
+<style>
+  .clarity-note {
+    margin: 16px 0 4px;
+    padding: 10px 14px;
+    border-left: 2px solid var(--accent-blue);
+    border-radius: 0 10px 10px 0;
+    background: color-mix(in srgb, var(--accent-blue) 6%, transparent);
+    color: var(--ink-muted);
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+  .clarity-down {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 18px;
+    padding: 13px 16px;
+    border: 1px solid color-mix(in srgb, var(--status-warn-fg) 30%, transparent);
+    border-radius: 12px;
+    background: var(--status-warn-bg);
+    color: var(--status-warn-fg);
+    font-size: 0.88rem;
+  }
+  .clarity-down svg {
+    width: 18px;
+    height: 18px;
+    flex: none;
+  }
+  .clarity-down strong {
+    color: var(--ink);
+  }
+  .clarity-down .when {
+    margin-left: auto;
+    color: var(--ink-faint);
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .stat-grid.clarity-kpis {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  @media (max-width: 1080px) {
+    .stat-grid.clarity-kpis {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 620px) {
+    .clarity-down {
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .clarity-down .when {
+      width: 100%;
+      margin-left: 30px;
+    }
+    .stat-grid.clarity-kpis {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

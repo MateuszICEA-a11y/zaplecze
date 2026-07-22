@@ -1,0 +1,63 @@
+---
+import { isTemporarySourceFailure, type SourceResult } from '../lib/data';
+import { fmtDate } from '../lib/format';
+
+interface Metric {
+  label: string;
+  value: number | string | null;
+  unit?: string;
+}
+
+interface Props {
+  name: string;
+  result?: SourceResult;
+  lastDate?: string | null;
+  metrics?: Metric[];
+}
+
+const { name, result, lastDate = null, metrics = [] } = Astro.props;
+const error = result?.error ?? '';
+const temporary = isTemporarySourceFailure(result);
+const visibleMetrics = metrics.filter((metric) => metric.value !== null);
+const fmt = (value: number | string) =>
+  typeof value === 'number' ? value.toLocaleString('pl-PL', { maximumFractionDigits: 2 }) : value;
+---
+
+{
+  result && result.status !== 'ok' && result.status !== 'not_configured' && (
+    temporary ? (
+      <div class="down-card" role="status">
+        <div class="hd">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" />
+          </svg>
+          <span>
+            <strong>{name} chwilowo niedostępne.</strong>{' '}
+            Pokazujemy ostatni udany pomiar{lastDate ? ` z ${fmtDate(lastDate)}` : ''}.
+          </span>
+        </div>
+        {visibleMetrics.length > 0 && (
+          <div class="bd">
+            {visibleMetrics.map((metric) => (
+              <div class="mini">
+                <div class="l">{metric.label}</div>
+                <div class="v">{fmt(metric.value!)}{metric.unit && <small>{metric.unit}</small>}</div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    ) : (
+      <div class="banner err" role="alert">
+        <strong>{name}</strong>: {error || 'błąd konfiguracji źródła'}
+      </div>
+    )
+  )
+}
+
+<style>
+  .down-card,
+  .banner {
+    margin-bottom: 18px;
+  }
+</style>

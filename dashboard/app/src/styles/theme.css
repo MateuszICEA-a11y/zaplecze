@@ -56,6 +56,21 @@
   --dead: #fbbf24;
   --quick: #f0883e;
 
+  /* akcenty sekcji: Ahrefs, Leady (handoff §15/§17) */
+  --ahrefs-soft: rgba(240, 136, 62, 0.14);
+  --lead: #23c483;
+  --lead-soft: rgba(35, 196, 131, 0.14);
+
+  /* dostawcy botów AI (handoff §16) */
+  --v-anthropic: #d97757;
+  --v-openai: #23c483;
+  --v-perplexity: #0a9cff;
+  --v-apple: #a6abb5;
+  --v-bytedance: #b07cff;
+  --v-mistral: #17c3b2;
+  --v-common: #f0883e;
+  --v-other: #788294;
+
   --shadow-card: 0 30px 60px -25px rgba(0, 0, 0, 0.55);
   --container: 1280px;
   --gutter: 24px;
@@ -93,6 +108,17 @@
   --rage: #b91c1c;
   --dead: #b45309;
   --quick: #c2620e;
+  --ahrefs-soft: rgba(194, 98, 14, 0.14);
+  --lead: #0f9d58;
+  --lead-soft: rgba(15, 157, 88, 0.12);
+  --v-anthropic: #c2410c;
+  --v-openai: #0f9d58;
+  --v-perplexity: #0068cc;
+  --v-apple: #526176;
+  --v-bytedance: #7c3aed;
+  --v-mistral: #0d9488;
+  --v-common: #c2620e;
+  --v-other: #758195;
 
   --shadow-card: 0 20px 40px -20px rgba(15, 23, 42, 0.25);
 }
@@ -572,7 +598,17 @@ table.data-table {
 .opp-dots { display: inline-flex; gap: 3px; }
 .opp-dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--hairline); display: block; }
 .opp-dots i.on { background: var(--accent-blue); }
-.q-table th .info { cursor: help; color: var(--ink-faint); font-size: 0.8rem; margin-left: 4px; }
+.q-table th .info { cursor: pointer; color: var(--ink-faint); font: inherit; font-size: 0.8rem; margin-left: 4px; padding: 2px 4px; border: 0; background: none; }
+.q-table th .info:hover, .q-table th .info:focus-visible { color: var(--accent-blue); }
+.potential-help {
+  width: min(520px, calc(100vw - 32px));
+  color: var(--ink); background: var(--bg-surface-1); border: 1px solid var(--hairline);
+  border-radius: 14px; padding: 20px; box-shadow: 0 18px 60px rgba(0,0,0,.45);
+}
+.potential-help::backdrop { background: rgba(0,0,0,.48); backdrop-filter: blur(2px); }
+.potential-help h3 { margin: 0 0 10px; font: 600 1rem var(--font-display); }
+.potential-help p { margin: 8px 0; color: var(--ink-muted); font-size: .84rem; line-height: 1.55; }
+.potential-help button { margin-top: 12px; border: 1px solid var(--hairline); border-radius: 9px; padding: 7px 12px; color: var(--ink); background: var(--bg-surface-2); cursor: pointer; }
 .q-drawer > td { background: var(--bg-surface-2); padding: 14px 18px; }
 .q-drawer .drawer-grid { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
 .q-drawer .spark { flex: 1 1 260px; max-width: 420px; }
@@ -980,3 +1016,124 @@ a.stat-card.on { border-color: var(--sen); box-shadow: 0 0 0 1px var(--sen); }
 .devleg .r .dot { width: 10px; height: 10px; border-radius: 3px; flex: none; }
 .devleg .r .n { color: var(--ink-muted); }
 .devleg .r .v { margin-left: auto; font-variant-numeric: tabular-nums; font-weight: 600; }
+
+/* ── Ahrefs – układ (handoff §15) ────────────────────────────────────── */
+/* pasek DR 0–100 w karcie hero */
+.drbar { height: 7px; border-radius: 5px; background: var(--bg-surface-3); overflow: hidden; margin-top: 13px; box-shadow: inset 0 0 0 1px var(--hairline-soft); }
+.drbar > i { display: block; height: 100%; border-radius: 5px; background: linear-gradient(90deg, color-mix(in srgb, var(--ahrefs) 50%, var(--series-3)), var(--ahrefs)); }
+/* rozkład domen wg DR */
+.dist { display: flex; flex-direction: column; gap: 10px; }
+.dist .row { display: flex; align-items: center; gap: 12px; }
+.dist .row .l { width: 64px; color: var(--ink-muted); font-size: .8rem; font-variant-numeric: tabular-nums; flex: none; }
+.dist .row .t { flex: 1; height: 18px; border-radius: 6px; background: var(--bg-surface-3); overflow: hidden; }
+.dist .row .t > i { display: block; height: 100%; border-radius: 6px; }
+.dist .row .n { width: 44px; text-align: right; font-variant-numeric: tabular-nums; font-size: .82rem; flex: none; }
+/* komórka domeny: kafelek-inicjał + nazwa */
+.domcell { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.domcell .fav { width: 18px; height: 18px; border-radius: 5px; flex: none; display: inline-flex; align-items: center; justify-content: center; font-size: .6rem; font-weight: 700; color: #fff; text-transform: uppercase; }
+.domcell .txt { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 500; }
+/* badge DR: hi ≥70 / mid ≥40 / lo */
+.drbadge { display: inline-flex; align-items: center; justify-content: center; min-width: 36px; font-family: var(--font-display); font-weight: 600; font-size: .82rem; font-variant-numeric: tabular-nums; padding: 2px 9px; border-radius: 8px; background: var(--bg-surface-3); color: var(--ink-muted); box-shadow: inset 0 0 0 1px var(--hairline-soft); }
+.drbadge.hi { background: color-mix(in srgb, var(--status-ok) 15%, transparent); color: color-mix(in srgb, var(--status-ok) 82%, var(--ink)); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--status-ok) 34%, transparent); }
+.drbadge.mid { background: var(--accent-blue-soft); color: color-mix(in srgb, var(--accent-blue) 88%, var(--ink)); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent-blue) 30%, transparent); }
+.dt-age { color: var(--ink-faint); font-size: .74rem; }
+
+/* ── Boty AI – układ (handoff §16) ───────────────────────────────────── */
+.vendors { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(230px, 100%), 1fr)); gap: 14px; margin-bottom: 18px; }
+.vcard { border: 1px solid var(--hairline); border-radius: 15px; padding: 16px 18px; background: var(--bg-surface-1); }
+.vcard .h { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
+.vcard .h .n { display: flex; align-items: center; gap: 9px; font-family: var(--font-display); font-weight: 600; font-size: 1rem; }
+.vcard .h .n .dot { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.vcard .h .share { font-size: .78rem; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+.vcard .big { font-family: var(--font-display); font-weight: 600; font-size: 1.7rem; font-variant-numeric: tabular-nums; letter-spacing: -.02em; margin: 8px 0 12px; }
+.vcard .big span { font-size: .5em; color: var(--ink-faint); font-weight: 500; margin-left: 6px; }
+.vcard .bots { display: flex; flex-direction: column; gap: 7px; }
+.vcard .bots .b { display: flex; align-items: center; gap: 9px; font-size: .8rem; }
+.vcard .bots .b .name { color: var(--ink-muted); width: 116px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: none; }
+.vcard .bots .b .t { flex: 1; height: 6px; border-radius: 4px; background: var(--bg-surface-3); overflow: hidden; }
+.vcard .bots .b .t > i { display: block; height: 100%; border-radius: 4px; }
+.vcard .bots .b .n { color: var(--ink); font-variant-numeric: tabular-nums; min-width: 24px; text-align: right; flex: none; }
+.botcell { display: flex; align-items: center; gap: 9px; min-width: 0; }
+.botcell .dot { width: 8px; height: 8px; border-radius: 3px; flex: none; }
+.botcell .txt { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* ścieżki: mono + flaga sondy skanującej podatności */
+.path-mono { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: .82rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: block; }
+.path-mono.sus { color: var(--status-err-fg); }
+.flag { display: inline-flex; align-items: center; gap: 5px; font-size: .68rem; font-weight: 600; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
+.flag.sus { background: var(--status-err-bg); color: var(--status-err-fg); }
+.flag.ok { background: color-mix(in srgb, var(--status-ok) 13%, transparent); color: var(--status-ok); }
+.flag svg { width: 10px; height: 10px; }
+.probe-note { display: flex; align-items: center; gap: 10px; padding: 11px 16px; border-radius: 10px; background: var(--status-err-bg); border: 1px solid color-mix(in srgb, var(--status-err-fg) 26%, transparent); color: var(--status-err-fg); font-size: .83rem; margin: 0 18px 14px; }
+.probe-note svg { width: 16px; height: 16px; flex: none; }
+.probe-note b { color: var(--ink); }
+
+/* ── Leady – układ (handoff §17) ─────────────────────────────────────── */
+.lead-two { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; align-items: start; margin-bottom: 18px; }
+@media (max-width: 1080px) { .lead-two { grid-template-columns: 1fr; } }
+.feed-card { border: 1px solid var(--hairline); border-radius: 16px; background: var(--bg-surface-1); overflow: hidden; }
+.feed-card .hd { padding: 14px 18px 12px; border-bottom: 1px solid var(--hairline-soft); display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.feed-card .hd h3 { font-size: .98rem; margin: 0; }
+.feed-card .hd .m { color: var(--ink-faint); font-size: .78rem; }
+.lead-row { display: flex; align-items: center; gap: 14px; padding: 14px 18px; border-bottom: 1px solid var(--hairline-soft); }
+.lead-row:last-child { border-bottom: none; }
+.lead-row .av { width: 40px; height: 40px; border-radius: 11px; flex: none; display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 600; font-size: 1rem; color: #05121f; background: linear-gradient(135deg, var(--lead), var(--series-3)); }
+.lead-row .body { min-width: 0; flex: 1; }
+.lead-row .body .name { font-weight: 600; font-size: .94rem; }
+.lead-row .body .sub { color: var(--ink-muted); font-size: .82rem; margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lead-row .meta { text-align: right; flex: none; }
+.lead-row .meta .when { color: var(--ink-faint); font-size: .76rem; margin-top: 5px; font-variant-numeric: tabular-nums; }
+.src-chip { display: inline-flex; align-items: center; gap: 6px; font-size: .74rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--lead-soft); color: var(--lead); white-space: nowrap; }
+.src-chip.tool { background: var(--accent-blue-soft); color: var(--accent-blue); }
+.tools-list { padding: 6px 0; }
+.trow { display: flex; align-items: center; gap: 12px; padding: 11px 18px; }
+.trow .tn { flex: 1; min-width: 0; }
+.trow .tn .nm { font-weight: 500; font-size: .88rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.trow .tn .t { height: 6px; border-radius: 4px; background: var(--bg-surface-3); overflow: hidden; margin-top: 7px; }
+.trow .tn .t > i { display: block; height: 100%; border-radius: 4px; background: linear-gradient(90deg, color-mix(in srgb, var(--accent-blue) 50%, var(--lead)), var(--accent-blue)); }
+.trow .cnt { font-family: var(--font-display); font-weight: 600; font-variant-numeric: tabular-nums; font-size: 1.1rem; flex: none; min-width: 30px; text-align: right; }
+.trow .conv { flex: none; width: 84px; text-align: right; font-size: .76rem; color: var(--ink-faint); }
+.trow .conv b { color: var(--lead); }
+.starter { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 12px; background: var(--lead-soft); border: 1px solid color-mix(in srgb, var(--lead) 26%, transparent); color: var(--ink-muted); font-size: .84rem; margin: 14px 16px 16px; }
+.starter svg { width: 17px; height: 17px; color: var(--lead); flex: none; }
+.starter b { color: var(--ink); }
+
+/* ── System i limity (handoff §18) ───────────────────────────────────── */
+.bal { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 14px; margin-bottom: 18px; }
+.bcard { position: relative; border: 1px solid var(--hairline); border-radius: 16px; padding: 18px 20px; overflow: hidden; background: linear-gradient(180deg, color-mix(in srgb, var(--ink) 4%, var(--bg-surface-1)), var(--bg-surface-1) 60%); }
+.bcard .h { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.bcard .h .logo { width: 30px; height: 30px; border-radius: 9px; flex: none; display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; color: #fff; }
+.bcard .h .nm { font-family: var(--font-display); font-weight: 600; font-size: .98rem; }
+.bcard .h .st { margin-left: auto; }
+.bcard .big { font-family: var(--font-display); font-weight: 600; font-size: 2.2rem; letter-spacing: -.02em; font-variant-numeric: tabular-nums; line-height: 1; }
+.bcard .big small { font-size: .4em; color: var(--ink-faint); font-weight: 500; margin-left: 6px; }
+.bcard .track { height: 8px; border-radius: 5px; background: var(--bg-surface-3); overflow: hidden; margin: 14px 0 8px; box-shadow: inset 0 0 0 1px var(--hairline-soft); }
+.bcard .track > i { display: block; height: 100%; border-radius: 5px; }
+.bcard .track > i.ok { background: linear-gradient(90deg, color-mix(in srgb, var(--status-ok) 55%, var(--accent-blue)), var(--status-ok)); }
+.bcard .track > i.warn { background: linear-gradient(90deg, var(--series-2), var(--status-warn-fg)); }
+.bcard .track > i.err { background: linear-gradient(90deg, var(--status-err-fg), #ff6b6b); }
+.bcard .sub { display: flex; justify-content: space-between; gap: 10px; font-size: .78rem; color: var(--ink-faint); font-variant-numeric: tabular-nums; flex-wrap: wrap; }
+.bcard .sub b { color: var(--ink-muted); }
+.pill { display: inline-flex; align-items: center; gap: 6px; font-size: .72rem; font-weight: 600; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+.pill .d { width: 7px; height: 7px; border-radius: 50%; }
+.pill.ok { background: color-mix(in srgb, var(--status-ok) 14%, transparent); color: var(--status-ok); } .pill.ok .d { background: var(--status-ok); }
+.pill.warn { background: var(--status-warn-bg); color: var(--status-warn-fg); } .pill.warn .d { background: var(--status-warn-fg); }
+.pill.err { background: var(--status-err-bg); color: var(--status-err-fg); } .pill.err .d { background: var(--status-err-fg); }
+.pill.off { background: var(--bg-surface-3); color: var(--ink-faint); } .pill.off .d { background: transparent; box-shadow: inset 0 0 0 1.5px var(--ink-faint); }
+/* tabela limitów integracji */
+.svc { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.svc .dot { width: 9px; height: 9px; border-radius: 3px; flex: none; }
+.svc .txt { font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.limit-note { color: var(--ink-faint); font-size: .82rem; }
+/* zdrowie pipeline'u */
+.pipe { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr)); gap: 12px; margin-bottom: 18px; }
+.pcard { border: 1px solid var(--hairline); border-radius: 14px; padding: 14px 16px; background: var(--bg-surface-1); }
+.pcard .top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.pcard .top .nm { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: .88rem; min-width: 0; }
+.pcard .top .nm span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pcard .top .nm .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+.pcard .top .nm .dot.ok { background: var(--status-ok); box-shadow: 0 0 0 3px color-mix(in srgb, var(--status-ok) 18%, transparent); }
+.pcard .top .nm .dot.warn { background: var(--status-warn-fg); box-shadow: 0 0 0 3px var(--status-warn-bg); }
+.pcard .top .nm .dot.err { background: var(--status-err-fg); box-shadow: 0 0 0 3px var(--status-err-bg); }
+.pcard .top .nm .dot.off { background: transparent; box-shadow: inset 0 0 0 1.5px var(--ink-faint); }
+.pcard .when { color: var(--ink-faint); font-size: .76rem; font-variant-numeric: tabular-nums; margin-top: 8px; }
+.pcard .when b { color: var(--ink-muted); }

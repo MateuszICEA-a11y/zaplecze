@@ -4,6 +4,7 @@ import DomainHeader from '../../components/DomainHeader.astro';
 import StatCard from '../../components/StatCard.astro';
 import TableCard from '../../components/TableCard.astro';
 import TimeSeriesChart from '../../components/TimeSeriesChart.astro';
+import SourceState from '../../components/SourceState.astro';
 import {
   loadConfig,
   loadSnapshots,
@@ -11,8 +12,10 @@ import {
   latestSnapshot,
   latestWithDelta,
   metricSeries,
+  sourceStatuses,
+  isTemporarySourceFailure,
 } from '../../lib/data';
-import { fmtInt, fmtPct, fmtNum, posClass, barWidth } from '../../lib/format';
+import { fmtInt, fmtPct, fmtNum, fmtDate, fmtDateRange, posClass, barWidth } from '../../lib/format';
 
 export function getStaticPaths() {
   return loadConfig().domains.map((d) => ({ params: { domain: d.id }, props: { name: d.name } }));
@@ -42,7 +45,7 @@ const defaultWindow = windows?.['30d'] ?? windows?.[windowOptions[0]?.[0] ?? '']
 const queries = defaultWindow?.queries ?? gscDetails?.queries ?? [];
 const pages = defaultWindow?.pages ?? gscDetails?.pages ?? [];
 const activeWindow = defaultWindow ?? gscDetails?.window ?? null;
-const windowMeta = activeWindow ? `okno ${activeWindow.start} → ${activeWindow.end}` : undefined;
+const windowMeta = activeWindow ? `okno ${fmtDateRange(activeWindow.start, activeWindow.end)}` : undefined;
 
 const clicks = metricSeries(snapshots, 'gsc', 'clicks');
 const impressions = metricSeries(snapshots, 'gsc', 'impressions');
@@ -54,29 +57,28 @@ const statImpressions = latestWithDelta(snapshots, 'gsc', 'impressions');
 const statCtr = latestWithDelta(snapshots, 'gsc', 'ctr');
 const statPosition = latestWithDelta(snapshots, 'gsc', 'position');
 const statQueries = latestWithDelta(snapshots, 'gsc', 'queries');
-const dataDate = latest?.sources.gsc?.data?.data_date ?? null;
-const gsc = latest?.sources.gsc;
+const gsc = sourceStatuses(latest).gsc;
+const dataDate = gsc?.data?.data_date ?? null;
+const gscLastOk = [...snapshots].reverse().find((snapshot) => snapshot.sources.gsc?.status === 'ok');
+const gscStaleDate = isTemporarySourceFailure(gsc) ? gscLastOk?.date ?? null : null;
 
 const maxQueryImpressions = Math.max(...queries.map((q) => q.impressions ?? 0), 0);
 
-// Układ „Potencjał": opp = wyświetlenia × waga pozycji. Premiuje duży popyt
-// blisko czołówki (striking distance 4-20), nie frazy już wygrane (top3)
-// ani beznadziejnie dalekie (>50).
+// Potencjał: wynik = wyświetlenia × waga pozycji, a liczba kropek jest rangą
+// percentylową w aktualnej liście. Dzięki temu skali nie niszczy jedna bardzo
+// duża fraza i zawsze widać sensowny rozkład priorytetów.
 const oppMult = (pos: number | null) =>
   typeof pos !== 'number' ? 0.32 : pos <= 3 ? 0.35 : pos <= 20 ? 1.0 : pos <= 50 ? 0.65 : 0.32;
 const withOpp = (rows: typeof queries) => {
-  const scored = rows.map((q) => ({ ...q, opp: (q.impressions ?? 0) * oppMult(q.position) }));
-  const maxOpp = Math.max(...scored.map((q) => q.opp), 0);
-  return scored
-    .map((q) => {
-      const nrm = maxOpp > 0 ? q.opp / maxOpp : 0;
-      return {
-        ...q,
-        oppDots: maxOpp > 0 ? Math.max(1, Math.round(nrm * 5)) : 1,
-        oppLabel: nrm >= 0.6 ? 'Wysoki' : nrm >= 0.3 ? 'Średni' : 'Niski',
-      };
-    })
+  const scored = rows
+    .map((q) => ({ ...q, opp: (q.impressions ?? 0) * oppMult(q.position) }))
     .sort((a, b) => b.opp - a.opp);
+  const n = Math.max(scored.length, 1);
+  return scored.map((q, index) => {
+    const percentile = 1 - index / n;
+    const oppDots = percentile > 0.9 ? 5 : percentile > 0.75 ? 4 : percentile > 0.5 ? 3 : percentile > 0.25 ? 2 : 1;
+    return { ...q, oppDots, oppLabel: oppDots >= 4 ? 'Wysoki' : oppDots === 3 ? 'Średni' : 'Niski' };
+  });
 };
 const queriesOpp = withOpp(queries);
 const queryHistory = gscDetails?.query_history ?? null;
@@ -112,7 +114,7 @@ const compareModes = (
   .map((m) => ({
     id: m.id,
     short: m.short,
-    meta: `${m.label} · ${m.data!.prev.start} → ${m.data!.prev.end} vs ${compare!.cur.start} → ${compare!.cur.end} · sortowane wg największego spadku wyświetleń`,
+    meta: `${m.label} · ${fmtDateRange(m.data!.prev.start, m.data!.prev.end)} vs ${fmtDateRange(compare!.cur.start, compare!.cur.end)} · sortowane wg największego spadku wyświetleń`,
     queries: dropPanel(m.data!.queries ?? [], false),
     pages: dropPanel(m.data!.pages ?? [], true),
   }));
@@ -121,27 +123,31 @@ const compareModes = (
 <Layout title={`${name} – Google Search Console`}>
   <DomainHeader domain={domain!} name={name} active="gsc" latest={latest} />
 
-  {
-    gsc && gsc.status !== 'ok' && (
-      <div class={`banner ${gsc.status === 'token_expired' ? 'warn' : 'err'}`}>
-        <strong>GSC</strong>: {gsc.error ?? 'błąd źródła'}
-      </div>
-    )
-  }
+  <SourceState
+    name="GSC"
+    result={gsc}
+    lastDate={gscLastOk?.date}
+    metrics={[
+      { label: 'Kliknięcia', value: statClicks.value },
+      { label: 'Wyświetlenia', value: statImpressions.value },
+      { label: 'Średnia pozycja', value: statPosition.value },
+    ]}
+  />
 
   <div class="section-head">
     <h2>Ruch z wyszukiwarki</h2>
-    {dataDate && <span class="section-meta">dzienne metryki z {dataDate} (opóźnienie GSC ~3 dni)</span>}
+    {dataDate && <span class="section-meta">dzienne metryki z {fmtDate(String(dataDate))} (opóźnienie GSC ~3 dni)</span>}
   </div>
-  <div class="stat-grid">
-    <StatCard label="Kliknięcia / dzień" value={statClicks.value} delta={statClicks.delta} trend={clicks.values} hero />
+  <div class="stat-grid rgrid">
+    <StatCard label="Kliknięcia / dzień" value={statClicks.value} delta={statClicks.delta} trend={clicks.values} staleDate={gscStaleDate} hero />
     <StatCard
       label="Wyświetlenia / dzień"
       value={statImpressions.value}
       delta={statImpressions.delta}
       trend={impressions.values}
+      staleDate={gscStaleDate}
     />
-    <StatCard label="CTR" value={statCtr.value} delta={statCtr.delta} unit="%" precision={2} />
+    <StatCard label="CTR" value={statCtr.value} delta={statCtr.delta} unit="%" precision={2} staleDate={gscStaleDate} />
     <StatCard
       label="Średnia pozycja"
       value={statPosition.value}
@@ -149,12 +155,14 @@ const compareModes = (
       precision={1}
       goodWhen="down"
       trend={position.values}
+      staleDate={gscStaleDate}
     />
     <StatCard
       label="Frazy z wyświetleniami"
       value={statQueries.value}
       delta={statQueries.delta}
       trend={queriesSeries.values}
+      staleDate={gscStaleDate}
     />
   </div>
 
@@ -164,16 +172,19 @@ const compareModes = (
       meta="dziennie"
       timestamps={clicks.timestamps}
       series={[
-        { label: 'Kliknięcia', values: clicks.values },
-        { label: 'Wyświetlenia', values: impressions.values, fill: true },
+        { label: 'Kliknięcia', values: clicks.values, fill: true },
+        { label: 'Wyświetlenia', values: impressions.values },
       ]}
+      secondaryAxis
     />
     <TimeSeriesChart
       title="Średnia pozycja"
       meta="niżej = lepiej"
       timestamps={position.timestamps}
-      series={[{ label: 'Pozycja', values: position.values }]}
+      series={[{ label: 'Pozycja', values: position.values, color: '--series-2', fill: true }]}
       precision={1}
+      invert
+      points
     />
     <TimeSeriesChart
       title="Frazy z wyświetleniami"
@@ -212,8 +223,8 @@ const compareModes = (
                   <header>
                     <h4>{title}</h4>
                     <div class="drop-summary">
-                      <span class="chip bad">▼ <b>{fmtInt(panel.dropCount)}</b></span>
-                      <span class="chip good">▲ <b>{fmtInt(panel.gainCount)}</b></span>
+                      <span class="chip rchip bad">▼ <b>{fmtInt(panel.dropCount)}</b></span>
+                      <span class="chip rchip good">▲ <b>{fmtInt(panel.gainCount)}</b></span>
                     </div>
                   </header>
                   {panel.rows.length === 0 && <div class="drop-empty">Brak spadków wyświetleń w tym oknie.</div>}
@@ -264,21 +275,29 @@ const compareModes = (
         typeof p !== 'number' ? '' : p <= 3 ? 'top3' : p <= 10 ? 'top10' : p <= 30 ? 'mid' : 'low';
       const bar = (v: number, max: number) => (max > 0 ? Math.max(2, Math.round((v / max) * 100)) : 0);
       const stripOrigin = (url: string) => url.replace(/^https?:\/\/[^/]+/, '') || '/';
+      const dateRange = (start: string, end: string) => {
+        const part = (value: string) => value.slice(0, 10).split('-').map(Number);
+        const [ay, am, ad] = part(start);
+        const [by, bm, bd] = part(end);
+        const two = (v: number) => String(v).padStart(2, '0');
+        if (ay === by && am === bm) return `${two(ad)}–${two(bd)}.${two(bm)}.${by}`;
+        if (ay === by) return `${two(ad)}.${two(am)}–${two(bd)}.${two(bm)}.${by}`;
+        return `${two(ad)}.${two(am)}.${ay}–${two(bd)}.${two(bm)}.${by}`;
+      };
 
       const pageRowHtml = (r: Row, max: number) => `
         <tr>
           <td class="grow"><a class="cell-url" href="${esc(r.key)}" rel="noopener" target="_blank">${esc(stripOrigin(r.key))}</a></td>
           <td class="num">${fi(r.clicks)}</td>
-          <td class="num"><span class="cell-bar">${fi(r.impressions)}<span class="bar"><i style="width:${bar(
+          <td class="num"><span class="cell-bar rbar">${fi(r.impressions)}<span class="bar"><i style="width:${bar(
             r.impressions,
             max,
           )}%"></i></span></span></td>
           <td class="num"><span class="${typeof r.ctr === 'number' && r.ctr > 0 ? 'ctr-pos' : ''}">${fp(r.ctr)}</span></td>
-          <td class="num"><span class="pos-badge ${posCls(r.position)}">${f1(r.position)}</span></td>
+          <td class="num"><span class="pos-badge rbadge ${posCls(r.position)}">${f1(r.position)}</span></td>
         </tr>`;
 
-      /* Układ „Potencjał" (q-table): opp = wyświetlenia × waga pozycji, sort
-         domyślny malejąco – lustro logiki z frontmatteru. */
+      /* Potencjał: wynik ważony + ranga percentylowa – lustro frontmatteru. */
       const oppMult = (p: number | null) =>
         typeof p !== 'number' ? 0.32 : p <= 3 ? 0.35 : p <= 20 ? 1.0 : p <= 50 ? 0.65 : 0.32;
       const qRowHtml = (r: Row & { opp: number; dots: number; label: string }, max: number) => `
@@ -286,28 +305,25 @@ const compareModes = (
             data-pos="${r.position ?? ''}" data-imp="${r.impressions}" data-opp-label="${r.label}">
           <td class="grow"><span class="q-kw"><span class="chev">▸</span><span class="txt">${esc(r.key)}</span></span></td>
           <td class="num qc-clk"><span class="clicks-val ${r.clicks ? '' : 'zero'}">${fi(r.clicks)}</span></td>
-          <td class="num qc-pos"><span class="pos-badge ${posCls(r.position)}">${f1(r.position)}</span></td>
-          <td class="num qc-imp"><span class="cell-bar">${fi(r.impressions)}<span class="bar"><i style="width:${bar(
+          <td class="num qc-pos"><span class="pos-badge rbadge ${posCls(r.position)}">${f1(r.position)}</span></td>
+          <td class="num qc-imp"><span class="cell-bar rbar">${fi(r.impressions)}<span class="bar"><i style="width:${bar(
             r.impressions,
             max,
           )}%"></i></span></span></td>
-          <td class="num qc-opp" data-sort="${r.opp}" title="${r.label} (${fi(Math.round(r.opp))})"><span class="opp-dots">${[1, 2, 3, 4, 5]
+          <td class="num qc-opp" data-sort="${r.opp}" title="${r.label} (${fi(Math.round(r.opp))})"><span class="opp-dots rdots">${[1, 2, 3, 4, 5]
             .map((i) => `<i class="${i <= r.dots ? 'on' : ''}"></i>`)
             .join('')}</span></td>
         </tr>`;
       const withOpp = (rows: Row[]) => {
-        const scored = rows.map((r) => ({ ...r, opp: (r.impressions ?? 0) * oppMult(r.position) }));
-        const maxOpp = Math.max(...scored.map((r) => r.opp), 0);
-        return scored
-          .map((r) => {
-            const nrm = maxOpp > 0 ? r.opp / maxOpp : 0;
-            return {
-              ...r,
-              dots: maxOpp > 0 ? Math.max(1, Math.round(nrm * 5)) : 1,
-              label: nrm >= 0.6 ? 'Wysoki' : nrm >= 0.3 ? 'Średni' : 'Niski',
-            };
-          })
+        const scored = rows
+          .map((r) => ({ ...r, opp: (r.impressions ?? 0) * oppMult(r.position) }))
           .sort((a, b) => b.opp - a.opp);
+        const n = Math.max(scored.length, 1);
+        return scored.map((r, index) => {
+          const percentile = 1 - index / n;
+          const dots = percentile > 0.9 ? 5 : percentile > 0.75 ? 4 : percentile > 0.5 ? 3 : percentile > 0.25 ? 2 : 1;
+          return { ...r, dots, label: dots >= 4 ? 'Wysoki' : dots === 3 ? 'Średni' : 'Niski' };
+        });
       };
 
       const applyWindow = (key: string) => {
@@ -327,7 +343,7 @@ const compareModes = (
           const countEl = card.querySelector('.table-head h3 .table-meta');
           if (countEl) countEl.textContent = ` · ${rows.length.toLocaleString('pl-PL')}`;
           const metaEl = card.querySelector('.table-head > .table-meta');
-          if (metaEl) metaEl.textContent = `okno ${win.start} → ${win.end}`;
+          if (metaEl) metaEl.textContent = `okno ${dateRange(win.start, win.end)}`;
           card.querySelectorAll<HTMLTableCellElement>('thead th').forEach((th) => {
             th.classList.remove('active');
             delete th.dataset.dir;
@@ -469,7 +485,7 @@ const compareModes = (
           <th class="num qc-imp">Wyświetlenia</th>
           <th class="num qc-opp" data-dir="desc">
             Potencjał
-            <span class="info" title="Potencjał = wyświetlenia × waga pozycji. Wagi: TOP 3 → 0,35 (już wygrane) · 4–20 → 1,0 (striking distance) · 21–50 → 0,65 · dalej → 0,32. Premiuje duży popyt blisko czołówki – frazy warte pchnięcia w górę.">ⓘ</span>
+            <button class="info" type="button" popovertarget="gsc-potential-help" data-no-sort aria-label="Jak liczymy potencjał?">ⓘ</button>
           </th>
         </tr>
       </thead>
@@ -495,10 +511,10 @@ const compareModes = (
                 <span class={`clicks-val ${!q.clicks ? 'zero' : ''}`}>{fmtInt(q.clicks)}</span>
               </td>
               <td class="num qc-pos">
-                <span class={`pos-badge ${posClass(q.position)}`}>{fmtNum(q.position, 1)}</span>
+                <span class={`pos-badge rbadge ${posClass(q.position)}`}>{fmtNum(q.position, 1)}</span>
               </td>
               <td class="num qc-imp">
-                <span class="cell-bar">
+                <span class="cell-bar rbar">
                   {fmtInt(q.impressions)}
                   <span class="bar">
                     <i style={`width:${barWidth(q.impressions, maxQueryImpressions)}%`} />
@@ -506,7 +522,7 @@ const compareModes = (
                 </span>
               </td>
               <td class="num qc-opp" data-sort={q.opp} title={`${q.oppLabel} (${fmtInt(Math.round(q.opp))})`}>
-                <span class="opp-dots">
+                <span class="opp-dots rdots">
                   {[1, 2, 3, 4, 5].map((i) => (
                     <i class={i <= q.oppDots ? 'on' : ''} />
                   ))}
@@ -518,6 +534,12 @@ const compareModes = (
       </tbody>
     </table>
   </TableCard>
+  <div id="gsc-potential-help" class="potential-help" popover>
+    <h3>Jak liczymy potencjał?</h3>
+    <p><strong>Wynik bazowy</strong> to liczba wyświetleń pomnożona przez wagę pozycji: TOP 3 × 0,35; pozycje 4–20 × 1; 21–50 × 0,65; dalsze × 0,32.</p>
+    <p><strong>Kropki pokazują rangę w wybranym okresie</strong>: 5 kropek = najlepsze 10% fraz, 4 = kolejne 15%, 3 = kolejne 25%, 2 = kolejne 25%, 1 = pozostałe 25%. To priorytet względny, nie ocena jakości frazy.</p>
+    <button type="button" popovertarget="gsc-potential-help" popovertargetaction="hide">Rozumiem</button>
+  </div>
   {queryHistory && (
     <script
       type="application/json"
@@ -554,7 +576,7 @@ const compareModes = (
               </td>
               <td class="num">{fmtInt(p.clicks)}</td>
               <td class="num">
-                <span class="cell-bar">
+                <span class="cell-bar rbar">
                   {fmtInt(p.impressions)}
                   <span class="bar">
                     <i style={`width:${barWidth(p.impressions, maxPageImpressions)}%`} />
@@ -565,7 +587,7 @@ const compareModes = (
                 <span class={typeof p.ctr === 'number' && p.ctr > 0 ? 'ctr-pos' : ''}>{fmtPct(p.ctr)}</span>
               </td>
               <td class="num">
-                <span class={`pos-badge ${posClass(p.position)}`}>{fmtNum(p.position, 1)}</span>
+                <span class={`pos-badge rbadge ${posClass(p.position)}`}>{fmtNum(p.position, 1)}</span>
               </td>
             </tr>
           ))

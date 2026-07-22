@@ -4,6 +4,7 @@ import DomainHeader from '../../components/DomainHeader.astro';
 import StatCard from '../../components/StatCard.astro';
 import TableCard from '../../components/TableCard.astro';
 import TimeSeriesChart from '../../components/TimeSeriesChart.astro';
+import SourceState from '../../components/SourceState.astro';
 import {
   loadConfig,
   loadSnapshots,
@@ -12,8 +13,10 @@ import {
   latestWithDelta,
   metricSeries,
   sectionEnabled,
+  sourceStatuses,
+  isTemporarySourceFailure,
 } from '../../lib/data';
-import { fmtInt, barWidth } from '../../lib/format';
+import { fmtInt, fmtDate, barWidth } from '../../lib/format';
 
 export function getStaticPaths() {
   return loadConfig()
@@ -27,7 +30,9 @@ const { name } = Astro.props;
 const snapshots = loadSnapshots(domain!);
 const latest = latestSnapshot(domain!);
 const details = loadDetails(domain!);
-const ai = latest?.sources.cloudflare_ai;
+const ai = sourceStatuses(latest).cloudflare_ai;
+const aiLastOk = [...snapshots].reverse().find((snapshot) => snapshot.sources.cloudflare_ai?.status === 'ok');
+const aiStaleDate = isTemporarySourceFailure(ai) ? aiLastOk?.date ?? null : null;
 const bots = details.sources.cloudflare_ai?.bots ?? [];
 const paths = details.sources.cloudflare_ai?.paths ?? [];
 
@@ -35,103 +40,285 @@ const requests = metricSeries(snapshots, 'cloudflare_ai', 'requests');
 const statRequests = latestWithDelta(snapshots, 'cloudflare_ai', 'requests');
 const statBots = latestWithDelta(snapshots, 'cloudflare_ai', 'bots');
 const dataDate = ai?.data?.data_date ?? null;
-const topBot = ai?.data?.top_bot ?? null;
+const topBot = (ai?.data?.top_bot ?? null) as string | null;
+
+/* Mapowanie bot → dostawca AI po nazwie user-agenta (handoff §16.2). */
+const VENDORS: Record<string, { name: string; token: string; match: RegExp }> = {
+  anthropic: { name: 'Anthropic', token: '--v-anthropic', match: /^claude/i },
+  openai: { name: 'OpenAI', token: '--v-openai', match: /^(gptbot|oai-|chatgpt)/i },
+  perplexity: { name: 'Perplexity', token: '--v-perplexity', match: /^perplexity/i },
+  apple: { name: 'Apple', token: '--v-apple', match: /^applebot/i },
+  bytedance: { name: 'ByteDance', token: '--v-bytedance', match: /^bytespider/i },
+  mistral: { name: 'Mistral', token: '--v-mistral', match: /^mistral/i },
+  common: { name: 'Common Crawl', token: '--v-common', match: /^ccbot/i },
+  other: { name: 'Pozostali', token: '--v-other', match: /./ },
+};
+const vendorOf = (bot: string) =>
+  Object.entries(VENDORS).find(([, v]) => v.match.test(bot))?.[0] ?? 'other';
+
+const totalRequests = bots.reduce((sum, b) => sum + (b.requests ?? 0), 0);
+const vendorMap = new Map<string, { total: number; bots: { name: string; req: number }[] }>();
+for (const b of bots) {
+  const key = vendorOf(b.bot);
+  const entry = vendorMap.get(key) ?? { total: 0, bots: [] };
+  entry.total += b.requests ?? 0;
+  entry.bots.push({ name: b.bot, req: b.requests ?? 0 });
+  vendorMap.set(key, entry);
+}
+const vendors = [...vendorMap.entries()]
+  .sort((a, b) => b[1].total - a[1].total)
+  .map(([key, v]) => {
+    const maxBot = Math.max(...v.bots.map((x) => x.req), 1);
+    return {
+      ...VENDORS[key],
+      total: v.total,
+      share: totalRequests ? Math.round((v.total / totalRequests) * 100) : 0,
+      bots: v.bots
+        .sort((a, b) => b.req - a.req)
+        .map((x) => ({ ...x, pct: Math.max(6, Math.round((x.req / maxBot) * 100)) })),
+    };
+  });
+const vendorCount = vendors.filter((v) => v.name !== 'Pozostali').length;
+const topBotVendor = topBot ? VENDORS[vendorOf(topBot)] : null;
+const topBotReq = bots.find((b) => b.bot === topBot)?.requests ?? null;
+
+/* Detekcja sond skanujących podatności vs realny crawl (handoff §16.3). */
+const SUS = /\.(pem|bak|env|s3cfg|zshrc)$|\.vscode|wp-config|config\.php|\/i\.php|test\.php/i;
+const pathRows = paths.map((p) => ({ ...p, sus: SUS.test(p.path) }));
+const susCount = pathRows.filter((p) => p.sus).length;
 
 const maxBotRequests = Math.max(...bots.map((b) => b.requests), 0);
 const maxPathRequests = Math.max(...paths.map((p) => p.requests), 0);
 ---
 
 <Layout title={`${name} – Crawlery AI`}>
-  <DomainHeader domain={domain!} name={name} active="boty-ai" latest={latest} />
+  <DomainHeader domain={domain!} name={name} active="boty-ai" latest={latest} themeToggle />
 
-  {
-    ai && ai.status !== 'ok' && (
-      <div class={`banner ${ai.status === 'token_expired' ? 'warn' : 'err'}`}>
-        <strong>Cloudflare</strong>: {ai.error ?? 'błąd źródła'}
-      </div>
-    )
-  }
+  <div class="bots-note">
+    Boty AI są grupowane według <b>dostawcy</b> (Anthropic, OpenAI, Perplexity, Apple i pozostali),
+    dzięki czemu widać, które firmy AI czytają serwis i jak często. Crawlowane ścieżki oddzielają
+    realny crawl od <b class="danger">sond skanujących podatności</b>, takich jak <code>/key.pem</code>
+    lub <code>/.zshrc</code> — to szum bezpieczeństwa, a nie ruch botów AI. Dane pochodzą z logów Cloudflare.
+  </div>
+
+  <SourceState
+    name="Cloudflare"
+    result={ai}
+    lastDate={aiLastOk?.date}
+    metrics={[
+      { label: 'Requesty botów AI', value: statRequests.value },
+      { label: 'Aktywne boty', value: statBots.value },
+      { label: 'Najaktywniejszy bot', value: topBot },
+    ]}
+  />
 
   <div class="section-head">
     <h2>Ruch crawlerów AI</h2>
-    {dataDate && <span class="section-meta">pełna doba {dataDate} (logi CDN Cloudflare, wg user-agenta)</span>}
+    {dataDate && <span class="section-meta">pełna doba {fmtDate(String(dataDate))} · porównanie 7-dniowe</span>}
   </div>
-  <div class="stat-grid">
-    <StatCard label="Requesty botów AI / dzień" value={statRequests.value} delta={statRequests.delta} trend={requests.values} hero />
-    <StatCard label="Aktywne boty" value={statBots.value} delta={statBots.delta} />
-    <StatCard label="Najaktywniejszy bot" value={topBot} />
+  <div class="stat-grid rgrid bots-kpis">
+    <StatCard label="Requesty botów AI / dzień" value={statRequests.value} delta={statRequests.delta} trend={requests.values} staleDate={aiStaleDate} hero />
+    <StatCard label="Aktywne boty" value={statBots.value} staleDate={aiStaleDate}>
+      {vendorCount > 0 && <div class="stat-note">z {vendorCount} dostawców AI</div>}
+    </StatCard>
+    <StatCard label="Najaktywniejszy bot" value={topBot} staleDate={aiStaleDate}>
+      {topBotVendor && (
+        <div class="stat-note">
+          <span class="vdot" style={`background:var(${topBotVendor.token})`} />
+          {topBotVendor.name}{typeof topBotReq === 'number' ? ` · ${fmtInt(topBotReq)} req` : ''}
+        </div>
+      )}
+    </StatCard>
   </div>
 
-  <div class="chart-grid">
+  <div class="section-head">
+    <h2>Trend</h2>
+    <span class="section-meta">requesty crawlerów AI dziennie</span>
+  </div>
+  <div class="chart-grid wide bots-trend">
     <TimeSeriesChart
       title="Requesty crawlerów AI"
-      meta="dziennie"
       timestamps={requests.timestamps}
       series={[{ label: 'Requesty', values: requests.values, fill: true }]}
+      ranges
     />
   </div>
 
-  <TableCard
-    title="Boty"
-    count={bots.length}
-    empty="Dane pojawią się po najbliższym przebiegu collectora (codziennie 6:30)."
-  >
-    <table class="data-table">
-      <thead>
-        <tr>
-          <th>Bot</th>
-          <th class="num">Requesty</th>
-        </tr>
-      </thead>
-      <tbody>
-        {
-          bots.map((b) => (
-            <tr>
-              <td class="grow">{b.bot}</td>
-              <td class="num">
-                <span class="cell-bar">
-                  {fmtInt(b.requests)}
-                  <span class="bar">
-                    <i style={`width:${barWidth(b.requests, maxBotRequests)}%`} />
-                  </span>
-                </span>
-              </td>
-            </tr>
-          ))
-        }
-      </tbody>
-    </table>
-  </TableCard>
+  {
+    vendors.length > 0 && (
+      <>
+        <div class="section-head">
+          <h2>Boty wg dostawcy AI</h2>
+          <span class="section-meta">{bots.length} botów · {vendorCount} dostawców</span>
+        </div>
+        <div class="vendors">
+          {vendors.map((v) => (
+            <div class="vcard">
+              <div class="h">
+                <span class="n"><span class="dot" style={`background:var(${v.token})`} />{v.name}</span>
+                <span class="share">{v.share}%</span>
+              </div>
+              <div class="big">{fmtInt(v.total)}<span>req</span></div>
+              <div class="bots">
+                {v.bots.map((b) => (
+                  <div class="b">
+                    <span class="name" title={b.name}>{b.name}</span>
+                    <span class="t"><i style={`width:${b.pct}%;background:var(${v.token})`} /></span>
+                    <span class="n">{fmtInt(b.req)}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </>
+    )
+  }
 
-  <TableCard
-    title="Najczęściej crawlowane ścieżki"
-    count={paths.length}
-    empty="Dane pojawią się po najbliższym przebiegu collectora."
-  >
-    <table class="data-table">
-      <thead>
-        <tr>
-          <th>Ścieżka</th>
-          <th class="num">Requesty</th>
-        </tr>
-      </thead>
-      <tbody>
-        {
-          paths.map((p) => (
-            <tr>
-              <td class="grow"><span class="cell-url">{p.path}</span></td>
-              <td class="num">
-                <span class="cell-bar">
-                  {fmtInt(p.requests)}
-                  <span class="bar">
-                    <i style={`width:${barWidth(p.requests, maxPathRequests)}%`} />
-                  </span>
-                </span>
-              </td>
-            </tr>
-          ))
-        }
-      </tbody>
-    </table>
-  </TableCard>
+  <div class="section-head"><h2>Szczegóły</h2></div>
+  <div class="two-col">
+    <TableCard
+      title="Wszystkie boty"
+      count={bots.length}
+      empty="Dane pojawią się po najbliższym przebiegu collectora (codziennie 6:30)."
+    >
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Bot</th>
+            <th>Dostawca</th>
+            <th class="num">Requesty</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            bots.map((b) => {
+              const v = VENDORS[vendorOf(b.bot)];
+              return (
+                <tr>
+                  <td class="grow">
+                    <span class="botcell">
+                      <span class="dot" style={`background:var(${v.token})`} />
+                      <span class="txt" title={b.bot}>{b.bot}</span>
+                    </span>
+                  </td>
+                  <td style="color:var(--ink-muted)">{v.name}</td>
+                  <td class="num">
+                    <span class="cell-bar rbar">
+                      {fmtInt(b.requests)}
+                      <span class="bar">
+                        <i style={`width:${barWidth(b.requests, maxBotRequests)}%`} />
+                      </span>
+                    </span>
+                  </td>
+                </tr>
+              );
+            })
+          }
+        </tbody>
+      </table>
+    </TableCard>
+
+    <TableCard
+      title="Najczęściej crawlowane ścieżki"
+      count={paths.length}
+      empty="Dane pojawią się po najbliższym przebiegu collectora."
+    >
+      {susCount > 0 && (
+        <div class="probe-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" />
+          </svg>
+          <span>
+            <b>{susCount} z {paths.length} ścieżek to sondy</b> – skany podatności (pliki
+            konfiguracyjne, klucze), nie realny crawl AI.
+          </span>
+        </div>
+      )}
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Ścieżka</th>
+            <th class="num">Requesty</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            pathRows.map((p) => (
+              <tr>
+                <td class="grow"><span class={`path-mono ${p.sus ? 'sus' : ''}`} title={p.path}>{p.path}</span></td>
+                <td class="num">{fmtInt(p.requests)}</td>
+                <td>
+                  {p.sus ? (
+                    <span class="flag sus">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" />
+                      </svg>
+                      Sonda
+                    </span>
+                  ) : (
+                    <span class="flag ok">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      Realna
+                    </span>
+                  )}
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </TableCard>
+  </div>
 </Layout>
+
+<style>
+  .bots-note {
+    margin: 16px 0 4px;
+    padding: 10px 14px;
+    border-left: 2px solid var(--accent-blue);
+    border-radius: 0 10px 10px 0;
+    background: color-mix(in srgb, var(--accent-blue) 6%, transparent);
+    color: var(--ink-muted);
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+  .bots-note b {
+    color: var(--ink);
+  }
+  .bots-note .danger {
+    color: var(--status-err-fg);
+  }
+  .bots-note code {
+    color: var(--ink);
+    font-size: 0.82em;
+  }
+  .stat-grid.bots-kpis {
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+  .chart-grid.bots-trend {
+    grid-template-columns: 1fr;
+  }
+  @media (max-width: 900px) {
+    .stat-grid.bots-kpis {
+      grid-template-columns: 1fr;
+    }
+  }
+  .stat-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--ink-muted);
+    font-size: 0.78rem;
+    margin-top: 10px;
+  }
+  .vdot {
+    width: 9px;
+    height: 9px;
+    border-radius: 3px;
+    flex: none;
+  }
+</style>

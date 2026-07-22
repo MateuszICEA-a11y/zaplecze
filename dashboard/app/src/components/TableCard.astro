@@ -15,6 +15,7 @@ interface Props {
 const { title, meta, count, filter = false, pageSize = 10, empty = 'Brak danych.' } = Astro.props;
 const isEmpty = count === 0;
 const paged = !isEmpty && pageSize > 0;
+const hasActions = Astro.slots.has('actions');
 ---
 
 <section class="table-card">
@@ -24,6 +25,7 @@ const paged = !isEmpty && pageSize > 0;
       {typeof count === 'number' && <span class="table-meta"> · {count.toLocaleString('pl-PL')}</span>}
     </h3>
     {meta && <span class="table-meta">{meta}</span>}
+    {hasActions && <slot name="actions" />}
     {!isEmpty && filter && (
       <input class="table-filter" type="search" placeholder="Filtruj…" data-table-filter aria-label={`Filtruj: ${title}`} />
     )}
@@ -202,7 +204,10 @@ const paged = !isEmpty && pageSize > 0;
         const caret = document.createElement('span');
         caret.className = 'sort-caret';
         th.appendChild(caret);
-        th.addEventListener('click', () => {
+        th.addEventListener('click', (event) => {
+          /* Kontrolki osadzone w nagłówku (np. pomoc „Potencjał” w GSC) nie są
+             kliknięciem sortowania kolumny. */
+          if ((event.target as HTMLElement).closest('button,a,input,select,textarea,summary,[data-no-sort]')) return;
           const numeric = th.classList.contains('num');
           const dir =
             th.dataset.dir === 'asc' ? 'desc' : th.dataset.dir === 'desc' ? 'asc' : numeric ? 'desc' : 'asc';

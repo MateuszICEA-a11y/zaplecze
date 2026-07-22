@@ -3,8 +3,8 @@ import Layout from '../../layouts/Layout.astro';
 import DomainHeader from '../../components/DomainHeader.astro';
 import StatCard from '../../components/StatCard.astro';
 import TableCard from '../../components/TableCard.astro';
-import { loadConfig, loadDetails, latestSnapshot, sectionEnabled } from '../../lib/data';
-import { fmtInt, fmtPct, fmtNum, posClass, barWidth } from '../../lib/format';
+import { loadConfig, loadSnapshots, loadDetails, latestSnapshot, sectionEnabled, sourceStatuses, isTemporarySourceFailure } from '../../lib/data';
+import { fmtInt, fmtPct, fmtNum, fmtDateRange, posClass, barWidth } from '../../lib/format';
 
 export function getStaticPaths() {
   return loadConfig()
@@ -15,9 +15,12 @@ export function getStaticPaths() {
 const { domain } = Astro.params;
 const { name } = Astro.props;
 
+const snapshots = loadSnapshots(domain!);
 const latest = latestSnapshot(domain!);
 const details = loadDetails(domain!);
-const indexing = latest?.sources.indexing;
+const indexing = sourceStatuses(latest).indexing;
+const indexingLastOk = [...snapshots].reverse().find((snapshot) => snapshot.sources.indexing?.status === 'ok');
+const indexingStaleDate = isTemporarySourceFailure(indexing) ? indexingLastOk?.date ?? null : null;
 const rows = details.sources.indexing?.rows ?? [];
 const window = details.sources.indexing?.window;
 
@@ -118,8 +121,13 @@ const segments = segRows
       senuto_best: bestPositions.length ? Math.min(...bestPositions) : null,
     };
   })
-  .sort((a, b) => b.clicks - a.clicks || b.impressions - a.impressions);
-const maxSegImpressions = Math.max(...segments.map((s) => s.impressions), 0);
+  .sort((a, b) => {
+    const preferred = ['/blog/', 'strona główna', '/oferta/', '/seo-newsy/', 'pozostałe'];
+    const ai = preferred.indexOf(a.segment);
+    const bi = preferred.indexOf(b.segment);
+    if (ai !== -1 || bi !== -1) return (ai === -1 ? preferred.length - 1 : ai) - (bi === -1 ? preferred.length - 1 : bi);
+    return b.pages - a.pages || b.impressions - a.impressions;
+  });
 
 // Priorytety optymalizacji: strony tracące kliknięcia wg porównań GSC
 // (3 mies. vs poprzednie 3 mies. i vs rok temu), największe straty najpierw.
@@ -149,8 +157,8 @@ const decodeCause = (dImpr: number, dPos: number | null, dClicks: number) => {
 };
 const priorities = { qoq: declining('qoq'), yoy: declining('yoy') };
 const prioLabel = {
-  qoq: compare?.qoq ? `${compare.cur.start} → ${compare.cur.end} vs ${compare.qoq.prev.start} → ${compare.qoq.prev.end}` : '',
-  yoy: compare?.yoy ? `${compare.cur.start} → ${compare.cur.end} vs ${compare.yoy.prev.start} → ${compare.yoy.prev.end}` : '',
+  qoq: compare?.qoq ? `${fmtDateRange(compare.cur.start, compare.cur.end)} vs ${fmtDateRange(compare.qoq.prev.start, compare.qoq.prev.end)}` : '',
+  yoy: compare?.yoy ? `${fmtDateRange(compare.cur.start, compare.cur.end)} vs ${fmtDateRange(compare.yoy.prev.start, compare.yoy.prev.end)}` : '',
 };
 
 const indexed = indexing?.data?.indexed ?? joined.filter((r) => r.indexed).length;
@@ -158,15 +166,40 @@ const checked = indexing?.data?.pages_checked ?? joined.length;
 const notIndexed = indexing?.data?.not_indexed ?? checked - indexed;
 const sitemapUrls = indexing?.data?.sitemap_urls ?? checked;
 const maxImpressions = Math.max(...joined.map((r) => r.impressions ?? 0), 0);
+const indexingLastOkWhen = indexingLastOk
+  ? new Date(indexingLastOk.collected_at).toLocaleString('pl-PL', {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      timeZone: 'Europe/Warsaw',
+    })
+  : null;
+const indexingError = (indexing?.error ?? 'źródło chwilowo niedostępne').replace(/^indexing:\s*/i, '');
 ---
 
 <Layout title={`${name} – Matrix`}>
-  <DomainHeader domain={domain!} name={name} active="matrix" latest={latest} />
+  <DomainHeader domain={domain!} name={name} active="matrix" latest={latest} themeToggle />
+
+  <div class="matrix-note">
+    Matrix zestawia te same adresy w wielu wymiarach: indeksację, pozycję <b class="sen">Senuto</b>,
+    ruch <b class="gsc">GSC</b> i zaangażowanie <b class="ga4">GA4</b>. Segmenty pokazujemy jako
+    karty, a spadki w jednej tabeli z automatycznie rozpoznaną przyczyną. Dane <b class="ahrefs">Ahrefs</b>
+    pozostają w profilu domeny, ponieważ bieżące API nie zwraca linków dla poszczególnych adresów.
+  </div>
 
   {
-    indexing && indexing.status !== 'ok' && (
-      <div class={`banner ${indexing.status === 'token_expired' ? 'warn' : 'err'}`}>
-        <strong>Indeksacja</strong>: {indexing.error ?? 'błąd źródła'}
+    indexing && indexing.status !== 'ok' && indexing.status !== 'not_configured' && (
+      <div class:list={['matrix-down', { error: !isTemporarySourceFailure(indexing) }]} role="status">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" />
+        </svg>
+        <span>
+          Indeksacja: <strong>{indexingError}</strong>
+          {isTemporarySourceFailure(indexing) && ' — pokazujemy ostatni udany pomiar i odświeżymy dane automatycznie.'}
+        </span>
+        {indexingLastOkWhen && <span class="when">ostatni pomiar: {indexingLastOkWhen}</span>}
       </div>
     )
   }
@@ -180,15 +213,11 @@ const maxImpressions = Math.max(...joined.map((r) => r.impressions ?? 0), 0);
   }
 
   <div class="section-head">
-    <h2>Kondycja stron z sitemapy</h2>
-    <span class="section-meta">
-      pozycja: Senuto ·
-      {window ? ` wyświetlenia/kliknięcia: GSC ${window.start} → ${window.end} · ` : ' '}
-      indeksacja: GSC URL Inspection · sesje i zaangażowanie: GA4 (28 dni)
-    </span>
+    <h2>Indeksacja</h2>
+    <span class="section-meta">sitemap · GSC URL Inspection</span>
   </div>
-  <div class="stat-grid">
-    <div class="k hero">
+  <div class="stat-grid matrix-kpis">
+    <div class:list={['k', 'hero', { stale: indexingStaleDate !== null }]}>
       <div class="lbl">Zaindeksowane</div>
       <div class="val">
         {fmtInt(indexed)} <small style="font-size:.45em;color:var(--ink-faint);">z {fmtInt(sitemapUrls)}</small>
@@ -196,10 +225,11 @@ const maxImpressions = Math.max(...joined.map((r) => r.impressions ?? 0), 0);
       <div class="idxbar" title={`pokrycie indeksem: ${sitemapUrls ? Math.round((indexed / sitemapUrls) * 100) : 0}%`}>
         <i style={`width:${sitemapUrls ? Math.round((indexed / sitemapUrls) * 100) : 0}%`} />
       </div>
+      {indexingStaleDate && <div class="foot"><span class="stale-tag">dane z {indexingStaleDate}</span></div>}
     </div>
-    <StatCard label="Adresy w sitemapie" value={sitemapUrls} />
-    <StatCard label="Sprawdzone" value={checked} />
-    <StatCard label="Niezaindeksowane" value={notIndexed} goodWhen="down" />
+    <StatCard label="Adresy w sitemapie" value={sitemapUrls} staleDate={indexingStaleDate} />
+    <StatCard label="Niezaindeksowane" value={notIndexed} goodWhen="down" staleDate={indexingStaleDate} />
+    <StatCard label="Sprawdzone" value={checked} staleDate={indexingStaleDate} />
   </div>
 
   {
@@ -207,7 +237,7 @@ const maxImpressions = Math.max(...joined.map((r) => r.impressions ?? 0), 0);
       <>
         <div class="section-head" style="margin-bottom:10px;">
           <h2>Segmenty serwisu</h2>
-          <span class="section-meta">agregacja po pierwszym poziomie ścieżki · kropka = źródło metryki</span>
+          <span class="section-meta">agregacja po pierwszym poziomie ścieżki</span>
         </div>
         <div class="seg-grid">
           {segments.map((s) => (
@@ -250,11 +280,14 @@ const maxImpressions = Math.max(...joined.map((r) => r.impressions ?? 0), 0);
 
   <div class="section-head" style="margin-bottom:6px;">
     <h2>Matrix stron</h2>
-    <div class="fchips" data-matrix-filters>
-      <button type="button" class="fchip on" data-f="all">Wszystkie</button>
-      <button type="button" class="fchip" data-f="top10" title="Pozycja Senuto ≤ 10">Wygrywające (TOP10)</button>
-      <button type="button" class="fchip" data-f="chance" title="Pozycja Senuto 11–30">Szansa (11–30)</button>
-      <button type="button" class="fchip" data-f="noindex">Poza indeksem</button>
+    <div class="matrix-head-actions">
+      <span class="section-meta">jeden adres — realne źródła obok siebie</span>
+      <div class="fchips" data-matrix-filters>
+        <button type="button" class="fchip on" data-f="all">Wszystkie</button>
+        <button type="button" class="fchip" data-f="top10" title="Pozycja Senuto ≤ 10">Wygrywające (TOP10)</button>
+        <button type="button" class="fchip" data-f="chance" title="Pozycja Senuto 11–30">Szansa (11–30)</button>
+        <button type="button" class="fchip" data-f="noindex">Poza indeksem</button>
+      </div>
     </div>
   </div>
   <TableCard
@@ -298,7 +331,7 @@ const maxImpressions = Math.max(...joined.map((r) => r.impressions ?? 0), 0);
               </td>
               <td class="num sep">
                 <span
-                  class={`pos-badge ${r.senuto_position === null ? 'na' : posClass(r.senuto_position)}`}
+                  class={`pos-badge rbadge ${r.senuto_position === null ? 'na' : posClass(r.senuto_position)}`}
                   title={
                     r.senuto_keyword
                       ? `„${r.senuto_keyword}" · fraz: ${r.senuto_keywords}, w TOP10: ${r.senuto_top10}`
@@ -309,7 +342,7 @@ const maxImpressions = Math.max(...joined.map((r) => r.impressions ?? 0), 0);
                 </span>
               </td>
               <td class="num sep">
-                <span class="cell-bar">
+                <span class="cell-bar rbar">
                   {fmtInt(r.impressions)}
                   <span class="bar">
                     <i style={`width:${barWidth(r.impressions, maxImpressions)}%`} />
@@ -342,14 +375,13 @@ const maxImpressions = Math.max(...joined.map((r) => r.impressions ?? 0), 0);
     (priorities.qoq.length > 0 || priorities.yoy.length > 0) && (
       <>
         <div class="section-head" style="margin-bottom:6px;">
-          <h2>Priorytety optymalizacji – co spada</h2>
+          <div class="section-title-with-meta">
+            <h2>Dekodowanie spadków</h2>
+            <span class="section-meta">dlaczego ruch spadł — nie tylko „o ile”</span>
+          </div>
           <div class="seg" data-prio-seg>
-            <button type="button" class="active" data-mode="qoq">
-              kw/kw (3 mies.)
-            </button>
-            <button type="button" data-mode="yoy">
-              r/r
-            </button>
+            <button type="button" class="active" data-mode="qoq">kw/kw (3 mies.)</button>
+            <button type="button" data-mode="yoy">r/r</button>
           </div>
         </div>
         <div class="legend-cause">
@@ -409,7 +441,7 @@ const maxImpressions = Math.max(...joined.map((r) => r.impressions ?? 0), 0);
                         </span>
                       </td>
                       <td class="num">
-                        <span class={`pos-badge ${posClass(p.position)}`}>{fmtNum(p.position, 1)}</span>
+                        <span class={`pos-badge rbadge ${posClass(p.position)}`}>{fmtNum(p.position, 1)}</span>
                       </td>
                       <td class="num">
                         <span class={`ddelta ${(p.position_delta ?? 0) > 0 ? 'down' : (p.position_delta ?? 0) < 0 ? 'up' : 'flat'}`}>
@@ -479,3 +511,98 @@ const maxImpressions = Math.max(...joined.map((r) => r.impressions ?? 0), 0);
     )
   }
 </Layout>
+
+<style>
+  .matrix-note {
+    margin: 16px 0 4px;
+    padding: 10px 14px;
+    border-left: 2px solid var(--accent-blue);
+    border-radius: 0 10px 10px 0;
+    background: color-mix(in srgb, var(--accent-blue) 6%, transparent);
+    color: var(--ink-muted);
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+  .matrix-note b {
+    font-weight: 700;
+  }
+  .matrix-note .sen {
+    color: var(--sen);
+  }
+  .matrix-note .gsc {
+    color: var(--gsc);
+  }
+  .matrix-note .ga4 {
+    color: var(--ga4);
+  }
+  .matrix-note .ahrefs {
+    color: var(--ahrefs);
+  }
+  .matrix-down {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 18px;
+    padding: 13px 16px;
+    border: 1px solid color-mix(in srgb, var(--status-warn-fg) 30%, transparent);
+    border-radius: 12px;
+    background: var(--status-warn-bg);
+    color: var(--status-warn-fg);
+    font-size: 0.88rem;
+  }
+  .matrix-down.error {
+    border-color: color-mix(in srgb, var(--status-err-fg) 30%, transparent);
+    background: var(--status-err-bg);
+    color: var(--status-err-fg);
+  }
+  .matrix-down svg {
+    width: 18px;
+    height: 18px;
+    flex: none;
+  }
+  .matrix-down strong {
+    color: var(--ink);
+  }
+  .matrix-down .when {
+    margin-left: auto;
+    color: var(--ink-faint);
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .stat-grid.matrix-kpis {
+    grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr));
+  }
+  .matrix-head-actions,
+  .section-title-with-meta {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .matrix-head-actions {
+    justify-content: flex-end;
+  }
+  @media (max-width: 1080px) {
+    .stat-grid.matrix-kpis {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 720px) {
+    .matrix-down {
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .matrix-down .when {
+      width: 100%;
+      margin-left: 30px;
+    }
+    .matrix-head-actions {
+      justify-content: flex-start;
+    }
+  }
+  @media (max-width: 620px) {
+    .stat-grid.matrix-kpis {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

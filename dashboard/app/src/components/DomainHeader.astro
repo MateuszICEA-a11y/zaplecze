@@ -3,6 +3,7 @@
    chip z datą pomiaru. Nawigacja sekcji żyje w sidebarze (Layout). */
 import type { Snapshot } from '../lib/data';
 import { DOMAIN_SECTIONS } from '../lib/data';
+import { fmtDate } from '../lib/format';
 
 interface Props {
   domain: string;
@@ -10,8 +11,19 @@ interface Props {
   active: string; // slug aktywnej sekcji ('' = przegląd)
   latest: Snapshot | null;
   themeToggle?: boolean;
+  accent?: string;
+  measurementLabel?: string;
+  measurementStatus?: 'ok' | 'warn';
 }
-const { name, active, latest, themeToggle = false } = Astro.props;
+const {
+  name,
+  active,
+  latest,
+  themeToggle = false,
+  accent,
+  measurementLabel,
+  measurementStatus = 'ok',
+} = Astro.props;
 
 const TITLES: Record<string, string> = {
   '': 'Przegląd',
@@ -29,13 +41,13 @@ const title = TITLES[active] ?? DOMAIN_SECTIONS.find((s) => s.slug === active)?.
 ---
 
 <header class="page-header">
-  <div class="eyebrow">{name}</div>
+  <div class="eyebrow" style={accent ? `color:${accent}` : undefined}>{name}</div>
   <div class="title-row">
     <h1>{title}</h1>
     <div class="header-actions">
-      <span class="measured" title="Data ostatniego przebiegu collectora">
+      <span class:list={['measured', measurementStatus]} title="Data ostatniego przebiegu collectora">
         <i aria-hidden="true"></i>
-        {latest?.date ?? 'brak pomiaru'}
+        {measurementLabel ?? (latest?.date ? fmtDate(latest.date) : 'brak pomiaru')}
       </span>
       {themeToggle && (
         <button class="header-theme-toggle" type="button" aria-label="Przełącz motyw">
@@ -114,6 +126,10 @@ const title = TITLES[active] ?? DOMAIN_SECTIONS.find((s) => s.slug === active)?.
     border-radius: 50%;
     background: var(--status-ok);
     box-shadow: 0 0 6px color-mix(in srgb, var(--status-ok) 60%, transparent);
+  }
+  .measured.warn i {
+    background: var(--status-warn-fg);
+    box-shadow: 0 0 6px color-mix(in srgb, var(--status-warn-fg) 60%, transparent);
   }
   .header-theme-toggle {
     display: inline-flex;

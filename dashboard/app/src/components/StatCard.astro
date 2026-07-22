@@ -2,6 +2,7 @@
 /* Stat tile wg kontraktu dataviz: label · value · delta (kierunek × czy wzrost
    jest dobry) · opcjonalny 12-punktowy sparkline liczony w build time (SVG,
    zero JS). `goodWhen="down"` odwraca kolor delty (np. średnia pozycja). */
+import { fmtDate } from '../lib/format';
 interface Props {
   label: string;
   value: number | string | null;
@@ -9,15 +10,20 @@ interface Props {
   deltaLabel?: string;
   deltaUnit?: string;
   unit?: string;
+  /* Opcjonalny mianownik skali pokazywany mniejszym stopniem, np. DR 68 / 100. */
+  max?: number | string;
   precision?: number;
   goodWhen?: 'up' | 'down';
   trend?: (number | null)[];
   hero?: boolean;
+  /* Docelowy kontrakt liftingu. `hero` zostaje jako kompatybilny skrót dla
+     istniejących wywołań, nowe miejsca mogą używać variant="hero". */
+  variant?: 'hero';
   /* Link – cała karta staje się klikalna (np. skok do zakładki źródła). */
   href?: string;
   /* Nazwa tokenu koloru źródła (sen/gsc/ga4/ahrefs/bing) – kropka przy labelu,
      akcent hero-kreski i sparkline'a (handoff „Przegląd – układ"). */
-  src?: 'sen' | 'gsc' | 'ga4' | 'ahrefs' | 'bing';
+  src?: 'sen' | 'gsc' | 'ga4' | 'ahrefs' | 'bing' | 'lead';
   /* Dowolny kolor CSS kropki przy labelu (np. tier TOP 3/10/50 z handoffu
      „Senuto – układ") – niezależny od koloru akcentu karty. */
   dot?: string;
@@ -36,10 +42,12 @@ const {
   deltaLabel = '7 dni',
   deltaUnit = '',
   unit = '',
+  max,
   precision = 0,
   goodWhen = 'up',
   trend,
   hero = false,
+  variant,
   href,
   src,
   dot,
@@ -47,6 +55,8 @@ const {
   staleReason,
   emptyDeltaLabel,
 } = Astro.props;
+const isHero = hero || variant === 'hero';
+const hasBody = Astro.slots.has('default');
 const Tag = href ? 'a' : 'div';
 const srcStyle = src ? `--src-color: var(--${src});` : dot ? `--src-color: ${dot};` : undefined;
 
@@ -67,31 +77,45 @@ const sentiment =
 /* Sparkline: ostatnie 12 niepustych punktów, 100×28 viewBox. */
 const points = (trend ?? []).filter((v): v is number => typeof v === 'number').slice(-12);
 let path = '';
+let areaPath = '';
+let endPoint: { x: number; y: number } | null = null;
 if (points.length >= 2) {
   const min = Math.min(...points);
   const max = Math.max(...points);
   const span = max - min || 1;
-  path = points
-    .map((v, i) => {
+  const coords = points.map((v, i) => {
       const x = (i / (points.length - 1)) * 100;
       const y = 26 - ((v - min) / span) * 24;
-      return `${i === 0 ? 'M' : 'L'}${x.toFixed(1)},${y.toFixed(1)}`;
-    })
-    .join(' ');
+      return { x, y };
+    });
+  path = coords.map(({ x, y }, i) => `${i === 0 ? 'M' : 'L'}${x.toFixed(1)},${y.toFixed(1)}`).join(' ');
+  areaPath = `${path} L100,28 L0,28 Z`;
+  endPoint = coords.at(-1) ?? null;
 }
+const sparkId = `spark-${label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}-${src ?? 'metric'}`;
 ---
 
-<Tag class:list={['stat-card', { hero, stale: staleDate !== null, 'source-accent': Boolean(src || dot) }]} href={href} style={srcStyle}>
+<Tag class:list={['stat-card', 'k', { hero: isHero, stale: staleDate !== null, 'source-accent': Boolean(src || dot) }]} href={href} style={srcStyle}>
   <div class="stat-label">
     {src && <span class="src-dot" aria-hidden="true"></span>}
     {!src && dot && <span class="src-dot" style={`background:${dot}`} aria-hidden="true"></span>}
     {label}
   </div>
   <div class="stat-row">
-    <div class="stat-value">{formatted}{value !== null && unit ? (unit === '%' ? unit : ` ${unit}`) : ''}</div>
+    <div class="stat-value">
+      {formatted}{value !== null && unit ? (unit === '%' ? unit : ` ${unit}`) : ''}
+      {value !== null && max !== undefined && <span class="stat-max">/ {max}</span>}
+    </div>
     {
       path && (
-        <svg class="spark" viewBox="0 0 100 28" preserveAspectRatio="none" aria-hidden="true">
+        <svg class="spark rspark" viewBox="0 0 100 28" preserveAspectRatio="none" aria-hidden="true">
+          <defs>
+            <linearGradient id={sparkId} x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="var(--src-color, var(--accent-blue))" stop-opacity=".28" />
+              <stop offset="1" stop-color="var(--src-color, var(--accent-blue))" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+          <path d={areaPath} fill={`url(#${sparkId})`} stroke="none" />
           <path
             d={path}
             fill="none"
@@ -101,6 +125,7 @@ if (points.length >= 2) {
             stroke-linejoin="round"
             vector-effect="non-scaling-stroke"
           />
+          {endPoint && <circle cx={endPoint.x} cy={endPoint.y} r="2.1" fill="currentColor" />}
         </svg>
       )
     }
@@ -114,7 +139,7 @@ if (points.length >= 2) {
             <circle cx="12" cy="12" r="9" />
             <path d="M12 7v5l3 2" stroke-linecap="round" />
           </svg>
-          dane z {staleDate}{staleReason ? ` · ${staleReason}` : ''}
+          dane z {fmtDate(staleDate)}{staleReason ? ` · ${staleReason}` : ''}
         </span>
       </div>
     ) : deltaText !== null ? (
@@ -138,15 +163,13 @@ if (points.length >= 2) {
       </div>
     ) : emptyDeltaLabel ? (
       <div class="stat-foot">
-        <span class="rtrend flat">— <span class="per">{emptyDeltaLabel}</span></span>
+        <span class="rtrend flat">{emptyDeltaLabel}</span>
       </div>
-    ) : (
-      trend && trend.length > 0 && (
-        <div class="stat-foot">
-          <span class="rtrend flat">zbieramy dane</span>
-        </div>
-      )
-    )
+    ) : !hasBody ? (
+      <div class="stat-foot">
+        <span class="rtrend flat">{trend && trend.some((v) => v !== null) ? 'brak historii' : 'zbieramy dane'}</span>
+      </div>
+    ) : null
   }
 </Tag>
 
@@ -165,8 +188,8 @@ if (points.length >= 2) {
     position: relative;
     background: linear-gradient(180deg, color-mix(in srgb, var(--ink) 3%, var(--bg-surface-1)), var(--bg-surface-1) 55%);
     border: 1px solid var(--hairline);
-    border-radius: 14px;
-    padding: 16px 18px;
+    border-radius: 16px;
+    padding: 18px 20px;
     min-width: 0;
     overflow: hidden;
     transition: border-color 0.15s ease, transform 0.15s ease;
@@ -217,6 +240,12 @@ if (points.length >= 2) {
   }
   .hero .stat-value {
     font-size: 3rem;
+  }
+  .stat-max {
+    color: var(--ink-faint);
+    font-size: 0.38em;
+    font-weight: 500;
+    letter-spacing: 0;
   }
   .stat-foot {
     margin-top: 10px;

@@ -4,6 +4,7 @@ import DomainHeader from '../../components/DomainHeader.astro';
 import StatCard from '../../components/StatCard.astro';
 import TableCard from '../../components/TableCard.astro';
 import TimeSeriesChart from '../../components/TimeSeriesChart.astro';
+import SourceState from '../../components/SourceState.astro';
 import {
   loadConfig,
   loadSnapshots,
@@ -11,10 +12,11 @@ import {
   loadBingAiQueries,
   latestSnapshot,
   latestWithDelta,
-  metricSeries,
   sectionEnabled,
+  sourceStatuses,
+  isTemporarySourceFailure,
 } from '../../lib/data';
-import { fmtInt, fmtNum, posClass, barWidth } from '../../lib/format';
+import { fmtInt, fmtNum, fmtDate, fmtDateRange, posClass, barWidth } from '../../lib/format';
 
 export function getStaticPaths() {
   return loadConfig()
@@ -28,7 +30,9 @@ const { name } = Astro.props;
 const snapshots = loadSnapshots(domain!);
 const latest = latestSnapshot(domain!);
 const details = loadDetails(domain!);
-const bing = latest?.sources.bing;
+const bing = sourceStatuses(latest).bing;
+const bingLastOk = [...snapshots].reverse().find((snapshot) => snapshot.sources.bing?.status === 'ok');
+const bingStaleDate = isTemporarySourceFailure(bing) ? bingLastOk?.date ?? null : null;
 const traffic = details.sources.bing?.traffic ?? [];
 
 // Frazy per okno (7d/30d/…, jak w BWT). Fallback: płaska lista `queries`
@@ -49,11 +53,9 @@ const defaultWindow = defaultKey ? queryWindows?.[defaultKey] : null;
 const queries = defaultWindow?.queries ?? details.sources.bing?.queries ?? [];
 const queriesMeta =
   defaultWindow?.start && defaultWindow?.end
-    ? `okno ${defaultWindow.start} → ${defaultWindow.end}`
+    ? `okno ${fmtDateRange(defaultWindow.start, defaultWindow.end)}`
     : 'okres wg BWT (brak dat w API)';
 
-const clicks = metricSeries(snapshots, 'bing', 'clicks');
-const impressions = metricSeries(snapshots, 'bing', 'impressions');
 const statClicks = latestWithDelta(snapshots, 'bing', 'clicks');
 const statImpressions = latestWithDelta(snapshots, 'bing', 'impressions');
 const statQueries = latestWithDelta(snapshots, 'bing', 'queries');
@@ -64,6 +66,17 @@ const dataDate = bing?.data?.data_date ?? null;
 const histTs = traffic.map((t) => Math.floor(new Date(t.date).getTime() / 1000));
 const histClicks = traffic.map((t) => t.clicks);
 const histImpressions = traffic.map((t) => t.impressions);
+const latestTraffic = traffic.at(-1) ?? null;
+const compareTrafficDate = latestTraffic
+  ? new Date(`${latestTraffic.date}T00:00:00Z`).getTime() - 7 * 86400_000
+  : null;
+const compareTraffic = compareTrafficDate === null
+  ? null
+  : traffic.find((t) => new Date(`${t.date}T00:00:00Z`).getTime() === compareTrafficDate) ?? null;
+const clicksDelta7 = latestTraffic && compareTraffic ? latestTraffic.clicks - compareTraffic.clicks : statClicks.delta;
+const impressionsDelta7 = latestTraffic && compareTraffic
+  ? latestTraffic.impressions - compareTraffic.impressions
+  : statImpressions.delta;
 
 const maxQueryImpr = Math.max(...queries.map((q) => q.impressions), 0);
 
@@ -94,35 +107,45 @@ const shareClass = (share: number | null): string =>
 ---
 
 <Layout title={`${name} – Bing Webmaster Tools`}>
-  <DomainHeader domain={domain!} name={name} active="bing" latest={latest} />
+  <DomainHeader domain={domain!} name={name} active="bing" latest={latest} themeToggle accent="var(--bing)" />
 
-  {
-    bing && bing.status !== 'ok' && (
-      <div class={`banner ${bing.status === 'error' ? 'err' : 'warn'}`}>
-        <strong>Bing</strong>: {bing.error ?? 'błąd źródła'}
-      </div>
-    )
-  }
+  <div class="bing-note">
+    Wyróżnikiem Binga jest <strong>AI Performance</strong>: liczba cytowań marki w odpowiedziach Copilot i Bing AI,
+    rozkład intencji oraz zapytania grounding. Niżej pozostają klasyczny ruch z wyszukiwarki i frazy z BWT.
+  </div>
+
+  <SourceState
+    name="Bing"
+    result={bing}
+    lastDate={bingLastOk?.date}
+    metrics={[
+      { label: 'Kliknięcia', value: statClicks.value },
+      { label: 'Wyświetlenia', value: statImpressions.value },
+      { label: 'Frazy', value: statQueries.value },
+    ]}
+  />
 
   <div class="section-head">
     <h2>Ruch z Binga</h2>
-    {dataDate && <span class="section-meta">ostatni pełny dzień: {dataDate}</span>}
+    {dataDate && <span class="section-meta">ostatni pełny dzień: {fmtDate(String(dataDate))}</span>}
   </div>
-  <div class="kwrap">
+  <div class="kwrap rgrid bing-kpis">
     <StatCard
       label="Wyświetlenia / dzień"
       value={statImpressions.value}
-      delta={statImpressions.delta}
-      trend={impressions.values}
+      delta={impressionsDelta7}
+      trend={histImpressions}
       src="bing"
+      staleDate={bingStaleDate}
       hero
     />
-    <StatCard label="Kliknięcia / dzień" value={statClicks.value} delta={statClicks.delta} trend={clicks.values} src="bing" />
+    <StatCard label="Kliknięcia / dzień" value={statClicks.value} delta={clicksDelta7} trend={histClicks} src="bing" staleDate={bingStaleDate} />
     <StatCard
       label={defaultKey ? `Frazy w Bing (${WINDOW_LABELS.find(([k]) => k === defaultKey)?.[1]})` : 'Frazy w Bing'}
       value={statQueries.value}
       delta={statQueries.delta}
       src="bing"
+      staleDate={bingStaleDate}
     />
   </div>
 
@@ -132,7 +155,7 @@ const shareClass = (share: number | null): string =>
         <div class="section-head">
           <h2>AI Performance<span class="tagx">wyróżnik</span></h2>
           <span class="section-meta">
-            cytowania marki w Copilot / Bing AI · import CSV z BWT · stan z {aiPerf!.date}
+            cytowania marki w Copilot / Bing AI · import CSV z BWT · stan z {fmtDate(aiPerf!.date)}
           </span>
         </div>
         <div class="ai-sum">
@@ -178,7 +201,7 @@ const shareClass = (share: number | null): string =>
                     <td><span class={`tag-int ${intentKey(r.intent)}`}>{r.intent || INTENTS[intentKey(r.intent)].label}</span></td>
                     <td><span class="topic-cell">{r.topic}</span></td>
                     <td class="num">
-                      <span class="cell-bar bing">
+                      <span class="cell-bar rbar bing">
                         {fmtInt(r.citations)}
                         <span class="bar">
                           <i style={`width:${barWidth(r.citations, maxCitations)}%`} />
@@ -207,10 +230,12 @@ const shareClass = (share: number | null): string =>
       meta="dziennie"
       timestamps={histTs}
       series={[
-        { label: 'Kliknięcia', values: histClicks },
-        { label: 'Wyświetlenia', values: histImpressions, fill: true },
+        { label: 'Kliknięcia', values: histClicks, fill: true },
+        { label: 'Wyświetlenia', values: histImpressions },
       ]}
+      secondaryAxis
       ranges
+      overview
     />
   </div>
 
@@ -259,7 +284,7 @@ const shareClass = (share: number | null): string =>
               <td class="grow">{q.query}</td>
               <td class="num">{fmtInt(q.clicks)}</td>
               <td class="num">
-                <span class="cell-bar">
+                <span class="cell-bar rbar">
                   {fmtInt(q.impressions)}
                   <span class="bar">
                     <i style={`width:${barWidth(q.impressions, maxQueryImpr)}%`} />
@@ -267,7 +292,7 @@ const shareClass = (share: number | null): string =>
                 </span>
               </td>
               <td class="num">
-                <span class={`pos-badge ${posClass(q.position)}`}>{fmtNum(q.position, 1)}</span>
+                <span class={`pos-badge rbadge ${posClass(q.position)}`}>{fmtNum(q.position, 1)}</span>
               </td>
             </tr>
           ))
@@ -337,11 +362,11 @@ const shareClass = (share: number | null): string =>
         <tr>
           <td class="grow">${esc(r.query)}</td>
           <td class="num">${fi(r.clicks)}</td>
-          <td class="num"><span class="cell-bar">${fi(r.impressions)}<span class="bar"><i style="width:${bar(
+          <td class="num"><span class="cell-bar rbar">${fi(r.impressions)}<span class="bar"><i style="width:${bar(
             r.impressions,
             max,
           )}%"></i></span></span></td>
-          <td class="num"><span class="pos-badge ${posCls(r.position)}">${f1(r.position)}</span></td>
+          <td class="num"><span class="pos-badge rbadge ${posCls(r.position)}">${f1(r.position)}</span></td>
         </tr>`;
 
       winSeg.addEventListener('click', (e) => {
@@ -359,7 +384,7 @@ const shareClass = (share: number | null): string =>
         const metaEl = card.querySelector('.table-head > .table-meta');
         if (metaEl)
           metaEl.textContent =
-            win.start && win.end ? `okno ${win.start} → ${win.end}` : 'okres wg BWT';
+            win.start && win.end ? `okno ${new Date(`${win.start}T00:00:00Z`).toLocaleDateString('pl-PL')}–${new Date(`${win.end}T00:00:00Z`).toLocaleDateString('pl-PL')}` : 'okres wg BWT';
         card.querySelectorAll<HTMLTableCellElement>('thead th').forEach((th) => {
           th.classList.remove('active');
           delete th.dataset.dir;
@@ -371,3 +396,32 @@ const shareClass = (share: number | null): string =>
     }
   </script>
 </Layout>
+
+<style>
+  .bing-note {
+    margin: 16px 0 4px;
+    padding: 10px 14px;
+    border-left: 2px solid var(--bing);
+    border-radius: 0 10px 10px 0;
+    background: color-mix(in srgb, var(--bing) 7%, transparent);
+    color: var(--ink-muted);
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+  .bing-note strong {
+    color: var(--bing);
+  }
+  .kwrap.bing-kpis {
+    grid-template-columns: 1.4fr 1fr 1fr;
+  }
+  @media (max-width: 900px) {
+    .kwrap.bing-kpis {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 620px) {
+    .kwrap.bing-kpis {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
