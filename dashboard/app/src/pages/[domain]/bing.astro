@@ -70,7 +70,27 @@ const maxQueryImpr = Math.max(...queries.map((q) => q.impressions), 0);
 // AI Performance (Copilot/Bing AI) – brak API, dane z ręcznego eksportu CSV
 // wrzucanego do dashboard/imports/bing-ai/<domena>/.
 const aiPerf = loadBingAiQueries(domain!);
-const maxCitations = Math.max(...(aiPerf?.rows ?? []).map((r) => r.citations), 0);
+const aiRows = aiPerf?.rows ?? [];
+const maxCitations = Math.max(...aiRows.map((r) => r.citations), 0);
+const totalCitations = aiRows.reduce((s, r) => s + r.citations, 0);
+
+/* Normalizacja intencji z eksportu BWT do stałych pigułek (handoff „Bing – układ"). */
+const intentKey = (intent: string): 'learn' | 'info' | 'cmp' | 'other' =>
+  /learn|solve/i.test(intent) ? 'learn' : /inform/i.test(intent) ? 'info' : /compar/i.test(intent) ? 'cmp' : 'other';
+const INTENTS: Record<string, { label: string; color: string }> = {
+  learn: { label: 'Learn & Solve', color: 'var(--series-3)' },
+  info: { label: 'Informational', color: 'var(--accent-blue)' },
+  cmp: { label: 'Comparison', color: 'var(--series-2)' },
+  other: { label: 'Inne', color: 'var(--ink-faint)' },
+};
+const intentSplit = Object.keys(INTENTS)
+  .map((key) => {
+    const cit = aiRows.filter((r) => intentKey(r.intent) === key).reduce((s, r) => s + r.citations, 0);
+    return { key, ...INTENTS[key], cit, pct: totalCitations > 0 ? Math.round((cit / totalCitations) * 100) : 0 };
+  })
+  .filter((i) => i.cit > 0);
+const shareClass = (share: number | null): string =>
+  share === null ? 'lo' : share >= 15 ? 'hi' : share >= 5 ? 'mid' : 'lo';
 ---
 
 <Layout title={`${name} – Bing Webmaster Tools`}>
@@ -88,16 +108,99 @@ const maxCitations = Math.max(...(aiPerf?.rows ?? []).map((r) => r.citations), 0
     <h2>Ruch z Binga</h2>
     {dataDate && <span class="section-meta">ostatni pełny dzień: {dataDate}</span>}
   </div>
-  <div class="stat-grid">
-    <StatCard label="Kliknięcia / dzień" value={statClicks.value} delta={statClicks.delta} trend={clicks.values} hero />
-    <StatCard label="Wyświetlenia / dzień" value={statImpressions.value} delta={statImpressions.delta} trend={impressions.values} />
+  <div class="kwrap">
+    <StatCard
+      label="Wyświetlenia / dzień"
+      value={statImpressions.value}
+      delta={statImpressions.delta}
+      trend={impressions.values}
+      src="bing"
+      hero
+    />
+    <StatCard label="Kliknięcia / dzień" value={statClicks.value} delta={statClicks.delta} trend={clicks.values} src="bing" />
     <StatCard
       label={defaultKey ? `Frazy w Bing (${WINDOW_LABELS.find(([k]) => k === defaultKey)?.[1]})` : 'Frazy w Bing'}
       value={statQueries.value}
       delta={statQueries.delta}
+      src="bing"
     />
   </div>
 
+  {
+    aiRows.length > 0 && (
+      <>
+        <div class="section-head">
+          <h2>AI Performance<span class="tagx">wyróżnik</span></h2>
+          <span class="section-meta">
+            cytowania marki w Copilot / Bing AI · import CSV z BWT · stan z {aiPerf!.date}
+          </span>
+        </div>
+        <div class="ai-sum">
+          <div>
+            <div class="cap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 3l2.1 5.5L20 10l-5.9 1.5L12 17l-2.1-5.5L4 10l5.9-1.5L12 3z" />
+              </svg>
+              Cytowania AI
+            </div>
+            <div class="big">{fmtInt(totalCitations)}</div>
+            <div class="sub">
+              w <b>{fmtInt(aiRows.length)}</b> zapytaniach grounding – frazach, którymi AI sięgało po treść
+            </div>
+          </div>
+          <div class="isplit">
+            {intentSplit.map((i) => (
+              <div class="r">
+                <span class="dot" style={`background:${i.color}`} />
+                <span class="nm">{i.label}</span>
+                <span class="t"><i style={`width:${i.pct}%;background:${i.color}`} /></span>
+                <span class="n"><b>{fmtInt(i.cit)}</b> · {i.pct}%</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div data-ai-card>
+          <TableCard title="Grounding queries" count={aiRows.length} filter>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Grounding query</th>
+                  <th>Intencja</th>
+                  <th>Temat</th>
+                  <th class="num">Cytowania</th>
+                  <th class="num">Udział cytowań</th>
+                </tr>
+              </thead>
+              <tbody>
+                {aiRows.map((r) => (
+                  <tr data-intent={intentKey(r.intent)}>
+                    <td class="grow">{r.query}</td>
+                    <td><span class={`tag-int ${intentKey(r.intent)}`}>{r.intent || INTENTS[intentKey(r.intent)].label}</span></td>
+                    <td><span class="topic-cell">{r.topic}</span></td>
+                    <td class="num">
+                      <span class="cell-bar bing">
+                        {fmtInt(r.citations)}
+                        <span class="bar">
+                          <i style={`width:${barWidth(r.citations, maxCitations)}%`} />
+                        </span>
+                      </span>
+                    </td>
+                    <td class="num">
+                      <span class={`share ${shareClass(r.citation_share)}`}>
+                        {r.citation_share === null ? '–' : `${fmtNum(r.citation_share, 2)}%`}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </TableCard>
+        </div>
+      </>
+    )
+  }
+
+  <div class="section-head" style="margin-bottom:14px;"><h2>Ruch klasyczny</h2><span class="section-meta">kliknięcia i wyświetlenia</span></div>
   <div class="chart-grid">
     <TimeSeriesChart
       title="Kliknięcia i wyświetlenia"
@@ -110,50 +213,6 @@ const maxCitations = Math.max(...(aiPerf?.rows ?? []).map((r) => r.citations), 0
       ranges
     />
   </div>
-
-  {
-    aiPerf && aiPerf.rows.length > 0 && (
-      <>
-        <div class="section-head">
-          <h2>AI Performance – cytowania w Copilot / Bing AI</h2>
-          <span class="section-meta">
-            import CSV z BWT · stan z {aiPerf.date} · grounding queries = frazy, którymi AI sięgało po treść
-          </span>
-        </div>
-        <TableCard title="Grounding queries" count={aiPerf.rows.length} filter>
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th>Grounding query</th>
-                <th>Intencja</th>
-                <th>Temat</th>
-                <th class="num">Cytowania</th>
-                <th class="num">Udział cytowań</th>
-              </tr>
-            </thead>
-            <tbody>
-              {aiPerf.rows.map((r) => (
-                <tr>
-                  <td class="grow">{r.query}</td>
-                  <td>{r.intent}</td>
-                  <td>{r.topic}</td>
-                  <td class="num">
-                    <span class="cell-bar">
-                      {fmtInt(r.citations)}
-                      <span class="bar">
-                        <i style={`width:${barWidth(r.citations, maxCitations)}%`} />
-                      </span>
-                    </span>
-                  </td>
-                  <td class="num">{r.citation_share === null ? '–' : `${fmtNum(r.citation_share, 2)}%`}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </TableCard>
-      </>
-    )
-  }
 
   {
     windowOptions.length > 1 && (
@@ -218,6 +277,41 @@ const maxCitations = Math.max(...(aiPerf?.rows ?? []).map((r) => r.citations), 0
   </TableCard>
 
   <script>
+    /* Filtry intencji grounding queries: chipy wpinają predykat w kontroler
+       TableCard (tablecard:refilter), więc współgrają z filtrem tekstowym,
+       sortowaniem, paginacją i eksportem CSV. */
+    const aiWrap = document.querySelector<HTMLElement>('[data-ai-card]');
+    const aiCard = aiWrap?.querySelector<HTMLElement>('.table-card');
+    const aiHead = aiCard?.querySelector<HTMLElement>('.table-head');
+    if (aiCard && aiHead) {
+      const CHIPS: [string, string][] = [
+        ['all', 'Wszystkie'],
+        ['learn', 'Learn & Solve'],
+        ['info', 'Informational'],
+        ['cmp', 'Comparison'],
+      ];
+      const present = new Set(
+        Array.from(aiCard.querySelectorAll<HTMLElement>('tbody tr[data-intent]')).map((r) => r.dataset.intent),
+      );
+      const box = document.createElement('div');
+      box.className = 'fchips';
+      CHIPS.filter(([k]) => k === 'all' || present.has(k)).forEach(([key, label]) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.className = key === 'all' ? 'fchip on-bing' : 'fchip';
+        b.textContent = label;
+        b.dataset.intent = key;
+        b.addEventListener('click', () => {
+          box.querySelectorAll('button').forEach((o) => o.classList.toggle('on-bing', o === b));
+          const predicate =
+            key === 'all' ? null : (row: HTMLTableRowElement) => row.dataset.intent === key;
+          aiCard.dispatchEvent(new CustomEvent('tablecard:refilter', { detail: predicate }));
+        });
+        box.appendChild(b);
+      });
+      aiHead.insertBefore(box, aiHead.querySelector('[data-table-filter]'));
+    }
+
     /* Przełącznik okresu tabeli „Frazy w Bing" (jak w BWT): przepina wiersze
        na dane wybranego okna z osadzonego JSON-a, resetuje sort i pager. */
     const dataEl = document.getElementById('bing-windows-data');
