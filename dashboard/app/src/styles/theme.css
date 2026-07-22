@@ -537,3 +537,30 @@ table.data-table {
   font-size: 0.85rem;
   margin: 0 0 18px;
 }
+
+/* ── Tabela fraz GSC – układ „Potencjał" (q-table) ───────────────────── */
+.q-table { table-layout: fixed; }
+.q-table .qc-clk { width: 108px; }
+.q-table .qc-pos { width: 104px; }
+.q-table .qc-imp { width: 172px; }
+.q-table .qc-opp { width: 128px; }
+.q-row { cursor: pointer; }
+.q-kw { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.q-kw .txt { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chev { color: var(--ink-faint); font-size: 0.68rem; flex: none; transition: transform 0.15s ease; }
+.q-row.open .chev { transform: rotate(90deg); }
+.clicks-val.zero { color: var(--ink-faint); }
+.opp-dots { display: inline-flex; gap: 3px; }
+.opp-dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--hairline); display: block; }
+.opp-dots i.on { background: var(--accent-blue); }
+.q-table th .info { cursor: help; color: var(--ink-faint); font-size: 0.8rem; margin-left: 4px; }
+.q-drawer > td { background: var(--bg-surface-2); padding: 14px 18px; }
+.q-drawer .drawer-grid { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
+.q-drawer .spark { flex: 1 1 260px; max-width: 420px; }
+.q-drawer .spark h4 { margin: 0 0 8px; font-size: 0.78rem; font-weight: 600; color: var(--ink-muted); }
+.spark-svg { width: 100%; height: 44px; display: block; }
+.spark-empty { color: var(--ink-faint); font-size: 0.82rem; padding: 10px 0; }
+.q-drawer .facts { display: flex; gap: 6px 26px; flex-wrap: wrap; margin: 0; }
+.q-drawer .facts div { display: flex; flex-direction: column; gap: 2px; }
+.q-drawer .facts dt { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-faint); }
+.q-drawer .facts dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--ink); }

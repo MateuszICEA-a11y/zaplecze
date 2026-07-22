@@ -23,6 +23,8 @@ DETAILS_WINDOWS = [("7d", 7), ("30d", 30), ("3m", 90), ("6m", 180),
 COMPARE_WINDOW_DAYS = 90   # okno porównań qoq/yoy (plansza „Co spadło")
 COMPARE_ROW_LIMIT = 250
 COMPARE_KEEP_ROWS = 300    # ile złączonych wierszy per lista trzymamy w details
+HISTORY_DAYS = 14          # dzienna historia fraz (sparkline w rozwijanym wierszu)
+HISTORY_QUERIES = 300      # ile fraz trzymamy w query_history (top po wyświetleniach)
 
 
 def _rows_to_details(rows: list[dict]) -> list[dict]:
@@ -149,6 +151,36 @@ def fetch(cfg: dict, env: dict) -> dict:
     details["window"] = {"start": legacy.get("start"), "end": legacy.get("end")}
     details["queries"] = legacy.get("queries") or []
     details["pages"] = legacy.get("pages") or []
+
+    # Dzienna historia fraz (ostatnie HISTORY_DAYS dni) – sparkline w rozwijanym
+    # wierszu tabeli „Frazy w Google". Jedno zapytanie query×date; dni bez frazy
+    # uzupełnia frontend zerami.
+    try:
+        hist_start = (datetime.now(timezone.utc)
+                      - timedelta(days=DATA_LAG_DAYS + HISTORY_DAYS - 1)).strftime("%Y-%m-%d")
+        resp = query({
+            "startDate": hist_start,
+            "endDate": day,
+            "dimensions": ["query", "date"],
+            "rowLimit": QUERY_ROW_LIMIT,
+        })
+        series: dict[str, list] = {}
+        totals: dict[str, int] = {}
+        for row in resp.get("rows") or []:
+            keys = row.get("keys") or []
+            if len(keys) < 2:
+                continue
+            q_key, q_date = keys[0], keys[1]
+            impressions = row.get("impressions", 0)
+            series.setdefault(q_key, []).append([q_date, impressions])
+            totals[q_key] = totals.get(q_key, 0) + impressions
+        top = sorted(totals, key=lambda k: -totals[k])[:HISTORY_QUERIES]
+        details["query_history"] = {
+            "window": {"start": hist_start, "end": day},
+            "series": {k: sorted(series[k]) for k in top},
+        }
+    except SourceError:
+        pass  # historia jest dodatkiem – tabela działa bez sparkline'ów
 
     # Porównania okres-do-okresu (plansza „Co spadło"): ostatnie 3 mies. vs
     # poprzednie 3 mies. (qoq) i vs ten sam okres rok temu (yoy).

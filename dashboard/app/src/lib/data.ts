@@ -214,6 +214,11 @@ export interface DomainDetails {
       /** Okna okresów dla przełącznika (7d/30d/3m/6m/12m/16m). */
       windows?: Record<string, { start: string; end: string; queries: GscRow[]; pages: GscRow[] }>;
       compare?: GscCompare;
+      /** Dzienna historia fraz (14 dni) do sparkline'a w rozwijanym wierszu. */
+      query_history?: {
+        window: { start: string; end: string };
+        series: Record<string, [string, number][]>;
+      };
     };
     ahrefs?: { ref_domains: RefDomain[]; ref_domains_source?: 'ahrefs' | 'dataforseo' };
     clarity?: {

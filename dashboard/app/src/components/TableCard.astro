@@ -58,6 +58,12 @@ const paged = !isEmpty && pageSize > 0;
   /* Jeden kontroler per karta: filtr, sort i paginacja muszą działać razem
      (sort przestawia DOM, filtr zawęża zbiór, pager tnie wynik na strony). */
   const numFrom = (cell: HTMLTableCellElement | undefined): number => {
+    /* data-sort na komórce wygrywa z parsowaniem tekstu (kolumny bez liczb,
+       np. kropki „Potencjał" w tabeli fraz GSC). */
+    if (cell?.dataset.sort !== undefined) {
+      const v = parseFloat(cell.dataset.sort);
+      return Number.isNaN(v) ? -Infinity : v;
+    }
     const t = (cell?.textContent ?? '').replace(/[\s  ]/g, '').replace(',', '.');
     const m = t.match(/-?\d+(?:\.\d+)?/);
     return m ? parseFloat(m[0]) : -Infinity;

@@ -58,6 +58,28 @@ const dataDate = latest?.sources.gsc?.data?.data_date ?? null;
 const gsc = latest?.sources.gsc;
 
 const maxQueryImpressions = Math.max(...queries.map((q) => q.impressions ?? 0), 0);
+
+// Układ „Potencjał": opp = wyświetlenia × waga pozycji. Premiuje duży popyt
+// blisko czołówki (striking distance 4-20), nie frazy już wygrane (top3)
+// ani beznadziejnie dalekie (>50).
+const oppMult = (pos: number | null) =>
+  typeof pos !== 'number' ? 0.32 : pos <= 3 ? 0.35 : pos <= 20 ? 1.0 : pos <= 50 ? 0.65 : 0.32;
+const withOpp = (rows: typeof queries) => {
+  const scored = rows.map((q) => ({ ...q, opp: (q.impressions ?? 0) * oppMult(q.position) }));
+  const maxOpp = Math.max(...scored.map((q) => q.opp), 0);
+  return scored
+    .map((q) => {
+      const nrm = maxOpp > 0 ? q.opp / maxOpp : 0;
+      return {
+        ...q,
+        oppDots: maxOpp > 0 ? Math.max(1, Math.round(nrm * 5)) : 1,
+        oppLabel: nrm >= 0.6 ? 'Wysoki' : nrm >= 0.3 ? 'Średni' : 'Niski',
+      };
+    })
+    .sort((a, b) => b.opp - a.opp);
+};
+const queriesOpp = withOpp(queries);
+const queryHistory = gscDetails?.query_history ?? null;
 const maxPageImpressions = Math.max(...pages.map((p) => p.impressions ?? 0), 0);
 const stripOrigin = (url: string) => url.replace(/^https?:\/\/[^/]+/, '') || '/';
 
@@ -243,13 +265,9 @@ const compareModes = (
       const bar = (v: number, max: number) => (max > 0 ? Math.max(2, Math.round((v / max) * 100)) : 0);
       const stripOrigin = (url: string) => url.replace(/^https?:\/\/[^/]+/, '') || '/';
 
-      const rowHtml = (r: Row, max: number, isPage: boolean) => `
+      const pageRowHtml = (r: Row, max: number) => `
         <tr>
-          <td class="grow">${
-            isPage
-              ? `<a class="cell-url" href="${esc(r.key)}" rel="noopener" target="_blank">${esc(stripOrigin(r.key))}</a>`
-              : esc(r.key)
-          }</td>
+          <td class="grow"><a class="cell-url" href="${esc(r.key)}" rel="noopener" target="_blank">${esc(stripOrigin(r.key))}</a></td>
           <td class="num">${fi(r.clicks)}</td>
           <td class="num"><span class="cell-bar">${fi(r.impressions)}<span class="bar"><i style="width:${bar(
             r.impressions,
@@ -258,6 +276,39 @@ const compareModes = (
           <td class="num"><span class="${typeof r.ctr === 'number' && r.ctr > 0 ? 'ctr-pos' : ''}">${fp(r.ctr)}</span></td>
           <td class="num"><span class="pos-badge ${posCls(r.position)}">${f1(r.position)}</span></td>
         </tr>`;
+
+      /* Układ „Potencjał" (q-table): opp = wyświetlenia × waga pozycji, sort
+         domyślny malejąco – lustro logiki z frontmatteru. */
+      const oppMult = (p: number | null) =>
+        typeof p !== 'number' ? 0.32 : p <= 3 ? 0.35 : p <= 20 ? 1.0 : p <= 50 ? 0.65 : 0.32;
+      const qRowHtml = (r: Row & { opp: number; dots: number; label: string }, max: number) => `
+        <tr class="q-row" data-key="${esc(r.key)}" data-clicks="${r.clicks}" data-ctr="${r.ctr ?? ''}"
+            data-pos="${r.position ?? ''}" data-imp="${r.impressions}" data-opp-label="${r.label}">
+          <td class="grow"><span class="q-kw"><span class="chev">▸</span><span class="txt">${esc(r.key)}</span></span></td>
+          <td class="num qc-clk"><span class="clicks-val ${r.clicks ? '' : 'zero'}">${fi(r.clicks)}</span></td>
+          <td class="num qc-pos"><span class="pos-badge ${posCls(r.position)}">${f1(r.position)}</span></td>
+          <td class="num qc-imp"><span class="cell-bar">${fi(r.impressions)}<span class="bar"><i style="width:${bar(
+            r.impressions,
+            max,
+          )}%"></i></span></span></td>
+          <td class="num qc-opp" data-sort="${r.opp}" title="${r.label} (${fi(Math.round(r.opp))})"><span class="opp-dots">${[1, 2, 3, 4, 5]
+            .map((i) => `<i class="${i <= r.dots ? 'on' : ''}"></i>`)
+            .join('')}</span></td>
+        </tr>`;
+      const withOpp = (rows: Row[]) => {
+        const scored = rows.map((r) => ({ ...r, opp: (r.impressions ?? 0) * oppMult(r.position) }));
+        const maxOpp = Math.max(...scored.map((r) => r.opp), 0);
+        return scored
+          .map((r) => {
+            const nrm = maxOpp > 0 ? r.opp / maxOpp : 0;
+            return {
+              ...r,
+              dots: maxOpp > 0 ? Math.max(1, Math.round(nrm * 5)) : 1,
+              label: nrm >= 0.6 ? 'Wysoki' : nrm >= 0.3 ? 'Średni' : 'Niski',
+            };
+          })
+          .sort((a, b) => b.opp - a.opp);
+      };
 
       const applyWindow = (key: string) => {
         const win = windows[key];
@@ -270,7 +321,9 @@ const compareModes = (
           const body = card.querySelector('table.data-table tbody');
           if (!body) return;
           const max = Math.max(...rows.map((r) => r.impressions ?? 0), 0);
-          body.innerHTML = rows.map((r) => rowHtml(r, max, isPage)).join('');
+          body.innerHTML = isPage
+            ? rows.map((r) => pageRowHtml(r, max)).join('')
+            : withOpp(rows).map((r) => qRowHtml(r, max)).join('');
           const countEl = card.querySelector('.table-head h3 .table-meta');
           if (countEl) countEl.textContent = ` · ${rows.length.toLocaleString('pl-PL')}`;
           const metaEl = card.querySelector('.table-head > .table-meta');
@@ -291,6 +344,79 @@ const compareModes = (
         winSeg.querySelectorAll('button').forEach((b) => b.classList.toggle('active', b === btn));
         applyWindow(btn.dataset.window!);
       });
+    }
+
+    /* Rozwijane wiersze tabeli fraz (q-drawer): sparkline 14 dni + fakty
+       (CTR przeniesiony tu z kolumn). Szuflady zamykane przed sortem/filtrem/
+       pagerem (capture-phase), żeby nie psuły stronicowania TableCard. */
+    {
+      const qTable = document.querySelector<HTMLTableElement>('table.q-table');
+      const qCard = qTable?.closest<HTMLElement>('.table-card');
+      const histEl = document.getElementById('gsc-qhistory');
+      const history: {
+        window: { start: string; end: string };
+        series: Record<string, [string, number][]>;
+      } | null = histEl ? JSON.parse(histEl.textContent ?? 'null') : null;
+      const fiL = (n: number) => n.toLocaleString('pl-PL');
+
+      const sparkSvg = (key: string): string => {
+        const raw = history?.series?.[key];
+        if (!raw || raw.length === 0)
+          return '<div class="spark-empty">brak danych dziennych dla tej frazy</div>';
+        const byDate = new Map(raw);
+        const days: number[] = [];
+        const start = new Date(history!.window.start + 'T00:00:00Z');
+        const end = new Date(history!.window.end + 'T00:00:00Z');
+        for (let d = new Date(start); d <= end; d.setUTCDate(d.getUTCDate() + 1)) {
+          days.push(byDate.get(d.toISOString().slice(0, 10)) ?? 0);
+        }
+        const max = Math.max(...days, 1);
+        const pts = days
+          .map((v, i) => `${((i / Math.max(days.length - 1, 1)) * 96).toFixed(1)},${(28 - (v / max) * 26).toFixed(1)}`)
+          .join(' ');
+        return `<svg viewBox="0 0 96 30" preserveAspectRatio="none" class="spark-svg"><polyline points="${pts}" fill="none" stroke="var(--accent-blue)" stroke-width="1.6" /></svg>`;
+      };
+
+      const closeDrawers = () => {
+        qTable?.querySelectorAll('tr.q-drawer').forEach((d) => d.remove());
+        qTable?.querySelectorAll('tr.q-row.open').forEach((r) => r.classList.remove('open'));
+      };
+
+      if (qTable && qCard) {
+        qTable.addEventListener('click', (e) => {
+          const row = (e.target as HTMLElement).closest<HTMLTableRowElement>('tr.q-row');
+          if (!row) return;
+          const wasOpen = row.classList.contains('open');
+          closeDrawers();
+          if (wasOpen) return;
+          row.classList.add('open');
+          const d = row.dataset;
+          const fp2 = (v: string | undefined) =>
+            v ? `${parseFloat(v).toLocaleString('pl-PL', { maximumFractionDigits: 2 })}%` : '–';
+          const f1p = (v: string | undefined) =>
+            v ? parseFloat(v).toLocaleString('pl-PL', { maximumFractionDigits: 1 }) : '–';
+          const drawer = document.createElement('tr');
+          drawer.className = 'q-drawer';
+          drawer.innerHTML = `<td colspan="5"><div class="drawer-grid">
+            <div class="spark"><h4>Wyświetlenia – ostatnie 14 dni</h4>${sparkSvg(d.key ?? '')}</div>
+            <dl class="facts">
+              <div><dt>Kliknięcia</dt><dd>${fiL(Number(d.clicks ?? 0))}</dd></div>
+              <div><dt>CTR</dt><dd>${fp2(d.ctr)}</dd></div>
+              <div><dt>Pozycja</dt><dd>${f1p(d.pos)}</dd></div>
+              <div><dt>Wyświetlenia</dt><dd>${fiL(Number(d.imp ?? 0))}</dd></div>
+              <div><dt>Potencjał</dt><dd>${d.oppLabel ?? '–'}</dd></div>
+            </dl>
+          </div></td>`;
+          row.after(drawer);
+        });
+        /* Zamknięcie szuflad zanim TableCard przerenderuje widok. */
+        qCard.addEventListener('click', (e) => {
+          const t = e.target as HTMLElement;
+          if (t.closest('thead th') || t.closest('.pager button')) closeDrawers();
+        }, true);
+        qCard.querySelector('[data-table-filter]')?.addEventListener('input', closeDrawers, true);
+        qCard.addEventListener('tablecard:refilter', closeDrawers, true);
+      }
     }
 
     document.querySelectorAll('[data-drops-seg]').forEach((seg) => {
@@ -334,23 +460,44 @@ const compareModes = (
     filter
     empty="Lista fraz pojawi się po najbliższym przebiegu collectora (codziennie 6:30)."
   >
-    <table class="data-table">
+    <table class="data-table q-table">
       <thead>
         <tr>
           <th>Fraza</th>
-          <th class="num">Kliknięcia</th>
-          <th class="num">Wyświetlenia</th>
-          <th class="num">CTR</th>
-          <th class="num">Pozycja</th>
+          <th class="num qc-clk">Kliknięcia</th>
+          <th class="num qc-pos">Pozycja</th>
+          <th class="num qc-imp">Wyświetlenia</th>
+          <th class="num qc-opp" data-dir="desc">
+            Potencjał
+            <span class="info" title="Potencjał = wyświetlenia × waga pozycji. Wagi: TOP 3 → 0,35 (już wygrane) · 4–20 → 1,0 (striking distance) · 21–50 → 0,65 · dalej → 0,32. Premiuje duży popyt blisko czołówki – frazy warte pchnięcia w górę.">ⓘ</span>
+          </th>
         </tr>
       </thead>
       <tbody>
         {
-          queries.map((q) => (
-            <tr>
-              <td class="grow">{q.key}</td>
-              <td class="num">{fmtInt(q.clicks)}</td>
-              <td class="num">
+          queriesOpp.map((q) => (
+            <tr
+              class="q-row"
+              data-key={q.key}
+              data-clicks={q.clicks}
+              data-ctr={q.ctr ?? ''}
+              data-pos={q.position ?? ''}
+              data-imp={q.impressions}
+              data-opp-label={q.oppLabel}
+            >
+              <td class="grow">
+                <span class="q-kw">
+                  <span class="chev">▸</span>
+                  <span class="txt">{q.key}</span>
+                </span>
+              </td>
+              <td class="num qc-clk">
+                <span class={`clicks-val ${!q.clicks ? 'zero' : ''}`}>{fmtInt(q.clicks)}</span>
+              </td>
+              <td class="num qc-pos">
+                <span class={`pos-badge ${posClass(q.position)}`}>{fmtNum(q.position, 1)}</span>
+              </td>
+              <td class="num qc-imp">
                 <span class="cell-bar">
                   {fmtInt(q.impressions)}
                   <span class="bar">
@@ -358,11 +505,12 @@ const compareModes = (
                   </span>
                 </span>
               </td>
-              <td class="num">
-                <span class={typeof q.ctr === 'number' && q.ctr > 0 ? 'ctr-pos' : ''}>{fmtPct(q.ctr)}</span>
-              </td>
-              <td class="num">
-                <span class={`pos-badge ${posClass(q.position)}`}>{fmtNum(q.position, 1)}</span>
+              <td class="num qc-opp" data-sort={q.opp} title={`${q.oppLabel} (${fmtInt(Math.round(q.opp))})`}>
+                <span class="opp-dots">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <i class={i <= q.oppDots ? 'on' : ''} />
+                  ))}
+                </span>
               </td>
             </tr>
           ))
@@ -370,6 +518,13 @@ const compareModes = (
       </tbody>
     </table>
   </TableCard>
+  {queryHistory && (
+    <script
+      type="application/json"
+      id="gsc-qhistory"
+      set:html={JSON.stringify(queryHistory).replace(/</g, '\\u003c')}
+    />
+  )}
 
   <TableCard
     title="Strony w Google"
