@@ -119,7 +119,12 @@ def write_details(target_dir: Path, stamp: dict, details: dict) -> None:
     path.write_text(json.dumps({**stamp, "sources": merged}, ensure_ascii=False, indent=1) + "\n")
 
 
-def indexing_skip_entry(domain_cfg: dict, domain_dir: Path, now: datetime) -> dict | None:
+def indexing_skip_entry(
+    domain_cfg: dict,
+    domain_dir: Path,
+    now: datetime,
+    force_skip: bool = False,
+) -> dict | None:
     """Harmonogram tygodniowy indeksacji (schedule: weekly w domains.yaml).
 
     URL Inspection ma kwotę 2000/d/property i pełny przejazd trwa ~1,5 h –
@@ -149,6 +154,8 @@ def indexing_skip_entry(domain_cfg: dict, domain_dir: Path, now: datetime) -> di
     if not entry or not entry_date:
         return None
     data = entry.get("data") or {}
+    if force_skip:
+        return {**entry, "data": {**data, "as_of": entry_date}}
     complete = (not data.get("aborted")
                 and data.get("pages_checked") == data.get("sitemap_urls"))
     if not complete:
@@ -194,10 +201,16 @@ def main() -> int:
     for domain in config.get("domains") or []:
         domain_id = domain["id"]
         print(f"[{domain_id}]")
-        skip_indexing = indexing_skip_entry(domain, DATA_DIR / domain_id, now)
+        skip_indexing = indexing_skip_entry(
+            domain,
+            DATA_DIR / domain_id,
+            now,
+            force_skip=os.environ.get("COLLECTOR_SKIP_INDEXING") == "1",
+        )
         if skip_indexing:
             domain = {**domain, "indexing": {**domain["indexing"], "enabled": False}}
-            print(f"  [indexing] skip (weekly – komplet z {skip_indexing['data'].get('as_of')})")
+            reason = "push – bez kosztownej inspekcji URL" if os.environ.get("COLLECTOR_SKIP_INDEXING") == "1" else "weekly"
+            print(f"  [indexing] skip ({reason}; dane z {skip_indexing['data'].get('as_of')})")
         for once_daily in ONCE_DAILY_SOURCES:
             if (domain.get(once_daily) or {}).get("enabled") and \
                     source_ok_today(DATA_DIR / domain_id, once_daily, stamp["date"]):
