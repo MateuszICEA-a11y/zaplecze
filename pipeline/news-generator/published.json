@@ -1,13 +1,5 @@
 [
   {
-    "title": "Braki paliwa lotniczego w Europie. Polska może odegrać ważną rolę w kryzysie dostaw",
-    "date": "2026-04-18",
-    "slug": "braki-paliwa-lotniczego-w-europie-polska-moze-odegrac-wazna-role-w-kryzysie",
-    "section": "news",
-    "format": "analysis",
-    "source": "rss"
-  },
-  {
     "title": "Polacy ruszają kamperami nad Bałtyk i w góry. Jeden kierunek wyraźnie zaskakuje",
     "date": "2026-04-19",
     "slug": "polacy-ruszaja-kamperami-nad-baltyk-i-w-gory-jeden-kierunek-wyraznie-zaskakuje",
@@ -717,6 +709,14 @@
     "slug": "da-nang-modernizuje-obwodnice-nam-hai-van-za-blisko-2-000-mld-vnd",
     "section": "news",
     "format": "analysis",
+    "source": "rss"
+  },
+  {
+    "title": "Wojciechowska van Heukelom uderza w obóz Morawieckiego. Mówi o „grze do bramki Donalda Tuska”",
+    "date": "2026-07-22",
+    "slug": "wojciechowska-van-heukelom-uderza-w-oboz-morawieckiego-mowi-o-grze-do-bramki",
+    "section": "news",
+    "format": "short",
     "source": "rss"
   }
 ]
