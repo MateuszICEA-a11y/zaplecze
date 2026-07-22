@@ -47,6 +47,7 @@ const channelsMonthly = details.sources.ga4?.channels_monthly ?? [];
 type DailyMetric = Exclude<(typeof daily)[number], undefined>;
 type DailyKey = Exclude<keyof DailyMetric, 'date'>;
 const dailySeries = (field: DailyKey) => daily.map((row) => Number(row[field] ?? 0));
+const dailyTimestamps = daily.map((row) => Math.floor(new Date(`${row.date}T00:00:00Z`).getTime() / 1000));
 const dailyStat = (field: DailyKey, fallback: { value: number | null; delta: number | null }) => {
   if (!daily.length) return fallback;
   const last = daily.at(-1)!;
@@ -57,9 +58,11 @@ const dailyStat = (field: DailyKey, fallback: { value: number | null; delta: num
   const value = Number(last[field]);
   return { value, delta: reference ? value - Number(reference[field]) : null };
 };
-const sessions = daily.length ? { values: dailySeries('sessions') } : metricSeries(snapshots, 'ga4', 'sessions');
+const sessions = daily.length
+  ? { timestamps: dailyTimestamps, values: dailySeries('sessions') }
+  : metricSeries(snapshots, 'ga4', 'sessions');
 const organicDaily = daily.length
-  ? { values: dailySeries('organic_sessions') }
+  ? { timestamps: dailyTimestamps, values: dailySeries('organic_sessions') }
   : metricSeries(snapshots, 'ga4', 'organic_sessions');
 const statSessions = dailyStat('sessions', latestWithDelta(snapshots, 'ga4', 'sessions'));
 const statUsers = dailyStat('active_users', latestWithDelta(snapshots, 'ga4', 'active_users'));
