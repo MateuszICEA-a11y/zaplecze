@@ -54,7 +54,8 @@ domains:
       enabled: true # panel Matrix – URL Inspection całej sitemapy
       schedule: weekly # pełny przejazd raz w tygodniu (pon.); niekompletny dociągany od razu
       site: "https://www.grupa-icea.pl/"
-      sitemap: "https://www.grupa-icea.pl/sitemap.xml" # ~834 URL-e (9 podmap)
+      # Bez /sitemap.xml – Yoast robi 301 na sitemap_index.xml, jeden hop mniej
+      sitemap: "https://www.grupa-icea.pl/sitemap_index.xml" # ~834 URL-e (9 podmap)
     ga4:
       enabled: true
       # Strumień „G-54BW5YREWS" (id strumienia 2136357439) = grupa-icea.pl;

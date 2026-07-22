@@ -64,7 +64,13 @@ class _TokenProvider:
 def _sitemap_urls(sitemap_url: str) -> list[str]:
     """Wszystkie adresy stron z sitemapy (rekurencyjnie przez podmapy)."""
     def fetch(url: str) -> list[str]:
-        req = urllib.request.Request(url, headers={"User-Agent": "zaplecze-dashboard/1.0"})
+        # UA przeglądarkowy: WAF seohost ubijał timeoutem „botowe" UA z runnerów CI
+        # (lokalnie te same requesty przechodziły w ~1 s).
+        req = urllib.request.Request(url, headers={
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                          "(KHTML, like Gecko) Chrome/126.0 Safari/537.36",
+            "Accept": "text/xml,application/xml;q=0.9,*/*;q=0.8",
+        })
         # Retry: pojedynczy timeout z runnera CI ubijał cały przejazd (2026-07-22).
         for attempt in range(3):
             try:
