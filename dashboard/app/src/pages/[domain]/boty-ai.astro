@@ -57,7 +57,7 @@ const maxPathRequests = Math.max(...paths.map((p) => p.requests), 0);
     {dataDate && <span class="section-meta">pełna doba {dataDate} (logi CDN Cloudflare, wg user-agenta)</span>}
   </div>
   <div class="stat-grid">
-    <StatCard label="Requesty botów AI / dzień" value={statRequests.value} delta={statRequests.delta} trend={requests.values} />
+    <StatCard label="Requesty botów AI / dzień" value={statRequests.value} delta={statRequests.delta} trend={requests.values} hero />
     <StatCard label="Aktywne boty" value={statBots.value} delta={statBots.delta} />
     <StatCard label="Najaktywniejszy bot" value={topBot} />
   </div>

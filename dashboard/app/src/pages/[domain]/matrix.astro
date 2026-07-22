@@ -150,8 +150,6 @@ const checked = indexing?.data?.pages_checked ?? joined.length;
 const notIndexed = indexing?.data?.not_indexed ?? checked - indexed;
 const sitemapUrls = indexing?.data?.sitemap_urls ?? checked;
 const maxImpressions = Math.max(...joined.map((r) => r.impressions ?? 0), 0);
-const engClass = (rate: number | null) =>
-  typeof rate !== 'number' ? '' : rate >= 60 ? 'top3' : rate >= 40 ? 'top10' : rate >= 25 ? 'mid' : 'low';
 ---
 
 <Layout title={`${name} – Matrix`}>
@@ -184,7 +182,7 @@ const engClass = (rate: number | null) =>
   <div class="stat-grid">
     <StatCard label="Adresy w sitemapie" value={sitemapUrls} />
     <StatCard label="Sprawdzone" value={checked} />
-    <StatCard label="Zaindeksowane" value={indexed} />
+    <StatCard label="Zaindeksowane" value={indexed} hero />
     <StatCard label="Niezaindeksowane" value={notIndexed} goodWhen="down" />
   </div>
 
@@ -233,7 +231,7 @@ const engClass = (rate: number | null) =>
                 <td class="num">{fmtPct(s.ctr)}</td>
                 <td class="num">{fmtInt(s.sessions)}</td>
                 <td class="num">
-                  <span class={`pos-badge ${engClass(s.engagement_rate)}`}>{fmtPct(s.engagement_rate)}</span>
+                  <span class="pct-neutral">{fmtPct(s.engagement_rate)}</span>
                 </td>
                 <td class="num">{fmtInt(s.senuto_top10)}</td>
                 <td class="num">
@@ -305,7 +303,7 @@ const engClass = (rate: number | null) =>
               <td class="num">{fmtPct(r.ctr)}</td>
               <td class="num">{fmtInt(r.ga4_sessions)}</td>
               <td class="num">
-                <span class={`pos-badge ${engClass(r.engagement_rate)}`}>{fmtPct(r.engagement_rate)}</span>
+                <span class="pct-neutral">{fmtPct(r.engagement_rate)}</span>
               </td>
               <td class="num">{r.last_crawl ?? '–'}</td>
             </tr>
@@ -382,7 +380,7 @@ const engClass = (rate: number | null) =>
                         </span>
                       </td>
                       <td class="num">
-                        <span class={`pos-badge ${engClass(p.engagement_rate)}`}>{fmtPct(p.engagement_rate)}</span>
+                        <span class="pct-neutral">{fmtPct(p.engagement_rate)}</span>
                       </td>
                     </tr>
                   ))}

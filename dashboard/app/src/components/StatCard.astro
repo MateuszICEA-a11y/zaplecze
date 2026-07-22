@@ -82,11 +82,30 @@ if (points.length >= 2) {
   </div>
   {
     deltaText !== null ? (
-      <div class={`stat-delta ${sentiment}`}>
-        {direction === 'up' ? '▲' : direction === 'down' ? '▼' : '•'} {deltaText} / {deltaLabel}
+      <div class="stat-foot">
+        <span class={`rtrend ${sentiment === 'good' ? 'up' : sentiment === 'bad' ? 'down' : 'flat'}`}>
+          {direction !== 'flat' && (
+            <svg viewBox="0 0 12 12" aria-hidden="true">
+              <path
+                d={direction === 'up' ? 'M2 8.5 6 4.5 10 8.5' : 'M2 3.5 6 7.5 10 3.5'}
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          )}
+          {direction === 'flat' ? 'bez zmian' : deltaText}
+          <span class="per">/ {deltaLabel}</span>
+        </span>
       </div>
     ) : (
-      trend && trend.length > 0 && <div class="stat-delta flat">• – / {deltaLabel}</div>
+      trend && trend.length > 0 && (
+        <div class="stat-foot">
+          <span class="rtrend flat">zbieramy dane</span>
+        </div>
+      )
     )
   }
 </Tag>
@@ -145,7 +164,14 @@ if (points.length >= 2) {
     line-height: 1.02;
   }
   .hero .stat-value {
-    font-size: 2.7rem;
+    font-size: 3rem;
+  }
+  .stat-foot {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
   }
   .spark {
     width: 96px;

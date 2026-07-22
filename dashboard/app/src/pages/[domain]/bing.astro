@@ -89,7 +89,7 @@ const maxCitations = Math.max(...(aiPerf?.rows ?? []).map((r) => r.citations), 0
     {dataDate && <span class="section-meta">ostatni pełny dzień: {dataDate}</span>}
   </div>
   <div class="stat-grid">
-    <StatCard label="Kliknięcia / dzień" value={statClicks.value} delta={statClicks.delta} trend={clicks.values} />
+    <StatCard label="Kliknięcia / dzień" value={statClicks.value} delta={statClicks.delta} trend={clicks.values} hero />
     <StatCard label="Wyświetlenia / dzień" value={statImpressions.value} delta={statImpressions.delta} trend={impressions.values} />
     <StatCard
       label={defaultKey ? `Frazy w Bing (${WINDOW_LABELS.find(([k]) => k === defaultKey)?.[1]})` : 'Frazy w Bing'}
