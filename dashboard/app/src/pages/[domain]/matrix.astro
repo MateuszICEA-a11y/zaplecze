@@ -4,7 +4,7 @@ import DomainHeader from '../../components/DomainHeader.astro';
 import StatCard from '../../components/StatCard.astro';
 import TableCard from '../../components/TableCard.astro';
 import { loadConfig, loadSnapshots, loadDetails, latestSnapshot, sectionEnabled, sourceStatuses, isTemporarySourceFailure } from '../../lib/data';
-import { fmtInt, fmtPct, fmtNum, fmtDateRange, posClass, barWidth } from '../../lib/format';
+import { fmtInt, fmtPct, fmtNum, fmtDate, fmtDateRange, posClass, barWidth } from '../../lib/format';
 
 export function getStaticPaths() {
   return loadConfig()
@@ -20,9 +20,12 @@ const latest = latestSnapshot(domain!);
 const details = loadDetails(domain!);
 const indexing = sourceStatuses(latest).indexing;
 const indexingLastOk = [...snapshots].reverse().find((snapshot) => snapshot.sources.indexing?.status === 'ok');
+const senutoLastOk = [...snapshots].reverse().find((snapshot) => snapshot.sources.senuto?.status === 'ok');
 const indexingStaleDate = isTemporarySourceFailure(indexing) ? indexingLastOk?.date ?? null : null;
+const indexingSummary = indexing?.status === 'ok' ? indexing.data : indexingLastOk?.sources.indexing?.data;
 const rows = details.sources.indexing?.rows ?? [];
 const window = details.sources.indexing?.window;
+const ga4LandingWindow = details.sources.ga4?.landing_pages?.window;
 
 // GA4: sesje per landing page (okno 28 dni) do zestawienia z GSC.
 // GA4 oddaje ścieżki bez końcowego slasha (`/kariera`), sitemap z (`/kariera/`)
@@ -161,10 +164,10 @@ const prioLabel = {
   yoy: compare?.yoy ? `${fmtDateRange(compare.cur.start, compare.cur.end)} vs ${fmtDateRange(compare.yoy.prev.start, compare.yoy.prev.end)}` : '',
 };
 
-const indexed = indexing?.data?.indexed ?? joined.filter((r) => r.indexed).length;
-const checked = indexing?.data?.pages_checked ?? joined.length;
-const notIndexed = indexing?.data?.not_indexed ?? checked - indexed;
-const sitemapUrls = indexing?.data?.sitemap_urls ?? checked;
+const indexed = indexingSummary?.indexed ?? joined.filter((r) => r.indexed).length;
+const checked = indexingSummary?.pages_checked ?? joined.length;
+const notIndexed = indexingSummary?.not_indexed ?? checked - indexed;
+const sitemapUrls = indexingSummary?.sitemap_urls ?? checked;
 const maxImpressions = Math.max(...joined.map((r) => r.impressions ?? 0), 0);
 const indexingLastOkWhen = indexingLastOk
   ? new Date(indexingLastOk.collected_at).toLocaleString('pl-PL', {
@@ -204,10 +207,10 @@ const indexingError = (indexing?.error ?? 'źródło chwilowo niedostępne').rep
     )
   }
   {
-    indexing?.data?.aborted && (
+    indexingSummary?.aborted && (
       <div class="banner warn">
         <strong>Indeksacja</strong>: przejazd częściowy ({checked} z {sitemapUrls} adresów) –{' '}
-        {indexing.data.aborted}; reszta dogra się kolejnym przebiegiem collectora (cron 6:30).
+        {indexingSummary.aborted}; reszta dogra się kolejnym przebiegiem collectora (cron 6:30).
       </div>
     )
   }
@@ -289,6 +292,15 @@ const indexingError = (indexing?.error ?? 'źródło chwilowo niedostępne').rep
         <button type="button" class="fchip" data-f="noindex">Poza indeksem</button>
       </div>
     </div>
+  </div>
+  <div class="matrix-scope" role="note" aria-label="Zakres danych w tabeli Matrix stron">
+    <strong>Zakres danych</strong>
+    <span><i class="src sen" />Senuto: stan z {fmtDate(senutoLastOk?.date)}</span>
+    <span><i class="src gsc" />GSC: {fmtDateRange(window?.start, window?.end)} · 30 dni</span>
+    <span><i class="src ga4" />GA4: {fmtDateRange(ga4LandingWindow?.start, ga4LandingWindow?.end)} · 28 dni</span>
+    <span class="scope-indexing">
+      Indeksacja: pomiar z {fmtDate(indexingLastOk?.date)} · {fmtInt(checked)} z {fmtInt(sitemapUrls)} adresów
+    </span>
   </div>
   <TableCard
     title="Strony"
@@ -582,6 +594,38 @@ const indexingError = (indexing?.error ?? 'źródło chwilowo niedostępne').rep
   .matrix-head-actions {
     justify-content: flex-end;
   }
+  .matrix-scope {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px 16px;
+    margin: 0 0 10px;
+    padding: 10px 14px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: color-mix(in srgb, var(--panel) 82%, transparent);
+    color: var(--ink-muted);
+    font-size: 0.78rem;
+  }
+  .matrix-scope strong {
+    color: var(--ink);
+    font-size: 0.8rem;
+  }
+  .matrix-scope span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+  .matrix-scope .src {
+    width: 7px;
+    height: 7px;
+    border-radius: 2px;
+  }
+  .matrix-scope .scope-indexing {
+    margin-left: auto;
+    color: var(--ink-faint);
+  }
   @media (max-width: 1080px) {
     .stat-grid.matrix-kpis {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -598,6 +642,16 @@ const indexingError = (indexing?.error ?? 'źródło chwilowo niedostępne').rep
     }
     .matrix-head-actions {
       justify-content: flex-start;
+    }
+    .matrix-scope {
+      align-items: flex-start;
+    }
+    .matrix-scope strong,
+    .matrix-scope span,
+    .matrix-scope .scope-indexing {
+      width: 100%;
+      margin-left: 0;
+      white-space: normal;
     }
   }
   @media (max-width: 620px) {
