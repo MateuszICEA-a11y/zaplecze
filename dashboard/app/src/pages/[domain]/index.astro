@@ -13,6 +13,7 @@ import {
   metricSeries,
   metricSeriesFrom,
 } from '../../lib/data';
+import { fmtInt } from '../../lib/format';
 
 export function getStaticPaths() {
   return loadConfig().domains.map((d) => ({ params: { domain: d.id }, props: { name: d.name } }));
@@ -50,10 +51,96 @@ const leadsRecent = leads.filter((l) => new Date(l.ts).getTime() >= weekAgo).len
 const leadsConfigured = latest?.sources.leads != null && latest.sources.leads.status !== 'not_configured';
 const clarityConfigured = latest?.sources.clarity != null && latest.sources.clarity.status !== 'not_configured';
 
+/* '2026-07-22' → '22.07' (pasek zdrowia, pigułki stale). */
+const fmtShort = (date: string | null | undefined): string =>
+  date ? `${date.slice(8, 10)}.${date.slice(5, 7)}` : '–';
+
+/* Ostatni snapshot, w którym źródło miało status ok (data + dane). */
+const lastOk = (source: string): { date: string; data: Record<string, unknown> } | null => {
+  for (let i = snapshots.length - 1; i >= 0; i--) {
+    const src = snapshots[i].sources[source];
+    if (src?.status === 'ok') return { date: snapshots[i].date, data: src.data ?? {} };
+  }
+  return null;
+};
+
+/* Pasek zdrowia źródeł (handoff „Przegląd": hchip z kropką + datą pomiaru). */
+const HEALTH_LABELS: [string, string][] = [
+  ['senuto', 'Senuto'],
+  ['gsc', 'GSC'],
+  ['ga4', 'GA4'],
+  ['bing', 'Bing'],
+  ['ahrefs', 'Ahrefs'],
+  ['backlinks', 'Backlinki'],
+  ['clarity', 'Clarity'],
+  ['cloudflare_ai', 'Boty AI'],
+  ['indexing', 'Indeksacja'],
+];
+const health = HEALTH_LABELS.flatMap(([key, label]) => {
+  const src = latest?.sources[key];
+  if (!src || src.status === 'not_configured') return [];
+  const cls = src.status === 'ok' ? 'ok' : src.status === 'token_expired' ? 'warn' : 'err';
+  const when =
+    src.status === 'ok'
+      ? fmtShort(latest!.date)
+      : src.status === 'token_expired'
+        ? `token wygasł · ost. ${fmtShort(lastOk(key)?.date)}`
+        : `błąd · ost. ${fmtShort(lastOk(key)?.date)}`;
+  return [{ label, cls, when }];
+});
+
+/* Clarity: gdy źródło leży, karta pokazuje ostatni udany pomiar zamiast „–". */
+const clarityDown = clarityConfigured && latest?.sources.clarity?.status !== 'ok';
+const clarityLast = clarityDown ? lastOk('clarity') : null;
+const claritySessions = clarityDown
+  ? typeof clarityLast?.data.sessions === 'number'
+    ? (clarityLast.data.sessions as number)
+    : null
+  : statSessions.value;
+
 // Bannery problemów: token_expired/error z ostatniego snapshotu.
 const problems = Object.entries(latest?.sources ?? {}).filter(([, r]) =>
   ['token_expired', 'error'].includes(r.status),
 );
+
+/* ── „Co wymaga uwagi" – automatyczne sygnały z danych szczegółowych ── */
+const compare = details.sources.gsc?.compare;
+const cmpPeriod = compare?.qoq ?? compare?.yoy ?? null;
+const cmpKind = compare?.qoq ? 'kw/kw' : 'r/r';
+const pageDrops = (cmpPeriod?.pages ?? [])
+  .map((r) => ({ key: r.key, dClicks: r.clicks - r.prev_clicks }))
+  .filter((r) => r.dClicks < 0)
+  .sort((a, b) => a.dClicks - b.dClicks);
+const dropsTotal = pageDrops.reduce((s, r) => s + r.dClicks, 0);
+const topDrop = pageDrops[0] ?? null;
+const asPath = (url: string): string => url.replace(/^https?:\/\/[^/]+/, '') || '/';
+
+/* Polska liczba mnoga: 1 fraza / 2 frazy / 5 fraz (z wyjątkiem nastek). */
+const plural = (n: number, one: string, few: string, many: string): string => {
+  if (n === 1) return one;
+  const d = n % 10;
+  const dd = n % 100;
+  return d >= 2 && d <= 4 && !(dd >= 12 && dd <= 14) ? few : many;
+};
+
+const gscQueries =
+  details.sources.gsc?.windows?.['30d']?.queries ?? details.sources.gsc?.queries ?? [];
+const nearTop = gscQueries.filter(
+  (q) => typeof q.position === 'number' && q.position > 10 && q.position <= 20 && q.impressions > 0,
+);
+
+const idxRows = details.sources.indexing?.rows ?? [];
+const idxDone = idxRows.filter((r) => r.indexed).length;
+const idxPct = idxRows.length > 0 ? Math.round((idxDone / idxRows.length) * 100) : null;
+const notIndexed = idxRows.filter((r) => !r.indexed);
+const segOf = (url: string): string => {
+  const path = url.replace(/^https?:\/\/[^/]+/, '');
+  const seg = path.split('/').filter(Boolean)[0];
+  return seg ? `/${seg}/` : 'strona główna';
+};
+const topMissSeg = [...notIndexed.reduce((m, r) => m.set(segOf(r.url), (m.get(segOf(r.url)) ?? 0) + 1), new Map<string, number>()).entries()].sort((a, b) => b[1] - a[1])[0] ?? null;
+
+const hasAttention = pageDrops.length > 0 || nearTop.length > 0 || idxRows.length > 0;
 ---
 
 <Layout title={`${name} – dashboard`}>
@@ -67,24 +154,46 @@ const problems = Object.entries(latest?.sources ?? {}).filter(([, r]) =>
     ))
   }
 
+  {
+    health.length > 0 && (
+      <div class="health">
+        {health.map((h) => (
+          <span class="hchip">
+            <span class={`d ${h.cls}`} />
+            <b>{h.label}</b>
+            <span class="when">{h.when}</span>
+          </span>
+        ))}
+      </div>
+    )
+  }
+
   <div class="section-head">
     <h2>Najważniejsze wskaźniki</h2>
     <span class="section-meta">porównanie 7-dniowe · pełne listy w zakładkach</span>
   </div>
-  <div class="stat-grid">
-    <StatCard label="Frazy w TOP 10" value={statTop10.value} delta={statTop10.delta} trend={top10.values} href={`/${domain}/senuto/`} />
-    <StatCard label="Kliknięcia / dzień" value={statClicks.value} delta={statClicks.delta} trend={gscClicks.values} href={`/${domain}/gsc/`} />
+  <div class="kwrap">
     <StatCard
-      label="Wyświetlenia / dzień"
+      label="Wyświetlenia / dzień · GSC"
       value={statImpressions.value}
       delta={statImpressions.delta}
       trend={gscImpressions.values}
+      src="gsc"
+      hero
       href={`/${domain}/gsc/`}
     />
-    <StatCard label="Domain Rating" value={statDR.value} delta={statDR.delta} deltaLabel="30 dni" precision={1} href={`/${domain}/ahrefs/`} />
-    <StatCard label="Domeny linkujące" value={statRefDomains.value} delta={statRefDomains.delta} trend={refDomains.values} href={`/${domain}/ahrefs/`} />
+    <StatCard label="Kliknięcia / dzień · GSC" value={statClicks.value} delta={statClicks.delta} src="gsc" href={`/${domain}/gsc/`} />
+    <StatCard label="Frazy w TOP 10 · Senuto" value={statTop10.value} delta={statTop10.delta} src="sen" href={`/${domain}/senuto/`} />
+    <StatCard label="Domain Rating · Ahrefs" value={statDR.value} delta={statDR.delta} deltaLabel="30 dni" precision={1} src="ahrefs" href={`/${domain}/ahrefs/`} />
+    <StatCard label="Domeny linkujące · Ahrefs" value={statRefDomains.value} delta={statRefDomains.delta} src="ahrefs" href={`/${domain}/ahrefs/`} />
     {clarityConfigured && (
-      <StatCard label="Sesje · Clarity (3 dni)" value={statSessions.value} delta={statSessions.delta} href={`/${domain}/clarity/`} />
+      <StatCard
+        label="Sesje · Clarity (3 dni)"
+        value={claritySessions}
+        delta={clarityDown ? null : statSessions.delta}
+        staleDate={clarityDown ? fmtShort(clarityLast?.date) : null}
+        href={`/${domain}/clarity/`}
+      />
     )}
     {leadsConfigured && <StatCard label="Leady · 7 dni" value={leadsRecent} href={`/${domain}/leady/`} />}
   </div>
@@ -120,4 +229,77 @@ const problems = Object.entries(latest?.sources ?? {}).filter(([, r]) =>
       ]}
     />
   </div>
+
+  {
+    hasAttention && (
+      <>
+        <div class="section-head">
+          <h2>Co wymaga uwagi</h2>
+          <span class="section-meta">automatyczne sygnały z ostatniego okna</span>
+        </div>
+        <div class="attn">
+          {pageDrops.length > 0 && (
+            <div class="acard err">
+              <div class="top">
+                <span class="ic">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" />
+                  </svg>
+                </span>
+                <span class="t">Spadki ruchu</span>
+              </div>
+              <div class="big">{fmtInt(pageDrops.length)} {plural(pageDrops.length, 'strona', 'strony', 'stron')}</div>
+              <p>
+                Straciły łącznie <b>{fmtInt(dropsTotal)} kliknięć</b> {cmpKind}.
+                {topDrop && (
+                  <>
+                    {' '}Najwięcej: <b>{asPath(topDrop.key)}</b> ({fmtInt(topDrop.dClicks)}).
+                  </>
+                )}
+              </p>
+              <a href={`/${domain}/matrix/`}>Otwórz dekodowanie spadków →</a>
+            </div>
+          )}
+          {nearTop.length > 0 && (
+            <div class="acard warn">
+              <div class="top">
+                <span class="ic">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="7" />
+                    <path d="M21 21l-4-4" stroke-linecap="round" />
+                  </svg>
+                </span>
+                <span class="t">Blisko TOP</span>
+              </div>
+              <div class="big">{fmtInt(nearTop.length)} {plural(nearTop.length, 'fraza', 'frazy', 'fraz')}</div>
+              <p>Na pozycjach 11–20 z realnym popytem – najbliżej awansu do TOP 10. Priorytet contentowy.</p>
+              <a href={`/${domain}/gsc/`}>Zobacz frazy z potencjałem →</a>
+            </div>
+          )}
+          {idxRows.length > 0 && idxPct !== null && (
+            <div class={`acard ${idxPct >= 90 ? 'ok' : 'warn'}`}>
+              <div class="top">
+                <span class="ic">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+                <span class="t">Indeksacja</span>
+              </div>
+              <div class="big">{idxPct}%</div>
+              <p>
+                {fmtInt(idxDone)} z {fmtInt(idxRows.length)} adresów w indeksie Google.
+                {notIndexed.length > 0 && topMissSeg && (
+                  <>
+                    {' '}{fmtInt(notIndexed.length)} poza – głównie <b>{topMissSeg[0]}</b>.
+                  </>
+                )}
+              </p>
+              <a href={`/${domain}/matrix/`}>Otwórz Matrix →</a>
+            </div>
+          )}
+        </div>
+      </>
+    )
+  }
 </Layout>
