@@ -28,30 +28,86 @@ const clarity = latest?.sources.clarity;
 const clarityDetails = details.sources.clarity;
 const configured = clarity != null && clarity.status !== 'not_configured';
 
+/* Clarity leży (np. HTTP 429)? Pokazujemy ostatni udany pomiar zamiast zwijać
+   sekcję (handoff „Clarity – układ"): baner + przygaszone karty z datą danych. */
+const lastOk = [...snapshots].reverse().find((s) => s.sources.clarity?.status === 'ok');
+const isDown = configured && clarity?.status !== 'ok';
+const staleDate = isDown && lastOk ? lastOk.date.slice(5).split('-').reverse().join('.') : null;
+const okData = (lastOk?.sources.clarity?.data ?? {}) as Record<string, number>;
+
 const sessions = metricSeries(snapshots, 'clarity', 'sessions');
 const users = metricSeries(snapshots, 'clarity', 'users');
 const statSessions = latestWithDelta(snapshots, 'clarity', 'sessions');
 const statUsers = latestWithDelta(snapshots, 'clarity', 'users');
-const statBots = latestWithDelta(snapshots, 'clarity', 'bot_sessions');
 const statScroll = latestWithDelta(snapshots, 'clarity', 'scroll_depth_avg');
-const engagementActive = latest?.sources.clarity?.data?.engagement_active_s;
-const pagesPerSession = latest?.sources.clarity?.data?.pages_per_session;
 
-/* severity: warn = tarcie, bad = realny problem; 0 = good (zielony). */
-const frictionChips = [
-  { label: 'Dead clicks', value: clarityDetails?.dead_clicks, severity: 'warn' },
-  { label: 'Rage clicks', value: clarityDetails?.rage_clicks, severity: 'bad' },
-  { label: 'Quickback', value: clarityDetails?.quickback_clicks, severity: 'warn' },
-  { label: 'Błędy JS', value: clarityDetails?.script_errors, severity: 'bad' },
-]
-  .filter((c) => c.value != null)
-  .map((c) => ({ ...c, cls: (c.value as number) > 0 ? c.severity : 'good' }));
+/* EngagementTime z Data Export API to już średnie NA SESJĘ (sekundy). */
+const engagementActive = okData.engagement_active_s ?? null;
+const engagementTotal = okData.engagement_total_s ?? null;
+const pagesPerSession = okData.pages_per_session ?? null;
+const scrollAvg = typeof statScroll.value === 'number' ? statScroll.value : null;
+const activeShare =
+  typeof engagementActive === 'number' && typeof engagementTotal === 'number' && engagementTotal > 0
+    ? Math.round((engagementActive / engagementTotal) * 100)
+    : null;
 
-const dimTables = [
-  { key: 'url', title: 'Najczęściej oglądane strony', rows: clarityDetails?.url ?? [] },
-  { key: 'referrer', title: 'Źródła ruchu (referrer)', rows: clarityDetails?.referrer ?? [] },
-  { key: 'device', title: 'Urządzenia', rows: clarityDetails?.device ?? [] },
-];
+/* Sygnały frustracji: liczby + udział w sesjach ostatniego udanego pomiaru.
+   Data Export API zwraca subTotal jako string – koercja przed formatowaniem. */
+const num = (v: unknown): number | null => (v == null || v === '' || isNaN(Number(v)) ? null : Number(v));
+const sessionCount = typeof statSessions.value === 'number' ? statSessions.value : null;
+const rateOf = (v: number | null | undefined) =>
+  typeof v === 'number' && sessionCount ? fmtNum((v / sessionCount) * 100, 1) + '%' : null;
+const frustration = [
+  {
+    key: 'rage',
+    label: 'Rage clicks',
+    value: num(clarityDetails?.rage_clicks),
+    desc: 'wielokrotne kliknięcia w to samo miejsce',
+    icon: 'M13 2L3 14h7l-1 8 10-12h-7l1-8z',
+  },
+  {
+    key: 'dead',
+    label: 'Dead clicks',
+    value: num(clarityDetails?.dead_clicks),
+    desc: 'kliknięcia w element bez reakcji',
+    icon: null,
+  },
+  {
+    key: 'quick',
+    label: 'Quick backs',
+    value: num(clarityDetails?.quickback_clicks),
+    desc: 'szybki powrót po wejściu na stronę',
+    icon: 'M11 17l-5-5 5-5M18 17l-5-5 5-5',
+  },
+].filter((f) => f.value != null);
+const scriptErrors = num(clarityDetails?.script_errors);
+
+const urlRows = clarityDetails?.url ?? [];
+const refRows = clarityDetails?.referrer ?? [];
+const maxUrl = Math.max(...urlRows.map((r) => r.sessions ?? 0), 0);
+const maxRef = Math.max(...refRows.map((r) => r.sessions ?? 0), 0);
+
+/* Urządzenia: donut conic-gradient liczony w build time z udziałów sesji. */
+const deviceRows = clarityDetails?.device ?? [];
+const devTotal = deviceRows.reduce((sum, r) => sum + (r.sessions ?? 0), 0);
+const devColors = ['var(--accent-blue)', 'var(--series-3)', 'var(--series-2)', 'var(--ink-faint)'];
+const devices = deviceRows.slice(0, 4).map((r, i) => ({
+  name: r.name,
+  pct: devTotal ? Math.round(((r.sessions ?? 0) / devTotal) * 100) : 0,
+  color: devColors[i],
+}));
+let acc = 0;
+const donutStops = devices
+  .map((d) => {
+    const from = acc;
+    acc += d.pct;
+    return `${d.color} ${from}% ${acc}%`;
+  })
+  .concat(acc < 100 ? [`var(--bg-surface-3) ${acc}% 100%`] : [])
+  .join(', ');
+
+const ghost = isDown ? 'stale-ghost' : '';
+const metaSuffix = staleDate ? ` · dane z ${staleDate}` : '';
 ---
 
 <Layout title={`${name} – Microsoft Clarity`}>
@@ -66,45 +122,109 @@ const dimTables = [
         „Generate new API token") i dodaj go w GitHub → Settings → Secrets → Actions pod nazwą
         z <code>token_env</code> w domains.yaml (domyślnie <code>CLARITY_API_TOKEN</code>).
         Sekcja zapełni się po najbliższym przebiegu collectora –
-        sesje, użytkownicy, boty, scroll depth, frustracje (rage/dead clicks) i top strony z
+        sesje, użytkownicy, scroll depth, frustracje (rage/dead clicks) i top strony z
         ostatnich 3 dni.
       </div>
     ) : (
       <>
-        {clarity && clarity.status !== 'ok' && (
-          <div class={`banner ${clarity.status === 'token_expired' ? 'warn' : 'err'}`}>
-            <strong>Clarity</strong>: {clarity.error ?? 'błąd źródła'}
+        {isDown && (
+          <div class="down-bar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" />
+            </svg>
+            <span>
+              Clarity: {clarity?.error ?? 'błąd źródła'} — pokazujemy ostatni udany pomiar.
+              Odświeżymy automatycznie po zwolnieniu limitu.
+            </span>
+            {lastOk && <span class="when">ostatni pomiar: {lastOk.date}</span>}
           </div>
         )}
 
         <div class="section-head">
           <h2>Zachowania użytkowników</h2>
-          <span class="section-meta">okno: ostatnie 3 dni (limit Data Export API)</span>
+          <span class="section-meta">okno: ostatnie 3 dni{metaSuffix}</span>
         </div>
-        <div class="stat-grid">
-          <StatCard label="Sesje (3 dni)" value={statSessions.value} delta={statSessions.delta} trend={sessions.values} hero />
-          <StatCard label="Użytkownicy" value={statUsers.value} delta={statUsers.delta} trend={users.values} />
-          <StatCard label="Sesje botów" value={statBots.value} delta={statBots.delta} goodWhen="down" />
-          <StatCard label="Śr. scroll depth" value={statScroll.value} delta={statScroll.delta} unit="%" precision={1} />
+        <div class:list={['stat-grid', ghost]}>
+          <StatCard label="Sesje" value={statSessions.value} delta={isDown ? null : statSessions.delta} trend={sessions.values} staleDate={staleDate} hero />
+          <StatCard label="Użytkownicy" value={statUsers.value} delta={isDown ? null : statUsers.delta} trend={users.values} staleDate={staleDate} />
+          <StatCard label="Śr. scroll depth" value={statScroll.value} delta={isDown ? null : statScroll.delta} unit="%" precision={1} staleDate={staleDate} />
           <StatCard
             label="Aktywny czas / sesja"
-            value={typeof engagementActive === 'number' && statSessions.value ? fmtDuration(engagementActive / statSessions.value) : null}
+            value={typeof engagementActive === 'number' ? fmtDuration(engagementActive) : null}
+            staleDate={staleDate}
           />
           <StatCard
             label="Strony / sesja"
             value={typeof pagesPerSession === 'number' ? fmtNum(pagesPerSession, 1) : null}
+            staleDate={staleDate}
           />
         </div>
 
-        {frictionChips.length > 0 && (
-          <div class="friction-row">
-            <span class="friction-label">Sygnały frustracji:</span>
-            {frictionChips.map((c) => (
-              <span class={`chip ${c.cls}`}>
-                {c.label} <strong>{fmtInt(c.value as number)}</strong>
-              </span>
-            ))}
+        <div class="section-head"><h2>Uwaga i zaangażowanie</h2></div>
+        <div class:list={['beh-grid', ghost]}>
+          <div class="beh-card">
+            <h4>Głębokość scrolla</h4>
+            <div class="sub">jaki % strony realnie widzą użytkownicy</div>
+            <div class="scroll-meter">
+              <span class="big">{scrollAvg !== null ? fmtNum(scrollAvg, 0) + '%' : '–'}</span>
+              <span class="t"><i style={`width:${Math.min(100, Math.max(0, scrollAvg ?? 0))}%`} /></span>
+            </div>
           </div>
+          <div class="beh-card">
+            <h4>Zaangażowanie</h4>
+            <div class="sub">czas i aktywność w sesji</div>
+            <div class="eng-stats">
+              <div class="s"><div class="l">Aktywny czas / sesja</div><div class="v">{fmtDuration(engagementActive)}</div></div>
+              <div class="s"><div class="l">Całkowity czas / sesja</div><div class="v">{fmtDuration(engagementTotal)}</div></div>
+              <div class="s"><div class="l">Strony / sesja</div><div class="v">{typeof pagesPerSession === 'number' ? fmtNum(pagesPerSession, 1) : '–'}</div></div>
+              <div class="s"><div class="l">Czas aktywny</div><div class="v">{activeShare !== null ? activeShare : '–'}<small>%</small></div></div>
+            </div>
+          </div>
+        </div>
+
+        {frustration.length > 0 && (
+          <>
+            <div class="section-head">
+              <h2>Sygnały frustracji</h2>
+              {typeof scriptErrors === 'number' && (
+                <span class={`chip ${scriptErrors > 0 ? 'bad' : 'good'}`}>
+                  Błędy JS <strong>{fmtInt(scriptErrors)}</strong>
+                </span>
+              )}
+              <span class="section-meta">gdzie użytkownicy się gubią</span>
+            </div>
+            <div class:list={['frust-grid', ghost]}>
+              {frustration.map((f) => (
+                <div class={`fcard ${f.key}`}>
+                  <div class="h">
+                    <span class="ic">
+                      {f.icon ? (
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                          <path d={f.icon} stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      ) : (
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                          <circle cx="12" cy="12" r="9" />
+                          <path d="M8 12h8" stroke-linecap="round" />
+                        </svg>
+                      )}
+                    </span>
+                    <span class="t">{f.label}</span>
+                  </div>
+                  <div class="big">{fmtInt(f.value as number)}</div>
+                  <div class="rate">
+                    {rateOf(f.value as number) ? (
+                      <>
+                        <b>{rateOf(f.value as number)}</b> sesji · {f.desc}
+                      </>
+                    ) : (
+                      f.desc
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
         )}
 
         <div class="chart-grid">
@@ -119,55 +239,90 @@ const dimTables = [
           />
         </div>
 
-        {dimTables.map((t) => {
-          const maxSessions = Math.max(...t.rows.map((r) => r.sessions ?? 0), 0);
-          return (
-            <TableCard title={t.title} count={t.rows.length} filter={t.rows.length > 10} empty="Brak danych w tym oknie.">
-              <table class="data-table">
-                <thead>
+        <div class:list={['two-col', ghost]}>
+          <TableCard title="Najczęściej oglądane strony" meta={staleDate ? `dane z ${staleDate}` : undefined} count={urlRows.length} filter={urlRows.length > 10} empty="Brak danych w tym oknie.">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Strona</th>
+                  <th class="num">Sesje</th>
+                  <th class="num">Użytkownicy</th>
+                </tr>
+              </thead>
+              <tbody>
+                {urlRows.map((row) => (
                   <tr>
-                    <th>Nazwa</th>
-                    <th class="num">Sesje</th>
-                    <th class="num">Użytkownicy</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {t.rows.map((row) => (
-                    <tr>
-                      <td class="grow">
-                        <span class="cell-url">{row.name}</span>
-                      </td>
-                      <td class="num">
-                        <span class="cell-bar">
-                          {fmtInt(row.sessions)}
-                          <span class="bar">
-                            <i style={`width:${barWidth(row.sessions, maxSessions)}%`} />
-                          </span>
+                    <td class="grow">
+                      <span class="cell-url" title={row.name}>{row.name}</span>
+                    </td>
+                    <td class="num">
+                      <span class="cell-bar">
+                        {fmtInt(row.sessions)}
+                        <span class="bar">
+                          <i style={`width:${barWidth(row.sessions, maxUrl)}%`} />
                         </span>
-                      </td>
-                      <td class="num">{fmtInt(row.users)}</td>
-                    </tr>
+                      </span>
+                    </td>
+                    <td class="num">{fmtInt(row.users)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </TableCard>
+          <TableCard title="Źródła ruchu" meta="referrer" count={refRows.length} filter={refRows.length > 10} empty="Brak danych w tym oknie.">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Referrer</th>
+                  <th class="num">Sesje</th>
+                </tr>
+              </thead>
+              <tbody>
+                {refRows.map((row) => (
+                  <tr>
+                    <td class="grow">
+                      <span class="cell-url" title={row.name}>{row.name}</span>
+                    </td>
+                    <td class="num">
+                      <span class="cell-bar">
+                        {fmtInt(row.sessions)}
+                        <span class="bar">
+                          <i style={`width:${barWidth(row.sessions, maxRef)}%`} />
+                        </span>
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </TableCard>
+        </div>
+
+        {devices.length > 0 && (
+          <>
+            <div class="section-head">
+              <h2>Urządzenia</h2>
+              {staleDate && <span class="section-meta">dane z {staleDate}</span>}
+            </div>
+            <div class:list={['beh-card', ghost]} style="margin-bottom:18px">
+              <div class="devgrid">
+                <div class="donut" style={`background: conic-gradient(${donutStops});`}>
+                  <div class="c"><b>{devices[0].pct}%</b><span>{devices[0].name}</span></div>
+                </div>
+                <div class="devleg">
+                  {devices.map((d) => (
+                    <div class="r">
+                      <span class="dot" style={`background:${d.color}`} />
+                      <span class="n">{d.name}</span>
+                      <span class="v">{d.pct}%</span>
+                    </div>
                   ))}
-                </tbody>
-              </table>
-            </TableCard>
-          );
-        })}
+                </div>
+              </div>
+            </div>
+          </>
+        )}
       </>
     )
   }
 </Layout>
-
-<style>
-  .friction-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-bottom: 18px;
-  }
-  .friction-label {
-    color: var(--ink-faint);
-    font-size: 0.8rem;
-  }
-</style>
