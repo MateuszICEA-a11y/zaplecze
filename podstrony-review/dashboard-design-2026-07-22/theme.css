@@ -1,0 +1,566 @@
+/* ============================================================
+   Dashboard zaplecza – tokeny skopiowane z
+   portals/widocznosc.ai/src/styles/Theme.css (surface ladder,
+   ink, accent). Kopia zamiast importu cross-package: osobny
+   deploy CF Pages. Dark = default, light przez [data-theme].
+   ============================================================ */
+
+:root {
+  /* Typografia: Inter (tekst) + Space Grotesk (display/liczby) – self-hosted fontsource */
+  --font-body: 'Inter Variable', system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk Variable', 'Inter Variable', system-ui, sans-serif;
+
+  /* Surface ladder */
+  --bg-canvas: #08090c;
+  --bg-rail: #0b0d12;
+  --bg-surface-1: #11141a;
+  --bg-surface-2: #1a2029;
+  --bg-surface-3: #242b36;
+
+  /* Hairlines */
+  --hairline: rgba(255, 255, 255, 0.08);
+  --hairline-soft: rgba(255, 255, 255, 0.04);
+
+  /* Ink */
+  --ink: #ffffff;
+  --ink-muted: #a6abb5;
+  --ink-faint: #788294;
+
+  /* Accent */
+  --accent-blue: #0a9cff;
+  --accent-blue-soft: rgba(10, 156, 255, 0.16);
+
+  /* Statusy źródeł */
+  --status-ok: #1aaa55;
+  --status-warn-fg: #fbbf24;
+  --status-warn-bg: rgba(251, 191, 36, 0.12);
+  --status-err-fg: #fca5a5;
+  --status-err-bg: rgba(239, 68, 68, 0.14);
+
+  /* Paleta serii wykresów – wersja z mockupu designu (2026-07-21); wtórne
+     kodowanie przez dash pattern serii + stałą legendę zostaje. */
+  --series-1: #0a9cff;
+  --series-2: #f0883e;
+  --series-3: #23c483;
+
+  --shadow-card: 0 30px 60px -25px rgba(0, 0, 0, 0.55);
+  --container: 1280px;
+  --gutter: 24px;
+}
+
+:root[data-theme='light'] {
+  --bg-canvas: #f2f5f9;
+  --bg-rail: #eaeff6;
+  --bg-surface-1: #ffffff;
+  --bg-surface-2: #edf2f8;
+  --bg-surface-3: #dde6f0;
+
+  --hairline: rgba(15, 23, 42, 0.15);
+  --hairline-soft: rgba(15, 23, 42, 0.09);
+
+  --ink: #111827;
+  --ink-muted: #526176;
+  --ink-faint: #758195;
+
+  --accent-blue: #0068cc;
+  --accent-blue-soft: rgba(0, 104, 204, 0.14);
+
+  --status-ok: #15803d;
+  --status-warn-fg: #b45309;
+  --status-warn-bg: rgba(180, 83, 9, 0.1);
+  --status-err-fg: #b91c1c;
+  --status-err-bg: rgba(185, 28, 28, 0.1);
+
+  --series-1: #0068cc;
+  --series-2: #c2620e;
+  --series-3: #0f9d58;
+
+  --shadow-card: 0 20px 40px -20px rgba(15, 23, 42, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg-canvas);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  /* Sygnatura: cicha poświata akcentu u góry – konsola, nie strona-wizytówka. */
+  background:
+    radial-gradient(900px 420px at 68% -140px, var(--accent-blue-soft), transparent 70%),
+    var(--bg-canvas);
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+}
+
+a {
+  color: var(--accent-blue);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* ---------- wspólne siatki sekcji ---------- */
+.stat-grid {
+  display: grid;
+  /* auto-fill (nie auto-fit): przy kilku kartach na szerokim ekranie puste
+     tory zostają i karty nie rozciągają się na pół monitora. */
+  grid-template-columns: repeat(auto-fill, minmax(min(230px, 100%), 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(360px, 100%), 1fr));
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.chart-grid.wide {
+  grid-template-columns: 1fr;
+}
+@media (max-width: 480px) {
+  .chart-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- tabele danych ---------- */
+.table-card {
+  background: var(--bg-surface-1);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+.table-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 14px 18px 10px;
+}
+.table-head h3 {
+  margin: 0;
+  font-size: 0.98rem;
+  letter-spacing: -0.01em;
+}
+.table-head .table-meta {
+  color: var(--ink-faint);
+  font-size: 0.78rem;
+}
+.table-filter {
+  background: var(--bg-surface-2);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  min-width: 200px;
+}
+.table-filter::placeholder {
+  color: var(--ink-faint);
+}
+.table-scroll {
+  overflow-x: auto;
+  max-height: 640px;
+  overflow-y: auto;
+}
+table.data-table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--bg-surface-1);
+  z-index: 1;
+}
+table.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+.data-table th {
+  text-align: left;
+  color: var(--ink-faint);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--hairline);
+  white-space: nowrap;
+}
+.data-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.12s ease;
+}
+.data-table th.sortable:hover {
+  color: var(--ink);
+}
+.data-table th.active {
+  color: var(--accent-blue);
+}
+.sort-caret {
+  display: inline-block;
+  width: 10px;
+  margin-left: 4px;
+  font-size: 0.85em;
+}
+.data-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--hairline-soft);
+  vertical-align: middle;
+}
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.data-table tbody tr:hover {
+  background: var(--bg-surface-2);
+}
+.data-table th.num,
+.data-table td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.data-table td.grow {
+  width: 99%;
+}
+.data-table .cell-url {
+  color: var(--ink-faint);
+  font-size: 0.78rem;
+  max-width: 340px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+.table-empty {
+  color: var(--ink-faint);
+  font-size: 0.88rem;
+  padding: 28px 18px 34px;
+  text-align: center;
+}
+/* paginacja karty tabeli (1:1 z mockupu) */
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 11px 16px;
+  border-top: 1px solid var(--hairline);
+  flex-wrap: wrap;
+}
+.pager .pinfo {
+  color: var(--ink-faint);
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+.pager .pnav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.pager button {
+  appearance: none;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  color: var(--ink-muted);
+  font: inherit;
+  font-size: 0.82rem;
+  padding: 6px 11px;
+  cursor: pointer;
+}
+.pager button:hover:not(:disabled) {
+  color: var(--ink);
+  border-color: var(--ink-faint);
+}
+.pager button:disabled {
+  opacity: 0.38;
+  cursor: default;
+}
+.pager .pages {
+  display: flex;
+  gap: 4px;
+}
+.pager .pages button {
+  min-width: 34px;
+  text-align: center;
+}
+.pager .pages button.active {
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+  color: #05121f;
+  font-weight: 700;
+}
+/* pasek wielkości w komórce (magnituda vs max kolumny) */
+.cell-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.cell-bar .bar {
+  width: 72px;
+  height: 6px;
+  border-radius: 4px;
+  background: var(--bg-surface-3);
+  overflow: hidden;
+  flex: none;
+}
+.cell-bar .bar > i {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--accent-blue) 55%, var(--series-3)), var(--accent-blue));
+}
+
+/* ---------- badge pozycji / delty ---------- */
+.pos-badge {
+  display: inline-block;
+  min-width: 34px;
+  text-align: center;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.82rem;
+  padding: 2px 8px;
+  border-radius: 7px;
+  background: var(--bg-surface-3);
+  color: var(--ink-muted);
+}
+.pos-badge.top3 {
+  background: color-mix(in srgb, var(--status-ok) 18%, transparent);
+  color: var(--status-ok);
+}
+.pos-badge.top10 {
+  background: var(--accent-blue-soft);
+  color: var(--accent-blue);
+}
+.pos-badge.mid {
+  background: var(--status-warn-bg);
+  color: var(--status-warn-fg);
+}
+.pos-badge.low {
+  background: var(--status-err-bg);
+  color: var(--status-err-fg);
+}
+.ctr-pos {
+  color: var(--status-ok);
+  font-weight: 600;
+}
+.delta {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.8rem;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+.delta.up {
+  color: var(--status-ok);
+}
+.delta.down {
+  color: var(--status-err-fg);
+}
+
+/* ---------- chips / etykiety ---------- */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.74rem;
+  padding: 4px 11px;
+  border-radius: 999px;
+  background: var(--bg-surface-3);
+  color: var(--ink-muted);
+  white-space: nowrap;
+}
+.chip b,
+.chip strong {
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.chip.warn {
+  background: var(--status-warn-bg);
+}
+.chip.warn b,
+.chip.warn strong {
+  color: var(--status-warn-fg);
+}
+.chip.bad {
+  background: var(--status-err-bg);
+}
+.chip.bad b,
+.chip.bad strong {
+  color: var(--status-err-fg);
+}
+.chip.good {
+  background: color-mix(in srgb, var(--status-ok) 14%, transparent);
+}
+.chip.good b,
+.chip.good strong {
+  color: var(--status-ok);
+}
+.chip.lead {
+  background: color-mix(in srgb, var(--status-ok) 16%, transparent);
+  color: var(--status-ok);
+}
+.chip.accent {
+  background: var(--accent-blue-soft);
+  color: var(--accent-blue);
+}
+
+/* ---------- sekcje / nagłówki ---------- */
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 30px 0 14px;
+}
+.section-head h2 {
+  font-size: 1.12rem;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.section-head .section-meta {
+  color: var(--ink-faint);
+  font-size: 0.78rem;
+}
+.placeholder-card {
+  background: var(--bg-surface-1);
+  border: 1px dashed var(--hairline);
+  border-radius: 14px;
+  color: var(--ink-muted);
+  padding: 26px 24px;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+.placeholder-card code {
+  background: var(--bg-surface-3);
+  border-radius: 5px;
+  padding: 1px 6px;
+  font-size: 0.85em;
+}
+.banner {
+  margin: 14px 0 0;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+}
+.banner.warn {
+  background: var(--status-warn-bg);
+  color: var(--status-warn-fg);
+}
+.banner.err {
+  background: var(--status-err-bg);
+  color: var(--status-err-fg);
+}
+
+/* Plansza „Co spadło" (GSC, porównania okres-do-okresu) */
+.seg { display: inline-flex; background: var(--bg-surface-2); border: 1px solid var(--hairline); border-radius: 10px; padding: 3px; gap: 2px; }
+.seg button { appearance: none; border: none; background: none; color: var(--ink-muted); font: inherit; font-size: 0.82rem; font-weight: 600; padding: 6px 14px; border-radius: 7px; cursor: pointer; white-space: nowrap; }
+.seg button:hover { color: var(--ink); }
+.seg button.active { background: var(--bg-surface-1); color: var(--ink); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.28); }
+.drops-board { margin-bottom: 22px; }
+.drops-meta { color: var(--ink-faint); font-size: 0.78rem; margin: 4px 0 12px; }
+.drops-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 6px; }
+.drop-panel { background: var(--bg-surface-1); border: 1px solid var(--hairline); border-radius: 14px; overflow: hidden; }
+.drop-panel > header { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 13px 16px 11px; border-bottom: 1px solid var(--hairline-soft); }
+.drop-panel > header h4 { margin: 0; font-family: var(--font-display); font-size: 0.92rem; }
+.drop-summary { display: flex; gap: 8px; }
+.drop-row { display: flex; align-items: center; gap: 12px; padding: 9px 16px; border-bottom: 1px solid var(--hairline-soft); }
+.drop-row:last-child { border-bottom: none; }
+.drop-rank { width: 18px; flex: none; color: var(--ink-faint); font-size: 0.78rem; font-variant-numeric: tabular-nums; }
+.drop-name { flex: 1; min-width: 0; font-size: 0.85rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.drop-metric { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; flex: none; }
+.drop-flow { font-variant-numeric: tabular-nums; font-size: 0.76rem; color: var(--ink-faint); white-space: nowrap; }
+.drop-delta { font-variant-numeric: tabular-nums; font-size: 0.84rem; font-weight: 700; white-space: nowrap; }
+.drop-delta.down { color: var(--status-err-fg); }
+.drop-delta.up { color: var(--status-ok); }
+.drop-empty { padding: 26px 16px; color: var(--ink-faint); font-size: 0.85rem; text-align: center; }
+@media (max-width: 860px) {
+  .drops-grid { grid-template-columns: 1fr; }
+}
+
+/* Chip aktywnego filtra pozycji (karty TOP 3/10/50 na stronie Senuto) */
+.pos-filter-chip {
+  appearance: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.76rem;
+  margin-left: 10px;
+}
+
+/* Przycisk eksportu CSV w nagłówku karty tabeli */
+.table-export {
+  appearance: none;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  color: var(--ink-muted);
+  font: inherit;
+  font-size: 0.78rem;
+  padding: 6px 10px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.table-export:hover {
+  color: var(--ink);
+  border-color: var(--ink-faint);
+}
+
+/* Notka zamiast pustych wykresów (Ahrefs: brak historii w API) */
+.charts-pending {
+  color: var(--ink-faint);
+  font-size: 0.85rem;
+  margin: 0 0 18px;
+}
+
+/* ── Tabela fraz GSC – układ „Potencjał" (q-table) ───────────────────── */
+.q-table { table-layout: fixed; }
+.q-table .qc-clk { width: 108px; }
+.q-table .qc-pos { width: 104px; }
+.q-table .qc-imp { width: 172px; }
+.q-table .qc-opp { width: 128px; }
+.q-row { cursor: pointer; }
+.q-kw { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.q-kw .txt { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chev { color: var(--ink-faint); font-size: 0.68rem; flex: none; transition: transform 0.15s ease; }
+.q-row.open .chev { transform: rotate(90deg); }
+.clicks-val.zero { color: var(--ink-faint); }
+.opp-dots { display: inline-flex; gap: 3px; }
+.opp-dots i { width: 7px; height: 7px; border-radius: 50%; background: var(--hairline); display: block; }
+.opp-dots i.on { background: var(--accent-blue); }
+.q-table th .info { cursor: help; color: var(--ink-faint); font-size: 0.8rem; margin-left: 4px; }
+.q-drawer > td { background: var(--bg-surface-2); padding: 14px 18px; }
+.q-drawer .drawer-grid { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
+.q-drawer .spark { flex: 1 1 260px; max-width: 420px; }
+.q-drawer .spark h4 { margin: 0 0 8px; font-size: 0.78rem; font-weight: 600; color: var(--ink-muted); }
+.spark-svg { width: 100%; height: 44px; display: block; }
+.spark-empty { color: var(--ink-faint); font-size: 0.82rem; padding: 10px 0; }
+.q-drawer .facts { display: flex; gap: 6px 26px; flex-wrap: wrap; margin: 0; }
+.q-drawer .facts div { display: flex; flex-direction: column; gap: 2px; }
+.q-drawer .facts dt { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink-faint); }
+.q-drawer .facts dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--ink); }
