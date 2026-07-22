@@ -43,6 +43,27 @@ def _to_int(value) -> int | None:
         return None
 
 
+# Klucze metryk w wierszach details – wszystko poza nimi to wartość wymiaru.
+_METRIC_KEYS = {
+    "totalsessioncount", "totalbotsessioncount", "distinctusercount",
+    "pagespersessionpercentage", "subtotal", "sessionswithmetricpercentage",
+    "sessionscount", "totaltime", "activetime",
+}
+
+
+def _dim_value(row: dict, dimension: str):
+    """Wartość wymiaru z wiersza details – API nie trzyma się wielkości liter
+    nazwy wymiaru (np. `URL` w zapytaniu, `Url` w odpowiedzi), więc dopasowanie
+    jest case-insensitive z fallbackiem na pierwszy tekstowy klucz spoza metryk."""
+    for key, value in row.items():
+        if key.lower() == dimension.lower():
+            return value
+    for key, value in row.items():
+        if key.lower() not in _METRIC_KEYS and isinstance(value, str) and value:
+            return value
+    return None
+
+
 def fetch(cfg: dict, env: dict) -> dict:
     # Token Clarity jest per projekt (= per domena); domena może wskazać własny
     # sekret przez `token_env` w domains.yaml.
@@ -79,7 +100,7 @@ def fetch(cfg: dict, env: dict) -> dict:
             rows = _metric(payload, "Traffic")
             rows.sort(key=lambda r: -(_to_int(r.get("totalSessionCount")) or 0))
             details[dimension.lower()] = [{
-                "name": row.get(dimension) or row.get(dimension.lower()) or "?",
+                "name": _dim_value(row, dimension) or "?",
                 "sessions": _to_int(row.get("totalSessionCount")),
                 "users": _to_int(row.get("distinctUserCount")),
             } for row in rows[:TOP_ROWS]]
