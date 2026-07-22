@@ -93,7 +93,9 @@ const hasName = (row: { name: string }) => Boolean(row.name && row.name.trim() !
    Referrer, a etykiety URL pochodziły ze starszego parsera. Nie pokazujemy
    kilkudziesięciu identycznych, nieweryfikowalnych wierszy. */
 const urlRows = (clarityDetails?.url ?? []).filter(hasName);
-const refRows = (clarityDetails?.referrer ?? []).filter(hasName);
+const refRows = (clarityDetails?.referrer ?? [])
+  .filter(hasName)
+  .map((row) => ({ ...row, name: row.name.trim() || 'Wejście bezpośrednie' }));
 const urlLabelsMissing = (clarityDetails?.url?.length ?? 0) > 0 && urlRows.length === 0;
 const refLabelsMissing = (clarityDetails?.referrer?.length ?? 0) > 0 && refRows.length === 0;
 const maxUrl = Math.max(...urlRows.map((r) => r.sessions ?? 0), 0);
