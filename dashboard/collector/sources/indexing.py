@@ -13,6 +13,7 @@ CTR/pozycja z GSC (okno 30 dni).
 import json
 import re
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import datetime, timedelta, timezone
@@ -64,8 +65,16 @@ def _sitemap_urls(sitemap_url: str) -> list[str]:
     """Wszystkie adresy stron z sitemapy (rekurencyjnie przez podmapy)."""
     def fetch(url: str) -> list[str]:
         req = urllib.request.Request(url, headers={"User-Agent": "zaplecze-dashboard/1.0"})
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            return re.findall(r"<loc>\s*([^<\s]+)", resp.read().decode("utf-8", "replace"))
+        # Retry: pojedynczy timeout z runnera CI ubijał cały przejazd (2026-07-22).
+        for attempt in range(3):
+            try:
+                with urllib.request.urlopen(req, timeout=60) as resp:
+                    return re.findall(r"<loc>\s*([^<\s]+)", resp.read().decode("utf-8", "replace"))
+            except (TimeoutError, urllib.error.URLError):
+                if attempt == 2:
+                    raise
+                time.sleep(5 * (attempt + 1))
+        return []
 
     urls: list[str] = []
     seen: set[str] = set()
