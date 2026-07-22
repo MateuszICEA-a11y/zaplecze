@@ -159,6 +159,31 @@ def indexing_skip_entry(domain_cfg: dict, domain_dir: Path, now: datetime) -> di
     return {**entry, "data": {**data, "as_of": entry_date}}
 
 
+def source_ok_today(domain_dir: Path, source: str, today: str) -> bool:
+    """Czy źródło ma już dziś udany odczyt (ostatnia linia snapshots.jsonl).
+
+    Clarity ma limit 10 wywołań/dzień/projekt, a jeden przebieg zużywa 4 –
+    trzeci run tego samego dnia (push-triggery) pali limit do zera. Udany
+    dzisiejszy odczyt = kolejne przebiegi nie odpytują ponownie (write_snapshot
+    i tak zachowuje wcześniejszy ok, a details merge trzyma listy).
+    """
+    path = domain_dir / "snapshots.jsonl"
+    if not path.is_file():
+        return False
+    lines = path.read_text().splitlines()
+    if not lines:
+        return False
+    try:
+        last = json.loads(lines[-1])
+    except json.JSONDecodeError:
+        return False
+    entry = (last.get("sources") or {}).get(source) or {}
+    return last.get("date") == today and entry.get("status") == "ok"
+
+
+ONCE_DAILY_SOURCES = ("clarity",)
+
+
 def main() -> int:
     load_local_env()
     config = yaml.safe_load(CONFIG_PATH.read_text())
@@ -173,6 +198,11 @@ def main() -> int:
         if skip_indexing:
             domain = {**domain, "indexing": {**domain["indexing"], "enabled": False}}
             print(f"  [indexing] skip (weekly – komplet z {skip_indexing['data'].get('as_of')})")
+        for once_daily in ONCE_DAILY_SOURCES:
+            if (domain.get(once_daily) or {}).get("enabled") and \
+                    source_ok_today(DATA_DIR / domain_id, once_daily, stamp["date"]):
+                domain = {**domain, once_daily: {**domain[once_daily], "enabled": False}}
+                print(f"  [{once_daily}] skip (dzisiejszy odczyt już jest – oszczędzam limit)")
         sources, details = run_sources(DOMAIN_SOURCES, domain, {"domain": domain_id})
         if skip_indexing:
             sources["indexing"] = skip_indexing
