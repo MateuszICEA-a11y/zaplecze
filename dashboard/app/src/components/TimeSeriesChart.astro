@@ -21,9 +21,38 @@ interface Props {
      do zakresu danych, podpis pokazuje wybrane okno dat. */
   ranges?: boolean;
 }
-const { title, meta, timestamps, series, unit = '', precision = 0, ranges = false } = Astro.props;
+const {
+  title,
+  meta,
+  timestamps: rawTs,
+  series: rawSeries,
+  unit = '',
+  precision = 0,
+  ranges = false,
+} = Astro.props;
+
+/* Przycięcie krańców bez żadnego odczytu: oś X zaczyna się od pierwszego
+   pomiaru serii (np. Ahrefs zbierany od 18.07 na tle rocznego backfillu
+   GSC dawał „pustą" oś z linią wciśniętą w prawą krawędź). */
+const hasAny = (i: number) => rawSeries.some((s) => s.values[i] !== null);
+let start = 0;
+while (start < rawTs.length && !hasAny(start)) start++;
+let end = rawTs.length - 1;
+while (end >= start && !hasAny(end)) end--;
+const timestamps = rawTs.slice(start, end + 1);
+const series = rawSeries.map((s) => ({ ...s, values: s.values.slice(start, end + 1) }));
+
 const payload = JSON.stringify({ timestamps, series, unit, precision });
-const hasData = timestamps.length > 0 && series.some((s) => s.values.some((v) => v !== null));
+/* Linia ma sens od 2 punktów – pojedynczy pomiar to nadal „zbieramy historię"
+   (handoff „Przegląd": empty state z datą pierwszego odczytu). */
+const nonNullMax = Math.max(0, ...series.map((s) => s.values.filter((v) => v !== null).length));
+const hasData = timestamps.length > 1 && nonNullMax >= 2;
+const firstReadTs = series.length
+  ? timestamps.find((_, i) => series.some((s) => s.values[i] !== null))
+  : undefined;
+const firstRead = firstReadTs
+  ? new Date(firstReadTs * 1000).toLocaleDateString('pl-PL', { day: '2-digit', month: '2-digit', year: 'numeric' })
+  : null;
 
 const RANGE_OPTIONS: [string, number, string][] = [
   ['7d', 7, '7 dni'],
@@ -71,7 +100,10 @@ const defaultRange = rangeOptions.some(([k]) => k === '30d') ? '30d' : (rangeOpt
           <path d="M3 21h18" stroke-linecap="round" />
         </svg>
         <h4>Zbieramy historię</h4>
-        <p>Wykres pojawi się po kilku dziennych przebiegach collectora (cron 6:30).</p>
+        <p>
+          Wykres pojawi się po kilku dziennych przebiegach collectora (cron 6:30).
+          {firstRead && ` Pierwszy odczyt: ${firstRead}.`}
+        </p>
       </div>
     )
   }

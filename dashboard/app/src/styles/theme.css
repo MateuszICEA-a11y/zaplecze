@@ -48,6 +48,8 @@
   --gsc: var(--accent-blue);
   --ga4: var(--series-3);
   --ahrefs: var(--series-2);
+  --bing: #17c3b2;
+  --bing-soft: rgba(23, 195, 178, 0.14);
 
   --shadow-card: 0 30px 60px -25px rgba(0, 0, 0, 0.55);
   --container: 1280px;
@@ -81,6 +83,8 @@
   --series-2: #c2620e;
   --series-3: #0f9d58;
   --sen: #7c3aed;
+  --bing: #0d9488;
+  --bing-soft: rgba(13, 148, 136, 0.14);
 
   --shadow-card: 0 20px 40px -20px rgba(15, 23, 42, 0.25);
 }
@@ -799,3 +803,98 @@ table.data-table {
 .legend-cause span { display: inline-flex; align-items: center; gap: 6px; }
 .ddelta { font-variant-numeric: tabular-nums; font-weight: 600; font-size: .84rem; white-space: nowrap; }
 .ddelta.down { color: var(--status-err-fg); } .ddelta.up { color: var(--status-ok); } .ddelta.flat { color: var(--ink-faint); }
+
+/* ── Układy wg handoffu 2026-07-22: Przegląd / GA4 / Bing ────────────── */
+
+/* Przegląd: pasek zdrowia źródeł */
+.health { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+.hchip { display: inline-flex; align-items: center; gap: 8px; background: var(--bg-surface-1); border: 1px solid var(--hairline); border-radius: 999px; padding: 6px 13px; font-size: .82rem; color: var(--ink-muted); }
+.hchip .d { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+.hchip .d.ok { background: var(--status-ok); box-shadow: 0 0 0 3px color-mix(in srgb, var(--status-ok) 18%, transparent); }
+.hchip .d.warn { background: var(--status-warn-fg); box-shadow: 0 0 0 3px var(--status-warn-bg); }
+.hchip .d.err { background: var(--status-err-fg); box-shadow: 0 0 0 3px var(--status-err-bg); }
+.hchip b { color: var(--ink); font-weight: 600; }
+.hchip .when { color: var(--ink-faint); font-size: .76rem; font-variant-numeric: tabular-nums; }
+
+/* Przegląd: KPI wielo-źródłowe (3 kolumny, hero = 1 kafel) */
+.kwrap { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 18px; }
+@media (max-width: 1080px) { .kwrap { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 620px) { .kwrap { grid-template-columns: 1fr; } }
+
+/* GA4: siatka hero + 3 karty */
+.rgrid4 { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+@media (max-width: 1080px) { .rgrid4 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 620px) { .rgrid4 { grid-template-columns: 1fr; } }
+
+/* GA4: podział nowi/powracający wewnątrz karty Użytkownicy */
+.split { margin-top: 14px; }
+.split .bar { display: flex; height: 9px; border-radius: 5px; overflow: hidden; background: var(--bg-surface-3); box-shadow: inset 0 0 0 1px var(--hairline-soft); }
+.split .bar > i { display: block; height: 100%; }
+.split .bar .a { background: var(--accent-blue); }
+.split .bar .b { background: color-mix(in srgb, var(--series-3) 80%, var(--accent-blue)); }
+.split .lg { display: flex; justify-content: space-between; gap: 8px; margin-top: 8px; font-size: .74rem; color: var(--ink-muted); font-variant-numeric: tabular-nums; flex-wrap: wrap; }
+.split .lg b { color: var(--ink); }
+.split .lg .dot { display: inline-block; width: 7px; height: 7px; border-radius: 2px; margin-right: 5px; vertical-align: middle; }
+
+/* GA4: pasek drugorzędnych mikro-metryk */
+.micro { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+.micro .m { flex: 1; min-width: 150px; border: 1px solid var(--hairline); border-radius: 12px; padding: 12px 14px; background: var(--bg-surface-1); }
+.micro .m .l { color: var(--ink-faint); font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; }
+.micro .m .v { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; font-variant-numeric: tabular-nums; margin-top: 4px; }
+
+/* Techniczne wartości ((not set), Unassigned…) – wyciszone kursywą */
+.muted-tag { color: var(--ink-faint); font-style: italic; }
+
+/* Przegląd: „Co wymaga uwagi" */
+.attn { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 18px; }
+@media (max-width: 1080px) { .attn { grid-template-columns: 1fr; } }
+.acard { border: 1px solid var(--hairline); border-radius: 15px; padding: 16px 18px; background: var(--bg-surface-1); display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.acard .top { display: flex; align-items: center; gap: 9px; }
+.acard .top .ic { width: 30px; height: 30px; border-radius: 9px; display: inline-flex; align-items: center; justify-content: center; flex: none; }
+.acard .top .ic svg { width: 16px; height: 16px; }
+.acard.warn .ic { background: var(--status-warn-bg); color: var(--status-warn-fg); }
+.acard.err .ic { background: var(--status-err-bg); color: var(--status-err-fg); }
+.acard.ok .ic { background: color-mix(in srgb, var(--status-ok) 14%, transparent); color: var(--status-ok); }
+.acard .top .t { font-family: var(--font-display); font-weight: 600; font-size: .95rem; }
+.acard .big { font-family: var(--font-display); font-weight: 600; font-size: 1.7rem; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+.acard p { color: var(--ink-muted); font-size: .83rem; line-height: 1.5; margin: 0; }
+.acard p b { color: var(--ink); }
+.acard a { font-size: .82rem; font-weight: 600; margin-top: auto; }
+
+/* Bing: tag „wyróżnik" przy nagłówku sekcji */
+.tagx { font-family: var(--font-body); font-size: .66rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--bing); background: var(--bing-soft); padding: 3px 8px; border-radius: 6px; margin-left: 9px; vertical-align: middle; }
+
+/* Bing: pasmo-bohater AI Performance */
+.ai-sum { border: 1px solid color-mix(in srgb, var(--bing) 30%, var(--hairline)); border-radius: 18px; padding: 20px 24px; display: grid; grid-template-columns: 250px 1fr; gap: 30px; align-items: center; margin-bottom: 16px;
+  background:
+    radial-gradient(120% 120% at 0% 0%, var(--bing-soft), transparent 45%),
+    linear-gradient(180deg, color-mix(in srgb, var(--bing) 6%, var(--bg-surface-1)), var(--bg-surface-1) 70%); }
+@media (max-width: 720px) { .ai-sum { grid-template-columns: 1fr; gap: 18px; } }
+.ai-sum .cap { display: inline-flex; align-items: center; gap: 8px; color: var(--bing); font-size: .74rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.ai-sum .cap svg { width: 15px; height: 15px; flex: none; }
+.ai-sum .big { font-family: var(--font-display); font-size: 3.1rem; font-weight: 600; letter-spacing: -.03em; line-height: 1; margin: 12px 0 4px; font-variant-numeric: tabular-nums; }
+.ai-sum .sub { color: var(--ink-muted); font-size: .85rem; line-height: 1.5; }
+.ai-sum .sub b { color: var(--ink); }
+.ai-sum .isplit { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.ai-sum .isplit .r { display: flex; align-items: center; gap: 9px; font-size: .8rem; }
+.ai-sum .isplit .r .dot { width: 8px; height: 8px; border-radius: 2px; flex: none; }
+.ai-sum .isplit .r .nm { color: var(--ink-muted); width: 110px; flex: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ai-sum .isplit .r .t { flex: 1; height: 6px; border-radius: 4px; background: var(--bg-surface-3); overflow: hidden; box-shadow: inset 0 0 0 1px var(--hairline-soft); }
+.ai-sum .isplit .r .t > i { display: block; height: 100%; }
+.ai-sum .isplit .r .n { color: var(--ink-muted); font-variant-numeric: tabular-nums; min-width: 72px; text-align: right; }
+.ai-sum .isplit .r .n b { color: var(--ink); }
+
+/* Bing: pigułki intencji grounding queries */
+.tag-int { display: inline-flex; align-items: center; gap: 6px; font-size: .74rem; font-weight: 600; padding: 3px 10px; border-radius: 999px; white-space: nowrap; }
+.tag-int::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.tag-int.learn { background: color-mix(in srgb, var(--series-3) 14%, transparent); color: color-mix(in srgb, var(--series-3) 85%, var(--ink)); }
+.tag-int.info { background: var(--accent-blue-soft); color: color-mix(in srgb, var(--accent-blue) 88%, var(--ink)); }
+.tag-int.cmp { background: color-mix(in srgb, var(--series-2) 14%, transparent); color: color-mix(in srgb, var(--series-2) 88%, var(--ink)); }
+.tag-int.other { background: var(--bg-surface-3); color: var(--ink-muted); }
+.topic-cell { font-size: .8rem; color: var(--ink-muted); }
+
+/* Bing: pasek cytowań w kolorze Binga + udział cytowań w tierach */
+.cell-bar.bing .bar > i { background: linear-gradient(90deg, color-mix(in srgb, var(--bing) 55%, var(--series-3)), var(--bing)); }
+.share { font-variant-numeric: tabular-nums; font-weight: 600; }
+.share.hi { color: var(--bing); } .share.mid { color: var(--ink); } .share.lo { color: var(--ink-faint); }
+.fchip.on-bing { background: var(--bing-soft); color: var(--bing); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--bing) 40%, transparent); }
