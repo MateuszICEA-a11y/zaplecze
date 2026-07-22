@@ -7,6 +7,7 @@ interface Props {
   value: number | string | null;
   delta?: number | null;
   deltaLabel?: string;
+  deltaUnit?: string;
   unit?: string;
   precision?: number;
   goodWhen?: 'up' | 'down';
@@ -23,12 +24,17 @@ interface Props {
   /* Data ostatniego udanego pomiaru, gdy źródło leży – karta „nieaktualna":
      wyciszona wartość + pigułka „dane z …" zamiast delty (handoff §4a). */
   staleDate?: string | null;
+  /* Dopisek do stanu nieaktualnego, np. „limit API". */
+  staleReason?: string;
+  /* Jawny komunikat, gdy nie ma jeszcze historii do policzenia delty. */
+  emptyDeltaLabel?: string;
 }
 const {
   label,
   value,
   delta = null,
   deltaLabel = '7 dni',
+  deltaUnit = '',
   unit = '',
   precision = 0,
   goodWhen = 'up',
@@ -38,6 +44,8 @@ const {
   src,
   dot,
   staleDate = null,
+  staleReason,
+  emptyDeltaLabel,
 } = Astro.props;
 const Tag = href ? 'a' : 'div';
 const srcStyle = src ? `--src-color: var(--${src});` : undefined;
@@ -51,7 +59,7 @@ const formatted =
 const deltaText =
   delta === null
     ? null
-    : `${delta > 0 ? '+' : ''}${delta.toLocaleString('pl-PL', { maximumFractionDigits: Math.max(precision, 0) })}`;
+    : `${delta > 0 ? '+' : ''}${delta.toLocaleString('pl-PL', { maximumFractionDigits: Math.max(precision, 0) })}${deltaUnit}`;
 const direction = delta === null ? 'flat' : delta > 0 ? 'up' : delta < 0 ? 'down' : 'flat';
 const sentiment =
   direction === 'flat' ? 'flat' : (direction === 'up') === (goodWhen === 'up') ? 'good' : 'bad';
@@ -106,7 +114,7 @@ if (points.length >= 2) {
             <circle cx="12" cy="12" r="9" />
             <path d="M12 7v5l3 2" stroke-linecap="round" />
           </svg>
-          dane z {staleDate}
+          dane z {staleDate}{staleReason ? ` · ${staleReason}` : ''}
         </span>
       </div>
     ) : deltaText !== null ? (
@@ -125,8 +133,12 @@ if (points.length >= 2) {
             </svg>
           )}
           {direction === 'flat' ? 'bez zmian' : deltaText}
-          <span class="per">/ {deltaLabel}</span>
+          {deltaLabel && <span class="per">/ {deltaLabel}</span>}
         </span>
+      </div>
+    ) : emptyDeltaLabel ? (
+      <div class="stat-foot">
+        <span class="rtrend flat">— <span class="per">{emptyDeltaLabel}</span></span>
       </div>
     ) : (
       trend && trend.length > 0 && (
