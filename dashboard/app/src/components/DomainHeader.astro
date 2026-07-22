@@ -9,8 +9,9 @@ interface Props {
   name: string;
   active: string; // slug aktywnej sekcji ('' = przegląd)
   latest: Snapshot | null;
+  themeToggle?: boolean;
 }
-const { name, active, latest } = Astro.props;
+const { name, active, latest, themeToggle = false } = Astro.props;
 
 const TITLES: Record<string, string> = {
   '': 'Przegląd',
@@ -31,12 +32,39 @@ const title = TITLES[active] ?? DOMAIN_SECTIONS.find((s) => s.slug === active)?.
   <div class="eyebrow">{name}</div>
   <div class="title-row">
     <h1>{title}</h1>
-    <span class="measured" title="Data ostatniego przebiegu collectora">
-      <i aria-hidden="true"></i>
-      {latest?.date ?? 'brak pomiaru'}
-    </span>
+    <div class="header-actions">
+      <span class="measured" title="Data ostatniego przebiegu collectora">
+        <i aria-hidden="true"></i>
+        {latest?.date ?? 'brak pomiaru'}
+      </span>
+      {themeToggle && (
+        <button class="header-theme-toggle" type="button" aria-label="Przełącz motyw">
+          <span aria-hidden="true" data-header-theme-icon>☀</span>
+          <span data-header-theme-label>Jasny</span>
+        </button>
+      )}
+    </div>
   </div>
 </header>
+
+{themeToggle && (
+  <script>
+    const headerThemeButton = document.querySelector<HTMLButtonElement>('.header-theme-toggle');
+    const syncHeaderTheme = () => {
+      const light = document.documentElement.dataset.theme === 'light';
+      const icon = headerThemeButton?.querySelector<HTMLElement>('[data-header-theme-icon]');
+      const label = headerThemeButton?.querySelector<HTMLElement>('[data-header-theme-label]');
+      if (icon) icon.textContent = light ? '☾' : '☀';
+      if (label) label.textContent = light ? 'Ciemny' : 'Jasny';
+    };
+    headerThemeButton?.addEventListener('click', () => {
+      document.getElementById('theme-toggle')?.click();
+      syncHeaderTheme();
+    });
+    window.addEventListener('themechange', syncHeaderTheme);
+    syncHeaderTheme();
+  </script>
+)}
 
 <style>
   .page-header {
@@ -63,6 +91,11 @@ const title = TITLES[active] ?? DOMAIN_SECTIONS.find((s) => s.slug === active)?.
     letter-spacing: -0.02em;
     margin: 0;
   }
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
   .measured {
     display: inline-flex;
     align-items: center;
@@ -81,5 +114,23 @@ const title = TITLES[active] ?? DOMAIN_SECTIONS.find((s) => s.slug === active)?.
     border-radius: 50%;
     background: var(--status-ok);
     box-shadow: 0 0 6px color-mix(in srgb, var(--status-ok) 60%, transparent);
+  }
+  .header-theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--bg-surface-1);
+    border: 1px solid var(--hairline);
+    border-radius: 9px;
+    color: var(--ink-muted);
+    font: inherit;
+    font-size: 0.82rem;
+    padding: 7px 12px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .header-theme-toggle:hover {
+    color: var(--ink);
+    border-color: var(--ink-faint);
   }
 </style>

@@ -44,6 +44,48 @@ const statImpressions = latestWithDelta(snapshots, 'gsc', 'impressions');
 const statDR = latestWithDelta(snapshots, 'ahrefs', 'domain_rating', 30);
 const statRefDomains = latestWithDeltaFrom(snapshots, linkSpec('referring_domains'));
 const statSessions = latestWithDelta(snapshots, 'clarity', 'sessions');
+const impressionsPrevious =
+  statImpressions.value !== null && statImpressions.delta !== null
+    ? statImpressions.value - statImpressions.delta
+    : null;
+const impressionsDeltaPct =
+  impressionsPrevious && statImpressions.delta !== null
+    ? (statImpressions.delta / impressionsPrevious) * 100
+    : null;
+const drHistory = metricSeries(snapshots, 'ahrefs', 'domain_rating').values.filter(
+  (value): value is number => typeof value === 'number',
+);
+const drDeltaAvailable =
+  statDR.delta ?? (drHistory.length >= 2 ? drHistory.at(-1)! - drHistory[0]! : null);
+const firstRefDomainsTimestamp = refDomains.timestamps.find(
+  (_, index) => typeof refDomains.values[index] === 'number',
+);
+const firstRefDomainsDate = firstRefDomainsTimestamp
+  ? new Date(firstRefDomainsTimestamp * 1000).toLocaleDateString('pl-PL', {
+      timeZone: 'UTC', day: '2-digit', month: '2-digit',
+    })
+  : null;
+
+/* Trendy na Przeglądzie pokazują dokładnie ostatnie 3 miesiące z realnych
+   serii, zamiast całego dostępnego backfillu. */
+const lastTimestamp = Math.max(
+  0,
+  ...top10.timestamps,
+  ...gscClicks.timestamps,
+  ...backlinks.timestamps,
+);
+const trendCutoff = lastTimestamp - 91 * 86400;
+const trimTrend = (series: { timestamps: number[]; values: (number | null)[] }) => {
+  const start = Math.max(0, series.timestamps.findIndex((timestamp) => timestamp >= trendCutoff));
+  return { timestamps: series.timestamps.slice(start), values: series.values.slice(start) };
+};
+const top3Trend = trimTrend(top3);
+const top10Trend = trimTrend(top10);
+const top50Trend = trimTrend(top50);
+const clicksTrend = trimTrend(gscClicks);
+const impressionsTrend = trimTrend(gscImpressions);
+const backlinksTrend = trimTrend(backlinks);
+const refDomainsTrend = trimTrend(refDomains);
 
 const leads = details.sources.leads?.leads ?? [];
 const weekAgo = Date.now() - 7 * 86400_000;
@@ -68,24 +110,22 @@ const lastOk = (source: string): { date: string; data: Record<string, unknown> }
 const HEALTH_LABELS: [string, string][] = [
   ['senuto', 'Senuto'],
   ['gsc', 'GSC'],
-  ['ga4', 'GA4'],
-  ['bing', 'Bing'],
   ['ahrefs', 'Ahrefs'],
-  ['backlinks', 'Backlinki'],
+  ['ga4', 'GA4'],
   ['clarity', 'Clarity'],
-  ['cloudflare_ai', 'Boty AI'],
-  ['indexing', 'Indeksacja'],
+  ['bing', 'Bing'],
 ];
 const health = HEALTH_LABELS.flatMap(([key, label]) => {
   const src = latest?.sources[key];
   if (!src || src.status === 'not_configured') return [];
   const cls = src.status === 'ok' ? 'ok' : src.status === 'token_expired' ? 'warn' : 'err';
-  const when =
-    src.status === 'ok'
-      ? fmtShort(latest!.date)
-      : src.status === 'token_expired'
-        ? `token wygasł · ost. ${fmtShort(lastOk(key)?.date)}`
-        : `błąd · ost. ${fmtShort(lastOk(key)?.date)}`;
+  const when = src.status === 'ok'
+    ? fmtShort(latest!.date)
+    : src.status === 'token_expired'
+      ? `token wygasł · ${fmtShort(lastOk(key)?.date)}`
+      : src.error?.includes('429')
+        ? `limit API · ${fmtShort(lastOk(key)?.date)}`
+        : `błąd · ${fmtShort(lastOk(key)?.date)}`;
   return [{ label, cls, when }];
 });
 
@@ -97,11 +137,6 @@ const claritySessions = clarityDown
     ? (clarityLast.data.sessions as number)
     : null
   : statSessions.value;
-
-// Bannery problemów: token_expired/error z ostatniego snapshotu.
-const problems = Object.entries(latest?.sources ?? {}).filter(([, r]) =>
-  ['token_expired', 'error'].includes(r.status),
-);
 
 /* ── „Co wymaga uwagi" – automatyczne sygnały z danych szczegółowych ── */
 const compare = details.sources.gsc?.compare;
@@ -144,15 +179,13 @@ const hasAttention = pageDrops.length > 0 || nearTop.length > 0 || idxRows.lengt
 ---
 
 <Layout title={`${name} – dashboard`}>
-  <DomainHeader domain={domain!} name={name} active="" latest={latest} />
+  <DomainHeader domain={domain!} name={name} active="" latest={latest} themeToggle />
 
-  {
-    problems.map(([source, result]) => (
-      <div class={`banner ${result.status === 'token_expired' ? 'warn' : 'err'}`}>
-        <strong>{source}</strong>: {(result.error ?? '').replace(new RegExp(`^${source}:\\s*`), '')}
-      </div>
-    ))
-  }
+  <div class="overview-note">
+    Przegląd jest hubem wielu źródeł: pasek zdrowia integracji, KPI oznaczone kolorem źródła
+    (<b class="sen">Senuto</b>/<b class="gsc">GSC</b>/<b class="ahrefs">Ahrefs</b>/<b class="ga4">GA4</b>),
+    porównania z historią i ostatni udany pomiar, gdy źródło jest chwilowo niedostępne. Na dole znajdują się automatyczne sygnały wymagające uwagi.
+  </div>
 
   {
     health.length > 0 && (
@@ -170,13 +203,15 @@ const hasAttention = pageDrops.length > 0 || nearTop.length > 0 || idxRows.lengt
 
   <div class="section-head">
     <h2>Najważniejsze wskaźniki</h2>
-    <span class="section-meta">porównanie 7-dniowe · pełne listy w zakładkach</span>
+    <span class="section-meta">porównanie 7-dniowe</span>
   </div>
   <div class="kwrap">
     <StatCard
       label="Wyświetlenia / dzień · GSC"
       value={statImpressions.value}
-      delta={statImpressions.delta}
+      delta={impressionsDeltaPct}
+      precision={1}
+      deltaUnit="%"
       trend={gscImpressions.values}
       src="gsc"
       hero
@@ -184,49 +219,63 @@ const hasAttention = pageDrops.length > 0 || nearTop.length > 0 || idxRows.lengt
     />
     <StatCard label="Kliknięcia / dzień · GSC" value={statClicks.value} delta={statClicks.delta} src="gsc" href={`/${domain}/gsc/`} />
     <StatCard label="Frazy w TOP 10 · Senuto" value={statTop10.value} delta={statTop10.delta} src="sen" href={`/${domain}/senuto/`} />
-    <StatCard label="Domain Rating · Ahrefs" value={statDR.value} delta={statDR.delta} deltaLabel="30 dni" precision={1} src="ahrefs" href={`/${domain}/ahrefs/`} />
-    <StatCard label="Domeny linkujące · Ahrefs" value={statRefDomains.value} delta={statRefDomains.delta} src="ahrefs" href={`/${domain}/ahrefs/`} />
+    <StatCard label="Domain Rating · Ahrefs" value={statDR.value} delta={drDeltaAvailable} deltaLabel="" precision={1} src="ahrefs" href={`/${domain}/ahrefs/`} />
+    <StatCard
+      label="Domeny linkujące · Ahrefs"
+      value={statRefDomains.value}
+      delta={statRefDomains.delta}
+      emptyDeltaLabel={firstRefDomainsDate ? `zbieramy od ${firstRefDomainsDate}` : 'zbieramy dane'}
+      src="ahrefs"
+      href={`/${domain}/ahrefs/`}
+    />
     {clarityConfigured && (
       <StatCard
         label="Sesje · Clarity (3 dni)"
         value={claritySessions}
         delta={clarityDown ? null : statSessions.delta}
         staleDate={clarityDown ? fmtShort(clarityLast?.date) : null}
+        staleReason={clarityDown && latest?.sources.clarity?.error?.includes('429') ? 'limit API' : undefined}
+        dot="var(--ga4)"
         href={`/${domain}/clarity/`}
       />
     )}
     {leadsConfigured && <StatCard label="Leady · 7 dni" value={leadsRecent} href={`/${domain}/leady/`} />}
   </div>
 
-  <div class="section-head"><h2>Trendy</h2></div>
-  <div class="chart-grid">
+  <div class="section-head"><h2>Trendy</h2><span class="section-meta">3 miesiące</span></div>
+  <div class="overview-charts">
     <TimeSeriesChart
       title="Frazy w TOP 3 / 10 / 50"
-      meta="Senuto"
-      timestamps={top10.timestamps}
+      timestamps={top10Trend.timestamps}
       series={[
-        { label: 'TOP 3', values: top3.values },
-        { label: 'TOP 10', values: top10.values },
-        { label: 'TOP 50', values: top50.values, fill: true },
+        { label: 'TOP 3', values: top3Trend.values, color: '--status-ok', dash: [] },
+        { label: 'TOP 10', values: top10Trend.values, color: '--gsc', dash: [] },
+        { label: 'TOP 50', values: top50Trend.values, color: '--ink-faint', dash: [] },
       ]}
+      sourceColor="--sen"
+      overview
     />
     <TimeSeriesChart
       title="Kliknięcia i wyświetlenia"
-      meta="GSC"
-      timestamps={gscClicks.timestamps}
+      timestamps={clicksTrend.timestamps}
       series={[
-        { label: 'Kliknięcia', values: gscClicks.values },
-        { label: 'Wyświetlenia', values: gscImpressions.values, fill: true },
+        { label: 'Kliknięcia', values: clicksTrend.values, color: '--gsc', dash: [] },
+        { label: 'Wyświetlenia', values: impressionsTrend.values, fill: true, color: '--series-2', dash: [6, 4] },
       ]}
+      sourceColor="--gsc"
+      overview
     />
     <TimeSeriesChart
       title="Backlinki i domeny linkujące"
-      meta="Ahrefs"
-      timestamps={backlinks.timestamps}
+      timestamps={backlinksTrend.timestamps}
       series={[
-        { label: 'Backlinki', values: backlinks.values, fill: true },
-        { label: 'Domeny', values: refDomains.values },
+        { label: 'Backlinki', values: backlinksTrend.values, fill: true, color: '--gsc', dash: [] },
+        { label: 'Domeny', values: refDomainsTrend.values, color: '--series-2', dash: [6, 4] },
       ]}
+      sourceColor="--ahrefs"
+      overview
+      emptyTitle="Backlinki — zbieramy historię"
+      emptyDescription={`Ahrefs zwraca stan bieżący (DR ${fmtInt(statDR.value)} · ${fmtInt(statRefDomains.value)} domen). Wykres pojawi się po drugim pomiarze.`}
     />
   </div>
 
@@ -303,3 +352,30 @@ const hasAttention = pageDrops.length > 0 || nearTop.length > 0 || idxRows.lengt
     )
   }
 </Layout>
+
+<style>
+  .overview-note {
+    border-left: 2px solid var(--accent-blue);
+    background: color-mix(in srgb, var(--accent-blue) 6%, transparent);
+    color: var(--ink-muted);
+    font-size: 0.84rem;
+    line-height: 1.5;
+    padding: 10px 14px;
+    border-radius: 0 10px 10px 0;
+    margin: 16px 0 4px;
+  }
+  .overview-note b { font-weight: 700; }
+  .overview-note .sen { color: var(--sen); }
+  .overview-note .gsc { color: var(--gsc); }
+  .overview-note .ahrefs { color: var(--ahrefs); }
+  .overview-note .ga4 { color: var(--ga4); }
+  .overview-charts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  @media (max-width: 1080px) {
+    .overview-charts { grid-template-columns: 1fr; }
+  }
+</style>
