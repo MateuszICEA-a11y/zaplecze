@@ -17,6 +17,9 @@ interface Props {
   /* Nazwa tokenu koloru źródła (sen/gsc/ga4/ahrefs/bing) – kropka przy labelu,
      akcent hero-kreski i sparkline'a (handoff „Przegląd – układ"). */
   src?: 'sen' | 'gsc' | 'ga4' | 'ahrefs' | 'bing';
+  /* Dowolny kolor CSS kropki przy labelu (np. tier TOP 3/10/50 z handoffu
+     „Senuto – układ") – niezależny od koloru akcentu karty. */
+  dot?: string;
   /* Data ostatniego udanego pomiaru, gdy źródło leży – karta „nieaktualna":
      wyciszona wartość + pigułka „dane z …" zamiast delty (handoff §4a). */
   staleDate?: string | null;
@@ -33,6 +36,7 @@ const {
   hero = false,
   href,
   src,
+  dot,
   staleDate = null,
 } = Astro.props;
 const Tag = href ? 'a' : 'div';
@@ -72,6 +76,7 @@ if (points.length >= 2) {
 <Tag class:list={['stat-card', { hero, stale: staleDate !== null }]} href={href} style={srcStyle}>
   <div class="stat-label">
     {src && <span class="src-dot" aria-hidden="true"></span>}
+    {!src && dot && <span class="src-dot" style={`background:${dot}`} aria-hidden="true"></span>}
     {label}
   </div>
   <div class="stat-row">

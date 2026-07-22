@@ -51,6 +51,11 @@
   --bing: #17c3b2;
   --bing-soft: rgba(23, 195, 178, 0.14);
 
+  /* sygnały frustracji Clarity (handoff „Clarity – układ") */
+  --rage: #fca5a5;
+  --dead: #fbbf24;
+  --quick: #f0883e;
+
   --shadow-card: 0 30px 60px -25px rgba(0, 0, 0, 0.55);
   --container: 1280px;
   --gutter: 24px;
@@ -85,6 +90,9 @@
   --sen: #7c3aed;
   --bing: #0d9488;
   --bing-soft: rgba(13, 148, 136, 0.14);
+  --rage: #b91c1c;
+  --dead: #b45309;
+  --quick: #c2620e;
 
   --shadow-card: 0 20px 40px -20px rgba(15, 23, 42, 0.25);
 }
@@ -898,3 +906,77 @@ table.data-table {
 .share { font-variant-numeric: tabular-nums; font-weight: 600; }
 .share.hi { color: var(--bing); } .share.mid { color: var(--ink); } .share.lo { color: var(--ink-faint); }
 .fchip.on-bing { background: var(--bing-soft); color: var(--bing); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--bing) 40%, transparent); }
+
+/* ── Senuto – układ (handoff „Senuto – układ") ───────────────────────── */
+/* KPI: hero indeksu widoczności szerszy, tiery + ranking w jednym pasie */
+.stat-grid.senuto-kpis { grid-template-columns: 1.5fr repeat(4, 1fr); }
+@media (max-width: 1080px) { .stat-grid.senuto-kpis { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .stat-grid.senuto-kpis { grid-template-columns: 1fr; } }
+/* karta tieru aktywna jako filtr tabeli */
+a.stat-card.on { border-color: var(--sen); box-shadow: 0 0 0 1px var(--sen); }
+/* fraza + URL w jednej komórce */
+.kw-cell .txt { display: block; font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.kw-cell .url { display: block; color: var(--ink-faint); font-size: .74rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin-top: 2px; }
+.kw-cell a.url:hover { color: var(--accent-blue); }
+/* pasek wolumenu w kolorze Senuto */
+.cell-bar .bar.sen > i { background: linear-gradient(90deg, color-mix(in srgb, var(--sen) 45%, var(--accent-blue)), var(--sen)); }
+/* trudność frazy: mini-pasek easy/med/hard */
+.diff-bar { display: inline-flex; align-items: center; gap: 8px; justify-content: flex-end; }
+.diff-bar .t { width: 40px; height: 6px; border-radius: 4px; background: var(--bg-surface-3); overflow: hidden; box-shadow: inset 0 0 0 1px var(--hairline-soft); flex: none; }
+.diff-bar .t > i { display: block; height: 100%; border-radius: 4px; }
+.diff-bar .v { font-variant-numeric: tabular-nums; font-size: .8rem; min-width: 20px; text-align: right; }
+.diff-bar.easy .t > i { background: var(--status-ok); }
+.diff-bar.med .t > i { background: var(--status-warn-fg); }
+.diff-bar.hard .t > i { background: var(--status-err-fg); }
+
+/* ── Clarity – układ (handoff „Clarity – układ") ─────────────────────── */
+/* baner „źródło leży, pokazujemy ostatni udany pomiar" */
+.down-bar { display: flex; align-items: center; gap: 12px; padding: 13px 16px; border-radius: 12px; background: var(--status-warn-bg); border: 1px solid color-mix(in srgb, var(--status-warn-fg) 30%, transparent); color: var(--status-warn-fg); font-size: .88rem; margin: 18px 0; flex-wrap: wrap; }
+.down-bar svg { width: 18px; height: 18px; flex: none; }
+.down-bar b { color: var(--ink); }
+.down-bar .when { margin-left: auto; color: var(--ink-faint); font-size: .8rem; white-space: nowrap; }
+/* sekcje na nieaktualnych danych – przygaszone */
+.stale-ghost { opacity: .62; }
+/* karty zachowań: scroll depth + zaangażowanie */
+.beh-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 18px; }
+@media (max-width: 1080px) { .beh-grid { grid-template-columns: 1fr; } }
+.beh-card { border: 1px solid var(--hairline); border-radius: 16px; padding: 18px 20px; background: linear-gradient(180deg, color-mix(in srgb, var(--ink) 4%, var(--bg-surface-1)), var(--bg-surface-1) 60%); }
+.beh-card h4 { font-size: .96rem; margin: 0 0 4px; font-family: var(--font-display); }
+.beh-card .sub { color: var(--ink-faint); font-size: .78rem; margin-bottom: 14px; }
+.scroll-meter { display: flex; align-items: center; gap: 14px; }
+.scroll-meter .big { font-family: var(--font-display); font-weight: 600; font-size: 2.2rem; font-variant-numeric: tabular-nums; letter-spacing: -.02em; flex: none; }
+.scroll-meter .t { flex: 1; height: 24px; border-radius: 7px; background: var(--bg-surface-3); overflow: hidden; }
+.scroll-meter .t > i { display: block; height: 100%; border-radius: 7px; background: linear-gradient(90deg, color-mix(in srgb, var(--accent-blue) 55%, var(--series-3)), var(--accent-blue)); }
+.eng-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 4px; }
+.eng-stats .s .l { color: var(--ink-faint); font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; }
+.eng-stats .s .v { font-family: var(--font-display); font-weight: 600; font-size: 1.6rem; font-variant-numeric: tabular-nums; margin-top: 4px; }
+.eng-stats .s .v small { font-size: .5em; color: var(--ink-faint); font-weight: 500; margin-left: 5px; }
+/* tablica frustracji: rage / dead / quick-back */
+.frust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 18px; }
+@media (max-width: 900px) { .frust-grid { grid-template-columns: 1fr; } }
+.fcard { border: 1px solid var(--hairline); border-radius: 15px; padding: 16px 18px; background: var(--bg-surface-1); }
+.fcard .h { display: flex; align-items: center; gap: 9px; margin-bottom: 12px; }
+.fcard .h .ic { width: 30px; height: 30px; border-radius: 9px; display: inline-flex; align-items: center; justify-content: center; flex: none; }
+.fcard .h .ic svg { width: 16px; height: 16px; }
+.fcard.rage .ic { background: color-mix(in srgb, var(--rage) 16%, transparent); color: var(--rage); }
+.fcard.dead .ic { background: var(--status-warn-bg); color: var(--dead); }
+.fcard.quick .ic { background: color-mix(in srgb, var(--quick) 16%, transparent); color: var(--quick); }
+.fcard .h .t { font-size: .88rem; font-weight: 600; font-family: var(--font-display); }
+.fcard .big { font-family: var(--font-display); font-weight: 600; font-size: 1.9rem; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+.fcard .rate { color: var(--ink-muted); font-size: .8rem; margin-top: 3px; }
+.fcard .rate b { color: var(--ink); }
+/* tabele obok siebie */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+@media (max-width: 900px) { .two-col { grid-template-columns: 1fr; } }
+/* urządzenia: donut z conic-gradient + legenda */
+.devgrid { display: flex; align-items: center; gap: 22px; padding: 6px 4px; flex-wrap: wrap; }
+.donut { width: 128px; height: 128px; border-radius: 50%; flex: none; position: relative; }
+.donut::after { content: ''; position: absolute; inset: 26px; border-radius: 50%; background: var(--bg-surface-1); }
+.donut .c { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 1; }
+.donut .c b { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; }
+.donut .c span { color: var(--ink-faint); font-size: .68rem; text-transform: uppercase; letter-spacing: .05em; }
+.devleg { display: flex; flex-direction: column; gap: 10px; min-width: 180px; flex: 1; }
+.devleg .r { display: flex; align-items: center; gap: 10px; font-size: .86rem; }
+.devleg .r .dot { width: 10px; height: 10px; border-radius: 3px; flex: none; }
+.devleg .r .n { color: var(--ink-muted); }
+.devleg .r .v { margin-left: auto; font-variant-numeric: tabular-nums; font-weight: 600; }
