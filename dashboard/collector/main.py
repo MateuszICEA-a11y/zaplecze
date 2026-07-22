@@ -119,6 +119,46 @@ def write_details(target_dir: Path, stamp: dict, details: dict) -> None:
     path.write_text(json.dumps({**stamp, "sources": merged}, ensure_ascii=False, indent=1) + "\n")
 
 
+def indexing_skip_entry(domain_cfg: dict, domain_dir: Path, now: datetime) -> dict | None:
+    """Harmonogram tygodniowy indeksacji (schedule: weekly w domains.yaml).
+
+    URL Inspection ma kwotę 2000/d/property i pełny przejazd trwa ~1,5 h –
+    codzienne odpytywanie to proszenie się o 429. Zasady:
+    - pełny przejazd raz w tygodniu (poniedziałkowy cron) albo gdy ostatni
+      komplet ma ≥7 dni (fallback),
+    - przejazd NIEkompletny (aborted/braki/brak danych) → zbieraj od razu,
+      aż się domknie.
+    Zwraca wpis snapshotu do przeniesienia (skip) albo None (zbieraj).
+    """
+    cfg = domain_cfg.get("indexing") or {}
+    if not cfg.get("enabled") or cfg.get("schedule") != "weekly":
+        return None
+    path = domain_dir / "snapshots.jsonl"
+    if not path.is_file():
+        return None
+    entry: dict | None = None
+    entry_date = None
+    for line in path.read_text().splitlines():
+        try:
+            snap = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        candidate = (snap.get("sources") or {}).get("indexing")
+        if candidate and candidate.get("status") == "ok" and candidate.get("data"):
+            entry, entry_date = candidate, snap.get("date")
+    if not entry or not entry_date:
+        return None
+    data = entry.get("data") or {}
+    complete = (not data.get("aborted")
+                and data.get("pages_checked") == data.get("sitemap_urls"))
+    if not complete:
+        return None  # dociągnij braki niezależnie od dnia tygodnia
+    age_days = (now.date() - datetime.strptime(entry_date, "%Y-%m-%d").date()).days
+    if now.weekday() == 0 or age_days >= 7:
+        return None  # cotygodniowy pełny przejazd
+    return {**entry, "data": {**data, "as_of": entry_date}}
+
+
 def main() -> int:
     load_local_env()
     config = yaml.safe_load(CONFIG_PATH.read_text())
@@ -129,7 +169,13 @@ def main() -> int:
     for domain in config.get("domains") or []:
         domain_id = domain["id"]
         print(f"[{domain_id}]")
+        skip_indexing = indexing_skip_entry(domain, DATA_DIR / domain_id, now)
+        if skip_indexing:
+            domain = {**domain, "indexing": {**domain["indexing"], "enabled": False}}
+            print(f"  [indexing] skip (weekly – komplet z {skip_indexing['data'].get('as_of')})")
         sources, details = run_sources(DOMAIN_SOURCES, domain, {"domain": domain_id})
+        if skip_indexing:
+            sources["indexing"] = skip_indexing
         write_snapshot(DATA_DIR / domain_id, {**stamp, "sources": sources})
         write_details(DATA_DIR / domain_id, stamp, details)
 

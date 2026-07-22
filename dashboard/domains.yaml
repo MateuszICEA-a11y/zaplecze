@@ -11,6 +11,7 @@ domains:
       site: "https://widocznosc.ai/" # property typu prefiks URL (nie domenowa)
     indexing:
       enabled: true # panel Matrix – URL Inspection całej sitemapy (kwota 2000/d)
+      schedule: weekly # pełny przejazd raz w tygodniu (pon.); niekompletny dociągany od razu
       site: "https://widocznosc.ai/"
       sitemap: "https://widocznosc.ai/sitemap-index.xml" # ~135 URL-i
     ga4:
@@ -51,6 +52,7 @@ domains:
       site: "https://www.grupa-icea.pl/"
     indexing:
       enabled: true # panel Matrix – URL Inspection całej sitemapy
+      schedule: weekly # pełny przejazd raz w tygodniu (pon.); niekompletny dociągany od razu
       site: "https://www.grupa-icea.pl/"
       sitemap: "https://www.grupa-icea.pl/sitemap.xml" # ~834 URL-e (9 podmap)
     ga4:
