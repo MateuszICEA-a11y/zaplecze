@@ -85,10 +85,6 @@ const refreshedAt = collectedAt
     })
   : null;
 
-/* Ahrefs v3 udostępnia dane domen, ale nie zwraca salda units dla używanego
-   planu. Karta zostaje zgodnie z makietą, bez zmyślonego licznika. */
-const ahrefsPresent = perDomain.some(({ latest }) => latest?.sources.ahrefs?.status === 'ok');
-
 interface QuotaRow {
   name: string;
   color: string;
@@ -211,8 +207,8 @@ const pipelineRows = PIPELINE.map((definition) => {
     </div>
 
     <div class="system-note">
-      <b>Propozycja nowego widoku.</b> Meta-panel spinający kondycję całego systemu: salda
-      <b>usług płatnych</b> (OpenRouter, SMSAPI), <b>zużycie kwot API</b> integracji danych i
+      Meta-panel spinający kondycję całego systemu: salda <b>usług płatnych</b> (OpenRouter,
+      SMSAPI), <b>zużycie kwot API</b> integracji danych i
       <b>zdrowie pipeline'u</b> (crony snapshotów).
       Jedno miejsce, żeby wychwycić „kończą się kredyty” albo „źródło padło”, zanim zauważy to użytkownik.
     </div>
@@ -251,19 +247,6 @@ const pipelineRows = PIPELINE.map((definition) => {
         </div>
       </article>
 
-      <article class="balance-card">
-        <div class="balance-header">
-          <span class="service-logo ahrefs">Ah</span>
-          <span class="service-name">Ahrefs API</span>
-          <span class={`system-pill ${ahrefsPresent ? 'off' : 'err'}`}><i></i>{ahrefsPresent ? 'Brak salda' : 'Błąd'}</span>
-        </div>
-        <div class="balance-value">–<small>units / mies.</small></div>
-        <div class="balance-track is-unmeasured" aria-label="Ahrefs nie zwraca salda planu"><i class="off"></i></div>
-        <div class="balance-sub">
-          <span>API nie zwraca <b>salda units</b></span>
-          <span>dane domen działają</span>
-        </div>
-      </article>
     </div>
 
     <div class="system-section-head"><h2>Kwoty API integracji</h2><span>zużycie w bieżącym oknie</span></div>
@@ -345,13 +328,12 @@ const pipelineRows = PIPELINE.map((definition) => {
   .system-section-head h2 { font-size: 1.12rem; letter-spacing: -.01em; margin: 0; }
   .system-section-head > span { color: var(--ink-faint); font-size: .78rem; margin-left: auto; }
 
-  .balance-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .balance-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
   .balance-card { position: relative; border: 1px solid var(--hairline); border-radius: 16px; padding: 18px 20px; overflow: hidden; background: linear-gradient(180deg, color-mix(in srgb, var(--ink) 4%, var(--bg-surface-1)), var(--bg-surface-1) 60%); }
   .balance-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
   .service-logo { width: 30px; height: 30px; border-radius: 9px; flex: none; display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: .9rem; color: #fff; }
   .service-logo.openrouter { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
   .service-logo.sms { background: linear-gradient(135deg, #0ea5e9, #22d3ee); }
-  .service-logo.ahrefs { background: linear-gradient(135deg, #f97316, #f0883e); }
   .service-name { font-family: var(--font-display); font-weight: 600; font-size: .98rem; }
   .balance-header .system-pill { margin-left: auto; }
   .balance-value { font-family: var(--font-display); font-weight: 600; font-size: 2.2rem; letter-spacing: -.02em; font-variant-numeric: tabular-nums; line-height: 1; }
