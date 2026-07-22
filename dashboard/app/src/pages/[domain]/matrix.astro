@@ -139,6 +139,14 @@ const declining = (mode: 'qoq' | 'yoy') =>
     .filter((p) => p.clicks_delta < 0 || (p.position_delta ?? 0) > 1)
     .sort((a, b) => a.clicks_delta - b.clicks_delta || (b.position_delta ?? 0) - (a.position_delta ?? 0))
     .slice(0, 50);
+// Dekodowanie przyczyny spadku (§10.4): pierwszy pasujący warunek wygrywa.
+// Progi (dPos>1) do kalibracji na realnym rozkładzie.
+const decodeCause = (dImpr: number, dPos: number | null, dClicks: number) => {
+  if (dImpr > 0 && dClicks < 0) return { key: 'ctr', label: 'Spadek CTR' };
+  if ((dPos ?? 0) > 1) return { key: 'pos', label: 'Spadek pozycji' };
+  if (dImpr < 0) return { key: 'demand', label: 'Popyt / sezon' };
+  return { key: 'mixed', label: 'Mieszane' };
+};
 const priorities = { qoq: declining('qoq'), yoy: declining('yoy') };
 const prioLabel = {
   qoq: compare?.qoq ? `${compare.cur.start} → ${compare.cur.end} vs ${compare.qoq.prev.start} → ${compare.qoq.prev.end}` : '',
@@ -180,118 +188,127 @@ const maxImpressions = Math.max(...joined.map((r) => r.impressions ?? 0), 0);
     </span>
   </div>
   <div class="stat-grid">
+    <div class="k hero">
+      <div class="lbl">Zaindeksowane</div>
+      <div class="val">
+        {fmtInt(indexed)} <small style="font-size:.45em;color:var(--ink-faint);">z {fmtInt(sitemapUrls)}</small>
+      </div>
+      <div class="idxbar" title={`pokrycie indeksem: ${sitemapUrls ? Math.round((indexed / sitemapUrls) * 100) : 0}%`}>
+        <i style={`width:${sitemapUrls ? Math.round((indexed / sitemapUrls) * 100) : 0}%`} />
+      </div>
+    </div>
     <StatCard label="Adresy w sitemapie" value={sitemapUrls} />
     <StatCard label="Sprawdzone" value={checked} />
-    <StatCard label="Zaindeksowane" value={indexed} hero />
     <StatCard label="Niezaindeksowane" value={notIndexed} goodWhen="down" />
   </div>
 
   {
     segments.length > 1 && (
-      <TableCard
-        title="Segmenty serwisu"
-        meta="agregacja stron z sitemapy po pierwszym poziomie ścieżki"
-        count={segments.length}
-        pageSize={0}
-      >
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Segment</th>
-              <th class="num">Strony</th>
-              <th class="num">W indeksie</th>
-              <th class="num">Kliknięcia</th>
-              <th class="num">Wyświetlenia</th>
-              <th class="num">CTR</th>
-              <th class="num">Sesje GA4</th>
-              <th class="num">Engagement</th>
-              <th class="num" title="Suma fraz w TOP10 Senuto na stronach segmentu">Frazy TOP10</th>
-              <th class="num" title="Najlepsza pozycja Senuto w segmencie">Najl. pozycja</th>
-            </tr>
-          </thead>
-          <tbody>
-            {segments.map((s) => (
-              <tr>
-                <td class="grow">{s.segment}</td>
-                <td class="num">{fmtInt(s.pages)}</td>
-                <td class="num">
-                  <span class={s.indexed === s.pages ? 'ctr-pos' : ''}>
-                    {fmtInt(s.indexed)}/{fmtInt(s.pages)}
-                  </span>
-                </td>
-                <td class="num">{fmtInt(s.clicks)}</td>
-                <td class="num">
-                  <span class="cell-bar">
-                    {fmtInt(s.impressions)}
-                    <span class="bar">
-                      <i style={`width:${barWidth(s.impressions, maxSegImpressions)}%`} />
-                    </span>
-                  </span>
-                </td>
-                <td class="num">{fmtPct(s.ctr)}</td>
-                <td class="num">{fmtInt(s.sessions)}</td>
-                <td class="num">
-                  <span class="pct-neutral">{fmtPct(s.engagement_rate)}</span>
-                </td>
-                <td class="num">{fmtInt(s.senuto_top10)}</td>
-                <td class="num">
-                  <span class={`pos-badge ${posClass(s.senuto_best)}`}>{fmtNum(s.senuto_best, 0)}</span>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </TableCard>
+      <>
+        <div class="section-head" style="margin-bottom:10px;">
+          <h2>Segmenty serwisu</h2>
+          <span class="section-meta">agregacja po pierwszym poziomie ścieżki · kropka = źródło metryki</span>
+        </div>
+        <div class="seg-grid">
+          {segments.map((s) => (
+            <div class="seg-card">
+              <div class="hd">
+                <b title={s.segment}>{s.segment}</b>
+                <span class="cnt">{fmtInt(s.pages)} {s.pages === 1 ? 'strona' : 'stron'}</span>
+              </div>
+              <div class="idxbar">
+                <i style={`width:${s.pages ? Math.round((s.indexed / s.pages) * 100) : 0}%`} />
+              </div>
+              <div class="cov">
+                w indeksie {fmtInt(s.indexed)}/{fmtInt(s.pages)}
+                {s.indexed < s.pages && ` · poza: ${fmtInt(s.pages - s.indexed)}`}
+              </div>
+              <div class="mgrid">
+                <div class="mm">
+                  <span class="l"><i class="src gsc" />Wyświetlenia</span>
+                  <div class="v">{fmtInt(s.impressions)}</div>
+                </div>
+                <div class="mm">
+                  <span class="l"><i class="src gsc" />Kliknięcia</span>
+                  <div class="v">{fmtInt(s.clicks)}</div>
+                </div>
+                <div class="mm">
+                  <span class="l"><i class="src ga4" />Engagement</span>
+                  <div class="v">{fmtPct(s.engagement_rate)}</div>
+                </div>
+                <div class="mm">
+                  <span class="l"><i class="src sen" />Frazy TOP10</span>
+                  <div class="v">{fmtInt(s.senuto_top10)}</div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </>
     )
   }
 
+  <div class="section-head" style="margin-bottom:6px;">
+    <h2>Matrix stron</h2>
+    <div class="fchips" data-matrix-filters>
+      <button type="button" class="fchip on" data-f="all">Wszystkie</button>
+      <button type="button" class="fchip" data-f="top10" title="Pozycja Senuto ≤ 10">Wygrywające (TOP10)</button>
+      <button type="button" class="fchip" data-f="chance" title="Pozycja Senuto 11–30">Szansa (11–30)</button>
+      <button type="button" class="fchip" data-f="noindex">Poza indeksem</button>
+    </div>
+  </div>
   <TableCard
     title="Strony"
     count={joined.length}
     filter
     empty="Dane pojawią się po najbliższym przebiegu collectora (codziennie 6:30)."
   >
-    <table class="data-table">
+    <table class="data-table m-table">
       <thead>
+        <tr class="grp">
+          <th />
+          <th class="num g g-sen sep">Senuto</th>
+          <th class="num g g-gsc sep" colspan="3">GSC</th>
+          <th class="num g g-ga4 sep" colspan="2">GA4</th>
+        </tr>
         <tr>
           <th>Strona</th>
-          <th>Indeks</th>
-          <th class="num" title="Najlepsza pozycja frazy rankującej na ten adres (Senuto)">Pozycja (Senuto)</th>
-          <th class="num">Wyświetlenia</th>
+          <th class="num sep" title="Najlepsza pozycja frazy rankującej na ten adres (Senuto)">Pozycja</th>
+          <th class="num sep">Wyświetlenia</th>
           <th class="num">Kliknięcia</th>
           <th class="num">CTR</th>
-          <th class="num">Sesje GA4</th>
+          <th class="num sep">Sesje</th>
           <th class="num">Engagement</th>
-          <th class="num">Ostatni crawl</th>
         </tr>
       </thead>
       <tbody>
         {
           joined.map((r) => (
-            <tr>
+            <tr data-pos={r.senuto_position ?? ''} data-indexed={r.indexed ? '1' : '0'}>
               <td class="grow">
-                <a class="cell-url" href={r.url} rel="noopener" target="_blank">
-                  {stripOrigin(r.url)}
-                </a>
-              </td>
-              <td>
-                <span class={`chip ${r.indexed ? 'good' : 'bad'}`} title={r.coverage_state ?? ''}>
-                  {r.indexed ? 'w indeksie' : (r.coverage_state ?? 'poza indeksem')}
+                <span class="m-url">
+                  <i
+                    class={`st ${r.indexed ? 'ok' : 'no'}`}
+                    title={r.indexed ? `w indeksie · ostatni crawl: ${r.last_crawl ?? '–'}` : (r.coverage_state ?? 'poza indeksem')}
+                  />
+                  <a class="cell-url" href={r.url} rel="noopener" target="_blank">
+                    {stripOrigin(r.url)}
+                  </a>
                 </span>
               </td>
-              <td class="num">
+              <td class="num sep">
                 <span
-                  class={`pos-badge ${posClass(r.senuto_position)}`}
+                  class={`pos-badge ${r.senuto_position === null ? 'na' : posClass(r.senuto_position)}`}
                   title={
                     r.senuto_keyword
                       ? `„${r.senuto_keyword}" · fraz: ${r.senuto_keywords}, w TOP10: ${r.senuto_top10}`
-                      : undefined
+                      : 'brak fraz Senuto dla tego adresu'
                   }
                 >
                   {fmtNum(r.senuto_position, 0)}
                 </span>
               </td>
-              <td class="num">
+              <td class="num sep">
                 <span class="cell-bar">
                   {fmtInt(r.impressions)}
                   <span class="bar">
@@ -301,11 +318,19 @@ const maxImpressions = Math.max(...joined.map((r) => r.impressions ?? 0), 0);
               </td>
               <td class="num">{fmtInt(r.clicks)}</td>
               <td class="num">{fmtPct(r.ctr)}</td>
-              <td class="num">{fmtInt(r.ga4_sessions)}</td>
+              <td class="num sep">{r.ga4_sessions === null ? '–' : fmtInt(r.ga4_sessions)}</td>
               <td class="num">
-                <span class="pct-neutral">{fmtPct(r.engagement_rate)}</span>
+                {r.engagement_rate === null ? (
+                  '–'
+                ) : (
+                  <span class="erate">
+                    <span class="t">
+                      <i style={`width:${Math.min(100, Math.round(r.engagement_rate))}%`} />
+                    </span>
+                    <span class="v">{fmtPct(r.engagement_rate)}</span>
+                  </span>
+                )}
               </td>
-              <td class="num">{r.last_crawl ?? '–'}</td>
             </tr>
           ))
         }
@@ -327,6 +352,11 @@ const maxImpressions = Math.max(...joined.map((r) => r.impressions ?? 0), 0);
             </button>
           </div>
         </div>
+        <div class="legend-cause">
+          <span><i class="cause ctr" style="padding:1px 7px;">&nbsp;</i> wyświetlenia rosną, kliknięcia nie → popraw tytuł/opis</span>
+          <span><i class="cause pos" style="padding:1px 7px;">&nbsp;</i> pozycja spadła → treść/linki</span>
+          <span><i class="cause demand" style="padding:1px 7px;">&nbsp;</i> pozycja trzyma, mniej wyszukiwań → sezonowość popytu</span>
+        </div>
         {(['qoq', 'yoy'] as const).map((mode) => (
           <div data-prio-view={mode} hidden={mode !== 'qoq'}>
             <TableCard
@@ -340,6 +370,7 @@ const maxImpressions = Math.max(...joined.map((r) => r.impressions ?? 0), 0);
                 <thead>
                   <tr>
                     <th>Strona</th>
+                    <th>Przyczyna</th>
                     <th class="num">Kliknięcia</th>
                     <th class="num">Δ kliknięć</th>
                     <th class="num">Wyświetlenia</th>
@@ -357,30 +388,47 @@ const maxImpressions = Math.max(...joined.map((r) => r.impressions ?? 0), 0);
                           {stripOrigin(p.key)}
                         </a>
                       </td>
+                      <td>
+                        {(() => {
+                          const c = decodeCause(p.impressions_delta, p.position_delta, p.clicks_delta);
+                          return <span class={`cause ${c.key}`}>{c.label}</span>;
+                        })()}
+                      </td>
                       <td class="num">{fmtInt(p.clicks)}</td>
                       <td class="num">
-                        <span class={p.clicks_delta < 0 ? 'drop-delta down' : 'drop-delta up'}>
+                        <span class={`ddelta ${p.clicks_delta < 0 ? 'down' : p.clicks_delta > 0 ? 'up' : 'flat'}`}>
                           {p.clicks_delta > 0 ? '+' : ''}
-                          {fmtInt(p.clicks_delta)}
+                          {fmtInt(p.clicks_delta).replace('-', '−')}
                         </span>
                       </td>
                       <td class="num">{fmtInt(p.impressions)}</td>
                       <td class="num">
-                        <span class={p.impressions_delta < 0 ? 'drop-delta down' : 'drop-delta up'}>
+                        <span class={`ddelta ${p.impressions_delta < 0 ? 'down' : p.impressions_delta > 0 ? 'up' : 'flat'}`}>
                           {p.impressions_delta > 0 ? '+' : ''}
-                          {fmtInt(p.impressions_delta)}
+                          {fmtInt(p.impressions_delta).replace('-', '−')}
                         </span>
                       </td>
                       <td class="num">
                         <span class={`pos-badge ${posClass(p.position)}`}>{fmtNum(p.position, 1)}</span>
                       </td>
                       <td class="num">
-                        <span class={(p.position_delta ?? 0) > 0 ? 'drop-delta down' : 'drop-delta up'}>
-                          {p.position_delta === null ? '–' : (p.position_delta > 0 ? '+' : '') + fmtNum(p.position_delta, 1)}
+                        <span class={`ddelta ${(p.position_delta ?? 0) > 0 ? 'down' : (p.position_delta ?? 0) < 0 ? 'up' : 'flat'}`}>
+                          {p.position_delta === null
+                            ? '–'
+                            : (p.position_delta > 0 ? '+' : '') + fmtNum(p.position_delta, 1).replace('-', '−')}
                         </span>
                       </td>
                       <td class="num">
-                        <span class="pct-neutral">{fmtPct(p.engagement_rate)}</span>
+                        {p.engagement_rate === null ? (
+                          '–'
+                        ) : (
+                          <span class="erate">
+                            <span class="t">
+                              <i style={`width:${Math.min(100, Math.round(p.engagement_rate))}%`} />
+                            </span>
+                            <span class="v">{fmtPct(p.engagement_rate)}</span>
+                          </span>
+                        )}
                       </td>
                     </tr>
                   ))}
@@ -390,6 +438,32 @@ const maxImpressions = Math.max(...joined.map((r) => r.impressions ?? 0), 0);
           </div>
         ))}
         <script>
+          /* Filtry Matrixa stron (.fchip): predykat wpinany w kontroler TableCard
+             (tablecard:refilter) – współgra z filtrem tekstowym, sortem i pagerem. */
+          {
+            const chips = document.querySelector<HTMLElement>('[data-matrix-filters]');
+            const card = document.querySelector('table.m-table')?.closest('.table-card');
+            if (chips && card) {
+              const PREDICATES: Record<string, ((row: HTMLTableRowElement) => boolean) | null> = {
+                all: null,
+                top10: (r) => r.dataset.pos !== '' && Number(r.dataset.pos) <= 10,
+                chance: (r) => {
+                  const p = Number(r.dataset.pos);
+                  return r.dataset.pos !== '' && p >= 11 && p <= 30;
+                },
+                noindex: (r) => r.dataset.indexed === '0',
+              };
+              chips.addEventListener('click', (e) => {
+                const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('button[data-f]');
+                if (!btn) return;
+                chips.querySelectorAll('button').forEach((b) => b.classList.toggle('on', b === btn));
+                card.dispatchEvent(
+                  new CustomEvent('tablecard:refilter', { detail: PREDICATES[btn.dataset.f!] ?? null }),
+                );
+              });
+            }
+          }
+
           document.querySelector('[data-prio-seg]')?.addEventListener('click', (e) => {
             const btn = (e.target as HTMLElement).closest('button[data-mode]') as HTMLButtonElement | null;
             if (!btn) return;

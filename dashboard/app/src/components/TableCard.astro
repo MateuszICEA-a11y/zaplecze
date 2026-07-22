@@ -154,7 +154,8 @@ const paged = !isEmpty && pageSize > 0;
         const t = text.replace(/\s+/g, ' ').trim();
         return /[";\n]/.test(t) ? `"${t.replace(/"/g, '""')}"` : t;
       };
-      const header = Array.from(table.querySelectorAll<HTMLTableCellElement>('thead th'))
+      const headCells = table.tHead?.rows[table.tHead.rows.length - 1]?.cells;
+      const header = Array.from(headCells ?? [])
         .map((th) => cell((th.textContent ?? '').replace(/[↓↑]\s*$/, '')))
         .join(';');
       const lines = matched.map((r) =>
@@ -188,8 +189,13 @@ const paged = !isEmpty && pageSize > 0;
       update();
     });
 
-    /* Sortowanie: kolumny .num numerycznie (parsowanie pl-PL), reszta leksykalnie. */
-    const ths = table.querySelectorAll<HTMLTableCellElement>('thead th');
+    /* Sortowanie: kolumny .num numerycznie (parsowanie pl-PL), reszta leksykalnie.
+       Ostatni wiersz thead = wiersz kolumn (pierwsze wiersze mogą być grupami
+       źródeł jak w Matrixie – niesortowalne). */
+    const headRow = table.tHead?.rows[table.tHead.rows.length - 1];
+    const ths = (headRow?.cells
+      ? Array.from(headRow.cells)
+      : []) as HTMLTableCellElement[];
     if (body.rows.length >= 2) {
       ths.forEach((th, idx) => {
         th.classList.add('sortable');
