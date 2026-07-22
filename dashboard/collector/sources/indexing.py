@@ -12,6 +12,7 @@ CTR/pozycja z GSC (okno 30 dni).
 """
 import json
 import re
+import sys
 import time
 import urllib.error
 import urllib.parse
@@ -145,7 +146,11 @@ def fetch(cfg: dict, env: dict) -> dict:
                 "position": round(position, 1) if isinstance(position, (int, float)) else None,
             }
     except Exception as err:  # noqa: BLE001
-        raise classify_http_error(err, "indexing") from err
+        # Metryki searchanalytics są dodatkiem do inspekcji – 429 (kwota
+        # krótkoterminowa GSC po wielu przebiegach) nie może zabić źródła.
+        print(f"  indexing: metryki GSC niedostępne ({err}) – kontynuuję bez nich",
+              file=sys.stderr)
+        metrics = {}
 
     rows = []
     indexed = 0
