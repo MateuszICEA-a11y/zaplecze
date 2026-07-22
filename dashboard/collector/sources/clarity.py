@@ -102,7 +102,11 @@ def fetch(cfg: dict, env: dict) -> dict:
             rows = _metric(payload, "Traffic")
             rows.sort(key=lambda r: -(_to_int(r.get("totalSessionCount")) or 0))
             details[output_key] = [{
-                "name": _dim_value(row, dimension) or "?",
+                # Pusty Source oznacza ruch bez referrera (direct), nie błąd.
+                # Dla pozostałych wymiarów zachowujemy jawny opis zamiast „?”.
+                "name": _dim_value(row, dimension) or (
+                    "Wejście bezpośrednie" if dimension == "Source" else "Nieznana wartość"
+                ),
                 "sessions": _to_int(row.get("totalSessionCount")),
                 "users": _to_int(row.get("distinctUserCount")),
             } for row in rows[:TOP_ROWS]]
