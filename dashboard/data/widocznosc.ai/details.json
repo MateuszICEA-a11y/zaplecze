@@ -1,6 +1,6 @@
 {
  "date": "2026-07-22",
- "collected_at": "2026-07-22T08:21:22Z",
+ "collected_at": "2026-07-22T12:37:13Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -11017,27 +11017,27 @@
    "script_errors": "0",
    "url": [
     {
-     "name": "?",
-     "sessions": 3,
-     "users": 3
+     "name": "https://widocznosc.ai/geo/co-google-przemilcza/",
+     "sessions": 5,
+     "users": 5
     },
     {
-     "name": "?",
-     "sessions": 1,
-     "users": 3
+     "name": "https://widocznosc.ai/",
+     "sessions": 4,
+     "users": 8
     },
     {
-     "name": "?",
-     "sessions": 1,
-     "users": 1
-    },
-    {
-     "name": "?",
+     "name": "https://widocznosc.ai/narzedzia/brand-check/",
      "sessions": 1,
      "users": 1
     },
     {
-     "name": "?",
+     "name": "https://widocznosc.ai/narzedzia/",
+     "sessions": 1,
+     "users": 1
+    },
+    {
+     "name": "https://widocznosc.ai/modele-llm/claude-vs-gemini/",
      "sessions": 1,
      "users": 2
     },
@@ -11047,8 +11047,35 @@
      "users": 1
     }
    ],
-   "referrer": [],
-   "device": []
+   "referrer": [
+    {
+     "name": "?",
+     "sessions": 8,
+     "users": 14
+    },
+    {
+     "name": "google",
+     "sessions": 4,
+     "users": 4
+    }
+   ],
+   "device": [
+    {
+     "name": "PC",
+     "sessions": 12,
+     "users": 15
+    },
+    {
+     "name": "Mobile",
+     "sessions": 0,
+     "users": 2
+    },
+    {
+     "name": "Other",
+     "sessions": 0,
+     "users": 1
+    }
+   ]
   },
   "leads": {
    "leads": [
@@ -11160,11 +11187,11 @@
      "requests": 30
     },
     {
-     "path": "/test.php",
+     "path": "/openapi.json",
      "requests": 28
     },
     {
-     "path": "/openapi.json",
+     "path": "/test.php",
      "requests": 28
     },
     {
@@ -11320,6 +11347,610 @@
      }
     ]
    },
+   "daily": [
+    {
+     "date": "2026-06-01",
+     "sessions": 20,
+     "active_users": 12,
+     "new_users": 12,
+     "returning_users": 0,
+     "pageviews": 67,
+     "engagement_rate": 65.0,
+     "avg_engagement_s": 84.0,
+     "engaged_sessions": 13,
+     "engaged_per_user": 1.08,
+     "pages_per_session": 3.35,
+     "organic_sessions": 2
+    },
+    {
+     "date": "2026-06-02",
+     "sessions": 12,
+     "active_users": 7,
+     "new_users": 3,
+     "returning_users": 4,
+     "pageviews": 44,
+     "engagement_rate": 50.0,
+     "avg_engagement_s": 84.1,
+     "engaged_sessions": 6,
+     "engaged_per_user": 0.86,
+     "pages_per_session": 3.67,
+     "organic_sessions": 4
+    },
+    {
+     "date": "2026-06-03",
+     "sessions": 9,
+     "active_users": 5,
+     "new_users": 3,
+     "returning_users": 2,
+     "pageviews": 52,
+     "engagement_rate": 55.56,
+     "avg_engagement_s": 109.4,
+     "engaged_sessions": 5,
+     "engaged_per_user": 1.0,
+     "pages_per_session": 5.78,
+     "organic_sessions": 1
+    },
+    {
+     "date": "2026-06-04",
+     "sessions": 4,
+     "active_users": 4,
+     "new_users": 2,
+     "returning_users": 2,
+     "pageviews": 6,
+     "engagement_rate": 50.0,
+     "avg_engagement_s": 19.0,
+     "engaged_sessions": 2,
+     "engaged_per_user": 0.5,
+     "pages_per_session": 1.5,
+     "organic_sessions": 2
+    },
+    {
+     "date": "2026-06-05",
+     "sessions": 4,
+     "active_users": 3,
+     "new_users": 2,
+     "returning_users": 1,
+     "pageviews": 36,
+     "engagement_rate": 25.0,
+     "avg_engagement_s": 187.2,
+     "engaged_sessions": 1,
+     "engaged_per_user": 0.33,
+     "pages_per_session": 9.0,
+     "organic_sessions": 0
+    },
+    {
+     "date": "2026-06-06",
+     "sessions": 2,
+     "active_users": 2,
+     "new_users": 0,
+     "returning_users": 2,
+     "pageviews": 9,
+     "engagement_rate": 50.0,
+     "avg_engagement_s": 24.5,
+     "engaged_sessions": 1,
+     "engaged_per_user": 0.5,
+     "pages_per_session": 4.5,
+     "organic_sessions": 1
+    },
+    {
+     "date": "2026-06-07",
+     "sessions": 10,
+     "active_users": 5,
+     "new_users": 2,
+     "returning_users": 3,
+     "pageviews": 31,
+     "engagement_rate": 40.0,
+     "avg_engagement_s": 32.1,
+     "engaged_sessions": 4,
+     "engaged_per_user": 0.8,
+     "pages_per_session": 3.1,
+     "organic_sessions": 7
+    },
+    {
+     "date": "2026-06-08",
+     "sessions": 16,
+     "active_users": 7,
+     "new_users": 4,
+     "returning_users": 3,
+     "pageviews": 49,
+     "engagement_rate": 62.5,
+     "avg_engagement_s": 65.4,
+     "engaged_sessions": 10,
+     "engaged_per_user": 1.43,
+     "pages_per_session": 3.06,
+     "organic_sessions": 6
+    },
+    {
+     "date": "2026-06-09",
+     "sessions": 2,
+     "active_users": 1,
+     "new_users": 0,
+     "returning_users": 1,
+     "pageviews": 5,
+     "engagement_rate": 50.0,
+     "avg_engagement_s": 45.0,
+     "engaged_sessions": 1,
+     "engaged_per_user": 1.0,
+     "pages_per_session": 2.5,
+     "organic_sessions": 0
+    },
+    {
+     "date": "2026-06-10",
+     "sessions": 8,
+     "active_users": 5,
+     "new_users": 2,
+     "returning_users": 3,
+     "pageviews": 59,
+     "engagement_rate": 50.0,
+     "avg_engagement_s": 103.1,
+     "engaged_sessions": 4,
+     "engaged_per_user": 0.8,
+     "pages_per_session": 7.38,
+     "organic_sessions": 5
+    },
+    {
+     "date": "2026-06-11",
+     "sessions": 1,
+     "active_users": 0,
+     "new_users": 0,
+     "returning_users": 0,
+     "pageviews": 1,
+     "engagement_rate": 0.0,
+     "avg_engagement_s": 0.0,
+     "engaged_sessions": 0,
+     "engaged_per_user": 0,
+     "pages_per_session": 1.0,
+     "organic_sessions": 1
+    },
+    {
+     "date": "2026-06-12",
+     "sessions": 16,
+     "active_users": 12,
+     "new_users": 10,
+     "returning_users": 2,
+     "pageviews": 75,
+     "engagement_rate": 81.25,
+     "avg_engagement_s": 160.8,
+     "engaged_sessions": 13,
+     "engaged_per_user": 1.08,
+     "pages_per_session": 4.69,
+     "organic_sessions": 4
+    },
+    {
+     "date": "2026-06-13",
+     "sessions": 6,
+     "active_users": 5,
+     "new_users": 3,
+     "returning_users": 2,
+     "pageviews": 17,
+     "engagement_rate": 66.67,
+     "avg_engagement_s": 78.3,
+     "engaged_sessions": 4,
+     "engaged_per_user": 0.8,
+     "pages_per_session": 2.83,
+     "organic_sessions": 2
+    },
+    {
+     "date": "2026-06-14",
+     "sessions": 2,
+     "active_users": 1,
+     "new_users": 0,
+     "returning_users": 1,
+     "pageviews": 6,
+     "engagement_rate": 50.0,
+     "avg_engagement_s": 89.0,
+     "engaged_sessions": 1,
+     "engaged_per_user": 1.0,
+     "pages_per_session": 3.0,
+     "organic_sessions": 2
+    },
+    {
+     "date": "2026-06-15",
+     "sessions": 23,
+     "active_users": 12,
+     "new_users": 6,
+     "returning_users": 6,
+     "pageviews": 71,
+     "engagement_rate": 56.52,
+     "avg_engagement_s": 78.1,
+     "engaged_sessions": 13,
+     "engaged_per_user": 1.08,
+     "pages_per_session": 3.09,
+     "organic_sessions": 5
+    },
+    {
+     "date": "2026-06-16",
+     "sessions": 4,
+     "active_users": 2,
+     "new_users": 1,
+     "returning_users": 1,
+     "pageviews": 7,
+     "engagement_rate": 50.0,
+     "avg_engagement_s": 32.2,
+     "engaged_sessions": 2,
+     "engaged_per_user": 1.0,
+     "pages_per_session": 1.75,
+     "organic_sessions": 0
+    },
+    {
+     "date": "2026-06-17",
+     "sessions": 13,
+     "active_users": 6,
+     "new_users": 1,
+     "returning_users": 5,
+     "pageviews": 34,
+     "engagement_rate": 46.15,
+     "avg_engagement_s": 44.2,
+     "engaged_sessions": 6,
+     "engaged_per_user": 1.0,
+     "pages_per_session": 2.62,
+     "organic_sessions": 1
+    },
+    {
+     "date": "2026-06-18",
+     "sessions": 6,
+     "active_users": 4,
+     "new_users": 1,
+     "returning_users": 3,
+     "pageviews": 25,
+     "engagement_rate": 100.0,
+     "avg_engagement_s": 38.5,
+     "engaged_sessions": 6,
+     "engaged_per_user": 1.5,
+     "pages_per_session": 4.17,
+     "organic_sessions": 0
+    },
+    {
+     "date": "2026-06-19",
+     "sessions": 5,
+     "active_users": 3,
+     "new_users": 1,
+     "returning_users": 2,
+     "pageviews": 14,
+     "engagement_rate": 80.0,
+     "avg_engagement_s": 99.6,
+     "engaged_sessions": 4,
+     "engaged_per_user": 1.33,
+     "pages_per_session": 2.8,
+     "organic_sessions": 0
+    },
+    {
+     "date": "2026-06-22",
+     "sessions": 3,
+     "active_users": 2,
+     "new_users": 0,
+     "returning_users": 2,
+     "pageviews": 7,
+     "engagement_rate": 66.67,
+     "avg_engagement_s": 44.0,
+     "engaged_sessions": 2,
+     "engaged_per_user": 1.0,
+     "pages_per_session": 2.33,
+     "organic_sessions": 2
+    },
+    {
+     "date": "2026-06-24",
+     "sessions": 2,
+     "active_users": 1,
+     "new_users": 1,
+     "returning_users": 0,
+     "pageviews": 4,
+     "engagement_rate": 50.0,
+     "avg_engagement_s": 77.5,
+     "engaged_sessions": 1,
+     "engaged_per_user": 1.0,
+     "pages_per_session": 2.0,
+     "organic_sessions": 1
+    },
+    {
+     "date": "2026-06-25",
+     "sessions": 4,
+     "active_users": 3,
+     "new_users": 1,
+     "returning_users": 2,
+     "pageviews": 7,
+     "engagement_rate": 50.0,
+     "avg_engagement_s": 88.0,
+     "engaged_sessions": 2,
+     "engaged_per_user": 0.67,
+     "pages_per_session": 1.75,
+     "organic_sessions": 0
+    },
+    {
+     "date": "2026-06-26",
+     "sessions": 2,
+     "active_users": 1,
+     "new_users": 0,
+     "returning_users": 1,
+     "pageviews": 3,
+     "engagement_rate": 50.0,
+     "avg_engagement_s": 3.5,
+     "engaged_sessions": 1,
+     "engaged_per_user": 1.0,
+     "pages_per_session": 1.5,
+     "organic_sessions": 0
+    },
+    {
+     "date": "2026-06-28",
+     "sessions": 1,
+     "active_users": 1,
+     "new_users": 0,
+     "returning_users": 1,
+     "pageviews": 1,
+     "engagement_rate": 0.0,
+     "avg_engagement_s": 0.0,
+     "engaged_sessions": 0,
+     "engaged_per_user": 0.0,
+     "pages_per_session": 1.0,
+     "organic_sessions": 1
+    },
+    {
+     "date": "2026-06-29",
+     "sessions": 2,
+     "active_users": 2,
+     "new_users": 0,
+     "returning_users": 2,
+     "pageviews": 4,
+     "engagement_rate": 100.0,
+     "avg_engagement_s": 238.5,
+     "engaged_sessions": 2,
+     "engaged_per_user": 1.0,
+     "pages_per_session": 2.0,
+     "organic_sessions": 0
+    },
+    {
+     "date": "2026-06-30",
+     "sessions": 2,
+     "active_users": 1,
+     "new_users": 0,
+     "returning_users": 1,
+     "pageviews": 0,
+     "engagement_rate": 0.0,
+     "avg_engagement_s": 106.0,
+     "engaged_sessions": 0,
+     "engaged_per_user": 0.0,
+     "pages_per_session": 0.0,
+     "organic_sessions": 0
+    },
+    {
+     "date": "2026-07-01",
+     "sessions": 2,
+     "active_users": 1,
+     "new_users": 0,
+     "returning_users": 1,
+     "pageviews": 3,
+     "engagement_rate": 50.0,
+     "avg_engagement_s": 33.0,
+     "engaged_sessions": 1,
+     "engaged_per_user": 1.0,
+     "pages_per_session": 1.5,
+     "organic_sessions": 1
+    },
+    {
+     "date": "2026-07-03",
+     "sessions": 5,
+     "active_users": 3,
+     "new_users": 2,
+     "returning_users": 1,
+     "pageviews": 12,
+     "engagement_rate": 40.0,
+     "avg_engagement_s": 25.2,
+     "engaged_sessions": 2,
+     "engaged_per_user": 0.67,
+     "pages_per_session": 2.4,
+     "organic_sessions": 0
+    },
+    {
+     "date": "2026-07-04",
+     "sessions": 3,
+     "active_users": 1,
+     "new_users": 0,
+     "returning_users": 1,
+     "pageviews": 5,
+     "engagement_rate": 66.67,
+     "avg_engagement_s": 78.0,
+     "engaged_sessions": 2,
+     "engaged_per_user": 2.0,
+     "pages_per_session": 1.67,
+     "organic_sessions": 3
+    },
+    {
+     "date": "2026-07-05",
+     "sessions": 2,
+     "active_users": 1,
+     "new_users": 0,
+     "returning_users": 1,
+     "pageviews": 8,
+     "engagement_rate": 50.0,
+     "avg_engagement_s": 236.5,
+     "engaged_sessions": 1,
+     "engaged_per_user": 1.0,
+     "pages_per_session": 4.0,
+     "organic_sessions": 1
+    },
+    {
+     "date": "2026-07-06",
+     "sessions": 2,
+     "active_users": 2,
+     "new_users": 1,
+     "returning_users": 1,
+     "pageviews": 2,
+     "engagement_rate": 50.0,
+     "avg_engagement_s": 1.0,
+     "engaged_sessions": 1,
+     "engaged_per_user": 0.5,
+     "pages_per_session": 1.0,
+     "organic_sessions": 0
+    },
+    {
+     "date": "2026-07-07",
+     "sessions": 5,
+     "active_users": 4,
+     "new_users": 1,
+     "returning_users": 3,
+     "pageviews": 11,
+     "engagement_rate": 80.0,
+     "avg_engagement_s": 60.0,
+     "engaged_sessions": 4,
+     "engaged_per_user": 1.0,
+     "pages_per_session": 2.2,
+     "organic_sessions": 3
+    },
+    {
+     "date": "2026-07-08",
+     "sessions": 1,
+     "active_users": 1,
+     "new_users": 1,
+     "returning_users": 0,
+     "pageviews": 1,
+     "engagement_rate": 100.0,
+     "avg_engagement_s": 45.0,
+     "engaged_sessions": 1,
+     "engaged_per_user": 1.0,
+     "pages_per_session": 1.0,
+     "organic_sessions": 0
+    },
+    {
+     "date": "2026-07-09",
+     "sessions": 4,
+     "active_users": 0,
+     "new_users": 0,
+     "returning_users": 0,
+     "pageviews": 2,
+     "engagement_rate": 0.0,
+     "avg_engagement_s": 0.0,
+     "engaged_sessions": 0,
+     "engaged_per_user": 0,
+     "pages_per_session": 0.5,
+     "organic_sessions": 0
+    },
+    {
+     "date": "2026-07-10",
+     "sessions": 3,
+     "active_users": 1,
+     "new_users": 0,
+     "returning_users": 1,
+     "pageviews": 3,
+     "engagement_rate": 33.33,
+     "avg_engagement_s": 0.7,
+     "engaged_sessions": 1,
+     "engaged_per_user": 1.0,
+     "pages_per_session": 1.0,
+     "organic_sessions": 1
+    },
+    {
+     "date": "2026-07-13",
+     "sessions": 3,
+     "active_users": 2,
+     "new_users": 1,
+     "returning_users": 1,
+     "pageviews": 4,
+     "engagement_rate": 66.67,
+     "avg_engagement_s": 24.7,
+     "engaged_sessions": 2,
+     "engaged_per_user": 1.0,
+     "pages_per_session": 1.33,
+     "organic_sessions": 2
+    },
+    {
+     "date": "2026-07-14",
+     "sessions": 2,
+     "active_users": 1,
+     "new_users": 0,
+     "returning_users": 1,
+     "pageviews": 6,
+     "engagement_rate": 50.0,
+     "avg_engagement_s": 21.5,
+     "engaged_sessions": 1,
+     "engaged_per_user": 1.0,
+     "pages_per_session": 3.0,
+     "organic_sessions": 0
+    },
+    {
+     "date": "2026-07-16",
+     "sessions": 3,
+     "active_users": 3,
+     "new_users": 1,
+     "returning_users": 2,
+     "pageviews": 9,
+     "engagement_rate": 100.0,
+     "avg_engagement_s": 185.3,
+     "engaged_sessions": 3,
+     "engaged_per_user": 1.0,
+     "pages_per_session": 3.0,
+     "organic_sessions": 1
+    },
+    {
+     "date": "2026-07-17",
+     "sessions": 6,
+     "active_users": 4,
+     "new_users": 3,
+     "returning_users": 1,
+     "pageviews": 8,
+     "engagement_rate": 50.0,
+     "avg_engagement_s": 150.3,
+     "engaged_sessions": 3,
+     "engaged_per_user": 0.75,
+     "pages_per_session": 1.33,
+     "organic_sessions": 0
+    },
+    {
+     "date": "2026-07-18",
+     "sessions": 2,
+     "active_users": 2,
+     "new_users": 2,
+     "returning_users": 0,
+     "pageviews": 3,
+     "engagement_rate": 100.0,
+     "avg_engagement_s": 185.5,
+     "engaged_sessions": 2,
+     "engaged_per_user": 1.0,
+     "pages_per_session": 1.5,
+     "organic_sessions": 0
+    },
+    {
+     "date": "2026-07-19",
+     "sessions": 6,
+     "active_users": 2,
+     "new_users": 0,
+     "returning_users": 2,
+     "pageviews": 7,
+     "engagement_rate": 33.33,
+     "avg_engagement_s": 19.0,
+     "engaged_sessions": 2,
+     "engaged_per_user": 1.0,
+     "pages_per_session": 1.17,
+     "organic_sessions": 4
+    },
+    {
+     "date": "2026-07-20",
+     "sessions": 4,
+     "active_users": 2,
+     "new_users": 0,
+     "returning_users": 2,
+     "pageviews": 5,
+     "engagement_rate": 50.0,
+     "avg_engagement_s": 74.0,
+     "engaged_sessions": 2,
+     "engaged_per_user": 1.0,
+     "pages_per_session": 1.25,
+     "organic_sessions": 2
+    },
+    {
+     "date": "2026-07-21",
+     "sessions": 1,
+     "active_users": 0,
+     "new_users": 0,
+     "returning_users": 0,
+     "pageviews": 1,
+     "engagement_rate": 0.0,
+     "avg_engagement_s": 0.0,
+     "engaged_sessions": 0,
+     "engaged_per_user": 0,
+     "pages_per_session": 1.0,
+     "organic_sessions": 0
+    }
+   ],
    "monthly": [
     {
      "month": "202606",
