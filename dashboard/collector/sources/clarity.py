@@ -13,7 +13,9 @@ from ._http import classify_http_error, request_json
 ENDPOINT = "https://www.clarity.ms/export-data/api/v1/project-live-insights"
 NUM_OF_DAYS = "3"
 # Wymiary do details – każde wywołanie zużywa 1 z 10 dziennych requestów.
-DIMENSIONS = ["URL", "Referrer", "Device"]
+# „Referrer” nie jest wymiarem Data Export API (to nazwa metryki w docs).
+# Źródło wejścia jest zwracane przez wspierany wymiar „Source”.
+DIMENSIONS = [("URL", "url"), ("Source", "referrer"), ("Device", "device")]
 TOP_ROWS = 50
 
 
@@ -94,17 +96,17 @@ def fetch(cfg: dict, env: dict) -> dict:
         "quickback_clicks": (_metric(base, "QuickbackClick") or [{}])[0].get("subTotal"),
         "script_errors": (_metric(base, "ScriptErrorCount") or [{}])[0].get("subTotal"),
     }
-    for dimension in DIMENSIONS:
+    for dimension, output_key in DIMENSIONS:
         try:
             payload = _call(token, {"dimension1": dimension})
             rows = _metric(payload, "Traffic")
             rows.sort(key=lambda r: -(_to_int(r.get("totalSessionCount")) or 0))
-            details[dimension.lower()] = [{
+            details[output_key] = [{
                 "name": _dim_value(row, dimension) or "?",
                 "sessions": _to_int(row.get("totalSessionCount")),
                 "users": _to_int(row.get("distinctUserCount")),
             } for row in rows[:TOP_ROWS]]
         except SourceError:
-            details[dimension.lower()] = []
+            details[output_key] = []
 
     return {"summary": summary, "details": details}

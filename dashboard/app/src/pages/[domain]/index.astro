@@ -12,6 +12,7 @@ import {
   latestWithDeltaFrom,
   metricSeries,
   metricSeriesFrom,
+  sourceStatuses,
 } from '../../lib/data';
 import { fmtInt } from '../../lib/format';
 
@@ -25,6 +26,7 @@ const { name } = Astro.props;
 const snapshots = loadSnapshots(domain!);
 const latest = latestSnapshot(domain!);
 const details = loadDetails(domain!);
+const statuses = sourceStatuses(latest);
 
 const top3 = metricSeries(snapshots, 'senuto', 'top3');
 const top10 = metricSeries(snapshots, 'senuto', 'top10');
@@ -90,8 +92,8 @@ const refDomainsTrend = trimTrend(refDomains);
 const leads = details.sources.leads?.leads ?? [];
 const weekAgo = Date.now() - 7 * 86400_000;
 const leadsRecent = leads.filter((l) => new Date(l.ts).getTime() >= weekAgo).length;
-const leadsConfigured = latest?.sources.leads != null && latest.sources.leads.status !== 'not_configured';
-const clarityConfigured = latest?.sources.clarity != null && latest.sources.clarity.status !== 'not_configured';
+const leadsConfigured = statuses.leads != null && statuses.leads.status !== 'not_configured';
+const clarityConfigured = statuses.clarity != null && statuses.clarity.status !== 'not_configured';
 
 /* '2026-07-22' → '22.07' (pasek zdrowia, pigułki stale). */
 const fmtShort = (date: string | null | undefined): string =>
@@ -116,7 +118,7 @@ const HEALTH_LABELS: [string, string][] = [
   ['bing', 'Bing'],
 ];
 const health = HEALTH_LABELS.flatMap(([key, label]) => {
-  const src = latest?.sources[key];
+  const src = statuses[key];
   if (!src || src.status === 'not_configured') return [];
   const cls = src.status === 'ok' ? 'ok' : src.status === 'token_expired' ? 'warn' : 'err';
   const when = src.status === 'ok'
@@ -130,7 +132,7 @@ const health = HEALTH_LABELS.flatMap(([key, label]) => {
 });
 
 /* Clarity: gdy źródło leży, karta pokazuje ostatni udany pomiar zamiast „–". */
-const clarityDown = clarityConfigured && latest?.sources.clarity?.status !== 'ok';
+const clarityDown = clarityConfigured && statuses.clarity?.status !== 'ok';
 const clarityLast = clarityDown ? lastOk('clarity') : null;
 const claritySessions = clarityDown
   ? typeof clarityLast?.data.sessions === 'number'
@@ -191,7 +193,7 @@ const hasAttention = pageDrops.length > 0 || nearTop.length > 0 || idxRows.lengt
     health.length > 0 && (
       <div class="health">
         {health.map((h) => (
-          <span class="hchip">
+          <span class="hchip rstat">
             <span class={`d ${h.cls}`} />
             <b>{h.label}</b>
             <span class="when">{h.when}</span>
@@ -205,7 +207,7 @@ const hasAttention = pageDrops.length > 0 || nearTop.length > 0 || idxRows.lengt
     <h2>Najważniejsze wskaźniki</h2>
     <span class="section-meta">porównanie 7-dniowe</span>
   </div>
-  <div class="kwrap">
+  <div class="kwrap rgrid">
     <StatCard
       label="Wyświetlenia / dzień · GSC"
       value={statImpressions.value}
@@ -234,7 +236,7 @@ const hasAttention = pageDrops.length > 0 || nearTop.length > 0 || idxRows.lengt
         value={claritySessions}
         delta={clarityDown ? null : statSessions.delta}
         staleDate={clarityDown ? fmtShort(clarityLast?.date) : null}
-        staleReason={clarityDown && latest?.sources.clarity?.error?.includes('429') ? 'limit API' : undefined}
+        staleReason={clarityDown && statuses.clarity?.error?.includes('429') ? 'limit API' : undefined}
         dot="var(--ga4)"
         href={`/${domain}/clarity/`}
       />
@@ -259,10 +261,11 @@ const hasAttention = pageDrops.length > 0 || nearTop.length > 0 || idxRows.lengt
       title="Kliknięcia i wyświetlenia"
       timestamps={clicksTrend.timestamps}
       series={[
-        { label: 'Kliknięcia', values: clicksTrend.values, color: '--gsc', dash: [] },
-        { label: 'Wyświetlenia', values: impressionsTrend.values, fill: true, color: '--series-2', dash: [6, 4] },
+        { label: 'Kliknięcia', values: clicksTrend.values, fill: true, color: '--gsc', dash: [] },
+        { label: 'Wyświetlenia', values: impressionsTrend.values, color: '--series-2', dash: [6, 4] },
       ]}
       sourceColor="--gsc"
+      secondaryAxis
       overview
     />
     <TimeSeriesChart

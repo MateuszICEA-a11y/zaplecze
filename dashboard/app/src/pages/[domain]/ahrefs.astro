@@ -4,6 +4,7 @@ import DomainHeader from '../../components/DomainHeader.astro';
 import StatCard from '../../components/StatCard.astro';
 import TableCard from '../../components/TableCard.astro';
 import TimeSeriesChart from '../../components/TimeSeriesChart.astro';
+import SourceState from '../../components/SourceState.astro';
 import {
   loadConfig,
   loadSnapshots,
@@ -11,10 +12,11 @@ import {
   latestSnapshot,
   latestWithDelta,
   latestWithDeltaFrom,
-  metricSeries,
   metricSeriesFrom,
+  sourceStatuses,
+  isTemporarySourceFailure,
 } from '../../lib/data';
-import { fmtInt, fmtNum, drClass, barWidth } from '../../lib/format';
+import { fmtInt, fmtNum, fmtDate, barWidth } from '../../lib/format';
 
 export function getStaticPaths() {
   return loadConfig().domains.map((d) => ({ params: { domain: d.id }, props: { name: d.name } }));
@@ -37,49 +39,115 @@ const linkSpec = (field: string): [string, string][] => [
 ];
 const backlinks = metricSeriesFrom(snapshots, linkSpec('backlinks'));
 const refDomains = metricSeriesFrom(snapshots, linkSpec('referring_domains'));
-const domainRating = metricSeries(snapshots, 'ahrefs', 'domain_rating');
-
 const statBacklinks = latestWithDeltaFrom(snapshots, linkSpec('backlinks'));
 const statRefDomains = latestWithDeltaFrom(snapshots, linkSpec('referring_domains'));
 const statDomainRating = latestWithDelta(snapshots, 'ahrefs', 'domain_rating', 30);
 const statRank = latestWithDelta(snapshots, 'ahrefs', 'ahrefs_rank', 30);
 
-const ahrefs = latest?.sources.ahrefs;
+const ahrefs = sourceStatuses(latest).ahrefs;
+const ahrefsLastOk = [...snapshots].reverse().find((snapshot) => snapshot.sources.ahrefs?.status === 'ok');
+const ahrefsStaleDate = isTemporarySourceFailure(ahrefs) ? ahrefsLastOk?.date ?? null : null;
 
 // Historia Ahrefs w API = „Insufficient plan”, więc szeregi rosną tylko z dziennych
 // snapshotów – wykresy pokazujemy dopiero, gdy jest co rysować (≥3 punkty).
 const chartPoints = backlinks.values.filter((v) => typeof v === 'number').length;
 const showCharts = chartPoints >= 3;
+const firstDate = snapshots.find((s) => s.sources.ahrefs?.status === 'ok')?.date ?? null;
+const firstDateShort = firstDate
+  ? new Date(`${firstDate}T00:00:00Z`).toLocaleDateString('pl-PL', { day: '2-digit', month: '2-digit', timeZone: 'UTC' })
+  : null;
+const collectingLabel = firstDateShort ? `zbieramy od ${firstDateShort}` : 'zbieramy historię';
+
+/* Rozkład jakości: linkujące domeny w przedziałach DR (handoff §15.2). */
+const buckets = [
+  { range: '90–100', min: 90, color: 'var(--status-ok)' },
+  { range: '70–89', min: 70, color: 'color-mix(in srgb, var(--status-ok) 60%, var(--accent-blue))' },
+  { range: '50–69', min: 50, color: 'var(--accent-blue)' },
+  { range: '30–49', min: 30, color: 'var(--series-2)' },
+  { range: '0–29', min: 0, color: 'var(--ink-faint)' },
+].map((b, i, arr) => {
+  const max = i === 0 ? 101 : arr[i - 1].min;
+  const count = refDomainsList.filter(
+    (d) => typeof d.domain_rating === 'number' && d.domain_rating >= b.min && d.domain_rating < max,
+  ).length;
+  return { ...b, count };
+});
+const maxBucket = Math.max(...buckets.map((b) => b.count), 1);
+
+/* Tabela domen: tier DR (hi ≥70 / mid ≥40 / lo), kafelek-inicjał, wiek linku. */
+const drTier = (dr: number | null | undefined) =>
+  typeof dr !== 'number' ? '' : dr >= 70 ? 'hi' : dr >= 40 ? 'mid' : 'lo';
+const FAV_COLORS = ['#d97757', '#0a9cff', '#23c483', '#b07cff', '#f0883e', '#17c3b2'];
+const favColor = (dom: string) => {
+  let h = 0;
+  for (let i = 0; i < dom.length; i++) h = (h * 31 + dom.charCodeAt(i)) % FAV_COLORS.length;
+  return FAV_COLORS[h];
+};
+const now = Date.now();
+const ageOf = (dateStr: string | null | undefined): string | null => {
+  if (!dateStr) return null;
+  const days = Math.round((now - new Date(dateStr).getTime()) / 86400_000);
+  if (days < 0) return null;
+  if (days < 30) return `${days} dni`;
+  const months = Math.round(days / 30);
+  if (months < 12) return `${months} mies.`;
+  return `${(days / 365).toFixed(1).replace('.', ',')} lat`;
+};
+const thisYear = new Date().getFullYear().toString();
 ---
 
 <Layout title={`${name} – Ahrefs`}>
-  <DomainHeader domain={domain!} name={name} active="ahrefs" latest={latest} />
+  <DomainHeader domain={domain!} name={name} active="ahrefs" latest={latest} themeToggle accent="var(--ahrefs)" />
 
-  {
-    ahrefs && ahrefs.status !== 'ok' && (
-      <div class={`banner ${ahrefs.status === 'token_expired' ? 'warn' : 'err'}`}>
-        <strong>Ahrefs</strong>: {ahrefs.error ?? 'błąd źródła'}
-      </div>
-    )
-  }
+  <div class="ahrefs-note">
+    Domain Rating pokazuje bieżącą siłę profilu linków w skali 0–100. Obecny plan Ahrefs nie udostępnia
+    historii, dlatego trendy powstają z codziennych snapshotów. Już teraz dostępne są rozkład jakości domen,
+    ich DR, liczba linków do celu oraz wiek pierwszego linku.
+  </div>
 
-  <div class="section-head"><h2>Profil linków</h2></div>
-  <div class="stat-grid">
+  <SourceState
+    name="Ahrefs"
+    result={ahrefs}
+    lastDate={ahrefsLastOk?.date}
+    metrics={[
+      { label: 'Domain Rating', value: statDomainRating.value },
+      { label: 'Backlinki', value: statBacklinks.value },
+      { label: 'Domeny linkujące', value: statRefDomains.value },
+    ]}
+  />
+
+  <div class="section-head"><h2>Profil linków</h2><span class="section-meta">stan bieżący</span></div>
+  <div class="stat-grid rgrid ahrefs-kpis">
     <StatCard
       label="Domain Rating"
       value={statDomainRating.value}
+      max={100}
       delta={statDomainRating.delta}
       deltaLabel="30 dni"
       precision={1}
-      trend={domainRating.values}
+      src="ahrefs"
+      staleDate={ahrefsStaleDate}
       hero
+    >
+      {typeof statDomainRating.value === 'number' && (
+        <div class="drbar"><i style={`width:${Math.min(100, Math.max(0, statDomainRating.value))}%`} /></div>
+      )}
+    </StatCard>
+    <StatCard
+      label="Backlinki"
+      value={statBacklinks.value}
+      delta={statBacklinks.delta}
+      trend={showCharts ? backlinks.values : undefined}
+      emptyDeltaLabel={!showCharts ? collectingLabel : undefined}
+      staleDate={ahrefsStaleDate}
     />
-    <StatCard label="Backlinki" value={statBacklinks.value} delta={statBacklinks.delta} trend={backlinks.values} />
     <StatCard
       label="Domeny linkujące"
       value={statRefDomains.value}
       delta={statRefDomains.delta}
-      trend={refDomains.values}
+      trend={showCharts ? refDomains.values : undefined}
+      emptyDeltaLabel={!showCharts ? collectingLabel : undefined}
+      staleDate={ahrefsStaleDate}
     />
     <StatCard
       label="Ahrefs Rank"
@@ -87,12 +155,34 @@ const showCharts = chartPoints >= 3;
       delta={statRank.delta}
       deltaLabel="30 dni"
       goodWhen="down"
+      emptyDeltaLabel={!showCharts ? collectingLabel : undefined}
+      staleDate={ahrefsStaleDate}
     />
   </div>
 
-  {
-    showCharts ? (
-      <div class="chart-grid">
+  <div class="section-head"><h2>Jakość i trend</h2></div>
+  <div class="chart-grid">
+    <div class="beh-card">
+      <h4>Rozkład domen linkujących wg DR</h4>
+      <div class="sub">ile linkujących domen w każdym przedziale autorytetu (top {refDomainsList.length})</div>
+      {
+        refDomainsList.length > 0 ? (
+          <div class="dist">
+            {buckets.map((b) => (
+              <div class="row">
+                <span class="l">DR {b.range}</span>
+                <span class="t"><i style={`width:${Math.max(4, Math.round((b.count / maxBucket) * 100))}%;background:${b.color}`} /></span>
+                <span class="n">{fmtInt(b.count)}</span>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div class="sub">Rozkład pojawi się razem z listą domen linkujących.</div>
+        )
+      }
+    </div>
+    {
+      showCharts ? (
         <TimeSeriesChart
           title="Backlinki i domeny linkujące"
           meta="dziennie"
@@ -101,26 +191,29 @@ const showCharts = chartPoints >= 3;
             { label: 'Backlinki', values: backlinks.values, fill: true },
             { label: 'Domeny', values: refDomains.values },
           ]}
+          overview
         />
-        <TimeSeriesChart
-          title="Domain Rating"
-          meta="dziennie"
-          timestamps={domainRating.timestamps}
-          series={[{ label: 'DR', values: domainRating.values }]}
-          precision={1}
-        />
-      </div>
-    ) : (
-      <p class="charts-pending">
-        Wykresy trendów pojawią się po kilku dniach zbierania snapshotów – API Ahrefs nie udostępnia
-        historii na obecnym planie, więc szeregi rosną z dziennych pomiarów (od 2026-07-20).
-      </p>
-    )
-  }
+      ) : (
+        <div class="empty-chart">
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <path d="M3 3v18h18" />
+            <path d="M7 14l3-3 3 2 4-5" stroke-dasharray="2 2" />
+          </svg>
+          <h4>Trend backlinków – zbieramy historię</h4>
+          <p>
+            API Ahrefs nie udostępnia historii na obecnym planie. Szeregi rosną z dziennych
+            snapshotów{firstDate ? ` – pierwszy odczyt: ${firstDate}` : ''}. Wykres pojawi się po
+            kilku dniach.
+          </p>
+        </div>
+      )
+    }
+  </div>
 
+  <div class="section-head"><h2>Domeny linkujące</h2></div>
   <TableCard
-    title="Domeny linkujące"
-    meta={details.date ? `stan z ${details.date} · opublikowane linki, sort wg DR` : undefined}
+    title="Domeny"
+    meta={details.date ? `stan z ${fmtDate(details.date)} · opublikowane linki` : undefined}
     count={refDomainsList.length}
     filter
     empty="Lista domen pojawi się po najbliższym przebiegu collectora (codziennie 6:30)."
@@ -137,26 +230,108 @@ const showCharts = chartPoints >= 3;
       <tbody>
         {
           refDomainsList.map((d) => (
-            <tr>
+            <tr data-year={(d.first_seen ?? '').slice(0, 4)}>
               <td class="grow">
-                <a class="cell-url" href={`https://${d.domain}`} rel="noopener nofollow" target="_blank">
-                  {d.domain}
-                </a>
+                <span class="domcell">
+                  <span class="fav" style={`background:${favColor(d.domain)}`}>{d.domain[0]}</span>
+                  <a class="txt" href={`https://${d.domain}`} rel="noopener nofollow" target="_blank" title={d.domain}>
+                    {d.domain}
+                  </a>
+                </span>
+              </td>
+              <td class="num" data-sort={d.domain_rating ?? -1}>
+                <span class={`drbadge ${drTier(d.domain_rating)}`}>{fmtNum(d.domain_rating, 1)}</span>
               </td>
               <td class="num">
-                <div class="cell-bar">
-                  <div class="bar" aria-hidden="true">
-                    <i style={`width:${barWidth(d.domain_rating, 100)}%`} />
-                  </div>
-                  <span class={`pos-badge ${drClass(d.domain_rating)}`}>{fmtNum(d.domain_rating, 1)}</span>
-                </div>
+                <span class="cell-bar rbar">
+                  {fmtInt(d.links)}
+                  <span class="bar">
+                    <i style={`width:${barWidth(d.links, Math.max(...refDomainsList.map((r) => r.links ?? 0), 1))}%`} />
+                  </span>
+                </span>
               </td>
-              <td class="num">{fmtInt(d.links)}</td>
-              <td class="num">{d.first_seen ?? '–'}</td>
+              <td class="num">
+                {d.first_seen ?? '–'}
+                {ageOf(d.first_seen) && <span class="dt-age"> · {ageOf(d.first_seen)}</span>}
+              </td>
             </tr>
           ))
         }
       </tbody>
     </table>
   </TableCard>
+
+  <script define:vars={{ thisYear }}>
+    /* Filtry domen (Wszystkie / DR ≥ 70 / Nowe w tym roku) przez kontroler TableCard. */
+    const card = document.querySelector('.table-card');
+    const head = card?.querySelector('.table-head h3');
+    if (card && head && card.querySelector('tbody tr')) {
+      const box = document.createElement('div');
+      box.className = 'fchips';
+      head.after(box);
+      const drOf = (row) => parseFloat((row.cells[1]?.dataset.sort ?? '-1').replace(',', '.'));
+      const FILTERS = [
+        ['Wszystkie', null],
+        ['DR ≥ 70', (row) => drOf(row) >= 70],
+        [`Nowe (${thisYear})`, (row) => row.dataset.year === thisYear],
+      ];
+      let active = 0;
+      const chips = FILTERS.map(([label, predicate], i) => {
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'fchip';
+        chip.textContent = label;
+        chip.addEventListener('click', () => {
+          active = i;
+          chips.forEach((c, j) => c.classList.toggle('on', j === i));
+          card.dispatchEvent(new CustomEvent('tablecard:refilter', { detail: predicate }));
+        });
+        box.appendChild(chip);
+        return chip;
+      });
+      chips[0].classList.add('on');
+    }
+  </script>
 </Layout>
+
+<style>
+  :global(body) {
+    background:
+      radial-gradient(900px 420px at 68% -140px, var(--ahrefs-soft), transparent 70%),
+      var(--bg-canvas);
+    background-attachment: fixed;
+  }
+  .ahrefs-note {
+    margin: 16px 0 4px;
+    padding: 10px 14px;
+    border-left: 2px solid var(--ahrefs);
+    border-radius: 0 10px 10px 0;
+    background: color-mix(in srgb, var(--ahrefs) 7%, transparent);
+    color: var(--ink-muted);
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+  .beh-card h4 {
+    font-family: var(--font-display);
+    font-size: 0.96rem;
+    margin: 0 0 4px;
+  }
+  .beh-card .sub {
+    color: var(--ink-faint);
+    font-size: 0.78rem;
+    margin-bottom: 16px;
+  }
+  .stat-grid.ahrefs-kpis {
+    grid-template-columns: 1.4fr repeat(3, 1fr);
+  }
+  @media (max-width: 1080px) {
+    .stat-grid.ahrefs-kpis {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 480px) {
+    .stat-grid.ahrefs-kpis {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -15,7 +15,9 @@ API_BASE = "https://searchconsole.googleapis.com/webmasters/v3/sites"
 SCOPE = "https://www.googleapis.com/auth/webmasters.readonly"
 DATA_LAG_DAYS = 3
 QUERY_ROW_LIMIT = 25000
-DETAILS_ROW_LIMIT = 200
+# Search Analytics API zwraca do 25 tys. wierszy na żądanie. Dla tabel panelu
+# pobieramy 1000 najważniejszych fraz/stron; paginacja i filtr działają lokalnie.
+DETAILS_ROW_LIMIT = 1000
 # Okna list fraz/stron (przełącznik okresu na froncie). GSC trzyma ~16 miesięcy,
 # więc dłuższych zakresów (18/24 mies. jak w Bingu) nie da się zaoferować.
 DETAILS_WINDOWS = [("7d", 7), ("30d", 30), ("3m", 90), ("6m", 180),

@@ -83,9 +83,15 @@ global:
     cost_fallback: 0.16 # zł/SMS gdy wycena test=1 nie zadziała
   openrouter:
     enabled: true
-  # Alerty progowe po przebiegu collectora (mail przez Resend, sekret RESEND_API_KEY).
+  # Alerty progowe po przebiegu collectora.
+  # Resend: sekret RESEND_API_KEY w GitHub Actions; adres nadawcy musi być
+  # zweryfikowany w Resend. Webhook z tokenem trzymaj w sekrecie, nie w YAML.
   alerts:
-    email: m.wisniewski@grupa-icea.pl
+    emails:
+      - m.wisniewski@grupa-icea.pl
+    webhook_envs:
+      - ALERT_WEBHOOK_URL
+    # webhook_urls: [] # tylko dla publicznych URL-i bez sekretu w adresie
     sms_min: 20
     openrouter_min_usd: 20
 

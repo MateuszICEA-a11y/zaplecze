@@ -10,9 +10,14 @@ const { domains, global: globalConfig } = loadConfig();
 const globalSnapshots = loadSnapshots('_global');
 const globalLatest = latestSnapshot('_global');
 
-const alerts = (globalConfig.alerts ?? {}) as Record<string, number | string>;
+const alerts = (globalConfig.alerts ?? {}) as Record<string, unknown>;
 const openrouterMin = typeof alerts.openrouter_min_usd === 'number' ? alerts.openrouter_min_usd : 20;
 const smsMin = typeof alerts.sms_min === 'number' ? alerts.sms_min : 20;
+const list = (value: unknown): string[] =>
+  typeof value === 'string' ? [value] : Array.isArray(value) ? value.map(String).filter(Boolean) : [];
+const alertEmails = list(alerts.emails).length ? list(alerts.emails) : list(alerts.email);
+const webhookEnvs = list(alerts.webhook_envs);
+const directWebhooks = list(alerts.webhook_urls);
 
 const openrouter = globalLatest?.sources.openrouter?.data;
 const orRemaining = typeof openrouter?.remaining === 'number' ? openrouter.remaining : null;
@@ -249,6 +254,31 @@ const pipelineRows = PIPELINE.map((definition) => {
 
     </div>
 
+    <div class="system-section-head"><h2>Alerty o limitach</h2><span>konfiguracja collectora</span></div>
+    <div class="alert-grid">
+      <article class="alert-card">
+        <div class="alert-title"><span class="service-logo resend">R</span><div><b>Resend · e-mail</b><small>sekret <code>RESEND_API_KEY</code> w GitHub Actions</small></div></div>
+        <div class="alert-list">
+          {alertEmails.length ? alertEmails.map((email) => <span>{email}</span>) : <span class="muted">brak odbiorców</span>}
+        </div>
+        <p>Wiadomość wychodzi, gdy saldo spadnie poniżej progu. Domena nadawcy <code>widocznosc.ai</code> musi być zweryfikowana w Resend.</p>
+      </article>
+      <article class="alert-card">
+        <div class="alert-title"><span class="service-logo webhook">↗</span><div><b>Webhooki · URL</b><small>POST JSON do wskazanych systemów</small></div></div>
+        <div class="alert-list">
+          {webhookEnvs.map((name) => <span>sekret: {name}</span>)}
+          {directWebhooks.map((_, index) => <span>URL bezpośredni #{index + 1}</span>)}
+          {!webhookEnvs.length && !directWebhooks.length && <span class="muted">brak webhooków</span>}
+        </div>
+        <p>Adres z tokenem dodaj jako sekret repozytorium <code>ALERT_WEBHOOK_URL</code>. Publiczne endpointy można wpisać w <code>global.alerts.webhook_urls</code>.</p>
+      </article>
+      <article class="alert-card thresholds">
+        <div class="alert-title"><span class="service-logo threshold">!</span><div><b>Progi wysyłki</b><small><code>dashboard/domains.yaml</code></small></div></div>
+        <dl><div><dt>OpenRouter</dt><dd>${fmtNum(openrouterMin, 0)}</dd></div><div><dt>SMSAPI</dt><dd>{fmtInt(smsMin)} SMS</dd></div></dl>
+        <p>Zmiana w YAML zacznie obowiązywać w następnym dziennym przebiegu collectora.</p>
+      </article>
+    </div>
+
     <div class="system-section-head"><h2>Kwoty API integracji</h2><span>zużycie w bieżącym oknie</span></div>
     <div class="quota-card">
       <div class="quota-scroll">
@@ -334,6 +364,9 @@ const pipelineRows = PIPELINE.map((definition) => {
   .service-logo { width: 30px; height: 30px; border-radius: 9px; flex: none; display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: .9rem; color: #fff; }
   .service-logo.openrouter { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
   .service-logo.sms { background: linear-gradient(135deg, #0ea5e9, #22d3ee); }
+  .service-logo.resend { background: linear-gradient(135deg, #111827, #4b5563); }
+  .service-logo.webhook { background: linear-gradient(135deg, var(--accent-blue), var(--series-3)); }
+  .service-logo.threshold { background: linear-gradient(135deg, var(--series-2), var(--status-warn-fg)); }
   .service-name { font-family: var(--font-display); font-weight: 600; font-size: .98rem; }
   .balance-header .system-pill { margin-left: auto; }
   .balance-value { font-family: var(--font-display); font-weight: 600; font-size: 2.2rem; letter-spacing: -.02em; font-variant-numeric: tabular-nums; line-height: 1; }
@@ -346,6 +379,22 @@ const pipelineRows = PIPELINE.map((definition) => {
   .balance-track.is-unmeasured > i { width: 100%; opacity: .16; background: repeating-linear-gradient(90deg, var(--ink-faint) 0 8px, transparent 8px 14px); }
   .balance-sub { display: flex; justify-content: space-between; gap: 10px; font-size: .78rem; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
   .balance-sub b { color: var(--ink-muted); }
+
+  .alert-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .alert-card { border: 1px solid var(--hairline); border-radius: 16px; padding: 16px 18px; background: var(--bg-surface-1); min-width: 0; }
+  .alert-title { display: flex; align-items: center; gap: 11px; }
+  .alert-title > div { min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+  .alert-title b { font-size: .9rem; }
+  .alert-title small { color: var(--ink-faint); font-size: .7rem; overflow: hidden; text-overflow: ellipsis; }
+  .alert-card code { color: var(--ink-muted); background: var(--bg-surface-3); border-radius: 5px; padding: 1px 4px; }
+  .alert-list { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 10px; }
+  .alert-list span { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--ink-muted); background: var(--bg-surface-2); border: 1px solid var(--hairline); border-radius: 999px; padding: 4px 9px; font-size: .73rem; }
+  .alert-list span.muted { color: var(--ink-faint); }
+  .alert-card p { color: var(--ink-faint); font-size: .75rem; line-height: 1.5; margin: 0; }
+  .alert-card dl { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 14px 0 10px; }
+  .alert-card dl div { background: var(--bg-surface-2); border-radius: 9px; padding: 8px 10px; }
+  .alert-card dt { color: var(--ink-faint); font-size: .68rem; }
+  .alert-card dd { color: var(--ink); font-weight: 600; margin: 3px 0 0; }
 
   .system-pill { display: inline-flex; align-items: center; gap: 6px; font-size: .72rem; font-weight: 600; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
   .system-pill > i { width: 7px; height: 7px; border-radius: 50%; }
@@ -400,11 +449,13 @@ const pipelineRows = PIPELINE.map((definition) => {
 
   @media (max-width: 1100px) {
     .balance-grid { grid-template-columns: 1fr; }
+    .alert-grid { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 640px) {
     .system-topbar { align-items: stretch; flex-direction: column; }
     .system-actions { justify-content: space-between; }
     .balance-sub { flex-direction: column; gap: 3px; }
     .pipeline-grid { grid-template-columns: 1fr; }
+    .alert-grid { grid-template-columns: 1fr; }
   }
 </style>

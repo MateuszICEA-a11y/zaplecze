@@ -4,6 +4,7 @@ import DomainHeader from '../../components/DomainHeader.astro';
 import StatCard from '../../components/StatCard.astro';
 import TableCard from '../../components/TableCard.astro';
 import TimeSeriesChart from '../../components/TimeSeriesChart.astro';
+import SourceState from '../../components/SourceState.astro';
 import {
   loadConfig,
   loadSnapshots,
@@ -12,8 +13,10 @@ import {
   latestWithDelta,
   metricSeries,
   sectionEnabled,
+  sourceStatuses,
+  isTemporarySourceFailure,
 } from '../../lib/data';
-import { fmtInt, fmtPct, fmtNum, fmtDuration, barWidth } from '../../lib/format';
+import { fmtInt, fmtPct, fmtNum, fmtDuration, fmtDate, fmtDateRange, barWidth } from '../../lib/format';
 
 export function getStaticPaths() {
   return loadConfig()
@@ -27,28 +30,47 @@ const { name } = Astro.props;
 const snapshots = loadSnapshots(domain!);
 const latest = latestSnapshot(domain!);
 const details = loadDetails(domain!);
-const ga4 = latest?.sources.ga4;
+const ga4 = sourceStatuses(latest).ga4;
+const ga4LastOk = [...snapshots].reverse().find((snapshot) => snapshot.sources.ga4?.status === 'ok');
+const ga4StaleDate = isTemporarySourceFailure(ga4) ? ga4LastOk?.date ?? null : null;
 const channels = details.sources.ga4?.channels ?? [];
 const trafficSources = details.sources.ga4?.sources ?? [];
 const pages = details.sources.ga4?.pages ?? [];
 const landing = details.sources.ga4?.landing_pages?.rows ?? [];
 const landingWindow = details.sources.ga4?.landing_pages?.window;
+const daily = details.sources.ga4?.daily ?? [];
 const monthly = details.sources.ga4?.monthly ?? [];
 const channelsMonthly = details.sources.ga4?.channels_monthly ?? [];
 
-// Dzienne szeregi ze snapshotów.
-const sessions = metricSeries(snapshots, 'ga4', 'sessions');
-const organicDaily = metricSeries(snapshots, 'ga4', 'organic_sessions');
-const statSessions = latestWithDelta(snapshots, 'ga4', 'sessions');
-const statUsers = latestWithDelta(snapshots, 'ga4', 'active_users');
-const statNewUsers = latestWithDelta(snapshots, 'ga4', 'new_users');
-const statReturning = latestWithDelta(snapshots, 'ga4', 'returning_users');
-const statOrganic = latestWithDelta(snapshots, 'ga4', 'organic_sessions');
-const statEngRate = latestWithDelta(snapshots, 'ga4', 'engagement_rate');
-const statEngTime = latestWithDelta(snapshots, 'ga4', 'avg_engagement_s');
-const statEngPerUser = latestWithDelta(snapshots, 'ga4', 'engaged_per_user');
-const statPagesPerSession = latestWithDelta(snapshots, 'ga4', 'pages_per_session');
-const dataDate = ga4?.data?.data_date ?? null;
+// Historia dzienna pochodzi bezpośrednio z GA4 Data API. Snapshoty zostają
+// fallbackiem dla danych zebranych przed rozszerzeniem collectora.
+type DailyMetric = Exclude<(typeof daily)[number], undefined>;
+type DailyKey = Exclude<keyof DailyMetric, 'date'>;
+const dailySeries = (field: DailyKey) => daily.map((row) => Number(row[field] ?? 0));
+const dailyStat = (field: DailyKey, fallback: { value: number | null; delta: number | null }) => {
+  if (!daily.length) return fallback;
+  const last = daily.at(-1)!;
+  const lastTime = new Date(`${last.date}T00:00:00Z`).getTime();
+  const reference = [...daily]
+    .reverse()
+    .find((row) => new Date(`${row.date}T00:00:00Z`).getTime() <= lastTime - 7 * 86400_000);
+  const value = Number(last[field]);
+  return { value, delta: reference ? value - Number(reference[field]) : null };
+};
+const sessions = daily.length ? { values: dailySeries('sessions') } : metricSeries(snapshots, 'ga4', 'sessions');
+const organicDaily = daily.length
+  ? { values: dailySeries('organic_sessions') }
+  : metricSeries(snapshots, 'ga4', 'organic_sessions');
+const statSessions = dailyStat('sessions', latestWithDelta(snapshots, 'ga4', 'sessions'));
+const statUsers = dailyStat('active_users', latestWithDelta(snapshots, 'ga4', 'active_users'));
+const statNewUsers = dailyStat('new_users', latestWithDelta(snapshots, 'ga4', 'new_users'));
+const statReturning = dailyStat('returning_users', latestWithDelta(snapshots, 'ga4', 'returning_users'));
+const statOrganic = dailyStat('organic_sessions', latestWithDelta(snapshots, 'ga4', 'organic_sessions'));
+const statEngRate = dailyStat('engagement_rate', latestWithDelta(snapshots, 'ga4', 'engagement_rate'));
+const statEngTime = dailyStat('avg_engagement_s', latestWithDelta(snapshots, 'ga4', 'avg_engagement_s'));
+const statEngPerUser = dailyStat('engaged_per_user', latestWithDelta(snapshots, 'ga4', 'engaged_per_user'));
+const statPagesPerSession = dailyStat('pages_per_session', latestWithDelta(snapshots, 'ga4', 'pages_per_session'));
+const dataDate = daily.at(-1)?.date ?? ga4?.data?.data_date ?? null;
 
 /* Podział nowi/powracający w karcie Użytkownicy (handoff „GA4 – układ"). */
 const splitTotal = (statNewUsers.value ?? 0) + (statReturning.value ?? 0);
@@ -89,23 +111,33 @@ const isJunk = (name: string) => /^\(|unassigned|not set|not available/i.test(na
 ---
 
 <Layout title={`${name} – GA4`}>
-  <DomainHeader domain={domain!} name={name} active="ga4" latest={latest} />
+  <div class="ga4-page">
+  <DomainHeader domain={domain!} name={name} active="ga4" latest={latest} themeToggle />
 
-  {
-    ga4 && ga4.status !== 'ok' && (
-      <div class={`banner ${ga4.status === 'error' ? 'err' : 'warn'}`}>
-        <strong>GA4</strong>: {ga4.error ?? 'błąd źródła'}
-      </div>
-    )
-  }
+  <div class="ga4-note">
+    GA4 pokazuje ruch z ostatniej pełnej doby: najważniejszą liczbę, użytkowników z podziałem na nowych
+    i powracających, metryki zaangażowania oraz trendy miesięczne. Listy „skąd i dokąd” łączą kanały,
+    źródła i strony w jednym przełączanym widoku.
+  </div>
+
+  <SourceState
+    name="GA4"
+    result={ga4}
+    lastDate={ga4LastOk?.date}
+    metrics={[
+      { label: 'Sesje', value: statSessions.value },
+      { label: 'Użytkownicy', value: statUsers.value },
+      { label: 'Sesje organiczne', value: statOrganic.value },
+    ]}
+  />
 
   <div class="section-head">
     <h2>Ruch w witrynie</h2>
-    {dataDate && <span class="section-meta">pełna doba {dataDate} · delty 7-dniowe</span>}
+    {dataDate && <span class="section-meta">pełna doba {fmtDate(String(dataDate))} · delty 7-dniowe z API GA4</span>}
   </div>
-  <div class="rgrid4">
-    <StatCard label="Sesje / dzień" value={statSessions.value} delta={statSessions.delta} trend={sessions.values} hero />
-    <StatCard label="Użytkownicy" value={statUsers.value} delta={hasSplit ? null : statUsers.delta}>
+  <div class="rgrid rgrid4">
+    <StatCard label="Sesje / dzień" value={statSessions.value} delta={statSessions.delta} trend={sessions.values} staleDate={ga4StaleDate} hero />
+    <StatCard label="Użytkownicy" value={statUsers.value} delta={hasSplit ? null : statUsers.delta} staleDate={ga4StaleDate}>
       {hasSplit && (
         <div class="split">
           <div class="bar">
@@ -119,8 +151,8 @@ const isJunk = (name: string) => /^\(|unassigned|not set|not available/i.test(na
         </div>
       )}
     </StatCard>
-    <StatCard label="Engagement rate" value={statEngRate.value} delta={statEngRate.delta} unit="%" precision={1} />
-    <StatCard label="Sesje organiczne" value={statOrganic.value} delta={statOrganic.delta} trend={organicDaily.values} />
+    <StatCard label="Engagement rate" value={statEngRate.value} delta={statEngRate.delta} unit="%" precision={1} staleDate={ga4StaleDate} />
+    <StatCard label="Sesje organiczne" value={statOrganic.value} delta={statOrganic.delta} trend={organicDaily.values} staleDate={ga4StaleDate} />
   </div>
   <div class="micro">
     <div class="m">
@@ -137,49 +169,48 @@ const isJunk = (name: string) => /^\(|unassigned|not set|not available/i.test(na
     </div>
   </div>
 
-  {
-    monthly.length > 1 && (
-      <>
-        <div class="section-head">
-          <h2>Trendy miesięczne</h2>
-          <span class="section-meta">
-            {monthLabel && `ostatni pełny miesiąc: ${monthLabel}`}
-            {yoyDelta('sessions') !== null &&
-              ` · sesje r/r: ${yoyDelta('sessions')! > 0 ? '+' : ''}${fmtInt(yoyDelta('sessions'))}`}
-            {yoyDelta('users') !== null &&
-              ` · użytkownicy r/r: ${yoyDelta('users')! > 0 ? '+' : ''}${fmtInt(yoyDelta('users'))}`}
-          </span>
-        </div>
-        <div class="chart-grid">
+  <div class="section-head">
+    <h2>Trendy miesięczne</h2>
+    <span class="section-meta">
+      {monthly.length > 1 ? `${monthly.length} miesięcy · sezonowość` : 'historia ruchu'}
+      {monthLabel && ` · ostatni pełny miesiąc: ${monthLabel}`}
+      {yoyDelta('sessions') !== null &&
+        ` · sesje r/r: ${yoyDelta('sessions')! > 0 ? '+' : ''}${fmtInt(yoyDelta('sessions'))}`}
+      {yoyDelta('users') !== null &&
+        ` · użytkownicy r/r: ${yoyDelta('users')! > 0 ? '+' : ''}${fmtInt(yoyDelta('users'))}`}
+    </span>
+  </div>
+  <div class="ga4-charts">
+    {
+      monthly.length > 1 && (
+        <>
           <TimeSeriesChart
             title="Użytkownicy: nowi vs powracający"
-            meta="miesięcznie"
             timestamps={monthlyTs}
             series={[
               { label: 'Nowi', values: monthly.map((m) => m.new_users), fill: true },
               { label: 'Powracający', values: monthly.map((m) => Math.max(0, m.users - m.new_users)) },
             ]}
+            overview
           />
           <TimeSeriesChart
             title="Sesje per kanał"
-            meta="miesięcznie"
             timestamps={monthlyTs}
             series={[...channelSeries, { label: 'Inne', values: otherSeries }].filter((s) =>
               s.values.some((v) => v > 0),
             )}
+            overview
           />
           <TimeSeriesChart
             title="Ruch organiczny"
-            meta="miesięcznie · sezonowość"
+            meta="sezonowość"
             timestamps={monthlyTs}
             series={[{ label: 'Sesje organiczne', values: organicMonthly, fill: true }]}
+            overview
           />
-        </div>
-      </>
-    )
-  }
-
-  <div class="chart-grid">
+        </>
+      )
+    }
     <TimeSeriesChart
       title="Sesje i sesje organiczne"
       meta="dziennie"
@@ -188,20 +219,24 @@ const isJunk = (name: string) => /^\(|unassigned|not set|not available/i.test(na
         { label: 'Sesje', values: sessions.values, fill: true },
         { label: 'Organiczne', values: organicDaily.values },
       ]}
+      overview
     />
   </div>
 
   <div class="section-head">
     <h2>Wczoraj – skąd i dokąd</h2>
-    <div class="seg" data-ga4-panes-seg>
-      <button type="button" class="active" data-pane="kanaly">Kanały · {channels.length}</button>
-      <button type="button" data-pane="zrodla">Źródła · {trafficSources.length}</button>
-      <button type="button" data-pane="strony">Strony · {pages.length}</button>
-    </div>
+    <span class="section-meta">trzy listy w jednym przełączanym widoku</span>
   </div>
 
   <div data-ga4-pane="kanaly">
-    <TableCard title="Kanały" count={channels.length} empty="Brak danych.">
+    <TableCard title="Ruch wczoraj" count={channels.length} empty="Brak danych.">
+      <Fragment slot="actions">
+        <div class="seg" data-ga4-panes-seg>
+          <button type="button" class="active" data-pane="kanaly">Kanały · {channels.length}</button>
+          <button type="button" data-pane="zrodla">Źródła · {trafficSources.length}</button>
+          <button type="button" data-pane="strony">Strony · {pages.length}</button>
+        </div>
+      </Fragment>
       <table class="data-table">
         <thead>
           <tr>
@@ -217,7 +252,7 @@ const isJunk = (name: string) => /^\(|unassigned|not set|not available/i.test(na
               <tr>
                 <td class="grow"><span class={isJunk(c.channel) ? 'muted-tag' : ''}>{c.channel}</span></td>
                 <td class="num">
-                  <span class="cell-bar">
+                  <span class="cell-bar rbar">
                     {fmtInt(c.sessions)}
                     <span class="bar">
                       <i style={`width:${barWidth(c.sessions, maxChannel)}%`} />
@@ -235,7 +270,14 @@ const isJunk = (name: string) => /^\(|unassigned|not set|not available/i.test(na
   </div>
 
   <div data-ga4-pane="zrodla" hidden>
-    <TableCard title="Źródła sesji" count={trafficSources.length} filter empty="Brak danych.">
+    <TableCard title="Ruch wczoraj" count={trafficSources.length} filter empty="Brak danych.">
+      <Fragment slot="actions">
+        <div class="seg" data-ga4-panes-seg>
+          <button type="button" data-pane="kanaly">Kanały · {channels.length}</button>
+          <button type="button" class="active" data-pane="zrodla">Źródła · {trafficSources.length}</button>
+          <button type="button" data-pane="strony">Strony · {pages.length}</button>
+        </div>
+      </Fragment>
       <table class="data-table">
         <thead>
           <tr>
@@ -250,7 +292,7 @@ const isJunk = (name: string) => /^\(|unassigned|not set|not available/i.test(na
               <tr>
                 <td class="grow"><span class={isJunk(s.source) ? 'muted-tag' : ''}>{s.source}</span></td>
                 <td class="num">
-                  <span class="cell-bar">
+                  <span class="cell-bar rbar">
                     {fmtInt(s.sessions)}
                     <span class="bar">
                       <i style={`width:${barWidth(s.sessions, maxSource)}%`} />
@@ -267,7 +309,14 @@ const isJunk = (name: string) => /^\(|unassigned|not set|not available/i.test(na
   </div>
 
   <div data-ga4-pane="strony" hidden>
-    <TableCard title="Najpopularniejsze strony" count={pages.length} filter empty="Brak danych.">
+    <TableCard title="Ruch wczoraj" count={pages.length} filter empty="Brak danych.">
+      <Fragment slot="actions">
+        <div class="seg" data-ga4-panes-seg>
+          <button type="button" data-pane="kanaly">Kanały · {channels.length}</button>
+          <button type="button" data-pane="zrodla">Źródła · {trafficSources.length}</button>
+          <button type="button" class="active" data-pane="strony">Strony · {pages.length}</button>
+        </div>
+      </Fragment>
       <table class="data-table">
         <thead>
           <tr>
@@ -282,7 +331,7 @@ const isJunk = (name: string) => /^\(|unassigned|not set|not available/i.test(na
               <tr>
                 <td class="grow"><span class="cell-url">{p.path}</span></td>
                 <td class="num">
-                  <span class="cell-bar">
+                  <span class="cell-bar rbar">
                     {fmtInt(p.pageviews)}
                     <span class="bar">
                       <i style={`width:${barWidth(p.pageviews, maxPage)}%`} />
@@ -300,7 +349,7 @@ const isJunk = (name: string) => /^\(|unassigned|not set|not available/i.test(na
 
   <TableCard
     title="Landing pages – zaangażowanie"
-    meta={landingWindow ? `okno ${landingWindow.start} → ${landingWindow.end}` : undefined}
+    meta={landingWindow ? `okno ${fmtDateRange(landingWindow.start, landingWindow.end)}` : undefined}
     count={landing.length}
     filter
     empty="Dane pojawią się po najbliższym przebiegu collectora."
@@ -321,7 +370,7 @@ const isJunk = (name: string) => /^\(|unassigned|not set|not available/i.test(na
             <tr>
               <td class="grow"><span class={isJunk(l.path) ? 'muted-tag' : 'cell-url'}>{l.path}</span></td>
               <td class="num">
-                <span class="cell-bar">
+                <span class="cell-bar rbar">
                   {fmtInt(l.sessions)}
                   <span class="bar">
                     <i style={`width:${barWidth(l.sessions, maxLanding)}%`} />
@@ -346,13 +395,44 @@ const isJunk = (name: string) => /^\(|unassigned|not set|not available/i.test(na
   <script>
     /* Przełącznik trzech list „wczoraj" (Kanały/Źródła/Strony) – jedna karta
        widoczna naraz; karty zachowują własny filtr/sort/eksport TableCard. */
-    const seg = document.querySelector<HTMLElement>('[data-ga4-panes-seg]');
+    const segs = Array.from(document.querySelectorAll<HTMLElement>('[data-ga4-panes-seg]'));
     const panes = Array.from(document.querySelectorAll<HTMLElement>('[data-ga4-pane]'));
-    seg?.addEventListener('click', (e) => {
-      const btn = (e.target as HTMLElement).closest('button[data-pane]') as HTMLButtonElement | null;
-      if (!btn) return;
-      seg.querySelectorAll('button').forEach((b) => b.classList.toggle('active', b === btn));
-      panes.forEach((p) => (p.hidden = p.dataset.ga4Pane !== btn.dataset.pane));
-    });
+    segs.forEach((seg) => seg.addEventListener('click', (e) => {
+      const button = (e.target as HTMLElement).closest('button[data-pane]') as HTMLButtonElement | null;
+      if (!button) return;
+      const pane = button.dataset.pane;
+      segs.forEach((item) => item.querySelectorAll('button').forEach((candidate) =>
+        candidate.classList.toggle('active', candidate.dataset.pane === pane),
+      ));
+      panes.forEach((item) => (item.hidden = item.dataset.ga4Pane !== pane));
+    }));
   </script>
+  </div>
 </Layout>
+
+<style>
+  .ga4-page {
+    width: 100%;
+  }
+  .ga4-note {
+    margin: 16px 0 4px;
+    padding: 10px 14px;
+    border-left: 2px solid var(--accent-blue);
+    border-radius: 0 10px 10px 0;
+    background: color-mix(in srgb, var(--accent-blue) 6%, transparent);
+    color: var(--ink-muted);
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+  .ga4-charts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  @media (max-width: 1080px) {
+    .ga4-charts {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

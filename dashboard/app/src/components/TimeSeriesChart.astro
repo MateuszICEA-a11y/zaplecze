@@ -30,6 +30,12 @@ interface Props {
   sourceColor?: string;
   /* Minimalna liczba pomiarów potrzebna do pokazania linii. */
   minPoints?: number;
+  /* Druga seria na prawej osi (np. kliknięcia + wyświetlenia). */
+  secondaryAxis?: boolean;
+  /* Odwrócona oś Y dla metryk, w których niżej znaczy lepiej (pozycja). */
+  invert?: boolean;
+  /* Wymusza punkty na linii niezależnie od liczby próbek. */
+  points?: boolean;
   emptyTitle?: string;
   emptyDescription?: string;
 }
@@ -44,6 +50,9 @@ const {
   overview = false,
   sourceColor,
   minPoints = 2,
+  secondaryAxis = false,
+  invert = false,
+  points = false,
   emptyTitle = 'Zbieramy historię',
   emptyDescription,
 } = Astro.props;
@@ -59,7 +68,7 @@ while (end >= start && !hasAny(end)) end--;
 const timestamps = rawTs.slice(start, end + 1);
 const series = rawSeries.map((s) => ({ ...s, values: s.values.slice(start, end + 1) }));
 
-const payload = JSON.stringify({ timestamps, series, unit, precision, overview });
+const payload = JSON.stringify({ timestamps, series, unit, precision, overview, secondaryAxis, invert, points });
 /* Linia ma sens od 2 punktów – pojedynczy pomiar to nadal „zbieramy historię"
    (handoff „Przegląd": empty state z datą pierwszego odczytu). */
 const nonNullMax = Math.max(0, ...series.map((s) => s.values.filter((v) => v !== null).length));
@@ -86,13 +95,13 @@ const rangeOptions = ranges && hasData ? RANGE_OPTIONS.filter(([, d]) => d <= sp
 const defaultRange = rangeOptions.some(([k]) => k === '30d') ? '30d' : (rangeOptions[0]?.[0] ?? 'all');
 ---
 
-<figure class:list={['chart-card', { overview }]}>
-  <figcaption>
+<figure class:list={['chart-card', 'rchart', { overview }]}>
+  <figcaption class="cap">
     <span class="cap-title">
       {sourceColor && <i class="source-dot" style={`background:var(${sourceColor})`}></i>}
       {title}
     </span>
-    <span class="cap-side">
+    <span class="cap-side side">
       {
         rangeOptions.length > 0 && (
           <span class="seg seg-mini" data-chart-ranges>
@@ -110,8 +119,8 @@ const defaultRange = rangeOptions.some(([k]) => k === '30d') ? '30d' : (rangeOpt
       {meta && <span class="cap-meta" data-chart-meta data-base-meta={meta}>{meta}</span>}
     </span>
   </figcaption>
-  {overview && hasData && (
-    <div class="series-legend" aria-label="Legenda wykresu">
+  {hasData && (
+    <div class="series-legend rlegend" aria-label="Legenda wykresu">
       {series.map((item, index) => {
         const color = item.color ?? `--series-${(index % 3) + 1}`;
         const dashed = (item.dash ?? (index === 0 ? [] : index === 1 ? [6, 4] : [2, 4])).length > 0;
@@ -125,7 +134,14 @@ const defaultRange = rangeOptions.some(([k]) => k === '30d') ? '30d' : (rangeOpt
   )}
   {
     hasData ? (
-      <div class="ts-chart" data-chart={payload} />
+      <div class:list={['chart-stage', { compact: overview }]} aria-busy="true">
+        <div class="skel chart-skeleton" aria-hidden="true">
+          <span class="sk sk-line wide"></span>
+          <span class="sk sk-line"></span>
+          <span class="sk sk-block"></span>
+        </div>
+        <div class="ts-chart" data-chart={payload} />
+      </div>
     ) : (
       <div class="empty-chart">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
@@ -159,6 +175,9 @@ const defaultRange = rangeOptions.some(([k]) => k === '30d') ? '30d' : (rangeOpt
       unit: string;
       precision: number;
       overview: boolean;
+      secondaryAxis: boolean;
+      invert: boolean;
+      points: boolean;
     };
     /* Gradient pod serią (lifting §3): pełniejszy u góry, zanika do zera.
        Fallback na płaską alfę, gdy kolor nie jest hexem. */
@@ -200,9 +219,10 @@ const defaultRange = rangeOptions.some(([k]) => k === '30d') ? '30d' : (rangeOpt
       // Mało próbek (start zbierania) = linia niewidoczna – wtedy rysuj punkty
       // i zepnij oś X wokół danych zamiast auto-zakresu na lata.
       const sparse = cfg.timestamps.length < 15;
-      const showPoints = cfg.timestamps.length <= 8;
-      const scales = sparse
-        ? {
+      const showPoints = cfg.points || cfg.invert || cfg.timestamps.length <= 8;
+      const scales = {
+        ...(sparse
+          ? {
             x: {
               time: true,
               range: [
@@ -211,14 +231,17 @@ const defaultRange = rangeOptions.some(([k]) => k === '30d') ? '30d' : (rangeOpt
               ] as [number, number],
             },
           }
-        : undefined;
+          : {}),
+        ...(cfg.invert ? { y: { dir: -1 as const } } : {}),
+        ...(cfg.secondaryAxis ? { b: {} } : {}),
+      };
       plot = new uPlot(
         {
           width: el.clientWidth,
           height: chartHeight,
           padding: [12, 8, 0, 0],
-          cursor: { points: { size: 7 } },
-          legend: { show: !cfg.overview },
+          cursor: { points: { size: 7 }, y: false },
+          legend: { show: false },
           scales,
           series: [
             {
@@ -235,6 +258,7 @@ const defaultRange = rangeOptions.some(([k]) => k === '30d') ? '30d' : (rangeOpt
                 fill: fill ? areaFill(color) : undefined,
                 width: 2.4,
                 dash: s.dash ?? DASHES[i % DASHES.length],
+                scale: cfg.secondaryAxis && i === 1 ? 'b' : 'y',
                 points: { show: showPoints, size: 6, stroke: color, fill: color },
                 value: (_u: uPlot, v: number | null) => fmt(v),
                 spanGaps: true,
@@ -249,6 +273,16 @@ const defaultRange = rangeOptions.some(([k]) => k === '30d') ? '30d' : (rangeOpt
               }) },
             { ...yAxis, size: 56, values: (_u: uPlot, ticks: number[]) =>
               ticks.map((t) => t.toLocaleString('pl-PL', { maximumFractionDigits: cfg.precision })) },
+            ...(cfg.secondaryAxis
+              ? [{
+                  ...axis,
+                  scale: 'b',
+                  side: 1 as const,
+                  size: 56,
+                  values: (_u: uPlot, ticks: number[]) =>
+                    ticks.map((t) => t.toLocaleString('pl-PL', { maximumFractionDigits: cfg.precision })),
+                }]
+              : []),
           ],
         },
         [cfg.timestamps, ...cfg.series.map((s) => s.values)] as uPlot.AlignedData,
@@ -257,6 +291,9 @@ const defaultRange = rangeOptions.some(([k]) => k === '30d') ? '30d' : (rangeOpt
     };
 
     render();
+    const stage = el.closest<HTMLElement>('.chart-stage');
+    stage?.classList.add('ready');
+    stage?.setAttribute('aria-busy', 'false');
 
     /* Przełącznik zakresu osi X (opcjonalny – [data-chart-ranges] w nagłówku). */
     const figure = el.closest('figure');
@@ -313,6 +350,41 @@ const defaultRange = rangeOptions.some(([k]) => k === '30d') ? '30d' : (rangeOpt
     margin: 0;
     min-width: 0;
     transition: border-color 0.15s ease;
+  }
+  .chart-stage {
+    position: relative;
+    min-height: 280px;
+  }
+  .chart-stage.compact {
+    min-height: 170px;
+  }
+  .chart-skeleton {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    grid-template-rows: 18px 18px 1fr;
+    gap: 10px 14px;
+    padding: 10px 4px 8px;
+    pointer-events: none;
+  }
+  .chart-skeleton .sk-line {
+    height: 12px;
+  }
+  .chart-skeleton .wide {
+    grid-column: 1 / -1;
+    width: 42%;
+  }
+  .chart-skeleton .sk-block {
+    grid-column: 1 / -1;
+    min-height: 180px;
+  }
+  .chart-stage.compact .chart-skeleton .sk-block {
+    min-height: 96px;
+  }
+  .chart-stage.ready .chart-skeleton {
+    display: none;
   }
   .chart-card:hover {
     border-color: color-mix(in srgb, var(--accent-blue) 30%, var(--hairline));

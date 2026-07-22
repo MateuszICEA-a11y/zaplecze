@@ -2,9 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import DomainHeader from '../../components/DomainHeader.astro';
 import StatCard from '../../components/StatCard.astro';
-import TableCard from '../../components/TableCard.astro';
-import { loadConfig, loadSnapshots, loadDetails, latestSnapshot, sectionEnabled, type LeadRecord } from '../../lib/data';
-import { fmtDateTime } from '../../lib/format';
+import SourceState from '../../components/SourceState.astro';
+import { loadConfig, loadSnapshots, loadDetails, latestSnapshot, sectionEnabled, sourceStatuses, isTemporarySourceFailure, type LeadRecord } from '../../lib/data';
 
 export function getStaticPaths() {
   return loadConfig()
@@ -18,7 +17,9 @@ const { name } = Astro.props;
 const snapshots = loadSnapshots(domain!);
 const latest = latestSnapshot(domain!);
 const details = loadDetails(domain!);
-const leadsSource = latest?.sources.leads;
+const leadsSource = sourceStatuses(latest).leads;
+const leadsLastOk = [...snapshots].reverse().find((snapshot) => snapshot.sources.leads?.status === 'ok');
+const leadsStaleDate = isTemporarySourceFailure(leadsSource) ? leadsLastOk?.date ?? null : null;
 const configured = leadsSource != null && leadsSource.status !== 'not_configured';
 
 const leads = [...(details.sources.leads?.leads ?? [])].reverse(); // najnowsze pierwsze
@@ -43,16 +44,90 @@ const SOURCE_LABELS: Record<string, string> = {
 };
 const sourceLabel = (s: string) => SOURCE_LABELS[s] ?? s;
 
-/** Wejście użytkownika w zależności od narzędzia. */
-const usageInput = (r: LeadRecord) => str(r, 'query') || str(r, 'url') || str(r, 'domain') || '–';
-const usageExtras = (r: LeadRecord) =>
-  [str(r, 'domain') && str(r, 'query') ? `domena: ${str(r, 'domain')}` : '', str(r, 'category'), str(r, 'market')]
-    .filter(Boolean)
-    .join(' · ');
+/* Feed leadów + rozbicie narzędzi z konwersją (handoff §17). */
+const firstLeadDate = details.sources.leads?.leads?.[0]?.ts?.slice(0, 10) ?? null;
+const firstLeadShort = firstLeadDate
+  ? new Date(`${firstLeadDate}T00:00:00Z`).toLocaleDateString('pl-PL', { day: '2-digit', month: '2-digit', timeZone: 'UTC' })
+  : null;
+const leadsRecent = leads.filter(isRecent).length;
+const leadsToday = leads.filter((lead) => lead.ts.slice(0, 10) === new Date().toISOString().slice(0, 10)).length;
+const recentLabel = leadsToday > 0
+  ? leadsToday === 1 ? 'nowy dziś' : `${leadsToday} nowe dziś`
+  : leadsRecent > 0 ? `${leadsRecent} w ostatnich 7 dniach` : 'brak leadów';
+const fmtWhen = (ts: string) => {
+  const d = new Date(ts);
+  const today = new Date().toISOString().slice(0, 10) === ts.slice(0, 10);
+  const hm = d.toLocaleTimeString('pl-PL', { hour: '2-digit', minute: '2-digit' });
+  return today ? `dziś, ${hm}` : `${d.toLocaleDateString('pl-PL', { day: '2-digit', month: '2-digit' })}, ${hm}`;
+};
+const fmtPhone = (phone: string) => {
+  const digits = phone.replace(/\D/g, '');
+  if (digits.length === 11 && digits.startsWith('48')) {
+    return `+48 ${digits.slice(2, 5)} ${digits.slice(5, 8)} ${digits.slice(8)}`;
+  }
+  if (digits.length === 9) return `${digits.slice(0, 3)} ${digits.slice(3, 6)} ${digits.slice(6)}`;
+  return phone || 'brak';
+};
+const feed = leads.slice(0, 8).map((r) => {
+  const name = fullName(r) || str(r, 'email') || 'Anonim';
+  const viaTool = Boolean(str(r, 'tool'));
+  const email = str(r, 'email');
+  const phone = str(r, 'phone');
+  return {
+    initial: name[0].toUpperCase(),
+    name,
+    detail: viaTool ? sourceLabel(str(r, 'tool')) : sourceLabel(r.source),
+    email,
+    phone,
+    phoneLabel: fmtPhone(phone),
+    sms: r.smsVerified === true
+      ? { label: 'SMS zweryfikowany', cls: 'ok' }
+      : r.smsVerified === false
+        ? { label: 'SMS niezweryfikowany', cls: 'bad' }
+        : { label: 'SMS — brak danych', cls: 'unknown' },
+    consent: r.consent === true
+      ? { label: 'Zgoda udzielona', cls: 'ok' }
+      : r.consent === false
+        ? { label: 'Zgody brak', cls: 'bad' }
+        : { label: 'Zgoda — brak danych', cls: 'unknown' },
+    source: viaTool ? 'Narzędzie' : 'Formularz',
+    srcCls: viaTool ? 'tool' : '',
+    when: fmtWhen(r.ts),
+  };
+});
+
+/* Użycia per narzędzie: liczba realnych użyć (bez kroku sms-code) + leady z tego narzędzia. */
+const realUsage = usage.filter((r) => r.source !== 'sms-code');
+const toolMap = new Map<string, { uses: number; leads: number }>();
+for (const r of realUsage) {
+  const key = str(r, 'tool') || r.source;
+  const entry = toolMap.get(key) ?? { uses: 0, leads: 0 };
+  entry.uses += 1;
+  toolMap.set(key, entry);
+}
+for (const r of leads) {
+  const key = str(r, 'tool');
+  if (!key) continue;
+  const entry = toolMap.get(key) ?? { uses: 0, leads: 0 };
+  entry.leads += 1;
+  toolMap.set(key, entry);
+}
+const maxUses = Math.max(...[...toolMap.values()].map((t) => t.uses), 1);
+const toolRows = [...toolMap.entries()]
+  .sort((a, b) => b[1].uses - a[1].uses)
+  .map(([key, t]) => ({
+    name: sourceLabel(key),
+    uses: t.uses,
+    leads: t.leads,
+    pct: Math.max(3, Math.round((t.uses / maxUses) * 100)),
+  }));
+const toolLeads = leads.filter((r) => Boolean(str(r, 'tool'))).length;
+const conversion = realUsage.length > 0 ? Math.round((toolLeads / realUsage.length) * 100) : null;
+const starter = leads.length + realUsage.length < 10;
 ---
 
 <Layout title={`${name} – Leady`}>
-  <DomainHeader domain={domain!} name={name} active="leady" latest={latest} />
+  <DomainHeader domain={domain!} name={name} active="leady" latest={latest} themeToggle />
 
   {
     !configured ? (
@@ -68,138 +143,241 @@ const usageExtras = (r: LeadRecord) =>
       </div>
     ) : (
       <>
-        {leadsSource && leadsSource.status !== 'ok' && (
-          <div class="banner err">
-            <strong>Leady</strong>: {leadsSource.error ?? 'błąd eksportu'}
-          </div>
-        )}
+        <SourceState
+          name="Leady"
+          result={leadsSource}
+          lastDate={leadsLastOk?.date}
+          metrics={[
+            { label: 'Leady łącznie', value: leads.length },
+            { label: 'Leady · 7 dni', value: leads.filter(isRecent).length },
+            { label: 'Użycia narzędzi', value: realUsage.length },
+          ]}
+        />
+
+        <div class="lead-note">
+          Lead to osoba, która zostawiła kontakt lub użyła narzędzia, np. sprawdzarki widoczności AI.
+          Feed po lewej pokazuje kto, przez co i kiedy trafił do systemu; po prawej widać wykorzystanie
+          narzędzi oraz ich konwersję na lead. Zbiór jest jeszcze świeży ({leads.length}{' '}
+          {leads.length === 1 ? 'lead' : 'leadów'}, {realUsage.length}{' '}
+          {realUsage.length === 1 ? 'użycie' : 'użycia'}) — układ zapełni się wraz z ruchem.
+        </div>
 
         <div class="section-head">
           <h2>Leady i użycia narzędzi</h2>
-          <span class="section-meta">
-            KV przechowuje wpisy 90 dni; archiwum w repo trzyma je bezterminowo
-          </span>
+          <span class="section-meta">porównanie 7-dniowe</span>
         </div>
-        <div class="stat-grid">
-          <StatCard label="Leady łącznie" value={leads.length} hero />
-          <StatCard label="Leady · 7 dni" value={leads.filter(isRecent).length} />
-          <StatCard label="Użycia narzędzi łącznie" value={usage.length} />
-          <StatCard label="Użycia · 7 dni" value={usage.filter(isRecent).length} />
+        <div class="stat-grid rgrid leady-kpis">
+          <StatCard
+            label="Leady łącznie"
+            value={leads.length}
+            src="lead"
+            staleDate={leadsStaleDate}
+            emptyDeltaLabel={firstLeadShort ? `zbieramy od ${firstLeadShort}` : 'zbieramy dane'}
+            hero
+          />
+          <StatCard
+            label="Leady · 7 dni"
+            value={leadsRecent}
+            staleDate={leadsStaleDate}
+            emptyDeltaLabel={recentLabel}
+          />
+          <StatCard
+            label="Użycia narzędzi"
+            value={realUsage.length}
+            staleDate={leadsStaleDate}
+            emptyDeltaLabel="łącznie"
+          />
+          <StatCard
+            label="Konwersja narzędzie → lead"
+            value={conversion !== null ? `${conversion}%` : null}
+            staleDate={leadsStaleDate}
+            emptyDeltaLabel={conversion !== null ? `${toolLeads} z ${realUsage.length} użyć` : 'brak danych'}
+          />
         </div>
 
-        <TableCard
-          title="Leady"
-          count={leads.length}
-          filter
-          empty="Jeszcze żadnego leada od wdrożenia zapisu – wpisy pojawią się po pierwszym wysłanym formularzu."
-        >
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th>Data</th>
-                <th>Źródło</th>
-                <th>Kto</th>
-                <th>Kontakt</th>
-                <th>Szczegóły</th>
-                <th>Status</th>
-              </tr>
-            </thead>
-            <tbody>
-              {leads.map((r) => (
-                <tr>
-                  <td class="num">{fmtDateTime(r.ts)}</td>
-                  <td>
-                    <span class="chip lead">{sourceLabel(r.source)}</span>
-                  </td>
-                  <td>
-                    <strong>{fullName(r) || '–'}</strong>
-                    {str(r, 'company') && <span class="sub">{str(r, 'company')}</span>}
-                  </td>
-                  <td>
-                    {str(r, 'email') && (
-                      <a href={`mailto:${str(r, 'email')}`}>{str(r, 'email')}</a>
-                    )}
-                    {str(r, 'phone') && <span class="sub">{str(r, 'phone')}</span>}
-                  </td>
-                  <td class="grow">
-                    {str(r, 'tool') && <span class="chip accent">{sourceLabel(str(r, 'tool'))}</span>}
-                    {str(r, 'type') && <span class="chip">{str(r, 'type')}</span>}
-                    {str(r, 'domain') && <span class="sub">domena: {str(r, 'domain')}</span>}
-                    {str(r, 'query') && <span class="sub">zapytanie: {str(r, 'query')}</span>}
-                    {str(r, 'message') && <span class="sub msg">{str(r, 'message')}</span>}
-                  </td>
-                  <td>
-                    {r.smsVerified === true && <span class="chip lead">SMS ✓</span>}
-                    {r.consent === true ? (
-                      <span class="chip lead">zgoda ✓</span>
-                    ) : r.consent === false ? (
-                      <span class="chip">bez zgody</span>
-                    ) : null}
-                  </td>
-                </tr>
+        <div class="lead-two">
+          <div class="feed-card">
+            <div class="hd"><h3>Ostatnie leady</h3><span class="m">{leads.length} łącznie</span></div>
+            <div class="feed">
+              {feed.length === 0 && <div class="table-empty">Jeszcze żadnego leada od wdrożenia zapisu.</div>}
+              {feed.map((l) => (
+                <div class="lead-row">
+                  <span class="av">{l.initial}</span>
+                  <div class="body">
+                    <div class="name">{l.name}</div>
+                    <div class="sub" title={l.detail}>{l.detail}</div>
+                    <div class="lead-contact">
+                      <div class="contact-field">
+                        <span class="contact-label">E-mail</span>
+                        {l.email ? <a href={`mailto:${l.email}`}>{l.email}</a> : <span class="missing">brak</span>}
+                      </div>
+                      <div class="contact-field">
+                        <span class="contact-label">Telefon</span>
+                        {l.phone ? <a href={`tel:${l.phone}`}>{l.phoneLabel}</a> : <span class="missing">brak</span>}
+                      </div>
+                    </div>
+                    <div class="lead-statuses" aria-label="Status kontaktu i zgód">
+                      <span class={`lead-status ${l.sms.cls}`}>{l.sms.label}</span>
+                      <span class={`lead-status ${l.consent.cls}`}>{l.consent.label}</span>
+                    </div>
+                  </div>
+                  <div class="meta">
+                    <span class={`src-chip ${l.srcCls}`}>{l.source}</span>
+                    <div class="when">{l.when}</div>
+                  </div>
+                </div>
               ))}
-            </tbody>
-          </table>
-        </TableCard>
+            </div>
+          </div>
+          <div class="feed-card">
+            <div class="hd"><h3>Użycia narzędzi</h3><span class="m">konwersja → lead</span></div>
+            <div class="tools-list">
+              {toolRows.length === 0 && <div class="table-empty">Jeszcze żadnego użycia narzędzi.</div>}
+              {toolRows.map((t) => (
+                <div class="trow">
+                  <div class="tn">
+                    <div class="nm">{t.name}</div>
+                    <div class="t"><i style={`width:${t.pct}%`} /></div>
+                  </div>
+                  <span class="cnt">{t.uses}</span>
+                  <span class="conv"><b>{t.leads}</b> lead{t.leads === 1 ? '' : 'y'}</span>
+                </div>
+              ))}
+            </div>
+            {starter && (
+              <div class="starter">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4" />
+                </svg>
+                <span>
+                  <b>Zbiór dopiero startuje.</b> Narzędzia i formularze zapisują wpisy
+                  {firstLeadDate ? ` od ${firstLeadDate}` : ' od niedawna'} – statystyki urosną z ruchem.
+                </span>
+              </div>
+            )}
+          </div>
+        </div>
 
-        <TableCard
-          title="Użycia narzędzi"
-          count={usage.length}
-          filter
-          empty="Jeszcze żadnego użycia narzędzi od wdrożenia zapisu."
-        >
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th>Data</th>
-                <th>Narzędzie</th>
-                <th>Wejście</th>
-                <th>Dane z formularza</th>
-              </tr>
-            </thead>
-            <tbody>
-              {usage.map((r) => (
-                <tr>
-                  <td class="num">{fmtDateTime(r.ts)}</td>
-                  <td>
-                    <span class="chip accent">{sourceLabel(r.source)}</span>
-                    {str(r, 'tool') && r.source === 'sms-code' && (
-                      <span class="sub">{sourceLabel(str(r, 'tool'))}</span>
-                    )}
-                  </td>
-                  <td class="grow">
-                    {usageInput(r)}
-                    {usageExtras(r) && <span class="sub">{usageExtras(r)}</span>}
-                  </td>
-                  <td>
-                    {fullName(r) && <strong>{fullName(r)}</strong>}
-                    {str(r, 'phone') && <span class="sub">{str(r, 'phone')}</span>}
-                    {str(r, 'email') && <span class="sub">{str(r, 'email')}</span>}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </TableCard>
       </>
     )
   }
 </Layout>
 
 <style>
-  .sub {
+  :global(body) {
+    background:
+      radial-gradient(1100px 480px at 78% -160px, var(--lead-soft), transparent 70%),
+      var(--bg-canvas);
+  }
+  .lead-note {
+    border-left: 2px solid var(--lead);
+    border-radius: 0 10px 10px 0;
+    background: color-mix(in srgb, var(--lead) 8%, transparent);
+    color: var(--ink-muted);
+    font-size: 0.84rem;
+    line-height: 1.5;
+    padding: 10px 14px;
+    margin-top: 16px;
+  }
+  .lead-row {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr) auto;
+    align-items: start;
+  }
+  .lead-contact {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 18px;
+    margin-top: 11px;
+  }
+  .contact-field {
+    min-width: 0;
+  }
+  .contact-label {
     display: block;
     color: var(--ink-faint);
-    font-size: 0.78rem;
-    margin-top: 2px;
+    font-size: 0.64rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    margin-bottom: 2px;
   }
-  .sub.msg {
-    max-width: 420px;
-    white-space: nowrap;
+  .contact-field a,
+  .contact-field .missing {
+    display: block;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.8rem;
   }
-  td .chip + .chip {
-    margin-left: 4px;
+  .contact-field .missing {
+    color: var(--ink-faint);
+  }
+  .lead-statuses {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  .lead-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 999px;
+    padding: 3px 9px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .lead-status::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+  .lead-status.ok {
+    color: var(--status-ok);
+    background: color-mix(in srgb, var(--status-ok) 13%, transparent);
+  }
+  .lead-status.bad {
+    color: var(--status-err-fg);
+    background: var(--status-err-bg);
+  }
+  .lead-status.unknown {
+    color: var(--ink-faint);
+    background: var(--bg-surface-3);
+  }
+  @media (max-width: 640px) {
+    .lead-row {
+      grid-template-columns: 40px minmax(0, 1fr);
+    }
+    .lead-row .meta {
+      grid-column: 2;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-align: left;
+      margin-top: 10px;
+    }
+    .lead-row .meta .when {
+      margin-top: 0;
+    }
+    .lead-contact {
+      grid-template-columns: 1fr;
+    }
+  }
+  .stat-grid.leady-kpis {
+    grid-template-columns: 1.4fr repeat(3, 1fr);
+  }
+  @media (max-width: 1080px) {
+    .stat-grid.leady-kpis {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 480px) {
+    .stat-grid.leady-kpis {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

@@ -125,6 +125,13 @@ export function sourceStatuses(snapshot: Snapshot | null): Record<string, Source
   return snapshot?.sources ?? {};
 }
 
+/** Błędy przejściowe zachowują ostatni udany pomiar zamiast udawać brak danych. */
+export function isTemporarySourceFailure(result?: SourceResult): boolean {
+  if (!result || result.status === 'ok' || result.status === 'not_configured') return false;
+  if (result.status === 'token_expired') return true;
+  return /(?:429|timeout|timed out|rate.?limit|too many requests|chwilow)/i.test(result.error ?? '');
+}
+
 /* ---------- details.json – listy (frazy, domeny linkujące, leady) ---------- */
 
 export interface SenutoKeyword {
@@ -244,6 +251,20 @@ export interface DomainDetails {
           pages_per_session: number;
         }[];
       };
+      daily?: {
+        date: string;
+        sessions: number;
+        active_users: number;
+        new_users: number;
+        returning_users: number;
+        pageviews: number;
+        organic_sessions: number;
+        engagement_rate: number;
+        avg_engagement_s: number;
+        engaged_sessions: number;
+        engaged_per_user: number;
+        pages_per_session: number;
+      }[];
       monthly?: { month: string; sessions: number; users: number; new_users: number }[];
       channels_monthly?: { month: string; channel: string; sessions: number }[];
     };

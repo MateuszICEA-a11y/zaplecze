@@ -4,6 +4,7 @@ import DomainHeader from '../../components/DomainHeader.astro';
 import StatCard from '../../components/StatCard.astro';
 import TableCard from '../../components/TableCard.astro';
 import TimeSeriesChart from '../../components/TimeSeriesChart.astro';
+import SourceState from '../../components/SourceState.astro';
 import {
   loadConfig,
   loadSnapshots,
@@ -11,8 +12,10 @@ import {
   latestSnapshot,
   latestWithDelta,
   metricSeries,
+  sourceStatuses,
+  isTemporarySourceFailure,
 } from '../../lib/data';
-import { fmtInt, fmtNum, posClass, barWidth } from '../../lib/format';
+import { fmtInt, fmtNum, fmtDate, posClass, barWidth } from '../../lib/format';
 
 export function getStaticPaths() {
   return loadConfig().domains.map((d) => ({ params: { domain: d.id }, props: { name: d.name } }));
@@ -59,7 +62,9 @@ const top10Trend = trimTrend(top10);
 const top50Trend = trimTrend(top50);
 const visibilityTrend = trimTrend(visibility);
 
-const senuto = latest?.sources.senuto;
+const senuto = sourceStatuses(latest).senuto;
+const senutoLastOk = [...snapshots].reverse().find((snapshot) => snapshot.sources.senuto?.status === 'ok');
+const senutoStaleDate = isTemporarySourceFailure(senuto) ? senutoLastOk?.date ?? null : null;
 const maxSearches = Math.max(...keywords.map((k) => k.searches ?? 0), 0);
 
 const diffClass = (d: number | null | undefined) =>
@@ -74,16 +79,19 @@ const diffClass = (d: number | null | undefined) =>
     Lista obejmuje do 200 najlepszych fraz i pozwala sortować pozycję, zmianę, wolumen oraz trudność słowa. Dane pochodzą bezpośrednio z Senuto.
   </div>
 
-  {
-    senuto && senuto.status !== 'ok' && (
-      <div class={`banner ${senuto.status === 'token_expired' ? 'warn' : 'err'}`}>
-        <strong>Senuto</strong>: {senuto.error ?? 'błąd źródła'}
-      </div>
-    )
-  }
+  <SourceState
+    name="Senuto"
+    result={senuto}
+    lastDate={senutoLastOk?.date}
+    metrics={[
+      { label: 'Indeks widoczności', value: statVisibility.value },
+      { label: 'Frazy TOP 10', value: statTop10.value },
+      { label: 'Ranking domeny', value: statRank.value },
+    ]}
+  />
 
   <div class="section-head"><h2>Widoczność organiczna</h2><span class="section-meta">porównanie 7-dniowe</span></div>
-  <div class="stat-grid senuto-kpis">
+  <div class="stat-grid rgrid senuto-kpis">
     <StatCard
       label="Indeks widoczności"
       value={statVisibility.value}
@@ -92,16 +100,18 @@ const diffClass = (d: number | null | undefined) =>
       precision={1}
       trend={visibility.values}
       src="sen"
+      staleDate={senutoStaleDate}
       hero
     />
-    <StatCard label="Frazy w TOP 3" value={statTop3.value} delta={statTop3.delta} dot="var(--status-ok)" href="#top-3" />
-    <StatCard label="Frazy w TOP 10" value={statTop10.value} delta={statTop10.delta} dot="var(--accent-blue)" href="#top-10" />
-    <StatCard label="Frazy w TOP 50" value={statTop50.value} delta={statTop50.delta} dot="var(--ink-faint)" href="#top-50" />
+    <StatCard label="Frazy w TOP 3" value={statTop3.value} delta={statTop3.delta} staleDate={senutoStaleDate} dot="var(--status-ok)" href="#top-3" />
+    <StatCard label="Frazy w TOP 10" value={statTop10.value} delta={statTop10.delta} staleDate={senutoStaleDate} dot="var(--accent-blue)" href="#top-10" />
+    <StatCard label="Frazy w TOP 50" value={statTop50.value} delta={statTop50.delta} staleDate={senutoStaleDate} dot="var(--ink-faint)" href="#top-50" />
     <StatCard
       label="Ranking domeny"
       value={statRank.value}
       delta={statRank.delta}
       goodWhen="down"
+      staleDate={senutoStaleDate}
     />
   </div>
 
@@ -129,7 +139,7 @@ const diffClass = (d: number | null | undefined) =>
   <div class="section-head"><h2>Rankujące frazy</h2></div>
   <TableCard
     title="Frazy"
-    meta={details.date ? `stan z ${details.date} · ${keywords.length} najlepszych pozycji z pełnej bazy fraz` : undefined}
+    meta={details.date ? `stan z ${fmtDate(details.date)} · ${keywords.length} najlepszych pozycji z pełnej bazy fraz` : undefined}
     count={keywords.length}
     filter
     empty="Lista fraz pojawi się po najbliższym przebiegu collectora (codziennie 6:30)."
@@ -181,7 +191,7 @@ const diffClass = (d: number | null | undefined) =>
                 )}
               </td>
               <td class="num">
-                <span class="cell-bar">
+                <span class="cell-bar rbar">
                   {fmtInt(k.searches)}
                   <span class="bar sen">
                     <i style={`width:${barWidth(k.searches, maxSearches)}%`} />

@@ -21,6 +21,7 @@ ADMIN_API = "https://analyticsadmin.googleapis.com/v1beta"
 SCOPE = "https://www.googleapis.com/auth/analytics.readonly"
 TOP_ROWS = 50
 LANDING_WINDOW_DAYS = 28
+DAILY_HISTORY_DAYS = 90
 MONTHLY_MONTHS = 25  # ~2 lata + bieżący, wystarcza na r/r i sezonowość
 
 
@@ -189,6 +190,60 @@ def fetch(cfg: dict, env: dict) -> dict:
             "pages_per_session": round(_to_int(pv) / se_i, 2) if se_i else 0,
         })
 
+    # --- Historia dzienna z Data API. Snapshot collectora mówi, kiedy wykonano
+    # pomiar, a nie zastępuje historii analitycznej. Pobieramy ją wprost z GA4,
+    # żeby delty 7-dniowe działały również od pierwszego uruchomienia panelu.
+    daily_start = (today - timedelta(days=DAILY_HISTORY_DAYS)).strftime("%Y-%m-%d")
+    daily_range = [{"startDate": daily_start, "endDate": day}]
+    daily_resp = _run_report(token, property_id, {
+        "dateRanges": daily_range,
+        "dimensions": [{"name": "date"}],
+        "metrics": [{"name": m} for m in (
+            "sessions", "activeUsers", "newUsers", "screenPageViews",
+            "engagementRate", "userEngagementDuration", "engagedSessions")],
+        "limit": DAILY_HISTORY_DAYS + 5,
+        "orderBys": [{"dimension": {"dimensionName": "date"}}],
+    })
+    daily = []
+    for date, se, au, nu, pv, er, dur, es in _rows(daily_resp):
+        sessions_i = _to_int(se)
+        users_i = _to_int(au)
+        engaged_i = _to_int(es)
+        daily.append({
+            "date": f"{date[:4]}-{date[4:6]}-{date[6:8]}",
+            "sessions": sessions_i,
+            "active_users": users_i,
+            "new_users": _to_int(nu),
+            "returning_users": max(0, users_i - _to_int(nu)),
+            "pageviews": _to_int(pv),
+            "engagement_rate": round(_to_float(er) * 100, 2),
+            "avg_engagement_s": round(_to_float(dur) / sessions_i, 1) if sessions_i else 0,
+            "engaged_sessions": engaged_i,
+            "engaged_per_user": round(engaged_i / users_i, 2) if users_i else 0,
+            "pages_per_session": round(_to_int(pv) / sessions_i, 2) if sessions_i else 0,
+            "organic_sessions": 0,
+        })
+
+    organic_daily_resp = _run_report(token, property_id, {
+        "dateRanges": daily_range,
+        "dimensions": [{"name": "date"}],
+        "metrics": [{"name": "sessions"}],
+        "dimensionFilter": {
+            "filter": {
+                "fieldName": "sessionDefaultChannelGroup",
+                "stringFilter": {"matchType": "EXACT", "value": "Organic Search"},
+            }
+        },
+        "limit": DAILY_HISTORY_DAYS + 5,
+        "orderBys": [{"dimension": {"dimensionName": "date"}}],
+    })
+    organic_by_date = {
+        f"{date[:4]}-{date[4:6]}-{date[6:8]}": _to_int(value)
+        for date, value in _rows(organic_daily_resp)
+    }
+    for row in daily:
+        row["organic_sessions"] = organic_by_date.get(row["date"], 0)
+
     # --- Trend miesięczny (łącznie + per kanał) – 25 miesięcy do r/r i sezonowości. ---
     month_start = (today.replace(day=1) - timedelta(days=31 * (MONTHLY_MONTHS - 1))).replace(day=1)
     month_range = [{"startDate": month_start.strftime("%Y-%m-%d"), "endDate": day}]
@@ -218,6 +273,7 @@ def fetch(cfg: dict, env: dict) -> dict:
                 "sources": sources,
                 "pages": pages,
                 "landing_pages": {"window": {"start": landing_start, "end": day}, "rows": landing},
+                "daily": daily,
                 "monthly": monthly,
                 "channels_monthly": channels_monthly,
             }}

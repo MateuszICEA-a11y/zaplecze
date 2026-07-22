@@ -1,7 +1,7 @@
-"""Alerty progowe po dziennym przebiegu collectora (mail przez Resend).
+"""Alerty progowe po dziennym przebiegu collectora (Resend + webhooki).
 
 Progi w domains.yaml (global.alerts); mail leci raz na przebieg (cron 1×/dzień),
-dopóki wartość jest poniżej progu. Brak RESEND_API_KEY lub progów = cicho pomijamy.
+dopóki wartość jest poniżej progu. Odbiorcy i webhooki są w global.alerts.
 Nadawca jak w lead-gen widocznosc.ai (domena zweryfikowana w Resend).
 """
 import json
@@ -19,15 +19,25 @@ def _value(sources: dict, source: str, field: str):
     return (entry.get("data") or {}).get(field)
 
 
-def check_credit_alerts(global_sources: dict, alerts_cfg: dict, env: dict) -> None:
-    email = (alerts_cfg or {}).get("email", "").strip()
-    api_key = env.get("RESEND_API_KEY", "").strip()
-    if not email or not api_key:
-        if alerts_cfg:
-            print("  [alerts] pominięte: brak email w konfigu lub RESEND_API_KEY w env",
-                  file=sys.stderr)
-        return
+def _strings(value) -> list[str]:
+    if isinstance(value, str):
+        return [value.strip()] if value.strip() else []
+    if isinstance(value, list):
+        return [str(item).strip() for item in value if str(item).strip()]
+    return []
 
+
+def _post_json(url: str, payload: dict, headers: dict | None = None) -> None:
+    req = urllib.request.Request(
+        url,
+        data=json.dumps(payload).encode(),
+        headers={"Content-Type": "application/json", **(headers or {})},
+    )
+    with urllib.request.urlopen(req, timeout=20) as resp:
+        resp.read()
+
+
+def check_credit_alerts(global_sources: dict, alerts_cfg: dict, env: dict) -> None:
     problems: list[str] = []
 
     sms_min = alerts_cfg.get("sms_min")
@@ -44,23 +54,40 @@ def check_credit_alerts(global_sources: dict, alerts_cfg: dict, env: dict) -> No
         print("  [alerts] progi kredytów OK")
         return
 
+    recipients = _strings(alerts_cfg.get("emails")) or _strings(alerts_cfg.get("email"))
+    api_key = env.get("RESEND_API_KEY", "").strip()
     items = "".join(f"<li>{p}</li>" for p in problems)
-    body = json.dumps({
-        "from": FROM,
-        "to": [email],
-        "subject": f"⚠ Dashboard zaplecza: niski stan kredytów ({len(problems)})",
-        "html": (f"<p>Dzienny przebieg collectora wykrył niski stan kont:</p>"
-                 f"<ul>{items}</ul>"
-                 f"<p>Szczegóły: <a href=\"https://zaplecze-dashboard.m-wisniewski.workers.dev/\">"
-                 f"dashboard zaplecza</a> → Kredyty (konto).</p>"),
-    }).encode()
-    req = urllib.request.Request(RESEND_URL, data=body, headers={
-        "Authorization": f"Bearer {api_key}",
-        "Content-Type": "application/json",
-    })
-    try:
-        with urllib.request.urlopen(req, timeout=20) as resp:
-            json.loads(resp.read().decode())
-        print(f"  [alerts] wysłano alert ({len(problems)}) na {email}")
-    except Exception as err:  # noqa: BLE001 – alert nie może wywalić collectora
-        print(f"  [alerts] wysyłka nie powiodła się: {err}", file=sys.stderr)
+    if recipients and api_key:
+        try:
+            _post_json(RESEND_URL, {
+                "from": FROM,
+                "to": recipients,
+                "subject": f"⚠ Dashboard zaplecza: niski stan kredytów ({len(problems)})",
+                "html": (f"<p>Dzienny przebieg collectora wykrył niski stan kont:</p>"
+                         f"<ul>{items}</ul>"
+                         f"<p>Szczegóły: <a href=\"https://zaplecze-dashboard.m-wisniewski.workers.dev/\">"
+                         f"dashboard zaplecza</a> → System i limity.</p>"),
+            }, {"Authorization": f"Bearer {api_key}"})
+            print(f"  [alerts] Resend: wysłano alert ({len(problems)}) do {len(recipients)} odbiorców")
+        except Exception as err:  # noqa: BLE001 – alert nie może wywalić collectora
+            print(f"  [alerts] Resend: wysyłka nie powiodła się: {err}", file=sys.stderr)
+    else:
+        print("  [alerts] Resend pominięty: brak emails w konfigu lub RESEND_API_KEY w env",
+              file=sys.stderr)
+
+    webhook_urls = _strings(alerts_cfg.get("webhook_urls"))
+    for env_name in _strings(alerts_cfg.get("webhook_envs")):
+        url = env.get(env_name, "").strip()
+        if url:
+            webhook_urls.append(url)
+    webhook_payload = {
+        "event": "dashboard.credit_limit_near",
+        "problems": problems,
+        "dashboard_url": "https://zaplecze-dashboard.m-wisniewski.workers.dev/system",
+    }
+    for index, url in enumerate(dict.fromkeys(webhook_urls), start=1):
+        try:
+            _post_json(url, webhook_payload)
+            print(f"  [alerts] webhook {index}: wysłano")
+        except Exception as err:  # noqa: BLE001
+            print(f"  [alerts] webhook {index}: wysyłka nie powiodła się: {err}", file=sys.stderr)

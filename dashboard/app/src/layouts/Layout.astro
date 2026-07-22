@@ -18,6 +18,11 @@ const segments = Astro.url.pathname.split('/').filter(Boolean);
 const currentDomain = domains.find((d) => d.id === segments[0]) ?? null;
 const activeSection = currentDomain ? (segments[1] ?? '') : null;
 const latest = currentDomain ? latestSnapshot(currentDomain.id) : null;
+const visibleSections = currentDomain
+  ? sectionsFor(currentDomain).filter((section) =>
+      !section.source || latest?.sources[section.source]?.status !== 'not_configured',
+    )
+  : [];
 
 const dotClass = (source: string | null): string => {
   if (!source) return 'none';
@@ -84,7 +89,7 @@ const SECTION_ICONS: Record<string, string> = {
             <nav class="side-nav" aria-label="Sekcje domeny">
               <a class="back-link" href="/">← wszystkie domeny</a>
               <div class="nav-label">{currentDomain.name}</div>
-              {sectionsFor(currentDomain).map((s) => (
+              {visibleSections.map((s) => (
                 <a
                   href={`/${currentDomain.id}/${s.slug ? s.slug + '/' : ''}`}
                   class:list={['nav-item', { active: activeSection === s.slug }]}
