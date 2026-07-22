@@ -37,6 +37,28 @@ const statTop50 = latestWithDelta(snapshots, 'senuto', 'top50');
 const statVisibility = latestWithDelta(snapshots, 'senuto', 'visibility');
 const statRank = latestWithDelta(snapshots, 'senuto', 'domain_rank');
 
+const visibilityPrevious =
+  statVisibility.value !== null && statVisibility.delta !== null
+    ? statVisibility.value - statVisibility.delta
+    : null;
+const visibilityDeltaPct =
+  visibilityPrevious && statVisibility.delta !== null
+    ? (statVisibility.delta / visibilityPrevious) * 100
+    : null;
+
+/* Handoff pokazuje trendy z ostatnich 3 miesięcy, nie pełny backfill. */
+const lastTimestamp = Math.max(0, ...top10.timestamps, ...visibility.timestamps);
+const trendCutoff = lastTimestamp - 91 * 86400;
+const trimTrend = (series: { timestamps: number[]; values: (number | null)[] }) => {
+  const found = series.timestamps.findIndex((timestamp) => timestamp >= trendCutoff);
+  const start = found === -1 ? 0 : found;
+  return { timestamps: series.timestamps.slice(start), values: series.values.slice(start) };
+};
+const top3Trend = trimTrend(top3);
+const top10Trend = trimTrend(top10);
+const top50Trend = trimTrend(top50);
+const visibilityTrend = trimTrend(visibility);
+
 const senuto = latest?.sources.senuto;
 const maxSearches = Math.max(...keywords.map((k) => k.searches ?? 0), 0);
 
@@ -45,7 +67,12 @@ const diffClass = (d: number | null | undefined) =>
 ---
 
 <Layout title={`${name} – Senuto`}>
-  <DomainHeader domain={domain!} name={name} active="senuto" latest={latest} />
+  <DomainHeader domain={domain!} name={name} active="senuto" latest={latest} themeToggle />
+
+  <div class="senuto-note">
+    Indeks widoczności jest głównym wskaźnikiem, a karty tierów <b>TOP 3/10/50 działają jako filtry tabeli</b>.
+    Lista obejmuje do 200 najlepszych fraz i pozwala sortować pozycję, zmianę, wolumen oraz trudność słowa. Dane pochodzą bezpośrednio z Senuto.
+  </div>
 
   {
     senuto && senuto.status !== 'ok' && (
@@ -60,8 +87,9 @@ const diffClass = (d: number | null | undefined) =>
     <StatCard
       label="Indeks widoczności"
       value={statVisibility.value}
-      delta={statVisibility.delta}
-      precision={2}
+      delta={visibilityDeltaPct}
+      deltaUnit="%"
+      precision={1}
       trend={visibility.values}
       src="sen"
       hero
@@ -77,24 +105,24 @@ const diffClass = (d: number | null | undefined) =>
     />
   </div>
 
-  <div class="section-head"><h2>Trendy</h2></div>
-  <div class="chart-grid">
+  <div class="section-head"><h2>Trendy</h2><span class="section-meta">3 miesiące</span></div>
+  <div class="senuto-charts">
     <TimeSeriesChart
       title="Frazy w TOP 3 / 10 / 50"
-      meta="dziennie"
-      timestamps={top10.timestamps}
+      timestamps={top10Trend.timestamps}
       series={[
-        { label: 'TOP 3', values: top3.values },
-        { label: 'TOP 10', values: top10.values },
-        { label: 'TOP 50', values: top50.values, fill: true },
+        { label: 'TOP 3', values: top3Trend.values, color: '--status-ok', dash: [] },
+        { label: 'TOP 10', values: top10Trend.values, color: '--accent-blue', dash: [] },
+        { label: 'TOP 50', values: top50Trend.values, color: '--ink-faint', dash: [] },
       ]}
+      overview
     />
     <TimeSeriesChart
       title="Indeks widoczności"
-      meta="dziennie"
-      timestamps={visibility.timestamps}
-      series={[{ label: 'Widoczność', values: visibility.values }]}
+      timestamps={visibilityTrend.timestamps}
+      series={[{ label: 'Widoczność', values: visibilityTrend.values, color: '--sen', dash: [], fill: true }]}
       precision={2}
+      overview
     />
   </div>
 
@@ -227,3 +255,26 @@ const diffClass = (d: number | null | undefined) =>
     }
   </script>
 </Layout>
+
+<style>
+  .senuto-note {
+    border-left: 2px solid var(--sen);
+    background: color-mix(in srgb, var(--sen) 6%, transparent);
+    color: var(--ink-muted);
+    font-size: 0.84rem;
+    line-height: 1.5;
+    padding: 10px 14px;
+    border-radius: 0 10px 10px 0;
+    margin: 16px 0 4px;
+  }
+  .senuto-note b { color: var(--ink); }
+  .senuto-charts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  @media (max-width: 1080px) {
+    .senuto-charts { grid-template-columns: 1fr; }
+  }
+</style>
