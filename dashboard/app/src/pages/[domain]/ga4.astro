@@ -50,6 +50,11 @@ const statEngPerUser = latestWithDelta(snapshots, 'ga4', 'engaged_per_user');
 const statPagesPerSession = latestWithDelta(snapshots, 'ga4', 'pages_per_session');
 const dataDate = ga4?.data?.data_date ?? null;
 
+/* Podział nowi/powracający w karcie Użytkownicy (handoff „GA4 – układ"). */
+const splitTotal = (statNewUsers.value ?? 0) + (statReturning.value ?? 0);
+const splitNewPct = splitTotal > 0 ? Math.round(((statNewUsers.value ?? 0) / splitTotal) * 100) : 0;
+const hasSplit = splitTotal > 0;
+
 // Trend miesięczny (25 mies. z Data API) + delta r/r na ostatnim pełnym miesiącu.
 const monthTs = (m: string) => Math.floor(Date.UTC(+m.slice(0, 4), +m.slice(4, 6) - 1, 1) / 1000);
 const monthlyTs = monthly.map((m) => monthTs(m.month));
@@ -78,8 +83,9 @@ const maxChannel = Math.max(...channels.map((c) => c.sessions), 0);
 const maxSource = Math.max(...trafficSources.map((s) => s.sessions), 0);
 const maxPage = Math.max(...pages.map((p) => p.pageviews), 0);
 const maxLanding = Math.max(...landing.map((l) => l.sessions), 0);
-const engClass = (rate: number | null) =>
-  typeof rate !== 'number' ? '' : rate >= 60 ? 'top3' : rate >= 40 ? 'top10' : rate >= 25 ? 'mid' : 'low';
+
+/* Wartości techniczne GA4 ((not set), Unassigned…) – wyciszamy, nie udajemy treści. */
+const isJunk = (name: string) => /^\(|unassigned|not set|not available/i.test(name);
 ---
 
 <Layout title={`${name} – GA4`}>
@@ -97,27 +103,45 @@ const engClass = (rate: number | null) =>
     <h2>Ruch w witrynie</h2>
     {dataDate && <span class="section-meta">pełna doba {dataDate} · delty 7-dniowe</span>}
   </div>
-  <div class="stat-grid">
+  <div class="rgrid4">
     <StatCard label="Sesje / dzień" value={statSessions.value} delta={statSessions.delta} trend={sessions.values} hero />
-    <StatCard label="Użytkownicy" value={statUsers.value} delta={statUsers.delta} />
-    <StatCard label="Nowi użytkownicy" value={statNewUsers.value} delta={statNewUsers.delta} />
-    <StatCard label="Powracający" value={statReturning.value} delta={statReturning.delta} />
+    <StatCard label="Użytkownicy" value={statUsers.value} delta={hasSplit ? null : statUsers.delta}>
+      {hasSplit && (
+        <div class="split">
+          <div class="bar">
+            <i class="a" style={`width:${splitNewPct}%`} />
+            <i class="b" style={`width:${100 - splitNewPct}%`} />
+          </div>
+          <div class="lg">
+            <span><span class="dot" style="background:var(--accent-blue)"></span>Nowi <b>{fmtInt(statNewUsers.value)}</b></span>
+            <span><span class="dot" style="background:var(--series-3)"></span>Powracający <b>{fmtInt(statReturning.value)}</b></span>
+          </div>
+        </div>
+      )}
+    </StatCard>
+    <StatCard label="Engagement rate" value={statEngRate.value} delta={statEngRate.delta} unit="%" precision={1} />
     <StatCard label="Sesje organiczne" value={statOrganic.value} delta={statOrganic.delta} trend={organicDaily.values} />
   </div>
-
-  <div class="section-head"><h2>Zaangażowanie</h2></div>
-  <div class="stat-grid">
-    <StatCard label="Engagement rate" value={statEngRate.value} delta={statEngRate.delta} unit="%" precision={1} />
-    <StatCard label="Śr. czas zaangażowania / sesję" value={statEngTime.value} delta={statEngTime.delta} unit="s" precision={0} />
-    <StatCard label="Engaged sessions / użytkownika" value={statEngPerUser.value} delta={statEngPerUser.delta} precision={2} />
-    <StatCard label="Strony / sesję" value={statPagesPerSession.value} delta={statPagesPerSession.delta} precision={2} />
+  <div class="micro">
+    <div class="m">
+      <div class="l">Śr. czas zaangażowania / sesję</div>
+      <div class="v">{fmtDuration(statEngTime.value)}</div>
+    </div>
+    <div class="m">
+      <div class="l">Strony / sesję</div>
+      <div class="v">{fmtNum(statPagesPerSession.value, 2)}</div>
+    </div>
+    <div class="m">
+      <div class="l">Engaged sessions / użytkownika</div>
+      <div class="v">{fmtNum(statEngPerUser.value, 2)}</div>
+    </div>
   </div>
 
   {
     monthly.length > 1 && (
       <>
         <div class="section-head">
-          <h2>Trend miesięczny</h2>
+          <h2>Trendy miesięczne</h2>
           <span class="section-meta">
             {monthLabel && `ostatni pełny miesiąc: ${monthLabel}`}
             {yoyDelta('sessions') !== null &&
@@ -132,8 +156,7 @@ const engClass = (rate: number | null) =>
             meta="miesięcznie"
             timestamps={monthlyTs}
             series={[
-              { label: 'Użytkownicy', values: monthly.map((m) => m.users), fill: true },
-              { label: 'Nowi', values: monthly.map((m) => m.new_users) },
+              { label: 'Nowi', values: monthly.map((m) => m.new_users), fill: true },
               { label: 'Powracający', values: monthly.map((m) => Math.max(0, m.users - m.new_users)) },
             ]}
           />
@@ -168,6 +191,113 @@ const engClass = (rate: number | null) =>
     />
   </div>
 
+  <div class="section-head">
+    <h2>Wczoraj – skąd i dokąd</h2>
+    <div class="seg" data-ga4-panes-seg>
+      <button type="button" class="active" data-pane="kanaly">Kanały · {channels.length}</button>
+      <button type="button" data-pane="zrodla">Źródła · {trafficSources.length}</button>
+      <button type="button" data-pane="strony">Strony · {pages.length}</button>
+    </div>
+  </div>
+
+  <div data-ga4-pane="kanaly">
+    <TableCard title="Kanały" count={channels.length} empty="Brak danych.">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Kanał</th>
+            <th class="num">Sesje</th>
+            <th class="num">Użytkownicy</th>
+            <th class="num">Odsłony</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            channels.map((c) => (
+              <tr>
+                <td class="grow"><span class={isJunk(c.channel) ? 'muted-tag' : ''}>{c.channel}</span></td>
+                <td class="num">
+                  <span class="cell-bar">
+                    {fmtInt(c.sessions)}
+                    <span class="bar">
+                      <i style={`width:${barWidth(c.sessions, maxChannel)}%`} />
+                    </span>
+                  </span>
+                </td>
+                <td class="num">{fmtInt(c.users)}</td>
+                <td class="num">{fmtInt(c.pageviews)}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </TableCard>
+  </div>
+
+  <div data-ga4-pane="zrodla" hidden>
+    <TableCard title="Źródła sesji" count={trafficSources.length} filter empty="Brak danych.">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Źródło</th>
+            <th class="num">Sesje</th>
+            <th class="num">Użytkownicy</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            trafficSources.map((s) => (
+              <tr>
+                <td class="grow"><span class={isJunk(s.source) ? 'muted-tag' : ''}>{s.source}</span></td>
+                <td class="num">
+                  <span class="cell-bar">
+                    {fmtInt(s.sessions)}
+                    <span class="bar">
+                      <i style={`width:${barWidth(s.sessions, maxSource)}%`} />
+                    </span>
+                  </span>
+                </td>
+                <td class="num">{fmtInt(s.users)}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </TableCard>
+  </div>
+
+  <div data-ga4-pane="strony" hidden>
+    <TableCard title="Najpopularniejsze strony" count={pages.length} filter empty="Brak danych.">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Strona</th>
+            <th class="num">Odsłony</th>
+            <th class="num">Użytkownicy</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            pages.map((p) => (
+              <tr>
+                <td class="grow"><span class="cell-url">{p.path}</span></td>
+                <td class="num">
+                  <span class="cell-bar">
+                    {fmtInt(p.pageviews)}
+                    <span class="bar">
+                      <i style={`width:${barWidth(p.pageviews, maxPage)}%`} />
+                    </span>
+                  </span>
+                </td>
+                <td class="num">{fmtInt(p.users)}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </TableCard>
+  </div>
+
   <TableCard
     title="Landing pages – zaangażowanie"
     meta={landingWindow ? `okno ${landingWindow.start} → ${landingWindow.end}` : undefined}
@@ -189,7 +319,7 @@ const engClass = (rate: number | null) =>
         {
           landing.map((l) => (
             <tr>
-              <td class="grow"><span class="cell-url">{l.path}</span></td>
+              <td class="grow"><span class={isJunk(l.path) ? 'muted-tag' : 'cell-url'}>{l.path}</span></td>
               <td class="num">
                 <span class="cell-bar">
                   {fmtInt(l.sessions)}
@@ -198,8 +328,11 @@ const engClass = (rate: number | null) =>
                   </span>
                 </span>
               </td>
-              <td class="num">
-                <span class={`pos-badge ${engClass(l.engagement_rate)}`}>{fmtPct(l.engagement_rate)}</span>
+              <td class="num" data-sort={l.engagement_rate}>
+                <span class="erate">
+                  <span class="t"><i style={`width:${Math.min(100, Math.max(0, l.engagement_rate ?? 0))}%`} /></span>
+                  <span class="v">{fmtPct(l.engagement_rate)}</span>
+                </span>
               </td>
               <td class="num">{fmtDuration(l.avg_engagement_s)}</td>
               <td class="num">{fmtNum(l.pages_per_session, 2)}</td>
@@ -210,95 +343,16 @@ const engClass = (rate: number | null) =>
     </table>
   </TableCard>
 
-  <TableCard title="Kanały (wczoraj)" count={channels.length} empty="Brak danych.">
-    <table class="data-table">
-      <thead>
-        <tr>
-          <th>Kanał</th>
-          <th class="num">Sesje</th>
-          <th class="num">Użytkownicy</th>
-          <th class="num">Odsłony</th>
-        </tr>
-      </thead>
-      <tbody>
-        {
-          channels.map((c) => (
-            <tr>
-              <td class="grow">{c.channel}</td>
-              <td class="num">
-                <span class="cell-bar">
-                  {fmtInt(c.sessions)}
-                  <span class="bar">
-                    <i style={`width:${barWidth(c.sessions, maxChannel)}%`} />
-                  </span>
-                </span>
-              </td>
-              <td class="num">{fmtInt(c.users)}</td>
-              <td class="num">{fmtInt(c.pageviews)}</td>
-            </tr>
-          ))
-        }
-      </tbody>
-    </table>
-  </TableCard>
-
-  <TableCard title="Źródła sesji (wczoraj)" count={trafficSources.length} filter empty="Brak danych.">
-    <table class="data-table">
-      <thead>
-        <tr>
-          <th>Źródło</th>
-          <th class="num">Sesje</th>
-          <th class="num">Użytkownicy</th>
-        </tr>
-      </thead>
-      <tbody>
-        {
-          trafficSources.map((s) => (
-            <tr>
-              <td class="grow">{s.source}</td>
-              <td class="num">
-                <span class="cell-bar">
-                  {fmtInt(s.sessions)}
-                  <span class="bar">
-                    <i style={`width:${barWidth(s.sessions, maxSource)}%`} />
-                  </span>
-                </span>
-              </td>
-              <td class="num">{fmtInt(s.users)}</td>
-            </tr>
-          ))
-        }
-      </tbody>
-    </table>
-  </TableCard>
-
-  <TableCard title="Najpopularniejsze strony (wczoraj)" count={pages.length} filter empty="Brak danych.">
-    <table class="data-table">
-      <thead>
-        <tr>
-          <th>Strona</th>
-          <th class="num">Odsłony</th>
-          <th class="num">Użytkownicy</th>
-        </tr>
-      </thead>
-      <tbody>
-        {
-          pages.map((p) => (
-            <tr>
-              <td class="grow"><span class="cell-url">{p.path}</span></td>
-              <td class="num">
-                <span class="cell-bar">
-                  {fmtInt(p.pageviews)}
-                  <span class="bar">
-                    <i style={`width:${barWidth(p.pageviews, maxPage)}%`} />
-                  </span>
-                </span>
-              </td>
-              <td class="num">{fmtInt(p.users)}</td>
-            </tr>
-          ))
-        }
-      </tbody>
-    </table>
-  </TableCard>
+  <script>
+    /* Przełącznik trzech list „wczoraj" (Kanały/Źródła/Strony) – jedna karta
+       widoczna naraz; karty zachowują własny filtr/sort/eksport TableCard. */
+    const seg = document.querySelector<HTMLElement>('[data-ga4-panes-seg]');
+    const panes = Array.from(document.querySelectorAll<HTMLElement>('[data-ga4-pane]'));
+    seg?.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest('button[data-pane]') as HTMLButtonElement | null;
+      if (!btn) return;
+      seg.querySelectorAll('button').forEach((b) => b.classList.toggle('active', b === btn));
+      panes.forEach((p) => (p.hidden = p.dataset.ga4Pane !== btn.dataset.pane));
+    });
+  </script>
 </Layout>
