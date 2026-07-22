@@ -182,8 +182,8 @@ const hasAttention = pageDrops.length > 0 || nearTop.length > 0 || idxRows.lengt
   <DomainHeader domain={domain!} name={name} active="" latest={latest} themeToggle />
 
   <div class="overview-note">
-    Przegląd jest hubem wielu źródeł: pasek zdrowia integracji, KPI oznaczone kolorem źródła
-    (<b class="sen">Senuto</b>/<b class="gsc">GSC</b>/<b class="ahrefs">Ahrefs</b>/<b class="ga4">GA4</b>),
+    Przegląd jest hubem wielu źródeł: pasek zdrowia integracji, KPI z akcentem kolorystycznym źródła
+    (<b class="gsc">GSC</b>/<b class="sen">Senuto</b>/<b class="ahrefs">Ahrefs</b>/<b class="clarity">Clarity</b>),
     porównania z historią i ostatni udany pomiar, gdy źródło jest chwilowo niedostępne. Na dole znajdują się automatyczne sygnały wymagające uwagi.
   </div>
 
@@ -368,7 +368,7 @@ const hasAttention = pageDrops.length > 0 || nearTop.length > 0 || idxRows.lengt
   .overview-note .sen { color: var(--sen); }
   .overview-note .gsc { color: var(--gsc); }
   .overview-note .ahrefs { color: var(--ahrefs); }
-  .overview-note .ga4 { color: var(--ga4); }
+  .overview-note .clarity { color: var(--series-3); }
   .overview-charts {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));

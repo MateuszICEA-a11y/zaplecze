@@ -48,7 +48,7 @@ const {
   emptyDeltaLabel,
 } = Astro.props;
 const Tag = href ? 'a' : 'div';
-const srcStyle = src ? `--src-color: var(--${src});` : undefined;
+const srcStyle = src ? `--src-color: var(--${src});` : dot ? `--src-color: ${dot};` : undefined;
 
 const formatted =
   value === null
@@ -81,7 +81,7 @@ if (points.length >= 2) {
 }
 ---
 
-<Tag class:list={['stat-card', { hero, stale: staleDate !== null }]} href={href} style={srcStyle}>
+<Tag class:list={['stat-card', { hero, stale: staleDate !== null, 'source-accent': Boolean(src || dot) }]} href={href} style={srcStyle}>
   <div class="stat-label">
     {src && <span class="src-dot" aria-hidden="true"></span>}
     {!src && dot && <span class="src-dot" style={`background:${dot}`} aria-hidden="true"></span>}
@@ -174,7 +174,7 @@ if (points.length >= 2) {
   .stat-card:hover {
     border-color: color-mix(in srgb, var(--src-color, var(--accent-blue)) 35%, var(--hairline));
   }
-  .stat-card.hero::before {
+  .stat-card.source-accent::before {
     content: '';
     position: absolute;
     inset: 0 auto auto 0;
