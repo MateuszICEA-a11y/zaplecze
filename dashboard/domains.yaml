@@ -93,3 +93,4 @@ global:
 # run: retry GA4 widocznosc.ai 2026-07-21
 # run: retry pełnej sitemapy w Matrix po konflikcie rebase 2026-07-21
 # run: dociągnięcie indeksacji grupa-icea po resecie kwoty PT 2026-07-22
+# run: dociągnięcie indeksacji po resecie kwoty PST (08:00 UTC) 2026-07-22
