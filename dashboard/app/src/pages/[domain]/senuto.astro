@@ -39,6 +39,9 @@ const statRank = latestWithDelta(snapshots, 'senuto', 'domain_rank');
 
 const senuto = latest?.sources.senuto;
 const maxSearches = Math.max(...keywords.map((k) => k.searches ?? 0), 0);
+
+const diffClass = (d: number | null | undefined) =>
+  typeof d !== 'number' ? '' : d < 40 ? 'easy' : d < 60 ? 'med' : 'hard';
 ---
 
 <Layout title={`${name} – Senuto`}>
@@ -52,19 +55,20 @@ const maxSearches = Math.max(...keywords.map((k) => k.searches ?? 0), 0);
     )
   }
 
-  <div class="section-head"><h2>Widoczność organiczna</h2></div>
-  <div class="stat-grid">
-    <StatCard label="Frazy w TOP 3" value={statTop3.value} delta={statTop3.delta} trend={top3.values} href="#top-3" />
-    <StatCard label="Frazy w TOP 10" value={statTop10.value} delta={statTop10.delta} trend={top10.values} href="#top-10" />
-    <StatCard label="Frazy w TOP 50" value={statTop50.value} delta={statTop50.delta} trend={top50.values} href="#top-50" />
+  <div class="section-head"><h2>Widoczność organiczna</h2><span class="section-meta">porównanie 7-dniowe</span></div>
+  <div class="stat-grid senuto-kpis">
     <StatCard
       label="Indeks widoczności"
       value={statVisibility.value}
       delta={statVisibility.delta}
       precision={2}
       trend={visibility.values}
+      src="sen"
       hero
     />
+    <StatCard label="Frazy w TOP 3" value={statTop3.value} delta={statTop3.delta} dot="var(--status-ok)" href="#top-3" />
+    <StatCard label="Frazy w TOP 10" value={statTop10.value} delta={statTop10.delta} dot="var(--accent-blue)" href="#top-10" />
+    <StatCard label="Frazy w TOP 50" value={statTop50.value} delta={statTop50.delta} dot="var(--ink-faint)" href="#top-50" />
     <StatCard
       label="Ranking domeny"
       value={statRank.value}
@@ -73,6 +77,7 @@ const maxSearches = Math.max(...keywords.map((k) => k.searches ?? 0), 0);
     />
   </div>
 
+  <div class="section-head"><h2>Trendy</h2></div>
   <div class="chart-grid">
     <TimeSeriesChart
       title="Frazy w TOP 3 / 10 / 50"
@@ -93,14 +98,15 @@ const maxSearches = Math.max(...keywords.map((k) => k.searches ?? 0), 0);
     />
   </div>
 
+  <div class="section-head"><h2>Rankujące frazy</h2></div>
   <TableCard
-    title="Rankujące frazy"
+    title="Frazy"
     meta={details.date ? `stan z ${details.date} · ${keywords.length} najlepszych pozycji z pełnej bazy fraz` : undefined}
     count={keywords.length}
     filter
     empty="Lista fraz pojawi się po najbliższym przebiegu collectora (codziennie 6:30)."
   >
-    <table class="data-table">
+    <table class="data-table kw-table">
       <thead>
         <tr>
           <th>Fraza</th>
@@ -108,43 +114,59 @@ const maxSearches = Math.max(...keywords.map((k) => k.searches ?? 0), 0);
           <th class="num">Zmiana</th>
           <th class="num">Wolumen / mies.</th>
           <th class="num">Trudność</th>
-          <th>URL</th>
         </tr>
       </thead>
       <tbody>
         {
           keywords.map((k) => (
             <tr>
-              <td class="grow">{k.keyword}</td>
-              <td class="num">
-                <span class={`pos-badge ${posClass(k.position)}`}>{fmtInt(k.position)}</span>
+              <td class="grow kw-cell">
+                <span class="txt" title={k.keyword}>{k.keyword}</span>
+                {k.url ? (
+                  <a class="url" href={`https://${k.url}`} rel="noopener" target="_blank" title={k.url}>
+                    {k.url}
+                  </a>
+                ) : (
+                  <span class="url">–</span>
+                )}
               </td>
               <td class="num">
+                <span class={`rbadge ${posClass(k.position)}`}>{fmtInt(k.position)}</span>
+              </td>
+              <td class="num" data-sort={k.diff ?? 0}>
                 {typeof k.diff === 'number' && k.diff !== 0 ? (
-                  <span class={`delta ${k.diff > 0 ? 'up' : 'down'}`}>
-                    {k.diff > 0 ? '▲' : '▼'} {Math.abs(k.diff)}
+                  <span class={`rdelta ${k.diff > 0 ? 'up' : 'down'}`}>
+                    <svg viewBox="0 0 12 12" aria-hidden="true">
+                      <path
+                        d={k.diff > 0 ? 'M2 8.5 6 4.5 10 8.5' : 'M2 3.5 6 7.5 10 3.5'}
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    {Math.abs(k.diff)}
                   </span>
                 ) : (
-                  <span class="delta">•</span>
+                  <span class="rdelta">—</span>
                 )}
               </td>
               <td class="num">
                 <span class="cell-bar">
                   {fmtInt(k.searches)}
-                  <span class="bar">
+                  <span class="bar sen">
                     <i style={`width:${barWidth(k.searches, maxSearches)}%`} />
                   </span>
                 </span>
               </td>
-              <td class="num">{fmtNum(k.difficulty, 0)}</td>
-              <td>
-                {k.url ? (
-                  <a class="cell-url" href={`https://${k.url}`} rel="noopener" target="_blank">
-                    {k.url}
-                  </a>
-                ) : (
-                  '–'
-                )}
+              <td class="num">
+                <span class={`diff-bar ${diffClass(k.difficulty)}`}>
+                  <span class="t">
+                    <i style={`width:${Math.min(100, Math.max(0, k.difficulty ?? 0))}%`} />
+                  </span>
+                  <span class="v">{fmtNum(k.difficulty, 0)}</span>
+                </span>
               </td>
             </tr>
           ))
@@ -154,17 +176,17 @@ const maxSearches = Math.max(...keywords.map((k) => k.searches ?? 0), 0);
   </TableCard>
 
   <script>
-    /* Karty TOP 3/10/50 filtrują tabelę fraz po kolumnie Pozycja (toggle).
-       Filtr idzie przez CustomEvent do kontrolera TableCard (spójny z filtrem
-       tekstowym, sortowaniem i pagerem). */
+    /* Karty TOP 3/10/50 (i chipy w nagłówku tabeli) filtrują frazy po kolumnie
+       Pozycja – toggle, wspólny stan. Filtr idzie CustomEventem do kontrolera
+       TableCard (spójny z filtrem tekstowym, sortowaniem i pagerem). */
     const card = document.querySelector<HTMLElement>('.table-card');
     const head = card?.querySelector<HTMLElement>('.table-head h3');
     if (card && head) {
-      const chip = document.createElement('button');
-      chip.type = 'button';
-      chip.className = 'chip pos-filter-chip';
-      chip.hidden = true;
-      head.after(chip);
+      const tiers = [3, 10, 50];
+      const chips = new Map<number | null, HTMLButtonElement>();
+      const box = document.createElement('div');
+      box.className = 'fchips';
+      head.after(box);
 
       const posOf = (row: HTMLTableRowElement) =>
         parseFloat((row.cells[1]?.textContent ?? '').replace(/[\s  ]/g, '').replace(',', '.'));
@@ -177,10 +199,22 @@ const maxSearches = Math.max(...keywords.map((k) => k.searches ?? 0), 0);
             detail: max === null ? null : (row: HTMLTableRowElement) => posOf(row) <= max,
           }),
         );
-        chip.hidden = max === null;
-        chip.textContent = `tylko TOP ${max} ✕`;
+        chips.forEach((chip, tier) => chip.classList.toggle('on', tier === max));
+        document.querySelectorAll<HTMLAnchorElement>('a.stat-card[href^="#top-"]').forEach((a) => {
+          a.classList.toggle('on', parseInt(a.getAttribute('href')!.slice(5), 10) === max);
+        });
       };
-      chip.addEventListener('click', () => apply(null));
+
+      ([null, ...tiers] as (number | null)[]).forEach((tier) => {
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'fchip';
+        chip.textContent = tier === null ? 'Wszystkie' : `TOP ${tier}`;
+        chip.addEventListener('click', () => apply(active === tier ? null : tier));
+        chips.set(tier, chip);
+        box.appendChild(chip);
+      });
+      apply(null);
 
       document.querySelectorAll<HTMLAnchorElement>('a.stat-card[href^="#top-"]').forEach((a) => {
         a.addEventListener('click', (e) => {
