@@ -1,6 +1,6 @@
 {
  "date": "2026-07-22",
- "collected_at": "2026-07-22T08:14:10Z",
+ "collected_at": "2026-07-22T08:21:22Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -11160,11 +11160,11 @@
      "requests": 30
     },
     {
-     "path": "/openapi.json",
+     "path": "/test.php",
      "requests": 28
     },
     {
-     "path": "/test.php",
+     "path": "/openapi.json",
      "requests": 28
     },
     {
