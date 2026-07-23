@@ -8,7 +8,7 @@ interface Props {
 const { name, result } = Astro.props;
 
 const STATUS_META: Record<string, { label: string; cls: string }> = {
-  ok: { label: 'OK', cls: 'ok' },
+  ok: { label: '', cls: 'ok' },
   token_expired: { label: 'token wygasł', cls: 'warn' },
   error: { label: 'błąd', cls: 'err' },
   not_configured: { label: 'nieskonfigurowane', cls: 'off' },
@@ -16,15 +16,18 @@ const STATUS_META: Record<string, { label: string; cls: string }> = {
 const meta = STATUS_META[result?.status ?? 'not_configured'] ?? STATUS_META.error;
 ---
 
-<span class="rstat" title={result?.error ?? ''}>
+<span class="rstat" title={result?.error ?? meta.label || 'OK'}>
   <span class={`d ${meta.cls}`} aria-hidden="true"></span>
-  <span><b>{name}</b> {meta.label}</span>
+  <span><b>{name}</b>{meta.label ? ` ${meta.label}` : ''}</span>
 </span>
 
 <style>
+  .rstat {
+    gap: 6px;
+    padding: 4px 10px 4px 8px;
+  }
   .rstat b {
     color: var(--ink);
     font-weight: 600;
-    margin-right: 3px;
   }
 </style>
