@@ -1,127 +1,484 @@
 /* ============================================================
-   Dashboard zaplecza – tokeny skopiowane z
-   portals/widocznosc.ai/src/styles/Theme.css (surface ladder,
-   ink, accent). Kopia zamiast importu cross-package: osobny
-   deploy CF Pages. Dark = default, light przez [data-theme].
+   Dashboard zaplecza – NVIDIA-style design system
+   Jednoakcentowy (NVIDIA Green #76b900), 2px radius, hairline
+   borders, zero elevation. Dark = default, light przez [data-theme].
    ============================================================ */
 
 :root {
-  /* Typografia: Inter (tekst) + Space Grotesk (display/liczby) – self-hosted fontsource */
+  /* Typografia: Inter (body, zamiennik NVIDIA-EMEA) + Space Grotesk (display/liczby) */
   --font-body: 'Inter Variable', system-ui, -apple-system, sans-serif;
   --font-display: 'Space Grotesk Variable', 'Inter Variable', system-ui, sans-serif;
 
-  /* Surface ladder */
-  --bg-canvas: #08090c;
-  --bg-rail: #0b0d12;
-  --bg-surface-1: #11141a;
-  --bg-surface-2: #1a2029;
-  --bg-surface-3: #242b36;
+  /* Surface ladder — NVIDIA dark */
+  --bg-canvas: #000000;
+  --bg-rail: #0a0a0a;
+  --bg-surface-1: #1a1a1a;
+  --bg-surface-2: #242424;
+  --bg-surface-3: #2e2e2e;
 
   /* Hairlines */
-  --hairline: rgba(255, 255, 255, 0.08);
-  --hairline-soft: rgba(255, 255, 255, 0.04);
+  --hairline: #5e5e5e;
+  --hairline-soft: rgba(255, 255, 255, 0.06);
 
   /* Ink */
   --ink: #ffffff;
-  --ink-muted: #a6abb5;
-  --ink-faint: #788294;
+  --ink-muted: rgba(255, 255, 255, 0.7);
+  --ink-faint: #898989;
 
-  /* Accent */
-  --accent-blue: #0a9cff;
-  --accent-blue-soft: rgba(10, 156, 255, 0.16);
+  /* Accent — NVIDIA Green (jedyny akcent w systemie) */
+  --accent-blue: #76b900;
+  --accent-blue-soft: rgba(118, 185, 0, 0.14);
 
   /* Statusy źródeł */
-  --status-ok: #1aaa55;
-  --status-warn-fg: #fbbf24;
-  --status-warn-bg: rgba(251, 191, 36, 0.12);
-  --status-err-fg: #fca5a5;
-  --status-err-bg: rgba(239, 68, 68, 0.14);
+  --status-ok: #76b900;
+  --status-warn-fg: #ef9100;
+  --status-warn-bg: rgba(239, 145, 0, 0.12);
+  --status-err-fg: #e52020;
+  --status-err-bg: rgba(229, 32, 32, 0.12);
 
-  /* Paleta serii wykresów – wersja z mockupu designu (2026-07-21); wtórne
-     kodowanie przez dash pattern serii + stałą legendę zostaje. */
-  --series-1: #0a9cff;
-  --series-2: #f0883e;
-  --series-3: #23c483;
+  /* Paleta serii wykresów — monochromatyczna z akcentem */
+  --series-1: #76b900;
+  --series-2: #ef9100;
+  --series-3: #bff230;
 
-  /* Kolory źródeł (Matrix – grupowane nagłówki, kropki .src) */
-  --sen: #b07cff;
+  /* Kolory źródeł */
+  --sen: #952fc6;
   --gsc: var(--accent-blue);
   --ga4: var(--series-3);
   --ahrefs: var(--series-2);
   --bing: #17c3b2;
-  --bing-soft: rgba(23, 195, 178, 0.14);
+  --bing-soft: rgba(23, 195, 178, 0.12);
 
-  /* sygnały frustracji Clarity (handoff „Clarity – układ") */
-  --rage: #fca5a5;
-  --dead: #fbbf24;
-  --quick: #f0883e;
+  /* Sygnały frustracji Clarity */
+  --rage: #e52020;
+  --dead: #ef9100;
+  --quick: #df6500;
 
-  /* akcenty sekcji: Ahrefs, Leady (handoff §15/§17) */
-  --ahrefs-soft: rgba(240, 136, 62, 0.14);
-  --lead: #23c483;
-  --lead-soft: rgba(35, 196, 131, 0.14);
+  /* Akcenty sekcji */
+  --ahrefs-soft: rgba(239, 145, 0, 0.12);
+  --lead: #76b900;
+  --lead-soft: rgba(118, 185, 0, 0.12);
 
-  /* dostawcy botów AI (handoff §16) */
+  /* Dostawcy botów AI */
   --v-anthropic: #d97757;
-  --v-openai: #23c483;
-  --v-perplexity: #0a9cff;
-  --v-apple: #a6abb5;
-  --v-bytedance: #b07cff;
+  --v-openai: #76b900;
+  --v-perplexity: #0046a4;
+  --v-apple: #a7a7a7;
+  --v-bytedance: #952fc6;
   --v-mistral: #17c3b2;
-  --v-common: #f0883e;
-  --v-other: #788294;
+  --v-common: #ef9100;
+  --v-other: #898989;
 
-  --shadow-card: 0 30px 60px -25px rgba(0, 0, 0, 0.55);
+  /* NVIDIA: zero elevation — flat + hairline */
+  --shadow-card: none;
   --container: 1280px;
   --gutter: 24px;
+
+  /* Corner square motyw dekoracyjny */
+  --corner-square-size: 12px;
+  --corner-square-color: var(--accent-blue);
 }
 
 :root[data-theme='light'] {
-  --bg-canvas: #f2f5f9;
-  --bg-rail: #eaeff6;
+  /* Surface ladder — NVIDIA light (paper white) */
+  --bg-canvas: #ffffff;
+  --bg-rail: #f7f7f7;
   --bg-surface-1: #ffffff;
-  --bg-surface-2: #edf2f8;
-  --bg-surface-3: #dde6f0;
+  --bg-surface-2: #f7f7f7;
+  --bg-surface-3: #eeeeee;
 
-  --hairline: rgba(15, 23, 42, 0.15);
-  --hairline-soft: rgba(15, 23, 42, 0.09);
+  /* Hairlines */
+  --hairline: #cccccc;
+  --hairline-soft: rgba(0, 0, 0, 0.06);
 
-  --ink: #111827;
-  --ink-muted: #526176;
-  --ink-faint: #758195;
+  /* Ink */
+  --ink: #000000;
+  --ink-muted: #1a1a1a;
+  --ink-faint: #757575;
 
-  --accent-blue: #0068cc;
-  --accent-blue-soft: rgba(0, 104, 204, 0.14);
+  /* Accent — ten sam NVIDIA Green */
+  --accent-blue: #76b900;
+  --accent-blue-soft: rgba(118, 185, 0, 0.1);
 
-  --status-ok: #15803d;
-  --status-warn-fg: #b45309;
-  --status-warn-bg: rgba(180, 83, 9, 0.1);
-  --status-err-fg: #b91c1c;
-  --status-err-bg: rgba(185, 28, 28, 0.1);
+  /* Statusy */
+  --status-ok: #3f8500;
+  --status-warn-fg: #df6500;
+  --status-warn-bg: rgba(223, 101, 0, 0.08);
+  --status-err-fg: #e52020;
+  --status-err-bg: rgba(229, 32, 32, 0.08);
 
-  --series-1: #0068cc;
-  --series-2: #c2620e;
-  --series-3: #0f9d58;
-  --sen: #7c3aed;
+  /* Serie */
+  --series-1: #5a8d00;
+  --series-2: #df6500;
+  --series-3: #3f8500;
+
+  /* Źródła */
+  --sen: #4d1368;
   --bing: #0d9488;
-  --bing-soft: rgba(13, 148, 136, 0.14);
-  --rage: #b91c1c;
-  --dead: #b45309;
-  --quick: #c2620e;
-  --ahrefs-soft: rgba(194, 98, 14, 0.14);
-  --lead: #0f9d58;
-  --lead-soft: rgba(15, 157, 88, 0.12);
+  --bing-soft: rgba(13, 148, 136, 0.1);
+  --rage: #650b0b;
+  --dead: #df6500;
+  --quick: #df6500;
+  --ahrefs-soft: rgba(223, 101, 0, 0.1);
+  --lead: #3f8500;
+  --lead-soft: rgba(63, 133, 0, 0.1);
   --v-anthropic: #c2410c;
-  --v-openai: #0f9d58;
-  --v-perplexity: #0068cc;
-  --v-apple: #526176;
-  --v-bytedance: #7c3aed;
+  --v-openai: #3f8500;
+  --v-perplexity: #0046a4;
+  --v-apple: #757575;
+  --v-bytedance: #4d1368;
   --v-mistral: #0d9488;
-  --v-common: #c2620e;
-  --v-other: #758195;
+  --v-common: #df6500;
+  --v-other: #757575;
 
-  --shadow-card: 0 20px 40px -20px rgba(15, 23, 42, 0.25);
+  /* Zero elevation */
+  --shadow-card: none;
 }
+
+/* ============================================================
+   PlayStation — editorial gaming: SST Light 300, pill CTAs,
+   alternating dark/light/blue bands, 8px card radius
+   ============================================================ */
+:root[data-theme='ps'] {
+  --font-body: 'Inter Variable', system-ui, -apple-system, sans-serif;
+  --font-display: 'Inter Variable', system-ui, -apple-system, sans-serif;
+
+  --bg-canvas: #000000;
+  --bg-rail: #000000;
+  --bg-surface-1: #121314;
+  --bg-surface-2: #181818;
+  --bg-surface-3: #222222;
+
+  --hairline: rgba(229, 229, 229, 0.2);
+  --hairline-soft: rgba(255, 255, 255, 0.06);
+
+  --ink: #ffffff;
+  --ink-muted: rgba(255, 255, 255, 0.7);
+  --ink-faint: #cccccc;
+
+  --accent-blue: #0070d1;
+  --accent-blue-soft: rgba(0, 112, 209, 0.16);
+
+  --status-ok: #0070d1;
+  --status-warn-fg: #d53b00;
+  --status-warn-bg: rgba(213, 59, 0, 0.12);
+  --status-err-fg: #c81b3a;
+  --status-err-bg: rgba(200, 27, 58, 0.1);
+
+  --series-1: #0070d1;
+  --series-2: #d53b00;
+  --series-3: #53b1ff;
+
+  --sen: #8c6eff;
+  --gsc: var(--accent-blue);
+  --ga4: var(--series-3);
+  --ahrefs: var(--series-2);
+  --bing: #53b1ff;
+  --bing-soft: rgba(83, 177, 255, 0.12);
+  --rage: #c81b3a;
+  --dead: #d53b00;
+  --quick: #d53b00;
+  --ahrefs-soft: rgba(213, 59, 0, 0.12);
+  --lead: #0070d1;
+  --lead-soft: rgba(0, 112, 209, 0.12);
+
+  --v-anthropic: #d53b00;
+  --v-openai: #0070d1;
+  --v-perplexity: #53b1ff;
+  --v-apple: #cccccc;
+  --v-bytedance: #8c6eff;
+  --v-mistral: #53b1ff;
+  --v-common: #d53b00;
+  --v-other: #6b6b6b;
+
+  --shadow-card: none;
+  --container: 1280px;
+  --gutter: 24px;
+  --corner-square-size: 0px;
+}
+
+:root[data-theme='ps-light'] {
+  --font-body: 'Inter Variable', system-ui, -apple-system, sans-serif;
+  --font-display: 'Inter Variable', system-ui, -apple-system, sans-serif;
+
+  --bg-canvas: #ffffff;
+  --bg-rail: #f5f7fa;
+  --bg-surface-1: #ffffff;
+  --bg-surface-2: #f5f7fa;
+  --bg-surface-3: #f3f3f3;
+
+  --hairline: #f3f3f3;
+  --hairline-soft: rgba(0, 0, 0, 0.04);
+
+  --ink: #000000;
+  --ink-muted: rgba(0, 0, 0, 0.6);
+  --ink-faint: #6b6b6b;
+
+  --accent-blue: #0070d1;
+  --accent-blue-soft: rgba(0, 112, 209, 0.08);
+
+  --status-ok: #0070d1;
+  --status-warn-fg: #d53b00;
+  --status-warn-bg: rgba(213, 59, 0, 0.08);
+  --status-err-fg: #c81b3a;
+  --status-err-bg: rgba(200, 27, 58, 0.06);
+
+  --series-1: #0070d1;
+  --series-2: #d53b00;
+  --series-3: #0064b7;
+
+  --sen: #6a26a4;
+  --bing: #0064b7;
+  --bing-soft: rgba(0, 100, 183, 0.08);
+  --rage: #c81b3a;
+  --dead: #d53b00;
+  --quick: #d53b00;
+  --ahrefs-soft: rgba(213, 59, 0, 0.08);
+  --lead: #0070d1;
+  --lead-soft: rgba(0, 112, 209, 0.08);
+
+  --v-anthropic: #d53b00;
+  --v-openai: #0070d1;
+  --v-perplexity: #0064b7;
+  --v-apple: #6b6b6b;
+  --v-bytedance: #6a26a4;
+  --v-mistral: #0064b7;
+  --v-common: #d53b00;
+  --v-other: #6b6b6b;
+
+  --shadow-card: none;
+  --container: 1280px;
+  --gutter: 24px;
+  --corner-square-size: 0px;
+}
+
+/* PlayStation: font-weight 300 on display, pill CTAs, 8px card radius */
+:root[data-theme='ps'] h1,
+:root[data-theme='ps'] h2,
+:root[data-theme='ps'] h3,
+:root[data-theme='ps-light'] h1,
+:root[data-theme='ps-light'] h2,
+:root[data-theme='ps-light'] h3 {
+  font-weight: 300;
+  letter-spacing: 0.1px;
+}
+:root[data-theme='ps'] .stat-card,
+:root[data-theme='ps'] .domain-card,
+:root[data-theme='ps'] .table-card,
+:root[data-theme='ps'] .seg-card,
+:root[data-theme='ps'] .rchart,
+:root[data-theme='ps'] .empty-chart,
+:root[data-theme='ps'] .drop-panel,
+:root[data-theme='ps-light'] .stat-card,
+:root[data-theme='ps-light'] .domain-card,
+:root[data-theme='ps-light'] .table-card,
+:root[data-theme='ps-light'] .seg-card,
+:root[data-theme='ps-light'] .rchart,
+:root[data-theme='ps-light'] .empty-chart,
+:root[data-theme='ps-light'] .drop-panel {
+  border-radius: 8px;
+}
+/* PS: pill buttons (nav items, seg buttons, pager, chips) */
+:root[data-theme='ps'] .nav-item,
+:root[data-theme='ps'] .seg button,
+:root[data-theme='ps'] .pager button,
+:root[data-theme='ps'] .fchip,
+:root[data-theme='ps'] .table-export,
+:root[data-theme='ps-light'] .nav-item,
+:root[data-theme='ps-light'] .seg button,
+:root[data-theme='ps-light'] .pager button,
+:root[data-theme='ps-light'] .fchip,
+:root[data-theme='ps-light'] .table-export {
+  border-radius: 9999px;
+}
+/* PS: footer background = PlayStation Blue */
+:root[data-theme='ps'] .site-footer,
+:root[data-theme='ps-light'] .site-footer {
+  background: #0070d1;
+  color: #ffffff;
+  border-top: none;
+}
+:root[data-theme='ps'] .site-footer a,
+:root[data-theme='ps-light'] .site-footer a {
+  color: #ffffff;
+}
+/* PS: active nav = PlayStation Blue pill */
+:root[data-theme='ps'] .nav-item.active,
+:root[data-theme='ps-light'] .nav-item.active {
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+  color: #ffffff;
+  box-shadow: none;
+}
+
+/* ============================================================
+   Dell 1996 — catalog-era retro theme
+   Frame-bordered, flat tints, Times Roman body, zero radius
+   ============================================================ */
+:root[data-theme='dell96'] {
+  --font-body: 'Times New Roman', Times, serif;
+  --font-display: 'Arial Black', 'Inter Variable', system-ui, sans-serif;
+
+  --bg-canvas: #1a1a1a;
+  --bg-rail: #000000;
+  --bg-surface-1: #2a2a2a;
+  --bg-surface-2: #333333;
+  --bg-surface-3: #3d3d3d;
+
+  --hairline: #000000;
+  --hairline-soft: rgba(255, 255, 255, 0.08);
+
+  --ink: #ffffff;
+  --ink-muted: rgba(255, 255, 255, 0.8);
+  --ink-faint: #a0a0a0;
+
+  --accent-blue: #e91d2a;
+  --accent-blue-soft: rgba(233, 29, 42, 0.15);
+
+  --status-ok: #76b900;
+  --status-warn-fg: #fcc20f;
+  --status-warn-bg: rgba(252, 194, 15, 0.15);
+  --status-err-fg: #e91d2a;
+  --status-err-bg: rgba(233, 29, 42, 0.12);
+
+  --series-1: #e91d2a;
+  --series-2: #fcc20f;
+  --series-3: #b3bd95;
+
+  --sen: #8c9ae0;
+  --gsc: #e91d2a;
+  --ga4: #c0d4a7;
+  --ahrefs: #e6915d;
+  --bing: #9ab6c8;
+  --bing-soft: rgba(154, 182, 200, 0.15);
+  --rage: #e91d2a;
+  --dead: #fcc20f;
+  --quick: #e6915d;
+  --ahrefs-soft: rgba(230, 145, 93, 0.15);
+  --lead: #b3bd95;
+  --lead-soft: rgba(179, 189, 149, 0.15);
+
+  --v-anthropic: #d77a7a;
+  --v-openai: #b3bd95;
+  --v-perplexity: #0000ee;
+  --v-apple: #a5b8c0;
+  --v-bytedance: #6a26a4;
+  --v-mistral: #9ab6c8;
+  --v-common: #fcc20f;
+  --v-other: #8e8a25;
+
+  --shadow-card: none;
+  --container: 760px;
+  --gutter: 16px;
+  --corner-square-size: 0px;
+}
+
+:root[data-theme='dell96-light'] {
+  --font-body: 'Times New Roman', Times, serif;
+  --font-display: 'Arial Black', 'Inter Variable', system-ui, sans-serif;
+
+  --bg-canvas: #ffffff;
+  --bg-rail: #000000;
+  --bg-surface-1: #ffffff;
+  --bg-surface-2: #f0f0f0;
+  --bg-surface-3: #e8e8e8;
+
+  --hairline: #000000;
+  --hairline-soft: rgba(0, 0, 0, 0.15);
+
+  --ink: #000000;
+  --ink-muted: #1a1a1a;
+  --ink-faint: #666666;
+
+  --accent-blue: #e91d2a;
+  --accent-blue-soft: rgba(233, 29, 42, 0.1);
+
+  --status-ok: #3f8500;
+  --status-warn-fg: #cc8800;
+  --status-warn-bg: rgba(204, 136, 0, 0.1);
+  --status-err-fg: #e91d2a;
+  --status-err-bg: rgba(233, 29, 42, 0.08);
+
+  --series-1: #e91d2a;
+  --series-2: #cc8800;
+  --series-3: #6a8a50;
+
+  --sen: #6a26a4;
+  --gsc: #e91d2a;
+  --ga4: #6a8a50;
+  --ahrefs: #cc8800;
+  --bing: #5a8a9e;
+  --bing-soft: rgba(90, 138, 158, 0.1);
+  --rage: #e91d2a;
+  --dead: #cc8800;
+  --quick: #e6915d;
+  --ahrefs-soft: rgba(230, 145, 93, 0.1);
+  --lead: #6a8a50;
+  --lead-soft: rgba(106, 138, 80, 0.1);
+
+  --v-anthropic: #d77a7a;
+  --v-openai: #6a8a50;
+  --v-perplexity: #0000ee;
+  --v-apple: #666666;
+  --v-bytedance: #6a26a4;
+  --v-mistral: #5a8a9e;
+  --v-common: #cc8800;
+  --v-other: #8e8a25;
+
+  --shadow-card: none;
+  --container: 760px;
+  --gutter: 16px;
+  --corner-square-size: 0px;
+}
+
+/* Dell '96: page frame border */
+:root[data-theme='dell96'] .shell,
+:root[data-theme='dell96-light'] .shell {
+  border: 8px solid #000000;
+}
+/* Dell '96: sidebar = solid black rail */
+:root[data-theme='dell96'] .sidebar,
+:root[data-theme='dell96-light'] .sidebar {
+  background: #000000;
+  border-right: 1px solid #000000;
+}
+:root[data-theme='dell96'] .nav-item,
+:root[data-theme='dell96-light'] .nav-item {
+  color: #ffffff;
+}
+:root[data-theme='dell96'] .nav-item.active,
+:root[data-theme='dell96-light'] .nav-item.active {
+  background: #e91d2a;
+  border-color: #e91d2a;
+  color: #ffffff;
+  box-shadow: none;
+}
+:root[data-theme='dell96'] .brand-logo,
+:root[data-theme='dell96-light'] .brand-logo {
+  filter: none;
+}
+/* Dell '96: ribbon-card tinted stat cards (cycle colors per card) */
+:root[data-theme='dell96'] .stat-card:nth-child(8n+1),
+:root[data-theme='dell96-light'] .stat-card:nth-child(8n+1) { background: #b3bd95; color: #000; }
+:root[data-theme='dell96'] .stat-card:nth-child(8n+2),
+:root[data-theme='dell96-light'] .stat-card:nth-child(8n+2) { background: #d77a7a; color: #000; }
+:root[data-theme='dell96'] .stat-card:nth-child(8n+3),
+:root[data-theme='dell96-light'] .stat-card:nth-child(8n+3) { background: #e6915d; color: #000; }
+:root[data-theme='dell96'] .stat-card:nth-child(8n+4),
+:root[data-theme='dell96-light'] .stat-card:nth-child(8n+4) { background: #c0d4a7; color: #000; }
+:root[data-theme='dell96'] .stat-card:nth-child(8n+5),
+:root[data-theme='dell96-light'] .stat-card:nth-child(8n+5) { background: #9ab6c8; color: #000; }
+:root[data-theme='dell96'] .stat-card:nth-child(8n+6),
+:root[data-theme='dell96-light'] .stat-card:nth-child(8n+6) { background: #a5b8c0; color: #000; }
+:root[data-theme='dell96'] .stat-card:nth-child(8n+7),
+:root[data-theme='dell96-light'] .stat-card:nth-child(8n+7) { background: #8c9ae0; color: #000; }
+:root[data-theme='dell96'] .stat-card:nth-child(8n+8),
+:root[data-theme='dell96-light'] .stat-card:nth-child(8n+8) { background: #8e8a25; color: #000; }
+/* Dell '96: stat card ink override for tinted backgrounds */
+:root[data-theme='dell96'] .stat-card .stat-label,
+:root[data-theme='dell96-light'] .stat-card .stat-label { color: #333; }
+:root[data-theme='dell96'] .stat-card .stat-value,
+:root[data-theme='dell96-light'] .stat-card .stat-value { color: #000; }
 
 * {
   box-sizing: border-box;
@@ -138,11 +495,7 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  /* Sygnatura: cicha poświata akcentu u góry – konsola, nie strona-wizytówka. */
-  background:
-    radial-gradient(900px 420px at 68% -140px, var(--accent-blue-soft), transparent 70%),
-    var(--bg-canvas);
-  background-attachment: fixed;
+  background: var(--bg-canvas);
 }
 
 h1,
@@ -193,7 +546,7 @@ a:hover {
 .table-card {
   background: var(--bg-surface-1);
   border: 1px solid var(--hairline);
-  border-radius: 14px;
+  border-radius: 2px;
   overflow: hidden;
   margin-bottom: 18px;
 }
@@ -217,7 +570,7 @@ a:hover {
 .table-filter {
   background: var(--bg-surface-2);
   border: 1px solid var(--hairline);
-  border-radius: 8px;
+  border-radius: 2px;
   color: var(--ink);
   font: inherit;
   font-size: 0.85rem;
@@ -229,8 +582,6 @@ a:hover {
 }
 .table-scroll {
   overflow-x: auto;
-  max-height: 640px;
-  overflow-y: auto;
 }
 table.data-table thead th {
   position: sticky;
@@ -331,7 +682,7 @@ table.data-table {
   appearance: none;
   background: var(--bg-surface-2);
   border: 1px solid var(--hairline);
-  border-radius: 8px;
+  border-radius: 2px;
   color: var(--ink-muted);
   font: inherit;
   font-size: 0.82rem;
@@ -370,7 +721,7 @@ table.data-table {
 .cell-bar .bar {
   width: 72px;
   height: 6px;
-  border-radius: 4px;
+  border-radius: 2px;
   background: var(--bg-surface-3);
   overflow: hidden;
   flex: none;
@@ -378,7 +729,7 @@ table.data-table {
 .cell-bar .bar > i {
   display: block;
   height: 100%;
-  border-radius: 4px;
+  border-radius: 2px;
   background: linear-gradient(90deg, color-mix(in srgb, var(--accent-blue) 55%, var(--series-3)), var(--accent-blue));
 }
 
@@ -391,7 +742,7 @@ table.data-table {
   font-variant-numeric: tabular-nums;
   font-size: 0.82rem;
   padding: 2px 8px;
-  border-radius: 7px;
+  border-radius: 2px;
   background: var(--bg-surface-3);
   color: var(--ink-muted);
 }
@@ -496,7 +847,7 @@ table.data-table {
 .placeholder-card {
   background: var(--bg-surface-1);
   border: 1px dashed var(--hairline);
-  border-radius: 14px;
+  border-radius: 2px;
   color: var(--ink-muted);
   padding: 26px 24px;
   font-size: 0.92rem;
@@ -504,13 +855,13 @@ table.data-table {
 }
 .placeholder-card code {
   background: var(--bg-surface-3);
-  border-radius: 5px;
+  border-radius: 2px;
   padding: 1px 6px;
   font-size: 0.85em;
 }
 .banner {
   margin: 14px 0 0;
-  border-radius: 10px;
+  border-radius: 2px;
   padding: 12px 16px;
   font-size: 0.9rem;
 }
@@ -524,14 +875,14 @@ table.data-table {
 }
 
 /* Plansza „Co spadło" (GSC, porównania okres-do-okresu) */
-.seg { display: inline-flex; background: var(--bg-surface-2); border: 1px solid var(--hairline); border-radius: 10px; padding: 3px; gap: 2px; }
-.seg button { appearance: none; border: none; background: none; color: var(--ink-muted); font: inherit; font-size: 0.82rem; font-weight: 600; padding: 6px 14px; border-radius: 7px; cursor: pointer; white-space: nowrap; }
+.seg { display: inline-flex; background: var(--bg-surface-2); border: 1px solid var(--hairline); border-radius: 2px; padding: 3px; gap: 2px; }
+.seg button { appearance: none; border: none; background: none; color: var(--ink-muted); font: inherit; font-size: 0.82rem; font-weight: 600; padding: 6px 14px; border-radius: 2px; cursor: pointer; white-space: nowrap; }
 .seg button:hover { color: var(--ink); }
 .seg button.active { background: var(--bg-surface-1); color: var(--ink); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.28); }
 .drops-board { margin-bottom: 22px; }
 .drops-meta { color: var(--ink-faint); font-size: 0.78rem; margin: 4px 0 12px; }
 .drops-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 6px; }
-.drop-panel { background: var(--bg-surface-1); border: 1px solid var(--hairline); border-radius: 14px; overflow: hidden; }
+.drop-panel { background: var(--bg-surface-1); border: 1px solid var(--hairline); border-radius: 2px; overflow: hidden; }
 .drop-panel > header { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 13px 16px 11px; border-bottom: 1px solid var(--hairline-soft); }
 .drop-panel > header h4 { margin: 0; font-family: var(--font-display); font-size: 0.92rem; }
 .drop-summary { display: flex; gap: 8px; }
@@ -563,7 +914,7 @@ table.data-table {
   appearance: none;
   background: var(--bg-surface-2);
   border: 1px solid var(--hairline);
-  border-radius: 8px;
+  border-radius: 2px;
   color: var(--ink-muted);
   font: inherit;
   font-size: 0.78rem;
@@ -603,12 +954,12 @@ table.data-table {
 .potential-help {
   width: min(520px, calc(100vw - 32px));
   color: var(--ink); background: var(--bg-surface-1); border: 1px solid var(--hairline);
-  border-radius: 14px; padding: 20px; box-shadow: 0 18px 60px rgba(0,0,0,.45);
+  border-radius: 2px; padding: 20px; box-shadow: 0 18px 60px rgba(0,0,0,.45);
 }
 .potential-help::backdrop { background: rgba(0,0,0,.48); backdrop-filter: blur(2px); }
 .potential-help h3 { margin: 0 0 10px; font: 600 1rem var(--font-display); }
 .potential-help p { margin: 8px 0; color: var(--ink-muted); font-size: .84rem; line-height: 1.55; }
-.potential-help button { margin-top: 12px; border: 1px solid var(--hairline); border-radius: 9px; padding: 7px 12px; color: var(--ink); background: var(--bg-surface-2); cursor: pointer; }
+.potential-help button { margin-top: 12px; border: 1px solid var(--hairline); border-radius: 2px; padding: 7px 12px; color: var(--ink); background: var(--bg-surface-2); cursor: pointer; }
 .q-drawer > td { background: var(--bg-surface-2); padding: 14px 18px; }
 .q-drawer .drawer-grid { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
 .q-drawer .spark { flex: 1 1 260px; max-width: 420px; }
@@ -634,18 +985,16 @@ table.data-table {
 @media (max-width: 640px) { .rgrid { grid-template-columns: 1fr; } }
 
 .k {
-  position: relative; border-radius: 16px; padding: 18px 20px; min-width: 0; overflow: hidden;
+  position: relative; border-radius: 2px; padding: 18px 20px; min-width: 0; overflow: hidden;
   border: 1px solid var(--hairline);
-  background:
-    radial-gradient(120% 120% at 100% 0%, color-mix(in srgb, var(--accent-blue) 5%, transparent), transparent 46%),
-    linear-gradient(180deg, color-mix(in srgb, var(--ink) 4%, var(--bg-surface-1)), var(--bg-surface-1) 60%);
-  transition: border-color .16s ease, transform .16s ease;
+  background: var(--bg-surface-1);
+  transition: border-color .16s ease;
 }
-.k:hover { border-color: color-mix(in srgb, var(--accent-blue) 40%, var(--hairline)); transform: translateY(-2px); }
+.k:hover { border-color: var(--accent-blue); }
 .k .lbl { color: var(--ink-faint); font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .09em; display: flex; align-items: center; gap: 7px; }
 .k .lbl .ic { width: 13px; height: 13px; opacity: .8; flex: none; }
 .k .val { font-family: var(--font-display); font-weight: 600; letter-spacing: -.025em; line-height: 1; font-variant-numeric: tabular-nums; margin-top: 12px; font-size: 1.9rem; white-space: nowrap; }
-.k.hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent-blue), transparent 65%); }
+.k.hero::before { content: ''; position: absolute; bottom: 0; left: 0; width: var(--corner-square-size, 12px); height: var(--corner-square-size, 12px); background: var(--accent-blue); }
 .k.hero .val { font-size: 3rem; margin-top: 14px; }
 .k .foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 14px; }
 
@@ -660,7 +1009,7 @@ table.data-table {
 
 /* ---------- 2. ODZNAKI I WSKAŹNIKI ---------- */
 /* pozycja — subtelny pierścień (inset ring) w kolorze poziomu + opcjonalny .pip */
-.rbadge { display: inline-flex; align-items: center; gap: 5px; min-width: 44px; justify-content: center; font-family: var(--font-display); font-weight: 600; font-size: .83rem; font-variant-numeric: tabular-nums; padding: 3px 10px; border-radius: 8px; background: var(--bg-surface-3); color: var(--ink-muted); box-shadow: inset 0 0 0 1px var(--hairline-soft); }
+.rbadge { display: inline-flex; align-items: center; gap: 5px; min-width: 44px; justify-content: center; font-family: var(--font-display); font-weight: 600; font-size: .83rem; font-variant-numeric: tabular-nums; padding: 3px 10px; border-radius: 2px; background: var(--bg-surface-3); color: var(--ink-muted); box-shadow: inset 0 0 0 1px var(--hairline-soft); }
 .rbadge.top3 { background: color-mix(in srgb, var(--status-ok) 15%, transparent);  color: color-mix(in srgb, var(--status-ok) 82%, var(--ink)); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--status-ok) 34%, transparent); }
 .rbadge.top10{ background: var(--accent-blue-soft);                                 color: color-mix(in srgb, var(--accent-blue) 88%, var(--ink)); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent-blue) 32%, transparent); }
 .rbadge.mid  { background: var(--status-warn-bg);                                  color: var(--status-warn-fg); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--status-warn-fg) 30%, transparent); }
@@ -693,21 +1042,19 @@ table.data-table {
 
 /* pasek + wartość w komórce (magnituda) */
 .rbar { display: inline-flex; align-items: center; gap: 10px; }
-.rbar .t { width: 120px; height: 8px; border-radius: 5px; background: var(--bg-surface-3); overflow: hidden; box-shadow: inset 0 0 0 1px var(--hairline-soft); flex: none; }
-.rbar .t > i { display: block; height: 100%; border-radius: 5px; background: linear-gradient(90deg, color-mix(in srgb, var(--accent-blue) 45%, var(--series-3)), var(--accent-blue)); }
+.rbar .t { width: 120px; height: 8px; border-radius: 2px; background: var(--bg-surface-3); overflow: hidden; box-shadow: inset 0 0 0 1px var(--hairline-soft); flex: none; }
+.rbar .t > i { display: block; height: 100%; border-radius: 2px; background: linear-gradient(90deg, color-mix(in srgb, var(--accent-blue) 45%, var(--series-3)), var(--accent-blue)); }
 .rbar .v { font-variant-numeric: tabular-nums; font-size: .84rem; }
 
 /* ---------- 3. KARTA WYKRESU (odśwież .chart-card lub użyj .rchart) ---------- */
 .rchart {
-  border: 1px solid var(--hairline); border-radius: 16px; padding: 18px 20px 12px;
-  background:
-    radial-gradient(120% 120% at 100% 0%, color-mix(in srgb, var(--accent-blue) 4%, transparent), transparent 46%),
-    linear-gradient(180deg, color-mix(in srgb, var(--ink) 4%, var(--bg-surface-1)), var(--bg-surface-1) 60%);
+  border: 1px solid var(--hairline); border-radius: 2px; padding: 18px 20px 12px;
+  background: var(--bg-surface-1);
 }
 .rchart .cap { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
 .rchart .cap h4 { font-size: .98rem; letter-spacing: -.01em; margin: 0; font-family: var(--font-display); }
-.rchart .cap .side { display: inline-flex; gap: 4px; background: var(--bg-surface-2); border: 1px solid var(--hairline); border-radius: 9px; padding: 3px; }
-.rchart .cap .side button { appearance: none; border: none; background: none; color: var(--ink-faint); font: inherit; font-size: .72rem; font-weight: 600; padding: 4px 9px; border-radius: 6px; cursor: pointer; }
+.rchart .cap .side { display: inline-flex; gap: 4px; background: var(--bg-surface-2); border: 1px solid var(--hairline); border-radius: 2px; padding: 3px; }
+.rchart .cap .side button { appearance: none; border: none; background: none; color: var(--ink-faint); font: inherit; font-size: .72rem; font-weight: 600; padding: 4px 9px; border-radius: 2px; cursor: pointer; }
 .rchart .cap .side button.on { background: var(--bg-surface-1); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,.3); }
 /* własna legenda (uPlot legend: {show:false}) */
 .rlegend { display: flex; gap: 16px; margin: 2px 0 8px; font-size: .76rem; color: var(--ink-muted); }
@@ -722,13 +1069,13 @@ table.data-table {
 .stale-tag svg { width: 11px; height: 11px; flex: none; }
 
 /* b) pusty wykres — komunikat zamiast pustego kafla */
-.empty-chart { border: 1px dashed var(--hairline); border-radius: 16px; padding: 30px 22px; text-align: center; background: var(--bg-surface-1); }
+.empty-chart { border: 1px dashed var(--hairline); border-radius: 2px; padding: 30px 22px; text-align: center; background: var(--bg-surface-1); }
 .empty-chart .ic { width: 30px; height: 30px; color: var(--ink-faint); opacity: .7; margin: 0 auto 12px; display: block; }
 .empty-chart h4 { font-size: .95rem; margin: 0 0 6px; font-family: var(--font-display); }
 .empty-chart p { color: var(--ink-faint); font-size: .82rem; margin: 0; line-height: 1.5; }
 
 /* c) źródło niedostępne — sekcja żyje na wczorajszych danych */
-.down-card { border: 1px solid var(--hairline); border-radius: 16px; overflow: hidden; background: var(--bg-surface-1); }
+.down-card { border: 1px solid var(--hairline); border-radius: 2px; overflow: hidden; background: var(--bg-surface-1); }
 .down-card .hd { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: var(--status-warn-bg); color: var(--status-warn-fg); font-size: .84rem; font-weight: 500; }
 .down-card .hd svg { width: 15px; height: 15px; flex: none; }
 .down-card .bd { padding: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr)); gap: 12px; }
@@ -737,8 +1084,8 @@ table.data-table {
 .down-card .mini .v small { font-size: .6em; color: var(--ink-faint); font-weight: 500; margin-left: 6px; }
 
 /* d) skeleton ładowania */
-.skel { border: 1px solid var(--hairline); border-radius: 16px; padding: 18px 20px; background: var(--bg-surface-1); }
-.sk { border-radius: 7px; background: linear-gradient(90deg, var(--bg-surface-2) 25%, var(--bg-surface-3) 37%, var(--bg-surface-2) 63%); background-size: 400% 100%; animation: shim 1.3s ease infinite; }
+.skel { border: 1px solid var(--hairline); border-radius: 2px; padding: 18px 20px; background: var(--bg-surface-1); }
+.sk { border-radius: 2px; background: linear-gradient(90deg, var(--bg-surface-2) 25%, var(--bg-surface-3) 37%, var(--bg-surface-2) 63%); background-size: 400% 100%; animation: shim 1.3s ease infinite; }
 @keyframes shim { 0% { background-position: 100% 0; } 100% { background-position: -100% 0; } }
 @media (prefers-reduced-motion: reduce) { .sk { animation: none; } }
 
@@ -750,7 +1097,7 @@ table.data-table {
 .pos-badge {
   box-shadow: inset 0 0 0 1px var(--hairline-soft);
   background: var(--bg-surface-3);
-  border-radius: 8px;
+  border-radius: 2px;
 }
 .pos-badge.top3 {
   background: color-mix(in srgb, var(--status-ok) 15%, transparent);
@@ -773,12 +1120,12 @@ table.data-table {
   box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--status-err-fg) 28%, transparent);
 }
 .cell-bar .bar {
-  border-radius: 5px;
+  border-radius: 2px;
   background: var(--bg-surface-3);
   box-shadow: inset 0 0 0 1px var(--hairline-soft);
 }
 .cell-bar .bar > i {
-  border-radius: 5px;
+  border-radius: 2px;
   background: linear-gradient(90deg, color-mix(in srgb, var(--accent-blue) 45%, var(--series-3)), var(--accent-blue));
 }
 .opp-dots i {
@@ -794,12 +1141,12 @@ table.data-table {
 
 /* ── Matrix – układ (handoff §10) ────────────────────────────────────── */
 /* 10.1 pasek pokrycia indeksem w karcie hero */
-.idxbar { height: 8px; border-radius: 5px; background: var(--bg-surface-3); box-shadow: inset 0 0 0 1px var(--hairline-soft); overflow: hidden; margin-top: 12px; }
-.idxbar > i { display: block; height: 100%; border-radius: 5px; background: linear-gradient(90deg, color-mix(in srgb, var(--status-ok) 65%, var(--accent-blue)), var(--status-ok)); }
+.idxbar { height: 8px; border-radius: 2px; background: var(--bg-surface-3); box-shadow: inset 0 0 0 1px var(--hairline-soft); overflow: hidden; margin-top: 12px; }
+.idxbar > i { display: block; height: 100%; border-radius: 2px; background: linear-gradient(90deg, color-mix(in srgb, var(--status-ok) 65%, var(--accent-blue)), var(--status-ok)); }
 
 /* 10.2 karty segmentów */
 .seg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); gap: 14px; margin-bottom: 26px; }
-.seg-card { border: 1px solid var(--hairline); border-radius: 16px; padding: 16px 18px; background: linear-gradient(180deg, color-mix(in srgb, var(--ink) 3%, var(--bg-surface-1)), var(--bg-surface-1) 55%); min-width: 0; transition: border-color .15s ease; }
+.seg-card { border: 1px solid var(--hairline); border-radius: 2px; padding: 16px 18px; background: var(--bg-surface-1); min-width: 0; transition: border-color .15s ease; }
 .seg-card:hover { border-color: color-mix(in srgb, var(--accent-blue) 30%, var(--hairline)); }
 .seg-card .hd { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
 .seg-card .hd b { font-family: var(--font-display); font-size: 1rem; letter-spacing: -.01em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -832,8 +1179,8 @@ table.data-table {
 
 /* engagement jako mini-track (nie pos-badge – §9.3/§10.3) */
 .erate { display: inline-flex; align-items: center; gap: 8px; }
-.erate .t { width: 56px; height: 6px; border-radius: 4px; background: var(--bg-surface-3); box-shadow: inset 0 0 0 1px var(--hairline-soft); overflow: hidden; flex: none; }
-.erate .t > i { display: block; height: 100%; border-radius: 4px; background: var(--ga4); }
+.erate .t { width: 56px; height: 6px; border-radius: 2px; background: var(--bg-surface-3); box-shadow: inset 0 0 0 1px var(--hairline-soft); overflow: hidden; flex: none; }
+.erate .t > i { display: block; height: 100%; border-radius: 2px; background: var(--ga4); }
 .erate .v { font-variant-numeric: tabular-nums; font-size: .84rem; }
 
 /* 10.4 dekodowanie spadków */
@@ -872,7 +1219,7 @@ table.data-table {
 
 /* GA4: podział nowi/powracający wewnątrz karty Użytkownicy */
 .split { margin-top: 14px; }
-.split .bar { display: flex; height: 9px; border-radius: 5px; overflow: hidden; background: var(--bg-surface-3); box-shadow: inset 0 0 0 1px var(--hairline-soft); }
+.split .bar { display: flex; height: 9px; border-radius: 2px; overflow: hidden; background: var(--bg-surface-3); box-shadow: inset 0 0 0 1px var(--hairline-soft); }
 .split .bar > i { display: block; height: 100%; }
 .split .bar .a { background: var(--accent-blue); }
 .split .bar .b { background: color-mix(in srgb, var(--series-3) 80%, var(--accent-blue)); }
@@ -894,7 +1241,7 @@ table.data-table {
 @media (max-width: 1080px) { .attn { grid-template-columns: 1fr; } }
 .acard { border: 1px solid var(--hairline); border-radius: 15px; padding: 16px 18px; background: var(--bg-surface-1); display: flex; flex-direction: column; gap: 10px; min-width: 0; }
 .acard .top { display: flex; align-items: center; gap: 9px; }
-.acard .top .ic { width: 30px; height: 30px; border-radius: 9px; display: inline-flex; align-items: center; justify-content: center; flex: none; }
+.acard .top .ic { width: 30px; height: 30px; border-radius: 2px; display: inline-flex; align-items: center; justify-content: center; flex: none; }
 .acard .top .ic svg { width: 16px; height: 16px; }
 .acard.warn .ic { background: var(--status-warn-bg); color: var(--status-warn-fg); }
 .acard.err .ic { background: var(--status-err-bg); color: var(--status-err-fg); }
@@ -906,7 +1253,7 @@ table.data-table {
 .acard a { font-size: .82rem; font-weight: 600; margin-top: auto; }
 
 /* Bing: tag „wyróżnik" przy nagłówku sekcji */
-.tagx { font-family: var(--font-body); font-size: .66rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--bing); background: var(--bing-soft); padding: 3px 8px; border-radius: 6px; margin-left: 9px; vertical-align: middle; }
+.tagx { font-family: var(--font-body); font-size: .66rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--bing); background: var(--bing-soft); padding: 3px 8px; border-radius: 2px; margin-left: 9px; vertical-align: middle; }
 
 /* Bing: pasmo-bohater AI Performance */
 .ai-sum { border: 1px solid color-mix(in srgb, var(--bing) 30%, var(--hairline)); border-radius: 18px; padding: 20px 24px; display: grid; grid-template-columns: 250px 1fr; gap: 30px; align-items: center; margin-bottom: 16px;
@@ -923,7 +1270,7 @@ table.data-table {
 .ai-sum .isplit .r { display: flex; align-items: center; gap: 9px; font-size: .8rem; }
 .ai-sum .isplit .r .dot { width: 8px; height: 8px; border-radius: 2px; flex: none; }
 .ai-sum .isplit .r .nm { color: var(--ink-muted); width: 110px; flex: none; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.ai-sum .isplit .r .t { flex: 1; height: 6px; border-radius: 4px; background: var(--bg-surface-3); overflow: hidden; box-shadow: inset 0 0 0 1px var(--hairline-soft); }
+.ai-sum .isplit .r .t { flex: 1; height: 6px; border-radius: 2px; background: var(--bg-surface-3); overflow: hidden; box-shadow: inset 0 0 0 1px var(--hairline-soft); }
 .ai-sum .isplit .r .t > i { display: block; height: 100%; }
 .ai-sum .isplit .r .n { color: var(--ink-muted); font-variant-numeric: tabular-nums; min-width: 72px; text-align: right; }
 .ai-sum .isplit .r .n b { color: var(--ink); }
@@ -958,8 +1305,8 @@ a.stat-card.on { border-color: var(--sen); box-shadow: 0 0 0 1px var(--sen); }
 .cell-bar .bar.sen > i { background: linear-gradient(90deg, color-mix(in srgb, var(--sen) 45%, var(--accent-blue)), var(--sen)); }
 /* trudność frazy: mini-pasek easy/med/hard */
 .diff-bar { display: inline-flex; align-items: center; gap: 8px; justify-content: flex-end; }
-.diff-bar .t { width: 40px; height: 6px; border-radius: 4px; background: var(--bg-surface-3); overflow: hidden; box-shadow: inset 0 0 0 1px var(--hairline-soft); flex: none; }
-.diff-bar .t > i { display: block; height: 100%; border-radius: 4px; }
+.diff-bar .t { width: 40px; height: 6px; border-radius: 2px; background: var(--bg-surface-3); overflow: hidden; box-shadow: inset 0 0 0 1px var(--hairline-soft); flex: none; }
+.diff-bar .t > i { display: block; height: 100%; border-radius: 2px; }
 .diff-bar .v { font-variant-numeric: tabular-nums; font-size: .8rem; min-width: 20px; text-align: right; }
 .diff-bar.easy .t > i { background: var(--status-ok); }
 .diff-bar.med .t > i { background: var(--status-warn-fg); }
@@ -976,13 +1323,13 @@ a.stat-card.on { border-color: var(--sen); box-shadow: 0 0 0 1px var(--sen); }
 /* karty zachowań: scroll depth + zaangażowanie */
 .beh-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 18px; }
 @media (max-width: 1080px) { .beh-grid { grid-template-columns: 1fr; } }
-.beh-card { border: 1px solid var(--hairline); border-radius: 16px; padding: 18px 20px; background: linear-gradient(180deg, color-mix(in srgb, var(--ink) 4%, var(--bg-surface-1)), var(--bg-surface-1) 60%); }
+.beh-card { border: 1px solid var(--hairline); border-radius: 2px; padding: 18px 20px; background: linear-gradient(180deg, color-mix(in srgb, var(--ink) 4%, var(--bg-surface-1)), var(--bg-surface-1) 60%); }
 .beh-card h4 { font-size: .96rem; margin: 0 0 4px; font-family: var(--font-display); }
 .beh-card .sub { color: var(--ink-faint); font-size: .78rem; margin-bottom: 14px; }
 .scroll-meter { display: flex; align-items: center; gap: 14px; }
 .scroll-meter .big { font-family: var(--font-display); font-weight: 600; font-size: 2.2rem; font-variant-numeric: tabular-nums; letter-spacing: -.02em; flex: none; }
-.scroll-meter .t { flex: 1; height: 24px; border-radius: 7px; background: var(--bg-surface-3); overflow: hidden; }
-.scroll-meter .t > i { display: block; height: 100%; border-radius: 7px; background: linear-gradient(90deg, color-mix(in srgb, var(--accent-blue) 55%, var(--series-3)), var(--accent-blue)); }
+.scroll-meter .t { flex: 1; height: 24px; border-radius: 2px; background: var(--bg-surface-3); overflow: hidden; }
+.scroll-meter .t > i { display: block; height: 100%; border-radius: 2px; background: linear-gradient(90deg, color-mix(in srgb, var(--accent-blue) 55%, var(--series-3)), var(--accent-blue)); }
 .eng-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 4px; }
 .eng-stats .s .l { color: var(--ink-faint); font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; }
 .eng-stats .s .v { font-family: var(--font-display); font-weight: 600; font-size: 1.6rem; font-variant-numeric: tabular-nums; margin-top: 4px; }
@@ -992,7 +1339,7 @@ a.stat-card.on { border-color: var(--sen); box-shadow: 0 0 0 1px var(--sen); }
 @media (max-width: 900px) { .frust-grid { grid-template-columns: 1fr; } }
 .fcard { border: 1px solid var(--hairline); border-radius: 15px; padding: 16px 18px; background: var(--bg-surface-1); }
 .fcard .h { display: flex; align-items: center; gap: 9px; margin-bottom: 12px; }
-.fcard .h .ic { width: 30px; height: 30px; border-radius: 9px; display: inline-flex; align-items: center; justify-content: center; flex: none; }
+.fcard .h .ic { width: 30px; height: 30px; border-radius: 2px; display: inline-flex; align-items: center; justify-content: center; flex: none; }
 .fcard .h .ic svg { width: 16px; height: 16px; }
 .fcard.rage .ic { background: color-mix(in srgb, var(--rage) 16%, transparent); color: var(--rage); }
 .fcard.dead .ic { background: var(--status-warn-bg); color: var(--dead); }
@@ -1019,21 +1366,21 @@ a.stat-card.on { border-color: var(--sen); box-shadow: 0 0 0 1px var(--sen); }
 
 /* ── Ahrefs – układ (handoff §15) ────────────────────────────────────── */
 /* pasek DR 0–100 w karcie hero */
-.drbar { height: 7px; border-radius: 5px; background: var(--bg-surface-3); overflow: hidden; margin-top: 13px; box-shadow: inset 0 0 0 1px var(--hairline-soft); }
-.drbar > i { display: block; height: 100%; border-radius: 5px; background: linear-gradient(90deg, color-mix(in srgb, var(--ahrefs) 50%, var(--series-3)), var(--ahrefs)); }
+.drbar { height: 7px; border-radius: 2px; background: var(--bg-surface-3); overflow: hidden; margin-top: 13px; box-shadow: inset 0 0 0 1px var(--hairline-soft); }
+.drbar > i { display: block; height: 100%; border-radius: 2px; background: linear-gradient(90deg, color-mix(in srgb, var(--ahrefs) 50%, var(--series-3)), var(--ahrefs)); }
 /* rozkład domen wg DR */
 .dist { display: flex; flex-direction: column; gap: 10px; }
 .dist .row { display: flex; align-items: center; gap: 12px; }
 .dist .row .l { width: 64px; color: var(--ink-muted); font-size: .8rem; font-variant-numeric: tabular-nums; flex: none; }
-.dist .row .t { flex: 1; height: 18px; border-radius: 6px; background: var(--bg-surface-3); overflow: hidden; }
-.dist .row .t > i { display: block; height: 100%; border-radius: 6px; }
+.dist .row .t { flex: 1; height: 18px; border-radius: 2px; background: var(--bg-surface-3); overflow: hidden; }
+.dist .row .t > i { display: block; height: 100%; border-radius: 2px; }
 .dist .row .n { width: 44px; text-align: right; font-variant-numeric: tabular-nums; font-size: .82rem; flex: none; }
 /* komórka domeny: kafelek-inicjał + nazwa */
 .domcell { display: flex; align-items: center; gap: 10px; min-width: 0; }
-.domcell .fav { width: 18px; height: 18px; border-radius: 5px; flex: none; display: inline-flex; align-items: center; justify-content: center; font-size: .6rem; font-weight: 700; color: #fff; text-transform: uppercase; }
+.domcell .fav { width: 18px; height: 18px; border-radius: 2px; flex: none; display: inline-flex; align-items: center; justify-content: center; font-size: .6rem; font-weight: 700; color: #fff; text-transform: uppercase; }
 .domcell .txt { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 500; }
 /* badge DR: hi ≥70 / mid ≥40 / lo */
-.drbadge { display: inline-flex; align-items: center; justify-content: center; min-width: 36px; font-family: var(--font-display); font-weight: 600; font-size: .82rem; font-variant-numeric: tabular-nums; padding: 2px 9px; border-radius: 8px; background: var(--bg-surface-3); color: var(--ink-muted); box-shadow: inset 0 0 0 1px var(--hairline-soft); }
+.drbadge { display: inline-flex; align-items: center; justify-content: center; min-width: 36px; font-family: var(--font-display); font-weight: 600; font-size: .82rem; font-variant-numeric: tabular-nums; padding: 2px 9px; border-radius: 2px; background: var(--bg-surface-3); color: var(--ink-muted); box-shadow: inset 0 0 0 1px var(--hairline-soft); }
 .drbadge.hi { background: color-mix(in srgb, var(--status-ok) 15%, transparent); color: color-mix(in srgb, var(--status-ok) 82%, var(--ink)); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--status-ok) 34%, transparent); }
 .drbadge.mid { background: var(--accent-blue-soft); color: color-mix(in srgb, var(--accent-blue) 88%, var(--ink)); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent-blue) 30%, transparent); }
 .dt-age { color: var(--ink-faint); font-size: .74rem; }
@@ -1050,8 +1397,8 @@ a.stat-card.on { border-color: var(--sen); box-shadow: 0 0 0 1px var(--sen); }
 .vcard .bots { display: flex; flex-direction: column; gap: 7px; }
 .vcard .bots .b { display: flex; align-items: center; gap: 9px; font-size: .8rem; }
 .vcard .bots .b .name { color: var(--ink-muted); width: 116px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: none; }
-.vcard .bots .b .t { flex: 1; height: 6px; border-radius: 4px; background: var(--bg-surface-3); overflow: hidden; }
-.vcard .bots .b .t > i { display: block; height: 100%; border-radius: 4px; }
+.vcard .bots .b .t { flex: 1; height: 6px; border-radius: 2px; background: var(--bg-surface-3); overflow: hidden; }
+.vcard .bots .b .t > i { display: block; height: 100%; border-radius: 2px; }
 .vcard .bots .b .n { color: var(--ink); font-variant-numeric: tabular-nums; min-width: 24px; text-align: right; flex: none; }
 .botcell { display: flex; align-items: center; gap: 9px; min-width: 0; }
 .botcell .dot { width: 8px; height: 8px; border-radius: 3px; flex: none; }
@@ -1063,14 +1410,14 @@ a.stat-card.on { border-color: var(--sen); box-shadow: 0 0 0 1px var(--sen); }
 .flag.sus { background: var(--status-err-bg); color: var(--status-err-fg); }
 .flag.ok { background: color-mix(in srgb, var(--status-ok) 13%, transparent); color: var(--status-ok); }
 .flag svg { width: 10px; height: 10px; }
-.probe-note { display: flex; align-items: center; gap: 10px; padding: 11px 16px; border-radius: 10px; background: var(--status-err-bg); border: 1px solid color-mix(in srgb, var(--status-err-fg) 26%, transparent); color: var(--status-err-fg); font-size: .83rem; margin: 0 18px 14px; }
+.probe-note { display: flex; align-items: center; gap: 10px; padding: 11px 16px; border-radius: 2px; background: var(--status-err-bg); border: 1px solid color-mix(in srgb, var(--status-err-fg) 26%, transparent); color: var(--status-err-fg); font-size: .83rem; margin: 0 18px 14px; }
 .probe-note svg { width: 16px; height: 16px; flex: none; }
 .probe-note b { color: var(--ink); }
 
 /* ── Leady – układ (handoff §17) ─────────────────────────────────────── */
 .lead-two { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; align-items: start; margin-bottom: 18px; }
 @media (max-width: 1080px) { .lead-two { grid-template-columns: 1fr; } }
-.feed-card { border: 1px solid var(--hairline); border-radius: 16px; background: var(--bg-surface-1); overflow: hidden; }
+.feed-card { border: 1px solid var(--hairline); border-radius: 2px; background: var(--bg-surface-1); overflow: hidden; }
 .feed-card .hd { padding: 14px 18px 12px; border-bottom: 1px solid var(--hairline-soft); display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
 .feed-card .hd h3 { font-size: .98rem; margin: 0; }
 .feed-card .hd .m { color: var(--ink-faint); font-size: .78rem; }
@@ -1088,8 +1435,8 @@ a.stat-card.on { border-color: var(--sen); box-shadow: 0 0 0 1px var(--sen); }
 .trow { display: flex; align-items: center; gap: 12px; padding: 11px 18px; }
 .trow .tn { flex: 1; min-width: 0; }
 .trow .tn .nm { font-weight: 500; font-size: .88rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.trow .tn .t { height: 6px; border-radius: 4px; background: var(--bg-surface-3); overflow: hidden; margin-top: 7px; }
-.trow .tn .t > i { display: block; height: 100%; border-radius: 4px; background: linear-gradient(90deg, color-mix(in srgb, var(--accent-blue) 50%, var(--lead)), var(--accent-blue)); }
+.trow .tn .t { height: 6px; border-radius: 2px; background: var(--bg-surface-3); overflow: hidden; margin-top: 7px; }
+.trow .tn .t > i { display: block; height: 100%; border-radius: 2px; background: linear-gradient(90deg, color-mix(in srgb, var(--accent-blue) 50%, var(--lead)), var(--accent-blue)); }
 .trow .cnt { font-family: var(--font-display); font-weight: 600; font-variant-numeric: tabular-nums; font-size: 1.1rem; flex: none; min-width: 30px; text-align: right; }
 .trow .conv { flex: none; width: 84px; text-align: right; font-size: .76rem; color: var(--ink-faint); }
 .trow .conv b { color: var(--lead); }
@@ -1099,15 +1446,15 @@ a.stat-card.on { border-color: var(--sen); box-shadow: 0 0 0 1px var(--sen); }
 
 /* ── System i limity (handoff §18) ───────────────────────────────────── */
 .bal { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 14px; margin-bottom: 18px; }
-.bcard { position: relative; border: 1px solid var(--hairline); border-radius: 16px; padding: 18px 20px; overflow: hidden; background: linear-gradient(180deg, color-mix(in srgb, var(--ink) 4%, var(--bg-surface-1)), var(--bg-surface-1) 60%); }
+.bcard { position: relative; border: 1px solid var(--hairline); border-radius: 2px; padding: 18px 20px; overflow: hidden; background: linear-gradient(180deg, color-mix(in srgb, var(--ink) 4%, var(--bg-surface-1)), var(--bg-surface-1) 60%); }
 .bcard .h { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-.bcard .h .logo { width: 30px; height: 30px; border-radius: 9px; flex: none; display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; color: #fff; }
+.bcard .h .logo { width: 30px; height: 30px; border-radius: 2px; flex: none; display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; color: #fff; }
 .bcard .h .nm { font-family: var(--font-display); font-weight: 600; font-size: .98rem; }
 .bcard .h .st { margin-left: auto; }
 .bcard .big { font-family: var(--font-display); font-weight: 600; font-size: 2.2rem; letter-spacing: -.02em; font-variant-numeric: tabular-nums; line-height: 1; }
 .bcard .big small { font-size: .4em; color: var(--ink-faint); font-weight: 500; margin-left: 6px; }
-.bcard .track { height: 8px; border-radius: 5px; background: var(--bg-surface-3); overflow: hidden; margin: 14px 0 8px; box-shadow: inset 0 0 0 1px var(--hairline-soft); }
-.bcard .track > i { display: block; height: 100%; border-radius: 5px; }
+.bcard .track { height: 8px; border-radius: 2px; background: var(--bg-surface-3); overflow: hidden; margin: 14px 0 8px; box-shadow: inset 0 0 0 1px var(--hairline-soft); }
+.bcard .track > i { display: block; height: 100%; border-radius: 2px; }
 .bcard .track > i.ok { background: linear-gradient(90deg, color-mix(in srgb, var(--status-ok) 55%, var(--accent-blue)), var(--status-ok)); }
 .bcard .track > i.warn { background: linear-gradient(90deg, var(--series-2), var(--status-warn-fg)); }
 .bcard .track > i.err { background: linear-gradient(90deg, var(--status-err-fg), #ff6b6b); }
@@ -1126,7 +1473,7 @@ a.stat-card.on { border-color: var(--sen); box-shadow: 0 0 0 1px var(--sen); }
 .limit-note { color: var(--ink-faint); font-size: .82rem; }
 /* zdrowie pipeline'u */
 .pipe { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(220px, 100%), 1fr)); gap: 12px; margin-bottom: 18px; }
-.pcard { border: 1px solid var(--hairline); border-radius: 14px; padding: 14px 16px; background: var(--bg-surface-1); }
+.pcard { border: 1px solid var(--hairline); border-radius: 2px; padding: 14px 16px; background: var(--bg-surface-1); }
 .pcard .top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .pcard .top .nm { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: .88rem; min-width: 0; }
 .pcard .top .nm span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -1181,7 +1528,7 @@ a.stat-card.on { border-color: var(--sen); box-shadow: 0 0 0 1px var(--sen); }
   background: var(--accent-blue);
   color: #fff;
   padding: 8px 16px;
-  border-radius: 8px;
+  border-radius: 2px;
   font-weight: 600;
   font-size: 0.85rem;
   text-decoration: none;
@@ -1238,14 +1585,14 @@ a.stat-card.on { border-color: var(--sen); box-shadow: 0 0 0 1px var(--sen); }
 }
 
 /* ---------- §4. Smooth theme transition ---------- */
+/* Tylko tła i bordery – BEZ color (mruganie liczb/tekstu). */
 html.theme-transition,
 html.theme-transition *,
 html.theme-transition *::before,
 html.theme-transition *::after {
   transition:
-    background-color 0.25s ease,
-    border-color 0.25s ease,
-    color 0.15s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease,
     box-shadow 0.2s ease !important;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1335,64 +1682,58 @@ html.theme-transition *::after {
 
 /* ---------- §9. Light mode polish ---------- */
 :root[data-theme='light'] {
-  /* Subtelniejsze cienie kart w jasnym motywie */
-  --shadow-card: 0 4px 24px -8px rgba(15, 23, 42, 0.09), 0 1px 3px rgba(15, 23, 42, 0.06);
+  /* NVIDIA: zero elevation in light mode too */
+  --shadow-card: none;
 }
 :root[data-theme='light'] body {
-  background:
-    radial-gradient(900px 420px at 68% -140px, color-mix(in srgb, var(--accent-blue) 6%, transparent), transparent 70%),
-    var(--bg-canvas);
+  background: var(--bg-canvas);
 }
-/* Jaśniejsze gradienty na kartach KPI */
+/* Flat cards in light */
 :root[data-theme='light'] .stat-card,
 :root[data-theme='light'] .k,
 :root[data-theme='light'] .seg-card,
 :root[data-theme='light'] .rchart {
-  background:
-    radial-gradient(120% 120% at 100% 0%, color-mix(in srgb, var(--accent-blue) 3%, transparent), transparent 46%),
-    var(--bg-surface-1);
-  border-color: rgba(15, 23, 42, 0.1);
+  background: var(--bg-surface-1);
+  border-color: var(--hairline);
 }
 /* Nav aktywny item w light */
 :root[data-theme='light'] .nav-item.active {
   background: var(--bg-surface-1);
-  border-color: rgba(15, 23, 42, 0.12);
-  box-shadow: inset 2px 0 0 var(--accent-blue), 0 1px 3px rgba(15, 23, 42, 0.06);
+  border-color: var(--hairline);
+  box-shadow: inset 2px 0 0 var(--accent-blue);
 }
 /* Tabele – wyraźniejsze headery */
 :root[data-theme='light'] .data-table th {
   background: var(--bg-surface-2);
-  border-bottom-color: rgba(15, 23, 42, 0.12);
+  border-bottom-color: var(--hairline);
 }
 :root[data-theme='light'] table.data-table thead th {
   background: var(--bg-surface-2);
 }
-/* Pager active btn czytelniejszy w light */
+/* Pager active btn */
 :root[data-theme='light'] .pager .pages button.active {
   color: #ffffff;
 }
-/* Lepszy kontrast sparkline w light */
 :root[data-theme='light'] .spark {
   opacity: 1;
 }
-/* Brand mark glow subtler in light */
+/* NVIDIA: no glow on brand mark */
 :root[data-theme='light'] .brand-mark {
-  box-shadow: 0 0 12px color-mix(in srgb, var(--accent-blue) 15%, transparent);
+  box-shadow: none;
 }
-/* Sidebar separator */
 :root[data-theme='light'] .sidebar {
-  border-right-color: rgba(15, 23, 42, 0.1);
+  border-right-color: var(--hairline);
 }
-/* Domain card in light – less dramatic shadow */
+/* NVIDIA: no shadow on domain cards */
 :root[data-theme='light'] .domain-card {
-  box-shadow: 0 2px 12px -4px rgba(15, 23, 42, 0.08);
+  box-shadow: none;
 }
 :root[data-theme='light'] .domain-card:hover {
-  box-shadow: 0 8px 30px -8px rgba(15, 23, 42, 0.14);
+  box-shadow: none;
+  border-color: var(--accent-blue);
 }
-/* Empty chart border more visible in light */
 :root[data-theme='light'] .empty-chart {
-  border-color: rgba(15, 23, 42, 0.14);
+  border-color: var(--hairline);
 }
 /* Seg toggle in light */
 :root[data-theme='light'] .seg button.active {

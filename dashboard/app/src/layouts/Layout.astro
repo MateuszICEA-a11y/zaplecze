@@ -61,9 +61,10 @@ const SECTION_ICONS: Record<string, string> = {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
     <script is:inline>
-      // Motyw i collapse przed renderem – zero FOUC. Dark = default (jak widocznosc.ai).
+      // Motyw i collapse przed renderem – zero FOUC.
+      // Cykl: nvidia-dark (default) → nvidia-light → dell96-dark → dell96-light
       const saved = localStorage.getItem('dash-theme');
-      if (saved === 'light') document.documentElement.dataset.theme = 'light';
+      if (saved) document.documentElement.dataset.theme = saved;
       if (localStorage.getItem('icea-collapsed') === '1')
         document.documentElement.classList.add('collapsed');
     </script>
@@ -178,11 +179,17 @@ const SECTION_ICONS: Record<string, string> = {
       document.getElementById('theme-toggle')?.addEventListener('click', () => {
         const root = document.documentElement;
         root.classList.add('theme-transition');
-        const next = root.dataset.theme === 'light' ? 'dark' : 'light';
-        if (next === 'light') root.dataset.theme = 'light';
-        else delete root.dataset.theme;
+        const THEMES = ['', 'light', 'ps', 'ps-light', 'dell96', 'dell96-light'];
+        const LABELS = ['NVIDIA Dark', 'NVIDIA Light', 'PS Dark', 'PS Light', 'Dell \'96 Dark', 'Dell \'96 Light'];
+        const current = root.dataset.theme || '';
+        const idx = THEMES.indexOf(current);
+        const next = THEMES[(idx + 1) % THEMES.length];
+        if (next) root.dataset.theme = next; else delete root.dataset.theme;
         localStorage.setItem('dash-theme', next);
         window.dispatchEvent(new CustomEvent('themechange'));
+        const btn = document.getElementById('theme-toggle');
+        const label = btn?.querySelector('span');
+        if (label) label.textContent = LABELS[(idx + 1) % LABELS.length];
         setTimeout(() => root.classList.remove('theme-transition'), 300);
       });
     </script>
@@ -232,8 +239,8 @@ const SECTION_ICONS: Record<string, string> = {
         /* Wysokość = logo (24px) + odstęp (2px) + podtytuł – symetria z kolumną tekstu. */
         width: 38px;
         height: 38px;
-        border-radius: 9px;
-        box-shadow: 0 0 18px var(--accent-blue-soft);
+        border-radius: 2px;
+        box-shadow: none;
         flex: none;
       }
       .brand-text {
@@ -271,7 +278,7 @@ const SECTION_ICONS: Record<string, string> = {
         justify-content: center;
         background: none;
         border: 1px solid var(--hairline);
-        border-radius: 8px;
+        border-radius: 2px;
         color: var(--ink-muted);
         cursor: pointer;
         padding: 0;
@@ -344,7 +351,7 @@ const SECTION_ICONS: Record<string, string> = {
         font-size: 0.9rem;
         font-weight: 500;
         padding: 8px 10px;
-        border-radius: 9px;
+        border-radius: 2px;
         border: 1px solid transparent;
         white-space: nowrap;
       }
@@ -415,7 +422,7 @@ const SECTION_ICONS: Record<string, string> = {
         gap: 7px;
         background: none;
         border: 1px solid var(--hairline);
-        border-radius: 8px;
+        border-radius: 2px;
         color: var(--ink-muted);
         font: inherit;
         font-size: 0.8rem;
