@@ -1137,3 +1137,334 @@ a.stat-card.on { border-color: var(--sen); box-shadow: 0 0 0 1px var(--sen); }
 .pcard .top .nm .dot.off { background: transparent; box-shadow: inset 0 0 0 1.5px var(--ink-faint); }
 .pcard .when { color: var(--ink-faint); font-size: .76rem; font-variant-numeric: tabular-nums; margin-top: 8px; }
 .pcard .when b { color: var(--ink-muted); }
+
+/* ============================================================
+   Frontend polish — accessibility, UX, light-mode, print
+   Dopisane 2026-07-23 (branch feat/frontend-polish)
+   ============================================================ */
+
+/* ---------- §2. Focus-visible + accessibility ---------- */
+:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+/* Karty z overflow:hidden — ring wewnętrzny zamiast outline */
+.stat-card:focus-visible,
+.k:focus-visible,
+.domain-card:focus-visible,
+.seg-card:focus-visible {
+  outline: none;
+  box-shadow:
+    inset 0 0 0 2px var(--accent-blue),
+    0 0 0 3px color-mix(in srgb, var(--accent-blue) 25%, transparent);
+}
+.nav-item:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 2px var(--accent-blue);
+}
+.collapse-btn:focus-visible,
+#theme-toggle:focus-visible,
+.seg button:focus-visible,
+.fchip:focus-visible,
+.pager button:focus-visible,
+.table-export:focus-visible,
+.table-filter:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 1px;
+}
+/* Skip-to-content link (dodany w Layout) */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 9999;
+  background: var(--accent-blue);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 12px;
+}
+
+/* ---------- §3. Mobile scroll indicator (fade edges) ---------- */
+@media (max-width: 900px) {
+  .side-nav {
+    --fade-size: 28px;
+    mask-image: linear-gradient(to right,
+      transparent 0,
+      black var(--fade-size),
+      black calc(100% - var(--fade-size)),
+      transparent 100%);
+    -webkit-mask-image: linear-gradient(to right,
+      transparent 0,
+      black var(--fade-size),
+      black calc(100% - var(--fade-size)),
+      transparent 100%);
+    padding: 0 var(--fade-size);
+  }
+  /* Gdy nav jest na początku — ukryj lewą maskę */
+  .side-nav.at-start {
+    mask-image: linear-gradient(to right,
+      black 0,
+      black calc(100% - var(--fade-size)),
+      transparent 100%);
+    -webkit-mask-image: linear-gradient(to right,
+      black 0,
+      black calc(100% - var(--fade-size)),
+      transparent 100%);
+    padding-left: 0;
+  }
+  .side-nav.at-end {
+    mask-image: linear-gradient(to right,
+      transparent 0,
+      black var(--fade-size),
+      black 100%);
+    -webkit-mask-image: linear-gradient(to right,
+      transparent 0,
+      black var(--fade-size),
+      black 100%);
+    padding-right: 0;
+  }
+  .side-nav.at-start.at-end {
+    mask-image: none;
+    -webkit-mask-image: none;
+    padding: 0;
+  }
+}
+
+/* ---------- §4. Smooth theme transition ---------- */
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.15s ease,
+    box-shadow 0.2s ease !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  html.theme-transition,
+  html.theme-transition *,
+  html.theme-transition *::before,
+  html.theme-transition *::after {
+    transition: none !important;
+  }
+}
+
+/* ---------- §5. Breadcrumb (mobile context) ---------- */
+.breadcrumb {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-faint);
+  font-size: 0.78rem;
+  padding: 8px 0 0;
+}
+.breadcrumb a {
+  color: var(--ink-muted);
+  text-decoration: none;
+}
+.breadcrumb a:hover {
+  color: var(--accent-blue);
+}
+.breadcrumb .sep {
+  opacity: 0.5;
+}
+.breadcrumb .current {
+  color: var(--ink);
+  font-weight: 600;
+}
+@media (max-width: 900px) {
+  .breadcrumb {
+    display: flex;
+  }
+}
+
+/* ---------- §6. Segment toggle transition ---------- */
+.seg button {
+  transition:
+    background 0.12s ease,
+    color 0.12s ease,
+    box-shadow 0.12s ease;
+}
+
+/* ---------- §8. Responsive tables – sticky first column ---------- */
+@media (max-width: 768px) {
+  .table-scroll {
+    position: relative;
+  }
+  .data-table th:first-child,
+  .data-table td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background: var(--bg-surface-1);
+  }
+  .data-table tbody tr:hover td:first-child {
+    background: var(--bg-surface-2);
+  }
+  /* Gradient shadow on right of pinned column */
+  .data-table th:first-child::after,
+  .data-table td:first-child::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -12px;
+    bottom: 0;
+    width: 12px;
+    pointer-events: none;
+    background: linear-gradient(to right, color-mix(in srgb, var(--bg-canvas) 60%, transparent), transparent);
+  }
+  /* Q-table fixed layout loosened */
+  .q-table {
+    table-layout: auto;
+  }
+  .q-table .qc-clk,
+  .q-table .qc-pos,
+  .q-table .qc-imp,
+  .q-table .qc-opp {
+    width: auto;
+  }
+}
+
+/* ---------- §9. Light mode polish ---------- */
+:root[data-theme='light'] {
+  /* Subtelniejsze cienie kart w jasnym motywie */
+  --shadow-card: 0 4px 24px -8px rgba(15, 23, 42, 0.09), 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+:root[data-theme='light'] body {
+  background:
+    radial-gradient(900px 420px at 68% -140px, color-mix(in srgb, var(--accent-blue) 6%, transparent), transparent 70%),
+    var(--bg-canvas);
+}
+/* Jaśniejsze gradienty na kartach KPI */
+:root[data-theme='light'] .stat-card,
+:root[data-theme='light'] .k,
+:root[data-theme='light'] .seg-card,
+:root[data-theme='light'] .rchart {
+  background:
+    radial-gradient(120% 120% at 100% 0%, color-mix(in srgb, var(--accent-blue) 3%, transparent), transparent 46%),
+    var(--bg-surface-1);
+  border-color: rgba(15, 23, 42, 0.1);
+}
+/* Nav aktywny item w light */
+:root[data-theme='light'] .nav-item.active {
+  background: var(--bg-surface-1);
+  border-color: rgba(15, 23, 42, 0.12);
+  box-shadow: inset 2px 0 0 var(--accent-blue), 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+/* Tabele – wyraźniejsze headery */
+:root[data-theme='light'] .data-table th {
+  background: var(--bg-surface-2);
+  border-bottom-color: rgba(15, 23, 42, 0.12);
+}
+:root[data-theme='light'] table.data-table thead th {
+  background: var(--bg-surface-2);
+}
+/* Pager active btn czytelniejszy w light */
+:root[data-theme='light'] .pager .pages button.active {
+  color: #ffffff;
+}
+/* Lepszy kontrast sparkline w light */
+:root[data-theme='light'] .spark {
+  opacity: 1;
+}
+/* Brand mark glow subtler in light */
+:root[data-theme='light'] .brand-mark {
+  box-shadow: 0 0 12px color-mix(in srgb, var(--accent-blue) 15%, transparent);
+}
+/* Sidebar separator */
+:root[data-theme='light'] .sidebar {
+  border-right-color: rgba(15, 23, 42, 0.1);
+}
+/* Domain card in light – less dramatic shadow */
+:root[data-theme='light'] .domain-card {
+  box-shadow: 0 2px 12px -4px rgba(15, 23, 42, 0.08);
+}
+:root[data-theme='light'] .domain-card:hover {
+  box-shadow: 0 8px 30px -8px rgba(15, 23, 42, 0.14);
+}
+/* Empty chart border more visible in light */
+:root[data-theme='light'] .empty-chart {
+  border-color: rgba(15, 23, 42, 0.14);
+}
+/* Seg toggle in light */
+:root[data-theme='light'] .seg button.active {
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12);
+}
+
+/* ---------- §10. Print stylesheet ---------- */
+@media print {
+  /* Reset do jasnego tła */
+  :root {
+    --bg-canvas: #ffffff !important;
+    --bg-rail: #f8f9fa !important;
+    --bg-surface-1: #ffffff !important;
+    --bg-surface-2: #f1f3f5 !important;
+    --bg-surface-3: #e9ecef !important;
+    --hairline: rgba(0, 0, 0, 0.12) !important;
+    --hairline-soft: rgba(0, 0, 0, 0.06) !important;
+    --ink: #111827 !important;
+    --ink-muted: #374151 !important;
+    --ink-faint: #6b7280 !important;
+    --accent-blue: #0068cc !important;
+    --shadow-card: none !important;
+  }
+  html, body {
+    background: white !important;
+    color: #111827 !important;
+  }
+  body {
+    background-image: none !important;
+  }
+  .sidebar,
+  .collapse-btn,
+  #theme-toggle,
+  .side-footer,
+  .skip-link {
+    display: none !important;
+  }
+  .shell {
+    grid-template-columns: 1fr !important;
+  }
+  main {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+  .stat-card,
+  .k,
+  .domain-card,
+  .table-card,
+  .seg-card,
+  .rchart {
+    break-inside: avoid;
+    box-shadow: none !important;
+    border: 1px solid #dee2e6 !important;
+  }
+  .chart-grid,
+  .stat-grid,
+  .rgrid,
+  .seg-grid {
+    break-inside: avoid;
+  }
+  /* Wykresy – widoczne bez JS */
+  .chart-wrap {
+    max-height: 200px;
+    overflow: hidden;
+  }
+  a[href]::after {
+    content: none; /* Nie drukuj URL-i za linkami */
+  }
+  .site-footer {
+    border-top: 1px solid #dee2e6 !important;
+    margin-top: 24px;
+    padding-top: 12px;
+    font-size: 0.75rem;
+  }
+}
