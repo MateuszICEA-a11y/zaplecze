@@ -1,13 +1,5 @@
 [
   {
-    "title": "Polacy ruszają kamperami nad Bałtyk i w góry. Jeden kierunek wyraźnie zaskakuje",
-    "date": "2026-04-19",
-    "slug": "polacy-ruszaja-kamperami-nad-baltyk-i-w-gory-jeden-kierunek-wyraznie-zaskakuje",
-    "section": "kampery",
-    "format": "analysis",
-    "source": "rss"
-  },
-  {
     "title": "Wybuch instalacji w kamperze w Łebie. Dwie osoby ciężko ranne",
     "date": "2026-04-20",
     "slug": "wybuch-instalacji-w-kamperze-w-lebie-dwie-osoby-ciezko-ranne",
@@ -717,6 +709,14 @@
     "slug": "wojciechowska-van-heukelom-uderza-w-oboz-morawieckiego-mowi-o-grze-do-bramki",
     "section": "news",
     "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Ukraińcy tankują za półdarmo? Sprawdzamy, skąd biorą się te wyliczenia",
+    "date": "2026-07-23",
+    "slug": "ukraincy-tankuja-za-poldarmo-sprawdzamy-skad-biora-sie-te-wyliczenia",
+    "section": "news",
+    "format": "analysis",
     "source": "rss"
   }
 ]
