@@ -16,7 +16,7 @@ const STATUS_META: Record<string, { label: string; cls: string }> = {
 const meta = STATUS_META[result?.status ?? 'not_configured'] ?? STATUS_META.error;
 ---
 
-<span class="rstat" title={result?.error ?? meta.label || 'OK'}>
+<span class="rstat" title={result?.error ?? (meta.label || 'OK')}>
   <span class={`d ${meta.cls}`} aria-hidden="true"></span>
   <span><b>{name}</b>{meta.label ? ` ${meta.label}` : ''}</span>
 </span>
