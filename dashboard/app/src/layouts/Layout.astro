@@ -69,6 +69,7 @@ const SECTION_ICONS: Record<string, string> = {
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Przejdź do treści</a>
     <div class="shell">
       <aside class="sidebar">
         <div class="side-top">
@@ -149,7 +150,16 @@ const SECTION_ICONS: Record<string, string> = {
       </aside>
 
       <div class="content">
-        <main>
+        <main id="main-content">
+          {currentDomain && activeSection !== null && activeSection !== '' && (
+            <nav class="breadcrumb" aria-label="Ścieżka">
+              <a href="/">Domeny</a>
+              <span class="sep">›</span>
+              <a href={`/${currentDomain.id}/`}>{currentDomain.name}</a>
+              <span class="sep">›</span>
+              <span class="current">{visibleSections.find(s => s.slug === activeSection)?.label ?? activeSection}</span>
+            </nav>
+          )}
           <slot />
         </main>
         <footer class="site-footer">
@@ -167,12 +177,13 @@ const SECTION_ICONS: Record<string, string> = {
       });
       document.getElementById('theme-toggle')?.addEventListener('click', () => {
         const root = document.documentElement;
+        root.classList.add('theme-transition');
         const next = root.dataset.theme === 'light' ? 'dark' : 'light';
         if (next === 'light') root.dataset.theme = 'light';
         else delete root.dataset.theme;
         localStorage.setItem('dash-theme', next);
-        // Wykresy przerysowują się na ten sygnał (kolory czytane z CSS vars).
         window.dispatchEvent(new CustomEvent('themechange'));
+        setTimeout(() => root.classList.remove('theme-transition'), 300);
       });
     </script>
 
@@ -516,5 +527,21 @@ const SECTION_ICONS: Record<string, string> = {
         }
       }
     </style>
+    <script>
+      // Mobile nav scroll indicator
+      (function() {
+        const nav = document.querySelector('.side-nav');
+        if (!nav || window.innerWidth > 900) return;
+        function update() {
+          const atStart = nav.scrollLeft <= 4;
+          const atEnd = nav.scrollLeft + nav.clientWidth >= nav.scrollWidth - 4;
+          nav.classList.toggle('at-start', atStart);
+          nav.classList.toggle('at-end', atEnd);
+        }
+        update();
+        nav.addEventListener('scroll', update, { passive: true });
+        window.addEventListener('resize', update, { passive: true });
+      })();
+    </script>
   </body>
 </html>
