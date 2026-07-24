@@ -90,16 +90,23 @@ const yoyDelta = (field: 'sessions' | 'users') =>
 const monthLabel = lastFull ? `${lastFull.month.slice(0, 4)}-${lastFull.month.slice(4, 6)}` : null;
 
 // Kanały miesięcznie → serie per kanał (pozostałe zsumowane w „Inne").
-const MAIN_CHANNELS = ['Organic Search', 'Direct', 'Referral', 'Paid Search', 'Organic Social'];
-const channelSeries = MAIN_CHANNELS.map((channel) => ({
-  label: channel === 'Organic Search' ? 'Organic' : channel === 'Organic Social' ? 'Social' : channel,
+const MAIN_CHANNELS: { name: string; label: string; color: string }[] = [
+  { name: 'Organic Search', label: 'Organic', color: '--series-1' },
+  { name: 'Direct', label: 'Direct', color: '--v-perplexity' },
+  { name: 'Referral', label: 'Referral', color: '--v-anthropic' },
+  { name: 'Paid Search', label: 'Paid Search', color: '--series-2' },
+  { name: 'Organic Social', label: 'Social', color: '--sen' },
+];
+const channelSeries = MAIN_CHANNELS.map((ch) => ({
+  label: ch.label,
+  color: ch.color,
   values: monthly.map(
-    (m) => channelsMonthly.find((c) => c.month === m.month && c.channel === channel)?.sessions ?? 0,
+    (m) => channelsMonthly.find((c) => c.month === m.month && c.channel === ch.name)?.sessions ?? 0,
   ),
 }));
 const otherSeries = monthly.map((m) =>
   channelsMonthly
-    .filter((c) => c.month === m.month && !MAIN_CHANNELS.includes(c.channel))
+    .filter((c) => c.month === m.month && !MAIN_CHANNELS.some((mc) => mc.name === c.channel))
     .reduce((sum, c) => sum + c.sessions, 0),
 );
 const organicMonthly = channelSeries[0]?.values ?? [];
@@ -198,7 +205,7 @@ const isJunk = (name: string) => /^\(|unassigned|not set|not available/i.test(na
           <TimeSeriesChart
             title="Sesje per kanał"
             timestamps={monthlyTs}
-            series={[...channelSeries, { label: 'Inne', values: otherSeries }].filter((s) =>
+            series={[...channelSeries, { label: 'Inne', values: otherSeries, color: '--v-apple' }].filter((s) =>
               s.values.some((v) => v > 0),
             )}
             overview
@@ -361,8 +368,8 @@ const isJunk = (name: string) => /^\(|unassigned|not set|not available/i.test(na
         <tr>
           <th>Landing page</th>
           <th class="num">Sesje</th>
-          <th class="num">Engagement rate <span class="info-badge" title="Odsetek sesji zaangażowanych – sesja trwająca &gt;10 s, z konwersją lub z &gt;1 odsłoną strony">i</span></th>
-          <th class="num">Śr. czas zaangaż. <span class="info-badge" title="Średni czas aktywnego zaangażowania użytkownika na stronie w ramach jednej sesji">i</span></th>
+          <th class="num">Engagement rate <span class="info-badge" data-no-sort>i<span class="info-tip">Odsetek sesji zaangażowanych – sesja trwająca &gt;10 s, z konwersją lub z &gt;1 odsłoną strony</span></span></th>
+          <th class="num">Śr. czas zaangaż. <span class="info-badge" data-no-sort>i<span class="info-tip">Średni czas aktywnego zaangażowania użytkownika na stronie w ramach jednej sesji</span></span></th>
           <th class="num">Strony / sesję</th>
         </tr>
       </thead>

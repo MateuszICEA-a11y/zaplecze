@@ -266,3 +266,18 @@ const hasActions = Astro.slots.has('actions');
     if (pageSize) update();
   });
 </script>
+
+<script>
+  /* Info-badge: kliknięcie rozwija/zwija dymek, kliknięcie poza zamyka. */
+  document.addEventListener('click', (e) => {
+    const badge = (e.target as HTMLElement).closest('.info-badge');
+    if (badge) {
+      e.stopPropagation();
+      const wasOpen = badge.classList.contains('open');
+      document.querySelectorAll('.info-badge.open').forEach((b) => b.classList.remove('open'));
+      if (!wasOpen) badge.classList.add('open');
+    } else {
+      document.querySelectorAll('.info-badge.open').forEach((b) => b.classList.remove('open'));
+    }
+  });
+</script>
