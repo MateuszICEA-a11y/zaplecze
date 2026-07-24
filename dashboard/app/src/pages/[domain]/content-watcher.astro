@@ -1,0 +1,585 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DomainHeader from '../../components/DomainHeader.astro';
+import StatCard from '../../components/StatCard.astro';
+import TableCard from '../../components/TableCard.astro';
+import {
+  loadConfig,
+  loadSnapshots,
+  loadDetails,
+  loadContentCatalog,
+  latestSnapshot,
+  type GscCompareRow,
+} from '../../lib/data';
+import { fmtDate, fmtInt, fmtNum, fmtPct } from '../../lib/format';
+
+export function getStaticPaths() {
+  return loadConfig()
+    .domains.filter((domain) => {
+      const cfg = domain.content_watcher as { enabled?: boolean } | undefined;
+      return cfg?.enabled === true;
+    })
+    .map((domain) => ({ params: { domain: domain.id }, props: { name: domain.name } }));
+}
+
+const { domain } = Astro.params;
+const { name } = Astro.props;
+const domainConfig = loadConfig().domains.find((item) => item.id === domain)!;
+const latest = latestSnapshot(domain!);
+const snapshots = loadSnapshots(domain!);
+const details = loadDetails(domain!);
+const catalog = loadContentCatalog(domainConfig);
+const asOf = latest?.date ?? new Date().toISOString().slice(0, 10);
+const asOfTime = new Date(`${asOf}T00:00:00Z`).getTime();
+const DAY = 86_400_000;
+
+const normPath = (value: string): string => {
+  const path = value.replace(/^https?:\/\/[^/]+/i, '').replace(/\/+$/, '');
+  return path || '/';
+};
+
+const indexingByPath = new Map((details.sources.indexing?.rows ?? []).map((row) => [normPath(row.url), row]));
+const senutoByPath = new Map(
+  (details.sources.senuto?.urls ?? []).map((row) => [
+    normPath(row.url.replace(/^(https?:\/\/)?(www\.)?[^/]+/i, '')),
+    row,
+  ]),
+);
+const ga4ByPath = new Map<string, {
+  sessions: number;
+  engagement_rate: number | null;
+  avg_engagement_s: number | null;
+}>();
+for (const row of details.sources.ga4?.landing_pages?.rows ?? []) {
+  const key = normPath(row.path);
+  const previous = ga4ByPath.get(key);
+  if (!previous) {
+    ga4ByPath.set(key, {
+      sessions: row.sessions,
+      engagement_rate: row.engagement_rate ?? null,
+      avg_engagement_s: row.avg_engagement_s ?? null,
+    });
+    continue;
+  }
+  const sessions = previous.sessions + row.sessions;
+  ga4ByPath.set(key, {
+    sessions,
+    engagement_rate:
+      previous.engagement_rate === null && row.engagement_rate == null
+        ? null
+        : ((previous.engagement_rate ?? 0) * previous.sessions + (row.engagement_rate ?? 0) * row.sessions) /
+          (sessions || 1),
+    avg_engagement_s:
+      previous.avg_engagement_s === null && row.avg_engagement_s == null
+        ? null
+        : ((previous.avg_engagement_s ?? 0) * previous.sessions + (row.avg_engagement_s ?? 0) * row.sessions) /
+          (sessions || 1),
+  });
+}
+const gscCompare = details.sources.gsc?.compare?.qoq;
+const compareByPath = new Map<string, GscCompareRow>(
+  (gscCompare?.pages ?? []).map((row) => [normPath(row.key), row]),
+);
+
+type ScorePart = { key: string; label: string; points: number; max: number; available: boolean };
+const clamp = (value: number, min: number, max: number): number => Math.min(max, Math.max(min, value));
+
+const items = catalog
+  .map((content) => {
+    const path = normPath(content.url);
+    const indexing = indexingByPath.get(path) ?? null;
+    const senuto = senutoByPath.get(path) ?? null;
+    const ga4 = ga4ByPath.get(path) ?? null;
+    const compare = compareByPath.get(path) ?? null;
+    const effectiveDate = content.updated_at ?? content.published_at;
+    const ageDays = Math.max(0, Math.floor((asOfTime - new Date(`${effectiveDate}T00:00:00Z`).getTime()) / DAY));
+    const clicksDelta = compare ? compare.clicks - compare.prev_clicks : null;
+    const impressionsDelta = compare ? compare.impressions - compare.prev_impressions : null;
+    const positionDelta =
+      typeof compare?.position === 'number' && typeof compare.prev_position === 'number'
+        ? Math.round((compare.position - compare.prev_position) * 10) / 10
+        : null;
+
+    const clickLoss = compare ? Math.max(0, compare.prev_clicks - compare.clicks) : 0;
+    const clickLossPct = compare && compare.prev_clicks > 0 ? clickLoss / compare.prev_clicks : 0;
+    const positionLoss = Math.max(0, positionDelta ?? 0);
+    const lossPoints = Math.min(35, Math.min(20, clickLoss * 1.5 + clickLossPct * 12) + Math.min(15, positionLoss * 3));
+
+    const impressions = indexing?.impressions ?? 0;
+    const bestPosition = indexing?.position ?? senuto?.best_position ?? null;
+    const impressionPoints = Math.min(10, Math.log10(impressions + 1) * 3.4);
+    const positionPoints =
+      typeof bestPosition !== 'number'
+        ? 0
+        : bestPosition >= 4 && bestPosition <= 10
+          ? 8
+          : bestPosition <= 20
+            ? 12
+            : bestPosition <= 30
+              ? 8
+              : 0;
+    const ctrPoints = impressions >= 100 && (indexing?.ctr ?? 100) < 2 ? 5 : 0;
+    const potentialPoints = Math.min(25, impressionPoints + positionPoints + ctrPoints);
+    const freshnessPoints = clamp(((ageDays - 60) / 305) * 20, 0, 20);
+    const engagementAvailable = Boolean(ga4 && ga4.sessions >= 10 && ga4.engagement_rate !== null);
+    const engagementPoints = engagementAvailable
+      ? clamp((60 - (ga4?.engagement_rate ?? 60)) / 6, 0, 10)
+      : 0;
+    const senutoAvailable = Boolean(senuto);
+    const senutoPoints = !senuto
+      ? 0
+      : Math.min(
+          10,
+          (senuto.best_position >= 11 && senuto.best_position <= 30 ? 7 : 0) +
+            Math.min(3, Math.max(0, senuto.keywords - senuto.top10) * 0.5),
+        );
+
+    const parts: ScorePart[] = [
+      { key: 'loss', label: 'Utrata ruchu', points: lossPoints, max: 35, available: Boolean(compare) },
+      { key: 'potential', label: 'Potencjał', points: potentialPoints, max: 25, available: Boolean(indexing) },
+      { key: 'freshness', label: 'Świeżość', points: freshnessPoints, max: 20, available: true },
+      { key: 'engagement', label: 'Zaangażowanie', points: engagementPoints, max: 10, available: engagementAvailable },
+      { key: 'senuto', label: 'Pokrycie fraz', points: senutoPoints, max: 10, available: senutoAvailable },
+    ];
+    const availableMax = parts.filter((part) => part.available).reduce((sum, part) => sum + part.max, 0);
+    const rawScore = parts.filter((part) => part.available).reduce((sum, part) => sum + part.points, 0);
+    const score = availableMax > 0 ? Math.round((rawScore / availableMax) * 100) : 0;
+
+    const reasons: string[] = [];
+    if (clickLoss > 0) reasons.push(`utrata ${fmtInt(clickLoss)} kliknięć`);
+    if (positionLoss >= 1) reasons.push(`pozycja spadła o ${fmtNum(positionLoss, 1)}`);
+    if (impressions >= 100 && typeof bestPosition === 'number' && bestPosition >= 4 && bestPosition <= 30) {
+      reasons.push(`${fmtInt(impressions)} wyświetleń przy pozycji ${fmtNum(bestPosition, 1)}`);
+    }
+    if (impressions > 0 && typeof bestPosition === 'number' && bestPosition >= 11 && bestPosition <= 20) {
+      reasons.push(`pozycja ${fmtNum(bestPosition, 1)} — blisko TOP 10`);
+    }
+    if (ctrPoints > 0) reasons.push(`CTR ${fmtPct(indexing?.ctr)} przy widocznym popycie`);
+    if (ageDays >= 60) reasons.push(`bez aktualizacji od ${fmtInt(ageDays)} dni`);
+    if (engagementPoints >= 4) reasons.push(`engagement ${fmtPct(ga4?.engagement_rate)}`);
+
+    const indexed = indexing?.indexed ?? null;
+    const hasSignal = lossPoints >= 5 || potentialPoints >= 10;
+    // Na młodej domenie próg 18 służy wyłącznie do ręcznej oceny. Późniejszy
+    // automat n8n dostanie osobny, wyższy próg oraz minimalny wolumen danych.
+    const candidate = indexed === true && ageDays >= 60 && hasSignal && score >= 18;
+    const status =
+      indexed === false
+        ? 'not-indexed'
+        : ageDays < 60
+          ? 'recent'
+          : candidate
+            ? 'candidate'
+            : 'monitor';
+
+    return {
+      ...content,
+      path,
+      age_days: ageDays,
+      effective_date: effectiveDate,
+      indexed,
+      last_crawl: indexing?.last_crawl ?? null,
+      clicks: indexing?.clicks ?? null,
+      impressions: indexing?.impressions ?? null,
+      ctr: indexing?.ctr ?? null,
+      gsc_position: indexing?.position ?? null,
+      clicks_delta: clicksDelta,
+      impressions_delta: impressionsDelta,
+      position_delta: positionDelta,
+      ga4_sessions: ga4?.sessions ?? null,
+      engagement_rate: ga4?.engagement_rate ?? null,
+      avg_engagement_s: ga4?.avg_engagement_s ?? null,
+      senuto_position: senuto?.best_position ?? null,
+      senuto_keyword: senuto?.best_keyword ?? null,
+      senuto_keywords: senuto?.keywords ?? null,
+      senuto_top10: senuto?.top10 ?? null,
+      score,
+      parts: parts.map((part) => ({ ...part, points: Math.round(part.points * 10) / 10 })),
+      reasons,
+      status,
+      candidate,
+    };
+  })
+  .sort((a, b) => b.score - a.score || b.age_days - a.age_days || a.title.localeCompare(b.title, 'pl'));
+
+const candidates = items.filter((item) => item.candidate).length;
+const recent = items.filter((item) => item.status === 'recent').length;
+const notIndexed = items.filter((item) => item.status === 'not-indexed').length;
+const withTraffic = items.filter((item) => (item.clicks ?? 0) > 0 || (item.impressions ?? 0) > 0).length;
+const pillars = [...new Set(items.map((item) => item.pillar))].sort((a, b) => a.localeCompare(b, 'pl'));
+const detailPayload = Object.fromEntries(items.map((item) => [item.id, item]));
+
+const statusLabel: Record<string, string> = {
+  candidate: 'kandydat',
+  monitor: 'monitoruj',
+  recent: 'za świeży',
+  'not-indexed': 'poza indeksem',
+};
+const scoreClass = (score: number): string => (score >= 60 ? 'high' : score >= 18 ? 'medium' : 'low');
+---
+
+<Layout title={`${name} – Content Watcher`}>
+  <DomainHeader domain={domain!} name={name} active="content-watcher" latest={latest} themeToggle />
+
+  <div class="cw-note">
+    Content Watcher łączy metadane artykułów z indeksacją, GSC, GA4 i Senuto. Priorytet wskazuje treści warte ręcznej
+    oceny przed reoptymalizacją; kolejka n8n zostanie podłączona w następnym etapie.
+  </div>
+
+  <div class="section-head">
+    <h2>Stan treści</h2>
+    <span class="section-meta">katalog i scoring na {fmtDate(asOf)}</span>
+  </div>
+  <div class="kwrap rgrid cw-kpis">
+    <StatCard label="Artykuły" value={items.length} emptyDeltaLabel="w katalogu treści" hero />
+    <StatCard label="Kandydaci do oceny" value={candidates} emptyDeltaLabel="ręczna kwalifikacja" />
+    <StatCard label="Z sygnałem GSC" value={withTraffic} emptyDeltaLabel="kliknięcia lub wyświetlenia" />
+    <StatCard label="Młodsze niż 60 dni" value={recent} emptyDeltaLabel="okres ochronny" />
+    <StatCard label="Poza indeksem" value={notIndexed} emptyDeltaLabel="wymaga osobnej diagnozy" goodWhen="down" />
+  </div>
+
+  <div class="section-head cw-list-head">
+    <div>
+      <h2>Priorytety reoptymalizacji</h2>
+      <span class="section-meta">wynik 0–100 · kliknij „Szczegóły”, aby zobaczyć składowe</span>
+    </div>
+    <div class="cw-automation" title="Automatyzacja zostanie uruchomiona po wdrożeniu kolejki i callbacków n8n">
+      <span>Automatyzacja</span><b>OFF</b>
+    </div>
+  </div>
+
+  <div class="cw-controls">
+    <div class="fchips" data-cw-filters>
+      <button type="button" class="fchip on" data-status="all">Wszystkie <span>{items.length}</span></button>
+      <button type="button" class="fchip" data-status="candidate">Kandydaci <span>{candidates}</span></button>
+      <button type="button" class="fchip" data-status="monitor">Monitoruj</button>
+      <button type="button" class="fchip" data-status="recent">Za świeże <span>{recent}</span></button>
+      <button type="button" class="fchip" data-status="not-indexed">Poza indeksem <span>{notIndexed}</span></button>
+    </div>
+    <label class="cw-pillar">
+      <span>Filar</span>
+      <select data-cw-pillar>
+        <option value="all">Wszystkie</option>
+        {pillars.map((pillar) => <option value={pillar}>{pillar}</option>)}
+      </select>
+    </label>
+  </div>
+
+  <div data-cw-table>
+    <TableCard
+      title="Artykuły"
+      count={items.length}
+      filter
+      pageSize={25}
+      empty="Nie znaleziono artykułów w skonfigurowanej kolekcji."
+    >
+      <table class="data-table cw-table">
+        <thead>
+          <tr>
+            <th class="num">Priorytet</th>
+            <th>Treść</th>
+            <th>Publikacja / aktualizacja</th>
+            <th class="num">GSC · 30 dni</th>
+            <th class="num">Zmiana · 90 dni</th>
+            <th class="num">GA4</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            items.map((item) => (
+              <tr data-status={item.status} data-pillar={item.pillar} data-score={item.score}>
+                <td class="num cw-score-cell" data-sort={item.score} data-label="Priorytet">
+                  <span class={`cw-score ${scoreClass(item.score)}`}>{item.score}</span>
+                </td>
+                <td class="grow cw-content" data-label="Treść">
+                  <div class="cw-title-row">
+                    <a href={item.url} target="_blank" rel="noopener">{item.title}</a>
+                    <button type="button" data-cw-detail={item.id}>Szczegóły</button>
+                  </div>
+                  <span>{item.path}</span>
+                  <small>{item.pillar} · {fmtInt(item.word_count)} słów · {fmtInt(item.headings)} nagłówków</small>
+                </td>
+                <td data-sort={item.effective_date.replaceAll('-', '')} data-label="Daty">
+                  <div class="cw-dates"><span>publ. {fmtDate(item.published_at)}</span><span>akt. {fmtDate(item.updated_at)}</span></div>
+                  <small>{fmtInt(item.age_days)} dni od ostatniej zmiany</small>
+                </td>
+                <td class="num" data-sort={item.impressions ?? -1} data-label="GSC · 30 dni">
+                  <b>{fmtInt(item.clicks)}</b> klik.
+                  <small>{fmtInt(item.impressions)} wyśw. · CTR {fmtPct(item.ctr)}</small>
+                </td>
+                <td class="num" data-sort={item.clicks_delta ?? 0} data-label="Zmiana · 90 dni">
+                  <span class:list={['cw-delta', { bad: (item.clicks_delta ?? 0) < 0, good: (item.clicks_delta ?? 0) > 0 }]}>
+                    {item.clicks_delta === null ? '–' : `${item.clicks_delta > 0 ? '+' : ''}${fmtInt(item.clicks_delta)} klik.`}
+                  </span>
+                  <small>
+                    {item.position_delta === null
+                      ? 'pozycja: –'
+                      : `pozycja ${item.position_delta > 0 ? '+' : ''}${fmtNum(item.position_delta, 1)}`}
+                  </small>
+                </td>
+                <td class="num" data-sort={item.ga4_sessions ?? -1} data-label="GA4">
+                  <b>{fmtInt(item.ga4_sessions)}</b> sesji
+                  <small>eng. {fmtPct(item.engagement_rate)}</small>
+                </td>
+                <td data-label="Status">
+                  <span class={`cw-status ${item.status}`}>{statusLabel[item.status]}</span>
+                  <small>{item.reasons[0] ?? 'brak silnego sygnału'}</small>
+                </td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </TableCard>
+  </div>
+
+  <dialog class="cw-dialog" data-cw-dialog>
+    <div class="cw-dialog-head">
+      <div>
+        <span data-detail-pillar></span>
+        <h2 data-detail-title>Szczegóły artykułu</h2>
+        <a data-detail-url target="_blank" rel="noopener"></a>
+      </div>
+      <button type="button" data-detail-close aria-label="Zamknij">×</button>
+    </div>
+    <div class="cw-dialog-grid">
+      <section>
+        <h3>Wyniki</h3>
+        <dl class="cw-facts">
+          <div><dt>Publikacja</dt><dd data-detail-published></dd></div>
+          <div><dt>Aktualizacja</dt><dd data-detail-updated></dd></div>
+          <div><dt>Wiek treści</dt><dd data-detail-age></dd></div>
+          <div><dt>Indeksacja</dt><dd data-detail-indexed></dd></div>
+          <div><dt>GSC</dt><dd data-detail-gsc></dd></div>
+          <div><dt>Zmiana 90 dni</dt><dd data-detail-change></dd></div>
+          <div><dt>GA4</dt><dd data-detail-ga4></dd></div>
+          <div><dt>Senuto</dt><dd data-detail-senuto></dd></div>
+          <div><dt>Struktura</dt><dd data-detail-structure></dd></div>
+          <div><dt>Plik</dt><dd><code data-detail-path></code></dd></div>
+        </dl>
+        <h3>Dlaczego taki priorytet?</h3>
+        <ul class="cw-reasons" data-detail-reasons></ul>
+      </section>
+      <aside>
+        <div class="cw-score-large"><b data-detail-score></b><span>/ 100</span></div>
+        <div class="cw-breakdown" data-detail-parts></div>
+        <div class="cw-next">
+          <strong>Kolejka automatyzacji</strong>
+          <p>W etapie 2 ten przycisk wyśle zatwierdzone zadanie do n8n i pokaże tutaj status oraz link do PR.</p>
+          <button type="button" disabled>Dodaj do kolejki · etap 2</button>
+        </div>
+      </aside>
+    </div>
+  </dialog>
+
+  <script id="content-watcher-data" type="application/json" set:html={JSON.stringify(detailPayload).replace(/</g, '\\u003c')} />
+
+  <script>
+    type DetailItem = {
+      title: string; url: string; pillar: string; content_path: string;
+      published_at: string; updated_at: string | null; age_days: number;
+      indexed: boolean | null; last_crawl: string | null;
+      clicks: number | null; impressions: number | null; ctr: number | null;
+      clicks_delta: number | null; position_delta: number | null;
+      ga4_sessions: number | null; engagement_rate: number | null;
+      senuto_position: number | null; senuto_keywords: number | null; senuto_top10: number | null;
+      word_count: number; headings: number; internal_links: number; external_links: number;
+      score: number; reasons: string[];
+      parts: { label: string; points: number; max: number; available: boolean }[];
+    };
+    const payloadNode = document.getElementById('content-watcher-data');
+    const contentItems = payloadNode?.textContent ? JSON.parse(payloadNode.textContent) as Record<string, DetailItem> : {};
+    const dialog = document.querySelector<HTMLDialogElement>('[data-cw-dialog]');
+    const pl = new Intl.NumberFormat('pl-PL', { maximumFractionDigits: 1 });
+    const date = (value: string | null) =>
+      value ? new Date(`${value}T00:00:00Z`).toLocaleDateString('pl-PL', { timeZone: 'UTC' }) : '—';
+    const pct = (value: number | null) => value === null ? '—' : `${pl.format(value)}%`;
+    const set = (selector: string, value: string) => {
+      const node = dialog?.querySelector<HTMLElement>(selector);
+      if (node) node.textContent = value;
+    };
+
+    document.querySelectorAll<HTMLButtonElement>('[data-cw-detail]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const item = contentItems[button.dataset.cwDetail ?? ''];
+        if (!item || !dialog) return;
+        set('[data-detail-pillar]', item.pillar);
+        set('[data-detail-title]', item.title);
+        const link = dialog.querySelector<HTMLAnchorElement>('[data-detail-url]');
+        if (link) { link.href = item.url; link.textContent = new URL(item.url).pathname; }
+        set('[data-detail-published]', date(item.published_at));
+        set('[data-detail-updated]', date(item.updated_at));
+        set('[data-detail-age]', `${pl.format(item.age_days)} dni`);
+        set('[data-detail-indexed]', item.indexed === null ? 'brak pomiaru' : item.indexed ? `tak · crawl ${date(item.last_crawl)}` : 'nie');
+        set('[data-detail-gsc]', `${pl.format(item.clicks ?? 0)} klik. · ${pl.format(item.impressions ?? 0)} wyśw. · CTR ${pct(item.ctr)}`);
+        set('[data-detail-change]', item.clicks_delta === null ? 'brak porównania' : `${item.clicks_delta > 0 ? '+' : ''}${pl.format(item.clicks_delta)} klik. · pozycja ${item.position_delta === null ? '—' : `${item.position_delta > 0 ? '+' : ''}${pl.format(item.position_delta)}`}`);
+        set('[data-detail-ga4]', item.ga4_sessions === null ? 'brak danych' : `${pl.format(item.ga4_sessions)} sesji · engagement ${pct(item.engagement_rate)}`);
+        set('[data-detail-senuto]', item.senuto_position === null ? 'brak dopasowanych fraz' : `poz. ${pl.format(item.senuto_position)} · ${pl.format(item.senuto_keywords ?? 0)} fraz · ${pl.format(item.senuto_top10 ?? 0)} TOP 10`);
+        set('[data-detail-structure]', `${pl.format(item.word_count)} słów · ${pl.format(item.headings)} nagłówków · ${pl.format(item.internal_links)} linków wewn. · ${pl.format(item.external_links)} zewn.`);
+        set('[data-detail-path]', item.content_path);
+        set('[data-detail-score]', String(item.score));
+        const reasons = dialog.querySelector<HTMLElement>('[data-detail-reasons]');
+        reasons?.replaceChildren(...(item.reasons.length ? item.reasons : ['Brak silnego sygnału do reoptymalizacji.']).map((reason) => {
+          const li = document.createElement('li'); li.textContent = reason; return li;
+        }));
+        const parts = dialog.querySelector<HTMLElement>('[data-detail-parts]');
+        parts?.replaceChildren(...item.parts.map((part) => {
+          const row = document.createElement('div');
+          row.className = part.available ? '' : 'unavailable';
+          const label = document.createElement('span'); label.textContent = part.label;
+          const track = document.createElement('i');
+          const fill = document.createElement('b');
+          fill.style.width = `${part.available ? Math.round((part.points / part.max) * 100) : 0}%`;
+          track.append(fill);
+          const value = document.createElement('strong');
+          value.textContent = part.available ? `${pl.format(part.points)}/${part.max}` : 'brak danych';
+          row.append(label, track, value);
+          return row;
+        }));
+        dialog.showModal();
+      });
+    });
+    dialog?.querySelector<HTMLButtonElement>('[data-detail-close]')?.addEventListener('click', () => dialog.close());
+    dialog?.addEventListener('click', (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+
+    const tableCard = document.querySelector<HTMLElement>('[data-cw-table] .table-card');
+    const chips = document.querySelector<HTMLElement>('[data-cw-filters]');
+    const pillarSelect = document.querySelector<HTMLSelectElement>('[data-cw-pillar]');
+    let activeStatus = 'all';
+    const refilter = () => {
+      const pillar = pillarSelect?.value ?? 'all';
+      tableCard?.dispatchEvent(new CustomEvent('tablecard:refilter', {
+        detail: (row: HTMLTableRowElement) =>
+          (activeStatus === 'all' || row.dataset.status === activeStatus) &&
+          (pillar === 'all' || row.dataset.pillar === pillar),
+      }));
+    };
+    chips?.querySelectorAll<HTMLButtonElement>('button[data-status]').forEach((button) => {
+      button.addEventListener('click', () => {
+        activeStatus = button.dataset.status ?? 'all';
+        chips.querySelectorAll('button').forEach((item) => item.classList.toggle('on', item === button));
+        refilter();
+      });
+    });
+    pillarSelect?.addEventListener('change', refilter);
+  </script>
+</Layout>
+
+<style>
+  .cw-note {
+    margin: 18px 0 24px;
+    padding: 14px 18px;
+    border-left: 2px solid var(--accent-blue);
+    background: var(--accent-blue-soft);
+    color: var(--ink-muted);
+    font-size: .86rem;
+    line-height: 1.55;
+  }
+  .cw-kpis { grid-template-columns: 1.35fr repeat(4, 1fr); margin-bottom: 28px; }
+  .cw-list-head { align-items: flex-end; }
+  .cw-list-head > div:first-child { display: flex; flex-direction: column; gap: 5px; }
+  .cw-automation { display: flex; align-items: center; gap: 9px; color: var(--ink-faint); font-size: .76rem; }
+  .cw-automation b { padding: 4px 9px; border-radius: 999px; background: var(--bg-surface-3); color: var(--ink-faint); }
+  .cw-controls {
+    display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap;
+    margin: 12px 0 10px;
+  }
+  .fchip span { color: var(--ink-faint); margin-left: 3px; }
+  .cw-pillar { display: flex; align-items: center; gap: 8px; color: var(--ink-faint); font-size: .76rem; }
+  .cw-pillar select {
+    border: 1px solid var(--hairline); border-radius: 2px; padding: 6px 28px 6px 9px;
+    background: var(--bg-surface-1); color: var(--ink); font: inherit;
+  }
+  .cw-table { min-width: 980px; }
+  .cw-table td { vertical-align: middle; }
+  .cw-table small { display: block; color: var(--ink-faint); font-size: .69rem; margin-top: 4px; white-space: nowrap; }
+  .cw-score {
+    display: inline-grid; place-items: center; width: 42px; height: 34px; border-radius: 2px;
+    font: 600 .95rem var(--font-display); background: var(--bg-surface-3); color: var(--ink-muted);
+  }
+  .cw-score.high { color: var(--status-err-fg); background: var(--status-err-bg); }
+  .cw-score.medium { color: var(--status-warn-fg); background: var(--status-warn-bg); }
+  .cw-content { min-width: 260px; max-width: 370px; }
+  .cw-title-row { display: flex; align-items: flex-start; gap: 9px; }
+  .cw-title-row > a { flex: 1; color: var(--ink); font-weight: 600; line-height: 1.3; text-decoration: none; }
+  .cw-title-row > a:hover { color: var(--accent-blue); }
+  .cw-title-row button {
+    border: 0; border-bottom: 1px solid var(--hairline); padding: 1px 0; background: none;
+    color: var(--ink-faint); font: inherit; font-size: .68rem; cursor: pointer; white-space: nowrap;
+  }
+  .cw-title-row button:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
+  .cw-content > span { display: block; color: var(--ink-faint); font-size: .7rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .cw-dates { display: flex; flex-direction: column; gap: 2px; white-space: nowrap; }
+  .cw-delta.bad { color: var(--status-err-fg); font-weight: 600; }
+  .cw-delta.good { color: var(--status-ok); font-weight: 600; }
+  .cw-status {
+    display: inline-flex; padding: 4px 9px; border-radius: 999px; background: var(--bg-surface-3);
+    color: var(--ink-muted); font-size: .72rem; font-weight: 600; white-space: nowrap;
+  }
+  .cw-status.candidate { color: var(--status-warn-fg); background: var(--status-warn-bg); }
+  .cw-status.recent { color: var(--accent-blue); background: var(--accent-blue-soft); }
+  .cw-status.not-indexed { color: var(--status-err-fg); background: var(--status-err-bg); }
+  .cw-next button {
+    border: 1px solid var(--hairline); border-radius: 2px; background: var(--bg-surface-2); color: var(--ink);
+    font: inherit; font-size: .74rem; font-weight: 600; padding: 6px 10px; cursor: pointer; white-space: nowrap;
+  }
+  .cw-dialog {
+    width: min(1000px, calc(100vw - 32px)); max-height: min(800px, calc(100vh - 32px)); padding: 0;
+    border: 1px solid var(--hairline); border-radius: 2px; color: var(--ink); background: var(--bg-surface-1);
+  }
+  .cw-dialog::backdrop { background: rgba(0, 0, 0, .7); backdrop-filter: blur(2px); }
+  .cw-dialog-head { display: flex; justify-content: space-between; gap: 20px; padding: 22px 24px; border-bottom: 1px solid var(--hairline); }
+  .cw-dialog-head span { color: var(--accent-blue); font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+  .cw-dialog-head h2 { margin: 4px 0; font: 600 1.35rem var(--font-display); }
+  .cw-dialog-head a { color: var(--ink-faint); font-size: .75rem; }
+  .cw-dialog-head button { align-self: flex-start; border: 0; background: transparent; color: var(--ink-faint); font-size: 1.7rem; cursor: pointer; }
+  .cw-dialog-grid { display: grid; grid-template-columns: 1.45fr 1fr; gap: 28px; padding: 24px; overflow-y: auto; }
+  .cw-dialog h3 { margin: 0 0 12px; font-size: .84rem; text-transform: uppercase; letter-spacing: .07em; color: var(--ink-faint); }
+  .cw-dialog h3:not(:first-child) { margin-top: 24px; }
+  .cw-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin: 0; }
+  .cw-facts div { padding: 10px 12px; background: var(--bg-surface-2); min-width: 0; }
+  .cw-facts dt { color: var(--ink-faint); font-size: .68rem; }
+  .cw-facts dd { margin: 4px 0 0; color: var(--ink); font-size: .79rem; overflow-wrap: anywhere; }
+  .cw-facts code { font-size: .68rem; color: var(--ink-muted); }
+  .cw-reasons { margin: 0; padding-left: 20px; color: var(--ink-muted); font-size: .82rem; line-height: 1.65; }
+  .cw-score-large { display: flex; align-items: baseline; gap: 6px; margin-bottom: 18px; }
+  .cw-score-large b { font: 600 3.5rem/1 var(--font-display); }
+  .cw-score-large span { color: var(--ink-faint); }
+  .cw-breakdown { display: flex; flex-direction: column; gap: 11px; }
+  .cw-breakdown > div { display: grid; grid-template-columns: 110px 1fr 58px; gap: 10px; align-items: center; font-size: .73rem; }
+  .cw-breakdown i { height: 7px; overflow: hidden; background: var(--bg-surface-3); border-radius: 2px; }
+  .cw-breakdown i b { display: block; height: 100%; background: var(--accent-blue); }
+  .cw-breakdown strong { text-align: right; font-size: .7rem; }
+  .cw-breakdown .unavailable { opacity: .45; }
+  .cw-next { margin-top: 26px; padding: 16px; border: 1px dashed var(--hairline); }
+  .cw-next p { color: var(--ink-faint); font-size: .76rem; line-height: 1.5; }
+  .cw-next button { width: 100%; opacity: .5; cursor: not-allowed; }
+  @media (max-width: 1100px) {
+    .cw-kpis { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 700px) {
+    .cw-kpis { grid-template-columns: 1fr; }
+    .cw-controls { align-items: stretch; }
+    .cw-pillar { justify-content: space-between; width: 100%; }
+    .cw-pillar select { flex: 1; }
+    .cw-dialog-grid { grid-template-columns: 1fr; }
+    .cw-facts { grid-template-columns: 1fr; }
+    .cw-table { min-width: 0; }
+    .cw-table thead { display: none; }
+    .cw-table tbody { display: grid; gap: 10px; padding: 10px; }
+    .cw-table tbody tr {
+      display: grid; grid-template-columns: 54px 1fr auto; gap: 8px 12px; padding: 14px;
+      border: 1px solid var(--hairline); background: var(--bg-surface-1);
+    }
+    .cw-table tbody td { display: none; border: 0; padding: 0; text-align: left; }
+    .cw-table tbody .cw-score-cell, .cw-table tbody .cw-content, .cw-table tbody td:nth-child(3),
+    .cw-table tbody td:nth-child(7) { display: block; }
+    .cw-table tbody .cw-score-cell { grid-row: 1 / span 2; grid-column: 1; }
+    .cw-table tbody .cw-content { grid-column: 2 / 4; }
+    .cw-table tbody td:nth-child(3) { grid-column: 2; }
+    .cw-table tbody td:nth-child(7) { grid-column: 2; }
+  }
+</style>

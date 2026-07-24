@@ -39,6 +39,10 @@ domains:
       token_env: CLOUDFLARE_ANALYTICS_TOKEN
     leads:
       enabled: true # eksport leadów/użyć narzędzi z KV; wymaga LEADS_EXPORT_TOKEN
+    content_watcher:
+      enabled: true
+      content_dir: portals/widocznosc.ai/src/content/blog
+      base_url: https://widocznosc.ai
 
   - id: grupa-icea.pl
     name: grupa-icea.pl

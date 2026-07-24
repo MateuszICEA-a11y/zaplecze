@@ -312,6 +312,88 @@ export function loadDetails(dirId: string): DomainDetails {
   }
 }
 
+/* ---------- Content Watcher – katalog treści z repozytorium ---------- */
+
+export interface ContentCatalogItem {
+  id: string;
+  url: string;
+  content_path: string;
+  title: string;
+  pillar: string;
+  author: string;
+  tags: string[];
+  published_at: string;
+  updated_at: string | null;
+  word_count: number;
+  headings: number;
+  internal_links: number;
+  external_links: number;
+}
+
+const isoDate = (value: unknown): string | null => {
+  if (value instanceof Date && !Number.isNaN(value.getTime())) return value.toISOString().slice(0, 10);
+  if (typeof value !== 'string' && typeof value !== 'number') return null;
+  const match = String(value).match(/^\d{4}-\d{2}-\d{2}/);
+  return match?.[0] ?? null;
+};
+
+/** Czyta kolekcję Markdown wskazaną w `content_watcher.content_dir`.
+    Funkcja działa wyłącznie w build time; treść artykułów nie trafia do bundle. */
+export function loadContentCatalog(domain: DomainConfig): ContentCatalogItem[] {
+  const cfg = domain.content_watcher as { enabled?: boolean; content_dir?: string; base_url?: string } | undefined;
+  if (cfg?.enabled !== true || !cfg.content_dir) return [];
+  const repoDir = resolve(DASHBOARD_DIR, '..');
+  const root = resolve(repoDir, cfg.content_dir);
+  if (!existsSync(root)) return [];
+
+  const files = (dir: string): string[] =>
+    readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+      const path = resolve(dir, entry.name);
+      return entry.isDirectory() ? files(path) : entry.isFile() && entry.name.endsWith('.md') ? [path] : [];
+    });
+
+  return files(root)
+    .flatMap((path): ContentCatalogItem[] => {
+      const raw = readFileSync(path, 'utf8');
+      const match = raw.match(/^---\s*\r?\n([\s\S]*?)\r?\n---\s*(?:\r?\n|$)/);
+      if (!match) return [];
+      try {
+        const frontmatter = parseYaml(match[1]) as Record<string, unknown>;
+        const published = isoDate(frontmatter.date);
+        if (!published || typeof frontmatter.title !== 'string') return [];
+        const relativePath = path.slice(root.length + 1).replace(/\\/g, '/');
+        const slug = relativePath.replace(/\.md$/, '');
+        const body = raw.slice(match[0].length);
+        const words = body
+          .replace(/<!--[\s\S]*?-->/g, ' ')
+          .replace(/<[^>]+>/g, ' ')
+          .replace(/[`*_#[\]()>{}|~-]/g, ' ')
+          .split(/\s+/)
+          .filter(Boolean).length;
+        const markdownLinks = [...body.matchAll(/\[[^\]]*]\(([^)]+)\)/g)].map((link) => link[1]?.trim() ?? '');
+        const author = frontmatter.author as { name?: unknown } | undefined;
+        return [{
+          id: slug.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, ''),
+          url: `${cfg.base_url?.replace(/\/$/, '') ?? ''}/${slug}/`.replace(/([^:]\/)\/+/g, '$1'),
+          content_path: `${cfg.content_dir.replace(/\/$/, '')}/${relativePath}`,
+          title: frontmatter.title,
+          pillar: typeof frontmatter.pillar === 'string' ? frontmatter.pillar : slug.split('/')[0] ?? 'inne',
+          author: typeof author?.name === 'string' ? author.name : '—',
+          tags: Array.isArray(frontmatter.tags) ? frontmatter.tags.map(String) : [],
+          published_at: published,
+          updated_at: isoDate(frontmatter.updated),
+          word_count: words,
+          headings: (body.match(/^#{2,6}\s+/gm) ?? []).length,
+          internal_links: markdownLinks.filter((href) => href.startsWith('/') || href.startsWith('.')).length,
+          external_links: markdownLinks.filter((href) => /^https?:\/\//i.test(href)).length,
+        }];
+      } catch {
+        return [];
+      }
+    })
+    .sort((a, b) => a.title.localeCompare(b.title, 'pl'));
+}
+
 /* ---------- Import ręczny: Bing AI Performance (brak API – eksport CSV z BWT) ---------- */
 
 export interface BingAiQueryRow {
@@ -399,7 +481,14 @@ export function loadBingAiQueries(dirId: string): { date: string; rows: BingAiQu
 }
 
 /** Sekcje dashboardu domeny – jedno źródło prawdy dla nawigacji. */
-export const DOMAIN_SECTIONS = [
+export interface DomainSection {
+  slug: string;
+  label: string;
+  source: string | null;
+  config?: string;
+}
+
+export const DOMAIN_SECTIONS: readonly DomainSection[] = [
   { slug: '', label: 'Przegląd', source: null },
   { slug: 'senuto', label: 'Senuto', source: 'senuto' },
   { slug: 'gsc', label: 'GSC', source: 'gsc' },
@@ -409,13 +498,18 @@ export const DOMAIN_SECTIONS = [
   { slug: 'clarity', label: 'Clarity', source: 'clarity' },
   { slug: 'boty-ai', label: 'Boty AI', source: 'cloudflare_ai' },
   { slug: 'matrix', label: 'Matrix', source: 'indexing' },
+  { slug: 'content-watcher', label: 'Content Watcher', source: null, config: 'content_watcher' },
   { slug: 'leady', label: 'Leady', source: 'leads' },
-] as const;
+];
 
 /** Sekcje widoczne dla domeny – źródło wyłączone w domains.yaml (enabled: false)
     znika z nawigacji, kart i buildu (np. Leady dla grupa-icea.pl). */
-export function sectionsFor(domain: DomainConfig): typeof DOMAIN_SECTIONS[number][] {
+export function sectionsFor(domain: DomainConfig): DomainSection[] {
   return DOMAIN_SECTIONS.filter((s) => {
+    if (s.config) {
+      const feature = domain[s.config] as { enabled?: boolean } | undefined;
+      return feature?.enabled === true;
+    }
     if (!s.source) return true;
     const cfg = domain[s.source] as { enabled?: boolean } | undefined;
     return cfg?.enabled !== false;
