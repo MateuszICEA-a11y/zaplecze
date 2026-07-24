@@ -59,6 +59,8 @@ const queriesMeta =
 const statClicks = latestWithDelta(snapshots, 'bing', 'clicks');
 const statImpressions = latestWithDelta(snapshots, 'bing', 'impressions');
 const statQueries = latestWithDelta(snapshots, 'bing', 'queries');
+const apiQueriesDelta = bing?.data?.queries_delta_7d;
+const queriesDelta7 = typeof apiQueriesDelta === 'number' ? apiQueriesDelta : statQueries.delta;
 const dataDate = bing?.data?.data_date ?? null;
 
 // Historia z details (BWT oddaje ~ostatnie tygodnie) – bogatsza niż snapshoty
@@ -110,8 +112,9 @@ const shareClass = (share: number | null): string =>
   <DomainHeader domain={domain!} name={name} active="bing" latest={latest} themeToggle accent="var(--bing)" />
 
   <div class="bing-note">
-    Wyróżnikiem Binga jest <strong>AI Performance</strong>: liczba cytowań marki w odpowiedziach Copilot i Bing AI,
-    rozkład intencji oraz zapytania grounding. Niżej pozostają klasyczny ruch z wyszukiwarki i frazy z BWT.
+    Wyróżnikiem tego widoku jest sekcja <strong>Skuteczność w AI</strong>. Obejmuje ona liczbę cytowań marki przez Copilot
+    i Bing AI, podział intencji wyszukiwania oraz zapytania źródłowe (tzw. grounding). W dolnej części ekranu prezentujemy
+    klasyczny ruch organiczny i frazy pobrane z BWT.
   </div>
 
   <section class="bing-import" data-bing-import data-domain={domain}>
@@ -166,7 +169,8 @@ const shareClass = (share: number | null): string =>
     <StatCard
       label={defaultKey ? `Frazy w Bing (${WINDOW_LABELS.find(([k]) => k === defaultKey)?.[1]})` : 'Frazy w Bing'}
       value={statQueries.value}
-      delta={statQueries.delta}
+      delta={queriesDelta7}
+      emptyDeltaLabel="brak porównania z API"
       src="bing"
       staleDate={bingStaleDate}
     />

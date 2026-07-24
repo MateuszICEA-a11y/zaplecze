@@ -136,9 +136,9 @@ const metaSuffix = staleDate ? ` · dane z ${staleDate}` : '';
   />
 
   <div class="clarity-note">
-    Clarity pokazuje, jak użytkownicy zachowują się na stronie: średnią głębokość scrolla, czas aktywny,
-    strony na sesję oraz sygnały frustracji. Gdy API zwraca limit HTTP 429, widok zachowuje ostatni udany
-    pomiar i automatycznie oznacza wszystkie wartości jego datą.
+    Clarity analizuje zachowanie użytkowników. Mierzy średnią głębokość przewijania, czas aktywności, liczbę odwiedzonych
+    stron podczas sesji i oznaki frustracji. Jeśli API zgłosi limit zapytań (błąd 429), widok zachowa ostatni udany zrzut
+    danych, dodając do wartości datę ich pobrania.
   </div>
 
   {

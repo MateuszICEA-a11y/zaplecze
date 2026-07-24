@@ -8,7 +8,8 @@ wiersze per fraza per tydzień (pole Date) – stąd agregacja do okien czasowyc
 jak w BWT (7d/30d/3m/6m/12m/18m/24m). AvgClickPosition = -1 oznacza brak
 danych, nie pozycję – normalizujemy do None.
 
-Summary: kliknięcia/wyświetlenia z ostatniego pełnego dnia + liczba fraz (30d).
+Summary: kliknięcia/wyświetlenia z ostatniego pełnego dnia + liczba fraz (30d)
+i jej zmiana względem 30-dniowego okna przesuniętego o 7 dni.
 Details: dzienna historia ruchu + frazy per okno (queries_windows).
 """
 import re
@@ -107,6 +108,8 @@ def fetch(cfg: dict, env: dict) -> dict:
 
     dated = [r for r in raw_queries if r["date"]]
     queries_windows: dict[str, dict] = {}
+    queries_previous_30d: int | None = None
+    queries_delta_7d: int | None = None
     if dated:
         end = max(r["date"] for r in dated)
         first = min(r["date"] for r in dated)
@@ -123,6 +126,26 @@ def fetch(cfg: dict, env: dict) -> dict:
                     "end": end,
                     "queries": _aggregate_queries(in_window),
                 }
+
+        # Ten sam wskaźnik co na karcie: liczba unikalnych fraz w ruchomym
+        # oknie 30d, porównana ze stanem sprzed 7 dni. GetQueryStats zawiera
+        # datowane rekordy historyczne, więc nie trzeba czekać 7 dni na lokalne
+        # snapshoty. Tolerancja tygodnia odpowiada granularności danych BWT.
+        current_30d = queries_windows.get("30d")
+        previous_end_dt = end_dt - timedelta(days=7)
+        previous_start_dt = previous_end_dt - timedelta(days=29)
+        history_covers_comparison = first <= (
+            previous_start_dt + timedelta(days=7)
+        ).strftime("%Y-%m-%d")
+        if current_30d and history_covers_comparison:
+            previous_start = previous_start_dt.strftime("%Y-%m-%d")
+            previous_end = previous_end_dt.strftime("%Y-%m-%d")
+            previous_rows = [
+                r for r in dated
+                if previous_start <= r["date"] <= previous_end
+            ]
+            queries_previous_30d = len(_aggregate_queries(previous_rows))
+            queries_delta_7d = len(current_30d["queries"]) - queries_previous_30d
     elif raw_queries:
         # BWT bez pól Date – jedno okno „całość", zakres nieznany.
         queries_windows["all"] = {"start": None, "end": None,
@@ -134,6 +157,8 @@ def fetch(cfg: dict, env: dict) -> dict:
         "clicks": latest.get("clicks", 0),
         "impressions": latest.get("impressions", 0),
         "queries": len(default.get("queries") or []),
+        "queries_previous_30d": queries_previous_30d,
+        "queries_delta_7d": queries_delta_7d,
     }
     details = {
         "traffic": days,

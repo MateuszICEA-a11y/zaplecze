@@ -89,6 +89,7 @@ global:
   alerts:
     emails:
       - m.wisniewski@grupa-icea.pl
+      - m.ziach@grupa-icea.pl
     webhook_envs:
       - ALERT_WEBHOOK_URL
     # webhook_urls: [] # tylko dla publicznych URL-i bez sekretu w adresie
