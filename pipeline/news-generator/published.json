@@ -1,13 +1,5 @@
 [
   {
-    "title": "Wybuch instalacji w kamperze w Łebie. Dwie osoby ciężko ranne",
-    "date": "2026-04-20",
-    "slug": "wybuch-instalacji-w-kamperze-w-lebie-dwie-osoby-ciezko-ranne",
-    "section": "kampery",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Przewrócony samochód dostawczy na DK94. Utrudnienia przy wjeździe do Brzeska",
     "date": "2026-04-21",
     "slug": "przewrocony-samochod-dostawczy-na-dk94-utrudnienia-przy-wjezdzie-do-brzeska",
@@ -717,6 +709,14 @@
     "slug": "ukraincy-tankuja-za-poldarmo-sprawdzamy-skad-biora-sie-te-wyliczenia",
     "section": "news",
     "format": "analysis",
+    "source": "rss"
+  },
+  {
+    "title": "Bus wypadł z jezdni na A4. Trzy osoby zostały poszkodowane",
+    "date": "2026-07-24",
+    "slug": "bus-wypadl-z-jezdni-na-a4-trzy-osoby-zostaly-poszkodowane",
+    "section": "porownania",
+    "format": "short",
     "source": "rss"
   }
 ]
