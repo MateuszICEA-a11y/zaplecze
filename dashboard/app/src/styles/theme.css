@@ -42,6 +42,7 @@
   --series-3: #bff230;
 
   /* Kolory źródeł */
+  --ch-direct: #4a7dff;
   --sen: #952fc6;
   --gsc: var(--accent-blue);
   --ga4: var(--series-3);
@@ -1879,7 +1880,7 @@ html.theme-transition *::after {
 .info-badge .info-tip {
   display: none;
   position: absolute;
-  bottom: calc(100% + 8px);
+  top: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);
   background: var(--bg-surface-2);
@@ -1901,12 +1902,16 @@ html.theme-transition *::after {
 .info-badge .info-tip::after {
   content: '';
   position: absolute;
-  top: 100%;
+  bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
   border: 5px solid transparent;
-  border-top-color: var(--hairline);
+  border-bottom-color: var(--hairline);
 }
 .info-badge.open .info-tip {
   display: block;
+}
+.data-table th:has(.info-badge) {
+  overflow: visible;
+  position: relative;
 }

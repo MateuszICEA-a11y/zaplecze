@@ -92,7 +92,7 @@ const monthLabel = lastFull ? `${lastFull.month.slice(0, 4)}-${lastFull.month.sl
 // Kanały miesięcznie → serie per kanał (pozostałe zsumowane w „Inne").
 const MAIN_CHANNELS: { name: string; label: string; color: string }[] = [
   { name: 'Organic Search', label: 'Organic', color: '--series-1' },
-  { name: 'Direct', label: 'Direct', color: '--v-perplexity' },
+  { name: 'Direct', label: 'Direct', color: '--ch-direct' },
   { name: 'Referral', label: 'Referral', color: '--v-anthropic' },
   { name: 'Paid Search', label: 'Paid Search', color: '--series-2' },
   { name: 'Organic Social', label: 'Social', color: '--sen' },
@@ -181,7 +181,7 @@ const isJunk = (name: string) => /^\(|unassigned|not set|not available/i.test(na
   <div class="section-head">
     <h2>Trendy miesięczne</h2>
     <span class="section-meta">
-      {monthly.length > 1 ? `${monthly.length} miesięcy · sezonowość` : 'historia ruchu'}
+      {monthly.length > 1 ? `${monthly.length} miesięcy` : 'historia ruchu'}
       {monthLabel && ` · ostatni pełny miesiąc: ${monthLabel}`}
       {yoyDelta('sessions') !== null &&
         ` · sesje r/r: ${yoyDelta('sessions')! > 0 ? '+' : ''}${fmtInt(yoyDelta('sessions'))}`}
@@ -212,7 +212,7 @@ const isJunk = (name: string) => /^\(|unassigned|not set|not available/i.test(na
           />
           <TimeSeriesChart
             title="Ruch organiczny"
-            meta="sezonowość"
+            meta="miesięcznie"
             timestamps={monthlyTs}
             series={[{ label: 'Sesje organiczne', values: organicMonthly, fill: true }]}
             overview
