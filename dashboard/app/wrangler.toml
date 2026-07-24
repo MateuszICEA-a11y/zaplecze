@@ -11,3 +11,9 @@ main = "worker.js"
 directory = "./dist"
 binding = "ASSETS"
 run_worker_first = true
+
+# Ręczne importy CSV z Bing AI Performance. Worker zapisuje najnowszy
+# eksport per domena, więc aktualizacja danych nie wymaga commita ani buildu.
+[[kv_namespaces]]
+binding = "DASHBOARD_IMPORTS"
+id = "12edc86d8d794f37a0a32ac6e8413d2b"

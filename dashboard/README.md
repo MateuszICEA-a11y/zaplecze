@@ -29,6 +29,16 @@ Funkcje Pages na widocznosc.ai zapisują do KV (binding `FANOUT_RL`, TTL 90 dni)
 
 Eksport: `GET https://widocznosc.ai/api/admin/leads-export` z nagłówkiem `Authorization: Bearer <LEADS_EXPORT_TOKEN>`; collector zaciąga go codziennie do `leads.jsonl` + `details.json`.
 
+## Ręczny import Bing AI Performance
+
+Raport AI Performance nie ma używanego przez dashboard API. W zakładce
+`/:domena/bing/` można przesłać eksport CSV z widoku **AI Performance → Search
+queries**. Worker rozpoznaje kolumny `Grounding Query`, `Intent`, `Topic`,
+`Citations` i `Citation Share`, a następnie zapisuje najnowszy import per domena
+w KV `DASHBOARD_IMPORTS`. Dane pojawiają się od razu, bez commita i ponownego
+buildu. Pliki z `dashboard/imports/bing-ai/` pozostają fallbackiem zaszytym w
+statycznym buildzie.
+
 ## Uruchomienie lokalne
 
 ```bash
@@ -59,6 +69,8 @@ pnpm --filter dashboard build    # → dashboard/app/dist
    - Build command: `pnpm install --frozen-lockfile && pnpm build`
    - Deploy command: `npx wrangler deploy`
    (Assets + worker.js konfigurowane w `app/wrangler.toml`.)
+   - KV `DASHBOARD_IMPORTS` – ręczne importy Bing AI Performance; binding i ID
+     namespace są zapisane w `app/wrangler.toml`.
 4. (Opcjonalnie) Settings → Build → Watch paths: include `dashboard/**` – commity portali nie będą triggerować buildów dashboardu.
 5. Pierwszy przebieg: Actions → „Dashboard Collector" → Run workflow.
 

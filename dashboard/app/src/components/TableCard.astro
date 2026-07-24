@@ -11,9 +11,11 @@ interface Props {
   /* Liczba wierszy na stronę (domyślnie 10 – paginacja wszędzie); 0 = wyłączona. */
   pageSize?: number;
   empty?: string;
+  /* Tabela może dostać wiersze po starcie strony (np. ręczny import CSV). */
+  dynamic?: boolean;
 }
-const { title, meta, count, filter = false, pageSize = 10, empty = 'Brak danych.' } = Astro.props;
-const isEmpty = count === 0;
+const { title, meta, count, filter = false, pageSize = 10, empty = 'Brak danych.', dynamic = false } = Astro.props;
+const isEmpty = count === 0 && !dynamic;
 const paged = !isEmpty && pageSize > 0;
 const hasActions = Astro.slots.has('actions');
 ---
@@ -83,7 +85,7 @@ const hasActions = Astro.slots.has('actions');
   document.querySelectorAll<HTMLElement>('.table-card').forEach((card) => {
     const table = card.querySelector<HTMLTableElement>('table.data-table');
     const body = table?.tBodies[0];
-    if (!table || !body || body.rows.length === 0) return;
+    if (!table || !body) return;
 
     const input = card.querySelector<HTMLInputElement>('[data-table-filter]');
     const pager = card.querySelector<HTMLElement>('.pager');
@@ -104,6 +106,11 @@ const hasActions = Astro.slots.has('actions');
     const filterCol = filterColAttr !== undefined ? parseInt(filterColAttr, 10) : null;
     card.addEventListener('tablecard:refilter', (e) => {
       rowPredicate = (e as CustomEvent).detail ?? null;
+      page = 0;
+      update();
+    });
+    card.addEventListener('tablecard:rows-changed', () => {
+      rowPredicate = null;
       page = 0;
       update();
     });
@@ -225,45 +232,43 @@ const hasActions = Astro.slots.has('actions');
     const ths = (headRow?.cells
       ? Array.from(headRow.cells)
       : []) as HTMLTableCellElement[];
-    if (body.rows.length >= 2) {
-      ths.forEach((th, idx) => {
-        th.classList.add('sortable');
-        const caret = document.createElement('span');
-        caret.className = 'sort-caret';
-        th.appendChild(caret);
-        th.addEventListener('click', (event) => {
-          /* Kontrolki osadzone w nagłówku (np. pomoc „Potencjał” w GSC) nie są
-             kliknięciem sortowania kolumny. */
-          if ((event.target as HTMLElement).closest('button,a,input,select,textarea,summary,[data-no-sort]')) return;
-          const numeric = th.classList.contains('num');
-          const dir =
-            th.dataset.dir === 'asc' ? 'desc' : th.dataset.dir === 'desc' ? 'asc' : numeric ? 'desc' : 'asc';
-          ths.forEach((other) => {
-            other.classList.remove('active');
-            delete other.dataset.dir;
-            const c = other.querySelector('.sort-caret');
-            if (c) c.textContent = '';
-          });
-          th.classList.add('active');
-          th.dataset.dir = dir;
-          caret.textContent = dir === 'desc' ? '↓' : '↑';
-          const sign = dir === 'desc' ? -1 : 1;
-          Array.from(body.rows)
-            .sort((a, b) => {
-              if (numeric) return sign * (numFrom(a.cells[idx]) - numFrom(b.cells[idx]));
-              return (
-                sign *
-                (a.cells[idx]?.textContent ?? '').localeCompare(b.cells[idx]?.textContent ?? '', 'pl')
-              );
-            })
-            .forEach((row) => body.appendChild(row));
-          page = 0;
-          update();
+    ths.forEach((th, idx) => {
+      th.classList.add('sortable');
+      const caret = document.createElement('span');
+      caret.className = 'sort-caret';
+      th.appendChild(caret);
+      th.addEventListener('click', (event) => {
+        /* Kontrolki osadzone w nagłówku (np. pomoc „Potencjał” w GSC) nie są
+           kliknięciem sortowania kolumny. */
+        if ((event.target as HTMLElement).closest('button,a,input,select,textarea,summary,[data-no-sort]')) return;
+        const numeric = th.classList.contains('num');
+        const dir =
+          th.dataset.dir === 'asc' ? 'desc' : th.dataset.dir === 'desc' ? 'asc' : numeric ? 'desc' : 'asc';
+        ths.forEach((other) => {
+          other.classList.remove('active');
+          delete other.dataset.dir;
+          const c = other.querySelector('.sort-caret');
+          if (c) c.textContent = '';
         });
+        th.classList.add('active');
+        th.dataset.dir = dir;
+        caret.textContent = dir === 'desc' ? '↓' : '↑';
+        const sign = dir === 'desc' ? -1 : 1;
+        Array.from(body.rows)
+          .sort((a, b) => {
+            if (numeric) return sign * (numFrom(a.cells[idx]) - numFrom(b.cells[idx]));
+            return (
+              sign *
+              (a.cells[idx]?.textContent ?? '').localeCompare(b.cells[idx]?.textContent ?? '', 'pl')
+            );
+          })
+          .forEach((row) => body.appendChild(row));
+        page = 0;
+        update();
       });
-    }
+    });
 
-    if (pageSize) update();
+    update();
   });
 </script>
 

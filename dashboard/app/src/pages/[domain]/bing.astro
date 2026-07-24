@@ -114,6 +114,29 @@ const shareClass = (share: number | null): string =>
     rozkład intencji oraz zapytania grounding. Niżej pozostają klasyczny ruch z wyszukiwarki i frazy z BWT.
   </div>
 
+  <section class="bing-import" data-bing-import data-domain={domain}>
+    <div class="import-copy">
+      <div class="import-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3h16v-3" />
+        </svg>
+      </div>
+      <div>
+        <h2>Import danych Bing AI</h2>
+        <p>Eksportuj w Bing Webmaster Tools raport <b>AI Performance → Search queries</b> i dodaj tutaj plik CSV.</p>
+      </div>
+    </div>
+    <div class="import-actions">
+      <input type="file" accept=".csv,text/csv" data-bing-file hidden />
+      <button type="button" class="import-pick" data-bing-pick>Wybierz CSV</button>
+      <span class="import-file" data-bing-filename>Nie wybrano pliku</span>
+      <button type="button" class="import-send" data-bing-send disabled>Importuj dane</button>
+    </div>
+    <p class="import-status" data-bing-status role="status" aria-live="polite">
+      Obsługiwane kolumny: Grounding Query, Intent, Topic, Citations, Citation Share.
+    </p>
+  </section>
+
   <SourceState
     name="Bing"
     result={bing}
@@ -149,79 +172,75 @@ const shareClass = (share: number | null): string =>
     />
   </div>
 
-  {
-    aiRows.length > 0 && (
-      <>
-        <div class="section-head">
-          <h2>AI Performance<span class="tagx">wyróżnik</span></h2>
-          <span class="section-meta">
-            cytowania marki w Copilot / Bing AI · import CSV z BWT · stan z {fmtDate(aiPerf!.date)}
-          </span>
+  <section data-ai-section hidden={aiRows.length === 0}>
+    <div class="section-head">
+      <h2>AI Performance<span class="tagx">wyróżnik</span></h2>
+      <span class="section-meta">
+        cytowania marki w Copilot / Bing AI · import CSV z BWT · stan z <span data-ai-date>{aiPerf ? fmtDate(aiPerf.date) : '–'}</span>
+      </span>
+    </div>
+    <div class="ai-sum">
+      <div>
+        <div class="cap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 3l2.1 5.5L20 10l-5.9 1.5L12 17l-2.1-5.5L4 10l5.9-1.5L12 3z" />
+          </svg>
+          Cytowania AI
         </div>
-        <div class="ai-sum">
-          <div>
-            <div class="cap">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M12 3l2.1 5.5L20 10l-5.9 1.5L12 17l-2.1-5.5L4 10l5.9-1.5L12 3z" />
-              </svg>
-              Cytowania AI
-            </div>
-            <div class="big">{fmtInt(totalCitations)}</div>
-            <div class="sub">
-              w <b>{fmtInt(aiRows.length)}</b> zapytaniach grounding – frazach, którymi AI sięgało po treść
-            </div>
+        <div class="big" data-ai-total>{fmtInt(totalCitations)}</div>
+        <div class="sub">
+          w <b data-ai-count>{fmtInt(aiRows.length)}</b> zapytaniach grounding – frazach, którymi AI sięgało po treść
+        </div>
+      </div>
+      <div class="isplit" data-ai-intents>
+        {intentSplit.map((i) => (
+          <div class="r">
+            <span class="dot" style={`background:${i.color}`} />
+            <span class="nm">{i.label}</span>
+            <span class="t"><i style={`width:${i.pct}%;background:${i.color}`} /></span>
+            <span class="n"><b>{fmtInt(i.cit)}</b> · {i.pct}%</span>
           </div>
-          <div class="isplit">
-            {intentSplit.map((i) => (
-              <div class="r">
-                <span class="dot" style={`background:${i.color}`} />
-                <span class="nm">{i.label}</span>
-                <span class="t"><i style={`width:${i.pct}%;background:${i.color}`} /></span>
-                <span class="n"><b>{fmtInt(i.cit)}</b> · {i.pct}%</span>
-              </div>
+        ))}
+      </div>
+    </div>
+    <div data-ai-card>
+      <TableCard title="Grounding queries" count={aiRows.length} filter dynamic>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Grounding query</th>
+              <th>Intencja</th>
+              <th>Temat</th>
+              <th class="num">Cytowania</th>
+              <th class="num">Udział cytowań</th>
+            </tr>
+          </thead>
+          <tbody data-ai-rows>
+            {aiRows.map((r) => (
+              <tr data-intent={intentKey(r.intent)}>
+                <td class="grow">{r.query}</td>
+                <td><span class={`tag-int ${intentKey(r.intent)}`}>{r.intent || INTENTS[intentKey(r.intent)].label}</span></td>
+                <td><span class="topic-cell">{r.topic}</span></td>
+                <td class="num">
+                  <span class="cell-bar rbar bing">
+                    {fmtInt(r.citations)}
+                    <span class="bar">
+                      <i style={`width:${barWidth(r.citations, maxCitations)}%`} />
+                    </span>
+                  </span>
+                </td>
+                <td class="num">
+                  <span class={`share ${shareClass(r.citation_share)}`}>
+                    {r.citation_share === null ? '–' : `${fmtNum(r.citation_share, 2)}%`}
+                  </span>
+                </td>
+              </tr>
             ))}
-          </div>
-        </div>
-        <div data-ai-card>
-          <TableCard title="Grounding queries" count={aiRows.length} filter>
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>Grounding query</th>
-                  <th>Intencja</th>
-                  <th>Temat</th>
-                  <th class="num">Cytowania</th>
-                  <th class="num">Udział cytowań</th>
-                </tr>
-              </thead>
-              <tbody>
-                {aiRows.map((r) => (
-                  <tr data-intent={intentKey(r.intent)}>
-                    <td class="grow">{r.query}</td>
-                    <td><span class={`tag-int ${intentKey(r.intent)}`}>{r.intent || INTENTS[intentKey(r.intent)].label}</span></td>
-                    <td><span class="topic-cell">{r.topic}</span></td>
-                    <td class="num">
-                      <span class="cell-bar rbar bing">
-                        {fmtInt(r.citations)}
-                        <span class="bar">
-                          <i style={`width:${barWidth(r.citations, maxCitations)}%`} />
-                        </span>
-                      </span>
-                    </td>
-                    <td class="num">
-                      <span class={`share ${shareClass(r.citation_share)}`}>
-                        {r.citation_share === null ? '–' : `${fmtNum(r.citation_share, 2)}%`}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </TableCard>
-        </div>
-      </>
-    )
-  }
+          </tbody>
+        </table>
+      </TableCard>
+    </div>
+  </section>
 
   <div class="section-head" style="margin-bottom:14px;"><h2>Ruch klasyczny</h2><span class="section-meta">kliknięcia i wyświetlenia</span></div>
   <div class="chart-grid">
@@ -305,21 +324,56 @@ const shareClass = (share: number | null): string =>
     /* Filtry intencji grounding queries: chipy wpinają predykat w kontroler
        TableCard (tablecard:refilter), więc współgrają z filtrem tekstowym,
        sortowaniem, paginacją i eksportem CSV. */
+    type AiRow = {
+      query: string;
+      intent: string;
+      topic: string;
+      citations: number;
+      citation_share: number | null;
+    };
+    type AiData = {
+      date: string;
+      filename: string;
+      imported_at: string;
+      rows: AiRow[];
+    };
+
     const aiWrap = document.querySelector<HTMLElement>('[data-ai-card]');
     const aiCard = aiWrap?.querySelector<HTMLElement>('.table-card');
     const aiHead = aiCard?.querySelector<HTMLElement>('.table-head');
-    if (aiCard && aiHead) {
-      const CHIPS: [string, string][] = [
-        ['all', 'Wszystkie'],
-        ['learn', 'Learn & Solve'],
-        ['info', 'Informational'],
-        ['cmp', 'Comparison'],
-      ];
+    const aiSection = document.querySelector<HTMLElement>('[data-ai-section]');
+    const CHIPS: [string, string][] = [
+      ['all', 'Wszystkie'],
+      ['learn', 'Learn & Solve'],
+      ['info', 'Informational'],
+      ['cmp', 'Comparison'],
+      ['other', 'Inne'],
+    ];
+    const INTENT_META: Record<string, { label: string; color: string }> = {
+      learn: { label: 'Learn & Solve', color: 'var(--series-3)' },
+      info: { label: 'Informational', color: 'var(--accent-blue)' },
+      cmp: { label: 'Comparison', color: 'var(--series-2)' },
+      other: { label: 'Inne', color: 'var(--ink-faint)' },
+    };
+    const aiIntent = (value: string): string =>
+      /learn|solve/i.test(value) ? 'learn' : /inform/i.test(value) ? 'info' : /compar/i.test(value) ? 'cmp' : 'other';
+    const escapeHtml = (value: string): string =>
+      value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+    const formatInt = (value: number): string => value.toLocaleString('pl-PL');
+    const formatPercent = (value: number | null): string =>
+      typeof value === 'number'
+        ? `${value.toLocaleString('pl-PL', { maximumFractionDigits: 2 })}%`
+        : '–';
+
+    const setupAiChips = () => {
+      if (!aiCard || !aiHead) return;
+      aiHead.querySelector('[data-ai-chips]')?.remove();
       const present = new Set(
         Array.from(aiCard.querySelectorAll<HTMLElement>('tbody tr[data-intent]')).map((r) => r.dataset.intent),
       );
       const box = document.createElement('div');
       box.className = 'fchips';
+      box.dataset.aiChips = '';
       CHIPS.filter(([k]) => k === 'all' || present.has(k)).forEach(([key, label]) => {
         const b = document.createElement('button');
         b.type = 'button';
@@ -335,6 +389,147 @@ const shareClass = (share: number | null): string =>
         box.appendChild(b);
       });
       aiHead.insertBefore(box, aiHead.querySelector('[data-table-filter]'));
+    };
+
+    const renderAiData = (data: AiData) => {
+      if (!aiSection || !aiCard) return;
+      const rows = Array.isArray(data.rows) ? data.rows : [];
+      if (rows.length === 0) return;
+      aiSection.hidden = false;
+
+      const total = rows.reduce((sum, row) => sum + row.citations, 0);
+      const max = Math.max(...rows.map((row) => row.citations), 0);
+      const totalEl = aiSection.querySelector<HTMLElement>('[data-ai-total]');
+      const countEl = aiSection.querySelector<HTMLElement>('[data-ai-count]');
+      const dateEl = aiSection.querySelector<HTMLElement>('[data-ai-date]');
+      const body = aiSection.querySelector<HTMLTableSectionElement>('[data-ai-rows]');
+      const intentsEl = aiSection.querySelector<HTMLElement>('[data-ai-intents]');
+      if (totalEl) totalEl.textContent = formatInt(total);
+      if (countEl) countEl.textContent = formatInt(rows.length);
+      if (dateEl) {
+        dateEl.textContent = new Date(`${data.date}T00:00:00Z`).toLocaleDateString('pl-PL');
+      }
+
+      if (intentsEl) {
+        intentsEl.innerHTML = Object.entries(INTENT_META)
+          .map(([key, meta]) => {
+            const citations = rows
+              .filter((row) => aiIntent(row.intent) === key)
+              .reduce((sum, row) => sum + row.citations, 0);
+            const pct = total > 0 ? Math.round((citations / total) * 100) : 0;
+            return { ...meta, citations, pct };
+          })
+          .filter((item) => item.citations > 0)
+          .map((item) => `
+            <div class="r">
+              <span class="dot" style="background:${item.color}"></span>
+              <span class="nm">${item.label}</span>
+              <span class="t"><i style="width:${item.pct}%;background:${item.color}"></i></span>
+              <span class="n"><b>${formatInt(item.citations)}</b> · ${item.pct}%</span>
+            </div>`)
+          .join('');
+      }
+
+      if (body) {
+        body.innerHTML = rows
+          .map((row) => {
+            const intent = aiIntent(row.intent);
+            const bar = max > 0 ? Math.max(2, Math.round((row.citations / max) * 100)) : 0;
+            const share = row.citation_share;
+            const shareClass = share === null ? 'lo' : share >= 15 ? 'hi' : share >= 5 ? 'mid' : 'lo';
+            return `
+              <tr data-intent="${intent}">
+                <td class="grow">${escapeHtml(row.query)}</td>
+                <td><span class="tag-int ${intent}">${escapeHtml(row.intent || INTENT_META[intent].label)}</span></td>
+                <td><span class="topic-cell">${escapeHtml(row.topic)}</span></td>
+                <td class="num"><span class="cell-bar rbar bing">${formatInt(row.citations)}<span class="bar"><i style="width:${bar}%"></i></span></span></td>
+                <td class="num"><span class="share ${shareClass}">${formatPercent(share)}</span></td>
+              </tr>`;
+          })
+          .join('');
+      }
+      const tableCount = aiHead?.querySelector<HTMLElement>('h3 .table-meta');
+      if (tableCount) tableCount.textContent = ` · ${formatInt(rows.length)}`;
+      aiCard.querySelectorAll<HTMLTableCellElement>('thead th').forEach((th) => {
+        th.classList.remove('active');
+        delete th.dataset.dir;
+        const caret = th.querySelector('.sort-caret');
+        if (caret) caret.textContent = '';
+      });
+      aiCard.dispatchEvent(new CustomEvent('tablecard:rows-changed'));
+      setupAiChips();
+    };
+
+    setupAiChips();
+
+    /* Import CSV trafia do KV przez chroniony endpoint Workera. Po wejściu na
+       stronę nowszy import z KV zastępuje dane zaszyte w statycznym buildzie. */
+    const importBox = document.querySelector<HTMLElement>('[data-bing-import]');
+    const fileInput = importBox?.querySelector<HTMLInputElement>('[data-bing-file]');
+    const pickButton = importBox?.querySelector<HTMLButtonElement>('[data-bing-pick]');
+    const sendButton = importBox?.querySelector<HTMLButtonElement>('[data-bing-send]');
+    const filenameEl = importBox?.querySelector<HTMLElement>('[data-bing-filename]');
+    const statusEl = importBox?.querySelector<HTMLElement>('[data-bing-status]');
+    const domain = importBox?.dataset.domain;
+    const endpoint = domain ? `/api/imports/bing-ai/${encodeURIComponent(domain)}` : null;
+    let selectedFile: File | null = null;
+
+    const setImportStatus = (message: string, state: 'idle' | 'busy' | 'ok' | 'error' = 'idle') => {
+      if (!statusEl) return;
+      statusEl.textContent = message;
+      statusEl.dataset.state = state;
+    };
+    const selectFile = (file: File | null) => {
+      selectedFile = file;
+      if (filenameEl) filenameEl.textContent = file?.name ?? 'Nie wybrano pliku';
+      if (sendButton) sendButton.disabled = !file;
+      if (file) setImportStatus(`Gotowy do importu: ${(file.size / 1024).toLocaleString('pl-PL', { maximumFractionDigits: 1 })} KB.`);
+    };
+
+    pickButton?.addEventListener('click', () => fileInput?.click());
+    fileInput?.addEventListener('change', () => selectFile(fileInput.files?.[0] ?? null));
+    importBox?.addEventListener('dragover', (event) => {
+      event.preventDefault();
+      importBox.classList.add('is-dragging');
+    });
+    importBox?.addEventListener('dragleave', () => importBox.classList.remove('is-dragging'));
+    importBox?.addEventListener('drop', (event) => {
+      event.preventDefault();
+      importBox.classList.remove('is-dragging');
+      selectFile(event.dataTransfer?.files?.[0] ?? null);
+    });
+    sendButton?.addEventListener('click', async () => {
+      if (!selectedFile || !endpoint || !sendButton) return;
+      sendButton.disabled = true;
+      setImportStatus('Importuję i zapisuję dane…', 'busy');
+      const form = new FormData();
+      form.append('file', selectedFile);
+      try {
+        const response = await fetch(endpoint, { method: 'POST', body: form });
+        const payload = await response.json() as { data?: AiData; message?: string; error?: string };
+        if (!response.ok || !payload.data) throw new Error(payload.error || 'Import nie powiódł się.');
+        renderAiData(payload.data);
+        setImportStatus(`${payload.message} Dane są już widoczne poniżej.`, 'ok');
+        selectFile(null);
+        if (fileInput) fileInput.value = '';
+      } catch (error) {
+        setImportStatus(error instanceof Error ? error.message : 'Import nie powiódł się.', 'error');
+        sendButton.disabled = false;
+      }
+    });
+
+    if (endpoint) {
+      fetch(endpoint)
+        .then(async (response) => {
+          if (response.status === 404) return null;
+          const payload = await response.json() as { data?: AiData; error?: string };
+          if (!response.ok) throw new Error(payload.error || 'Nie udało się pobrać importu.');
+          return payload.data ?? null;
+        })
+        .then((data) => {
+          if (data) renderAiData(data);
+        })
+        .catch((error) => setImportStatus(error instanceof Error ? error.message : 'Nie udało się pobrać importu.', 'error'));
     }
 
     /* Przełącznik okresu tabeli „Frazy w Bing" (jak w BWT): przepina wiersze
@@ -410,6 +605,105 @@ const shareClass = (share: number | null): string =>
   }
   .bing-note strong {
     color: var(--bing);
+  }
+  .bing-import {
+    margin: 14px 0 18px;
+    padding: 16px 18px;
+    border: 1px dashed color-mix(in srgb, var(--bing) 45%, var(--hairline));
+    border-radius: 14px;
+    background: color-mix(in srgb, var(--bing) 4%, var(--bg-surface-1));
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .bing-import.is-dragging {
+    border-color: var(--bing);
+    background: var(--bing-soft);
+  }
+  .import-copy {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .import-copy h2 {
+    margin: 0 0 3px;
+    font-family: var(--font-display);
+    font-size: 0.96rem;
+  }
+  .import-copy p {
+    margin: 0;
+    color: var(--ink-muted);
+    font-size: 0.8rem;
+    line-height: 1.45;
+  }
+  .import-copy p b {
+    color: var(--ink);
+  }
+  .import-icon {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    flex: none;
+    place-items: center;
+    border-radius: 9px;
+    color: var(--bing);
+    background: var(--bing-soft);
+  }
+  .import-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  .import-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+  }
+  .import-actions button {
+    appearance: none;
+    border: 1px solid var(--hairline);
+    border-radius: 7px;
+    padding: 8px 13px;
+    color: var(--ink);
+    background: var(--bg-surface-2);
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 650;
+    cursor: pointer;
+  }
+  .import-actions button:hover:not(:disabled) {
+    border-color: color-mix(in srgb, var(--bing) 55%, var(--hairline));
+  }
+  .import-actions .import-send {
+    border-color: color-mix(in srgb, var(--bing) 55%, transparent);
+    color: #051713;
+    background: var(--bing);
+  }
+  .import-actions button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+  .import-file {
+    min-width: 160px;
+    max-width: min(360px, 60vw);
+    overflow: hidden;
+    color: var(--ink-muted);
+    font-size: 0.78rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .import-status {
+    margin: 9px 0 0;
+    color: var(--ink-faint);
+    font-size: 0.75rem;
+  }
+  .import-status[data-state='busy'] {
+    color: var(--status-warn-fg);
+  }
+  .import-status[data-state='ok'] {
+    color: var(--status-ok);
+  }
+  .import-status[data-state='error'] {
+    color: var(--status-err-fg);
   }
   .kwrap.bing-kpis {
     grid-template-columns: 1.4fr 1fr 1fr;

@@ -1,3 +1,5 @@
+import { parseBingAiCsv } from './bing-import.js';
+
 /**
  * Worker dashboardu: cała aplikacja za Basic Auth (dashboard zawiera dane
  * leadów i wyniki klientów – nic nie jest publiczne).
@@ -26,6 +28,57 @@ function passwordFromHeader(header) {
   }
 }
 
+const json = (value, status = 200) =>
+  new Response(JSON.stringify(value), {
+    status,
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Cache-Control': 'no-store',
+    },
+  });
+
+async function bingImport(request, env, domain) {
+  if (!env.DASHBOARD_IMPORTS) {
+    return json({ error: 'Brak bindingu DASHBOARD_IMPORTS w konfiguracji Workera.' }, 503);
+  }
+  const key = `bing-ai:${domain}`;
+  if (request.method === 'GET') {
+    const data = await env.DASHBOARD_IMPORTS.get(key, { type: 'json' });
+    return data ? json({ data }) : json({ data: null }, 404);
+  }
+  if (request.method !== 'POST') {
+    return json({ error: 'Dozwolone metody: GET, POST.' }, 405);
+  }
+
+  const contentType = request.headers.get('Content-Type') || '';
+  let filename = 'bing-ai-performance.csv';
+  let text = '';
+  if (contentType.includes('multipart/form-data')) {
+    const form = await request.formData();
+    const file = form.get('file');
+    if (!(file instanceof File)) return json({ error: 'Wybierz plik CSV.' }, 400);
+    if (file.size > 5 * 1024 * 1024) return json({ error: 'Plik jest większy niż 5 MB.' }, 413);
+    filename = file.name;
+    text = await file.text();
+  } else {
+    const length = Number.parseInt(request.headers.get('Content-Length') || '0', 10);
+    if (length > 5 * 1024 * 1024) return json({ error: 'Plik jest większy niż 5 MB.' }, 413);
+    filename = request.headers.get('X-Filename') || filename;
+    text = await request.text();
+  }
+
+  try {
+    const data = { ...parseBingAiCsv(text, filename), domain };
+    if (data.rows.length > 10_000) {
+      return json({ error: 'Eksport zawiera ponad 10 000 wierszy.' }, 413);
+    }
+    await env.DASHBOARD_IMPORTS.put(key, JSON.stringify(data));
+    return json({ data, message: `Zaimportowano ${data.rows.length} zapytań.` });
+  } catch (error) {
+    return json({ error: error instanceof Error ? error.message : 'Nie udało się odczytać CSV.' }, 400);
+  }
+}
+
 export default {
   async fetch(request, env) {
     const expected = (env.DASH_PASSWORD || '').trim();
@@ -37,6 +90,15 @@ export default {
     }
     const given = passwordFromHeader(request.headers.get('Authorization'));
     if (given !== expected) return unauthorized();
+    const url = new URL(request.url);
+    const importMatch = url.pathname.match(/^\/api\/imports\/bing-ai\/([^/]+)\/?$/);
+    if (importMatch) {
+      const domain = decodeURIComponent(importMatch[1]);
+      if (!/^[a-z0-9.-]{1,253}$/i.test(domain)) {
+        return json({ error: 'Nieprawidłowa domena.' }, 400);
+      }
+      return bingImport(request, env, domain);
+    }
     const response = await env.ASSETS.fetch(request);
     const guarded = new Response(response.body, response);
     guarded.headers.set('X-Robots-Tag', 'noindex');
