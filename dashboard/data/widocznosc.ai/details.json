@@ -1,6 +1,6 @@
 {
  "date": "2026-07-24",
- "collected_at": "2026-07-24T08:59:50Z",
+ "collected_at": "2026-07-24T12:27:34Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -11760,7 +11760,13 @@
    ]
   },
   "bing": {
-   "traffic": [],
+   "traffic": [
+    {
+     "date": "2026-07-22",
+     "clicks": 0,
+     "impressions": 9
+    }
+   ],
    "queries_windows": {},
    "queries": [],
    "queries_window": {
@@ -11772,27 +11778,16 @@
    "channels": [
     {
      "channel": "Direct",
-     "sessions": 2,
-     "users": 0,
-     "pageviews": 2
-    },
-    {
-     "channel": "Unassigned",
-     "sessions": 1,
-     "users": 1,
-     "pageviews": 25
+     "sessions": 3,
+     "users": 2,
+     "pageviews": 33
     }
    ],
    "sources": [
     {
      "source": "(direct)",
-     "sessions": 2,
-     "users": 0
-    },
-    {
-     "source": "(not set)",
-     "sessions": 1,
-     "users": 1
+     "sessions": 3,
+     "users": 2
     }
    ],
    "pages": [
@@ -11803,16 +11798,16 @@
     },
     {
      "path": "/",
-     "pageviews": 3,
-     "users": 1
-    },
-    {
-     "path": "/narzedzia/",
-     "pageviews": 3,
+     "pageviews": 4,
      "users": 1
     },
     {
      "path": "/geo/audyt-widocznosci-marki/",
+     "pageviews": 2,
+     "users": 1
+    },
+    {
+     "path": "/narzedzia/",
      "pageviews": 2,
      "users": 1
     },
@@ -11827,6 +11822,11 @@
      "users": 1
     },
     {
+     "path": "/agenci-ai/przewodnik/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
      "path": "/autor/mateusz-wisniewski/",
      "pageviews": 1,
      "users": 1
@@ -11834,12 +11834,22 @@
     {
      "path": "/blog/",
      "pageviews": 1,
-     "users": 0
+     "users": 1
     },
     {
      "path": "/geo/co-google-przemilcza/",
      "pageviews": 1,
      "users": 0
+    },
+    {
+     "path": "/geo/czym-jest-geo/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/geo/najczestsze-bledy-geo/",
+     "pageviews": 1,
+     "users": 1
     },
     {
      "path": "/geo/przewodnik/",
@@ -11848,6 +11858,11 @@
     },
     {
      "path": "/kontakt/",
+     "pageviews": 1,
+     "users": 1
+    },
+    {
+     "path": "/modele-llm/",
      "pageviews": 1,
      "users": 1
     },
@@ -11877,18 +11892,13 @@
      "users": 1
     },
     {
-     "path": "/modele-llm/",
-     "pageviews": 0,
-     "users": 1
-    },
-    {
      "path": "/prompty/",
-     "pageviews": 0,
+     "pageviews": 1,
      "users": 1
     },
     {
      "path": "/prompty/przewodnik/",
-     "pageviews": 0,
+     "pageviews": 1,
      "users": 1
     }
    ],
@@ -11901,9 +11911,9 @@
      {
       "path": "/",
       "sessions": 21,
-      "engagement_rate": 80.95,
-      "avg_engagement_s": 62.3,
-      "pages_per_session": 2.9
+      "engagement_rate": 85.71,
+      "avg_engagement_s": 112.3,
+      "pages_per_session": 4.29
      },
      {
       "path": "(not set)",
@@ -11927,13 +11937,6 @@
       "pages_per_session": 1.57
      },
      {
-      "path": "/narzedzia/brand-check",
-      "sessions": 3,
-      "engagement_rate": 33.33,
-      "avg_engagement_s": 195.3,
-      "pages_per_session": 3.67
-     },
-     {
       "path": "/pozycjonowanie-ai/chatgpt",
       "sessions": 3,
       "engagement_rate": 100.0,
@@ -11941,18 +11944,11 @@
       "pages_per_session": 2.67
      },
      {
-      "path": "/narzedzia/url-check",
+      "path": "/narzedzia/brand-check",
       "sessions": 2,
       "engagement_rate": 50.0,
-      "avg_engagement_s": 22.5,
-      "pages_per_session": 1.0
-     },
-     {
-      "path": "",
-      "sessions": 1,
-      "engagement_rate": 0.0,
-      "avg_engagement_s": 413.0,
-      "pages_per_session": 0.0
+      "avg_engagement_s": 267.0,
+      "pages_per_session": 2.0
      },
      {
       "path": "/autor/michal-ziach",
@@ -11964,36 +11960,15 @@
      {
       "path": "/blog",
       "sessions": 1,
-      "engagement_rate": 0.0,
-      "avg_engagement_s": 0.0,
+      "engagement_rate": 100.0,
+      "avg_engagement_s": 2.0,
       "pages_per_session": 1.0
      },
      {
-      "path": "/kontakt",
+      "path": "/narzedzia/url-check",
       "sessions": 1,
-      "engagement_rate": 0.0,
-      "avg_engagement_s": 69.0,
-      "pages_per_session": 5.0
-     },
-     {
-      "path": "/modele-llm/claude-vs-chatgpt-programowanie",
-      "sessions": 1,
-      "engagement_rate": 0.0,
-      "avg_engagement_s": 450.0,
-      "pages_per_session": 5.0
-     },
-     {
-      "path": "/narzedzia",
-      "sessions": 1,
-      "engagement_rate": 0.0,
-      "avg_engagement_s": 25.0,
-      "pages_per_session": 4.0
-     },
-     {
-      "path": "/pozycjonowanie-ai",
-      "sessions": 1,
-      "engagement_rate": 0.0,
-      "avg_engagement_s": 37.0,
+      "engagement_rate": 100.0,
+      "avg_engagement_s": 45.0,
       "pages_per_session": 1.0
      },
      {
@@ -12625,15 +12600,15 @@
     {
      "date": "2026-07-23",
      "sessions": 3,
-     "active_users": 1,
-     "new_users": 0,
+     "active_users": 2,
+     "new_users": 1,
      "returning_users": 1,
-     "pageviews": 27,
-     "engagement_rate": 0.0,
-     "avg_engagement_s": 360.3,
-     "engaged_sessions": 0,
-     "engaged_per_user": 0.0,
-     "pages_per_session": 9.0,
+     "pageviews": 33,
+     "engagement_rate": 66.67,
+     "avg_engagement_s": 362.7,
+     "engaged_sessions": 2,
+     "engaged_per_user": 1.0,
+     "pages_per_session": 11.0,
      "organic_sessions": 0
     }
    ],
@@ -12647,8 +12622,8 @@
     {
      "month": "202607",
      "sessions": 58,
-     "users": 22,
-     "new_users": 12
+     "users": 23,
+     "new_users": 13
     }
    ],
    "channels_monthly": [
@@ -12675,7 +12650,7 @@
     {
      "month": "202607",
      "channel": "Direct",
-     "sessions": 35
+     "sessions": 36
     },
     {
      "month": "202607",
@@ -12686,11 +12661,6 @@
      "month": "202607",
      "channel": "Referral",
      "sessions": 3
-    },
-    {
-     "month": "202607",
-     "channel": "Unassigned",
-     "sessions": 1
     }
    ]
   },
