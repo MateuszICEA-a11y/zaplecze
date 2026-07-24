@@ -684,6 +684,35 @@ table.data-table {
   font-size: 0.8rem;
   font-variant-numeric: tabular-nums;
 }
+.pager .psize {
+  display: flex;
+  align-items: center;
+}
+.pager .psize label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink-faint);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+.pager .psize select {
+  appearance: none;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--hairline);
+  border-radius: 2px;
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.82rem;
+  padding: 5px 28px 5px 10px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23898989'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 9px center;
+}
+.pager .psize select:hover {
+  border-color: var(--ink-faint);
+}
 .pager .pnav {
   display: flex;
   align-items: center;
@@ -1820,4 +1849,29 @@ html.theme-transition *::after {
     padding-top: 12px;
     font-size: 0.75rem;
   }
+}
+
+/* ── Info badge: tooltip przy nagłówkach kolumn ──────────────────────── */
+.info-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: var(--bg-surface-3);
+  border: 1px solid var(--hairline);
+  color: var(--ink-faint);
+  font-size: .6rem;
+  font-weight: 700;
+  font-style: italic;
+  cursor: help;
+  vertical-align: middle;
+  margin-left: 4px;
+  position: relative;
+}
+.info-badge:hover {
+  background: var(--accent-blue-soft);
+  color: var(--accent-blue);
+  border-color: color-mix(in srgb, var(--accent-blue) 35%, transparent);
 }

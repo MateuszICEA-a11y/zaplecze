@@ -184,9 +184,10 @@ const hasAttention = pageDrops.length > 0 || nearTop.length > 0 || idxRows.lengt
   <DomainHeader domain={domain!} name={name} active="" latest={latest} themeToggle />
 
   <div class="overview-note">
-    Przegląd jest hubem wielu źródeł: pasek zdrowia integracji, KPI z akcentem kolorystycznym źródła
-    (<b class="gsc">GSC</b>/<b class="sen">Senuto</b>/<b class="ahrefs">Ahrefs</b>/<b class="clarity">Clarity</b>),
-    porównania z historią i ostatni udany pomiar, gdy źródło jest chwilowo niedostępne. Na dole znajdują się automatyczne sygnały wymagające uwagi.
+    Widok Przeglądu gromadzi dane z wielu źródeł. Wyświetla statusy połączeń, wskaźniki KPI w kolorach odpowiadających narzędziom
+    (<b class="gsc">GSC</b>, <b class="sen">Senuto</b>, <b class="ahrefs">Ahrefs</b>, <b class="clarity">Clarity</b>),
+    a także dane historyczne i ostatnie pobrane wartości (w przypadku braku połączenia ze źródłem).
+    Na dole ekranu znajdują się automatyczne powiadomienia o wykrytych problemach.
   </div>
 
   {

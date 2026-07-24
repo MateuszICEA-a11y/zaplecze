@@ -118,9 +118,8 @@ const isJunk = (name: string) => /^\(|unassigned|not set|not available/i.test(na
   <DomainHeader domain={domain!} name={name} active="ga4" latest={latest} themeToggle />
 
   <div class="ga4-note">
-    GA4 pokazuje ruch z ostatniej pełnej doby: najważniejszą liczbę, użytkowników z podziałem na nowych
-    i powracających, metryki zaangażowania oraz trendy miesięczne. Listy „skąd i dokąd” łączą kanały,
-    źródła i strony w jednym przełączanym widoku.
+    Widok GA4 prezentuje ruch z ostatnich 24 godzin: ogólną liczbę odwiedzin, statystyki nowych i powracających użytkowników,
+    wskaźniki zaangażowania i trendy miesięczne. Kanały, źródła i strony docelowe zebraliśmy w jednej sekcji z opcją szybkiego przełączania.
   </div>
 
   <SourceState
@@ -362,8 +361,8 @@ const isJunk = (name: string) => /^\(|unassigned|not set|not available/i.test(na
         <tr>
           <th>Landing page</th>
           <th class="num">Sesje</th>
-          <th class="num">Engagement rate</th>
-          <th class="num">Śr. czas zaangaż.</th>
+          <th class="num">Engagement rate <span class="info-badge" title="Odsetek sesji zaangażowanych – sesja trwająca &gt;10 s, z konwersją lub z &gt;1 odsłoną strony">i</span></th>
+          <th class="num">Śr. czas zaangaż. <span class="info-badge" title="Średni czas aktywnego zaangażowania użytkownika na stronie w ramach jednej sesji">i</span></th>
           <th class="num">Strony / sesję</th>
         </tr>
       </thead>

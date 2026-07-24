@@ -47,6 +47,15 @@ const hasActions = Astro.slots.has('actions');
   {paged && (
     <div class="pager" data-page-size={pageSize}>
       <span class="pinfo" data-pager-info></span>
+      <div class="psize">
+        <label>Wyników na stronę
+          <select data-pager-size>
+            {[10, 25, 50, 100].map((n) => (
+              <option value={n} selected={n === pageSize}>{n}</option>
+            ))}
+          </select>
+        </label>
+      </div>
       <div class="pnav">
         <button type="button" data-pager-prev>‹ Poprzednia</button>
         <div class="pages" data-pager-pages></div>
@@ -78,28 +87,41 @@ const hasActions = Astro.slots.has('actions');
 
     const input = card.querySelector<HTMLInputElement>('[data-table-filter]');
     const pager = card.querySelector<HTMLElement>('.pager');
-    const pageSize = pager ? parseInt(pager.dataset.pageSize ?? '0', 10) : 0;
+    let pageSize = pager ? parseInt(pager.dataset.pageSize ?? '0', 10) : 0;
     const prevBtn = pager?.querySelector<HTMLButtonElement>('[data-pager-prev]');
     const nextBtn = pager?.querySelector<HTMLButtonElement>('[data-pager-next]');
     const info = pager?.querySelector<HTMLElement>('[data-pager-info]');
     const pagesBox = pager?.querySelector<HTMLElement>('[data-pager-pages]');
+    const sizeSelect = pager?.querySelector<HTMLSelectElement>('[data-pager-size]');
     let page = 0;
 
     /* Zewnętrzny predykat wierszy (np. filtr pozycji z kart TOP 3/10/50):
        strona dispatchuje CustomEvent('tablecard:refilter', {detail: fn|null}). */
     let rowPredicate: ((row: HTMLTableRowElement) => boolean) | null = null;
+    /* data-filter-col="0" na <table>: filtruj tylko po kolumnie o wskazanym indeksie
+       (domyślnie przeszukuje cały wiersz). */
+    const filterColAttr = table.dataset.filterCol;
+    const filterCol = filterColAttr !== undefined ? parseInt(filterColAttr, 10) : null;
     card.addEventListener('tablecard:refilter', (e) => {
       rowPredicate = (e as CustomEvent).detail ?? null;
       page = 0;
       update();
     });
 
+    const matchesFilter = (r: HTMLTableRowElement, needle: string): boolean => {
+      if (needle === '') return true;
+      const source = filterCol !== null
+        ? (r.cells[filterCol]?.querySelector('.txt')?.textContent ?? r.cells[filterCol]?.textContent ?? '')
+        : (r.textContent ?? '');
+      return source.toLowerCase().includes(needle);
+    };
+
     const update = () => {
       const needle = (input?.value ?? '').trim().toLowerCase();
       const rows = Array.from(body.rows);
       const matched = rows.filter(
         (r) =>
-          (needle === '' || (r.textContent ?? '').toLowerCase().includes(needle)) &&
+          matchesFilter(r, needle) &&
           (!rowPredicate || rowPredicate(r)),
       );
       rows.forEach((r) => (r.hidden = true));
@@ -149,7 +171,7 @@ const hasActions = Astro.slots.has('actions');
       const needle = (input?.value ?? '').trim().toLowerCase();
       const matched = Array.from(body.rows).filter(
         (r) =>
-          (needle === '' || (r.textContent ?? '').toLowerCase().includes(needle)) &&
+          matchesFilter(r, needle) &&
           (!rowPredicate || rowPredicate(r)),
       );
       const cell = (text: string) => {
@@ -188,6 +210,11 @@ const hasActions = Astro.slots.has('actions');
     });
     nextBtn?.addEventListener('click', () => {
       page += 1;
+      update();
+    });
+    sizeSelect?.addEventListener('change', () => {
+      pageSize = parseInt(sizeSelect.value, 10);
+      page = 0;
       update();
     });
 

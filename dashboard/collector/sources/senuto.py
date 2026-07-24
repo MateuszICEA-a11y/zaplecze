@@ -11,7 +11,6 @@ from ._http import classify_http_error, request_json
 
 ENDPOINT = "https://api.senuto.com/api/visibility_analysis/reports/dashboard/getDomainStatistics"
 POSITIONS_ENDPOINT = "https://api.senuto.com/api/visibility_analysis/reports/positions/getData"
-KEYWORDS_LIMIT = 200  # ile fraz trzymamy w details.json
 URLS_LIMIT = 1000  # agregacja per URL (Matrix) – górna granica wpisów
 # API nie wspiera sortowania ani filtrów (sonda 2026-07-21: order/sort/filter
 # ignorowane, limit ucinany do 100/stronę) – żeby tabela pokazywała realne
@@ -24,7 +23,7 @@ def _fetch_keywords(cfg: dict, token: str) -> list[dict]:
     """Lista rankujących fraz (positions/getData) – best-effort, pusta lista przy błędzie.
 
     Wertuje pełną paginację (API zwraca frazy we własnym porządku, bez sortu),
-    sortuje po pozycji i zatrzymuje KEYWORDS_LIMIT najlepszych.
+    sortuje po pozycji i zwraca pełną listę.
     """
     import json as _json
     import time as _time
@@ -142,9 +141,9 @@ def fetch(cfg: dict, env: dict) -> dict:
         keywords = _fetch_keywords(cfg, token)
     except Exception:  # noqa: BLE001 – lista fraz jest dodatkiem, nie wywala podsumowania
         keywords = []
-    # Agregacja per URL z PEŁNEJ listy fraz (przed ucięciem do KEYWORDS_LIMIT),
-    # żeby pozycje w Matrix pokrywały cały serwis, nie tylko top frazy.
+    # Agregacja per URL z pełnej listy fraz,
+    # żeby pozycje w Matrix pokrywały cały serwis.
     urls = _aggregate_urls(keywords)
 
     return {"summary": summary,
-            "details": {"keywords": keywords[:KEYWORDS_LIMIT], "urls": urls}}
+            "details": {"keywords": keywords, "urls": urls}}

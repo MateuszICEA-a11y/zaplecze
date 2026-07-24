@@ -75,8 +75,9 @@ const diffClass = (d: number | null | undefined) =>
   <DomainHeader domain={domain!} name={name} active="senuto" latest={latest} themeToggle />
 
   <div class="senuto-note">
-    Indeks widoczności jest głównym wskaźnikiem, a karty tierów <b>TOP 3/10/50 działają jako filtry tabeli</b>.
-    Lista obejmuje do 200 najlepszych fraz i pozwala sortować pozycję, zmianę, wolumen oraz trudność słowa. Dane pochodzą bezpośrednio z Senuto.
+    Indeks widoczności to kluczowy wskaźnik na tym widoku. Karty zakresów (<b>TOP 3, 10 i 50</b>) służą do filtrowania tabeli,
+    w której znajdziesz pełne zestawienie rankujących fraz. Wyniki możesz sortować według pozycji, jej zmiany, liczby wyszukiwań
+    i trudności słowa kluczowego. Źródłem danych jest Senuto.
   </div>
 
   <SourceState
@@ -144,12 +145,12 @@ const diffClass = (d: number | null | undefined) =>
     filter
     empty="Lista fraz pojawi się po najbliższym przebiegu collectora (codziennie 6:30)."
   >
-    <table class="data-table kw-table">
+    <table class="data-table kw-table" data-filter-col="0">
       <thead>
         <tr>
           <th>Fraza</th>
           <th class="num">Pozycja</th>
-          <th class="num">Zmiana</th>
+          <th class="num">Zmiana <span class="info-badge" title="Różnica pozycji z API Senuto – porównanie z poprzednią aktualizacją indeksu (~7 dni)">i</span></th>
           <th class="num">Wolumen / mies.</th>
           <th class="num">Trudność</th>
         </tr>
