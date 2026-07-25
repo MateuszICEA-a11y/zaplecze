@@ -1,13 +1,5 @@
 [
   {
-    "title": "Przewrócony samochód dostawczy na DK94. Utrudnienia przy wjeździe do Brzeska",
-    "date": "2026-04-21",
-    "slug": "przewrocony-samochod-dostawczy-na-dk94-utrudnienia-przy-wjezdzie-do-brzeska",
-    "section": "modele",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Nie żyje Lize van der Walt. Gwiazda brytyjskiego programu miała 60 lat",
     "date": "2026-04-22",
     "slug": "nie-zyje-lize-van-der-walt-gwiazda-brytyjskiego-programu-miala-60-lat",
@@ -715,6 +707,14 @@
     "title": "Bus wypadł z jezdni na A4. Trzy osoby zostały poszkodowane",
     "date": "2026-07-24",
     "slug": "bus-wypadl-z-jezdni-na-a4-trzy-osoby-zostaly-poszkodowane",
+    "section": "porownania",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Luca van Assche – kim jest i dlaczego znów zrobiło się o nim głośno?",
+    "date": "2026-07-25",
+    "slug": "luca-van-assche-kim-jest-i-dlaczego-znow-zrobilo-sie-o-nim-glosno",
     "section": "porownania",
     "format": "short",
     "source": "rss"
