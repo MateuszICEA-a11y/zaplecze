@@ -1,14 +1,14 @@
 {
- "date": "2026-07-24",
- "collected_at": "2026-07-24T12:41:08Z",
+ "date": "2026-07-25",
+ "collected_at": "2026-07-25T06:40:31Z",
  "sources": {
   "senuto": {
    "keywords": [
     {
      "keyword": "tomasz czechowski",
-     "position": 30,
+     "position": 31,
      "previous": 30,
-     "diff": 0,
+     "diff": 1,
      "searches": 1900,
      "url": "widocznosc.ai/autor/tomasz-czechowski/",
      "cpc": 0,
@@ -40,7 +40,7 @@
      "top3": 0,
      "top10": 0,
      "top50": 2,
-     "best_position": 30,
+     "best_position": 31,
      "best_keyword": "tomasz czechowski"
     }
    ]
@@ -48,8 +48,8 @@
   "gsc": {
    "windows": {
     "7d": {
-     "start": "2026-07-15",
-     "end": "2026-07-21",
+     "start": "2026-07-16",
+     "end": "2026-07-22",
      "queries": [
       {
        "key": "\"icea\" -site:reddit.com -site:twitter.com -site:x.com -site:wykop.pl -site:tripadvisor.com -site:youtube.com -site:yelp.com -site:booking.com -site:facebook.com -site:instagram.com -site:tiktok.com",
@@ -61,9 +61,9 @@
       {
        "key": "agencja ai",
        "clicks": 0,
-       "impressions": 17,
+       "impressions": 16,
        "ctr": 0,
-       "position": 80.9
+       "position": 83.8
       },
       {
        "key": "bing copilot",
@@ -77,14 +77,14 @@
        "clicks": 0,
        "impressions": 10,
        "ctr": 0,
-       "position": 13.5
+       "position": 12.4
       },
       {
        "key": "bing pozycjonowanie",
        "clicks": 0,
-       "impressions": 7,
+       "impressions": 5,
        "ctr": 0,
-       "position": 43.7
+       "position": 44.8
       },
       {
        "key": "co to jest llm",
@@ -99,6 +99,13 @@
        "impressions": 2,
        "ctr": 0,
        "position": 78.5
+      },
+      {
+       "key": "jak sprawdzić widoczność marki w chatgpt",
+       "clicks": 0,
+       "impressions": 2,
+       "ctr": 0,
+       "position": 89
       },
       {
        "key": "k3 model",
@@ -117,9 +124,9 @@
       {
        "key": "modele językowe",
        "clicks": 0,
-       "impressions": 12,
+       "impressions": 13,
        "ctr": 0,
-       "position": 62.2
+       "position": 63.4
       },
       {
        "key": "modele językowe ai",
@@ -138,9 +145,9 @@
       {
        "key": "optymalizacja pod bing",
        "clicks": 0,
-       "impressions": 3,
+       "impressions": 2,
        "ctr": 0,
-       "position": 34
+       "position": 33.5
       },
       {
        "key": "porównanie llm",
@@ -152,65 +159,65 @@
       {
        "key": "pozycjonowanie bing",
        "clicks": 0,
-       "impressions": 11,
+       "impressions": 12,
        "ctr": 0,
-       "position": 40.5
+       "position": 40.7
       },
       {
        "key": "pozycjonowanie chat gpt",
        "clicks": 0,
        "impressions": 4,
        "ctr": 0,
-       "position": 69
+       "position": 69.5
       },
       {
        "key": "pozycjonowanie chatgpt",
        "clicks": 0,
-       "impressions": 9,
+       "impressions": 8,
        "ctr": 0,
-       "position": 92.6
+       "position": 92.4
       },
       {
        "key": "pozycjonowanie perplexity",
        "clicks": 0,
        "impressions": 7,
        "ctr": 0,
-       "position": 39.7
+       "position": 33
       },
       {
        "key": "pozycjonowanie sklepów w bing",
        "clicks": 0,
-       "impressions": 6,
+       "impressions": 5,
        "ctr": 0,
-       "position": 67.7
+       "position": 68
       },
       {
        "key": "pozycjonowanie stron w bing",
        "clicks": 0,
-       "impressions": 4,
+       "impressions": 3,
        "ctr": 0,
-       "position": 56.8
+       "position": 57.7
       },
       {
        "key": "pozycjonowanie w bing",
        "clicks": 0,
-       "impressions": 18,
+       "impressions": 19,
        "ctr": 0,
-       "position": 34.9
+       "position": 34.3
       },
       {
        "key": "pozycjonowanie w bing ai",
        "clicks": 0,
-       "impressions": 7,
+       "impressions": 9,
        "ctr": 0,
-       "position": 26.6
+       "position": 25.4
       },
       {
        "key": "pozycjonowanie w chatgpt",
        "clicks": 0,
-       "impressions": 18,
+       "impressions": 17,
        "ctr": 0,
-       "position": 92.4
+       "position": 92.1
       },
       {
        "key": "pozycjonowanie w perplexity",
@@ -243,7 +250,7 @@
       {
        "key": "wdrożenie ai w firmie",
        "clicks": 0,
-       "impressions": 6,
+       "impressions": 5,
        "ctr": 0,
        "position": 91
       },
@@ -257,30 +264,30 @@
       {
        "key": "widoczność ai",
        "clicks": 0,
-       "impressions": 14,
+       "impressions": 15,
        "ctr": 0,
-       "position": 7.1
+       "position": 6.9
       },
       {
        "key": "widoczność marki w ai",
        "clicks": 0,
-       "impressions": 3,
+       "impressions": 4,
        "ctr": 0,
-       "position": 28.3
+       "position": 28.2
       },
       {
        "key": "widoczność w ai",
        "clicks": 0,
-       "impressions": 391,
+       "impressions": 470,
        "ctr": 0,
        "position": 4.7
       },
       {
        "key": "widoczność w chatgpt",
        "clicks": 0,
-       "impressions": 8,
+       "impressions": 9,
        "ctr": 0,
-       "position": 64.9
+       "position": 59.9
       },
       {
        "key": "widoczność w chatgpt legnica",
@@ -292,32 +299,39 @@
       {
        "key": "widoczność w wynik wyszukiwać",
        "clicks": 0,
-       "impressions": 7,
+       "impressions": 2,
        "ctr": 0,
-       "position": 44.7
+       "position": 45.5
+      },
+      {
+       "key": "wyszukiwarka semantyczna",
+       "clicks": 0,
+       "impressions": 1,
+       "ctr": 0,
+       "position": 92
       }
      ],
      "pages": [
       {
        "key": "https://widocznosc.ai/narzedzia/brand-check/",
        "clicks": 1,
-       "impressions": 7,
-       "ctr": 14.29,
-       "position": 16.1
+       "impressions": 11,
+       "ctr": 9.09,
+       "position": 28.3
       },
       {
        "key": "https://widocznosc.ai/",
        "clicks": 0,
-       "impressions": 422,
+       "impressions": 501,
        "ctr": 0,
-       "position": 5.6
+       "position": 5.2
       },
       {
        "key": "https://widocznosc.ai/agenci-ai/",
        "clicks": 0,
-       "impressions": 17,
+       "impressions": 16,
        "ctr": 0,
-       "position": 80.9
+       "position": 83.8
       },
       {
        "key": "https://widocznosc.ai/agenci-ai/przewodnik/",
@@ -329,7 +343,7 @@
       {
        "key": "https://widocznosc.ai/ai-w-biznesie/",
        "clicks": 0,
-       "impressions": 6,
+       "impressions": 5,
        "ctr": 0,
        "position": 91
       },
@@ -350,16 +364,16 @@
       {
        "key": "https://widocznosc.ai/autor/mateusz-wisniewski/",
        "clicks": 0,
-       "impressions": 2,
+       "impressions": 4,
        "ctr": 0,
-       "position": 14.5
+       "position": 20
       },
       {
        "key": "https://widocznosc.ai/autor/michal-ziach/",
        "clicks": 0,
-       "impressions": 3,
+       "impressions": 2,
        "ctr": 0,
-       "position": 11
+       "position": 10
       },
       {
        "key": "https://widocznosc.ai/autor/tomasz-czechowski/",
@@ -392,9 +406,9 @@
       {
        "key": "https://widocznosc.ai/modele-llm/",
        "clicks": 0,
-       "impressions": 16,
+       "impressions": 17,
        "ctr": 0,
-       "position": 62.4
+       "position": 61.5
       },
       {
        "key": "https://widocznosc.ai/modele-llm/chatgpt-vs-claude/",
@@ -408,14 +422,14 @@
        "clicks": 0,
        "impressions": 2,
        "ctr": 0,
-       "position": 10.5
+       "position": 9
       },
       {
        "key": "https://widocznosc.ai/modele-llm/claude-vs-gemini/",
        "clicks": 0,
        "impressions": 20,
        "ctr": 0,
-       "position": 7.2
+       "position": 7.7
       },
       {
        "key": "https://widocznosc.ai/modele-llm/claude/",
@@ -441,23 +455,23 @@
       {
        "key": "https://widocznosc.ai/modele-llm/grok/",
        "clicks": 0,
-       "impressions": 3,
+       "impressions": 5,
        "ctr": 0,
        "position": 8
       },
       {
        "key": "https://widocznosc.ai/modele-llm/przewodnik/",
        "clicks": 0,
-       "impressions": 24,
+       "impressions": 18,
        "ctr": 0,
-       "position": 39.5
+       "position": 46.8
       },
       {
        "key": "https://widocznosc.ai/narzedzia/ai-bots-check/",
        "clicks": 0,
-       "impressions": 9,
+       "impressions": 6,
        "ctr": 0,
-       "position": 6.1
+       "position": 4.8
       },
       {
        "key": "https://widocznosc.ai/narzedzia/url-check/",
@@ -474,6 +488,13 @@
        "position": 4.7
       },
       {
+       "key": "https://widocznosc.ai/news/amazon-rozwija-magazynowego-robota-proteus/",
+       "clicks": 0,
+       "impressions": 1,
+       "ctr": 0,
+       "position": 10
+      },
+      {
        "key": "https://widocznosc.ai/news/kimi-k3-zbliza-sie-do-czolowki-modeli-zamknietych/",
        "clicks": 0,
        "impressions": 4,
@@ -481,11 +502,25 @@
        "position": 8.8
       },
       {
-       "key": "https://widocznosc.ai/news/pozew-zbiorowy-wokol-ksiazek-uzytych-do-trenowania-gemini/",
+       "key": "https://widocznosc.ai/news/koreanski-skok-inwestycyjny-w-pamieci-dla-ai/",
        "clicks": 0,
        "impressions": 1,
        "ctr": 0,
-       "position": 41
+       "position": 8
+      },
+      {
+       "key": "https://widocznosc.ai/news/openrouter-z-routera-w-platforme-ai/",
+       "clicks": 0,
+       "impressions": 1,
+       "ctr": 0,
+       "position": 8
+      },
+      {
+       "key": "https://widocznosc.ai/news/pozew-zbiorowy-wokol-ksiazek-uzytych-do-trenowania-gemini/",
+       "clicks": 0,
+       "impressions": 2,
+       "ctr": 0,
+       "position": 22.5
       },
       {
        "key": "https://widocznosc.ai/news/tiktok-z-wiekszym-udzialem-ai-slop-niz-youtube/",
@@ -493,6 +528,13 @@
        "impressions": 1,
        "ctr": 0,
        "position": 6
+      },
+      {
+       "key": "https://widocznosc.ai/news/uber-pokazuje-gdzie-ai-ma-byc-naprawde-widoczne/",
+       "clicks": 0,
+       "impressions": 1,
+       "ctr": 0,
+       "position": 2
       },
       {
        "key": "https://widocznosc.ai/news/waze-rozszerza-funkcje-ai-z-udzialem-gemini/",
@@ -511,16 +553,16 @@
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/bing-copilot/",
        "clicks": 0,
-       "impressions": 71,
+       "impressions": 70,
        "ctr": 0,
-       "position": 35.9
+       "position": 34.4
       },
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/chatgpt/",
        "clicks": 0,
-       "impressions": 41,
+       "impressions": 40,
        "ctr": 0,
-       "position": 81.6
+       "position": 79.5
       },
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/claude/",
@@ -532,9 +574,9 @@
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/perplexity/",
        "clicks": 0,
-       "impressions": 12,
+       "impressions": 14,
        "ctr": 0,
-       "position": 34.1
+       "position": 38.4
       },
       {
        "key": "https://widocznosc.ai/rag/chunking-strategie/",
@@ -546,8 +588,8 @@
      ]
     },
     "30d": {
-     "start": "2026-06-22",
-     "end": "2026-07-21",
+     "start": "2026-06-23",
+     "end": "2026-07-22",
      "queries": [
       {
        "key": "\"icea\" -site:reddit.com -site:twitter.com -site:x.com -site:wykop.pl -site:tripadvisor.com -site:youtube.com -site:yelp.com -site:booking.com -site:facebook.com -site:instagram.com -site:tiktok.com",
@@ -566,9 +608,9 @@
       {
        "key": "agencja ai",
        "clicks": 0,
-       "impressions": 46,
+       "impressions": 48,
        "ctr": 0,
-       "position": 78.2
+       "position": 78.7
       },
       {
        "key": "ai do obsługi klienta",
@@ -610,7 +652,7 @@
        "clicks": 0,
        "impressions": 34,
        "ctr": 0,
-       "position": 25.2
+       "position": 24.2
       },
       {
        "key": "bing pozycjonowanie",
@@ -650,9 +692,9 @@
       {
        "key": "czym jest model językowy llm",
        "clicks": 0,
-       "impressions": 16,
+       "impressions": 8,
        "ctr": 0,
-       "position": 70.9
+       "position": 71.1
       },
       {
        "key": "dlaczego warto monitorować widoczność marki w wyszukiwarkach ai",
@@ -674,6 +716,13 @@
        "impressions": 1,
        "ctr": 0,
        "position": 69
+      },
+      {
+       "key": "jak sprawdzić widoczność marki w chatgpt",
+       "clicks": 0,
+       "impressions": 2,
+       "ctr": 0,
+       "position": 89
       },
       {
        "key": "jak sprawdzić widoczność w ai",
@@ -743,7 +792,7 @@
        "clicks": 0,
        "impressions": 57,
        "ctr": 0,
-       "position": 69.7
+       "position": 70
       },
       {
        "key": "modele językowe ai",
@@ -790,7 +839,7 @@
       {
        "key": "optymalizacja pod bing",
        "clicks": 0,
-       "impressions": 20,
+       "impressions": 19,
        "ctr": 0,
        "position": 37.8
       },
@@ -811,30 +860,30 @@
       {
        "key": "pozycjonowanie bing",
        "clicks": 0,
-       "impressions": 66,
+       "impressions": 67,
        "ctr": 0,
-       "position": 45.7
+       "position": 44.8
       },
       {
        "key": "pozycjonowanie chat gpt",
        "clicks": 0,
        "impressions": 14,
        "ctr": 0,
-       "position": 85.1
+       "position": 83.4
       },
       {
        "key": "pozycjonowanie chatgpt",
        "clicks": 0,
-       "impressions": 33,
+       "impressions": 32,
        "ctr": 0,
        "position": 93.3
       },
       {
        "key": "pozycjonowanie perplexity",
        "clicks": 0,
-       "impressions": 17,
+       "impressions": 18,
        "ctr": 0,
-       "position": 44.7
+       "position": 42.9
       },
       {
        "key": "pozycjonowanie sklepów w bing",
@@ -846,37 +895,37 @@
       {
        "key": "pozycjonowanie stron w bing",
        "clicks": 0,
-       "impressions": 23,
+       "impressions": 22,
        "ctr": 0,
-       "position": 62.6
+       "position": 61.8
       },
       {
        "key": "pozycjonowanie w bing",
        "clicks": 0,
-       "impressions": 78,
+       "impressions": 81,
        "ctr": 0,
-       "position": 41.0
+       "position": 40.4
       },
       {
        "key": "pozycjonowanie w bing ai",
        "clicks": 0,
-       "impressions": 33,
+       "impressions": 35,
        "ctr": 0,
-       "position": 44.3
+       "position": 42.1
       },
       {
        "key": "pozycjonowanie w bing wrocław",
        "clicks": 0,
-       "impressions": 2,
+       "impressions": 1,
        "ctr": 0,
-       "position": 90
+       "position": 94
       },
       {
        "key": "pozycjonowanie w chatgpt",
        "clicks": 0,
-       "impressions": 73,
+       "impressions": 71,
        "ctr": 0,
-       "position": 92.7
+       "position": 92.6
       },
       {
        "key": "pozycjonowanie w perplexity",
@@ -923,9 +972,9 @@
       {
        "key": "tomasz czechowski",
        "clicks": 0,
-       "impressions": 10,
+       "impressions": 7,
        "ctr": 0,
-       "position": 47.6
+       "position": 52.1
       },
       {
        "key": "tomasz czechowski kto to",
@@ -956,13 +1005,6 @@
        "position": 30
       },
       {
-       "key": "wiadomości seo",
-       "clicks": 0,
-       "impressions": 2,
-       "ctr": 0,
-       "position": 48
-      },
-      {
        "key": "widocznosc",
        "clicks": 0,
        "impressions": 1,
@@ -972,16 +1014,16 @@
       {
        "key": "widoczność ai",
        "clicks": 0,
-       "impressions": 22,
+       "impressions": 24,
        "ctr": 0,
-       "position": 8.4
+       "position": 8.2
       },
       {
        "key": "widoczność marki w ai",
        "clicks": 0,
-       "impressions": 6,
+       "impressions": 7,
        "ctr": 0,
-       "position": 37.3
+       "position": 36
       },
       {
        "key": "widoczność strona",
@@ -993,16 +1035,16 @@
       {
        "key": "widoczność w ai",
        "clicks": 0,
-       "impressions": 405,
+       "impressions": 484,
        "ctr": 0,
-       "position": 5.5
+       "position": 5.3
       },
       {
        "key": "widoczność w chatgpt",
        "clicks": 0,
-       "impressions": 34,
+       "impressions": 33,
        "ctr": 0,
-       "position": 76.0
+       "position": 73.4
       },
       {
        "key": "widoczność w chatgpt legnica",
@@ -1026,6 +1068,13 @@
        "position": 8
       },
       {
+       "key": "wyszukiwarka semantyczna",
+       "clicks": 0,
+       "impressions": 1,
+       "ctr": 0,
+       "position": 92
+      },
+      {
        "key": "wyszukiwarki semantyczne",
        "clicks": 0,
        "impressions": 1,
@@ -1037,9 +1086,9 @@
       {
        "key": "https://widocznosc.ai/",
        "clicks": 1,
-       "impressions": 512,
-       "ctr": 0.2,
-       "position": 9.5
+       "impressions": 594,
+       "ctr": 0.17,
+       "position": 8.6
       },
       {
        "key": "https://widocznosc.ai/ai-w-biznesie/bezpieczenstwo-danych-llm/",
@@ -1051,30 +1100,30 @@
       {
        "key": "https://widocznosc.ai/autor/mateusz-wisniewski/",
        "clicks": 1,
-       "impressions": 27,
-       "ctr": 3.7,
-       "position": 10.4
+       "impressions": 28,
+       "ctr": 3.57,
+       "position": 11.4
       },
       {
        "key": "https://widocznosc.ai/autor/michal-ziach/",
        "clicks": 1,
-       "impressions": 31,
-       "ctr": 3.23,
-       "position": 11.5
+       "impressions": 29,
+       "ctr": 3.45,
+       "position": 11.4
       },
       {
        "key": "https://widocznosc.ai/narzedzia/ai-bots-check/",
        "clicks": 1,
-       "impressions": 33,
-       "ctr": 3.03,
-       "position": 11.5
+       "impressions": 32,
+       "ctr": 3.12,
+       "position": 11.2
       },
       {
        "key": "https://widocznosc.ai/narzedzia/brand-check/",
        "clicks": 1,
-       "impressions": 36,
-       "ctr": 2.78,
-       "position": 16.7
+       "impressions": 41,
+       "ctr": 2.44,
+       "position": 19.3
       },
       {
        "key": "https://widocznosc.ai/news/spor-o-obecnosc-topowego-narzedzia-asml-w-chinach/",
@@ -1086,16 +1135,16 @@
       {
        "key": "https://widocznosc.ai/prompty/",
        "clicks": 1,
-       "impressions": 18,
-       "ctr": 5.56,
-       "position": 3.1
+       "impressions": 17,
+       "ctr": 5.88,
+       "position": 3
       },
       {
        "key": "https://widocznosc.ai/agenci-ai/",
        "clicks": 0,
-       "impressions": 64,
+       "impressions": 65,
        "ctr": 0,
-       "position": 58.8
+       "position": 60.6
       },
       {
        "key": "https://widocznosc.ai/agenci-ai/przewodnik/",
@@ -1142,37 +1191,37 @@
       {
        "key": "https://widocznosc.ai/autor/tomasz-czechowski/",
        "clicks": 0,
-       "impressions": 45,
+       "impressions": 40,
        "ctr": 0,
-       "position": 20.4
+       "position": 19.6
       },
       {
        "key": "https://widocznosc.ai/blog/",
        "clicks": 0,
-       "impressions": 18,
+       "impressions": 17,
        "ctr": 0,
        "position": 2
       },
       {
        "key": "https://widocznosc.ai/blog/4/",
        "clicks": 0,
-       "impressions": 15,
+       "impressions": 14,
        "ctr": 0,
        "position": 7.5
       },
       {
        "key": "https://widocznosc.ai/geo/boty-ai-przewodnik",
        "clicks": 0,
-       "impressions": 2,
+       "impressions": 1,
        "ctr": 0,
-       "position": 15.5
+       "position": 7
       },
       {
        "key": "https://widocznosc.ai/geo/co-google-przemilcza/",
        "clicks": 0,
-       "impressions": 20,
+       "impressions": 15,
        "ctr": 0,
-       "position": 28.5
+       "position": 17.1
       },
       {
        "key": "https://widocznosc.ai/geo/geo-dla-ecommerce/",
@@ -1212,9 +1261,9 @@
       {
        "key": "https://widocznosc.ai/modele-llm/",
        "clicks": 0,
-       "impressions": 72,
+       "impressions": 71,
        "ctr": 0,
-       "position": 62.6
+       "position": 62.7
       },
       {
        "key": "https://widocznosc.ai/modele-llm/chatgpt-vs-claude/",
@@ -1233,14 +1282,14 @@
       {
        "key": "https://widocznosc.ai/modele-llm/claude-vs-chatgpt-programowanie/",
        "clicks": 0,
-       "impressions": 11,
+       "impressions": 13,
        "ctr": 0,
-       "position": 12.8
+       "position": 12.2
       },
       {
        "key": "https://widocznosc.ai/modele-llm/claude-vs-gemini/",
        "clicks": 0,
-       "impressions": 67,
+       "impressions": 69,
        "ctr": 0,
        "position": 6.8
       },
@@ -1268,9 +1317,9 @@
       {
        "key": "https://widocznosc.ai/modele-llm/grok/",
        "clicks": 0,
-       "impressions": 12,
+       "impressions": 14,
        "ctr": 0,
-       "position": 9.2
+       "position": 9.1
       },
       {
        "key": "https://widocznosc.ai/modele-llm/perplexity/",
@@ -1282,23 +1331,23 @@
       {
        "key": "https://widocznosc.ai/modele-llm/przewodnik/",
        "clicks": 0,
-       "impressions": 132,
+       "impressions": 120,
        "ctr": 0,
-       "position": 55.1
+       "position": 54.7
       },
       {
        "key": "https://widocznosc.ai/narzedzia/fanout/",
        "clicks": 0,
-       "impressions": 20,
+       "impressions": 19,
        "ctr": 0,
-       "position": 8.2
+       "position": 8.3
       },
       {
        "key": "https://widocznosc.ai/narzedzia/url-check/",
        "clicks": 0,
-       "impressions": 17,
+       "impressions": 16,
        "ctr": 0,
-       "position": 14.1
+       "position": 13.9
       },
       {
        "key": "https://widocznosc.ai/news/agenci-w-firmach-na-razie-czesciej-chatboty-niz-orkiestracja/",
@@ -1313,6 +1362,13 @@
        "impressions": 2,
        "ctr": 0,
        "position": 17
+      },
+      {
+       "key": "https://widocznosc.ai/news/amazon-rozwija-magazynowego-robota-proteus/",
+       "clicks": 0,
+       "impressions": 1,
+       "ctr": 0,
+       "position": 10
       },
       {
        "key": "https://widocznosc.ai/news/amerykanie-uzywaja-chatbotow-ale-obawiaja-sie-tempa-rozwoju-ai/",
@@ -1338,16 +1394,16 @@
       {
        "key": "https://widocznosc.ai/news/anthropic-porzadkuje-swoje-podejscie-do-bezpieczenstwa-ai/",
        "clicks": 0,
-       "impressions": 6,
+       "impressions": 5,
        "ctr": 0,
-       "position": 23.5
+       "position": 23.2
       },
       {
        "key": "https://widocznosc.ai/news/anthropic-wylacza-fable-i-mythos-po-decyzji-administracji/",
        "clicks": 0,
-       "impressions": 6,
+       "impressions": 5,
        "ctr": 0,
-       "position": 25
+       "position": 24.6
       },
       {
        "key": "https://widocznosc.ai/news/anthropic-wypuszcza-claude-sonnet-5/",
@@ -1408,9 +1464,9 @@
       {
        "key": "https://widocznosc.ai/news/falszywe-studia-przypadkow-w-raporcie-o-ai/",
        "clicks": 0,
-       "impressions": 6,
+       "impressions": 5,
        "ctr": 0,
-       "position": 22.7
+       "position": 22
       },
       {
        "key": "https://widocznosc.ai/news/ford-koryguje-bledy-po-zbyt-duzym-zaufaniu-do-automatyzacji/",
@@ -1436,7 +1492,7 @@
       {
        "key": "https://widocznosc.ai/news/internet-coraz-bardziej-pod-maszyny/",
        "clicks": 0,
-       "impressions": 2,
+       "impressions": 1,
        "ctr": 0,
        "position": 10
       },
@@ -1457,23 +1513,23 @@
       {
        "key": "https://widocznosc.ai/news/koreanski-skok-inwestycyjny-w-pamieci-dla-ai/",
        "clicks": 0,
-       "impressions": 3,
+       "impressions": 4,
        "ctr": 0,
-       "position": 27.3
+       "position": 22.5
       },
       {
        "key": "https://widocznosc.ai/news/minimax-m3-otwarty-model-milion-tokenow/",
        "clicks": 0,
-       "impressions": 7,
+       "impressions": 6,
        "ctr": 0,
-       "position": 19.9
+       "position": 19.8
       },
       {
        "key": "https://widocznosc.ai/news/norwegia-blokuje-generatywne-ai-w-szkolach-podstawowych/",
        "clicks": 0,
-       "impressions": 16,
+       "impressions": 15,
        "ctr": 0,
-       "position": 19
+       "position": 19.6
       },
       {
        "key": "https://widocznosc.ai/news/openai-rozwaza-5-proc-udzialu-dla-rzadu-usa/",
@@ -1485,9 +1541,9 @@
       {
        "key": "https://widocznosc.ai/news/openrouter-z-routera-w-platforme-ai/",
        "clicks": 0,
-       "impressions": 8,
+       "impressions": 9,
        "ctr": 0,
-       "position": 35.8
+       "position": 32.7
       },
       {
        "key": "https://widocznosc.ai/news/orbitalne-centra-danych-budza-coraz-wiecej-pytan/",
@@ -1499,9 +1555,9 @@
       {
        "key": "https://widocznosc.ai/news/pozew-zbiorowy-wokol-ksiazek-uzytych-do-trenowania-gemini/",
        "clicks": 0,
-       "impressions": 1,
+       "impressions": 2,
        "ctr": 0,
-       "position": 41
+       "position": 22.5
       },
       {
        "key": "https://widocznosc.ai/news/raport-openai-o-zmianach-na-rynku-pracy-w-ue/",
@@ -1525,6 +1581,13 @@
        "position": 6
       },
       {
+       "key": "https://widocznosc.ai/news/uber-pokazuje-gdzie-ai-ma-byc-naprawde-widoczne/",
+       "clicks": 0,
+       "impressions": 1,
+       "ctr": 0,
+       "position": 2
+      },
+      {
        "key": "https://widocznosc.ai/news/ue-spiera-sie-o-to-czym-jest-deepfake/",
        "clicks": 0,
        "impressions": 10,
@@ -1541,44 +1604,44 @@
       {
        "key": "https://widocznosc.ai/o-nas/",
        "clicks": 0,
-       "impressions": 26,
+       "impressions": 25,
        "ctr": 0,
-       "position": 17.6
+       "position": 18.1
       },
       {
        "key": "https://widocznosc.ai/polityka-prywatnosci/",
        "clicks": 0,
-       "impressions": 20,
+       "impressions": 19,
        "ctr": 0,
        "position": 6.6
       },
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/bing-copilot/",
        "clicks": 0,
-       "impressions": 318,
+       "impressions": 320,
        "ctr": 0,
-       "position": 42.8
+       "position": 42.0
       },
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/chatgpt/",
        "clicks": 0,
-       "impressions": 160,
+       "impressions": 157,
        "ctr": 0,
-       "position": 81.3
+       "position": 81.0
       },
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/claude/",
        "clicks": 0,
-       "impressions": 17,
+       "impressions": 16,
        "ctr": 0,
-       "position": 14.2
+       "position": 14.4
       },
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/perplexity/",
        "clicks": 0,
-       "impressions": 49,
+       "impressions": 51,
        "ctr": 0,
-       "position": 27.7
+       "position": 30.1
       },
       {
        "key": "https://widocznosc.ai/rag/chunking-strategie/",
@@ -1590,8 +1653,8 @@
      ]
     },
     "3m": {
-     "start": "2026-04-23",
-     "end": "2026-07-21",
+     "start": "2026-04-24",
+     "end": "2026-07-22",
      "queries": [
       {
        "key": "\"icea\" -site:reddit.com -site:twitter.com -site:x.com -site:wykop.pl -site:tripadvisor.com -site:youtube.com -site:yelp.com -site:booking.com -site:facebook.com -site:instagram.com -site:tiktok.com",
@@ -1610,9 +1673,9 @@
       {
        "key": "agencja ai",
        "clicks": 0,
-       "impressions": 57,
+       "impressions": 60,
        "ctr": 0,
-       "position": 80.1
+       "position": 80.4
       },
       {
        "key": "ai do obsługi klienta",
@@ -1652,9 +1715,9 @@
       {
        "key": "bing copilot pozycjonowanie",
        "clicks": 0,
-       "impressions": 36,
+       "impressions": 37,
        "ctr": 0,
-       "position": 26.2
+       "position": 25.8
       },
       {
        "key": "bing pozycjonowanie",
@@ -1725,6 +1788,13 @@
        "impressions": 1,
        "ctr": 0,
        "position": 69
+      },
+      {
+       "key": "jak sprawdzić widoczność marki w chatgpt",
+       "clicks": 0,
+       "impressions": 2,
+       "ctr": 0,
+       "position": 89
       },
       {
        "key": "jak sprawdzić widoczność w ai",
@@ -1799,7 +1869,7 @@
       {
        "key": "modele językowe",
        "clicks": 0,
-       "impressions": 60,
+       "impressions": 62,
        "ctr": 0,
        "position": 69.3
       },
@@ -1869,16 +1939,16 @@
       {
        "key": "pozycjonowanie bing",
        "clicks": 0,
-       "impressions": 69,
+       "impressions": 72,
        "ctr": 0,
-       "position": 46.6
+       "position": 46.4
       },
       {
        "key": "pozycjonowanie chat gpt",
        "clicks": 0,
-       "impressions": 15,
+       "impressions": 16,
        "ctr": 0,
-       "position": 85.6
+       "position": 84.6
       },
       {
        "key": "pozycjonowanie chatgpt",
@@ -1890,9 +1960,9 @@
       {
        "key": "pozycjonowanie perplexity",
        "clicks": 0,
-       "impressions": 17,
+       "impressions": 18,
        "ctr": 0,
-       "position": 44.7
+       "position": 42.9
       },
       {
        "key": "pozycjonowanie sklepów w bing",
@@ -1911,16 +1981,16 @@
       {
        "key": "pozycjonowanie w bing",
        "clicks": 0,
-       "impressions": 82,
+       "impressions": 86,
        "ctr": 0,
-       "position": 41.7
+       "position": 41.4
       },
       {
        "key": "pozycjonowanie w bing ai",
        "clicks": 0,
-       "impressions": 36,
+       "impressions": 39,
        "ctr": 0,
-       "position": 45.7
+       "position": 44.1
       },
       {
        "key": "pozycjonowanie w bing wrocław",
@@ -1932,7 +2002,7 @@
       {
        "key": "pozycjonowanie w chatgpt",
        "clicks": 0,
-       "impressions": 77,
+       "impressions": 78,
        "ctr": 0,
        "position": 92.8
       },
@@ -2037,16 +2107,16 @@
       {
        "key": "widoczność ai",
        "clicks": 0,
-       "impressions": 22,
+       "impressions": 24,
        "ctr": 0,
-       "position": 8.4
+       "position": 8.2
       },
       {
        "key": "widoczność marki w ai",
        "clicks": 0,
-       "impressions": 6,
+       "impressions": 7,
        "ctr": 0,
-       "position": 37.3
+       "position": 36
       },
       {
        "key": "widoczność strona",
@@ -2065,16 +2135,16 @@
       {
        "key": "widoczność w ai",
        "clicks": 0,
-       "impressions": 412,
+       "impressions": 492,
        "ctr": 0,
-       "position": 6.4
+       "position": 6.1
       },
       {
        "key": "widoczność w chatgpt",
        "clicks": 0,
-       "impressions": 41,
+       "impressions": 42,
        "ctr": 0,
-       "position": 79.3
+       "position": 77.9
       },
       {
        "key": "widoczność w chatgpt legnica",
@@ -2100,9 +2170,9 @@
       {
        "key": "wyszukiwarka semantyczna",
        "clicks": 0,
-       "impressions": 2,
+       "impressions": 3,
        "ctr": 0,
-       "position": 99.5
+       "position": 97
       },
       {
        "key": "wyszukiwarki semantyczne",
@@ -2116,9 +2186,9 @@
       {
        "key": "https://widocznosc.ai/",
        "clicks": 7,
-       "impressions": 583,
-       "ctr": 1.2,
-       "position": 11.4
+       "impressions": 669,
+       "ctr": 1.05,
+       "position": 10.7
       },
       {
        "key": "https://widocznosc.ai/modele-llm/claude/",
@@ -2151,9 +2221,9 @@
       {
        "key": "https://widocznosc.ai/agenci-ai/",
        "clicks": 1,
-       "impressions": 107,
-       "ctr": 0.93,
-       "position": 45.4
+       "impressions": 110,
+       "ctr": 0.91,
+       "position": 46.5
       },
       {
        "key": "https://widocznosc.ai/ai-w-biznesie/bezpieczenstwo-danych-llm/",
@@ -2165,9 +2235,9 @@
       {
        "key": "https://widocznosc.ai/autor/mateusz-wisniewski/",
        "clicks": 1,
-       "impressions": 32,
-       "ctr": 3.12,
-       "position": 11.5
+       "impressions": 34,
+       "ctr": 2.94,
+       "position": 12.4
       },
       {
        "key": "https://widocznosc.ai/autor/michal-ziach/",
@@ -2193,9 +2263,9 @@
       {
        "key": "https://widocznosc.ai/narzedzia/brand-check/",
        "clicks": 1,
-       "impressions": 40,
-       "ctr": 2.5,
-       "position": 17.4
+       "impressions": 46,
+       "ctr": 2.17,
+       "position": 19.6
       },
       {
        "key": "https://widocznosc.ai/news/anthropic-wylacza-fable-i-mythos-po-decyzji-administracji/",
@@ -2361,9 +2431,9 @@
       {
        "key": "https://widocznosc.ai/modele-llm/",
        "clicks": 0,
-       "impressions": 80,
+       "impressions": 82,
        "ctr": 0,
-       "position": 59.9
+       "position": 60.1
       },
       {
        "key": "https://widocznosc.ai/modele-llm/chatgpt-vs-claude/",
@@ -2375,14 +2445,14 @@
       {
        "key": "https://widocznosc.ai/modele-llm/claude-vs-chatgpt-programowanie/",
        "clicks": 0,
-       "impressions": 11,
+       "impressions": 13,
        "ctr": 0,
-       "position": 12.8
+       "position": 12.2
       },
       {
        "key": "https://widocznosc.ai/modele-llm/claude-vs-gemini/",
        "clicks": 0,
-       "impressions": 67,
+       "impressions": 69,
        "ctr": 0,
        "position": 6.8
       },
@@ -2403,9 +2473,9 @@
       {
        "key": "https://widocznosc.ai/modele-llm/grok/",
        "clicks": 0,
-       "impressions": 12,
+       "impressions": 14,
        "ctr": 0,
-       "position": 9.2
+       "position": 9.1
       },
       {
        "key": "https://widocznosc.ai/modele-llm/perplexity/",
@@ -2452,9 +2522,9 @@
       {
        "key": "https://widocznosc.ai/news/amazon-rozwija-magazynowego-robota-proteus/",
        "clicks": 0,
-       "impressions": 24,
+       "impressions": 25,
        "ctr": 0,
-       "position": 5.7
+       "position": 5.9
       },
       {
        "key": "https://widocznosc.ai/news/amerykanie-uzywaja-chatbotow-ale-obawiaja-sie-tempa-rozwoju-ai/",
@@ -2585,9 +2655,9 @@
       {
        "key": "https://widocznosc.ai/news/koreanski-skok-inwestycyjny-w-pamieci-dla-ai/",
        "clicks": 0,
-       "impressions": 3,
+       "impressions": 4,
        "ctr": 0,
-       "position": 27.3
+       "position": 22.5
       },
       {
        "key": "https://widocznosc.ai/news/minimax-m3-otwarty-model-milion-tokenow/",
@@ -2620,9 +2690,9 @@
       {
        "key": "https://widocznosc.ai/news/openrouter-z-routera-w-platforme-ai/",
        "clicks": 0,
-       "impressions": 8,
+       "impressions": 9,
        "ctr": 0,
-       "position": 35.8
+       "position": 32.7
       },
       {
        "key": "https://widocznosc.ai/news/orbitalne-centra-danych-budza-coraz-wiecej-pytan/",
@@ -2641,9 +2711,9 @@
       {
        "key": "https://widocznosc.ai/news/pozew-zbiorowy-wokol-ksiazek-uzytych-do-trenowania-gemini/",
        "clicks": 0,
-       "impressions": 1,
+       "impressions": 2,
        "ctr": 0,
-       "position": 41
+       "position": 22.5
       },
       {
        "key": "https://widocznosc.ai/news/raport-openai-o-zmianach-na-rynku-pracy-w-ue/",
@@ -2672,6 +2742,13 @@
        "impressions": 3,
        "ctr": 0,
        "position": 11.7
+      },
+      {
+       "key": "https://widocznosc.ai/news/uber-pokazuje-gdzie-ai-ma-byc-naprawde-widoczne/",
+       "clicks": 0,
+       "impressions": 1,
+       "ctr": 0,
+       "position": 2
       },
       {
        "key": "https://widocznosc.ai/news/ue-spiera-sie-o-to-czym-jest-deepfake/",
@@ -2704,16 +2781,16 @@
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/bing-copilot/",
        "clicks": 0,
-       "impressions": 340,
+       "impressions": 351,
        "ctr": 0,
-       "position": 43.4
+       "position": 43.0
       },
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/chatgpt/",
        "clicks": 0,
-       "impressions": 168,
+       "impressions": 171,
        "ctr": 0,
-       "position": 81.1
+       "position": 80.7
       },
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/claude/",
@@ -2725,9 +2802,9 @@
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/perplexity/",
        "clicks": 0,
-       "impressions": 50,
+       "impressions": 53,
        "ctr": 0,
-       "position": 27.3
+       "position": 29.3
       },
       {
        "key": "https://widocznosc.ai/rag/chunking-strategie/",
@@ -2739,8 +2816,8 @@
      ]
     },
     "6m": {
-     "start": "2026-01-23",
-     "end": "2026-07-21",
+     "start": "2026-01-24",
+     "end": "2026-07-22",
      "queries": [
       {
        "key": "\"icea\" -site:reddit.com -site:twitter.com -site:x.com -site:wykop.pl -site:tripadvisor.com -site:youtube.com -site:yelp.com -site:booking.com -site:facebook.com -site:instagram.com -site:tiktok.com",
@@ -2759,9 +2836,9 @@
       {
        "key": "agencja ai",
        "clicks": 0,
-       "impressions": 57,
+       "impressions": 60,
        "ctr": 0,
-       "position": 80.1
+       "position": 80.4
       },
       {
        "key": "ai do obsługi klienta",
@@ -2801,9 +2878,9 @@
       {
        "key": "bing copilot pozycjonowanie",
        "clicks": 0,
-       "impressions": 36,
+       "impressions": 37,
        "ctr": 0,
-       "position": 26.2
+       "position": 25.8
       },
       {
        "key": "bing pozycjonowanie",
@@ -2874,6 +2951,13 @@
        "impressions": 1,
        "ctr": 0,
        "position": 69
+      },
+      {
+       "key": "jak sprawdzić widoczność marki w chatgpt",
+       "clicks": 0,
+       "impressions": 2,
+       "ctr": 0,
+       "position": 89
       },
       {
        "key": "jak sprawdzić widoczność w ai",
@@ -2948,7 +3032,7 @@
       {
        "key": "modele językowe",
        "clicks": 0,
-       "impressions": 60,
+       "impressions": 62,
        "ctr": 0,
        "position": 69.3
       },
@@ -3018,16 +3102,16 @@
       {
        "key": "pozycjonowanie bing",
        "clicks": 0,
-       "impressions": 69,
+       "impressions": 72,
        "ctr": 0,
-       "position": 46.6
+       "position": 46.4
       },
       {
        "key": "pozycjonowanie chat gpt",
        "clicks": 0,
-       "impressions": 15,
+       "impressions": 16,
        "ctr": 0,
-       "position": 85.6
+       "position": 84.6
       },
       {
        "key": "pozycjonowanie chatgpt",
@@ -3039,9 +3123,9 @@
       {
        "key": "pozycjonowanie perplexity",
        "clicks": 0,
-       "impressions": 17,
+       "impressions": 18,
        "ctr": 0,
-       "position": 44.7
+       "position": 42.9
       },
       {
        "key": "pozycjonowanie sklepów w bing",
@@ -3060,16 +3144,16 @@
       {
        "key": "pozycjonowanie w bing",
        "clicks": 0,
-       "impressions": 82,
+       "impressions": 86,
        "ctr": 0,
-       "position": 41.7
+       "position": 41.4
       },
       {
        "key": "pozycjonowanie w bing ai",
        "clicks": 0,
-       "impressions": 36,
+       "impressions": 39,
        "ctr": 0,
-       "position": 45.7
+       "position": 44.1
       },
       {
        "key": "pozycjonowanie w bing wrocław",
@@ -3081,7 +3165,7 @@
       {
        "key": "pozycjonowanie w chatgpt",
        "clicks": 0,
-       "impressions": 77,
+       "impressions": 78,
        "ctr": 0,
        "position": 92.8
       },
@@ -3186,16 +3270,16 @@
       {
        "key": "widoczność ai",
        "clicks": 0,
-       "impressions": 22,
+       "impressions": 24,
        "ctr": 0,
-       "position": 8.4
+       "position": 8.2
       },
       {
        "key": "widoczność marki w ai",
        "clicks": 0,
-       "impressions": 6,
+       "impressions": 7,
        "ctr": 0,
-       "position": 37.3
+       "position": 36
       },
       {
        "key": "widoczność strona",
@@ -3214,16 +3298,16 @@
       {
        "key": "widoczność w ai",
        "clicks": 0,
-       "impressions": 412,
+       "impressions": 492,
        "ctr": 0,
-       "position": 6.4
+       "position": 6.1
       },
       {
        "key": "widoczność w chatgpt",
        "clicks": 0,
-       "impressions": 41,
+       "impressions": 42,
        "ctr": 0,
-       "position": 79.3
+       "position": 77.9
       },
       {
        "key": "widoczność w chatgpt legnica",
@@ -3249,9 +3333,9 @@
       {
        "key": "wyszukiwarka semantyczna",
        "clicks": 0,
-       "impressions": 2,
+       "impressions": 3,
        "ctr": 0,
-       "position": 99.5
+       "position": 97
       },
       {
        "key": "wyszukiwarki semantyczne",
@@ -3265,9 +3349,9 @@
       {
        "key": "https://widocznosc.ai/",
        "clicks": 7,
-       "impressions": 583,
-       "ctr": 1.2,
-       "position": 11.4
+       "impressions": 669,
+       "ctr": 1.05,
+       "position": 10.7
       },
       {
        "key": "https://widocznosc.ai/modele-llm/claude/",
@@ -3300,9 +3384,9 @@
       {
        "key": "https://widocznosc.ai/agenci-ai/",
        "clicks": 1,
-       "impressions": 107,
-       "ctr": 0.93,
-       "position": 45.4
+       "impressions": 110,
+       "ctr": 0.91,
+       "position": 46.5
       },
       {
        "key": "https://widocznosc.ai/ai-w-biznesie/bezpieczenstwo-danych-llm/",
@@ -3314,9 +3398,9 @@
       {
        "key": "https://widocznosc.ai/autor/mateusz-wisniewski/",
        "clicks": 1,
-       "impressions": 32,
-       "ctr": 3.12,
-       "position": 11.5
+       "impressions": 34,
+       "ctr": 2.94,
+       "position": 12.4
       },
       {
        "key": "https://widocznosc.ai/autor/michal-ziach/",
@@ -3342,9 +3426,9 @@
       {
        "key": "https://widocznosc.ai/narzedzia/brand-check/",
        "clicks": 1,
-       "impressions": 40,
-       "ctr": 2.5,
-       "position": 17.4
+       "impressions": 46,
+       "ctr": 2.17,
+       "position": 19.6
       },
       {
        "key": "https://widocznosc.ai/news/anthropic-wylacza-fable-i-mythos-po-decyzji-administracji/",
@@ -3510,9 +3594,9 @@
       {
        "key": "https://widocznosc.ai/modele-llm/",
        "clicks": 0,
-       "impressions": 80,
+       "impressions": 82,
        "ctr": 0,
-       "position": 59.9
+       "position": 60.1
       },
       {
        "key": "https://widocznosc.ai/modele-llm/chatgpt-vs-claude/",
@@ -3524,14 +3608,14 @@
       {
        "key": "https://widocznosc.ai/modele-llm/claude-vs-chatgpt-programowanie/",
        "clicks": 0,
-       "impressions": 11,
+       "impressions": 13,
        "ctr": 0,
-       "position": 12.8
+       "position": 12.2
       },
       {
        "key": "https://widocznosc.ai/modele-llm/claude-vs-gemini/",
        "clicks": 0,
-       "impressions": 67,
+       "impressions": 69,
        "ctr": 0,
        "position": 6.8
       },
@@ -3552,9 +3636,9 @@
       {
        "key": "https://widocznosc.ai/modele-llm/grok/",
        "clicks": 0,
-       "impressions": 12,
+       "impressions": 14,
        "ctr": 0,
-       "position": 9.2
+       "position": 9.1
       },
       {
        "key": "https://widocznosc.ai/modele-llm/perplexity/",
@@ -3601,9 +3685,9 @@
       {
        "key": "https://widocznosc.ai/news/amazon-rozwija-magazynowego-robota-proteus/",
        "clicks": 0,
-       "impressions": 24,
+       "impressions": 25,
        "ctr": 0,
-       "position": 5.7
+       "position": 5.9
       },
       {
        "key": "https://widocznosc.ai/news/amerykanie-uzywaja-chatbotow-ale-obawiaja-sie-tempa-rozwoju-ai/",
@@ -3734,9 +3818,9 @@
       {
        "key": "https://widocznosc.ai/news/koreanski-skok-inwestycyjny-w-pamieci-dla-ai/",
        "clicks": 0,
-       "impressions": 3,
+       "impressions": 4,
        "ctr": 0,
-       "position": 27.3
+       "position": 22.5
       },
       {
        "key": "https://widocznosc.ai/news/minimax-m3-otwarty-model-milion-tokenow/",
@@ -3769,9 +3853,9 @@
       {
        "key": "https://widocznosc.ai/news/openrouter-z-routera-w-platforme-ai/",
        "clicks": 0,
-       "impressions": 8,
+       "impressions": 9,
        "ctr": 0,
-       "position": 35.8
+       "position": 32.7
       },
       {
        "key": "https://widocznosc.ai/news/orbitalne-centra-danych-budza-coraz-wiecej-pytan/",
@@ -3790,9 +3874,9 @@
       {
        "key": "https://widocznosc.ai/news/pozew-zbiorowy-wokol-ksiazek-uzytych-do-trenowania-gemini/",
        "clicks": 0,
-       "impressions": 1,
+       "impressions": 2,
        "ctr": 0,
-       "position": 41
+       "position": 22.5
       },
       {
        "key": "https://widocznosc.ai/news/raport-openai-o-zmianach-na-rynku-pracy-w-ue/",
@@ -3821,6 +3905,13 @@
        "impressions": 3,
        "ctr": 0,
        "position": 11.7
+      },
+      {
+       "key": "https://widocznosc.ai/news/uber-pokazuje-gdzie-ai-ma-byc-naprawde-widoczne/",
+       "clicks": 0,
+       "impressions": 1,
+       "ctr": 0,
+       "position": 2
       },
       {
        "key": "https://widocznosc.ai/news/ue-spiera-sie-o-to-czym-jest-deepfake/",
@@ -3853,16 +3944,16 @@
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/bing-copilot/",
        "clicks": 0,
-       "impressions": 340,
+       "impressions": 351,
        "ctr": 0,
-       "position": 43.4
+       "position": 43.0
       },
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/chatgpt/",
        "clicks": 0,
-       "impressions": 168,
+       "impressions": 171,
        "ctr": 0,
-       "position": 81.1
+       "position": 80.7
       },
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/claude/",
@@ -3874,9 +3965,9 @@
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/perplexity/",
        "clicks": 0,
-       "impressions": 50,
+       "impressions": 53,
        "ctr": 0,
-       "position": 27.3
+       "position": 29.3
       },
       {
        "key": "https://widocznosc.ai/rag/chunking-strategie/",
@@ -3888,8 +3979,8 @@
      ]
     },
     "12m": {
-     "start": "2025-07-22",
-     "end": "2026-07-21",
+     "start": "2025-07-23",
+     "end": "2026-07-22",
      "queries": [
       {
        "key": "\"icea\" -site:reddit.com -site:twitter.com -site:x.com -site:wykop.pl -site:tripadvisor.com -site:youtube.com -site:yelp.com -site:booking.com -site:facebook.com -site:instagram.com -site:tiktok.com",
@@ -3908,9 +3999,9 @@
       {
        "key": "agencja ai",
        "clicks": 0,
-       "impressions": 57,
+       "impressions": 60,
        "ctr": 0,
-       "position": 80.1
+       "position": 80.4
       },
       {
        "key": "ai do obsługi klienta",
@@ -3950,9 +4041,9 @@
       {
        "key": "bing copilot pozycjonowanie",
        "clicks": 0,
-       "impressions": 36,
+       "impressions": 37,
        "ctr": 0,
-       "position": 26.2
+       "position": 25.8
       },
       {
        "key": "bing pozycjonowanie",
@@ -4023,6 +4114,13 @@
        "impressions": 1,
        "ctr": 0,
        "position": 69
+      },
+      {
+       "key": "jak sprawdzić widoczność marki w chatgpt",
+       "clicks": 0,
+       "impressions": 2,
+       "ctr": 0,
+       "position": 89
       },
       {
        "key": "jak sprawdzić widoczność w ai",
@@ -4097,7 +4195,7 @@
       {
        "key": "modele językowe",
        "clicks": 0,
-       "impressions": 60,
+       "impressions": 62,
        "ctr": 0,
        "position": 69.3
       },
@@ -4167,16 +4265,16 @@
       {
        "key": "pozycjonowanie bing",
        "clicks": 0,
-       "impressions": 69,
+       "impressions": 72,
        "ctr": 0,
-       "position": 46.6
+       "position": 46.4
       },
       {
        "key": "pozycjonowanie chat gpt",
        "clicks": 0,
-       "impressions": 15,
+       "impressions": 16,
        "ctr": 0,
-       "position": 85.6
+       "position": 84.6
       },
       {
        "key": "pozycjonowanie chatgpt",
@@ -4188,9 +4286,9 @@
       {
        "key": "pozycjonowanie perplexity",
        "clicks": 0,
-       "impressions": 17,
+       "impressions": 18,
        "ctr": 0,
-       "position": 44.7
+       "position": 42.9
       },
       {
        "key": "pozycjonowanie sklepów w bing",
@@ -4209,16 +4307,16 @@
       {
        "key": "pozycjonowanie w bing",
        "clicks": 0,
-       "impressions": 82,
+       "impressions": 86,
        "ctr": 0,
-       "position": 41.7
+       "position": 41.4
       },
       {
        "key": "pozycjonowanie w bing ai",
        "clicks": 0,
-       "impressions": 36,
+       "impressions": 39,
        "ctr": 0,
-       "position": 45.7
+       "position": 44.1
       },
       {
        "key": "pozycjonowanie w bing wrocław",
@@ -4230,7 +4328,7 @@
       {
        "key": "pozycjonowanie w chatgpt",
        "clicks": 0,
-       "impressions": 77,
+       "impressions": 78,
        "ctr": 0,
        "position": 92.8
       },
@@ -4335,16 +4433,16 @@
       {
        "key": "widoczność ai",
        "clicks": 0,
-       "impressions": 22,
+       "impressions": 24,
        "ctr": 0,
-       "position": 8.4
+       "position": 8.2
       },
       {
        "key": "widoczność marki w ai",
        "clicks": 0,
-       "impressions": 6,
+       "impressions": 7,
        "ctr": 0,
-       "position": 37.3
+       "position": 36
       },
       {
        "key": "widoczność strona",
@@ -4363,16 +4461,16 @@
       {
        "key": "widoczność w ai",
        "clicks": 0,
-       "impressions": 412,
+       "impressions": 492,
        "ctr": 0,
-       "position": 6.4
+       "position": 6.1
       },
       {
        "key": "widoczność w chatgpt",
        "clicks": 0,
-       "impressions": 41,
+       "impressions": 42,
        "ctr": 0,
-       "position": 79.3
+       "position": 77.9
       },
       {
        "key": "widoczność w chatgpt legnica",
@@ -4398,9 +4496,9 @@
       {
        "key": "wyszukiwarka semantyczna",
        "clicks": 0,
-       "impressions": 2,
+       "impressions": 3,
        "ctr": 0,
-       "position": 99.5
+       "position": 97
       },
       {
        "key": "wyszukiwarki semantyczne",
@@ -4414,9 +4512,9 @@
       {
        "key": "https://widocznosc.ai/",
        "clicks": 7,
-       "impressions": 583,
-       "ctr": 1.2,
-       "position": 11.4
+       "impressions": 669,
+       "ctr": 1.05,
+       "position": 10.7
       },
       {
        "key": "https://widocznosc.ai/modele-llm/claude/",
@@ -4449,9 +4547,9 @@
       {
        "key": "https://widocznosc.ai/agenci-ai/",
        "clicks": 1,
-       "impressions": 107,
-       "ctr": 0.93,
-       "position": 45.4
+       "impressions": 110,
+       "ctr": 0.91,
+       "position": 46.5
       },
       {
        "key": "https://widocznosc.ai/ai-w-biznesie/bezpieczenstwo-danych-llm/",
@@ -4463,9 +4561,9 @@
       {
        "key": "https://widocznosc.ai/autor/mateusz-wisniewski/",
        "clicks": 1,
-       "impressions": 32,
-       "ctr": 3.12,
-       "position": 11.5
+       "impressions": 34,
+       "ctr": 2.94,
+       "position": 12.4
       },
       {
        "key": "https://widocznosc.ai/autor/michal-ziach/",
@@ -4491,9 +4589,9 @@
       {
        "key": "https://widocznosc.ai/narzedzia/brand-check/",
        "clicks": 1,
-       "impressions": 40,
-       "ctr": 2.5,
-       "position": 17.4
+       "impressions": 46,
+       "ctr": 2.17,
+       "position": 19.6
       },
       {
        "key": "https://widocznosc.ai/news/anthropic-wylacza-fable-i-mythos-po-decyzji-administracji/",
@@ -4659,9 +4757,9 @@
       {
        "key": "https://widocznosc.ai/modele-llm/",
        "clicks": 0,
-       "impressions": 80,
+       "impressions": 82,
        "ctr": 0,
-       "position": 59.9
+       "position": 60.1
       },
       {
        "key": "https://widocznosc.ai/modele-llm/chatgpt-vs-claude/",
@@ -4673,14 +4771,14 @@
       {
        "key": "https://widocznosc.ai/modele-llm/claude-vs-chatgpt-programowanie/",
        "clicks": 0,
-       "impressions": 11,
+       "impressions": 13,
        "ctr": 0,
-       "position": 12.8
+       "position": 12.2
       },
       {
        "key": "https://widocznosc.ai/modele-llm/claude-vs-gemini/",
        "clicks": 0,
-       "impressions": 67,
+       "impressions": 69,
        "ctr": 0,
        "position": 6.8
       },
@@ -4701,9 +4799,9 @@
       {
        "key": "https://widocznosc.ai/modele-llm/grok/",
        "clicks": 0,
-       "impressions": 12,
+       "impressions": 14,
        "ctr": 0,
-       "position": 9.2
+       "position": 9.1
       },
       {
        "key": "https://widocznosc.ai/modele-llm/perplexity/",
@@ -4750,9 +4848,9 @@
       {
        "key": "https://widocznosc.ai/news/amazon-rozwija-magazynowego-robota-proteus/",
        "clicks": 0,
-       "impressions": 24,
+       "impressions": 25,
        "ctr": 0,
-       "position": 5.7
+       "position": 5.9
       },
       {
        "key": "https://widocznosc.ai/news/amerykanie-uzywaja-chatbotow-ale-obawiaja-sie-tempa-rozwoju-ai/",
@@ -4883,9 +4981,9 @@
       {
        "key": "https://widocznosc.ai/news/koreanski-skok-inwestycyjny-w-pamieci-dla-ai/",
        "clicks": 0,
-       "impressions": 3,
+       "impressions": 4,
        "ctr": 0,
-       "position": 27.3
+       "position": 22.5
       },
       {
        "key": "https://widocznosc.ai/news/minimax-m3-otwarty-model-milion-tokenow/",
@@ -4918,9 +5016,9 @@
       {
        "key": "https://widocznosc.ai/news/openrouter-z-routera-w-platforme-ai/",
        "clicks": 0,
-       "impressions": 8,
+       "impressions": 9,
        "ctr": 0,
-       "position": 35.8
+       "position": 32.7
       },
       {
        "key": "https://widocznosc.ai/news/orbitalne-centra-danych-budza-coraz-wiecej-pytan/",
@@ -4939,9 +5037,9 @@
       {
        "key": "https://widocznosc.ai/news/pozew-zbiorowy-wokol-ksiazek-uzytych-do-trenowania-gemini/",
        "clicks": 0,
-       "impressions": 1,
+       "impressions": 2,
        "ctr": 0,
-       "position": 41
+       "position": 22.5
       },
       {
        "key": "https://widocznosc.ai/news/raport-openai-o-zmianach-na-rynku-pracy-w-ue/",
@@ -4970,6 +5068,13 @@
        "impressions": 3,
        "ctr": 0,
        "position": 11.7
+      },
+      {
+       "key": "https://widocznosc.ai/news/uber-pokazuje-gdzie-ai-ma-byc-naprawde-widoczne/",
+       "clicks": 0,
+       "impressions": 1,
+       "ctr": 0,
+       "position": 2
       },
       {
        "key": "https://widocznosc.ai/news/ue-spiera-sie-o-to-czym-jest-deepfake/",
@@ -5002,16 +5107,16 @@
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/bing-copilot/",
        "clicks": 0,
-       "impressions": 340,
+       "impressions": 351,
        "ctr": 0,
-       "position": 43.4
+       "position": 43.0
       },
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/chatgpt/",
        "clicks": 0,
-       "impressions": 168,
+       "impressions": 171,
        "ctr": 0,
-       "position": 81.1
+       "position": 80.7
       },
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/claude/",
@@ -5023,9 +5128,9 @@
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/perplexity/",
        "clicks": 0,
-       "impressions": 50,
+       "impressions": 53,
        "ctr": 0,
-       "position": 27.3
+       "position": 29.3
       },
       {
        "key": "https://widocznosc.ai/rag/chunking-strategie/",
@@ -5037,8 +5142,8 @@
      ]
     },
     "16m": {
-     "start": "2025-03-29",
-     "end": "2026-07-21",
+     "start": "2025-03-30",
+     "end": "2026-07-22",
      "queries": [
       {
        "key": "\"icea\" -site:reddit.com -site:twitter.com -site:x.com -site:wykop.pl -site:tripadvisor.com -site:youtube.com -site:yelp.com -site:booking.com -site:facebook.com -site:instagram.com -site:tiktok.com",
@@ -5057,9 +5162,9 @@
       {
        "key": "agencja ai",
        "clicks": 0,
-       "impressions": 57,
+       "impressions": 60,
        "ctr": 0,
-       "position": 80.1
+       "position": 80.4
       },
       {
        "key": "ai do obsługi klienta",
@@ -5099,9 +5204,9 @@
       {
        "key": "bing copilot pozycjonowanie",
        "clicks": 0,
-       "impressions": 36,
+       "impressions": 37,
        "ctr": 0,
-       "position": 26.2
+       "position": 25.8
       },
       {
        "key": "bing pozycjonowanie",
@@ -5172,6 +5277,13 @@
        "impressions": 1,
        "ctr": 0,
        "position": 69
+      },
+      {
+       "key": "jak sprawdzić widoczność marki w chatgpt",
+       "clicks": 0,
+       "impressions": 2,
+       "ctr": 0,
+       "position": 89
       },
       {
        "key": "jak sprawdzić widoczność w ai",
@@ -5246,7 +5358,7 @@
       {
        "key": "modele językowe",
        "clicks": 0,
-       "impressions": 60,
+       "impressions": 62,
        "ctr": 0,
        "position": 69.3
       },
@@ -5316,16 +5428,16 @@
       {
        "key": "pozycjonowanie bing",
        "clicks": 0,
-       "impressions": 69,
+       "impressions": 72,
        "ctr": 0,
-       "position": 46.6
+       "position": 46.4
       },
       {
        "key": "pozycjonowanie chat gpt",
        "clicks": 0,
-       "impressions": 15,
+       "impressions": 16,
        "ctr": 0,
-       "position": 85.6
+       "position": 84.6
       },
       {
        "key": "pozycjonowanie chatgpt",
@@ -5337,9 +5449,9 @@
       {
        "key": "pozycjonowanie perplexity",
        "clicks": 0,
-       "impressions": 17,
+       "impressions": 18,
        "ctr": 0,
-       "position": 44.7
+       "position": 42.9
       },
       {
        "key": "pozycjonowanie sklepów w bing",
@@ -5358,16 +5470,16 @@
       {
        "key": "pozycjonowanie w bing",
        "clicks": 0,
-       "impressions": 82,
+       "impressions": 86,
        "ctr": 0,
-       "position": 41.7
+       "position": 41.4
       },
       {
        "key": "pozycjonowanie w bing ai",
        "clicks": 0,
-       "impressions": 36,
+       "impressions": 39,
        "ctr": 0,
-       "position": 45.7
+       "position": 44.1
       },
       {
        "key": "pozycjonowanie w bing wrocław",
@@ -5379,7 +5491,7 @@
       {
        "key": "pozycjonowanie w chatgpt",
        "clicks": 0,
-       "impressions": 77,
+       "impressions": 78,
        "ctr": 0,
        "position": 92.8
       },
@@ -5484,16 +5596,16 @@
       {
        "key": "widoczność ai",
        "clicks": 0,
-       "impressions": 22,
+       "impressions": 24,
        "ctr": 0,
-       "position": 8.4
+       "position": 8.2
       },
       {
        "key": "widoczność marki w ai",
        "clicks": 0,
-       "impressions": 6,
+       "impressions": 7,
        "ctr": 0,
-       "position": 37.3
+       "position": 36
       },
       {
        "key": "widoczność strona",
@@ -5512,16 +5624,16 @@
       {
        "key": "widoczność w ai",
        "clicks": 0,
-       "impressions": 412,
+       "impressions": 492,
        "ctr": 0,
-       "position": 6.4
+       "position": 6.1
       },
       {
        "key": "widoczność w chatgpt",
        "clicks": 0,
-       "impressions": 41,
+       "impressions": 42,
        "ctr": 0,
-       "position": 79.3
+       "position": 77.9
       },
       {
        "key": "widoczność w chatgpt legnica",
@@ -5547,9 +5659,9 @@
       {
        "key": "wyszukiwarka semantyczna",
        "clicks": 0,
-       "impressions": 2,
+       "impressions": 3,
        "ctr": 0,
-       "position": 99.5
+       "position": 97
       },
       {
        "key": "wyszukiwarki semantyczne",
@@ -5563,9 +5675,9 @@
       {
        "key": "https://widocznosc.ai/",
        "clicks": 7,
-       "impressions": 583,
-       "ctr": 1.2,
-       "position": 11.4
+       "impressions": 669,
+       "ctr": 1.05,
+       "position": 10.7
       },
       {
        "key": "https://widocznosc.ai/modele-llm/claude/",
@@ -5598,9 +5710,9 @@
       {
        "key": "https://widocznosc.ai/agenci-ai/",
        "clicks": 1,
-       "impressions": 107,
-       "ctr": 0.93,
-       "position": 45.4
+       "impressions": 110,
+       "ctr": 0.91,
+       "position": 46.5
       },
       {
        "key": "https://widocznosc.ai/ai-w-biznesie/bezpieczenstwo-danych-llm/",
@@ -5612,9 +5724,9 @@
       {
        "key": "https://widocznosc.ai/autor/mateusz-wisniewski/",
        "clicks": 1,
-       "impressions": 32,
-       "ctr": 3.12,
-       "position": 11.5
+       "impressions": 34,
+       "ctr": 2.94,
+       "position": 12.4
       },
       {
        "key": "https://widocznosc.ai/autor/michal-ziach/",
@@ -5640,9 +5752,9 @@
       {
        "key": "https://widocznosc.ai/narzedzia/brand-check/",
        "clicks": 1,
-       "impressions": 40,
-       "ctr": 2.5,
-       "position": 17.4
+       "impressions": 46,
+       "ctr": 2.17,
+       "position": 19.6
       },
       {
        "key": "https://widocznosc.ai/news/anthropic-wylacza-fable-i-mythos-po-decyzji-administracji/",
@@ -5808,9 +5920,9 @@
       {
        "key": "https://widocznosc.ai/modele-llm/",
        "clicks": 0,
-       "impressions": 80,
+       "impressions": 82,
        "ctr": 0,
-       "position": 59.9
+       "position": 60.1
       },
       {
        "key": "https://widocznosc.ai/modele-llm/chatgpt-vs-claude/",
@@ -5822,14 +5934,14 @@
       {
        "key": "https://widocznosc.ai/modele-llm/claude-vs-chatgpt-programowanie/",
        "clicks": 0,
-       "impressions": 11,
+       "impressions": 13,
        "ctr": 0,
-       "position": 12.8
+       "position": 12.2
       },
       {
        "key": "https://widocznosc.ai/modele-llm/claude-vs-gemini/",
        "clicks": 0,
-       "impressions": 67,
+       "impressions": 69,
        "ctr": 0,
        "position": 6.8
       },
@@ -5850,9 +5962,9 @@
       {
        "key": "https://widocznosc.ai/modele-llm/grok/",
        "clicks": 0,
-       "impressions": 12,
+       "impressions": 14,
        "ctr": 0,
-       "position": 9.2
+       "position": 9.1
       },
       {
        "key": "https://widocznosc.ai/modele-llm/perplexity/",
@@ -5899,9 +6011,9 @@
       {
        "key": "https://widocznosc.ai/news/amazon-rozwija-magazynowego-robota-proteus/",
        "clicks": 0,
-       "impressions": 24,
+       "impressions": 25,
        "ctr": 0,
-       "position": 5.7
+       "position": 5.9
       },
       {
        "key": "https://widocznosc.ai/news/amerykanie-uzywaja-chatbotow-ale-obawiaja-sie-tempa-rozwoju-ai/",
@@ -6032,9 +6144,9 @@
       {
        "key": "https://widocznosc.ai/news/koreanski-skok-inwestycyjny-w-pamieci-dla-ai/",
        "clicks": 0,
-       "impressions": 3,
+       "impressions": 4,
        "ctr": 0,
-       "position": 27.3
+       "position": 22.5
       },
       {
        "key": "https://widocznosc.ai/news/minimax-m3-otwarty-model-milion-tokenow/",
@@ -6067,9 +6179,9 @@
       {
        "key": "https://widocznosc.ai/news/openrouter-z-routera-w-platforme-ai/",
        "clicks": 0,
-       "impressions": 8,
+       "impressions": 9,
        "ctr": 0,
-       "position": 35.8
+       "position": 32.7
       },
       {
        "key": "https://widocznosc.ai/news/orbitalne-centra-danych-budza-coraz-wiecej-pytan/",
@@ -6088,9 +6200,9 @@
       {
        "key": "https://widocznosc.ai/news/pozew-zbiorowy-wokol-ksiazek-uzytych-do-trenowania-gemini/",
        "clicks": 0,
-       "impressions": 1,
+       "impressions": 2,
        "ctr": 0,
-       "position": 41
+       "position": 22.5
       },
       {
        "key": "https://widocznosc.ai/news/raport-openai-o-zmianach-na-rynku-pracy-w-ue/",
@@ -6119,6 +6231,13 @@
        "impressions": 3,
        "ctr": 0,
        "position": 11.7
+      },
+      {
+       "key": "https://widocznosc.ai/news/uber-pokazuje-gdzie-ai-ma-byc-naprawde-widoczne/",
+       "clicks": 0,
+       "impressions": 1,
+       "ctr": 0,
+       "position": 2
       },
       {
        "key": "https://widocznosc.ai/news/ue-spiera-sie-o-to-czym-jest-deepfake/",
@@ -6151,16 +6270,16 @@
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/bing-copilot/",
        "clicks": 0,
-       "impressions": 340,
+       "impressions": 351,
        "ctr": 0,
-       "position": 43.4
+       "position": 43.0
       },
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/chatgpt/",
        "clicks": 0,
-       "impressions": 168,
+       "impressions": 171,
        "ctr": 0,
-       "position": 81.1
+       "position": 80.7
       },
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/claude/",
@@ -6172,9 +6291,9 @@
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/perplexity/",
        "clicks": 0,
-       "impressions": 50,
+       "impressions": 53,
        "ctr": 0,
-       "position": 27.3
+       "position": 29.3
       },
       {
        "key": "https://widocznosc.ai/rag/chunking-strategie/",
@@ -6187,8 +6306,8 @@
     }
    },
    "window": {
-    "start": "2026-06-22",
-    "end": "2026-07-21"
+    "start": "2026-06-23",
+    "end": "2026-07-22"
    },
    "queries": [
     {
@@ -6208,9 +6327,9 @@
     {
      "key": "agencja ai",
      "clicks": 0,
-     "impressions": 46,
+     "impressions": 48,
      "ctr": 0,
-     "position": 78.2
+     "position": 78.7
     },
     {
      "key": "ai do obsługi klienta",
@@ -6252,7 +6371,7 @@
      "clicks": 0,
      "impressions": 34,
      "ctr": 0,
-     "position": 25.2
+     "position": 24.2
     },
     {
      "key": "bing pozycjonowanie",
@@ -6292,9 +6411,9 @@
     {
      "key": "czym jest model językowy llm",
      "clicks": 0,
-     "impressions": 16,
+     "impressions": 8,
      "ctr": 0,
-     "position": 70.9
+     "position": 71.1
     },
     {
      "key": "dlaczego warto monitorować widoczność marki w wyszukiwarkach ai",
@@ -6316,6 +6435,13 @@
      "impressions": 1,
      "ctr": 0,
      "position": 69
+    },
+    {
+     "key": "jak sprawdzić widoczność marki w chatgpt",
+     "clicks": 0,
+     "impressions": 2,
+     "ctr": 0,
+     "position": 89
     },
     {
      "key": "jak sprawdzić widoczność w ai",
@@ -6385,7 +6511,7 @@
      "clicks": 0,
      "impressions": 57,
      "ctr": 0,
-     "position": 69.7
+     "position": 70
     },
     {
      "key": "modele językowe ai",
@@ -6432,7 +6558,7 @@
     {
      "key": "optymalizacja pod bing",
      "clicks": 0,
-     "impressions": 20,
+     "impressions": 19,
      "ctr": 0,
      "position": 37.8
     },
@@ -6453,30 +6579,30 @@
     {
      "key": "pozycjonowanie bing",
      "clicks": 0,
-     "impressions": 66,
+     "impressions": 67,
      "ctr": 0,
-     "position": 45.7
+     "position": 44.8
     },
     {
      "key": "pozycjonowanie chat gpt",
      "clicks": 0,
      "impressions": 14,
      "ctr": 0,
-     "position": 85.1
+     "position": 83.4
     },
     {
      "key": "pozycjonowanie chatgpt",
      "clicks": 0,
-     "impressions": 33,
+     "impressions": 32,
      "ctr": 0,
      "position": 93.3
     },
     {
      "key": "pozycjonowanie perplexity",
      "clicks": 0,
-     "impressions": 17,
+     "impressions": 18,
      "ctr": 0,
-     "position": 44.7
+     "position": 42.9
     },
     {
      "key": "pozycjonowanie sklepów w bing",
@@ -6488,37 +6614,37 @@
     {
      "key": "pozycjonowanie stron w bing",
      "clicks": 0,
-     "impressions": 23,
+     "impressions": 22,
      "ctr": 0,
-     "position": 62.6
+     "position": 61.8
     },
     {
      "key": "pozycjonowanie w bing",
      "clicks": 0,
-     "impressions": 78,
+     "impressions": 81,
      "ctr": 0,
-     "position": 41.0
+     "position": 40.4
     },
     {
      "key": "pozycjonowanie w bing ai",
      "clicks": 0,
-     "impressions": 33,
+     "impressions": 35,
      "ctr": 0,
-     "position": 44.3
+     "position": 42.1
     },
     {
      "key": "pozycjonowanie w bing wrocław",
      "clicks": 0,
-     "impressions": 2,
+     "impressions": 1,
      "ctr": 0,
-     "position": 90
+     "position": 94
     },
     {
      "key": "pozycjonowanie w chatgpt",
      "clicks": 0,
-     "impressions": 73,
+     "impressions": 71,
      "ctr": 0,
-     "position": 92.7
+     "position": 92.6
     },
     {
      "key": "pozycjonowanie w perplexity",
@@ -6565,9 +6691,9 @@
     {
      "key": "tomasz czechowski",
      "clicks": 0,
-     "impressions": 10,
+     "impressions": 7,
      "ctr": 0,
-     "position": 47.6
+     "position": 52.1
     },
     {
      "key": "tomasz czechowski kto to",
@@ -6598,13 +6724,6 @@
      "position": 30
     },
     {
-     "key": "wiadomości seo",
-     "clicks": 0,
-     "impressions": 2,
-     "ctr": 0,
-     "position": 48
-    },
-    {
      "key": "widocznosc",
      "clicks": 0,
      "impressions": 1,
@@ -6614,16 +6733,16 @@
     {
      "key": "widoczność ai",
      "clicks": 0,
-     "impressions": 22,
+     "impressions": 24,
      "ctr": 0,
-     "position": 8.4
+     "position": 8.2
     },
     {
      "key": "widoczność marki w ai",
      "clicks": 0,
-     "impressions": 6,
+     "impressions": 7,
      "ctr": 0,
-     "position": 37.3
+     "position": 36
     },
     {
      "key": "widoczność strona",
@@ -6635,16 +6754,16 @@
     {
      "key": "widoczność w ai",
      "clicks": 0,
-     "impressions": 405,
+     "impressions": 484,
      "ctr": 0,
-     "position": 5.5
+     "position": 5.3
     },
     {
      "key": "widoczność w chatgpt",
      "clicks": 0,
-     "impressions": 34,
+     "impressions": 33,
      "ctr": 0,
-     "position": 76.0
+     "position": 73.4
     },
     {
      "key": "widoczność w chatgpt legnica",
@@ -6668,6 +6787,13 @@
      "position": 8
     },
     {
+     "key": "wyszukiwarka semantyczna",
+     "clicks": 0,
+     "impressions": 1,
+     "ctr": 0,
+     "position": 92
+    },
+    {
      "key": "wyszukiwarki semantyczne",
      "clicks": 0,
      "impressions": 1,
@@ -6679,9 +6805,9 @@
     {
      "key": "https://widocznosc.ai/",
      "clicks": 1,
-     "impressions": 512,
-     "ctr": 0.2,
-     "position": 9.5
+     "impressions": 594,
+     "ctr": 0.17,
+     "position": 8.6
     },
     {
      "key": "https://widocznosc.ai/ai-w-biznesie/bezpieczenstwo-danych-llm/",
@@ -6693,30 +6819,30 @@
     {
      "key": "https://widocznosc.ai/autor/mateusz-wisniewski/",
      "clicks": 1,
-     "impressions": 27,
-     "ctr": 3.7,
-     "position": 10.4
+     "impressions": 28,
+     "ctr": 3.57,
+     "position": 11.4
     },
     {
      "key": "https://widocznosc.ai/autor/michal-ziach/",
      "clicks": 1,
-     "impressions": 31,
-     "ctr": 3.23,
-     "position": 11.5
+     "impressions": 29,
+     "ctr": 3.45,
+     "position": 11.4
     },
     {
      "key": "https://widocznosc.ai/narzedzia/ai-bots-check/",
      "clicks": 1,
-     "impressions": 33,
-     "ctr": 3.03,
-     "position": 11.5
+     "impressions": 32,
+     "ctr": 3.12,
+     "position": 11.2
     },
     {
      "key": "https://widocznosc.ai/narzedzia/brand-check/",
      "clicks": 1,
-     "impressions": 36,
-     "ctr": 2.78,
-     "position": 16.7
+     "impressions": 41,
+     "ctr": 2.44,
+     "position": 19.3
     },
     {
      "key": "https://widocznosc.ai/news/spor-o-obecnosc-topowego-narzedzia-asml-w-chinach/",
@@ -6728,16 +6854,16 @@
     {
      "key": "https://widocznosc.ai/prompty/",
      "clicks": 1,
-     "impressions": 18,
-     "ctr": 5.56,
-     "position": 3.1
+     "impressions": 17,
+     "ctr": 5.88,
+     "position": 3
     },
     {
      "key": "https://widocznosc.ai/agenci-ai/",
      "clicks": 0,
-     "impressions": 64,
+     "impressions": 65,
      "ctr": 0,
-     "position": 58.8
+     "position": 60.6
     },
     {
      "key": "https://widocznosc.ai/agenci-ai/przewodnik/",
@@ -6784,37 +6910,37 @@
     {
      "key": "https://widocznosc.ai/autor/tomasz-czechowski/",
      "clicks": 0,
-     "impressions": 45,
+     "impressions": 40,
      "ctr": 0,
-     "position": 20.4
+     "position": 19.6
     },
     {
      "key": "https://widocznosc.ai/blog/",
      "clicks": 0,
-     "impressions": 18,
+     "impressions": 17,
      "ctr": 0,
      "position": 2
     },
     {
      "key": "https://widocznosc.ai/blog/4/",
      "clicks": 0,
-     "impressions": 15,
+     "impressions": 14,
      "ctr": 0,
      "position": 7.5
     },
     {
      "key": "https://widocznosc.ai/geo/boty-ai-przewodnik",
      "clicks": 0,
-     "impressions": 2,
+     "impressions": 1,
      "ctr": 0,
-     "position": 15.5
+     "position": 7
     },
     {
      "key": "https://widocznosc.ai/geo/co-google-przemilcza/",
      "clicks": 0,
-     "impressions": 20,
+     "impressions": 15,
      "ctr": 0,
-     "position": 28.5
+     "position": 17.1
     },
     {
      "key": "https://widocznosc.ai/geo/geo-dla-ecommerce/",
@@ -6854,9 +6980,9 @@
     {
      "key": "https://widocznosc.ai/modele-llm/",
      "clicks": 0,
-     "impressions": 72,
+     "impressions": 71,
      "ctr": 0,
-     "position": 62.6
+     "position": 62.7
     },
     {
      "key": "https://widocznosc.ai/modele-llm/chatgpt-vs-claude/",
@@ -6875,14 +7001,14 @@
     {
      "key": "https://widocznosc.ai/modele-llm/claude-vs-chatgpt-programowanie/",
      "clicks": 0,
-     "impressions": 11,
+     "impressions": 13,
      "ctr": 0,
-     "position": 12.8
+     "position": 12.2
     },
     {
      "key": "https://widocznosc.ai/modele-llm/claude-vs-gemini/",
      "clicks": 0,
-     "impressions": 67,
+     "impressions": 69,
      "ctr": 0,
      "position": 6.8
     },
@@ -6910,9 +7036,9 @@
     {
      "key": "https://widocznosc.ai/modele-llm/grok/",
      "clicks": 0,
-     "impressions": 12,
+     "impressions": 14,
      "ctr": 0,
-     "position": 9.2
+     "position": 9.1
     },
     {
      "key": "https://widocznosc.ai/modele-llm/perplexity/",
@@ -6924,23 +7050,23 @@
     {
      "key": "https://widocznosc.ai/modele-llm/przewodnik/",
      "clicks": 0,
-     "impressions": 132,
+     "impressions": 120,
      "ctr": 0,
-     "position": 55.1
+     "position": 54.7
     },
     {
      "key": "https://widocznosc.ai/narzedzia/fanout/",
      "clicks": 0,
-     "impressions": 20,
+     "impressions": 19,
      "ctr": 0,
-     "position": 8.2
+     "position": 8.3
     },
     {
      "key": "https://widocznosc.ai/narzedzia/url-check/",
      "clicks": 0,
-     "impressions": 17,
+     "impressions": 16,
      "ctr": 0,
-     "position": 14.1
+     "position": 13.9
     },
     {
      "key": "https://widocznosc.ai/news/agenci-w-firmach-na-razie-czesciej-chatboty-niz-orkiestracja/",
@@ -6955,6 +7081,13 @@
      "impressions": 2,
      "ctr": 0,
      "position": 17
+    },
+    {
+     "key": "https://widocznosc.ai/news/amazon-rozwija-magazynowego-robota-proteus/",
+     "clicks": 0,
+     "impressions": 1,
+     "ctr": 0,
+     "position": 10
     },
     {
      "key": "https://widocznosc.ai/news/amerykanie-uzywaja-chatbotow-ale-obawiaja-sie-tempa-rozwoju-ai/",
@@ -6980,16 +7113,16 @@
     {
      "key": "https://widocznosc.ai/news/anthropic-porzadkuje-swoje-podejscie-do-bezpieczenstwa-ai/",
      "clicks": 0,
-     "impressions": 6,
+     "impressions": 5,
      "ctr": 0,
-     "position": 23.5
+     "position": 23.2
     },
     {
      "key": "https://widocznosc.ai/news/anthropic-wylacza-fable-i-mythos-po-decyzji-administracji/",
      "clicks": 0,
-     "impressions": 6,
+     "impressions": 5,
      "ctr": 0,
-     "position": 25
+     "position": 24.6
     },
     {
      "key": "https://widocznosc.ai/news/anthropic-wypuszcza-claude-sonnet-5/",
@@ -7050,9 +7183,9 @@
     {
      "key": "https://widocznosc.ai/news/falszywe-studia-przypadkow-w-raporcie-o-ai/",
      "clicks": 0,
-     "impressions": 6,
+     "impressions": 5,
      "ctr": 0,
-     "position": 22.7
+     "position": 22
     },
     {
      "key": "https://widocznosc.ai/news/ford-koryguje-bledy-po-zbyt-duzym-zaufaniu-do-automatyzacji/",
@@ -7078,7 +7211,7 @@
     {
      "key": "https://widocznosc.ai/news/internet-coraz-bardziej-pod-maszyny/",
      "clicks": 0,
-     "impressions": 2,
+     "impressions": 1,
      "ctr": 0,
      "position": 10
     },
@@ -7099,23 +7232,23 @@
     {
      "key": "https://widocznosc.ai/news/koreanski-skok-inwestycyjny-w-pamieci-dla-ai/",
      "clicks": 0,
-     "impressions": 3,
+     "impressions": 4,
      "ctr": 0,
-     "position": 27.3
+     "position": 22.5
     },
     {
      "key": "https://widocznosc.ai/news/minimax-m3-otwarty-model-milion-tokenow/",
      "clicks": 0,
-     "impressions": 7,
+     "impressions": 6,
      "ctr": 0,
-     "position": 19.9
+     "position": 19.8
     },
     {
      "key": "https://widocznosc.ai/news/norwegia-blokuje-generatywne-ai-w-szkolach-podstawowych/",
      "clicks": 0,
-     "impressions": 16,
+     "impressions": 15,
      "ctr": 0,
-     "position": 19
+     "position": 19.6
     },
     {
      "key": "https://widocznosc.ai/news/openai-rozwaza-5-proc-udzialu-dla-rzadu-usa/",
@@ -7127,9 +7260,9 @@
     {
      "key": "https://widocznosc.ai/news/openrouter-z-routera-w-platforme-ai/",
      "clicks": 0,
-     "impressions": 8,
+     "impressions": 9,
      "ctr": 0,
-     "position": 35.8
+     "position": 32.7
     },
     {
      "key": "https://widocznosc.ai/news/orbitalne-centra-danych-budza-coraz-wiecej-pytan/",
@@ -7141,9 +7274,9 @@
     {
      "key": "https://widocznosc.ai/news/pozew-zbiorowy-wokol-ksiazek-uzytych-do-trenowania-gemini/",
      "clicks": 0,
-     "impressions": 1,
+     "impressions": 2,
      "ctr": 0,
-     "position": 41
+     "position": 22.5
     },
     {
      "key": "https://widocznosc.ai/news/raport-openai-o-zmianach-na-rynku-pracy-w-ue/",
@@ -7167,6 +7300,13 @@
      "position": 6
     },
     {
+     "key": "https://widocznosc.ai/news/uber-pokazuje-gdzie-ai-ma-byc-naprawde-widoczne/",
+     "clicks": 0,
+     "impressions": 1,
+     "ctr": 0,
+     "position": 2
+    },
+    {
      "key": "https://widocznosc.ai/news/ue-spiera-sie-o-to-czym-jest-deepfake/",
      "clicks": 0,
      "impressions": 10,
@@ -7183,44 +7323,44 @@
     {
      "key": "https://widocznosc.ai/o-nas/",
      "clicks": 0,
-     "impressions": 26,
+     "impressions": 25,
      "ctr": 0,
-     "position": 17.6
+     "position": 18.1
     },
     {
      "key": "https://widocznosc.ai/polityka-prywatnosci/",
      "clicks": 0,
-     "impressions": 20,
+     "impressions": 19,
      "ctr": 0,
      "position": 6.6
     },
     {
      "key": "https://widocznosc.ai/pozycjonowanie-ai/bing-copilot/",
      "clicks": 0,
-     "impressions": 318,
+     "impressions": 320,
      "ctr": 0,
-     "position": 42.8
+     "position": 42.0
     },
     {
      "key": "https://widocznosc.ai/pozycjonowanie-ai/chatgpt/",
      "clicks": 0,
-     "impressions": 160,
+     "impressions": 157,
      "ctr": 0,
-     "position": 81.3
+     "position": 81.0
     },
     {
      "key": "https://widocznosc.ai/pozycjonowanie-ai/claude/",
      "clicks": 0,
-     "impressions": 17,
+     "impressions": 16,
      "ctr": 0,
-     "position": 14.2
+     "position": 14.4
     },
     {
      "key": "https://widocznosc.ai/pozycjonowanie-ai/perplexity/",
      "clicks": 0,
-     "impressions": 49,
+     "impressions": 51,
      "ctr": 0,
-     "position": 27.7
+     "position": 30.1
     },
     {
      "key": "https://widocznosc.ai/rag/chunking-strategie/",
@@ -7232,8 +7372,8 @@
    ],
    "query_history": {
     "window": {
-     "start": "2026-07-08",
-     "end": "2026-07-21"
+     "start": "2026-07-09",
+     "end": "2026-07-22"
     },
     "series": {
      "widoczność w ai": [
@@ -7264,14 +7404,14 @@
       [
        "2026-07-21",
        68
+      ],
+      [
+       "2026-07-22",
+       80
       ]
      ],
      "pozycjonowanie w bing": [
       [
-       "2026-07-08",
-       4
-      ],
-      [
        "2026-07-09",
        6
       ],
@@ -7322,14 +7462,14 @@
       [
        "2026-07-21",
        1
+      ],
+      [
+       "2026-07-22",
+       4
       ]
      ],
      "agencja ai": [
       [
-       "2026-07-08",
-       3
-      ],
-      [
        "2026-07-09",
        3
       ],
@@ -7380,13 +7520,13 @@
       [
        "2026-07-21",
        5
+      ],
+      [
+       "2026-07-22",
+       3
       ]
      ],
      "pozycjonowanie bing": [
-      [
-       "2026-07-08",
-       4
-      ],
       [
        "2026-07-09",
        3
@@ -7430,13 +7570,13 @@
       [
        "2026-07-20",
        2
+      ],
+      [
+       "2026-07-22",
+       3
       ]
      ],
      "pozycjonowanie w chatgpt": [
-      [
-       "2026-07-08",
-       1
-      ],
       [
        "2026-07-09",
        2
@@ -7488,13 +7628,13 @@
       [
        "2026-07-21",
        2
+      ],
+      [
+       "2026-07-22",
+       1
       ]
      ],
      "modele językowe": [
-      [
-       "2026-07-08",
-       2
-      ],
       [
        "2026-07-09",
        2
@@ -7546,60 +7686,10 @@
       [
        "2026-07-21",
        2
-      ]
-     ],
-     "pozycjonowanie chatgpt": [
+      ],
       [
-       "2026-07-08",
+       "2026-07-22",
        2
-      ],
-      [
-       "2026-07-09",
-       2
-      ],
-      [
-       "2026-07-11",
-       2
-      ],
-      [
-       "2026-07-12",
-       2
-      ],
-      [
-       "2026-07-13",
-       2
-      ],
-      [
-       "2026-07-14",
-       2
-      ],
-      [
-       "2026-07-15",
-       1
-      ],
-      [
-       "2026-07-16",
-       1
-      ],
-      [
-       "2026-07-17",
-       2
-      ],
-      [
-       "2026-07-18",
-       2
-      ],
-      [
-       "2026-07-19",
-       1
-      ],
-      [
-       "2026-07-20",
-       1
-      ],
-      [
-       "2026-07-21",
-       1
       ]
      ],
      "widoczność ai": [
@@ -7646,48 +7736,60 @@
       [
        "2026-07-21",
        1
+      ],
+      [
+       "2026-07-22",
+       2
       ]
      ],
-     "bing pozycjonowanie": [
-      [
-       "2026-07-08",
-       3
-      ],
+     "pozycjonowanie chatgpt": [
       [
        "2026-07-09",
        2
       ],
       [
-       "2026-07-10",
-       1
-      ],
-      [
        "2026-07-11",
-       1
-      ],
-      [
-       "2026-07-12",
-       1
-      ],
-      [
-       "2026-07-13",
-       3
-      ],
-      [
-       "2026-07-15",
        2
       ],
       [
+       "2026-07-12",
+       2
+      ],
+      [
+       "2026-07-13",
+       2
+      ],
+      [
+       "2026-07-14",
+       2
+      ],
+      [
+       "2026-07-15",
+       1
+      ],
+      [
        "2026-07-16",
+       1
+      ],
+      [
+       "2026-07-17",
        2
       ],
       [
        "2026-07-18",
+       2
+      ],
+      [
+       "2026-07-19",
+       1
+      ],
+      [
+       "2026-07-20",
        1
       ],
       [
        "2026-07-21",
-       2
+       1
       ]
      ],
      "bing copilot pozycjonowanie": [
@@ -7738,13 +7840,13 @@
       [
        "2026-07-21",
        1
+      ],
+      [
+       "2026-07-22",
+       1
       ]
      ],
      "pozycjonowanie w bing ai": [
-      [
-       "2026-07-08",
-       2
-      ],
       [
        "2026-07-09",
        1
@@ -7792,51 +7894,51 @@
       [
        "2026-07-21",
        1
+      ],
+      [
+       "2026-07-22",
+       3
       ]
      ],
-     "wdrożenie ai w firmie": [
+     "bing pozycjonowanie": [
       [
-       "2026-07-08",
-       1
+       "2026-07-09",
+       2
       ],
       [
        "2026-07-10",
-       2
+       1
       ],
       [
        "2026-07-11",
-       3
+       1
+      ],
+      [
+       "2026-07-12",
+       1
       ],
       [
        "2026-07-13",
-       2
-      ],
-      [
-       "2026-07-14",
-       1
+       3
       ],
       [
        "2026-07-15",
-       1
+       2
       ],
       [
-       "2026-07-17",
+       "2026-07-16",
        2
       ],
       [
        "2026-07-18",
-       2
+       1
       ],
       [
-       "2026-07-20",
-       1
+       "2026-07-21",
+       2
       ]
      ],
      "pozycjonowanie perplexity": [
-      [
-       "2026-07-08",
-       1
-      ],
       [
        "2026-07-09",
        1
@@ -7884,13 +7986,47 @@
       [
        "2026-07-21",
        1
+      ],
+      [
+       "2026-07-22",
+       1
+      ]
+     ],
+     "wdrożenie ai w firmie": [
+      [
+       "2026-07-10",
+       2
+      ],
+      [
+       "2026-07-11",
+       3
+      ],
+      [
+       "2026-07-13",
+       2
+      ],
+      [
+       "2026-07-14",
+       1
+      ],
+      [
+       "2026-07-15",
+       1
+      ],
+      [
+       "2026-07-17",
+       2
+      ],
+      [
+       "2026-07-18",
+       2
+      ],
+      [
+       "2026-07-20",
+       1
       ]
      ],
      "widoczność w chatgpt": [
-      [
-       "2026-07-08",
-       1
-      ],
       [
        "2026-07-09",
        1
@@ -7918,13 +8054,13 @@
       [
        "2026-07-20",
        3
+      ],
+      [
+       "2026-07-22",
+       1
       ]
      ],
      "widoczność w wynik wyszukiwać": [
-      [
-       "2026-07-08",
-       1
-      ],
       [
        "2026-07-09",
        1
@@ -7954,75 +8090,7 @@
        1
       ]
      ],
-     "optymalizacja pod bing": [
-      [
-       "2026-07-08",
-       2
-      ],
-      [
-       "2026-07-09",
-       1
-      ],
-      [
-       "2026-07-11",
-       2
-      ],
-      [
-       "2026-07-12",
-       2
-      ],
-      [
-       "2026-07-15",
-       1
-      ],
-      [
-       "2026-07-17",
-       1
-      ],
-      [
-       "2026-07-20",
-       1
-      ]
-     ],
-     "pozycjonowanie sklepów w bing": [
-      [
-       "2026-07-08",
-       1
-      ],
-      [
-       "2026-07-09",
-       1
-      ],
-      [
-       "2026-07-11",
-       1
-      ],
-      [
-       "2026-07-12",
-       1
-      ],
-      [
-       "2026-07-15",
-       1
-      ],
-      [
-       "2026-07-17",
-       1
-      ],
-      [
-       "2026-07-18",
-       2
-      ],
-      [
-       "2026-07-20",
-       2
-      ]
-     ],
      "pozycjonowanie chat gpt": [
-      [
-       "2026-07-08",
-       1
-      ],
       [
        "2026-07-09",
        1
@@ -8054,13 +8122,69 @@
       [
        "2026-07-21",
        1
+      ],
+      [
+       "2026-07-22",
+       1
+      ]
+     ],
+     "pozycjonowanie sklepów w bing": [
+      [
+       "2026-07-09",
+       1
+      ],
+      [
+       "2026-07-11",
+       1
+      ],
+      [
+       "2026-07-12",
+       1
+      ],
+      [
+       "2026-07-15",
+       1
+      ],
+      [
+       "2026-07-17",
+       1
+      ],
+      [
+       "2026-07-18",
+       2
+      ],
+      [
+       "2026-07-20",
+       2
+      ]
+     ],
+     "optymalizacja pod bing": [
+      [
+       "2026-07-09",
+       1
+      ],
+      [
+       "2026-07-11",
+       2
+      ],
+      [
+       "2026-07-12",
+       2
+      ],
+      [
+       "2026-07-15",
+       1
+      ],
+      [
+       "2026-07-17",
+       1
+      ],
+      [
+       "2026-07-20",
+       1
       ]
      ],
      "pozycjonowanie stron w bing": [
-      [
-       "2026-07-08",
-       1
-      ],
       [
        "2026-07-09",
        1
@@ -8128,21 +8252,25 @@
        1
       ]
      ],
-     "\"icea\" -site:reddit.com -site:twitter.com -site:x.com -site:wykop.pl -site:tripadvisor.com -site:youtube.com -site:yelp.com -site:booking.com -site:facebook.com -site:instagram.com -site:tiktok.com": [
+     "widoczność marki w ai": [
       [
-       "2026-07-08",
-       1
-      ],
-      [
-       "2026-07-09",
-       1
-      ],
-      [
-       "2026-07-12",
+       "2026-07-14",
        1
       ],
       [
        "2026-07-17",
+       1
+      ],
+      [
+       "2026-07-18",
+       1
+      ],
+      [
+       "2026-07-20",
+       1
+      ],
+      [
+       "2026-07-22",
        1
       ]
      ],
@@ -8178,21 +8306,17 @@
        1
       ]
      ],
-     "widoczność marki w ai": [
+     "\"icea\" -site:reddit.com -site:twitter.com -site:x.com -site:wykop.pl -site:tripadvisor.com -site:youtube.com -site:yelp.com -site:booking.com -site:facebook.com -site:instagram.com -site:tiktok.com": [
       [
-       "2026-07-14",
+       "2026-07-09",
+       1
+      ],
+      [
+       "2026-07-12",
        1
       ],
       [
        "2026-07-17",
-       1
-      ],
-      [
-       "2026-07-18",
-       1
-      ],
-      [
-       "2026-07-20",
        1
       ]
      ],
@@ -8252,20 +8376,6 @@
        3
       ]
      ],
-     "tomasz czechowski": [
-      [
-       "2026-07-08",
-       1
-      ],
-      [
-       "2026-07-11",
-       1
-      ],
-      [
-       "2026-07-16",
-       1
-      ]
-     ],
      "co to jest llm": [
       [
        "2026-07-11",
@@ -8282,20 +8392,20 @@
        2
       ]
      ],
-     "llm co to": [
+     "jak sprawdzić widoczność marki w chatgpt": [
       [
-       "2026-07-08",
-       1
-      ],
+       "2026-07-22",
+       2
+      ]
+     ],
+     "tomasz czechowski": [
       [
        "2026-07-11",
        1
-      ]
-     ],
-     "system agentów ai": [
+      ],
       [
-       "2026-07-08",
-       2
+       "2026-07-16",
+       1
       ]
      ],
      "widoczność w chatgpt legnica": [
@@ -8308,21 +8418,9 @@
        1
       ]
      ],
-     "ai w firmie": [
-      [
-       "2026-07-08",
-       1
-      ]
-     ],
      "bing copilot": [
       [
        "2026-07-17",
-       1
-      ]
-     ],
-     "brockman": [
-      [
-       "2026-07-08",
        1
       ]
      ],
@@ -8347,6 +8445,12 @@
      "k3 model": [
       [
        "2026-07-20",
+       1
+      ]
+     ],
+     "llm co to": [
+      [
+       "2026-07-11",
        1
       ]
      ],
@@ -8397,44 +8501,50 @@
        "2026-07-13",
        1
       ]
+     ],
+     "wyszukiwarka semantyczna": [
+      [
+       "2026-07-22",
+       1
+      ]
      ]
     }
    },
    "compare": {
     "window_days": 90,
     "cur": {
-     "start": "2026-04-23",
-     "end": "2026-07-21"
+     "start": "2026-04-24",
+     "end": "2026-07-22"
     },
     "qoq": {
      "prev": {
-      "start": "2026-01-23",
-      "end": "2026-04-22"
+      "start": "2026-01-24",
+      "end": "2026-04-23"
      },
      "queries": [
       {
        "key": "widoczność w ai",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 412,
+       "impressions": 492,
        "prev_impressions": 0,
-       "position": 6.4,
+       "position": 6.1,
        "prev_position": null
       },
       {
        "key": "pozycjonowanie w bing",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 82,
+       "impressions": 86,
        "prev_impressions": 0,
-       "position": 41.7,
+       "position": 41.4,
        "prev_position": null
       },
       {
        "key": "pozycjonowanie w chatgpt",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 77,
+       "impressions": 78,
        "prev_impressions": 0,
        "position": 92.8,
        "prev_position": null
@@ -8443,16 +8553,16 @@
        "key": "pozycjonowanie bing",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 69,
+       "impressions": 72,
        "prev_impressions": 0,
-       "position": 46.6,
+       "position": 46.4,
        "prev_position": null
       },
       {
        "key": "modele językowe",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 60,
+       "impressions": 62,
        "prev_impressions": 0,
        "position": 69.3,
        "prev_position": null
@@ -8461,36 +8571,36 @@
        "key": "agencja ai",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 57,
+       "impressions": 60,
        "prev_impressions": 0,
-       "position": 80.1,
+       "position": 80.4,
        "prev_position": null
       },
       {
        "key": "widoczność w chatgpt",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 41,
+       "impressions": 42,
        "prev_impressions": 0,
-       "position": 79.3,
-       "prev_position": null
-      },
-      {
-       "key": "bing copilot pozycjonowanie",
-       "clicks": 0,
-       "prev_clicks": 0,
-       "impressions": 36,
-       "prev_impressions": 0,
-       "position": 26.2,
+       "position": 77.9,
        "prev_position": null
       },
       {
        "key": "pozycjonowanie w bing ai",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 36,
+       "impressions": 39,
        "prev_impressions": 0,
-       "position": 45.7,
+       "position": 44.1,
+       "prev_position": null
+      },
+      {
+       "key": "bing copilot pozycjonowanie",
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 37,
+       "prev_impressions": 0,
+       "position": 25.8,
        "prev_position": null
       },
       {
@@ -8512,21 +8622,21 @@
        "prev_position": null
       },
       {
+       "key": "widoczność ai",
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 24,
+       "prev_impressions": 0,
+       "position": 8.2,
+       "prev_position": null
+      },
+      {
        "key": "pozycjonowanie stron w bing",
        "clicks": 0,
        "prev_clicks": 0,
        "impressions": 23,
        "prev_impressions": 0,
        "position": 62.6,
-       "prev_position": null
-      },
-      {
-       "key": "widoczność ai",
-       "clicks": 0,
-       "prev_clicks": 0,
-       "impressions": 22,
-       "prev_impressions": 0,
-       "position": 8.4,
        "prev_position": null
       },
       {
@@ -8551,9 +8661,9 @@
        "key": "pozycjonowanie perplexity",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 17,
+       "impressions": 18,
        "prev_impressions": 0,
-       "position": 44.7,
+       "position": 42.9,
        "prev_position": null
       },
       {
@@ -8578,9 +8688,9 @@
        "key": "pozycjonowanie chat gpt",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 15,
+       "impressions": 16,
        "prev_impressions": 0,
-       "position": 85.6,
+       "position": 84.6,
        "prev_position": null
       },
       {
@@ -8620,21 +8730,21 @@
        "prev_position": null
       },
       {
+       "key": "widoczność marki w ai",
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 7,
+       "prev_impressions": 0,
+       "position": 36,
+       "prev_position": null
+      },
+      {
        "key": "\"icea\" -site:reddit.com -site:twitter.com -site:x.com -site:wykop.pl -site:tripadvisor.com -site:youtube.com -site:yelp.com -site:booking.com -site:facebook.com -site:instagram.com -site:tiktok.com",
        "clicks": 0,
        "prev_clicks": 0,
        "impressions": 6,
        "prev_impressions": 0,
        "position": 1.3,
-       "prev_position": null
-      },
-      {
-       "key": "widoczność marki w ai",
-       "clicks": 0,
-       "prev_clicks": 0,
-       "impressions": 6,
-       "prev_impressions": 0,
-       "position": 37.3,
        "prev_position": null
       },
       {
@@ -8782,6 +8892,15 @@
        "prev_position": null
       },
       {
+       "key": "wyszukiwarka semantyczna",
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 3,
+       "prev_impressions": 0,
+       "position": 97,
+       "prev_position": null
+      },
+      {
        "key": "bing copilot",
        "clicks": 0,
        "prev_clicks": 0,
@@ -8797,6 +8916,15 @@
        "impressions": 2,
        "prev_impressions": 0,
        "position": 9.5,
+       "prev_position": null
+      },
+      {
+       "key": "jak sprawdzić widoczność marki w chatgpt",
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 2,
+       "prev_impressions": 0,
+       "position": 89,
        "prev_position": null
       },
       {
@@ -8851,15 +8979,6 @@
        "impressions": 2,
        "prev_impressions": 0,
        "position": 8,
-       "prev_position": null
-      },
-      {
-       "key": "wyszukiwarka semantyczna",
-       "clicks": 0,
-       "prev_clicks": 0,
-       "impressions": 2,
-       "prev_impressions": 0,
-       "position": 99.5,
        "prev_position": null
       },
       {
@@ -9084,27 +9203,27 @@
        "key": "https://widocznosc.ai/",
        "clicks": 7,
        "prev_clicks": 0,
-       "impressions": 583,
+       "impressions": 669,
        "prev_impressions": 0,
-       "position": 11.4,
+       "position": 10.7,
        "prev_position": null
       },
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/bing-copilot/",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 340,
+       "impressions": 351,
        "prev_impressions": 0,
-       "position": 43.4,
+       "position": 43.0,
        "prev_position": null
       },
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/chatgpt/",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 168,
+       "impressions": 171,
        "prev_impressions": 0,
-       "position": 81.1,
+       "position": 80.7,
        "prev_position": null
       },
       {
@@ -9120,25 +9239,25 @@
        "key": "https://widocznosc.ai/agenci-ai/",
        "clicks": 1,
        "prev_clicks": 0,
-       "impressions": 107,
+       "impressions": 110,
        "prev_impressions": 0,
-       "position": 45.4,
+       "position": 46.5,
        "prev_position": null
       },
       {
        "key": "https://widocznosc.ai/modele-llm/",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 80,
+       "impressions": 82,
        "prev_impressions": 0,
-       "position": 59.9,
+       "position": 60.1,
        "prev_position": null
       },
       {
        "key": "https://widocznosc.ai/modele-llm/claude-vs-gemini/",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 67,
+       "impressions": 69,
        "prev_impressions": 0,
        "position": 6.8,
        "prev_position": null
@@ -9165,9 +9284,9 @@
        "key": "https://widocznosc.ai/pozycjonowanie-ai/perplexity/",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 50,
+       "impressions": 53,
        "prev_impressions": 0,
-       "position": 27.3,
+       "position": 29.3,
        "prev_position": null
       },
       {
@@ -9177,6 +9296,15 @@
        "impressions": 49,
        "prev_impressions": 0,
        "position": 20.1,
+       "prev_position": null
+      },
+      {
+       "key": "https://widocznosc.ai/narzedzia/brand-check/",
+       "clicks": 1,
+       "prev_clicks": 0,
+       "impressions": 46,
+       "prev_impressions": 0,
+       "position": 19.6,
        "prev_position": null
       },
       {
@@ -9195,15 +9323,6 @@
        "impressions": 41,
        "prev_impressions": 0,
        "position": 5.9,
-       "prev_position": null
-      },
-      {
-       "key": "https://widocznosc.ai/narzedzia/brand-check/",
-       "clicks": 1,
-       "prev_clicks": 0,
-       "impressions": 40,
-       "prev_impressions": 0,
-       "position": 17.4,
        "prev_position": null
       },
       {
@@ -9228,9 +9347,9 @@
        "key": "https://widocznosc.ai/autor/mateusz-wisniewski/",
        "clicks": 1,
        "prev_clicks": 0,
-       "impressions": 32,
+       "impressions": 34,
        "prev_impressions": 0,
-       "position": 11.5,
+       "position": 12.4,
        "prev_position": null
       },
       {
@@ -9261,21 +9380,21 @@
        "prev_position": null
       },
       {
+       "key": "https://widocznosc.ai/news/amazon-rozwija-magazynowego-robota-proteus/",
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 25,
+       "prev_impressions": 0,
+       "position": 5.9,
+       "prev_position": null
+      },
+      {
        "key": "https://widocznosc.ai/ai-w-biznesie/",
        "clicks": 0,
        "prev_clicks": 0,
        "impressions": 24,
        "prev_impressions": 0,
        "position": 82.4,
-       "prev_position": null
-      },
-      {
-       "key": "https://widocznosc.ai/news/amazon-rozwija-magazynowego-robota-proteus/",
-       "clicks": 0,
-       "prev_clicks": 0,
-       "impressions": 24,
-       "prev_impressions": 0,
-       "position": 5.7,
        "prev_position": null
       },
       {
@@ -9396,12 +9515,30 @@
        "prev_position": null
       },
       {
+       "key": "https://widocznosc.ai/modele-llm/grok/",
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 14,
+       "prev_impressions": 0,
+       "position": 9.1,
+       "prev_position": null
+      },
+      {
        "key": "https://widocznosc.ai/geo/narzedzia-monitoring-wzmianek/",
        "clicks": 0,
        "prev_clicks": 0,
        "impressions": 13,
        "prev_impressions": 0,
        "position": 4.9,
+       "prev_position": null
+      },
+      {
+       "key": "https://widocznosc.ai/modele-llm/claude-vs-chatgpt-programowanie/",
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 13,
+       "prev_impressions": 0,
+       "position": 12.2,
        "prev_position": null
       },
       {
@@ -9441,30 +9578,12 @@
        "prev_position": null
       },
       {
-       "key": "https://widocznosc.ai/modele-llm/grok/",
-       "clicks": 0,
-       "prev_clicks": 0,
-       "impressions": 12,
-       "prev_impressions": 0,
-       "position": 9.2,
-       "prev_position": null
-      },
-      {
        "key": "https://widocznosc.ai/news/anthropic-wylacza-fable-i-mythos-po-decyzji-administracji/",
        "clicks": 1,
        "prev_clicks": 0,
        "impressions": 11,
        "prev_impressions": 0,
        "position": 22.7,
-       "prev_position": null
-      },
-      {
-       "key": "https://widocznosc.ai/modele-llm/claude-vs-chatgpt-programowanie/",
-       "clicks": 0,
-       "prev_clicks": 0,
-       "impressions": 11,
-       "prev_impressions": 0,
-       "position": 12.8,
        "prev_position": null
       },
       {
@@ -9495,6 +9614,15 @@
        "prev_position": null
       },
       {
+       "key": "https://widocznosc.ai/news/openrouter-z-routera-w-platforme-ai/",
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 9,
+       "prev_impressions": 0,
+       "position": 32.7,
+       "prev_position": null
+      },
+      {
        "key": "https://widocznosc.ai/ai-w-biznesie/ai-w-hr/",
        "clicks": 0,
        "prev_clicks": 0,
@@ -9510,15 +9638,6 @@
        "impressions": 8,
        "prev_impressions": 0,
        "position": 27.8,
-       "prev_position": null
-      },
-      {
-       "key": "https://widocznosc.ai/news/openrouter-z-routera-w-platforme-ai/",
-       "clicks": 0,
-       "prev_clicks": 0,
-       "impressions": 8,
-       "prev_impressions": 0,
-       "position": 35.8,
        "prev_position": null
       },
       {
@@ -9648,6 +9767,15 @@
        "prev_position": null
       },
       {
+       "key": "https://widocznosc.ai/news/koreanski-skok-inwestycyjny-w-pamieci-dla-ai/",
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 4,
+       "prev_impressions": 0,
+       "position": 22.5,
+       "prev_position": null
+      },
+      {
        "key": "https://widocznosc.ai/news/spor-o-centrum-danych-zaostrzyl-lokalny-konflikt/",
        "clicks": 0,
        "prev_clicks": 0,
@@ -9708,15 +9836,6 @@
        "impressions": 3,
        "prev_impressions": 0,
        "position": 28.3,
-       "prev_position": null
-      },
-      {
-       "key": "https://widocznosc.ai/news/koreanski-skok-inwestycyjny-w-pamieci-dla-ai/",
-       "clicks": 0,
-       "prev_clicks": 0,
-       "impressions": 3,
-       "prev_impressions": 0,
-       "position": 27.3,
        "prev_position": null
       },
       {
@@ -9828,6 +9947,15 @@
        "prev_position": null
       },
       {
+       "key": "https://widocznosc.ai/news/pozew-zbiorowy-wokol-ksiazek-uzytych-do-trenowania-gemini/",
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 2,
+       "prev_impressions": 0,
+       "position": 22.5,
+       "prev_position": null
+      },
+      {
        "key": "https://widocznosc.ai/news/roboty-w-fabryce-ev-po-zwolnieniach-pracownikow/",
        "clicks": 0,
        "prev_clicks": 0,
@@ -9873,45 +10001,45 @@
        "prev_position": null
       },
       {
-       "key": "https://widocznosc.ai/news/pozew-zbiorowy-wokol-ksiazek-uzytych-do-trenowania-gemini/",
+       "key": "https://widocznosc.ai/news/uber-pokazuje-gdzie-ai-ma-byc-naprawde-widoczne/",
        "clicks": 0,
        "prev_clicks": 0,
        "impressions": 1,
        "prev_impressions": 0,
-       "position": 41,
+       "position": 2,
        "prev_position": null
       }
      ]
     },
     "yoy": {
      "prev": {
-      "start": "2025-04-23",
-      "end": "2025-07-21"
+      "start": "2025-04-24",
+      "end": "2025-07-22"
      },
      "queries": [
       {
        "key": "widoczność w ai",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 412,
+       "impressions": 492,
        "prev_impressions": 0,
-       "position": 6.4,
+       "position": 6.1,
        "prev_position": null
       },
       {
        "key": "pozycjonowanie w bing",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 82,
+       "impressions": 86,
        "prev_impressions": 0,
-       "position": 41.7,
+       "position": 41.4,
        "prev_position": null
       },
       {
        "key": "pozycjonowanie w chatgpt",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 77,
+       "impressions": 78,
        "prev_impressions": 0,
        "position": 92.8,
        "prev_position": null
@@ -9920,16 +10048,16 @@
        "key": "pozycjonowanie bing",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 69,
+       "impressions": 72,
        "prev_impressions": 0,
-       "position": 46.6,
+       "position": 46.4,
        "prev_position": null
       },
       {
        "key": "modele językowe",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 60,
+       "impressions": 62,
        "prev_impressions": 0,
        "position": 69.3,
        "prev_position": null
@@ -9938,36 +10066,36 @@
        "key": "agencja ai",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 57,
+       "impressions": 60,
        "prev_impressions": 0,
-       "position": 80.1,
+       "position": 80.4,
        "prev_position": null
       },
       {
        "key": "widoczność w chatgpt",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 41,
+       "impressions": 42,
        "prev_impressions": 0,
-       "position": 79.3,
-       "prev_position": null
-      },
-      {
-       "key": "bing copilot pozycjonowanie",
-       "clicks": 0,
-       "prev_clicks": 0,
-       "impressions": 36,
-       "prev_impressions": 0,
-       "position": 26.2,
+       "position": 77.9,
        "prev_position": null
       },
       {
        "key": "pozycjonowanie w bing ai",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 36,
+       "impressions": 39,
        "prev_impressions": 0,
-       "position": 45.7,
+       "position": 44.1,
+       "prev_position": null
+      },
+      {
+       "key": "bing copilot pozycjonowanie",
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 37,
+       "prev_impressions": 0,
+       "position": 25.8,
        "prev_position": null
       },
       {
@@ -9989,21 +10117,21 @@
        "prev_position": null
       },
       {
+       "key": "widoczność ai",
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 24,
+       "prev_impressions": 0,
+       "position": 8.2,
+       "prev_position": null
+      },
+      {
        "key": "pozycjonowanie stron w bing",
        "clicks": 0,
        "prev_clicks": 0,
        "impressions": 23,
        "prev_impressions": 0,
        "position": 62.6,
-       "prev_position": null
-      },
-      {
-       "key": "widoczność ai",
-       "clicks": 0,
-       "prev_clicks": 0,
-       "impressions": 22,
-       "prev_impressions": 0,
-       "position": 8.4,
        "prev_position": null
       },
       {
@@ -10028,9 +10156,9 @@
        "key": "pozycjonowanie perplexity",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 17,
+       "impressions": 18,
        "prev_impressions": 0,
-       "position": 44.7,
+       "position": 42.9,
        "prev_position": null
       },
       {
@@ -10055,9 +10183,9 @@
        "key": "pozycjonowanie chat gpt",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 15,
+       "impressions": 16,
        "prev_impressions": 0,
-       "position": 85.6,
+       "position": 84.6,
        "prev_position": null
       },
       {
@@ -10097,21 +10225,21 @@
        "prev_position": null
       },
       {
+       "key": "widoczność marki w ai",
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 7,
+       "prev_impressions": 0,
+       "position": 36,
+       "prev_position": null
+      },
+      {
        "key": "\"icea\" -site:reddit.com -site:twitter.com -site:x.com -site:wykop.pl -site:tripadvisor.com -site:youtube.com -site:yelp.com -site:booking.com -site:facebook.com -site:instagram.com -site:tiktok.com",
        "clicks": 0,
        "prev_clicks": 0,
        "impressions": 6,
        "prev_impressions": 0,
        "position": 1.3,
-       "prev_position": null
-      },
-      {
-       "key": "widoczność marki w ai",
-       "clicks": 0,
-       "prev_clicks": 0,
-       "impressions": 6,
-       "prev_impressions": 0,
-       "position": 37.3,
        "prev_position": null
       },
       {
@@ -10259,6 +10387,15 @@
        "prev_position": null
       },
       {
+       "key": "wyszukiwarka semantyczna",
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 3,
+       "prev_impressions": 0,
+       "position": 97,
+       "prev_position": null
+      },
+      {
        "key": "bing copilot",
        "clicks": 0,
        "prev_clicks": 0,
@@ -10274,6 +10411,15 @@
        "impressions": 2,
        "prev_impressions": 0,
        "position": 9.5,
+       "prev_position": null
+      },
+      {
+       "key": "jak sprawdzić widoczność marki w chatgpt",
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 2,
+       "prev_impressions": 0,
+       "position": 89,
        "prev_position": null
       },
       {
@@ -10328,15 +10474,6 @@
        "impressions": 2,
        "prev_impressions": 0,
        "position": 8,
-       "prev_position": null
-      },
-      {
-       "key": "wyszukiwarka semantyczna",
-       "clicks": 0,
-       "prev_clicks": 0,
-       "impressions": 2,
-       "prev_impressions": 0,
-       "position": 99.5,
        "prev_position": null
       },
       {
@@ -10561,27 +10698,27 @@
        "key": "https://widocznosc.ai/",
        "clicks": 7,
        "prev_clicks": 0,
-       "impressions": 583,
+       "impressions": 669,
        "prev_impressions": 0,
-       "position": 11.4,
+       "position": 10.7,
        "prev_position": null
       },
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/bing-copilot/",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 340,
+       "impressions": 351,
        "prev_impressions": 0,
-       "position": 43.4,
+       "position": 43.0,
        "prev_position": null
       },
       {
        "key": "https://widocznosc.ai/pozycjonowanie-ai/chatgpt/",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 168,
+       "impressions": 171,
        "prev_impressions": 0,
-       "position": 81.1,
+       "position": 80.7,
        "prev_position": null
       },
       {
@@ -10597,25 +10734,25 @@
        "key": "https://widocznosc.ai/agenci-ai/",
        "clicks": 1,
        "prev_clicks": 0,
-       "impressions": 107,
+       "impressions": 110,
        "prev_impressions": 0,
-       "position": 45.4,
+       "position": 46.5,
        "prev_position": null
       },
       {
        "key": "https://widocznosc.ai/modele-llm/",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 80,
+       "impressions": 82,
        "prev_impressions": 0,
-       "position": 59.9,
+       "position": 60.1,
        "prev_position": null
       },
       {
        "key": "https://widocznosc.ai/modele-llm/claude-vs-gemini/",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 67,
+       "impressions": 69,
        "prev_impressions": 0,
        "position": 6.8,
        "prev_position": null
@@ -10642,9 +10779,9 @@
        "key": "https://widocznosc.ai/pozycjonowanie-ai/perplexity/",
        "clicks": 0,
        "prev_clicks": 0,
-       "impressions": 50,
+       "impressions": 53,
        "prev_impressions": 0,
-       "position": 27.3,
+       "position": 29.3,
        "prev_position": null
       },
       {
@@ -10654,6 +10791,15 @@
        "impressions": 49,
        "prev_impressions": 0,
        "position": 20.1,
+       "prev_position": null
+      },
+      {
+       "key": "https://widocznosc.ai/narzedzia/brand-check/",
+       "clicks": 1,
+       "prev_clicks": 0,
+       "impressions": 46,
+       "prev_impressions": 0,
+       "position": 19.6,
        "prev_position": null
       },
       {
@@ -10672,15 +10818,6 @@
        "impressions": 41,
        "prev_impressions": 0,
        "position": 5.9,
-       "prev_position": null
-      },
-      {
-       "key": "https://widocznosc.ai/narzedzia/brand-check/",
-       "clicks": 1,
-       "prev_clicks": 0,
-       "impressions": 40,
-       "prev_impressions": 0,
-       "position": 17.4,
        "prev_position": null
       },
       {
@@ -10705,9 +10842,9 @@
        "key": "https://widocznosc.ai/autor/mateusz-wisniewski/",
        "clicks": 1,
        "prev_clicks": 0,
-       "impressions": 32,
+       "impressions": 34,
        "prev_impressions": 0,
-       "position": 11.5,
+       "position": 12.4,
        "prev_position": null
       },
       {
@@ -10738,21 +10875,21 @@
        "prev_position": null
       },
       {
+       "key": "https://widocznosc.ai/news/amazon-rozwija-magazynowego-robota-proteus/",
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 25,
+       "prev_impressions": 0,
+       "position": 5.9,
+       "prev_position": null
+      },
+      {
        "key": "https://widocznosc.ai/ai-w-biznesie/",
        "clicks": 0,
        "prev_clicks": 0,
        "impressions": 24,
        "prev_impressions": 0,
        "position": 82.4,
-       "prev_position": null
-      },
-      {
-       "key": "https://widocznosc.ai/news/amazon-rozwija-magazynowego-robota-proteus/",
-       "clicks": 0,
-       "prev_clicks": 0,
-       "impressions": 24,
-       "prev_impressions": 0,
-       "position": 5.7,
        "prev_position": null
       },
       {
@@ -10873,12 +11010,30 @@
        "prev_position": null
       },
       {
+       "key": "https://widocznosc.ai/modele-llm/grok/",
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 14,
+       "prev_impressions": 0,
+       "position": 9.1,
+       "prev_position": null
+      },
+      {
        "key": "https://widocznosc.ai/geo/narzedzia-monitoring-wzmianek/",
        "clicks": 0,
        "prev_clicks": 0,
        "impressions": 13,
        "prev_impressions": 0,
        "position": 4.9,
+       "prev_position": null
+      },
+      {
+       "key": "https://widocznosc.ai/modele-llm/claude-vs-chatgpt-programowanie/",
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 13,
+       "prev_impressions": 0,
+       "position": 12.2,
        "prev_position": null
       },
       {
@@ -10918,30 +11073,12 @@
        "prev_position": null
       },
       {
-       "key": "https://widocznosc.ai/modele-llm/grok/",
-       "clicks": 0,
-       "prev_clicks": 0,
-       "impressions": 12,
-       "prev_impressions": 0,
-       "position": 9.2,
-       "prev_position": null
-      },
-      {
        "key": "https://widocznosc.ai/news/anthropic-wylacza-fable-i-mythos-po-decyzji-administracji/",
        "clicks": 1,
        "prev_clicks": 0,
        "impressions": 11,
        "prev_impressions": 0,
        "position": 22.7,
-       "prev_position": null
-      },
-      {
-       "key": "https://widocznosc.ai/modele-llm/claude-vs-chatgpt-programowanie/",
-       "clicks": 0,
-       "prev_clicks": 0,
-       "impressions": 11,
-       "prev_impressions": 0,
-       "position": 12.8,
        "prev_position": null
       },
       {
@@ -10972,6 +11109,15 @@
        "prev_position": null
       },
       {
+       "key": "https://widocznosc.ai/news/openrouter-z-routera-w-platforme-ai/",
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 9,
+       "prev_impressions": 0,
+       "position": 32.7,
+       "prev_position": null
+      },
+      {
        "key": "https://widocznosc.ai/ai-w-biznesie/ai-w-hr/",
        "clicks": 0,
        "prev_clicks": 0,
@@ -10987,15 +11133,6 @@
        "impressions": 8,
        "prev_impressions": 0,
        "position": 27.8,
-       "prev_position": null
-      },
-      {
-       "key": "https://widocznosc.ai/news/openrouter-z-routera-w-platforme-ai/",
-       "clicks": 0,
-       "prev_clicks": 0,
-       "impressions": 8,
-       "prev_impressions": 0,
-       "position": 35.8,
        "prev_position": null
       },
       {
@@ -11125,6 +11262,15 @@
        "prev_position": null
       },
       {
+       "key": "https://widocznosc.ai/news/koreanski-skok-inwestycyjny-w-pamieci-dla-ai/",
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 4,
+       "prev_impressions": 0,
+       "position": 22.5,
+       "prev_position": null
+      },
+      {
        "key": "https://widocznosc.ai/news/spor-o-centrum-danych-zaostrzyl-lokalny-konflikt/",
        "clicks": 0,
        "prev_clicks": 0,
@@ -11185,15 +11331,6 @@
        "impressions": 3,
        "prev_impressions": 0,
        "position": 28.3,
-       "prev_position": null
-      },
-      {
-       "key": "https://widocznosc.ai/news/koreanski-skok-inwestycyjny-w-pamieci-dla-ai/",
-       "clicks": 0,
-       "prev_clicks": 0,
-       "impressions": 3,
-       "prev_impressions": 0,
-       "position": 27.3,
        "prev_position": null
       },
       {
@@ -11305,6 +11442,15 @@
        "prev_position": null
       },
       {
+       "key": "https://widocznosc.ai/news/pozew-zbiorowy-wokol-ksiazek-uzytych-do-trenowania-gemini/",
+       "clicks": 0,
+       "prev_clicks": 0,
+       "impressions": 2,
+       "prev_impressions": 0,
+       "position": 22.5,
+       "prev_position": null
+      },
+      {
        "key": "https://widocznosc.ai/news/roboty-w-fabryce-ev-po-zwolnieniach-pracownikow/",
        "clicks": 0,
        "prev_clicks": 0,
@@ -11350,12 +11496,12 @@
        "prev_position": null
       },
       {
-       "key": "https://widocznosc.ai/news/pozew-zbiorowy-wokol-ksiazek-uzytych-do-trenowania-gemini/",
+       "key": "https://widocznosc.ai/news/uber-pokazuje-gdzie-ai-ma-byc-naprawde-widoczne/",
        "clicks": 0,
        "prev_clicks": 0,
        "impressions": 1,
        "prev_impressions": 0,
-       "position": 41,
+       "position": 2,
        "prev_position": null
       }
      ]
@@ -11386,14 +11532,29 @@
    "script_errors": "0",
    "url": [
     {
-     "name": "https://widocznosc.ai/geo/co-google-przemilcza/",
-     "sessions": 13,
-     "users": 13
+     "name": "https://widocznosc.ai/",
+     "sessions": 15,
+     "users": 20
     },
     {
-     "name": "https://widocznosc.ai/",
-     "sessions": 10,
-     "users": 16
+     "name": "https://widocznosc.ai/geo/co-google-przemilcza/",
+     "sessions": 11,
+     "users": 11
+    },
+    {
+     "name": "https://widocznosc.ai/narzedzia/",
+     "sessions": 4,
+     "users": 4
+    },
+    {
+     "name": "https://widocznosc.ai/narzedzia/brand-check/",
+     "sessions": 3,
+     "users": 3
+    },
+    {
+     "name": "https://widocznosc.ai/geo/audyt-widocznosci-marki/#krok-4--audyt-techniczny-dost%C4%99pno%C5%9Bci-dla-bot%C3%B3w-ai",
+     "sessions": 2,
+     "users": 1
     },
     {
      "name": "https://widocznosc.ai/kontakt/?type=full-report",
@@ -11401,17 +11562,17 @@
      "users": 2
     },
     {
-     "name": "https://widocznosc.ai/narzedzia/brand-check/",
+     "name": "https://widocznosc.ai/o-nas/",
      "sessions": 2,
-     "users": 2
+     "users": 1
     },
     {
-     "name": "https://widocznosc.ai/narzedzia/",
+     "name": "https://widocznosc.ai/narzedzia/ai-bots-check/",
      "sessions": 2,
-     "users": 2
+     "users": 1
     },
     {
-     "name": "https://widocznosc.ai/geo/audyt-widocznosci-marki/#krok-4--audyt-techniczny-dost%C4%99pno%C5%9Bci-dla-bot%C3%B3w-ai",
+     "name": "https://widocznosc.ai/news/",
      "sessions": 1,
      "users": 1
     },
@@ -11476,11 +11637,6 @@
      "users": 1
     },
     {
-     "name": "https://widocznosc.ai/o-nas/",
-     "sessions": 1,
-     "users": 1
-    },
-    {
      "name": "https://widocznosc.ai/modele-llm/claude-vs-chatgpt-programowanie/",
      "sessions": 1,
      "users": 1
@@ -11496,17 +11652,17 @@
      "users": 1
     },
     {
-     "name": "https://widocznosc.ai/narzedzia/ai-bots-check/",
-     "sessions": 1,
-     "users": 1
-    },
-    {
      "name": "https://widocznosc.ai/autor/mateusz-wisniewski/",
      "sessions": 1,
      "users": 1
     },
     {
      "name": "Nieznana wartość",
+     "sessions": 0,
+     "users": 5
+    },
+    {
+     "name": "https://widocznosc.ai/modele-llm/claude/",
      "sessions": 0,
      "users": 1
     },
@@ -11519,40 +11675,40 @@
    "referrer": [
     {
      "name": "Wejście bezpośrednie",
-     "sessions": 15,
-     "users": 23
+     "sessions": 17,
+     "users": 30
     },
     {
      "name": "google",
      "sessions": 11,
-     "users": 11
+     "users": 10
+    },
+    {
+     "name": "widocznosc.ai",
+     "sessions": 7,
+     "users": 7
     },
     {
      "name": "www.grupa-icea.pl",
      "sessions": 2,
      "users": 2
-    },
-    {
-     "name": "widocznosc.ai",
-     "sessions": 1,
-     "users": 1
     }
    ],
    "device": [
     {
      "name": "PC",
-     "sessions": 28,
-     "users": 32
+     "sessions": 33,
+     "users": 36
     },
     {
      "name": "Mobile",
-     "sessions": 0,
-     "users": 3
+     "sessions": 3,
+     "users": 5
     },
     {
      "name": "Other",
      "sessions": 0,
-     "users": 1
+     "users": 6
     }
    ]
   },
@@ -11653,109 +11809,81 @@
    "bots": [
     {
      "bot": "ChatGPT-User",
-     "requests": 45
-    },
-    {
-     "bot": "GPTBot",
-     "requests": 42
-    },
-    {
-     "bot": "Applebot",
-     "requests": 39
-    },
-    {
-     "bot": "MistralAI-User",
-     "requests": 32
-    },
-    {
-     "bot": "Claude-User",
-     "requests": 30
+     "requests": 44
     },
     {
      "bot": "OAI-SearchBot",
-     "requests": 29
-    },
-    {
-     "bot": "Perplexity-User",
-     "requests": 17
-    },
-    {
-     "bot": "cohere-ai",
-     "requests": 16
+     "requests": 36
     },
     {
      "bot": "PerplexityBot",
-     "requests": 7
-    },
-    {
-     "bot": "ClaudeBot",
-     "requests": 4
-    },
-    {
-     "bot": "Amazonbot",
      "requests": 2
+    },
+    {
+     "bot": "GPTBot",
+     "requests": 1
     }
    ],
    "paths": [
     {
-     "path": "/docker/.env",
-     "requests": 21
-    },
-    {
-     "path": "/.gitlab-ci.yml",
-     "requests": 21
-    },
-    {
-     "path": "/.env.production.bak",
-     "requests": 21
-    },
-    {
-     "path": "/values.yaml",
-     "requests": 18
-    },
-    {
-     "path": "/.aws/config",
-     "requests": 18
-    },
-    {
-     "path": "/key.json",
-     "requests": 18
-    },
-    {
-     "path": "/_profiler/latest",
-     "requests": 14
-    },
-    {
-     "path": "/api/account",
-     "requests": 14
-    },
-    {
-     "path": "/.env.swp",
-     "requests": 14
-    },
-    {
-     "path": "/.ssh/authorized_keys",
-     "requests": 14
-    },
-    {
-     "path": "/_profiler/open",
-     "requests": 14
-    },
-    {
-     "path": "/openapi.json",
-     "requests": 12
-    },
-    {
-     "path": "/backend/.env",
-     "requests": 12
-    },
-    {
-     "path": "/.claude.json",
-     "requests": 12
-    },
-    {
      "path": "/",
-     "requests": 9
+     "requests": 6
+    },
+    {
+     "path": "/modele-llm/",
+     "requests": 4
+    },
+    {
+     "path": "/kontakt/",
+     "requests": 3
+    },
+    {
+     "path": "/robots.txt",
+     "requests": 3
+    },
+    {
+     "path": "/modele-llm/chatgpt-vs-gemini/",
+     "requests": 2
+    },
+    {
+     "path": "/ai-w-biznesie/",
+     "requests": 2
+    },
+    {
+     "path": "/agenci-ai/",
+     "requests": 2
+    },
+    {
+     "path": "/blog/",
+     "requests": 2
+    },
+    {
+     "path": "/geo/audyt-widocznosci-marki/",
+     "requests": 2
+    },
+    {
+     "path": "/prompty/",
+     "requests": 2
+    },
+    {
+     "path": "/geo/share-of-voice/",
+     "requests": 2
+    },
+    {
+     "path": "/narzedzia/",
+     "requests": 2
+    },
+    {
+     "path": "/narzedzia/brand-check/",
+     "requests": 2
+    },
+    {
+     "path": "/agenci-ai/przewodnik/",
+     "requests": 2
+    },
+    {
+     "path": "/autor/piotr-wicenciak/",
+     "requests": 2
     }
    ]
   },
@@ -11777,62 +11905,60 @@
   "ga4": {
    "channels": [
     {
-     "channel": "Direct",
+     "channel": "Referral",
      "sessions": 3,
-     "users": 2,
-     "pageviews": 33
+     "users": 1,
+     "pageviews": 3
+    },
+    {
+     "channel": "Organic Search",
+     "sessions": 2,
+     "users": 0,
+     "pageviews": 2
+    },
+    {
+     "channel": "Unassigned",
+     "sessions": 2,
+     "users": 1,
+     "pageviews": 0
+    },
+    {
+     "channel": "Direct",
+     "sessions": 1,
+     "users": 0,
+     "pageviews": 1
     }
    ],
    "sources": [
     {
-     "source": "(direct)",
+     "source": "grupa-icea.pl",
      "sessions": 3,
-     "users": 2
+     "users": 1
+    },
+    {
+     "source": "(not set)",
+     "sessions": 2,
+     "users": 1
+    },
+    {
+     "source": "google",
+     "sessions": 2,
+     "users": 0
+    },
+    {
+     "source": "(direct)",
+     "sessions": 1,
+     "users": 0
     }
    ],
    "pages": [
     {
-     "path": "/narzedzia/brand-check/",
-     "pageviews": 5,
-     "users": 1
-    },
-    {
      "path": "/",
-     "pageviews": 4,
-     "users": 1
+     "pageviews": 2,
+     "users": 0
     },
     {
      "path": "/geo/audyt-widocznosci-marki/",
-     "pageviews": 2,
-     "users": 1
-    },
-    {
-     "path": "/narzedzia/",
-     "pageviews": 2,
-     "users": 1
-    },
-    {
-     "path": "/narzedzia/ai-bots-check/",
-     "pageviews": 2,
-     "users": 1
-    },
-    {
-     "path": "/narzedzia/url-check/",
-     "pageviews": 2,
-     "users": 1
-    },
-    {
-     "path": "/agenci-ai/przewodnik/",
-     "pageviews": 1,
-     "users": 1
-    },
-    {
-     "path": "/autor/mateusz-wisniewski/",
-     "pageviews": 1,
-     "users": 1
-    },
-    {
-     "path": "/blog/",
      "pageviews": 1,
      "users": 1
     },
@@ -11842,37 +11968,7 @@
      "users": 0
     },
     {
-     "path": "/geo/czym-jest-geo/",
-     "pageviews": 1,
-     "users": 1
-    },
-    {
-     "path": "/geo/najczestsze-bledy-geo/",
-     "pageviews": 1,
-     "users": 1
-    },
-    {
-     "path": "/geo/przewodnik/",
-     "pageviews": 1,
-     "users": 1
-    },
-    {
-     "path": "/kontakt/",
-     "pageviews": 1,
-     "users": 1
-    },
-    {
-     "path": "/modele-llm/",
-     "pageviews": 1,
-     "users": 1
-    },
-    {
-     "path": "/modele-llm/claude-vs-chatgpt-programowanie/",
-     "pageviews": 1,
-     "users": 1
-    },
-    {
-     "path": "/narzedzia/fanout/",
+     "path": "/narzedzia/ai-bots-check/",
      "pageviews": 1,
      "users": 1
     },
@@ -11882,38 +11978,43 @@
      "users": 1
     },
     {
-     "path": "/pozycjonowanie-ai/",
-     "pageviews": 1,
+     "path": "/autor/mateusz-wisniewski/",
+     "pageviews": 0,
+     "users": 1
+    },
+    {
+     "path": "/geo/przewodnik/",
+     "pageviews": 0,
+     "users": 1
+    },
+    {
+     "path": "/kontakt/",
+     "pageviews": 0,
      "users": 1
     },
     {
      "path": "/pozycjonowanie-ai/claude/",
-     "pageviews": 1,
-     "users": 1
-    },
-    {
-     "path": "/prompty/",
-     "pageviews": 1,
+     "pageviews": 0,
      "users": 1
     },
     {
      "path": "/prompty/przewodnik/",
-     "pageviews": 1,
+     "pageviews": 0,
      "users": 1
     }
    ],
    "landing_pages": {
     "window": {
-     "start": "2026-06-26",
-     "end": "2026-07-23"
+     "start": "2026-06-27",
+     "end": "2026-07-24"
     },
     "rows": [
      {
       "path": "/",
-      "sessions": 21,
-      "engagement_rate": 85.71,
-      "avg_engagement_s": 112.3,
-      "pages_per_session": 4.29
+      "sessions": 22,
+      "engagement_rate": 77.27,
+      "avg_engagement_s": 106.9,
+      "pages_per_session": 4.09
      },
      {
       "path": "(not set)",
@@ -11944,6 +12045,13 @@
       "pages_per_session": 2.67
      },
      {
+      "path": "",
+      "sessions": 2,
+      "engagement_rate": 0.0,
+      "avg_engagement_s": 1162.0,
+      "pages_per_session": 0.0
+     },
+     {
       "path": "/narzedzia/brand-check",
       "sessions": 2,
       "engagement_rate": 50.0,
@@ -11965,11 +12073,25 @@
       "pages_per_session": 1.0
      },
      {
+      "path": "/geo/audyt-widocznosci-marki",
+      "sessions": 1,
+      "engagement_rate": 0.0,
+      "avg_engagement_s": 0.0,
+      "pages_per_session": 1.0
+     },
+     {
       "path": "/narzedzia/url-check",
       "sessions": 1,
       "engagement_rate": 100.0,
       "avg_engagement_s": 45.0,
       "pages_per_session": 1.0
+     },
+     {
+      "path": "/o-nas",
+      "sessions": 1,
+      "engagement_rate": 0.0,
+      "avg_engagement_s": 119.0,
+      "pages_per_session": 2.0
      },
      {
       "path": "/prompty",
@@ -12610,6 +12732,20 @@
      "engaged_per_user": 1.0,
      "pages_per_session": 11.0,
      "organic_sessions": 0
+    },
+    {
+     "date": "2026-07-24",
+     "sessions": 6,
+     "active_users": 1,
+     "new_users": 0,
+     "returning_users": 1,
+     "pageviews": 6,
+     "engagement_rate": 0.0,
+     "avg_engagement_s": 407.2,
+     "engaged_sessions": 0,
+     "engaged_per_user": 0.0,
+     "pages_per_session": 1.0,
+     "organic_sessions": 2
     }
    ],
    "monthly": [
@@ -12621,7 +12757,7 @@
     },
     {
      "month": "202607",
-     "sessions": 58,
+     "sessions": 64,
      "users": 23,
      "new_users": 13
     }
@@ -12650,17 +12786,22 @@
     {
      "month": "202607",
      "channel": "Direct",
-     "sessions": 36
+     "sessions": 37
     },
     {
      "month": "202607",
      "channel": "Organic Search",
-     "sessions": 19
+     "sessions": 21
     },
     {
      "month": "202607",
      "channel": "Referral",
-     "sessions": 3
+     "sessions": 6
+    },
+    {
+     "month": "202607",
+     "channel": "Unassigned",
+     "sessions": 2
     }
    ]
   },
