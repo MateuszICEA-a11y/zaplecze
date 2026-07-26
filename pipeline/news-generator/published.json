@@ -1,13 +1,5 @@
 [
   {
-    "title": "Nie żyje Lize van der Walt. Gwiazda brytyjskiego programu miała 60 lat",
-    "date": "2026-04-22",
-    "slug": "nie-zyje-lize-van-der-walt-gwiazda-brytyjskiego-programu-miala-60-lat",
-    "section": "news",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Nowe ceny paliw. Benzyna w górę, diesel ze stabilniejszym trendem",
     "date": "2026-04-23",
     "slug": "nowe-ceny-paliw-benzyna-w-gore-diesel-ze-stabilniejszym-trendem",
@@ -717,6 +709,14 @@
     "slug": "luca-van-assche-kim-jest-i-dlaczego-znow-zrobilo-sie-o-nim-glosno",
     "section": "porownania",
     "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Zrównoważony pieprz z Wietnamu zaczyna się na polu – i kończy w logistyce",
+    "date": "2026-07-26",
+    "slug": "zrownowazony-pieprz-z-wietnamu-zaczyna-sie-na-polu-i-konczy-w-logistyce",
+    "section": "news",
+    "format": "analysis",
     "source": "rss"
   }
 ]
