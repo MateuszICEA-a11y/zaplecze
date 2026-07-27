@@ -1,13 +1,5 @@
 [
   {
-    "title": "Nowe ceny paliw. Benzyna w górę, diesel ze stabilniejszym trendem",
-    "date": "2026-04-23",
-    "slug": "nowe-ceny-paliw-benzyna-w-gore-diesel-ze-stabilniejszym-trendem",
-    "section": "news",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Tragedia na S6. Bus wjechał w ekipę malującą pasy, jedna osoba nie żyje",
     "date": "2026-04-24",
     "slug": "tragedia-na-s6-bus-wjechal-w-ekipe-malujaca-pasy-jedna-osoba-nie-zyje",
@@ -715,6 +707,14 @@
     "title": "Zrównoważony pieprz z Wietnamu zaczyna się na polu – i kończy w logistyce",
     "date": "2026-07-26",
     "slug": "zrownowazony-pieprz-z-wietnamu-zaczyna-sie-na-polu-i-konczy-w-logistyce",
+    "section": "news",
+    "format": "analysis",
+    "source": "rss"
+  },
+  {
+    "title": "Tomczyk: program „Ceny Paliwa Niżej” będzie realizowany. Co to może oznaczać dla kierowców i firm",
+    "date": "2026-07-27",
+    "slug": "tomczyk-program-ceny-paliwa-nizej-bedzie-realizowany-co-to-moze-oznaczac-dla",
     "section": "news",
     "format": "analysis",
     "source": "rss"
