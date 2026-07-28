@@ -2,9 +2,12 @@
 
 Uruchomienie: python -m unittest discover -s pipeline/content-refresher/tests
 """
+import json
+import os
 import sys
 import unittest
 from pathlib import Path
+from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
@@ -118,28 +121,93 @@ class TestExtract(unittest.TestCase):
 
 
 class TestResearch(unittest.TestCase):
-    def test_kanoniczny_url_dostaje_ukosnik(self):
-        # Gotcha Ahrefs: bez końcowego ukośnika API zwraca pustą listę fraz.
-        self.assertEqual(
-            research.canonical("https://www.grupa-icea.pl/blog/blad-403"),
-            "https://www.grupa-icea.pl/blog/blad-403/",
-        )
-        self.assertEqual(
-            research.canonical("https://www.grupa-icea.pl/blog/blad-403/"),
-            "https://www.grupa-icea.pl/blog/blad-403/",
-        )
+    """Mapowanie odpowiedzi Senuto i SerpData – bez sieci, na zapisanych kształtach."""
 
-    def test_pliku_z_rozszerzeniem_nie_zmieniamy(self):
-        self.assertEqual(research.canonical("https://x.pl/raport.pdf"), "https://x.pl/raport.pdf")
+    SERP_RESPONSE = {
+        "data": {"results": {
+            "organic_results": [
+                {"pos": 1, "url": "https://pomoc.home.pl/baza-wiedzy/blad-403", "domain": "pomoc.home.pl",
+                 "title": "Błąd 403", "description": "opis"},
+                {"pos": 2, "url": "https://www.grupa-icea.pl/blog/blad-403-jak-naprawic-co-oznacza/",
+                 "domain": "www.grupa-icea.pl", "title": "nasz wpis"},
+                {"pos": 3, "url": "https://pomoc.home.pl/inna-podstrona", "domain": "pomoc.home.pl",
+                 "title": "druga strona tej samej domeny"},
+                {"pos": 4, "url": "https://verseo.pl/blad-403/", "domain": "verseo.pl", "title": "Verseo"},
+            ],
+            "snippets": {
+                "ai_overview": {"text": "Błąd 403 oznacza brak uprawnień.",
+                                "sources": [{"url": "https://developer.mozilla.org/403", "title": "MDN"}]},
+                "people_also_ask": {"questions": [{"text": "Jak naprawić błąd 403?"}]},
+                "related_searches": {"queries": [{"query": "403 forbidden"}]},
+            },
+        }},
+    }
+
+    KEYWORDS_RESPONSE = {
+        "success": True,
+        "data": [
+            {"keyword": "błąd 403 co oznacza", "searches": 170, "cpc": 0.07, "words_count": 4,
+             "statistics": {"snippets": {"current": ["people_also_ask", "people_also_ask", "direct_answer"]}}},
+            {"keyword": "kod chyby 403", "searches": 0, "cpc": 0, "words_count": 3,
+             "statistics": {"snippets": {"current": []}}},
+        ],
+    }
+
+    def test_serp_pomija_wlasna_domene_i_duplikaty_hostow(self):
+        with mock.patch.object(research, "_request", return_value=self.SERP_RESPONSE), \
+             mock.patch.dict(os.environ, {"SERPDATA_API_KEY": "x"}):
+            result = research.serp("błąd 403", "www.grupa-icea.pl")
+        self.assertEqual([row["url"] for row in result["competitors"]],
+                         ["https://pomoc.home.pl/baza-wiedzy/blad-403", "https://verseo.pl/blad-403/"])
+
+    def test_serp_zwraca_ai_overview_paa_i_powiazane(self):
+        with mock.patch.object(research, "_request", return_value=self.SERP_RESPONSE), \
+             mock.patch.dict(os.environ, {"SERPDATA_API_KEY": "x"}):
+            result = research.serp("błąd 403", "www.grupa-icea.pl")
+        self.assertIn("brak uprawnień", result["ai_overview"]["text"])
+        self.assertEqual(result["ai_overview"]["sources"][0]["url"], "https://developer.mozilla.org/403")
+        self.assertEqual(result["people_also_ask"], ["Jak naprawić błąd 403?"])
+        self.assertEqual(result["related_searches"], ["403 forbidden"])
+
+    def test_serp_bez_klucza_nie_udaje_ze_dziala(self):
+        with mock.patch.dict(os.environ, {"SERPDATA_API_KEY": ""}), \
+             self.assertRaises(research.ResearchError):
+            research.serp("błąd 403", "www.grupa-icea.pl")
+
+    def test_frazy_z_senuto_sortowane_po_wolumenie_bez_powtorzen_snippetow(self):
+        with mock.patch.object(research, "_request", return_value=self.KEYWORDS_RESPONSE) as request, \
+             mock.patch.dict(os.environ, {"SENUTO_API_KEY": "x"}):
+            rows = research.keywords_for_urls(["https://a.pl/x/", "https://b.pl/y/"])
+        self.assertEqual([row["keyword"] for row in rows], ["błąd 403 co oznacza", "kod chyby 403"])
+        self.assertEqual(rows[0]["volume"], 170)
+        self.assertEqual(rows[0]["snippets"], ["direct_answer", "people_also_ask"])
+        # Komplet adresów idzie w jednym wywołaniu – to cała oszczędność zmiany.
+        self.assertEqual(request.call_count, 1)
+        body = json.loads(request.call_args.kwargs["data"].decode())
+        self.assertEqual(body["parameters"][0]["value"], ["https://a.pl/x/", "https://b.pl/y/"])
+        self.assertEqual(body["country_id"], 1)  # Baza Słów Kluczowych nie zna bazy 2.0
+
+    def test_pusta_lista_adresow_nie_woła_api(self):
+        with mock.patch.object(research, "_request") as request:
+            self.assertEqual(research.keywords_for_urls([]), [])
+        request.assert_not_called()
 
 
 class TestBudget(unittest.TestCase):
-    def test_przekroczenie_limitu_jednostek(self):
-        budget = Budget(ahrefs_units=100, tokens=1000)
-        budget.add_ahrefs(90)
-        budget.check("ahrefs_units", estimate=5)
+    def test_przekroczenie_limitu_zapytan_serp(self):
+        budget = Budget(serp_requests=2, tokens=1000)
+        budget.add_serp()
+        budget.check("serp_requests", estimate=1)
+        budget.add_serp()
         with self.assertRaises(BudgetExceeded):
-            budget.check("ahrefs_units", estimate=50)
+            budget.check("serp_requests", estimate=1)
+
+    def test_zapytania_senuto_sa_liczone_ale_nie_limitowane(self):
+        budget = Budget(serp_requests=1, tokens=1000)
+        for _ in range(50):
+            budget.add_senuto()
+        budget.check("serp_requests", estimate=1)
+        self.assertEqual(budget.snapshot()["senuto_requests"], 50)
 
     def test_tokeny_sumuja_wejscie_i_wyjscie(self):
         budget = Budget(tokens=100)

@@ -221,7 +221,7 @@ test('callback: poprawny zapisuje krok i sekcje', async () => {
     run_id: '555',
     run_attempt: 1,
     status: 'running',
-    step: { name: 'serp', status: 'done', cost: { ahrefs_units: 120 } },
+    step: { name: 'serp', status: 'done', cost: { serp_requests: 1 } },
     sections: [
       { slot: 3, text_before: 'stara treść', text_after: 'nowa treść', diff: [['equal', 0, 1]] },
       { slot: 99, text_after: 'poza zakresem slotów' },

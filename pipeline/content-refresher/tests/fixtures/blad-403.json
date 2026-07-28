@@ -1,64 +1,682 @@
 {
- "_opis": "Realne dane researchu dla wpisu 5767 (Błąd 403), pobrane z Ahrefs 2026-07-28. Służą do odtwarzania przejazdu i testowania promptów bez palenia jednostek API.",
+ "_opis": "Realne dane researchu dla wpisu 5767 (Błąd 403): frazy z Senuto (Baza Słów Kluczowych, country_id 1), SERP z SerpData. Pobrane 2026-07-28 – odtwarzają przejazd i pozwalają pracować nad promptami bez odpytywania API.",
  "main_keyword": "błąd 403",
  "keywords_own": [
-  {"keyword": "403", "best_position": 45, "volume": 2100, "keyword_difficulty": 0, "sum_traffic": 0},
-  {"keyword": "403 forbidden", "best_position": 45, "volume": 2100, "keyword_difficulty": 0, "sum_traffic": 0},
-  {"keyword": "403 error", "best_position": 48, "volume": 1500, "keyword_difficulty": 4, "sum_traffic": 0},
-  {"keyword": "błąd 403", "best_position": 22, "volume": 700, "keyword_difficulty": 0, "sum_traffic": 0}
- ],
- "senuto": [],
- "gsc": [
-  {"query": "błąd 403", "clicks": 2, "impressions": 824, "position": 26.6}
- ],
- "competitors": [
   {
-   "position": 2,
-   "url": "https://pomoc.home.pl/baza-wiedzy/blad-403-dlaczego-sie-pojawia",
-   "title": "Błąd 403 - dlaczego się pojawia?",
-   "domain_rating": 90.0,
-   "traffic": 810,
-   "keywords": []
-  },
-  {
-   "position": 3,
-   "url": "https://jchost.pl/blog/blad-403-forbidden/",
-   "title": "Błąd 403 (Forbidden) - co to znaczy i jak naprawić?",
-   "domain_rating": 70.0,
-   "traffic": 3964,
-   "keywords": [
-    {"keyword": "403", "best_position": 1, "volume": 2100, "keyword_difficulty": 0},
-    {"keyword": "403 forbidden", "best_position": 1, "volume": 2100, "keyword_difficulty": 0},
-    {"keyword": "error 403", "best_position": 1, "volume": 1900, "keyword_difficulty": 0},
-    {"keyword": "http 403", "best_position": 1, "volume": 1500, "keyword_difficulty": 2},
-    {"keyword": "403 status code", "best_position": 4, "volume": 500, "keyword_difficulty": 11},
-    {"keyword": "http error 403", "best_position": 1, "volume": 250, "keyword_difficulty": 1},
-    {"keyword": "kod 403", "best_position": 1, "volume": 150, "keyword_difficulty": 0}
+   "keyword": "błąd 403 co oznacza",
+   "volume": 170,
+   "cpc": 0.07,
+   "words": 4,
+   "snippets": [
+    "direct_answer",
+    "image_thumbs",
+    "is_question",
+    "people_also_ask",
+    "video_thumbs"
    ]
   },
   {
-   "position": 5,
+   "keyword": "co oznacza błąd 403",
+   "volume": 30,
+   "cpc": 1.6,
+   "words": 3,
+   "snippets": [
+    "direct_answer",
+    "people_also_ask",
+    "question",
+    "video_thumbs"
+   ]
+  },
+  {
+   "keyword": "blad 403 co to",
+   "volume": 10,
+   "cpc": 39.74,
+   "words": 2,
+   "snippets": [
+    "people_also_ask",
+    "question",
+    "video_thumbs",
+    "wiki_right"
+   ]
+  },
+  {
+   "keyword": "błąd 403 google",
+   "volume": 10,
+   "cpc": 0.17,
+   "words": 3,
+   "snippets": [
+    "direct_answer",
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "kod chyby 403",
+   "volume": 0,
+   "cpc": 0,
+   "words": 3,
+   "snippets": []
+  }
+ ],
+ "senuto": [],
+ "gsc": [
+  {
+   "query": "błąd 403",
+   "clicks": 2,
+   "impressions": 824,
+   "position": 26.6
+  }
+ ],
+ "competitors": [
+  {
+   "position": 1,
+   "url": "https://pomoc.home.pl/baza-wiedzy/blad-403-dlaczego-sie-pojawia",
+   "title": "Błąd 403 - dlaczego się pojawia?",
+   "description": "26 maj 2026 — Błąd 403 oznacza odmowę lub zakaz dostępu do określonych zasobów. W przypadku jego wystąpienia proponujemy sprawdzić atrybuty plików lub ..."
+  },
+  {
+   "position": 2,
+   "url": "https://jchost.pl/blog/blad-403-forbidden/",
+   "title": "Błąd 403 (Forbidden) - co to znaczy i jak naprawić?",
+   "description": "Błąd 403 (Forbidden) to kod błędu HTTP, który oznacza, że serwer zrozumiał żądanie, ale odmówił użytkownikowi dostępu. Odmowa dostępu może wynikać z błędnej ..."
+  },
+  {
+   "position": 3,
    "url": "https://verseo.pl/blad-403-jak-naprawic-i-co-oznacza/",
-   "title": "Co to jest Błąd 403 HTTP? Jak naprawić i jak mu zapobiegać?",
-   "domain_rating": 75.0,
-   "traffic": 150,
-   "keywords": []
+   "title": "Co to jest Błąd 403 HTTP? Jak naprawić ...",
+   "description": "20 sty 2023 — ZwińRozwiń. Błąd 403 pojawia się, gdy serwer rozumie Twoje żądanie, ale odmawia dostępu do danej strony lub zasobu. Oznacza to po prostu „dostęp ..."
   },
   {
-   "position": 6,
-   "url": "https://www.lh.pl/pomoc/jak-naprawic-blad-403-forbidden-w-wordpressie/",
-   "title": "Błąd 403 - co znaczy i jak naprawić? Poradnik praktyczny",
-   "domain_rating": 80.0,
-   "traffic": 44,
-   "keywords": []
-  },
-  {
-   "position": 9,
+   "position": 4,
    "url": "https://semcore.pl/blad-403-co-znaczy-i-jak-naprawic/",
    "title": "Błąd 403 – co znaczy i jak naprawić?",
-   "domain_rating": 61.0,
-   "traffic": 195,
-   "keywords": []
+   "description": "11 kwi 2025 — 403 forbidden to błąd informujący użytkownika, że serwer zrozumiał jego żądanie, natomiast nie może udostępnić mu zasobów znajdujących się na ..."
+  },
+  {
+   "position": 5,
+   "url": "https://cyberfolks.pl/slownik/blad-403/",
+   "title": "Co to jest Błąd 403 i jak działa - Słownik pojęć IT",
+   "description": "Błąd 403, znany również jako „403 Forbidden”, jest komunikatem błędu protokołu HTTP, który oznacza, że serwer internetowy zrozumiał żądanie klienta, ale odmawia ..."
   }
- ]
+ ],
+ "keywords_competitors": [
+  {
+   "keyword": "403 forbidden",
+   "volume": 1900,
+   "cpc": 8.7,
+   "words": 2,
+   "snippets": [
+    "people_also_ask",
+    "video_thumbs"
+   ]
+  },
+  {
+   "keyword": "https 403",
+   "volume": 1900,
+   "cpc": 14.76,
+   "words": 2,
+   "snippets": []
+  },
+  {
+   "keyword": "https 403 forbidden",
+   "volume": 1600,
+   "cpc": 9.34,
+   "words": 3,
+   "snippets": [
+    "people_also_ask",
+    "wiki_right"
+   ]
+  },
+  {
+   "keyword": "http 403",
+   "volume": 1600,
+   "cpc": 37.88,
+   "words": 2,
+   "snippets": [
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "błąd 403",
+   "volume": 880,
+   "cpc": 0.08,
+   "words": 2,
+   "snippets": [
+    "featured_answer",
+    "image_thumbs",
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "wyniki synevo pl kod dostępu",
+   "volume": 590,
+   "cpc": 0,
+   "words": 4,
+   "snippets": [
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "strefa job logowanie",
+   "volume": 390,
+   "cpc": 0.06,
+   "words": 3,
+   "snippets": [
+    "image_thumbs"
+   ]
+  },
+  {
+   "keyword": "code 403",
+   "volume": 260,
+   "cpc": 7.55,
+   "words": 2,
+   "snippets": [
+    "image_thumbs",
+    "people_also_ask",
+    "video_thumbs"
+   ]
+  },
+  {
+   "keyword": "soundcloud niedostępne w twoim kraju",
+   "volume": 210,
+   "cpc": 0,
+   "words": 4,
+   "snippets": []
+  },
+  {
+   "keyword": "błąd 403 jak naprawić",
+   "volume": 170,
+   "cpc": 9.02,
+   "words": 4,
+   "snippets": [
+    "featured_answer",
+    "people_also_ask",
+    "question"
+   ]
+  },
+  {
+   "keyword": "błąd 403 co oznacza",
+   "volume": 170,
+   "cpc": 0.07,
+   "words": 4,
+   "snippets": [
+    "direct_answer",
+    "image_thumbs",
+    "is_question",
+    "people_also_ask",
+    "video_thumbs"
+   ]
+  },
+  {
+   "keyword": "błąd 403 olx",
+   "volume": 140,
+   "cpc": 0,
+   "words": 3,
+   "snippets": [
+    "direct_answer",
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "craftserve login",
+   "volume": 140,
+   "cpc": 1.51,
+   "words": 2,
+   "snippets": []
+  },
+  {
+   "keyword": "kod 403",
+   "volume": 140,
+   "cpc": 5.03,
+   "words": 2,
+   "snippets": [
+    "image_thumbs",
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "błąd wywołania skryptu the sims 4",
+   "volume": 140,
+   "cpc": 0,
+   "words": 6,
+   "snippets": [
+    "image_thumbs",
+    "video_thumbs"
+   ]
+  },
+  {
+   "keyword": "origin błąd 20 403",
+   "volume": 110,
+   "cpc": 0,
+   "words": 4,
+   "snippets": [
+    "direct_answer",
+    "image_thumbs",
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "kod błędu 403",
+   "volume": 110,
+   "cpc": 0.23,
+   "words": 3,
+   "snippets": [
+    "direct_answer",
+    "people_also_ask",
+    "video_thumbs"
+   ]
+  },
+  {
+   "keyword": "http forbidden",
+   "volume": 110,
+   "cpc": 0,
+   "words": 2,
+   "snippets": [
+    "image_thumbs",
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "403 forbidden co to znaczy",
+   "volume": 90,
+   "cpc": 21.79,
+   "words": 3,
+   "snippets": [
+    "featured_answer",
+    "people_also_ask",
+    "question"
+   ]
+  },
+  {
+   "keyword": "403 forbidden jak ominąć",
+   "volume": 90,
+   "cpc": 0,
+   "words": 3,
+   "snippets": [
+    "featured_answer",
+    "people_also_ask",
+    "question"
+   ]
+  },
+  {
+   "keyword": "kod błedu 403",
+   "volume": 90,
+   "cpc": 5.58,
+   "words": 3,
+   "snippets": [
+    "featured_answer",
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "betclic awaria",
+   "volume": 90,
+   "cpc": 0,
+   "words": 2,
+   "snippets": [
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "polsat box go błąd 4003",
+   "volume": 90,
+   "cpc": 0,
+   "words": 4,
+   "snippets": [
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "forbidden co to znaczy",
+   "volume": 90,
+   "cpc": 0,
+   "words": 2,
+   "snippets": [
+    "featured_answer",
+    "people_also_ask",
+    "question"
+   ]
+  },
+  {
+   "keyword": "http status 403",
+   "volume": 70,
+   "cpc": 0,
+   "words": 3,
+   "snippets": [
+    "image_thumbs"
+   ]
+  },
+  {
+   "keyword": "403 forbidden dostęp zabroniony",
+   "volume": 50,
+   "cpc": 4.77,
+   "words": 4,
+   "snippets": [
+    "featured_answer",
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "błąd 403 forbidden",
+   "volume": 50,
+   "cpc": 7.47,
+   "words": 3,
+   "snippets": [
+    "featured_answer",
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "poczta aviva logowanie",
+   "volume": 40,
+   "cpc": 0,
+   "words": 3,
+   "snippets": [
+    "site_links"
+   ]
+  },
+  {
+   "keyword": "403 forbidden jak naprawić",
+   "volume": 30,
+   "cpc": 0,
+   "words": 3,
+   "snippets": [
+    "featured_answer",
+    "people_also_ask",
+    "question"
+   ]
+  },
+  {
+   "keyword": "access denied 403",
+   "volume": 30,
+   "cpc": 0,
+   "words": 3,
+   "snippets": [
+    "people_also_ask",
+    "video_thumbs"
+   ]
+  },
+  {
+   "keyword": "403 forbidden wordpress",
+   "volume": 30,
+   "cpc": 0,
+   "words": 3,
+   "snippets": [
+    "people_also_ask",
+    "video_thumbs"
+   ]
+  },
+  {
+   "keyword": "403 forbidden http",
+   "volume": 30,
+   "cpc": 0,
+   "words": 3,
+   "snippets": [
+    "people_also_ask",
+    "video_thumbs"
+   ]
+  },
+  {
+   "keyword": "błąd 403 e-deklaracje jak naprawić",
+   "volume": 30,
+   "cpc": 0,
+   "words": 5,
+   "snippets": [
+    "people_also_ask",
+    "question"
+   ]
+  },
+  {
+   "keyword": "co oznacza błąd 403",
+   "volume": 30,
+   "cpc": 1.6,
+   "words": 3,
+   "snippets": [
+    "direct_answer",
+    "people_also_ask",
+    "question",
+    "video_thumbs"
+   ]
+  },
+  {
+   "keyword": "server 403",
+   "volume": 30,
+   "cpc": 0,
+   "words": 2,
+   "snippets": []
+  },
+  {
+   "keyword": "wordpress 403 forbidden",
+   "volume": 30,
+   "cpc": 2.86,
+   "words": 3,
+   "snippets": [
+    "video_thumbs"
+   ]
+  },
+  {
+   "keyword": "http status code 403",
+   "volume": 30,
+   "cpc": 0,
+   "words": 4,
+   "snippets": [
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "home co to znaczy po polsku",
+   "volume": 30,
+   "cpc": 0,
+   "words": 6,
+   "snippets": [
+    "question"
+   ]
+  },
+  {
+   "keyword": "strony jak jbzd",
+   "volume": 30,
+   "cpc": 0,
+   "words": 3,
+   "snippets": [
+    "featured_answer",
+    "question"
+   ]
+  },
+  {
+   "keyword": "html 403",
+   "volume": 30,
+   "cpc": 0,
+   "words": 2,
+   "snippets": [
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "woocommerce olx",
+   "volume": 30,
+   "cpc": 4.68,
+   "words": 2,
+   "snippets": []
+  },
+  {
+   "keyword": "wp index php",
+   "volume": 30,
+   "cpc": 0,
+   "words": 3,
+   "snippets": []
+  },
+  {
+   "keyword": "wordpress 403",
+   "volume": 20,
+   "cpc": 2.18,
+   "words": 2,
+   "snippets": [
+    "video_thumbs"
+   ]
+  },
+  {
+   "keyword": "403 forbidden request forbidden by administrative rules",
+   "volume": 20,
+   "cpc": 0,
+   "words": 6,
+   "snippets": [
+    "featured_answer",
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "disney 403 forbidden",
+   "volume": 20,
+   "cpc": 0,
+   "words": 3,
+   "snippets": [
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "odmowa dostępu do netflix",
+   "volume": 20,
+   "cpc": 0,
+   "words": 3,
+   "snippets": [
+    "featured_answer",
+    "image_thumbs",
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "https status 403",
+   "volume": 20,
+   "cpc": 0,
+   "words": 3,
+   "snippets": [
+    "people_also_ask",
+    "wiki_right"
+   ]
+  },
+  {
+   "keyword": "błąd 403 sklep play",
+   "volume": 20,
+   "cpc": 0,
+   "words": 4,
+   "snippets": [
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "http access denied",
+   "volume": 20,
+   "cpc": 0,
+   "words": 3,
+   "snippets": [
+    "people_also_ask"
+   ]
+  },
+  {
+   "keyword": "http response 403",
+   "volume": 20,
+   "cpc": 0,
+   "words": 3,
+   "snippets": []
+  },
+  {
+   "keyword": "błąd serwera dns ps4",
+   "volume": 20,
+   "cpc": 0,
+   "words": 4,
+   "snippets": [
+    "featured_answer",
+    "video_thumbs"
+   ]
+  },
+  {
+   "keyword": "błąd 403 android",
+   "volume": 20,
+   "cpc": 0,
+   "words": 3,
+   "snippets": []
+  },
+  {
+   "keyword": "kod błędu 0",
+   "volume": 20,
+   "cpc": 0,
+   "words": 3,
+   "snippets": []
+  },
+  {
+   "keyword": "błąd http 403",
+   "volume": 20,
+   "cpc": 0.07,
+   "words": 3,
+   "snippets": [
+    "featured_answer"
+   ]
+  },
+  {
+   "keyword": "epic games 403 forbidden",
+   "volume": 10,
+   "cpc": 0,
+   "words": 4,
+   "snippets": []
+  },
+  {
+   "keyword": "epic games store 403 forbidden",
+   "volume": 10,
+   "cpc": 0,
+   "words": 5,
+   "snippets": []
+  },
+  {
+   "keyword": "jak włączyć serwer na craftserve",
+   "volume": 10,
+   "cpc": 0,
+   "words": 3,
+   "snippets": [
+    "featured_answer",
+    "image_thumbs",
+    "people_also_ask",
+    "question",
+    "video_thumbs"
+   ]
+  },
+  {
+   "keyword": "message 403",
+   "volume": 10,
+   "cpc": 0,
+   "words": 2,
+   "snippets": []
+  },
+  {
+   "keyword": "message 403 forbidden",
+   "volume": 10,
+   "cpc": 0,
+   "words": 3,
+   "snippets": []
+  },
+  {
+   "keyword": "lufthansa 403",
+   "volume": 10,
+   "cpc": 0,
+   "words": 2,
+   "snippets": []
+  }
+ ],
+ "serp": {
+  "ai_overview": null,
+  "people_also_ask": [
+   "Jak naprawić błąd 403?",
+   "Co oznacza błąd 403 i jak go naprawić?",
+   "Jak ominąć błąd 403 forbidden?",
+   "Co to znaczy 403 forbidden dostęp zabroniony?"
+  ],
+  "related_searches": [
+   "Błąd 403 -- jak naprawić",
+   "Błąd 403 android",
+   "Błąd 403 KSeF",
+   "Błąd 403 Forbidden",
+   "Błąd 403 -- co oznacza",
+   "Błąd 403 Google",
+   "Błąd 403 e-Deklaracje jak naprawić",
+   "TiviMate błąd 403"
+  ]
+ }
 }

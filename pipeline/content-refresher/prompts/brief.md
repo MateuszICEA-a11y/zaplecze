@@ -1,4 +1,4 @@
-<!-- version: 1.0.0 -->
+<!-- version: 1.1.0 -->
 Jesteś strategiem treści SEO. Na podstawie twardych danych masz przygotować wytyczne do reoptymalizacji istniejącego artykułu. Nie zgaduj – opieraj się wyłącznie na dostarczonych danych i na tym, co zweryfikujesz w sieci.
 
 ## Artykuł
@@ -15,10 +15,10 @@ Pełna treść:
 
 ## Frazy, na które ten adres już rankuje
 
-Ahrefs:
+Senuto – frazy przypisane do adresu (wolumen, CPC, formaty wyniku w SERP):
 {{ own_keywords }}
 
-Senuto (baza polska):
+Senuto – realne pozycje w polskiej bazie:
 {{ senuto }}
 
 Zapytania z Search Console (90 dni):
@@ -26,8 +26,24 @@ Zapytania z Search Console (90 dni):
 
 ## Konkurencja z wyników wyszukiwania
 
-Adresy rankujące najwyżej dla głównej frazy, wraz z ich strukturą nagłówków i frazami:
+Adresy rankujące najwyżej dla głównej frazy, wraz z ich strukturą nagłówków:
 {{ competitors }}
+
+Frazy pokrywane przez te adresy, których my nie mamy (Senuto):
+{{ competitor_keywords }}
+
+Uwaga: to wspólna pula fraz dla całego zestawu konkurentów, więc trafiają się w niej frazy spoza tematu artykułu (konkurenci rankują też na inne treści). Takie pozycje pomiń bez komentarza – nie buduj na nich luk ani nowych sekcji.
+
+## Jak dziś wygląda SERP dla głównej frazy
+
+AI Overview (treść i cytowane źródła; „—" oznacza brak AI Overview dla tej frazy):
+{{ ai_overview }}
+
+Pytania z „Podobne pytania" (People Also Ask):
+{{ people_also_ask }}
+
+Wyszukiwania powiązane:
+{{ related_searches }}
 
 ## Co masz zwrócić
 
@@ -51,6 +67,8 @@ Zwróć wyłącznie JSON o strukturze:
 
 Zasady:
 - Luki wskazuj tylko wtedy, gdy realnie wynikają z danych konkurencji – nie wymyślaj wątków „bo pasują".
+- Pytania z PAA i frazy powiązane traktuj jako realny popyt: jeśli artykuł na nie nie odpowiada, to luka.
+- Jeśli dla frazy jest AI Overview, wskaż w `structure`, które fragmenty tekstu wymagają formy nadającej się do zacytowania: krótka, samodzielna odpowiedź tuż pod nagłówkiem.
 - Nie proponuj usuwania treści, która pokrywa frazy z realnymi wyświetleniami.
 - `slot` odnosi się do numeru sekcji w obecnej strukturze; dla nowych sekcji podaj pierwszy wolny numer z listy: {{ free_slots }}.
 - Maksymalnie {{ max_new_sections }} nowe sekcje.

@@ -84,7 +84,8 @@ const STEP_LABELS: Record<string, string> = {
         <button type="button" data-ed-run>Uruchom pipeline</button>
         <button type="button" data-ed-cancel hidden>Anuluj zadanie</button>
         <span class="ed-hint">
-          Szacunkowy koszt: ~900 jednostek Ahrefs i kilkanaście tysięcy tokenów.
+          Szacunkowy koszt: jedno zapytanie SERP (SerpData), frazy z Senuto
+          (bez limitu jednostek) i kilkanaście tysięcy tokenów.
           Ten sam wpis można kolejkować raz na 30 dni.
         </span>
       </div>
@@ -201,8 +202,10 @@ const STEP_LABELS: Record<string, string> = {
       const info = node.querySelector('.ed-step-info');
       if (!info) return;
       if (!step) { info.textContent = ''; return; }
-      const cost = step.cost?.ahrefs_units
-        ? `${pl.format(step.cost.ahrefs_units)} jedn.`
+      const cost = step.cost?.serp_requests
+        ? `${pl.format(step.cost.serp_requests)} zap. SERP`
+        : step.cost?.senuto_requests
+        ? `${pl.format(step.cost.senuto_requests)} zap. Senuto`
         : step.cost?.tokens_out
           ? `${pl.format((step.cost.tokens_in ?? 0) + (step.cost.tokens_out ?? 0))} tok.`
           : '';

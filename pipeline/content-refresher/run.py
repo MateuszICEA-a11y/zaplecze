@@ -126,20 +126,18 @@ class Pipeline:
             self.context["keywords_own"] = self.fixtures.get("keywords_own") or []
             self.context["senuto"] = self.fixtures.get("senuto") or []
             self.context["gsc"] = self.fixtures.get("gsc") or []
-            return {"payload": {"source": "fixtures", "ahrefs": self.context["keywords_own"][:20]}}
-        self.budget.check("ahrefs_units", estimate=150)
-        keywords, units = research.own_keywords(url)
-        self.budget.add_ahrefs(units)
+            return {"payload": {"source": "fixtures", "keywords": self.context["keywords_own"][:20]}}
+        keywords = research.own_keywords(url)
+        self.budget.add_senuto()
         senuto = research.senuto_positions(self.args.domain, url)
+        self.budget.add_senuto()
         gsc_site = ((self.context["config"].get("gsc") or {}).get("site")) or ""
         gsc = research.gsc_queries(gsc_site, url) if gsc_site else []
         self.context["keywords_own"] = keywords
         self.context["senuto"] = senuto
         self.context["gsc"] = gsc
-        return {
-            "payload": {"ahrefs": keywords[:20], "senuto": senuto[:20], "gsc": gsc[:20]},
-            "cost": {"ahrefs_units": units},
-        }
+        return {"payload": {"keywords": keywords[:20], "positions": senuto[:20], "gsc": gsc[:20]},
+                "cost": {"senuto_requests": 2}}
 
     def step_serp(self):
         keyword = (
@@ -150,18 +148,32 @@ class Pipeline:
         if self.fixtures is not None:
             self.context["main_keyword"] = self.fixtures.get("main_keyword") or keyword
             self.context["competitors"] = self.fixtures.get("competitors") or []
+            self.context["serp"] = self.fixtures.get("serp") or {}
             if not self.context["competitors"]:
                 raise RuntimeError("plik z danymi researchu nie zawiera konkurentów")
             return {"payload": {"source": "fixtures", "keyword": self.context["main_keyword"],
                                 "competitors": self.context["competitors"]}}
-        self.budget.check("ahrefs_units", estimate=100)
-        competitors, units = research.serp_competitors(keyword, self.args.domain, limit=COMPETITOR_LIMIT)
-        self.budget.add_ahrefs(units)
-        if not competitors:
-            raise RuntimeError(f"brak danych SERP dla frazy „{keyword}”")
+        self.budget.check("serp_requests", estimate=1)
+        data = research.serp(keyword, self.args.domain, limit=COMPETITOR_LIMIT)
+        self.budget.add_serp()
+        if not data["competitors"]:
+            raise RuntimeError(f"brak wyników organicznych dla frazy „{keyword}”")
         self.context["main_keyword"] = keyword
-        self.context["competitors"] = competitors
-        return {"payload": {"keyword": keyword, "competitors": competitors}, "cost": {"ahrefs_units": units}}
+        self.context["competitors"] = data["competitors"]
+        # AI Overview, PAA i frazy powiązane idą do briefu: pokazują, na jakie
+        # pytania odpowiada dziś SERP, a nie tylko kto w nim stoi.
+        self.context["serp"] = {
+            "ai_overview": data["ai_overview"],
+            "people_also_ask": data["people_also_ask"],
+            "related_searches": data["related_searches"],
+        }
+        return {"payload": {
+            "keyword": keyword,
+            "competitors": data["competitors"],
+            "ai_overview": bool(data["ai_overview"]),
+            "people_also_ask": data["people_also_ask"],
+            "related_searches": data["related_searches"],
+        }, "cost": {"serp_requests": 1}}
 
     def step_competitors(self):
         urls = [row["url"] for row in self.context.get("competitors") or []]
@@ -177,29 +189,32 @@ class Pipeline:
         }}
 
     def step_keywords_competitors(self):
+        """Frazy konkurencji – jedno wywołanie Senuto na komplet adresów.
+
+        Senuto zwraca wspólną pulę fraz dla podanych URL-i, bez rozbicia na
+        poszczególne strony. Do wykrywania luk to właściwy poziom: pytamy, czego
+        brakuje nam wobec całego zestawu konkurentów.
+        """
         if self.fixtures is not None:
-            return {"payload": {"source": "fixtures", "competitors": self.context.get("competitors")}}
-        total = 0
-        for row in self.context.get("competitors") or []:
-            try:
-                self.budget.check("ahrefs_units", estimate=150)
-            except BudgetExceeded:
-                row["keywords"] = []
-                row["keywords_skipped"] = "budżet"
-                continue
-            try:
-                keywords, units = research.competitor_keywords(row["url"])
-            except research.ResearchError as err:
-                row["keywords"] = []
-                row["keywords_error"] = str(err)
-                continue
-            self.budget.add_ahrefs(units)
-            total += units
-            row["keywords"] = keywords
-        return {
-            "payload": {"competitors": self.context.get("competitors")},
-            "cost": {"ahrefs_units": total},
-        }
+            self.context["keywords_competitors"] = self.fixtures.get("keywords_competitors") or []
+            return {"payload": {"source": "fixtures",
+                                "keywords": self.context["keywords_competitors"][:20]}}
+        urls = [row["url"] for row in self.context.get("competitors") or []]
+        result = research.competitor_keywords(urls)
+        self.budget.add_senuto()
+        own = {(row.get("keyword") or "").lower() for row in self.context.get("keywords_own") or []}
+        own |= {(row.get("query") or "").lower() for row in self.context.get("gsc") or []}
+        keywords = result["keywords"]
+        self.context["keywords_competitors"] = keywords
+        # Luka = fraza konkurencji, której nie mamy ani w Senuto, ani w GSC.
+        self.context["keywords_gap"] = [
+            row for row in keywords if (row.get("keyword") or "").lower() not in own
+        ]
+        return {"payload": {
+            "urls": result["urls"],
+            "keywords": keywords[:30],
+            "gap": len(self.context["keywords_gap"]),
+        }, "cost": {"senuto_requests": 1}}
 
     def step_brief(self):
         context = self.context
@@ -216,6 +231,10 @@ class Pipeline:
             own_keywords=context.get("keywords_own") or [],
             senuto=context.get("senuto") or [],
             gsc=context.get("gsc") or [],
+            competitor_keywords=(context.get("keywords_gap") or context.get("keywords_competitors") or [])[:40],
+            ai_overview=(context.get("serp") or {}).get("ai_overview") or "—",
+            people_also_ask=(context.get("serp") or {}).get("people_also_ask") or [],
+            related_searches=(context.get("serp") or {}).get("related_searches") or [],
             competitors=[{k: v for k, v in row.items() if k != "text"} for row in context.get("competitors") or []],
             free_slots=context["free_slots"][:MAX_NEW_SECTIONS],
             max_new_sections=str(MAX_NEW_SECTIONS),

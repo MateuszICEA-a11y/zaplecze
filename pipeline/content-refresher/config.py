@@ -38,19 +38,32 @@ MODEL_WRITER = "anthropic/claude-sonnet-5"
 MODEL_FALLBACK = "google/gemini-3-flash-preview"
 
 # --- budżety (twarde, sprawdzane przed krokiem) ---
-BUDGET_AHREFS_UNITS_PER_JOB = 1500
+# Frazy pochodzą z Senuto (rozliczane abonamentem, nie jednostkami), więc jedynym
+# limitowanym zasobem researchu jest odpytanie żywego SERP-u przez SerpData.
+BUDGET_SERP_REQUESTS_PER_JOB = 2
 BUDGET_TOKENS_PER_JOB = 400_000
 COMPETITOR_LIMIT = 5
-COMPETITOR_KEYWORDS_LIMIT = 30
+COMPETITOR_KEYWORDS_LIMIT = 60
 OWN_KEYWORDS_LIMIT = 50
+
+# --- Senuto ---
+# Baza Słów Kluczowych nie obsługuje bazy 2.0 (country_id 200) – tam jest „1".
+# Analiza Widoczności odwrotnie: 200 to baza znana z aplikacji.
+SENUTO_KEYWORDS_COUNTRY_ID = 1
+SENUTO_POSITIONS_COUNTRY_ID = 200
+
+# --- SerpData ---
+SERPDATA_TIMEOUT_S = 120  # pojedyncze zapytanie potrafi iść 30–45 s
 
 # --- pobieranie stron konkurencji ---
 FETCH_TIMEOUT_S = 15
 FETCH_MAX_BYTES = 2 * 1024 * 1024
 FETCH_MAX_REDIRECTS = 3
+# Wyłącznie ASCII: nagłówki HTTP idą jako latin-1, a polskie znaki w User-Agencie
+# wywalały każde pobranie strony konkurencji wyjątkiem kodowania.
 USER_AGENT = (
     "ICEA-ContentWatcher/1.0 (+https://www.grupa-icea.pl; analiza SERP na potrzeby "
-    "reoptymalizacji własnych treści)"
+    "reoptymalizacji wlasnych tresci)"
 )
 
 # --- struktura ACF ---

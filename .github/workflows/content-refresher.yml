@@ -55,8 +55,8 @@ jobs:
         env:
           DASHBOARD_URL: ${{ secrets.DASHBOARD_URL }}
           CW_CALLBACK_SECRET: ${{ secrets.CW_CALLBACK_SECRET }}
-          AHREFS_API_KEY: ${{ secrets.AHREFS_API_KEY }}
           SENUTO_API_KEY: ${{ secrets.SENUTO_API_KEY }}
+          SERPDATA_API_KEY: ${{ secrets.SERPDATA_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || secrets.OPENROUTER_KEY }}
           GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
           # Odczyt z WordPressa działa anonimowo; sekrety wejdą do gry, gdy powstanie
