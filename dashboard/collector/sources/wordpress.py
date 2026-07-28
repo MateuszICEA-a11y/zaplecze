@@ -138,6 +138,20 @@ def _normalize(text: str) -> str:
     return re.sub(r"\s+", " ", _text(text)).strip().lower()
 
 
+def content_hash(text: str) -> str:
+    """Hash znormalizowanej treści – ta sama funkcja dla katalogu i pipeline'u."""
+    return hashlib.sha256(_normalize(text).encode("utf-8")).hexdigest()[:16]
+
+
+# Publiczne API mapera – używane przez pipeline/content-refresher, żeby odczyt
+# treści z ACF miał jedną implementację po obu stronach.
+section_pairs = _sections
+build_body = _body
+strip_html = _text
+count_words = _words
+normalize_text = _normalize
+
+
 def _links(body: str, host: str) -> tuple[int, int]:
     internal = external = 0
     for href in _HREF_RE.findall(body):
@@ -186,13 +200,13 @@ def fetch(cfg: dict, env: dict) -> dict:
         for post in _fetch_type(base, post_type, headers):
             body, headings, mode = _body(post, content_fields.get(post_type) or [])
             text = _text(body)
-            content_hash = hashlib.sha256(_normalize(body).encode("utf-8")).hexdigest()[:16]
+            body_hash = content_hash(body)
             internal, external = _links(body, host)
             published = _iso_date(post.get("date"))
             modified = _iso_date(post.get("modified"))
             yoast = post.get("yoast_head_json") or {}
             prior = previous.get(str(post.get("id")))
-            if prior and prior.get("content_hash") == content_hash:
+            if prior and prior.get("content_hash") == body_hash:
                 changed_at = prior.get("content_changed_at") or modified
                 baseline = bool(prior.get("hash_baseline"))
             elif prior:
@@ -217,7 +231,7 @@ def fetch(cfg: dict, env: dict) -> dict:
                 "modified_at": modified,
                 "content_changed_at": changed_at,
                 "hash_baseline": baseline,
-                "content_hash": content_hash,
+                "content_hash": body_hash,
                 "content_mode": mode,
                 "word_count": _words(text),
                 "headings": headings or len(_HEADING_RE.findall(body)),

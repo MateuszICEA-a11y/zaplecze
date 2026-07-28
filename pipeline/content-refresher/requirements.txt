@@ -1,0 +1,6 @@
+# Pipeline korzysta ze stdlib (urllib, difflib) – jak collector dashboardu.
+# Poniżej wyłącznie to, czego stdlib nie zastąpi.
+
+PyYAML>=6.0            # odczyt dashboard/domains.yaml
+trafilatura>=1.12      # ekstrakcja głównej treści ze stron konkurencji
+google-auth>=2.30      # token service accounta do Search Console

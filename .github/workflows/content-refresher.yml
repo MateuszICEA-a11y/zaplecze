@@ -1,0 +1,86 @@
+name: Content Refresher
+
+# Pipeline reoptymalizacji treści. Uruchamiany wyłącznie z dashboardu
+# (repository_dispatch po zakolejkowaniu zadania) albo ręcznie do testów.
+# Nie zapisuje niczego do WordPressa – kończy się propozycją i diffem w D1.
+
+on:
+  repository_dispatch:
+    types: [content-refresh]
+  workflow_dispatch:
+    inputs:
+      job_id:
+        description: 'Identyfikator zadania z dashboardu'
+        required: true
+      domain:
+        description: 'Domena (id z domains.yaml)'
+        required: true
+        default: grupa-icea.pl
+      post_id:
+        description: 'ID wpisu w WordPressie'
+        required: true
+      url:
+        description: 'Adres wpisu'
+        required: true
+      improvements:
+        description: 'Pakiet ulepszeń po przecinku'
+        required: false
+        default: gaps,expert,sources,internal_links
+
+permissions:
+  contents: read
+
+concurrency:
+  # Jeden przebieg na wpis – ponowne kliknięcie nie uruchamia drugiego researchu.
+  group: content-refresh-${{ github.event.client_payload.post_id || inputs.post_id }}
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r pipeline/content-refresher/requirements.txt
+
+      - name: Run pipeline
+        env:
+          DASHBOARD_URL: ${{ secrets.DASHBOARD_URL }}
+          CW_CALLBACK_SECRET: ${{ secrets.CW_CALLBACK_SECRET }}
+          AHREFS_API_KEY: ${{ secrets.AHREFS_API_KEY }}
+          SENUTO_API_KEY: ${{ secrets.SENUTO_API_KEY }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || secrets.OPENROUTER_KEY }}
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+          # Odczyt z WordPressa działa anonimowo; sekrety wejdą do gry, gdy powstanie
+          # Application Password (potrzebne dopiero do zapisu draftów).
+          WP_APP_USER: ${{ secrets.WP_APP_USER }}
+          WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+        run: |
+          python pipeline/content-refresher/run.py \
+            --job "${{ github.event.client_payload.job_id || inputs.job_id }}" \
+            --domain "${{ github.event.client_payload.domain || inputs.domain }}" \
+            --post-id "${{ github.event.client_payload.post_id || inputs.post_id }}" \
+            --post-type "${{ github.event.client_payload.post_type || 'posts' }}" \
+            --url "${{ github.event.client_payload.url || inputs.url }}" \
+            --title "${{ github.event.client_payload.title || '' }}" \
+            --author "${{ github.event.client_payload.author || '' }}" \
+            --improvements "${{ join(github.event.client_payload.improvements, ',') || inputs.improvements }}"
+
+      - name: Report failure
+        # Bez tego padnięty runner zostawiłby zadanie w stanie „running" aż do
+        # wygaśnięcia dzierżawy (15 minut). Tak dashboard wie od razu.
+        if: failure() || cancelled()
+        env:
+          DASHBOARD_URL: ${{ secrets.DASHBOARD_URL }}
+          CW_CALLBACK_SECRET: ${{ secrets.CW_CALLBACK_SECRET }}
+          JOB_ID: ${{ github.event.client_payload.job_id || inputs.job_id }}
+          JOB_STATUS: ${{ job.status }}
+        run: python pipeline/content-refresher/report_failure.py

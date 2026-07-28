@@ -1,0 +1,64 @@
+{
+ "_opis": "Realne dane researchu dla wpisu 5767 (Błąd 403), pobrane z Ahrefs 2026-07-28. Służą do odtwarzania przejazdu i testowania promptów bez palenia jednostek API.",
+ "main_keyword": "błąd 403",
+ "keywords_own": [
+  {"keyword": "403", "best_position": 45, "volume": 2100, "keyword_difficulty": 0, "sum_traffic": 0},
+  {"keyword": "403 forbidden", "best_position": 45, "volume": 2100, "keyword_difficulty": 0, "sum_traffic": 0},
+  {"keyword": "403 error", "best_position": 48, "volume": 1500, "keyword_difficulty": 4, "sum_traffic": 0},
+  {"keyword": "błąd 403", "best_position": 22, "volume": 700, "keyword_difficulty": 0, "sum_traffic": 0}
+ ],
+ "senuto": [],
+ "gsc": [
+  {"query": "błąd 403", "clicks": 2, "impressions": 824, "position": 26.6}
+ ],
+ "competitors": [
+  {
+   "position": 2,
+   "url": "https://pomoc.home.pl/baza-wiedzy/blad-403-dlaczego-sie-pojawia",
+   "title": "Błąd 403 - dlaczego się pojawia?",
+   "domain_rating": 90.0,
+   "traffic": 810,
+   "keywords": []
+  },
+  {
+   "position": 3,
+   "url": "https://jchost.pl/blog/blad-403-forbidden/",
+   "title": "Błąd 403 (Forbidden) - co to znaczy i jak naprawić?",
+   "domain_rating": 70.0,
+   "traffic": 3964,
+   "keywords": [
+    {"keyword": "403", "best_position": 1, "volume": 2100, "keyword_difficulty": 0},
+    {"keyword": "403 forbidden", "best_position": 1, "volume": 2100, "keyword_difficulty": 0},
+    {"keyword": "error 403", "best_position": 1, "volume": 1900, "keyword_difficulty": 0},
+    {"keyword": "http 403", "best_position": 1, "volume": 1500, "keyword_difficulty": 2},
+    {"keyword": "403 status code", "best_position": 4, "volume": 500, "keyword_difficulty": 11},
+    {"keyword": "http error 403", "best_position": 1, "volume": 250, "keyword_difficulty": 1},
+    {"keyword": "kod 403", "best_position": 1, "volume": 150, "keyword_difficulty": 0}
+   ]
+  },
+  {
+   "position": 5,
+   "url": "https://verseo.pl/blad-403-jak-naprawic-i-co-oznacza/",
+   "title": "Co to jest Błąd 403 HTTP? Jak naprawić i jak mu zapobiegać?",
+   "domain_rating": 75.0,
+   "traffic": 150,
+   "keywords": []
+  },
+  {
+   "position": 6,
+   "url": "https://www.lh.pl/pomoc/jak-naprawic-blad-403-forbidden-w-wordpressie/",
+   "title": "Błąd 403 - co znaczy i jak naprawić? Poradnik praktyczny",
+   "domain_rating": 80.0,
+   "traffic": 44,
+   "keywords": []
+  },
+  {
+   "position": 9,
+   "url": "https://semcore.pl/blad-403-co-znaczy-i-jak-naprawic/",
+   "title": "Błąd 403 – co znaczy i jak naprawić?",
+   "domain_rating": 61.0,
+   "traffic": 195,
+   "keywords": []
+  }
+ ]
+}
