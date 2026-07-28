@@ -106,21 +106,26 @@ def _sections(acf: dict) -> list[tuple[str, str]]:
     return out
 
 
-def _body(post: dict) -> tuple[str, int, str]:
+def _body(post: dict, custom_fields: list[str]) -> tuple[str, int, str]:
     """(HTML pełnej treści, liczba H2 z ACF, tryb odczytu).
 
-    Tryby: `acf` – sekcje szablonu, `no_section` – wpis bez sekcji,
-    `content` – najstarsze wpisy trzymające całość w content.rendered.
+    Tryby: `acf` – sekcje szablonu bloga, `no_section` – wpis bez sekcji,
+    `fields` – pola wskazane w `content_fields` (CPT mają własne, np. Słownik
+    trzyma treść w `dictionary_text_hero` + `dictionary_text` i w ogóle nie
+    wystawia `content` w REST), `content` – całość w content.rendered.
     """
-    acf = post.get("acf") or {}
+    acf = post.get("acf") if isinstance(post.get("acf"), dict) else {}
     lead = ((post.get("content") or {}).get("rendered") or "").strip()
-    sections = _sections(acf) if isinstance(acf, dict) else []
+    sections = _sections(acf)
     if sections:
         body = "\n".join(f"<h2>{title}</h2>\n{text}" for title, text in sections)
         return f"{lead}\n{body}", sum(1 for title, _ in sections if title), "acf"
-    no_section = (acf.get("page_content_no_section") or "").strip() if isinstance(acf, dict) else ""
+    no_section = (acf.get("page_content_no_section") or "").strip()
     if no_section:
         return f"{lead}\n{no_section}", 0, "no_section"
+    custom = "\n".join(part for part in ((acf.get(field) or "").strip() for field in custom_fields) if part)
+    if custom:
+        return f"{lead}\n{custom}", 0, "fields"
     return lead, 0, "content"
 
 
@@ -170,6 +175,7 @@ def fetch(cfg: dict, env: dict) -> dict:
         raise SourceError("not_configured", "wordpress: brak base_url w domains.yaml")
     host = urllib.parse.urlparse(base).netloc
     post_types = cfg.get("post_types") or ["posts"]
+    content_fields = cfg.get("content_fields") or {}
     headers = _auth_header(env)
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     previous = _previous_items(cfg.get("domain") or "")
@@ -178,7 +184,7 @@ def fetch(cfg: dict, env: dict) -> dict:
     items: list[dict] = []
     for post_type in post_types:
         for post in _fetch_type(base, post_type, headers):
-            body, headings, mode = _body(post)
+            body, headings, mode = _body(post, content_fields.get(post_type) or [])
             text = _text(body)
             content_hash = hashlib.sha256(_normalize(body).encode("utf-8")).hexdigest()[:16]
             internal, external = _links(body, host)
