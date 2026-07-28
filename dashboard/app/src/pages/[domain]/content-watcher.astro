@@ -216,6 +216,11 @@ const statusLabel: Record<string, string> = {
   'not-indexed': 'poza indeksem',
 };
 const scoreClass = (score: number): string => (score >= 60 ? 'high' : score >= 18 ? 'medium' : 'low');
+
+// Katalog z CMS-a: świeżość liczona z hasha treści, nie z pola `modified`,
+// które WordPress podbija przy każdym zapisie (także masowej akcji wtyczki).
+const fromCms = (domainConfig.content_watcher as { source?: string } | undefined)?.source === 'wordpress';
+const baseline = items.filter((item) => item.hash_baseline).length;
 ---
 
 <Layout title={`${name} – Content Watcher`}>
@@ -224,6 +229,12 @@ const scoreClass = (score: number): string => (score >= 60 ? 'high' : score >= 1
   <div class="cw-note">
     Content Watcher łączy metadane artykułów z indeksacją, GSC, GA4 i Senuto. Priorytet wskazuje treści warte ręcznej
     oceny przed reoptymalizacją; kolejka n8n zostanie podłączona w następnym etapie.
+    {fromCms && (
+      <> Katalog pochodzi z REST API WordPressa (treść składana z pól ACF). „Aktualizacja” to data
+      realnej zmiany treści liczona z hasha – pole <code>modified</code> podnosi się przy każdym zapisie w CMS-ie.
+      {baseline > 0 && <> Dla {fmtInt(baseline)} wpisów pierwszy hash to dopiero punkt odniesienia, więc do czasu
+      kolejnej zmiany widnieje przy nich data z <code>modified</code>.</>}</>
+    )}
   </div>
 
   <div class="section-head">
@@ -301,7 +312,12 @@ const scoreClass = (score: number): string => (score >= 60 ? 'high' : score >= 1
                   <small>{item.pillar} · {fmtInt(item.word_count)} słów · {fmtInt(item.headings)} nagłówków</small>
                 </td>
                 <td data-sort={item.effective_date.replaceAll('-', '')} data-label="Daty">
-                  <div class="cw-dates"><span>publ. {fmtDate(item.published_at)}</span><span>akt. {fmtDate(item.updated_at)}</span></div>
+                  <div class="cw-dates">
+                    <span>publ. {fmtDate(item.published_at)}</span>
+                    <span title={item.hash_baseline ? 'Data z pola modified – hash treści jest dopiero punktem odniesienia' : undefined}>
+                      akt. {fmtDate(item.updated_at)}{item.hash_baseline ? ' ≈' : ''}
+                    </span>
+                  </div>
                   <small>{fmtInt(item.age_days)} dni od ostatniej zmiany</small>
                 </td>
                 <td class="num" data-sort={item.impressions ?? -1} data-label="GSC · 30 dni">

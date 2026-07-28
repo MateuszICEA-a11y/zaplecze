@@ -299,6 +299,35 @@ export interface DomainDetails {
       paths: { path: string; requests: number }[];
     };
     leads?: { leads: LeadRecord[]; usage: LeadRecord[] };
+    /** Katalog treści z WordPress REST (Content Watcher, źródło `wordpress`). */
+    wordpress?: {
+      base_url?: string;
+      items: {
+        id: number;
+        type?: string;
+        url?: string;
+        slug?: string;
+        title?: string;
+        author?: string;
+        categories?: string[];
+        pillar?: string;
+        published_at?: string | null;
+        modified_at?: string | null;
+        content_changed_at?: string | null;
+        hash_baseline?: boolean;
+        content_hash?: string;
+        content_mode?: string;
+        word_count?: number;
+        headings?: number;
+        sections?: number;
+        internal_links?: number;
+        external_links?: number;
+        meta_title?: string | null;
+        meta_description?: string | null;
+        robots_index?: string | null;
+        canonical?: string | null;
+      }[];
+    };
   };
 }
 
@@ -323,11 +352,62 @@ export interface ContentCatalogItem {
   author: string;
   tags: string[];
   published_at: string;
+  /** Data ostatniej REALNEJ zmiany treści – dla WordPressa z hasha, nie z `modified`. */
   updated_at: string | null;
   word_count: number;
   headings: number;
   internal_links: number;
   external_links: number;
+  /** Poniżej: wyłącznie katalog z CMS-a (source: wordpress). */
+  modified_at?: string | null;
+  hash_baseline?: boolean;
+  content_hash?: string;
+  sections?: number;
+  meta_title?: string | null;
+  meta_description?: string | null;
+  robots_index?: string | null;
+}
+
+interface ContentWatcherConfig {
+  enabled?: boolean;
+  source?: string;
+  content_dir?: string;
+  base_url?: string;
+}
+
+/** Katalog treści z collectora (details.json → sources.wordpress) dla domen na CMS-ie.
+    Świeżość bierzemy z `content_changed_at` (hash treści), a nie z `modified`,
+    które WordPress podbija przy każdym zapisie. */
+function loadCmsCatalog(dirId: string): ContentCatalogItem[] {
+  const wp = loadDetails(dirId).sources.wordpress;
+  if (!wp?.items?.length) return [];
+  return wp.items
+    .flatMap((item): ContentCatalogItem[] => {
+      if (!item.url || !item.published_at || !item.title) return [];
+      return [{
+        id: `${item.type ?? 'post'}-${item.id}`,
+        url: item.url,
+        content_path: `${wp.base_url ?? ''}/wp-admin/post.php?post=${item.id}&action=edit`,
+        title: item.title,
+        pillar: item.pillar || (item.type ?? 'inne'),
+        author: item.author || '—',
+        tags: item.categories ?? [],
+        published_at: item.published_at,
+        updated_at: item.content_changed_at ?? item.modified_at ?? null,
+        word_count: item.word_count ?? 0,
+        headings: item.headings ?? 0,
+        internal_links: item.internal_links ?? 0,
+        external_links: item.external_links ?? 0,
+        modified_at: item.modified_at ?? null,
+        hash_baseline: item.hash_baseline === true,
+        content_hash: item.content_hash,
+        sections: item.sections,
+        meta_title: item.meta_title ?? null,
+        meta_description: item.meta_description ?? null,
+        robots_index: item.robots_index ?? null,
+      }];
+    })
+    .sort((a, b) => a.title.localeCompare(b.title, 'pl'));
 }
 
 const isoDate = (value: unknown): string | null => {
@@ -337,13 +417,16 @@ const isoDate = (value: unknown): string | null => {
   return match?.[0] ?? null;
 };
 
-/** Czyta kolekcję Markdown wskazaną w `content_watcher.content_dir`.
+/** Katalog treści domeny: repozytorium Markdown albo CMS (`content_watcher.source`).
     Funkcja działa wyłącznie w build time; treść artykułów nie trafia do bundle. */
 export function loadContentCatalog(domain: DomainConfig): ContentCatalogItem[] {
-  const cfg = domain.content_watcher as { enabled?: boolean; content_dir?: string; base_url?: string } | undefined;
-  if (cfg?.enabled !== true || !cfg.content_dir) return [];
+  const cfg = domain.content_watcher as ContentWatcherConfig | undefined;
+  if (cfg?.enabled !== true) return [];
+  if (cfg.source === 'wordpress') return loadCmsCatalog(domain.id);
+  const contentDir = cfg.content_dir;
+  if (!contentDir) return [];
   const repoDir = resolve(DASHBOARD_DIR, '..');
-  const root = resolve(repoDir, cfg.content_dir);
+  const root = resolve(repoDir, contentDir);
   if (!existsSync(root)) return [];
 
   const files = (dir: string): string[] =>
@@ -375,7 +458,7 @@ export function loadContentCatalog(domain: DomainConfig): ContentCatalogItem[] {
         return [{
           id: slug.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, ''),
           url: `${cfg.base_url?.replace(/\/$/, '') ?? ''}/${slug}/`.replace(/([^:]\/)\/+/g, '$1'),
-          content_path: `${cfg.content_dir.replace(/\/$/, '')}/${relativePath}`,
+          content_path: `${contentDir.replace(/\/$/, '')}/${relativePath}`,
           title: frontmatter.title,
           pillar: typeof frontmatter.pillar === 'string' ? frontmatter.pillar : slug.split('/')[0] ?? 'inne',
           author: typeof author?.name === 'string' ? author.name : '—',

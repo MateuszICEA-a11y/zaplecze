@@ -78,6 +78,18 @@ domains:
       enabled: false # zona grupa-icea.pl nie jest na tym koncie Cloudflare
     leads:
       enabled: false # brak endpointu leadów na grupa-icea.pl
+    wordpress:
+      enabled: true # katalog treści z REST + maper ACF + hash (Content Watcher, etap A)
+      base_url: https://www.grupa-icea.pl
+      # Start z samym blogiem. CPT (dictionary, casestudy, seonewsy, industries)
+      # mają inny cykl życia – decyzja o objęciu ich watcherem jest otwarta.
+      post_types: [posts]
+      # Odczyt działa anonimowo; WP_APP_USER + WP_APP_PASSWORD (Application
+      # Password) są dokładane automatycznie, gdy tylko trafią do env/sekretów.
+    content_watcher:
+      enabled: true
+      source: wordpress # katalog z collectora zamiast plików markdown w repo
+      base_url: https://www.grupa-icea.pl
 
 # Źródła per konto (nie per domena) – salda kredytów.
 global:
