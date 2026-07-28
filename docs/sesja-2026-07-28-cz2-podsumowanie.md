@@ -86,19 +86,52 @@ więcej, niż dopisał. Flaga trafiła dokładnie w tę sekcję.
 - Inline diff przy gruntownym przepisaniu jest nieczytelny; przy zmianie
   powyżej 50% treści domyślnie włącza się widok „przed | po" obok siebie.
 
+## Wdrożenie na produkcji (2026-07-28, po południu)
+
+Kod wypchnięty na `main`, Workers Builds zbudował Workera. Zweryfikowane na
+żywej instalacji:
+
+| Element | Stan |
+| --- | --- |
+| Trasy `/api/cw/*` | ✅ `GET /api/cw/jobs` → 200 |
+| Baza D1 + 5 tabel | ✅ |
+| Sekrety w Workerze (`CW_CALLBACK_SECRET`, `GH_DISPATCH_TOKEN`, `DASH_PASSWORD`) | ✅ |
+| Sekrety w GitHubie (`CW_CALLBACK_SECRET`, `DASHBOARD_URL`) | ✅ |
+| Podpis callbacku | ✅ poprawny → 404 (brak zadania), powtórzony → 409, brak → 401 |
+| Uruchomienie pipeline'u z panelu | ⛔ token bez `Contents: write` |
+
+### Defekty wykryte przy pierwszym uruchomieniu
+
+**Uprawnienia tokenu dispatchu.** `repository_dispatch` dla tokenów
+fine-grained wymaga **Contents: Read and write**, nie „Actions" (zweryfikowane
+w dokumentacji GitHuba po tym, jak Worker dostał `403 Resource not accessible
+by personal access token`). „Actions: write" jest potrzebne osobno – do
+anulowania przebiegu z panelu.
+
+**Cooldown blokował po nieudanej próbie.** Zadanie, które nigdy nie
+wystartowało, blokowało wpis na 30 dni. Poprawione: cooldown liczą wyłącznie
+zadania aktywne albo zakończone realnym wynikiem (`failed`, `cancelled`,
+`stale` nie blokują). Testowe rekordy usunięte z D1.
+
+**Cloudflare odrzuca `python-urllib`** kodem 1010 (blokada po sygnaturze
+klienta), zanim żądanie dojdzie do Workera. Pipeline wysyła własny User-Agent
+`content-refresher` i przechodzi – ale każda nowa integracja musi o tym
+pamiętać.
+
 ## Commity
 
 `9a85a5c` API kolejki na D1 · `d325db1` pipeline content-refresher ·
-`d098c2f` edytor wpisu z diffem · `b5d2999` podpięcie bazy D1
+`d098c2f` edytor wpisu z diffem · `b5d2999` podpięcie bazy D1 ·
+`7689fa5` korekta uprawnień tokenu · `9a5844c` cooldown nie blokuje po błędzie
 
-## Do zrobienia przed pierwszym uruchomieniem z panelu
+## Do zrobienia
 
-1. **GitHub Secrets** (konto `sibilianspirit` nie ma uprawnień do sekretów
-   tego repo): `CW_CALLBACK_SECRET` (wartość ustawiona już w Workerze) oraz
-   `DASHBOARD_URL`.
-2. **Fine-grained PAT** na to repo → `wrangler secret put GH_DISPATCH_TOKEN`.
-   Uprawnienia: **Contents: Read and write** (bez tego `repository_dispatch`
-   zwraca 403 – to Contents, nie Actions, wbrew intuicji) oraz **Actions:
-   Read and write** (anulowanie przebiegu z panelu).
-3. **Deploy Workera** (`npx wrangler deploy` z `dashboard/app`).
-4. Application Password w WordPressie – dopiero to odblokuje zapis draftów.
+1. **Dodać `Contents: Read and write`** do istniejącego fine-grained tokenu
+   (github.com/settings/personal-access-tokens → token → Repository permissions).
+   Wartość tokenu się nie zmienia, więc nie trzeba go ponownie wgrywać do
+   Workera. To jedyna rzecz blokująca pierwszy przejazd z panelu.
+2. Pełny przejazd e2e na wpisie „Błąd 403" (5767): dispatch → kroki w Actions →
+   callbacki → diff w panelu.
+3. Application Password w WordPressie – odblokuje zapis draftów (etap 4).
+4. Obserwacja jakości: czy zakaz skracania w promptcie 1.1.0 realnie ogranicza
+   wycinanie treści.
