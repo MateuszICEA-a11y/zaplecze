@@ -303,7 +303,12 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       return;
     }
     renderDoc();
-    if (job) applyJobToDoc(job);
+    // Zadanie mogło wczytać się szybciej niż treść – nakładamy jego stan
+    // (propozycje + cytat eksperta) na świeżo zbudowany dokument.
+    if (job) {
+      applyJobToDoc(job);
+      applyExpertToDoc(job);
+    }
   }
 
   /** Sekcja dokumentu: nagłówek + treść + (po pipelinie) narzędzia i tryby. */
