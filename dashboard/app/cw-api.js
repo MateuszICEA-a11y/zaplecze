@@ -21,6 +21,12 @@ export const MAX_CALLBACK_BYTES = 512 * 1024;
 
 export const IMPROVEMENTS = ['gaps', 'expert', 'sources', 'internal_links'];
 
+/** Modele domyślne pipeline'u (lustro config.py – MODEL_RESEARCH/MODEL_WRITER).
+    Lista dostępnych modeli jest dynamiczna (frontend zaciąga ją z API
+    OpenRoutera), więc walidujemy tylko FORMAT identyfikatora, nie whitelistę. */
+export const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/claude-sonnet-5' };
+const MODEL_ID = /^[a-z0-9-]+\/[a-z0-9.:_-]{1,60}$/i;
+
 const ACTIVE = ['queued', 'dispatching', 'running'];
 const FINAL = ['done', 'failed', 'cancelled', 'budget_exceeded'];
 
@@ -114,8 +120,25 @@ export function parseJobRequest(input) {
   const improvements = IMPROVEMENTS.filter((key) => raw.includes(key));
   if (!improvements.length) errors.push('improvements');
 
+  const author = typeof input?.author === 'string' ? input.author.trim().slice(0, 120) : '';
+
+  // Modele opcjonalne – brak pola oznacza defaulty pipeline'u (config.py).
+  let models = null;
+  if (input?.models !== undefined && input?.models !== null) {
+    const research = typeof input.models?.research === 'string' ? input.models.research.trim() : '';
+    const writer = typeof input.models?.writer === 'string' ? input.models.writer.trim() : '';
+    if ((research && !MODEL_ID.test(research)) || (writer && !MODEL_ID.test(writer))) {
+      errors.push('models');
+    } else if (research || writer) {
+      models = {
+        research: research || DEFAULT_MODELS.research,
+        writer: writer || DEFAULT_MODELS.writer,
+      };
+    }
+  }
+
   if (errors.length) return { ok: false, errors };
-  return { ok: true, job: { domain, post_id: postId, post_type: postType, url, title, improvements } };
+  return { ok: true, job: { domain, post_id: postId, post_type: postType, url, title, author, improvements, models } };
 }
 
 /** Callback z pipeline'u: postęp kroku albo zmiana stanu zadania. */
@@ -185,8 +208,8 @@ async function audit(env, action, jobId, detail) {
 async function insertJob(env, job, id, cooldownFrom, dayFrom) {
   const result = await db(env)
     .prepare(
-      `INSERT INTO jobs (id, domain, post_id, post_type, url, title, status, improvements, created_at, updated_at, created_by)
-       SELECT ?1, ?2, ?3, ?4, ?5, ?6, 'queued', ?7, ?8, ?8, 'dashboard'
+      `INSERT INTO jobs (id, domain, post_id, post_type, url, title, author, status, improvements, models, created_at, updated_at, created_by)
+       SELECT ?1, ?2, ?3, ?4, ?5, ?6, ?13, 'queued', ?7, ?14, ?8, ?8, 'dashboard'
        WHERE (SELECT COUNT(*) FROM jobs WHERE domain = ?2 AND status IN ('queued','dispatching','running')) < ?9
          AND (SELECT COUNT(*) FROM jobs WHERE created_at >= ?10) < ?11
          AND NOT EXISTS (
@@ -200,6 +223,7 @@ async function insertJob(env, job, id, cooldownFrom, dayFrom) {
       id, job.domain, job.post_id, job.post_type, job.url, job.title,
       JSON.stringify(job.improvements), nowIso(),
       MAX_ACTIVE_PER_DOMAIN, dayFrom, MAX_JOBS_PER_DAY, cooldownFrom,
+      job.author || null, job.models ? JSON.stringify(job.models) : null,
     )
     .run();
   return (result.meta?.changes ?? 0) > 0;
@@ -266,7 +290,12 @@ async function dispatchWorkflow(env, job) {
         post_id: job.post_id,
         post_type: job.post_type,
         url: job.url,
+        // Workflow czyta też title/author (ekspert nie może cytować autora
+        // wpisu) – wcześniej ich brakowało w payloadzie.
+        title: job.title,
+        author: job.author || '',
         improvements: job.improvements,
+        models: job.models ?? null,
       },
     }),
   });
@@ -344,6 +373,8 @@ async function readJob(env, id) {
   return {
     ...job,
     improvements: parse(job.improvements, []),
+    models: parse(job.models, null),
+    expert: parse(job.expert, null),
     cost: parse(job.cost, {}),
     steps: (steps.results ?? []).map((step) => ({ ...step, payload: parse(step.payload, null), cost: parse(step.cost, null) })),
     sections: (sections.results ?? []).map((section) => ({ ...section, diff: parse(section.diff, null), accepted: section.accepted === 1 })),

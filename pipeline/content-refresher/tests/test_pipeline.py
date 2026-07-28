@@ -193,6 +193,31 @@ class TestResearch(unittest.TestCase):
         request.assert_not_called()
 
 
+class TestModelOverride(unittest.TestCase):
+    """Wybór modeli z dashboardu: --model-* nadpisuje config, puste = defaulty."""
+
+    @staticmethod
+    def _pipeline(model_research="", model_writer=""):
+        import run as run_module
+
+        args = type("Args", (), {
+            "job": "t", "dry_run": True, "improvements": [], "research_file": "",
+            "model_research": model_research, "model_writer": model_writer,
+        })()
+        return run_module.Pipeline(args)
+
+    def test_puste_argumenty_daja_defaulty_z_configu(self):
+        import config
+        pipeline = self._pipeline()
+        self.assertEqual(pipeline.model_research, config.MODEL_RESEARCH)
+        self.assertEqual(pipeline.model_writer, config.MODEL_WRITER)
+
+    def test_argumenty_nadpisuja_config(self):
+        pipeline = self._pipeline("perplexity/sonar-reasoning-pro", "google/gemini-3.1-pro")
+        self.assertEqual(pipeline.model_research, "perplexity/sonar-reasoning-pro")
+        self.assertEqual(pipeline.model_writer, "google/gemini-3.1-pro")
+
+
 class TestBudget(unittest.TestCase):
     def test_przekroczenie_limitu_zapytan_serp(self):
         budget = Budget(serp_requests=2, tokens=1000)

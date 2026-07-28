@@ -26,6 +26,14 @@ on:
         description: 'Pakiet ulepszeń po przecinku'
         required: false
         default: gaps,expert,sources,internal_links
+      model_research:
+        description: 'Model researchu (OpenRouter), puste = default z config.py'
+        required: false
+        default: ''
+      model_writer:
+        description: 'Model piszący (OpenRouter), puste = default z config.py'
+        required: false
+        default: ''
 
 permissions:
   contents: read
@@ -72,7 +80,9 @@ jobs:
             --url "${{ github.event.client_payload.url || inputs.url }}" \
             --title "${{ github.event.client_payload.title || '' }}" \
             --author "${{ github.event.client_payload.author || '' }}" \
-            --improvements "${{ join(github.event.client_payload.improvements, ',') || inputs.improvements }}"
+            --improvements "${{ join(github.event.client_payload.improvements, ',') || inputs.improvements }}" \
+            --model-research "${{ github.event.client_payload.models.research || inputs.model_research || '' }}" \
+            --model-writer "${{ github.event.client_payload.models.writer || inputs.model_writer || '' }}"
 
       - name: Report failure
         # Bez tego padnięty runner zostawiłby zadanie w stanie „running" aż do

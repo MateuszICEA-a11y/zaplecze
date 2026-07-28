@@ -14,8 +14,11 @@ CREATE TABLE IF NOT EXISTS jobs (
   post_type         TEXT NOT NULL DEFAULT 'posts',
   url               TEXT NOT NULL,
   title             TEXT NOT NULL,
+  author            TEXT,                        -- ekspert nie może cytować autora wpisu
   status            TEXT NOT NULL DEFAULT 'queued',
   improvements      TEXT NOT NULL DEFAULT '[]',  -- JSON: wybrany pakiet ulepszeń
+  models            TEXT,                        -- JSON: {research, writer} – nadpisanie defaultów pipeline'u
+  expert            TEXT,                        -- JSON: {status, quote, expert, role, slot, model, cost} – etap finalny z Workera
   snapshot_hash     TEXT,                        -- hash treści z chwili startu
   run_id            TEXT,                        -- GitHub Actions run id
   run_attempt       INTEGER,

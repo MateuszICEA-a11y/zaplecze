@@ -48,6 +48,9 @@ class Pipeline:
         self.client = client_from_env(args.job, dry_run=args.dry_run)
         self.budget = Budget()
         self.improvements = set(args.improvements)
+        # Modele wybrane w dashboardzie (OpenRouter) – puste = defaulty z config.
+        self.model_research = args.model_research or MODEL_RESEARCH
+        self.model_writer = args.model_writer or MODEL_WRITER
         self.state = {"job": args.job, "pipeline_version": PIPELINE_VERSION, "steps": {}}
         # Odtworzenie przejazdu z zapisanych danych researchu: pozwala testować
         # prompty i diff bez palenia jednostek Ahrefs (i bez klucza lokalnie).
@@ -222,7 +225,7 @@ class Pipeline:
             f"{item['slot']}. {item['title'] or '(bez nagłówka)'}" for item in context["snapshot"]
         )
         result, version = self._ask(
-            "brief", MODEL_RESEARCH, web_search=True,
+            "brief", self.model_research, web_search=True,
             title=context["title"], url=context["url"],
             published_at=self.args.published_at or "—",
             changed_at=self.args.changed_at or "—",
@@ -250,7 +253,7 @@ class Pipeline:
             for item in context["snapshot"]
         ]
         result, version = self._ask(
-            "rewrite", MODEL_WRITER,
+            "rewrite", self.model_writer,
             brief=context.get("brief") or {},
             sections=payload_sections,
             free_slots=context["free_slots"][:MAX_NEW_SECTIONS],
@@ -318,7 +321,7 @@ class Pipeline:
 
     def step_expert(self):
         result, version = self._ask(
-            "expert", MODEL_WRITER,
+            "expert", self.model_writer,
             title=self.context["title"],
             content=self._merged_content(),
             author=self.args.author or "nieznany",
@@ -340,7 +343,7 @@ class Pipeline:
 
     def step_sources(self):
         result, version = self._ask(
-            "sources", MODEL_RESEARCH, web_search=True,
+            "sources", self.model_research, web_search=True,
             title=self.context["title"],
             content=self._merged_content(),
         )
@@ -372,7 +375,7 @@ class Pipeline:
             for i, row in enumerate(catalog[:200])
         )
         result, version = self._ask(
-            "internal_links", MODEL_WRITER,
+            "internal_links", self.model_writer,
             title=self.context["title"], url=self.context["url"],
             content=self._merged_content(),
             catalog=listing,
@@ -464,6 +467,10 @@ def main() -> int:
     parser.add_argument("--published-at", default="")
     parser.add_argument("--changed-at", default="")
     parser.add_argument("--improvements", default="gaps,expert,sources,internal_links")
+    parser.add_argument("--model-research", default="",
+                        help="model OpenRouter dla kroków z websearchem (puste = config)")
+    parser.add_argument("--model-writer", default="",
+                        help="model OpenRouter dla kroków piszących (puste = config)")
     parser.add_argument("--dry-run", action="store_true", help="bez callbacków do dashboardu")
     parser.add_argument("--research-file", default="",
                         help="JSON z gotowymi danymi researchu zamiast wywołań Ahrefs")

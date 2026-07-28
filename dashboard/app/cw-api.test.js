@@ -10,6 +10,7 @@ import {
   signPayload,
   timingSafeEqual,
   verifySignature,
+  DEFAULT_MODELS,
   SIGNATURE_WINDOW_S,
 } from './cw-api.js';
 
@@ -144,6 +145,37 @@ test('parseJobRequest: odrzuca zły URL, brak tytułu i nieznane ulepszenia', ()
   assert.deepEqual(unknown.errors, ['improvements']);
 });
 
+test('parseJobRequest: modele – walidacja formatu, brak pola daje null', () => {
+  const base = { domain: 'grupa-icea.pl', post_id: 1, url: 'https://x.pl/a/', title: 'T' };
+
+  const none = parseJobRequest(base);
+  assert.equal(none.ok, true);
+  assert.equal(none.job.models, null);
+
+  const ok = parseJobRequest({ ...base, models: { research: 'perplexity/sonar-pro', writer: 'anthropic/claude-sonnet-5' } });
+  assert.equal(ok.ok, true);
+  assert.deepEqual(ok.job.models, { research: 'perplexity/sonar-pro', writer: 'anthropic/claude-sonnet-5' });
+
+  // Jeden model podany → drugi uzupełniony defaultem.
+  const partial = parseJobRequest({ ...base, models: { writer: 'google/gemini-3.1-pro' } });
+  assert.equal(partial.job.models.research, DEFAULT_MODELS.research);
+  assert.equal(partial.job.models.writer, 'google/gemini-3.1-pro');
+
+  const bad = parseJobRequest({ ...base, models: { writer: 'nie model!! ;drop' } });
+  assert.equal(bad.ok, false);
+  assert.deepEqual(bad.errors, ['models']);
+
+  // Pusty obiekt = jak brak pola.
+  assert.equal(parseJobRequest({ ...base, models: {} }).job.models, null);
+});
+
+test('parseJobRequest: author opcjonalny, przycinany do 120 znaków', () => {
+  const base = { domain: 'grupa-icea.pl', post_id: 1, url: 'https://x.pl/a/', title: 'T' };
+  assert.equal(parseJobRequest(base).job.author, '');
+  const long = parseJobRequest({ ...base, author: `  ${'A'.repeat(200)}  ` });
+  assert.equal(long.job.author.length, 120);
+});
+
 test('parseCallback: wymaga job_id i run_id, przycina błąd', () => {
   assert.equal(parseCallback({ job_id: 'short' }).ok, false);
   const ok = parseCallback({
@@ -232,6 +264,39 @@ test('callback: poprawny zapisuje krok i sekcje', async () => {
   const batch = db.calls.find((call) => call.op === 'batch');
   // jobs + job_steps + jedna sekcja (slot 99 odrzucony)
   assert.equal(batch.size, 3);
+});
+
+/* ---------- dispatch ---------- */
+
+test('createJob: client_payload zawiera models, title i author', async (t) => {
+  const db = fakeDb({
+    'SELECT * FROM jobs WHERE id': { id: 'x', status: 'dispatching', improvements: '[]', cost: '{}' },
+    'FROM job_steps': [],
+    'FROM job_sections': [],
+  });
+  let payload = null;
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = async (url, init) => {
+    payload = JSON.parse(init.body).client_payload;
+    return new Response(null, { status: 204 });
+  };
+  t.after(() => { globalThis.fetch = realFetch; });
+
+  const request = new Request('https://dash.example/api/cw/jobs', {
+    method: 'POST',
+    headers: { 'X-CW-Request': '1', 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      domain: 'grupa-icea.pl', post_id: 5767, url: 'https://www.grupa-icea.pl/blog/a/',
+      title: 'Tytuł', author: 'Mateusz Wiśniewski',
+      improvements: ['gaps'],
+      models: { research: 'perplexity/sonar-pro', writer: 'anthropic/claude-sonnet-5' },
+    }),
+  });
+  const response = await routeContentWatcher(request, { CW_DB: db, GH_DISPATCH_TOKEN: 't', GH_REPO: 'a/b' });
+  assert.equal(response.status, 201);
+  assert.equal(payload.title, 'Tytuł');
+  assert.equal(payload.author, 'Mateusz Wiśniewski');
+  assert.deepEqual(payload.models, { research: 'perplexity/sonar-pro', writer: 'anthropic/claude-sonnet-5' });
 });
 
 /* ---------- routing ---------- */
