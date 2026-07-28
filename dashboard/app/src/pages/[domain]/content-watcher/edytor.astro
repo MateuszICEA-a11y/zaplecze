@@ -1,0 +1,623 @@
+---
+/* Edytor wpisu: uruchomienie pipeline'u reoptymalizacji i przegląd propozycji.
+   Jedna strona dla całej domeny – wpis wskazuje parametr `?id=`. Dane
+   dynamiczne (zadania, kroki, diff) idą z Workera; metadane z catalog.json. */
+import Layout from '../../../layouts/Layout.astro';
+import DomainHeader from '../../../components/DomainHeader.astro';
+import { loadConfig, latestSnapshot } from '../../../lib/data';
+
+export function getStaticPaths() {
+  return loadConfig()
+    .domains.filter((domain) => {
+      const cfg = domain.content_watcher as { enabled?: boolean; source?: string } | undefined;
+      // Edytor ma sens tylko dla domen na CMS-ie – treści z repozytorium
+      // poprawia się w plikach, nie przez kolejkę.
+      return cfg?.enabled === true && cfg.source === 'wordpress';
+    })
+    .map((domain) => ({ params: { domain: domain.id }, props: { name: domain.name } }));
+}
+
+const { domain } = Astro.params;
+const { name } = Astro.props;
+const latest = latestSnapshot(domain!);
+
+const IMPROVEMENTS = [
+  { key: 'gaps', label: 'Uzupełnienie luk treści', note: 'research SERP → wytyczne → przepisanie sekcji' },
+  { key: 'expert', label: 'Porada eksperta', note: 'cytat osoby z ICEA, innej niż autor wpisu' },
+  { key: 'sources', label: 'Źródła i przypisy', note: 'autorytatywne linki + definicja z Wikipedii' },
+  { key: 'internal_links', label: 'Linki wewnętrzne', note: 'dopasowanie z katalogu treści serwisu' },
+];
+
+const STEP_LABELS: Record<string, string> = {
+  fetch: 'Pobranie treści',
+  keywords_own: 'Frazy własne',
+  serp: 'Wyniki wyszukiwania',
+  competitors: 'Treść konkurencji',
+  keywords_competitors: 'Frazy konkurencji',
+  brief: 'Wytyczne',
+  rewrite: 'Przepisanie sekcji',
+  expert: 'Porada eksperta',
+  sources: 'Źródła i przypisy',
+  internal_links: 'Linki wewnętrzne',
+  diff: 'Porównanie zmian',
+};
+---
+
+<Layout title={`${name} – edytor wpisu`}>
+  <DomainHeader domain={domain!} name={name} active="content-watcher" latest={latest} themeToggle />
+
+  <div class="ed-back"><a href={`/${domain}/content-watcher/`}>← wróć do listy priorytetów</a></div>
+
+  <div data-ed-missing class="cw-note" hidden>
+    Nie wskazano wpisu. Wejdź tu z listy priorytetów, klikając „Edytor” przy wybranym artykule.
+  </div>
+
+  <section data-ed-main hidden>
+    <div class="ed-head">
+      <div>
+        <span class="ed-pillar" data-ed-pillar></span>
+        <h2 data-ed-title></h2>
+        <a class="ed-url" data-ed-url href="#" target="_blank" rel="noopener"></a>
+      </div>
+      <dl class="ed-meta">
+        <div><dt>Publikacja</dt><dd data-ed-published>—</dd></div>
+        <div><dt>Realna zmiana treści</dt><dd data-ed-updated>—</dd></div>
+        <div><dt>Objętość</dt><dd data-ed-size>—</dd></div>
+        <div><dt>Autor</dt><dd data-ed-author>—</dd></div>
+      </dl>
+    </div>
+
+    <div class="section-head">
+      <h2>Pakiet ulepszeń</h2>
+      <span class="section-meta">pipeline kończy się propozycją – nic nie trafia do WordPressa automatycznie</span>
+    </div>
+    <div class="ed-card">
+      <div class="ed-improvements">
+        {IMPROVEMENTS.map((item) => (
+          <label class="ed-improvement">
+            <input type="checkbox" name="improvement" value={item.key} checked />
+            <span><b>{item.label}</b><small>{item.note}</small></span>
+          </label>
+        ))}
+      </div>
+      <div class="ed-actions">
+        <button type="button" data-ed-run>Uruchom pipeline</button>
+        <button type="button" data-ed-cancel hidden>Anuluj zadanie</button>
+        <span class="ed-hint">
+          Szacunkowy koszt: ~900 jednostek Ahrefs i kilkanaście tysięcy tokenów.
+          Ten sam wpis można kolejkować raz na 30 dni.
+        </span>
+      </div>
+      <p class="ed-error" data-ed-error hidden></p>
+    </div>
+
+    <div class="section-head">
+      <h2>Przebieg</h2>
+      <span class="section-meta" data-ed-status>brak zadania dla tego wpisu</span>
+    </div>
+    <div class="ed-card">
+      <ol class="ed-steps" data-ed-steps>
+        {Object.entries(STEP_LABELS).map(([key, label]) => (
+          <li data-step={key} class="pending"><span class="ed-step-name">{label}</span><span class="ed-step-info"></span></li>
+        ))}
+      </ol>
+    </div>
+
+    <div class="section-head" data-ed-brief-head hidden>
+      <h2>Wytyczne z analizy</h2>
+      <span class="section-meta">luki wobec konkurencji i frazy do pokrycia</span>
+    </div>
+    <div class="ed-card" data-ed-brief hidden></div>
+
+    <div class="section-head" data-ed-diff-head hidden>
+      <h2>Proponowane zmiany</h2>
+      <span class="section-meta">
+        zaznacz sekcje do wdrożenia i skopiuj treść do pola ACF w WordPressie ·
+        zapis draftem będzie możliwy po utworzeniu Application Password
+      </span>
+    </div>
+    <div data-ed-sections></div>
+  </section>
+</Layout>
+
+<script>
+  type Section = {
+    slot: number;
+    title_field: string;
+    text_field: string;
+    operation: string;
+    title_before: string | null;
+    title_after: string | null;
+    text_before: string | null;
+    text_after: string | null;
+    diff: {
+      opcodes: { op: string; before: string; after: string }[];
+      stats: { added: number; removed: number; shrunk?: boolean };
+    } | null;
+    accepted: boolean;
+  };
+  type Step = { step: string; status: string; payload: any; cost: any; model: string | null; error: string | null };
+  type Job = {
+    id: string; status: string; error: string | null; cost: any;
+    steps: Step[]; sections: Section[];
+  };
+
+  const domain = location.pathname.split('/').filter(Boolean)[0] ?? '';
+  const contentId = new URLSearchParams(location.search).get('id') ?? '';
+  const $ = <T extends HTMLElement>(selector: string) => document.querySelector<T>(selector);
+  const pl = new Intl.NumberFormat('pl-PL');
+  const date = (value: string | null) =>
+    value ? new Date(`${value}T00:00:00Z`).toLocaleDateString('pl-PL', { timeZone: 'UTC' }) : '—';
+
+  const api = async (path: string, options: RequestInit = {}) => {
+    const response = await fetch(path, {
+      ...options,
+      headers: { 'X-CW-Request': '1', 'Content-Type': 'application/json', ...(options.headers ?? {}) },
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) throw new Error(data?.error ?? `Błąd ${response.status}`);
+    return data;
+  };
+
+  const showError = (message: string) => {
+    const node = $('[data-ed-error]');
+    if (!node) return;
+    node.textContent = message;
+    node.hidden = false;
+  };
+
+  let entry: any = null;
+  let job: Job | null = null;
+  let pollDelay = 3000;
+  let pollTimer: number | undefined;
+
+  async function loadCatalog() {
+    const data = await api(`/${domain}/content-watcher/catalog.json`);
+    entry = (data.items ?? []).find((item: any) => item.id === contentId) ?? null;
+    if (!entry) {
+      $('[data-ed-missing]')!.hidden = false;
+      return false;
+    }
+    $('[data-ed-main]')!.hidden = false;
+    $('[data-ed-title]')!.textContent = entry.title;
+    $('[data-ed-pillar]')!.textContent = entry.pillar ?? '';
+    const url = $<HTMLAnchorElement>('[data-ed-url]')!;
+    url.href = entry.url;
+    url.textContent = new URL(entry.url).pathname;
+    $('[data-ed-published]')!.textContent = date(entry.published_at);
+    $('[data-ed-updated]')!.textContent = date(entry.updated_at);
+    $('[data-ed-size]')!.textContent =
+      `${pl.format(entry.word_count ?? 0)} słów · ${pl.format(entry.headings ?? 0)} nagłówków` +
+      (entry.sections ? ` · ${entry.sections} sekcji ACF` : '');
+    $('[data-ed-author]')!.textContent = entry.author ?? '—';
+    return true;
+  }
+
+  function renderSteps(current: Job) {
+    const byName = new Map(current.steps.map((step) => [step.step, step]));
+    document.querySelectorAll<HTMLLIElement>('[data-ed-steps] li').forEach((node) => {
+      const step = byName.get(node.dataset.step ?? '');
+      node.className = step?.status ?? 'pending';
+      const info = node.querySelector('.ed-step-info');
+      if (!info) return;
+      if (!step) { info.textContent = ''; return; }
+      const cost = step.cost?.ahrefs_units
+        ? `${pl.format(step.cost.ahrefs_units)} jedn.`
+        : step.cost?.tokens_out
+          ? `${pl.format((step.cost.tokens_in ?? 0) + (step.cost.tokens_out ?? 0))} tok.`
+          : '';
+      info.textContent = step.error ? step.error : cost;
+    });
+  }
+
+  function renderBrief(current: Job) {
+    const brief = current.steps.find((step) => step.step === 'brief')?.payload;
+    const head = $('[data-ed-brief-head]');
+    const card = $('[data-ed-brief]');
+    if (!brief || !head || !card) return;
+    head.hidden = false;
+    card.hidden = false;
+    card.replaceChildren();
+
+    const add = (title: string, body: Node) => {
+      const wrap = document.createElement('div');
+      wrap.className = 'ed-brief-block';
+      const heading = document.createElement('h3');
+      heading.textContent = title;
+      wrap.append(heading, body);
+      card.append(wrap);
+    };
+    if (brief.summary) {
+      const p = document.createElement('p');
+      p.textContent = brief.summary;
+      add('Podsumowanie', p);
+    }
+    if (brief.gaps?.length) {
+      const list = document.createElement('ul');
+      for (const gap of brief.gaps) {
+        const li = document.createElement('li');
+        li.textContent = `${gap.topic} – ${gap.why}`;
+        list.append(li);
+      }
+      add('Luki wobec konkurencji', list);
+    }
+    if (brief.keywords_to_cover?.length) {
+      const list = document.createElement('ul');
+      for (const keyword of brief.keywords_to_cover) {
+        const li = document.createElement('li');
+        li.textContent =
+          `${keyword.keyword}` +
+          (keyword.volume ? ` · ${pl.format(keyword.volume)}/mies.` : '') +
+          (keyword.current_position ? ` · obecnie ${keyword.current_position}` : '');
+        list.append(li);
+      }
+      add('Frazy do pokrycia', list);
+    }
+    if (brief.factual_risks?.length) {
+      const list = document.createElement('ul');
+      for (const risk of brief.factual_risks) {
+        const li = document.createElement('li');
+        li.textContent = risk;
+        list.append(li);
+      }
+      add('Do weryfikacji faktograficznej', list);
+    }
+  }
+
+  const plain = (html: string | null) =>
+    (html ?? '').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
+
+  /** Ile treści sekcji objęła zmiana – przy gruntownym przepisaniu diff inline
+      przestaje być czytelny i lepiej pokazać wersje obok siebie. */
+  function changeRatio(section: Section) {
+    const opcodes = section.diff?.opcodes ?? [];
+    const changed = opcodes.filter((op) => op.op !== 'equal')
+      .reduce((sum, op) => sum + Math.max(op.before.length, op.after.length), 0);
+    const total = opcodes.reduce((sum, op) => sum + Math.max(op.before.length, op.after.length), 0);
+    return total ? changed / total : 0;
+  }
+
+  /** Diff renderujemy wyłącznie przez textContent – w treści siedzą fragmenty
+      obcych stron i HTML z modelu, więc traktujemy je jak dane, nie jak markup. */
+  function renderInlineDiff(section: Section) {
+    const wrap = document.createElement('div');
+    wrap.className = 'ed-diff';
+    for (const op of section.diff?.opcodes ?? []) {
+      if (op.op === 'equal') {
+        const span = document.createElement('span');
+        span.textContent = op.before;
+        wrap.append(span);
+        continue;
+      }
+      if (op.before) {
+        const del = document.createElement('del');
+        del.textContent = op.before;
+        wrap.append(del);
+      }
+      if (op.after) {
+        const ins = document.createElement('ins');
+        ins.textContent = op.after;
+        wrap.append(ins);
+      }
+    }
+    return wrap;
+  }
+
+  function renderSideBySide(section: Section) {
+    const wrap = document.createElement('div');
+    wrap.className = 'ed-side';
+    for (const [label, value, className] of [
+      ['przed', plain(section.text_before), 'before'],
+      ['po', plain(section.text_after), 'after'],
+    ] as const) {
+      const column = document.createElement('div');
+      column.className = `ed-side-col ${className}`;
+      const caption = document.createElement('h4');
+      caption.textContent = label;
+      const body = document.createElement('p');
+      body.textContent = value || '—';
+      column.append(caption, body);
+      wrap.append(column);
+    }
+    return wrap;
+  }
+
+  function renderComparison(section: Section) {
+    const host = document.createElement('div');
+    const heavy = changeRatio(section) > 0.5 || section.operation === 'insert';
+    let mode: 'inline' | 'side' = heavy ? 'side' : 'inline';
+
+    const toolbar = document.createElement('div');
+    toolbar.className = 'ed-view-switch';
+    const button = document.createElement('button');
+    button.type = 'button';
+    const view = document.createElement('div');
+
+    const paint = () => {
+      button.textContent = mode === 'side' ? 'pokaż różnice słowo po słowie' : 'pokaż wersje obok siebie';
+      view.replaceChildren(mode === 'side' ? renderSideBySide(section) : renderInlineDiff(section));
+    };
+    button.addEventListener('click', () => {
+      mode = mode === 'side' ? 'inline' : 'side';
+      paint();
+    });
+    paint();
+    toolbar.append(button);
+    host.append(toolbar, view);
+    return host;
+  }
+
+  function renderSections(current: Job) {
+    const host = $('[data-ed-sections]');
+    const head = $('[data-ed-diff-head]');
+    if (!host || !head) return;
+    if (!current.sections?.length) {
+      host.replaceChildren();
+      head.hidden = true;
+      return;
+    }
+    head.hidden = false;
+    host.replaceChildren(
+      ...current.sections.map((section) => {
+        const card = document.createElement('article');
+        card.className = 'ed-card ed-section';
+
+        const header = document.createElement('header');
+        const title = document.createElement('div');
+        const heading = document.createElement('h3');
+        heading.textContent = section.title_after || section.title_before || `Sekcja ${section.slot}`;
+        const meta = document.createElement('small');
+        const stats = section.diff?.stats;
+        meta.textContent =
+          `${section.text_field} · ${section.operation === 'insert' ? 'nowa sekcja' : 'aktualizacja'}` +
+          (stats ? ` · +${pl.format(stats.added)} / −${pl.format(stats.removed)} słów` : '');
+        title.append(heading, meta);
+        if (stats?.shrunk) {
+          const warning = document.createElement('small');
+          warning.className = 'ed-shrunk';
+          warning.textContent = 'model wyciął więcej, niż dopisał – sprawdź, czy nie zniknęło nic wartościowego';
+          title.append(warning);
+        }
+
+        const controls = document.createElement('div');
+        controls.className = 'ed-section-actions';
+        const accept = document.createElement('label');
+        accept.className = 'ed-accept';
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = section.accepted;
+        checkbox.addEventListener('change', async () => {
+          try {
+            await api(`/api/cw/jobs/${current.id}/sections/${section.slot}`, {
+              method: 'PATCH',
+              body: JSON.stringify({ accepted: checkbox.checked }),
+            });
+          } catch (error) {
+            checkbox.checked = !checkbox.checked;
+            showError(error instanceof Error ? error.message : 'Nie udało się zapisać decyzji.');
+          }
+        });
+        accept.append(checkbox, document.createTextNode('do wdrożenia'));
+
+        const copyText = document.createElement('button');
+        copyText.type = 'button';
+        copyText.textContent = 'kopiuj treść';
+        copyText.addEventListener('click', async () => {
+          await navigator.clipboard.writeText(section.text_after ?? '');
+          copyText.textContent = 'skopiowano';
+          setTimeout(() => (copyText.textContent = 'kopiuj treść'), 1500);
+        });
+        const copyTitle = document.createElement('button');
+        copyTitle.type = 'button';
+        copyTitle.textContent = 'kopiuj nagłówek';
+        copyTitle.addEventListener('click', async () => {
+          await navigator.clipboard.writeText(section.title_after ?? '');
+          copyTitle.textContent = 'skopiowano';
+          setTimeout(() => (copyTitle.textContent = 'kopiuj nagłówek'), 1500);
+        });
+        controls.append(accept, copyTitle, copyText);
+        header.append(title, controls);
+
+        const details = document.createElement('details');
+        const summary = document.createElement('summary');
+        summary.textContent = 'pokaż treść „po” w HTML (do wklejenia w ACF)';
+        const pre = document.createElement('pre');
+        pre.textContent = section.text_after ?? '';
+        details.append(summary, pre);
+
+        card.append(header, renderComparison(section), details);
+        return card;
+      }),
+    );
+  }
+
+  function render(current: Job) {
+    job = current;
+    const label: Record<string, string> = {
+      queued: 'w kolejce', dispatching: 'uruchamianie', running: 'w toku', done: 'zakończone',
+      failed: 'błąd', cancelled: 'anulowane', stale: 'runner przestał odpowiadać',
+      budget_exceeded: 'przerwane – wyczerpany budżet',
+    };
+    $('[data-ed-status]')!.textContent =
+      `${label[current.status] ?? current.status}${current.error ? ` · ${current.error}` : ''}`;
+    $<HTMLButtonElement>('[data-ed-run]')!.disabled = ['queued', 'dispatching', 'running'].includes(current.status);
+    $<HTMLButtonElement>('[data-ed-cancel]')!.hidden = !['queued', 'dispatching', 'running'].includes(current.status);
+    renderSteps(current);
+    renderBrief(current);
+    renderSections(current);
+  }
+
+  /** Polling z narastającym odstępem, wstrzymywany przy ukrytej karcie
+      i zatrzymywany w stanie końcowym – zadanie trwa minuty, nie sekundy. */
+  function schedulePoll() {
+    window.clearTimeout(pollTimer);
+    if (!job || !['queued', 'dispatching', 'running'].includes(job.status)) return;
+    pollTimer = window.setTimeout(async () => {
+      if (document.visibilityState === 'hidden') { schedulePoll(); return; }
+      try {
+        const data = await api(`/api/cw/jobs/${job!.id}`);
+        render(data.job);
+      } catch {
+        /* chwilowy błąd sieci nie przerywa pollingu */
+      }
+      pollDelay = Math.min(30000, Math.round(pollDelay * 1.6));
+      schedulePoll();
+    }, pollDelay);
+  }
+
+  async function loadLatestJob() {
+    if (!entry?.post_id) return;
+    try {
+      const data = await api(`/api/cw/jobs?domain=${encodeURIComponent(domain)}&limit=100`);
+      const mine = (data.jobs ?? []).find((row: any) => row.post_id === entry.post_id);
+      if (!mine) return;
+      const full = await api(`/api/cw/jobs/${mine.id}`);
+      render(full.job);
+      schedulePoll();
+    } catch (error) {
+      showError(error instanceof Error ? error.message : 'Nie udało się odczytać stanu zadań.');
+    }
+  }
+
+  $('[data-ed-run]')?.addEventListener('click', async () => {
+    $('[data-ed-error]')!.hidden = true;
+    const improvements = [...document.querySelectorAll<HTMLInputElement>('input[name="improvement"]:checked')]
+      .map((input) => input.value);
+    if (!improvements.length) return showError('Wybierz przynajmniej jedno ulepszenie.');
+    try {
+      const data = await api('/api/cw/jobs', {
+        method: 'POST',
+        body: JSON.stringify({
+          domain,
+          post_id: entry.post_id,
+          post_type: entry.post_type ?? 'posts',
+          url: entry.url,
+          title: entry.title,
+          improvements,
+        }),
+      });
+      pollDelay = 3000;
+      render(data.job);
+      schedulePoll();
+    } catch (error) {
+      showError(error instanceof Error ? error.message : 'Nie udało się zakolejkować zadania.');
+    }
+  });
+
+  $('[data-ed-cancel]')?.addEventListener('click', async () => {
+    if (!job) return;
+    try {
+      await api(`/api/cw/jobs/${job.id}/cancel`, { method: 'POST' });
+      const data = await api(`/api/cw/jobs/${job.id}`);
+      render(data.job);
+    } catch (error) {
+      showError(error instanceof Error ? error.message : 'Nie udało się anulować zadania.');
+    }
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') { pollDelay = 3000; schedulePoll(); }
+  });
+
+  loadCatalog().then((ok) => {
+    if (ok) loadLatestJob();
+  });
+</script>
+
+<style>
+  .ed-back { margin: 0 0 12px; font-size: 14px; }
+  .ed-back a { color: var(--ink-faint); text-decoration: none; }
+  .ed-back a:hover { color: var(--ink); }
+
+  .ed-head { display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;
+    align-items: flex-start; padding: 20px; border: 1px solid var(--line); border-radius: 14px;
+    background: var(--surface); margin-bottom: 24px; }
+  .ed-head h2 { margin: 6px 0; font-size: 24px; }
+  .ed-pillar { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); }
+  .ed-url { font-size: 13px; color: var(--ink-faint); }
+  .ed-meta { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 24px; margin: 0; }
+  .ed-meta dt { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint); }
+  .ed-meta dd { margin: 2px 0 0; font-size: 14px; font-weight: 600; }
+
+
+  .ed-improvements { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr)); gap: 12px; }
+  .ed-improvement { display: flex; gap: 10px; align-items: flex-start; padding: 12px;
+    border: 1px solid var(--line); border-radius: 10px; cursor: pointer; }
+  .ed-improvement span { display: flex; flex-direction: column; gap: 2px; }
+  .ed-improvement small { color: var(--ink-faint); font-size: 12px; }
+
+  .ed-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 16px; }
+  .ed-actions button { padding: 10px 18px; border-radius: 10px; border: 1px solid var(--line);
+    background: var(--accent, #2f7); color: #06120b; font-weight: 700; cursor: pointer; }
+  .ed-actions button[disabled] { opacity: .45; cursor: not-allowed; }
+  .ed-actions [data-ed-cancel] { background: transparent; color: var(--ink); font-weight: 600; }
+  .ed-hint { font-size: 12px; color: var(--ink-faint); flex: 1 1 240px; }
+  .ed-error { margin: 12px 0 0; color: #ff6b6b; font-size: 14px; }
+
+  .ed-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .ed-steps li { display: flex; justify-content: space-between; gap: 12px; padding: 8px 12px;
+    border-radius: 8px; border: 1px solid var(--line); font-size: 14px; }
+  .ed-steps li.pending { opacity: .45; }
+  .ed-steps li.running { border-color: var(--accent, #2f7); }
+  .ed-steps li.done .ed-step-name::before { content: '✓ '; color: var(--accent, #2f7); }
+  .ed-steps li.failed { border-color: #ff6b6b; }
+  .ed-steps li.skipped { opacity: .35; }
+  .ed-step-info { color: var(--ink-faint); font-size: 12px; text-align: right; }
+
+  .ed-brief-block { margin-bottom: 16px; }
+  .ed-brief-block h3 { margin: 0 0 6px; font-size: 14px; letter-spacing: .04em; text-transform: uppercase;
+    color: var(--ink-faint); }
+  .ed-brief-block ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; font-size: 14px; }
+
+  @media (max-width: 900px) {
+    .ed-side { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 720px) {
+    .ed-meta { grid-template-columns: 1fr; }
+    .ed-head { flex-direction: column; }
+  }
+</style>
+
+<style is:global>
+  /* Karty sekcji, diff i porównanie powstają w JavaScripcie, więc nie mają
+     atrybutu scope'ującego Astro – te reguły muszą być globalne. */
+  .ed-card { padding: 18px 20px; border: 1px solid var(--line); border-radius: 14px;
+    background: var(--surface); margin-bottom: 24px; }
+  .ed-section header { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between;
+    align-items: flex-start; margin-bottom: 12px; }
+  .ed-section h3 { margin: 0 0 2px; font-size: 17px; }
+  .ed-section small { color: var(--ink-faint); font-size: 12px; }
+  .ed-section small.ed-shrunk { display: block; margin-top: 4px; color: #e6a700; font-weight: 600; }
+  .ed-section-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .ed-section-actions button { padding: 6px 12px; font-size: 12px; border-radius: 8px;
+    border: 1px solid var(--line); background: transparent; color: var(--ink); cursor: pointer; }
+  .ed-accept { display: flex; gap: 6px; align-items: center; font-size: 13px; }
+
+  .ed-view-switch { display: flex; justify-content: flex-end; margin-bottom: 8px; }
+  .ed-view-switch button { padding: 4px 10px; font-size: 12px; border-radius: 8px;
+    border: 1px solid var(--line); background: transparent; color: var(--ink-faint); cursor: pointer; }
+  .ed-view-switch button:hover { color: var(--ink); }
+
+  .ed-diff { white-space: pre-wrap; line-height: 1.8; font-size: 15px; padding: 14px;
+    border-radius: 10px; background: var(--surface-2, rgba(127,127,127,.06)); overflow-x: auto; }
+  .ed-diff ins { text-decoration: none; background: rgba(45, 200, 120, .28); border-radius: 3px;
+    padding: 1px 2px; box-decoration-break: clone; }
+  .ed-diff del { background: rgba(255, 107, 107, .22); border-radius: 3px; padding: 1px 2px;
+    box-decoration-break: clone; opacity: .75; }
+
+  .ed-side { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  .ed-side-col { padding: 14px; border-radius: 10px; background: var(--surface-2, rgba(127,127,127,.06));
+    border-left: 3px solid var(--line); }
+  .ed-side-col.before { border-left-color: rgba(255, 107, 107, .6); }
+  .ed-side-col.after { border-left-color: rgba(45, 200, 120, .7); }
+  .ed-side-col h4 { margin: 0 0 8px; font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--ink-faint); }
+  .ed-side-col p { margin: 0; font-size: 14px; line-height: 1.7; }
+  .ed-section details { margin-top: 12px; font-size: 13px; }
+  .ed-section pre { overflow-x: auto; padding: 12px; border-radius: 8px; font-size: 12px;
+    background: var(--surface-2, rgba(127,127,127,.06)); }
+
+  @media (max-width: 900px) {
+    .ed-side { grid-template-columns: 1fr; }
+  }
+</style>

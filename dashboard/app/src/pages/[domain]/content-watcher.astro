@@ -327,6 +327,11 @@ const baseline = items.filter((item) => item.hash_baseline).length;
                   <div class="cw-title-row">
                     <a href={item.url} target="_blank" rel="noopener">{item.title}</a>
                     <button type="button" data-cw-detail={item.id}>Szczegóły</button>
+                    {fromCms && (
+                      <a class="cw-editor-link" href={`/${domain}/content-watcher/edytor/?id=${item.id}`}>
+                        Edytor
+                      </a>
+                    )}
                   </div>
                   <span>{item.path}</span>
                   <small>{item.pillar} · {fmtInt(item.word_count)} słów · {fmtInt(item.headings)} nagłówków</small>
@@ -547,6 +552,13 @@ const baseline = items.filter((item) => item.hash_baseline).length;
     color: var(--ink-faint); font: inherit; font-size: .68rem; cursor: pointer; white-space: nowrap;
   }
   .cw-title-row button:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
+  /* Reguła `.cw-title-row > a { flex: 1 }` dotyczy tytułu wpisu – link do
+     edytora musi się z niej wypisać, inaczej rozpycha wiersz. */
+  .cw-title-row > a.cw-editor-link {
+    flex: 0 0 auto; border-bottom: 1px solid var(--hairline); padding: 1px 0;
+    color: var(--ink-faint); font-size: .68rem; font-weight: 600; white-space: nowrap;
+  }
+  .cw-title-row > a.cw-editor-link:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
   .cw-content > span { display: block; color: var(--ink-faint); font-size: .7rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .cw-dates { display: flex; flex-direction: column; gap: 2px; white-space: nowrap; }
   .cw-delta.bad { color: var(--status-err-fg); font-weight: 600; }
