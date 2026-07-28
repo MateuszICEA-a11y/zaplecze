@@ -1,4 +1,5 @@
 import { parseBingAiCsv } from './bing-import.js';
+import { routeContentWatcher } from './cw-api.js';
 
 /**
  * Worker dashboardu: cała aplikacja za Basic Auth (dashboard zawiera dane
@@ -81,6 +82,12 @@ async function bingImport(request, env, domain) {
 
 export default {
   async fetch(request, env) {
+    // Callback pipeline'u idzie PRZED bramką hasła: runner GitHub Actions nie
+    // może podać hasła dashboardu i własnego tokenu na jednym nagłówku
+    // Authorization. Uwierzytelnia go podpis HMAC ciała żądania.
+    const beforeAuth = await routeContentWatcher(request, env, { beforeAuth: true });
+    if (beforeAuth) return beforeAuth;
+
     const expected = (env.DASH_PASSWORD || '').trim();
     if (!expected) {
       return new Response(
@@ -91,6 +98,9 @@ export default {
     const given = passwordFromHeader(request.headers.get('Authorization'));
     if (given !== expected) return unauthorized();
     const url = new URL(request.url);
+    const contentWatcher = await routeContentWatcher(request, env);
+    if (contentWatcher) return contentWatcher;
+
     const importMatch = url.pathname.match(/^\/api\/imports\/bing-ai\/([^/]+)\/?$/);
     if (importMatch) {
       const domain = decodeURIComponent(importMatch[1]);

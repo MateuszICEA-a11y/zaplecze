@@ -17,3 +17,21 @@ run_worker_first = true
 [[kv_namespaces]]
 binding = "DASHBOARD_IMPORTS"
 id = "12edc86d8d794f37a0a32ac6e8413d2b"
+
+# Content Watcher – kolejka reoptymalizacji, kroki pipeline'u i propozycje zmian.
+# Utworzenie bazy: npx wrangler d1 create zaplecze-content-watcher
+# (wpisz zwrócone database_id poniżej), następnie:
+# npx wrangler d1 execute zaplecze-content-watcher --file=./schema.sql --remote
+#
+# Sekrety Workera wymagane przez /api/cw/*:
+#   CW_CALLBACK_SECRET – HMAC callbacków z GitHub Actions,
+#   GH_DISPATCH_TOKEN  – token GitHuba ograniczony do tego repo (Actions: write),
+#   GH_REPO            – "właściciel/repo".
+# Binding jest ZAKOMENTOWANY do czasu utworzenia bazy: deploy z odwołaniem do
+# nieistniejącego database_id wywraca cały dashboard. Bez bindingu trasy
+# /api/cw/* odpowiadają 503 z czytelnym komunikatem (fail-closed), a reszta
+# panelu działa normalnie.
+# [[d1_databases]]
+# binding = "CW_DB"
+# database_name = "zaplecze-content-watcher"
+# database_id = "<id zwrócone przez wrangler d1 create>"

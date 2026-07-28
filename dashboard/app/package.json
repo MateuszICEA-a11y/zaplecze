@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "test": "node --test bing-import.test.js",
+    "test": "node --test bing-import.test.js cw-api.test.js",
     "preview": "astro preview",
     "astro": "astro"
   },
