@@ -14,6 +14,7 @@ import {
   DEFAULT_MODELS,
   SIGNATURE_WINDOW_S,
 } from './cw-api.js';
+import { buildExpertPrompt, expertBlockquote } from './cw-expert.js';
 
 const SECRET = 'testowy-sekret-callbacku';
 
@@ -127,7 +128,7 @@ test('parseJobRequest: komplet danych przechodzi, domyślny pakiet ulepszeń', (
   assert.equal(result.ok, true);
   assert.equal(result.job.post_id, 41675);
   assert.equal(result.job.post_type, 'posts');
-  assert.deepEqual(result.job.improvements, ['gaps', 'expert', 'sources', 'internal_links']);
+  assert.deepEqual(result.job.improvements, ['gaps', 'sources', 'internal_links']);
 });
 
 test('parseJobRequest: odrzuca zły URL, brak tytułu i nieznane ulepszenia', () => {
@@ -348,6 +349,97 @@ test('createJob: client_payload zawiera models, title i author', async (t) => {
   assert.equal(payload.title, 'Tytuł');
   assert.equal(payload.author, 'Mateusz Wiśniewski');
   assert.deepEqual(payload.models, { research: 'perplexity/sonar-pro', writer: 'anthropic/claude-sonnet-5' });
+});
+
+/* ---------- porada eksperta ---------- */
+
+const expertRequest = (method = 'POST', body = undefined) =>
+  new Request('https://dash.example/api/cw/jobs/job-abcdef12/expert', {
+    method,
+    headers: { 'X-CW-Request': '1', 'Content-Type': 'application/json' },
+    body: body ? JSON.stringify(body) : undefined,
+  });
+
+const doneJob = {
+  id: 'job-abcdef12', status: 'done', title: 'Błąd 403', author: 'ICEA',
+  models: '{"research":"perplexity/sonar-pro","writer":"anthropic/claude-sonnet-5"}', expert: null,
+};
+
+test('expert: wymaga zadania w stanie done', async () => {
+  const db = fakeDb({ 'SELECT * FROM jobs WHERE id': { ...doneJob, status: 'running' } });
+  const response = await routeContentWatcher(expertRequest(), { CW_DB: db });
+  assert.equal(response.status, 409);
+});
+
+test('expert: równoległe generowanie odrzucone (guard w D1)', async () => {
+  const db = fakeDb({
+    'SELECT * FROM jobs WHERE id': doneJob,
+    "json_extract(expert, '$.status') != 'running'": 0, // warunkowy UPDATE nie przeszedł
+  });
+  const response = await routeContentWatcher(expertRequest(), { CW_DB: db });
+  assert.equal(response.status, 409);
+  assert.match((await response.json()).error, /generowany/);
+});
+
+test('expert: wynik zapisany do jobs.expert z modelem i kosztem', async (t) => {
+  const updates = [];
+  const db = fakeDb({
+    'SELECT * FROM jobs WHERE id': doneJob,
+    'FROM job_sections': [{ slot: 2, title_after: 'Jak naprawić', text_after: '<p>Sprawdź uprawnienia.</p>' }],
+    'UPDATE jobs SET expert = ?': (args) => { updates.push(args[0]); return 1; },
+  });
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(JSON.stringify({
+    model: 'anthropic/claude-sonnet-5',
+    usage: { prompt_tokens: 900, completion_tokens: 120 },
+    choices: [{ message: { content: '{"slot":2,"expert":"Karolina Goćkowska","role":"specjalistka SEO","quote":"W praktyce…","placement":"po sekcji 2"}' } }],
+  }), { status: 200 });
+  t.after(() => { globalThis.fetch = realFetch; });
+
+  const response = await routeContentWatcher(expertRequest(), { CW_DB: db, OPENROUTER_API_KEY: 'k' });
+  assert.equal(response.status, 200);
+  const { expert } = await response.json();
+  assert.equal(expert.status, 'done');
+  assert.equal(expert.expert, 'Karolina Goćkowska');
+  assert.equal(expert.slot, 2);
+  assert.equal(expert.cost.tokens_out, 120);
+  const saved = JSON.parse(updates.at(-1));
+  assert.equal(saved.status, 'done');
+});
+
+test('expert: brak klucza OpenRoutera daje czytelny błąd, stan failed', async () => {
+  const updates = [];
+  const db = fakeDb({
+    'SELECT * FROM jobs WHERE id': doneJob,
+    'FROM job_sections': [{ slot: 1, text_after: '<p>Treść.</p>' }],
+    'UPDATE jobs SET expert = ?': (args) => { updates.push(args[0]); return 1; },
+  });
+  const response = await routeContentWatcher(expertRequest(), { CW_DB: db });
+  assert.equal(response.status, 502);
+  assert.match((await response.json()).error, /OPENROUTER_API_KEY/);
+  assert.equal(JSON.parse(updates.at(-1)).status, 'failed');
+});
+
+test('expert: PATCH {rejected:true} odrzuca gotowy cytat', async () => {
+  const db = fakeDb({ "json_set(expert, '$.status', 'rejected')": 1 });
+  const response = await routeContentWatcher(expertRequest('PATCH', { rejected: true }), { CW_DB: db });
+  assert.equal(response.status, 200);
+
+  const missing = await routeContentWatcher(
+    expertRequest('PATCH', { rejected: true }),
+    { CW_DB: fakeDb({ "json_set(expert, '$.status', 'rejected')": 0 }) },
+  );
+  assert.equal(missing.status, 404);
+});
+
+test('expert: prompt wyklucza autora, blockquote w formacie pipeline', () => {
+  const prompt = buildExpertPrompt({ title: 'T', content: 'treść', author: 'Mateusz Wiśniewski' });
+  assert.match(prompt, /nie wolno/);
+  assert.doesNotMatch(prompt.split('Wybierz inną osobę')[1], /Mateusz Wiśniewski/);
+  assert.equal(
+    expertBlockquote({ quote: 'Q', expert: 'E', role: 'R' }),
+    '<blockquote class="expert"><p>Q</p><footer>E, R</footer></blockquote>',
+  );
 });
 
 /* ---------- routing ---------- */

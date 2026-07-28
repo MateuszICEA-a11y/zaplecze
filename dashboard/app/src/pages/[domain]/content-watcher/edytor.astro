@@ -112,6 +112,17 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         <button type="button" class="ed-rerun" data-ed-rerun hidden>uruchom ponownie</button>
       </div>
 
+      <!-- Etap finalny: porada eksperta – dostępna po zakończeniu pipeline'u,
+           generowana z Workera przez OpenRouter (sekundy, nie minuty). -->
+      <div class="ed-expert" data-ed-expert hidden>
+        <div class="ed-expert-head">
+          <span class="ed-expert-label">Etap finalny · porada eksperta</span>
+          <span class="ed-expert-note">cytat osoby z ICEA (innej niż autor), wybrany model pisania</span>
+        </div>
+        <div class="ed-expert-actions" data-ed-expert-actions></div>
+        <p class="ed-error" data-ed-expert-error hidden></p>
+      </div>
+
       <details class="ed-steps-details" data-ed-steps-details hidden>
         <summary>szczegóły kroków</summary>
         <ol class="ed-steps" data-ed-steps></ol>
@@ -522,8 +533,21 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     return wrap;
   }
 
+  /** Ten sam format bloku co step_expert w run.py i cw-expert.js. */
+  function expertBlockquote(expert: any) {
+    return `<blockquote class="expert"><p>${expert.quote}</p><footer>${expert.expert ?? ''}${expert.role ? `, ${expert.role}` : ''}</footer></blockquote>`;
+  }
+
+  function activeExpert(current: Job | null) {
+    return current?.expert?.status === 'done' ? current.expert : null;
+  }
+
+  /** „Kopiuj treść" dokleja cytat eksperta do sekcji, w której ma stanąć –
+      text_after w bazie zostaje czystym wynikiem pipeline'u. */
   function sectionCopyText(section: Section) {
-    return section.text_after ?? '';
+    const expert = activeExpert(job);
+    const base = section.text_after ?? '';
+    return expert && expert.slot === section.slot ? `${base}\n${expertBlockquote(expert)}` : base;
   }
 
   function renderSectionBody(host: HTMLElement, section: Section, mode: string) {
@@ -669,6 +693,100 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       `${bySlot.size} sekcji · ${current.sections.length} z propozycjami zmian`;
   }
 
+  /* ---------- porada eksperta (etap finalny) ---------- */
+
+  let expertBusy = false;
+
+  async function callExpert(method: string, body?: any) {
+    if (!job || expertBusy) return;
+    expertBusy = true;
+    $('[data-ed-expert-error]')!.hidden = true;
+    renderExpert(job);
+    try {
+      await api(`/api/cw/jobs/${job.id}/expert`, { method, body: body ? JSON.stringify(body) : undefined });
+      const data = await api(`/api/cw/jobs/${job.id}`);
+      expertBusy = false;
+      render(data.job);
+    } catch (error) {
+      expertBusy = false;
+      // Stan eksperta mógł się zmienić mimo błędu (np. failed z powodem).
+      try {
+        const data = await api(`/api/cw/jobs/${job!.id}`);
+        job = data.job;
+      } catch { /* zostajemy przy tym, co mamy */ }
+      renderExpert(job!);
+      const node = $('[data-ed-expert-error]')!;
+      node.textContent = error instanceof Error ? error.message : 'Nie udało się wygenerować cytatu.';
+      node.hidden = false;
+    }
+  }
+
+  function renderExpert(current: Job) {
+    const card = $('[data-ed-expert]')!;
+    card.hidden = current.status !== 'done';
+    if (card.hidden) return;
+    const actions = $('[data-ed-expert-actions]')!;
+    actions.replaceChildren();
+
+    const button = (label: string, onClick: () => void, primary = false) => {
+      const node = document.createElement('button');
+      node.type = 'button';
+      node.className = primary ? 'ed-expert-run' : 'ed-expert-secondary';
+      node.textContent = label;
+      node.addEventListener('click', onClick);
+      return node;
+    };
+
+    if (expertBusy || current.expert?.status === 'running') {
+      const wait = document.createElement('span');
+      wait.className = 'ed-expert-wait';
+      wait.textContent = 'generowanie cytatu…';
+      actions.append(wait);
+      return;
+    }
+    const expert = activeExpert(current);
+    if (expert) {
+      const quote = document.createElement('div');
+      quote.className = 'prose ed-expert-preview';
+      sanitizeInto(quote, expertBlockquote(expert));
+      const meta = document.createElement('small');
+      meta.className = 'ed-expert-meta';
+      meta.textContent = [
+        expert.slot ? `sekcja ${expert.slot}` : null,
+        expert.placement || null,
+        expert.model || null,
+      ].filter(Boolean).join(' · ');
+      actions.append(quote, meta,
+        button('kopiuj cytat', async () => { await navigator.clipboard.writeText(expertBlockquote(expert)); }),
+        button('wygeneruj ponownie', () => callExpert('POST')),
+        button('odrzuć', () => callExpert('PATCH', { rejected: true })));
+      return;
+    }
+    if (current.expert?.status === 'failed' && current.expert?.error) {
+      const err = document.createElement('span');
+      err.className = 'ed-expert-meta';
+      err.textContent = current.expert.error;
+      actions.append(err);
+    }
+    actions.append(button(current.expert ? 'spróbuj ponownie' : 'Dodaj poradę eksperta', () => callExpert('POST'), true));
+  }
+
+  /** Cytat wpinamy też inline w dokument – na końcu wskazanej sekcji. */
+  function applyExpertToDoc(current: Job) {
+    document.querySelectorAll('.ed-doc-expert').forEach((node) => node.remove());
+    const expert = activeExpert(current);
+    if (!expert) return;
+    const host = $('[data-ed-doc]')!;
+    const target = expert.slot
+      ? host.querySelector(`.ed-doc-section[data-slot="${expert.slot}"]`)
+      : host.querySelector('.ed-doc-section:last-child');
+    if (!target) return;
+    const block = document.createElement('div');
+    block.className = 'prose ed-doc-expert';
+    sanitizeInto(block, expertBlockquote(expert));
+    target.append(block);
+  }
+
   /* ---------- cykl życia zadania ---------- */
 
   function render(current: Job) {
@@ -676,6 +794,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     renderProgress(current);
     renderBrief(current);
     applyJobToDoc(current);
+    renderExpert(current);
+    applyExpertToDoc(current);
     const running = ['queued', 'dispatching', 'running'].includes(current.status);
     $<HTMLButtonElement>('[data-ed-run]')?.toggleAttribute('disabled', running);
   }
@@ -839,6 +959,13 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     background: transparent; color: var(--ink); font-size: .75rem; cursor: pointer; }
   .ed-rerun:hover { border-color: var(--accent-blue); }
 
+  .ed-expert { margin-top: 14px; padding: 12px 14px; border: 1px solid var(--hairline-soft);
+    border-radius: 2px; background: var(--bg-surface-2); }
+  .ed-expert-head { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; margin-bottom: 10px; }
+  .ed-expert-label { font: 600 .8rem var(--font-display); color: var(--ink); letter-spacing: .04em;
+    text-transform: uppercase; }
+  .ed-expert-note { font-size: .72rem; color: var(--ink-faint); }
+
   .ed-steps-details { margin-top: 12px; font-size: .8rem; }
   .ed-steps-details summary { cursor: pointer; color: var(--ink-faint); }
   .ed-steps-details summary:hover { color: var(--ink); }
@@ -908,6 +1035,23 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-view-seg button.active { background: var(--accent-blue-soft); color: var(--ink); border-color: var(--accent-blue); }
   .ed-accept { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; color: var(--ink-muted); }
   .ed-accept input { accent-color: var(--accent-blue); margin: 0; }
+
+  /* ----- porada eksperta (DOM z JS) ----- */
+  .ed-expert-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .ed-expert-preview { flex-basis: 100%; }
+  .ed-expert-meta { flex-basis: 100%; font-size: .7rem; color: var(--ink-faint); }
+  .ed-expert-wait { font-size: .78rem; color: var(--ink-muted); }
+  .ed-expert-wait::before { content: ''; display: inline-block; width: 10px; height: 10px;
+    margin-right: 8px; border: 2px solid var(--hairline); border-top-color: var(--accent-blue);
+    border-radius: 50%; animation: ed-spin 1s linear infinite; vertical-align: -1px; }
+  @keyframes ed-spin { to { transform: rotate(360deg); } }
+  .ed-expert-run { padding: 8px 16px; border: 1px solid var(--accent-blue); border-radius: 2px;
+    background: var(--accent-blue); color: #000; font: 600 .8rem var(--font-display); cursor: pointer; }
+  .ed-expert-run:hover { filter: brightness(1.1); }
+  .ed-expert-secondary { padding: 5px 12px; border: 1px solid var(--hairline); border-radius: 2px;
+    background: transparent; color: var(--ink-muted); font-size: .72rem; cursor: pointer; }
+  .ed-expert-secondary:hover { color: var(--ink); border-color: var(--accent-blue); }
+  .ed-doc-expert { margin-top: 14px; }
 
   /* Diff słowo po słowie – plaintext (textContent), w łamie dokumentu. */
   .ed-diff { max-width: 72ch; white-space: pre-wrap; line-height: 1.7; font-size: .9rem;

@@ -12,6 +12,8 @@
  * (`X-CW-Timestamp` + `X-CW-Signature`, sekret `CW_CALLBACK_SECRET`).
  */
 
+import { generateExpertQuote } from './cw-expert.js';
+
 export const COOLDOWN_DAYS = 30; // ten sam wpis nie wraca do kolejki częściej
 export const MAX_ACTIVE_PER_DOMAIN = 3;
 export const MAX_JOBS_PER_DAY = 20;
@@ -19,7 +21,11 @@ export const LEASE_MINUTES = 15; // brak heartbeatu przez ten czas = zadanie „
 export const SIGNATURE_WINDOW_S = 300;
 export const MAX_CALLBACK_BYTES = 512 * 1024;
 
-export const IMPROVEMENTS = ['gaps', 'expert', 'sources', 'internal_links'];
+// „expert" wypadł z pakietu startowego – porada eksperta to finalny etap
+// uruchamiany po `done` (POST /api/cw/jobs/:id/expert), nie decyzja z góry.
+// Pipeline (run.py) nadal obsługuje `expert` w --improvements dla ręcznego
+// workflow_dispatch.
+export const IMPROVEMENTS = ['gaps', 'sources', 'internal_links'];
 
 /** Modele domyślne pipeline'u (lustro config.py – MODEL_RESEARCH/MODEL_WRITER).
     Lista dostępnych modeli jest dynamiczna (frontend zaciąga ją z API
@@ -508,6 +514,69 @@ async function acceptSection(request, env, id, slot) {
   return json({ ok: true });
 }
 
+/* ---------- porada eksperta (etap finalny, Worker → OpenRouter) ---------- */
+
+/** Generowanie/regeneracja cytatu. Działa wyłącznie na zadaniu `done` –
+    celowo poza limitami kolejki (cooldown 30 dni go nie dotyczy). */
+async function generateExpert(request, env, id, { fetchImpl } = {}) {
+  if (!checkMutationOrigin(request)) return json({ error: 'Żądanie odrzucone.' }, 403);
+  const job = await db(env).prepare('SELECT * FROM jobs WHERE id = ?').bind(id).first();
+  if (!job) return json({ error: 'Nie ma takiego zadania.' }, 404);
+  if (job.status !== 'done') {
+    return json({ error: 'Porada eksperta jest dostępna po zakończeniu pipeline’u.' }, 409);
+  }
+
+  // Blokada podwójnego kliknięcia: warunkowy UPDATE przechodzi tylko, gdy
+  // ekspert nie jest właśnie generowany (json_extract – JSON1 jest w D1).
+  const lock = await db(env)
+    .prepare(
+      `UPDATE jobs SET expert = ?, updated_at = ? WHERE id = ?
+         AND (expert IS NULL OR json_extract(expert, '$.status') != 'running')`,
+    )
+    .bind(JSON.stringify({ status: 'running', started_at: nowIso() }), nowIso(), id)
+    .run();
+  if ((lock.meta?.changes ?? 0) === 0) return json({ error: 'Cytat jest właśnie generowany.' }, 409);
+
+  const sections = await db(env)
+    .prepare('SELECT slot, title_before, title_after, text_before, text_after FROM job_sections WHERE job_id = ? ORDER BY slot')
+    .bind(id)
+    .all();
+
+  const result = await generateExpertQuote(env, job, sections.results ?? [], fetchImpl ? { fetchImpl } : {});
+  const record = result.ok
+    ? { status: 'done', ...result.data, model: result.model, cost: result.cost, created_at: nowIso() }
+    : { status: 'failed', error: result.error, created_at: nowIso() };
+  await db(env)
+    .prepare('UPDATE jobs SET expert = ?, updated_at = ? WHERE id = ?')
+    .bind(JSON.stringify(record), nowIso(), id)
+    .run();
+  await audit(env, 'expert.generate', id, result.ok ? { expert: record.expert, slot: record.slot } : { error: record.error });
+  if (!result.ok) return json({ error: result.error, expert: record }, 502);
+  return json({ expert: record });
+}
+
+/** Odrzucenie cytatu – zostaje ślad (status rejected), można wygenerować nowy. */
+async function rejectExpert(request, env, id) {
+  if (!checkMutationOrigin(request)) return json({ error: 'Żądanie odrzucone.' }, 403);
+  let body;
+  try {
+    body = await request.json();
+  } catch {
+    return json({ error: 'Nieprawidłowy JSON.' }, 400);
+  }
+  if (body?.rejected !== true) return json({ error: 'Oczekiwane pole: {"rejected": true}.' }, 400);
+  const result = await db(env)
+    .prepare(
+      `UPDATE jobs SET expert = json_set(expert, '$.status', 'rejected'), updated_at = ?
+       WHERE id = ? AND expert IS NOT NULL AND json_extract(expert, '$.status') = 'done'`,
+    )
+    .bind(nowIso(), id)
+    .run();
+  if ((result.meta?.changes ?? 0) === 0) return json({ error: 'Nie ma cytatu do odrzucenia.' }, 404);
+  await audit(env, 'expert.reject', id, null);
+  return json({ ok: true });
+}
+
 async function cancelJob(request, env, id) {
   if (!checkMutationOrigin(request)) return json({ error: 'Żądanie odrzucone.' }, 403);
   const job = await db(env).prepare('SELECT id, status, run_id FROM jobs WHERE id = ?').bind(id).first();
@@ -699,12 +768,17 @@ export async function routeContentWatcher(request, env, { beforeAuth = false } =
     return fetchPostContent(request, env, domain, postType, Number.parseInt(postId, 10));
   }
 
-  const jobMatch = url.pathname.match(/^\/api\/cw\/jobs\/([a-z0-9-]{8,64})(\/(cancel|sections\/(\d{1,2})))?\/?$/i);
+  const jobMatch = url.pathname.match(/^\/api\/cw\/jobs\/([a-z0-9-]{8,64})(\/(cancel|expert|sections\/(\d{1,2})))?\/?$/i);
   if (jobMatch) {
     const [, id, , action, slot] = jobMatch;
     if (action === 'cancel') {
       if (request.method !== 'POST') return json({ error: 'Dozwolona metoda: POST.' }, 405);
       return cancelJob(request, env, id);
+    }
+    if (action === 'expert') {
+      if (request.method === 'POST') return generateExpert(request, env, id);
+      if (request.method === 'PATCH') return rejectExpert(request, env, id);
+      return json({ error: 'Dozwolone metody: POST, PATCH.' }, 405);
     }
     if (slot) {
       if (request.method !== 'PATCH') return json({ error: 'Dozwolona metoda: PATCH.' }, 405);
