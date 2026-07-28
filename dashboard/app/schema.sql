@@ -69,6 +69,8 @@ CREATE TABLE IF NOT EXISTS job_sections (
   diff             TEXT,   -- JSON: opcode'y z difflib
   accepted         INTEGER NOT NULL DEFAULT 0,
   accepted_at      TEXT,
+  edited           INTEGER NOT NULL DEFAULT 0,  -- text_after poprawiony ręcznie w edytorze
+
   PRIMARY KEY (job_id, slot)
 );
 

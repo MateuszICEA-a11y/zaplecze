@@ -181,6 +181,38 @@ export function parseCallback(input) {
   };
 }
 
+/* ---------- sanityzacja HTML (edycja sekcji) ---------- */
+
+export const MAX_SECTION_BYTES = 64 * 1024;
+
+// Ta sama whitelista co sanitizeInto w edytor.astro (komentarz krzyżowy).
+const SANITIZE_ALLOWED = new Set(['p', 'br', 'ul', 'ol', 'li', 'strong', 'b', 'em', 'i', 'a',
+  'h2', 'h3', 'h4', 'blockquote', 'footer', 'table', 'thead', 'tbody', 'tr', 'th', 'td', 'span']);
+
+/** Defense-in-depth dla ręcznych poprawek: frontend renderuje wyłącznie przez
+    własną sanityzację DOM-ową, ale to, co ląduje w D1, też nie może przenosić
+    skryptów. Worker nie ma DOMParsera, więc czyszczenie jest regexowe:
+    tagi spoza whitelisty znikają (treść zostaje), atrybuty są zdejmowane
+    poza https-owym href i class="expert" na blockquote. */
+export function sanitizeSectionHtml(html) {
+  let out = String(html ?? '');
+  out = out.replace(/<(script|style|iframe|object|embed|form)\b[\s\S]*?(<\/\1\s*>|$)/gi, '');
+  out = out.replace(/<\/?([a-z0-9]+)((?:\s[^<>]*)?)\/?>/gi, (match, tag, attrs) => {
+    tag = tag.toLowerCase();
+    if (!SANITIZE_ALLOWED.has(tag)) return '';
+    if (match.startsWith('</')) return `</${tag}>`;
+    if (tag === 'a') {
+      const href = /href\s*=\s*["']?(https?:\/\/[^"'\s>]+)/i.exec(attrs)?.[1];
+      return href ? `<a href="${href}" target="_blank" rel="noopener nofollow">` : '<a>';
+    }
+    if (tag === 'blockquote' && /class\s*=\s*["']?[^"'>]*\bexpert\b/i.test(attrs)) {
+      return '<blockquote class="expert">';
+    }
+    return `<${tag}>`;
+  });
+  return out;
+}
+
 /* ---------- ochrona przed CSRF ---------- */
 
 /** Basic Auth leci z przeglądarki automatycznie, więc mutacje trzeba osłonić.
@@ -461,7 +493,7 @@ async function readJob(env, id) {
     .bind(id)
     .all();
   const sections = await db(env)
-    .prepare('SELECT slot, title_field, text_field, operation, title_before, title_after, text_before, text_after, text_hash_before, diff, accepted FROM job_sections WHERE job_id = ? ORDER BY slot')
+    .prepare('SELECT slot, title_field, text_field, operation, title_before, title_after, text_before, text_after, text_hash_before, diff, accepted, edited FROM job_sections WHERE job_id = ? ORDER BY slot')
     .bind(id)
     .all();
   const parse = (value, fallback) => {
@@ -478,7 +510,7 @@ async function readJob(env, id) {
     expert: parse(job.expert, null),
     cost: parse(job.cost, {}),
     steps: (steps.results ?? []).map((step) => ({ ...step, payload: parse(step.payload, null), cost: parse(step.cost, null) })),
-    sections: (sections.results ?? []).map((section) => ({ ...section, diff: parse(section.diff, null), accepted: section.accepted === 1 })),
+    sections: (sections.results ?? []).map((section) => ({ ...section, diff: parse(section.diff, null), accepted: section.accepted === 1, edited: section.edited === 1 })),
   };
 }
 
@@ -496,7 +528,8 @@ async function listJobs(env, url) {
   return json({ jobs: rows.results ?? [] });
 }
 
-async function acceptSection(request, env, id, slot) {
+/** PATCH sekcji: flaga akceptacji i/lub ręczna poprawka treści „po". */
+async function patchSection(request, env, id, slot) {
   if (!checkMutationOrigin(request)) return json({ error: 'Żądanie odrzucone.' }, 403);
   let body;
   try {
@@ -504,14 +537,35 @@ async function acceptSection(request, env, id, slot) {
   } catch {
     return json({ error: 'Nieprawidłowy JSON.' }, 400);
   }
-  const accepted = body?.accepted === true;
-  const result = await db(env)
-    .prepare('UPDATE job_sections SET accepted = ?, accepted_at = ? WHERE job_id = ? AND slot = ?')
-    .bind(accepted ? 1 : 0, accepted ? nowIso() : null, id, slot)
-    .run();
-  if ((result.meta?.changes ?? 0) === 0) return json({ error: 'Nie ma takiej sekcji.' }, 404);
-  await audit(env, 'section.accept', id, { slot, accepted });
-  return json({ ok: true });
+
+  if (typeof body?.text_after === 'string') {
+    if (body.text_after.length > MAX_SECTION_BYTES) {
+      return json({ error: 'Poprawiona treść jest za duża.' }, 413);
+    }
+    const clean = sanitizeSectionHtml(body.text_after);
+    const result = await db(env)
+      .prepare('UPDATE job_sections SET text_after = ?, edited = 1 WHERE job_id = ? AND slot = ?')
+      .bind(clean, id, slot)
+      .run();
+    if ((result.meta?.changes ?? 0) === 0) return json({ error: 'Nie ma takiej sekcji.' }, 404);
+    await audit(env, 'section.edit', id, { slot, bytes: clean.length });
+    if (body?.accepted === undefined) return json({ ok: true, text_after: clean });
+  }
+
+  if (body?.accepted !== undefined) {
+    const accepted = body.accepted === true;
+    const result = await db(env)
+      .prepare('UPDATE job_sections SET accepted = ?, accepted_at = ? WHERE job_id = ? AND slot = ?')
+      .bind(accepted ? 1 : 0, accepted ? nowIso() : null, id, slot)
+      .run();
+    if ((result.meta?.changes ?? 0) === 0) return json({ error: 'Nie ma takiej sekcji.' }, 404);
+    await audit(env, 'section.accept', id, { slot, accepted });
+    return json({ ok: true });
+  }
+
+  return typeof body?.text_after === 'string'
+    ? json({ ok: true })
+    : json({ error: 'Oczekiwane pola: accepted i/lub text_after.' }, 400);
 }
 
 /* ---------- porada eksperta (etap finalny, Worker → OpenRouter) ---------- */
@@ -782,7 +836,7 @@ export async function routeContentWatcher(request, env, { beforeAuth = false } =
     }
     if (slot) {
       if (request.method !== 'PATCH') return json({ error: 'Dozwolona metoda: PATCH.' }, 405);
-      return acceptSection(request, env, id, Number.parseInt(slot, 10));
+      return patchSection(request, env, id, Number.parseInt(slot, 10));
     }
     if (request.method !== 'GET') return json({ error: 'Dozwolona metoda: GET.' }, 405);
     await sweepStale(env);

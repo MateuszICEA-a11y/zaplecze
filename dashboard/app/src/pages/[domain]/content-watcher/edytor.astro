@@ -550,27 +550,36 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     return expert && expert.slot === section.slot ? `${base}\n${expertBlockquote(expert)}` : base;
   }
 
-  function renderSectionBody(host: HTMLElement, section: Section, mode: string) {
+  function renderSectionBody(host: HTMLElement, section: Section, mode: string, onDirty?: () => void) {
     if (mode === 'diff') {
       host.replaceChildren(renderInlineDiff(section));
     } else {
       const body = document.createElement('div');
       body.className = 'prose ed-doc-body';
       sanitizeInto(body, mode === 'before' ? section.text_before : section.text_after);
+      // Tryb „podgląd po" jest edytowalny – poprawki zapisują się do zadania
+      // i „kopiuj treść" bierze wersję po edycji.
+      if (mode === 'after' && onDirty) {
+        body.contentEditable = 'true';
+        body.classList.add('ed-editable');
+        body.addEventListener('input', onDirty);
+      }
       host.replaceChildren(body);
     }
   }
 
-  function sectionTools(section: Section, jobId: string, onMode: (mode: string) => void) {
+  function sectionTools(section: Section, jobId: string, onMode: (mode: string) => void,
+    onSave?: (button: HTMLButtonElement) => void) {
     const tools = document.createElement('div');
     tools.className = 'ed-sec-tools';
 
     const badge = document.createElement('span');
     badge.className = 'ed-sec-badge';
     const stats = section.diff?.stats;
-    badge.textContent = section.operation === 'insert'
+    badge.textContent = (section.operation === 'insert'
       ? 'nowa sekcja'
-      : stats ? `+${pl.format(stats.added)} / −${pl.format(stats.removed)} słów` : 'aktualizacja';
+      : stats ? `+${pl.format(stats.added)} / −${pl.format(stats.removed)} słów` : 'aktualizacja')
+      + ((section as any).edited ? ' · ręcznie poprawiona' : '');
     tools.append(badge);
 
     if (stats?.shrunk) {
@@ -629,6 +638,16 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       });
       return button;
     };
+    if (onSave) {
+      const save = document.createElement('button');
+      save.type = 'button';
+      save.className = 'ed-save';
+      save.textContent = 'zapisz poprawki';
+      save.hidden = true;
+      save.dataset.save = '1';
+      save.addEventListener('click', () => onSave(save));
+      tools.append(save);
+    }
     tools.append(accept, copyButton('kopiuj nagłówek', () => section.title_after ?? ''),
       copyButton('kopiuj treść', () => sectionCopyText(section)));
     return tools;
@@ -671,14 +690,39 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       const mode = sectionMode.get(section.slot)
         ?? (section.operation === 'insert' || changeRatio(section) > 0.5 ? 'after' : 'diff');
       sectionMode.set(section.slot, mode);
+      const onDirty = () => {
+        const save = node!.querySelector<HTMLButtonElement>('[data-save]');
+        if (save) save.hidden = false;
+      };
+      const onSave = async (button: HTMLButtonElement) => {
+        const body = bodyHost!.querySelector('.prose');
+        if (!body) return;
+        button.disabled = true;
+        try {
+          const data = await api(`/api/cw/jobs/${current.id}/sections/${section.slot}`, {
+            method: 'PATCH',
+            body: JSON.stringify({ text_after: body.innerHTML }),
+          });
+          // Serwer zwraca wersję po własnej sanityzacji – to ona jest prawdą.
+          section.text_after = data.text_after ?? body.innerHTML;
+          (section as any).edited = true;
+          button.hidden = true;
+          const badge = node!.querySelector('.ed-sec-badge');
+          if (badge && !badge.textContent!.includes('ręcznie')) badge.textContent += ' · ręcznie poprawiona';
+        } catch (error) {
+          showError(error instanceof Error ? error.message : 'Nie udało się zapisać poprawek.');
+        } finally {
+          button.disabled = false;
+        }
+      };
       const paint = (nextMode: string) => {
         sectionMode.set(section.slot, nextMode);
-        renderSectionBody(bodyHost!, section, nextMode);
+        renderSectionBody(bodyHost!, section, nextMode, onDirty);
         node!.querySelectorAll<HTMLButtonElement>('.ed-view-seg button').forEach((button) => {
           button.classList.toggle('active', button.dataset.mode === nextMode);
         });
       };
-      const tools = sectionTools(section, current.id, paint);
+      const tools = sectionTools(section, current.id, paint, onSave);
       if (toolsHost) toolsHost.replaceWith(tools);
       else node.insertBefore(tools, bodyHost);
       paint(mode);
@@ -1052,6 +1096,16 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     background: transparent; color: var(--ink-muted); font-size: .72rem; cursor: pointer; }
   .ed-expert-secondary:hover { color: var(--ink); border-color: var(--accent-blue); }
   .ed-doc-expert { margin-top: 14px; }
+
+  /* ----- edycja inline propozycji ----- */
+  .ed-editable { outline: none; border-radius: 2px; padding: 4px 6px; margin: -4px -6px;
+    transition: background .2s; cursor: text; }
+  .ed-editable:hover { background: color-mix(in srgb, var(--accent-blue) 4%, transparent); }
+  .ed-editable:focus { background: var(--bg-surface-2); box-shadow: inset 0 0 0 1px var(--hairline); }
+  .ed-sec-tools .ed-save { color: #000; background: var(--accent-blue); border-color: var(--accent-blue);
+    font-weight: 600; }
+  .ed-sec-tools .ed-save:hover { color: #000; filter: brightness(1.1); }
+  .ed-sec-tools .ed-save[disabled] { opacity: .5; cursor: wait; }
 
   /* Diff słowo po słowie – plaintext (textContent), w łamie dokumentu. */
   .ed-diff { max-width: 72ch; white-space: pre-wrap; line-height: 1.7; font-size: .9rem;

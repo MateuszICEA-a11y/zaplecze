@@ -11,6 +11,7 @@ import {
   timingSafeEqual,
   verifySignature,
   fetchPostContent,
+  sanitizeSectionHtml,
   DEFAULT_MODELS,
   SIGNATURE_WINDOW_S,
 } from './cw-api.js';
@@ -349,6 +350,46 @@ test('createJob: client_payload zawiera models, title i author', async (t) => {
   assert.equal(payload.title, 'Tytuł');
   assert.equal(payload.author, 'Mateusz Wiśniewski');
   assert.deepEqual(payload.models, { research: 'perplexity/sonar-pro', writer: 'anthropic/claude-sonnet-5' });
+});
+
+/* ---------- edycja sekcji ---------- */
+
+test('sanitizeSectionHtml: zdejmuje skrypty, atrybuty i tagi spoza whitelisty', () => {
+  const dirty = '<p onclick="x()">Tekst</p><script>alert(1)</script>'
+    + '<a href="https://x.pl/a" onmouseover="y()">link</a>'
+    + '<a href="javascript:alert(1)">zły</a>'
+    + '<div><em>kursywa</em></div>'
+    + '<blockquote class="expert fancy"><p>Q</p></blockquote>';
+  const clean = sanitizeSectionHtml(dirty);
+  assert.equal(clean.includes('script'), false);
+  assert.equal(clean.includes('onclick'), false);
+  assert.match(clean, /<a href="https:\/\/x\.pl\/a" target="_blank" rel="noopener nofollow">link<\/a>/);
+  assert.match(clean, /<a>zły<\/a>/);
+  assert.match(clean, /<em>kursywa<\/em>/);
+  assert.equal(clean.includes('<div'), false);
+  assert.match(clean, /<blockquote class="expert">/);
+});
+
+test('sections PATCH: text_after sanityzowany serwerowo, limit rozmiaru', async () => {
+  const writes = [];
+  const db = fakeDb({
+    'SET text_after = ?, edited = 1': (args) => { writes.push(args[0]); return 1; },
+  });
+  const patch = (body) => new Request('https://dash.example/api/cw/jobs/job-abcdef12/sections/3', {
+    method: 'PATCH',
+    headers: { 'X-CW-Request': '1', 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+
+  const ok = await routeContentWatcher(patch({ text_after: '<p>Poprawka</p><script>x</script>' }), { CW_DB: db });
+  assert.equal(ok.status, 200);
+  assert.equal(writes[0], '<p>Poprawka</p>');
+
+  const huge = await routeContentWatcher(patch({ text_after: 'x'.repeat(64 * 1024 + 1) }), { CW_DB: db });
+  assert.equal(huge.status, 413);
+
+  const empty = await routeContentWatcher(patch({}), { CW_DB: db });
+  assert.equal(empty.status, 400);
 });
 
 /* ---------- porada eksperta ---------- */
