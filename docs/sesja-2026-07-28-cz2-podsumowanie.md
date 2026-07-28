@@ -96,7 +96,9 @@ więcej, niż dopisał. Flaga trafiła dokładnie w tę sekcję.
 1. **GitHub Secrets** (konto `sibilianspirit` nie ma uprawnień do sekretów
    tego repo): `CW_CALLBACK_SECRET` (wartość ustawiona już w Workerze) oraz
    `DASHBOARD_URL`.
-2. **Fine-grained PAT** z uprawnieniem Actions: write na to repo →
-   `wrangler secret put GH_DISPATCH_TOKEN`.
+2. **Fine-grained PAT** na to repo → `wrangler secret put GH_DISPATCH_TOKEN`.
+   Uprawnienia: **Contents: Read and write** (bez tego `repository_dispatch`
+   zwraca 403 – to Contents, nie Actions, wbrew intuicji) oraz **Actions:
+   Read and write** (anulowanie przebiegu z panelu).
 3. **Deploy Workera** (`npx wrangler deploy` z `dashboard/app`).
 4. Application Password w WordPressie – dopiero to odblokuje zapis draftów.

@@ -25,7 +25,10 @@ id = "12edc86d8d794f37a0a32ac6e8413d2b"
 #
 # Sekrety Workera wymagane przez /api/cw/*:
 #   CW_CALLBACK_SECRET – HMAC callbacków z GitHub Actions,
-#   GH_DISPATCH_TOKEN  – token GitHuba ograniczony do tego repo (Actions: write),
+#   GH_DISPATCH_TOKEN  – fine-grained PAT ograniczony do tego repo; wymaga
+#                        „Contents: Read and write" (repository_dispatch
+#                        uruchamiający pipeline) oraz „Actions: Read and write"
+#                        (anulowanie trwającego przebiegu z panelu),
 #   GH_REPO            – "właściciel/repo".
 [vars]
 # Repozytorium, do którego Worker wysyła repository_dispatch uruchamiający
