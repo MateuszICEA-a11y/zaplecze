@@ -192,7 +192,8 @@ async function insertJob(env, job, id, cooldownFrom, dayFrom) {
          AND NOT EXISTS (
            SELECT 1 FROM jobs
            WHERE domain = ?2 AND post_id = ?3
-             AND (status IN ('queued','dispatching','running') OR created_at >= ?12)
+             AND (status IN ('queued','dispatching','running')
+                  OR (created_at >= ?12 AND status NOT IN ('failed','cancelled','stale')))
          )`,
     )
     .bind(
@@ -208,9 +209,13 @@ async function insertJob(env, job, id, cooldownFrom, dayFrom) {
 async function rejectionReason(env, job, cooldownFrom, dayFrom) {
   const existing = await db(env)
     .prepare(
+      // Cooldown liczą wyłącznie zadania, które faktycznie coś zrobiły.
+      // Zadanie, które nie wystartowało (błąd dispatchu) albo zostało
+      // anulowane, nie może blokować wpisu na 30 dni.
       `SELECT id, status, created_at FROM jobs
        WHERE domain = ? AND post_id = ?
-         AND (status IN ('queued','dispatching','running') OR created_at >= ?)
+         AND (status IN ('queued','dispatching','running')
+              OR (created_at >= ? AND status NOT IN ('failed','cancelled','stale')))
        ORDER BY created_at DESC LIMIT 1`,
     )
     .bind(job.domain, job.post_id, cooldownFrom)
