@@ -306,6 +306,101 @@ async function dispatchWorkflow(env, job) {
   return { ok: true };
 }
 
+/* ---------- treść wpisu (proxy WP REST) ---------- */
+
+const ACF_SLOTS = 30; // lustro config.py (ACF_SLOTS) – szablon ma 30 par pól
+const MAX_WP_BYTES = 2 * 1024 * 1024; // jak FETCH_MAX_BYTES w pipeline
+const CONTENT_CACHE_S = 60;
+
+/** Domeny z włączonym edytorem: CSV w [vars] CW_DOMAINS, wpis `domena` albo
+    `domena=https://www.domena` (kanoniczny host z www – jak w domains.yaml). */
+export function contentDomains(env) {
+  const out = new Map();
+  for (const entry of String(env.CW_DOMAINS || '').split(',')) {
+    const [domain, base] = entry.split('=').map((part) => part?.trim());
+    if (domain) out.set(domain.toLowerCase(), base || `https://${domain}`);
+  }
+  return out;
+}
+
+/** Port `sections.snapshot()` + `free_slots()` z Pythona: sekcja to para pól
+    `page_title_h2_N` / `page_text_N`, istnieje gdy cokolwiek w niej stoi. */
+export function mapAcfSections(acf) {
+  const sections = [];
+  const free = [];
+  for (let slot = 1; slot <= ACF_SLOTS; slot++) {
+    const title = String(acf?.[`page_title_h2_${slot}`] ?? '').trim();
+    const text = String(acf?.[`page_text_${slot}`] ?? '').trim();
+    if (title || text) {
+      sections.push({ slot, title_field: `page_title_h2_${slot}`, text_field: `page_text_${slot}`, title, text });
+    } else {
+      free.push(slot);
+    }
+  }
+  return { sections, free_slots: free };
+}
+
+export async function fetchPostContent(request, env, domain, postType, postId, fetchImpl = fetch) {
+  const base = contentDomains(env).get(domain.toLowerCase());
+  if (!base) return json({ error: 'Edytor nie obsługuje tej domeny.' }, 404);
+  if (!/^[a-z0-9_-]{1,40}$/i.test(postType) || !Number.isFinite(postId) || postId <= 0) {
+    return json({ error: 'Nieprawidłowy adres wpisu.' }, 400);
+  }
+
+  // Cache 60 s: odświeżenie strony edytora nie młóci WordPressa.
+  const cacheKey = new Request(`https://cw-content.internal/${domain}/${postType}/${postId}`);
+  const cache = typeof caches !== 'undefined' ? caches.default : null;
+  const cached = await cache?.match(cacheKey);
+  if (cached) return cached;
+
+  // Końcowy ukośnik po ID jest obowiązkowy (WP robi 301) – jak w wp.py.
+  const wpUrl = `${base.replace(/\/$/, '')}/wp-json/wp/v2/${postType}/${postId}/?acf_format=standard&_fields=id,link,title,acf`;
+  let upstream;
+  try {
+    upstream = await fetchImpl(wpUrl, {
+      redirect: 'follow',
+      headers: {
+        Accept: 'application/json',
+        // WAF na seohost tnie anonimowe UA – przedstawiamy się jak pipeline.
+        'User-Agent': 'content-refresher',
+      },
+      signal: AbortSignal.timeout(15_000),
+    });
+  } catch (err) {
+    console.error('cw content fetch', domain, postId, err);
+    return json({ error: 'Nie udało się pobrać treści z WordPressa.' }, 502);
+  }
+  if (!upstream.ok) {
+    return json({ error: `WordPress odpowiedział ${upstream.status}.` }, upstream.status === 404 ? 404 : 502);
+  }
+  const raw = await upstream.text();
+  if (raw.length > MAX_WP_BYTES) return json({ error: 'Treść wpisu jest za duża.' }, 502);
+  let post;
+  try {
+    post = JSON.parse(raw);
+  } catch {
+    return json({ error: 'WordPress zwrócił nieprawidłową odpowiedź.' }, 502);
+  }
+
+  const acf = post?.acf && typeof post.acf === 'object' ? post.acf : {};
+  const { sections, free_slots: freeSlots } = mapAcfSections(acf);
+  const response = json({
+    post_id: post?.id ?? postId,
+    title: post?.title?.rendered ?? '',
+    url: post?.link ?? '',
+    sections,
+    free_slots: freeSlots,
+  });
+  response.headers.set('Cache-Control', `private, max-age=${CONTENT_CACHE_S}`);
+  if (cache) {
+    // caches.default ignoruje `private` – sterujemy TTL jawnie przez s-maxage.
+    const copy = new Response(response.clone().body, response);
+    copy.headers.set('Cache-Control', `s-maxage=${CONTENT_CACHE_S}`);
+    await cache.put(cacheKey, copy);
+  }
+  return response;
+}
+
 /* ---------- handlery ---------- */
 
 async function createJob(request, env) {
@@ -595,6 +690,13 @@ export async function routeContentWatcher(request, env, { beforeAuth = false } =
       return listJobs(env, url);
     }
     return json({ error: 'Dozwolone metody: GET, POST.' }, 405);
+  }
+
+  const contentMatch = url.pathname.match(/^\/api\/cw\/content\/([a-z0-9.-]{1,253})\/([a-z0-9_-]{1,40})\/(\d{1,10})\/?$/i);
+  if (contentMatch) {
+    if (request.method !== 'GET') return json({ error: 'Dozwolona metoda: GET.' }, 405);
+    const [, domain, postType, postId] = contentMatch;
+    return fetchPostContent(request, env, domain, postType, Number.parseInt(postId, 10));
   }
 
   const jobMatch = url.pathname.match(/^\/api\/cw\/jobs\/([a-z0-9-]{8,64})(\/(cancel|sections\/(\d{1,2})))?\/?$/i);

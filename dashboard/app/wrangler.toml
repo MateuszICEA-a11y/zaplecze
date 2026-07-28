@@ -34,6 +34,9 @@ id = "12edc86d8d794f37a0a32ac6e8413d2b"
 # Repozytorium, do którego Worker wysyła repository_dispatch uruchamiający
 # pipeline. Sam token (GH_DISPATCH_TOKEN) jest sekretem, nazwa repo nie musi być.
 GH_REPO = "MateuszICEA-a11y/zaplecze"
+# Domeny z włączonym edytorem Content Watchera (proxy treści z WP REST).
+# Format: "domena" albo "domena=https://www.domena" (kanoniczny host).
+CW_DOMAINS = "grupa-icea.pl=https://www.grupa-icea.pl"
 
 [[d1_databases]]
 binding = "CW_DB"

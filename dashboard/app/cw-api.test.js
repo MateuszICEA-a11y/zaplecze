@@ -10,6 +10,7 @@ import {
   signPayload,
   timingSafeEqual,
   verifySignature,
+  fetchPostContent,
   DEFAULT_MODELS,
   SIGNATURE_WINDOW_S,
 } from './cw-api.js';
@@ -264,6 +265,56 @@ test('callback: poprawny zapisuje krok i sekcje', async () => {
   const batch = db.calls.find((call) => call.op === 'batch');
   // jobs + job_steps + jedna sekcja (slot 99 odrzucony)
   assert.equal(batch.size, 3);
+});
+
+/* ---------- proxy treści wpisu ---------- */
+
+const CONTENT_ENV = { CW_DOMAINS: 'grupa-icea.pl=https://www.grupa-icea.pl' };
+
+test('content: domena spoza CW_DOMAINS daje 404', async () => {
+  const response = await fetchPostContent(null, CONTENT_ENV, 'zla-domena.pl', 'posts', 1, async () => {
+    throw new Error('nie powinno dojść do fetchu');
+  });
+  assert.equal(response.status, 404);
+});
+
+test('content: mapowanie ACF na sekcje i wolne sloty', async () => {
+  const acf = {
+    page_title_h2_1: 'Czym jest błąd 403',
+    page_text_1: '<p>Serwer odmawia dostępu.</p>',
+    page_title_h2_3: '',
+    page_text_3: '<p>Sekcja bez nagłówka.</p>',
+  };
+  const wpBody = JSON.stringify({ id: 5767, link: 'https://www.grupa-icea.pl/blog/a/', title: { rendered: 'Błąd 403' }, acf });
+  let requested = '';
+  const response = await fetchPostContent(null, CONTENT_ENV, 'grupa-icea.pl', 'posts', 5767, async (url) => {
+    requested = url;
+    return new Response(wpBody, { status: 200 });
+  });
+  assert.equal(response.status, 200);
+  assert.match(requested, /^https:\/\/www\.grupa-icea\.pl\/wp-json\/wp\/v2\/posts\/5767\/\?acf_format=standard/);
+  const data = await response.json();
+  assert.equal(data.title, 'Błąd 403');
+  assert.equal(data.sections.length, 2);
+  assert.deepEqual(data.sections.map((section) => section.slot), [1, 3]);
+  assert.equal(data.sections[0].text_field, 'page_text_1');
+  // Slot 2 wolny, 1 i 3 zajęte.
+  assert.equal(data.free_slots.includes(2), true);
+  assert.equal(data.free_slots.includes(1), false);
+});
+
+test('content: błąd WP i za duża odpowiedź dają 502, 404 przechodzi', async () => {
+  const err = await fetchPostContent(null, CONTENT_ENV, 'grupa-icea.pl', 'posts', 1,
+    async () => new Response('awaria', { status: 500 }));
+  assert.equal(err.status, 502);
+
+  const missing = await fetchPostContent(null, CONTENT_ENV, 'grupa-icea.pl', 'posts', 1,
+    async () => new Response('brak', { status: 404 }));
+  assert.equal(missing.status, 404);
+
+  const huge = await fetchPostContent(null, CONTENT_ENV, 'grupa-icea.pl', 'posts', 1,
+    async () => new Response(`{"acf":{"page_text_1":"${'x'.repeat(2 * 1024 * 1024 + 10)}"}}`, { status: 200 }));
+  assert.equal(huge.status, 502);
 });
 
 /* ---------- dispatch ---------- */
