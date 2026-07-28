@@ -1,13 +1,5 @@
 [
   {
-    "title": "Tragedia na S6. Bus wjechał w ekipę malującą pasy, jedna osoba nie żyje",
-    "date": "2026-04-24",
-    "slug": "tragedia-na-s6-bus-wjechal-w-ekipe-malujaca-pasy-jedna-osoba-nie-zyje",
-    "section": "news",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Warsaw Caravaning Festival 2026 już w maju. Kampery i vanlife wracają na Służewiec",
     "date": "2026-04-25",
     "slug": "warsaw-caravaning-festival-2026-juz-w-maju-kampery-i-vanlife-wracaja-na",
@@ -717,6 +709,14 @@
     "slug": "tomczyk-program-ceny-paliwa-nizej-bedzie-realizowany-co-to-moze-oznaczac-dla",
     "section": "news",
     "format": "analysis",
+    "source": "rss"
+  },
+  {
+    "title": "Dethleffs Trend I 7027 – nowy kamper z myślą o podróżach we dwoje",
+    "date": "2026-07-28",
+    "slug": "dethleffs-trend-i-7027-nowy-kamper-z-mysla-o-podrozach-we-dwoje",
+    "section": "kampery",
+    "format": "short",
     "source": "rss"
   }
 ]
