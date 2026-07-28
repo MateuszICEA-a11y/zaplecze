@@ -134,9 +134,11 @@ ruch botów AI z Cloudflare.
 
 ### Decyzje otwarte
 
-1. Zakres CPT – częściowo rozstrzygnięty 2026-07-28: katalog obejmuje `posts`
-   (458) i `dictionary` (146, mediana 231 słów). Otwarte pozostają `casestudy`,
-   `industries`, `seonewsy`, `zos`, `opinions`.
+1. ~~Zakres CPT~~ – rozstrzygnięty 2026-07-28: katalog obejmuje `posts` (458)
+   i `dictionary` (146, mediana 231 słów) i na tym zostaje. `casestudy`,
+   `industries`, `seonewsy`, `zos`, `opinions` świadomie poza zakresem –
+   wracamy do tematu dopiero, gdy obecny katalog przejdzie pełny cykl
+   reoptymalizacji.
 2. ~~Wagi scoringu na dojrzałej domenie.~~ Rozstrzygnięte 2026-07-28: wiek
    przestał być składową punktową i jest wyłącznie warunkiem wejścia
    (`min_age_days`), a mianownik scoringu jest stały, więc brak danych nie
