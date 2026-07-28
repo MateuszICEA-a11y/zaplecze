@@ -1,6 +1,6 @@
 {
  "date": "2026-07-28",
- "collected_at": "2026-07-28T07:17:56Z",
+ "collected_at": "2026-07-28T10:40:45Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -11748,11 +11748,11 @@
      "requests": 21
     },
     {
-     "path": "/localhost.key",
+     "path": "/.bash_profile",
      "requests": 21
     },
     {
-     "path": "/graphql",
+     "path": "/config/runtime.exs",
      "requests": 21
     },
     {
@@ -11776,7 +11776,7 @@
      "requests": 21
     },
     {
-     "path": "/config/runtime.exs",
+     "path": "/graphql",
      "requests": 21
     }
    ]
@@ -11810,12 +11810,6 @@
      "end": "2026-07-24",
      "queries": [
       {
-       "query": "m. jowicki, nowoczesne chatboty ai – jak zwiększyć satysfakcję klientów?, ai & technologia, 20 marca 2025.",
-       "clicks": 0,
-       "impressions": 2,
-       "position": null
-      },
-      {
        "query": "porównanie charged, gemini i claude jako narzędzia badawcze 2026",
        "clicks": 0,
        "impressions": 2,
@@ -11828,7 +11822,13 @@
        "position": null
       },
       {
-       "query": "lepszy w lua jest gemini czy claudette ale jai model claude",
+       "query": "m. jowicki, nowoczesne chatboty ai – jak zwiększyć satysfakcję klientów?, ai & technologia, 20 marca 2025.",
+       "clicks": 0,
+       "impressions": 2,
+       "position": null
+      },
+      {
+       "query": "jaki model w claude uzywac do robotyki",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -11840,13 +11840,13 @@
        "position": null
       },
       {
-       "query": "jakie modele claude wydał anthropic",
+       "query": "lepszy w lua jest gemini czy claudette ale jai model claude",
        "clicks": 0,
        "impressions": 1,
        "position": null
       },
       {
-       "query": "jaki model w claude uzywac do robotyki",
+       "query": "jakie modele claude wydał anthropic",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -11855,12 +11855,6 @@
     }
    },
    "queries": [
-    {
-     "query": "m. jowicki, nowoczesne chatboty ai – jak zwiększyć satysfakcję klientów?, ai & technologia, 20 marca 2025.",
-     "clicks": 0,
-     "impressions": 2,
-     "position": null
-    },
     {
      "query": "porównanie charged, gemini i claude jako narzędzia badawcze 2026",
      "clicks": 0,
@@ -11874,7 +11868,13 @@
      "position": null
     },
     {
-     "query": "lepszy w lua jest gemini czy claudette ale jai model claude",
+     "query": "m. jowicki, nowoczesne chatboty ai – jak zwiększyć satysfakcję klientów?, ai & technologia, 20 marca 2025.",
+     "clicks": 0,
+     "impressions": 2,
+     "position": null
+    },
+    {
+     "query": "jaki model w claude uzywac do robotyki",
      "clicks": 0,
      "impressions": 1,
      "position": null
@@ -11886,13 +11886,13 @@
      "position": null
     },
     {
-     "query": "jakie modele claude wydał anthropic",
+     "query": "lepszy w lua jest gemini czy claudette ale jai model claude",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
-     "query": "jaki model w claude uzywac do robotyki",
+     "query": "jakie modele claude wydał anthropic",
      "clicks": 0,
      "impressions": 1,
      "position": null
