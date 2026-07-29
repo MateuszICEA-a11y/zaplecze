@@ -1163,6 +1163,12 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       p.textContent = brief.summary;
       add('Podsumowanie', p);
     }
+    if (brief.content_truncated) {
+      const p = document.createElement('p');
+      p.className = 'ed-brief-warn';
+      p.textContent = 'Uwaga: wpis jest długi i analiza objęła tylko jego początek – końcowe sekcje mogły nie wejść do wytycznych.';
+      add('Ucięta treść', p);
+    }
     const list = (items: string[]) => {
       const ul = document.createElement('ul');
       for (const item of items) {
@@ -2413,6 +2419,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-brief-block h3 { margin: 0 0 5px; font-size: .72rem; letter-spacing: .06em;
     text-transform: uppercase; color: var(--ink-faint); }
   .ed-brief-block p { margin: 0; font-size: .85rem; line-height: 1.55; color: var(--ink-muted); }
+  .ed-brief-block p.ed-brief-warn { color: var(--status-warn-fg); }
   .ed-brief-block ul { margin: 0; padding-left: 18px; display: grid; gap: 3px; font-size: .82rem;
     color: var(--ink-muted); }
 

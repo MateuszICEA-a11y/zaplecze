@@ -11,6 +11,7 @@ nie zapisuje niczego do WordPressa – kończy się propozycją i diffem.
 import argparse
 import json
 import os
+import re
 import sys
 import traceback
 import urllib.parse
@@ -33,6 +34,29 @@ from config import (  # noqa: E402
     MODEL_WRITER,
     PIPELINE_VERSION,
 )
+
+MAX_PROMPT_CONTENT = 24000  # znaków treści artykułu w promptach
+
+_SUFFIXES = ("ami", "ach", "om", "ów", "y", "i", "e", "a", "ę", "ą")
+
+
+def normalize_phrase(phrase: str) -> str:
+    """Zgrubna normalizacja frazy pod porównanie luk: bez odmiany i kolejności.
+
+    „agencja seo" i „agencje seo" to ta sama luka – porównanie po dokładnym
+    stringu zostawiało w briefie stosy wariantów fleksyjnych. Odcinamy typowe
+    końcówki i sortujemy słowa; to heurystyka do WYKLUCZANIA kandydatów, więc
+    sporadyczne sklejenie dwóch różnych fraz kosztuje mniej niż szum.
+    """
+    words = []
+    for word in re.findall(r"\w+", (phrase or "").lower(), flags=re.UNICODE):
+        for suffix in _SUFFIXES:
+            if len(word) > 4 and word.endswith(suffix):
+                word = word[: -len(suffix)]
+                break
+        words.append(word)
+    return " ".join(sorted(words))
+
 
 EXPERTS = [
     "Mateusz Wiśniewski – ekspert SEO i AI Search",
@@ -248,13 +272,14 @@ class Pipeline:
         urls = [row["url"] for row in self.context.get("competitors") or []]
         result = research.competitor_keywords(urls)
         self.budget.add_senuto()
-        own = {(row.get("keyword") or "").lower() for row in self.context.get("keywords_own") or []}
-        own |= {(row.get("query") or "").lower() for row in self.context.get("gsc") or []}
+        own = {normalize_phrase(row.get("keyword")) for row in self.context.get("keywords_own") or []}
+        own |= {normalize_phrase(row.get("query")) for row in self.context.get("gsc") or []}
         keywords = result["keywords"]
         self.context["keywords_competitors"] = keywords
         # Luka = fraza konkurencji, której nie mamy ani w Senuto, ani w GSC.
+        # Porównanie po formie znormalizowanej – warianty fleksyjne to nie luki.
         self.context["keywords_gap"] = [
-            row for row in keywords if (row.get("keyword") or "").lower() not in own
+            row for row in keywords if normalize_phrase(row.get("keyword")) not in own
         ]
         return {"payload": {
             "urls": result["urls"],
@@ -291,7 +316,7 @@ class Pipeline:
             published_at=self.args.published_at or "—",
             changed_at=self.args.changed_at or "—",
             outline=outline,
-            content=context["content"]["text"][:24000],
+            content=context["content"]["text"][:MAX_PROMPT_CONTENT],
             own_keywords=context.get("keywords_own") or [],
             senuto=context.get("senuto") or [],
             gsc=context.get("gsc") or [],
@@ -306,7 +331,12 @@ class Pipeline:
             max_new_sections=str(MAX_NEW_SECTIONS),
         )
         self.context["brief"] = result["data"]
-        return {"payload": result["data"], "model": result["model"], "prompt_version": version,
+        payload = result["data"]
+        if len(context["content"]["text"]) > MAX_PROMPT_CONTENT:
+            # Widoczne w edytorze: brief powstał na uciętym tekście, końcowe
+            # sekcje długiego wpisu mogły nie wejść do analizy.
+            payload = {**payload, "content_truncated": True}
+        return {"payload": payload, "model": result["model"], "prompt_version": version,
                 "cost": result["usage"]}
 
     def _structure_tasks(self) -> list[dict]:
@@ -443,7 +473,11 @@ class Pipeline:
             text = self._current_text(slot)
             if text:
                 parts.append(f"[sekcja {slot}]\n{extract.strip_html(text)}")
-        return "\n\n".join(parts)[:24000]
+        merged = "\n\n".join(parts)
+        # Flaga do payloadów kroków pracujących na złączonej treści: przy uciętym
+        # tekście końcowe sekcje nie dostaną przypisów ani linków.
+        self.context["merged_truncated"] = len(merged) > MAX_PROMPT_CONTENT
+        return merged[:MAX_PROMPT_CONTENT]
 
     def step_expert(self):
         result, version = self._ask(
@@ -464,7 +498,13 @@ class Pipeline:
             )
             proposals = self.context.setdefault("proposals", {})
             base = self._current_text(slot)
-            proposals[slot] = {**proposals.get(slot, {}), "text": f"{base}\n{block}"}
+            # Cytat po pierwszym akapicie sekcji, nie na doczepkę na końcu –
+            # tam często stoi lista albo wniosek, do którego cytat nie pasuje.
+            if "</p>" in base:
+                text = base.replace("</p>", f"</p>\n{block}", 1)
+            else:
+                text = f"{base}\n{block}"
+            proposals[slot] = {**proposals.get(slot, {}), "text": text}
         return {"payload": data, "model": result["model"], "prompt_version": version, "cost": result["usage"]}
 
     def step_sources(self):
@@ -492,6 +532,7 @@ class Pipeline:
             "skipped": citations["skipped"] + definitions["skipped"],
             "unsupported": data.get("unsupported") or [],
             "sources_slot": citations.get("sources_slot"),
+            "content_truncated": bool(self.context.get("merged_truncated")),
         }, "model": result["model"], "prompt_version": version, "cost": result["usage"]}
 
     def step_internal_links(self):
@@ -513,6 +554,7 @@ class Pipeline:
         return {"payload": {
             "applied": report["applied"],
             "skipped": report["skipped"],
+            "content_truncated": bool(self.context.get("merged_truncated")),
         }, "model": result["model"], "prompt_version": version, "cost": result["usage"]}
 
     def step_diff(self):

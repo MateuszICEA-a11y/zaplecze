@@ -426,6 +426,43 @@ class TestRewriteNaglowki(unittest.TestCase):
         self.assertEqual([row["slot"] for row in payload["headings_missed"]], [3])
 
 
+class TestNormalizacjaFraz(unittest.TestCase):
+    """Warianty fleksyjne tej samej frazy nie są lukami."""
+
+    def test_odmiana_i_kolejnosc_daja_te_sama_forme(self):
+        import run as run_module
+        norm = run_module.normalize_phrase
+        self.assertEqual(norm("agencja seo"), norm("agencje seo"))
+        self.assertEqual(norm("pozycjonowanie stron"), norm("pozycjonowania stron"))
+        self.assertEqual(norm("seo agencja"), norm("agencja seo"))
+        self.assertNotEqual(norm("agencja seo"), norm("agencja sem"))
+        # Krótkie słowa zostają w spokoju – „seo" nie traci „o".
+        self.assertEqual(norm("seo"), "seo")
+
+
+class TestCytatEksperta(unittest.TestCase):
+    def test_cytat_wchodzi_po_pierwszym_akapicie(self):
+        import run as run_module
+
+        args = type("Args", (), {
+            "job": "t", "dry_run": True, "improvements": [], "research_file": "",
+            "model_research": "", "model_writer": "", "author": "", "title": "",
+        })()
+        pipeline = run_module.Pipeline(args)
+        pipeline.context = {
+            "title": "T",
+            "snapshot": [{"slot": 2, "title": "S", "text": "<p>Pierwszy.</p><p>Drugi.</p><ul><li>x</li></ul>"}],
+            "proposals": {},
+        }
+        answer = {"data": {"quote": "Cytat.", "slot": 2, "expert": "Magdalena Antoń", "role": "specjalistka"},
+                  "model": "m", "usage": {"tokens_in": 1, "tokens_out": 1}}
+        with mock.patch.object(pipeline, "_ask", return_value=(answer, "1.0.0")):
+            pipeline.step_expert()
+        text = pipeline.context["proposals"][2]["text"]
+        self.assertLess(text.index("blockquote"), text.index("<p>Drugi.</p>"))
+        self.assertTrue(text.strip().endswith("</ul>"))
+
+
 class TestRivalsFacts(unittest.TestCase):
     """Fakty z analizy konkurencji (Jina) – z env RIVALS_JSON albo z fixtures."""
 
