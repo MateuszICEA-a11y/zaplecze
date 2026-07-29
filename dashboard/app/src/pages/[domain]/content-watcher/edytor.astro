@@ -1887,8 +1887,16 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       table.innerHTML =
         '<thead><tr><th>Fraza</th><th class="num">Wyszukiwań/mies.</th><th class="num">Nasza pozycja</th><th>Status</th></tr></thead>';
       const body = document.createElement('tbody');
+      // Pełna lista potrafi mieć setki wierszy i zabija czytelność dokumentu –
+      // pokazujemy czołówkę, reszta na życzenie.
+      const KW_VISIBLE = 15;
+      let overflowIndex = 0;
       for (const row of analysis.gap) {
         const tr = document.createElement('tr');
+        if (overflowIndex++ >= KW_VISIBLE) {
+          tr.hidden = true;
+          tr.dataset.kwOverflow = '1';
+        }
         const cells = [
           row.keyword,
           row.searches === null ? '–' : pl.format(row.searches),
@@ -1912,6 +1920,23 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       const wrap = document.createElement('div');
       wrap.className = 'ed-serp-table-wrap';
       wrap.append(table);
+      if (analysis.gap.length > KW_VISIBLE) {
+        const toggle = document.createElement('button');
+        toggle.type = 'button';
+        toggle.className = 'ed-show-all';
+        toggle.textContent = `pokaż wszystkie frazy (${pl.format(analysis.gap.length)})`;
+        toggle.addEventListener('click', () => {
+          const collapsed = toggle.dataset.open !== '1';
+          body.querySelectorAll<HTMLTableRowElement>('[data-kw-overflow]').forEach((row) => {
+            row.hidden = !collapsed;
+          });
+          toggle.dataset.open = collapsed ? '1' : '';
+          toggle.textContent = collapsed
+            ? 'zwiń listę fraz'
+            : `pokaż wszystkie frazy (${pl.format(analysis.gap.length)})`;
+        });
+        wrap.append(toggle);
+      }
       nodes.push(wrap);
     }
 
@@ -2631,6 +2656,10 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-serp .ed-serp-stat.weak b { color: var(--status-warn-fg); }
   .ed-serp .ed-serp-stat.covered b { color: var(--status-ok); }
   .ed-serp .ed-serp-table-wrap { overflow-x: auto; }
+  .ed-show-all { margin: 8px 0 0; padding: 4px 10px; border: 1px solid var(--hairline);
+    border-radius: 999px; background: none; color: var(--ink-muted); font: inherit;
+    font-size: .78rem; cursor: pointer; }
+  .ed-show-all:hover { color: var(--ink); border-color: var(--ink-muted); }
   .ed-serp .ed-serp-table { min-width: 560px; font-size: .8rem; }
   .ed-serp .ed-serp-badge { display: inline-flex; padding: 3px 8px; border-radius: 999px;
     background: var(--bg-surface-3); color: var(--ink-muted); font-size: .69rem; font-weight: 600; }

@@ -16,7 +16,9 @@
  */
 
 const READER = 'https://r.jina.ai/';
-const RIVALS_LIMIT = 3;
+// Tyle samo, co COMPETITOR_LIMIT w pipeline (config.py) – edytor i przejazd
+// mają patrzeć na ten sam zestaw stron. Koszt: ~6 odczytów Jina na analizę.
+const RIVALS_LIMIT = 5;
 const MAX_MARKDOWN_CHARS = 18_000; // tyle wchodzi do promptu z jednej strony
 const CACHE_HOURS = 24 * 7;
 const TIMEOUT_MS = 60_000;
