@@ -92,7 +92,11 @@ async function fetchJson(url, init, fetchImpl) {
   }
 }
 
-/** Wyniki organiczne dla frazy – jeden adres na domenę, bez naszej własnej. */
+/**
+ * Wyniki organiczne dla frazy: konkurenci (jeden adres na domenę) i nasza
+ * własna pozycja. Bez tej drugiej nie wiadomo, czy w ogóle jesteśmy w grze –
+ * a to pierwsze pytanie, które zadaje człowiek patrzący na SERP.
+ */
 export async function serpCompetitors(keyword, ownHost, env, fetchImpl = fetch) {
   const query = new URLSearchParams({ keyword, hl: 'pl', gl: 'pl' });
   const payload = await fetchJson(`${SERPDATA_SEARCH}?${query}`, {
@@ -105,15 +109,28 @@ export async function serpCompetitors(keyword, ownHost, env, fetchImpl = fetch) 
   const results = (payload?.data?.results ?? payload?.results ?? {});
   const rows = [];
   const seen = new Set();
+  let ours = null;
+  let checked = 0;
   for (const row of results.organic_results ?? []) {
     const url = row.url ?? '';
     const host = row.domain ? String(row.domain).replace(/^www\./, '') : hostOf(url);
-    if (!url || !host || host === ownHost || seen.has(host)) continue;
+    if (!url || !host) continue;
+    checked += 1;
+    const position = row.pos ?? row.global_pos ?? checked;
+    if (host === ownHost) {
+      if (!ours) ours = { position, url, host, title: row.title ?? null };
+      continue;
+    }
+    if (seen.has(host)) continue;
     seen.add(host);
-    rows.push({ position: row.pos ?? row.global_pos ?? rows.length + 1, url, host, title: row.title ?? null });
-    if (rows.length >= COMPETITORS_LIMIT) break;
+    if (rows.length < COMPETITORS_LIMIT) {
+      rows.push({ position, url, host, title: row.title ?? null });
+    }
+    // Konkurentów mamy komplet, ale wyniki przeglądamy do końca strony –
+    // nasz adres bywa dopiero na dziewiątej pozycji.
+    if (rows.length >= COMPETITORS_LIMIT && ours) break;
   }
-  return rows;
+  return { competitors: rows, ours, checked };
 }
 
 /**
@@ -241,15 +258,23 @@ export async function runStep(env, domain, postId, state, fetchImpl = fetch) {
     ownBest?.keyword && normalizeKeyword(ownBest.keyword) !== normalizeKeyword(topic) ? ownBest.keyword : null;
 
   if (stage === 'serp_title') {
-    const competitors = await serpCompetitors(topic, ownHost, env, fetchImpl);
-    const next = { ...state, queries: [{ kind: 'title', keyword: topic, competitors }], stage: ownKeyword ? 'serp_own' : 'keywords' };
+    const { competitors, ours, checked } = await serpCompetitors(topic, ownHost, env, fetchImpl);
+    const next = {
+      ...state,
+      queries: [{ kind: 'title', keyword: topic, competitors, ours, results_checked: checked }],
+      stage: ownKeyword ? 'serp_own' : 'keywords',
+    };
     await writeSnapshot(env, domain, postId, { status: 'running', analysis: next });
     return next;
   }
 
   if (stage === 'serp_own') {
-    const competitors = await serpCompetitors(ownKeyword, ownHost, env, fetchImpl);
-    const next = { ...state, queries: [...queries, { kind: 'own', keyword: ownKeyword, competitors }], stage: 'keywords' };
+    const { competitors, ours, checked } = await serpCompetitors(ownKeyword, ownHost, env, fetchImpl);
+    const next = {
+      ...state,
+      queries: [...queries, { kind: 'own', keyword: ownKeyword, competitors, ours, results_checked: checked }],
+      stage: 'keywords',
+    };
     await writeSnapshot(env, domain, postId, { status: 'running', analysis: next });
     return next;
   }

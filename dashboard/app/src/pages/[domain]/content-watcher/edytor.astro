@@ -25,7 +25,7 @@ const latest = latestSnapshot(domain!);
 // Ekspert celowo poza pakietem startowym – to finalny etap po zakończeniu
 // pipeline'u (przycisk w podsumowaniu), nie decyzja podejmowana z góry.
 const IMPROVEMENTS = [
-  { key: 'gaps', label: 'Uzupełnienie luk treści', note: 'research SERP → wytyczne → przepisanie sekcji' },
+  { key: 'gaps', label: 'Uzupełnienie luk treści', note: 'rozpoznanie wyników Google → wytyczne → przepisanie sekcji' },
   { key: 'sources', label: 'Źródła i przypisy', note: 'autorytatywne linki + definicja z Wikipedii' },
   { key: 'internal_links', label: 'Linki wewnętrzne', note: 'dopasowanie z katalogu treści serwisu' },
 ];
@@ -63,10 +63,10 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     <section class="ed-serp" data-ed-serp>
       <div class="ed-serp-head">
         <div class="ed-serp-title">
-          <h3>Kto zajmuje ten temat</h3>
+          <h3>Kto rankuje na ten temat</h3>
           <p class="ed-serp-lead">
-            Dwa zapytania do Google – tytuł wpisu i nasza najlepsza fraza. Frazy konkurentów z TOP 3
-            zestawiamy z naszymi.
+            Dwa zapytania do Google – tytuł wpisu i nasza najlepsza fraza. Widać, kto stoi w czołówce
+            i na której pozycji jesteśmy my.
           </p>
         </div>
         <div class="ed-serp-actions">
@@ -93,11 +93,11 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
           </div>
           <div class="ed-models">
             <label>
-              <span>Research</span>
+              <span>Model analizy</span>
               <input list="ed-model-list" data-ed-model-research value={DEFAULT_MODELS.research} spellcheck="false" />
             </label>
             <label>
-              <span>Pisanie</span>
+              <span>Model pisania</span>
               <input list="ed-model-list" data-ed-model-writer value={DEFAULT_MODELS.writer} spellcheck="false" />
             </label>
             <datalist id="ed-model-list"></datalist>
@@ -105,7 +105,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
           </div>
         </div>
         <div class="ed-actions">
-          <button type="button" class="ed-run" data-ed-run>Uruchom pipeline</button>
+          <button type="button" class="ed-run" data-ed-run>Uruchom optymalizację</button>
           <span class="ed-hint">
             Koszt: jedno zapytanie SERP (SerpData), frazy z Senuto i kilkadziesiąt
             tysięcy tokenów. Ten sam wpis raz na 30 dni. Wynik to propozycja –
@@ -136,7 +136,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
            generowana z Workera przez OpenRouter (sekundy, nie minuty). -->
       <div class="ed-expert" data-ed-expert hidden>
         <div class="ed-expert-head">
-          <span class="ed-expert-label">Etap finalny · porada eksperta</span>
+          <span class="ed-expert-label">Etap końcowy · porada eksperta</span>
           <span class="ed-expert-note">cytat osoby z ICEA (innej niż autor), wybrany model pisania</span>
         </div>
         <div class="ed-expert-actions" data-ed-expert-actions></div>
@@ -155,6 +155,29 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       <summary>Wytyczne z analizy <span class="section-meta">luki wobec konkurencji i frazy do pokrycia</span></summary>
       <div data-ed-brief></div>
     </details>
+
+    <!-- Ocena treści liczona na żywo z dokumentu: objętość, struktura,
+         linkowanie, świeżość i pokrycie fraz, których szuka konkurencja. -->
+    <div class="section-head ed-score-head">
+      <h2>Ocena treści</h2>
+      <span class="section-meta">liczona z aktualnej treści w edytorze</span>
+    </div>
+    <div class="ed-score" data-ed-score>
+      <div class="ed-score-main">
+        <div class="ed-score-dial" data-ed-score-dial>
+          <b data-ed-score-value>–</b>
+          <span>na 100</span>
+        </div>
+        <div class="ed-score-parts" data-ed-score-parts></div>
+      </div>
+      <div class="ed-score-keywords">
+        <div class="ed-score-kwhead">
+          <h3>Frazy do pokrycia</h3>
+          <span data-ed-score-kwmeta>uruchom rozpoznanie wyników, żeby zobaczyć listę</span>
+        </div>
+        <ul class="ed-score-kwlist" data-ed-score-kwlist></ul>
+      </div>
+    </div>
 
     <div class="section-head ed-doc-head">
       <h2>Dokument</h2>
@@ -271,8 +294,21 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     'H2', 'H3', 'H4', 'BLOCKQUOTE', 'FOOTER', 'TABLE', 'THEAD', 'TBODY', 'TR', 'TH', 'TD', 'SPAN']);
   const DROP_TAGS = new Set(['SCRIPT', 'STYLE', 'IFRAME', 'OBJECT', 'EMBED', 'FORM', 'LINK', 'META']);
 
+  /* Widgety szablonu wklejone w treść („Zobacz również", boksy powiązanych
+     wpisów). Na stronie to element poboczny obok tekstu, w edytorze wchodziły
+     w środek akapitu i psuły zarówno odbiór, jak i liczenie słów. */
+  const WIDGET_SELECTORS = ['[class*="k-post-link"]', '[class*="k-post-list"]', '[class*="k-post-item"]',
+    '[class*="related"]', '.wp-block-embed'];
+
   function sanitizeInto(host: HTMLElement, html: string | null) {
     const doc = new DOMParser().parseFromString(html ?? '', 'text/html');
+    for (const selector of WIDGET_SELECTORS) {
+      doc.body.querySelectorAll(selector).forEach((node) => node.remove());
+    }
+    // Po wycięciu boksu zostaje pusty akapit-skorupa – też idzie precz.
+    doc.body.querySelectorAll('p').forEach((node) => {
+      if (!node.textContent?.trim() && !node.querySelector('img')) node.remove();
+    });
     const walk = (node: Element) => {
       for (const child of [...node.children]) {
         if (DROP_TAGS.has(child.tagName)) { child.remove(); continue; }
@@ -311,6 +347,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   let pollTimer: number | undefined;
   let clockTimer: number | undefined;
   const sectionMode = new Map<number, string>();
+  // Ostatnia analiza SERP – ocena treści bierze z niej frazy do pokrycia.
+  let serpAnalysis: any = null;
 
   /* ---------- katalog + treść ---------- */
 
@@ -379,6 +417,67 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     return body;
   }
 
+  /* ---------- edycja treści ----------
+     Dokument jest edytowalny w miejscu: pasek formatowania działa na
+     zaznaczeniu (execCommand – jedyne API contentEditable dostępne bez
+     zewnętrznej biblioteki). Sekcje z propozycją zapisują się do zadania,
+     oryginalna treść z WordPressa – lokalnie, bo wdrożenie i tak jest ręczne. */
+
+  const draftKey = (slot: number) => `cw-draft:${domain}:${entry?.post_id}:${slot}`;
+
+  const FORMAT_BUTTONS: { label: string; title: string; run: () => void; className?: string }[] = [
+    { label: 'B', title: 'Pogrubienie (Ctrl+B)', className: 'bold', run: () => document.execCommand('bold') },
+    { label: 'I', title: 'Kursywa (Ctrl+I)', className: 'italic', run: () => document.execCommand('italic') },
+    { label: 'H2', title: 'Nagłówek H2', run: () => document.execCommand('formatBlock', false, 'h2') },
+    { label: 'H3', title: 'Nagłówek H3', run: () => document.execCommand('formatBlock', false, 'h3') },
+    { label: '¶', title: 'Zwykły akapit', run: () => document.execCommand('formatBlock', false, 'p') },
+    { label: '• lista', title: 'Lista punktowana', run: () => document.execCommand('insertUnorderedList') },
+    { label: '1. lista', title: 'Lista numerowana', run: () => document.execCommand('insertOrderedList') },
+    {
+      label: 'link',
+      title: 'Wstaw odnośnik',
+      run: () => {
+        const href = window.prompt('Adres odnośnika (https://…)');
+        if (href && /^https?:\/\//i.test(href)) document.execCommand('createLink', false, href);
+      },
+    },
+    { label: 'wyczyść', title: 'Usuń formatowanie zaznaczenia', run: () => document.execCommand('removeFormat') },
+  ];
+
+  function formatToolbar() {
+    const bar = document.createElement('div');
+    bar.className = 'ed-format';
+    for (const item of FORMAT_BUTTONS) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = `ed-format-btn ${item.className ?? ''}`.trim();
+      button.textContent = item.label;
+      button.title = item.title;
+      // mousedown zamiast click – kliknięcie gubiłoby zaznaczenie w tekście.
+      button.addEventListener('mousedown', (event) => {
+        event.preventDefault();
+        item.run();
+      });
+      bar.append(button);
+    }
+    return bar;
+  }
+
+  /** Włącza edycję w miejscu: pasek formatowania nad treścią i przycisk
+      zapisu, który budzi się przy pierwszej zmianie. */
+  function enableEditing(section: HTMLElement, body: HTMLElement, save: HTMLButtonElement) {
+    if (body.isContentEditable) { body.focus(); return; }
+    body.contentEditable = 'true';
+    body.classList.add('ed-editable');
+    body.addEventListener('input', () => {
+      save.hidden = false;
+      section.dataset.dirty = '1';
+      scheduleScore();
+    });
+    section.insertBefore(formatToolbar(), body);
+    body.focus();
+  }
+
   /** Sekcja dokumentu: nagłówek + treść + (po pipelinie) narzędzia i tryby. */
   function docSection(slot: number, title: string, html: string | null) {
     const section = document.createElement('section');
@@ -390,9 +489,95 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     heading.dataset.block = 'h2';
     heading.textContent = title || `Sekcja ${slot}`;
     head.append(heading);
-    section.append(head, docProse(html));
+
+    // Szkic z poprzedniej sesji ma pierwszeństwo przed treścią z WordPressa –
+    // inaczej odświeżenie strony po cichu kasowałoby pracę redaktora.
+    const draft = readDraft(slot);
+    const body = docProse(draft ?? html);
+    if (draft) {
+      const tag = document.createElement('span');
+      tag.className = 'ed-sec-tag warn';
+      tag.textContent = 'szkic lokalny';
+      head.append(tag);
+    }
+
+    const tools = document.createElement('div');
+    tools.className = 'ed-sec-tools';
+    const spacer = document.createElement('span');
+    spacer.className = 'ed-sec-spacer';
+    const save = document.createElement('button');
+    save.type = 'button';
+    save.className = 'ed-save';
+    save.textContent = 'zapisz szkic';
+    save.hidden = true;
+    save.addEventListener('click', () => {
+      writeDraft(slot, body.innerHTML);
+      save.hidden = true;
+      delete section.dataset.dirty;
+      drop.hidden = false;
+      if (!head.querySelector('.ed-sec-tag')) {
+        const tag = document.createElement('span');
+        tag.className = 'ed-sec-tag warn';
+        tag.textContent = 'szkic lokalny';
+        head.append(tag);
+      }
+    });
+    const edit = document.createElement('button');
+    edit.type = 'button';
+    edit.textContent = 'edytuj tekst';
+    edit.addEventListener('click', () => enableEditing(section, body, save));
+
+    // Powrót do treści z WordPressa – bez tego szkic zostaje na zawsze.
+    const drop = document.createElement('button');
+    drop.type = 'button';
+    drop.textContent = 'odrzuć szkic';
+    drop.hidden = !draft;
+    drop.addEventListener('click', () => {
+      try {
+        localStorage.removeItem(draftKey(slot));
+      } catch { /* brak dostępu do localStorage nie blokuje strony */ }
+      sanitizeInto(body, html);
+      markBlocks(body);
+      head.querySelector('.ed-sec-tag')?.remove();
+      drop.hidden = true;
+      renderScore();
+    });
+    const copy = document.createElement('button');
+    copy.type = 'button';
+    copy.textContent = 'kopiuj treść';
+    copy.addEventListener('click', async () => {
+      await navigator.clipboard.writeText(body.innerHTML);
+      copy.textContent = 'skopiowano';
+      setTimeout(() => (copy.textContent = 'kopiuj treść'), 1500);
+    });
+    tools.append(spacer, save, drop, edit, copy);
+
+    section.append(head, tools, body);
     return section;
   }
+
+  /* Szkice trzymamy w przeglądarce: wdrożenie do WordPressa i tak jest
+     ręczne (kopiuj → wklej), a zapis zwrotny do CMS-u to osobny temat. */
+  function readDraft(slot: number): string | null {
+    try {
+      return localStorage.getItem(draftKey(slot));
+    } catch {
+      return null;
+    }
+  }
+  function writeDraft(slot: number, html: string) {
+    try {
+      localStorage.setItem(draftKey(slot), html);
+    } catch {
+      showError('Nie udało się zapisać szkicu w przeglądarce (brak miejsca?).');
+    }
+  }
+
+  let scoreTimer: number | undefined;
+  const scheduleScore = () => {
+    window.clearTimeout(scoreTimer);
+    scoreTimer = window.setTimeout(renderScore, 400);
+  };
 
   /** Nagłówek dokumentu: tytuł wpisu (H1) i wstęp sprzed pierwszego H2.
       Wstęp siedzi w polu `content` WordPressa, poza sekcjami ACF – pipeline
@@ -406,10 +591,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     const heading = document.createElement('h1');
     heading.dataset.block = 'h1';
     heading.textContent = content?.title || entry?.title || '';
-    const badge = document.createElement('span');
-    badge.className = 'ed-sec-tag';
-    badge.textContent = 'wstęp – poza zakresem pipeline’u';
-    head.append(heading, badge);
+    head.append(heading);
     intro.append(head);
     const lead = (content?.lead ?? '').trim();
     if (lead) intro.append(docProse(lead));
@@ -451,6 +633,180 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     host.replaceChildren(...nodes);
   }
 
+  /* ---------- ocena treści ----------
+     Wzorem narzędzi contentowych: kilka mierzalnych składowych zamiast jednej
+     nieprzejrzystej liczby. Każda liczona z tego, co widać w edytorze, więc
+     wynik rośnie w trakcie pisania. Składowe bez danych są pomijane – lepiej
+     policzyć wynik z trzech rzeczy niż udawać, że brakujące dane to zero. */
+
+  const WORDS_FALLBACK = 1200; // gdy nie znamy jeszcze długości tekstów konkurencji
+
+  function docMetrics() {
+    const doc = $('[data-ed-doc]')!;
+    const text = docPlainText();
+    const words = (text.match(/[\p{L}\p{N}][\p{L}\p{N}'’-]*/gu) ?? []).length;
+    const headings = doc.querySelectorAll('.ed-sec-head h2, .ed-doc-body h2, .ed-doc-body h3').length;
+    const paragraphs = doc.querySelectorAll('.ed-doc-body p').length;
+    const ownHost = (() => {
+      try {
+        return new URL(entry?.url ?? '').hostname.replace(/^www\./, '');
+      } catch {
+        return '';
+      }
+    })();
+    const links = [...doc.querySelectorAll<HTMLAnchorElement>('.ed-doc-body a[href]')];
+    const internal = links.filter((link) => link.hostname.replace(/^www\./, '') === ownHost).length;
+    return { words, headings, paragraphs, internal, external: links.length - internal };
+  }
+
+  /** Tekst dokumentu bez interfejsu – same akapity i nagłówki treści. */
+  function docPlainText() {
+    const doc = $('[data-ed-doc]')!;
+    return [...doc.querySelectorAll('.ed-sec-head h1, .ed-sec-head h2, .ed-doc-body, .ed-diff')]
+      .map((node) => node.textContent ?? '')
+      .join(' ');
+  }
+
+  const normalize = (value: string) =>
+    value.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ł/g, 'l')
+      .replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
+
+  /** Frazy, które wpis powinien pokryć: luki wobec konkurencji z rozpoznania
+      SERP i lista z wytycznych. Bez nich panel pokazuje samą strukturę. */
+  function keywordTargets() {
+    const out = new Map<string, { keyword: string; searches: number | null; note: string }>();
+    for (const row of serpAnalysis?.gap ?? []) {
+      if (row.status === 'covered') continue;
+      out.set(normalize(row.keyword), {
+        keyword: row.keyword,
+        searches: row.searches,
+        note: row.status === 'missing' ? 'nie mamy' : `poza TOP 10 (poz. ${row.our_position})`,
+      });
+    }
+    const brief = job?.steps?.find((step) => step.step === 'brief')?.payload;
+    for (const row of brief?.keywords_to_cover ?? []) {
+      const key = normalize(row.keyword ?? '');
+      if (!key || out.has(key)) continue;
+      out.set(key, { keyword: row.keyword, searches: row.volume ?? null, note: 'z wytycznych' });
+    }
+    // Własne frazy spoza podium: wpis już na nie rankuje, więc dopracowanie
+    // treści pod nie jest najtańszym zyskiem, jaki da się tu zobaczyć.
+    for (const row of entry?.senuto_keywords ?? []) {
+      const key = normalize(row.keyword ?? '');
+      if (!key || out.has(key) || (row.position ?? 99) <= 3) continue;
+      out.set(key, { keyword: row.keyword, searches: row.searches ?? null, note: `nasza poz. ${row.position}` });
+    }
+    return [...out.values()].slice(0, 24);
+  }
+
+  function scoreParts() {
+    const metrics = docMetrics();
+    const target = WORDS_FALLBACK;
+    const parts: { label: string; detail: string; ratio: number }[] = [];
+    const clamp = (value: number) => Math.max(0, Math.min(1, value));
+
+    parts.push({
+      label: 'Objętość',
+      detail: `${pl.format(metrics.words)} z ~${pl.format(target)} słów`,
+      ratio: clamp(metrics.words / target),
+    });
+
+    // Jeden nagłówek na ~250 słów – gęstsza siatka ułatwia skanowanie tekstu.
+    const headingsTarget = Math.max(3, Math.round(metrics.words / 250));
+    parts.push({
+      label: 'Nagłówki',
+      detail: `${pl.format(metrics.headings)} z ~${pl.format(headingsTarget)}`,
+      ratio: clamp(metrics.headings / headingsTarget),
+    });
+
+    parts.push({
+      label: 'Linki wewnętrzne',
+      detail: `${pl.format(metrics.internal)} z 3`,
+      ratio: clamp(metrics.internal / 3),
+    });
+
+    const targets = keywordTargets();
+    if (targets.length) {
+      const text = normalize(docPlainText());
+      const covered = targets.filter((row) => text.includes(normalize(row.keyword))).length;
+      parts.push({
+        label: 'Pokrycie fraz',
+        detail: `${pl.format(covered)} z ${pl.format(targets.length)}`,
+        ratio: clamp(covered / targets.length),
+      });
+    }
+
+    const updated = entry?.updated_at ? Date.parse(`${entry.updated_at}T00:00:00Z`) : NaN;
+    if (Number.isFinite(updated)) {
+      const days = Math.floor((Date.now() - updated) / 86_400_000);
+      // Świeży wpis do pół roku; po półtora roku składowa schodzi do zera.
+      parts.push({
+        label: 'Świeżość',
+        detail: days <= 0 ? 'dziś' : `${pl.format(days)} dni od zmiany treści`,
+        ratio: clamp((540 - days) / 360),
+      });
+    }
+    return parts;
+  }
+
+  function renderScore() {
+    const host = $('[data-ed-score-parts]');
+    if (!host || !entry) return;
+    const parts = scoreParts();
+    const score = Math.round((parts.reduce((sum, part) => sum + part.ratio, 0) / parts.length) * 100);
+
+    const value = $('[data-ed-score-value]')!;
+    value.textContent = String(score);
+    const dial = $('[data-ed-score-dial]')!;
+    dial.className = `ed-score-dial ${score >= 75 ? 'ok' : score >= 50 ? 'warn' : 'low'}`;
+    dial.style.setProperty('--score', String(score));
+
+    host.replaceChildren(...parts.map((part) => {
+      const row = document.createElement('div');
+      row.className = 'ed-score-part';
+      const label = document.createElement('span');
+      label.className = 'ed-score-label';
+      label.textContent = part.label;
+      const detail = document.createElement('span');
+      detail.className = 'ed-score-detail';
+      detail.textContent = part.detail;
+      const track = document.createElement('div');
+      track.className = 'ed-score-track';
+      const fill = document.createElement('i');
+      fill.className = part.ratio >= 0.75 ? 'ok' : part.ratio >= 0.5 ? 'warn' : 'low';
+      fill.style.width = `${Math.round(part.ratio * 100)}%`;
+      track.append(fill);
+      row.append(label, detail, track);
+      return row;
+    }));
+
+    const list = $('[data-ed-score-kwlist]')!;
+    const targets = keywordTargets();
+    const text = normalize(docPlainText());
+    $('[data-ed-score-kwmeta]')!.textContent = targets.length
+      ? `${pl.format(targets.filter((row) => text.includes(normalize(row.keyword))).length)} z ${pl.format(targets.length)} użytych w treści`
+      : serpAnalysis
+        ? 'brak fraz do pokrycia – Senuto nie zna fraz tych konkurentów'
+        : 'uruchom „Sprawdź SERP”, żeby zobaczyć listę';
+    list.replaceChildren(...targets.map((row) => {
+      const item = document.createElement('li');
+      const used = text.includes(normalize(row.keyword));
+      item.className = used ? 'used' : '';
+      const mark = document.createElement('span');
+      mark.className = 'ed-kw-mark';
+      mark.textContent = used ? '✓' : '+';
+      const name = document.createElement('span');
+      name.className = 'ed-kw-name';
+      name.textContent = row.keyword;
+      const meta = document.createElement('span');
+      meta.className = 'ed-kw-meta';
+      meta.textContent = [row.searches ? `${pl.format(row.searches)}/mies.` : null, row.note]
+        .filter(Boolean).join(' · ');
+      item.append(mark, name, meta);
+      return item;
+    }));
+  }
+
   function renderDoc() {
     const host = $('[data-ed-doc]')!;
     host.replaceChildren();
@@ -469,7 +825,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     } else {
       const note = document.createElement('p');
       note.className = 'ed-doc-error';
-      note.textContent = 'Ten wpis nie ma sekcji ACF (page_text_N) – dokument zostanie zbudowany z wyniku pipeline’u.';
+      note.textContent = 'Ten wpis nie ma sekcji ACF (page_text_N) – dokument zostanie zbudowany z wyniku optymalizacji.';
       blocks.push(note);
     }
     host.replaceChildren(...blocks);
@@ -477,6 +833,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       ? `${content.sections.length} sekcji · pełna treść z WordPressa`
       : 'treść z WordPressa';
     renderDocStats();
+    renderScore();
   }
 
   /* ---------- modele (OpenRouter) ---------- */
@@ -542,7 +899,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       status.className = `cw-status ${current.status === 'done' ? 'recent' : ['failed', 'stale', 'budget_exceeded'].includes(current.status) ? 'not-indexed' : ''}`;
       const tokens = (current.cost?.tokens_total ?? 0) || ((current.cost?.tokens_in ?? 0) + (current.cost?.tokens_out ?? 0));
       const parts = [
-        current.models ? `research: ${current.models.research} · pisanie: ${current.models.writer}` : null,
+        current.models ? `analiza: ${current.models.research} · pisanie: ${current.models.writer}` : null,
         tokens ? `${pl.format(tokens)} tokenów` : null,
         current.cost?.serp_requests ? `${current.cost.serp_requests} zap. SERP` : null,
         current.error,
@@ -699,12 +1056,14 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       host.replaceChildren(renderInlineDiff(section));
     } else {
       const body = docProse(mode === 'before' ? section.text_before : section.text_after);
-      // Tryb „podgląd po" jest edytowalny – poprawki zapisują się do zadania
-      // i „kopiuj treść" bierze wersję po edycji.
+      // Wersja „po" jest edytowalna razem z paskiem formatowania – poprawki
+      // zapisują się do zadania, a „kopiuj treść" bierze tekst po edycji.
       if (mode === 'after' && onDirty) {
         body.contentEditable = 'true';
         body.classList.add('ed-editable');
-        body.addEventListener('input', onDirty);
+        body.addEventListener('input', () => { onDirty(); scheduleScore(); });
+        host.replaceChildren(formatToolbar(), body);
+        return;
       }
       host.replaceChildren(body);
     }
@@ -928,6 +1287,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     applyOnlyChangedFilter();
     renderDecideBar(current);
     renderDocStats();
+    renderScore();
   }
 
   /* ---------- pasek dokumentu: decyzje zbiorcze i filtr ---------- */
@@ -1150,7 +1510,14 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   /* ---------- SERP: kto zajmuje temat ---------- */
 
   type SerpAnalysis = {
-    queries: { kind: string; keyword: string; competitors: { position: number; url: string; host: string; title: string | null }[] }[];
+    queries: {
+      kind: string;
+      keyword: string;
+      competitors: { position: number; url: string; host: string; title: string | null }[];
+      // Nasz wynik dla tej frazy (null = poza sprawdzonymi wynikami).
+      ours?: { position: number; url: string; host: string; title: string | null } | null;
+      results_checked?: number;
+    }[];
     drift: string[];
     gap: { keyword: string; searches: number | null; our_position: number | null; status: string }[];
     gap_summary: { total: number; missing: number; weak: number; covered: number };
@@ -1170,6 +1537,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   };
 
   function renderSerp(analysis: SerpAnalysis | null) {
+    serpAnalysis = analysis;
+    renderScore();
     const host = $('[data-ed-serp-result]')!;
     const stamp = $('[data-ed-serp-stamp]')!;
     if (!analysis) {
@@ -1199,8 +1568,14 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       head.append(label, keyword);
       const list = document.createElement('ol');
       list.className = 'ed-serp-list';
-      for (const row of query.competitors) {
+      // Nasz wynik wchodzi na listę razem z konkurentami, we właściwej
+      // kolejności – inaczej nie widać, czy jesteśmy nad nimi, czy pod nimi.
+      const rows = [...query.competitors.map((row) => ({ ...row, ours: false }))];
+      if (query.ours) rows.push({ ...query.ours, ours: true });
+      rows.sort((a, b) => (a.position ?? 99) - (b.position ?? 99));
+      for (const row of rows) {
         const item = document.createElement('li');
+        if (row.ours) item.className = 'is-ours';
         const rank = document.createElement('span');
         rank.className = 'ed-serp-rank';
         rank.textContent = String(row.position);
@@ -1211,11 +1586,26 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         link.target = '_blank';
         link.rel = 'noopener';
         link.textContent = row.host;
+        text.append(link);
+        if (row.ours) {
+          const mark = document.createElement('span');
+          mark.className = 'ed-serp-us';
+          mark.textContent = 'nasz wpis';
+          text.append(mark);
+        }
         const title = document.createElement('small');
         title.textContent = row.title ?? '';
-        text.append(link, title);
+        text.append(title);
         item.append(rank, text);
         list.append(item);
+      }
+      if (!query.ours) {
+        const missing = document.createElement('li');
+        missing.className = 'ed-serp-none';
+        missing.textContent = query.results_checked
+          ? `nas nie ma w ${query.results_checked} sprawdzonych wynikach`
+          : 'naszego adresu nie ma w wynikach';
+        list.append(missing);
       }
       if (!query.competitors.length) {
         const empty = document.createElement('li');
@@ -1251,11 +1641,16 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       node.append(big, small);
       summary.append(node);
     };
-    stat(analysis.gap_summary.total, 'fraz konkurencji');
-    stat(analysis.gap_summary.missing, 'nie mamy wcale', 'missing');
-    stat(analysis.gap_summary.weak, 'poza TOP 10', 'weak');
-    stat(analysis.gap_summary.covered, 'mamy w TOP 10', 'covered');
-    stat(analysis.own_keywords_total, 'fraz naszego wpisu');
+    // Bez fraz konkurentów cztery zera obok „X fraz naszego wpisu" czytają
+    // się jak wynik analizy, a to zwykły brak danych w Senuto.
+    if (analysis.gap_summary.total) {
+      stat(analysis.gap_summary.total, 'fraz konkurencji');
+      stat(analysis.gap_summary.missing, 'nie mamy wcale', 'missing');
+      stat(analysis.gap_summary.weak, 'poza TOP 10', 'weak');
+      stat(analysis.gap_summary.covered, 'mamy w TOP 10', 'covered');
+    }
+    stat(analysis.own_keywords_total, 'fraz rankujących wpisu');
+    summary.classList.toggle('is-solo', !analysis.gap_summary.total);
     nodes.push(summary);
 
     if (!analysis.gap.length) {
@@ -1264,7 +1659,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       const empty = document.createElement('p');
       empty.className = 'ed-serp-empty';
       empty.textContent =
-        'Senuto nie ma fraz dla adresów tych konkurentów – zostaje sama lista wyników i rozjazd tematu.';
+        'Senuto nie zna fraz dla adresów tych konkurentów, więc porównania fraz nie ma – zostaje lista wyników ' +
+        'i rozjazd tematu. Dane o naszych frazach pochodzą z dziennego odczytu Senuto.';
       nodes.push(empty);
     }
     if (analysis.gap.length) {
@@ -1633,6 +2029,54 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-doc-body li + li { margin-top: .4em; }
   .ed-doc-body a { color: var(--accent-blue); }
 
+  /* ----- ocena treści ----- */
+  .ed-score { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 18px;
+    padding: 18px 20px; border: 1px solid var(--hairline); background: var(--bg-surface-1);
+    margin-bottom: 18px; }
+  .ed-score-main { display: flex; gap: 22px; align-items: flex-start; }
+  .ed-score-dial { --score: 0; position: relative; flex: 0 0 104px; width: 104px; height: 104px;
+    display: grid; place-content: center; justify-items: center; border-radius: 50%;
+    background: conic-gradient(var(--status-ok) calc(var(--score) * 1%), var(--bg-surface-3) 0); }
+  .ed-score-dial::after { content: ''; position: absolute; inset: 9px; border-radius: 50%;
+    background: var(--bg-surface-1); }
+  .ed-score-dial.warn { background: conic-gradient(var(--status-warn-fg) calc(var(--score) * 1%), var(--bg-surface-3) 0); }
+  .ed-score-dial.low { background: conic-gradient(var(--status-err-fg) calc(var(--score) * 1%), var(--bg-surface-3) 0); }
+  .ed-score-dial b { position: relative; z-index: 1; font: 600 1.85rem var(--font-display);
+    color: var(--ink); font-variant-numeric: tabular-nums; line-height: 1; }
+  .ed-score-dial span { position: relative; z-index: 1; font-size: .64rem; color: var(--ink-faint); }
+  .ed-score-parts { flex: 1; display: grid; gap: 9px; align-content: center; min-width: 0; }
+  .ed-score-part { display: grid; grid-template-columns: minmax(0, 120px) minmax(0, 1fr) 90px;
+    gap: 10px; align-items: center; font-size: .76rem; }
+  .ed-score-label { color: var(--ink-muted); }
+  .ed-score-detail { color: var(--ink-faint); font-variant-numeric: tabular-nums; text-align: right; order: 3; }
+  .ed-score-track { height: 6px; border-radius: 2px; background: var(--bg-surface-3); overflow: hidden; }
+  .ed-score-track i { display: block; height: 100%; background: var(--status-ok); }
+  .ed-score-track i.warn { background: var(--status-warn-fg); }
+  .ed-score-track i.low { background: var(--status-err-fg); }
+  .ed-score-keywords { border-left: 1px solid var(--hairline-soft); padding-left: 18px; min-width: 0; }
+  .ed-score-kwhead { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline;
+    margin-bottom: 10px; }
+  .ed-score-kwhead h3 { margin: 0; font: 600 .84rem var(--font-display); }
+  .ed-score-kwhead span { font-size: .7rem; color: var(--ink-faint); }
+  .ed-score-kwlist { list-style: none; margin: 0; padding: 0; display: grid; gap: 5px;
+    max-height: 190px; overflow-y: auto; }
+  .ed-score-kwlist li { display: grid; grid-template-columns: 16px minmax(0, 1fr) auto; gap: 8px;
+    align-items: baseline; font-size: .77rem; color: var(--ink-muted); }
+  .ed-score-kwlist li.used .ed-kw-mark { color: var(--status-ok); }
+  .ed-score-kwlist li.used .ed-kw-name { color: var(--ink); }
+  .ed-kw-mark { color: var(--ink-faint); font-weight: 700; }
+  .ed-kw-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ed-kw-meta { color: var(--ink-faint); font-size: .68rem; font-variant-numeric: tabular-nums; }
+
+  /* ----- pasek formatowania ----- */
+  .ed-format { display: flex; flex-wrap: wrap; gap: 4px; margin: 0 0 10px; padding: 5px 6px;
+    border: 1px solid var(--hairline); border-radius: 2px; background: var(--bg-surface-2); }
+  .ed-format-btn { padding: 4px 9px; border: 1px solid transparent; border-radius: 2px;
+    background: transparent; color: var(--ink-muted); font-size: .74rem; cursor: pointer; }
+  .ed-format-btn:hover { background: var(--bg-surface-3); color: var(--ink); }
+  .ed-format-btn.bold { font-weight: 700; }
+  .ed-format-btn.italic { font-style: italic; }
+
   /* ----- pasek dokumentu ----- */
   .ed-docbar { position: sticky; top: 0; z-index: 3; display: flex; flex-wrap: wrap;
     gap: 12px 24px; justify-content: space-between; align-items: center;
@@ -1687,7 +2131,19 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-serp .ed-serp-list a:hover { color: var(--accent-blue); }
   .ed-serp .ed-serp-list small { display: block; margin-top: 2px; color: var(--ink-faint);
     font-size: .72rem; line-height: 1.4; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .ed-serp .ed-serp-none { grid-template-columns: 1fr; color: var(--ink-faint); }
+  .ed-serp .ed-serp-list li.ed-serp-none { display: block; color: var(--ink-faint); font-size: .75rem; }
+  /* Nasz wynik w SERP-ie – ma się rzucać w oczy pośród konkurencji. */
+  .ed-serp .ed-serp-list li.is-ours { padding: 6px 8px; margin: -4px -8px;
+    background: var(--accent-blue-soft); border-radius: 2px; }
+  .ed-serp .ed-serp-list li.is-ours a { color: var(--accent-blue); }
+  .ed-serp .ed-serp-list li.is-ours .ed-serp-rank { color: var(--accent-blue); }
+  .ed-serp .ed-serp-us { margin-left: 8px; padding: 1px 7px; border-radius: 999px;
+    background: var(--accent-blue); color: #001018; font-size: .62rem; font-weight: 700;
+    letter-spacing: .03em; text-transform: uppercase; }
+  /* Sam kafelek naszych fraz nie ma po co rozciągać się na całą szerokość. */
+  .ed-serp .ed-serp-stats.is-solo { grid-template-columns: minmax(0, 240px); background: transparent;
+    border: none; }
+  .ed-serp .ed-serp-stats.is-solo .ed-serp-stat { border: 1px solid var(--hairline-soft); }
   .ed-serp .ed-serp-drift { margin: 16px 0 0; padding: 11px 14px;
     border-left: 3px solid var(--status-warn-fg); background: var(--status-warn-bg); color: var(--ink);
     font-size: .82rem; line-height: 1.55; }

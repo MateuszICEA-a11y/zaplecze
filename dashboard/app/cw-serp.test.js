@@ -132,11 +132,28 @@ test('buildGap: brak naszych fraz = wszystko jest luką', () => {
 
 /* ---------- klienci API ---------- */
 
-test('serpCompetitors: jeden adres na domenę, bez naszej własnej', async () => {
+test('serpCompetitors: jeden adres na domenę, nasza pozycja osobno', async () => {
   const fetchImpl = async () =>
     new Response(JSON.stringify(serpResponse(['a.pl', 'a.pl', 'grupa-icea.pl', 'b.pl', 'c.pl', 'd.pl'])), { status: 200 });
-  const rows = await serpCompetitors('błąd 403', 'grupa-icea.pl', env(), fetchImpl);
-  assert.deepEqual(rows.map((row) => row.host), ['a.pl', 'b.pl', 'c.pl']);
+  const { competitors, ours } = await serpCompetitors('błąd 403', 'grupa-icea.pl', env(), fetchImpl);
+  assert.deepEqual(competitors.map((row) => row.host), ['a.pl', 'b.pl', 'c.pl']);
+  assert.equal(ours.host, 'grupa-icea.pl');
+  assert.equal(ours.position, 3);
+});
+
+test('serpCompetitors: nas poza wynikami = ours null, komplet konkurentów', async () => {
+  const fetchImpl = async () =>
+    new Response(JSON.stringify(serpResponse(['a.pl', 'b.pl', 'c.pl', 'd.pl'])), { status: 200 });
+  const { competitors, ours } = await serpCompetitors('x', 'grupa-icea.pl', env(), fetchImpl);
+  assert.equal(competitors.length, 3);
+  assert.equal(ours, null);
+});
+
+test('serpCompetitors: nasz adres dalej niż konkurenci nadal wraca', async () => {
+  const fetchImpl = async () =>
+    new Response(JSON.stringify(serpResponse(['a.pl', 'b.pl', 'c.pl', 'd.pl', 'e.pl', 'grupa-icea.pl'])), { status: 200 });
+  const { ours } = await serpCompetitors('x', 'grupa-icea.pl', env(), fetchImpl);
+  assert.equal(ours.position, 6);
 });
 
 test('serpCompetitors: błąd HTTP niesie status w komunikacie', async () => {
