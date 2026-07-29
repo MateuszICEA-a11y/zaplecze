@@ -305,6 +305,35 @@ test('content: mapowanie ACF na sekcje i wolne sloty', async () => {
   assert.equal(data.free_slots.includes(1), false);
 });
 
+test('content: wstęp z pola content i pełna treść wpisu bez sekcji ACF', async () => {
+  const withLead = JSON.stringify({
+    id: 1, link: 'https://www.grupa-icea.pl/blog/a/', title: { rendered: 'Zlecę pozycjonowanie' },
+    content: { rendered: '<p>Dobra pozycja jest dziś warunkiem koniecznym.</p>' },
+    acf: { page_title_h2_1: 'Czym zajmuje się agencja?', page_text_1: '<p>Audyt SEO.</p>' },
+  });
+  let requested = '';
+  const lead = await fetchPostContent(null, CONTENT_ENV, 'grupa-icea.pl', 'posts', 1, async (url) => {
+    requested = url;
+    return new Response(withLead, { status: 200 });
+  });
+  const data = await lead.json();
+  // Bez `content` w _fields WordPress nie odda wstępu sprzed pierwszego H2.
+  assert.match(requested, /_fields=id,link,title,content,acf/);
+  assert.equal(data.lead, '<p>Dobra pozycja jest dziś warunkiem koniecznym.</p>');
+  assert.equal(data.sections.length, 1);
+  assert.equal(data.no_section, '');
+
+  // Wpis bez sekcji ACF – treść siedzi w page_content_no_section.
+  const single = await fetchPostContent(null, CONTENT_ENV, 'grupa-icea.pl', 'posts', 2, async () =>
+    new Response(JSON.stringify({
+      id: 2, content: { rendered: '<p>Wstęp.</p>' },
+      acf: { page_content_no_section: '<p>Całość wpisu.</p>' },
+    }), { status: 200 }));
+  const singleData = await single.json();
+  assert.equal(singleData.sections.length, 0);
+  assert.equal(singleData.no_section, '<p>Całość wpisu.</p>');
+});
+
 test('content: błąd WP i za duża odpowiedź dają 502, 404 przechodzi', async () => {
   const err = await fetchPostContent(null, CONTENT_ENV, 'grupa-icea.pl', 'posts', 1,
     async () => new Response('awaria', { status: 500 }));
@@ -390,6 +419,37 @@ test('sections PATCH: text_after sanityzowany serwerowo, limit rozmiaru', async 
 
   const empty = await routeContentWatcher(patch({}), { CW_DB: db });
   assert.equal(empty.status, 400);
+});
+
+test('sections PATCH: decyzja trójstanowa trzyma accepted w parze', async () => {
+  const writes = [];
+  const db = fakeDb({
+    'SET decision = ?, accepted = ?': (args) => { writes.push(args); return 1; },
+  });
+  const patch = (body) => new Request('https://dash.example/api/cw/jobs/job-abcdef12/sections/3', {
+    method: 'PATCH',
+    headers: { 'X-CW-Request': '1', 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  });
+
+  const accepted = await routeContentWatcher(patch({ decision: 'accepted' }), { CW_DB: db });
+  assert.equal(accepted.status, 200);
+  assert.equal(writes[0][0], 'accepted');
+  assert.equal(writes[0][1], 1);
+
+  // Odrzucenie i cofnięcie decyzji zdejmują flagę wdrożeniową.
+  await routeContentWatcher(patch({ decision: 'rejected' }), { CW_DB: db });
+  assert.equal(writes[1][0], 'rejected');
+  assert.equal(writes[1][1], 0);
+  await routeContentWatcher(patch({ decision: null }), { CW_DB: db });
+  assert.equal(writes[2][0], null);
+
+  // Stare wywołanie z samym `accepted` nadal działa.
+  await routeContentWatcher(patch({ accepted: true }), { CW_DB: db });
+  assert.equal(writes[3][0], 'accepted');
+
+  const bad = await routeContentWatcher(patch({ decision: 'moze-pozniej' }), { CW_DB: db });
+  assert.equal(bad.status, 400);
 });
 
 /* ---------- porada eksperta ---------- */

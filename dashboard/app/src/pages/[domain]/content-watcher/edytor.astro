@@ -62,16 +62,16 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
          tematu, a temat trzymać konkurencja z innym zestawem słów. -->
     <section class="ed-serp" data-ed-serp>
       <div class="ed-serp-head">
-        <div>
+        <div class="ed-serp-title">
           <h3>Kto zajmuje ten temat</h3>
-          <span class="section-meta">
-            Dwa zapytania do Google: tytuł wpisu i nasza najlepsza fraza • Frazy TOP 3 konkurentów zestawione
-            z naszymi • Wynik zapisujemy na tydzień, powtórka nie kosztuje limitów
-          </span>
+          <p class="ed-serp-lead">
+            Dwa zapytania do Google – tytuł wpisu i nasza najlepsza fraza. Frazy konkurentów z TOP 3
+            zestawiamy z naszymi.
+          </p>
         </div>
         <div class="ed-serp-actions">
-          <button type="button" class="ed-serp-run" data-ed-serp-run>Sprawdź SERP</button>
           <span class="ed-serp-stamp" data-ed-serp-stamp></span>
+          <button type="button" class="ed-serp-run" data-ed-serp-run>Sprawdź SERP</button>
         </div>
       </div>
       <p class="ed-error" data-ed-serp-error hidden></p>
@@ -160,6 +160,25 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       <h2>Dokument</h2>
       <span class="section-meta" data-ed-doc-meta>treść wpisu z WordPressa</span>
     </div>
+
+    <!-- Pasek dokumentu: statystyki wpisu i – po pipelinie – stan decyzji.
+         Trzyma się przy górnej krawędzi, żeby przy długim wpisie było widać,
+         ile propozycji jeszcze czeka na ocenę. -->
+    <div class="ed-docbar" data-ed-docbar>
+      <div class="ed-docstats" data-ed-docstats></div>
+      <div class="ed-docbar-right">
+        <div class="ed-decide-all" data-ed-decide-all hidden>
+          <span data-ed-decide-count></span>
+          <button type="button" data-ed-accept-all>zatwierdź wszystkie</button>
+          <button type="button" data-ed-copy-all>kopiuj zatwierdzone</button>
+        </div>
+        <label class="ed-only-changed" data-ed-only-changed-wrap hidden>
+          <input type="checkbox" data-ed-only-changed />
+          tylko zmienione sekcje
+        </label>
+      </div>
+    </div>
+
     <div class="ed-doc" data-ed-doc>
       <p class="ed-doc-loading">wczytywanie treści…</p>
     </div>
@@ -181,6 +200,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       stats: { added: number; removed: number; shrunk?: boolean };
     } | null;
     accepted: boolean;
+    decision: 'accepted' | 'rejected' | null;
+    edited?: boolean;
   };
   type Step = { step: string; status: string; payload: any; cost: any; model: string | null; error: string | null };
   type Job = {
@@ -279,7 +300,12 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   /* ---------- stan strony ---------- */
 
   let entry: any = null;
-  let content: { sections: { slot: number; title: string; text: string }[] } | null = null;
+  let content: {
+    title?: string;
+    lead?: string;
+    no_section?: string;
+    sections: { slot: number; title: string; text: string }[];
+  } | null = null;
   let job: Job | null = null;
   let pollDelay = 3000;
   let pollTimer: number | undefined;
@@ -331,33 +357,126 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     }
   }
 
+  /** Etykieta typu bloku w rynience (h2, p, ul…) – jak w edytorach SEO.
+      Czytelnik od razu widzi strukturę, a nie samą ścianę tekstu. */
+  const BLOCK_LABEL: Record<string, string> = {
+    H1: 'h1', H2: 'h2', H3: 'h3', H4: 'h4', P: 'p', UL: 'ul', OL: 'ol',
+    BLOCKQUOTE: 'cyt', TABLE: 'tab',
+  };
+  function markBlocks(host: HTMLElement) {
+    for (const child of [...host.children]) {
+      const label = BLOCK_LABEL[child.tagName];
+      if (label) (child as HTMLElement).dataset.block = label;
+    }
+  }
+
+  /** Blok treści dokumentu (sanityzowany HTML + rynienka z typami bloków). */
+  function docProse(html: string | null, className = '') {
+    const body = document.createElement('div');
+    body.className = `prose ed-doc-body ${className}`.trim();
+    sanitizeInto(body, html);
+    markBlocks(body);
+    return body;
+  }
+
   /** Sekcja dokumentu: nagłówek + treść + (po pipelinie) narzędzia i tryby. */
   function docSection(slot: number, title: string, html: string | null) {
     const section = document.createElement('section');
     section.className = 'ed-doc-section';
     section.dataset.slot = String(slot);
+    const head = document.createElement('div');
+    head.className = 'ed-sec-head';
     const heading = document.createElement('h2');
+    heading.dataset.block = 'h2';
     heading.textContent = title || `Sekcja ${slot}`;
-    const body = document.createElement('div');
-    body.className = 'prose ed-doc-body';
-    sanitizeInto(body, html);
-    section.append(heading, body);
+    head.append(heading);
+    section.append(head, docProse(html));
     return section;
+  }
+
+  /** Nagłówek dokumentu: tytuł wpisu (H1) i wstęp sprzed pierwszego H2.
+      Wstęp siedzi w polu `content` WordPressa, poza sekcjami ACF – pipeline
+      go nie rusza, ale bez niego dokument zaczynałby się w połowie zdania. */
+  function docIntro() {
+    const intro = document.createElement('section');
+    intro.className = 'ed-doc-section ed-doc-intro';
+    intro.dataset.slot = '0';
+    const head = document.createElement('div');
+    head.className = 'ed-sec-head';
+    const heading = document.createElement('h1');
+    heading.dataset.block = 'h1';
+    heading.textContent = content?.title || entry?.title || '';
+    const badge = document.createElement('span');
+    badge.className = 'ed-sec-tag';
+    badge.textContent = 'wstęp – poza zakresem pipeline’u';
+    head.append(heading, badge);
+    intro.append(head);
+    const lead = (content?.lead ?? '').trim();
+    if (lead) intro.append(docProse(lead));
+    return intro;
+  }
+
+  /** Statystyki dokumentu w pasku – liczone z wyrenderowanego DOM-u, więc
+      obejmują też propozycje pipeline'u pokazane w trybie „podgląd po". */
+  function renderDocStats() {
+    const host = $('[data-ed-docstats]');
+    if (!host) return;
+    const doc = $('[data-ed-doc]')!;
+    const text = doc.textContent ?? '';
+    const words = (text.match(/[\p{L}\p{N}][\p{L}\p{N}'’-]*/gu) ?? []).length;
+    const headings = doc.querySelectorAll('.ed-doc-section > .ed-sec-head h2, .ed-doc-body h2, .ed-doc-body h3').length;
+    const paragraphs = doc.querySelectorAll('.ed-doc-body p').length;
+    const sections = doc.querySelectorAll('.ed-doc-section:not(.ed-doc-intro)').length;
+
+    const stat = (value: string, label: string) => {
+      const node = document.createElement('div');
+      node.className = 'ed-docstat';
+      const big = document.createElement('b');
+      big.textContent = value;
+      const small = document.createElement('span');
+      small.textContent = label;
+      node.append(big, small);
+      return node;
+    };
+    const nodes = [
+      stat(pl.format(words), 'słów'),
+      stat(pl.format(headings), 'nagłówków'),
+      stat(pl.format(paragraphs), 'akapitów'),
+      stat(pl.format(sections), 'sekcji'),
+    ];
+    if (job?.sections?.length) {
+      const decided = job.sections.filter((section) => section.decision).length;
+      nodes.push(stat(`${pl.format(decided)}/${pl.format(job.sections.length)}`, 'ocenionych propozycji'));
+    }
+    host.replaceChildren(...nodes);
   }
 
   function renderDoc() {
     const host = $('[data-ed-doc]')!;
     host.replaceChildren();
-    if (!content?.sections?.length) {
+    const blocks: HTMLElement[] = [];
+    if (content?.title || content?.lead || entry?.title) blocks.push(docIntro());
+
+    if (content?.sections?.length) {
+      blocks.push(...content.sections.map((section) => docSection(section.slot, section.title, section.text)));
+    } else if (content?.no_section) {
+      // Wpis bez sekcji ACF – cała treść stoi w jednym polu.
+      const single = document.createElement('section');
+      single.className = 'ed-doc-section';
+      single.dataset.slot = '1';
+      single.append(docProse(content.no_section));
+      blocks.push(single);
+    } else {
       const note = document.createElement('p');
       note.className = 'ed-doc-error';
       note.textContent = 'Ten wpis nie ma sekcji ACF (page_text_N) – dokument zostanie zbudowany z wyniku pipeline’u.';
-      host.append(note);
-      return;
+      blocks.push(note);
     }
-    host.replaceChildren(...content.sections.map((section) => docSection(section.slot, section.title, section.text)));
-    $('[data-ed-doc-meta]')!.textContent =
-      `${content.sections.length} sekcji · treść z WordPressa`;
+    host.replaceChildren(...blocks);
+    $('[data-ed-doc-meta]')!.textContent = content?.sections?.length
+      ? `${content.sections.length} sekcji · pełna treść z WordPressa`
+      : 'treść z WordPressa';
+    renderDocStats();
   }
 
   /* ---------- modele (OpenRouter) ---------- */
@@ -579,9 +698,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     if (mode === 'diff') {
       host.replaceChildren(renderInlineDiff(section));
     } else {
-      const body = document.createElement('div');
-      body.className = 'prose ed-doc-body';
-      sanitizeInto(body, mode === 'before' ? section.text_before : section.text_after);
+      const body = docProse(mode === 'before' ? section.text_before : section.text_after);
       // Tryb „podgląd po" jest edytowalny – poprawki zapisują się do zadania
       // i „kopiuj treść" bierze wersję po edycji.
       if (mode === 'after' && onDirty) {
@@ -593,33 +710,59 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     }
   }
 
-  function sectionTools(section: Section, jobId: string, onMode: (mode: string) => void,
+  /** Rynienka decyzji przy sekcji: ✓ zatwierdza propozycję, ✕ ją odrzuca.
+      Klik w aktywny stan cofa decyzję – sekcja wraca do „nieocenionych". */
+  function sectionGutter(section: Section, jobId: string, onChange: () => void) {
+    const gutter = document.createElement('div');
+    gutter.className = 'ed-decide';
+
+    const set = async (next: 'accepted' | 'rejected') => {
+      const value = section.decision === next ? null : next;
+      const previous = section.decision;
+      section.decision = value;
+      section.accepted = value === 'accepted';
+      onChange();
+      try {
+        await api(`/api/cw/jobs/${jobId}/sections/${section.slot}`, {
+          method: 'PATCH',
+          body: JSON.stringify({ decision: value }),
+        });
+      } catch (error) {
+        section.decision = previous;
+        section.accepted = previous === 'accepted';
+        onChange();
+        showError(error instanceof Error ? error.message : 'Nie udało się zapisać decyzji.');
+      }
+    };
+
+    const button = (kind: 'accepted' | 'rejected', glyph: string, title: string) => {
+      const node = document.createElement('button');
+      node.type = 'button';
+      node.className = `ed-decide-btn ${kind === 'accepted' ? 'ok' : 'no'}`;
+      node.dataset.decision = kind;
+      node.title = title;
+      node.setAttribute('aria-label', title);
+      node.textContent = glyph;
+      node.addEventListener('click', () => set(kind));
+      return node;
+    };
+    gutter.append(
+      button('accepted', '✓', 'Zatwierdź propozycję dla tej sekcji'),
+      button('rejected', '✕', 'Odrzuć propozycję dla tej sekcji'),
+    );
+    return gutter;
+  }
+
+  function sectionTools(section: Section, onMode: (mode: string) => void,
     onSave?: (button: HTMLButtonElement) => void) {
     const tools = document.createElement('div');
     tools.className = 'ed-sec-tools';
-
-    const badge = document.createElement('span');
-    badge.className = 'ed-sec-badge';
-    const stats = section.diff?.stats;
-    badge.textContent = (section.operation === 'insert'
-      ? 'nowa sekcja'
-      : stats ? `+${pl.format(stats.added)} / −${pl.format(stats.removed)} słów` : 'aktualizacja')
-      + ((section as any).edited ? ' · ręcznie poprawiona' : '');
-    tools.append(badge);
-
-    if (stats?.shrunk) {
-      const warn = document.createElement('span');
-      warn.className = 'ed-sec-warn';
-      warn.textContent = 'model wyciął więcej, niż dopisał';
-      warn.title = 'Sprawdź, czy nie zniknęło nic wartościowego.';
-      tools.append(warn);
-    }
 
     const seg = document.createElement('span');
     seg.className = 'ed-view-seg';
     const modes: [string, string][] = section.operation === 'insert'
       ? [['after', 'podgląd']]
-      : [['diff', 'zmiany'], ['after', 'podgląd po'], ['before', 'oryginał']];
+      : [['diff', 'zmiany'], ['after', 'wersja po'], ['before', 'oryginał']];
     for (const [mode, label] of modes) {
       const button = document.createElement('button');
       button.type = 'button';
@@ -633,24 +776,6 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     const spacer = document.createElement('span');
     spacer.className = 'ed-sec-spacer';
     tools.append(spacer);
-
-    const accept = document.createElement('label');
-    accept.className = 'ed-accept';
-    const checkbox = document.createElement('input');
-    checkbox.type = 'checkbox';
-    checkbox.checked = section.accepted;
-    checkbox.addEventListener('change', async () => {
-      try {
-        await api(`/api/cw/jobs/${jobId}/sections/${section.slot}`, {
-          method: 'PATCH',
-          body: JSON.stringify({ accepted: checkbox.checked }),
-        });
-      } catch (error) {
-        checkbox.checked = !checkbox.checked;
-        showError(error instanceof Error ? error.message : 'Nie udało się zapisać decyzji.');
-      }
-    });
-    accept.append(checkbox, document.createTextNode('do wdrożenia'));
 
     const copyButton = (label: string, value: () => string) => {
       const button = document.createElement('button');
@@ -673,16 +798,37 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       save.addEventListener('click', () => onSave(save));
       tools.append(save);
     }
-    tools.append(accept, copyButton('kopiuj nagłówek', () => section.title_after ?? ''),
+    tools.append(copyButton('kopiuj nagłówek', () => section.title_after ?? ''),
       copyButton('kopiuj treść', () => sectionCopyText(section)));
     return tools;
+  }
+
+  /** Etykiety przy nagłówku sekcji: rozmiar zmiany, ostrzeżenia, stan decyzji. */
+  function sectionTags(section: Section) {
+    const wrap = document.createElement('span');
+    wrap.className = 'ed-sec-tags';
+    const tag = (text: string, className = '') => {
+      const node = document.createElement('span');
+      node.className = `ed-sec-tag ${className}`.trim();
+      node.textContent = text;
+      wrap.append(node);
+    };
+    const stats = section.diff?.stats;
+    if (section.operation === 'insert') tag('nowa sekcja', 'new');
+    else if (stats) tag(`+${pl.format(stats.added)} / −${pl.format(stats.removed)} słów`);
+    else tag('aktualizacja');
+    if (stats?.shrunk) tag('model wyciął więcej, niż dopisał', 'warn');
+    if (section.edited) tag('ręcznie poprawiona');
+    if (section.decision === 'accepted') tag('zatwierdzone', 'ok');
+    if (section.decision === 'rejected') tag('odrzucone', 'no');
+    return wrap;
   }
 
   function applyJobToDoc(current: Job) {
     if (!current.sections?.length) return;
     const host = $('[data-ed-doc]')!;
     const bySlot = new Map<number, HTMLElement>();
-    host.querySelectorAll<HTMLElement>('.ed-doc-section').forEach((node) => {
+    host.querySelectorAll<HTMLElement>('.ed-doc-section:not(.ed-doc-intro)').forEach((node) => {
       bySlot.set(Number(node.dataset.slot), node);
     });
 
@@ -698,7 +844,9 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       node.classList.add(section.operation === 'insert' ? 'is-new' : 'is-changed');
 
       const heading = node.querySelector('h2');
-      if (heading && section.title_after && section.title_after !== section.title_before) {
+      // Podkreślamy tylko realną zmianę tytułu – nowa sekcja nie ma „poprzednio".
+      if (heading && section.title_before && section.title_after
+        && section.title_after !== section.title_before) {
         heading.textContent = section.title_after;
         heading.classList.add('is-retitled');
         heading.title = section.title_before ? `poprzednio: ${section.title_before}` : '';
@@ -712,6 +860,21 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         node.querySelector('.ed-doc-body')?.replaceWith(bodyHost);
         node.appendChild(bodyHost);
       }
+
+      // Stan decyzji siedzi na sekcji – stąd bierze go i CSS, i filtr paska.
+      const paintDecision = () => {
+        node!.dataset.decision = section.decision ?? '';
+        node!.querySelectorAll<HTMLButtonElement>('.ed-decide-btn').forEach((button) => {
+          button.classList.toggle('active', button.dataset.decision === section.decision);
+        });
+        node!.querySelector('.ed-sec-tags')?.replaceWith(sectionTags(section));
+        renderDecideBar(current);
+        renderDocStats();
+      };
+      node.querySelector('.ed-decide')?.remove();
+      node.prepend(sectionGutter(section, current.id, paintDecision));
+      node.querySelector('.ed-sec-tags')?.remove();
+      node.querySelector('.ed-sec-head')?.append(sectionTags(section));
       const mode = sectionMode.get(section.slot)
         ?? (section.operation === 'insert' || changeRatio(section) > 0.5 ? 'after' : 'diff');
       sectionMode.set(section.slot, mode);
@@ -730,10 +893,9 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
           });
           // Serwer zwraca wersję po własnej sanityzacji – to ona jest prawdą.
           section.text_after = data.text_after ?? body.innerHTML;
-          (section as any).edited = true;
+          section.edited = true;
           button.hidden = true;
-          const badge = node!.querySelector('.ed-sec-badge');
-          if (badge && !badge.textContent!.includes('ręcznie')) badge.textContent += ' · ręcznie poprawiona';
+          node!.querySelector('.ed-sec-tags')?.replaceWith(sectionTags(section));
         } catch (error) {
           showError(error instanceof Error ? error.message : 'Nie udało się zapisać poprawek.');
         } finally {
@@ -747,19 +909,52 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
           button.classList.toggle('active', button.dataset.mode === nextMode);
         });
       };
-      const tools = sectionTools(section, current.id, paint, onSave);
+      const tools = sectionTools(section, paint, onSave);
       if (toolsHost) toolsHost.replaceWith(tools);
       else node.insertBefore(tools, bodyHost);
       paint(mode);
+      paintDecision();
     }
 
-    // Sekcje bez propozycji – przygaszamy, żeby zmiany były widoczne od razu.
+    // Sekcje bez propozycji zostają w dokumencie – bez nich znika kontekst,
+    // więc tylko je wyciszamy i dajemy filtr w pasku.
     const changed = new Set(current.sections.map((section) => section.slot));
     bySlot.forEach((node, slot) => {
       node.classList.toggle('is-unchanged', !changed.has(slot) && current.status === 'done');
     });
     $('[data-ed-doc-meta]')!.textContent =
       `${bySlot.size} sekcji · ${current.sections.length} z propozycjami zmian`;
+    $('[data-ed-only-changed-wrap]')!.hidden = current.status !== 'done';
+    applyOnlyChangedFilter();
+    renderDecideBar(current);
+    renderDocStats();
+  }
+
+  /* ---------- pasek dokumentu: decyzje zbiorcze i filtr ---------- */
+
+  function renderDecideBar(current: Job) {
+    const bar = $('[data-ed-decide-all]')!;
+    const sections = current.sections ?? [];
+    bar.hidden = !sections.length || current.status !== 'done';
+    if (bar.hidden) return;
+    const accepted = sections.filter((section) => section.decision === 'accepted').length;
+    const rejected = sections.filter((section) => section.decision === 'rejected').length;
+    const left = sections.length - accepted - rejected;
+    $('[data-ed-decide-count]')!.textContent = left
+      ? `${pl.format(left)} ${left === 1 ? 'propozycja czeka' : 'propozycji czeka'} na decyzję`
+      : `wszystko ocenione · ${pl.format(accepted)} do wdrożenia`;
+    $<HTMLButtonElement>('[data-ed-accept-all]')!.hidden = left === 0;
+    $<HTMLButtonElement>('[data-ed-copy-all]')!.hidden = accepted === 0;
+  }
+
+  /** Filtr „tylko zmienione" chowa sekcje bez propozycji – przy 20-sekcyjnym
+      wpisie inaczej trzeba by ich szukać wzrokiem. */
+  function applyOnlyChangedFilter() {
+    const on = $<HTMLInputElement>('[data-ed-only-changed]')?.checked ?? false;
+    document.querySelectorAll<HTMLElement>('.ed-doc-section').forEach((node) => {
+      const keep = !on || node.classList.contains('is-changed') || node.classList.contains('is-new');
+      node.hidden = !keep;
+    });
   }
 
   /* ---------- porada eksperta (etap finalny) ---------- */
@@ -986,20 +1181,31 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     stamp.textContent = `sprawdzone ${new Date(when).toLocaleString('pl-PL')}`;
 
     const nodes: HTMLElement[] = [];
+
+    // Dwa zapytania obok siebie – rozjazd między nimi widać dopiero
+    // w zestawieniu, nie na liście jedna pod drugą.
+    const grid = document.createElement('div');
+    grid.className = 'ed-serp-grid';
     for (const query of analysis.queries) {
       const box = document.createElement('div');
       box.className = 'ed-serp-query';
       const head = document.createElement('div');
       head.className = 'ed-serp-query-head';
       const label = document.createElement('span');
+      label.className = 'ed-serp-query-kind';
       label.textContent = QUERY_LABEL[query.kind] ?? query.kind;
       const keyword = document.createElement('b');
-      keyword.textContent = `„${query.keyword}"`;
+      keyword.textContent = query.keyword;
       head.append(label, keyword);
       const list = document.createElement('ol');
       list.className = 'ed-serp-list';
       for (const row of query.competitors) {
         const item = document.createElement('li');
+        const rank = document.createElement('span');
+        rank.className = 'ed-serp-rank';
+        rank.textContent = String(row.position);
+        const text = document.createElement('span');
+        text.className = 'ed-serp-entry';
         const link = document.createElement('a');
         link.href = row.url;
         link.target = '_blank';
@@ -1007,17 +1213,20 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         link.textContent = row.host;
         const title = document.createElement('small');
         title.textContent = row.title ?? '';
-        item.append(link, title);
+        text.append(link, title);
+        item.append(rank, text);
         list.append(item);
       }
       if (!query.competitors.length) {
         const empty = document.createElement('li');
+        empty.className = 'ed-serp-none';
         empty.textContent = 'brak wyników organicznych';
         list.append(empty);
       }
       box.append(head, list);
-      nodes.push(box);
+      grid.append(box);
     }
+    nodes.push(grid);
 
     // Rozjazd to sedno tej analizy: konkurenci trzymają temat wpisu, a my
     // rankujemy obok – na frazę, przy której ich nie ma.
@@ -1030,12 +1239,23 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       nodes.push(drift);
     }
 
-    const summary = document.createElement('p');
-    summary.className = 'ed-serp-summary';
-    summary.textContent =
-      `Frazy konkurencji: ${pl.format(analysis.gap_summary.total)} · nie mamy ${pl.format(analysis.gap_summary.missing)} · ` +
-      `poza TOP 10 ${pl.format(analysis.gap_summary.weak)} · mamy ${pl.format(analysis.gap_summary.covered)} ` +
-      `(nasz wpis rankuje na ${pl.format(analysis.own_keywords_total)} fraz)`;
+    const summary = document.createElement('div');
+    summary.className = 'ed-serp-stats';
+    const stat = (value: number, label: string, className = '') => {
+      const node = document.createElement('div');
+      node.className = `ed-serp-stat ${className}`.trim();
+      const big = document.createElement('b');
+      big.textContent = pl.format(value);
+      const small = document.createElement('span');
+      small.textContent = label;
+      node.append(big, small);
+      summary.append(node);
+    };
+    stat(analysis.gap_summary.total, 'fraz konkurencji');
+    stat(analysis.gap_summary.missing, 'nie mamy wcale', 'missing');
+    stat(analysis.gap_summary.weak, 'poza TOP 10', 'weak');
+    stat(analysis.gap_summary.covered, 'mamy w TOP 10', 'covered');
+    stat(analysis.own_keywords_total, 'fraz naszego wpisu');
     nodes.push(summary);
 
     if (!analysis.gap.length) {
@@ -1172,6 +1392,41 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     runSerp((event as MouseEvent).shiftKey);
   });
 
+  $('[data-ed-only-changed]')?.addEventListener('change', applyOnlyChangedFilter);
+
+  $('[data-ed-accept-all]')?.addEventListener('click', async () => {
+    if (!job?.sections?.length) return;
+    const pending = job.sections.filter((section) => !section.decision);
+    for (const section of pending) {
+      try {
+        await api(`/api/cw/jobs/${job.id}/sections/${section.slot}`, {
+          method: 'PATCH',
+          body: JSON.stringify({ decision: 'accepted' }),
+        });
+        section.decision = 'accepted';
+        section.accepted = true;
+      } catch (error) {
+        showError(error instanceof Error ? error.message : 'Nie udało się zapisać decyzji.');
+        break;
+      }
+    }
+    applyJobToDoc(job);
+  });
+
+  /* Wdrożenie do WordPressa jest ręczne, więc „kopiuj zatwierdzone" składa
+     wszystkie przyjęte sekcje w jeden blok do wklejenia w CMS-ie. */
+  $('[data-ed-copy-all]')?.addEventListener('click', async (event) => {
+    if (!job?.sections?.length) return;
+    const button = event.currentTarget as HTMLButtonElement;
+    const text = job.sections
+      .filter((section) => section.decision === 'accepted')
+      .map((section) => `<h2>${section.title_after ?? ''}</h2>\n${sectionCopyText(section)}`)
+      .join('\n\n');
+    await navigator.clipboard.writeText(text);
+    button.textContent = 'skopiowano';
+    setTimeout(() => (button.textContent = 'kopiuj zatwierdzone'), 1500);
+  });
+
   $('[data-ed-brief-details]')?.addEventListener('toggle', (event) => {
     (event.currentTarget as HTMLElement).dataset.touched = '1';
   });
@@ -1269,6 +1524,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
 
   @media (max-width: 900px) {
     .ed-meta { grid-template-columns: repeat(2, auto); }
+    .ed-serp :global(.ed-serp-grid) { grid-template-columns: 1fr; }
+    .ed-serp :global(.ed-serp-stats) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
   @media (max-width: 720px) {
     .ed-head { flex-direction: column; }
@@ -1297,68 +1554,160 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-brief-block ul { margin: 0; padding-left: 18px; display: grid; gap: 3px; font-size: .82rem;
     color: var(--ink-muted); }
 
-  /* ----- dokument artykułu ----- */
+  /* ----- dokument artykułu -----
+     Układ jest celowo „edytorski": jedna kolumna tekstu o czytelnej mierze,
+     po lewej rynienka na typy bloków (h2, p, ul) i przyciski decyzji. */
   .ed-doc { border: 1px solid var(--hairline); border-radius: 2px; background: var(--bg-surface-1); }
   .ed-doc-loading, .ed-doc-error { margin: 0; padding: 18px 22px; color: var(--ink-faint); font-size: .85rem; }
-  .ed-doc-section { padding: 20px 22px 22px; border-bottom: 1px solid var(--hairline-soft); }
+  .ed-doc-section { position: relative; padding: 26px 28px 30px 76px;
+    border-bottom: 1px solid var(--hairline-soft); }
   .ed-doc-section:last-child { border-bottom: none; }
-  .ed-doc-section > h2 { margin: 0 0 12px; font-size: 1.15rem; font-family: var(--font-display); color: var(--ink); }
-  .ed-doc-section > h2.is-retitled { text-decoration: underline; text-decoration-color: var(--accent-blue); text-underline-offset: 4px; }
-  .ed-doc-section.is-changed { border-left: 2px solid var(--accent-blue); padding-left: 20px; }
-  .ed-doc-section.is-new { border-left: 2px solid var(--status-ok); padding-left: 20px; }
-  .ed-doc-section.is-unchanged { opacity: .55; }
+  .ed-sec-head { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: baseline; margin: 0 0 14px; }
+  .ed-doc-section h1, .ed-doc-section > .ed-sec-head h2 { margin: 0; font-family: var(--font-display);
+    color: var(--ink); line-height: 1.25; }
+  .ed-doc-section h1 { font-size: 1.7rem; letter-spacing: -.01em; }
+  .ed-doc-section > .ed-sec-head h2 { font-size: 1.28rem; }
+  .ed-doc-section > .ed-sec-head h2.is-retitled { text-decoration: underline;
+    text-decoration-color: var(--accent-blue); text-underline-offset: 5px; }
+  .ed-doc-intro { background: color-mix(in srgb, var(--bg-surface-2) 55%, transparent); }
+
+  /* Rynienka: etykieta typu bloku przy każdym akapicie i nagłówku. */
+  .ed-doc-section [data-block] { position: relative; }
+  .ed-doc-section [data-block]::before { content: attr(data-block); position: absolute;
+    left: -54px; top: .35em; width: 34px; text-align: right; font: 500 .66rem var(--font-body);
+    letter-spacing: .04em; color: var(--ink-faint); opacity: .45; user-select: none; }
+  .ed-doc-section:hover [data-block]::before { opacity: .8; }
+  /* W sekcji z propozycją rynienkę zajmują przyciski decyzji – etykieta
+     nagłówka wpadłaby dokładnie pod nie. */
+  .ed-doc-section:has(.ed-decide) > .ed-sec-head h2::before { display: none; }
+
+  /* Stan sekcji po pipelinie – kolor lewej krawędzi mówi, co się z nią dzieje. */
+  .ed-doc-section.is-changed::after, .ed-doc-section.is-new::after {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--accent-blue); }
+  .ed-doc-section.is-new::after { background: var(--status-ok); }
+  .ed-doc-section[data-decision="accepted"]::after { background: var(--status-ok); }
+  .ed-doc-section[data-decision="rejected"]::after { background: var(--hairline); }
+  .ed-doc-section[data-decision="rejected"] { opacity: .5; }
+  .ed-doc-section[data-decision="rejected"]:hover { opacity: 1; }
+  .ed-doc-section.is-unchanged { opacity: .45; }
   .ed-doc-section.is-unchanged:hover { opacity: 1; }
 
-  .ed-sec-tools { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center;
-    margin: 0 0 12px; padding: 6px 10px; border: 1px solid var(--hairline-soft); border-radius: 2px;
-    background: var(--bg-surface-2); font-size: .72rem; color: var(--ink-faint); }
-  .ed-sec-badge { font-weight: 600; font-variant-numeric: tabular-nums; color: var(--ink-muted); }
-  .ed-sec-warn { color: var(--status-warn-fg); font-weight: 600; }
+  /* Przyciski decyzji w rynience – ✓ zatwierdza, ✕ odrzuca, klik w aktywny cofa. */
+  .ed-decide { position: absolute; left: 16px; top: 24px; display: grid; gap: 8px; }
+  .ed-decide-btn { width: 30px; height: 30px; display: grid; place-items: center; padding: 0;
+    border: 1px solid var(--hairline); border-radius: 50%; background: var(--bg-surface-2);
+    color: var(--ink-faint); font-size: .8rem; line-height: 1; cursor: pointer;
+    transition: background .15s, color .15s, border-color .15s; }
+  .ed-decide-btn:hover { color: var(--ink); border-color: var(--ink-faint); }
+  .ed-decide-btn.ok.active { background: var(--status-ok); border-color: var(--status-ok); color: #05140a; }
+  .ed-decide-btn.no.active { background: var(--bg-surface-3); border-color: var(--ink-faint); color: var(--ink); }
+
+  .ed-sec-tags { display: inline-flex; flex-wrap: wrap; gap: 6px; }
+  .ed-sec-tag { padding: 2px 8px; border-radius: 999px; background: var(--bg-surface-3);
+    color: var(--ink-faint); font-size: .68rem; font-weight: 600; font-variant-numeric: tabular-nums;
+    white-space: nowrap; }
+  .ed-sec-tag.ok { background: var(--status-ok-bg); color: var(--status-ok); }
+  .ed-sec-tag.no { background: var(--bg-surface-3); color: var(--ink-faint); }
+  .ed-sec-tag.new { background: var(--accent-blue-soft); color: var(--ink); }
+  .ed-sec-tag.warn { background: var(--status-warn-bg); color: var(--status-warn-fg); }
+
+  .ed-sec-tools { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center;
+    margin: 0 0 14px; font-size: .72rem; color: var(--ink-faint); }
   .ed-sec-spacer { flex: 1; }
-  .ed-sec-tools button { padding: 3px 9px; border: 1px solid var(--hairline); border-radius: 2px;
-    background: transparent; color: var(--ink-muted); font-size: .7rem; cursor: pointer; }
+  .ed-sec-tools button { padding: 4px 10px; border: 1px solid var(--hairline); border-radius: 2px;
+    background: transparent; color: var(--ink-faint); font-size: .7rem; cursor: pointer; }
   .ed-sec-tools button:hover { color: var(--ink); border-color: var(--accent-blue); }
   .ed-view-seg { display: inline-flex; }
   .ed-view-seg button { border-radius: 0; border-right-width: 0; }
   .ed-view-seg button:first-child { border-radius: 2px 0 0 2px; }
   .ed-view-seg button:last-child { border-radius: 0 2px 2px 0; border-right-width: 1px; }
   .ed-view-seg button.active { background: var(--accent-blue-soft); color: var(--ink); border-color: var(--accent-blue); }
-  .ed-accept { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; color: var(--ink-muted); }
-  .ed-accept input { accent-color: var(--accent-blue); margin: 0; }
+
+  /* Czytelna miara i rytm tekstu – dokument, nie zrzut danych. */
+  .ed-doc-body { max-width: 74ch; font-size: 1rem; line-height: 1.75; color: var(--ink-muted); }
+  .ed-doc-body > * + * { margin-top: 1em; }
+  .ed-doc-body h2, .ed-doc-body h3 { color: var(--ink); font-family: var(--font-display); line-height: 1.3; }
+  .ed-doc-body h2 { font-size: 1.15rem; margin-top: 1.6em; }
+  .ed-doc-body h3 { font-size: 1rem; margin-top: 1.4em; }
+  .ed-doc-body ul, .ed-doc-body ol { padding-left: 22px; }
+  .ed-doc-body li + li { margin-top: .4em; }
+  .ed-doc-body a { color: var(--accent-blue); }
+
+  /* ----- pasek dokumentu ----- */
+  .ed-docbar { position: sticky; top: 0; z-index: 3; display: flex; flex-wrap: wrap;
+    gap: 12px 24px; justify-content: space-between; align-items: center;
+    padding: 10px 16px; border: 1px solid var(--hairline); border-bottom: none;
+    background: var(--bg-surface-2); }
+  .ed-docstats { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+  .ed-docbar-right { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; }
+  .ed-decide-all { display: inline-flex; flex-wrap: wrap; gap: 10px; align-items: center;
+    font-size: .74rem; color: var(--ink-muted); }
+  .ed-decide-all button { padding: 4px 11px; border: 1px solid var(--hairline); border-radius: 2px;
+    background: transparent; color: var(--ink-muted); font-size: .72rem; cursor: pointer; }
+  .ed-decide-all button:hover { color: var(--ink); border-color: var(--accent-blue); }
+  .ed-only-changed { display: inline-flex; gap: 7px; align-items: center; font-size: .74rem;
+    color: var(--ink-faint); cursor: pointer; user-select: none; }
+  .ed-only-changed input { accent-color: var(--accent-blue); margin: 0; }
+  .ed-docstat { display: inline-flex; gap: 6px; align-items: baseline; }
+  .ed-docstat b { font: 600 .95rem var(--font-display); color: var(--ink); font-variant-numeric: tabular-nums; }
+  .ed-docstat span { font-size: .7rem; color: var(--ink-faint); }
 
   /* ----- rozpoznanie SERP ----- */
-  .ed-serp { margin: 0 0 18px; padding: 16px 18px; border: 1px solid var(--hairline); background: var(--bg-surface-1); }
-  .ed-serp-head { display: flex; flex-wrap: wrap; gap: 12px 20px; justify-content: space-between; align-items: flex-start; }
-  .ed-serp-head h3 { margin: 0 0 4px; font: 600 1rem var(--font-display); }
+  .ed-serp { margin: 0 0 18px; padding: 18px 20px 20px; border: 1px solid var(--hairline);
+    background: var(--bg-surface-1); }
+  .ed-serp-head { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between;
+    align-items: flex-start; padding-bottom: 14px; border-bottom: 1px solid var(--hairline-soft); }
+  .ed-serp-head h3 { margin: 0 0 5px; font: 600 1rem var(--font-display); }
+  .ed-serp-title { max-width: 62ch; }
+  .ed-serp-lead { margin: 0; font-size: .78rem; line-height: 1.55; color: var(--ink-faint); }
   .ed-serp-actions { display: flex; align-items: center; gap: 12px; }
-  .ed-serp-stamp { color: var(--ink-faint); font-size: .72rem; }
+  .ed-serp-stamp { color: var(--ink-faint); font-size: .72rem; white-space: nowrap; }
   .ed-serp-run { padding: 8px 16px; border: 1px solid var(--accent-blue); border-radius: 2px;
     background: var(--accent-blue); color: #000; font: 600 .8rem var(--font-display); cursor: pointer; }
   .ed-serp-run:hover { filter: brightness(1.1); }
   .ed-serp-run[disabled] { opacity: .5; cursor: wait; }
   /* Wyniki buduje JS, więc scoped style ich nie łapie – stąd :global. */
-  .ed-serp :global(.ed-serp-query) { margin-top: 16px; }
-  .ed-serp :global(.ed-serp-query-head) { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline;
-    color: var(--ink-faint); font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; }
-  .ed-serp :global(.ed-serp-query-head b) { color: var(--ink); font-size: .82rem; text-transform: none;
-    letter-spacing: 0; }
-  .ed-serp :global(.ed-serp-list) { margin: 8px 0 0; padding-left: 20px; display: flex; flex-direction: column; gap: 5px; }
-  .ed-serp :global(.ed-serp-list li) { font-size: .8rem; }
-  .ed-serp :global(.ed-serp-list a) { color: var(--ink); font-weight: 600; text-decoration: none; }
-  .ed-serp :global(.ed-serp-list a:hover) { color: var(--accent-blue); }
-  .ed-serp :global(.ed-serp-list small) { display: block; color: var(--ink-faint); font-size: .71rem;
-    overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .ed-serp :global(.ed-serp-drift) { margin: 16px 0 0; padding: 10px 12px; border-left: 2px solid var(--status-warn-fg);
-    background: var(--status-warn-bg); color: var(--ink); font-size: .8rem; line-height: 1.5; }
-  .ed-serp :global(.ed-serp-empty) { margin: 10px 0 0; color: var(--ink-faint); font-size: .78rem; }
-  .ed-serp :global(.ed-serp-summary) { margin: 16px 0 8px; color: var(--ink-muted); font-size: .78rem; }
-  .ed-serp :global(.ed-serp-table-wrap) { overflow-x: auto; }
-  .ed-serp :global(.ed-serp-table) { min-width: 560px; font-size: .8rem; }
-  .ed-serp :global(.ed-serp-badge) { display: inline-flex; padding: 3px 8px; border-radius: 999px;
+  .ed-serp .ed-serp-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px; margin-top: 16px; }
+  .ed-serp .ed-serp-query { padding: 12px 14px 14px; border: 1px solid var(--hairline-soft);
+    border-radius: 2px; background: var(--bg-surface-2); }
+  .ed-serp .ed-serp-query-head { display: grid; gap: 3px; padding-bottom: 10px;
+    border-bottom: 1px solid var(--hairline-soft); }
+  .ed-serp .ed-serp-query-kind { color: var(--ink-faint); font-size: .66rem;
+    text-transform: uppercase; letter-spacing: .07em; }
+  .ed-serp .ed-serp-query-head b { color: var(--ink); font: 600 .9rem var(--font-display); }
+  .ed-serp .ed-serp-list { list-style: none; margin: 10px 0 0; padding: 0;
+    display: grid; gap: 9px; }
+  .ed-serp .ed-serp-list li { display: grid; grid-template-columns: 20px minmax(0, 1fr);
+    gap: 10px; align-items: baseline; font-size: .8rem; }
+  .ed-serp .ed-serp-rank { font: 600 .72rem var(--font-display); color: var(--ink-faint);
+    font-variant-numeric: tabular-nums; }
+  .ed-serp .ed-serp-entry { min-width: 0; }
+  .ed-serp .ed-serp-list a { color: var(--ink); font-weight: 600; text-decoration: none; }
+  .ed-serp .ed-serp-list a:hover { color: var(--accent-blue); }
+  .ed-serp .ed-serp-list small { display: block; margin-top: 2px; color: var(--ink-faint);
+    font-size: .72rem; line-height: 1.4; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ed-serp .ed-serp-none { grid-template-columns: 1fr; color: var(--ink-faint); }
+  .ed-serp .ed-serp-drift { margin: 16px 0 0; padding: 11px 14px;
+    border-left: 3px solid var(--status-warn-fg); background: var(--status-warn-bg); color: var(--ink);
+    font-size: .82rem; line-height: 1.55; }
+  .ed-serp .ed-serp-empty { margin: 12px 0 0; color: var(--ink-faint); font-size: .78rem; }
+  .ed-serp .ed-serp-stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1px; margin: 16px 0 0; background: var(--hairline-soft); border: 1px solid var(--hairline-soft); }
+  .ed-serp .ed-serp-stat { display: grid; gap: 2px; padding: 10px 12px; background: var(--bg-surface-1); }
+  .ed-serp .ed-serp-stat b { font: 600 1.25rem var(--font-display); color: var(--ink);
+    font-variant-numeric: tabular-nums; line-height: 1; }
+  .ed-serp .ed-serp-stat span { font-size: .68rem; color: var(--ink-faint); }
+  .ed-serp .ed-serp-stat.missing b { color: var(--status-err-fg); }
+  .ed-serp .ed-serp-stat.weak b { color: var(--status-warn-fg); }
+  .ed-serp .ed-serp-stat.covered b { color: var(--status-ok); }
+  .ed-serp .ed-serp-table-wrap { overflow-x: auto; }
+  .ed-serp .ed-serp-table { min-width: 560px; font-size: .8rem; }
+  .ed-serp .ed-serp-badge { display: inline-flex; padding: 3px 8px; border-radius: 999px;
     background: var(--bg-surface-3); color: var(--ink-muted); font-size: .69rem; font-weight: 600; }
-  .ed-serp :global(.ed-serp-badge.missing) { color: var(--status-err-fg); background: var(--status-err-bg); }
-  .ed-serp :global(.ed-serp-badge.weak) { color: var(--status-warn-fg); background: var(--status-warn-bg); }
-  .ed-serp :global(.ed-serp-badge.covered) { color: var(--status-ok); background: var(--status-ok-bg); }
+  .ed-serp .ed-serp-badge.missing { color: var(--status-err-fg); background: var(--status-err-bg); }
+  .ed-serp .ed-serp-badge.weak { color: var(--status-warn-fg); background: var(--status-warn-bg); }
+  .ed-serp .ed-serp-badge.covered { color: var(--status-ok); background: var(--status-ok-bg); }
 
   /* ----- porada eksperta (DOM z JS) ----- */
   .ed-expert-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
@@ -1387,11 +1736,24 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-sec-tools .ed-save:hover { color: #000; filter: brightness(1.1); }
   .ed-sec-tools .ed-save[disabled] { opacity: .5; cursor: wait; }
 
-  /* Diff słowo po słowie – plaintext (textContent), w łamie dokumentu. */
-  .ed-diff { max-width: 72ch; white-space: pre-wrap; line-height: 1.7; font-size: .9rem;
+  /* Diff słowo po słowie – plaintext (textContent), w łamie dokumentu.
+     Dopisane na zielono, usunięte przekreślone i wyciszone: jedno spojrzenie
+     wystarcza, żeby zobaczyć, co model zrobił z akapitem. */
+  .ed-diff { max-width: 74ch; white-space: pre-wrap; line-height: 1.75; font-size: 1rem;
     color: var(--ink-muted); }
-  .ed-diff ins { text-decoration: none; background: var(--accent-blue-soft);
-    border-radius: 2px; padding: 1px 2px; box-decoration-break: clone; color: var(--ink); }
-  .ed-diff del { background: color-mix(in srgb, var(--status-err-fg) 15%, transparent);
-    border-radius: 2px; padding: 1px 2px; box-decoration-break: clone; opacity: .7; }
+  .ed-diff ins { text-decoration: none; color: var(--ink);
+    background: color-mix(in srgb, var(--status-ok) 22%, transparent);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--status-ok) 22%, transparent);
+    border-radius: 2px; box-decoration-break: clone; }
+  .ed-diff del { text-decoration: line-through; text-decoration-thickness: 1px;
+    color: var(--ink-faint); background: transparent; opacity: .75; }
+
+  /* Na wąskim ekranie rynienka nie ma prawa zjadać połowy szerokości tekstu:
+     etykiety bloków znikają, a decyzje przechodzą nad sekcję. */
+  @media (max-width: 720px) {
+    .ed-doc-section { padding: 20px 16px 24px; }
+    .ed-doc-section [data-block]::before { display: none; }
+    .ed-decide { position: static; display: flex; gap: 8px; margin-bottom: 12px; }
+    .ed-docbar { position: static; }
+  }
 </style>

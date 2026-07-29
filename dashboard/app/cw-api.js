@@ -394,7 +394,9 @@ export async function fetchPostContent(request, env, domain, postType, postId, f
   if (cached) return cached;
 
   // Końcowy ukośnik po ID jest obowiązkowy (WP robi 301) – jak w wp.py.
-  const wpUrl = `${base.replace(/\/$/, '')}/wp-json/wp/v2/${postType}/${postId}/?acf_format=standard&_fields=id,link,title,acf`;
+  // `content` to na blogu ICEA sam wstęp przed pierwszym H2 (reszta siedzi
+  // w ACF) – bez niego dokument w edytorze zaczynałby się od nagłówka.
+  const wpUrl = `${base.replace(/\/$/, '')}/wp-json/wp/v2/${postType}/${postId}/?acf_format=standard&_fields=id,link,title,content,acf`;
   let upstream;
   try {
     upstream = await fetchImpl(wpUrl, {
@@ -424,10 +426,16 @@ export async function fetchPostContent(request, env, domain, postType, postId, f
 
   const acf = post?.acf && typeof post.acf === 'object' ? post.acf : {};
   const { sections, free_slots: freeSlots } = mapAcfSections(acf);
+  // Wpisy bez sekcji ACF trzymają całość w `content` albo w
+  // `page_content_no_section` – edytor i tak ma pokazać pełną treść.
+  const lead = String(post?.content?.rendered ?? '').trim();
+  const noSection = String(acf?.page_content_no_section ?? '').trim();
   const response = json({
     post_id: post?.id ?? postId,
     title: post?.title?.rendered ?? '',
     url: post?.link ?? '',
+    lead,
+    no_section: sections.length ? '' : noSection,
     sections,
     free_slots: freeSlots,
   });
@@ -495,7 +503,7 @@ async function readJob(env, id) {
     .bind(id)
     .all();
   const sections = await db(env)
-    .prepare('SELECT slot, title_field, text_field, operation, title_before, title_after, text_before, text_after, text_hash_before, diff, accepted, edited FROM job_sections WHERE job_id = ? ORDER BY slot')
+    .prepare('SELECT slot, title_field, text_field, operation, title_before, title_after, text_before, text_after, text_hash_before, diff, accepted, decision, edited FROM job_sections WHERE job_id = ? ORDER BY slot')
     .bind(id)
     .all();
   const parse = (value, fallback) => {
@@ -512,7 +520,14 @@ async function readJob(env, id) {
     expert: parse(job.expert, null),
     cost: parse(job.cost, {}),
     steps: (steps.results ?? []).map((step) => ({ ...step, payload: parse(step.payload, null), cost: parse(step.cost, null) })),
-    sections: (sections.results ?? []).map((section) => ({ ...section, diff: parse(section.diff, null), accepted: section.accepted === 1, edited: section.edited === 1 })),
+    sections: (sections.results ?? []).map((section) => ({
+      ...section,
+      diff: parse(section.diff, null),
+      accepted: section.accepted === 1,
+      // NULL = redaktor jeszcze nie zdecydował; 'accepted' | 'rejected' po decyzji.
+      decision: section.decision ?? null,
+      edited: section.edited === 1,
+    })),
   };
 }
 
@@ -551,23 +566,33 @@ async function patchSection(request, env, id, slot) {
       .run();
     if ((result.meta?.changes ?? 0) === 0) return json({ error: 'Nie ma takiej sekcji.' }, 404);
     await audit(env, 'section.edit', id, { slot, bytes: clean.length });
-    if (body?.accepted === undefined) return json({ ok: true, text_after: clean });
+    if (body?.accepted === undefined && body?.decision === undefined) {
+      return json({ ok: true, text_after: clean });
+    }
   }
 
-  if (body?.accepted !== undefined) {
-    const accepted = body.accepted === true;
+  // Decyzja redaktora ma trzy stany: brak (null), „do wdrożenia" i „odrzucone".
+  // `accepted` zostaje flagą wdrożeniową, więc jedzie w parze z `decision`.
+  if (body?.decision !== undefined || body?.accepted !== undefined) {
+    const decision = body?.decision !== undefined
+      ? body.decision
+      : (body.accepted === true ? 'accepted' : null);
+    if (decision !== null && decision !== 'accepted' && decision !== 'rejected') {
+      return json({ error: 'Pole „decision" przyjmuje: accepted, rejected albo null.' }, 400);
+    }
+    const accepted = decision === 'accepted';
     const result = await db(env)
-      .prepare('UPDATE job_sections SET accepted = ?, accepted_at = ? WHERE job_id = ? AND slot = ?')
-      .bind(accepted ? 1 : 0, accepted ? nowIso() : null, id, slot)
+      .prepare('UPDATE job_sections SET decision = ?, accepted = ?, accepted_at = ? WHERE job_id = ? AND slot = ?')
+      .bind(decision, accepted ? 1 : 0, accepted ? nowIso() : null, id, slot)
       .run();
     if ((result.meta?.changes ?? 0) === 0) return json({ error: 'Nie ma takiej sekcji.' }, 404);
-    await audit(env, 'section.accept', id, { slot, accepted });
-    return json({ ok: true });
+    await audit(env, 'section.accept', id, { slot, decision });
+    return json({ ok: true, decision });
   }
 
   return typeof body?.text_after === 'string'
     ? json({ ok: true })
-    : json({ error: 'Oczekiwane pola: accepted i/lub text_after.' }, 400);
+    : json({ error: 'Oczekiwane pola: decision, accepted i/lub text_after.' }, 400);
 }
 
 /* ---------- porada eksperta (etap finalny, Worker → OpenRouter) ---------- */
