@@ -96,10 +96,10 @@ const minAgeDays = watcherCfg.min_age_days ?? 90;
 // `label` nazywa akcję (nagłówek karty), `range` opisuje sam przedział i wraca
 // w kolumnie Status przy każdym wpisie.
 const AGE_BUCKETS = [
-  { key: 'm0-3', label: 'Świeże treści', hint: 'aktualne (do 3 mies.)', range: 'do 3 mies.', from: 0, to: 90 },
-  { key: 'm3-6', label: 'Do przeglądu', hint: 'starzejące się (3–6 mies.)', range: '3–6 mies.', from: 90, to: 180 },
-  { key: 'm6-12', label: 'Zaplanuj update', hint: 'tracące wartość (6–12 mies.)', range: '6–12 mies.', from: 180, to: 365 },
-  { key: 'm12+', label: 'Pilny audyt / recykling', hint: 'krytyczne zaległości (ponad 12 mies.)', range: 'ponad 12 mies.', from: 365, to: Infinity },
+  { key: 'm0-3', label: 'Świeże treści', hint: 'aktualne (do 3 mies.)', range: 'do 3 mies.', tone: 'ok', from: 0, to: 90 },
+  { key: 'm3-6', label: 'Do przeglądu', hint: 'starzejące się (3–6 mies.)', range: '3–6 mies.', tone: 'mid', from: 90, to: 180 },
+  { key: 'm6-12', label: 'Zaplanuj update', hint: 'tracące wartość (6–12 mies.)', range: '6–12 mies.', tone: 'warn', from: 180, to: 365 },
+  { key: 'm12+', label: 'Pilny audyt / recykling', hint: 'krytyczne zaległości (ponad 12 mies.)', range: 'ponad 12 mies.', tone: 'err', from: 365, to: Infinity },
 ] as const;
 const ageBucket = (days: number): string =>
   AGE_BUCKETS.find((bucket) => days >= bucket.from && days < bucket.to)?.key ?? 'm12+';
@@ -313,8 +313,8 @@ const baseline = items.filter((item) => item.hash_baseline).length;
       <StatCard label="Wszystkie publikacje" value={sortedItems.length} emptyDeltaLabel="baza wiedzy" hero />
     </button>
     {AGE_BUCKETS.map((bucket) => (
-      <button type="button" class="cw-kpi" data-dim="age" data-filter={bucket.key} aria-pressed="false">
-        <StatCard label={bucket.label} value={byAge[bucket.key]} emptyDeltaLabel={bucket.hint} />
+      <button type="button" class="cw-kpi" data-dim="age" data-filter={bucket.key} data-tone={bucket.tone} aria-pressed="false">
+        <StatCard label={bucket.label} value={byAge[bucket.key]} emptyDeltaLabel={bucket.hint} dot="var(--tone-fg)" />
       </button>
     ))}
   </div>
@@ -327,20 +327,20 @@ const baseline = items.filter((item) => item.hash_baseline).length;
     </span>
   </div>
   <div class="kwrap rgrid cw-kpis cw-kpis-urgency" data-cw-kpis>
-    <button type="button" class="cw-kpi" data-dim="urgency" data-filter="critical" aria-pressed="false">
-      <StatCard label="Krytyczny" value={byUrgency.critical} emptyDeltaLabel="słabe wyniki, ponad 12 mies." goodWhen="down" />
+    <button type="button" class="cw-kpi" data-dim="urgency" data-filter="critical" data-tone="err" aria-pressed="false">
+      <StatCard label="Krytyczny" value={byUrgency.critical} emptyDeltaLabel="słabe wyniki, ponad 12 mies." dot="var(--tone-fg)" />
     </button>
-    <button type="button" class="cw-kpi" data-dim="urgency" data-filter="high" aria-pressed="false">
-      <StatCard label="Wysoki" value={byUrgency.high} emptyDeltaLabel="słabe wyniki, 6–12 mies." goodWhen="down" />
+    <button type="button" class="cw-kpi" data-dim="urgency" data-filter="high" data-tone="warn" aria-pressed="false">
+      <StatCard label="Wysoki" value={byUrgency.high} emptyDeltaLabel="słabe wyniki, 6–12 mies." dot="var(--tone-fg)" />
     </button>
-    <button type="button" class="cw-kpi" data-dim="urgency" data-filter="normal" aria-pressed="false">
-      <StatCard label="Normalny" value={byUrgency.normal} emptyDeltaLabel="słabe wyniki, 3–6 mies." />
+    <button type="button" class="cw-kpi" data-dim="urgency" data-filter="normal" data-tone="mid" aria-pressed="false">
+      <StatCard label="Normalny" value={byUrgency.normal} emptyDeltaLabel="słabe wyniki, 3–6 mies." dot="var(--tone-fg)" />
     </button>
-    <button type="button" class="cw-kpi" data-dim="urgency" data-filter="low" aria-pressed="false">
-      <StatCard label="Niski" value={byUrgency.low} emptyDeltaLabel="świeże lub z ruchem" />
+    <button type="button" class="cw-kpi" data-dim="urgency" data-filter="low" data-tone="ok" aria-pressed="false">
+      <StatCard label="Niski" value={byUrgency.low} emptyDeltaLabel="świeże lub z ruchem" dot="var(--tone-fg)" />
     </button>
-    <button type="button" class="cw-kpi" data-dim="state" data-filter="not-indexed" aria-pressed="false">
-      <StatCard label="Poza indeksem" value={notIndexed} emptyDeltaLabel="wymaga osobnej diagnozy" goodWhen="down" />
+    <button type="button" class="cw-kpi" data-dim="state" data-filter="not-indexed" data-tone="muted" aria-pressed="false">
+      <StatCard label="Poza indeksem" value={notIndexed} emptyDeltaLabel="wymaga osobnej diagnozy" dot="var(--tone-fg)" />
     </button>
   </div>
 
@@ -667,7 +667,17 @@ const baseline = items.filter((item) => item.hash_baseline).length;
   .cw-kpi { all: unset; display: block; min-width: 0; cursor: pointer; }
   .cw-kpi > :global(.stat-card) { height: 100%; }
   .cw-kpi:focus-visible > :global(.stat-card) { outline: 2px solid var(--accent-blue); outline-offset: 2px; }
-  .cw-kpi.on > :global(.stat-card) { border-color: var(--accent-blue); background: var(--accent-blue-soft); }
+  .cw-kpi.on > :global(.stat-card) { border-color: var(--tone-fg, var(--accent-blue)); background: var(--tone-bg, var(--accent-blue-soft)); }
+  /* Skala pilności ma czytać się kolorem, nie tylko liczbą: zielony → żółty →
+     pomarańczowy → czerwony. Kolor niosą karty wieku i pilności tak samo, bo
+     to ta sama oś (świeże = niski priorytet). */
+  .cw-kpi[data-tone='ok'] { --tone-fg: var(--status-ok); --tone-bg: var(--status-ok-bg); }
+  .cw-kpi[data-tone='mid'] { --tone-fg: var(--status-mid-fg); --tone-bg: var(--status-mid-bg); }
+  .cw-kpi[data-tone='warn'] { --tone-fg: var(--status-warn-fg); --tone-bg: var(--status-warn-bg); }
+  .cw-kpi[data-tone='err'] { --tone-fg: var(--status-err-fg); --tone-bg: var(--status-err-bg); }
+  .cw-kpi[data-tone='muted'] { --tone-fg: var(--ink-faint); --tone-bg: var(--bg-surface-3); }
+  .cw-kpi[data-tone] > :global(.stat-card) { border-left: 3px solid var(--tone-fg); }
+  .cw-kpi[data-tone] :global(.stat-value) { color: var(--tone-fg); }
   .cw-list-head { align-items: flex-end; }
   .cw-list-head > div:first-child { display: flex; flex-direction: column; gap: 5px; }
   .cw-automation { display: flex; align-items: center; gap: 9px; color: var(--ink-faint); font-size: .76rem; }
@@ -692,7 +702,8 @@ const baseline = items.filter((item) => item.hash_baseline).length;
   }
   .cw-urgency.critical { color: var(--status-err-fg); background: var(--status-err-bg); }
   .cw-urgency.high { color: var(--status-warn-fg); background: var(--status-warn-bg); }
-  .cw-urgency.normal { color: var(--accent-blue); background: var(--accent-blue-soft); }
+  .cw-urgency.normal { color: var(--status-mid-fg); background: var(--status-mid-bg); }
+  .cw-urgency.low { color: var(--status-ok); background: var(--status-ok-bg); }
   .cw-content { min-width: 260px; max-width: 370px; }
   .cw-title-row { display: flex; align-items: flex-start; gap: 9px; }
   .cw-title-row > a { flex: 1; color: var(--ink); font-weight: 600; line-height: 1.3; text-decoration: none; }
@@ -720,8 +731,8 @@ const baseline = items.filter((item) => item.hash_baseline).length;
   }
   .cw-chip.pub { background: var(--bg-surface-3); color: var(--ink-muted); }
   .cw-chip.upd { font-weight: 600; }
-  .cw-chip.upd[data-age='m0-3'] { color: var(--status-ok); background: var(--accent-blue-soft); }
-  .cw-chip.upd[data-age='m3-6'] { color: var(--ink); background: var(--bg-surface-3); }
+  .cw-chip.upd[data-age='m0-3'] { color: var(--status-ok); background: var(--status-ok-bg); }
+  .cw-chip.upd[data-age='m3-6'] { color: var(--status-mid-fg); background: var(--status-mid-bg); }
   .cw-chip.upd[data-age='m6-12'] { color: var(--status-warn-fg); background: var(--status-warn-bg); }
   .cw-chip.upd[data-age='m12+'] { color: var(--status-err-fg); background: var(--status-err-bg); }
   .cw-delta.bad { color: var(--status-err-fg); font-weight: 600; }

@@ -31,6 +31,11 @@
 
   /* Statusy źródeł */
   --status-ok: #76b900;
+  --status-ok-bg: rgba(118, 185, 0, 0.14);
+  /* Stopień pośredni między OK a ostrzeżeniem (skala pilności: zielony →
+     żółty → pomarańczowy → czerwony). */
+  --status-mid-fg: #e3c400;
+  --status-mid-bg: rgba(227, 196, 0, 0.14);
   --status-warn-fg: #ef9100;
   --status-warn-bg: rgba(239, 145, 0, 0.12);
   --status-err-fg: #e52020;
@@ -103,6 +108,9 @@
 
   /* Statusy */
   --status-ok: #3f8500;
+  --status-ok-bg: rgba(63, 133, 0, 0.1);
+  --status-mid-fg: #9a7b00;
+  --status-mid-bg: rgba(154, 123, 0, 0.1);
   --status-warn-fg: #df6500;
   --status-warn-bg: rgba(223, 101, 0, 0.08);
   --status-err-fg: #e52020;
@@ -161,6 +169,9 @@
   --accent-blue-soft: rgba(0, 112, 209, 0.16);
 
   --status-ok: #0070d1;
+  --status-ok-bg: rgba(0, 112, 209, 0.16);
+  --status-mid-fg: #d8a200;
+  --status-mid-bg: rgba(216, 162, 0, 0.14);
   --status-warn-fg: #d53b00;
   --status-warn-bg: rgba(213, 59, 0, 0.12);
   --status-err-fg: #c81b3a;
@@ -219,6 +230,9 @@
   --accent-blue-soft: rgba(0, 112, 209, 0.08);
 
   --status-ok: #0070d1;
+  --status-ok-bg: rgba(0, 112, 209, 0.08);
+  --status-mid-fg: #8a6100;
+  --status-mid-bg: rgba(138, 97, 0, 0.08);
   --status-warn-fg: #d53b00;
   --status-warn-bg: rgba(213, 59, 0, 0.08);
   --status-err-fg: #c81b3a;
