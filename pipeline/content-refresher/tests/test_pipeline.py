@@ -96,32 +96,35 @@ class TestRenumeracja(unittest.TestCase):
 
     def test_nowa_sekcja_wchodzi_za_kotwice_a_reszta_jedzie_w_dol(self):
         snapshot = sec.snapshot(self.ACF_CIAGLE)
-        proposals, moves = sec.renumber(snapshot, {
+        proposals, moves, inserted = sec.renumber(snapshot, {
             4: {"title": "Błąd 403 w Search Console", "text": "<p>Nowa.</p>", "after_slot": 1},
         })
         self.assertEqual(proposals[2]["title"], "Błąd 403 w Search Console")
         self.assertEqual(moves, {3: 2, 4: 3})
+        self.assertEqual(inserted, {2})
         self.assertEqual(proposals[3]["title"], "Jak go naprawić")
         self.assertEqual(proposals[4]["title"], "Podsumowanie")
 
     def test_dziura_w_slotach_wchlania_przesuniecie(self):
         # Zajęte 1,2,5 – nowa sekcja za slotem 2 wchodzi w wolny slot 3 bez ruszania 5.
-        proposals, moves = sec.renumber(sec.snapshot(ACF), {
+        proposals, moves, inserted = sec.renumber(sec.snapshot(ACF), {
             6: {"title": "Nowy wątek", "text": "<p>Treść.</p>", "after_slot": 2},
         })
         self.assertEqual(list(proposals), [3])
         self.assertEqual(moves, {})
+        self.assertEqual(inserted, {3})
 
     def test_bez_kotwicy_zostaje_na_koncu(self):
-        proposals, moves = sec.renumber(sec.snapshot(ACF), {
+        proposals, moves, inserted = sec.renumber(sec.snapshot(ACF), {
             6: {"title": "Nowy wątek", "text": "<p>Treść.</p>"},
         })
         self.assertEqual(list(proposals), [6])
         self.assertEqual(moves, {})
+        self.assertEqual(inserted, {6})
 
     def test_przesuniecie_zachowuje_propozycje_rewrite_dla_sekcji(self):
         snapshot = sec.snapshot(self.ACF_CIAGLE)
-        proposals, moves = sec.renumber(snapshot, {
+        proposals, moves, _ = sec.renumber(snapshot, {
             2: {"title": "Jak naprawić błąd 403 krok po kroku", "text": "<p>Rozbudowana.</p>"},
             4: {"title": "Nowa", "text": "<p>N.</p>", "after_slot": 1},
         })
@@ -130,12 +133,19 @@ class TestRenumeracja(unittest.TestCase):
                                         "text": "<p>Rozbudowana.</p>"})
         self.assertEqual(moves[3], 2)
 
-    def test_wiersz_move_ma_diff_wzgledem_zrodla_i_hash_celu(self):
+    def test_wiersze_insert_i_move_po_renumeracji(self):
         snapshot = sec.snapshot(self.ACF_CIAGLE)
-        proposals, moves = sec.renumber(snapshot, {
+        proposals, moves, inserted = sec.renumber(snapshot, {
             4: {"title": "Nowa", "text": "<p>N.</p>", "after_slot": 1},
         })
-        rows = {row["slot"]: row for row in sec.build_sections(snapshot, proposals, moves)}
+        rows = {row["slot"]: row for row in sec.build_sections(snapshot, proposals, moves, inserted)}
+        # Nowa sekcja w zajętym dziś slocie 2: insert bez „przed" (diff od zera),
+        # ale z hashem nadpisywanej treści – konflikt-detekcja wie, co znika.
+        self.assertEqual(rows[2]["operation"], "insert")
+        self.assertEqual(rows[2]["text_before"], "")
+        self.assertEqual(rows[2]["title_before"], "")
+        self.assertEqual(rows[2]["text_hash_before"],
+                         sec.content_hash(self.ACF_CIAGLE["page_text_2"]))
         # Move 2→3: diff liczony względem treści źródłowej (brak zmian treści)…
         self.assertEqual(rows[3]["operation"], "move")
         self.assertEqual(rows[3]["moved_from"], 2)
@@ -149,14 +159,18 @@ class TestRenumeracja(unittest.TestCase):
         taken = {**self.ACF_CIAGLE, "page_text_4": "<p>Redakcja coś dopisała.</p>"}
         self.assertIn({"slot": 4, "reason": "slot_taken"},
                       sec.detect_conflicts(list(rows.values()), taken))
+        edited = {**self.ACF_CIAGLE, "page_text_2": "<p>Ktoś poprawił slot 2.</p>"}
+        self.assertIn({"slot": 2, "reason": "changed_in_cms"},
+                      sec.detect_conflicts(list(rows.values()), edited))
 
     def test_brak_miejsca_wraca_do_starego_ukladu(self):
         acf = {f"page_title_h2_{n}": f"S{n}" for n in range(1, 31)} | \
               {f"page_text_{n}": f"<p>t{n}</p>" for n in range(1, 31)}
         original = {31: {"title": "Nowa", "text": "<p>N.</p>", "after_slot": 1}}
-        proposals, moves = sec.renumber(sec.snapshot(acf), original)
+        proposals, moves, inserted = sec.renumber(sec.snapshot(acf), original)
         self.assertEqual(proposals, original)
         self.assertEqual(moves, {})
+        self.assertEqual(inserted, {31})
 
 
 class TestExtract(unittest.TestCase):

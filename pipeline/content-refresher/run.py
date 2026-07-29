@@ -558,8 +558,8 @@ class Pipeline:
         }, "model": result["model"], "prompt_version": version, "cost": result["usage"]}
 
     def step_diff(self):
-        proposals, moves = sec.renumber(self.context["snapshot"], self.context.get("proposals") or {})
-        rows = sec.build_sections(self.context["snapshot"], proposals, moves)
+        proposals, moves, inserted = sec.renumber(self.context["snapshot"], self.context.get("proposals") or {})
+        rows = sec.build_sections(self.context["snapshot"], proposals, moves, inserted)
         self.context["sections"] = rows
         return {"payload": {
             "changed": len(rows),
