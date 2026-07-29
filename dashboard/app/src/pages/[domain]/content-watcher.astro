@@ -93,11 +93,13 @@ const minAgeDays = watcherCfg.min_age_days ?? 90;
 
 // Przedziały wieku treści (dni od ostatniej realnej zmiany). Stałe dla obu
 // domen – „3 / 6 / 12 miesięcy" to język, w którym rozmawia się o odświeżaniu.
+// `label` nazywa akcję (nagłówek karty), `range` opisuje sam przedział i wraca
+// w kolumnie Status przy każdym wpisie.
 const AGE_BUCKETS = [
-  { key: 'm0-3', label: 'Do 3 mies.', hint: 'okres ochronny', from: 0, to: 90 },
-  { key: 'm3-6', label: 'Nieaktualizowane 3–6 mies.', hint: 'obserwacja', from: 90, to: 180 },
-  { key: 'm6-12', label: 'Nieaktualizowane 6–12 mies.', hint: 'do odświeżenia', from: 180, to: 365 },
-  { key: 'm12+', label: 'Nieaktualizowane ponad 12 mies.', hint: 'zaległość', from: 365, to: Infinity },
+  { key: 'm0-3', label: 'Świeże treści', hint: 'aktualne (do 3 mies.)', range: 'do 3 mies.', from: 0, to: 90 },
+  { key: 'm3-6', label: 'Do przeglądu', hint: 'starzejące się (3–6 mies.)', range: '3–6 mies.', from: 90, to: 180 },
+  { key: 'm6-12', label: 'Zaplanuj update', hint: 'tracące wartość (6–12 mies.)', range: '6–12 mies.', from: 180, to: 365 },
+  { key: 'm12+', label: 'Pilny audyt / recykling', hint: 'krytyczne zaległości (ponad 12 mies.)', range: 'ponad 12 mies.', from: 365, to: Infinity },
 ] as const;
 const ageBucket = (days: number): string =>
   AGE_BUCKETS.find((bucket) => days >= bucket.from && days < bucket.to)?.key ?? 'm12+';
@@ -278,7 +280,9 @@ const stateLabel: Record<string, string> = {
   'not-indexed': 'poza indeksem',
   'no-data': 'brak pomiaru',
 };
-const ageLabel: Record<string, string> = Object.fromEntries(AGE_BUCKETS.map((bucket) => [bucket.key, bucket.label]));
+const ageLabel: Record<string, string> = Object.fromEntries(
+  AGE_BUCKETS.map((bucket) => [bucket.key, `bez zmian ${bucket.range}`]),
+);
 
 // Katalog z CMS-a: świeżość liczona z hasha treści, nie z pola `modified`,
 // które WordPress podbija przy każdym zapisie (także masowej akcji wtyczki).
@@ -306,7 +310,7 @@ const baseline = items.filter((item) => item.hash_baseline).length;
   </div>
   <div class="kwrap rgrid cw-kpis" data-cw-kpis>
     <button type="button" class="cw-kpi" data-dim="age" data-filter="all" aria-pressed="false">
-      <StatCard label="Artykuły" value={sortedItems.length} emptyDeltaLabel="w katalogu treści" hero />
+      <StatCard label="Wszystkie publikacje" value={sortedItems.length} emptyDeltaLabel="baza wiedzy" hero />
     </button>
     {AGE_BUCKETS.map((bucket) => (
       <button type="button" class="cw-kpi" data-dim="age" data-filter={bucket.key} aria-pressed="false">
