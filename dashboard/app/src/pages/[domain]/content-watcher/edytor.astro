@@ -261,6 +261,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     title_field: string;
     text_field: string;
     operation: string;
+    moved_from?: number | null;
     title_before: string | null;
     title_after: string | null;
     text_before: string | null;
@@ -1179,6 +1180,14 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         (keyword.current_position ? ` · obecnie ${keyword.current_position}` : ''))));
     }
     if (brief.factual_risks?.length) add('Do weryfikacji faktograficznej', list(brief.factual_risks));
+
+    // Zalecenia nagłówków, których rewrite nie wykonał – lepiej pokazać je
+    // redaktorowi, niż udawać, że generyczne H2 zostały z rozmysłem.
+    const rewrite = current.steps.find((step) => step.step === 'rewrite')?.payload;
+    if (rewrite?.headings_missed?.length) {
+      add('Pominięte zalecenia nagłówków', list(rewrite.headings_missed.map((row: any) =>
+        `sekcja ${row.slot}: ${row.current || '(nowa)'} → ${row.recommended}`)));
+    }
   }
 
   /* ---------- diff inline w dokumencie ---------- */
@@ -1362,7 +1371,14 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     };
     const stats = section.diff?.stats;
     if (section.operation === 'insert') tag('nowa sekcja', 'new');
-    else if (stats) tag(`+${pl.format(stats.added)} / −${pl.format(stats.removed)} słów`);
+    else if (section.operation === 'move') {
+      // Renumeracja układu: treść przyszła z innego slotu. Diff liczony jest
+      // względem źródła, więc statystyki pokazujemy tylko przy realnej zmianie.
+      tag(`przesunięta z sekcji ${section.moved_from ?? '?'}`, 'new');
+      if (stats && (stats.added || stats.removed)) {
+        tag(`+${pl.format(stats.added)} / −${pl.format(stats.removed)} słów`);
+      }
+    } else if (stats) tag(`+${pl.format(stats.added)} / −${pl.format(stats.removed)} słów`);
     else tag('aktualizacja');
     if (stats?.shrunk) tag('model wyciął więcej, niż dopisał', 'warn');
     if (section.edited) tag('ręcznie poprawiona');
@@ -1391,12 +1407,15 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       node.classList.add(section.operation === 'insert' ? 'is-new' : 'is-changed');
 
       const heading = node.querySelector('h2');
-      // Podkreślamy tylko realną zmianę tytułu – nowa sekcja nie ma „poprzednio".
-      if (heading && section.title_before && section.title_after
-        && section.title_after !== section.title_before) {
-        heading.textContent = section.title_after;
-        heading.classList.add('is-retitled');
-        heading.title = section.title_before ? `poprzednio: ${section.title_before}` : '';
+      // Nagłówek węzła pokazuje NOWEGO lokatora slotu (po renumeracji węzeł może
+      // dostać treść przesuniętą z innego miejsca), a „is-retitled" tylko realną
+      // zmianę tytułu – nowa sekcja nie ma „poprzednio".
+      if (heading && section.title_after) {
+        if (heading.textContent !== section.title_after) heading.textContent = section.title_after;
+        if (section.title_before && section.title_after !== section.title_before) {
+          heading.classList.add('is-retitled');
+          heading.title = `poprzednio: ${section.title_before}`;
+        }
       }
 
       let toolsHost = node.querySelector<HTMLElement>('.ed-sec-tools');

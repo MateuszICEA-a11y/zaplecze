@@ -504,7 +504,7 @@ async function readJob(env, id) {
     .bind(id)
     .all();
   const sections = await db(env)
-    .prepare('SELECT slot, title_field, text_field, operation, title_before, title_after, text_before, text_after, text_hash_before, diff, accepted, decision, edited FROM job_sections WHERE job_id = ? ORDER BY slot')
+    .prepare('SELECT slot, title_field, text_field, operation, moved_from, title_before, title_after, text_before, text_after, text_hash_before, diff, accepted, decision, edited FROM job_sections WHERE job_id = ? ORDER BY slot')
     .bind(id)
     .all();
   const parse = (value, fallback) => {
@@ -786,21 +786,22 @@ async function handleCallback(request, env) {
     statements.push(
       db(env)
         .prepare(
-          `INSERT INTO job_sections (job_id, slot, title_field, text_field, operation, title_before, title_after, text_before, text_after, text_hash_before, diff)
-           VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11)
+          `INSERT INTO job_sections (job_id, slot, title_field, text_field, operation, title_before, title_after, text_before, text_after, text_hash_before, diff, moved_from)
+           VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12)
            ON CONFLICT (job_id, slot) DO UPDATE SET
              title_field = ?3, text_field = ?4, operation = ?5, title_before = ?6, title_after = ?7,
-             text_before = ?8, text_after = ?9, text_hash_before = ?10, diff = ?11`,
+             text_before = ?8, text_after = ?9, text_hash_before = ?10, diff = ?11, moved_from = ?12`,
         )
         .bind(
           cb.job_id, slot,
           section.title_field ?? `page_title_h2_${slot}`,
           section.text_field ?? `page_text_${slot}`,
-          section.operation === 'insert' ? 'insert' : 'update',
+          ['insert', 'move'].includes(section.operation) ? section.operation : 'update',
           section.title_before ?? null, section.title_after ?? null,
           section.text_before ?? null, section.text_after ?? null,
           section.text_hash_before ?? null,
           section.diff ? JSON.stringify(section.diff) : null,
+          Number.isFinite(Number.parseInt(section.moved_from, 10)) ? Number.parseInt(section.moved_from, 10) : null,
         ),
     );
   }

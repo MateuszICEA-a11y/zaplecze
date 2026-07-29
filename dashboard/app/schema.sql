@@ -60,7 +60,8 @@ CREATE TABLE IF NOT EXISTS job_sections (
   slot             INTEGER NOT NULL,
   title_field      TEXT NOT NULL,
   text_field       TEXT NOT NULL,
-  operation        TEXT NOT NULL DEFAULT 'update',  -- update | insert
+  operation        TEXT NOT NULL DEFAULT 'update',  -- update | insert | move
+  moved_from       INTEGER,  -- dla operation='move': slot, z którego sekcja się przesunęła
   title_before     TEXT,
   title_after      TEXT,
   text_before      TEXT,
