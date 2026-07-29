@@ -78,6 +78,27 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       <div data-ed-serp-result hidden></div>
     </section>
 
+    <!-- Treść konkurentów czytana przez Jina Reader: ile realnie piszą i jakie
+         konkrety mają w tekście. Osobny przycisk, bo to kilka pobrań stron
+         plus jedno wywołanie modelu. -->
+    <section class="ed-serp ed-rivals" data-ed-rivals>
+      <div class="ed-serp-head">
+        <div class="ed-serp-title">
+          <h3>Co mają konkurenci</h3>
+          <p class="ed-serp-lead">
+            Czytamy trzy teksty z czołówki i nasz wpis, porównujemy długość i wypisujemy konkrety,
+            których u nas brakuje.
+          </p>
+        </div>
+        <div class="ed-serp-actions">
+          <span class="ed-serp-stamp" data-ed-rivals-stamp></span>
+          <button type="button" class="ed-serp-run" data-ed-rivals-run disabled>Przeczytaj konkurencję</button>
+        </div>
+      </div>
+      <p class="ed-error" data-ed-rivals-error hidden></p>
+      <div data-ed-rivals-result hidden></div>
+    </section>
+
     <!-- Belka pipeline: konfiguracja → postęp → podsumowanie (jeden element,
          trzy stany sterowane z JS) -->
     <div class="ed-pipebar">
@@ -349,6 +370,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   const sectionMode = new Map<number, string>();
   // Ostatnia analiza SERP – ocena treści bierze z niej frazy do pokrycia.
   let serpAnalysis: any = null;
+  // Odczyt treści konkurencji – stąd bierze się cel objętości i lista faktów.
+  let rivalsAnalysis: any = null;
 
   /* ---------- katalog + treść ---------- */
 
@@ -701,13 +724,16 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
 
   function scoreParts() {
     const metrics = docMetrics();
-    const target = WORDS_FALLBACK;
+    // Cel objętości: mediana tekstów z czołówki, o ile je przeczytaliśmy.
+    const target = rivalsAnalysis?.median_words || WORDS_FALLBACK;
     const parts: { label: string; detail: string; ratio: number }[] = [];
     const clamp = (value: number) => Math.max(0, Math.min(1, value));
 
     parts.push({
       label: 'Objętość',
-      detail: `${pl.format(metrics.words)} z ~${pl.format(target)} słów`,
+      detail: rivalsAnalysis?.median_words
+        ? `${pl.format(metrics.words)} z ${pl.format(target)} słów (mediana czołówki)`
+        : `${pl.format(metrics.words)} z ~${pl.format(target)} słów`,
       ratio: clamp(metrics.words / target),
     });
 
@@ -1539,6 +1565,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   function renderSerp(analysis: SerpAnalysis | null) {
     serpAnalysis = analysis;
     renderScore();
+    const rivalsButton = $<HTMLButtonElement>('[data-ed-rivals-run]');
+    if (rivalsButton) rivalsButton.disabled = !(analysis?.queries?.length);
     const host = $('[data-ed-serp-result]')!;
     const stamp = $('[data-ed-serp-stamp]')!;
     if (!analysis) {
@@ -1783,6 +1811,199 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     }
   }
 
+  /* ---------- treść konkurencji (Jina Reader + model) ---------- */
+
+  const KIND_LABEL: Record<string, string> = {
+    liczba: 'liczba', definicja: 'definicja', procedura: 'procedura',
+    'przykład': 'przykład', 'narzędzie': 'narzędzie', ryzyko: 'ryzyko',
+  };
+
+  function rivalUrls(): string[] {
+    // Konkurenci z SERP-u tematu – to oni zajmują miejsce, o które gramy.
+    const query = serpAnalysis?.queries?.find((row: any) => row.kind === 'title') ?? serpAnalysis?.queries?.[0];
+    return (query?.competitors ?? []).map((row: any) => row.url).filter(Boolean);
+  }
+
+  function renderRivals(analysis: any | null) {
+    const host = $('[data-ed-rivals-result]')!;
+    const stamp = $('[data-ed-rivals-stamp]')!;
+    rivalsAnalysis = analysis;
+    if (!analysis) {
+      host.hidden = true;
+      stamp.textContent = '';
+      renderScore();
+      return;
+    }
+    stamp.textContent = analysis.generated_at
+      ? `sprawdzone ${new Date(analysis.generated_at).toLocaleString('pl-PL')}`
+      : '';
+
+    const nodes: HTMLElement[] = [];
+
+    const lengths = document.createElement('div');
+    lengths.className = 'ed-rival-lengths';
+    const lengthRow = (label: string, words: number | null, note: string, className = '') => {
+      const row = document.createElement('div');
+      row.className = `ed-rival-len ${className}`.trim();
+      const name = document.createElement('span');
+      name.className = 'ed-rival-name';
+      name.textContent = label;
+      const value = document.createElement('b');
+      value.textContent = words === null ? '—' : `${pl.format(words)} słów`;
+      const meta = document.createElement('small');
+      meta.textContent = note;
+      row.append(name, value, meta);
+      lengths.append(row);
+    };
+    lengthRow('nasz wpis', analysis.our_words, 'liczone tak samo jak u konkurencji', 'ours');
+    for (const rival of analysis.rivals ?? []) {
+      lengthRow(rival.host || rival.url, rival.words, rival.error ? `nie udało się przeczytać: ${rival.error}` : (rival.title ?? ''));
+    }
+    if (analysis.median_words) {
+      lengthRow('mediana konkurencji', analysis.median_words, 'cel objętości w ocenie treści', 'median');
+    }
+    nodes.push(lengths);
+
+    if (analysis.topics?.length) {
+      const topics = document.createElement('p');
+      topics.className = 'ed-serp-drift';
+      topics.textContent = `Tematy, których nasz wpis w ogóle nie dotyka: ${analysis.topics.join(', ')}.`;
+      nodes.push(topics);
+    }
+
+    if (analysis.facts?.length) {
+      const list = document.createElement('ul');
+      list.className = 'ed-fact-list';
+      for (const row of analysis.facts) {
+        const item = document.createElement('li');
+        const head = document.createElement('div');
+        head.className = 'ed-fact-head';
+        if (row.kind) {
+          const kind = document.createElement('span');
+          kind.className = 'ed-fact-kind';
+          kind.textContent = KIND_LABEL[row.kind] ?? row.kind;
+          head.append(kind);
+        }
+        const fact = document.createElement('span');
+        fact.className = 'ed-fact-text';
+        fact.textContent = row.fact;
+        head.append(fact);
+        const meta = document.createElement('div');
+        meta.className = 'ed-fact-meta';
+        if (row.why) {
+          const why = document.createElement('span');
+          why.textContent = row.why;
+          meta.append(why);
+        }
+        if (/^https?:\/\//i.test(row.source ?? '')) {
+          const link = document.createElement('a');
+          link.href = row.source;
+          link.target = '_blank';
+          link.rel = 'noopener nofollow';
+          link.textContent = 'źródło';
+          meta.append(link);
+        }
+        item.append(head, meta);
+        list.append(item);
+      }
+      nodes.push(list);
+      const note = document.createElement('p');
+      note.className = 'ed-serp-empty';
+      note.textContent = 'Fakty pochodzą z cudzych stron – przed wklejeniem do wpisu zweryfikuj je u źródła.'
+        + (analysis.model ? ` Model: ${analysis.model}.` : '');
+      nodes.push(note);
+    } else if (analysis.rivals?.some((row: any) => !row.error)) {
+      const empty = document.createElement('p');
+      empty.className = 'ed-serp-empty';
+      empty.textContent = 'Model nie znalazł konkretów, których nie mielibyśmy w tekście.';
+      nodes.push(empty);
+    }
+
+    host.replaceChildren(...nodes);
+    host.hidden = false;
+    renderScore();
+  }
+
+  const rivalsBusy = (busy: boolean, label?: string) => {
+    const button = $<HTMLButtonElement>('[data-ed-rivals-run]')!;
+    button.disabled = busy || !rivalUrls().length;
+    button.textContent = busy ? (label ?? 'czytam strony…') : 'Przeczytaj konkurencję';
+  };
+
+  const rivalsError = (message: string | null) => {
+    const node = $('[data-ed-rivals-error]')!;
+    node.textContent = message ?? '';
+    node.hidden = !message;
+  };
+
+  async function loadRivals() {
+    try {
+      const data = await api(`/api/cw/rivals/${domain}/${entry.post_id}`);
+      if (data.status === 'running') { rivalsBusy(true, data.stage_label); pollRivals(); return; }
+      if (data.status === 'error') rivalsError(data.error ?? 'Poprzedni odczyt zakończył się błędem.');
+      renderRivals(data.analysis ?? null);
+    } catch {
+      /* brak zapisanego odczytu nie jest błędem */
+    }
+  }
+
+  /* Każde żądanie przesuwa analizę o jeden krok (pobranie strony trwa
+     kilkanaście sekund), więc ponawiamy aż do `done` – jak przy SERP-ie. */
+  async function pollRivals(attempt = 0) {
+    if (attempt > 40) {
+      rivalsBusy(false);
+      rivalsError('Odczyt trwa dłużej niż zwykle. Kliknij „Przeczytaj konkurencję”, aby dokończyć.');
+      return;
+    }
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+    try {
+      const data = await api(`/api/cw/rivals/${domain}/${entry.post_id}`, {
+        method: 'POST',
+        body: JSON.stringify({
+          our_url: entry.url,
+          rivals: rivalUrls(),
+          model: $<HTMLInputElement>('[data-ed-model-writer]')?.value.trim() || undefined,
+        }),
+      });
+      if (data.status === 'running') { rivalsBusy(true, data.stage_label); pollRivals(attempt + 1); return; }
+      rivalsBusy(false);
+      if (data.status === 'error') { rivalsError(data.error ?? 'Odczyt nie powiódł się.'); return; }
+      renderRivals(data.analysis ?? null);
+    } catch (err) {
+      rivalsBusy(false);
+      rivalsError(err instanceof Error ? err.message : 'Nie udało się odczytać wyniku.');
+    }
+  }
+
+  async function runRivals(force = false) {
+    if (!rivalUrls().length) {
+      rivalsError('Najpierw sprawdź SERP – stamtąd biorą się adresy konkurentów.');
+      return;
+    }
+    rivalsError(null);
+    rivalsBusy(true);
+    try {
+      const data = await api(`/api/cw/rivals/${domain}/${entry.post_id}${force ? '?force=1' : ''}`, {
+        method: 'POST',
+        body: JSON.stringify({
+          our_url: entry.url,
+          rivals: rivalUrls(),
+          model: $<HTMLInputElement>('[data-ed-model-writer]')?.value.trim() || undefined,
+        }),
+      });
+      if (data.status === 'running') { rivalsBusy(true, data.stage_label); pollRivals(); return; }
+      rivalsBusy(false);
+      renderRivals(data.analysis ?? null);
+    } catch (err) {
+      rivalsBusy(false);
+      rivalsError(err instanceof Error ? err.message : 'Nie udało się przeczytać stron konkurencji.');
+    }
+  }
+
+  $('[data-ed-rivals-run]')?.addEventListener('click', (event) => {
+    runRivals((event as MouseEvent).shiftKey);
+  });
+
   $('[data-ed-serp-run]')?.addEventListener('click', (event) => {
     // Shift = wymuszenie świeżego przejazdu mimo zapisanego wyniku.
     runSerp((event as MouseEvent).shiftKey);
@@ -1836,6 +2057,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     loadContent();
     loadLatestJob();
     loadSerp();
+    loadRivals();
   });
 </script>
 
@@ -2164,6 +2386,31 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-serp .ed-serp-badge.missing { color: var(--status-err-fg); background: var(--status-err-bg); }
   .ed-serp .ed-serp-badge.weak { color: var(--status-warn-fg); background: var(--status-warn-bg); }
   .ed-serp .ed-serp-badge.covered { color: var(--status-ok); background: var(--status-ok-bg); }
+
+  /* ----- treść konkurencji ----- */
+  .ed-rivals .ed-rival-lengths { display: grid; gap: 1px; margin-top: 16px;
+    background: var(--hairline-soft); border: 1px solid var(--hairline-soft); }
+  .ed-rivals .ed-rival-len { display: grid; grid-template-columns: minmax(0, 220px) 120px minmax(0, 1fr);
+    gap: 14px; align-items: baseline; padding: 9px 12px; background: var(--bg-surface-1); font-size: .8rem; }
+  .ed-rivals .ed-rival-len.ours { background: var(--accent-blue-soft); }
+  .ed-rivals .ed-rival-len.median { background: var(--bg-surface-2); }
+  .ed-rivals .ed-rival-name { color: var(--ink); font-weight: 600; overflow: hidden;
+    text-overflow: ellipsis; white-space: nowrap; }
+  .ed-rivals .ed-rival-len b { font-family: var(--font-display); font-variant-numeric: tabular-nums; }
+  .ed-rivals .ed-rival-len small { color: var(--ink-faint); font-size: .72rem; overflow: hidden;
+    text-overflow: ellipsis; white-space: nowrap; }
+
+  .ed-rivals .ed-fact-list { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 10px; }
+  .ed-rivals .ed-fact-list li { padding: 10px 12px; border: 1px solid var(--hairline-soft);
+    border-radius: 2px; background: var(--bg-surface-2); }
+  .ed-rivals .ed-fact-head { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; }
+  .ed-rivals .ed-fact-kind { padding: 1px 8px; border-radius: 999px; background: var(--bg-surface-3);
+    color: var(--ink-faint); font-size: .64rem; font-weight: 700; letter-spacing: .04em;
+    text-transform: uppercase; }
+  .ed-rivals .ed-fact-text { flex: 1; min-width: 240px; color: var(--ink); font-size: .85rem; line-height: 1.5; }
+  .ed-rivals .ed-fact-meta { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 5px;
+    color: var(--ink-faint); font-size: .74rem; }
+  .ed-rivals .ed-fact-meta a { color: var(--accent-blue); }
 
   /* ----- porada eksperta (DOM z JS) ----- */
   .ed-expert-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }

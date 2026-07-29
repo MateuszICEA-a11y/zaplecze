@@ -13,6 +13,7 @@
  */
 
 import { generateExpertQuote } from './cw-expert.js';
+import { handleRivals } from './cw-rivals.js';
 import { handleSerpGap } from './cw-serp.js';
 import { handleUsage } from './cw-usage.js';
 
@@ -850,6 +851,21 @@ export async function routeContentWatcher(request, env, { beforeAuth = false, ct
   }
 
   if (url.pathname === '/api/cw/usage') return handleUsage(request, env);
+
+  const rivalsMatch = url.pathname.match(/^\/api\/cw\/rivals\/([a-z0-9.-]{1,253})\/(\d{1,10})\/?$/i);
+  if (rivalsMatch) {
+    if (request.method !== 'GET' && request.method !== 'POST') {
+      return json({ error: 'Dozwolone metody: GET, POST.' }, 405);
+    }
+    if (request.method === 'POST' && !checkMutationOrigin(request)) {
+      return json({ error: 'Żądanie odrzucone.' }, 403);
+    }
+    const [, domain, postId] = rivalsMatch;
+    if (!contentDomains(env).has(domain.toLowerCase())) {
+      return json({ error: 'Domena spoza CW_DOMAINS.' }, 400);
+    }
+    return handleRivals(request, env, domain.toLowerCase(), Number.parseInt(postId, 10), ctx);
+  }
 
   const serpMatch = url.pathname.match(/^\/api\/cw\/serp\/([a-z0-9.-]{1,253})\/(\d{1,10})\/?$/i);
   if (serpMatch) {
