@@ -39,6 +39,8 @@ jobs:
       - name: Run collector
         env:
           SENUTO_API_KEY: ${{ secrets.SENUTO_API_KEY }}
+          # Tylko do alertu o końcówce pakietu (saldo /v1/api-key/balance).
+          SERPDATA_API_KEY: ${{ secrets.SERPDATA_API_KEY }}
           AHREFS_API_KEY: ${{ secrets.AHREFS_API_KEY }}
           DATAFORSEO_LOGIN: ${{ secrets.DATAFORSEO_LOGIN }}
           DATAFORSEO_PASSWORD: ${{ secrets.DATAFORSEO_PASSWORD }}

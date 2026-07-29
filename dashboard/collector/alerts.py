@@ -4,12 +4,17 @@ Progi w domains.yaml (global.alerts); mail leci raz na przebieg (cron 1×/dzień
 dopóki wartość jest poniżej progu. Odbiorcy i webhooki są w global.alerts.
 Nadawca jak w lead-gen widocznosc.ai (domena zweryfikowana w Resend).
 """
+import base64
 import json
 import sys
+import time
 import urllib.request
 
 RESEND_URL = "https://api.resend.com/emails"
 FROM = "Dashboard zaplecza <formularz@widocznosc.ai>"
+SERPDATA_BALANCE = "https://api.serpdata.io/v1/api-key/balance"
+# Bez własnego User-Agenta WAF SerpData odbija żądanie z 403.
+USER_AGENT = "ICEA-DashboardCollector/1.0"
 
 
 def _value(sources: dict, source: str, field: str):
@@ -37,6 +42,45 @@ def _post_json(url: str, payload: dict, headers: dict | None = None) -> None:
         resp.read()
 
 
+def senuto_days_left(token: str, now: float | None = None) -> int | None:
+    """Ile dni zostało do wygaśnięcia JWT Senuto (`exp`), bez weryfikacji podpisu.
+
+    Ta sama arytmetyka co w Workerze (app/cw-usage.js) – token żyje ~31 dni,
+    a rotacja jest ręczna, więc trzeba o niej przypomnieć przed terminem.
+    """
+    parts = str(token or "").split(".")
+    if len(parts) != 3:
+        return None
+    try:
+        payload_raw = parts[1]
+        payload_raw += "=" * (-len(payload_raw) % 4)
+        payload = json.loads(base64.urlsafe_b64decode(payload_raw))
+        exp = payload.get("exp")
+        if not isinstance(exp, (int, float)):
+            return None
+    except Exception:  # noqa: BLE001 – zepsuty token traktujemy jak brak daty
+        return None
+    return int((exp - (now if now is not None else time.time())) // 86_400)
+
+
+def serpdata_left(api_key: str) -> float | None:
+    """Pozostałe zapytania w pakiecie SerpData (`left` przychodzi jako łańcuch)."""
+    req = urllib.request.Request(
+        SERPDATA_BALANCE,
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Accept": "application/json",
+            "User-Agent": USER_AGENT,
+        },
+    )
+    with urllib.request.urlopen(req, timeout=20) as resp:
+        data = json.loads(resp.read())
+    try:
+        return float(data["left"])
+    except (KeyError, TypeError, ValueError):
+        return None
+
+
 def check_credit_alerts(global_sources: dict, alerts_cfg: dict, env: dict) -> None:
     problems: list[str] = []
 
@@ -49,6 +93,31 @@ def check_credit_alerts(global_sources: dict, alerts_cfg: dict, env: dict) -> No
     or_left = _value(global_sources, "openrouter", "remaining")
     if isinstance(or_min, (int, float)) and isinstance(or_left, (int, float)) and or_left < or_min:
         problems.append(f"OpenRouter: zostało {or_left:.2f} $ (próg: {or_min} $)")
+
+    # Senuto i SerpData nie idą przez snapshoty collectora – termin tokenu
+    # czytamy z samego JWT, a saldo pakietu prosto z API (jedno wywołanie).
+    senuto_min = alerts_cfg.get("senuto_days_left_min")
+    if isinstance(senuto_min, (int, float)) and env.get("SENUTO_API_KEY", "").strip():
+        days = senuto_days_left(env["SENUTO_API_KEY"].strip())
+        if days is None:
+            print("  [alerts] Senuto: nie odczytałem terminu z tokenu", file=sys.stderr)
+        elif days < 0:
+            problems.append(f"Senuto: token wygasł {abs(days)} dni temu – wymagana ręczna rotacja w Senuto")
+        elif days <= senuto_min:
+            problems.append(
+                f"Senuto: token wygasa za {days} dni – wymagana ręczna rotacja w Senuto "
+                f"(próg: {senuto_min:.0f} dni)"
+            )
+
+    serp_min = alerts_cfg.get("serpdata_min_left")
+    if isinstance(serp_min, (int, float)) and env.get("SERPDATA_API_KEY", "").strip():
+        try:
+            left = serpdata_left(env["SERPDATA_API_KEY"].strip())
+        except Exception as err:  # noqa: BLE001 – saldo nie może wywalić collectora
+            left = None
+            print(f"  [alerts] SerpData: odczyt salda nie powiódł się: {err}", file=sys.stderr)
+        if isinstance(left, (int, float)) and left <= serp_min:
+            problems.append(f"SerpData: zostało {left:.0f} zapytań (próg: {serp_min:.0f})")
 
     if not problems:
         print("  [alerts] progi kredytów OK")

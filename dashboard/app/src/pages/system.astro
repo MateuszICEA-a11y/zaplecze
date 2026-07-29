@@ -13,6 +13,8 @@ const globalLatest = latestSnapshot('_global');
 const alerts = (globalConfig.alerts ?? {}) as Record<string, unknown>;
 const openrouterMin = typeof alerts.openrouter_min_usd === 'number' ? alerts.openrouter_min_usd : 20;
 const smsMin = typeof alerts.sms_min === 'number' ? alerts.sms_min : 20;
+const senutoDaysMin = typeof alerts.senuto_days_left_min === 'number' ? alerts.senuto_days_left_min : null;
+const serpdataMinLeft = typeof alerts.serpdata_min_left === 'number' ? alerts.serpdata_min_left : null;
 const list = (value: unknown): string[] =>
   typeof value === 'string' ? [value] : Array.isArray(value) ? value.map(String).filter(Boolean) : [];
 const alertEmails = list(alerts.emails).length ? list(alerts.emails) : list(alerts.email);
@@ -307,7 +309,12 @@ const pipelineRows = PIPELINE.map((definition) => {
       </article>
       <article class="alert-card thresholds">
         <div class="alert-title"><span class="service-logo threshold">!</span><div><b>Progi wysyłki</b><small><code>dashboard/domains.yaml</code></small></div></div>
-        <dl><div><dt>OpenRouter</dt><dd>${fmtNum(openrouterMin, 0)}</dd></div><div><dt>SMSAPI</dt><dd>{fmtInt(smsMin)} SMS</dd></div></dl>
+        <dl>
+          <div><dt>OpenRouter</dt><dd>${fmtNum(openrouterMin, 0)}</dd></div>
+          <div><dt>SMSAPI</dt><dd>{fmtInt(smsMin)} SMS</dd></div>
+          {senutoDaysMin !== null && <div><dt>Senuto · token</dt><dd>{senutoDaysMin === 1 ? '1 dzień' : `${fmtInt(senutoDaysMin)} dni`} przed rotacją</dd></div>}
+          {serpdataMinLeft !== null && <div><dt>SerpData</dt><dd>{fmtInt(serpdataMinLeft)} zapytań</dd></div>}
+        </dl>
         <p>Zmiana w YAML zacznie obowiązywać w następnym dziennym przebiegu collectora.</p>
       </article>
     </div>
@@ -573,5 +580,18 @@ const pipelineRows = PIPELINE.map((definition) => {
     .balance-sub { flex-direction: column; gap: 3px; }
     .pipeline-grid { grid-template-columns: 1fr; }
     .alert-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<!-- Jednostki w kafelkach Senuto/SerpData wstawia skrypt, więc <small> nie
+     dostaje atrybutu data-astro-cid i scoped `.balance-value small` go omija.
+     Ta sama typografia, tyle że globalnie i tylko dla tych dwóch kafelków. -->
+<style is:global>
+  [data-senuto-days] small,
+  [data-serpdata-value] small {
+    font-size: .4em;
+    color: var(--ink-faint);
+    font-weight: 500;
+    margin-left: 6px;
   }
 </style>
