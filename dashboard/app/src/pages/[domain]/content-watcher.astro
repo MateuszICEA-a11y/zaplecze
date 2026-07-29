@@ -256,13 +256,25 @@ const baseline = items.filter((item) => item.hash_baseline).length;
     <h2>Stan treści</h2>
     <span class="section-meta">katalog i scoring na {fmtDate(asOf)}</span>
   </div>
-  <div class="kwrap rgrid cw-kpis">
-    <StatCard label="Artykuły" value={items.length} emptyDeltaLabel="w katalogu treści" hero />
-    <StatCard label="Kandydaci do oceny" value={candidates} emptyDeltaLabel="ręczna kwalifikacja" />
-    <StatCard label="Z sygnałem GSC" value={withTraffic} emptyDeltaLabel="kliknięcia lub wyświetlenia" />
-    <StatCard label={`Młodsze niż ${minAgeDays} dni`} value={recent} emptyDeltaLabel="okres ochronny" />
-    <StatCard label="Poza indeksem" value={notIndexed} emptyDeltaLabel="wymaga osobnej diagnozy" goodWhen="down" />
-    <StatCard label="Bez pomiaru" value={noData} emptyDeltaLabel="brak danych GSC do oceny" goodWhen="down" />
+  <div class="kwrap rgrid cw-kpis" data-cw-kpis>
+    <button type="button" class="cw-kpi on" data-filter="all" aria-pressed="true">
+      <StatCard label="Artykuły" value={items.length} emptyDeltaLabel="w katalogu treści" hero />
+    </button>
+    <button type="button" class="cw-kpi" data-filter="candidate" aria-pressed="false">
+      <StatCard label="Kandydaci do oceny" value={candidates} emptyDeltaLabel="ręczna kwalifikacja" />
+    </button>
+    <button type="button" class="cw-kpi" data-filter="traffic" aria-pressed="false">
+      <StatCard label="Z sygnałem GSC" value={withTraffic} emptyDeltaLabel="kliknięcia lub wyświetlenia" />
+    </button>
+    <button type="button" class="cw-kpi" data-filter="recent" aria-pressed="false">
+      <StatCard label={`Młodsze niż ${minAgeDays} dni`} value={recent} emptyDeltaLabel="okres ochronny" />
+    </button>
+    <button type="button" class="cw-kpi" data-filter="not-indexed" aria-pressed="false">
+      <StatCard label="Poza indeksem" value={notIndexed} emptyDeltaLabel="wymaga osobnej diagnozy" goodWhen="down" />
+    </button>
+    <button type="button" class="cw-kpi" data-filter="no-data" aria-pressed="false">
+      <StatCard label="Bez pomiaru" value={noData} emptyDeltaLabel="brak danych GSC do oceny" goodWhen="down" />
+    </button>
   </div>
 
   <div class="section-head cw-list-head">
@@ -280,12 +292,13 @@ const baseline = items.filter((item) => item.hash_baseline).length;
 
   <div class="cw-controls">
     <div class="fchips" data-cw-filters>
-      <button type="button" class="fchip on" data-status="all">Wszystkie <span>{items.length}</span></button>
-      <button type="button" class="fchip" data-status="candidate">Kandydaci <span>{candidates}</span></button>
-      <button type="button" class="fchip" data-status="monitor">Monitoruj</button>
-      <button type="button" class="fchip" data-status="recent">Za świeże <span>{recent}</span></button>
-      <button type="button" class="fchip" data-status="not-indexed">Poza indeksem <span>{notIndexed}</span></button>
-      <button type="button" class="fchip" data-status="no-data">Bez pomiaru <span>{noData}</span></button>
+      <button type="button" class="fchip on" data-filter="all">Wszystkie <span>{items.length}</span></button>
+      <button type="button" class="fchip" data-filter="candidate">Kandydaci <span>{candidates}</span></button>
+      <button type="button" class="fchip" data-filter="monitor">Monitoruj</button>
+      <button type="button" class="fchip" data-filter="traffic">Z sygnałem GSC <span>{withTraffic}</span></button>
+      <button type="button" class="fchip" data-filter="recent">Za świeże <span>{recent}</span></button>
+      <button type="button" class="fchip" data-filter="not-indexed">Poza indeksem <span>{notIndexed}</span></button>
+      <button type="button" class="fchip" data-filter="no-data">Bez pomiaru <span>{noData}</span></button>
     </div>
     <label class="cw-pillar">
       <span>Filar</span>
@@ -319,7 +332,12 @@ const baseline = items.filter((item) => item.hash_baseline).length;
         <tbody>
           {
             items.map((item) => (
-              <tr data-status={item.status} data-pillar={item.pillar} data-score={item.score}>
+              <tr
+                data-status={item.status}
+                data-traffic={(item.clicks ?? 0) > 0 || (item.impressions ?? 0) > 0 ? '1' : '0'}
+                data-pillar={item.pillar}
+                data-score={item.score}
+              >
                 <td class="num cw-score-cell" data-sort={item.score} data-label="Priorytet">
                   <span class={`cw-score ${scoreClass(item.score)}`}>{item.score}</span>
                 </td>
@@ -488,21 +506,43 @@ const baseline = items.filter((item) => item.hash_baseline).length;
 
     const tableCard = document.querySelector<HTMLElement>('[data-cw-table] .table-card');
     const chips = document.querySelector<HTMLElement>('[data-cw-filters]');
+    const kpis = document.querySelector<HTMLElement>('[data-cw-kpis]');
     const pillarSelect = document.querySelector<HTMLSelectElement>('[data-cw-pillar]');
-    let activeStatus = 'all';
+    let activeFilter = 'all';
+    // „Z sygnałem GSC" nie jest statusem wiersza (status to jedna z pięciu
+    // kategorii kolejki), tylko cechą ruchu – stąd osobny data-traffic.
+    const matches = (row: HTMLTableRowElement): boolean =>
+      activeFilter === 'all' ||
+      (activeFilter === 'traffic' ? row.dataset.traffic === '1' : row.dataset.status === activeFilter);
     const refilter = () => {
       const pillar = pillarSelect?.value ?? 'all';
       tableCard?.dispatchEvent(new CustomEvent('tablecard:refilter', {
-        detail: (row: HTMLTableRowElement) =>
-          (activeStatus === 'all' || row.dataset.status === activeStatus) &&
-          (pillar === 'all' || row.dataset.pillar === pillar),
+        detail: (row: HTMLTableRowElement) => matches(row) && (pillar === 'all' || row.dataset.pillar === pillar),
       }));
     };
-    chips?.querySelectorAll<HTMLButtonElement>('button[data-status]').forEach((button) => {
+    // Karty KPI i chipsy sterują tym samym filtrem – po kliknięciu w kartę
+    // aktywny chip musi się zgadzać i odwrotnie.
+    const setFilter = (value: string) => {
+      activeFilter = value;
+      chips?.querySelectorAll<HTMLButtonElement>('button[data-filter]').forEach((item) =>
+        item.classList.toggle('on', item.dataset.filter === value),
+      );
+      kpis?.querySelectorAll<HTMLButtonElement>('button[data-filter]').forEach((item) => {
+        const on = item.dataset.filter === value;
+        item.classList.toggle('on', on);
+        item.setAttribute('aria-pressed', String(on));
+      });
+      refilter();
+    };
+    chips?.querySelectorAll<HTMLButtonElement>('button[data-filter]').forEach((button) => {
+      button.addEventListener('click', () => setFilter(button.dataset.filter ?? 'all'));
+    });
+    kpis?.querySelectorAll<HTMLButtonElement>('button[data-filter]').forEach((button) => {
       button.addEventListener('click', () => {
-        activeStatus = button.dataset.status ?? 'all';
-        chips.querySelectorAll('button').forEach((item) => item.classList.toggle('on', item === button));
-        refilter();
+        // Ponowny klik w aktywną kartę zdejmuje filtr – inaczej z „Poza indeksem"
+        // nie da się wrócić bez sięgania do chipsów niżej na stronie.
+        setFilter(activeFilter === button.dataset.filter ? 'all' : button.dataset.filter ?? 'all');
+        document.querySelector('[data-cw-table]')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
     pillarSelect?.addEventListener('change', refilter);
@@ -520,6 +560,12 @@ const baseline = items.filter((item) => item.hash_baseline).length;
     line-height: 1.55;
   }
   .cw-kpis { grid-template-columns: 1.35fr repeat(4, 1fr); margin-bottom: 28px; }
+  /* Karta KPI jako przycisk filtra: `all: unset` zdejmuje wygląd buttona,
+     a StatCard (scoped w komponencie) domykamy przez :global. */
+  .cw-kpi { all: unset; display: block; min-width: 0; cursor: pointer; }
+  .cw-kpi > :global(.stat-card) { height: 100%; }
+  .cw-kpi:focus-visible > :global(.stat-card) { outline: 2px solid var(--accent-blue); outline-offset: 2px; }
+  .cw-kpi.on > :global(.stat-card) { border-color: var(--accent-blue); background: var(--accent-blue-soft); }
   .cw-list-head { align-items: flex-end; }
   .cw-list-head > div:first-child { display: flex; flex-direction: column; gap: 5px; }
   .cw-automation { display: flex; align-items: center; gap: 9px; color: var(--ink-faint); font-size: .76rem; }
