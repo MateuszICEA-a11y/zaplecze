@@ -84,6 +84,81 @@ class TestSections(unittest.TestCase):
         self.assertEqual(sec.detect_conflicts(rows, taken), [{"slot": 3, "reason": "slot_taken"}])
 
 
+class TestRenumeracja(unittest.TestCase):
+    """Nowa sekcja wchodzi za kotwicę (after_slot), dalsze sekcje jadą w dół
+    jako `move` – zamiast lądować po „Podsumowaniu" w pierwszym wolnym slocie."""
+
+    ACF_CIAGLE = {
+        "page_title_h2_1": "Czym jest błąd 403", "page_text_1": "<p>Serwer odmawia dostępu.</p>",
+        "page_title_h2_2": "Jak go naprawić", "page_text_2": "<p>Sprawdź uprawnienia.</p>",
+        "page_title_h2_3": "Podsumowanie", "page_text_3": "<p>Wystarczy poprawić uprawnienia.</p>",
+    }
+
+    def test_nowa_sekcja_wchodzi_za_kotwice_a_reszta_jedzie_w_dol(self):
+        snapshot = sec.snapshot(self.ACF_CIAGLE)
+        proposals, moves = sec.renumber(snapshot, {
+            4: {"title": "Błąd 403 w Search Console", "text": "<p>Nowa.</p>", "after_slot": 1},
+        })
+        self.assertEqual(proposals[2]["title"], "Błąd 403 w Search Console")
+        self.assertEqual(moves, {3: 2, 4: 3})
+        self.assertEqual(proposals[3]["title"], "Jak go naprawić")
+        self.assertEqual(proposals[4]["title"], "Podsumowanie")
+
+    def test_dziura_w_slotach_wchlania_przesuniecie(self):
+        # Zajęte 1,2,5 – nowa sekcja za slotem 2 wchodzi w wolny slot 3 bez ruszania 5.
+        proposals, moves = sec.renumber(sec.snapshot(ACF), {
+            6: {"title": "Nowy wątek", "text": "<p>Treść.</p>", "after_slot": 2},
+        })
+        self.assertEqual(list(proposals), [3])
+        self.assertEqual(moves, {})
+
+    def test_bez_kotwicy_zostaje_na_koncu(self):
+        proposals, moves = sec.renumber(sec.snapshot(ACF), {
+            6: {"title": "Nowy wątek", "text": "<p>Treść.</p>"},
+        })
+        self.assertEqual(list(proposals), [6])
+        self.assertEqual(moves, {})
+
+    def test_przesuniecie_zachowuje_propozycje_rewrite_dla_sekcji(self):
+        snapshot = sec.snapshot(self.ACF_CIAGLE)
+        proposals, moves = sec.renumber(snapshot, {
+            2: {"title": "Jak naprawić błąd 403 krok po kroku", "text": "<p>Rozbudowana.</p>"},
+            4: {"title": "Nowa", "text": "<p>N.</p>", "after_slot": 1},
+        })
+        # Sekcja 2 przesunięta do 3 razem ze swoją przepisaną treścią.
+        self.assertEqual(proposals[3], {"title": "Jak naprawić błąd 403 krok po kroku",
+                                        "text": "<p>Rozbudowana.</p>"})
+        self.assertEqual(moves[3], 2)
+
+    def test_wiersz_move_ma_diff_wzgledem_zrodla_i_hash_celu(self):
+        snapshot = sec.snapshot(self.ACF_CIAGLE)
+        proposals, moves = sec.renumber(snapshot, {
+            4: {"title": "Nowa", "text": "<p>N.</p>", "after_slot": 1},
+        })
+        rows = {row["slot"]: row for row in sec.build_sections(snapshot, proposals, moves)}
+        # Move 2→3: diff liczony względem treści źródłowej (brak zmian treści)…
+        self.assertEqual(rows[3]["operation"], "move")
+        self.assertEqual(rows[3]["moved_from"], 2)
+        self.assertEqual(rows[3]["diff"]["stats"]["added"], 0)
+        # …a hash konfliktowy z celu (slot 3 = stare „Podsumowanie").
+        self.assertEqual(rows[3]["text_hash_before"],
+                         sec.content_hash(self.ACF_CIAGLE["page_text_3"]))
+        # Move 3→4 w dotąd wolny slot: hash None → sprawdzany jak insert.
+        self.assertIsNone(rows[4]["text_hash_before"])
+        self.assertEqual(sec.detect_conflicts(list(rows.values()), self.ACF_CIAGLE), [])
+        taken = {**self.ACF_CIAGLE, "page_text_4": "<p>Redakcja coś dopisała.</p>"}
+        self.assertIn({"slot": 4, "reason": "slot_taken"},
+                      sec.detect_conflicts(list(rows.values()), taken))
+
+    def test_brak_miejsca_wraca_do_starego_ukladu(self):
+        acf = {f"page_title_h2_{n}": f"S{n}" for n in range(1, 31)} | \
+              {f"page_text_{n}": f"<p>t{n}</p>" for n in range(1, 31)}
+        original = {31: {"title": "Nowa", "text": "<p>N.</p>", "after_slot": 1}}
+        proposals, moves = sec.renumber(sec.snapshot(acf), original)
+        self.assertEqual(proposals, original)
+        self.assertEqual(moves, {})
+
+
 class TestExtract(unittest.TestCase):
     HTML = """
     <html><body>

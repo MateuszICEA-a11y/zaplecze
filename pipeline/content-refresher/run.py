@@ -347,11 +347,22 @@ class Pipeline:
             sections=payload_sections,
             free_slots=context["free_slots"][:MAX_NEW_SECTIONS],
         )
+        snapshot_slots = {item["slot"] for item in context["snapshot"]}
         proposals = {}
         for row in (result["data"].get("sections") or []):
             slot = int(row.get("slot") or 0)
-            if 1 <= slot <= 30 and (row.get("text") or "").strip():
-                proposals[slot] = {"title": row.get("title"), "text": row.get("text")}
+            if not (1 <= slot <= 30 and (row.get("text") or "").strip()):
+                continue
+            proposals[slot] = {"title": row.get("title"), "text": row.get("text")}
+            if slot not in snapshot_slots:
+                # Kotwica pozycji nowej sekcji – finalny numer nada renumeracja
+                # w kroku diff, po wszystkich ulepszeniach.
+                try:
+                    after = int(row.get("after_slot") or 0)
+                except (TypeError, ValueError):
+                    after = 0
+                if after in snapshot_slots:
+                    proposals[slot]["after_slot"] = after
         self.context["proposals"] = proposals
         return {"payload": {
             "changed_slots": sorted(proposals),
@@ -384,7 +395,9 @@ class Pipeline:
         titles = self.context.get("new_titles") or {}
         for slot, text in texts.items():
             if text and text != self._current_text(slot):
+                # {**...} zachowuje np. `after_slot` nowej sekcji z kroku rewrite.
                 proposals[slot] = {
+                    **proposals.get(slot, {}),
                     "title": proposals.get(slot, {}).get("title") or titles.get(slot),
                     "text": text,
                 }
@@ -431,7 +444,7 @@ class Pipeline:
             )
             proposals = self.context.setdefault("proposals", {})
             base = self._current_text(slot)
-            proposals[slot] = {"title": proposals.get(slot, {}).get("title"), "text": f"{base}\n{block}"}
+            proposals[slot] = {**proposals.get(slot, {}), "text": f"{base}\n{block}"}
         return {"payload": data, "model": result["model"], "prompt_version": version, "cost": result["usage"]}
 
     def step_sources(self):
@@ -483,10 +496,12 @@ class Pipeline:
         }, "model": result["model"], "prompt_version": version, "cost": result["usage"]}
 
     def step_diff(self):
-        rows = sec.build_sections(self.context["snapshot"], self.context.get("proposals") or {})
+        proposals, moves = sec.renumber(self.context["snapshot"], self.context.get("proposals") or {})
+        rows = sec.build_sections(self.context["snapshot"], proposals, moves)
         self.context["sections"] = rows
         return {"payload": {
             "changed": len(rows),
+            "moves": {str(target): source for target, source in moves.items()},
             "stats": {row["slot"]: row["diff"]["stats"] for row in rows},
         }}
 

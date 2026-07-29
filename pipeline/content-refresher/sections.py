@@ -88,37 +88,104 @@ def diff_stats(opcodes: list[dict]) -> dict:
     }
 
 
-def build_sections(before: list[dict], proposals: dict[int, dict]) -> list[dict]:
+def renumber(before: list[dict], proposals: dict[int, dict]) -> tuple[dict[int, dict], dict[int, int]]:
+    """Finalny układ artykułu: nowe sekcje wchodzą ZA wskazaną kotwicą.
+
+    Wolne sloty ACF leżą zawsze za treścią, więc bez renumeracji każda nowa
+    sekcja lądowała po „Podsumowaniu". Tu nowa sekcja (z `after_slot`) wchodzi
+    w slot tuż za kotwicą, a dalsze sekcje przesuwają się w dół – jako
+    operacja `move`, którą edytor pokaże bez udawania, że to zmiana treści.
+
+    Zwraca (propozycje z finalnymi slotami, {slot_docelowy: slot_źródłowy}).
+    Nowe sekcje bez poprawnej kotwicy trafiają na koniec (stare zachowanie).
+    Gdy przesunięciom zabrakłoby slotów (>30), zwraca wejście bez zmian –
+    lepszy stary układ niż utrata sekcji.
+    """
+    occupied = [item["slot"] for item in before]
+    occupied_set = set(occupied)
+    inserts = {slot: proposal for slot, proposal in proposals.items() if slot not in occupied_set}
+    anchored: dict[int, list[int]] = {}
+    tail = []
+    for slot in sorted(inserts):
+        after = inserts[slot].get("after_slot")
+        if isinstance(after, int) and after in occupied_set:
+            anchored.setdefault(after, []).append(slot)
+        else:
+            tail.append(slot)
+
+    order: list[tuple[str, int]] = []
+    for slot in occupied:
+        order.append(("old", slot))
+        order.extend(("new", new_slot) for new_slot in anchored.get(slot, ()))
+    order.extend(("new", slot) for slot in tail)
+
+    out: dict[int, dict] = {}
+    moves: dict[int, int] = {}
+    by_slot = {item["slot"]: item for item in before}
+    next_free = 1
+    for kind, slot in order:
+        target = slot if kind == "old" and slot >= next_free else next_free
+        if target > ACF_SLOTS:
+            return proposals, {}
+        next_free = target + 1
+        proposal = proposals.get(slot)
+        if kind == "new":
+            out[target] = {k: v for k, v in proposal.items() if k != "after_slot"}
+        elif target != slot:
+            moves[target] = slot
+            source = by_slot[slot]
+            out[target] = {
+                "title": (proposal or {}).get("title") or source["title"],
+                "text": (proposal or {}).get("text") or source["text"],
+            }
+        elif proposal:
+            out[slot] = {k: v for k, v in proposal.items() if k != "after_slot"}
+    return out, moves
+
+
+def build_sections(before: list[dict], proposals: dict[int, dict],
+                   moves: dict[int, int] | None = None) -> list[dict]:
     """Łączy snapshot z propozycjami w wiersze `job_sections`.
 
     `proposals`: {slot: {"title": ..., "text": ...}}. Slot spoza snapshotu to
     nowa sekcja (`operation: insert`). Sekcje bez realnej zmiany są pomijane –
     diff pusty w UI to szum, nie informacja.
+
+    `moves`: {slot_docelowy: slot_źródłowy} z `renumber()`. Wiersz `move`
+    pokazuje diff względem treści ŹRÓDŁOWEJ sekcji (to jest zmiana, którą
+    człowiek ocenia), ale `text_hash_before` liczy z DOCELOWEGO slotu – bo to
+    jego treść zostanie nadpisana i to ją sprawdzamy przed kopiowaniem do CMS-a.
+    Docelowy slot dotąd wolny ma `text_hash_before = None`.
     """
+    moves = moves or {}
     by_slot = {item["slot"]: item for item in before}
     rows = []
     for slot in sorted(proposals):
         proposal = proposals[slot]
-        source = by_slot.get(slot)
+        moved_from = moves.get(slot)
+        source = by_slot.get(moved_from) if moved_from else by_slot.get(slot)
+        target_old = by_slot.get(slot)
         title_before = source["title"] if source else ""
         text_before = source["text"] if source else ""
         title_after = (proposal.get("title") or title_before).strip()
         text_after = (proposal.get("text") or "").strip()
         if not text_after:
             continue
-        if strip_html(text_after) == strip_html(text_before) and title_after == title_before:
+        if not moved_from and strip_html(text_after) == strip_html(text_before) and title_after == title_before:
             continue
         opcodes = diff_tokens(text_before, text_after)
         rows.append({
             "slot": slot,
             "title_field": SLOT_TITLE.format(n=slot),
             "text_field": SLOT_TEXT.format(n=slot),
-            "operation": "update" if source else "insert",
+            "operation": "move" if moved_from else ("update" if source else "insert"),
+            "moved_from": moved_from,
             "title_before": title_before,
             "title_after": title_after,
             "text_before": text_before,
             "text_after": text_after,
-            "text_hash_before": content_hash(text_before),
+            "text_hash_before": (content_hash(target_old["text"]) if target_old else None)
+            if moved_from else content_hash(text_before),
             "diff": {"opcodes": opcodes, "stats": diff_stats(opcodes)},
         })
     return rows
@@ -135,7 +202,9 @@ def detect_conflicts(sections: list[dict], current_acf: dict) -> list[dict]:
     for section in sections:
         slot = section["slot"]
         current = (current_acf.get(SLOT_TEXT.format(n=slot)) or "").strip()
-        if section.get("operation") == "insert":
+        operation = section.get("operation")
+        # `move` w dotąd wolny slot sprawdzamy jak insert: slot ma być nadal wolny.
+        if operation == "insert" or (operation == "move" and not section.get("text_hash_before")):
             if current or (current_acf.get(SLOT_TITLE.format(n=slot)) or "").strip():
                 conflicts.append({"slot": slot, "reason": "slot_taken"})
             continue
