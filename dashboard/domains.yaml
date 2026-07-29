@@ -43,10 +43,9 @@ domains:
       enabled: true
       content_dir: portals/widocznosc.ai/src/content/blog
       base_url: https://widocznosc.ai
-      # Młoda domena: krótszy okres ochronny i niższy próg kwalifikacji niż
-      # domyślne 180/40, bo cały blog ma kilkanaście miesięcy.
+      # Młoda domena: krótszy okres ochronny niż domyślne 90 dni, bo cały blog
+      # ma kilkanaście miesięcy.
       min_age_days: 60
-      min_score: 18
 
   - id: grupa-icea.pl
     name: grupa-icea.pl
@@ -98,10 +97,9 @@ domains:
       enabled: true
       source: wordpress # katalog z collectora zamiast plików markdown w repo
       base_url: https://www.grupa-icea.pl
-      # Dojrzała domena: rok ochrony po zmianie treści i próg 55 pkt, co daje
-      # ~80 kandydatów z 604 pozycji zamiast listy bez priorytetu.
-      min_age_days: 365
-      min_score: 55
+      # Okres ochronny po realnej zmianie treści. Rok był przesadą – wpis wraca
+      # do oceny po kwartale, a o pilności decyduje wiek × wyniki (klik./wyśw.).
+      min_age_days: 90
 
 # Źródła per konto (nie per domena) – salda kredytów.
 global:

@@ -88,9 +88,19 @@ const clamp = (value: number, min: number, max: number): number => Math.min(max,
 // i rozstrzyga remisy. Na dojrzałej domenie (458 wpisów grupa-icea.pl, 428
 // starszych niż rok) świeżość jako składowa scoringu robiła z 82% treści
 // „kandydatów", a wpis bez danych GSC wypadał wyżej niż wpis z danymi.
-const watcherCfg = (domainConfig.content_watcher ?? {}) as { min_age_days?: number; min_score?: number };
-const minAgeDays = watcherCfg.min_age_days ?? 180;
-const minScore = watcherCfg.min_score ?? 40;
+const watcherCfg = (domainConfig.content_watcher ?? {}) as { min_age_days?: number };
+const minAgeDays = watcherCfg.min_age_days ?? 90;
+
+// Przedziały wieku treści (dni od ostatniej realnej zmiany). Stałe dla obu
+// domen – „3 / 6 / 12 miesięcy" to język, w którym rozmawia się o odświeżaniu.
+const AGE_BUCKETS = [
+  { key: 'm0-3', label: 'Do 3 mies.', hint: 'okres ochronny', from: 0, to: 90 },
+  { key: 'm3-6', label: 'Nieaktualizowane 3–6 mies.', hint: 'obserwacja', from: 90, to: 180 },
+  { key: 'm6-12', label: 'Nieaktualizowane 6–12 mies.', hint: 'do odświeżenia', from: 180, to: 365 },
+  { key: 'm12+', label: 'Nieaktualizowane ponad 12 mies.', hint: 'zaległość', from: 365, to: Infinity },
+] as const;
+const ageBucket = (days: number): string =>
+  AGE_BUCKETS.find((bucket) => days >= bucket.from && days < bucket.to)?.key ?? 'm12+';
 
 const items = catalog
   .map((content) => {
@@ -170,25 +180,17 @@ const items = catalog
     if (engagementPoints >= 3) reasons.push(`engagement ${fmtPct(ga4?.engagement_rate)}`);
 
     const indexed = indexing?.indexed ?? null;
-    const hasSignal = lossPoints >= 6 || potentialPoints >= 14;
-    // Wiek jest warunkiem wejścia, nie punktem: świeżo poprawiona treść nie
-    // wraca do kolejki, ale sam wiek nikogo do niej nie wpycha.
-    const candidate = indexed === true && ageDays >= minAgeDays && hasSignal && score >= minScore;
-    const status =
-      ageDays < minAgeDays
-        ? 'recent'
-        : indexed === false
-          ? 'not-indexed'
-          : !measured
-            ? 'no-data'
-            : candidate
-              ? 'candidate'
-              : 'monitor';
+    // Stan pomiaru rozdzielony od pilności: wpis poza indeksem albo bez danych
+    // GSC nie jest „mniej pilny" – po prostu nie ma czego ważyć, idzie na
+    // osobną diagnozę.
+    const state = indexed === false ? 'not-indexed' : !measured ? 'no-data' : 'measured';
 
     return {
       ...content,
       path,
       age_days: ageDays,
+      age_bucket: ageBucket(ageDays),
+      state,
       effective_date: effectiveDate,
       indexed,
       last_crawl: indexing?.last_crawl ?? null,
@@ -209,28 +211,74 @@ const items = catalog
       score,
       parts: parts.map((part) => ({ ...part, points: Math.round(part.points * 10) / 10 })),
       reasons,
-      status,
-      candidate,
     };
-  })
-  .sort((a, b) => b.score - a.score || b.age_days - a.age_days || a.title.localeCompare(b.title, 'pl'));
+  });
 
-const candidates = items.filter((item) => item.candidate).length;
-const recent = items.filter((item) => item.status === 'recent').length;
-const notIndexed = items.filter((item) => item.status === 'not-indexed').length;
-const noData = items.filter((item) => item.status === 'no-data').length;
-const withTraffic = items.filter((item) => (item.clicks ?? 0) > 0 || (item.impressions ?? 0) > 0).length;
-const pillars = [...new Set(items.map((item) => item.pillar))].sort((a, b) => a.localeCompare(b, 'pl'));
-const detailPayload = Object.fromEntries(items.map((item) => [item.id, item]));
+// „Niski ranking" liczymy z kliknięć i wyświetleń, nie ze średniej pozycji:
+// pozycja jest średnią po frazach, więc wpis może być pierwszy na frazę bez
+// popytu i wyglądać świetnie mimo zerowego ruchu. Próg to mediana domeny –
+// bezwzględne liczby znaczą co innego na blogu 40-wpisowym i na 604 wpisach.
+const median = (values: number[]): number => {
+  if (!values.length) return 0;
+  const sorted = [...values].sort((a, b) => a - b);
+  const middle = Math.floor(sorted.length / 2);
+  return sorted.length % 2 ? sorted[middle] : (sorted[middle - 1] + sorted[middle]) / 2;
+};
+// Mediana liczona z wpisów, które mają jakikolwiek ruch. Na całym katalogu
+// wyszłaby zero (połowa treści nie ma ani jednego kliknięcia) i „ma 1 klik"
+// znaczyłoby „wyniki OK". Punktem odniesienia jest typowy wpis, który działa.
+const measuredItems = items.filter((item) => item.state === 'measured');
+const medianClicks = median(measuredItems.map((item) => item.clicks ?? 0).filter((value) => value > 0));
+const medianImpressions = median(measuredItems.map((item) => item.impressions ?? 0).filter((value) => value > 0));
+const weakTraffic = (item: { clicks: number | null; impressions: number | null }): boolean =>
+  (item.clicks ?? 0) < medianClicks && (item.impressions ?? 0) < medianImpressions;
 
-const statusLabel: Record<string, string> = {
-  candidate: 'kandydat',
-  monitor: 'monitoruj',
-  recent: 'za świeży',
+// Macierz pilności: wyniki × wiek. Słabe wyniki eskalują z wiekiem (ponad rok
+// bez zmian = krytyczny), dobre wyniki schodzą o jeden stopień – treść, która
+// dowozi ruch, nie staje się pilna tylko dlatego, że się zestarzała.
+const URGENCY_BY_AGE: Record<string, string> = { 'm12+': 'critical', 'm6-12': 'high', 'm3-6': 'normal', 'm0-3': 'low' };
+const DOWNGRADE: Record<string, string> = { critical: 'normal', high: 'low', normal: 'low', low: 'low' };
+const withUrgency = items.map((item) => {
+  const weak = weakTraffic(item);
+  const base = URGENCY_BY_AGE[item.age_bucket] ?? 'low';
+  const urgency = item.state !== 'measured' ? 'none' : weak ? base : DOWNGRADE[base];
+  return { ...item, weak_traffic: weak, urgency };
+});
+
+const URGENCY_RANK: Record<string, number> = { critical: 4, high: 3, normal: 2, low: 1, none: 0 };
+const sortedItems = withUrgency.sort(
+  (a, b) =>
+    URGENCY_RANK[b.urgency] - URGENCY_RANK[a.urgency] ||
+    b.score - a.score ||
+    b.age_days - a.age_days ||
+    a.title.localeCompare(b.title, 'pl'),
+);
+
+const byAge = Object.fromEntries(
+  AGE_BUCKETS.map((bucket) => [bucket.key, sortedItems.filter((item) => item.age_bucket === bucket.key).length]),
+);
+const byUrgency = Object.fromEntries(
+  ['critical', 'high', 'normal', 'low'].map((key) => [key, sortedItems.filter((item) => item.urgency === key).length]),
+);
+const notIndexed = sortedItems.filter((item) => item.state === 'not-indexed').length;
+const noData = sortedItems.filter((item) => item.state === 'no-data').length;
+const withTraffic = sortedItems.filter((item) => (item.clicks ?? 0) > 0 || (item.impressions ?? 0) > 0).length;
+const pillars = [...new Set(sortedItems.map((item) => item.pillar))].sort((a, b) => a.localeCompare(b, 'pl'));
+const detailPayload = Object.fromEntries(sortedItems.map((item) => [item.id, item]));
+
+const urgencyLabel: Record<string, string> = {
+  critical: 'krytyczny',
+  high: 'wysoki',
+  normal: 'normalny',
+  low: 'niski',
+  none: 'poza oceną',
+};
+const stateLabel: Record<string, string> = {
+  measured: 'w indeksie',
   'not-indexed': 'poza indeksem',
   'no-data': 'brak pomiaru',
 };
-const scoreClass = (score: number): string => (score >= 60 ? 'high' : score >= minScore ? 'medium' : 'low');
+const ageLabel: Record<string, string> = Object.fromEntries(AGE_BUCKETS.map((bucket) => [bucket.key, bucket.label]));
 
 // Katalog z CMS-a: świeżość liczona z hasha treści, nie z pola `modified`,
 // które WordPress podbija przy każdym zapisie (także masowej akcji wtyczki).
@@ -257,23 +305,38 @@ const baseline = items.filter((item) => item.hash_baseline).length;
     <span class="section-meta">katalog i scoring na {fmtDate(asOf)}</span>
   </div>
   <div class="kwrap rgrid cw-kpis" data-cw-kpis>
-    <button type="button" class="cw-kpi on" data-filter="all" aria-pressed="true">
-      <StatCard label="Artykuły" value={items.length} emptyDeltaLabel="w katalogu treści" hero />
+    <button type="button" class="cw-kpi" data-dim="age" data-filter="all" aria-pressed="false">
+      <StatCard label="Artykuły" value={sortedItems.length} emptyDeltaLabel="w katalogu treści" hero />
     </button>
-    <button type="button" class="cw-kpi" data-filter="candidate" aria-pressed="false">
-      <StatCard label="Kandydaci do oceny" value={candidates} emptyDeltaLabel="ręczna kwalifikacja" />
+    {AGE_BUCKETS.map((bucket) => (
+      <button type="button" class="cw-kpi" data-dim="age" data-filter={bucket.key} aria-pressed="false">
+        <StatCard label={bucket.label} value={byAge[bucket.key]} emptyDeltaLabel={bucket.hint} />
+      </button>
+    ))}
+  </div>
+
+  <div class="section-head">
+    <h3>Pilność odświeżenia</h3>
+    <span class="section-meta">
+      wyniki × wiek · słabe wyniki = kliknięcia i wyświetlenia z 30 dni poniżej mediany domeny
+      ({fmtInt(medianClicks)} klik. / {fmtInt(medianImpressions)} wyśw.)
+    </span>
+  </div>
+  <div class="kwrap rgrid cw-kpis cw-kpis-urgency" data-cw-kpis>
+    <button type="button" class="cw-kpi" data-dim="urgency" data-filter="critical" aria-pressed="false">
+      <StatCard label="Krytyczny" value={byUrgency.critical} emptyDeltaLabel="słabe wyniki, ponad 12 mies." goodWhen="down" />
     </button>
-    <button type="button" class="cw-kpi" data-filter="traffic" aria-pressed="false">
-      <StatCard label="Z sygnałem GSC" value={withTraffic} emptyDeltaLabel="kliknięcia lub wyświetlenia" />
+    <button type="button" class="cw-kpi" data-dim="urgency" data-filter="high" aria-pressed="false">
+      <StatCard label="Wysoki" value={byUrgency.high} emptyDeltaLabel="słabe wyniki, 6–12 mies." goodWhen="down" />
     </button>
-    <button type="button" class="cw-kpi" data-filter="recent" aria-pressed="false">
-      <StatCard label={`Młodsze niż ${minAgeDays} dni`} value={recent} emptyDeltaLabel="okres ochronny" />
+    <button type="button" class="cw-kpi" data-dim="urgency" data-filter="normal" aria-pressed="false">
+      <StatCard label="Normalny" value={byUrgency.normal} emptyDeltaLabel="słabe wyniki, 3–6 mies." />
     </button>
-    <button type="button" class="cw-kpi" data-filter="not-indexed" aria-pressed="false">
+    <button type="button" class="cw-kpi" data-dim="urgency" data-filter="low" aria-pressed="false">
+      <StatCard label="Niski" value={byUrgency.low} emptyDeltaLabel="świeże lub z ruchem" />
+    </button>
+    <button type="button" class="cw-kpi" data-dim="state" data-filter="not-indexed" aria-pressed="false">
       <StatCard label="Poza indeksem" value={notIndexed} emptyDeltaLabel="wymaga osobnej diagnozy" goodWhen="down" />
-    </button>
-    <button type="button" class="cw-kpi" data-filter="no-data" aria-pressed="false">
-      <StatCard label="Bez pomiaru" value={noData} emptyDeltaLabel="brak danych GSC do oceny" goodWhen="down" />
     </button>
   </div>
 
@@ -281,8 +344,9 @@ const baseline = items.filter((item) => item.hash_baseline).length;
     <div>
       <h2>Priorytety reoptymalizacji</h2>
       <span class="section-meta">
-        wynik 0–100 z utraty ruchu, potencjału, pokrycia fraz i zaangażowania · wiek ≥{fmtInt(minAgeDays)} dni to
-        warunek wejścia, nie punkty · kandydat od {fmtInt(minScore)} pkt · kliknij „Szczegóły”, aby zobaczyć składowe
+        pilność z macierzy wyniki × wiek · wynik 0–100 (utrata ruchu, potencjał, pokrycie fraz, zaangażowanie)
+        porządkuje wpisy w obrębie jednej pilności · okres ochronny {fmtInt(minAgeDays)} dni · kliknij „Szczegóły”,
+        aby zobaczyć składowe
       </span>
     </div>
     <div class="cw-automation" title="Automatyzacja zostanie uruchomiona po wdrożeniu kolejki i callbacków n8n">
@@ -292,13 +356,21 @@ const baseline = items.filter((item) => item.hash_baseline).length;
 
   <div class="cw-controls">
     <div class="fchips" data-cw-filters>
-      <button type="button" class="fchip on" data-filter="all">Wszystkie <span>{items.length}</span></button>
-      <button type="button" class="fchip" data-filter="candidate">Kandydaci <span>{candidates}</span></button>
-      <button type="button" class="fchip" data-filter="monitor">Monitoruj</button>
-      <button type="button" class="fchip" data-filter="traffic">Z sygnałem GSC <span>{withTraffic}</span></button>
-      <button type="button" class="fchip" data-filter="recent">Za świeże <span>{recent}</span></button>
-      <button type="button" class="fchip" data-filter="not-indexed">Poza indeksem <span>{notIndexed}</span></button>
-      <button type="button" class="fchip" data-filter="no-data">Bez pomiaru <span>{noData}</span></button>
+      <button type="button" class="fchip on" data-dim="state" data-filter="all">
+        Wszystkie <span>{sortedItems.length}</span>
+      </button>
+      <button type="button" class="fchip" data-dim="state" data-filter="traffic">
+        Z ruchem <span>{withTraffic}</span>
+      </button>
+      <button type="button" class="fchip" data-dim="state" data-filter="weak">
+        Słabe wyniki <span>{sortedItems.filter((item) => item.state === 'measured' && item.weak_traffic).length}</span>
+      </button>
+      <button type="button" class="fchip" data-dim="state" data-filter="not-indexed">
+        Poza indeksem <span>{notIndexed}</span>
+      </button>
+      <button type="button" class="fchip" data-dim="state" data-filter="no-data">
+        Bez pomiaru <span>{noData}</span>
+      </button>
     </div>
     <label class="cw-pillar">
       <span>Filar</span>
@@ -312,7 +384,7 @@ const baseline = items.filter((item) => item.hash_baseline).length;
   <div data-cw-table>
     <TableCard
       title="Artykuły"
-      count={items.length}
+      count={sortedItems.length}
       filter
       pageSize={25}
       empty="Nie znaleziono artykułów w skonfigurowanej kolekcji."
@@ -320,7 +392,7 @@ const baseline = items.filter((item) => item.hash_baseline).length;
       <table class="data-table cw-table">
         <thead>
           <tr>
-            <th class="num">Priorytet</th>
+            <th class="num">Pilność</th>
             <th>Treść</th>
             <th>Publikacja / aktualizacja</th>
             <th class="num">GSC · 30 dni</th>
@@ -331,15 +403,19 @@ const baseline = items.filter((item) => item.hash_baseline).length;
         </thead>
         <tbody>
           {
-            items.map((item) => (
+            sortedItems.map((item) => (
               <tr
-                data-status={item.status}
+                data-urgency={item.urgency}
+                data-age={item.age_bucket}
+                data-state={item.state}
+                data-weak={item.weak_traffic ? '1' : '0'}
                 data-traffic={(item.clicks ?? 0) > 0 || (item.impressions ?? 0) > 0 ? '1' : '0'}
                 data-pillar={item.pillar}
                 data-score={item.score}
               >
-                <td class="num cw-score-cell" data-sort={item.score} data-label="Priorytet">
-                  <span class={`cw-score ${scoreClass(item.score)}`}>{item.score}</span>
+                <td class="num cw-score-cell" data-sort={URGENCY_RANK[item.urgency] * 1000 + item.score} data-label="Pilność">
+                  <span class={`cw-urgency ${item.urgency}`}>{urgencyLabel[item.urgency]}</span>
+                  <small>{item.state === 'measured' ? `wynik ${item.score}/100` : stateLabel[item.state]}</small>
                 </td>
                 <td class="grow cw-content" data-label="Treść">
                   <div class="cw-title-row">
@@ -382,8 +458,11 @@ const baseline = items.filter((item) => item.hash_baseline).length;
                   <small>eng. {fmtPct(item.engagement_rate)}</small>
                 </td>
                 <td data-label="Status">
-                  <span class={`cw-status ${item.status}`}>{statusLabel[item.status]}</span>
-                  <small>{item.reasons[0] ?? 'brak silnego sygnału'}</small>
+                  <span class={`cw-status ${item.state}`}>{stateLabel[item.state]}</span>
+                  <small>
+                    {ageLabel[item.age_bucket]}
+                    {item.state === 'measured' ? (item.weak_traffic ? ' · słabe wyniki' : ' · wyniki OK') : ''}
+                  </small>
                 </td>
               </tr>
             ))
@@ -505,47 +584,58 @@ const baseline = items.filter((item) => item.hash_baseline).length;
     });
 
     const tableCard = document.querySelector<HTMLElement>('[data-cw-table] .table-card');
-    const chips = document.querySelector<HTMLElement>('[data-cw-filters]');
-    const kpis = document.querySelector<HTMLElement>('[data-cw-kpis]');
     const pillarSelect = document.querySelector<HTMLSelectElement>('[data-cw-pillar]');
-    let activeFilter = 'all';
-    // „Z sygnałem GSC" nie jest statusem wiersza (status to jedna z pięciu
-    // kategorii kolejki), tylko cechą ruchu – stąd osobny data-traffic.
-    const matches = (row: HTMLTableRowElement): boolean =>
-      activeFilter === 'all' ||
-      (activeFilter === 'traffic' ? row.dataset.traffic === '1' : row.dataset.status === activeFilter);
+    const buttons = [...document.querySelectorAll<HTMLButtonElement>('[data-cw-kpis] button[data-filter], [data-cw-filters] button[data-filter]')];
+    // Trzy niezależne wymiary filtra składane iloczynem: wiek treści, pilność
+    // i stan pomiaru. Kliknięcie karty przełącza tylko swój wymiar, więc da się
+    // zestawić np. „ponad 12 mies." × „krytyczny".
+    const active: Record<string, string> = { age: 'all', urgency: 'all', state: 'all' };
+    const matchState = (row: HTMLTableRowElement): boolean => {
+      const value = active.state;
+      if (value === 'all') return true;
+      if (value === 'traffic') return row.dataset.traffic === '1';
+      if (value === 'weak') return row.dataset.state === 'measured' && row.dataset.weak === '1';
+      return row.dataset.state === value;
+    };
     const refilter = () => {
       const pillar = pillarSelect?.value ?? 'all';
       tableCard?.dispatchEvent(new CustomEvent('tablecard:refilter', {
-        detail: (row: HTMLTableRowElement) => matches(row) && (pillar === 'all' || row.dataset.pillar === pillar),
+        detail: (row: HTMLTableRowElement) =>
+          (active.age === 'all' || row.dataset.age === active.age) &&
+          (active.urgency === 'all' || row.dataset.urgency === active.urgency) &&
+          matchState(row) &&
+          (pillar === 'all' || row.dataset.pillar === pillar),
       }));
     };
-    // Karty KPI i chipsy sterują tym samym filtrem – po kliknięciu w kartę
-    // aktywny chip musi się zgadzać i odwrotnie.
-    const setFilter = (value: string) => {
-      activeFilter = value;
-      chips?.querySelectorAll<HTMLButtonElement>('button[data-filter]').forEach((item) =>
-        item.classList.toggle('on', item.dataset.filter === value),
-      );
-      kpis?.querySelectorAll<HTMLButtonElement>('button[data-filter]').forEach((item) => {
-        const on = item.dataset.filter === value;
-        item.classList.toggle('on', on);
-        item.setAttribute('aria-pressed', String(on));
+    const paint = () => {
+      buttons.forEach((button) => {
+        const dim = button.dataset.dim ?? 'state';
+        const on = active[dim] === button.dataset.filter;
+        button.classList.toggle('on', on);
+        if (button.hasAttribute('aria-pressed')) button.setAttribute('aria-pressed', String(on));
       });
-      refilter();
     };
-    chips?.querySelectorAll<HTMLButtonElement>('button[data-filter]').forEach((button) => {
-      button.addEventListener('click', () => setFilter(button.dataset.filter ?? 'all'));
-    });
-    kpis?.querySelectorAll<HTMLButtonElement>('button[data-filter]').forEach((button) => {
+    buttons.forEach((button) => {
       button.addEventListener('click', () => {
-        // Ponowny klik w aktywną kartę zdejmuje filtr – inaczej z „Poza indeksem"
-        // nie da się wrócić bez sięgania do chipsów niżej na stronie.
-        setFilter(activeFilter === button.dataset.filter ? 'all' : button.dataset.filter ?? 'all');
-        document.querySelector('[data-cw-table]')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const dim = button.dataset.dim ?? 'state';
+        const value = button.dataset.filter ?? 'all';
+        if (value === 'all') {
+          // „Artykuły" i chip „Wszystkie" to reset całego zestawu, nie jednego wymiaru.
+          active.age = 'all'; active.urgency = 'all'; active.state = 'all';
+        } else {
+          // Ponowny klik w aktywny filtr go zdejmuje – inaczej z „Poza indeksem"
+          // nie da się wrócić bez szukania przycisku „Wszystkie".
+          active[dim] = active[dim] === value ? 'all' : value;
+        }
+        paint();
+        refilter();
+        if (button.closest('[data-cw-kpis]')) {
+          document.querySelector('[data-cw-table]')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       });
     });
     pillarSelect?.addEventListener('change', refilter);
+    paint();
   </script>
 </Layout>
 
@@ -560,6 +650,7 @@ const baseline = items.filter((item) => item.hash_baseline).length;
     line-height: 1.55;
   }
   .cw-kpis { grid-template-columns: 1.35fr repeat(4, 1fr); margin-bottom: 28px; }
+  .cw-kpis-urgency { grid-template-columns: repeat(5, 1fr); }
   /* Karta KPI jako przycisk filtra: `all: unset` zdejmuje wygląd buttona,
      a StatCard (scoped w komponencie) domykamy przez :global. */
   .cw-kpi { all: unset; display: block; min-width: 0; cursor: pointer; }
@@ -583,12 +674,14 @@ const baseline = items.filter((item) => item.hash_baseline).length;
   .cw-table { min-width: 980px; }
   .cw-table td { vertical-align: middle; }
   .cw-table small { display: block; color: var(--ink-faint); font-size: .69rem; margin-top: 4px; white-space: nowrap; }
-  .cw-score {
-    display: inline-grid; place-items: center; width: 42px; height: 34px; border-radius: 2px;
-    font: 600 .95rem var(--font-display); background: var(--bg-surface-3); color: var(--ink-muted);
+  .cw-score-cell { text-align: left; }
+  .cw-urgency {
+    display: inline-flex; padding: 4px 9px; border-radius: 999px; background: var(--bg-surface-3);
+    color: var(--ink-muted); font-size: .72rem; font-weight: 600; white-space: nowrap;
   }
-  .cw-score.high { color: var(--status-err-fg); background: var(--status-err-bg); }
-  .cw-score.medium { color: var(--status-warn-fg); background: var(--status-warn-bg); }
+  .cw-urgency.critical { color: var(--status-err-fg); background: var(--status-err-bg); }
+  .cw-urgency.high { color: var(--status-warn-fg); background: var(--status-warn-bg); }
+  .cw-urgency.normal { color: var(--accent-blue); background: var(--accent-blue-soft); }
   .cw-content { min-width: 260px; max-width: 370px; }
   .cw-title-row { display: flex; align-items: flex-start; gap: 9px; }
   .cw-title-row > a { flex: 1; color: var(--ink); font-weight: 600; line-height: 1.3; text-decoration: none; }
@@ -613,9 +706,8 @@ const baseline = items.filter((item) => item.hash_baseline).length;
     display: inline-flex; padding: 4px 9px; border-radius: 999px; background: var(--bg-surface-3);
     color: var(--ink-muted); font-size: .72rem; font-weight: 600; white-space: nowrap;
   }
-  .cw-status.candidate { color: var(--status-warn-fg); background: var(--status-warn-bg); }
-  .cw-status.recent { color: var(--accent-blue); background: var(--accent-blue-soft); }
   .cw-status.not-indexed { color: var(--status-err-fg); background: var(--status-err-bg); }
+  .cw-status.no-data { color: var(--ink-faint); background: var(--bg-surface-3); }
   .cw-next button {
     border: 1px solid var(--hairline); border-radius: 2px; background: var(--bg-surface-2); color: var(--ink);
     font: inherit; font-size: .74rem; font-weight: 600; padding: 6px 10px; cursor: pointer; white-space: nowrap;
