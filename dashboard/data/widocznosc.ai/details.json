@@ -1,6 +1,6 @@
 {
  "date": "2026-07-29",
- "collected_at": "2026-07-29T07:22:46Z",
+ "collected_at": "2026-07-29T10:39:15Z",
  "sources": {
   "senuto": {
    "keywords": [
@@ -11867,15 +11867,15 @@
      "requests": 4
     },
     {
+     "path": "/appsettings.json",
+     "requests": 3
+    },
+    {
      "path": "/config.js",
      "requests": 3
     },
     {
      "path": "/.env.staging",
-     "requests": 3
-    },
-    {
-     "path": "/appsettings.json",
      "requests": 3
     },
     {
@@ -11887,11 +11887,11 @@
      "requests": 2
     },
     {
-     "path": "/sitemap.xml",
+     "path": "/actuator/heapdump",
      "requests": 2
     },
     {
-     "path": "/actuator/heapdump",
+     "path": "/sitemap.xml",
      "requests": 2
     },
     {
@@ -11903,15 +11903,15 @@
      "requests": 1
     },
     {
+     "path": "/narzedzia/url-check",
+     "requests": 1
+    },
+    {
      "path": "/.git/config",
      "requests": 1
     },
     {
      "path": "/docker-compose.yml",
-     "requests": 1
-    },
-    {
-     "path": "/sitemap-index.xml",
      "requests": 1
     }
    ]
@@ -11955,7 +11955,7 @@
      "end": "2026-07-24",
      "queries": [
       {
-       "query": "jaki model llm ma copilot a jaki gemini",
+       "query": "porównanie charged, gemini i claude jako narzędzia badawcze 2026",
        "clicks": 0,
        "impressions": 2,
        "position": null
@@ -11967,15 +11967,9 @@
        "position": null
       },
       {
-       "query": "porównanie charged, gemini i claude jako narzędzia badawcze 2026",
+       "query": "jaki model llm ma copilot a jaki gemini",
        "clicks": 0,
        "impressions": 2,
-       "position": null
-      },
-      {
-       "query": "jakie modele claude wydał anthropic",
-       "clicks": 0,
-       "impressions": 1,
        "position": null
       },
       {
@@ -11985,7 +11979,7 @@
        "position": null
       },
       {
-       "query": "jaki model w claude uzywac do robotyki",
+       "query": "jakie modele claude wydał anthropic",
        "clicks": 0,
        "impressions": 1,
        "position": null
@@ -11995,13 +11989,19 @@
        "clicks": 0,
        "impressions": 1,
        "position": null
+      },
+      {
+       "query": "jaki model w claude uzywac do robotyki",
+       "clicks": 0,
+       "impressions": 1,
+       "position": null
       }
      ]
     }
    },
    "queries": [
     {
-     "query": "jaki model llm ma copilot a jaki gemini",
+     "query": "porównanie charged, gemini i claude jako narzędzia badawcze 2026",
      "clicks": 0,
      "impressions": 2,
      "position": null
@@ -12013,15 +12013,9 @@
      "position": null
     },
     {
-     "query": "porównanie charged, gemini i claude jako narzędzia badawcze 2026",
+     "query": "jaki model llm ma copilot a jaki gemini",
      "clicks": 0,
      "impressions": 2,
-     "position": null
-    },
-    {
-     "query": "jakie modele claude wydał anthropic",
-     "clicks": 0,
-     "impressions": 1,
      "position": null
     },
     {
@@ -12031,13 +12025,19 @@
      "position": null
     },
     {
-     "query": "jaki model w claude uzywac do robotyki",
+     "query": "jakie modele claude wydał anthropic",
      "clicks": 0,
      "impressions": 1,
      "position": null
     },
     {
      "query": "jaka jest rola dużych modeli językowych (llm) w usłudze microsoft 365 copilot?",
+     "clicks": 0,
+     "impressions": 1,
+     "position": null
+    },
+    {
+     "query": "jaki model w claude uzywac do robotyki",
      "clicks": 0,
      "impressions": 1,
      "position": null
