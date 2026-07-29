@@ -3,14 +3,18 @@
 Regexy z mapera WordPressa tu nie wystarczą: na obcej stronie wciągnęłyby menu,
 stopkę i baner zgód. Kolejność prób:
 
-1. `trafilatura` – jeśli zainstalowana (wymieniona w requirements.txt),
-2. fallback: usunięcie bloków nawigacyjnych i wybór najgęstszego kontenera.
+1. Jina Reader (`r.jina.ai`) – jeśli jest JINA_API_KEY; renderuje strony
+   JS-owe, na których lokalna ekstrakcja widzi pustkę (quality `js`),
+2. `trafilatura` – jeśli zainstalowana (wymieniona w requirements.txt),
+3. fallback: usunięcie bloków nawigacyjnych i wybór najgęstszego kontenera.
 
 Twarde limity chronią runnera i drugą stronę: timeout, rozmiar, przekierowania,
-jawny User-Agent i poszanowanie `robots.txt`. Porażka jednego konkurenta obniża
-jakość researchu, ale nie wywraca zadania – każdy wynik ma ocenę jakości.
+jawny User-Agent i poszanowanie `robots.txt` (także przed Jina – to my
+zlecamy odczyt). Porażka jednego konkurenta obniża jakość researchu, ale nie
+wywraca zadania – każdy wynik ma ocenę jakości.
 """
 import html
+import json
 import re
 import urllib.error
 import urllib.parse
@@ -147,14 +151,106 @@ def extract(url: str, raw_html: str | None = None) -> dict:
     }
 
 
-def extract_many(urls: list[str], respect_robots: bool = True) -> list[dict]:
-    """Ekstrakcja wielu stron. Błąd jednej nie przerywa pozostałych."""
+JINA_READER = "https://r.jina.ai/"
+JINA_TIMEOUT_S = 60
+# Lustro REMOVE_SELECTOR z dashboard/app/cw-rivals.js – celowo bez selektorów
+# typu [class*="content"], które trafiają w kontener właściwego tekstu.
+JINA_REMOVE_SELECTOR = (
+    'nav,header,footer,aside,form,[id*="ookie"],[class*="ookie"],'
+    '[class*="onsent"],[class*="newsletter"]'
+)
+
+
+def markdown_headings(markdown: str) -> list[dict]:
+    """Nagłówki H1–H4 z markdownu Jina – ten sam kształt co `headings()`."""
+    out = []
+    for raw in (markdown or "").splitlines():
+        match = re.match(r"^(#{1,4})\s+(\S.*)$", raw.strip())
+        if not match:
+            continue
+        text = re.sub(r"[*_`]", "", match.group(2)).strip()
+        if text:
+            out.append({"level": len(match.group(1)), "text": text[:200]})
+    return out[:40]
+
+
+def markdown_words(markdown: str) -> int:
+    """Słowa „prozy" w markdownie – port `proseWords` z cw-rivals.js.
+
+    Reader oddaje stronę razem z okruszkami i menu; linia krótsza niż 8 słów
+    albo w ponad 40% złożona z tekstu linków nie jest zdaniem artykułu.
+    """
+    total = 0
+    for raw in (markdown or "").splitlines():
+        line = raw.strip()
+        if not line:
+            continue
+        if line.startswith("#"):
+            total += len(re.sub(r"[#*_`]", " ", line).split())
+            continue
+        without_images = re.sub(r"!\[[^\]]*\]\([^)]*\)", " ", line)
+        link_words = sum(
+            len(match.group(1).split())
+            for match in re.finditer(r"\[([^\]]*)\]\([^)]*\)", without_images)
+        )
+        text = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", without_images)
+        words = len(re.sub(r"[*_`>#|-]", " ", text).split())
+        if words < 8 or link_words / max(words, 1) > 0.4:
+            continue
+        total += words
+    return total
+
+
+def jina_extract(url: str, api_key: str) -> dict:
+    """Jedna strona przez Jina Reader – markdown zamiast surowego HTML."""
+    request = urllib.request.Request(
+        f"{JINA_READER}{url}",
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Accept": "application/json",
+            "X-Remove-Selector": JINA_REMOVE_SELECTOR,
+            "X-Retain-Images": "none",
+        },
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=JINA_TIMEOUT_S) as response:
+            data = json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as err:
+        raise FetchError(f"Jina Reader HTTP {err.code}") from err
+    except Exception as err:  # noqa: BLE001
+        raise FetchError(f"Jina Reader: {err}") from err
+    content = str(((data.get("data") or {}).get("content")) or "")
+    if not content.strip():
+        raise FetchError("Jina Reader: pusta treść")
+    words = markdown_words(content)
+    return {
+        "url": url,
+        "engine": "jina",
+        "quality": "ok" if words >= 120 else "thin",
+        "words": words,
+        "headings": markdown_headings(content),
+        "text": content[:FETCH_MAX_BYTES],
+    }
+
+
+def extract_many(urls: list[str], respect_robots: bool = True, jina_key: str = "") -> list[dict]:
+    """Ekstrakcja wielu stron. Błąd jednej nie przerywa pozostałych.
+
+    Z kluczem Jina najpierw Reader (radzi sobie z JS-em), przy jego błędzie
+    lokalna ścieżka – dwa różne silniki to lepsza szansa na komplet researchu.
+    """
     results = []
     for url in urls:
         if respect_robots and not robots_allows(url):
             results.append({"url": url, "quality": "blocked", "error": "robots.txt nie zezwala", "words": 0,
                             "headings": [], "text": ""})
             continue
+        if jina_key:
+            try:
+                results.append(jina_extract(url, jina_key))
+                continue
+            except FetchError:
+                pass  # lokalna ścieżka poniżej
         try:
             results.append(extract(url))
         except FetchError as err:

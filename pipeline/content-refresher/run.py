@@ -247,7 +247,7 @@ class Pipeline:
 
     def step_competitors(self):
         urls = [row["url"] for row in self.context.get("competitors") or []]
-        pages = extract.extract_many(urls)
+        pages = extract.extract_many(urls, jina_key=os.environ.get("JINA_API_KEY", "").strip())
         for page, row in zip(pages, self.context.get("competitors") or []):
             row["headings"] = page.get("headings") or []
             row["words"] = page.get("words")

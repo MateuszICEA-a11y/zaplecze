@@ -209,6 +209,55 @@ class TestExtract(unittest.TestCase):
         self.assertEqual(extract.extract("https://przyklad.pl/x/", raw_html=html)["quality"], "js")
 
 
+class TestJinaExtract(unittest.TestCase):
+    MARKDOWN = """# Analiza nagrań w badaniach UX
+
+## Po co nagrywać sesje
+
+Nagrania pokazują, gdzie użytkownik się gubi i czego nie znajduje na stronie sklepu.
+
+[a](https://x.pl) [b](https://y.pl) [c](https://z.pl) [d](https://w.pl)
+
+### Jak analizować
+
+Zacznij od sesji zakończonych porzuceniem koszyka, potem przejdź do ścieżek wyszukiwania w sklepie.
+"""
+
+    def test_naglowki_i_slowa_z_markdownu(self):
+        headings = extract.markdown_headings(self.MARKDOWN)
+        self.assertEqual(headings[0], {"level": 1, "text": "Analiza nagrań w badaniach UX"})
+        self.assertEqual([h["level"] for h in headings], [1, 2, 3])
+        words = extract.markdown_words(self.MARKDOWN)
+        # Dwa akapity i trzy nagłówki; linia z samych linków odpada.
+        self.assertGreater(words, 25)
+        self.assertLess(words, 50)
+        self.assertEqual(extract.markdown_words("[a](https://x.pl) [b](https://y.pl) [c](https://z.pl) [d](https://w.pl)"), 0)
+
+    def test_extract_many_uzywa_jina_z_fallbackiem(self):
+        pages_jina = {"https://a.pl/x/": {"url": "https://a.pl/x/", "engine": "jina", "quality": "ok",
+                                          "words": 500, "headings": [], "text": "md"}}
+
+        def fake_jina(url, key):
+            if url in pages_jina:
+                return pages_jina[url]
+            raise extract.FetchError("Jina Reader HTTP 422")
+
+        with mock.patch.object(extract, "jina_extract", side_effect=fake_jina), \
+             mock.patch.object(extract, "robots_allows", return_value=True), \
+             mock.patch.object(extract, "extract", return_value={"url": "https://b.pl/y/", "engine": "trafilatura",
+                                                                 "quality": "ok", "words": 300, "headings": [], "text": "t"}):
+            results = extract.extract_many(["https://a.pl/x/", "https://b.pl/y/"], jina_key="k")
+        self.assertEqual([row["engine"] for row in results], ["jina", "trafilatura"])
+
+    def test_bez_klucza_stara_sciezka(self):
+        with mock.patch.object(extract, "jina_extract") as jina, \
+             mock.patch.object(extract, "robots_allows", return_value=True), \
+             mock.patch.object(extract, "extract", return_value={"url": "u", "quality": "ok", "words": 1,
+                                                                 "headings": [], "text": "t"}):
+            extract.extract_many(["https://a.pl/"], jina_key="")
+        jina.assert_not_called()
+
+
 class TestResearch(unittest.TestCase):
     """Mapowanie odpowiedzi Senuto i SerpData – bez sieci, na zapisanych kształtach."""
 

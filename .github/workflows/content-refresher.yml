@@ -74,6 +74,8 @@ jobs:
           # Fakty z analizy treści konkurencji (edytor, Jina Reader) – przez env,
           # nie argument CLI: w treści faktów bywają cudzysłowy i znaki shella.
           RIVALS_JSON: ${{ toJSON(github.event.client_payload.rivals) }}
+          # Ekstrakcja treści konkurencji przez Jina Reader (fallback: trafilatura).
+          JINA_API_KEY: ${{ secrets.JINA_API_KEY }}
         run: |
           python pipeline/content-refresher/run.py \
             --job "${{ github.event.client_payload.job_id || inputs.job_id }}" \
