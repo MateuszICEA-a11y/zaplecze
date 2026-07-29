@@ -251,6 +251,40 @@ const pipelineRows = PIPELINE.map((definition) => {
         </div>
       </article>
 
+      <!-- Senuto i SerpData nie idą przez collectora: termin ważności tokenu
+           i licznik zapytań zna Worker (D1), więc dociągamy je z /api/cw/usage. -->
+      <article class="balance-card" data-usage-senuto hidden>
+        <div class="balance-header">
+          <span class="service-logo senuto">SEN</span>
+          <span class="service-name">Senuto · token</span>
+          <span class="system-pill off" data-senuto-pill><i></i>—</span>
+        </div>
+        <div class="balance-value" data-senuto-days>–<small>dni do rotacji</small></div>
+        <div class="balance-track" aria-label="Pozostały okres ważności tokenu">
+          <i data-senuto-bar style="width:0%"></i>
+        </div>
+        <div class="balance-sub">
+          <span data-senuto-expiry>klucz JWT ważny ~31 dni</span>
+          <span>ręczna rotacja w Senuto</span>
+        </div>
+      </article>
+
+      <article class="balance-card" data-usage-serpdata hidden>
+        <div class="balance-header">
+          <span class="service-logo serpdata">SD</span>
+          <span class="service-name">SerpData</span>
+          <span class="system-pill off" data-serpdata-pill><i></i>—</span>
+        </div>
+        <div class="balance-value" data-serpdata-value>–<small>zapytań zostało</small></div>
+        <div class="balance-track" aria-label="Zużycie pakietu SerpData">
+          <i data-serpdata-bar style="width:0%"></i>
+        </div>
+        <div class="balance-sub">
+          <span data-serpdata-left>saldo pakietu</span>
+          <span data-serpdata-note>research SERP w edytorze i pipelinie</span>
+        </div>
+      </article>
+
     </div>
 
     <div class="system-section-head"><h2>Alerty o limitach</h2><span>konfiguracja collectora</span></div>
@@ -339,6 +373,87 @@ const pipelineRows = PIPELINE.map((definition) => {
   });
   window.addEventListener('themechange', syncSystemThemeButton);
   syncSystemThemeButton();
+
+  /* Senuto i SerpData: dane spoza snapshotów collectora (termin ważności
+     tokenu i licznik zapytań z D1) – dociągane po zbudowaniu strony. */
+  const pl = new Intl.NumberFormat('pl-PL');
+  const PILL: Record<string, string> = { ok: 'OK', warn: 'Uwaga', err: 'Wyczerpane', unknown: 'Nieznane', off: 'Brak danych' };
+
+  const setPill = (node: HTMLElement | null, status: string, label?: string) => {
+    if (!node) return;
+    node.className = `system-pill ${status === 'err' ? 'err' : status === 'warn' ? 'warn' : status === 'ok' ? 'ok' : 'off'}`;
+    node.replaceChildren(Object.assign(document.createElement('i'), {}), document.createTextNode(label ?? PILL[status] ?? status));
+  };
+  const setValue = (node: HTMLElement | null, value: string, unit: string) => {
+    if (!node) return;
+    const small = document.createElement('small');
+    small.textContent = unit;
+    node.replaceChildren(document.createTextNode(value), small);
+  };
+
+  (async () => {
+    let data: any = null;
+    try {
+      const response = await fetch('/api/cw/usage', { headers: { 'X-CW-Request': '1' } });
+      if (!response.ok) return;
+      data = await response.json();
+    } catch {
+      return; // podgląd statyczny bez Workera – kafelki zostają ukryte
+    }
+
+    const senuto = data.senuto ?? {};
+    if (senuto.configured) {
+      const card = document.querySelector<HTMLElement>('[data-usage-senuto]');
+      if (card) card.hidden = false;
+      const days = senuto.days_left;
+      setValue(
+        document.querySelector('[data-senuto-days]'),
+        days === null ? '–' : pl.format(days),
+        days === null ? 'termin nieznany' : days < 0 ? 'dni po terminie' : 'dni do rotacji',
+      );
+      setPill(
+        document.querySelector('[data-senuto-pill]'),
+        senuto.status,
+        senuto.status === 'err' ? 'Wygasł' : senuto.status === 'warn' ? 'Rotacja' : undefined,
+      );
+      const bar = document.querySelector<HTMLElement>('[data-senuto-bar]');
+      // Skala do 31 dni – tyle żyje token Senuto po wygenerowaniu.
+      if (bar) {
+        bar.className = senuto.status === 'err' ? 'err' : senuto.status === 'warn' ? 'warn' : 'ok';
+        bar.style.width = days === null ? '0%' : `${Math.max(0, Math.min(100, Math.round((days / 31) * 100)))}%`;
+      }
+      const expiry = document.querySelector<HTMLElement>('[data-senuto-expiry]');
+      if (expiry && senuto.expires_at) {
+        expiry.textContent = `ważny do ${new Date(senuto.expires_at).toLocaleDateString('pl-PL')}`;
+      }
+    }
+
+    const serp = data.serpdata ?? {};
+    if (serp.configured) {
+      const card = document.querySelector<HTMLElement>('[data-usage-serpdata]');
+      if (card) card.hidden = false;
+      setValue(
+        document.querySelector('[data-serpdata-value]'),
+        serp.left === null ? '–' : pl.format(serp.left),
+        serp.left === null ? 'saldo nieznane' : 'zapytań zostało',
+      );
+      setPill(document.querySelector('[data-serpdata-pill]'), serp.status, serp.status === 'err' ? 'Niski stan' : undefined);
+      const left = document.querySelector<HTMLElement>('[data-serpdata-left]');
+      if (left) {
+        left.textContent = serp.limit
+          ? `zużyto ${pl.format(serp.used ?? 0)} / ${pl.format(serp.limit)}`
+          : (serp.error ?? 'saldo pakietu');
+      }
+      const bar = document.querySelector<HTMLElement>('[data-serpdata-bar]');
+      if (bar && serp.limit) {
+        // Pasek pokazuje zużycie, jak przy OpenRouterze – rośnie w prawo.
+        bar.className = serp.status === 'err' ? 'err' : serp.status === 'warn' ? 'warn' : 'ok';
+        bar.style.width = `${Math.min(100, Math.round(((serp.used ?? 0) / serp.limit) * 100))}%`;
+      } else if (bar) {
+        bar.parentElement?.classList.add('is-unmeasured');
+      }
+    }
+  })();
 </script>
 
 <style>
@@ -363,6 +478,8 @@ const pipelineRows = PIPELINE.map((definition) => {
   .service-logo { width: 30px; height: 30px; border-radius: 2px; flex: none; display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 700; font-size: .9rem; color: #fff; }
   .service-logo.openrouter { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
   .service-logo.sms { background: linear-gradient(135deg, #0ea5e9, #22d3ee); }
+  .service-logo.senuto { background: linear-gradient(135deg, #ff5a1f, #f59e0b); font-size: .68rem; }
+  .service-logo.serpdata { background: linear-gradient(135deg, #0f766e, #14b8a6); }
   .service-logo.resend { background: linear-gradient(135deg, #111827, #4b5563); }
   .service-logo.webhook { background: linear-gradient(135deg, var(--accent-blue), var(--series-3)); }
   .service-logo.threshold { background: linear-gradient(135deg, var(--series-2), var(--status-warn-fg)); }
