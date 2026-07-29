@@ -289,15 +289,61 @@ class Pipeline:
         return {"payload": result["data"], "model": result["model"], "prompt_version": version,
                 "cost": result["usage"]}
 
+    def _structure_tasks(self) -> list[dict]:
+        """Zalecenia `structure` z briefu jako jawna lista zadań dla rewrite.
+
+        Brief podany jako jeden blob rozmywał sygnał – model dopisywał treść,
+        a zalecane zmiany nagłówków przechodziły bez echa.
+        """
+        tasks = []
+        for row in (self.context.get("brief") or {}).get("structure") or []:
+            if not isinstance(row, dict):
+                continue
+            action = str(row.get("action") or "").strip().lower()
+            try:
+                slot = int(row.get("slot") or 0)
+            except (TypeError, ValueError):
+                continue
+            if action not in ("rewrite", "add") or not 1 <= slot <= 30:
+                continue
+            tasks.append({
+                "action": action,
+                "slot": slot,
+                "heading": str(row.get("heading") or "").strip(),
+                "note": str(row.get("note") or "").strip(),
+            })
+        return tasks
+
+    @staticmethod
+    def _missed_headings(tasks: list[dict], snapshot: list[dict], proposals: dict[int, dict]) -> list[dict]:
+        """Sloty, w których brief zalecał nowy nagłówek, a rewrite go nie zmienił.
+
+        Trafiają do payloadu kroku, żeby w edytorze było widać pominięte
+        zalecenia zamiast cichego pozostawienia generycznego H2.
+        """
+        before = {item["slot"]: (item.get("title") or "").strip() for item in snapshot}
+        missed = []
+        for task in tasks:
+            heading, slot = task["heading"], task["slot"]
+            old = before.get(slot, "")
+            if not heading or heading.strip().lower() == old.lower():
+                continue
+            proposed = ((proposals.get(slot) or {}).get("title") or "").strip()
+            if not proposed or proposed.lower() == old.lower():
+                missed.append({"slot": slot, "recommended": heading, "current": old})
+        return missed
+
     def step_rewrite(self):
         context = self.context
         payload_sections = [
             {"slot": item["slot"], "title": item["title"], "text": item["text"]}
             for item in context["snapshot"]
         ]
+        tasks = self._structure_tasks()
         result, version = self._ask(
             "rewrite", self.model_writer,
             brief=context.get("brief") or {},
+            structure_tasks=tasks or "brak – kieruj się wytycznymi z analizy",
             sections=payload_sections,
             free_slots=context["free_slots"][:MAX_NEW_SECTIONS],
         )
@@ -307,9 +353,13 @@ class Pipeline:
             if 1 <= slot <= 30 and (row.get("text") or "").strip():
                 proposals[slot] = {"title": row.get("title"), "text": row.get("text")}
         self.context["proposals"] = proposals
-        return {"payload": {"changed_slots": sorted(proposals), "notes": [
-            row.get("change") for row in (result["data"].get("sections") or []) if row.get("change")
-        ]}, "model": result["model"], "prompt_version": version, "cost": result["usage"]}
+        return {"payload": {
+            "changed_slots": sorted(proposals),
+            "notes": [
+                row.get("change") for row in (result["data"].get("sections") or []) if row.get("change")
+            ],
+            "headings_missed": self._missed_headings(tasks, context["snapshot"], proposals),
+        }, "model": result["model"], "prompt_version": version, "cost": result["usage"]}
 
     def _current_text(self, slot: int) -> str:
         """Treść sekcji po dotychczasowych krokach – kolejne ulepszenia pracują

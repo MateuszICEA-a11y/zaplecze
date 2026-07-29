@@ -285,6 +285,72 @@ class TestModelOverride(unittest.TestCase):
         self.assertEqual(pipeline.model_writer, "google/gemini-3.1-pro")
 
 
+class TestRewriteNaglowki(unittest.TestCase):
+    """Zalecenia struktury idą do rewrite jako lista zadań, a pominięte
+    zmiany nagłówków wracają w payloadzie kroku."""
+
+    @staticmethod
+    def _pipeline(brief, snapshot):
+        import run as run_module
+
+        args = type("Args", (), {
+            "job": "t", "dry_run": True, "improvements": [], "research_file": "",
+            "model_research": "", "model_writer": "",
+        })()
+        pipeline = run_module.Pipeline(args)
+        pipeline.context = {"brief": brief, "snapshot": snapshot, "free_slots": [3, 4, 6]}
+        return pipeline
+
+    BRIEF = {"structure": [
+        {"action": "keep", "slot": 1, "heading": "Czym jest błąd 403"},
+        {"action": "rewrite", "slot": 5, "heading": "Błąd 403 – co robić, gdy wraca?", "note": "generyczny H2"},
+        {"action": "add", "slot": 3, "heading": "Błąd 403 w Search Console"},
+        {"action": "rewrite", "slot": "zły", "heading": "odpada – slot nie jest liczbą"},
+    ]}
+    SNAPSHOT = [
+        {"slot": 1, "title": "Czym jest błąd 403", "text": "<p>a</p>"},
+        {"slot": 5, "title": "Podsumowanie", "text": "<p>b</p>"},
+    ]
+
+    def test_lista_zadan_tylko_rewrite_i_add(self):
+        tasks = self._pipeline(self.BRIEF, self.SNAPSHOT)._structure_tasks()
+        self.assertEqual([(t["action"], t["slot"]) for t in tasks], [("rewrite", 5), ("add", 3)])
+
+    def test_pominieta_zmiana_naglowka_jest_raportowana(self):
+        pipeline = self._pipeline(self.BRIEF, self.SNAPSHOT)
+        answer = {"data": {"sections": [
+            # Model dopisał treść w slocie 5, ale zostawił „Podsumowanie".
+            {"slot": 5, "title": "Podsumowanie", "text": "<p>b plus</p>", "change": "dopisano"},
+        ]}, "model": "m", "usage": {"tokens_in": 1, "tokens_out": 1}}
+        with mock.patch.object(pipeline, "_ask", return_value=(answer, "1.2.0")) as ask:
+            payload = pipeline.step_rewrite()["payload"]
+        self.assertEqual(payload["headings_missed"], [
+            {"slot": 5, "recommended": "Błąd 403 – co robić, gdy wraca?", "current": "Podsumowanie"},
+            {"slot": 3, "recommended": "Błąd 403 w Search Console", "current": ""},
+        ])
+        # Zadania strukturalne trafiają do promptu jako osobna zmienna.
+        self.assertEqual(len(ask.call_args.kwargs["structure_tasks"]), 2)
+
+    def test_wykonane_zalecenia_nie_generuja_raportu(self):
+        pipeline = self._pipeline(self.BRIEF, self.SNAPSHOT)
+        answer = {"data": {"sections": [
+            {"slot": 5, "title": "Błąd 403 – co robić, gdy wraca?", "text": "<p>b plus</p>"},
+            {"slot": 3, "title": "Błąd 403 w Search Console", "text": "<p>nowa</p>"},
+        ]}, "model": "m", "usage": {"tokens_in": 1, "tokens_out": 1}}
+        with mock.patch.object(pipeline, "_ask", return_value=(answer, "1.2.0")):
+            payload = pipeline.step_rewrite()["payload"]
+        self.assertEqual(payload["headings_missed"], [])
+
+    def test_zmiana_samego_naglowka_liczy_sie_jako_wykonana(self):
+        pipeline = self._pipeline(self.BRIEF, self.SNAPSHOT)
+        answer = {"data": {"sections": [
+            {"slot": 5, "title": "Błąd 403 – co robić, gdy wraca?", "text": "<p>b</p>"},
+        ]}, "model": "m", "usage": {"tokens_in": 1, "tokens_out": 1}}
+        with mock.patch.object(pipeline, "_ask", return_value=(answer, "1.2.0")):
+            payload = pipeline.step_rewrite()["payload"]
+        self.assertEqual([row["slot"] for row in payload["headings_missed"]], [3])
+
+
 class TestBudget(unittest.TestCase):
     def test_przekroczenie_limitu_zapytan_serp(self):
         budget = Budget(serp_requests=2, tokens=1000)
