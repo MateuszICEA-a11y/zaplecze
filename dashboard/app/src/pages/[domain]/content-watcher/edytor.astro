@@ -164,6 +164,20 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         <button type="button" class="ed-rerun" data-ed-rerun hidden>uruchom ponownie</button>
       </div>
 
+      <!-- Komunikat błędu osobno: przy nieudanym przebiegu to jedyna rzecz,
+           którą człowiek naprawdę chce przeczytać. -->
+      <div class="ed-fail" data-ed-fail hidden>
+        <div class="ed-fail-head">
+          <span class="ed-fail-badge">przebieg nieudany</span>
+          <span data-ed-fail-step></span>
+        </div>
+        <p class="ed-fail-msg" data-ed-fail-msg></p>
+        <div class="ed-fail-actions">
+          <button type="button" class="ed-rerun" data-ed-fail-rerun>uruchom ponownie</button>
+          <a class="ed-fail-log" data-ed-fail-log target="_blank" rel="noopener" hidden>log przebiegu ↗</a>
+        </div>
+      </div>
+
       <!-- Etap finalny: porada eksperta – dostępna po zakończeniu pipeline'u,
            generowana z Workera przez OpenRouter (sekundy, nie minuty). -->
       <div class="ed-expert" data-ed-expert hidden>
@@ -175,10 +189,11 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         <p class="ed-error" data-ed-expert-error hidden></p>
       </div>
 
-      <details class="ed-steps-details" data-ed-steps-details hidden>
-        <summary>szczegóły kroków</summary>
+      <!-- Oś przebiegu: co poszło, co idzie teraz, co czeka. Kolumna ma stałą
+           szerokość – rozciągnięta na całą stronę lista była nieczytelna. -->
+      <div class="ed-timeline-wrap" data-ed-steps-details hidden>
         <ol class="ed-steps" data-ed-steps></ol>
-      </details>
+      </div>
 
       <p class="ed-error" data-ed-error hidden></p>
     </div>
@@ -258,11 +273,12 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     decision: 'accepted' | 'rejected' | null;
     edited?: boolean;
   };
-  type Step = { step: string; status: string; payload: any; cost: any; model: string | null; error: string | null };
+  type Step = { step: string; status: string; payload: any; cost: any; model: string | null;
+    error: string | null; started_at?: string | null; finished_at?: string | null };
   type Job = {
     id: string; status: string; error: string | null; cost: any; created_at: string;
     improvements: string[]; models: { research: string; writer: string } | null;
-    expert: any; steps: Step[]; sections: Section[];
+    expert: any; steps: Step[]; sections: Section[]; run_url?: string | null;
   };
 
   // Lustro config.py (STEPS + OPTIONAL_STEPS) – przy zmianie kolejności kroków
@@ -1014,12 +1030,33 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         current.models ? `analiza: ${current.models.research} · pisanie: ${current.models.writer}` : null,
         tokens ? `${pl.format(tokens)} tokenów` : null,
         current.cost?.serp_requests ? `${current.cost.serp_requests} zap. SERP` : null,
-        current.error,
       ].filter(Boolean);
       $('[data-ed-summary-cost]')!.textContent = parts.join(' · ');
-      $<HTMLButtonElement>('[data-ed-rerun]')!.hidden = !['failed', 'cancelled', 'stale', 'budget_exceeded'].includes(current.status);
+      const failed = ['failed', 'stale', 'budget_exceeded'].includes(current.status);
+      // Karta błędu niesie już status, krok i komunikat – pasek podsumowania
+      // powtarzałby to samo dwa razy.
+      $('[data-ed-summary]')!.hidden = failed;
+      // Przy porażce ponowienie stoi w karcie błędu – dwa takie same przyciski
+      // obok siebie tylko myliłyby.
+      $<HTMLButtonElement>('[data-ed-rerun]')!.hidden = failed || current.status !== 'cancelled';
+      renderFailure(current, failed);
     }
     renderSteps(current);
+  }
+
+  /** Karta błędu: który krok padł, z jakim komunikatem i gdzie zajrzeć dalej. */
+  function renderFailure(current: Job, failed: boolean) {
+    const card = $('[data-ed-fail]')!;
+    card.hidden = !failed;
+    if (!failed) return;
+    const broken = current.steps?.find((step) => step.status === 'failed');
+    $('[data-ed-fail-step]')!.textContent = broken
+      ? `krok: ${STEP_LABELS[broken.step] ?? broken.step}`
+      : STATUS_LABEL[current.status] ?? current.status;
+    $('[data-ed-fail-msg]')!.textContent = broken?.error || current.error || 'Przebieg zakończył się bez podania przyczyny.';
+    const log = $<HTMLAnchorElement>('[data-ed-fail-log]')!;
+    log.hidden = !current.run_url;
+    if (current.run_url) log.href = current.run_url;
   }
 
   function startClock(current: Job) {
@@ -1037,27 +1074,66 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     window.clearInterval(clockTimer);
   }
 
+  /** Czas kroku – dla zakończonych ile trwał, dla trwającego ile już leci. */
+  function stepDuration(step: Step | undefined) {
+    if (!step?.started_at) return '';
+    const start = Date.parse(step.started_at);
+    const end = step.finished_at ? Date.parse(step.finished_at) : Date.now();
+    if (!Number.isFinite(start) || !Number.isFinite(end)) return '';
+    const seconds = Math.max(0, Math.round((end - start) / 1000));
+    return seconds < 60 ? `${seconds} s` : `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`;
+  }
+
+  /** Koszt kroku w jednej frazie – to, za co realnie zapłaciliśmy. */
+  function stepCost(step: Step | undefined) {
+    const cost = step?.cost ?? {};
+    const tokens = (cost.tokens_in ?? 0) + (cost.tokens_out ?? 0);
+    return [
+      cost.serp_requests ? `${cost.serp_requests} zap. SERP` : null,
+      cost.senuto_requests ? `${cost.senuto_requests} zap. Senuto` : null,
+      tokens ? `${pl.format(tokens)} tokenów` : null,
+    ].filter(Boolean).join(' · ');
+  }
+
+  /** Oś przebiegu: znacznik stanu, nazwa kroku, czas i koszt. Krok w toku
+      dostaje kręcące się kółko – widać, że coś się dzieje, a nie zawiesiło. */
   function renderSteps(current: Job) {
     const host = $('[data-ed-steps]')!;
     const byName = new Map(current.steps.map((step) => [step.step, step]));
     host.replaceChildren(...plannedSteps(current).map((name) => {
       const step = byName.get(name);
+      const status = step?.status ?? 'pending';
       const li = document.createElement('li');
-      li.className = step?.status ?? 'pending';
+      li.className = `ed-step ${status}`;
+
+      const mark = document.createElement('span');
+      mark.className = 'ed-step-mark';
+      mark.textContent = status === 'done' ? '✓' : status === 'failed' ? '✕' : status === 'skipped' ? '–' : '';
+      li.append(mark);
+
+      const body = document.createElement('div');
+      body.className = 'ed-step-body';
       const label = document.createElement('span');
       label.className = 'ed-step-name';
       label.textContent = STEP_LABELS[name] ?? name;
-      const info = document.createElement('span');
-      info.className = 'ed-step-info';
-      const cost = step?.cost?.serp_requests
-        ? `${step.cost.serp_requests} zap. SERP`
-        : step?.cost?.senuto_requests
-        ? `${step.cost.senuto_requests} zap. Senuto`
-        : step?.cost?.tokens_out
-          ? `${pl.format((step.cost.tokens_in ?? 0) + (step.cost.tokens_out ?? 0))} tok.`
-          : '';
-      info.textContent = step?.error ?? [step?.model, cost].filter(Boolean).join(' · ');
-      li.append(label, info);
+      body.append(label);
+
+      const meta = document.createElement('span');
+      meta.className = 'ed-step-info';
+      const duration = stepDuration(step);
+      const cost = stepCost(step);
+      meta.textContent = status === 'skipped'
+        ? 'pominięty'
+        : [duration, cost, step?.model].filter(Boolean).join(' · ');
+      body.append(meta);
+
+      if (step?.error) {
+        const error = document.createElement('span');
+        error.className = 'ed-step-error';
+        error.textContent = step.error;
+        body.append(error);
+      }
+      li.append(body);
       return li;
     }));
   }
@@ -1605,10 +1681,13 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   }
 
   $('[data-ed-run]')?.addEventListener('click', runPipeline);
-  $('[data-ed-rerun]')?.addEventListener('click', () => {
+  const backToSetup = () => {
     $('[data-ed-setup]')!.hidden = false;
     $('[data-ed-summary]')!.hidden = true;
-  });
+    $('[data-ed-fail]')!.hidden = true;
+  };
+  $('[data-ed-rerun]')?.addEventListener('click', backToSetup);
+  $('[data-ed-fail-rerun]')?.addEventListener('click', backToSetup);
   $('[data-ed-cancel]')?.addEventListener('click', async () => {
     if (!job) return;
     try {
@@ -2259,16 +2338,57 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
 <style is:global>
   /* Dokument, kroki i diff powstają w JavaScripcie, więc nie mają atrybutu
      scope'ującego Astro – te reguły muszą być globalne. */
-  .ed-steps { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 4px; }
-  .ed-steps li { display: flex; justify-content: space-between; gap: 12px; padding: 5px 10px;
-    border-radius: 2px; border: 1px solid var(--hairline-soft); font-size: .78rem; }
-  .ed-steps li.pending { opacity: .4; }
-  .ed-steps li.running { border-color: var(--accent-blue); }
-  .ed-steps li.done .ed-step-name::before { content: '✓ '; color: var(--accent-blue); }
-  .ed-steps li.failed { border-color: var(--status-err-fg); }
-  .ed-steps li.skipped { opacity: .3; }
-  .ed-step-info { color: var(--ink-faint); font-size: .7rem; text-align: right;
-    font-variant-numeric: tabular-nums; }
+  /* Elementy chowane atrybutem `hidden` mają własne reguły `display: flex`,
+     a te biją wbudowane `[hidden] { display: none }` – stąd sekcje, które
+     miały zniknąć, zostawały na ekranie (podsumowanie przy błędzie, pasek
+     decyzji, filtr sekcji). */
+  .ed-pipebar [hidden], .ed-docbar [hidden], .ed-doc [hidden] { display: none !important; }
+
+  /* Astro scope'uje też nazwy @keyframes, więc animacja używana w tym bloku
+     musi mieć własną definicję globalną. */
+  @keyframes ed-spin-global { to { transform: rotate(360deg); } }
+
+  /* ----- oś przebiegu -----
+     Kolumna ma stałą szerokość: rozciągnięta na 2000 px lista kroków to
+     kilometry pustki między nazwą a kosztem. */
+  .ed-timeline-wrap { max-width: 560px; margin-top: 14px; }
+  .ed-steps { list-style: none; margin: 0; padding: 0; display: grid; }
+  .ed-step { position: relative; display: grid; grid-template-columns: 22px minmax(0, 1fr);
+    gap: 12px; padding: 7px 0 7px 2px; }
+  /* Pionowa nić łącząca znaczniki – bez niej to zwykła lista, nie przebieg. */
+  .ed-step:not(:last-child)::before { content: ''; position: absolute; left: 10px; top: 26px;
+    bottom: -4px; width: 1px; background: var(--hairline); }
+  .ed-step-mark { width: 19px; height: 19px; margin-top: 1px; display: grid; place-items: center;
+    border: 1px solid var(--hairline); border-radius: 50%; background: var(--bg-surface-1);
+    color: var(--ink-faint); font-size: .66rem; line-height: 1; }
+  .ed-step-body { display: grid; gap: 1px; min-width: 0; }
+  .ed-step-name { font-size: .82rem; color: var(--ink-muted); }
+  .ed-step-info { font-size: .7rem; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+  .ed-step-error { font-size: .72rem; color: var(--status-err-fg); }
+
+  .ed-step.done .ed-step-mark { border-color: var(--status-ok); color: var(--status-ok); }
+  .ed-step.done .ed-step-name { color: var(--ink); }
+  .ed-step.failed .ed-step-mark { border-color: var(--status-err-fg); color: var(--status-err-fg);
+    background: var(--status-err-bg); }
+  .ed-step.failed .ed-step-name { color: var(--ink); }
+  .ed-step.skipped { opacity: .45; }
+  .ed-step.pending { opacity: .45; }
+  .ed-step.running .ed-step-name { color: var(--ink); font-weight: 600; }
+  /* Krok w toku: kółko kręci się dopóki trwa – widać, że przebieg żyje. */
+  .ed-step.running .ed-step-mark { border-color: var(--hairline); border-top-color: var(--accent-blue);
+    border-right-color: var(--accent-blue); animation: ed-spin-global .9s linear infinite; }
+
+  /* ----- karta nieudanego przebiegu ----- */
+  .ed-fail { margin-top: 12px; padding: 12px 14px; border: 1px solid var(--status-err-fg);
+    border-left-width: 3px; border-radius: 2px; background: var(--status-err-bg); max-width: 760px; }
+  .ed-fail-head { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: baseline;
+    font-size: .74rem; color: var(--ink-muted); }
+  .ed-fail-badge { padding: 2px 8px; border-radius: 999px; background: var(--status-err-fg);
+    color: #180404; font-size: .64rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+  .ed-fail-msg { margin: 8px 0 0; font-size: .85rem; line-height: 1.55; color: var(--ink);
+    word-break: break-word; }
+  .ed-fail-actions { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; margin-top: 10px; }
+  .ed-fail-log { font-size: .75rem; color: var(--accent-blue); }
 
   .ed-brief-block { margin: 12px 0 0; }
   .ed-brief-block h3 { margin: 0 0 5px; font-size: .72rem; letter-spacing: .06em;

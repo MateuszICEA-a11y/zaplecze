@@ -516,6 +516,9 @@ async function readJob(env, id) {
   };
   return {
     ...job,
+    // Link do przebiegu w GitHub Actions – przy błędzie to jedyne miejsce
+    // z pełnym logiem, a przeglądarka nie zna nazwy repozytorium.
+    run_url: job.run_id && env.GH_REPO ? `https://github.com/${env.GH_REPO}/actions/runs/${job.run_id}` : null,
     improvements: parse(job.improvements, []),
     models: parse(job.models, null),
     expert: parse(job.expert, null),
