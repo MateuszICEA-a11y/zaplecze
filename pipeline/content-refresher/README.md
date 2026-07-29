@@ -14,7 +14,7 @@ do WordPressa**.
 | `serp` | 5 adresów konkurencji, AI Overview, PAA, frazy powiązane | SerpData (żywy SERP Google PL) |
 | `competitors` | nagłówki i treść tych stron | pobranie HTML + `trafilatura` |
 | `keywords_competitors` | frazy konkurentów (jedno wywołanie na komplet adresów) | Senuto |
-| `brief` | wytyczne: luki, frazy, struktura, ryzyka | model z websearchem |
+| `brief` | wytyczne: luki, frazy, struktura, ryzyka | model z websearchem + fakty z analizy konkurencji edytora (env `RIVALS_JSON`, o ile analiza Jina była zrobiona) |
 | `rewrite` | przepisane i uzupełnione sekcje | model piszący |
 | `expert` | cytat eksperta ICEA (≠ autor wpisu) | model piszący |
 | `sources` | przypisy + linki definicyjne wstawione w treść | model z websearchem |

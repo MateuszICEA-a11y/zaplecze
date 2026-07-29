@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { buildFactsPrompt, markdownHeadings, median, proseWords, publicView, readPage, runRivalsStep } from './cw-rivals.js';
+import { buildFactsPrompt, markdownHeadings, median, proseWords, publicView, readPage, rivalsSummary, runRivalsStep } from './cw-rivals.js';
 
 const NAV_NOISE = `[](https://example.pl/)
 
@@ -117,6 +117,32 @@ test('runRivalsStep: strona nie do odczytania nie zatrzymuje analizy', async () 
   state = await runRivalsStep(env, 'my.pl', 1, state, reader);
   assert.equal(state.stage, 'done');
   assert.deepEqual(state.facts, []);
+});
+
+test('rivalsSummary: skrót gotowej analizy dla pipeline\'u, null bez wyników', async () => {
+  const withRow = (row) => ({ CW_DB: { prepare() { return this; }, bind() { return this; }, async first() { return row; } } });
+  // Brak snapshotu → null.
+  assert.equal(await rivalsSummary(withRow(null), 'd.pl', 1), null);
+  // Analiza skończona bez faktów i tematów → null (nie ma czego nieść do briefu).
+  assert.equal(await rivalsSummary(withRow({
+    status: 'done', created_at: '2026-07-29T10:00:00Z',
+    payload: JSON.stringify({ stage: 'done', facts: [], topics: [], rivals: [] }),
+  }), 'd.pl', 1), null);
+  // Komplet: fakty + mediana bez markdownów.
+  const summary = await rivalsSummary(withRow({
+    status: 'done', created_at: '2026-07-29T10:00:00Z',
+    payload: JSON.stringify({
+      stage: 'done', generated_at: '2026-07-29T10:00:00Z',
+      ours: { url: 'https://my.pl/a/', words: 900, markdown: 'nasze' },
+      rivals: [{ url: 'https://a.pl', words: 1500, markdown: 'sekret' }, { url: 'https://b.pl', words: 2100, markdown: 'sekret' }],
+      facts: [{ fact: 'Limit 2 MB', why: 'brak u nas', source: 'https://a.pl', kind: 'liczba' }],
+      topics: ['modele rozliczeń'],
+    }),
+  }), 'd.pl', 1);
+  assert.equal(summary.facts.length, 1);
+  assert.equal(summary.median_words, 1800);
+  assert.equal(summary.our_words, 900);
+  assert.equal(JSON.stringify(summary).includes('sekret'), false);
 });
 
 test('buildFactsPrompt: niesie naszą treść i wszystkie adresy konkurentów', () => {

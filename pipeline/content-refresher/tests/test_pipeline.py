@@ -426,6 +426,36 @@ class TestRewriteNaglowki(unittest.TestCase):
         self.assertEqual([row["slot"] for row in payload["headings_missed"]], [3])
 
 
+class TestRivalsFacts(unittest.TestCase):
+    """Fakty z analizy konkurencji (Jina) – z env RIVALS_JSON albo z fixtures."""
+
+    @staticmethod
+    def _pipeline(fixtures=None):
+        import run as run_module
+
+        args = type("Args", (), {
+            "job": "t", "dry_run": True, "improvements": [], "research_file": "",
+            "model_research": "", "model_writer": "",
+        })()
+        pipeline = run_module.Pipeline(args)
+        pipeline.fixtures = fixtures
+        return pipeline
+
+    def test_poprawny_json_z_env(self):
+        payload = {"facts": [{"fact": "Limit to 2 MB", "source": "https://a.pl"}], "topics": []}
+        with mock.patch.dict(os.environ, {"RIVALS_JSON": json.dumps(payload)}):
+            self.assertEqual(self._pipeline()._rivals_facts(), payload)
+
+    def test_null_brak_i_smieci_daja_none(self):
+        for value in ("null", "", "nie-json", '{"facts": [], "topics": []}'):
+            with mock.patch.dict(os.environ, {"RIVALS_JSON": value}):
+                self.assertIsNone(self._pipeline()._rivals_facts(), value)
+
+    def test_fixtures_maja_pierwszenstwo(self):
+        with mock.patch.dict(os.environ, {"RIVALS_JSON": '{"facts": [{"fact": "z env"}]}'}):
+            self.assertIsNone(self._pipeline(fixtures={"rivals": None})._rivals_facts())
+
+
 class TestBudget(unittest.TestCase):
     def test_przekroczenie_limitu_zapytan_serp(self):
         budget = Budget(serp_requests=2, tokens=1000)

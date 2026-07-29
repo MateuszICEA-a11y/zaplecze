@@ -71,6 +71,9 @@ jobs:
           # Application Password (potrzebne dopiero do zapisu draftów).
           WP_APP_USER: ${{ secrets.WP_APP_USER }}
           WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+          # Fakty z analizy treści konkurencji (edytor, Jina Reader) – przez env,
+          # nie argument CLI: w treści faktów bywają cudzysłowy i znaki shella.
+          RIVALS_JSON: ${{ toJSON(github.event.client_payload.rivals) }}
         run: |
           python pipeline/content-refresher/run.py \
             --job "${{ github.event.client_payload.job_id || inputs.job_id }}" \

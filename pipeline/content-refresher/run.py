@@ -10,6 +10,7 @@ nie zapisuje niczego do WordPressa – kończy się propozycją i diffem.
 """
 import argparse
 import json
+import os
 import sys
 import traceback
 import urllib.parse
@@ -261,6 +262,24 @@ class Pipeline:
             "gap": len(self.context["keywords_gap"]),
         }, "cost": {"senuto_requests": 1}}
 
+    def _rivals_facts(self):
+        """Fakty z analizy treści konkurencji (edytor, Jina Reader).
+
+        Idą z Workera przez `client_payload.rivals` → env RIVALS_JSON – to już
+        opłacony research na pełnych tekstach, szkoda go pomijać w briefie.
+        `toJSON` w workflow daje literalne "null", gdy analizy nie było.
+        """
+        if self.fixtures is not None and "rivals" in self.fixtures:
+            return self.fixtures.get("rivals")
+        raw = os.environ.get("RIVALS_JSON", "").strip()
+        if not raw or raw == "null":
+            return None
+        try:
+            data = json.loads(raw)
+        except json.JSONDecodeError:
+            return None
+        return data if isinstance(data, dict) and (data.get("facts") or data.get("topics")) else None
+
     def step_brief(self):
         context = self.context
         outline = "\n".join(
@@ -282,6 +301,7 @@ class Pipeline:
             related_searches=(context.get("serp") or {}).get("related_searches") or [],
             competitors=[{k: v for k, v in row.items() if k != "text"} for row in context.get("competitors") or []],
             serp_drift=context.get("serp_drift") or [],
+            rivals=self._rivals_facts(),
             free_slots=context["free_slots"][:MAX_NEW_SECTIONS],
             max_new_sections=str(MAX_NEW_SECTIONS),
         )

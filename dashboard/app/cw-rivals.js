@@ -280,6 +280,25 @@ export function publicView(state) {
   };
 }
 
+/**
+ * Skrót gotowej analizy dla pipeline'u reoptymalizacji: fakty i mediana
+ * objętości idą w dispatchu do GitHub Actions i trafiają do briefu.
+ * Null, gdy analizy nie było albo nic nie znalazła – pipeline radzi sobie bez.
+ */
+export async function rivalsSummary(env, domain, postId) {
+  const snapshot = await readSnapshot(env, domain, postId);
+  if (snapshot?.status !== 'done' || !snapshot.payload) return null;
+  const view = publicView(snapshot.payload);
+  if (!view?.facts?.length && !view?.topics?.length) return null;
+  return {
+    facts: view.facts,
+    topics: view.topics,
+    median_words: view.median_words,
+    our_words: view.our_words,
+    generated_at: view.generated_at,
+  };
+}
+
 /* ---------- etapy ---------- */
 
 /**

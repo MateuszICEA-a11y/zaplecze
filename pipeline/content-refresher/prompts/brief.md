@@ -1,4 +1,4 @@
-<!-- version: 1.1.0 -->
+<!-- version: 1.2.0 -->
 Jesteś strategiem treści SEO. Na podstawie twardych danych masz przygotować wytyczne do reoptymalizacji istniejącego artykułu. Nie zgaduj – opieraj się wyłącznie na dostarczonych danych i na tym, co zweryfikujesz w sieci.
 
 ## Artykuł
@@ -38,6 +38,14 @@ Frazy pokrywane przez te adresy, których my nie mamy (Senuto):
 {{ competitor_keywords }}
 
 Uwaga: to wspólna pula fraz dla całego zestawu konkurentów, więc trafiają się w niej frazy spoza tematu artykułu (konkurenci rankują też na inne treści). Takie pozycje pomiń bez komentarza – nie buduj na nich luk ani nowych sekcji.
+
+## Zweryfikowane konkrety z treści konkurencji
+
+Osobna analiza pełnych tekstów konkurentów (nie tylko nagłówków) wskazała konkrety, których w naszym artykule brakuje, tematy nieporuszane u nas oraz medianę objętości ich tekstów. „null" oznacza, że tej analizy nie było:
+
+{{ rivals }}
+
+Fakty z tej listy traktuj jako najmocniejsze kandydatury do `gaps` – są zweryfikowane na pełnym tekście konkretnej strony (pole `source`). Medianę objętości porównaj z naszą długością przy decyzjach o rozbudowie.
 
 ## Jak dziś wygląda SERP dla głównej frazy
 

@@ -13,7 +13,7 @@
  */
 
 import { generateExpertQuote } from './cw-expert.js';
-import { handleRivals } from './cw-rivals.js';
+import { handleRivals, rivalsSummary } from './cw-rivals.js';
 import { handleSerpGap } from './cw-serp.js';
 import { handleUsage } from './cw-usage.js';
 
@@ -337,6 +337,9 @@ async function dispatchWorkflow(env, job) {
         author: job.author || '',
         improvements: job.improvements,
         models: job.models ?? null,
+        // Fakty z analizy treści konkurencji (Jina) – najmocniejszy, już
+        // opłacony sygnał luk; brief dostaje je zamiast zgadywać z nagłówków.
+        rivals: await rivalsSummary(env, job.domain, job.post_id).catch(() => null),
       },
     }),
   });
