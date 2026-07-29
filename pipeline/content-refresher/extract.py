@@ -210,6 +210,9 @@ def jina_extract(url: str, api_key: str) -> dict:
             "Accept": "application/json",
             "X-Remove-Selector": JINA_REMOVE_SELECTOR,
             "X-Retain-Images": "none",
+            # Cloudflare przed r.jina.ai odrzuca domyślne "Python-urllib" kodem
+            # 403 – ten sam gotcha co przy API dashboardu.
+            "User-Agent": USER_AGENT,
         },
     )
     try:
