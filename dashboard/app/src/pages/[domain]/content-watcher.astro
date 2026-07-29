@@ -398,7 +398,8 @@ const baseline = items.filter((item) => item.hash_baseline).length;
           <tr>
             <th class="num">Pilność</th>
             <th>Treść</th>
-            <th>Publikacja / aktualizacja</th>
+            <th class="num cw-date-th">Publikacja</th>
+            <th class="num cw-date-th">Aktualizacja</th>
             <th class="num">GSC · 30 dni</th>
             <th class="num">Zmiana · 90 dni</th>
             <th class="num">GA4</th>
@@ -434,14 +435,20 @@ const baseline = items.filter((item) => item.hash_baseline).length;
                   <span>{item.path}</span>
                   <small>{item.pillar} · {fmtInt(item.word_count)} słów · {fmtInt(item.headings)} nagłówków</small>
                 </td>
-                <td data-sort={item.effective_date.replaceAll('-', '')} data-label="Daty">
-                  <div class="cw-dates">
-                    <span>publ. {fmtDate(item.published_at)}</span>
-                    <span title={item.hash_baseline ? 'Data z pola modified – hash treści jest dopiero punktem odniesienia' : undefined}>
-                      akt. {fmtDate(item.updated_at)}{item.hash_baseline ? ' ≈' : ''}
-                    </span>
-                  </div>
-                  <small>{fmtInt(item.age_days)} dni od ostatniej zmiany</small>
+                <td class="num cw-date" data-sort={item.published_at.replaceAll('-', '')} data-label="Publikacja">
+                  <span class="cw-chip pub">{fmtDate(item.published_at)}</span>
+                </td>
+                <td class="num cw-date" data-sort={item.effective_date.replaceAll('-', '')} data-label="Aktualizacja">
+                  <span
+                    class="cw-chip upd"
+                    data-age={item.age_bucket}
+                    title={item.hash_baseline
+                      ? 'Data z pola modified – hash treści jest dopiero punktem odniesienia'
+                      : undefined}
+                  >
+                    {fmtDate(item.updated_at ?? item.published_at)}{item.hash_baseline ? ' ≈' : ''}
+                  </span>
+                  <small>{fmtInt(item.age_days)} dni temu</small>
                 </td>
                 <td class="num" data-sort={item.impressions ?? -1} data-label="GSC · 30 dni">
                   <b>{fmtInt(item.clicks)}</b> klik.
@@ -703,7 +710,20 @@ const baseline = items.filter((item) => item.hash_baseline).length;
   }
   .cw-title-row > a.cw-editor-link:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
   .cw-content > span { display: block; color: var(--ink-faint); font-size: .7rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .cw-dates { display: flex; flex-direction: column; gap: 2px; white-space: nowrap; }
+  /* Daty w dwóch osobnych, sortowalnych kolumnach. Chip aktualizacji nosi
+     kolor kubełka wieku – ten sam podział, co karty u góry strony. */
+  .cw-date-th, .cw-date { text-align: left; }
+  .cw-date small { white-space: nowrap; }
+  .cw-chip {
+    display: inline-block; padding: 4px 9px; border-radius: 2px; font-size: .74rem;
+    font-variant-numeric: tabular-nums; white-space: nowrap;
+  }
+  .cw-chip.pub { background: var(--bg-surface-3); color: var(--ink-muted); }
+  .cw-chip.upd { font-weight: 600; }
+  .cw-chip.upd[data-age='m0-3'] { color: var(--status-ok); background: var(--accent-blue-soft); }
+  .cw-chip.upd[data-age='m3-6'] { color: var(--ink); background: var(--bg-surface-3); }
+  .cw-chip.upd[data-age='m6-12'] { color: var(--status-warn-fg); background: var(--status-warn-bg); }
+  .cw-chip.upd[data-age='m12+'] { color: var(--status-err-fg); background: var(--status-err-bg); }
   .cw-delta.bad { color: var(--status-err-fg); font-weight: 600; }
   .cw-delta.good { color: var(--status-ok); font-weight: 600; }
   .cw-status {
@@ -765,11 +785,12 @@ const baseline = items.filter((item) => item.hash_baseline).length;
       border: 1px solid var(--hairline); background: var(--bg-surface-1);
     }
     .cw-table tbody td { display: none; border: 0; padding: 0; text-align: left; }
-    .cw-table tbody .cw-score-cell, .cw-table tbody .cw-content, .cw-table tbody td:nth-child(3),
-    .cw-table tbody td:nth-child(7) { display: block; }
+    /* Na wąskim ekranie zostaje pilność, treść, data aktualizacji (4) i stan (8). */
+    .cw-table tbody .cw-score-cell, .cw-table tbody .cw-content, .cw-table tbody td:nth-child(4),
+    .cw-table tbody td:nth-child(8) { display: block; }
     .cw-table tbody .cw-score-cell { grid-row: 1 / span 2; grid-column: 1; }
     .cw-table tbody .cw-content { grid-column: 2 / 4; }
-    .cw-table tbody td:nth-child(3) { grid-column: 2; }
-    .cw-table tbody td:nth-child(7) { grid-column: 2; }
+    .cw-table tbody td:nth-child(4) { grid-column: 2; }
+    .cw-table tbody td:nth-child(8) { grid-column: 2; }
   }
 </style>
