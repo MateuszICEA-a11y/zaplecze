@@ -13,6 +13,8 @@
  */
 
 import { generateExpertQuote } from './cw-expert.js';
+import { handleSerpGap } from './cw-serp.js';
+import { handleUsage } from './cw-usage.js';
 
 export const COOLDOWN_DAYS = 30; // ten sam wpis nie wraca do kolejki częściej
 export const MAX_ACTIVE_PER_DOMAIN = 3;
@@ -794,7 +796,7 @@ async function sweepStale(env) {
  * Trasy Content Watchera. Zwraca `null`, gdy ścieżka nie należy do tego modułu.
  * `beforeAuth` = wywołanie sprzed bramki Basic Auth (tylko callback).
  */
-export async function routeContentWatcher(request, env, { beforeAuth = false } = {}) {
+export async function routeContentWatcher(request, env, { beforeAuth = false, ctx = null } = {}) {
   const url = new URL(request.url);
   if (!url.pathname.startsWith('/api/cw/')) return null;
 
@@ -820,6 +822,24 @@ export async function routeContentWatcher(request, env, { beforeAuth = false } =
     if (request.method !== 'GET') return json({ error: 'Dozwolona metoda: GET.' }, 405);
     const [, domain, postType, postId] = contentMatch;
     return fetchPostContent(request, env, domain, postType, Number.parseInt(postId, 10));
+  }
+
+  if (url.pathname === '/api/cw/usage') return handleUsage(request, env);
+
+  const serpMatch = url.pathname.match(/^\/api\/cw\/serp\/([a-z0-9.-]{1,253})\/(\d{1,10})\/?$/i);
+  if (serpMatch) {
+    if (request.method !== 'GET' && request.method !== 'POST') {
+      return json({ error: 'Dozwolone metody: GET, POST.' }, 405);
+    }
+    if (request.method === 'POST' && !checkMutationOrigin(request)) {
+      return json({ error: 'Żądanie odrzucone.' }, 403);
+    }
+    const [, domain, postId] = serpMatch;
+    // contentDomains zwraca Mapę domena → adres bazowy, nie listę.
+    if (!contentDomains(env).has(domain.toLowerCase())) {
+      return json({ error: 'Domena spoza CW_DOMAINS.' }, 400);
+    }
+    return handleSerpGap(request, env, domain.toLowerCase(), Number.parseInt(postId, 10), ctx);
   }
 
   const jobMatch = url.pathname.match(/^\/api\/cw\/jobs\/([a-z0-9-]{8,64})(\/(cancel|expert|sections\/(\d{1,2})))?\/?$/i);

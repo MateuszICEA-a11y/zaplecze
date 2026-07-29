@@ -193,6 +193,73 @@ class TestResearch(unittest.TestCase):
         request.assert_not_called()
 
 
+class TestSerpDwaZapytania(unittest.TestCase):
+    """SERP pytany tematem wpisu i naszą frazą – tytuł jest bazą, nie fallbackiem."""
+
+    @staticmethod
+    def _pipeline(title, keywords_own):
+        import run as run_module
+
+        args = type("Args", (), {
+            "job": "t", "dry_run": True, "improvements": [], "research_file": "",
+            "model_research": "", "model_writer": "", "domain": "www.grupa-icea.pl",
+        })()
+        pipeline = run_module.Pipeline(args)
+        pipeline.context = {"title": title, "keywords_own": keywords_own, "gsc": []}
+        return pipeline
+
+    @staticmethod
+    def _serp(hosts, keyword):
+        return {
+            "keyword": keyword,
+            "competitors": [{"position": i + 1, "url": f"https://{h}/x", "title": h} for i, h in enumerate(hosts)],
+            "ai_overview": None, "people_also_ask": [], "related_searches": [],
+        }
+
+    def test_tytul_jest_baza_a_fraza_wlasna_dokladana(self):
+        pipeline = self._pipeline("Błąd 403 – jak naprawić? Co oznacza?", [{"keyword": "kod 403 apache"}])
+        asked = []
+
+        def fake_serp(keyword, domain, limit=5):
+            asked.append(keyword)
+            return self._serp(["temat-a.pl"] if keyword == "Błąd 403" else ["inna.pl"], keyword)
+
+        with mock.patch.object(research, "serp", side_effect=fake_serp):
+            payload = pipeline.step_serp()
+        self.assertEqual(asked, ["Błąd 403", "kod 403 apache"])
+        self.assertEqual(payload["cost"]["serp_requests"], 2)
+        self.assertEqual(pipeline.context["main_keyword"], "Błąd 403")
+
+    def test_rozjazd_to_hosty_z_tematu_nieobecne_na_naszej_frazie(self):
+        pipeline = self._pipeline("Looker Studio", [{"keyword": "looker studio cennik"}])
+
+        def fake_serp(keyword, domain, limit=5):
+            return self._serp(["temat-a.pl", "temat-b.pl"] if keyword == "Looker Studio" else ["temat-b.pl"], keyword)
+
+        with mock.patch.object(research, "serp", side_effect=fake_serp):
+            payload = pipeline.step_serp()
+        self.assertEqual(payload["payload"]["drift"], ["temat-a.pl"])
+        self.assertEqual(pipeline.context["serp_drift"], ["temat-a.pl"])
+
+    def test_fraza_rowna_tytulowi_nie_placi_za_drugi_serp(self):
+        pipeline = self._pipeline("Looker Studio", [{"keyword": "looker studio"}])
+        asked = []
+
+        def fake_serp(keyword, domain, limit=5):
+            asked.append(keyword)
+            return self._serp(["temat-a.pl"], keyword)
+
+        with mock.patch.object(research, "serp", side_effect=fake_serp):
+            payload = pipeline.step_serp()
+        self.assertEqual(len(asked), 1)
+        self.assertEqual(payload["cost"]["serp_requests"], 1)
+        self.assertEqual(payload["payload"]["drift"], [])
+
+    def test_title_query_zdejmuje_ozdobniki(self):
+        self.assertEqual(research.title_query("Błąd 403 – jak naprawić? Co oznacza?"), "Błąd 403")
+        self.assertEqual(research.title_query("Czym jest Looker Studio"), "Czym jest Looker Studio")
+
+
 class TestModelOverride(unittest.TestCase):
     """Wybór modeli z dashboardu: --model-* nadpisuje config, puste = defaulty."""
 

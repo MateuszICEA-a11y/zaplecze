@@ -493,6 +493,40 @@ test('routing: przed bramką hasła przechodzi wyłącznie callback', async () =
   assert.equal(await routeContentWatcher(other, env), null);
 });
 
+test('routing: trasa SERP sprawdza domenę na mapie CW_DOMAINS, nie na liście', async () => {
+  const env = { CW_DB: fakeDb(), CW_DOMAINS: 'grupa-icea.pl=https://www.grupa-icea.pl' };
+  const obca = await routeContentWatcher(
+    new Request('https://dash.example/api/cw/serp/obca.pl/1', { headers: { 'X-CW-Request': '1' } }),
+    env,
+  );
+  assert.equal(obca.status, 400);
+  // Znana domena musi przejść dalej – wcześniej `contentDomains(...).includes`
+  // wywalało Workera wyjątkiem, zanim ktokolwiek zobaczył odpowiedź.
+  const znana = await routeContentWatcher(
+    new Request('https://dash.example/api/cw/serp/grupa-icea.pl/1', { headers: { 'X-CW-Request': '1' } }),
+    env,
+  );
+  assert.equal(znana.status, 200);
+  assert.equal((await znana.json()).status, 'idle');
+});
+
+test('routing: POST na SERP bez nagłówka dashboardu to 403, nie wyjątek', async () => {
+  const env = { CW_DB: fakeDb(), CW_DOMAINS: 'grupa-icea.pl=https://www.grupa-icea.pl' };
+  const request = (headers) =>
+    new Request('https://dash.example/api/cw/serp/grupa-icea.pl/1', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', ...headers },
+      body: JSON.stringify({ title: 'x', url: 'https://www.grupa-icea.pl/x/' }),
+    });
+  const odrzucone = await routeContentWatcher(request({}), env);
+  assert.equal(odrzucone.status, 403);
+  // Z nagłówkiem musi wrócić Response, a nie `true` z checkMutationOrigin –
+  // to była przyczyna 1101 „Promise did not resolve to Response".
+  const przyjete = await routeContentWatcher(request({ 'X-CW-Request': '1' }), { ...env, SERPDATA_API_KEY: '' });
+  assert.ok(przyjete instanceof Response);
+  assert.equal(przyjete.status, 503);
+});
+
 test('routing: brak bindingu D1 daje czytelny 503, nie wyjątek', async () => {
   const response = await routeContentWatcher(new Request('https://dash.example/api/cw/jobs'), {});
   assert.equal(response.status, 503);

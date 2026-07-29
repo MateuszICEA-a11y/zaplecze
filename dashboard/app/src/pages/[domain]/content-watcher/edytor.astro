@@ -58,6 +58,26 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       </dl>
     </header>
 
+    <!-- Rozpoznanie SERP przed pipeline'em: wpis może rankować na frazy obok
+         tematu, a temat trzymać konkurencja z innym zestawem słów. -->
+    <section class="ed-serp" data-ed-serp>
+      <div class="ed-serp-head">
+        <div>
+          <h3>Kto zajmuje ten temat</h3>
+          <span class="section-meta">
+            Dwa zapytania do Google: tytuł wpisu i nasza najlepsza fraza • Frazy TOP 3 konkurentów zestawione
+            z naszymi • Wynik zapisujemy na tydzień, powtórka nie kosztuje limitów
+          </span>
+        </div>
+        <div class="ed-serp-actions">
+          <button type="button" class="ed-serp-run" data-ed-serp-run>Sprawdź SERP</button>
+          <span class="ed-serp-stamp" data-ed-serp-stamp></span>
+        </div>
+      </div>
+      <p class="ed-error" data-ed-serp-error hidden></p>
+      <div data-ed-serp-result hidden></div>
+    </section>
+
     <!-- Belka pipeline: konfiguracja → postęp → podsumowanie (jeden element,
          trzy stany sterowane z JS) -->
     <div class="ed-pipebar">
@@ -932,6 +952,226 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       showError(error instanceof Error ? error.message : 'Nie udało się anulować zadania.');
     }
   });
+  /* ---------- SERP: kto zajmuje temat ---------- */
+
+  type SerpAnalysis = {
+    queries: { kind: string; keyword: string; competitors: { position: number; url: string; host: string; title: string | null }[] }[];
+    drift: string[];
+    gap: { keyword: string; searches: number | null; our_position: number | null; status: string }[];
+    gap_summary: { total: number; missing: number; weak: number; covered: number };
+    own_keywords_total: number;
+    generated_at: string;
+    cached_at?: string;
+  };
+
+  const GAP_LABEL: Record<string, string> = {
+    missing: 'nie mamy',
+    weak: 'poza TOP 10',
+    covered: 'mamy',
+  };
+  const QUERY_LABEL: Record<string, string> = {
+    title: 'Temat wpisu (z tytułu)',
+    own: 'Nasza najlepsza fraza dziś',
+  };
+
+  function renderSerp(analysis: SerpAnalysis | null) {
+    const host = $('[data-ed-serp-result]')!;
+    const stamp = $('[data-ed-serp-stamp]')!;
+    if (!analysis) {
+      host.hidden = true;
+      stamp.textContent = '';
+      return;
+    }
+    const when = analysis.cached_at ?? analysis.generated_at;
+    stamp.textContent = `sprawdzone ${new Date(when).toLocaleString('pl-PL')}`;
+
+    const nodes: HTMLElement[] = [];
+    for (const query of analysis.queries) {
+      const box = document.createElement('div');
+      box.className = 'ed-serp-query';
+      const head = document.createElement('div');
+      head.className = 'ed-serp-query-head';
+      const label = document.createElement('span');
+      label.textContent = QUERY_LABEL[query.kind] ?? query.kind;
+      const keyword = document.createElement('b');
+      keyword.textContent = `„${query.keyword}"`;
+      head.append(label, keyword);
+      const list = document.createElement('ol');
+      list.className = 'ed-serp-list';
+      for (const row of query.competitors) {
+        const item = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = row.url;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.textContent = row.host;
+        const title = document.createElement('small');
+        title.textContent = row.title ?? '';
+        item.append(link, title);
+        list.append(item);
+      }
+      if (!query.competitors.length) {
+        const empty = document.createElement('li');
+        empty.textContent = 'brak wyników organicznych';
+        list.append(empty);
+      }
+      box.append(head, list);
+      nodes.push(box);
+    }
+
+    // Rozjazd to sedno tej analizy: konkurenci trzymają temat wpisu, a my
+    // rankujemy obok – na frazę, przy której ich nie ma.
+    if (analysis.drift.length) {
+      const drift = document.createElement('p');
+      drift.className = 'ed-serp-drift';
+      drift.textContent =
+        `Rankujemy obok tematu: ${analysis.drift.join(', ')} ` +
+        `${analysis.drift.length === 1 ? 'trzyma' : 'trzymają'} temat wpisu, ale nie ma ich w wynikach naszej dzisiejszej frazy.`;
+      nodes.push(drift);
+    }
+
+    const summary = document.createElement('p');
+    summary.className = 'ed-serp-summary';
+    summary.textContent =
+      `Frazy konkurencji: ${pl.format(analysis.gap_summary.total)} · nie mamy ${pl.format(analysis.gap_summary.missing)} · ` +
+      `poza TOP 10 ${pl.format(analysis.gap_summary.weak)} · mamy ${pl.format(analysis.gap_summary.covered)} ` +
+      `(nasz wpis rankuje na ${pl.format(analysis.own_keywords_total)} fraz)`;
+    nodes.push(summary);
+
+    if (!analysis.gap.length) {
+      // Senuto zna tylko domeny ze swojej bazy widoczności – przy niszowych
+      // konkurentach lista fraz bywa pusta i trzeba to powiedzieć wprost.
+      const empty = document.createElement('p');
+      empty.className = 'ed-serp-empty';
+      empty.textContent =
+        'Senuto nie ma fraz dla adresów tych konkurentów – zostaje sama lista wyników i rozjazd tematu.';
+      nodes.push(empty);
+    }
+    if (analysis.gap.length) {
+      const table = document.createElement('table');
+      table.className = 'data-table ed-serp-table';
+      table.innerHTML =
+        '<thead><tr><th>Fraza</th><th class="num">Wyszukiwań/mies.</th><th class="num">Nasza pozycja</th><th>Status</th></tr></thead>';
+      const body = document.createElement('tbody');
+      for (const row of analysis.gap) {
+        const tr = document.createElement('tr');
+        const cells = [
+          row.keyword,
+          row.searches === null ? '–' : pl.format(row.searches),
+          row.our_position === null ? 'brak' : `poz. ${pl.format(row.our_position)}`,
+        ];
+        cells.forEach((value, index) => {
+          const td = document.createElement('td');
+          if (index > 0) td.className = 'num';
+          td.textContent = value;
+          tr.append(td);
+        });
+        const status = document.createElement('td');
+        const badge = document.createElement('span');
+        badge.className = `ed-serp-badge ${row.status}`;
+        badge.textContent = GAP_LABEL[row.status] ?? row.status;
+        status.append(badge);
+        tr.append(status);
+        body.append(tr);
+      }
+      table.append(body);
+      const wrap = document.createElement('div');
+      wrap.className = 'ed-serp-table-wrap';
+      wrap.append(table);
+      nodes.push(wrap);
+    }
+
+    host.replaceChildren(...nodes);
+    host.hidden = false;
+  }
+
+  const serpBusy = (busy: boolean) => {
+    const button = $<HTMLButtonElement>('[data-ed-serp-run]')!;
+    button.disabled = busy;
+    button.textContent = busy ? 'sprawdzam SERP…' : 'Sprawdź SERP';
+  };
+
+  const serpError = (message: string | null) => {
+    const node = $('[data-ed-serp-error]')!;
+    node.textContent = message ?? '';
+    node.hidden = !message;
+  };
+
+  async function loadSerp() {
+    try {
+      const data = await api(`/api/cw/serp/${domain}/${entry.post_id}`);
+      if (data.status === 'running') { serpBusy(true); pollSerp(); return; }
+      if (data.status === 'error') serpError(data.error ?? 'Poprzednia analiza SERP zakończyła się błędem.');
+      renderSerp(data.analysis ?? null);
+    } catch {
+      // Brak zapisanej analizy nie jest błędem – przycisk i tak czeka.
+    }
+  }
+
+  const SERP_STAGE: Record<string, string> = {
+    serp_title: 'sprawdzam, kto zajmuje temat…',
+    serp_own: 'sprawdzam naszą frazę…',
+    keywords: 'pobieram frazy konkurencji…',
+  };
+
+  /* Jedno zapytanie SerpData idzie ~20 s, a Worker ma ograniczony czas życia,
+     więc analiza jest podzielona na etapy: każde żądanie przesuwa ją o jeden
+     krok, a my ponawiamy, aż wróci `done`. */
+  async function pollSerp(attempt = 0) {
+    if (attempt > 40) {
+      serpBusy(false);
+      serpError('Analiza SERP trwa dłużej niż zwykle. Kliknij „Sprawdź SERP”, aby dokończyć.');
+      return;
+    }
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+    try {
+      const data = await api(`/api/cw/serp/${domain}/${entry.post_id}`, {
+        method: 'POST',
+        body: JSON.stringify({ title: entry.title, url: entry.url, own_keywords: entry.senuto_keywords ?? [] }),
+      });
+      if (data.status === 'running') {
+        const button = $<HTMLButtonElement>('[data-ed-serp-run]')!;
+        button.textContent = SERP_STAGE[data.stage] ?? 'sprawdzam SERP…';
+        pollSerp(attempt + 1);
+        return;
+      }
+      serpBusy(false);
+      if (data.status === 'error') { serpError(data.error ?? 'Analiza SERP nie powiodła się.'); return; }
+      renderSerp(data.analysis ?? null);
+    } catch (err) {
+      serpBusy(false);
+      serpError(err instanceof Error ? err.message : 'Nie udało się odczytać wyniku analizy.');
+    }
+  }
+
+  async function runSerp(force = false) {
+    serpError(null);
+    serpBusy(true);
+    try {
+      const data = await api(`/api/cw/serp/${domain}/${entry.post_id}${force ? '?force=1' : ''}`, {
+        method: 'POST',
+        // Nasze frazy z pozycjami są już w katalogu (dane collectora) – wysyłamy
+        // je zamiast płacić Senuto za drugie pobranie tego samego.
+        body: JSON.stringify({
+          title: entry.title,
+          url: entry.url,
+          own_keywords: entry.senuto_keywords ?? [],
+        }),
+      });
+      if (data.status === 'running') { pollSerp(); return; }
+      serpBusy(false);
+      renderSerp(data.analysis ?? null);
+    } catch (err) {
+      serpBusy(false);
+      serpError(err instanceof Error ? err.message : 'Nie udało się sprawdzić SERP-a.');
+    }
+  }
+
+  $('[data-ed-serp-run]')?.addEventListener('click', (event) => {
+    // Shift = wymuszenie świeżego przejazdu mimo zapisanego wyniku.
+    runSerp((event as MouseEvent).shiftKey);
+  });
+
   $('[data-ed-brief-details]')?.addEventListener('toggle', (event) => {
     (event.currentTarget as HTMLElement).dataset.touched = '1';
   });
@@ -944,6 +1184,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     loadModels();
     loadContent();
     loadLatestJob();
+    loadSerp();
   });
 </script>
 
@@ -1084,6 +1325,40 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-view-seg button.active { background: var(--accent-blue-soft); color: var(--ink); border-color: var(--accent-blue); }
   .ed-accept { display: inline-flex; gap: 6px; align-items: center; cursor: pointer; color: var(--ink-muted); }
   .ed-accept input { accent-color: var(--accent-blue); margin: 0; }
+
+  /* ----- rozpoznanie SERP ----- */
+  .ed-serp { margin: 0 0 18px; padding: 16px 18px; border: 1px solid var(--hairline); background: var(--bg-surface-1); }
+  .ed-serp-head { display: flex; flex-wrap: wrap; gap: 12px 20px; justify-content: space-between; align-items: flex-start; }
+  .ed-serp-head h3 { margin: 0 0 4px; font: 600 1rem var(--font-display); }
+  .ed-serp-actions { display: flex; align-items: center; gap: 12px; }
+  .ed-serp-stamp { color: var(--ink-faint); font-size: .72rem; }
+  .ed-serp-run { padding: 8px 16px; border: 1px solid var(--accent-blue); border-radius: 2px;
+    background: var(--accent-blue); color: #000; font: 600 .8rem var(--font-display); cursor: pointer; }
+  .ed-serp-run:hover { filter: brightness(1.1); }
+  .ed-serp-run[disabled] { opacity: .5; cursor: wait; }
+  /* Wyniki buduje JS, więc scoped style ich nie łapie – stąd :global. */
+  .ed-serp :global(.ed-serp-query) { margin-top: 16px; }
+  .ed-serp :global(.ed-serp-query-head) { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline;
+    color: var(--ink-faint); font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; }
+  .ed-serp :global(.ed-serp-query-head b) { color: var(--ink); font-size: .82rem; text-transform: none;
+    letter-spacing: 0; }
+  .ed-serp :global(.ed-serp-list) { margin: 8px 0 0; padding-left: 20px; display: flex; flex-direction: column; gap: 5px; }
+  .ed-serp :global(.ed-serp-list li) { font-size: .8rem; }
+  .ed-serp :global(.ed-serp-list a) { color: var(--ink); font-weight: 600; text-decoration: none; }
+  .ed-serp :global(.ed-serp-list a:hover) { color: var(--accent-blue); }
+  .ed-serp :global(.ed-serp-list small) { display: block; color: var(--ink-faint); font-size: .71rem;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .ed-serp :global(.ed-serp-drift) { margin: 16px 0 0; padding: 10px 12px; border-left: 2px solid var(--status-warn-fg);
+    background: var(--status-warn-bg); color: var(--ink); font-size: .8rem; line-height: 1.5; }
+  .ed-serp :global(.ed-serp-empty) { margin: 10px 0 0; color: var(--ink-faint); font-size: .78rem; }
+  .ed-serp :global(.ed-serp-summary) { margin: 16px 0 8px; color: var(--ink-muted); font-size: .78rem; }
+  .ed-serp :global(.ed-serp-table-wrap) { overflow-x: auto; }
+  .ed-serp :global(.ed-serp-table) { min-width: 560px; font-size: .8rem; }
+  .ed-serp :global(.ed-serp-badge) { display: inline-flex; padding: 3px 8px; border-radius: 999px;
+    background: var(--bg-surface-3); color: var(--ink-muted); font-size: .69rem; font-weight: 600; }
+  .ed-serp :global(.ed-serp-badge.missing) { color: var(--status-err-fg); background: var(--status-err-bg); }
+  .ed-serp :global(.ed-serp-badge.weak) { color: var(--status-warn-fg); background: var(--status-warn-bg); }
+  .ed-serp :global(.ed-serp-badge.covered) { color: var(--status-ok); background: var(--status-ok-bg); }
 
   /* ----- porada eksperta (DOM z JS) ----- */
   .ed-expert-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }

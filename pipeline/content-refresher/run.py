@@ -12,6 +12,7 @@ import argparse
 import json
 import sys
 import traceback
+import urllib.parse
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -143,40 +144,81 @@ class Pipeline:
                 "cost": {"senuto_requests": 2}}
 
     def step_serp(self):
-        keyword = (
+        """SERP pytany dwa razy: tematem wpisu i naszą dzisiejszą frazą.
+
+        Wpis potrafi rankować na frazy peryferyjne, a temat trzymać w SERP-ie
+        ktoś inny. Pytanie wyłącznie naszą najlepszą frazą prowadziło research
+        w bok – dlatego bazą jest tytuł, a fraza własna dokłada obraz tego,
+        z kim konkurujemy dziś. Hosty obecne tylko w SERP-ie tytułu to rozjazd
+        („rankujemy obok tematu") i trafiają do briefu.
+        """
+        topic = research.title_query(self.context["title"]) or self.context["title"]
+        own = (
             (self.context.get("keywords_own") or [{}])[0].get("keyword")
             or (self.context.get("gsc") or [{}])[0].get("query")
-            or self.context["title"]
+            or ""
         )
         if self.fixtures is not None:
-            self.context["main_keyword"] = self.fixtures.get("main_keyword") or keyword
+            self.context["main_keyword"] = self.fixtures.get("main_keyword") or topic
             self.context["competitors"] = self.fixtures.get("competitors") or []
             self.context["serp"] = self.fixtures.get("serp") or {}
+            self.context["serp_drift"] = self.fixtures.get("serp_drift") or []
             if not self.context["competitors"]:
                 raise RuntimeError("plik z danymi researchu nie zawiera konkurentów")
             return {"payload": {"source": "fixtures", "keyword": self.context["main_keyword"],
                                 "competitors": self.context["competitors"]}}
-        self.budget.check("serp_requests", estimate=1)
-        data = research.serp(keyword, self.args.domain, limit=COMPETITOR_LIMIT)
-        self.budget.add_serp()
-        if not data["competitors"]:
-            raise RuntimeError(f"brak wyników organicznych dla frazy „{keyword}”")
-        self.context["main_keyword"] = keyword
-        self.context["competitors"] = data["competitors"]
+
+        queries = [("title", topic)]
+        # Drugie zapytanie tylko wtedy, gdy fraza własna faktycznie różni się od
+        # tytułu – inaczej płacilibyśmy dwa razy za ten sam SERP.
+        if own and own.strip().lower() != topic.strip().lower():
+            queries.append(("own", own))
+
+        results: dict[str, dict] = {}
+        for kind, keyword in queries:
+            self.budget.check("serp_requests", estimate=1)
+            results[kind] = research.serp(keyword, self.args.domain, limit=COMPETITOR_LIMIT)
+            self.budget.add_serp()
+
+        competitors = []
+        seen_hosts = set()
+        for kind, _ in queries:
+            for row in results[kind]["competitors"]:
+                host = urllib.parse.urlparse(row["url"]).netloc.removeprefix("www.")
+                if host in seen_hosts:
+                    continue
+                seen_hosts.add(host)
+                competitors.append({**row, "from_query": kind})
+        if not competitors:
+            raise RuntimeError(f"brak wyników organicznych dla frazy „{topic}”")
+
+        title_hosts = {urllib.parse.urlparse(row["url"]).netloc.removeprefix("www.")
+                       for row in results["title"]["competitors"]}
+        own_hosts = {urllib.parse.urlparse(row["url"]).netloc.removeprefix("www.")
+                     for row in results.get("own", {}).get("competitors", [])}
+        drift = sorted(title_hosts - own_hosts) if own_hosts else []
+
+        base = results["title"]
+        self.context["main_keyword"] = topic
+        self.context["own_keyword"] = own or None
+        self.context["competitors"] = competitors[:COMPETITOR_LIMIT]
+        self.context["serp_drift"] = drift
         # AI Overview, PAA i frazy powiązane idą do briefu: pokazują, na jakie
         # pytania odpowiada dziś SERP, a nie tylko kto w nim stoi.
         self.context["serp"] = {
-            "ai_overview": data["ai_overview"],
-            "people_also_ask": data["people_also_ask"],
-            "related_searches": data["related_searches"],
+            "ai_overview": base["ai_overview"],
+            "people_also_ask": base["people_also_ask"],
+            "related_searches": base["related_searches"],
         }
         return {"payload": {
-            "keyword": keyword,
-            "competitors": data["competitors"],
-            "ai_overview": bool(data["ai_overview"]),
-            "people_also_ask": data["people_also_ask"],
-            "related_searches": data["related_searches"],
-        }, "cost": {"serp_requests": 1}}
+            "keyword": topic,
+            "queries": [{"kind": kind, "keyword": keyword} for kind, keyword in queries],
+            "competitors": self.context["competitors"],
+            "drift": drift,
+            "ai_overview": bool(base["ai_overview"]),
+            "people_also_ask": base["people_also_ask"],
+            "related_searches": base["related_searches"],
+        }, "cost": {"serp_requests": len(queries)}}
 
     def step_competitors(self):
         urls = [row["url"] for row in self.context.get("competitors") or []]
@@ -239,6 +281,7 @@ class Pipeline:
             people_also_ask=(context.get("serp") or {}).get("people_also_ask") or [],
             related_searches=(context.get("serp") or {}).get("related_searches") or [],
             competitors=[{k: v for k, v in row.items() if k != "text"} for row in context.get("competitors") or []],
+            serp_drift=context.get("serp_drift") or [],
             free_slots=context["free_slots"][:MAX_NEW_SECTIONS],
             max_new_sections=str(MAX_NEW_SECTIONS),
         )

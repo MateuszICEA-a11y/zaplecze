@@ -15,6 +15,7 @@ tam obowiązuje `1`. Analiza Widoczności odwrotnie: 200 to baza z aplikacji.
 """
 import json
 import os
+import re
 import time
 import urllib.parse
 import urllib.request
@@ -119,6 +120,22 @@ def competitor_keywords(urls: list[str], limit: int = COMPETITOR_KEYWORDS_LIMIT)
     """
     rows = keywords_for_urls(urls, match_mode="narrow", limit=limit)
     return {"keywords": rows, "urls": list(urls)}
+
+
+def title_query(title: str) -> str:
+    """Tytuł → zapytanie do SERP-a.
+
+    Zdejmujemy ozdobniki, które w wyszukiwarce tylko rozmywają intencję:
+    dopisek po półpauzie, znaki zapytania, cudzysłowy. Bliźniak funkcji
+    `titleQuery` z dashboard/app/cw-serp.js – obie muszą pytać tak samo,
+    inaczej edytor pokaże inny SERP niż zobaczy pipeline.
+    """
+    base = re.sub(r"\s*[–—|]\s*.*$", "", title or "")
+    base = re.sub(r"[?!\"„”]", "", base)
+    base = re.sub(r"\s+", " ", base).strip()
+    if len(base) > 90:
+        base = re.sub(r"\s+\S*$", "", base[:90])
+    return base
 
 
 def serp(keyword: str, own_domain: str, limit: int = COMPETITOR_LIMIT) -> dict:

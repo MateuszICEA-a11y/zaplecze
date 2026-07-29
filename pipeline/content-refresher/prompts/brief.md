@@ -26,8 +26,13 @@ Zapytania z Search Console (90 dni):
 
 ## Konkurencja z wyników wyszukiwania
 
-Adresy rankujące najwyżej dla głównej frazy, wraz z ich strukturą nagłówków:
+SERP sprawdzaliśmy dwoma zapytaniami: tematem wpisu (z tytułu) i naszą najlepszą dzisiejszą frazą. Pole `from_query` mówi, z którego zapytania pochodzi adres (`title` = temat, `own` = nasza fraza).
+
+Adresy rankujące najwyżej, wraz z ich strukturą nagłówków:
 {{ competitors }}
+
+Domeny trzymające temat wpisu, których nie ma w wynikach naszej dzisiejszej frazy – sygnał, że rankujemy obok tematu:
+{{ serp_drift }}
 
 Frazy pokrywane przez te adresy, których my nie mamy (Senuto):
 {{ competitor_keywords }}

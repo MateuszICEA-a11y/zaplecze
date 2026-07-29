@@ -81,7 +81,7 @@ async function bingImport(request, env, domain) {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     // Callback pipeline'u idzie PRZED bramką hasła: runner GitHub Actions nie
     // może podać hasła dashboardu i własnego tokenu na jednym nagłówku
     // Authorization. Uwierzytelnia go podpis HMAC ciała żądania.
@@ -98,7 +98,8 @@ export default {
     const given = passwordFromHeader(request.headers.get('Authorization'));
     if (given !== expected) return unauthorized();
     const url = new URL(request.url);
-    const contentWatcher = await routeContentWatcher(request, env);
+    // `ctx` niesie waitUntil – analiza SERP kończy się po odesłaniu odpowiedzi.
+    const contentWatcher = await routeContentWatcher(request, env, { ctx });
     if (contentWatcher) return contentWatcher;
 
     const importMatch = url.pathname.match(/^\/api\/imports\/bing-ai\/([^/]+)\/?$/);
