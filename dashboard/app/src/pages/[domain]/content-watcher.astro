@@ -76,12 +76,61 @@ for (const row of details.sources.ga4?.landing_pages?.rows ?? []) {
           (sessions || 1),
   });
 }
+// Frazy Senuto per adres. Wpisów bywa po kilkadziesiąt na URL, więc do
+// szczegółów trafia tylko krótka lista: najpierw frazy tuż pod progiem
+// (11–30, czyli cel reoptymalizacji), potem najlepsze wolumenowo.
+const senutoKeywordsByPath = new Map<string, { keyword: string; position: number; searches: number | null }[]>();
+for (const row of details.sources.senuto?.keywords ?? []) {
+  if (!row.url || typeof row.position !== 'number') continue;
+  const key = normPath(row.url.replace(/^(https?:\/\/)?(www\.)?[^/]+/i, ''));
+  const list = senutoKeywordsByPath.get(key) ?? [];
+  list.push({ keyword: row.keyword, position: row.position, searches: row.searches });
+  senutoKeywordsByPath.set(key, list);
+}
+const KEYWORDS_SHOWN = 6;
+const keywordRank = (position: number): number => (position >= 11 && position <= 30 ? 0 : position <= 10 ? 1 : 2);
+
 const gscCompare = details.sources.gsc?.compare?.qoq;
 const compareByPath = new Map<string, GscCompareRow>(
   (gscCompare?.pages ?? []).map((row) => [normPath(row.key), row]),
 );
 
-type ScorePart = { key: string; label: string; hint: string; points: number; max: number; available: boolean };
+type ScorePart = { key: string; points: number; max: number; available: boolean };
+
+// Etykiety i opisy składowych są takie same dla każdego wpisu, więc jadą do
+// przeglądarki raz, obok payloadu z liczbami. `hint` widać zawsze, `formula`
+// siedzi w dymku „i".
+const SCORE_PART_TEXTS: Record<string, { label: string; hint: string; formula: string }> = {
+  loss: {
+    label: 'Utrata ruchu',
+    hint: 'Search Console: spadek kliknięć i pozycji względem poprzednich 90 dni',
+    formula:
+      'Ile kliknięć i pozycji wpis stracił przez ostatnie 90 dni. Im większy spadek, tym więcej punktów. ' +
+      'Dane: Search Console. Brak danych = wpis nie miał wyświetleń w jednym z porównywanych okresów.',
+  },
+  potential: {
+    label: 'Potencjał',
+    hint: 'Search Console, 30 dni: wyświetlenia, pozycja 4–30, niskie CTR',
+    formula:
+      'Ile wpis może jeszcze zyskać. Punkty rosną, gdy strona ma dużo wyświetleń, stoi tuż za TOP 10 ' +
+      'albo jest często pokazywana, a rzadko klikana. Dane: Search Console, ostatnie 30 dni.',
+  },
+  senuto: {
+    label: 'Pokrycie fraz',
+    hint: 'Senuto: frazy na pozycjach 11–30 i poza TOP 10',
+    formula:
+      'Ile fraz stoi tuż pod progiem widoczności – pozycje 11–30 i frazy poza TOP 10. ' +
+      'Dane: Senuto. Zero punktów = adres rankuje na jakieś frazy, ale żadna nie jest tuż pod progiem. ' +
+      'Brak danych = Senuto nie widzi tego adresu w wynikach wyszukiwania.',
+  },
+  engagement: {
+    label: 'Zaangażowanie',
+    hint: 'GA4: engagement rate poniżej 60% (od 10 sesji w górę)',
+    formula:
+      'Jak słabo wpis angażuje czytelników – im niższy engagement rate, tym więcej punktów. ' +
+      'Dane: GA4, liczone od 10 sesji w górę.',
+  },
+};
 const clamp = (value: number, min: number, max: number): number => Math.min(max, Math.max(min, value));
 
 // Kalibracja per domena. Wiek NIE daje punktów – bramkuje wejście do kolejki
@@ -153,41 +202,11 @@ const items = catalog
             Math.min(4, Math.max(0, senuto.keywords - senuto.top10) * 0.6),
         );
 
-    // `hint` mówi wprost, z czego liczona jest składowa i z jakiego źródła –
-    // bez tego liczby w szczegółach są nie do zweryfikowania.
     const parts: ScorePart[] = [
-      {
-        key: 'loss',
-        label: 'Utrata ruchu',
-        hint: 'GSC: spadek kliknięć i pozycji względem poprzednich 90 dni',
-        points: lossPoints,
-        max: 45,
-        available: Boolean(compare),
-      },
-      {
-        key: 'potential',
-        label: 'Potencjał',
-        hint: 'GSC 30 dni: wyświetlenia, pozycja 4–30 i niski CTR przy popycie',
-        points: potentialPoints,
-        max: 35,
-        available: Boolean(indexing),
-      },
-      {
-        key: 'senuto',
-        label: 'Pokrycie fraz',
-        hint: 'Senuto: pozycja 11–30 i frazy poza TOP 10',
-        points: senutoPoints,
-        max: 12,
-        available: senutoAvailable,
-      },
-      {
-        key: 'engagement',
-        label: 'Zaangażowanie',
-        hint: 'GA4: engagement rate poniżej 60% (min. 10 sesji)',
-        points: engagementPoints,
-        max: 8,
-        available: engagementAvailable,
-      },
+      { key: 'loss', points: lossPoints, max: 45, available: Boolean(compare) },
+      { key: 'potential', points: potentialPoints, max: 35, available: Boolean(indexing) },
+      { key: 'senuto', points: senutoPoints, max: 12, available: senutoAvailable },
+      { key: 'engagement', points: engagementPoints, max: 8, available: engagementAvailable },
     ];
     // Bez pomiaru z GSC (indeksacja lub porównanie okien) nie ma czego ważyć –
     // taka treść wypada z rankingu zamiast dostawać wynik z resztek składowych.
@@ -207,7 +226,7 @@ const items = catalog
     if (impressions > 0 && typeof bestPosition === 'number' && bestPosition >= 11 && bestPosition <= 20) {
       reasons.push(`pozycja ${fmtNum(bestPosition, 1)} — blisko TOP 10`);
     }
-    if (ctrPoints > 0) reasons.push(`CTR ${fmtPct(indexing?.ctr)} przy widocznym popycie`);
+    if (ctrPoints > 0) reasons.push(`CTR ${fmtPct(indexing?.ctr)} mimo ${fmtInt(impressions)} wyświetleń`);
     if (ageDays >= minAgeDays) reasons.push(`bez aktualizacji od ${fmtInt(ageDays)} dni`);
     if (engagementPoints >= 3) reasons.push(`engagement ${fmtPct(ga4?.engagement_rate)}`);
 
@@ -240,8 +259,23 @@ const items = catalog
       senuto_keyword: senuto?.best_keyword ?? null,
       senuto_keywords: senuto?.keywords ?? null,
       senuto_top10: senuto?.top10 ?? null,
+      senuto_top_keywords: [...(senutoKeywordsByPath.get(path) ?? [])]
+        .sort(
+          (a, b) =>
+            keywordRank(a.position) - keywordRank(b.position) ||
+            (b.searches ?? 0) - (a.searches ?? 0) ||
+            a.position - b.position,
+        )
+        .slice(0, KEYWORDS_SHOWN),
       score,
-      parts: parts.map((part) => ({ ...part, points: Math.round(part.points * 10) / 10 })),
+      // Do payloadu idą tylko liczby – etykiety i opisy są stałe dla wszystkich
+      // wpisów, więc powielone 604 razy rozdmuchiwały stronę do megabajtów.
+      parts: parts.map((part) => ({
+        key: part.key,
+        points: Math.round(part.points * 10) / 10,
+        max: part.max,
+        available: part.available,
+      })),
       reasons,
     };
   });
@@ -324,13 +358,20 @@ const baseline = items.filter((item) => item.hash_baseline).length;
   <DomainHeader domain={domain!} name={name} active="content-watcher" latest={latest} themeToggle />
 
   <div class="cw-note">
-    Content Watcher łączy metadane artykułów z indeksacją, GSC, GA4 i Senuto. Priorytet wskazuje treści warte ręcznej
-    oceny przed reoptymalizacją; kolejka n8n zostanie podłączona w następnym etapie.
+    <p>
+      Moduł Content Watcher łączy metadane artykułów ze statusem indeksacji oraz danymi z GSC, GA4 i Senuto.
+      Wskaźnik priorytetu podpowiada, które teksty warto zweryfikować ręcznie przed ich ponowną optymalizacją
+      (integrację z kolejką n8n dodamy w kolejnym etapie).
+      {fromCms && <> Baza tekstów jest pobierana przez REST API WordPressa, a treści budujemy z pól ACF.</>}
+    </p>
     {fromCms && (
-      <> Katalog pochodzi z REST API WordPressa (treść składana z pól ACF). „Aktualizacja” to data
-      realnej zmiany treści liczona z hasha – pole <code>modified</code> podnosi się przy każdym zapisie w CMS-ie.
-      {baseline > 0 && <> Dla {fmtInt(baseline)} wpisów pierwszy hash to dopiero punkt odniesienia, więc do czasu
-      kolejnej zmiany widnieje przy nich data z <code>modified</code>.</>}</>
+      <p>
+        Co ważne, „Data aktualizacji” odzwierciedla rzeczywistą zmianę tekstu weryfikowaną na podstawie sumy
+        kontrolnej (tzw. hasha). Ignorujemy dzięki temu systemowe pole <code>modified</code>, które aktualizuje się
+        przy każdym kliknięciu „Zapisz” w CMS-ie.
+        {baseline > 0 && <> Dla {fmtInt(baseline)} wpisów obecny hash to dopiero stan początkowy – do czasu ich
+        pierwszej edycji wyświetlamy tam standardową datę modyfikacji.</>}
+      </p>
     )}
   </div>
 
@@ -378,9 +419,9 @@ const baseline = items.filter((item) => item.hash_baseline).length;
     <div>
       <h2>Priorytety reoptymalizacji</h2>
       <span class="section-meta">
-        pilność z macierzy wyniki × wiek · wynik 0–100 (utrata ruchu, potencjał, pokrycie fraz, zaangażowanie)
-        porządkuje wpisy w obrębie jednej pilności · okres ochronny {fmtInt(minAgeDays)} dni · kliknij „Szczegóły”,
-        aby zobaczyć składowe
+        Pilność zależy od relacji wyników do wieku wpisu • Wynik (0–100) decyduje o kolejności wpisów o tej samej
+        pilności i uwzględnia: utratę ruchu, potencjał, pokrycie fraz oraz zaangażowanie • Obowiązuje
+        {' '}{fmtInt(minAgeDays)}-dniowy okres ochronny • Kliknij „Szczegóły”, aby zobaczyć składowe oceny.
       </span>
     </div>
     <div class="cw-automation" title="Automatyzacja zostanie uruchomiona po wdrożeniu kolejki i callbacków n8n">
@@ -539,6 +580,8 @@ const baseline = items.filter((item) => item.hash_baseline).length;
         </dl>
         <h3>Dlaczego taki priorytet?</h3>
         <ul class="cw-reasons" data-detail-reasons></ul>
+        <h3 data-detail-keywords-head>Na jakie frazy rankuje</h3>
+        <div class="cw-keywords" data-detail-keywords></div>
       </section>
       <aside>
         <div class="cw-score-large"><b data-detail-score></b><span>/ 100</span></div>
@@ -557,9 +600,11 @@ const baseline = items.filter((item) => item.hash_baseline).length;
   </dialog>
 
   <script id="content-watcher-data" type="application/json" set:html={JSON.stringify(detailPayload).replace(/</g, '\\u003c')} />
+  <script id="content-watcher-parts" type="application/json" set:html={JSON.stringify(SCORE_PART_TEXTS).replace(/</g, '\\u003c')} />
 
   <script>
-    type DetailPart = { label: string; hint: string; points: number; max: number; available: boolean };
+    type DetailPart = { key: string; points: number; max: number; available: boolean };
+    type PartText = { label: string; hint: string; formula: string };
     type DetailItem = {
       title: string; url: string; pillar: string; content_path: string;
       published_at: string; updated_at: string | null; age_days: number;
@@ -568,12 +613,15 @@ const baseline = items.filter((item) => item.hash_baseline).length;
       clicks_delta: number | null; position_delta: number | null;
       ga4_sessions: number | null; engagement_rate: number | null;
       senuto_position: number | null; senuto_keywords: number | null; senuto_top10: number | null;
+      senuto_top_keywords: { keyword: string; position: number; searches: number | null }[];
       word_count: number; headings: number; internal_links: number; external_links: number;
       score: number; reasons: string[];
       parts: DetailPart[];
     };
     const payloadNode = document.getElementById('content-watcher-data');
     const contentItems = payloadNode?.textContent ? JSON.parse(payloadNode.textContent) as Record<string, DetailItem> : {};
+    const partsNode = document.getElementById('content-watcher-parts');
+    const partTexts = partsNode?.textContent ? JSON.parse(partsNode.textContent) as Record<string, PartText> : {};
     const dialog = document.querySelector<HTMLDialogElement>('[data-cw-dialog]');
     const pl = new Intl.NumberFormat('pl-PL', { maximumFractionDigits: 1 });
     const date = (value: string | null) =>
@@ -607,13 +655,54 @@ const baseline = items.filter((item) => item.hash_baseline).length;
         reasons?.replaceChildren(...(item.reasons.length ? item.reasons : ['Brak silnego sygnału do reoptymalizacji.']).map((reason) => {
           const li = document.createElement('li'); li.textContent = reason; return li;
         }));
+        // Frazy Senuto: pierwsze idą te tuż pod progiem (11–30) – to one są
+        // celem reoptymalizacji; reszta listy tylko pokazuje kontekst.
+        const keywords = dialog.querySelector<HTMLElement>('[data-detail-keywords]');
+        const rest = (item.senuto_keywords ?? 0) - item.senuto_top_keywords.length;
+        keywords?.replaceChildren(
+          ...(item.senuto_top_keywords.length
+            ? item.senuto_top_keywords.map((row) => {
+                const line = document.createElement('div');
+                line.className = 'cw-kw';
+                const name = document.createElement('span'); name.textContent = row.keyword;
+                const pos = document.createElement('b');
+                pos.className = row.position >= 11 && row.position <= 30 ? 'near' : '';
+                pos.textContent = `poz. ${pl.format(row.position)}`;
+                const vol = document.createElement('small');
+                vol.textContent = row.searches === null ? 'brak wolumenu' : `${pl.format(row.searches)} wysz./mies.`;
+                line.append(name, pos, vol);
+                return line;
+              })
+            : [Object.assign(document.createElement('p'), {
+                className: 'cw-kw-empty',
+                textContent: 'Senuto nie widzi tego adresu w wynikach wyszukiwania.',
+              })]),
+          ...(rest > 0
+            ? [Object.assign(document.createElement('p'), {
+                className: 'cw-kw-empty',
+                textContent: `+ ${pl.format(rest)} kolejnych fraz w Senuto`,
+              })]
+            : []),
+        );
         const parts = dialog.querySelector<HTMLElement>('[data-detail-parts]');
         parts?.replaceChildren(...item.parts.map((part) => {
+          const text = partTexts[part.key] ?? { label: part.key, hint: '', formula: '' };
           const row = document.createElement('div');
           row.className = part.available ? 'cw-part' : 'cw-part unavailable';
           const head = document.createElement('div');
           head.className = 'cw-part-head';
-          const label = document.createElement('span'); label.textContent = part.label;
+          const label = document.createElement('span');
+          label.textContent = text.label;
+          // Badge „i" z pełnym wzorem – ten sam wzorzec, co w nagłówkach tabel
+          // (obsługa otwierania siedzi w globalnym listenerze TableCard).
+          const badge = document.createElement('span');
+          badge.className = 'info-badge';
+          badge.textContent = 'i';
+          const tip = document.createElement('span');
+          tip.className = 'info-tip';
+          tip.textContent = text.formula;
+          badge.append(tip);
+          label.append(badge);
           const value = document.createElement('strong');
           value.textContent = part.available ? `${pl.format(part.points)} / ${part.max} pkt` : 'brak danych';
           head.append(label, value);
@@ -622,7 +711,7 @@ const baseline = items.filter((item) => item.hash_baseline).length;
           fill.style.width = `${part.available ? Math.round((part.points / part.max) * 100) : 0}%`;
           track.append(fill);
           const hint = document.createElement('small');
-          hint.textContent = part.hint;
+          hint.textContent = text.hint;
           row.append(head, track, hint);
           return row;
         }));
@@ -700,6 +789,8 @@ const baseline = items.filter((item) => item.hash_baseline).length;
     font-size: .86rem;
     line-height: 1.55;
   }
+  .cw-note p { margin: 0; }
+  .cw-note p + p { margin-top: 10px; }
   .cw-kpis { grid-template-columns: 1.35fr repeat(4, 1fr); margin-bottom: 28px; }
   .cw-kpis-urgency { grid-template-columns: repeat(5, 1fr); }
   /* Karta KPI jako przycisk filtra: `all: unset` zdejmuje wygląd buttona,
@@ -806,6 +897,17 @@ const baseline = items.filter((item) => item.hash_baseline).length;
   .cw-facts dd { margin: 4px 0 0; color: var(--ink); font-size: .79rem; overflow-wrap: anywhere; }
   .cw-facts code { font-size: .68rem; color: var(--ink-muted); }
   .cw-reasons { margin: 0; padding-left: 20px; color: var(--ink-muted); font-size: .82rem; line-height: 1.65; }
+  .cw-keywords { display: flex; flex-direction: column; gap: 1px; }
+  .cw-keywords :global(.cw-kw) {
+    display: grid; grid-template-columns: 1fr auto auto; gap: 12px; align-items: baseline;
+    padding: 7px 10px; background: var(--bg-surface-2); font-size: .79rem;
+  }
+  .cw-keywords :global(.cw-kw span) { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .cw-keywords :global(.cw-kw b) { color: var(--ink-muted); font-size: .72rem; font-weight: 600; white-space: nowrap; }
+  /* Pozycje 11–30 to cel reoptymalizacji – wyróżnione, reszta jest kontekstem. */
+  .cw-keywords :global(.cw-kw b.near) { color: var(--status-warn-fg); }
+  .cw-keywords :global(.cw-kw small) { color: var(--ink-faint); font-size: .69rem; white-space: nowrap; min-width: 92px; text-align: right; }
+  .cw-keywords :global(.cw-kw-empty) { margin: 8px 0 0; color: var(--ink-faint); font-size: .74rem; }
   .cw-score-large { display: flex; align-items: baseline; gap: 6px; margin-bottom: 6px; }
   .cw-score-note {
     margin: 0 0 18px; padding-bottom: 14px; border-bottom: 1px solid var(--hairline);
@@ -856,4 +958,8 @@ const baseline = items.filter((item) => item.hash_baseline).length;
   .cw-part i { height: 7px; overflow: hidden; background: var(--bg-surface-3); border-radius: 2px; }
   .cw-part i b { display: block; height: 100%; background: var(--accent-blue); }
   .cw-part small { color: var(--ink-faint); font-size: .69rem; line-height: 1.45; }
+  /* Dialog scrolluje się w pionie, więc dymek wyrównany do środka badge'a
+     wychodziłby poza krawędź i zostałby przycięty – rozwijamy go w prawo. */
+  .cw-part .info-tip { left: 0; transform: none; max-width: 300px; font-size: .72rem; }
+  .cw-part .info-tip::after { left: 8px; transform: none; }
 </style>
