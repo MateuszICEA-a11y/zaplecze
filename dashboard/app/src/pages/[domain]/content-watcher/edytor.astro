@@ -112,16 +112,27 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
               </label>
             ))}
           </div>
+          <!-- Lista modeli z OpenRoutera ma kilkaset pozycji, więc zamiast
+               natywnego datalisty stoi tu własny combobox z filtrowaniem. -->
           <div class="ed-models">
-            <label>
+            <label class="ed-combo">
               <span>Model analizy</span>
-              <input list="ed-model-list" data-ed-model-research value={DEFAULT_MODELS.research} spellcheck="false" />
+              <div class="ed-combo-box">
+                <input data-ed-model-research value={DEFAULT_MODELS.research} spellcheck="false"
+                  autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" />
+                <button type="button" class="ed-combo-toggle" aria-label="Pokaż listę modeli">▾</button>
+                <ul class="ed-combo-list" hidden></ul>
+              </div>
             </label>
-            <label>
+            <label class="ed-combo">
               <span>Model pisania</span>
-              <input list="ed-model-list" data-ed-model-writer value={DEFAULT_MODELS.writer} spellcheck="false" />
+              <div class="ed-combo-box">
+                <input data-ed-model-writer value={DEFAULT_MODELS.writer} spellcheck="false"
+                  autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list" />
+                <button type="button" class="ed-combo-toggle" aria-label="Pokaż listę modeli">▾</button>
+                <ul class="ed-combo-list" hidden></ul>
+              </div>
             </label>
-            <datalist id="ed-model-list"></datalist>
             <small class="ed-models-note" data-ed-models-note>modele przez OpenRouter</small>
           </div>
         </div>
@@ -864,6 +875,85 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
 
   /* ---------- modele (OpenRouter) ---------- */
 
+  let modelIds: string[] = [];
+
+  /** Combobox nad polem tekstowym: lista filtruje się w trakcie pisania,
+      strzałki i Enter wybierają, Esc zamyka. Wpisanie własnego ID dalej
+      działa – lista tylko podpowiada. */
+  function setupCombo(input: HTMLInputElement) {
+    const box = input.closest('.ed-combo-box')!;
+    const list = box.querySelector<HTMLUListElement>('.ed-combo-list')!;
+    const toggle = box.querySelector<HTMLButtonElement>('.ed-combo-toggle')!;
+    let active = -1;
+
+    const items = () => [...list.querySelectorAll<HTMLLIElement>('li[data-id]')];
+    const close = () => {
+      list.hidden = true;
+      input.setAttribute('aria-expanded', 'false');
+      active = -1;
+    };
+    const highlight = (index: number) => {
+      const rows = items();
+      if (!rows.length) return;
+      active = (index + rows.length) % rows.length;
+      rows.forEach((row, i) => row.classList.toggle('active', i === active));
+      rows[active].scrollIntoView({ block: 'nearest' });
+    };
+    const choose = (value: string) => {
+      input.value = value;
+      close();
+      input.dispatchEvent(new Event('change', { bubbles: true }));
+    };
+
+    const paint = (filter = '') => {
+      const needle = filter.trim().toLowerCase();
+      const matches = (needle ? modelIds.filter((id) => id.toLowerCase().includes(needle)) : modelIds).slice(0, 200);
+      list.replaceChildren(...matches.map((id) => {
+        const item = document.createElement('li');
+        item.dataset.id = id;
+        item.textContent = id;
+        if (id === input.value) item.classList.add('current');
+        // mousedown, bo click po blurze inputa nie zdąży się wykonać.
+        item.addEventListener('mousedown', (event) => {
+          event.preventDefault();
+          choose(id);
+        });
+        return item;
+      }));
+      if (!matches.length) {
+        const empty = document.createElement('li');
+        empty.className = 'empty';
+        empty.textContent = modelIds.length ? 'brak modelu o takiej nazwie' : 'lista modeli niedostępna';
+        list.append(empty);
+      }
+      list.hidden = false;
+      input.setAttribute('aria-expanded', 'true');
+      active = -1;
+    };
+
+    input.addEventListener('focus', () => paint(''));
+    input.addEventListener('input', () => paint(input.value));
+    toggle.addEventListener('mousedown', (event) => {
+      event.preventDefault();
+      if (list.hidden) { input.focus(); paint(''); } else close();
+    });
+    input.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+        event.preventDefault();
+        if (list.hidden) paint(input.value);
+        highlight(active + (event.key === 'ArrowDown' ? 1 : -1));
+        return;
+      }
+      if (event.key === 'Enter' && !list.hidden && active >= 0) {
+        event.preventDefault();
+        choose(items()[active].dataset.id!);
+        return;
+      }
+      if (event.key === 'Escape') close();
+    });
+    input.addEventListener('blur', () => setTimeout(close, 120));
+  }
+
   async function loadModels() {
     const research = $<HTMLInputElement>('[data-ed-model-research]')!;
     const writer = $<HTMLInputElement>('[data-ed-model-writer]')!;
@@ -872,18 +962,14 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       if (saved?.research) research.value = saved.research;
       if (saved?.writer) writer.value = saved.writer;
     } catch { /* zepsuty localStorage nie blokuje strony */ }
+    setupCombo(research);
+    setupCombo(writer);
     try {
       const response = await fetch('https://openrouter.ai/api/v1/models');
       if (!response.ok) throw new Error(String(response.status));
       const data = await response.json();
-      const ids = (data?.data ?? []).map((model: any) => model?.id).filter(Boolean).sort();
-      const list = $('#ed-model-list')!;
-      list.replaceChildren(...ids.map((id: string) => {
-        const option = document.createElement('option');
-        option.value = id;
-        return option;
-      }));
-      $('[data-ed-models-note]')!.textContent = `modele przez OpenRouter · ${pl.format(ids.length)} dostępnych`;
+      modelIds = (data?.data ?? []).map((model: any) => model?.id).filter(Boolean).sort();
+      $('[data-ed-models-note]')!.textContent = `modele przez OpenRouter · ${pl.format(modelIds.length)} dostępnych`;
     } catch {
       $('[data-ed-models-note]')!.textContent = 'modele przez OpenRouter · lista niedostępna, wpisz ID ręcznie';
     }
@@ -2090,9 +2176,28 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-models { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: flex-end; }
   .ed-models label { display: grid; gap: 3px; }
   .ed-models label span { font-size: .66rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint); }
-  .ed-models input { width: 220px; padding: 6px 9px; border: 1px solid var(--hairline); border-radius: 2px;
-    background: var(--bg-surface-2); color: var(--ink); font: .8rem var(--font-body); }
+  .ed-models input { width: 100%; padding: 6px 26px 6px 9px; border: 1px solid var(--hairline);
+    border-radius: 2px; background: var(--bg-surface-2); color: var(--ink); font: .8rem var(--font-body); }
   .ed-models input:focus { outline: none; border-color: var(--accent-blue); }
+
+  /* Combobox modeli – lista przewijana, nie rozpychająca układu. */
+  .ed-combo-box { position: relative; width: 240px; }
+  .ed-combo-toggle { position: absolute; right: 1px; top: 1px; bottom: 1px; width: 24px;
+    border: none; background: transparent; color: var(--ink-faint); font-size: .7rem; cursor: pointer; }
+  .ed-combo-toggle:hover { color: var(--ink); }
+  .ed-combo-list { position: absolute; z-index: 20; top: calc(100% + 3px); left: 0; right: 0;
+    min-width: 300px; max-height: 260px; overflow-y: auto; margin: 0; padding: 4px; list-style: none;
+    border: 1px solid var(--hairline); border-radius: 2px; background: var(--bg-surface-2);
+    box-shadow: 0 12px 28px rgb(0 0 0 / .35); }
+  /* Identyfikatory modeli są długie i mają dywizy – motyw dashboardu łamie je
+     domyślnie w połowie, więc trzeba to wyłączyć jawnie. */
+  .ed-combo-list li { padding: 5px 8px; border-radius: 2px; font-size: .76rem; color: var(--ink-muted);
+    cursor: pointer; white-space: nowrap; word-break: keep-all; overflow-wrap: normal;
+    overflow: hidden; text-overflow: ellipsis; }
+  .ed-combo-list li:hover, .ed-combo-list li.active { background: var(--bg-surface-3); color: var(--ink); }
+  .ed-combo-list li.current { color: var(--accent-blue); font-weight: 600; }
+  .ed-combo-list li.empty { color: var(--ink-faint); cursor: default; }
+  .ed-combo-list li.empty:hover { background: transparent; }
   .ed-models-note { flex-basis: 100%; font-size: .7rem; color: var(--ink-faint); }
 
   .ed-actions { display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: center; margin-top: 14px; }

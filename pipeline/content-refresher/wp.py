@@ -2,6 +2,7 @@
 import json
 import os
 import sys
+import time
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -29,21 +30,38 @@ def _auth_header() -> dict:
     return {"Authorization": f"Basic {token}"}
 
 
+FETCH_TIMEOUT_S = 60   # wpisy z kompletem pól ACF potrafią schodzić wolno
+FETCH_ATTEMPTS = 3
+
+
 def fetch_post(base_url: str, post_type: str, post_id: int) -> dict:
-    """Wpis z REST. Uwaga: końcowy ukośnik po typie jest obowiązkowy (301)."""
+    """Wpis z REST. Uwaga: końcowy ukośnik po typie jest obowiązkowy (301).
+
+    Odczyt bywa kapryśny z runnerów GitHuba – pojedynczy timeout wywracał cały
+    przebieg na pierwszym kroku, więc ponawiamy z narastającym odstępem.
+    """
     url = f"{base_url.rstrip('/')}/wp-json/wp/v2/{post_type}/{post_id}/"
-    request = urllib.request.Request(url)
-    for key, value in {
-        "Accept": "application/json",
-        "User-Agent": "content-refresher",
-        **_auth_header(),
-    }.items():
-        request.add_header(key, value)
-    try:
-        with urllib.request.urlopen(request, timeout=30) as response:
-            return json.loads(response.read().decode("utf-8"))
-    except Exception as err:  # noqa: BLE001
-        raise WordPressError(f"nie udało się pobrać wpisu {post_id}: {err}") from err
+    last_error: Exception | None = None
+    for attempt in range(1, FETCH_ATTEMPTS + 1):
+        request = urllib.request.Request(url)
+        for key, value in {
+            "Accept": "application/json",
+            "User-Agent": "content-refresher",
+            **_auth_header(),
+        }.items():
+            request.add_header(key, value)
+        try:
+            with urllib.request.urlopen(request, timeout=FETCH_TIMEOUT_S) as response:
+                return json.loads(response.read().decode("utf-8"))
+        except Exception as err:  # noqa: BLE001
+            last_error = err
+            if attempt < FETCH_ATTEMPTS:
+                print(f"  [fetch] próba {attempt}/{FETCH_ATTEMPTS} nie wyszła ({err}) – ponawiam",
+                      file=sys.stderr)
+                time.sleep(5 * attempt)
+    raise WordPressError(
+        f"nie udało się pobrać wpisu {post_id} po {FETCH_ATTEMPTS} próbach: {last_error}"
+    )
 
 
 def post_content(post: dict, content_fields: list[str] | None = None) -> dict:
