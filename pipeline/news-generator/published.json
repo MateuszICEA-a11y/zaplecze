@@ -1,13 +1,5 @@
 [
   {
-    "title": "Warsaw Caravaning Festival 2026 już w maju. Kampery i vanlife wracają na Służewiec",
-    "date": "2026-04-25",
-    "slug": "warsaw-caravaning-festival-2026-juz-w-maju-kampery-i-vanlife-wracaja-na",
-    "section": "kampery",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Ceny paliw 25 kwietnia – tyle kosztują dziś benzyna i diesel",
     "date": "2026-04-26",
     "slug": "ceny-paliw-25-kwietnia-tyle-kosztuja-dzis-benzyna-i-diesel",
@@ -717,6 +709,14 @@
     "slug": "dethleffs-trend-i-7027-nowy-kamper-z-mysla-o-podrozach-we-dwoje",
     "section": "kampery",
     "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Drożeje paliwo, rosną koszty. Kto naprawdę traci najwięcej?",
+    "date": "2026-07-30",
+    "slug": "drozeje-paliwo-rosna-koszty-kto-naprawde-traci-najwiecej",
+    "section": "news",
+    "format": "analysis",
     "source": "rss"
   }
 ]
