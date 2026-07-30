@@ -401,7 +401,7 @@ export async function handleSerpGap(request, env, domain, postId, ctx, fetchImpl
   try {
     body = await request.json();
   } catch {
-    return json({ error: 'Body musi być poprawnym JSON-em.' }, 400);
+    return json({ error: 'Przekazano nieprawidłowe dane (błąd formatu lub zbyt duży rozmiar).' }, 400);
   }
   const title = String(body.title ?? '').trim();
   const pageUrl = String(body.url ?? '').trim();

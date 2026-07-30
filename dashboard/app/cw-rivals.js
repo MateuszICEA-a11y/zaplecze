@@ -140,7 +140,7 @@ Zwróć wyłącznie JSON:
       "fact": "jedno zdanie – konkret, którego u nas nie ma",
       "why": "dlaczego wart dopisania (maksymalnie jedno zdanie)",
       "source": "adres konkurenta, u którego to stoi",
-      "kind": "liczba | definicja | procedura | przykład | narzędzie | ryzyko"
+      "kind": "liczba | definicja | proces | przykład | narzędzie | ryzyko"
     }
   ],
   "topics": ["temat poruszany przez konkurencję, którego nasz tekst w ogóle nie dotyka"]
@@ -180,7 +180,7 @@ export async function extractFacts(env, ours, rivals, model, fetchImpl = fetch) 
   if (!response.ok) {
     const detail = await response.text().catch(() => '');
     console.error('cw rivals openrouter', response.status, detail.slice(0, 300));
-    throw new Error(`OpenRouter odpowiedział ${response.status}.`);
+    throw new Error(`Błąd usługi OpenRouter: ${response.status}.`);
   }
   const payload = await response.json().catch(() => null);
   const text = payload?.choices?.[0]?.message?.content ?? '';
@@ -414,7 +414,7 @@ export async function handleRivals(request, env, domain, postId, ctx, fetchImpl 
   try {
     body = await request.json();
   } catch {
-    return json({ error: 'Body musi być poprawnym JSON-em.' }, 400);
+    return json({ error: 'Przekazano nieprawidłowe dane (błąd formatu lub zbyt duży rozmiar).' }, 400);
   }
   const ourUrl = String(body.our_url ?? '').trim();
   const rivalUrls = (Array.isArray(body.rivals) ? body.rivals : [])

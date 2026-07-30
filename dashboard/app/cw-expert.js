@@ -142,12 +142,12 @@ export async function generateExpertQuote(env, job, sections, { fetchImpl = fetc
       signal: AbortSignal.timeout(TIMEOUT_MS),
     });
   } catch (err) {
-    return { ok: false, error: `OpenRouter nie odpowiedział: ${err instanceof Error ? err.message : err}` };
+    return { ok: false, error: `Brak odpowiedzi od OpenRouter: ${err instanceof Error ? err.message : err}` };
   }
   if (!response.ok) {
     const detail = await response.text().catch(() => '');
     console.error('cw expert openrouter', response.status, detail.slice(0, 300));
-    return { ok: false, error: `OpenRouter odpowiedział ${response.status}.` };
+    return { ok: false, error: `Błąd usługi OpenRouter: ${response.status}.` };
   }
   const payload = await response.json().catch(() => null);
   const text = payload?.choices?.[0]?.message?.content ?? '';

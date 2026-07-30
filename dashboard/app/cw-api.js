@@ -290,7 +290,7 @@ async function rejectionReason(env, job, cooldownFrom, dayFrom) {
       ? { code: 'already_running', message: 'Ten wpis ma już zadanie w toku.', job_id: existing.id }
       : {
           code: 'cooldown',
-          message: `Ten wpis przechodził reoptymalizację ${existing.created_at.slice(0, 10)}. Kolejne zadanie możliwe po ${COOLDOWN_DAYS} dniach.`,
+          message: `Ten wpis był już optymalizowany ${existing.created_at.slice(0, 10)}. Kolejna analiza będzie możliwa za ${COOLDOWN_DAYS} dni.`,
           job_id: existing.id,
         };
   }
@@ -299,13 +299,13 @@ async function rejectionReason(env, job, cooldownFrom, dayFrom) {
     .bind(job.domain)
     .first();
   if ((active?.n ?? 0) >= MAX_ACTIVE_PER_DOMAIN) {
-    return { code: 'too_many_active', message: `Limit ${MAX_ACTIVE_PER_DOMAIN} równoległych zadań na domenę.` };
+    return { code: 'too_many_active', message: `Osiągnięto limit ${MAX_ACTIVE_PER_DOMAIN} jednoczesnych zadań dla tej domeny.` };
   }
   const today = await db(env).prepare('SELECT COUNT(*) AS n FROM jobs WHERE created_at >= ?').bind(dayFrom).first();
   if ((today?.n ?? 0) >= MAX_JOBS_PER_DAY) {
     return { code: 'daily_limit', message: `Dzienny limit ${MAX_JOBS_PER_DAY} zadań wyczerpany.` };
   }
-  return { code: 'rejected', message: 'Zadania nie udało się zakolejkować.' };
+  return { code: 'rejected', message: 'Nie udało się dodać zadania do kolejki.' };
 }
 
 /** repository_dispatch – uruchomienie workflow w GitHub Actions.
@@ -414,10 +414,10 @@ export async function fetchPostContent(request, env, domain, postType, postId, f
     });
   } catch (err) {
     console.error('cw content fetch', domain, postId, err);
-    return json({ error: 'Nie udało się pobrać treści z WordPressa.' }, 502);
+    return json({ error: 'Nie udało się pobrać treści.' }, 502);
   }
   if (!upstream.ok) {
-    return json({ error: `WordPress odpowiedział ${upstream.status}.` }, upstream.status === 404 ? 404 : 502);
+    return json({ error: `Serwer WordPress zwrócił błąd ${upstream.status}.` }, upstream.status === 404 ? 404 : 502);
   }
   const raw = await upstream.text();
   if (raw.length > MAX_WP_BYTES) return json({ error: 'Treść wpisu jest za duża.' }, 502);
@@ -425,7 +425,7 @@ export async function fetchPostContent(request, env, domain, postType, postId, f
   try {
     post = JSON.parse(raw);
   } catch {
-    return json({ error: 'WordPress zwrócił nieprawidłową odpowiedź.' }, 502);
+    return json({ error: 'Serwer WordPress zwrócił nieprawidłową odpowiedź.' }, 502);
   }
 
   const acf = post?.acf && typeof post.acf === 'object' ? post.acf : {};
@@ -461,7 +461,7 @@ async function createJob(request, env) {
   try {
     body = await request.json();
   } catch {
-    return json({ error: 'Nieprawidłowy JSON.' }, 400);
+    return json({ error: 'Przekazano nieprawidłowe dane (błąd formatu lub zbyt duży rozmiar).' }, 400);
   }
   const parsed = parseJobRequest(body);
   if (!parsed.ok) return json({ error: 'Nieprawidłowe dane zadania.', fields: parsed.errors }, 400);
@@ -493,11 +493,11 @@ async function createJob(request, env) {
       .bind(
         dispatch.reason === 'not_configured'
           ? 'Brak konfiguracji GH_DISPATCH_TOKEN / GH_REPO w Workerze.'
-          : 'Nie udało się uruchomić workflow w GitHub Actions.',
+          : 'Nie udało się uruchomić procesu optymalizacji.',
         nowIso(), nowIso(), id,
       )
       .run();
-    return json({ error: 'Nie udało się uruchomić pipeline’u.', job_id: id }, 502);
+    return json({ error: 'Nie udało się uruchomić procesu optymalizacji.', job_id: id }, 502);
   }
   await db(env)
     .prepare("UPDATE jobs SET status = 'dispatching', updated_at = ?, lease_expires_at = ? WHERE id = ?")
@@ -567,7 +567,7 @@ async function patchSection(request, env, id, slot) {
   try {
     body = await request.json();
   } catch {
-    return json({ error: 'Nieprawidłowy JSON.' }, 400);
+    return json({ error: 'Przekazano nieprawidłowe dane (błąd formatu lub zbyt duży rozmiar).' }, 400);
   }
 
   if (typeof body?.text_after === 'string') {
@@ -619,7 +619,7 @@ async function generateExpert(request, env, id, { fetchImpl } = {}) {
   const job = await db(env).prepare('SELECT * FROM jobs WHERE id = ?').bind(id).first();
   if (!job) return json({ error: 'Nie ma takiego zadania.' }, 404);
   if (job.status !== 'done') {
-    return json({ error: 'Porada eksperta jest dostępna po zakończeniu pipeline’u.' }, 409);
+    return json({ error: 'Wypowiedź ekspercka będzie dostępna po zakończeniu analizy.' }, 409);
   }
 
   // Blokada podwójnego kliknięcia: warunkowy UPDATE przechodzi tylko, gdy
@@ -658,7 +658,7 @@ async function rejectExpert(request, env, id) {
   try {
     body = await request.json();
   } catch {
-    return json({ error: 'Nieprawidłowy JSON.' }, 400);
+    return json({ error: 'Przekazano nieprawidłowe dane (błąd formatu lub zbyt duży rozmiar).' }, 400);
   }
   if (body?.rejected !== true) return json({ error: 'Oczekiwane pole: {"rejected": true}.' }, 400);
   const result = await db(env)
@@ -708,7 +708,7 @@ async function cancelJob(request, env, id) {
 async function handleCallback(request, env) {
   const secret = (env.CW_CALLBACK_SECRET || '').trim();
   const raw = await request.text();
-  if (raw.length > MAX_CALLBACK_BYTES) return json({ error: 'Payload za duży.' }, 413);
+  if (raw.length > MAX_CALLBACK_BYTES) return json({ error: 'Przekazano nieprawidłowe dane (błąd formatu lub zbyt duży rozmiar).' }, 413);
 
   const check = await verifySignature({
     secret,
@@ -730,18 +730,18 @@ async function handleCallback(request, env) {
   try {
     body = JSON.parse(raw);
   } catch {
-    return json({ error: 'Nieprawidłowy JSON.' }, 400);
+    return json({ error: 'Przekazano nieprawidłowe dane (błąd formatu lub zbyt duży rozmiar).' }, 400);
   }
   const parsed = parseCallback(body);
-  if (!parsed.ok) return json({ error: 'Nieprawidłowy callback.', fields: parsed.errors }, 400);
+  if (!parsed.ok) return json({ error: 'Nieprawidłowe potwierdzenie z systemu.', fields: parsed.errors }, 400);
   const cb = parsed.callback;
 
   const job = await db(env).prepare('SELECT * FROM jobs WHERE id = ?').bind(cb.job_id).first();
   if (!job) return json({ error: 'Nie ma takiego zadania.' }, 404);
 
   // Callback ze starszego przebiegu nie nadpisuje nowszego wyniku.
-  if (job.run_id && String(job.run_id) !== cb.run_id) return json({ error: 'Callback z innego przebiegu.' }, 409);
-  if (job.run_attempt && cb.run_attempt < job.run_attempt) return json({ error: 'Callback ze starszej próby.' }, 409);
+  if (job.run_id && String(job.run_id) !== cb.run_id) return json({ error: 'Potwierdzenie z innego procesu.' }, 409);
+  if (job.run_attempt && cb.run_attempt < job.run_attempt) return json({ error: 'Potwierdzenie ze starszej próby.' }, 409);
   if (isFinal(job.status) && cb.status !== job.status) {
     return json({ error: `Zadanie jest już w stanie „${job.status}".` }, 409);
   }
@@ -826,7 +826,7 @@ async function handleCallback(request, env) {
 async function sweepStale(env) {
   await db(env)
     .prepare(
-      `UPDATE jobs SET status = 'stale', updated_at = ?, error = COALESCE(error, 'Runner przestał raportować postęp.')
+      `UPDATE jobs SET status = 'stale', updated_at = ?, error = COALESCE(error, 'Proces w tle przestał odpowiadać.')
        WHERE status IN ('queued','dispatching','running') AND lease_expires_at IS NOT NULL AND lease_expires_at < ?`,
     )
     .bind(nowIso(), nowIso())

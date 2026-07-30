@@ -25,7 +25,7 @@ const latest = latestSnapshot(domain!);
 // Ekspert celowo poza pakietem startowym – to finalny etap po zakończeniu
 // pipeline'u (przycisk w podsumowaniu), nie decyzja podejmowana z góry.
 const IMPROVEMENTS = [
-  { key: 'gaps', label: 'Uzupełnienie luk treści', note: 'rozpoznanie wyników Google → wytyczne → przepisanie sekcji' },
+  { key: 'gaps', label: 'Uzupełnienie braków w treści', note: 'analiza wyników Google → wytyczne → przeredagowanie sekcji' },
   { key: 'sources', label: 'Źródła i przypisy', note: 'autorytatywne linki + definicja z Wikipedii' },
   { key: 'internal_links', label: 'Linki wewnętrzne', note: 'dopasowanie z katalogu treści serwisu' },
 ];
@@ -63,7 +63,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     <section class="ed-serp" data-ed-serp>
       <div class="ed-serp-head">
         <div class="ed-serp-title">
-          <h3>Kto rankuje na ten temat</h3>
+          <h3>Konkurencja w wynikach wyszukiwania</h3>
           <p class="ed-serp-lead">
             Dwa zapytania do Google – tytuł wpisu i nasza najlepsza fraza. Widać, kto stoi w czołówce
             i na której pozycji jesteśmy my.
@@ -104,7 +104,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     <div class="ed-pipebar">
       <div data-ed-setup>
         <div class="ed-setup-row">
-          <div class="ed-improvements" role="group" aria-label="Pakiet ulepszeń">
+          <div class="ed-improvements" role="group" aria-label="Zakres optymalizacji">
             {IMPROVEMENTS.map((item) => (
               <label class="fchip ed-improvement" title={item.note}>
                 <input type="checkbox" name="improvement" value={item.key} checked />
@@ -137,11 +137,11 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
           </div>
         </div>
         <div class="ed-actions">
-          <button type="button" class="ed-run" data-ed-run>Uruchom optymalizację</button>
+          <button type="button" class="ed-run" data-ed-run>Rozpocznij optymalizację</button>
           <span class="ed-hint">
-            Koszt: jedno zapytanie SERP (SerpData), frazy z Senuto i kilkadziesiąt
-            tysięcy tokenów. Ten sam wpis raz na 30 dni. Wynik to propozycja –
-            nic nie trafia do WordPressa automatycznie.
+            Zużycie zasobów: zapytanie do wyszukiwarki (SerpData), pobranie fraz
+            z Senuto i kilkadziesiąt tysięcy tokenów. Ten sam wpis maksymalnie raz
+            na 30 dni. Wynik to propozycja – nic nie trafia do WordPressa automatycznie.
           </span>
         </div>
       </div>
@@ -168,13 +168,13 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
            którą człowiek naprawdę chce przeczytać. -->
       <div class="ed-fail" data-ed-fail hidden>
         <div class="ed-fail-head">
-          <span class="ed-fail-badge">przebieg nieudany</span>
+          <span class="ed-fail-badge">proces nieudany</span>
           <span data-ed-fail-step></span>
         </div>
         <p class="ed-fail-msg" data-ed-fail-msg></p>
         <div class="ed-fail-actions">
           <button type="button" class="ed-rerun" data-ed-fail-rerun>uruchom ponownie</button>
-          <a class="ed-fail-log" data-ed-fail-log target="_blank" rel="noopener" hidden>log przebiegu ↗</a>
+          <a class="ed-fail-log" data-ed-fail-log target="_blank" rel="noopener" hidden>szczegóły błędu ↗</a>
         </div>
       </div>
 
@@ -182,7 +182,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
            generowana z Workera przez OpenRouter (sekundy, nie minuty). -->
       <div class="ed-expert" data-ed-expert hidden>
         <div class="ed-expert-head">
-          <span class="ed-expert-label">Etap końcowy · porada eksperta</span>
+          <span class="ed-expert-label">Etap końcowy · wypowiedź ekspercka</span>
           <span class="ed-expert-note">cytat osoby z ICEA (innej niż autor), wybrany model pisania</span>
         </div>
         <div class="ed-expert-actions" data-ed-expert-actions></div>
@@ -220,7 +220,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       <div class="ed-score-keywords">
         <div class="ed-score-kwhead">
           <h3>Frazy do pokrycia</h3>
-          <span data-ed-score-kwmeta>uruchom rozpoznanie wyników, żeby zobaczyć listę</span>
+          <span data-ed-score-kwmeta>sprawdź wyniki wyszukiwania, aby zobaczyć listę</span>
         </div>
         <ul class="ed-score-kwlist" data-ed-score-kwlist></ul>
       </div>
@@ -296,7 +296,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     competitors: 'Treść konkurencji',
     keywords_competitors: 'Frazy konkurencji',
     brief: 'Wytyczne',
-    rewrite: 'Przepisanie sekcji',
+    rewrite: 'Redagowanie sekcji',
     expert: 'Porada eksperta',
     sources: 'Źródła i przypisy',
     internal_links: 'Linki wewnętrzne',
@@ -304,8 +304,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   };
   const STATUS_LABEL: Record<string, string> = {
     queued: 'w kolejce', dispatching: 'uruchamianie', running: 'w toku', done: 'zakończone',
-    failed: 'błąd', cancelled: 'anulowane', stale: 'runner przestał odpowiadać',
-    budget_exceeded: 'przerwane – budżet',
+    failed: 'błąd', cancelled: 'anulowane', stale: 'utracono połączenie z procesem',
+    budget_exceeded: 'przerwane – brak środków',
   };
   // Lustro DEFAULT_MODELS z cw-api.js / config.py.
   const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/claude-sonnet-5' };
@@ -433,7 +433,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       const note = document.createElement('p');
       note.className = 'ed-doc-error';
       note.textContent = `Nie udało się wczytać treści wpisu (${error instanceof Error ? error.message : 'błąd'}). ` +
-        'Pipeline można uruchomić mimo to – dokument pojawi się z propozycjami.';
+        'Mimo to możesz rozpocząć optymalizację – w dokumencie pojawią się nowe propozycje.';
       host.append(note);
       return;
     }
@@ -548,7 +548,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     if (draft) {
       const tag = document.createElement('span');
       tag.className = 'ed-sec-tag warn';
-      tag.textContent = 'szkic lokalny';
+      tag.textContent = 'szkic roboczy';
       head.append(tag);
     }
 
@@ -569,7 +569,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       if (!head.querySelector('.ed-sec-tag')) {
         const tag = document.createElement('span');
         tag.className = 'ed-sec-tag warn';
-        tag.textContent = 'szkic lokalny';
+        tag.textContent = 'szkic roboczy';
         head.append(tag);
       }
     });
@@ -879,7 +879,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     } else {
       const note = document.createElement('p');
       note.className = 'ed-doc-error';
-      note.textContent = 'Ten wpis nie ma sekcji ACF (page_text_N) – dokument zostanie zbudowany z wyniku optymalizacji.';
+      note.textContent = 'Ten wpis nie ma standardowego podziału na sekcje – dokument zostanie wygenerowany '
+        + 'na podstawie wyników optymalizacji.';
       blocks.push(note);
     }
     host.replaceChildren(...blocks);
@@ -986,9 +987,9 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       if (!response.ok) throw new Error(String(response.status));
       const data = await response.json();
       modelIds = (data?.data ?? []).map((model: any) => model?.id).filter(Boolean).sort();
-      $('[data-ed-models-note]')!.textContent = `modele przez OpenRouter · ${pl.format(modelIds.length)} dostępnych`;
+      $('[data-ed-models-note]')!.textContent = `modele z OpenRouter · ${pl.format(modelIds.length)} dostępnych`;
     } catch {
-      $('[data-ed-models-note]')!.textContent = 'modele przez OpenRouter · lista niedostępna, wpisz ID ręcznie';
+      $('[data-ed-models-note]')!.textContent = 'modele z OpenRouter · lista niedostępna, wpisz ID ręcznie';
     }
   }
 
@@ -1030,7 +1031,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       const parts = [
         current.models ? `analiza: ${current.models.research} · pisanie: ${current.models.writer}` : null,
         tokens ? `${pl.format(tokens)} tokenów` : null,
-        current.cost?.serp_requests ? `${current.cost.serp_requests} zap. SERP` : null,
+        current.cost?.serp_requests ? `${current.cost.serp_requests} zapytań do wyszukiwarki` : null,
       ].filter(Boolean);
       $('[data-ed-summary-cost]')!.textContent = parts.join(' · ');
       const failed = ['failed', 'stale', 'budget_exceeded'].includes(current.status);
@@ -1059,7 +1060,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     $('[data-ed-fail-step]')!.textContent = broken
       ? `krok: ${STEP_LABELS[broken.step] ?? broken.step}`
       : STATUS_LABEL[current.status] ?? current.status;
-    $('[data-ed-fail-msg]')!.textContent = broken?.error || current.error || 'Przebieg zakończył się bez podania przyczyny.';
+    $('[data-ed-fail-msg]')!.textContent = broken?.error || current.error || 'Proces zakończył się bez podania przyczyny.';
     const log = $<HTMLAnchorElement>('[data-ed-fail-log]')!;
     log.hidden = !current.run_url;
     if (current.run_url) log.href = current.run_url;
@@ -1095,7 +1096,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     const cost = step?.cost ?? {};
     const tokens = (cost.tokens_in ?? 0) + (cost.tokens_out ?? 0);
     return [
-      cost.serp_requests ? `${cost.serp_requests} zap. SERP` : null,
+      cost.serp_requests ? `${cost.serp_requests} zapytań do wyszukiwarki` : null,
       cost.senuto_requests ? `${cost.senuto_requests} zap. Senuto` : null,
       tokens ? `${pl.format(tokens)} tokenów` : null,
     ].filter(Boolean).join(' · ');
@@ -1171,8 +1172,9 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     if (brief.content_truncated) {
       const p = document.createElement('p');
       p.className = 'ed-brief-warn';
-      p.textContent = 'Uwaga: wpis jest długi i analiza objęła tylko jego początek – końcowe sekcje mogły nie wejść do wytycznych.';
-      add('Ucięta treść', p);
+      p.textContent = 'Uwaga: wpis jest bardzo obfity, dlatego analiza objęła tylko jego początek. '
+        + 'Końcowe sekcje mogły zostać pominięte w wytycznych.';
+      add('Zbyt długi tekst', p);
     }
     const list = (items: string[]) => {
       const ul = document.createElement('ul');
@@ -1687,12 +1689,12 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     $('[data-ed-error]')!.hidden = true;
     const improvements = [...document.querySelectorAll<HTMLInputElement>('input[name="improvement"]:checked')]
       .map((input) => input.value);
-    if (!improvements.length) return showError('Wybierz przynajmniej jedno ulepszenie.');
+    if (!improvements.length) return showError('Wybierz przynajmniej jeden element do optymalizacji.');
 
     const research = $<HTMLInputElement>('[data-ed-model-research]')!.value.trim() || DEFAULT_MODELS.research;
     const writer = $<HTMLInputElement>('[data-ed-model-writer]')!.value.trim() || DEFAULT_MODELS.writer;
     if (!MODEL_ID.test(research) || !MODEL_ID.test(writer)) {
-      return showError('Identyfikator modelu ma format „dostawca/model" (np. anthropic/claude-sonnet-5).');
+      return showError('ID modelu musi mieć format „dostawca/model" (np. anthropic/claude-sonnet-5).');
     }
     localStorage.setItem('cw-models', JSON.stringify({ research, writer }));
 
@@ -1700,9 +1702,9 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     if (cooldownActive()) {
       const stamp = new Date(job!.created_at).toLocaleDateString('pl-PL');
       const ok = window.confirm(
-        `Ten wpis przeszedł reoptymalizację ${stamp}, a limit to jeden przebieg na ${COOLDOWN_DAYS} dni.\n\n`
-        + 'Uruchomić mimo to? Nowy przebieg to kolejne zapytania SERP, frazy z Senuto '
-        + 'i kilkadziesiąt tysięcy tokenów. Poprzedni wynik zostanie zastąpiony w widoku.',
+        `Ten wpis był optymalizowany ${stamp}, a limit wynosi jedną analizę na ${COOLDOWN_DAYS} dni.\n\n`
+        + 'Uruchomić ponownie? Wymaga to ponownego zużycia limitów (wyszukiwarka, Senuto, tokeny). '
+        + 'Obecny wynik w panelu zostanie zastąpiony nowym.',
       );
       if (!ok) return;
       force = true;
@@ -1727,7 +1729,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       render(data.job);
       schedulePoll();
     } catch (error) {
-      showError(error instanceof Error ? error.message : 'Nie udało się zakolejkować zadania.');
+      showError(error instanceof Error ? error.message : 'Nie udało się dodać zadania do kolejki.');
     }
   }
 
@@ -1872,14 +1874,16 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     }
     nodes.push(grid);
 
-    // Rozjazd to sedno tej analizy: konkurenci trzymają temat wpisu, a my
-    // rankujemy obok – na frazę, przy której ich nie ma.
+    // Rozjazd to sedno tej analizy: konkurenci odpowiadają na temat wpisu,
+    // a my jesteśmy widoczni obok – na frazę, przy której ich nie ma.
     if (analysis.drift.length) {
       const drift = document.createElement('p');
       drift.className = 'ed-serp-drift';
+      const one = analysis.drift.length === 1;
       drift.textContent =
-        `Rankujemy obok tematu: ${analysis.drift.join(', ')} ` +
-        `${analysis.drift.length === 1 ? 'trzyma' : 'trzymają'} temat wpisu, ale nie ma ich w wynikach naszej dzisiejszej frazy.`;
+        `Mijamy się z tematem: ${analysis.drift.join(', ')} ` +
+        `${one ? 'odpowiada' : 'odpowiadają'} na temat wpisu, ale nie ` +
+        `${one ? 'pojawia' : 'pojawiają'} się w wynikach dla naszej dzisiejszej frazy.`;
       nodes.push(drift);
     }
 
@@ -1903,7 +1907,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       stat(analysis.gap_summary.weak, 'poza TOP 10', 'weak');
       stat(analysis.gap_summary.covered, 'mamy w TOP 10', 'covered');
     }
-    stat(analysis.own_keywords_total, 'fraz rankujących wpisu');
+    stat(analysis.own_keywords_total, 'fraz, na które wpis jest widoczny');
     summary.classList.toggle('is-solo', !analysis.gap_summary.total);
     nodes.push(summary);
 
@@ -2118,7 +2122,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       lengthRow(rival.host || rival.url, rival.words, rival.error ? `nie udało się przeczytać: ${rival.error}` : (rival.title ?? ''));
     }
     if (analysis.median_words) {
-      lengthRow('mediana konkurencji', analysis.median_words, 'cel objętości w ocenie treści', 'median');
+      lengthRow('przeciętna długość u konkurencji', analysis.median_words, 'cel objętości w ocenie treści', 'median');
     }
     nodes.push(lengths);
 

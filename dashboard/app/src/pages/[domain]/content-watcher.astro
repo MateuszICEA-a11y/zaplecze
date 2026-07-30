@@ -120,15 +120,15 @@ const SCORE_PART_TEXTS: Record<string, { label: string; hint: string; formula: s
     hint: 'Senuto: frazy na pozycjach 11–30 i poza TOP 10',
     formula:
       'Ile fraz stoi tuż pod progiem widoczności – pozycje 11–30 i frazy poza TOP 10. ' +
-      'Dane: Senuto. Zero punktów = adres rankuje na jakieś frazy, ale żadna nie jest tuż pod progiem. ' +
+      'Dane: Senuto. Zero punktów = adres jest widoczny na jakieś frazy, ale żadna nie jest tuż pod progiem. ' +
       'Brak danych = Senuto nie widzi tego adresu w wynikach wyszukiwania.',
   },
   engagement: {
     label: 'Zaangażowanie',
-    hint: 'GA4: engagement rate poniżej 60% (od 10 sesji w górę)',
+    hint: 'Wskaźnik zaangażowania (GA4) poniżej 60% (minimum 10 sesji)',
     formula:
-      'Jak słabo wpis angażuje czytelników – im niższy engagement rate, tym więcej punktów. ' +
-      'Dane: GA4, liczone od 10 sesji w górę.',
+      'Jak rzadko wpis angażuje czytelników – im niższy wskaźnik zaangażowania, tym więcej punktów. ' +
+      'Dane: GA4, od 10 sesji.',
   },
 };
 const clamp = (value: number, min: number, max: number): number => Math.min(max, Math.max(min, value));
@@ -147,8 +147,8 @@ const minAgeDays = watcherCfg.min_age_days ?? 90;
 const AGE_BUCKETS = [
   { key: 'm0-3', label: 'Świeże treści', hint: 'aktualne (do 3 mies.)', range: 'do 3 mies.', tone: 'ok', from: 0, to: 90 },
   { key: 'm3-6', label: 'Do przeglądu', hint: 'starzejące się (3–6 mies.)', range: '3–6 mies.', tone: 'mid', from: 90, to: 180 },
-  { key: 'm6-12', label: 'Zaplanuj update', hint: 'tracące wartość (6–12 mies.)', range: '6–12 mies.', tone: 'warn', from: 180, to: 365 },
-  { key: 'm12+', label: 'Pilny audyt / recykling', hint: 'krytyczne zaległości (ponad 12 mies.)', range: 'ponad 12 mies.', tone: 'err', from: 365, to: Infinity },
+  { key: 'm6-12', label: 'Zaplanuj aktualizację', hint: 'tracące wartość (6–12 mies.)', range: '6–12 mies.', tone: 'warn', from: 180, to: 365 },
+  { key: 'm12+', label: 'Wymaga przebudowy', hint: 'krytyczne zaległości (powyżej 12 mies.)', range: 'ponad 12 mies.', tone: 'err', from: 365, to: Infinity },
 ] as const;
 const ageBucket = (days: number): string =>
   AGE_BUCKETS.find((bucket) => days >= bucket.from && days < bucket.to)?.key ?? 'm12+';
@@ -224,11 +224,11 @@ const items = catalog
       reasons.push(`${fmtInt(impressions)} wyświetleń przy pozycji ${fmtNum(bestPosition, 1)}`);
     }
     if (impressions > 0 && typeof bestPosition === 'number' && bestPosition >= 11 && bestPosition <= 20) {
-      reasons.push(`pozycja ${fmtNum(bestPosition, 1)} — blisko TOP 10`);
+      reasons.push(`pozycja ${fmtNum(bestPosition, 1)} – blisko TOP 10`);
     }
     if (ctrPoints > 0) reasons.push(`CTR ${fmtPct(indexing?.ctr)} mimo ${fmtInt(impressions)} wyświetleń`);
     if (ageDays >= minAgeDays) reasons.push(`bez aktualizacji od ${fmtInt(ageDays)} dni`);
-    if (engagementPoints >= 3) reasons.push(`engagement ${fmtPct(ga4?.engagement_rate)}`);
+    if (engagementPoints >= 3) reasons.push(`zaangażowanie ${fmtPct(ga4?.engagement_rate)}`);
 
     const indexed = indexing?.indexed ?? null;
     // Stan pomiaru rozdzielony od pilności: wpis poza indeksem albo bez danych
@@ -337,7 +337,7 @@ const urgencyLabel: Record<string, string> = {
   high: 'wysoki',
   normal: 'normalny',
   low: 'niski',
-  none: 'poza oceną',
+  none: 'brak oceny',
 };
 const stateLabel: Record<string, string> = {
   measured: 'w indeksie',
@@ -361,23 +361,23 @@ const baseline = items.filter((item) => item.hash_baseline).length;
     <p>
       Moduł Content Watcher łączy metadane artykułów ze statusem indeksacji oraz danymi z GSC, GA4 i Senuto.
       Wskaźnik priorytetu podpowiada, które teksty warto zweryfikować ręcznie przed ich ponowną optymalizacją
-      (integrację z kolejką n8n dodamy w kolejnym etapie).
-      {fromCms && <> Baza tekstów jest pobierana przez REST API WordPressa, a treści budujemy z pól ACF.</>}
+      (integrację z n8n dodamy w kolejnym etapie).
+      {fromCms && <> Baza artykułów pochodzi z WordPressa (treści opieramy na polach ACF).</>}
     </p>
     {fromCms && (
       <p>
         Co ważne, „Data aktualizacji” odzwierciedla rzeczywistą zmianę tekstu weryfikowaną na podstawie sumy
-        kontrolnej (tzw. hasha). Ignorujemy dzięki temu systemowe pole <code>modified</code>, które aktualizuje się
-        przy każdym kliknięciu „Zapisz” w CMS-ie.
-        {baseline > 0 && <> Dla {fmtInt(baseline)} wpisów obecny hash to dopiero stan początkowy – do czasu ich
-        pierwszej edycji wyświetlamy tam standardową datę modyfikacji.</>}
+        kontrolnej. Dzięki temu omijamy systemową datę modyfikacji, która zmienia się przy każdym kliknięciu
+        „Zapisz” w CMS-ie.
+        {baseline > 0 && <> Dla {fmtInt(baseline)} wpisów zebraliśmy dopiero punkt odniesienia – do czasu ich
+        pierwszej edycji wyświetlamy domyślną datę modyfikacji z systemu.</>}
       </p>
     )}
   </div>
 
   <div class="section-head">
     <h2>Stan treści</h2>
-    <span class="section-meta">katalog i scoring na {fmtDate(asOf)}</span>
+    <span class="section-meta">katalog i ocena z {fmtDate(asOf)}</span>
   </div>
   <div class="kwrap rgrid cw-kpis" data-cw-kpis>
     <button type="button" class="cw-kpi" data-dim="age" data-filter="all" aria-pressed="false">
@@ -417,15 +417,15 @@ const baseline = items.filter((item) => item.hash_baseline).length;
 
   <div class="section-head cw-list-head">
     <div>
-      <h2>Priorytety reoptymalizacji</h2>
+      <h2>Priorytety optymalizacji</h2>
       <span class="section-meta">
         Pilność zależy od relacji wyników do wieku wpisu • Wynik (0–100) decyduje o kolejności wpisów o tej samej
         pilności i uwzględnia: utratę ruchu, potencjał, pokrycie fraz oraz zaangażowanie • Obowiązuje
         {' '}{fmtInt(minAgeDays)}-dniowy okres ochronny • Kliknij „Szczegóły”, aby zobaczyć składowe oceny.
       </span>
     </div>
-    <div class="cw-automation" title="Automatyzacja zostanie uruchomiona po wdrożeniu kolejki i callbacków n8n">
-      <span>Automatyzacja</span><b>OFF</b>
+    <div class="cw-automation" title="Automatyzacja zostanie uruchomiona po pełnym wdrożeniu integracji z systemem n8n.">
+      <span>Automatyzacja</span><b>wył.</b>
     </div>
   </div>
 
@@ -514,7 +514,7 @@ const baseline = items.filter((item) => item.hash_baseline).length;
                     class="cw-chip upd"
                     data-age={item.age_bucket}
                     title={item.hash_baseline
-                      ? 'Data z pola modified – hash treści jest dopiero punktem odniesienia'
+                      ? 'Data systemowa – punkt odniesienia przed pierwszą weryfikacją zmian.'
                       : undefined}
                   >
                     {fmtDate(item.updated_at ?? item.published_at)}{item.hash_baseline ? ' ≈' : ''}
@@ -537,13 +537,13 @@ const baseline = items.filter((item) => item.hash_baseline).length;
                 </td>
                 <td class="num" data-sort={item.ga4_sessions ?? -1} data-label="GA4">
                   <b>{fmtInt(item.ga4_sessions)}</b> sesji
-                  <small>eng. {fmtPct(item.engagement_rate)}</small>
+                  <small>zaangaż. {fmtPct(item.engagement_rate)}</small>
                 </td>
                 <td data-label="Status">
                   <span class={`cw-status ${item.state}`}>{stateLabel[item.state]}</span>
                   <small>
                     {ageLabel[item.age_bucket]}
-                    {item.state === 'measured' ? (item.weak_traffic ? ' · słabe wyniki' : ' · wyniki OK') : ''}
+                    {item.state === 'measured' ? (item.weak_traffic ? ' · słabe wyniki' : ' · dobre wyniki') : ''}
                   </small>
                 </td>
               </tr>
@@ -580,7 +580,7 @@ const baseline = items.filter((item) => item.hash_baseline).length;
         </dl>
         <h3>Dlaczego taki priorytet?</h3>
         <ul class="cw-reasons" data-detail-reasons></ul>
-        <h3 data-detail-keywords-head>Na jakie frazy rankuje</h3>
+        <h3 data-detail-keywords-head>Widoczność na frazy</h3>
         <div class="cw-keywords" data-detail-keywords></div>
       </section>
       <aside>
@@ -592,8 +592,8 @@ const baseline = items.filter((item) => item.hash_baseline).length;
         <div class="cw-breakdown" data-detail-parts></div>
         <div class="cw-next">
           <strong>Kolejka automatyzacji</strong>
-          <p>W etapie 2 ten przycisk wyśle zatwierdzone zadanie do n8n i pokaże tutaj status oraz link do PR.</p>
-          <button type="button" disabled>Dodaj do kolejki · etap 2</button>
+          <p>W etapie 2 ten przycisk wyśle zadanie do n8n i wyświetli tutaj jego status oraz link do podglądu zmian.</p>
+          <button type="button" disabled>Zleć aktualizację · etap 2</button>
         </div>
       </aside>
     </div>
@@ -646,13 +646,13 @@ const baseline = items.filter((item) => item.hash_baseline).length;
         set('[data-detail-indexed]', item.indexed === null ? 'brak pomiaru' : item.indexed ? `tak · crawl ${date(item.last_crawl)}` : 'nie');
         set('[data-detail-gsc]', `${pl.format(item.clicks ?? 0)} klik. · ${pl.format(item.impressions ?? 0)} wyśw. · CTR ${pct(item.ctr)}`);
         set('[data-detail-change]', item.clicks_delta === null ? 'brak porównania' : `${item.clicks_delta > 0 ? '+' : ''}${pl.format(item.clicks_delta)} klik. · pozycja ${item.position_delta === null ? '—' : `${item.position_delta > 0 ? '+' : ''}${pl.format(item.position_delta)}`}`);
-        set('[data-detail-ga4]', item.ga4_sessions === null ? 'brak danych' : `${pl.format(item.ga4_sessions)} sesji · engagement ${pct(item.engagement_rate)}`);
+        set('[data-detail-ga4]', item.ga4_sessions === null ? 'brak danych' : `${pl.format(item.ga4_sessions)} sesji · zaangażowanie ${pct(item.engagement_rate)}`);
         set('[data-detail-senuto]', item.senuto_position === null ? 'brak dopasowanych fraz' : `poz. ${pl.format(item.senuto_position)} · ${pl.format(item.senuto_keywords ?? 0)} fraz · ${pl.format(item.senuto_top10 ?? 0)} TOP 10`);
         set('[data-detail-structure]', `${pl.format(item.word_count)} słów · ${pl.format(item.headings)} nagłówków · ${pl.format(item.internal_links)} linków wewn. · ${pl.format(item.external_links)} zewn.`);
         set('[data-detail-path]', item.content_path);
         set('[data-detail-score]', String(item.score));
         const reasons = dialog.querySelector<HTMLElement>('[data-detail-reasons]');
-        reasons?.replaceChildren(...(item.reasons.length ? item.reasons : ['Brak silnego sygnału do reoptymalizacji.']).map((reason) => {
+        reasons?.replaceChildren(...(item.reasons.length ? item.reasons : ['Brak wyraźnych wskazań do ponownej optymalizacji.']).map((reason) => {
           const li = document.createElement('li'); li.textContent = reason; return li;
         }));
         // Frazy Senuto: pierwsze idą te tuż pod progiem (11–30) – to one są
