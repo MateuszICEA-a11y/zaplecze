@@ -23,9 +23,12 @@ from datetime import date, timedelta
 
 from config import (
     COMPETITOR_KEYWORDS_LIMIT,
+    COMPETITOR_KEYWORDS_PAGES,
     COMPETITOR_LIMIT,
+    COMPETITOR_POSITION_MAX,
     OWN_KEYWORDS_LIMIT,
     SENUTO_KEYWORDS_COUNTRY_ID,
+    SENUTO_POSITIONS_COUNTRY_ID,
     SERPDATA_TIMEOUT_S,
     USER_AGENT,
 )
@@ -111,15 +114,80 @@ def own_keywords(url: str, limit: int = OWN_KEYWORDS_LIMIT) -> list[dict]:
     return keywords_for_urls([url], match_mode="narrow", limit=limit)
 
 
-def competitor_keywords(urls: list[str], limit: int = COMPETITOR_KEYWORDS_LIMIT) -> dict[str, list[dict]]:
-    """Frazy konkurentów – jedno wywołanie na komplet adresów.
+def _is_homepage(url: str) -> bool:
+    """Strona główna rankuje na cały biznes serwisu (brand, „agencja seo
+    poznań"), a nie na temat wpisu – jej fraz do luk nie bierzemy."""
+    try:
+        return urllib.parse.urlparse(url).path.rstrip("/") == ""
+    except ValueError:
+        return False
 
-    Senuto zwraca wspólną pulę fraz bez przypisania do konkretnego URL-a, więc
-    wynik to obraz całego zestawu konkurentów, nie ranking per strona. Do
-    briefu to wystarcza: interesuje nas, czego my nie pokrywamy.
+
+def url_keywords(url: str, country_id: int = SENUTO_POSITIONS_COUNTRY_ID,
+                 pages: int = COMPETITOR_KEYWORDS_PAGES) -> list[dict]:
+    """Frazy jednego adresu RAZEM Z POZYCJĄ (Senuto Analiza Widoczności).
+
+    `fetch_mode: url` działa też dla cudzych adresów. API nie umie sortować
+    ani filtrować po pozycji, więc porządkujemy u siebie po pobraniu stron.
     """
-    rows = keywords_for_urls(urls, match_mode="narrow", limit=limit)
-    return {"keywords": rows, "urls": list(urls)}
+    token = os.environ.get("SENUTO_API_KEY", "").strip()
+    target = (url or "").strip()
+    target = re.sub(r"^https?://", "", target)
+    if not token or not target:
+        return []
+    rows: list[dict] = []
+    for page in range(1, pages + 1):
+        body = json.dumps({
+            "domain": target, "fetch_mode": "url",
+            "country_id": country_id, "limit": 100, "page": page,
+        }).encode()
+        payload = _request(SENUTO_POSITIONS, _senuto_headers(token), data=body)
+        batch = payload.get("data") or []
+        if isinstance(batch, dict):
+            batch = batch.get("data") or []
+        if not isinstance(batch, list) or not batch:
+            break
+        for row in batch:
+            stats = row.get("statistics") or {}
+            position = (stats.get("position") or {}).get("current")
+            if not row.get("keyword") or position is None:
+                continue
+            rows.append({
+                "keyword": row.get("keyword"),
+                "position": position,
+                "volume": (stats.get("searches") or {}).get("current"),
+            })
+        if len(batch) < 100:
+            break
+    return rows
+
+
+def competitor_keywords(urls: list[str], limit: int = COMPETITOR_KEYWORDS_LIMIT) -> dict[str, list[dict]]:
+    """Frazy konkurentów zwężone do tych, które realnie opisują temat.
+
+    Bierzemy je z pozycjami (Analiza Widoczności per URL), bo to pozycja mówi,
+    czy fraza trafia w intencję strony: adres z czołówki opisuje temat, fraza
+    z czwartej dziesiątki to zwykle przypadek. Baza Słów Kluczowych zwracała
+    wspólną pulę bez pozycji i przy stronie głównej konkurenta wsypywała do
+    briefu jego frazy brandowe (sonda 2026-07-30).
+    """
+    pages = [url for url in urls if url and not _is_homepage(url)]
+    best: dict[str, dict] = {}
+    for url in pages:
+        host = urllib.parse.urlparse(url).netloc.removeprefix("www.")
+        for row in url_keywords(url):
+            if (row.get("position") or 999) > COMPETITOR_POSITION_MAX:
+                continue
+            # Zgrubny klucz wystarczy – warianty fleksyjne odsiewa dopiero
+            # `normalize_phrase` w run.py, przy porównaniu z naszymi frazami.
+            key = re.sub(r"\s+", " ", (row.get("keyword") or "").strip().lower())
+            if not key:
+                continue
+            current = best.get(key)
+            if current is None or row["position"] < current["position"]:
+                best[key] = {**row, "host": host}
+    rows = sorted(best.values(), key=lambda r: (r["position"], -(r.get("volume") or 0)))
+    return {"keywords": rows[:limit], "urls": list(pages)}
 
 
 def title_query(title: str) -> str:

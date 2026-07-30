@@ -14,25 +14,32 @@
  * - SerpData – żywe wyniki organiczne; jedno zapytanie idzie ~20 s, więc dwa
  *   nie mieszczą się w czasie życia żądania. Analiza leci w tle
  *   (ctx.waitUntil), klient odpytuje GET-em o stan.
- * - Senuto Baza Słów Kluczowych – frazy konkurentów, jedno wywołanie na
- *   komplet adresów. Zwraca frazy z wolumenem, ale BEZ pozycji.
+ * - Senuto Analiza Widoczności (`positions/getData`, fetch_mode `url`) – frazy
+ *   przypisane do konkretnego adresu konkurenta RAZEM Z JEGO POZYCJĄ. To ta
+ *   pozycja decyduje, które frazy pokazujemy: strona rankująca na frazę w
+ *   czołówce trafia w intencję, fraza z czwartej dziesiątki to zwykle przypadek.
  * - Nasze frazy z pozycjami przychodzą z katalogu (dane collectora), więc
  *   nie płacimy za nie drugi raz.
  *
  * Sekrety: SERPDATA_API_KEY, SENUTO_API_KEY.
- * Gotcha Senuto: Baza Słów Kluczowych działa na country_id=1 (baza 2.0 z 200
- * obowiązuje tylko w Analizie Widoczności), a URL musi mieć końcowy ukośnik –
- * bez niego API zwraca zero fraz zamiast błędu.
+ * Gotcha Senuto: Analiza Widoczności działa na country_id=200 (baza 2.0 – ta
+ * z aplikacji), a URL podajemy bez schematu. API nie sortuje po pozycji, więc
+ * porządkujemy u siebie po pobraniu stron.
  */
 
 export const SERP_CACHE_HOURS = 24 * 7; // powtórka w tygodniu to ten sam SERP
 export const COMPETITORS_LIMIT = 3;
 export const KEYWORDS_LIMIT = 100; // twardy limit strony w API Senuto
-export const GAP_SHOWN = 40;
-const SENUTO_COUNTRY_ID = 1;
+export const KEYWORDS_PAGES = 3; // dalej niż 300 fraz na adres nie ma po co iść
+// Frazy konkurentów: pokazujemy garść najtrafniejszych, nie całą pulę. Dalej
+// niż druga strona wyników fraza rzadko opisuje temat strony.
+export const KEYWORDS_TOP = 10;
+export const RIVAL_POSITION_MAX = 20;
+export const GAP_SHOWN = KEYWORDS_TOP;
+const SENUTO_COUNTRY_ID = 200;
 const TIMEOUT_MS = 60_000;
 const SERPDATA_SEARCH = 'https://api.serpdata.io/v1/search';
-const SENUTO_KEYWORDS = 'https://api.senuto.com/api/keywords_analysis/reports/keywords/getKeywords';
+const SENUTO_POSITIONS = 'https://api.senuto.com/api/visibility_analysis/reports/positions/getData';
 // Bez własnego User-Agenta SerpData odbija żądanie z 403 (WAF nie przepuszcza
 // domyślnego klienta) – ta sama gotcha co w pipeline'ie.
 const USER_AGENT = 'ICEA-ContentWatcher/1.0';
@@ -133,41 +140,82 @@ export async function serpCompetitors(keyword, ownHost, env, fetchImpl = fetch) 
   return { competitors: rows, ours, checked };
 }
 
+/** Adres strony głównej? Taki wynik rankuje na cały biznes serwisu (brand,
+    „agencja seo poznań"), a nie na temat wpisu – do fraz go nie bierzemy. */
+export const isHomepage = (url) => {
+  try {
+    return new URL(url).pathname.replace(/\/+$/, '') === '';
+  } catch {
+    return false;
+  }
+};
+
 /**
- * Frazy dla listy adresów – jedno wywołanie Senuto na komplet konkurentów.
- * Format ciała zapytania jest ten sam co w pipeline'ie (`parameters` +
- * `filtering`); prostsze `{urls: […]}` API odrzuca kodem 418.
+ * Frazy jednego adresu wraz z pozycją konkurenta (Senuto Analiza Widoczności).
+ * API nie przyjmuje sortowania ani filtra pozycji, więc bierzemy do
+ * KEYWORDS_PAGES stron i porządkujemy u siebie.
  */
-export async function senutoKeywords(urls, env, fetchImpl = fetch) {
-  const clean = (urls ?? []).filter(Boolean);
-  if (!clean.length) return [];
-  const payload = await fetchJson(SENUTO_KEYWORDS, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${env.SENUTO_API_KEY}`,
-      'content-type': 'application/json',
-      Accept: 'application/json',
-    },
-    body: JSON.stringify({
-      offset: 0,
-      page: 1,
-      limit: KEYWORDS_LIMIT,
-      filtering: [{ filters: [] }],
-      parameters: [{ data_fetch_mode: 'url', value: clean }],
-      country_id: SENUTO_COUNTRY_ID,
-      match_mode: 'narrow',
-    }),
-  }, fetchImpl);
-  const rows = Array.isArray(payload?.data) ? payload.data : [];
-  return rows
-    .map((row) => ({ keyword: row.keyword ?? '', searches: row.searches ?? null, cpc: row.cpc ?? null }))
-    .filter((row) => row.keyword);
+export async function senutoUrlKeywords(url, env, fetchImpl = fetch) {
+  const target = String(url ?? '').trim().replace(/^https?:\/\//, '');
+  if (!target) return [];
+  const rows = [];
+  for (let page = 1; page <= KEYWORDS_PAGES; page += 1) {
+    const payload = await fetchJson(SENUTO_POSITIONS, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${env.SENUTO_API_KEY}`,
+        'content-type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({
+        domain: target,
+        fetch_mode: 'url',
+        country_id: SENUTO_COUNTRY_ID,
+        limit: KEYWORDS_LIMIT,
+        page,
+      }),
+    }, fetchImpl);
+    // Senuto owija listę raz płasko (`data`), raz w `data.data` – zależnie
+    // od raportu; obsługujemy oba kształty, jak w research.py.
+    const batch = Array.isArray(payload?.data) ? payload.data
+      : Array.isArray(payload?.data?.data) ? payload.data.data : [];
+    for (const row of batch) {
+      const stats = row?.statistics ?? {};
+      const position = stats.position?.current ?? null;
+      if (!row?.keyword || position == null) continue;
+      rows.push({ keyword: row.keyword, position, searches: stats.searches?.current ?? null });
+    }
+    if (batch.length < KEYWORDS_LIMIT) break;
+  }
+  return rows;
+}
+
+/**
+ * Frazy kompletu konkurentów zwężone do tych, które realnie opisują temat:
+ * tylko podstrony (nie strony główne), tylko pozycje z RIVAL_POSITION_MAX,
+ * jedna fraza raz – z najlepszą pozycją, jaką ma na nią którykolwiek rywal.
+ */
+export async function competitorKeywords(urls, env, fetchImpl = fetch) {
+  const pages = (urls ?? []).filter((url) => url && !isHomepage(url));
+  const best = new Map();
+  for (const url of pages) {
+    for (const row of await senutoUrlKeywords(url, env, fetchImpl)) {
+      if (row.position > RIVAL_POSITION_MAX) continue;
+      const key = normalizeKeyword(row.keyword);
+      if (!key) continue;
+      const current = best.get(key);
+      if (!current || row.position < current.position) best.set(key, { ...row, host: hostOf(url) });
+    }
+  }
+  return [...best.values()]
+    .sort((a, b) => a.position - b.position || (b.searches ?? 0) - (a.searches ?? 0))
+    .slice(0, KEYWORDS_TOP);
 }
 
 /**
  * Zestawienie fraz konkurencji z naszymi. Luka = fraza, której nie mamy
  * w ogóle; „słaba" = mamy, ale poza TOP 10. Nasze pozycje pochodzą z katalogu
- * (Senuto z collectora), bo Baza Słów Kluczowych ich nie zwraca.
+ * (Senuto z collectora), pozycja rywala – z `competitorKeywords`.
  */
 export function buildGap(ownRows, competitorRows) {
   const own = new Map();
@@ -182,7 +230,8 @@ export function buildGap(ownRows, competitorRows) {
     const key = normalizeKeyword(row.keyword);
     if (!key) continue;
     const current = best.get(key);
-    if (!current || (row.searches ?? 0) > (current.searches ?? 0)) best.set(key, row);
+    // Ta sama fraza u dwóch rywali – zostaje ta z lepszą (niższą) pozycją.
+    if (!current || (row.position ?? 999) < (current.position ?? 999)) best.set(key, row);
   }
   const rows = [];
   for (const [key, row] of best) {
@@ -191,13 +240,15 @@ export function buildGap(ownRows, competitorRows) {
     rows.push({
       keyword: row.keyword,
       searches: row.searches ?? null,
+      rival_position: row.position ?? null,
+      rival_host: row.host ?? null,
       our_position: ourPosition,
       status: ours === null ? 'missing' : ourPosition !== null && ourPosition > 10 ? 'weak' : 'covered',
     });
   }
-  // Najpierw luki, potem słabe pozycje, w każdej grupie po wolumenie.
-  const rank = { missing: 0, weak: 1, covered: 2 };
-  rows.sort((a, b) => rank[a.status] - rank[b.status] || (b.searches ?? 0) - (a.searches ?? 0));
+  // Kolejność to trafność: najpierw frazy, na których rywal stoi najwyżej.
+  rows.sort((a, b) => (a.rival_position ?? 999) - (b.rival_position ?? 999)
+    || (b.searches ?? 0) - (a.searches ?? 0));
   return {
     rows: rows.slice(0, GAP_SHOWN),
     summary: {
@@ -288,14 +339,18 @@ export async function runStep(env, domain, postId, state, fetchImpl = fetch) {
   const competitorUrls = [
     ...new Set((queries.find((row) => row.kind === 'title')?.competitors ?? []).map((item) => item.url)),
   ];
-  const competitorKeywords = await senutoKeywords(competitorUrls, env, fetchImpl);
-  const gap = buildGap(input.ownKeywords ?? [], competitorKeywords);
+  const rivalKeywords = await competitorKeywords(competitorUrls, env, fetchImpl);
+  const gap = buildGap(input.ownKeywords ?? [], rivalKeywords);
   const analysis = {
     title: input.title,
     url: input.url,
     queries,
     drift: ownHosts.size ? [...titleHosts].filter((host) => !ownHosts.has(host)) : [],
     own_keywords_total: (input.ownKeywords ?? []).length,
+    // Ile adresów rywali dało frazy, a ile odpadło jako strony główne –
+    // bez tego pusta tabela wygląda na awarię, a jest świadomym pominięciem.
+    keywords_scanned: competitorUrls.filter((url) => !isHomepage(url)).length,
+    keywords_skipped_home: competitorUrls.filter((url) => isHomepage(url)).length,
     gap: gap.rows,
     gap_summary: gap.summary,
     stage: 'done',

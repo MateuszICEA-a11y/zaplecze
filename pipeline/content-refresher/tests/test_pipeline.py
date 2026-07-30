@@ -330,6 +330,36 @@ class TestResearch(unittest.TestCase):
             self.assertEqual(research.keywords_for_urls([]), [])
         request.assert_not_called()
 
+    POSITIONS_RESPONSE = {
+        "success": True,
+        "data": [
+            {"keyword": "zlecę pozycjonowanie", "statistics": {
+                "position": {"current": 9}, "searches": {"current": 40}}},
+            {"keyword": "agencja seo poznań", "statistics": {
+                "position": {"current": 31}, "searches": {"current": 390}}},
+        ],
+    }
+
+    def test_frazy_konkurentow_z_pozycjami_bez_stron_glownych(self):
+        """Pozycja rywala decyduje o kolejności, strona główna wypada z pytania.
+
+        Wcześniej szła tu Baza Słów Kluczowych bez pozycji – dla adresu, który
+        SERP oddał jako stronę główną agencji, brief dostawał jej frazy
+        brandowe („semcore", „seo poznań") zamiast fraz o temacie wpisu.
+        """
+        with mock.patch.object(research, "_request", return_value=self.POSITIONS_RESPONSE) as request, \
+             mock.patch.dict(os.environ, {"SENUTO_API_KEY": "x"}):
+            result = research.competitor_keywords(
+                ["https://semcore.pl/", "https://verseo.pl/zlece-pozycjonowanie/"])
+        self.assertEqual(result["urls"], ["https://verseo.pl/zlece-pozycjonowanie/"])
+        self.assertEqual([row["keyword"] for row in result["keywords"]], ["zlecę pozycjonowanie"])
+        self.assertEqual(result["keywords"][0]["position"], 9)
+        self.assertEqual(result["keywords"][0]["host"], "verseo.pl")
+        body = json.loads(request.call_args.kwargs["data"].decode())
+        self.assertEqual(body["fetch_mode"], "url")
+        self.assertEqual(body["domain"], "verseo.pl/zlece-pozycjonowanie/")
+        self.assertEqual(body["country_id"], 200)  # Analiza Widoczności = baza 2.0
+
 
 class TestSerpDwaZapytania(unittest.TestCase):
     """SERP pytany tematem wpisu i naszą frazą – tytuł jest bazą, nie fallbackiem."""

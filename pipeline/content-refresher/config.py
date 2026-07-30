@@ -44,6 +44,11 @@ BUDGET_SERP_REQUESTS_PER_JOB = 2
 BUDGET_TOKENS_PER_JOB = 400_000
 COMPETITOR_LIMIT = 5
 COMPETITOR_KEYWORDS_LIMIT = 60
+# Frazy konkurentów bierzemy z pozycjami: dalej niż druga strona wyników fraza
+# rzadko opisuje temat strony, a przy 300 frazach z adresu i tak nic więcej nie
+# wnosi. Lustro KEYWORDS_PAGES / RIVAL_POSITION_MAX z dashboard/app/cw-serp.js.
+COMPETITOR_KEYWORDS_PAGES = 3
+COMPETITOR_POSITION_MAX = 20
 OWN_KEYWORDS_LIMIT = 50
 
 # --- Senuto ---

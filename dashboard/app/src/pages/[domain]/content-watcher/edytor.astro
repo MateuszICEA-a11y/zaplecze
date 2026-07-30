@@ -1765,8 +1765,14 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       results_checked?: number;
     }[];
     drift: string[];
-    gap: { keyword: string; searches: number | null; our_position: number | null; status: string }[];
+    gap: {
+      keyword: string; searches: number | null; our_position: number | null; status: string;
+      // Pozycja rywala, na której fraza się „obroniła" – to ona decyduje o kolejności.
+      rival_position?: number | null; rival_host?: string | null;
+    }[];
     gap_summary: { total: number; missing: number; weak: number; covered: number };
+    keywords_scanned?: number;
+    keywords_skipped_home?: number;
     own_keywords_total: number;
     generated_at: string;
     cached_at?: string;
@@ -1892,7 +1898,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     // Bez fraz konkurentów cztery zera obok „X fraz naszego wpisu" czytają
     // się jak wynik analizy, a to zwykły brak danych w Senuto.
     if (analysis.gap_summary.total) {
-      stat(analysis.gap_summary.total, 'fraz konkurencji');
+      stat(analysis.gap_summary.total, 'trafnych fraz konkurentów');
       stat(analysis.gap_summary.missing, 'nie mamy wcale', 'missing');
       stat(analysis.gap_summary.weak, 'poza TOP 10', 'weak');
       stat(analysis.gap_summary.covered, 'mamy w TOP 10', 'covered');
@@ -1906,16 +1912,20 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       // konkurentach lista fraz bywa pusta i trzeba to powiedzieć wprost.
       const empty = document.createElement('p');
       empty.className = 'ed-serp-empty';
-      empty.textContent =
-        'Senuto nie zna fraz dla adresów tych konkurentów, więc porównania fraz nie ma – zostaje lista wyników ' +
-        'i rozjazd tematu. Dane o naszych frazach pochodzą z dziennego odczytu Senuto.';
+      const skipped = (analysis as any).keywords_skipped_home ?? 0;
+      empty.textContent = skipped && !((analysis as any).keywords_scanned ?? 0)
+        ? `W czołówce stoją same strony główne (${skipped}) – rankują na cały biznes serwisu, `
+          + 'nie na temat wpisu, więc ich fraz nie zbieramy. Zostaje lista wyników i rozjazd tematu.'
+        : 'Senuto nie zna fraz w TOP 20 dla podstron tych konkurentów, więc porównania fraz nie ma – '
+          + 'zostaje lista wyników i rozjazd tematu. Dane o naszych frazach pochodzą z dziennego odczytu Senuto.';
       nodes.push(empty);
     }
     if (analysis.gap.length) {
       const table = document.createElement('table');
       table.className = 'data-table ed-serp-table';
       table.innerHTML =
-        '<thead><tr><th>Fraza</th><th class="num">Wyszukiwań/mies.</th><th class="num">Nasza pozycja</th><th>Status</th></tr></thead>';
+        '<thead><tr><th>Fraza</th><th class="num">Poz. konkurenta</th><th class="num">Wyszukiwań/mies.</th>'
+        + '<th class="num">Nasza pozycja</th><th>Status</th></tr></thead>';
       const body = document.createElement('tbody');
       // Pełna lista potrafi mieć setki wierszy i zabija czytelność dokumentu –
       // pokazujemy czołówkę, reszta na życzenie.
@@ -1929,6 +1939,9 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         }
         const cells = [
           row.keyword,
+          row.rival_position == null
+            ? '–'
+            : `${pl.format(row.rival_position)}${row.rival_host ? ` · ${row.rival_host}` : ''}`,
           row.searches === null ? '–' : pl.format(row.searches),
           row.our_position === null ? 'brak' : `poz. ${pl.format(row.our_position)}`,
         ];

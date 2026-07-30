@@ -3,11 +3,13 @@ import assert from 'node:assert/strict';
 
 import {
   buildGap,
+  competitorKeywords,
   handleSerpGap,
   hostOf,
+  isHomepage,
   normalizeKeyword,
   runStep,
-  senutoKeywords,
+  senutoUrlKeywords,
   serpCompetitors,
   titleQuery,
 } from './cw-serp.js';
@@ -59,8 +61,16 @@ const serpResponse = (hosts) => ({
   },
 });
 
-/** Senuto Baza Słów Kluczowych: `data` to płaska tablica, bez pozycji. */
-const senutoResponse = (rows) => ({ data: rows });
+/** Senuto Analiza Widoczności: pozycja i wolumen siedzą w `statistics`. */
+const senutoResponse = (rows) => ({
+  data: rows.map((row) => ({
+    keyword: row.keyword,
+    statistics: {
+      position: { current: row.position ?? 1 },
+      searches: { current: row.searches ?? null },
+    },
+  })),
+});
 
 const OWN = [{ keyword: 'looker studio cennik', position: 8, searches: 30 }];
 
@@ -102,31 +112,31 @@ test('buildGap: dzieli frazy na brakujące, słabe i pokryte', () => {
     { keyword: 'jak naprawić 403', position: 24 },
   ];
   const competitors = [
-    { keyword: 'Błąd 403', searches: 1000 },
-    { keyword: 'jak naprawic 403', searches: 500 },
-    { keyword: 'error 403 forbidden', searches: 800 },
+    { keyword: 'Błąd 403', searches: 1000, position: 5 },
+    { keyword: 'jak naprawic 403', searches: 500, position: 2 },
+    { keyword: 'error 403 forbidden', searches: 800, position: 9 },
   ];
   const { rows, summary } = buildGap(own, competitors);
   assert.deepEqual(summary, { total: 3, missing: 1, weak: 1, covered: 1 });
-  // Luka idzie pierwsza, dopiero po niej słaba pozycja i pokryta fraza.
-  assert.equal(rows[0].keyword, 'error 403 forbidden');
-  assert.equal(rows[0].status, 'missing');
-  assert.equal(rows[1].status, 'weak');
-  assert.equal(rows[1].our_position, 24);
-  assert.equal(rows[2].status, 'covered');
+  // Kolejność wyznacza pozycja rywala – najpierw fraza, którą trzyma najwyżej.
+  assert.deepEqual(rows.map((row) => row.rival_position), [2, 5, 9]);
+  assert.equal(rows[0].status, 'weak');
+  assert.equal(rows[0].our_position, 24);
+  assert.equal(rows[2].keyword, 'error 403 forbidden');
+  assert.equal(rows[2].status, 'missing');
 });
 
-test('buildGap: ta sama fraza w dwóch pisowniach liczy się raz', () => {
+test('buildGap: ta sama fraza u dwóch rywali liczy się raz – z lepszą pozycją', () => {
   const { rows } = buildGap([], [
-    { keyword: 'seo', searches: 100 },
-    { keyword: 'SEO', searches: 900 },
+    { keyword: 'seo', searches: 100, position: 8 },
+    { keyword: 'SEO', searches: 900, position: 3 },
   ]);
   assert.equal(rows.length, 1);
-  assert.equal(rows[0].searches, 900);
+  assert.equal(rows[0].rival_position, 3);
 });
 
 test('buildGap: brak naszych fraz = wszystko jest luką', () => {
-  const { summary } = buildGap(undefined, [{ keyword: 'a', searches: 10 }]);
+  const { summary } = buildGap(undefined, [{ keyword: 'a', searches: 10, position: 1 }]);
   assert.deepEqual(summary, { total: 1, missing: 1, weak: 0, covered: 0 });
 });
 
@@ -161,28 +171,48 @@ test('serpCompetitors: błąd HTTP niesie status w komunikacie', async () => {
   await assert.rejects(() => serpCompetitors('x', 'grupa-icea.pl', env(), fetchImpl), /HTTP 503/);
 });
 
-test('senutoKeywords: pusta lista adresów nie woła API', async () => {
-  let called = false;
-  await senutoKeywords([], env(), async () => {
-    called = true;
-    return new Response('{}', { status: 200 });
-  });
-  assert.equal(called, false);
+test('isHomepage: strona główna tak, podstrona nie', () => {
+  assert.equal(isHomepage('https://semcore.pl/'), true);
+  assert.equal(isHomepage('https://semcore.pl'), true);
+  assert.equal(isHomepage('https://semcore.pl/jak-zlecic/'), false);
+  assert.equal(isHomepage('nie-url'), false);
 });
 
-test('senutoKeywords: format ciała jak w pipelinie, country_id 1 zamiast 200', async () => {
+test('senutoUrlKeywords: pyta o pozycje adresu bez schematu, na bazie 2.0', async () => {
   let body = null;
   const fetchImpl = async (url, init) => {
     body = JSON.parse(init.body);
-    return new Response(JSON.stringify(senutoResponse([{ keyword: 'a', searches: 10, cpc: 0.5 }])), { status: 200 });
+    assert.match(String(url), /visibility_analysis/);
+    return new Response(JSON.stringify(senutoResponse([{ keyword: 'a', position: 4, searches: 10 }])), { status: 200 });
   };
-  const rows = await senutoKeywords(['https://a.pl/x/'], env(), fetchImpl);
-  // Prostsze `{urls: […]}` API odrzuca kodem 418 – stąd parameters + filtering.
-  assert.equal(body.country_id, 1);
-  assert.deepEqual(body.parameters, [{ data_fetch_mode: 'url', value: ['https://a.pl/x/'] }]);
-  assert.deepEqual(body.filtering, [{ filters: [] }]);
-  assert.ok(body.limit <= 100);
-  assert.deepEqual(rows, [{ keyword: 'a', searches: 10, cpc: 0.5 }]);
+  const rows = await senutoUrlKeywords('https://a.pl/x/', env(), fetchImpl);
+  assert.equal(body.domain, 'a.pl/x/');
+  assert.equal(body.fetch_mode, 'url');
+  assert.equal(body.country_id, 200);
+  assert.deepEqual(rows, [{ keyword: 'a', position: 4, searches: 10 }]);
+});
+
+test('competitorKeywords: strony główne pomijane, zostaje TOP wg pozycji rywala', async () => {
+  const asked = [];
+  const fetchImpl = async (url, init) => {
+    const target = JSON.parse(init.body).domain;
+    asked.push(target);
+    return new Response(JSON.stringify(senutoResponse(
+      target.startsWith('a.pl')
+        ? [{ keyword: 'trafna', position: 3, searches: 100 }, { keyword: 'daleka', position: 44, searches: 9000 }]
+        : [{ keyword: 'druga', position: 12, searches: 50 }],
+    )), { status: 200 });
+  };
+  const rows = await competitorKeywords(
+    ['https://a.pl/artykul/', 'https://home.pl/', 'https://b.pl/wpis/'],
+    env(),
+    fetchImpl,
+  );
+  // Strona główna rankuje na cały biznes serwisu – nie pytamy o nią wcale.
+  assert.deepEqual(asked, ['a.pl/artykul/', 'b.pl/wpis/']);
+  // Fraza z czwartej dziesiątki odpada mimo największego wolumenu.
+  assert.deepEqual(rows.map((row) => row.keyword), ['trafna', 'druga']);
+  assert.deepEqual(rows.map((row) => row.host), ['a.pl', 'b.pl']);
 });
 
 /* ---------- analiza ---------- */
@@ -285,7 +315,7 @@ test('analiza: frazy tylko od konkurentów z SERP-u tematu, nie z naszej frazy',
         { status: 200 },
       );
     }
-    asked.push(JSON.parse(init.body).parameters[0].value);
+    asked.push(JSON.parse(init.body).domain);
     return new Response(JSON.stringify(senutoResponse([])), { status: 200 });
   };
   await runToEnd(env(), {
@@ -293,7 +323,7 @@ test('analiza: frazy tylko od konkurentów z SERP-u tematu, nie z naszej frazy',
     url: 'https://www.grupa-icea.pl/x/',
     ownKeywords: [{ keyword: 'zupełnie inna fraza', position: 18 }],
   }, fetchImpl);
-  assert.deepEqual(asked, [['https://temat.pl/artykul']]);
+  assert.deepEqual(asked, ['temat.pl/artykul']);
 });
 
 /* ---------- endpoint ---------- */

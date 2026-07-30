@@ -34,10 +34,10 @@ Adresy rankujące najwyżej, wraz z ich strukturą nagłówków:
 Domeny trzymające temat wpisu, których nie ma w wynikach naszej dzisiejszej frazy – sygnał, że rankujemy obok tematu:
 {{ serp_drift }}
 
-Frazy pokrywane przez te adresy, których my nie mamy (Senuto):
+Frazy pokrywane przez te adresy, których my nie mamy (Senuto). `position` to pozycja konkurenta na tę frazę, `host` – czyj to adres:
 {{ competitor_keywords }}
 
-Uwaga: to wspólna pula fraz dla całego zestawu konkurentów, więc trafiają się w niej frazy spoza tematu artykułu (konkurenci rankują też na inne treści). Takie pozycje pomiń bez komentarza – nie buduj na nich luk ani nowych sekcji.
+Uwaga: to frazy z TOP 20 konkretnych podstron konkurentów, uporządkowane od najlepszej pozycji. Im wyżej fraza, tym pewniej opisuje temat – ale jeśli któraś mimo to odstaje od artykułu, pomiń ją bez komentarza, nie buduj na niej luk ani nowych sekcji.
 
 ## Zweryfikowane konkrety z treści konkurencji
 
