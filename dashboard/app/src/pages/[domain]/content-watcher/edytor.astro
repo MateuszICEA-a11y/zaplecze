@@ -223,6 +223,11 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
           <span data-ed-score-kwmeta>sprawdź wyniki wyszukiwania, aby zobaczyć listę</span>
         </div>
         <ul class="ed-score-kwlist" data-ed-score-kwlist></ul>
+        <p class="ed-kw-legend">
+          W dokumencie zaznaczamy każde wystąpienie – także w nagłówku i w odmienionej formie.
+          <span class="ed-kw-swatch was"></span> było w tekście
+          <span class="ed-kw-swatch new"></span> dopisane w tym przebiegu
+        </p>
       </div>
     </div>
 
@@ -744,6 +749,146 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     value.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ł/g, 'l')
       .replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
 
+  /* ---------- dopasowanie fraz z odmianą ----------
+     Model ma wplatać frazy odmienione, a nie wklejać je w mianowniku, więc
+     porównanie musi to znieść: „zlecenia pozycjonowania" ma trafiać we frazę
+     „zlecenie pozycjonowanie". Obcinamy typowe końcówki fleksyjne – to ta sama
+     heurystyka co `normalize_phrase` w pipeline/content-refresher/run.py. */
+
+  const SUFFIXES = ['ami', 'ach', 'iem', 'em', 'ow', 'om', 'ie', 'y', 'i', 'e', 'a', 'u'];
+  const STEM_MIN = 4; // krótszy rdzeń zaczyna sklejać różne słowa
+
+  /** Rdzeń słowa: do dwóch końcówek, bo „pozycjonowania" to „a" + „i". */
+  function stem(word: string) {
+    let out = word;
+    for (let round = 0; round < 2; round += 1) {
+      const suffix = SUFFIXES.find((end) => out.endsWith(end) && out.length - end.length >= STEM_MIN);
+      if (!suffix) break;
+      out = out.slice(0, -suffix.length);
+    }
+    return out;
+  }
+
+  const FOLD: Record<string, string> = { ą: 'a', ć: 'c', ę: 'e', ł: 'l', ń: 'n', ó: 'o', ś: 's', ź: 'z', ż: 'z' };
+
+  /** Uproszczenie tekstu ZNAK W ZNAK – pozycje muszą zostać te same, inaczej
+      podświetlenie trafiłoby obok. Dlatego bez NFD i bez sklejania spacji. */
+  function fold(text: string) {
+    let out = '';
+    for (const character of text) {
+      const lower = character.toLowerCase();
+      const mapped = FOLD[lower] ?? lower;
+      const safe = mapped.length === character.length ? mapped : character;
+      out += safe.replace(/[^a-z0-9]/g, ' ');
+    }
+    return out;
+  }
+
+  /** Słowa tekstu z pozycjami – pozycje są potrzebne, żeby podświetlić
+      trafienie dokładnie tam, gdzie stoi, bez ruszania HTML-a dokumentu. */
+  function tokens(text: string) {
+    const out: { stem: string; start: number; end: number }[] = [];
+    for (const match of fold(text).matchAll(/[a-z0-9]+/g)) {
+      out.push({ stem: stem(match[0]), start: match.index!, end: match.index! + match[0].length });
+    }
+    return out;
+  }
+
+  /** Zakresy tekstu, w których stoi fraza (dowolna odmiana słów, ten sam szyk). */
+  function findPhrase(text: string, phrase: string) {
+    const needle = tokens(phrase).map((token) => token.stem);
+    if (!needle.length) return [];
+    const hay = tokens(text);
+    const hits: { start: number; end: number }[] = [];
+    for (let i = 0; i + needle.length <= hay.length; i += 1) {
+      if (needle.every((word, offset) => hay[i + offset].stem === word)) {
+        hits.push({ start: hay[i].start, end: hay[i + needle.length - 1].end });
+      }
+    }
+    return hits;
+  }
+
+  const hasPhrase = (text: string, phrase: string) => findPhrase(text, phrase).length > 0;
+
+  /* ---------- podświetlanie fraz w dokumencie ----------
+     Przez CSS Custom Highlight API, nie przez wstawianie <mark> – dokument
+     jest edytowalny i zapisywany do zadania, więc jego HTML musi zostać
+     nietknięty. Gdy przeglądarka API nie zna, po prostu nie ma podświetleń. */
+
+  const HIGHLIGHT_SCOPE = '.ed-doc-body, .ed-sec-head h1, .ed-sec-head h2, .ed-diff';
+
+  /** Węzły tekstowe elementu jako jeden ciąg + mapa pozycji na węzły. */
+  function textMap(root: Element) {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    const parts: { node: Text; start: number }[] = [];
+    let text = '';
+    for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+      parts.push({ node: node as Text, start: text.length });
+      text += node.textContent ?? '';
+    }
+    return { text, parts };
+  }
+
+  function rangeFor(parts: { node: Text; start: number }[], start: number, end: number) {
+    let from = null;
+    let to = null;
+    for (const part of parts) {
+      if (part.start <= start) from = part;
+      if (part.start <= end - 1) to = part;
+    }
+    if (!from || !to) return null;
+    const range = document.createRange();
+    range.setStart(from.node, start - from.start);
+    range.setEnd(to.node, end - to.start);
+    return range;
+  }
+
+  /** Treść wpisu sprzed przebiegu – po niej poznajemy, które frazy dołożyła
+      propozycja, a które były w tekście od początku. */
+  function docBaselineText() {
+    const box = document.createElement('div');
+    for (const node of $('[data-ed-doc]')!.querySelectorAll<HTMLElement>('.ed-doc-section')) {
+      const section = job?.sections?.find((row) => row.slot === Number(node.dataset.slot));
+      if (section) {
+        box.append(document.createTextNode(` ${section.title_before ?? ''} `));
+        box.append(docProse(section.text_before ?? ''));
+        continue;
+      }
+      box.append(document.createTextNode(` ${node.querySelector('.ed-sec-head')?.textContent ?? ''} `));
+      const body = node.querySelector('.ed-doc-body');
+      if (body) box.append(body.cloneNode(true));
+    }
+    return box.textContent ?? '';
+  }
+
+  function highlightKeywords() {
+    if (typeof Highlight === 'undefined' || !CSS?.highlights) return;
+    const doc = $('[data-ed-doc]');
+    CSS.highlights.delete('cw-keyword');
+    CSS.highlights.delete('cw-keyword-new');
+    if (!doc) return;
+    const targets = keywordTargets();
+    if (!targets.length) return;
+    const baseline = docBaselineText();
+    const known: Range[] = [];
+    const fresh: Range[] = [];
+    for (const scope of doc.querySelectorAll<HTMLElement>(HIGHLIGHT_SCOPE)) {
+      const { text, parts } = textMap(scope);
+      if (!text.trim()) continue;
+      for (const target of targets) {
+        // Fraza dopisana przebiegiem dostaje inny kolor niż ta, która była
+        // w tekście od początku – widać, co realnie wniosła propozycja.
+        const bucket = hasPhrase(baseline, target.keyword) ? known : fresh;
+        for (const hit of findPhrase(text, target.keyword)) {
+          const range = rangeFor(parts, hit.start, hit.end);
+          if (range) bucket.push(range);
+        }
+      }
+    }
+    if (known.length) CSS.highlights.set('cw-keyword', new Highlight(...known));
+    if (fresh.length) CSS.highlights.set('cw-keyword-new', new Highlight(...fresh));
+  }
+
   /** Skąd wzięła się fraza na liście – dymek przy opisie po prawej. */
   const KEYWORD_SOURCE_HINT: Record<string, string> = {
     missing: 'Konkurent z czołówki jest na nią widoczny, nasz wpis wcale (dane Senuto).',
@@ -815,8 +960,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
 
     const targets = keywordTargets();
     if (targets.length) {
-      const text = normalize(docPlainText());
-      const covered = targets.filter((row) => text.includes(normalize(row.keyword))).length;
+      const text = docPlainText();
+      const covered = targets.filter((row) => hasPhrase(text, row.keyword)).length;
       parts.push({
         label: 'Pokrycie fraz',
         detail: `${pl.format(covered)} z ${pl.format(targets.length)}`,
@@ -870,15 +1015,16 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
 
     const list = $('[data-ed-score-kwlist]')!;
     const targets = keywordTargets();
-    const text = normalize(docPlainText());
+    const text = docPlainText();
     $('[data-ed-score-kwmeta]')!.textContent = targets.length
-      ? `${pl.format(targets.filter((row) => text.includes(normalize(row.keyword))).length)} z ${pl.format(targets.length)} użytych w treści`
+      ? `${pl.format(targets.filter((row) => hasPhrase(text, row.keyword)).length)} z ${pl.format(targets.length)}`
+        + ' użytych w treści · podświetlone w dokumencie'
       : serpAnalysis
         ? 'brak fraz do pokrycia – Senuto nie zna fraz tych konkurentów'
         : 'uruchom „Sprawdź SERP”, żeby zobaczyć listę';
     list.replaceChildren(...targets.map((row) => {
       const item = document.createElement('li');
-      const used = text.includes(normalize(row.keyword));
+      const used = hasPhrase(text, row.keyword);
       item.className = used ? 'used' : '';
       const mark = document.createElement('span');
       mark.className = 'ed-kw-mark';
@@ -898,6 +1044,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       item.append(mark, name, meta);
       return item;
     }));
+    highlightKeywords();
   }
 
   function renderDoc() {
@@ -1526,6 +1673,9 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         node!.querySelectorAll<HTMLButtonElement>('.ed-view-seg button').forEach((button) => {
           button.classList.toggle('active', button.dataset.mode === nextMode);
         });
+        // Przełączenie widoku podmienia węzły tekstowe – zaznaczenia fraz
+        // trzymają zakresy w tych węzłach, więc trzeba je policzyć na nowo.
+        scheduleScore();
       };
       const tools = sectionTools(section, paint, onSave);
       if (toolsHost) toolsHost.replaceWith(tools);
@@ -2480,6 +2630,18 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
      decyzji, filtr sekcji). */
   .ed-pipebar [hidden], .ed-docbar [hidden], .ed-doc [hidden] { display: none !important; }
 
+  /* Frazy z panelu „Frazy do pokrycia" zaznaczone w treści. Podświetlenia idą
+     przez CSS Custom Highlight API (zakresy, nie elementy), więc reguła nie
+     może być scope'owana – nie ma tu żadnego elementu do oznaczenia. */
+  ::highlight(cw-keyword) {
+    background: color-mix(in srgb, var(--accent-blue) 30%, transparent);
+    color: var(--ink);
+  }
+  ::highlight(cw-keyword-new) {
+    background: color-mix(in srgb, var(--status-ok) 32%, transparent);
+    color: var(--ink);
+  }
+
   /* Astro scope'uje też nazwy @keyframes, więc animacja używana w tym bloku
      musi mieć własną definicję globalną. */
   @keyframes ed-spin-global { to { transform: rotate(360deg); } }
@@ -2644,6 +2806,11 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-score-kwhead span { font-size: .7rem; color: var(--ink-faint); }
   .ed-score-kwlist { list-style: none; margin: 0; padding: 0; display: grid; gap: 5px;
     max-height: 190px; overflow-y: auto; }
+  .ed-kw-legend { margin: 10px 0 0; font-size: .68rem; line-height: 1.6; color: var(--ink-faint); }
+  .ed-kw-swatch { display: inline-block; width: 20px; height: 9px; border-radius: 2px;
+    margin: 0 4px 0 10px; vertical-align: baseline; }
+  .ed-kw-swatch.was { background: color-mix(in srgb, var(--accent-blue) 30%, transparent); }
+  .ed-kw-swatch.new { background: color-mix(in srgb, var(--status-ok) 32%, transparent); }
   .ed-score-kwlist li { display: grid; grid-template-columns: 16px minmax(0, 1fr) auto; gap: 8px;
     align-items: baseline; font-size: .77rem; color: var(--ink-muted); }
   .ed-score-kwlist li.used .ed-kw-mark { color: var(--status-ok); }

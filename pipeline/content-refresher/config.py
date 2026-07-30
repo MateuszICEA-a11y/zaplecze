@@ -84,4 +84,18 @@ EDITORIAL_RULES = """Zasady redakcyjne, których musisz przestrzegać:
 - Anchor linku ma być zgodny gramatycznie ze zdaniem, w którym stoi.
 - Nie obiecuj efektów, których nie da się potwierdzić danymi.
 - Zachowaj polską interpunkcję i pełne znaki diakrytyczne.
-- Nie zmieniaj sensu zdań, które są poprawne merytorycznie."""
+- Nie zmieniaj sensu zdań, które są poprawne merytorycznie.
+
+Frazy kluczowe – tak się ich używa:
+- Odmieniaj je zgodnie ze zdaniem. „zlecę pozycjonowanie" ma prawo wystąpić jako
+  „zlecając pozycjonowanie" czy „zlecenie pozycjonowania" – liczy się naturalne
+  polskie zdanie, nie dosłowny zapis frazy.
+- Nie upychaj. Fraza wchodzi tylko tam, gdzie zdanie i tak by ją zawierało.
+  Jeśli nie da się jej wpleść bez sztucznego zdania, kalectwa składniowego albo
+  powtórzenia tej samej myśli – POMIŃ JĄ. Brak frazy jest lepszy niż zdanie,
+  którego nikt tak nie napisze.
+- Jedna fraza to najwyżej dwa wystąpienia w sekcji. Powtórka „dla pewności"
+  psuje tekst i nic nie daje.
+- Wystąpienie w nagłówku H2 liczy się tak samo jak w akapicie – jeśli fraza
+  pasuje do tematu sekcji, jej miejsce jest w nagłówku, nie w doklejonym zdaniu.
+- Nie zbieraj fraz w listy ani w zdania typu „W tym artykule omówimy X, Y i Z"."""
