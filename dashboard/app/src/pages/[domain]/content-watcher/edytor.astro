@@ -92,7 +92,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         </div>
         <div class="ed-serp-actions">
           <span class="ed-serp-stamp" data-ed-rivals-stamp></span>
-          <button type="button" class="ed-serp-run" data-ed-rivals-run disabled>Przeczytaj konkurencję</button>
+          <button type="button" class="ed-serp-run" data-ed-rivals-run disabled>Pobierz treści konkurentów</button>
         </div>
       </div>
       <p class="ed-error" data-ed-rivals-error hidden></p>
@@ -1038,8 +1038,13 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       // powtarzałby to samo dwa razy.
       $('[data-ed-summary]')!.hidden = failed;
       // Przy porażce ponowienie stoi w karcie błędu – dwa takie same przyciski
-      // obok siebie tylko myliłyby.
-      $<HTMLButtonElement>('[data-ed-rerun]')!.hidden = failed || current.status !== 'cancelled';
+      // obok siebie tylko myliłyby. Po zakończonym przebiegu konfiguracja jest
+      // schowana, więc bez tego przycisku nie dałoby się puścić wpisu ponownie.
+      const rerun = $<HTMLButtonElement>('[data-ed-rerun]')!;
+      rerun.hidden = failed || !['cancelled', 'done'].includes(current.status);
+      rerun.textContent = current.status === 'done'
+        ? 'uruchom ponownie (zmień modele i zakres)'
+        : 'uruchom ponownie';
       renderFailure(current, failed);
     }
     renderSteps(current);
@@ -1669,6 +1674,15 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     }
   }
 
+  /** Zakończony przebieg blokuje wpis na COOLDOWN_DAYS (lustro cw-api.js).
+      Świadome ponowienie z edytora omija tylko ten limit – dzienny i limit
+      równoległych zadań zostają – więc pytamy wprost o zgodę. */
+  const COOLDOWN_DAYS = 30;
+  function cooldownActive() {
+    if (!job || job.status !== 'done' || !job.created_at) return false;
+    return Date.now() - new Date(job.created_at).getTime() < COOLDOWN_DAYS * 86_400_000;
+  }
+
   async function runPipeline() {
     $('[data-ed-error]')!.hidden = true;
     const improvements = [...document.querySelectorAll<HTMLInputElement>('input[name="improvement"]:checked')]
@@ -1682,8 +1696,20 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     }
     localStorage.setItem('cw-models', JSON.stringify({ research, writer }));
 
+    let force = false;
+    if (cooldownActive()) {
+      const stamp = new Date(job!.created_at).toLocaleDateString('pl-PL');
+      const ok = window.confirm(
+        `Ten wpis przeszedł reoptymalizację ${stamp}, a limit to jeden przebieg na ${COOLDOWN_DAYS} dni.\n\n`
+        + 'Uruchomić mimo to? Nowy przebieg to kolejne zapytania SERP, frazy z Senuto '
+        + 'i kilkadziesiąt tysięcy tokenów. Poprzedni wynik zostanie zastąpiony w widoku.',
+      );
+      if (!ok) return;
+      force = true;
+    }
+
     try {
-      const data = await api('/api/cw/jobs', {
+      const data = await api(`/api/cw/jobs${force ? '?force=1' : ''}`, {
         method: 'POST',
         body: JSON.stringify({
           domain,
@@ -1707,9 +1733,13 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
 
   $('[data-ed-run]')?.addEventListener('click', runPipeline);
   const backToSetup = () => {
-    $('[data-ed-setup]')!.hidden = false;
+    const setup = $('[data-ed-setup]')!;
+    setup.hidden = false;
     $('[data-ed-summary]')!.hidden = true;
     $('[data-ed-fail]')!.hidden = true;
+    // Przy długim wpisie podsumowanie bywa daleko od konfiguracji – bez tego
+    // kliknięcie wygląda, jakby nic się nie stało.
+    setup.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
   $('[data-ed-rerun]')?.addEventListener('click', backToSetup);
   $('[data-ed-fail-rerun]')?.addEventListener('click', backToSetup);
@@ -2142,7 +2172,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   const rivalsBusy = (busy: boolean, label?: string) => {
     const button = $<HTMLButtonElement>('[data-ed-rivals-run]')!;
     button.disabled = busy || !rivalUrls().length;
-    button.textContent = busy ? (label ?? 'czytam strony…') : 'Przeczytaj konkurencję';
+    button.textContent = busy ? (label ?? 'pobieram treści…') : 'Pobierz treści konkurentów';
   };
 
   const rivalsError = (message: string | null) => {
@@ -2167,7 +2197,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   async function pollRivals(attempt = 0) {
     if (attempt > 40) {
       rivalsBusy(false);
-      rivalsError('Odczyt trwa dłużej niż zwykle. Kliknij „Przeczytaj konkurencję”, aby dokończyć.');
+      rivalsError('Pobieranie trwa dłużej niż zwykle. Kliknij „Pobierz treści konkurentów”, aby dokończyć.');
       return;
     }
     await new Promise((resolve) => setTimeout(resolve, 3000));

@@ -381,6 +381,44 @@ test('createJob: client_payload zawiera models, title i author', async (t) => {
   assert.deepEqual(payload.models, { research: 'perplexity/sonar-pro', writer: 'anthropic/claude-sonnet-5' });
 });
 
+test('createJob: force=1 omija cooldown, bez force wpis jest blokowany', async (t) => {
+  const jobBody = JSON.stringify({
+    domain: 'grupa-icea.pl', post_id: 5767, url: 'https://www.grupa-icea.pl/blog/a/', title: 'Tytuł',
+    improvements: ['gaps'], models: { research: 'perplexity/sonar-pro', writer: 'anthropic/claude-sonnet-5' },
+  });
+  // Stub udaje D1: INSERT przechodzi tylko wtedy, gdy okno cooldownu (12. bind)
+  // nie obejmuje wcześniejszego przebiegu – tu udajemy przebieg sprzed doby.
+  const previousRun = new Date(Date.now() - 86_400_000).toISOString();
+  const reactions = {
+    'INSERT INTO jobs': (args) => (args[11] <= previousRun ? 0 : 1),
+    'SELECT id, status, created_at FROM jobs': (args) =>
+      (args[2] <= previousRun ? { id: 'job-old', status: 'done', created_at: previousRun } : null),
+    'SELECT * FROM jobs WHERE id': { id: 'x', status: 'dispatching', improvements: '[]', cost: '{}' },
+    'FROM job_steps': [],
+    'FROM job_sections': [],
+    'SELECT COUNT(*) AS n': { n: 0 },
+  };
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(null, { status: 204 });
+  t.after(() => { globalThis.fetch = realFetch; });
+
+  const call = (url) => routeContentWatcher(
+    new Request(url, {
+      method: 'POST',
+      headers: { 'X-CW-Request': '1', 'Content-Type': 'application/json' },
+      body: jobBody,
+    }),
+    { CW_DB: fakeDb(reactions), GH_DISPATCH_TOKEN: 't', GH_REPO: 'a/b' },
+  );
+
+  const blocked = await call('https://dash.example/api/cw/jobs');
+  assert.equal(blocked.status, 409);
+  assert.equal((await blocked.json()).code, 'cooldown');
+
+  const forced = await call('https://dash.example/api/cw/jobs?force=1');
+  assert.equal(forced.status, 201);
+});
+
 /* ---------- edycja sekcji ---------- */
 
 test('sanitizeSectionHtml: zdejmuje skrypty, atrybuty i tagi spoza whitelisty', () => {

@@ -467,14 +467,22 @@ async function createJob(request, env) {
   if (!parsed.ok) return json({ error: 'Nieprawidłowe dane zadania.', fields: parsed.errors }, 400);
 
   const id = crypto.randomUUID();
-  const cooldownFrom = new Date(Date.now() - COOLDOWN_DAYS * 86_400_000).toISOString();
+  // `force=1` (świadome ponowienie z edytora) omija wyłącznie cooldown –
+  // limit dzienny i limit równoległych zadań zostają nietknięte, bo to one
+  // pilnują budżetu. Data w przyszłości = puste okno cooldownu.
+  const force = new URL(request.url).searchParams.get('force') === '1';
+  const cooldownFrom = force
+    ? new Date(Date.now() + 86_400_000).toISOString()
+    : new Date(Date.now() - COOLDOWN_DAYS * 86_400_000).toISOString();
   const dayFrom = new Date(Date.now() - 86_400_000).toISOString();
 
   if (!(await insertJob(env, parsed.job, id, cooldownFrom, dayFrom))) {
     const reason = await rejectionReason(env, parsed.job, cooldownFrom, dayFrom);
     return json({ error: reason.message, code: reason.code, job_id: reason.job_id ?? null }, 409);
   }
-  await audit(env, 'job.create', id, { post_id: parsed.job.post_id, improvements: parsed.job.improvements });
+  await audit(env, 'job.create', id, {
+    post_id: parsed.job.post_id, improvements: parsed.job.improvements, ...(force ? { force: true } : {}),
+  });
 
   const dispatch = await dispatchWorkflow(env, { id, ...parsed.job });
   if (!dispatch.ok) {

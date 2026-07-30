@@ -384,8 +384,8 @@ async function stepSafely(env, domain, postId, state, fetchImpl) {
 }
 
 const STAGE_LABEL = {
-  ours: 'czytam nasz wpis…',
-  rivals: 'czytam teksty konkurencji…',
+  ours: 'pobieram nasz wpis…',
+  rivals: 'pobieram teksty konkurentów…',
   facts: 'porównuję fakty…',
 };
 
