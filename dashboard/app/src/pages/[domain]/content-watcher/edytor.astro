@@ -649,16 +649,41 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     return intro;
   }
 
-  /** Statystyki dokumentu w pasku – liczone z wyrenderowanego DOM-u, więc
-      obejmują też propozycje pipeline'u pokazane w trybie „podgląd po". */
+  /** Docelowa treść całego wpisu, niezależna od tego, jak sekcje są akurat
+      pokazane. Sekcja w trybie „zmiany" ma w DOM-ie listę różnic, a nie tekst –
+      liczenie wprost z ekranu gubiło jej nagłówki, akapity i linki, a słowa
+      liczyło podwójnie (wersja przed i po naraz). Dlatego metryki idą z kopii:
+      tekst z podglądu, a przy widoku różnic – wersja, która wejdzie na stronę. */
+  function docSnapshot() {
+    const box = document.createElement('div');
+    for (const node of $('[data-ed-doc]')!.querySelectorAll<HTMLElement>('.ed-doc-section')) {
+      const title = node.querySelector('.ed-sec-head h1, .ed-sec-head h2')?.textContent ?? '';
+      if (title) {
+        const heading = document.createElement(node.classList.contains('ed-doc-intro') ? 'h1' : 'h2');
+        heading.textContent = title;
+        box.append(heading);
+      }
+      const body = node.querySelector('.ed-doc-body');
+      if (body) { box.append(body.cloneNode(true)); continue; }
+      const section = job?.sections?.find((row) => row.slot === Number(node.dataset.slot));
+      if (!section) continue;
+      // Odrzucona propozycja = na stronie zostaje dotychczasowy tekst.
+      const html = section.decision === 'rejected' ? section.text_before : section.text_after;
+      box.append(docProse(html ?? section.text_before ?? ''));
+    }
+    return box;
+  }
+
+  /** Statystyki dokumentu w pasku – z docelowej treści wpisu (patrz docSnapshot). */
   function renderDocStats() {
     const host = $('[data-ed-docstats]');
     if (!host) return;
     const doc = $('[data-ed-doc]')!;
-    const text = doc.textContent ?? '';
+    const snapshot = docSnapshot();
+    const text = snapshot.textContent ?? '';
     const words = (text.match(/[\p{L}\p{N}][\p{L}\p{N}'’-]*/gu) ?? []).length;
-    const headings = doc.querySelectorAll('.ed-doc-section > .ed-sec-head h2, .ed-doc-body h2, .ed-doc-body h3').length;
-    const paragraphs = doc.querySelectorAll('.ed-doc-body p').length;
+    const headings = snapshot.querySelectorAll('h2, h3, h4').length;
+    const paragraphs = snapshot.querySelectorAll('p').length;
     const sections = doc.querySelectorAll('.ed-doc-section:not(.ed-doc-intro)').length;
 
     const stat = (value: string, label: string) => {
@@ -693,11 +718,11 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   const WORDS_FALLBACK = 1200; // gdy nie znamy jeszcze długości tekstów konkurencji
 
   function docMetrics() {
-    const doc = $('[data-ed-doc]')!;
-    const text = docPlainText();
+    const snapshot = docSnapshot();
+    const text = snapshot.textContent ?? '';
     const words = (text.match(/[\p{L}\p{N}][\p{L}\p{N}'’-]*/gu) ?? []).length;
-    const headings = doc.querySelectorAll('.ed-sec-head h2, .ed-doc-body h2, .ed-doc-body h3').length;
-    const paragraphs = doc.querySelectorAll('.ed-doc-body p').length;
+    const headings = snapshot.querySelectorAll('h2, h3, h4').length;
+    const paragraphs = snapshot.querySelectorAll('p').length;
     const ownHost = (() => {
       try {
         return new URL(entry?.url ?? '').hostname.replace(/^www\./, '');
@@ -705,47 +730,56 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         return '';
       }
     })();
-    const links = [...doc.querySelectorAll<HTMLAnchorElement>('.ed-doc-body a[href]')];
+    const links = [...snapshot.querySelectorAll<HTMLAnchorElement>('a[href]')];
     const internal = links.filter((link) => link.hostname.replace(/^www\./, '') === ownHost).length;
     return { words, headings, paragraphs, internal, external: links.length - internal };
   }
 
   /** Tekst dokumentu bez interfejsu – same akapity i nagłówki treści. */
   function docPlainText() {
-    const doc = $('[data-ed-doc]')!;
-    return [...doc.querySelectorAll('.ed-sec-head h1, .ed-sec-head h2, .ed-doc-body, .ed-diff')]
-      .map((node) => node.textContent ?? '')
-      .join(' ');
+    return docSnapshot().textContent ?? '';
   }
 
   const normalize = (value: string) =>
     value.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ł/g, 'l')
       .replace(/[^a-z0-9\s]/g, ' ').replace(/\s+/g, ' ').trim();
 
+  /** Skąd wzięła się fraza na liście – dymek przy opisie po prawej. */
+  const KEYWORD_SOURCE_HINT: Record<string, string> = {
+    missing: 'Konkurent z czołówki jest na nią widoczny, nasz wpis wcale (dane Senuto).',
+    weak: 'Jesteśmy na nią widoczni, ale poza pierwszą dziesiątką (dane Senuto).',
+    brief: 'Fraza z wytycznych przygotowanych przez model na podstawie analizy.',
+    own: 'Nasza fraza z Senuto spoza podium – najtańszy zysk do wyciągnięcia.',
+  };
+
   /** Frazy, które wpis powinien pokryć: luki wobec konkurencji z rozpoznania
       SERP i lista z wytycznych. Bez nich panel pokazuje samą strukturę. */
   function keywordTargets() {
-    const out = new Map<string, { keyword: string; searches: number | null; note: string }>();
+    const out = new Map<string, { keyword: string; searches: number | null; note: string; source: string }>();
     for (const row of serpAnalysis?.gap ?? []) {
       if (row.status === 'covered') continue;
       out.set(normalize(row.keyword), {
         keyword: row.keyword,
         searches: row.searches,
         note: row.status === 'missing' ? 'nie mamy' : `poza TOP 10 (poz. ${row.our_position})`,
+        source: row.status,
       });
     }
     const brief = job?.steps?.find((step) => step.step === 'brief')?.payload;
     for (const row of brief?.keywords_to_cover ?? []) {
       const key = normalize(row.keyword ?? '');
       if (!key || out.has(key)) continue;
-      out.set(key, { keyword: row.keyword, searches: row.volume ?? null, note: 'z wytycznych' });
+      out.set(key, { keyword: row.keyword, searches: row.volume ?? null, note: 'z wytycznych', source: 'brief' });
     }
-    // Własne frazy spoza podium: wpis już na nie rankuje, więc dopracowanie
+    // Własne frazy spoza podium: wpis już jest na nie widoczny, więc dopracowanie
     // treści pod nie jest najtańszym zyskiem, jaki da się tu zobaczyć.
     for (const row of entry?.senuto_keywords ?? []) {
       const key = normalize(row.keyword ?? '');
       if (!key || out.has(key) || (row.position ?? 99) <= 3) continue;
-      out.set(key, { keyword: row.keyword, searches: row.searches ?? null, note: `nasza poz. ${row.position}` });
+      out.set(key, {
+        keyword: row.keyword, searches: row.searches ?? null,
+        note: `nasza poz. ${row.position}`, source: 'own',
+      });
     }
     return [...out.values()].slice(0, 24);
   }
@@ -848,12 +882,17 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       item.className = used ? 'used' : '';
       const mark = document.createElement('span');
       mark.className = 'ed-kw-mark';
+      // Znacznik mówi o TEKŚCIE (czy fraza w nim pada), opis po prawej –
+      // o WYNIKACH w Google. „✓ · nie mamy" nie jest sprzecznością: fraza
+      // jest w treści, ale wpis nie jest na nią widoczny.
       mark.textContent = used ? '✓' : '+';
+      mark.title = used ? 'fraza występuje w treści wpisu' : 'brakuje jej w treści wpisu';
       const name = document.createElement('span');
       name.className = 'ed-kw-name';
       name.textContent = row.keyword;
       const meta = document.createElement('span');
       meta.className = 'ed-kw-meta';
+      meta.title = KEYWORD_SOURCE_HINT[row.source] ?? '';
       meta.textContent = [row.searches ? `${pl.format(row.searches)}/mies.` : null, row.note]
         .filter(Boolean).join(' · ');
       item.append(mark, name, meta);

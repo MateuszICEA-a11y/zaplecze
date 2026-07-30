@@ -2,10 +2,13 @@
 
 Uruchomienie: python -m unittest discover -s pipeline/content-refresher/tests
 """
+import http.client
+import io
 import json
 import os
 import sys
 import unittest
+import urllib.error
 from pathlib import Path
 from unittest import mock
 
@@ -645,6 +648,58 @@ class TestPrompts(unittest.TestCase):
         self.assertEqual(llm._extract_json('Oto wynik:\n```json\n{"ok": true}\n```'), {"ok": True})
         self.assertEqual(llm._extract_json('{"a": 1} i komentarz na końcu'), {"a": 1})
         self.assertIsNone(llm._extract_json("bez JSON-a"))
+
+
+class TestOpenRouterPonowienia(unittest.TestCase):
+    """Zerwane połączenie to nie odmowa modelu – krok nie może przez nie paść."""
+
+    class _Response:
+        def __init__(self, payload):
+            self.payload = payload
+
+        def read(self):
+            return json.dumps(self.payload).encode()
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            return False
+
+    def test_incomplete_read_ponawiany_az_do_skutku(self):
+        attempts = []
+
+        def fake_urlopen(request, timeout=None):
+            attempts.append(1)
+            if len(attempts) < 3:
+                raise http.client.IncompleteRead(b"1903 bytes")
+            return self._Response({"choices": [{"message": {"content": "ok"}}]})
+
+        with mock.patch.object(llm.urllib.request, "urlopen", fake_urlopen):
+            data = llm._post_with_retries(object(), sleep=lambda _: None)
+        self.assertEqual(len(attempts), 3)
+        self.assertEqual(data["choices"][0]["message"]["content"], "ok")
+
+    def test_blad_zadania_nie_jest_ponawiany(self):
+        attempts = []
+
+        def fake_urlopen(request, timeout=None):
+            attempts.append(1)
+            raise urllib.error.HTTPError("url", 400, "Bad Request", {}, io.BytesIO(b"zle dane"))
+
+        with mock.patch.object(llm.urllib.request, "urlopen", fake_urlopen), \
+             self.assertRaises(llm.LlmError):
+            llm._post_with_retries(object(), sleep=lambda _: None)
+        self.assertEqual(len(attempts), 1)
+
+    def test_po_wyczerpaniu_prob_leci_ostatni_blad(self):
+        def fake_urlopen(request, timeout=None):
+            raise http.client.IncompleteRead(b"x")
+
+        with mock.patch.object(llm.urllib.request, "urlopen", fake_urlopen), \
+             self.assertRaises(llm.LlmError) as caught:
+            llm._post_with_retries(object(), retries=2, sleep=lambda _: None)
+        self.assertIn("openrouter:", str(caught.exception))
 
 
 if __name__ == "__main__":

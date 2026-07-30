@@ -8,9 +8,12 @@ nie dostają tego narzędzia (i nie obsługują `response_format`).
 Prompty leżą w `prompts/` i są wersjonowane – numer wersji trafia do kroku
 zadania razem z nazwą modelu.
 """
+import http.client
 import json
 import os
 import re
+import socket
+import time
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -20,6 +23,14 @@ from config import MODEL_FALLBACK
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 PROMPTS_DIR = Path(__file__).resolve().parent / "prompts"
 TIMEOUT_S = 240
+# Długie odpowiedzi bywają ucinane w połowie strumienia (IncompleteRead) albo
+# gubione na zerwanym połączeniu – to sieć, nie odmowa modelu, więc ponawiamy.
+# HTTP 429/5xx dokładamy z tego samego powodu; 4xx z winy żądania nie wracają.
+RETRIES = 3
+RETRY_BACKOFF_S = 5
+RETRY_STATUSES = {408, 409, 429, 500, 502, 503, 504, 520, 522, 524}
+RETRY_ERRORS = (http.client.IncompleteRead, http.client.RemoteDisconnected,
+                urllib.error.URLError, socket.timeout, ConnectionError, TimeoutError)
 
 
 class LlmError(RuntimeError):
@@ -41,6 +52,32 @@ def render(template: str, **values) -> str:
         rendered = value if isinstance(value, str) else json.dumps(value, ensure_ascii=False, indent=1)
         out = out.replace(f"{{{{ {key} }}}}", rendered)
     return re.sub(r"<!--.*?-->", "", out, flags=re.S).strip()
+
+
+def _post_with_retries(request, retries: int = RETRIES, sleep=time.sleep) -> dict:
+    """Wysłanie żądania z ponowieniem błędów sieciowych i przeciążeń.
+
+    Zerwane połączenie w połowie odpowiedzi (IncompleteRead) wywracało cały krok
+    zadania – a to jedno wywołanie modelu, po którym przejazd i tak trwa dalej.
+    Odstęp rośnie liniowo, bo 429 z OpenRoutera mija w kilka sekund.
+    """
+    last = None
+    for attempt in range(1, retries + 1):
+        try:
+            with urllib.request.urlopen(request, timeout=TIMEOUT_S) as response:
+                return json.loads(response.read().decode("utf-8"))
+        except urllib.error.HTTPError as err:
+            detail = err.read().decode("utf-8", "replace")[:300]
+            last = LlmError(f"openrouter HTTP {err.code}: {detail}")
+            if err.code not in RETRY_STATUSES:
+                raise last from err
+        except RETRY_ERRORS as err:
+            last = LlmError(f"openrouter: {err}")
+        except Exception as err:  # noqa: BLE001
+            raise LlmError(f"openrouter: {err}") from err
+        if attempt < retries:
+            sleep(RETRY_BACKOFF_S * attempt)
+    raise last
 
 
 def call(model: str, prompt: str, *, system: str = "", web_search: bool = False,
@@ -78,13 +115,7 @@ def call(model: str, prompt: str, *, system: str = "", web_search: bool = False,
             "X-Title": "Content Watcher - reoptymalizacja",
         },
     )
-    try:
-        with urllib.request.urlopen(request, timeout=TIMEOUT_S) as response:
-            data = json.loads(response.read().decode("utf-8"))
-    except urllib.error.HTTPError as err:
-        raise LlmError(f"openrouter HTTP {err.code}: {err.read().decode('utf-8', 'replace')[:300]}") from err
-    except Exception as err:  # noqa: BLE001
-        raise LlmError(f"openrouter: {err}") from err
+    data = _post_with_retries(request)
 
     choices = data.get("choices") or []
     if not choices:
