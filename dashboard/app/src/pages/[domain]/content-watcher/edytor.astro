@@ -1278,13 +1278,18 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   }
 
   /** Koszt kroku w jednej frazie – to, za co realnie zapłaciliśmy. */
+  // Krok potrafi zjeść wielokrotność normy, gdy model z wyszukiwaniem w sieci
+  // wciąga do kontekstu całe strony (grok-4.5 na „Źródłach": 537 tys. tokenów
+  // przy 4 tys. na gemini-3-flash). Taki krok ma się rzucać w oczy na osi.
+  const STEP_TOKENS_WARN = 150_000;
+
   function stepCost(step: Step | undefined) {
     const cost = step?.cost ?? {};
     const tokens = (cost.tokens_in ?? 0) + (cost.tokens_out ?? 0);
     return [
       cost.serp_requests ? `${cost.serp_requests} zapytań do wyszukiwarki` : null,
       cost.senuto_requests ? `${cost.senuto_requests} zap. Senuto` : null,
-      tokens ? `${pl.format(tokens)} tokenów` : null,
+      tokens ? `${pl.format(tokens)} tokenów${tokens > STEP_TOKENS_WARN ? ' ⚠' : ''}` : null,
     ].filter(Boolean).join(' · ');
   }
 
@@ -1318,6 +1323,12 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       meta.textContent = status === 'skipped'
         ? 'pominięty'
         : [duration, cost, step?.model].filter(Boolean).join(' · ');
+      const spent = (step?.cost?.tokens_in ?? 0) + (step?.cost?.tokens_out ?? 0);
+      if (spent > STEP_TOKENS_WARN) {
+        meta.classList.add('is-costly');
+        meta.title = 'Nietypowo drogi krok – zwykle to model, który przy wyszukiwaniu '
+          + 'w sieci wciąga do kontekstu całe strony. Warto zmienić model analizy.';
+      }
       body.append(meta);
 
       if (step?.error) {
@@ -2662,6 +2673,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-step-body { display: grid; gap: 1px; min-width: 0; }
   .ed-step-name { font-size: .82rem; color: var(--ink-muted); }
   .ed-step-info { font-size: .7rem; color: var(--ink-faint); font-variant-numeric: tabular-nums; }
+  .ed-step-info.is-costly { color: var(--status-warn-fg); }
   .ed-step-error { font-size: .72rem; color: var(--status-err-fg); }
 
   .ed-step.done .ed-step-mark { border-color: var(--status-ok); color: var(--status-ok); }

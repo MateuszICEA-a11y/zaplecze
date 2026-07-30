@@ -28,6 +28,7 @@ TIMEOUT_S = 240
 # HTTP 429/5xx dokładamy z tego samego powodu; 4xx z winy żądania nie wracają.
 RETRIES = 3
 RETRY_BACKOFF_S = 5
+WEB_SEARCH_RESULTS = 4
 RETRY_STATUSES = {408, 409, 429, 500, 502, 503, 504, 520, 522, 524}
 RETRY_ERRORS = (http.client.IncompleteRead, http.client.RemoteDisconnected,
                 urllib.error.URLError, socket.timeout, ConnectionError, TimeoutError)
@@ -96,9 +97,13 @@ def call(model: str, prompt: str, *, system: str = "", web_search: bool = False,
         "max_tokens": max_tokens,
     }
     if web_search and not is_perplexity:
+        # Wyniki wyszukiwania wracają do modelu jako kontekst w każdej turze, więc
+        # przy modelu, który szuka kilka razy, rachunek rośnie lawinowo: krok
+        # „Źródła i przypisy" na grok-4.5 zjadł 532 810 tokenów wejścia, ten sam
+        # krok na gemini-3-flash – 3 824 (sonda 2026-07-30). Stąd wąskie okno.
         payload["tools"] = [{
             "type": "openrouter:web_search",
-            "parameters": {"max_results": 6, "search_context_size": "medium"},
+            "parameters": {"max_results": WEB_SEARCH_RESULTS, "search_context_size": "low"},
         }]
     if json_mode and not is_perplexity:
         payload["response_format"] = {"type": "json_object"}

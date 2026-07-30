@@ -613,6 +613,72 @@ class TestBudget(unittest.TestCase):
             budget.check("tokens", estimate=20)
 
 
+class TestBudzetNieKasujeRoboty(unittest.TestCase):
+    """Wyczerpany budżet w dokładce nie może przekreślać przepisanych sekcji."""
+
+    class _Client:
+        def __init__(self):
+            self.events = []
+
+        def step_start(self, name):
+            self.events.append(("start", name, None))
+
+        def step_done(self, name, **kwargs):
+            self.events.append(("done", name, None))
+
+        def step_failed(self, name, error):
+            self.events.append(("failed", name, error))
+
+        def step_skipped(self, name, reason):
+            self.events.append(("skipped", name, reason))
+
+        def finish(self, status, **kwargs):
+            self.events.append(("finish", status, kwargs.get("error")))
+
+    def _pipeline(self, failing_step):
+        import run as run_module
+
+        args = type("Args", (), {
+            "job": "t", "dry_run": True, "improvements": ["gaps", "sources", "internal_links"],
+            "research_file": "", "model_research": "", "model_writer": "",
+            "domain": "www.grupa-icea.pl", "published_at": "", "changed_at": "", "out": "",
+        })()
+        pipeline = run_module.Pipeline(args)
+        pipeline.client = self._Client()
+        pipeline.context = {"sections": [{"slot": 1}], "content": {"hash": "abc"}}
+        pipeline.state = {"steps": {}}
+
+        def step(name):
+            if name == failing_step:
+                raise BudgetExceeded("tokens", 669288, 400000)
+            return {"payload": {"step": name}}
+
+        for name in ("fetch", "keywords_own", "serp", "competitors", "keywords_competitors",
+                     "brief", "rewrite", "expert", "sources", "internal_links", "diff"):
+            setattr(pipeline, f"step_{name}", (lambda captured: lambda: step(captured))(name))
+        return pipeline
+
+    def test_dokladka_ponad_budzet_konczy_przejazd_normalnie(self):
+        pipeline = self._pipeline("sources")
+        self.assertEqual(pipeline.run(), 0)
+        events = pipeline.client.events
+        skipped = {name: reason for kind, name, reason in events if kind == "skipped"}
+        # „Źródła" i wszystko po nich odpada z podanym powodem…
+        self.assertIn("Budżet wyczerpany", skipped["sources"])
+        self.assertIn("Budżet wyczerpany", skipped["internal_links"])
+        # …ale diff się wykonuje, więc sekcje trafiają do edytora.
+        self.assertIn(("done", "diff", None), events)
+        self.assertEqual([status for kind, status, _ in events if kind == "finish"], ["done"])
+
+    def test_krok_obowiazkowy_ponad_budzet_nadal_przerywa(self):
+        pipeline = self._pipeline("brief")
+        self.assertEqual(pipeline.run(), 2)
+        self.assertEqual(
+            [status for kind, status, _ in pipeline.client.events if kind == "finish"],
+            ["budget_exceeded"],
+        )
+
+
 class TestClient(unittest.TestCase):
     def test_podpis_zgodny_z_implementacja_workera(self):
         client = DashboardClient("https://dash", "sekret", "job-1", "555", 1)

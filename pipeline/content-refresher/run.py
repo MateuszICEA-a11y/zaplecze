@@ -94,8 +94,9 @@ class Pipeline:
         self.client.step_start(name)
         try:
             result = fn()
-        except BudgetExceeded as err:
-            self.client.step_failed(name, str(err))
+        except BudgetExceeded:
+            # Stan kroku raportuje `run()`: dla obowiązkowego to porażka, dla
+            # dokładki – pominięcie, więc tutaj nie przesądzamy.
             raise
         except Exception as err:  # noqa: BLE001
             print(f"  [{name}] błąd: {err}", file=sys.stderr)
@@ -583,14 +584,29 @@ class Pipeline:
             ("internal_links", self.step_internal_links, "internal_links"),
             ("diff", self.step_diff, None),
         ]
-        required = {"fetch", "serp", "brief"}
+        required = {"fetch", "serp", "brief", "diff"}
+        # Wyczerpany budżet w kroku opcjonalnym nie może kasować całej roboty:
+        # przepisane sekcje są już gotowe, więc pomijamy resztę dokładek
+        # i kończymy przejazd normalnie, z powodem widocznym przy krokach.
+        budget_stop = None
         try:
             for name, fn, improvement in order:
                 if improvement and improvement not in self.improvements:
                     self.client.step_skipped(name, "poza wybranym pakietem ulepszeń")
                     continue
+                if budget_stop and name not in required:
+                    self.client.step_skipped(name, budget_stop)
+                    continue
                 print(f"[{name}]")
-                _, ok = self._run_step(name, fn)
+                try:
+                    _, ok = self._run_step(name, fn)
+                except BudgetExceeded as err:
+                    if name in required:
+                        raise
+                    print(f"  [{name}] {err}", file=sys.stderr)
+                    self.client.step_skipped(name, str(err))
+                    budget_stop = str(err)
+                    continue
                 if not ok and name in required:
                     self.client.finish("failed", cost=self.budget.snapshot(),
                                        error=f"Krok „{name}” nie powiódł się – zadanie przerwane.")
