@@ -1,13 +1,5 @@
 [
   {
-    "title": "Ceny paliw 25 kwietnia – tyle kosztują dziś benzyna i diesel",
-    "date": "2026-04-26",
-    "slug": "ceny-paliw-25-kwietnia-tyle-kosztuja-dzis-benzyna-i-diesel",
-    "section": "news",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Maksymalne ceny detaliczne paliw na 25-27 kwietnia 2026 r. ogłoszone",
     "date": "2026-04-27",
     "slug": "maksymalne-ceny-detaliczne-paliw-na-25-27-kwietnia-2026-r-ogloszone",
@@ -716,6 +708,14 @@
     "date": "2026-07-30",
     "slug": "drozeje-paliwo-rosna-koszty-kto-naprawde-traci-najwiecej",
     "section": "news",
+    "format": "analysis",
+    "source": "rss"
+  },
+  {
+    "title": "Ford Transit Custom Van odpowiada na nowe przepisy. Co naprawdę zmienia taki wariant?",
+    "date": "2026-07-31",
+    "slug": "ford-transit-custom-van-odpowiada-na-nowe-przepisy-co-naprawde-zmienia-taki",
+    "section": "modele",
     "format": "analysis",
     "source": "rss"
   }
