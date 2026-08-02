@@ -1,13 +1,5 @@
 [
   {
-    "title": "Niższy VAT i akcyza na paliwa zostają. Rząd przedłużył tarczę dla kierowców i firm",
-    "date": "2026-04-28",
-    "slug": "nizszy-vat-i-akcyza-na-paliwa-zostaja-rzad-przedluzyl-tarcze-dla-kierowcow-i",
-    "section": "news",
-    "format": "analysis",
-    "source": "rss"
-  },
-  {
     "title": "Mercedes VLE wjeżdża do Polski. Ceny od 398 200 zł",
     "date": "2026-04-29",
     "slug": "mercedes-vle-wjezdza-do-polski-ceny-od-398-200-zl",
@@ -715,6 +707,14 @@
     "title": "Utrudnienia w Dębicy. Zapalił się kamper, wprowadzono ruch wahadłowy",
     "date": "2026-08-01",
     "slug": "utrudnienia-w-debicy-zapalil-sie-kamper-wprowadzono-ruch-wahadlowy",
+    "section": "kampery",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Pożar kampera w Dębicy. Na trasie wprowadzono ruch wahadłowy",
+    "date": "2026-08-02",
+    "slug": "pozar-kampera-w-debicy-na-trasie-wprowadzono-ruch-wahadlowy",
     "section": "kampery",
     "format": "short",
     "source": "rss"
