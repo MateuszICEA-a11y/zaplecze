@@ -13,7 +13,7 @@ image: "/images/opel-combo-hero.webp"
 image_alt: "Opel Combo furgon"
 youtube: "bKDW0v_tOng"
 youtube_title: "Opel Combo 1.5 Diesel Test - Kombivan dla rodziny"
-lead: "Silniki CDTi napędzały Opla Combo głównie w generacjach C i D – od popularnego 1.3 CDTi z rodziny Fiat/GM MultiJet po 1.6 CDTi w Combo D. Każdy wariant ma inną charakterystykę, typowe usterki i inne koszty serwisu. W Combo E (od 2018) oznaczenie CDTi zastąpiono przez nowsze diesle 1.5."
+lead: "Silniki CDTi napędzały Opla Combo głównie w generacjach C i D – od popularnego 1.3 CDTi z rodziny Fiat/GM MultiJet po 1.6 CDTi w Combo D. Każdy wariant ma inną charakterystykę, typowe usterki i inne koszty serwisu. W Combo E (od 2018) oznaczenie CDTi zastąpiono nowszymi dieslami 1.5."
 faq:
   - question: "Który CDTi w Combo jest najlepszy?"
     answer: "Do lżejszej eksploatacji rozsądnym wyborem jest 1.3 CDTi, a do pracy pod obciążeniem lepiej wypada 1.7 CDTi w Combo C lub 1.6 CDTi w Combo D."
@@ -25,7 +25,7 @@ faq:
 
 ## Silniki CDTi w Oplu Combo – przegląd generacji
 
-Oznaczenie CDTi to handlowa nazwa Opla dla turbodiesli z wtryskiem common rail. W praktyce w przypadku Opel Combo CDTi trzeba rozdzielić przede wszystkim generacje C i D, bo stosowano w nich zupełnie inne rodziny jednostek oraz różne poziomy osprzętu i norm emisji.
+Oznaczenie CDTi to handlowa nazwa Opla dla turbodiesli z wtryskiem common rail. W praktyce w przypadku Opla Combo CDTi trzeba rozdzielić przede wszystkim generacje C i D, bo stosowano w nich zupełnie inne rodziny jednostek oraz różne poziomy osprzętu i norm emisji.
 
 Dla porządku warto też zaznaczyć ramy czasowe: Combo C produkowano w latach 2001–2011, Combo D w latach 2011–2018, a Combo E jest oferowane od 2018 roku. W dieslach spotykamy normy emisji zależne od rocznika – od Euro 4 i Euro 5 w starszych odmianach po Euro 6, 6d-TEMP i 6d w nowszych wersjach.
 
@@ -42,7 +42,7 @@ Dla porządku warto też zaznaczyć ramy czasowe: Combo C produkowano w latach 2
 
 W praktyce diesle CDTi kojarzone z Combo dotyczą przede wszystkim generacji C. Jednostka 1.3 CDTi o pojemności 1248 cm³ pochodzi z rodziny Fiat/GM MultiJet, a nie z Isuzu, i występowała tu w wariancie 75 KM oraz 170 Nm.
 
-To silnik nastawiony bardziej na ekonomikę niż osiągi. W lżejszym aucie sprawdza się przy spokojnej eksploatacji, ale przy pełnym obciążeniu wyraźnie czuć ograniczony zapas momentu.
+To silnik nastawiony bardziej na ekonomię niż na osiągi. W lżejszym aucie sprawdza się przy spokojnej eksploatacji, ale przy pełnym obciążeniu wyraźnie czuć ograniczony zapas momentu.
 
 Alternatywą był 1.7 CDTi o pojemności 1686 cm³ i mocy 100 KM. Ta jednostka rozwija 240 Nm, dlatego lepiej znosi jazdę z ładunkiem i częściej jest wybierana do typowo użytkowej pracy.
 
@@ -52,17 +52,17 @@ W prostym zestawieniu różnice są czytelne: 1.3 CDTi jest słabszy i zwykle ta
 
 Combo D, produkowane od 2011 do 2018 roku jako bliźniak Fiata Doblò, korzystało z innego zestawu diesli niż Combo C. W ofercie były 1.3 CDTI 90 KM, 1.6 CDTI 90 KM, 1.6 CDTI 105 KM oraz na części rynków także 2.0 CDTI 135 KM.
 
-Kluczowa korekta jest prosta: 1.6 CDTi w Combo D nie było silnikiem Renault R9M. To jednostki z rodziny Fiat/GM MultiJet/CDTI stosowane w tej konstrukcji, a norma emisji zależała od rocznika i wersji, więc nie można wrzucać całej gamy do jednego worka z etykietą Euro 6.
+Kluczowa uwaga jest prosta: 1.6 CDTi w Combo D nie było silnikiem Renault R9M. To jednostki z rodziny Fiat/GM MultiJet/CDTI stosowane w tej konstrukcji, a norma emisji zależała od rocznika i wersji, więc nie można wrzucać całej gamy do jednego worka z etykietą Euro 6.
 
-W praktyce 1.6 CDTi w Combo D jest nowsze i osprzętowo bardziej złożone niż starsze 1.3 i 1.7 z Combo C. Zyskujemy nowocześniejszą charakterystykę pracy, ale zwykle kosztem większej liczby elementów, które trzeba brać pod uwagę przy zakupie i serwisie.
+W praktyce 1.6 CDTi w Combo D jest nowszy i osprzętowo bardziej złożony niż starsze 1.3 i 1.7 z Combo C. Zyskujemy nowocześniejszą charakterystykę pracy, ale zwykle kosztem większej liczby elementów, które trzeba brać pod uwagę przy zakupie i serwisie.
 
 {{% info title="CDTi a nowe Combo E" icon="engineering" %}}
-W Combo E, oferowanym od 2018 roku, diesle należy już rozpatrywać osobno od starszych jednostek CDTi. W nowszych wersjach występują normy Euro 6, 6d-TEMP i 6d zależnie od etapu homologacji i rocznika.
+W Combo E, oferowanym od 2018 roku, diesle należy już rozpatrywać oddzielnie od starszych jednostek CDTi. W nowszych wersjach występują normy Euro 6, 6d-TEMP i 6d zależnie od etapu homologacji i rocznika.
 {{% /info %}}
 
 ## Spalanie CDTi – realne wartości
 
-Zużycie paliwa w Opel Combo CDTi zależy nie tylko od samego silnika, ale też od wersji nadwoziowej i sposobu pracy auta. Furgon, odmiana osobowa, krótki i długi rozstaw osi oraz jazda z ładunkiem potrafią zmienić wynik o 0,5–1,5 l/100 km.
+Zużycie paliwa w Oplu Combo CDTi zależy nie tylko od samego silnika, lecz także od wersji nadwoziowej i sposobu pracy auta. Furgon, odmiana osobowa, krótki i długi rozstaw osi oraz jazda z ładunkiem potrafią zmienić wynik o 0,5–1,5 l/100 km.
 
 Poniższe wartości należy więc traktować jako praktyczne widełki orientacyjne, a nie sztywne dane katalogowe. Przy aucie pustym i w trasie wynik będzie wyraźnie lepszy niż przy jeździe autostradowej albo regularnym wożeniu towaru.
 
@@ -92,7 +92,7 @@ Do typowych problemów tej jednostki zalicza się też:
 - **Wtryskiwacze** – problemy pojawiające się w autach mocno eksploatowanych
 - **Świece żarowe** – wymiana według zużycia lub usterki, nie według sztywnego interwału
 
-W zależności od rocznika i wersji trzeba też sprawdzić, czy dany egzemplarz ma fabrycznie DPF oraz czy zastosowano koło dwumasowe. Przy dieslach użytkowych to kluczowe, bo koszty robią różnicę: koło dwumasowe ze sprzęgłem zwykle kosztuje około 1500–3000 zł, czyszczenie EGR kilkaset złotych, a nowy lub zamienny DPF zwykle od około 1000 zł wzwyż.
+W zależności od rocznika i wersji trzeba też sprawdzić, czy dany egzemplarz ma fabrycznie DPF oraz czy zastosowano koło dwumasowe. Przy dieslach użytkowych to kluczowe, bo różnice w kosztach są istotne: koło dwumasowe ze sprzęgłem zwykle kosztuje około 1500–3000 zł, czyszczenie EGR kilkaset złotych, a nowy lub zamienny DPF zwykle od około 1000 zł wzwyż.
 
 ### 1.7 CDTi – pasek rozrządu
 
@@ -103,7 +103,7 @@ Poza tym warto kontrolować:
 - **Turbosprężarkę** – szczególnie w autach pracujących pod obciążeniem
 - **Przepływomierz** – objawy to spadek mocy, nierówna praca, tryb awaryjny albo dymienie
 
-Również tutaj występowanie DPF i dwumasy zależy od wersji i rocznika, więc przed zakupem trzeba sprawdzić konkretną specyfikację auta. Pod kątem praktycznym 1.7 CDTi jest zwykle lepszym wyborem do cięższej pracy niż 1.3, ale niekoniecznie będzie tańsze w utrzymaniu.
+Również tutaj występowanie DPF i dwumasy zależy od wersji i rocznika, więc przed zakupem trzeba sprawdzić konkretną specyfikację auta. Pod kątem praktycznym 1.7 CDTi jest zwykle lepszym wyborem do cięższej pracy niż 1.3, ale niekoniecznie będzie tańszy w utrzymaniu.
 
 ### 1.6 CDTi – osprzęt silnika
 
@@ -114,7 +114,7 @@ Najczęściej omawiane punkty kontrolne to:
 - **DPF** – szczególnie w autach jeżdżących głównie po mieście
 - **EGR** – jak w innych nowocześniejszych dieslach użytkowych
 
-Także w tej generacji obecność DPF i koła dwumasowego należy potwierdzić dla konkretnego silnika i rocznika. W praktyce 1.6 CDTi daje lepszy kompromis między osiągami a spalaniem niż starsze jednostki, ale zwykle jest bardziej wymagające pod względem osprzętu.
+Także w tej generacji obecność DPF i koła dwumasowego należy potwierdzić dla konkretnego silnika i rocznika. W praktyce 1.6 CDTi daje lepszy kompromis między osiągami a spalaniem niż starsze jednostki, ale zwykle jest bardziej wymagający pod względem osprzętu.
 
 {{% expert name="Marek Kowalczyk" %}}
 Przy oględzinach używanego Combo warto zacząć od zimnego rozruchu, pracy silnika na biegu jałowym i kontroli osprzętu, a potem przejść pod auto. W dostawczaku stan podwozia, zawieszenia i zamków drzwi bywa równie ważny jak sama jednostka napędowa.
@@ -125,7 +125,7 @@ Przy oględzinach używanego Combo warto zacząć od zimnego rozruchu, pracy sil
 
 ## Koszty serwisu CDTi
 
-Koszty obsługi Opel Combo CDTi zależą od generacji, silnika i stopnia zużycia auta. Poniższe widełki warto traktować orientacyjnie jako poziom typowy dla niezależnych warsztatów w Polsce, bo ostateczna kwota zależy od wersji, jakości części i zakresu prac.
+Koszty obsługi Opla Combo CDTi zależą od generacji, silnika i stopnia zużycia auta. Poniższe widełki warto traktować orientacyjnie jako poziom typowy dla niezależnych warsztatów w Polsce, bo ostateczna kwota zależy od wersji, jakości części i zakresu prac.
 
 | Czynność | 1.3 CDTi | 1.7 CDTi | 1.6 CDTi |
 |----------|---------|---------|---------|
@@ -135,10 +135,10 @@ Koszty obsługi Opel Combo CDTi zależą od generacji, silnika i stopnia zużyci
 | Sprzęgło / dwumasa ze sprzęgłem | zależnie od wersji | zwykle ok. 1500–3000 zł | zwykle ok. 1500–3000 zł |
 | Klocki hamulcowe (oś) | 150–300 zł | 200–350 zł | 250–400 zł |
 
-Nie warto powtarzać tezy, że 1.3 CDTi jest bezdyskusyjnie najtańsze w całym segmencie – to zbyt szerokie uproszczenie. Można jednak uczciwie powiedzieć, że ta jednostka bywa relatywnie tania w obsłudze, a część elementów silnikowych rodziny 1.3 MultiJet jest współdzielona z niektórymi modelami Fiata, choć zakres zgodności zależy od konkretnej wersji.
+Nie warto powtarzać tezy, że 1.3 CDTi jest bezdyskusyjnie najtańszy w całym segmencie – to zbyt szerokie uproszczenie. Można jednak uczciwie powiedzieć, że ta jednostka bywa stosunkowo tania w obsłudze, a część elementów silnikowych rodziny 1.3 MultiJet jest współdzielona z niektórymi modelami Fiata, choć zakres zgodności zależy od konkretnej wersji.
 
 Przy codziennej eksploatacji warto też pamiętać o podstawach serwisu. Dla diesli tej epoki typowe są oleje 5W-30 lub 5W-40 zależnie od normy producenta, a praktyczny interwał wymiany zwykle zamyka się w 10–15 tys. km zamiast maksymalnych przebiegów serwisowych.
 
 Pod kątem użytkowym ważniejsze od samego cennika części są także parametry pracy auta. W Combo C i D ładowność, DMC oraz objętość przestrzeni ładunkowej istotnie różnią się między wersjami krótką i długą oraz między odmianami osobowymi i dostawczymi, dlatego przed zakupem trzeba zawsze sprawdzić dane konkretnej konfiguracji.
 
-*Źródła kosztów i spalania należy traktować orientacyjnie – to widełki praktyczne, a nie jednolite dane katalogowe. Dane techniczne i podział silników opracowano na podstawie zakresu wersji wskazanych dla generacji Combo C, D i E oraz rodzin jednostek stosowanych w tych modelach. Więcej o układzie [common rail](https://pl.wikipedia.org/wiki/Common_rail).*
+*Podane koszty i wartości spalania należy traktować orientacyjnie – to widełki praktyczne, a nie jednolite dane katalogowe. Dane techniczne i podział silników opracowano na podstawie zakresu wersji wskazanych dla generacji Combo C, D i E oraz rodzin jednostek stosowanych w tych modelach. Więcej o układzie [common rail](https://pl.wikipedia.org/wiki/Common_rail).*

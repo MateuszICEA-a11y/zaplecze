@@ -14,13 +14,13 @@ youtube_title: "Hyundai Staria, czyli spieszmy się kochać minivany! (TEST PL/E
 lead: "Hyundai Staria to koreański van, który wygląda jak statek kosmiczny, a jedzie jak duży SUV. Produkowany od 2021 roku, łączy futurystyczny design z praktyczną przestrzenią na 9 lub 11 pasażerów. Diesel 2.2 CRDi o mocy 177 KM, napęd tylny lub AWD i 8-biegowy automat – to propozycja dla tych, którym klasyczne busy europejskie wydają się zbyt konserwatywne."
 faq:
   - question: "Ile miejsc ma Hyundai Staria?"
-    answer: "Hyundai Staria dostępna jest w wersjach 7-, 9- i 11-osobowej (zależnie od rynku). W Polsce najczęściej spotykana jest wersja 9-osobowa. Wersja cargo (Staria Load) ma 3 miejsca."
+    answer: "Hyundai Staria dostępna jest w wersjach 7-, 9- i 11-osobowej (w zależności od rynku). W Polsce najczęściej spotykana jest wersja 9-osobowa. Wersja cargo (Staria Load) ma 3 miejsca."
   - question: "Jaki silnik ma Hyundai Staria?"
     answer: "W Europie Staria oferowana jest z silnikiem 2.2 CRDi diesel o mocy 177 KM i momencie obrotowym 430 Nm, w połączeniu z 8-biegową skrzynią automatyczną."
   - question: "Czy Hyundai Staria jest dostępna z napędem 4x4?"
     answer: "Tak, Staria oferuje opcjonalny napęd AWD na wybranych rynkach. W standardzie dostępny jest napęd na tylną oś (RWD)."
   - question: "Ile kosztuje Hyundai Staria w Polsce?"
-    answer: "Ceny Hyundai Staria w Polsce zaczynają się od ok. 220 000 zł brutto za wersję 9-osobową. Bogato wyposażone wersje Executive przekraczają 280 000 zł."
+    answer: "Ceny Hyundaia Staria w Polsce zaczynają się od ok. 220 000 zł brutto za wersję 9-osobową. Bogato wyposażone wersje Executive przekraczają 280 000 zł."
   - question: "Czy Hyundai Staria nadaje się na kampera?"
     answer: "Staria ma mniejszą przestrzeń ładunkową niż klasyczne busy dostawcze (np. Ducato), ale jej płaska podłoga i duża szerokość (1 995 mm) sprawiają, że powstają kompaktowe zabudowy kamperowe, szczególnie popularne w Korei i Australii."
 sources:
@@ -30,13 +30,13 @@ sources:
 
 ## Hyundai Staria – co to za samochód
 
-[Hyundai Staria](https://pl.wikipedia.org/wiki/Hyundai_Staria) to van, który od początku miał odciąć się od zachowawczego stylu segmentu. Zaprezentowana w 2021 roku, zastąpiła model H-1 / Grand Starex i od razu pokazała, że Hyundai celuje nie tylko w przewóz osób, ale też w bardziej premium odmiany shuttle i VIP.
+[Hyundai Staria](https://pl.wikipedia.org/wiki/Hyundai_Staria) to van, który od początku miał odciąć się od zachowawczego stylu segmentu. Zaprezentowana w 2021 roku, zastąpiła model H-1 / Grand Starex i od razu pokazała, że Hyundai celuje nie tylko w przewóz osób, lecz także w bardziej luksusowe odmiany shuttle i VIP.
 
 Charakterystyczne nadwozie z nisko poprowadzonym pasem świetlnym, dużą powierzchnią szyb i gładkim przodem sprawia, że Staria wygląda bardziej jak koncept niż klasyczny bus. Pod tą formą kryje się jednak dość tradycyjna mechanika – w Europie przede wszystkim diesel 2.2 CRDi, 8-biegowy automat oraz napęd na tył, a na wybranych rynkach także AWD.
 
-Staria powstaje w fabrykach Hyundaia w Ulsan i Jeonju w Korei Południowej oraz w Ałmatach w Kazachstanie w montażu SKD. Poza Europą występowała również z benzynowym silnikiem V6 3.5, ale europejska gama opiera się głównie na dieslu 2.2 CRDi.
+Staria powstaje w fabrykach Hyundaia w Ulsan i Jeonju w Korei Południowej, a także w zakładzie montażu SKD w Ałmaty w Kazachstanie. Poza Europą występowała również z benzynowym silnikiem V6 3.5, ale europejska gama opiera się głównie na dieslu 2.2 CRDi.
 
-Model pozycjonowany jest między klasycznymi vanami dostawczymi a luksusowymi MPV. Najczęściej porównuje się go z [Volkswagenem Multivan](/modele/volkswagen-multivan/) i [Toyota ProAce Verso](/modele/toyota-proace-verso/), choć stylistycznie Hyundai idzie własną drogą.
+Model plasuje się między klasycznymi vanami dostawczymi a luksusowymi MPV. Najczęściej porównuje się go z [Volkswagenem Multivan](/modele/volkswagen-multivan/) i [Toyotą ProAce Verso](/modele/toyota-proace-verso/), choć stylistycznie Hyundai idzie własną drogą.
 
 ## Historia i generacje
 
@@ -48,11 +48,11 @@ Premiera globalna odbyła się w 2021 roku, a sam model został następcą Hyund
 
 W latach 2022–2025 gama europejska opierała się głównie na dieslu 2.2 CRDi o mocy 177 KM z 8-biegowym automatem. To właśnie ta konfiguracja jest dziś najczęściej spotykana na rynku polskim i w imporcie.
 
-Staria nie ma jeszcze pełnoprawnych generacji – to nadal pierwsza generacja modelu. Mówimy raczej o drobnych zmianach wyposażenia, specyfikacji i homologacji zależnie od rynku niż o dużych liftingach czy nowej odsłonie.
+Staria nie ma jeszcze pełnoprawnych generacji – to nadal pierwsza generacja modelu. Mówimy raczej o drobnych zmianach wyposażenia, specyfikacji i homologacji w zależności od rynku niż o dużych liftingach czy nowej odsłonie.
 
 ## Dane techniczne Hyundaia Staria
 
-W przypadku Starii najważniejsze jest rozróżnienie między wersją osobową a użytkową. Z zewnątrz auta są do siebie podobne, ale pod kątem liczby miejsc, mas i przestrzeni bagażowej różnice są już wyraźne.
+W przypadku Starii najważniejsze jest rozróżnienie między wersją osobową a użytkową. Z zewnątrz auta są do siebie podobne, ale pod względem liczby miejsc, mas i przestrzeni bagażowej różnice są już wyraźne.
 
 | Parametr | Wartość |
 |----------|---------|
@@ -60,29 +60,29 @@ W przypadku Starii najważniejsze jest rozróżnienie między wersją osobową a
 | Szerokość | 1 995 mm |
 | Wysokość | 1 990–2 030 mm |
 | Rozstaw osi | 3 275 mm |
-| Masa własna | ok. 2 190–2 360 kg zależnie od wersji |
+| Masa własna | ok. 2 190–2 360 kg w zależności od wersji |
 | DMC | ok. 3 030–3 060 kg |
 | Średnica zawracania | ok. 11,9 m |
 | Zbiornik paliwa | 75 l |
 
-Rozstaw osi 3 275 mm stawia Starię w gronie pełnowymiarowych vanów rodzinno-shuttle. Duża szerokość i pionowe ściany boczne pomagają wygospodarować sensowną przestrzeń zarówno dla pasażerów, jak i dla bagażu.
+Rozstaw osi 3 275 mm stawia Starię w gronie pełnowymiarowych vanów rodzinnych i shuttle. Duża szerokość i pionowe ściany boczne pomagają wygospodarować sensowną przestrzeń zarówno dla pasażerów, jak i dla bagażu.
 
 ### Wymiary i parametry użytkowe wersji
 
-Poniższe wartości trzeba traktować jako orientacyjne dla różnych rynków i specyfikacji. W zależności od homologacji mogą się one lekko różnić.
+Poniższe wartości trzeba traktować jako orientacyjne dla różnych rynków i specyfikacji. W zależności od homologacji mogą się one nieznacznie różnić.
 
 | Wersja | Długość | Szerokość | Wysokość | Rozstaw osi | Liczba miejsc | DMC | Masa własna | Ładowność | Pojemność bagażnika/ładunkowa |
 |--------|---------|-----------|----------|-------------|---------------|-----|-------------|-----------|-------------------------------|
-| Staria Passenger 9-os. | 5255 mm | 1995 mm | 1990–2000 mm | 3275 mm | 9 | ok. 3030–3060 kg | ok. 2190–2360 kg | zależnie od rynku/specyfikacji | ok. 831 l / do ok. 1303 l zależnie od metody pomiaru i ustawienia siedzeń |
-| Staria Passenger 11-os. | 5255 mm | 1995 mm | ok. 1990 mm | 3275 mm | 11 | zależnie od rynku/specyfikacji | zależnie od rynku/specyfikacji | zależnie od rynku/specyfikacji | zależnie od konfiguracji siedzeń |
-| Staria Load 2-seat cargo | 5255 mm | 1995 mm | ok. 2000 mm | 3275 mm | 2 | zależnie od rynku/specyfikacji | zależnie od rynku/specyfikacji | ok. 1000–1090 kg | 4935 l |
-| Staria Load 3-seat cargo | 5255 mm | 1995 mm | ok. 2000 mm | 3275 mm | 3 | zależnie od rynku/specyfikacji | zależnie od rynku/specyfikacji | ok. 1000–1090 kg | 2890 l |
+| Staria Passenger 9-os. | 5255 mm | 1995 mm | 1990–2000 mm | 3275 mm | 9 | ok. 3030–3060 kg | ok. 2190–2360 kg | w zależności od rynku/specyfikacji | ok. 831 l / do ok. 1303 l w zależności od metody pomiaru i ustawienia siedzeń |
+| Staria Passenger 11-os. | 5255 mm | 1995 mm | ok. 1990 mm | 3275 mm | 11 | w zależności od rynku/specyfikacji | w zależności od rynku/specyfikacji | w zależności od rynku/specyfikacji | w zależności od konfiguracji siedzeń |
+| Staria Load 2-seat cargo | 5255 mm | 1995 mm | ok. 2000 mm | 3275 mm | 2 | w zależności od rynku/specyfikacji | w zależności od rynku/specyfikacji | ok. 1000–1090 kg | 4935 l |
+| Staria Load 3-seat cargo | 5255 mm | 1995 mm | ok. 2000 mm | 3275 mm | 3 | w zależności od rynku/specyfikacji | w zależności od rynku/specyfikacji | ok. 1000–1090 kg | 2890 l |
 
-W wersji Load 2-seat cargo przestrzeń ładunkowa ma około 2607 mm długości, około 1640 mm szerokości i około 1436 mm wysokości. To ważne, jeśli myślisz o zabudowie warsztatowej, kurierskiej albo lekkim day-vanie.
+W wersji Load 2-seat cargo przestrzeń ładunkowa ma około 2607 mm długości, około 1640 mm szerokości i około 1436 mm wysokości. To ważne, jeśli myślisz o zabudowie warsztatowej, kurierskiej albo lekkim day vanie.
 
 ## Silniki i napędy Starii
 
-Europejska Staria ma prostą ofertę napędową. To nie jest model z szeroką paletą diesli i benzyn jak klasyczne busy flotowe – tutaj producent postawił na jedną, główną konfigurację.
+Europejska Staria ma prostą ofertę napędową. To nie jest model z szeroką paletą silników diesla i benzynowych jak klasyczne busy flotowe – tutaj producent postawił na jedną, główną konfigurację.
 
 - **2.2 CRDi (D4HB)** – czterocylindrowy turbodiesel o pojemności 2199 cm3, mocy 177 KM i momencie obrotowym 430 Nm. Silnik współpracuje wyłącznie z 8-biegowym automatem i w zależności od rynku występuje z napędem RWD lub AWD.
 
@@ -94,9 +94,9 @@ W jednym miejscu warto zebrać parametry, które zwykle są rozrzucone po katalo
 
 | Silnik | Pojemność | Moc | Moment | Skrzynia | Napęd | 0–100 km/h | Vmax | WLTP | Norma Euro |
 |--------|-----------|-----|--------|----------|-------|------------|------|------|------------|
-| 2.2 CRDi (D4HB) | 2199 cm3 | 177 KM (130 kW) przy 3800 obr./min | 430 Nm przy 1500–2500 obr./min | 8AT | RWD / AWD zależnie od rynku | ok. 12,4–13,5 s | ok. 185 km/h | 8,2–9,1 l/100 km | Euro 6d |
+| 2.2 CRDi (D4HB) | 2199 cm3 | 177 KM (130 kW) przy 3800 obr./min | 430 Nm przy 1500–2500 obr./min | 8AT | RWD / AWD w zależności od rynku | ok. 12,4–13,5 s | ok. 185 km/h | 8,2–9,1 l/100 km | Euro 6d |
 
-Przy spokojnej jeździe podmiejskiej realne zużycie paliwa zwykle mieści się w okolicach 9,5–11,0 l/100 km. W trasie Staria potrafi być oszczędniejsza niż sugeruje sylwetka, ale w mieście i przy pełnym obciążeniu spalanie szybko rośnie.
+Przy spokojnej jeździe podmiejskiej realne zużycie paliwa zwykle mieści się w okolicach 9,5–11,0 l/100 km. W trasie Staria potrafi być oszczędniejsza, niż sugeruje sylwetka, ale w mieście i przy pełnym obciążeniu spalanie szybko rośnie.
 
 {{% info title="Napęd na tył" icon="info" %}}
 Staria należy do nielicznych współczesnych vanów, które wciąż stawiają na napęd na tylną oś. Przy pełnym obciążeniu to ma sens – auto lepiej przenosi moment na asfalt i nie męczy przedniej osi tak jak ciężkie vany z FWD.
@@ -106,7 +106,7 @@ Staria należy do nielicznych współczesnych vanów, które wciąż stawiają n
 
 Poza Europą gama była szersza niż u nas.
 
-- **3.5 V6 MPI** – 3470 cm3, 272 KM, 331 Nm, 8AT, zależnie od rynku
+- **3.5 V6 MPI** – 3470 cm3, 272 KM, 331 Nm, 8AT, w zależności od rynku
 - **3.5 V6 LPG** – wersja oferowana na wybranych rynkach
 
 {{% expert name="Marek Kowalczyk" %}}
@@ -117,25 +117,25 @@ Na papierze 177 KM nie wygląda imponująco przy aucie tej wielkości, ale w cod
 
 ## Wersje osobowe i dostawcze Starii
 
-To właśnie odmiany nadwoziowe najlepiej pokazują, czym Staria różni się od klasycznego vana użytkowego. Jedna bryła obsługuje tu przewóz rodzinny, shuttle VIP i wersje cargo.
+To właśnie odmiany nadwoziowe najlepiej pokazują, czym Staria różni się od klasycznego vana użytkowego. Jedna bryła służy tu do przewozu rodzinnego, shuttle VIP i wersji cargo.
 
 ### Wersje osobowe
 
 - **Staria 9-os.** – najczęściej spotykana konfiguracja w Europie, zwykle w układzie **3+3+3**. To wersja nastawiona na przewóz rodzinny albo shuttle.
-- **Staria 11-os.** – wariant częściej spotykany w Azji i na Bliskim Wschodzie, zwykle w układzie **3+3+2+3** albo innym zależnym od rynku i homologacji.
-- **Staria Lounge 7-os.** – odmiana bardziej VIP niż rodzinna. Ma fotele kapitańskie w drugim rzędzie, funkcje relaksu, podnóżki i wyraźnie wyższy poziom komfortu.
+- **Staria 11-os.** – wariant częściej spotykany w Azji i na Bliskim Wschodzie, zwykle w układzie **3+3+2+3** albo innym, zależnym od rynku i homologacji.
+- **Staria Lounge 7-os.** – odmiana bardziej VIP niż rodzinna. Ma fotele kapitańskie w drugim rzędzie, funkcje relaksacyjne, podnóżki i wyraźnie wyższy poziom komfortu.
 
-W praktyce właśnie 9-osobowa odmiana jest najbardziej uniwersalna. Nadaje się zarówno dla dużej rodziny, jak i dla hotelu, firmy przewozowej czy shuttle’a lotniskowego.
+W praktyce właśnie 9-osobowa odmiana jest najbardziej uniwersalna. Nadaje się zarówno dla dużej rodziny, jak i dla hotelu, firmy przewozowej czy transferu lotniskowego.
 
 ### Wersje dostawcze
 
 - **Staria Load 2-seat** – około **4935 l** przestrzeni ładunkowej. To główna odmiana cargo dla kuriera, serwisu albo lekkiej zabudowy specjalnej.
-- **Staria Load 3-seat** – około **2890 l** przestrzeni ładunkowej. Drugi rząd z przodu ogranicza kubaturę, ale poprawia funkcjonalność w pracy zespołowej.
-- Ładowność, zależnie od wersji i rynku, wynosi około **1000–1090 kg**.
+- **Staria Load 3-seat** – około **2890 l** przestrzeni ładunkowej. Dodatkowy rząd siedzeń ogranicza kubaturę, ale poprawia funkcjonalność w pracy zespołowej.
+- Ładowność, w zależności od wersji i rynku, wynosi około **1000–1090 kg**.
 
-Na niektórych rynkach spotyka się też zabudowy specjalne – hotelowy shuttle, taxi, vana VIP czy campera typu day-van przygotowanego przez firmy zewnętrzne. To nie jest jednak osobna fabryczna generacja modelu, tylko odmiany tworzone na bazie seryjnej Starii.
+Na niektórych rynkach spotyka się też zabudowy specjalne – shuttle hotelowy, taxi, van VIP czy kampera typu day van przygotowanego przez firmy zewnętrzne. To nie jest jednak osobna fabryczna generacja modelu, tylko odmiany tworzone na bazie seryjnej Starii.
 
-## Typowe usterki Hyundai Staria
+## Typowe usterki Hyundaia Staria
 
 Staria jest modelem stosunkowo młodym, więc baza usterek nie opiera się jeszcze na wieloletnich statystykach awarii. Najwięcej informacji pochodzi z flot, serwisów i pierwszych kilku lat eksploatacji, głównie dla diesla 2.2 CRDi i wersji z automatem.
 
@@ -167,7 +167,7 @@ Orientacyjne koszty:
 
 ### Zawieszenie i hamulce
 
-Przy intensywnej eksploatacji shuttle’owej czy flotowej zużywają się elementy typowe dla ciężkiego vana. Najczęściej mówimy o częściach eksploatacyjnych, nie o wadach konstrukcyjnych.
+Przy intensywnej eksploatacji wahadłowej lub flotowej zużywają się elementy typowe dla ciężkiego vana. Najczęściej mówimy o częściach eksploatacyjnych, nie o wadach konstrukcyjnych.
 
 Przykładowe wydatki:
 - łączniki stabilizatora: **150–350 zł/szt. z robocizną**
@@ -183,7 +183,7 @@ Koszty napraw:
 
 ## Porównanie Starii z konkurencją
 
-Staria gra w tej samej lidze co rodzinne i shuttle’owe vany z Europy i Japonii, ale robi to po swojemu. Nie wygrywa samą marką czy historią modelu – nadrabia stylem, wyposażeniem i nietypową konfiguracją napędu.
+Staria gra w tej samej lidze co rodzinne i wahadłowe vany z Europy i Japonii, ale robi to po swojemu. Nie wygrywa samą marką czy historią modelu – nadrabia stylem, wyposażeniem i nietypową konfiguracją napędu.
 
 | Parametr | Hyundai Staria 9-os. | VW Multivan L1 | Toyota ProAce Verso L2 | Mercedes Vito Tourer L |
 |----------|----------------------|----------------|------------------------|------------------------|
@@ -226,7 +226,7 @@ Poniższe widełki dotyczą rynku PL i importu, orientacyjnie na 2026 rok.
 | 2021 | 9-os. import | 80–140 tys. km | 145–185 tys. zł |
 | 2022 | 9-os. / Lounge import | 50–110 tys. km | 165–210 tys. zł |
 | 2023 | 9-os. kraj/import | 20–80 tys. km | 190–240 tys. zł |
-| 2024 | demo / młode używane | do 30 tys. km | 220–270 tys. zł |
-| 2021–2023 | Staria Load cargo | 40–120 tys. km | 120–175 tys. zł netto/brutto zależnie od ogłoszenia i homologacji |
+| 2024 | demonstracyjne / młode używane | do 30 tys. km | 220–270 tys. zł |
+| 2021–2023 | Staria Load cargo | 40–120 tys. km | 120–175 tys. zł netto/brutto w zależności od ogłoszenia i homologacji |
 
 Przy zakupie z importu trzeba zwrócić uwagę na homologację, liczbę miejsc i specyfikację rynku pochodzenia. W Starii to ważne, bo ten sam model może wyglądać podobnie, ale różnić się układem siedzeń, wyposażeniem i statusem podatkowym.

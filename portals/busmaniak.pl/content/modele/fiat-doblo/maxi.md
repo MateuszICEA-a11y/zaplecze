@@ -25,7 +25,7 @@ sources:
 ---
 ## Co dokładnie różni Maxi od standardowego Doblò
 
-Najważniejsze jest rozróżnienie dwóch rzeczy: rozstawu osi i długości całkowitej. W Fiat Doblò Maxi oba wymiary rosną, ale nie o tę samą wartość.
+Najważniejsze jest rozróżnienie dwóch rzeczy: rozstawu osi i długości całkowitej. W Fiacie Doblò Maxi oba wymiary rosną, ale nie o tę samą wartość.
 
 W generacji III różnica długości całkowitej między L1 i L2 wynosi 350 mm, natomiast różnica rozstawu osi to 190 mm. W generacji II standardowa wersja miała ok. 4390 mm długości i rozstaw osi ok. 2755 mm, a Maxi odpowiednio ok. 4740 mm i 3105 mm.
 
@@ -40,7 +40,7 @@ W praktyce trzeba też odróżniać wersje Cargo/N1 od osobowych M1. Różnią s
 
 ## Wymiary Fiata Doblò Maxi
 
-Żeby poprawnie porównać Fiat Doblò Maxi, trzeba patrzeć osobno na generację II i III. W najnowszym modelu producent wyraźnie rozdziela wersje L1 i L2, natomiast w starszym Doblò II dane zależą bardziej od odmiany nadwozia i rocznika.
+Żeby poprawnie porównać Fiata Doblò Maxi, trzeba patrzeć osobno na generację II i III. W najnowszym modelu producent wyraźnie rozdziela wersje L1 i L2, natomiast w starszym Doblò II dane zależą bardziej od odmiany nadwozia i rocznika.
 
 | Wersja | Długość całkowita | Rozstaw osi | Szerokość bez lusterek | Wysokość | Pojemność ładunkowa Cargo |
 |---|---:|---:|---:|---:|---:|
@@ -51,7 +51,7 @@ W praktyce trzeba też odróżniać wersje Cargo/N1 od osobowych M1. Różnią s
 
 W generacji III szerokość 1848 mm dotyczy nadwozia bez lusterek. Dla codziennego użytkowania ważna jest też wysokość – zwykle ok. 1,80–1,85 m – bo to ona decyduje o wjeździe do części parkingów podziemnych.
 
-W manewrowaniu znaczenie ma również promień zawracania, który zależnie od generacji i rozstawu osi wynosi orientacyjnie ok. 11,3–12,4 m. Dłuższa wersja jest więc praktyczniejsza pod ładunek, ale zwykle mniej poręczna w ciasnym mieście.
+W manewrowaniu znaczenie ma również promień zawracania, który zależnie od generacji i rozstawu osi wynosi orientacyjnie ok. 11,3–12,4 m. Dłuższa wersja jest więc praktyczniejsza pod względem ładunku, ale zwykle mniej poręczna w ciasnym mieście.
 
 ### Generacja III (od 2022)
 
@@ -93,7 +93,7 @@ W generacji III dostępna jest też wersja elektryczna e-Doblò / e-Doblò Cargo
 - zasięg WLTP do ok. 280 km
 - ładowanie AC 7,4/11 kW
 - ładowanie DC do 100 kW
-- 0–100 km/h ok. 11,2 s w wersji osobowej zależnie od odmiany
+- 0–100 km/h ok. 11,2 s w wersji osobowej, zależnie od odmiany
 
 W spalinowym Doblò III dostępne są manualne skrzynie 6-biegowe, a w wybranych wersjach 1.5 BlueHDi 130 KM także automat EAT8. Napęd trafia na przednią oś.
 
@@ -106,13 +106,13 @@ W spalinowym Doblò III dostępne są manualne skrzynie 6-biegowe, a w wybranych
 - 1.6 MultiJet 90/105/120 KM
 - 2.0 MultiJet 135 KM
 
-W Doblò II dominowały skrzynie manualne 5- i 6-biegowe, a automaty występowały ograniczenie i zależnie od rynku. Przy wyborze używanego egzemplarza warto więc patrzeć nie tylko na moc, ale też na konkretną konfigurację skrzyni i homologacji.
+W Doblò II dominowały skrzynie manualne 5- i 6-biegowe, a automaty występowały w ograniczonym zakresie i zależnie od rynku. Przy wyborze używanego egzemplarza warto więc patrzeć nie tylko na moc, ale też na konkretną konfigurację skrzyni i homologacji.
 
 ![Fiat Doblò Maxi – przestrzeń ładunkowa](/images/fiat-doblo-maxi-hero.webp)
 
 ## Doblò Maxi Cargo – przestrzeń i ładowność
 
-W wersji Cargo to właśnie tutaj Fiat Doblò Maxi pokazuje przewagę nad krótszą odmianą. W generacji III L2 oferuje 4,4 m³ przestrzeni ładunkowej, podczas gdy L1 ma 3,9 m³.
+Właśnie w wersji Cargo Fiat Doblò Maxi pokazuje przewagę nad krótszą odmianą. W generacji III L2 oferuje 4,4 m³ przestrzeni ładunkowej, podczas gdy L1 ma 3,9 m³.
 
 Najważniejsze parametry Doblò III L2 Cargo:
 
@@ -127,7 +127,7 @@ Warto zaznaczyć, że długość ok. 2167 mm jest wartością orientacyjną dla 
 
 Dla użytkownika praktyczne znaczenie ma też konfiguracja drzwi. W Doblò III Cargo występują asymetryczne drzwi tylne lub klapa, a także jedne albo dwoje drzwi przesuwnych – zależnie od wersji.
 
-Przy przewozie palet trzeba patrzeć na wymiary dokładnie. Europaleta ma 1200 × 800 mm, więc przy szerokości między nadkolami ok. 1230 mm można ją ustawić poprzecznie między nadkolami, bo 1200 mm mieści się w poprzek auta.
+Przy przewozie palet trzeba dokładnie patrzeć na wymiary. Europaleta ma 1200 × 800 mm, więc przy szerokości między nadkolami ok. 1230 mm można ją ustawić poprzecznie między nadkolami, bo 1200 mm mieści się w poprzek auta.
 
 Ustawienie wzdłużne wymaga tylko 800 mm szerokości, ale zużywa 1200 mm długości podłogi. To ważna różnica, bo w praktyce o sposobie załadunku decyduje nie tylko sama długość przestrzeni, ale też szerokość między nadkolami i typ przewożonego towaru.
 
@@ -137,7 +137,7 @@ Dłuższa wersja ma sens wtedy, gdy regularnie wykorzystujesz dodatkowe 0,5 m³ 
 
 ## Maxi Panorama – 7 miejsc
 
-W osobowych odmianach Fiat Doblò Maxi liczba miejsc może wynosić do 7 zależnie od generacji, rozstawu osi i wyposażenia. To jednak nie jest cecha każdej wersji automatycznie, dlatego przed zakupem trzeba sprawdzić konkretną konfigurację auta.
+W osobowych odmianach Fiata Doblò Maxi liczba miejsc może wynosić do 7 zależnie od generacji, rozstawu osi i wyposażenia. To jednak nie jest automatycznie cechą każdej wersji, dlatego przed zakupem trzeba sprawdzić konkretną konfigurację auta.
 
 W gamie występowały wersje Cargo/N1 oraz osobowe M1. W Cargo liczba miejsc to zwykle 2 albo 3, natomiast w osobowych Doblò można spotkać konfiguracje 5- i 7-miejscowe.
 

@@ -11,10 +11,10 @@ image: "/images/volkswagen-multivan-hero.webp"
 image_alt: "Volkswagen Multivan T7 – widok z boku z otwartymi drzwiami przesuwnymi"
 youtube: "qptXMa9fY24"
 youtube_title: "Volkswagen Multivan, czyli Golf za 400.000 zł (TEST PL 4K)"
-lead: "Volkswagen Multivan T7 to luksusowy minibus na platformie MQB – zupełnie nowa konstrukcja od 2021 roku z silnikami 2.0 TSI, 2.0 TDI i hybrydą plug-in 218 KM (1.4 eHybrid). Na rynku wtórnym dostępne też kultowe generacje T4–T6.1 w cenach od 30 000 zł."
+lead: "Volkswagen Multivan T7 to luksusowy minibus na platformie MQB – zupełnie nowa konstrukcja od 2021 roku z silnikami 2.0 TSI, 2.0 TDI i hybrydą plug-in 218 KM (1.4 eHybrid). Na rynku wtórnym dostępne są też kultowe generacje T4–T6.1 w cenach od 30 000 zł."
 faq:
   - question: "Ile kosztuje Volkswagen Multivan?"
-    answer: "Nowy T7 od ok. 250 000 zł brutto. Używane: T5 35–120 tys. zł, T6 120–250 tys. zł, T6.1 200–350 tys. zł, T7 180–300 tys. zł. T6.1 trzyma wysoką wartość residualną – często powyżej 200 000 zł. T5 w dobrym stanie można kupić za 60 000–120 000 zł."
+    answer: "Nowy T7 od ok. 250 000 zł brutto. Używane: T5 35–120 tys. zł, T6 120–250 tys. zł, T6.1 200–350 tys. zł, T7 180–300 tys. zł. T6.1 utrzymuje wysoką wartość rezydualną – często powyżej 200 000 zł. T5 w dobrym stanie można kupić za 60 000–120 000 zł."
   - question: "Czy Multivan T7 jest lepszy od T6.1?"
     answer: "T7 oferuje wyższy komfort resorowania i nowocześniejsze multimedia dzięki platformie MQB. T6.1 wygrywa większą ładownością i bardziej roboczym charakterem. T7 to w praktyce samochód osobowy dużej klasy, T6.1 – luksusowa wersja dostawczaka."
   - question: "Ile miejsc ma Volkswagen Multivan?"
@@ -27,15 +27,15 @@ sources:
   - "auto-data.net."
 ---
 
-## Historia i generacje Volkswagena Multivan
+## Historia i generacje Volkswagena Multivana
 
-Volkswagen Multivan przeszedł długą drogę – od bardziej użytkowego vana do rodzinno-biznesowego modelu o wyraźnie osobowym charakterze. Najłatwiej zobaczyć to po kolejnych generacjach i zmianach technicznych.
+Volkswagen Multivan przeszedł długą drogę – od bardziej użytkowego vana do rodzinno-biznesowego modelu o wyraźnie osobowym charakterze. Najłatwiej dostrzec to po kolejnych generacjach i zmianach technicznych.
 
 ### Multivan T4 (1990–2003)
 
 **Volkswagen T4 Multivan** był pierwszą generacją z silnikiem z przodu i napędem na przednią oś. To był duży przełom konstrukcyjny względem wcześniejszych rozwiązań.
 
-Lifting z 1996 roku przyniósł dłuższy przód dla 5-cylindrowych silników i zmiany we wnętrzu. Typowe jednostki Multivana to 2.5 TDI 88/102/151 KM, benzynowe 2.5 110 KM oraz VR6 140 KM.
+Lifting z 1996 roku przyniósł dłuższy przód pod silniki pięciocylindrowe i zmiany we wnętrzu. Typowe jednostki Multivana to 2.5 TDI 88/102/151 KM, benzynowe 2.5 110 KM oraz VR6 140 KM.
 
 ### Multivan T5 (2003–2015)
 
@@ -45,13 +45,13 @@ Lifting GP z lat 2009/2010 przyniósł nowy pas przedni, nowe wnętrze, silniki 
 
 ### Multivan T6 (2015–2019)
 
-**Volkswagen T6 Multivan** dostał odświeżony front, lepsze materiały wykończeniowe i nowe systemy wsparcia kierowcy. Nadal był blisko spokrewniony z Transporterem, ale w środku robił już bardziej osobowe wrażenie.
+**Volkswagen T6 Multivan** otrzymał odświeżony pas przedni, lepsze materiały wykończeniowe i nowe systemy wspomagania kierowcy. Nadal był blisko spokrewniony z Transporterem, ale w środku sprawiał już bardziej osobowe wrażenie.
 
 ### Multivan T6.1 (2019–2024)
 
 **T6.1** to rozwinięcie poprzednika z wyraźnym naciskiem na cyfryzację. Pojawiło się elektromechaniczne wspomaganie kierownicy, Travel Assist, Digital Cockpit i nowa deska rozdzielcza.
 
-[Volkswagen Transporter](/modele/volkswagen-transporter/) w wersji dostawczej kontynuował tę samą bazę techniczną. W praktyce Multivan T6.1 był najbardziej dopracowaną odmianą „starej szkoły” przed nadejściem T7.
+[Volkswagen Transporter](/modele/volkswagen-transporter/) w wersji dostawczej korzystał z tej samej bazy technicznej. W praktyce Multivan T6.1 był najbardziej dopracowaną odmianą „starej szkoły” przed nadejściem T7.
 
 ### Multivan T7 (od 2021)
 
@@ -61,13 +61,13 @@ W kabinie pojawiły się lekkie, przesuwane fotele zamiast cięższych rozwiąza
 
 ## Volkswagen Multivan T7 – dane techniczne
 
-T7 to generacja, która najmocniej odcina się od poprzedników. Nadal ma vanową funkcjonalność, ale pod względem prowadzenia i ergonomii jest bliżej dużego auta osobowego niż klasycznego dostawczaka z szybami.
+T7 to generacja, która najmocniej odcina się od poprzedników. Nadal ma vanową funkcjonalność, ale pod względem prowadzenia i ergonomii jest bliższa dużemu autu osobowemu niż klasycznemu dostawczakowi z szybami.
 
 {{% info title="Przełom" icon="engineering" %}}
 Platforma MQB oznacza rezygnację z konstrukcji ramowej na rzecz samonośnej. Sztywność nadwozia wzrosła, prowadzenie zbliżyło się do SUV-ów, a masa spadła o ok. 200 kg względem T6.1.
 {{% /info %}}
 
-Produkcja odbywa się w Hanowerze. T7 występuje w dwóch długościach nadwozia, z tym samym rozstawem osi, ale z wyraźnie różną praktycznością bagażnika.
+Produkcja odbywa się w Hanowerze. T7 występuje w dwóch długościach nadwozia, z tym samym rozstawem osi, lecz z wyraźnie różną pojemnością i praktycznością bagażnika.
 
 | Wersja | Długość | Rozstaw osi | Szerokość bez lusterek | Wysokość | Miejsca | Pojemność bagażnika | DMC |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -80,7 +80,7 @@ Kto potrzebuje czegoś mniejszego, znajdzie [VW Caddy](/modele/volkswagen-caddy/
 
 ## Silniki Multivana
 
-W przypadku Multivana warto rozdzielić starsze generacje od T7, bo zmieniła się nie tylko gama jednostek, ale też sama filozofia auta. T4–T6.1 były bliżej dostawczego rodowodu, a T7 przeszedł na bardziej osobową architekturę.
+W przypadku Multivana warto rozdzielić starsze generacje od T7, bo zmieniła się nie tylko gama jednostek, ale też sama filozofia auta. T4–T6.1 były bliższe dostawczemu rodowodowi, a T7 przeszedł na bardziej osobową architekturę.
 
 ### Silniki w starszych generacjach T4–T6.1
 
@@ -92,7 +92,7 @@ Skrótowo wygląda to tak:
 
 ### Silniki Multivana T7
 
-W T7 oferta jest prostsza, ale dobrze pokrywa trzy różne scenariusze użytkowania: trasa, benzyna dla spokojniejszej eksploatacji i hybryda plug-in do miasta.
+W T7 oferta jest prostsza, ale dobrze pokrywa trzy różne scenariusze użytkowania: jazdę trasową, spokojniejszą eksploatację na benzynie oraz jazdę po mieście z hybrydą plug-in.
 
 | Silnik | Pojemność | Moc | Moment | Napęd | Skrzynia | Norma | 0–100 km/h | Vmax | Śr. spalanie WLTP |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -100,9 +100,9 @@ W T7 oferta jest prostsza, ale dobrze pokrywa trzy różne scenariusze użytkowa
 | 2.0 TSI | 1984 cm3 | 204 KM | 320 Nm | FWD | DSG-7 | Euro 6d | ok. 9,0 s | 200 km/h | ok. 8,1–8,8 l/100 km |
 | 1.4 eHybrid | 1395 cm3 + e-motor | 218 KM systemowo | 350 Nm systemowo | FWD | DSG-6 | Euro 6d | ok. 9,0–9,5 s | 190 km/h | 1,5–2,0 l/100 km WLTP + energia 18–20 kWh/100 km |
 
-**2.0 TDI 150 KM** to najbardziej logiczny wybór na długie trasy. Ma sensowne zużycie paliwa i dobrze pasuje do cięższego, rodzinnego auta.
+**2.0 TDI 150 KM** to najbardziej logiczny wybór na długie trasy. Ma rozsądne zużycie paliwa i dobrze pasuje do cięższego, rodzinnego auta.
 
-**2.0 TSI 204 KM** będzie lepszy dla kierowców, którzy jeżdżą mniej i chcą lepszej reakcji na gaz. To też najprostsza droga do benzynowego Multivana bez zabawy w ładowanie.
+**2.0 TSI 204 KM** będzie lepszy dla kierowców, którzy jeżdżą mniej i chcą żywszej reakcji na pedał przyspieszenia. To też najprostsza droga do benzynowego Multivana bez zabawy w ładowanie.
 
 **1.4 eHybrid 218 KM** to propozycja do miasta i pod strefy czystego transportu. Żeby ten napęd miał sens kosztowo, trzeba go regularnie ładować.
 
@@ -110,21 +110,21 @@ W T7 oferta jest prostsza, ale dobrze pokrywa trzy różne scenariusze użytkowa
 eHybrid w Multivanie T7 ma 218 KM systemowo, a nie 245 KM. Jeśli jeździsz głównie po mieście i masz gdzie ładować auto, PHEV ma sens. Jeśli robisz długie trasy – diesel nadal wygrywa prostotą użytkowania.
 {{% /expert %}}
 
-## Wersje nadwoziowe Volkswagena Multivan
+## Wersje nadwoziowe Volkswagena Multivana
 
 W Multivanie nie chodzi tylko o długość nadwozia. Równie ważny jest układ siedzeń, wersja wyposażenia i to, czy auto ma być bardziej rodzinne, biznesowe czy miejskie.
 
-- **Multivan krótki (L1)** – **4973 mm**, **5–7 miejsc**, łatwiejszy do miasta.
-- **Multivan długi (L2)** – **5173 mm**, większy bagażnik **763 l** za 3. rzędem.
+- **Multivan krótki (L1)** – **4973 mm**, **5–7 miejsc**, łatwiejszy w mieście.
+- **Multivan długi (L2)** – **5173 mm**, większy bagażnik **763 l** za trzecim rzędem.
 - **Układ 5-, 6- i 7-miejscowy** – pojedyncze fotele na szynach, z możliwością demontażu.
 - **Wersje wyposażenia T7** – Multivan, Life, Style, Edition; na wybranych rynkach także odmiany specjalne.
 - **Odmiana plug-in eHybrid** – nacisk na jazdę miejską i strefy czystego transportu.
 
 Jeśli patrzysz szerzej na gamę Volkswagena, warto pamiętać o jednym: California nie jest klasyczną odmianą nadwoziową każdego Multivana. W określonych wersjach bazuje na Multivanie T7/California Concept, ale to osobny kierunek niż zwykły van rodzinny.
 
-## Wymiary Volkswagena Multivan
+## Wymiary Volkswagena Multivana
 
-Wymiary T7 przekładają się bezpośrednio na codzienną użyteczność. L1 łatwiej ogarnąć w mieście, a L2 daje już wyraźnie większy zapas miejsca na bagaż bez rezygnacji z kompletu foteli.
+Wymiary T7 przekładają się bezpośrednio na codzienną użyteczność. L1 łatwiej opanować w mieście, a L2 daje już wyraźnie większy zapas miejsca na bagaż bez rezygnacji z kompletu foteli.
 
 | Parametr | L1 | L2 |
 | :--- | :--- | :--- |
@@ -139,21 +139,21 @@ Wnętrze opiera się na systemie szynowym. Indywidualne fotele można przesuwać
 
 To jedna z największych zalet T7 względem bardziej klasycznych rywali. Multivan mocno stawia na modułowość, a nie tylko na samą liczbę miejsc.
 
-W segmencie premium Multivan konkuruje z [Mercedesem V-klasa](/modele/mercedes-vito/), który oferuje wyższy poziom wygłuszenia, ale za wyraźnie wyższą cenę.
+W segmencie premium Multivan konkuruje z [Mercedesem klasy V](/modele/mercedes-vito/), który oferuje wyższy poziom wygłuszenia, ale za wyraźnie wyższą cenę.
 
 ## Wyposażenie Multivana – Family, Style, Energetic
 
-Wersje wyposażenia w Multivanie mają duże znaczenie, bo ten model często kupuje się nie tylko „na silnik”, ale właśnie pod konkretny sposób użytkowania. Różnice dotyczą komfortu, multimediów i detali codziennej obsługi.
+Wersje wyposażenia w Multivanie mają duże znaczenie, bo ten model często kupuje się nie tylko „na silnik”, lecz właśnie pod konkretny sposób użytkowania. Różnice dotyczą komfortu, multimediów i detali codziennej obsługi.
 
-**Volkswagen Multivan Family** – wersja wejściowa dla rodzin z trwałymi materiałami wykończenia i systemem Travel Assist do półautomatycznej jazdy.
+**Volkswagen Multivan Family** – wersja wejściowa dla rodzin z trwałymi materiałami wykończeniowymi i systemem Travel Assist do półautomatycznej jazdy.
 
 **Style** – topowy wariant z oświetleniem matrycowym IQ.Light, nagłośnieniem Harman Kardon i trójstrefową klimatyzacją Air Care Climatronic z filtrem antyalergenowym.
 
 **Energetic** – wersja debiutowa hybrydy z unikalnymi detalami stylistycznymi.
 
-Centrum dowodzenia to ekran 10 cali, Digital Cockpit Pro i eSIM z nawigacją online. Wyższe wersje oferują elektrycznie podnoszoną klapę i drzwi przesuwne otwierane gestem stopy.
+Obsługę zapewniają ekran 10-calowy, Digital Cockpit Pro i eSIM z nawigacją online. Wyższe wersje oferują elektrycznie podnoszoną klapę i drzwi przesuwne otwierane gestem stopy.
 
-## Typowe usterki Volkswagen Multivan
+## Typowe usterki Volkswagena Multivana
 
 Multivan ma kilka powtarzalnych słabych punktów, ale różnią się one mocno między generacjami. Inne rzeczy sprawdzasz w T4, inne w T5 z 2.5 TDI, a jeszcze inne w T7 z rozbudowaną elektroniką i układem hybrydowym.
 
@@ -162,14 +162,14 @@ Multivan ma kilka powtarzalnych słabych punktów, ale różnią się one mocno 
 - **Pompa wtryskowa** – regeneracja zwykle kosztuje **1500–3000 zł**
 - **Korozja progów i nadkoli** – naprawa blacharska to zwykle **2000–6000 zł** za stronę
 
-W T4 stan blacharski często decyduje bardziej niż sam przebieg. Przy zakupie lepiej dokładnie obejrzeć progi, nadkola i dolne partie nadwozia niż sugerować się samym opisem sprzedającego.
+W T4 stan blacharski często decyduje bardziej niż sam przebieg. Przy zakupie lepiej dokładnie obejrzeć progi, nadkola i dolne partie nadwozia, niż kierować się samym opisem sprzedającego.
 
 ### T5 2.5 TDI
 
 - **Napęd pompy oleju / wałek sześciokątny** – naprawa zwykle kosztuje **2500–5000 zł**
 - **Głowica i pęknięcia w 2.5 TDI** – rachunek potrafi dojść do **5000–12000 zł**
 
-To jedna z tych generacji, gdzie pozornie tanie auto może szybko przestać być okazją. Jeśli T5 2.5 TDI ma niejasną historię serwisową, ryzyko jest po prostu duże.
+To jedna z tych generacji, w których pozornie tanie auto może szybko przestać być okazją. Jeśli T5 2.5 TDI ma niejasną historię serwisową, ryzyko jest po prostu duże.
 
 ### T5/T6 2.0 TDI
 
@@ -192,7 +192,7 @@ W 2.0 TDI nie mówimy tu o łańcuchu rozrządu, tylko o pasku. Do listy kontrol
 - **Elektronika pokładowa i błędy systemów asysty** – diagnostyka lub aktualizacja zwykle **300–1200 zł**
 - **eHybrid: ładowarka pokładowa lub osprzęt HV** – naprawy tylko w ASO lub u specjalisty, koszty od **2000 zł** do kilkunastu tysięcy złotych zależnie od usterki
 
-W T7 mniej martwi mechanika starego typu, a bardziej software i osprzęt. Przy hybrydzie plug-in najlepiej sprawdzić historię serwisową i działanie całego układu ładowania przed podpisaniem umowy.
+W T7 mniej martwi mechanika starego typu, a bardziej oprogramowanie i osprzęt. Przy hybrydzie plug-in najlepiej sprawdzić historię serwisową i działanie całego układu ładowania przed podpisaniem umowy.
 
 ## Porównanie z konkurencją
 
@@ -224,4 +224,4 @@ Ceny Multivana potrafią mocno się różnić zależnie od generacji, stanu, prz
 
 Nowy **Volkswagen Multivan T7 2.0 TDI / 2.0 TSI** kosztuje zwykle od ok. **250–300 tys. zł brutto**. Bogatsze odmiany oraz **1.4 eHybrid 218 KM** startują od ok. **300 tys. zł** wzwyż – zależnie od wyposażenia i konfiguracji.
 
-Jeśli szukasz używanego egzemplarza, najniższy realny próg wejścia zaczyna się od ok. **30 000 zł**, ale dotyczy to głównie starszych T4 i najtańszych T5. W przypadku T6, T6.1 i T7 dużo większe znaczenie niż sam rocznik ma historia serwisowa i stan wnętrza.
+Jeśli szukasz używanego egzemplarza, najniższy realny próg wejścia to ok. **30 000 zł**, ale dotyczy to głównie starszych T4 i najtańszych T5. W przypadku T6, T6.1 i T7 znacznie większe znaczenie niż sam rocznik mają historia serwisowa i stan wnętrza.

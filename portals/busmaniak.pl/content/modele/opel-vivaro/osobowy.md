@@ -26,7 +26,7 @@ sources:
 ---
 ## Opel Vivaro osobowy – Combi i Life
 
-Żeby poprawnie opisać Opel Vivaro osobowy, trzeba najpierw uporządkować generacje. Vivaro A z lat 2001–2014 było bliźniakiem Renault Trafic II i Nissana Primastar, Vivaro B z lat 2014–2019 – Renault Trafic III, a Vivaro C od 2019 roku przeszło na platformę EMP2.
+Żeby poprawnie opisać Opla Vivaro osobowego, trzeba najpierw uporządkować generacje. Vivaro A z lat 2001–2014 było bliźniakiem Renault Trafic II i Nissana Primastar, Vivaro B z lat 2014–2019 – bliźniakiem Renault Trafic III, a Vivaro C od 2019 roku przeszło na platformę EMP2.
 
 Właśnie w generacji C pojawia się najwięcej nieporozumień. Użytkowe odmiany nadal funkcjonują jako Vivaro, ale osobowy odpowiednik Opla sprzedawany był w Polsce jako Zafira Life, a nie „Vivaro Life”.
 
@@ -34,13 +34,13 @@ Właśnie w generacji C pojawia się najwięcej nieporozumień. Użytkowe odmian
 
 **Vivaro Combi** to odmiana nastawiona na przewóz większej liczby osób przy użytkowym charakterze auta. Taka formuła była obecna w różnych odsłonach modelu, ale konkretna oferta, nazewnictwo i liczba miejsc zależały od generacji oraz rynku.
 
-W praktyce to wybór dla firm, instytucji i użytkowników, którzy stawiają bardziej na funkcję niż na osobowy klimat kabiny.
+W praktyce to wybór dla firm, instytucji i użytkowników, którzy cenią bardziej funkcję niż osobowy charakter kabiny.
 
 ### Vivaro Life – komfort dla pasażerów
 
-W generacji C osobową wersję trzeba nazywać poprawnie – to **Opel Zafira Life**, a nie Vivaro Life. Model bazuje na platformie EMP2 i jest blisko spokrewniony z Peugeot Traveller, Citroënem SpaceTourer oraz Toyota Proace Verso.
+W generacji C osobową wersję trzeba nazywać poprawnie – to **Opel Zafira Life**, a nie Vivaro Life. Model bazuje na platformie EMP2 i jest blisko spokrewniony z Peugeotem Traveller, Citroënem SpaceTourer oraz Toyotą Proace Verso.
 
-Osobowa odmiana występowała zasadniczo w trzech długościach nadwozia: Small/S, Medium/M oraz Large/L. Wyposażenie komfortowe i bezpieczeństwa zależało od wersji i rynku, dlatego nie warto traktować pojedynczych elementów jako reguły dla całej gamy.
+Osobowa odmiana występowała zasadniczo w trzech długościach nadwozia: Small/S, Medium/M oraz Large/L. Wyposażenie komfortowe i systemy bezpieczeństwa zależały od wersji i rynku, dlatego nie warto traktować pojedynczych elementów jako reguły dla całej gamy.
 
 ## Liczba miejsc i konfiguracje
 
@@ -65,7 +65,7 @@ W generacji C długości nadwozia mają już inne oznaczenia niż w starszych Vi
 | Zafira Life M | 4956 mm | zależnie od wersji i rynku | 8 lub 9 |
 | Zafira Life L | 5306 mm | zależnie od wersji i rynku | 8 lub 9 |
 
-Dla platformy EMP2 typowy rozstaw osi wynosi 2925 mm w wersji S oraz 3275 mm w odmianach M i L. Szerokość bez lusterek to około 1920–1924 mm, z lusterkami około 2204 mm, a wysokość zwykle mieści się poniżej 1900–1935 mm zależnie od wersji.
+Dla platformy EMP2 typowy rozstaw osi wynosi 2925 mm w wersji S oraz 3275 mm w odmianach M i L. Szerokość bez lusterek wynosi około 1920–1924 mm, z lusterkami około 2204 mm, a wysokość zwykle nie przekracza 1900–1935 mm zależnie od wersji.
 
 ## Dane techniczne Vivaro osobowego
 
@@ -83,7 +83,7 @@ Wymiary i parametry typowe dla osobowych odmian EMP2:
 - **Masa własna** – diesle i EV często przekraczają 1700–2200 kg
 - **Ładowność** – wyraźnie niższa niż w furgonach i zależna od liczby miejsc oraz długości
 
-W kwestii bagażnika warto trzymać się danych z podaną metodą pomiaru. W osobowych vanach klasy EMP2 wersje M i L oferują około 989–1500 l według VDA za 3. rzędem, a po złożeniu lub demontażu siedzeń przestrzeń rośnie do kilku tysięcy litrów.
+W kwestii bagażnika warto trzymać się danych z podaną metodą pomiaru. W osobowych vanach klasy EMP2 wersje M i L oferują około 989–1500 l według VDA za trzecim rzędem, a po złożeniu lub demontażu siedzeń przestrzeń rośnie do kilku tysięcy litrów.
 
 ![Opel Vivaro osobowy – Combi i Life w zestawieniu](/images/opel-vivaro-osobowy-hero.webp)
 
@@ -91,7 +91,7 @@ W kwestii bagażnika warto trzymać się danych z podaną metodą pomiaru. W oso
 
 W tej sekcji również trzeba uporządkować nazewnictwo. Dla generacji C chodzi o osobową **Zafirę Life**, czyli bliźniaczy model na platformie EMP2, a nie o „Vivaro Life”.
 
-W gamie diesli występowały jednostki 1.5 i 2.0 BlueHDi, z napędem na przednią oś. Dostępne były manualne skrzynie 6-biegowe oraz automat EAT8 dla wybranych wersji 2.0 BlueHDi.
+W gamie diesli występowały jednostki 1.5 i 2.0 BlueHDi z napędem na przednią oś. Dostępne były 6-biegowe skrzynie manualne oraz automatyczna skrzynia EAT8 w wybranych wersjach 2.0 BlueHDi.
 
 Typowe warianty silnikowe:
 - [1.5 D](/modele/opel-vivaro/1-5/) – 100 KM i ok. 270 Nm
@@ -107,7 +107,7 @@ W ofercie była też odmiana elektryczna:
 - **Ładowanie DC** – do 100 kW
 - **Czas ładowania DC 0–80%** – około 30 min dla 50 kWh i około 45 min dla 75 kWh
 
-W codziennym użytkowaniu diesle 1.5 i 2.0 korzystają z układu SCR z AdBlue i filtra DPF. Serwis olejowy zwykle wypada co 1 rok lub 25–30 tys. km zależnie od planu obsługi, a w EV trzeba brać pod uwagę degradację akumulatora i wyraźny spadek realnego zasięgu zimą – często o 20–40%.
+W codziennym użytkowaniu diesle 1.5 i 2.0 są wyposażone w układ SCR z AdBlue oraz filtr DPF. Wymianę oleju wykonuje się zwykle co rok lub co 25–30 tys. km, zależnie od harmonogramu obsługi, a w EV trzeba brać pod uwagę degradację akumulatora i wyraźny spadek realnego zasięgu zimą – często o 20–40%.
 
 ## Vivaro osobowy a Renault Trafic Passenger
 
@@ -116,7 +116,7 @@ Tutaj kluczowe jest rozróżnienie generacji. **Vivaro A i B** były technicznie
 Dla generacji C i osobowej Zafiry Life właściwymi punktami odniesienia są Peugeot Traveller, Citroën SpaceTourer, Toyota Proace Verso oraz – zależnie od rynku – Fiat Ulysse i osobowe odmiany Scudo. Te modele mają wspólną platformę EMP2, zbliżone rozstawy osi, te same silniki 1.5 i 2.0 BlueHDi oraz wersje elektryczne 50 i 75 kWh.
 
 {{% info title="Homologacja jako autobus" icon="engineering" %}}
-Typowy Opel Vivaro osobowy w układzie 8+1, czyli z 9 miejscami łącznie z kierowcą, zwykle należy do kategorii **M1**. Prawo jazdy kategorii **B** pozwala prowadzić pojazd do 3,5 t DMC i do 9 miejsc łącznie z kierowcą, natomiast **M2** dotyczy pojazdów mających więcej niż 8 miejsc oprócz siedzenia kierowcy i DMC do 5 t.
+Typowy Opel Vivaro osobowy w układzie 8+1, czyli z 9 miejscami łącznie z kierowcą, zwykle należy do kategorii **M1**. Prawo jazdy kategorii **B** pozwala prowadzić pojazd o DMC do 3,5 t i z liczbą miejsc do 9 łącznie z kierowcą, natomiast **M2** dotyczy pojazdów mających więcej niż 8 miejsc oprócz siedzenia kierowcy i DMC do 5 t.
 {{% /info %}}
 
 
@@ -124,14 +124,14 @@ Typowy Opel Vivaro osobowy w układzie 8+1, czyli z 9 miejscami łącznie z kier
 
 ## Combi czy Life?
 
-W praktyce wybór zależy od tego, czy szukasz półosobowej wersji użytkowej, czy pełnoprawnego vana rodzinno-przewozowego. Trzeba też pamiętać, że nazewnictwo Opla zmieniało się rynkowo – po 2019 roku osobowy van był w Polsce oferowany jako Zafira Life, a nie Vivaro Life.
+W praktyce wybór zależy od tego, czy szukasz półosobowej wersji użytkowej, czy pełnoprawnego vana rodzinno-przewozowego. Trzeba też pamiętać, że nazewnictwo Opla zmieniało się w zależności od rynku – po 2019 roku osobowy van był w Polsce oferowany jako Zafira Life, a nie Vivaro Life.
 
-Warto zwrócić uwagę nie tylko na liczbę miejsc, ale też na długość nadwozia, sposób pomiaru bagażnika oraz wyposażenie. W osobowych odmianach EMP2 dostępne były m.in. AEB/Active Safety Brake, adaptacyjny tempomat, utrzymanie pasa ruchu, rozpoznawanie znaków, kamera 180°, head-up display, elektryczne drzwi przesuwne i czujniki martwego pola – zależnie od wersji i rocznika.
+Warto zwrócić uwagę nie tylko na liczbę miejsc, ale też na długość nadwozia, sposób pomiaru bagażnika oraz wyposażenie. W osobowych odmianach EMP2 dostępne były m.in. AEB/Active Safety Brake, adaptacyjny tempomat, system utrzymania pasa ruchu, rozpoznawanie znaków, kamera 180°, head-up display, elektryczne drzwi przesuwne i czujniki martwego pola – zależnie od wersji i rocznika.
 
 ### Combi do intensywnej eksploatacji
 
-**Combi** ma sens wtedy, gdy priorytetem jest funkcja transportowa i prostsza konfiguracja auta. To naturalny wybór dla firm, przewozu pracowników i zastosowań, w których liczy się przede wszystkim praktyczność.
+**Combi** ma sens wtedy, gdy priorytetem jest funkcja transportowa i prostsza konfiguracja auta. To naturalny wybór dla firm, do przewozu pracowników i zastosowań, w których liczy się przede wszystkim praktyczność.
 
 ### Life na dłuższe trasy
 
-Jeśli zależy Ci na osobowym charakterze auta, właściwym adresem w generacji C jest **Zafira Life**. Taki wariant lepiej pasuje do dłuższych tras, przewozu rodzinnego albo klientów, zwłaszcza gdy znaczenie mają systemy wsparcia kierowcy i bogatsza konfiguracja kabiny.
+Jeśli zależy Ci na osobowym charakterze auta, właściwym wyborem w generacji C jest **Zafira Life**. Taki wariant lepiej pasuje do dłuższych tras, przewozu rodzinnego albo klientów, zwłaszcza gdy znaczenie mają systemy wsparcia kierowcy i bogatsza konfiguracja kabiny.

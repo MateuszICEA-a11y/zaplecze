@@ -47,22 +47,22 @@ Aktualne Doblò III to już zupełnie inny samochód niż poprzednik. Bazuje na 
 - Liczba miejsc: standardowo 5
 - DMC wersji użytkowych: do 2,4 t
 
-W generacji III warto zwrócić uwagę na parametry praktyczne. Dłuższy rozstaw osi poprawia ilość miejsca w kabinie i możliwości przewozowe, a przy parkowaniu znaczenie mają też gabaryty i średnica zawracania – w vanach tej klasy zwykle jest to ok. 11,2–12,5 m zależnie od wersji.
+W generacji III warto zwrócić uwagę na parametry praktyczne. Dłuższy rozstaw osi zwiększa ilość miejsca w kabinie i możliwości przewozowe, a przy parkowaniu znaczenie mają też gabaryty i średnica zawracania – w vanach tej klasy zwykle jest to ok. 11,2–12,5 m zależnie od wersji.
 
 Silniki gen III:
 
-- 1.2 PureTech 110 KM (benzyna, dostępność skrzyni zależy od rynku i rocznika)
+- 1.2 PureTech 110 KM (benzyna, dostępność skrzyni biegów zależy od rynku i rocznika)
 - 1.5 BlueHDi 100 KM (diesel)
 - 1.5 BlueHDi 130 KM (diesel)
 - e-Doblò – silnik elektryczny 100 kW (136 KM), akumulator 50 kWh brutto, zasięg WLTP do ok. 280 km, ładowanie DC do 100 kW, AC 7,4 kW lub opcjonalnie 11 kW
 
-W tej generacji ważnym argumentem są także systemy ADAS. Dostępne były m.in. automatyczne hamowanie awaryjne, asystent pasa ruchu, rozpoznawanie znaków, tempomat, kamera cofania i czujniki parkowania.
+W tej generacji ważnym argumentem są także systemy ADAS. Dostępne są m.in. automatyczne hamowanie awaryjne, asystent pasa ruchu, rozpoznawanie znaków, tempomat, kamera cofania i czujniki parkowania.
 
 ## Dane techniczne – generacja II (2010–2022)
 
 Doblò II zadebiutowało w 2009 roku, a sprzedaż ruszyła od 2010. Następca pojawił się w 2022 roku, natomiast osobowe odmiany Panorama – zależnie od rynku – były dostępne do końca cyklu modelu.
 
-To właśnie ta generacja najmocniej zapisała się jako rodzinny, bardzo przestronny van. Nadwozie było bardziej pionowe i „pudełkowate”, co przekładało się na ilość miejsca nad głową i dużą elastyczność wnętrza.
+To właśnie ta generacja najmocniej zapisała się jako rodzinny, bardzo przestronny van. Nadwozie było bardziej pionowe i „pudełkowate”, co przekładało się na ilość miejsca nad głową i dużą uniwersalność wnętrza.
 
 - Długość (standard): ok. 4390 mm
 - Długość (Maxi): ok. 4740 mm
@@ -80,7 +80,7 @@ Silniki gen II w wersji osobowej:
 - 1.6 MultiJet 90/105/120 KM
 - 2.0 MultiJet 135 KM
 
-W praktyce generacja II oferowała szerszy wybór klasycznych napędów spalinowych niż gen III. Dla kupującego używane auto to często kluczowa różnica względem nowszego modelu.
+W praktyce generacja II oferowała szerszy wybór klasycznych napędów spalinowych niż gen III. Dla kupującego auto używane jest to często kluczowa różnica względem nowszego modelu.
 
 ![Fiat Doblò Panorama – wnętrze i przestrzeń dla pasażerów](/images/fiat-doblo-osobowy-hero.webp)
 
@@ -103,11 +103,11 @@ Właśnie metoda pomiaru ma tu duże znaczenie. Producenci podają pojemność b
 
 Wysokie nadwozie przekłada się na wygodne wsiadanie i bardziej wyprostowaną pozycję. To jedna z największych zalet Doblò jako auta rodzinnego, zwłaszcza przy codziennym wożeniu dzieci lub starszych pasażerów.
 
-Duży atut stanowią też przesuwne drzwi boczne. Na ciasnych parkingach działają znacznie wygodniej niż klasyczne drzwi rozwierane, a przy montażu fotelika ułatwiają dostęp do drugiego rzędu.
+Dużym atutem są też przesuwne drzwi boczne. Na ciasnych parkingach sprawdzają się znacznie wygodniej niż klasyczne drzwi rozwierane, a przy montażu fotelika ułatwiają dostęp do drugiego rzędu.
 
 ### Bagażnik Panoramy – pojemność w litrach
 
-Pojemność bagażnika w Doblò trzeba czytać bardzo ostrożnie, bo łatwo pomieszać różne standardy pomiaru. W materiałach producentów spotyka się wartości według VDA oraz objętość liczona do dachu, a różnice potrafią iść w setki litrów.
+Pojemność bagażnika w Doblò trzeba czytać bardzo ostrożnie, bo łatwo pomieszać różne standardy pomiaru. W materiałach producentów spotyka się wartości według VDA oraz objętość liczona do dachu, a różnice potrafią sięgać setek litrów.
 
 Dlatego nie warto zestawiać bez komentarza liczb typu ok. 775 l według VDA z objętością przekraczającą 3000 l do dachu po złożeniu siedzeń. W praktyce dla kupującego ważniejsze jest to, czy porównujemy krótkie nadwozie z długim oraz czy mówimy o przestrzeni do linii okien, czy do sufitu. Więcej o samej metodzie pomiaru można przeczytać w haśle [VDA](https://pl.wikipedia.org/wiki/VDA).
 
@@ -124,7 +124,7 @@ Zwykle potrzebne są odpowiednie siedzenia z mocowaniami i pasami, zagłówki, p
 Jeśli zależy ci na bezproblemowym użytkowaniu rodzinnym, fabryczna Panorama lub osobowe Doblò/e-Doblò są po prostu bezpieczniejszym wyborem. Sama „kanapa” nie wystarcza, by legalnie i bezproblemowo zmienić N1 na M1.
 
 {{% expert name="Marek Kowalczyk" %}}
-Przy zakupie używanego Doblò II sprawdź nie tylko wnętrze, ale też elementy typowo eksploatacyjne. Najważniejsze punkty kontroli to zużycie dwumasy i sprzęgła w 1.6 oraz 2.0 MultiJet, stan DPF i EGR w dieslach, luzy przedniego zawieszenia, korozja podwozia i drzwi przesuwnych oraz działanie elektryki szyb i zamków. Interwał rozrządu i osprzętu zależy od konkretnego silnika i rocznika, więc trzeba go weryfikować oddzielnie dla 1.3, 1.6 i 2.0 MultiJet.
+Przy zakupie używanego Doblò II sprawdź nie tylko wnętrze, ale też elementy typowo eksploatacyjne. Najważniejsze punkty kontroli to zużycie dwumasy i sprzęgła w 1.6 oraz 2.0 MultiJet, stan DPF i EGR w dieslach, luzy przedniego zawieszenia, korozja podwozia i drzwi przesuwnych oraz działanie elektryki szyb i zamków. Okres wymiany rozrządu i osprzętu zależy od konkretnego silnika i rocznika, więc trzeba go weryfikować oddzielnie dla 1.3, 1.6 i 2.0 MultiJet.
 {{% /expert %}}
 
 {{% youtube %}}
@@ -133,8 +133,8 @@ Przy zakupie używanego Doblò II sprawdź nie tylko wnętrze, ale też elementy
 
 Koszty użytkowania zależą przede wszystkim od silnika, rocznika, przebiegu i sposobu eksploatacji. Nie da się przyjąć jednej reguły dla ubezpieczenia – składka zależy od ubezpieczyciela, regionu, profilu kierowcy, przebiegu i sposobu użytkowania auta.
 
-W praktyce używane Doblò II wymaga szczególnie dokładnych oględzin pod kątem diesli MultiJet. To właśnie stan osprzętu, zawieszenia, elementów przesuwnych drzwi i elektryki częściej przesądza o kosztach niż sam typ nadwozia.
+W praktyce używane Doblò II wymaga szczególnie dokładnych oględzin, zwłaszcza pod kątem diesli MultiJet. To właśnie stan osprzętu, zawieszenia, elementów przesuwnych drzwi i elektryki częściej przesądza o kosztach niż sam typ nadwozia.
 
 Z punktu widzenia praktyczności rodzinnej warto też patrzeć na dane masowe i homologacyjne. W vanach osobowych tej klasy ładowność zwykle wynosi ok. 600–900 kg zależnie od wersji, a dopuszczalna masa przyczepy z hamulcem może sięgać ok. 1000–1500 kg.
 
-Nowe Doblò III ma przewagę w bezpieczeństwie i dostępności systemów wsparcia kierowcy, a e-Doblò daje możliwość jazdy bezemisyjnej. Z kolei Doblò II pozostaje ciekawą opcją dla osób szukających prostszego, bardzo pakownego vana z szeroką gamą diesli i wersji paliwowych.
+Nowe Doblò III ma przewagę w bezpieczeństwie i dostępności systemów wsparcia kierowcy, a e-Doblò daje możliwość jazdy bezemisyjnej. Z kolei Doblò II pozostaje ciekawą opcją dla osób szukających prostszego, bardzo pakownego vana z szeroką gamą diesli i innych wariantów napędowych.

@@ -11,10 +11,10 @@ image_alt: "Opel Vivaro Long – wymiary przestrzeni ładunkowej"
 youtube: "kh0MbFQS2fg"
 youtube_title: "Opel Vivaro – Czy 1.5 wystarczy? | TEST PL"
 parent: "opel-vivaro"
-lead: "Opel Vivaro Long w tym materiale dotyczy generacji C produkowanej od 2019 roku. To dłuższa odmiana vana na platformie EMP2, z objętością przestrzeni ładunkowej ok. 6,1 m³ i wyraźnie większym potencjałem do przewozu długich ładunków niż wersja Standard."
+lead: "Opel Vivaro Long w tym materiale dotyczy generacji C produkowanej od 2019 roku. To dłuższa odmiana vana na platformie EMP2, z objętością przestrzeni ładunkowej ok. 6,1 m³ i wyraźnie większym potencjałem przewozu długich ładunków niż wersja Standard."
 faq:
   - question: "Ile mierzy przestrzeń ładunkowa Vivaro Long?"
-    answer: "W Opel Vivaro C Long maksymalna szerokość przestrzeni ładunkowej wynosi ok. 1628 mm, szerokość między nadkolami ok. 1258 mm, wysokość ok. 1397 mm, a objętość ok. 6,1 m³."
+    answer: "W Oplu Vivaro C Long maksymalna szerokość przestrzeni ładunkowej wynosi ok. 1628 mm, szerokość między nadkolami ok. 1258 mm, wysokość ok. 1397 mm, a objętość ok. 6,1 m³."
   - question: "Jaka jest różnica między Vivaro Standard a Long?"
     answer: "Long ma ok. 5309 mm długości całkowitej, a Standard ok. 4959 mm. Różnica zewnętrzna to ok. 350 mm, ale wzrost objętości przestrzeni ładunkowej wynosi ok. 0,8 m³ – z 5,3 do 6,1 m³ – a długość użytkowa podłogi rośnie o ok. 250–300 mm."
   - question: "Czy Vivaro Long wymaga prawa jazdy C?"
@@ -22,9 +22,9 @@ faq:
 ---
 ## Wymiary Opla Vivaro Long i ładownia
 
-W przypadku Opel Vivaro Long trzeba jasno rozdzielić dane dla dwóch długości nadwozia generacji C – Standard i Long. To ważne, bo obie wersje mają ten sam rozstaw osi, a dodatkowa długość w odmianie Long nie przekłada się wprost 1:1 na długość podłogi ładowni.
+W przypadku Opla Vivaro Long trzeba jasno rozdzielić dane dla dwóch długości nadwozia generacji C – Standard i Long. To ważne, bo obie wersje mają ten sam rozstaw osi, a dodatkowa długość w odmianie Long nie przekłada się wprost na długość podłogi ładowni.
 
-### Porównanie Standard vs Long
+### Porównanie Standard a Long
 
 | Parametr | Standard (M) | Long (L) |
 |----------|--------------|----------|
@@ -40,7 +40,7 @@ W przypadku Opel Vivaro Long trzeba jasno rozdzielić dane dla dwóch długości
 
 ### Wymiary zewnętrzne Vivaro C Long
 
-Dłuższa wersja Opel Vivaro C ma zwarte gabaryty zewnętrzne jak na samochód dostawczy segmentu średniego. To nadal auto, które da się sprawnie wykorzystywać w mieście, ale z wyraźnie większym zapasem miejsca na dłuższy towar.
+Dłuższa wersja Opla Vivaro C ma zwarte gabaryty zewnętrzne jak na samochód dostawczy segmentu średniego. To nadal auto, które da się sprawnie wykorzystywać w mieście, ale z wyraźnie większym zapasem miejsca na dłuższy towar.
 
 Vivaro C Long:
 - **Długość całkowita** – ok. 5309 mm
@@ -51,7 +51,7 @@ Vivaro C Long:
 
 ### Przestrzeń ładunkowa Long
 
-Najważniejsza zmiana w wersji Long dotyczy praktyki użytkowej. Różnica względem krótszego nadwozia to nie tylko większa objętość, ale przede wszystkim łatwiejszy transport dłuższych paczek, skrzyń i elementów montażowych.
+Najważniejsza zmiana w wersji Long dotyczy praktycznego użytkowania. Różnica względem krótszego nadwozia to nie tylko większa objętość, lecz przede wszystkim łatwiejszy transport dłuższych paczek, skrzyń i elementów montażowych.
 
 Przestrzeń ładunkowa:
 - **Szerokość między nadkolami** – ok. 1258 mm
@@ -61,13 +61,13 @@ Przestrzeń ładunkowa:
 
 Wersja Standard oferuje ok. 5,3 m³, więc zysk w Longu wynosi ok. 0,8 m³. W praktyce różnica długości zewnętrznej to ok. 350 mm, ale długość użytkowa podłogi rośnie o około 250–300 mm, więc korzyść dotyczy głównie przewozu dłuższych ładunków.
 
-W bliźniaczych konstrukcjach PSA/Opel stosowane jest też rozwiązanie typu Moduwork/FlexCargo, czyli klapa w grodzi umożliwiająca przewóz elementów dłuższych niż sama podłoga ładowni. W dłuższej wersji maksymalna długość użytkowa po otwarciu klapy sięga ok. 3674 mm.
+W bliźniaczych konstrukcjach PSA/Opel stosuje się też rozwiązanie typu Moduwork/FlexCargo, czyli klapę w grodzi umożliwiającą przewóz elementów dłuższych niż sama podłoga ładowni. W dłuższej wersji maksymalna długość użytkowa po otwarciu klapy sięga ok. 3674 mm.
 
-Opel Vivaro C jest spokrewniony z Peugeot Expert, Citroën Jumpy/Dispatch, Fiat Scudo i Toyota Proace. Modele te dzielą tę samą platformę EMP2 i mają bardzo zbliżone wymiary oraz parametry przestrzeni ładunkowej.
+Opel Vivaro C jest spokrewniony z Peugeotem Expert, Citroënem Jumpy/Dispatch, Fiatem Scudo i Toyotą Proace. Modele te oparto na tej samej platformie EMP2 i mają bardzo zbliżone wymiary oraz parametry przestrzeni ładunkowej.
 
 ## Ładowność i DMC
 
-W Opel Vivaro Long sama długość nadwozia nie przesądza jeszcze o realnej ładowności. Kluczowe są konkretna wersja, napęd i dopuszczalna masa całkowita, bo w gamie występują wyraźne różnice między odmianami diesla i e-Vivaro.
+W Oplu Vivaro Long sama długość nadwozia nie przesądza jeszcze o rzeczywistej ładowności. Kluczowe są konkretna wersja, napęd i dopuszczalna masa całkowita, bo w gamie występują wyraźne różnice między odmianami diesla i e-Vivaro.
 
 Typowe zakresy dla Vivaro C:
 - **DMC** – zwykle ok. 2830–3100 lub 3200 kg zależnie od odmiany
@@ -77,14 +77,14 @@ Typowe zakresy dla Vivaro C:
 - **Masa przyczepy hamowanej w e-Vivaro** – niższa niż w wersjach spalinowych
 
 {{% expert name="Marek Kowalczyk" %}}
-Przy zakupie Vivaro Long warto patrzeć nie tylko na długość nadwozia, ale przede wszystkim na konfigurację DMC i ładowności. W praktyce właśnie tu rozstrzyga się, czy auto lepiej sprawdzi się w kurierce, serwisie mobilnym czy przewozie cięższego wyposażenia.
+Przy zakupie Vivaro Long warto zwracać uwagę nie tylko na długość nadwozia, lecz przede wszystkim na konfigurację DMC i ładowności. W praktyce właśnie tu rozstrzyga się, czy auto lepiej sprawdzi się w pracy kurierskiej, serwisie mobilnym czy przy przewozie cięższego wyposażenia.
 {{% /expert %}}
 
 Do prowadzenia Vivaro Long wystarcza prawo jazdy kategorii B, o ile DMC pojazdu nie przekracza 3,5 t. W Polsce dla auta dostawczego do 3,5 t obowiązują zwykle limity prędkości jak dla samochodu osobowego na drogach szybkiego ruchu – 100 km/h na jednojezdniowej drodze ekspresowej, 120 km/h na dwujezdniowej ekspresowej i 140 km/h na autostradzie, chyba że pojazd lub homologacja stanowią inaczej.
 
 ## Silniki dostępne w wersji Long
 
-Gama napędowa Opel Vivaro C Long obejmuje zarówno klasyczne diesle, jak i wersję elektryczną. W zależności od rynku i rocznika spotyka się kilka wyraźnie oddzielonych wariantów mocy i momentu obrotowego.
+Gama napędowa Opla Vivaro C Long obejmuje zarówno klasyczne diesle, jak i wersję elektryczną. W zależności od rynku i rocznika spotyka się kilka wyraźnie rozróżnionych wariantów mocy i momentu obrotowego.
 
 W ofercie Vivaro C warto uwzględnić:
 - **1.5 Diesel 100 KM** – 270 Nm
@@ -102,7 +102,7 @@ W wersji elektrycznej dostępne są akumulatory **50 kWh** i **75 kWh**. Deklaro
 
 ## Dostęp do przestrzeni ładunkowej
 
-Przy codziennej pracy liczy się nie tylko sama kubatura, ale też łatwość załadunku. Opel Vivaro Long oferuje klasyczny układ drzwi dla tej klasy auta i parametry, które dobrze sprawdzają się w dystrybucji miejskiej oraz pracy serwisowej.
+Przy codziennej pracy liczy się nie tylko sama kubatura, lecz także łatwość załadunku. Opel Vivaro Long oferuje klasyczny układ drzwi dla tej klasy auta i parametry, które dobrze sprawdzają się w dystrybucji miejskiej oraz w pracy serwisowej.
 
 - **Drzwi tylne dwuczęściowe** – otwieranie 180°
 - **Drzwi przesuwne** – opcjonalnie z obu stron

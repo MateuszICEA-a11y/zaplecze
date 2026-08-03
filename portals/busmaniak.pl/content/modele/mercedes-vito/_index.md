@@ -68,7 +68,7 @@ Skrót techniczny:
 - **Wersje osobowe** – Viano
 
 {{% info title="Vito W639 jako baza kampera" icon="engineering" %}}
-W639 z napędem 4x4 (opcja od 2006 r.) i silnikiem 3.0 V6 CDI stał się popularną bazą pod micro-kampery premium. Niski profil dachu i osobowe prowadzenie przyciągają entuzjastów vanlife szukających alternatywy dla Transportera California.
+W639 z napędem 4x4 (opcja od 2006 r.) i silnikiem 3.0 V6 CDI stał się popularną bazą pod mikrokampery premium. Niski profil dachu i prowadzenie zbliżone do auta osobowego przyciągają entuzjastów van life szukających alternatywy dla Transportera California.
 {{% /info %}}
 
 ### Mercedes Vito W447 (od 2014)
@@ -88,7 +88,7 @@ Skrót techniczny:
 - **Napęd** – FWD (1.6 OM622 od 2014, później także część 2.0 OM654), RWD (2.1 OM651 / później część 2.0 OM654) i 4x4
 - **Nadwozia** – trzy długości
 - **Lifting** – 2020
-- **Zmiany po liftingu** – nowy system infotainment, nowe multimedia i pakiety wsparcia kierowcy oraz silniki OM654
+- **Zmiany po liftingu** – nowy system multimedialny, pakiety wsparcia kierowcy oraz silniki OM654
 - **Ważne punkty rozwoju** – debiut eVito, odświeżenie modelu także w 2024 r.
 
 ## Dane techniczne i wymiary
@@ -138,7 +138,7 @@ Przed liftingiem gama była szeroka, ale mocno zależna od rodzaju napędu. W ba
 | 116 CDI | 2.1 OM651 | RWD | 163 KM | 380 Nm | 6MT lub 7G-TRONIC | Euro 5/6 | **6,5–8,5 l/100 km** |
 | 119 BlueTEC | 2.1 OM651 | RWD | 190 KM | 440 Nm | 7G-TRONIC | Euro 6 | **6,5–8,5 l/100 km** |
 
-W praktyce wersje 4x4 zwykle potrzebują o **0,5–1,0 l/100 km** więcej niż porównywalne odmiany z jednym napędzanym mostem.
+W praktyce wersje 4x4 zwykle spalają o **0,5–1,0 l/100 km** więcej niż porównywalne odmiany z jednym napędzanym mostem.
 
 ### W447 po liftingu – OM654
 
@@ -156,7 +156,7 @@ Jeśli porównujesz używane auta, kluczowe są nie tylko moc i skrzynia, ale te
 
 ### eVito
 
-Elektryczne Vito jest dostępne jako użytkowy furgon i osobowy przewozowiec. Podstawowe dane, które warto znać:
+Elektryczne Vito jest dostępne jako użytkowy furgon i van osobowy. Podstawowe dane, które warto znać:
 - **Moc** – 116 KM
 - **Moment** – 362 Nm
 - **Bateria** – starsze eVito Furgon ok. 35 kWh użytecznej pojemności, nowsze wersje 60 kWh
@@ -177,7 +177,7 @@ Mercedes Vito nie kończy się na jednym furgonie. Ten model występuje w kilku 
 |---|---:|---|---|---|
 | Furgon | 2–3 | N1 | Compact/Long/Extra Long | 5,5–6,6 m3, pełna przegroda |
 | Mixto | 5–6 | zwykle N1 | Long/Extra Long | drugi rząd siedzeń + część ładunkowa |
-| Tourer BASE/PRO/SELECT | 8–9 | M1 | Compact/Long/Extra Long | przewóz osób, shuttle, taxi, hotel transfer |
+| Tourer BASE/PRO/SELECT | 8–9 | M1 | Compact/Long/Extra Long | przewóz osób, shuttle, taxi, transfer hotelowy |
 | Podwozie do zabudowy specjalnej* | 2–3 | N1 | zależnie od rynku i zabudowy | chłodnia, serwis, specjalistyczne zabudowy |
 | eVito Furgon | 2–3 | N1 | Long/Extra Long zależnie od rynku | dostawy miejskie, strefy czystego transportu |
 | eVito Tourer | 8–9 | M1 | Long/Extra Long | przewóz osób, shuttle |
@@ -205,7 +205,7 @@ Wersje elektryczne kierowane są do firm działających głównie w mieście i n
 
 ### 4x4, zabudowy specjalne i baza pod kampera
 
-Vito 4x4 jest dostępne zarówno do pracy, jak i do przewozu osób. Na rynku spotkasz też zabudowy chłodnicze, serwisowe oraz auta przygotowane jako baza pod dayvana albo lekkiego kampera.
+Vito 4x4 jest dostępne zarówno do pracy, jak i do przewozu osób. Na rynku spotkasz też zabudowy chłodnicze, serwisowe oraz auta przygotowane jako baza pod day van albo lekkiego kampera.
 
 W zależności od odmiany Vito może mieć homologację **N1** lub **M1**. To ważne przy podatkach, ubezpieczeniu i planowanej zabudowie.
 
@@ -251,7 +251,7 @@ Typowe koszty:
 
 ### OM651 2.1
 
-To popularny silnik, ale przy dużych przebiegach potrafi wygenerować konkretny rachunek. Najczęstsze problemy dotyczą wtrysków, turbosprężarki, rozrządu i chłodnicy EGR.
+To popularny silnik, ale przy dużych przebiegach potrafi skończyć się konkretnym rachunkiem. Najczęstsze problemy dotyczą wtrysków, turbosprężarki, rozrządu i chłodnicy EGR.
 
 Typowe koszty:
 - **Wtryski** – **800–1200 zł/szt.** za regenerację
@@ -290,10 +290,10 @@ Vito konkuruje nie tylko ceną, ale też charakterem. Jedni szukają maksymalnej
 | Napęd | FWD / RWD / 4x4 | FWD / 4Motion | FWD / AWD w nowszych generacjach | FWD | FWD |
 | 4x4 opcja | ✅ tak, zależnie od wersji/rocznika | ✅ tak (4MOTION) | ✅ w nowszych generacjach | ❌ nie | ❌ nie |
 | Masa przyczepy z hamulcem | do 2500 kg | do 2500 kg | do 2500 kg | zwykle do 2000–2500 kg zależnie od wersji | – |
-| Gwarancja / serwis interwałowy | co 20–30 tys. km lub 1 rok zależnie od systemu serwisowego | co 20–30 tys. km lub 1 rok zależnie od systemu serwisowego | co 20–30 tys. km lub 1 rok zależnie od systemu serwisowego | co 20–30 tys. km lub 1 rok zależnie od systemu serwisowego | co 20–30 tys. km lub 1 rok zależnie od systemu serwisowego |
+| Gwarancja / interwał serwisowy | co 20–30 tys. km lub 1 rok zależnie od systemu serwisowego | co 20–30 tys. km lub 1 rok zależnie od systemu serwisowego | co 20–30 tys. km lub 1 rok zależnie od systemu serwisowego | co 20–30 tys. km lub 1 rok zależnie od systemu serwisowego | co 20–30 tys. km lub 1 rok zależnie od systemu serwisowego |
 | Cena nowego (netto) | od 155 000 zł | od 180 000 zł | od 145 000 zł | od 135 000 zł | – |
 
-Głównym rywalem jest [Volkswagen Transporter](/modele/volkswagen-transporter/) – podobny prestiż, ale wyższe koszty serwisu VW. [Ford Transit Custom](/modele/ford-transit-custom/) wygrywa właściwościami jezdnymi i wielkością paki. [Renault Trafic](/modele/renault-trafic/) i [Opel Vivaro](/modele/opel-vivaro/) to tańsze alternatywy, ale bez premium wykończenia.
+Głównym rywalem jest [Volkswagen Transporter](/modele/volkswagen-transporter/) – podobny prestiż, ale wyższe koszty serwisu VW. [Ford Transit Custom](/modele/ford-transit-custom/) wygrywa właściwościami jezdnymi i wielkością paki. [Renault Trafic](/modele/renault-trafic/) i [Opel Vivaro](/modele/opel-vivaro/) to tańsze alternatywy, ale bez wykończenia premium.
 
 Krótko w praktyce:
 - **Mercedes Vito** – dobra wartość rezydualna, opcja RWD i 4x4; przegląd okresowy zwykle **1200–2200 zł**
@@ -342,7 +342,7 @@ Ceny Mercedesa Vito mocno zależą od nadwozia, silnika, napędu i przebiegu. Na
 | 2023 | 130 000–165 000 zł | 160 000–210 000 zł | 170 000–220 000 zł |
 | 2024 | 145 000–180 000 zł | 175 000–230 000 zł | 185 000–240 000 zł |
 
-Nota: ceny dla aut z polskiego rynku, bez szkód całkowitych i z przebiegiem typowym dla segmentu.
+Uwaga: ceny dla aut z polskiego rynku, bez szkód całkowitych i z przebiegiem typowym dla segmentu.
 
 Dwie praktyczne zasady:
 - **W447 4x4** kosztuje zwykle **o 15–25 tys. zł więcej** niż porównywalne RWD

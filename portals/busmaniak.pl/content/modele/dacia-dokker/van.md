@@ -13,7 +13,7 @@ image: "/images/dacia-dokker-hero.webp"
 image_alt: "Dacia Dokker Van furgon"
 youtube: "u0C_vss83aI"
 youtube_title: "Dacia Dokker opinie, recenzja, zalety, wady, usterki, awarie, jaki silnik, spalanie, ceny, używane?"
-lead: "Dacia Dokker Van to dostawcza wersja kombivana z pełną przegrodą i zaślepionymi tylnymi szybami. 3,1 m³ przestrzeni ładunkowej, ładowność do 970 kg i ceny od 12 000 zł na rynku wtórnym. Produkcja zakończona w 2021 roku, ale model wciąż pozostaje jedną z najtańszych propozycji w segmencie kompaktowych dostawczaków."
+lead: "Dacia Dokker Van to dostawcza wersja kombivana z pełną przegrodą i zaślepionymi tylnymi szybami. 3,1 m³ przestrzeni ładunkowej, ładowność do 970 kg i ceny od 12 000 zł na rynku wtórnym. Produkcja zakończyła się w 2021 roku, ale model wciąż pozostaje jedną z najtańszych propozycji w segmencie kompaktowych dostawczaków."
 faq:
   - question: "Jakie są wymiary paki Dokkera Van?"
     answer: "Długość podłogi 1900 mm, długość z Easy Seat 3110 mm, szerokość między nadkolami 1205 mm, wysokość 1118 mm. Objętość 3,1 m³."
@@ -56,7 +56,7 @@ Z punktu widzenia firmy ważna jest też homologacja N1, ale sama kategoria poja
 
 ### Ładowność i masy
 
-Dokker Van występował z różnymi masami własnymi i DMC zależnie od silnika oraz wyposażenia. Dlatego przy zakupie konkretnego egzemplarza trzeba patrzeć w dane z dowodu rejestracyjnego i tabliczki znamionowej, a nie tylko w ogólny katalog modelu.
+Dokker Van występował z różnymi masami własnymi i DMC zależnie od silnika oraz wyposażenia. Dlatego przy zakupie konkretnego egzemplarza trzeba sprawdzać dane w dowodzie rejestracyjnym i na tabliczce znamionowej, a nie tylko w ogólnym katalogu modelu.
 
 - **Ładowność** – 750–970 kg zależnie od wersji silnikowej i homologacyjnej
 - **DMC** – ok. 1,95–2,02 t
@@ -71,9 +71,9 @@ W praktyce znaczenie mają też drzwi i otwory załadunkowe. Dokker Van występo
 
 ## Silniki Dokkera Van
 
-W przypadku dacia dokker van kluczowe jest rozróżnienie roczników przed liftingiem i po liftingu oraz zmian związanych z normami emisji. W ofercie występowały diesle 1.5 dCi 75 i 90 KM oraz benzynowe jednostki SCe/TCe, a na rynku wtórnym trzeba zwracać uwagę, czy dany egzemplarz pochodzi z wcześniejszej, czy późniejszej gamy.
+W przypadku Dacia Dokker Van kluczowe jest rozróżnienie roczników przed liftingiem i po liftingu oraz zmian związanych z normami emisji. W ofercie występowały diesle 1.5 dCi 75 i 90 KM oraz benzynowe jednostki SCe/TCe, a na rynku wtórnym trzeba zwracać uwagę, czy dany egzemplarz pochodzi z wcześniejszej, czy późniejszej gamy.
 
-Najczęściej spotykanym wyborem w aucie użytkowym jest 1.5 dCi, bo łączy niski apetyt na paliwo z przydatnym momentem obrotowym. W benzynie trzeba patrzeć głównie na prostsze odmiany pod kątem kosztów użytkowania, zwłaszcza jeśli auto ma pracować lokalnie albo z instalacją LPG.
+Najczęściej spotykanym wyborem w aucie użytkowym jest 1.5 dCi, bo łączy niskie zużycie paliwa z użytecznym momentem obrotowym. W wersjach benzynowych warto brać pod uwagę głównie prostsze odmiany ze względu na koszty użytkowania, zwłaszcza jeśli auto ma pracować lokalnie albo z instalacją LPG.
 
 | Silnik | Moc | Moment | Spalanie (śr.) | Najlepszy do |
 |--------|-----|--------|----------------|-------------|
@@ -84,21 +84,21 @@ Najczęściej spotykanym wyborem w aucie użytkowym jest 1.5 dCi, bo łączy nis
 
 Silnik 1.5 dCi 90 KM z rodziny K9K to najbezpieczniejszy punkt odniesienia przy zakupie używanego egzemplarza. Chodzi o szeroko stosowaną rodzinę jednostek 1.5 dCi K9K, występującą w różnych wariantach mocy i osprzętu, z bardzo dobrą dostępnością części oraz serwisu.
 
-Przed zakupem diesla warto sprawdzić stan wtryskiwaczy, EGR, DPF w autach eksploatowanych głównie po mieście, turbo i ewentualne wycieki. W benzynach TCe trzeba skontrolować układ rozrządu i zużycie oleju, a niezależnie od silnika także skrzynię, sprzęgło, korozję dolnych krawędzi drzwi, podwozia oraz stan rolek drzwi przesuwnych.
+Przed zakupem diesla warto sprawdzić stan wtryskiwaczy, EGR i DPF w autach eksploatowanych głównie po mieście, a także turbo oraz ewentualne wycieki. W benzynach TCe trzeba skontrolować układ rozrządu i zużycie oleju, a niezależnie od silnika także skrzynię, sprzęgło, korozję dolnych krawędzi drzwi, podwozia oraz stan rolek drzwi przesuwnych.
 
 {{% expert name="Marek Kowalczyk" %}}
-Do pracy nadal najrozsądniej wygląda 1.5 dCi 90 KM, ale tylko po dokładnej kontroli osprzętu i historii serwisowej. W autach benzynowych TCe nie skreślałbym egzemplarza z góry, jednak przed zakupem obowiązkowo sprawdziłbym układ rozrządu i zużycie oleju. W używanym Dokkerze ważniejszy od samego oznaczenia silnika jest realny stan konkretnego auta.
+Do pracy nadal najrozsądniej wypada 1.5 dCi 90 KM, ale tylko po dokładnej kontroli osprzętu i historii serwisowej. W autach benzynowych TCe nie skreślałbym egzemplarza z góry, jednak przed zakupem obowiązkowo sprawdziłbym układ rozrządu i zużycie oleju. W używanym Dokkerze ważniejszy od samego oznaczenia silnika jest realny stan konkretnego auta.
 {{% /expert %}}
 
 ## Dokker Van w praktyce
 
 Dokker Van jest prostym narzędziem pracy i właśnie w tej roli wypada najlepiej. Nie oferuje nowoczesnych systemów ADAS, ma skromniejsze wyciszenie i przy prędkościach autostradowych wyraźnie pokazuje swój użytkowy charakter. Z pełnym obciążeniem pozostaje funkcjonalny, ale komfort jazdy i akustyka są przeciętne.
 
-Zaletą pozostaje prostota konstrukcji i tanie utrzymanie. Trzeba jednak pamiętać, że wykończenie przestrzeni ładunkowej zależało od wersji, rynku i opcji – nie każdy egzemplarz ma identyczną podłogę czy taki sam zestaw punktów mocujących.
+Zaletami pozostają prostota konstrukcji i niskie koszty utrzymania. Trzeba jednak pamiętać, że wykończenie przestrzeni ładunkowej zależało od wersji, rynku i opcji – nie każdy egzemplarz ma identyczną podłogę czy taki sam zestaw punktów mocujących.
 
 Ale za to:
 - **Niski koszt zakupu** – jeden z najtańszych kompaktowych dostawczaków na rynku wtórnym
-- **Relatywnie prosta mechanika** – popularne jednostki i dobra dostępność części
+- **Stosunkowo prosta mechanika** – popularne jednostki i dobra dostępność części
 - **Funkcjonalna paka** – niski próg załadunku i praktyczne wymiary do drobnicy oraz dłuższych elementów
 - **Easy Seat** – możliwość przewozu przedmiotów o długości do 3110 mm
 
@@ -107,7 +107,7 @@ W codziennym użytkowaniu liczy się też realne spalanie. Diesel 1.5 dCi zwykle
 ### Typowe zastosowania
 
 - **Kurierzy** – lekkie paczki, przesyłki i dokumenty
-- **Rzemieślnicy** – hydraulicy, elektrycy, montażyści, czyli narzędzia i materiały do codziennej pracy
+- **Rzemieślnicy** – hydraulicy, elektrycy, monterzy, czyli narzędzia i materiały do codziennej pracy
 - **Gastronomia** – dostawy jedzenia i catering
 - **Kwiaciarnie i ogrodnictwo** – przewóz doniczek, skrzynek, worków i drobnych ładunków gabarytowych
 
@@ -128,7 +128,7 @@ W praktyce egzemplarze z lat 2016–2018 z przebiegiem 150–250 tys. km są wyr
 
 ## Porównanie Dokkera Van z konkurencją
 
-Na tle rywali Dokker Van kusi głównie relacją ceny do przestrzeni użytkowej. Trzeba jednak porównywać wersje homologacyjnie zbliżone, bo ładowność w każdym z tych modeli zależy od silnika, wyposażenia i konkretnej odmiany, a pojedyncze skrajne liczby łatwo wypaczają obraz.
+Na tle rywali Dokker Van kusi głównie relacją ceny do przestrzeni użytkowej. Trzeba jednak porównywać wersje zbliżone pod względem homologacji, bo ładowność w każdym z tych modeli zależy od silnika, wyposażenia i konkretnej odmiany, a pojedyncze skrajne liczby łatwo wypaczają obraz.
 
 W praktyce Dokker broni się prostotą, systemem Easy Seat i atrakcyjną ceną zakupu. Konkurenci potrafią zaoferować większą pakę albo lepsze wyposażenie, ale zwykle kosztują więcej albo mają mniej korzystny stosunek ceny do możliwości.
 

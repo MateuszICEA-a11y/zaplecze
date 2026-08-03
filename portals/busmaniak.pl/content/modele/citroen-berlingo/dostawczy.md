@@ -2,7 +2,7 @@
 title: "Citroën Berlingo dostawczy – wymiary, ładowność, homologacja N1"
 date: 2026-03-24
 lastmod: 2026-03-24
-description: "Citroën Berlingo dostawczy – warianty furgon M i XL, wymiary paki, ładowność, silniki 1.5 BlueHDI i korzyści homologacji N1 dla firm."
+description: "Citroën Berlingo dostawczy – warianty furgon M i XL, wymiary przestrzeni ładunkowej, ładowność, silniki 1.5 BlueHDi i korzyści homologacji N1 dla firm."
 draft: false
 author: "marek-kowalczyk"
 h1: "Citroën Berlingo dostawczy – przegląd wersji"
@@ -14,7 +14,7 @@ image: "/images/citroen-berlingo-dostawczy-hero.webp"
 image_alt: "Citroën Berlingo dostawczy przy magazynie"
 youtube: "Gkfl1LL1OoU"
 youtube_title: "Citroën Berlingo 1.5 BlueHDi 130 KM - test, opinie, spalanie"
-lead: "Berlingo dostawczy to wersja z homologacją ciężarową N1, przystosowana do transportu towarów. Dostępna w wariantach furgon M i XL, z ładownością zależnie od wersji do 1000 kg oraz przestrzenią ładunkową od ok. 3,3 m3 do 3,9 m3, a z systemem Extenso do ok. 4,4 m3."
+lead: "Berlingo dostawczy to wersja z homologacją ciężarową N1, przystosowana do transportu towarów. Dostępna w wariantach furgon M i XL, z ładownością do 1000 kg zależnie od wersji oraz przestrzenią ładunkową od ok. 3,3 m³ do 3,9 m³, a z systemem Extenso do ok. 4,4 m³."
 faq:
   - question: "Czy od Berlingo dostawczego można odliczyć 100% VAT?"
     answer: "Nie automatycznie. Samo N1 nie daje z góry pełnego odliczenia VAT – w Polsce standardowo przy użytku mieszanym odlicza się 50% VAT, a 100% wymaga użytkowania wyłącznie w działalności oraz spełnienia wymogów formalnych i podatkowych. W części przypadków znaczenie mają też cechy konstrukcyjne pojazdu."
@@ -26,13 +26,13 @@ faq:
 
 ## Berlingo dostawczy – przegląd wersji {#przegląd}
 
-Citroën Berlingo dostawczy w aktualnym wydaniu funkcjonuje jako kompaktowy furgon dla firm, dostępny w kilku konfiguracjach długości i kabiny. Najważniejsze różnice dotyczą homologacji, zabudowy przestrzeni ładunkowej oraz praktycznych parametrów transportowych.
+Citroën Berlingo dostawczy w aktualnym wydaniu to kompaktowy furgon dla firm, dostępny w kilku konfiguracjach długości i kabiny. Najważniejsze różnice dotyczą homologacji, zabudowy przestrzeni ładunkowej oraz praktycznych parametrów transportowych.
 
 ### Homologacja N1 i różnice wobec wersji osobowej
 
 [Citroën Berlingo](/modele/citroen-berlingo/) to model dostępny zarówno w wersji osobowej, jak i jako dostawczy furgon. Odmiana dostawcza ma homologację N1, ale sama ta homologacja nie oznacza automatycznie prawa do 100% odliczenia VAT. W Polsce standardowo przy użytku mieszanym odlicza się 50% VAT, a pełne odliczenie wymaga wykorzystywania auta wyłącznie do działalności i spełnienia formalności, m.in. zgłoszenia VAT-26 oraz prowadzenia ewidencji przebiegu, chyba że pojazd spełnia ustawowe kryteria konstrukcyjne wyłączające użytek prywatny.
 
-Wobec wersji osobowej M1 furgon różni się przede wszystkim układem wnętrza i przeznaczeniem. Zamiast tylnej kanapy ma przestrzeń ładunkową oddzieloną przegrodą, a konfiguracja nadwozia jest podporządkowana przewozowi towaru.
+W porównaniu z wersją osobową M1 furgon różni się przede wszystkim układem wnętrza i przeznaczeniem. Zamiast tylnej kanapy ma przestrzeń ładunkową oddzieloną przegrodą, a konfiguracja nadwozia jest podporządkowana przewozowi towaru.
 
 ### Warianty nadwozia
 
@@ -42,7 +42,7 @@ Okno w przegrodzie nie stanowi osobnego wariantu modelowego, lecz element wyposa
 
 ## Wymiary i ładowność {#wymiary}
 
-W tej części kluczowe są nie tylko same gabaryty nadwozia, ale też realne wymiary przestrzeni ładunkowej i otworów załadunkowych. To one decydują, czy Citroën Berlingo dostawczy sprawdzi się przy paletach, dłużycach albo codziennym transporcie narzędzi i sprzętu.
+W tej części kluczowe są nie tylko same gabaryty nadwozia, lecz także realne wymiary przestrzeni ładunkowej i otworów załadunkowych. To one decydują, czy Citroën Berlingo dostawczy sprawdzi się przy przewozie palet i dłużycy oraz w codziennym transporcie narzędzi i sprzętu.
 
 | Parametr                             | Berlingo M      | Berlingo XL     |
 |--------------------------------------|-----------------|-----------------|
@@ -59,19 +59,19 @@ W tej części kluczowe są nie tylko same gabaryty nadwozia, ale też realne wy
 | Objętość z Extenso (m³)              | ok. 3,8         | ok. 4,4         |
 | Ładowność (kg)                       | ok. 650–1000    | ok. 650–1000    |
 
-W praktyce wersja M przewozi jedną europaletę, a XL dwie europalety ustawione jedna za drugą. Europaleta ma 1200 x 800 mm, więc przy szerokości między nadkolami ok. 1230 mm mieści się na szerokość jednym bokiem, ale o wygodzie załadunku decydują także wymiary otworu i typ zabudowy.
+W praktyce wersja M przewozi jedną europaletę, a XL – dwie europalety ustawione jedna za drugą. Europaleta ma 1200 × 800 mm, więc przy szerokości między nadkolami ok. 1230 mm mieści się na szerokość jednym bokiem, ale o wygodzie załadunku decydują także wymiary otworu i typ zabudowy.
 
-Warto zwrócić uwagę na system Extenso/Moduwork. Dzięki uchylnemu bocznemu siedzeniu pasażera i klapie w przegrodzie można przewozić dłuższe przedmioty – do ok. 3090 mm w wersji M i do ok. 3440 mm w XL, a przy okazji zwiększyć objętość przestrzeni odpowiednio do ok. 3,8 i 4,4 m3.
+Warto zwrócić uwagę na system Extenso/Moduwork. Dzięki składanemu bocznemu siedzeniu pasażera i klapie w przegrodzie można przewozić dłuższe przedmioty – do ok. 3090 mm w wersji M i do ok. 3440 mm w XL – a przy okazji zwiększyć objętość przestrzeni odpowiednio do ok. 3,8 i 4,4 m³.
 
-{{% info title="Europalety" icon="engineering" %}}Podstawową drogą załadunku europalet są tylne drzwi dwuskrzydłowe. Otwór tylny ma ok. 1241 mm szerokości i ok. 1196 mm wysokości, a skrzydła pracują standardowo w położeniu 90°, z możliwością odryglowania do 180° zależnie od konfiguracji.{{% /info %}}
+{{% info title="Europalety" icon="engineering" %}}Podstawową drogą załadunku europalet są tylne drzwi dwuskrzydłowe. Otwór tylny ma ok. 1241 mm szerokości i ok. 1196 mm wysokości, a skrzydła otwierają się standardowo pod kątem 90°, z możliwością odryglowania do 180° zależnie od konfiguracji.{{% /info %}}
 
 Dla części firm istotne będzie też holowanie. W zależności od silnika i wersji Berlingo Van III może ciągnąć przyczepę z hamulcem do ok. 1350 kg, a bez hamulca zwykle ok. 680–750 kg.
 
 ## Silniki w Citroënie Berlingo dostawczym {#silniki}
 
-Oferta napędowa Berlingo dostawczego jest szersza niż tylko diesle. W zależności od generacji, rocznika i rynku obejmuje jednostki wysokoprężne, benzynowe oraz odmianę elektryczną.
+Oferta napędowa Berlingo dostawczego nie ogranicza się wyłącznie do diesli. W zależności od generacji, rocznika i rynku obejmuje jednostki wysokoprężne, benzynowe oraz odmianę elektryczną.
 
-### III generacja – 1.5 BlueHDI
+### III generacja – 1.5 BlueHDi
 
 W III generacji główną gamę diesli stanowi 1.5 BlueHDi, ale nie jest to jedyny dostępny napęd. W wielu rynkach występował także benzynowy 1.2 PureTech 110 KM.
 
@@ -82,7 +82,7 @@ Najczęściej spotykane warianty III generacji to:
 - **1.5 BlueHDi 130 KM**
 - **1.2 PureTech 110 KM**
 
-Dobór skrzyni biegów zależy od wersji silnikowej. Słabsze odmiany łączono z 5-biegowym manualem, mocniejsze z 6-biegową skrzynią manualną, a 1.5 BlueHDi 130 KM występował także z 8-biegowym automatem EAT8.
+Dobór skrzyni biegów zależy od wersji silnikowej. Słabsze odmiany łączono z 5-biegową skrzynią manualną, mocniejsze z 6-biegową skrzynią manualną, a 1.5 BlueHDi 130 KM występował także z 8-biegowym automatem EAT8.
 
 W gamie znalazł się również ë-Berlingo Van z silnikiem 100 kW (136 KM), akumulatorem 50 kWh brutto oraz ładowaniem AC 7,4/11 kW i DC do 100 kW.
 
@@ -90,7 +90,7 @@ W gamie znalazł się również ë-Berlingo Van z silnikiem 100 kW (136 KM), aku
 
 II generacja B9 była produkowana od 2008 r., a III generacja K9 od 2018 r. W nowszym modelu pojawiły się nowa platforma EMP2, bardziej rozbudowane systemy ADAS, automat EAT8 i elektryczna odmiana dostawcza.
 
-W II generacji popularny był [1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) nie tylko w wersjach 75 i 90 KM, ale zależnie od rocznika i rynku także w mocniejszych odmianach 100 i 110 KM. Występowały również benzynowe wersje 1.6 VTi.
+W II generacji popularny był [1.6 HDI](/modele/citroen-berlingo/1-6-hdi/) nie tylko w wersjach 75 i 90 KM, lecz także – zależnie od rocznika i rynku – w mocniejszych odmianach 100 i 110 KM. Występowały również benzynowe wersje 1.6 VTi.
 
 Dla firm zainteresowanych elektromobilnością dostępny jest [ë-Berlingo Van](/modele/citroen-berlingo/elektryczny/) z akumulatorem 50 kWh. Deklarowany zasięg sięgał do ok. 275 km WLTP, ale warto pamiętać, że zależy on od wersji, długości nadwozia i rocznika.
 
@@ -100,27 +100,27 @@ Szczegółowe dane techniczne i historię kolejnych generacji napędów znajdzie
 
 ## Koszty eksploatacji firmowej {#koszty}
 
-Przy aucie użytkowym ważniejsze od marketingowych haseł są konkretne zasady podatkowe i obsługowe. W przypadku Berlingo dostawczego trzeba rozdzielić kwestie VAT od bieżącego serwisu i wyposażenia układu napędowego.
+Przy aucie użytkowym ważniejsze od marketingowych haseł są konkretne zasady podatkowe i obsługowe. W przypadku Berlingo dostawczego trzeba oddzielić kwestie VAT od bieżącego serwisu i specyfiki układu napędowego.
 
 W zakresie VAT sama homologacja N1 nie gwarantuje pełnego odliczenia. Przy użytkowaniu mieszanym standardem jest 50% VAT, natomiast 100% wymaga użytkowania wyłącznie w działalności i spełnienia formalności przewidzianych przez przepisy, w tym zgłoszenia VAT-26 oraz ewidencji przebiegu, o ile pojazd nie spełnia ustawowych kryteriów konstrukcyjnych wyłączających użytek prywatny.
 
-Koszty serwisowe zależą głównie od wersji silnikowej. W europejskiej eksploatacji interwał wymiany oleju zwykle wynosi co 20 000 km lub 1 rok, a diesle 1.5 BlueHDi wymagają także uzupełniania AdBlue i mają filtr DPF oraz układ SCR. W tej jednostce zastosowano również pasek rozrządu, wymieniany według harmonogramu producenta zależnego od rocznika i rynku.
+Koszty serwisowe zależą głównie od wersji silnikowej. W europejskiej eksploatacji interwał wymiany oleju zwykle wynosi co 20 000 km lub 1 rok, a diesle 1.5 BlueHDi wymagają także uzupełniania AdBlue i mają filtr DPF oraz układ SCR. W tej jednostce zastosowano również pasek rozrządu, wymieniany według harmonogramu producenta – zależnie od rocznika i rynku.
 
-Praktycznie warto pamiętać także o pojemności zbiornika paliwa wynoszącej ok. 50 l. To parametr istotny przy planowaniu tras i kosztów tankowania w codziennej pracy flotowej.
+Warto też pamiętać o pojemności zbiornika paliwa wynoszącej ok. 50 l. To parametr istotny przy planowaniu tras i kosztów tankowania w codziennej pracy flotowej.
 
 Porównanie zużycia paliwa dla każdego wariantu silnikowego zawiera artykuł o [spalaniu Berlingo](/serwis/citroen-berlingo-spalanie/).
 
-{{% expert name="Tomasz Zieliński" %}}W ocenie firmowego furgonu najważniejsze są konfiguracja przestrzeni ładunkowej, dopasowanie napędu do pracy i realne wymagania serwisowe. W Berlingo warto zwrócić uwagę na obecność AdBlue, DPF i SCR w dieslach 1.5 BlueHDi oraz na możliwości systemu Extenso przy przewozie długich elementów.{{% /expert %}}
+{{% expert name="Tomasz Zieliński" %}}W ocenie firmowego furgonu najważniejsze są konfiguracja przestrzeni ładunkowej, dopasowanie napędu do charakteru pracy i realne wymagania serwisowe. W Berlingo warto zwrócić uwagę na obecność AdBlue, DPF i SCR w dieslach 1.5 BlueHDi oraz na możliwości systemu Extenso przy przewozie długich elementów.{{% /expert %}}
 
 {{% youtube %}}
 
 ## Konkurencja w segmencie dostawczym {#konkurencja}
 
-Najbliżsi rywale Berlingo dostawczego to zarówno konstrukcje z tego samego segmentu C-van, jak i mniejsze auta użytkowe. Najlepiej porównywać je na liczbach – przede wszystkim po objętości, ładowności i możliwościach przewozowych.
+Najbliżsi rywale Berlingo dostawczego to zarówno konstrukcje z tego samego segmentu C-van, jak i mniejsze auta użytkowe. Najlepiej porównywać je na liczbach – przede wszystkim pod względem objętości, ładowności i możliwości przewozowych.
 
-- **[Peugeot Partner Van](/modele/peugeot-partner/)** – technicznie spokrewniony, w segmencie ok. 3,3–4,4 m3 i do 1000 kg
-- **[Renault Kangoo Van](/modele/renault-kangoo/)** – segment C-van, objętość ok. 3,3–4,9 m3 zależnie od wersji
-- **[Opel Combo Cargo](/modele/opel-combo/)** – konstrukcyjnie zbliżony, zakres ok. 3,3–4,4 m3 i do 1000 kg
-- **[Fiat Fiorino](/modele/fiat-fiorino/)** – mniejszy segment, objętość ok. 2,5–2,8 m3 i ładowność zwykle ok. 610–660 kg
+- **[Peugeot Partner Van](/modele/peugeot-partner/)** – technicznie spokrewniony, w segmencie ok. 3,3–4,4 m³ i do 1000 kg
+- **[Renault Kangoo Van](/modele/renault-kangoo/)** – segment C-van, objętość ok. 3,3–4,9 m³ zależnie od wersji
+- **[Opel Combo Cargo](/modele/opel-combo/)** – konstrukcyjnie zbliżony, zakres ok. 3,3–4,4 m³ i do 1000 kg
+- **[Fiat Fiorino](/modele/fiat-fiorino/)** – mniejszy segment, objętość ok. 2,5–2,8 m³ i ładowność zwykle ok. 610–660 kg
 
-Na tle tych modeli Citroën Berlingo dostawczy mieści się w środku klasy kompaktowych furgonów. W wersjach M i XL oferuje odpowiednio ok. 3,3–4,4 m3 przestrzeni oraz do 1000 kg ładowności, a do tego przewozi 1 lub 2 europalety zależnie od długości nadwozia.
+Na tle tych modeli Citroën Berlingo dostawczy mieści się w środku klasy kompaktowych furgonów. W wersjach M i XL oferuje odpowiednio ok. 3,3–4,4 m³ przestrzeni oraz do 1000 kg ładowności, a do tego przewozi 1 lub 2 europalety zależnie od długości nadwozia.

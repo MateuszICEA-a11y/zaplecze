@@ -15,11 +15,11 @@ volume: 4400
 lead: "Nissan NV200 to kompaktowy furgon produkowany w Barcelonie w latach 2009–2019, znany z rekordowego stosunku wymiarów zewnętrznych do przestrzeni ładunkowej. Silniki 1.5 dCi i 1.6 benzyna, wersja osobowa Evalia na 7 miejsc i bezemisyjny e-NV200."
 faq:
   - question: "Czy NV200 nadaje się na kampera?"
-    answer: "Tak – kompaktowe wymiary i wysoki dach sprawiają, że to idealna baza dla micro-camperów. Mimo małej powierzchni zmieścisz pełnowymiarowe łóżko."
+    answer: "Tak – kompaktowe wymiary i wysoki dach sprawiają, że to idealna baza dla mikrokamperów. Mimo niewielkiej powierzchni zmieścisz pełnowymiarowe łóżko."
   - question: "Jaka jest szerokość między nadkolami?"
     answer: "1220 mm – mieści standardową europaletę w poprzek."
   - question: "Czy silnik 1.5 dCi ma koło dwumasowe?"
-    answer: "Większość wersji 90 KM ma sztywne koło zamachowe – tańsza wymiana sprzęgła (ok. 1200 zł vs 2500 zł z dwumasowym)."
+    answer: "Większość wersji 90 KM ma sztywne koło zamachowe – tańsza wymiana sprzęgła (ok. 1200 zł wobec 2500 zł z dwumasowym)."
 sources:
   - "Wikipedia – Renault K9K engine"
   - "oficjalna dokumentacja Nissan Europe"
@@ -28,19 +28,19 @@ sources:
 
 ## Historia Nissan NV200
 
-Jedna generacja, ale kilka wyraźnych etapów rozwoju – od klasycznego furgonu i osobowej Evali po elektryczne e-NV200.
+Jedna generacja, ale kilka wyraźnych etapów rozwoju – od klasycznego furgonu i osobowej Evalii po elektryczne e-NV200.
 
 ### Nissan NV200 / Evalia (2009–2014)
 
 Nissan wprowadził NV200 w 2009 roku jako globalny kompaktowy van i lekki samochód dostawczy. Europejska produkcja odbywała się w Barcelonie. Model miał rozstaw osi **2725 mm** i długość **4400 mm**.
 
-Od początku oferowano go jako furgon oraz kombi/osobową Evalię. Gama silnikowa obejmowała diesla **1.5 dCi 85 KM** i benzynowe **1.6 16V 110 KM**. Wersja osobowa nosiła nazwę Evalia.
+Od początku oferowano go jako furgon oraz kombi i osobową Evalię. Gama silnikowa obejmowała diesla **1.5 dCi 85 KM** i benzynowe **1.6 16V 110 KM**. Wersja osobowa nosiła nazwę Evalia.
 
 ### e-NV200 (2014–2018)
 
-W 2014 roku zadebiutowało e-NV200. Elektryczna odmiana dostała baterię **24 kWh**, silnik **80 kW/109 KM** i **254 Nm** momentu obrotowego.
+W 2014 roku zadebiutowało e-NV200. Elektryczna odmiana otrzymała baterię **24 kWh**, silnik **80 kW/109 KM** i **254 Nm** momentu obrotowego.
 
-Ładowność wynosiła około **700 kg**, więc auto nadal nadawało się do pracy w mieście. To była jedna z ważniejszych zalet e-NV200 – elektryczny napęd nie zabierał praktyczności znanej ze spalinowego NV200.
+Ładowność wynosiła około **700 kg**, więc auto nadal nadawało się do pracy w mieście. To była jedna z ważniejszych zalet e-NV200 – elektryczny napęd nie odbierał praktyczności znanej ze spalinowego NV200.
 
 ### e-NV200 40 kWh / schyłek produkcji (2018–2019)
 
@@ -75,14 +75,14 @@ Największy atut NV200 to paka jak na auto o miejskich gabarytach. W praktyce zm
 | Objętość | 4,2 m³ |
 | Próg załadowczy | 524 mm |
 
-- **Ładowność** – **650–771 kg** w furgonie, około **540–640 kg** w Evali
+- **Ładowność** – **650–771 kg** w furgonie, około **540–640 kg** w Evalii
 - **Europaleta** – mieści się w poprzek dzięki **1220 mm** między nadkolami
 - **Drzwi tylne** – asymetryczne skrzydełkowe, otwierane do **180°**
 - **Drzwi boczne** – przesuwane, po jednej lub obu stronach zależnie od wersji
 
 ## Silniki Nissana NV200
 
-Gama silnikowa NV200 nie była szeroka, ale dobrze pokrywała trzy scenariusze: tani diesel do pracy, benzynę do miasta i wersję elektryczną dla dostaw lokalnych.
+Gama silnikowa NV200 nie była szeroka, ale dobrze pokrywała trzy scenariusze: tani diesel do pracy, benzynę do miasta i wersję elektryczną do dostaw lokalnych.
 
 | Silnik | Moc | Moment | Spalanie (śr.) | Rozrząd | Roczniki |
 |--------|-----|--------|----------------|---------|----------|
@@ -122,10 +122,10 @@ Katalogowe spalanie w cyklu mieszanym wynosiło około **6,9–7,6 l/100 km**. T
 
 Elektryczna wersja rozwijała **80 kW/109 KM** i **254 Nm**. W zależności od rocznika stosowano baterię **24 kWh** albo **40 kWh**.
 
-Ładowanie AC miało moc **3,6 lub 6,6 kW** zależnie od wersji, a szybkie ładowanie realizowano przez **CHAdeMO DC**. Prędkość maksymalna wynosiła **123 km/h**.
+Ładowanie AC miało moc **3,6 lub 6,6 kW** zależnie od wersji, a szybkie ładowanie realizowano przez złącze **CHAdeMO DC**. Prędkość maksymalna wynosiła **123 km/h**.
 
 {{% expert name="Marek Kowalczyk" %}}
-NV200 wjeżdża tam, gdzie [Fiat Fiorino](/modele/fiat-fiorino/) czuje się swobodnie, ale oferuje znacznie większą pakę – 4,2 m³ wobec 2,8 m³. W egzemplarzach dCi z początku produkcji (do 2012 r.) wymień profilaktycznie panewki co 150 tys. km. Zaniedbanie tego grozi zatarciem na dolnych łożyskach wału.
+NV200 wjeżdża tam, gdzie [Fiat Fiorino](/modele/fiat-fiorino/) czuje się swobodnie, ale oferuje znacznie większą pakę – 4,2 m³ wobec 2,8 m³. W egzemplarzach dCi z początku produkcji (do 2012 r.) wymień profilaktycznie panewki co 150 tys. km. Zaniedbanie tego grozi zatarciem dolnych łożysk wału.
 {{% /expert %}}
 
 ## Wersje nadwoziowe NV200
@@ -142,7 +142,7 @@ Roboczy wariant z przesuwanymi drzwiami bocznymi i asymetrycznymi drzwiami tylny
 
 ### Evalia (5/7-osobowy)
 
-Evalia była bardziej cywilną odmianą NV200. Przeszklone nadwozie i dodatkowe miejsca sprawiały, że auto trafiało zarówno do rodzin, jak i do przewozu osób.
+Evalia była bardziej cywilną odmianą NV200. Przeszklone nadwozie i dodatkowe miejsca sprawiały, że auto trafiało zarówno do rodzin, jak i do firm przewozowych.
 
 - **Evalia 5-os.** – bagażnik **870 l** do dachu
 - **Evalia 7-os.** – bagażnik **308 l** za trzecim rzędem; po złożeniu foteli **2400 l**
@@ -155,7 +155,7 @@ Starsze egzemplarze mają akumulator **24 kWh**, nowsze **40 kWh**. Realny zasi�
 
 ### Zabudowy specjalne i kampery
 
-NV200 bywa bazą dla micro-camperów dzięki długości przestrzeni po złożeniu siedzeń ponad **190 cm**, szerokości między nadkolami **1220 mm** i wysokości auta około **1860 mm**. Taki gabaryt pozwala normalnie parkować w mieście, czego nie da się powiedzieć o wielu większych kampervanach.
+NV200 bywa bazą dla mikrokamperów dzięki przestrzeni po złożeniu siedzeń o długości ponad **190 cm**, szerokości między nadkolami **1220 mm** i wysokości auta około **1860 mm**. Taki gabaryt pozwala normalnie parkować w mieście, czego nie da się powiedzieć o wielu większych kampervanach.
 
 Popularne są moduły z łóżkiem **190–200 x 115–120 cm**, szufladą kuchenną i dodatkowym akumulatorem. Na rynkach zagranicznych oferowano też fabryczne lub partnerskie konwersje kempingowe, np. **Nissan e-NV200 Camper** i zabudowy typu camperkit.
 
@@ -195,12 +195,12 @@ Sprzęgło kosztuje zazwyczaj **1200–1800 zł**. Jeśli dana wersja ma koło d
 - **Bateria e-NV200** – degradacja po latach jest naturalna; naprawa modułowa lub używany pakiet to zwykle kilkanaście tys. zł, a nowy kompletny pakiet jest wielokrotnie droższy i zależy od rynku oraz serwisu
 
 {{% info title="Rolki drzwi przesuwnych" icon="engineering" %}}
-Przy zakupie furgona sprawdź działanie drzwi przesuwnych – wyrobione rolki to jedna z najczęstszych usterek eksploatacyjnych. Nasmarowanie prowadnic pomaga, ale jeśli mechanizm już ma luz, samo smarowanie nie rozwiąże problemu.
+Przy zakupie furgona sprawdź działanie drzwi przesuwnych – wyrobione rolki to jedna z najczęstszych usterek eksploatacyjnych. Nasmarowanie prowadnic pomaga, ale jeśli mechanizm ma już luz, samo smarowanie nie rozwiąże problemu.
 {{% /info %}}
 
 ## Porównanie NV200 z konkurencją
 
-NV200 nie wygrywa wszystkim, ale ma jedną mocną kartę – bardzo dużą pakę przy nadal miejskich gabarytach. W praktyce to auto dla kogoś, kto chce wozić więcej niż Fiorino, ale bez przesiadki do większego vana.
+NV200 nie wygrywa we wszystkim, ale ma jedną mocną kartę – bardzo dużą pakę przy nadal miejskich gabarytach. W praktyce to auto dla kogoś, kto chce wozić więcej niż Fiorino, ale bez przesiadki do większego vana.
 
 | Parametr | Nissan NV200 | Fiat Fiorino III | Citroën Berlingo II | Renault Kangoo II |
 |----------|--------------|------------------|---------------------|-------------------|
@@ -215,7 +215,7 @@ NV200 nie wygrywa wszystkim, ale ma jedną mocną kartę – bardzo dużą pakę
 | Diesel bazowy | 1.5 dCi 90 KM | 1.3 MJT 75 KM | 1.6 HDi 75 KM | 1.5 dCi 75 KM |
 | Wersja elektryczna | ✅ e-NV200 | ❌ | ❌ (w gen II) | ✅ Kangoo Z.E. |
 
-NV200 jest najlepszy dla kuriera i miejskiej dostawy, gdy naprawdę chcesz wozić **2 europalety** w aucie o kompaktowej długości. [Citroën Berlingo](/modele/citroen-berlingo/) lepiej wypada jako auto rodzinno-osobowe, [Renault Kangoo](/modele/renault-kangoo/) ma szerszy wybór wersji, a Fiorino najłatwiej zaparkować w ciasnym centrum.
+NV200 sprawdza się najlepiej u kuriera i w miejskiej dostawie, gdy naprawdę chcesz wozić **2 europalety** w aucie o kompaktowej długości. [Citroën Berlingo](/modele/citroen-berlingo/) lepiej wypada jako auto rodzinno-osobowe, [Renault Kangoo](/modele/renault-kangoo/) ma szerszy wybór wersji, a Fiorino najłatwiej zaparkować w ciasnym centrum.
 
 {{% youtube %}}
 

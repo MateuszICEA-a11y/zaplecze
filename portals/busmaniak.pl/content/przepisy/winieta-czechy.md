@@ -10,7 +10,7 @@ image_alt: "Tablica informacyjna na czeskiej autostradzie z symbolem winiety ele
 youtube: "Jg6o__KW8G8"
 youtube_title: "Winiety w Czechach - ceny"
 main_keyword: "winieta czechy"
-lead: "Czeska e-winieta w 2026 roku kosztuje od 230 CZK za jednodniową do 2570 CZK za roczną. System jest w pełni elektroniczny – rejestrujesz numer tablicy, a kamery same sprawdzają ważność. Busy powyżej 3,5 tony podlegają oddzielnemu systemowi mytne. Przejazd bez winiety grozi mandatem do 20 000 CZK."
+lead: "Czeska e-winieta w 2026 roku kosztuje od 230 CZK za jednodniową do 2570 CZK za roczną. System jest w pełni elektroniczny – rejestrujesz numer rejestracyjny, a kamery same sprawdzają ważność. Busy powyżej 3,5 tony podlegają odrębnemu systemowi mytne. Przejazd bez winiety grozi mandatem do 20 000 CZK."
 faq:
   - question: "Ile kosztuje winieta w Czechach na 10 dni?"
     answer: "Dziesięciodniowa e-winieta w Czechach kosztuje 300 CZK (ok. 52 zł) w 2026 roku. Możesz ją kupić na oficjalnej stronie edalnice.cz lub na stacjach benzynowych."
@@ -32,13 +32,13 @@ W 2026 roku kierowcy mają do wyboru cztery okresy ważności. Jednodniowa winie
 - **Jednodniowa (1 dzień)** – ważna wyłącznie w wybranym dniu kalendarzowym, do godziny 23:59:59.
 - **Dziesięciodniowa (10 dni)** – najpopularniejszy wybór na urlop lub krótki wyjazd serwisowy.
 - **Trzydziestodniowa (30 dni)** – opłacalna przy regularnych kursach na trasie Polska–Czechy.
-- **Roczna (365 dni)** – ważna od wybranego dnia przez pełne 365 dni, nie pokrywa się z rokiem kalendarzowym.
+- **Roczna (365 dni)** – ważna od wybranego dnia przez pełne 365 dni; nie pokrywa się z rokiem kalendarzowym.
 
-Winieta obejmuje płatne odcinki autostrad (dálnice), które są oznaczone zielonym znakiem z białym symbolem autostrady. Drogi krajowe i lokalne są bezpłatne.
+Winieta obejmuje płatne odcinki autostrad (dálnice), oznaczone zielonym znakiem z białym symbolem autostrady. Drogi krajowe i lokalne są bezpłatne.
 
 ## Ceny winiet w Czechach 2026
 
-Od 1 stycznia 2026 roku czeskie winiety podrożały o ok. 5% w stosunku do 2025 roku. Podwyżka wynika z ustawowej indeksacji uwzględniającej inflację i przyrost kilometrów nowych autostrad.
+Od 1 stycznia 2026 roku czeskie winiety podrożały o ok. 5% w stosunku do 2025 roku. Podwyżka wynika z ustawowej indeksacji uwzględniającej inflację oraz przyrost liczby kilometrów autostrad.
 
 | Okres ważności | Cena 2026 (CZK) | Cena orientacyjna (PLN) | Cena orientacyjna (EUR) |
 | :--- | :--- | :--- | :--- |
@@ -48,14 +48,14 @@ Od 1 stycznia 2026 roku czeskie winiety podrożały o ok. 5% w stosunku do 2025 
 | 365 dni | 2570 CZK | ok. 450 zł | ok. 103 EUR |
 
 {{% info title="Zniżki dla pojazdów ekologicznych" icon="leaf" %}}
-Pojazdy zasilane CNG, biometanem lub LNG otrzymują 50% zniżki na każdy rodzaj winiety. Hybrydy plug-in z emisją CO2 poniżej 50 g/km płacą jedynie 25% ceny standardowej – roczna winieta kosztuje wtedy 640 CZK. Samochody elektryczne i wodorowe są całkowicie zwolnione z opłat.
+Pojazdy zasilane CNG, biometanem lub LNG otrzymują zniżkę w wysokości 50% na każdy rodzaj winiety. Hybrydy plug-in z emisją CO2 poniżej 50 g/km płacą jedynie 25% ceny standardowej – roczna winieta kosztuje wtedy 640 CZK. Samochody elektryczne i wodorowe są całkowicie zwolnione z opłat.
 
 Zwolnienie dla aut zarejestrowanych poza Czechami nie jest automatyczne. Należy pobrać formularz „Oznámení o osvobození” ze strony edalnice.cz, wypełnić go, a następnie podpisać elektronicznie lub wysłać skan urzędowo poświadczonego podpisu na adres e-mail `epodatelna@edalnice.cz`. Zgłoszenia należy dokonać przed wjazdem na płatne drogi.
 {{% /info %}}
 
-Ceny dotyczą pojazdów do 3,5 tony DMC – niezależnie od tego, czy to bus osobowy, dostawczy furgon czy kamper. Liczy się [dopuszczalna masa całkowita](/przepisy/dmc-co-to/) wpisana w dowodzie rejestracyjnym, a nie faktyczna waga pojazdu.
+Ceny dotyczą pojazdów do 3,5 tony DMC – niezależnie od tego, czy to bus osobowy, furgon dostawczy czy kamper. Liczy się [dopuszczalna masa całkowita](/przepisy/dmc-co-to/) wpisana w dowodzie rejestracyjnym, a nie rzeczywista masa pojazdu.
 
-Kluczowa zasada dotyczy zestawów pojazdów: w Czechach liczy się wyłącznie DMC pojazdu ciągnącego. Jeśli bus o DMC do 3,5 t ciągnie przyczepę (nawet jeśli DMC zestawu przekracza 3,5 t), kierowca nadal podlega pod system e-winiet. Przyczepa jest w takiej sytuacji zwolniona z dodatkowych opłat, w przeciwieństwie do zasad obowiązujących np. w polskim systemie e-TOLL.
+Kluczowa zasada dotyczy zestawów pojazdów: w Czechach liczy się wyłącznie DMC pojazdu ciągnącego. Jeśli bus o DMC do 3,5 t ciągnie przyczepę (nawet gdy DMC zestawu przekracza 3,5 t), kierowca nadal podlega systemowi e-winiet. Przyczepa jest w takiej sytuacji zwolniona z dodatkowych opłat, w przeciwieństwie do zasad obowiązujących np. w polskim systemie e-TOLL.
 
 ## Gdzie kupić czeską winietę
 
@@ -65,9 +65,9 @@ Najwygodniejszą metodą jest zakup online przed wyjazdem. Nie musisz szukać pu
 
 Oficjalnym sklepem jest portal **edalnice.cz** prowadzony przez Państwowy Fundusz Infrastruktury Transportowej (SFDI). Proces zajmuje kilka minut – wpisujesz numer rejestracyjny, kraj rejestracji, kategorię pojazdu i wybierasz okres ważności. Płatność odbywa się kartą lub przelewem.
 
-![Czeska autostrada z kamerami kontrolujacymi winiety](/images/winieta-czechy-hero.webp)
+![Czeska autostrada z kamerami kontrolującymi winiety](/images/winieta-czechy-hero.webp)
 
-Po opłaceniu winieta jest aktywna natychmiast lub od wybranej daty (można ustawić początek ważności do 90 dni do przodu). Potwierdzenie przychodzi na podany adres e-mail.
+Po opłaceniu winieta jest aktywna natychmiast lub od wybranej daty (początek ważności można ustawić z wyprzedzeniem do 90 dni). Potwierdzenie przychodzi na podany adres e-mail.
 
 ### Zakup stacjonarny
 
@@ -87,7 +87,7 @@ System wykorzystuje technologię satelitarną GPS. Przed wjazdem na czeskie drog
 
 1. Zarejestrować pojazd w systemie mytne na stronie mytocz.eu.
 2. Zamontować na przedniej szybie obowiązkowe urządzenie pokładowe (OBU) – aplikacja mobilna służy jedynie do obsługi konta i nie zastępuje urządzenia.
-3. Doładować konto przedpłatne lub podpiąć kartę płatniczą.
+3. Doładować konto przedpłatne lub dodać kartę płatniczą.
 
 Stawka za kilometr zależy od klasy emisji silnika (EURO), liczby osi i kategorii drogi. Pojazdy spełniające normę EURO VI płacą najniższe stawki.
 
@@ -97,7 +97,7 @@ Wielu kierowców busów kamperowych o DMC 3,5 t nie zdaje sobie sprawy, że ich 
 
 ## Kary za brak winiety w Czechach
 
-Czeska policja i Administracja Celna (Celní správa) kontrolują winiety na dwa sposoby: poprzez stacjonarne kamery ANPR na portalach nad autostradami oraz za pomocą mobilnych patroli z kamerami zamontowanymi w radiowozach.
+Czeska policja i Administracja Celna (Celní správa) kontrolują winiety na dwa sposoby: za pomocą stacjonarnych kamer ANPR na portalach nad autostradami oraz mobilnych patroli z kamerami zamontowanymi w radiowozach.
 
 ### Wysokość mandatów
 
@@ -119,10 +119,10 @@ Ułatwieniem w ruchu lokalnym są bezpłatne odcinki autostrad stanowiące obwod
 Popularne trasy alternatywne:
 
 - **Praga–Brno** – droga nr 2 przez Kutną Horę i Jihlavę (ok. 40 min dłużej niż autostradą D1).
-- **Hradec Králové–Ostrava** – droga nr 35 i 11 omijająca płatne odcinki.
+- **Hradec Králové–Ostrava** – drogi nr 35 i 11 omijające płatne odcinki.
 - **Tranzyt PL–AT** – przejazd przez Ołomuniec drogami I klasy z pominięciem D1 i D47.
 
-Pamiętaj jednak, że trasy alternatywne są wolniejsze, przechodzą przez miejscowości i nie zawsze nadają się dla długich busów z ograniczoną zwrotnością.
+Pamiętaj jednak, że trasy alternatywne są wolniejsze, przebiegają przez miejscowości i nie zawsze nadają się do jazdy długimi busami o ograniczonej zwrotności.
 
 
 {{% youtube %}}

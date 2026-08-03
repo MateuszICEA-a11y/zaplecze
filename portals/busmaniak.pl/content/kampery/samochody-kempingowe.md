@@ -19,7 +19,7 @@ faq:
   - question: "Jakie prawo jazdy jest potrzebne na samochód kempingowy?"
     answer: "Prawo jazdy kat. B wystarcza do pojazdów o DMC do 3500 kg – obejmuje to camper vany i mniejsze alkowy. Większe kampery (DMC 3501–7500 kg) wymagają kat. C1, a powyżej 7500 kg – kat. C."
   - question: "Czy warto kupić samochód kempingowy?"
-    answer: "Finansowo kamper zwraca się przy 30–50 noclegach rocznie w porównaniu z hotelami. Główna wartość to elastyczność podróżowania – brak rezerwacji, własne łóżko i kuchnia. Warto zacząć od wynajmu, by sprawdzić, czy styl kamperowy nam odpowiada."
+    answer: "Finansowo kamper zwraca się przy 30–50 noclegach rocznie w porównaniu z hotelami. Główna wartość to elastyczność podróżowania – brak rezerwacji, własne łóżko i kuchnia. Warto zacząć od wynajmu, by sprawdzić, czy kamperowy styl podróżowania nam odpowiada."
 sources:
   - "CIVD"
   - "CEPiK"
@@ -29,7 +29,7 @@ sources:
 
 ## Czym jest samochód kempingowy
 
-Samochód kempingowy to pojazd silnikowy przystosowany do podróżowania i nocowania, wyposażony w łóżko, aneks kuchenny i instalację wodną. W polskim prawie jest rejestrowany jako „samochód specjalny kempingowy" z kodem SA w dowodzie rejestracyjnym. W języku potocznym funkcjonuje wiele synonimów: kamper, campervan czy pojazd rekreacyjny (RV).
+Samochód kempingowy to pojazd silnikowy przystosowany do podróżowania i nocowania, wyposażony w łóżko, aneks kuchenny i instalację wodną. W polskim prawie jest rejestrowany jako „samochód specjalny kempingowy" z kodem SA w dowodzie rejestracyjnym. W języku potocznym funkcjonuje wiele synonimów: kamper, camper van czy pojazd rekreacyjny (RV).
 
 ### Wymagania rejestracyjne
 
@@ -42,11 +42,11 @@ Kluczowe elementy wyposażenia to:
 - **Siedzenia** – przynajmniej jedno przy stoliku (oprócz foteli kierowcy i pasażera)
 - **Przestrzeń bagażowa** – oddzielona od części mieszkalnej
 
-Zmiana przeznaczenia pojazdu z dostawczego na kempingowy od lipca 2022 roku wiąże się z obowiązkiem zapłaty podatku akcyzowego. Jego stawka wynosi 3,1% wartości pojazdu dla silników do 2000 cm³ oraz aż 18,6% dla silników o pojemności powyżej 2000 cm³. To kluczowy koszt, zwłaszcza że popularne bazy jak Fiat Ducato często mają silniki objęte wyższą stawką.
+Zmiana przeznaczenia pojazdu z dostawczego na kempingowy od lipca 2022 roku wiąże się z obowiązkiem zapłaty podatku akcyzowego. Jego stawka wynosi 3,1% wartości pojazdu dla silników do 2000 cm³ oraz aż 18,6% dla silników o pojemności powyżej 2000 cm³. To istotny koszt, zwłaszcza że popularne bazy, takie jak Fiat Ducato, często mają silniki objęte wyższą stawką.
 
 ## Rodzaje samochodów kempingowych
 
-Rynek samochodów kempingowych obejmuje pięć głównych kategorii, które różnią się wielkością, ceną i przeznaczeniem, dostosowując się do potrzeb różnych użytkowników.
+Rynek samochodów kempingowych obejmuje pięć głównych kategorii, różniących się wielkością, ceną i przeznaczeniem, dopasowanych do potrzeb różnych użytkowników.
 
 ### Przegląd typów
 
@@ -58,7 +58,7 @@ Rynek samochodów kempingowych obejmuje pięć głównych kategorii, które ró�
 | **Półintegrał** | 6–7,5 m | 3200–3800 kg | 2–5 | Tak | **350–650 tys. zł** |
 | **Integrał** | 6,5–9 m | 3500–5500 kg | 2–6 | Tak | **500–1200 tys. zł** |
 
-Warto również wspomnieć o rynku camperboxów, czyli modułowych zabudów w cenie 10–25 tys. zł (np. Egoe, Ququq). Pozwalają one na błyskawiczną transformację kombivana lub busa w mini kampera bez ingerencji w dowód rejestracyjny i płacenia akcyzy. Dzięki nim pojazd zachowuje pełną funkcjonalność na co dzień.
+Warto również wspomnieć o rynku camperboxów, czyli modułowych zabudów w cenie 10–25 tys. zł (np. Egoe, Ququq). Pozwalają one na błyskawiczną zamianę kombivana lub busa w mini kampera bez ingerencji w dowód rejestracyjny i bez płacenia akcyzy. Dzięki nim pojazd zachowuje pełną funkcjonalność na co dzień.
 
 {{% expert name="Anna Wóźniak" %}}
 Wybierając typ kampera, zacznij od odpowiedzi na trzy pytania: ile osób będzie regularnie podróżować, jak długie będą wyjazdy i czy pojazd ma służyć też na co dzień. Dla pary wystarczy camper van, dla rodziny z dziećmi – alkowa lub półintegrał, a dla seniorów na wielomiesięcznych trasach – integrał.
@@ -74,14 +74,14 @@ Wybierając typ kampera, zacznij od odpowiedzi na trzy pytania: ile osób będzi
 
 Alkowa to kamper z charakterystyczną nadbudówką nad kabiną kierowcy, która pełni funkcję dodatkowego łóżka. To najtańszy sposób na zapewnienie **4–6 miejsc** do spania w jednym pojeździe. Bazuje najczęściej na podwoziach takich jak [Fiat Ducato](/modele/fiat-ducato/) lub [Ford Transit](/modele/ford-transit/). Więcej o modelach rodzinnych przeczytasz w artykule o [kamperze 5-osobowym](/kampery/kamper-5-osobowy/).
 
-### Półintegrał i integrał – komfort ponad kompaktowość
+### Półintegrał i integrał – komfort ponad zwartość
 
 Półintegrał ma aerodynamiczny przód bez alkowy, a integrał – całkowicie zintegrowane nadwozie, w którym kabina kierowcy stanowi część mieszkalną. Oba typy oferują najlepszą izolację termiczną i akustyczną, ale kosztują więcej i wymagają więcej miejsca do parkowania.
 
 Półintegrał to kompromis – niższa sylwetka i lepsze spalanie niż w alkowie, a jednocześnie pełnowymiarowa łazienka i kuchnia. Integrał to szczyt komfortu kempingowego, z rozwiązaniami takimi jak podwójne podłogi z ogrzewaniem, co upodabnia go do małego mieszkania. W Polsce najpopularniejsze marki w tym segmencie to Bürstner, Hymer, Knaus i Carthago.
 
 {{% info title="Nazewnictwo" icon="info" %}}
-W Polsce funkcjonują zamiennie terminy: samochód kempingowy, kamper, campervan i RV. W dokumentach urzędowych obowiązuje nazwa „samochód specjalny kempingowy”. Termin „przyczepa kempingowa” (caravan) dotyczy przyczepy ciągniętej przez samochód – to osobna kategoria, nieomawiana w tym artykule.
+W Polsce funkcjonują zamiennie terminy: samochód kempingowy, kamper, camper van i RV. W dokumentach urzędowych obowiązuje nazwa „samochód specjalny kempingowy”. Termin „przyczepa kempingowa” (caravan) dotyczy przyczepy ciągniętej przez samochód – to osobna kategoria, nieomawiana w tym artykule.
 {{% /info %}}
 
 ## Ceny samochodów kempingowych w 2026 roku
@@ -109,7 +109,7 @@ Zakup samochodu kempingowego to decyzja na lata – średni okres użytkowania k
 - **Styl podróżowania** – krótkie, weekendowe wycieczki (camper van), dwutygodniowe urlopy (alkowa) czy wielomiesięczne trasy po Europie (integrał).
 - **Codzienna użyteczność** – czy camper van ma służyć jako jedyny samochód w rodzinie, czy też duży kamper będzie stał przez 10 miesięcy na parkingu.
 
-Kluczową kwestią jest realna ładowność pojazdów na kategorię B. Większość kamperów (półintegrały, alkowy) z zabudową waży 3000–3200 kg. Po doliczeniu pasażerów, wody, paliwa i bagażu ich dopuszczalna masa całkowita (DMC) 3500 kg jest niemal zawsze przekroczona, co za granicą (np. w Austrii) grozi wysokimi karami.
+Kluczową kwestią jest realna ładowność przy prawie jazdy kategorii B. Większość kamperów (półintegrały, alkowy) z zabudową waży 3000–3200 kg. Po doliczeniu pasażerów, wody, paliwa i bagażu masa pojazdu niemal zawsze przekracza dopuszczalną masę całkowitą (DMC) 3500 kg, co za granicą (np. w Austrii) grozi wysokimi karami.
 
 Przed zakupem warto skorzystać z wypożyczalni. Tygodniowy wynajem kampera kosztuje **3–6 tys. zł** i pozwala przetestować konkretny typ w praktyce.
 

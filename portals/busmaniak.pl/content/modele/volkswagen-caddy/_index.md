@@ -13,18 +13,18 @@ image: "/images/volkswagen-caddy-hero.webp"
 image_alt: "Volkswagen Caddy V na drodze"
 youtube: "HWOAeVgnhuM"
 youtube_title: "Volkswagen Caddy 2.0 TDI 122 DSG TEST Kombivana za 180 000 zł"
-lead: "Volkswagen Caddy to jeden z najpopularniejszych kombivanów w Europie, produkowany od 1979 roku w pięciu generacjach. Piąta generacja na platformie MQB przeniosła model na zupełnie nowy poziom jakości i technologii."
+lead: "Volkswagen Caddy to jeden z najpopularniejszych kombivanów w Europie, produkowany od 1979 roku w pięciu generacjach. Piąta generacja na platformie MQB wyniosła model na zupełnie nowy poziom jakości i technologii."
 faq:
   - question: "Jakie są generacje Volkswagena Caddy?"
     answer: "Pięć generacji: Caddy I (1979-1995, pickup), Caddy II (1995-2004), Caddy III (2003-2015, bestseller), Caddy IV (2015-2020, ewolucja III) i Caddy V (od 2020, platforma MQB)."
   - question: "Jaki silnik wybrać w Caddy?"
     answer: "2.0 TDI 102 KM to bestseller – sprawdzony diesel z rozsądnym spalaniem (6-7 l/100 km). Do miasta wystarczy 1.0 TSI 116 KM. 1.6 TDI ma pasek rozrządu; przy zakupie sprawdź EGR, DPF, wtryski i historię serwisową."
   - question: "Ile kosztuje Caddy w porównaniu z Berlingo?"
-    answer: "Caddy jest droższe o 15-25% od Berlingo zarówno nowe, jak i na rynku wtórnym. Wyższa cena wynika z lepszej jakości wykończenia, platformy MQB i wyższej wartości rezydualnej."
+    answer: "Caddy jest droższy od Berlingo o 15-25% zarówno jako auto nowe, jak i na rynku wtórnym. Wyższa cena wynika z lepszej jakości wykończenia, platformy MQB i wyższej wartości rezydualnej."
   - question: "Czy Caddy ma wersję 7-osobową?"
     answer: "Tak, w wersji Maxi (III/IV gen.) lub Long (V gen.) dostępny jest trzeci rząd siedzeń w konfiguracji 2+3+2."
   - question: "Jakie są typowe usterki Caddy?"
-    answer: "Najczęstsze problemy to awarie skrzyni DSG (mechatronik, sprzęgło), typowe dla diesli problemy z EGR i DPF oraz usterki osprzętu zależne od konkretnego silnika."
+    answer: "Najczęstsze problemy to awarie skrzyni DSG (mechatronika, sprzęgło), typowe dla diesli problemy z EGR i DPF oraz usterki osprzętu zależne od konkretnego silnika."
 sources:
   - "Wikipedia – Volkswagen Caddy"
   - "volkswagen-samochody-dostawcze.pl"
@@ -59,7 +59,7 @@ Najważniejsze cechy tej generacji:
 
 ### Caddy III (2003–2015, Typ 2K)
 
-To generacja, która zbudowała pozycję modelu w Europie. Caddy III wszedł do gry jako pełnoprawny kombivan z szeroką gamą wersji użytkowych i osobowych.
+To generacja, która zbudowała pozycję modelu w Europie. Caddy III zadebiutował jako pełnoprawny kombivan z szeroką gamą wersji użytkowych i osobowych.
 
 Kluczowe zmiany:
 - debiut jako **kombivan**
@@ -76,12 +76,12 @@ Najważniejsze zmiany:
 - głęboki facelift Caddy III
 - oznaczenia **2K SA / 2KN**
 - nowe TDI dostosowane do **Euro 6**
-- więcej systemów bezpieczeństwa, przy zachowaniu platformy poprzednika
+- więcej systemów bezpieczeństwa przy zachowaniu platformy poprzednika
 - utrzymanie szerokiej oferty wersji użytkowych i osobowych, w tym odmian **Maxi**
 
 ### Caddy V (od 2020, Typ SB)
 
-Piąta generacja to już zupełnie inny samochód. Caddy V przeszedł na platformę MQB, dostał cyfrowy kokpit i system Travel Assist, a do tego poprawiono praktyczne wymiary zabudowy.
+Piąta generacja to już zupełnie inny samochód. Caddy V przeszedł na platformę MQB, otrzymał cyfrowy kokpit i system Travel Assist, a do tego poprawiono praktyczne wymiary zabudowy.
 
 Najważniejsze zmiany:
 - platforma **MQB**
@@ -91,7 +91,7 @@ Najważniejsze zmiany:
 - cyfrowy kokpit, **Digital Cockpit** i **Travel Assist**
 - wersje **Cargo**, **Life**, **Style** i **California**
 
-{{% info title="Platforma MQB" icon="info" %}}Przeskok z wcześniejszej konstrukcji na MQB w Caddy V to nie kosmetyka. Ta zmiana dała nowe systemy wsparcia kierowcy, nowocześniejsze wnętrze i bardziej praktyczną przestrzeń ładunkową.{{% /info %}}
+{{% info title="Platforma MQB" icon="info" %}}Przejście z wcześniejszej konstrukcji na MQB w Caddy V to nie kosmetyka. Ta zmiana dała nowe systemy wsparcia kierowcy, nowocześniejsze wnętrze i bardziej praktyczną przestrzeń ładunkową.{{% /info %}}
 
 ## Dane techniczne i wymiary Volkswagena Caddy {#dane-techniczne}
 
@@ -108,11 +108,11 @@ Wymiary i parametry Caddy zależą od wersji nadwozia. W praktyce dla firmy najw
 
 W krótkim Caddy Cargo zmieścisz **3,1 m3**, a w wydłużonym **3,7 m3**. Maksymalna szerokość przestrzeni to **1614 mm**, a **1230 mm między nadkolami** pozwala załadować europaletę bokiem.
 
-W wersjach osobowych bagażnik do linii okien ma około **1213 l** w krótkim nadwoziu i około **1720 l** w odmianie Long. To właśnie dlatego Caddy w wersji osobowej bywa traktowane jak pełnoprawny rodzinny van, a nie tylko podniesiony kombivan.
+W wersjach osobowych bagażnik do linii okien ma około **1213 l** w krótkim nadwoziu i około **1720 l** w odmianie Long. To właśnie dlatego Caddy w wersji osobowej bywa traktowany jak pełnoprawny rodzinny van, a nie tylko podniesiony kombivan.
 
 ## Silniki Caddy'ego {#silniki}
 
-Gama silnikowa Caddy zmieniała się wraz z generacjami, ale od lat trzon oferty stanowią diesle TDI. W starszych rocznikach liczy się prostota i stan osprzętu, a w nowszych – emisja, serwis i to, czy auto jeździło głównie po mieście czy po trasach.
+Gama silnikowa Caddy zmieniała się wraz z generacjami, ale od lat trzon oferty stanowią diesle TDI. W starszych rocznikach liczy się prostota i stan osprzętu, a w nowszych – emisja, serwis i to, czy auto jeździło głównie po mieście, czy po trasach.
 
 - **[2.0 TDI](/modele/volkswagen-caddy/tdi/) 75/102/140/150 KM** – kluczowy diesel w III, IV i V generacji
 - **1.6 TDI EA189 75/102 KM** – stosowany w III/IV gen.; **pasek rozrządu**, a typowe problemy to EGR, DPF, wtryski i osprzęt
@@ -140,7 +140,7 @@ Gama silnikowa Caddy zmieniała się wraz z generacjami, ale od lat trzon oferty
 | 1.5 TSI       | V         | 114 KM      | 220 Nm         | Euro 6d                       | –               | 6,5–7,2 l/100 km        |
 | 1.5 TGI/CNG   | –         | –           | –              | –                             | –               | –                       |
 
-Jeśli szukasz diesla do pracy, najbezpieczniejszym wyborem w nowszym aucie zwykle jest **2.0 TDI 102 KM**. W starszych rocznikach wciąż mocną opinię ma **1.9 TDI**, natomiast **1.6 TDI EA189** trzeba kupować świadomie – ten silnik ma **pasek rozrządu**, więc przy zakupie sprawdź przede wszystkim EGR, DPF, wtryski i historię serwisową.
+Jeśli szukasz diesla do pracy, najbezpieczniejszym wyborem w nowszym aucie zwykle jest **2.0 TDI 102 KM**. W starszych rocznikach wciąż dobrą opinią cieszy się **1.9 TDI**, natomiast **1.6 TDI EA189** trzeba kupować świadomie – ten silnik ma **pasek rozrządu**, więc przy zakupie sprawdź przede wszystkim EGR, DPF, wtryski i historię serwisową.
 
 ![Volkswagen Caddy V na drodze](/images/volkswagen-caddy-hero.webp)
 
@@ -157,9 +157,9 @@ Volkswagen Caddy występował i występuje w kilku wyraźnie różnych odmianach
 | **Caddy Kombi**                | 5       | –                                 | kompromis między ludźmi a towarem     | zwykle **5 miejsc** |
 | **Life / Style / Move**        | 5       | –                                 | rodzinny van i auto codzienne         | bagażnik ok. **1213 l** lub **1720 l** do linii okien |
 | **Long**                       | 5 lub 7 | –                                 | więcej miejsca na pasażerów i bagaże  | opcjonalnie **7 miejsc** |
-| **California**                 | –       | –                                 | lekki vanlife i weekendowe wyjazdy    | łóżko ok. **198 x 107 cm**, moduł kempingowy, opcjonalny namiot tylny |
+| **California**                 | –       | –                                 | lekki camping samochodowy i weekendowe wyjazdy    | łóżko ok. **198 x 107 cm**, moduł kempingowy, opcjonalny namiot tylny |
 
-W III i IV generacji wydłużona odmiana nosiła nazwę **Maxi**, a w V spotkasz oznaczenie **Long**. Idea jest ta sama: więcej długości, więcej bagażnika i więcej sensu, jeśli auto ma wozić rodzinę albo większy ładunek bez składania wszystkiego na styk.
+W III i IV generacji wydłużona odmiana nosiła nazwę **Maxi**, a w V spotkasz oznaczenie **Long**. Idea jest ta sama: więcej długości, więcej bagażnika i więcej praktycznego sensu, jeśli auto ma wozić rodzinę albo większy ładunek bez składania wszystkiego na styk.
 
 - **Caddy Cargo** – dostawczy furgon z przegrodą, **2 lub 3 miejsca**, przestrzeń ładunkowa **3,1 m3**, długość **4500 mm**
 - **Caddy Cargo Maxi/Long** – wydłużony furgon, **2 lub 3 miejsca**, przestrzeń **3,7 m3**, długość **4853 mm**
@@ -169,7 +169,7 @@ W III i IV generacji wydłużona odmiana nosiła nazwę **Maxi**, a w V spotkasz
 - **Caddy California** – mini-kamper z łóżkiem około **198 x 107 cm**, bazujący na wersji osobowej z pakietem kempingowym
 - **Wersje specjalne i zabudowy** – chłodnia, serwis mobilny, taxi, auto dla osób z niepełnosprawnościami, zabudowy warsztatowe
 
-{{% expert name="Marek Kowalczyk" %}}Caddy California ma sens wtedy, gdy chcesz spać w aucie, ale nie potrzebujesz pełnego kampera. Łóżko około 198 x 107 cm wystarcza dla dwóch osób, a namiot tylny realnie zwiększa funkcjonalność na postoju.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Caddy California ma sens wtedy, gdy chcesz spać w aucie, ale nie potrzebujesz pełnego kampera. Łóżko około 198 x 107 cm wystarcza dla dwóch osób, a namiot tylny faktycznie zwiększa funkcjonalność na postoju.{{% /expert %}}
 
 ## Caddy na tle konkurencji {#konkurencja}
 
@@ -189,11 +189,11 @@ W segmencie kombivanów i małych furgonów Caddy ma mocnych rywali. Różnice n
 
 Warto też pamiętać, że **Ford Transit Connect nowej generacji jest technicznie spokrewniony z Caddy**. To oznacza zbliżoną bazę techniczną i podobne gabaryty, choć przy zakupie nadal liczy się konkretna konfiguracja i wyposażenie.
 
-Caddy zwykle wygrywa jakością kabiny i tym, jak jeździ. Berlingo i Kangoo częściej kontratakują ceną, objętością ładunkową albo wyższą ładownością w części wersji.
+Caddy zwykle wygrywa jakością kabiny i tym, jak jeździ. Berlingo i Kangoo częściej konkurują ceną, objętością ładunkową albo wyższą ładownością w części wersji.
 
 ## Typowe usterki Volkswagen Caddy {#usterki}
 
-Typowe awarie w Caddy zależą głównie od silnika, skrzyni i sposobu eksploatacji. Inne problemy ma roboczy furgon jeżdżący po mieście, a inne rodzinne auto z dieslem na trasę.
+Typowe awarie w Caddy zależą głównie od silnika, skrzyni i sposobu eksploatacji. Inne problemy ma roboczy furgon jeżdżący po mieście, a inne – rodzinne auto z dieslem na trasę.
 
 ### 1.9 TDI
 
@@ -216,7 +216,7 @@ W **1.6 TDI EA189** nie ma problemu z łańcuchem rozrządu, bo ten silnik ma pa
 
 ### 2.0 TDI
 
-W nowszych Caddy diesel **2.0 TDI** jest rozsądnym wyborem, ale koszty napraw bywają już wyraźnie wyższe niż w starszych 1.9 TDI.
+W nowszych generacjach Caddy diesel **2.0 TDI** jest rozsądnym wyborem, ale koszty napraw bywają już wyraźnie wyższe niż w starszych 1.9 TDI.
 
 - **EGR** – objawy: falowanie obrotów, check engine, spadek mocy; zwykle **1000–2000 zł**
 - **AdBlue / NOx** w nowszych wersjach – objawy: komunikaty o emisji, ograniczenie możliwości rozruchu, błędy układu; naprawy zwykle **1500–4000 zł**
@@ -228,7 +228,7 @@ W nowszych Caddy diesel **2.0 TDI** jest rozsądnym wyborem, ale koszty napraw b
 
 Benzynowe TSI są sensowną opcją do krótszych tras i jazdy mieszanej. Typowe problemy nie wyglądają tu tak groźnie jak w dieslach z zapchanym DPF, ale osprzęt też potrafi upomnieć się o budżet.
 
-Najczęstsze objawy to **falowanie obrotów**, **check engine**, **spadek mocy** i **nierówna praca na zimno**. Zwykle nie kończy się to od razu grubą awarią, ale lekceważenie pierwszych sygnałów potrafi zwiększyć rachunek.
+Najczęstsze objawy to **falowanie obrotów**, **check engine**, **spadek mocy** i **nierówna praca na zimno**. Zwykle nie kończy się to od razu poważną awarią, ale lekceważenie pierwszych sygnałów potrafi podnieść rachunek.
 
 - **cewki** – objawy: wypadanie zapłonów, nierówna praca, check engine; koszt **100–250 zł/szt.**
 - **świece** – objawy: gorszy rozruch, nierówna praca pod obciążeniem; komplet **100–250 zł**
@@ -239,7 +239,7 @@ Najczęstsze objawy to **falowanie obrotów**, **check engine**, **spadek mocy**
 
 ### DSG DQ200 / DQ250
 
-Automaty DSG poprawiają komfort, ale przy zaniedbanym serwisie potrafią wygenerować duży rachunek.
+Automaty DSG poprawiają komfort, ale przy zaniedbanym serwisie potrafią narazić na duży wydatek.
 
 - **mechatronika** – objawy: szarpanie, brak płynności zmiany biegów, tryb awaryjny; naprawa zwykle **3000–6000 zł**
 - **sprzęgła** – objawy: przeciąganie biegów, drgania przy ruszaniu, szarpanie; koszt **2500–4500 zł**
@@ -296,6 +296,6 @@ DSG zwykle podnosi cenę o **5–10 tys. zł**, a wersje **Long/Maxi** o kolejne
 |--------------------------------|------------------------------|
 | Nowy Caddy V Van 2.0 TDI 102 KM | od ok. **115 tys. zł netto** |
 | Nowy Caddy V Maxi Van          | od ok. **130 tys. zł netto** |
-| Caddy California mini kamper   | od ok. **180 tys. zł brutto** |
+| Caddy California mini-kamper   | od ok. **180 tys. zł brutto** |
 
 Na rynku wtórnym najtańsze sztuki zwykle wymagają wkładu. W przypadku Caddy oznacza to najczęściej poprawki blacharskie, zawieszenie, osprzęt diesla albo skrzynię DSG.

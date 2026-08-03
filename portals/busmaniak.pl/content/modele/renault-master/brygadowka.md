@@ -26,7 +26,7 @@ faq:
 
 ## Czym jest brygadówka i jak odróżnić ją od Combi?
 
-W nomenklaturze branżowej brygadówka to wersja furgonu z dodatkowym rzędem siedzeń i przegrodą oddzielającą część pasażerską od ładunkowej. W odróżnieniu od wersji Combi, część towarowa pozostaje wyraźnie wydzielona i podporządkowana przewozowi sprzętu.
+W nomenklaturze branżowej brygadówka to wersja furgonu z dodatkowym rzędem siedzeń i przegrodą oddzielającą część pasażerską od ładunkowej. W odróżnieniu od wersji Combi część towarowa pozostaje wyraźnie wydzielona i podporządkowana przewozowi sprzętu.
 
 Kluczowe jest też rozróżnienie homologacji. W praktyce firmowej N1 oznacza pojazd do przewozu ładunków o DMC do 3,5 t, N2 – od 3,5 t do 12 t, a M1 – pojazd osobowy do 8 miejsc poza kierowcą.
 
@@ -40,7 +40,7 @@ Od homologacji zależą nie tylko dokumenty, ale też badania techniczne, sposó
 
 ## Warianty i wymiary Renault Master brygadówka
 
-W przypadku hasła Renault Master brygadówka trzeba najpierw ustalić generację auta. Renault Master III był produkowany od 2010 r., lifting wprowadzono w 2019 r., a Master IV pokazano w 2023 r. i wprowadzano na rynek od 2024 r. – dlatego wymiary, silniki i wyposażenie nie są wspólne dla wszystkich roczników.
+W przypadku Renault Master brygadówki trzeba najpierw ustalić generację auta. Renault Master III był produkowany od 2010 r., lifting wprowadzono w 2019 r., a Master IV pokazano w 2023 r. i wprowadzano na rynek od 2024 r. – dlatego wymiary, silniki i wyposażenie nie są wspólne dla wszystkich roczników.
 
 Poniższe długości odnoszą się do typowych wymiarów nadwozi Mastera III. Dla brygadówki trzeba jednak pamiętać, że rzeczywista długość części ładunkowej za drugim rzędem, wysokość wnętrza i objętość zależą od konkretnej zabudowy oraz wykonania przegrody.
 
@@ -59,7 +59,7 @@ Szczególnie ważna jest ładowność homologacyjna. Przy DMC 3,5 t zależy ona 
 W brygadówce spotyka się przegrody pełne i siatkowe. Pełna lepiej izoluje kabinę od ładunku, a siatkowa ułatwia kontrolę przewożonych elementów, ale przy długich i ciężkich materiałach kluczowe pozostaje prawidłowe mocowanie ładunku.
 {{% /info %}}
 
-## Silnik do Mastera brygadowego – jaki wybrać?
+## Silnik do Mastera brygadówki – jaki wybrać?
 
 Dobór silnika w brygadówce ma większe znaczenie niż w zwykłym aucie osobowym, bo pojazd często wozi jednocześnie ludzi i narzędzia. Rzetelne porównanie wymaga jednak wskazania konkretnej generacji oraz pełnych danych jednostki napędowej.
 
@@ -67,7 +67,7 @@ Przy ocenie napędu warto sprawdzać nie tylko moc w kW/KM, ale też moment obro
 
 ### Warianty mocy 135–180 KM
 
-Sam zakres 135–180 KM nie opisuje całej gamy Renault Master we wszystkich generacjach, dlatego nie można traktować go jako uniwersalnego. Dla Mastera III i Mastera IV występowały różne jednostki, nazewnictwo i konfiguracje, więc przed zakupem trzeba porównać konkretny silnik z konkretnego rocznika.
+Sam zakres 135–180 KM nie opisuje całej gamy Renault Master we wszystkich generacjach, dlatego nie można traktować go jako uniwersalnego. W Masterze III i Masterze IV występowały różne jednostki, nazewnictwo i konfiguracje, więc przed zakupem trzeba porównać konkretny silnik z konkretnego rocznika.
 
 W praktyce firmowej warto zestawić ze sobą:
 
@@ -82,7 +82,7 @@ To ważne, bo różnice w dopuszczalnej masie przyczepy rzędu 2000–3500 kg z 
 
 ### Manual czy automat EDC?
 
-Nie warto używać tu automatycznie nazwy EDC bez odniesienia do konkretnej generacji i wersji, bo w Masterze typ przekładni zależał od rocznika i konfiguracji. Przed zakupem trzeba po prostu potwierdzić, jaki rodzaj skrzyni ma dany egzemplarz i jak wpływa on na pracę z obciążeniem.
+Nie warto posługiwać się nazwą EDC bez odniesienia do konkretnej generacji i wersji, bo w Masterze typ przekładni zależał od rocznika i konfiguracji. Przed zakupem trzeba po prostu potwierdzić, jaki rodzaj skrzyni ma dany egzemplarz i jak wpływa on na pracę z obciążeniem.
 
 Jeśli auto ma regularnie ciągnąć przyczepę lub jeździć pod pełnym obciążeniem, znaczenie ma nie sama nazwa skrzyni, ale jej homologacja, dopuszczalne masy i charakter pracy w realnych warunkach. Tu najlepiej opierać się na dokumentacji konkretnej wersji.
 
@@ -99,15 +99,15 @@ Rozsądne minimum wyposażenia obejmuje:
 - przegrodę dobraną do rodzaju wożonych materiałów
 - możliwość montażu półek lub regałów za przegrodą
 
-Przy zabezpieczeniu ładunku warto trzymać się dobrych praktyk wynikających z EN 12195 dotyczącej mocowania ładunków. Długie elementy, takie jak rury czy profile, powinny być mocowane pasami, blokadami albo przewożone w systemach dachowych, a nie pozostawiane luzem za przegrodą.
+Przy zabezpieczaniu ładunku warto trzymać się dobrych praktyk wynikających z normy EN 12195 dotyczącej mocowania ładunków. Długie elementy, takie jak rury czy profile, powinny być mocowane pasami, blokadami albo przewożone w systemach dachowych, a nie pozostawiane luzem za przegrodą.
 
 Przed zakupem lub zabudową dobrze też sprawdzić liczbę punktów mocowania oraz dopuszczalne obciążenie pojedynczego ucha. W aucie roboczym ma to większe znaczenie niż sama katalogowa pojemność przestrzeni.
 
-Zamiast przypadkowych akcesoriów warto szukać po prostu sprawdzonych systemów transportu dachowego. To bezpieczniejsze i bardziej uniwersalne rozwiązanie niż przewożenie długich elementów wewnątrz kabiny lub luźno w części ładunkowej.
+Zamiast przypadkowych akcesoriów warto szukać po prostu sprawdzonych systemów transportu dachowego. To bezpieczniejsze i bardziej uniwersalne rozwiązanie niż przewożenie długich elementów wewnątrz pojazdu lub luźno w części ładunkowej.
 
 ## Wyposażenie kabiny pasażerskiej
 
-W brygadówce najważniejsza nie jest sama liczba miejsc, ale to, jak wygodnie załoga korzysta z auta na co dzień. Dotyczy to zwłaszcza szerokości miejsca środkowego z przodu, łatwości wejścia do drugiego rzędu, liczby schowków i możliwości sensownego oddzielenia ekipy od sprzętu.
+W brygadówce najważniejsza nie jest sama liczba miejsc, lecz to, jak wygodnie załoga korzysta z auta na co dzień. Dotyczy to zwłaszcza szerokości miejsca środkowego z przodu, łatwości wejścia do drugiego rzędu, liczby schowków i możliwości sensownego oddzielenia ekipy od sprzętu.
 
 Trzeba też uważać na zbyt ogólne listy wyposażenia. Elementy takie jak nawiew dla drugiego rzędu, układ drzwi, liczba gniazd 12 V/USB czy dodatkowe schowki zależą od wersji, rynku i sposobu zabudowy, więc powinny być potwierdzone dla konkretnego auta.
 
@@ -129,13 +129,13 @@ Przy zakupie używanej brygadówki sprawdź przede wszystkim stan przegrody i je
 
 ## Koszty Renault Master brygadówka – zakup i utrzymanie
 
-Koszty Renault Master brygadówka trzeba rozpatrywać osobno dla aut nowych i używanych oraz osobno dla Mastera III i IV. Bez wskazania konkretnego cennika, roku modelowego i rynku nie da się rzetelnie podać jednej aktualnej ceny zakupu.
+Koszty brygadówki Renault Master trzeba rozpatrywać osobno dla aut nowych i używanych oraz osobno dla Mastera III i IV. Bez wskazania konkretnego cennika, roku modelowego i rynku nie da się rzetelnie podać jednej aktualnej ceny zakupu.
 
 ### Ceny nowych i używanych
 
-Zamiast operować szybko dezaktualizującymi się widełkami, lepiej porównywać konkretne ogłoszenia lub cenniki z oznaczeniem generacji, DMC, liczby miejsc i rodzaju zabudowy. W przypadku rynku wtórnego szczególnie istotne są stan przegrody, zgodność dokumentów, historia serwisowa i stopień zużycia auta pod obciążeniem.
+Zamiast operować szybko dezaktualizującymi się widełkami, lepiej porównywać konkretne ogłoszenia lub cenniki z oznaczeniem generacji, DMC, liczby miejsc i rodzaju zabudowy. Na rynku wtórnym szczególnie istotne są stan przegrody, zgodność dokumentów, historia serwisowa i stopień zużycia auta pod obciążeniem.
 
-Koszty eksploatacji mogą być częściowo zbliżone do zwykłego furgonu, ale nie można zakładać, że są identyczne. Brygadówka może różnić się masą własną, profilem obciążenia i sposobem użytkowania, co przekłada się na zużycie paliwa, opon, hamulców i zawieszenia.
+Koszty eksploatacji mogą być częściowo zbliżone do zwykłego furgonu, ale nie można zakładać, że są identyczne. Brygadówka może różnić się masą własną, charakterem obciążenia i sposobem użytkowania, co przekłada się na zużycie paliwa, opon, hamulców i zawieszenia.
 
 Przy analizie budżetu firmowego warto osobno policzyć:
 
@@ -143,9 +143,9 @@ Przy analizie budżetu firmowego warto osobno policzyć:
 - koszt kompletu opon odpowiedniego rozmiaru
 - koszt obsługi hamulców przedniej i tylnej osi
 - koszt OC lub OC/AC dla auta firmowego
-- interwały wymiany oleju zgodne z planem serwisowym konkretnej wersji
+- okresy między wymianami oleju zgodne z harmonogramem serwisowym konkretnej wersji
 
-Jeśli firma rozważa cięższą wersję N2 albo pracę w transporcie międzynarodowym, trzeba uwzględnić też inny reżim eksploatacyjny. Wersje powyżej 3,5 t DMC podlegają innym wymaganiom, a od połowy 2026 r. trwa etapowe rozszerzanie obowiązku inteligentnych tachografów 2. generacji w transporcie międzynarodowym także dla lekkich pojazdów powyżej 2,5 t DMC wykonujących zarobkowy przewóz rzeczy w UE.
+Jeśli firma rozważa cięższą wersję N2 albo pracę w transporcie międzynarodowym, trzeba uwzględnić też odmienne warunki eksploatacji. Wersje powyżej 3,5 t DMC podlegają innym wymaganiom, a od połowy 2026 r. trwa etapowe rozszerzanie obowiązku inteligentnych tachografów 2. generacji w transporcie międzynarodowym także dla lekkich pojazdów powyżej 2,5 t DMC wykonujących zarobkowy przewóz rzeczy w UE.
 
 W praktyce znaczenie mają też uprawnienia kierowcy. Kategoria B obejmuje pojazd do 3,5 t DMC, z przyczepą lekką do 750 kg lub zestaw do 3,5 t, z kodem B96 do 4,25 t, a B+E zwykle pozwala na zestaw z pojazdem do 3,5 t i cięższą przyczepą zgodnie z homologacją. Kategoria C1 dotyczy pojazdów od 3,5 do 7,5 t.
 

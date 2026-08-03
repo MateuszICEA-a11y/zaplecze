@@ -14,18 +14,18 @@ volume: 500
 lead: "Ford E-Transit to w pełni elektryczna wersja najpopularniejszego dużego dostawczaka w Europie. Produkowany od 2022 roku w tureckim zakładzie Ford Otosan, oferuje do 317 km zasięgu WLTP i ładowność sięgającą 1616 kg – parametry, które czynią go realną alternatywą dla diesla w logistyce miejskiej i regionalnej."
 faq:
   - question: "Jaki zasięg ma Ford E-Transit?"
-    answer: "Ford E-Transit z baterią 68 kWh (użytkowe) osiąga do 317 km w cyklu WLTP w najlżejszej konfiguracji L2H2. W praktyce miejskiej to 200–260 km, zależnie od obciążenia i temperatury. Wersja z 2024 roku z baterią 89 kWh oferuje jeszcze większy zasięg."
+    answer: "Ford E-Transit z baterią 68 kWh (użyteczną) osiąga do 317 km w cyklu WLTP w najlżejszej konfiguracji L2H2. W praktyce miejskiej to 200–260 km, zależnie od obciążenia i temperatury. Wersja z 2024 roku z baterią 89 kWh oferuje jeszcze większy zasięg."
   - question: "Ile kosztuje Ford E-Transit w Polsce?"
-    answer: "Ceny Ford E-Transit w Polsce zaczynają się od ok. 250 000 PLN netto za wersję L2H2 z silnikiem 135 kW (184 KM). Warianty z dłuższym rozstawem osi i mocniejszym silnikiem 198 kW kosztują odpowiednio więcej."
+    answer: "Ceny Forda E-Transita w Polsce zaczynają się od ok. 250 000 PLN netto za wersję L2H2 z silnikiem 135 kW (184 KM). Warianty z dłuższym rozstawem osi i mocniejszym silnikiem 198 kW kosztują odpowiednio więcej."
   - question: "Jak szybko ładuje się Ford E-Transit na DC?"
-    answer: "Ford E-Transit obsługuje ładowanie DC o mocy do 115 kW. Naładowanie baterii od 15% do 80% zajmuje ok. 34 minuty. Ładowanie AC (wallbox) przebiega z mocą do 11,3 kW – pełne ładowanie trwa ok. 8 godzin."
-  - question: "Czy Ford E-Transit jest lepszy od Mercedes eSprinter?"
-    answer: "Ford E-Transit oferuje większą liczbę konfiguracji nadwoziowych i niższą cenę wejściową. Mercedes eSprinter z baterią 113 kWh zapewnia jednak dłuższy zasięg (do 400 km WLTP). Wybór zależy od priorytetów – cena i elastyczność konfiguracji przemawiają za Fordem, zasięg za Mercedesem."
+    answer: "Ford E-Transit obsługuje ładowanie DC o mocy do 115 kW. Naładowanie baterii od 15% do 80% zajmuje ok. 34 minuty. Ładowanie AC (wallbox) przebiega z mocą do 11,3 kW – pełne naładowanie trwa ok. 8 godzin."
+  - question: "Czy Ford E-Transit jest lepszy od Mercedesa eSprintera?"
+    answer: "Ford E-Transit oferuje większą liczbę konfiguracji nadwoziowych i niższą cenę początkową. Mercedes eSprinter z baterią 113 kWh zapewnia jednak dłuższy zasięg (do 400 km WLTP). Wybór zależy od priorytetów – cena i elastyczność konfiguracji przemawiają za Fordem, zasięg za Mercedesem."
 ---
 
-## Historia i generacje Forda E-Transit
+## Historia i generacje Forda E-Transita
 
-Ford E-Transit to model młody, ale już da się jasno rozpisać jego rozwój. Najważniejsze jest jedno: duży E-Transit w Europie od początku opiera się na baterii **77 kWh brutto / 68 kWh użytecznych**, a kolejne lata przynosiły głównie poprawki wyposażenia i systemów pokładowych.
+Ford E-Transit to model młody, ale jego rozwój da się już jasno uporządkować. Najważniejsze jest jedno: duży E-Transit w Europie od początku opiera się na baterii **77 kWh brutto / 68 kWh użytecznych**, a kolejne lata przynosiły głównie poprawki wyposażenia i systemów pokładowych.
 
 ### Transit BEV Concept i zapowiedź (2020–2021)
 
@@ -45,9 +45,9 @@ W latach 2023–2026 Ford rozwijał głównie oprogramowanie i wyposażenie. Dot
 
 Nie zmieniła się natomiast podstawowa specyfikacja akumulatora w dużym E-Transicie. W tej wersji modelowej nadal mówimy o baterii **68 kWh użytecznych**, a nie o większym pakiecie 89 kWh.
 
-## Historia i konstrukcja Ford E-Transit
+## Historia i konstrukcja Forda E-Transita
 
-To elektryczna odmiana dużego Transita, przygotowana fabrycznie pod zastosowania dostawcze. Ford nie zmieniał całej filozofii auta – chodziło o zachowanie znanej przestrzeni roboczej i dołożenie napędu BEV tam, gdzie ma sens w eksploatacji flotowej.
+To elektryczna odmiana dużego Transita, przygotowana fabrycznie pod zastosowania dostawcze. Ford nie zmieniał całej filozofii auta – chodziło o zachowanie znanej przestrzeni roboczej i dołożenie napędu BEV tam, gdzie ma to sens w eksploatacji flotowej.
 
 ### Premiera i produkcja Ford Otosan
 
@@ -59,7 +59,7 @@ E-Transit jest fabrycznie opracowaną elektryczną wersją Transita, z dedykowan
 
 E-Transit wprowadzony w 2022 r. bazuje na Fordzie Transicie Mk8 / V363; od MY2024 wprowadzano modernizacje gamy. Zawieszenie przednie to kolumny McPhersona, tylne – układ z resorami piórowymi w wersjach użytkowych. Układ hamulcowy współpracuje z rekuperacją i pozwala dobrać poziom odzysku energii do warunków pracy auta.
 
-## Dane techniczne i wymiary Forda E-Transit
+## Dane techniczne i wymiary Forda E-Transita
 
 W przypadku E-Transita sama moc silnika to tylko połowa obrazu. Równie ważne są długość, wysokość, DMC i realna kubatura, bo to one decydują, czy auto sprawdzi się jako kurierka, mobilny serwis czy baza pod zabudowę.
 
@@ -89,9 +89,9 @@ Jeśli porównujesz oferty z ogłoszeń, nie patrz wyłącznie na opis „duży 
 
 W tym modelu nie ma jednej uniwersalnej ładowności dla całej gamy. Zależy ona od nadwozia, DMC i tego, czy mówimy o furgonie, podwoziu czy wersji do zabudowy.
 
-Dlatego przy E-Transicie lepiej porównywać np. furgony **350L / 390L** z wariantami **425L**, zamiast operować jedną wartością dla wszystkich odmian. Deklarowane **1616 kg** należy odnosić do wybranych konfiguracji i homologacji, a nie traktować jako domyślny wynik typowego furgonu L2H2.
+Dlatego przy E-Transicie lepiej porównywać np. furgony **350L / 390L** z wariantami **425L**, zamiast operować jedną wartością dla wszystkich odmian. Deklarowane **1616 kg** należy odnosić do wybranych konfiguracji i homologacji, a nie traktować jako domyślnego wyniku typowego furgonu L2H2.
 
-## Silniki Forda E-Transit
+## Silniki Forda E-Transita
 
 Duży Ford E-Transit występuje z dwoma wariantami napędu elektrycznego. Oba korzystają z tej samej baterii i napędu na tył, ale różnią się mocą i docelowym zastosowaniem.
 
@@ -100,7 +100,7 @@ Duży Ford E-Transit występuje z dwoma wariantami napędu elektrycznego. Oba ko
 | 135 kW         | 184 KM | 430 Nm       | RWD   | 120 km/h | 77 / 68 kWh           | ok. 25–31 kWh/100 km | wybrane furgony i podwozia |
 | 198 kW         | 269 KM | 430 Nm       | RWD   | 120 km/h | 77 / 68 kWh           | zbliżone lub nieco wyższe | bogatsze i specjalistyczne konfiguracje |
 
-W obu przypadkach moment obrotowy wynosi **430 Nm**, więc różnica nie sprowadza się do „czy ruszy z ładunkiem”, tylko raczej do tego, jak auto zachowuje się przy przyspieszaniu i pracy na szybszych odcinkach. Dla typowej logistyki miejskiej słabsza wersja jest zwykle wystarczająca.
+W obu przypadkach moment obrotowy wynosi **430 Nm**, więc różnica nie sprowadza się do tego, „czy ruszy z ładunkiem”, lecz raczej do tego, jak auto zachowuje się przy przyspieszaniu i pracy na szybszych odcinkach. Dla typowej logistyki miejskiej słabsza wersja jest zwykle wystarczająca.
 
 ### Emisje i klasyfikacja napędu
 
@@ -112,7 +112,7 @@ W elektrycznym dostawczaku liczby katalogowe trzeba od razu zestawić z warunkam
 
 ### Realny zasięg E-Transita w praktyce
 
-Zasięg Forda E-Transit w cyklu WLTP wynosi od **217 do 317 km**, zależnie od konfiguracji nadwozia i masy własnej pojazdu. Najdłuższy zasięg osiągają wybrane, lżejsze wersje furgonowe.
+Zasięg Forda E-Transita w cyklu WLTP wynosi od **217 do 317 km**, zależnie od konfiguracji nadwozia i masy własnej pojazdu. Najdłuższy zasięg osiągają wybrane, lżejsze wersje furgonowe.
 
 ![Ford E-Transit furgon elektryczny na stacji ładowania](/images/ford-e-transit-hero.webp)
 
@@ -131,14 +131,14 @@ W praktyce zasięg zależy od kilku zmiennych:
 | DC (CCS Combo 2) | do 115 kW | ok. 34 min | ok. 45 min | szybkie doładowanie w trasie |
 
 {{% info title="Informacja" icon="info" %}}
-Ford E-Transit obsługuje precondycjonowanie baterii – system automatycznie przygotowuje ogniwa przed planowaną sesją ładowania DC, jeśli trasa jest ustawiona w nawigacji.
+Ford E-Transit obsługuje wstępne przygotowanie termiczne baterii – system automatycznie przygotowuje ogniwa przed planowaną sesją ładowania DC, jeśli trasa jest ustawiona w nawigacji.
 {{% /info %}}
 
 Dla flot najważniejsze jest ładowanie nocne we własnej bazie. Przy mocy **11,3 kW** auto da się naładować w czasie jednej nocnej przerwy, co dobrze pasuje do stałych tras dziennych.
 
-## Wersje nadwoziowe Forda E-Transit
+## Wersje nadwoziowe Forda E-Transita
 
-To jedna z mocniejszych stron tego modelu. Ford E-Transit występuje w kilku konfiguracjach długości i wysokości oraz w kilku typach nadwozia, dzięki czemu łatwiej dopasować auto do konkretnej roboty niż w wielu konkurencyjnych elektrykach.
+To jedna z mocniejszych stron tego modelu. Ford E-Transit występuje w kilku konfiguracjach długości i wysokości oraz w kilku typach nadwozia, dzięki czemu łatwiej dopasować auto do konkretnej pracy niż w wielu konkurencyjnych elektrykach.
 
 ### Najważniejsze odmiany użytkowe
 
@@ -151,7 +151,7 @@ To jedna z mocniejszych stron tego modelu. Ford E-Transit występuje w kilku kon
 
 Najbardziej naturalne środowisko dla tego auta to kurierka miejska, serwis mobilny i dostawy regionalne z powrotem do bazy na nocne ładowanie. Dużym plusem jest też **Pro Power Onboard 2,3 kW**, przydatny tam, gdzie auto ma jednocześnie przewozić sprzęt i go zasilać.
 
-Z tego powodu E-Transit bywa sensownym wyborem jako **showroom**, **food truck** albo pojazd serwisowy. To zastosowania, w których dostęp do gniazd 230 V i cicha praca mają realną wartość.
+Z tego powodu E-Transit bywa sensownym wyborem jako **mobilny salon wystawowy**, **food truck** albo pojazd serwisowy. To zastosowania, w których dostęp do gniazd 230 V i cicha praca mają realną wartość.
 
 ### A co z kamperem?
 
@@ -163,7 +163,7 @@ Jeśli ktoś rozważa taką konwersję, to częściej w formie pojazdu pokazoweg
 W praktyce najbardziej uniwersalny jest środkowy rozmiar furgonu. Największe nadwozie daje więcej kubatury, ale szybciej „zjada” zasięg i trudniej je wykorzystać w ciasnej zabudowie miejskiej.
 {{% /expert %}}
 
-## Typowe usterki Forda E-Transit
+## Typowe usterki Forda E-Transita
 
 Model jest stosunkowo młody, więc baza niezależnych danych warsztatowych jest mniejsza niż w przypadku dieslowego Transita. Mimo to da się już wskazać kilka obszarów, które warto sprawdzić przed zakupem i w codziennej eksploatacji.
 
@@ -201,7 +201,7 @@ Orientacyjne koszty:
 
 ### Chłodzenie baterii i układ HVAC
 
-W samochodzie elektrycznym sprawny układ chłodzenia baterii i klimatyzacji to nie dodatek, tylko element wpływający na ładowanie i codzienną użyteczność. Problemy mogą dotyczyć czujników, obiegu chłodzenia albo osprzętu.
+W samochodzie elektrycznym sprawny układ chłodzenia baterii i klimatyzacji to nie dodatek, lecz element wpływający na ładowanie i codzienną użyteczność. Problemy mogą dotyczyć czujników, obiegu chłodzenia albo osprzętu.
 
 Orientacyjne koszty:
 - serwis układu – **500–1500 zł**
@@ -229,13 +229,13 @@ Najbliżsi rywale E-Transita to dziś Mercedes eSprinter oraz duże elektryczne 
 
 ### Gdzie E-Transit wygrywa
 
-Najmocniejsze strony Forda to szybkie ładowanie DC, rozsądna cena wejścia i szeroka oferta wersji użytkowych. Do tego dochodzi napęd na tył, który w aucie roboczym ma sens przy obciążeniu i przy zabudowach specjalnych.
+Najmocniejsze strony Forda to szybkie ładowanie DC, rozsądna cena początkowa i szeroka oferta wersji użytkowych. Do tego dochodzi napęd na tył, który w aucie roboczym ma sens przy obciążeniu i przy zabudowach specjalnych.
 
 W praktyce flotowej E-Transit dobrze pasuje do pracy w modelu: wyjazd rano, powrót do bazy wieczorem, ładowanie nocne, okazjonalne szybkie doładowanie w ciągu dnia.
 
 ### Gdzie konkurencja ma przewagę
 
-Mercedes eSprinter i duże elektryki Stellantisa potrafią zaoferować większe baterie i dłuższy zasięg. To ważne tam, gdzie auto ma robić dłuższe trasy regionalne bez pewnego dostępu do ładowarki w bazie.
+Mercedes eSprinter i duże elektryki Stellantisa potrafią zaoferować większe baterie i dłuższy zasięg. To ważne tam, gdzie auto ma pokonywać dłuższe trasy regionalne bez pewnego dostępu do ładowarki w bazie.
 
 Stellantis ma też przewagę w maksymalnej kubaturze – do **17 m³**. Jeśli priorytetem jest sama objętość, e-Ducato i jego bliźniaki pozostają bardzo mocnym punktem odniesienia.
 
@@ -243,7 +243,7 @@ Stellantis ma też przewagę w maksymalnej kubaturze – do **17 m³**. Jeśli p
 
 Przy zakupie E-Transita trzeba rozdzielić dwie rzeczy: cenę nowego auta i rynek wtórny. W elektrycznym dostawczaku ogromne znaczenie mają stan baterii, przebieg, historia ładowania oraz to, czy pojazd pochodzi z floty poleasingowej.
 
-### Cena nowego Forda E-Transit
+### Cena nowego Forda E-Transita
 
 | Wersja / dopłata | Orientacyjna cena netto |
 |------------------|-------------------------|

@@ -22,7 +22,7 @@ faq:
   - question: "Jakie jest średnie spalanie Fiata Ducato?"
     answer: "Silnik 2.3 MultiJet spala 8,5–10,5 l/100 km, silnik 2.2 MultiJet3 – 7,8–9,5 l/100 km. Wersje Maxi przy pełnym obciążeniu 11–13 l/100 km."
   - question: "Ile kosztuje nowy Fiat Ducato?"
-    answer: "Ceny nowego Ducato furgon zaczynają się od ok. 130 000 zł netto (2.2 MultiJet3 140 KM). Wersje Maxi L4H3 z automatem od ok. 175 000 zł netto."
+    answer: "Ceny nowego furgonu Ducato zaczynają się od ok. 130 000 zł netto (2.2 MultiJet3 140 KM). Wersje Maxi L4H3 z automatem – od ok. 175 000 zł netto."
 sources:
   - "Wikipedia – Sevel"
   - "Fiat Professional Polska"
@@ -41,7 +41,7 @@ Pierwsze Ducato od początku stawiało na napęd na przód, prostą mechanikę i
 
 ### II generacja 230/244 (1994–2006)
 
-Druga generacja dostała całkowicie nowe nadwozie, lepszą ergonomię i nowocześniejsze wnętrze. Po liftingu w 2002 roku pojawiły się ważne zmiany techniczne, w tym wejście jednostek JTD z układem common rail.
+Druga generacja dostała całkowicie nowe nadwozie, lepszą ergonomię i nowocześniejsze wnętrze. Po liftingu w 2002 roku pojawiły się ważne zmiany techniczne, w tym wprowadzenie jednostek JTD z układem common rail.
 
 To właśnie w tej generacji mocno rozwinęła się reputacja Ducato jako auta roboczego do ciężkiej eksploatacji. Dobrym przykładem jest [silnik 2.8 JTD](/modele/fiat-ducato/2-8-jtd/), do dziś ceniony za trwałość.
 
@@ -49,11 +49,11 @@ To właśnie w tej generacji mocno rozwinęła się reputacja Ducato jako auta r
 
 Trzecia generacja była dużym krokiem naprzód. Kabina stała się większa, oferta nadwozi szersza, a układ wariantów L1–L4 i H1–H3 uporządkował konfiguracje pod konkretne zastosowania.
 
-W tej odsłonie Ducato umocniło pozycję w transporcie, kurierce i zabudowach kamperowych. W gamie pojawiły się silniki [2.3 MultiJet](/modele/fiat-ducato/2-3-multijet/) oraz [3.0 MultiJet](/modele/fiat-ducato/3-0-multijet/), które do dziś dominują na rynku wtórnym.
+W tej odsłonie Ducato umocnił pozycję w transporcie, kurierce i zabudowach kamperowych. W gamie pojawiły się silniki [2.3 MultiJet](/modele/fiat-ducato/2-3-multijet/) oraz [3.0 MultiJet](/modele/fiat-ducato/3-0-multijet/), które do dziś dominują na rynku wtórnym.
 
 ### Lifting 2014 (X290)
 
-Rok 2014 nie oznaczał nowej generacji, tylko gruntowną modernizację trzeciego Ducato. Zmieniono pas przedni, odświeżono wnętrze, multimedia i dostosowano gamę do nowszych wymagań emisyjnych Euro 5+ i Euro 6.
+Rok 2014 nie oznaczał nowej generacji, tylko gruntowną modernizację trzeciego Ducato. Zmieniono pas przedni, odświeżono wnętrze i multimedia oraz dostosowano gamę do nowszych wymagań emisyjnych Euro 5+ i Euro 6.
 
 To ważne rozróżnienie przy zakupie używanego auta. W ogłoszeniach często pojawia się określenie „IV generacja”, ale technicznie to nadal Ducato III po liftingu.
 
@@ -67,17 +67,17 @@ W praktyce to właśnie wersje Serie 8 są dziś najciekawsze dla firm szukając
 
 Elektryczne e-Ducato uzupełniło ofertę dla firm działających lokalnie i w strefach z ograniczeniami emisji. Ta wersja korzysta z akumulatorów **47 lub 79 kWh**, silnika **90 kW (122 KM)** i momentu **280 Nm**.
 
-Zasięg według WLTP wynosi do około **235–370 km** zależnie od wersji i roku. To nie jest samochód na daleką trasę z pełnym ładunkiem, ale do miejskiej dystrybucji pasuje znacznie lepiej niż klasyczny diesel.
+Zasięg według WLTP wynosi do około **235–370 km** w zależności od wersji i roku. To nie jest samochód na daleką trasę z pełnym ładunkiem, ale do miejskiej dystrybucji pasuje znacznie lepiej niż klasyczny diesel.
 
 {{% info title="Ciekawostka" icon="engineering" %}}
-Ponad 75% kamperów poruszających się po europejskich drogach bazuje na podwoziu Fiata Ducato. To najczęściej wybierana baza pod zabudowy kempingowe na świecie.
+Ponad 75% kamperów poruszających się po europejskich drogach opiera się na podwoziu Fiata Ducato. To najczęściej wybierana baza pod zabudowy kempingowe na świecie.
 {{% /info %}}
 
 ## Dane techniczne Fiata Ducato {#dane-techniczne}
 
 Najważniejsza rzecz przy wyborze Ducato to nie logo na masce, tylko konkretna konfiguracja długości, wysokości i DMC. Ten model występuje w wielu odmianach, więc różnice w praktycznej użyteczności są spore.
 
-Poniżej masz podstawowe parametry furgonu X290/X290 po liftingach.
+Poniżej masz podstawowe parametry furgonu X250/X290 po liftingach.
 
 | Wariant | Rozstaw osi (mm) | Długość całkowita (mm) | Długość przestrzeni ładunkowej (mm) | Wysokość zewnętrzna (mm) | Wysokość przestrzeni ładunkowej (mm) | Kubatura |
 |---------|------------------:|-----------------------:|------------------------------------:|-------------------------:|-------------------------------------:|---------:|
@@ -91,11 +91,11 @@ Poniżej masz podstawowe parametry furgonu X290/X290 po liftingach.
 
 Szerokość nadwozia wynosi **2050 mm** bez lusterek. W przestrzeni ładunkowej masz około **1422 mm między nadkolami** i maksymalnie **1870 mm szerokości**.
 
-DMC zależnie od wersji to **3000, 3300, 3500, 4005 i 4250 kg**. Ładowność orientacyjnie mieści się w zakresie od około **1090 do 1995 kg**, zależnie od długości, wysokości, napędu i dopuszczalnej masy całkowitej.
+DMC w zależności od wersji to **3000, 3300, 3500, 4005 i 4250 kg**. Ładowność orientacyjnie mieści się w zakresie od około **1090 do 1995 kg**, zależnie od długości, wysokości, napędu i dopuszczalnej masy całkowitej.
 
 ## Silniki Ducato {#silniki}
 
-Gama silnikowa Ducato zmieniała się kilka razy, ale logika wyboru jest prosta. Starsze auta kupuje się za prostotę i niskie koszty wejścia, środkowe roczniki za dobry kompromis, a najnowsze za emisję, automat i wyposażenie.
+Gama silnikowa Ducato zmieniała się kilka razy, ale logika wyboru jest prosta. Starsze auta kupuje się za prostotę i niską cenę zakupu, środkowe roczniki – za dobry kompromis, a najnowsze – za niską emisję, automat i wyposażenie.
 
 Ważne doprecyzowanie: jednostka 2.3 MultiJet to silnik z rodziny **F1A/FPT Industrial**, stosowany także w pojazdach Iveco. W nowszym Ducato 2.2 MultiJet3 występuje najczęściej w wersjach **120, 140 i 180 KM**.
 
@@ -124,7 +124,7 @@ Szukasz używanego Ducato do ciężkiej pracy? Celuj w 3.0 MultiJet sprzed 2016 
 
 Ducato występuje jako furgon samonośny oraz jako podwozie z kabiną lub platforma do zabudowy specjalistycznej. To właśnie ta elastyczność sprawia, że ten model trafia do kurierów, firm budowlanych, przewoźników osób i producentów kamperów.
 
-Dostępne są wersje w długościach **L2, L3 i L4**, a DMC zależnie od odmiany wynosi zwykle **3300–4250 kg**.
+Dostępne są wersje w długościach **L2, L3 i L4**, a DMC w zależności od odmiany wynosi zwykle **3300–4250 kg**.
 
 - **[Furgon (blaszak)](/modele/fiat-ducato/blaszak/)** – klasyczna wersja dostawcza, od 8 do 17 m³.
 - **[Brygadówka](/modele/fiat-ducato/brygadowka/)** – dodatkowy rząd siedzeń, do 7 osób plus część ładunkowa.
@@ -151,7 +151,7 @@ Warianty Maxi najczęściej pojawiają się przy dużych furgonach, lawetach, sk
 
 ## Spalanie Ducato i koszty eksploatacji {#spalanie-eksploatacja}
 
-Koszty utrzymania Ducato są zwykle jednymi z niższych w klasie, głównie przez dużą dostępność części i zamienników. Różnice w spalaniu między wersjami są jednak wyraźne, zwłaszcza przy autostradzie i pełnym ładunku.
+Koszty utrzymania Ducato są zwykle jednymi z niższych w klasie, głównie dzięki dużej dostępności części i zamienników. Różnice w spalaniu między wersjami są jednak wyraźne, zwłaszcza na autostradzie i przy pełnym ładunku.
 
 | Silnik | Średnie spalanie (l/100 km) | Zalecany interwał oleju |
 |--------|---------------------------:|-------------------------|
@@ -159,11 +159,11 @@ Koszty utrzymania Ducato są zwykle jednymi z niższych w klasie, głównie prze
 | 3.0 MultiJet (180 KM) | 10,0–12,5 | co 25 000 km |
 | 2.2 MultiJet3 (140 KM) | 7,8–9,5 | co 20 000 km |
 
-Realne zużycie paliwa w furgonie L4H3 przy prędkościach autostradowych rośnie zwykle o **2–3 l/100 km** względem mniejszych wersji. Maxi z zabudową i pełnym obciążeniem potrafi być jeszcze bardziej wrażliwe na styl jazdy.
+Realne zużycie paliwa w furgonie L4H3 przy prędkościach autostradowych rośnie zwykle o **2–3 l/100 km** względem mniejszych wersji. Wersja Maxi z zabudową i pełnym obciążeniem bywa jeszcze bardziej wrażliwa na styl jazdy.
 
 ## Typowe usterki Fiat Ducato {#usterki-zakup}
 
-Ducato nie jest autem problematycznym jako całość, ale ma kilka powtarzalnych słabych punktów. Dobrze znać je przed zakupem, bo część usterek jest tania i przewidywalna, a część zaczyna się niewinnie, a kończy dużo drożej.
+Ducato nie jest autem szczególnie problematycznym jako całość, ale ma kilka powtarzalnych słabych punktów. Dobrze znać je przed zakupem, bo część usterek jest tania i przewidywalna, a część zaczyna się niewinnie i kończy dużo drożej.
 
 ### 2.3 MultiJet/F1A
 
@@ -194,7 +194,7 @@ W najnowszych egzemplarzach częściej niż sama mechanika dają o sobie znać e
 
 ### Zawieszenie i hamulce
 
-Przy busie dostawczym zawieszenie i hamulce zużywają się po prostu od pracy. Im częściej auto jeździ ciężkie i po mieście, tym szybciej wychodzą luzy, wibracje i nierówne hamowanie.
+Przy busie dostawczym zawieszenie i hamulce zużywają się po prostu od pracy. Im częściej auto jeździ obciążone i po mieście, tym szybciej wychodzą luzy, wibracje i nierówne hamowanie.
 
 - łączniki/stabilizator – **100–250 zł/szt.**
 - tarcze i klocki przód – **600–1200 zł**
@@ -217,13 +217,13 @@ Kwadratowy przekrój paki upraszcza montaż mebli, izolacji i instalacji. Pod [z
 
 Fiat Ducato dzieli konstrukcję z [Citroënem Jumperem](/modele/citroen-jumper/) i [Peugeotem Boxerem](/modele/peugeot-boxer/). Nadwozia i zawieszenia są niemal identyczne, a różnice historycznie dotyczyły głównie gam silnikowych i polityki handlowej marek.
 
-Po utworzeniu Stellantis różnice jeszcze bardziej się zatarły. Przy zakupie używki ważniejszy od znaczka na grillu bywa stan konkretnego egzemplarza i historia serwisowa.
+Po utworzeniu Stellantis różnice jeszcze bardziej się zatarły. Przy zakupie używki ważniejsze od znaczka na grillu bywają stan konkretnego egzemplarza i historia serwisowa.
 
 {{% youtube %}}
 
 ## Porównanie Ducato z konkurencją
 
-W dużych vanach nie wygrywa jedno auto dla wszystkich. Jedni potrzebują najpraktyczniejszej paki, inni najniższej ceny wejścia, a jeszcze inni bogatszych konfiguracji napędu.
+W dużych vanach nie wygrywa jedno auto dla wszystkich. Jedni potrzebują najpraktyczniejszej paki, inni najniższej ceny zakupu, a jeszcze inni bogatszych konfiguracji napędu.
 
 Dlatego sensowniej porównywać Ducato z realnymi rywalami spoza bliźniaczej rodziny Sevel.
 
@@ -255,6 +255,6 @@ Poniżej orientacyjne widełki dla rynku wtórnego.
 | 2021–2023 2.2 MultiJet3 | **85–140 tys. zł** |
 | 2024–2025 | **120–180 tys. zł** |
 
-Trzeba też uwzględnić rodzaj zabudowy. Kamper na bazie Ducato jest zwykle droższy o **10–20%** od porównywalnego furgonu. Laweta albo skrzynia, zależnie od zabudowy, podnosi wartość auta o około **15–40 tys. zł**.
+Trzeba też uwzględnić rodzaj zabudowy. Kamper na bazie Ducato jest zwykle droższy od porównywalnego furgonu o **10–20%**. Laweta albo skrzynia, zależnie od zabudowy, podnosi wartość auta o około **15–40 tys. zł**.
 
-Jeśli patrzysz na salon, warto rozróżniać konkretne warianty. Nowy furgon **L2H2 2.2 140 KM** startuje od około **150 tys. zł netto**, a **L4H3/Maxi** od około **170–185 tys. zł netto**. Automat i pakiety ADAS zwykle podnoszą cenę o około **12–20 tys. zł**.
+Jeśli patrzysz na salon, warto rozróżniać konkretne warianty. Nowy furgon **L2H2 2.2 140 KM** startuje od około **150 tys. zł netto**, a **L4H3/Maxi** – od około **170–185 tys. zł netto**. Automat i pakiety ADAS zwykle podnoszą cenę o około **12–20 tys. zł**.

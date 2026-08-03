@@ -1,13 +1,13 @@
 ---
-title: "Winiety Slowacja 2026 – e-winieta, jak kupic"
+title: "Winiety Słowacja 2026 – e-winieta, jak kupić"
 date: 2026-03-28
-description: "E-winieta na Slowacji w 2026 roku – aktualne ceny, jak kupic online na eznamka.sk, drogi objetne winieta i kary za brak."
+description: "E-winieta na Słowacji w 2026 roku – aktualne ceny, jak kupić online na eznamka.sk, drogi objęte winietą i kary za brak."
 draft: false
 author: "marek-kowalczyk"
-h1: "Winiety Slowacja 2026 – ceny e-winiety, zakup online i kary"
+h1: "Winiety Słowacja 2026 – ceny e-winiety, zakup online i kary"
 image: "/images/winiety-slowacja-hero.webp"
-image_alt: "Slowacka autostrada z oznakowaniem platnego odcinka i tablica informacyjna"
-main_keyword: "winieta slowacja"
+image_alt: "Słowacka autostrada z oznakowaniem płatnego odcinka i tablicą informacyjną"
+main_keyword: "winieta słowacja"
 lead: "Słowacka e-winieta na 2026 rok kosztuje od 5,40 EUR za jednodniową do 60 EUR za roczną. System jest w pełni elektroniczny – kupujesz winietę na oficjalnym portalu eznamka.sk, a kamery automatycznie kontrolują tablice rejestracyjne. Busy powyżej 3,5 tony podlegają oddzielnemu systemowi myto."
 faq:
   - question: "Ile kosztuje winieta na Słowacji na 10 dni?"
@@ -15,7 +15,7 @@ faq:
   - question: "Czy na Słowacji trzeba naklejać winietę na szybie?"
     answer: "Nie. Słowacja korzysta z systemu e-winiet od 2016 roku. Winieta jest przypisana do numeru rejestracyjnego i kontrolowana automatycznie przez kamery."
   - question: "Jak sprawdzić, czy moja winieta na Słowację jest ważna?"
-    answer: "Na stronie eznamka.sk w sekcji 'Sprawdź winietę' wpisujesz numer rejestracyjny i kraj. System pokaże status i datę ważności Twojej e-winiety."
+    answer: "Na stronie eznamka.sk w sekcji „Sprawdź winietę” wpisujesz numer rejestracyjny i kraj. System pokaże status i datę ważności Twojej e-winiety."
   - question: "Jaka kara grozi za brak winiety na Słowacji?"
     answer: "Mandat (pokuta) za brak aktualnej e-winiety wynosi 150 EUR. Kwota ulega obniżeniu do 100 EUR, jeśli opłacisz ją w ciągu 15 dni od otrzymania wezwania."
 ---
@@ -42,13 +42,13 @@ Ceny słowackich e-winiet na 2026 rok pozostają stabilne. Słowacja nie stosuje
 | 30 dni | 17,00 EUR | ok. 73 zł |
 | Roczna/365 dni | 60,00 EUR | ok. 258 zł |
 
-Uwaga na pułapkę przy zakupie winiety całorocznej za 60 EUR. W systemie istnieją dwa warianty: „Roczna” jest ważna zawsze do 31 stycznia kolejnego roku, niezależnie od daty zakupu. Winieta „365-dniowa” jest ważna dokładnie 365 dni od daty aktywacji. Świadomy wybór jest kluczowy w zależności od planowanych podróży.
+Uwaga na pułapkę przy zakupie winiety całorocznej za 60 EUR. W systemie istnieją dwa warianty: „Roczna” jest ważna zawsze do 31 stycznia kolejnego roku, niezależnie od daty zakupu. Winieta „365-dniowa” jest ważna dokładnie 365 dni od daty aktywacji. Wybór odpowiedniego wariantu zależy od planowanych podróży.
 
 Jednodniowa winieta jest ważna do godziny 23:59 wybranego dnia kalendarzowego – nie przez 24 godziny od momentu zakupu. Dziesięciodniowa obejmuje dzień startowy plus 9 kolejnych dni kalendarzowych.
 
 ### Przyczepy i zestawy pojazdów
 
-Jeśli Twój bus ciągnie przyczepę kategorii O1 lub O2, a łączna masa zespołu pojazdów przekracza 3,5 tony, przyczepa wymaga oddzielnej e-winiety. Każdy pojazd w zestawie mussi mieć wówczas własną winietę zarejestrowaną na swój numer rejestracyjny.
+Jeśli Twój bus ciągnie przyczepę kategorii O1 lub O2, a łączna masa zespołu pojazdów przekracza 3,5 tony, przyczepa wymaga oddzielnej e-winiety. Każdy pojazd w zestawie musi mieć wówczas własną winietę zarejestrowaną na swój numer rejestracyjny.
 
 ## Jak kupić e-winietę na Słowację
 
@@ -56,7 +56,7 @@ Jedynym oficjalnym portalem sprzedaży jest **eznamka.sk** prowadzony przez Nár
 
 ### Zakup online – krok po kroku
 
-1.  Wejdź na eznamka.sk i wybierz język (dostępny polski).
+1.  Wejdź na eznamka.sk i wybierz język (dostępny język polski).
 2.  Wprowadź kraj rejestracji i numer tablicy rejestracyjnej pojazdu.
 3.  Wybierz okres ważności (1 dzień, 10 dni, 30 dni, Roczna/365 dni).
 4.  Ustaw datę początku ważności – system pozwala wybrać termin z wyprzedzeniem.
@@ -66,7 +66,7 @@ Jedynym oficjalnym portalem sprzedaży jest **eznamka.sk** prowadzony przez Nár
 ![Słowacka autostrada z oznakowaniem płatnego odcinka](/images/winiety-slowacja-hero.webp)
 
 {{% info title="Można ustawić datę ważności z wyprzedzeniem" icon="calendar" %}}
-Datę początku ważności e-winiety można wskazać podczas zakupu, wybierając termin obejmujący maksymalnie kilkanaście dni w przód. Jeśli planujesz wyjazd, możesz kupić winietę wcześniej i ustawić jej aktywację na dzień wyjazdu.
+Datę początku ważności e-winiety można wskazać podczas zakupu, wybierając termin z wyprzedzeniem do kilkunastu dni. Jeśli planujesz wyjazd, możesz kupić winietę wcześniej i ustawić jej aktywację na dzień wyjazdu.
 {{% /info %}}
 
 ### Zakup stacjonarny
@@ -75,7 +75,7 @@ Na terenie Słowacji e-winietę kupisz na większości stacji benzynowych (m.in.
 
 Przy granicy polsko-słowackiej punkty sprzedaży znajdują się na stacjach benzynowych tuż za przejściem granicznym, ale najwygodniej kupić winietę online przed wyjazdem.
 
-W przypadku pomyłki w numerze rejestracyjnym lub kraju rejestracji masz 15 minut na dokonanie korekty w systemie online. Przy zakupie stacjonarnym korekty można dokonać przed startem obowiązywania winiety, okazując sprzedawcy dowód rejestracyjny pojazdu.
+W przypadku pomyłki w numerze rejestracyjnym lub kraju rejestracji masz 15 minut na dokonanie korekty w systemie online. Przy zakupie stacjonarnym korekty można dokonać przed rozpoczęciem obowiązywania winiety, okazując sprzedawcy dowód rejestracyjny pojazdu.
 
 ## Busy powyżej 3,5 t – system myto
 
@@ -95,7 +95,7 @@ Słowackim mytem objęte są nie tylko autostrady, ale też wiele dróg krajowyc
 
 E-winieta obejmuje autostrady (diaľnice) oznaczone literą D i drogi ekspresowe (rýchlostné cesty) oznaczone literą R. Łącznie to ok. 800 km płatnych dróg.
 
-Od 1 sierpnia 2024 roku wprowadzono istotne ułatwienie – około 200 km odcinków autostrad, które pełnią funkcję obwodnic dużych miast, zostało zwolnionych z opłat. Dotyczy to m.in. Bratysławy (D4/D2), Nitry, Żyliny, Popradu, Koszyc i Preszowa. Odcinki te są wyraźnie oznakowane znakami „Bez úhrady”.
+Od 1 sierpnia 2024 roku wprowadzono istotne ułatwienie – około 200 km odcinków autostrad, które pełnią funkcję obwodnic dużych miast, zostało zwolnione z opłat. Dotyczy to m.in. Bratysławy (D4/D2), Nitry, Żyliny, Popradu, Koszyc i Preszowa. Odcinki te są wyraźnie oznakowane znakami „Bez úhrady”.
 
 ### Najważniejsze płatne trasy
 
@@ -118,7 +118,7 @@ Pamiętaj, że trasy alternatywne prowadzą przez miejscowości i mają ogranicz
 
 ## Kary za brak e-winiety
 
-Kontrole na słowackich autostradach odbywają się automatycznie przez stacjonarne kamery ANPR oraz wyrywkowo przez mobilne patrole policji i służby celnej, wyposażone w skanery tablic. System działa całodobowo, również w weekendy i święta.
+Kontrole na słowackich autostradach prowadzone są automatycznie przez stacjonarne kamery ANPR oraz wyrywkowo przez mobilne patrole policji i służby celnej wyposażone w skanery tablic rejestracyjnych. System działa całodobowo, również w weekendy i święta.
 
 ### Wysokość mandatów
 
@@ -130,7 +130,7 @@ System automatyczny generuje wezwanie do zapłaty, które jest wysyłane na adre
 
 Kara grozi również za winietę z błędnym numerem rejestracyjnym. Jedna pomylona litera lub cyfra oznacza brak ważnej opłaty – system nie rozpozna pojazdu. Po zakupie zawsze zweryfikuj poprawność danych na eznamka.sk w zakładce „Weryfikacja”.
 
-Jeśli planujesz dalszy przejazd przez [Węgry](/przepisy/winiety-wegry/), pamiętaj o zakupie oddzielnej węgierskiej e-matrica. Słowacka winieta nie obejmuje węgierskich autostrad.
+Jeśli planujesz dalszy przejazd przez [Węgry](/przepisy/winiety-wegry/), pamiętaj o zakupie oddzielnej węgierskiej e-matricy. Słowacka winieta nie obejmuje węgierskich autostrad.
 
 ## Źródła
 

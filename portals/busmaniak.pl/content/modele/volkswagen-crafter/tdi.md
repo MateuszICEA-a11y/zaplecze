@@ -13,14 +13,14 @@ image: "/images/volkswagen-crafter-hero.webp"
 image_alt: "Volkswagen Crafter II furgon"
 youtube: "3mLxBsw60oA"
 youtube_title: "#Test Volkswagen Crafter 2.0 l, 177 KM, 6M"
-lead: "Crafter II (od 2017) napędza wyłącznie czterocylindrowy 2.0 TDI w trzech wariantach mocy: 102, 140 i 177 KM. To pierwszy Crafter z własnym silnikiem VW – poprzednik korzystał z jednostek Mercedesa. Oto wszystko o danych technicznych, spalaniu i typowych usterkach."
+lead: "Craftera II (od 2017) napędza wyłącznie czterocylindrowy 2.0 TDI w trzech wariantach mocy: 102, 140 i 177 KM. To pierwszy Crafter z własnym silnikiem VW – poprzednik korzystał z jednostek Mercedesa. Oto wszystko o danych technicznych, spalaniu i typowych usterkach."
 faq:
   - question: "Który wariant 2.0 TDI w Crafterze wybrać?"
     answer: "140 KM z manualem lub 8AT – optymalny kompromis mocy i kosztów. 102 KM do lekkiej miejskiej dystrybucji. 177 KM z 8AT i 4MOTION do ciężkich zastosowań."
   - question: "Ile pali Crafter TDI?"
-    answer: "102 KM: 7,5 l/100 km. 140 KM: 7,8 l. 177 KM: 8,5 l. W mieście z ładunkiem dodaj 25–35%."
+    answer: "102 KM: 7,5 l/100 km. 140 KM: 7,8 l. 177 KM: 8,5 l. W mieście z ładunkiem dolicz 25–35%."
   - question: "Jakie są typowe usterki 2.0 TDI w Crafterze?"
-    answer: "DPF (zapychanie miejskie), czujniki NOx (fałszywe błędy), automat 8AT (wymaga wymiany oleju co 60 tys. km). Silnik sam w sobie trwały."
+    answer: "DPF (zapychanie przy jeździe miejskiej), czujniki NOx (fałszywe błędy), automat 8AT (wymaga wymiany oleju co 60 tys. km). Sam silnik jest trwały."
 sources:
   - "Volkswagen AG – dane techniczne Crafter"
   - "Dokumentacja serwisowa VW"
@@ -33,7 +33,7 @@ Volkswagen Crafter TDI drugiej generacji, produkowany od 2017 roku, korzysta z c
 
 Pierwszy Crafter (2006–2017) korzystał z jednostek powiązanych technicznie z Mercedesem i oznaczanych jako CDI/BlueTDI, a nie z silników „2.5 TDI” w volkswagenowskim rozumieniu. W późniejszym okresie oferty pojawiały się także nowsze odmiany 2.0, nadal związane z rozwiązaniami stosowanymi w bliźniaczym Sprinterze.
 
-Podstawowe parametry 2.0 TDI w Crafterze II to pojemność 1968 cm³, średnica x skok 81,0 x 95,5 mm, 16 zaworów oraz układ SCR z AdBlue. W zależności od wersji silnik rozwijał 300 Nm, 340 Nm lub 410 Nm momentu obrotowego.
+Podstawowe parametry 2.0 TDI w Crafterze II to pojemność 1968 cm³, średnica × skok 81,0 × 95,5 mm, 16 zaworów oraz układ SCR z AdBlue. W zależności od wersji silnik rozwijał 300 Nm, 340 Nm lub 410 Nm momentu obrotowego.
 
 | Wariant | Moc | Moment | Pojemność | Układ oczyszczania spalin | Skrzynia | Napęd | Norma |
 |---------|-----|--------|-----------|----------------------------|----------|-------|-------|
@@ -42,25 +42,25 @@ Podstawowe parametry 2.0 TDI w Crafterze II to pojemność 1968 cm³, średnica 
 | 2.0 TDI | 140 KM (103 kW) | 340 Nm | 1968 cm³ | SCR + AdBlue | 6-bieg. man. / 8-bieg. automat | zależnie od wersji i rynku | Euro 6 |
 | 2.0 TDI | 177 KM (130 kW) | 410 Nm | 1968 cm³ | SCR + AdBlue | 6-bieg. man. / 8-bieg. automat | zależnie od wersji i rynku | Euro 6 |
 
-Crafter II był oferowany jako FWD, RWD i 4MOTION, ale realna dostępność zależała od DMC 3,0–5,5 t, rozstawu osi, długości zabudowy, wysokości dachu oraz rynku. Tak samo wygląda kwestia skrzyń biegów – nie każda moc była łączona z każdą przekładnią i każdym napędem w identyczny sposób.
+Crafter II był oferowany jako FWD, RWD i 4MOTION, ale rzeczywista dostępność zależała od DMC 3,0–5,5 t, rozstawu osi, długości zabudowy, wysokości dachu oraz rynku. Tak samo wygląda kwestia skrzyń biegów – nie każda moc była łączona z każdą przekładnią i każdym napędem w identyczny sposób.
 
-Wszystkie wersje to nowoczesne diesle Common Rail z turbodoładowaniem, przystosowane do ciężkiej pracy flotowej. Rozrząd napędza pasek zębaty.
+Wszystkie wersje to nowoczesne diesle Common Rail z turbodoładowaniem, przystosowane do ciężkiej pracy flotowej. Rozrząd jest napędzany paskiem zębatym.
 
 ### Crafter 2.0 TDI 102 KM
 
-To bazowa odmiana dla lżejszych zastosowań i spokojniejszej eksploatacji. Najlepiej sprawdza się tam, gdzie auto nie jeździ stale z maksymalnym ładunkiem i nie spędza całych dni na drogach ekspresowych.
+To bazowa odmiana do lżejszych zastosowań i spokojniejszej eksploatacji. Najlepiej sprawdza się tam, gdzie auto nie jeździ stale z maksymalnym ładunkiem i nie spędza całych dni na drogach ekspresowych.
 
 300 Nm wystarcza do dystrybucji miejskiej, serwisu technicznego czy lokalnych dostaw. W cięższych konfiguracjach nadwoziowych i przy wyższym DMC zapas mocy bywa jednak wyraźnie ograniczony.
 
 ### Crafter 2.0 TDI 122 KM
 
-To rzadziej wspominany, ale istotny wariant pośredni w gamie. Oferuje wyraźnie lepszą elastyczność niż 102 KM, a nadal pozostaje rozsądną propozycją dla flot stawiających na prostszą specyfikację.
+To rzadziej wspominany, ale istotny wariant pośredni w gamie. Oferuje wyraźnie lepszą elastyczność niż odmiana 102 KM, a nadal pozostaje rozsądną propozycją dla flot stawiających na prostszą specyfikację.
 
-Dzięki 340 Nm lepiej radzi sobie z pełniejszym załadunkiem i jazdą pozamiejską. Na rynku wtórnym jego dostępność zależy mocno od kraju pochodzenia i rocznika.
+Dzięki 340 Nm lepiej radzi sobie z pełniejszym załadunkiem i jazdą pozamiejską. Na rynku wtórnym jego dostępność zależy w dużej mierze od kraju pochodzenia i rocznika.
 
 ### Crafter 2.0 TDI 140 KM
 
-To najczęściej wybierany środek gamy i najbardziej uniwersalna wersja volkswagen crafter tdi. Łączy 340 Nm z osiągami wystarczającymi zarówno do kurierki, jak i cięższych zadań z zabudową.
+To najczęściej wybierany środek gamy i najbardziej uniwersalna wersja Volkswagena Crafter TDI. Łączy 340 Nm z osiągami wystarczającymi zarówno do pracy kurierskiej, jak i cięższych zadań z zabudową.
 
 W zależności od wersji występował z 6-biegowym manualem lub 8-biegowym automatem Aisin. Podobnie jak przy innych odmianach, konkretne połączenia skrzyni, napędu i DMC zależały od rynku oraz roku modelowego.
 
@@ -68,7 +68,7 @@ W zależności od wersji występował z 6-biegowym manualem lub 8-biegowym autom
 
 Topowa odmiana rozwija 410 Nm i jest najlepszym wyborem do najcięższych zadań. To wersja dla aut stale obciążonych, jeżdżących w trasie, z zabudowami specjalistycznymi lub w trudniejszych warunkach drogowych.
 
-Nie była ona jednak w każdej specyfikacji przypisana wyłącznie do automatu. Również 4MOTION nie stanowił wyłączności tej odmiany – dostępność napędu na cztery koła zależała od konkretnej konfiguracji i okresu produkcji.
+Nie była jednak w każdej specyfikacji dostępna wyłącznie z automatem. Również 4MOTION nie był zarezerwowany wyłącznie dla tej odmiany – dostępność napędu na cztery koła zależała od konkretnej konfiguracji i okresu produkcji.
 
 {{% info title="Crafter I vs Crafter II – silniki" icon="engineering" %}}
 Crafter I (2006–2017) korzystał z jednostek CDI/BlueTDI powiązanych z Mercedesem, a nazewnictwo typu „2.5 TDI” lub „2.0 TDI Mercedes” jest po prostu nieprecyzyjne. Przy zakupie używanego egzemplarza z tej generacji trzeba brać pod uwagę inną bazę techniczną i części charakterystyczne dla bliźniaczych rozwiązań Mercedesa.
@@ -80,7 +80,7 @@ Crafter II to już konstrukcja Volkswagena z użytkową odmianą 2.0 TDI EA288, 
 
 Spalanie w dużym aucie dostawczym zależy przede wszystkim od napędu, DMC, wysokości dachu, długości nadwozia i masy ładunku. W praktyce różnica między wersją FWD a RWD, między 3,5 t a 5,0 t oraz między H2 a H3 może przekraczać 1–2 l/100 km.
 
-Warto też zaznaczyć metodologię – bez tego łatwo o mylące porównania. Jeśli producent podaje wyniki homologacyjne NEDC lub WLTP, a redakcja opisuje realne spalanie z eksploatacji, liczby nie są bezpośrednio porównywalne.
+Warto też zwrócić uwagę na metodologię pomiarów – bez tego łatwo o mylące porównania. Jeśli producent podaje wyniki homologacyjne NEDC lub WLTP, a redakcja opisuje realne spalanie w eksploatacji, liczby nie są bezpośrednio porównywalne.
 
 ### Spalanie w trasie
 
@@ -95,19 +95,19 @@ Poniższe wartości należy traktować jako orientacyjne szacunki eksploatacyjne
 
 ### Spalanie w mieście
 
-W mieście należy doliczyć wyraźny wzrost zużycia paliwa względem trasy, szczególnie przy krótkich odcinkach i pracy z ładunkiem. Wysoka zabudowa, częste postoje i eksploatacja w zatłoczonym centrum bardzo szybko podnoszą wynik.
+W mieście należy doliczyć wyraźny wzrost zużycia paliwa względem trasy, zwłaszcza przy krótkich odcinkach i pracy z ładunkiem. Wysoka zabudowa, częste postoje i eksploatacja w zatłoczonym centrum bardzo szybko podnoszą wynik.
 
-Przy nowoczesnym dieslu trzeba też pamiętać, że jazda typowo miejska wpływa nie tylko na spalanie, ale także na kondycję DPF i układu SCR. Dlatego wartości zużycia paliwa zawsze warto interpretować razem ze sposobem użytkowania auta.
+Przy nowoczesnym dieslu trzeba też pamiętać, że jazda typowo miejska wpływa nie tylko na spalanie, lecz także na kondycję DPF i układu SCR. Dlatego wartości zużycia paliwa zawsze warto interpretować łącznie ze sposobem użytkowania auta.
 
 ## Typowe usterki 2.0 TDI w Crafterze
 
-Sam silnik 2.0 TDI w Crafterze II ma opinię trwałej jednostki, ale jak w większości współczesnych dostawczaków problemy dotyczą głównie osprzętu, emisji spalin i eksploatacji flotowej. Im więcej jazdy miejskiej i przeciążeń, tym szybciej wychodzą słabe punkty.
+Sam silnik 2.0 TDI w Crafterze II ma opinię trwałej jednostki, ale jak w większości współczesnych dostawczaków problemy dotyczą głównie osprzętu, układu oczyszczania spalin i eksploatacji flotowej. Im więcej jazdy miejskiej i przeciążeń, tym szybciej ujawniają się słabe punkty.
 
 ### Układ wydechowy i oczyszczanie
 
 - **DPF** – przy jeździe wyłącznie miejskiej filtr szybciej się zapycha i częściej wymusza regenerację.
 - **Czujniki NOx i czujniki ciśnienia spalin** – potrafią generować błędy układu SCR oraz ograniczenia pracy silnika.
-- **Układ AdBlue** – w praktyce diagnostyka często dotyczy pomp AdBlue, podgrzewania i krystalizacji płynu przy niekorzystnych warunkach użytkowania.
+- **Układ AdBlue** – w praktyce diagnostyka często dotyczy pomp AdBlue, układu podgrzewania i krystalizacji płynu w niekorzystnych warunkach użytkowania.
 
 ### Osprzęt i dolot
 
@@ -126,11 +126,11 @@ Nie ma podstaw, by opisywać typowe awarie automatu w Crafterze tak, jakby chodz
 
 - **Akumulatory** – w autach flotowych, które dużo stoją lub pracują z dodatkowym osprzętem, spadki kondycji akumulatora pojawiają się częściej.
 - **Elektronika czujników** – nowoczesny dostawczak ma rozbudowaną diagnostykę, więc pozornie drobne błędy osprzętu potrafią wywołać tryb awaryjny.
-- **Rozrząd** – choć pasek rozrządu jest rozwiązaniem typowym, w aucie użytkowym trzeba pilnować terminu wymiany szczególnie rygorystycznie.
+- **Rozrząd** – choć pasek rozrządu jest rozwiązaniem typowym, w aucie użytkowym trzeba szczególnie rygorystycznie pilnować terminu wymiany.
 
 ## Koszty serwisu 2.0 TDI
 
-Koszty obsługi Craftera różnią się mocno w zależności od tego, czy auto trafia do ASO, czy do dobrego niezależnego serwisu. W praktyce przegląd okresowy bywa droższy w ASO o 30–50%, a przy większych pracach różnica potrafi przekroczyć 1000 zł.
+Koszty obsługi Craftera różnią się mocno w zależności od tego, czy auto trafia do ASO, czy do dobrego niezależnego serwisu. W praktyce przegląd okresowy bywa w ASO droższy o 30–50%, a przy większych pracach różnica potrafi przekroczyć 1000 zł.
 
 | Czynność | Serwis niezależny | ASO | Interwał |
 |----------|-------------------|-----|----------|
@@ -152,7 +152,7 @@ Największe różnice kosztowe pojawiają się zwykle przy rozrządzie, hamulcac
 
 Porównując duże vany, nie można patrzeć wyłącznie na moc silnika. Równie ważne są konfiguracje DMC, rodzaj napędu, masa zabudowy i to, czy auto pracuje jako furgon 3,5 t, czy cięższa baza pod specjalistyczną zabudowę.
 
-Crafter i Sprinter występują w szerokim zakresie konfiguracji od około 3,5 do 5,5 t, co mocno wpływa na realne osiągi użytkowe wersji 140–177 KM. Sam ten fakt sprawia, że „najlepszy silnik” trzeba dobierać do konkretnego zadania, a nie wyłącznie do tabeli parametrów.
+Crafter i Sprinter występują w szerokim zakresie konfiguracji od około 3,5 do 5,5 t, co mocno wpływa na realne osiągi użytkowe wersji 140–177 KM. Sam ten fakt sprawia, że „najlepszy silnik” trzeba dobierać do konkretnego zastosowania, a nie wyłącznie do tabeli parametrów.
 
 | Parametr | VW Crafter 2.0 TDI 140 KM | Mercedes Sprinter 2.0 CDI 150 KM | Fiat Ducato 2.2 MJT 140 KM |
 |----------|---------------------------|----------------------------------|----------------------------|
@@ -163,6 +163,6 @@ Crafter i Sprinter występują w szerokim zakresie konfiguracji od około 3,5 do
 | Automat | 8-bieg. automat Aisin | 9G-Tronic | EAT8 |
 | Napędy | zależnie od wersji i rynku | zależnie od wersji i rynku | zależnie od wersji i rynku |
 
-Sprinter nie ustępuje Crafterowi samą różnorodnością napędów, dlatego nie ma sensu przypisywać tu przewagi „na sztywno” jednej marce. Podobnie z wartością rezydualną – bez twardych danych z konkretnych raportów flotowych i rynku wtórnego byłby to zbyt daleko idący wniosek.
+Sprinter nie ustępuje Crafterowi pod względem różnorodności napędów, dlatego nie ma sensu przypisywać tu przewagi „na sztywno” jednej marce. Podobnie z wartością odsprzedaży – bez twardych danych z konkretnych raportów flotowych i rynku wtórnego byłby to zbyt daleko idący wniosek.
 
-Ducato z kolei kusi prostszą kalkulacją kosztów i popularnością w zabudowach specjalnych, ale jego ocena także zależy od konkretnej wersji. W praktyce porównanie tych modeli warto robić zawsze przez pryzmat DMC, ładowności, rodzaju napędu i planowanego sposobu pracy, a nie tylko suchej mocy katalogowej.
+Ducato z kolei kusi prostszą kalkulacją kosztów i popularnością w zabudowach specjalnych, ale jego ocena także zależy od konkretnej wersji. W praktyce porównanie tych modeli warto zawsze przeprowadzać przez pryzmat DMC, ładowności, rodzaju napędu i planowanego sposobu pracy, a nie tylko suchej mocy katalogowej.

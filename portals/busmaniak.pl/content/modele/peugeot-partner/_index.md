@@ -15,7 +15,7 @@ volume: 9900
 lead: "Peugeot Partner to kompaktowy van dostawczy, produkowany od 1996 roku w trzech generacjach. Obecna odsłona (od 2018) dzieli platformę EMP2 z Citroënem Berlingo i Oplem Combo. Silniki 1.5 BlueHDi od 75 do 130 KM, wersja osobowa przemianowana na Rifter, elektryczny e-Partner z zasięgiem 275 km."
 faq:
   - question: "Czym się różni Partner III od Berlingo III?"
-    answer: "Identyczna platforma, silniki i wymiary. Różnice: design zderzaka, system infotainment (i-Connect vs Conectra) i kolorystyka. Ceny praktycznie takie same."
+    answer: "Ta sama platforma, te same silniki i wymiary. Różnice: design zderzaka, system multimedialny (i-Connect vs Conectra) i kolorystyka. Ceny praktycznie takie same."
   - question: "Jaki zasięg ma e-Partner?"
     answer: "Z baterią 50 kWh do 275 km WLTP. Realnie w mieście z ładunkiem 190–220 km, zimą ok. 150–160 km."
   - question: "Czy Partner III mieści dwie europalety?"
@@ -26,13 +26,13 @@ sources:
   - "dane techniczne Auto-Data.net."
 ---
 
-## Historia i generacje Peugeota Partner
+## Historia i generacje Peugeota Partnera
 
 Peugeot Partner przeszedł trzy główne generacje. Zmieniały się platformy, długości nadwozia i nazewnictwo wersji osobowych, ale rdzeń modelu pozostał ten sam – kompaktowy dostawczak do miasta i pracy lokalnej.
 
 ### Partner I (M49/M59, 1996–2008)
 
-Pierwsza generacja zadebiutowała w 1996 roku jako bliźniak Berlingo I, oparty na architekturze PSA z podzespołami m.in. Peugeota 306/Citroëna ZX. Kluczowa modernizacja przypadła na facelifting w 2002 roku.
+Pierwsza generacja zadebiutowała w 1996 roku jako bliźniak Berlingo I, oparty na architekturze PSA z podzespołami m.in. Peugeota 306/Citroëna ZX. Kluczowa modernizacja przypadła na lifting w 2002 roku.
 
 W gamie były silniki benzynowe 1.1, 1.4 i 1.6 oraz diesle 1.8 D 60 KM, 1.9 D 69–71 KM i 2.0 HDi 90 KM. Wersja osobowa funkcjonowała jako Partner Combispace/Combi.
 
@@ -43,7 +43,7 @@ Druga generacja przyniosła większe nadwozie i wyraźny skok praktyczności. Mo
 Silniki obejmowały 1.6 HDi/HDi o mocy 75–115 KM, 1.6 BlueHDi 75/100/120 oraz 1.6 VTi 95/120. W 2015 roku Partner II przeszedł lifting, a osobowa odmiana nosiła nazwę Partner Tepee i była wersją 5-miejscową.
 
 {{% info title="Tepee → Rifter" icon="engineering" %}}
-W 2018 roku wersja osobowa Partnera zyskała osobną nazwę – [Peugeot Rifter](/modele/peugeot-rifter/) – i odrębny, bardziej lifestylowy design. Partner III pozostał jako nazwa wyłącznie dla wariantów dostawczych (N1).
+W 2018 roku wersja osobowa Partnera zyskała osobną nazwę – [Peugeot Rifter](/modele/peugeot-rifter/) – oraz odrębną, bardziej rekreacyjną stylistykę. Partner III pozostał nazwą zarezerwowaną wyłącznie dla wariantów dostawczych (N1).
 {{% /info %}}
 
 ### Partner III (K9, od 2018)
@@ -78,8 +78,8 @@ W przypadku Partnera III najważniejsze są nie tylko gabaryty zewnętrzne, ale 
 
 - **Drzwi boczne** – przesuwane po jednej stronie w standardzie lub po obu stronach zależnie od konfiguracji
 - **Drzwi tylne** – asymetryczne skrzydłowe albo klapa
-- **FlexCargo/Moduwork** – pozwala przewozić dłuższe elementy bez wejścia w segment dużych vanów
-- **Zwrotność** – L1 lepiej czuje się w centrum miasta, L2 daje więcej sensu przy regularnym wożeniu ładunku
+- **FlexCargo/Moduwork** – pozwala przewozić dłuższe elementy bez wchodzenia w segment dużych vanów
+- **Zwrotność** – L1 lepiej sprawdza się w centrum miasta, L2 ma większy sens przy regularnym wożeniu ładunku
 
 ## Wersje nadwoziowe
 
@@ -89,13 +89,13 @@ Peugeot Partner występował i występuje w kilku odmianach roboczych oraz osobo
 - **Furgon L2** – 2 lub 3 miejsca, paka 3,9 m³ albo 4,4 m³ z FlexCargo. Lepszy wybór dla firm wożących dłuższy towar i więcej narzędzi.
 - **Furgon brygadowy/Crew Cab** – 5 miejsc, krótsza paka. Typowa konfiguracja dla ekip technicznych i serwisowych.
 - **Platform Cab / podwozie do zabudowy** – na wybranych rynkach pod zabudowy chłodnicze, warsztatowe i inne specjalistyczne.
-- **Osobowy Partner Tepee (II gen.) / Rifter (III gen.)** – 5 miejsc, przesuwne drzwi boczne, bagażnik od ok. 775 l w Rifterze. To wariant pod rodzinę, rekreację i lekki vanlife.
-- **e-Partner** – elektryczny furgon L1/L2 z identyczną kubaturą jak wersje spalinowe. Najbardziej logiczny do jazdy miejskiej i pracy w strefach czystego transportu.
+- **Osobowy Partner Tepee (II gen.) / Rifter (III gen.)** – 5 miejsc, przesuwne drzwi boczne, bagażnik od ok. 775 l w Rifterze. To wariant dla rodziny, rekreacji i lekkich wypadów kamperem.
+- **e-Partner** – elektryczny furgon L1/L2 z identyczną kubaturą jak wersje spalinowe. Najbardziej sensowny wybór do jazdy miejskiej i pracy w strefach czystego transportu.
 - **Zabudowy specjalne** – chłodnia, serwis mobilny, izoterma, lekki kamper-box lub mini-camper na bazie Riftera.
 
-## Silniki Peugeota Partner
+## Silniki Peugeota Partnera
 
-Gama napędów w Partnerze zmieniała się razem z generacjami. W praktyce na rynku wtórnym najczęściej spotkasz diesle, ale w III generacji znaczenie mają też benzynowe PureTechi i elektryczny e-Partner.
+Gama napędów w Partnerze zmieniała się wraz z generacjami. W praktyce na rynku wtórnym najczęściej spotkasz diesle, ale w III generacji znaczenie mają też benzynowe PureTechi i elektryczny e-Partner.
 
 ### Silniki według generacji
 
@@ -117,7 +117,7 @@ Gama napędów w Partnerze zmieniała się razem z generacjami. W praktyce na ry
 Dla e-Partnera kluczowe są parametry użytkowe: bateria użyteczna ma 50 kWh, ładowanie AC odbywa się z mocą 7,4 lub 11 kW, a DC dochodzi do 100 kW. Uzupełnienie energii od 0 do 80% zajmuje około 30 minut.
 
 {{% expert name="Marek Kowalczyk" %}}
-Jeśli Partner ma codziennie jeździć z ładunkiem i robić trasę mieszaną, 1.5 BlueHDi 100 KM jest najbezpieczniejszym kompromisem. Do miasta i krótkich odcinków e-Partner ma sens, ale przy pracy poza aglomeracją diesel nadal wygrywa zasięgiem i czasem „tankowania”.
+Jeśli Partner ma codziennie jeździć z ładunkiem i pokonywać trasę mieszaną, 1.5 BlueHDi 100 KM jest najbezpieczniejszym kompromisem. Do miasta i krótkich odcinków e-Partner ma sens, ale przy pracy poza aglomeracją diesel nadal wygrywa zasięgiem i czasem „tankowania”.
 {{% /expert %}}
 
 ## Wersje wyposażenia Partnera
@@ -128,7 +128,7 @@ Wyposażenie Partnera zależy od rynku, rocznika i tego, czy mówimy o bazowym a
 
 - **Grip** – bazowa wersja Van: klimatyzacja manualna, podstawowy ekran centralny, stalowe felgi
 - **Pro** – bogatsza konfiguracja z kamerą cofania, czujnikami parkowania i dodatkowymi systemami wsparcia
-- **Pro+** – wyższa specyfikacja z automatyczną klimatyzacją, pakietami bezpieczeństwa i elementami LED
+- **Pro+** – wyższy poziom wyposażenia z automatyczną klimatyzacją, pakietami bezpieczeństwa i elementami LED
 
 ### Najczęściej spotykane elementy wyposażenia
 
@@ -139,20 +139,20 @@ Wyposażenie Partnera zależy od rynku, rocznika i tego, czy mówimy o bazowym a
 - **Kamera cofania**
 - **Systemy bezpieczeństwa i wsparcia kierowcy**
 
-## Typowe usterki Peugeot Partner
+## Typowe usterki Peugeota Partnera
 
-Awaryjność Partnera zależy głównie od generacji, rodzaju pracy i pilnowania serwisu. W starszych autach dominują problemy wynikające z wieku, w nowszych – z osprzętu emisji spalin i konkretnych rozwiązań silnikowych.
+Awaryjność Partnera zależy głównie od generacji, rodzaju pracy i dbałości o serwis. W starszych autach dominują problemy wynikające z wieku, w nowszych – z osprzętu emisji spalin i konkretnych rozwiązań silnikowych.
 
 ### Partner I i II
 
 - **1.6 HDi** – awarie turbosprężarki po większych przebiegach, zwykle **1800–3000 zł**
-- **Sprzęgło** – w dostawczych egzemplarzach zużywa się szybciej; typowe koszty starszych aut to **1000–1500 zł**
+- **Sprzęgło** – w dostawczych egzemplarzach zużywa się szybciej; typowe koszty w starszych autach to **1000–1500 zł**
 - **Korozja** – progi i nadkola w egzemplarzach sprzed 2010 roku
 - **Układ elektryczny** – problemy z modułem BSI w Partnerze II
 
 ### 1.2 PureTech
 
-W benzynowym 1.2 PureTech kluczowy temat to pasek rozrządu pracujący w oleju. Zaniedbanie kończy się nie tylko wymianą paska, ale też czyszczeniem układu smarowania.
+W benzynowym 1.2 PureTech kluczową kwestią jest pasek rozrządu pracujący w oleju. Zaniedbanie kończy się nie tylko wymianą paska, ale też czyszczeniem układu smarowania.
 
 - **Pasek rozrządu w oleju** – wymiana paska + czyszczenie smoka: **1800–3500 zł**
 - **Po zaniedbaniu** – remont góry silnika: **5000–9000 zł**
@@ -172,7 +172,7 @@ Diesel 1.5 BlueHDi jest oszczędny, ale ma kilka drogich punktów zapalnych. Naj
 
 ### Skrzynie i przeniesienie napędu
 
-Przy Partnerze pracującym w firmie sprzęgło i osprzęt skrzyni trzeba traktować jak materiały eksploatacyjne. To szczególnie ważne przy autach z dużym przebiegiem i ciągłej jeździe z ładunkiem.
+Przy Partnerze pracującym w firmie sprzęgło i osprzęt skrzyni trzeba traktować jak materiały eksploatacyjne. To szczególnie ważne w autach z dużym przebiegiem, które stale jeżdżą z ładunkiem.
 
 - **Sprzęgło 1.5 BlueHDi** – **1600–2600 zł**
 - **Koło dwumasowe + sprzęgło** – **3000–5000 zł**
@@ -181,7 +181,7 @@ Przy Partnerze pracującym w firmie sprzęgło i osprzęt skrzyni trzeba traktow
 
 ### Zawieszenie i elektryka
 
-W aucie dostawczym szybko wychodzą drobne, ale regularne koszty eksploatacyjne. Zwykle nie unieruchamiają auta, ale składają się na realny budżet utrzymania.
+W aucie dostawczym szybko wychodzą drobne, ale regularne koszty eksploatacyjne. Zwykle nie unieruchamiają auta, lecz składają się na realny budżet utrzymania.
 
 - **Łączniki stabilizatora** – **150–300 zł** za parę
 - **Tarcze i klocki przód** – **500–900 zł**
@@ -233,4 +233,4 @@ Na rynku wtórnym kluczowe są trzy rzeczy: generacja, przebieg i historia serwi
 | 2024–2025 | III lift / niskie przebiegi | 80 000–110 000 zł |
 | 2021–2024 | e-Partner | 75 000–120 000 zł |
 
-Auta z przebiegiem 200–300 tys. km bywają tańsze o 15–25%, a egzemplarze z pełnym ASO droższe o 10–15%. Przy Partnerze bardziej niż sam rocznik liczy się to, czy serwis był robiony na czas i czy auto nie pracowało permanentnie na limicie ładowności.
+Auta z przebiegiem 200–300 tys. km bywają tańsze o 15–25%, a egzemplarze z pełną historią ASO – droższe o 10–15%. Przy Partnerze bardziej niż sam rocznik liczy się to, czy serwis był robiony na czas i czy auto nie pracowało stale na limicie ładowności.

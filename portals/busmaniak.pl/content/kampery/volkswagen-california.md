@@ -13,13 +13,13 @@ main_keyword: "volkswagen california"
 lead: "Volkswagen California to najsłynniejszy camper van świata – produkowany od 1988 roku fabryczny pojazd kempingowy na bazie VW Multivana. Aktualna generacja T7 (od 2025) oferuje wersje Beach, Coast i Ocean w cenach 320–480 tys. zł. California łączy kompaktowe wymiary (5,17 m) z pełnym wyposażeniem kempingowym dla 4 osób."
 faq:
   - question: "Ile kosztuje VW California w 2026 roku?"
-    answer: "California Beach od 320 tys. zł, Coast od 370 tys. zł, Ocean od 400 tys. zł. Cennik T7 jest o 10–15% wyższy niż ostatnich T6.1. Używana California T6 Ocean (2018–2022) kosztuje 260–380 tys. zł."
+    answer: "California Beach od 320 tys. zł, Coast od 370 tys. zł, Ocean od 400 tys. zł. Cennik T7 jest o 10–15% wyższy niż cennik ostatnich T6.1. Używana California T6 Ocean (2018–2022) kosztuje 260–380 tys. zł."
   - question: "Czym różnią się wersje Beach, Coast i Ocean?"
     answer: "Linia Beach dzieli się na wersje Beach, Beach Tour oraz Beach Camper – ta ostatnia z wysuwaną minikuchnią. Coast dodaje pełny aneks kuchenny i zbiornik wody. Ocean ma pełne wyposażenie – elektrohydrauliczny dach, LED ambient, lodówkę kompresorową i system multimedialny."
   - question: "Ile osób śpi w VW California?"
-    answer: "4 osoby – dwoje w podnoszonym dachu (200 × 120 cm) i dwoje na łóżku powstałym po złożeniu indywidualnych, wyjmowanych foteli tylnych (200 × 115 cm). Praktycznie komfortowo śpią 2 dorosłych i 2 dzieci."
+    answer: "4 osoby – dwoje w podnoszonym dachu (200 × 120 cm) i dwoje na łóżku powstałym po złożeniu indywidualnych, wyjmowanych foteli tylnych (200 × 115 cm). W praktyce komfortowo śpią dwoje dorosłych i dwoje dzieci."
   - question: "Czy VW California ma łazienkę?"
-    answer: "Nie – żadna wersja Californii (Beach, Coast, Ocean) nie ma wbudowanej łazienki ani toalety. To główna różnica wobec Grand California, który oferuje pełną łazienkę z prysznicem."
+    answer: "Nie – żadna wersja Californii (Beach, Coast, Ocean) nie ma wbudowanej łazienki ani toalety. To główna różnica w porównaniu z Grand California, który oferuje pełną łazienkę z prysznicem."
 sources:
   - "Volkswagen Samochody Użytkowe"
   - "VW Polska"
@@ -35,7 +35,7 @@ Istotną nowością w generacji T7 jest standardowe wyposażenie wszystkich wers
 
 ### Beach – baza do własnej konfiguracji
 
-California Beach to bazowa linia modelowa, która jednak dzieli się na trzy warianty: Beach, Beach Tour i Beach Camper. Standardem jest podnoszony dach z łóżkiem oraz indywidualne, wyjmowane fotele tylne tworzące drugie miejsce do spania. Wersja Beach Camper jako jedyna w tej linii posiada wysuwaną z tyłu minikuchnię z jednym palnikiem gazowym.
+California Beach to bazowa linia modelowa, która jednak dzieli się na trzy warianty: Beach, Beach Tour i Beach Camper. Standardem jest podnoszony dach z łóżkiem oraz indywidualne, wyjmowane fotele tylne tworzące drugie miejsce do spania. Wersja Beach Camper jako jedyna w tej linii ma wysuwaną z tyłu minikuchnię z jednym palnikiem gazowym.
 
 -   **Dach podnoszony** – ręcznie, z materacem 200 × 120 cm
 -   **Indywidualne fotele tylne** – po złożeniu tworzą łóżko 200 × 115 cm
@@ -45,11 +45,11 @@ California Beach to bazowa linia modelowa, która jednak dzieli się na trzy war
 
 ### Coast – złoty środek
 
-Coast dodaje to, czego brakuje w wersji bazowej Beach – pełnoprawny aneks kuchenny z jednopalnikową kuchenką, zlewem, zbiornikiem wody o pojemności 30 l i szufladową lodówką kompresorową. To potencjalnie najpopularniejsza i najbardziej uniwersalna wersja dla osób szukających kompromisu między ceną a funkcjonalnością.
+Coast dodaje to, czego brakuje w wersji bazowej Beach – pełnoprawny aneks kuchenny z jednopalnikową kuchenką, zlewem, zbiornikiem wody o pojemności 30 l i szufladową lodówką kompresorową. To prawdopodobnie najpopularniejsza i najbardziej uniwersalna wersja dla osób szukających kompromisu między ceną a funkcjonalnością.
 
 ### Ocean – pełne wyposażenie
 
-Ocean to topowa wersja Californii z elektrohydraulicznie podnoszonym dachem, dwupalnikową kuchenką, lodówką kompresorową, dodatkowym oświetleniem LED ambient i systemem multimedialnym z ekranem o przekątnej 12,9 cala. To propozycja dla najbardziej wymagających użytkowników.
+Ocean to flagowa wersja Californii z elektrohydraulicznie podnoszonym dachem, dwupalnikową kuchenką, lodówką kompresorową, dodatkowym oświetleniem LED ambient i systemem multimedialnym z ekranem o przekątnej 12,9 cala. To propozycja dla najbardziej wymagających użytkowników.
 
 | Wyposażenie         | Beach            | Coast                | Ocean                |
 | :------------------ | :--------------- | :------------------- | :------------------- |
@@ -58,13 +58,13 @@ Ocean to topowa wersja Californii z elektrohydraulicznie podnoszonym dachem, dwu
 | Lodówka             | Brak             | Kompresorowa         | Kompresorowa 36 l    |
 | Zbiornik wody       | Brak (opcja 30 l) | 30 l                 | 30 l                 |
 | Oświetlenie ambient | Nie              | Nie                  | Tak                  |
-| System audio        | Podstawowy       | Ulepszone            | Premium              |
+| System audio        | Podstawowy       | Ulepszony            | Premium              |
 | **Cena od**         | **320 tys. zł**  | **370 tys. zł**      | **400 tys. zł**      |
 
 Nowością w T7 jest cyfrowa obsługa części kempingowej. W słupku C po stronie pasażera umieszczono 5-calowy, dotykowy wyświetlacz do sterowania dachem (wersja Ocean), oświetleniem, ogrzewaniem postojowym czy lodówką. Wszystkie funkcje, włącznie z poziomowaniem pojazdu, są dostępne także z poziomu aplikacji „California on Tour” na smartfona.
 
 {{% expert name="Marek Kowalczyk" %}}
-Coast to najrozsądniejszy wybór dla większości kupujących. Dopłata względem Beach daje pełny aneks kuchenny – niezbędny do kamperowania bez dostępu do infrastruktury. Skok z Coast do Ocean to głównie komfort – elektrohydrauliczny dach i lepsze oświetlenie. Miły dodatek, ale niekonieczny.
+Coast to najrozsądniejszy wybór dla większości kupujących. Dopłata w stosunku do Beach daje pełny aneks kuchenny – niezbędny do kamperowania bez dostępu do infrastruktury. Skok z Coast do Ocean to głównie komfort – elektrohydrauliczny dach i lepsze oświetlenie. Miły dodatek, ale niekonieczny.
 {{% /expert %}}
 
 ## Wymiary i DMC
@@ -83,25 +83,25 @@ Nowa California T7 jest zauważalnie dłuższa od poprzedniczki T6.1, co przekł
 | DMC                         | **3080–3200 kg** | **3000–3200 kg** |
 | Ładowność                   | **450–600 kg**   | **400–550 kg**   |
 
-DMC wynoszące 3080–3200 kg oznacza, że California mieści się komfortowo w limicie prawa jazdy kategorii B (do 3500 kg). Przy czterech pasażerach i bagażach zapas masy wynosi 200–400 kg – wystarczająco na standardowe wyposażenie kempingowe.
+DMC wynoszące 3080–3200 kg oznacza, że California mieści się z zapasem w limicie prawa jazdy kategorii B (do 3500 kg). Przy czterech pasażerach i bagażu zapas masy wynosi 200–400 kg, co wystarcza na standardowe wyposażenie kempingowe.
 
 ![Volkswagen California Ocean z podnoszonym dachem](/images/volkswagen-california-hero.webp)
 
 ## Silniki i napęd
 
-Generacja T7 przynosi fundamentalną zmianę – po raz pierwszy California jest dostępna z napędem hybrydowym plug-in i stałym napędem na cztery koła w standardzie dla tej wersji.
+Generacja T7 przynosi zasadniczą zmianę – po raz pierwszy California jest dostępna z napędem hybrydowym plug-in, a w tej wersji standardem jest stały napęd na cztery koła.
 
 ### Dostępne jednostki napędowe
 
 -   **2.0 TDI 150 KM** – klasyczny diesel z napędem na przednią oś, moment obrotowy 360 Nm, skrzynia DSG 7-biegowa. Spalanie 7–9 l/100 km. Sprawdzony wybór na długie trasy.
--   **2.0 TSI 204 KM** – silnik benzynowy z napędem na przednią oś i 7-stopniową skrzynią DSG. Stanowi mocną alternatywę dla jednostki wysokoprężnej i droższej hybrydy.
+-   **2.0 TSI 204 KM** – silnik benzynowy z napędem na przednią oś i 7-biegową skrzynią DSG. Stanowi mocną alternatywę dla jednostki wysokoprężnej i droższej hybrydy.
 -   **1.5 TSI eHybrid 245 KM (180 kW)** – hybryda plug-in z napędem 4MOTION, bateria 19,7 kWh. Zasięg elektryczny ok. 50 km, łączne spalanie 2–3 l/100 km (w cyklu mieszanym). Ładowanie z gniazdka trwa 3–4 h.
 
 Hybryda eHybrid to nowość, która zmienia sposób użytkowania Californii. Codzienna jazda po mieście może odbywać się na prądzie za ułamek kosztu diesla. Na dłuższe trasy włącza się silnik benzynowy, a napęd na cztery koła zapewnia trakcję w trudniejszych warunkach.
 
 ## Ceny VW California w 2026 roku
 
-California to jeden z najdroższych camper vanów na rynku, ale też jeden z tych, które najlepiej trzymają wartość.
+California to jeden z najdroższych camper vanów na rynku, ale też jeden z tych, które najlepiej zachowują wartość.
 
 ### Cennik nowych egzemplarzy
 
@@ -119,7 +119,7 @@ California T6/T6.1 to najczęściej wyszukiwany camper van na portalach ogłosze
 -   **T6 California Ocean (2016–2019)** – **250–350 tys. zł**
 -   **T6.1 California Ocean (2020–2024)** – **320–400 tys. zł**
 
-California traci na wartości wolniej niż konkurenci – spadek wartości wynosi 8–12% w ciągu pierwszych trzech lat, wobec 15–20% u [Mercedesa Marco Polo](/kampery/mercedes-marco-polo/). Egzemplarze T3 i T4 z lat 80. i 90. zyskują na wartości jako youngtimery.
+California traci na wartości wolniej niż konkurencja – spadek wartości wynosi 8–12% w ciągu pierwszych trzech lat, wobec 15–20% u [Mercedesa Marco Polo](/kampery/mercedes-marco-polo/). Egzemplarze T3 i T4 z lat 80. i 90. zyskują na wartości jako youngtimery.
 
 {{% youtube %}}
 

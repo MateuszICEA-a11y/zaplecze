@@ -12,10 +12,10 @@ youtube: "gJwF-WKhC6U"
 youtube_title: "Courier, Connect, Custom, Transit - test aut dostawczych Forda [PL]"
 main_keyword: "ford transit connect"
 volume: 6600
-lead: "Ford Transit Connect to kompaktowy dostawczak łączący cechy auta osobowego z użytkową wytrzymałością. Dwie pełne generacje Forda od 2002 roku i nowsza odsłona od 2022/2023 oparta na architekturze VW Caddy, silniki od 1.8 TDCi przez 1.6 TDCi po 1.5 TDCi/EcoBlue oraz benzynowe 1.0 i 1.6. Oto wszystko o wymiarach, silnikach i typowych usterkach."
+lead: "Ford Transit Connect to kompaktowy dostawczak łączący cechy auta osobowego z użytkową solidnością. Model ma za sobą dwie pełne generacje Forda od 2002 roku oraz nowszą odsłonę od 2022/2023 opartą na architekturze VW Caddy, z silnikami od 1.8 TDCi przez 1.6 TDCi po 1.5 TDCi/EcoBlue oraz benzynowymi 1.0 i 1.6. Oto wszystko o wymiarach, silnikach i typowych usterkach."
 faq:
   - question: "Jakie są wymiary Transit Connect L2?"
-    answer: "Wersja L2 ma długość 4825 mm. Paka mieści przedmioty do 2153 mm długości przy podłodze."
+    answer: "Wersja L2 ma długość 4825 mm. Paka mieści przedmioty o długości do 2153 mm przy podłodze."
   - question: "Jakie są opinie o Transit Connect?"
     answer: "Kierowcy chwalą ergonomię kabiny i precyzję prowadzenia. Negatywne głosy dotyczą cen autoryzowanego serwisu i ograniczonej szerokości między nadkolami."
   - question: "Ile pali diesel 1.5 EcoBlue?"
@@ -32,7 +32,7 @@ Transit Connect wypełnił lukę między małymi vanami a średnim [Fordem Trans
 
 ### Ford Transit Connect Mk1 (2002–2013)
 
-Pierwsza generacja zadebiutowała w 2002 roku jako użytkowy model oparty na rozwiązaniach znanych z aut osobowych Forda. To właśnie dlatego Connect Mk1 prowadzi się pewniej niż wiele dostawczaków z tamtych lat.
+Pierwsza generacja zadebiutowała w 2002 roku jako użytkowy model oparty na rozwiązaniach znanych z aut osobowych Forda. Właśnie dlatego Connect Mk1 prowadzi się pewniej niż wiele dostawczaków z tamtych lat.
 
 Mini-oś czasu Mk1 wygląda tak:
 - **2002–2009** – przedlift
@@ -42,7 +42,7 @@ W gamie były silniki:
 - **1.8 benzyna** – **115 KM**
 - **1.8 TDDi/TDCi** – **75 KM**, **90 KM**, **110 KM**
 
-W starszych rocznikach diesle Mk1 spotkasz z normą **Euro 3**, a w późniejszych z **Euro 4**. To ważne przy zakupie auta do miasta i przy sprawdzaniu dokumentów.
+W starszych rocznikach diesle Mk1 mają normę **Euro 3**, a w późniejszych – **Euro 4**. To ważne przy zakupie auta do miasta i przy sprawdzaniu dokumentów.
 
 ### Ford Transit Connect Mk2 / V408 (2013–2022)
 
@@ -61,18 +61,18 @@ Dla Mk2 istotne są też dwa rozstawy osi i dwie długości nadwozia:
 - **L2** – długość **4825 mm**, rozstaw osi **3062 mm**
 
 {{% info title="Active City Stop" icon="engineering" %}}
-Connect Mk2 był jednym z pierwszych kompaktowych dostawczaków z systemem automatycznego hamowania awaryjnego. Czujnik laserowy na szybie przedniej rozpoznaje przeszkody do prędkości 50 km/h.
+Connect Mk2 był jednym z pierwszych kompaktowych dostawczaków z systemem automatycznego hamowania awaryjnego. Czujnik laserowy na szybie przedniej rozpoznaje przeszkody przy prędkościach do 50 km/h.
 {{% /info %}}
 
 ### Odsłona od 2022/2023 – na bazie VW Caddy
 
-Od 2022/2023 pojawiła się nowa odsłona modelu, technicznie oparta na architekturze VW Caddy. Właśnie dlatego w ogłoszeniach i opisach łatwo pomieszać klasyczne generacje Forda z nowszym Connectem/Tourneo Connectem.
+Od 2022/2023 pojawiła się nowa odsłona modelu, technicznie oparta na architekturze VW Caddy. Właśnie dlatego w ogłoszeniach i opisach łatwo pomylić klasyczne generacje Forda z nowszym Connectem/Tourneo Connectem.
 
 W tej rodzinie występuje także **Grand Tourneo Connect**. Jeśli porównujesz wymiary i wyposażenie, trzeba zawsze sprawdzać, czy chodzi o klasycznego Transit Connect Van, czy o osobowego Tourneo Connect nowej odsłony.
 
 ## Dane techniczne i wymiary
 
-W Transit Connect najważniejszy jest wybór długości nadwozia. W praktyce większość firm szuka między L1 a L2 kompromisu między zwrotnością, ładownością i realną długością paki.
+W Transit Connect najważniejszy jest wybór długości nadwozia. W praktyce większość firm szuka kompromisu między L1 a L2 – między zwrotnością, ładownością i realną długością paki.
 
 | Parametr | Mk2 Van L1 | Mk2 Van L2 |
 |----------|------------|------------|
@@ -88,7 +88,7 @@ W Transit Connect najważniejszy jest wybór długości nadwozia. W praktyce wi�
 | Średnica zawracania | 11,7 m | 12,5 m |
 | Masa własna | ok. 1500–1700 kg | ok. 1500–1700 kg |
 
-W praktyce **L1** lepiej sprawdza się w mieście i przy serwisie mobilnym. **L2** daje już wyraźnie większą pakę i łatwiej znosi pracę z regałami, zabudową warsztatową albo przewozem dłuższych elementów przez klapę w przegrodzie.
+W praktyce **L1** lepiej sprawdza się w mieście i przy serwisie mobilnym. **L2** daje już wyraźnie większą pakę i lepiej znosi eksploatację z regałami, zabudową warsztatową albo przewozem dłuższych elementów przez klapę w przegrodzie.
 
 Jeśli oglądasz nowsze Tourneo Connecty od 2022/2023, nie mieszaj ich wymiarów z klasycznym Mk2 Vanem. To inna baza techniczna i inne nadwozie.
 
@@ -115,11 +115,11 @@ Gama silnikowa Transit Connecta zmieniała się mocno między generacjami i lift
 
 W **Mk1** najczęściej szuka się diesla **1.8 TDCi/TDDi**, bo to jednostka znana z dużej trwałości i prostszej konstrukcji. Trzeba tylko pamiętać, że stan konkretnego egzemplarza jest dziś ważniejszy niż sama wersja mocy.
 
-W **Mk2 przedlift** istotne są diesle **1.6 TDCi 75/95/115 KM**. Jeśli auto ma robić dłuższe trasy i przewozić ładunek, lepiej celować przynajmniej w środkową lub mocniejszą odmianę.
+W **Mk2 przedlift** istotne są diesle **1.6 TDCi 75/95/115 KM**. Jeśli auto ma pokonywać dłuższe trasy i przewozić ładunek, lepiej celować przynajmniej w środkową lub mocniejszą odmianę.
 
-W **Mk2 polift** najpopularniejszy jest **1.5 TDCi / EcoBlue 100 KM**. To rozsądny środek między spalaniem a osiągami. Wersja **120 KM** jest wyraźnie przyjemniejsza w trasie i częściej trafia do lepiej wyposażonych aut.
+W **Mk2 polift** najpopularniejszy jest **1.5 TDCi / EcoBlue 100 KM**. To rozsądny kompromis między spalaniem a osiągami. Wersja **120 KM** jest wyraźnie przyjemniejsza w trasie i częściej trafia do lepiej wyposażonych aut.
 
-Diesel 1.5 z katalizatorem [SCR](https://en.wikipedia.org/wiki/Selective_catalytic_reduction) jest oszczędny, ale wraz z nowszymi normami dochodzi osprzęt emisji spalin. Z kolei **1.0 EcoBoost** nie jest uniwersalnym wyborem pod LPG – taka konfiguracja wymaga dobrze dobranej instalacji i nie można jej traktować jako oczywistej, fabrycznie rekomendowanej opcji.
+Diesel 1.5 z katalizatorem [SCR](https://en.wikipedia.org/wiki/Selective_catalytic_reduction) jest oszczędny, ale wraz z nowszymi normami dochodzi osprzęt emisji spalin. Z kolei **1.0 EcoBoost** nie jest uniwersalnym wyborem pod LPG – taka konfiguracja wymaga starannie dobranej instalacji i nie można jej traktować jako oczywistej, fabrycznie zalecanej opcji.
 
 {{% expert name="Marek Kowalczyk" %}}
 Mk1 z silnikiem 1.8 TDCi to jedna z najbardziej trwałych konstrukcji Forda – na rynku wtórnym trafisz na egzemplarze z przebiegami ponad 400 tys. km przy żywym silniku. Kluczem jest regularna wymiana paska rozrządu co 160 tys. km i oleju co 15 tys. km.
@@ -137,11 +137,11 @@ Transit Connect występował nie tylko jako klasyczny furgon. To jedna z przyczy
 - **Drzwi tylne** – asymetryczne skrzydłowe lub klapa
 - **Przegroda** – pełna stalowa lub z szybą
 
-To najczęstszy wybór dla kurierów, ekip serwisowych i firm miejskich. L1 jest zwrotniejszy, L2 daje więcej sensu tam, gdzie codziennie wozi się regały, paczki albo dłuższe elementy.
+To najczęstszy wybór dla kurierów, ekip serwisowych i firm miejskich. L1 jest zwrotniejszy, L2 ma więcej sensu tam, gdzie codziennie wozi się regały, paczki albo dłuższe elementy.
 
 ### Kombi N1
 
-Kombi N1 to wariant dla tych, którzy muszą wozić ludzi i towar jednym autem. Ma **5 miejsc**, składaną drugą kanapę i jest kompromisem między typowym vanem a osobówką do firmy.
+Kombi N1 to wariant dla tych, którzy muszą wozić ludzi i towar jednym autem. Ma **5 miejsc**, składaną drugą kanapę i stanowi kompromis między typowym vanem a osobówką do firmy.
 
 ### Tourneo Connect i Grand Tourneo Connect
 
@@ -149,7 +149,7 @@ Kombi N1 to wariant dla tych, którzy muszą wozić ludzi i towar jednym autem. 
 - **Grand Tourneo Connect** – **7 miejsc**
 - **Długość nadwozia** – ok. **4825–4853 mm** zależnie od generacji i odsłony
 
-Osobowe Tourneo jest sensowną opcją dla rodzin i przewozu osób. Grand Tourneo daje trzeci rząd siedzeń, ale trzeba patrzeć na konkretną generację, bo wymiary i baza techniczna różnią się między klasycznym Mk2 a odsłoną od 2022/2023.
+Osobowe Tourneo to rozsądna opcja dla rodzin i przewozu osób. Grand Tourneo daje trzeci rząd siedzeń, ale trzeba patrzeć na konkretną generację, bo wymiary i baza techniczna różnią się między klasycznym Mk2 a odsłoną od 2022/2023.
 
 ### Zabudowy spotykane na rynku
 
@@ -163,7 +163,7 @@ W Tourneo i Grand Tourneo da się zrobić prostego minikampera. Po demontażu lu
 
 ## Typowe usterki Ford Transit Connect
 
-Transit Connect nie należy do aut szczególnie problematycznych, ale lista usterek zmienia się wyraźnie między Mk1 a Mk2. Najwięcej zależy od rodzaju eksploatacji – auto miejskie z krótkich tras będzie miało inne problemy niż egzemplarz jeżdżący głównie w trasie.
+Transit Connect nie należy do aut szczególnie problematycznych, ale lista usterek zmienia się wyraźnie między Mk1 a Mk2. Najwięcej zależy od rodzaju eksploatacji – auto jeżdżące na krótkich trasach miejskich będzie miało inne problemy niż egzemplarz pokonujący głównie dłuższe trasy.
 
 ### Mk1 (2002–2013)
 
@@ -180,10 +180,10 @@ W Mk1 trzeba też pilnować ogólnego stanu układu paliwowego i osprzętu diesl
 - **DPF** – zapycha się przy jeździe typowo miejskiej
 - **SYNC** – zawieszanie się i wolne działanie, zwykle pomaga aktualizacja lub naprawa modułu
 
-W nowszych dieslach dochodzi jeszcze osprzęt układu AdBlue/SCR. To nie jest wada tylko Connecta, ale przy zakupie warto sprawdzić, czy nie ma błędów związanych z czujnikami i dozowaniem.
+W nowszych dieslach dochodzi jeszcze osprzęt układu AdBlue/SCR. To nie jest wada wyłącznie Connecta, ale przy zakupie warto sprawdzić, czy nie ma błędów związanych z czujnikami i dozowaniem.
 
 {{% info title="Kod błędu P2111/P2135" icon="engineering" %}}
-W Mk2 z lat 2013–2015 kody P2111/P2135 dotyczą wybranych wersji benzynowych i układu przepustnicy/pedału przyspieszenia. To nie jest typowa diagnoza dla całej gamy Mk2, a już na pewno nie dla wszystkich diesli 1.5.
+W Mk2 z lat 2013–2015 kody P2111/P2135 dotyczą wybranych wersji benzynowych oraz układu przepustnicy i pedału przyspieszenia. To nie jest typowa diagnoza dla całej gamy Mk2, a już na pewno nie dla wszystkich diesli 1.5.
 {{% /info %}}
 
 ### Koszty typowych napraw
@@ -213,7 +213,7 @@ Poniżej orientacyjne widełki, które najczęściej pojawiają się przy realne
 
 ## Porównanie Forda Transit Connect z konkurencją
 
-Transit Connect konkuruje głównie z autami, które kupuje się z podobnego powodu: ma być kompaktowo z zewnątrz, ale użytkowo w środku. Różnice między modelami nie kończą się jednak na samej pace – liczą się też koszty serwisu, utrata wartości i dostępność zabudów.
+Transit Connect konkuruje głównie z autami, które kupuje się z podobnego powodu: mają być kompaktowe z zewnątrz, a praktyczne w środku. Różnice między modelami nie kończą się jednak na samej pace – liczą się też koszty serwisu, spadek wartości i dostępność zabudów.
 
 | Parametr | Ford Transit Connect L2 | Citroën Berlingo L2 | Peugeot Partner L2 | VW Caddy Maxi |
 |----------|------------------------|--------------------|--------------------|---------------|
@@ -223,13 +223,13 @@ Transit Connect konkuruje głównie z autami, które kupuje się z podobnego pow
 | Diesel bazowy | 1.5 EcoBlue 100 KM | 1.5 BlueHDi 100 KM | 1.5 BlueHDi 100 KM | 2.0 TDI 75 KM |
 | Cena nowego (netto) | od 110 000 zł | od 100 000 zł | od 100 000 zł | od 130 000 zł |
 
-**Berlingo i Partner** mają przewagę tam, gdzie najważniejsza jest objętość przestrzeni ładunkowej i cena zakupu. W długiej wersji dają do **3,9 m³**, więc są bardziej wyspecjalizowane pod lekką logistykę i zabudowy. Zwykle kupisz je taniej niż Connecta, ale ich wartość rezydualna bywa słabsza.
+**Berlingo i Partner** mają przewagę tam, gdzie najważniejsza jest objętość przestrzeni ładunkowej i cena zakupu. W długiej wersji dają do **3,9 m³**, więc są bardziej wyspecjalizowane pod lekką logistykę i zabudowy. Zwykle kupisz je taniej niż Connecta, ale ich wartość przy odsprzedaży bywa niższa.
 
-**VW Caddy Maxi** zwykle lepiej trzyma cenę przy odsprzedaży i częściej jest postrzegany jako model bardziej dopracowany wykończeniowo. Z drugiej strony koszt wejścia jest wyższy, a serwis też potrafi być droższy niż w Fordzie.
+**VW Caddy Maxi** zwykle lepiej trzyma cenę przy odsprzedaży i częściej jest postrzegany jako model bardziej dopracowany wykończeniowo. Z drugiej strony cena zakupu jest wyższa, a serwis też potrafi być droższy niż w Fordzie.
 
-**Transit Connect** broni się bardzo dobrym prowadzeniem i ergonomią kabiny. To auto, które często bardziej przypomina osobówkę niż dostawczaka. Minusem jest węższa specjalizacja zabudów niż w modelach PSA – jeśli szukasz gotowej izotermy czy bardzo konkretnej konfiguracji do miasta, oferta rynkowa bywa skromniejsza.
+**Transit Connect** broni się bardzo dobrym prowadzeniem i ergonomią kabiny. To auto, które często bardziej przypomina osobówkę niż dostawczaka. Minusem jest węższa oferta zabudów niż w modelach PSA – jeśli szukasz gotowej izotermy czy bardzo konkretnej konfiguracji do miasta, wybór na rynku bywa skromniejszy.
 
-Dla małej firmy usługowej Ford jest zwykle rozsądnym środkiem. Dla kuriera albo firmy stawiającej na maksymalną objętość przy niższym budżecie częściej wyjdzie sensowniej Berlingo lub Partner. Jeśli priorytetem jest odsprzedaż i „prestiż roboczy”, Caddy nadal trzyma mocną pozycję.
+Dla małej firmy usługowej Ford jest zwykle rozsądnym kompromisem. Dla kuriera albo firmy stawiającej na maksymalną objętość przy niższym budżecie częściej lepszym wyborem będzie Berlingo lub Partner. Jeśli priorytetem jest odsprzedaż i „prestiż roboczy”, Caddy nadal trzyma mocną pozycję.
 
 ### Orientacyjne koszty serwisowe na tle rywali
 

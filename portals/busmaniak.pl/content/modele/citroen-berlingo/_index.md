@@ -11,7 +11,7 @@ image: "/images/citroen-berlingo-hero.webp"
 image_alt: "Citroën Berlingo III na drodze"
 youtube: "iTN4kNu9Dbo"
 youtube_title: "Citroën Berlingo 1.6HDI - Vano-Szczak, dom zbuduje, na wakacje zawiezie! (test PL) - AutoMarian 500+"
-lead: "Citroën Berlingo to jeden z najpopularniejszych kombivanów w Europie, produkowany od 1996 roku. Berlingo i Peugeot Partner należą do najpopularniejszych kombivanów produkowanych w Vigo. Model sprawdza się jako auto rodzinne, dostawcze i serwisowe."
+lead: "Citroën Berlingo to jeden z najpopularniejszych kombivanów w Europie, produkowany od 1996 roku. Berlingo i Peugeot Partner należą do najchętniej wybieranych kombivanów wytwarzanych w Vigo. Model sprawdza się jako auto rodzinne, dostawcze i serwisowe."
 faq:
   - question: "Jakie są generacje Citroëna Berlingo?"
     answer: "Trzy generacje: I (1996–2008, 3,2 mln sztuk), II (2008–2018, platforma PF2) i III (od 2018, platforma EMP2 z wersją elektryczną ë-Berlingo)."
@@ -38,7 +38,7 @@ Citroën Berlingo trafił na rynek w 1996 roku jako jeden z pierwszych kombivan�
 
 Pierwsza generacja nosiła oznaczenia M49 i później M59. Wersja przed liftingiem była produkowana w latach 1996–2002, a po liftingu od 2002 do 2008 roku.
 
-To było proste, użytkowe auto z przestronnym wnętrzem i nieskomplikowaną mechaniką. W gamie znalazły się m.in. benzynowe 1.4 75 KM i 1.6 16V 109 KM oraz diesle 1.8 D 60 KM, 1.9 D 69 KM i 2.0 HDi 90 KM. W późniejszych latach oferta była wyraźnie nowocześniejsza niż na starcie, ale charakter auta pozostał ten sam – tanie utrzymanie i duża praktyczność.
+Było to proste, użytkowe auto z przestronnym wnętrzem i nieskomplikowaną mechaniką. W gamie znalazły się m.in. benzynowe 1.4 75 KM i 1.6 16V 109 KM oraz diesle 1.8 D 60 KM, 1.9 D 69 KM i 2.0 HDi 90 KM. W późniejszych latach oferta była wyraźnie nowocześniejsza niż na starcie, ale charakter auta pozostał ten sam – tanie utrzymanie i duża praktyczność.
 
 ### Berlingo II (2008–2018)
 
@@ -78,13 +78,13 @@ Dla wersji użytkowych ważniejsze są parametry przestrzeni ładunkowej i łado
 | Ładowność | do ok. 1000 kg | do ok. 950–1000 kg |
 | DMC | typowo 2000–2400 kg | typowo 2000–2400 kg |
 
-Jeśli szukasz auta do firmy, to właśnie te liczby robią różnicę. Miejska odmiana M jest łatwiejsza do parkowania, ale XL daje więcej swobody przy długich paczkach, zabudowie serwisowej albo pracy kurierskiej.
+Jeśli szukasz auta do firmy, właśnie te liczby mają realne znaczenie. Miejska odmiana M jest łatwiejsza do parkowania, ale XL daje więcej swobody przy długich paczkach, zabudowie serwisowej albo pracy kurierskiej.
 
 ## Silniki Berlingo {#silniki}
 
-Gama silnikowa Berlingo zmieniała się mocno między generacjami. Starsze auta stawiały na prostotę, II generacja na popularne diesle 1.6 HDi, a III generacja dorzuciła downsizing benzynowy, nowy diesel 1.5 BlueHDi i wersję elektryczną.
+Gama silnikowa Berlingo mocno zmieniała się między generacjami. Starsze auta stawiały na prostotę, II generacja – na popularne diesle 1.6 HDi, a III generacja wprowadziła mniejsze silniki benzynowe, nowy diesel 1.5 BlueHDi i wersję elektryczną.
 
-Poniżej znajdziesz wybrane, najważniejsze jednostki z trzech generacji. To nie jest każda odmiana katalogowa, ale zestaw praktycznie użyteczny przy zakupie używanego egzemplarza.
+Poniżej znajdziesz wybrane, najważniejsze jednostki z trzech generacji. To nie pełny wykaz odmian katalogowych, lecz zestaw przydatny przy zakupie używanego egzemplarza.
 
 | Silnik | Generacja | Moc / moment | Skrzynia | Norma Euro |
 |--------|-----------|--------------|----------|------------|
@@ -112,13 +112,13 @@ Poniżej znajdziesz wybrane, najważniejsze jednostki z trzech generacji. To nie
 | 1.5 BlueHDi | III | 130 KM / 300 Nm | manualna / automatyczna | Euro 6d |
 | ë-Berlingo | III | 136 KM / 260 Nm | automatyczna | – |
 
-W praktyce na rynku wtórnym najczęściej trafisz na 1.6 HDi w II generacji oraz 1.5 BlueHDi i 1.2 PureTech w III. Elektryczne ë-Berlingo ma baterię 50 kWh i zasięg WLTP do 280 km, więc lepiej pasuje do miasta, firmy kurierskiej albo jazdy lokalnej niż do długich tras bez planowania ładowania.
+W praktyce na rynku wtórnym najczęściej trafisz na 1.6 HDi w II generacji oraz 1.5 BlueHDi i 1.2 PureTech w III. Elektryczne ë-Berlingo ma akumulator 50 kWh i zasięg WLTP do 280 km, więc lepiej pasuje do miasta, firmy kurierskiej albo jazdy lokalnej niż do długich tras bez planowania ładowania.
 
 ![Citroën Berlingo III na drodze](/images/citroen-berlingo-hero.webp)
 
 ## Wersje nadwoziowe Citroëna Berlingo {#wersje-nadwozia}
 
-Berlingo występuje w kilku odmianach, ale sedno oferty pozostaje niezmienne: rodzinna osobówka albo praktyczne auto do pracy. Różnice dotyczą nie tylko długości nadwozia, ale też układu siedzeń, przegrody i możliwości zabudowy.
+Berlingo występuje w kilku odmianach, ale sedno oferty pozostaje niezmienne: rodzinna osobówka albo praktyczne auto do pracy. Różnice dotyczą nie tylko długości nadwozia, lecz także układu siedzeń, przegrody i możliwości zabudowy.
 
 - **[Berlingo Multispace](/modele/citroen-berlingo/multispace/)** – klasyczna wersja osobowa starszych generacji, nastawiona na rodzinę i codzienną wygodę.
 - **Kombi / Life** – osobowe odmiany nowszych generacji, z dużym bagażnikiem i wygodniejszym wykończeniem wnętrza.
@@ -134,13 +134,13 @@ W praktyce najważniejsze odmiany użytkowe wyglądają tak:
 
 Wersje dostawcze mają też parametry ważne przy codziennej pracy: próg załadunku około **613 mm** i **1229 mm** szerokości między nadkolami. To wystarcza do sensownego wykorzystania auta przez kurierów, serwisantów czy małe firmy budowlane.
 
-W osobowym XL można mieć 7 miejsc i trzy niezależne fotele w drugim rzędzie. To jedna z mocniejszych stron Berlingo, bo łatwo pogodzić przewóz rodziny z dużym bagażnikiem albo szybkim przepięciem wnętrza pod wyjazd.
+W osobowym XL można mieć 7 miejsc i trzy niezależne fotele w drugim rzędzie. To jedna z mocniejszych stron Berlingo, bo łatwo pogodzić przewóz rodziny z dużym bagażnikiem albo szybko dostosować wnętrze do wyjazdu.
 
 Na rynku spotyka się też wersje specjalne i zabudowy:
 - chłodnie,
 - auta serwisowe,
 - zabudowy kurierskie,
-- mini-campery i projekty vanlife na bazie M lub XL.
+- mini-campery oraz zabudowy turystyczne na bazie M lub XL.
 
 Jeśli szukasz klasycznej wersji podwoziowej do własnej zabudowy, trzeba powiedzieć wprost: **brak klasycznej wersji podwoziowej w polskiej gamie**.
 
@@ -150,7 +150,7 @@ Berlingo nie jest autem szczególnie problematycznym, ale ma kilka powtarzalnych
 
 ### 1.6 HDi / DV6
 
-To najpopularniejszy diesel w II generacji i jednocześnie jednostka, przy której zaniedbania szybko wychodzą bokiem. Typowe problemy to zapychanie sitka olejowego turbo, problemy z przewodami smarowania, nieszczelności na podkładkach pod wtryskami oraz kłopoty z FAP i płynem Eolys.
+To najpopularniejszy diesel w II generacji i jednocześnie jednostka, przy której zaniedbania szybko wychodzą bokiem. Typowe problemy to zapychanie sitka olejowego turbo, kłopoty z przewodami smarowania, nieszczelności na podkładkach pod wtryskiwaczami oraz usterki FAP i płynu Eolys.
 
 Koszty napraw:
 - regeneracja turbo – **1200–2000 zł**
@@ -189,12 +189,12 @@ Koszty napraw:
 Przegląd olejowy zwykle kosztuje **300–500 zł**. Realne [spalanie Berlingo](/serwis/citroen-berlingo-spalanie/) zależy od wersji i sposobu użytkowania – diesel będzie wyraźnie oszczędniejszy w trasie, a benzynowe odmiany lepiej znoszą krótkie odcinki i jazdę miejską.
 
 {{% expert name="Marek Kowalczyk" %}}
-Kupując używane Berlingo, najpierw sprawdź historię olejową i naprawy osprzętu diesla. W 1.6 HDi zaniedbany serwis często kończy się problemami z turbiną, a w 1.5 BlueHDi warto skontrolować temat AdBlue i rozrządu, zanim auto zacznie generować większe koszty.
+Kupując używane Berlingo, najpierw sprawdź historię olejową i naprawy osprzętu diesla. W 1.6 HDi zaniedbany serwis często kończy się problemami z turbiną, a w 1.5 BlueHDi warto skontrolować układ AdBlue i rozrząd, zanim pojawią się poważniejsze koszty.
 {{% /expert %}}
 
 ## Porównanie Citroëna Berlingo z konkurencją {#konkurencja}
 
-W segmencie kombivanów Berlingo rywalizuje głównie z autami o podobnym przeznaczeniu: rodzinnymi i dostawczymi odmianami Peugeotów, Opli, Volkswagena i Renault. Różnice zwykle sprowadzają się do ceny, konfiguracji wnętrza i oferty napędów.
+W segmencie kombivanów Berlingo rywalizuje głównie z autami o podobnym przeznaczeniu: rodzinnymi i dostawczymi odmianami Peugeota, Opla, Volkswagena i Renault. Różnice zwykle sprowadzają się do ceny, konfiguracji wnętrza i oferty napędów.
 
 | Parametr | Citroën Berlingo III XL | Peugeot Rifter Long | Opel Combo Life XL | VW Caddy Maxi | Renault Kangoo Long |
 |----------|-------------------------|---------------------|--------------------|---------------|---------------------|
@@ -209,7 +209,7 @@ Berlingo ma tę przewagę, że łączy dużą praktyczność z szeroką ofertą 
 
 ## Ceny Berlingo
 
-Ceny Citroëna Berlingo zależą głównie od generacji, stanu blacharki, rodzaju nadwozia i silnika. Na rynku wtórnym rozstrzał jest duży – od tanich, prostych aut roboczych po młode egzemplarze III generacji, które dalej trzymają cenę.
+Ceny Citroëna Berlingo zależą głównie od generacji, stanu blacharki, rodzaju nadwozia i silnika. Na rynku wtórnym rozstrzał jest duży – od tanich, prostych aut roboczych po młode egzemplarze III generacji, które wciąż dobrze trzymają cenę.
 
 ### Ceny używanych egzemplarzy
 
@@ -224,11 +224,11 @@ Ceny Citroëna Berlingo zależą głównie od generacji, stanu blacharki, rodzaj
 | 2021–2022 | **60 000–90 000 zł** |
 | 2023–2024 | **80 000–120 000 zł** |
 
-Dla używanego elektrycznego ë-Berlingo z lat 2021–2022 trzeba przyjąć zwykle około **85 000–120 000 zł**.
+Za używane elektryczne ë-Berlingo z lat 2021–2022 trzeba zwykle przyjąć około **85 000–120 000 zł**.
 
 ### Ceny nowych egzemplarzy
 
-Żeby uniknąć mieszania netto z brutto, najlepiej rozdzielić wersje użytkowe i osobowe:
+Aby uniknąć mieszania cen netto z brutto, najlepiej rozdzielić wersje użytkowe i osobowe:
 
 | Wersja | Cena orientacyjna |
 |--------|-------------------|

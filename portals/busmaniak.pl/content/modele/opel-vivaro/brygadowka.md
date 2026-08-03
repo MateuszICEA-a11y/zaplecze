@@ -47,17 +47,17 @@ W praktyce konfiguracja brygadowa dotyczy przede wszystkim długości **M** i **
 - **Długość całkowita M** – 4959 mm
 - **Długość całkowita XL** – 5309 mm
 - **Szerokość bez lusterek** – 1920 mm
-- **Wysokość** – ok. 1890–1935 mm zależnie od wersji
+- **Wysokość** – ok. 1890–1935 mm, zależnie od wersji
 - **Rozstaw osi M** – 3275 mm
 - **Rozstaw osi XL** – 3275 mm, z dłuższym zwisem tylnym
 - **Szerokość między nadkolami** – ok. 1258 mm
 
-W wersjach załogowych przestrzeń ładunkowa za drugim rzędem jest wyraźnie mniejsza niż w klasycznym furgonie. Dla vanów tej klasy to najczęściej ok. **3,2–4,0 m3**, a długość podłogi za drugim rzędem wynosi zwykle ok. **1,4–2,0 m** zależnie od długości nadwozia.
+W wersjach załogowych przestrzeń ładunkowa za drugim rzędem jest wyraźnie mniejsza niż w klasycznym furgonie. Dla vanów tej klasy to najczęściej ok. **3,2–4,0 m3**, a długość podłogi za drugim rzędem wynosi zwykle ok. **1,4–2,0 m**, zależnie od długości nadwozia.
 
-Istotne są też same otwory załadunkowe. Dla praktyki warsztatowej i remontowej znaczenie mają orientacyjnie:
+Istotne są też same otwory załadunkowe. W praktyce warsztatowej i remontowej orientacyjne znaczenie mają:
 - **szerokość drzwi bocznych** – ok. 935 mm
 - **wysokość otworu bocznego** – ok. 1241 mm
-- **wysokość progu załadunku** – ok. 600–650 mm zależnie od wersji
+- **wysokość progu załadunku** – ok. 600–650 mm, zależnie od wersji
 
 {{% expert name="Marek Kowalczyk" %}}
 W przypadku Vivaro warto patrzeć nie tylko na długość auta, ale też na realną długość podłogi za drugim rzędem i wysokość progu. Indywidualne zabudowy wykonywane przez firmy zewnętrzne są możliwe, ale nie należy traktować ich jako typowej, fabrycznej konfiguracji modelu.
@@ -67,19 +67,19 @@ W przypadku Vivaro warto patrzeć nie tylko na długość auta, ale też na real
 
 Przy brygadówce sama długość nadwozia nie mówi jeszcze wszystkiego. DMC i ładowność zależą od konkretnej wersji homologacyjnej, silnika, skrzyni biegów, liczby miejsc, wyposażenia oraz masy samej zabudowy.
 
-Dla praktyki flotowej trzeba pamiętać, że w tej klasie aut DMC wynosi zwykle do **3100 kg lub 3500 kg** zależnie od wersji. Dodatkowo realna ładowność może różnić się między skrajnymi odmianami tej samej rodziny modelowej nawet o **ponad 200–300 kg**.
+Dla praktyki flotowej trzeba pamiętać, że w tej klasie aut DMC wynosi zwykle do **3100 kg lub 3500 kg**, zależnie od wersji. Dodatkowo realna ładowność może różnić się między skrajnymi odmianami tej samej rodziny modelowej nawet o **200–300 kg**.
 
 | Parametr | Informacja praktyczna |
 |--------|-------------------|
-| DMC | zwykle do 3100 kg lub 3500 kg zależnie od wersji |
+| DMC | zwykle do 3100 kg lub 3500 kg, zależnie od wersji |
 | Ładowność | zależna od homologacji, długości, silnika, skrzyni, liczby miejsc i wyposażenia |
-| Przyczepa hamowana | często do 2000–2500 kg zależnie od silnika i skrzyni |
+| Przyczepa hamowana | często do 2000–2500 kg, zależnie od silnika i skrzyni |
 | Przyczepa bez hamulca | 750 kg |
-| Nacisk pionowy haka | zwykle 70–100 kg zależnie od homologacji |
+| Nacisk pionowy haka | zwykle 70–100 kg, zależnie od homologacji |
 
 ### Vivaro brygadówka L1 i L2
 
-Nazewnictwo długości trzeba powiązać z generacją. W starszych Vivaro A i B stosowano oznaczenia w rodzaju **L1/L2**, natomiast w Vivaro C mamy **XS/M/XL**.
+Nazewnictwo długości trzeba powiązać z generacją. W starszych generacjach Vivaro A i B stosowano oznaczenia w rodzaju **L1/L2**, natomiast w Vivaro C stosuje się **XS/M/XL**.
 
 Nie należy utożsamiać długości nadwozia z jednym konkretnym DMC. To, czy auto ma DMC 3100 czy 3500 kg, wynika z wersji homologacyjnej, a nie wyłącznie z tego, czy nadwozie jest krótsze czy dłuższe.
 
@@ -105,7 +105,7 @@ Do pracy pod obciążeniem w Vivaro C spotykamy m.in.:
 - **[2.0 D 145 KM](/modele/opel-vivaro/2-0/)** – ok. 340 Nm
 - **2.0 D 177 KM** – ok. 400 Nm
 
-W praktyce moment obrotowy ma większe znaczenie niż sama moc maksymalna, zwłaszcza przy pełnej obsadzie i narzędziach na pace. Warto też sprawdzić, które wersje były łączone z automatem **EAT8**, bo ma to wpływ na masę własną i finalną ładowność.
+W praktyce moment obrotowy ma większe znaczenie niż sama moc maksymalna, zwłaszcza przy pełnej obsadzie i narzędziach na pace. Warto też sprawdzić, które wersje były łączone z automatem **EAT8**, bo ma to wpływ na masę własną i ostateczną ładowność.
 
 Jeśli rozważasz starsze generacje, pamiętaj, że podane wyżej jednostki nie odnoszą się do Vivaro A ani Vivaro B. To ważne przy zakupie auta używanego, bo w ogłoszeniach bardzo często miesza się nazewnictwo wszystkich trzech generacji.
 
@@ -119,12 +119,12 @@ Opel Vivaro brygadówka ma sens tam, gdzie jedna załoga musi jechać razem z wy
 Typowe zastosowania:
 - **ekipy remontowo-budowlane** – transport ludzi i materiałów jednym autem
 - **serwisy techniczne** – elektryczne, hydrauliczne, HVAC
-- **służby komunalne i awaryjne** – szybki dojazd z załogą i sprzętem
-- **firmy instalacyjne** – przewóz narzędzi i ekipy w jednej kabinie
+- **służby komunalne i awaryjne** – szybki dojazd ze załogą i sprzętem
+- **firmy instalacyjne** – przewóz narzędzi i ekipy jednym autem
 
-Trzeba jednak pamiętać o ograniczeniach. Drugi rząd siedzeń skraca długość użytkową przestrzeni ładunkowej zwykle o kilkadziesiąt centymetrów do ponad 1 m i obniża ładowność przez wzrost masy własnej, więc brygadówka mieści mniej europalet i długich elementów niż zwykły van tej samej długości.
+Trzeba jednak pamiętać o ograniczeniach. Drugi rząd siedzeń skraca długość użytkową przestrzeni ładunkowej zwykle o kilkadziesiąt centymetrów do ponad metra i obniża ładowność przez wzrost masy własnej, więc brygadówka mieści mniej europalet i długich elementów niż zwykły van tej samej długości.
 
-Znaczenie ma również układ siedzeń. W praktyce spotyka się konfiguracje **2+3** lub **3+3**, przy czym obecność środkowego miejsca z przodu zależy od zastosowania przedniej kanapy i konkretnej specyfikacji auta; przy zakupie warto też sprawdzić pełnowymiarowość drugiego rzędu, typ pasów oraz obecność mocowań ISOFIX.
+Znaczenie ma również układ siedzeń. W praktyce spotyka się konfiguracje **2+3** lub **3+3**, przy czym obecność środkowego miejsca z przodu zależy od montażu przedniej kanapy i konkretnej specyfikacji auta; przy zakupie warto też sprawdzić pełnowymiarowość drugiego rzędu, typ pasów oraz obecność mocowań ISOFIX.
 
 {{% info title="Zabudowa zewnętrzna" icon="engineering" %}}
 Jeśli rozważasz zabudowę wykonywaną poza fabryką, trzeba sprawdzić bazową wersję auta, homologację oraz dopuszczalne masy po zabudowie. W przypadku Vivaro nie należy zakładać, że klasyczne podwozie z kabiną jest standardową, typową wersją katalogową modelu.

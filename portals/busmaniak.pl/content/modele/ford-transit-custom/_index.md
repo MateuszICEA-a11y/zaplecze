@@ -12,11 +12,11 @@ youtube: "DQMtQVg8gh4"
 youtube_title: "Ford Transit Custom L1H1 2.0 EcoBlue 150 TEST Najlepszy dostawczak na rynku? [4k]"
 main_keyword: "ford transit custom"
 volume: 14800
-lead: "Ford Transit Custom to bestseller segmentu średnich dostawczaków w Europie od 2012 roku. Dwie generacje – gen I początkowo z 2.2 TDCi, później z 2.0 EcoBlue, a nowy model z premierą i startem produkcji w 2023 roku, szeroko dostępny w Polsce od 2024, z dieslem 2.0 EcoBlue, plug-in hybrid i E-Transit Custom. Silniki od 100 do 232 KM, paka do 6,8 m³, ładowność do 1356 kg w gen I. Wersja elektryczna E-Transit Custom z zasięgiem do 327 km."
+lead: "Ford Transit Custom to bestseller segmentu średnich dostawczaków w Europie od 2012 roku. Dwie generacje – gen I początkowo z 2.2 TDCi, później z 2.0 EcoBlue, a nowy model z premierą i startem produkcji w 2023 roku, szeroko dostępny w Polsce od 2024, z dieslem 2.0 EcoBlue, hybrydą plug-in i E-Transit Custom. Silniki od 100 do 232 KM, paka do 6,8 m³, ładowność do 1356 kg w gen I. Wersja elektryczna E-Transit Custom z zasięgiem do 327 km."
 faq:
   - question: "Jaka jest różnica między gen I a gen II?"
-    answer: "Gen I (2012–2023) – własna platforma Forda, początkowo 2.2 TDCi, później 2.0 EcoBlue 105–185 KM. Gen II (od 2024) – nowa platforma, nowe wnętrze, diesel 2.0 EcoBlue, plug-in hybrid i elektryczny E-Transit Custom."
-  - question: "Jaka jest pojemność Transit Custom?"
+    answer: "Gen I (2012–2023) – własna platforma Forda, początkowo 2.2 TDCi, później 2.0 EcoBlue 105–185 KM. Gen II (od 2024) – nowa platforma, nowe wnętrze, diesel 2.0 EcoBlue, hybryda plug-in i elektryczny E-Transit Custom."
+  - question: "Jaka jest pojemność Transita Custom?"
     answer: "L1 (Short): 6,0 m³. L2 (Long): 6,8 m³. To segment pośredni między Combo/Partnerem (3,3–4,4 m³) a Crafterem/Sprinterem (9–18 m³)."
   - question: "Ile uniesie Transit Custom?"
     answer: "Do 1356 kg (L2, 2.0 EcoBlue 130 KM, manualna). Standardowo L1: 1150–1200 kg, L2: 1300–1356 kg."
@@ -32,7 +32,7 @@ Transit Custom od początku celował w środek rynku – między małymi vanami 
 
 ### Gen I przed liftingiem (2012–2017)
 
-Transit Custom zadebiutował w 2012 roku jako nowy średni dostawczak Forda, pozycjonowany poniżej pełnowymiarowego Transita. W gamie były wersje Van, Kombi i Tourneo, a nadwozie występowało w dwóch długościach – L1 i L2.
+Transit Custom zadebiutował w 2012 roku jako nowy średni dostawczak Forda, oferowany poniżej pełnowymiarowego Transita. W gamie były wersje Van, Kombi i Tourneo, a nadwozie występowało w dwóch długościach – L1 i L2.
 
 Na starcie Ford stawiał na diesle 2.2 TDCi o mocy 100, 125 i 155 KM. Standardem była skrzynia 6MT, a model szybko wyrobił sobie opinię jednego z najlepiej prowadzących się aut dostawczych w klasie.
 
@@ -50,7 +50,7 @@ Transit Custom od lat wyróżnia się na tle konkurencji komfortem jazdy i prowa
 
 ### Gen II (premiera 2023, szeroka dostępność od 2024)
 
-Druga generacja została opracowana przy współpracy z Volkswagenem. Auto dostało zupełnie nowe wnętrze z 13-calowym ekranem SYNC 4 oraz przesuwaną kierownicą tilt wheel.
+Druga generacja została opracowana we współpracy z Volkswagenem. Auto dostało zupełnie nowe wnętrze z 13-calowym ekranem SYNC 4 oraz kierownicą z funkcją odchylania (tilt wheel).
 
 W gamie napędów są diesle 2.0 EcoBlue, wersja PHEV o mocy systemowej 232 KM oraz elektryczny E-Transit Custom. W BEV do wyboru są warianty 100 lub 160 kW, czyli 136 albo 218 KM, z baterią użytkową 64 kWh i zasięgiem do 327 km WLTP zależnie od wersji.
 
@@ -76,7 +76,7 @@ Dla gen II warto spojrzeć na pełniejsze parametry użytkowe, bo to one najczę
 
 Dla wybranych diesli gen II masa przyczepy z hamulcem sięga do **2500 kg**. To ważne, jeśli Custom ma pracować z lawetą, przyczepą narzędziową albo małą przyczepą kempingową.
 
-W praktyce gen I i gen II oferują podobny pułap objętości, ale nowy model urósł z zewnątrz. Jeśli parkujesz w ciasnych zatokach albo wjeżdżasz do podziemnych garaży, te kilkadziesiąt milimetrów robi różnicę.
+W praktyce gen I i gen II oferują podobny pułap objętości, ale nowy model urósł z zewnątrz. Jeśli parkujesz w ciasnych zatokach albo wjeżdżasz do podziemnych garaży, te kilkadziesiąt milimetrów ma znaczenie.
 
 ## Silniki Forda Transit Custom
 
@@ -118,11 +118,11 @@ W drugiej generacji diesel 2.0 EcoBlue nadal jest podstawą oferty. Zależnie od
 | 2.0 EcoBlue  | 150 KM | ok. 390 Nm | Euro 6e      | 6MT / 8AT wg wersji   |
 | 2.0 EcoBlue  | 170 KM | ok. 405 Nm | Euro 6e      | 6MT / 8AT wg wersji   |
 
-Na papierze różnice nie wyglądają ogromnie, ale w praktyce wersje 150 i 170 KM lepiej pasują do auta pracującego z większym obciążeniem albo przyczepą. Do lekkiej dystrybucji wystarczy 110 lub 136 KM.
+Na papierze różnice nie wyglądają na duże, ale w praktyce wersje 150 i 170 KM lepiej pasują do auta pracującego z większym obciążeniem albo przyczepą. Do lekkiej dystrybucji wystarczy 110 lub 136 KM.
 
 ### PHEV
 
-Hybryda plug-in łączy silnik 2.5 benzyna z jednostką elektryczną. Moc systemowa wynosi **232 KM**, a bateria trakcyjna netto ma ok. **11,8 kWh**.
+Hybryda plug-in łączy silnik benzynowy 2.5 z jednostką elektryczną. Moc systemowa wynosi **232 KM**, a bateria trakcyjna netto ma ok. **11,8 kWh**.
 
 Zasięg elektryczny to do ok. **56 km WLTP**. W mieście i na krótkich trasach PHEV ma sens, ale przy regularnych dłuższych przelotach diesel zwykle zostaje prostszym wyborem użytkowym.
 
@@ -135,7 +135,7 @@ Elektryczny Transit Custom jest dostępny w dwóch wariantach mocy. Oba mają ta
 | E-Transit Custom  | 100 kW / 136 KM  | 415 Nm | 64 kWh           | ok. 19–22 kWh/100 km | 11 kW        | do 125 kW    | do 327 km   |
 | E-Transit Custom  | 160 kW / 218 KM  | 415 Nm | 64 kWh           | ok. 19–22 kWh/100 km | 11 kW        | do 125 kW    | do 327 km   |
 
-To wariant sensowny głównie tam, gdzie auto jeździ przewidywalne dzienne trasy i regularnie wraca do bazy. Przy takim scenariuszu BEV potrafi być wygodniejszy od diesla, ale wymaga dobrze poukładanej logistyki ładowania.
+To wariant sensowny głównie tam, gdzie auto pokonuje przewidywalne dzienne trasy i regularnie wraca do bazy. Przy takim scenariuszu BEV potrafi być wygodniejszy od diesla, ale wymaga dobrze poukładanej logistyki ładowania.
 
 {{% expert name="Marek Kowalczyk" %}}
 Jeśli szukasz używanego Customa do firmy, patrz najpierw na historię serwisową, a dopiero potem na moc. W praktyce zadbany 2.2 TDCi 125 KM bywa lepszym zakupem niż zaniedbany 2.0 EcoBlue 170 KM.
@@ -148,8 +148,8 @@ Transit Custom nie kończy się na zwykłym furgonie. Ten model występuje w kil
 - **Furgon Van** – zwykle 3 miejsca z przodu, pełna przegroda i paka **6,0 m³** w L1 albo **6,8 m³** w L2. To podstawowy wybór dla kurierów, serwisu mobilnego i firm budowlanych.
 - **Van z podwójną kabiną / brygadówka** – zazwyczaj **5–6 miejsc** i krótsza paka. Najlepiej sprawdza się tam, gdzie trzeba jednocześnie przewieźć ekipę i narzędzia.
 - **Kombi** – **5–9 miejsc**, okna i możliwość łączenia przewozu osób z ładunkiem. Dobra opcja dla firm instalacyjnych, hoteli i lokalnych przewozów.
-- **Tourneo Custom** – osobowa odmiana na **8–9 miejsc** z bogatszym wykończeniem. Celuje w shuttle, przewóz VIP i duże rodziny.
-- **Zabudowy na bazie vana** – w praktyce chodzi o wybrane konwersje wykonywane na bazie furgonu, a nie klasyczne fabryczne podwozie z kabiną jak w większym Fordzie Transit. To opcja dla firm, które potrzebują auta dopasowanego pod konkretną pracę.
+- **Tourneo Custom** – osobowa odmiana na **8–9 miejsc** z bogatszym wykończeniem. Celuje w przewozy wahadłowe, transport VIP-ów i duże rodziny.
+- **Zabudowy na bazie vana** – w praktyce chodzi o wybrane konwersje wykonywane na bazie furgonu, a nie klasyczne fabryczne podwozie z kabiną jak w większym Fordzie Transit. To opcja dla firm, które potrzebują auta dopasowanego do konkretnej pracy.
 - **Kamper Ford Nugget / baza pod campervan** – zabudowy Westfalia, dach podnoszony, moduł kuchenny i miejsca do spania dla **4 osób**. To jeden z najciekawszych wariantów dla osób szukających kompaktowego kampera na co dzień i na wyjazdy.
 
 ## Wersje wyposażenia Transit Customa
@@ -168,7 +168,7 @@ Wyposażenie w Transit Customie mocno zależy od rynku i rocznika. W używanych 
 - **Limited** – Full LED Matrix, 18-calowe felgi, kamera 360°, bezprzewodowy CarPlay
 - **Trail** – opony All-Terrain, osłona podwozia, podwyższony prześwit, blokada dyferencjału
 
-## Typowe usterki Ford Transit Custom
+## Typowe usterki Forda Transit Custom
 
 Transit Custom jest udanym autem roboczym, ale ma kilka powtarzalnych punktów zapalnych. Przy zakupie używanego egzemplarza liczy się nie tylko to, co się psuje, ale też ile kosztuje naprawa i czy poprzedni właściciel robił serwis na czas.
 
@@ -193,7 +193,7 @@ Jeśli oglądasz auto bez potwierdzonej wymiany, nie zakładaj, że „jeszcze p
 
 ### 2.0 EcoBlue – układ AdBlue/NOx
 
-W nowszych rocznikach problemy potrafi sprawiać osprzęt układu oczyszczania spalin. Czujnik NOx to wydatek rzędu **1200–2200 zł**, wtryskiwacz AdBlue **700–1400 zł**, a pompa lub zbiornik nawet **2500–4500 zł**.
+W nowszych rocznikach problemy może sprawiać osprzęt układu oczyszczania spalin. Czujnik NOx to wydatek rzędu **1200–2200 zł**, wtryskiwacz AdBlue **700–1400 zł**, a pompa lub zbiornik nawet **2500–4500 zł**.
 
 ### DPF i EGR
 
@@ -201,7 +201,7 @@ Przy jeździe głównie po mieście zapychający się DPF nie jest wyjątkiem, t
 
 ### Skrzynia automatyczna
 
-Automat warto serwisować wcześniej, niż sugeruje to wielu handlarzy. Dynamiczna wymiana oleju to zwykle **800–1500 zł**, a naprawa mechatroniki lub konwertera może kosztować **4000–9000 zł**.
+Automat warto serwisować wcześniej, niż sugeruje wielu handlarzy. Dynamiczna wymiana oleju to zwykle **800–1500 zł**, a naprawa mechatroniki lub konwertera może kosztować **4000–9000 zł**.
 
 ### Zawieszenie i hamulce
 
@@ -213,7 +213,7 @@ W nowszych autach warto sprawdzić działanie SYNC, kamery cofania i czujników 
 
 ### Gen II (od 2024)
 
-Druga generacja dopiero buduje historię awaryjności, więc zamiast listy typowych usterek lepiej mieć checklistę przed zakupem. To szczególnie ważne przy PHEV i E-Transit Custom, gdzie dochodzi diagnostyka układów wysokonapięciowych.
+Druga generacja dopiero buduje historię awaryjności, więc zamiast listy typowych usterek lepiej mieć listę kontrolną przed zakupem. To szczególnie ważne przy PHEV i E-Transit Custom, gdzie dochodzi diagnostyka układów wysokonapięciowych.
 
 | Układ                | Objaw                            | Jak sprawdzić                                 | Potencjalny koszt |
 |----------------------|----------------------------------|-----------------------------------------------|-------------------|
@@ -224,7 +224,7 @@ Druga generacja dopiero buduje historię awaryjności, więc zamiast listy typow
 
 ## Porównanie Forda Transit Custom z konkurencją
 
-W klasie średnich dostawczaków liczy się nie tylko pojemność paki, ale też rozstaw osi, wysokość auta, dostępność automatu i rodzaje napędu. Trzeba też zaznaczyć jedną rzecz: Transit Custom i nowy Transporter są technicznie blisko spokrewnione generacyjnie, więc ich porównanie nie jest już tak „czyste”, jak kiedyś.
+W klasie średnich dostawczaków liczy się nie tylko pojemność paki, ale też rozstaw osi, wysokość auta, dostępność automatu i rodzaje napędu. Trzeba też zaznaczyć jedną rzecz: Transit Custom i nowy Transporter są blisko spokrewnione konstrukcyjnie, więc ich porównanie nie jest już tak „czyste”, jak kiedyś.
 
 | Parametr              | Ford Transit Custom II L2 | VW Transporter T6.1 LWB | Mercedes Vito Long | Renault Trafic L2H1 | Peugeot Expert XL |
 |-----------------------|---------------------------|--------------------------|--------------------|---------------------|-------------------|

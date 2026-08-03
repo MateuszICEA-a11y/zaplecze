@@ -13,7 +13,7 @@ image: "/images/peugeot-rifter-hero.webp"
 image_alt: "Peugeot Rifter Long na drodze"
 youtube: "cSgWs0-bB-g"
 youtube_title: "Peugeot Rifter 1.5 BlueHDi 130 KM Allure Long (2019) - test [PL]"
-lead: "Peugeot Rifter Long to wydłużona wersja kombivana – ma 4753 mm długości, bagażnik 1050 l przy 5 osobach i opcję trzeciego rzędu foteli dla 7 pasażerów. Kluczowe pytanie brzmi: czy dłuższe nadwozie realnie poprawia funkcjonalność względem krótszej odmiany?"
+lead: "Peugeot Rifter Long to wydłużona wersja kombivana – ma 4753 mm długości, bagażnik 1050 l przy 5 osobach i opcję trzeciego rzędu foteli dla 7 pasażerów. Kluczowe pytanie brzmi: czy dłuższe nadwozie faktycznie poprawia funkcjonalność względem krótszej odmiany?"
 faq:
   - question: "Ile mierzy Rifter Long?"
     answer: "4753 mm długości i 2975 mm rozstawu osi. To o 350 mm więcej niż wersja Standard."
@@ -27,7 +27,7 @@ faq:
 
 Peugeot Rifter Long ma 4753 mm długości, czyli o 350 mm więcej niż wersja Standard. Trzeba jednak zaznaczyć, że dodatkowa długość nie trafia wyłącznie za drugi rząd siedzeń – w odmianie Long rośnie także rozstaw osi, więc zmienia się proporcja całego nadwozia.
 
-To ważne w praktyce, bo dłuższy rozstaw osi poprawia stabilność przy większym obciążeniu, ale pogarsza zwrotność w mieście. Przy wyborze między Standardem a Longiem różnica sprowadza się więc nie tylko do bagażnika, ale też do charakteru użytkowania.
+To ważne w praktyce, bo dłuższy rozstaw osi poprawia stabilność przy większym obciążeniu, ale pogarsza zwrotność w mieście. Przy wyborze między Standardem a Longiem różnica sprowadza się więc nie tylko do bagażnika, lecz także do charakteru użytkowania.
 
 | Parametr | Rifter Standard | Rifter Long |
 |----------|----------------|-------------|
@@ -39,7 +39,7 @@ To ważne w praktyce, bo dłuższy rozstaw osi poprawia stabilność przy więks
 | Maks. długość załadunku | 2,7 m | 3,05 m |
 | Średnica zawracania | 10,8 m | 11,8 m |
 
-W praktyce Long lepiej odpowiada rodzinom, które regularnie wożą wózek, walizki, rowery albo boxy transportowe. Krótsza wersja jest wygodniejsza tam, gdzie priorytetem pozostaje parkowanie i jazda po mieście.
+W praktyce Long lepiej odpowiada rodzinom, które regularnie wożą wózek, walizki, rowery albo boksy transportowe. Krótsza wersja jest wygodniejsza tam, gdzie priorytetem pozostaje parkowanie i jazda po mieście.
 
 ### Ładowność i przestrzeń ładunkowa
 
@@ -48,10 +48,10 @@ Najmocniejszy argument za wersją Long to po prostu przestrzeń. Przy układzie 
 - **Bagażnik 5-osobowy** – 1050 l
 - **Bagażnik 7-osobowy** – ok. 322 l za 3. rzędem
 - **Maks. długość ładunku** – 3,05 m z wykorzystaniem miejsca po złożeniu fotela pasażera
-- **Ładowność** – zależnie od napędu i wersji zwykle ok. 500–700 kg
+- **Ładowność** – w zależności od napędu i wersji zwykle ok. 500–700 kg
 - **Holowanie** – w wersjach spalinowych zwykle ok. 1000–1500 kg z hamulcem, zależnie od silnika i skrzyni; w e-Rifterze zwykle ok. 750 kg
 
-Przy przewozie większych przedmiotów liczą się też praktyczne wymiary wnętrza, takie jak szerokość między nadkolami, wysokość otworu bagażnika czy próg załadunku. W tym materiale ich nie podajemy liczbowo, bo wymagają doprecyzowania dla konkretnej wersji i specyfikacji.
+Przy przewozie większych przedmiotów liczą się też praktyczne wymiary wnętrza, takie jak szerokość między nadkolami, wysokość otworu bagażnika czy próg załadunku. W tym materiale nie podajemy ich liczbowo, bo wymagają doprecyzowania dla konkretnej wersji i specyfikacji.
 
 {{% info title="Trzeci rząd w Rifterze Long" icon="engineering" %}}
 W wersji Long można mieć trzeci rząd z dwoma osobnymi fotelami. Przy komplecie 7 osób bagażnik spada do ok. 322 l, więc taki układ ma sens głównie wtedy, gdy priorytetem jest liczba miejsc, a nie przestrzeń na bagaże. Dostęp do 3. rzędu wymaga operowania siedzeniami 2. rzędu, dlatego z fotelikami dziecięcymi warto to sprawdzić przed zakupem. Rozmieszczenie punktów Isofix zależy od rocznika i rynku, więc nie da się tego uogólnić dla całej gamy.
@@ -71,11 +71,11 @@ To oznacza, że nie wszystkie silniki były równolegle dostępne w każdym rocz
 | 1.5 BlueHDi | 130 KM | 300 Nm | 6-bieg. man. / EAT8 | najczęściej wybierany do Longa |
 | e-Rifter Long | 136 KM | 260 Nm | 1-bieg. | 100 kW, akumulator użyteczny ok. 50 kWh |
 
-W przypadku e-Riftera kluczowe są nie tylko konie mechaniczne, ale cały pakiet użytkowy. Elektryczna odmiana ma akumulator trakcyjny o pojemności użytecznej ok. 50 kWh, ładowanie AC do 11 kW trójfazowo i DC do 100 kW, a zasięg WLTP zależnie od wersji zwykle wynosi ok. 280–320 km.
+W przypadku e-Riftera kluczowe są nie tylko konie mechaniczne, lecz cały zestaw parametrów użytkowych. Elektryczna odmiana ma akumulator trakcyjny o pojemności użytecznej ok. 50 kWh, ładowanie AC do 11 kW trójfazowo i DC do 100 kW, a zasięg WLTP w zależności od wersji zwykle wynosi ok. 280–320 km.
 
-Pod względem masy własnej rodzinny kombivan tej klasy zwykle mieści się w widełkach ok. 1500–1800 kg zależnie od napędu. e-Rifter jest cięższy od wersji spalinowych o kilkaset kilogramów, co ma znaczenie dla osiągów, ładowności i holowania.
+Pod względem masy własnej rodzinny kombivan tej klasy zwykle mieści się w widełkach ok. 1500–1800 kg w zależności od napędu. e-Rifter jest cięższy od wersji spalinowych o kilkaset kilogramów, co ma znaczenie dla osiągów, ładowności i holowania.
 
-Jeśli auto ma regularnie jeździć w komplecie pasażerów i z bagażem, najbardziej uniwersalny pozostaje 1.5 BlueHDi 130. Benzynowy 1.2 PureTech sprawdzi się przy spokojniejszym użytkowaniu, natomiast e-Rifter najlepiej pasuje do jazdy lokalnej i przewidywalnych tras.
+Jeśli auto ma regularnie wozić pełny komplet pasażerów i bagaż, najbardziej uniwersalny pozostaje 1.5 BlueHDi 130. Benzynowy 1.2 PureTech sprawdzi się przy spokojniejszym użytkowaniu, natomiast e-Rifter najlepiej pasuje do jazdy lokalnej i przewidywalnych tras.
 
 {{% expert name="Marek Kowalczyk" %}}
 W długim Rifterze największy sens mają dwie skrajnie różne konfiguracje. Diesel 1.5 BlueHDi 130 jest najlepszy na trasy i rodzinne wyjazdy, a e-Rifter broni się tam, gdzie codzienny przebieg jest powtarzalny i można regularnie ładować auto. Przy zakupie używanego PureTecha trzeba z kolei szczególnie uważać na starsze odmiany i historię serwisową.
@@ -83,7 +83,7 @@ W długim Rifterze największy sens mają dwie skrajnie różne konfiguracje. Di
 
 ## Wersje wyposażenia Long
 
-Wersje wyposażenia w Rifterze Long trzeba omawiać ostrożnie, bo oferta zmieniała się wraz z liftingiem i zależała od rynku. Po modernizacji 2024 zmieniły się m.in. przód, multimedia oraz część wyposażenia, dlatego nie da się uczciwie podać jednej uniwersalnej listy dla wszystkich roczników.
+Wersje wyposażenia w Rifterze Long trzeba omawiać ostrożnie, bo oferta zmieniała się wraz z liftingiem i zależała od rynku. Po modernizacji 2024 zmieniły się m.in. przód, multimedia oraz część wyposażenia, dlatego nie da się rzetelnie podać jednej uniwersalnej listy dla wszystkich roczników.
 
 To samo dotyczy wersji 7-osobowej. Jej dostępność zależała od konkretnego cennika i rynku, więc nie warto zakładać, że była przypisana wyłącznie do jednej linii wyposażenia.
 
@@ -92,7 +92,7 @@ W praktyce przy oględzinach auta warto zweryfikować przede wszystkim:
 - rodzaj multimediów i wyposażenia kabiny,
 - liczbę miejsc wpisaną w dokumentach,
 - faktyczną konfigurację siedzeń,
-- obecność elementów ważnych dla rodziny, takich jak przesuwne drzwi, układ foteli czy systemy wsparcia kierowcy.
+- obecność elementów ważnych dla rodziny, takich jak przesuwne drzwi, układ foteli czy systemy wspomagania kierowcy.
 
 Wzmianki o odmianach specjalnych, takich jak Dangel 4x4, również wymagają sprawdzenia konkretnej specyfikacji. Parametry takich wersji nie były jednolite, więc nie ma sensu podawać jednej liczby bez odniesienia do dokumentacji danego auta.
 
@@ -108,9 +108,9 @@ Dlatego poniżej ograniczamy się do orientacyjnych widełek dla aut używanych.
 | 2021–2023 | zwykle wyższe niż dla starszych roczników; duże znaczenie ma rodzaj napędu i wyposażenie |
 | 2024–2026 | osobny poziom cen ze względu na nowszą stylistykę po liftingu i zmiany w ofercie |
 
-Koszty eksploatacji też są różne zależnie od napędu. Realnie 1.5 BlueHDi 130 zwykle zużywa ok. 5,5–7,0 l/100 km, 1.2 PureTech ok. 7,0–9,0 l/100 km, a e-Rifter ok. 19–24 kWh/100 km zależnie od warunków.
+Koszty eksploatacji również różnią się w zależności od napędu. W praktyce 1.5 BlueHDi 130 zwykle zużywa ok. 5,5–7,0 l/100 km, 1.2 PureTech ok. 7,0–9,0 l/100 km, a e-Rifter ok. 19–24 kWh/100 km w zależności od warunków.
 
-Przy serwisie warto pamiętać o kilku typowych punktach. W 1.2 PureTech w starszych odmianach istotny jest temat mokrego paska, w 1.5 BlueHDi trzeba pilnować obsługi układu AdBlue/SCR i DPF przy jeździe miejskiej, a przy każdym egzemplarzu kluczowe są udokumentowane wymiany oleju i realizacja harmonogramu producenta.
+Przy serwisie warto pamiętać o kilku typowych punktach. W 1.2 PureTech w starszych odmianach istotna jest kwestia mokrego paska, w 1.5 BlueHDi trzeba pilnować obsługi układu AdBlue/SCR i DPF przy jeździe miejskiej, a przy każdym egzemplarzu kluczowe są udokumentowane wymiany oleju i przestrzeganie harmonogramu producenta.
 
 Rifter Long to auto osobowe kategorii M1, więc standardowo wystarcza prawo jazdy kat. B. W Polsce dla M1 do 3,5 t bez przyczepy nie ma e-TOLL, ale przy holowaniu znaczenie ma już DMC całego zestawu.
 
@@ -119,14 +119,14 @@ Rifter Long to auto osobowe kategorii M1, więc standardowo wystarcza prawo jazd
 
 ## Porównanie Peugeota Rifter Long z konkurencją
 
-Peugeot Rifter Long działa w bardzo mocno obsadzonym segmencie. Najbliżsi rywale to nie tylko bliźniacze modele Stellantis, ale też Toyota ProAce City Verso Long i Ford Tourneo Connect L2, a z innej strony – Volkswagen Caddy Maxi.
+Peugeot Rifter Long konkuruje w bardzo mocno obsadzonym segmencie. Najbliżsi rywale to nie tylko bliźniacze modele Stellantis, lecz także Toyota ProAce City Verso Long i Ford Tourneo Connect L2, a z innej strony – Volkswagen Caddy Maxi.
 
 Warto pamiętać, że Rifter, Berlingo i Combo to modele bliźniacze na tej samej architekturze PSA K9/EMP2, natomiast Caddy i Tourneo Connect bazują na rozwiązaniach Grupy VW. Przekłada się to na różnice w zawieszeniu, wyciszeniu, systemach ADAS i charakterze jazdy.
 
 | Parametr | Peugeot Rifter Long | Citroën Berlingo XL | Opel Combo Life XL | Toyota ProAce City Verso Long | Ford Tourneo Connect L2 | VW Caddy Maxi |
 |----------|--------------------|--------------------|---------------------|-------------------------------|-------------------------|---------------|
 | Długość | 4753 mm | 4753 mm | 4753 mm | ok. 4753 mm | ok. 4853 mm | 4853 mm |
-| Bagażnik (5-os.) | 1050 l | 1050 l | 1050 l | zbliżony konstrukcyjnie | ok. 1720 l do dachu zależnie od metodologii | ok. 1060 l |
+| Bagażnik (5-os.) | 1050 l | 1050 l | 1050 l | zbliżony konstrukcyjnie | ok. 1720 l do dachu w zależności od metodologii | ok. 1060 l |
 | 7-osobowy | ✅ | ✅ | ✅ | naturalny konkurent w tej klasie | naturalny konkurent w tej klasie | ✅ |
 | Automat | ✅ EAT8 | ✅ EAT8 | ✅ AT8 | konstrukcyjnie zbliżony | zależnie od wersji | ✅ DSG |
 

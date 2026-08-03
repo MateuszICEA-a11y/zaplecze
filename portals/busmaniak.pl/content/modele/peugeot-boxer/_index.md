@@ -12,10 +12,10 @@ faq:
   - question: "Czy Peugeot Boxer to to samo co Fiat Ducato?"
     answer: "Tak – Boxer III, Ducato III i Citroën Jumper III stoją na identycznej platformie Sevel Sud produkowanej w zakładach Sevel w Atessie (Włochy). Różnią się detalami wykończenia, systemami infotainment i ofertą wyposażenia, ale silniki, skrzynie biegów, zawieszenie i nadwozie są wspólne."
   - question: "Jakie silniki ma Peugeot Boxer?"
-    answer: "Boxer III po faceliftingu 2020 oferuje silnik 2.2 BlueHDi w wersjach 120, 140 i 165 KM. Wszystkie spełniają normę Euro 6d i posiadają DPF. Wersja 165 KM dostępna jest wyłącznie z automatem EAT8."
-  - question: "Jaka jest pojemność ładunkowa Peugeot Boxera?"
+    answer: "Boxer III po faceliftingu 2020 oferuje silnik 2.2 BlueHDi w wersjach 120, 140 i 165 KM. Wszystkie spełniają normę Euro 6d i mają DPF. Wersja 165 KM jest dostępna wyłącznie z automatem EAT8."
+  - question: "Jaka jest pojemność ładunkowa Peugeota Boxera?"
     answer: "Boxer oferuje przestrzeń ładunkową od 8 do 17 m³ w zależności od konfiguracji. Standardowe wersje Van to 8, 10, 11 i 13 m³. Wersja L4H3 (najdłuższa, najwyższa) oferuje 17 m³."
-lead: "Peugeot Boxer III to duży van dostawczy klasy ciężkiej segmentu N1/N2, budowany na wspólnej platformie Sevel Sud razem z Fiatem Ducato i Citroënem Jumperem. W Polsce jest jednym z dominujących wyborów dla firm transportowych, usługowych i producentów zabudów specjalnych."
+lead: "Peugeot Boxer III to duży van dostawczy klasy ciężkiej segmentu N1/N2, budowany na wspólnej platformie Sevel Sud razem z Fiatem Ducato i Citroënem Jumperem. W Polsce należy do najczęstszych wyborów firm transportowych, usługowych i producentów zabudów specjalnych."
 youtube: "At2D5MktTJU"
 youtube_title: "Peugeot Boxer Kamper – autotest"
 sources:
@@ -23,13 +23,13 @@ sources:
   - "Peugeot Professional Polska"
   - "dane techniczne Auto-Data.net."
 ---
-## Historia i generacje Peugeota Boxer
+## Historia i generacje Peugeota Boxera
 
 W polskich źródłach ten model bywa nazywany trzecią generacją, ale formalnie od 2006 roku mówimy o drugiej generacji Boxera. Najważniejsze jest to, że chodzi o tę samą rodzinę dużych vanów Sevel z Atessy.
 
 ### Peugeot Boxer I (1994–2006)
 
-Pierwsza generacja powstała na platformie [Sevel](https://en.wikipedia.org/wiki/Sevel) wspólnie z Fiatem Ducato II i Citroënem Jumperem I. Produkcja odbywała się w Atessie we Włoszech. Model występował przed liftingiem w latach 1994–2002, a po liftingu w latach 2002–2006.
+Pierwsza generacja powstała na platformie [Sevel](https://en.wikipedia.org/wiki/Sevel) wspólnie z Fiatem Ducato II i Citroënem Jumperem I. Produkcja odbywała się w Atessie we Włoszech. Model był oferowany przed liftingiem w latach 1994–2002, a po liftingu w latach 2002–2006.
 
 W gamie były diesle 2.0, 2.2 i 2.8 HDi o mocy **84–128 KM**. Długość nadwozia wynosiła od **4963 do 6173 mm**. Boxer I szybko stał się popularną bazą pod kampery, ambulanse i lekkie zabudowy specjalne.
 
@@ -45,13 +45,13 @@ Platforma Sevel Sud:
 
 ### Facelifting 2014
 
-Modernizacja z 2014 roku przyniosła nowy pas przedni, reflektory i zderzak. Poprawiono też fotele oraz multimedia, czyli elementy ważne dla kierowców robiących długie trasy.
+Modernizacja z 2014 roku przyniosła nowy pas przedni, reflektory i zderzak. Poprawiono też fotele oraz multimedia, czyli elementy ważne dla kierowców pokonujących długie trasy.
 
 Po liftingu zmodernizowano również gamę diesli **2.2 HDi/BlueHDi** oraz dostosowano ją do norm **Euro 5/6**. To był istotny etap, bo od tego momentu Boxer wyraźnie zyskał pod względem codziennej ergonomii i wyposażenia.
 
 ### Modernizacja 2020
 
-W 2020 roku Boxer dostał kolejną dużą aktualizację. W ofercie pojawił się silnik **2.2 BlueHDi** w wariantach **120, 140 i 165 KM**, zgodnych z normą **Euro 6d**.
+W 2020 roku Boxer przeszedł kolejną dużą modernizację. W ofercie pojawił się silnik **2.2 BlueHDi** w wariantach **120, 140 i 165 KM**, zgodnych z normą **Euro 6d**.
 
 Doszły też systemy ADAS:
 - AEBS
@@ -60,11 +60,11 @@ Doszły też systemy ADAS:
 - monitoring martwego pola
 - kamera cofania
 
-Do tego doszło nowe radio i nawigacja. Dla flot i kurierki to ważniejsze niż wygląda na papierze, bo takie dodatki realnie ułatwiają pracę w mieście i na trasie.
+Do tego doszły nowe radio i nawigacja. Dla flot i firm kurierskich ma to większe znaczenie, niż mogłoby wynikać z opisu na papierze, bo takie dodatki naprawdę ułatwiają pracę w mieście i na trasie.
 
 ## Silniki Boxera
 
-Gama silników Boxera jest prosta, ale warto rozróżnić starsze 2.2 HDi, mocniejsze 3.0 HDi oraz nowsze 2.2 BlueHDi. Przy zakupie używanego egzemplarza to ważniejsze niż sam rocznik, bo wpływa na spalanie, serwis i typowe awarie.
+Gama silników Boxera jest prosta, ale warto rozróżnić starsze 2.2 HDi, mocniejsze 3.0 HDi oraz nowsze 2.2 BlueHDi. Przy zakupie używanego egzemplarza ma to większe znaczenie niż sam rocznik, bo wpływa na spalanie, serwis i typowe awarie.
 
 | Silnik               | Roczniki                          | Pojemność | Moc         | Moment         | Skrzynia                                  | Norma   |
 |----------------------|-----------------------------------|-----------|-------------|----------------|-------------------------------------------|---------|
@@ -104,13 +104,13 @@ Realne spalanie wynosi zwykle około **8,0–9,0 l/100 km**. W praktyce to senso
 
 To najbezpieczniejszy wybór do większości zastosowań. Silnik ma **140 KM**, **340–350 Nm**, spełnia **Euro 6d** i był oferowany z **6-biegowym manualem** albo **8-biegowym automatem AT8**.
 
-Realne spalanie najczęściej zamyka się w zakresie **8,5–9,5 l/100 km**. Tę wersję najłatwiej polecić do kurierki, firmy budowlanej i auta jeżdżącego w cyklu mieszanym.
+Realne spalanie najczęściej zamyka się w zakresie **8,5–9,5 l/100 km**. Tę wersję najłatwiej polecić do pracy kurierskiej, w firmie budowlanej i w aucie użytkowanym w cyklu mieszanym.
 
 ### 2.2 BlueHDi 165 KM
 
 Najmocniejsze 2.2 rozwija **165 KM** i około **370 Nm**. W zależności od rynku i rocznika występowało z **6-biegową skrzynią manualną** lub **8-biegowym automatem AT8**.
 
-Spalanie w praktyce to około **9,0–10,0 l/100 km**. To wersja dla tych, którzy częściej jeżdżą trasę, ciągną cięższą zabudowę albo po prostu nie chcą męczyć silnika przy pełnym DMC.
+Spalanie w praktyce to około **9,0–10,0 l/100 km**. To wersja dla tych, którzy częściej jeżdżą w trasę, ciągną cięższą zabudowę albo po prostu nie chcą męczyć silnika przy pełnym DMC.
 
 ### e-Boxer
 
@@ -122,17 +122,17 @@ To propozycja głównie do pracy lokalnej. Przy miejskiej dystrybucji i stałych
 Boxer 2.2 BlueHDi 140 KM z manualną skrzynią to mój pewnik dla firmy budowlanej lub kurierskiej z obciążeniem 2–3 t. Wystarczający moment od niskich obrotów ułatwia ruszanie na rampach i jazdę z pełnym ładunkiem. Wersję 120 KM brałbym raczej do lżejszej pracy.
 {{% /expert %}}
 
-## Wersje nadwoziowe Peugeot Boxer
+## Wersje nadwoziowe Peugeota Boxera
 
 Boxer nie kończy się na zwykłym furgonie. To jedna z tych baz, które producenci zabudów lubią najbardziej, bo łatwo dobrać odpowiedni rozstaw, długość i DMC do konkretnej roboty.
 
-- **Furgon Van** – **2–3 miejsca**, kubatura około **8–17 m³**, typowe zastosowanie to kurierka, transport mebli, ekipy serwisowe i klasyczna dystrybucja; dostępne DMC zwykle **3,5–4,0 t**
+- **Furgon Van** – **2–3 miejsca**, kubatura około **8–17 m³**, typowe zastosowanie to praca kurierska, transport mebli, ekipy serwisowe i klasyczna dystrybucja; dostępne DMC zwykle **3,5–4,0 t**
 - **Furgon brygadowy / Double Cab** – **5–7 miejsc** i krótsza paka, dobry dla ekip budowlanych, monterów i firm technicznych; dostępne DMC zwykle **3,5–4,0 t**
-- **Kombi / Minibus** – przewóz **6–9 osób** zależnie od rynku; używany do transportu pracowników, shuttle i przewozu osób; dostępne DMC zwykle **3,5–4,0 t**
+- **Kombi / Minibus** – przewóz **6–9 osób** zależnie od rynku; używany do transportu pracowników, kursów wahadłowych i przewozu osób; dostępne DMC zwykle **3,5–4,0 t**
 - **Podwozie do zabudowy (single chassis cab)** – baza pod skrzynię, wywrotkę, lawetę albo specjalistyczne nadwozie; dostępne DMC zwykle **3,5–4,0 t**
-- **Podwozie z podwójną kabiną** – wersja dla ekip roboczych, gdzie trzeba przewieźć ludzi i sprzęt jednym autem; dostępne DMC zwykle **3,5–4,0 t**
+- **Podwozie z podwójną kabiną** – wersja dla ekip roboczych, w której trzeba przewieźć ludzi i sprzęt jednym autem; dostępne DMC zwykle **3,5–4,0 t**
 - **Platforma / cowl cab** – baza dla kamperów, izoterm i nietypowych zabudów; dostępne DMC zwykle **3,5–4,0 t**
-- **Kamper-van oraz kamper alkowa/integra na bazie Boxera** – popularne rozwiązanie w turystyce i vanlife, szczególnie dzięki łatwej adaptacji nadwozia i szerokiej dostępności części; dostępne DMC zwykle **3,5–4,0 t**
+- **Kamper-van oraz kamper alkowa/integra na bazie Boxera** – popularne rozwiązanie w turystyce i w podróżowaniu vanem, szczególnie dzięki łatwej adaptacji nadwozia i szerokiej dostępności części; dostępne DMC zwykle **3,5–4,0 t**
 
 ## Dane techniczne i wymiary
 
@@ -149,7 +149,7 @@ W praktyce najczęściej porównuje się Boxera w odmianach furgonowych L1–L4 
 
 ## Konfiguracje nadwozia i pojemności
 
-Jedną z typowych ofert furgonu stanowi 5 popularnych kombinacji długości i wysokości. To właśnie te wersje najczęściej przewijają się w ogłoszeniach i flotach.
+W typowej ofercie furgonu znajduje się 5 popularnych kombinacji długości i wysokości. To właśnie te wersje najczęściej przewijają się w ogłoszeniach i flotach.
 
 | Wariant | Długość | Pojemność |
 |---------|---------|-----------|
@@ -160,7 +160,7 @@ Jedną z typowych ofert furgonu stanowi 5 popularnych kombinacji długości i wy
 | L4H2    | 6363 mm | ok. 15 m³ |
 | L4H3    | 6363 mm | ok. 17 m³ |
 
-Typowe DMC to **3,0 / 3,3 / 3,5 / 4,0 t**, a ładowność orientacyjnie wynosi około **1090–1995 kg** zależnie od wersji, zabudowy i wyposażenia. Jeśli kupujesz auto do konkretnej pracy, patrz przede wszystkim na tabliczkę znamionową i realną masę własną, a nie tylko na nazwę wariantu.
+Typowe DMC to **3,0 / 3,3 / 3,5 / 4,0 t**, a ładowność orientacyjnie wynosi około **1090–1995 kg** zależnie od wersji, zabudowy i wyposażenia. Jeśli kupujesz auto do konkretnej pracy, patrz przede wszystkim na tabliczkę znamionową i rzeczywistą masę własną, a nie tylko na nazwę wariantu.
 
 ![Peugeot Boxer – van L2H2 w wersji dostawczej](/images/peugeot-boxer-hero.webp)
 
@@ -175,19 +175,19 @@ Najczęstsze zastosowania:
 - lawety oraz pojazdy techniczne
 - zabudowy warsztatowe z wyposażeniem serwisowym
 
-Zabudowy są dostępne u niezależnych i autoryzowanych zabudowców. Przy bardziej specjalistycznych wersjach warto sprawdzić nie tylko cenę, ale też realną ładowność po montażu wyposażenia.
+Zabudowy są dostępne u niezależnych i autoryzowanych zabudowców. Przy bardziej specjalistycznych wersjach warto sprawdzić nie tylko cenę, ale też rzeczywistą ładowność po montażu wyposażenia.
 
 {{% info title="Boxer a przepisy ADR i transport żywności" icon="engineering" %}}
 Boxer w wersji chłodniczej, czyli z zabudową izotermiczną i agregatem, może być przystosowany do transportu żywności zgodnie z ATP. Certyfikat ATP jest wymagany przy temperaturach poniżej **+7°C**. Wersja z DMC do **3,5 t** nie wymaga prawa jazdy kategorii C.
 {{% /info %}}
 
-## Typowe usterki Peugeot Boxer
+## Typowe usterki Peugeota Boxera
 
 Boxer nie jest autem przesadnie skomplikowanym, ale przy dużych przebiegach i pracy flotowej typowe punkty zapalne wracają regularnie. Najczęściej problemy zaczynają się tam, gdzie auto jeździ głównie po mieście albo ma zaniedbany serwis.
 
 ### 2.2 HDi / BlueHDi
 
-Najbardziej typowe są problemy z osprzętem diesla. **EGR i DPF** często odzywają się po **120–200 tys. km**, a **wtryski** i **turbo** zwykle w przedziale **200–300 tys. km**.
+Najbardziej typowe są problemy z osprzętem diesla. **EGR i DPF** często dają o sobie znać po **120–200 tys. km**, a **wtryski** i **turbo** zwykle w przedziale **200–300 tys. km**.
 
 Orientacyjne koszty:
 - **EGR** – **800–1500 zł**
@@ -198,7 +198,7 @@ Orientacyjne koszty:
 
 ### DPF / SCR / AdBlue
 
-W nowszych Boxerach częstym tematem jest nie sam filtr, ale cały układ oczyszczania spalin. Przy jeździe miejskiej dochodzi do zapychania DPF, a w autach Euro 6 pojawiają się też usterki układu AdBlue i czujników NOx.
+W nowszych Boxerach częstym tematem jest nie sam filtr, lecz cały układ oczyszczania spalin. Przy jeździe miejskiej dochodzi do zapychania DPF, a w autach Euro 6 pojawiają się też usterki układu AdBlue i czujników NOx.
 
 Orientacyjne koszty:
 - **czyszczenie DPF** – **700–1200 zł**
@@ -219,7 +219,7 @@ Najczęstsze koszty:
 
 ### Skrzynie biegów
 
-W manualu klasyką są elementy eksploatacyjne sprzęgła, szczególnie w aucie z ciężką zabudową albo częstą jazdą miejską. **8-biegowy automat AT8** wymaga regularnej wymiany oleju – przy zaniedbaniach mogą pojawić się szarpania i opóźnienia zmiany biegów.
+W manualu klasyką są elementy eksploatacyjne sprzęgła, szczególnie w aucie z ciężką zabudową albo z częstą jazdą miejską. **8-biegowy automat AT8** wymaga regularnej wymiany oleju – przy zaniedbaniach mogą pojawić się szarpania i opóźnienia przy zmianie biegów.
 
 Orientacyjne koszty:
 - **sprzęgło** – **1200–2200 zł**
@@ -237,7 +237,7 @@ W tym segmencie Peugeot Boxer konkuruje głównie z własnymi bliźniakami techn
 | Citroën Jumper | ok. 6,0 m | ok. 13 m³ | 3,0–4,0 t | FWD | 120 KM | 8AT dostępny w części wersji | 8,5–10,0 l/100 km | furgon, brygadówka, kombi/minibus, podwozie, platforma, kamper | od ok. 150–170 tys. zł netto |
 | Mercedes Sprinter | ok. 6,0 m | – | 3,0–4,0 t | FWD / RWD / AWD | 114–150 KM | dostępny | 8,5–10,0 l/100 km | furgon, brygadówka, podwozie, specjalistyczne zabudowy | wyżej niż Boxer |
 
-Wniosek jest prosty. Boxer wygrywa prostotą zabudów i dostępnością części wspólnych z [Fiatem Ducato](/modele/fiat-ducato/) oraz Citroënem Jumperem. Jeśli jednak potrzebujesz większego wyboru układu napędu, wtedy [Mercedes Sprinter](/modele/mercedes-sprinter/) daje więcej opcji.
+Wniosek jest prosty. Boxer wygrywa łatwością zabudowy i dostępnością części wspólnych z [Fiatem Ducato](/modele/fiat-ducato/) oraz Citroënem Jumperem. Jeśli jednak potrzebujesz szerszego wyboru układu napędu, wtedy [Mercedes Sprinter](/modele/mercedes-sprinter/) daje więcej możliwości.
 
 ## Ceny Boxera
 

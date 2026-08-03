@@ -13,21 +13,21 @@ image: "/images/citroen-jumper-hero.webp"
 image_alt: "Citroën Jumper III furgon"
 youtube: "3zmwYawO7e0"
 youtube_title: "Rozmiar XXL Citroen JUMPER H2 L3 - TEST PL"
-lead: "Citroën Jumper od debiutu w 1994 roku korzystał z różnych silników wysokoprężnych – początkowo także starszych jednostek 1.9 D/TD i 2.5 D/TD, a później motorów HDi oraz BlueHDi. W nowszych generacjach to właśnie citroen jumper hdi stał się podstawą oferty, ale gama zmieniała się etapami wraz z kolejnymi liftingami i normami emisji. Jumper dzieli platformę z Peugeotem Boxerem i Fiatem Ducato, choć oferta silników nie zawsze była identyczna między markami."
+lead: "Citroën Jumper od debiutu w 1994 roku korzystał z różnych silników wysokoprężnych – początkowo także starszych jednostek 1.9 D/TD i 2.5 D/TD, a później silników HDi oraz BlueHDi. W nowszych generacjach to właśnie Citroën Jumper HDi stał się podstawą oferty, ale gama zmieniała się etapami wraz z kolejnymi liftingami i normami emisji. Jumper dzieli platformę z Peugeotem Boxerem i Fiatem Ducato, choć oferta silników nie zawsze była identyczna między markami."
 faq:
   - question: "Jaki silnik HDi wybrać w Jumperze?"
     answer: "Do lżejszej pracy wystarczy 2.2 HDi o niższej mocy, a do regularnego transportu z obciążeniem lepiej szukać mocniejszych odmian 2.2. W nowszych autach po modernizacji gamy warto rozważyć 2.2 BlueHDi 140 KM lub 165 KM, ale wybór trzeba dopasować do długości nadwozia, DMC i warunków eksploatacji."
   - question: "Ile pali Jumper HDi?"
     answer: "Realne spalanie zależy przede wszystkim od wersji nadwozia, masy ładunku, prędkości i zabudowy. Dłuższe i wyższe odmiany, jak L4H3, zużywają więcej paliwa niż krótsze wersje typu L2H2, a jazda autostradowa 120–140 km/h wyraźnie podnosi wynik."
   - question: "Jakie są typowe usterki HDi w Jumperze?"
-    answer: "Najczęściej wymienia się problemy z EGR, wtryskiwaczami, turbosprężarką oraz elementami układu oczyszczania spalin w nowszych wersjach. Poza samym silnikiem w bliźniakach Sevel zdarzają się też zużycie dwumasy i sprzęgła, łożysk skrzyni, korozja podwozia oraz usterki elektryki drzwi i centralnego zamka."
+    answer: "Najczęściej wymienia się problemy z EGR, wtryskiwaczami, turbosprężarką oraz elementami układu oczyszczania spalin w nowszych wersjach. Poza samym silnikiem w bliźniakach Sevel często dochodzi też do zużycia dwumasy i sprzęgła, łożysk skrzyni, korozji podwozia oraz usterek elektryki drzwi i centralnego zamka."
 ---
 
 ## Dane techniczne silników HDi w Citroënie Jumper
 
-Żeby dobrze opisać gamę Jumpera, trzeba rozdzielić generacje i fazy modelu. Pierwsza generacja była produkowana w latach 1994–2006, druga/trzecia generacja X250 weszła w 2006 roku, lifting X290 pojawił się w 2014 roku, a modernizacja gamy 2.2 BlueHDi/Euro 6d nastąpiła w latach 2019–2020 zależnie od rynku.
+Żeby dobrze opisać gamę Jumpera, trzeba rozdzielić generacje i fazy modelu. Pierwsza generacja była produkowana w latach 1994–2006, druga/trzecia generacja X250 weszła do produkcji w 2006 roku, lifting X290 pojawił się w 2014 roku, a modernizacja gamy 2.2 BlueHDi/Euro 6d nastąpiła w latach 2019–2020 zależnie od rynku.
 
-W praktyce nie każdy Citroën Jumper od początku był autem „HDi”. Starsze roczniki korzystały także z prostszych diesli bez Common Rail, a dopiero późniejsze fazy modelu zbudowały opinię, jaką dziś ma citroen jumper hdi na rynku wtórnym.
+W praktyce nie każdy Citroën Jumper od początku był autem „HDi”. Starsze roczniki korzystały także z prostszych diesli bez Common Rail, a dopiero późniejsze fazy modelu zbudowały opinię, jaką dziś ma Citroën Jumper HDi na rynku wtórnym.
 
 | Generacja / faza | Silnik | Pojemność | Moc |
 |--------|-----------|-----------|-----|
@@ -41,15 +41,15 @@ W praktyce nie każdy Citroën Jumper od początku był autem „HDi”. Starsze
 | Jumper II/III X250 | 3.0 HDi | 2999 cm³ | 160 KM |
 | Modernizacja 2019/2020– | 2.2 BlueHDi | 2184 cm³ | 120/140/165 KM |
 
-W pierwszej generacji występowały więc zarówno wolnossące, jak i turbodoładowane diesle, a pełne przejście do nowszej rodziny HDi nastąpiło dopiero później. Równie ważne jest rozróżnienie oznaczeń handlowych i norm emisji – przejście z HDi na BlueHDi nie nastąpiło jednym cięciem, tylko etapami wraz z kolejnymi modernizacjami.
+W pierwszej generacji występowały więc zarówno wolnossące, jak i turbodoładowane diesle, a pełne przejście do nowszej rodziny HDi nastąpiło dopiero później. Równie ważne jest rozróżnienie oznaczeń handlowych i norm emisji – przejście z HDi na BlueHDi nie nastąpiło za jednym zamachem, tylko etapami wraz z kolejnymi modernizacjami.
 
-Typowe konfiguracje nadwoziowe Jumpera to długości L1–L4 i wysokości H1–H3. Przestrzeń ładunkowa zależnie od wersji wynosi około 8–17 m³, a DMC zwykle mieści się w przedziale 3,0–4,0 t – i to właśnie te parametry mocno wpływają na osiągi i zużycie paliwa.
+Typowe konfiguracje nadwoziowe Jumpera to długości L1–L4 i wysokości H1–H3. Przestrzeń ładunkowa w zależności od wersji wynosi około 8–17 m³, a DMC zwykle mieści się w przedziale 3,0–4,0 t – i to właśnie te parametry mocno wpływają na osiągi i zużycie paliwa.
 
 W nowszych generacjach silniki 2.2 i 3.0 to jednostki czterocylindrowe rzędowe. Nie można też wrzucać wszystkich odmian do jednego worka pod względem serwisu – 2.2 HDi stosowany w Jumperze wymaga obsługi paska rozrządu, a nie „bezobsługowego łańcucha”.
 
 ### Jumper 2.2 HDi 120 KM
 
-To jedna z popularnych odmian z okresu X250, spotykana w autach użytkowych o zróżnicowanej zabudowie. Jej sens zależy głównie od tego, czy samochód pracuje jako lżejszy furgon, czy jako cięższa zabudowa z wyższym DMC.
+To jedna z popularnych odmian z okresu X250, spotykana w autach użytkowych o zróżnicowanej zabudowie. To, czy się sprawdzi, zależy głównie od tego, czy samochód pracuje jako lżejszy furgon, czy jako cięższa zabudowa z wyższym DMC.
 
 W praktyce przy zakupie trzeba patrzeć nie tylko na moc, ale też na generację auta, normę emisji i historię obsługi. Samo oznaczenie 120 KM nie mówi jeszcze wszystkiego bez kontekstu rocznika i fazy modelu.
 
@@ -61,7 +61,7 @@ W tej fazie modelu mamy już rodzinę BlueHDi z nowszym układem oczyszczania sp
 
 ### Jumper 2.2 BlueHDi 165 KM
 
-To najmocniejsza odmiana 2.2 BlueHDi wymieniona w tej gamie. Sprawdza się tam, gdzie auto regularnie jeździ z większym obciążeniem albo pracuje w dłuższych trasach.
+To najmocniejsza odmiana 2.2 BlueHDi wymieniona w tej gamie. Sprawdza się tam, gdzie auto regularnie jeździ z większym obciążeniem albo pracuje na dłuższych trasach.
 
 Nie warto jednak z góry zakładać jednej, „obowiązkowej” skrzyni biegów dla tej wersji bez doprecyzowania rynku i rocznika. W materiałach o Jumperze lepiej oddzielać moc silnika od konkretnych konfiguracji przekładni, jeśli nie ma potwierdzenia katalogowego dla danej specyfikacji.
 
@@ -87,7 +87,7 @@ Dlatego same liczby bez opisu wersji nadwoziowej bywają mylące. L4H3 z dużą 
 | Zabudowa kamperowa | wzrost spalania |
 | Przyczepa z hamulcem | wzrost spalania |
 
-W trasie największą różnicę robi aerodynamika i masa całkowita zestawu. Przy tej samej jednostce napędowej zupełnie inaczej spala blaszak kurierski, a inaczej kamper lub samochód z ciężką zabudową specjalistyczną.
+W trasie największą różnicę robią aerodynamika i masa całkowita zestawu. Przy tej samej jednostce napędowej zupełnie inaczej spala blaszak kurierski, a inaczej kamper lub samochód z ciężką zabudową specjalistyczną.
 
 ### W mieście
 
@@ -99,7 +99,7 @@ W praktyce użytkowej trzeba też brać poprawkę na rodzaj trasy. Auto eksploat
 
 W Jumperze trzeba patrzeć szerzej niż tylko na sam osprzęt silnika. To dostawczak pracujący często pod dużym obciążeniem, więc o kosztach eksploatacji decydują również skrzynia, sprzęgło, korozja podwozia i drobna elektryka.
 
-Równie ważna jest profilaktyka. W 2.2 HDi warto skrócić interwał wymiany oleju do 15–20 tys. km lub 1 roku, kontrolować podkładki pod wtryskiwaczami, stan przewodów dolotu i układu podciśnienia oraz pilnować terminowej wymiany paska rozrządu i pompy wody według zaleceń producenta dla danej wersji.
+Równie ważna jest profilaktyka. W 2.2 HDi warto skrócić interwał wymiany oleju do 15–20 tys. km lub do roku, kontrolować podkładki pod wtryskiwaczami, stan przewodów dolotu i układu podciśnienia oraz pilnować terminowej wymiany paska rozrządu i pompy wody według zaleceń producenta dla danej wersji.
 
 ### Problemy wspólne dla 2.2 HDi (do 2020)
 
@@ -117,12 +117,12 @@ Równie ważna jest profilaktyka. W 2.2 HDi warto skrócić interwał wymiany ol
 - **Elementy układu oczyszczania spalin** – w nowszych wersjach są dodatkowym obszarem ryzyka eksploatacyjnego
 - **EGR** – nadal podatny na problemy przy jeździe miejskiej
 - **Wtryskiwacze i turbo** – nadal wymagają dobrej jakości serwisu i regularnej wymiany oleju
-- **Dwumasa i sprzęgło** – dalej istotne w cięższych zastosowaniach
+- **Dwumasa i sprzęgło** – nadal istotne w cięższych zastosowaniach
 - **Korozja elementów podwozia i układu wydechowego** – warto sprawdzać szczególnie w autach flotowych
 - **Elektryka drzwi i centralnego zamka** – częsta grupa drobnych, ale irytujących awarii
 
 {{% expert name="Marek Kowalczyk" %}}
-W 2.2 HDi najwięcej problemów bierze się z przeciąganych interwałów olejowych i zaniedbań w podstawowej obsłudze. Jeśli auto pracuje ciężko, olej co 15–20 tys. km, kontrola dolotu, podciśnienia i okolic wtrysków daje więcej niż późniejsze kosztowne naprawy.
+W 2.2 HDi najwięcej problemów bierze się z przeciąganych interwałów olejowych i zaniedbań w podstawowej obsłudze. Jeśli auto pracuje ciężko, olej co 15–20 tys. km oraz kontrola dolotu, podciśnienia i okolic wtryskiwaczy dają więcej niż późniejsze kosztowne naprawy.
 {{% /expert %}}
 
 {{% youtube %}}

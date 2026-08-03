@@ -14,14 +14,14 @@ image: "/images/mercedes-sprinter-hero.webp"
 image_alt: "Mercedes Sprinter III furgon"
 youtube: "YONtDgHE50c"
 youtube_title: "Mercedes Sprinter 317 CDI L1H2 TEST Najlepszy bus? [4k]"
-lead: "Mercedes Sprinter należy do najpopularniejszych dużych vanów w Europie i od lat pozostaje jednym z punktów odniesienia w transporcie. Trzecia generacja (W907/W910, od 2018) przyniosła dużą zmianę – po raz pierwszy w gamie pojawił się napęd na przednią oś, a kabinę wyposażono w system MBUX. Znajdziesz tu dane techniczne, wymiary wszystkich wersji, charakterystykę silników OM654 i OM651 oraz listę najczęstszych usterek."
+lead: "Mercedes Sprinter należy do najpopularniejszych dużych vanów w Europie i od lat pozostaje jednym z punktów odniesienia w transporcie. Trzecia generacja (W907/W910, od 2018) przyniosła istotną zmianę – po raz pierwszy w gamie pojawił się napęd na przednią oś, a kabinę wyposażono w system MBUX. Znajdziesz tu dane techniczne, wymiary wszystkich wersji, charakterystykę silników OM654 i OM651 oraz zestawienie najczęstszych usterek."
 faq:
   - question: "Ile kosztuje nowy Sprinter?"
-    answer: "Ceny nowego Mercedesa Sprintera III (W907) zaczynają się od około 180 000–200 000 zł netto za wersję furgon L2H2 z silnikiem 116 KM. Wersje z napędem 4x4, mocniejszymi silnikami lub bogatym wyposażeniem przekraczają 280 000 zł netto. Na rynku wtórnym Sprinter II (W906) w dobrym stanie kosztuje 50 000–120 000 zł."
+    answer: "Ceny nowego Mercedesa Sprintera III (W907) zaczynają się od około 180 000–200 000 zł netto za furgon w wersji L2H2 z silnikiem 116 KM. Wersje z napędem 4x4, mocniejszymi silnikami lub bogatszym wyposażeniem przekraczają 280 000 zł netto. Na rynku wtórnym Sprinter II (W906) w dobrym stanie kosztuje 50 000–120 000 zł."
   - question: "Jakie silniki w Sprinterze III?"
-    answer: "Sprinter III (W907/W910) oferuje przede wszystkim nowy 4-cylindrowy diesel OM654 (2.0 CDI) w wariantach 116, 143 i 170 KM. W pierwszych latach produkcji (2018–2019) montowano również stary OM651 (2.2 CDI) o mocy 114, 143 i 163 KM. Dostępny jest też elektryczny eSprinter z silnikiem 113 KM i baterią 35 lub 55 kWh."
+    answer: "Sprinter III (W907/W910) oferuje przede wszystkim nowy czterocylindrowy diesel OM654 (2.0 CDI) w wariantach 116, 143 i 170 KM. W pierwszych latach produkcji (2018–2019) montowano również starszy OM651 (2.2 CDI) o mocy 114, 143 i 163 KM. Dostępny jest też elektryczny eSprinter z silnikiem 113 KM i baterią 35 lub 55 kWh."
   - question: "Sprinter vs Transit – co lepsze?"
-    answer: "Odpowiedź zależy od zastosowania. Sprinter jest droższy w zakupie i serwisie, ale oferuje wyższy prestiż, lepsze zawieszenie tylne (zwłaszcza w RWD) i większy wybór konfiguracji DMC. Transit wygrywa ceną zakupu, dostępnością tanich zamienników i niższymi kosztami eksploatacji. W transporcie ciężkim i kampingowym Sprinter jest tradycyjnie preferowany; w dostawach kurierskich Transit lub Daily często okazują się bardziej opłacalne."
+    answer: "Odpowiedź zależy od zastosowania. Sprinter jest droższy w zakupie i serwisie, ale oferuje wyższy prestiż, lepsze zawieszenie tylne (zwłaszcza w RWD) i szerszy wybór konfiguracji DMC. Transit wygrywa ceną zakupu, dostępnością tanich zamienników i niższymi kosztami eksploatacji. W transporcie ciężkim i kempingowym Sprinter jest tradycyjnie preferowany; w dostawach kurierskich Transit lub Daily często okazują się bardziej opłacalne."
 sources:
   - "Mercedes-Benz Vans (mercedes-benz-vans.pl)"
   - "katalogi techniczne W907/W910"
@@ -37,7 +37,7 @@ Mercedes Sprinter zadebiutował w 1995 roku jako następca legendarnego TN (T1).
 
 | Generacja | Kod | Lata | Napęd | Najważniejsze zmiany |
 |-----------|-----|------|-------|----------------------|
-| I | W901-W905 | 1995-2006 | RWD | wejście CDI, szeroka gama zabudów |
+| I | W901-W905 | 1995-2006 | RWD | wprowadzenie CDI, szeroka gama zabudów |
 | II | W906 | 2006-2018 | RWD, 4x4 | większe DMC, V6, lifting 2013 |
 | III | W907/W910 | 2018- | FWD/RWD/AWD | MBUX, nowa architektura napędów, eSprinter |
 
@@ -45,20 +45,20 @@ Mercedes Sprinter zadebiutował w 1995 roku jako następca legendarnego TN (T1).
 
 Pierwsza generacja zdefiniowała klasę. Tylnonapędowe podwozie, prosta kabina i diesle o skromnej jak na dzisiejsze standardy mocy, ale dobrej trwałości. Model występował jako furgon, kombi, podwozie i baza pod zabudowy specjalne.
 
-W gamie były warianty **208D**, **210D**, **212D** i **312D**, a później także odmiany CDI. Około 2000 roku model przeszedł facelift z nowym frontem i silnikami CDI. To właśnie wtedy Sprinter zaczął mocniej odjeżdżać starszym konstrukcjom pod względem kultury pracy i codziennej użyteczności.
+W gamie były warianty **208D**, **210D**, **212D** i **312D**, a później także odmiany CDI. Około 2000 roku model przeszedł lifting z nowym frontem i silnikami CDI. To właśnie wtedy Sprinter zaczął wyraźniej dystansować starsze konstrukcje pod względem kultury pracy i codziennej użyteczności.
 
 Najważniejsze zmiany i cechy:
 - produkcja w latach **1995–2006**
 - napęd **RWD**
 - warianty **208D/210D/212D/312D**, później CDI
-- facelift ok. **2000 roku**
+- lifting ok. **2000 roku**
 - szeroka gama nadwozi i zabudów
 
 ### Sprinter II (W906, 2006–2018)
 
-Druga generacja mocno podniosła poprzeczkę. Auto urosło, zyskało wyższą ładowność i szerszą gamę zastosowań – od kurierki po zabudowy specjalistyczne i kampery. W906 do dziś jest częstym wyborem na rynku wtórnym, zwłaszcza jako baza pod cięższe zabudowy.
+Druga generacja wyraźnie podniosła poprzeczkę. Auto urosło, zyskało wyższą ładowność i szerszą gamę zastosowań – od kurierki po zabudowy specjalistyczne i kampery. W906 do dziś jest częstym wyborem na rynku wtórnym, zwłaszcza jako baza pod cięższe zabudowy.
 
-To właśnie tutaj mocniej rozbudowano zakres DMC do **3,0–5,0 t**. W ofercie pojawiły się silniki **2.1 CDI OM646**, później **OM651**, a także **3.0 V6 OM642**. Istotne było też seryjne **ESP** w wielu wersjach, a lifting z **2013 roku** przyniósł dalsze zmiany techniczne i dostosowanie do nowszych norm.
+To właśnie tutaj mocniej rozbudowano zakres DMC do **3,0–5,0 t**. W ofercie pojawiły się silniki **2.1 CDI OM646**, później **OM651**, a także **3.0 V6 OM642**. Istotne było też seryjne **ESP** w wielu wersjach, a lifting z **2013 roku** przyniósł kolejne zmiany techniczne i dostosowanie do nowszych norm.
 
 Najważniejsze zmiany i cechy:
 - produkcja w latach **2006–2018**
@@ -69,7 +69,7 @@ Najważniejsze zmiany i cechy:
 
 ### Sprinter III (W907/W910, od 2018)
 
-Trzecia generacja to największa zmiana w historii modelu. Po raz pierwszy Sprinter dostał napęd na przednią oś – wariant **W910**. Równolegle w ofercie pozostał klasyczny tył napędzany wałem, czyli **W907**, oraz odmiany AWD.
+Trzecia generacja to największa zmiana w historii modelu. Po raz pierwszy Sprinter otrzymał napęd na przednią oś – wariant **W910**. Równolegle w ofercie pozostał klasyczny tył napędzany wałem, czyli **W907**, oraz odmiany AWD.
 
 Nowa generacja przyniosła też system **MBUX** i wyraźnie nowocześniejszą architekturę napędów. Od 2019 roku rozwijano gamę eSprintera – najpierw z baterią **35 kWh**, a od 2024 pojawiła się nowa generacja z akumulatorami **56 / 81 / 113 kWh**.
 
@@ -83,12 +83,12 @@ Najważniejsze zmiany i cechy:
 - rozwój gamy **eSprintera** od 2019 i nowa generacja od 2024
 
 {{% info title="Ciekawostka" icon="engineering" %}}
-Mercedes Sprinter III to pierwszy Sprinter dostępny z napędem na przednią oś. Wersja FWD jest szczególnie interesująca dla firm kurierskich i komunalnych, bo daje niższy próg załadunku i zwykle korzystniejszą ładowność przy DMC 3,5 t.
+Mercedes Sprinter III to pierwszy Sprinter dostępny z napędem na przednią oś. Wersja FWD jest szczególnie interesująca dla firm kurierskich i komunalnych, bo zapewnia niższy próg załadunku i zwykle korzystniejszą ładowność przy DMC 3,5 t.
 {{% /info %}}
 
 ## Dane techniczne i wymiary Mercedesa Sprinter {#dane-techniczne}
 
-Gamę Sprintera zbudowano szeroko – od krótkiego furgonu miejskiego po długie i wysokie odmiany pod kurierkę, zabudowy warsztatowe i kampery. Najczęściej spotykana konfiguracja w Polsce to L2H2, ale przy zakupie używanego auta warto patrzeć szerzej: długość, wysokość i rodzaj napędu mocno wpływają na codzienną użyteczność.
+Gamę Sprintera opracowano bardzo szeroko – od krótkiego furgonu miejskiego po długie i wysokie odmiany pod kurierkę, zabudowy warsztatowe i kampery. Najczęściej spotykana konfiguracja w Polsce to L2H2, ale przy zakupie używanego auta warto spojrzeć szerzej: długość, wysokość i rodzaj napędu mocno wpływają na codzienną użyteczność.
 
 ### Wymiary i pojemność furgonu W907/W910
 
@@ -113,28 +113,28 @@ Gamę Sprintera zbudowano szeroko – od krótkiego furgonu miejskiego po długi
 | DMC zależnie od wersji | 3000 / 3500 / 4100 / 5000 / 5500 kg |
 | Ładowność w praktyce | od ok. 900 do ponad 2500 kg |
 
-To ważne przy zakupie zabudowy lub planowaniu trasy. Sama pojemność ładowni nie mówi wszystkiego – ten sam Sprinter może mieć zupełnie inną realną ładowność zależnie od napędu, DMC i rodzaju nadwozia.
+To ważne przy zakupie zabudowy lub planowaniu trasy. Sama pojemność ładowni nie mówi wszystkiego – ten sam Sprinter może mieć zupełnie inną rzeczywistą ładowność w zależności od napędu, DMC i rodzaju nadwozia.
 
 ### Zbiorcze zestawienie wariantów: DMC, masa własna i ładowność
 
-Ta tabela dobrze pokazuje, jak bardzo zmienia się charakter auta po przejściu z FWD na RWD i po wejściu w wyższe DMC. To właśnie tutaj najłatwiej wychwycić, czy dany Sprinter będzie lepszy do kurierki, zabudowy czy cięższej roboty.
+Ta tabela dobrze pokazuje, jak bardzo zmienia się charakter auta po przejściu z FWD na RWD i po wejściu w wyższe DMC. To właśnie tutaj najłatwiej ocenić, czy dany Sprinter będzie lepszy do kurierki, zabudowy czy cięższej pracy.
 
 | Wariant | Napęd | DMC (kg) | Masa własna (kg, orient.) | Ładowność (kg, orient.) | Poj. ładowni |
 |---------|-------|---------:|--------------------------:|------------------------:|--------------|
-| L1H1 FWD | FWD | 3000/3500 | 1900–2100 | 900–1400 | 7,5 m3 |
-| L1H2 FWD | FWD | 3500 | 1950–2150 | 950–1450 | 9,0 m3 |
-| L2H2 FWD | FWD | 3500 | 2000–2200 | 1000–1500 | 10,5–11,0 m3 |
-| L2H2 RWD | RWD | 3500/4100 | 2100–2350 | 1000–1700 | 10,5–11,0 m3 |
-| L3H2 RWD | RWD | 3500/4100/5000 | 2200–2550 | 1050–2400 | ok. 14,0 m3 |
-| L3H3 RWD | RWD | 3500/4100/5000 | 2250–2600 | 1000–2350 | ok. 15,5 m3 |
-| L4H2 RWD | RWD | 3500/4100/5000/5500 | 2300–2700 | 950–2500 | ok. 15,5 m3 |
-| L4H3 RWD | RWD | 3500/4100/5000/5500 | 2350–2750 | 900–2450 | ok. 17,0 m3 |
+| L1H1 FWD | FWD | 3000/3500 | 1900–2100 | 900–1400 | 7,5 m³ |
+| L1H2 FWD | FWD | 3500 | 1950–2150 | 950–1450 | 9,0 m³ |
+| L2H2 FWD | FWD | 3500 | 2000–2200 | 1000–1500 | 10,5–11,0 m³ |
+| L2H2 RWD | RWD | 3500/4100 | 2100–2350 | 1000–1700 | 10,5–11,0 m³ |
+| L3H2 RWD | RWD | 3500/4100/5000 | 2200–2550 | 1050–2400 | ok. 14,0 m³ |
+| L3H3 RWD | RWD | 3500/4100/5000 | 2250–2600 | 1000–2350 | ok. 15,5 m³ |
+| L4H2 RWD | RWD | 3500/4100/5000/5500 | 2300–2700 | 950–2500 | ok. 15,5 m³ |
+| L4H3 RWD | RWD | 3500/4100/5000/5500 | 2350–2750 | 900–2450 | ok. 17,0 m³ |
 
-Maksymalna masa przyczepy z hamulcem zależnie od wersji to zwykle **2000–3500 kg**. W praktyce próg załadunku w FWD jest niższy o ok. **80 mm** względem porównywalnego RWD.
+Maksymalna masa przyczepy z hamulcem w zależności od wersji to zwykle **2000–3500 kg**. W praktyce próg załadunku w FWD jest niższy o ok. **80 mm** względem porównywalnego RWD.
 
 ### FWD, RWD i AWD – co zmienia rodzaj napędu?
 
-Napęd w Sprinterze nie jest tylko wyborem „na śnieg” albo „na autostradę”. W praktyce wpływa na próg załadunku, masę własną, ładowność i sens danej konfiguracji pod konkretną robotę.
+Napęd w Sprinterze to nie tylko wybór „na śnieg” albo „na autostradę”. W praktyce wpływa na próg załadunku, masę własną, ładowność i sens danej konfiguracji w konkretnym zastosowaniu.
 
 | Napęd | Charakterystyka | Orientacyjna ładowność furgonu 3,5 t |
 |-------|------------------|--------------------------------------:|
@@ -145,37 +145,37 @@ Napęd w Sprinterze nie jest tylko wyborem „na śnieg” albo „na autostrad�
 W praktyce:
 - **FWD** ma sens w kurierce i lekkim transporcie miejskim
 - **RWD** lepiej znosi ciężkie zabudowy i stałe obciążenie
-- **AWD** wybierają firmy pracujące w terenie, górach albo na budowach
+- **AWD** wybierają firmy pracujące w terenie, w górach albo na budowach
 
 ## Silniki Sprintera {#silniki}
 
-W Sprinterze III najważniejsze są dwa diesle: przejściowy OM651 i nowszy OM654. Dla wielu użytkowników równie ważne jak kod silnika są oznaczenia handlowe z ogłoszeń, dlatego poniżej znajdziesz je razem z mocą, momentem i orientacyjnym spalaniem.
+W Sprinterze III najważniejsze są dwa diesle: przejściowy OM651 i nowszy OM654. Dla wielu użytkowników równie istotne jak kod silnika są oznaczenia handlowe z ogłoszeń, dlatego poniżej znajdziesz je razem z mocą, momentem i orientacyjnym spalaniem.
 
 ### Tabela silników diesla w Sprinterze III
 
-| Silnik | Kod handlowy / moc | Moment obrotowy | Norma | Spalanie realne | Skrzynie biegów |
+| Silnik | Kod handlowy / moc | Moment obrotowy | Norma | Spalanie w praktyce | Skrzynie biegów |
 |--------|---------------------|----------------:|-------|-----------------|-----------------|
-| OM651 2.1/2.2 CDI (2018–2019 w wybranych wersjach) | 311 CDI / 114 KM | 300 Nm | Euro 6 | 8,5–10,5 l/100 km | 6-bieg manual; FWD – 9G-Tronic, RWD – 7G-Tronic Plus, AWD – zależnie od rocznika i wersji |
-| OM651 2.1/2.2 CDI (2018–2019 w wybranych wersjach) | 314 CDI / 143 KM | 330 Nm | Euro 6 | 8,5–10,5 l/100 km | 6-bieg manual; FWD – 9G-Tronic, RWD – 7G-Tronic Plus, AWD – zależnie od rocznika i wersji |
-| OM651 2.1/2.2 CDI (2018–2019 w wybranych wersjach) | 316 CDI / 163 KM | 360 Nm | Euro 6 | 9,0–11,0 l/100 km | 6-bieg manual; gł. RWD / 7G-Tronic Plus |
-| OM654 2.0 CDI | 311 CDI / 114–116 KM | 300–330 Nm | Euro 6d | 8,0–10,0 l/100 km | 6-bieg manual; FWD – 9G-Tronic, RWD – 7G-Tronic Plus, AWD – zależnie od rocznika i wersji |
-| OM654 2.0 CDI | 314 CDI / 143 KM | 330 Nm | Euro 6d | 8,0–10,5 l/100 km | 6-bieg manual; FWD – 9G-Tronic, RWD – 7G-Tronic Plus |
-| OM654 2.0 CDI | 317 CDI / 170 KM | 400 Nm | Euro 6d | 8,5–11,0 l/100 km | 6-bieg manual; gł. RWD / 7G-Tronic Plus |
+| OM651 2.1/2.2 CDI (2018–2019 w wybranych wersjach) | 311 CDI / 114 KM | 300 Nm | Euro 6 | 8,5–10,5 l/100 km | man. 6-biegowa; FWD – 9G-Tronic, RWD – 7G-Tronic Plus, AWD – zależnie od rocznika i wersji |
+| OM651 2.1/2.2 CDI (2018–2019 w wybranych wersjach) | 314 CDI / 143 KM | 330 Nm | Euro 6 | 8,5–10,5 l/100 km | man. 6-biegowa; FWD – 9G-Tronic, RWD – 7G-Tronic Plus, AWD – zależnie od rocznika i wersji |
+| OM651 2.1/2.2 CDI (2018–2019 w wybranych wersjach) | 316 CDI / 163 KM | 360 Nm | Euro 6 | 9,0–11,0 l/100 km | man. 6-biegowa; gł. RWD / 7G-Tronic Plus |
+| OM654 2.0 CDI | 311 CDI / 114–116 KM | 300–330 Nm | Euro 6d | 8,0–10,0 l/100 km | man. 6-biegowa; FWD – 9G-Tronic, RWD – 7G-Tronic Plus, AWD – zależnie od rocznika i wersji |
+| OM654 2.0 CDI | 314 CDI / 143 KM | 330 Nm | Euro 6d | 8,0–10,5 l/100 km | man. 6-biegowa; FWD – 9G-Tronic, RWD – 7G-Tronic Plus |
+| OM654 2.0 CDI | 317 CDI / 170 KM | 400 Nm | Euro 6d | 8,5–11,0 l/100 km | man. 6-biegowa; gł. RWD / 7G-Tronic Plus |
 
 ### Tabela techniczna silników
 
-Jeśli porównujesz kilka aut z ogłoszeń, ta tabela porządkuje temat lepiej niż same oznaczenia CDI. Widać tu pojemność, układ cylindrów, normę i bardziej precyzyjne przypisanie napędu oraz skrzyni.
+Jeśli porównujesz kilka aut z ogłoszeń, ta tabela porządkuje temat lepiej niż same oznaczenia CDI. Widać tu pojemność, układ cylindrów, normę oraz precyzyjniejsze przypisanie napędu i skrzyni.
 
 | Silnik | Pojemność | Cylindry | Moc | Moment | Oznaczenie | Norma | Napęd / skrzynia |
 |--------|-----------|----------|-----|--------|------------|-------|------------------|
-| OM651 DE22 LA | 2143 cm3 | R4 | 114 KM | 300 Nm | 311 CDI | Euro 6 | RWD/FWD, 6MT lub 7G/9G zależnie od wersji |
-| OM651 DE22 LA | 2143 cm3 | R4 | 143 KM | 330 Nm | 314 CDI | Euro 6 | jw. |
-| OM651 DE22 LA | 2143 cm3 | R4 | 163 KM | 360 Nm | 316 CDI | Euro 6 | gł. RWD |
-| OM654 DE20 LA | 1950 cm3 | R4 | 114/116 KM | 300-330 Nm | 311 CDI | Euro 6d | FWD/RWD, 6MT / 9G (FWD) / 7G (RWD) |
-| OM654 DE20 LA | 1950 cm3 | R4 | 143 KM | 330 Nm | 314 CDI | Euro 6d | FWD/RWD |
-| OM654 DE20 LA | 1950 cm3 | R4 | 170 KM | 400 Nm | 317 CDI | Euro 6d | gł. RWD/7G |
-| eSprinter (I) | bateria 35 kWh użyteczne | EV | 116 KM | 295 Nm | eSprinter | zeroem. | 1-bieg |
-| eSprinter (II) | 56/81/113 kWh | EV | 136 lub 204 KM zależnie od wersji | do 400 Nm | eSprinter | zeroem. | 1-bieg |
+| OM651 DE22 LA | 2143 cm³ | R4 | 114 KM | 300 Nm | 311 CDI | Euro 6 | RWD/FWD, 6MT lub 7G/9G zależnie od wersji |
+| OM651 DE22 LA | 2143 cm³ | R4 | 143 KM | 330 Nm | 314 CDI | Euro 6 | jw. |
+| OM651 DE22 LA | 2143 cm³ | R4 | 163 KM | 360 Nm | 316 CDI | Euro 6 | gł. RWD |
+| OM654 DE20 LA | 1950 cm³ | R4 | 114/116 KM | 300–330 Nm | 311 CDI | Euro 6d | FWD/RWD, 6MT / 9G (FWD) / 7G (RWD) |
+| OM654 DE20 LA | 1950 cm³ | R4 | 143 KM | 330 Nm | 314 CDI | Euro 6d | FWD/RWD |
+| OM654 DE20 LA | 1950 cm³ | R4 | 170 KM | 400 Nm | 317 CDI | Euro 6d | gł. RWD/7G |
+| eSprinter (I) | bateria 35 kWh użyteczne | EV | 116 KM | 295 Nm | eSprinter | zeroem. | 1-biegowa |
+| eSprinter (II) | 56/81/113 kWh | EV | 136 lub 204 KM zależnie od wersji | do 400 Nm | eSprinter | zeroem. | 1-biegowa |
 
 ### OM654 (2.0 CDI) – silnik nowej generacji
 
@@ -190,7 +190,7 @@ OM654 spełnia normę Euro 6d i wymaga AdBlue. W praktyce wersja **143 KM** jest
 
 ### OM651 (2.2 CDI) – silnik przejściowy
 
-W pierwszych latach produkcji Sprintera III, głównie w latach 2018–2019, montowano dobrze znany OM651. To jednostka dobrze rozpracowana przez warsztaty i użytkowników, dlatego wiele firm nadal szuka właśnie takich egzemplarzy.
+W pierwszych latach produkcji Sprintera III, głównie w latach 2018–2019, montowano dobrze znany OM651. To jednostka dobrze rozpoznana przez warsztaty i użytkowników, dlatego wiele firm nadal szuka właśnie takich egzemplarzy.
 
 Warianty spotykane w ogłoszeniach:
 - **311 CDI / 114 KM / 300 Nm**
@@ -201,11 +201,11 @@ OM651 to znana i dobrze opisana jednostka – [szczegółową charakterystykę z
 
 ### eSprinter – wersja elektryczna
 
-W przypadku eSprintera trzeba rozróżnić generacje, bo w ogłoszeniach i opisach często mieszają się starsze i nowsze dane. To ważne zwłaszcza przy porównywaniu zasięgu, pojemności baterii i ładowności.
+W przypadku eSprintera trzeba rozróżniać generacje, bo w ogłoszeniach i opisach często mieszają się starsze i nowsze dane. To ważne zwłaszcza przy porównywaniu zasięgu, pojemności baterii i ładowności.
 
 #### eSprinter I (2019–2023)
 
-Pierwsza wersja była skrojona głównie pod logistykę miejską i powtarzalne trasy. Dostawałeś silnik **85 kW / 116 KM**, **295 Nm** oraz baterię użyteczną ok. **35 kWh**.
+Pierwsza wersja była skrojona głównie pod logistykę miejską i powtarzalne trasy. Otrzymywało się silnik **85 kW / 116 KM**, **295 Nm** oraz baterię użyteczną ok. **35 kWh**.
 
 Najważniejsze liczby:
 - zasięg WLTP: ok. **120–158 km**
@@ -217,28 +217,28 @@ Najważniejsze liczby:
 Nowa generacja to już zupełnie inna skala użyteczności. Do wyboru są baterie **56 / 81 / 113 kWh**, silniki **100 kW (136 KM)** lub **150 kW (204 KM)**, a moment sięga **do 400 Nm**.
 
 Najważniejsze liczby:
-- zasięg WLTP: od ok. **200 do 478 km** zależnie od wersji
+- zasięg WLTP: od ok. **200 do 478 km** w zależności od wersji
 - dostępne nadwozia: **furgon i podwozie**
-- ładowność: zależnie od wersji do ok. **1400 kg**
+- ładowność: w zależności od wersji do ok. **1400 kg**
 
 ### Tabela eSprintera
 
 | Wersja | Moc | Bateria | Zasięg WLTP | Ładowność |
 |--------|-----|---------|-------------|-----------|
-| I gen. | 116 KM | 35 kWh | 120-158 km | 731-891 kg |
-| II gen. | 136/204 KM | 56/81/113 kWh | ok. 200-478 km | zależnie od wersji do ok. 1400 kg |
+| I gen. | 116 KM | 35 kWh | 120–158 km | 731–891 kg |
+| II gen. | 136/204 KM | 56/81/113 kWh | ok. 200–478 km | zależnie od wersji do ok. 1400 kg |
 
-eSprinter ma sens przede wszystkim w logistyce miejskiej i na powtarzalnych trasach. Przy zakupie używanego egzemplarza kluczowe jest sprawdzenie, z którą generacją masz do czynienia.
+eSprinter ma sens przede wszystkim w logistyce miejskiej i na powtarzalnych trasach. Przy zakupie używanego egzemplarza kluczowe jest sprawdzenie, z którą generacją ma się do czynienia.
 
 {{% expert name="Marek Kowalczyk" %}}
-Jeśli kupujesz używanego Sprintera III, nie patrz tylko na moc. Dla firmy ważniejsze bywa to, czy auto ma FWD czy RWD, jaki ma realny przebieg autostradowy i czy serwis olejowy był robiony częściej niż podpowiada komputer. W dieslu dostawczym interwał **15 000 km** jest dużo bezpieczniejszy niż przeciąganie wymian do granic planu serwisowego.
+Jeśli kupujesz używanego Sprintera III, nie patrz wyłącznie na moc. Dla firmy ważniejsze bywa to, czy auto ma FWD czy RWD, jaki ma rzeczywisty przebieg autostradowy i czy serwis olejowy był wykonywany częściej, niż podpowiada komputer. W dieslu dostawczym interwał **15 000 km** jest znacznie bezpieczniejszy niż przeciąganie wymian do granic planu serwisowego.
 {{% /expert %}}
 
 ![Mercedes Sprinter III furgon](/images/mercedes-sprinter-hero.webp)
 
 ## Wersje nadwoziowe Mercedesa Sprinter {#wersje-nadwoziowe}
 
-Sprinter ma jedną z najszerszych ofert nadwozi w klasie. Różnice nie kończą się na samym „blaszak czy bus” – ważne są też liczba miejsc, DMC i to, czy auto ma być bazą pod zabudowę, czy gotowym narzędziem do pracy.
+Sprinter ma jedną z najszerszych ofert nadwozi w klasie. Różnice nie kończą się na samym „blaszak czy bus” – liczą się także liczba miejsc, DMC oraz to, czy auto ma być bazą pod zabudowę, czy gotowym narzędziem do pracy.
 
 - **[Furgon / Van](/modele/mercedes-sprinter/van/)** – zamknięta przestrzeń ładunkowa, pojemność od **7,5 do 17 m³**, DMC **3,0–5,5 t**. Najczęstszy wybór do kurierki, usług i transportu regionalnego.
 - **[Kombi / Osobowy](/modele/mercedes-sprinter/osobowy/)** – 2 lub 3 rzędy siedzeń, zwykle do **8–9 miejsc** w wielu konfiguracjach europejskich. W zabudowach busowych spotyka się także warianty **17-miejscowe**.
@@ -250,18 +250,18 @@ Sprinter ma jedną z najszerszych ofert nadwozi w klasie. Różnice nie kończą
 
 ### Tabela wersji nadwoziowych
 
-Poniżej masz szybkie zestawienie najważniejszych odmian. Przy Sprinterze to ważne, bo ta sama nazwa modelu może oznaczać auto do kurierki, brygadówkę, bus osobowy albo bazę pod kampera.
+Poniżej znajdziesz szybkie zestawienie najważniejszych odmian. Przy Sprinterze ma to znaczenie, bo ta sama nazwa modelu może oznaczać auto do kurierki, brygadówkę, bus osobowy albo bazę pod kampera.
 
 | Wersja | Liczba miejsc | Typowe długości | DMC | Zastosowanie |
 |--------|---------------|-----------------|-----|--------------|
-| Furgon | 2-3 | L1-L4, H1-H3 | 3,0-5,5 t | kurierka, usługi, transport |
-| Tourer/Kombi | 5-9 fabrycznie, więcej po zabudowie | L2-L4 | 3,5-5,0 t | przewóz osób, shuttle |
-| Podwozie single cab | 3 | różne rozstawy osi | 3,5-5,5 t | skrzynia, kontener, laweta |
-| Podwozie double cab | 6-7 | gł. średnie i długie | 3,5-5,5 t | brygadowe, budowlanka |
-| Platforma do zabudowy | 2-3 | wg zabudowy | 3,5-5,5 t | kamper, sklep, chłodnia |
-| Kamper van | 2-4 | najczęściej L2H2/L3H2/L4H3 | 3,5-4,1 t | turystyka |
+| Furgon | 2–3 | L1–L4, H1–H3 | 3,0–5,5 t | kurierka, usługi, transport |
+| Tourer/Kombi | 5–9 fabrycznie, więcej po zabudowie | L2–L4 | 3,5–5,0 t | przewóz osób, transfery |
+| Podwozie z kabiną pojedynczą | 3 | różne rozstawy osi | 3,5–5,5 t | skrzynia, kontener, laweta |
+| Podwozie z kabiną podwójną | 6–7 | gł. średnie i długie | 3,5–5,5 t | brygadowe, budowlanka |
+| Platforma do zabudowy | 2–3 | wg zabudowy | 3,5–5,5 t | kamper, sklep, chłodnia |
+| Kamper van | 2–4 | najczęściej L2H2/L3H2/L4H3 | 3,5–4,1 t | turystyka |
 
-Maksymalna pojemność furgonu sięga **17 m³**. Wersje osobowe najczęściej mają **8–9 miejsc** w homologacji **M1/N1** zależnie od zabudowy.
+Maksymalna pojemność furgonu sięga **17 m³**. Wersje osobowe najczęściej mają **8–9 miejsc** w homologacji **M1/N1** w zależności od zabudowy.
 
 W praktyce:
 - do miasta i kurierki najlepiej sprawdzają się furgony FWD
@@ -269,12 +269,12 @@ W praktyce:
 - pod kampera najczęściej szuka się dłuższych i wyższych wersji, zwykle L2H2, L3H2 albo L4H3
 
 {{% info title="Jak czytać ogłoszenia?" icon="info" %}}
-W ogłoszeniach „Sprinter brygadówka”, „mixt” albo „podwójna kabina” często oznaczają tę samą ideę: auto dla ekipy z częścią ładunkową z tyłu. Zawsze sprawdź liczbę miejsc w dowodzie i realną długość przestrzeni ładunkowej.
+W ogłoszeniach „Sprinter brygadówka”, „mixt” albo „podwójna kabina” często oznaczają tę samą ideę: auto dla ekipy z częścią ładunkową z tyłu. Zawsze sprawdź liczbę miejsc w dowodzie i rzeczywistą długość przestrzeni ładunkowej.
 {{% /info %}}
 
 ## Typowe usterki Mercedes Sprinter {#usterki}
 
-Przy zakupie używanego Sprintera trzeba patrzeć szerzej niż tylko na przebieg i stan blacharki. W tym modelu koszty potrafią szybko rosnąć, jeśli trafisz na zaniedbany egzemplarz z problemami w układzie oczyszczania spalin, automacie albo zawieszeniu.
+Przy zakupie używanego Sprintera trzeba patrzeć szerzej niż tylko na przebieg i stan blacharki. W tym modelu koszty potrafią szybko rosnąć, jeśli trafi się na zaniedbany egzemplarz z problemami w układzie oczyszczania spalin, automacie albo zawieszeniu.
 
 ### OM651 (2.2 CDI) – Sprinter II i wczesny Sprinter III
 
@@ -293,11 +293,11 @@ Przy zakupie używanego Sprintera trzeba patrzeć szerzej niż tylko na przebieg
 
 ### Skrzynia biegów 7G-Tronic
 
-Automat w Sprinterze potrafi pracować długo i gładko, ale pod warunkiem normalnego serwisu i braku jazdy z już występującymi objawami. Szarpanie, tryb awaryjny i błędy sterowania warto diagnozować od razu.
+Automat w Sprinterze potrafi pracować długo i płynnie, ale pod warunkiem regularnego serwisu i rezygnacji z jazdy przy już występujących objawach. Szarpanie, tryb awaryjny i błędy sterowania warto diagnozować od razu.
 
 - **Płytka przewodząca (conductor plate)** – przy dużych przebiegach może powodować szarpanie i błędy pracy skrzyni. Typowy koszt naprawy: **1500–3500 zł**.
 - **Moduł sterujący skrzyni** – regeneracja lub wymiana zwykle kosztuje **3000–7000 zł**.
-- **Elektrozawory mechatroniki** – usterki mogą wymagać naprawy lub wymiany elementów mechatroniki, a koszt potrafi przekroczyć **10 000 zł** przy rozbudowanej naprawie.
+- **Elektrozawory mechatroniki** – usterki mogą wymagać naprawy lub wymiany elementów mechatroniki, a koszt przy rozbudowanej naprawie potrafi przekroczyć **10 000 zł**.
 
 ### Podwozie i zawieszenie
 
@@ -305,7 +305,7 @@ Automat w Sprinterze potrafi pracować długo i gładko, ale pod warunkiem norma
 - **Amortyzatory przód** – para: **800–1600 zł**.
 - **Resor tylny** – **1200–2500 zł za sztukę**.
 
-W autach pracujących stale pod ładunkiem zawieszenie zużywa się szybciej niż w lekkich busach kurierskich. Przed zakupem sprawdź nie tylko luzy, ale też wysokość auta na postoju i równomierne „trzymanie” tyłu.
+W autach pracujących stale pod ładunkiem zawieszenie zużywa się szybciej niż w lekkich busach kurierskich. Przed zakupem sprawdź nie tylko luzy, lecz także wysokość auta na postoju i równomierne „trzymanie” tyłu.
 
 ### Elektronika Sprinter III
 
@@ -321,7 +321,7 @@ W nowocześniejszym Sprinterze elektronika potrafi ułatwić pracę, ale też po
 
 ## Porównanie Sprintera z konkurencją {#porownanie}
 
-Sprinter konkuruje głównie z Fordem Transitem i Iveco Daily. Różnice najlepiej widać nie w folderach reklamowych, tylko w twardych liczbach: ładowności, dostępnych pojemnościach, gamie napędów i kosztach podstawowego serwisu.
+Sprinter konkuruje głównie z Fordem Transitem i Iveco Daily. Różnice najlepiej widać nie w folderach reklamowych, lecz w twardych liczbach: ładowności, dostępnych pojemnościach, gamie napędów i kosztach podstawowego serwisu.
 
 | Cecha | Sprinter III (W907/W910) | Ford Transit V363 | Iveco Daily (VI gen.) |
 |-------|--------------------------|-------------------|-----------------------|
@@ -336,11 +336,11 @@ Sprinter konkuruje głównie z Fordem Transitem i Iveco Daily. Różnice najlepi
 
 Wnioski są dość proste:
 - **Sprinter** – bardzo szeroka konfiguracja, mocna pozycja w zabudowach i kamperach, ale serwis zwykle nie należy do tanich
-- **Transit** – mocny stosunek ceny do możliwości i dobra dostępność części
+- **Transit** – korzystny stosunek ceny do możliwości i dobra dostępność części
 - **Daily** – najlepszy wybór, jeśli wchodzisz w ciężkie zabudowy i wysokie DMC
 
 {{% info title="Jak wybrać?" icon="checklist" %}}
-Jeśli priorytetem jest jakość kabiny, szeroka konfiguracja i mocna pozycja pod zabudowy – Sprinter. Jeśli liczysz każdą złotówkę TCO – Transit. Jeśli potrzebujesz naprawdę ciężkiej bazy roboczej, Daily wchodzi na poziom, którego klasyczny Sprinter już nie obejmuje.
+Jeśli priorytetem jest jakość kabiny, szeroka konfiguracja i mocna pozycja pod zabudowy – Sprinter. Jeśli liczysz każdą złotówkę w całkowitych kosztach eksploatacji – Transit. Jeśli potrzebujesz naprawdę ciężkiej bazy roboczej, Daily wchodzi na poziom, którego klasyczny Sprinter już nie obejmuje.
 {{% /info %}}
 
 {{% youtube %}}
@@ -381,4 +381,4 @@ Ceny Sprintera mocno zależą od generacji, napędu, DMC i typu zabudowy. Pod je
 | Nowy Sprinter L3H2 RWD (2.0 CDI 170 KM) | od ok. **220 000 zł netto** |
 | eSprinter L2H2 | od ok. **310 000 zł netto** |
 
-Kampery, lawety i auta z kosztowną zabudową wyceniają się osobno. W ich przypadku o wartości bardziej niż rocznik decydują typ zabudowy, DMC i stan wyposażenia.
+Kampery, lawety i auta z kosztowną zabudową wycenia się osobno. W ich przypadku o wartości decydują raczej typ zabudowy, DMC i stan wyposażenia niż sam rocznik.

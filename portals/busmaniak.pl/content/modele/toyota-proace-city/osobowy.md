@@ -26,7 +26,7 @@ youtube_title: "Toyota Proace CITY - gdzie tu Toyota?"
 
 [Toyota Proace City](/modele/toyota-proace-city/) w odmianie Verso to osobowy van segmentu kompaktowego. Model zadebiutował w 2019 roku jako część rodziny bliźniaczych konstrukcji K9, a po zmianach ofertowych po 2023/2024 roku gama na poszczególnych rynkach zaczęła się wyraźniej różnić.
 
-Verso oznacza wersję osobową z homologacją M1, pełnym przeszkleniem i kabiną przygotowaną do przewozu pasażerów. To propozycja dla rodzin, przewozu hotelowego, shuttle busów i firm, które potrzebują bardziej uniwersalnego auta niż klasyczny dostawczak.
+Verso oznacza wersję osobową z homologacją M1, pełnym przeszkleniem i kabiną przygotowaną do przewozu pasażerów. To propozycja dla rodzin, do przewozów hotelowych i wahadłowych oraz dla firm, które potrzebują bardziej uniwersalnego auta niż klasyczny dostawczak.
 
 Samochód był oferowany w dwóch długościach nadwozia:
 
@@ -51,7 +51,7 @@ W praktyce do jazdy rodzinnej i pod większym obciążeniem lepiej pasują mocni
 
 Osobowa odmiana elektryczna to e‑Proace City Verso. Korzysta z akumulatora o pojemności ok. 50 kWh, a deklarowany zasięg WLTP zależy od długości nadwozia i wersji – typowo do ok. 280–284 km WLTP, a nie jedna stała wartość dla całej gamy.
 
-Ważniejsze od samej mocy jest tu ładowanie. W zależności od wersji spotyka się ładowanie AC 7,4 lub 11 kW, szybkie ładowanie DC do 100 kW oraz czas uzupełnienia energii od 0 do 80% na poziomie około 30 minut w optymalnych warunkach.
+Ważniejsze od samej mocy jest tu ładowanie. W zależności od wersji dostępne jest ładowanie AC o mocy 7,4 lub 11 kW, szybkie ładowanie DC do 100 kW, a czas uzupełnienia energii od 0 do 80% wynosi około 30 minut w optymalnych warunkach.
 
 {{% info title="Proace City Verso a homologacja M1" icon="engineering" %}}
 Homologacja M1 oznacza, że mówimy o samochodzie osobowym, ale praktyczne skutki zależą od sposobu użytkowania pojazdu. Kwestie tachografu, rozliczeń VAT czy obowiązków przewozowych wynikają przede wszystkim z DMC, rodzaju wykonywanego transportu i tego, czy auto pracuje zarobkowo, a nie z samego oznaczenia M1. W typowym prywatnym lub firmowym użytkowaniu osobowego vana do 3,5 t tachograf zwykle nie jest wymagany. Badania techniczne dla M1 odbywają się co do zasady po 3 latach od pierwszej rejestracji, potem po 2 latach, a następnie co roku.
@@ -63,13 +63,13 @@ Homologacja M1 oznacza, że mówimy o samochodzie osobowym, ale praktyczne skutk
 
 Najważniejsza różnica praktyczna między Medium a Long dotyczy nie tylko liczby miejsc, ale też bagażnika. Dla bliźniaczych modeli K9 producenci podawali zwykle około 597 l VDA dla krótszej wersji 5-miejscowej oraz około 850 l VDA dla dłuższej wersji 5-miejscowej.
 
-Przy 7 miejscach w odmianie Long przestrzeń za trzecim rzędem staje się wyraźnie mniejsza. To układ dobry na okazjonalne przewiezienie dodatkowych pasażerów, ale na rodzinny wyjazd w komplecie osób trzeba liczyć się z mocnym ograniczeniem miejsca na bagaże.
+Przy 7 miejscach w odmianie Long przestrzeń za trzecim rzędem staje się wyraźnie mniejsza. To układ dobry na okazjonalne przewiezienie dodatkowych pasażerów, ale na rodzinny wyjazd z kompletem pasażerów trzeba liczyć się ze znacznym ograniczeniem miejsca na bagaże.
 
 Trzeci rząd w tej klasie aut najlepiej sprawdza się dla dzieci albo na krótszych dystansach. Dorośli zmieszczą się tam awaryjnie, jednak nie będzie to tak pełnowymiarowa przestrzeń jak w większych vanach segmentu D.
 
 Układ siedzeń zależy od rynku i konfiguracji. W części wersji drugi rząd może mieć formę dzielonej kanapy, w innych występują osobne miejsca, a możliwość składania lub wyjmowania poszczególnych foteli nie jest identyczna w każdej odmianie.
 
-Duże przesuwne drzwi i wysoka pozycja dachu ułatwiają codzienne wsiadanie dzieciom oraz starszym pasażerom. Z drugiej strony trzeba pamiętać, że to wysoki van – przy autostradowych 140 km/h komfort akustyczny zwykle ustępuje klasycznym kombi i SUV-om.
+Duże przesuwne drzwi i wysoki dach ułatwiają codzienne wsiadanie dzieciom oraz starszym pasażerom. Z drugiej strony trzeba pamiętać, że to wysoki van – przy autostradowych 140 km/h komfort akustyczny zwykle ustępuje klasycznym kombi i SUV-om.
 
 
 {{% youtube %}}
@@ -84,12 +84,12 @@ Jeśli interesuje Cię nowy egzemplarz, trzeba sprawdzić bieżący polski cenni
 
 ### Linie wyposażenia
 
-Nazwy wersji wyposażenia i ich zakres zmieniały się zależnie od rynku oraz rocznika, dlatego nie warto bez weryfikacji przyjmować dawnych nazw jako obowiązujących. W praktyce kluczowe jest to, czy dany egzemplarz ma zestaw systemów bezpieczeństwa i funkcji rodzinnych, a nie sama etykieta wersji.
+Nazwy wersji wyposażenia i ich zakres zmieniały się zależnie od rynku oraz rocznika, dlatego nie warto bez weryfikacji przyjmować dawnych nazw jako obowiązujących. W praktyce kluczowe jest to, czy dany egzemplarz ma zestaw systemów bezpieczeństwa i udogodnień rodzinnych, a nie sama etykieta wersji.
 
 Warto szukać takich elementów jak automatyczna klimatyzacja, kamera cofania, przesuwne drzwi po obu stronach, czujniki parkowania oraz systemy ADAS. W tej klasie szczególnie przydatne są AEB, utrzymanie pasa ruchu, rozpoznawanie znaków, tempomat adaptacyjny, monitoring martwego pola i kamera o szerokim kącie widzenia.
 
 {{% expert name="Marek Kowalczyk" %}}
-Jeśli szukasz Toyota Proace City osobowy dla rodziny, najpraktyczniejsza jest odmiana Long – zwłaszcza wtedy, gdy planujesz okazjonalnie wozić 7 osób. Trzeci rząd traktowałbym jednak jako rozwiązanie dodatkowe, bo po jego rozłożeniu bagażnik mocno się kurczy. Przed zakupem koniecznie sprawdź też konkretny układ drugiego rzędu siedzeń, bo to właśnie on najmocniej wpływa na codzienną wygodę.
+Jeśli szukasz osobowej Toyoty Proace City dla rodziny, najpraktyczniejsza jest odmiana Long – zwłaszcza wtedy, gdy planujesz okazjonalnie wozić 7 osób. Trzeci rząd traktowałbym jednak jako rozwiązanie dodatkowe, bo po jego rozłożeniu bagażnik mocno się kurczy. Przed zakupem koniecznie sprawdź też konkretny układ drugiego rzędu siedzeń, bo to właśnie on najmocniej wpływa na codzienną wygodę.
 {{% /expert %}}
 
 Bezpośrednia konkurencja to [Citroën Berlingo osobowy](/modele/citroen-berlingo/), a także Peugeot Rifter i Opel Combo Life. To bliźniacze konstrukcje K9 o tych samych długościach 4403 i 4753 mm, ale mogą różnić się napędami, nazwami wersji wyposażenia, warunkami gwarancji, cenami katalogowymi i kosztami serwisu.

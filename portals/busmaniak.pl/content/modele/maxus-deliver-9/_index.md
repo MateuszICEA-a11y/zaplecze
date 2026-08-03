@@ -9,7 +9,7 @@ type: "page"
 image: "/images/maxus-deliver-9-hero.webp"
 image_alt: "Maxus Deliver 9 furgon L3H2 na parkingu"
 youtube: "Aj5XyCqxSiA"
-youtube_title: "Maxus Deliver 9 - Nowy Chiński Van z Dieslem | Test pod obciążeniem"
+youtube_title: "Maxus Deliver 9 - Nowy chiński van z dieslem | Test pod obciążeniem"
 main_keyword: "maxus deliver 9"
 volume: 5400
 lead: "Maxus Deliver 9 to chiński duży dostawczak marki SAIC Motor, rywalizujący cenowo z Ducato, Sprinterem i Masterem. Silnik 2.0 diesel 136–150 KM, ładowność do 1500 kg i cena od 96 000 zł netto za podwozie; furgon od ok. 105 000 zł netto. Sprawdź, czy to realna alternatywa dla europejskiej konkurencji."
@@ -32,7 +32,7 @@ sources:
 
 Marka Maxus należy do koncernu [SAIC Motor](https://en.wikipedia.org/wiki/SAIC_Motor), jednego z największych producentów pojazdów w Chinach. Korzenie sięgają brytyjskiego LDV, które po bankructwie w 2009 roku zostało przejęte przez Chińczyków i zmodernizowane.
 
-Na polskim rynku Maxus pozycjonuje się jako producent aut użytkowych o korzystnym stosunku ceny do wyposażenia. Oprócz Delivera 9 marka oferuje też mniejszego Delivera 3 i elektrycznego eDelivera 7.
+Na polskim rynku Maxus występuje jako producent aut użytkowych o korzystnym stosunku ceny do wyposażenia. Oprócz Delivera 9 marka oferuje też mniejszego Delivera 3 i elektrycznego eDelivera 7.
 
 ## Historia Maxus Deliver 9
 
@@ -48,7 +48,7 @@ V80 był autem prostszym i wyraźnie starszym konstrukcyjnie. To właśnie od ni
 
 W 2019 roku zadebiutował Maxus V90, znany na części rynków jako Deliver 9. To już całkiem nowa platforma dużego dostawczaka, z nowym nadwoziem, dieslem 2.0 oraz systemami ADAS.
 
-Model trafił na eksport do Europy około 2020–2021 roku. Wraz z rozwojem gamy dostosowano silnik do normy Euro 6d i rozszerzono ofertę o kolejne długości, wysokości oraz wersje furgon, podwozie i minibus.
+Model trafił do Europy około 2020–2021 roku. Wraz z rozwojem gamy dostosowano silnik do normy Euro 6d i rozszerzono ofertę o kolejne długości, wysokości oraz wersje furgon, podwozie i minibus.
 
 ### eDeliver 9 (od 2020/2021)
 
@@ -62,7 +62,7 @@ Maxus oferuje standardowo 5 lat lub 100 000 km gwarancji na Deliver 9 – to ist
 
 ## Dane techniczne i wymiary
 
-W Maxusie Deliver 9 same oznaczenia L i H robią dużą różnicę. Inaczej jeździ L2H2 do miejskiej dystrybucji, a inaczej L4H3, który ma już wyraźnie większą pakę i promień zawracania.
+W modelu Maxus Deliver 9 same oznaczenia L i H robią dużą różnicę. Inaczej spisuje się L2H2 w miejskiej dystrybucji, a inaczej L4H3, który ma już wyraźnie większą pakę i większą średnicę zawracania.
 
 | Wersja | Długość | Wysokość | Rozstaw osi | Objętość | DMC | Ładowność | Dł. paki | Szer. paki | Wys. paki |
 |--------|---------|----------|-------------|----------|-----|-----------|----------|------------|-----------|
@@ -75,13 +75,13 @@ W zależności od wersji masa własna wynosi około **2000–2400 kg**, a średn
 
 ### Przestrzeń ładunkowa i praktyka
 
-Pod kątem przewozu towaru Deliver 9 celuje w środek segmentu dużych vanów. Najmniejszy furgon daje **9,7 m3**, a największy **15,1 m3**.
+Pod względem przewozu towarów Deliver 9 celuje w środek segmentu dużych vanów. Najmniejszy furgon daje **9,7 m3**, a największy **15,1 m3**.
 
 Do tego dochodzą drzwi tylne otwierane do **236°**, boczne drzwi przesuwane z otworem o szerokości **1274 mm** oraz stalowe punkty mocowania w przestrzeni ładunkowej. W praktyce zakres ładowności do około **1500 kg** pozwala traktować ten model jako realnego rywala dla [Renault Mastera](/modele/renault-master/) i [Fiata Ducato](/modele/fiat-ducato/).
 
 ## Silniki Maxusa Deliver 9
 
-Gama napędowa nie jest rozbudowana jak u części europejskich konkurentów, ale jest czytelna. Do wyboru masz diesla 2.0 w dwóch wariantach oraz elektrycznego eDelivera 9, a konkretne parametry mogą się różnić zależnie od długości, wysokości i homologacji.
+Gama napędowa nie jest tak rozbudowana jak u części europejskich konkurentów, ale jest czytelna. Do wyboru masz diesla 2.0 w dwóch wariantach oraz elektrycznego eDelivera 9, a konkretne parametry mogą się różnić w zależności od długości, wysokości i homologacji.
 
 | Silnik | Moc | Moment | Skrzynia | Spalanie / zużycie | Napęd |
 |--------|-----|--------|----------|--------------------|-------|
@@ -93,7 +93,7 @@ Gama napędowa nie jest rozbudowana jak u części europejskich konkurentów, al
 
 To bazowa jednostka o pojemności **1996 cm3**, mocy **136 KM** i momencie **375 Nm**. Spełnia normę **Euro 6d**, współpracuje z **6-biegową skrzynią manualną** i napędza tylną oś.
 
-Realne spalanie wygląda rozsądnie jak na duży samochód dostawczy. W trasie można zejść do około **8,0–8,8 l/100 km**, w mieście trzeba liczyć około **10–11 l/100 km**, a średnio wychodzi zwykle **8,5–9,5 l/100 km**.
+Realne spalanie wypada rozsądnie jak na duży samochód dostawczy. W trasie można zejść do około **8,0–8,8 l/100 km**, w mieście trzeba liczyć około **10–11 l/100 km**, a średnio wychodzi zwykle **8,5–9,5 l/100 km**.
 
 ### 2.0 turbodiesel 148/150 KM
 
@@ -105,7 +105,7 @@ W praktyce to wariant wygodniejszy w mieście i przy częstych manewrach. Realne
 
 Elektryczny wariant rozwija **150 kW / 204 KM** i **310 Nm**. Dostępne są akumulatory **72 kWh** albo **88,5 kWh**.
 
-Ładowanie AC odbywa się z mocą **11 kW**, a szybkie ładowanie DC dochodzi do **80 kW**. Zasięg WLTP zależnie od wersji wynosi około **236–353 km**, a praktyczne zużycie energii zwykle zamyka się w przedziale **28–34 kWh/100 km**.
+Ładowanie AC odbywa się z mocą **11 kW**, a szybkie ładowanie DC dochodzi do **80 kW**. Zasięg WLTP w zależności od wersji wynosi około **236–353 km**, a praktyczne zużycie energii zwykle zamyka się w przedziale **28–34 kWh/100 km**.
 
 {{% expert name="Marek Kowalczyk" %}}
 Deliver 9 z napędem RWD to konkretna przewaga przy pracy z ładunkiem. W aucie dostawczym ma to znaczenie nie w folderze reklamowym, tylko zimą pod rampą i przy ruszaniu na mokrym asfalcie.
@@ -117,13 +117,13 @@ Gama Delivera 9 jest szersza, niż może się wydawać po samych ogłoszeniach z
 
 ### Furgon
 
-Podstawą oferty jest furgon w wersjach **L2H2, L3H2, L3H3 i L4H3**. Objętość przestrzeni ładunkowej wynosi od **9,7 do 15,1 m3**, a typowa ładowność zależnie od długości i wysokości to około **1100–1500 kg**.
+Podstawą oferty jest furgon w wersjach **L2H2, L3H2, L3H3 i L4H3**. Objętość przestrzeni ładunkowej wynosi od **9,7 do 15,1 m3**, a typowa ładowność w zależności od długości i wysokości to około **1100–1500 kg**.
 
 To wariant do kurierki, dystrybucji, przewozu narzędzi i klasycznej pracy budowlano-serwisowej. W kabinie znajdziesz typowe wyposażenie robocze, a sam układ nadwozia jest nastawiony na szybki załadunek.
 
 ### Kombi / osobowy
 
-Wersje osobowe i kombi mogą mieć **7, 8 lub 9 miejsc** zależnie od konfiguracji. Taki Deliver 9 trafia zwykle do przewozu pracowników, shuttle busów i zastosowań hotelowych.
+Wersje osobowe i kombi mogą mieć **7, 8 lub 9 miejsc** w zależności od konfiguracji. Taki Deliver 9 trafia zwykle do przewozu pracowników, do ruchu wahadłowego i do zastosowań hotelowych.
 
 Ładowność będzie tu niższa niż w furgonie, ale zyskujesz więcej miejsc siedzących i bardziej uniwersalny układ wnętrza.
 
@@ -139,13 +139,13 @@ Minibus i shuttle to odmiany nastawione na przewóz osób. Najczęściej pracuj�
 
 ### eDeliver 9 furgon
 
-Elektryczny furgon występuje z baterią **72 lub 88,5 kWh**. To wersja pod dostawy miejskie, strefy czystego transportu i firmy, które chcą ograniczyć koszty jazdy w ruchu lokalnym.
+Elektryczny furgon występuje z baterią **72 lub 88,5 kWh**. To wersja do dostaw miejskich, do stref czystego transportu i dla firm, które chcą ograniczyć koszty jazdy w ruchu lokalnym.
 
 Typowa ładowność zależy od wersji i zwykle wynosi około **860–1200 kg**.
 
 ### eDeliver 9 podwozie / skrzynia
 
-Na części rynków dostępne są także elektryczne warianty podwoziowe lub skrzyniowe. Ich sens jest prosty – zabudowa specjalna bez diesla, ale z ograniczeniem wynikającym z masy akumulatora i zastosowania raczej na krótszych trasach.
+Na części rynków dostępne są także elektryczne warianty podwoziowe lub skrzyniowe. Ich sens jest prosty: umożliwiają specjalną zabudowę bez diesla, choć masa akumulatora ogranicza je raczej do krótszych tras.
 
 ## Typowe usterki Maxus Deliver 9
 
@@ -162,7 +162,7 @@ Koszty zwykle nie są dramatyczne, ale warto je znać:
 
 ### AdBlue / DPF / EGR w 2.0 diesel
 
-W dieslu 2.0 trzeba pilnować eksploatacji przy jeździe typowo miejskiej. W takich warunkach mogą pojawić się błędy układu emisji związane z EGR, DPF albo AdBlue.
+W dieslu 2.0 przy typowo miejskiej jeździe trzeba dbać o prawidłową eksploatację. W takich warunkach mogą pojawić się błędy układu emisji związane z EGR, DPF albo AdBlue.
 
 Orientacyjne koszty:
 - czyszczenie EGR – **300–700 zł**
@@ -195,7 +195,7 @@ Najczęstsze wydatki:
 
 ## Ile kosztuje Maxus Deliver 9?
 
-Ceny to jeden z głównych argumentów tego modelu. Trzeba tylko rozdzielić podwozie, klasyczny furgon i elektryka, bo różnice są duże.
+Ceny to jeden z głównych argumentów tego modelu. Trzeba tylko rozdzielić podwozie, klasyczny furgon i wariant elektryczny, bo różnice są duże.
 
 ### Nowy Maxus Deliver 9
 
@@ -225,7 +225,7 @@ Dla **eDelivera 9** z roczników **2022–2024** trzeba zwykle przygotować oko�
 
 ## Deliver 9 na tle konkurencji
 
-Poniżej porównujemy Deliver 9 z czterema popularnymi rywalami w segmencie dużych vanów. Największe różnice dotyczą napędu, dostępnych rozmiarów nadwozia, DMC i ceny wejścia.
+Poniżej porównujemy Deliver 9 z czterema popularnymi rywalami w segmencie dużych vanów. Największe różnice dotyczą napędu, dostępnych rozmiarów nadwozia, DMC i ceny bazowej.
 
 | Model | Dostępne długości / wysokości | Objętość maks. | Typ napędu | Maks. DMC | Gwarancja | Cena bazowa netto |
 |-------|-------------------------------|----------------|------------|-----------|-----------|-------------------|
@@ -237,4 +237,4 @@ Poniżej porównujemy Deliver 9 z czterema popularnymi rywalami w segmencie duż
 
 Deliver 9 wygrywa głównie ceną bazową i długą gwarancją. Do tego dokłada napęd na tył, którego część konkurentów w tym pułapie cenowym po prostu nie oferuje.
 
-Z drugiej strony europejscy rywale mają mocniejszą pozycję na rynku wtórnym, większą sieć serwisową i bardziej ugruntowaną opinię flotową. [Iveco Daily](/modele/iveco-daily/) pozostaje mocnym punktem odniesienia dla firm szukających konstrukcji ramowej, a [Mercedes Sprinter](/modele/mercedes-sprinter/) celuje bardziej w wyższy segment cenowy.
+Z drugiej strony europejscy rywale mają mocniejszą pozycję na rynku wtórnym, większą sieć serwisową i mocniej ugruntowaną renomę we flotach. [Iveco Daily](/modele/iveco-daily/) pozostaje mocnym punktem odniesienia dla firm szukających konstrukcji ramowej, a [Mercedes Sprinter](/modele/mercedes-sprinter/) celuje bardziej w wyższy segment cenowy.

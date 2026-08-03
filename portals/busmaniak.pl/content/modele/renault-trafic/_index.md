@@ -14,7 +14,7 @@ image: "/images/renault-trafic-hero.webp"
 image_alt: "Renault Trafic III furgon L2H1"
 youtube: "B84L-5QUpN0"
 youtube_title: "RENAULT TRAFIC (NOWY MODEL) - TEST, OPIS I RECENZJA MODELU"
-lead: "Renault Trafic III to solidny środek transportu dla firm, które potrzebują w wielu wersjach ładowności około 1 tony bez przepłacania za markę. W segmencie średnich dostawczaków od lat utrzymuje się w czołówce sprzedaży – nie dlatego, że jest najlepszy pod każdym względem, ale dlatego, że rzadko zawodzi w codziennej robocie."
+lead: "Renault Trafic III to solidny środek transportu dla firm, które w wielu wersjach potrzebują ładowności około 1 tony bez przepłacania za markę. W segmencie średnich dostawczaków od lat utrzymuje się w czołówce sprzedaży – nie dlatego, że jest najlepszy pod każdym względem, ale dlatego, że rzadko zawodzi w codziennej robocie."
 faq:
   - question: "Jaka jest różnica między 1.6 dCi a 2.0 dCi w Renault Trafic?"
     answer: "1.6 dCi (R9M) to starszy silnik dostępny od 2014 roku w wersjach 90–145 KM. Wersja BiTurbo/Twin Turbo jest mocna, ale bardziej awaryjna. 2.0 dCi (M9R) dostępny od 2019 roku to nowszy, trwalszy silnik z większym momentem obrotowym – polecany jako bezpieczniejszy wybór."
@@ -25,7 +25,7 @@ faq:
 sources:
   - "Wikipedia – Renault Trafic"
   - "renault.pl"
-  - "auto-data.net."
+  - "auto-data.net"
 ---
 ## Historia i generacje Renault Trafic
 
@@ -45,9 +45,9 @@ W gamie występowały m.in. furgon, kombi/passenger oraz platforma i podwozie do
 
 ### Trafic II (2001–2014)
 
-Druga generacja była dużo nowocześniejsza i otworzyła model na szeroki rynek flotowy. Bliźniaczymi konstrukcjami były Opel/Vauxhall Vivaro A oraz Nissan Primastar.
+Druga generacja była znacznie nowocześniejsza i otworzyła model na szeroki rynek flotowy. Bliźniaczymi konstrukcjami były Opel/Vauxhall Vivaro A oraz Nissan Primastar.
 
-Trafic II przeszedł lifting w 2006 roku. W gamie dalej były furgony, wersje kombi/passenger oraz platformy do lekkich zabudów, więc auto trafiało zarówno do kurierów, jak i firm robiących zabudowy specjalistyczne.
+Trafic II przeszedł lifting w 2006 roku. W gamie nadal były furgony, wersje kombi/passenger oraz platformy do lekkich zabudów, więc auto trafiało zarówno do kurierów, jak i firm wykonujących zabudowy specjalistyczne.
 
 - Produkcja: **2001–2014**
 - Lifting: **2006**
@@ -58,7 +58,7 @@ Trafic II przeszedł lifting w 2006 roku. W gamie dalej były furgony, wersje ko
 
 Trzecia generacja zadebiutowała w 2014 roku i to właśnie jej dotyczy dalsza część tego przewodnika. Renault postawiło tu na lepszą ergonomię kabiny, nowocześniejsze diesle i bardziej dopracowane wyposażenie.
 
-Już w 2019 roku wprowadzono 2.0 dCi/Blue dCi, a lifting z 2021 roku przyniósł nowy pas przedni i uporządkowaną ofertę. Tak jak wcześniej, w ofercie były furgon, kombi/passenger i wersje platform cab na wybranych rynkach.
+Już w 2019 roku wprowadzono 2.0 dCi/Blue dCi, a lifting z 2021 roku przyniósł nowy pas przedni i uporządkowaną ofertę. Tak jak wcześniej, w ofercie znajdowały się furgon, kombi/passenger i wersje platform cab na wybranych rynkach.
 
 - Produkcja: **od 2014**
 - Lifting: **2021**
@@ -124,21 +124,21 @@ Same gabaryty zewnętrzne nie mówią wszystkiego. Przy codziennej pracy liczą 
 
 ### Wersje osobowe i brygadowe
 
-Trafic to nie tylko blaszany furgon. W praktyce duża część rynku to też odmiany do przewozu ludzi albo ekip z narzędziami.
+Trafic to nie tylko blaszany furgon. W praktyce duża część rynku to także odmiany do przewozu ludzi albo ekip z narzędziami.
 
 - **Passenger / Combi** – **8–9 miejsc**, długości **L1** i **L2**
 - **Bagażnik** – zależny od układu siedzeń i ich ustawienia
 - **Brygadówka / crew van** – więcej miejsc w kabinie, ale krótsza część ładunkowa niż w furgonie
 
 {{% info title="Wymiary ładowni a realne załadowanie" icon="engineering" %}}
-Wysokość ładowni w tabeli jest mierzona od podłogi do dachu. W praktyce kilka centymetrów potrafią zabrać okładziny, podłoga ochronna albo zabudowa warsztatowa.
+Wysokość ładowni w tabeli jest mierzona od podłogi do dachu. W praktyce kilka centymetrów zabierają okładziny, podłoga ochronna albo zabudowa warsztatowa.
 {{% /info %}}
 
 ![Renault Trafic III furgon](/images/renault-trafic-hero.webp)
 
 ## Silniki Trafica {#silniki}
 
-Ta sekcja dotyczy Renault Trafic III. Rynek wyraźnie dzieli się na auta z 1.6 dCi przed zmianami oraz nowsze wersje z 2.0 dCi/Blue dCi od 2019 roku.
+Ta sekcja dotyczy Renault Trafic III. Rynek wyraźnie dzieli się na auta z 1.6 dCi sprzed zmian oraz nowsze wersje z 2.0 dCi/Blue dCi od 2019 roku.
 
 | Silnik | Kod | Moc | Moment | Norma Euro | Skrzynia | Napęd | Typ turbo | Lata | Spalanie WLTP / realnie |
 |--------|-----|-----|--------|------------|----------|-------|-----------|------|--------------------------|
@@ -157,13 +157,13 @@ Ta sekcja dotyczy Renault Trafic III. Rynek wyraźnie dzieli się na auta z 1.6 
 
 ### 1.6 dCi single turbo
 
-Podstawowe wersje 1.6 dCi to odmiany **90 KM / 260 Nm** i **115 KM / 300 Nm**. To najprostsza część gamy przedliftingowej i zwykle najlepszy wybór dla kogoś, kto nie potrzebuje mocnej jazdy z kompletem ładunku.
+Podstawowe wersje 1.6 dCi to odmiany **90 KM / 260 Nm** i **115 KM / 300 Nm**. To najprostsza część gamy przedliftingowej i zwykle najlepszy wybór dla kogoś, kto nie potrzebuje mocnej jazdy z pełnym ładunkiem.
 
-Realne spalanie takich wersji najczęściej mieści się w zakresie **7,0–8,0 l/100 km**. W dostawczaku pracującym głównie w mieście dużo ważniejszy od katalogu jest stan EGR, DPF i regularność wymian oleju.
+Realne spalanie takich wersji najczęściej mieści się w zakresie **7,0–8,0 l/100 km**. W dostawczaku pracującym głównie w mieście znacznie ważniejszy od katalogu jest stan EGR, DPF i regularność wymian oleju.
 
 ### 1.6 dCi Twin Turbo
 
-Mocniejsze 1.6 dCi Twin Turbo obejmują odmiany **120 KM / 320 Nm**, **140 KM / 340 Nm**, a później także **125 KM / 320 Nm** i **145 KM / 350 Nm** na wybranych rynkach. Te wersje wyraźnie lepiej radzą sobie z obciążeniem i trasą.
+Mocniejsze 1.6 dCi Twin Turbo obejmują odmiany **120 KM / 320 Nm**, **140 KM / 340 Nm**, a później także **125 KM / 320 Nm** i **145 KM / 350 Nm** na wybranych rynkach. Te wersje wyraźnie lepiej radzą sobie z obciążeniem i jazdą w trasie.
 
 Realnie spalają zwykle **7,2–8,5 l/100 km**. To silniki przyjemniejsze w codziennej jeździe, ale bardziej wrażliwe na zaniedbania serwisowe niż słabsze single turbo.
 
@@ -181,7 +181,7 @@ Przy zakupie używanego Trafica historia serwisowa jest ważniejsza niż przebie
 
 Trafic III nie kończy się na zwykłym furgonie. Na rynku znajdziesz kilka odmian fabrycznych i sporo zabudów wykonywanych przez zewnętrzne firmy.
 
-Fabryczne w Polsce najczęściej spotkasz jako: **Furgon, Equipe/Crew Van, Combi/Passenger i SpaceClass**. Kampery to z kolei przeważnie konwersje niezależne, a nie seryjne auta z salonu.
+Wersje fabryczne w Polsce najczęściej spotkasz jako: **Furgon, Equipe/Crew Van, Combi/Passenger i SpaceClass**. Kampery to z kolei przeważnie konwersje niezależne, a nie seryjne auta z salonu.
 
 | Wersja | Miejsca | Pojemność / charakter | Uwagi |
 |--------|---------|------------------------|-------|
@@ -197,9 +197,9 @@ Fabryczne w Polsce najczęściej spotkasz jako: **Furgon, Equipe/Crew Van, Combi
 - **[Brygadówka (Combi)](/modele/renault-trafic/brygadowka/)** – użytkowa odmiana dla firm serwisowych i budowlanych, gdzie liczy się kompromis między kabiną a paką.
 - **[Passenger / SpaceClass (osobowy)](/modele/renault-trafic/osobowy/)** – 8–9 miejsc, różne konfiguracje siedzeń i bagażnik zależny od ich ustawienia.
 - **Passenger** – typowa wersja przewozowa dla hoteli, shuttle busów i przewoźników.
-- **SpaceClass** – wyżej pozycjonowana odmiana osobowa, celująca bardziej w wygodę niż czystą użytkowość.
+- **SpaceClass** – bogatsza odmiana osobowa, nastawiona bardziej na wygodę niż na czystą użytkowość.
 - **Platform cab / plandeka / baza do lekkich zabudów na wybranych rynkach** – wersja dla firm, które potrzebują konkretnej zabudowy specjalistycznej.
-- **Kamper / campervan** – liczne zabudowy niezależnych firm, zwykle na bazie L1H1 albo L2H1 z podnoszonym dachem. To popularny punkt wyjścia do lekkiego vanlife’u i turystycznych konwersji.
+- **Kamper / campervan** – liczne zabudowy niezależnych firm, zwykle na bazie L1H1 albo L2H1 z podnoszonym dachem. To popularny punkt wyjścia do lekkiego van life’u i turystycznych konwersji.
 
 ## Typowe usterki Renault Trafic {#usterki}
 
@@ -218,11 +218,11 @@ Najwięcej uwagi wymaga osprzęt diesla eksploatowanego w mieście. Typowe punkt
 - Regeneracja turbo: **1500–2500 zł**
 - Nowa turbosprężarka: **3000–4500 zł**
 
-W odmianach Twin Turbo większa moc oznacza też więcej elementów, które mogą wygenerować rachunek. Jeśli auto kopci, szarpie albo traci moc, nie odkładaj diagnostyki.
+W odmianach Twin Turbo większa moc oznacza też więcej elementów, które mogą słono kosztować. Jeśli auto kopci, szarpie albo traci moc, nie odkładaj diagnostyki.
 
 ### 2.0 dCi / Blue dCi
 
-Nowsze 2.0 Blue dCi mają lepszą opinię, ale dalej obowiązują te same zasady dla nowoczesnego diesla. Krótkie trasy i ciągłe niedogrzanie silnika kończą się problemami z układem oczyszczania spalin.
+Nowsze 2.0 Blue dCi mają lepszą opinię, ale nadal obowiązują te same zasady dotyczące nowoczesnego diesla. Krótkie trasy i ciągłe niedogrzewanie silnika kończą się problemami z układem oczyszczania spalin.
 
 Najczęstsze objawy to spadek mocy, komunikaty emisji, częste wypalanie DPF i przechodzenie auta w tryb awaryjny. W praktyce trzeba liczyć się z takimi kosztami:
 
@@ -255,7 +255,7 @@ Trafic jest autem roboczym, więc zawieszenie i układ hamulcowy zużywają się
 - Łączniki / stabilizator: **100–250 zł/szt.**
 - Tarcze i klocki przód komplet: **500–900 zł**
 
-Przy jeździe po mieście i częstym podjazdach pod rampy zawieszenie dostaje więcej uderzeń niż w aucie pracującym głównie w trasie. Dlatego warto obejrzeć stan przedniego zawieszenia i zużycie hamulców jeszcze przed zakupem.
+Przy jeździe po mieście i częstych podjazdach pod rampy zawieszenie dostaje więcej uderzeń niż w aucie pracującym głównie w trasie. Dlatego warto obejrzeć stan przedniego zawieszenia i zużycie hamulców jeszcze przed zakupem.
 
 ### Elektryka i nadwozie
 
@@ -316,7 +316,7 @@ Na rynku wtórnym liczy się nie tylko rocznik, ale też silnik, rodzaj nadwozia
 
 ### Cena nowego auta
 
-Nowy Trafic potrafi mocno różnić się ceną w zależności od długości, zabudowy i konfiguracji kabiny. Do tego dochodzą promocje flotowe oraz specyficzne zabudowy pod działalność.
+Nowy Trafic potrafi mocno różnić się ceną w zależności od długości, zabudowy i konfiguracji kabiny. Do tego dochodzą promocje flotowe oraz specjalistyczne zabudowy pod działalność.
 
 | Wersja | Cena orientacyjna |
 |--------|-------------------|

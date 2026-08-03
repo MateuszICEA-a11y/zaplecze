@@ -14,29 +14,29 @@ image: "/images/iveco-daily-hero.webp"
 image_alt: "Iveco Daily VII furgon"
 youtube: "C9CL8AEpbO4"
 youtube_title: "Iveco Daily 2025 to stara szkoła w nowych czasach"
-lead: "Iveco Daily to jedyny van w segmencie, który oferuje DMC od 3,5 do 7,2 tony w ramach jednej platformy. Rama drabinkowa zamiast samonośnego nadwozia, silniki 2.3 F1A (w nowszych rocznikach także 2.2) oraz 3.0 F1C, a także elektryczne eDaily – to cechy, które odróżniają go od Transita, Sprintera i Craftera."
+lead: "Iveco Daily to jedyny van w segmencie, który oferuje DMC od 3,5 do 7,2 tony w ramach jednej platformy. Rama drabinkowa zamiast samonośnego nadwozia, silniki 2.3 F1A (w nowszych rocznikach także 2.2) oraz 3.0 F1C, a także elektryczny eDaily – to cechy, które odróżniają go od Transita, Sprintera i Craftera."
 faq:
   - question: "Jaka jest maksymalna ładowność Iveco Daily?"
     answer: "Przy wersji z DMC 7,2 t ładowność sięga 4700 kg. Standardowa wersja 3,5 t oferuje ładowność do ok. 1400 kg w zależności od wariantu nadwoziowego i długości."
   - question: "Czym różni się Iveco Daily VI od VII generacji?"
-    answer: "Daily VII (od 2023) to facelifting szóstej generacji. Wprowadzono nowy kokpit z cyfrowym zestawem wskaźników, system Hi-Connect drugiej generacji i poprawioną aerodynamikę. Mechanika pozostała bez zmian."
+    answer: "Daily VII (od 2023) to lifting szóstej generacji. Wprowadzono nowy kokpit z cyfrowym zestawem wskaźników, system Hi-Connect drugiej generacji i poprawioną aerodynamikę. Mechanika pozostała bez zmian."
   - question: "Czy Iveco Daily ma ramę drabinkową?"
-    answer: "Tak – Daily wykorzystuje konstrukcję ramową także w lekkich odmianach; w cięższych wersjach przewaga tej architektury jest szczególnie widoczna. To wyjątek w klasie – Transit, Sprinter i Crafter mają nadwozia samonośne lub semi-ramowe."
+    answer: "Tak – Daily wykorzystuje konstrukcję ramową także w lekkich odmianach; w cięższych wersjach przewaga tej architektury jest szczególnie widoczna. To wyjątek w klasie – Transit, Sprinter i Crafter mają nadwozia samonośne lub półramowe."
 sources:
   - "Wikipedia – Iveco Daily"
   - "iveco.com"
-  - "auto-data.net."
+  - "auto-data.net"
 ---
 
 ## Historia i generacje {#generacje}
 
-Iveco Daily jest na rynku od 1978 roku i przez cały ten czas zachowało swój podstawowy charakter: szeroką gamę DMC, konstrukcję pod ciężką pracę i dużą swobodę zabudowy. Zmieniały się kabiny, silniki i elektronika, ale Daily konsekwentnie trzymało się użytkowego DNA.
+Iveco Daily jest na rynku od 1978 roku i przez cały ten czas zachował swój podstawowy charakter: szeroką gamę DMC, konstrukcję pod ciężką pracę i dużą swobodę zabudowy. Zmieniały się kabiny, silniki i elektronika, ale Daily konsekwentnie trzymał się użytkowego charakteru.
 
 ### Daily I (1978–1989)
 
 Pierwsza generacja była oferowana jako Fiat/Iveco Daily. Już wtedy model wyróżniał się ramą drabinkową, co od początku stawiało go bliżej lekkich ciężarówek niż klasycznych vanów.
 
-W kabinie dominowała prostota i użytkowy charakter, a gama silników rozwijała się wraz z kolejnymi modernizacjami. Daily szybko trafiło do transportu lokalnego, zabudów specjalnych i zadań komunalnych.
+W kabinie dominowała prostota i użytkowy charakter, a gama silników rozwijała się wraz z kolejnymi modernizacjami. Daily szybko trafił do transportu lokalnego, zabudów specjalnych i zadań komunalnych.
 
 ### Daily II (1990–1999)
 
@@ -48,17 +48,17 @@ Równolegle utrzymano szerokie możliwości konfiguracji DMC i zabudów. Daily n
 
 W trzeciej odsłonie producent poprawił bezpieczeństwo i przeprojektował wnętrze. Kabina stała się nowocześniejsza, a auto lepiej odpowiadało wymaganiom flot, które zaczęły oczekiwać nie tylko ładowności, ale też sensownego komfortu na trasie.
 
-Równocześnie rozwijano gamę silników i odmian użytkowych. To właśnie z tej epoki Daily zaczęło być częściej wybierane jako baza pod bardziej wyspecjalizowane zabudowy.
+Równocześnie rozwijano gamę silników i odmian użytkowych. Właśnie z tej epoki Daily zaczęło być częściej wybierane jako baza pod bardziej wyspecjalizowane zabudowy.
 
 ### Daily IV (2006–2011)
 
-Czwarta generacja rozszerzyła gamę do wersji o DMC nawet **7,0 t**. W ofercie były m.in. odmiany **3.0 HPI/HPT** oraz **2.3 HPI**, ale nie warto wrzucać całej gamy do jednego worka ze skrótem HPI/HPT.
+Czwarta generacja rozszerzyła gamę do wersji o DMC nawet **7,0 t**. W ofercie były m.in. odmiany **3.0 HPI/HPT** oraz **2.3 HPI**, ale nie warto wrzucać całej gamy do jednego worka pod skrótem HPI/HPT.
 
-Wnętrze pozostało podporządkowane pracy, a użytkownik dostał jeszcze szerszy wybór wersji furgonowych i podwoziowych. To moment, w którym Daily wyraźnie odjechało klasycznym konkurentom z segmentu 3,5 t.
+Wnętrze pozostało podporządkowane pracy, a użytkownik dostał jeszcze szerszy wybór wersji furgonowych i podwoziowych. To moment, w którym Daily wyraźnie odjechał klasycznym konkurentom z segmentu 3,5 t.
 
 ### Daily V (2011–2014)
 
-Piąta generacja była w praktyce dużym faceliftingiem poprzednika. Pojawiło się nowe wnętrze, poprawiona ergonomia kabiny i zmiany w gamie DMC oraz silnikach.
+Piąta generacja była w praktyce dużym liftingiem poprzednika. Pojawiło się nowe wnętrze, poprawiona ergonomia kabiny oraz zmiany w gamie DMC i silnikach.
 
 Z punktu widzenia użytkownika to ważny etap przejściowy między starszym, surowym Daily a późniejszą generacją z 2014 roku. Nadal był to samochód mocno użytkowy, ale już wyraźnie dojrzalszy pod względem obsługi na co dzień.
 
@@ -66,28 +66,28 @@ Z punktu widzenia użytkownika to ważny etap przejściowy między starszym, sur
 
 To już nowa generacja i obecna baza konstrukcyjna modelu. Iveco przeprojektowało kabinę, poprawiło ergonomię i uporządkowało gamę wersji pod kątem nowoczesnych zastosowań flotowych.
 
-W tej generacji stosowano przede wszystkim diesle **2.3 F1A** oraz **3.0 F1C**. Daily pozostało wierne szerokiej skali DMC i zabudów, ale stało się wyraźnie nowocześniejsze w codziennej eksploatacji.
+W tej generacji stosowano przede wszystkim diesle **2.3 F1A** oraz **3.0 F1C**. Daily pozostał wierny szerokiej skali DMC i zabudów, ale stał się wyraźnie nowocześniejszy w codziennej eksploatacji.
 
 ### Daily VI po liftingu (2019–2023)
 
-Lifting z 2019 roku przyniósł mocny nacisk na systemy ADAS, łączność i odświeżone wnętrze. To właśnie z tych roczników pochodzą lepiej wyposażone egzemplarze, które częściej mają nowocześniejsze systemy wsparcia kierowcy.
+Lifting z 2019 roku przyniósł mocny nacisk na systemy ADAS, łączność i odświeżone wnętrze. Właśnie z tych roczników pochodzą lepiej wyposażone egzemplarze, które częściej mają nowocześniejsze systemy wspomagania kierowcy.
 
-W gamie silników nadal kluczowe były **2.3 F1A** i **3.0 F1C**, ale zmieniły się warianty mocy i emisji. Dla wielu firm to najbardziej sensowny punkt wejścia w używane Daily nowej generacji.
+W gamie silników nadal kluczowe były **2.3 F1A** i **3.0 F1C**, ale zmieniły się warianty mocy i emisji. Dla wielu firm to najbardziej sensowny wybór wśród używanych Daily nowej generacji.
 
-### Daily 2024/2025 facelift
+### Daily 2024/2025 – lifting
 
-To kolejny facelift modelu z 2014 roku, potocznie nazywany Daily VII. Formalnie nie jest to całkowicie nowa platforma, tylko dalsze rozwinięcie obecnej generacji.
+To kolejny lifting modelu z 2014 roku, potocznie nazywany Daily VII. Formalnie nie jest to całkowicie nowa platforma, tylko dalsze rozwinięcie obecnej generacji.
 
 Najważniejsze zmiany objęły kokpit, łączność i obsługę systemów pokładowych. W nowszej gamie pojawił się też diesel **2.2**, dlatego przy porównywaniu roczników warto sprawdzać nie tylko moc, ale też dokładny rok produkcji.
 
 ### eDaily (2022–obecnie)
 
-Elektryczne eDaily zadebiutowało w obecnej formie w **2022 r.** To nie osobny model, tylko elektryczna odmiana aktualnej generacji, dostępna zarówno jako furgon, jak i podwozie pod zabudowę.
+Elektryczny eDaily zadebiutował w obecnej formie w **2022 r.** To nie osobny model, tylko elektryczna odmiana aktualnej generacji, dostępna zarówno jako furgon, jak i podwozie pod zabudowę.
 
-W gamie przewidziano akumulatory **37 / 74 / 111 kWh**, moc do **140 kW** i moment do **400 Nm**. Największy plus? Zachowanie użytkowego charakteru Daily także po przejściu na napęd elektryczny.
+W gamie przewidziano akumulatory **37 / 74 / 111 kWh**, moc do **140 kW** i moment do **400 Nm**. Największa zaleta? Zachowanie użytkowego charakteru Daily także po przejściu na napęd elektryczny.
 
 {{% info title="Unikalna cecha Daily" icon="engineering" %}}
-Iveco Daily jest jednym z nielicznych dużych aut dostawczych, które w cięższych odmianach stawiają na ramę drabinkową. To właśnie dlatego Daily tak dobrze sprawdza się jako baza pod lawety, wywrotki, chłodnie i kampery.
+Iveco Daily jest jednym z nielicznych dużych aut dostawczych, które w cięższych odmianach stawiają na ramę drabinkową. Właśnie dlatego Daily tak dobrze sprawdza się jako baza pod lawety, wywrotki, chłodnie i kampery.
 {{% /info %}}
 
 ## Dane techniczne Iveco Daily {#dane-techniczne}
@@ -120,7 +120,7 @@ Poniżej masz praktyczne zestawienie najważniejszych zakresów użytkowych.
 | Kubatura przestrzeni ładunkowej | **7,3–19,6 m³** |
 | Długość auta | od ok. **5,0 m** do ponad **7,2 m** |
 
-W praktyce Daily można skonfigurować jako krótki furgon do miasta albo ciężkie podwozie pod zabudowę specjalistyczną. To dlatego przy zakupie nie wystarczy patrzeć na sam silnik – kluczowe są też rozstaw osi, DMC i wysokość dachu.
+W praktyce Daily można skonfigurować jako krótki furgon do miasta albo ciężkie podwozie pod zabudowę specjalistyczną. Dlatego przy zakupie nie wystarczy patrzeć na sam silnik – kluczowe są też rozstaw osi, DMC i wysokość dachu.
 
 ### Przykładowe warianty furgonu
 
@@ -135,7 +135,7 @@ Najlepiej widać to na konkretnych konfiguracjach L/H. Poniższe wartości są o
 
 ### Warianty podwozi
 
-W Daily równie ważne jak furgony są wersje pod zabudowę. To właśnie tutaj model buduje przewagę nad większością konkurentów.
+W Daily równie ważne jak furgony są wersje pod zabudowę. Właśnie tutaj model buduje przewagę nad większością konkurentów.
 
 | Rozstaw osi | Typowe DMC |
 |-------------|------------|
@@ -165,7 +165,7 @@ To silniki spotykane w pierwszych latach obecnej generacji. W zależności od ry
 
 ### Daily po liftingu 2019–2023
 
-Po liftingu gama została uporządkowana, a jednostki dostosowano do normy **Euro 6d**. To właśnie te wersje najczęściej przewijają się dziś w młodszych autach poleasingowych.
+Po liftingu gama została uporządkowana, a jednostki dostosowano do normy **Euro 6d**. Właśnie te wersje najczęściej przewijają się dziś w młodszych autach poleasingowych.
 
 | Silnik | Pojemność | Moc | Moment obrotowy | Norma | Skrzynia | Typowe spalanie |
 |--------|-----------|-----|-----------------|-------|----------|-----------------|
@@ -178,7 +178,7 @@ Po liftingu gama została uporządkowana, a jednostki dostosowano do normy **Eur
 
 ### Daily 2024+
 
-W nowszej gamie pojawił się diesel **2.2**. Jeśli porównujesz nowe auta z końcówką produkcji 2.3, koniecznie sprawdzaj konkretny rocznik i konfigurację.
+W nowszej gamie pojawił się diesel **2.2**. Jeśli porównujesz nowe auta z egzemplarzami z końcówki produkcji silnika 2.3, koniecznie sprawdzaj konkretny rocznik i konfigurację.
 
 | Silnik | Pojemność | Moc | Moment obrotowy | Norma | Skrzynia | Typowe spalanie |
 |--------|-----------|-----|-----------------|-------|----------|-----------------|
@@ -189,7 +189,7 @@ W nowszej gamie pojawił się diesel **2.2**. Jeśli porównujesz nowe auta z ko
 
 ### eDaily
 
-Elektryczne eDaily pojawiło się w obecnej formie w 2022 roku. Największa zaleta tej wersji to zachowanie użytkowego charakteru auta także po przejściu na napęd elektryczny.
+Elektryczny eDaily pojawił się w obecnej formie w 2022 roku. Największa zaleta tej wersji to zachowanie użytkowego charakteru auta także po przejściu na napęd elektryczny.
 
 | Wersja | Moc | Moment obrotowy | Akumulatory | Ładowanie | Zasięg |
 |--------|-----|-----------------|-------------|-----------|--------|
@@ -199,17 +199,17 @@ Elektryczne eDaily pojawiło się w obecnej formie w 2022 roku. Największa zale
 
 To podstawowy diesel w lżejszych odmianach Daily. Najczęściej spotkasz go w wersjach **3,5 t** i **4,25 t**, zarówno w furgonach, jak i lżejszych podwoziach.
 
-W nowszych rocznikach po liftingu najczęściej przewijają się warianty **116 KM / 320 Nm**, **136 KM / 350 Nm** oraz **156 KM / 380 Nm**. W praktyce **136 KM** to środek gamy, a **156 KM** ma sens wtedy, gdy auto regularnie jeździ pod obciążeniem albo pracuje w dłuższych trasach.
+W nowszych rocznikach po liftingu najczęściej przewijają się warianty **116 KM / 320 Nm**, **136 KM / 350 Nm** oraz **156 KM / 380 Nm**. W praktyce **136 KM** to środek gamy, a **156 KM** ma sens wtedy, gdy auto regularnie jeździ pod obciążeniem albo pracuje na dłuższych trasach.
 
 ### F1C – silnik 3.0 F1C
 
-To czterocylindrowy diesel dla cięższych konfiguracji, pracujący jako jednostka common-rail. W Daily ma sens przede wszystkim tam, gdzie auto stale wozi duży ładunek albo stanowi bazę pod zabudowę specjalną.
+To czterocylindrowy diesel dla cięższych konfiguracji, pracujący w systemie common rail. W Daily ma sens przede wszystkim tam, gdzie auto stale wozi duży ładunek albo stanowi bazę pod zabudowę specjalną.
 
 W gamie występowały m.in. wersje **160 KM / 430 Nm**, **180 KM / 430 Nm** oraz **210 KM / 470 Nm**. Jeśli szukasz Daily pod lawetę, ciężką chłodnię albo duże podwozie skrzyniowe, właśnie ten silnik jest naturalnym wyborem.
 
 ### eDaily – wersja elektryczna
 
-Elektryczne eDaily pojawiło się w obecnej formie w 2022 roku. Największa zaleta tej wersji to zachowanie użytkowego charakteru auta także po przejściu na napęd elektryczny.
+Elektryczny eDaily pojawił się w obecnej formie w 2022 roku. Największa zaleta tej wersji to zachowanie użytkowego charakteru auta także po przejściu na napęd elektryczny.
 
 Do wyboru są akumulatory **37 / 74 / 111 kWh**. Moc systemowa sięga **140 kW**, moment wynosi **400 Nm**, a zasięg może dochodzić do ok. **400 km WLTP** zależnie od wersji i konfiguracji.
 
@@ -227,9 +227,9 @@ Najczęstszy problem to zawór EGR, zwłaszcza w autach jeżdżących głównie 
 
 Wtryskiwacze po większych przebiegach potrafią podnieść spalanie i pogorszyć rozruch. Regeneracja jednego wtryskiwacza to zwykle **500–900 zł/szt.**, a nowy element kosztuje około **1200–2000 zł/szt.**
 
-Turbosprężarka w 2.3 też jest punktem, który trzeba mieć z tyłu głowy. Regeneracja to najczęściej **1200–2200 zł**, a nowa turbina **2500–4500 zł**.
+Turbosprężarka w 2.3 też jest punktem, o którym trzeba pamiętać. Regeneracja to najczęściej **1200–2200 zł**, a nowa turbina **2500–4500 zł**.
 
-Przy przeciążeniu termicznym może pojawić się temat uszczelki pod głowicą. Tu rachunek robi się już poważny – zwykle **3500–7000 zł**.
+Przy przeciążeniu termicznym może dojść do uszkodzenia uszczelki pod głowicą. Tu rachunek robi się już poważny – zwykle **3500–7000 zł**.
 
 ### Silnik 3.0 F1C
 
@@ -239,7 +239,7 @@ Jeśli padnie turbina, przygotuj się na wyższy rachunek niż w 2.3. Regeneracj
 
 W tej jednostce wracają też problemy osprzętu i układów oczyszczania spalin. **EGR** to zwykle **300–700 zł** za czyszczenie albo **1000–2200 zł** za wymianę, a **DPF** kosztuje zwykle **600–1200 zł** za czyszczenie lub **3000–7000 zł** za wymianę.
 
-Do tego dochodzą przewody dolotu i intercooler – zwykle **300–1200 zł** – oraz koło pasowe i osprzęt paska w widełkach **500–1500 zł**. W starszych i ciężko pracujących egzemplarzach zdarzają się także uszczelnienia silnika i wycieki oleju za **300–1500 zł**, a w mocniejszych wersjach sprzęgło z dwumasą potrafi dołożyć rachunek na poziomie **2500–5000 zł**.
+Do tego dochodzą przewody dolotu i intercooler – zwykle **300–1200 zł** – oraz koło pasowe i osprzęt paska w widełkach **500–1500 zł**. W starszych i ciężko eksploatowanych egzemplarzach zdarzają się też problemy z uszczelnieniami silnika i wycieki oleju za **300–1500 zł**, a w mocniejszych wersjach sprzęgło z kołem dwumasowym potrafi dołożyć rachunek na poziomie **2500–5000 zł**.
 
 Typowe objawy to utrata mocy, tryb awaryjny, dymienie, nierówna praca i hałas osprzętu. W Daily pracującym pod dużym obciążeniem nie warto tego bagatelizować, bo z pozornie małego problemu szybko robi się droższa naprawa.
 
@@ -247,19 +247,19 @@ Typowe objawy to utrata mocy, tryb awaryjny, dymienie, nierówna praca i hałas 
 
 Automat Hi-Matic jest wygodny i dobrze pasuje do Daily, ale wymaga serwisu. Wymiana oleju co **60–80 tys. km** to nie fanaberia, tylko podstawa normalnej eksploatacji.
 
-Dynamiczna wymiana oleju kosztuje zwykle **1200–1800 zł**. Jeśli dojdzie do problemów z mechatroniką albo konwerterem, naprawa potrafi wejść na poziom **4000–9000 zł**.
+Dynamiczna wymiana oleju kosztuje zwykle **1200–1800 zł**. Jeśli dojdzie do problemów z mechatroniką albo konwerterem, naprawa potrafi sięgnąć **4000–9000 zł**.
 
 ### Elektronika i ADAS
 
-W młodszych egzemplarzach trzeba doliczyć koszty elektroniki pokładowej i systemów wsparcia kierowcy. Same czujniki parkowania to zwykle **150–400 zł/szt.**, a kamera cofania **400–1200 zł**.
+W młodszych egzemplarzach trzeba doliczyć koszty elektroniki pokładowej i systemów wspomagania kierowcy. Same czujniki parkowania to zwykle **150–400 zł/szt.**, a kamera cofania **400–1200 zł**.
 
-Jeśli problem dotyczy radaru albo kalibracji systemów ADAS, koszty rosną do **300–1200 zł**. To nie są awarie unieruchamiające auto tak często jak silnik czy osprzęt, ale przy zakupie poliftowego Daily warto je sprawdzić.
+Jeśli problem dotyczy radaru albo kalibracji systemów ADAS, koszty rosną do **300–1200 zł**. To nie są awarie unieruchamiające auto tak często jak usterki silnika czy osprzętu, ale przy zakupie poliftingowego Daily warto je sprawdzić.
 
 ### Rama, zawieszenie i korozja
 
 W Daily trzeba regularnie kontrolować podłużnice, mocowania zabudowy, resory, tuleje i łączniki stabilizatora. Szczególnie ważne jest to w autach pracujących jako lawety, chłodnie i ciężkie podwozia.
 
-Tuleje i łączniki kosztują zwykle **200–800 zł**, resor najczęściej **1200–3000 zł**, a naprawy ramy wycenia się indywidualnie – zwykle od **1000 zł** wzwyż. Sama korozja nie zawsze oznacza dramat, ale zaniedbane mocowania zabudowy albo zmęczona rama to już temat, którego nie da się załatwić kosmetyką.
+Tuleje i łączniki kosztują zwykle **200–800 zł**, resor najczęściej **1200–3000 zł**, a naprawy ramy wycenia się indywidualnie – zwykle od **1000 zł** wzwyż. Sama korozja nie zawsze oznacza dramat, ale zaniedbane mocowania zabudowy albo zmęczona rama to już problem, którego nie da się załatwić kosmetyką.
 
 ### Zawieszenie, pneumatyka i hamulce
 
@@ -275,13 +275,13 @@ Sprawdź historię serwisową układu EGR, wtryskiwaczy i turbiny. W ciężkich 
 
 ## Wersje nadwoziowe Iveco Daily {#wersje-nadwoziowe}
 
-To właśnie zabudowy pokazują, po co w ogóle istnieje Daily. Ten model nie kończy się na klasycznym blaszaku – jest bazą pod bardzo różne zadania, od kuriera po kampera i lawetę.
+Właśnie zabudowy pokazują, po co w ogóle istnieje Daily. Ten model nie kończy się na klasycznym blaszaku – jest bazą pod bardzo różne zadania, od kuriera po kampera i lawetę.
 
 - **Furgon** – kubatura od **7,3 do 19,6 m³**, zwykle **2–3 miejsca**, DMC od **3,5 do 7,2 t**. Najczęstszy wybór do kurierskich tras, transportu narzędzi i przewozu towaru na paletach.
 - **Furgon brygadowy / kombi** – zwykle **5–7 miejsc** i mniejsza przestrzeń ładunkowa niż w klasycznym furgonie. Dobrze sprawdza się w ekipach budowlanych i serwisowych.
 - **Podwozie z pojedynczą kabiną** – zazwyczaj **3 miejsca**, rozstaw osi **3000–4750 mm**. To baza pod skrzynię, wywrotkę, chłodnię, kontener i zabudowy specjalne.
 - **Podwozie z podwójną kabiną** – zwykle **6–7 miejsc**. Rozwiązanie dla firm, które muszą przewieźć jednocześnie ekipę i sprzęt.
-- **Minibus / van osobowy** – do **kilkunastu miejsc** zależnie od wersji. Stosowany w przewozach osobowych i shuttle busach.
+- **Minibus / van osobowy** – do **kilkunastu miejsc** zależnie od wersji. Stosowany w przewozach osobowych i autobusach wahadłowych.
 - **[Brygadówka](/modele/iveco-daily/brygadowka/)** – odmiana użytkowa dla ekip montażowych i budowlanych, z dodatkowym rzędem siedzeń i nadal sensowną częścią ładunkową.
 - **[Laweta](/modele/iveco-daily/laweta/)** – zwykle DMC **5,2–7,2 t**, długość platformy około **4,5–5,5 m**. To jedna z najczęściej wybieranych baz pod transport aut.
 - **[Chłodnia](/modele/iveco-daily/chlodnia/)** – zabudowy izotermiczne z agregatami Carrier lub Thermo King, najczęściej na DMC **3,5 t** albo **5,2 t**.
@@ -292,7 +292,7 @@ W praktyce Daily wygrywa tam, gdzie zwykły van kończy się na furgonie, a klie
 
 ## Porównanie Daily z konkurencją {#porownanie-konkurencja}
 
-Daily nie jest typowym rywalem wszystkich dużych vanów w każdej wersji. W lekkich odmianach konkuruje z klasycznymi dostawczakami, ale przy wyższym DMC zaczyna grać w swojej własnej lidze.
+Daily nie jest typowym rywalem wszystkich dużych vanów w każdej wersji. W lekkich odmianach konkuruje z klasycznymi dostawczakami, ale przy wyższym DMC zaczyna grać we własnej lidze.
 
 | Model | Maks. DMC | Zakres mocy diesli | Maks. długość / kubatura | Ciężkie podwozie >5 t | Typ napędu | Konstrukcja nośna |
 |-------|-----------|--------------------|---------------------------|-----------------------|------------|-------------------|
@@ -338,7 +338,7 @@ Przy Daily sam rocznik mówi za mało. Znacznie ważniejsze jest to, czy ogląda
 
 ### Ceny nowych aut
 
-Nowe Daily też mają duży rozstrzał cenowy, bo punkt wyjścia stanowi nie tylko silnik, ale też DMC i typ nadwozia. W podwoziach trzeba doliczyć jeszcze koszt zabudowy.
+Nowe Daily też mają duży rozstrzał cenowy, bo o cenie decyduje nie tylko silnik, ale też DMC i typ nadwozia. W podwoziach trzeba doliczyć jeszcze koszt zabudowy.
 
 | Wersja nowa | Cena orientacyjna |
 |-------------|-------------------|

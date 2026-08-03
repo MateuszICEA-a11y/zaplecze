@@ -13,21 +13,21 @@ image: "/images/volkswagen-crafter-hero.webp"
 image_alt: "Volkswagen Crafter II z podwójną kabiną i skrzynią"
 youtube: "3mLxBsw60oA"
 youtube_title: "#Test Volkswagen Crafter 2.0 l, 177 KM, 6M"
-lead: "VW Crafter brygadówka (Doppelkabine) to podwozie z podwójną kabiną i otwartą paką – standardowo 7 miejsc plus przestrzeń na materiały budowlane, narzędzia i sprzęt. To jedna z nielicznych brygadówek w segmencie dużych aut dostawczych dostępnych z napędem AWD 4MOTION."
+lead: "VW Crafter brygadówka (Doppelkabine) to podwozie z podwójną kabiną i otwartą paką – standardowo 7 miejsc oraz miejsce na materiały budowlane, narzędzia i sprzęt. To jedna z nielicznych brygadówek w segmencie dużych aut dostawczych dostępnych z napędem na cztery koła 4MOTION."
 faq:
   - question: "Ile osób mieści Crafter brygadówka?"
     answer: "Fabryczna podwójna kabina Craftera standardowo ma 7 miejsc – 3 z przodu i 4 z tyłu. Układ 6-miejscowy może wystąpić tylko w konkretnej konfiguracji lub po zabudowie zewnętrznej."
   - question: "Jaka jest ładowność Craftera z podwójną kabiną?"
-    answer: "Najczęściej spotykane wersje oferują ok. 800–1300 kg ładowności zależnie od DMC, napędu i zabudowy. Długość paki w opisanych wariantach to 2430 mm lub 3280 mm."
+    answer: "Najczęściej spotykane wersje oferują ok. 800–1300 kg ładowności w zależności od DMC, napędu i zabudowy. Długość paki w opisanych wariantach to 2430 mm lub 3280 mm."
   - question: "Ile kosztuje Crafter brygadówka?"
     answer: "Nowy Crafter II z podwójną kabiną jako baza pod zabudowę kosztuje orientacyjnie od ok. 175 000 zł netto. Gotowe auta ze skrzynią, plandeką albo wywrotką są wyraźnie droższe."
 ---
 
 ## Volkswagen Crafter brygadówka – konstrukcja i wymiary
 
-Brygadówka to podwozie Craftera z kabiną podwójną (Doppelkabine) – dwa rzędy siedzeń pod jednym dachem, a za kabiną otwarta paka lub zabudowa skrzyniowa. To rozwiązanie dla ekip budowlanych, serwisów technicznych i służb komunalnych, które muszą jednocześnie przewieźć ludzi oraz sprzęt.
+Brygadówka to podwozie Craftera z kabiną podwójną (Doppelkabine) – dwa rzędy siedzeń pod jednym dachem, a za kabiną otwarta paka lub zabudowa skrzyniowa. To rozwiązanie dla ekip budowlanych, serwisów technicznych i służb komunalnych, które muszą jednocześnie przewozić ludzi i sprzęt.
 
-W odróżnieniu od furgona z przegrodą brygadówka ma pełnowartościową podwójną kabinę z oknami, ogrzewaniem i pasami bezpieczeństwa dla pasażerów drugiego rzędu. Sama przestrzeń ładunkowa jest oddzielona od kabiny i najczęściej powstaje już u producenta zabudowy, dlatego finalne wymiary paki zależą nie tylko od wersji Craftera, ale też od konkretnej skrzyni.
+W odróżnieniu od furgonu z przegrodą brygadówka ma pełnowartościową podwójną kabinę z oknami, ogrzewaniem i pasami bezpieczeństwa dla pasażerów drugiego rzędu. Sama przestrzeń ładunkowa jest oddzielona od kabiny i najczęściej powstaje już u producenta zabudowy, dlatego ostateczne wymiary paki zależą nie tylko od wersji Craftera, lecz także od konkretnej skrzyni.
 
 | Parametr | Crafter brygadówka L3 | Crafter brygadówka L4 |
 |----------|----------------------|----------------------|
@@ -40,18 +40,18 @@ W odróżnieniu od furgona z przegrodą brygadówka ma pełnowartościową podw�
 
 W praktyce to właśnie długość paki jest kluczowa przy wyborze wersji. L3 lepiej sprawdza się w mieście i przy częstym manewrowaniu, a L4 daje wyraźnie większy zapas pod dłuższe elementy, rusztowania czy zestawy narzędzi.
 
-Warto też pamiętać, że wymiary użytkowe skrzyni – szerokość między burtami i nadkolami, wysokość burt, próg załadunku, liczba punktów mocowania czy szerokość kabiny w drugim rzędzie – zależą od producenta zabudowy. Tych parametrów nie da się uczciwie ujednolicić bez wskazania konkretnej skrzyni.
+Warto też pamiętać, że wymiary użytkowe skrzyni – szerokość między burtami i nadkolami, wysokość burt, próg załadunku, liczba punktów mocowania czy szerokość kabiny w drugim rzędzie – zależą od producenta zabudowy. Tych parametrów nie da się rzetelnie ujednolicić bez wskazania konkretnej skrzyni.
 
 ### Ładowność i DMC
 
-- **Ładowność** – najczęściej ok. 800–1300 kg, zależnie od DMC i zabudowy
+- **Ładowność** – najczęściej ok. 800–1300 kg, w zależności od DMC i zabudowy
 - **DMC** – w brygadówkach najczęściej 3,5 / 4,0 / 5,0 t, ale pełna gama zależy od rynku i wersji
 - **Masa przyczepy** – do 3500 kg z hamulcem w wybranych cięższych konfiguracjach
-- **Napęd** – FWD, RWD lub 4MOTION zależnie od wersji
+- **Napęd** – FWD, RWD lub 4MOTION w zależności od wersji
 
 Wersja z DMC 3,5 t pozwala na jazdę z prawem jazdy kat. B. Odmiany 5,0 t wymagają co najmniej kat. C1 lub kat. C, ale w zamian dają wyraźnie większy zapas na zabudowę, ekipę i ładunek.
 
-Trzeba jednak oddzielić katalogową ładowność od realnej użyteczności. Brygadówka przewożąca 7 osób i narzędzia bardzo szybko „zjada” rezerwę masy, a ostateczny wynik zależy od rodzaju skrzyni, plandeki, wywrotu, napędu oraz wyposażenia kabiny.
+Trzeba jednak oddzielić katalogową ładowność od rzeczywistej użyteczności. Brygadówka przewożąca 7 osób i narzędzia bardzo szybko „zjada” rezerwę masy, a ostateczny wynik zależy od rodzaju skrzyni, plandeki, wywrotu, napędu oraz wyposażenia kabiny.
 
 {{% info title="FWD vs RWD w brygadówce" icon="engineering" %}}
 FWD zwykle daje niższy próg załadunku i korzystniejszą masę własną, dlatego dobrze wypada w lekkiej skrzyni i miejskiej eksploatacji. RWD, zwłaszcza w cięższych konfiguracjach, lepiej znosi stałe obciążenie i częstą jazdę z przyczepą, a 4MOTION ma sens tam, gdzie auto regularnie zjeżdża na błoto, żwir albo nieutwardzony plac budowy.
@@ -67,12 +67,12 @@ Brygadówka korzysta z tej samej rodziny 2.0 TDI co inne odmiany Craftera, ale d
 | 2.0 TDI | 140 KM | 340 Nm | zależnie od rocznika i wersji | zależnie od rocznika i wersji |
 | 2.0 TDI | 177 KM | 410 Nm | zależnie od rocznika i wersji | zależnie od rocznika i wersji |
 
-Najważniejsze doprecyzowanie: w Crafterze nie każdą moc można było łączyć z każdą skrzynią i każdym typem napędu. Konfiguracje 140 KM i 177 KM różniły się między rocznikami, a automat i 4MOTION nie były uniwersalnie dostępne w całej gamie podwozi z podwójną kabiną.
+Najważniejsze doprecyzowanie: w Crafterze nie każdą moc można było łączyć z każdą skrzynią i każdym typem napędu. Konfiguracje 140 KM i 177 KM różniły się między rocznikami, a automat i 4MOTION nie były dostępne w całej gamie podwozi z podwójną kabiną.
 
 Jeśli auto ma regularnie wozić pełną ekipę i sprzęt, rozsądne minimum zaczyna się od 140 KM. Wariant 102 KM sprawdzi się tylko przy lekkiej zabudowie i spokojnej pracy lokalnej.
 
 {{% expert name="Marek Kowalczyk" %}}
-Do brygadówki najważniejsze jest nie to, co wygląda dobrze w tabeli, tylko jak auto jeździ z pełnym obciążeniem. W praktyce 140 KM to sensowny punkt startowy, a automat i napęd 4MOTION warto dobierać pod konkretne warunki pracy, nie „na wszelki wypadek”. Wymianę oleju w automacie traktuj jako praktykę warsztatową zależną od typu skrzyni i sposobu eksploatacji – zawsze według instrukcji serwisowej dla danej wersji.
+W brygadówce najważniejsze jest nie to, co dobrze wygląda w tabeli, tylko to, jak auto jeździ z pełnym obciążeniem. W praktyce 140 KM to sensowny punkt wyjścia, a automat i napęd 4MOTION warto dobierać pod konkretne warunki pracy, a nie „na wszelki wypadek”. Wymianę oleju w automacie traktuj jako praktykę warsztatową zależną od typu skrzyni i sposobu eksploatacji – zawsze według instrukcji serwisowej dla danej wersji.
 {{% /expert %}}
 
 W artykule celowo nie podaję spalania, osiągów 0–100 km/h, emisji CO2 ani pojemności zbiorników dla każdej wersji. W brygadówce te dane mocno zmieniają się wraz z DMC, zabudową, napędem, ogumieniem i rocznikiem.
@@ -87,15 +87,15 @@ Z punktu widzenia kosztów użytkowania ważniejsze są regularne przeglądy i s
 - **Firmy energetyczne** – baza pod specjalistyczne zabudowy
 - **Jednostki i służby techniczne** – pojazdy robocze z indywidualną konfiguracją
 
-To auto szczególnie dobrze sprawdza się tam, gdzie furgon jest za mały albo zbyt mało elastyczny, a klasyczna ciężarówka byłaby przesadą. Brygadówka łączy przewóz ludzi z funkcją roboczej platformy pod skrzynię, plandekę albo wywrotkę.
+To auto szczególnie dobrze sprawdza się tam, gdzie furgon jest za mały albo zbyt mało uniwersalny, a klasyczna ciężarówka byłaby przesadą. Brygadówka łączy przewóz ludzi z funkcją roboczej platformy pod skrzynię, plandekę albo wywrotkę.
 
 Przy zakupie trzeba też pamiętać o ograniczeniach prawnych i eksploatacyjnych. Pojazdy powyżej 3,5 t podlegają innym zasadom niż lekkie dostawcze – w praktyce znaczenie mają m.in. prawo jazdy, opłaty, ograniczenia prędkości oraz to, czy w danym zastosowaniu pojawia się obowiązek tachografu.
 
 ### Zabudowy paki
 
-Standardem jest otwarta skrzynia z burtami, ale finalna specyfikacja zwykle pochodzi od firmy zabudowującej, nie bezpośrednio z fabryki Volkswagena. To ważne, bo od producenta zabudowy zależą wymiary użytkowe, masa własna, funkcjonalność i cena gotowego auta.
+Standardem jest otwarta skrzynia z burtami, ale ostateczna specyfikacja zwykle pochodzi od firmy zabudowującej, a nie bezpośrednio z fabryki Volkswagena. To ważne, bo od producenta zabudowy zależą wymiary użytkowe, masa własna, funkcjonalność i cena gotowego auta.
 
-- **Plandeka** – najpopularniejsza, chroni ładunek przed pogodą i ułatwia dostęp z boków
+- **Plandeka** – najpopularniejsza, chroni ładunek przed warunkami atmosferycznymi i ułatwia dostęp z boków
 - **Skrzynia z burtami** – dobra do materiałów budowlanych i codziennej pracy mieszanej
 - **Wywrotka** – hydrauliczna, a kąt wywrotu zależy od producenta zabudowy i konkretnej konstrukcji
 - **Zabudowa specjalna** – warsztatowa, techniczna lub pod osprzęt branżowy
@@ -104,7 +104,7 @@ Różnica między fabryczną brygadówką a autem „zrobionym na bazie Craftera
 
 ## Ceny VW Crafter brygadówka
 
-Brygadówka jest wyraźnie droższa od zwykłego furgonu, bo płacisz nie tylko za bazowe auto, ale też za podwójną kabinę i zabudowę roboczą. Największe różnice w cenie wynikają z rodzaju skrzyni, napędu, DMC i wyposażenia.
+Brygadówka jest wyraźnie droższa od zwykłego furgonu, bo płaci się nie tylko za bazowe auto, lecz także za podwójną kabinę i zabudowę roboczą. Największe różnice w cenie wynikają z rodzaju skrzyni, napędu, DMC i wyposażenia.
 
 | Wersja / Rocznik | Cena orientacyjna |
 |-------------------|-------------------|
@@ -116,14 +116,14 @@ Brygadówka jest wyraźnie droższa od zwykłego furgonu, bo płacisz nie tylko 
 
 W praktyce sam cennik bazowy niewiele mówi o gotowym aucie do pracy. Dopłaty dotyczą nie tylko mocniejszego silnika, ale też 4MOTION, automatu, cięższego DMC, tylnego napędu, bliźniaków oraz samej zabudowy – od prostej skrzyni po wywrotkę 3-stronną.
 
-Na rynku wtórnym kluczowe są stan ramy, jakość zabudowy i historia pracy auta. Egzemplarz po lekkiej eksploatacji komunalnej może być lepszym zakupem niż młodsza brygadówka po budowie, która całe życie jeździła z przeciążeniem.
+Na rynku wtórnym kluczowe są stan ramy, jakość zabudowy i historia pracy auta. Egzemplarz po lekkiej eksploatacji komunalnej może być lepszym zakupem niż młodsza brygadówka po pracy na budowie, która całe życie jeździła z przeciążeniem.
 
 
 {{% youtube %}}
 
 ## Crafter brygadówka na tle konkurencji
 
-Porównanie brygadówek ma sens tylko wtedy, gdy wiemy, o jakich generacjach mówimy. W praktyce napędy, DMC, ceny i dostępne zabudowy potrafią się mocno różnić między rocznikami oraz rynkami.
+Porównanie brygadówek ma sens tylko wtedy, gdy wiadomo, o jakich generacjach mowa. W praktyce napędy, DMC, ceny i dostępne zabudowy potrafią się mocno różnić między rocznikami oraz rynkami.
 
 | Parametr | VW Crafter II L3 | Mercedes Sprinter III | Ford Transit L3 | Iveco Daily | Renault Master |
 |----------|------------------|-----------------------|-----------------|-------------|----------------|
@@ -138,6 +138,6 @@ Crafter nie jest więc jedyną brygadówką z napędem na cztery koła, ale nale
 
 W tym porównaniu trzeba zachować ostrożność przy prostym zestawianiu długości paki czy cen. Rzeczywista użyteczność zależy od szerokości skrzyni, masy własnej, dopuszczalnej ładowności po zabudowie, możliwości holowania oraz od tego, czy porównujemy auto fabryczne, czy już kompletne nadwozie od zabudowcy.
 
-Crafter wypada bardzo dobrze jako baza pod robocze auto dla 7-osobowej ekipy. Jego mocną stroną jest szeroka gama napędów, dojrzała kabina i duża dostępność wersji pod zabudowę.
+Crafter wypada bardzo dobrze jako baza pod robocze auto dla 7-osobowej ekipy. Jego mocną stroną jest szeroka gama napędów, dopracowana kabina i duża dostępność wersji pod zabudowę.
 
-W aucie wożącym 7 osób warto też zwrócić uwagę na systemy bezpieczeństwa i asystentów. W zależności od rocznika Crafter oferował m.in. ESC, Front Assist, Lane Assist, kamerę cofania, czujniki parkowania, a w nowszych latach także pakiety zgodne z aktualnymi wymaganiami GSR2.
+W aucie wożącym 7 osób warto też zwrócić uwagę na systemy bezpieczeństwa i asystenty. W zależności od rocznika Crafter oferował m.in. ESC, Front Assist, Lane Assist, kamerę cofania, czujniki parkowania, a w nowszych latach także pakiety zgodne z aktualnymi wymaganiami GSR2.

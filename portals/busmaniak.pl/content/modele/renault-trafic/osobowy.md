@@ -14,12 +14,12 @@ image: "/images/renault-trafic-osobowy-hero.webp"
 image_alt: "Renault Trafic Passenger L2 – wersja osobowa"
 youtube: "B84L-5QUpN0"
 youtube_title: "RENAULT TRAFIC (NOWY MODEL) - TEST, OPIS I RECENZJA MODELU"
-lead: "Renault Trafic osobowy występował w konfiguracjach do 9 miejsc, ale liczba pasażerów zależy od długości nadwozia, wersji, homologacji i rynku. To od lat jedno z podstawowych narzędzi flotowego transportu pasażerskiego w segmencie VAN – praktyczne, użytkowe i wyraźnie podporządkowane funkcji."
+lead: "Renault Trafic osobowy występował w konfiguracjach do 9 miejsc, ale liczba pasażerów zależy od długości nadwozia, wersji, homologacji i rynku. To od lat jeden z podstawowych środków flotowego transportu pasażerskiego w segmencie vanów – praktyczny, użytkowy i wyraźnie podporządkowany funkcji."
 faq:
   - question: "Ile osób mieści Renault Trafic osobowy?"
     answer: "W zależności od wersji, długości nadwozia, rynku i homologacji Renault Trafic osobowy mógł występować w konfiguracjach do 9 miejsc. Nie da się więc sztywno przypisać jednej liczby miejsc wyłącznie do L1 albo L2."
   - question: "Czym różni się Trafic Passenger od SpaceClass?"
-    answer: "Passenger to wersja nastawiona na praktyczność, trwałość i przewóz większej liczby osób. SpaceClass oferował bardziej reprezentacyjne konfiguracje kabiny – m.in. wybrane układy z niezależnymi fotelami, możliwością obrotu części siedzeń, stolikiem, bogatszym wykończeniem, dodatkową klimatyzacją dla tyłu, przyciemnianymi szybami i rozbudowanymi multimediami."
+    answer: "Passenger to wersja nastawiona na praktyczność, trwałość i przewóz większej liczby osób. SpaceClass oferował bardziej reprezentacyjne konfiguracje kabiny – m.in. wybrane układy z niezależnymi fotelami, możliwością obrotu części siedzeń, stolikiem, bogatszym wykończeniem, dodatkową klimatyzacją dla pasażerów z tyłu, przyciemnianymi szybami i rozbudowanymi multimediami."
   - question: "Czy Renault Trafic osobowy jest dostępny z automatyczną skrzynią biegów?"
     answer: "Tak. Po modernizacji stosowano 6-biegową przekładnię EDC z silnikami 2.0 Blue dCi 150 KM i 170 KM."
 sources:
@@ -29,13 +29,13 @@ sources:
 ---
 ## Wersje osobowe Renault Trafic {#wersje}
 
-Renault Trafic osobowy występował w dwóch głównych odmianach, ale różnice nie sprowadzają się tylko do tapicerki czy liczby foteli. Passenger jest bardziej użytkowy, a SpaceClass celuje w przewóz osób w wyższym standardzie.
+Renault Trafic osobowy występował w dwóch głównych odmianach, ale różnice nie sprowadzają się wyłącznie do tapicerki czy liczby foteli. Passenger jest bardziej użytkowy, a SpaceClass celuje w przewóz osób w wyższym standardzie.
 
 ### Trafic Passenger
 
 **Trafic Passenger** to wariant nastawiony na codzienną eksploatację i przewóz większej liczby osób. Był oferowany w długościach L1 i L2, a liczba miejsc zależała od konfiguracji, rynku oraz homologacji – w praktyce spotyka się układy do 9 miejsc także poza jednym, sztywno wskazanym wariantem nadwozia.
 
-Wnętrze ma roboczy charakter, a najważniejsza jest funkcjonalność. Tylne siedzenia zależnie od wersji można składać lub demontować, ale nie chowają się one pod podłogę jak w klasycznych minivanach.
+Wnętrze ma roboczy charakter, a najważniejsza jest funkcjonalność. Tylne siedzenia, zależnie od wersji, można składać lub demontować, ale nie chowają się one pod podłogę jak w klasycznych minivanach.
 
 ### Trafic SpaceClass
 
@@ -43,11 +43,11 @@ Wnętrze ma roboczy charakter, a najważniejsza jest funkcjonalność. Tylne sie
 
 To propozycja do transferów hotelowych, biznesowych i VIP, a nie typowy bus pracowniczy. Trzeba też pamiętać, że konfiguracje miejsc w SpaceClass nie ograniczały się wyłącznie do jednego układu 7-osobowego.
 
-Dostępność drzwi przesuwnych po obu stronach oraz rodzaju tylnego zamknięcia zależy od wersji i wyposażenia. Nie warto więc zakładać, że każda odmiana ma identyczną konfigurację nadwozia.
+Dostępność drzwi przesuwnych po obu stronach oraz rodzaj tylnego zamknięcia zależą od wersji i wyposażenia. Nie warto więc zakładać, że każda odmiana ma identyczną konfigurację nadwozia.
 
 ## Wymiary i konfiguracja siedzeń {#wymiary}
 
-W przypadku osobowego Trafica długość nadwozia realnie wpływa nie tylko na ilość miejsca za trzecim rzędem, ale też na manewrowanie i wygodę codziennej eksploatacji. Równie ważne jest to, że układ siedzeń zależy od wersji i rynku, więc tabelę trzeba traktować jako orientacyjny przegląd najczęściej spotykanych konfiguracji.
+W przypadku osobowego Trafica długość nadwozia realnie wpływa nie tylko na ilość miejsca za trzecim rzędem, lecz także na manewrowanie i wygodę codziennej eksploatacji. Równie ważne jest to, że układ siedzeń zależy od wersji i rynku, więc tabelę trzeba traktować jako orientacyjny przegląd najczęściej spotykanych konfiguracji.
 
 | Wersja | Długość całkowita | Układ siedzeń | Maks. pasażerów |
 |--------|-------------------|---------------|-----------------|
@@ -62,7 +62,7 @@ Najważniejsza różnica między długościami to rozstaw osi i zwrotność. L1 
 - **L1H1:** 5080 mm długości, rozstaw osi ok. 3098 mm. Lepszy do miasta i ciaśniejszych parkingów.
 - **L2H1:** 5480 mm długości, rozstaw osi ok. 3498 mm. Korzystniejszy tam, gdzie liczy się więcej miejsca dla pasażerów i bagażu.
 
-W vanach osobowych tej klasy pojemność bagażnika za trzecim rzędem mocno zależy od długości nadwozia oraz konfiguracji foteli. Również przestrzeń po demontażu tylnej kanapy może się wyraźnie różnić między L1 i L2, dlatego przy zakupie konkretnego egzemplarza warto sprawdzić katalogową specyfikację dokładnie dla danej wersji miejscowej.
+W vanach osobowych tej klasy pojemność bagażnika za trzecim rzędem mocno zależy od długości nadwozia oraz konfiguracji foteli. Również przestrzeń po demontażu tylnej kanapy może się wyraźnie różnić między L1 i L2, dlatego przy zakupie konkretnego egzemplarza warto sprawdzić katalogową specyfikację dokładnie dla danej konfiguracji miejsc.
 
 W praktyce L2 lepiej wypada w transferach lotniskowych i przewozie grup z bagażem. L1 pozostaje rozsądniejszym wyborem tam, gdzie auto codziennie pracuje w mieście.
 
@@ -86,17 +86,17 @@ Mocniejsze wersje oferowały wyraźnie lepszą elastyczność. Dla 2.0 Blue dCi 
 
 Właśnie z tymi nowszymi jednostkami łączono 6-biegową skrzynię EDC – w praktyce z odmianami 150 i 170 KM. Przy oględzinach używanego auta trzeba skontrolować układ AdBlue/SCR, DPF, EGR i osprzęt.
 
-Trafic III zadebiutował w 2014 roku, lifting z nowymi 2.0 Blue dCi wprowadzono w 2019 roku, a kolejna większa modernizacja około 2021 roku przyniosła zmiany pasa przedniego i wnętrza. Przy porównywaniu ofert trzeba więc zawsze sprawdzać nie tylko moc, ale też rocznik i generację po modernizacji.
+Trafic III zadebiutował w 2014 roku, lifting z nowymi 2.0 Blue dCi wprowadzono w 2019 roku, a kolejna większa modernizacja około roku 2021 przyniosła zmiany pasa przedniego i wnętrza. Przy porównywaniu ofert trzeba więc zawsze sprawdzać nie tylko moc, lecz także rocznik i generację po modernizacji.
 
 Danych o przyspieszeniu 0–100 km/h, prędkości maksymalnej i średnim zużyciu paliwa nie da się rzetelnie ujednolicić bez wskazania konkretnego rocznika, długości nadwozia i homologacji. W praktyce te parametry różnią się między odmianami bardziej niż w klasycznych autach osobowych.
 
 ## Trafic Passenger vs SpaceClass {#passenger-vs-spaceclass}
 
-To nie są tylko dwa poziomy wyposażenia, ale dwa różne sposoby użytkowania tego samego modelu. Wybór zależy od tego, czy auto ma zarabiać liczbą miejsc, czy standardem przewozu.
+To nie są tylko dwa poziomy wyposażenia, lecz dwa różne sposoby użytkowania tego samego modelu. Wybór zależy od tego, czy auto ma zarabiać liczbą miejsc, czy standardem przewozu.
 
-**Passenger** ma sens tam, gdzie najważniejsze są trwałość, prostsza konfiguracja kabiny i przewóz większej liczby pasażerów. To naturalny wybór dla przewozów pracowniczych, szkolnych i shuttle busów.
+**Passenger** ma sens tam, gdzie najważniejsze są trwałość, prostsza konfiguracja kabiny i przewóz większej liczby pasażerów. To naturalny wybór do przewozów pracowniczych, szkolnych i wahadłowych.
 
-**SpaceClass** kierowano do bardziej wymagającego transportu osób. Przewagą były wybrane konfiguracje z niezależnymi fotelami, możliwość obrotu części siedzeń, stolik, lepsze materiały, przyciemniane szyby, dodatkowa klimatyzacja dla tyłu oraz bogatsze multimedia.
+**SpaceClass** przeznaczono do bardziej wymagającego transportu osób. Przewagą były wybrane konfiguracje z niezależnymi fotelami, możliwość obrotu części siedzeń, stolik, lepsze materiały, przyciemniane szyby, dodatkowa klimatyzacja dla pasażerów z tyłu oraz bogatsze multimedia.
 
 Różnice obejmują też charakter wyposażenia bezpieczeństwa i komfortu, zależnie od rocznika. W różnych latach Trafic oferował m.in. ESC, ABS, HSA, tempomat z ogranicznikiem, czujniki parkowania, kamerę cofania, monitorowanie martwego pola, aktywne hamowanie awaryjne oraz ostrzeganie o opuszczeniu pasa.
 
@@ -109,10 +109,10 @@ W praktyce SpaceClass opłaca się wtedy, gdy wyższy standard można realnie sp
 
 Renault Trafic osobowy konkuruje zarówno z klasycznymi vanami 8–9-osobowymi, jak i z bardziej prestiżowymi busami do transferów. Trzeba też rozdzielić faktycznych bliźniaków platformowych od zwykłych rywali segmentowych.
 
-- **Opel/Vauxhall Vivaro B** – mechaniczny krewniak Trafica III w starszych rocznikach, mniej więcej z lat 2014–2019 zależnie od rynku. To ważne rozróżnienie, bo nowszy Vivaro po 2019 roku nie jest już bliźniakiem Trafica.
+- **Opel/Vauxhall Vivaro B** – mechaniczny krewniak Trafica III w starszych rocznikach, mniej więcej z lat 2014–2019, zależnie od rynku. To ważne rozróżnienie, bo nowszy Vivaro po 2019 roku nie jest już bliźniakiem Trafica.
 - **Nissan NV300 / Primastar** – naturalni krewniacy platformowi Trafica III, bardzo bliscy technicznie.
 - **Peugeot Traveller / Citroen SpaceTourer / Toyota Proace Verso** – aktualni rywale w klasie vanów osobowych o długości mniej więcej 4,95–5,40 m, z konfiguracjami 8–9 miejsc i automatami o różnej liczbie przełożeń.
-- **Mercedes V-Class / Vito Tourer** – konkurencja z wyższej półki, zwykle mocniejsza pod względem komfortu i wizerunku, ale z wyższym kosztem wejścia.
+- **Mercedes V-Class / Vito Tourer** – konkurencja z wyższej półki, zwykle mocniejsza pod względem komfortu i wizerunku, ale droższa w zakupie.
 
 Przy bezpośrednim porównaniu warto zestawić długość nadwozia, liczbę miejsc, dostępność automatu oraz charakter wnętrza. W tym segmencie to właśnie układ kabiny i funkcjonalność częściej decydują o wyborze niż sama moc silnika.
 

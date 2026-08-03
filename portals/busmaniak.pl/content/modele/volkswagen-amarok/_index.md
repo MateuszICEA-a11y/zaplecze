@@ -15,11 +15,11 @@ volume: 12100
 lead: "Volkswagen Amarok to pickup klasy premium, produkowany od 2010 roku w dwóch generacjach. Pierwsza była samodzielną konstrukcją VW, druga (od 2022) dzieli platformę z Fordem Rangerem T6. Silniki od 150 do 258 KM, napęd 4MOTION i w wielu wersjach ładowność ponad tonę."
 faq:
   - question: "Czy Volkswagen Amarok to to samo co Ford Ranger?"
-    answer: "Druga generacja Amaroka (od 2022) dzieli platformę T6 z Fordem Rangerem, ale różni się designem nadwozia, wykończeniem wnętrza i kalibracją zawieszenia."
+    answer: "Druga generacja Amaroka (od 2022) dzieli platformę T6 z Fordem Rangerem, ale różni się stylistyką nadwozia, wykończeniem wnętrza i kalibracją zawieszenia."
   - question: "Ile kosztuje nowy Volkswagen Amarok?"
-    answer: "Nowy od ok. 200 000 zł netto za wersję Life. Topowa Aventura z V6 przekracza 300 000 zł netto."
+    answer: "Nowy model kosztuje od ok. 200 000 zł netto za wersję Life. Topowa Aventura z V6 przekracza 300 000 zł netto."
   - question: "Jaki silnik wybrać do Amaroka?"
-    answer: "2.0 TDI BiTurbo 204 KM to optymalny kompromis ceny i mocy. V6 3.0 TDI (224–258 KM) wybierz jeśli planujesz ciężkie holowanie lub jazdę terenową."
+    answer: "2.0 TDI BiTurbo 204 KM to optymalny kompromis ceny i mocy. V6 3.0 TDI (224–258 KM) wybierz, jeśli planujesz ciężkie holowanie lub jazdę terenową."
 sources:
   - "Wikipedia – 4MOTION"
   - "materiały techniczne Volkswagen Vehiculos Comerciales"
@@ -32,9 +32,9 @@ sources:
 Volkswagen Amarok od początku miał być pickupem bardziej uniwersalnym niż typowe auto robocze. Łączył ramową konstrukcję, dużą pakę i napęd 4x4 z kabiną, która miała nadawać się nie tylko do firmy, ale też do codziennej jazdy.
 
 ### Amarok I przed liftingiem (2010–2016)
-Pierwsza odsłona modelu była samodzielną konstrukcją koncernu VAG, produkowaną głównie w Pacheco w Argentynie; na wybranych rynkach montowaną także z zestawów CKD. Auto bazowało na ramie drabinowej i od początku występowało jako Single Cab oraz Double Cab.
+Pierwsza odsłona modelu była samodzielną konstrukcją koncernu VAG, produkowaną głównie w Pacheco w Argentynie; na wybranych rynkach montowano ją także z zestawów CKD. Auto bazowało na ramie drabinowej i od początku występowało jako Single Cab oraz Double Cab.
 
-Na starcie gamę tworzyły silniki **2.0 TDI 122/140 KM** oraz **2.0 BiTDI 163 KM**. Do wyboru był napęd na tył, dołączany 4x4 albo stały 4MOTION z mechanizmem Torsen. W **2012 roku** odmiana **2.0 BiTDI 180 KM** zastąpiła wcześniejsze **163 KM**.
+Na starcie gamę tworzyły silniki **2.0 TDI 122/140 KM** oraz **2.0 BiTDI 163 KM**. Do wyboru był napęd na tył, dołączany 4x4 albo stały 4MOTION z mechanizmem Torsen. W **2012 roku** odmiana **2.0 BiTDI 180 KM** zastąpiła wcześniejszą wersję **163 KM**.
 
 Oś czasu dla Amaroka I przed liftingiem:
 - **2010** – debiut modelu, silniki 2.0 TDI/BiTDI, wersje Single Cab i Double Cab
@@ -42,7 +42,7 @@ Oś czasu dla Amaroka I przed liftingiem:
 - **2012** – 2.0 BiTDI 180 KM zamiast 163 KM
 
 ### Amarok I po liftingu (2016–2022)
-Największa zmiana przyszła w **2016 roku**. Amarok dostał nowy front, przeprojektowaną deskę rozdzielczą i lepsze multimedia. Wtedy też do gamy weszło **3.0 V6 TDI** w europejskich wariantach **204 KM** i **224 KM**.
+Największa zmiana nadeszła w **2016 roku**. Amarok dostał nowy pas przedni, przeprojektowaną deskę rozdzielczą i lepsze multimedia. Wtedy też do gamy weszło **3.0 V6 TDI** w europejskich wariantach **204 KM** i **224 KM**.
 
 Później oferta została jeszcze wzmocniona. Od **2018/2019** pojawiła się topowa wersja **258 KM** z overboostem do **600 Nm**, a w wybranych odmianach wzrósł też uciąg przyczepy do **3500 kg**. To właśnie po liftingu Amarok I zaczął być traktowany jako jeden z najmocniejszych i najbardziej komfortowych pickupów w Europie.
 
@@ -51,9 +51,9 @@ Oś czasu dla Amaroka I po liftingu:
 - **2018–2020** – rozszerzenie gamy V6 i poprawki w wyposażeniu bezpieczeństwa
 
 ### Amarok II (od 2022)
-Druga generacja to efekt współpracy z Fordem i techniczne pokrewieństwo z [Ford Ranger](/modele/ford-ranger/). Volkswagen zachował własny projekt nadwozia, inne wykończenie kabiny i własne pozycjonowanie modelu, ale bazą została platforma Forda **T6.2**.
+Druga generacja to efekt współpracy z Fordem i techniczne pokrewieństwo z [Ford Ranger](/modele/ford-ranger/). Volkswagen zachował własny projekt nadwozia, inne wykończenie kabiny i własną pozycję modelu na rynku, ale bazą została platforma Forda **T6.2**.
 
-Amarok II ma **3270 mm rozstawu osi** i **5350 mm długości**. Dostał też **ponad 20 systemów wsparcia kierowcy**, **10-biegowy automat**, brodzenie do **800 mm** i wyraźnie nowocześniejszą kabinę. W Europie oferowany jest m.in. w wersjach **Life, Style, PanAmericana i Aventura**.
+Amarok II ma **3270 mm rozstawu osi** i **5350 mm długości**. Dostał też **ponad 20 systemów wspomagania kierowcy**, **10-biegowy automat**, brodzenie do **800 mm** i wyraźnie nowocześniejszą kabinę. W Europie oferowany jest m.in. w wersjach **Life, Style, PanAmericana i Aventura**.
 
 Oś czasu dla drugiej generacji:
 - **2022** – premiera Amaroka II na platformie Forda T6.2
@@ -63,7 +63,7 @@ W praktyce Amarok II jest bardziej dopracowany jako auto do codziennej jazdy. Na
 
 ## Wersje nadwoziowe
 
-W Amaroku trzeba odróżnić wersję nadwozia od wersji wyposażenia. To ważne, bo inne są możliwości przewozowe, długość paki i funkcjonalność kabiny.
+W Amaroku trzeba odróżnić wersję nadwozia od wersji wyposażenia. To ważne, bo różnią się one możliwościami przewozowymi, długością paki i funkcjonalnością kabiny.
 
 ### Amarok I
 Pierwsza generacja występowała w kilku wariantach nadwozia:
@@ -71,14 +71,14 @@ Pierwsza generacja występowała w kilku wariantach nadwozia:
 - **Double Cab** – 4 drzwi, 5 miejsc, najbardziej popularna wersja na rynku europejskim
 - **Podwozie do zabudowy** – dostępne lokalnie na wybranych rynkach poza Europą
 
-**Single Cab Amaroka I** to wariant typowo roboczy. Ma **2 miejsca** i pakę o długości około **2205 mm**, więc najlepiej sprawdza się pod zabudowę serwisową oraz wtedy, gdy liczy się przewóz europalety wzdłuż bez kombinowania z przestrzenią.
+**Single Cab Amaroka I** to wariant typowo roboczy. Ma **2 miejsca** i pakę o długości około **2205 mm**, więc najlepiej sprawdza się pod zabudowę serwisową oraz wtedy, gdy liczy się przewóz europalety wzdłuż bez kombinowania z miejscem.
 
-**Double Cab Amaroka I** oferuje **5 miejsc** i pakę o długości około **1555 mm**. To kompromis między autem do pracy i prywatnego użytku – mniej przestrzeni ładunkowej niż w Single Cab, ale znacznie większa użyteczność na co dzień.
+**Double Cab Amaroka I** oferuje **5 miejsc** i pakę o długości około **1555 mm**. To kompromis między autem do pracy a prywatnym użytkiem – mniej przestrzeni ładunkowej niż w Single Cab, ale znacznie większa użyteczność na co dzień.
 
 ### Amarok II
 W Europie główną wersją Amaroka II jest **Double Cab**. To pickup z **4 drzwiami**, **5 miejscami**, długością **5350 mm**, paką **1544 mm**, szerokością między nadkolami **1227 mm** i uciągiem do **3500 kg**.
 
-W praktyce Amarok II jest nastawiony bardziej na użytkownika, który chce połączyć firmę, holowanie i codzienną jazdę. Nie daje tak długiej paki jak Single Cab z pierwszej generacji, ale nadrabia kabiną, wyposażeniem i możliwościami holowania.
+W praktyce Amarok II jest nastawiony bardziej na użytkownika, który chce połączyć pracę firmową, holowanie i codzienną jazdę. Nie daje tak długiej paki jak Single Cab z pierwszej generacji, ale nadrabia kabiną, wyposażeniem i możliwościami holowania.
 
 ### Najpopularniejsze zabudowy i dodatki
 Dobór zabudowy zmienia nie tylko funkcjonalność, ale też masę własną i realną ładowność. W pickupie to ważne, bo kilka dodatków potrafi szybko zjeść zapas DMC.
@@ -102,20 +102,20 @@ Amarok II jest większy od poprzednika, ma dłuższy rozstaw osi i lepsze parame
 |----------------------------|-----------------------|----------------------|
 | Długość                    | 5254 mm               | 5350 mm              |
 | Szerokość bez lusterek     | 1944 mm               | 1917–1918 mm         |
-| Szerokość z lusterkami     | —                     | ok. 2208 mm          |
+| Szerokość z lusterkami     | –                     | ok. 2208 mm          |
 | Wysokość                   | ok. 1834 mm           | 1884 mm              |
 | Rozstaw osi                | 3095 mm               | 3270 mm              |
-| Prześwit                   | —                     | ok. 235 mm           |
-| Brodzenie                  | —                     | do 800 mm            |
+| Prześwit                   | –                     | ok. 235 mm           |
+| Brodzenie                  | –                     | do 800 mm            |
 | Długość skrzyni ładunkowej | ok. 1555 mm           | ok. 1544 mm          |
-| Szerokość skrzyni          | —                     | ok. 1224 mm          |
+| Szerokość skrzyni          | –                     | ok. 1224 mm          |
 | Szerokość między nadkolami | 1222 mm               | 1227 mm              |
 | DMC                        | zwykle 2820–3200 kg   | do 3350 kg           |
 | Ładowność                  | ok. 948–1154 kg       | ok. 1047–1160 kg     |
 | Uciąg przyczepy z hamulcem | do 3200 kg, w wybranych późniejszych V6 do 3500 kg | 3500 kg |
 
 ### Warianty nadwoziowo-wymiarowe
-Poniższa tabela lepiej pokazuje, jak różnią się odmiany użytkowe Amaroka. To ważne, bo sama porównywarka dwóch generacji w Double Cab nie oddaje różnic między paką roboczą a wersją bardziej uniwersalną.
+Poniższa tabela lepiej pokazuje, jak różnią się odmiany użytkowe Amaroka. To ważne, bo samo porównanie dwóch generacji w Double Cab nie oddaje różnic między paką roboczą a wersją bardziej uniwersalną.
 
 | Generacja | Kabina     | Długość [mm] | Rozstaw osi [mm] | Długość paki [mm] | Szer. między nadkolami [mm] | DMC [kg]   | Ładowność [kg] |
 |-----------|------------|-------------:|-----------------:|------------------:|----------------------------:|-----------:|---------------:|
@@ -172,7 +172,7 @@ W praktyce **2.0 TDI 170 KM** wystarcza do pracy i codziennej jazdy, ale przy du
 ### 2.0 TDI i 2.0 BiTDI
 Czterocylindrowe diesle są najpopularniejsze w Amaroku I i stanowią bazę oferty także w Amaroku II. W pierwszej generacji występowały odmiany **122, 140, 163 i 180 KM**, a w drugiej **170 i 205 KM**.
 
-Największa zaleta tych wersji to niższe koszty zakupu i prostsza eksploatacja niż w V6. Trzeba jednak pamiętać, że przy częstym ciąganiu ciężkiej przyczepy różnica w elastyczności względem sześciu cylindrów jest wyraźna.
+Największa zaleta tych wersji to niższe koszty zakupu i prostsza eksploatacja niż w V6. Trzeba jednak pamiętać, że przy częstym holowaniu ciężkiej przyczepy różnica w elastyczności względem sześciu cylindrów jest wyraźna.
 
 ### 3.0 V6 TDI / 3.0 V6 diesel
 W europejskim Amaroku I silnik **3.0 V6 TDI** był dostępny w wersjach **204, 224 i 258 KM**. To właśnie ta jednostka najbardziej poprawiła osiągi, kulturę pracy i zdolność do holowania.
@@ -181,9 +181,9 @@ W generacji II dostępny jest **3.0 V6 diesel o mocy 240–241 KM**. To nadal na
 
 ## Wersje wyposażenia Volkswagen Amarok
 
-W drugiej generacji Amarok ma wyraźnie rozdzielone poziomy wyposażenia – od użytkowego po niemal lifestyle’owy. Różnice dotyczą nie tylko stylistyki, ale też multimediów, asystentów jazdy i wykończenia kabiny.
+W drugiej generacji Amarok ma wyraźnie rozdzielone poziomy wyposażenia – od użytkowego po niemal luksusowy. Różnice dotyczą nie tylko stylistyki, ale też multimediów, asystentów jazdy i wykończenia kabiny.
 
-- **Life** – wariant bazowy, skoncentrowany na funkcjonalności, z niezbędnymi systemami bezpieczeństwa i solidnym wykończeniem
+- **Life** – wariant bazowy, skupiony na funkcjonalności, z niezbędnymi systemami bezpieczeństwa i solidnym wykończeniem
 - **Style** – wersja łącząca elegancję z użytkowością, oferująca lepsze multimedia i reflektory LED Matrix
 - **PanAmericana** – odmiana off-roadowa z czarnymi akcentami, blokadą tylnego mostu i wzmocnionym zawieszeniem
 - **Aventura** – topowa specyfikacja z felgami do 20 cali, skórzaną tapicerką i najbardziej zaawansowaną elektroniką
@@ -193,7 +193,7 @@ W drugiej generacji Amarok ma wyraźnie rozdzielone poziomy wyposażenia – od 
 Amarok uchodzi za trwałego pickupa, ale to nie znaczy, że każda wersja ma te same słabe punkty. Najwięcej zależy od silnika, rodzaju skrzyni i tego, czy auto pracowało z ładunkiem, czy przez lata jeździło głównie po mieście.
 
 ### 2.0 TDI i 2.0 BiTDI – Amarok I
-W czterocylindrowych dieslach pierwszej generacji najczęściej wracają tematy układu dolotowego i oczyszczania spalin. Zamiast mitycznego problemu z łańcuchem rozrządu, realnie częściej trafiają się kłopoty z **EGR, DPF, turbosprężarką BiTDI i pompą wody**.
+W czterocylindrowych dieslach pierwszej generacji najczęściej wracają tematy układu dolotowego i oczyszczania spalin. Zamiast mitycznego problemu z łańcuchem rozrządu realnie częściej trafiają się kłopoty z **EGR, DPF, turbosprężarką BiTDI i pompą wody**.
 
 Orientacyjne koszty:
 - **zawór EGR** – **800–1800 zł**
@@ -203,7 +203,7 @@ Orientacyjne koszty:
 - **wtryskiwacz** – **900–1800 zł/szt.**
 
 ### 3.0 V6 TDI – Amarok I
-V6 jest wyraźnie przyjemniejsze w codziennej jeździe, ale serwisowo potrafi być droższe. Typowe problemy to wycieki w układzie chłodzenia, zużycie elementów wału napędowego oraz koszty obsługi automatu.
+V6 jest wyraźnie przyjemniejszy w codziennej jeździe, ale serwisowo potrafi być droższy. Typowe problemy to wycieki w układzie chłodzenia, zużycie elementów wału napędowego oraz koszty obsługi automatu.
 
 Orientacyjne koszty:
 - **wycieki z układu chłodzenia** – **500–2500 zł**
@@ -221,7 +221,7 @@ Orientacyjne koszty:
 - **blokada mostu / aktuator** – **1500–4000 zł**
 
 ### Amarok II
-Druga generacja jest zbyt młoda, by mówić o długiej liście powtarzalnych awarii mechanicznych. Na razie częściej pojawiają się drobna elektronika, aktualizacje oprogramowania i tematy związane z czujnikami systemów ADAS.
+Druga generacja jest zbyt młoda, by mówić o długiej liście powtarzalnych awarii mechanicznych. Na razie częściej pojawiają się drobne usterki elektroniki, aktualizacje oprogramowania i problemy związane z czujnikami systemów ADAS.
 
 Orientacyjne koszty:
 - **czujniki ADAS** – **300–1500 zł**
@@ -233,7 +233,7 @@ Regularna wymiana oleju w automacie co 60–80 tys. km to podstawa. Dotyczy to s
 
 ## Porównanie Amaroka z konkurencją
 
-Amarok II celuje w górę segmentu, więc porównywanie go wyłącznie ceną nie ma sensu. Kluczowe są ładowność, holowanie, oferta silników i to, jak auto zachowuje się bez ładunku na co dzień.
+Amarok II celuje w górę segmentu, więc porównywanie go wyłącznie pod względem ceny nie ma sensu. Kluczowe są ładowność, holowanie, oferta silników i to, jak auto zachowuje się bez ładunku na co dzień.
 
 | Parametr              | VW Amarok II   | Ford Ranger T6.2 | Toyota Hilux | Isuzu D-Max |
 |-----------------------|----------------|------------------|--------------|-------------|
@@ -245,10 +245,10 @@ Amarok II celuje w górę segmentu, więc porównywanie go wyłącznie ceną nie
 | 4x4                   | 4MOTION (stały) | 4A / dołączany  | dołączany    | dołączany   |
 | Cena bazowa (netto)   | ~200 000 zł    | ~145 000 zł      | ~155 000 zł  | ~130 000 zł |
 
-Głównym rywalem jest bliźniaczy [Ford Ranger](/modele/ford-ranger/) – technicznie bardzo bliski, ale inaczej pozycjonowany. Toyota Hilux pozostaje punktem odniesienia pod kątem trwałości i prostoty, z kolei Isuzu D-Max zwykle kusi ceną i użytkowym charakterem.
+Głównym rywalem jest bliźniaczy [Ford Ranger](/modele/ford-ranger/) – technicznie bardzo bliski, ale o innym profilu rynkowym. Toyota Hilux pozostaje punktem odniesienia pod względem trwałości i prostoty, z kolei Isuzu D-Max zwykle kusi ceną i użytkowym charakterem.
 
 ### Amarok II vs Ford Ranger
-To ta sama baza **T6.2**, więc różnice nie dotyczą fundamentów konstrukcji, tylko charakteru auta. Ranger jest zwykle tańszy o około **40–60 tys. zł netto**, ale Amarok wypada lepiej pod względem wykończenia i bardziej „premium” odbioru kabiny.
+To ta sama baza **T6.2**, więc różnice nie dotyczą fundamentów konstrukcji, tylko charakteru auta. Ranger jest zwykle tańszy o około **40–60 tys. zł netto**, ale Amarok lepiej wypada wykończeniem wnętrza i bardziej ekskluzywnym charakterem kabiny.
 
 ### Amarok II vs Toyota Hilux
 Hilux ma prostszy, bardziej roboczy charakter i silnik **2.8 204 KM**. Amarok oferuje lepszą kabinę i opcjonalne **V6**, więc częściej będzie wyborem dla kogoś, kto poza pracą jeździ tym autem także prywatnie.

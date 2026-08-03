@@ -34,7 +34,7 @@ sources:
 
 ## Historia i konstrukcja Volkswagen ID. Buzz
 
-ID. Buzz łączy retro-stylistykę inspirowaną T1 z nowoczesną platformą elektryczną MEB. Produkcyjną wersję pokazano w marcu 2022, a montaż ruszył w czerwcu 2022 w Hanowerze.
+ID. Buzz łączy stylistykę retro inspirowaną T1 z nowoczesną platformą elektryczną MEB. Produkcyjną wersję pokazano w marcu 2022, a montaż ruszył w czerwcu 2022 w Hanowerze.
 
 ### Platforma MEB i bezpieczeństwo
 
@@ -42,11 +42,11 @@ Konstrukcyjnie ID. Buzz bazuje na [platformie MEB](https://en.wikipedia.org/wiki
 
 Cx wynosi około 0,29 dla wersji osobowej; Cargo ma wyższy współczynnik oporu. W testach Euro NCAP ID. Buzz otrzymał 5 gwiazdek, a wersja Cargo zdobyła platynową ocenę ANCAP.
 
-{{% info title="Sprzedaż ID. Buzza" icon="engineering" %}}W 2023 roku sprzedano 35 272 egzemplarze ID. Buzza na świecie. W 2024 roku wynik spadł do 29 900 sztuk – częściowo przez oczekiwanie klientów na wersję LWB, która trafiła do sprzedaży pod koniec roku.{{% /info %}}
+{{% info title="Sprzedaż ID. Buzza" icon="engineering" %}}W 2023 roku sprzedano 35 272 egzemplarze ID. Buzza na świecie. W 2024 roku wynik spadł do 29 900 sztuk – częściowo z powodu oczekiwania klientów na wersję LWB, która trafiła do sprzedaży pod koniec roku.{{% /info %}}
 
 ## Historia i generacje Volkswagen ID. Buzz
 
-Rozwój tego modelu da się podzielić na kilka wyraźnych etapów – od efektownego konceptu po mocniejsze i większe wersje z 2024 roku.
+Rozwój tego modelu można podzielić na kilka wyraźnych etapów – od efektownego konceptu po mocniejsze i większe wersje z 2024 roku.
 
 ### ID. Buzz Concept (2017)
 
@@ -54,7 +54,7 @@ Premiera konceptu odbyła się na Detroit Auto Show w 2017 roku. Auto od począt
 
 ### ID. Buzz / ID. Buzz Cargo (2022–2024)
 
-Wersję produkcyjną pokazano 9 marca 2022 roku. Produkcja ruszyła od czerwca 2022 w Hanowerze. Samochód otrzymał rozstaw osi 2988 mm, baterię 77 kWh netto i tylny napęd RWD o mocy 150 kW / 204 KM.
+Wersję produkcyjną pokazano 9 marca 2022 roku. Produkcja ruszyła w czerwcu 2022 w Hanowerze. Samochód otrzymał rozstaw osi 2988 mm, baterię 77 kWh netto i tylny napęd RWD o mocy 150 kW / 204 KM.
 
 ### ID. Buzz po modernizacji gamy (od 2024)
 
@@ -66,7 +66,7 @@ Dłuższa odmiana LWB ma 4962 mm długości i rozstaw osi 3239 mm. W tej fazie g
 
 ## Dane techniczne ID. Buzz
 
-W gamie ID. Buzza są dziś trzy główne warianty napędu: bazowy RWD 204 KM, mocniejszy RWD 286 KM i GTX AWD 339 KM. Różnice dotyczą nie tylko osiągów, ale też pojemności baterii, prędkości ładowania i uciągu przyczepy.
+W gamie ID. Buzza są dziś trzy główne warianty napędu: bazowy RWD 204 KM, mocniejszy RWD 286 KM i GTX AWD 339 KM. Różnice dotyczą nie tylko osiągów, lecz także pojemności baterii, prędkości ładowania i uciągu przyczepy.
 
 Bazowa wersja SWB korzysta z silnika APP 210 o mocy 150 kW (204 KM) i momencie obrotowym 310 Nm na tylnej osi. Od 2024 roku standardem w wersji PRO stał się mocniejszy silnik APP 550 – 210 kW (286 KM) z momentem 560 Nm.
 
@@ -85,7 +85,7 @@ Topowy GTX łączy dwa silniki elektryczne i generuje 250 kW (339 KM) z napędem
 
 ## Dane techniczne i wymiary
 
-Tu najlepiej widać, jak mocno różnią się między sobą wersje osobowe i Cargo. Z zewnątrz to ten sam model, ale w praktyce każda odmiana celuje w trochę inne zastosowanie.
+Tu najlepiej widać, jak mocno różnią się między sobą wersje osobowe i Cargo. Z zewnątrz to ten sam model, ale w praktyce każda odmiana jest przeznaczona do nieco innych zastosowań.
 
 | Wariant | SWB osobowy | LWB osobowy | Cargo |
 |---|---:|---:|---:|
@@ -95,7 +95,7 @@ Tu najlepiej widać, jak mocno różnią się między sobą wersje osobowe i Car
 | Rozstaw osi | 2988 mm | 3239 mm | 2988 mm |
 | Miejsca | 5 | 6–7 | 2–3 |
 | Bagażnik / ładownia | 1121–2205 l | 306–2469 l | 3,9 m3 |
-| DMC | ok. 3000–3400 kg zależnie od wersji | ok. 3000–3400 kg zależnie od wersji | ok. 3000–3400 kg zależnie od wersji |
+| DMC | ok. 3000–3400 kg w zależności od wersji | ok. 3000–3400 kg w zależności od wersji | ok. 3000–3400 kg w zależności od wersji |
 | Ładowność | zwykle ok. 600–750 kg | zwykle ok. 600–750 kg | do ok. 650–824 kg |
 | Uciąg przyczepy | do 1000 kg (RWD) | do 1000 kg (RWD) | do 1000 kg (RWD) / do 1800 kg (GTX AWD) |
 
@@ -107,11 +107,11 @@ Deklarowany zasięg WLTP sięga 461 km w najoszczędniejszej konfiguracji LWB z 
 - **Zima, z ogrzewaniem** – 240–320 km
 - **Autostrada 130 km/h** – 250–300 km
 
-Zużycie energii w cyklu mieszanym to zwykle ok. 19,0–22,0 kWh/100 km, zależnie od wersji napędowej i nadwozia. Na zasięg wpływa styl jazdy, temperatura otoczenia, użycie klimatyzacji lub ogrzewania i ładunek – każde dodatkowe 100 kg to ok. 3–5% mniej zasięgu.
+Zużycie energii w cyklu mieszanym to zwykle ok. 19,0–22,0 kWh/100 km, w zależności od wersji napędowej i nadwozia. Na zasięg wpływają styl jazdy, temperatura otoczenia, użycie klimatyzacji lub ogrzewania oraz ładunek – każde dodatkowe 100 kg to ok. 3–5% mniej zasięgu.
 
-Ładowanie DC obsługuje moc do 185 kW, a starsze wersje do 170 kW. Od 10% do 80% baterii naładujesz w ok. 26–30 minut na szybkiej ładowarce. Ładowanie AC przez wallbox 11 kW trwa ok. 7,5 godziny do pełna.
+Ładowanie DC jest możliwe mocą do 185 kW, a w starszych wersjach do 170 kW. Od 10% do 80% baterii naładujesz w ok. 26–30 minut na szybkiej ładowarce. Ładowanie AC przez wallbox 11 kW trwa ok. 7,5 godziny do pełna.
 
-{{% expert name="Marek Kowalczyk" %}}Przy planowaniu dłuższych tras ID. Buzzem pamiętaj o funkcji Plug & Charge – samochód automatycznie autoryzuje sesję ładowania na kompatybilnych stacjach. Realna przerwa na ładowanie DC to 25–35 minut, więc idealnie wpasowuje się w postój na kawę.{{% /expert %}}
+{{% expert name="Marek Kowalczyk" %}}Przy planowaniu dłuższych tras ID. Buzzem pamiętaj o funkcji Plug & Charge – samochód automatycznie autoryzuje sesję ładowania na kompatybilnych stacjach. Realna przerwa na ładowanie DC to 25–35 minut, więc idealnie wpisuje się w postój na kawę.{{% /expert %}}
 
 ## Silniki Volkswagen ID. Buzz
 
@@ -127,7 +127,7 @@ Mocniejsza odmiana RWD rozwija 286 KM i 560 Nm. W zależności od wersji współ
 
 ### GTX AWD 250 kW (339 KM)
 
-GTX ma dwa silniki, napęd AWD i łączną moc 339 KM przy 560 Nm. Dostępne są baterie 79 lub 86 kWh netto. Sprint do 100 km/h zajmuje ok. 6,5 s, V-max to 160 km/h, a zużycie energii WLTP wynosi ok. 20–22 kWh/100 km. Norma: BEV – brak normy Euro dla silnika spalinowego.
+GTX ma dwa silniki, napęd AWD, łączną moc 339 KM i moment 560 Nm. Dostępne są baterie 79 lub 86 kWh netto. Sprint do 100 km/h zajmuje ok. 6,5 s, prędkość maksymalna to 160 km/h, a zużycie energii WLTP wynosi ok. 20–22 kWh/100 km. Norma: BEV – brak normy Euro dla silnika spalinowego.
 
 ## Wersje nadwoziowe Volkswagena ID. Buzz
 
@@ -173,17 +173,17 @@ Wysoka masa auta przyspiesza zużycie opon i łączników stabilizatora. Komplet
 
 ### Hamulce
 
-Jak w wielu BEV, przy małym użyciu hamulców może pojawić się korozja tarcz. Komplet tarcz i klocków na przód kosztuje zwykle **1800–3500 zł**, a na tył **1400–2800 zł**.
+Jak w wielu BEV, przy rzadkim używaniu hamulców może pojawić się korozja tarcz. Komplet tarcz i klocków na przód kosztuje zwykle **1800–3500 zł**, a na tył **1400–2800 zł**.
 
 ### Nadwozie i wnętrze
 
-Użytkownicy zgłaszają też trzeszczenie plastików i przesuwne drzwi wymagające regulacji. Sama regulacja drzwi to zwykle **300–800 zł**, a naprawa mechanizmu lub rolki **800–2000 zł**.
+Użytkownicy zgłaszają też trzeszczenie plastików oraz przesuwne drzwi wymagające regulacji. Sama regulacja drzwi to zwykle **300–800 zł**, a naprawa mechanizmu lub rolki **800–2000 zł**.
 
 {{% youtube %}}
 
 ## Porównanie ID. Buzza z konkurencją
 
-ID. Buzz nie jest dziś samotnym graczem w świecie elektrycznych vanów, ale nadal ma dość specyficzną pozycję. Nie zawsze wygrywa przestrzenią czy ceną, za to mocno punktuje stylem, osiągami i ładowaniem.
+ID. Buzz nie jest dziś samotnym graczem w świecie elektrycznych vanów, ale nadal ma dość szczególną pozycję. Nie zawsze wygrywa przestrzenią czy ceną, za to mocno punktuje stylem, osiągami i ładowaniem.
 
 | Parametr | VW ID. Buzz PRO | Mercedes EQV 300 | Peugeot e-Traveller / Opel Zafira-e Life / Toyota Proace Verso Electric | Maxus Mifa 9 | Hyundai Staria |
 |---|---:|---:|---:|---:|---:|
@@ -195,7 +195,7 @@ ID. Buzz nie jest dziś samotnym graczem w świecie elektrycznych vanów, ale na
 | Miejsca | 5 / 6–7 | 7–8 | 7–9 | 6–7 | 7–11 |
 | Cena od | ok. 278 000 zł | ok. 350 000 zł | niższa od ID. Buzza | – | ok. 200 000 zł |
 
-ID. Buzz wygrywa designem i szybkością ładowania. Mercedes EQV stawia na komfort premium, Maxus Mifa 9 na przestrzeń, a e-Traveller, Zafira-e Life i Proace Verso Electric kuszą niższą ceną wejścia. Hyundai Staria pozostaje ciekawą alternatywą dla osób, które nie szukają elektryka, tylko dużego vana za mniejsze pieniądze.
+ID. Buzz wygrywa designem i szybkością ładowania. Mercedes EQV stawia na komfort premium, Maxus Mifa 9 na przestrzeń, a e-Traveller, Zafira-e Life i Proace Verso Electric kuszą niższą ceną startową. Hyundai Staria pozostaje ciekawą alternatywą dla osób, które nie szukają elektryka, tylko dużego vana za mniejsze pieniądze.
 
 ## Ceny ID. Buzza
 
@@ -219,4 +219,4 @@ Nowy ID. Buzz nie należy do tanich aut, ale ceny mocno zależą od wersji nadwo
 | 2024 | 245 000–310 000 zł | 5–40 tys. km |
 | 2025 | 280 000–360 000 zł | 0–20 tys. km |
 
-Dla firm ID. Buzz Cargo może być interesujący także ze względu na programy wspierające elektromobilność. Porównując cenowo z klasycznym [Volkswagen Multivan](/modele/volkswagen-multivan/), elektryczny model startuje wyżej, ale ma inny profil kosztów eksploatacji.
+Dla firm ID. Buzz Cargo może być interesujący także ze względu na programy wspierające elektromobilność. Porównując cenowo z klasycznym [Volkswagen Multivan](/modele/volkswagen-multivan/), elektryczny model startuje wyżej, ale ma inną strukturę kosztów eksploatacji.

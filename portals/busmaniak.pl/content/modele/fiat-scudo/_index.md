@@ -28,13 +28,13 @@ sources:
 
 ## Historia i generacje Fiata Scudo
 
-Trzy generacje, kilku technicznych bliźniaków i wyraźna zmiana charakteru modelu. Od prostego vana z końcówki lat 90. po nowoczesny samochód dostawczy na platformie PSA/Stellantis.
+Trzy generacje, kilka technicznych bliźniaków i wyraźna zmiana charakteru modelu. Od prostego vana z końcówki lat 90. po nowoczesny samochód dostawczy na platformie PSA/Stellantis.
 
 ### Fiat Scudo I (1996–2006)
 
 Pierwsza generacja debiutowała w 1996 roku jako bliźniak Citroëna Jumpy I i Peugeota Expert I. Powstała na wspólnej płycie Eurovanów i była produkowana w fabryce Sevel Nord w Lieu-Saint-Amand we Francji.
 
-Nadwozie występowało orientacyjnie w długościach ok. **4444 mm** i ok. **4744 mm** – zależnie od wersji. Do wyboru były diesle **1.9 D 68–69 KM**, **1.9 TD 90–92 KM**, **2.0 JTD 94–109 KM** oraz benzynowe **2.0 16V 136 KM**. Około 2004 roku model przeszedł lifting z odświeżonym pasem przednim.
+Nadwozie występowało w długościach ok. **4444 mm** i ok. **4744 mm** – zależnie od wersji. Do wyboru były diesle **1.9 D 68–69 KM**, **1.9 TD 90–92 KM**, **2.0 JTD 94–109 KM** oraz benzynowe **2.0 16V 136 KM**. Około 2004 roku model przeszedł lifting z odświeżonym pasem przednim.
 
 ### Lift Scudo I (2004–2006)
 
@@ -42,9 +42,9 @@ Po modernizacji pierwsze Scudo dostało nowy pas przedni, zmienione reflektory i
 
 ### Fiat Scudo II (2007–2016)
 
-Druga generacja pojawiła się jesienią 2006 roku jako model rocznikowy 2007. Auto wyraźnie urosło, dostało szersze nadwozie, lepszy komfort jazdy i bardziej nowoczesną kabinę.
+Druga generacja pojawiła się jesienią 2006 roku jako model rocznikowy 2007. Auto wyraźnie urosło, dostało szersze nadwozie, lepszy komfort jazdy i nowocześniejszą kabinę.
 
-W tej generacji stosowano przede wszystkim **dwa rozstawy osi: 3000 i 3122 mm**, a więc także dwie główne długości nadwozia. Gamę silników tworzyły głównie diesle: **1.6 MultiJet 90 KM** oraz **2.0 MultiJet 120/128/136/163 KM** – zależnie od rynku i rocznika. W 2012 roku przeprowadzono facelifting, a od 2013 do rodziny bliźniaków dołączyła [Toyota ProAce](/modele/toyota-proace/).
+W tej generacji stosowano przede wszystkim **dwa rozstawy osi: 3000 i 3122 mm**, a więc także dwie główne długości nadwozia. Gamę silników tworzyły głównie diesle: **1.6 MultiJet 90 KM** oraz **2.0 MultiJet 120/128/136/163 KM** – zależnie od rynku i rocznika. W 2012 roku przeprowadzono lifting, a od 2013 do rodziny bliźniaków dołączyła [Toyota ProAce](/modele/toyota-proace/).
 
 {{% info title="Van of the Year" icon="engineering" %}}
 Scudo II zdobyło tytuł International Van of the Year 2008, pokonując m.in. Volkswagena Transportera T5 i Mercedes-Benz Vito W639.
@@ -56,13 +56,13 @@ Po liftingu Scudo II dostało nowy zderzak i grill oraz lepsze materiały we wn�
 
 ### Przerwa w ofercie (2016–2021)
 
-Po zakończeniu produkcji drugiej generacji Fiat zastąpił Scudo modelem Talento, technicznie spokrewnionym z Renault Trafic III. To oznaczało kilkuletnią przerwę w ofercie auta pod nazwą Scudo.
+Po zakończeniu produkcji drugiej generacji Fiat zastąpił Scudo modelem Talento, technicznie spokrewnionym z Renault Trafic III. Oznaczało to kilkuletnią przerwę w ofercie auta pod nazwą Scudo.
 
 ### Fiat Scudo III / E-Scudo (od 2022)
 
-Po przerwie związanej ze sprzedażą Talento, Scudo wróciło w 2022 roku. Trzecia generacja bazuje na platformie [EMP2](https://en.wikipedia.org/wiki/PSA_EMP2_platform) i technicznie jest spokrewniona z [Peugeotem Expert](/modele/peugeot-expert/), Citroënem Jumpy, Oplem Vivaro i Toyotą ProAce.
+Po przerwie, w której w ofercie był Talento, Scudo wróciło w 2022 roku. Trzecia generacja bazuje na platformie [EMP2](https://en.wikipedia.org/wiki/PSA_EMP2_platform) i technicznie jest spokrewniona z [Peugeotem Expert](/modele/peugeot-expert/), Citroënem Jumpy, Oplem Vivaro i Toyotą ProAce.
 
-Zależnie od rynku i wersji nadwoziowej dostępne były **Compact 4609 mm**, **Standard 4959 mm** i **Long 5309 mm**. W gamie znalazły się diesle **1.5 BlueHDi 100/120 KM** oraz **2.0 BlueHDi 145/180 KM**, a także elektryczne **E-Scudo** o mocy **136 KM** z akumulatorami **50 kWh lub 75 kWh**. Zasięg według WLTP wynosi do **224 km** albo do **330 km** – zależnie od baterii.
+Zależnie od rynku i wersji nadwoziowej dostępne są **Compact 4609 mm**, **Standard 4959 mm** i **Long 5309 mm**. W gamie znalazły się diesle **1.5 BlueHDi 100/120 KM** oraz **2.0 BlueHDi 145/180 KM**, a także elektryczne **E-Scudo** o mocy **136 KM** z akumulatorami **50 kWh lub 75 kWh**. Zasięg według WLTP wynosi do **224 km** albo do **330 km** – zależnie od baterii.
 
 ### Powrót Scudo (2022–)
 
@@ -70,7 +70,7 @@ Powrót nazwy Scudo oznaczał wejście do oferty vanów Stellantis K0/EMP2. Opr�
 
 ## Dane techniczne i wymiary
 
-Najłatwiej porównywać Scudo po długości nadwozia, rozstawie osi i ładowności. Poniżej masz zestawienie praktycznych parametrów dla wszystkich generacji – z objętością paki, DMC i długością przestrzeni ładunkowej.
+Najłatwiej porównywać Scudo według długości nadwozia, rozstawu osi i ładowności. Poniżej masz zestawienie praktycznych parametrów dla wszystkich generacji – z objętością paki, DMC i długością przestrzeni ładunkowej.
 
 ### Fiat Scudo I – podstawowe wymiary
 
@@ -81,11 +81,11 @@ Pierwsza generacja była wyraźnie mniejsza od Scudo II i III. To ważne, jeśli
 | L1      | 4444         | 2824             | ok. 1810       | ok. 1940      | ok. 2275–2515 | ok. 815–900    | ok. 4,0–4,5   |
 | L2      | 4744         | 3244             | ok. 1810       | ok. 1940      | ok. 2525–2660 | ok. 900–1000   | ok. 5,0       |
 
-Wartości są zależne od wersji furgon/kombi i rynku.
+Wartości zależą od wersji furgon/kombi i rynku.
 
 ### Fiat Scudo II i III – porównanie praktyczne
 
-W praktyce III generacja daje więcej opcji konfiguracji długości, a II generacja trzyma prostszą ofertę z dwoma głównymi wariantami. Dla firmy najważniejsze są zwykle trzy liczby: długość paki, ładowność i DMC.
+W praktyce III generacja daje więcej wariantów długości, a II generacja utrzymuje prostszą ofertę z dwoma głównymi wersjami. Dla firmy najważniejsze są zwykle trzy liczby: długość paki, ładowność i DMC.
 
 | Generacja | Wariant   | Długość [mm] | Rozstaw osi [mm] | Szerokość bez lusterek [mm] | Wysokość [mm] | Objętość ład. [m3] | DMC [kg]   | Ładowność [kg] | Długość paki [mm] |
 |-----------|-----------|--------------|------------------|-----------------------------|---------------|--------------------|------------|----------------|-------------------|
@@ -102,7 +102,7 @@ Dodatkowe wymiary użytkowe dla III generacji:
 - **Niski próg załadunku** – ok. **610 mm**
 
 {{% info title="System Moduwork" icon="engineering" %}}
-W Scudo III możesz podnieść siedzisko pasażera i otworzyć klapę w przegrodzie, co pozwala na przewóz przedmiotów o długości do 4 metrów – drabin, rur i listew.
+W Scudo III możesz podnieść siedzisko pasażera i otworzyć klapę w przegrodzie, co pozwala przewozić przedmioty o długości do 4 metrów – drabiny, rury i listwy.
 {{% /info %}}
 
 ## Silniki Scudo
@@ -127,19 +127,19 @@ Gama silnikowa Scudo mocno zmieniała się między generacjami. Pierwsze auta by
 
 ### 1.6 MultiJet / HDi
 
-**1560 cm3**, **90 KM**, **180 Nm** i **5-biegowa skrzynia**. Rozrząd jest tutaj paskiem, a sama jednostka najlepiej pasuje do miasta i lekkiego ładunku.
+**1560 cm3**, **90 KM**, **180 Nm** i **5-biegowa skrzynia**. Rozrząd napędzany jest paskiem, a sama jednostka najlepiej sprawdza się w mieście i przy lekkim ładunku.
 
 ### 2.0 MultiJet
 
-**1997 cm3**, **120/128/136/163 KM** i **300–340 Nm**. Zwykle łączony z **6-biegową skrzynią**, dlatego to najlepszy wybór do trasy i pełnego obciążenia.
+**1997 cm3**, **120/128/136/163 KM** i **300–340 Nm**. Zwykle łączony z **6-biegową skrzynią** – stąd najlepszy wybór na trasę i przy pełnym obciążeniu.
 
 ### 1.5 BlueHDi
 
-**1499 cm3**, **100/120 KM**, **270/300 Nm**. Silnik spełnia normę **Euro 6d**, ma **AdBlue**, **DPF** i rozrząd paskiem w oleju.
+**1499 cm3**, **100/120 KM**, **270/300 Nm**. Silnik spełnia normę **Euro 6d**, ma **AdBlue**, **DPF** oraz rozrząd z paskiem pracującym w oleju.
 
 ### 2.0 BlueHDi
 
-**1997 cm3**, **145/180 KM** i **370/400 Nm**. W zależności od wersji masz **6M lub 8AT**, a ten motor najlepiej nadaje się do holowania i autostrady.
+**1997 cm3**, **145/180 KM** i **370/400 Nm**. W zależności od wersji dostępne są **6M lub 8AT**; ten motor najlepiej nadaje się do holowania i jazdy autostradowej.
 
 ### E-Scudo
 
@@ -147,9 +147,9 @@ Elektryczna odmiana ma **136 KM** i **260 Nm**. Dostępne są baterie **50 kWh n
 
 ### Który silnik wybrać?
 
-W II generacji najbardziej uniwersalny pozostaje **2.0 MultiJet**. Ma lepszą elastyczność niż 1.6, dobrze znosi jazdę z ładunkiem i zwykle lepiej pasuje do dłuższych tras.
+W II generacji najbardziej uniwersalny pozostaje **2.0 MultiJet**. Ma lepszą elastyczność niż 1.6, dobrze znosi jazdę z ładunkiem i zwykle lepiej sprawdza się na dłuższych trasach.
 
-W III generacji wybór zależy od zastosowania. **1.5 BlueHDi** sprawdzi się w lekkiej pracy i miejskiej logistyce, a **2.0 BlueHDi 145/180 KM** to lepsza opcja do autostrady, brygadówki i cięższego towaru. **E-Scudo** ma sens tam, gdzie liczy się jazda miejska i przewidywalny dystans.
+W III generacji wybór zależy od zastosowania. **1.5 BlueHDi** sprawdzi się w lekkiej pracy i miejskiej logistyce, a **2.0 BlueHDi 145/180 KM** to lepsza opcja na autostradę, do brygadówki i przy cięższym towarze. **E-Scudo** ma sens tam, gdzie liczy się jazda miejska i przewidywalny dystans.
 
 ## Wersje nadwoziowe Scudo
 
@@ -168,7 +168,7 @@ Scudo nie kończy się na zwykłym furgonie. W zależności od generacji i rynku
 
 Najpopularniejsza wersja użytkowa. W zależności od długości nadwozia oferuje od **4,6 m3 do 6,6 m3** przestrzeni ładunkowej i do **1400 kg** ładowności.
 
-W praktyce to właśnie furgon najczęściej trafia do kurierów, ekip montażowych i serwisu. W zależności od konfiguracji można mieć **1 lub 2 drzwi przesuwne**, a z tyłu **drzwi 50/50 albo klapę**.
+W praktyce to właśnie furgon najczęściej trafia do kurierów, ekip montażowych i serwisowych. W zależności od konfiguracji można mieć **1 lub 2 drzwi przesuwne**, a z tyłu **drzwi 50/50 albo klapę**.
 
 ### Furgon z podwójną kabiną
 
@@ -178,7 +178,7 @@ Brygadówka to rozwiązanie dla firm, które wożą ludzi i sprzęt jednym autem
 
 Scudo w wersjach osobowych występowało jako Kombi lub Panorama. Zależnie od generacji i rynku dostępne były konfiguracje **5, 6, 8 lub 9 miejsc**.
 
-Najpopularniejszy układ to **2+3+3**, ale spotyka się też uboższe i bardziej użytkowe konfiguracje. Mniejsze vany jak [Citroën Berlingo](/modele/citroen-berlingo/) nie oferują takiej samej funkcjonalności przy pełnym komplecie pasażerów.
+Najpopularniejszy układ to **2+3+3**, ale spotyka się też uboższe i bardziej użytkowe konfiguracje. Mniejsze vany, takie jak [Citroën Berlingo](/modele/citroen-berlingo/), nie oferują takiej samej funkcjonalności przy pełnym komplecie pasażerów.
 
 ### Platforma i podwozie do zabudowy
 
@@ -188,11 +188,11 @@ W gamie spotyka się także auta przygotowane pod indywidualne zabudowy. W III g
 
 Scudo bywa też bazą pod kampera. Zabudowy powstają zwykle na bazie **Panoramy albo furgonu**, a długość łóżka po konwersji to najczęściej **180–190 cm**.
 
-W niezależnych projektach trafia się także **dach podnoszony**. To nie jest tak ustawny samochód jak największe busy, ale do kompaktowego vanlife’u nadaje się bardzo dobrze.
+W niezależnych projektach trafia się także **dach podnoszony**. To nie jest tak przestronny samochód jak największe busy, ale do kamperowania w kompaktowym wydaniu nadaje się bardzo dobrze.
 
 ## Typowe usterki Fiat Scudo
 
-Najwięcej problemów pojawia się tam, gdzie auto pracowało ciężko i nieregularnie serwisowano olej, filtr DPF albo osprzęt drzwi przesuwnych. Dobrze utrzymane Scudo potrafi jeździć długo, ale przed zakupem warto sprawdzić słabe punkty konkretnej wersji silnikowej.
+Najwięcej problemów pojawia się tam, gdzie auto pracowało w ciężkich warunkach, a oleju, filtra DPF albo osprzętu drzwi przesuwnych nie serwisowano regularnie. Dobrze utrzymane Scudo potrafi jeździć długo, ale przed zakupem warto sprawdzić słabe punkty konkretnej wersji silnikowej.
 
 ### 1.6 MultiJet / 1.6 HDi
 
@@ -204,15 +204,15 @@ Do tego dochodzą **podkładki pod wtryskami** – zwykle **150–300 zł/szt. +
 
 To najczęściej polecany silnik w Scudo II, ale i tu są konkretne koszty. **Dwumasa ze sprzęgłem** to wydatek rzędu **2200–3800 zł**, a **regeneracja wtryskiwaczy** zwykle **600–1000 zł/szt.**
 
-Z drobniejszych tematów pojawia się **termostat** za **250–500 zł** i **rozrząd** za **900–1600 zł**. Przy aucie z dużym przebiegiem warto od razu policzyć te pozycje do budżetu zakupu.
+Z drobniejszych spraw pojawiają się **termostat** za **250–500 zł** i **rozrząd** za **900–1600 zł**. Przy aucie z dużym przebiegiem warto od razu uwzględnić te pozycje w budżecie zakupu.
 
 ### Scudo III 1.5 / 2.0 BlueHDi
 
-W nowszej generacji najczęściej wracają tematy związane z układem oczyszczania spalin. Problemy z **AdBlue/NOx** to zwykle **1500–4000 zł**, **DPF** – **1500–3000 zł**, a **EGR** – **800–1800 zł**.
+W nowszej generacji najczęściej powracają problemy związane z układem oczyszczania spalin. Problemy z **AdBlue/NOx** to zwykle **1500–4000 zł**, **DPF** – **1500–3000 zł**, a **EGR** – **800–1800 zł**.
 
-W części wersji BlueHDi występują problemy z **DPF/układem AdBlue**, a koszt diagnostyki i regeneracji zależy od wersji silnika. W **1.5 BlueHDi** trzeba pilnować stanu **paska rozrządu pracującego w oleju** i skróconych interwałów serwisowych.
+W części wersji BlueHDi występują usterki **DPF i układu AdBlue**, a koszt diagnostyki i regeneracji zależy od wersji silnika. W **1.5 BlueHDi** trzeba pilnować stanu **paska rozrządu pracującego w oleju** i skróconych interwałów serwisowych.
 
-Do tego dochodzą bardziej konkretne koszty. **Pasek rozrządu 1.5 BlueHDi w oleju** – wymiana profilaktyczna zwykle **1800–3000 zł**. **Zbiornik/układ AdBlue z pompą lub czujnikiem** – **2500–5000 zł**. **Czujnik NOx** – **1200–2200 zł**. **Chłodnica EGR lub zawór EGR** – **800–1800 zł**. **Serwis olejowy skrzyni EAT8/AT8** to zwykle **700–1200 zł**, a naprawy mechatroniki przy zaniedbaniach startują od ok. **3500 zł**.
+Do tego dochodzą bardziej konkretne koszty. **Pasek rozrządu 1.5 BlueHDi w oleju** – wymiana profilaktyczna zwykle **1800–3000 zł**. **Zbiornik/układ AdBlue z pompą lub czujnikiem** – **2500–5000 zł**. **Czujnik NOx** – **1200–2200 zł**. **Chłodnica EGR lub zawór EGR** – **800–1800 zł**. **Serwis olejowy skrzyni EAT8/AT8** to zwykle **700–1200 zł**, a naprawy mechatroniki przy zaniedbaniach zaczynają się od ok. **3500 zł**.
 
 ### Zawieszenie i nadwozie
 
@@ -228,7 +228,7 @@ Większość problemów mechanicznych Scudo wynika z przeładowywania auta ponad
 
 ## Porównanie Fiata Scudo z konkurencją
 
-Scudo III działa w bardzo mocnym segmencie. Rywale są więksi, bardziej rozpoznawalni albo oferują większą pakę, ale Fiat nadrabia wspólną techniką z bliźniaczymi modelami i szeroką dostępnością części.
+Scudo III konkuruje w bardzo wymagającym segmencie. Rywale są więksi, bardziej rozpoznawalni albo oferują większą pakę, ale Fiat nadrabia wspólną techniką z bliźniaczymi modelami i szeroką dostępnością części.
 
 | Parametr            | Fiat Scudo III L2 | Renault Trafic III L2 | Ford Transit Custom L2 | VW Transporter T6.1 L2 |
 |---------------------|-------------------|------------------------|------------------------|------------------------|
@@ -238,13 +238,13 @@ Scudo III działa w bardzo mocnym segmencie. Rywale są więksi, bardziej rozpoz
 | Diesel bazowy       | 1.5 BlueHDi 100 KM| 2.0 dCi 110 KM         | 2.0 EcoBlue 105 KM     | 2.0 TDI 110 KM         |
 | Cena nowego (netto) | od 130 000 zł     | od 135 000 zł          | od 145 000 zł          | od 180 000 zł          |
 
-Na tle konkurencji Scudo wypada dobrze tam, gdzie liczy się relacja ceny do możliwości. [Renault Trafic](/modele/renault-trafic/) daje bardziej klasyczne proporcje przestrzeni ładunkowej, a [Ford Transit Custom](/modele/ford-transit-custom/) wygrywa większą paką i dopracowaniem prowadzenia. Fiat broni się kosztami zakupu i dostępnością zamienników wspólnych z Expertem i Jumpy.
+Na tle konkurencji Scudo wypada dobrze tam, gdzie liczy się stosunek ceny do możliwości. [Renault Trafic](/modele/renault-trafic/) daje bardziej klasyczne proporcje przestrzeni ładunkowej, a [Ford Transit Custom](/modele/ford-transit-custom/) wygrywa większą paką i dopracowanym prowadzeniem. Fiat broni się kosztami zakupu i dostępnością zamienników wspólnych z Expertem i Jumpy.
 
-Scudo III L2 najlepiej porównywać z Trafikiem L2H1 (**ładowność ok. 1050–1220 kg, objętość 6,0 m3**), Transit Custom L2H1 (**do ok. 1360 kg, 6,8 m3**) oraz Transporterem T6.1 L2H1 (**ok. 930–1280 kg, 6,7 m3**). Fiat wygrywa niską wysokością około **1,90 m**, dobrą zwrotnością i wspólną bazą części z Expertem, Jumpy, ProAce i Vivaro.
+Scudo III L2 najlepiej porównywać z Trafikiem L2H1 (**ładowność ok. 1050–1220 kg, objętość 6,0 m3**), Transit Custom L2H1 (**do ok. 1360 kg, 6,8 m3**) oraz Transporterem T6.1 L2H1 (**ok. 930–1280 kg, 6,7 m3**). Fiat wygrywa niewielką wysokością ok. **1,90 m**, dobrą zwrotnością i wspólną bazą części z Expertem, Jumpy, ProAce i Vivaro.
 
 ## Ceny Scudo
 
-Na rynku wtórnym ceny Scudo mocno zależą od rocznika, długości nadwozia i wersji. Najdroższe są zadbane osobówki Panorama oraz młode auta z automatem, a najmocniej potrafią tracić elektryczne E-Scudo.
+Na rynku wtórnym ceny Scudo mocno zależą od rocznika, długości nadwozia i wersji. Najdroższe są zadbane osobówki Panorama oraz młode auta z automatem, a najszybciej na wartości tracą elektryczne E-Scudo.
 
 ### Nowy Fiat Scudo – ceny orientacyjne
 
@@ -259,7 +259,7 @@ To są widełki, które warto traktować jako punkt wyjścia. Ostateczna kwota z
 | E-Scudo 50 kWh                | od 170 000–190 000 zł |
 | E-Scudo 75 kWh                | od 190 000–215 000 zł |
 
-Ceny są zależne od długości, zabudowy i rabatów flotowych.
+Ceny zależą od długości, zabudowy i rabatów flotowych.
 
 ### Używane Fiat Scudo – ceny według rocznika
 
@@ -281,4 +281,4 @@ Ceny są zależne od długości, zabudowy i rabatów flotowych.
 - **Automat** – zwykle **+5–10%**
 - **E-Scudo** – może kosztować **110 000–160 000 zł** zależnie od baterii i przebiegu
 
-Jeśli kupujesz Scudo do pracy, najbezpieczniej liczyć nie tylko cenę zakupu, ale też pakiet startowy po zakupie. W praktyce nawet pozornie tańszy egzemplarz może szybko wyrównać się kosztami z droższym, ale lepiej utrzymanym autem.
+Jeśli kupujesz Scudo do pracy, najbezpieczniej uwzględnić nie tylko cenę zakupu, lecz także pakiet wydatków startowych po zakupie. W praktyce nawet pozornie tańszy egzemplarz może szybko dogonić kosztami droższy, lecz lepiej utrzymany samochód.

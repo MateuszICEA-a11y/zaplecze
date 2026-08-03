@@ -15,9 +15,9 @@ faq:
   - question: "Jak obliczyć DMC zespołu pojazdów?"
     answer: "Dodaj DMC pojazdu ciągnącego (pole F.2) do DMC przyczepy (pole F.2 z dowodu przyczepy). Wynik porównaj z wartością F.3 – obowiązuje niższa z dwóch wartości."
   - question: "Czy na kat. B mogę ciągnąć przyczepę busem o DMC 3500 kg?"
-    answer: "Tak, na kategorię B możesz holować busem o DMC 3500 kg przyczepę lekką, czyli o DMC do 750 kg. Taki zestaw ma DMC 4250 kg i jest to legalne. Kod 96 lub kategoria B+E są potrzebne dopiero, gdy chcesz holować przyczepę cięższą niż 750 kg."
+    answer: "Tak, na kategorię B możesz busem o DMC 3500 kg holować przyczepę lekką, czyli o DMC do 750 kg. Taki zestaw ma DMC 4250 kg i jest w pełni legalny. Kod 96 lub kategoria B+E są potrzebne dopiero wtedy, gdy chcesz holować przyczepę cięższą niż 750 kg."
   - question: "Ile wynosi mandat za przekroczenie DMC zespołu?"
-    answer: "Za przekroczenie DMC zespołu pojazdów, którego DMC nie przekracza 3,5 t, grozi mandat karny na podstawie Art. 97 Kodeksu wykroczeń. Jego wysokość zależy od decyzji funkcjonariusza i może wynieść od 20 zł do 3000 zł. Dla cięższych zestawów kary nakłada ITD i sięgają 10 000 zł."
+    answer: "Za przekroczenie DMC zespołu pojazdów o DMC nieprzekraczającym 3,5 t grozi mandat karny na podstawie Art. 97 Kodeksu wykroczeń. Jego wysokość zależy od decyzji funkcjonariusza i może wynieść od 20 zł do 3000 zł. Dla cięższych zestawów kary nakłada ITD; sięgają one 10 000 zł."
 ---
 ## Czym jest DMC zespołu pojazdów
 
@@ -55,7 +55,7 @@ Ta suma (4250 kg) to DMC Twojego zespołu pojazdów. Na jej podstawie ustalasz w
 
 ### Przykłady obliczeń dla popularnych zestawów
 
-Poniższa tabela pokazuje realne kombinacje busów z przyczepami i wynikające z nich DMC zespołu.
+Poniższa tabela pokazuje rzeczywiste kombinacje busów z przyczepami i wynikające z nich DMC zespołu.
 
 | Zestaw | DMC busa (F.2) | DMC przyczepy (F.2) | DMC zespołu | Wymagane prawo jazdy |
 | :--- | :--- | :--- | :--- | :--- |
@@ -72,9 +72,9 @@ Jak widać, popularny zestaw – bus o DMC 3500 kg z przyczepą lekką o DMC 750
 
 ## Prawo jazdy B, B+96 czy B+E – który wariant potrzebujesz
 
-Kategoria prawa jazdy przy holowaniu przyczepy zależy od sumy DMC zespołu pojazdów, a także DMC samej przyczepy. Warto też pamiętać, że przekroczenie progu 3,5 tony DMC zespołu pojazdów rodzi dodatkowe obowiązki, nawet jeśli prowadzimy go na kategorię B. Należy do nich opłacanie przejazdów w systemie e-TOLL. Brak aktywnego urządzenia geolokalizacyjnego grozi karą administracyjną w wysokości 1500 zł.
+Kategoria prawa jazdy przy holowaniu przyczepy zależy od DMC zespołu pojazdów, a także od DMC samej przyczepy. Warto też pamiętać, że przekroczenie progu 3,5 tony DMC zespołu pojazdów rodzi dodatkowe obowiązki, nawet jeśli kierujemy nim na podstawie kategorii B. Należy do nich opłacanie przejazdów w systemie e-TOLL. Brak aktywnego urządzenia geolokalizacyjnego grozi karą administracyjną w wysokości 1500 zł.
 
-Jeśli zespół pojazdów o DMC powyżej 3,5 tony jest używany do zarobkowego przewozu rzeczy, wchodzi w grę kolejny wymóg – tachograf. Obowiązek jego stosowania i przestrzegania norm czasu pracy kierowcy (zgodnie z Rozp. WE 561/2006) dotyczy przewozów komercyjnych. Prywatne i niezarobkowe przejazdy zestawem do 7,5 tony są z tego zwolnione.
+Jeśli zespół pojazdów o DMC powyżej 3,5 tony jest używany do zarobkowego przewozu rzeczy, wchodzi w grę kolejny wymóg – tachograf. Obowiązek jego stosowania i przestrzegania norm czasu pracy kierowcy (zgodnie z rozp. WE 561/2006) dotyczy przewozów zarobkowych. Prywatne i niezarobkowe przejazdy zestawem do 7,5 tony są z tego zwolnione.
 
 ### Kategoria B – do 3500 kg lub 4250 kg
 
@@ -89,22 +89,22 @@ Kod 96 to rozszerzenie uprawnień kategorii B, które pozwala na kierowanie zesp
 Aby uzyskać kod 96, nie trzeba przechodzić kursu. Wystarczy zdać państwowy egzamin praktyczny w WORD. Jego koszt to obecnie 200 zł.
 
 {{% info title="Kod 96 a kraje UE" icon="info" %}}
-Kod 96 jest uznawany we wszystkich krajach Unii Europejskiej. Jeśli planujesz podróż z przyczepą po Europie, nie musisz zdawać dodatkowych egzaminów za granicą. Pamiętaj jednak o różnicach w limitach prędkości z przyczepą – w Niemczech obowiązuje 80 km/h na autostradzie, jeśli przyczepa nie ma homologacji na 100 km/h.
+Kod 96 jest uznawany we wszystkich krajach Unii Europejskiej. Jeśli planujesz podróż z przyczepą po Europie, nie musisz zdawać dodatkowych egzaminów za granicą. Pamiętaj jednak o różnicach w limitach prędkości z przyczepą – w Niemczech na autostradzie obowiązuje ograniczenie do 80 km/h, jeśli przyczepa nie ma homologacji na 100 km/h.
 {{% /info %}}
 
 ### Kategoria B+E – powyżej 4250 kg
 
-Kategoria B+E jest wymagana, gdy DMC zespołu przekracza 4250 kg. Uprawnia do holowania pojazdem o DMC do 3,5 t przyczepy, której DMC również nie przekracza 3,5 t. Kurs kosztuje 1500–2500 zł, a egzamin obejmuje manewry z przyczepą: cofanie, parkowanie zestawu i ruszanie pod górę.
+Kategoria B+E jest wymagana, gdy DMC zespołu przekracza 4250 kg. Uprawnia do holowania przyczepy o DMC do 3,5 t pojazdem o DMC nieprzekraczającym 3,5 t. Kurs kosztuje 1500–2500 zł, a egzamin obejmuje manewry z przyczepą: cofanie, parkowanie zestawu i ruszanie pod górę.
 
 ## Przykłady z praktyki – Ducato i Sprinter z przyczepą
 
-Dwa najpopularniejsze busy w Polsce to Fiat Ducato i Mercedes Sprinter. Oba w standardowej wersji furgonowej mają DMC 3500 kg, co determinuje zasady holowania.
+Dwa najpopularniejsze busy w Polsce to Fiat Ducato i Mercedes Sprinter. Oba w standardowej wersji furgonowej mają DMC 3500 kg, co określa zasady holowania.
 
 ### Fiat Ducato 35 z przyczepą
 
-Ducato w wersji L2H2 waży ok. 2100–2200 kg. Pole O.1 w dowodzie (max masa przyczepy z hamulcem) wynosi typowo 2000–2500 kg, a F.3 sięga 5900–6000 kg. To oznacza, że konstrukcyjnie Ducato poradzi sobie z ciężką przyczepą – ale Twoje prawo jazdy może na to nie pozwalać.
+Ducato w wersji L2H2 waży ok. 2100–2200 kg. Pole O.1 w dowodzie (maks. masa przyczepy z hamulcem) wynosi typowo 2000–2500 kg, a F.3 sięga 5900–6000 kg. To oznacza, że konstrukcyjnie Ducato poradzi sobie z ciężką przyczepą – ale Twoje prawo jazdy może na to nie pozwalać.
 
-Kategoria B pozwala na holowanie przyczepy lekkiej (do 750 kg), tworząc zestaw o DMC 4250 kg. Aby wykorzystać pełen potencjał uciągu i podpiąć przyczepę cięższą niż 750 kg, konieczne stają się rozszerzone uprawnienia. Kod 96 przyda się przy zestawach do 4250 kg, a kategoria B+E pozwoli legalnie ciągnąć najcięższe lawety.
+Kategoria B pozwala na holowanie przyczepy lekkiej (do 750 kg), tworząc zestaw o DMC 4250 kg. Aby wykorzystać pełny potencjał uciągu i podpiąć przyczepę cięższą niż 750 kg, konieczne stają się rozszerzone uprawnienia. Kod 96 przyda się przy zestawach do 4250 kg, a kategoria B+E pozwoli legalnie ciągnąć najcięższe lawety.
 
 ### Mercedes Sprinter 316 z przyczepą
 
@@ -113,12 +113,12 @@ Sprinter III w wersji 316 CDI waży ok. 2200–2500 kg w zależności od konfigu
 Przy kamperze na bazie Sprintera sytuacja robi się jeszcze ciaśniejsza. Zabudowa kamperowa waży 300–600 kg, co zostawia minimalny margines na pasażerów i bagaże – a do tego dochodzi masa przyczepy.
 
 {{% expert name="Marek Kowalczyk" %}}
-Kierowcy kamperów na bazie busów 3,5 t często zapominają, że DMC dotyczy busa z pełnym załadunkiem, a nie pustego pojazdu. Jeśli Twój kamper z pasażerami waży 3400 kg i podczepasz przyczepę 750 kg, łączna masa rzeczywista to 4150 kg. Nawet jeśli masz odpowiednie prawo jazdy, policja może sprawdzić faktyczną wagę. Zostaw margines bezpieczeństwa rzędu 200–300 kg.
+Kierowcy kamperów na bazie busów 3,5 t często zapominają, że DMC dotyczy busa z pełnym załadunkiem, a nie pustego pojazdu. Jeśli Twój kamper z pasażerami waży 3400 kg i podczepiasz przyczepę 750 kg, łączna masa rzeczywista to 4150 kg. Nawet jeśli masz odpowiednie prawo jazdy, policja może sprawdzić faktyczną masę. Zostaw margines bezpieczeństwa rzędu 200–300 kg.
 {{% /expert %}}
 
 ## Przekroczenie DMC zespołu pojazdów – kary 2026
 
-Przekroczenie DMC zespołu pojazdów to wykroczenie drogowe. Inspekcja Transportu Drogowego i Policja dysponują wagami preselekcyjnymi i najazdowymi, aby weryfikować masę zestawu. Należy też bezwzględnie pamiętać o limitach prędkości – zgodnie z Art. 20 Prawa o ruchu drogowym, w Polsce pojazd z przyczepą może jechać maksymalnie 70 km/h na drodze jednojezdniowej oraz 80 km/h na autostradach i drogach ekspresowych.
+Przekroczenie DMC zespołu pojazdów to wykroczenie drogowe. Inspekcja Transportu Drogowego i Policja dysponują wagami preselekcyjnymi i najazdowymi, aby weryfikować masę zestawu. Należy też bezwzględnie pamiętać o limitach prędkości – zgodnie z Art. 20 Prawa o ruchu drogowym w Polsce pojazd z przyczepą może jechać maksymalnie 70 km/h na drodze jednojezdniowej oraz 80 km/h na autostradach i drogach ekspresowych.
 
 ### Taryfikator mandatów dla busów do 3,5 t
 

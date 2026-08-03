@@ -14,9 +14,9 @@ faq:
   - question: "Ile KM ma silnik JTD w Fiacie Doblò?"
     answer: "Opisywany tu Fiat Doblò JTD z pierwszej generacji z silnikiem 1.9 JTD ma 100 KM i 200 Nm momentu obrotowego."
   - question: "Czy Fiat Doblò JTD ma DPF?"
-    answer: "W typowych egzemplarzach Fiat Doblò I 1.9 JTD 100 KM spotykanych na polskim rynku wtórnym filtra DPF zwykle nie ma. Tę informację trzeba jednak odnosić do konkretnej wersji, rocznika i specyfikacji."
+    answer: "W typowych egzemplarzach Fiata Doblò I 1.9 JTD 100 KM spotykanych na polskim rynku wtórnym filtra DPF zwykle nie ma. Tę informację trzeba jednak odnosić do konkretnej wersji, rocznika i specyfikacji."
   - question: "Jak trwały jest silnik 1.9 JTD w Doblò?"
-    answer: "Przy regularnej obsłudze 1.9 JTD uchodzi za trwały silnik. Na rynku spotykane są egzemplarze z bardzo dużymi przebiegami bez kapitalnego remontu, ale kluczowe są terminowe wymiany oleju, rozrządu i dobra kondycja osprzętu wtryskowego."
+    answer: "Przy regularnej obsłudze 1.9 JTD uchodzi za trwały silnik. Na rynku spotykane są egzemplarze z bardzo dużymi przebiegami bez kapitalnego remontu, ale kluczowe są terminowe wymiany oleju i rozrządu oraz dobra kondycja osprzętu wtryskowego."
 lead: "Silnik 1.9 JTD 100 KM w Fiacie Doblò I to starszy diesel, ale nadal ma mocną pozycję na rynku wtórnym. W typowych egzemplarzach spotykanych w Polsce użytkownicy cenią go za prostszą obsługę niż w nowszych dieslach, dobrą trwałość mechaniczną i użyteczny moment obrotowy."
 youtube: "5xfRg3DH_F4"
 youtube_title: "Fiat Doblò 2.0 MultiJet Lounge (2015) - test [PL]"
@@ -47,7 +47,7 @@ W praktyce szczególnie ważna jest ładowność, bo w Doblò I zależnie od wer
 
 ## Spalanie 1.9 JTD – dane realne
 
-Na zużycie paliwa w Doblò I bardzo mocno wpływa wersja nadwozia, masa i sposób użytkowania. Różnice rzędu 0,5–1,5 l/100 km między krótkim i długim nadwoziem, wersją Cargo i Combi oraz jazdą solo i z ładunkiem są w tym modelu całkowicie normalne.
+Na zużycie paliwa w Doblò I bardzo mocno wpływa wersja nadwozia, masa i sposób użytkowania. Różnice rzędu 0,5–1,5 l/100 km między krótkim a długim nadwoziem, wersją Cargo a Combi oraz jazdą solo a jazdą z ładunkiem są w tym modelu całkowicie normalne.
 
 Dane katalogowe: ok. 5,8–6,2 l/100 km. Realnie:
 
@@ -58,7 +58,7 @@ Dane katalogowe: ok. 5,8–6,2 l/100 km. Realnie:
 
 W praktyce lżejsze Combi używane bez obciążenia potrafi wypaść lepiej niż robocze Cargo. Z kolei auto stale wożące ładunek zużyje zauważalnie więcej paliwa, nawet jeśli silnik jest w dobrej kondycji.
 
-To wyższe spalanie niż w nowszych MultiJetach, ale dla wielu użytkowników rekompensatą pozostaje prostszy osprzęt i starsza, mniej skomplikowana konstrukcja.
+To wyższe spalanie niż w nowszych MultiJetach, ale wielu użytkownikom rekompensują to prostszy osprzęt i starsza, mniej skomplikowana konstrukcja.
 
 ## Dlaczego JTD jest ceniony mimo wieku
 
@@ -70,7 +70,7 @@ Trzy najważniejsze powody popularności:
 - prosta elektryka i mniej złożony osprzęt niż w nowszych dieslach
 - dobra trwałość mechaniczna przy regularnym serwisie
 
-Dla kierowcy, który szuka taniego auta roboczego i akceptuje wiek pojazdu, taki diesel nadal bywa rozsądnym wyborem. Warunek jest jeden – stan nadwozia i podwozia musi być równie dobry jak stan silnika.
+Dla kierowcy, który szuka taniego auta roboczego i akceptuje wiek pojazdu, taki diesel nadal bywa rozsądnym wyborem. Warunek jest jeden – stan nadwozia i podwozia muszą być równie dobre jak stan silnika.
 
 ![Fiat Doblò JTD generacji I – widok zewnętrzny](/images/fiat-doblo-jtd-hero.webp)
 
@@ -81,7 +81,7 @@ W starszym Doblò problemy zwykle nie kończą się na samym silniku. O kondycji
 Najważniejsze punkty kontrolne:
 
 - Pasek rozrządu – bezwzględna wymiana co 120 tys. km lub 5 lat. Zaniedbanie grozi poważną awarią silnika.
-- Wtryskiwacze i cały układ wtryskowy – nie warto podawać sztywnego przebiegu awarii bez sprawdzenia konkretnej wersji osprzętu. Typowe objawy to długi rozruch, dymienie, nierówna praca i spadek mocy.
+- Wtryskiwacze i cały układ wtryskowy – nie warto podawać uniwersalnego przebiegu awarii bez sprawdzenia konkretnej wersji osprzętu. Typowe objawy to długi rozruch, dymienie, nierówna praca i spadek mocy.
 - Pompa wysokiego ciśnienia – jej stan zależy także od jakości paliwa i ewentualnego opiłkowania układu. Objawy to problemy z rozruchem, spadki ciśnienia na listwie i nierówna praca pod obciążeniem.
 - Turbosprężarka – zamiast patrzeć na sam przebieg, trzeba ocenić stan węży, dolotu, ewentualne wycieki oleju i reakcję auta pod obciążeniem. Objawy zużycia to dymienie, spadek mocy i przechodzenie w tryb awaryjny.
 - Przepływomierz – może powodować falowanie mocy, ospałą reakcję na gaz i błędną ocenę obciążenia silnika.
@@ -89,7 +89,7 @@ Najważniejsze punkty kontrolne:
 - Przewody podciśnienia – nieszczelności powodują niestabilną pracę turbo i utratę elastyczności.
 - Nieszczelności dolotu – skutkują spadkiem mocy, głośniejszą pracą i kopceniem.
 - Termostat – jeśli silnik nagrzewa się zbyt wolno, rośnie spalanie i pogarsza się komfort zimą.
-- Świece żarowe – ich zużycie daje trudniejszy rozruch na zimno.
+- Świece żarowe – ich zużycie utrudnia rozruch na zimno.
 - Masy i elektryka – w starszych egzemplarzach zdarzają się problemy z połączeniami masowymi i ogólną elektryką osprzętu.
 - Korozja przewodów hamulcowych – obowiązkowy punkt oględzin od spodu.
 - Tylna belka i okolice jej mocowań – trzeba sprawdzić stan metalu i ewentualne ślady napraw.
@@ -101,7 +101,7 @@ W artykule mówimy o egzemplarzach, które najczęściej spełniają normę Euro
 
 ## Wiek pojazdu a zakup – na co zwrócić uwagę
 
-W tym tekście opis dotyczy Doblò I z roczników pierwszej generacji spotykanych dziś jako auta 16–26-letnie. W takim wieku o opłacalności zakupu częściej decyduje blacharka i podwozie niż sam fakt, że silnik 1.9 JTD ma dobrą opinię.
+W tym tekście opis dotyczy Doblò I z roczników pierwszej generacji spotykanych dziś jako auta 16–26-letnie. W takim wieku o opłacalności zakupu częściej decydują blacharka i podwozie niż sam fakt, że silnik 1.9 JTD ma dobrą opinię.
 
 ### Lista kontrolna przed zakupem Doblò JTD
 
@@ -122,9 +122,9 @@ Lista kontrolna:
 
 ### Ceny używanych Doblò z silnikiem JTD
 
-Ceny takich aut są mocno zależne od rocznika, wersji nadwozia, liczby miejsc, stanu blacharskiego i historii eksploatacji. Bez wskazania konkretnego źródła ogłoszeń i daty obserwacji rynku lepiej traktować każdą kwotę wyłącznie orientacyjnie.
+Ceny takich aut mocno zależą od rocznika, wersji nadwozia, liczby miejsc, stanu blacharskiego i historii eksploatacji. Bez wskazania konkretnego źródła ogłoszeń i daty obserwacji rynku lepiej traktować każdą kwotę wyłącznie orientacyjnie.
 
-Niezależnie od ceny zakupu warto zostawić budżet na oględziny w warsztacie i podstawowy pakiet startowy po zakupie. W przypadku starego auta użytkowego to zwykle lepsza inwestycja niż szukanie pozornie najtańszego egzemplarza.
+Niezależnie od ceny zakupu warto zostawić budżet na oględziny w warsztacie i podstawowy serwis po zakupie. W przypadku starego auta użytkowego to zwykle lepsza inwestycja niż szukanie pozornie najtańszego egzemplarza.
 
 {{% expert name="Redakcja BusManiak.pl" %}}
 W Doblò I z silnikiem 1.9 JTD najpierw oceniamy blacharkę, podwozie i punkty mocowania zawieszenia, a dopiero potem sam motor. Zużyty osprzęt silnika zwykle da się naprawić, ale zaawansowana korozja progów, podłogi czy tylnej części nadwozia potrafi całkowicie przekreślić sens zakupu.
@@ -149,4 +149,4 @@ Porównanie z nowszymi dieslami ma sens tylko wtedy, gdy jasno zaznaczymy, że c
 | Rozrząd | wymiana co 120 tys. km lub 5 lat | zależnie od wersji | zależnie od wersji |
 | Cena zakupu | zwykle najniższa | zwykle wyższa | zwykle wyższa |
 
-W praktyce 1.9 JTD broni się prostotą i niższym progiem wejścia. Nowsze MultiJety są oszczędniejsze i młodsze, ale ich osprzęt bywa bardziej złożony, a ryzyko kosztów związanych z emisją spalin i kołem dwumasowym jest zwykle większe.
+W praktyce 1.9 JTD broni się prostotą i niższą ceną nabycia. Nowsze MultiJety są oszczędniejsze i młodsze, ale ich osprzęt bywa bardziej złożony, a ryzyko kosztów związanych z emisją spalin i kołem dwumasowym jest zwykle większe.

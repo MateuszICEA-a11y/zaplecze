@@ -12,14 +12,14 @@ youtube: "bKDW0v_tOng"
 youtube_title: "Opel Combo 1.5 Diesel Test - Kombivan dla rodziny"
 main_keyword: "opel combo"
 volume: 18100
-lead: "Opel Combo to kompaktowy kombivan, którego linia wywodzi się od 1986 roku, a jako Opel Combo funkcjonuje od 1994 roku. Obecna odsłona (Combo E) dzieli platformę EMP2 z Citroënem Berlingo i Peugeotem Partnerem. Silniki 1.5 Diesel i 1.2 Turbo mają od 75 do 130 KM, wersja osobowa Life występuje także na 7 miejsc, a w gamie jest też elektryczny e-Combo."
+lead: "Opel Combo to kompaktowy kombivan, którego linia modelowa sięga 1986 roku, a pod nazwą Opel Combo funkcjonuje od 1994 roku. Obecna odsłona (Combo E) dzieli platformę EMP2 z Citroënem Berlingo i Peugeotem Partnerem. Silniki 1.5 Diesel i 1.2 Turbo mają od 75 do 130 KM, wersja osobowa Life występuje także w układzie 7-osobowym, a w gamie jest też elektryczny e-Combo."
 faq:
   - question: "Czy Combo E to to samo co Citroën Berlingo?"
-    answer: "Tak – Combo E dzieli z Berlingo III i Peugeot Partnerem III platformę PSA EMP2 oraz silniki. Różnice sprowadzają się do stylistyki nadwozia i systemu infotainment."
+    answer: "Tak – Combo E dzieli z Berlingo III i Peugeotem Partnerem III platformę PSA EMP2 oraz silniki. Różnice sprowadzają się do stylistyki nadwozia i systemu infotainment."
   - question: "Jakie silniki oferuje Combo E?"
     answer: "Benzyna 1.2 PureTech (110/130 KM), diesel 1.5 BlueHDi (75/100/130 KM) oraz elektryczny e-Combo (136 KM, zasięg 280 km WLTP)."
   - question: "Co to jest Combo Life?"
-    answer: "Wersja osobowa z przeszklonymi bokami, rozkładaną kanapą i opcją 7 miejsc. Odpowiada Berlingo Multispace i Peugeot Rifterowi."
+    answer: "Wersja osobowa z przeszklonymi bokami, rozkładaną kanapą i opcją 7 miejsc. Odpowiada Berlingo Multispace i Peugeotowi Rifterowi."
 sources:
   - "Wikipedia – PSA EMP2 platform"
   - "dane techniczne Opel Polska (opel.pl)"
@@ -29,19 +29,19 @@ sources:
 
 ## Historia i generacje Opla Combo (1986–obecnie)
 
-Historia Opla Combo to przejście od prostego małego dostawczaka do nowoczesnego kombivana dostępnego jako van roboczy, auto rodzinne i elektryk. Poszczególne generacje różniły się nie tylko stylistyką, ale też bazą techniczną, wymiarami i zakresem zastosowań.
+Historia Opla Combo to przejście od prostego małego dostawczaka do nowoczesnego kombivana dostępnego jako van roboczy, auto rodzinne i elektryk. Poszczególne generacje różniły się nie tylko stylistyką, lecz także bazą techniczną, wymiarami i zakresem zastosowań.
 
 ### Combo A / Kadett Combo (1986–1994)
 
 Najwcześniejsze wcielenie linii modelowej było oferowane na części rynków jako Kadett Combo. Była to pochodna Kadetta E z nadwoziem typu high-cube, czyli z wysoko poprowadzoną częścią ładunkową.
 
-To prosty dostawczak zbudowany według starej szkoły – lekki, nieskomplikowany i nastawiony głównie na pracę w mieście. Jeśli patrzeć szerzej na rodowód modelu, to właśnie tutaj zaczyna się historia Combo.
+To prosty dostawczak zbudowany według starej szkoły – lekki, nieskomplikowany i nastawiony głównie na pracę w mieście. Jeśli spojrzeć szerzej na rodowód modelu, to właśnie tutaj zaczyna się historia Combo.
 
 ### Opel Combo B (1994–2001)
 
 To pierwsza generacja funkcjonująca jako Opel Combo. Auto było pochodną Corsy B i występowało jako praktyczny furgon z wysokim nadwoziem typu high-cube.
 
-Gama silników obejmowała benzynowe 1.4 i 1.6 oraz diesle 1.7 D i 1.7 DI. Był to nadal prosty samochód roboczy, ale wyraźnie bardziej dopracowany od poprzednika i lepiej dopasowany do potrzeb małych firm.
+Gama silników obejmowała benzynowe 1.4 i 1.6 oraz diesle 1.7 D i 1.7 DI. Był to nadal prosty samochód roboczy, ale wyraźnie bardziej dopracowany niż poprzednik i lepiej dopasowany do potrzeb małych firm.
 
 ### Opel Combo C (2001–2011)
 
@@ -51,19 +51,19 @@ W gamie znalazły się między innymi benzynowe 1.4 oraz diesle 1.3 CDTI i 1.7 C
 
 ### Opel Combo D (2011–2018)
 
-Generacja D była technicznym bliźniakiem Fiata Doblo II. To był duży skok użytkowy – auto oferowano w długościach około **4390 mm** i **4740 mm**, a pojemność przestrzeni ładunkowej wynosiła od **3,4 do 5,4 m3**.
+Generacja D była technicznym bliźniakiem Fiata Doblò II. To był duży krok naprzód pod względem użytkowym – auto oferowano w długościach około **4390 mm** i **4740 mm**, a pojemność przestrzeni ładunkowej wynosiła od **3,4 do 5,4 m3**.
 
-W gamie były m.in. **1.3 CDTI, 1.6 CDTI, 2.0 CDTI oraz benzynowe 1.4 i wersje CNG zależnie od rynku**. W tej generacji Combo przestało być wyłącznie małym vanem do miasta i zaczęło realnie konkurować z większymi kombivanami pod względem funkcjonalności.
+W gamie były m.in. **1.3 CDTI, 1.6 CDTI, 2.0 CDTI oraz benzynowe 1.4 i wersje CNG w zależności od rynku**. W tej generacji Combo przestało być wyłącznie małym vanem do miasta i zaczęło na serio konkurować z większymi kombivanami pod względem funkcjonalności.
 
 ### Opel Combo E (od 2018)
 
 Piąta generacja powstała na modułowej [platformie PSA EMP2](https://en.wikipedia.org/wiki/PSA_EMP2_platform) i stała się bliźniakiem takich modeli jak [Citroën Berlingo](/modele/citroen-berlingo/) oraz [Peugeot Partner](/modele/peugeot-partner/). W ofercie są wersje Cargo, Life i e-Combo.
 
-Nadwozie występuje w dwóch długościach: Standard/M **4403 mm** oraz XL/Long **4753 mm**. Pojemność przestrzeni ładunkowej wynosi **3,3–4,4 m3**, na pakę wchodzą **2 europalety**, a po liftingu z 2023/2024 model dostał nowy pas przedni i zaktualizowane systemy ADAS.
+Nadwozie występuje w dwóch długościach: Standard/M **4403 mm** oraz XL/Long **4753 mm**. Pojemność przestrzeni ładunkowej wynosi **3,3–4,4 m3**, na pakę wchodzą **2 europalety**, a po liftingu z lat 2023/2024 model dostał nowy pas przedni i zaktualizowane systemy ADAS.
 
 ## Dane techniczne i wymiary
 
-Aktualne Combo E występuje jako dostawczy Cargo i osobowy Life. Najważniejsze liczby zależą od długości nadwozia, układu kabiny i konfiguracji przestrzeni ładunkowej.
+Obecne Combo E występuje jako dostawczy Cargo i osobowy Life. Najważniejsze liczby zależą od długości nadwozia, układu kabiny i konfiguracji przestrzeni ładunkowej.
 
 ### Opel Combo E Cargo
 
@@ -79,7 +79,7 @@ Aktualne Combo E występuje jako dostawczy Cargo i osobowy Life. Najważniejsze 
 | Długość z systemem FlexCargo | do 3090 mm | do 3440 mm |
 | Szerokość między nadkolami | 1229 mm | 1229 mm |
 | DMC | ok. 2320–2400 kg | ok. 2320–2400 kg |
-| Ładowność | ok. 650–1000 kg zależnie od wersji | ok. 650–1000 kg zależnie od wersji |
+| Ładowność | ok. 650–1000 kg w zależności od wersji | ok. 650–1000 kg w zależności od wersji |
 | Europalety | 2 | 2 |
 
 ### Opel Combo Life
@@ -115,7 +115,7 @@ W wersji dostawczej najważniejsze są trzy rzeczy: długość paki, objętość
 | Długość z FlexCargo | do 3090 mm | do 3440 mm |
 | Szerokość między nadkolami | 1229 mm | 1229 mm |
 | DMC | ok. 2320–2400 kg | ok. 2320–2400 kg |
-| Ładowność | ok. 650–1000 kg zależnie od konfiguracji | ok. 650–1000 kg zależnie od konfiguracji |
+| Ładowność | ok. 650–1000 kg w zależności od konfiguracji | ok. 650–1000 kg w zależności od konfiguracji |
 | Liczba europalet | 2 | 2 |
 
 {{% info title="Wskaźnik przeciążenia" icon="engineering" %}}
@@ -124,18 +124,18 @@ W części wersji Cargo można spotkać opcjonalny wskaźnik przeciążenia. To 
 
 ## Silniki Combo (75–136 KM)
 
-W aktualnym Combo E gama napędów jest prosta: diesle 1.5, benzynowe 1.2 Turbo oraz elektryczny e-Combo. Różnice między wersjami sprowadzają się nie tylko do mocy, ale też do momentu obrotowego, skrzyni biegów, norm emisji i okresu produkcji.
+W obecnym Combo E gama napędów jest prosta: diesle 1.5, benzynowe 1.2 Turbo oraz elektryczny e-Combo. Różnice między wersjami sprowadzają się nie tylko do mocy, lecz także do momentu obrotowego, skrzyni biegów, norm emisji i okresu produkcji.
 
 | Silnik | Moc | Moment | Norma emisji | Skrzynia | Spalanie / zużycie | Uwagi |
 |--------|-----|--------|--------------|----------|--------------------|-------|
-| 1.5 Diesel | 75 KM | 230 Nm | Euro 6d-TEMP / Euro 6d zależnie od rocznika | 5/6MT | ok. 5,5–6,5 l/100 km | podstawowy diesel |
+| 1.5 Diesel | 75 KM | 230 Nm | Euro 6d-TEMP / Euro 6d w zależności od rocznika | 5/6MT | ok. 5,5–6,5 l/100 km | podstawowy diesel |
 | 1.5 Diesel | 100 KM | 250 Nm | Euro 6d | 6MT | ok. 5,5–6,7 l/100 km | najczęściej wybierany kompromis |
 | 1.5 Diesel | 130 KM | 300 Nm | Euro 6d | 6MT lub 8AT | ok. 5,8–6,9 l/100 km | najlepszy do trasy i pełnego obciążenia |
 | 1.2 Turbo | 110 KM | 205 Nm | Euro 6d | 6MT | ok. 6,8–8,0 l/100 km | benzyna do lżejszej pracy |
-| 1.2 Turbo | 130 KM | 230 Nm | Euro 6d | 6MT lub 8AT (zależnie od rynku i rocznika) | ok. 7,0–8,3 l/100 km | mocniejsza benzyna |
+| 1.2 Turbo | 130 KM | 230 Nm | Euro 6d | 6MT lub 8AT (w zależności od rynku i rocznika) | ok. 7,0–8,3 l/100 km | mocniejsza benzyna |
 | e-Combo | 100 kW / 136 KM | 260 Nm | – | przekładnia automatyczna | 18–22 kWh/100 km | akumulator 50 kWh brutto / użyteczne ok. 45 kWh |
 
-e-Combo oferuje ładowanie AC **7,4 lub 11 kW** i DC do **100 kW**, a zasięg WLTP wynosi **do 275–280 km** zależnie od wersji i homologacji. W praktyce to odmiana sensowna głównie do miasta i stałych tras lokalnych.
+e-Combo oferuje ładowanie AC **7,4 lub 11 kW** i DC do **100 kW**, a zasięg WLTP wynosi **do 275–280 km** w zależności od wersji i homologacji. W praktyce to odmiana sensowna głównie do miasta i stałych tras lokalnych.
 
 {{% expert name="Marek Kowalczyk" %}}
 Jeśli Combo ma regularnie jeździć z ładunkiem albo po autostradzie, celowałbym w 1.5 Diesel 100 lub 130 KM. Słabsze 75 KM da radę w mieście, ale przy pełnej pace zapas mocy szybko się kończy.
@@ -147,7 +147,7 @@ W gamie Combo są dwie główne ścieżki: użytkowa i osobowa. Różnice nie ko
 
 ### Najważniejsze warianty nadwozia
 
-To nie jest jedno auto w kilku detalach. W praktyce Combo Cargo i Combo Life trafiają do zupełnie innych użytkowników.
+To nie jest jedno auto różniące się jedynie detalami. W praktyce Combo Cargo i Combo Life trafiają do zupełnie innych użytkowników.
 
 | Wersja | Dla kogo | Najważniejsze parametry |
 |--------|----------|-------------------------|
@@ -165,20 +165,20 @@ To nie jest jedno auto w kilku detalach. W praktyce Combo Cargo i Combo Life tra
 - **Cargo z FlexCargo** – dobry wariant, gdy oprócz paczek przewozisz też dłuższe elementy.
 - **Crew Cab** – rozwiązanie dla ekip serwisowych i budowlanych, które wożą ludzi i sprzęt jednym autem.
 - **Life** – wersja bardziej rodzinna i uniwersalna, z naciskiem na przestrzeń pasażerską.
-- **e-Combo** – sensowne tam, gdzie auto robi powtarzalne, lokalne trasy i wraca na ładowanie.
+- **e-Combo** – sensowne tam, gdzie auto pokonuje powtarzalne, lokalne trasy i wraca na ładowanie.
 
-W praktyce Cargo jest wyborem dla firm, a Life dla rodzin i osób szukających auta bardziej uniwersalnego. Plusem obu wersji jest to samo: kompaktowe gabaryty na co dzień i sensownie ustawiona przestrzeń wewnątrz.
+W praktyce Cargo jest wyborem dla firm, a Life dla rodzin i osób szukających auta bardziej uniwersalnego. Obie wersje łączy to samo: kompaktowe gabaryty na co dzień i sensownie ustawiona przestrzeń wewnątrz.
 
 ## Typowe usterki Opel Combo
 
-Najczęstsze problemy różnią się zależnie od generacji i silnika. W starszych Combo dominują tematy mechaniczne i korozja, w nowszych dochodzą układy oczyszczania spalin, elektronika i specyficzne słabe punkty konkretnych jednostek.
+Najczęstsze problemy różnią się w zależności od generacji i silnika. W starszych Combo dominują kwestie mechaniczne i korozja, w nowszych dochodzą układy oczyszczania spalin, elektronika i specyficzne słabe punkty konkretnych jednostek.
 
 ### 1.2 Turbo
 
 - **Pasek rozrządu pracujący w oleju** – to najważniejszy punkt kontrolny w benzynowych 1.2.
 - Gdy pasek zaczyna się łuszczyć, zanieczyszczenia mogą trafić do układu smarowania.
 - Wymiana rozrządu z czyszczeniem smoka i oleju to zwykle **2500–4500 zł**.
-- Jeśli temat zostanie przegapiony, remont silnika może kosztować **7000–12000 zł**.
+- Jeśli temat zostanie przeoczony, remont silnika może kosztować **7000–12000 zł**.
 
 ### 1.5 Diesel
 
@@ -196,7 +196,7 @@ Najczęstsze problemy różnią się zależnie od generacji i silnika. W starszy
 ### Zawieszenie i elektronika Combo E
 
 - **Czujniki parkowania** – pojedynczy czujnik to zwykle **200–600 zł**.
-- **Multimedia i restarty ekranu** – czasem wystarcza aktualizacja za **200–500 zł**, ale przy problemie modułu robi się drożej.
+- **Multimedia i restarty ekranu** – czasem wystarcza aktualizacja za **200–500 zł**, ale przy problemie z modułem robi się drożej.
 - To nie są usterki unieruchamiające auto, ale w firmowym vanie potrafią irytować bardziej niż drobna mechanika.
 
 ### Korozja Combo C
@@ -228,7 +228,7 @@ Na rynku wtórnym ceny Combo mocno zależą od generacji, rodzaju nadwozia i his
 | Model / rocznik | Silnik / wersja | Typowy przebieg | Cena min | Cena med | Cena max |
 |-----------------|-----------------|-----------------|----------|----------|----------|
 | Nowy Opel Combo Cargo po liftingu (2024/2025) | 1.5 Diesel, wersje użytkowe | nowy | **95–110 tys. zł netto** | – | **115–135 tys. zł netto** |
-| Nowy Opel Combo Life (2024/2025) | osobowy, zależnie od wersji i rynku | nowy | **120–145 tys. zł brutto** | – | – |
+| Nowy Opel Combo Life (2024/2025) | osobowy, w zależności od wersji i rynku | nowy | **120–145 tys. zł brutto** | – | – |
 | Nowy e-Combo (2024/2025) | elektryczny | nowy | **150–170 tys. zł brutto** | – | – |
 | Combo C 2004–2006 | benzyna / diesel | zwykle wysoki | **6–8 tys. zł** | **8–9 tys. zł** | **10 tys. zł** |
 | Combo C 2007–2011 | benzyna / diesel | zwykle wysoki | **10–12 tys. zł** | **13–15 tys. zł** | **18 tys. zł** |

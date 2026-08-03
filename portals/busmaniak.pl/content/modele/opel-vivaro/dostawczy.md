@@ -38,7 +38,7 @@ Brak opcji wysokiego dachu odróżnia Vivaro C od części konkurentów. Ford Tr
 
 ## Przestrzeń ładunkowa Vivaro – wymiary
 
-W praktyce największą różnicę między wersjami S, M i L robi nie tylko całkowita długość auta, ale przede wszystkim długość użytkowa podłogi. To ona decyduje, czy wózek, regał, długie profile albo zabudowa serwisowa zmieszczą się bez kombinowania.
+W praktyce największą różnicę między wersjami S, M i L stanowi nie tylko całkowita długość auta, ale przede wszystkim długość użytkowa podłogi. To ona decyduje, czy wózek, regał, długie profile albo zabudowa serwisowa zmieszczą się bez kombinowania.
 
 ### Vivaro C Standard (L1)
 
@@ -53,7 +53,7 @@ Dla uporządkowania nomenklatury: parametry odpowiadające długości użytkowej
 Dla porównania, wersja S ma ok. 2162 mm długości użytkowej i 5,3 m³, a L – ok. 2862 mm oraz 6,6 m³. Z systemem FlexCargo/Moduwork maksymalna długość przewożonego elementu rośnie do ok. 3320 mm w S, 3670 mm w M i 4020 mm w L, a objętość zwiększa się o ok. 0,5 m³.
 
 {{% expert name="Marek Kowalczyk" %}}
-Szerokość między nadkolami na poziomie ok. 1258–1268 mm nie blokuje ustawienia pojedynczej europalety poprzecznie, bo sama paleta ma 1200 x 800 mm. Ograniczenie dotyczy raczej liczby palet i układu załadunku – w krótszych wersjach zwykle mieszczą się 2 europalety, a w najdłuższej 3.
+Szerokość między nadkolami wynosząca ok. 1258–1268 mm nie blokuje ustawienia pojedynczej europalety poprzecznie, bo sama paleta ma 1200 x 800 mm. Ograniczenie dotyczy raczej liczby palet i układu załadunku – w krótszych wersjach zwykle mieszczą się 2 europalety, a w najdłuższej 3.
 {{% /expert %}}
 
 ## Ładowność i DMC Opel Vivaro furgon
@@ -67,13 +67,13 @@ W przypadku Vivaro C nie ma jednej uniwersalnej wartości DMC i ładowności dla
 
 Ładowność zwykle mieści się w przedziale ok. 1000–1400 kg. Dopuszczalna masa przyczepy z hamulcem dla wielu wersji wynosi do 2500 kg.
 
-Masa własna nie powinna być podawana bez kontekstu, bo mocno zmienia się zależnie od konfiguracji. Automat, podwójne drzwi przesuwne, koło zapasowe, hak, zabudowa warsztatowa czy dodatkowe fotele potrafią obniżyć ładowność o kilkadziesiąt do ponad 100 kg, a w zależności od metodologii homologacyjnej w masie gotowej do jazdy może być też uwzględniona masa kierowcy 75 kg.
+Masa własna nie powinna być podawana bez kontekstu, bo mocno zmienia się zależnie od konfiguracji. Automat, podwójne drzwi przesuwne, koło zapasowe, hak, zabudowa warsztatowa czy dodatkowe fotele potrafią obniżyć ładowność o kilkadziesiąt, a nawet ponad 100 kg, a w zależności od procedury homologacyjnej w masie gotowej do jazdy może być uwzględniona także masa kierowcy (75 kg).
 
 ![Opel Vivaro dostawczy – przestrzeń ładunkowa i dostęp](/images/opel-vivaro-dostawczy-hero.webp)
 
 ## Silniki Vivaro dostawczego
 
-W generacji C typowa gama diesli obejmuje silniki 1.5D 100 KM i 120 KM oraz 2.0D 145 KM i 177 KM. Z większością wersji występowała 6-biegowa skrzynia manualna, a w wybranych odmianach 2.0D dostępny był 8-biegowy automat EAT8/Aisin.
+W generacji C typowa gama diesli obejmuje silniki 1.5D 100 KM i 120 KM oraz 2.0D 145 KM i 177 KM. W większości wersji występowała 6-biegowa skrzynia manualna, a w wybranych odmianach 2.0D dostępny był 8-biegowy automat EAT8/Aisin.
 
 Od 2020 roku w ofercie pojawił się także Vivaro-e. To wersja elektryczna o mocy 100 kW/136 KM, z akumulatorem 50 kWh lub 75 kWh i zasięgiem WLTP do ok. 230 km albo 330 km.
 
@@ -96,4 +96,4 @@ Szerokość otworu bocznych drzwi przesuwnych wynosi ok. 935 mm, a wysokość ok
 Fabryczna przegroda kabinowa ze składanym okienkiem może współpracować z systemem FlexCargo/Moduwork. Dzięki klapie w przegrodzie długość przewożonych elementów rośnie z ok. 2162 do 3320 mm w S, z 2512 do 3670 mm w M oraz z 2862 do 4020 mm w L, a objętość zwiększa się o ok. 0,5 m³.
 {{% /info %}}
 
-Vivaro C jest technicznie spokrewnione z modelami z rodziny PSA/Stellantis opartymi na platformie EMP2 – Citroënem Jumpy/Dispatch, Peugeotem Expertem, Toyotą ProAce, a później także Fiatem Scudo. Renault Trafic było bliźniakiem wcześniejszych generacji Vivaro A i B, ale nie Vivaro C.
+Vivaro C jest technicznie spokrewniony z modelami z rodziny PSA/Stellantis opartymi na platformie EMP2 – Citroënem Jumpy/Dispatch, Peugeotem Expertem, Toyotą ProAce, a później także Fiatem Scudo. Renault Trafic był bliźniakiem wcześniejszych generacji Vivaro A i B, ale nie Vivaro C.

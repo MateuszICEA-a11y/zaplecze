@@ -40,19 +40,19 @@ Po latach to właśnie prosta mechanika i użytkowy charakter okazały się najw
 
 ### Peugeot Expert II (2007–2016)
 
-Druga generacja była wyraźnie większa od poprzednika i celowała już nie tylko w miejskie dostawy, ale też w cięższą pracę flotową. Expert II miał szerokość 1895 mm, dwie długości nadwozia (L1 i L2 / dwa rozstawy osi), a na części rynków także dwie wysokości dachu.
+Druga generacja była wyraźnie większa od poprzednika i celowała już nie tylko w miejskie dostawy, lecz także w cięższą pracę flotową. Expert II miał szerokość 1895 mm, dwie długości nadwozia (L1 i L2 / dwa rozstawy osi), a na części rynków także dwie wysokości dachu.
 
 W gamie silników znalazły się jednostki 1.6 HDi 90 KM oraz 2.0 HDi 120/128/136/163 KM. W 2012 roku model przeszedł lifting, a w tym samym roku do rodziny dołączyła [Toyota ProAce](/modele/toyota-proace/). To właśnie ta generacja zdobyła tytuł International Van of the Year 2008.
 
 ### Peugeot Expert III (od 2016)
 
-Trzecia generacja przesiadła się na platformę [EMP2](https://en.wikipedia.org/wiki/PSA_EMP2_platform), co pozwoliło obniżyć masę i poprawić funkcjonalność nadwozia. W ofercie pojawiły się trzy długości: Compact 4609 mm, Standard 4959 mm i Long 5309 mm, a ładowność wzrosła do ok. 1375 kg zależnie od wersji.
+Trzecia generacja przesiadła się na platformę [EMP2](https://en.wikipedia.org/wiki/PSA_EMP2_platform), co pozwoliło obniżyć masę i poprawić funkcjonalność nadwozia. W ofercie pojawiły się trzy długości: Compact 4609 mm, Standard 4959 mm i Long 5309 mm, a ładowność wzrosła do ok. 1375 kg w zależności od wersji.
 
-Bliźniakami tej generacji są Citroën Jumpy III, Toyota ProAce II, [Opel Vivaro](/modele/opel-vivaro/) C oraz [Fiat Scudo](/modele/fiat-scudo/) III. W 2020 roku do gamy dołączył e-Expert, a w połowie dekady 2020 odświeżono całą rodzinę modelową. Produkcja odbywała się w Sevel Nord, Hordain (Francja); dodatkowo w Kałudze (Rosja, wybrane rynki/okres).
+Bliźniakami tej generacji są Citroën Jumpy III, Toyota ProAce II, [Opel Vivaro](/modele/opel-vivaro/) C oraz [Fiat Scudo](/modele/fiat-scudo/) III. W 2020 roku do gamy dołączył e-Expert, a w połowie lat dwudziestych odświeżono całą rodzinę modelową. Produkcja odbywała się w Sevel Nord, Hordain (Francja); dodatkowo w Kałudze (Rosja, wybrane rynki i okresy).
 
 ## Wymiary Experta III
 
-W przypadku trzeciej generacji najważniejsza jest różnica między trzema długościami nadwozia. Expert potrafi być jednocześnie kompaktowy w mieście i bardzo praktyczny w pracy z długim towarem.
+W przypadku trzeciej generacji najważniejsza jest różnica między trzema długościami nadwozia. Expert potrafi być jednocześnie zwrotny w mieście i bardzo praktyczny w pracy z długim ładunkiem.
 
 | Parametr | Compact (L1) | Standard (L2) | Long (L3) |
 |----------|--------------|---------------|-----------|
@@ -62,7 +62,7 @@ W przypadku trzeciej generacji najważniejsza jest różnica między trzema dłu
 | Rozstaw osi | 2925 mm | 3275 mm | 3275 mm |
 | Objętość ładunkowa | 4,6 m³ | 5,3–5,8 m³ | 6,1–6,6 m³ |
 
-- **Ładowność** – ok. **1000–1375 kg** zależnie od wersji
+- **Ładowność** – ok. **1000–1375 kg** w zależności od wersji
 - **Masa własna** – zależna od odmiany i wyposażenia
 - **DMC** – **2830–3100 kg**
 - **Próg załadowczy** – 555 mm
@@ -74,7 +74,7 @@ Rozwiązanie to pozwala podnieść skrajne siedzisko pasażera i otworzyć klap�
 
 ## Dane techniczne i wymiary
 
-Jeśli porównujesz konkretne wersje Experta III do pracy, sama długość nadwozia to za mało. Znacznie ważniejsze są długość przestrzeni ładunkowej, DMC i realna ładowność.
+Jeśli porównujesz konkretne wersje Experta III pod kątem pracy, sama długość nadwozia to za mało. Znacznie ważniejsze są długość przestrzeni ładunkowej, DMC i rzeczywista ładowność.
 
 | Wersja | Długość całkowita | Rozstaw osi | Objętość ładunkowa | Długość przestrzeni ładunkowej | Długość z Moduwork | Szerokość między nadkolami | Wysokość przestrzeni | DMC | Ładowność |
 |--------|-------------------|-------------|--------------------|-------------------------------|--------------------|----------------------------|----------------------|-----|-----------|
@@ -82,15 +82,15 @@ Jeśli porównujesz konkretne wersje Experta III do pracy, sama długość nadwo
 | Standard / L2 | 4959 mm | 3275 mm | 5,3–5,8 m³ | ok. 2512 mm | ok. 4024 mm | 1258 mm | 1397 mm | 2830–3100 kg | ok. 1000–1400 kg |
 | Long / L3 | 5309 mm | 3275 mm | 6,1–6,6 m³ | ok. 2862 mm | ok. 4374 mm | 1258 mm | 1397 mm | 2830–3100 kg | ok. 1000–1400 kg |
 
-Dla firm wożących przyczepy ważna jest jeszcze jedna liczba – wybrane wersje z silnikiem 2.0 BlueHDi oferują uciąg przyczepy do **2500 kg**. To robi różnicę, jeśli Expert ma ciągnąć sprzęt budowlany, lawetę lekką albo dodatkową przyczepę narzędziową.
+Dla firm holujących przyczepy ważna jest jeszcze jedna liczba – wybrane wersje z silnikiem 2.0 BlueHDi oferują uciąg przyczepy do **2500 kg**. To ma realne znaczenie, jeśli Expert ma ciągnąć sprzęt budowlany, lekką lawetę albo dodatkową przyczepę narzędziową.
 
 ## Silniki Experta
 
-Gama silnikowa zmieniała się wraz z kolejnymi generacjami i normami emisji spalin. Przed zakupem warto patrzeć nie tylko na moc, ale też na rocznik, normę Euro i to, z jaką skrzynią był łączony dany silnik.
+Gama silnikowa zmieniała się wraz z kolejnymi generacjami i normami emisji spalin. Przed zakupem warto zwracać uwagę nie tylko na moc, lecz także na rocznik, normę Euro i to, z jaką skrzynią był łączony dany silnik.
 
 ### Expert II (2007–2016)
 
-W drugiej generacji podstawą był diesel 1.6 HDi, a wyżej stały różne warianty 2.0 HDi. To proste i znane jednostki, ale ich trwałość mocno zależy od serwisu olejowego oraz stylu pracy auta.
+W drugiej generacji podstawą był diesel 1.6 HDi, a wyżej stały różne warianty 2.0 HDi. To proste i znane jednostki, ale ich trwałość mocno zależy od serwisu olejowego oraz stylu eksploatacji auta.
 
 | Silnik | Moc | Moment | Norma |
 |--------|-----|--------|-------|
@@ -101,7 +101,7 @@ W drugiej generacji podstawą był diesel 1.6 HDi, a wyżej stały różne waria
 
 ### Expert III (2016–)
 
-W trzeciej generacji pojawiły się silniki BlueHDi zgodne z normami Euro 6.2, Euro 6d-TEMP i Euro 6d – zależnie od rocznika. Bazowe 1.5 BlueHDi sprawdza się w mieście, a 2.0 BlueHDi jest lepszym wyborem do tras i pełnego obciążenia.
+W trzeciej generacji pojawiły się silniki BlueHDi zgodne z normami Euro 6.2, Euro 6d-TEMP i Euro 6d – w zależności od rocznika. Bazowe 1.5 BlueHDi sprawdza się w mieście, a 2.0 BlueHDi jest lepszym wyborem na trasy i przy pełnym obciążeniu.
 
 | Silnik | Moc | Moment | Spalanie realne | Skrzynia | Norma |
 |--------|-----|--------|-----------------|----------|-------|
@@ -112,35 +112,35 @@ W trzeciej generacji pojawiły się silniki BlueHDi zgodne z normami Euro 6.2, E
 
 ### e-Expert
 
-Elektryczna odmiana celuje głównie w miejską dystrybucję i strefy z ograniczeniami dla diesli. Parametry są proste: jedna moc, dwa akumulatory i dwa realnie różne scenariusze pracy.
+Elektryczna odmiana celuje głównie w miejską dystrybucję i strefy z ograniczeniami dla diesli. Parametry są proste: jedna moc, dwa akumulatory i dwa wyraźnie różne scenariusze pracy.
 
 | Wersja | Moc | Moment | Bateria | Zasięg WLTP |
 |--------|-----|--------|---------|-------------|
 | e-Expert | 136 KM | 260 Nm | 50 kWh | do 230 km |
 | e-Expert | 136 KM | 260 Nm | 75 kWh | do 330 km |
 
-Diesel 1.5 BlueHDi to rozsądna baza do lżejszej dystrybucji. Jeśli auto regularnie jeździ w trasie albo pracuje z większym obciążeniem, 2.0 BlueHDi będzie po prostu mniej męczący w codziennym użytkowaniu.
+Diesel 1.5 BlueHDi to rozsądna baza do lżejszej dystrybucji. Jeśli auto regularnie jeździ w trasie albo pracuje z większym obciążeniem, 2.0 BlueHDi będzie po prostu mniej męczący w codziennej eksploatacji.
 
 {{% expert name="Marek Kowalczyk" %}}
-Do miasta i kurierki wystarczy 1.5 BlueHDi, ale pod warunkiem że auto robi dłuższe przebiegi poza korkami. Jeśli Expert ma regularnie wozić ciężki towar albo latać po ekspresówkach, bierz 2.0 BlueHDi – mniej męczy kierowcę i zwykle lepiej znosi taki tryb pracy.
+Do miasta i pracy kurierskiej wystarczy 1.5 BlueHDi, ale pod warunkiem że auto robi dłuższe przebiegi poza korkami. Jeśli Expert ma regularnie wozić ciężki towar albo jeździć po ekspresówkach, bierz 2.0 BlueHDi – mniej męczy kierowcę i zwykle lepiej znosi taki tryb pracy.
 {{% /expert %}}
 
 ## Wersje Peugeot Expert
 
-Expert nie kończy się na zwykłym blaszakach. W praktyce to cała rodzina wersji roboczych, osobowych i specjalistycznych, które celują w zupełnie różnych użytkowników.
+Expert nie kończy się na zwykłych blaszakach. W praktyce to cała rodzina wersji roboczych, osobowych i specjalistycznych, które trafiają do zupełnie różnych użytkowników.
 
 - **Furgon** – 2 lub 3 miejsca z przodu, 3 długości nadwozia i objętość **4,6 / 5,3–5,8 / 6,1–6,6 m³**. To najlepsza odmiana dla kuriera, ekipy montażowej i firmy dowozowej, bo daje najwięcej przestrzeni przy najprostszej zabudowie.
 - **Brygadówka / Crew Cab** – 5–6 miejsc i krótsza paka. Dobra dla ekip budowlanych, serwisu technicznego i monterów, którzy muszą przewieźć ludzi oraz narzędzia jednym autem.
-- **Kombi / osobowy shuttle** – od 5 do 9 miejsc. Sprawdza się w przewozie pracowników, hotelowych shuttle busach i transporcie lokalnym.
-- **Traveller** – osobowa wersja 5/7/8/9 miejsc, z lepszym wyciszeniem i bogatszym wyposażeniem. To wybór dla rodzin, firm VIP transport i przewoźników, którzy chcą bardziej cywilnego wnętrza niż w typowym dostawczaku.
-- **Platforma / podwozie do zabudowy specjalnej** – baza pod chłodnię, warsztat albo serwis mobilny. Największa zaleta to możliwość dopasowania auta dokładnie pod branżę.
-- **e-Expert** – elektryczny furgon z baterią 50 lub 75 kWh. Najlepiej pasuje do pracy miejskiej, gdzie liczy się cisza, brak lokalnej emisji i przewidywalna trasa.
+- **Kombi / osobowy shuttle** – od 5 do 9 miejsc. Sprawdza się w przewozie pracowników, hotelowych busach wahadłowych i transporcie lokalnym.
+- **Traveller** – osobowa wersja 5/7/8/9 miejsc, z lepszym wyciszeniem i bogatszym wyposażeniem. To wybór dla rodzin, firm oferujących transport VIP i przewoźników, którzy chcą bardziej cywilnego wnętrza niż w typowym dostawczaku.
+- **Platforma / podwozie do zabudowy specjalnej** – baza pod chłodnię, warsztat albo serwis mobilny. Największą zaletą jest możliwość dopasowania auta dokładnie do branży.
+- **e-Expert** – elektryczny furgon z baterią 50 lub 75 kWh. Najlepiej pasuje do pracy miejskiej, gdzie liczy się cisza, brak emisji spalin i przewidywalna trasa.
 
-Wybór wersji zależy głównie od tego, czy ważniejsze są miejsca siedzące, długość paki czy możliwość zabudowy specjalnej. Samo oznaczenie Expert to za mało – przed zakupem trzeba ustalić, jaką pracę auto ma wykonywać codziennie.
+Wybór wersji zależy głównie od tego, czy ważniejsze są miejsca siedzące, długość paki czy możliwość zabudowy specjalnej. Samo oznaczenie Expert to za mało – przed zakupem trzeba ustalić, jaką pracę auto ma wykonywać na co dzień.
 
 ## Typowe usterki Peugeot Expert
 
-Najwięcej problemów nie wynika z samego projektu auta, tylko z trybu pracy. Expert używany w mieście i serwisowany „po kosztach” zużywa się szybciej niż egzemplarz robiący trasy z regularną obsługą.
+Najwięcej problemów nie wynika z samego projektu auta, tylko z trybu pracy. Expert używany w mieście i serwisowany „po kosztach” zużywa się szybciej niż egzemplarz jeżdżący w trasie przy regularnej obsłudze.
 
 ### Expert I (1995–2006)
 
@@ -152,7 +152,7 @@ Najwięcej problemów nie wynika z samego projektu auta, tylko z trybu pracy. Ex
 
 Druga generacja ma kilka typowych punktów zapalnych, zwłaszcza w dieslach i osprzęcie nadwozia. Dobra wiadomość jest taka, że większość usterek jest dobrze znana warsztatom.
 
-- **1.6 HDi** – zapiekanie smoków olejowych i ryzyko problemów z turbo; czyszczenie układu olejowego **800–1500 zł**, regeneracja turbo **1800–3000 zł**
+- **1.6 HDi** – zapiekanie smoków olejowych i ryzyko problemów z turbosprężarką; czyszczenie układu olejowego **800–1500 zł**, regeneracja turbosprężarki **1800–3000 zł**
 - **2.0 HDi** – zużycie dwumasy i sprzęgła; komplet to zwykle **2200–4000 zł**
 - **EGR** – czyszczenie lub wymiana **500–1200 zł**
 - **FAP z dodatkiem Eolys** – uzupełnienie płynu **600–900 zł**, regeneracja lub wymiana filtra **1000–2500 zł**
@@ -191,12 +191,12 @@ W trzeciej generacji lista problemów wygląda inaczej niż w starszych HDi. Tu 
 
 #### Elektryka i nadwozie
 
-- **Elektryka drzwi i centralnego zamka** – typowe dla aut flotowych intensywnie używanych w mieście
+- **Elektryka drzwi i centralnego zamka** – typowe dla aut flotowych intensywnie eksploatowanych w mieście
 - **Elementy nadwozia eksploatacyjne** – rolki drzwi, zamki i mechanizmy przesuwne wymagają okresowej kontroli
 
 ## Porównanie Experta z konkurencją
 
-Expert ma jedną dużą zaletę – bardzo sensownie łączy gabaryty, ładowność i miejską poręczność. Ale żeby dobrze go ocenić, trzeba oddzielić bliźniaki techniczne od realnych konkurentów spoza tej samej rodziny.
+Expert ma jedną dużą zaletę – bardzo rozsądnie łączy gabaryty, ładowność i miejską zwrotność. Ale żeby dobrze go ocenić, trzeba oddzielić bliźniaki techniczne od rzeczywistych konkurentów spoza tej samej rodziny.
 
 | Parametr | Peugeot Expert L2 | Citroën Jumpy L2 | Toyota ProAce L2 |
 |----------|-------------------|------------------|------------------|
@@ -210,7 +210,7 @@ W tej grupie wybór sprowadza się głównie do ceny, wyposażenia i warunków g
 
 ### Expert vs rywale spoza grupy
 
-Tu zaczyna się prawdziwe porównanie zakupowe. Renault Trafic, Ford Transit Custom i VW Transporter T6.1 grają trochę innymi atutami – większą paką, inną gamą silników albo mocniejszą pozycją na rynku wtórnym.
+Tu zaczyna się prawdziwe porównanie zakupowe. Renault Trafic, Ford Transit Custom i VW Transporter T6.1 mają nieco inne atuty – większą pakę, inną gamę silników albo mocniejszą pozycję na rynku wtórnym.
 
 | Parametr | Peugeot Expert L2 | Renault Trafic L2H1 | Ford Transit Custom L2H1 | VW Transporter T6.1 LWB |
 |----------|-------------------|---------------------|--------------------------|-------------------------|
@@ -220,15 +220,15 @@ Tu zaczyna się prawdziwe porównanie zakupowe. Renault Trafic, Ford Transit Cus
 | Silniki | 1.5 BlueHDi 100–120 KM, 2.0 BlueHDi 145–177 KM | 2.0 dCi 110–170 KM | 2.0 EcoBlue 110–170 KM | 2.0 TDI 90–204 KM |
 | Maks. długość paki | ok. 2512 mm | b.d. | b.d. | b.d. |
 | Wysokość auta <1,9 m | tak, ok. 1890 mm | b.d. | b.d. | b.d. |
-| Promień skrętu | 12,4 m | b.d. | b.d. | b.d. |
+| Średnica zawracania | 12,4 m | b.d. | b.d. | b.d. |
 | Dostępność automatu | tak | b.d. | b.d. | b.d. |
 | Cena serwisu okresowego | b.d. | b.d. | b.d. | b.d. |
 
-W praktyce Peugeot Expert wygrywa kompaktowymi wymiarami i łatwością manewrowania, szczególnie w wersji Compact. Transit Custom daje większą pakę, Trafic ma klasyczną i lubianą przez firmy konfigurację, a Transporter broni się szeroką ofertą silników.
+W praktyce Peugeot Expert wygrywa zwartymi wymiarami i łatwością manewrowania, szczególnie w wersji Compact. Transit Custom daje większą pakę, Trafic ma klasyczną i lubianą przez firmy konfigurację, a Transporter broni się szeroką ofertą silników.
 
 ## Ceny Experta
 
-Na rynku wtórnym rozrzut cen jest duży, bo Expert trafia zarówno do flot, jak i do prywatnych użytkowników. Przy zakupie patrz przede wszystkim na historię serwisową, typ nadwozia i sposób eksploatacji – samo „mały przebieg” nie wystarczy.
+Na rynku wtórnym rozrzut cen jest duży, bo Expert trafia zarówno do flot, jak i do prywatnych użytkowników. Przy zakupie patrz przede wszystkim na historię serwisową, typ nadwozia i sposób eksploatacji – sam „niski przebieg” nie wystarczy.
 
 ### Nowy Expert III
 
@@ -237,7 +237,7 @@ Na rynku wtórnym rozrzut cen jest duży, bo Expert trafia zarówno do flot, jak
 | Furgon 1.5 BlueHDi 100 | od ok. 140 tys. zł netto |
 | Furgon 2.0 BlueHDi 145 | od ok. 155–170 tys. zł netto |
 | Traveller | od ok. 210–230 tys. zł brutto |
-| e-Expert | od ok. 200–230 tys. zł netto zależnie od baterii i długości |
+| e-Expert | od ok. 200–230 tys. zł netto w zależności od baterii i długości |
 
 ### Używany Expert
 
@@ -250,7 +250,7 @@ Na rynku wtórnym rozrzut cen jest duży, bo Expert trafia zarówno do flot, jak
 | Expert III 2018–2019 | **55–85 tys. zł** |
 | Expert III 2020–2021 | **75–115 tys. zł** |
 | Expert III 2022–2023 | **95–145 tys. zł** |
-| e-Expert 2020–2021 | **70–110 tys. zł** netto/brutto zależnie od odliczeń i baterii |
+| e-Expert 2020–2021 | **70–110 tys. zł** netto/brutto w zależności od odliczeń i baterii |
 | Traveller 2017–2019 | **85–140 tys. zł** |
 | Traveller 2020–2023 | **120–220 tys. zł** |
 

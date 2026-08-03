@@ -30,13 +30,13 @@ sources:
 
 ## Historia i generacje Opla Movano
 
-Trzy generacje, dwóch technicznych partnerów i jedna duża zmiana po 2021 roku. Najpierw była współpraca z Renault, potem przejście na konstrukcję Stellantis znaną z Ducato, Boxera i Jumpera.
+Trzy generacje, dwóch partnerów technicznych i jedna duża zmiana po 2021 roku. Najpierw była współpraca z Renault, potem przejście na konstrukcję Stellantis znaną z Ducato, Boxera i Jumpera.
 
 ### Opel Movano A (1998–2010)
 
-Pierwsze Movano zadebiutowało w 1998 roku jako bliźniacza konstrukcja [Renault Mastera](/modele/renault-master/) II generacji i Nissana Interstara. Produkcja odbywała się w Batilly we Francji. W praktyce to prosty, użytkowy van dla firm, który do dziś trzyma się rynku wtórnego dzięki tanim częściom i nieskomplikowanej mechanice.
+Pierwsze Movano zadebiutowało w 1998 roku jako bliźniacza konstrukcja [Renault Mastera](/modele/renault-master/) II generacji i Nissana Interstara. Produkcja odbywała się w Batilly we Francji. W praktyce to prosty, użytkowy van dla firm, który do dziś trzyma się na rynku wtórnym dzięki tanim częściom i nieskomplikowanej mechanice.
 
-Chronologia tej generacji wyglądała jasno: **1998–2003 przed liftingiem**, a **2003–2010 po liftingu**. Modernizacja przyniosła głównie zmiany pasa przedniego i odświeżenie gamy. Nie ma tu sensu mieszać danych późniejszego Movano B – pierwsza generacja miała własny układ wersji.
+Chronologia tej generacji wyglądała jasno: **1998–2003 przed liftingiem**, a **2003–2010 po liftingu**. Modernizacja przyniosła głównie zmiany pasa przedniego i odświeżenie gamy. Nie ma sensu mieszać tu danych z późniejszym Movano B – pierwsza generacja miała własny układ wersji.
 
 Silniki diesla obejmowały:
 - **1.9 DTI/CDTI** – **80–82 KM**
@@ -44,19 +44,19 @@ Silniki diesla obejmowały:
 - **2.5 DTI/CDTI** – **100–120 KM**
 - **2.8 DTI** – **114–146 KM**
 
-Ważne doprecyzowanie: Movano A występowało z napędem **FWD**. To jedna z rzeczy, które często są błędnie mieszane z późniejszymi dostawczakami tego segmentu.
+Ważne doprecyzowanie: Movano A występowało z napędem **FWD**. To jedna z cech, które często myli się z późniejszymi dostawczakami tego segmentu.
 
 ### Opel Movano B (2010–2021)
 
-Druga generacja pojawiła się w 2010 roku i ponownie bazowała na Renault – tym razem na Masterze III, z odpowiednikiem w postaci Nissana NV400. To był duży krok naprzód pod względem ergonomii kabiny, systemów wsparcia kierowcy i szerokości oferty zabudów.
+Druga generacja pojawiła się w 2010 roku i ponownie bazowała na Renault – tym razem na Masterze III, z odpowiednikiem w postaci Nissana NV400. To był duży krok naprzód pod względem ergonomii kabiny, systemów wspomagania kierowcy i szerokości oferty zabudów.
 
 Podział generacyjny jest prosty:
 - **2010–2019** – przed liftingiem
 - **2019–2021** – po liftingu
 
-W gamie było **4 długości i 3 wysokości dachu**, a łącznie kilkadziesiąt konfiguracji nadwoziowych i zabudowowych. W praktyce Opel skupiał się głównie na odmianach z napędem na przód, choć sama rodzina konstrukcyjna Mastera występowała także w innych układach napędowych zależnie od wersji i rynku.
+W gamie były **4 długości i 3 wysokości dachu**, a łącznie kilkadziesiąt konfiguracji nadwoziowych i zabudowowych. W praktyce Opel skupiał się głównie na odmianach z napędem na przód, choć sama rodzina konstrukcyjna Mastera występowała także w innych układach napędowych w zależności od wersji i rynku.
 
-Najważniejszą jednostką był **2.3 CDTI** oferowany zależnie od rynku i rocznika w wersjach:
+Najważniejszą jednostką był **2.3 CDTI** oferowany w zależności od rynku i rocznika w wersjach:
 - **100 KM**
 - **110 KM**
 - **125 KM**
@@ -66,7 +66,7 @@ Najważniejszą jednostką był **2.3 CDTI** oferowany zależnie od rynku i rocz
 - **170 KM**
 - **180 KM**
 
-Facelifting z 2019 roku przyniósł odświeżony przód i nowsze systemy bezpieczeństwa. W końcówce produkcji rosło znaczenie wersji spełniających nowsze normy emisji, a po 2016 roku w wielu odmianach pojawił się układ SCR z AdBlue.
+Lifting z 2019 roku przyniósł odświeżony przód i nowsze systemy bezpieczeństwa. Pod koniec produkcji rosło znaczenie wersji spełniających nowsze normy emisji, a po 2016 roku w wielu odmianach pojawił się układ SCR z AdBlue.
 
 {{% info title="29 wersji nadwoziowych" icon="engineering" %}}
 Movano B miało bardzo szeroką ofertę: od krótkich furgonów po podwozia do zabudowy. W zależności od rynku dostępne były liczne konfiguracje długości, wysokości i DMC, ale nie wszystkie kombinacje występowały równocześnie.
@@ -76,7 +76,7 @@ Movano B miało bardzo szeroką ofertę: od krótkich furgonów po podwozia do z
 
 Od 2021 roku Opel zmienił partnera technicznego. Movano C przeszło na platformę Stellantis/Sevel wspólną z Fiatem Ducato, Citroënem Jumperem i Peugeotem Boxerem. Produkcja odbywa się w **Atessie (Włochy)**.
 
-To oznaczało zmianę całej bazy technicznej: inne silniki, inne zabudowy i pełne wejście w rodzinę dużych vanów Stellantis. W ofercie pojawiły się diesle **2.2 BlueHDi/MultiJet 120/140/165 KM** oraz elektryczne **Movano-e 122 KM**.
+To oznaczało zmianę całej bazy technicznej: inne silniki, inne zabudowy i pełną integrację z rodziną dużych vanów Stellantis. W ofercie pojawiły się diesle **2.2 BlueHDi/MultiJet 120/140/165 KM** oraz elektryczne **Movano-e 122 KM**.
 
 ## Dane techniczne i wymiary
 
@@ -110,7 +110,7 @@ To oznaczało zmianę całej bazy technicznej: inne silniki, inne zabudowy i pe�
 | L3     | ok. 3705 mm |
 | L4     | ok. 4070 mm |
 
-Jeśli szukasz najbardziej uniwersalnej konfiguracji, **L3H2** zwykle daje najlepszy kompromis między długością auta, pojemnością paki i codzienną manewrowością. Z kolei **L4H3** wchodzi tam, gdzie liczy się maksymalna kubatura i wysoka zabudowa.
+Jeśli szukasz najbardziej uniwersalnej konfiguracji, **L3H2** zwykle daje najlepszy kompromis między długością auta, pojemnością paki i codzienną manewrowością. Z kolei **L4H3** sprawdza się tam, gdzie liczy się maksymalna kubatura i wysoka zabudowa.
 
 ## Silniki Movano
 
@@ -133,11 +133,11 @@ W Movano trzeba patrzeć nie tylko na moc, ale też na generację. Inne są kosz
 
 To klasyczny diesel dla tych, którzy kupują używane Movano A i chcą prostszego serwisu. Mamy tu 4 cylindry, common rail i warianty **100/120/146 KM**.
 
-Typowe spalanie w praktyce to **9–11 l/100 km**. Nie jest oszczędniak, ale nadrabia prostotą i dobrą dostępnością warsztatów, które ten motor znają od lat.
+Typowe spalanie w praktyce to **9–11 l/100 km**. Nie jest oszczędniak, ale nadrabia prostotą i dobrą dostępnością warsztatów, które ten silnik znają od lat.
 
-### 2.3 CDTI – rdzeń Movano B
+### 2.3 CDTI – podstawa Movano B
 
-W drugiej generacji dominował **2.3 CDTI** o mocy od **100 do 180 KM** i momencie **285–400 Nm**. W mocniejszych odmianach stosowano twin-turbo, a zależnie od rocznika dochodziły zmiany osprzętu pod normy **Euro 5** i **Euro 6**.
+W drugiej generacji dominował **2.3 CDTI** o mocy od **100 do 180 KM** i momencie **285–400 Nm**. W mocniejszych odmianach stosowano biturbo, a w zależności od rocznika dochodziły zmiany osprzętu pod normy **Euro 5** i **Euro 6**.
 
 Realne spalanie najczęściej zamyka się w **8–10 l/100 km**. Po 2016 roku trzeba brać pod uwagę, że wiele wersji miało już układ SCR i **AdBlue**, więc dochodzą typowe koszty serwisu osprzętu emisji spalin.
 
@@ -148,13 +148,13 @@ Aktualne Movano korzysta z diesla **2.2** w wariantach:
 - **140 KM / 340–350 Nm**
 - **165 KM / 370–400 Nm**
 
-W standardzie mamy **6-biegowy manual** i napęd **FWD**. W realnym użytkowaniu spalanie zwykle wynosi około **8–10 l/100 km**, zależnie od zabudowy, DMC i stylu jazdy.
+W standardzie jest **6-biegowa skrzynia manualna** i napęd **FWD**. W realnym użytkowaniu spalanie zwykle wynosi około **8–10 l/100 km**, w zależności od zabudowy, DMC i stylu jazdy.
 
 ### Movano-e
 
 Elektryczna wersja ma **90 kW / 122 KM** i **260 Nm**. Ładowanie obejmuje **AC 11 kW** oraz **DC do ok. 50 kW**.
 
-Zasięg WLTP dla większej baterii to około **200–247 km**, zależnie od wersji. To nie jest auto na dalekie trasy między miastami, ale w dystrybucji miejskiej i podmiejskiej może mieć sens – szczególnie przy stałych, powtarzalnych kursach.
+Zasięg WLTP dla większej baterii to około **200–247 km**, w zależności od wersji. To nie jest auto na dalekie trasy między miastami, ale w dystrybucji miejskiej i podmiejskiej może mieć sens – zwłaszcza przy stałych, powtarzalnych kursach.
 
 {{% expert name="Marek Kowalczyk" %}}
 W Movano C z dieslem 2.2 najwięcej zależy od sposobu eksploatacji. Przy jeździe głównie po mieście DPF może wymagać częstszych dopaleń i serwisu, więc auto kurierskie i auto na trasy to w praktyce dwa różne scenariusze kosztowe.
@@ -168,7 +168,7 @@ Movano od początku było pomyślane jako baza do pracy, nie tylko jako zwykły 
 
 Klasyczny blaszak pozostaje podstawą oferty. W zależności od generacji i wersji mówimy o zakresie od **L1H1 do L4H3** oraz pojemności od około **8 do 17 m³**.
 
-To najczęstszy wybór dla kurierów, ekip montażowych i firm serwisowych. Przy zabudowie regałowej najlepiej sprawdzają się L2H2 i L3H2, bo dają dobry balans między przestrzenią a codziennym użytkowaniem.
+To najczęstszy wybór dla kurierów, ekip montażowych i firm serwisowych. Przy zabudowie regałowej najlepiej sprawdzają się L2H2 i L3H2, bo dają dobrą równowagę między przestrzenią a codziennym użytkowaniem.
 
 ### Furgon brygadowy
 
@@ -178,7 +178,7 @@ To sensowna konfiguracja dla ekip budowlanych, brukarskich i instalatorów. Nie 
 
 ### Kombi i wersje osobowe
 
-W generacjach **A i B** występowały odmiany kombi i minibusowe zależnie od rynku. To właśnie tam należy szukać bardziej osobowych konfiguracji, a nie wrzucać wszystkiego do jednego worka z najnowszym Movano.
+W generacjach **A i B** występowały odmiany kombi i minibusowe w zależności od rynku. To właśnie tam należy szukać bardziej osobowych konfiguracji, a nie wrzucać wszystkiego do jednego worka z najnowszym Movano.
 
 W przypadku **Movano C** podstawą oferty są przede wszystkim furgon i podwozie. Wersje osobowe występują zwykle jako zabudowy specjalistyczne, a nie jako szeroka, fabryczna gama typowych autobusów.
 
@@ -213,7 +213,7 @@ Typowe awarie różnią się mocno między generacjami. Stare Movano A częście
   Koszty: **300–1500 zł** za naprawę immobilizera/elektryki, **600–1200 zł** alternator, **500–900 zł** rozrusznik.
 - **Turbosprężarka** – zużycie po dużych przebiegach  
   Koszt: **2000–3500 zł**.
-- **Korozja** – progi i nadkola, szczególnie w starszych egzemplarzach  
+- **Korozja** – progi i nadkola, zwłaszcza w starszych egzemplarzach  
   Blacharka: **1500–4000 zł za stronę**.
 
 Najtańsze egzemplarze kuszą ceną, ale bez oględzin podwozia i progów łatwo wpakować się w auto, którego naprawa blacharska przekroczy wartość zakupu.
@@ -231,21 +231,21 @@ Najtańsze egzemplarze kuszą ceną, ale bez oględzin podwozia i progów łatwo
 - **Zawieszenie przednie** – sworznie i wahacze szybciej kończą się przy stałym wożeniu maksymalnego ładunku  
   Koszt: **300–900 zł** za element plus robocizna.
 
-Movano B jest zwykle rozsądnym wyborem na rynku używanym, ale tylko wtedy, gdy ma historię serwisową. W aucie po kurierce przebieg sam w sobie nie zabija, gorzej gdy oszczędzano na EGR, wtryskach i zawieszeniu.
+Movano B jest zwykle rozsądnym wyborem na rynku używanym, ale tylko wtedy, gdy ma historię serwisową. W aucie po kurierce przebieg sam w sobie nie zabija; gorzej, gdy oszczędzano na EGR, wtryskach i zawieszeniu.
 
 ### Movano C (od 2021)
 
 - **Elektronika i oprogramowanie** – przed zakupem warto sprawdzić VIN pod kątem akcji serwisowych i aktualizacji.
 - **DPF** – przy eksploatacji głównie miejskiej filtr może wymagać częstszych dopaleń i serwisu  
   Koszty: czyszczenie **700–1400 zł**, nowy DPF **3500–7000 zł**.
-- **Układ AdBlue / NOx** – błędy sterowania i diagnostyka potrafią wygenerować dodatkowe koszty  
+- **Układ AdBlue / NOx** – błędy sterowania i diagnostyka potrafią spowodować dodatkowe koszty  
   Koszt diagnozy lub aktualizacji: **300–800 zł**.
 - **Wtryskiwacze** – w dieslu 2.2 to już droższa zabawa niż w starszych generacjach  
   Koszt: **1000–1800 zł/szt.**.
-- **Sprzęgło** – zależnie od obciążenia i sposobu pracy auta  
+- **Sprzęgło** – w zależności od obciążenia i sposobu pracy auta  
   Koszt: **2000–3500 zł**.
 - **Skrzynia biegów** – po gwarancji naprawa może być kosztowna  
-  Koszt: **4000–9000 zł** zależnie od zakresu.
+  Koszt: **4000–9000 zł** w zależności od zakresu.
 
 {{% info title="Sprawdzenie VIN przed zakupem" icon="engineering" %}}
 W Movano C przed podpisaniem umowy warto potwierdzić historię aktualizacji i ewentualnych akcji serwisowych po numerze VIN. To szczególnie ważne przy autach flotowych i importowanych.

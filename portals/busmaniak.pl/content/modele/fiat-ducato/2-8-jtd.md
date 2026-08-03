@@ -12,7 +12,7 @@ image_alt: "Fiat Ducato II z silnikiem 2.8 JTD – widok z przodu"
 youtube: "LN7UJqgMbFE"
 youtube_title: "Old Fiat Ducato 2.8 JTD Showcase"
 main_keyword: "Fiat Ducato 2.8 JTD"
-lead: "Silnik 2.8 JTD produkowany przez Sofim to jedna z najbardziej cenionych jednostek w historii Fiata Ducato. W opiniach użytkowników i mechaników uchodzi za trwały oraz stosunkowo prosty w eksploatacji, a brak DPF i AdBlue ogranicza liczbę kosztownych problemów osprzętu typowych dla nowszych diesli."
+lead: "Silnik 2.8 JTD produkowany przez Sofim to jedna z najbardziej cenionych jednostek w historii Fiata Ducato. W opiniach użytkowników i mechaników uchodzi za trwały oraz stosunkowo prosty w eksploatacji, a brak DPF i AdBlue ogranicza liczbę kosztownych usterek osprzętu typowych dla nowszych diesli."
 faq:
   - question: "Który silnik w Fiacie Ducato jest najlepszy?"
     answer: "Wielu użytkowników i mechaników wysoko ocenia 2.8 JTD za trwałość oraz prostszą eksploatację. W nowszych rocznikach często porównuje się go z 3.0 JTD, który oferuje wyższą moc i moment obrotowy."
@@ -31,7 +31,7 @@ sources:
 
 ## Fiat Ducato II – ewolucja silnika 2.8
 
-W przypadku Fiat Ducato 2.8 JTD łatwo o pomyłkę, bo w drugiej generacji występowało kilka różnych odmian 2.8. Ducato II produkowano w latach 1994–2006, a lifting wprowadzono około 2002 roku, dlatego przy zakupie trzeba rozdzielać wersje przedcommonrailowe i common rail.
+W przypadku Fiata Ducato 2.8 JTD łatwo o pomyłkę, bo w drugiej generacji występowało kilka różnych odmian 2.8. Ducato II produkowano w latach 1994–2006, a lifting wprowadzono około roku 2002, dlatego przy zakupie trzeba rozróżniać wersje sprzed common rail i z common rail.
 
 W gamie 2.8 występowały osobne odmiany 2.8 D, 2.8 idTD oraz późniejsze 2.8 JTD i 2.8 JTD Power. Zależnie od wersji i rynku mówimy o jednostkach o mocy około 87, 122, 127 i 146 KM.
 
@@ -68,24 +68,24 @@ W praktyce trzeba też pamiętać o układzie napędowym. W Ducato II był to na
 Wymiary i parametry użytkowe nie są uniwersalne dla całej gamy 2.8 JTD, bo zależą od długości, wysokości i DMC. Zamiast traktować jeden wariant jako wzorzec, lepiej przyjąć zakresy spotykane w tej generacji.
 
 **Dane użytkowe zależne od nadwozia:**
-- **Objętość przestrzeni ładunkowej** – około 7–12 m3
+- **Objętość przestrzeni ładunkowej** – około 7–12 m³
 - **Ładowność** – zwykle około 1000–1800 kg, zależnie od DMC i wersji
 - **DMC** – zależne od wariantu homologacyjnego, występowało w kilku wartościach
 - **Pojemność zbiornika paliwa** – zależna od wersji nadwozia i rozstawu osi
 
-To ważne zwłaszcza przy zakupie auta pod konkretną pracę. Niski furgon, podwozie z plandeką i kamper na bazie Ducato 2.8 JTD będą różnić się nie tylko masą, ale też osiągami, spalaniem i realną funkcjonalnością.
+To ważne zwłaszcza przy zakupie auta pod konkretną pracę. Niski furgon, podwozie z plandeką i kamper na bazie Ducato 2.8 JTD będą się różnić nie tylko masą, ale też osiągami, spalaniem i realną funkcjonalnością.
 
-W danych serwisowych trzeba zachować ostrożność, bo część wartości zależy od rocznika, wersji i zastosowanych podzespołów. Dotyczy to pojemności oleju z filtrem, pojemności układu chłodzenia, ilości oraz typu oleju w skrzyni, specyfikacji oleju silnikowego według normy producenta, rozmiaru paska osprzętu, interwału filtra paliwa i powietrza oraz samego harmonogramu rozrządu.
+W danych serwisowych trzeba zachować ostrożność, bo część wartości zależy od rocznika, wersji i zastosowanych podzespołów. Dotyczy to pojemności oleju z filtrem, pojemności układu chłodzenia, ilości oraz typu oleju w skrzyni, specyfikacji oleju silnikowego według normy producenta, rozmiaru paska osprzętu, interwału wymiany filtra paliwa i powietrza oraz samego harmonogramu rozrządu.
 
 {{% info title="Serwis" icon="engineering" %}}
 W 2.8 JTD interwał rozrządu nie powinien być traktowany jako jedna uniwersalna wartość dla wszystkich aut. Zależy od kodu silnika, rocznika i dokumentacji serwisowej konkretnego egzemplarza, a przy aucie używanym kluczowe jest potwierdzenie faktycznej wymiany.
 {{% /info %}}
 
-Braku potwierdzonych danych nie warto zastępować zgadywaniem, bo nawet pozornie prosta sprawa, jak pojemność oleju czy zalecana lepkość, może różnić się między odmianami. To samo dotyczy informacji, czy dana wersja ma rozrząd kolizyjny – przed serwisem trzeba to sprawdzić dla konkretnego numeru silnika.
+Braku potwierdzonych danych nie warto zastępować zgadywaniem, bo nawet pozornie prosta sprawa, jak pojemność oleju czy zalecana lepkość, może się różnić między odmianami. To samo dotyczy informacji, czy dana wersja ma rozrząd kolizyjny – przed serwisem trzeba to sprawdzić dla konkretnego numeru silnika.
 
 ## Ile pali Ducato 2.8 JTD?
 
-Spalanie w przypadku Fiat Ducato 2.8 JTD zależy mocno od wersji silnika, typu zabudowy i prędkości. Nie ma jednej wiarygodnej wartości dla całej gamy, bo inaczej zachowuje się niski furgon, inaczej podwozie z plandeką, a jeszcze inaczej ciężki kamper.
+Spalanie w przypadku Fiata Ducato 2.8 JTD zależy mocno od wersji silnika, typu zabudowy i prędkości. Nie ma jednej wiarygodnej wartości dla całej gamy, bo inaczej zachowuje się niski furgon, inaczej podwozie z plandeką, a jeszcze inaczej ciężki kamper.
 
 Poniższe wartości należy traktować jako orientacyjne ujęcie redakcyjne oparte na różnicach wynikających z masy i aerodynamiki zabudowy, a nie jako dane homologacyjne dla jednej konkretnej wersji.
 
@@ -98,7 +98,7 @@ Poniższe wartości należy traktować jako orientacyjne ujęcie redakcyjne opar
 
 Największy wpływ ma tutaj opór powietrza. Przy około 100 km/h różnice między zabudowami są zauważalne, ale przy 120–130 km/h rosną jeszcze mocniej, szczególnie w przypadku wysokiej alkowy.
 
-W praktyce oznacza to, że porównując oferty, trzeba patrzeć nie tylko na sam silnik, ale też na nadwozie. Ten sam Fiat Ducato 2.8 JTD w niskim furgonie i w kamperze może dawać zupełnie inne koszty paliwa przy tej samej trasie.
+W praktyce oznacza to, że porównując oferty, trzeba patrzeć nie tylko na sam silnik, ale też na nadwozie. Ten sam Fiat Ducato 2.8 JTD w niskim furgonie i w kamperze może oznaczać zupełnie inne koszty paliwa przy tej samej trasie.
 
 Nowszy [2.3 MultiJet](/modele/fiat-ducato/2-3-multijet/) zwykle oferuje niższe spalanie, ale 2.8 JTD pozostaje ciekawą propozycją dla osób, które wolą starszy, prostszy układ napędowy.
 
@@ -108,7 +108,7 @@ Nowszy [2.3 MultiJet](/modele/fiat-ducato/2-3-multijet/) zwykle oferuje niższe 
 
 ## Opinie użytkowników i typowe usterki
 
-Fiat Ducato 2.8 JTD ma dobrą opinię jako silnik roboczy do cięższej eksploatacji. Właściciele cenią elastyczność, prostszą elektronikę i brak osprzętu emisyjnego charakterystycznego dla dużo nowszych diesli.
+Fiat Ducato 2.8 JTD ma dobrą opinię jako silnik roboczy do cięższej eksploatacji. Właściciele cenią elastyczność, prostszą elektronikę i brak osprzętu emisyjnego charakterystycznego dla znacznie nowszych diesli.
 
 {{% expert name="Marek Kowalczyk" %}}
 W środowisku użytkowników i mechaników 2.8 JTD uchodzi za jednostkę trwałą i odporną na ciężką pracę. Często można spotkać opinie o bardzo dużych przebiegach bez remontu, ale warto traktować to jako doświadczenia poszczególnych właścicieli, a nie gwarantowaną cechę każdego egzemplarza.
@@ -136,12 +136,12 @@ Najczęściej powtarzające się problemy są dobrze znane, ale trudno przypisa�
 - **Alternator i rozrusznik** – typowe usterki eksploatacyjne w autach użytkowych z dużymi przebiegami
 - **Układ chłodzenia** – starzejące się przewody i połączenia mogą prowadzić do wycieków oraz przegrzewania
 
-Ważna zaleta tego modelu to dobra dostępność części. Ducato II jest technicznie spokrewnione z Peugeot Boxer i Citroen Jumper pierwszej generacji tej wspólnej platformy, więc wiele części eksploatacyjnych oraz elementów mechaniki i nadwozia ma wspólne odpowiedniki OEM lub aftermarket.
+Ważna zaleta tego modelu to dobra dostępność części. Ducato II jest technicznie spokrewniony z Peugeotem Boxerem i Citroenem Jumperem pierwszej generacji tej wspólnej platformy, więc wiele części eksploatacyjnych oraz elementów mechaniki i nadwozia ma wspólne odpowiedniki OEM lub zamienniki.
 
 ### Ceny na rynku wtórnym
 
-Na rynku wtórnym trzeba wyraźnie rozdzielać typ nadwozia, bo ceny mocno się różnią. Inaczej wyceniane są furgony, brygadówki, podwozia, lawety i kampery.
+Na rynku wtórnym trzeba wyraźnie rozróżniać typ nadwozia, bo ceny mocno się różnią. Inaczej wyceniane są furgony, brygadówki, podwozia, lawety i kampery.
 
-Najtańsze są zwykle surowe dostawczaki i podwozia wymagające pracy blacharskiej lub mechanicznej. Wyżej stoją zadbane furgony i specjalistyczne zabudowy, a kampery na bazie Fiat Ducato 2.8 JTD są osobną kategorią i w 2026 roku zwykle znacząco przekraczają 30 000 zł – nawet starsze alkowy i półintegry często kosztują wielokrotnie więcej niż zwykłe dostawczaki.
+Najtańsze są zwykle surowe dostawczaki i podwozia wymagające pracy blacharskiej lub mechanicznej. Wyżej stoją zadbane furgony i specjalistyczne zabudowy, a kampery na bazie Fiata Ducato 2.8 JTD są osobną kategorią i w 2026 roku zwykle znacząco przekraczają 30 000 zł – nawet starsze alkowy i półintegry często kosztują wielokrotnie więcej niż zwykłe dostawczaki.
 
 Kto wybiera konkretny rocznik i wersję, znajdzie przegląd w [kompletnym przewodniku po Fiacie Ducato](/modele/fiat-ducato/).

@@ -1,7 +1,7 @@
 ---
 title: "Nissan Interstar – następca NV400 na platformie Mastera"
 date: 2026-03-23
-description: "Nissan Interstar – dane techniczne, silniki 2.0 dCi i e-Interstar, wersje nadwoziowe, ceny i porównanie z Renault Master i konkurencją."
+description: "Nissan Interstar – dane techniczne, silniki 2.0 dCi i e-Interstar, wersje nadwoziowe, ceny i porównanie z Renault Masterem oraz konkurencją."
 draft: false
 author: "marek-kowalczyk"
 h1: "Nissan Interstar – kompletny przewodnik po modelu"
@@ -14,13 +14,13 @@ youtube_title: "Nowy Nissan Interstar L3H2 dCi150 (2025) - test [PL]"
 lead: "Nissan Interstar to duży dostawczak, który od trzech generacji bazuje na platformie Renault Mastera. Nowa generacja z 2024 roku przynosi silnik 2.0 dCi, elektrycznego e-Interstara z baterią 87 kWh i tytuł International Van of the Year 2025 (wspólnie z Masterem). Sprawdź, czy warto wybrać go zamiast francuskiego oryginału."
 faq:
   - question: "Czym Nissan Interstar różni się od Renault Mastera?"
-    answer: "Interstar bazuje na platformie Renault Mastera i dzieli z nim silniki, skrzynie biegów i wymiary nadwozia. Różnice dotyczą designu przodu (grill, logo), wyposażenia standardowego i sieci serwisowej. Technicznie to ten sam samochód."
+    answer: "Interstar bazuje na platformie Renault Mastera i dzieli z nim silniki, skrzynie biegów oraz wymiary nadwozia. Różnice dotyczą designu przodu (grill, logo), wyposażenia standardowego i sieci serwisowej. Technicznie to ten sam samochód."
   - question: "Jaki silnik ma nowy Nissan Interstar 2024?"
-    answer: "Nowa generacja Interstara wyposażona jest w silnik 2.0 Blue dCi (zastąpił starszego 2.3 dCi) w wariantach 130, 150 i 170 KM. Dostępna jest też wersja elektryczna e-Interstar z silnikiem 143 KM."
+    answer: "Nowa generacja Interstara jest wyposażona w silnik 2.0 Blue dCi (zastąpił starszy 2.3 dCi) w wariantach 130, 150 i 170 KM. Dostępna jest też wersja elektryczna e-Interstar z silnikiem o mocy 143 KM."
   - question: "Ile kosztuje nowy Nissan Interstar?"
     answer: "Ceny nowego Interstara w wersji furgon zaczynają się od ok. 139 400 zł netto. Wersja elektryczna e-Interstar startuje od ok. 260 000 zł netto."
   - question: "Jaki zasięg ma e-Interstar?"
-    answer: "Elektryczny e-Interstar wyposażony jest w baterię 87 kWh i oferuje zasięg ok. 200–260 km w cyklu WLTP, zależnie od wariantu nadwozia i obciążenia."
+    answer: "Elektryczny e-Interstar jest wyposażony w baterię 87 kWh i oferuje zasięg ok. 200–260 km w cyklu WLTP, zależnie od wariantu nadwozia i obciążenia."
   - question: "Czy Nissan Interstar to dobry samochód dostawczy?"
     answer: "Interstar to sprawdzona konstrukcja Renault Mastera z dostępem do sieci Nissana. Nowa generacja (2024+) zdobyła tytuł International Van of the Year 2025. Warto go rozważyć, jeśli dealer Nissana oferuje lepsze warunki finansowe niż Renault."
 sources:
@@ -31,11 +31,11 @@ sources:
 
 ## Nissan Interstar – co to za model
 
-Nissan Interstar to duży samochód dostawczy segmentu, w którym rywalizują [Renault Master](/modele/renault-master/), [Mercedes Sprinter](/modele/mercedes-sprinter/) i [Opel Movano](/modele/opel-movano/). Wszystkie wcielenia tego dużego vana Nissana powstały w ścisłym związku z kolejnymi generacjami Mastera.
+Nissan Interstar to duży samochód dostawczy z segmentu, w którym rywalizują [Renault Master](/modele/renault-master/), [Mercedes Sprinter](/modele/mercedes-sprinter/) i [Opel Movano](/modele/opel-movano/). Wszystkie wcielenia tego dużego vana Nissana powstały w ścisłym związku z kolejnymi generacjami Mastera.
 
-Historia modelu sięga 2003 roku, kiedy Nissan zaczął sprzedawać drugą generację Renault Mastera pod nazwą Nissan Interstar. Później nazwę Interstar zastąpił NV400, a w 2024 roku Nissan wrócił do nazwy Interstar wraz z debiutem nowej generacji. Duży van Nissana od 2003 roku bazuje na kolejnych generacjach Renault Mastera; początkowo jako Interstar, potem NV400, a od 2024 znów jako Interstar.
+Historia modelu sięga 2003 roku, kiedy Nissan zaczął sprzedawać drugą generację Renault Mastera pod nazwą Nissan Interstar. Później nazwę Interstar zastąpił NV400, a w 2024 roku Nissan wrócił do nazwy Interstar wraz z debiutem nowej generacji. Duży van Nissana od 2003 roku bazuje na kolejnych generacjach Renault Mastera; początkowo jako Interstar, potem NV400, a od 2024 r. znów jako Interstar.
 
-Nowa generacja to nie kolejny lifting, ale gruntowna przebudowa. Nowy silnik 2.0 Blue dCi zastąpił starszego 2.3 dCi, pojawiła się wersja w pełni elektryczna e-Interstar, a platforma zyskała systemy ADAS i cyfrowy kokpit z 10,1-calowym ekranem dotykowym.
+Nowa generacja to nie kolejny lifting, lecz gruntowna przebudowa. Nowy silnik 2.0 Blue dCi zastąpił starszy 2.3 dCi, pojawiła się wersja w pełni elektryczna e-Interstar, a platforma zyskała systemy ADAS i cyfrowy kokpit z 10,1-calowym ekranem dotykowym.
 
 {{% info title="Van roku 2025" icon="emoji_events" %}}
 Platforma [Renault Mastera](/modele/renault-master/) IV generacji, współdzielona z Interstarem i Movano, zdobyła tytuł International Van of the Year 2025.
@@ -59,24 +59,24 @@ W zależności od rocznika i rynku występowały silniki 2.3 dCi o mocy 100, 110
 
 ### Nissan Interstar II / nowa generacja (od 2024)
 
-Obecny Interstar to odpowiednik Renault Mastera IV. Ma nowe nadwozie, poprawioną aerodynamikę, diesle 2.0 Blue dCi 130, 150 i 170 KM oraz wersję elektryczną e-Interstar z baterią 87 kWh i mocą 143 KM.
+Obecny Interstar to odpowiednik Renault Mastera IV. Ma nowe nadwozie, poprawioną aerodynamikę, diesle 2.0 Blue dCi o mocy 130, 150 i 170 KM oraz wersję elektryczną e-Interstar z baterią 87 kWh i mocą 143 KM.
 
 Do tego dochodzą systemy ADAS i cyfrowy kokpit. Ta generacja zdobyła też tytuł IVOTY 2025 wspólnie z Masterem.
 
 ## Dane techniczne Nissana Interstar
 
-W nowej generacji gama furgonów jest prostsza niż kiedyś. Nie ma już krótkiego L1H1 – w praktyce startujesz od L2H2, a kończysz na L4H3.
+W nowej generacji gama furgonów jest prostsza niż kiedyś. Nie ma już krótkiego L1H1 – w praktyce oferta zaczyna się od L2H2, a kończy na L4H3.
 
 | Wariant | Długość całk. | Wysokość | Rozstaw osi | Objętość ładunkowa | Długość paki | DMC | Ładowność |
 |---------|---------------|----------|-------------|--------------------|--------------|-----|-----------|
-| L2H2 | ok. 5680 mm | ok. 2498 mm | ok. 3585 mm | 10.8 m3 | ok. 3115 mm | 3.5–4.0 t | do ok. 1.6 t |
-| L3H2 | ok. 6315 mm | ok. 2498 mm | ok. 4215 mm | 13.0 m3 | ok. 3740 mm | 3.5–4.0 t | do ok. 1.5 t |
-| L3H3 | ok. 6315 mm | ok. 2755 mm | ok. 4215 mm | 14.8 m3 | ok. 3740 mm | 3.5–4.0 t | do ok. 1.45 t |
-| L4H3 | ok. 6845 mm | ok. 2755 mm | ok. 4215 mm + zwis | 15.0 m3 | ok. 4385 mm | 3.5–4.0 t | do ok. 1.4 t |
+| L2H2 | ok. 5680 mm | ok. 2498 mm | ok. 3585 mm | 10,8 m3 | ok. 3115 mm | 3,5–4,0 t | do ok. 1,6 t |
+| L3H2 | ok. 6315 mm | ok. 2498 mm | ok. 4215 mm | 13,0 m3 | ok. 3740 mm | 3,5–4,0 t | do ok. 1,5 t |
+| L3H3 | ok. 6315 mm | ok. 2755 mm | ok. 4215 mm | 14,8 m3 | ok. 3740 mm | 3,5–4,0 t | do ok. 1,45 t |
+| L4H3 | ok. 6845 mm | ok. 2755 mm | ok. 4215 mm + zwis | 15,0 m3 | ok. 4385 mm | 3,5–4,0 t | do ok. 1,4 t |
 
-Najważniejsze wymiary użytkowe też są istotne przy wyborze zabudowy i codziennej pracy. Szerokość zewnętrzna bez lusterek to ok. 2080 mm, szerokość między nadkolami ok. 1380 mm, a maksymalna szerokość wewnętrzna ok. 1760 mm.
+Wymiary użytkowe również mają znaczenie przy wyborze zabudowy i codziennej pracy. Szerokość zewnętrzna bez lusterek to ok. 2080 mm, szerokość między nadkolami ok. 1380 mm, a maksymalna szerokość wewnętrzna ok. 1760 mm.
 
-DMC zależnie od wersji wynosi od 3,3 do 4,0 t. Wysokość progu załadunku zależy od napędu i wersji, a średnica zawracania wynosi ok. 12.4–14.8 m.
+DMC w zależności od wersji wynosi od 3,3 do 4,0 t. Wysokość progu załadunku zależy od napędu i wersji, a średnica zawracania wynosi ok. 12,4–14,8 m.
 
 ## Silniki Interstara
 
@@ -84,26 +84,26 @@ W gamie nowego Interstara są trzy diesle 2.0 Blue dCi i jedna wersja elektryczn
 
 | Silnik | Moc | Moment | Skrzynia | Norma | Napęd | WLTP |
 |--------|-----|--------|----------|-------|-------|------|
-| 2.0 Blue dCi 130 | 130 KM | 360 Nm | 6MT | Euro 6e | FWD | ok. 7.5–8.5 l/100 km |
-| 2.0 Blue dCi 150 | 150 KM | 380 Nm | 6MT / zależnie od rynku automat | Euro 6e | FWD | ok. 7.8–8.8 l/100 km |
-| 2.0 Blue dCi 170 | 170 KM | 400 Nm | automat 9-bieg. / wg rynku | Euro 6e | FWD | ok. 8.0–9.2 l/100 km |
-| e-Interstar | 143 KM | – | 1-bieg. | zeroemisyjny | FWD | bateria 87 kWh, zasięg do ok. 460 km WLTP w wybranych konfiguracjach furgonu; realnie mniej przy dużym obciążeniu/autostradzie |
+| 2.0 Blue dCi 130 | 130 KM | 360 Nm | 6MT | Euro 6e | FWD | ok. 7,5–8,5 l/100 km |
+| 2.0 Blue dCi 150 | 150 KM | 380 Nm | 6MT / zależnie od rynku automat | Euro 6e | FWD | ok. 7,8–8,8 l/100 km |
+| 2.0 Blue dCi 170 | 170 KM | 400 Nm | automat 9-bieg. / wg rynku | Euro 6e | FWD | ok. 8,0–9,2 l/100 km |
+| e-Interstar | 143 KM | – | 1-bieg. | zeroemisyjny | FWD | bateria 87 kWh, zasięg do ok. 460 km WLTP w wybranych konfiguracjach furgonu; realnie mniej przy dużym obciążeniu i jeździe autostradowej |
 
 ### Diesel 2.0 Blue dCi
 
-Nowa generacja przeszła na mniejszy, ale nadal mocny silnik [turbodiesel](https://pl.wikipedia.org/wiki/Turbodiesel) 2.0 Blue dCi. Zastąpił on starsze 2.3 dCi znane z NV400.
+Nowa generacja przeszła na mniejszy, ale nadal mocny silnik [turbodiesel](https://pl.wikipedia.org/wiki/Turbodiesel) 2.0 Blue dCi. Zastąpił on starsze jednostki 2.3 dCi znane z NV400.
 
-- **2.0 Blue dCi 130 KM** – bazowa jednostka, 360 Nm i 6-biegowy manual. Rozsądna opcja do lżejszych zadań i krótszych zabudów.
+- **2.0 Blue dCi 130 KM** – bazowa jednostka, 360 Nm i 6-biegowa skrzynia manualna. Rozsądna opcja do lżejszych zadań i krótszych zabudów.
 - **2.0 Blue dCi 150 KM** – środkowy wariant, 380 Nm. Skrzynia zależy od rynku i wersji; w Polsce należy sprawdzić aktualny cennik Nissana.
-- **2.0 Blue dCi 170 KM** – najmocniejszy diesel, 400 Nm. Automat 9-biegowy zależy od rynku i wersji, ale to naturalny wybór do cięższej pracy.
+- **2.0 Blue dCi 170 KM** – najmocniejszy diesel, 400 Nm. Dostępność automatu 9-biegowego zależy od rynku i wersji, ale to naturalny wybór do cięższej pracy.
 
-Wszystkie odmiany spełniają normę Euro 6e i korzystają z DPF oraz układu SCR z AdBlue. Na razie jest za wcześnie na jednoznaczną ocenę trwałości 2.0 Blue dCi; warto obserwować flotowe przebiegi i akcje serwisowe.
+Wszystkie odmiany spełniają normę Euro 6e i korzystają z filtra DPF oraz układu SCR z AdBlue. Na razie jest za wcześnie na jednoznaczną ocenę trwałości 2.0 Blue dCi; warto obserwować flotowe przebiegi i akcje serwisowe.
 
 ### e-Interstar (elektryczny)
 
-Elektryczny Interstar ma 143 KM, napęd na przód i baterię 87 kWh. W wybranych konfiguracjach furgonu zasięg sięga do ok. 460 km WLTP, ale w realnej pracy będzie niższy przy dużym obciążeniu i jeździe autostradowej.
+Elektryczny Interstar ma 143 KM, napęd na przednią oś i baterię 87 kWh. W wybranych konfiguracjach furgonu zasięg sięga do ok. 460 km WLTP, ale w realnej eksploatacji będzie niższy przy dużym obciążeniu i jeździe autostradowej.
 
-Jeśli chodzi o ładowanie, bezpieczniej trzymać się danych ogólnych niż zgadywać katalogowe rekordy. AC do 22 kW; pełne ładowanie trwa około 5 godzin przy stacji 22 kW.
+Jeśli chodzi o ładowanie, bezpieczniej trzymać się danych ogólnych, niż zgadywać katalogowe rekordy. Ładowanie AC do 22 kW; pełne naładowanie trwa około 5 godzin przy stacji 22 kW.
 
 {{% expert name="Marek Kowalczyk" %}}
 Jeśli kupujesz Interstara do roboty, nie patrz tylko na moc. Dla kuriera miejskiego 130 KM zwykle wystarczy, ale przy L3H3, jeździe z kompletem towaru i trasach ekspresowych lepiej celować w 150 albo 170 KM. W przypadku używanego NV400 najpierw sprawdź stan EGR, DPF, wtrysków i turbiny – to ważniejsze niż logo na grillu.
@@ -132,19 +132,19 @@ Nowy Interstar jest zbyt świeży, by uczciwie ogłaszać listę powtarzalnych a
 
 W starszym Interstarze typowe problemy dotyczyły przede wszystkim osprzętu diesla. Regeneracja wtryskiwacza to zwykle **600–1200 zł** za sztukę, turbiny **1500–2500 zł**, a zaworu EGR **400–900 zł**.
 
-Przy większych przebiegach dochodzi sprzęgło z dwumasą. Tu rachunek zwykle zamyka się w widełkach **2500–4500 zł**.
+Przy większych przebiegach dochodzi jeszcze sprzęgło z kołem dwumasowym. Tu rachunek zwykle zamyka się w widełkach **2500–4500 zł**.
 
 ### 2.3 dCi (NV400 2010–2024)
 
 W NV400 najczęściej wraca temat EGR, DPF, wtrysków i turbiny. EGR to zwykle **500–1200 zł**, czyszczenie DPF **600–900 zł**, a nowy filtr nawet **2500–5000 zł**.
 
-Regeneracja lub naprawa wtryskiwaczy to zazwyczaj **700–1400 zł** za sztukę, a turbiny **1800–3000 zł**. Łańcuch rozrządu zwykle uchodzi za trwały, ale hałasy osprzętu trzeba diagnozować na bieżąco. Przy dużych przebiegach skrzynia i sprzęgło potrafią wygenerować koszt **3000–6000 zł**.
+Regeneracja lub naprawa wtryskiwaczy to zazwyczaj **700–1400 zł** za sztukę, a turbiny **1800–3000 zł**. Łańcuch rozrządu zwykle uchodzi za trwały, ale hałasy osprzętu trzeba diagnozować na bieżąco. Przy dużych przebiegach skrzynia i sprzęgło potrafią oznaczać wydatek rzędu **3000–6000 zł**.
 
 ### Nadwozie i eksploatacja
 
 W autach dostawczych liczy się nie tylko silnik. Rolki drzwi przesuwnych zużywają się i ich wymiana zwykle kosztuje **300–800 zł**.
 
-Zamki i siłowniki to najczęściej **300–700 zł**. Z przodu zawieszenia wracają łączniki i elementy stabilizatora za **150–400 zł**, a sworznie lub wahacze potrafią kosztować **400–1200 zł** za stronę.
+Zamki i siłowniki to najczęściej **300–700 zł**. W przednim zawieszeniu zużywają się łączniki i elementy stabilizatora za **150–400 zł**, a sworznie lub wahacze potrafią kosztować **400–1200 zł** za stronę.
 
 ### Nowy Interstar 2024+
 
@@ -152,24 +152,24 @@ Na razie jest zbyt mało danych o powtarzalnych awariach nowej generacji. Przy m
 
 ## Porównanie Interstara z konkurencją
 
-Na papierze Interstar jest blisko spokrewniony z Masterem i Movano, ale zakupowo konkurencja jest szersza. W realnym przetargu najczęściej wpadają do tabeli jeszcze Sprinter i Transit.
+Na papierze Interstar jest blisko spokrewniony z Masterem i Movano, ale przy zakupie konkurencja jest szersza. W realnym przetargu do tabeli najczęściej trafiają jeszcze Sprinter i Transit.
 
 | Model | DMC | Maks. objętość | Maks. ładowność | Napęd | Cena bazowa netto | Gwarancja |
 |-------|-----|----------------|-----------------|-------|-------------------|-----------|
-| Nissan Interstar | do 4.0 t | do 15 m3 | do ok. 1.6 t | FWD | od ok. 139 400 zł netto | – |
-| Renault Master | do 4.0 t | do 15 m3 | – | – | – | – |
-| Opel Movano | do 4.0 t | do 15 m3 | – | – | – | – |
-| Mercedes Sprinter | zwykle 3.5–5.5 t zależnie od wersji | do ok. 14 m3 w porównywalnych odmianach | – | – | cena wyższa | – |
-| Ford Transit | – | do ok. 15.1 m3 | – | – | – | – |
+| Nissan Interstar | do 4,0 t | do 15 m3 | do ok. 1,6 t | FWD | od ok. 139 400 zł netto | – |
+| Renault Master | do 4,0 t | do 15 m3 | – | – | – | – |
+| Opel Movano | do 4,0 t | do 15 m3 | – | – | – | – |
+| Mercedes Sprinter | zwykle 3,5–5,5 t zależnie od wersji | do ok. 14 m3 w porównywalnych odmianach | – | – | cena wyższa | – |
+| Ford Transit | – | do ok. 15,1 m3 | – | – | – | – |
 
-W gamie napędowej Interstar, Master i Movano oferują diesle 130–170 KM. Sprinter ma zwykle szerszą konfigurację wersji i DMC, a Transit jest mocnym graczem tam, gdzie liczy się szeroka sieć serwisowa i dostępność finansowania.
+W gamie napędowej Interstar, Master i Movano oferują diesle o mocy 130–170 KM. Sprinter ma zwykle szerszą konfigurację wersji i DMC, a Transit jest silną propozycją tam, gdzie liczy się rozbudowana sieć serwisowa i dostępność finansowania.
 
 Najważniejsze wnioski są trzy:
 - **Interstar wygrywa ceną zakupu i prostotą gamy** – łatwiej szybko wybrać konfigurację.
-- **Sprinter daje szerszy wybór i mocniejszy efekt premium**, ale zwykle kosztuje wyraźnie więcej.
+- **Sprinter daje szerszy wybór i bardziej prestiżowy charakter**, ale zwykle kosztuje wyraźnie więcej.
 - **Transit kusi siecią serwisową i finansowaniem**, więc często wygrywa w dużych flotach.
 
-Interstar, [Master](/modele/renault-master/) i [Movano](/modele/opel-movano/) pozostają technicznie bardzo bliskimi krewniakami. Dlatego w praktyce często decydują nie parametry, tylko rabat, termin odbioru i lokalny serwis.
+Interstar, [Master](/modele/renault-master/) i [Movano](/modele/opel-movano/) pozostają technicznie bardzo bliskimi krewniakami. Dlatego w praktyce często decydują nie parametry, lecz rabat, termin odbioru i lokalny serwis.
 
 ## Ceny Interstara
 
@@ -196,6 +196,6 @@ Cennik Interstara warto rozdzielić na dwa światy: nową generację od 2024 rok
 | 170 KM automat | ok. 170 000–185 000 zł netto |
 | e-Interstar | od ok. 250 000–270 000 zł netto |
 
-Na rynku wtórnym NV400 bywa tańszy od porównywalnego Mastera, co dla kupującego używkę może być plusem. Trzeba tylko sprawdzić historię serwisową i stan osprzętu diesla, bo różnica w cenie zakupu potrafi szybko zniknąć po pierwszych naprawach.
+Na rynku wtórnym NV400 bywa tańszy od porównywalnego Mastera, co dla kupującego używane auto może być zaletą. Trzeba tylko sprawdzić historię serwisową i stan osprzętu diesla, bo różnica w cenie zakupu potrafi szybko zniknąć po pierwszych naprawach.
 
 {{% youtube %}}

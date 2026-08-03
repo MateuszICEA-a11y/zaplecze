@@ -21,7 +21,7 @@ lead: "Ten artykuł dotyczy dostawczej wersji Opel Combo Cargo XL, a nie osobowe
 
 W przypadku Combo E XL kluczowe jest rozróżnienie wersji. Poniżej opisujemy wyłącznie dostawczego Opla Combo Cargo XL, bo to właśnie ta odmiana ma przestrzeń ładunkową liczoną w metrach sześciennych i ładowność istotną dla firmy.
 
-Combo E XL od 2018 roku ma następujące wymiary kluczowe:
+Combo E XL od 2018 roku ma następujące kluczowe wymiary:
 - długość całkowita: 4753 mm
 - rozstaw osi: 2975 mm
 - szerokość całkowita: 1920 mm
@@ -32,19 +32,19 @@ Combo E XL od 2018 roku ma następujące wymiary kluczowe:
 - wysokość przestrzeni ładunkowej: 1246 mm
 - wysokość załadunku: 576 mm
 
-Objętość przestrzeni ładunkowej wynosi ok. 4,4 m³. Ładowność sięga do 1000 kg, ale w praktyce zależy od wersji homologacyjnej, dopuszczalnej masy całkowitej, silnika i wyposażenia.
+Objętość przestrzeni ładunkowej wynosi ok. 4,4 m³. Ładowność sięga 1000 kg, ale w praktyce zależy od wersji homologacyjnej, dopuszczalnej masy całkowitej, silnika i wyposażenia.
 
-W codziennym użytkowaniu ważne są nie tylko wymiary zewnętrzne, ale też parametry otworów załadunkowych i drzwi przesuwnych. To one decydują, czy do auta wygodnie wejdzie europaleta, zabudowa serwisowa albo dłuższe elementy przewożone przez klapę w grodzi ze złożonym fotelem pasażera.
+W codziennym użytkowaniu ważne są nie tylko wymiary zewnętrzne, lecz także parametry otworów załadunkowych i drzwi przesuwnych. To one decydują, czy do auta wygodnie wejdzie europaleta, zabudowa serwisowa albo dłuższe elementy przewożone przez klapę w grodzi przy złożonym fotelu pasażera.
 
 Przy wysokości około 1848 mm Combo XL zwykle mieści się pod belkami 2,0 m. Przy ograniczeniu 1,9 m trzeba już zachować ostrożność, bo zapas jest niewielki.
 
 {{% expert name="Marek Kowalczyk" %}}
-Combo XL to sensowny wybór dla firm, które potrzebują więcej niż typowy miejski van, ale nie chcą przeskakiwać do większego dostawczaka. Niska wysokość załadunku 576 mm pozostaje jednym z najmocniejszych argumentów przy intensywnej pracy kurierskiej i serwisowej.
+Combo XL to rozsądny wybór dla firm, które potrzebują więcej niż typowy miejski van, ale nie chcą przechodzić na większego dostawczaka. Niska wysokość załadunku 576 mm pozostaje jednym z najmocniejszych argumentów przy intensywnej pracy kurierskiej i serwisowej.
 {{% /expert %}}
 
 ## Porównanie Combo Short i Long
 
-Różnice między wersjami długości przekładają się nie tylko na pojemność przestrzeni ładunkowej, ale też na manewrowość. W praktyce największe znaczenie ma tu wzrost rozstawu osi z 2625 mm do 2975 mm, czyli o 350 mm.
+Różnice między wersjami o różnej długości przekładają się nie tylko na pojemność przestrzeni ładunkowej, lecz także na manewrowość. W praktyce największe znaczenie ma tu wzrost rozstawu osi z 2625 mm do 2975 mm, czyli o 350 mm.
 
 | Parametr | Short (L1) | Long XL (L2) |
 |----------|-----------|--------------|
@@ -54,21 +54,21 @@ Różnice między wersjami długości przekładają się nie tylko na pojemnoś�
 | Długość podłogi | ok. 1467 mm | 1817 mm |
 | Ładowność | zależna od wersji | do 1000 kg |
 
-Dłuższy rozstaw osi realnie wpływa na parkowanie i pracę w mieście. Short jest poręczniejszy w ciasnej zabudowie, natomiast Long daje wyraźnie większy bufor przestrzeni i większą swobodę przy przewozie dłuższych ładunków.
+Dłuższy rozstaw osi wyraźnie wpływa na parkowanie i pracę w mieście. Short jest poręczniejszy w ciasnej zabudowie, natomiast Long daje wyraźnie większy zapas przestrzeni i większą swobodę przy przewozie dłuższych ładunków.
 
 Warto też pamiętać, że sama długość nadwozia nie przesądza o wszystkim. Dla użytkownika firmowego równie ważne są liczba miejsc, rodzaj grodzi, obecność składanego fotela pasażera oraz maksymalna długość ładunku po wykorzystaniu klapy w przegrodzie.
 
 ## Kiedy wybrać Long zamiast Short
 
-Wersja XL ma sens wtedy, gdy większa przestrzeń pracuje na siebie każdego dnia. Nie chodzi tylko o samą pojemność 4,4 m³, ale o łatwiejsze ułożenie ładunku bez piętrowania i bez ciągłego kompromisu między długością towaru a liczbą paczek.
+Wersja XL ma sens wtedy, gdy większa przestrzeń jest wykorzystywana każdego dnia. Nie chodzi tylko o samą pojemność 4,4 m³, lecz o łatwiejsze ułożenie ładunku bez piętrowania i bez ciągłego kompromisu między długością towaru a liczbą paczek.
 
 Long warto wybrać, gdy:
 - regularnie przewozisz europaletę 1200 x 800 mm i liczy się wygodniejszy załadunek
-- obsługujesz paczki kurierskie i potrzebujesz większego buforu objętościowego
+- obsługujesz paczki kurierskie i potrzebujesz większego zapasu objętości
 - wożisz drabiny lub długie elementy około 2,5–3,0 m z wykorzystaniem klapy w grodzi i składanego fotela pasażera
 - planujesz zabudowę serwisową z regałami o głębokości 300–400 mm
 
-Short lepiej sprawdza się tam, gdzie priorytetem jest manewrowanie. Jeśli auto codziennie pracuje w ścisłym centrum, na ciasnych podwórkach albo w podziemnych garażach, krótsza wersja zwykle będzie wygodniejsza.
+Short lepiej sprawdza się tam, gdzie najważniejsza jest manewrowość. Jeśli auto codziennie pracuje w ścisłym centrum, na ciasnych podwórkach albo w podziemnych garażach, krótsza wersja zwykle będzie wygodniejsza.
 
 ## Silniki dostępne w Combo Long
 
@@ -86,19 +86,19 @@ Dla rynku europejskiego w Combo E występowały m.in.:
 
 W zależności od wersji i rocznika stosowano skrzynie manualne 5- lub 6-biegowe oraz automat EAT8. To ważne, bo spotykane w sieci przypisanie skrzyni ETG7 do Combo E jest po prostu błędne.
 
-Dla użytkownika flotowego mocnym argumentem pozostaje także wersja elektryczna. Combo-e Cargo oferuje baterię 50 kWh, moc 100 kW (136 KM), moment obrotowy 260 Nm i zasięg WLTP na poziomie około 275–280 km zależnie od wersji i roku.
+Dla użytkownika flotowego mocnym argumentem pozostaje także wersja elektryczna. Combo-e Cargo oferuje baterię 50 kWh, moc 100 kW (136 KM), moment obrotowy 260 Nm i zasięg WLTP około 275–280 km w zależności od wersji i roku.
 
-Przy wyborze napędu warto patrzeć nie tylko na moc, ale też na masę własną, dopuszczalną masę całkowitą i docelowy profil pracy. Ładowność jest pochodną DMC minus masa własna, więc ta sama karoseria może mieć różne możliwości przewozowe zależnie od konfiguracji.
+Przy wyborze napędu warto brać pod uwagę nie tylko moc, lecz także masę własną, dopuszczalną masę całkowitą i docelowy profil pracy. Ładowność wynika z różnicy między DMC a masą własną, więc ta sama karoseria może mieć różne możliwości przewozowe w zależności od konfiguracji.
 
 ![Opel Combo Long – przestrzeń ładunkowa](/images/opel-combo-long-hero.webp)
 
 ## Zabudowy i akcesoria cargo
 
-W przypadku Combo XL najważniejsze są praktyczne rozwiązania poprawiające organizację przestrzeni i możliwość przewozu długich elementów. Tu kluczową rolę odgrywa układ grodzi oraz składany fotel pasażera.
+W przypadku Combo XL najważniejsze są praktyczne rozwiązania poprawiające organizację przestrzeni i umożliwiające przewóz długich elementów. Tu kluczową rolę odgrywa układ grodzi oraz składany fotel pasażera.
 
 ### Certyfikowane zabudowy Sortimo i Modul-System
 
-W tej sekcji warto trzymać się wyłącznie rozwiązań potwierdzonych konstrukcyjnie dla auta. W Combo stosowano klapę w grodzi i składany fotel pasażera, co pozwala wydłużyć przestrzeń transportową dla długich przedmiotów zgodnie ze specyfikacją danej wersji.
+W tej sekcji warto trzymać się wyłącznie rozwiązań konstrukcyjnie przewidzianych dla tego auta. W Combo stosowano klapę w grodzi i składany fotel pasażera, co pozwala wydłużyć przestrzeń transportową dla długich przedmiotów zgodnie ze specyfikacją danej wersji.
 
 W praktyce oznacza to, że przy doborze zabudowy trzeba sprawdzić:
 - czy auto jest 2- czy 3-miejscowe
@@ -107,13 +107,13 @@ W praktyce oznacza to, że przy doborze zabudowy trzeba sprawdzić:
 - jaką maksymalną długość ładunku dopuszcza konkretna konfiguracja
 
 {{% info title="Ładowność a silnik" icon="engineering" %}}
-Nie ma jednej uniwersalnej wartości ładowności dla wszystkich odmian Combo XL. Na wynik wpływają DMC, masa własna, silnik, długość nadwozia i wyposażenie, dlatego bez wskazania konkretnej wersji homologacyjnej lepiej mówić o wartościach maksymalnych sięgających do 1000 kg niż o jednej sztywnej liczbie.
+Nie ma jednej uniwersalnej wartości ładowności dla wszystkich odmian Combo XL. Na wynik wpływają DMC, masa własna, silnik, długość nadwozia i wyposażenie, dlatego bez wskazania konkretnej wersji homologacyjnej lepiej mówić o wartościach maksymalnych sięgających 1000 kg niż o jednej sztywnej liczbie.
 {{% /info %}}
 
 ## Ceny i dostępność
 
 Przy tym modelu nie da się rzetelnie podać jednej ceny bez wskazania konkretnego miesiąca, rocznika i rynku. Cenniki nowych aut zmieniały się wyraźnie w latach 2018–2025, a po zmianach w gamie Stellantis dochodziły jeszcze różnice w nazewnictwie, wyposażeniu i dostępności silników.
 
-To samo dotyczy rynku wtórnego. Żeby porównać oferty używanych egzemplarzy, trzeba rozdzielić co najmniej roczniki 2019, 2020, 2021 i 2022 oraz zestawić je z przebiegami rzędu 50 tys., 100 tys. i 150 tys. km.
+To samo dotyczy rynku wtórnego. Żeby porównać oferty używanych egzemplarzy, trzeba uwzględnić osobno co najmniej roczniki 2019, 2020, 2021 i 2022 oraz przebiegi rzędu 50 tys., 100 tys. i 150 tys. km.
 
 Warto też pamiętać o zmianach po debiucie modelu w 2018 roku. Bez rozbicia danych na okres 2018–2023 i lata po liftingu łatwo pomieszać wersje silnikowe, nazwy handlowe i wyposażenie, a wtedy nawet poprawne liczby zaczynają dotyczyć różnych odmian tego samego auta.

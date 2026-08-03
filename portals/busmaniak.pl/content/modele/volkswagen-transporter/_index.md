@@ -12,58 +12,58 @@ youtube: "hMpnvp50mXM"
 youtube_title: "Volkswagen Transporter 6.1 Furgon 2.0 TDI 150 TEST Budowlańca"
 main_keyword: "volkswagen transporter"
 volume: 9900
-lead: "Volkswagen Transporter to legenda segmentu aut dostawczych, produkowana od 1950 roku w kolejnych generacjach T1–T6.1; równolegle od 2021 oferowany jest osobowy Multivan T7 na MQB, a nowy dostawczy Transporter T7 pojawił się później jako osobna konstrukcja. Ponad 13 milionów egzemplarzy, silniki 2.0 TDI 90, 110, 150 i 204 KM, wersje od furgonu po kultowego kampera California."
+lead: "Volkswagen Transporter to legenda segmentu aut dostawczych, produkowany od 1950 roku w kolejnych generacjach T1–T6.1; równolegle od 2021 oferowany jest osobowy Multivan T7 na platformie MQB, a nowy dostawczy Transporter T7 pojawił się później jako osobna konstrukcja. Ponad 13 milionów egzemplarzy, silniki 2.0 TDI o mocy 90, 110, 150 i 204 KM, wersje od furgonu po kultowego kampera California."
 faq:
   - question: "Czym różni się T6 od T7?"
-    answer: "T6/T6.1 to konstrukcja na dedykowanej platformie VW z silnikami TDI. T7 Multivan bazuje na osobowej platformie MQB z opcją hybrydy plug-in eHybrid 218 KM. T7 jest bardziej komfortowy, ale T6.1 oferuje większą ładowność."
+    answer: "T6/T6.1 to konstrukcja oparta na własnej platformie VW z silnikami TDI. Multivan T7 bazuje na osobowej platformie MQB i ma w ofercie hybrydę plug-in eHybrid o mocy 218 KM. T7 jest bardziej komfortowy, natomiast T6.1 oferuje większą ładowność."
   - question: "Ile kosztuje używany Transporter T5?"
-    answer: "T5 z lat 2012–2015 kosztuje od 50 000 do 90 000 zł. Starsze egzemplarze 2003–2010 od 25 000 zł w górę, zależnie od stanu."
+    answer: "T5 z lat 2012–2015 kosztuje od 50 000 do 90 000 zł. Starsze egzemplarze z lat 2003–2010 – od 25 000 zł w górę, w zależności od stanu."
   - question: "Czy Volkswagen Transporter T4 jest jeszcze wart zakupu?"
-    answer: "T4 to trwała konstrukcja, ale wymaga starannej weryfikacji stanu głowicy (2.5 TDI) i blacharki. Zadbane egzemplarze trzymają cenę – od 10 000 do 35 000 zł za wersje Syncro."
+    answer: "T4 to trwała konstrukcja, wymaga jednak starannej weryfikacji stanu głowicy (2.5 TDI) i blacharki. Zadbane egzemplarze trzymają cenę – od 10 000 do 35 000 zł za wersje Syncro."
   - question: "Jaka jest pojemność ładunkowa Transportera T6.1?"
-    answer: "Od 4,3 m³ (L1 niski dach) do 9,3 m³ (L2 wysoki dach). DMC od 2800 do 3200 kg."
+    answer: "Od 4,3 m³ (L1 z niskim dachem) do 9,3 m³ (L2 z wysokim dachem). DMC wynosi od 2800 do 3200 kg."
 sources:
   - "Wikipedia – Volkswagen Group MQB platform"
   - "volkswagen-samochody-dostawcze.pl"
   - "adac.de"
-  - "pzpm.org.pl."
+  - "pzpm.org.pl"
 ---
 
 ## Historia i generacje Volkswagena Transporter
 
-Volkswagen Transporter rozwijał się przez dekady od prostego dostawczaka z silnikiem z tyłu do nowoczesnego vana z rozbudowaną elektroniką i systemami wsparcia kierowcy. Trzeba jednak rozdzielić klasyczne generacje Transportera od osobowego Multivana T7, bo to nie jest to samo auto.
+Volkswagen Transporter rozwijał się przez dekady: od prostego dostawczaka z silnikiem z tyłu po nowoczesnego vana z rozbudowaną elektroniką i systemami wspomagania kierowcy. Trzeba jednak oddzielić klasyczne generacje Transportera od osobowego Multivana T7, bo to nie jest to samo auto.
 
 ### T1 (1950–1967)
 
-Pierwszy Transporter miał silnik z tyłu, napęd RWD i charakterystyczną dzieloną szybę. To właśnie ta generacja zbudowała legendę modelu w wersjach użytkowych i osobowych.
+Pierwszy Transporter miał silnik z tyłu, napęd na tylne koła i charakterystyczną dzieloną szybę. To właśnie ta generacja zbudowała legendę modelu w wersjach użytkowych i osobowych.
 
 ### T2 (1967–1979, Brazylia do 2013)
 
-T2 dostał jednolitą przednią szybę i rozwinięto w nim gamę wersji osobowych. W Europie zakończył karierę pod koniec lat 70., ale w Brazylii był produkowany aż do 2013 roku.
+T2 otrzymał jednolitą przednią szybę i szerszą gamę wersji osobowych. W Europie zakończył karierę pod koniec lat 70., ale w Brazylii produkowano go aż do 2013 roku.
 
 ### T3 (1979–1990/1992)
 
-T3 był ostatnim Transporterem z silnikiem z tyłu. W gamie pojawiły się benzynowe boksery i diesle, a sama konstrukcja była już wyraźnie nowocześniejsza od T1 i T2.
+T3 był ostatnim Transporterem z silnikiem umieszczonym z tyłu. W gamie pojawiły się benzynowe silniki typu bokser i diesle, a sama konstrukcja była już wyraźnie nowocześniejsza od T1 i T2.
 
 ### T4 (1990–2003)
 
-T4 był przełomem technicznym – silnik trafił na przód, pojawił się napęd FWD oraz wersje Syncro. Model oferowano z krótkim i długim rozstawem osi, co mocno zwiększyło jego użyteczność w transporcie i zabudowach.
+T4 stanowił przełom techniczny – silnik trafił do przodu, pojawił się napęd na przednie koła oraz wersje Syncro. Model oferowano z krótkim i długim rozstawem osi, co wyraźnie zwiększyło jego przydatność w transporcie i przy zabudowach.
 
 ### T5 (2003–2015)
 
-T5 dostał całkowicie nową karoserię i szeroką rodzinę odmian: Transporter, Caravelle, Multivan oraz California. To generacja, w której Volkswagen mocno rozbudował ofertę od typowo roboczego furgonu po wygodnego vana rodzinnego i fabrycznego kampera.
+T5 dostał całkowicie nową karoserię i szeroką rodzinę odmian: Transporter, Caravelle, Multivan oraz California. To generacja, w której Volkswagen mocno rozbudował ofertę: od typowo roboczego furgonu po wygodnego vana rodzinnego i fabrycznego kampera.
 
 ### T6 (2015–2019)
 
-T6 był rozwinięciem T5 po liftingu. Przyniósł nowe multimedia oraz dostosowanie do normy Euro 6.
+T6 był rozwinięciem T5 po liftingu. Przyniósł nowy system multimedialny oraz dostosowanie do normy Euro 6.
 
 ### T6.1 (2019–2024/2025)
 
-T6.1 to kolejny duży lifting poprzednika, ale z istotnymi zmianami technicznymi. Wprowadzono elektromechaniczne wspomaganie kierownicy, Digital Cockpit oraz nowe systemy ADAS.
+T6.1 to kolejny duży lifting poprzednika, tym razem z istotnymi zmianami technicznymi. Wprowadzono elektromechaniczne wspomaganie kierownicy, Digital Cockpit oraz nowe systemy ADAS.
 
 ### Multivan T7 (od 2021)
 
-Od 2021 dostępny jest Multivan T7 na platformie MQB. To osobny model MPV, a nie bezpośredni następca dostawczego Transportera; w gamie pojawił się też napęd PHEV o mocy systemowej 218 KM.
+Od 2021 dostępny jest Multivan T7 na platformie MQB. To osobny model MPV, a nie bezpośredni następca dostawczego Transportera; w gamie pojawił się też napęd PHEV o systemowej mocy 218 KM.
 
 ### Transporter T7 (od 2024)
 
@@ -71,7 +71,7 @@ Dostawczy Transporter nowej generacji pojawił się później jako osobny model,
 
 ## Dane techniczne i wymiary
 
-Jeśli interesuje Cię głównie T6.1 jako auto do pracy, najważniejsze są trzy rzeczy: długość przestrzeni ładunkowej, realna pojemność i ładowność. W seryjnym furgonie T6.1 mówimy o wariantach L1H1 i L2H1 – bez klasycznego wysokiego dachu H2.
+Jeśli interesuje Cię głównie T6.1 jako auto do pracy, najważniejsze są trzy rzeczy: długość przestrzeni ładunkowej, rzeczywista pojemność i ładowność. W seryjnym furgonie T6.1 mowa o wariantach L1H1 i L2H1 – bez klasycznego wysokiego dachu H2.
 
 | Wariant | Rozstaw osi | Długość | Szerokość bez lusterek | Wysokość | Pojemność ładunkowa | DMC | Ładowność |
 |---------|-------------|---------|-------------------------|----------|---------------------|-----|-----------|
@@ -88,11 +88,11 @@ Dodatkowe wymiary użytkowe dla T6.1 Furgon:
 - **Masa przyczepy z hamulcem** – do 2500 kg
 - **Próg załadowczy** – 565 mm
 
-W praktyce L1 wystarcza do miejskiej dystrybucji i serwisu, a L2 jest wygodniejszy dla ekip montażowych, kurierki i zabudów specjalnych. Szerokość między nadkolami 1244 mm ułatwia planowanie przewozu sprzętu i skrzyń transportowych.
+W praktyce L1 wystarcza do miejskiej dystrybucji i serwisu, a L2 jest wygodniejszy dla ekip montażowych, firm kurierskich i zabudów specjalnych. Szerokość między nadkolami wynosząca 1244 mm ułatwia planowanie przewozu sprzętu i skrzyń transportowych.
 
 ## Silniki Transportera
 
-W T6.1 podstawą gamy są diesle 2.0 TDI. To właśnie te wersje mają znaczenie dla furgonu, kombi i większości aut flotowych – bez mieszania ich z osobowym Multivanem T7.
+W T6.1 podstawą gamy są diesle 2.0 TDI. To właśnie te wersje mają znaczenie dla furgonu, kombi i większości aut flotowych – bez mylenia ich z osobowym Multivanem T7.
 
 ### Silniki 2.0 TDI w Volkswagenie Transporter T6.1
 
@@ -103,34 +103,34 @@ W T6.1 podstawą gamy są diesle 2.0 TDI. To właśnie te wersje mają znaczenie
 | 2.0 TDI | 150 KM | 340 Nm | Euro 6d | 6 MT / 7 DSG | FWD / 4MOTION | ok. 6,8–7,6 l/100 km |
 | 2.0 TDI | 204 KM | 450 Nm | Euro 6d | 7 DSG | FWD / 4MOTION | ok. 7,2–8,2 l/100 km |
 
-Najbardziej uniwersalny wybór do pracy to zwykle 150 KM. Taka wersja daje już sensowną elastyczność pod obciążeniem i może występować z DSG albo 4MOTION.
+Najbardziej uniwersalny wybór do pracy to zwykle wariant o mocy 150 KM. Taka wersja zapewnia już sensowną elastyczność pod obciążeniem i może występować z DSG albo 4MOTION.
 
-Wariant 90 KM ma sens głównie w lekkiej pracy miejskiej. Z kolei 204 KM to propozycja dla tych, którzy jeżdżą z przyczepą, kompletują bogatsze wersje albo chcą po prostu mocniejszego busa bez kompromisów przy trasie.
+Wariant 90 KM ma sens głównie przy lekkiej pracy w mieście. Z kolei 204 KM to propozycja dla tych, którzy jeżdżą z przyczepą, wybierają bogaciej wyposażone wersje albo chcą po prostu mocniejszego busa bez kompromisów w trasie.
 
 {{% info title="Multivan T7 to nie furgon Transporter" icon="info" %}}
-Jeśli trafisz na ogłoszenia z napędem 1.4 eHybrid 218 KM i baterią brutto 13 kWh, chodzi o Multivana T7 na platformie MQB, a nie o dostawczego Transportera T6.1.
+Jeśli trafisz na ogłoszenia z napędem 1.4 eHybrid o mocy 218 KM i baterią brutto 13 kWh, chodzi o Multivana T7 na platformie MQB, a nie o dostawczego Transportera T6.1.
 {{% /info %}}
 
 ## Wersje Volkswagen Transporter
 
-Rodzina Transportera jest szeroka i właśnie to od lat robi różnicę. Pod jedną nazwą dostajesz roboczy furgon, auto dla brygady, shuttle dla hotelu albo bazę pod kampera.
+Rodzina Transportera jest szeroka i właśnie to od lat robi różnicę. Pod jedną nazwą dostajesz roboczy furgon, auto dla brygady, bus transferowy dla hotelu albo bazę pod kampera.
 
-- **Furgon blaszany** – klasyczny dostawczak do kurierki, serwisu, transportu narzędzi i lokalnej dystrybucji.
-- **Furgon Plus / Brygadowy 5–6 miejsc** – kompromis między kabiną dla ekipy a przestrzenią ładunkową; dobry dla ekip budowlanych i instalatorów.
+- **Furgon blaszany** – klasyczny dostawczak do pracy kurierskiej, serwisu, transportu narzędzi i lokalnej dystrybucji.
+- **Furgon Plus / Brygadowy 5–6 miejsc** – kompromis między kabiną dla ekipy a przestrzenią ładunkową; dobry wybór dla ekip budowlanych i instalatorów.
 - **Kombi 5–9 miejsc** – uniwersalna wersja do przewozu ludzi i sprzętu, często wybierana przez firmy techniczne i przewoźników lokalnych.
-- **Caravelle 8–9 miejsc** – odmiana nastawiona na transport osób, shuttle hotelowy i przewóz pracowników.
-- **Multivan 5–7 miejsc** – bardziej komfortowy MPV do rodzin, biznesu i mobilnego biura.
-- **California Beach / Coast / Ocean** – fabryczne odmiany kamperowe pod vanlife, wyjazdy weekendowe i dłuższe podróże.
+- **Caravelle 8–9 miejsc** – odmiana nastawiona na transport osób, transfer hotelowy i przewóz pracowników.
+- **Multivan 5–7 miejsc** – bardziej komfortowy MPV dla rodzin, biznesu i mobilnego biura.
+- **California Beach / Coast / Ocean** – fabryczne odmiany kamperowe na wyjazdy weekendowe, dłuższe podróże i życie w drodze.
 - **Skrzynia** – wersja użytkowa dla branży budowlanej, ogrodniczej i transportu materiałów.
 - **Podwozie do zabudowy** – baza pod chłodnię, kontener, warsztat mobilny albo inną specjalistyczną zabudowę.
-- **Platforma z kabiną pojedynczą** – sensowna pod lekką lawetę, zabudowę techniczną lub skrzynię z większą długością roboczą.
+- **Platforma z kabiną pojedynczą** – rozsądny wybór pod lekką lawetę, zabudowę techniczną lub skrzynię o większej długości roboczej.
 - **Platforma z kabiną podwójną** – dla brygad, które muszą zabrać ludzi i sprzęt jednym autem.
 - **Wersje 4MOTION** – przydatne tam, gdzie auto pracuje na budowie, w górach albo na śliskich dojazdach.
-- **Wersje z DSG** – wygodniejsze w codziennej eksploatacji flotowej, shuttle i ruchu miejskim.
+- **Wersje z DSG** – wygodniejsze w codziennej eksploatacji flotowej, w transferach i w ruchu miejskim.
 
 ## Typowe usterki Volkswagen Transporter
 
-Transporter ma opinię trwałego auta, ale konkretne koszty zależą od generacji i silnika. Najwięcej problemów pojawia się wtedy, gdy auto długo jeździło w mieście, miało opóźnione serwisy albo było eksploatowane flotowo bez patrzenia na profilaktykę.
+Transporter ma opinię trwałego auta, ale konkretne koszty zależą od generacji i silnika. Najwięcej problemów pojawia się wtedy, gdy auto długo jeździło po mieście, miało opóźniane przeglądy albo było eksploatowane flotowo bez dbałości o profilaktykę.
 
 ### 2.5 TDI T4
 
@@ -138,7 +138,7 @@ Transporter ma opinię trwałego auta, ale konkretne koszty zależą od generacj
 - **Pompa wody** – **400–900 zł** plus robocizna
 - **Sprzęgło** – zwykle **1500–2500 zł**
 
-W T4 trzeba też pilnować układu chłodzenia, bo przegrzanie szybko kończy się wydatkami. Do tego dochodzi klasyka wieku, czyli korozja progów, nadkoli i słupków.
+W T4 trzeba też pilnować układu chłodzenia, bo przegrzanie szybko kończy się poważnymi wydatkami. Do tego dochodzi klasyka wieku, czyli korozja progów, nadkoli i słupków.
 
 ### 1.9/2.5 TDI T5
 
@@ -147,10 +147,10 @@ W T4 trzeba też pilnować układu chłodzenia, bo przegrzanie szybko kończy si
 - **Wtryski** – **800–1200 zł/szt.**
 - **Pompa oleju / napęd pompy w 2.5 TDI** – nawet **4000–8000 zł**
 
-To jedna z tych generacji, gdzie zakup „bo tanio” potrafi szybko zemścić się rachunkiem. Szczególnie ostrożnie trzeba podchodzić do 2.5 TDI z niejasną historią serwisową.
+To jedna z tych generacji, w których zakup „bo tanio” potrafi szybko zemścić się wysokim rachunkiem. Szczególnie ostrożnie trzeba podchodzić do 2.5 TDI z niejasną historią serwisową.
 
 {{% expert name="Marek Kowalczyk" %}}
-Dobrze utrzymane T5 regularnie przekraczają 400–500 tys. km bez kapitalnego remontu silnika. Kluczem jest terminowa wymiana oleju, kontrola osprzętu i brak oszczędzania na serwisie DSG.
+Dobrze utrzymane egzemplarze T5 regularnie przekraczają 400–500 tys. km bez kapitalnego remontu silnika. Kluczem jest terminowa wymiana oleju, kontrola osprzętu i brak oszczędzania na serwisie skrzyni DSG.
 {{% /expert %}}
 
 ### 2.0 TDI T5/T6
@@ -163,19 +163,19 @@ Dobrze utrzymane T5 regularnie przekraczają 400–500 tys. km bez kapitalnego r
 - **Mechatronika DSG** – **4000–7000 zł**
 - **Wymiana oleju DSG co 60 tys. km** – ok. **900–1400 zł**
 
-W autach jeżdżących głównie po mieście najczęściej wraca temat DPF i układu AdBlue. Jeśli samochód pracuje w trasie, te układy zwykle sprawiają mniej problemów niż w kurierce typowo miejskiej.
+W autach jeżdżących głównie po mieście najczęściej wraca temat filtra DPF i układu AdBlue. Jeśli samochód pracuje w trasie, te układy zwykle sprawiają mniej kłopotów niż w typowo miejskiej pracy kurierskiej.
 
 ### Zawieszenie i elektryka
 
 - **Łączniki** – **100–250 zł/szt.**
 - **Amortyzatory** – **400–900 zł/szt.**
-- **Naprawy infotainment** – **1000–3000 zł**
+- **Naprawy systemu multimedialnego** – **1000–3000 zł**
 
-W T6.1 zdarzają się też zawieszenia systemu multimedialnego i drobne błędy elektroniki. Same usterki nie muszą być poważne, ale w aucie roboczym irytują bardziej niż w prywatnym vanie.
+W T6.1 zdarzają się też zawieszania systemu multimedialnego i drobne błędy elektroniki. Same usterki nie muszą być poważne, ale w aucie roboczym irytują bardziej niż w prywatnym vanie.
 
 ## Porównanie Transportera z konkurentami
 
-W klasie średnich vanów sam znaczek nie wystarczy – liczy się długość przestrzeni, ładowność, dostępność automatu i to, jak łatwo dopasować auto do konkretnej pracy. Dla uczciwego porównania zestawiam tu popularne wersje L2.
+W klasie średnich vanów sam znaczek nie wystarczy – liczy się długość przestrzeni ładunkowej, ładowność, dostępność automatu i to, jak łatwo dopasować auto do konkretnej pracy. Dla rzetelnego porównania zestawiam tu popularne wersje L2.
 
 | Parametr | VW Transporter T6.1 L2 | Mercedes Vito Long | Ford Transit Custom L2 | Renault Trafic L2 | Opel Vivaro L2 |
 |----------|------------------------|--------------------|------------------------|-------------------|----------------|
@@ -192,13 +192,13 @@ W klasie średnich vanów sam znaczek nie wystarczy – liczy się długość pr
 | Kamper fabryczny | ✅ California | ❌ | ✅ Nugget | ❌ | ❌ |
 | Cena furgon L2 | zwykle wyższa od tańszych rywali | ~155 000 zł | ~145 000 zł | ~135 000 zł | zwykle niższa od VW |
 
-Głównym rywalem jest [Mercedes Vito](/modele/mercedes-vito/) – podobny prestiż, ale zwykle mniejsza paka w porównywalnej długości. [Ford Transit Custom](/modele/ford-transit-custom/) jest mocnym graczem tam, gdzie liczy się relacja ceny do przestrzeni. [Renault Trafic](/modele/renault-trafic/) i [Opel Vivaro](/modele/opel-vivaro/) to częsty wybór wtedy, gdy budżet ma większe znaczenie niż marka.
+Głównym rywalem jest [Mercedes Vito](/modele/mercedes-vito/) – podobny prestiż, ale zwykle mniejsza przestrzeń ładunkowa przy porównywalnej długości. [Ford Transit Custom](/modele/ford-transit-custom/) to poważny konkurent tam, gdzie liczy się stosunek ceny do przestrzeni. [Renault Trafic](/modele/renault-trafic/) i [Opel Vivaro](/modele/opel-vivaro/) wybiera się często wtedy, gdy budżet ma większe znaczenie niż marka.
 
-Transporter broni się szeroką gamą wersji, dostępnością 4MOTION i mocną pozycją na rynku wtórnym, ale nie ma sensu dorabiać tu prostych rankingów. W praktyce wybór zależy od tego, czy ważniejsza jest cena zakupu, konfiguracja czy późniejsza odsprzedaż.
+Transporter broni się szeroką gamą wersji, dostępnością napędu 4MOTION i mocną pozycją na rynku wtórnym, nie ma jednak sensu tworzyć tu uproszczonych rankingów. W praktyce wybór zależy od tego, czy ważniejsza jest cena zakupu, konfiguracja, czy późniejsza odsprzedaż.
 
 ## Ceny Transportera
 
-Rynek używanych Transporterów jest szeroki, ale rozstrzał cen bywa ogromny. Na wartość najmocniej wpływa generacja, stan blacharski, historia serwisu i to, czy mówimy o furgonie, aucie osobowym czy fabrycznym kamperze.
+Rynek używanych Transporterów jest szeroki, ale rozstrzał cen bywa ogromny. Na wartość najmocniej wpływają generacja, stan blacharski, historia serwisowa oraz to, czy mowa o furgonie, aucie osobowym, czy fabrycznym kamperze.
 
 ### Używany Volkswagen Transporter – ceny według generacji
 
@@ -214,16 +214,16 @@ Rynek używanych Transporterów jest szeroki, ale rozstrzał cen bywa ogromny. N
 
 ### Wersje osobowe i kampery
 
-Caravelle i Multivan zwykle kosztują o **20–60%** więcej niż porównywalny furgon. Wynika to z wyposażenia, wykończenia wnętrza i mniejszej podaży zadbanych aut.
+Caravelle i Multivan zwykle kosztują o **20–60%** więcej niż porównywalny furgon. Wynika to z wyposażenia, wykończenia wnętrza i mniejszej podaży zadbanych egzemplarzy.
 
-California T5/T6 to już osobna półka cenowa. Egzemplarze zależnie od rocznika i zabudowy kosztują zwykle ok. **120 000–320 000 zł**.
+California T5/T6 to już osobna półka cenowa. Egzemplarze, zależnie od rocznika i zabudowy, kosztują zwykle ok. **120 000–320 000 zł**.
 
 {{% info title="California na rynku wtórnym" icon="info" %}}
-California zwykle bardzo dobrze trzyma wartość na rynku wtórnym. Dotyczy to szczególnie zadbanych aut z kompletną zabudową i udokumentowanym serwisem.
+California zwykle bardzo dobrze trzyma wartość na rynku wtórnym. Dotyczy to zwłaszcza zadbanych aut z kompletną zabudową i udokumentowanym serwisem.
 {{% /info %}}
 
 ### Co wpływa na cenę najmocniej
 
-Najtańszy egzemplarz prawie nigdy nie jest najtańszy w utrzymaniu. W Transporterze bardziej opłaca się kupić auto droższe, ale z czytelną historią serwisową, niż „okazję” po flotowym życiu i kilku prowizorycznych naprawach.
+Najtańszy egzemplarz prawie nigdy nie jest najtańszy w utrzymaniu. W Transporterze bardziej opłaca się kupić auto droższe, ale z czytelną historią serwisową, niż „okazję” po flotowej eksploatacji i kilku prowizorycznych naprawach.
 
 {{% youtube %}}

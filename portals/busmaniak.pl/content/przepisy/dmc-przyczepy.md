@@ -33,15 +33,15 @@ Kluczowe informacje znajdziesz w polu F.2 dowodu rejestracyjnego przyczepy, gdzi
 
 Tę samą wartość DMC musi zawierać tabliczka znamionowa, trwale przymocowana do ramy przyczepy. Przy zakupie używanego egzemplarza zawsze porównuj dane z tabliczki z wpisem w dowodzie rejestracyjnym – jakiekolwiek rozbieżności świadczą o problemach formalnych.
 
-### Masa własna przyczepy vs DMC
+### Masa własna przyczepy a DMC
 
-Masa własna to waga pustej przyczepy, gotowej do jazdy i wyposażonej zgodnie ze specyfikacją fabryczną. Dopuszczalna masa całkowita (DMC) to suma masy własnej i maksymalnej dopuszczalnej ładowności.
+Masa własna to masa pustej przyczepy, gotowej do jazdy i wyposażonej zgodnie ze specyfikacją fabryczną. Dopuszczalna masa całkowita (DMC) to suma masy własnej i maksymalnej dopuszczalnej ładowności.
 
-- **Masa własna** – waga pustej przyczepy (pole G w dowodzie rejestracyjnym).
+- **Masa własna** – masa pustej przyczepy (pole G w dowodzie rejestracyjnym).
 - **DMC** – masa własna + maksymalny ładunek dopuszczony przez producenta (pole F.2).
 - **Ładowność** – DMC minus masa własna.
 
-Przykładowo, przyczepa o masie własnej 250 kg i DMC 750 kg pozwala na załadowanie towaru o masie 500 kg. Ani kilograma więcej.
+Przykładowo przyczepa o masie własnej 250 kg i DMC 750 kg pozwala na załadowanie towaru o masie 500 kg. Ani kilograma więcej.
 
 ## DMC przyczepy a prawo jazdy
 
@@ -63,7 +63,7 @@ Rozwiązaniem jest kod 96, który może uzyskać każdy kierowca z prawem jazdy 
 
 ### Kiedy potrzebujesz kat. B+E
 
-Kategoria B+E staje się niezbędna, gdy suma DMC zespołu pojazdów przekracza 4250 kg. Uprawnia ona do ciągnięcia przyczepy o DMC do 3500 kg. Dla właścicieli najcięższych busów, takich jak Sprinter czy Master w wariantach 3,5 t, jest to jedyna opcja na holowanie dużych lawet czy przyczep budowlanych.
+Kategoria B+E staje się niezbędna, gdy suma DMC zespołu pojazdów przekracza 4250 kg. Uprawnia ona do ciągnięcia przyczepy o DMC do 3500 kg. Dla właścicieli najcięższych busów, takich jak Sprinter czy Master w wariantach 3,5 t, jest to jedyna możliwość holowania dużych lawet czy przyczep budowlanych.
 
 Zdobycie uprawnień B+E wymaga zaliczenia kursu i egzaminu praktycznego, obejmującego m.in. manewry z ciężkim zestawem. Koszt kursu w 2026 roku wynosi od 1500 do 2500 zł.
 
@@ -92,11 +92,11 @@ Nawet posiadając prawo jazdy B+E, nie możesz zignorować ograniczeń techniczn
 - **O.1** – maksymalna masa całkowita przyczepy z hamulcem.
 - **O.2** – maksymalna masa całkowita przyczepy bez hamulca.
 
-Jeśli Twój bus ma w polu O.1 wpisane 2500 kg, nie możesz holować nim przyczepy o DMC 3000 kg, nawet jeśli pozwala na to Twoje prawo jazdy. Zawsze obowiązuje niższa z wartości.
+Jeśli Twój bus ma w polu O.1 wpisane 2500 kg, nie możesz holować nim przyczepy o DMC 3000 kg, nawet jeśli pozwala na to Twoje prawo jazdy. Zawsze obowiązuje niższa z tych wartości.
 
 ### Współczynnik 1,33 – ograniczenie dla hamulca najazdowego
 
-Kolejnym krytycznym warunkiem jest stosunek masy pojazdu do masy przyczepy wyposażonej w hamulec najazdowy (bezwładnościowy). Zgodnie z polskimi przepisami, DMC pojazdu ciągnącego musi być co najmniej 1,33 razy większe niż DMC takiej przyczepy.
+Kolejnym krytycznym warunkiem jest stosunek masy pojazdu do masy przyczepy wyposażonej w hamulec najazdowy (bezwładnościowy). Zgodnie z polskimi przepisami DMC pojazdu ciągnącego musi być co najmniej 1,33 raza większa niż DMC takiej przyczepy.
 
 W praktyce oznacza to, że bus o DMC 3500 kg może legalnie ciągnąć przyczepę z hamulcem najazdowym o maksymalnej DMC wynoszącej ok. 2631 kg (3500 / 1,33), a nie 3500 kg.
 
@@ -113,17 +113,17 @@ Poniższa tabela przedstawia orientacyjne możliwości holowania przyczep przez 
 | VW Transporter T6 | 3000 kg | 750 kg (tylko lekka) | 1250 kg |
 | Fiat Doblo | 2300 kg | 1200 kg | 1950 kg |
 
-Jak widać, ciężkie busy o DMC 3500 kg, nawet z kodem 96, na niewiele się zdadzą przy przyczepach cięższych niż lekka. Więcej szczegółów na ten temat znajdziesz w artykule o [DMC zespołu pojazdów](/przepisy/dmc-zespolu-pojazdow/).
+Jak widać, ciężkie busy o DMC 3500 kg, nawet z kodem 96, na niewiele się zdadzą przy holowaniu przyczep cięższych niż lekkie. Więcej szczegółów na ten temat znajdziesz w artykule o [DMC zespołu pojazdów](/przepisy/dmc-zespolu-pojazdow/).
 
 ## Przekroczenie DMC przyczepy – konsekwencje
 
-Konsekwencje jazdy z przeładowaną przyczepą są znacznie poważniejsze niż standardowy mandat. W wielu sytuacjach traktowane jest to jako prowadzenie pojazdu bez uprawnień, co wiąże się z dotkliwymi karami sądowymi.
+Konsekwencje jazdy z przeładowaną przyczepą są znacznie poważniejsze niż standardowy mandat. W wielu sytuacjach jest to traktowane jako prowadzenie pojazdu bez uprawnień, co wiąże się z dotkliwymi karami sądowymi.
 
 ### Mandaty i kary w Polsce 2026
 
 Taryfikator przewiduje kilka rodzajów sankcji za naruszenia związane z DMC:
 
-- **Grzywna od 1500 do 30 000 zł oraz obowiązkowy zakaz prowadzenia pojazdów** – gdy holowanie przyczepy kwalifikuje się jako jazda bez wymaganych uprawnień (art. 94 §1 i §3 Kodeksu wykroczeń). Sprawa obligatoryjnie trafia do sądu.
+- **Grzywna od 1500 do 30 000 zł oraz obowiązkowy zakaz prowadzenia pojazdów** – gdy holowanie przyczepy kwalifikuje się jako jazda bez wymaganych uprawnień (art. 94 §1 i §3 Kodeksu wykroczeń). Sprawa obowiązkowo trafia do sądu.
 - **Mandat do 3000 zł** – za przekroczenie dopuszczalnej ładowności lub nacisków na oś.
 - **Do 15 punktów karnych** – w przypadku stworzenia zagrożenia w ruchu drogowym.
 - **Zatrzymanie dowodu rejestracyjnego** przyczepy i uniemożliwienie dalszej jazdy do czasu rozładowania nadmiaru towaru.
@@ -134,17 +134,17 @@ Przekroczenie DMC nawet o 50 kg jest formalnym wykroczeniem. Choć patrole rzadk
 
 ### Ryzyko utraty odszkodowania z OC
 
-Ubezpieczyciel ma prawo do odmowy wypłaty odszkodowania z polisy OC lub AC, jeśli w momencie wypadku przyczepa przekraczała swoje DMC. Instytucja tzw. regresu ubezpieczeniowego oznacza, że będziesz musiał pokryć wszystkie szkody z własnej kieszeni, nawet te wyrządzone osobom trzecim.
+Ubezpieczyciel ma prawo odmówić wypłaty odszkodowania z polisy OC lub AC, jeśli w momencie wypadku przyczepa przekraczała swoje DMC. Instytucja tzw. regresu ubezpieczeniowego oznacza, że będziesz musiał pokryć wszystkie szkody z własnej kieszeni, nawet te wyrządzone osobom trzecim.
 
 ### Wpływ na hamowanie i bezpieczeństwo
 
-Przeładowana przyczepa drastycznie pogarsza właściwości jezdne zestawu. Droga hamowania przy DMC przekroczonym o 20% może wydłużyć się nawet o 30–40%. Zmieniony środek ciężkości zwiększa ryzyko utraty stabilności i wpadnięcia w poślizg, zwłaszcza na mokrej nawierzchni.
+Przeładowana przyczepa drastycznie pogarsza właściwości jezdne zestawu. Droga hamowania przy DMC przekroczonej o 20% może wydłużyć się nawet o 30–40%. Zmieniony środek ciężkości zwiększa ryzyko utraty stabilności i wpadnięcia w poślizg, zwłaszcza na mokrej nawierzchni.
 
-Pamiętaj, że większość przyczep o DMC do 750 kg nie posiada własnego hamulca. Całą siłę hamowania musi wygenerować układ hamulcowy busa, który nie jest zaprojektowany do zatrzymywania dodatkowej, nadmiarowej masy.
+Pamiętaj, że większość przyczep o DMC do 750 kg nie posiada własnego hamulca. Całą siłę hamowania musi zapewnić układ hamulcowy busa, który nie jest zaprojektowany do zatrzymywania dodatkowej, nadmiarowej masy.
 
 ### Obowiązek e-TOLL powyżej 3,5 tony
 
-Jeśli suma DMC Twojego busa i przyczepy przekroczy 3,5 tony, cały zestaw podlega obowiązkowi opłat w systemie e-TOLL na płatnych odcinkach autostrad i dróg ekspresowych. Dotyczy to nawet w pełni legalnego połączenia busa 3500 kg DMC z przyczepą lekką 750 kg DMC (suma 4250 kg). Brak aktywnego urządzenia e-TOLL skutkuje karą administracyjną nakładaną przez GITD w wysokości do 1500 zł.
+Jeśli suma DMC Twojego busa i przyczepy przekroczy 3,5 tony, cały zestaw podlega obowiązkowi opłat w systemie e-TOLL na płatnych odcinkach autostrad i dróg ekspresowych. Dotyczy to nawet w pełni legalnego zestawu busa o DMC 3500 kg z lekką przyczepą o DMC 750 kg (suma 4250 kg). Brak aktywnego urządzenia e-TOLL skutkuje karą administracyjną nakładaną przez GITD w wysokości do 1500 zł.
 
 ## Zmiana DMC przyczepy – czy to możliwe
 
@@ -152,7 +152,7 @@ Zmiana DMC przyczepy jest procedurą legalną, ale jej zakres jest ściśle ogra
 
 ### Procedura podwyższenia DMC
 
-Mit o możliwości prostego "wzmocnienia" przyczepy i podniesienia jej DMC na podstawie opinii rzeczoznawcy jest niebezpieczny. W praktyce podwyższenie DMC jest możliwe tylko wtedy, gdy producent przewidział taką opcję w ramach różnych wariantów homologacyjnych pojazdu, co jest udokumentowane w Świadectwie Zgodności (CoC).
+Mit o możliwości prostego „wzmocnienia” przyczepy i podniesienia jej DMC na podstawie opinii rzeczoznawcy jest niebezpieczny. W praktyce podwyższenie DMC jest możliwe tylko wtedy, gdy producent przewidział taką opcję w ramach różnych wariantów homologacyjnych pojazdu, co jest udokumentowane w Świadectwie Zgodności (CoC).
 
 Jeśli chcesz wrócić do wyższej wartości DMC, którą przyczepa miała pierwotnie (a została obniżona), procedura wymaga uzyskania oświadczenia od producenta lub jego autoryzowanego przedstawiciela. Z tym dokumentem należy udać się na badanie techniczne, a następnie do wydziału komunikacji.
 

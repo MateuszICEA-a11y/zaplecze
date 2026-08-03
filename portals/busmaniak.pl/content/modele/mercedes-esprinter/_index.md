@@ -25,12 +25,12 @@ sources:
   - "Mercedes-Benz Vans Polska"
   - "katalog techniczny eSprinter 2024"
   - "Wikipedia – Rekuperacja"
-  - "testy prasowe eSprinter 2024."
+  - "testy prasowe eSprintera 2024."
 ---
 
 ## Historia i generacje
 
-eSprinter przeszedł wyraźną zmianę między pierwszym a drugim wcieleniem. To nie jest lifting z większą baterią, tylko przeskok z auta typowo miejskiego do pełnoprawnego elektrycznego vana dla szerszego zastosowania.
+eSprinter przeszedł wyraźną zmianę między pierwszym a drugim wcieleniem. To nie jest lifting z większą baterią, tylko przeskok z auta typowo miejskiego do pełnoprawnego elektrycznego dostawczaka do szerszego zastosowania.
 
 ### I generacja eSprinter (2019–2023)
 
@@ -54,19 +54,19 @@ Najważniejsze różnice względem pierwszego eSprintera są konkretne:
 - szersza oferta zabudów
 - dostępność wersji o DMC do **4,25 t**
 
-## Historia i konstrukcja Mercedes eSprinter
+## Historia i konstrukcja Mercedesa eSprintera
 
-Mercedes eSprinter pojawił się po raz pierwszy w 2019 roku jako elektryczna odmiana trzeciej generacji [Sprintera](/modele/mercedes-sprinter/). Pierwsza generacja była propozycją głównie dla firm kurierskich i operatorów miejskich flot, gdzie dzienne przebiegi były krótkie, a ładowanie odbywało się nocą w bazie.
+Mercedes eSprinter pojawił się po raz pierwszy w 2019 roku jako elektryczna odmiana trzeciej generacji [Sprintera](/modele/mercedes-sprinter/). Pierwsza generacja była propozycją głównie dla firm kurierskich i operatorów flot miejskich, gdzie dzienne przebiegi były krótkie, a ładowanie odbywało się nocą w bazie.
 
-W drugiej generacji Mercedes zmienił podejście do samej konstrukcji. Zamiast opierać projekt na prostym przeniesieniu napędu elektrycznego do istniejącego vana, zastosowano nową modułową architekturę z trzema częściami: przednią, środkową z baterią i tylną z układem napędowym. To pozwoliło przejść na napęd tylnej osi i otworzyło drogę do większych akumulatorów oraz większej liczby wersji użytkowych.
+W drugiej generacji Mercedes zmienił podejście do samej konstrukcji. Zamiast opierać projekt na prostym przeniesieniu napędu elektrycznego do istniejącego dostawczaka, zastosowano nową modułową architekturę z trzema częściami: przednią, środkową z baterią i tylną z układem napędowym. To pozwoliło przejść na napęd tylnej osi i otworzyło drogę do większych akumulatorów oraz większej liczby wersji użytkowych.
 
-Konstrukcja nadal bazuje na ramie i rozwiązaniach typowych dla dużego dostawczaka. Silnik elektryczny napędza tylną oś przez jednostopniową przekładnię, a kierowca może regulować poziom rekuperacji łopatkami przy kierownicy; dostępny jest także adaptacyjny tryb D-AUTO.
+Konstrukcja nadal opiera się na ramie i rozwiązaniach typowych dla dużego dostawczaka. Silnik elektryczny napędza tylną oś przez jednostopniową przekładnię, a kierowca może regulować poziom rekuperacji łopatkami przy kierownicy; dostępny jest także adaptacyjny tryb D-AUTO.
 
 {{% info title="Produkcja w Europie" icon="engineering" %}}
 Europejskie eSprintery powstają w fabryce Mercedes-Benz w Ludwigsfelde pod Berlinem – tym samym zakładzie, który produkuje konwencjonalne Sprintery. Linia montażowa obsługuje zarówno wersje spalinowe, jak i elektryczne na jednej taśmie.
 {{% /info %}}
 
-## Dane techniczne Mercedesa eSprinter
+## Dane techniczne Mercedesa eSprintera
 
 W drugiej generacji gama jest szersza niż w pierwszych materiałach prasowych. Kluczowe są trzy pojemności akumulatora i dwa warianty mocy, a dostępność konkretnej konfiguracji zależy od wersji nadwozia i rynku.
 
@@ -81,7 +81,7 @@ W drugiej generacji gama jest szersza niż w pierwszych materiałach prasowych. 
 | Prędkość maks. | 120 lub 140 km/h | 140 km/h |
 | DMC | furgon 3,5 t / 4,25 t | furgon 3,5 t / 4,25 t, podwozie także do 5,0 t tam, gdzie oferowane |
 
-Ładowność mocno zależy od baterii, DMC i typu zabudowy. Lżejsze wersje z akumulatorem **56 kWh** dają więcej zapasu na towar, a najcięższe konfiguracje z dużą baterią i zabudową specjalną naturalnie ten zapas ograniczają.
+Ładowność mocno zależy od baterii, DMC i typu zabudowy. Lżejsze wersje z akumulatorem **56 kWh** zapewniają większą ładowność, a najcięższe konfiguracje z dużą baterią i zabudową specjalną naturalnie tę ładowność ograniczają.
 
 Zużycie energii według WLTP zależy od nadwozia, masy i prędkości maksymalnej. W praktyce zimą trzeba doliczyć zauważalny wzrost poboru energii, szczególnie przy jeździe ekspresowej i pracy z pełnym obciążeniem.
 
@@ -95,7 +95,7 @@ W przypadku eSprintera same kilowaty i zasięg nie wystarczą. Dla firmy ważnie
 | Furgon L3H2 | 4325 mm | H2 | ok. 4307 mm | ok. 2009 mm | 14 m3 | 3500 / 4250 kg | ok. 1000–1400 kg |
 | Podwozie L3 | 4325 mm | – | długość zabudowy wg producenta | – | – | 3500 / 4250 / 5000 kg | do ok. 1730 kg |
 
-Powyższe dane należy traktować jako orientacyjne i zależne od rynku oraz wersji. W praktyce ostateczne liczby potrafią zmienić się wraz z baterią, kabiną, wyposażeniem i typem homologacji.
+Powyższe dane należy traktować jako orientacyjne i zależne od rynku oraz wersji. W praktyce ostateczne liczby mogą się zmienić wraz z baterią, kabiną, wyposażeniem i typem homologacji.
 
 ## Silniki
 
@@ -107,7 +107,7 @@ W nowym eSprinterze nie ma dużej liczby odmian napędowych, ale różnice międ
 | eSprinter 100 kW | 100 kW (136 KM) | 400 Nm | RWD | 81 kWh | ok. 23–30 kWh/100 km | do ok. 330 km | 120 lub 140 km/h |
 | eSprinter 150 kW | 150 kW (204 KM) | 400 Nm | RWD | 113 kWh | ok. 26–34 kWh/100 km | do 440 km | 140 km/h |
 
-Jako **BEV**, eSprinter nie ma normy Euro w takim znaczeniu jak diesel. Z punktu widzenia dokumentów i eksploatacji ważniejsze są klasa pojazdu **N1/N2** oraz lokalna emisja **CO2 = 0 g/km**.
+Jako **BEV** eSprinter nie ma normy Euro w takim znaczeniu jak w przypadku diesla. Z punktu widzenia dokumentów i eksploatacji ważniejsze są klasa pojazdu **N1/N2** oraz lokalna emisja **CO2 = 0 g/km**.
 
 ## Zasięg i ładowanie eSprintera
 
@@ -122,30 +122,30 @@ eSprinter z baterią **113 kWh** osiąga do **440 km WLTP**. Wersja **81 kWh** c
 - **Prekondycjonowanie baterii** – pomaga utrzymać lepszą moc ładowania
 - **Tryby jazdy** – Comfort, Eco i Max Range pozwalają ograniczać zużycie energii
 
-W mieście eSprinter korzysta z rekuperacji i częstych faz toczenia, więc wyniki potrafią być bliskie katalogowym. Na trasie szybkiego ruchu zapotrzebowanie na energię rośnie wyraźnie, szczególnie przy pełnym załadunku.
+W mieście eSprinter korzysta z rekuperacji i częstych faz toczenia, więc wyniki mogą być bliskie katalogowym. Na trasie szybkiego ruchu zapotrzebowanie na energię rośnie wyraźnie, szczególnie przy pełnym załadunku.
 
 ![Mercedes eSprinter furgon elektryczny podczas ładowania](/images/mercedes-esprinter-hero.webp)
 
 ## Wersje nadwoziowe eSprintera
 
-Oferta nadwoziowa eSprintera zależy od rynku i wersji. Zamiast patrzeć tylko na długość i wysokość, lepiej rozdzielić ją według przeznaczenia – wtedy łatwiej dobrać auto pod kuriera, serwis mobilny czy zabudowę specjalną.
+Oferta nadwoziowa eSprintera zależy od rynku i wersji. Zamiast patrzeć tylko na długość i wysokość, lepiej rozdzielić ją według przeznaczenia – wtedy łatwiej dobrać auto do pracy kurierskiej, serwisu mobilnego czy pod zabudowę specjalną.
 
 - **Furgon** – **11 lub 14 m3**, zwykle **2 lub 3 miejsca z przodu**
 - **Podwozie do zabudowy** – baza pod kontener, chłodnię, skrzynię lub lawetę
 - **Zabudowy specjalne** – warianty serwisowe, kurierskie, izotermy
-- **Kamper/vanlife** – na dziś brak seryjnej oferty kamperowej eSprintera na polskim rynku, ale technicznie możliwe są konwersje indywidualne; ograniczeniem pozostają masa baterii i zasięg pod obciążeniem
+- **Kamper** – obecnie brak seryjnej oferty kamperowej eSprintera na polskim rynku, ale technicznie możliwe są konwersje indywidualne; ograniczeniem pozostają masa baterii i zasięg pod obciążeniem
 
 W zależności od konfiguracji dostępne są **boczne drzwi przesuwne** oraz **tylne drzwi dwuskrzydłowe 270°**. To ważne przy pracy z rampą, załadunku palet i zabudowach kurierskich, gdzie liczy się szybki dostęp do przestrzeni ładunkowej.
 
-DMC do **4,25 t** w furgonie i do **5,0 t** w części wersji podwoziowych pokazuje, że eSprinter nie jest tylko miejskim vanem. Da się go wykorzystać także w cięższej pracy, ale trzeba pilnować relacji między baterią, zabudową i realną ładownością.
+DMC do **4,25 t** w furgonie i do **5,0 t** w części wersji podwoziowych pokazuje, że eSprinter nie jest tylko miejskim dostawczakiem. Da się go wykorzystać także w cięższej pracy, ale trzeba pilnować relacji między baterią, zabudową i realną ładownością.
 
 {{% expert name="Marek Kowalczyk" %}}
 Jeśli planujesz zakup eSprintera do dostaw miejskich, bateria 56 kWh w wersji L2 to rozsądny wybór – mniejsza masa własna daje wyższą ładowność, a nocne ładowanie AC zwykle wystarcza na codzienną trasę. Dużą baterię 113 kWh warto brać wtedy, gdy auto robi dłuższe przebiegi albo nie ma pewnego ładowania w ciągu dnia.
 {{% /expert %}}
 
-## Typowe usterki Mercedes eSprinter
+## Typowe usterki Mercedesa eSprintera
 
-Druga generacja jest jeszcze zbyt młoda, by mówić o pełnym obrazie trwałości. Część kosztów poniżej pochodzi z sieci serwisowej oraz analogii do Sprintera W907/W910, ale już teraz widać kilka typowych punktów, które warto sprawdzić przed zakupem i w eksploatacji flotowej.
+Druga generacja jest jeszcze zbyt młoda, by mówić o pełnym obrazie trwałości. Część kosztów poniżej pochodzi z sieci serwisowej oraz z analogii do Sprintera W907/W910, ale już teraz widać kilka typowych punktów, które warto sprawdzić przed zakupem i w eksploatacji flotowej.
 
 ### Akumulator 12 V i elektronika pokładowa
 
@@ -173,7 +173,7 @@ Koszty:
 
 ### Zawieszenie i eksploatacja flotowa
 
-Jak w większości dużych dostawczaków, zawieszenie dostaje mocno w kość przy jeździe z ładunkiem i po mieście. W autach kurierskich szybciej wychodzą luzy i zużycie elementów hamulcowych.
+Jak w większości dużych dostawczaków, zawieszenie dostaje mocno w kość przy jeździe z ładunkiem i po mieście. W autach kurierskich szybciej pojawiają się luzy i zużywają się elementy hamulcowe.
 
 Koszty:
 - łączniki stabilizatora, komplet – **300–600 zł**
@@ -189,7 +189,7 @@ Koszty:
 
 ## Porównanie eSprintera z konkurencją
 
-Na rynku dużych elektrycznych vanów sensowne porównanie trzeba robić tylko z modelami seryjnymi. Dziś najbliżsi rywale eSprintera to przede wszystkim [Ford E-Transit](/modele/ford-e-transit/) i Iveco eDaily.
+Na rynku dużych elektrycznych dostawczaków sensowne porównanie trzeba robić tylko z modelami seryjnymi. Dziś najbliżsi rywale eSprintera to przede wszystkim [Ford E-Transit](/modele/ford-e-transit/) i Iveco eDaily.
 
 | Parametr | Mercedes eSprinter 113 kWh | Ford E-Transit | Iveco eDaily |
 |----------|----------------------------|----------------|--------------|
@@ -203,7 +203,7 @@ Na rynku dużych elektrycznych vanów sensowne porównanie trzeba robić tylko z
 
 W praktyce wybór wygląda prosto. **Mercedes** wygrywa zasięgiem, **Ford** zwykle broni się ceną i flotową dostępnością, a **Iveco** ma przewagę tam, gdzie liczy się nośność i cięższa zabudowa.
 
-## Ceny Mercedesa eSprinter
+## Ceny Mercedesa eSprintera
 
 eSprinter nie jest tani, ale jego oferta jest dziś szersza niż tylko jeden furgon z jedną baterią. Przy zakupie nowego auta trzeba patrzeć nie tylko na cenę bazową, ale też na pojemność baterii, DMC i docelową zabudowę.
 
@@ -215,13 +215,13 @@ eSprinter nie jest tani, ale jego oferta jest dziś szersza niż tylko jeden fur
 | eSprinter L3 (113 kWh, 150 kW) | od ok. 350 000 zł |
 | eSprinter Chassis Cab (113 kWh) | od ok. 310 000 zł |
 
-Do ceny netto trzeba doliczyć **23% VAT**. Dla firm znaczenie mają też dopłaty i cały koszt użytkowania, bo brak oleju silnikowego, DPF czy AdBlue realnie upraszcza serwis względem diesla.
+Do ceny netto trzeba doliczyć **23% VAT**. Dla firm znaczenie mają też dopłaty i cały koszt użytkowania, bo brak oleju silnikowego, DPF czy AdBlue realnie upraszcza serwis w porównaniu z dieslem.
 
 Koszty eksploatacji eSprintera są niższe niż spalinowego [Sprintera](/modele/mercedes-sprinter/), ale przy aucie elektrycznym trzeba pilnować stanu portu ładowania, akumulatora 12 V i historii pracy baterii. W przypadku rynku wtórnego kluczowy jest też stan SOH.
 
 {{% youtube %}}
 
-## Ceny używanych Mercedesów eSprinter
+## Ceny używanych Mercedesów eSprinterów
 
 Na rynku wtórnym rozstrzał jest duży. O cenie decydują przede wszystkim generacja, bateria, zabudowa, DMC i stan akumulatora trakcyjnego.
 

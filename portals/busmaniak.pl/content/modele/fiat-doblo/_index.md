@@ -12,12 +12,12 @@ main_keyword: "Fiat Doblò dane techniczne"
 image: "/images/fiat-doblo-hero.webp"
 faq:
   - question: "Ile generacji ma Fiat Doblò?"
-    answer: "Trzy generacje: I (2000–2010), II (2010–2022) i III (od 2022, platforma PSA – bliźniak Citroëna Berlingo i Peugeota Partner)."
+    answer: "Trzy generacje: I (2000–2010), II (2010–2022) i III (od 2022, platforma PSA – bliźniak Citroëna Berlingo i Peugeota Partnera)."
   - question: "Jakie silniki oferuje Fiat Doblò III generacji?"
     answer: "Benzynowy 1.2 PureTech 110 KM oraz diesle 1.5 BlueHDi w wersjach 100 i 130 KM. Wszystkie spełniają normę Euro 6d."
   - question: "Czym różni się Doblò Cargo od Panoramy?"
     answer: "Cargo to wersja dostawcza z przegrodą i homologacją N1. Panorama przewozi 5–7 pasażerów i ma tylną kanapę zamiast przestrzeni ładunkowej."
-lead: "Fiat Doblò to kompaktowy van, który przez ponad dwie dekady utrzymuje pozycję jednego z najbardziej wszechstronnych pojazdów segmentu. Kupujesz użytkowego czy rodzinnego – i tak trafisz na Doblò jako poważną opcję. Poniżej znajdziesz twarde dane dla wszystkich trzech generacji."
+lead: "Fiat Doblò to kompaktowy van, który przez ponad dwie dekady utrzymuje pozycję jednego z najbardziej wszechstronnych pojazdów segmentu. Kupujesz auto użytkowe czy rodzinne – i tak trafisz na Doblò jako poważną opcję. Poniżej znajdziesz konkretne dane techniczne wszystkich trzech generacji."
 youtube: "VIa3TCdAe6A"
 youtube_title: "Test Fiat Doblo Cargo 1.3 MultiJet 90 KM – oszczędny typ"
 sources:
@@ -31,20 +31,20 @@ Fiat Doblò zadebiutował w 2000 roku jako kompaktowy van łączący funkcje aut
 
 ### Doblò I (Typ 223, 2000–2005)
 
-Pierwsza generacja weszła na rynek w 2000 roku. Była to konstrukcja Fiata segmentu B/C dostosowana do auta użytkowego, z długością ok. 4158 mm i rozstawem osi ok. 2963 mm.
+Pierwsza generacja weszła na rynek w 2000 roku. Była to konstrukcja Fiata z segmentu B/C przystosowana do roli auta użytkowego, o długości ok. 4158 mm i rozstawie osi ok. 2963 mm.
 
 To właśnie ten model zbudował pozycję Doblò wśród małych firm, kurierów i użytkowników szukających taniego vana z prostą mechaniką.
 
 - napęd przedni
 - wersje Cargo i osobowe
 - silniki benzynowe 1.2 i 1.6 oraz diesle 1.9 D i 1.9 JTD
-- tytuł Van of the Year 2006 dotyczył faceliftingu i całej rodziny modelowej
+- tytuł Van of the Year 2006 dotyczył liftingu i całej rodziny modelowej
 
 ### Doblò I FL (Typ 223, 2005–2010)
 
 Lifting z 2005 roku przyniósł zmieniony przód i odświeżone wnętrze. W gamie pojawiły się też nowsze jednostki, w tym 1.3 MultiJet 85 KM oraz 1.4 8V 77 KM.
 
-Po modernizacji Doblò I było już wyraźnie dojrzalszym autem, ale dalej pozostało prostym i użytkowym vanem z tanimi częściami.
+Po modernizacji Doblò I było już wyraźnie dojrzalszym autem, ale wciąż pozostało prostym i użytkowym vanem z tanimi częściami.
 
 - nowy pas przedni
 - wprowadzenie 1.3 MultiJet 85 KM
@@ -55,7 +55,7 @@ Po modernizacji Doblò I było już wyraźnie dojrzalszym autem, ale dalej pozos
 
 Druga generacja była dużym krokiem naprzód. Auto urosło do 4390 mm, a wariant Maxi do 4740 mm; rozstaw osi wynosił odpowiednio 2755 lub 3105 mm.
 
-Generacja II (2010–2022) otrzymała nową platformę Fiata (typ 263); późniejszy Opel Combo D był jej bliźniakiem. To właśnie ta odsłona stała się najpopularniejsza na rynku wtórnym – wybór aut używanych jest bardzo szeroki, podobnie jak dostępność części.
+Generacja II (2010–2022) dostała nową platformę Fiata (typ 263); późniejszy Opel Combo D był jej bliźniakiem. To właśnie ta odsłona stała się najpopularniejsza na rynku wtórnym – wybór aut używanych jest bardzo szeroki, podobnie jak dostępność części.
 
 - całkowicie nowe nadwozie
 - dwie długości: SWB i Maxi
@@ -66,7 +66,7 @@ Generacja II (2010–2022) otrzymała nową platformę Fiata (typ 263); późnie
 
 W 2015 roku pojawił się lifting. Zmieniono pas przedni, odświeżono wyposażenie i dostosowano gamę do normy Euro 6.
 
-Mechanicznie był to dalej ten sam, dobrze znany Doblò II, ale w nowszym wydaniu i z bardziej uporządkowaną ofertą silników.
+Mechanicznie był to nadal ten sam, dobrze znany Doblò II, ale w nowszym wydaniu i z bardziej uporządkowaną ofertą silników.
 
 - nowy przód
 - multimedia Uconnect
@@ -77,7 +77,7 @@ Mechanicznie był to dalej ten sam, dobrze znany Doblò II, ale w nowszym wydani
 
 Trzecia generacja to już zupełnie inna konstrukcja. Doblò przeszło na platformę EMP2/Stellantis i stało się technicznym bliźniakiem [Citroëna Berlingo](/modele/citroen-berlingo/) oraz Peugeota Partnera.
 
-Auto ma długość 4403 lub 4753 mm i korzysta z jednostek 1.5 BlueHDi 100/130 KM oraz elektrycznej wersji e-Doblò 100 kW z baterią 50 kWh. Fiat zachował własny wygląd przodu i oznaczenia, ale technicznie to van z tej samej rodziny co pozostałe modele K9.
+Auto ma długość 4403 lub 4753 mm i korzysta z jednostek 1.5 BlueHDi 100/130 KM oraz z elektrycznej wersji e-Doblò 100 kW z baterią 50 kWh. Fiat zachował własny wygląd przodu i oznaczenia, ale technicznie to van z tej samej rodziny co pozostałe modele K9.
 
 - przejście na platformę EMP2/K9 Stellantis
 - wspólnota techniczna z Berlingo, Partnerem i Combo
@@ -86,19 +86,19 @@ Auto ma długość 4403 lub 4753 mm i korzysta z jednostek 1.5 BlueHDi 100/130 K
 
 ## Dane techniczne i wymiary
 
-Najważniejsze liczby różnią się zależnie od generacji i długości nadwozia. Jeśli porównujesz Doblò do innych vanów, patrz przede wszystkim na rozstaw osi, pojemność ładunkową, DMC i realną ładowność.
+Najważniejsze liczby różnią się w zależności od generacji i długości nadwozia. Jeśli porównujesz Doblò z innymi vanami, patrz przede wszystkim na rozstaw osi, pojemność ładunkową, DMC i rzeczywistą ładowność.
 
 ### Generacja I (2000–2010)
 
-W pierwszym Doblò gama silników zmieniała się w trakcie produkcji, dlatego najlepiej patrzeć na całą generację z podziałem na wersje przedliftowe i poliftingowe. Najczęściej spotkasz benzynowe 1.2 16V, 1.4 8V i 1.6 16V oraz diesle 1.9 D, 1.9 JTD i późniejsze 1.3 MultiJet.
+W pierwszym Doblò gama silników zmieniała się w trakcie produkcji, dlatego najlepiej patrzeć na całą generację z podziałem na wersje przed liftingiem i po liftingu. Najczęściej spotkasz benzynowe 1.2 16V, 1.4 8V i 1.6 16V oraz diesle 1.9 D, 1.9 JTD i późniejsze 1.3 MultiJet.
 
-Długość standardowego nadwozia wynosiła ok. 4158 mm. W porównaniu z późniejszymi generacjami była to konstrukcja wyraźnie skromniejsza ładunkowo, ale nadal praktyczna w małej firmie i prostym transporcie miejskim.
+Długość standardowego nadwozia wynosiła ok. 4158 mm. W porównaniu z późniejszymi generacjami była to konstrukcja wyraźnie skromniejsza pod względem ładunkowym, ale wciąż praktyczna w małej firmie i przy prostym transporcie miejskim.
 
 ### Generacja II (2010–2022)
 
 Druga generacja była zauważalnie większa i praktyczniejsza. Wersja standardowa miała 4390 mm długości, a Maxi 4740 mm, przy rozstawie osi 2755 lub 3105 mm.
 
-Silniki obejmowały 1.3 MultiJet 90/95 KM, 1.6 MultiJet 90/105/120 KM, 2.0 MultiJet 135 KM oraz 1.4 T-Jet 120 KM. Ładowność Cargo sięgała **750–1000 kg**, zależnie od wersji i DMC.
+Silniki obejmowały 1.3 MultiJet 90/95 KM, 1.6 MultiJet 90/105/120 KM, 2.0 MultiJet 135 KM oraz 1.4 T-Jet 120 KM. Ładowność Cargo sięgała **750–1000 kg**, w zależności od wersji i DMC.
 
 ### Generacja III (od 2022)
 
@@ -114,15 +114,15 @@ Silniki:
 
 Pojemność ładunkowa Cargo wynosi ok. 3,3 m³ w L1 i 3,9 m³ w L2. Z systemem Magic Cargo rośnie odpowiednio do 3,8 i 4,4 m³.
 
-W praktyce przy zabudowie i codziennej robocie ważne są też wymiary samej paki. W III generacji szerokość między nadkolami to ok. 1229 mm, szerokość maksymalna ok. 1630 mm, a wysokość przestrzeni ładunkowej ok. 1243 mm.
+W praktyce przy zabudowie i codziennej pracy ważne są też wymiary samej paki. W III generacji szerokość między nadkolami to ok. 1229 mm, szerokość maksymalna ok. 1630 mm, a wysokość przestrzeni ładunkowej ok. 1243 mm.
 
 {{% info title="Platforma PSA – co to oznacza w praktyce" icon="engineering" %}}
-Doblò III korzysta z tej samej skrzyni biegów EAT8 i silników PSA co Berlingo. Serwis jest tożsamy – mechanicy przyzwyczajeni do Berlingo obsłużą Doblò bez problemów. Części zamienne są wspólne, co dobrze wpływa na dostępność i ceny.
+Doblò III korzysta z tej samej skrzyni biegów EAT8 i silników PSA co Berlingo. Serwis jest identyczny – mechanicy przyzwyczajeni do Berlingo obsłużą Doblò bez problemów. Części zamienne są wspólne, co dobrze wpływa na dostępność i ceny.
 {{% /info %}}
 
 ### Zbiorcza tabela wymiarów i ładowności
 
-Poniżej masz najważniejsze parametry użytkowe wszystkich generacji. To dane, które realnie decydują, czy europaleta, regał albo prosta zabudowa minicampera zmieszczą się bez kombinowania.
+Poniżej masz najważniejsze parametry użytkowe wszystkich generacji. To dane, które w praktyce decydują o tym, czy europaleta, regał albo prosta zabudowa minicampera zmieszczą się bez kombinowania.
 
 | Generacja / wersja      | Długość | Rozstaw osi | Wysokość         | Pojemność ładunkowa                         | DMC            | Ładowność        |
 |-------------------------|--------:|------------:|-----------------:|--------------------------------------------|---------------:|-----------------:|
@@ -135,11 +135,11 @@ Poniżej masz najważniejsze parametry użytkowe wszystkich generacji. To dane, 
 
 ## Silniki
 
-W Doblò dobór silnika ma większe znaczenie niż w zwykłej osobówce. Ten sam model jeździ jako kurier, auto rodzinne, bus serwisowy albo baza pod lekką zabudowę, więc liczy się nie tylko moc, ale też moment obrotowy, norma emisji i realne spalanie.
+W Doblò dobór silnika ma większe znaczenie niż w zwykłej osobówce. Ten sam model jeździ jako auto kurierskie, rodzinny, bus serwisowy albo baza pod lekką zabudowę, więc liczy się nie tylko moc, ale też moment obrotowy, norma emisji i rzeczywiste spalanie.
 
 ### Tabela silników Fiat Doblò
 
-Poniżej masz przekrojowe zestawienie najważniejszych jednostek napędowych ze wszystkich generacji. To wystarcza, żeby szybko ocenić, czy szukasz prostego diesla do pracy, benzyny do krótkich tras czy nowszego diesla pod większe przebiegi.
+Poniżej masz przekrojowe zestawienie najważniejszych jednostek napędowych ze wszystkich generacji. To wystarczy, żeby szybko ocenić, czy szukasz prostego diesla do pracy, benzyny do krótkich tras, czy nowszego diesla pod większe przebiegi.
 
 | Generacja | Silnik         | Moc        | Moment | Norma Euro / bateria | Średnie spalanie / zasięg |
 |---|---|---:|---:|---|---|
@@ -174,33 +174,33 @@ W II generacji odpowiednikami były krótsze Cargo 3,4 m³ i dłuższe Maxi 4,2 
 
 ### Cargo z podwójną kabiną
 
-Na wybranych rynkach spotyka się także odmiany z podwójną kabiną, określane jako Crew Cab. Taka wersja łączy drugi rząd siedzeń z krótszą przestrzenią ładunkową i bywa sensownym wyborem dla ekip montażowych albo serwisu.
+Na wybranych rynkach spotyka się także odmiany z podwójną kabiną, określane jako Crew Cab. Taka wersja łączy drugi rząd siedzeń z krótszą przestrzenią ładunkową i bywa rozsądnym wyborem dla ekip montażowych albo firm serwisowych.
 
 ### Kombi / Combi 5-osobowe
 
-To wariant pośredni między pełnym osobowym a typowym vanem dostawczym. Daje pięć miejsc i bardziej uniwersalny charakter, ale nadal pozwala przewieźć sporo ładunku po złożeniu lub demontażu części siedzeń.
+To wariant pośredni między pełną wersją osobową a typowym vanem dostawczym. Daje pięć miejsc i bardziej uniwersalny charakter, ale wciąż pozwala przewieźć sporo ładunku po złożeniu lub demontażu części siedzeń.
 
 ### Panorama 5- i 7-osobowa
 
-Panorama była najbardziej rodzinną wersją Doblò. W zależności od odmiany oferowała 5 albo 7 miejsc, a opcjonalny trzeci rząd siedzeń, zależnie od wersji składany lub wyjmowany.
+Panorama była najbardziej rodzinną wersją Doblò. W zależności od odmiany oferowała 5 albo 7 miejsc, a opcjonalny trzeci rząd siedzeń był – zależnie od wersji – składany lub wyjmowany.
 
 Dla rodzin i przewozu osób to najbardziej praktyczna odmiana, zwłaszcza w dłuższych wersjach nadwozia.
 
 ### Podwozie do zabudowy i niszowe odmiany
 
-W I i II generacji na wybranych rynkach pojawiały się także wersje pod zabudowę. To ważne dla firm, które szukały małej chłodni, mobilnego serwisu albo innej specjalistycznej konfiguracji.
+W I i II generacji na wybranych rynkach pojawiały się także wersje pod zabudowę. To ważne dla firm, które szukały małej chłodni, mobilnego warsztatu albo innej specjalistycznej konfiguracji.
 
 ### Doblò jako minicamper
 
-Dłuższe wersje, zwłaszcza L2/Maxi, bywają bazą pod prostą zabudowę turystyczną. W układzie z materacem po zabudowie zwykle da się uzyskać długość spania ok. 190–200 cm, więc na weekendowy vanlife Doblò nadaje się zaskakująco dobrze.
+Dłuższe wersje, zwłaszcza L2/Maxi, bywają bazą pod prostą zabudowę turystyczną. W układzie z materacem po zabudowie zwykle da się uzyskać długość spania ok. 190–200 cm, więc na weekendowe wypady kempingowe Doblò nadaje się zaskakująco dobrze.
 
 {{% expert name="Marek Kowalczyk" %}}
-Przy zakupie używanego Doblò II z silnikiem 1.6 MultiJet sprawdź stan dwumasowego koła zamachowego – to pierwsza rzecz, która pada po 150 tys. km intensywnej eksploatacji miejskiej. Przy 2.0 MultiJet zwróć uwagę na układ wtryskowy – regenerowane wtryskiwacze potrafią nie dawać pełnej mocy przez kilka tygodni po wymianie.
+Przy zakupie używanego Doblò II z silnikiem 1.6 MultiJet sprawdź stan dwumasowego koła zamachowego – to pierwsza rzecz, która pada po 150 tys. km intensywnej eksploatacji miejskiej. Przy 2.0 MultiJet zwróć uwagę na układ wtryskowy – regenerowane wtryskiwacze potrafią nie oddawać pełnej mocy przez kilka tygodni po wymianie.
 {{% /expert %}}
 
 ## Typowe usterki Fiat Doblò
 
-Doblò ma kilka powtarzalnych słabych punktów, ale skala problemów zależy mocno od silnika i sposobu eksploatacji. Inaczej zużywa się auto kurierskie, a inaczej rodzinna Panorama robiąca 12 tys. km rocznie.
+Doblò ma kilka powtarzalnych słabych punktów, ale skala problemów zależy w dużej mierze od silnika i sposobu eksploatacji. Inaczej zużywa się auto kurierskie, a inaczej rodzinna Panorama robiąca 12 tys. km rocznie.
 
 ### 1.3 MultiJet
 
@@ -230,11 +230,11 @@ Zawieszenie nie jest przesadnie drogie, ale łączniki i tuleje zużywają się 
 
 W najnowszej generacji trzeba patrzeć głównie na układ AdBlue/NOx i oprogramowanie. Czujniki kosztują zwykle **600–1500 zł**, a zbiornik lub pompa AdBlue już **2500–5000 zł**.
 
-Zdarzają się też aktualizacje softu w serwisie – koszt od **0–500 zł** niezależnie od gwarancji i zakresu prac.
+Zdarzają się też aktualizacje oprogramowania w serwisie – koszt **0–500 zł**, zależnie od gwarancji i zakresu prac.
 
 ## Porównanie Fiata Doblò z konkurencją
 
-Na papierze Doblò konkuruje z wieloma modelami, ale część tej „konkurencji” to w praktyce to samo auto z innym znaczkiem. Doblò, Combo, Berlingo i Partner należą do rodziny K9/Stellantis, więc realną konkurencją platformową pozostają głównie Renault Kangoo i Volkswagen Caddy.
+Teoretycznie Doblò konkuruje z wieloma modelami, ale część tej „konkurencji” to w praktyce to samo auto z innym znaczkiem. Doblò, Combo, Berlingo i Partner należą do rodziny K9/Stellantis, więc realnymi konkurentami o innej konstrukcji pozostają głównie Renault Kangoo i Volkswagen Caddy.
 
 | Parametr                    | Fiat Doblò III L1 | Opel Combo E L1 | Citroën Berlingo III M | Renault Kangoo III L1 | VW Caddy V |
 |---|---:|---:|---:|---:|---:|
@@ -254,7 +254,7 @@ Doblò III to bliźniak [Opla Combo](/modele/opel-combo/), [Citroëna Berlingo](
 
 ### Realna konkurencja spoza bliźniaków
 
-Jeśli odrzucisz auta z tej samej rodziny technicznej, zostają trzy sensowne kierunki: Kangoo, Caddy i ProAce City. Wtedy porównanie robi się prostsze, bo patrzysz już nie na znaczek, tylko na wymiary, ładowność i bazowe silniki.
+Jeśli odrzucisz auta z tej samej rodziny technicznej, zostają trzy rozsądne kierunki: Kangoo, Caddy i ProAce City. Wtedy porównanie staje się prostsze, bo patrzysz już nie na znaczek, tylko na wymiary, ładowność i bazowe silniki.
 
 | Model                | Długość | Pojemność ładunkowa | Ładowność        | Silniki bazowe                    |
 |---|---:|---:|---:|---|
@@ -265,14 +265,14 @@ Jeśli odrzucisz auta z tej samej rodziny technicznej, zostają trzy sensowne ki
 
 Wnioski zakupowe są dość proste:
 - Doblò zwykle wygrywa ceną względem Caddy.
-- Z Kangoo remisuje funkcjonalnością, bo oba auta oferują bardzo zbliżone parametry użytkowe.
+- Z Kangoo remisuje pod względem funkcjonalności, bo oba auta oferują bardzo zbliżone parametry użytkowe.
 - Z ProAce City różni się głównie siecią dealerską i wyceną.
 
 {{% youtube %}}
 
 ## Ceny Doblò
 
-Na rynku wtórnym Doblò rozciąga się od tanich aut roboczych za kilka tysięcy do świeżych egzemplarzy III generacji kosztujących już tyle, co młode kompakty osobowe. Największy wpływ na cenę mają rocznik, stan blacharski, długość nadwozia i to, czy mówimy o Cargo, czy o wersji osobowej.
+Na rynku wtórnym Doblò rozciąga się od tanich aut roboczych za kilka tysięcy do świeżych egzemplarzy III generacji kosztujących już tyle co młode kompakty osobowe. Największy wpływ na cenę mają rocznik, stan blacharski, długość nadwozia i to, czy mowa o Cargo, czy o wersji osobowej.
 
 ### Ceny używanych Fiatów Doblò w Polsce
 
@@ -296,4 +296,4 @@ Na rynku wtórnym Doblò rozciąga się od tanich aut roboczych za kilka tysięc
 
 ### Ceny nowych egzemplarzy
 
-Nowe Doblò Van L1 1.5 BlueHDi 100 startuje od ok. **105 000 zł netto**. Wersje L2 i odmiany z automatem są droższe zwykle o ok. **8–20 tys. zł** zależnie od konfiguracji.
+Nowe Doblò Van L1 1.5 BlueHDi 100 startuje od ok. **105 000 zł netto**. Wersje L2 i odmiany z automatem są droższe zwykle o ok. **8–20 tys. zł**, w zależności od konfiguracji.

@@ -51,13 +51,13 @@ Najważniejsza informacja eksploatacyjna dotyczy rozrządu. W Ducato 2.3 MultiJe
 
 W harmonogramach flotowych wymiana oleju bywa przewidziana co 48 000 km lub 2 lata przy lekkiej eksploatacji, ale w praktyce użytkowej często skraca się ją do 15 000–20 000 km lub 1 roku. Rozrząd zależnie od wersji i rynku zwykle mieści się w przedziale około 120 000–180 000 km lub 5 lat.
 
-Warto też oddzielić 2.3 od późniejszego 2.2. Silnik 2.3 w Ducato obejmuje wcześniejsze etapy oferty do roku modelowego 2021, natomiast nowsza gama nowych aut opiera się już na innej jednostce.
+Warto też oddzielić 2.3 od późniejszego 2.2. Silnik 2.3 w Ducato obejmuje wcześniejsze etapy oferty do roku modelowego 2021, natomiast nowsza gama tych aut opiera się już na innej jednostce.
 
 ## Wersje mocy – 120 KM, 130 KM, 140 KM, 150 KM, 160 KM
 
 Na przestrzeni lat Fiat oferował silnik 2.3 MultiJet w kilku wyraźnie różnych wariantach. Różnice dotyczyły nie tylko mocy, ale też momentu obrotowego, okresu produkcji i etapu emisji.
 
-Typowa oś czasu wygląda tak: od 2006 roku w gamie pojawiały się odmiany 120 i 130 KM, po liftingu z 2014 roku doszły kolejne warianty, a w późniejszych latach Euro 6 także mocniejsze wersje 177–180 KM. Od MY2021 nowe Ducato przeszło już na 2.2.
+Typowa oś czasu wygląda tak: od 2006 roku w gamie pojawiały się odmiany 120 i 130 KM, po liftingu z 2014 roku doszły kolejne warianty, a w późniejszych latach w normie Euro 6 także mocniejsze wersje 177–180 KM. Od roku modelowego 2021 nowe Ducato przeszło już na 2.2.
 
 | Wersja | Moc | Moment obrotowy | Faza oferty | Uwagi |
 |--------|-----|-----------------|-------------|-------|
@@ -83,22 +83,22 @@ W praktyce wersje 140, 160 i 177–180 KM mają najwięcej sensu tam, gdzie auto
 
 ## Spalanie Fiata Ducato 2.3 MultiJet w praktyce
 
-Spalanie w przypadku Fiat Ducato 2.3 MultiJet trzeba zawsze odnosić do konkretnej zabudowy, wysokości, długości i masy. Ten sam silnik w krótkim furgonie i w kamperze na granicy 3,5 t potrafi dawać zupełnie inne wyniki.
+Spalanie w przypadku Fiata Ducato 2.3 MultiJet trzeba zawsze odnosić do konkretnej zabudowy, wysokości, długości i masy. Ten sam silnik w krótkim furgonie i w kamperze na granicy 3,5 t potrafi dawać zupełnie inne wyniki.
 
 Największe znaczenie mają opór aerodynamiczny, rzeczywista masa oraz prędkość przelotowa. Właśnie dlatego warto patrzeć na orientacyjne widełki dla konkretnych typów nadwozia, a nie na jedną uśrednioną liczbę.
 
 | Typ zastosowania | Orientacyjne spalanie | Co wpływa najmocniej |
 |------------------|-----------------------|----------------------|
 | Furgon L2H2 / L3H2 130–140 KM – trasa | ok. 7,5–9,5 l/100 km | mniejszy opór powietrza, spokojna jazda |
-| Furgon L2H2 / L3H2 130–140 KM – mieszanie | ok. 8,5–11,0 l/100 km | masa, ruch miejski, częste zatrzymania |
+| Furgon L2H2 / L3H2 130–140 KM – mieszany | ok. 8,5–11,0 l/100 km | masa, ruch miejski, częste zatrzymania |
 | Furgon L4H3 | zwykle 9,5–12,0 l/100 km | większa powierzchnia czołowa |
 | Kamper na bazie Ducato 2.3 | zwykle 10,0–13,5 l/100 km | masa zabudowy, wysokość, styl jazdy |
 | Kamper przy 120–130 km/h | nawet 12–15 l/100 km | prędkość autostradowa i aerodynamika |
 | Kontener / plandeka | często 10–14 l/100 km | masa i bardzo duży opór aerodynamiczny |
 
-Dla porównania spalania trzeba zestawiać auta o podobnej zabudowie i podobnej masie. Wynik z furgonu L2H2 nie będzie miarodajny dla wysokiego kampera ani dla plandeki.
+Przy porównywaniu spalania trzeba zestawiać auta o podobnej zabudowie i podobnej masie. Wynik z furgonu L2H2 nie będzie miarodajny dla wysokiego kampera ani dla plandeki.
 
-W praktyce użytkowej dostawczak z silnikiem 120–130 KM zwykle wypada dobrze kosztowo w lekkim transporcie. Gdy jednak pojazd pracuje stale pod dużym obciążeniem, wyższa moc nie musi oznaczać proporcjonalnie większego spalania, bo mocniejsza odmiana mniej się męczy.
+W praktyce użytkowej dostawczak z silnikiem 120–130 KM zwykle wypada korzystnie w lekkim transporcie. Gdy jednak pojazd pracuje stale pod dużym obciążeniem, wyższa moc nie musi oznaczać proporcjonalnie większego spalania, bo mocniejsza odmiana mniej się męczy.
 
 ## Typowe usterki i problemy
 
@@ -112,7 +112,7 @@ Najwięcej uwagi wymaga osprzęt zależny od stylu pracy auta. Samochody eksploa
 
 W przypadku DPF typowe sygnały ostrzegawcze to częste wypalania, wzrost poziomu oleju oraz błędy ciśnienia różnicowego. EGR potrafi dawać falowanie obrotów, tryb awaryjny i osady, a w nowszych wersjach SCR/AdBlue dochodzą błędy NOx oraz komunikat o braku możliwości rozruchu po określonym przebiegu.
 
-Warto też kontrolować szczelność intercoolera i przewodów dolotowych oraz parametry pracy silnika w diagnostyce OBD. Przy zakupie używanego auta sens ma sprawdzenie korekt wtrysków, ciśnienia doładowania i błędów zapisanych w sterowniku.
+Warto też kontrolować szczelność intercoolera i przewodów dolotowych oraz parametry pracy silnika w diagnostyce OBD. Przy zakupie używanego auta ma sens sprawdzenie korekt wtrysków, ciśnienia doładowania i błędów zapisanych w sterowniku.
 
 ### Rozrząd i dwumasowe koło zamachowe
 
@@ -132,7 +132,7 @@ Poza samym silnikiem użytkownicy zwracają uwagę również na wysprzęglik, p�
 
 Fiat Ducato 2.3 MultiJet jest oceniany inaczej w klasycznym aucie dostawczym, a inaczej w kamperze. To ważne, bo ta sama jednostka może pracować w lekkim furgonie miejskim albo w zabudowie ważącej realnie 3,2–3,5 t jeszcze przed urlopowym załadunkiem.
 
-W efekcie opinie o dynamice i kosztach eksploatacji trzeba czytać przez pryzmat konkretnego zastosowania. W lekkim busie 130 KM może być w pełni wystarczające, ale w ciężkim kamperze oczekiwania kierowców są zwykle inne.
+W efekcie opinie o dynamice i kosztach eksploatacji trzeba czytać przez pryzmat konkretnego zastosowania. W lekkim busie 130 KM może w pełni wystarczyć, ale w ciężkim kamperze oczekiwania kierowców są zwykle inne.
 
 ### Zalety silnika 2.3 MultiJet
 
@@ -150,13 +150,13 @@ W kamperach częstym tematem jest masa zabudowy. Przy realnym ciężarze 3,2–3
 
 ## Koszty eksploatacji i serwisu
 
-Koszty utrzymania Fiat Ducato 2.3 MultiJet zależą od wersji, rocznika i sposobu pracy, ale kilka pozycji powtarza się praktycznie zawsze. Najważniejsze to olej i filtry, rozrząd, sprzęgło z dwumasą oraz elementy osprzętu emisji spalin.
+Koszty utrzymania Fiata Ducato 2.3 MultiJet zależą od wersji, rocznika i sposobu pracy, ale kilka pozycji powtarza się praktycznie zawsze. Najważniejsze to olej i filtry, rozrząd, sprzęgło z dwumasą oraz elementy osprzętu emisji spalin.
 
 W praktyce warto odróżnić harmonogram katalogowy od realnego serwisu użytkowego. Samochody pracujące ciężko lub na krótkich odcinkach zwykle wymagają częstszej obsługi niż sugeruje podstawowy plan flotowy.
 
 ### Cennik przeglądów i materiałów eksploatacyjnych
 
-W harmonogramach dla lekkiej eksploatacji wymiana oleju i podstawowych filtrów może wypadać co 48 000 km lub 2 lata. W praktyce użytkowej często skraca się ten interwał do 15 000–20 000 km lub 1 roku, a filtr paliwa i powietrza wymienia według harmonogramu okresowego – zwykle co 48 000 km lub częściej przy ciężkiej pracy.
+W harmonogramach dla lekkiej eksploatacji wymiana oleju i podstawowych filtrów może wypadać co 48 000 km lub 2 lata. W praktyce użytkowej często skraca się ten interwał do 15 000–20 000 km lub 1 roku, a filtr paliwa i powietrza wymienia się według harmonogramu okresowego – zwykle co 48 000 km lub częściej przy ciężkiej pracy.
 
 Rozrząd zależnie od wersji i rynku zwykle przewiduje się w przedziale około 120 000–180 000 km lub 5 lat. To jeden z kluczowych punktów serwisowych, bo w tej jednostce zastosowano pasek, a nie łańcuch.
 
@@ -169,6 +169,6 @@ Rozrząd zależnie od wersji i rynku zwykle przewiduje się w przedziale około 
 | Nowy czujnik NOx | 1200–2500 zł |
 | Serwis DPF | od 600 zł za czyszczenie do kilku tysięcy za wymianę |
 
-Przy doborze akumulatora nie warto upraszczać tematu. Typ baterii zależy od konkretnej wersji wyposażenia i obecności systemu Start&Stop, więc przed zakupem trzeba sprawdzić specyfikację auta i sposób zarządzania ładowaniem.
+Przy doborze akumulatora nie warto upraszczać tematu. Typ akumulatora zależy od konkretnej wersji wyposażenia i obecności systemu Start&Stop, więc przed zakupem trzeba sprawdzić specyfikację auta i sposób zarządzania ładowaniem.
 
 Od strony rynkowej trzeba też jasno oddzielić okresy modelowe. Opisywany silnik 2.3 dotyczy szerokiej gamy wcześniejszych Ducato, natomiast od roku modelowego 2021 nowe auta przeszły już na jednostkę 2.2.

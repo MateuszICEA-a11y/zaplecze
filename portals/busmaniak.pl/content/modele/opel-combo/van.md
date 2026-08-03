@@ -15,7 +15,7 @@ main_keyword: "Opel Combo Van"
 lead: "Opel Combo Van czwartej generacji (od 2018) to kompaktowy furgon produkowany w Vigo, oparty na platformie grupy PSA dla lekkich aut dostawczych, spokrewnionej z EMP2/CMP. Wersje Standard i XL oferują 3,3–4,4 m³ przestrzeni ładunkowej, ładowność od około 650 do ponad 1000 kg oraz gamę silników obejmującą diesle 75/100/130 KM, benzynę 110/130 KM i elektryczne e-Combo o mocy 136 KM."
 faq:
   - question: "Ile pali Opel Combo Van?"
-    answer: "1.5 Diesel w mieście zużywa zwykle około 6–7,5 l/100 km, a w trasie 5–6 l/100 km. Benzynowe 1.2 Turbo/PureTech w mieście potrzebuje najczęściej około 8–10 l/100 km. e-Combo latem zużywa często 18–22 kWh/100 km, zimą 23–30 kWh/100 km, a realny zasięg z ładunkiem zwykle mieści się w przedziale 170–250 km."
+    answer: "1.5 Diesel w mieście zużywa zwykle około 6–7,5 l/100 km, a w trasie 5–6 l/100 km. Benzynowy 1.2 Turbo/PureTech w mieście potrzebuje najczęściej około 8–10 l/100 km. e-Combo latem zużywa często 18–22 kWh/100 km, zimą 23–30 kWh/100 km, a realny zasięg z ładunkiem zwykle mieści się w przedziale 170–250 km."
   - question: "Czy Combo Van mieści europaletę?"
     answer: "Wersja Standard mieści jedną europaletę, a XL dwie. Pomagają w tym szerokość między nadkolami 1230 mm oraz boczne drzwi przesuwne o szerokości około 675 mm."
   - question: "Ile kosztuje Opel Combo Van?"
@@ -34,10 +34,10 @@ Czwarta generacja tego modelu, produkowana od 2018 roku, porzuciła technologię
 
 [Opel Combo](/modele/opel-combo/) w wersji dostawczej to czyste narzędzie pracy – bez tylnych okien, ze stalową przegrodą i płaską podłogą ładunkową. Kamera Surround Rear Vision ułatwia manewrowanie furgonem bez tylnych szyb. Klientów szukających auta do przewozu osób zainteresuje [wersja osobowa Combo Life](/modele/opel-combo/osobowy/).
 
-W praktyce to jeden z technicznych bliźniaków segmentu kompaktowych vanów dostawczych. Najbliższe konstrukcyjnie modele to Citroën Berlingo Van, Peugeot Partner, Fiat Doblo od 2022 i Toyota Proace City, a wśród głównych konkurentów warto uwzględnić Renault Kangoo Van, Forda Transita Connect i VW Caddy Cargo.
+W praktyce to jeden z technicznych bliźniaków segmentu kompaktowych vanów dostawczych. Najbliższe konstrukcyjnie modele to Citroën Berlingo Van, Peugeot Partner, Fiat Doblo od 2022 i Toyota Proace City, a wśród głównych konkurentów warto uwzględnić Renault Kangoo Van, Ford Transit Connect i VW Caddy Cargo.
 
 {{% expert name="Marek Kowalczyk" %}}
-W czwartej generacji Opel Combo Van konstruktorzy postawili na ergonomię kabiny zbliżoną do aut osobowych. Krótka maska i wysoko umieszczony fotel kierowcy dają bardzo dobrą widoczność w gęstym ruchu miejskim.
+W czwartej generacji Opla Combo Van konstruktorzy postawili na ergonomię kabiny zbliżoną do aut osobowych. Krótka maska i wysoko umieszczony fotel kierowcy dają bardzo dobrą widoczność w gęstym ruchu miejskim.
 {{% /expert %}}
 
 ## Wymiary przestrzeni ładunkowej
@@ -66,7 +66,7 @@ Otwierana klapa w ścianie grodziowej i składane oparcie fotela pasażera pozwa
 
 ## Silniki i napędy Opla Combo Van
 
-W gamie Opel Combo Van znalazły się diesle, benzyna i odmiana elektryczna. Wszystkie klasyczne wersje napędzają przednią oś, a dobór silnika warto uzależnić od masy ładunku, częstotliwości jazdy autostradowej i planowanego przebiegu rocznego.
+W gamie Opla Combo Van znalazły się diesle, benzyna i odmiana elektryczna. Wszystkie klasyczne wersje napędzają przednią oś, a dobór silnika warto uzależnić od masy ładunku, częstotliwości jazdy autostradowej i planowanego przebiegu rocznego.
 
 ### Diesel 1.5 D i benzyna PureTech
 
@@ -76,13 +76,13 @@ W gamie Opel Combo Van znalazły się diesle, benzyna i odmiana elektryczna. Wsz
 - **1.2 Turbo/PureTech 110 KM** – około 205 Nm, 6-biegowy manual
 - **1.2 Turbo/PureTech 130 KM** – około 230 Nm, 8-biegowy automat
 
-Wersje wysokoprężne są naturalnym wyborem do pracy w trasie i przy wyższych przebiegach. Benzynowe 1.2 Turbo lepiej sprawdza się przy lżejszej eksploatacji miejskiej, ale przed zakupem starszego egzemplarza trzeba pamiętać o specyfice paska rozrządu pracującego w oleju w starszych odmianach.
+Wersje wysokoprężne są naturalnym wyborem do pracy w trasie i przy wyższych przebiegach. Benzynowe 1.2 Turbo lepiej sprawdzają się przy lżejszej eksploatacji miejskiej, ale przed zakupem starszego egzemplarza trzeba pamiętać o specyfice paska rozrządu pracującego w oleju w starszych odmianach.
 
 W dieslu 1.5 BlueHDi kluczowe punkty kontrolne to układ AdBlue/SCR, DPF, EGR oraz interwał wymiany rozrządu – zależny od wersji silnika i zaleceń producenta. To właśnie stan osprzętu emisji spalin w dużej mierze decyduje o kosztach używanego auta flotowego.
 
 ### Opel e-Combo – wersja elektryczna
 
-- **e-Combo 100 kW/136 KM** – 260 Nm, akumulator opisywany jako około 46,3–50 kWh brutto zależnie od sposobu prezentacji danych
+- **e-Combo 100 kW/136 KM** – 260 Nm, akumulator o pojemności brutto około 46,3–50 kWh zależnie od sposobu prezentacji danych
 - **Ładowanie AC** – 7,4 kW lub opcjonalnie 11 kW
 - **Ładowanie DC** – do 100 kW
 - **Czas ładowania 0–80%** – około 30 minut na szybkiej ładowarce
@@ -94,11 +94,11 @@ Przy zakupie używanego e-Combo warto sprawdzić kondycję baterii trakcyjnej. G
 
 ## Ładowność i DMC
 
-W zależności od wersji Opel Combo Van oferuje ładowność od około 650 do ponad 1000 kg. Masa własna odmian spalinowych zwykle mieści się w zakresie około 1350–1600 kg, a e-Combo około 1650–1800 kg. DMC, zależnie od konfiguracji i rocznika, wynosi zwykle około 2000–2400 kg.
+W zależności od wersji Opel Combo Van oferuje ładowność od około 650 do ponad 1000 kg. Masa własna odmian spalinowych zwykle mieści się w zakresie około 1350–1600 kg, a e-Combo – około 1650–1800 kg. DMC, zależnie od konfiguracji i rocznika, wynosi zwykle około 2000–2400 kg.
 
 W praktyce trzeba patrzeć na konkretną homologację, bo różnice wynikają z długości nadwozia, silnika, skrzyni biegów i wyposażenia. Dłuższa wersja nie zawsze ma wyższą ładowność – często dodatkowa długość oznacza też większą masę własną.
 
-Możliwości holowania także są zależne od odmiany. Wersje spalinowe zwykle pozwalają ciągnąć przyczepę z hamulcem o masie do 1000–1500 kg, a bez hamulca 680–750 kg. W e-Combo wartości są niższe i zazwyczaj kończą się na 750 kg przyczepy z hamulcem.
+Możliwości holowania także zależą od odmiany. Wersje spalinowe zwykle pozwalają ciągnąć przyczepę z hamulcem o masie do 1000–1500 kg, a bez hamulca 680–750 kg. W e-Combo wartości są niższe i zazwyczaj ograniczają się do 750 kg przyczepy z hamulcem.
 
 
 {{% youtube %}}
@@ -107,8 +107,8 @@ Możliwości holowania także są zależne od odmiany. Wersje spalinowe zwykle p
 
 Na co dzień Opel Combo Van przekonuje prostą, użytkową kabiną i rozwiązaniami typowo roboczymi. Auto było oferowane jako 2- lub 3-miejscowe, a system FlexCargo pozwala połączyć trzeci fotel z możliwością przewozu dłuższych przedmiotów.
 
-W praktyce przydatne są także Surround Rear Vision z ekranem zamiast klasycznego lusterka wstecznego, czujniki parkowania przód/tył oraz kamera cofania 180°. W ruchu miejskim i podmiejskim pomagają też Grip Control, asystent bocznego wiatru, automatyczne hamowanie awaryjne i tempomat.
+W praktyce przydatne są także system Surround Rear Vision z ekranem zamiast klasycznego lusterka wstecznego, czujniki parkowania przód/tył oraz kamera cofania 180°. W ruchu miejskim i podmiejskim pomagają też Grip Control, asystent bocznego wiatru, automatyczne hamowanie awaryjne i tempomat.
 
-Przy porównaniu z konkurencją Opel Combo Van wypada mocno w trzech punktach: pojemność ładowni 3,3–4,4 m³, ładowność od około 650 do ponad 1000 kg oraz szeroka gama napędów – diesel, benzyna i EV. To właśnie ten zestaw sprawia, że model pozostaje jedną z najbardziej uniwersalnych propozycji w klasie.
+Na tle konkurencji Opel Combo Van wyróżnia się trzema atutami: pojemnością ładowni 3,3–4,4 m³, ładownością od około 650 do ponad 1000 kg oraz szeroką gamą napędów – diesel, benzyna i EV. To właśnie ten zestaw sprawia, że model pozostaje jedną z najbardziej uniwersalnych propozycji w klasie.
 
 ![Opel Combo Van – kompaktowy furgon dostawczy](/images/opel-combo-van-hero.webp)

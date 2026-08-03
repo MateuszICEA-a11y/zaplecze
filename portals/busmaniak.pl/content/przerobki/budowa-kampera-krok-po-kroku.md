@@ -13,18 +13,18 @@ main_keyword: "budowa kampera krok po kroku"
 lead: "Przeróbka busa na kampera to projekt o jasnej kolejności etapów – pominięcie któregokolwiek lub zamiana ich miejscami kończy się przeróbkami i stratą czasu. Ten poradnik prowadzi przez wszystkie osiem etapów chronologicznie: od wyboru bazy, przez izolację i instalacje, po homologację. Każdy etap zawiera konkretne wskazówki, materiały i czas realizacji."
 faq:
   - question: "Od czego zacząć budowę kampera z busa?"
-    answer: "Od wyboru i zakupu busa, a następnie jego przygotowania – demontaż wnętrza, czyszczenie, naprawa korozji i gruntowanie. Dopiero na czysty, zabezpieczony metal kładzie się izolację jako pierwszy etap właściwej zabudowy."
+    answer: "Od wyboru i zakupu busa, a następnie jego przygotowania – demontażu wnętrza, czyszczenia, naprawy korozji i gruntowania. Dopiero na czysty, zabezpieczony metal kładzie się izolację jako pierwszy etap właściwej zabudowy."
   - question: "Czy trzeba robić izolację przed instalacją elektryczną?"
-    answer: "Niezupełnie. Rozprowadzanie przewodów i izolację prowadzi się równolegle. Wiązki elektryczne w peszlach umieszcza się w profilach konstrukcyjnych busa, zanim zostaną one zakryte matami izolacyjnymi. To zapewnia solidne mocowanie i chroni instalację."
+    answer: "Niezupełnie. Rozprowadzanie przewodów prowadzi się równolegle z izolacją. Wiązki elektryczne w peszlach umieszcza się w profilach konstrukcyjnych busa, zanim zostaną one zakryte matami izolacyjnymi. To zapewnia solidne mocowanie i chroni instalację."
   - question: "Ile czasu zajmuje budowa kampera od zera?"
-    answer: "Przy pracy weekendowej – 6–12 miesięcy. Na pełen etat – 2–4 miesiące. Najdłuższe etapy to meble (4–8 tygodni) i instalacja elektryczna (2–4 tygodnie). Izolacja zajmuje 1–2 tygodnie."
+    answer: "Przy pracy weekendowej – 6–12 miesięcy. Na pełny etat – 2–4 miesiące. Najdłuższe etapy to meble (4–8 tygodni) i instalacja elektryczna (2–4 tygodnie). Izolacja zajmuje 1–2 tygodnie."
   - question: "Czy można budować kampera bez doświadczenia stolarskiego?"
-    answer: "Tak – większość kamperów-samoróbek budują osoby bez wcześniejszego doświadczenia. Kluczowe narzędzia to wyrzynarka, wiertarko-wkrętarka i szlifierka oscylacyjna. Filmy instruktażowe na YouTube pokrywają każdy etap."
+    answer: "Tak – większość kamperów-samoróbek budują osoby bez wcześniejszego doświadczenia. Kluczowe narzędzia to wyrzynarka, wiertarko-wkrętarka i szlifierka oscylacyjna. Filmy instruktażowe na YouTube obejmują każdy etap."
 ---
 
 ## Etap 1 – wybór busa bazowego {#wybor-bazy}
 
-Dobór odpowiedniego busa to fundament całego projektu. Błędny wybór – za wąski, za ciężki lub z ukrytą korozją – generuje problemy na każdym kolejnym etapie.
+Dobór odpowiedniego busa to fundament całego projektu. Błędny wybór – za wąski, za ciężki lub z ukrytą korozją – powoduje problemy na każdym kolejnym etapie.
 
 ### Kryteria wyboru bazy
 
@@ -35,7 +35,7 @@ Dobór odpowiedniego busa to fundament całego projektu. Błędny wybór – za 
 
 Najpopularniejsze bazy to [Fiat Ducato](/modele/fiat-ducato/) (najszersza przestrzeń ładunkowa – ok. 1870 mm), [Mercedes Sprinter](/modele/mercedes-sprinter/) (najtrwalszy) i [Ford Transit](/modele/ford-transit/) (najlepszy stosunek ceny do przestrzeni). Szczegółowe porównanie modeli znajdziesz w artykule [jaki bus na kampera](/przerobki/jaki-bus-na-kampera/).
 
-Warto również zwrócić uwagę na tzw. trojaczki z Sevel, czyli Peugeota Boxera i Citroëna Jumpera. To konstrukcyjne bliźniaki Fiata Ducato, oferujące tę samą, rekordową szerokość wewnętrzną. Ze względu na inną paletę silników, np. 2.0 i 2.2 BlueHDi, bywają tańsze w zakupie, stanowiąc równie popularną bazę.
+Warto również zwrócić uwagę na tzw. trojaczki z Sevel, czyli Peugeota Boxera i Citroëna Jumpera. To konstrukcyjne bliźniaki Fiata Ducato, oferujące tę samą, rekordową szerokość wewnętrzną. Ze względu na inną paletę silników, np. 2.0 i 2.2 BlueHDi, bywają tańsze w zakupie i stanowią równie popularną bazę.
 
 ### Przygotowanie busa przed przeróbką
 
@@ -86,7 +86,7 @@ W nowoczesnych busach (norma Euro 6 i wyższe) standardem są inteligentne alter
 
 ### Montaż krok po kroku
 
-Samo rozprowadzenie przewodów w peszlach zajmuje **2–4 dni**. Pełne podłączenie wszystkich urządzeń to proces trwający łącznie **2–4 tygodnie**. Zaczynaj od sufitu, potem ściany, a na końcu główną linię zasilającą. Przy każdym punkcie odbioru zostaw zapas przewodu 30–50 cm – lepiej dociąć nadmiar, niż sztukować kabel.
+Samo rozprowadzenie przewodów w peszlach zajmuje **2–4 dni**. Pełne podłączenie wszystkich urządzeń zajmuje łącznie **2–4 tygodnie**. Zaczynaj od sufitu, następnie od ścian, a na końcu poprowadź główną linię zasilającą. Przy każdym punkcie odbioru zostaw zapas przewodu 30–50 cm – lepiej dociąć nadmiar, niż sztukować kabel.
 
 ## Etap 4 – instalacja wodna {#woda}
 
@@ -106,7 +106,7 @@ Samo rozprowadzenie przewodów w peszlach zajmuje **2–4 dni**. Pełne podłąc
 
 - **Materiały** – użyj rur PEX 16 mm lub elastycznych węży zbrojonych **10–12 mm**. Oba systemy są odporne na drgania, a montaż jest prosty dzięki złączkom zaciskowym.
 - **Zbiornik podpodłogowy** – ociepl go matą kauczukową. Pamiętaj jednak, że przy ujemnych temperaturach sama izolacja nie wystarczy. Aby zapobiec zamarzaniu wody, zamontuj w zbiorniku grzałkę 12V lub podklej pod nim matę grzewczą.
-- **Filtr węglowy** – montuj na wyjściu ze zbiornika czystej wody, by poprawić smak i jakość. Wymieniaj wkład co **3–6 miesięcy** (koszt **30–60 zł**).
+- **Filtr węglowy** – montuj na wyjściu ze zbiornika czystej wody, by poprawić smak i jakość wody. Wymieniaj wkład co **3–6 miesięcy** (koszt **30–60 zł**).
 
 ![Budowa kampera krok po kroku – etapy](/images/budowa-kampera-krok-po-kroku-hero.webp)
 
@@ -127,7 +127,7 @@ Budowa mebli to najbardziej czasochłonny etap, ale to on nadaje kamperowi ostat
 - **Sklejka topolowa (lub z drewna ceiba) 12–15 mm** – główny materiał konstrukcyjny. Jest znacznie lżejsza od sklejki brzozowej, co ma kluczowe znaczenie dla zachowania ładowności.
 - **Kątowniki aluminiowe** – pozwalają łączyć elementy bez skomplikowanych złączy stolarskich.
 - **Wkręty do drewna 3,5–4,5 mm** – stosuj je z podkładkami, by nie uszkodzić sklejki.
-- **Mocowanie do nadwozia** – używaj nitonakrętek M6 wkręcanych w profile konstrukcyjne busa. Nigdy nie wierć w poszyciu zewnętrznym.
+- **Mocowanie do nadwozia** – używaj nitonakrętek M6 osadzanych w profilach konstrukcyjnych busa. Nigdy nie wierć w poszyciu zewnętrznym.
 
 {{% info title="Waga zabudowy" icon="info" %}}
 Komplet mebli ze sklejki 15 mm w busie L2H2 waży **120–200 kg**. Stosując sklejkę 9 mm na fronty i elementy nienarażone na obciążenia, zaoszczędzisz **30–50 kg**. Każdy kilogram mniej to większa rezerwa ładowności na wodę, bagaż i pasażerów.
@@ -135,7 +135,7 @@ Komplet mebli ze sklejki 15 mm w busie L2H2 waży **120–200 kg**. Stosując sk
 
 ## Etap 6 – okna i wentylacja {#okna}
 
-Montaż okien i wentylacji finalizuje się w otworach wyciętych na wczesnym etapie prac blacharskich. Precyzyjne umiejscowienie mebli pozwala ostatecznie zweryfikować, czy ramki montażowe nie będą kolidować z szafkami czy konstrukcją łóżka.
+Montaż okien i wentylacji przeprowadza się w otworach wyciętych na wczesnym etapie prac blacharskich. Precyzyjne rozmieszczenie mebli pozwala ostatecznie sprawdzić, czy ramki montażowe nie będą kolidować z szafkami lub konstrukcją łóżka.
 
 ### Elementy do zamontowania
 
@@ -143,9 +143,9 @@ Montaż okien i wentylacji finalizuje się w otworach wyciętych na wczesnym eta
 - **Okna uchylne (Dometic, Seitz)** – montowane w ścianach bocznych, wymagają wewnętrznej ramki montażowej, która dociska uszczelkę.
 - **Świetlik dachowy** – proste rozwiązanie do doświetlenia np. łazienki, bez funkcji aktywnej wentylacji.
 
-Instalacja okna w dachu to wciąż stresujący moment. Użyj taśmy lub kleju butylowego do uszczelnienia kołnierza, a od zewnątrz zastosuj masę uszczelniającą odporną na UV. Pamiętaj, że krawędzie cięcia w blasze powinny być już wcześniej zabezpieczone gruntem antykorozyjnym.
+Montaż okna w dachu to wciąż stresujący moment. Użyj taśmy lub kleju butylowego do uszczelnienia kołnierza, a od zewnątrz zastosuj masę uszczelniającą odporną na UV. Pamiętaj, że krawędzie cięcia w blasze powinny być już wcześniej zabezpieczone gruntem antykorozyjnym.
 
-Dachy popularnych busów, takich jak Ducato czy Sprinter, są ryflowane. Montaż okna dachowego lub wentylatora w otworze 400×400 mm wymaga zastosowania dedykowanego adaptera. Ta specjalna ramka wyrównuje powierzchnię, zapewniając szczelne przyleganie kołnierza urządzenia i chroniąc wnętrze przed przeciekami.
+Dachy popularnych busów, takich jak Ducato czy Sprinter, są ryflowane. Montaż okna dachowego lub wentylatora w otworze 400×400 mm wymaga zastosowania specjalnego adaptera. Ta ramka wyrównuje powierzchnię, zapewniając szczelne przyleganie kołnierza urządzenia i chroniąc wnętrze przed przeciekami.
 
 ## Etap 7 – ogrzewanie postojowe {#ogrzewanie}
 
@@ -158,20 +158,20 @@ Ogrzewanie montuje się jako jeden z ostatnich kluczowych elementów, bo wymaga 
 - **Diesel (klasa budżetowa)** – tzw. chińskie webasto (np. Hcalory, Vevor) jest 3–5 razy tańsze, ale charakteryzuje się większym hałasem i niższą trwałością.
 - **Gazowe (np. Truma)** – często integrują ogrzewanie powietrza i wody (tzw. combi). Wymagają profesjonalnej, atestowanej instalacji gazowej.
 
-Montaż ogrzewacza diesla zajmuje **1–2 dni**. Jednostkę grzewczą montuje się pod podłogą, przewód wydechowy wyprowadza pod podwozie, a nawiew ciepłego powietrza rozprowadza się kanałami po wnętrzu.
+Montaż ogrzewacza diesla zajmuje **1–2 dni**. Jednostkę grzewczą montuje się pod podłogą, przewód wydechowy wyprowadza się pod podwozie, a nawiew ciepłego powietrza rozprowadza się kanałami po wnętrzu.
 
 
 {{% youtube %}}
 
 ## Etap 8 – homologacja i rejestracja {#homologacja}
 
-Ostatni etap to formalizacja przeróbki busa, która pozwala legalnie poruszać się nim jako pojazdem kempingowym.
+Ostatni etap to dopełnienie formalności związanych z przeróbką busa, dzięki którym można legalnie poruszać się nim jako pojazdem kempingowym.
 
 ### Procedura krok po kroku
 
 1. Zlecenie opinii [rzeczoznawcy samochodowego](/przerobki/przerobka-busa-przepisy/) – sprawdza zgodność zabudowy z przepisami (**300–800 zł**).
 2. Badanie techniczne na stacji kontroli pojazdów – potwierdzenie stanu technicznego (**ok. 180–200 zł**).
-3. Zapłata podatku akcyzowego w Urzędzie Skarbowym (formularz AKC-U/S).
+3. Zapłata podatku akcyzowego w urzędzie skarbowym (formularz AKC-U/S).
 4. Złożenie wniosku w wydziale komunikacji o zmianę rodzaju pojazdu na "samochód specjalny kempingowy".
 5. Odbiór nowego dowodu rejestracyjnego – procedura trwa zwykle **2–6 tygodni**.
 

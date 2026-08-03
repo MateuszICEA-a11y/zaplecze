@@ -25,7 +25,7 @@ faq:
 
 [Homologacja](https://pl.wikipedia.org/wiki/Homologacja) to formalne potwierdzenie, że pojazd spełnia wymagania techniczne określone w przepisach. W przypadku kampera chodzi o zmianę przeznaczenia pojazdu – z samochodu ciężarowego (kategoria N) na samochód specjalny kempingowy (kategoria M1).
 
-Procedura ta w Polsce nie wymaga udziału Transportowego Dozoru Technicznego (TDT), chyba że zmienia się DMC lub konstrukcja ramy. Standardowa zmiana przeznaczenia na kempingowy przechodzi przez Okręgową Stację Kontroli Pojazdów (OSKP) i Wydział Komunikacji.
+Procedura ta w Polsce nie wymaga udziału Transportowego Dozoru Technicznego (TDT), chyba że zmienia się DMC lub konstrukcja ramy. Standardowa zmiana przeznaczenia na pojazd kempingowy przechodzi przez Okręgową Stację Kontroli Pojazdów (OSKP) i Wydział Komunikacji.
 
 ### Kiedy potrzebujesz homologacji
 
@@ -35,11 +35,11 @@ Homologacja kampera jest obowiązkowa w trzech przypadkach:
 - **Zmiana przeznaczenia busa osobowego** – minibus (M2) przekształcany w pojazd kempingowy.
 - **Import kampera z zagranicy** – pojazd zarejestrowany jako kamper w innym kraju wymaga polskiej homologacji.
 
-Bez legalizacji jazda przerobionym busem jako kamperem grozi mandatem do 5000 zł i zatrzymaniem dowodu rejestracyjnego. Ubezpieczyciel może też odmówić wypłaty odszkodowania, jeśli pojazd nie odpowiada danym w dokumentach.
+Jazda przerobionym busem jako kamperem bez legalizacji grozi mandatem do 5000 zł i zatrzymaniem dowodu rejestracyjnego. Ubezpieczyciel może też odmówić wypłaty odszkodowania, jeśli pojazd nie odpowiada danym w dokumentach.
 
 ## Wymagania techniczne – co musi mieć kamper
 
-Przepisy definiują kampera jako pojazd specjalny z przestrzenią mieszkalną wyposażoną na stałe. Diagnostyk w OSKP sprawdza obecność i trwałość montażu wymaganego wyposażenia.
+Przepisy definiują kampera jako pojazd specjalny z przestrzenią mieszkalną trwale wyposażoną. Diagnosta w OSKP sprawdza obecność wymaganego wyposażenia oraz trwałość jego montażu.
 
 ### Obowiązkowe elementy wyposażenia
 
@@ -48,7 +48,7 @@ Strefa mieszkalna kampera musi zawierać minimum pięć elementów zamontowanych
 - **Miejsca do siedzenia** – fotele z pasami bezpieczeństwa lub ława z mocowaniem do podłogi.
 - **Stół** – może być składany lub demontowany bez narzędzi, ale musi mieć stałe mocowanie (szyna, noga z gniazdem).
 - **Miejsca do spania** – łóżko stałe lub rozkładane z siedzeń; polskie prawo nie precyzuje jego minimalnych wymiarów.
-- **Sprzęt kuchenny** – kuchenka gazowa lub elektryczna i zlew z kranem zamontowane w blacie roboczym.
+- **Sprzęt kuchenny** – kuchenka gazowa lub elektryczna oraz zlew z kranem zamontowane w blacie roboczym.
 - **Schowki i szafki** – trwale zamontowana zabudowa meblowa na bagaż, żywność i sprzęt.
 
 {{% info title="Toaleta nie jest wymagana" icon="info" %}}
@@ -60,13 +60,13 @@ Wbrew powszechnemu przekonaniu polskie przepisy nie wymagają łazienki ani toal
 Oprócz wyposażenia mieszkalnego OSKP weryfikuje kwestie bezpieczeństwa i zgodności konstrukcyjnej.
 
 - **Ściana grodziowa** – jej usunięcie jest opcjonalne i podyktowane wygodą, a nie wymogiem prawnym. Można zarejestrować kampera z pełną przegrodą między kabiną a częścią mieszkalną.
-- **Fotele z homologacją** – dołożenie miejsc jest trudnym etapem. Wymaga montażu certyfikowanych foteli (np. na stelażach Aguti, OKB) i często przedstawienia certyfikatu z instytutu badawczego (PIMOT, ITS), który potwierdzi wytrzymałość punktów mocowania pasów w podłodze.
-- **Instalacja gazowa** – jeśli jest zainstalowana, musi spełniać normę ECE R122 (szczelność, wentylacja, odcinacz gazu).
+- **Fotele z homologacją** – dołożenie dodatkowych miejsc siedzących to trudny etap. Wymaga montażu certyfikowanych foteli (np. na stelażach Aguti, OKB) i często przedstawienia certyfikatu z instytutu badawczego (PIMOT, ITS), który potwierdzi wytrzymałość punktów mocowania pasów w podłodze.
+- **Instalacja gazowa** – jeżeli jest zamontowana, musi spełniać normę ECE R122 (szczelność, wentylacja, odcinacz gazu).
 - **Instalacja elektryczna** – przewody muszą być zabezpieczone przed przetarciem, a obwody wyposażone w bezpieczniki.
 
 ## Procedura krok po kroku – OSKP, akcyza, Wydział Komunikacji
 
-Legalizacja kampera to sekwencja kroków, które trzeba wykonać w określonej kolejności. Pominięcie któregokolwiek etapu blokuje dalszą procedurę. W przypadku domowych przeróbek wiele stacji OSKP wymaga dodatkowo „Opisu zmian w pojeździe” sporządzonego przez rzeczoznawcę samochodowego PZM (koszt ok. 300–500 zł).
+Legalizacja kampera to szereg kroków, które trzeba wykonać w określonej kolejności. Pominięcie któregokolwiek etapu blokuje dalszą procedurę. W przypadku domowych przeróbek wiele stacji OSKP wymaga dodatkowo „Opisu zmian w pojeździe” sporządzonego przez rzeczoznawcę samochodowego PZM (koszt ok. 300–500 zł).
 
 ### Krok 1 – Wykonanie przeróbki
 
@@ -78,9 +78,9 @@ Inspiracje i poradniki dotyczące [przeróbek busów](/przerobki/) znajdziesz w 
 
 ### Krok 2 – Badanie techniczne w OSKP
 
-Okręgowa Stacja Kontroli Pojazdów (nie zwykła SKP) przeprowadza dodatkowe badanie techniczne. Diagnostyk sprawdza zgodność zmian ze sztuką i przepisami. Niezbędny będzie wydruk z wagi (np. ze składu złomu), który potwierdzi nową masę własną pojazdu (pole G w dowodzie).
+Okręgowa Stacja Kontroli Pojazdów (nie zwykła SKP) przeprowadza dodatkowe badanie techniczne. Diagnosta sprawdza zgodność zmian ze sztuką wykonania oraz z przepisami. Niezbędny będzie wydruk z wagi (np. ze składu złomu), który potwierdzi nową masę własną pojazdu (pole G w dowodzie).
 
-Nowa masa wraz z masą pasażerów (przyjmuje się 75 kg na osobę) i bagażu nie może przekroczyć DMC pojazdu (pole F.1). Diagnostyk weryfikuje też trwałość montażu wyposażenia i zgodność instalacji z normami. Badanie kosztuje 82 zł za zmiany konstrukcyjne plus opłata za badanie okresowe.
+Suma nowej masy własnej, masy pasażerów (przyjmuje się 75 kg na osobę) i bagażu nie może przekroczyć DMC pojazdu (pole F.1). Diagnosta weryfikuje też trwałość montażu wyposażenia i zgodność instalacji z normami. Badanie kosztuje 82 zł za zmiany konstrukcyjne plus opłatę za badanie okresowe.
 
 ![Bus w trakcie homologacji kampera](/images/homologacja-kampera-hero.webp)
 
@@ -88,7 +88,7 @@ Nowa masa wraz z masą pasażerów (przyjmuje się 75 kg na osobę) i bagażu ni
 
 Zmiana rodzaju pojazdu z ciężarowego na kempingowy (osobowy) to czynność podlegająca opodatkowaniu akcyzą. Deklarację AKC-U/S składa się wyłącznie elektronicznie przez Platformę Usług Elektronicznych Skarbowo-Celnych (PUESC).
 
-Masz 14 dni od daty badania w OSKP na złożenie deklaracji i 30 dni na zapłatę podatku. Niedotrzymanie terminów grozi wysokimi karami z Kodeksu Karnego Skarbowego. Stawki w 2026 roku wynoszą 3,1% wartości pojazdu dla silników do 2000 cm³ lub 18,6% dla silników powyżej 2000 cm³.
+Masz 14 dni od daty badania w OSKP na złożenie deklaracji i 30 dni na zapłatę podatku. Niedotrzymanie terminów grozi wysokimi karami na podstawie Kodeksu karnego skarbowego. Stawki w 2026 roku wynoszą 3,1% wartości pojazdu dla silników do 2000 cm³ lub 18,6% dla silników powyżej 2000 cm³.
 
 ### Krok 4 – Zmiana danych w Wydziale Komunikacji
 
@@ -100,11 +100,11 @@ Z kompletem dokumentów udajesz się do Wydziału Komunikacji. Potrzebne będą:
 - **Dowód zapłaty akcyzy**
 - **Dowód rejestracyjny**
 
-Opłata za wymianę dowodu rejestracyjnego wynosi ok. 80 zł. Nowy dokument z wpisem „samochód specjalny – kempingowy" otrzymasz w ciągu 30 dni.
+Opłata za wymianę dowodu rejestracyjnego wynosi ok. 80 zł. Nowy dokument z wpisem „samochód specjalny – kempingowy” otrzymasz w ciągu 30 dni.
 
 ## Koszty homologacji kampera 2026 – zestawienie
 
-Całkowity koszt legalizacji kampera składa się z kilku elementów. Sama procedura administracyjna jest stosunkowo tania, ale akcyza potrafi znacząco podnieść rachunek.
+Całkowity koszt legalizacji kampera składa się z kilku elementów. Sama procedura administracyjna jest stosunkowo tania, ale akcyza potrafi znacznie podnieść rachunek.
 
 | Element | Koszt |
 | :--- | :--- |
@@ -126,7 +126,7 @@ Procedura jest prosta, ale błędy zdarzają się często. Każdy z nich oznacza
 
 ### Błąd 1 – Brak oświadczenia firmy z PKD
 
-Najpowszechniejszy problem. Diagności w OSKP odmawiają badania, jeśli nie przedstawisz oświadczenia podmiotu z kodem PKD 45.20.Z. Nawet profesjonalnie wykonana zabudowa bez tego dokumentu jest bezwartościowa z punktu widzenia procedury.
+To najpowszechniejszy problem. Diagności w OSKP odmawiają badania, jeżeli nie przedstawisz oświadczenia podmiotu z kodem PKD 45.20.Z. Nawet profesjonalnie wykonana zabudowa bez tego dokumentu jest bezwartościowa z punktu widzenia procedury.
 
 ### Błąd 2 – Wizyta w zwykłej SKP zamiast OSKP
 
@@ -138,18 +138,18 @@ Wydział Komunikacji nie zmieni danych w dowodzie bez potwierdzenia zapłaty akc
 
 ### Błąd 4 – Nietrwały montaż wyposażenia
 
-Stół postawiony na podłodze bez mocowania, kuchenka luźno leżąca na blacie czy łóżko bez zabezpieczenia przed przesunięciem – diagnostyk odrzuci takie rozwiązania. Każdy element strefy mieszkalnej musi być trwale przytwierdzony do konstrukcji pojazdu.
+Stół postawiony na podłodze bez mocowania, kuchenka luźno leżąca na blacie czy łóżko bez zabezpieczenia przed przesunięciem – diagnosta odrzuci takie rozwiązania. Każdy element strefy mieszkalnej musi być trwale przytwierdzony do konstrukcji pojazdu.
 
 ### Błąd 5 – Fotele bez homologacji
 
-Dodanie miejsc siedzących wymaga foteli z certyfikatem homologacyjnym i profesjonalnego montażu. Siedzenia z "rozbieralni" bez dokumentacji nie przejdą badania.
+Dodanie miejsc siedzących wymaga foteli z certyfikatem homologacyjnym i profesjonalnego montażu. Siedzenia z „rozbiórki” bez dokumentacji nie przejdą badania.
 
 
 {{% youtube %}}
 
 ## Korzyści z rejestracji jako kamper
 
-Legalizacja kampera to nie tylko obowiązek prawny. Zmiana przeznaczenia na „specjalny kempingowy" daje wymierne korzyści, które w perspektywie kilku lat mogą zwrócić koszty procedury.
+Legalizacja kampera to nie tylko obowiązek prawny. Zmiana przeznaczenia na „specjalny kempingowy” daje wymierne korzyści, dzięki którym w perspektywie kilku lat koszty procedury mogą się zwrócić.
 
 ### Niższe ubezpieczenie OC
 
@@ -161,10 +161,10 @@ Ten argument to popularny mit. System e-TOLL na drogach krajowych obowiązuje ws
 
 ### Wjazd do stref ograniczonych
 
-Rejestracja jako pojazd kempingowy (M1) pozwala uniknąć lokalnych zakazów wjazdu dla pojazdów ciężarowych (N1, N2). Nie daje jednak prawa wjazdu do Stref Czystego Transportu (LEZ, Umweltzone). Ograniczenia w tych strefach bazują na normie emisji spalin EURO silnika, a nie na typie pojazdu.
+Rejestracja jako pojazd kempingowy (M1) pozwala uniknąć lokalnych zakazów wjazdu dla pojazdów ciężarowych (N1, N2). Nie daje jednak prawa wjazdu do Stref Czystego Transportu (LEZ, Umweltzone). Ograniczenia w tych strefach opierają się na normie emisji spalin EURO silnika, a nie na typie pojazdu.
 
 ### Niższe opłaty autostradowe za granicą
 
-W niektórych krajach klasyfikacja jako pojazd osobowy, a nie ciężarowy, może obniżyć opłaty na autostradach, mostach czy promach. Zasady są jednak różne w każdym państwie i często zależą od DMC, a nie rodzaju zabudowy, więc warto sprawdzić regulacje przed wyjazdem.
+W niektórych krajach klasyfikacja jako pojazd osobowy, a nie ciężarowy, może obniżyć opłaty na autostradach, mostach czy promach. Zasady są jednak różne w każdym państwie i często zależą od DMC, a nie od rodzaju zabudowy, więc warto sprawdzić regulacje przed wyjazdem.
 
-Szczegóły dotyczące DMC i jego wpływu na koszty eksploatacji znajdziesz w artykule [DMC – co to jest](/przepisy/dmc-co-to/). Kalkulator pomoże Ci sprawdzić, ile ładowności zostaje po przeróbce – [kalkulator DMC](/narzedzia/kalkulator-dmc/). Więcej o samych przeróbkach w sekcji [przeróbki busów](/przerobki/) i [kampery](/kampery/).
+Szczegóły dotyczące DMC i jego wpływu na koszty eksploatacji znajdziesz w artykule [DMC – co to jest](/przepisy/dmc-co-to/). Kalkulator pomoże Ci sprawdzić, ile ładowności zostaje po przeróbce – [kalkulator DMC](/narzedzia/kalkulator-dmc/). Więcej o samych przeróbkach przeczytasz w sekcji [przeróbki busów](/przerobki/) i [kampery](/kampery/).

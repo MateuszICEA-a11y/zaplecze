@@ -38,7 +38,7 @@ Popularna wersja Furgon L3H2 ma następujące wymiary:
 - **DMC** – zazwyczaj 3500 kg (wersje Maxi mają wyższe DMC)
 
 Dla L3H2 warto uwzględnić także dane użytkowe:
-- **Objętość przestrzeni ładunkowej** – około 13 m3
+- **Objętość przestrzeni ładunkowej** – około 13 m³
 - **Długość przestrzeni ładunkowej** – około 3705 mm
 - **Szerokość między nadkolami** – około 1422 mm
 - **Wysokość przestrzeni ładunkowej** – około 1932 mm
@@ -49,7 +49,7 @@ Pełny przegląd wariantów nadwoziowych i historię modelu opisuje [przewodnik 
 
 Fiat Ducato 3.0 MultiJet korzysta z silnika rodziny F1C opracowanego w ramach Iveco/FPT, wywodzącego się z dorobku Sofim. To czterocylindrowy diesel z żeliwnym blokiem, łańcuchowym rozrządem i układem [common rail](https://pl.wikipedia.org/wiki/Common_rail), projektowany z myślą o cięższej pracy niż popularne jednostki 2.3.
 
-Podstawowe cechy konstrukcyjne tej rodziny to pojemność 2998 cm3, układ rzędowy R4, 16 zaworów, turbodoładowanie oraz średnica cylindra 95,8 mm i skok tłoka 104 mm. W praktyce spotyka się odmiany Euro 4 i Euro 5, a zależnie od rynku i homologacji także różnice w osprzęcie emisji – zwłaszcza w zakresie EGR oraz DPF/FAP.
+Podstawowe cechy konstrukcyjne tej rodziny to pojemność 2998 cm³, układ rzędowy R4, 16 zaworów, turbodoładowanie oraz średnica cylindra 95,8 mm i skok tłoka 104 mm. W praktyce spotyka się odmiany Euro 4 i Euro 5; zależnie od rynku i homologacji różnice dotyczą też osprzętu emisji – zwłaszcza EGR oraz DPF/FAP.
 
 | Parametr | 3.0 MultiJet (157 KM) | 3.0 MultiJet II (177 KM) |
 | :--- | :--- | :--- |
@@ -67,9 +67,9 @@ Podstawowe cechy konstrukcyjne tej rodziny to pojemność 2998 cm3, układ rzęd
 
 \* W europejskim Ducato silnik 3.0 był wycofywany około 2016 r. wraz z nadejściem Euro 6, zależnie od rynku i rocznika homologacyjnego.
 
-W Ducato 3.0 stosowano 6-biegowe przekładnie manualne. Różnice w przełożeniach i zestopniowaniu zależały od DMC oraz wersji nadwoziowej, co bezpośrednio wpływa na dynamikę i spalanie.
+W Ducato 3.0 stosowano 6-biegowe przekładnie manualne. Różnice w przełożeniach i zestopniowaniu zależały od DMC oraz wersji nadwoziowej, co bezpośrednio wpływało na dynamikę i spalanie.
 
-Na tle 2.3 MultiJet trzylitrowy diesel oferuje większy moment obrotowy i zwykle lepiej znosi ciężkie zabudowy. Z kolei 2.3 był znacznie popularniejszy, występował w wielu odmianach mocy i zazwyczaj okazuje się tańszy w zakupie oraz serwisie.
+Na tle 2.3 MultiJet trzylitrowy diesel oferuje większy moment obrotowy i zwykle lepiej znosi ciężkie zabudowy. Z kolei 2.3 był znacznie popularniejszy, występował w wielu odmianach mocy i zazwyczaj bywa tańszy w zakupie oraz serwisie.
 
 {{% info title="Kupno" icon="engineering" %}}
 W europejskim Ducato silnik 3.0 był wycofywany około 2016 roku wraz z przejściem gamy na Euro 6, zależnie od rynku i homologacji. Po jego wycofaniu rolę najmocniejszej jednostki przejęły czterocylindrowe diesle 2.3, a później także 2.2 w nowszej gamie.
@@ -77,7 +77,7 @@ W europejskim Ducato silnik 3.0 był wycofywany około 2016 roku wraz z przejśc
 
 ## Spalanie i koszty eksploatacji
 
-Fiat Ducato 3.0 MultiJet ma sens przede wszystkim tam, gdzie auto regularnie jeździ z dużą masą – w ciężkim furgonie, kamperze, autolawecie albo na trasach szybkiego ruchu. W lżejszej eksploatacji miejskiej 2.3 MultiJet bywa po prostu bardziej racjonalnym wyborem kosztowym.
+Fiat Ducato 3.0 MultiJet ma sens przede wszystkim tam, gdzie auto regularnie jeździ z dużą masą – w ciężkim furgonie, kamperze, autolawecie albo na trasach szybkiego ruchu. W lżejszej eksploatacji miejskiej 2.3 MultiJet bywa po prostu bardziej racjonalnym wyborem pod względem kosztów.
 
 Realne zużycie paliwa w dużej mierze zależy od zabudowy, DMC, przełożeń i stylu jazdy. Orientacyjnie można przyjąć następujące wartości:
 
@@ -100,23 +100,23 @@ W kwestii oleju nie ma jednego uniwersalnego zestawu danych dla wszystkich odmia
 
 Dobrze utrzymany Fiat Ducato 3.0 MultiJet uchodzi za trwały napęd do cięższej pracy, ale nie jest wolny od typowych problemów osprzętu i eksploatacji. Trwałość konkretnych podzespołów mocno zależy od obciążenia auta, jakości paliwa, serwisu i tego, czy egzemplarz pracował w trasie, czy w cyklu miejskim.
 
-Znaczenie ma też wersja emisji. W odmianach Euro 4 i Euro 5 różnice w osprzęcie, zwłaszcza EGR i DPF/FAP, wpływają zarówno na koszty serwisowe, jak i katalog najczęściej spotykanych usterek.
+Znaczenie ma też wersja emisji. W odmianach Euro 4 i Euro 5 różnice w osprzęcie, zwłaszcza EGR i DPF/FAP, wpływają zarówno na koszty serwisowe, jak i na katalog najczęściej spotykanych usterek.
 
 ### Słabe punkty silnika 3.0 MultiJet
 
 - **Osprzęt emisji i dolotu** – problemy mogą dotyczyć zaworu EGR, klapy gaszącej/przepustnicy, przewodów dolotowych i czujników ciśnienia doładowania. Typowe objawy to tryb awaryjny, spadek mocy, kopcenie i błędy sterownika.
 - **Przekładnia manualna** – w autach pracujących pod dużym obciążeniem zdarzają się problemy z kulturą pracy i zużyciem elementów skrzyni, szczególnie na wyższych biegach. Bezpieczniej opisywać to przez objawy niż przez jeden kod przekładni, bo konfiguracje zależały od wersji.
 - **Kolektor wydechowy i śruby** – to spotykana usterka eksploatacyjna. Objawem bywa charakterystyczny odgłos na zimnym silniku i nieszczelność układu.
-- **Wtryskiwacze** – ich trwałość jest silnie zmienna i zależy od paliwa oraz obsługi serwisowej. Przed zakupem warto sprawdzić korekty oraz ewentualne przedmuchy pod wtryskami.
-- **Turbosprężarka** – awarie się zdarzają, ale ich moment i koszt naprawy są mocno zależne od typu uszkodzenia oraz warsztatu. W praktyce trzeba zwracać uwagę na wycieki z odmy i turbo oraz zachowanie auta pod obciążeniem.
+- **Wtryskiwacze** – ich trwałość jest mocno zróżnicowana i zależy od paliwa oraz obsługi serwisowej. Przed zakupem warto sprawdzić korekty oraz ewentualne przedmuchy pod wtryskami.
+- **Turbosprężarka** – awarie się zdarzają, ale ich częstotliwość i koszt naprawy mocno zależą od rodzaju uszkodzenia oraz od warsztatu. W praktyce trzeba zwracać uwagę na wycieki z odmy i turbo oraz zachowanie auta pod obciążeniem.
 
-W praktyce warsztatowej warto skrócić interwał wymiany oleju do **15 000–20 000 km lub 1 roku**. Filtr paliwa zwykle wymienia się co **30 000–60 000 km**, płyn chłodniczy około **co 5 lat**, a olej w skrzyni około **co 80 000–120 000 km**.
+W praktyce warsztatowej warto skrócić interwał wymiany oleju do **15 000–20 000 km lub 1 roku**. Filtr paliwa zwykle wymienia się co **30 000–60 000 km**, płyn chłodniczy mniej więcej **co 5 lat**, a olej w skrzyni mniej więcej **co 80 000–120 000 km**.
 
-Silnik ma **łańcuch rozrządu**, więc nie ma tu typowego sztywnego interwału wymiany jak w jednostkach z paskiem. Przy wysokich przebiegach warto jednak kontrolować jego stan – niepokojące są hałas po rozruchu, błędy synchronizacji i opóźniona reakcja na gaz.
+Silnik ma **łańcuch rozrządu**, więc nie ma tu typowego sztywnego interwału wymiany jak w jednostkach z paskiem. Przy wysokich przebiegach warto jednak kontrolować jego stan – ostrzegają hałas po rozruchu, błędy synchronizacji i opóźniona reakcja na gaz.
 
 ### Ceny Ducato 3.0 na rynku wtórnym
 
-Zamiast sztywnego przedziału cen lepiej przyjąć, że wartość rynkowa zależy przede wszystkim od typu zabudowy, DMC, stanu mechanicznego i jakości wcześniejszego serwisu. Ten sam silnik w furgonie, kamperze i aucie specjalnym może oznaczać zupełnie inny poziom zużycia.
+Zamiast sztywnego przedziału cen lepiej założyć, że wartość rynkowa zależy przede wszystkim od typu zabudowy, DMC, stanu mechanicznego i jakości wcześniejszego serwisu. Ten sam silnik w furgonie, kamperze i aucie specjalnym może oznaczać zupełnie inny stopień wyeksploatowania.
 
 Przy oględzinach używanego egzemplarza trzeba sprawdzić:
 - **korekty wtrysków**

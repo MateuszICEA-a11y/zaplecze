@@ -19,9 +19,9 @@ faq:
   - question: "Jakie silniki w Toyocie Proace?"
     answer: "Toyota Proace II oferuje silniki wysokoprężne 1.5 D-4D (100 lub 120 KM) oraz 2.0 D-4D (145 lub 177 KM). Dostępna jest też wersja elektryczna Proace Electric z akumulatorem 50 kWh lub 75 kWh i mocą 136 KM, z zasięgiem WLTP do 330 km."
   - question: "Jakie są najczęstsze problemy z Toyotą Proace?"
-    answer: "Najczęstsze usterki Toyoty Proace II to zarastanie wtryskiwaczy silnika 1.5 D-4D przy dużych przebiegach oraz zapychanie się filtra DPF przy krótkich trasach miejskich – identyczne jak w bliźniaczych Peugeot Expert i Citroën Jumpy. W autach z automatyczną skrzynią EAT8 zdarzają się sporadyczne problemy z mechatronikiem. Starsze egzemplarze Proace I (2013–2016) bywają dotknięte korozją progów."
-  - question: "Co jest lepsze Renault Trafic czy Toyota Proace?"
-    answer: "Toyota Proace II ma większą ładownię (Long: 6,1 m³ vs Trafic L2: ~5,2 m³) i nowocześniejszą platformę PSA EMP2. Renault Trafic wyróżnia się własną, sprawdzoną jednostką 2.0 dCi i rozbudowaną siecią serwisową w Polsce. Proace wygrywa objętością ładowni i dostępnością wersji elektrycznej, Trafic – ceną zakupu i kosztami eksploatacji w flotach z dostępem do ASO Renault."
+    answer: "Najczęstsze usterki Toyoty Proace II to zarastanie wtryskiwaczy silnika 1.5 D-4D przy dużych przebiegach oraz zapychanie się filtra DPF przy krótkich trasach miejskich – takie same jak w bliźniaczych modelach Peugeot Expert i Citroën Jumpy. W autach z automatyczną skrzynią EAT8 zdarzają się sporadyczne problemy z mechatroniką. Starsze egzemplarze Proace I (2013–2016) bywają dotknięte korozją progów."
+  - question: "Co jest lepsze: Renault Trafic czy Toyota Proace?"
+    answer: "Toyota Proace II ma większą ładownię (Long: 6,1 m³ vs Trafic L2: ok. 5,2 m³) i nowocześniejszą platformę PSA EMP2. Renault Trafic wyróżnia się własną, sprawdzoną jednostką 2.0 dCi i rozbudowaną siecią serwisową w Polsce. Proace wygrywa objętością ładowni i dostępnością wersji elektrycznej, Trafic – ceną zakupu i kosztami eksploatacji we flotach z dostępem do ASO Renault."
 sources:
   - "Wikipedia – Toyota ProAce"
   - "toyota.pl"
@@ -30,7 +30,7 @@ sources:
 
 ## Historia i generacje Toyoty ProAce
 
-Toyota Proace pojawiła się na rynku w 2013 roku jako średni van przygotowany we współpracy z PSA. W praktyce trzeba rozdzielić dwa etapy: pierwszą generację będącą rebadge'em modeli PSA oraz drugą, znacznie nowocześniejszą generację na platformie EMP2. Dla porządku warto trzymać jedną chronologię: ProAce II zadebiutował w 2016 r., a na wybranych rynkach i w pełnej dostępności modelowej od 2017 r.
+Toyota Proace pojawiła się na rynku w 2013 roku jako średni van przygotowany we współpracy z PSA. W praktyce trzeba rozdzielić dwa etapy: pierwszą generację będącą odmianą modeli PSA sprzedawaną pod marką Toyota oraz drugą, znacznie nowocześniejszą generację na platformie EMP2. Dla porządku warto trzymać się jednej chronologii: ProAce II zadebiutował w 2016 r., a na wybranych rynkach i w pełnej ofercie modelowej – od 2017 r.
 
 ### ProAce I (2013–2016)
 
@@ -42,9 +42,9 @@ W gamie były diesle **1.6 i 2.0**, a nadwozie występowało w długościach **L
 
 Druga generacja weszła na rynek w 2016 r., a od 2017 r. była już szerzej dostępna na wybranych rynkach. Auto zbudowano na platformie EMP2, a produkcja odbywała się w Hordain.
 
-Technicznie to bliźniak Peugeot Expert III, Citroëna Jumpy III i Opla Vivaro C. W ofercie pojawiły się trzy długości nadwozia: **Compact 4606 mm**, **Medium 4959 mm** i **Long 5309 mm**, z ładownią odpowiednio **4.6 / 5.3 / 6.1 m3**.
+Technicznie to bliźniak Peugeota Expert III, Citroëna Jumpy III i Opla Vivaro C. W ofercie pojawiły się trzy długości nadwozia: **Compact 4606 mm**, **Medium 4959 mm** i **Long 5309 mm**, z ładownią odpowiednio **4,6 / 5,3 / 6,1 m³**.
 
-Gama silników w obecnym, najczęściej spotykanym układzie obejmuje diesle **1.5 D-4D 100/120 KM** oraz **2.0 D-4D 145/177 KM**. Trzeba jednak pamiętać, że starsze egzemplarze ProAce II z pierwszych lat mogły mieć jeszcze diesle **1.6 i 2.0** z innymi mocami, dlatego ogłoszenia najlepiej filtrować po roczniku.
+Gama silników w obecnym, najczęściej spotykanym układzie obejmuje diesle **1.5 D-4D 100/120 KM** oraz **2.0 D-4D 145/177 KM**. Trzeba jednak pamiętać, że starsze egzemplarze ProAce II z pierwszych lat mogły mieć jeszcze diesle **1.6 i 2.0** o innych mocach, dlatego ogłoszenia najlepiej filtrować według rocznika.
 
 ### ProAce II po liftingu (od 2024)
 
@@ -58,46 +58,46 @@ Toyota Proace II występuje z dieslami 1.5 i 2.0 D-4D oraz z napędem elektryczn
 
 ### Silniki wysokoprężne i elektryczne – tabela
 
-Poniżej masz pełne zestawienie podstawowych wersji napędowych.
+Poniżej pełne zestawienie podstawowych wersji napędowych.
 
 | Silnik       | Pojemność / bateria | Moc    | Moment obrotowy | Norma   | Skrzynia biegów                      | Średnie spalanie / zasięg            |
 |--------------|---------------------:|-------:|----------------:|---------|--------------------------------------|--------------------------------------|
-| 1.5 D-4D     | 1499 cm³             | 100 KM | 250 Nm          | Euro 6d | 6MT                                  | ok. 6.0–7.0 l/100 km                 |
-| 1.5 D-4D     | 1499 cm³             | 120 KM | 300 Nm          | Euro 6d | 6MT                                  | ok. 6.1–7.1 l/100 km                 |
-| 2.0 D-4D     | 1997 cm³             | 145 KM | 370 Nm          | Euro 6d | 6MT lub automat zależnie od rynku    | ok. 6.3–7.4 l/100 km                 |
-| 2.0 D-4D     | 1997 cm³             | 177 KM | 400 Nm          | Euro 6d | EAT8                                 | ok. 6.6–7.8 l/100 km                 |
+| 1.5 D-4D     | 1499 cm³             | 100 KM | 250 Nm          | Euro 6d | 6MT                                  | ok. 6,0–7,0 l/100 km                 |
+| 1.5 D-4D     | 1499 cm³             | 120 KM | 300 Nm          | Euro 6d | 6MT                                  | ok. 6,1–7,1 l/100 km                 |
+| 2.0 D-4D     | 1997 cm³             | 145 KM | 370 Nm          | Euro 6d | 6MT lub automat zależnie od rynku    | ok. 6,3–7,4 l/100 km                 |
+| 2.0 D-4D     | 1997 cm³             | 177 KM | 400 Nm          | Euro 6d | EAT8                                 | ok. 6,6–7,8 l/100 km                 |
 | Electric 50  | 46–50 kWh            | 136 KM | 260 Nm          | –       | automatyczna redukcyjna              | WLTP **224–230 km**                  |
 | Electric 75  | 68–75 kWh            | 136 KM | 260 Nm          | –       | automatyczna redukcyjna              | WLTP **330–350 km**                  |
 
 ### 1.5 D-4D
 
-To bazowy diesel dla aut pracujących głównie w mieście i na trasach regionalnych. Wersja **100 KM** ma **1499 cm3**, **250 Nm**, skrzynię **6MT** i normę **Euro 6d**. Realnie spala zwykle około **6.0–7.0 l/100 km**.
+To bazowy diesel dla aut pracujących głównie w mieście i na trasach regionalnych. Wersja **100 KM** ma **1499 cm³**, **250 Nm**, skrzynię **6MT** i normę **Euro 6d**. Realnie spala zwykle około **6,0–7,0 l/100 km**.
 
-Mocniejsza odmiana **120 KM** również ma **1499 cm3**, ale oferuje już **300 Nm** i tę samą skrzynię **6MT**. W praktyce to lepszy wybór do regularnej pracy z ładunkiem, a realne spalanie zwykle mieści się w przedziale **6.1–7.1 l/100 km**.
+Mocniejsza odmiana **120 KM** również ma **1499 cm³**, ale oferuje już **300 Nm** i tę samą skrzynię **6MT**. W praktyce to lepszy wybór do regularnej pracy z ładunkiem, a realne spalanie zwykle mieści się w przedziale **6,1–7,1 l/100 km**.
 
-Jeśli oglądasz starsze egzemplarze ProAce II z pierwszych lat produkcji, sprawdzaj dokładnie rocznik. W ofertach mogą pojawiać się jeszcze diesle **1.6 i 2.0** z innymi mocami, więc samo hasło „Proace II diesel” niczego nie gwarantuje.
+Jeśli oglądasz starsze egzemplarze ProAce II z pierwszych lat produkcji, sprawdzaj dokładnie rocznik. W ofertach mogą pojawiać się jeszcze diesle **1.6 i 2.0** o innych mocach, więc samo określenie „Proace II diesel” niczego nie gwarantuje.
 
 ### 2.0 D-4D w Toyocie ProAce
 
-Dwulitrowy diesel lepiej pasuje do cięższej pracy, jazdy ekspresowej i regularnego wożenia dużych ładunków. Wariant **145 KM** ma **1997 cm3**, **370 Nm**, normę **Euro 6d** i występuje z **6MT lub automatem zależnie od rynku**. Realne spalanie to zwykle **6.3–7.4 l/100 km**.
+Dwulitrowy diesel lepiej pasuje do cięższej pracy, jazdy drogami ekspresowymi i regularnego wożenia dużych ładunków. Wariant **145 KM** ma **1997 cm³**, **370 Nm**, normę **Euro 6d** i występuje z **6MT lub automatem zależnie od rynku**. Realne spalanie to zwykle **6,3–7,4 l/100 km**.
 
-Odmiana **177 KM** rozwija **400 Nm** i współpracuje ze skrzynią **EAT8**. To najmocniejszy diesel w gamie, a zużycie paliwa w praktyce najczęściej mieści się w zakresie **6.6–7.8 l/100 km**.
+Odmiana **177 KM** rozwija **400 Nm** i współpracuje ze skrzynią **EAT8**. To najmocniejszy diesel w gamie, a zużycie paliwa w praktyce najczęściej mieści się w zakresie **6,6–7,8 l/100 km**.
 
 ### Proace Electric
 
 Elektryczna wersja ma **136 KM** i **260 Nm**. Wariant z mniejszym akumulatorem oferuje użyteczną pojemność około **46–50 kWh** i zasięg WLTP około **224–230 km**.
 
-Odmiana z większą baterią ma użyteczną pojemność około **68–75 kWh** i deklarowany zasięg WLTP około **330–350 km**. W obu przypadkach kluczowe znaczenie ma długość nadwozia i sposób użytkowania auta.
+Odmiana z większą baterią ma użyteczną pojemność około **68–75 kWh** i deklarowany zasięg WLTP około **330–350 km**. W obu przypadkach kluczowe znaczenie mają długość nadwozia i sposób użytkowania auta.
 
 {{% info title="Dobór silnika – praktyczna wskazówka" icon="engineering" %}}
-Do tras głównie miejskich i regionalnych z ładunkiem do 800 kg wystarczy 1.5 D-4D 100 KM. Przy regularnym załadunku powyżej 1000 kg i trasach ekspresowych lepszy będzie 2.0 D-4D 145 KM. Wersję 177 KM traktuj jako opcję dla konkretnych zastosowań i głównie aut przedliftowych.
+Do tras głównie miejskich i regionalnych z ładunkiem do 800 kg wystarczy 1.5 D-4D 100 KM. Przy regularnym załadunku powyżej 1000 kg i trasach ekspresowych lepszy będzie 2.0 D-4D 145 KM. Wersję 177 KM traktuj jako opcję do konkretnych zastosowań i głównie w autach sprzed liftingu.
 {{% /info %}}
 
 ![Toyota Proace II furgon Long](/images/toyota-proace-hero.webp)
 
 ## Dane techniczne Toyoty ProAce
 
-Największa zaleta ProAce to sensownie rozpisana gama długości nadwozia i praktyczna ładownia. Najlepiej patrzeć na auto w układzie długość – DMC – ładowność, bo właśnie to decyduje, czy dany wariant sprawdzi się w codziennej pracy.
+Największa zaleta ProAce to sensownie rozplanowana gama długości nadwozia i praktyczna ładownia. Najlepiej oceniać auto w układzie długość – DMC – ładowność, bo właśnie to decyduje, czy dany wariant sprawdzi się w codziennej pracy.
 
 | Parametr | Compact | Medium | Long |
 |---|---:|---:|---:|
@@ -110,9 +110,9 @@ Największa zaleta ProAce to sensownie rozpisana gama długości nadwozia i prak
 
 | Wersja | Długość | Rozstaw osi | Wysokość | Pojemność | Długość ładowni | DMC | Ładowność |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| Compact H1 | 4606 mm | 2925 mm | ok. 1905 mm | 4.6 m3 | 2162 mm | 2830–3100 kg | ok. 1000–1400 kg |
-| Medium H1 | 4959 mm | 3275 mm | ok. 1895–1935 mm | 5.3 m3 | 2512 mm | 2830–3100 kg | ok. 1000–1400 kg |
-| Long H1 | 5309 mm | 3275 mm | ok. 1895–1935 mm | 6.1 m3 | 2862 mm | 2830–3100 kg | ok. 1000–1400 kg |
+| Compact H1 | 4606 mm | 2925 mm | ok. 1905 mm | 4,6 m³ | 2162 mm | 2830–3100 kg | ok. 1000–1400 kg |
+| Medium H1 | 4959 mm | 3275 mm | ok. 1895–1935 mm | 5,3 m³ | 2512 mm | 2830–3100 kg | ok. 1000–1400 kg |
+| Long H1 | 5309 mm | 3275 mm | ok. 1895–1935 mm | 6,1 m³ | 2862 mm | 2830–3100 kg | ok. 1000–1400 kg |
 
 Poniżej parametry wspólne dla większości wersji użytkowych:
 
@@ -133,7 +133,7 @@ Długość ładowni [Proace Long](/modele/toyota-proace/long/) pozwala przewieź
 
 Rodzina ProAce obejmuje kilka realnie różnych odmian użytkowych i osobowych. Tu łatwo o pomyłkę, dlatego warto oddzielić wersje nadwoziowe ProAce od osobnego modelu Proace City.
 
-- **Van / Furgon** – **2–3 miejsca**, długości Compact / Medium / Long, przestrzeń ładunkowa **4.6 / 5.3 / 6.1 m3**, ładowność do ok. **1400 kg**. To podstawowa odmiana do kuriera, serwisu i transportu lokalnego.
+- **Van / Furgon** – **2–3 miejsca**, długości Compact / Medium / Long, przestrzeń ładunkowa **4,6 / 5,3 / 6,1 m³**, ładowność do ok. **1400 kg**. To podstawowa odmiana dla kuriera, serwisu i transportu lokalnego.
 - **Crew Cab / brygadowy** – zwykle **5–6 miejsc**, z krótszą przestrzenią ładunkową niż w klasycznym furgonie. Popularny wybór dla ekip serwisowych i budowlanych.
 - **Proace Verso Compact / Medium / Long** – osobowa odmiana z układem **5, 7, 8 lub 9 miejsc** zależnie od rynku i konfiguracji foteli. To wersja nastawiona na przewóz ludzi, nie ładunku.
 - **Shuttle / VIP** – jeśli występowały na danym rynku, stawiały na przewóz osób, bogatsze wykończenie i zwykle przesuwne drzwi po obu stronach.
@@ -142,7 +142,7 @@ Rodzina ProAce obejmuje kilka realnie różnych odmian użytkowych i osobowych. 
 Wersja [osobowa Proace](/modele/toyota-proace/osobowy/) i [Proace Verso (osobowy)](/modele/toyota-proace-verso/) należą do tej samej rodziny modelowej. Proace Verso to osobowa odmiana rodziny Proace, natomiast [Proace City](/modele/toyota-proace-city/) jest osobnym, mniejszym modelem.
 
 {{% info title="Proace a Proace City – porządek w gamie" icon="engineering" %}}
-Proace City nie jest wersją nadwoziową ProAce, tylko osobnym modelem z niższej klasy. Jeśli porównujesz oferty flotowe albo ogłoszenia z rynku wtórnego, sprawdź nazwę dokładnie – różnice w wielkości i funkcji auta są duże.
+Proace City nie jest wersją nadwoziową ProAce, tylko osobnym modelem z niższej klasy. Jeśli porównujesz oferty flotowe albo ogłoszenia z rynku wtórnego, sprawdź nazwę dokładnie – różnice w wielkości i przeznaczeniu auta są duże.
 {{% /info %}}
 
 ## Typowe usterki ProAce'a
@@ -155,7 +155,7 @@ W starszej generacji najczęściej wraca temat korozji progów i dolnych partii 
 
 ### 1.5 D-4D – rozrząd, wtryski, EGR, AdBlue
 
-W 1.5 D-4D najczęściej przewijają się tematy wtryskiwaczy, układu EGR i AdBlue. Jeśli zostaje temat łańcucha w nagłówku, trzeba patrzeć szerzej niż tylko na samą część – diagnostyka i pełna wymiana rozrządu/łańcucha to zwykle **2500–4500 zł** zależnie od zakresu prac i warsztatu.
+W 1.5 D-4D najczęściej przewijają się tematy wtryskiwaczy, układu EGR i AdBlue. Skoro w nagłówku pojawia się rozrząd, trzeba patrzeć szerzej niż tylko na samą część – diagnostyka i pełna wymiana rozrządu lub łańcucha to zwykle **2500–4500 zł** zależnie od zakresu prac i warsztatu.
 
 Do tego dochodzą wtryskiwacze i zawór EGR. Nowy zawór EGR to zwykle **900–1800 zł** plus robocizna, a układ AdBlue potrafi zaboleć bardziej.
 
@@ -165,13 +165,13 @@ Do tego dochodzą wtryskiwacze i zawór EGR. Nowy zawór EGR to zwykle **900–1
 - nowy zawór EGR – **900–1800 zł** plus robocizna
 - awaria pompy lub zbiornika SCR/AdBlue – **2500–5000 zł**
 - czujniki NOx – **1200–2500 zł**
-- diagnostyka i wymiana rozrządu/łańcucha – **2500–4500 zł**
+- diagnostyka i wymiana rozrządu lub łańcucha – **2500–4500 zł**
 
 ### 2.0 D-4D – DPF, turbo, EGR
 
 Dwulitrowy diesel dobrze znosi cięższą pracę, ale przy krótkich trasach i jeździe miejskiej potrafi zapchać DPF. Do tego dochodzi typowe zużycie osprzętu przy wysokich przebiegach.
 
-Objawy zwykle są dość typowe: spadek mocy, częstsze próby wypalania DPF, tryb awaryjny albo nierówna praca przy zabrudzonym EGR. Im więcej jazdy miejskiej, tym większe ryzyko takich problemów.
+Objawy są dość charakterystyczne: spadek mocy, częstsze próby wypalania DPF, tryb awaryjny albo nierówna praca przy zabrudzonym EGR. Im więcej jazdy miejskiej, tym większe ryzyko takich problemów.
 
 - wymuszone wypalanie DPF – **150–300 zł**
 - czyszczenie DPF – **600–1200 zł**
@@ -180,14 +180,14 @@ Objawy zwykle są dość typowe: spadek mocy, częstsze próby wypalania DPF, tr
 
 ### EAT8 – szarpanie i błędy
 
-Automat EAT8 jest wygodny, ale nie lubi zaniedbanego serwisu. Jeśli pojawiają się szarpanie albo błędy skrzyni, warto zacząć od diagnostyki i historii wymian oleju.
+Automat EAT8 jest wygodny, ale nie lubi zaniedbanego serwisu. Jeśli pojawiają się szarpania albo błędy skrzyni, warto zacząć od diagnostyki i historii wymian oleju.
 
 - wymiana oleju – **700–1200 zł**
 - naprawa mechatroniki – **3500–7000 zł**
 
 ### Zawieszenie, hamulce i elektryka
 
-W autach dostawczych pracujących codziennie po mieście zużycie elementów zawieszenia i osprzętu elektrycznego nie jest niczym zaskakującym. Dotyczy to zwłaszcza aut flotowych, które dużo jeżdżą z ładunkiem i często pod krawężnikami.
+W autach dostawczych pracujących codziennie po mieście zużycie elementów zawieszenia i osprzętu elektrycznego nie jest niczym zaskakującym. Dotyczy to zwłaszcza aut flotowych, które dużo jeżdżą z ładunkiem i często najeżdżają na krawężniki.
 
 W praktyce wracają wahacze, przeguby, łączniki stabilizatora i przednie amortyzatory. Do tego dochodzą zwykłe koszty eksploatacyjne hamulców.
 
@@ -197,7 +197,7 @@ W praktyce wracają wahacze, przeguby, łączniki stabilizatora i przednie amort
 - czujniki parkowania – **200–500 zł/szt.**
 - kamera cofania – **600–1200 zł**
 
-Serwis ProAce II można robić zarówno w ASO Toyota, jak i w warsztatach ogarniających konstrukcje PSA/Stellantis. Dla użytkownika liczy się przede wszystkim dostęp do części i rozsądna diagnostyka, bo mechanicznie to nie jest egzotyka.
+Serwis ProAce II można wykonywać zarówno w ASO Toyoty, jak i w warsztatach obsługujących konstrukcje PSA/Stellantis. Dla użytkownika liczy się przede wszystkim dostęp do części i rzetelna diagnostyka, bo mechanicznie to nie jest egzotyka.
 
 ## Porównanie ProAce'a z konkurencją
 
@@ -205,10 +205,10 @@ Toyota Proace konkuruje nie tylko z własnymi bliźniakami technicznymi, ale te�
 
 | Model | Objętość | Ładowność | DMC | Napędy | Cena nowego od |
 |---|---:|---:|---:|---|---:|
-| Toyota Proace Long | 6.1 m3 | do ok. 1400 kg | 2800–3100 kg | diesel 100/120/145/177 KM, EV 136 KM | od ok. 150 000 zł netto |
-| Renault Trafic L2H1 | ok. 5.8–6.0 m3 | do ok. 1200–1250 kg | do 3070 kg | 2.0 dCi 110/150/170 KM | ok. 140 000–155 000 zł netto |
-| Ford Transit Custom L2H1 | ok. 6.8 m3 | ok. 1100–1300 kg | do ok. 3225 kg | diesel 136/150/170 KM oraz PHEV/EV zależnie od rocznika | ok. 150 000–170 000 zł netto |
-| Mercedes Vito L2 | ok. 6.0 m3 | ok. 1000–1300 kg | do 3200 kg | 102–190 KM | ok. 165 000–185 000 zł netto |
+| Toyota Proace Long | 6,1 m³ | do ok. 1400 kg | 2800–3100 kg | diesel 100/120/145/177 KM, EV 136 KM | od ok. 150 000 zł netto |
+| Renault Trafic L2H1 | ok. 5,8–6,0 m³ | do ok. 1200–1250 kg | do 3070 kg | 2.0 dCi 110/150/170 KM | ok. 140 000–155 000 zł netto |
+| Ford Transit Custom L2H1 | ok. 6,8 m³ | ok. 1100–1300 kg | do ok. 3225 kg | diesel 136/150/170 KM oraz PHEV/EV zależnie od rocznika | ok. 150 000–170 000 zł netto |
+| Mercedes Vito L2 | ok. 6,0 m³ | ok. 1000–1300 kg | do 3200 kg | 102–190 KM | ok. 165 000–185 000 zł netto |
 
 Proace wypada mocno pod względem ładowności i funkcjonalności ładowni. Nie jest rekordzistą objętości, ale daje dobry kompromis między gabarytem, ładunkiem i dostępnością wersji elektrycznej.
 
@@ -217,14 +217,14 @@ Renault Trafic stawia na sprawdzoną własną mechanikę. Ford Transit Custom ma
 Więcej na temat silnika [2.0 D-4D znajdziesz tutaj](/modele/toyota-proace/2-0/).
 
 {{% expert name="Marek Kowalczyk" %}}
-Proace to wybór dla firm, które chcą średniego vana z prostą do ogarnięcia mechaniką i mocnym zapleczem serwisowym. Najważniejsze przy zakupie używanego egzemplarza są rocznik, przebieg, historia serwisu i to, czy auto pracowało głównie w mieście czy w trasie. Sama plakietka na grillu ma mniejsze znaczenie niż stan konkretnej sztuki.
+Proace to wybór dla firm, które chcą średniego vana z łatwą w serwisowaniu mechaniką i solidnym zapleczem serwisowym. Najważniejsze przy zakupie używanego egzemplarza są rocznik, przebieg, historia serwisu oraz to, czy auto pracowało głównie w mieście, czy w trasie. Sama plakietka na grillu ma mniejsze znaczenie niż stan konkretnej sztuki.
 {{% /expert %}}
 
 {{% youtube %}}
 
 ## Ceny ProAce
 
-Na rynku wtórnym ceny Toyoty ProAce mocno zależą od generacji, rocznika, przebiegu i wersji nadwoziowej. Największy sens ma patrzenie na konkretne widełki rocznikowe, a nie na jedno ogólne hasło „Proace używany”.
+Na rynku wtórnym ceny Toyoty ProAce mocno zależą od generacji, rocznika, przebiegu i wersji nadwoziowej. Największy sens ma zestawienie konkretnych widełek rocznikowych, a nie jedno ogólne hasło „Proace używany”.
 
 | Rocznik / wersja | Typowy przebieg | Cena orientacyjna |
 |---|---:|---:|
@@ -248,4 +248,4 @@ Poniżej orientacyjne ceny nowych egzemplarzy.
 | Proace Electric 75 kWh | od ok. 210 000–230 000 zł |
 | Proace Verso | od ok. 170 000–220 000 zł |
 
-Ceny zależą od długości nadwozia, wersji wyposażenia i aktualnych rabatów flotowych. Przy zakupie używanego warto też trzymać spójne nazewnictwo generacji – ProAce II zadebiutował w **2016 r.**, a od **2017 r.** był szerzej dostępny modelowo na wybranych rynkach.
+Ceny zależą od długości nadwozia, wersji wyposażenia i aktualnych rabatów flotowych. Przy zakupie używanego warto też zachować spójne nazewnictwo generacji – ProAce II zadebiutował w **2016 r.**, a od **2017 r.** był szerzej dostępny na wybranych rynkach.

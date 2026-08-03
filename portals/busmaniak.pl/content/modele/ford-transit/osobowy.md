@@ -15,18 +15,18 @@ faq:
   - question: "Czym różni się Transit Tourneo od Transit Custom Tourneo?"
     answer: "Najważniejsze jest nazewnictwo. Aktualnie trzeba wyraźnie rozróżnić Forda Tourneo Custom od osobowych odmian pełnowymiarowego Forda Transit. Tourneo Custom jest mniejszym modelem i w zależności od generacji ma ok. 4972 mm lub 5050 mm w krótszej wersji oraz ok. 5340 mm lub 5450 mm w dłuższej. Pełnowymiarowy Transit osobowy to większy samochód, ale jego nazwa handlowa i konfiguracje zależą od rynku oraz rocznika."
   - question: "Ile miejsc ma Ford Transit Tourneo?"
-    answer: "Najczęściej spotykane konfiguracje to 8 lub 9 miejsc łącznie z kierowcą. Wariant 8-osobowy można opisać jako 2+3+3, a 9-osobowy jako 3+3+3 licząc z kierowcą. Dokładna liczba miejsc zależy od konkretnej wersji przedniego rzędu i wpisu w dokumentach pojazdu."
+    answer: "Najczęściej spotykane konfiguracje to 8 lub 9 miejsc łącznie z kierowcą. Wariant 8-osobowy można opisać jako 2+3+3, a 9-osobowy jako 3+3+3, licząc z kierowcą. Dokładna liczba miejsc zależy od konkretnej wersji przedniego rzędu i wpisu w dokumentach pojazdu."
   - question: "Jakie wyposażenie oferuje wersja Titanium Ford Transit Tourneo?"
-    answer: "Wyposażenie wersji Titanium zależy od konkretnego modelu, rocznika i rynku, dlatego nie da się uczciwie przypisać jednej stałej specyfikacji do wszystkich odmian Forda Transit osobowego. Przy zakupie trzeba sprawdzać wyposażenie w cenniku dla danego roku modelowego i konkretnego auta, zwłaszcza w zakresie multimediów, kamer, tempomatu adaptacyjnego i wykończenia wnętrza."
-lead: "Ford Transit osobowy to temat szerszy, niż sugeruje sama nazwa. W praktyce najczęściej chodzi o Tourneo Custom albo o osobowe odmiany pełnowymiarowego Transita. To dwa różne samochody, dlatego przed zakupem trzeba oddzielić nazewnictwo, wymiary, liczbę miejsc i ofertę napędów."
+    answer: "Wyposażenie wersji Titanium zależy od konkretnego modelu, rocznika i rynku, dlatego nie da się rzetelnie przypisać jednej stałej specyfikacji do wszystkich odmian Forda Transit osobowego. Przy zakupie trzeba sprawdzać wyposażenie w cenniku dla danego roku modelowego i konkretnego auta, zwłaszcza w zakresie multimediów, kamer, tempomatu adaptacyjnego i wykończenia wnętrza."
+lead: "Ford Transit osobowy to temat szerszy, niż sugeruje sama nazwa. W praktyce najczęściej chodzi o Tourneo Custom albo o osobowe odmiany pełnowymiarowego Transita. To dwa różne samochody, dlatego przed zakupem trzeba uporządkować nazewnictwo oraz porównać wymiary, liczbę miejsc i ofertę napędów."
 youtube: "NKiMcMFSsHQ"
 youtube_title: "Ford Transit L4H3 2022 - TEST PL - 2.0 EcoBlue 130 KM vs pełna paka"
 ---
 ## Tourneo Custom vs Transit Tourneo – dwa różne pojazdy
 
-W tym temacie najwięcej zamieszania robi nazwa. Żeby uporządkować sprawę, warto rozdzielić Forda Tourneo Custom od osobowych odmian pełnowymiarowego Forda Transit, bo to nie są te same auta.
+W tym temacie najwięcej zamieszania wprowadza nazwa. Żeby uporządkować sprawę, warto rozdzielić Forda Tourneo Custom od osobowych odmian pełnowymiarowego Forda Transit, bo to nie są te same auta.
 
-Tourneo Custom to średni van osobowy do przewozu do 9 osób. W starszej generacji miał ok. 4972 mm w krótszej wersji i ok. 5340 mm w dłuższej, a w nowej generacji odpowiednio ok. 5050 mm i 5450 mm.
+Tourneo Custom to średniej wielkości van osobowy do przewozu maksymalnie 9 osób. W starszej generacji miał ok. 4972 mm w krótszej wersji i ok. 5340 mm w dłuższej, a w nowej generacji odpowiednio ok. 5050 mm i 5450 mm.
 
 Osobowe odmiany pełnowymiarowego Transita są większe, ale nazewnictwo zależy od rynku i konkretnego rocznika. Właśnie dlatego określenie „Transit Tourneo” bywa mylące, jeśli nie wskazujemy dokładnie modelu.
 
@@ -40,7 +40,7 @@ Przy Fordzie Transit osobowym sama liczba miejsc to za mało. Równie ważne są
 
 ### Porównanie Custom Tourneo i Transit Tourneo
 
-Poniżej widać najważniejszą różnicę: w obrębie samego Tourneo Custom występują różne długości zależnie od generacji. To kluczowe, bo w wielu ogłoszeniach i artykułach te dane są mieszane.
+Poniżej widać najważniejszą różnicę: w obrębie samego Tourneo Custom występują różne długości zależnie od generacji. To kluczowe, bo w wielu ogłoszeniach i artykułach te dane są mylone.
 
 | Parametr | Custom Tourneo krótki | Custom Tourneo długi | Transit Tourneo L2 | Transit Tourneo L3 |
 |---|---|---|---|---|
@@ -54,13 +54,13 @@ Poniżej widać najważniejszą różnicę: w obrębie samego Tourneo Custom wys
 
 ### Układ siedzeń i przestrzeń bagażowa
 
-Najczęściej spotyka się dwa warianty układu wnętrza. Wersja 8-osobowa to zwykle 2+3+3, a 9-osobowa – 3+3+3 licząc z kierowcą.
+Najczęściej spotyka się dwa warianty układu wnętrza. Wersja 8-osobowa to zwykle 2+3+3, a 9-osobowa – 3+3+3, licząc z kierowcą.
 
-To rozróżnienie ma znaczenie praktyczne, bo dziewiąte miejsce wynika zwykle z przedniej kanapy zamiast pojedynczego fotela pasażera. Właśnie dlatego nie warto opisywać wszystkich odmian jednym schematem.
+To rozróżnienie ma znaczenie praktyczne, bo dziewiąte miejsce wynika zwykle z zastosowania przedniej kanapy zamiast pojedynczego fotela pasażera. Właśnie dlatego nie warto opisywać wszystkich odmian jednym schematem.
 
 W codziennym użytkowaniu kluczowa jest też funkcjonalność foteli. Przy zakupie warto sprawdzić, czy siedzenia w drugim i trzecim rzędzie są przesuwane, obracane, wyjmowane, dzielone w proporcjach 1/3–2/3 albo montowane na szynach, bo to bezpośrednio wpływa na wygodę rodzin i firm przewozowych.
 
-Równie ważne są kwestie praktyczne: wysokość auta pod garaże podziemne w okolicach 2,0 m, liczba punktów ISOFIX, mocowania fotelików oraz dostęp do gniazd USB, 12 V i ewentualnie 230 V. Przy pełnym komplecie pasażerów duże znaczenie ma też realna przestrzeń za trzecim rzędem, ale bez podania metody pomiaru nie warto operować przypadkowymi litrażami.
+Równie ważne są kwestie praktyczne: wysokość auta pod kątem wjazdu do garaży podziemnych (ok. 2,0 m), liczba punktów ISOFIX, mocowania fotelików oraz dostęp do gniazd USB, 12 V i ewentualnie 230 V. Przy pełnym komplecie pasażerów duże znaczenie ma też rzeczywista przestrzeń za trzecim rzędem, ale bez podania metody pomiaru nie warto posługiwać się przypadkowymi litrażami.
 
 {{% info title="Tourneo jako pojazd firmowy" icon="engineering" %}}
 Dla samochodów osobowych o DMC do 3,5 t standardowo odlicza się 50% VAT przy użytkowaniu mieszanym. Odliczenie 100% VAT jest możliwe przy używaniu wyłącznie w działalności, po złożeniu VAT-26 i prowadzeniu ewidencji przebiegu. W podatku dochodowym obowiązuje limit 150 000 zł dla samochodu osobowego oraz 225 000 zł dla auta elektrycznego.
@@ -68,7 +68,7 @@ Dla samochodów osobowych o DMC do 3,5 t standardowo odlicza się 50% VAT przy u
 
 ## Wersje wyposażenia
 
-W przypadku Forda Transit osobowego nie da się uczciwie wskazać jednej, uniwersalnej listy wersji wyposażenia dla wszystkich modeli i roczników. Nazwy odmian oraz zawartość wyposażenia zależą od konkretnego auta, rynku i generacji, a wcześniejsze mieszanie Tourneo Custom z pełnowymiarowym Transitem prowadziło tu do błędów.
+W przypadku Forda Transit osobowego nie da się rzetelnie wskazać jednej, uniwersalnej listy wersji wyposażenia dla wszystkich modeli i roczników. Nazwy odmian oraz zakres wyposażenia zależą od konkretnego auta, rynku i generacji, a wcześniejsze mieszanie Tourneo Custom z pełnowymiarowym Transitem prowadziło tu do błędów.
 
 Zamiast przypisywać na sztywno elementy wyposażenia do nazw takich jak Trend, Limited czy Titanium, lepiej sprawdzać specyfikację w cenniku dla danego roku modelowego. To szczególnie ważne przy multimediach, kamerach, typie klimatyzacji i konfiguracji siedzeń.
 
@@ -82,9 +82,9 @@ Oferta napędów zależy od tego, czy mówimy o starszym modelu, nowej generacji
 
 W aktualnej gamie Tourneo Custom występują nie tylko diesle 2.0 EcoBlue, ale też wersja PHEV oraz elektryczne E-Tourneo Custom. To ważne, bo dziś Ford Transit osobowy może mieć zupełnie różny charakter eksploatacji – od klasycznego diesla po napęd zelektryfikowany.
 
-Wersja PHEV wykorzystuje benzynowy silnik 2.5 i napęd hybrydowy plug-in. Z kolei E-Tourneo Custom ma akumulator trakcyjny 64 kWh brutto i moc 160 kW, czyli 218 KM.
+Wersja PHEV wykorzystuje silnik benzynowy 2.5 i napęd hybrydowy plug-in. Z kolei E-Tourneo Custom ma akumulator trakcyjny o pojemności 64 kWh brutto i moc 160 kW, czyli 218 KM.
 
-Przy wyborze napędu warto patrzeć nie tylko na moc. Równie istotne są homologacyjne zużycie paliwa WLTP i pojemność zbiornika w dieslu oraz zasięg WLTP i moc ładowania AC/DC w wersji elektrycznej, bo to one decydują o realnej przydatności auta w przewozie osób.
+Przy wyborze napędu warto patrzeć nie tylko na moc. Równie istotne są homologacyjne zużycie paliwa WLTP i pojemność zbiornika w dieslu oraz zasięg WLTP i moc ładowania AC/DC w wersji elektrycznej, bo to one decydują o rzeczywistej przydatności auta w przewozie osób.
 
 {{% expert name="Marek Kowalczyk" %}}
 Jeśli auto ma jeździć głównie po mieście albo w przewozach hotelowych i lotniskowych, napędy zelektryfikowane zasługują dziś na osobną analizę. W Fordzie Transit osobowym różnice między dieslem, PHEV i BEV są na tyle duże, że najlepiej dobierać wersję pod konkretny profil trasy.
@@ -100,4 +100,4 @@ Przy cenach trzeba zawsze podać, czy chodzi o kwoty brutto czy netto oraz jaki 
 
 Na rynku wtórnym również trzeba uważać na uproszczenia. Cena zależy od długości nadwozia, napędu, liczby miejsc, rocznika, stanu technicznego i rynku, więc szerokie przedziały bez źródła niewiele mówią.
 
-Jeżeli planujesz zakup firmowy, warto od razu zestawić koszt zakupu z zasadami VAT i limitem podatkowym dla samochodu osobowego. W praktyce to często ważniejsze niż sama cena katalogowa.
+Jeżeli planujesz zakup firmowy, warto od razu zestawić koszt nabycia z zasadami VAT i limitem podatkowym dla samochodu osobowego. W praktyce bywa to często ważniejsze niż sama cena katalogowa.

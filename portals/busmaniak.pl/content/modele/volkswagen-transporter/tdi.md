@@ -1,7 +1,7 @@
 ---
 title: "Volkswagen Transporter TDI – dane techniczne, spalanie, opinie"
 date: 2026-03-26
-description: "Silniki TDI w Volkswagenie Transporter T4, T5 i T6.1 – dane techniczne, spalanie, typowe usterki per generacja i koszty serwisu. Który TDI wybrać?"
+description: "Silniki TDI w Volkswagenie Transporterze T4, T5 i T6.1 – dane techniczne, spalanie, typowe usterki według generacji i koszty serwisu. Który TDI wybrać?"
 draft: false
 author: "marek-kowalczyk"
 h1: "Volkswagen Transporter TDI – dane techniczne i opinie"
@@ -13,21 +13,21 @@ image: "/images/volkswagen-transporter-hero.webp"
 image_alt: "Volkswagen Transporter T6.1 furgon"
 youtube: "hMpnvp50mXM"
 youtube_title: "Volkswagen Transporter 6.1 Furgon 2.0 TDI 150 TEST Budowlańca"
-lead: "Silniki TDI to kręgosłup Volkswagena Transportera od ponad 30 lat. Od legendarnego 2.5 TDI w T4, przez problematyczny, ale popularny 2.5 TDI w T5, po nowoczesny 2.0 TDI w T6.1, który występował zasadniczo w 4 wariantach mocy: 90, 110, 150 i 199 KM. Oto wszystko, co musisz wiedzieć przed zakupem – od spalania po koszty napraw."
+lead: "Silniki TDI to kręgosłup Volkswagena Transportera od ponad 30 lat. Od legendarnego 2.5 TDI w T4, przez problematyczny, ale popularny 2.5 TDI w T5, po nowoczesny 2.0 TDI w T6.1, który występował zasadniczo w czterech wariantach mocy: 90, 110, 150 i 199 KM. Oto wszystko, co musisz wiedzieć przed zakupem – od spalania po koszty napraw."
 faq:
   - question: "Który silnik TDI w Transporterze jest najlepszy?"
     answer: "2.0 TDI 150 KM z DSG w T6.1 – optymalny kompromis między mocą, spalaniem i trwałością. W T5 najrozsądniejszym wyborem jest 2.0 TDI 102 lub 140 KM po 2009/2010 roku, najlepiej z manualem."
   - question: "Ile pali Transporter TDI?"
     answer: "T6.1 2.0 TDI 150 KM zwykle mieści się w okolicach 7,0–8,5 l/100 km. T5 2.0 TDI 140 KM zazwyczaj spala 7,5–9,5 l/100 km, a T4 2.5 TDI około 9–12 l/100 km – zależnie od zabudowy, ładunku i napędu."
   - question: "Jakie są typowe usterki TDI w Transporterze?"
-    answer: "T4 2.5 TDI: problemy z głowicą przy przegrzaniu. T5 2.5 TDI: pompowtryskiwacze, dwumasa i zużycie oleju. W 2.0 TDI w T5/T6/T6.1 należy mówić o pasku rozrządu, a typowe problemy dotyczą m.in. EGR, DPF, układu SCR/NOx i osprzętu. DSG wymaga wymiany oleju co 60 tys. km."
+    answer: "T4 2.5 TDI: problemy z głowicą przy przegrzaniu. T5 2.5 TDI: pompowtryskiwacze, dwumasa i zużycie oleju. W 2.0 TDI stosowanym w T5/T6/T6.1 rozrząd jest paskowy; typowe problemy dotyczą m.in. EGR, DPF, układu SCR/NOx i osprzętu. DSG wymaga wymiany oleju co 60 tys. km."
 ---
 
 ## Dane techniczne silników TDI w Volkswagenie Transporter
 
 Trzy dekady diesli w gamie Transportera to kilka zupełnie różnych konstrukcji – od prostszych jednostek T4 po nowoczesne 2.0 TDI z T6.1. W praktyce różnice dotyczą nie tylko mocy, ale też kultury pracy, emisji spalin, kosztów serwisu i przydatności pod obciążeniem.
 
-W przypadku używanego **volkswagen transporter tdi** sama nazwa silnika nie wystarcza. Liczy się konkretna generacja, wariant mocy, a często także kod silnika i typ skrzyni.
+W przypadku używanego **Volkswagena Transportera TDI** sama nazwa silnika nie wystarcza. Liczy się konkretna generacja, wariant mocy, a często także kod silnika i typ skrzyni.
 
 | Silnik | Generacja | Moc | Moment | Spalanie (śr.) | Skrzynia | Norma |
 |--------|-----------|-----|--------|----------------|----------|-------|
@@ -79,9 +79,9 @@ Jeśli szukasz T5, najbezpieczniej celować w roczniki po 2009/2010 roku z silni
 
 T6.1 korzysta z dopracowanego 2.0 TDI i w praktyce obejmuje cztery główne warianty mocy: 90, 110, 150 i 199 KM. To wystarczająco szeroka oferta, by dobrać auto zarówno do miejskiej dystrybucji, jak i cięższej pracy z przyczepą.
 
-Wersja 90 KM to absolutne minimum do lekkiej eksploatacji. 110 KM i 250 Nm to rozsądny punkt wejścia, ale dopiero 150 KM z 340 Nm daje wyraźnie lepszą elastyczność pod obciążeniem – różnicę czuć bardziej z ładunkiem niż wynikałoby to z samego katalogowego spalania.
+Wersja 90 KM to absolutne minimum do lekkiej eksploatacji. 110 KM i 250 Nm to rozsądny punkt wejścia, ale dopiero 150 KM z 340 Nm daje wyraźnie lepszą elastyczność pod obciążeniem – różnicę czuć bardziej z ładunkiem, niż wynikałoby to z samego katalogowego spalania.
 
-Topowe 199 KM i 450 Nm w BiTDI to propozycja dla tych, którzy często holują lub jeżdżą ciężko załadowanym autem. Trzeba jednak uwzględnić wyższe koszty osprzętu, bardziej złożony układ doładowania i standardowe połączenie z DSG.
+Najmocniejsze 199 KM i 450 Nm w BiTDI to propozycja dla tych, którzy często holują lub jeżdżą ciężko załadowanym autem. Trzeba jednak uwzględnić wyższe koszty osprzętu, bardziej złożony układ doładowania i standardowe połączenie z DSG.
 
 W T6.1 od 2019 roku wybrane wersje 2.0 TDI Euro 6d korzystają z układu podwójnego dozowania AdBlue. Taki układ ogranicza emisję NOx i pomaga spełnić normę Euro 6d.
 
@@ -111,7 +111,7 @@ Te wartości warto traktować jako orientacyjne. Pod obciążeniem różnice mi�
 
 W ruchu miejskim zwykle trzeba doliczyć 25–40% względem jazdy pozamiejskiej. T6.1 2.0 TDI 150 KM z ładunkiem potrafi zużywać około 9–11 l/100 km, a cięższe wersje zabudowane jeszcze więcej.
 
-Najbardziej rosną wyniki w autach z wysokim dachem, 4MOTION i osprzętem turystycznym. California z dodatkowym bagażem dachowym może bez trudu dojść do około 12 l/100 km.
+Zużycie paliwa najbardziej rośnie w autach z wysokim dachem, 4MOTION i osprzętem turystycznym. California z dodatkowym bagażem dachowym może bez trudu dojść do około 12 l/100 km.
 
 ## Typowe usterki TDI w Transporterze
 
@@ -130,7 +130,7 @@ Najbardziej rosną wyniki w autach z wysokim dachem, 4MOTION i osprzętem turyst
 ### T5/T6/T6.1 – 2.0 TDI
 
 - **Pasek rozrządu** – w 2.0 TDI EA189 i EA288 stosowany jest rozrząd paskowy, nie łańcuch. Interwał zależy od kodu silnika i planu serwisowego VW
-- **EGR** – częsty punkt zapalny w autach eksploatowanych na krótkich dystansach
+- **EGR** – częsta bolączka w autach eksploatowanych na krótkich dystansach
 - **DPF** – zapychanie przy jeździe miejskiej i niedokończonych regeneracjach
 - **SCR/AdBlue i czujniki NOx** – typowe dla nowszych aut Euro 6d, szczególnie w T6.1
 - **DSG DQ500** – wymaga regularnej obsługi olejowej co 60 tys. km
@@ -144,7 +144,7 @@ To nie znaczy, że BiTDI trzeba z góry skreślić. Po prostu zakup takiej wersj
 
 ## Koszty serwisu TDI
 
-Koszty utrzymania Transportera mocno zależą od generacji, silnika i miejsca serwisowania. Starsze T4 i T5 potrafią być tańsze w prostych naprawach mechanicznych, ale nowsze T6.1 dokładają droższy osprzęt związany z emisją spalin i automatycznymi skrzyniami.
+Koszty utrzymania Transportera mocno zależą od generacji, silnika i miejsca serwisowania. Starsze T4 i T5 potrafią być tańsze w prostych naprawach mechanicznych, ale nowsze T6.1 wiążą się z droższym osprzętem związanym z emisją spalin i automatycznymi skrzyniami.
 
 Szczególnie ważne jest prawidłowe podejście do rozrządu. W 2.0 TDI EA189/EA288 stosowany jest pasek rozrządu, a interwał wymiany zależy od kodu silnika i dokumentacji VW. W praktyce warsztatowej często przyjmuje się okolice 210 tys. km lub 5–7 lat, ale przed serwisem trzeba to zweryfikować dla konkretnej wersji.
 
@@ -168,10 +168,10 @@ W praktyce niezależny warsztat zwykle będzie wyraźnie tańszy niż ASO, zwła
 ## Który TDI wybrać?
 
 - **Do lekkiej dystrybucji miejskiej** – 2.0 TDI 110 KM z manualem. W T6.1 daje rozsądne 250 Nm i nie komplikuje auta skrzynią DSG
-- **Do uniwersalnej pracy** – 2.0 TDI 150 KM. W T6.1 wyraźnie lepiej radzi sobie z ładunkiem i trasą niż 110 KM, bo 340 Nm robi realną różnicę
+- **Do uniwersalnej pracy** – 2.0 TDI 150 KM. W T6.1 wyraźnie lepiej radzi sobie z ładunkiem i trasą niż 110 KM, bo 340 Nm ma realne znaczenie
 - **Do starszego auta roboczego** – T5 2.0 TDI 140 KM po 2009/2010 roku. To najrozsądniejszy kompromis między osiągami, spalaniem i kosztami
 - **Do spokojnej eksploatacji w T5** – 2.0 TDI 102 KM. Wystarcza do lżejszych zadań, ale przy cięższej pracy szybko przegrywa z 140 KM
 - **Do holowania i ciężkiego transportu** – 2.0 BiTDI 180 KM w T5 lub 199 KM w T6.1. Najlepszy moment obrotowy, ale też najwyższe ryzyko drogich napraw osprzętu
 - **Czego unikać bez dokładnej weryfikacji** – T5 2.5 TDI z pierwszych lat produkcji, jeśli auto nie ma bardzo dobrze udokumentowanego serwisu
 
-Przy wyborze warto patrzeć nie tylko na moc maksymalną. Różnica między 102 a 140 KM w T5 oraz między 110 a 150 KM w T6.1 najmocniej wychodzi przy pełnym załadunku, wyprzedzaniu i jeździe z przyczepą – właśnie wtedy wyższy moment obrotowy daje największą przewagę.
+Przy wyborze warto patrzeć nie tylko na moc maksymalną. Różnica między 102 a 140 KM w T5 oraz między 110 a 150 KM w T6.1 najwyraźniej uwidacznia się przy pełnym załadunku, wyprzedzaniu i jeździe z przyczepą – właśnie wtedy wyższy moment obrotowy daje największą przewagę.

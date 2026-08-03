@@ -15,10 +15,10 @@ faq:
   - question: "Ile miejsc ma Toyota Proace osobowy?"
     answer: "Toyota Proace Verso (wersja osobowa) oferuje konfiguracje 5-, 7-, 8- i 9-miejscowe w zależności od wariantu i wyposażenia."
   - question: "Jaka jest cena Toyota Proace Verso?"
-    answer: "W artykule podajemy archiwalne widełki cenowe z lat 2024–2025 – od ok. 175 000 zł brutto, zależnie od wersji nadwozia, napędu i wyposażenia."
+    answer: "W artykule podajemy archiwalne widełki cenowe z lat 2024–2025 – od ok. 175 000 zł brutto, w zależności od wersji nadwozia, napędu i wyposażenia."
   - question: "Czym różni się Proace Verso od Proace towarowego?"
-    answer: "Proace Verso ma pełne oszklenie, fotele pasażerskie na całej długości nadwozia i inne zestrojenie pod przewóz osób. Proace towarowy jest odmianą użytkową."
-lead: "Toyota Proace osobowy to Proace Verso – van pasażerski do 9 miejsc, będący bliźniaczą konstrukcją PSA/Stellantis z rodziny średnich vanów opartą na platformie EMP2 dla pojazdów użytkowych, sprzedawaną obok Citroëna SpaceTourer i Peugeot Traveller. Jeśli szukasz dużego busa do przewozu rodziny, grupy lub jako shuttle firmowy, poniżej masz konkretne dane."
+    answer: "Proace Verso ma pełne oszklenie, fotele pasażerskie na całej długości nadwozia i inne zestrojenie pod kątem przewozu osób. Proace towarowy jest odmianą użytkową."
+lead: "Toyota Proace osobowy to Proace Verso – van pasażerski do 9 miejsc, bliźniak konstrukcji PSA/Stellantis z rodziny średnich vanów opartych na platformie EMP2 dla pojazdów użytkowych, sprzedawany obok Citroëna SpaceTourer i Peugeota Traveller. Jeśli szukasz dużego busa do przewozu rodziny, grupy lub jako bus firmowy, poniżej znajdziesz konkretne dane."
 youtube: "5JgT3lIiTik"
 youtube_title: "Test: Toyota Proace Verso 2.0 D-4D - plusy i minusy"
 sources:
@@ -32,13 +32,13 @@ Proace i Proace Verso to dwa różne samochody z tej samej rodziny konstrukcyjne
 
 - pełne przeszklenie boczne – każdy rząd siedzeń ma okna
 - fotele pasażerskie w rzędach 2 i 3, zależnie od wersji i konfiguracji
-- inne zestrojenie pod przewóz osób
+- inne zestrojenie pod kątem przewozu osób
 - wyższa klasa materiałów wykończeniowych wnętrza
 - klimatyzacja 2- lub 3-strefowa, zależnie od wersji
 
-Proace towarowy jest odmianą użytkową. W praktyce nie warto mieszać obu wersji przy opisie konfiguracji, bo Proace Verso i użytkowe Kombi/Combi to inne zastosowanie, wyposażenie i homologacja.
+Proace towarowy jest odmianą użytkową. W praktyce nie warto mieszać obu wersji przy opisie konfiguracji, bo Proace Verso oraz użytkowe Kombi/Combi różnią się zastosowaniem, wyposażeniem i homologacją.
 
-Warto też pamiętać o zmianach po liftingu 2024. Facelift gamy średnich vanów Toyota/Stellantis przyniósł zmiany pasa przedniego, multimediów, systemów ADAS i oferty napędów, dlatego przy porównywaniu ogłoszeń trzeba sprawdzać, czy mówimy o aucie przedliftowym czy poliftowym.
+Warto też pamiętać o zmianach po liftingu z 2024 roku. Lifting gamy średnich vanów Toyota/Stellantis przyniósł zmiany w pasie przednim, multimediach, systemach ADAS i ofercie napędów, dlatego przy porównywaniu ogłoszeń trzeba sprawdzać, czy mowa o aucie przed liftingiem, czy po liftingu.
 
 ## Konfiguracje miejsc w Toyocie Proace Verso
 
@@ -51,31 +51,31 @@ W Proace Verso liczba miejsc zależy od wersji, długości nadwozia i konkretnej
 | 8 miejsc | 3 rzędy | Medium lub Long |
 | 9 miejsc | 3 rzędy | Medium lub Long, zależnie od wersji i rynku |
 
-Dla 8- i 9-miejscowych odmian kluczowy jest układ siedzeń dostępny na danym rynku. Fact-checker wskazuje, że w wersjach 9-miejscowych typowe są fabryczne konfiguracje 3+3+3 albo 2+3+3 z przednim fotelem dwuosobowym, zależnie od rynku i wersji.
+Dla odmian 8- i 9-miejscowych kluczowy jest układ siedzeń dostępny na danym rynku. Fact-checker wskazuje, że w wersjach 9-miejscowych typowe są fabryczne konfiguracje 3+3+3 albo 2+3+3 z przednim fotelem dwuosobowym, w zależności od rynku i wersji.
 
-Przy wyborze konkretnej wersji warto zwrócić uwagę nie tylko na samą liczbę miejsc, ale też sposób montażu foteli. W tej klasie vana znaczenie mają układ drugiego i trzeciego rzędu, możliwość demontażu oraz rozwiązania spotykane w odmianach shuttle i VIP.
+Przy wyborze konkretnej wersji warto zwrócić uwagę nie tylko na samą liczbę miejsc, lecz także na sposób montażu foteli. W tej klasie vana znaczenie mają układ drugiego i trzeciego rzędu, możliwość demontażu oraz rozwiązania spotykane w odmianach Shuttle i VIP.
 
 {{% info title="Homologacja – taxi i przewóz osób" icon="engineering" %}}
 Kategoria homologacyjna M1 oznacza pojazd do przewozu maksymalnie 8 pasażerów plus kierowca. M2 oznacza pojazd do przewozu więcej niż 8 pasażerów plus kierowca, o DMC do 5 t.
 
-Prawo jazdy kat. B wystarcza do pojazdów o DMC do 3,5 t i do 8 miejsc pasażerskich plus kierowca. W Polsce sama homologacja M1 nie wystarcza jednak do komercyjnego przewozu osób – przy działalności zarobkowej znaczenie mają także m.in. licencja na transport drogowy taksówką lub przewóz osób, badanie techniczne TAXI, oznaczenie TAXI i lokalne wymagania gminne.
+Prawo jazdy kat. B wystarcza do prowadzenia pojazdów o DMC do 3,5 t i do 8 miejsc pasażerskich plus kierowca. W Polsce sama homologacja M1 nie wystarcza jednak do komercyjnego przewozu osób – przy działalności zarobkowej znaczenie mają także m.in. licencja na transport drogowy taksówką lub przewóz osób, badanie techniczne TAXI, oznaczenie TAXI i lokalne wymagania gminne.
 {{% /info %}}
 
 ## Silniki w Proace Verso
 
-Gama napędów Proace Verso nie ograniczała się wyłącznie do diesla 2.0. W ofercie europejskiej i na części rynków występowały także 1.5 diesel 120 KM oraz wersje elektryczne Proace Verso Electric z akumulatorem 50 kWh lub 75 kWh.
+Gama napędów Proace Verso nie ograniczała się wyłącznie do diesla 2.0. W ofercie europejskiej i na części rynków występowały także diesel 1.5 o mocy 120 KM oraz wersje elektryczne Proace Verso Electric z akumulatorem 50 kWh lub 75 kWh.
 
-To ważne zwłaszcza przy autach z roczników przed i po liftingu 2024. Po modernizacji nazewnictwo i oferta napędów mogły się zmieniać zależnie od rynku, więc przy zakupie trzeba sprawdzać konkretny cennik i specyfikację dla Polski.
+To ważne zwłaszcza przy autach z roczników sprzed liftingu i po liftingu z 2024 roku. Po modernizacji nazewnictwo i oferta napędów mogły się zmieniać w zależności od rynku, więc przy zakupie trzeba sprawdzać konkretny cennik i specyfikację dla Polski.
 
-W praktyce dla rynku wtórnego i aut flotowych najczęściej spotyka się diesle 1.5 i 2.0, natomiast wersje elektryczne są alternatywą dla zastosowań miejskich i shuttle. W tym tekście nie podajemy osiągów, spalania ani szczegółowych parametrów momentu obrotowego, bo w dostarczonych danych nie ma kompletnych i spójnych wartości dla wszystkich roczników.
+W praktyce na rynku wtórnym i wśród aut flotowych najczęściej spotyka się diesle 1.5 i 2.0, natomiast wersje elektryczne są alternatywą dla zastosowań miejskich i dowozowych. W tym tekście nie podajemy osiągów, spalania ani szczegółowych parametrów momentu obrotowego, bo w dostarczonych danych brakuje kompletnych i spójnych wartości dla wszystkich roczników.
 
 ### Skrzynia biegów i napęd Proace Verso
 
-Dostępność skrzyni automatycznej zależała od silnika, rocznika i rynku. Nie można więc utrzymywać, że 8-biegowy automat był przypisany wyłącznie do jednej wersji mocy.
+Dostępność skrzyni automatycznej zależała od silnika, rocznika i rynku. Nie można więc twierdzić, że 8-biegowy automat był przypisany wyłącznie do jednej wersji mocy.
 
-Napęd w Proace Verso występował jako przedni. Przy porównaniu ofert warto zestawiać nie tylko silnik i skrzynię, ale też rok modelowy – szczególnie po liftingu 2024, gdy zmieniły się multimedia, ADAS i część konfiguracji napędowych.
+Napęd w Proace Verso był przedni. Przy porównaniu ofert warto zestawiać nie tylko silnik i skrzynię, lecz także rok modelowy – zwłaszcza po liftingu z 2024 roku, gdy zmieniły się multimedia, systemy ADAS i część konfiguracji napędowych.
 
-Jeśli zależy Ci na technicznym tle, sama konstrukcja należy do rodziny średnich vanów opartych na platformie EMP2 dla pojazdów użytkowych. To tłumaczy bliskie pokrewieństwo z modelami Peugeot Traveller, Citroën SpaceTourer czy Opel Zafira Life.
+Jeśli interesuje Cię zaplecze techniczne: sama konstrukcja należy do rodziny średnich vanów opartych na platformie EMP2 dla pojazdów użytkowych. Stąd bliskie pokrewieństwo z modelami Peugeot Traveller, Citroën SpaceTourer czy Opel Zafira Life.
 
 ![Toyota Proace osobowy – Verso, miejsca, ceny](/images/toyota-proace-osobowy-hero.webp)
 
@@ -90,11 +90,11 @@ Wymiary użytkowe to jedna z największych zalet Proace Verso, ale trzeba podawa
 - szerokość z lusterkami: ok. 2204 mm
 - liczba drzwi przesuwnych: 1 lub 2 zależnie od wersji
 
-Wysokość należy zawsze odnosić do konkretnej odmiany i specyfikacji. Fact-checker wskazuje, że podawanie jednej wartości dla całej gamy jest uproszczeniem, bo wysokość może się różnić zależnie od wersji nadwozia, wyposażenia i homologacji.
+Wysokość należy zawsze odnosić do konkretnej odmiany i specyfikacji. Fact-checker wskazuje, że podawanie jednej wartości dla całej gamy jest uproszczeniem, bo wysokość może się różnić w zależności od wersji nadwozia, wyposażenia i homologacji.
 
-W sekcji bagażnik trzeba zachować ostrożność. Dostarczone dane nie zawierają oficjalnych pojemności dla konfiguracji 5-, 7-, 8- i 9-miejscowych w wersjach Medium i Long, a właśnie te wartości potrafią różnić się o setki litrów w zależności od liczby i typu foteli oraz metody pomiaru.
+W opisie bagażnika trzeba zachować ostrożność. Dostarczone dane nie zawierają oficjalnych pojemności dla konfiguracji 5-, 7-, 8- i 9-miejscowych w wersjach Medium i Long, a właśnie te wartości potrafią różnić się o setki litrów w zależności od liczby i typu foteli oraz metody pomiaru.
 
-Pewne jest natomiast to, że funkcjonalność wnętrza mocno zależy od konfiguracji siedzeń. W praktyce przy vanie rodzinnym i shuttle duże znaczenie mają możliwość demontażu foteli, liczba drzwi przesuwnych oraz konkretna aranżacja kabiny, ale do rzetelnego podania szerokości otworu drzwi, wysokości progu czy masy poszczególnych foteli potrzebne są dane katalogowe dla danej wersji.
+Pewne jest natomiast to, że funkcjonalność wnętrza mocno zależy od konfiguracji siedzeń. W praktyce w vanie rodzinnym i dowozowym duże znaczenie mają możliwość demontażu foteli, liczba drzwi przesuwnych oraz konkretna aranżacja kabiny, ale do rzetelnego podania szerokości otworu drzwi, wysokości progu czy masy poszczególnych foteli potrzebne są dane katalogowe dla danej wersji.
 
 
 {{% youtube %}}
@@ -107,8 +107,8 @@ Poniższe kwoty to archiwalne widełki cenowe z lat 2024–2025, a nie aktualny 
 - wersja Long z wyższą mocą i średnim wyposażeniem: ok. 195 000–210 000 zł
 - wersja bogatsza Long z automatem: powyżej 220 000 zł brutto
 
-W danych od fact-checkera pojawia się też ważna uwaga praktyczna: ceny powinny być rozbite według wersji wyposażenia oferowanych na rynku PL, np. Business, Family, VIP, Shuttle lub ich odpowiedników po liftingu, oraz według rodzaju napędu. Warto też pamiętać, że dopłata do automatu wynosiła rząd kilku do kilkunastu tysięcy złotych zależnie od wersji.
+W danych od fact-checkera pojawia się też ważna uwaga praktyczna: ceny powinny być podane z podziałem na wersje wyposażenia oferowane na rynku polskim, np. Business, Family, VIP, Shuttle lub ich odpowiedniki po liftingu, oraz według rodzaju napędu. Warto też pamiętać, że dopłata za automat wynosiła od kilku do kilkunastu tysięcy złotych w zależności od wersji.
 
-Na tle bliźniaczych modeli Proace Verso naturalnie porównuje się z Peugeot Traveller, Citroën SpaceTourer, Opel Zafira Life, Fiat Ulysse oraz Ford Tourneo Custom. Kluczowe punkty porównania to długości 4959/5309 mm, liczba miejsc do 9 oraz dostępność diesla i EV.
+Proace Verso naturalnie porównuje się z bliźniaczymi modelami: Peugeot Traveller, Citroën SpaceTourer, Opel Zafira Life, Fiat Ulysse oraz Ford Tourneo Custom. Kluczowe punkty porównania to długości 4959/5309 mm, liczba miejsc do 9 oraz dostępność diesla i wersji elektrycznej.
 
 Linki: [Toyota Proace – strona modelu](/modele/toyota-proace/) | [Toyota Proace Verso](/modele/toyota-proace-verso/)

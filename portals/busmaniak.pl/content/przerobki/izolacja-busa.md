@@ -37,13 +37,13 @@ Wybór materiału izolacyjnego decyduje o skuteczności termoizolacji, trwałoś
 | Cena za m² (19 mm) | 55–75 zł | 40–55 zł | 15–25 zł (30 mm) | 10–20 zł (50 mm) |
 | Zastosowanie w busie | Sufit, ściany, drzwi | Sufit, ściany, drzwi | Podłoga | Za panelami (z paroizolacją) |
 
-Alternatywnym, komercyjnym rozwiązaniem jest natrysk zamkniętokomórkowej pianki poliuretanowej (PUR). Jej największą zaletą jest perfekcyjne dotarcie do wszystkich zakamarków, co eliminuje mostki termiczne i dodatkowo usztywnia karoserię. Wadą jest konieczność żmudnego odcinania nadmiaru materiału i koszt profesjonalnej usługi, wynoszący 3000–4500 zł dla busa L2H2.
+Alternatywnym rozwiązaniem rynkowym jest natrysk zamkniętokomórkowej pianki poliuretanowej (PUR). Jej największą zaletą jest doskonałe wypełnienie wszystkich zakamarków, co eliminuje mostki termiczne i dodatkowo usztywnia karoserię. Wadami są konieczność żmudnego odcinania nadmiaru materiału oraz koszt profesjonalnej usługi, wynoszący 3000–4500 zł dla busa L2H2.
 
 ### Armaflex vs Kaiflex – co wybrać
 
-Oba materiały to pianki kauczukowe o zamkniętej strukturze komórkowej. Armaflex AF (Armacell) jest liderem rynkowym i ma lepszą warstwę klejącą – przylega do blachy nawet przy niskich temperaturach. Kaiflex KK (Kaimann) oferuje zbliżone parametry w niższej cenie, ale warstwa samoprzylepna bywa słabsza na zakrzywieniach.
+Oba materiały to pianki kauczukowe o zamkniętej strukturze komórkowej. Armaflex AF (Armacell) jest liderem rynkowym i ma lepszą warstwę klejącą – przylega do blachy nawet w niskich temperaturach. Kaiflex KK (Kaimann) oferuje zbliżone parametry w niższej cenie, ale warstwa samoprzylepna bywa słabsza na powierzchniach zakrzywionych.
 
-Dla budżetowej budowy kampera Kaiflex jest racjonalnym wyborem. Dla tych, którzy cenią pewność montażu i nie chcą ryzykować odpadania izolacji na łukach sufitu – Armaflex AF.
+Przy budżetowej budowie kampera Kaiflex jest racjonalnym wyborem. Dla tych, którzy cenią pewność montażu i nie chcą ryzykować odpadania izolacji na łukach sufitu – Armaflex AF.
 
 ## Izolacja sufitu {#sufit}
 
@@ -52,7 +52,7 @@ Sufit to najważniejsza powierzchnia do zaizolowania – ciepłe powietrze unosi
 ### Technika montażu na suficie
 
 1. Na dużych, płaskich powierzchniach blachy naklej pasy maty alubutylowej (gr. 2–2,5 mm), pokrywając ok. 30–40% powierzchni. Zredukuje to rezonans i hałas deszczu.
-2. Oczyść blachę sufitu odtłuszczaczem (np. izopropanol). Brud i tłuszcz uniemożliwiają trwałe klejenie.
+2. Oczyść blachę sufitu odtłuszczaczem (np. izopropanolem). Brud i tłuszcz uniemożliwiają trwałe klejenie.
 3. Wytnij paski Armaflexu dopasowane do przestrzeni między żebrami. Docinaj je z kilkumilimetrowym naddatkiem, aby po wklejeniu były lekko ściśnięte – to eliminuje mostki termiczne.
 4. Zdejmuj folię ochronną z kleju stopniowo – przyklejaj od środka paska ku krawędziom, dociskając rolką.
 5. Żebra sufitu izoluj wąskimi paskami (3–5 cm) – nie pomijaj ich, bo stanowią mostki termiczne.
@@ -63,7 +63,7 @@ Sufit to najważniejsza powierzchnia do zaizolowania – ciepłe powietrze unosi
 W busach używanych do zimowych wyjazdów (temperatury poniżej –10°C) warto zastosować podwójną warstwę izolacji na suficie – 2×19 mm Armaflexu daje 38 mm izolacji o łącznym oporze cieplnym zbliżonym do 50 mm XPS. Koszt dodatkowy to 400–600 zł, ale różnica w temperaturze wnętrza przy –15°C na zewnątrz sięga 3–5°C.
 
 {{% expert name="Marek Kowalczyk" %}}
-Przy montażu izolacji na suficie pracuj w temperaturze powyżej 15°C – klej na Armaflexie schnie wolniej w chłodzie i izolacja może odpaść po kilku tygodniach. Jeśli budujesz zimą w nieogrzewanym garażu, użyj dodatkowego kleju kontaktowego (np. Kaiflex 414) zamiast polegać na warstwie samoprzylepnej.
+Przy montażu izolacji na suficie pracuj w temperaturze powyżej 15°C – klej na Armaflexie wiąże wolniej w chłodzie i izolacja może odpaść po kilku tygodniach. Jeśli budujesz zimą w nieogrzewanym garażu, użyj dodatkowego kleju kontaktowego (np. Kaiflex 414) zamiast polegać wyłącznie na warstwie samoprzylepnej.
 {{% /expert %}}
 
 ## Izolacja ścian bocznych {#sciany}
@@ -79,9 +79,9 @@ Przy montażu izolacji na suficie pracuj w temperaturze powyżej 15°C – klej 
 
 ### Mostki termiczne – jak je eliminować
 
-[Mostek termiczny](https://pl.wikipedia.org/wiki/Mostek_cieplny) to miejsce, gdzie blacha nadwozia nie jest pokryta izolacją. Ciepłe powietrze z wnętrza kampera spotyka się tam z zimną blachą i oddaje wilgoć w formie skroplin. Typowe mostki termiczne w busie to żebra sufitu, słupki drzwi, nadkola i mocowania zawiasów. Pokrycie ich nawet cienką warstwą Armaflexu (6–10 mm) redukuje kondensację o 70–80%.
+[Mostek termiczny](https://pl.wikipedia.org/wiki/Mostek_cieplny) to miejsce, w którym blacha nadwozia nie jest pokryta izolacją. Ciepłe powietrze z wnętrza kampera styka się tam z zimną blachą, a zawarta w nim wilgoć skrapla się na jej powierzchni. Typowe mostki termiczne w busie to żebra sufitu, słupki drzwi, nadkola i mocowania zawiasów. Pokrycie ich nawet cienką warstwą Armaflexu (6–10 mm) redukuje kondensację o 70–80%.
 
-Należy pamiętać, że największym mostkiem termicznym pozostaje niezaizolowana kabina kierowcy. Duża powierzchnia szyb i deska rozdzielcza powodują ogromne straty ciepła. Bez grubych, wielowarstwowych termomat na szyby (koszt ok. 300–600 zł) lub grodzi oddzielającej szoferkę, nawet najlepsza izolacja części mieszkalnej nie będzie w pełni skuteczna.
+Należy pamiętać, że największym mostkiem termicznym pozostaje niezaizolowana kabina kierowcy. Duża powierzchnia szyb i deska rozdzielcza powodują ogromne straty ciepła. Bez grubych, wielowarstwowych termomat na szyby (koszt ok. 300–600 zł) lub grodzi oddzielającej szoferkę nawet najlepsza izolacja części mieszkalnej nie będzie w pełni skuteczna.
 
 ## Izolacja podłogi {#podloga}
 
@@ -104,11 +104,11 @@ Fabryczna podłoga w busach nie jest płaska, lecz składa się z przetłoczeń.
 
 - **XPS kładź na sucho** – bez klejenia do blachy. Pozwala to na ewentualną wymianę bez niszczenia podłoża.
 - **Sklejka mocowana do legarów** – do blachy podłogi przykleja się klejem poliuretanowym drewniane legary, do których następnie przykręca się sklejkę. Ta metoda nie narusza karoserii.
-- **Folia PE między XPS a sklejką** – opcjonalna bariera paroszczelna, zabezpiecza przed wilgocią od dołu.
-- **Wycięcia pod instalacje** – zaplanuj przejścia przewodów i rur PRZED położeniem podłogi.
+- **Folia PE między XPS a sklejką** – opcjonalna bariera paroszczelna zabezpieczająca przed wilgocią od dołu.
+- **Wycięcia pod instalacje** – zaplanuj przejścia przewodów i rur PRZED ułożeniem podłogi.
 
 {{% info title="Grubość podłogi a wysokość wnętrza" icon="info" %}}
-Izolowana podłoga (XPS 30 mm + sklejka 12 mm + wykładzina 3 mm) podnosi poziom o ok. 45 mm. W popularnym busie, jak Fiat Ducato H2 o fabrycznej wysokości 1932 mm, po odjęciu 45 mm zostaje ok. 1887 mm przestrzeni.
+Izolowana podłoga (XPS 30 mm + sklejka 12 mm + wykładzina 3 mm) podnosi poziom o ok. 45 mm. W popularnym busie, takim jak Fiat Ducato H2 o fabrycznej wysokości 1932 mm, po odjęciu 45 mm zostaje ok. 1887 mm przestrzeni.
 {{% /info %}}
 
 ## Izolacja drzwi i trudnych miejsc {#drzwi}
@@ -119,11 +119,11 @@ Drzwi tylne i boczne to miejsca o dużej powierzchni blachy, które zimą stają
 
 - **Armaflex 10–19 mm** – docięty do przestrzeni między wzmocnieniami drzwi.
 - **Mata butylowa (alubutyl)** – warstwa pod Armaflexem, tłumi rezonans blachy przy zamykaniu.
-- **Panel wykończeniowy** – cienka sklejka wodoodporna (np. 4 mm), tworzywo sztuczne lub HPL, mocowany na magnetycznych klipsach (łatwy demontaż do serwisu zamków).
+- **Panel wykończeniowy** – cienka sklejka wodoodporna (np. 4 mm), tworzywo sztuczne lub HPL, mocowany na klipsach magnetycznych (łatwy demontaż przy serwisie zamków).
 
 ### Drzwi przesuwne
 
-Drzwi przesuwne izoluj cieńszym materiałem (10 mm), by nie utrudniać mechanizmu przesuwu. Szczególną uwagę zwróć na prowadnicę dolną – izolacja nie może wchodzić w tor rolki.
+Drzwi przesuwne izoluj cieńszym materiałem (10 mm), by nie utrudniać pracy mechanizmu przesuwu. Szczególną uwagę zwróć na prowadnicę dolną – izolacja nie może wchodzić w tor rolki.
 
 
 {{% youtube %}}
@@ -135,9 +135,9 @@ Błędy popełnione na etapie izolacji ujawniają się po tygodniach lub miesią
 ### Błędy i ich konsekwencje
 
 - **Pominięcie mostków termicznych** – niby drobnostka, ale nieizolowane żebra generują 40–60% całkowitej kondensacji w busie zimą.
-- **Izolacja na brudną blachę** – klej nie trzyma, izolacja odpada po kilku miesiącach. Za odpadniętą izolacją zbiera się wilgoć i rozwija korozja.
+- **Izolacja na brudną blachę** – klej nie trzyma, izolacja odpada po kilku miesiącach. Za odpadłą izolacją zbiera się wilgoć i rozwija się korozja.
 - **Wełna mineralna bez paroizolacji** – nasiąka wilgocią w ciągu 2–3 tygodni i traci 50–70% właściwości izolacyjnych. Pod mokrą wełną blacha rdzewieje.
-- **Kieszenie powietrzne** – izolacja niedociśnięta do blachy tworzy przestrzenie, w których cyrkuluje wilgotne powietrze i skrapla się na zimnym metalu.
-- **Brak izolacji podłogi** – podłoga traci ciepło kontaktowo do podwozia. Zimą stopy marzną mimo ogrzewania wnętrza.
+- **Kieszenie powietrzne** – izolacja niedociśnięta do blachy tworzy przestrzenie, w których krąży wilgotne powietrze i skrapla się wilgoć na zimnym metalu.
+- **Brak izolacji podłogi** – podłoga oddaje ciepło do podwozia przez bezpośredni kontakt. Zimą stopy marzną mimo ogrzewania wnętrza.
 
-Dobrze wykonana izolacja to inwestycja 1 500–3 000 zł i 3–7 dni pracy, która służy przez cały okres użytkowania kampera. Najczęściej izolowane bazy to [Fiat Ducato](/modele/fiat-ducato/) – jego szeroka kabina ułatwia pracę. Kolejny etap [budowy kampera](/przerobki/budowa-kampera-krok-po-kroku/) – [instalacja elektryczna](/przerobki/instalacja-elektryczna-kamper/) – prowadzony jest bezpośrednio po izolacji. Szczegółowy [kosztorys budowy kampera](/przerobki/budowa-kampera-koszty/) pomoże zaplanować budżet na izolację i pozostałe etapy przeróbki na [kampera](/kampery/).
+Dobrze wykonana izolacja to inwestycja rzędu 1 500–3 000 zł i 3–7 dni pracy, która służy przez cały okres użytkowania kampera. Najczęściej izolowane bazy to [Fiat Ducato](/modele/fiat-ducato/) – jego szeroka kabina ułatwia pracę. Kolejny etap [budowy kampera](/przerobki/budowa-kampera-krok-po-kroku/) – [instalacja elektryczna](/przerobki/instalacja-elektryczna-kamper/) – prowadzony jest bezpośrednio po izolacji. Szczegółowy [kosztorys budowy kampera](/przerobki/budowa-kampera-koszty/) pomoże zaplanować budżet na izolację i pozostałe etapy przeróbki na [kampera](/kampery/).

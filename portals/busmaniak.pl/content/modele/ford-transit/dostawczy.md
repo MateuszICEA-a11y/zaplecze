@@ -13,7 +13,7 @@ volume: 320
 image: "/images/ford-transit-dostawczy-hero.webp"
 faq:
   - question: "Jaka jest DMC Ford Transit dostawczy?"
-    answer: "Ford Transit w wersji dostawczej furgon występuje w wybranych popularnych wariantach DMC 3,5 t, 4,25 t i 4,7 t, zależnie od wersji i rynku. Standardowo 3,5 t można prowadzić na kat. B, natomiast 4,25 t i 4,7 t wymagają wyższej kategorii, choć w UE istnieją wyjątki ustawowe dla wybranych pojazdów alternatywnie zasilanych do 4,25 t po spełnieniu określonych warunków."
+    answer: "Ford Transit w dostawczej wersji furgon występuje w wybranych popularnych wariantach DMC 3,5 t, 4,25 t i 4,7 t, zależnie od wersji i rynku. Wariant 3,5 t standardowo można prowadzić na kat. B, natomiast 4,25 t i 4,7 t wymagają wyższej kategorii, choć w UE istnieją wyjątki ustawowe dla wybranych pojazdów z napędem alternatywnym do 4,25 t po spełnieniu określonych warunków."
   - question: "Czy Ford Transit dostawczy ma drzwi z obu stron?"
     answer: "Tak – Transit furgon może mieć drzwi przesuwne z lewej strony, z prawej lub z obu stron jednocześnie, zależnie od wersji i rynku. Wersja z obustronnym dostępem jest szczególnie praktyczna przy zabudowach serwisowych i częstym załadunku."
   - question: "Jakie zabudowy można zamontować w Transit dostawczym?"
@@ -28,7 +28,7 @@ sources:
 ---
 ## DMC Ford Transit dostawczy i kategorie prawa jazdy
 
-W gamie Ford Transit dostawczy spotyka się różne warianty DMC, a poniżej mowa o wybranych popularnych konfiguracjach furgonu. To ważne rozróżnienie, bo konkretna oferta zależy od rynku, rocznika, napędu i wersji nadwoziowej.
+W gamie Forda Transit dostawczego spotyka się różne warianty DMC, a poniżej mowa o wybranych popularnych konfiguracjach furgonu. To ważne rozróżnienie, bo konkretna oferta zależy od rynku, rocznika, napędu i wersji nadwoziowej.
 
 Transit dostawczy jest oferowany między innymi w takich wariantach DMC:
 
@@ -42,29 +42,29 @@ To oznacza, że przy wyborze auta nie wystarczy patrzeć wyłącznie na DMC. Klu
 
 Wersje 3,5 t są najczęściej wybierane ze względu na łatwość użytkowania i brak konieczności posiadania dodatkowych uprawnień. Cięższe odmiany mają sens przy regularnym transporcie ciężkich ładunków, ale trzeba uwzględnić praktyczne konsekwencje eksploatacyjne.
 
-Pojazdy o DMC powyżej 3,5 t podlegają innym ograniczeniom prędkości dla ciężarowych, mogą wymagać rozliczania przejazdów w systemie e-TOLL na wybranych drogach w Polsce i częściej podlegają ograniczeniom wjazdu do centrów miast. Dochodzą też zwykle wyższe koszty eksploatacyjne i opłaty.
+Pojazdy o DMC powyżej 3,5 t podlegają innym ograniczeniom prędkości przewidzianym dla pojazdów ciężarowych, mogą wymagać rozliczania przejazdów w systemie e-TOLL na wybranych drogach w Polsce i częściej podlegają ograniczeniom wjazdu do centrów miast. Dochodzą też zwykle wyższe koszty eksploatacyjne i opłaty.
 
-Warto też doprecyzować kwestię uprawnień. Standardowo 4,25 t wymaga wyższej kategorii niż B, ale w UE istnieją wyjątki ustawowe dla niektórych pojazdów alternatywnie zasilanych do 4,25 t po spełnieniu określonych warunków.
+Warto też doprecyzować kwestię uprawnień. Standardowo 4,25 t wymaga wyższej kategorii niż B, ale w UE istnieją wyjątki ustawowe dla niektórych pojazdów z napędem alternatywnym do 4,25 t po spełnieniu określonych warunków.
 
 ## Drzwi boczne i tylne Transita
 
-Dostęp do ładowni to jedna z największych zalet dużego vana, dlatego w Transitcie liczy się nie tylko sama kubatura, ale też sposób załadunku. W praktyce wybór układu drzwi powinien zależeć od miejsca pracy auta – kurierka, serwis mobilny czy dystrybucja magazynowa mają różne wymagania.
+Dostęp do ładowni to jedna z największych zalet dużego vana, dlatego w Transicie liczy się nie tylko sama kubatura, ale też sposób załadunku. W praktyce wybór układu drzwi powinien zależeć od miejsca pracy auta – praca kurierska, serwis mobilny czy dystrybucja magazynowa mają różne wymagania.
 
 Dostęp do przestrzeni ładunkowej:
 
-- drzwi przesuwne prawe – najczęściej standard, zależnie od wersji i rynku
+- drzwi przesuwne prawe – najczęściej w standardzie, zależnie od wersji i rynku
 - drzwi przesuwne lewe – opcja, ważna przy załadunku z krawężnika lub z magazynu
 - tylne drzwi dwuskrzydłowe 180° lub 270° – wariant 270° pozwala otworzyć skrzydła równolegle do boków pojazdu
 
 {{% info title="Drzwi 270° – kiedy warto?" icon="engineering" %}}
-Tylne drzwi dwuskrzydłowe otwierane do 270° są szczególnie przydatne przy pracy z rampą załadunkową. Otwarte skrzydła nie ograniczają dostępu paleciarki ani wózka widłowego i dobrze sprawdzają się w logistyce, kurierce oraz przy zabudowach specjalistycznych.
+Tylne drzwi dwuskrzydłowe otwierane do 270° są szczególnie przydatne przy pracy z rampą załadunkową. Otwarte skrzydła nie ograniczają dostępu paleciarki ani wózka widłowego i dobrze sprawdzają się w logistyce, w pracy kurierskiej oraz przy zabudowach specjalistycznych.
 {{% /info %}}
 
 ## Przestrzeń ładunkowa Ford Transit furgon
 
 W tej klasie liczy się nie tylko długość podłogi, ale też realna użyteczność przestrzeni. Dla firmy transportowej, serwisu mobilnego czy ekipy montażowej równie ważne są wysokość ładowni, szerokość między nadkolami i możliwość przewozu europalet.
 
-### Wymiary paki w konfiguracjach L2–L4
+### Wymiary ładowni w konfiguracjach L2–L4
 
 Wymiary przestrzeni ładunkowej w popularnych konfiguracjach:
 
@@ -84,11 +84,11 @@ Wymiary przestrzeni ładunkowej w popularnych konfiguracjach:
 
 Szerokość między nadkolami 1420 mm oznacza, że europalety 1200 × 800 mm przewozi się wzdłużnie, a nie obok siebie. To podstawowa informacja praktyczna przy planowaniu załadunku.
 
-Z punktu widzenia użytkownika warto patrzeć również na liczbę europalet, jakie da się rozmieścić w danej wersji. W artykule podano wymiary ładowni, natomiast o tym, czy konkretna maszyna, regał lub paleta wejdzie także przez drzwi boczne albo tylko tylne, decydują wymiary otworów załadunkowych – to dane, które należy zawsze sprawdzić dla konkretnej odmiany L2H2, L3H2, L3H3 lub L4H3.
+Z punktu widzenia użytkownika warto brać pod uwagę również liczbę europalet, jakie da się rozmieścić w danej wersji. W artykule podano wymiary ładowni, natomiast o tym, czy konkretna maszyna, regał lub paleta wejdzie także przez drzwi boczne, czy tylko tylne, decydują wymiary otworów załadunkowych – to dane, które należy zawsze sprawdzić dla konkretnej odmiany L2H2, L3H2, L3H3 lub L4H3.
 
 Przy zakupie warto pamiętać, że w aktualnej gamie Transita występują także różne układy napędowe i silniki. Zależnie od rynku i rocznika spotyka się napęd FWD, RWD lub AWD, silniki 2.0 EcoBlue o mocy m.in. 130 KM, 165 KM i 170 KM oraz skrzynie 6MT i 10AT, a dobór napędu bywa powiązany z DMC.
 
-W praktyce znaczenie mają też wymiary zewnętrzne całego auta. Oprócz popularnych konfiguracji L2H2, L3H2, L3H3 i L4H3, przy zakupie warto sprawdzić także niższe wersje H1, rozstaw osi i wysokość całkowitą, bo to one decydują o wjeździe do hal, garaży i na parkingi podziemne.
+W praktyce znaczenie mają też wymiary zewnętrzne całego auta. Oprócz popularnych konfiguracji L2H2, L3H2, L3H3 i L4H3 przy zakupie warto sprawdzić także niższe wersje H1, rozstaw osi i wysokość całkowitą, bo to one decydują o wjeździe do hal, garaży i na parkingi podziemne.
 
 ![Ford Transit dostawczy – drzwi tylne 270°](/images/ford-transit-dostawczy-hero.webp)
 
@@ -98,7 +98,7 @@ Ford Transit dostawczy jest często wybierany jako baza pod auto serwisowe, mont
 
 ### Systemy regałowe i wyposażenie ładowni
 
-Rynek zabudów dla Transit dostawczego jest szeroki. Najpopularniejsze rozwiązania:
+Rynek zabudów dla Transita dostawczego jest szeroki. Najpopularniejsze rozwiązania:
 
 - regały aluminiowe lub stalowe
 - podłoga sklejkowa z listwami i uchwytami do pasów
@@ -112,9 +112,9 @@ Przy projektowaniu zabudowy najważniejsze jest przeliczenie masy całego wyposa
 
 {{% youtube %}}
 
-## Ceny Forda Transit dostawczy
+## Ceny Forda Transit dostawczego
 
-W przypadku Ford Transit dostawczy ceny silnie zależą od długości nadwozia, wysokości dachu, napędu, DMC, skrzyni biegów i wyposażenia. Bez wskazania konkretnego rynku, rocznika modelowego i oficjalnego cennika nie warto podawać sztywnych kwot, bo łatwo o nieaktualne lub mylące dane.
+W przypadku Forda Transit dostawczego ceny silnie zależą od długości nadwozia, wysokości dachu, napędu, DMC, skrzyni biegów i wyposażenia. Bez wskazania konkretnego rynku, rocznika modelowego i oficjalnego cennika nie warto podawać sztywnych kwot, bo łatwo o nieaktualne lub mylące dane.
 
 Dotyczy to zarówno nowych aut, jak i rynku wtórnego. Przy porównywaniu ofert trzeba osobno analizować wersje L2H2 FWD 3,5 t, L3H2 RWD 3,5/4,25 t czy L4H3 4,25/4,7 t, a także dopłaty wynikające z automatu, AWD, podwójnych drzwi przesuwnych, tylnych drzwi 270° oraz przygotowania pod zabudowę.
 

@@ -12,7 +12,7 @@ youtube: "IvKQFWhRTss"
 youtube_title: "Renault Kangoo 2023 - TEST PL (1.5 dCi 115 KM)"
 main_keyword: "renault kangoo"
 volume: 12100
-lead: "Renault Kangoo to fundament segmentu kombivanów, produkowany od 1997 roku, głównie w Maubeuge dla Europy, a także w innych zakładach zależnie od rynku i generacji. Trzecia odsłona na platformie CMF-B dzieli konstrukcję z Mercedesem Citanem II i Nissanem Townstarem. Silniki od 75 do 131 KM, wersja elektryczna E-Tech i osobowy Grand Kangoo na 7 miejsc."
+lead: "Renault Kangoo to fundament segmentu kombivanów, produkowany od 1997 roku, głównie w Maubeuge na rynek europejski, a także w innych zakładach – zależnie od rynku i generacji. Trzecia odsłona na platformie CMF-B dzieli konstrukcję z Mercedesem Citanem II i Nissanem Townstarem. Silniki od 75 do 131 KM, wersja elektryczna E-Tech i osobowy Grand Kangoo na 7 miejsc."
 faq:
   - question: "Czy Renault Kangoo to to samo co Mercedes Citan?"
     answer: "Kangoo III jest blisko spokrewnione z Mercedesem Citanem II. W generacji Kangoo II od 2012 r. oferowano pokrewnego Mercedesa Citana I."
@@ -21,7 +21,7 @@ faq:
   - question: "Jaki zasięg ma Kangoo E-Tech?"
     answer: "Z baterią 45 kWh do 285 km według WLTP."
   - question: "Czy Kangoo jest awaryjny?"
-    answer: "Elektryka to słaby punkt wszystkich generacji. W Kangoo II problemy z pompą paliwa 1.5 dCi i skrzynią biegów. Kangoo III jest dopracowany, choć objęty był akcją serwisową ograniczników drzwi."
+    answer: "Elektryka to słaby punkt wszystkich generacji. W Kangoo II problemy z pompą paliwa 1.5 dCi i skrzynią biegów. Kangoo III jest dopracowane, choć objęte było akcją serwisową dotyczącą ograniczników drzwi."
 sources:
   - "Wikipedia – Renault K9K engine"
   - "materiały prasowe Renault Polska"
@@ -51,9 +51,9 @@ Krótka oś czasu porządkuje najważniejsze daty, bo w historii modelu łatwo p
 
 ### Kangoo I (1997–2010)
 
-Pierwsza generacja zadebiutowała w 1997 roku jako następca modelu Express. Dla Europy była produkowana głównie w Maubeuge. Standardowe Kangoo I miało około 4035 mm długości, a w zależności od wersji występowały też odmiany dłuższe.
+Pierwsza generacja zadebiutowała w 1997 roku jako następca modelu Express. Na Europę produkowano ją głównie w Maubeuge. Standardowe Kangoo I miało około 4035 mm długości, a w zależności od wersji występowały też odmiany dłuższe.
 
-Gama silników była wyraźnie szersza niż w późniejszych skrótowych opisach modelu. Obejmowała benzynowe 1.2, 1.4 i 1.6 oraz diesle 1.9 D, 1.9 dTi, a później także 1.5 dCi zależnie od rynku i rocznika.
+Gama silników była wyraźnie szersza niż w późniejszych skrótowych opisach modelu. Obejmowała benzynowe 1.2, 1.4 i 1.6 oraz diesle 1.9 D, 1.9 dTi, a później także 1.5 dCi – zależnie od rynku i rocznika.
 
 #### Kangoo I Phase 1 (1997–2003)
 
@@ -64,12 +64,12 @@ To najprostsze i najbardziej użytkowe wcielenie modelu. Kangoo I spopularyzowa�
 W 2003 roku przyszło odświeżenie przodu, reflektorów i wnętrza. Produkcja trwała jeszcze po debiucie następcy, dlatego na rynku długo funkcjonowały równolegle dwa Kangoo.
 
 {{% info title="Kangoo Elect'road" icon="info" %}}
-Kangoo Elect'road (2003) było niszową odmianą elektryczną z pomocniczym range extenderem, a nie klasycznym BEV.
+Kangoo Elect'road (2003) było niszową odmianą elektryczną z pomocniczym przedłużaczem zasięgu, a nie klasycznym BEV.
 {{% /info %}}
 
 ### Kangoo II (2007–2021)
 
-Druga generacja była wyraźnie większa i dojrzalsza. Dla Europy głównym zakładem produkcyjnym było Maubeuge, a gama nadwozi objęła także odmiany Compact i Maxi.
+Druga generacja była wyraźnie większa i dojrzalsza. Głównym zakładem produkcyjnym na Europę było Maubeuge, a gama nadwozi objęła także odmiany Compact i Maxi.
 
 #### Kangoo II Phase 1 (2007–2013)
 
@@ -77,9 +77,9 @@ Na starcie Kangoo II weszło w segment bardziej rodzinnych i lepiej wyposażonyc
 
 #### Kangoo II Phase 2 (2013–2021)
 
-Lifting przeprowadzono w 2013 roku. Po modernizacji zmienił się pas przedni, a oferta została uporządkowana pod kątem wersji użytkowych i osobowych.
+Lifting przeprowadzono w 2013 roku. Po modernizacji zmienił się pas przedni, a ofertę uporządkowano pod kątem wersji użytkowych i osobowych.
 
-W gamie elektrycznej pojawiały się różne odmiany Kangoo Z.E. Wcześniejsze wersje korzystały z akumulatora 22 kWh, a późniejsze Kangoo Z.E. 33 z baterii 33 kWh – oba warianty miały moc 44 kW, czyli 60 KM.
+W gamie elektrycznej pojawiały się różne odmiany Kangoo Z.E. Wcześniejsze wersje korzystały z akumulatora 22 kWh, a późniejsze Kangoo Z.E. 33 – z baterii 33 kWh; oba warianty miały moc 44 kW, czyli 60 KM.
 
 ### Kangoo III (od 2021)
 
@@ -122,11 +122,11 @@ Do codziennego użytkowania liczą się też promień skrętu i wygoda załadunk
 
 ## Silniki Kangoo
 
-Oferta napędów w obecnym Kangoo obejmuje diesla 1.5 Blue dCi, benzynę 1.3 TCe i wersję elektryczną E-Tech. W zależności od wersji nadwoziowej i rynku dostępność skrzyń oraz długości może się różnić.
+Oferta napędów w obecnym Kangoo obejmuje diesla 1.5 Blue dCi, benzynę 1.3 TCe i wersję elektryczną E-Tech. W zależności od wersji nadwoziowej i rynku dostępność skrzyń biegów oraz długości nadwozia może się różnić.
 
 ### Diesel 1.5 Blue dCi
 
-To najważniejszy silnik z punktu widzenia flot i kierowców robiących duże przebiegi. Jednostka [K9K](https://en.wikipedia.org/wiki/Renault_K9K_engine) jest dobrze znana z innych modeli aliansu Renault–Nissan, ale w Kangoo III została dostosowana do normy Euro 6d.
+To najważniejszy silnik z punktu widzenia flot i kierowców robiących duże przebiegi. Jednostka [K9K](https://en.wikipedia.org/wiki/Renault_K9K_engine) jest dobrze znana z innych modeli sojuszu Renault–Nissan, ale w Kangoo III została dostosowana do normy Euro 6d.
 
 | Wariant | Moc | Moment | Skrzynia | Spalanie (WLTP) | Norma |
 |---------|-----|--------|----------|-----------------|-------|
@@ -134,7 +134,7 @@ To najważniejszy silnik z punktu widzenia flot i kierowców robiących duże pr
 | Blue dCi 95 | 95 KM | 260 Nm | 6-bieg. man. | 5,0–5,6 l/100 km | Euro 6d |
 | Blue dCi 115/116 | 115–116 KM | 270 Nm | 6-bieg. man. / 7DCT/EDC | 5,0–5,5 l/100 km | Euro 6d |
 
-Wariant 75 KM sprawdzi się głównie w lekkiej pracy miejskiej. Do jazdy z ładunkiem sensowniejsze są odmiany 95 i 115/116 KM. W praktyce to właśnie najmocniejszy diesel najczęściej dostaje automat zależnie od rynku i nadwozia.
+Wariant 75 KM sprawdzi się głównie w lekkiej pracy miejskiej. Do jazdy z ładunkiem sensowniejsze są odmiany 95 i 115/116 KM. W praktyce to właśnie najmocniejszy diesel najczęściej dostaje automat – zależnie od rynku i nadwozia.
 
 ### Benzyna 1.3 TCe
 
@@ -148,7 +148,7 @@ Przy spokojnej jeździe benzyna jest cichsza od diesla i lepiej pasuje do osobow
 
 ### Kangoo E-Tech
 
-Elektryczne Kangoo celuje w firmy pracujące lokalnie i kierowców, którzy mają dostęp do ładowania. Największy plus to zachowanie praktyczności nadwozia przy bezemisyjnym napędzie.
+Elektryczne Kangoo jest skierowane do firm pracujących lokalnie i kierowców, którzy mają dostęp do ładowania. Największy plus to zachowanie praktyczności nadwozia przy bezemisyjnym napędzie.
 
 | Paliwo | Oznaczenie | Moc | Moment | Skrzynia | Napęd | WLTP | 0–100 km/h | Norma Euro / zasięg |
 |--------|------------|-----|--------|----------|-------|------|------------|----------------------|
@@ -189,7 +189,7 @@ Kabina może być 2- lub 3-osobowa. W pracy liczy się też Easy Inside Rack, cz
 
 ### Kangoo osobowy i Grand Kangoo
 
-Wersje osobowe są kierowane do rodzin, przewozu osób i firm szukających auta bardziej uniwersalnego niż klasyczny blaszak.
+Wersje osobowe są przeznaczone dla rodzin, do przewozu osób i dla firm szukających auta bardziej uniwersalnego niż klasyczny blaszak.
 
 - **Kangoo 5-osobowe** – bagażnik **775 l**
 - **Wydłużone Kangoo 5-osobowe** – bagażnik **1050 l**
@@ -212,7 +212,7 @@ W Kangoo II ważne były też wersje, których dziś już nie ma w takiej formie
 
 ## Typowe usterki Renault Kangoo
 
-Awaryjność Kangoo mocno zależy od generacji i sposobu eksploatacji. Inne problemy ma stare Kangoo I z korozją i elektryką, a inne flotowe Kangoo II z dieslem 1.5 dCi.
+Awaryjność Kangoo mocno zależy od generacji i sposobu eksploatacji. Inne problemy ma stare Kangoo I z korozją i elektryką, a inne – flotowe Kangoo II z dieslem 1.5 dCi.
 
 ### 1.5 dCi / K9K
 
@@ -239,17 +239,17 @@ Przy dużych przebiegach problemem nie jest „poślizg skrzyni”, tylko zużyc
 - **hałas łożysk skrzyni**
 - **ślizgające się sprzęgło przy dużych przebiegach**
 
-Koszty też potrafią być konkretne. W wybranych wersjach 1.5 dCi sprzęgło z kołem dwumasowym to zwykle **2200–4000 zł**. W wersjach z kołem sztywnym zwykle trzeba liczyć **1200–2200 zł**. Naprawa skrzyni z łożyskami lub synchronizatorami najczęściej kosztuje **1500–3000 zł**.
+Koszty też potrafią być spore. W wybranych wersjach 1.5 dCi sprzęgło z kołem dwumasowym to zwykle **2200–4000 zł**. W wersjach z kołem sztywnym zwykle trzeba liczyć **1200–2200 zł**. Naprawa skrzyni z łożyskami lub synchronizatorami najczęściej kosztuje **1500–3000 zł**.
 
 ### Zawieszenie i hamulce
 
-W autach pracujących pod obciążeniem szybciej kończą się elementy eksploatacyjne przedniego zawieszenia. Typowe są luzy na łącznikach i tulejach, czasem dochodzi też korozja i zużycie elementów układu hamulcowego.
+W autach pracujących pod obciążeniem szybciej zużywają się elementy eksploatacyjne przedniego zawieszenia. Typowe są luzy na łącznikach i tulejach, czasem dochodzi też korozja i zużycie elementów układu hamulcowego.
 
 Wymiana łączników albo tulei to najczęściej **300–900 zł** za stronę lub komplet – zależnie od zakresu naprawy. W Kangoo używanym w mieście trzeba też pilnować stanu tylnych hamulców i prowadnic zacisków.
 
 ### Kangoo III – akcje serwisowe
 
-Trzecia generacja jest wyraźnie bardziej dopracowana od poprzedników. Zamiast grubych usterek częściej trafiają się akcje serwisowe, błędy elektroniki i drobne naprawy osprzętu nadwozia.
+Trzecia generacja jest wyraźnie bardziej dopracowana niż poprzednie. Zamiast poważnych usterek częściej trafiają się akcje serwisowe, błędy elektroniki i drobne naprawy osprzętu nadwozia.
 
 Najczęściej powtarzają się takie tematy:
 
@@ -276,7 +276,7 @@ W klasie kompaktowych vanów dostawczych Kangoo rywalizuje głównie z modelami 
 | Cena od | ok. **90 000 zł netto** | od ok. **88 000–95 000 zł netto** | od ok. **89 000–96 000 zł netto** | od ok. **87 000–95 000 zł netto** | od ok. **100 000–115 000 zł netto** |
 | Open Sesame | ✅ tak | ❌ nie | ❌ nie | ❌ nie | ❌ nie |
 
-Ceny w tabeli są orientacyjne dla rynku PL i zależą od rocznika oraz promocji. Na tle konkurentów Kangoo wyróżnia się systemem Open Sesame i szeroką ofertą nadwoziową. [Citroën Berlingo](/modele/citroen-berlingo/), [Peugeot Partner](/modele/peugeot-partner/) i [Fiat Doblo](/modele/fiat-doblo/) często kuszą wyższą ładownością, a Volkswagen Caddy odpowiada mocnym dieslem 2.0 TDI i wersją Maxi.
+Ceny w tabeli są orientacyjne dla rynku PL i zależą od rocznika oraz promocji. Na tle konkurentów Kangoo wyróżnia się systemem Open Sesame i szeroką ofertą nadwoziową. [Citroën Berlingo](/modele/citroen-berlingo/), [Peugeot Partner](/modele/peugeot-partner/) i [Fiat Doblo](/modele/fiat-doblo/) często kuszą wyższą ładownością, a Volkswagen Caddy – mocnym dieslem 2.0 TDI i wersją Maxi.
 
 {{% youtube %}}
 
@@ -286,7 +286,7 @@ Przy Kangoo trzeba oddzielić ceny nowych aut od rynku wtórnego i dodatkowo roz
 
 ### Nowe Kangoo
 
-W poniższej tabeli Kangoo Van podajemy w kwotach netto, a osobowe i Grand Kangoo w brutto. To ważne, bo mieszanie tych wartości w jednej tabeli łatwo prowadzi do błędnych porównań.
+W poniższej tabeli Kangoo Van podajemy w kwotach netto, a osobowe i Grand Kangoo – w brutto. To ważne, bo mieszanie tych wartości w jednej tabeli łatwo prowadzi do błędnych porównań.
 
 | Wersja | Silnik | Długość | Cena katalogowa |
 |--------|--------|---------|-----------------|
@@ -297,7 +297,7 @@ W poniższej tabeli Kangoo Van podajemy w kwotach netto, a osobowe i Grand Kango
 
 ### Używane Kangoo – dostawcze
 
-Na rynku wtórnym ceny furgonów zwykle są niższe niż osobówek z tego samego rocznika. Wynika to głównie z prostszego wyposażenia i częściej cięższej eksploatacji.
+Na rynku wtórnym ceny furgonów zwykle są niższe niż osobówek z tego samego rocznika. Wynika to głównie z prostszego wyposażenia oraz intensywniejszej eksploatacji.
 
 | Rocznik | Cena orientacyjna |
 |---------|-------------------|

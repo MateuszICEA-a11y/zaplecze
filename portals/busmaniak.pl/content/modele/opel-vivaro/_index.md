@@ -12,10 +12,10 @@ youtube: "kh0MbFQS2fg"
 youtube_title: "Opel Vivaro – Czy 1.5 wystarczy? | TEST PL"
 main_keyword: "opel vivaro"
 volume: 9900
-lead: "Opel Vivaro to jeden z najpopularniejszych średnich dostawczaków w Polsce, produkowany od 2001 roku w trzech generacjach. Vivaro A i B to bliźniaki Renault Trafic, a Vivaro C (od 2019) bazuje na platformie PSA EMP2 – bliźniak Peugeot Expert i Citroën Jumpy. Silniki od 75 do 177 KM i elektryczny Vivaro-e."
+lead: "Opel Vivaro to jeden z najpopularniejszych średnich dostawczaków w Polsce, produkowany od 2001 roku w trzech generacjach. Vivaro A i B to bliźniaki Renault Trafic, a Vivaro C (od 2019) bazuje na platformie PSA EMP2 – bliźniak Peugeota Experta i Citroëna Jumpy. Silniki od 75 do 177 KM i elektryczny Vivaro-e."
 faq:
   - question: "Czym różni się Vivaro od Renault Trafic?"
-    answer: "Vivaro A i B to bliźniaki Trafic – wspólna platforma, silniki i nadwozie. Vivaro C (od 2019) bazuje na PSA EMP2 i jest bliźniakiem Peugeot Expert i Citroën Jumpy."
+    answer: "Vivaro A i B to bliźniaki Trafic – wspólna platforma, silniki i nadwozie. Vivaro C (od 2019) bazuje na PSA EMP2 i jest bliźniakiem Peugeota Experta i Citroëna Jumpy."
   - question: "Jakie silniki ma Vivaro C?"
     answer: "1.5 D (75/100/120 KM), 2.0 D (120/145/177 KM) i elektryczny Vivaro-e (136 KM, bateria 50 lub 75 kWh)."
   - question: "Ile kosztuje nowy Vivaro?"
@@ -29,7 +29,7 @@ sources:
 
 ## Historia i generacje Opla Vivaro
 
-Trzy generacje, dwie różne platformy i zmiana technicznego partnera – Vivaro przeszło drogę od konstrukcji Renault do bliźniaka modeli PSA/Stellantis.
+Trzy generacje, dwie różne platformy i zmiana partnera technicznego – Vivaro przeszedł drogę od konstrukcji Renault do bliźniaka modeli PSA/Stellantis.
 
 ### Opel Vivaro A (2001–2014)
 
@@ -46,7 +46,7 @@ Bliźniak Renault Trafic III, nadal montowany w Luton. W gamie były silniki 1.6
 Debiut przypadł na 2014 rok. Od 2016–2017 wybrane wersje spełniały normę Euro 6. Produkcję zakończono w 2019 roku po rozstaniu Opla z Renault i przejściu marki do grupy PSA.
 
 {{% info title="Zmiana DNA w 2019" icon="engineering" %}}
-Vivaro C to zupełnie inny samochód niż poprzedniki – inne podzespoły, skrzynie biegów i sieć części zamiennych. Przy zakupie używanego upewnij się, na której platformie stoi Twój Vivaro – to determinuje koszty serwisu.
+Vivaro C to zupełnie inny samochód niż poprzedniki – inne podzespoły, skrzynie biegów i sieć części zamiennych. Przy zakupie używanego upewnij się, na której platformie stoi Twój Vivaro – od tego zależą koszty serwisu.
 {{% /info %}}
 
 ### Opel Vivaro C (od 2019)
@@ -55,7 +55,7 @@ Od 2019 roku Vivaro bazuje na platformie [PSA EMP2](https://en.wikipedia.org/wik
 
 W praktyce najczęściej spotkasz dwie podstawowe długości furgonu: S/L1 **4606 mm** i M/L2 **4956 mm**. Wariant **5306 mm** występował w wybranych zabudowach i na części rynków, dlatego warto sprawdzać konkretną homologację auta.
 
-W 2020 roku zadebiutował Vivaro-e z akumulatorami 50 i 75 kWh. W zależności od rocznika i wersji pojawiały się też systemy bezpieczeństwa takie jak Grip Control, Head-Up Display, kamera 180 stopni czy adaptacyjny tempomat.
+W 2020 roku zadebiutował Vivaro-e z akumulatorami 50 i 75 kWh. W zależności od rocznika i wersji pojawiały się też systemy bezpieczeństwa, takie jak Grip Control, Head-Up Display, kamera 180 stopni czy adaptacyjny tempomat.
 
 ## Wymiary Opla Vivaro C
 
@@ -99,19 +99,19 @@ W gamie Opla Vivaro było kilka wyraźnie różnych rodzin silników. Przy zakup
 | 2.0 D | C | 177 KM | 400 Nm | 8AT | 5,2–6,5 l/100 km | Euro 6d |
 | Vivaro-e | C | 136 KM | 260 Nm | automat jednostopniowy | 22–27 kWh/100 km | – |
 
-W starszych generacjach diesle są prostsze i łatwiejsze do ogarnięcia poza ASO, ale zwykle spalają więcej. Vivaro B z 1.6 CDTi jest oszczędniejsze, jednak wymaga dokładniejszego sprawdzenia EGR, DPF i osprzętu doładowania.
+W starszych generacjach diesle są prostsze i łatwiejsze w serwisowaniu poza ASO, ale zwykle spalają więcej. Vivaro B z 1.6 CDTi jest oszczędniejszy, jednak wymaga dokładniejszego sprawdzenia EGR, DPF i osprzętu doładowania.
 
 W Vivaro C najbezpieczniej patrzeć nie tylko na moc, ale też na sposób użytkowania auta. Egzemplarz robiący trasy zwykle lepiej znosi DPF/FAP i układ SCR niż van jeżdżący wyłącznie po mieście.
 
 Vivaro-e ma dwa warianty baterii – 50 i 75 kWh. Zasięg WLTP to odpowiednio ok. **230 km** i **330 km**.
 
 {{% expert name="Marek Kowalczyk" %}}
-Przy zakupie używanego Vivaro A lub B sprawdź stan turbiny i intercoolera – to pierwsza linia wydatków. W modelach z 1.6 BiTurbo układ dwóch turbin potrafi zaskoczyć rachunkiem rzędu 5000–8000 zł. Vivaro C z 2.0 D jest mechanicznie prostszy, ale części PSA bywają droższe niż zamienniki Renault z generacji A/B.
+Przy zakupie używanego Vivaro A lub B sprawdź stan turbiny i intercoolera – to zwykle pierwsze poważne wydatki. W modelach z 1.6 BiTurbo układ dwóch turbin potrafi zaskoczyć rachunkiem rzędu 5000–8000 zł. Vivaro C z 2.0 D jest mechanicznie prostszy, ale części PSA bywają droższe niż zamienniki Renault z generacji A/B.
 {{% /expert %}}
 
 ## Wersje nadwoziowe Opla Vivaro
 
-Vivaro występowało w kilku odmianach roboczych i osobowych. Dla firmy liczy się głównie długość paki, a dla zabudowców – baza pod konkretną funkcję.
+Vivaro występował w kilku odmianach roboczych i osobowych. Dla firmy liczy się głównie długość paki, a dla zabudowców – baza pod konkretną funkcję.
 
 - **Furgon S/M/L** – klasyczny van 2- lub 3-osobowy. W Vivaro C pojemność przestrzeni ładunkowej wynosi **4,6 / 5,3 / 6,1–6,6 m³**.
 - **Crew Van / brygadówka** – 5–6 miejsc i krótsza paka niż w zwykłym furgonie.
@@ -121,7 +121,7 @@ Vivaro występowało w kilku odmianach roboczych i osobowych. Dla firmy liczy si
 
 W praktyce najważniejsze są długości podłogi. W Vivaro C jest to **2162 mm**, **2512 mm** albo **2862 mm** – zależnie od wersji.
 
-Jeśli auto ma klapę FlexCargo, maksymalna długość przewożonego ładunku rośnie do ok. **3,67 m** w krótszych odmianach i do ok. **4,02 m** w dłuższych wersjach platformy PSA. To robi różnicę przy wożeniu rur, listew czy zabudowy meblowej.
+Jeśli auto ma klapę FlexCargo, maksymalna długość przewożonego ładunku rośnie do ok. **3,67 m** w krótszych odmianach i do ok. **4,02 m** w dłuższych odmianach na platformie PSA. To robi różnicę przy wożeniu rur, listew czy zabudowy meblowej.
 
 ## Typowe usterki Opel Vivaro
 

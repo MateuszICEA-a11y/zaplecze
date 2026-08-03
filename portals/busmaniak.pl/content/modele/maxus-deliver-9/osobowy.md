@@ -1,7 +1,7 @@
 ---
 title: "Maxus Deliver 9 osobowy – 9–17 miejsc, dane techniczne"
 date: 2026-03-26
-description: "Maxus Deliver 9 osobowy – wersje 9, 14 i 17-miejscowe, wymiary, silnik 2.0 diesel, wyposażenie, porównanie ze Sprinterem Tourer i Crafterem Kombi, ceny."
+description: "Maxus Deliver 9 osobowy – wersje 9-, 14- i 17-miejscowe, wymiary, silnik 2.0 diesel, wyposażenie, porównanie ze Sprinterem Tourer i Crafterem Kombi, ceny."
 draft: false
 author: "marek-kowalczyk"
 h1: "Maxus Deliver 9 osobowy – bus pasażerski"
@@ -13,14 +13,14 @@ image: "/images/maxus-deliver-9-hero.webp"
 image_alt: "Maxus Deliver 9 bus"
 youtube: "Aj5XyCqxSiA"
 youtube_title: "Maxus Deliver 9 - Nowy Chiński Van z Dieslem | Test pod obciążeniem"
-lead: "Maxus Deliver 9 osobowy to bus pasażerski na bazie dużego dostawczaka SAIC Motor – od 9 do 17 miejsc w zależności od konfiguracji i zabudowy. W praktyce kluczowe jest rozróżnienie wersji 9-osobowych, które mogą mieścić się w uprawnieniach kat. B, od minibusów powyżej 9 miejsc, gdzie liczy się homologacja, DMC i wymagania wobec kierowcy."
+lead: "Maxus Deliver 9 osobowy to bus pasażerski na bazie dużego samochodu dostawczego SAIC Motor – od 9 do 17 miejsc w zależności od konfiguracji i zabudowy. W praktyce kluczowe jest rozróżnienie wersji 9-osobowych, które mogą mieścić się w ramach uprawnień kat. B, od minibusów powyżej 9 miejsc, gdzie decydujące znaczenie mają homologacja, DMC i wymagania wobec kierowcy."
 faq:
   - question: "Ile miejsc ma Deliver 9 osobowy?"
     answer: "W artykule omawiamy konfiguracje od 9 do 17 miejsc łącznie z kierowcą. Trzeba jednak odróżnić wersje fabryczne od zabudów wykonywanych przez firmy zewnętrzne."
   - question: "Czy Deliver 9 osobowy nadaje się do transferów?"
-    answer: "Tak – szczególnie w konfiguracji 9-miejscowej, gdzie łatwiej pogodzić komfort pasażerów z miejscem na bagaż. Wyposażenie i układ wnętrza zależą jednak od konkretnej zabudowy."
+    answer: "Tak – szczególnie w konfiguracji 9-miejscowej, w której łatwiej pogodzić komfort pasażerów z miejscem na bagaż. Wyposażenie i układ wnętrza zależą jednak od konkretnej zabudowy."
   - question: "Ile kosztuje Deliver 9 osobowy?"
-    answer: "Cena zależy od auta bazowego i zakresu zabudowy pasażerskiej. W przypadku busów 9-, 14- i 17-miejscowych trzeba liczyć osobno koszt pojazdu bazowego oraz wykonania i homologacji zabudowy."
+    answer: "Cena zależy od pojazdu bazowego i zakresu zabudowy pasażerskiej. W przypadku busów 9-, 14- i 17-miejscowych trzeba osobno doliczyć koszt pojazdu bazowego oraz wykonania i homologacji zabudowy."
 sources:
   - "dane wymagają wskazania precyzyjnych kart katalogowych"
   - "cenników i wersji pojazdów wraz z datą dostępu. Wcześniejsze ogólne odwołanie do „Maxus Polska"
@@ -30,11 +30,11 @@ sources:
 
 ## Maxus Deliver 9 osobowy – konstrukcja i wersje
 
-Maxus Deliver 9 osobowy to pojazd budowany na bazie dużego vana dostawczego, ale w praktyce trzeba odróżnić wersję bazową od gotowego busa pasażerskiego. To ważne, bo liczba miejsc, homologacja i zakres wyposażenia zależą nie tylko od samego auta, ale też od rodzaju zabudowy.
+Maxus Deliver 9 osobowy to pojazd budowany na bazie dużego vana dostawczego, lecz w praktyce trzeba odróżnić wersję bazową od gotowego busa pasażerskiego. To istotne, bo liczba miejsc, homologacja i zakres wyposażenia zależą nie tylko od samego auta, ale także od rodzaju zabudowy.
 
-Deliver 9 osobowy bazuje na tej samej konstrukcji co [Deliver 9 furgon](/modele/maxus-deliver-9/) – z silnikiem 2.0 diesel z przodu i napędem na tylną oś. W opisywanych wersjach należy mówić o 6-biegowej skrzyni manualnej, bo wzmiankę o automacie trzeba usunąć bez wskazania konkretnej, potwierdzonej wersji i rocznika.
+Deliver 9 osobowy opiera się na tej samej konstrukcji co [Deliver 9 furgon](/modele/maxus-deliver-9/) – z silnikiem 2.0 diesel z przodu i napędem na tylną oś. W opisywanych wersjach należy mówić o 6-biegowej skrzyni manualnej, ponieważ wzmiankę o automacie trzeba usunąć bez wskazania konkretnej, potwierdzonej wersji i rocznika.
 
-Z punktu widzenia przepisów kluczowa jest homologacja. Wersje przeznaczone do przewozu więcej niż 8 pasażerów poza kierowcą mieszczą się w kategorii M2 przy DMC do 5,0 t, a powyżej 5,0 t w M3. Dla kierowcy z kat. B istotna pozostaje granica do 3,5 t DMC i maksymalnie 9 miejsc łącznie z kierowcą.
+Z punktu widzenia przepisów kluczowa jest homologacja. Wersje przeznaczone do przewozu więcej niż 8 pasażerów poza kierowcą mieszczą się w kategorii M2 przy DMC do 5,0 t, a powyżej 5,0 t – w M3. Dla kierowcy z kat. B istotna pozostaje granica do 3,5 t DMC oraz maksymalnie 9 miejsc łącznie z kierowcą.
 
 ### Konfiguracje miejsc
 
@@ -47,11 +47,11 @@ Z punktu widzenia przepisów kluczowa jest homologacja. Wersje przeznaczone do p
 
 Zakres od 9 do 17 miejsc wymaga doprecyzowania, bo nie każda konfiguracja musi być seryjną ofertą producenta. W przypadku Deliver 9 część układów pasażerskich należy traktować jako zabudowy wykonywane przez firmy zewnętrzne, a nie jako jednolitą specyfikację fabryczną.
 
-W praktyce wersja 9-osobowa jest najprostsza formalnie, jeśli mieści się w 3,5 t DMC. Przy większych busach nie wystarczy sama liczba miejsc – trzeba jeszcze sprawdzić homologację, DMC oraz to, czy pojazd mieści się w ograniczeniach prawa jazdy D1, które obejmuje maksymalnie 16 pasażerów poza kierowcą i długość do 8 m.
+W praktyce wersja 9-osobowa jest najprostsza formalnie, jeśli mieści się w 3,5 t DMC. Przy większych busach nie wystarczy sama liczba miejsc – trzeba jeszcze sprawdzić homologację, DMC oraz to, czy pojazd mieści się w ograniczeniach prawa jazdy kat. D1, które obejmuje maksymalnie 16 pasażerów poza kierowcą i długość do 8 m.
 
 ### Wymiary osobowego Deliver 9
 
-W tej sekcji trzeba trzymać się wyłącznie danych pewnych. Konkretne liczby długości i rozstawu osi podawane wcześniej były niepewne, dlatego zostawiamy parametry, które wynikają bezpośrednio z zakresów homologacyjnych i wymagań dla busów osobowych.
+W tej sekcji trzeba trzymać się wyłącznie danych pewnych. Konkretne wartości długości i rozstawu osi podawane wcześniej były niepewne, dlatego pozostawiamy parametry wynikające bezpośrednio z zakresów homologacyjnych i wymagań dla busów osobowych.
 
 | Parametr | Wartość / zakres istotny praktycznie |
 |----------|--------------------------------------|
@@ -62,32 +62,32 @@ W tej sekcji trzeba trzymać się wyłącznie danych pewnych. Konkretne liczby d
 | Liczba drzwi pasażerskich | zależna od zabudowy |
 | Pojemność bagażnika za ostatnim rzędem | zależna od liczby rzędów siedzeń i układu wnętrza |
 
-W przypadku busa osobowego same wymiary zewnętrzne nie wystarczą. Równie ważne są masa własna po zabudowie, rezerwa masy na komplet pasażerów, liczba drzwi pasażerskich oraz realna przestrzeń bagażowa za ostatnim rzędem.
+W przypadku busa osobowego same wymiary zewnętrzne nie wystarczą. Równie ważne są masa własna po zabudowie, rezerwa masy na komplet pasażerów, liczba drzwi pasażerskich oraz rzeczywista przestrzeń bagażowa za ostatnim rzędem.
 
-Nie podajemy tu wysokości wewnętrznej, szerokości drzwi bocznych, wysokości progu wejściowego ani szerokości przejść ewakuacyjnych, bo takie dane zależą od konkretnej zabudowy pasażerskiej. W praktyce to właśnie firma zabudowująca decyduje o części kluczowych parametrów użytkowych.
+Nie podajemy tu wysokości wewnętrznej, szerokości drzwi bocznych, wysokości progu wejściowego ani szerokości przejść ewakuacyjnych, bo takie dane zależą od konkretnej zabudowy pasażerskiej. W praktyce to właśnie firma wykonująca zabudowę decyduje o części kluczowych parametrów użytkowych.
 
 {{% info title="Homologacja M2 a prawo jazdy" icon="engineering" %}}
-Prawo jazdy kat. B standardowo obejmuje pojazd samochodowy o DMC do 3,5 t i do 9 miejsc łącznie z kierowcą. Kategoria D1 dotyczy pojazdów o długości nieprzekraczającej 8 m i przeznaczonych do przewozu maksymalnie 16 pasażerów poza kierowcą, a D – pojazdów powyżej tych limitów.
+Prawo jazdy kat. B standardowo obejmuje pojazd samochodowy o DMC do 3,5 t i do 9 miejsc łącznie z kierowcą. Kategoria D1 dotyczy pojazdów o długości nieprzekraczającej 8 m i przeznaczonych do przewozu maksymalnie 16 pasażerów poza kierowcą, a kat. D – pojazdów powyżej tych limitów.
 
-Przy busach konstrukcyjnie przeznaczonych do przewozu więcej niż 9 osób łącznie z kierowcą mogą dochodzić także obowiązki związane z tachografem i czasem pracy kierowcy – zależnie od rodzaju przewozu. Od 31.12.2024 inteligentny tachograf G2V2 jest wymagany w nowych pojazdach objętych zakresem UE 165/2014 w przewozie drogowym.
+Przy busach konstrukcyjnie przeznaczonych do przewozu więcej niż 9 osób łącznie z kierowcą mogą też obowiązywać wymagania związane z tachografem i czasem pracy kierowcy – w zależności od rodzaju przewozu. Od 31.12.2024 inteligentny tachograf G2V2 jest wymagany w nowych pojazdach objętych zakresem rozporządzenia UE 165/2014 w przewozie drogowym.
 {{% /info %}}
 
 ## Silnik i spalanie
 
-W przypadku Maxusa Deliver 9 osobowego punktem pewnym pozostaje 2-litrowy diesel stosowany w tej rodzinie modelowej. Wcześniejsza wzmianka o wersji 136 KM i automacie była niepotwierdzona, dlatego zostaje usunięta.
+W przypadku Maxusa Deliver 9 osobowego pewnym punktem odniesienia pozostaje 2-litrowy diesel stosowany w tej rodzinie modelowej. Wcześniejsza wzmianka o wersji 136 KM i automacie była niepotwierdzona, dlatego zostaje usunięta.
 
 | Wariant | Pojemność | Moc | Moment | Skrzynia |
 |---------|-----------|-----|--------|----------|
 | 2.0 turbo diesel | 1996 cm3 | 150 KM | 375 Nm | 6-biegowa manualna |
 
-To podstawowy zestaw danych, który można bezpiecznie wskazać dla omawianej wersji. W artykule nie podajemy spalania „na pusto” i „pod obciążeniem”, bo wcześniejsze liczby były arbitralne i nie miały rozróżnienia na homologację oraz realną eksploatację.
+To podstawowy zestaw danych, który można z pewnością podać dla omawianej wersji. W artykule nie podajemy spalania „na pusto” i „pod obciążeniem”, bo wcześniejsze liczby były arbitralne i nie rozróżniały homologacji oraz rzeczywistej eksploatacji.
 
-Podobnie usuwamy procentowy wzrost zużycia paliwa przy pełnym obłożeniu. Można jedynie zaznaczyć, że masa pasażerów i sama zabudowa mają istotny wpływ na zużycie paliwa, ale bez wiarygodnych danych nie ma sensu tworzyć pozornie precyzyjnych widełek.
+Podobnie usuwamy procentowy wzrost zużycia paliwa przy pełnym obłożeniu. Można jedynie zaznaczyć, że masa pasażerów i sama zabudowa mają istotny wpływ na zużycie paliwa, lecz bez wiarygodnych danych nie ma sensu tworzyć pozornie precyzyjnych widełek.
 
-W tej sekcji warto jeszcze pamiętać o brakach specyfikacyjnych, które powinny być sprawdzone przed zakupem konkretnego egzemplarza: norma emisji Euro 6/Euro VI, obecność układu SCR/AdBlue, pojemność zbiornika paliwa, prędkość maksymalna, typ zawieszenia, ogumienie, promień zawracania i dopuszczalne obciążenia osi. To parametry ważne eksploatacyjnie, ale muszą wynikać z konkretnej karty katalogowej danej wersji.
+W tej sekcji warto jeszcze pamiętać o lukach w specyfikacji, które należy uzupełnić przed zakupem konkretnego egzemplarza: norma emisji Euro 6/Euro VI, obecność układu SCR/AdBlue, pojemność zbiornika paliwa, prędkość maksymalna, typ zawieszenia, ogumienie, promień zawracania i dopuszczalne obciążenia osi. To parametry ważne w eksploatacji, ale muszą wynikać z konkretnej karty katalogowej danej wersji.
 
 {{% expert name="Marek Kowalczyk" %}}
-Największą zaletą Deliver 9 w wersji pasażerskiej pozostaje sama architektura auta – duży van z napędem RWD dobrze znosi obciążenie pasażerami. Trzeba jednak oddzielić prosty serwis mechaniczny od pełnej obsługi modelu: podstawowe prace wykona wiele warsztatów, ale diagnostyka, części i procedury producenta nadal mają znaczenie.
+Największą zaletą Deliver 9 w wersji pasażerskiej pozostaje sama konstrukcja auta – duży van z napędem RWD dobrze znosi obciążenie pasażerami. Trzeba jednak oddzielić prosty serwis mechaniczny od pełnej obsługi modelu: podstawowe prace wykona wiele warsztatów, ale diagnostyka, części i procedury producenta nadal mają znaczenie.
 {{% /expert %}}
 
 ## Wyposażenie osobowego
@@ -112,13 +112,13 @@ Z punktu widzenia bezpieczeństwa pasażerów przy zakupie trzeba sprawdzić co 
 - Monitoring wnętrza kamerą
 - System informacji pasażerskiej
 
-To właśnie w sekcji opcji najczęściej pojawiają się elementy ważne dla przewozów osobowych: dodatkowa klimatyzacja, rozbudowane nawiewy, wykończenie ścian, indywidualne porty ładowania czy wyposażenie dla przewozów pracowniczych i hotelowych. W praktyce są one częścią pakietu zabudowy, a nie samego auta bazowego.
+To właśnie w sekcji opcji najczęściej pojawiają się elementy ważne dla przewozów osobowych: dodatkowa klimatyzacja, rozbudowane nawiewy, wykończenie ścian, indywidualne porty ładowania czy wyposażenie do przewozów pracowniczych i hotelowych. W praktyce stanowią one część pakietu zabudowy, a nie samego pojazdu bazowego.
 
 ## Ceny Deliver 9 osobowego
 
-W przypadku busa pasażerskiego cena nie składa się wyłącznie z auta bazowego. Trzeba oddzielić koszt pojazdu od kosztu zabudowy pasażerskiej, wyposażenia dodatkowego, homologacji i rejestracji.
+W przypadku busa pasażerskiego cena nie sprowadza się wyłącznie do pojazdu bazowego. Trzeba oddzielić koszt auta od kosztu zabudowy pasażerskiej, wyposażenia dodatkowego, homologacji i rejestracji.
 
-Nie podajemy tu wcześniejszych kwot „od 130 tys. zł netto”, bo zostały zakwestionowane jako zaniżone i niezweryfikowane dla nowego Maxusa Deliver 9 osobowego w Polsce. Usuwamy też pozycję e-Deliver 9 osobowy, bo brak potwierdzonej, szeroko dostępnej oferty i prostego oficjalnego cennika dla takiej wersji.
+Nie podajemy tu wcześniejszych kwot „od 130 tys. zł netto”, bo zostały zakwestionowane jako zaniżone i niezweryfikowane dla nowego Maxusa Deliver 9 osobowego w Polsce. Usuwamy też pozycję e-Deliver 9 osobowy, ponieważ brak potwierdzonej, szeroko dostępnej oferty i prostego oficjalnego cennika dla takiej wersji.
 
 | Składnik ceny | Co obejmuje |
 |--------------|-------------|
@@ -130,13 +130,13 @@ Nie podajemy tu wcześniejszych kwot „od 130 tys. zł netto”, bo zostały za
 
 W praktyce to właśnie koszt zabudowy robi największą różnicę między wersją 9-, 14- i 17-miejscową. W skład takiej zabudowy mogą wchodzić fotele, przeszklenie, klimatyzacja dachowa, ogrzewanie postojowe, wykończenie ścian, homologacja oraz rejestracja pojazdu po zmianach.
 
-Przed zakupem warto też sprawdzić koszty eksploatacji konkretnej wersji. Do najważniejszych należą interwały serwisowe, koszt kompletu opon, koszt ubezpieczenia dla 9-osobowego busa i większego minibusu oraz zużycie AdBlue – jeśli dana wersja korzysta z układu SCR.
+Przed zakupem warto też sprawdzić koszty eksploatacji konkretnej wersji. Do najważniejszych należą okresy między przeglądami, koszt kompletu opon, koszt ubezpieczenia 9-osobowego busa i większego minibusu oraz zużycie AdBlue – jeśli dana wersja korzysta z układu SCR.
 
 {{% youtube %}}
 
 ## Porównanie Maxusa Deliver 9 osobowego z konkurencją
 
-Jeśli mówimy o wersjach 9-, 14- i 17-miejscowych, punktem odniesienia nie powinny być wyłącznie klasyczne kombivany 9-osobowe. Realnymi rywalami w segmencie minibusów są też Mercedes Sprinter Transfer/Tourer, VW Crafter Kombi/Minibus, Ford Transit Minibus oraz Iveco Daily Minibus.
+Jeśli mowa o wersjach 9-, 14- i 17-miejscowych, punktem odniesienia nie powinny być wyłącznie klasyczne kombivany 9-osobowe. Realnymi rywalami w segmencie minibusów są także Mercedes Sprinter Transfer/Tourer, VW Crafter Kombi/Minibus, Ford Transit Minibus oraz Iveco Daily Minibus.
 
 Ponieważ wcześniejsze porównanie zawierało nieprecyzyjne dane – między innymi jedną, oderwaną od wersji długość Sprintera oraz błędne uproszczenie napędu Transita do FWD – bezpieczniej zestawić najważniejsze cechy segmentu. Dla klientów flotowych i przewoźników liczą się przede wszystkim maksymalna liczba miejsc, DMC, rodzaj napędu i długość nadwozia.
 
@@ -150,4 +150,4 @@ Ponieważ wcześniejsze porównanie zawierało nieprecyzyjne dane – między in
 
 Taki układ lepiej oddaje realia rynku niż pozornie dokładna tabela z przypadkowymi liczbami. W segmencie busów osobowych kluczowe jest bowiem porównywanie konkretnych konfiguracji nadwozia, homologacji i DMC, a nie samych nazw modeli.
 
-W samym artykule nie ma podstaw do stwierdzeń typu „najniższa cena serwisu” czy „lepsze prowadzenie”, dlatego takie oceny usuwamy. Bez twardych danych o kosztach przeglądów, częściach i TCO byłyby to tylko marketingowe skróty.
+W samym artykule nie ma podstaw do stwierdzeń typu „najniższa cena serwisu” czy „lepsze prowadzenie”, dlatego takie oceny usuwamy. Bez twardych danych o kosztach przeglądów, częściach i TCO byłyby to jedynie marketingowe skróty myślowe.
