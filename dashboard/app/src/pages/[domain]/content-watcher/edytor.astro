@@ -2858,8 +2858,11 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   /* Frazy z panelu „Frazy do pokrycia" zaznaczone w treści. Podświetlenia idą
      przez CSS Custom Highlight API (zakresy, nie elementy), więc reguła nie
      może być scope'owana – nie ma tu żadnego elementu do oznaczenia. */
+  /* „Było w tekście" musi mieć INNY kolor niż „dopisane", nie inny odcień –
+     accent-blue w motywie ICEA to limonka, więc zlewała się ze status-ok.
+     Stąd klasyczny żółty zakreślacz vs zieleń nowości. */
   ::highlight(cw-keyword) {
-    background: color-mix(in srgb, var(--accent-blue) 30%, transparent);
+    background: color-mix(in srgb, var(--status-warn-fg) 32%, transparent);
     color: var(--ink);
   }
   ::highlight(cw-keyword-new) {
@@ -3061,7 +3064,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-kw-legend { margin: 10px 0 0; font-size: .68rem; line-height: 1.6; color: var(--ink-faint); }
   .ed-kw-swatch { display: inline-block; width: 20px; height: 9px; border-radius: 2px;
     margin: 0 4px 0 10px; vertical-align: baseline; }
-  .ed-kw-swatch.was { background: color-mix(in srgb, var(--accent-blue) 30%, transparent); }
+  .ed-kw-swatch.was { background: color-mix(in srgb, var(--status-warn-fg) 32%, transparent); }
   .ed-kw-swatch.new { background: color-mix(in srgb, var(--status-ok) 32%, transparent); }
   .ed-score-kwlist li { display: grid; grid-template-columns: 16px minmax(0, 1fr) auto; gap: 8px;
     align-items: baseline; font-size: .77rem; color: var(--ink-muted); }
