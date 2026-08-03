@@ -1,1 +1,7 @@
 https://zaplecze.pages.dev/* https://busmaniak.pl/:splat 301
+
+# Usunięte newsy off-topic (2026-08-03) – 301 zamiast osieroconych kopii
+# w wewnętrznym cache Pages (deploy nie odświeża ścieżek, których nie ma).
+/news/wojciechowska-van-heukelom-uderza-w-oboz-morawieckiego-mowi-o-grze-do-bramki/ /news/ 301
+/news/luca-van-assche-kim-jest-i-dlaczego-znow-zrobilo-sie-o-nim-glosno/ /news/ 301
+/news/zrownowazony-pieprz-z-wietnamu-zaczyna-sie-na-polu-i-konczy-w-logistyce/ /news/ 301
