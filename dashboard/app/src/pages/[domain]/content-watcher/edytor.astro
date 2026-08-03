@@ -361,7 +361,13 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       headers: { 'X-CW-Request': '1', 'Content-Type': 'application/json', ...(options.headers ?? {}) },
     });
     const data = await response.json().catch(() => ({}));
-    if (!response.ok) throw new Error(data?.error ?? `Błąd ${response.status}`);
+    if (!response.ok) {
+      // Kod odmowy z Workera (np. 'cooldown') jedzie na błędzie – obsługa
+      // może zareagować konkretnie, nie zgadywać z treści komunikatu.
+      const error = new Error(data?.error ?? `Błąd ${response.status}`) as Error & { code?: string };
+      error.code = typeof data?.code === 'string' ? data.code : undefined;
+      throw error;
+    }
     return data;
   };
 
@@ -2083,7 +2089,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       force = true;
     }
 
-    try {
+    const submit = async () => {
       const data = await api(`/api/cw/jobs${force ? '?force=1' : ''}`, {
         method: 'POST',
         body: JSON.stringify({
@@ -2101,7 +2107,30 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       sectionMode.clear();
       render(data.job);
       schedulePoll();
+    };
+
+    try {
+      await submit();
     } catch (error) {
+      // Lokalny cooldownActive() widzi tylko OSTATNI job – po nieudanym
+      // przebiegu jest „failed", więc o wymuszenie nikt nie zapytał, a Worker
+      // odrzuca przez wcześniejszy ukończony przejazd. Pytamy dopiero teraz
+      // i ponawiamy z force=1.
+      if (!force && (error as { code?: string })?.code === 'cooldown') {
+        const ok = window.confirm(
+          `${error instanceof Error ? error.message : ''}\n\n`
+          + 'Uruchomić ponownie mimo limitu? Wymaga to ponownego zużycia limitów '
+          + '(wyszukiwarka, Senuto, tokeny), a obecny wynik w panelu zostanie zastąpiony nowym.',
+        );
+        if (!ok) return;
+        force = true;
+        try {
+          await submit();
+        } catch (retryError) {
+          showError(retryError instanceof Error ? retryError.message : 'Nie udało się dodać zadania do kolejki.');
+        }
+        return;
+      }
       showError(error instanceof Error ? error.message : 'Nie udało się dodać zadania do kolejki.');
     }
   }
