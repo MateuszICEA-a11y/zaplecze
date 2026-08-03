@@ -113,11 +113,11 @@ class Pipeline:
         self.state["steps"][name] = payload
         return result, True
 
-    def _ask(self, prompt_name: str, model: str, *, web_search=False, **values):
+    def _ask(self, prompt_name: str, model: str, *, web_search=False, max_tokens=8000, **values):
         template, version = llm.load_prompt(prompt_name)
         prompt = llm.render(template, editorial_rules=EDITORIAL_RULES, **values)
         self.budget.check("tokens", estimate=len(prompt) // 3)
-        result = llm.call_json(model, prompt, web_search=web_search)
+        result = llm.call_json(model, prompt, web_search=web_search, max_tokens=max_tokens)
         self.budget.add_tokens(result["usage"]["tokens_in"], result["usage"]["tokens_out"])
         return result, version
 
@@ -393,6 +393,9 @@ class Pipeline:
         tasks = self._structure_tasks()
         result, version = self._ask(
             "rewrite", self.model_writer,
+            # Przepisany artykuł w JSON-ie nie mieści się w domyślnych 8k –
+            # ucięta odpowiedź strącała rewrite na model zapasowy.
+            max_tokens=24000,
             brief=context.get("brief") or {},
             structure_tasks=tasks or "brak – kieruj się wytycznymi z analizy",
             sections=payload_sections,
@@ -415,13 +418,17 @@ class Pipeline:
                 if after in snapshot_slots:
                     proposals[slot]["after_slot"] = after
         self.context["proposals"] = proposals
-        return {"payload": {
+        payload = {
             "changed_slots": sorted(proposals),
             "notes": [
                 row.get("change") for row in (result["data"].get("sections") or []) if row.get("change")
             ],
             "headings_missed": self._missed_headings(tasks, context["snapshot"], proposals),
-        }, "model": result["model"], "prompt_version": version, "cost": result["usage"]}
+        }
+        if result.get("fallback_from"):
+            payload["fallback_from"] = result["fallback_from"]
+        return {"payload": payload, "model": result["model"], "prompt_version": version,
+                "cost": result["usage"]}
 
     def _current_text(self, slot: int) -> str:
         """Treść sekcji po dotychczasowych krokach – kolejne ulepszenia pracują

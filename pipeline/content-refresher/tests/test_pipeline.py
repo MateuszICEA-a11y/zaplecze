@@ -768,5 +768,41 @@ class TestOpenRouterPonowienia(unittest.TestCase):
         self.assertIn("openrouter:", str(caught.exception))
 
 
+class TestCallJsonUcieta(unittest.TestCase):
+    """Ucięta odpowiedź (finish_reason=length) nie może strącać kroku na model
+    zapasowy – najpierw ponowienie na tym samym modelu z większym limitem."""
+
+    def test_ponowienie_na_tym_samym_modelu_z_wiekszym_limitem(self):
+        calls = []
+
+        def fake_call(model, prompt, *, json_mode=False, max_tokens=8000, **kwargs):
+            calls.append((model, max_tokens))
+            if len(calls) == 1:
+                return {"text": '{"sections": [', "finish_reason": "length",
+                        "usage": {"tokens_in": 1, "tokens_out": 1}, "model": model}
+            return {"text": '{"ok": true}', "finish_reason": "stop",
+                    "usage": {"tokens_in": 1, "tokens_out": 1}, "model": model}
+
+        with mock.patch.object(llm, "call", fake_call):
+            result = llm.call_json("anthropic/claude-sonnet-5", "prompt", max_tokens=24000)
+        self.assertEqual(calls, [("anthropic/claude-sonnet-5", 24000),
+                                 ("anthropic/claude-sonnet-5", 48000)])
+        self.assertEqual(result["data"], {"ok": True})
+        self.assertNotIn("fallback_from", result)
+
+    def test_fallback_oznaczony_w_wyniku(self):
+        def fake_call(model, prompt, *, json_mode=False, max_tokens=8000, **kwargs):
+            if model == "anthropic/claude-sonnet-5":
+                return {"text": "bez JSON-a", "finish_reason": "stop",
+                        "usage": {"tokens_in": 1, "tokens_out": 1}, "model": model}
+            return {"text": '{"ok": true}', "finish_reason": "stop",
+                    "usage": {"tokens_in": 1, "tokens_out": 1}, "model": model}
+
+        with mock.patch.object(llm, "call", fake_call):
+            result = llm.call_json("anthropic/claude-sonnet-5", "prompt")
+        self.assertEqual(result["fallback_from"], "anthropic/claude-sonnet-5")
+        self.assertEqual(result["model"], llm.MODEL_FALLBACK)
+
+
 if __name__ == "__main__":
     unittest.main()

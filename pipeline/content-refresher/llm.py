@@ -131,6 +131,7 @@ def call(model: str, prompt: str, *, system: str = "", web_search: bool = False,
     usage = data.get("usage") or {}
     return {
         "text": (choices[0].get("message") or {}).get("content") or "",
+        "finish_reason": choices[0].get("finish_reason") or "",
         "usage": {
             "tokens_in": usage.get("prompt_tokens") or 0,
             "tokens_out": usage.get("completion_tokens") or 0,
@@ -139,14 +140,25 @@ def call(model: str, prompt: str, *, system: str = "", web_search: bool = False,
     }
 
 
-def call_json(model: str, prompt: str, **kwargs) -> dict:
+def call_json(model: str, prompt: str, *, max_tokens: int = 8000, **kwargs) -> dict:
     """Wywołanie z oczekiwaniem JSON-a. Model bywa gadatliwy, więc wyłuskujemy
-    obiekt z odpowiedzi; przy porażce próbujemy raz modelu zapasowego."""
-    result = call(model, prompt, json_mode=True, **kwargs)
+    obiekt z odpowiedzi; przy porażce próbujemy raz modelu zapasowego.
+
+    Odpowiedź ucięta na limicie tokenów (finish_reason=length) nie jest winą
+    modelu – ponawiamy na tym samym modelu z podwojonym limitem, zanim w ogóle
+    dotkniemy zapasowego. Cichy zjazd na najtańszy model przy rewrite całego
+    artykułu podmieniał autora tekstu bez śladu (zlecenie 2026-08-03).
+    """
+    result = call(model, prompt, json_mode=True, max_tokens=max_tokens, **kwargs)
     parsed = _extract_json(result["text"])
-    if parsed is None and model != MODEL_FALLBACK:
-        result = call(MODEL_FALLBACK, prompt, json_mode=True, **kwargs)
+    if parsed is None and result.get("finish_reason") == "length":
+        result = call(model, prompt, json_mode=True, max_tokens=max_tokens * 2, **kwargs)
         parsed = _extract_json(result["text"])
+    if parsed is None and model != MODEL_FALLBACK:
+        result = call(MODEL_FALLBACK, prompt, json_mode=True, max_tokens=max_tokens * 2, **kwargs)
+        parsed = _extract_json(result["text"])
+        if parsed is not None:
+            result["fallback_from"] = model
     if parsed is None:
         raise LlmError("model nie zwrócił poprawnego JSON-a")
     return {**result, "data": parsed}
