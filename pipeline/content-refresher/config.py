@@ -87,9 +87,17 @@ EDITORIAL_RULES = """Zasady redakcyjne, których musisz przestrzegać:
 - Nie zmieniaj sensu zdań, które są poprawne merytorycznie.
 
 Frazy kluczowe – tak się ich używa:
+- Frazy z danych to surowe zapytania z wyszukiwarki, często niegramatyczne
+  („pozyskiwanie klientów fotowoltaika", „leady sprzedażowe fotowoltaika").
+  Taki zapis NIGDY nie wchodzi do tekstu dosłownie – przekształć go w poprawną
+  polszczyznę („pozyskiwanie klientów na fotowoltaikę", „leady sprzedażowe
+  w fotowoltaice"). Wyszukiwarki rozumieją odmianę; kaleka fraza w tekście
+  szkodzi bardziej, niż pomaga.
 - Odmieniaj je zgodnie ze zdaniem. „zlecę pozycjonowanie" ma prawo wystąpić jako
   „zlecając pozycjonowanie" czy „zlecenie pozycjonowania" – liczy się naturalne
   polskie zdanie, nie dosłowny zapis frazy.
+- Nie pogrubiaj fraz kluczowych. `<strong>` służy do akcentowania myśli, nie do
+  oznaczania fraz – pogrubiona fraza w środku akapitu to sygnał SEO-spamu.
 - Nie upychaj. Fraza wchodzi tylko tam, gdzie zdanie i tak by ją zawierało.
   Jeśli nie da się jej wpleść bez sztucznego zdania, kalectwa składniowego albo
   powtórzenia tej samej myśli – POMIŃ JĄ. Brak frazy jest lepszy niż zdanie,
