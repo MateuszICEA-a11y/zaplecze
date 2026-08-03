@@ -525,12 +525,20 @@ class Pipeline:
         # Propozycje wstawiamy w treść – lista adresów obok artykułu nie ma
         # wartości, dopóki ktoś nie przepisze jej ręcznie do CMS-a.
         texts = self._section_texts()
-        sources_slot = self._take_free_slot()
+        # Wpis po wcześniejszym przejeździe ma już sekcję „Źródła" – nową listę
+        # wstawiamy w jej slot (nadpisanie), inaczej każdy przejazd dokładałby
+        # kolejną bibliografię na końcu artykułu.
+        existing_sources = next(
+            (item["slot"] for item in self.context["snapshot"]
+             if item["title"].strip().lower() in ("źródła", "zrodla", "bibliografia")),
+            None,
+        )
+        sources_slot = existing_sources or self._take_free_slot()
         texts, definitions = apply.apply_definitions(texts, data.get("definitions") or [])
         texts, citations = apply.apply_citations(texts, data.get("citations") or [], sources_slot)
         if citations.get("sources_slot"):
             self.context.setdefault("new_titles", {})[citations["sources_slot"]] = "Źródła"
-        else:
+        elif not existing_sources:
             self._return_free_slot(sources_slot)
         self._store_section_texts(texts)
         self.context["citations"] = data
