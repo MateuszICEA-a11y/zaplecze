@@ -105,7 +105,10 @@ def call(model: str, prompt: str, *, system: str = "", web_search: bool = False,
             "type": "openrouter:web_search",
             "parameters": {"max_results": WEB_SEARCH_RESULTS, "search_context_size": "low"},
         }]
-    if json_mode and not is_perplexity:
+    # Azure odrzuca web_search łączony z response_format („Web Search cannot be
+    # used with JSON mode"), a routing providera jest poza naszą kontrolą – przy
+    # wyszukiwaniu polegamy na instrukcji w prompcie i wyłuskaniu w _extract_json.
+    if json_mode and not is_perplexity and "tools" not in payload:
         payload["response_format"] = {"type": "json_object"}
 
     request = urllib.request.Request(
