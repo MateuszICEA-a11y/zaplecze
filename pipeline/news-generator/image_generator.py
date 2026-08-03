@@ -43,6 +43,11 @@ VEHICLE_TYPE_CONSTRAINT = (
 )
 
 CATEGORY_PROMPTS: dict[str, str] = {
+    "incident": (
+        "Emergency services vehicles with warning lights near a road at dusk, "
+        "police tape in the foreground, respectful distance, somber documentary tone. "
+        "No injured people, no wreck close-ups, no fire close-ups."
+    ),
     "fuel": (
         "Wide shot of a modern fuel station at daytime, diesel dispensers visible, "
         "white delivery vans and buses parked nearby. Clean, professional atmosphere."
@@ -76,6 +81,9 @@ CATEGORY_PROMPTS: dict[str, str] = {
 
 # Order matters – checked top to bottom; more specific categories first.
 _CATEGORY_KEYWORDS: list[tuple[str, list[str]]] = [
+    ("incident", ["wypadek", "katastrof", "zderzen", "kolizj", "dachow", "pożar",
+                  "spłon", "podpal", "zapalił", "wjechał", "wypadł z", "ranni",
+                  "nie żyje", "ofiar"]),
     ("fuel", ["paliwo", "diesel", "benzyna", "lpg", "ceny paliw", "tankowanie",
               "ropa", "stacja benzynowa"]),
     ("camper", ["kamper", "campervan", "vanlife", "zabudowa kampera",
@@ -258,10 +266,19 @@ def _detect_category(title: str) -> tuple[str, str | None]:
     return "default", None
 
 
-def build_prompt(title: str, section: str, *, _category: str | None = None, _vehicle_hint: str | None = None) -> str:
+def detect_category(title: str) -> tuple[str, str | None]:
+    """Publiczny dostęp do detekcji – main.py używa jej do routingu obrazków
+    (news interwencyjny nie dostaje cudzego prawdziwego zdjęcia)."""
+    return _detect_category(title)
+
+
+def build_prompt(title: str, section: str, *, lead: str = "",
+                 _category: str | None = None, _vehicle_hint: str | None = None) -> str:
     """Build a category-aware image generation prompt.
 
     Accepts pre-detected category/vehicle_hint to avoid duplicate GPT calls.
+    Kontekst newsa (tytuł + lead) wchodzi do promptu – sama kategoria dawała
+    sceny generyczne i niezwiązane z tematem (odrzucane potem w walidacji).
     """
     if _category is None:
         _category, _vehicle_hint = _detect_category(title)
@@ -269,10 +286,11 @@ def build_prompt(title: str, section: str, *, _category: str | None = None, _veh
     if _vehicle_hint and "{vehicle_hint}" in scene:
         scene = scene.replace("{vehicle_hint}", _vehicle_hint)
     log.info("  Image category: %s (hint: %s)", _category, _vehicle_hint or "none")
+    context = f'The photo illustrates a news article titled: "{title}". {lead} '
     # Skip vehicle type constraint when a specific model is identified –
     # the model itself defines what the vehicle looks like.
     suffix = STYLE_BASE if _category == "model_specific" else STYLE_BASE + VEHICLE_TYPE_CONSTRAINT
-    return f"{scene} {suffix}"
+    return f"{scene} {context}{suffix}"
 
 
 def _validate_image(image_path: Path, title: str, vehicle_hint: str | None = None) -> tuple[bool, str]:
@@ -324,7 +342,10 @@ def _validate_image(image_path: Path, title: str, vehicle_hint: str | None = Non
                             "3. Is the image physically sensible? (no impossible physics, "
                             "objects clipping through each other)\n"
                             "4. Does it look professional? (not an obvious AI failure with artifacts)\n"
-                            "5. Is it thematically appropriate for the article topic?\n"
+                            "5. Is it acceptable as an ILLUSTRATIVE hero for the topic? It does NOT "
+                            "have to depict the exact event – a thematically related scene is fine. "
+                            "Reject only if the image contradicts the topic or shows an unrelated "
+                            "subject (e.g. a scenic holiday mood for a fatal crash article).\n"
                             "Be strict on points 1 and 3-4."
                         ),
                     },
@@ -371,6 +392,9 @@ def generate_hero_image(
     slug: str,
     section: str,
     static_dir: Path,
+    lead: str = "",
+    category: str | None = None,
+    vehicle_hint: str | None = None,
 ) -> str | None:
     """Generate a hero image and return its Hugo URL, or None on failure.
 
@@ -389,8 +413,9 @@ def generate_hero_image(
         log.info("Image already exists: %s", dest.name)
         return f"/images/news/{slug}.webp"
 
-    category, vehicle_hint = _detect_category(title)
-    prompt = build_prompt(title, section, _category=category, _vehicle_hint=vehicle_hint)
+    if category is None:
+        category, vehicle_hint = _detect_category(title)
+    prompt = build_prompt(title, section, lead=lead, _category=category, _vehicle_hint=vehicle_hint)
     rejection_reasons: list[str] = []
 
     for attempt in range(1, MAX_VALIDATION_RETRIES + 2):  # 1 initial + retries

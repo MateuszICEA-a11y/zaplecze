@@ -32,6 +32,7 @@
   <div class="article-hero__inner">
     {{- with .Params.image }}
     <img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}" class="article-hero__img" loading="eager">
+    {{- with $.Params.image_credit }}<span class="article-hero__credit">{{ . }}</span>{{- end }}
     {{- else }}
     <div class="article-hero__img" style="background: linear-gradient(135deg, var(--c-dark) 0%, var(--c-navy) 100%);"></div>
     {{- end }}
