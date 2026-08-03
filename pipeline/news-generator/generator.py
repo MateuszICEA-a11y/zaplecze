@@ -45,8 +45,9 @@ def build_prompt(
     topic: ScoredSignal,
     related_articles: list[dict],
     format_config: dict | None = None,
+    source: dict | None = None,
 ) -> str:
-    """Build the user prompt for GPT-5.4."""
+    """Build the user prompt for the writer model."""
     cfg = format_config or {}
 
     if topic.format_type == "analysis":
@@ -71,14 +72,34 @@ def build_prompt(
 
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
+    if source:
+        facts_block = (
+            f"**Treść artykułu źródłowego (JEDYNE źródło faktów):**\n{source['text']}\n\n"
+            "Zasady faktów: pisz wyłącznie na podstawie powyższej treści źródłowej. "
+            "Nie dodawaj liczb, dat, nazwisk, miejsc ani zdarzeń, których tam nie ma. "
+            "Jeśli źródło czegoś nie precyzuje – nie precyzuj i Ty. Zamiast wypełniaczy "
+            "(„według napływających informacji”, „szczegóły nie są znane”) po prostu "
+            "pomiń wątek. Krótszy, konkretny news jest lepszy niż długi i wodnisty."
+        )
+        source_url = source["url"]
+    else:
+        facts_block = (
+            "Uwaga: nie mamy treści artykułu źródłowego, tylko tytuł i zajawkę. "
+            "Trzymaj się ich ściśle – nie dopowiadaj szczegółów, liczb ani przebiegu "
+            "zdarzeń. Wybierz krótszą formę i pisz ogólnie tylko o tym, co pewne."
+        )
+        source_url = topic.signal.url
+
     return f"""Napisz news dla BusManiak.pl na podstawie tematu:
 
 **Temat:** {topic.signal.title}
 **Opis źródłowy:** {topic.signal.summary}
-**Źródło:** {topic.signal.url}
+**Źródło:** {source_url}
 **Sekcja:** {topic.section}
 **Format:** {word_range}, {h2_range} sekcji H2
 **Data:** {today}
+
+{facts_block}
 
 {extra}{related_text}
 
@@ -109,6 +130,17 @@ Treść...
 ```"""
 
 
+def _make_client(model: str) -> OpenAI:
+    """Modele z prefiksem dostawcy (x-ai/…, anthropic/…) idą przez OpenRouter,
+    gołe nazwy (gpt-5.4) bezpośrednio do OpenAI."""
+    if "/" in model:
+        return OpenAI(
+            base_url="https://openrouter.ai/api/v1",
+            api_key=os.environ["OPENROUTER_API_KEY"],
+        )
+    return OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+
+
 def generate_article(
     topic: ScoredSignal,
     related_articles: list[dict],
@@ -116,14 +148,16 @@ def generate_article(
     temperature: float = 0.7,
     max_completion_tokens: int = 2000,
     format_config: dict | None = None,
+    source: dict | None = None,
 ) -> str:
-    """Generate a news article using GPT-5.4."""
-    client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+    """Generate a news article. `source` to treść artykułu źródłowego
+    ({"url", "text"}) – jedyne dozwolone źródło faktów, gdy jest."""
+    client = _make_client(model)
 
     if topic.format_type == "analysis":
         max_completion_tokens = format_config.get("max_tokens_analysis", 4000) if format_config else 4000
 
-    prompt = build_prompt(topic, related_articles, format_config)
+    prompt = build_prompt(topic, related_articles, format_config, source=source)
 
     response = client.chat.completions.create(
         model=model,

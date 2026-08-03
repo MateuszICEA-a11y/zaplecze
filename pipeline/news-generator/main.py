@@ -18,8 +18,10 @@ import yaml
 from collector import collect_all_signals
 from scorer import select_topic
 from generator import generate_article, parse_llm_output, find_related_articles
+from source_fetcher import fetch_source_text
 from postprocessor import postprocess, build_markdown, generate_slug
-from image_generator import generate_hero_image
+from image_generator import detect_category, generate_hero_image
+from stock_photo import find_stock_photo
 
 logging.basicConfig(
     level=logging.INFO,
@@ -152,15 +154,21 @@ def run() -> None:
     related = find_related_articles(topic.section, str(content_dir), topic.signal.title)
     log.info("Found %d related articles for '%s'", len(related), topic.signal.title[:50])
 
+    # 6b. Fetch source article content – facts for the writer
+    source = fetch_source_text(topic.signal.url)
+    log.info("Source content: %s", f"{len(source['text'])} chars from {source['url'][:80]}" if source else "unavailable")
+
     # 7. Generate article
-    log.info("Generating article via %s...", llm_cfg.get("model", "gpt-5.4"))
+    writer_model = llm_cfg.get("writer_model") or llm_cfg.get("model", "gpt-5.4")
+    log.info("Generating article via %s...", writer_model)
     raw_output = generate_article(
         topic=topic,
         related_articles=related,
-        model=llm_cfg.get("model", "gpt-5.4"),
+        model=writer_model,
         temperature=llm_cfg.get("temperature_writer", 0.7),
         max_completion_tokens=llm_cfg.get("max_tokens_short", 2000),
         format_config=fmt_cfg,
+        source=source,
     )
 
     # 8. Parse LLM output
@@ -183,20 +191,46 @@ def run() -> None:
         fm.setdefault("main_keyword", topic.signal.title.lower())
         fm.setdefault("lead", topic.signal.summary)
 
-    # 9b. Generate hero image
+    # 9b. Hero image – hybryda: prawdziwe zdjęcie z otwartej bazy, fallback kie.ai.
+    # News interwencyjny (wypadek, pożar) nie dostaje cudzego prawdziwego zdjęcia –
+    # fotografia innego zdarzenia w roli relacji wprowadzałaby w błąd; tam od razu
+    # wchodzi neutralna ilustracja AI.
     slug = generate_slug(fm.get("title", topic.signal.title))
     portal_dir = REPO_ROOT / pipeline_cfg.get("content_dir", "portals/busmaniak.pl/content").replace("/content", "")
     static_dir = portal_dir / "static"
-    hero_url = generate_hero_image(
-        title=fm.get("title", topic.signal.title),
-        slug=slug,
-        section=topic.section,
-        static_dir=static_dir,
-    )
+    title = fm.get("title", topic.signal.title)
+    lead = str(fm.get("lead", ""))
+
+    hero_url, hero_credit = None, None
+    category, vehicle_hint = detect_category(title)
+    if category != "incident":
+        queries = [q for q in (vehicle_hint, topic.signal.title) if q]
+        stock = find_stock_photo(
+            queries=queries, title=title, slug=slug,
+            static_dir=static_dir, vehicle_hint=vehicle_hint,
+        )
+        if stock:
+            hero_url, hero_credit = stock["hero_url"], stock["credit"]
+
+    if not hero_url:
+        hero_url = generate_hero_image(
+            title=title,
+            slug=slug,
+            section=topic.section,
+            static_dir=static_dir,
+            lead=lead,
+            category=category,
+            vehicle_hint=vehicle_hint,
+        )
+        if hero_url:
+            hero_credit = "Grafika ilustracyjna: AI"
+
     if hero_url:
         fm["image"] = hero_url
         fm["image_alt"] = f"BusManiak.pl – {fm.get('title', '')}"
-        log.info("Hero image set: %s", hero_url)
+        if hero_credit:
+            fm["image_credit"] = hero_credit
+        log.info("Hero image set: %s (%s)", hero_url, hero_credit)
 
     # 10. Write file (skip if already published today)
     date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")

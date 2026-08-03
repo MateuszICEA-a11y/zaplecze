@@ -39,7 +39,10 @@ trends:
   seeds_dynamic_from: "buses.json"
 
 llm:
+  # Sędzia tematów i walidacja obrazków (OpenAI bezpośrednio).
   model: "gpt-5.4"
+  # Model piszący treść – prefiks dostawcy kieruje przez OpenRouter.
+  writer_model: "x-ai/grok-4.5"
   temperature_judge: 0.3
   temperature_writer: 0.7
   max_tokens_judge: 500
