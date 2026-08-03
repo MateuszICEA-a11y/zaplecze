@@ -1,13 +1,5 @@
 [
   {
-    "title": "Mercedes VLE wjeżdża do Polski. Ceny od 398 200 zł",
-    "date": "2026-04-29",
-    "slug": "mercedes-vle-wjezdza-do-polski-ceny-od-398-200-zl",
-    "section": "kampery",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Toyota pokazuje nowego kampera. Kompaktowy model w sam raz na majówkę",
     "date": "2026-04-30",
     "slug": "toyota-pokazuje-nowego-kampera-kompaktowy-model-w-sam-raz-na-majowke",
@@ -715,6 +707,14 @@
     "title": "Pożar kampera w Dębicy. Na trasie wprowadzono ruch wahadłowy",
     "date": "2026-08-02",
     "slug": "pozar-kampera-w-debicy-na-trasie-wprowadzono-ruch-wahadlowy",
+    "section": "kampery",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Katastrofa autobusu z udziałem kampera. Sześć osób nie żyje, 34 zostały ranne",
+    "date": "2026-08-03",
+    "slug": "katastrofa-autobusu-z-udzialem-kampera-szesc-osob-nie-zyje-34-zostaly-ranne",
     "section": "kampery",
     "format": "short",
     "source": "rss"
