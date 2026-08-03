@@ -251,11 +251,32 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
           <input type="checkbox" data-ed-only-changed />
           tylko zmienione sekcje
         </label>
+        <button type="button" class="ed-preview-open" data-ed-preview-open>podgląd całości</button>
       </div>
     </div>
 
     <div class="ed-doc" data-ed-doc>
       <p class="ed-doc-loading">wczytywanie treści…</p>
+    </div>
+
+    <!-- Podgląd całości: docelowa treść wpisu jednym ciągiem, bez podziału na
+         sekcje i bez interfejsu decyzji – do przeczytania i do zabrania
+         (schowek z formatowaniem pod Google Docs albo plik .doc). -->
+    <div class="ed-preview" data-ed-preview hidden>
+      <div class="ed-preview-panel" role="dialog" aria-modal="true" aria-label="Podgląd całości wpisu">
+        <header class="ed-preview-head">
+          <div class="ed-preview-title">
+            <h3>Podgląd całości</h3>
+            <span class="ed-preview-note" data-ed-preview-note></span>
+          </div>
+          <div class="ed-preview-actions">
+            <button type="button" data-ed-preview-copy>kopiuj do Google Docs</button>
+            <button type="button" data-ed-preview-doc>pobierz .doc</button>
+            <button type="button" data-ed-preview-close>zamknij</button>
+          </div>
+        </header>
+        <div class="ed-preview-body prose" data-ed-preview-body></div>
+      </div>
     </div>
   </section>
 </Layout>
@@ -397,6 +418,10 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     sections: { slot: number; title: string; text: string }[];
   } | null = null;
   let job: Job | null = null;
+  // Id zadania, którego propozycje są nałożone na dokument – ponowny przebieg
+  // tworzy NOWE zadanie i bez przebudowy dokumentu jego wstawki (np. sekcja
+  // „Źródła") dublowałyby się z tymi ze starego przebiegu.
+  let appliedJobId: string | null = null;
   let pollDelay = 3000;
   let pollTimer: number | undefined;
   let clockTimer: number | undefined;
@@ -1599,6 +1624,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
 
   function applyJobToDoc(current: Job) {
     if (!current.sections?.length) return;
+    if (appliedJobId && appliedJobId !== current.id && content) renderDoc();
+    appliedJobId = current.id;
     const host = $('[data-ed-doc]')!;
     const bySlot = new Map<number, HTMLElement>();
     host.querySelectorAll<HTMLElement>('.ed-doc-section:not(.ed-doc-intro)').forEach((node) => {
@@ -2506,6 +2533,80 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     setTimeout(() => (button.textContent = 'kopiuj zatwierdzone'), 1500);
   });
 
+  /* ---------- podgląd całości + eksport do Google Docs ----------
+     Wdrożenie i korekta odbywają się poza edytorem, więc docelowa treść musi
+     dać się przeczytać jednym ciągiem i zabrać ze sobą: schowek niesie HTML
+     (Google Docs przy wklejeniu zachowuje nagłówki, listy i linki), a .doc
+     otwiera się i w Wordzie, i przez „Otwórz w Dokumentach Google". */
+
+  /** Kopia dokumentu bez atrybutów interfejsu – czyste tagi i linki. */
+  function previewSnapshot() {
+    const box = docSnapshot();
+    box.querySelectorAll('*').forEach((node) => {
+      const href = node.tagName === 'A' ? node.getAttribute('href') : null;
+      [...node.attributes].forEach((attr) => node.removeAttribute(attr.name));
+      if (href) node.setAttribute('href', href);
+    });
+    return box;
+  }
+
+  function openPreview() {
+    const host = $('[data-ed-preview-body]')!;
+    host.replaceChildren(...previewSnapshot().childNodes);
+    const words = (host.textContent?.match(/[\p{L}\p{N}][\p{L}\p{N}'’-]*/gu) ?? []).length;
+    const rejected = job?.sections?.filter((section) => section.decision === 'rejected').length ?? 0;
+    $('[data-ed-preview-note]')!.textContent = `${pl.format(words)} słów · wersja po Twoich decyzjach`
+      + (rejected ? ` · ${pl.format(rejected)} odrzuconych sekcji w dotychczasowym brzmieniu` : '');
+    $('[data-ed-preview]')!.hidden = false;
+    document.body.classList.add('ed-preview-lock');
+  }
+
+  function closePreview() {
+    $('[data-ed-preview]')!.hidden = true;
+    document.body.classList.remove('ed-preview-lock');
+  }
+
+  $('[data-ed-preview-open]')?.addEventListener('click', openPreview);
+  $('[data-ed-preview-close]')?.addEventListener('click', closePreview);
+  $('[data-ed-preview]')?.addEventListener('click', (event) => {
+    if (event.target === event.currentTarget) closePreview();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !$('[data-ed-preview]')!.hidden) closePreview();
+  });
+
+  $('[data-ed-preview-copy]')?.addEventListener('click', async (event) => {
+    const button = event.currentTarget as HTMLButtonElement;
+    const body = $('[data-ed-preview-body]')!;
+    const html = `<meta charset="utf-8">${body.innerHTML}`;
+    try {
+      await navigator.clipboard.write([new ClipboardItem({
+        'text/html': new Blob([html], { type: 'text/html' }),
+        'text/plain': new Blob([body.textContent ?? ''], { type: 'text/plain' }),
+      })]);
+      button.textContent = 'skopiowano – wklej w docs.new';
+    } catch {
+      // Starsza przeglądarka bez ClipboardItem – zostaje czysty tekst.
+      await navigator.clipboard.writeText(body.textContent ?? '');
+      button.textContent = 'skopiowano jako tekst';
+    }
+    setTimeout(() => (button.textContent = 'kopiuj do Google Docs'), 2500);
+  });
+
+  $('[data-ed-preview-doc]')?.addEventListener('click', () => {
+    const body = $('[data-ed-preview-body]')!;
+    const title = (entry?.title ?? 'artykuł').replace(/[<>&]/g, '');
+    const slug = title.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ł/g, 'l')
+      .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'artykul';
+    const html = `<html><head><meta charset="utf-8"><title>${title}</title></head><body>${body.innerHTML}</body></html>`;
+    const blob = new Blob(['\ufeff', html], { type: 'application/msword' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = `${slug}.doc`;
+    link.click();
+    setTimeout(() => URL.revokeObjectURL(link.href), 5000);
+  });
+
   $('[data-ed-brief-details]')?.addEventListener('toggle', (event) => {
     (event.currentTarget as HTMLElement).dataset.touched = '1';
   });
@@ -2858,6 +2959,28 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-docstat { display: inline-flex; gap: 6px; align-items: baseline; }
   .ed-docstat b { font: 600 .95rem var(--font-display); color: var(--ink); font-variant-numeric: tabular-nums; }
   .ed-docstat span { font-size: .7rem; color: var(--ink-faint); }
+
+  /* ----- podgląd całości ----- */
+  .ed-preview-open { padding: 4px 11px; border: 1px solid var(--hairline); border-radius: 2px;
+    background: transparent; color: var(--ink-muted); font: inherit; font-size: .72rem; cursor: pointer; }
+  .ed-preview-open:hover { color: var(--ink); border-color: var(--accent-blue); }
+  .ed-preview { position: fixed; inset: 0; z-index: 40; display: flex; justify-content: center;
+    padding: 4vh 16px; background: color-mix(in srgb, #000 42%, transparent); }
+  .ed-preview[hidden] { display: none !important; }
+  body.ed-preview-lock { overflow: hidden; }
+  .ed-preview-panel { display: flex; flex-direction: column; width: min(860px, 100%); max-height: 92vh;
+    background: var(--bg-surface-1); border: 1px solid var(--hairline); border-radius: 2px; }
+  .ed-preview-head { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center;
+    justify-content: space-between; padding: 12px 22px; border-bottom: 1px solid var(--hairline); }
+  .ed-preview-title { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+  .ed-preview-title h3 { margin: 0; font: 600 .95rem var(--font-display); }
+  .ed-preview-note { font-size: .74rem; color: var(--ink-faint); }
+  .ed-preview-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+  .ed-preview-actions button { padding: 4px 11px; border: 1px solid var(--hairline); border-radius: 2px;
+    background: transparent; color: var(--ink-muted); font: inherit; font-size: .72rem; cursor: pointer; }
+  .ed-preview-actions button:hover { color: var(--ink); border-color: var(--accent-blue); }
+  .ed-preview-body { overflow-y: auto; padding: 8px 30px 36px; }
+  .ed-preview-body h1 { font-size: 1.45rem; }
 
   /* ----- rozpoznanie SERP ----- */
   .ed-serp { margin: 0 0 18px; padding: 18px 20px 20px; border: 1px solid var(--hairline);
