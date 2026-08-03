@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 from dataclasses import dataclass
 from datetime import datetime, timezone, timedelta
 from difflib import SequenceMatcher
@@ -98,6 +99,18 @@ def _compute_relevance(title: str, clusters: list[dict]) -> float:
     return best
 
 
+def filter_blocked(signals: list[Signal], patterns: list[str]) -> list[Signal]:
+    """Hard filter: drop signals whose title matches a blocked pattern.
+
+    Substring matching on „van" let through Vietnamese street names and
+    surnames – these never belong on the portal, so no scoring for them.
+    """
+    if not patterns:
+        return signals
+    regexes = [re.compile(p, re.IGNORECASE) for p in patterns]
+    return [s for s in signals if not any(r.search(s.title) for r in regexes)]
+
+
 def _compute_uniqueness(title: str, published_titles: list[str]) -> float:
     """Score how unique a title is vs recently published titles."""
     if not published_titles:
@@ -144,10 +157,16 @@ def llm_judge_and_format(
     model: str = "gpt-5.4",
     temperature: float = 0.3,
     max_completion_tokens: int = 500,
-) -> tuple[int, str]:
+    published_titles: list[str] | None = None,
+) -> tuple[int | None, str]:
     """Use GPT-5.4 to pick the best topic and decide format.
 
-    Returns: (index of chosen candidate, format_type: "short" or "analysis")
+    Returns: (index of chosen candidate or None if all rejected,
+    format_type: "short" or "analysis").
+
+    The judge MUST be able to reject the whole slate – a forced choice used to
+    publish Vietnamese street works and footballer transfers on days when the
+    feed had nothing on-topic (audit 2026-08-03).
     """
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
@@ -155,6 +174,7 @@ def llm_judge_and_format(
         f"{i+1}. [{c.source}] {c.title} – {c.summary[:150]}"
         for i, c in enumerate(candidates)
     )
+    published_text = "\n".join(f"- {t}" for t in (published_titles or [])[-10:]) or "(brak)"
 
     response = client.chat.completions.create(
         model=model,
@@ -166,16 +186,27 @@ def llm_judge_and_format(
                 "content": (
                     "Jesteś redaktorem polskiego portalu BusManiak.pl o busach, vanach, kamperach "
                     "i motoryzacji dostawczej. Twoim zadaniem jest wybrać najciekawszy temat dnia "
-                    "dla czytelników portalu."
+                    "dla czytelników portalu – albo odrzucić wszystkie, jeśli żaden nie pasuje.\n\n"
+                    "Temat pasuje TYLKO wtedy, gdy realnie dotyczy: busów, vanów, samochodów "
+                    "dostawczych, kamperów i caravaningu, autobusów, cen paliw, przepisów "
+                    "transportowych albo rynku pojazdów użytkowych.\n"
+                    "Tematy NIE na portal (odrzucaj bezwzględnie): osoby o nazwiskach zawierających "
+                    "„van” (van Dijk, van Assche, van Heukelom), zagraniczne ulice i inwestycje "
+                    "(Van Cao, Hai Van), polityka, sport, rolnictwo, nieruchomości – nawet jeśli "
+                    "w tytule pada słowo „van”, „bus” czy „logistyka”.\n"
+                    "Odrzucaj też tematy będące powtórką czegoś, co już opublikowaliśmy."
                 ),
             },
             {
                 "role": "user",
                 "content": (
                     f"Oto kandydaci na news dnia:\n\n{candidates_text}\n\n"
+                    f"Ostatnio opublikowane (nie powielaj tych tematów):\n{published_text}\n\n"
                     "Odpowiedz w formacie JSON:\n"
-                    '{"chosen": <numer 1-N>, "reason": "<krótkie uzasadnienie>", '
+                    '{"chosen": <numer 1-N albo 0 gdy żaden nie pasuje>, '
+                    '"reason": "<krótkie uzasadnienie>", '
                     '"format": "<short|analysis>"}\n\n'
+                    "chosen=0 oznacza: dziś nie publikujemy – to lepsze niż news nie na temat.\n"
                     "format=short dla lekkich tematów (premiera, wydarzenie, zmiana ceny) – 400-600 słów.\n"
                     "format=analysis dla głębszych (regulacje, analiza rynku, trend) – 800-1200 słów."
                 ),
@@ -185,13 +216,14 @@ def llm_judge_and_format(
     )
 
     result = json.loads(response.choices[0].message.content)
-    chosen_idx = int(result.get("chosen", 1)) - 1
-    chosen_idx = max(0, min(chosen_idx, len(candidates) - 1))
+    chosen = int(result.get("chosen", 0))
     format_type = result.get("format", "short")
     if format_type not in ("short", "analysis"):
         format_type = "short"
+    if chosen < 1 or chosen > len(candidates):
+        return None, format_type
 
-    return chosen_idx, format_type
+    return chosen - 1, format_type
 
 
 def select_topic(
@@ -201,7 +233,8 @@ def select_topic(
     scoring_config: dict,
     llm_config: dict,
 ) -> ScoredSignal | None:
-    """Full scoring pipeline: algorithmic score → top 5 → LLM judge."""
+    """Full scoring pipeline: blocked filter → algorithmic score → top 8 → LLM judge."""
+    signals = filter_blocked(signals, scoring_config.get("blocked_title_patterns") or [])
     if not signals:
         return None
 
@@ -217,8 +250,9 @@ def select_topic(
         max_age_hours=scoring_config.get("max_age_hours", 48),
     )
 
-    # Take top 5 for LLM judge
-    top_candidates = sorted_signals[:5]
+    # Top 8 for the judge – a wider slate raises the odds that at least one
+    # candidate is genuinely on-topic on a slow news day.
+    top_candidates = sorted_signals[:8]
     if not top_candidates:
         return None
 
@@ -227,7 +261,10 @@ def select_topic(
         model=llm_config.get("model", "gpt-5.4"),
         temperature=llm_config.get("temperature_judge", 0.3),
         max_completion_tokens=llm_config.get("max_tokens_judge", 500),
+        published_titles=[p.get("title", "") for p in published_history[-10:]],
     )
+    if chosen_idx is None:
+        return None
 
     chosen = top_candidates[chosen_idx]
     section = match_section(chosen.title, clusters)

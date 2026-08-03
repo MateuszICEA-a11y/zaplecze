@@ -1,5 +1,8 @@
 feeds:
-  - url: "https://news.google.com/rss/search?q=bus+OR+van+OR+kamper+OR+dostawczy&hl=pl&gl=PL&ceid=PL:pl"
+# Uwaga: gołe „van" w zapytaniu łapało nazwiska (van Dijk, van Heukelom)
+# i wietnamskie ulice (Van Cao, Hai Van) – vany pokrywają feedy modeli
+# oraz „samochód dostawczy".
+  - url: "https://news.google.com/rss/search?q=bus+OR+kamper+OR+%22samochod+dostawczy%22+OR+dostawczy&hl=pl&gl=PL&ceid=PL:pl"
     category: "general"
     name: "Google News PL"
 

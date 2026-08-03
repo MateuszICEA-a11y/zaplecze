@@ -8,6 +8,15 @@ pipeline:
 
 scoring:
   min_score_threshold: 0.4
+  # Twardy filtr tytułów przed scoringiem – tematy, które przechodziły przez
+  # dopasowanie „van" mimo że nie dotyczą portalu (wietnamskie ulice, waluta).
+  blocked_title_patterns:
+    - "wietnam"
+    - "hanoi"
+    - "ho chi minh"
+    - "da nang"
+    - "sajgon"
+    - "\\bvnd\\b"
   freshness_weight: 0.3
   relevance_weight: 0.3
   trend_weight: 0.2
