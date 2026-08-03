@@ -1605,6 +1605,59 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     return tools;
   }
 
+  /* ---------- raport linków w sekcji ----------
+     Model przy przepisywaniu potrafi zgubić istniejące linki wewnętrzne –
+     ta lista pokazuje wprost, które adresy doszły, a które zniknęły,
+     żeby decyzja o sekcji nie wymagała porównywania HTML-a ręcznie. */
+
+  function extractLinks(html: string | null) {
+    const doc = new DOMParser().parseFromString(html ?? '', 'text/html');
+    return [...doc.querySelectorAll<HTMLAnchorElement>('a[href]')].map((link) => ({
+      href: link.getAttribute('href') ?? '',
+      text: link.textContent?.trim() ?? '',
+    }));
+  }
+
+  function sectionLinkDiff(section: Section) {
+    const before = extractLinks(section.text_before);
+    const after = extractLinks(section.text_after);
+    const beforeSet = new Set(before.map((link) => link.href));
+    const afterSet = new Set(after.map((link) => link.href));
+    return {
+      added: after.filter((link) => !beforeSet.has(link.href)),
+      removed: before.filter((link) => !afterSet.has(link.href)),
+    };
+  }
+
+  function linkDiffBlock(section: Section) {
+    const { added, removed } = sectionLinkDiff(section);
+    if (!added.length && !removed.length) return null;
+    const block = document.createElement('div');
+    block.className = 'ed-linkdiff';
+    const row = (sign: string, className: string, link: { href: string; text: string }) => {
+      const item = document.createElement('div');
+      item.className = `ed-linkdiff-row ${className}`;
+      const mark = document.createElement('b');
+      mark.textContent = sign;
+      const anchor = document.createElement('span');
+      anchor.textContent = link.text ? `„${link.text}"` : '(bez anchora)';
+      const target = document.createElement('a');
+      target.href = link.href;
+      target.target = '_blank';
+      target.rel = 'noopener';
+      target.textContent = link.href;
+      item.append(mark, anchor, document.createTextNode(' → '), target);
+      return item;
+    };
+    const head = document.createElement('span');
+    head.className = 'ed-linkdiff-head';
+    head.textContent = `Linki: ${added.length ? `+${added.length} ` : ''}${removed.length ? `−${removed.length} usunięte` : ''}`.trim();
+    block.append(head);
+    for (const link of removed) block.append(row('−', 'removed', link));
+    for (const link of added) block.append(row('+', 'added', link));
+    return block;
+  }
+
   /** Etykiety przy nagłówku sekcji: rozmiar zmiany, ostrzeżenia, stan decyzji. */
   function sectionTags(section: Section) {
     const wrap = document.createElement('span');
@@ -1627,6 +1680,10 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     } else if (stats) tag(`+${pl.format(stats.added)} / −${pl.format(stats.removed)} słów`);
     else tag('aktualizacja');
     if (stats?.shrunk) tag('model wyciął więcej, niż dopisał', 'warn');
+    const links = sectionLinkDiff(section);
+    if (links.removed.length) {
+      tag(links.removed.length === 1 ? 'zniknął 1 link' : `zniknęły ${links.removed.length} linki`, 'warn');
+    }
     if (section.edited) tag('ręcznie poprawiona');
     if (section.decision === 'accepted') tag('zatwierdzone', 'ok');
     if (section.decision === 'rejected') tag('odrzucone', 'no');
@@ -1710,6 +1767,10 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
           section.edited = true;
           button.hidden = true;
           node!.querySelector('.ed-sec-tags')?.replaceWith(sectionTags(section));
+          // Ręczna edycja mogła przywrócić albo dołożyć linki – raport liczymy na nowo.
+          node!.querySelector('.ed-linkdiff')?.remove();
+          const freshDiff = linkDiffBlock(section);
+          if (freshDiff) node!.insertBefore(freshDiff, bodyHost!);
         } catch (error) {
           showError(error instanceof Error ? error.message : 'Nie udało się zapisać poprawek.');
         } finally {
@@ -1729,6 +1790,9 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       const tools = sectionTools(section, paint, onSave);
       if (toolsHost) toolsHost.replaceWith(tools);
       else node.insertBefore(tools, bodyHost);
+      node.querySelector('.ed-linkdiff')?.remove();
+      const linkDiff = linkDiffBlock(section);
+      if (linkDiff) node.insertBefore(linkDiff, bodyHost);
       paint(mode);
       paintDecision();
     }
@@ -3008,6 +3072,19 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-kw-meta { color: var(--ink-faint); font-size: .68rem; font-variant-numeric: tabular-nums; }
 
   /* ----- pasek formatowania ----- */
+  /* ----- raport linków sekcji ----- */
+  .ed-linkdiff { margin: 0 0 12px; padding: 8px 12px; border: 1px solid var(--hairline-soft);
+    border-radius: 2px; background: var(--bg-surface-2); font-size: .74rem; display: grid; gap: 4px; }
+  .ed-linkdiff-head { font-weight: 600; color: var(--ink-muted); font-size: .7rem;
+    letter-spacing: .04em; text-transform: uppercase; }
+  .ed-linkdiff-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: baseline; min-width: 0; }
+  .ed-linkdiff-row b { font-weight: 700; }
+  .ed-linkdiff-row.added b { color: var(--status-ok); }
+  .ed-linkdiff-row.removed b { color: var(--status-err-fg); }
+  .ed-linkdiff-row.removed span { text-decoration: line-through; color: var(--ink-faint); }
+  .ed-linkdiff-row a { color: var(--ink-faint); overflow-wrap: anywhere; }
+  .ed-linkdiff-row a:hover { color: var(--accent-blue); }
+
   /* Pasek formatowania pokazuje się dopiero przy edycji (fokus w treści) –
      dziewięć identycznych pasków nad sekcjami to szum, nie narzędzie.
      mousedown na przyciskach ma preventDefault, więc fokus zostaje w treści

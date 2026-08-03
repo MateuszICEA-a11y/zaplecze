@@ -534,7 +534,12 @@ class Pipeline:
             None,
         )
         sources_slot = existing_sources or self._take_free_slot()
-        texts, definitions = apply.apply_definitions(texts, data.get("definitions") or [])
+        texts, definitions = apply.apply_definitions(
+            texts, data.get("definitions") or [],
+            banned_phrases=[self.context.get("main_keyword") or "",
+                            self.context.get("own_keyword") or "",
+                            self.context.get("title") or ""],
+        )
         texts, citations = apply.apply_citations(texts, data.get("citations") or [], sources_slot)
         if citations.get("sources_slot"):
             self.context.setdefault("new_titles", {})[citations["sources_slot"]] = "Źródła"

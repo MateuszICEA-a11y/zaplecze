@@ -106,6 +106,24 @@ class TestDefinitions(unittest.TestCase):
         self.assertEqual(len(report["applied"]), 1)
         self.assertEqual(result[1].count("<a "), 1)
 
+    def test_anchor_nie_moze_byc_fraza_glowna(self):
+        sections = {1: "<p>Skuteczne pozycjonowanie branży fotowoltaicznej wymaga SEO.</p>"}
+        result, report = apply.apply_definitions(sections, [
+            {"slot": 1, "term": "SEO", "anchor": "pozycjonowanie branży fotowoltaicznej",
+             "url": "https://pl.wikipedia.org/wiki/Optymalizacja_dla_wyszukiwarek_internetowych"},
+        ], banned_phrases=["pozycjonowanie branży fotowoltaicznej"])
+        self.assertNotIn("<a ", result[1])
+        self.assertEqual(report["skipped"][0]["reason"], "anchor pokrywa się z frazą główną wpisu")
+
+    def test_anchor_zdaniowy_odpada(self):
+        sections = {1: "<p>Optymalizacja techniczna strony pod wyszukiwarki to podstawa.</p>"}
+        result, report = apply.apply_definitions(sections, [
+            {"slot": 1, "anchor": "optymalizacja techniczna strony pod wyszukiwarki",
+             "url": "https://pl.wikipedia.org/wiki/Optymalizacja_dla_wyszukiwarek_internetowych"},
+        ])
+        self.assertNotIn("<a ", result[1])
+        self.assertEqual(report["skipped"][0]["reason"], "anchor za długi jak na definicję pojęcia")
+
     def test_tylko_wikipedia(self):
         sections = {1: "<p>Ustaw CHMOD katalogu.</p>"}
         result, report = apply.apply_definitions(sections, [

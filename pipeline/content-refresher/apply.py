@@ -102,16 +102,34 @@ def apply_internal_links(sections: dict[int, str], links: list[dict]) -> tuple[d
     return result, {"applied": applied, "skipped": skipped}
 
 
-def apply_definitions(sections: dict[int, str], definitions: list[dict]) -> tuple[dict[int, str], dict]:
-    """Linki definicyjne (Wikipedia) przy pierwszym wystąpieniu pojęcia."""
+MAX_DEFINITION_ANCHOR_WORDS = 3
+
+
+def apply_definitions(sections: dict[int, str], definitions: list[dict],
+                      banned_phrases: list[str] | None = None) -> tuple[dict[int, str], dict]:
+    """Linki definicyjne (Wikipedia) przy pierwszym wystąpieniu pojęcia.
+
+    `banned_phrases` (fraza główna wpisu itp.) blokują anchor: fraza kluczowa
+    artykułu nigdy nie może linkować do Wikipedii – model potrafił podpiąć
+    definicję SEO pod „pozycjonowanie branży fotowoltaicznej". Długie anchory
+    zdaniowe też odpadają – definicja dotyczy pojęcia, nie tezy.
+    """
     applied, skipped = [], []
     result = dict(sections)
+    banned = [phrase.strip().lower() for phrase in banned_phrases or [] if phrase and phrase.strip()]
     for definition in _dedupe(definitions, "url", MAX_DEFINITIONS):
         slot = int(definition.get("slot") or 0)
         term = (definition.get("anchor") or definition.get("term") or "").strip()
         url = (definition.get("url") or "").strip()
         if slot not in result or not term or "wikipedia.org" not in url:
             skipped.append({**definition, "reason": "brak sekcji albo adres spoza Wikipedii"})
+            continue
+        lowered = term.lower()
+        if any(phrase in lowered or lowered in phrase for phrase in banned):
+            skipped.append({**definition, "reason": "anchor pokrywa się z frazą główną wpisu"})
+            continue
+        if len(term.split()) > MAX_DEFINITION_ANCHOR_WORDS:
+            skipped.append({**definition, "reason": "anchor za długi jak na definicję pojęcia"})
             continue
         html, count = replace_outside_tags(
             result[slot], term, f'<a href="{html_lib.escape(url, quote=True)}">{{}}</a>'
