@@ -46,7 +46,11 @@ def fetch_post(base_url: str, post_type: str, post_id: int) -> dict:
         request = urllib.request.Request(url)
         for key, value in {
             "Accept": "application/json",
-            "User-Agent": "content-refresher",
+            # Przeglądarkowy UA jak w collectorze (sources/_http.py): WAF seohost
+            # dławi „botowe" UA z adresów runnerów GitHuba aż po timeouty,
+            # a "content-refresher" wywracał krok fetch mimo 3 prób.
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                          "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
             **_auth_header(),
         }.items():
             request.add_header(key, value)
