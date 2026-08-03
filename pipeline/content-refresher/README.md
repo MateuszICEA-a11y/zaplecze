@@ -17,7 +17,7 @@ do WordPressa**.
 | `brief` | wytyczne: luki, frazy, struktura, ryzyka | model z websearchem + fakty z analizy konkurencji edytora (env `RIVALS_JSON`, o ile analiza Jina była zrobiona) |
 | `rewrite` | przepisane i uzupełnione sekcje | model piszący |
 | `expert` | cytat eksperta ICEA (≠ autor wpisu) | model piszący |
-| `sources` | przypisy + linki definicyjne wstawione w treść | model z websearchem |
+| `sources` | sekcja „Źródła" (nofollow) na końcu + jedna definicja z Wikipedii w treści | model z websearchem |
 | `internal_links` | linki wewnętrzne wstawione w treść | katalog treści serwisu |
 | `diff` | porównanie „przed/po" per sekcja | `difflib` |
 

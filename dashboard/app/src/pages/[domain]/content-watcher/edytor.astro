@@ -26,7 +26,7 @@ const latest = latestSnapshot(domain!);
 // pipeline'u (przycisk w podsumowaniu), nie decyzja podejmowana z góry.
 const IMPROVEMENTS = [
   { key: 'gaps', label: 'Uzupełnienie braków w treści', note: 'analiza wyników Google → wytyczne → przeredagowanie sekcji' },
-  { key: 'sources', label: 'Źródła i przypisy', note: 'autorytatywne linki + definicja z Wikipedii' },
+  { key: 'sources', label: 'Źródła', note: 'sekcja Źródła (nofollow) na końcu + jedna definicja z Wikipedii w treści' },
   { key: 'internal_links', label: 'Linki wewnętrzne', note: 'dopasowanie z katalogu treści serwisu' },
 ];
 
@@ -335,7 +335,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     brief: 'Wytyczne',
     rewrite: 'Redagowanie sekcji',
     expert: 'Porada eksperta',
-    sources: 'Źródła i przypisy',
+    sources: 'Źródła',
     internal_links: 'Linki wewnętrzne',
     diff: 'Porównanie zmian',
   };

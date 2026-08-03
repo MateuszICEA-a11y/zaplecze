@@ -57,15 +57,17 @@ class TestInternalLinks(unittest.TestCase):
 class TestCitations(unittest.TestCase):
     SECTIONS = {1: "<p>Serwer zwraca kod 403 przy braku uprawnień.</p>"}
 
-    def test_przypis_i_sekcja_zrodel(self):
+    def test_sekcja_zrodel_bez_znacznikow_w_tresci(self):
         result, report = apply.apply_citations(
             self.SECTIONS,
             [{"slot": 1, "anchor": "kod 403", "source_url": "https://developer.mozilla.org/403",
               "source_title": "403 Forbidden", "publisher": "MDN"}],
             sources_slot=6,
         )
-        self.assertIn('<sup class="przypis"><a href="#zrodlo-1">[1]</a></sup>', result[1])
-        self.assertIn('id="zrodlo-1"', result[6])
+        # Decyzja redakcyjna: bibliografia tylko na końcu, treść bez [n].
+        self.assertEqual(result[1], self.SECTIONS[1])
+        self.assertNotIn("<sup", result[1])
+        self.assertIn("403 Forbidden", result[6])
         self.assertIn("nofollow", result[6])
         self.assertEqual(report["sources_slot"], 6)
 
@@ -78,14 +80,15 @@ class TestCitations(unittest.TestCase):
         self.assertIsNone(report["sources_slot"])
         self.assertTrue(any("brak wolnego slotu" in str(row.get("reason", "")) for row in report["skipped"]))
 
-    def test_brak_anchora_dopina_odnosnik_do_akapitu(self):
+    def test_zrodlo_bez_adresu_wraca_na_skipped(self):
         result, report = apply.apply_citations(
             self.SECTIONS,
-            [{"slot": 1, "anchor": "fraza której nie ma", "source_url": "https://x.pl/a"}],
+            [{"slot": 1, "source_url": "ftp://x.pl/a", "source_title": "zły protokół"}],
             sources_slot=6,
         )
-        self.assertIn("[1]</a></sup></p>", result[1])
-        self.assertEqual(len(report["applied"]), 1)
+        self.assertNotIn(6, result)
+        self.assertEqual(len(report["applied"]), 0)
+        self.assertEqual(report["skipped"][0]["reason"], "brak adresu źródła")
 
     def test_limit_przypisow(self):
         citations = [{"slot": 1, "anchor": "kod 403", "source_url": f"https://x.pl/{i}"} for i in range(20)]
@@ -94,14 +97,22 @@ class TestCitations(unittest.TestCase):
 
 
 class TestDefinitions(unittest.TestCase):
+    def test_jedna_definicja_na_artykul(self):
+        sections = {1: "<p>Ustaw CHMOD katalogu na serwerze FTP.</p>"}
+        result, report = apply.apply_definitions(sections, [
+            {"slot": 1, "term": "CHMOD", "anchor": "CHMOD", "url": "https://pl.wikipedia.org/wiki/Chmod"},
+            {"slot": 1, "term": "FTP", "anchor": "FTP", "url": "https://pl.wikipedia.org/wiki/File_Transfer_Protocol"},
+        ])
+        self.assertEqual(len(report["applied"]), 1)
+        self.assertEqual(result[1].count("<a "), 1)
+
     def test_tylko_wikipedia(self):
         sections = {1: "<p>Ustaw CHMOD katalogu.</p>"}
         result, report = apply.apply_definitions(sections, [
-            {"slot": 1, "term": "CHMOD", "anchor": "CHMOD", "url": "https://pl.wikipedia.org/wiki/Chmod"},
-            {"slot": 1, "term": "serwer", "anchor": "serwer", "url": "https://konkurencja.pl/serwer"},
+            {"slot": 1, "term": "CHMOD", "anchor": "CHMOD", "url": "https://konkurencja.pl/chmod"},
         ])
-        self.assertIn("wikipedia.org/wiki/Chmod", result[1])
-        self.assertEqual(len(report["applied"]), 1)
+        self.assertNotIn("konkurencja.pl", result[1])
+        self.assertEqual(len(report["applied"]), 0)
         self.assertEqual(report["skipped"][0]["reason"], "brak sekcji albo adres spoza Wikipedii")
 
 

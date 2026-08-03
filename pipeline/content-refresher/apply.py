@@ -1,4 +1,4 @@
-"""Wstawianie ulepszeń w treść sekcji: linki wewnętrzne, definicje i przypisy.
+"""Wstawianie ulepszeń w treść sekcji: linki wewnętrzne, definicje i sekcja Źródeł.
 
 Model zwraca propozycje (anchor + adres). Tutaj zamieniamy je na realny HTML,
 z dwoma zasadami bezpieczeństwa:
@@ -15,7 +15,9 @@ import html as html_lib
 import re
 
 MAX_CITATIONS = 8
-MAX_DEFINITIONS = 2
+# Decyzja redakcyjna 2026-08-03: jedyny link zewnętrzny w treści to pojedyncza
+# definicja z Wikipedii – reszta źródeł idzie do sekcji „Źródła" na końcu.
+MAX_DEFINITIONS = 1
 MAX_INTERNAL_LINKS = 5
 
 _TAG_SPLIT = re.compile(r"(<[^>]+>)")
@@ -124,49 +126,35 @@ def apply_definitions(sections: dict[int, str], definitions: list[dict]) -> tupl
 
 def apply_citations(sections: dict[int, str], citations: list[dict],
                     sources_slot: int | None = None) -> tuple[dict[int, str], dict]:
-    """Przypisy: odnośnik przy tezie + sekcja „Źródła" na końcu artykułu.
+    """Sekcja „Źródła" na końcu artykułu – sama lista, bez znaczników w treści.
 
-    Numeracja jest wspólna dla całego artykułu, a lista źródeł trafia do
-    wskazanego wolnego slotu ACF. Bez wolnego slotu przypisy nie są wstawiane –
-    lepiej zgłosić to człowiekowi niż zgubić bibliografię.
+    Decyzja redakcyjna (2026-08-03): w tekście nie stawiamy odnośników [n]
+    ani linków przy tezach – bibliografia z rel="nofollow" stoi w osobnej
+    sekcji, a jedynym linkiem zewnętrznym w treści pozostaje pojedyncza
+    definicja z Wikipedii (apply_definitions). Bez wolnego slotu lista nie
+    powstaje – lepiej zgłosić to człowiekowi niż zgubić bibliografię.
     """
     result = dict(sections)
-    usable = _dedupe(citations, "source_url", MAX_CITATIONS)
     applied, skipped = [], []
-    numbered = []
-    for citation in usable:
-        slot = int(citation.get("slot") or 0)
-        anchor = (citation.get("anchor") or "").strip()
-        url = (citation.get("source_url") or "").strip()
-        if slot not in result or not url.startswith("http"):
-            skipped.append({**citation, "reason": "brak sekcji albo adresu źródła"})
-            continue
-        number = len(numbered) + 1
-        marker = f'<sup class="przypis"><a href="#zrodlo-{number}">[{number}]</a></sup>'
-        html, count = replace_outside_tags(result[slot], anchor, f"{{}}{marker}") if anchor else (result[slot], 0)
-        if not count:
-            # Anchor się nie trafił – dopinamy odnośnik na końcu pierwszego akapitu
-            # sekcji, żeby źródło nie zniknęło z artykułu.
-            html, count = re.subn(r"</p>", f"{marker}</p>", result[slot], count=1)
-        if not count:
-            skipped.append({**citation, "reason": "nie udało się osadzić odnośnika"})
-            continue
-        result[slot] = html
-        numbered.append({**citation, "number": number})
-        applied.append(citation)
+    for citation in _dedupe(citations, "source_url", MAX_CITATIONS):
+        if (citation.get("source_url") or "").strip().startswith("http"):
+            applied.append(citation)
+        else:
+            skipped.append({**citation, "reason": "brak adresu źródła"})
 
-    if numbered and sources_slot:
+    if applied and sources_slot:
         items = "\n".join(
-            f'<li id="zrodlo-{row["number"]}">'
+            f"<li>"
             f'<a href="{html_lib.escape(row["source_url"], quote=True)}" rel="nofollow noopener" target="_blank">'
             f'{html_lib.escape(row.get("source_title") or row["source_url"])}</a>'
             f'{" – " + html_lib.escape(row["publisher"]) if row.get("publisher") else ""}'
             f'{" (" + html_lib.escape(str(row["published"])) + ")" if row.get("published") else ""}'
             f"</li>"
-            for row in numbered
+            for row in applied
         )
         result[sources_slot] = f"<ol class=\"zrodla\">\n{items}\n</ol>"
-    elif numbered:
-        skipped.append({"reason": "brak wolnego slotu na sekcję Źródła", "count": len(numbered)})
+    elif applied:
+        skipped.append({"reason": "brak wolnego slotu na sekcję Źródła", "count": len(applied)})
+        applied = []
 
-    return result, {"applied": applied, "skipped": skipped, "sources_slot": sources_slot if numbered else None}
+    return result, {"applied": applied, "skipped": skipped, "sources_slot": sources_slot if applied else None}
