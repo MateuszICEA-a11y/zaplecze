@@ -72,6 +72,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         <div class="ed-serp-actions">
           <span class="ed-serp-stamp" data-ed-serp-stamp></span>
           <button type="button" class="ed-serp-run" data-ed-serp-run>Sprawdź SERP</button>
+          <button type="button" class="ed-serp-fold" title="Zwiń / rozwiń sekcję">zwiń</button>
         </div>
       </div>
       <p class="ed-error" data-ed-serp-error hidden></p>
@@ -93,6 +94,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         <div class="ed-serp-actions">
           <span class="ed-serp-stamp" data-ed-rivals-stamp></span>
           <button type="button" class="ed-serp-run" data-ed-rivals-run disabled>Pobierz treści konkurentów</button>
+          <button type="button" class="ed-serp-fold" title="Zwiń / rozwiń sekcję">zwiń</button>
         </div>
       </div>
       <p class="ed-error" data-ed-rivals-error hidden></p>
@@ -203,6 +205,11 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       <div data-ed-brief></div>
     </details>
 
+    <!-- Dokument i ocena treści w jednym wrapperze: na szerokim ekranie ocena
+         z frazami jedzie do przypiętej kolumny obok dokumentu (ocenianie
+         sekcji bez scrollowania do góry), na węższym zostaje nad dokumentem. -->
+    <div class="ed-workspace">
+    <aside class="ed-side">
     <!-- Ocena treści liczona na żywo z dokumentu: objętość, struktura,
          linkowanie, świeżość i pokrycie fraz, których szuka konkurencja. -->
     <div class="section-head ed-score-head">
@@ -230,7 +237,9 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         </p>
       </div>
     </div>
+    </aside>
 
+    <div class="ed-docwrap">
     <div class="section-head ed-doc-head">
       <h2>Dokument</h2>
       <span class="section-meta" data-ed-doc-meta>treść wpisu z WordPressa</span>
@@ -277,6 +286,8 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
         </header>
         <div class="ed-preview-body prose" data-ed-preview-body></div>
       </div>
+    </div>
+    </div>
     </div>
   </section>
 </Layout>
@@ -1726,7 +1737,17 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     // więc tylko je wyciszamy i dajemy filtr w pasku.
     const changed = new Set(current.sections.map((section) => section.slot));
     bySlot.forEach((node, slot) => {
-      node.classList.toggle('is-unchanged', !changed.has(slot) && current.status === 'done');
+      const unchanged = !changed.has(slot) && current.status === 'done';
+      node.classList.toggle('is-unchanged', unchanged);
+      // Wyciszenie samą przezroczystością myliło się z odrzuconą propozycją –
+      // etykieta mówi wprost, czemu sekcja wygląda inaczej.
+      node.querySelector('.ed-unchanged-tag')?.remove();
+      if (unchanged) {
+        const tag = document.createElement('span');
+        tag.className = 'ed-sec-tag ed-unchanged-tag';
+        tag.textContent = 'bez zmian';
+        node.querySelector('.ed-sec-head')?.append(tag);
+      }
     });
     $('[data-ed-doc-meta]')!.textContent =
       `${bySlot.size} sekcji · ${current.sections.length} z propozycjami zmian`;
@@ -1869,6 +1890,34 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     applyExpertToDoc(current);
     const running = ['queued', 'dispatching', 'running'].includes(current.status);
     $<HTMLButtonElement>('[data-ed-run]')?.toggleAttribute('disabled', running);
+    // Po zakończonym przebiegu analizy zrobiły swoje – zwijamy je, żeby droga
+    // do dokumentu była krótka. Ręczne rozwinięcie ma pierwszeństwo.
+    if (current.status === 'done') {
+      autoFold($('[data-ed-serp]'), true);
+      autoFold($('[data-ed-rivals]'), true);
+    }
+  }
+
+  /* ---------- zwijanie sekcji analitycznych ---------- */
+
+  function foldButton(section: HTMLElement) {
+    return section.querySelector<HTMLButtonElement>('.ed-serp-fold');
+  }
+
+  function autoFold(section: HTMLElement | null, fold: boolean) {
+    if (!section || section.dataset.foldTouched) return;
+    section.classList.toggle('is-folded', fold);
+    const button = foldButton(section);
+    if (button) button.textContent = fold ? 'rozwiń' : 'zwiń';
+  }
+
+  for (const section of document.querySelectorAll<HTMLElement>('[data-ed-serp], [data-ed-rivals]')) {
+    foldButton(section)?.addEventListener('click', () => {
+      section.dataset.foldTouched = '1';
+      const folded = section.classList.toggle('is-folded');
+      const button = foldButton(section);
+      if (button) button.textContent = folded ? 'rozwiń' : 'zwiń';
+    });
   }
 
   /** Polling z narastającym odstępem, wstrzymywany przy ukrytej karcie
@@ -2812,6 +2861,31 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   /* ----- dokument artykułu -----
      Układ jest celowo „edytorski": jedna kolumna tekstu o czytelnej mierze,
      po lewej rynienka na typy bloków (h2, p, ul) i przyciski decyzji. */
+  /* ----- układ dokument + boczny panel oceny -----
+     Na szerokim ekranie ocena treści z frazami stoi w przypiętej kolumnie
+     obok dokumentu – decyzje przy sekcjach zapadają bez scrollowania do góry,
+     a prawa połowa monitora przestaje być pusta. Poniżej progu wszystko
+     wraca do jednej kolumny (aside w DOM stoi przed dokumentem). */
+  @media (min-width: 1500px) {
+    .ed-workspace { display: flex; flex-direction: row-reverse; gap: 24px; align-items: flex-start; }
+    .ed-docwrap { flex: 1; min-width: 0; }
+    .ed-side { flex: 0 0 400px; width: 400px; position: sticky; top: 12px;
+      max-height: calc(100vh - 24px); overflow-y: auto; align-self: flex-start; }
+    .ed-side .ed-score { grid-template-columns: 1fr; }
+    .ed-side .ed-score-keywords { border-left: 0; padding-left: 0; margin-top: 4px;
+      border-top: 1px solid var(--hairline-soft); padding-top: 14px; }
+  }
+
+  /* ----- zwijanie sekcji analitycznych -----
+     Po zakończonym przebiegu SERP i treści konkurencji zrobiły swoje –
+     zostaje sam nagłówek ze stemplem, treść wraca po „rozwiń". */
+  .ed-serp.is-folded > :not(.ed-serp-head) { display: none; }
+  .ed-serp.is-folded .ed-serp-head { padding-bottom: 0; border-bottom: 0; }
+  .ed-serp.is-folded .ed-serp-lead { display: none; }
+  .ed-serp-fold { padding: 4px 11px; border: 1px solid var(--hairline); border-radius: 2px;
+    background: transparent; color: var(--ink-muted); font: inherit; font-size: .72rem; cursor: pointer; }
+  .ed-serp-fold:hover { color: var(--ink); border-color: var(--accent-blue); }
+
   .ed-doc { border: 1px solid var(--hairline); border-radius: 2px; background: var(--bg-surface-1); }
   .ed-doc-loading, .ed-doc-error { margin: 0; padding: 18px 22px; color: var(--ink-faint); font-size: .85rem; }
   .ed-doc-section { position: relative; padding: 26px 28px 30px 76px;
@@ -2844,8 +2918,9 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-doc-section[data-decision="rejected"]::after { background: var(--hairline); }
   .ed-doc-section[data-decision="rejected"] { opacity: .5; }
   .ed-doc-section[data-decision="rejected"]:hover { opacity: 1; }
-  .ed-doc-section.is-unchanged { opacity: .45; }
+  .ed-doc-section.is-unchanged { opacity: .72; }
   .ed-doc-section.is-unchanged:hover { opacity: 1; }
+  .ed-unchanged-tag { opacity: .9; }
 
   /* Przyciski decyzji w rynience – ✓ zatwierdza, ✕ odrzuca, klik w aktywny cofa. */
   .ed-decide { position: absolute; left: 16px; top: 24px; display: grid; gap: 8px; }
@@ -2933,6 +3008,12 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-kw-meta { color: var(--ink-faint); font-size: .68rem; font-variant-numeric: tabular-nums; }
 
   /* ----- pasek formatowania ----- */
+  /* Pasek formatowania pokazuje się dopiero przy edycji (fokus w treści) –
+     dziewięć identycznych pasków nad sekcjami to szum, nie narzędzie.
+     mousedown na przyciskach ma preventDefault, więc fokus zostaje w treści
+     i pasek nie znika w trakcie klikania. */
+  .ed-sec-body > .ed-format, .ed-doc-section > .ed-format { display: none; }
+  .ed-sec-body:focus-within > .ed-format, .ed-doc-section:focus-within > .ed-format { display: flex; }
   .ed-format { display: flex; flex-wrap: wrap; gap: 4px; margin: 0 0 10px; padding: 5px 6px;
     border: 1px solid var(--hairline); border-radius: 2px; background: var(--bg-surface-2); }
   .ed-format-btn { padding: 4px 9px; border: 1px solid transparent; border-radius: 2px;
