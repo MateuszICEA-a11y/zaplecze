@@ -72,6 +72,11 @@ def _post_with_retries(request, retries: int = RETRIES, sleep=time.sleep) -> dic
             last = LlmError(f"openrouter HTTP {err.code}: {detail}")
             if err.code not in RETRY_STATUSES:
                 raise last from err
+        except json.JSONDecodeError as err:
+            # OpenRouter przy długich żądaniach potrafi przysłać sam keep-alive
+            # (strony pustych linii) albo urwać treść – „Expecting value: line 197…".
+            # To stan przejściowy łącza, nie błąd modelu, więc próbujemy ponownie.
+            last = LlmError(f"openrouter: niepełna odpowiedź ({err})")
         except RETRY_ERRORS as err:
             last = LlmError(f"openrouter: {err}")
         except Exception as err:  # noqa: BLE001

@@ -830,21 +830,46 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     return out;
   }
 
-  /** Zakresy tekstu, w których stoi fraza (dowolna odmiana słów, ten sam szyk). */
+  /* Surowa fraza z wyszukiwarki („leady fotowoltaika") wchodzi do tekstu
+     odmieniona i z przyimkiem („leadów na fotowoltaikę") – tak każe reguła
+     redakcyjna. Matcher musi to znosić: przyimki i spójniki mogą stać między
+     słowami frazy (maks. dwa), a w samej frazie są ignorowane. */
+  const PHRASE_FILLERS = new Set(['na', 'w', 'we', 'z', 'ze', 'do', 'dla', 'o', 'u', 'od', 'po',
+    'przy', 'pod', 'nad', 'bez', 'przez', 'i', 'oraz', 'a', 'albo', 'lub', 'czy', 'sie', 'jak']);
+  const MAX_FILLER_GAP = 2;
+
+  /** Zakresy tekstu, w których stoi fraza (odmiana słów + przyimki, ten sam szyk). */
   function findPhrase(text: string, phrase: string) {
-    const needle = tokens(phrase).map((token) => token.stem);
+    const needle = tokens(phrase).map((token) => token.stem).filter((word) => !PHRASE_FILLERS.has(word));
     if (!needle.length) return [];
     const hay = tokens(text);
     const hits: { start: number; end: number }[] = [];
-    for (let i = 0; i + needle.length <= hay.length; i += 1) {
-      if (needle.every((word, offset) => hay[i + offset].stem === word)) {
-        hits.push({ start: hay[i].start, end: hay[i + needle.length - 1].end });
+    for (let i = 0; i < hay.length; i += 1) {
+      if (hay[i].stem !== needle[0]) continue;
+      let last = i;
+      let ok = true;
+      for (let n = 1; n < needle.length && ok; n += 1) {
+        let j = last + 1;
+        let gap = 0;
+        while (j < hay.length && gap < MAX_FILLER_GAP && PHRASE_FILLERS.has(hay[j].stem)) {
+          j += 1;
+          gap += 1;
+        }
+        if (j < hay.length && hay[j].stem === needle[n]) last = j;
+        else ok = false;
       }
+      if (ok) hits.push({ start: hay[i].start, end: hay[last].end });
     }
     return hits;
   }
 
   const hasPhrase = (text: string, phrase: string) => findPhrase(text, phrase).length > 0;
+
+  /** Odmiana frazy faktycznie użyta w tekście – pokazujemy ją na liście fraz. */
+  function phraseVariant(text: string, phrase: string) {
+    const hit = findPhrase(text, phrase)[0];
+    return hit ? text.slice(hit.start, hit.end).replace(/\s+/g, ' ').trim() : null;
+  }
 
   /* ---------- podświetlanie fraz w dokumencie ----------
      Przez CSS Custom Highlight API, nie przez wstawianie <mark> – dokument
@@ -1072,6 +1097,14 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
       const name = document.createElement('span');
       name.className = 'ed-kw-name';
       name.textContent = row.keyword;
+      // Fraza policzona przez odmianę/przyimek – pokazujemy, jak brzmi w tekście.
+      const variant = used ? phraseVariant(text, row.keyword) : null;
+      if (variant && normalize(variant) !== normalize(row.keyword)) {
+        const usedAs = document.createElement('small');
+        usedAs.className = 'ed-kw-variant';
+        usedAs.textContent = `w tekście: „${variant}"`;
+        name.append(usedAs);
+      }
       const meta = document.createElement('span');
       meta.className = 'ed-kw-meta';
       meta.title = KEYWORD_SOURCE_HINT[row.source] ?? '';
@@ -3064,6 +3097,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-kw-legend { margin: 10px 0 0; font-size: .68rem; line-height: 1.6; color: var(--ink-faint); }
   .ed-kw-swatch { display: inline-block; width: 20px; height: 9px; border-radius: 2px;
     margin: 0 4px 0 10px; vertical-align: baseline; }
+  .ed-kw-variant { display: block; font-size: .68rem; color: var(--ink-faint); font-style: italic; }
   .ed-kw-swatch.was { background: color-mix(in srgb, var(--status-warn-fg) 32%, transparent); }
   .ed-kw-swatch.new { background: color-mix(in srgb, var(--status-ok) 32%, transparent); }
   .ed-score-kwlist li { display: grid; grid-template-columns: 16px minmax(0, 1fr) auto; gap: 8px;
