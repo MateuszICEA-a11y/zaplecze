@@ -5,3 +5,8 @@ https://zaplecze.pages.dev/* https://busmaniak.pl/:splat 301
 /news/wojciechowska-van-heukelom-uderza-w-oboz-morawieckiego-mowi-o-grze-do-bramki/ /news/ 301
 /news/luca-van-assche-kim-jest-i-dlaczego-znow-zrobilo-sie-o-nim-glosno/ /news/ 301
 /news/zrownowazony-pieprz-z-wietnamu-zaczyna-sie-na-polu-i-konczy-w-logistyce/ /news/ 301
+
+# Usunięte newsy off-topic (2026-08-04) – ta sama przyczyna: „van" w nazwie
+# własnej (Van Phong, van der Walt) przeszło przed blocked_title_patterns.
+/news/wietnam-otwiera-trase-ekspresowa-chi-thanh-van-phong/ /news/ 301
+/news/nie-zyje-lize-van-der-walt-gwiazda-brytyjskiego-programu-miala-60-lat/ /news/ 301
