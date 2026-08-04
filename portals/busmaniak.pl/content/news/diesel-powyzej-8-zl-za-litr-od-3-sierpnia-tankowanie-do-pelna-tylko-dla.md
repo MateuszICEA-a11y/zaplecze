@@ -34,22 +34,22 @@ Według prognoz e-petrol.pl w dniach 3–9 sierpnia 2026 r. ceny mogą kształto
 - **Olej napędowy** – od ok. 8,09 zł za litr
 - **LPG** – 3,01–3,10 zł za litr
 
-Tydzień wcześniej średnie ceny wynosiły: Pb98 – 8,25 zł/l, Pb95 – 7,44 zł/l, ON – 7,99 zł/l, LPG – ok. 3 zł/l. Prognozy wskazują na lekką korektę w dół przy benzynie 95. Drogo mają pozostać Pb98 i diesel.
+Tydzień wcześniej średnie ceny wynosiły: Pb98 – 8,25 zł/l, Pb95 – 7,44 zł/l, ON – 7,99 zł/l, LPG – ok. 3 zł/l. Prognozy wskazują na lekką korektę w dół przy benzynie 95. Ceny Pb98 i oleju napędowego mają pozostać wysokie.
 
-Dla floty busów, vanów i kamperów kluczowy jest właśnie olej napędowy. Przekroczenie progu 8 zł za litr przy bakach rzędu 70–90 litrów oznacza, że tankowanie „do pełna” robi się odczuwalnie droższe niż jeszcze niedawno.
+Dla flot busów, vanów i kamperów kluczowa jest właśnie cena oleju napędowego. Przekroczenie progu 8 zł za litr przy bakach rzędu 70–90 litrów oznacza, że tankowanie „do pełna” robi się odczuwalnie droższe niż jeszcze niedawno.
 
 ## Ropa w górę i napięcia na Bliskim Wschodzie
 
-Na światowym rynku ropy kończy się tydzień dużych wahań. Surowiec może zamknąć lipiec z największym miesięcznym wzrostem od marca – rzędu ok. 20 proc. Na koniec lipca baryłka dochodziła do 93,14 dol.
+Na światowym rynku ropy kończy się tydzień dużych wahań. Surowiec może zakończyć lipiec największym miesięcznym wzrostem od marca – rzędu ok. 20 proc. Na koniec lipca cena baryłki dochodziła do 93,14 dol.
 
-Rynek reaguje na starcia między USA a Iranem oraz utrudnienia w żegludze przez cieśninę Ormuz, którą płynie spora część ropy z Zatoki Perskiej. Ograniczenia ruchu statków szybko przekładają się na obawy o dostawy i na notowania. Inwestorzy wyczekują decyzji Waszyngtonu – czy odpowiedź wobec Iranu będzie silniejsza, czy bardziej ograniczona ze względu na rynki energii.
+Rynek reaguje na starcia między USA a Iranem oraz utrudnienia w żegludze przez cieśninę Ormuz, którą płynie spora część ropy z Zatoki Perskiej. Ograniczenia ruchu statków szybko przekładają się na obawy o dostawy i wyższe notowania surowca. Inwestorzy wyczekują decyzji Waszyngtonu. Zastanawiają się, czy odpowiedź wobec Iranu będzie zdecydowana, czy raczej ograniczona ze względu na rynki energii.
 
 Na ceny w Polsce wpływają też niepewność wokół podatku od nadzwyczajnych zysków koncernów paliwowych oraz sam fakt zakończenia programu CPN, po którym stawki na stacjach wzrosły niemal z dnia na dzień.
 
 ## Co to oznacza dla kierowców dostawczaków
 
-Wysoki diesel uderza w koszty firm transportowych, kurierskich i każdego, kto jeździ busem na co dzień. Przy sezonie urlopowym rośnie też popyt ze strony kamperów i vanów turystycznych. Pełny bak przestaje być rutyną „przy okazji” – coraz częściej liczy się każdy litr.
+Wysoka cena oleju napędowego podnosi koszty firm transportowych, kurierskich i każdego, kto jeździ busem na co dzień. W sezonie urlopowym rośnie też popyt ze strony właścicieli kamperów i vanów turystycznych. Tankowanie do pełna przestaje być rutyną załatwianą „przy okazji” – coraz częściej liczy się każdy litr.
 
 W takiej sytuacji naturalnie wraca temat realnego [spalania busów](/porownania/spalanie-porownanie/) w trasie i w mieście oraz tego, jak styl jazdy i obciążenie wpływają na rachunek na stacji. LPG pozostaje wyraźnie tańsze (ok. 3–3,10 zł/l), ale w segmencie dostawczym dominuje diesel – i to jego cena decyduje o kosztach eksploatacji.
 
-Podsumowując: pierwszy tydzień sierpnia nie przynosi ulgi. Pb98 i ON trzymają się powyżej 8 zł za litr, Pb95 może lekko spaść, a LPG zostaje w okolicach 3 zł. Dopóki ropa reaguje na napięcia w regionie Zatoki i niepewność regulacyjną w kraju, tankowanie „do pełna” zostaje opcją głównie dla tych, którzy muszą – albo mogą sobie na to pozwolić.
+Pierwszy tydzień sierpnia nie przynosi ulgi. Ceny Pb98 i ON utrzymują się powyżej 8 zł za litr, benzyna Pb95 może lekko potanieć, a stawki za LPG zostają w okolicach 3 zł. Dopóki notowania ropy reagują na napięcia w regionie Zatoki i niepewność regulacyjną w kraju, tankowanie „do pełna” pozostaje opcją głównie dla tych, którzy muszą – albo mogą sobie na to pozwolić.

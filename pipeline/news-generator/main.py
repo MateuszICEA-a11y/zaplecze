@@ -20,6 +20,7 @@ from scorer import select_topic
 from generator import generate_article, parse_llm_output, find_related_articles
 from source_fetcher import fetch_source_text
 from postprocessor import postprocess, build_markdown, generate_slug
+from smoother_bridge import smooth_news
 from image_generator import detect_category, generate_hero_image
 from image_pool import detect_scene, pick_image
 from stock_photo import find_stock_photo
@@ -266,7 +267,7 @@ def run() -> None:
         return
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    markdown = build_markdown(fm, body)
+    markdown = smooth_news(build_markdown(fm, body))
     output_path.write_text(markdown, encoding="utf-8")
     log.info("Written: %s", output_path.relative_to(REPO_ROOT))
 
