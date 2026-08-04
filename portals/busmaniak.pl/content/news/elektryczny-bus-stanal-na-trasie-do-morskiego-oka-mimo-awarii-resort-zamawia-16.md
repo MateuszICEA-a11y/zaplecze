@@ -18,8 +18,9 @@ tags:
 - elektromobilność
 sources:
 - https://news.google.com/rss/articles/CBMiwwFBVV95cUxQS3ZVNWFVXzhlaFFyV2pMU1ByQVp3a2p6c2VLMjRXN2dUNzhhRV8wT29lVTREMkhIaTBMQlVOazRyRDZCT3VRSW5YaV90eXdZaFoyY204a2JXTWp3Y1lnZ2F0bDg4ZGNINHJiN3VlaTZrUkJWY3hMNVQ4aHhLR0k5dHE4ZTRmemY0cEh4VUQwbXBrYWZWRUg0Y1BnQ2ZHczdvaERCajZ4OHV0R1p6c3cwaWo0d3Y1SFBMRXZEblZIeDJQRE0?oc=5
-image: /images/hero-home.webp
+image: /images/news/pool/electric-1.webp
 image_alt: BusManiak.pl – Elektryczny bus stanął na trasie do Morskiego Oka. Mimo awarii resort zamawia 16 kolejnych pojazdów
+image_credit: 'Fot. Matti Blume / CC BY-SA, via Wikimedia Commons'
 ---
 
 ## Awaria na górskiej trasie znów uruchomiła dyskusję

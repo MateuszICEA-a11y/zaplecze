@@ -17,8 +17,9 @@ tags:
 - bezpieczeństwo
 sources:
 - https://news.google.com/rss/articles/CBMirgFBVV95cUxOQXp2ZG9aTG5JbmMwX004NEhwUGVXN3l2cHp0QWtXV0lxWHNYMmpGMEcyMzJfNnNxTVZOV0x0YVR0VnpFX19IMWx2c2RlSzhkN1dDcmhiT3R3aVNSX0ZHNjhNdER0d2g0TU5qSERLWWxrUnlJUkZaajJMYkZIdEpDQlhIMEtEamFhQVJxSmFEVnFkVktkTHZSREJlZkl2NklBUld3TWM5c0oxaW1zcVE?oc=5
-image: /images/bus-kamper-z-lazienka-hero.webp
+image: /images/news/pool/incident-1.webp
 image_alt: BusManiak.pl – Katastrofa autobusu z udziałem kampera. Sześć osób nie żyje, 34 zostały ranne
+image_credit: 'Fot. Ralf Lotys (Sicherlich) / CC BY 3.0, via Wikimedia Commons'
 ---
 
 ## Tragiczny bilans wypadku

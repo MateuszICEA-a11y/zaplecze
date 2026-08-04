@@ -18,8 +18,9 @@ tags:
 - Crafter
 sources:
 - https://news.google.com/rss/articles/CBMiqwFBVV95cUxOblk4b2NxTlB0UTlkRjhKSUVqTFBnMXNtcEphQXhlQnNDWHZoSEl6alVkRW91b0xmWkJFVlBUblotNFI2ektBUjNsYmU1UWhnZGo4Yk5yclNIeDFPU05HSVJTVmg4d0xuTjFseTJfN0pzZ0ItV19YeWs5Yk9iLWc0NUUzVjI3S3Q5a0k5T2pjOG1jLXUydW1kX0J2TDI1SFVJcmlVQ0RUSXlBems?oc=5
-image: /images/bus-kamper-z-lazienka-hero.webp
+image: /images/news/pool/camper-2.webp
 image_alt: BusManiak.pl – Polski VW Grand California w nowej odsłonie. Kamper z Wrześni rusza na światowe rynki
+image_credit: 'Fot. Charles01 / CC BY-SA 4.0, via Wikimedia Commons'
 ---
 
 ## Grand California z Polski zyskuje nową odsłonę

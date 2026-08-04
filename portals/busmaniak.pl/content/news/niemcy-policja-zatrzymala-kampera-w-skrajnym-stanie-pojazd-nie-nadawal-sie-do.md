@@ -18,8 +18,9 @@ tags:
 - pojazdy używane
 sources:
 - https://news.google.com/rss/articles/CBMiwgFBVV95cUxNQkhtcWZ2c3lKM2hnWU1hT2U0SHhZU1lfd0hBWkF1UHV2aEk4b215R3lPMXBYX3A4UkRBMlUxaXVoRERVZVlVRWRPemtmSlhJNkxvOHB3cGVwS3hNNEMtT194VC00VlQ5OUN2YjFPVGNfcGdzT3ZKZ1VYQ0lkYnV0amlENllHM1JqVXFKbUJleHpId216TEdTMFZoN193TjJBbHZ3TmJ2endGNzVzc0tuWXJNZGFuVXFwSklEYnRiVEVSdw?oc=5
-image: /images/bus-kamper-z-lazienka-hero.webp
+image: /images/news/pool/camper-1.webp
 image_alt: 'BusManiak.pl – Niemcy: policja zatrzymała kampera w skrajnym stanie. Pojazd nie nadawał się do dalszej jazdy'
+image_credit: 'Fot. Elise240SX / CC BY-SA 4.0, via Wikimedia Commons'
 ---
 
 ## Kontrola ujawniła poważne problemy techniczne

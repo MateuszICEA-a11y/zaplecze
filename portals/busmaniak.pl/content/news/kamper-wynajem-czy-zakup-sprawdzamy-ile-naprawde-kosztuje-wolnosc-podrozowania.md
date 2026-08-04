@@ -18,8 +18,9 @@ tags:
 - caravaning
 sources:
 - https://news.google.com/rss/articles/CBMi1wJBVV95cUxQal9sYmpFV2pQRktaN3FPZU9QcWFtcTdGek9EMy1VcGxja09JakZTVGdqZTlkaC1PLWxGY1UydXJPbDlzWVJwZ1F1cmFncXJFb2VWRFZLZVNvblZPSnMyZ0JreFM3UUctOWVEeUJldDV2VGhCZGRVV05YWjRoSnFBOTVSOXJWZVRHbzNSSFc4QjFXY196VGl6RjNLcWtSNTJSaUFCZUd5cHJXamhpMnpyckJibHhfR3RvbmNlSDVvNEhYS2h2QlZNMDVkUlJtenVpU1BSTFVvVTlVazd1VUhMempJZkJDNVJST1l6R3pOVXZhWUd6MXNLMVVlTzUyOUlqTzNSeXhWdmJYVGNwMDRMTXlCbjF5SlJIRS1jYlZ1TTVvM3NBOEJMd3R4WVc2c1gxLVF1MVNjaGhlTUVRTWpIazZzc3M0V01QNVNZUV9DUjZMM0Z0MkdV?oc=5
-image: /images/bus-kamper-z-lazienka-hero.webp
+image: /images/news/pool/camper-3.webp
 image_alt: BusManiak.pl – Kamper – wynajem czy zakup? Sprawdzamy, ile naprawdę kosztuje wolność podróżowania
+image_credit: 'Fot. Siggy Nowak (MemoryCatcher) / CC0, via Wikimedia Commons'
 ---
 
 ## Wynajem kusi niskim progiem wejścia, ale rachunek szybko rośnie

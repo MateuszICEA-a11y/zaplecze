@@ -17,8 +17,9 @@ tags:
 - kierowcy
 sources:
 - https://news.google.com/rss/articles/CBMivwFBVV95cUxOWFFKVlE5REs4R1B5VnNEWnItU1BaTWZmem1sMmkzdkxJOENaMlJhTVc5RW0ydVd2bWFUUmNkNlFpdEVjX3pjRWFQWk81ZUp3amR3VTVTT0p3YnJyamRaQWxLU3JxRldza05HNTQwS1lVc3BpWnZoNElZMUpzdTJEdGNnbGhCa0d0Y0E4WVR1WWRWVTJYalNRSkNTTnpBNTBpc3NaUFF1Z1F4OUxUV0tTRzN2Znk4U3l2d3RmZWl2QQ?oc=5
-image: /images/hero-home.webp
+image: /images/news/pool/fuel-2.webp
 image_alt: BusManiak.pl – Tankowanie ma być tańsze. Rząd obniżył ceny maksymalne paliw
+image_credit: 'Fot. Patryk Duszkiewicz / CC BY-SA 4.0, via Wikimedia Commons'
 ---
 
 ## Niższy limit cen paliw – co to oznacza dla kierowców

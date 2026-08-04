@@ -18,8 +18,9 @@ tags:
 - utrudnienia w ruchu
 sources:
 - https://news.google.com/rss/articles/CBMiswFBVV95cUxPdDdjWXhOdkRQd1otS1phcjhxRHB6T293S2p1bHMtU2t2Q1oxNHkxcmJUcFhodXZDUVFQX1U4SGV3SGNscW92YnlEYU1NM1QwS2NHQUpudzdjS1Nfbk5ZOFRxR0JadjBSVnFFeWUyZEEtVEFkUFY2ZF9FZkFqV0h6YWlJQzZxdjF0LV9QUy1NNUdkNjMxN1d3YVpPczNnLVNvc2VDS2Z5R1BSQlp5dkFtQTJQZ9IBuAFBVV95cUxORHlKOGZvNkdWdU0tYmlRc19rZ0xNeDJGS0lsOHZLUC1waTlsbURIcXFXMWh1WG05dzdpbkxCQnM2RDVnRnd5YWt3MDRDcThXT1ZmMVhCZ2NRT0JMb2YxNHhRUjZhYmNkeXdyTHROX29QZ214WEoxZk5uRFVzYUtjTzJmS1ZUZ0JUWkVXY2NVODZFOFZYd09ER3k1a2JlUV9vbnpSV2Q1bl9HRVAyVG9XRHh3eFo3V0lq?oc=5
-image: /images/fiat-ducato-hero.webp
+image: /images/news/pool/incident-3.webp
 image_alt: BusManiak.pl – Przewrócony samochód dostawczy na DK94. Utrudnienia przy wjeździe do Brzeska
+image_credit: 'Fot. Krzysztof Popławski / CC BY 4.0, via Wikimedia Commons'
 ---
 
 ## Dostawczak przewrócił się przy wjeździe do Brzeska

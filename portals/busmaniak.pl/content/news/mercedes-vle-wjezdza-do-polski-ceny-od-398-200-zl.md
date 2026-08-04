@@ -18,8 +18,9 @@ tags:
 - premium
 sources:
 - https://news.google.com/rss/articles/CBMikwFBVV95cUxQNThVS1Vuc3pzMnNTWFkxdUU4OV9ORmFGYzBFM1NvOGc5QnpDWDFTWUxTSmU5OWduTGhoRmVwdHN6eTBVeWZRYmsxQ1FyMV9veXNyMEdRMjFHckJ5OE5zdzhKb2dpa2FWSjFOTEVTVGxkYThCTUdJdERqYllQZlNYSm9hdHZEWWZaM3B3U0V5ME5rakk?oc=5
-image: /images/bus-kamper-z-lazienka-hero.webp
+image: /images/news/pool/van-1.webp
 image_alt: BusManiak.pl – Mercedes VLE wjeżdża do Polski. Ceny od 398 200 zł
+image_credit: 'Fot. Alexander Migl / CC BY-SA 4.0, via Wikimedia Commons'
 ---
 
 ## Mercedes VLE oficjalnie w polskiej ofercie

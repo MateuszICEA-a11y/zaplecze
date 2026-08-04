@@ -18,8 +18,9 @@ tags:
 - transport
 sources:
 - https://news.google.com/rss/articles/CBMirgFBVV95cUxQeUdzU1g4ZEFkQ1FZd1hxampqalRUUU9fLUdmUy1aaXFyR3JwdHRPUDlQRER3ZHNoZTJDc0QzQXh6eVhSQ291VVF4Wmg4TENtckhRMFVIdTlNRGlOcDljYXRWVTRfdE9FM1JrWTEtclpBbHZuVWR3UG1XSVZyLUNGR1VGUzVXUlZnTzNlRVVabGhkZllCYUJad2NCZzItN3BUSEp2dUYyUEh2MHNwQmc?oc=5
-image: /images/fiat-ducato-hero.webp
+image: /images/news/pool/regulations-1.webp
 image_alt: BusManiak.pl – Góra kory w Iveco Daily. ITD zatrzymała bus przeładowany niemal czterokrotnie
+image_credit: 'Fot. Marcin Konsek / CC BY-SA 4.0, via Wikimedia Commons'
 ---
 
 ## ITD zatrzymała Iveco Daily z ogromnym nadmiarem ładunku

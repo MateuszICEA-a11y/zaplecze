@@ -19,8 +19,9 @@ tags:
 - wakacje
 sources:
 - https://news.google.com/rss/articles/CBMifkFVX3lxTE1HZjdHWUpDaVZ1UWJSSUVRV1VJaFp2RTFZbGthX1RLQnJZeVNuZ1piUXJUbmUyQ3RJMDJmYWc3N0RBUXltazhTY1ROVVVkeXBFd2dWZjctS2MwSGRzSFM3bU5YcG9pT3lTSU5BNFVnZkNNVWgyc3JnVHB2cl9RQQ?oc=5
-image: /images/bus-kamper-z-lazienka-hero.webp
+image: /images/news/pool/regulations-2.webp
 image_alt: BusManiak.pl – E-TOLL w sezonie wyjazdowym 2026 – co musi wiedzieć właściciel kampera, przyczepy i auta elektrycznego
+image_credit: 'Fot. Grzegorz W. Tężycki / CC BY-SA 4.0, via Wikimedia Commons'
 ---
 
 ## E-TOLL przed wakacjami – skąd bierze się najwięcej nieporozumień

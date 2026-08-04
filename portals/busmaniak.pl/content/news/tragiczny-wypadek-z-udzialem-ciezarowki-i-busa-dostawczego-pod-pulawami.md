@@ -18,8 +18,9 @@ tags:
 - policja
 sources:
 - https://news.google.com/rss/articles/CBMixgFBVV95cUxNV2lwcG9zNHM2U1FaTWxub0s5cDMtSFZRMUxhNUpNRjlQeDFselRsRC1mUVRHMjhzdDRmelJaZmhxdVY2U2NLVGdUUDBGcGFnVjhYZ0gyVThrTTBrZk9DZUFLTUluTmdoS3U1cmRpSnBFcTdrVmhqZXRRUVQ0TVljek9leVc4NjgweV96UWhoR3NyS1NtRkxhLU41ZW4wTFNwLVlxc0hpMXNNOTlEMmRLdC1pSjYtTFdZUVZ6Ty04ZFNQRE12WVE?oc=5
-image: /images/fiat-ducato-hero.webp
+image: /images/news/pool/incident-2.webp
 image_alt: BusManiak.pl – Tragiczny wypadek z udziałem ciężarówki i busa dostawczego pod Puławami
+image_credit: 'Fot. Jakub Hałun / CC BY 4.0, via Wikimedia Commons'
 ---
 
 ## Śmiertelne zderzenie ciężarówki z busem

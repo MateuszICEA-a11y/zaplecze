@@ -18,8 +18,9 @@ tags:
 - Poznań
 sources:
 - https://news.google.com/rss/articles/CBMioAFBVV95cUxPTGpaQm4xbUd3UnJILWZRbFFPNTJUc0gxSFh2OTZQZG5UUldSaHBjd0VmLVl5RFZMQjhOZEd4M3MxUUZvRVVQNWJETVN1RnNxS0xBa2EzSndkOGdVVzNEdGlHejdrTC15MU55NXJHRXgyQ3ZVREdyZUhSMU5ld1lwR0RFOEpwRFZKMUpzUTZzeU5CaHdWbGpWYlBoQ2FtOVh1?oc=5
-image: /images/hero-home.webp
+image: /images/news/pool/incident-2.webp
 image_alt: BusManiak.pl – Bus przewrócił się po zderzeniu. Utrudnienia na A2 w kierunku Poznania
+image_credit: 'Fot. Jakub Hałun / CC BY 4.0, via Wikimedia Commons'
 ---
 
 ## Zderzenie na A2 i przewrócony bus

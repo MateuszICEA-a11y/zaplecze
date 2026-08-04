@@ -19,8 +19,9 @@ tags:
 - transport
 sources:
 - https://news.google.com/rss/articles/CBMixAFBVV95cUxPM29aQW5saE8xREVnQnJ0Q3l1WUJmdHVpVmlwbnNXaHF3QnV4a2JyaEdocTZWVjVWbUU2eTNrcmRoNlh3MlM5dXd4VHNJWEVKTEZRVHY5NUFlNEpERV9FMElWTks4cXROYm5kV1EwZEdQelVsTTZpbEx2VDRBeWhSejIzSUw2Q1lRUm96azRjUlMzVzBiTnNHQmM5d2h0RFNwbkhJUUN4NndHazRDbWhpVHZKN0ZweUVzY0RsbU5QZmUwbkQ3?oc=5
-image: /images/hero-home.webp
+image: /images/news/pool/fuel-4.webp
 image_alt: BusManiak.pl – Braki paliwa lotniczego w Europie. Polska może odegrać ważną rolę w kryzysie dostaw
+image_credit: 'Fot. Konrad Wąsik / CC BY 3.0, via Wikimedia Commons'
 ---
 
 ## Europejskie lotniska pod presją dostaw

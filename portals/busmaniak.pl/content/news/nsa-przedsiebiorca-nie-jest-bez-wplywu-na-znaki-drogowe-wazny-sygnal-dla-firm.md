@@ -19,8 +19,9 @@ tags:
 - busy
 sources:
 - https://news.google.com/rss/articles/CBMimgFBVV95cUxPZEtQSjBaX29qOGlfV2ZnTjRIVG9DbUUxdG1oNDlhdF8tVDBwVXlFYjlCM2xSOGV4cmxlU2xlaURUMkhFWUtNNFVsRHY1VFFBMWJJakpvWmdXVEhLNXlqSnZTYVBiT3VWV2ZnSU82ODhoZ2tJaG96N0R0RFNYRXZzdGMzTEJoM0JMNU11ZEF2THNpQUllNlBINnhB?oc=5
-image: /images/hero-home.webp
+image: /images/news/pool/regulations-3.webp
 image_alt: 'BusManiak.pl – NSA: przedsiębiorca nie jest bez wpływu na znaki drogowe. Ważny sygnał dla firm transportowych'
+image_credit: 'Fot. Michał Beim / CC BY-SA 4.0, via Wikimedia Commons'
 ---
 
 ## Wyrok, który może zainteresować nie tylko prawników

@@ -18,8 +18,9 @@ tags:
 - kolizja
 sources:
 - https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1RSmJVQVpZalNFTXFCNHpFVzRmazBqT3pJT05CUlh3RXNsNkVKTmVwc1pFWXBfWEhTNG5iZkN0a1BDVV9vaVg5c2dSZjdwRDdxZDlaRkZGZEFTWTFFVXRydF9jUjRKWXc?oc=5
-image: /images/hero-home.webp
+image: /images/news/pool/incident-1.webp
 image_alt: BusManiak.pl – Zderzenie na S61 pod Łomżą. Bus uderzył w tył hondy
+image_credit: 'Fot. Ralf Lotys (Sicherlich) / CC BY 3.0, via Wikimedia Commons'
 ---
 
 ## Kolizja na ekspresówce w rejonie Łomży

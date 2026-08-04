@@ -18,8 +18,9 @@ tags:
 - benzyna
 sources:
 - https://news.google.com/rss/articles/CBMiuwFBVV95cUxQM3hLbEFaYzltNVJSTFdfNERheHRiemFJWHlYQ01RQ3RQVEs1LVVtUlRzSFp6SUtaYjVaaFRlWUhpSURJNlBOZmlJa21fZXEyWGVGSHR0Znh2TFFkV1ZjTnVVMzVvODBOWkp0M3hwOEFzQXJydERmd09DS2RmS1poV1UtaUNKeFFXOW9EOEE1eEpqSWczZ2Ztcms0TkdiaWg1X3ZrTVVoSkhBNGpudnh6dkVsbUthaWYtek5r?oc=5
-image: /images/hero-home.webp
+image: /images/news/pool/fuel-1.webp
 image_alt: BusManiak.pl – Paliwo na Wielkanoc 2026 – nowe prognozy cen na stacjach
+image_credit: 'Fot. Aw58 / CC BY 4.0, via Wikimedia Commons'
 ---
 
 ## Nowe prognozy na świąteczny weekend

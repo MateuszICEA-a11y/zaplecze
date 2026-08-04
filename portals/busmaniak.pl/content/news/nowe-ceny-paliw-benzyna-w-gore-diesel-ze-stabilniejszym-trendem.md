@@ -18,8 +18,9 @@ tags:
 - koszty eksploatacji
 sources:
 - https://news.google.com/rss/articles/CBMibkFVX3lxTE1fSzVWR0NnekdfUjFWUmVZaVBhTnVmUlZUYkp3a25TNzZOdWVYUlZ1eUdjMFgtMkVRdXl5cDRSeWxhbVVwcmMtbThIbWc5VmdVLXYwU3Y2Um1DaHJydm11Ukp5V21UWkY1RU04UFRn?oc=5
-image: /images/hero-home.webp
+image: /images/news/pool/fuel-1.webp
 image_alt: BusManiak.pl – Nowe ceny paliw. Benzyna w górę, diesel ze stabilniejszym trendem
+image_credit: 'Fot. Aw58 / CC BY 4.0, via Wikimedia Commons'
 ---
 
 ## Benzyna drożeje, kierowcy znów odczują to przy kasie

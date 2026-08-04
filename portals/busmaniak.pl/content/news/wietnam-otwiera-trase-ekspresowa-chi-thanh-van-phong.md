@@ -18,8 +18,9 @@ tags:
 - logistyka
 sources:
 - https://news.google.com/rss/articles/CBMiqgFBVV95cUxPU3ZtMUhkdy1UZ3I5a1ctOF9iYlJVaDhXMkpOX0JvV2N1MWR2Q2pORVgwQVR6cTZYU3h2azJYSTN6ZXhFSWxQUnRvTk1hdVQ3VGEzWldwYVgwMFFITk1KQVpSZ3B2YzJZaHJKbU1jZlBFZTBCbzZ2eldVd05xZmMtM1pQVFVyZ2JnbEVybTNSVGUweW5iWlg1a2M1bmx5NWpiZE5ZUkJCZUJJdw?oc=5
-image: /images/hero-home.webp
+image: /images/news/pool/van-3.webp
 image_alt: BusManiak.pl – Wietnam otwiera trasę ekspresową Chi Thanh – Van Phong
+image_credit: 'Fot. Vauxford / CC BY-SA 4.0, via Wikimedia Commons'
 ---
 
 ## Nowa trasa została otwarta dla ruchu

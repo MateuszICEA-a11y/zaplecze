@@ -18,8 +18,9 @@ tags:
 - kampery
 sources:
 - https://news.google.com/rss/articles/CBMikAFBVV95cUxOTVNaMTFQdFBRc1MyeEcyRU5UZDR0Z0RyaTFqTno5ZzVraVRseU5WQlJ5ZG1IV0d2VXVVd2pidlNhOGFaeEVUZG82d19GQVZZZ2JYakJaVTQySHR4bkdUZ3hobXlES2hVdXNaSEpDNjlscXhQOHZuaHBydG9nd0gyaTBzanViSmkzdk1WNGxoZk0?oc=5
-image: /images/bus-kamper-z-lazienka-hero.webp
+image: /images/news/pool/incident-5.webp
 image_alt: BusManiak.pl – Utrudnienia w Dębicy. Zapalił się kamper, wprowadzono ruch wahadłowy
+image_credit: 'Fot. Karol Szadkowski (AMZ Kutno) / CC BY-SA 4.0, via Wikimedia Commons'
 ---
 
 ## Pożar kampera i utrudnienia na drodze

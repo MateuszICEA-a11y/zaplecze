@@ -18,8 +18,9 @@ tags:
 - utrudnienia w ruchu
 sources:
 - https://news.google.com/rss/articles/CBMiekFVX3lxTE5KVjJOR3lJc0RYVDExZHFHUWtnc3NDR29wQVNmRVpGYlNPdjJndW1ia1pzUlRfZDJ1ZkJ2VUlMWVVnaEdoZjZWRVNHZDRUNEplWGNrRm02ckNlWHFVVEVWRi1BNU9TSlV5YU10a0FMaXVsMmFtVUxnSHdB?oc=5
-image: /images/hero-home.webp
+image: /images/news/pool/incident-4.webp
 image_alt: BusManiak.pl – Bus dachował w Skidziniu. Na miejscu pracują służby
+image_credit: 'Fot. Karol Szadkowski (AMZ Kutno) / CC BY-SA 4.0, via Wikimedia Commons'
 ---
 
 ## Dachowanie busa w Skidziniu

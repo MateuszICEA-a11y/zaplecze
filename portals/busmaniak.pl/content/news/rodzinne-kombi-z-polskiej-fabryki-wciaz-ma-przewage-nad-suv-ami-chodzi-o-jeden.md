@@ -18,8 +18,9 @@ tags:
 - praktyczność
 sources:
 - https://news.google.com/rss/articles/CBMi0gFBVV95cUxNMDk1aDlmYVdBNEY4ZWhqaGhacVMwb2ZJMzFYQUI2OVQxWlZhUU5XMmRMQXU0NjRiWFpCN2liZU82YkZvZ2lZN294Z21oSFN2WDQxT05uTnFkSXVXNWM2Zmx5a292U3g5V0NtWVM4SU9ERjVTWlFteXNVVG1mMHFjWWpiSkFRV3k1Z0N1eF9SaGphOUVWRDE1SjRJY1hDeHNETE93MnRBSXR3elZFY2ZWek1JSHB2UGdzM2ptYkJVcndUUHg5UklqenNNY09TbHN4Wnc?oc=5
-image: /images/hero-home.webp
+image: /images/news/pool/van-4.webp
 image_alt: BusManiak.pl – Rodzinne kombi z polskiej fabryki wciąż ma przewagę nad SUV-ami. Chodzi o jeden praktyczny detal
+image_credit: 'Fot. Harvey Bold / CC0, via Wikimedia Commons'
 ---
 
 ## Kombi nadal ma argument, którego SUV-y często nie potrafią przebić

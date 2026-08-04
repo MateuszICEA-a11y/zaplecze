@@ -19,8 +19,9 @@ tags:
 - busy
 sources:
 - https://news.google.com/rss/articles/CBMi3gFBVV95cUxQcW1GeHBvOTFUTzE0b3VOWUtGQXg5UU8xazhjNVIzWnQ1RWJPeWlDczJiei14UGM1V0RrUlliRUZEVFFOQUptcWVSRjMweXlhX0N3MW1zYjVnd25wYjg1WC1KVTlnN0RtUmIycERjSDB1dUl4MjlUcU1LSkhmcUxtTVFWcDhiQUhOTGkwdXRSaDNpdlJxbFFqWS1XRDRPbkk5MjhEN0VtRWtOeVE1aDRnYVNwTDVLTm9kN2ZfMHZCdGNUWUE4UDNrR1lXYTBUNy1Gc0Z1VXcxVE51eWVSMmfSAeMBQVVfeXFMT3Qza1ZyMGV3dFNOWEVVQV9OblM5S1d5LTZ1UUZfWDliazFYSDdLdzI3LVJ2Sm5TZVZJOU9VSDRGcHRpTll5dWp5a2txd3dIX1dndWg1SC0tZlg5UXV5STdxQW5YRmlYX2pvZDl0RlN1Y1hUaGx4d2k5TjRjMkNYaFF0ZExTajBTbEFKYTBfUnZOTTMtMENDYnROdmJUQ2p2T2Vocm04NkpnMElrV3JRVWZYUGstX1RNMTl6cVI0UjlGblBBUUk0N0pCakhLUnEzMTRmNXhXTTFfRkc0cDRjWWJ0Vlk?oc=5
-image: /images/hero-home.webp
+image: /images/news/pool/fuel-3.webp
 image_alt: BusManiak.pl – Droższy diesel uderza w transport. Przedsiębiorcy liczą każdy kilometr
+image_credit: 'Fot. Warszawska rog Szerokiej, Tomaszow Mazowiecki / Public domain, via Wikimedia Commons'
 ---
 
 ## Paliwo znów staje się głównym kosztem operacyjnym

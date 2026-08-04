@@ -17,8 +17,9 @@ tags:
 - Wielka Brytania
 sources:
 - https://news.google.com/rss/articles/CBMitwFBVV95cUxNZXNYamZPN0tveUJvYmJtTDQ5ZUNJWUxZOTBqa0E5VXBBMXJhZ09Zb2l4dVlTODA1ejBuVm5GVy1NYTB6OC0wemFHMWJlajJrY2JEYUhxdlBNZ0xBVWUxUUtQSWJObUpkM3pqM3hNa1BMd1hFWnlQelBBZ2NsUWJEOTBYNVBJdXJDRDdSSHlINjN4T1lVTHZnWnN3WjNyWWF0Vmg4X3lUbDZVVzgyQ0JmTldOTnN6Nzg?oc=5
-image: /images/hero-home.webp
+image: /images/news/pool/incident-2.webp
 image_alt: BusManiak.pl – Nie żyje Lize van der Walt. Gwiazda brytyjskiego programu miała 60 lat
+image_credit: 'Fot. Jakub Hałun / CC BY 4.0, via Wikimedia Commons'
 ---
 
 ## Smutna wiadomość dla widzów programu

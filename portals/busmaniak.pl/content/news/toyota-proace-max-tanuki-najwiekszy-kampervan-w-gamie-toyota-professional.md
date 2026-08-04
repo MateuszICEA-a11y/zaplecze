@@ -19,8 +19,9 @@ tags:
 - kampery
 sources:
 - https://news.google.com/rss/articles/CBMi2gFBVV95cUxPTGtidnlYcUU1UkxLblVGRXd0bkFxeFVMV0cydF9YWkRIeUxMdUVHZWFlc3BDUDNoaUVlNUE1RFhaT0UwOFJ6ZlJWQzFORGFzZ0dMbDhEUndMWDFSV3F0cFVNMnpJQ0tHWkVYYXFrSUdQQU45ejY1V1l3UmpXU2lvM2M5UXlDZ25FWWhJVzZpemFvVGlQRGhUWi1YSmRjV0hKOFJ5dnpHcmF0WHVFNnYxTFdCUVFnRDZxTTJIZmNwY2RnRS00cFBLbUtCNU9QV1pTSUwzMVJGT3d4dw?oc=5
-image: /images/bus-kamper-z-lazienka-hero.webp
+image: /images/news/pool/camper-1.webp
 image_alt: BusManiak.pl – Toyota Proace Max Tanuki – największy kampervan w gamie Toyota Professional
+image_credit: 'Fot. Elise240SX / CC BY-SA 4.0, via Wikimedia Commons'
 ---
 
 ## Toyota stawia na większy format

@@ -18,8 +18,9 @@ tags:
 - bezpieczeństwo
 sources:
 - https://news.google.com/rss/articles/CBMiuwFBVV95cUxQZjhucV92bUFpcHBwRGdGWEJQeG96Q1dBOWdrVVZtMHViYm9KWDdUZHU0MTBIbkk3WU9GdDNvT2xVVHFOSFRZY0hGaUpITVVWRFM4TmUtODJBY3FfMVJ3Wnk1bTJYbXk0NkprUEw4Y2NnV0toWXlYWFVfN2xZNHgxRkVzLTdXMF93N1NwOEw5QWZxOGhuak8taFUyN2tvcm1BVnN0QTBtVkdKTkw2bFhUUGNVcURZRDdMbmM4?oc=5
-image: /images/hero-home.webp
+image: /images/news/pool/incident-5.webp
 image_alt: 'BusManiak.pl – Wierzbica: bus wjechał do rowu na DK61. Jedna osoba trafiła do szpitala'
+image_credit: 'Fot. Karol Szadkowski (AMZ Kutno) / CC BY-SA 4.0, via Wikimedia Commons'
 ---
 
 ## Bus poza jezdnią na krajowej „61”

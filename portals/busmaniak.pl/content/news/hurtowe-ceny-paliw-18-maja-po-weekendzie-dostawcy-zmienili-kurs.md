@@ -19,8 +19,9 @@ tags:
 - transport
 sources:
 - https://news.google.com/rss/articles/CBMiugFBVV95cUxPNVFsVkV3UERDWnpIMzZ6XzB3ZkxVQW5ScXZUZjVFa2RxOXMyM3pIX2UtWDZCbXVpVmVlSXJibi1GZVlOS1FyRnBzZjkzU3lJTEtfZjNNS0VUVGdlTkdQMXpMN3RPTDhvbkRCanJSYlpiSnd1dk1sMTk2SkotVy1RWUJ4bG0wMTNGQTN4dE5HNlNQd3FCandHcHV5M1VVUXRnUm1sZk9xZUE3dHZvMEJiRmdPOGsyUEhrOWc?oc=5
-image: /images/hero-home.webp
+image: /images/news/pool/fuel-4.webp
 image_alt: BusManiak.pl – Hurtowe ceny paliw 18 maja. Po weekendzie dostawcy zmienili kurs
+image_credit: 'Fot. Konrad Wąsik / CC BY 3.0, via Wikimedia Commons'
 ---
 
 ## Rynek paliw po weekendzie wysłał nietypowy sygnał

@@ -19,8 +19,9 @@ tags:
 - wypadek
 sources:
 - https://news.google.com/rss/articles/CBMi9gFBVV95cUxQZzl0VVR2UVRJT3VRYm9aNkk1Wjc4TWJBYTFoZks0WXZfUDg2NV9wRl9BQkxHYmJwbjd6TkdtUm5rMXpYME14OC1SOTVMcUNDX2xPVERwMVRlYVR6MlVpcEVmTXltUlRxQlpmSmlqaGJENGhLT0lURHB3UGgzVnl4bHNaZWlRQzhWVFFSNzl3RHpsSDNkWUFWdnhERXEyNmpEYW96X2NDaGpfWTE5WjNRbXFFaklaTlJQUlRkS0h5Y3FTbnhYeUJOM2NENjVpbWR0SXVpYmluMnNYSGRzQTRaZkRvZ0hPa3FwanBJaU05SE0yTHVud0E?oc=5
-image: /images/bus-kamper-z-lazienka-hero.webp
+image: /images/news/pool/incident-3.webp
 image_alt: BusManiak.pl – Kamper uderzył w bariery na S7 pod Grójcem. Były utrudnienia w ruchu
+image_credit: 'Fot. Krzysztof Popławski / CC BY 4.0, via Wikimedia Commons'
 ---
 
 ## Zdarzenie na S7 w miejscowości Szczęsna

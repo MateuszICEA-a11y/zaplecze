@@ -18,8 +18,9 @@ tags:
 - podkarpacie
 sources:
 - https://news.google.com/rss/articles/CBMirwFBVV95cUxQTTlUVV9neVF5dUl0TkI5a3dRdFp4dkNMYlFJRnpPNWhwaG9OU3dabXE0eVIwcjE0ZjlZSzBZZHhOZmpKVXlHNVMxOXFJNF9od1ZRRllDNGlLR1NHeEpFZ1ppS1FXWi14ZEVGRnczNi1LSzNJTnp6Z2E1bWhiTGhkVHlWZ2c4eHR4MVZISXVaUjVnY0Z6RkFKcHJONDN0d2Zua2twd19UWjl1cmNldTJ3?oc=5
-image: /images/dane-techniczne-tabela-hero.webp
+image: /images/news/pool/incident-4.webp
 image_alt: BusManiak.pl – Bus wypadł z jezdni na A4. Trzy osoby zostały poszkodowane
+image_credit: 'Fot. Karol Szadkowski (AMZ Kutno) / CC BY-SA 4.0, via Wikimedia Commons'
 ---
 
 ## Groźne zdarzenie na autostradzie A4

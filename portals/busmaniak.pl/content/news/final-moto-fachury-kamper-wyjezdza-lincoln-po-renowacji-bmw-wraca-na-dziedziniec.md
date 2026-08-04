@@ -18,8 +18,9 @@ tags:
 - lincoln
 sources:
 - https://news.google.com/rss/articles/CBMitAFBVV95cUxPcG1kWEtnLXZfendnQTRpbndWNHNac3JGRGxXWVNhTFVVRHk1X18xU01XRGlkaUctekVaV3NMZHBwWDdBQWMzdXZvTExKdTBKa1FlZDJhWnVyRlpqcXlJNDI2WXpEM1k1eDBuSjVOMWowYnJzbE44bC1TVENFWnFnZTViVF9GTG1nYnhSaXhrdkRzYTl0d1pjcmZDRVV0b19SUWh6M3FLUl9UeDhtWWFZajdPaFE?oc=5
-image: /images/bus-kamper-z-lazienka-hero.webp
+image: /images/news/pool/camper-1.webp
 image_alt: BusManiak.pl – Finał „Moto Fachury”. Kamper wyjeżdża, Lincoln po renowacji, BMW wraca na dziedziniec
+image_credit: 'Fot. Elise240SX / CC BY-SA 4.0, via Wikimedia Commons'
 ---
 
 ## Kamper po zakończeniu projektu opuszcza warsztat

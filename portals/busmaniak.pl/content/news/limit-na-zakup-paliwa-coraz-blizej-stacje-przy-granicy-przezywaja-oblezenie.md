@@ -18,8 +18,9 @@ tags:
 - transport
 sources:
 - https://news.google.com/rss/articles/CBMixwFBVV95cUxNRVlwWHpQT2ZSa2lKSkw4eU5TcGNDSnlxY3N4VWFIdGc4dUxsQkJ1Y0MyR1FZLXVtMm42eldvd0FiOGdGUDJsUzhJVk1SYm5XYW1Db3QyWjd6TTNGNURVd2hzSE9POTNxSGQ3WUFzOVJDbWdzbWlGdGVHTzdjRHBydXpHNWRSM004REl3VmY3WlRIMjZnaFl3QzBzS05OYThvUlRZNW5vSkdnQmdFU3VkTE4yeWJkMnZIZG9VWk1OaUs5bkJFenVr?oc=5
-image: /images/hero-home.webp
+image: /images/news/pool/fuel-2.webp
 image_alt: BusManiak.pl – Limit na zakup paliwa coraz bliżej. Stacje przy granicy przeżywają oblężenie
+image_credit: 'Fot. Patryk Duszkiewicz / CC BY-SA 4.0, via Wikimedia Commons'
 ---
 
 ## Limity tankowania przestają być tylko teorią

@@ -17,8 +17,9 @@ tags:
 - zloty kamperów
 sources:
 - https://news.google.com/rss/articles/CBMiswFBVV95cUxOV2t2Slo0QVFqbUVaeXBkREhKRzRvTGNSSnFmVVRJV0lwYWFGYzAyblZIVXNncUUzcGlzZWJBMzVXZWZnQTg4QjVHeTlnbFUtUWFNOTJzcHh6Y05tZU5jTHBZTmt2dXUyM0hKQlpEMWRQZDVOWEhHRWVLTHhJVHpHN05JSjJGSWp6cDhuZmMyWmZrTU5RY1lVNkJEdTZzMUxNZ0tFX1pVeW42c0FHellnM1B6bw?oc=5
-image: /images/bus-kamper-z-lazienka-hero.webp
+image: /images/news/pool/camper-4.webp
 image_alt: BusManiak.pl – Kamper z Poloneza Trucka podbija zloty. Nietypowa przeróbka przyciąga tłumy
+image_credit: 'Fot. JoachimKohler-HB / CC BY-SA 4.0, via Wikimedia Commons'
 ---
 
 ## Polonez Truck w roli kampera

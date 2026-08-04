@@ -18,8 +18,9 @@ tags:
 - auta dostawcze
 sources:
 - https://news.google.com/rss/articles/CBMi2wFBVV95cUxNNTkzd1NtUlBtN2FvVTI5WVk5c3UwX2Z2MThKb0lENy11cVlFaXhVT2ltRUlqNkFLbXhtaFV3eDN0b2ZYOGRwY1JyR2o2UF9JZUU5Y1Nxd0xBZ282UGt5b0VrcFNBeXNsd3VmQUhKakVQVEpBN1MtUkd6Y0ZWMlptdGtQcENrTEY5Wk5TV1Z2d1dWNnJTS2hkUnBSOEwxaDdwV0RLVUl4OE81VHItb2hqTE0yMnRURUlGc3N4SFIyU3YzUXl3TUJJcTVTaFpjYTNMNnVOODB5aS1mYW8?oc=5
-image: /images/hero-home.webp
+image: /images/news/pool/fuel-3.webp
 image_alt: BusManiak.pl – Ceny paliw we wtorek – kierowcy dostawczaków zapłacą mniej za diesla
+image_credit: 'Fot. Warszawska rog Szerokiej, Tomaszow Mazowiecki / Public domain, via Wikimedia Commons'
 ---
 
 ## Wtorkowe ceny paliw – najważniejszy pozostaje diesel

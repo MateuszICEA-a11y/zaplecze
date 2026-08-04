@@ -18,8 +18,9 @@ tags:
 - stacje paliw
 sources:
 - https://news.google.com/rss/articles/CBMiygFBVV95cUxQczlwaHV2b3lhdWFjTDVuZFNwMmQ0SHd0QzZDdEtIWG5zRGlfTEc5NUJIVlFlMHpUVVNNT2NLSzFydU9ZTXlHZEhyLXBnbVcyU2l1TW53TjR2N3ZVU1VjajJ4OW9FZE5ibXRmTDJyVDBCbk1QQ3JPSWtBWE1fNHlCSk42Sy1CSlBoZ0RDeW9hNlA1dHlUWHZ4R0tqbkRWeTdpZWhITXlXZ0VKMEk0eGx3OWE5aUlZZWR5YW1FS0p4aFhUSFNlc0NaekN30gHKAUFVX3lxTFBzOXBodXZveWF1YWNMNW5kU3AyZDRId3RDNkN0S0hYbnNEaV9MRzk1QkhWUWUwelRVU01PY0tLMXJ1T1lNeUdkSHItcGdtVzJTaXVNbndONHY3dlVTVWNqMng5b0VkTmJtdGZMMnJUMEJuTVBDck9Ja0FYTV80eUJKTjZLLUJKUGhnREN5b2E2UDV0eVRYdnhHS2puRFZ5N2llaEhNeVdnRUowSTR4bHc5YTlpSVllZHlhbUVLSnhoWFRIU2VzQ1p6Q3c?oc=5
-image: /images/hero-home.webp
+image: /images/news/pool/fuel-1.webp
 image_alt: BusManiak.pl – Czwartek na stacjach paliw. Sprawdzamy, ile zapłacą kierowcy
+image_credit: 'Fot. Aw58 / CC BY 4.0, via Wikimedia Commons'
 ---
 
 ## Ile kosztuje paliwo w czwartek

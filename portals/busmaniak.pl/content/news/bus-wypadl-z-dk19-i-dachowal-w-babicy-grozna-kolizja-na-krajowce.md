@@ -18,8 +18,9 @@ tags:
 - wypadek
 sources:
 - https://news.google.com/rss/articles/CBMimwFBVV95cUxQTkR0X3BDX3psejBPN0hMV3F1V0tsNlFQaXNGYWJCdUd6am1ZWl9BRnF4QVFPU1BIZmczby1qUjV2aTZNYUowM1JDNFBtd1Fnc2hPaDlBTnhEMU5PTXhUcTNkeThxV1lYSkd4WEtvVlFLSWJKS1NCN0Zyb19iQVdUblZNbkpSajhZRXhsN1JHSDdISV9ObkhKblFSWQ?oc=5
-image: /images/hero-home.webp
+image: /images/news/pool/incident-3.webp
 image_alt: BusManiak.pl – Bus wypadł z DK19 i dachował w Babicy. Groźna kolizja na krajówce
+image_credit: 'Fot. Krzysztof Popławski / CC BY 4.0, via Wikimedia Commons'
 ---
 
 ## Groźnie wyglądające zdarzenie na DK19

@@ -18,8 +18,9 @@ tags:
 - dostawczaki
 sources:
 - https://news.google.com/rss/articles/CBMinAFBVV95cUxPOHJSU1VLUUxuQWY1SXhZTmlXVkhoXzNSaTNNRjZldGhrVHY2SnpKS002ckQ2bjl5ZEF4R3ltYXdMOGg4bU1jQVc2Z3RuYTNqdGlDY1VjLUozZHpaWXI0Ym1mQTU1alFpSjBCVzh3enhXMkxLZ19UWEItSkhMdWpRVGktcUNMQXVDZzZHVG1zLUgwZThJNUFhZ3RQdG0?oc=5
-image: /images/hero-home.webp
+image: /images/news/pool/fuel-3.webp
 image_alt: BusManiak.pl – Pakiet „Ceny Paliwa Niżej” pod znakiem zapytania. Minister wskazuje, co dalej
+image_credit: 'Fot. Warszawska rog Szerokiej, Tomaszow Mazowiecki / Public domain, via Wikimedia Commons'
 ---
 
 ## Minister studzi oczekiwania wokół dalszych działań

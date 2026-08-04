@@ -18,8 +18,9 @@ tags:
 - instalacja gazowa
 sources:
 - https://news.google.com/rss/articles/CBMixwFBVV95cUxOVUJEQ2ZzTFhKZGZVNzFlSjhPaW9XTmlpT29WSHBqbWhHOEdkYjJFS2pHTW5pbmxBbzFLc1d0UG42dndXMHdvc1J2ekhRYWl1Nms5Tk45VF8tX241Q19DQVN6cHZEYzN5YUJ1SFFhcGVrdHJOVG9aYm56eWNMa0dZYnNNSVJzUURpczR3cjlQMGpKandadnl2NnhfMlpQMkg5WlZ5YTc0TDVEbllET1dFRks1ODJVWmFIcnBuV0t2YUtQMXc3OE5F?oc=5
-image: /images/bus-kamper-z-lazienka-hero.webp
+image: /images/news/pool/incident-2.webp
 image_alt: BusManiak.pl – Wybuch instalacji w kamperze w Łebie. Dwie osoby ciężko ranne
+image_credit: 'Fot. Jakub Hałun / CC BY 4.0, via Wikimedia Commons'
 ---
 
 ## Poważny wypadek na terenie Łeby

@@ -18,8 +18,9 @@ tags:
 - caravaning
 sources:
 - https://news.google.com/rss/articles/CBMipgFBVV95cUxQUGx5NDBSSzM4V2QzRTVOVkZtclJsYVRURzF6NVUweU9FMjhjdk0xQ0N1NnhtOFpBYndKdjZPbGV6Q2FMVnBLZFV1XzJjY0VSMVRXOGtuOHdxQzhTN2N1eDBGcnN6Q2s0cHdoVWNDRGZpdmJQcFZYcFljOFR1SzZ0VjgtX2gydGhxUVB4YUk2V01fNGJmaHkzWi1zQW13ejJ6OTZJaHRR?oc=5
-image: /images/bus-kamper-z-lazienka-hero.webp
+image: /images/news/pool/camper-4.webp
 image_alt: BusManiak.pl – Jakub Tolak i Zofia Samsel pokazali kampera, który stał się pełnoprawnym domem
+image_credit: 'Fot. JoachimKohler-HB / CC BY-SA 4.0, via Wikimedia Commons'
 ---
 
 ## Kamper urządzony bardziej jak mieszkanie niż pojazd

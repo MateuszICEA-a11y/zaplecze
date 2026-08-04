@@ -18,8 +18,9 @@ tags:
 - utrudnienia w ruchu
 sources:
 - https://news.google.com/rss/articles/CBMiugFBVV95cUxNWEVqZWtNdVhOU0kyOVlqb3JidUNfbFZJaHhVWEJkdUxzUzEwZE1FeWtEZjhXQ3BwTU9LeEZMalAtdmJOOUZINXAtTThza0pLUUxEYS1vUHFBUXNUSkxTU0dtamhzRi0ya3JzdFAxUFpDckoyRVJjOVdaSDBORU1KWHVvZ0RraEdmbkl6enFiejFwV2xZV2pVczduLVFMSThYaW5IZGpqaUttNTNxM3V1Rlo5SFBfUTdpOEE?oc=5
-image: /images/hero-home.webp
+image: /images/news/pool/incident-1.webp
 image_alt: 'BusManiak.pl – Toruń: bus zderzył się z tramwajem. Torowisko było zablokowane, wyznaczono objazdy'
+image_credit: 'Fot. Ralf Lotys (Sicherlich) / CC BY 3.0, via Wikimedia Commons'
 ---
 
 ## Zderzenie busa z tramwajem w Toruniu

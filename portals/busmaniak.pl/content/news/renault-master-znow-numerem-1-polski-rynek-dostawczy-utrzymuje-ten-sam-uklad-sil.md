@@ -18,8 +18,9 @@ tags:
 - Renault
 sources:
 - https://news.google.com/rss/articles/CBMivAFBVV95cUxNYld6Ml9Ub2wzaU9jZVdsblFvc2l0ZEtlaG8yRmoyTTU5RHBkc1BhVDBBXzFsdEhEZUI1QmdJbnlUYUpqaDM1OWJ0bi1Valc4WkxULXJtRnMzV3dGbFdKeG5VZ1pXbVJxdEdUc1l0c3NOTU9uUXc1dG5QYjNLSjFGR0hZSWVzb0NzM0NwanFkNTRGSE5mMmx5YUY4Y2hpOEZKSGNRSzQyck53Xy1yM2p2REU4QzdQcnBCMnIyZg?oc=5
-image: /images/fiat-ducato-hero.webp
+image: /images/news/pool/van-2.webp
 image_alt: BusManiak.pl – Renault Master znów numerem 1. Polski rynek dostawczy utrzymuje ten sam układ sił
+image_credit: 'Fot. Vauxford / CC BY-SA 4.0, via Wikimedia Commons'
 ---
 
 ## Renault Master utrzymuje prowadzenie czwarty miesiąc z rzędu

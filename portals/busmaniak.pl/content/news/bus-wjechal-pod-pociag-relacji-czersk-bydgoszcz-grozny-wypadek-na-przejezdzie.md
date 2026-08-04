@@ -19,8 +19,9 @@ tags:
 - Bydgoszcz
 sources:
 - https://news.google.com/rss/articles/CBMivwFBVV95cUxOWUtOc2I3NGstSmVoTEtuc1h4cVA0cU5vNXcwa1J6RHRWY3poRXU3ODZScTJPTkJTc2FrY091M0JLZzk4X05XeWZ6dmV4VmZRUXBtSzByLXF3SjV1aFJGNHRGc0hYR0k0Rml6VllnZUFMNHZNOXBxT0sxWEVOQV9wM09QR3dORHRVcFdkZjRiUFVuRHVVRVRPdjhrR2wxM0k2anJpTGNJRE55NGdXeURZeENVYjh6bTJxUzM4Z0NWRQ?oc=5
-image: /images/hero-home.webp
+image: /images/news/pool/incident-1.webp
 image_alt: BusManiak.pl – Bus wjechał pod pociąg relacji Czersk – Bydgoszcz. Groźny wypadek na przejeździe
+image_credit: 'Fot. Ralf Lotys (Sicherlich) / CC BY 3.0, via Wikimedia Commons'
 ---
 
 ## Groźne zderzenie na przejeździe kolejowym

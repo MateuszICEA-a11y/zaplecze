@@ -20,8 +20,9 @@ tags:
 - francja
 sources:
 - https://news.google.com/rss/articles/CBMiugFBVV95cUxQbDVjS2dDWmI1a3dYLWtIbmQtbk5CT2xVaVRFWk9sNGs3b25lVmI0Wjg0ZTkxWHVBV0NjOFpaN3JQR095SnI2UzBpTENiZmY2MzJBYjJnam1XajFEMTV0emxjcjJnVnpXT3JtaFhZbFJ3SUswd2MzakZhS3hOZlhFdk1TdFA2NVg4U2gwNHhCUTJaclVQN3IxVFEydDUxYkFxd0U3cGJmbGRzOWZCN1c5ZDFwa1kwdi1JNGc?oc=5
-image: /images/bus-kamper-z-lazienka-hero.webp
+image: /images/news/pool/fuel-2.webp
 image_alt: BusManiak.pl – Dacia Duster Pickup 2026 z LPG trafiła do sprzedaży we Francji. Jest też wersja kamperowa
+image_credit: 'Fot. Patryk Duszkiewicz / CC BY-SA 4.0, via Wikimedia Commons'
 ---
 
 ## Duster w nowej roli – pickup z napędem 4×4 i LPG

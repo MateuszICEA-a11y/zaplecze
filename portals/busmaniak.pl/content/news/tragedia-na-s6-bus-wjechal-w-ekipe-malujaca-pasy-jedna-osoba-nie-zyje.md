@@ -18,8 +18,9 @@ tags:
 - bezpieczeństwo
 sources:
 - https://news.google.com/rss/articles/CBMilwFBVV95cUxQbFN5YlllQjU5Ny02MC1feHFxc2xrVmxxc3N1ZWRlQVNoNnJvV0c0WmR0WDFKRnFpMlRTOFNsUURpRmhDMnVIbGs0dURFRjNLSjJPM0gxZFpXeDlRV0RoUkdKVGR2Z3BURWdLeVBneXNldllKaFJEdW5ma212bVFmWkxla3BVZVhtSDdidmVFRjRUNXpTWmg0?oc=5
-image: /images/hero-home.webp
+image: /images/news/pool/incident-5.webp
 image_alt: BusManiak.pl – Tragedia na S6. Bus wjechał w ekipę malującą pasy, jedna osoba nie żyje
+image_credit: 'Fot. Karol Szadkowski (AMZ Kutno) / CC BY-SA 4.0, via Wikimedia Commons'
 ---
 
 ## Śmiertelny wypadek podczas prac na jezdni

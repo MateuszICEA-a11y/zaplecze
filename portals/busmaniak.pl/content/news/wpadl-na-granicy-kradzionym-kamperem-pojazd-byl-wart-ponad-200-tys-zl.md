@@ -17,8 +17,9 @@ tags:
 - kontrola drogowa
 sources:
 - https://news.google.com/rss/articles/CBMinwFBVV95cUxOS2xmcGFXZE9TUmgzYm5GZFFVWHo2NUI3M1JhMzhlSjJaZDhWSHhEOWNNWkhmTVdZd0s5S2ZvcXpsekxRcDFWYVRTMklXNmE5ME0xRDF3a3pfVjN0eUFTaVhaeDN1Rm01d3JyUWJlYUFMa2VUN2Z6dXVWWkxzMHN6MG5waEpxd0s3QThiTUpuUXcyWWNPQ2hUNUt1NlV2UWc?oc=5
-image: /images/bus-kamper-z-lazienka-hero.webp
+image: /images/news/pool/camper-3.webp
 image_alt: BusManiak.pl – Wpadł na granicy kradzionym kamperem. Pojazd był wart ponad 200 tys. zł
+image_credit: 'Fot. Siggy Nowak (MemoryCatcher) / CC0, via Wikimedia Commons'
 ---
 
 ## Kontrola na granicy ujawniła, że kamper jest kradziony

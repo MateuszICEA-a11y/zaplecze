@@ -18,8 +18,9 @@ tags:
 - toyota
 sources:
 - https://news.google.com/rss/articles/CBMizgFBVV95cUxOU2lNYVVqRG1LdDRNYnhRbWJDdXoxYVo4TWI3blp2ZmNUXzIxbG5jX2NPeFQ1QmtqdG9EXzBxUHNVSVZnaDlrZmJRRFhIQ0xlMEJTUGJBYmFLVDNZbExiX01xUERVM0F0amkybnVQeEViYTl6RXpVYnF6S2RRc3BkbFVtSFBTS3FSWFoxUG56NS1OWExqOXdXNmI3QWRsdmkybkRpSlNIRlBicGYwWGpseWxpT3BMVnFjUmFSbGpPWHFESUJlZkxxQ3pQWXZiZ9IB0gFBVV95cUxPZ19pX2JvS0YwTTE1a2FEU2s1R0pFbU1ta0tjbDIwX3hjc2dCUnRlcmJ2R3Jaekk1TWhMR0dxNkYteE5xX25PRGo2bHc1akZETmVjNDlsZ1c1dWlwdTBnN2htQS14dm0tSHc5RUpxc0tQR2k3TVY3UHdxMlIxU3hZdkR5S3BvcWhUeVFhYmFodjFpOW00Y2hKRktqYi1xSzF5VlI3aU9kamZhWEJYWURiQzQzd3V5X3RheTN4bmRKU0xydHVCRDE5Q3hJRmxpeGFxYmc?oc=5
-image: /images/hero-home.webp
+image: /images/news/pool/camper-2.webp
 image_alt: BusManiak.pl – Toyota Sienta z zestawem VANLIFE ROOMKIT – miejski minivan zmienia się w mini-kampera
+image_credit: 'Fot. Charles01 / CC BY-SA 4.0, via Wikimedia Commons'
 ---
 
 ## Miejski minivan z funkcją noclegu
