@@ -21,6 +21,7 @@ from generator import generate_article, parse_llm_output, find_related_articles
 from source_fetcher import fetch_source_text
 from postprocessor import postprocess, build_markdown, generate_slug
 from image_generator import detect_category, generate_hero_image
+from image_pool import detect_scene, pick_image
 from stock_photo import find_stock_photo
 
 logging.basicConfig(
@@ -191,10 +192,15 @@ def run() -> None:
         fm.setdefault("main_keyword", topic.signal.title.lower())
         fm.setdefault("lead", topic.signal.summary)
 
-    # 9b. Hero image – hybryda: prawdziwe zdjęcie z otwartej bazy, fallback kie.ai.
-    # News interwencyjny (wypadek, pożar) nie dostaje cudzego prawdziwego zdjęcia –
-    # fotografia innego zdarzenia w roli relacji wprowadzałaby w błąd; tam od razu
-    # wchodzi neutralna ilustracja AI.
+    # 9b. Hero image – prawdziwe zdjęcie z otwartej bazy, potem kie.ai,
+    # a na końcu kuratorowana pula. Żadna ze ścieżek nie może zostawić newsa
+    # z obrazkiem przypisanym po sekcji tematycznej (patrz image_pool.py).
+    #
+    # O pominięciu wyszukiwania decyduje `scene` z image_pool (słowa kluczowe),
+    # nie `category` z image_generator: ta druga pyta najpierw GPT o model
+    # pojazdu i przy tytule „Katastrofa autobusu z udziałem kampera" wracała
+    # z „kamper”, przez co relacja z wypadku omijała bramkę i dostawała
+    # przypadkowe zdjęcie kampera.
     slug = generate_slug(fm.get("title", topic.signal.title))
     portal_dir = REPO_ROOT / pipeline_cfg.get("content_dir", "portals/busmaniak.pl/content").replace("/content", "")
     static_dir = portal_dir / "static"
@@ -202,8 +208,12 @@ def run() -> None:
     lead = str(fm.get("lead", ""))
 
     hero_url, hero_credit = None, None
-    category, vehicle_hint = detect_category(title)
-    if category != "incident":
+    scene = detect_scene(title)
+
+    # Zdarzenie drogowe dostaje neutralne ujęcie z puli: cudze zdjęcie wypadku
+    # w roli relacji wprowadza w błąd, a generacje AI wychodziły makabryczne.
+    if scene != "incident":
+        category, vehicle_hint = detect_category(title)
         queries = [q for q in (vehicle_hint, topic.signal.title) if q]
         stock = find_stock_photo(
             queries=queries, title=title, slug=slug,
@@ -212,18 +222,24 @@ def run() -> None:
         if stock:
             hero_url, hero_credit = stock["hero_url"], stock["credit"]
 
+        if not hero_url:
+            hero_url = generate_hero_image(
+                title=title,
+                slug=slug,
+                section=topic.section,
+                static_dir=static_dir,
+                lead=lead,
+                category=category,
+                vehicle_hint=vehicle_hint,
+            )
+            if hero_url:
+                hero_credit = "Grafika ilustracyjna: AI"
+
     if not hero_url:
-        hero_url = generate_hero_image(
-            title=title,
-            slug=slug,
-            section=topic.section,
-            static_dir=static_dir,
-            lead=lead,
-            category=category,
-            vehicle_hint=vehicle_hint,
-        )
-        if hero_url:
-            hero_credit = "Grafika ilustracyjna: AI"
+        pooled = pick_image(title, slug)
+        if pooled:
+            hero_url, hero_credit = pooled["image"], pooled["credit"]
+            log.info("Hero z puli (scena: %s)", pooled["scene"])
 
     if hero_url:
         fm["image"] = hero_url
@@ -231,6 +247,8 @@ def run() -> None:
         if hero_credit:
             fm["image_credit"] = hero_credit
         log.info("Hero image set: %s (%s)", hero_url, hero_credit)
+    else:
+        log.warning("Brak hero dla '%s' – wpis idzie bez obrazka", title[:60])
 
     # 10. Write file (skip if already published today)
     date_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")

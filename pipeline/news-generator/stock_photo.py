@@ -144,7 +144,8 @@ def find_stock_photo(
             if not candidate.get("url"):
                 continue
             try:
-                _download_and_optimize(candidate["url"], dest)
+                _download_and_optimize(candidate["url"], dest,
+                                       headers={"User-Agent": USER_AGENT})
             except Exception as e:  # noqa: BLE001
                 log.warning("  Pobranie padło (%s): %s", candidate["url"][:60], e)
                 continue

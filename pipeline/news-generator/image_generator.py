@@ -213,12 +213,17 @@ def _poll_until_done(task_id: str) -> str:
     raise RuntimeError(f"Timeout after {MAX_ATTEMPTS} attempts")
 
 
-def _download_and_optimize(url: str, dest: Path, max_width: int = 1200, quality: int = 80) -> Path:
-    """Download image, resize, convert to optimized WebP."""
+def _download_and_optimize(url: str, dest: Path, max_width: int = 1200, quality: int = 80,
+                           headers: dict[str, str] | None = None) -> Path:
+    """Download image, resize, convert to optimized WebP.
+
+    `headers` nadpisuje nagłówki żądania – Wikimedia Commons odbija domyślny
+    User-Agent (429), więc stock_photo podaje własny, zgodny z etykietą API.
+    """
     from PIL import Image
     import io
 
-    req = urllib.request.Request(url, headers={
+    req = urllib.request.Request(url, headers=headers or {
         "User-Agent": "Mozilla/5.0",
         "Referer": "https://api.kie.ai/",
     })

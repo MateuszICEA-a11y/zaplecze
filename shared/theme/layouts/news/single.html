@@ -16,6 +16,7 @@
 <header class="article-hero">
   <div class="article-hero__inner">
     <img src="{{ . }}" alt="{{ $.Params.image_alt | default $.Title }}" class="article-hero__img" loading="eager">
+    {{- with $.Params.image_credit }}<span class="article-hero__credit">{{ . }}</span>{{- end }}
     <div class="article-hero__body">
       <div class="article-hero__badge">NEWS</div>
       <h1 class="article-hero__title">{{ $.Params.h1 | default $.Title }}</h1>

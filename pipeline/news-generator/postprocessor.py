@@ -95,12 +95,16 @@ def generate_slug(title: str) -> str:
 
 
 def assign_placeholder_image(fm: dict, section: str, image_map: dict[str, str]) -> None:
-    """Assign a placeholder hero image based on section if none is set."""
-    if fm.get("image"):
-        return
-    fm["image"] = image_map.get(section, image_map.get("news", ""))
-    if fm["image"] and not fm.get("image_alt"):
-        fm["image_alt"] = f"BusManiak.pl – {fm.get('title', 'news')}"
+    """DEPRECATED – nie przypisujemy już hero po sekcji tematycznej.
+
+    Mapa `images:` z config.yaml dawała newsom obrazek dobrany do sekcji,
+    a nie do treści: relacja z katastrofy autobusu trafiała do sekcji „kampery”
+    i dostawała zdjęcie łazienki w kamperze. O hero decyduje teraz wyłącznie
+    main.py (zdjęcie stockowe → kie.ai → kuratorowana pula z image_pool.py).
+
+    Zostawione jako no-op, żeby stare wywołania nie wskrzesiły tego zachowania.
+    """
+    return
 
 
 def postprocess(
