@@ -256,6 +256,15 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
           <button type="button" data-ed-accept-all>zatwierdź wszystkie</button>
           <button type="button" data-ed-copy-all>kopiuj zatwierdzone</button>
         </div>
+        <!-- Zapis do WordPressa: szkic (osobny wpis draft) do podglądu na
+             szablonie strony; wdrożenie podmienia treść oryginału i kasuje
+             szkic. Hasło aplikacji zna wyłącznie Worker. -->
+        <div class="ed-wp" data-ed-wp hidden>
+          <button type="button" data-ed-wp-draft>szkic w WordPressie</button>
+          <a data-ed-wp-preview href="#" target="_blank" rel="noopener" hidden>otwórz szkic ↗</a>
+          <button type="button" class="ed-wp-apply" data-ed-wp-apply>wdróż na stronie</button>
+          <span class="ed-wp-note" data-ed-wp-note hidden></span>
+        </div>
         <label class="ed-only-changed" data-ed-only-changed-wrap hidden>
           <input type="checkbox" data-ed-only-changed />
           tylko zmienione sekcje
@@ -317,6 +326,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     id: string; status: string; error: string | null; cost: any; created_at: string;
     improvements: string[]; models: { research: string; writer: string } | null;
     expert: any; steps: Step[]; sections: Section[]; run_url?: string | null;
+    wp_draft_id?: number | null; wp_draft_url?: string | null; applied_at?: string | null;
   };
 
   // Lustro config.py (STEPS + OPTIONAL_STEPS) – przy zmianie kolejności kroków
@@ -1982,6 +1992,76 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     target.append(block);
   }
 
+  /* ---------- zapis do WordPressa (szkic + wdrożenie) ---------- */
+
+  let wpBusy = false;
+
+  function renderWpActions(current: Job | null) {
+    const wrap = $('[data-ed-wp]');
+    if (!wrap) return;
+    wrap.hidden = current?.status !== 'done';
+    if (wrap.hidden) return;
+    const draftButton = $<HTMLButtonElement>('[data-ed-wp-draft]')!;
+    const preview = $<HTMLAnchorElement>('[data-ed-wp-preview]')!;
+    const applyButton = $<HTMLButtonElement>('[data-ed-wp-apply]')!;
+    const note = $('[data-ed-wp-note]')!;
+
+    const applied = Boolean(current?.applied_at);
+    draftButton.disabled = wpBusy || applied;
+    applyButton.disabled = wpBusy || applied;
+    draftButton.textContent = current?.wp_draft_id ? 'odśwież szkic w WP' : 'szkic w WordPressie';
+    preview.hidden = !current?.wp_draft_url;
+    if (current?.wp_draft_url) preview.href = current.wp_draft_url;
+    note.hidden = !applied;
+    if (applied) note.textContent = `wdrożono ${fmtDate(current!.applied_at!.slice(0, 10))}`;
+  }
+
+  async function wpDraft() {
+    if (!job || wpBusy) return;
+    wpBusy = true;
+    renderWpActions(job);
+    try {
+      const data = await api(`/api/cw/jobs/${job.id}/wp-draft`, { method: 'POST' });
+      job.wp_draft_id = data.draft_id;
+      job.wp_draft_url = data.preview_url;
+    } catch (error) {
+      showError(error instanceof Error ? error.message : 'Nie udało się zapisać szkicu.');
+    } finally {
+      wpBusy = false;
+      renderWpActions(job);
+    }
+  }
+
+  async function wpApply(force = false) {
+    if (!job || wpBusy) return;
+    if (!force && !window.confirm('Podmienić treść opublikowanego wpisu na wersję z edytora i skasować szkic?')) return;
+    wpBusy = true;
+    renderWpActions(job);
+    try {
+      const data = await api(`/api/cw/jobs/${job.id}/wp-apply${force ? '?force=1' : ''}`, { method: 'POST' });
+      job.applied_at = data.applied_at;
+      job.wp_draft_id = null;
+      job.wp_draft_url = null;
+    } catch (error) {
+      const code = (error as Error & { code?: string }).code;
+      // Rozjazd hashy = ktoś edytował wpis w CMS-ie po analizie – wdrożenie
+      // nadpisałoby te poprawki, więc wymaga osobnego, świadomego potwierdzenia.
+      if (code === 'content_changed'
+        && window.confirm(`${(error as Error).message}\n\nWdrożyć mimo to? Zmiany z CMS-a w tych sekcjach zostaną nadpisane.`)) {
+        wpBusy = false;
+        await wpApply(true);
+        return;
+      }
+      showError(error instanceof Error ? error.message : 'Nie udało się wdrożyć zmian.');
+    } finally {
+      wpBusy = false;
+      renderWpActions(job);
+    }
+  }
+
+  $('[data-ed-wp-draft]')?.addEventListener('click', () => wpDraft());
+  $('[data-ed-wp-apply]')?.addEventListener('click', () => wpApply());
+
   /* ---------- cykl życia zadania ---------- */
 
   function render(current: Job) {
@@ -1991,6 +2071,7 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
     applyJobToDoc(current);
     renderExpert(current);
     applyExpertToDoc(current);
+    renderWpActions(current);
     const running = ['queued', 'dispatching', 'running'].includes(current.status);
     $<HTMLButtonElement>('[data-ed-run]')?.toggleAttribute('disabled', running);
     // Po zakończonym przebiegu analizy zrobiły swoje – zwijamy je, żeby droga
@@ -3183,6 +3264,21 @@ const DEFAULT_MODELS = { research: 'perplexity/sonar-pro', writer: 'anthropic/cl
   .ed-docstat { display: inline-flex; gap: 6px; align-items: baseline; }
   .ed-docstat b { font: 600 .95rem var(--font-display); color: var(--ink); font-variant-numeric: tabular-nums; }
   .ed-docstat span { font-size: .7rem; color: var(--ink-faint); }
+
+  /* ----- zapis do WordPressa ----- */
+  .ed-wp { display: inline-flex; flex-wrap: wrap; gap: 10px; align-items: center; font-size: .74rem; }
+  .ed-wp[hidden] { display: none !important; }
+  .ed-wp button { padding: 4px 11px; border: 1px solid var(--hairline); border-radius: 2px;
+    background: transparent; color: var(--ink-muted); font: inherit; font-size: .72rem; cursor: pointer; }
+  .ed-wp button:hover:not(:disabled) { color: var(--ink); border-color: var(--accent-blue); }
+  .ed-wp button:disabled { opacity: .45; cursor: default; }
+  /* Wdrożenie podmienia treść na żywej stronie – akcent odróżnia je od
+     bezpiecznych akcji podglądowych. */
+  .ed-wp .ed-wp-apply { border-color: var(--accent-blue); color: var(--accent-blue); }
+  .ed-wp .ed-wp-apply:hover:not(:disabled) { background: var(--accent-blue); color: #fff; }
+  .ed-wp a { color: var(--accent-blue); font-size: .72rem; text-decoration: none; }
+  .ed-wp a:hover { text-decoration: underline; }
+  .ed-wp .ed-wp-note { color: var(--ink-faint); font-size: .72rem; }
 
   /* ----- podgląd całości ----- */
   .ed-preview-open { padding: 4px 11px; border: 1px solid var(--hairline); border-radius: 2px;

@@ -16,6 +16,7 @@ import { generateExpertQuote } from './cw-expert.js';
 import { handleRivals, rivalsSummary } from './cw-rivals.js';
 import { handleSerpGap } from './cw-serp.js';
 import { handleUsage } from './cw-usage.js';
+import { handleWpApply, handleWpDraft } from './cw-wp.js';
 
 export const COOLDOWN_DAYS = 30; // ten sam wpis nie wraca do kolejki częściej
 export const MAX_ACTIVE_PER_DOMAIN = 3;
@@ -898,12 +899,16 @@ export async function routeContentWatcher(request, env, { beforeAuth = false, ct
     return handleSerpGap(request, env, domain.toLowerCase(), Number.parseInt(postId, 10), ctx);
   }
 
-  const jobMatch = url.pathname.match(/^\/api\/cw\/jobs\/([a-z0-9-]{8,64})(\/(cancel|expert|sections\/(\d{1,2})))?\/?$/i);
+  const jobMatch = url.pathname.match(/^\/api\/cw\/jobs\/([a-z0-9-]{8,64})(\/(cancel|expert|wp-draft|wp-apply|sections\/(\d{1,2})))?\/?$/i);
   if (jobMatch) {
     const [, id, , action, slot] = jobMatch;
     if (action === 'cancel') {
       if (request.method !== 'POST') return json({ error: 'Dozwolona metoda: POST.' }, 405);
       return cancelJob(request, env, id);
+    }
+    if (action === 'wp-draft' || action === 'wp-apply') {
+      if (request.method !== 'POST') return json({ error: 'Dozwolona metoda: POST.' }, 405);
+      return action === 'wp-draft' ? handleWpDraft(request, env, id) : handleWpApply(request, env, id);
     }
     if (action === 'expert') {
       if (request.method === 'POST') return generateExpert(request, env, id);

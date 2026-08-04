@@ -75,8 +75,9 @@ Widoczności używa `200`.
 `DASHBOARD_URL`, `CW_CALLBACK_SECRET` (ten sam po stronie Workera),
 `SENUTO_API_KEY`, `SERPDATA_API_KEY`, `OPENROUTER_API_KEY`,
 `GSC_SERVICE_ACCOUNT_JSON`. `WP_APP_USER` i `WP_APP_PASSWORD` są opcjonalne –
-odczyt z WordPressa działa anonimowo, hasło będzie potrzebne dopiero do zapisu
-draftów.
+odczyt z WordPressa działa anonimowo. Sam zapis wyników (szkic podglądowy
+i wdrożenie na oryginale) nie jest częścią pipeline'u: robi go Worker
+dashboardu (`dashboard/app/cw-wp.js`) na hasło aplikacji z własnych sekretów.
 
 ## Wersjonowanie
 

@@ -30,7 +30,10 @@ CREATE TABLE IF NOT EXISTS jobs (
   created_at        TEXT NOT NULL,
   updated_at        TEXT NOT NULL,
   finished_at       TEXT,
-  error             TEXT
+  error             TEXT,
+  wp_draft_id       INTEGER,                     -- ID wpisu-szkicu w WP (migracja 0008)
+  wp_draft_url      TEXT,                        -- link podglądu szkicu (?p=ID&preview=true)
+  applied_at        TEXT                         -- ISO; kiedy zmiany weszły na oryginał
 );
 
 CREATE INDEX IF NOT EXISTS jobs_domain_created ON jobs (domain, created_at DESC);
