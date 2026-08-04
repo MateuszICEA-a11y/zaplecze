@@ -1,13 +1,5 @@
 [
   {
-    "title": "Toyota pokazuje nowego kampera. Kompaktowy model w sam raz na majówkę",
-    "date": "2026-04-30",
-    "slug": "toyota-pokazuje-nowego-kampera-kompaktowy-model-w-sam-raz-na-majowke",
-    "section": "kampery",
-    "format": "short",
-    "source": "rss"
-  },
-  {
     "title": "Toyota pokazała dużego kampera. Celuje w rywali pokroju Grand Californii",
     "date": "2026-05-01",
     "slug": "toyota-pokazala-duzego-kampera-celuje-w-rywali-pokroju-grand-californii",
@@ -716,6 +708,14 @@
     "date": "2026-08-03",
     "slug": "katastrofa-autobusu-z-udzialem-kampera-szesc-osob-nie-zyje-34-zostaly-ranne",
     "section": "kampery",
+    "format": "short",
+    "source": "rss"
+  },
+  {
+    "title": "Diesel powyżej 8 zł za litr. Od 3 sierpnia tankowanie do pełna tylko dla nielicznych",
+    "date": "2026-08-04",
+    "slug": "diesel-powyzej-8-zl-za-litr-od-3-sierpnia-tankowanie-do-pelna-tylko-dla",
+    "section": "news",
     "format": "short",
     "source": "rss"
   }
