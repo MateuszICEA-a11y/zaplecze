@@ -32,7 +32,7 @@ Według dostępnych informacji może to być jedyny taki egzemplarz w Polsce. Ju
 
 ## Nie tylko ciekawostka, ale też kawał historii
 
-Ford Transit od dekad pozostaje jedną z najważniejszych nazw w świecie samochodów dostawczych. W starszych generacjach był bazą dla wielu specjalistycznych zabudów – od aut serwisowych po pojazdy turystyczne. Wersje kempingowe nie trafiały jednak na nasz rynek masowo, dlatego dziś są praktycznie niespotykane.
+Ford Transit od dziesięcioleci pozostaje jedną z najważniejszych nazw w świecie samochodów dostawczych. W starszych generacjach był bazą dla wielu specjalistycznych zabudów – od aut serwisowych po pojazdy turystyczne. Wersje kempingowe nie trafiały jednak na nasz rynek masowo, dlatego dziś są praktycznie niespotykane.
 
 Właśnie dlatego taki egzemplarz budzi zainteresowanie nie tylko fanów caravaningu, ale też osób śledzących historię lekkich aut użytkowych. W przeciwieństwie do nowoczesnych konstrukcji, gdzie liczą się głównie masa własna, wyposażenie i [kamper cena](/kampery/kamper-cena/), tutaj na pierwszy plan wysuwa się autentyczność i oryginalność projektu.
 
@@ -42,6 +42,6 @@ Tego typu pojazdy mają też swoją specyfikę w codziennym użytkowaniu. Oferuj
 
 Zabytkowy Transit w wersji kamper raczej nie będzie propozycją dla osób szukających praktycznego auta na rodzinne wakacje. To pojazd dla pasjonata – kogoś, kto docenia klasyczną technikę, prostą konstrukcję i wyjątkowość samego samochodu.
 
-W praktyce taki model może pełnić kilka ról jednocześnie. Z jednej strony pozostaje sprawnym środkiem do okazjonalnych wyjazdów, z drugiej – staje się ciekawym eksponatem na zlotach i imprezach motoryzacyjnych. Jeśli rzeczywiście mówimy o jedynym takim egzemplarzu w kraju, jego znaczenie dla kolekcjonerów może z czasem tylko rosnąć.
+W praktyce taki model może pełnić kilka ról jednocześnie. Z jednej strony pozostaje sprawnym środkiem transportu na okazjonalne wyjazdy, z drugiej – staje się ciekawym eksponatem na zlotach i imprezach motoryzacyjnych. Jeśli rzeczywiście mówimy o jedynym takim egzemplarzu w kraju, jego znaczenie dla kolekcjonerów może z czasem tylko rosnąć.
 
-To kolejny przykład na to, że świat kamperów nie kończy się na nowych półintegracjach i fabrycznych vanach. Czasem najciekawsze projekty powstają na bazie aut, które dawno zniknęły już z codziennego ruchu, ale wciąż potrafią opowiedzieć własną historię.
+To kolejny przykład tego, że świat kamperów nie kończy się na nowych półintegracjach i fabrycznych vanach. Czasem najciekawsze projekty powstają na bazie aut, które dawno już zniknęły z codziennego ruchu, ale wciąż potrafią opowiedzieć własną historię.

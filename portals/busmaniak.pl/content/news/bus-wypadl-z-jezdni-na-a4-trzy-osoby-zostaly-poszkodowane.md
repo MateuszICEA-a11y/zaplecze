@@ -24,7 +24,7 @@ image_alt: BusManiak.pl – Bus wypadł z jezdni na A4. Trzy osoby zostały posz
 
 ## Groźne zdarzenie na autostradzie A4
 
-Do niebezpiecznego wypadku doszło w piątkowy poranek na autostradzie A4. Bus z nieustalonych na razie przyczyn zjechał z jezdni i wypadł poza drogę. W wyniku zdarzenia poszkodowane zostały trzy osoby.
+Do niebezpiecznego wypadku doszło w piątkowy poranek na autostradzie A4. Bus z nieustalonych na razie przyczyn zjechał z jezdni i wypadł z drogi. W wyniku zdarzenia trzy osoby zostały poszkodowane.
 
 Na miejsce skierowano służby ratunkowe, które zabezpieczyły rejon wypadku i udzieliły pomocy rannym. Na tym etapie najważniejsze było sprawne dotarcie do poszkodowanych oraz ocena ich stanu zdrowia. Okoliczności zdarzenia mają wyjaśnić odpowiednie służby.
 
@@ -32,14 +32,14 @@ Poranne wypadki na trasach szybkiego ruchu zwykle oznaczają także utrudnienia 
 
 ## Trzy osoby ranne, służby wyjaśniają przyczyny
 
-Według dostępnych informacji obrażenia odniosły trzy osoby podróżujące busem. Nie podano jeszcze szczegółów dotyczących skali obrażeń ani dokładnego przebiegu samego zdarzenia. Wiadomo jednak, że sytuacja była na tyle poważna, iż konieczna była interwencja ratowników.
+Według dostępnych informacji obrażenia odniosły trzy osoby podróżujące busem. Nie podano jeszcze szczegółów dotyczących skali obrażeń ani dokładnego przebiegu samego zdarzenia. Wiadomo jednak, że sytuacja była na tyle poważna, że konieczna była interwencja ratowników.
 
-Na autostradach i drogach ekspresowych znaczenie mają nie tylko warunki na nawierzchni, ale też prędkość, stan techniczny pojazdu i sposób załadowania. W przypadku większych aut użytkowych to szczególnie istotne, bo ich zachowanie przy nagłym manewrze różni się od typowych osobówek. Dlatego tak ważne jest rozsądne podejście do wyboru i eksploatacji takich pojazdów – zwłaszcza gdy porównujemy różne konstrukcje w ramach [porównania dużych busów](/porownania/porownanie-duzych-busow/).
+Na autostradach i drogach ekspresowych znaczenie mają nie tylko warunki na nawierzchni, ale też prędkość, stan techniczny pojazdu i sposób załadunku. W przypadku większych aut użytkowych jest to szczególnie istotne, bo ich zachowanie przy nagłym manewrze różni się od typowych osobówek. Dlatego tak ważne jest rozsądne podejście do wyboru i eksploatacji takich pojazdów – zwłaszcza gdy porównujemy różne konstrukcje w [porównaniu dużych busów](/porownania/porownanie-duzych-busow/).
 
 Na razie nie ma informacji, by w zdarzeniu brały udział inne pojazdy. Jeśli pojawią się nowe ustalenia dotyczące przyczyn wypadku, będziemy wracać do sprawy.
 
 ## Bus na trasie wymaga większej uwagi niż osobówka
 
-Takie zdarzenia po raz kolejny pokazują, że prowadzenie busa na szybkich trasach wymaga doświadczenia i wyczucia pojazdu. Wyższy środek ciężkości, większa masa i inna charakterystyka prowadzenia sprawiają, że reakcje auta mogą być mniej przewidywalne niż w samochodzie osobowym. Dotyczy to zarówno modeli dostawczych, jak i pasażerskich, co dobrze widać przy każdym szerszym [porównaniu busów](/porownania/przewodnik/).
+Takie zdarzenia po raz kolejny pokazują, że prowadzenie busa na szybkich trasach wymaga doświadczenia i wyczucia pojazdu. Wyższy środek ciężkości, większa masa i odmienne właściwości jezdne sprawiają, że reakcje auta mogą być mniej przewidywalne niż w samochodzie osobowym. Dotyczy to zarówno modeli dostawczych, jak i pasażerskich, co dobrze widać przy każdym szerszym [porównaniu busów](/porownania/przewodnik/).
 
-Kierowcy poruszający się rano po A4 powinni zachować ostrożność i liczyć się z możliwymi utrudnieniami w rejonie zdarzenia. W takich sytuacjach kluczowe są odpowiedni odstęp, spokojna jazda i szybkie reagowanie na zmieniającą się sytuację na drodze.
+Kierowcy poruszający się rano po A4 powinni zachować ostrożność i liczyć się z możliwymi utrudnieniami w rejonie zdarzenia. W takich sytuacjach kluczowe są odpowiedni odstęp, spokojna jazda i szybka reakcja na zmiany sytuacji na drodze.

@@ -28,7 +28,7 @@ Dyskusja o ograniczeniu sprzedaży paliwa dla obcokrajowców brzmi politycznie n
 
 Na pierwszy rzut oka propozycja może wydawać się prosta: ograniczyć możliwość tankowania określonej grupie kierowców i w ten sposób zmniejszyć presję na krajowy rynek paliw lub ograniczyć niepożądane zjawiska związane z przygranicznym handlem. Tyle że transport drogowy nie działa w próżni. Kierowca busa w trasie nie tankuje „dla wygody”, lecz dlatego, że od paliwa zależy termin dostawy, koszt usługi i rentowność całego kursu.
 
-W praktyce najmocniej odczułyby to firmy operujące na krótkich i średnich trasach międzynarodowych. Dotyczy to zarówno przewoźników kurierskich, jak i przedsiębiorców realizujących przewozy towarów na potrzeby handlu, budownictwa czy montażu. Każde dodatkowe utrudnienie na stacji oznacza dla nich stratę czasu, a często także konieczność zmiany planowania tras.
+W praktyce najmocniej odczułyby to firmy działające na krótkich i średnich trasach międzynarodowych. Dotyczy to zarówno przewoźników kurierskich, jak i przedsiębiorców realizujących przewozy towarów na potrzeby handlu, budownictwa czy montażu. Każde dodatkowe utrudnienie na stacji oznacza dla nich stratę czasu, a często także konieczność zmiany w planowaniu tras.
 
 ## Eksperci: obejście przepisów byłoby stosunkowo łatwe
 
@@ -36,15 +36,15 @@ Najczęściej podnoszony argument przeciw takim ograniczeniom jest prosty: kiero
 
 Możliwe scenariusze obejścia przepisów mogą wyglądać następująco:
 
-- **Tankowanie przez pośrednika** – paliwo kupowałaby osoba uprawniona, a pojazd korzystałby z niego pośrednio
+- **Tankowanie przez pośrednika** – paliwo kupowałaby osoba uprawniona, a następnie trafiałoby ono do pojazdu
 - **Zmiana miejsca tankowania** – kierowcy po prostu przesunęliby tankowanie do innego kraju lub regionu
 - **Większe znaczenie baz przeładunkowych** – firmy mogłyby organizować tankowanie flotowe poza obszarem objętym ograniczeniami
 - **Kanistry i zbiorniki dodatkowe** – choć to rozwiązanie nie zawsze wygodne i nie w każdym przypadku opłacalne, część użytkowników mogłaby z niego korzystać
-- **Rejestracja działalności lub pojazdów w innej formule** – rynek transportowy dobrze zna metody dostosowywania się do nowych wymagań formalnych
+- **Rejestracja działalności lub pojazdów na innych zasadach** – rynek transportowy dobrze zna metody dostosowywania się do nowych wymagań formalnych
 
 To właśnie dlatego część specjalistów ocenia, że administracyjne ograniczenie tankowania dla obcokrajowców mogłoby mieć głównie efekt wizerunkowy, a nie praktyczny. Ucierpieliby przede wszystkim ci, którzy działają legalnie, nie kombinują i po prostu potrzebują zatankować auto podczas pracy.
 
-W branży dostawczej podobne sytuacje zwykle kończą się wzrostem kosztów operacyjnych. A te finalnie i tak trafiają do klienta. W busach pracujących na cienkiej marży nawet niewielka zmiana w logistyce paliwowej ma znaczenie. Dobrze widać to choćby po tym, jak duże znaczenie dla firm ma realne [spalanie Ducato](/serwis/fiat-ducato-spalanie/) czy innych popularnych modeli flotowych.
+W branży dostawczej podobne sytuacje zwykle kończą się wzrostem kosztów operacyjnych. A te ostatecznie i tak trafiają do klienta. W busach pracujących na cienkiej marży nawet niewielka zmiana w logistyce paliwowej ma znaczenie. Dobrze widać to choćby po tym, jak duże znaczenie dla firm ma realne [spalanie Ducato](/serwis/fiat-ducato-spalanie/) czy innych popularnych modeli flotowych.
 
 ## Największy problem to egzekwowanie i definicje
 
@@ -78,7 +78,7 @@ Szczególnie wrażliwe byłyby:
 - **auta wysokoprzebiegowe** – wykonujące wiele kursów tygodniowo  
 - **pojazdy specjalistyczne** – których trasy nie zawsze da się łatwo przeplanować
 
-Z perspektywy użytkowników busów sprawa jest więc szersza niż sama polityka paliwowa. To również kwestia stabilności przepisów i przewidywalności prowadzenia biznesu. Kierowcy i właściciele firm już dziś muszą śledzić liczne [przepisy dla busów](/przepisy/przewodnik/), a dokładanie kolejnych wyjątków i ograniczeń może tylko zwiększyć zamieszanie.
+Z perspektywy użytkowników busów sprawa jest więc szersza niż sama polityka paliwowa. To również kwestia stabilności przepisów i przewidywalności prowadzenia działalności. Kierowcy i właściciele firm już dziś muszą śledzić liczne [przepisy dla busów](/przepisy/przewodnik/), a dokładanie kolejnych wyjątków i ograniczeń może tylko zwiększyć zamieszanie.
 
 ## Czy taki ruch miałby sens ekonomiczny?
 
@@ -94,14 +94,14 @@ Do tego dochodzą koszty systemowe:
 - obsługa reklamacji i sporów,
 - możliwe postępowania prawne.
 
-W efekcie państwo mogłoby stworzyć skomplikowany mechanizm, który nie tylko byłby trudny do egzekwowania, ale też generowałby nowe koszty dla biznesu. A jeśli kierowcy faktycznie znaleźliby proste sposoby obejścia ograniczeń, skuteczność całego rozwiązania byłaby co najmniej wątpliwa.
+W efekcie państwo mogłoby stworzyć skomplikowany mechanizm, który nie tylko byłby trudny do egzekwowania, ale też generowałby nowe koszty dla firm. A jeśli kierowcy faktycznie znaleźliby proste sposoby obejścia ograniczeń, skuteczność całego rozwiązania byłaby co najmniej wątpliwa.
 
-W transporcie dostawczym rynek zwykle najlepiej reaguje na jasne i równe reguły gry. Każde rozwiązanie uznaniowe, trudne do interpretacji i zależne od bieżącej weryfikacji klienta może bardziej zaszkodzić płynności przewozów niż pomóc w realizacji celu.
+W transporcie dostawczym rynek zwykle najlepiej reaguje na jasne i równe zasady. Każde rozwiązanie uznaniowe, trudne do interpretacji i zależne od bieżącej weryfikacji klienta, może bardziej zaszkodzić płynności przewozów niż pomóc w realizacji celu.
 
 ## Branża potrzebuje prostych zasad, nie kolejnych barier
 
-Z punktu widzenia przewoźników i użytkowników busów kluczowe jest to, by przepisy były możliwe do zastosowania w codziennej pracy. Ograniczanie paliwa dla obcokrajowców może dobrze brzmieć jako hasło, ale w realiach transportu drogowego szybko pojawiają się luki, wyjątki i skutki uboczne.
+Z punktu widzenia przewoźników i użytkowników busów kluczowe jest to, by przepisy dało się stosować w codziennej pracy. Ograniczanie paliwa dla obcokrajowców może dobrze brzmieć jako hasło, ale w realiach transportu drogowego szybko pojawiają się luki, wyjątki i skutki uboczne.
 
-Jeżeli celem jest uporządkowanie rynku lub ograniczenie nadużyć, skuteczniejsze mogą okazać się działania celowane – kontrole konkretnych mechanizmów handlu, uszczelnianie rozliczeń czy nadzór nad przewozami wrażliwymi. Uderzanie szeroko w użytkowników zagranicznych pojazdów niesie ryzyko, że rykoszetem dostaną także legalnie działające firmy, w tym przewoźnicy obsługujący polski rynek.
+Jeżeli celem jest uporządkowanie rynku lub ograniczenie nadużyć, skuteczniejsze mogą okazać się działania ukierunkowane – kontrole konkretnych mechanizmów handlu, uszczelnianie rozliczeń czy nadzór nad przewozami wrażliwymi. Uderzanie szeroko w użytkowników zagranicznych pojazdów niesie ryzyko, że rykoszetem dostaną także legalnie działające firmy, w tym przewoźnicy obsługujący polski rynek.
 
 Właśnie dlatego eksperci studzą emocje. Sam pomysł może wywołać duże zainteresowanie, ale jego praktyczna wartość pozostaje dyskusyjna. Dla branży busów i vanów najważniejsze będzie nie to, jak głośno zabrzmi propozycja, lecz czy da się ją wdrożyć bez paraliżowania codziennej pracy kierowców. Na dziś wiele wskazuje, że z tym mogłoby być bardzo trudno.

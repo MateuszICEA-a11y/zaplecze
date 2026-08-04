@@ -26,11 +26,11 @@ image_alt: BusManiak.pl – Pożar auta dostawczego w Bierutowie. Ogień zagrozi
 
 W Bierutowie doszło do pożaru samochodu dostawczego, a sytuacja szybko stała się niebezpieczna nie tylko dla samego pojazdu. Ogień rozprzestrzeniał się w sposób, który stwarzał realne zagrożenie dla znajdujących się w pobliżu zabudowań. Na miejsce skierowano straż pożarną, której działania koncentrowały się zarówno na ugaszeniu płonącego auta, jak i na niedopuszczeniu do przeniesienia się ognia dalej.
 
-Tego typu zdarzenia w przypadku pojazdów użytkowych bywają szczególnie trudne. Samochody dostawcze często przewożą ładunek, materiały eksploatacyjne albo wyposażenie warsztatowe, co może zwiększać intensywność pożaru i utrudniać akcję ratowniczą. Dotyczy to zarówno większych aut, jak [dostawczych vanów](/modele/opel-vivaro/dostawczy/), które na co dzień pracują w transporcie lokalnym.
+Tego typu zdarzenia w przypadku pojazdów użytkowych bywają szczególnie trudne. Samochody dostawcze często przewożą ładunek, materiały eksploatacyjne albo wyposażenie warsztatowe, co może zwiększać intensywność pożaru i utrudniać akcję ratowniczą. Dotyczy to zarówno większych aut, jak i [dostawczych vanów](/modele/opel-vivaro/dostawczy/), które na co dzień pracują w transporcie lokalnym.
 
 ## Strażacy musieli zabezpieczyć także otoczenie
 
-Najważniejszym elementem akcji było opanowanie ognia zanim objął sąsiednie obiekty. Przy pożarach pojazdów zaparkowanych blisko budynków liczy się każda minuta, bo wysoka temperatura i płomienie mogą błyskawicznie doprowadzić do zapalenia elewacji, elementów drewnianych czy składowanych obok materiałów.
+Najważniejszym elementem akcji było opanowanie ognia, zanim zdążył on objąć sąsiednie obiekty. Przy pożarach pojazdów zaparkowanych blisko budynków liczy się każda minuta, bo wysoka temperatura i płomienie mogą błyskawicznie doprowadzić do zapalenia elewacji, elementów drewnianych czy składowanych obok materiałów.
 
 Na razie najważniejszą informacją pozostaje to, że ogień zagrażał zabudowaniom, a więc skala ryzyka była większa niż przy typowym pożarze pojedynczego auta na otwartej przestrzeni. W takich przypadkach strażacy równolegle prowadzą gaszenie pojazdu i chłodzenie otoczenia, by ograniczyć możliwość dalszego rozwoju pożaru.
 
@@ -42,4 +42,4 @@ Choć przyczyny takich zdarzeń mogą być bardzo różne, najczęściej bierze 
 
 To kolejny sygnał, że w autach pracujących zawodowo kluczowe są regularne przeglądy i szybkie reagowanie na pierwsze objawy usterek, takie jak zapach spalenizny, dym spod maski czy problemy z instalacją elektryczną. Nawet pozornie niewielka awaria może w krótkim czasie doprowadzić do całkowitego zniszczenia pojazdu i zagrożenia dla otoczenia.
 
-Na ten moment najważniejsze pozostaje to, że pożar w Bierutowie wymagał zdecydowanej interwencji służb z uwagi na ryzyko objęcia ogniem pobliskich zabudowań. To przypomnienie, że samochód dostawczy, choć na co dzień jest tylko narzędziem pracy, w kryzysowej sytuacji może stać się źródłem bardzo poważnego zagrożenia.
+Najważniejsze pozostaje to, że pożar w Bierutowie wymagał zdecydowanej interwencji służb z uwagi na ryzyko objęcia ogniem pobliskich zabudowań. To przypomnienie, że samochód dostawczy, choć na co dzień jest tylko narzędziem pracy, w kryzysowej sytuacji może stać się źródłem bardzo poważnego zagrożenia.

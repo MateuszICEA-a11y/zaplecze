@@ -26,13 +26,13 @@ image_alt: BusManiak.pl – Tragiczny wypadek w Peru. Bus spadł w półkilometr
 
 Do katastrofy doszło na jednej z górskich tras w Peru, gdzie bus przewożący pasażerów zjechał z drogi i stoczył się do bardzo głębokiej przepaści. Według wstępnych informacji pojazd spadł z wysokości około pół kilometra, co sprawiło, że bilans ofiar od początku był bardzo poważny.
 
-Na miejscu szybko rozpoczęto akcję ratunkową, jednak warunki terenowe znacząco utrudniały dotarcie do wraku i poszkodowanych. Górskie drogi w tej części Ameryki Południowej od lat uchodzą za wyjątkowo niebezpieczne – są wąskie, kręte i często pozbawione odpowiednich zabezpieczeń. W takich realiach nawet niewielki błąd kierowcy lub usterka techniczna mogą prowadzić do tragicznych konsekwencji.
+Na miejscu szybko rozpoczęto akcję ratunkową, jednak warunki terenowe znacznie utrudniały dotarcie do wraku i poszkodowanych. Górskie drogi w tej części Ameryki Południowej od lat uchodzą za wyjątkowo niebezpieczne – są wąskie, kręte i często pozbawione odpowiednich zabezpieczeń. W takich warunkach nawet niewielki błąd kierowcy lub usterka techniczna mogą prowadzić do tragicznych konsekwencji.
 
-Służby potwierdziły ofiary śmiertelne oraz rannych, którzy trafili do szpitali. Liczba poszkodowanych może się jeszcze zmieniać wraz z postępem działań ratunkowych i identyfikacją wszystkich podróżnych.
+Służby potwierdziły, że są ofiary śmiertelne oraz ranni, którzy trafili do szpitali. Liczba poszkodowanych może się jeszcze zmieniać wraz z postępem działań ratunkowych i identyfikacją wszystkich podróżnych.
 
 ## Trwa wyjaśnianie przyczyn wypadku
 
-Na razie nie podano ostatecznej przyczyny katastrofy. Pod uwagę branych jest kilka scenariuszy, w tym utrata panowania nad pojazdem, trudne warunki drogowe albo problem techniczny. W przypadku transportu pasażerskiego szczególne znaczenie mają zarówno stan techniczny pojazdu, jak i jego dopasowanie do charakteru trasy.
+Na razie nie podano ostatecznej przyczyny katastrofy. Pod uwagę brane jest kilka scenariuszy, w tym utrata panowania nad pojazdem, trudne warunki drogowe albo usterka techniczna. W przypadku transportu pasażerskiego szczególne znaczenie mają zarówno stan techniczny pojazdu, jak i jego dopasowanie do charakteru trasy.
 
 Przy ocenie takich zdarzeń kluczowe są nie tylko relacje świadków, ale też parametry samego auta – masa, rozstaw osi czy układ napędowy. Właśnie dlatego tak istotne są [wymiary busów](/porownania/wymiary-tabela/) i ich konfiguracja w zależności od zastosowania. Na wymagających, górskich odcinkach dodatkowe znaczenie może mieć również [bus 4x4](/porownania/busy-vany-4x4/), choć nawet lepsza trakcja nie eliminuje ryzyka na skrajnie trudnych trasach.
 
@@ -42,4 +42,4 @@ Przy ocenie takich zdarzeń kluczowe są nie tylko relacje świadków, ale też 
 
 Ten wypadek po raz kolejny pokazuje, jak wymagający i niebezpieczny potrafi być transport drogowy w regionach górskich. W takich miejscach znaczenie mają nie tylko umiejętności kierowcy, ale również infrastruktura, regularne kontrole techniczne i właściwy dobór pojazdu do trasy.
 
-W przypadku busów wykorzystywanych do przewozu osób margines błędu jest bardzo mały. Jeden nieprzewidziany manewr, awaria lub osunięcie się pojazdu na nieutwardzonym poboczu może doprowadzić do katastrofy. To właśnie dlatego każde podobne zdarzenie staje się ważnym sygnałem ostrzegawczym dla przewoźników i lokalnych władz odpowiedzialnych za bezpieczeństwo na drogach.
+W przypadku busów wykorzystywanych do przewozu osób nie ma niemal miejsca na błąd. Jeden nieprzewidziany manewr, awaria lub zsunięcie się pojazdu na nieutwardzonym poboczu może doprowadzić do katastrofy. To właśnie dlatego każde podobne zdarzenie staje się ważnym sygnałem ostrzegawczym dla przewoźników i lokalnych władz odpowiedzialnych za bezpieczeństwo na drogach.

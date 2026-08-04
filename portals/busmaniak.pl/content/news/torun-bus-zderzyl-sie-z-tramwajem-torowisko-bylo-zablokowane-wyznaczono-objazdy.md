@@ -32,7 +32,7 @@ W przypadku aut użytkowych znaczenie ma nie tylko stan techniczny pojazdu, ale 
 
 ## Utrudnienia w ruchu i objazdy
 
-Największym problemem po zderzeniu była blokada torowiska, która wymusiła zmiany w kursowaniu tramwajów. Dla pasażerów oznaczało to opóźnienia, a dla kierowców dodatkowe utrudnienia w rejonie miejsca kolizji. W takich sytuacjach nawet krótkotrwałe wyłączenie jednego odcinka torów może przełożyć się na zakłócenia w kilku częściach miasta.
+Największym problemem po zderzeniu była blokada torowiska, która wymusiła zmiany w kursowaniu tramwajów. Dla pasażerów oznaczało to opóźnienia, a dla kierowców – dodatkowe utrudnienia w rejonie kolizji. W takich sytuacjach nawet krótkotrwałe wyłączenie jednego odcinka torów może przełożyć się na zakłócenia w kilku częściach miasta.
 
 Objazdy wprowadzono do czasu usunięcia skutków kolizji i zakończenia działań służb. Kierowcy poruszający się po centrum musieli liczyć się z wolniejszym ruchem i lokalnymi zmianami organizacji ruchu.
 
@@ -40,8 +40,8 @@ W przypadku busów pracujących intensywnie w mieście, zwłaszcza tych wykorzys
 
 ## Co wiadomo po zdarzeniu
 
-Na ten moment najważniejszą informacją pozostaje sam przebieg zdarzenia oraz jego skutki dla ruchu tramwajowego i drogowego. Kolizja busa z tramwajem to sytuacja, która niemal zawsze oznacza czasowe unieruchomienie komunikacji szynowej na danym odcinku, nawet jeśli działania służb przebiegają sprawnie.
+Na razie najważniejszą informacją pozostaje sam przebieg zdarzenia oraz jego skutki dla ruchu tramwajowego i drogowego. Kolizja busa z tramwajem to sytuacja, która niemal zawsze oznacza czasowe unieruchomienie komunikacji szynowej na danym odcinku, nawet jeśli działania służb przebiegają sprawnie.
 
-Takie incydenty przypominają, jak duże znaczenie ma koncentracja kierowcy w ruchu miejskim, szczególnie w miejscach, gdzie przecinają się tory tramwajowe, pasy ruchu i przejścia dla pieszych. W przypadku busów, które często pracują pod presją czasu, margines błędu bywa bardzo mały.
+Takie zdarzenia przypominają, jak duże znaczenie ma koncentracja kierowcy w ruchu miejskim, zwłaszcza w miejscach, gdzie przecinają się tory tramwajowe, pasy ruchu i przejścia dla pieszych. W przypadku busów, które często pracują pod presją czasu, pole manewru bywa bardzo małe.
 
-Na razie nie podano szerzej szczegółów dotyczących przyczyn zdarzenia ani ewentualnych konsekwencji dla uczestników kolizji. Najważniejsze jest to, że służby zajęły się zabezpieczeniem miejsca i przywracaniem normalnego ruchu.
+Na razie nie podano bliższych szczegółów dotyczących przyczyn zdarzenia ani ewentualnych konsekwencji dla uczestników kolizji. Najważniejsze jest to, że służby zajęły się zabezpieczeniem miejsca i przywracaniem normalnego ruchu.

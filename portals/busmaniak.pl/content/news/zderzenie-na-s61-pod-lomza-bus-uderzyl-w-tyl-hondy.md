@@ -24,18 +24,18 @@ image_alt: BusManiak.pl – Zderzenie na S61 pod Łomżą. Bus uderzył w tył h
 
 ## Kolizja na ekspresówce w rejonie Łomży
 
-Do zdarzenia doszło na trasie S61 pod Łomżą. Z dostępnych informacji wynika, że bus najechał na tył hondy, co doprowadziło do zderzenia obu pojazdów. Na miejsce skierowano służby, które zabezpieczały rejon kolizji i prowadziły działania związane z usuwaniem skutków zdarzenia.
+Do zdarzenia doszło na trasie S61 pod Łomżą. Z dostępnych informacji wynika, że bus najechał na tył hondy, co doprowadziło do zderzenia obu pojazdów. Na miejsce skierowano służby, które zabezpieczały rejon kolizji i zajmowały się usuwaniem skutków zdarzenia.
 
-Tego typu incydenty na drogach szybkiego ruchu zwykle oznaczają utrudnienia dla kierowców, nawet jeśli nie dochodzi do całkowitej blokady jezdni. W praktyce wystarczy chwilowe zwężenie pasa lub konieczność zabezpieczenia uszkodzonych aut, by ruch wyraźnie spowolnił. W przypadku busów znaczenie ma także masa pojazdu i droga hamowania – szczególnie gdy auto jedzie z ładunkiem lub ma zabudowę zwiększającą jego masę własną. Różnice między modelami dobrze pokazują choćby [dane techniczne busów](/porownania/dane-techniczne-tabela/).
+Tego typu zdarzenia na drogach szybkiego ruchu zwykle oznaczają utrudnienia dla kierowców, nawet jeśli nie dochodzi do całkowitej blokady jezdni. W praktyce wystarczy chwilowe zwężenie pasa albo konieczność zabezpieczenia uszkodzonych aut, by ruch wyraźnie spowolnił. W przypadku busów znaczenie ma także masa pojazdu i droga hamowania – zwłaszcza gdy auto jedzie z ładunkiem lub ma zabudowę zwiększającą jego masę własną. Różnice między modelami dobrze pokazują choćby [dane techniczne busów](/porownania/dane-techniczne-tabela/).
 
 ## Co mogło doprowadzić do najechania na tył
 
-Najechanie na tył poprzedzającego pojazdu najczęściej wiąże się z niezachowaniem odpowiedniego odstępu, chwilą nieuwagi albo zbyt późnym rozpoczęciem hamowania. Na drogach ekspresowych problem bywa szczególnie groźny, bo nawet pozornie niewielki błąd przy wyższej prędkości kończy się poważnym uszkodzeniem przodu busa i tylnej części auta osobowego.
+Najechanie na tył poprzedzającego pojazdu najczęściej wynika z niezachowania odpowiedniego odstępu, chwili nieuwagi albo zbyt późnego rozpoczęcia hamowania. Na drogach ekspresowych problem bywa szczególnie groźny, bo nawet pozornie niewielki błąd przy wyższej prędkości kończy się poważnym uszkodzeniem przodu busa i tylnej części auta osobowego.
 
-W przypadku pojazdów dostawczych dochodzi jeszcze kwestia obciążenia. Bus wykorzystywany do pracy, przewozu narzędzi czy towaru reaguje inaczej niż pusty samochód. Zmienia się nie tylko dynamika, ale również skuteczność hamowania i zachowanie auta podczas nagłej zmiany sytuacji na drodze. Dlatego tak ważne są regularne kontrole stanu technicznego, w tym układu hamulcowego, oświetlenia czy instalacji elektrycznej. Przy codziennej eksploatacji warto też pamiętać o takich podstawach jak [bezpieczniki busa](/serwis/bezpieczniki-busy/), bo nawet drobna usterka może przełożyć się na bezpieczeństwo jazdy.
+W przypadku pojazdów dostawczych dochodzi do tego jeszcze obciążenie. Bus wykorzystywany do pracy, przewozu narzędzi czy towaru reaguje inaczej niż puste auto. Zmienia się nie tylko dynamika, lecz także skuteczność hamowania i zachowanie pojazdu podczas nagłej zmiany sytuacji na drodze. Dlatego tak ważne są regularne kontrole stanu technicznego, w tym układu hamulcowego, oświetlenia czy instalacji elektrycznej. Przy codziennej eksploatacji warto też pamiętać o takich podstawach jak [bezpieczniki busa](/serwis/bezpieczniki-busy/), bo nawet drobna usterka może wpłynąć na bezpieczeństwo jazdy.
 
 ## Utrudnienia i apel do kierowców
 
 Po zdarzeniu kierowcy przejeżdżający odcinkiem S61 pod Łomżą musieli liczyć się z utrudnieniami. W takich sytuacjach kluczowe jest wcześniejsze zmniejszenie prędkości i zachowanie większego odstępu od poprzedzającego pojazdu, zwłaszcza gdy ruch odbywa się w pobliżu miejsca kolizji.
 
-To kolejny przykład, że na trasach ekspresowych nawet chwila nieuwagi może skończyć się kosztowną i niebezpieczną kolizją. Dla użytkowników busów wniosek jest prosty – niezależnie od terminu dostawy, presji czasu czy natężenia ruchu, bezpieczny odstęp i przewidywanie sytuacji na drodze pozostają absolutną podstawą.
+To kolejny przykład tego, że na trasach ekspresowych nawet chwila nieuwagi może skończyć się kosztowną i niebezpieczną kolizją. Dla użytkowników busów wniosek jest prosty – niezależnie od terminu dostawy, presji czasu czy natężenia ruchu bezpieczny odstęp i przewidywanie sytuacji na drodze pozostają absolutną podstawą.

@@ -29,17 +29,17 @@ Do niebezpiecznego zdarzenia doszło na drodze ekspresowej S7 w miejscowości Sz
 
 Na miejscu pojawiły się służby, które zabezpieczały miejsce kolizji i pracowały nad przywróceniem pełnej przejezdności trasy. Kierowcy jadący tym odcinkiem musieli liczyć się z czasowymi utrudnieniami oraz możliwym spowolnieniem ruchu.
 
-Na razie nie podano szerokich szczegółów dotyczących przyczyn zdarzenia ani skali uszkodzeń samego pojazdu. Wiadomo jednak, że udział brał w nim [kamper](/kampery/przewodnik/), a uderzenie nastąpiło w bariery przy trasie ekspresowej.
+Na razie nie podano szczegółowych informacji o przyczynach zdarzenia ani o skali uszkodzeń pojazdu. Wiadomo jednak, że brał w nim udział [kamper](/kampery/przewodnik/), a uderzenie nastąpiło w bariery przy drodze ekspresowej.
 
 ## Utrudnienia i apel do kierowców
 
-Tego typu incydenty na drogach szybkiego ruchu zwykle powodują nie tylko lokalne zwężenia, ale też ryzyko tworzenia się zatorów. W przypadku większych pojazdów rekreacyjnych problem może być dodatkowo odczuwalny, bo ich gabaryty utrudniają szybkie usunięcie z pasa lub pobocza.
+Tego typu zdarzenia na drogach szybkiego ruchu zwykle powodują nie tylko lokalne zwężenia, lecz także ryzyko powstawania zatorów. W przypadku większych pojazdów rekreacyjnych problem może być dodatkowo odczuwalny, bo ich gabaryty utrudniają szybkie usunięcie z pasa lub pobocza.
 
-Dla kierowców to kolejny sygnał, że podczas podróży autem turystycznym trzeba brać poprawkę nie tylko na warunki drogowe, ale też na masę i rozmiary pojazdu. Dotyczy to zarówno dużych zabudów, jak i takich konstrukcji jak [mini kamper](/kampery/mini-kamper/), które mimo mniejszych wymiarów również wymagają ostrożnej jazdy.
+Dla kierowców to kolejny sygnał, że podczas podróży autem turystycznym trzeba brać poprawkę nie tylko na warunki drogowe, ale też na masę i rozmiary pojazdu. Dotyczy to zarówno dużych zabudów, jak i konstrukcji takich jak [mini kamper](/kampery/mini-kamper/), które mimo mniejszych wymiarów również wymagają ostrożnej jazdy.
 
 W czasie wakacyjnych wyjazdów podobne zdarzenia szczególnie mocno wpływają na płynność ruchu, ponieważ trasy ekspresowe są wtedy intensywnie wykorzystywane przez osoby jadące na urlop. W praktyce nawet pozornie niegroźna kolizja z barierami może oznaczać dłuższy postój dla innych uczestników ruchu.
 
-## Wakacyjny ruch sprzyja podobnym incydentom
+## Wakacyjny ruch sprzyja podobnym zdarzeniom
 
 Lato to okres wzmożonego ruchu pojazdów kempingowych na polskich drogach. Wielu kierowców przesiada się do takich aut tylko sezonowo, a to oznacza mniejsze obycie z prowadzeniem wyższego i cięższego pojazdu, zwłaszcza przy wyższych prędkościach i na zatłoczonych trasach.
 

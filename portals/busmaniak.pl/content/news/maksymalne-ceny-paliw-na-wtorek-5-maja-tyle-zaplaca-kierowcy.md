@@ -32,17 +32,17 @@ Na wtorek 5 maja kierowcy powinni przygotować się na następujące maksymalne 
 - **Olej napędowy** – do około 6,69 zł/l
 - **LPG** – do około 2,89 zł/l
 
-To wartości orientacyjne, które pokazują górny pułap cen, z jakim można spotkać się przy dystrybutorze. W praktyce wiele zależy od regionu, polityki konkretnej sieci oraz lokalnej konkurencji. Różnice między stacjami w obrębie jednego miasta nadal potrafią wynosić kilkanaście groszy na litrze, a przy większych zbiornikach oznacza to już realną oszczędność.
+Są to wartości orientacyjne, które pokazują górny pułap cen, z jakim można się spotkać przy dystrybutorze. W praktyce wiele zależy od regionu, polityki konkretnej sieci oraz lokalnej konkurencji. Różnice między stacjami w obrębie jednego miasta nadal potrafią wynosić kilkanaście groszy na litrze, a przy większych zbiornikach oznacza to już realną oszczędność.
 
 Dla kierowców aut dostawczych najważniejszy pozostaje olej napędowy. To właśnie diesel napędza znaczną część flot kurierskich, busów pracujących w transporcie lokalnym i samochodów wykorzystywanych przez ekipy montażowe. Przy intensywnej eksploatacji nawet niewielka zmiana stawki szybko przekłada się na miesięczne koszty.
 
 ## Diesel nadal kluczowy dla właścicieli busów i flot
 
-W segmencie dostawczym cena ON ma większe znaczenie niż w autach osobowych. Samochody pracujące codziennie w trasie często pokonują kilkaset kilometrów dziennie, dlatego różnica rzędu 10–20 groszy na litrze może przełożyć się na setki złotych w skali miesiąca. Dotyczy to zarówno większych modeli, jak i lżejszych dostawczaków.
+W segmencie dostawczym cena ON ma większe znaczenie niż w autach osobowych. Samochody pracujące codziennie w trasie często pokonują kilkaset kilometrów dziennie, dlatego różnica rzędu 10–20 groszy na litrze może się przełożyć na setki złotych w skali miesiąca. Dotyczy to zarówno większych modeli, jak i lżejszych dostawczaków.
 
 Znaczenie ma też samo zużycie paliwa. W praktyce użytkownicy często porównują nie tylko ceny na stacjach, ale też realne [spalanie Vivaro](/modele/opel-vivaro/spalanie/) czy innych popularnych busów. Przy wysokich przebiegach nawet oszczędniejsza jednostka napędowa potrafi częściowo zrekompensować droższe tankowanie.
 
-Jeszcze mocniej widać to w przypadku samochodów zabudowanych, gdzie masa i opór powietrza podnoszą apetyt na paliwo. Dotyczy to choćby aut pracujących jako [plandeki Daily](/modele/iveco-daily/plandeka/), które w codziennej eksploatacji są szczególnie wrażliwe na wahania cen diesla.
+Jeszcze wyraźniej widać to w przypadku samochodów zabudowanych, gdzie masa i opór powietrza podnoszą apetyt na paliwo. Dotyczy to choćby aut pracujących jako [plandeki Daily](/modele/iveco-daily/plandeka/), które w codziennej eksploatacji są szczególnie wrażliwe na wahania cen diesla.
 
 ## Co to oznacza dla kierowców w praktyce
 

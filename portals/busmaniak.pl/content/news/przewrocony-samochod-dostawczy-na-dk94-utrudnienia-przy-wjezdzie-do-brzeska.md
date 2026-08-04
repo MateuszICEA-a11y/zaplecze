@@ -24,19 +24,19 @@ image_alt: BusManiak.pl – Przewrócony samochód dostawczy na DK94. Utrudnieni
 
 ## Dostawczak przewrócił się przy wjeździe do Brzeska
 
-Na DK94, w rejonie wjazdu do Brzeska, doszło do groźnie wyglądającego zdarzenia z udziałem samochodu dostawczego. Pojazd przewrócił się na jezdni, co szybko przełożyło się na utrudnienia dla kierowców poruszających się tą trasą.
+Na DK94, w rejonie wjazdu do Brzeska, doszło do groźnie wyglądającego zdarzenia z udziałem samochodu dostawczego. Pojazd przewrócił się na jezdni, co szybko spowodowało utrudnienia dla kierowców poruszających się tą trasą.
 
 Na miejscu pracowały służby, które zabezpieczały miejsce zdarzenia i prowadziły działania związane z usunięciem pojazdu oraz przywróceniem przejezdności. W takich sytuacjach największym problemem jest zwykle zwężenie pasa ruchu albo czasowe wstrzymanie przejazdu, szczególnie jeśli auto leży w poprzek jezdni lub wymaga użycia cięższego sprzętu do podniesienia.
 
-Skala uszkodzeń samochodu nie została szerzej doprecyzowana, ale samo przewrócenie dostawczaka pokazuje, jak łatwo o utratę stabilności w aucie użytkowym – zwłaszcza przy nagłym manewrze, źle rozłożonym ładunku albo trudniejszych warunkach na drodze.
+Skali uszkodzeń samochodu nie doprecyzowano, ale samo przewrócenie dostawczaka pokazuje, jak łatwo o utratę stabilności w aucie użytkowym – zwłaszcza przy nagłym manewrze, źle rozłożonym ładunku albo trudniejszych warunkach na drodze.
 
 ## Utrudnienia na ważnym odcinku DK94
 
 Droga krajowa nr 94 jest jednym z istotnych ciągów komunikacyjnych w regionie, dlatego nawet pojedyncze zdarzenie z udziałem auta dostawczego może szybko powodować zatory. Kierowcy jadący w stronę Brzeska musieli liczyć się z opóźnieniami i wolniejszym przejazdem.
 
-W przypadku samochodów użytkowych znaczenie ma nie tylko sama masa pojazdu, ale też sposób załadunku. Nawet mniejsze dostawczaki, takie jak [Toyota Proace City 1.5](/modele/toyota-proace-city/1-5/), przy nieprawidłowym rozmieszczeniu towaru mogą zachowywać się mniej przewidywalnie podczas gwałtownego hamowania lub omijania przeszkody. W większych modelach ryzyko potęguje wyższy środek ciężkości i większa masa całkowita.
+W przypadku samochodów użytkowych znaczenie ma nie tylko sama masa pojazdu, ale też sposób załadunku. Nawet mniejsze dostawczaki, takie jak [Toyota Proace City 1.5](/modele/toyota-proace-city/1-5/), przy nieprawidłowym rozmieszczeniu towaru mogą zachowywać się mniej przewidywalnie podczas gwałtownego hamowania lub omijania przeszkody. W większych modelach ryzyko potęgują wyższy środek ciężkości i większa masa całkowita.
 
-Na podobnej zasadzie trzeba pamiętać o ograniczeniach, jakie mają także [większe furgony](/modele/toyota-proace/2-0/) używane w transporcie lokalnym i kurierskim. W codziennej eksploatacji łatwo skupić się na pojemności przestrzeni ładunkowej, a zlekceważyć wpływ ładunku na prowadzenie auta.
+Podobnie trzeba pamiętać o ograniczeniach, jakie mają także [większe furgony](/modele/toyota-proace/2-0/) używane w transporcie lokalnym i kurierskim. W codziennej eksploatacji łatwo skupić się na pojemności przestrzeni ładunkowej, a zlekceważyć wpływ ładunku na prowadzenie auta.
 
 ## Służby apelują o ostrożność
 

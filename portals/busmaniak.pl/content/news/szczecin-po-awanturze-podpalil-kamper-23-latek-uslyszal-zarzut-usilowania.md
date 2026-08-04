@@ -24,11 +24,11 @@ image_alt: 'BusManiak.pl – Szczecin: po awanturze podpalił kamper. 23-latek u
 
 ## Pożar kampera po awanturze
 
-Do zdarzenia doszło w Szczecinie. Z ustaleń śledczych wynika, że po awanturze 23-letni mężczyzna miał podpalić kamper, w którym znajdowała się kobieta. Sprawa ma bardzo poważny charakter, bo prokuratura zakwalifikowała czyn nie jako samo zniszczenie mienia czy sprowadzenie pożaru, ale jako usiłowanie zabójstwa.
+Do zdarzenia doszło w Szczecinie. Z ustaleń śledczych wynika, że po awanturze 23-letni mężczyzna miał podpalić kamper, w którym znajdowała się kobieta. Sprawa ma bardzo poważny charakter, bo prokuratura zakwalifikowała czyn nie jako zwykłe zniszczenie mienia czy sprowadzenie pożaru, lecz jako usiłowanie zabójstwa.
 
-To istotne, bo w przypadku pojazdu takiego jak [kamper](/kampery/przewodnik/) ogień może rozprzestrzeniać się wyjątkowo szybko. W zabudowie znajdują się materiały łatwopalne, instalacje elektryczne, a często także elementy wyposażenia turystycznego, które dodatkowo zwiększają zagrożenie dla osób przebywających w środku.
+To istotne, bo w pojeździe takim jak [kamper](/kampery/przewodnik/) ogień może rozprzestrzeniać się wyjątkowo szybko. W zabudowie znajdują się materiały łatwopalne, instalacje elektryczne, a często także elementy wyposażenia turystycznego, które dodatkowo zwiększają zagrożenie dla osób przebywających w środku.
 
-Na ten moment najważniejszą informacją pozostaje to, że w chwili podpalenia wewnątrz była kobieta. Właśnie ten fakt przesądził o bardzo surowej ocenie zdarzenia przez organy ścigania.
+Na razie najważniejsze pozostaje to, że w chwili podpalenia wewnątrz była kobieta. Właśnie ten fakt przesądził o bardzo surowej ocenie zdarzenia przez organy ścigania.
 
 ## 23-latek z zarzutem usiłowania zabójstwa
 
@@ -36,11 +36,11 @@ Jak wynika z przekazanych informacji, 23-latek został zatrzymany i ma odpowiedz
 
 Na tym etapie postępowania kluczowe będzie ustalenie dokładnego przebiegu awantury, sposobu wzniecenia ognia oraz tego, jak szybko pożar objął pojazd. Znaczenie mogą mieć również zeznania świadków, ślady zabezpieczone na miejscu i opinie biegłych z zakresu pożarnictwa.
 
-W praktyce takie sprawy pokazują, że pojazdy rekreacyjne, niezależnie od tego, czy mowa o dużych zabudowach, czy o [kamperach używanych](/kampery/kampery-uzywane/), w sytuacji pożaru stają się śmiertelnie niebezpieczną pułapką. Zamknięta przestrzeń i szybki rozwój płomieni mogą dramatycznie ograniczyć czas na ucieczkę.
+W praktyce takie sprawy pokazują, że pojazdy rekreacyjne – niezależnie od tego, czy mowa o dużych zabudowach, czy o [kamperach używanych](/kampery/kampery-uzywane/) – w sytuacji pożaru stają się śmiertelnie niebezpieczną pułapką. Zamknięta przestrzeń i szybki rozwój płomieni mogą znacznie skrócić czas na ucieczkę.
 
 ## Śledztwo wyjaśni szczegóły zdarzenia
 
-Na razie nie podano szerzej wszystkich okoliczności sprawy, dlatego wiele zależy od dalszego śledztwa. Prokuratura będzie musiała precyzyjnie odtworzyć przebieg wydarzeń i ocenić motyw działania podejrzanego.
+Na razie nie ujawniono jeszcze wszystkich okoliczności sprawy, dlatego wiele zależy od dalszego śledztwa. Prokuratura będzie musiała precyzyjnie odtworzyć przebieg wydarzeń i ocenić motyw działania podejrzanego.
 
 Dla służb takie zdarzenia są szczególnie trudne, bo dotyczą jednocześnie przemocy wobec człowieka i użycia ognia w pojeździe mieszkalnym. W przypadku kampera zagrożenie obejmuje nie tylko osobę znajdującą się w środku, ale też otoczenie – sąsiednie auta, zabudowania czy infrastrukturę parkingową.
 

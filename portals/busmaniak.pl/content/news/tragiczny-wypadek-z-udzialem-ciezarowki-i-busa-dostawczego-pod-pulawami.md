@@ -26,27 +26,27 @@ image_alt: BusManiak.pl – Tragiczny wypadek z udziałem ciężarówki i busa d
 
 W rejonie Puław doszło do tragicznego wypadku drogowego z udziałem samochodu ciężarowego oraz busa dostawczego. Ze wstępnych informacji wynika, że skutki zderzenia były bardzo poważne – jedna osoba poniosła śmierć na miejscu.
 
-Na miejsce skierowano służby ratunkowe, w tym policję i straż pożarną. Droga została zablokowana, a funkcjonariusze rozpoczęli działania mające ustalić dokładny przebieg zdarzenia. W takich przypadkach kluczowe znaczenie mają ślady na jezdni, pozycja pojazdów po zderzeniu oraz relacje świadków.
+Na miejsce skierowano służby ratunkowe, w tym policję i straż pożarną. Droga została zablokowana, a funkcjonariusze rozpoczęli działania mające na celu ustalenie dokładnego przebiegu zdarzenia. W takich przypadkach kluczowe znaczenie mają ślady na jezdni, położenie pojazdów po zderzeniu oraz relacje świadków.
 
-Wypadki z udziałem aut użytkowych należą do najgroźniejszych na drogach, szczególnie gdy dochodzi do kontaktu większej ciężarówki z lżejszym pojazdem dostawczym. Nawet w przypadku nowoczesnych konstrukcji, takich jak [dostawcze busy](/modele/renault-trafic/dostawczy/), różnica masy i energii zderzenia często przesądza o skali obrażeń.
+Wypadki z udziałem aut użytkowych należą do najgroźniejszych na drogach, zwłaszcza gdy dochodzi do zderzenia większej ciężarówki z lżejszym pojazdem dostawczym. Nawet przy nowoczesnych konstrukcjach, takich jak [dostawcze busy](/modele/renault-trafic/dostawczy/), różnica masy i energii zderzenia często przesądza o skali obrażeń.
 
 ## Służby wyjaśniają okoliczności zdarzenia
 
 Policjanci pod nadzorem prokuratora prowadzą czynności, które mają wyjaśnić przyczyny tragedii. Sprawdzane będą między innymi warunki drogowe, stan techniczny pojazdów oraz to, czy któryś z kierowców nie naruszył przepisów ruchu drogowego.
 
-W praktyce dochodzenia po takich zdarzeniach obejmują zwykle:
+W praktyce postępowanie po takich zdarzeniach obejmuje zwykle:
 
-- **Oględziny miejsca wypadku** – zabezpieczenie śladów i dokumentację uszkodzeń
-- **Ustalenie toru jazdy pojazdów** – analiza, jak doszło do kontaktu ciężarówki z busem
+- **Oględziny miejsca wypadku** – zabezpieczenie śladów i dokumentacja uszkodzeń
+- **Ustalenie toru jazdy pojazdów** – analiza tego, jak doszło do zderzenia ciężarówki z busem
 - **Przesłuchanie świadków** – zebranie relacji osób, które mogły widzieć moment zderzenia
-- **Weryfikację stanu technicznego** – sprawdzenie, czy pojazdy były sprawne przed wypadkiem
+- **Weryfikacja stanu technicznego** – sprawdzenie, czy pojazdy były sprawne przed wypadkiem
 
-Na tym etapie nie podano jeszcze pełnego, oficjalnego scenariusza zdarzenia. Można jednak zakładać, że śledczy będą analizować każdy detal, bo przy zderzeniach pojazdów użytkowych nawet niewielki błąd może prowadzić do katastrofalnych skutków.
+Na tym etapie nie podano jeszcze pełnego, oficjalnego przebiegu zdarzenia. Można jednak zakładać, że śledczy będą analizować każdy szczegół, bo przy zderzeniach pojazdów użytkowych nawet niewielki błąd może prowadzić do katastrofalnych skutków.
 
-## Busy dostawcze w najtrudniejszym scenariuszu
+## Busy dostawcze w najtrudniejszej sytuacji
 
-Auta dostawcze są codziennym narzędziem pracy – poruszają się zarówno po miastach, jak i trasach krajowych. Niezależnie od tego, czy chodzi o większe konstrukcje, czy kompaktowe [vany użytkowe](/modele/citroen-berlingo/van/), w starciu z ciężarówką kierowca i pasażerowie pozostają w znacznie trudniejszej sytuacji niż w przypadku kolizji z autem osobowym.
+Auta dostawcze są codziennym narzędziem pracy – poruszają się zarówno po miastach, jak i po trasach krajowych. Niezależnie od tego, czy chodzi o większe konstrukcje, czy kompaktowe [vany użytkowe](/modele/citroen-berlingo/van/), w starciu z ciężarówką kierowca i pasażerowie pozostają w znacznie trudniejszej sytuacji niż przy kolizji z autem osobowym.
 
-To kolejny tragiczny przykład pokazujący, jak ważne są koncentracja za kierownicą, zachowanie bezpiecznego odstępu i dostosowanie prędkości do warunków. Szczególnie w ruchu pojazdów dostawczych, które często pracują pod presją czasu, margines błędu bywa bardzo mały.
+To kolejny tragiczny przykład pokazujący, jak ważne są koncentracja za kierownicą, zachowanie bezpiecznego odstępu i dostosowanie prędkości do warunków. Szczególnie w ruchu pojazdów dostawczych, których kierowcy często pracują pod presją czasu, miejsca na błąd bywa bardzo mało.
 
 Do czasu zakończenia działań służb i publikacji pełnych ustaleń przyczyny tego wypadku pozostają przedmiotem postępowania. Wiadomo już jednak, że bilans zdarzenia jest tragiczny.

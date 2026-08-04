@@ -26,22 +26,22 @@ image_alt: BusManiak.pl – Tragedia na S6. Bus wjechał w ekipę malującą pas
 
 Na drodze ekspresowej S6 doszło do tragicznego zdarzenia z udziałem busa i ekipy wykonującej prace przy malowaniu pasów. Według dostępnych informacji pojazd najechał na osoby pracujące na jezdni. W wyniku wypadku jedna osoba poniosła śmierć.
 
-Na miejscu pracowały służby ratunkowe oraz policja, które zabezpieczały teren i prowadziły czynności wyjaśniające. Ustalane są dokładne okoliczności zdarzenia, w tym przebieg prac drogowych, sposób oznakowania odcinka oraz to, jak doszło do wjazdu busa w strefę robót.
+Na miejscu pracowały służby ratunkowe oraz policja, które zabezpieczały teren i prowadziły czynności wyjaśniające. Ustalane są dokładne okoliczności zdarzenia, w tym przebieg prac drogowych, sposób oznakowania odcinka oraz to, w jaki sposób bus wjechał w strefę robót.
 
-Tego typu wypadki należą do najtragiczniejszych zdarzeń drogowych, ponieważ dotyczą osób wykonujących obowiązki bezpośrednio przy ruchu pojazdów. Nawet przy właściwym zabezpieczeniu miejsca robót ryzyko pozostaje bardzo wysokie, szczególnie na trasach o dużej prędkości przejazdu.
+Tego typu wypadki należą do najtragiczniejszych zdarzeń drogowych, ponieważ dotyczą osób wykonujących obowiązki bezpośrednio na jezdni, w sąsiedztwie ruchu pojazdów. Nawet przy właściwym zabezpieczeniu miejsca robót ryzyko pozostaje bardzo wysokie, zwłaszcza na trasach o dużej prędkości przejazdu.
 
 ## Służby badają przebieg zdarzenia
 
-Na tym etapie nie podano jeszcze pełnego zestawu ustaleń dotyczących przyczyn wypadku. Kluczowe będzie sprawdzenie śladów na miejscu, relacji świadków oraz stanu technicznego pojazdu. Znaczenie mogą mieć również warunki drogowe i widoczność w chwili zdarzenia.
+Na tym etapie nie podano jeszcze pełnych ustaleń dotyczących przyczyn wypadku. Kluczowe będzie zbadanie śladów na miejscu, relacji świadków oraz stanu technicznego pojazdu. Znaczenie mogą mieć również warunki drogowe i widoczność w chwili zdarzenia.
 
-W praktyce każdy bus poruszający się po drogach szybkiego ruchu powinien być użytkowany z zachowaniem szczególnej ostrożności, zwłaszcza w rejonie robót drogowych, zwężeń i tymczasowego oznakowania. Dotyczy to zarówno klasycznych aut dostawczych, jak i pojazdów z bardziej specjalistycznym wyposażeniem, w tym aut z [zabudową serwisową](/zabudowy/zabudowa-serwisowa/), które często pracują w otoczeniu infrastruktury drogowej.
+W praktyce każdy bus poruszający się po drogach szybkiego ruchu powinien być prowadzony ze szczególną ostrożnością, zwłaszcza w rejonie robót drogowych, zwężeń i tymczasowego oznakowania. Dotyczy to zarówno klasycznych aut dostawczych, jak i pojazdów ze specjalistycznym wyposażeniem, w tym aut z [zabudową serwisową](/zabudowy/zabudowa-serwisowa/), które często pracują w otoczeniu infrastruktury drogowej.
 
-Policja i prokuratura będą wyjaśniać, czy doszło do błędu kierowcy, czy też znaczenie miały inne czynniki. Do czasu zakończenia postępowania najważniejsze pozostaje ustalenie pełnego przebiegu tragedii oraz zabezpieczenie materiału dowodowego.
+Policja i prokuratura będą wyjaśniać, czy doszło do błędu kierowcy, czy decydujące okazały się inne czynniki. Do czasu zakończenia postępowania najważniejsze pozostaje ustalenie pełnego przebiegu tragedii oraz zabezpieczenie materiału dowodowego.
 
 ## Prace drogowe to strefa najwyższego ryzyka
 
-Wypadek na S6 po raz kolejny pokazuje, jak niebezpieczne są roboty prowadzone bezpośrednio na czynnej trasie. Dla kierowców oznacza to konieczność natychmiastowej redukcji prędkości i wzmożonej uwagi już przy pierwszych znakach ostrzegających o pracach na drodze.
+Wypadek na S6 po raz kolejny pokazuje, jak niebezpieczne są roboty prowadzone bezpośrednio na czynnej trasie. Dla kierowców oznacza to konieczność natychmiastowego zmniejszenia prędkości i wzmożonej uwagi już przy pierwszych znakach ostrzegających o pracach na drodze.
 
-Szczególna ostrożność powinna dotyczyć nie tylko dużych dostawczaków, ale też mniejszych busów używanych prywatnie i zawodowo. Niezależnie od tego, czy mowa o aucie roboczym, czy o pojeździe adaptowanym do innych zadań, jak [busy przerobione](/przerobki/busy-przerobione-galeria/), kluczowe pozostaje jedno – w strefie robót nie ma miejsca na chwilę nieuwagi.
+Szczególna ostrożność powinna dotyczyć nie tylko dużych dostawczaków, lecz także mniejszych busów używanych prywatnie i zawodowo. Niezależnie od tego, czy mowa o aucie roboczym, czy o pojeździe przystosowanym do innych zadań, jak [busy przerobione](/przerobki/busy-przerobione-galeria/), kluczowe pozostaje jedno – w strefie robót nie ma miejsca na chwilę nieuwagi.
 
 Do czasu publikacji oficjalnych, pełnych ustaleń służb wiadomo jedno: doszło do tragedii, w której zginął człowiek wykonujący pracę na drodze.

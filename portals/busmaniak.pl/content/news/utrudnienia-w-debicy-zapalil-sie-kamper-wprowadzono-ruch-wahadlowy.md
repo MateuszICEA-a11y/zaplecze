@@ -26,20 +26,20 @@ image_alt: BusManiak.pl – Utrudnienia w Dębicy. Zapalił się kamper, wprowad
 
 Do niebezpiecznego zdarzenia doszło w Dębicy, gdzie zapalił się kamper. Na miejsce skierowano służby ratunkowe, a akcja gaśnicza wymusiła czasowe ograniczenia w ruchu. Kierowcy przejeżdżający przez ten odcinek musieli liczyć się z utrudnieniami oraz wolniejszym przejazdem.
 
-W związku z sytuacją wprowadzono ruch wahadłowy. To oznaczało, że pojazdy były przepuszczane naprzemiennie, co przy większym natężeniu ruchu mogło powodować tworzenie się zatorów. W takich przypadkach najwięcej zależy od sprawnego zabezpieczenia miejsca zdarzenia i szybkiego usunięcia skutków pożaru.
+W związku z sytuacją wprowadzono ruch wahadłowy. Oznaczało to, że pojazdy były przepuszczane naprzemiennie, co przy większym natężeniu ruchu mogło powodować powstawanie zatorów. W takich przypadkach najwięcej zależy od sprawnego zabezpieczenia miejsca zdarzenia i szybkiego usunięcia skutków pożaru.
 
-Pożar pojazdu rekreacyjnego zawsze budzi duże zagrożenie, bo ogień może bardzo szybko objąć zabudowę mieszkalną, wyposażenie wnętrza i instalacje gazowe lub elektryczne. Właśnie dlatego działania strażaków przy tego typu pojazdach wymagają szczególnej ostrożności.
+Pożar pojazdu rekreacyjnego zawsze stwarza poważne zagrożenie, bo ogień może bardzo szybko objąć część mieszkalną, wyposażenie wnętrza oraz instalacje gazowe lub elektryczne. Właśnie dlatego działania strażaków przy tego typu pojazdach wymagają szczególnej ostrożności.
 
 ## Służby zabezpieczały miejsce zdarzenia
 
-Na razie najważniejszą informacją dla kierowców pozostaje fakt, że przejazd w rejonie zdarzenia odbywał się z ograniczeniami. Służby prowadziły działania na miejscu, a ich priorytetem było ugaszenie pojazdu i zabezpieczenie drogi przed dalszym zagrożeniem.
+Najważniejszą informacją dla kierowców pozostawał fakt, że przejazd w rejonie zdarzenia odbywał się z ograniczeniami. Służby prowadziły działania na miejscu, a ich głównym zadaniem było ugaszenie pojazdu i zabezpieczenie drogi przed dalszym zagrożeniem.
 
-W podobnych sytuacjach istotne jest także sprawdzenie, czy pożar nie doprowadził do uszkodzenia nawierzchni lub rozlania płynów eksploatacyjnych. To właśnie takie elementy często wydłużają czas przywracania normalnego ruchu, nawet jeśli sam ogień zostanie szybko opanowany.
+W podobnych sytuacjach istotne jest także sprawdzenie, czy pożar nie doprowadził do uszkodzenia nawierzchni lub rozlania płynów eksploatacyjnych. To właśnie takie okoliczności często wydłużają czas przywracania normalnego ruchu, nawet jeśli sam ogień zostanie szybko opanowany.
 
 Dla użytkowników pojazdów turystycznych to kolejny sygnał, jak ważna jest regularna kontrola stanu technicznego. Dotyczy to zarówno klasycznych kamperów, jak i mniejszych zabudów typu [mini kamper](/kampery/mini-kamper/). W pojazdach tego typu szczególne znaczenie mają instalacje elektryczne, gazowe oraz stan komory silnika.
 
 ## Kamper wymaga regularnych kontroli
 
-Choć przyczyny pożaru nie zawsze są od razu znane, podobne zdarzenia pokazują, że zaniedbania serwisowe mogą mieć bardzo poważne skutki. Kamper to nie tylko samochód, ale też mobilna zabudowa z dodatkowymi układami, które wymagają przeglądów i właściwej eksploatacji. Więcej o tym, na co zwracać uwagę przy użytkowaniu takiego pojazdu, piszemy w naszym [przewodniku po kamperach](/kampery/przewodnik/).
+Choć przyczyny pożaru nie zawsze są od razu znane, podobne zdarzenia pokazują, że zaniedbania serwisowe mogą mieć bardzo poważne skutki. Kamper to nie tylko samochód, lecz także mobilna zabudowa z dodatkowymi układami, które wymagają przeglądów i właściwej eksploatacji. Więcej o tym, na co zwracać uwagę przy użytkowaniu takiego pojazdu, piszemy w naszym [przewodniku po kamperach](/kampery/przewodnik/).
 
 Kierowcy podróżujący przez Dębicę powinni śledzić bieżące komunikaty drogowe i brać pod uwagę możliwość opóźnień do czasu całkowitego zakończenia działań służb oraz przywrócenia normalnej organizacji ruchu.
